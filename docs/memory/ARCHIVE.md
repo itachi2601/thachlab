@@ -75,3 +75,7 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [Dọn dung lượng Mac 11/10](project_thachlab_may_mac_dung_luong.md) — xoá ~/Documents/THPT (không sao lưu), Parallels, TeX Live→BasicTeX, tắt Time Machine; đường dẫn THPT trong memory cũ không còn
 - [Dashboard GV THPT](project_thachlab_dashboard_gv_thpt.md) — lọc đề theo khối + gộp tab xong 13/10 (137387c07); chưa thử trình duyệt, chưa push
 - [GĐ 1b rank – đã hoàn tất](project_thachlab_gd1b_rank.md) — xong 2/10, migration đã chạy; chỉ còn thầy kiểm bằng mắt
+
+- [HS Test + gieo/dọn dữ liệu thử](project_thachlab_hs_test_accounts.md) — 2 tài khoản lớp 12, đổi mật khẩu bằng scripts/doi-mk-hs-test.mjs
+- [Rà UI HS tìm bài/ôn tập 17/10](project_thachlab_ui_hs_tim_bai_on_tap.md) — 4 đợt đã lên site; treo 2 điểm nhỏ
+- [Gán lớp cho đề](project_thachlab_gan_lop_de.md) — 17/10 gán hết trừ 10 đề AVCN (cố ý trống); RLS giấu đề lớp khác

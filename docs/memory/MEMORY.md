@@ -1,8 +1,8 @@
-- [Archive](ARCHIVE.md) — memory đã xong/không còn treo; grep khi cần, KHÔNG đọc cả file
+- [Archive](ARCHIVE.md) — memory đã xong/không còn treo; grep khi cần,
 - Index nạp mỗi phiên: **một dòng/file, xong thì chuyển sang ARCHIVE.md**, đừng thêm dòng trùng.
 ## Về thầy Thạch
-- [Phong cách học & dạy](user_thach_phong_cach_hoc_va_day.md) — nguồn phong cách AI tutor; THÊM mục khi thầy kể thêm
-- [Phong cách đối thoại](user_thach_phong_cach_doi_thoai.md) — ngắn, tự quyết, ít báo cáo; THÊM mục khi thầy chỉnh
+- [Phong cách học & dạy](user_thach_phong_cach_hoc_va_day.md) — nguồn phong cách AI tutor; THÊM mục khi thầy kể
+- [Phong cách đối thoại](user_thach_phong_cach_doi_thoai.md) — ngắn, tự quyết, ít báo cáo; THÊM mục khi thầy
 ## Cách làm việc (feedback)
 - [Token discipline](feedback_token_discipline.md) — clear sớm, ảnh đọc trong subagent
 - [Giảm token 28/9](project_thachlab_token_hygiene.md) — .claudeignore, đọc DATABASE.md thay vì dò schema
@@ -23,10 +23,10 @@
 - [Rà ảnh bằng mắt](feedback_content_images_eyeball.md) — MD5 không bắt hết ảnh trang trí
 - [Auto-resume hết hạn mức](feedback_spend_limit_auto_resume.md)
 - [Giọng văn bài lý thuyết](feedback_giong-van-bai-ly-thuyet.md) — không dùng vai "thầy"
-- [Quy tắc thiết kế](feedback_design_research_rules.md) — UI HS theo docs/QUY-TAC-THIET-KE.md, nêu mã quy tắc
+- [Quy tắc thiết kế](feedback_design_research_rules.md) — UI HS theo docs/QUY-TAC-THIET-KE.md, nêu mã quy
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết: duyệt là đăng, không PR
 - [Không in lệnh hoàn tác](feedback_khong_in_lenh_hoan_tac.md) — chỉ nêu file sao lưu
-- [Không đốt credit API](feedback_khong_dot_credit_api.md) — soạn trực tiếp trong phiên Mac; batch chỉ khi thầy bảo
+- [Không đốt credit API](feedback_khong_dot_credit_api.md) — soạn trực tiếp trong phiên Mac; batch chỉ khi
 - [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — ví dụ/câu hỏi/lời giải: mỗi trường hợp một dòng
 - [Chặng commit + ra-soat.md](feedback_chang_commit_ra_soat_ban_giao.md) — commit mỗi chặng, lỗi ghi ra-soat.md
 ## Hạ tầng & tra cứu
@@ -36,13 +36,13 @@
 - [Cache SGK PDF](reference_sgk_pdf_text_cache.md)
 - [Giữ DB không phình](project_thachlab_db_retention.md) — rollup >12 tháng, pg_cron
 - [Claude API thinking](reference_anthropic_api_thinking_max_tokens.md) — max_tokens ≥16000
-- [Model lịch tự động](reference_scheduled_task_model.md) — chọn ở form Edit task trong app, không đổi bằng tool
+- [Model lịch tự động](reference_scheduled_task_model.md) — chọn ở form Edit task trong app, không đổi bằng
 ## Skill & quy trình đăng nội dung
-- [Up đề](project_thachlab_up_de_skill.md) — Azota + Chủ đề/Dạng → /quan-tri/dang-de; ⚠ bug tự gắn Luyện tập
+- [Up đề](project_thachlab_up_de_skill.md) — Azota + Chủ đề/Dạng → /quan-tri/dang-de
 - [Skill azota](project_thachlab_azota_skill.md) — bước 6 xuat_thachlab.py → Word kèm nhãn YCCĐ
 - [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md) — bước 7 xuat_thachlab.py
 - [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md) — mặc định script upload-lesson.mts
-- [Tài nguyên bài học + PhET hàng loạt](project_thachlab_tai_nguyen_bai_hoc_skill.md) — 49 bài/55 khối đã đăng 18/10; chờ thầy bấm thử + video Gemini
+- [Tài nguyên bài học + PhET hàng loạt](project_thachlab_tai_nguyen_bai_hoc_skill.md) — 49 bài/55 khối đã đăng 18/10
 - [Skill latex](project_thachlab_latex_skill.md) — cache công thức + sinh HTML bằng script
 - [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md) — kiểm công cụ có sẵn trước khi cho agent viết lại
 - [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
@@ -50,22 +50,22 @@
 - [Cập nhật bài theo Gemini](project_thachlab_cap_nhat_bai_theo_gemini.md) — skill rà bài; treo duyệt lý thuyết
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill + kho content/thi-nghiem
 - [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — treo bài 38/43/45, L12 12 bài, L10 đợt B
-- [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo dang-chung.json/tiet.json
+- [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
 - [Ảnh xấu ngân hàng → SVG](project_thachlab_anh_xau_ngan_hang.md) — Gemini Spark, thí điểm 20 câu chờ thầy
 - [Sửa đề đã đăng](project_thachlab_sua_de_admin.md) — /quan-tri/sua-de; 18/10 sửa 8 điểm UI, treo deploy
 - [Ngân hàng câu hỏi](project_thachlab_question_bank.md) — Dễ/TB/Khó + cảnh báo trùng
 - [Đề thi thử trường/sở](project_thachlab_de_thi_thu_truong_so.md) — 304 file đã lọc, CHƯA ĐĂNG
-- [Đề VL10 24-25](project_thachlab_de_lop10_24_25.md) — 167 bộ chưa được: scripts/data/de-l10-24-25-can-xem.md
+- [Đề VL10 24-25](project_thachlab_de_lop10_24_25.md) — 167 bộ chưa được:
 - [Đề lớp 11 GHK/HK](project_thachlab_de_lop11_ghk_hk.md) — 40 bộ lệch cần vá tay; thầy bật Hiện
-- [Mã QR cho đề](project_thachlab_ma_qr_de_thi.md) — `lib/exam-link.ts` sinh link; treo thử iPhone/Android
+- [Mã QR cho đề](project_thachlab_ma_qr_de_thi.md) — `lib/exam-link.ts` sinh link; treo thử
 - [Khoá HSG KHTN 9 Vật lí](project_thachlab_khoa_hsg9_vat_ly.md) — khung 17 bài; còn Âm, Nhiệt, Quang, CĐ08/09, CĐ17
 - [KHTN 9 Vật lí](project_thachlab_khtn9_ly_skill_dang_bai.md) — yêu cầu 24/9, chưa làm
-- [AVCN Cơ khí](project_thachlab_avcn.md) — lớp avcn vào tự do; Chapter 8 đăng 13/10; còn 9 chương (skill soan-bai-avcn)
+- [AVCN Cơ khí](project_thachlab_avcn.md) — lớp avcn vào tự do; Chapter 8 đăng 13/10
 ## Hệ động lực (rank / danh hiệu / phụ đạo) — roadmap ở docs/ROADMAP.md
 - [Rank + danh hiệu](project_thachlab_rank_system.md) — RP 7 bậc, mùa thử nghiệm 21/9–25/10
 - [Kho bẫy trộn câu ok](project_thachlab_kho_bay_tron_cau_ok.md) — bẫy 0,4–0,7 + câu đã đúng; chưa thử HS thật
-- [Rank thi thăng hạng thích ứng](project_thachlab_rank_gate_adaptive.md) — spec docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md
+- [Rank thi thăng hạng thích ứng](project_thachlab_rank_gate_adaptive.md) — spec
 - [Danh hiệu đeo + khung](project_thachlab_title_showcase.md) — chưa test HS thật
 - [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — chạy lại scripts/sql/title-bank-coverage.sql
 - [Mastery YCCĐ](project_thachlab_mastery_yccd.md) — chưa test UI
@@ -76,25 +76,22 @@
 - [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — trạng thái sửa chưa rõ
 - [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục ẩn, chờ gắn đề
 ## Giao diện & sản phẩm
-- [Chương trình DT 16/10](project_thachlab_dt_audit.md) — DT-01/03/04/07/12/16; còn dữ liệu thật, RLS, deploy hsg-ai-grade
-- [Rà soát giao diện 13/10](project_thachlab_ra_soat_giao_dien.md) — 10 điểm + 2 lỗi; phân công ở docs/PHAN-CONG-UI-2026-10-13.md
+- [Chương trình DT 16/10](project_thachlab_dt_audit.md) — DT-01/03/04/07/12/16
+- [Rà soát giao diện 13/10](project_thachlab_ra_soat_giao_dien.md) — 10 điểm + 2 lỗi; phân công ở
 - [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
 - [Báo live đang học](project_thachlab_bao_live_dang_hoc.md) — heartbeat mới ở lý thuyết, chưa có ở đề/luyện tập
-- [Mobile PWA](project_thachlab_mobile_pwa.md) — treo thử thiết bị thật/push
+- [Mobile PWA](project_thachlab_mobile_pwa.md) — push thông báo + nhắc lùi dần đã deploy 18/10
 - [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc, chờ thầy chốt mục 5
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — /dieu-khoan deploy 12/10; treo nhãn nguồn từng câu
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn xong 12/10, chờ thầy duyệt rồi đăng
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật
 - [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — deploy 12/10, chưa thử HS thật, thiếu nút làm lại
-- [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10 + Theo chương/Cả khoá (HSG: Theo mảng); treo thử 375px thật
-- [HS Test + gieo/dọn dữ liệu thử](project_thachlab_hs_test_accounts.md) — 2 tài khoản lớp 12, đổi mật khẩu bằng scripts/doi-mk-hs-test.mjs
-- [Rà UI HS tìm bài/ôn tập 17/10](project_thachlab_ui_hs_tim_bai_on_tap.md) — 4 đợt đã lên site; treo 2 điểm nhỏ
-- [Gán lớp cho đề](project_thachlab_gan_lop_de.md) — 17/10 gán hết trừ 10 đề AVCN (cố ý trống); RLS giấu đề lớp khác
+- [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10 + Theo chương/Cả khoá (HSG: Theo
 ## Việc mới 30/9
-- [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi x 5 giờ bám 7 bài hiện có; buổi 1 mẫu flip-1 đã lên web; treo duyệt bảng 12 buổi, chạy thử O0001 trên WinNC
+- [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi x 5 giờ bám 7 bài hiện có
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — xong 14/10; treo Gemini tìm ảnh, chưa deploy
-- [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — 18/10: dọn 1.650 dòng trùng + chặn trigger sinh trùng; sửa ~740 câu đề hư (Opus); viết lại lời giải ~800 câu sạch lớp 12; treo 17 câu thầy duyệt, ~3.200 câu sạch L10/11/12
-- [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10; chờ thầy bấm thử máy + công văn thể lệ; còn WP-00,02,07..11
-- [Cải tiến chương 1 L12 + toàn site](project_thachlab_cai_tien_chuong1_l12.md) — đo 112 bài 18/10, đợt A–G + prompt/agent, chưa sửa bài nào, chờ thầy chốt
+- [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — 19/10: viet-lai8 L12 kq-01..28 xong chưa ghi DB
+- [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10
+- [Cải tiến chương 1 L12 + toàn site](project_thachlab_cai_tien_chuong1_l12.md) — đo 112 bài 18/10
