@@ -14,7 +14,7 @@
 - Tốc độ dao động cực đại của phần tử: $v_{max} = \omega A = 2\pi f A$; so với tốc độ truyền: $\dfrac{v_{max}}{v} = \dfrac{2\pi A}{\lambda}$. **Hai tốc độ này khác nhau, đừng nhầm.**
 
 **Thao tác máy**
-- Phương trình sóng: lưu $\lambda$ vào `W`, rồi `CALC` với $x$ và $t$ ở chế độ **Rad**.
+- Phương trình sóng: lưu $\lambda$ vào `D`, rồi `CALC` với $x$ và $t$ ở chế độ **Rad**.
 - Tìm điểm cùng pha / ngược pha trong khoảng $[d_1, d_2]$: TABLE với $f(X) = \dfrac{X}{\lambda}$ (số bước sóng); các hàng có giá trị nguyên là cùng pha với nguồn, giá trị bán nguyên là ngược pha.
 
 **Bẫy**

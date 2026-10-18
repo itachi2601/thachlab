@@ -1,6 +1,6 @@
 # 12 bài luyện · Điện xoay chiều (WP-05)
 
-Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md`, **chưa thử trên máy thật**. Biến nhớ: dùng `W` cho $\omega$, tránh trùng ký hiệu đại lượng.
+Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md`, **chưa thử trên máy thật**. Biến nhớ: dùng `D` cho $\omega$, tránh trùng ký hiệu đại lượng.
 
 ---
 
@@ -54,7 +54,7 @@ $u_C = 126{,}3\cos(100\pi t - 2{,}622)$ V.
 **Đáp số.** (a) $R = 30{,}00\ \Omega$; $P_{max} = 180{,}0$ W. (b) $R = 41{,}23\ \Omega$; $P_{R\,max} = 140{,}5$ W.
 **Bấm máy**
 - $d = 70 - 30 = 40$. (a): `40−10`; `120²÷(2×40)`.
-- (b): `√(10²+40²)` → `STO W`; `120²÷(2×(W+10))`.
+- (b): `√(10²+40²)` → `STO D`; `120²÷(2×(D+10))`.
 - Kiểm bằng TABLE: `f(X) = 120²×X÷((X+10)²+40²)`, Start `30`, End `50`, Step `1`: lớn nhất quanh $X = 41$.
 **Bẫy.** (a) ĐK $r < d$ thoả ($10 < 40$). Nếu $r \geq 40$ thì $R=0$. Hai ý (a), (b) cho hai kết quả $R$ khác nhau, đừng lẫn.
 
@@ -62,8 +62,8 @@ $u_C = 126{,}3\cos(100\pi t - 2{,}622)$ V.
 **Đề.** Mạch $R = 30\ \Omega$, $Z_L = 40\ \Omega$, $U = 100$ V, $\omega = 100\pi$ rad/s, $C$ thay đổi. Tìm $Z_C$, $C$ và $U_{C\,max}$.
 **Đáp số.** $Z_C = 62{,}50\ \Omega$; $C = 50{,}93\ \mu$F; $U_{C\,max} = 166{,}7$ V.
 **Bấm máy**
-- `(30²+40²)÷40` → $62{,}5$, `STO W`.
-- `1÷(100π×W)×10^6` → $50{,}93\ \mu$F.
+- `(30²+40²)÷40` → $62{,}5$, `STO D`.
+- `1÷(100π×D)×10^6` → $50{,}93\ \mu$F.
 - `100×√(30²+40²)÷30`.
 - Kiểm: TABLE `f(X) = 100X÷√(30²+(40−X)²)`, Start `50`, End `75`, Step `2.5`.
 **Bẫy.** Đây không phải cộng hưởng ($Z_C = 40$ sẽ cho $U_C = 133{,}3$ V, nhỏ hơn).
@@ -72,7 +72,7 @@ $u_C = 126{,}3\cos(100\pi t - 2{,}622)$ V.
 **Đề.** Mạch $R = 40\ \Omega$, $Z_C = 30\ \Omega$, $U = 100$ V, $\omega = 100\pi$ rad/s, $L$ thay đổi. Tìm $Z_L$, $L$ và $U_{L\,max}$.
 **Đáp số.** $Z_L = 83{,}33\ \Omega$; $L = 0{,}2653$ H; $U_{L\,max} = 125{,}0$ V.
 **Bấm máy**
-- `(40²+30²)÷30` → `STO W`; `W÷(100π)`; `100×√(40²+30²)÷40`.
+- `(40²+30²)÷30` → `STO D`; `D÷(100π)`; `100×√(40²+30²)÷40`.
 **Bẫy.** Nhập $Z_L$ vào $L$ cần chia cho $\omega$.
 
 ## E9 ⭐⭐ $\omega$ thay đổi, $U_C$ cực đại

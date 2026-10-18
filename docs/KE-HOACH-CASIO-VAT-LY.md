@@ -43,7 +43,7 @@ Thầy dán văn bản vào phiên (sandbox không vào được thuvienphapluat
 | WP-03 | CĐ1 Dao động cơ | theo mục 2 | WP-00, WP-01 | nháp xong 18/10 (thể lệ tạm), đã kiểm 2 lần; chờ thầy duyệt + rà theo thể lệ |
 | WP-04 | CĐ2 Sóng cơ, giao thoa, sóng dừng | theo mục 2 | WP-03 | nháp xong 18/10 (thể lệ tạm), đã kiểm 2 lần; chờ thầy duyệt + rà theo thể lệ |
 | WP-05 | CĐ3 Điện xoay chiều (RLC, cực trị, công suất) | theo mục 2 | WP-01 (số phức) | nháp xong 18/10 (thể lệ tạm), đã kiểm 2 lần; chờ thầy duyệt + rà theo thể lệ |
-| WP-06 | CĐ4 Dao động–sóng điện từ, sóng ánh sáng | theo mục 2 | — | chưa soạn |
+| WP-06 | CĐ4 Dao động–sóng điện từ, sóng ánh sáng | theo mục 2 | — | nháp xong 18/10 (thể lệ tạm), đã kiểm 2 lần; chờ thầy duyệt + rà theo thể lệ |
 | WP-07 | CĐ5 Lượng tử, hạt nhân (độ hụt khối, phóng xạ, ln) | theo mục 2 | — | chưa soạn |
 | WP-08 | CĐ6 Nhiệt, khí lí tưởng, từ trường (chương trình mới) | theo mục 2 | WP-00 (có thi nội dung này không) | chưa soạn |
 | WP-09 | GĐ3: 20 bài tổng hợp + 10 bài thực nghiệm (bảng số liệu, đồ thị, sai số, hồi quy) | theo mục 2 | WP-03…08 | chưa soạn |
@@ -70,4 +70,5 @@ Bài tập tự chấm có đáp số → qua `docs/DANG-DE-TU-WORD.md` hoặc s
 - 2026-10-18 · WP-03: kiem-code bắt lỗi ở CÔNG THỨC trong lời giải (arctan sai, thiếu điều kiện A≥0, S tắt dần chỉ đúng khi dừng ở O) dù mọi đáp số đúng → khi soạn kỹ thuật/lời giải, luôn ghi điều kiện áp dụng của từng công thức; đáp số khớp chưa đủ để coi lời giải đúng.
 - 2026-10-18 · WP-04: kiem-code bắt số học trong phần "Bẫy" (65,17 chứ không phải 66,5) và giả thiết ẩn (nguồn kết hợp hay không) → mọi con số phụ trong Bẫy/ghi chú cũng phải sinh từ tinh.py, và đề có thao tác cộng nguồn phải nêu loại nguồn.
 - 2026-10-18 · Tách đề khỏi đáp án để kiểm độc lập: `sed` theo mẫu `**M1.` bắt cả khối đáp án (cũng bắt đầu bằng `**M1.`) → WP-03/04 mini-test từng bị kiểm không độc lập. Tách bằng `split('## Đáp án')[0]` rồi đọc lại file đề xem có lọt đáp án không; đã kiểm lại 12/12 khớp.
+- 2026-10-18 · Tên phím/biến máy: đã dùng biến `W` (không có trên fx-580VN X: chỉ A–F, X, Y, M) trong WP-03..06, kiem-code mới bắt ở WP-06 → khi soạn lệnh bấm máy, tra danh sách biến/phím trong so-tay.md (đã ghi rõ), và nhờ kiem-code rà tên phím/biến ngay từ gói đầu.
 - 2026-10-18 · Không đọc được thể lệ gốc (sandbox chặn thuvienphapluat.com) → xin thầy dán công văn ngay từ đầu, đừng soạn bài tập khi chưa chốt quy tắc làm tròn.

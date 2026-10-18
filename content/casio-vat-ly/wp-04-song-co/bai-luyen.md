@@ -8,8 +8,8 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đề.** Nguồn $u_0 = 3\cos(20\pi t)$ (cm, s), tốc độ truyền sóng $2$ m/s. Tính bước sóng; độ lệch pha giữa điểm $M$ cách nguồn $25$ cm và nguồn; li độ của $M$ tại $t = 0{,}04$ s.
 **Đáp số.** $\lambda = 20{,}00$ cm; $\Delta\varphi = 7{,}854$ rad $\left(= \dfrac{5\pi}{2}\right)$, tức vuông pha; $u_M = 1{,}763$ cm.
 **Bấm máy**
-- `λ`: `200÷10` $= 20$ cm, `STO W`.
-- Δφ: `2π×25÷W` $= 7{,}854$, `STO B`.
+- `λ`: `200÷10` $= 20$ cm, `STO D`.
+- Δφ: `2π×25÷D` $= 7{,}854$, `STO B`.
 - SETUP **Rad**, rồi `3cos(20π×0.04 − B)` $= 1{,}763$.
 **Bẫy.** $f = \dfrac{\omega}{2\pi} = 10$ Hz; $\lambda = \dfrac{200}{10}$ cm, không phải $\dfrac{2}{10}$ cm.
 
@@ -17,8 +17,8 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đề.** Nguồn âm điểm công suất $0{,}5$ W. Tính cường độ âm và mức cường độ âm tại điểm cách nguồn $10$ m. Nếu khoảng cách tăng gấp đôi, mức cường độ âm giảm bao nhiêu dB?
 **Đáp số.** $I = 3{,}979.10^{-4}$ W/m²; $L = 86{,}00$ dB; giảm $6{,}021$ dB (còn $79{,}98$ dB).
 **Bấm máy**
-- `0.5÷(4π×10²)`, `STO W`.
-- `10×log(W÷10^−12)`.
+- `0.5÷(4π×10²)`, `STO D`.
+- `10×log(D÷10^−12)`.
 - Giảm: `20×log(2)`.
 **Bẫy.** Dùng `log` (thập phân), không dùng `ln`.
 
@@ -26,7 +26,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đề.** Dây dài $0{,}9$ m hai đầu cố định, tần số $50$ Hz, quan sát được $3$ bụng. Tính bước sóng, tốc độ truyền sóng và tần số nhỏ nhất để có sóng dừng trên dây đó.
 **Đáp số.** $\lambda = 0{,}6000$ m; $v = 30{,}00$ m/s; $f_1 = 16{,}67$ Hz.
 **Bấm máy**
-- `2×0.9÷3` → `STO W`; `W×50`; rồi `30÷(2×0.9)`.
+- `2×0.9÷3` → `STO D`; `D×50`; rồi `30÷(2×0.9)`.
 **Bẫy.** $n$ là số **bụng**, không phải số nút.
 
 ## W4 ⭐ Tốc độ dao động và tốc độ truyền sóng
@@ -40,7 +40,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đề.** Hai nguồn $A, B$ cùng pha, $AB = 19$ cm, $f = 25$ Hz, tốc độ sóng $0{,}8$ m/s. Có bao nhiêu điểm cực đại và cực tiểu trên đoạn $AB$?
 **Đáp số.** $\lambda = 3{,}200$ cm; $11$ cực đại; $12$ cực tiểu.
 **Bấm máy**
-- `80÷25` $= 3{,}2$ cm, `STO W`; `19÷W` $= 5{,}9375$.
+- `80÷25` $= 3{,}2$ cm, `STO D`; `19÷D` $= 5{,}9375$.
 - Cực đại: $|k| < 5{,}9375$ nên $k = -5 \dots 5$.
 - Cực tiểu: $|k + 0{,}5| < 5{,}9375$ nên $k = -6 \dots 5$.
 **Bẫy.** Cực tiểu nhiều hơn cực đại một khi phần thập phân của $AB/\lambda$ lớn hơn 0,5.

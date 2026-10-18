@@ -12,7 +12,7 @@
 1. `SHIFT MENU` (SETUP) → **Đơn vị góc**: chọn **Độ** khi đề cho góc bằng độ; chọn **Rad** khi có `ωt`, `π`, `cos(5πt − π/3)`.
 2. SETUP → **Dạng hiển thị**: chọn dạng viết dòng (LineIO) khi cần xem số thập phân ngay; dạng toán (MathIO) hiện phân số, căn.
 3. Số chữ số: SETUP → **Fix / Sci / Norm**. Giữ **Norm** khi tính trung gian; chỉ đặt Fix hoặc Sci khi cần đọc kết quả theo quy tắc làm tròn của thể lệ.
-4. Biến nhớ: lưu bằng `SHIFT RCL` (STO) rồi phím biến (A, B, C, D, E, F, X, Y, M). Gọi bằng `ALPHA` + phím biến.
+4. Biến nhớ: lưu bằng `SHIFT RCL` (STO) rồi phím biến. **Chỉ có các biến A, B, C, D, E, F, X, Y, M** (không có W, Z…); `X` đang dùng cho SOLVE/TABLE nên đừng dùng làm ô lưu. Gọi bằng `ALPHA` + phím biến.
 5. `Ans` là kết quả lần tính liền trước; `Ans` giữ **đủ chữ số** dù màn hình hiện ít.
 
 **Bẫy**

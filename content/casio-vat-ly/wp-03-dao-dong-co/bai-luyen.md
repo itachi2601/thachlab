@@ -8,9 +8,9 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đề.** Con lắc lò xo $k = 50$ N/m, $m = 200$ g, biên độ $A = 6$ cm. Tính $\omega$, $T$, $f$, $v_{max}$, $a_{max}$ và cơ năng.
 **Đáp số.** $\omega = 15{,}81$ rad/s; $T = 0{,}3974$ s; $f = 2{,}516$ Hz; $v_{max} = 0{,}9487$ m/s; $a_{max} = 15{,}00$ m/s²; $W = 0{,}09000$ J.
 **Bấm máy**
-- Gõ `√(50÷0.2)`, `STO W`.
-- `2π÷W` cho $T$; `W÷(2π)` cho $f$.
-- `W×0.06` cho $v_{max}$; `W²×0.06` cho $a_{max}$; `0.5×50×0.06²` cho $W$.
+- Gõ `√(50÷0.2)`, `STO D`.
+- `2π÷D` cho $T$; `D÷(2π)` cho $f$.
+- `D×0.06` cho $v_{max}$; `W²×0.06` cho $a_{max}$; `0.5×50×0.06²` cho $W$.
 **Bẫy.** Đổi $m$ về kg và $A$ về m trước khi thế.
 
 ## D2 ⭐ Con lắc đơn góc nhỏ
@@ -97,7 +97,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đáp số.** (a) $\Delta A = 2{,}000$ mm. (b) $v_1 = 2{,}214$ m/s. (c) $S = 5{,}000$ m. (d) $N = 50$ nửa chu kì, $t = 7{,}025$ s.
 **Bấm máy**
 - `2×0.05×0.2×10÷100` → $0{,}002$.
-- $\omega$: `√(100÷0.2)` `STO W`; $v_1$: `W×(0.1−0.001)` (với $x_0 = 0{,}001$ m).
+- $\omega$: `√(100÷0.2)` `STO D`; $v_1$: `D×(0.1−0.001)` (với $x_0 = 0{,}001$ m).
 - `100×0.1²÷(2×0.05×0.2×10)`.
 - $N = 0{,}1 \div 0{,}002 = 50$; `50×π÷A`.
 **Bẫy.** $N$ nguyên nên vật dừng đúng ở O. Nếu $N$ có phần thập phân thì phải xét thêm.
