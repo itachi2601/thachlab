@@ -45,6 +45,12 @@ if (fs.existsSync(tkbFile)) for (const e of JSON.parse(fs.readFileSync(tkbFile, 
 else warn.push(`Chưa có TKB Cao Thắng (${tkbFile}) — portal cần đăng nhập, xem SKILL.md bước 2. Lịch dưới đây CHƯA tính giờ dạy ở Cao Thắng.`);
 
 // 4. lịch công tác
+const COMB: Record<string, string> = { acute: "\u0301", grave: "\u0300", tilde: "\u0303", circ: "\u0302", uml: "\u0308", caron: "\u030C", ring: "\u030A" };
+const decode = (h: string) =>
+  h.replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&([a-z])(acute|grave|tilde|circ|uml|caron|ring);/gi, (_, c, a) => (c + COMB[a.toLowerCase()]).normalize("NFC"))
+    .replace(/&dstrok;/g, "đ").replace(/&Dstrok;/g, "Đ")
+    .replace(/&([a-z]+);/gi, (m, n) => ({ amp: "&", quot: '"', ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", nbsp: " ", ndash: "–", hellip: "…" } as any)[n.toLowerCase()] ?? m);
 let ct = "";
 try {
   if (arg("--cong-tac")) ct = fs.readFileSync(arg("--cong-tac")!, "utf8");
@@ -53,7 +59,7 @@ try {
     const key = `den-ngay-${fmt(dayOf(7)).replace("/", "")}${dayOf(7).getFullYear()}`.toLowerCase();
     const m = [...list.matchAll(/href="([^"]*Lich-cong-tac[^"]*)"/gi)].map((x) => x[1]).find((h) => h.toLowerCase().includes(key));
     if (!m) warn.push("Chưa thấy trang lịch công tác của tuần này trên caothang.edu.vn (có thể chưa đăng).");
-    else ct = (await (await fetch(new URL(m, "https://caothang.edu.vn/m/").href)).text()).replace(/<(br|\/p|\/tr|\/li|\/div)[^>]*>/gi, "\n").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/[ \t]+/g, " ");
+    else ct = decode((await (await fetch(new URL(m, "https://caothang.edu.vn/m/").href)).text()).replace(/<(br|\/p|\/tr|\/li|\/div)[^>]*>/gi, "\n").replace(/<[^>]+>/g, " ")).replace(/[ \t]+/g, " ");
   }
 } catch (e) { warn.push(`Không tải được lịch công tác: ${e}`); }
 const ctLines: { day: number; text: string }[] = [];
@@ -72,15 +78,20 @@ for (const l of ctLines) {
 const kw = (rules.loc_lich_cong_tac as string[]).map((s) => s.toLowerCase());
 for (const b of blocks) {
   const low = b.text.toLowerCase();
-  if (!kw.some((k) => low.includes(k))) continue;
+  const hit = kw.find((k) => low.includes(k));
+  if (!hit) continue;
   const t = b.text.match(/^(\d{1,2})h(\d{0,2})/);
-  const start = t ? `${t[1].padStart(2, "0")}:${(t[2] || "00").padStart(2, "0")}` : "08:00";
-  evs.push({ weekday: b.day, start, end: hhmm(toMin(start) + 90), title: b.text.slice(0, 160), src: "lịch công tác", note: t ? "giờ kết thúc ước 90 phút" : "KHÔNG rõ giờ — kiểm bản gốc" });
+  const r = b.text.match(/^(\d{1,2})h(\d{0,2})\s*[-–]\s*(\d{1,2})h(\d{0,2})/);
+  const p2 = (h: string, m: string) => `${h.padStart(2, "0")}:${(m || "00").padStart(2, "0")}`;
+  const start = t ? p2(t[1], t[2]) : "08:00";
+  const end = r ? p2(r[3], r[4]) : hhmm(toMin(start) + 90);
+  evs.push({ weekday: b.day, start, end, title: b.text.slice(0, 400), src: "lịch công tác", note: `khớp "${hit}"; ` + (!t ? "KHÔNG rõ giờ — kiểm bản gốc" : r ? "" : "giờ kết thúc ước 90 phút") });
 }
 if (ct && !blocks.length) warn.push("Tải được trang công tác nhưng không tách được mục — dán nội dung vào file rồi dùng --cong-tac.");
 
 // 5. xếp thể thao vào chỗ trống
-const busy = (w: number, a: number, b: number) => evs.some((e) => e.weekday === w && toMin(e.start) < b && toMin(e.end) > a);
+const PAD = 45; // đệm di chuyển/thay đồ trước-sau buổi tập
+const busy = (w: number, a: number, b: number) => evs.some((e) => e.weekday === w && toMin(e.start) < b + PAD && toMin(e.end) > a - PAD);
 const slots = (spec: any, kind: string, n: number, avoidDays: number[]) => {
   const placed: number[] = [];
   const order = [2, 4, 6, 3, 5, 7, 1].filter((d) => !avoidDays.includes(d)); // tránh T2 (họp) và T7 (dạy HSG) nếu được
@@ -97,7 +108,7 @@ const slots = (spec: any, kind: string, n: number, avoidDays: number[]) => {
   return placed;
 };
 const sk = slots(rules.the_thao.truot_bang, "Trượt băng", rules.the_thao.truot_bang.min_buoi, [1]);
-slots(rules.the_thao.gym, "Tập gym", rules.the_thao.gym.min_buoi, [...sk.slice(0, 0)]);
+slots(rules.the_thao.gym, "Tập gym", rules.the_thao.gym.min_buoi, sk); // gym không trùng ngày trượt băng
 
 // 6. xuất
 const NAME = ["", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"];
