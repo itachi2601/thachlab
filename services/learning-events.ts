@@ -7,10 +7,14 @@ import { getSupabase } from "@/services/supabase";
 export type LearningEventKind = "open" | "leave" | "submit";
 
 interface PendingEvent {
-  lessonId: number;
+  lessonId?: number;
   itemId?: number;
-  kind: LearningEventKind;
+  kind: LearningEventKind | "read_depth";
   durationS?: number;
+  h3Max?: number;
+  h3Total?: number;
+  quizDone?: number;
+  quizTotal?: number;
   at: string;
 }
 
@@ -20,6 +24,10 @@ const MAX_QUEUE = 50; // trùng trần mỗi lần gọi của RPC
 let queue: PendingEvent[] = [];
 let timer: number | null = null;
 let listening = false;
+
+export function flushLearningEvents() {
+  flush();
+}
 
 function flush() {
   if (timer !== null) {
@@ -54,4 +62,28 @@ export function logLearningEvent(input: { lessonId: number; itemId?: number; kin
   });
   if (queue.length >= MAX_QUEUE) flush();
   else if (timer === null) timer = window.setTimeout(flush, FLUSH_MS);
+}
+
+/**
+ * Độ sâu đọc một mục lý thuyết (migration 20261018150000_read_depth_quiz): mốc <h3> sâu nhất đã cuộn tới
+ * và số câu .tl-quiz đã bấm. Máy chủ giữ MAX theo (HS, mục, ngày) nên gửi lặp mỗi lần ẩn tab không sai số.
+ */
+export function logReadDepth(input: { itemId: number; h3Max: number; h3Total: number; quizDone: number; quizTotal: number }) {
+  if (typeof window === "undefined") return;
+  const clamp = (n: number) => Math.max(0, Math.min(200, Math.round(n)));
+  const h3Total = clamp(input.h3Total);
+  const quizTotal = clamp(input.quizTotal);
+  if (h3Total === 0 && quizTotal === 0) return;
+  ensureListening();
+  queue.push({
+    kind: "read_depth",
+    itemId: input.itemId,
+    h3Total,
+    h3Max: Math.min(clamp(input.h3Max), h3Total),
+    quizTotal,
+    quizDone: Math.min(clamp(input.quizDone), quizTotal),
+    at: new Date().toISOString(),
+  });
+  // Gọi lúc rời mục/ẩn tab: gửi ngay (không chờ hẹn giờ 60 giây kẻo tab đóng mất lô); microtask để N mục cùng ẩn tab đi chung một lô.
+  queueMicrotask(flush);
 }

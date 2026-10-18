@@ -8,6 +8,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
 import TheoryRpBar, { TheoryRpHint, useTheoryRp } from "@/components/lessons/TheoryRpBar";
+import { useReadDepth } from "@/components/lessons/useReadDepth";
 import { useAuth } from "@/components/auth/AuthProvider";
 import AroundReadMore from "@/components/lessons/AroundReadMore";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
@@ -330,6 +331,16 @@ function TheoryBlock({
   const [resumeIndex, setResumeIndex] = useState<number | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
   const rp = useTheoryRp(item.id, loggedIn && open ? item.body_html : "", rootRef);
+  const quizTotal = useMemo(() => (item.body_html.match(/class="[^"]*\btl-quiz\b/g) ?? []).length, [item.body_html]);
+  // Việc 6: độ sâu cuộn (mốc h3) + tỉ lệ bấm quiz, gửi khi rời mục/ẩn tab — không thêm round-trip lúc tải.
+  useReadDepth({
+    itemId: item.id,
+    active: loggedIn && open && hasBody,
+    h3Total: total,
+    quizTotal,
+    rootRef,
+    openKey: allOpen ? "all" : Array.from(openSections).join(","),
+  });
   const isOpen = (i: number) => allOpen || openSections.has(i);
   // Số mốc chưa từng mở — hiện cạnh "Mở tất cả" để biết bài còn bao nhiêu (bản đồ "còn gì").
   const unopenedCount = allOpen ? 0 : Math.max(0, total - openSections.size);
