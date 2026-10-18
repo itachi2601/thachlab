@@ -41,6 +41,11 @@ const RULES: Rule[] = [
       const mantissaThapPhan = /,\d*$/.test(before); // 1,3.102 — có dấu phẩy thập phân → chắc là dạng khoa học
       const sauLaDonVi = /^\s*(?:[A-Za-zΩμ°%]|$|[.,;)])/.test(after) && !/^\s*[=+\-*\/×]/.test(after);
       if (n < 3 && !(sauLaDonVi && (mantissaThapPhan || (sign && !math)))) return null; // mũ 1,2 dễ nhầm với phép nhân
+      // Siết sau soát mẫu 18/10 (agent kiem-code, 70 ca → 4 sai + 6 nghi): mũ DƯƠNG mất cả dấu trừ / số nguyên nhiều chữ số là ca mơ hồ → để duyệt tay
+      if (!sign && /\d/.test(m.input[m.index - 1] ?? "") && !mantissaThapPhan) return null; // 63\cdot 105, 360.103: 105/360 là số thường
+      if (!sign && (/^\s*[A-Za-zμ]+1(?![\d])/.test(after) || (/^\s*[μnp]C\b/.test(after) && n >= 3))) return null; // s1, năm1 (mất cả mũ −1), μC/nC với mũ dương
+      if (!sign && mantissaThapPhan && (n <= 2 || /(?<![\d,])0,\d*$/.test(before))) return null; // 0,9.102 m, 8,1.102 m: có thể 10^-2
+      if (!sign && /^\s*(?:J|T|C|F|H)(?![A-Za-z])/.test(after) && (n >= 19 || /^\s*T\b/.test(after) || /,\d*$/.test(before) && /^\s*T/.test(after))) return null; // k=1,38.1023 J/K, B=2,5.105 T: phần lớn là mũ âm
       // trong công thức, "63.105+65.245" là số thập phân dùng dấu chấm → chỉ tự sửa khi mũ âm hoặc dùng \cdot/\times
       if (math && !mantissaThapPhan && /^\s*\.\s*$/.test(op)) return null;
       return `${d}${op}10${sup((sign ? (math ? "-" : "−") : "") + e, math)}`;
