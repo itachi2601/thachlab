@@ -316,3 +316,6 @@ memory `feedback_*`/`user_*`, script chưa commit, `scripts/logs/` (sao lưu DB)
 
 # Lời giải trắc nghiệm trong ngân hàng (18/10/2026)
 Viết/viết lại lời giải câu hỏi: theo `docs/QUY-TAC-LOI-GIAI.md` (có đoạn "vì sao phương án khác sai", chỉ nêu lỗi tư duy thật, HS ảo kiểm mẫu 16 câu trước khi ghi). Ghi hàng loạt chỉ vào `question_bank`, không đụng `exams`.
+
+# Sửa hàng loạt câu trong đề/ngân hàng — luôn qua SQL giao dịch (18/10/2026)
+`exams.questions` đổi ⇒ `content_hash` đổi ⇒ trigger cũ sinh dòng trùng trong `question_bank`. Từ migration `20261018140000` hàm đồng bộ đã cập nhật dòng cũ, nhưng script sửa hàng loạt vẫn phải: sinh chunk SQL ≤40 câu (tắt `trg_exams_sync_bank`, sửa ngân hàng + bản sao đề, đặt lại hash), sao lưu, và đếm số dòng ngân hàng trước/sau. Mẫu: `scripts/ap-dung-de-hu-opus.mts`, `scripts/sua-so-mu-dong-bo.mts`. Đừng dùng `sua-so-mu-ngan-hang.mts` (chỉ sửa ngân hàng).
