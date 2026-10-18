@@ -1,5 +1,5 @@
-import TroGiangAdmin from "@/components/tro-giang/TroGiangAdmin";
+import AdminSessionQueue from "@/components/tro-giang/AdminSessionQueue";
 
 export default function Page() {
-  return <TroGiangAdmin />;
+  return <AdminSessionQueue />;
 }

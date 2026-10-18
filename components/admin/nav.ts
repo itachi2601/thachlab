@@ -66,7 +66,7 @@ export const AREA_ITEMS: Record<AdminArea, AdminNavItem[]> = {
 };
 
 export const SHARED_ITEMS: AdminNavItem[] = [
-  { href: "/quan-tri/tro-giang", label: "Trợ giảng", desc: "Chấm điểm tháng và hệ số lương", icon: UserCheck },
+  { href: "/quan-tri/tro-giang", label: "Trợ giảng", desc: "Duyệt buổi, chấm điểm & lương tháng, video, giờ cả đội", icon: UserCheck },
   { href: "/quan-tri/phan-cong-giang-vien", label: "Phân công giảng viên", desc: "Gán khu vực quản trị cho giảng viên", icon: UserCog },
   { href: "/quan-tri/tin-nhan", label: "Tin nhắn", desc: "Gửi và đọc tin nhắn với học sinh", icon: MessageSquare },
   { href: "/quan-tri/bai-dang", label: "Thông báo / học liệu", desc: "Bài đăng hiển thị cho học sinh", icon: Megaphone },

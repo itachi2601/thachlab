@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AlertTriangle, Check, Undo2, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
+import { TA_PENDING_CHANGED } from "./TroGiangAdminNav";
 import { SESSION_TYPE_META } from "@/lib/tro-giang/constants";
 import { formatHours } from "@/lib/tro-giang/format";
 import { missingParts } from "@/lib/tro-giang/thieu";
@@ -40,6 +41,10 @@ function detailLine(s: TaPendingSession): string {
 
 export default function AdminSessionQueue({ onChanged }: { onChanged?: () => void }) {
   const toast = useToast();
+  const notifyChanged = () => {
+    onChanged?.();
+    window.dispatchEvent(new Event(TA_PENDING_CHANGED));
+  };
   const [rows, setRows] = useState<TaPendingSession[] | null>(null);
   const [baselines, setBaselines] = useState<Map<string, number>>(new Map());
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -65,7 +70,7 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
       await approveSessions([...selected]);
       toast("success", `Đã duyệt ${selected.size} buổi.`);
       reload();
-      onChanged?.();
+      notifyChanged();
     } catch (error) {
       toast("error", error instanceof Error ? error.message : "Không duyệt được.");
     } finally {
@@ -85,7 +90,7 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
       setRejectingId(null);
       setRejectReason("");
       reload();
-      onChanged?.();
+      notifyChanged();
     } catch (error) {
       toast("error", error instanceof Error ? error.message : "Không từ chối được.");
     } finally {
@@ -100,7 +105,7 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
       await returnSessionForFix(s, reason);
       toast("success", `Đã trả về ${s.assistant_name} để bổ sung.`);
       reload();
-      onChanged?.();
+      notifyChanged();
     } catch (error) {
       toast("error", error instanceof Error ? error.message : "Không trả về được.");
     } finally {

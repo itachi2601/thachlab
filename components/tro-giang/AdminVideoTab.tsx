@@ -136,6 +136,7 @@ export default function AdminVideoTab({ reloadKey = 0 }: { reloadKey?: number })
     try {
       await approveSessions([id]);
       toast("success", "Đã duyệt video.");
+      window.dispatchEvent(new Event("ta-pending-changed"));
       load();
     } catch (error) {
       toast("error", error instanceof Error ? error.message : "Không duyệt được.");
