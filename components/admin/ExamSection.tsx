@@ -650,6 +650,10 @@ export default function ExamSection({
                 <li key={i} className="flex flex-wrap items-center gap-2">
                   <button type="button" onClick={() => jumpToQuestion(i)} className="font-bold underline">Câu {i + 1}</button>
                   <span>{[...new Set(flags.map((f) => LINT_LABEL[f.code]))].join(" · ")}</span>
+                  {/* Đoạn làm quy tắc khớp: để thầy biết bắt đúng hay bắt nhầm, khỏi phải đoán rồi bấm "Bỏ qua". */}
+                  <code className="basis-full break-words rounded bg-black/10 px-1.5 py-0.5 text-[11px] text-red-200">
+                    {flags[0].ctx.replace(/^\w+:\s*/, "").slice(0, 120)}
+                  </code>
                   <button
                     type="button"
                     onClick={() => ignoreLint(i)}

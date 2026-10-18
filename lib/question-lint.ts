@@ -57,7 +57,8 @@ const CUT_END = /(?:\b(?:là|bằng|của|và|với|khi|thì|có|được|là:|�
 
 // 2.105 / 3,5.10-5 / 1,2×104 : "10" dính liền số mũ, không có ^ hay {  ·  5 m3, 2 cm2  ·  m/s2, kg/m3…
 export const MU_RULES: Record<string, RegExp> = {
-  muMatDau: /\d\s*(?:[.·×x*]|\\cdot|\\times)\s*10[-−–]?\d{1,2}(?![\d^_{])(?!\s*(?:[.,]\d))/g,
+  // Số mũ không bắt đầu bằng 0: "9·100/300" là 9 nhân 100 (10⁰ không ai viết), không phải "9·10" mất ^.
+  muMatDau: /\d\s*(?:[.·×x*]|\\cdot|\\times)\s*10[-−–]?[1-9]\d?(?![\d^_{])(?!\s*(?:[.,]\d))/g,
   donViDai: /\d\s*(?:\\,|\s)?(?:mm|cm|dm|km|m)[23]\b(?![\^_{])/g,
   donViThuong: /\b(?:m|rad|km|cm)\/s[23]\b|\b(?:kg|g|N|C)\/(?:m|cm|dm)[23]\b/g,
 };

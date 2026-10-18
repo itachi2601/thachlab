@@ -29,6 +29,7 @@ const EMPTY_COUNTS: Counts = {
 // Các lối tắt hay dùng nhất, gom từ danh sách điều hướng để không phải khai báo hai lần.
 const QUICK_HREFS = [
   "/quan-tri/dang-de",
+  "/quan-tri/sua-de",
   "/quan-tri/bai-hoc",
   "/quan-tri/cnc-bai-hoc",
   "/quan-tri/tinh-trang-may",
@@ -114,7 +115,13 @@ export default function AdminOverviewPage() {
                   <Icon size={18} />
                 </span>
                 <span className="min-w-0">
-                  <b>{item.label}</b>
+                  <b>
+                    {item.label}
+                    {/* Hai khu vực đều có mục "Bài học"/"Đăng đề" — gắn nhãn để khỏi bấm nhầm. */}
+                    <em className="ml-1.5 inline-block rounded-full bg-black/5 px-2 py-0.5 align-middle text-[11px] font-semibold not-italic text-[color:var(--a-faint)]">
+                      {cttc ? "CTTC" : "THPT – THCS"}
+                    </em>
+                  </b>
                   <span>{item.desc}</span>
                 </span>
               </Link>

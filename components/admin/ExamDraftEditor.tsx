@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
-import { ChevronDown, ChevronUp, Database, PencilLine, Repeat, Sparkles, Trash2 } from "lucide-react";
+import { useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { ChevronDown, ChevronUp, Database, PencilLine, Repeat, Sparkles, Trash2, Undo2 } from "lucide-react";
 import QuestionBankPickerModal, { normalizeQuestionText } from "@/components/admin/QuestionBankPickerModal";
 import { useToast } from "@/components/ui/Toast";
 import type {
@@ -61,6 +61,38 @@ function problems(q: ExamQuestion): string[] {
   }
   if (!q.explanation.trim()) out.push("chưa có lời giải");
   return out;
+}
+
+/** Ô một ý/phương án: tự giãn theo nội dung nên công thức dài không bị cắt; Enter không xuống dòng (ý luôn là một dòng). */
+function AutoText({
+  value,
+  onChange,
+  placeholder,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  placeholder?: string;
+}) {
+  const ref = useRef<HTMLTextAreaElement>(null);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.height = "auto";
+    el.style.height = `${el.scrollHeight}px`;
+  }, [value]);
+  return (
+    <textarea
+      ref={ref}
+      rows={1}
+      value={value}
+      onChange={(e) => onChange(e.target.value.replace(/\n/g, " "))}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") e.preventDefault();
+      }}
+      placeholder={placeholder}
+      className={`${inputCls} resize-none overflow-hidden font-mono text-xs leading-5`}
+    />
+  );
 }
 
 export default function ExamDraftEditor({
@@ -307,15 +339,35 @@ function QuestionCardEditor({
 }) {
   const issues = problems(q);
   const type = q.type === "essay" ? "short_answer" : q.type;
+  // Bản của câu lúc bấm "Sửa" — để "Hoàn tác câu này" đưa về đúng bản đó (ô nhập React không nhận Cmd+Z).
+  const [snapshot, setSnapshot] = useState<string | null>(null);
+  const changed = open && snapshot !== null && snapshot !== JSON.stringify(q);
   const btn = "inline-flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white disabled:opacity-30";
 
   return (
     <article id={`exam-q-${index}`} className="space-y-2">
       {preview}
       <div className="flex flex-wrap items-center gap-1">
-        <button type="button" onClick={onToggle} className={`${btn} ${open ? "bg-primary/20 text-primary" : ""}`}>
+        <button
+          type="button"
+          onClick={() => {
+            if (!open) setSnapshot(JSON.stringify(q));
+            onToggle();
+          }}
+          className={`${btn} ${open ? "bg-primary/20 text-primary" : ""}`}
+        >
           <PencilLine size={14} /> {open ? "Xong" : "Sửa"}
         </button>
+        {changed && (
+          <button
+            type="button"
+            onClick={() => onChange(JSON.parse(snapshot as string) as ExamQuestion)}
+            className={btn}
+            title="Bỏ mọi thay đổi của câu này kể từ lúc bấm Sửa"
+          >
+            <Undo2 size={14} /> Hoàn tác câu này
+          </button>
+        )}
         {onSwap && (
           <button type="button" onClick={onSwap} className={btn} title="Đổi câu khác từ ngân hàng câu hỏi">
             <Repeat size={14} /> Đổi câu
@@ -376,15 +428,14 @@ function QuestionCardEditor({
               >
                 {LETTERS[i]}
               </button>
-              <input
+              <AutoText
                 value={htmlToEditable(option).replace(/\n/g, " ")}
-                onChange={(e) => {
+                onChange={(v) => {
                   const options = [...q.options];
-                  options[i] = e.target.value;
+                  options[i] = v;
                   onChange({ ...q, options });
                 }}
                 placeholder={`Phương án ${LETTERS[i]}`}
-                className={`${inputCls} font-mono text-xs`}
               />
             </div>
           ))}
@@ -396,14 +447,13 @@ function QuestionCardEditor({
           {q.statements.map((s, i) => (
             <div key={i} className="grid gap-2 sm:grid-cols-[28px_minmax(0,1fr)_auto]">
               <span className="pt-2 text-sm font-bold text-slate-500">{String.fromCharCode(97 + i)})</span>
-              <input
+              <AutoText
                 value={htmlToEditable(s.text).replace(/\n/g, " ")}
-                onChange={(e) => {
-                  const statements = q.statements.map((st, k) => (k === i ? { ...st, text: e.target.value } : st));
+                onChange={(v) => {
+                  const statements = q.statements.map((st, k) => (k === i ? { ...st, text: v } : st));
                   onChange({ ...q, statements });
                 }}
                 placeholder="Nội dung ý"
-                className={`${inputCls} font-mono text-xs`}
               />
               <button
                 type="button"

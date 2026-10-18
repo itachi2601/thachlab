@@ -1,8 +1,8 @@
 "use client";
 
-import { countBlockingQuestions } from "@/lib/question-lint";
+import { activeLintFlags, blockingFlags, countBlockingQuestions } from "@/lib/question-lint";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ChevronDown } from "lucide-react";
 import ClassPicker from "@/components/admin/ClassPicker";
 import ExamSection, { type ExamSectionSeed, type TopicGroup } from "@/components/admin/ExamSection";
 import ExamQrPanel from "@/components/admin/ExamQrPanel";
@@ -13,7 +13,7 @@ import { canonicalizeQuestionTopics, type Difficulty, type ExamQuestion, type Sc
 import { fetchQuestionTopics, lessonTopics, outcomesOf, type QuestionTopic } from "@/services/analytics";
 import { classGrade, fetchClasses, setItemClasses } from "@/services/classes";
 import { BUNDLE_SCHEMA, validateBundle, type LessonBundle } from "@/services/lesson-import";
-import { questionsMissingFigure } from "@/services/question-figures";
+import { isMissingFigure, questionsMissingFigure } from "@/services/question-figures";
 import { getSupabase } from "@/services/supabase";
 
 const inputCls =
@@ -86,29 +86,39 @@ export default function ExamLibraryAdmin({
   // ----- Tìm đề -----
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("all");
+  const [classFilter, setClassFilter] = useState("");
+  // Danh sách đề thu lại khi đang sửa một đề (đỡ chiếm màn hình); mở lại bằng "Chọn đề khác".
+  const [listOpen, setListOpen] = useState(true);
   const [page, setPage] = useState(0);
   const [listRetry, setListRetry] = useState(0);
   const [result, setResult] = useState<{ rows: ExamListRow[]; count: number; key: string } | null>(null);
   const [failure, setFailure] = useState<{ key: string; message: string } | null>(null);
-  const requestKey = JSON.stringify([search, status, page, listRetry]);
+  const requestKey = JSON.stringify([search, status, classFilter, page, listRetry]);
 
   useEffect(() => {
     let cancelled = false;
     const timer = setTimeout(async () => {
       try {
-        let q = getSupabase()
+        // Chuỗi select ghép động (có thể nối thêm bản exam_classes!inner) nên kiểu suy luận của Supabase không áp dụng được.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        let q: any = getSupabase()
           .from("exams")
-          .select("id, title, published, duration_minutes, question_count, created_at, exam_classes(class_id)", { count: "exact" });
+          .select(
+            // Lọc theo lớp: nối thêm một bản exam_classes!inner để chỉ giữ đề có gán lớp đó, mà cột lớp vẫn liệt kê đủ.
+            `id, title, published, duration_minutes, question_count, created_at, exam_classes(class_id)${classFilter ? ", filter_cls:exam_classes!inner(class_id)" : ""}`,
+            { count: "exact" },
+          );
         const term = search.trim();
         if (/^#?\d+$/.test(term)) q = q.eq("id", Number(term.replace("#", "")));
         else if (term) q = q.ilike("title", `%${term.replace(/[\\%_]/g, "\\$&")}%`);
         if (status !== "all") q = q.eq("published", status === "published");
+        if (classFilter) q = q.eq("filter_cls.class_id", Number(classFilter));
         const { data, count: total, error } = await q
           .order("created_at", { ascending: false })
           .range(page * pageSize, (page + 1) * pageSize - 1);
         if (error) throw error;
         if (cancelled) return;
-        const rows = (data ?? []).map((r) => ({
+        const rows = ((data ?? []) as Array<{ id: number; title: string; published: boolean; duration_minutes: number; question_count: number; created_at: string; exam_classes: { class_id: number }[] | null }>).map((r) => ({
           id: r.id,
           title: r.title,
           published: r.published,
@@ -128,7 +138,7 @@ export default function ExamLibraryAdmin({
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [search, status, page, listRetry, requestKey]);
+  }, [search, status, classFilter, page, listRetry, requestKey]);
 
   const listError = failure?.key === requestKey ? failure.message : null;
   const listBusy = result?.key !== requestKey && !listError;
@@ -152,12 +162,17 @@ export default function ExamLibraryAdmin({
   const seedCounter = useRef(0);
   // Chọn đề xong tự cuộn tới phần sửa — không bắt kéo xuống cuối trang (N1).
   const editorRef = useRef<HTMLElement | null>(null);
+  // Đợi đề tải xong (chiều cao trang đã đổi) mới cuộn — cuộn lúc mới bấm thì trang còn trống nên không tới đâu.
+  const loadedId = full?.id ?? null;
   useEffect(() => {
-    if (selectedId !== null) editorRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [selectedId]);
+    if (loadedId === null) return;
+    const t = requestAnimationFrame(() => editorRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    return () => cancelAnimationFrame(t);
+  }, [loadedId]);
   async function selectExam(id: number) {
     if (loadingFull) return;
     setSelectedId(id);
+    setListOpen(false);
     setHighlightIndex(id === initialExamId ? initialQuestionIndex : null);
     setLoadingFull(true);
     setFull(null);
@@ -240,7 +255,15 @@ export default function ExamLibraryAdmin({
 
   const questions = examBundle?.exam.questions ?? [];
   const check = examBundle ? validateBundle(examBundle) : null;
-  const missingFigure = questionsMissingFigure(questions);
+  // Đề đã đăng thường có sẵn câu "nhắc đồ thị" mà thật ra mô tả đủ bằng số liệu: chỉ đòi xác nhận với câu
+  // MỚI thiếu hình (hoặc câu vừa bị sửa phần đề), còn câu đã thế từ lúc tải đề thì chỉ báo nhẹ, không chặn Lưu.
+  const legacyMissingStems = useMemo(
+    () => new Set((full?.questions ?? []).filter((q) => isMissingFigure(q)).map((q) => q.question)),
+    [full],
+  );
+  const allMissingFigure = questionsMissingFigure(questions);
+  const missingFigure = allMissingFigure.filter((n) => !legacyMissingStems.has(questions[n - 1]?.question));
+  const legacyMissingCount = allMissingFigure.length - missingFigure.length;
   const figureAck = figureAckFor !== null && figureAckFor === examBundle;
   const setFigureAck = (v: boolean) => setFigureAckFor(v ? examBundle : null);
   const lintBlocked = countBlockingQuestions(questions);
@@ -316,7 +339,21 @@ export default function ExamLibraryAdmin({
         </p>
       </header>
 
-      <section className="space-y-3 rounded-2xl border border-line bg-surface-2 p-4">
+      {!listOpen && selectedId !== null && (
+        <button
+          type="button"
+          onClick={() => setListOpen(true)}
+          className="flex w-full items-center justify-between gap-2 rounded-2xl border border-line bg-surface-2 px-4 py-3 text-left text-sm font-semibold text-ink"
+        >
+          <span className="min-w-0 truncate">
+            Đang sửa đề #{selectedId}
+            {full ? ` · ${full.title}` : ""}
+          </span>
+          <span className="shrink-0 text-xs font-semibold text-primary">Chọn đề khác</span>
+        </button>
+      )}
+
+      <section className={`space-y-3 rounded-2xl border border-line bg-surface-2 p-4 ${listOpen || selectedId === null ? "" : "hidden"}`}>
         <div className="flex flex-wrap gap-2">
           <input
             value={search}
@@ -339,6 +376,22 @@ export default function ExamLibraryAdmin({
             <option value="published">Đã xuất bản</option>
             <option value="draft">Bản nháp</option>
           </select>
+          <select
+            value={classFilter}
+            onChange={(e) => {
+              setClassFilter(e.target.value);
+              setPage(0);
+            }}
+            aria-label="Lọc theo lớp"
+            className={`${selectCls} w-auto`}
+          >
+            <option value="">Mọi lớp</option>
+            {classes.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div aria-live="polite" className="text-xs text-muted">
@@ -354,7 +407,7 @@ export default function ExamLibraryAdmin({
         )}
         {!listBusy && !listError && rows.length === 0 && <p className="py-6 text-center text-sm text-muted">Không có đề phù hợp.</p>}
 
-        <div className="max-h-72 divide-y divide-line overflow-y-auto rounded-xl border border-line">
+        <div className="divide-y divide-line overflow-hidden rounded-xl border border-line">
           {rows.map((r) => (
             <button
               key={r.id}
@@ -414,6 +467,12 @@ export default function ExamLibraryAdmin({
                 </label>
               </div>
 
+              <details className="group rounded-2xl border border-line bg-surface-2/60">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-semibold text-ink">
+                  <span>Mã QR chiếu lên bảng · Gửi trợ giảng xem trước</span>
+                  <ChevronDown size={16} className="transition group-open:rotate-180" />
+                </summary>
+                <div className="space-y-4 px-4 pb-4">
               <ExamQrPanel
                 examId={full.id}
                 title={full.title}
@@ -432,7 +491,24 @@ export default function ExamLibraryAdmin({
               />
 
               <ExamTaSendPanel examId={full.id} />
+                </div>
+              </details>
 
+              <details className="group rounded-2xl border border-line bg-surface-2/60">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 text-sm font-semibold text-ink">
+                  <span className="min-w-0">
+                    Cài đặt đề
+                    <span className="ml-2 text-xs font-normal text-muted">
+                      {[
+                        passScoreInput.trim() ? `đạt ≥ ${passScoreInput}` : "chưa đặt điểm đạt",
+                        grade ? `khối ${grade}` : "chưa chọn khối",
+                        classIdsInput.length ? classNames(classIdsInput) : "toàn trường",
+                      ].join(" · ")}
+                    </span>
+                  </span>
+                  <ChevronDown size={16} className="shrink-0 transition group-open:rotate-180" />
+                </summary>
+                <div className="space-y-4 px-4 pb-4">
               <div className="grid gap-3 sm:grid-cols-2">
                 <label className="text-xs font-semibold text-muted">
                   Điểm đạt, thang 10 (để trống = không đánh giá đạt)
@@ -460,6 +536,8 @@ export default function ExamLibraryAdmin({
               </div>
 
               <ClassPicker selected={classIdsInput} onChange={setClassIdsInput} />
+                </div>
+              </details>
 
               <ExamSection
                 subjectCode={full.subject_code}
@@ -480,24 +558,55 @@ export default function ExamLibraryAdmin({
                 </ul>
               )}
               {missingFigure.length > 0 && <MissingFigureNotice nums={missingFigure} ack={figureAck} onAck={setFigureAck} />}
+              {legacyMissingCount > 0 && (
+                <p className="text-xs text-muted">
+                  {legacyMissingCount} câu có sẵn từ lúc đề được đăng nhắc tới đồ thị/hình nhưng không có ảnh — không chặn Lưu; chỉ cần xem lại nếu học sinh báo thiếu hình.
+                </p>
+              )}
 
-              <div className="sticky bottom-4 flex flex-wrap items-center gap-3 rounded-2xl border border-line bg-panel/95 p-4 shadow-2xl backdrop-blur">
-                <button
-                  type="button"
-                  onClick={save}
-                  disabled={!canSave}
-                  className="rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  {saving ? "Đang lưu…" : "Lưu thay đổi"}
-                </button>
-                {lintBlocked > 0 && (
-                  <span className="text-xs font-semibold text-red-300">Còn {lintBlocked} câu lỗi — sửa hoặc “Bỏ qua cảnh báo” ở khung đỏ.</span>
+              <div className="sticky bottom-20 space-y-2 rounded-2xl border border-line bg-panel/95 p-3 shadow-2xl backdrop-blur sm:bottom-4 sm:p-4">
+                {questions.length > 1 && (
+                  <nav aria-label="Nhảy tới câu" className="flex items-center gap-1.5 overflow-x-auto pb-1">
+                    <span className="shrink-0 text-xs font-semibold text-muted">Câu</span>
+                    {questions.map((q, i) => {
+                      const bad = blockingFlags(activeLintFlags(q)).length > 0;
+                      return (
+                        <button
+                          key={i}
+                          type="button"
+                          onClick={() => document.getElementById(`exam-q-${i}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
+                          className={`h-9 min-w-9 shrink-0 rounded-lg px-2 text-xs font-bold ${
+                            bad ? "bg-red-500/20 text-red-300" : "bg-surface-2 text-ink hover:bg-primary/10"
+                          }`}
+                          aria-label={`Câu ${i + 1}${bad ? " (có lỗi)" : ""}`}
+                        >
+                          {i + 1}
+                        </button>
+                      );
+                    })}
+                  </nav>
                 )}
-                {canSave && (
-                  <span className="inline-flex items-center gap-1 text-xs text-emerald-300">
-                    <CheckCircle2 size={14} /> Sẵn sàng lưu
-                  </span>
-                )}
+                <div className="flex flex-wrap items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={save}
+                    disabled={!canSave}
+                    className="rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    {saving ? "Đang lưu…" : "Lưu thay đổi"}
+                  </button>
+                  {lintBlocked > 0 && (
+                    <span className="text-xs font-semibold text-red-300">Còn {lintBlocked} câu lỗi — sửa hoặc “Bỏ qua cảnh báo” ở khung đỏ.</span>
+                  )}
+                  {lintBlocked === 0 && missingFigure.length > 0 && !figureAck && (
+                    <span className="text-xs font-semibold text-red-300">Còn {missingFigure.length} câu nhắc hình mà thiếu ảnh — tích xác nhận ở khung đỏ.</span>
+                  )}
+                  {canSave && (
+                    <span className="inline-flex items-center gap-1 text-xs text-emerald-300">
+                      <CheckCircle2 size={14} /> Sẵn sàng lưu
+                    </span>
+                  )}
+                </div>
               </div>
             </>
           )}
