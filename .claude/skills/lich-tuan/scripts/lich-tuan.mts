@@ -90,7 +90,8 @@ for (const b of blocks) {
   const where = parts[0].match(/tại\s+(.+)$/i)?.[1];
   const title = parts.length > 1 ? parts[1] : parts[0];
   const tp = parts.slice(2).join(" | ");
-  evs.push({ weekday: b.day, start, end, title: title.slice(0, 200), where, src: "lịch công tác", note: [tp.slice(0, 300), `khớp "${hit}"`, !t ? "KHÔNG rõ giờ — kiểm bản gốc" : r ? "" : "giờ kết thúc ước 90 phút"].filter(Boolean).join(" · ") });
+  evs.push({ weekday: b.day, start, end, title: title.slice(0, 200), where, src: "lịch công tác", note: [tp.slice(0, 300), !t ? "KHÔNG rõ giờ — kiểm bản gốc" : r ? "" : "giờ kết thúc ước 90 phút"].filter(Boolean).join(" · ") });
+  console.error(`  [lịch công tác] "${title.slice(0, 60)}" khớp "${hit}"`);
 }
 if (ct && !blocks.length) warn.push("Tải được trang công tác nhưng không tách được mục — dán nội dung vào file rồi dùng --cong-tac.");
 
