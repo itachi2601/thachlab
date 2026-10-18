@@ -311,6 +311,7 @@ export interface TaPendingSession extends TaSessionListItem {
   policy?: SessionPolicy;
   assistant_id: string;
   assistant_name: string;
+  assistant_user_id: string | null;
   touch_names: string[];
   error_note: string | null;
   homework_given: string | null;
@@ -326,17 +327,21 @@ export async function fetchPendingSessions(): Promise<TaPendingSession[]> {
   const { data, error } = await getSupabase()
     .from("ta_sessions")
     .select(
-      "*, ta_assistants(short_name)",
+      "*, ta_assistants(short_name, user_id)",
     )
     .eq("status", "submitted")
     .order("work_date", { ascending: false });
   if (error) throw error;
   return (data ?? []).map((row) => {
     const { ta_assistants: joined, ...rest } = row as Record<string, unknown> & {
-      ta_assistants: { short_name: string } | { short_name: string }[] | null;
+      ta_assistants: { short_name: string; user_id: string | null } | { short_name: string; user_id: string | null }[] | null;
     };
     const assistant = Array.isArray(joined) ? joined[0] : joined;
-    return { ...rest, assistant_name: assistant?.short_name ?? "—" } as TaPendingSession;
+    return {
+      ...rest,
+      assistant_name: assistant?.short_name ?? "—",
+      assistant_user_id: assistant?.user_id ?? null,
+    } as TaPendingSession;
   });
 }
 
@@ -354,6 +359,20 @@ export async function rejectSession(id: string, reason: string): Promise<void> {
     .from("ta_sessions")
     .update({ status: "rejected", reject_reason: reason })
     .eq("id", id);
+  if (error) throw error;
+}
+
+/** Trả phiếu về bổ sung: dùng trạng thái 'rejected' + reject_reason, rồi báo trong web cho trợ giảng. */
+export async function returnSessionForFix(s: TaPendingSession, reason: string): Promise<void> {
+  await rejectSession(s.id, reason);
+  if (!s.assistant_user_id) return;
+  const { error } = await getSupabase().rpc("notify_user", {
+    p_user: s.assistant_user_id,
+    p_kind: "ta_session_returned",
+    p_title: "Phiếu buổi làm việc cần bổ sung",
+    p_body: `Buổi ${new Date(s.work_date).toLocaleDateString("vi-VN")}: ${reason}`,
+    p_href: "/tro-giang",
+  });
   if (error) throw error;
 }
 

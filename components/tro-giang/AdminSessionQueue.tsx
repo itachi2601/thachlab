@@ -1,15 +1,17 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { AlertTriangle, Check, X } from "lucide-react";
+import { AlertTriangle, Check, Undo2, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
 import { SESSION_TYPE_META } from "@/lib/tro-giang/constants";
 import { formatHours } from "@/lib/tro-giang/format";
+import { missingParts } from "@/lib/tro-giang/thieu";
 import {
   approveSessions,
   fetchPendingSessions,
   fetchTouchBaselines,
   rejectSession,
+  returnSessionForFix,
   type TaPendingSession,
 } from "@/lib/tro-giang/queries";
 
@@ -91,6 +93,21 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
     }
   }
 
+  async function returnForFix(s: TaPendingSession) {
+    const reason = `Thiếu: ${missingParts(s).join(", ")}. Con bổ sung rồi gửi lại nhé.`;
+    setBusy(true);
+    try {
+      await returnSessionForFix(s, reason);
+      toast("success", `Đã trả về ${s.assistant_name} để bổ sung.`);
+      reload();
+      onChanged?.();
+    } catch (error) {
+      toast("error", error instanceof Error ? error.message : "Không trả về được.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
   if (rows === null) return <p className="text-slate-400">Đang tải hàng chờ duyệt…</p>;
 
   if (rows.length === 0)
@@ -100,18 +117,25 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
       </p>
     );
 
+  const complete = rows.filter((r) => missingParts(r).length === 0);
+  const incompleteCount = rows.length - complete.length;
+  const allCompleteSelected = complete.length > 0 && complete.every((r) => selected.has(r.id));
+
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-3">
         <label className="flex items-center gap-2 text-sm text-slate-300">
           <input
             type="checkbox"
-            checked={selected.size === rows.length}
-            onChange={(e) => setSelected(e.target.checked ? new Set(rows.map((r) => r.id)) : new Set())}
+            checked={allCompleteSelected}
+            onChange={(e) => setSelected(e.target.checked ? new Set(complete.map((r) => r.id)) : new Set())}
             className="h-4 w-4 accent-blue-500"
           />
-          Chọn tất cả ({rows.length})
+          Chọn tất cả phiếu đủ dữ liệu ({complete.length})
         </label>
+        {incompleteCount > 0 && (
+          <span className="text-xs font-semibold text-red-300">Bỏ qua {incompleteCount} phiếu thiếu dữ liệu</span>
+        )}
         <button
           type="button"
           disabled={selected.size === 0 || busy}
@@ -134,6 +158,8 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
           baseline > 0 &&
           s.student_touches >= baseline * ANOMALY_RATIO;
 
+        const missing = missingParts(s);
+
         return (
           <div
             key={s.id}
@@ -155,6 +181,12 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
                 <Icon size={16} />
               </span>
               <div className="min-w-0 flex-1">
+                {missing.length > 0 && (
+                  <p className="mb-1.5 inline-flex items-center gap-1.5 rounded-full bg-red-500/20 px-2.5 py-1 text-xs font-bold text-red-300">
+                    <AlertTriangle size={12} />
+                    Thiếu: {missing.join(", ")}
+                  </p>
+                )}
                 <p className="font-semibold text-white">
                   {s.assistant_name} · {meta.label}
                   {s.class_label ? ` · ${s.class_label}` : ""}
@@ -185,6 +217,18 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
                 <X size={14} />
               </button>
             </div>
+
+            {missing.length > 0 && (
+              <button
+                type="button"
+                disabled={busy}
+                onClick={() => returnForFix(s)}
+                className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-red-600 px-3 py-2.5 text-sm font-bold text-white disabled:opacity-40"
+              >
+                <Undo2 size={14} />
+                Trả về bổ sung
+              </button>
+            )}
 
             {rejectingId === s.id && (
               <div className="mt-3 flex flex-wrap gap-2 border-t border-white/10 pt-3">
