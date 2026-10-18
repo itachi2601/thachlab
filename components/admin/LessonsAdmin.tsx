@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import ExamPicker from "@/components/admin/ExamPicker";
 import LaTexEditor from "@/components/admin/LaTexEditor";
@@ -728,10 +729,13 @@ function LessonDescriptionField({ lesson, onSaved }: { lesson: Lesson; onSaved: 
 function ChapterLessonsEditor({
   chapter,
   schoolClass,
+  initialLessonId = null,
   onBack,
 }: {
   chapter: Chapter;
   schoolClass: SchoolClass | null;
+  /** Mở thẳng bài này khi vào chương (nhảy từ ô tìm). */
+  initialLessonId?: number | null;
   onBack: () => void;
 }) {
   const toast = useToast();
@@ -743,11 +747,18 @@ function ChapterLessonsEditor({
   const [chapterDueAt, setChapterDueAt] = useState("");
   const [assigning, setAssigning] = useState(false);
 
+  const [jumped, setJumped] = useState(false);
   const reload = useCallback(() => {
-    fetchLessons(true).then((ls) =>
-      setLessons(ls.filter((l) => l.chapter_id === chapter.id)),
-    );
-  }, [chapter.id]);
+    fetchLessons(true).then((ls) => {
+      const inChapter = ls.filter((l) => l.chapter_id === chapter.id);
+      setLessons(inChapter);
+      if (initialLessonId && !jumped) {
+        setJumped(true);
+        const target = inChapter.find((l) => l.id === initialLessonId);
+        if (target) setOpenLesson(target);
+      }
+    });
+  }, [chapter.id, initialLessonId, jumped]);
   useEffect(reload, [reload]);
 
   useEffect(() => {
@@ -1034,6 +1045,74 @@ function ChapterLessonsEditor({
   );
 }
 
+// ---------- Ô tìm bài theo tên, bấm là nhảy thẳng tới bài ----------
+function LessonJumpSearch({
+  chapters,
+  classes,
+  onPick,
+}: {
+  chapters: Chapter[];
+  classes: SchoolClass[];
+  onPick: (chapterId: number, lessonId: number) => void;
+}) {
+  const [q, setQ] = useState("");
+  const [hits, setHits] = useState<Array<{ id: number; title: string; chapter_id: number }>>([]);
+  useEffect(() => {
+    const term = q.trim().replace(/[\\%_,()*]/g, " ").trim();
+    if (term.length < 2) {
+      Promise.resolve().then(() => setHits([]));
+      return;
+    }
+    const timer = setTimeout(async () => {
+      const { data } = await getSupabase()
+        .from("lessons")
+        .select("id, title, chapter_id")
+        .ilike("title", `%${term}%`)
+        .order("chapter_id")
+        .order("sort_order")
+        .limit(12);
+      setHits((data ?? []) as Array<{ id: number; title: string; chapter_id: number }>);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [q]);
+  return (
+    <section className="admin-card">
+      <label className="mb-2 block text-sm font-medium text-ink" htmlFor="lesson-jump">
+        Tìm bài theo tên
+      </label>
+      <input
+        id="lesson-jump"
+        value={q}
+        onChange={(e) => setQ(e.target.value)}
+        placeholder="Gõ tên bài, ví dụ: sự chuyển thể, bài 7…"
+        className={`${inputCls} w-full`}
+      />
+      {hits.length > 0 && (
+        <ul className="mt-2 divide-y divide-line overflow-hidden rounded-xl border border-line">
+          {hits.map((h) => {
+            const ch = chapters.find((c) => c.id === h.chapter_id);
+            const cls = ch ? classes.filter((c) => ch.classIds.includes(c.id)).map((c) => c.name).join(", ") : "";
+            return (
+              <li key={h.id}>
+                <button
+                  type="button"
+                  onClick={() => onPick(h.chapter_id, h.id)}
+                  className="flex min-h-11 w-full flex-col items-start px-3 py-2 text-left hover:bg-surface-2"
+                >
+                  <span className="text-sm font-semibold text-ink">{h.title}</span>
+                  <span className="text-xs text-muted">
+                    {[cls || "Toàn trường", ch?.title].filter(Boolean).join(" · ")}
+                  </span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </section>
+  );
+}
+
 // ---------- Cấp cao nhất: danh sách chương ----------
 export default function LessonsAdmin() {
   const toast = useToast();
@@ -1043,6 +1122,8 @@ export default function LessonsAdmin() {
   const [title, setTitle] = useState("");
   const [selectedClassId, setSelectedClassId] = useState<number | null>(null);
   const [selectedSubjectCode, setSelectedSubjectCode] = useState("vat-ly");
+  const [jumpLessonId, setJumpLessonId] = useState<number | null>(null);
+  const urlLessonId = Number(useSearchParams().get("lesson")) || null;
 
   const reload = useCallback(() => {
     fetchChapters().then(setChapters);
@@ -1055,6 +1136,33 @@ export default function LessonsAdmin() {
       setSelectedClassId((current) => current ?? items[0]?.id ?? null);
     });
   }, []);
+
+  // Nhảy thẳng tới một bài: tự chọn lớp/môn/chương rồi mở bài (từ ô tìm hoặc ?lesson=ID của Ctrl+K).
+  const jumpToLesson = useCallback(
+    (chapterId: number, lessonId: number) => {
+      const ch = chapters.find((c) => c.id === chapterId);
+      if (!ch) return;
+      const cls = classes.find((c) => ch.classIds.includes(c.id)) ?? classes[0];
+      if (cls) setSelectedClassId(cls.id);
+      setSelectedSubjectCode(ch.subjectCode);
+      setJumpLessonId(lessonId);
+      setOpenChapter(ch);
+    },
+    [chapters, classes],
+  );
+  useEffect(() => {
+    if (!urlLessonId || chapters.length === 0 || classes.length === 0) return;
+    getSupabase()
+      .from("lessons")
+      .select("chapter_id")
+      .eq("id", urlLessonId)
+      .maybeSingle()
+      .then(({ data }) => {
+        if (data) jumpToLesson((data as { chapter_id: number }).chapter_id, urlLessonId);
+      });
+    // chỉ chạy một lần khi dữ liệu nền đã tải xong
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [urlLessonId, chapters.length > 0, classes.length > 0]);
 
   const selectedClass =
     classes.find((schoolClass) => schoolClass.id === selectedClassId) ?? null;
@@ -1078,7 +1186,11 @@ export default function LessonsAdmin() {
       <ChapterLessonsEditor
         chapter={openChapter}
         schoolClass={selectedClass}
-        onBack={() => setOpenChapter(null)}
+        initialLessonId={jumpLessonId}
+        onBack={() => {
+          setOpenChapter(null);
+          setJumpLessonId(null);
+        }}
       />
     );
 
@@ -1121,6 +1233,7 @@ export default function LessonsAdmin() {
 
   return (
     <div className="space-y-6">
+      <LessonJumpSearch chapters={chapters} classes={classes} onPick={jumpToLesson} />
       <section className="admin-card">
         <p className="mb-3 text-sm font-medium text-ink">
           1. Chọn lớp

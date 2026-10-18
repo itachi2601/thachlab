@@ -2,6 +2,7 @@
 
 import { activeLintFlags, blockingFlags, countBlockingQuestions } from "@/lib/question-lint";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import ClassPicker from "@/components/admin/ClassPicker";
 import ExamSection, { type ExamSectionSeed, type TopicGroup } from "@/components/admin/ExamSection";
@@ -84,16 +85,64 @@ export default function ExamLibraryAdmin({
   }
 
   // ----- Tìm đề -----
-  const [search, setSearch] = useState("");
-  const [status, setStatus] = useState("all");
-  const [classFilter, setClassFilter] = useState("");
+  // Bộ lọc giữ trong URL (?q=&st=&cls=&ch=&ls=&recent=) để quay lại từ trang khác không mất.
+  const sp = useSearchParams();
+  const pathname = usePathname();
+  const [search, setSearch] = useState(sp.get("find") ?? "");
+  const [status, setStatus] = useState(sp.get("st") ?? "all");
+  const [classFilter, setClassFilter] = useState(sp.get("cls") ?? "");
+  const [chapterFilter, setChapterFilter] = useState(sp.get("ch") ?? "");
+  const [lessonFilter, setLessonFilter] = useState(sp.get("ls") ?? "");
+  // Mặc định chỉ hiện đề đăng 30 ngày gần đây (945 đề / 79 trang quá dài); tắt để xem hết.
+  // Đang tìm theo tên/mã hoặc đã chọn bài thì không cắt theo ngày.
+  const [recentOnly, setRecentOnly] = useState(sp.get("recent") !== "0");
+  const [chapters, setChapters] = useState<Array<{ id: number; title: string; subject_code: string | null; classIds: number[] }>>([]);
+  const [lessonsAll, setLessonsAll] = useState<Array<{ id: number; title: string; chapter_id: number }>>([]);
+  useEffect(() => {
+    const sb = getSupabase();
+    Promise.all([
+      sb.from("chapters").select("id, title, subject_code, sort_order, chapter_classes(class_id)").order("sort_order"),
+      sb.from("lessons").select("id, title, chapter_id, sort_order").order("sort_order"),
+    ]).then(([c, l]) => {
+      setChapters(
+        ((c.data ?? []) as Array<{ id: number; title: string; subject_code: string | null; chapter_classes: { class_id: number }[] | null }>).map((r) => ({
+          id: r.id,
+          title: r.title,
+          subject_code: r.subject_code,
+          classIds: (r.chapter_classes ?? []).map((x) => x.class_id),
+        })),
+      );
+      setLessonsAll((l.data ?? []) as Array<{ id: number; title: string; chapter_id: number }>);
+    });
+  }, []);
+  const chapterOptions = useMemo(
+    () => chapters.filter((ch) => !classFilter || ch.classIds.length === 0 || ch.classIds.includes(Number(classFilter))),
+    [chapters, classFilter],
+  );
+  const lessonOptions = useMemo(
+    () => lessonsAll.filter((l) => chapterFilter && l.chapter_id === Number(chapterFilter)),
+    [lessonsAll, chapterFilter],
+  );
+  useEffect(() => {
+    const u = new URLSearchParams(window.location.search);
+    const set = (k: string, v: string, def = "") => (v && v !== def ? u.set(k, v) : u.delete(k));
+    set("find", search);
+    set("st", status, "all");
+    set("cls", classFilter);
+    set("ch", chapterFilter);
+    set("ls", lessonFilter);
+    if (recentOnly) u.delete("recent");
+    else u.set("recent", "0");
+    const qs = u.toString();
+    window.history.replaceState(null, "", qs ? `${pathname}?${qs}` : pathname);
+  }, [search, status, classFilter, chapterFilter, lessonFilter, recentOnly, pathname]);
   // Danh sách đề thu lại khi đang sửa một đề (đỡ chiếm màn hình); mở lại bằng "Chọn đề khác".
   const [listOpen, setListOpen] = useState(true);
   const [page, setPage] = useState(0);
   const [listRetry, setListRetry] = useState(0);
   const [result, setResult] = useState<{ rows: ExamListRow[]; count: number; key: string } | null>(null);
   const [failure, setFailure] = useState<{ key: string; message: string } | null>(null);
-  const requestKey = JSON.stringify([search, status, classFilter, page, listRetry]);
+  const requestKey = JSON.stringify([search, status, classFilter, chapterFilter, lessonFilter, recentOnly, page, listRetry]);
 
   useEffect(() => {
     let cancelled = false;
@@ -109,6 +158,18 @@ export default function ExamLibraryAdmin({
             { count: "exact" },
           );
         const term = search.trim();
+        // Lọc theo Chương/Bài: đề gắn vào bài qua lesson_items.exam_ids.
+        if (lessonFilter || chapterFilter) {
+          const sb = getSupabase();
+          let lessonIds = lessonFilter ? [Number(lessonFilter)] : lessonsAll.filter((l) => l.chapter_id === Number(chapterFilter)).map((l) => l.id);
+          if (lessonIds.length === 0) lessonIds = [-1];
+          const { data: items, error: itemErr } = await sb.from("lesson_items").select("exam_ids").in("lesson_id", lessonIds);
+          if (itemErr) throw itemErr;
+          const ids = Array.from(new Set((items ?? []).flatMap((i: { exam_ids: number[] | null }) => i.exam_ids ?? [])));
+          q = q.in("id", ids.length ? ids : [-1]);
+        } else if (recentOnly && !term) {
+          q = q.gte("created_at", new Date(Date.now() - 30 * 86400000).toISOString());
+        }
         if (/^#?\d+$/.test(term)) q = q.eq("id", Number(term.replace("#", "")));
         else if (term) q = q.ilike("title", `%${term.replace(/[\\%_]/g, "\\$&")}%`);
         if (status !== "all") q = q.eq("published", status === "published");
@@ -138,7 +199,7 @@ export default function ExamLibraryAdmin({
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [search, status, classFilter, page, listRetry, requestKey]);
+  }, [search, status, classFilter, chapterFilter, lessonFilter, recentOnly, lessonsAll, page, listRetry, requestKey]);
 
   const listError = failure?.key === requestKey ? failure.message : null;
   const listBusy = result?.key !== requestKey && !listError;
@@ -380,6 +441,8 @@ export default function ExamLibraryAdmin({
             value={classFilter}
             onChange={(e) => {
               setClassFilter(e.target.value);
+              setChapterFilter("");
+              setLessonFilter("");
               setPage(0);
             }}
             aria-label="Lọc theo lớp"
@@ -392,6 +455,54 @@ export default function ExamLibraryAdmin({
               </option>
             ))}
           </select>
+          <select
+            value={chapterFilter}
+            onChange={(e) => {
+              setChapterFilter(e.target.value);
+              setLessonFilter("");
+              setPage(0);
+            }}
+            aria-label="Lọc theo chương"
+            className={`${selectCls} w-auto max-w-full`}
+          >
+            <option value="">Mọi chương</option>
+            {chapterOptions.map((ch) => (
+              <option key={ch.id} value={ch.id}>
+                {ch.title}
+                {!classFilter && ch.classIds.length > 0 ? ` (${classNames(ch.classIds)})` : ""}
+              </option>
+            ))}
+          </select>
+          {chapterFilter && (
+            <select
+              value={lessonFilter}
+              onChange={(e) => {
+                setLessonFilter(e.target.value);
+                setPage(0);
+              }}
+              aria-label="Lọc theo bài"
+              className={`${selectCls} w-auto max-w-full`}
+            >
+              <option value="">Cả chương</option>
+              {lessonOptions.map((l) => (
+                <option key={l.id} value={l.id}>
+                  {l.title}
+                </option>
+              ))}
+            </select>
+          )}
+          <label className="flex min-h-11 items-center gap-2 text-sm text-ink">
+            <input
+              type="checkbox"
+              checked={recentOnly}
+              onChange={(e) => {
+                setRecentOnly(e.target.checked);
+                setPage(0);
+              }}
+              className="h-4 w-4"
+            />
+            Đề đăng 30 ngày gần đây
+          </label>
         </div>
 
         <div aria-live="polite" className="text-xs text-muted">

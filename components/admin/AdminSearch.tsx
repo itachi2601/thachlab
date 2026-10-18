@@ -85,12 +85,22 @@ export default function AdminSearch() {
     const timer = setTimeout(async () => {
       const sb = getSupabase();
       const like = `%${q}%`;
-      const asId = /^\d{1,9}$/.test(q) ? Number(q) : null;
+      const asId = /^#?\d{1,9}$/.test(q) ? Number(q.replace("#", "")) : null;
+      // "bài 7 lớp 12": tách "lớp N" làm bộ lọc lớp, các từ còn lại đều phải có trong tên bài.
+      const gradeMatch = q.match(/l[ớo]p\s*(\d{1,2})/i);
+      const grade = gradeMatch?.[1] ?? null;
+      const words = q.replace(/l[ớo]p\s*\d{1,2}/i, " ").replace(/^#/, "").split(/\s+/).filter(Boolean);
+      let lessonQuery = sb
+        .from("lessons")
+        .select("id, title, published, chapters(title, chapter_classes(classes(name)))")
+        .order("id", { ascending: false })
+        .limit(grade ? 40 : 6);
+      for (const w of words) lessonQuery = lessonQuery.ilike("title", `%${w}%`);
       const [students, examsByTitle, examById, lessons] = await Promise.all([
         sb.from("profiles").select("id, full_name, class_name, student_code").eq("role", "student").or(`full_name.ilike.${like},student_code.ilike.${like}`).limit(6),
         sb.from("exams").select("id, title, published").ilike("title", like).order("id", { ascending: false }).limit(6),
         asId ? sb.from("exams").select("id, title, published").eq("id", asId) : Promise.resolve({ data: [], error: null }),
-        sb.from("lessons").select("id, title, published").ilike("title", like).limit(6),
+        words.length ? lessonQuery : Promise.resolve({ data: [], error: null }),
       ]);
       if (id !== reqId.current) return;
       const hits: Hit[] = [];
@@ -109,14 +119,31 @@ export default function AdminSearch() {
       for (const row of examsByTitle.data ?? []) {
         if (!hits.some((h) => h.key === `de:${(row as ExamRow).id}`)) hits.push(examHit(row as ExamRow));
       }
-      for (const row of lessons.data ?? []) {
-        const l = row as { id: number; title: string; published: boolean };
+      type LessonRow = {
+        id: number;
+        title: string;
+        published: boolean;
+        chapters: { title: string; chapter_classes: { classes: { name: string } | null }[] } | null;
+      };
+      let lessonRows = (lessons.data ?? []) as unknown as LessonRow[];
+      if (grade) {
+        lessonRows = lessonRows
+          .filter((l) => l.chapters?.chapter_classes.some((cc) => cc.classes?.name.includes(grade)))
+          .slice(0, 6);
+      }
+      for (const l of lessonRows) {
+        const where = [
+          l.chapters?.chapter_classes.map((cc) => cc.classes?.name).filter(Boolean).join(", "),
+          l.chapters?.title,
+        ]
+          .filter(Boolean)
+          .join(" · ");
         hits.push({
           key: `bai:${l.id}`,
           group: "Bài học",
           title: l.title,
-          sub: l.published ? undefined : "Đang ẩn",
-          href: "/quan-tri/bai-hoc",
+          sub: [where, l.published ? "" : "Đang ẩn"].filter(Boolean).join(" · ") || undefined,
+          href: `/quan-tri/bai-hoc?lesson=${l.id}`,
           icon: BookOpen,
         });
       }
@@ -171,7 +198,7 @@ export default function AdminSearch() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={onInputKey}
-                placeholder="Tên học sinh, mã đề (#978), tên bài, tên trang…"
+                placeholder="Tên học sinh, mã đề (#978), bài 7 lớp 12, tên trang…"
                 className="h-14 w-full bg-transparent text-sm text-white placeholder:text-slate-500 focus:outline-none"
               />
               {busy && <span className="h-3 w-3 shrink-0 animate-spin rounded-full border-2 border-slate-500 border-t-transparent" aria-label="Đang tìm" />}
