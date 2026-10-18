@@ -30,6 +30,7 @@ interface DueRow {
   auth_key: string;
   topic_name: string | null;
   level: string | null;
+  inactive_days: number | null;
 }
 
 Deno.serve(async (req) => {
@@ -62,7 +63,7 @@ Deno.serve(async (req) => {
   for (let i = 0; i < rows.length; i += 20) {
     await Promise.all(
       rows.slice(i, i + 20).map(async (r) => {
-        const payload = JSON.stringify(buildPushPayload(r));
+        const payload = JSON.stringify(buildPushPayload({ ...r, seed: Math.floor(Date.now() / 86_400_000) + r.subscription_id }));
         try {
           await webpush.sendNotification(
             { endpoint: r.endpoint, keys: { p256dh: r.p256dh, auth: r.auth_key } },

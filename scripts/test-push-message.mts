@@ -9,5 +9,14 @@ assert.equal(buildPushPayload({ topic_name: "  ", level: "weak" }).body, "Hôm n
 const long = buildPushPayload({ topic_name: "x".repeat(200), level: "weak" });
 assert.ok(long.body.length < 90 && long.body.includes("…"));
 assert.equal(weak.url, "/lop-hoc/");
-assert.ok(!/mất chuỗi|phạt|hết hạn/i.test(weak.body));
+// luân phiên: 3 seed liên tiếp cho 3 mẫu khác nhau, không lặp liền nhau
+const bodies = [0, 1, 2].map((seed) => buildPushPayload({ topic_name: "Công suất", level: "weak", seed }).body);
+assert.equal(new Set(bodies).size, 3);
+// lâu chưa học: đổi giọng, không nhắc chủ đề yếu
+assert.ok(buildPushPayload({ topic_name: "Công suất", level: "weak", inactive_days: 5 }).body.startsWith("Lâu rồi"));
+assert.ok(buildPushPayload({ topic_name: "Công suất", level: "weak", inactive_days: 8 }).body.includes("chờ em"));
+for (const seed of [0, 1, 2]) for (const idle of [0, 5, 8]) {
+  const b = buildPushPayload({ topic_name: "Công suất", level: "weak", seed, inactive_days: idle }).body;
+  assert.ok(!/mất chuỗi|phạt|hết hạn|bỏ rơi/i.test(b), b);
+}
 console.log("push message: OK");
