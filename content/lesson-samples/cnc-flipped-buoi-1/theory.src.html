@@ -1,0 +1,211 @@
+<div class="tl-box">
+<p class="tl-label">🎯 Mục tiêu buổi 1 · nhập môn</p>
+<ul>
+<li>Nêu <strong>nội quy xưởng</strong>, các quy tắc an toàn và việc phải làm khi <strong>dừng khẩn</strong>.</li>
+<li>Gọi tên bộ phận chính của máy tiện, máy phay; chỉ <strong>trục X, Z (X, Y, Z)</strong> và điểm chuẩn <strong>M, W, R</strong>.</li>
+<li>Mở máy, về <strong>Reference</strong>, chạy <strong>JOG</strong> và gõ <strong>MDI</strong> trên WinNC FANUC.</li>
+<li>Đọc, nhập và chạy <strong>chương trình đầu tiên</strong> (11 dòng) trên WinNC.</li>
+</ul>
+<p>Buổi đầu <strong>chưa có bài chuẩn bị ở nhà</strong>. Cuối buổi có phần dặn chuẩn bị cho buổi 2.</p>
+</div>
+
+__FIG1__
+
+<h3>A. Giảng viên dạy · khoảng 2 giờ đầu buổi</h3>
+
+<ul>
+<li><strong>Phút 0–15:</strong> giới thiệu môn học, cách học lớp đảo ngược, nội quy xưởng, lịch 12 buổi.</li>
+<li><strong>Phút 15–35 · Khối 1:</strong> an toàn, 5S, nút dừng khẩn.</li>
+<li><strong>Phút 35–55 · Khối 2:</strong> máy CNC của xưởng và bộ phận chính, hai phần điều khiển và chấp hành.</li>
+<li><strong>Phút 55–75 · Khối 3:</strong> hệ trục tọa độ và điểm chuẩn M, W, R.</li>
+<li><strong>Phút 75–90:</strong> nghỉ 15 phút.</li>
+<li><strong>Phút 90–110 · Khối 4:</strong> hệ điều khiển WinNC FANUC: màn hình, các chế độ, mở máy.</li>
+<li><strong>Phút 110–130 · Khối 5:</strong> lệnh cơ bản, cấu trúc chương trình, cùng viết chương trình đầu tiên.</li>
+</ul>
+
+<p>Sau mỗi khối có <strong>2 phút hỏi đáp theo cặp</strong>: em tự nói lại điều vừa nghe, không nhìn ghi chú. Quiz dưới đây để <strong>tự kiểm lại</strong> sau mỗi khối.</p>
+
+<h4>Khối 1 · An toàn, 5S, dừng khẩn</h4>
+<ul>
+<li>Kính, giày kín, tóc buộc gọn, <strong>không găng</strong> khi cạnh chi tiết đang quay.</li>
+<li>Không đeo đồng hồ, nhẫn, vòng tay, khăn.</li>
+<li>Máy chạy: không với tay vào vùng gia công.</li>
+<li>Dừng khẩn: nhấn nút, đợi mọi chuyển động dừng hẳn, rồi báo giảng viên.</li>
+<li>Cuối buổi: dọn phoi, lau máy, trả dụng cụ theo 5S.</li>
+</ul>
+<div class="tl-box tl-box--think">
+<p class="tl-label">Câu 1</p>
+<p>Máy đang chạy, em thấy một sợi phoi dài quấn quanh phôi đang quay. Việc <strong>đầu tiên</strong> là gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="cb1-q1" id="cb1-q1a"><label for="cb1-q1a" class="tl-opt tl-no">A. Đeo găng vải rồi gạt phoi thật nhanh</label>
+<input type="radio" name="cb1-q1" id="cb1-q1b"><label for="cb1-q1b" class="tl-opt tl-no">B. Dùng que dài gạt phoi trong khi trục chính vẫn quay</label>
+<input type="radio" name="cb1-q1" id="cb1-q1c"><label for="cb1-q1c" class="tl-opt tl-ok">C. Dừng máy, đợi mọi chuyển động dừng hẳn rồi mới xử lý</label>
+<input type="radio" name="cb1-q1" id="cb1-q1d"><label for="cb1-q1d" class="tl-opt tl-no">D. Thổi mạnh cho phoi đứt rồi rơi xuống</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chỉ chạm vào vùng gia công khi <strong>mọi chuyển động đã dừng hẳn</strong>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Găng vải và que dài đều bị vật quay cuốn theo; thổi phoi làm mạt bắn vào mắt.</p></div>
+</div>
+</div>
+
+<h4>Khối 2 · Máy CNC và bộ phận chính</h4>
+<ul>
+<li><strong>Máy vạn năng:</strong> người vận hành điều khiển trực tiếp.</li>
+<li><strong>Máy CNC:</strong> chạy theo chương trình, có máy tính lưu và sửa chương trình.</li>
+<li><strong>Phần điều khiển:</strong> màn hình, bàn phím, chương trình.</li>
+<li><strong>Phần chấp hành:</strong> trục chính, bàn dao hoặc bàn máy, ổ dao.</li>
+<li>Hai phần trao đổi liên tục lệnh, vị trí và lỗi.</li>
+</ul>
+<p>Em đã học tiện, phay vạn năng nên cái khác nhau lớn nhất em sẽ thấy là: <strong>không có tay quay</strong>, mọi chuyển động do lệnh quyết định.</p>
+
+<h4>Khối 3 · Hệ trục và điểm chuẩn</h4>
+<ul>
+<li><strong>Z</strong> luôn trùng trục chính.</li>
+<li><strong>Tiện:</strong> X theo đường kính, Z dọc trục; không có Y.</li>
+<li><strong>Phay:</strong> X, Y trên mặt bàn, Z theo trục chính.</li>
+<li><strong>M:</strong> gốc máy, cố định. <strong>R:</strong> điểm tham chiếu, cố định.</li>
+<li><strong>W:</strong> gốc phôi, do người vận hành đặt, đổi theo mỗi lần gá.</li>
+</ul>
+<div class="tl-box tl-box--think">
+<p class="tl-label">Câu 2</p>
+<p>Điểm <strong>W</strong> (gốc phôi) khác điểm <strong>M</strong> (gốc máy) ở chỗ nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="cb1-q2" id="cb1-q2a"><label for="cb1-q2a" class="tl-opt tl-ok">A. M cố định theo máy; W do người vận hành đặt theo cách gá phôi</label>
+<input type="radio" name="cb1-q2" id="cb1-q2b"><label for="cb1-q2b" class="tl-opt tl-no">B. W cố định theo máy; M do người vận hành đặt</label>
+<input type="radio" name="cb1-q2" id="cb1-q2c"><label for="cb1-q2c" class="tl-opt tl-no">C. Cả hai do máy tự chọn khi bấm chạy</label>
+<input type="radio" name="cb1-q2" id="cb1-q2d"><label for="cb1-q2d" class="tl-opt tl-no">D. Hai điểm luôn trùng nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> M gắn với máy nên cố định. W gắn với phôi nên <strong>đổi theo mỗi lần gá</strong>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Cố định theo máy là M. W gắn với phôi, mỗi lần gá khác thì phải đặt lại.</p></div>
+</div>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">Câu 3</p>
+<p>Trên máy tiện CNC, dao tiến <strong>vào gần tâm phôi</strong>. Giá trị X thay đổi thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="cb1-q3" id="cb1-q3a"><label for="cb1-q3a" class="tl-opt tl-no">A. X tăng dần</label>
+<input type="radio" name="cb1-q3" id="cb1-q3b"><label for="cb1-q3b" class="tl-opt tl-no">B. X không đổi, chỉ Z đổi</label>
+<input type="radio" name="cb1-q3" id="cb1-q3c"><label for="cb1-q3c" class="tl-opt tl-no">C. X đổi dấu khi dao rời mép phôi</label>
+<input type="radio" name="cb1-q3" id="cb1-q3d"><label for="cb1-q3d" class="tl-opt tl-ok">D. X giảm dần, vì X là đường kính</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> X chạy theo <strong>hướng kính</strong>, lập trình theo đường kính; vào gần tâm thì X nhỏ lại.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Dao vào gần tâm là chuyển động theo X, không phải Z, và X nhỏ lại.</p></div>
+</div>
+</div>
+
+<h4>Khối 4 · Hệ điều khiển WinNC FANUC</h4>
+<ul>
+<li>Thứ tự mở máy tiện: đóng CP, bật máy tính, mở WinNC FANUC 21T.</li>
+<li><strong>Reference:</strong> đưa các trục về điểm tham chiếu R.</li>
+<li><strong>JOG:</strong> chạy tay bằng phím +X, −X, +Z, −Z; % bước tiến là "chân ga".</li>
+<li><strong>MDI:</strong> gõ lệnh, chạy từng câu.</li>
+<li><strong>AUTO:</strong> chạy cả chương trình đã nạp, <strong>EDIT:</strong> soạn chương trình.</li>
+</ul>
+<div class="tl-box tl-box--think">
+<p class="tl-label">Câu 4</p>
+<p>Em muốn gõ <strong>M3 S500;</strong> rồi chạy từng câu để kiểm tra chiều quay trục chính. Dùng chế độ nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="cb1-q4" id="cb1-q4a"><label for="cb1-q4a" class="tl-opt tl-no">A. REFERENCE</label>
+<input type="radio" name="cb1-q4" id="cb1-q4b"><label for="cb1-q4b" class="tl-opt tl-ok">B. MDI</label>
+<input type="radio" name="cb1-q4" id="cb1-q4c"><label for="cb1-q4c" class="tl-opt tl-no">C. JOG</label>
+<input type="radio" name="cb1-q4" id="cb1-q4d"><label for="cb1-q4d" class="tl-opt tl-no">D. AUTO</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> MDI cho gõ lệnh và chạy <strong>từng câu</strong> ngay trên màn hình điều khiển.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> REFERENCE là về điểm tham chiếu; JOG chạy tay bằng phím trục; AUTO chạy cả chương trình đã nạp.</p></div>
+</div>
+</div>
+
+<h4>Khối 5 · Lệnh cơ bản và chương trình đầu tiên</h4>
+<ul>
+<li>Tên chương trình: chữ <strong>O</strong> và 4 số. Khối lệnh kết thúc bằng dấu <strong>;</strong></li>
+<li><strong>G00:</strong> chạy nhanh, không cắt. <strong>G01:</strong> cắt thẳng theo <strong>F</strong>.</li>
+<li><strong>M3 / M5:</strong> trục chính quay / dừng. <strong>S:</strong> tốc độ trục chính.</li>
+<li><strong>T0202 M6:</strong> chọn dao và đổi dao. <strong>M30:</strong> kết thúc chương trình.</li>
+<li><strong>G18, G71, G95:</strong> mặt phẳng XOZ, hệ mét, F tính mm/vòng.</li>
+</ul>
+<p>Chương trình đầu tiên: dao đi từ điểm an toàn, tiện một đoạn trụ <strong>Ø20 dài 20 mm</strong>, rồi lùi về.</p>
+
+__FIG2__
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📘 Chương trình O0001</p>
+<ul>
+<li><strong>N10</strong> G71 G95 G18; (hệ mét, mm/vòng, mặt phẳng XOZ)</li>
+<li><strong>N20</strong> T0202 M6; (chọn và đổi dao)</li>
+<li><strong>N30</strong> M3 S500; (trục chính quay)</li>
+<li><strong>N40</strong> G00 X30 Z5; (tới điểm an toàn)</li>
+<li><strong>N50</strong> G00 X20 Z2; (đưa dao tới đường kính 20)</li>
+<li><strong>N60</strong> G01 Z-20 F0.15; (tiện trụ dài 20 mm)</li>
+<li><strong>N70</strong> G01 X30; (lùi dao ra khỏi mặt trụ)</li>
+<li><strong>N80</strong> G00 Z5; (lùi về an toàn)</li>
+<li><strong>N90</strong> M5; (dừng trục chính)</li>
+<li><strong>N100</strong> M30; (hết chương trình)</li>
+</ul>
+</div>
+<div class="tl-box tl-box--think">
+<p class="tl-label">Câu 5</p>
+<p>Dao đứng ở điểm an toàn. Muốn tiện một đoạn trụ dài 20 mm với lượng chạy 0,15 mm/vòng, khối lệnh nào đúng?</p>
+<div class="tl-quiz">
+<input type="radio" name="cb1-q5" id="cb1-q5a"><label for="cb1-q5a" class="tl-opt tl-no">A. G00 Z-20 F0.15</label>
+<input type="radio" name="cb1-q5" id="cb1-q5b"><label for="cb1-q5b" class="tl-opt tl-no">B. G01 Z-20</label>
+<input type="radio" name="cb1-q5" id="cb1-q5c"><label for="cb1-q5c" class="tl-opt tl-ok">C. G01 Z-20 F0.15</label>
+<input type="radio" name="cb1-q5" id="cb1-q5d"><label for="cb1-q5d" class="tl-opt tl-no">D. G02 Z-20 F0.15</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> G01 là nội suy đường thẳng, <strong>cắt theo F</strong> đã ghi trong khối.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> G00 chạy nhanh, tốc độ do máy quyết định nên F vô nghĩa. G01 thiếu F thì không rõ tốc độ cắt. G02 là cung tròn.</p></div>
+</div>
+</div>
+
+<h3>B. Thực hành · hai trạm · 150 phút</h3>
+
+<ul>
+<li><strong>Phút 130–200:</strong> Lượt 1. Lớp chia hai nửa: nửa <strong>máy thật</strong>, nửa <strong>WinNC 3D View</strong>.</li>
+<li><strong>Phút 200–210:</strong> nghỉ 10 phút.</li>
+<li><strong>Phút 210–280:</strong> Lượt 2. Hai nửa đổi trạm.</li>
+<li><strong>Phút 280–290:</strong> phiếu nhóm và phiếu thoát lớp.</li>
+<li><strong>Phút 290–300:</strong> dọn máy theo 5S, tắt máy tính, bàn giao máy, nghe dặn bài buổi 2.</li>
+</ul>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Trạm máy thật · nhóm 2–3 người, đổi vai mỗi việc</p>
+<ol class="tl-steps">
+<li><strong>Nhận máy:</strong> kiểm tra theo checklist của giảng viên, chưa cấp điện khi chưa kiểm xong.</li>
+<li><strong>Mở máy, về Reference:</strong> đúng thứ tự, ghi số các trục ở R.</li>
+<li><strong>JOG:</strong> chưa kẹp phôi, dao xa mâm cặp; thử % bước tiến thấp rồi cao hơn, quan sát số X, Z.</li>
+<li><strong>MDI:</strong> gõ <strong>T0202 M6;</strong> rồi <strong>M3 S500;</strong>, chạy từng câu, kiểm chiều quay.</li>
+</ol>
+<p><strong>Dừng và gọi giảng viên</strong> nếu thấy tiếng lạ, số trên màn hình khác dự đoán, hoặc chưa chắc việc kế tiếp.</p>
+</div>
+
+<div class="tl-box tl-box--exp">
+<p class="tl-label">🔬 Trạm WinNC 3D View · mỗi em một máy tính</p>
+<ol class="tl-steps">
+<li><strong>Soạn:</strong> ở EDIT, gõ chương trình O0001 như bảng ở Khối 5.</li>
+<li><strong>Đoán:</strong> trước khi chạy, vẽ nháp đường đi của dao trên giấy.</li>
+<li><strong>Chạy từng khối:</strong> ở AUTO bật chạy từng khối, nhìn dao đi trong cửa sổ 3D, đối chiếu với hình em vẽ.</li>
+<li><strong>Thử sai:</strong> đổi <strong>Z-20</strong> thành <strong>Z-35</strong>, đoán trước điều gì xảy ra, rồi chạy kiểm. Va chạm trên WinNC không hỏng gì.</li>
+</ol>
+</div>
+
+<div class="tl-box tl-box--rule">
+<p class="tl-label">📋 Phiếu nhóm (ghi tay, nộp cuối buổi)</p>
+<ul>
+<li>Tên máy.</li>
+<li>Số các trục ở điểm tham chiếu R.</li>
+<li>Chiều quay trục chính khi gõ M3.</li>
+<li>Em đoán đường đi của dao đúng hay lệch so với 3D, lệch ở khối nào.</li>
+<li>Một khác biệt em thấy giữa máy thật và WinNC.</li>
+</ul>
+</div>
+
+<h3>C. Kết buổi · dặn buổi 2</h3>
+
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài: nói bằng lời của em trước, rồi mới bấm xem</p>
+<details class="tl-details"><summary>1. Máy đang chạy, gặp sự cố, em làm gì đầu tiên? <small>(nói bằng lời của em trước)</small></summary><p>Nhấn dừng khẩn, đợi mọi chuyển động dừng hẳn, rồi báo giảng viên.</p></details>
+<details class="tl-details"><summary>2. Phân biệt M, R, W bằng một câu mỗi điểm. <small>(nói bằng lời của em trước)</small></summary><p>M gốc máy, cố định. R điểm tham chiếu, cố định. W gốc phôi, do người vận hành đặt.</p></details>
+<details class="tl-details"><summary>3. Đọc to dòng N60 và nói dao làm gì. <small>(nói bằng lời của em trước)</small></summary><p>G01 Z-20 F0.15: dao cắt thẳng theo Z tới -20, lượng chạy 0,15 mm/vòng.</p></details>
+</div>
+
+<div class="tl-box">
+<p class="tl-label">📚 Chuẩn bị buổi 2 · tối nay, khoảng 20 phút</p>
+<ul>
+<li>Đọc mục <strong>2 và 3</strong> của <a href="/lop-hoc/cnc/?bai=lesson-2">Bài 2 · Lập trình tiện</a>.</li>
+<li>Ngày mai có quiz 5 câu ở đầu buổi; chưa đạt 4/5 thì làm lại ngay đầu buổi, không bị trừ điểm.</li>
+<li>Viết một câu về chỗ em chưa rõ, gửi vào nhóm lớp trước 21 giờ.</li>
+</ul>
+</div>

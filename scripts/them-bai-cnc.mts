@@ -1,6 +1,7 @@
 // Thêm MỘT bài mới vào cnc_lessons từ theory.html. Chỉ INSERT (id chưa tồn tại), không đụng bài cũ.
 //
 //   npx tsx scripts/them-bai-cnc.mts <theory.html> --meta <meta.json> [--dry-run]   (meta: id, title, short, duration)
+//   --replace: id ĐÃ có thì ghi đè title, short_title, duration_label, body_html (không đụng sort_order, tài nguyên); tự sao lưu dòng cũ ra scripts/logs/.
 //   hoặc: … --id flip-1 --title "…" --short "…" --duration "…"
 //
 // Hoàn tác: xoá đúng dòng đó — delete from cnc_lessons where id = '<id>' (script in sẵn lệnh).
@@ -26,6 +27,7 @@ const metaPath = opt("meta");
 const meta: Record<string, string> = metaPath && fs.existsSync(metaPath) ? JSON.parse(fs.readFileSync(metaPath, "utf8")) : {};
 const id = opt("id") ?? meta.id, title = opt("title") ?? meta.title, short = opt("short") ?? meta.short, duration = opt("duration") ?? meta.duration ?? "";
 const dry = args.includes("--dry-run");
+const replace = args.includes("--replace");
 if (!src || src.startsWith("--") || !fs.existsSync(src) || !id || !title || !short) fail("Dùng: <theory.html> --id <id> --title … --short … [--duration …] [--dry-run]");
 
 const html = fs.readFileSync(src, "utf8");
@@ -40,7 +42,24 @@ const db = createClient(url, key, { auth: { persistSession: false } });
 const { data: all, error } = await db.from("cnc_lessons").select("id, title, sort_order").order("sort_order");
 if (error) fail(error.message);
 console.log("Hiện có:", (all ?? []).map((r) => `${r.id}(${r.sort_order})`).join(", "));
-if ((all ?? []).some((r) => r.id === id)) fail(`id=${id} đã tồn tại — dùng cap-nhat-cnc-ly-thuyet.mts để sửa.`);
+const existing = (all ?? []).some((r) => r.id === id);
+if (existing && !replace) fail(`id=${id} đã tồn tại — thêm --replace để ghi đè đúng dòng này.`);
+if (!existing && replace) fail(`id=${id} chưa có — bỏ --replace để thêm mới.`);
+if (existing && replace) {
+  const { data: cur, error: e0 } = await db.from("cnc_lessons").select("*").eq("id", id);
+  if (e0 || !cur || cur.length !== 1) fail(`Phải có đúng 1 dòng id=${id}.`);
+  console.log(`Ghi đè ${id}: body_html ${(cur[0].body_html as string).length} → ${html.length} ký tự; tiêu đề "${cur[0].title}" → "${title}".`);
+  if (dry) { console.log("--dry-run: chưa ghi."); process.exit(0); }
+  fs.mkdirSync(path.join(root, "scripts/logs"), { recursive: true });
+  const bak = path.join(root, `scripts/logs/cnc-${id}-row-backup-${Date.now()}.json`);
+  fs.writeFileSync(bak, JSON.stringify(cur[0], null, 1));
+  console.log("Sao lưu:", bak);
+  const { data: upd, error: e3 } = await db.from("cnc_lessons").update({ title, short_title: short, duration_label: duration, body_html: html }).eq("id", id).select("id, sort_order");
+  if (e3) fail(e3.message);
+  if (!upd || upd.length !== 1) fail(`UPDATE ảnh hưởng ${upd?.length ?? 0} dòng, mong đợi 1.`);
+  console.log("Đã ghi đè:", JSON.stringify(upd));
+  process.exit(0);
+}
 const sortOrder = Math.max(0, ...(all ?? []).map((r) => (r.sort_order as number) ?? 0)) + 1;
 console.log(`Sẽ thêm: id=${id}, sort_order=${sortOrder}, ${html.length} ký tự body_html.`);
 if (dry) { console.log("--dry-run: chưa ghi."); process.exit(0); }

@@ -1055,67 +1055,23 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>CNC Bài 1 — bản lớp đảo ngược (mẫu)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>B. Trong buổi 5 giờ · giảng viên dạy rồi thực hành hai trạm</h3>
+<div class="lesson-page"><div class="wrap"><h1>CNC Buổi 1 — nhập môn (mẫu lớp đảo ngược)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>C. Kết buổi · dặn buổi 2</h3>
 
-<ul>
-<li><strong>Phút 0–15:</strong> quiz nhanh; giảng viên chữa chỗ nhiều bạn sai và câu hỏi đã gửi.</li>
-<li><strong>Phút 15–75:</strong> giảng viên dạy 3 khối, mỗi khối tối đa 20 phút, ngay trên máy thật.</li>
-<li><strong>Phút 75–90:</strong> nghỉ 15 phút, rời khỏi máy.</li>
-<li><strong>Phút 90–175:</strong> Lượt 1. Lớp chia hai nửa: nửa đứng <strong>máy thật</strong>, nửa ngồi <strong>WinNC 3D View</strong>.</li>
-<li><strong>Phút 175–185:</strong> nghỉ 10 phút.</li>
-<li><strong>Phút 185–270:</strong> Lượt 2. Hai nửa đổi trạm, làm lại đúng ba việc của Lượt 1.</li>
-<li><strong>Phút 270–290:</strong> phiếu nhóm, rồi phiếu thoát lớp: từng em trả lời 3 câu ở mục C.</li>
-<li><strong>Phút 290–300:</strong> dọn máy theo 5S, tắt máy tính, ký xác nhận bàn giao máy.</li>
-</ul>
-
-<p>Mỗi lượt 85 phút gồm: <strong>Nhiệm vụ 1</strong> (khoảng 25 phút), <strong>Nhiệm vụ 2</strong> (khoảng 40 phút), <strong>Thử thách</strong> (khoảng 20 phút): dịch W đi 5 mm theo X, đoán trước dao sẽ đi đâu rồi chạy kiểm.</p>
-
-<h4>Hai trạm</h4>
-<ul>
-<li><strong>Máy thật:</strong> nhóm 2–3 người một máy, chia vai vận hành, an toàn, đọc và ghi; <strong>đổi vai</strong> mỗi nhiệm vụ.</li>
-<li><strong>WinNC 3D View:</strong> mỗi em một máy tính, tự làm đủ ba việc; nhìn dao đi trong cửa sổ 3D.</li>
-<li>Va chạm trên WinNC không hỏng gì: đây là chỗ <strong>thử sai</strong>. Trên máy thật, va chạm là hỏng dao và phôi.</li>
-</ul>
-
-<h4>Ba khối giảng viên dạy (phút 15–75)</h4>
-<ol class="tl-steps">
-<li><strong>Khối 1:</strong> trục X, Z của máy tiện và X, Y, Z của máy phay, chỉ ngay trên máy.</li>
-<li><strong>Khối 2:</strong> M, R, W, P là gì và nằm ở đâu trên máy của xưởng.</li>
-<li><strong>Khối 3:</strong> cách đặt W và đọc số trên màn hình.</li>
-</ol>
-<p>Sau mỗi khối có <strong>2 phút hỏi đáp theo cặp</strong>: em tự nói lại điều vừa nghe, không nhìn ghi chú.</p>
-
-<div class="tl-box tl-box--exp">
-<p class="tl-label">🔬 Nhiệm vụ 1 · Tìm M và R trên máy</p>
-<ol class="tl-steps">
-<li><strong>Làm:</strong> được giảng viên cho phép, đưa máy về điểm tham chiếu R bằng chế độ về gốc.</li>
-<li><strong>Quan sát:</strong> màn hình hiện số của từng trục khi dao đứng ở R.</li>
-<li><strong>Rút ra:</strong> ghi bảng số của trục ở R; so với nhóm khác trên <strong>cùng loại máy</strong>.</li>
-</ol>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🎤 Trả bài: nói bằng lời của em trước, rồi mới bấm xem</p>
+<details class="tl-details" open><summary>1. Máy đang chạy, gặp sự cố, em làm gì đầu tiên? <small>(nói bằng lời của em trước)</small></summary><p>Nhấn dừng khẩn, đợi mọi chuyển động dừng hẳn, rồi báo giảng viên.</p></details>
+<details class="tl-details" open><summary>2. Phân biệt M, R, W bằng một câu mỗi điểm. <small>(nói bằng lời của em trước)</small></summary><p>M gốc máy, cố định. R điểm tham chiếu, cố định. W gốc phôi, do người vận hành đặt.</p></details>
+<details class="tl-details" open><summary>3. Đọc to dòng N60 và nói dao làm gì. <small>(nói bằng lời của em trước)</small></summary><p>G01 Z-20 F0.15: dao cắt thẳng theo Z tới -20, lượng chạy 0,15 mm/vòng.</p></details>
 </div>
 
-<div class="tl-box tl-box--exp">
-<p class="tl-label">🔬 Nhiệm vụ 2 · Đặt W cho phôi</p>
-<ol class="tl-steps">
-<li><strong>Làm:</strong> gá phôi chắc, chọn W ở góc hoặc mặt phôi, đưa dao chạm nhẹ tới đó theo hướng dẫn của giảng viên.</li>
-<li><strong>Quan sát:</strong> số trên màn hình khi dao chạm; lưu số này làm gốc W.</li>
-<li><strong>Rút ra:</strong> kiểm bằng chạy từng khối lệnh <strong>không tải</strong>: dao phải đi đúng đoạn mong muốn, tránh phôi.</li>
-</ol>
-<p><strong>Dừng và gọi giảng viên</strong> nếu số trên màn hình khác với dự đoán.</p>
-<p><strong>Ở WinNC:</strong> làm cùng các bước trên màn hình điều khiển ảo, rồi mở cửa sổ 3D để xem dao chạm phôi ở đâu.</p>
-</div>
-
-<div class="tl-box tl-box--rule">
-<p class="tl-label">📋 Phiếu nhóm (ghi tay, nộp cuối giờ)</p>
+<div class="tl-box">
+<p class="tl-label">📚 Chuẩn bị buổi 2 · tối nay, khoảng 20 phút</p>
 <ul>
-<li>Tên máy và loại: tiện hay phay.</li>
-<li>Số trục ở R (từng trục).</li>
-<li>Vị trí em chọn làm W và lý do.</li>
-<li>Em đã đoán dao đi đâu ở thử thách, và máy thật hoặc WinNC đi đúng hay lệch.</li>
-<li>Một khác biệt em thấy giữa máy thật và WinNC.</li>
+<li>Đọc mục <strong>2 và 3</strong> của <a href="/lop-hoc/cnc/?bai=lesson-2">Bài 2 · Lập trình tiện</a>.</li>
+<li>Ngày mai có quiz 5 câu ở đầu buổi; chưa đạt 4/5 thì làm lại ngay đầu buổi, không bị trừ điểm.</li>
+<li>Viết một câu về chỗ em chưa rõ, gửi vào nhóm lớp trước 21 giờ.</li>
 </ul>
 </div>
-
 </span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>

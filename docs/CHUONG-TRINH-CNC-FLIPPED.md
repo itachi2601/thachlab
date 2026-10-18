@@ -1,6 +1,6 @@
 # Chương trình CNC theo lớp đảo ngược (flipped) — đề xuất 18/10/2026
 
-Đối tượng: sinh viên CĐ đã học tiện, phay cơ bản (máy vạn năng). Bản mẫu: `content/lesson-samples/cnc-flipped-bai-1/` (chưa ghi DB).
+Đối tượng: sinh viên CĐ đã học tiện, phay cơ bản (máy vạn năng). Bản mẫu buổi 1: `content/lesson-samples/cnc-flipped-buoi-1/` (đã ghi DB, `cnc_lessons.id = flip-1`).
 Lịch (thầy nói 18/10/2026): **buổi 5 tiếng (300 phút), giảng viên dạy lý thuyết 1–2 giờ đầu buổi, 6 buổi/tuần, học liên tục 2 tuần = 12 buổi** (60 giờ). Bản trước ghi nhầm 180 phút, đã sửa.
 
 ## Vì sao đảo ngược cho môn này
@@ -25,32 +25,35 @@ Tổng B = 300 phút. Bài nặng lý thuyết (lập trình) kéo B2 lên 90 ph
 Quy tắc chung: quiz chỉ để chẩn đoán, **không tính điểm** (SDT: ít áp lực, dám sai); điểm lấy từ thao tác trên máy và checklist năng lực sẵn có (`cnc_competency_permissions`). Cách tính điểm theo công bố của giảng viên. Tiện và phay xen kẽ nhau để nhớ lâu hơn.
 Lớp ~30 em, 6 máy, xưởng có **WinNC 3D View** (giả định mỗi em một máy tính, cần thầy xác nhận số máy tính): chia lớp hai nửa 15 em, **một nửa máy thật (2–3 em/máy), một nửa WinNC**, giữa phần thực hành đổi trạm. Mỗi em được ~35–40 phút bấm máy thật và ~85 phút trên WinNC; thử sai (va chạm) làm trên WinNC. Lập trình: viết xong chạy WinNC 3D trước, rồi mới ra máy thật.
 
-## Phân bố 12 buổi (2 tuần)
-Tám bài hiện có chỉ phủ 8 buổi; 4 buổi còn lại cần bài mới (đánh dấu *mới*, chưa soạn).
+## Phân bố 12 buổi (2 tuần) — bám đúng 7 bài hiện có (70 tiết)
+Thứ tự theo chương trình của thầy: nhập môn → lập trình tiện → lập trình phay → vận hành tiện/phay → gia công tiện/phay → dự án. Nhập môn gom nội quy, máy, điểm chuẩn, hệ điều khiển WinNC FANUC, lệnh cơ bản và chương trình đầu tiên (bản cũ của tôi xếp "Bài 1 điểm chuẩn" thành một buổi riêng và đảo thứ tự, không đúng thực tế dạy).
 
-| Buổi | Chủ đề | Phần A tối trước | Việc chính tại lớp |
-|---|---|---|---|
-| 1 | An toàn, 5S (bài Mở đầu) | quy tắc trước khi bật máy | đi vòng xưởng tìm điểm nguy hiểm, dừng khẩn thật |
-| 2 | Bài 1: trục, điểm chuẩn (**bản mẫu**) | II.5, II.6 | tìm M, R; đặt W trên tiện và phay |
-| 3 | Bài 4: vận hành tiện | quy trình nhận máy | gá phôi, gá dao, đo dao, chạy không tải |
-| 4 | Bài 5: vận hành phay | quy trình nhận máy | đặt W bằng dao chạm, đo dao, chạy không tải |
-| 5 | Bài 2: lập trình tiện (1) | G00/G01, tuyệt đối/tương đối | viết, mô phỏng, chạy trục bậc đơn giản |
-| 6 | Bài 3: lập trình phay (1) | G00/G01, mặt phẳng, bù chiều dài | viết, mô phỏng, chạy rãnh và bậc |
-| 7 | *Mới* Lập trình tiện (2) | G02/G03, côn, chu trình thô | trục có côn và bo cung |
-| 8 | *Mới* Lập trình phay (2) | G02/G03, bù bán kính, chu trình khoan | contour và 4 lỗ |
-| 9 | Bài 6: gia công tiện | bản vẽ trục bậc | cắt chi tiết thật, đo, ghi sai lệch |
-| 10 | Bài 7: gia công phay | bản vẽ tấm đế | cắt chi tiết thật, đo, ghi sai lệch |
-| 11 | *Mới* Sửa lỗi, chế độ cắt (S, F), tuổi bền dao | ca lỗi mẫu | sửa chương trình lỗi, so chi tiết trước/sau |
-| 12 | *Mới* Dự án nhóm + kiểm tra thực hành | đề bài dự án | từ bản vẽ đến chi tiết, chấm theo checklist |
+| Buổi | Chủ đề (bài trên web) | Tối trước (A) | Giảng viên dạy (~1–2 giờ) | Thực hành (hai trạm) |
+|---|---|---|---|---|
+| 1 | Nhập môn: Mở đầu + Bài 1 + nhập môn lệnh (**bản mẫu, đã đăng**) | không có (buổi đầu) | nội quy, an toàn, máy, M-W-R, WinNC, lệnh, chương trình đầu tiên | máy thật: nhận máy, Reference, JOG, MDI · WinNC: nhập và chạy O0001 |
+| 2 | Lập trình tiện (1): Bài 2 mục 1–3 | đọc mục 2–3, quiz | cấu trúc chương trình 21T, G18/G71/G95, G00/G01, G90/G91, X-Z và U-W | viết, chạy WinNC trục bậc đơn giản; máy thật chạy từng khối, không phôi |
+| 3 | Lập trình tiện (2): Bài 2 mục 4–6 + bài toán mẫu | mục 4–6 | bù bán kính mũi dao, chu trình tiện và khoan, mã M | tiện tinh trục bậc trên WinNC, sửa lỗi cú pháp |
+| 4 | Lập trình phay (1): Bài 3 mục 1–3 | mục 1–3 | điểm chuẩn phay, cấu trúc 21M, G17, dịch chuyển | rãnh, bậc trên WinNC |
+| 5 | Lập trình phay (2): Bài 3 mục 4–7 + bài toán mẫu | mục 4–7 | bù bán kính và chiều dài, G81/G83/G73, tarô, doa, mã M | contour và 4 lỗ trên WinNC |
+| 6 | Vận hành tiện: Bài 4 (EMCO TURN 55) | mục 1–4 | kiểm máy, Reference, JOG, MDI, gá, W, Geometry Offset | máy thật: gá, đặt W, đo dao · WinNC: nhập offset, chạy |
+| 7 | Vận hành phay: Bài 5 (MILL 55) | mục 1–4 | tương tự phay, dò cạnh, chiều dài và bán kính dao | như buổi 6 trên phay |
+| 8 | Gia công tiện (1): Bài 6 mục 1–3 | mục 1–3 | mặt đầu, trụ, bậc, vát, bo, thứ tự nguyên công | cắt chi tiết thật; WinNC kiểm trước |
+| 9 | Gia công tiện (2): Bài 6 mục 4–5 + mẫu | mục 4–5 | côn, ren, năm bước giải bài tổng hợp | cắt trục có côn và bo cung, đo, ghi sai lệch |
+| 10 | Gia công phay (1): Bài 7 mục 1–2 | mục 1–2 | phay phẳng, bậc, cong, cung | cắt chi tiết thật; WinNC kiểm trước |
+| 11 | Gia công phay (2): Bài 7 mục 3–5 + mẫu | mục 3–5 | profile, khoan, tarô, sắp thứ tự nguyên công | cắt tấm đế bốn lỗ ren, đo, ghi sai lệch |
+| 12 | *Mới (duy nhất cần soạn)* Dự án nhóm + kiểm tra thực hành | đề dự án | chữa lỗi thường gặp 30 phút | từ bản vẽ đến chi tiết, chấm theo checklist |
 
-Thứ tự bài 4, 5 trước bài 2, 3: sinh viên đã chạm máy trước khi viết lệnh, nên lập trình có chỗ gắn. Nếu thầy muốn lập trình trước thì đảo buổi 3–4 với 5–6, bài mẫu không đổi.
+- Buổi 2–5: máy thật dùng để chạy **từng khối, không phôi**; vào cắt thật chỉ từ buổi 6 vì cần biết đặt W và offset.
+- Cả 12 buổi dùng đúng 11 bài đã có (Bài 1–7 chia đôi ở bài dài), chỉ buổi 12 là bài mới. Bản cũ "4 bài mới" bỏ.
+- Chưa rà từng mục con của Bài 4–7 xem đã đủ cho buổi 6–11; mỗi buổi soạn trang flipped riêng theo mẫu buổi 1.
 
 ## Việc cần thầy quyết
-1. Thứ tự 12 buổi ở trên, nhất là bài vận hành (3–4) đặt trước lập trình (5–6).
-2. Cổng 4/5 trước khi vào xưởng: bắt buộc hay chỉ khuyến khích.
-3. Video: thầy tự quay (6–8 phút/bài) hay chỉ dùng bài đọc có sẵn. Bản mẫu mới dùng bài đọc, chưa có video.
-4. Có bật trên web `/lop-hoc/cnc/` không: bài mẫu sẽ thành một mục mới hoặc thay phần mở đầu của `lesson-1` (mục ghi DB do thầy duyệt).
+1. Bảng 12 buổi ở trên có khớp lịch thầy đang dạy không (thứ tự, chỗ chia đôi Bài 2, 3, 6, 7).
+2. Cổng 4/5 trước khi vào xưởng từ buổi 2: bắt buộc hay chỉ khuyến khích.
+3. Số máy tính WinNC (đang giả định mỗi em một máy).
+4. Video: thầy tự quay hay chỉ dùng bài đọc có sẵn (mẫu mới dùng bài đọc).
 
 ## Chưa làm / chưa kiểm
-- Chưa ghi DB, chưa hiện cho sinh viên; chỉ có bản xem thử `content/lesson-samples/cnc-flipped-bai-1/xem-thu/xem-thu.html`.
+- Buổi 1 đã ghi `cnc_lessons` (flip-1); buổi 2–12 chưa soạn trang flipped.
+- Chương trình O0001 chưa chạy thử trên WinNC FANUC 21T thật của xưởng; cú pháp (nhất là `T0202 M6;`, `M5;`, F giữ hiệu lực ở khối sau) cần thầy chạy thử trước khi dùng.
 - Chưa có chỗ để sinh viên gửi "câu chưa rõ" trên web (hiện nhờ nhóm lớp); chưa thử với sinh viên thật.
