@@ -59,6 +59,7 @@ FILES=(
   "supabase/migrations/20261018180000_sweep_engagement_bo_is_test.sql|Sửa sweep_engagement_alerts: bỏ tài khoản thử theo cờ profiles.is_test|lúc nào cũng được; chạy SAU 20261018170000"
   "supabase/migrations/20261018181000_user_classes_cho_phep_archived.sql|Cho phép user_classes.status = archived (lưu trữ tài khoản HS bị bỏ)|lúc nào cũng được"
   "supabase/migrations/20261018190000_staff_week_plans.sql|Bảng staff_week_plans: lịch tuần giảng viên hiện ở /tai-khoan (RLS chỉ chủ tài khoản đọc)|lúc nào cũng được"
+  "supabase/migrations/20261018150000_push_thong_bao.sql|Thêm notifications.pushed_at + hàm claim_notification_pushes (đẩy thông báo ra màn hình khoá, tối đa 3/ngày)|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong

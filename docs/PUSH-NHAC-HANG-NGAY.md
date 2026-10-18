@@ -51,3 +51,20 @@ thông báo. Ép nhắc ngay: đặt `remind_hour` của dòng mình bằng gi�
 - Không nhắc HS đã luyện hoặc nộp đề hôm nay (ngày VN). Giờ nhắc 6–22h (ngoài khung ngủ).
 - Endpoint 404/410 bị xoá khỏi bảng. HS tắt nhắc = xoá dòng + huỷ đăng ký trên thiết bị.
 - Nội dung: `Em còn 🔴 <chủ đề yếu nhất> — 5 phút?` (🟡 nếu mới ở mức "cần luyện"); chưa đủ dữ liệu -> "Hôm nay luyện 5 phút nhé?". Test: `npx tsx scripts/test-push-message.mts`.
+
+## Push thông báo (18/10/2026) — mọi thông báo trong web hiện ra màn hình khoá, có rung
+Mỗi dòng mới ở `notifications` (đăng ký lớp, đề mới giao, lời nhắn thầy/trợ giảng…) được đẩy tới thiết bị đã bật push của em.
+- Migration `20261018150000_push_thong_bao.sql` (thêm `notifications.pushed_at`, hàm `claim_notification_pushes`). Rollback: `perf/rollback/20261018150000_push_thong_bao.down.sql`.
+- Edge Function `send-notification-push` (cùng secrets với `send-daily-push`): `supabase functions deploy send-notification-push --no-verify-jwt`.
+- Lịch MỖI PHÚT (chạy tay trong SQL editor, có secret nên không nằm trong migration):
+```sql
+select cron.schedule('send-notification-push', '* * * * *', $$
+  select net.http_post(
+    url := 'https://<project-ref>.supabase.co/functions/v1/send-notification-push',
+    headers := jsonb_build_object('x-cron-secret', '<PUSH_CRON_SECRET>', 'Content-Type', 'application/json'),
+    body := '{}'::jsonb);
+$$);
+```
+- Quy tắc: tối đa 3 push/ngày/em, chỉ 6–22h VN, tin quá 30 phút không đẩy, mỗi lượt một tin mới nhất/em; chưa đọc mới đẩy.
+- Phía web: `public/sw.js` (v5) rung `[200,100,200,100,300]` và báo tab đang mở; `NotificationBell` hiện popup + `navigator.vibrate` ngay khi có thông báo mới (qua tin từ SW, hoặc phát hiện khi đếm lại); `PushOptInPrompt` mời HS bật (sau 25 giây, "Để sau" nhớ 14 ngày).
+- Giới hạn: iPhone chỉ nhận khi đã thêm vào Màn hình chính; `navigator.vibrate` không chạy trên iOS (push hệ thống vẫn rung theo cài đặt máy). Chỉ HS có đăng ký push (giáo viên/phụ huynh chưa).

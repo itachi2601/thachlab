@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Bell, CheckCheck } from "lucide-react";
+import { Bell, CheckCheck, X } from "lucide-react";
 import { useAuth } from "@/components/auth/auth-context";
 import { timeAgo } from "@/lib/time-ago";
 import type { Notification } from "@/services/notifications";
@@ -26,19 +26,64 @@ export default function NotificationBell() {
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState<Notification[] | null>(null);
+  const [toast, setToast] = useState<{ title: string; body: string; href: string } | null>(null);
   const ref = useRef<HTMLDivElement>(null);
+  const prevCount = useRef<number | null>(null);
 
-  const refreshCount = useCallback(() => {
-    if (!session || document.visibilityState === "hidden") return;
-    import("@/services/notifications").then(({ fetchUnreadCount }) =>
-      fetchUnreadCount().then(setCount).catch(() => undefined),
-    );
-  }, [session]);
+  const showToast = useCallback((t: { title: string; body: string; href: string }) => {
+    setToast(t);
+    try {
+      navigator.vibrate?.([200, 100, 200]); // Android; iOS/desktop bỏ qua
+    } catch {
+      // bỏ qua
+    }
+  }, []);
+
+  const refreshCount = useCallback(
+    (force = false) => {
+      if (!session || (!force && document.visibilityState === "hidden")) return;
+      import("@/services/notifications").then(({ fetchUnreadCount, fetchNotifications }) =>
+        fetchUnreadCount()
+          .then((n) => {
+            const before = prevCount.current;
+            prevCount.current = n;
+            setCount(n);
+            // Có thông báo mới từ lần đếm trước (không phải lần tải đầu): hiện popup ngay, không đợi mở chuông.
+            if (before !== null && n > before) {
+              void fetchNotifications(1)
+                .then(([latest]) => latest && !latest.read_at && showToast({ title: latest.title, body: latest.body, href: latest.href || "/thong-bao" }))
+                .catch(() => undefined);
+            }
+          })
+          .catch(() => undefined),
+      );
+    },
+    [session, showToast],
+  );
+
+  // Service worker báo "vừa có push" -> đếm lại ngay (không chờ chu kỳ poll) và hiện popup.
+  useEffect(() => {
+    if (!session || !("serviceWorker" in navigator)) return;
+    const onMsg = (e: MessageEvent) => {
+      if (e.data?.type !== "thachlab-push") return;
+      showToast({ title: e.data.title || "ThachLab", body: e.data.body || "", href: e.data.url || "/thong-bao" });
+      prevCount.current = null; // đã hiện popup từ payload, đừng hiện lần nữa khi đếm lại
+      refreshCount(true);
+    };
+    navigator.serviceWorker.addEventListener("message", onMsg);
+    return () => navigator.serviceWorker.removeEventListener("message", onMsg);
+  }, [session, refreshCount, showToast]);
+
+  useEffect(() => {
+    if (!toast) return;
+    const t = window.setTimeout(() => setToast(null), 9000);
+    return () => window.clearTimeout(t);
+  }, [toast]);
 
   useEffect(() => {
     if (!session) return;
     refreshCount();
-    const timer = window.setInterval(refreshCount, POLL_MS);
+    const timer = window.setInterval(() => refreshCount(), POLL_MS);
     const onFocus = () => refreshCount();
     const onVisible = () => {
       if (document.visibilityState === "visible") refreshCount();
@@ -84,6 +129,31 @@ export default function NotificationBell() {
 
   return (
     <div className="relative" ref={ref}>
+      {toast && (
+        <div role="status" aria-live="polite" className="fixed inset-x-3 top-3 z-[100] sm:left-auto sm:right-4 sm:w-96">
+          <div className="flex items-start gap-2 rounded-2xl border border-blue-400/40 bg-panel p-3 shadow-2xl shadow-black/50">
+            <Link
+              href={toast.href}
+              onClick={() => setToast(null)}
+              className="flex min-h-11 min-w-0 flex-1 items-start gap-3 rounded-xl px-1"
+            >
+              <Bell size={20} className="mt-0.5 shrink-0 text-blue-300" />
+              <span className="min-w-0">
+                <span className="block text-base font-semibold text-ink">{toast.title}</span>
+                {toast.body && <span className="mt-0.5 line-clamp-2 block text-sm text-muted">{toast.body}</span>}
+              </span>
+            </Link>
+            <button
+              type="button"
+              aria-label="Đóng"
+              onClick={() => setToast(null)}
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-muted hover:bg-surface-2"
+            >
+              <X size={18} />
+            </button>
+          </div>
+        </div>
+      )}
       <button
         type="button"
         aria-label={count > 0 ? `${count} thông báo chưa đọc` : "Thông báo"}

@@ -1,6 +1,7 @@
 # STATE — Hiện trạng ThachLab (rút gọn 10/10/2026)
 
 File dùng chung cho mọi phiên, **nạp mỗi phiên nên giữ dưới ~15 KB**: chỉ hiện trạng + việc ĐANG CHỜ. Xong mục nào → chuyển
+- Push thông báo ra màn hình khoá (18/10): code xong, CHƯA chạy — migration `20261018150000_push_thong_bao.sql`, deploy `send-notification-push`, đặt cron mỗi phút; các bước ở cuối `docs/PUSH-NHAC-HANG-NGAY.md`.
 - HSG9 đợt 4 (17/10): cả 6 CĐ (151/152/163/156/158/178) đã ghi DB (ẩn) + deploy; chờ thầy xem `/lop-hoc/bai/?id=…` rồi bật Hiện (bật xong deploy lại để có file tĩnh) — xem `docs/memory/project_thachlab_khoa_hsg9_vat_ly.md`.
 nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầy đủ trước khi rút gọn nằm ở cuối `STATE-archive.md`
 (mục "Bản STATE.md trước khi rút gọn") — grep ở đó khi cần chi tiết một việc cũ.

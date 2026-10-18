@@ -7,9 +7,10 @@
  *    (khớp cả khi khác query), cuối cùng trang /offline/ (cache sẵn lúc cài). Nhờ đó bài/luyện đã mở xem lại được khi mất mạng.
  *  - Kết quả luyện tập mất mạng KHÔNG đi qua SW: services/lessons.ts xếp hàng ở localStorage.
  *  - RUNTIME_CACHE giới hạn MAX_RUNTIME_ENTRIES mục (xoá mục cũ nhất).
- *  - push + notificationclick: nhắc luyện 1 lần/ngày (M4), bấm vào mở /lop-hoc/ và focus tab có sẵn.
+ *  - push + notificationclick: nhắc luyện 1 lần/ngày (M4) và thông báo trong web (kind "notification", rung máy,
+ *    báo cho tab đang mở qua postMessage để hiện popup ngay); bấm vào mở đúng trang và focus tab có sẵn.
  * Đổi VERSION để dọn cache cũ. */
-const VERSION = "v4";
+const VERSION = "v5";
 const SHELL_CACHE = "thachlab-shell-" + VERSION;
 const RUNTIME_CACHE = "thachlab-runtime-" + VERSION;
 const MAX_RUNTIME_ENTRIES = 120;
@@ -122,14 +123,24 @@ self.addEventListener("push", (event) => {
   } catch (e) {
     d = {};
   }
+  const isNotif = d.kind === "notification";
   event.waitUntil(
-    self.registration.showNotification(d.title || "ThachLab", {
-      body: d.body || "Hôm nay luyện 5 phút nhé?",
-      icon: "/icons/icon-192.png",
-      badge: "/icons/icon-192.png",
-      tag: d.tag || "thachlab-daily",
-      data: { url: d.url || "/lop-hoc/" },
-    }),
+    Promise.all([
+      self.registration.showNotification(d.title || "ThachLab", {
+        body: d.body || "Hôm nay luyện 5 phút nhé?",
+        icon: "/icons/icon-192.png",
+        badge: "/icons/icon-192.png",
+        tag: d.tag || "thachlab-daily",
+        renotify: true,
+        vibrate: isNotif ? [200, 100, 200, 100, 300] : [120],
+        data: { url: d.url || "/lop-hoc/" },
+      }),
+      isNotif
+        ? self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((list) => {
+            for (const c of list) c.postMessage({ type: "thachlab-push", title: d.title, body: d.body, url: d.url });
+          })
+        : undefined,
+    ]),
   );
 });
 
