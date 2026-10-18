@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, BookOpen, ClipboardList, Cpu, Database, GraduationCap, Wrench } from "lucide-react";
+import { ArrowRight, Bug, BookOpen, ClipboardList, Cpu, Database, GraduationCap, UserCheck, Wrench } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { AREA_ENTRY, AREA_ITEMS, SHARED_ITEMS, type AdminNavItem } from "@/components/admin/nav";
 import { getSupabase, supabaseConfigured } from "@/services/supabase";
+import { fetchAdminTodayBoard } from "@/services/admin-today";
 
 type Counts = {
   lessons: number | null;
@@ -42,6 +43,7 @@ export default function AdminOverviewPage() {
   const { profile, loading } = useAuth();
   const router = useRouter();
   const [counts, setCounts] = useState<Counts>(EMPTY_COUNTS);
+  const [todo, setTodo] = useState<{ newBugs: number; pendingJoins: number } | null>(null);
   const restrictedArea = profile?.role === "instructor" ? profile.admin_area : null;
 
   // Giảng viên chỉ được phân công 1 khu vực thì vào thẳng khu đó, không thấy trang tổng quan.
@@ -73,6 +75,9 @@ export default function AdminOverviewPage() {
         setCounts({ lessons, exams, questions, students, results7d, brokenMachines });
       })
       .catch(() => undefined);
+    fetchAdminTodayBoard()
+      .then((board) => alive && setTodo({ newBugs: board.newBugs, pendingJoins: board.pendingJoins }))
+      .catch(() => undefined);
     return () => {
       alive = false;
     };
@@ -94,13 +99,21 @@ export default function AdminOverviewPage() {
         <p className="admin-lead">Số liệu nhanh của hệ thống và các việc hay làm nhất.</p>
       </section>
 
+      <section>
+        <h3 className="admin-h2">Cần xử lý</h3>
+        <div className="admin-grid mt-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
+          <Stat icon={Bug} label="Báo lỗi mới" value={todo?.newBugs ?? null} href="/quan-tri/bao-loi" tone="warn" />
+          <Stat icon={UserCheck} label="Em chờ duyệt vào lớp" value={todo?.pendingJoins ?? null} href="/quan-tri/hoc-sinh" tone="warn" />
+          <Stat icon={Wrench} label="Máy đang hư" value={counts.brokenMachines} href="/quan-tri/tinh-trang-may" tone="warn" />
+        </div>
+      </section>
+
       <section className="admin-grid" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(165px, 1fr))" }}>
-        <Stat icon={BookOpen} label="Bài học" value={counts.lessons} />
-        <Stat icon={ClipboardList} label="Đề kiểm tra" value={counts.exams} />
-        <Stat icon={Database} label="Câu hỏi trong ngân hàng" value={counts.questions} />
-        <Stat icon={GraduationCap} label="Học sinh" value={counts.students} />
+        <Stat icon={BookOpen} label="Bài học" value={counts.lessons} href="/quan-tri/bai-hoc" />
+        <Stat icon={ClipboardList} label="Đề kiểm tra" value={counts.exams} href="/quan-tri/sua-de" />
+        <Stat icon={Database} label="Câu hỏi trong ngân hàng" value={counts.questions} href="/quan-tri/ngan-hang-cau-hoi" />
+        <Stat icon={GraduationCap} label="Học sinh" value={counts.students} href="/quan-tri/hoc-sinh" />
         <Stat icon={ClipboardList} label="Bài nộp 7 ngày qua" value={counts.results7d} />
-        <Stat icon={Wrench} label="Máy đang hư" value={counts.brokenMachines} tone={counts.brokenMachines ? "danger" : undefined} />
       </section>
 
       <section>
@@ -156,21 +169,39 @@ function Stat({
   icon: Icon,
   label,
   value,
+  href,
   tone,
 }: {
   icon: typeof BookOpen;
   label: string;
   value: number | null;
-  tone?: "danger";
+  href?: string;
+  /** warn: ô "cần xử lý" — sáng lên khi > 0, mờ đi khi = 0. */
+  tone?: "warn";
 }) {
-  return (
-    <div className="admin-stat">
+  const active = tone === "warn" && !!value;
+  const body = (
+    <>
       <p className="admin-stat-label">
         <Icon size={14} /> {label}
       </p>
-      <p className="admin-stat-value" style={tone === "danger" ? { color: "#fca5a5" } : undefined}>
-        {value === null ? "—" : value.toLocaleString("vi-VN")}
-      </p>
+      {value === null ? (
+        <span className="mt-2 block h-[29px] w-16 animate-pulse rounded-md bg-white/10" aria-label="Đang tải" />
+      ) : (
+        <p className="admin-stat-value" style={active ? { color: "#fca5a5" } : undefined}>
+          {value.toLocaleString("vi-VN")}
+        </p>
+      )}
+    </>
+  );
+  const style = tone === "warn" && value === 0 ? { opacity: 0.6 } : undefined;
+  return href ? (
+    <Link href={href} className="admin-stat block transition-colors hover:border-white/25" style={style}>
+      {body}
+    </Link>
+  ) : (
+    <div className="admin-stat" style={style}>
+      {body}
     </div>
   );
 }

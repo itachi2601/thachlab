@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Bug, Image as ImageIcon, Loader2, RefreshCw, Trash2, X } from "lucide-react";
+import { Bug, Image as ImageIcon, RefreshCw, Trash2, X } from "lucide-react";
 import { useToast } from "@/components/ui/Toast";
 import { SITE_URL } from "@/lib/site";
 import {
@@ -105,48 +105,54 @@ export default function BugReportsAdmin() {
       {error && <p className="rounded-xl bg-red-500/10 p-3 text-sm text-red-200">{error}</p>}
 
       {loading ? (
-        <p className="admin-card flex items-center gap-2 text-sm text-slate-500">
-          <Loader2 size={14} className="animate-spin" />
-          Đang tải…
-        </p>
+        <div className="admin-table-wrap" aria-busy="true" aria-label="Đang tải">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <div key={i} className="flex animate-pulse items-center gap-4 border-b border-white/5 p-3 last:border-0">
+              <span className="h-3 w-20 rounded bg-white/10" />
+              <span className="h-3 w-28 rounded bg-white/10" />
+              <span className="h-3 flex-1 rounded bg-white/10" />
+              <span className="h-5 w-12 rounded-full bg-white/10" />
+            </div>
+          ))}
+        </div>
       ) : reports.length === 0 ? (
         <p className="rounded-2xl border border-dashed border-white/10 p-8 text-center text-sm text-slate-500">Chưa có mục nào.</p>
       ) : (
         <div className="admin-table-wrap max-h-[36rem] overflow-y-auto">
-          <table className="min-w-[900px] text-xs">
+          <table className="text-xs">
             <thead>
               <tr>
                 <th className="p-2">Thời gian</th>
                 <th className="p-2">Người báo</th>
                 <th className="p-2">Loại</th>
                 <th className="p-2">Mô tả</th>
-                <th className="p-2">Trang</th>
+                <th className="hidden p-2 xl:table-cell">Trang</th>
                 <th className="p-2">Trạng thái</th>
-                <th className="p-2" />
               </tr>
             </thead>
             <tbody>
               {reports.map((r) => (
-                <tr key={r.id} className="border-b border-white/5">
-                  <td className="p-2 text-slate-400">{fmt(r.created_at)}</td>
+                <tr key={r.id} className="cursor-pointer border-b border-white/5 align-top" onClick={() => setSelected(r)}>
+                  <td className="whitespace-nowrap p-2 text-slate-400">{fmt(r.created_at)}</td>
                   <td className="p-2 text-slate-300">{r.profiles?.full_name ?? (r.reporter_name || "Khách")}</td>
                   <td className="p-2 text-slate-300">
                     {BUG_CATEGORY_LABELS[r.category]}
                     {(() => {
                       const t = targetOf(r);
                       return t && (
-                        <Link href={fixExamHref(t.examId, t.questionIndex)} className="mt-0.5 block text-[12px] font-bold text-cyan-300 hover:text-cyan-200">
+                        <Link href={fixExamHref(t.examId, t.questionIndex)} onClick={(e) => e.stopPropagation()} className="mt-0.5 block text-[12px] font-bold text-cyan-300 hover:text-cyan-200">
                           Đề #{t.examId}{t.questionIndex != null && ` · Câu ${t.questionIndex + 1}`} →
                         </Link>
                       );
                     })()}
                   </td>
-                  <td className="max-w-[260px] truncate p-2 text-slate-400" title={r.description}>
-                    {r.description}
+                  <td className="min-w-[200px] p-2 text-slate-300">
+                    <span className="line-clamp-3 whitespace-pre-wrap break-words">{r.description}</span>
+                    <span className="mt-0.5 block text-[11px] font-bold text-cyan-300">Bấm để xem chi tiết</span>
                   </td>
-                  <td className="max-w-[160px] truncate p-2 font-mono text-slate-500" title={r.page_url}>
+                  <td className="hidden max-w-[160px] truncate p-2 font-mono text-slate-500 xl:table-cell" title={r.page_url}>
                     {r.page_url ? (
-                      <a href={`${SITE_URL}${r.page_url}`} target="_blank" rel="noreferrer" className="text-cyan-300 hover:underline">
+                      <a href={`${SITE_URL}${r.page_url}`} onClick={(e) => e.stopPropagation()} target="_blank" rel="noreferrer" className="text-cyan-300 hover:underline">
                         {r.page_url}
                       </a>
                     ) : (
@@ -155,11 +161,6 @@ export default function BugReportsAdmin() {
                   </td>
                   <td className="p-2">
                     <span className={`rounded-full px-2 py-0.5 font-bold ${STATUS_STYLES[r.status]}`}>{BUG_STATUS_LABELS[r.status]}</span>
-                  </td>
-                  <td className="p-2">
-                    <button type="button" onClick={() => setSelected(r)} className="font-bold text-cyan-300 hover:text-cyan-200">
-                      Xem
-                    </button>
                   </td>
                 </tr>
               ))}
