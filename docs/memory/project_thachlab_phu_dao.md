@@ -103,3 +103,11 @@ Thầy chốt: hạn đăng ký 6 giờ trước giờ học, tối đa 3 chủ 
 - Treo: mục 3 và 6; chưa thử UI bằng HS/TA thật; đăng ký cũ (`topic_ids` rỗng) hiện "chưa chọn chủ đề"; trang GV `text-white/slate` chưa kiểm nền sáng.
 
 **2026-10-15 — thử bằng HS Test + sửa 5 lỗi (5a977bddd, chưa deploy):** xem [[project_thachlab_hs_test_accounts]]. Phụ đạo đăng ký/huỷ và thoát phụ đạo đường chưa đạt chạy đúng; `SlotTopicPicker` → buổi đã đăng ký giờ hiện "Em đã chọn: …".
+
+**2026-10-17 — phụ đạo KHÔNG sinh từ đề luyện tập (thầy chốt; migration `20261017230000_phu_dao_bo_de_luyen_tap`, ĐÃ chạy 18:44, commit `55873ad80`):**
+- Hàm `exam_is_assessment(exam_id)`: đề trong mục Kiểm tra/BTVN của bài, `class_assessments`, `class_announcements.exam_id`, `ta_homework_assignments`, `class_review_homework`. Còn lại (Luyện tập, Kiểm tra nhanh, bài tập mẫu, đề mở từ kệ chưa gắn mục) = luyện, không mở mục phụ đạo.
+- `refresh_tutoring_needs` phần (a) mở mục chỉ xét 2 đề KIỂM TRA gần nhất; phần (b) đóng mục vẫn xét mọi đề. `student_outcome_gaps` chưa đổi (vẫn cửa sổ 2 bài bất kỳ) — lệch nhỏ, chưa sửa.
+- Dọn một lần: 192 mục `auto` đang `open` của 110 em → `dismissed`, note "sinh từ đề luyện tập, bỏ 17/10/2026"; còn 530 mục open. `assigned`/`tutored` không đụng. KHÔNG có bản sao lưu toàn bảng trước khi chạy (rollback chỉ mở lại mục có note đó). Chưa báo trợ giảng về việc mục giảm.
+- Rollback: `perf/rollback/20261017230000_phu_dao_bo_de_luyen_tap.down.sql`.
+
+- 2026-10-18: ngưỡng mở mới theo khảo sát HS — cửa sổ 12 câu kiểm tra gần nhất của bài×dạng, ≥10 câu sai ≥50% (đường tắt 5–9 câu sai ≥80%); migration 20261018120000 đã chạy, open 574→205; ở tầng YCCĐ chỉ ~10% cặp đủ 10 câu nên giữ mục ở tầng bài×dạng. Rollback: perf/rollback/20261018120000_phu_dao_nguong_10_cau.down.sql.

@@ -25,7 +25,7 @@ Một mục = *một em × một chủ đề bài học × (lý thuyết | bài 
 
 | Trạng thái | Khi nào | Ai đổi |
 |---|---|---|
-| `open` | Trong **2 bài gần nhất**, em sai **≥ 50%** số câu của chủ đề đó (tối thiểu 3 câu) | hệ thống |
+| `open` | Trong **12 câu kiểm tra gần nhất** của bài × dạng, em có **≥ 10 câu** và sai **≥ 50%**; đường tắt: 5–9 câu mà sai **≥ 80%** (đề luyện tập không tính; thầy chốt 18/10/2026 theo khảo sát học sinh) | hệ thống |
 | `assigned` | Trợ giảng bấm "Tôi nhận" | trợ giảng |
 | `tutored` | Trợ giảng ghi buổi phụ đạo và tick đúng chủ đề đó | trợ giảng |
 | `cleared` | Bài sau em làm đúng **≥ 75%** chủ đề đó | hệ thống |
@@ -86,8 +86,9 @@ gõ tên tay nữa (DB chặn ở `ta_session_student_link_guard`). Buổi trư�
 
 ## Ngưỡng
 
-Đổi trong `public.refresh_tutoring_needs`: `v_window` (2 bài), `v_min_q` (3 câu),
-`v_need_pct` (50%), `v_clear_pct` (25%).
+Đổi trong `public.refresh_tutoring_needs`: `v_roll` (12 câu), `v_min_q` (10 câu), `v_need_pct` (50%),
+`v_fast_q`/`v_fast_pct` (5 câu/80%), `v_window` (2 bài, dùng cho đóng mục), `v_clear_pct` (25%).
+Đo 18/10/2026 trên dữ liệu thật: ở tầng yêu cầu cần đạt chỉ ~10% cặp em×YCCĐ đủ 10 câu nên mục vẫn mở ở tầng bài × dạng.
 
 ## Tự kiểm tra thoát phụ đạo: xem lại lý thuyết → làm bài
 
