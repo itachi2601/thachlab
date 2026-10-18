@@ -569,7 +569,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
           <div className="cnc-lesson-stack">
             {visibleLessons.map((item) => {
               const index = lessons.findIndex((candidate) => candidate.id === item.id);
-              const itemMeta = lessonMeta[item.id];
+              const itemMeta = lessonMeta[item.id] ?? { theory: 0, practice: 0, test: 0 };
               const active = expandedLessonId === item.id;
               const competencyStates = cncCompetencyStates(Array.from(passedAssessments).map(key => { const separator=key.lastIndexOf(":"); return {course_id:courseId??0,student_id:session?.user.id??"",lesson_id:key.slice(0,separator),assessment_id:key.slice(separator+1),completed:true,latest_score:null,best_score:null,total_questions:null,attempt_count:1,last_activity_at:""}; }),competencyPermissions);
               const teacherLocked = openLessonIds.length>0&&!openLessonIds.includes(item.id);
