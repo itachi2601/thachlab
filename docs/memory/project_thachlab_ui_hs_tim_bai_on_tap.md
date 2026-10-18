@@ -25,3 +25,8 @@ metadata:
 - Thầy quyết: 3 đề #206, #209 (mùa 4), #7 (mùa 5) giữ 20 RP, không hạ.
 
 Liên quan: [[project_thachlab_gan_lop_de]], [[project_thachlab_hs_test_accounts]], [[project_thachlab_rank_system]].
+
+## 2026-10-19 · Trang lớp gọn đầu trang (commit 5055359e0, đã deploy)
+- Thầy hỏi "là HS thì thấy sao khi mục lục bị đẩy xuống hơn nửa màn" → đo 375px: Chương 1 ở 56% màn, vi phạm B1.
+- Đã làm: "Tiếp theo" một dòng bấm được; bỏ thanh đáy 3 nút của trang lớp (trùng tab bar); tìm bài thành icon cạnh h1; Kho bẫy/Đề thi/Xếp hạng thành hàng chip (chip Kho bẫy ẩn khi 0 câu, trần 20+). Sau: Chương 1 ở ~296px.
+- Chưa thử trên tài khoản HS thật (chip 🔥 chuỗi ngày nằm cùng hàng h1, chưa nhìn).
