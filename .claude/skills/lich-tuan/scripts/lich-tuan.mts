@@ -38,6 +38,24 @@ for (const e of rules.co_dinh) {
   }
   evs.push(ev);
 }
+// Chi tiết HSG KHTN 9 trong tuần: tự học của HS (T2–T6), thầy xem tiến độ, gửi bài tuần sau
+{
+  const sat = fmt(dayOf(6));
+  const i = hsgTuan.findIndex((t: any) => t.ngay === sat);
+  const row: any = i >= 0 ? hsgTuan[i] : null;
+  const next: any = i >= 0 ? hsgTuan[i + 1] : null;
+  const prev: any = i > 0 ? hsgTuan[i - 1] : null;
+  if (row?.tu_hoc) {
+    // tự học T2–T6 trước buổi này (gửi từ thứ Bảy trước)
+    const names = ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu"];
+    row.tu_hoc.forEach((t: string[], k: number) => {
+      const w = names.indexOf(t[0]) + 1;
+      if (w) evs.push({ weekday: w, start: "21:45", end: "22:00", title: `HSG 9 tự học: ${t[1]}`, src: "HSG KHTN 9", note: "Việc em làm ở nhà; thầy chỉ theo dõi" });
+    });
+  }
+  if (row) evs.push({ weekday: 4, start: "22:00", end: "22:20", title: "HSG 9: xem tiến độ tự học trên web", src: "HSG KHTN 9", note: `Chuẩn bị buổi ${row?.buoi ?? ""}` });
+  if (next) evs.push({ weekday: 6, start: "11:00", end: "11:20", title: `HSG 9: giao BTVN & tự học tuần tới (buổi ${next.buoi}: ${next.chu_de})`, src: "HSG KHTN 9", note: next.btvn });
+}
 
 // 2. thachlab
 const sb = createClient(envLocal("NEXT_PUBLIC_SUPABASE_URL")!, envLocal("SUPABASE_SERVICE_ROLE_KEY")!);
@@ -136,7 +154,7 @@ const slots = (spec: any, kind: string, n: number, avoidDays: number[]) => {
   return placed;
 };
 const sk = slots(rules.the_thao.truot_bang, "Trượt băng", rules.the_thao.truot_bang.min_buoi, [1]);
-slots(rules.the_thao.gym, "Tập gym", rules.the_thao.gym.min_buoi, sk); // gym không trùng ngày trượt băng
+slots(rules.the_thao.gym, "Tập gym", rules.the_thao.gym.min_buoi, []); // gym được cùng ngày với trượt băng (gym trước, trượt sau)
 
 // 6. xuất
 const NAME = ["", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"];

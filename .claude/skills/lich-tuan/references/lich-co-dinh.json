@@ -58,10 +58,10 @@
     "truot_bang": {
       "min_buoi": 3,
       "gio_uu_tien": [
-        "17:30-19:30",
+        "13:30-15:30",
+        "10:00-12:00",
         "14:30-16:30",
-        "15:00-17:00",
-        "13:30-15:30"
+        "17:30-19:30"
       ],
       "thoi_luong_phut": 120
     },
@@ -69,14 +69,15 @@
       "min_buoi": 2,
       "max_buoi": 3,
       "gio_uu_tien": [
-        "16:30-18:00",
-        "15:00-16:30",
+        "10:00-11:30",
         "12:00-13:30",
-        "17:30-19:00"
+        "16:30-18:00",
+        "15:00-16:30"
       ],
       "thoi_luong_phut": 90
     },
-    "khong_xep_lien_ke_gym": true
+    "khong_xep_lien_ke_gym": true,
+    "_ghi_chu": "Thầy chốt 19/10/2026: rải từ 10h sáng, tập được buổi trưa; gym trước, trượt băng sau trong cùng một ngày được."
   },
   "buoi_day": {
     "_ghi_chu": "Nhịp một buổi dạy Vật lí (thầy chốt 18/10/2026) + ghi chú riêng theo id khoá (thpt_courses.id) khi khoá không theo mốc bài.",
