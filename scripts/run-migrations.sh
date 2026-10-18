@@ -56,6 +56,8 @@ FILES=(
   "supabase/migrations/20261018150000_read_depth_quiz.sql|Độ sâu đọc lý thuyết + quiz đã bấm: bảng lesson_read_depth (1 dòng/HS×mục×ngày) + rollup >90 ngày (pg_cron thứ Hai), nhánh read_depth trong log_learning_events, RPC teacher_lesson_read_depth|lúc nào cũng được"
   "supabase/migrations/20261018170000_canh_bao_bo_bai_kt_dung_han_va_is_test.sql|Cảnh báo Bỏ bài KT chỉ khi quá hạn (class_assessments.due_at) hoặc >=50% lớp đã nộp; thêm profiles.is_test (gắn cờ hs.test%/tên Test/Anonymus); sweep chỉ tính HS thật|lúc nào cũng được; sau đó chạy scripts/don-canh-bao-gia.mts"
   "supabase/migrations/20261018120000_phu_dao_nguong_10_cau.sql|Ngưỡng phụ đạo mới theo HS: cửa sổ 12 câu, >=10 câu sai >=50% (đường tắt >=5 câu sai >=80%), dọn mục auto đang mở rồi refresh (có rollback)|lúc nào cũng được"
+  "supabase/migrations/20261018180000_sweep_engagement_bo_is_test.sql|Sửa sweep_engagement_alerts: bỏ tài khoản thử theo cờ profiles.is_test|lúc nào cũng được; chạy SAU 20261018170000"
+  "supabase/migrations/20261018181000_user_classes_cho_phep_archived.sql|Cho phép user_classes.status = archived (lưu trữ tài khoản HS bị bỏ)|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
