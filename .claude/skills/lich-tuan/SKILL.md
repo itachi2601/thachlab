@@ -29,8 +29,8 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 ## Cách đọc TKB portal (đã chạy thật 18/10/2026)
 - Sau khi thầy đăng nhập: điều hướng `tkb.php`, bấm nút mũi tên phải để sang tuần cần (mặc định hiện tuần hiện tại), rồi `javascript_tool` lấy các hàng bảng. Ô "Buổi" (Sáng/Chiều/Tối) có rowspan nên hàng đầu mỗi buổi có thêm 1 ô — đếm cột từ phải, đừng dùng `get_page_text` (mất ô trống, lệch ngày).
 - Trang này chỉ là lịch **lý thuyết**; chưa thấy lịch thực hành/đồ án — hỏi thầy nếu còn nguồn khác.
-- Giờ tiết (thầy chọn 18/10/2026, CHƯA xác minh): tiết 1 = 6h30, mỗi tiết 50 phút liền nhau (chưa tính giải lao), tiết 7 = 12h30. Khi thầy có bảng giờ thật thì sửa file TKB và ghi vào đây.
-- Gộp các tiết liền nhau cùng môn/lớp thành một mục; ghi `note` "giờ tiết giả định".
+- Giờ tiết (thầy chốt 18/10/2026): mỗi tiết 45 phút, nghỉ 5 phút giữa các tiết, riêng giữa tiết 3 và 4 nghỉ 10 phút. Sáng bắt đầu 6h30: T1 6:30–7:15, T2 7:20–8:05, T3 8:10–8:55, T4 9:05–9:50, T5 9:55–10:40, T6 10:45–11:30. Chiều bắt đầu 12h30, cùng nhịp: T7 12:30–13:15, T8 13:20–14:05, T9 14:10–14:55, T10 15:05–15:50, T11 15:55–16:40, T12 16:45–17:30. Giờ các tiết tối (13–16) chưa có — hỏi thầy khi gặp.
+- Gộp các tiết liền nhau cùng môn/lớp thành một mục; ghi giờ vào đầu tiết đầu và cuối tiết cuối.
 
 ## Quy ước (thầy chốt 18/10/2026)
 - Sáng T7 8h–11h dạy HSG KHTN 9 ở THCS Trần Văn Ơn.
@@ -41,7 +41,6 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 - Giờ hợp lý cho thể thao: không xếp sát giờ ngủ; đừng gym nặng ngay trước buổi trượt băng (xếp xen kẽ).
 
 ## Chưa làm / giả định
-- Chưa biết bảng tiết–giờ của Cao Thắng, nên bước 2 do Claude quy đổi theo trang portal.
 - Địa điểm trượt băng/gym chưa có; thầy cho tên để ghi vào.
 - Giờ kết thúc mục công tác ước 90 phút khi trang chỉ ghi giờ bắt đầu.
 
