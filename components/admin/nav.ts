@@ -42,6 +42,7 @@ export interface AdminNavItem {
 
 export const AREA_ITEMS: Record<AdminArea, AdminNavItem[]> = {
   thpt: [
+    { href: "/dashboard-thpt", label: "Lớp đang dạy", desc: "Theo dõi học sinh, điểm danh, ghi danh theo lớp", icon: LayoutDashboard, external: true },
     { href: "/quan-tri/bai-hoc", label: "Bài học", desc: "Chương, bài và các mục trong bài", icon: BookOpen },
     { href: "/quan-tri/dang-de", label: "Đăng đề kiểm tra", desc: "Dán đề kiểu Azota rồi đăng thẳng vào bài", icon: SquarePen },
     { href: "/quan-tri/sua-de", label: "Sửa đề đã đăng", desc: "Tìm và chỉnh sửa nội dung, đáp án của đề đã có", icon: FileEdit },

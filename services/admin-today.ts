@@ -21,6 +21,12 @@ export interface AdminTodayBoard {
   notices: AdminTodayNotice[];
   pendingJoins: number;
   newBugs: number;
+  /** Đăng ký khoá học (course_enrollments) chờ duyệt. */
+  pendingEnrollments: number;
+  /** Phiếu trợ giảng đã nộp, chờ duyệt. */
+  pendingTaSessions: number;
+  /** Mục phụ đạo thật sự đang mở (chưa giao, chưa dạy). */
+  openTutoring: number;
   /** Mọi truy vấn đều lỗi — bảng hiện một dòng, không để trống im lặng. */
   failed: boolean;
 }
@@ -42,7 +48,8 @@ function classNameOf(row: TaskRow): string {
 /** Việc admin thấy trên trang chủ: thông báo "cần làm hôm nay" mới nhất mỗi lớp, cộng việc đang chờ. */
 export async function fetchAdminTodayBoard(): Promise<AdminTodayBoard> {
   const supabase = getSupabase();
-  const [tasksRes, noticesRes, joinsRes, bugsRes] = await Promise.all([
+  const count = { count: "exact" as const, head: true };
+  const [tasksRes, noticesRes, joinsRes, bugsRes, enrollRes, taRes, tutorRes] = await Promise.all([
     supabase
       .from("class_announcements")
       .select("id, body, class_id, created_at, classes(name)")
@@ -57,6 +64,9 @@ export async function fetchAdminTodayBoard(): Promise<AdminTodayBoard> {
       .limit(5),
     supabase.from("user_classes").select("user_id", { count: "exact", head: true }).eq("status", "pending"),
     supabase.from("bug_reports").select("id", { count: "exact", head: true }).eq("status", "moi"),
+    supabase.from("course_enrollments").select("student_id", count).eq("status", "pending"),
+    supabase.from("ta_sessions").select("id", count).eq("status", "submitted"),
+    supabase.from("tutoring_needs").select("id", count).eq("status", "open"),
   ]);
 
   const seen = new Set<number>();
@@ -93,6 +103,9 @@ export async function fetchAdminTodayBoard(): Promise<AdminTodayBoard> {
     notices,
     pendingJoins: joinsRes.error ? 0 : joinsRes.count ?? 0,
     newBugs: bugsRes.error ? 0 : bugsRes.count ?? 0,
+    pendingEnrollments: enrollRes.error ? 0 : enrollRes.count ?? 0,
+    pendingTaSessions: taRes.error ? 0 : taRes.count ?? 0,
+    openTutoring: tutorRes.error ? 0 : tutorRes.count ?? 0,
     failed: Boolean(tasksRes.error && noticesRes.error && joinsRes.error && bugsRes.error),
   };
 }

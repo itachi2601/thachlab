@@ -72,7 +72,13 @@ export default function MondayListPanel({ classId }: { classId: number }) {
               {data.level_ups.map((m) => (
                 <li key={m.student_id} className="text-ink">
                   <b className="text-ink">{m.name}</b>
-                  <span className="block text-xs text-muted">{m.items.join(" · ")}</span>
+                  {m.items.length > 2 ? (
+                    <span className="block text-xs text-muted" title={m.items.join("\n")} tabIndex={0}>
+                      {m.items.length} danh hiệu mới
+                    </span>
+                  ) : (
+                    <span className="block text-xs text-muted">{m.items.join(" · ")}</span>
+                  )}
                 </li>
               ))}
               {data.level_ups.length === 0 && <li className="text-xs text-slate-500">Chưa có.</li>}

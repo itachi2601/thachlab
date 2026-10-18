@@ -5,6 +5,8 @@ import { AlertTriangle, BarChart3, BookOpenCheck, CalendarCheck, ClipboardPen, L
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { fetchClasses, fetchClassStudents, type ClassStudent } from "@/services/classes";
+import { fetchAttendanceSessions } from "@/services/class-attendance";
+import { fetchClassExamResults } from "@/services/class-results";
 import { fetchInstructorClasses } from "@/services/class-instructors";
 import dynamic from "next/dynamic";
 import type { ComponentProps, ComponentType } from "react";
@@ -83,6 +85,12 @@ export default function TeacherThptDashboard() {
   const [resultsView, setResultsView] = useState<"lessons" | "scores">("lessons");
   const [alertsView, setAlertsView] = useState<"alerts" | "early" | "tutoring">("alerts");
   const preferredClassId = useRef<number | null>(null);
+  const [lastSession, setLastSession] = useState<string | null>(null);
+  const [idleThisWeek, setIdleThisWeek] = useState<number | null>(null);
+  const [tabsMore, setTabsMore] = useState(false);
+  const tabsRef = useRef<HTMLElement | null>(null);
+
+  const classKey = profile ? `thachlab-dashboard-thpt-class:${profile.id}` : null;
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -101,7 +109,10 @@ export default function TeacherThptDashboard() {
         if (cancelled) return;
         setClasses(rows);
         setSelectedClassId((current) => {
-          const preferred = preferredClassId.current;
+          let preferred = preferredClassId.current;
+          if (!preferred && classKey) {
+            try { preferred = Number(localStorage.getItem(classKey)) || null; } catch { /* riêng tư: bỏ qua */ }
+          }
           if (preferred && rows.some((item) => item.id === preferred)) return preferred;
           if (current != null && rows.some((item) => item.id === current)) return current;
           return rows[0]?.id ?? null;
@@ -113,7 +124,7 @@ export default function TeacherThptDashboard() {
         setLoadError(error instanceof Error ? error.message : "Không tải được danh sách lớp.");
       });
     return () => { cancelled = true; };
-  }, [profile, isAdmin]);
+  }, [profile, isAdmin, classKey]);
 
   const [studentsNonce, setStudentsNonce] = useState(0);
   useEffect(() => {
@@ -134,6 +145,53 @@ export default function TeacherThptDashboard() {
     return () => { cancelled = true; };
   }, [selectedClassId, studentsNonce]);
 
+  useEffect(() => {
+    if (!classKey || !selectedClassId) return;
+    try { localStorage.setItem(classKey, String(selectedClassId)); } catch { /* riêng tư: bỏ qua */ }
+  }, [classKey, selectedClassId]);
+
+  // Dòng tóm tắt đầu trang: buổi điểm danh gần nhất + số em chưa làm bài kể từ thứ Hai tuần này.
+  useEffect(() => {
+    setLastSession(null);
+    setIdleThisWeek(null);
+    if (!selectedClassId) return;
+    let cancelled = false;
+    fetchAttendanceSessions(selectedClassId)
+      .then((rows) => {
+        if (cancelled) return;
+        const latest = [...rows].sort((a, b) => b.session_date.localeCompare(a.session_date))[0];
+        setLastSession(latest ? new Date(`${latest.session_date}T00:00:00`).toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit" }) : null);
+      })
+      .catch(() => undefined);
+    return () => { cancelled = true; };
+  }, [selectedClassId]);
+
+  useEffect(() => {
+    if (students.length === 0) return;
+    let cancelled = false;
+    const monday = new Date();
+    monday.setHours(0, 0, 0, 0);
+    monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7));
+    fetchClassExamResults(students.map((s) => s.id), monday.toISOString())
+      .then((rows) => {
+        if (cancelled) return;
+        const done = new Set(rows.map((r) => r.student_id));
+        setIdleThisWeek(students.filter((s) => !done.has(s.id)).length);
+      })
+      .catch(() => undefined);
+    return () => { cancelled = true; };
+  }, [students]);
+
+  useEffect(() => {
+    const el = tabsRef.current;
+    if (!el) return;
+    const update = () => setTabsMore(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => { el.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
+  }, []);
+
   const selectedClass = classes.find((item) => item.id === selectedClassId) ?? null;
 
   return (
@@ -141,10 +199,15 @@ export default function TeacherThptDashboard() {
       <section className="relative overflow-hidden rounded-3xl border border-line bg-panel p-6 sm:p-8">
         <div className="relative">
           <p className="text-xs font-bold uppercase tracking-[.16em] text-blue-300">Dashboard giáo viên · THPT</p>
-          <h2 className="mt-2 font-display text-2xl font-bold text-ink">Chào {profile?.full_name || "thầy/cô"} 👋</h2>
-          <p className="mt-2 text-sm text-muted">
-            {selectedClass ? `Đang xem lớp ${selectedClass.name} · ${students.length} học sinh` : "Chọn khối lớp bên dưới để bắt đầu theo dõi học sinh."}
-          </p>
+          <h2 className="mt-2 font-display text-xl font-bold text-ink sm:text-2xl">
+            {selectedClass
+              ? [
+                  /^\d+$/.test(selectedClass.name.trim()) ? `Lớp ${selectedClass.name.trim()}` : selectedClass.name,
+                  lastSession ? `buổi gần nhất ${lastSession}` : null,
+                  idleThisWeek != null ? `${idleThisWeek} em chưa làm bài tuần này` : null,
+                ].filter(Boolean).join(" · ")
+              : "Chọn lớp bên dưới để bắt đầu"}
+          </h2>
           {loadError && <p className="mt-2 text-xs text-red-300">{loadError}</p>}
         </div>
       </section>
@@ -170,7 +233,8 @@ export default function TeacherThptDashboard() {
         </label>
       </section>
 
-      <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-line bg-panel-deep/95 p-2 shadow-xl backdrop-blur">
+      <div className="sticky top-20 z-40">
+      <nav ref={tabsRef} className="flex gap-2 overflow-x-auto rounded-2xl border border-line bg-panel-deep/95 p-2 shadow-xl backdrop-blur">
         {TABS.map((tab) => {
           const Icon = tab.icon;
           return (
@@ -186,6 +250,10 @@ export default function TeacherThptDashboard() {
           );
         })}
       </nav>
+      {tabsMore && (
+        <span aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-14 rounded-r-2xl bg-gradient-to-l from-[var(--color-panel-deep)] to-transparent" />
+      )}
+      </div>
 
       {!selectedClassId ? (
         <p className="rounded-2xl border border-dashed border-line p-10 text-center text-sm text-slate-500">

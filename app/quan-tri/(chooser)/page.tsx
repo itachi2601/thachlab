@@ -43,7 +43,7 @@ export default function AdminOverviewPage() {
   const { profile, loading } = useAuth();
   const router = useRouter();
   const [counts, setCounts] = useState<Counts>(EMPTY_COUNTS);
-  const [todo, setTodo] = useState<{ newBugs: number; pendingJoins: number } | null>(null);
+  const [todo, setTodo] = useState<Awaited<ReturnType<typeof fetchAdminTodayBoard>> | null>(null);
   const restrictedArea = profile?.role === "instructor" ? profile.admin_area : null;
 
   // Giảng viên chỉ được phân công 1 khu vực thì vào thẳng khu đó, không thấy trang tổng quan.
@@ -76,7 +76,7 @@ export default function AdminOverviewPage() {
       })
       .catch(() => undefined);
     fetchAdminTodayBoard()
-      .then((board) => alive && setTodo({ newBugs: board.newBugs, pendingJoins: board.pendingJoins }))
+      .then((board) => alive && setTodo(board))
       .catch(() => undefined);
     return () => {
       alive = false;
@@ -104,6 +104,9 @@ export default function AdminOverviewPage() {
         <div className="admin-grid mt-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
           <Stat icon={Bug} label="Báo lỗi mới" value={todo?.newBugs ?? null} href="/quan-tri/bao-loi" tone="warn" />
           <Stat icon={UserCheck} label="Em chờ duyệt vào lớp" value={todo?.pendingJoins ?? null} href="/quan-tri/hoc-sinh?tab=pending" tone="warn" />
+          <Stat icon={ClipboardList} label="Đăng ký khoá chờ duyệt" value={todo?.pendingEnrollments ?? null} href="/dashboard-thpt?tab=enrollment" tone="warn" />
+          <Stat icon={UserCheck} label="Phiếu trợ giảng chờ duyệt" value={todo?.pendingTaSessions ?? null} href="/quan-tri/tro-giang" tone="warn" />
+          <Stat icon={GraduationCap} label="Mục phụ đạo đang mở" value={todo?.openTutoring ?? null} href="/dashboard-thpt?tab=alerts" tone="warn" />
           <Stat icon={Wrench} label="Máy đang hư" value={counts.brokenMachines} href="/quan-tri/tinh-trang-may" tone="warn" />
         </div>
       </section>
