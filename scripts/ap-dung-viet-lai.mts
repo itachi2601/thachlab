@@ -13,7 +13,7 @@ const APPLY = process.argv.includes("--apply");
 const DIR = "scripts/data/giai-lai/" + (process.argv.find((a) => /^viet-lai\d*$/.test(a)) ?? "viet-lai") + "/";
 const kq = new Map<number, any>();
 for (const f of fs.readdirSync(DIR).filter((f) => /^kq-\d+\.json$/.test(f))) for (const x of JSON.parse(fs.readFileSync(DIR + f, "utf8"))) kq.set(x.id, x);
-const lamSach = (h: string) => h.replace(/(?<!\\)\$(.+?)(?<!\\)\$/gs, (_m, t: string) => "$" + t.replace(/</g, "\\lt ").replace(/>/g, "\\gt ") + "$");
+const lamSach = (h: string) => h.replace(/(?<!\\)\$(.+?)(?<!\\)\$/gs, (_m, t: string) => "$" + t.replace(/</g, "\\lt ").replace(/>/g, "\\gt ").replace(/(?<![\d,])(\d+),(\d+)(?![\d,])/g, "$1{,}$2") + "$");
 const ids = [...kq.keys()]; const cur = new Map<number, any>();
 for (let i = 0; i < ids.length; i += 200) {
   const { data, error } = await sb.from("question_bank").select("id,archived,question").in("id", ids.slice(i, i + 200));
