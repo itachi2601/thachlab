@@ -1,0 +1,379 @@
+{
+ "lesson_id": 154,
+ "lesson_title": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+ "item_id": 322,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 9
+  },
+  "removed": [
+   {
+    "question": "Cục đá có viên sỏi $54$ g ($D=2{,}7$ g/cm³) trong bình diện tích đáy $68$ cm², tan hết thì mực nước hạ bao nhiêu mm?",
+    "reason": "nghi_ngo: Đề thiếu điều kiện cục đá 'nổi' (và khối lượng đá để bảo đảm hệ nổi); nếu đá không nổi thì kết quả khác, dù đáp số 5 mm đúng với bài."
+   }
+  ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong công thức áp suất chất lỏng $p=d\\,h$, $h$ là:",
+   "options": [
+    "Khoảng cách từ điểm xét tới đáy bình",
+    "Độ sâu từ mặt thoáng tới điểm xét",
+    "Chiều cao của cả bình",
+    "Chiều cao cột chất lỏng phía dưới điểm xét"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu $h$ là độ sâu từ mặt thoáng tới điểm xét, không phải khoảng cách tới đáy."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong một chất lỏng đứng yên, các điểm nằm cùng độ sâu thì:",
+   "options": [
+    "Có áp suất khác nhau",
+    "Có cùng áp suất",
+    "Chỉ cùng áp suất nếu cùng một nhánh",
+    "Có áp suất bằng không"
+   ],
+   "answer": 1,
+   "explanation": "Một chất lỏng đứng yên thì các điểm cùng độ sâu có cùng áp suất."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bình loe miệng đựng nước, áp lực của nước lên đáy phẳng nằm ngang so với trọng lượng nước trong bình thì:",
+   "options": [
+    "Bằng nhau",
+    "Lớn hơn",
+    "Nhỏ hơn",
+    "Luôn bằng không"
+   ],
+   "answer": 2,
+   "explanation": "Bình loe miệng có $F\\lt P_{cl}$ vì thành bình đỡ một phần nước."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong ống Torricelli, nghiêng ống đi thì chiều cao thẳng đứng của cột thuỷ ngân:",
+   "options": [
+    "Tăng lên",
+    "Giảm đi",
+    "Vẫn khoảng 76 cm",
+    "Bằng không"
+   ],
+   "answer": 2,
+   "explanation": "Nghiêng ống thì cột dài ra nhưng chiều cao thẳng đứng vẫn 76 cm."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Bình thông nhau chứa một chất lỏng đứng yên thì mặt thoáng ở các nhánh:",
+   "options": [
+    "Cùng độ cao, bất kể hình dạng nhánh",
+    "Nhánh nhỏ cao hơn",
+    "Nhánh to cao hơn",
+    "Nhánh nghiêng cao hơn"
+   ],
+   "answer": 0,
+   "explanation": "Một chất lỏng đứng yên: mặt thoáng ở mọi nhánh cùng độ cao, không phụ thuộc hình dạng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Vật nổi lên trong chất lỏng khi:",
+   "options": [
+    "$d_v\\gt d_{cl}$",
+    "$d_v=d_{cl}$",
+    "$d_v\\lt d_{cl}$",
+    "$P\\gt F_{A\\max}$"
+   ],
+   "answer": 2,
+   "explanation": "Khi $d_v\\lt d_{cl}$ vật nổi lên và khi nổi yên thì $P=F_A$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Áp lực của chất lỏng lên đáy phẳng nằm ngang diện tích $S$ được tính bằng:",
+   "options": [
+    "$F=d\\,h$",
+    "$F=d\\,h\\,S$",
+    "$F=\\dfrac{d\\,h}{S}$",
+    "$F=d\\,S$"
+   ],
+   "answer": 1,
+   "explanation": "Áp lực lên đáy là $F=pS=d\\,h\\,S$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Thợ lặn ở độ sâu $5$ m trong hồ nước ngọt ($p_0=10^5$ Pa). Áp suất tổng cộng lên thợ lặn là:",
+   "options": [
+    "$5\\cdot10^4$ Pa",
+    "$10^5$ Pa",
+    "$1{,}05\\cdot10^5$ Pa",
+    "$1{,}5\\cdot10^5$ Pa"
+   ],
+   "answer": 3,
+   "explanation": "$p=p_0+d\\,h=10^5+10\\,000\\cdot5=1{,}5\\cdot10^5$ Pa."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Ống chữ U chứa nước, đổ dầu hỏa ($D=800$ kg/m³) cao $12$ cm vào một nhánh. Cột nước cao hơn mặt phân cách ở nhánh kia là:",
+   "options": [
+    "$9{,}6$ cm",
+    "$12$ cm",
+    "$15$ cm",
+    "$10$ cm"
+   ],
+   "answer": 0,
+   "explanation": "Từ $d_d h_d=d_n h_n$ suy ra $h_n=\\dfrac{800\\cdot12}{1000}=9{,}6$ cm."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Vật hình hộp nổi thẳng đứng, nổi yên trong chất lỏng. Tỉ số $\\dfrac{V_{ch}}{V}$ bằng:",
+   "options": [
+    "$\\dfrac{D_{cl}}{D_v}$",
+    "$\\dfrac{D_v}{D_{cl}}$",
+    "$D_v D_{cl}$",
+    "$1-\\dfrac{D_{cl}}{D_v}$"
+   ],
+   "answer": 1,
+   "explanation": "Từ $d_vV=d_{cl}V_{ch}$ suy ra $\\dfrac{V_{ch}}V=\\dfrac{D_v}{D_{cl}}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Về lực đẩy Archimedes $F_A=d_{cl}V_{ch}$, các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$F_A$ hướng thẳng đứng lên trên.",
+     "answer": true
+    },
+    {
+     "text": "$V_{ch}$ là thể tích phần vật đang chìm.",
+     "answer": true
+    },
+    {
+     "text": "$F_A$ tăng khi vật nằm sâu hơn (chìm hẳn).",
+     "answer": false
+    },
+    {
+     "text": "$F_A$ phụ thuộc khối lượng của vật.",
+     "answer": false
+    }
+   ],
+   "explanation": "$F_A$ chỉ phụ thuộc $D_{cl}$ và $V_{ch}$, không phụ thuộc chất làm vật, khối lượng hay độ sâu."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về khối lượng riêng $D$ và trọng lượng riêng $d$, các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$D=\\dfrac mV$, đơn vị kg/m³.",
+     "answer": true
+    },
+    {
+     "text": "$d=10D$, đơn vị N/m³.",
+     "answer": true
+    },
+    {
+     "text": "$1\\ \\text{g/cm}^3=1000\\ \\text{kg/m}^3$.",
+     "answer": true
+    },
+    {
+     "text": "$D$ của nước đá lớn hơn $D$ của nước.",
+     "answer": false
+    }
+   ],
+   "explanation": "Theo bảng, nước đá $900$ kg/m³ nhỏ hơn nước $1000$ kg/m³; các ý còn lại là định nghĩa ở bài."
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Vật có dây hoặc lực kế, xét các hệ thức lực sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Dây buộc xuống đáy giữ vật nhẹ chìm hẳn: $F_A=P+T$.",
+     "answer": true
+    },
+    {
+     "text": "Treo vật nặng bằng lực kế: $P=F_A+T$.",
+     "answer": true
+    },
+    {
+     "text": "Số chỉ lực kế khi nhúng vật là $P_{bk}=P+F_A$.",
+     "answer": false
+    },
+    {
+     "text": "Vật nằm trên đáy: $N=P-F_A$, rời đáy khi $N=0$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Số chỉ lực kế khi nhúng là $P_{bk}=P-F_A$; các hệ thức khác đúng theo bài."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Nước đá chứa dị vật nổi trong bình, tan hết. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Dị vật nổi thì mực nước không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Dị vật chìm thì mực nước hạ.",
+     "answer": true
+    },
+    {
+     "text": "Đá tinh khiết nổi tan hết thì mực nước dâng lên.",
+     "answer": false
+    },
+    {
+     "text": "Dị vật chìm xuống đáy chiếm chỗ ít hơn lúc còn trong đá.",
+     "answer": true
+    }
+   ],
+   "explanation": "Nước đá nổi tan thì nước tạo ra chiếm đúng phần đá đang chìm nên mực nước không dâng."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Áp suất do nước gây ra ở độ sâu $2$ m là bao nhiêu nghìn Pa? (lấy $g=10$ m/s²)",
+   "answer": "20",
+   "explanation": "$p=10\\,000\\cdot2=20\\,000$ Pa, tức $20$ nghìn Pa."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thùng cao $1{,}5$ m đầy nước, điểm M cách đáy $0{,}5$ m. Áp suất do nước tại M là bao nhiêu nghìn Pa?",
+   "answer": "10",
+   "explanation": "M sâu $1{,}5-0{,}5=1$ m so với mặt thoáng nên $p=10\\,000$ Pa."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Cột thuỷ ngân trong ống Torricelli cao khoảng bao nhiêu cm?",
+   "answer": "76",
+   "explanation": "Áp suất khí quyển cân bằng với cột thuỷ ngân khoảng $76$ cm."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Khối gỗ cao $10$ cm, $D=750$ kg/m³ nổi thẳng đứng trong nước. Phần chìm cao bao nhiêu mm?",
+   "answer": "75",
+   "explanation": "$\\dfrac{h_{ch}}{h}=\\dfrac{750}{1000}$ nên $h_{ch}=7{,}5$ cm $=75$ mm."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông nhau và lực đẩy Archimedes",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Vật treo lực kế chỉ $6$ N ngoài không khí, $4$ N khi chìm hẳn trong nước. Lực đẩy Archimedes trong nước là bao nhiêu N?",
+   "answer": "2",
+   "explanation": "$F_A=P-P_{bk}=6-4=2$ N."
+  }
+ ]
+}

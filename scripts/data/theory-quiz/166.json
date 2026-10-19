@@ -1,0 +1,386 @@
+{
+ "lesson_id": 166,
+ "lesson_title": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+ "item_id": 316,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 7,
+   "cong_thuc": 13
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Động năng của một vật có đặc điểm nào sau đây?",
+   "options": [
+    "Có thể âm khi vật chuyển động ngược chiều dương",
+    "Luôn không âm và bằng 0 khi vật đứng yên",
+    "Tỉ lệ thuận với vận tốc v",
+    "Chỉ phụ thuộc vào độ cao của vật"
+   ],
+   "answer": 1,
+   "explanation": "Mục II.1: $W_đ=\\dfrac12mv^2\\ge0$, vật đứng yên thì $W_đ=0$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai xe cùng khối lượng, cùng lực cản phanh; xe B có vận tốc gấp đôi xe A. Quãng đường phanh của xe B so với xe A là:",
+   "options": [
+    "Gấp 2 lần",
+    "Gấp 8 lần",
+    "Gấp 4 lần",
+    "Bằng nhau"
+   ],
+   "answer": 2,
+   "explanation": "Vận tốc gấp đôi thì động năng gấp 4; công cản $F_{ms}s$ gấp 4 nên $s$ gấp 4."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Điều kiện để cơ năng của vật được bảo toàn là:",
+   "options": [
+    "Chỉ trọng lực sinh công, bỏ qua ma sát và lực cản",
+    "Vật chuyển động thẳng đều",
+    "Vật có khối lượng không đổi",
+    "Vật ở trên mặt đất"
+   ],
+   "answer": 0,
+   "explanation": "Mục III: chỉ trọng lực sinh công, bỏ qua ma sát và lực cản thì $W_1=W_2$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật trượt xuống dốc có ma sát, phần cơ năng giảm đi chuyển thành:",
+   "options": [
+    "Thế năng của vật",
+    "Nhiệt làm nóng vật và mặt tiếp xúc",
+    "Động năng của vật",
+    "Biến mất hoàn toàn"
+   ],
+   "answer": 1,
+   "explanation": "Mục IV: năng lượng không mất đi, chỉ chuyển thành nhiệt."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Với con lắc đơn dao động không ma sát, phát biểu nào đúng?",
+   "options": [
+    "Ở biên, động năng cực đại",
+    "Ở vị trí cân bằng, thế năng cực đại",
+    "Ở vị trí cân bằng, động năng cực đại",
+    "Cơ năng thay đổi theo vị trí"
+   ],
+   "answer": 2,
+   "explanation": "Mục V.2: cân bằng $W_đ$ cực đại, hai biên $W_t$ cực đại."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức động năng đúng là:",
+   "options": [
+    "$W_đ=\\dfrac12mv$",
+    "$W_đ=mv^2$",
+    "$W_đ=\\dfrac12m^2v$",
+    "$W_đ=\\dfrac12mv^2$"
+   ],
+   "answer": 3,
+   "explanation": "Mục II.1: $W_đ=\\dfrac12mv^2$; lỗi hay gặp là quên bình phương."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật trượt không ma sát từ độ cao $h$ xuống mốc thấp nhất (không vận tốc đầu). Vận tốc ở chân dốc là:",
+   "options": [
+    "$v=\\sqrt{gh}$",
+    "$v=2gh$",
+    "$v=\\sqrt{2gh}$",
+    "$v=\\sqrt{\\dfrac{2h}{g}}$"
+   ],
+   "answer": 2,
+   "explanation": "Từ $mgh=\\dfrac12mv^2$ suy ra $v=\\sqrt{2gh}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật trượt trên mặt ngang với vận tốc đầu $v_0$ đến khi dừng, hệ số ma sát $\\mu$. Quãng đường trượt là:",
+   "options": [
+    "$s=\\dfrac{v_0^2}{2\\mu g}$",
+    "$s=\\dfrac{v_0}{2\\mu g}$",
+    "$s=\\dfrac{2\\mu g}{v_0^2}$",
+    "$s=\\dfrac{v_0^2\\mu}{2g}$"
+   ],
+   "answer": 0,
+   "explanation": "Mục IV: $F_{ms}s=\\dfrac12mv_0^2$ với $F_{ms}=\\mu mg$ nên $s=\\dfrac{v_0^2}{2\\mu g}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Lực ma sát trên mặt phẳng nghiêng góc $\\alpha$ có độ lớn:",
+   "options": [
+    "$\\mu mg$",
+    "$\\mu mg\\cos\\alpha$",
+    "$\\mu mg\\sin\\alpha$",
+    "$mg\\cos\\alpha$"
+   ],
+   "answer": 1,
+   "explanation": "Mục IV và VI: $F_{ms}=\\mu mg\\cos\\alpha$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Con lắc đơn dài $l$, lệch góc $\\alpha_0$ so với phương thẳng đứng. Độ cao so với vị trí cân bằng là:",
+   "options": [
+    "$h=l$",
+    "$h=l(1+\\cos\\alpha_0)$",
+    "$h=l\\cos\\alpha_0$",
+    "$h=l(1-\\cos\\alpha_0)$"
+   ],
+   "answer": 3,
+   "explanation": "Mục V.2: $h=l(1-\\cos\\alpha_0)$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về định luật bảo toàn cơ năng, các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Cơ năng bằng tổng động năng và thế năng.",
+     "answer": true
+    },
+    {
+     "text": "Khi vật đi xuống, thế năng giảm và động năng tăng (không ma sát).",
+     "answer": true
+    },
+    {
+     "text": "Vận tốc ở chân dốc nhẵn phụ thuộc vào khối lượng vật.",
+     "answer": false
+    },
+    {
+     "text": "Có ma sát vẫn áp dụng $W_1=W_2$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục III: $m$ triệt tiêu; có ma sát thì $W_1-W_2=F_{ms}s$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về thế năng trọng trường $W_t=mgh$, các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$h$ được tính từ mốc thế năng đã chọn.",
+     "answer": true
+    },
+    {
+     "text": "Vật thấp hơn mốc thì thế năng âm.",
+     "answer": true
+    },
+    {
+     "text": "Có thể đổi mốc giữa chừng trong cùng một bài.",
+     "answer": false
+    },
+    {
+     "text": "Thế năng luôn không âm.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục II.2: dùng một mốc cả bài, vật dưới mốc có $W_t\\lt0$."
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Xét vật trượt trên dốc thẳng có ma sát, công ma sát $A_{ms}=\\mu mg\\cos\\alpha\\cdot s$. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$A_{ms}=\\mu mg\\cdot d$ với $d=s\\cos\\alpha$.",
+     "answer": true
+    },
+    {
+     "text": "Cùng hình chiếu ngang $d$ thì công cản như nhau.",
+     "answer": true
+    },
+    {
+     "text": "Công thức dùng được cho cả máng cong.",
+     "answer": false
+    },
+    {
+     "text": "$d$ là độ cao của dốc.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục IV: $d$ là hình chiếu ngang; chỉ đúng cho mặt phẳng nghiêng thẳng."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Vật rơi từ độ cao $H$ (mốc mặt đất), bỏ qua cản. Các phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$W_t=mgh$ và $W_đ=mg(H-h)$.",
+     "answer": true
+    },
+    {
+     "text": "$W_đ=W_t$ tại $h=H/2$.",
+     "answer": true
+    },
+    {
+     "text": "Cơ năng giảm dần khi vật rơi.",
+     "answer": false
+    },
+    {
+     "text": "Đồ thị $W_đ$ theo $v$ là đường thẳng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục V.3: $W=mgH$ không đổi; $W_đ$ theo $v$ là parabol."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vận tốc tăng từ 3 m/s lên 9 m/s thì động năng gấp bao nhiêu lần?",
+   "answer": "9",
+   "explanation": "$v$ gấp 3 nên $W_đ$ gấp $3^2=9$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quả cầu 0,5 kg có $v=4$ m/s. Động năng bằng bao nhiêu J?",
+   "answer": "4",
+   "explanation": "$W_đ=\\tfrac12\\cdot0{,}5\\cdot16=4$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật trượt không ma sát từ dốc cao 5 m (g = 10 m/s²). Vận tốc ở chân dốc bằng bao nhiêu m/s?",
+   "answer": "10",
+   "explanation": "$v=\\sqrt{2\\cdot10\\cdot5}=10$ m/s."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật trượt trên mặt ngang với $v_0=8$ m/s, $\\mu=0{,}4$, g = 10 m/s². Quãng đường đến khi dừng là bao nhiêu m?",
+   "answer": "8",
+   "explanation": "$s=\\dfrac{64}{2\\cdot0{,}4\\cdot10}=8$ m."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Ném vật thẳng đứng lên với $v_0=20$ m/s (g = 10 m/s²). Độ cao cực đại so với vị trí ném là bao nhiêu m?",
+   "answer": "20",
+   "explanation": "$h_{\\max}=\\dfrac{v_0^2}{2g}=\\dfrac{400}{20}=20$ m."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo toàn cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quả cầu 0,5 kg cách đất 5 m, chọn mốc ở độ cao 8 m so với đất (g = 10 m/s²). Thế năng bằng bao nhiêu J?",
+   "answer": "-15",
+   "explanation": "$h=-3$ m nên $W_t=0{,}5\\cdot10\\cdot(-3)=-15$ J."
+  }
+ ]
+}

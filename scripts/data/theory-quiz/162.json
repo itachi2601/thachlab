@@ -1,0 +1,386 @@
+{
+ "lesson_id": 162,
+ "lesson_title": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+ "item_id": 321,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 8,
+   "cong_thuc": 12
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tốc độ trung bình của một vật được tính bằng:",
+   "options": [
+    "Trung bình cộng các tốc độ trên từng chặng",
+    "Tổng quãng đường chia tổng thời gian",
+    "Tốc độ lớn nhất chia 2",
+    "Tổng thời gian chia tổng quãng đường"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu $v_{tb}=s_{tổng}/t_{tổng}$: cộng đường, cộng giờ rồi mới chia."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi nào được phép lấy trung bình cộng của các tốc độ làm tốc độ trung bình?",
+   "options": [
+    "Khi các quãng đường bằng nhau",
+    "Khi các khoảng thời gian bằng nhau",
+    "Luôn luôn được",
+    "Khi vật đi rồi về đúng đường cũ"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: chia đều thời gian thì $v_{tb}=(v_1+v_2)/2$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên đồ thị toạ độ – thời gian, đoạn nằm ngang cho biết vật:",
+   "options": [
+    "Chuyển động đều",
+    "Tăng tốc",
+    "Đứng yên",
+    "Đi ngược chiều dương"
+   ],
+   "answer": 2,
+   "explanation": "Đoạn nằm ngang trên đồ thị $x$–$t$ có $v=0$, vật đứng yên."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Giao điểm của hai đường trên đồ thị $x$–$t$ của hai xe cho biết:",
+   "options": [
+    "Hai xe có cùng vận tốc",
+    "Hai xe cùng đứng yên",
+    "Hai xe gặp nhau",
+    "Hai xe cùng xuất phát"
+   ],
+   "answer": 2,
+   "explanation": "Giao điểm là cùng $x$ tại cùng $t$, tức là gặp nhau."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên đồ thị $v$–$t$, quãng đường đi được bằng:",
+   "options": [
+    "Độ dốc của đường",
+    "Tung độ lớn nhất",
+    "Diện tích giữa đường $v$ và trục $t$",
+    "Hoành độ điểm cuối"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu $s$ là diện tích giữa đường $v$ và trục $t$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật đi nửa quãng đường đầu với $v_1$, nửa sau với $v_2$. Tốc độ trung bình là:",
+   "options": [
+    "$\\dfrac{v_1+v_2}{2}$",
+    "$\\dfrac{v_1v_2}{v_1+v_2}$",
+    "$\\dfrac{2v_1v_2}{v_1+v_2}$",
+    "$\\dfrac{2(v_1+v_2)}{v_1v_2}$"
+   ],
+   "answer": 2,
+   "explanation": "Chia đều quãng đường thì $v_{tb}=\\dfrac{2v_1v_2}{v_1+v_2}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đi nửa quãng đường đầu với $4\\ \\text{km/h}$, nửa sau với $6\\ \\text{km/h}$. Tốc độ trung bình là:",
+   "options": [
+    "$5\\ \\text{km/h}$",
+    "$4{,}8\\ \\text{km/h}$",
+    "$2{,}4\\ \\text{km/h}$",
+    "$10\\ \\text{km/h}$"
+   ],
+   "answer": 1,
+   "explanation": "$\\dfrac{2\\cdot4\\cdot6}{4+6}=4{,}8$ km/h, nhỏ hơn trung bình cộng $5$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Tàu dài $L$ qua cầu dài $S$ (từ mũi tàu lên cầu đến đuôi tàu rời cầu), quãng đường mũi tàu đi là:",
+   "options": [
+    "$L$",
+    "$S$",
+    "$L+S$",
+    "$S-L$"
+   ],
+   "answer": 2,
+   "explanation": "Qua cầu hoặc hầm dài $S$ thì $s=L+S$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Biết $v_{xuôi}$ và $v_{ngược}$, vận tốc dòng nước $v_n$ bằng:",
+   "options": [
+    "$\\dfrac{v_{xuôi}+v_{ngược}}{2}$",
+    "$v_{xuôi}-v_{ngược}$",
+    "$\\dfrac{v_{xuôi}-v_{ngược}}{2}$",
+    "$\\dfrac{v_{xuôi}}{v_{ngược}}$"
+   ],
+   "answer": 2,
+   "explanation": "Từ $v_{xuôi}=v_t+v_n$, $v_{ngược}=v_t-v_n$ suy ra $v_n=\\dfrac{v_{xuôi}-v_{ngược}}2$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 6,
+   "question": "Tốc độ tương đối của kim phút so với kim giờ là:",
+   "options": [
+    "$\\dfrac{13}{12}$ vòng/giờ",
+    "$\\dfrac{11}{12}$ vòng/giờ",
+    "$12$ vòng/giờ",
+    "$\\dfrac1{12}$ vòng/giờ"
+   ],
+   "answer": 1,
+   "explanation": "Kim phút $1$ vòng/giờ, kim giờ $\\tfrac1{12}$ vòng/giờ, hiệu là $\\tfrac{11}{12}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về tốc độ trung bình và vận tốc trung bình:",
+   "statements": [
+    {
+     "text": "Tốc độ trung bình bằng tổng quãng đường chia tổng thời gian.",
+     "answer": true
+    },
+    {
+     "text": "Đi rồi về đúng đường cũ thì vận tốc trung bình bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Đi rồi về đúng đường cũ thì tốc độ trung bình bằng 0.",
+     "answer": false
+    },
+    {
+     "text": "Đổi km/h sang m/s thì nhân với 3,6.",
+     "answer": false
+    }
+   ],
+   "explanation": "Độ dời bằng 0 nên vận tốc trung bình bằng 0, còn tốc độ trung bình lớn hơn 0; km/h sang m/s thì chia $3{,}6$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về đồ thị toạ độ – thời gian:",
+   "statements": [
+    {
+     "text": "Độ dốc của đường bằng vận tốc.",
+     "answer": true
+    },
+    {
+     "text": "Đường càng dốc thì vật chuyển động càng nhanh.",
+     "answer": true
+    },
+    {
+     "text": "Đoạn đi xuống ứng với vận tốc dương.",
+     "answer": false
+    },
+    {
+     "text": "Đoạn nằm ngang ứng với vật đứng yên.",
+     "answer": true
+    }
+   ],
+   "explanation": "Độ dốc $k=\\Delta x/\\Delta t=v$; đoạn đi xuống có $v\\lt0$."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Về bài toán hai xe gặp nhau, đuổi kịp nhau:",
+   "statements": [
+    {
+     "text": "Phương trình toạ độ là $x=x_0+vt$.",
+     "answer": true
+    },
+    {
+     "text": "Gặp nhau khi $x_1=x_2$.",
+     "answer": true
+    },
+    {
+     "text": "Hai xe ngược chiều tiến lại: $t=\\dfrac{s}{v_1-v_2}$.",
+     "answer": false
+    },
+    {
+     "text": "Cùng chiều đuổi nhau: $t=\\dfrac{s}{v_1-v_2}$ với $v_1\\gt v_2$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Ngược chiều thì cộng vận tốc, cùng chiều thì trừ vận tốc."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Về đoàn tàu có chiều dài $L$:",
+   "statements": [
+    {
+     "text": "Qua một cột đứng yên thì $s=L$.",
+     "answer": true
+    },
+    {
+     "text": "Qua cầu dài $S$ thì $s=L+S$.",
+     "answer": true
+    },
+    {
+     "text": "Hai tàu ngược chiều: $t=\\dfrac{L_1+L_2}{v_1-v_2}$.",
+     "answer": false
+    },
+    {
+     "text": "Hai tàu cùng chiều: $t=\\dfrac{L_1+L_2}{v_1-v_2}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Ngược chiều cộng vận tốc, cùng chiều trừ vận tốc, quãng đường là tổng chiều dài."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ô tô đi nửa thời gian đầu với $20\\ \\text{km/h}$, nửa thời gian sau với $60\\ \\text{km/h}$. Tốc độ trung bình (km/h) là bao nhiêu?",
+   "answer": "40",
+   "explanation": "Chia đều thời gian: $(20+60)/2=40$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Xe từ $80\\ \\text{km}$ lúc 3 giờ đến $180\\ \\text{km}$ lúc 5 giờ. Vận tốc (km/h) là bao nhiêu?",
+   "answer": "50",
+   "explanation": "$v=\\dfrac{180-80}{5-3}=50$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vận tốc tăng đều từ $0$ đến $8\\ \\text{m/s}$ trong $5\\ \\text{s}$, rồi giữ nguyên $8\\ \\text{m/s}$ trong $4\\ \\text{s}$. Quãng đường (m) trong $9\\ \\text{s}$ là bao nhiêu?",
+   "answer": "52",
+   "explanation": "Tam giác $20$ m cộng hình chữ nhật $32$ m bằng $52$ m."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Ô tô từ A với $50\\ \\text{km/h}$, xe máy từ B với $30\\ \\text{km/h}$ đi ngược chiều, A, B cách $120\\ \\text{km}$, xuất phát cùng lúc. Sau bao nhiêu giờ thì gặp nhau? (dùng dấu phẩy)",
+   "answer": "1,5",
+   "explanation": "$t=\\dfrac{120}{50+30}=1{,}5$ h."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Canô xuôi dòng có $v_{xuôi}=30\\ \\text{km/h}$, ngược dòng có $v_{ngược}=20\\ \\text{km/h}$. Vận tốc dòng nước (km/h) là bao nhiêu?",
+   "answer": "5",
+   "explanation": "$v_n=(30-20)/2=5$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Tàu dài $200\\ \\text{m}$ chạy $72\\ \\text{km/h}$ qua cầu dài $400\\ \\text{m}$. Thời gian (s) từ lúc mũi tàu lên cầu đến lúc đuôi tàu rời cầu là bao nhiêu?",
+   "answer": "30",
+   "explanation": "$v=20$ m/s, $s=600$ m nên $t=30$ s."
+  }
+ ]
+}

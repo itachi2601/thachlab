@@ -1,0 +1,386 @@
+{
+ "lesson_id": 85,
+ "lesson_title": "Bài 7. Lăng kính",
+ "item_id": 292,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 13,
+   "cong_thuc": 7
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lăng kính là gì?",
+   "options": [
+    "Khối chất trong suốt, thường là lăng trụ có tiết diện tam giác",
+    "Khối chất đục có dạng hình cầu",
+    "Tấm gương phẳng đặt nghiêng",
+    "Khối chất trong suốt có hai mặt song song"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, lăng kính là khối chất trong suốt, thường là lăng trụ tiết diện tam giác."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Góc chiết quang $A$ của lăng kính là góc giữa:",
+   "options": [
+    "Hai mặt bên",
+    "Mặt bên và đáy",
+    "Tia tới và tia ló",
+    "Tia tới và pháp tuyến"
+   ],
+   "answer": 0,
+   "explanation": "Góc chiết quang là góc giữa hai mặt bên của lăng kính."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đáy của lăng kính là:",
+   "options": [
+    "Mặt đối diện với cạnh, là phần dày nhất",
+    "Chỗ hai mặt bên gặp nhau",
+    "Mặt bên thứ nhất",
+    "Mặt bên thứ hai"
+   ],
+   "answer": 0,
+   "explanation": "Đáy là mặt đối diện với cạnh, là phần dày nhất."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tia đơn sắc qua lăng kính (chiết suất lớn hơn môi trường ngoài) bị lệch về phía nào?",
+   "options": [
+    "Phía đáy",
+    "Phía cạnh",
+    "Không lệch",
+    "Tuỳ màu tia"
+   ],
+   "answer": 0,
+   "explanation": "Cả hai lần khúc xạ đều bẻ tia về phía đáy."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tại mặt bên thứ hai (thuỷ tinh → không khí), tia sáng:",
+   "options": [
+    "Ra xa pháp tuyến",
+    "Lại gần pháp tuyến",
+    "Luôn trùng pháp tuyến",
+    "Không bị khúc xạ"
+   ],
+   "answer": 0,
+   "explanation": "Từ thuỷ tinh ra không khí, tia gãy khúc ra xa pháp tuyến."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Màu nào bị lệch ít nhất khi ánh sáng trắng qua lăng kính?",
+   "options": [
+    "Đỏ",
+    "Lục",
+    "Lam",
+    "Tím"
+   ],
+   "answer": 0,
+   "explanation": "Đỏ có chiết suất nhỏ nhất nên lệch ít nhất."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ánh sáng trắng (nắng, đèn sợi đốt) là:",
+   "options": [
+    "Hỗn hợp của nhiều ánh sáng màu",
+    "Ánh sáng đơn sắc",
+    "Ánh sáng không có màu nào",
+    "Ánh sáng chỉ có đỏ và tím"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu ánh sáng trắng là hỗn hợp nhiều ánh sáng màu."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Chiếu ánh sáng trắng qua tấm lọc lục rồi qua lăng kính, trên màn thấy:",
+   "options": [
+    "Chỉ một vệt lục hẹp, lệch về đáy",
+    "Bảy màu",
+    "Vệt trắng không lệch",
+    "Vệt đỏ"
+   ],
+   "answer": 0,
+   "explanation": "Lăng kính chỉ tách màu có sẵn; chỉ còn lục."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hiện tượng chùm sáng bị tách thành nhiều màu gọi là:",
+   "options": [
+    "Tán sắc ánh sáng",
+    "Phản xạ toàn phần",
+    "Phản xạ ánh sáng",
+    "Giao thoa ánh sáng"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa đó là tán sắc ánh sáng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Lăng kính đặt ngược (đáy ở trên), tia laser nằm ngang qua lăng kính. Tia ló:",
+   "options": [
+    "Chếch lên trên",
+    "Chếch xuống dưới",
+    "Đi thẳng",
+    "Tách thành bảy màu"
+   ],
+   "answer": 0,
+   "explanation": "Tia ló luôn lệch về phía đáy, đáy ở trên nên chếch lên."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Lăng kính có $A=30^\\circ$, tia vuông góc mặt $AB$, ló ra ở $AC$ với $r\\approx 48{,}6^\\circ$. Xét các ý:",
+   "statements": [
+    {
+     "text": "Tia đi thẳng qua mặt AB",
+     "answer": true
+    },
+    {
+     "text": "Góc tới ở mặt AC bằng $30^\\circ$",
+     "answer": true
+    },
+    {
+     "text": "Góc lệch $D = r - i \\approx 18{,}6^\\circ$",
+     "answer": true
+    },
+    {
+     "text": "Góc lệch $D = r + i$",
+     "answer": false
+    }
+   ],
+   "explanation": "Góc tới ở AC bằng A, D = r − i."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về chiết suất của thuỷ tinh theo màu ánh sáng:",
+   "statements": [
+    {
+     "text": "Chiết suất khác nhau với mỗi màu",
+     "answer": true
+    },
+    {
+     "text": "Chiết suất của tím lớn nhất",
+     "answer": true
+    },
+    {
+     "text": "Chiết suất của đỏ lớn nhất",
+     "answer": false
+    },
+    {
+     "text": "Chiết suất càng lớn thì tia càng lệch nhiều",
+     "answer": true
+    }
+   ],
+   "explanation": "Chiết suất tăng từ đỏ đến tím, lệch nhiều dần."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về lăng kính và màu sắc:",
+   "statements": [
+    {
+     "text": "Lăng kính tách màu có sẵn trong ánh sáng trắng",
+     "answer": true
+    },
+    {
+     "text": "Lăng kính nhuộm màu cho ánh sáng",
+     "answer": false
+    },
+    {
+     "text": "Ánh sáng đơn sắc qua lăng kính vẫn một màu",
+     "answer": true
+    },
+    {
+     "text": "Ánh sáng nào qua lăng kính cũng ra bảy màu",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài nêu ba hiểu lầm và cách sửa."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về khúc xạ qua lăng kính:",
+   "statements": [
+    {
+     "text": "Ở mặt thứ nhất, tia lại gần pháp tuyến",
+     "answer": true
+    },
+    {
+     "text": "Ở mặt thứ hai, tia ra xa pháp tuyến",
+     "answer": true
+    },
+    {
+     "text": "Tia ló lệch về phía cạnh",
+     "answer": false
+    },
+    {
+     "text": "Góc lệch D là góc giữa tia tới và tia ló",
+     "answer": true
+    }
+   ],
+   "explanation": "Khúc xạ hai lần, lệch về đáy."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Tia vuông góc mặt AB, $A=20^\\circ$, $r\\approx 30{,}9^\\circ$. Tính góc lệch $D$ làm tròn đến độ (số).",
+   "answer": "11",
+   "explanation": "$D=r-A\\approx10{,}9^\\circ\\approx 11^\\circ$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Tia vuông góc mặt AB của lăng kính có $A=30^\\circ$. Góc tới ở mặt AC bằng bao nhiêu độ?",
+   "answer": "30",
+   "explanation": "Góc tới ở AC bằng góc chiết quang A."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quang phổ của ánh sáng trắng gồm bao nhiêu màu được kể tên?",
+   "answer": "7",
+   "explanation": "Đỏ, cam, vàng, lục, lam, chàm, tím."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Với tia tím ($r\\approx50{,}4^\\circ$) và $A=30^\\circ$, vuông góc AB: $D$ bằng bao nhiêu độ (làm tròn)?",
+   "answer": "20",
+   "explanation": "$D=50{,}4-30=20{,}4\\approx20^\\circ$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tia sáng đơn sắc qua lăng kính bị khúc xạ mấy lần?",
+   "answer": "2",
+   "explanation": "Khúc xạ ở hai mặt bên."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Với $n=1{,}5$, tia ló hợp pháp tuyến $r\\approx 48{,}6^\\circ$, góc tới $30^\\circ$. Hiệu $r-i$ làm tròn đến độ bằng?",
+   "answer": "19",
+   "explanation": "$48{,}6-30=18{,}6\\approx19$."
+  }
+ ]
+}

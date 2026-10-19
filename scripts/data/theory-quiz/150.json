@@ -1,0 +1,386 @@
+{
+ "lesson_id": 150,
+ "lesson_title": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+ "item_id": 387,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 8,
+   "cong_thuc": 12
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mọi nguồn âm đều có đặc điểm chung nào?",
+   "options": [
+    "Đều dao động",
+    "Đều phát ra ánh sáng",
+    "Đều là chất rắn",
+    "Đều đứng yên"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: mọi nguồn âm đều dao động như dây đàn, màng loa, dây thanh quản."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Âm KHÔNG truyền được trong môi trường nào?",
+   "options": [
+    "Chất rắn",
+    "Chất lỏng",
+    "Chân không",
+    "Chất khí"
+   ],
+   "answer": 2,
+   "explanation": "Âm truyền qua rắn, lỏng, khí nhưng không truyền được trong chân không."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Độ cao của âm phụ thuộc vào đại lượng nào?",
+   "options": [
+    "Biên độ dao động",
+    "Tần số dao động",
+    "Khối lượng nguồn âm",
+    "Màu sắc nguồn âm"
+   ],
+   "answer": 1,
+   "explanation": "Tần số lớn thì âm cao, tần số nhỏ thì âm thấp."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Âm có tần số trên 20 000 Hz gọi là:",
+   "options": [
+    "Hạ âm",
+    "Âm nghe được",
+    "Siêu âm",
+    "Âm trầm"
+   ],
+   "answer": 2,
+   "explanation": "Trên 20 000 Hz là siêu âm, dưới 20 Hz là hạ âm."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật nào hấp thụ âm tốt?",
+   "options": [
+    "Tường gạch",
+    "Kính",
+    "Vách đá",
+    "Tấm mút"
+   ],
+   "answer": 3,
+   "explanation": "Vật mềm, xốp như rèm, thảm, mút hấp thụ âm tốt."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi đổi môi trường truyền, đại lượng nào của âm giữ nguyên?",
+   "options": [
+    "Tốc độ",
+    "Bước sóng",
+    "Tần số",
+    "Cả tốc độ và bước sóng"
+   ],
+   "answer": 2,
+   "explanation": "Tần số do nguồn quyết định nên giữ nguyên; v và λ đổi."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Công thức đo độ sâu bằng tiếng vang, với t là thời gian đi và về:",
+   "options": [
+    "$d=vt$",
+    "$d=\\dfrac{vt}{2}$",
+    "$d=\\dfrac{2v}{t}$",
+    "$d=\\dfrac{t}{2v}$"
+   ],
+   "answer": 1,
+   "explanation": "Âm đi hai lần độ sâu nên d = vt/2."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bước sóng được tính bằng công thức:",
+   "options": [
+    "$\\lambda=vf$",
+    "$\\lambda=\\dfrac{f}{v}$",
+    "$\\lambda=\\dfrac{v}{f}$",
+    "$\\lambda=\\dfrac{1}{vf}$"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu $\\lambda=v/f=vT$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Xe chạy về phía vách, bóp còi, nghe vang sau t. Hệ thức đúng là:",
+   "options": [
+    "$vt-v_xt=2d$",
+    "$vt+v_xt=2d$",
+    "$vt+v_xt=d$",
+    "$vt=v_xt+d$"
+   ],
+   "answer": 1,
+   "explanation": "Quãng âm đi cộng quãng xe đi bằng 2d khi xe tiến về vách."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Thấy chớp, 3 s sau nghe sấm (v = 340 m/s). Chớp cách khoảng:",
+   "options": [
+    "113 m",
+    "1020 m",
+    "340 m",
+    "680 m"
+   ],
+   "answer": 1,
+   "explanation": "s = vt = 340·3 = 1020 m."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về độ to và độ cao của âm:",
+   "statements": [
+    {
+     "text": "Biên độ lớn thì âm to",
+     "answer": true
+    },
+    {
+     "text": "Tần số lớn thì âm thấp",
+     "answer": false
+    },
+    {
+     "text": "Âm to thì chắc chắn cao",
+     "answer": false
+    },
+    {
+     "text": "Tai người nghe từ 20 Hz đến 20 000 Hz",
+     "answer": true
+    }
+   ],
+   "explanation": "Độ to do biên độ, độ cao do tần số; hai điều độc lập."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Về tiếng vang:",
+   "statements": [
+    {
+     "text": "Âm phản xạ đến tai chậm hơn âm trực tiếp ít nhất 1/15 s thì nghe tiếng vang",
+     "answer": true
+    },
+    {
+     "text": "Trong không khí cần cách vật cản khoảng 11,3 m trở lên",
+     "answer": true
+    },
+    {
+     "text": "Tường mút làm tiếng vang rõ hơn",
+     "answer": false
+    },
+    {
+     "text": "Vật mềm xốp phản xạ âm tốt",
+     "answer": false
+    }
+   ],
+   "explanation": "Mút hấp thụ âm; vật cứng nhẵn phản xạ tốt."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về tần số và chu kì:",
+   "statements": [
+    {
+     "text": "$f=N/t$",
+     "answer": true
+    },
+    {
+     "text": "$T=1/f$",
+     "answer": true
+    },
+    {
+     "text": "Từ đỉnh đến đáy liền sau là một chu kì",
+     "answer": false
+    },
+    {
+     "text": "Tính $f=1/T$ phải đổi T ra giây",
+     "answer": true
+    }
+   ],
+   "explanation": "Đỉnh đến đáy chỉ là T/2."
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Âm 680 Hz đi từ không khí (340 m/s) vào nước (1500 m/s):",
+   "statements": [
+    {
+     "text": "Tần số vẫn 680 Hz",
+     "answer": true
+    },
+    {
+     "text": "Bước sóng trong khí là 0,5 m",
+     "answer": true
+    },
+    {
+     "text": "Bước sóng trong nước nhỏ hơn trong khí",
+     "answer": false
+    },
+    {
+     "text": "Bước sóng trong nước khoảng 2,2 m",
+     "answer": true
+    }
+   ],
+   "explanation": "λ = v/f nên tăng theo v: 1500/680 ≈ 2,2 m."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Tàu phát siêu âm, sau 0,8 s thu phản xạ, v = 1500 m/s. Độ sâu (m)?",
+   "answer": "600",
+   "explanation": "d = 1500·0,8/2 = 600 m."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Chu kì 1 ms. Tần số bằng bao nhiêu Hz?",
+   "answer": "1000",
+   "explanation": "f = 1/0,001 = 1000 Hz."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Đứng cách vách 170 m vỗ tay. Sau bao nhiêu giây nghe vang?",
+   "answer": "1",
+   "explanation": "t = 2·170/340 = 1 s."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Xe 20 m/s chạy về vách, bóp còi, sau 4 s nghe vang (v = 340 m/s). Lúc bóp còi xe cách vách bao nhiêu m?",
+   "answer": "720",
+   "explanation": "2d = 1360 + 80 = 1440 nên d = 720 m."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật thực hiện 600 dao động trong 2 s. Tần số bao nhiêu Hz?",
+   "answer": "300",
+   "explanation": "f = N/t = 600/2 = 300 Hz."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Âm 50 000 Hz trong nước (1500 m/s) có bước sóng bao nhiêu cm?",
+   "answer": "3",
+   "explanation": "λ = 1500/50000 = 0,03 m = 3 cm."
+  }
+ ]
+}

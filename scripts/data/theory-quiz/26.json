@@ -1,0 +1,344 @@
+{
+ "lesson_id": 26,
+ "lesson_title": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+ "item_id": 302,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 14,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 7,
+   "cong_thuc": 11
+  },
+  "removed": [
+   {
+    "question": "Về biến thiên năng lượng theo thời gian của vật dao động điều hoà:",
+    "reason": "nghi_ngo: Nội dung bốn ý đúng theo bài. Riêng ý 2 có trường lạ \"type\":\"x\" làm sai cấu trúc dữ liệu, cần xoá."
+   }
+  ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong dao động điều hoà của con lắc lò xo, mốc thế năng được chọn ở đâu?",
+   "explanation": "Bài nêu mốc thế năng luôn ở vị trí cân bằng.",
+   "options": [
+    "Vị trí biên",
+    "Vị trí cân bằng",
+    "Vị trí lò xo dài nhất",
+    "Vị trí lò xo không biến dạng bất kể nằm ngang hay thẳng đứng"
+   ],
+   "answer": 1
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Thế năng của vật dao động điều hoà có chu kì $T/2$ thì li độ có chu kì là:",
+   "explanation": "Năng lượng có chu kì $T/2$ còn li độ có chu kì $T$.",
+   "options": [
+    "$T/2$",
+    "$T/4$",
+    "$T$",
+    "$2T$"
+   ],
+   "answer": 2
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức $W\\approx\\tfrac12 mgl\\alpha_0^2$ của con lắc đơn chỉ dùng khi nào?",
+   "explanation": "Bài nêu công thức góc nhỏ (dưới khoảng $10^\\circ$) với $\\alpha_0$ tính bằng rad.",
+   "options": [
+    "Mọi góc, tính bằng độ",
+    "Góc nhỏ, $\\alpha_0$ tính bằng rad",
+    "Góc lớn, $\\alpha_0$ tính bằng rad",
+    "Góc nhỏ, $\\alpha_0$ tính bằng độ"
+   ],
+   "answer": 1
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi bỏ qua ma sát, cơ năng của con lắc lò xo dao động điều hoà:",
+   "explanation": "Cơ năng $W=\\tfrac12 kA^2$ không đổi khi bỏ ma sát, đồ thị là đường nằm ngang.",
+   "options": [
+    "Biến thiên với chu kì $T$",
+    "Biến thiên với chu kì $T/2$",
+    "Không đổi",
+    "Bằng 0 ở VTCB"
+   ],
+   "answer": 2
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đồ thị thế năng theo li độ $x$ của con lắc lò xo có dạng:",
+   "explanation": "$W_t=\\tfrac12 kx^2$ nên là parabol đáy ở VTCB.",
+   "options": [
+    "Đường thẳng qua gốc",
+    "Parabol đáy ở VTCB",
+    "Đường nằm ngang",
+    "Hình sin theo $x$"
+   ],
+   "answer": 1
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Động năng của con lắc lò xo tại li độ $x$ là:",
+   "explanation": "$W_{\\text{đ}}=W-W_t=\\tfrac12 k(A^2-x^2)$.",
+   "options": [
+    "$\\tfrac12 k(A^2+x^2)$",
+    "$\\tfrac12 kx^2$",
+    "$\\tfrac12 k(A^2-x^2)$",
+    "$\\tfrac12 k(A-x)^2$"
+   ],
+   "answer": 2
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi $W_{\\text{đ}}=nW_t$, li độ của vật là:",
+   "explanation": "$W=(n+1)W_t$ nên $x=\\pm A/\\sqrt{n+1}$.",
+   "options": [
+    "$\\pm\\dfrac{A}{n+1}$",
+    "$\\pm\\dfrac{A}{\\sqrt{n}}$",
+    "$\\pm\\dfrac{A}{\\sqrt{n+1}}$",
+    "$\\pm A\\sqrt{\\dfrac{n}{n+1}}$"
+   ],
+   "answer": 2
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cơ năng con lắc đơn với biên độ góc $\\alpha_0$ (mốc ở đáy) là:",
+   "explanation": "Độ cao biên $h=l(1-\\cos\\alpha_0)$ nên $W=mgl(1-\\cos\\alpha_0)$.",
+   "options": [
+    "$mgl\\cos\\alpha_0$",
+    "$mgl(1-\\cos\\alpha_0)$",
+    "$mgl(1+\\cos\\alpha_0)$",
+    "$mgl\\sin\\alpha_0$"
+   ],
+   "answer": 1
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Biên độ dao động tăng gấp 3 thì cơ năng:",
+   "explanation": "$W\\propto A^2$ nên tăng $3^2=9$ lần.",
+   "options": [
+    "Tăng 3 lần",
+    "Tăng 9 lần",
+    "Tăng $\\sqrt3$ lần",
+    "Không đổi"
+   ],
+   "answer": 1
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về vị trí $W_{\\text{đ}}=W_t$ của vật dao động điều hoà biên độ $A$:",
+   "explanation": "$x=\\pm A/\\sqrt2$, bốn lần mỗi chu kì, cách đều $T/4$.",
+   "statements": [
+    {
+     "text": "Xảy ra tại $x=\\pm A/\\sqrt2$.",
+     "answer": true
+    },
+    {
+     "text": "Xảy ra bốn lần mỗi chu kì.",
+     "answer": true
+    },
+    {
+     "text": "Hai lần liên tiếp cách nhau $T/2$.",
+     "answer": false
+    },
+    {
+     "text": "Hai lần liên tiếp cách nhau $T/4$.",
+     "answer": true
+    }
+   ]
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về cơ năng $W=\\tfrac12 kA^2$ của con lắc lò xo:",
+   "explanation": "Phải đổi cm sang m trước khi bình phương; $W\\propto A^2$.",
+   "statements": [
+    {
+     "text": "Cần đổi $A$ từ cm sang m trước khi bình phương.",
+     "answer": true
+    },
+    {
+     "text": "Cơ năng tỉ lệ thuận với $A$.",
+     "answer": false
+    },
+    {
+     "text": "Cơ năng tỉ lệ với bình phương biên độ.",
+     "answer": true
+    },
+    {
+     "text": "Thế $A$ bằng cm vào công thức vẫn cho kết quả đúng đơn vị J.",
+     "answer": false
+    }
+   ]
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về con lắc đơn có biên độ góc $\\alpha_0$, mốc thế năng ở đáy:",
+   "explanation": "$v=\\sqrt{2gl(\\cos\\alpha-\\cos\\alpha_0)}$; qua đáy $\\alpha=0$ cho $v_{\\max}$.",
+   "statements": [
+    {
+     "text": "$v=\\sqrt{2gl(\\cos\\alpha-\\cos\\alpha_0)}$.",
+     "answer": true
+    },
+    {
+     "text": "$v_{\\max}=\\sqrt{2gl(1-\\cos\\alpha_0)}$.",
+     "answer": true
+    },
+    {
+     "text": "Độ cao so với đáy là $h=l\\cos\\alpha$.",
+     "answer": false
+    },
+    {
+     "text": "Góc nhỏ: $v_{\\max}\\approx\\alpha_0\\sqrt{gl}$ với $\\alpha_0$ tính bằng rad.",
+     "answer": true
+    }
+   ]
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động biên độ $8\\ \\text{cm}$ có $W_{\\text{đ}}=15W_t$. Li độ có độ lớn bao nhiêu cm?",
+   "explanation": "$n+1=16$, $x=8/\\sqrt{16}=2$ cm.",
+   "answer": "2"
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật có biên độ $9\\ \\text{cm}$, $W_{\\text{đ}}=8W_t$. Độ lớn li độ bằng bao nhiêu cm?",
+   "explanation": "$n+1=9$, $x=9/3=3$ cm.",
+   "answer": "3"
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Thế năng lặp lại sau mỗi $0{,}25\\ \\text{s}$. Chu kì dao động là bao nhiêu giây (viết số thập phân dùng dấu phẩy)?",
+   "explanation": "$T/2=0{,}25$ s nên $T=0{,}5$ s.",
+   "answer": "0,5"
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Li độ dao động có tần số $5\\ \\text{Hz}$. Động năng biến thiên với tần số bao nhiêu Hz?",
+   "explanation": "Năng lượng có tần số $2f=10$ Hz.",
+   "answer": "10"
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lò xo $k=100\\ \\text{N/m}$, biên độ $5\\ \\text{cm}$, tại $x=3\\ \\text{cm}$. Động năng bằng bao nhiêu mJ?",
+   "explanation": "$W=125$ mJ, $W_t=45$ mJ, $W_{\\text{đ}}=80$ mJ.",
+   "answer": "80"
+  },
+  {
+   "type": "short_answer",
+   "kind": "don_vi",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Cơ năng $W=0{,}04\\ \\text{J}$ bằng bao nhiêu mJ?",
+   "explanation": "Từ J sang mJ nhân 1000: $0{,}04\\times1000=40$.",
+   "answer": "40"
+  }
+ ]
+}

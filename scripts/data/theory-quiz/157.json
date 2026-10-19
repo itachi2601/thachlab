@@ -1,0 +1,365 @@
+{
+ "lesson_id": 157,
+ "lesson_title": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+ "item_id": 344,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 14,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 9
+  },
+  "removed": [
+   {
+    "question": "Hình 2 ($U=12$ V, $R_1=4$, $R_2=12$, $R_3=6\\ \\Omega$), K song song $R_2$. Khi K đóng ampe kế chỉ bao nhiêu A?",
+    "reason": "kiem-code: đề tham chiếu hình/mạch không có trong câu hỏi"
+   },
+   {
+    "question": "Điện trở tương đương của mạch cầu cân bằng (hình 3) là:",
+    "reason": "kiem-code: đề tham chiếu hình/mạch không có trong câu hỏi"
+   }
+  ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào đúng về đoạn mạch nối tiếp?",
+   "options": [
+    "Hiệu điện thế chung, dòng điện cộng",
+    "Cường độ dòng điện chung, hiệu điện thế cộng",
+    "Cường độ dòng điện chung, nghịch đảo điện trở cộng",
+    "Hiệu điện thế chung, điện trở cộng"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài: nối tiếp thì $I$ chung, $U$ và $R$ cộng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào đúng về đoạn mạch song song?",
+   "options": [
+    "$I$ chung, $U$ cộng",
+    "$U$ chung, $I$ và $\\dfrac1R$ cộng",
+    "$U$ chung, $R$ cộng",
+    "$I$ chung, $\\dfrac1R$ cộng"
+   ],
+   "answer": 1,
+   "explanation": "Song song: $U$ chung, $I$ và $\\tfrac1R$ cộng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Khi tính toán, khoá K mở được coi như:",
+   "options": [
+    "Dây dẫn chập hai nút",
+    "Một điện trở nhỏ",
+    "Đứt mạch, bỏ nhánh đó",
+    "Vôn kế"
+   ],
+   "answer": 2,
+   "explanation": "Bảng ở mục IV: khoá K mở coi là đứt, bỏ nhánh."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Vôn kế thực được đưa vào sơ đồ như thế nào?",
+   "options": [
+    "Điện trở $R_V$ song song với đoạn đo",
+    "Điện trở $R_V$ nối tiếp với đoạn đo",
+    "Dây dẫn",
+    "Bỏ khỏi sơ đồ"
+   ],
+   "answer": 0,
+   "explanation": "Vôn kế thực: $R_V$ song song với đoạn đo."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Vôn kế mắc nối tiếp trong mạch chính (điện trở rất lớn) thì:",
+   "options": [
+    "Dòng gần bằng 0, vôn kế chỉ gần bằng $U$ nguồn",
+    "Dòng rất lớn",
+    "Vôn kế chỉ 0",
+    "Mạch không bị ảnh hưởng"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: dòng gần bằng 0, vôn kế chỉ gần bằng $U$ nguồn."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 6,
+   "question": "Với biến trở, nghiệm tìm được cần thoả điều kiện nào?",
+   "options": [
+    "$R_b\\gt R_{max}$",
+    "$R_b\\lt 0$",
+    "$0\\le R_b\\le R_{max}$",
+    "Bất kì giá trị nào"
+   ],
+   "answer": 2,
+   "explanation": "Mục VII: chỉ lấy nghiệm trong $0\\le R_b\\le R_{max}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Điều kiện cầu cân bằng là:",
+   "options": [
+    "$R_1R_2=R_3R_4$",
+    "$R_1R_4=R_2R_3$",
+    "$R_1+R_4=R_2+R_3$",
+    "$R_1R_3=R_2R_4$"
+   ],
+   "answer": 1,
+   "explanation": "Cầu cân bằng khi $R_1R_4=R_2R_3$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bốn điện trở giống nhau $r=8\\ \\Omega$ mắc song song có điện trở tương đương:",
+   "options": [
+    "$32\\ \\Omega$",
+    "$4\\ \\Omega$",
+    "$2\\ \\Omega$",
+    "$8\\ \\Omega$"
+   ],
+   "answer": 2,
+   "explanation": "$n$ điện trở giống nhau song song: $\\dfrac rn=2\\ \\Omega$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điện trở nối tiếp, tỉ số hiệu điện thế $\\dfrac{U_1}{U_2}$ bằng:",
+   "options": [
+    "$\\dfrac{R_2}{R_1}$",
+    "$\\dfrac{R_1}{R_2}$",
+    "$R_1R_2$",
+    "$\\dfrac{R_1+R_2}{R_1}$"
+   ],
+   "answer": 1,
+   "explanation": "Nối tiếp: $\\dfrac{U_1}{U_2}=\\dfrac{R_1}{R_2}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Về các vật khi tính mạch điện:",
+   "statements": [
+    {
+     "text": "Ampe kế lí tưởng coi như dây nối",
+     "answer": true
+    },
+    {
+     "text": "Vôn kế lí tưởng được bỏ khỏi sơ đồ",
+     "answer": true
+    },
+    {
+     "text": "Khoá K đóng coi như đứt mạch",
+     "answer": false
+    },
+    {
+     "text": "Điện trở bị nối tắt không có dòng qua",
+     "answer": true
+    }
+   ],
+   "explanation": "Khoá K đóng là dây, chập hai nút."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Khi cầu cân bằng:",
+   "statements": [
+    {
+     "text": "$V_P=V_Q$",
+     "answer": true
+    },
+    {
+     "text": "Dòng qua nhánh PQ bằng 0",
+     "answer": true
+    },
+    {
+     "text": "Có thể bỏ nhánh PQ hoặc chập P với Q",
+     "answer": true
+    },
+    {
+     "text": "Dòng qua PQ khác 0 nếu nhánh PQ là dây",
+     "answer": false
+    }
+   ],
+   "explanation": "Dòng qua PQ bằng 0 dù đó là vôn kế, dây hay điện trở."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về điện trở tương đương:",
+   "statements": [
+    {
+     "text": "Nối tiếp: $R_{td}=R_1+R_2$",
+     "answer": true
+    },
+    {
+     "text": "Song song hai điện trở: $R_{td}=\\dfrac{R_1R_2}{R_1+R_2}$",
+     "answer": true
+    },
+    {
+     "text": "Song song: $R_{td}$ lớn hơn điện trở lớn nhất",
+     "answer": false
+    },
+    {
+     "text": "Ba điện trở song song: $R_{td}=\\dfrac{R_1R_2R_3}{R_1+R_2+R_3}$",
+     "answer": false
+    }
+   ],
+   "explanation": "Song song thì $R_{td}$ nhỏ hơn điện trở nhỏ nhất; ba điện trở dùng $\\tfrac1{R_{td}}=\\sum\\tfrac1{R_k}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Về ampe kế và vôn kế thực:",
+   "statements": [
+    {
+     "text": "$R_A$ nối tiếp tại chỗ mắc",
+     "answer": true
+    },
+    {
+     "text": "Vôn kế thực làm số chỉ nhỏ hơn hiệu điện thế thật",
+     "answer": true
+    },
+    {
+     "text": "$R_V$ càng lớn thì sai số càng lớn",
+     "answer": false
+    },
+    {
+     "text": "Ampe kế thực làm dòng đo được nhỏ hơn dòng thật",
+     "answer": true
+    }
+   ],
+   "explanation": "$R_V$ càng lớn càng gần giá trị thật."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ba điện trở $12$, $4$, $6\\ \\Omega$ song song. $R_{td}$ bằng bao nhiêu $\\Omega$?",
+   "answer": "2",
+   "explanation": "$\\tfrac1{R_{td}}=\\tfrac12$ nên $R_{td}=2\\ \\Omega$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "$R_1=2\\ \\Omega$ nối tiếp đoạn song song $6\\ \\Omega$ và $3\\ \\Omega$, $U=12$ V. Ampe kế ở nhánh chính chỉ bao nhiêu A?",
+   "answer": "3",
+   "explanation": "$R_{td}=2+2=4\\ \\Omega$, $I=12/4=3$ A."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Cầu cân bằng với $R_1=3$, $R_2=6$, $R_3=5\\ \\Omega$. $R_4$ bằng bao nhiêu $\\Omega$?",
+   "answer": "10",
+   "explanation": "$R_4=\\dfrac{R_2R_3}{R_1}=10\\ \\Omega$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 6,
+   "question": "Ba điện trở $r=6\\ \\Omega$ dùng cả ba, hai điện trở song song rồi nối tiếp điện trở thứ ba. $R_{td}$ bằng bao nhiêu $\\Omega$?",
+   "answer": "9",
+   "explanation": "$3+6=9\\ \\Omega$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 6,
+   "question": "Điện trở $R_0$ nối tiếp biến trở: biến trở $4\\ \\Omega$ thì $I=2$ A; $10\\ \\Omega$ thì $I=1$ A. $R_0$ bằng bao nhiêu $\\Omega$?",
+   "answer": "2",
+   "explanation": "$2(R_0+4)=R_0+10$ nên $R_0=2\\ \\Omega$."
+  }
+ ]
+}

@@ -1,386 +1,386 @@
 {
-  "lesson_id": 27,
-  "lesson_title": "Bài 8. Mô tả sóng",
-  "item_id": 45,
-  "generated_at": "2026-10-02",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 27,
+ "lesson_title": "Bài 8. Mô tả sóng",
+ "item_id": 45,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 11
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Mô tả sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sóng cơ là gì?",
+   "options": [
+    "Dao động cơ lan truyền trong một môi trường",
+    "Sự dịch chuyển của các phần tử môi trường từ nguồn ra xa",
+    "Dao động chỉ xảy ra trong chân không",
+    "Sự chuyển động của vật chất theo một dòng"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, sóng cơ là dao động cơ lan truyền trong một môi trường."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Mô tả sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi sóng truyền qua mặt nước, miếng xốp nổi trên mặt nước sẽ:",
+   "options": [
+    "Trôi ra xa theo chiều truyền sóng",
+    "Nhấp nhô tại chỗ quanh vị trí cân bằng",
+    "Chìm xuống đáy",
+    "Đứng yên tuyệt đối"
+   ],
+   "answer": 1,
+   "explanation": "Thí nghiệm khay nước: miếng xốp chỉ nhấp nhô tại chỗ, không trôi ra xa."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Mô tả sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vì sao sóng cơ không truyền được trong chân không?",
+   "options": [
+    "Vì chân không quá lạnh",
+    "Vì chân không không có phần tử môi trường để liên kết",
+    "Vì chân không có tốc độ truyền bằng 0 ở mọi nguồn",
+    "Vì nguồn dao động không hoạt động trong chân không"
+   ],
+   "answer": 1,
+   "explanation": "Chân không không có phần tử nên không có lực liên kết."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bước sóng là:",
+   "options": [
+    "Quãng đường sóng truyền trong một chu kì",
+    "Quãng đường sóng truyền trong một giây",
+    "Thời gian một phần tử dao động toàn phần",
+    "Độ lệch lớn nhất của phần tử khỏi vị trí cân bằng"
+   ],
+   "answer": 0,
+   "explanation": "Bước sóng là quãng đường sóng truyền trong một chu kì."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức đúng liên hệ bước sóng, tốc độ và tần số là:",
+   "options": [
+    "$\\lambda = vf$",
+    "$\\lambda = \\dfrac{f}{v}$",
+    "$\\lambda = \\dfrac{v}{f}$",
+    "$\\lambda = \\dfrac{T}{v}$"
+   ],
+   "answer": 2,
+   "explanation": "Bài có $\\lambda = vT = \\dfrac{v}{f}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sóng có $T = 0{,}4$ s, $v = 2{,}5$ m/s. Bước sóng là:",
+   "options": [
+    "$0{,}16$ m",
+    "$6{,}25$ m",
+    "$0{,}4$ m",
+    "$1$ m"
+   ],
+   "answer": 3,
+   "explanation": "$\\lambda = vT = 2{,}5 \\times 0{,}4 = 1$ m."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguồn $u_O = A\\cos(\\omega t)$, sóng truyền theo chiều dương. Phương trình tại M cách O đoạn $d$ là:",
+   "options": [
+    "$u_M = A\\cos\\left(\\omega t + \\dfrac{2\\pi d}{\\lambda}\\right)$",
+    "$u_M = A\\cos\\left(\\omega t - \\dfrac{2\\pi d}{\\lambda}\\right)$",
+    "$u_M = A\\cos\\left(\\omega t - \\dfrac{2\\pi\\lambda}{d}\\right)$",
+    "$u_M = A\\cos\\left(\\omega t - \\dfrac{\\pi d}{\\lambda}\\right)$"
+   ],
+   "answer": 1,
+   "explanation": "M nhận sóng sau O nên trễ pha $\\dfrac{2\\pi d}{\\lambda}$, trừ pha."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi sóng truyền từ môi trường này sang môi trường khác, đại lượng không đổi là:",
+   "options": [
+    "Tốc độ truyền sóng",
+    "Bước sóng",
+    "Tần số",
+    "Tốc độ và bước sóng"
+   ],
+   "answer": 2,
+   "explanation": "$f$ và $T$ do nguồn quyết định nên không đổi; $v$ và $\\lambda$ đổi."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điểm trên cùng phương truyền cách nhau $d = \\dfrac{\\lambda}{2}$ thì độ lệch pha là:",
+   "options": [
+    "$\\pi$",
+    "$2\\pi$",
+    "$\\dfrac{\\pi}{2}$",
+    "$0$"
+   ],
+   "answer": 0,
+   "explanation": "$\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda} = \\pi$, tức ngược pha."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên đồ thị $u - x$ (tại một lúc), khoảng cách giữa hai đỉnh liên tiếp bằng:",
+   "options": [
+    "Chu kì $T$",
+    "Biên độ $A$",
+    "Tần số $f$",
+    "Bước sóng $\\lambda$"
+   ],
+   "answer": 3,
+   "explanation": "Đồ thị $u-x$: một bước bằng $\\lambda$; $u-t$: một bước bằng $T$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Mô tả sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về sự truyền sóng cơ, xét các phát biểu sau:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sóng cơ là gì?",
-      "explanation": "Theo bài, sóng cơ là dao động cơ lan truyền trong một môi trường.",
-      "options": [
-        "Dao động cơ lan truyền trong một môi trường",
-        "Chuyển động của các phần tử vật chất từ nguồn ra xa",
-        "Dao động của nguồn tại một điểm cố định",
-        "Sự lan truyền của vật chất trong chân không"
-      ],
-      "answer": 0
+     "text": "Sóng truyền pha dao động và năng lượng.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phát biểu nào về môi trường truyền sóng cơ là đúng?",
-      "explanation": "Bài nêu rõ sóng cơ không truyền được trong chân không.",
-      "options": [
-        "Sóng cơ không truyền được trong chân không",
-        "Sóng cơ chỉ truyền được trong chất khí",
-        "Sóng cơ truyền tốt nhất trong chân không",
-        "Sóng cơ chỉ truyền được trong chất rắn"
-      ],
-      "answer": 0
+     "text": "Phần tử môi trường chuyển dời theo sóng ra xa nguồn.",
+     "answer": false
     },
     {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét sự tạo thành sóng trên mặt nước. Các phát biểu sau đúng hay sai?",
-      "explanation": "Miếng xốp chỉ dao động tại chỗ; chỉ pha dao động lan truyền, vật chất không bị cuốn ra xa.",
-      "statements": [
-        {
-          "text": "Sóng hình thành nhờ nguồn dao động bên ngoài và lực liên kết giữa các phần tử môi trường.",
-          "answer": true
-        },
-        {
-          "text": "Miếng xốp trên mặt nước dao động quanh một vị trí cân bằng xác định khi có sóng truyền qua.",
-          "answer": true
-        },
-        {
-          "text": "Khi sóng truyền đi, các phần tử vật chất bị cuốn theo sóng ra xa nguồn.",
-          "answer": false
-        },
-        {
-          "text": "Khi sóng truyền đi, chỉ có pha dao động được lan truyền.",
-          "answer": true
-        }
-      ]
+     "text": "Cần có nguồn dao động và lực liên kết giữa các phần tử.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Theo định nghĩa thứ hai, bước sóng là khoảng cách giữa hai điểm nào trên cùng phương truyền sóng?",
-      "explanation": "Bước sóng là khoảng cách giữa hai điểm dao động cùng pha gần nhau nhất trên cùng phương truyền sóng.",
-      "options": [
-        "Dao động cùng pha và gần nhau nhất",
-        "Dao động ngược pha và gần nhau nhất",
-        "Dao động vuông pha và gần nhau nhất",
-        "Dao động cùng pha và xa nhau nhất"
-      ],
-      "answer": 0
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Biên độ sóng $A$ là gì?",
-      "explanation": "Biên độ sóng là độ lệch lớn nhất của phần tử sóng khỏi vị trí cân bằng.",
-      "options": [
-        "Độ lệch lớn nhất của phần tử sóng khỏi vị trí cân bằng",
-        "Quãng đường sóng truyền được trong một chu kì",
-        "Số dao động của phần tử sóng trong một giây",
-        "Khoảng cách giữa hai ngọn sóng liên tiếp"
-      ],
-      "answer": 0
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Hai điểm gần nhau nhất trên phương truyền sóng mà dao động ngược pha cách nhau $d=k\\lambda$. Tìm $k$ (viết dạng số thập phân).",
-      "explanation": "Hai điểm gần nhau nhất dao động ngược pha cách nhau $d=\\dfrac{\\lambda}{2}$, nên $k=0{,}5$.",
-      "answer": "0,5"
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Khi sóng truyền từ môi trường này sang môi trường khác, đại lượng nào sau đây không thay đổi?",
-      "explanation": "Chu kì và tần số không đổi; tốc độ và bước sóng thay đổi theo môi trường.",
-      "options": [
-        "Tần số sóng",
-        "Tốc độ truyền sóng",
-        "Bước sóng",
-        "Tốc độ truyền sóng và bước sóng"
-      ],
-      "answer": 0
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Xét tốc độ truyền sóng $v$. Các phát biểu sau đúng hay sai?",
-      "explanation": "Tốc độ truyền sóng khác tốc độ dao động của phần tử sóng.",
-      "statements": [
-        {
-          "text": "Trong môi trường đồng chất, tốc độ truyền sóng không đổi.",
-          "answer": true
-        },
-        {
-          "text": "Tốc độ truyền sóng phụ thuộc nhiệt độ, tính đàn hồi và mật độ phân tử của môi trường.",
-          "answer": true
-        },
-        {
-          "text": "Tốc độ truyền sóng luôn bằng tốc độ dao động của phần tử sóng.",
-          "answer": false
-        },
-        {
-          "text": "Tốc độ truyền sóng là tốc độ lan truyền dao động trong không gian.",
-          "answer": true
-        }
-      ]
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Tốc độ truyền sóng phụ thuộc vào bao nhiêu yếu tố (nhiệt độ, tính đàn hồi của môi trường, mật độ phân tử)?",
-      "explanation": "Bài nêu tốc độ truyền sóng phụ thuộc vào 3 yếu tố: nhiệt độ, đặc tính đàn hồi và mật độ phân tử.",
-      "answer": "3"
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 7,
-      "question": "Cường độ sóng là gì?",
-      "explanation": "Cường độ sóng là năng lượng truyền qua đơn vị diện tích vuông góc phương truyền trong đơn vị thời gian.",
-      "options": [
-        "Năng lượng sóng truyền qua một đơn vị diện tích vuông góc với phương truyền trong một đơn vị thời gian",
-        "Năng lượng sóng truyền qua một đơn vị diện tích bất kì trong một chu kì",
-        "Quãng đường sóng truyền trong một đơn vị thời gian",
-        "Độ lệch lớn nhất của phần tử sóng khỏi vị trí cân bằng"
-      ],
-      "answer": 0
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Công thức nào đúng cho bước sóng $\\lambda$ theo tốc độ $v$, chu kì $T$ và tần số $f$?",
-      "explanation": "Bước sóng là quãng đường truyền trong một chu kì: $\\lambda=vT=\\dfrac{v}{f}$.",
-      "options": [
-        "$\\lambda=vT=\\dfrac{v}{f}$",
-        "$\\lambda=vf=\\dfrac{v}{T}$",
-        "$\\lambda=\\dfrac{T}{v}=\\dfrac{f}{v}$",
-        "$\\lambda=\\dfrac{vT}{2}=\\dfrac{v}{2f}$"
-      ],
-      "answer": 0
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 7,
-      "question": "Đơn vị của cường độ sóng $I$ trong hệ SI là gì?",
-      "explanation": "$I=\\dfrac{P}{S}$ có đơn vị W/m$^2$.",
-      "options": [
-        "W/m$^2$",
-        "W/m",
-        "J/m$^2$",
-        "W$\\cdot$m$^2$"
-      ],
-      "answer": 0
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 7,
-      "question": "Công thức tính cường độ sóng $I$ theo công suất $P$ và diện tích $S$ vuông góc phương truyền là?",
-      "explanation": "Theo bài $I=\\dfrac{E}{S\\Delta t}=\\dfrac{P}{S}$.",
-      "options": [
-        "$I=\\dfrac{P}{S}$",
-        "$I=PS$",
-        "$I=\\dfrac{S}{P}$",
-        "$I=\\dfrac{P}{S^2}$"
-      ],
-      "answer": 0
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Từ $v=\\lambda f$, tần số sóng được tính bằng?",
-      "explanation": "Chia hai vế của $v=\\lambda f$ cho $\\lambda$ được $f=\\dfrac{v}{\\lambda}$.",
-      "options": [
-        "$f=\\dfrac{v}{\\lambda}$",
-        "$f=v\\lambda$",
-        "$f=\\dfrac{\\lambda}{v}$",
-        "$f=\\dfrac{v}{\\lambda^2}$"
-      ],
-      "answer": 0
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Xét liên hệ giữa độ lệch pha và khoảng cách $d$ giữa hai điểm trên phương truyền sóng. Các phát biểu sau đúng hay sai?",
-      "explanation": "Giữa $n$ ngọn sóng liên tiếp dao động cùng pha thì $d=(n-1)\\lambda$.",
-      "statements": [
-        {
-          "text": "Hai phần tử cách nhau $d=\\lambda$ dao động cùng pha.",
-          "answer": true
-        },
-        {
-          "text": "Hai điểm gần nhau nhất dao động ngược pha cách nhau $d=\\dfrac{\\lambda}{2}$.",
-          "answer": true
-        },
-        {
-          "text": "Hai điểm gần nhau nhất dao động vuông pha cách nhau $d=\\dfrac{\\lambda}{4}$.",
-          "answer": true
-        },
-        {
-          "text": "Giữa $n$ ngọn sóng liên tiếp, khoảng cách là $d=n\\lambda$.",
-          "answer": false
-        }
-      ]
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Một sóng truyền từ môi trường này sang môi trường khác. Các phát biểu sau đúng hay sai?",
-      "explanation": "$\\lambda=vT$ với $T$ không đổi nên $v$ đổi thì $\\lambda$ đổi.",
-      "statements": [
-        {
-          "text": "Tần số sóng không đổi.",
-          "answer": true
-        },
-        {
-          "text": "Chu kì sóng không đổi.",
-          "answer": true
-        },
-        {
-          "text": "Tốc độ truyền sóng thay đổi nên bước sóng thay đổi.",
-          "answer": true
-        },
-        {
-          "text": "Bước sóng không đổi vì $\\lambda=\\dfrac{f}{v}$.",
-          "answer": false
-        }
-      ]
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Sóng có tốc độ $v=3$ m/s và tần số $f=2$ Hz. Tìm bước sóng $\\lambda$ (đơn vị m).",
-      "explanation": "$\\lambda=\\dfrac{v}{f}=\\dfrac{3}{2}=1{,}5$ m.",
-      "answer": "1,5"
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Sóng có bước sóng $\\lambda=2$ cm. Khoảng cách giữa ngọn sóng thứ nhất và ngọn sóng thứ 5 (5 ngọn liên tiếp) là bao nhiêu cm?",
-      "explanation": "$d=(n-1)\\lambda=4\\cdot2=8$ cm.",
-      "answer": "8"
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Sóng có bước sóng $\\lambda=0{,}5$ m và tần số $f=10$ Hz. Tìm tốc độ truyền sóng (đơn vị m/s).",
-      "explanation": "$v=\\lambda f=0{,}5\\cdot10=5$ m/s.",
-      "answer": "5"
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 7,
-      "question": "Một sóng có công suất $P=20$ W truyền qua diện tích $S=4$ m$^2$ vuông góc phương truyền. Tìm cường độ sóng (đơn vị W/m$^2$).",
-      "explanation": "$I=\\dfrac{P}{S}=\\dfrac{20}{4}=5$ W/m$^2$.",
-      "answer": "5"
+     "text": "Sóng cơ truyền được trong chân không.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Sóng truyền pha và năng lượng, không truyền vật chất; cần nguồn và lực liên kết."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sóng truyền từ nước ra không khí:",
+   "statements": [
+    {
+     "text": "Tần số không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Chu kì không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ truyền sóng không đổi.",
+     "answer": false
+    },
+    {
+     "text": "Bước sóng không đổi.",
+     "answer": false
+    }
+   ],
+   "explanation": "$f$, $T$ khóa theo nguồn; $v$ đổi nên $\\lambda = \\dfrac{v}{f}$ đổi."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về các công thức của sóng:",
+   "statements": [
+    {
+     "text": "$v = \\lambda f$",
+     "answer": true
+    },
+    {
+     "text": "$v = \\dfrac{\\lambda}{T}$",
+     "answer": true
+    },
+    {
+     "text": "$T = f$",
+     "answer": false
+    },
+    {
+     "text": "$\\lambda = \\dfrac{T}{v}$",
+     "answer": false
+    }
+   ],
+   "explanation": "Đúng: $\\lambda = vT = \\dfrac{v}{f}$, $v = \\lambda f = \\dfrac{\\lambda}{T}$, $T = \\dfrac{1}{f}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về độ lệch pha giữa hai điểm cách nhau $d$ trên phương truyền:",
+   "statements": [
+    {
+     "text": "$d = n\\lambda$ thì hai điểm cùng pha.",
+     "answer": true
+    },
+    {
+     "text": "$d = \\dfrac{\\lambda}{2}$ thì hai điểm ngược pha.",
+     "answer": true
+    },
+    {
+     "text": "$d = \\dfrac{\\lambda}{4}$ thì hai điểm vuông pha.",
+     "answer": true
+    },
+    {
+     "text": "Độ lệch pha phụ thuộc vào biên độ sóng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Độ lệch pha $\\dfrac{2\\pi d}{\\lambda}$ chỉ phụ thuộc $d$ và $\\lambda$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Sóng có $T = 0{,}4$ s và $\\lambda = 2$ m. Tính tốc độ truyền sóng (m/s).",
+   "answer": "5",
+   "explanation": "$v = \\dfrac{\\lambda}{T} = \\dfrac{2}{0{,}4} = 5$ m/s."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Sóng có $v = 60$ cm/s, $f = 20$ Hz. Tính bước sóng (cm).",
+   "answer": "3",
+   "explanation": "$\\lambda = \\dfrac{v}{f} = 3$ cm."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Nguồn có $\\omega = 40\\pi$ rad/s. Tính tần số $f$ (Hz).",
+   "answer": "20",
+   "explanation": "$f = \\dfrac{\\omega}{2\\pi} = 20$ Hz."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Với $\\lambda = 3$ cm, điểm M cách nguồn $d = 9$ cm. Tỉ số $\\dfrac{d}{\\lambda}$ bằng bao nhiêu?",
+   "answer": "3",
+   "explanation": "$\\dfrac{9}{3} = 3$, nên M cùng pha với nguồn."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sóng biển đập vào bờ cách nhau 5 s, hai đỉnh liên tiếp cách nhau 10 m. Tính tốc độ truyền sóng (m/s).",
+   "answer": "2",
+   "explanation": "$v = \\dfrac{\\lambda}{T} = \\dfrac{10}{5} = 2$ m/s."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một phần tử dao động có $T = 0{,}25$ s. Tính tần số sóng $f$ (Hz).",
+   "answer": "4",
+   "explanation": "$f = \\dfrac{1}{T} = 4$ Hz."
+  }
+ ]
 }

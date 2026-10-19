@@ -1,0 +1,379 @@
+{
+ "lesson_id": 130,
+ "lesson_title": "Bài 3. Cơ năng",
+ "item_id": 268,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 10
+  },
+  "removed": [
+   {
+    "question": "Con lắc đơn có bao nhiêu vị trí biên (A và B) mà tại đó thế năng lớn nhất?",
+    "reason": "nghi_ngo: Đáp án đúng nhưng đề đã nêu sẵn '(A và B)' nên lộ đáp án, câu không có giá trị kiểm tra."
+   }
+  ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Cơ năng của vật chuyển động dưới tác dụng của trọng lực bằng:",
+   "options": [
+    "Hiệu của động năng và thế năng",
+    "Tổng động năng và thế năng trọng trường",
+    "Tích của động năng và thế năng",
+    "Chỉ bằng động năng của vật"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu cơ năng bằng tổng động năng và thế năng trọng trường."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Với con lắc đơn, tại vị trí cân bằng O (gốc thế năng tại O) thì:",
+   "options": [
+    "Thế năng lớn nhất, động năng nhỏ nhất",
+    "Thế năng và động năng đều lớn nhất",
+    "Thế năng nhỏ nhất, động năng lớn nhất",
+    "Thế năng và động năng đều nhỏ nhất"
+   ],
+   "answer": 2,
+   "explanation": "Tại O thế năng nhỏ nhất, động năng lớn nhất."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi vật chuyển động từ thấp lên cao thì:",
+   "options": [
+    "Động năng chuyển hóa thành thế năng",
+    "Thế năng chuyển hóa thành động năng",
+    "Tốc độ tăng, độ cao tăng",
+    "Cơ năng chuyển hết thành nhiệt"
+   ],
+   "answer": 0,
+   "explanation": "Từ thấp lên cao tốc độ giảm, độ cao tăng: động năng chuyển hóa thành thế năng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cơ năng của vật được bảo toàn khi vật:",
+   "options": [
+    "Chuyển động có lực cản",
+    "Chuyển động không chịu tác dụng của lực cản",
+    "Đứng yên trên mặt đất",
+    "Chuyển động chậm"
+   ],
+   "answer": 1,
+   "explanation": "Không có lực cản thì cơ năng không đổi tại mọi thời điểm."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Mũi tên được bắn đi từ chiếc cung có sự chuyển hóa:",
+   "options": [
+    "Động năng của mũi tên thành thế năng cánh cung",
+    "Thế năng của cánh cung thành động năng của mũi tên",
+    "Nhiệt năng thành thế năng",
+    "Động năng thành nhiệt năng"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài: thế năng của cánh cung chuyển hóa thành động năng của mũi tên."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Công thức tính cơ năng đúng là:",
+   "options": [
+    "$W=10mh+\\frac{1}{2}mv^2$",
+    "$W=10mh-\\frac{1}{2}mv^2$",
+    "$W=mh+mv^2$",
+    "$W=10mh+\\frac{1}{2}m^2v$"
+   ],
+   "answer": 0,
+   "explanation": "$W=W_t+W_d=10mh+\\frac{1}{2}mv^2$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật đứng yên ở độ cao $h$ (gốc thế năng ở mặt đất) có cơ năng là:",
+   "options": [
+    "$\\frac{1}{2}mv^2$",
+    "$0$",
+    "$10mh$",
+    "$10mh+mv^2$"
+   ],
+   "answer": 2,
+   "explanation": "Đứng yên nên $v=0$, $W=10mh$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Đơn vị của cơ năng trong công thức của bài là:",
+   "options": [
+    "N",
+    "W",
+    "J",
+    "m/s"
+   ],
+   "answer": 2,
+   "explanation": "Bài ghi $W$ tính bằng (J)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật $m=1$ kg ở độ cao $h=2$ m, vận tốc $v=0$. Cơ năng là bao nhiêu J?",
+   "options": [
+    "2",
+    "10",
+    "20",
+    "40"
+   ],
+   "answer": 2,
+   "explanation": "$W=10mh=10\\cdot1\\cdot2=20$ J."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật $m=2$ kg ở mặt đất (gốc thế năng), $v=3$ m/s. Cơ năng là bao nhiêu J?",
+   "options": [
+    "3",
+    "6",
+    "9",
+    "18"
+   ],
+   "answer": 2,
+   "explanation": "$W=\\frac{1}{2}\\cdot2\\cdot3^2=9$ J."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về sự bảo toàn cơ năng:",
+   "statements": [
+    {
+     "text": "Động năng và thế năng có thể chuyển hóa qua lại lẫn nhau.",
+     "answer": true
+    },
+    {
+     "text": "Không có lực cản thì cơ năng không đổi tại mọi thời điểm.",
+     "answer": true
+    },
+    {
+     "text": "Vật đi từ cao xuống thấp thì thế năng tăng.",
+     "answer": false
+    },
+    {
+     "text": "Vật đi từ cao xuống thấp thì tốc độ tăng.",
+     "answer": true
+    }
+   ],
+   "explanation": "Theo phần kết luận: thế năng giảm, động năng tăng khi đi xuống."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về con lắc đơn dao động quanh O:",
+   "statements": [
+    {
+     "text": "Tại biên A, B thế năng lớn nhất.",
+     "answer": true
+    },
+    {
+     "text": "Tại biên A, B động năng lớn nhất.",
+     "answer": false
+    },
+    {
+     "text": "Từ O đến A tốc độ giảm dần.",
+     "answer": true
+    },
+    {
+     "text": "Từ A đến O động năng chuyển hóa thành thế năng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Từ A đến O thế năng chuyển hóa thành động năng; tại biên động năng nhỏ nhất."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Về công thức $W=10mh+\\frac{1}{2}mv^2$:",
+   "statements": [
+    {
+     "text": "$10mh$ là thế năng trọng trường.",
+     "answer": true
+    },
+    {
+     "text": "$\\frac{1}{2}mv^2$ là động năng.",
+     "answer": true
+    },
+    {
+     "text": "Khi $v=0$ thì cơ năng bằng 0.",
+     "answer": false
+    },
+    {
+     "text": "Khi $h=0$ thì cơ năng bằng động năng.",
+     "answer": true
+    }
+   ],
+   "explanation": "Khi $v=0$ cơ năng bằng thế năng $10mh$, không bằng 0."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Quả bóng cao su thả từ độ cao h, nảy lên thấp dần:",
+   "statements": [
+    {
+     "text": "Cơ năng của bóng giảm dần.",
+     "answer": true
+    },
+    {
+     "text": "Điều này trái định luật bảo toàn năng lượng.",
+     "answer": false
+    },
+    {
+     "text": "Một phần cơ năng biến thành nhiệt năng khi va chạm.",
+     "answer": true
+    },
+    {
+     "text": "Cơ năng biến mất hoàn toàn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Một phần cơ năng thành nhiệt năng, không trái định luật bảo toàn năng lượng."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật $m=3$ kg ở độ cao $2$ m, đứng yên. Cơ năng bằng bao nhiêu J?",
+   "answer": "60",
+   "explanation": "$W=10\\cdot3\\cdot2=60$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật $m=2$ kg ở mặt đất, $v=4$ m/s. Cơ năng bằng bao nhiêu J?",
+   "answer": "16",
+   "explanation": "$W=\\frac{1}{2}\\cdot2\\cdot16=16$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật $m=1$ kg ở độ cao $5$ m, $v=2$ m/s. Cơ năng bằng bao nhiêu J?",
+   "answer": "52",
+   "explanation": "$W=10\\cdot1\\cdot5+\\frac{1}{2}\\cdot1\\cdot4=52$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dinh_nghia",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Trong công thức cơ năng, hệ số của $mv^2$ là $\\frac{1}{k}$. Tìm $k$.",
+   "answer": "2",
+   "explanation": "Động năng là $\\frac{1}{2}mv^2$ nên $k=2$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "cong_thuc",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật $m=4$ kg đứng yên có cơ năng $80$ J (gốc thế năng ở mặt đất). Độ cao $h$ bằng bao nhiêu m?",
+   "answer": "2",
+   "explanation": "$W=10mh\\Rightarrow h=80/(10\\cdot4)=2$ m."
+  }
+ ]
+}

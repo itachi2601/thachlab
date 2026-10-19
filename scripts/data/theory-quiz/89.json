@@ -1,0 +1,386 @@
+{
+ "lesson_id": 89,
+ "lesson_title": "Bài 11. Điện trở. Định luật Ohm",
+ "item_id": 341,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 8,
+   "cong_thuc": 12
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện trở của một vật dẫn cho biết điều gì?",
+   "options": [
+    "Vật dẫn tích được bao nhiêu điện",
+    "Vật dẫn cản trở dòng điện nhiều hay ít",
+    "Hiệu điện thế của nguồn lớn hay nhỏ",
+    "Dòng điện chạy theo chiều nào"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, điện trở cho biết vật dẫn cản trở dòng điện nhiều hay ít."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Định luật Ohm cho một điện trở",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào đúng với định luật Ohm?",
+   "options": [
+    "I tỉ lệ nghịch với U, tỉ lệ thuận với R",
+    "I tỉ lệ thuận với U, tỉ lệ nghịch với R",
+    "I tỉ lệ thuận với cả U và R",
+    "I không phụ thuộc U và R"
+   ],
+   "answer": 1,
+   "explanation": "Định luật Ohm: I tỉ lệ thuận với U và tỉ lệ nghịch với R."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cách mắc đúng ampe kế và vôn kế để đo một điện trở là:",
+   "options": [
+    "Cả hai mắc nối tiếp",
+    "Cả hai mắc song song",
+    "Ampe kế nối tiếp, vôn kế song song",
+    "Ampe kế song song, vôn kế nối tiếp"
+   ],
+   "answer": 2,
+   "explanation": "Ampe kế mắc nối tiếp, vôn kế mắc song song với vật cần đo."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Mắc nhầm vôn kế nối tiếp với bóng đèn thì hiện tượng xảy ra là:",
+   "options": [
+    "Đèn sáng bình thường",
+    "Đèn sáng mạnh hơn, vôn kế cháy",
+    "Đèn gần như không sáng, vôn kế chỉ gần bằng hiệu điện thế nguồn",
+    "Vôn kế chỉ đúng số 0"
+   ],
+   "answer": 2,
+   "explanation": "Vôn kế có điện trở rất lớn nên dòng gần bằng 0, hầu hết hiệu điện thế nguồn đặt lên vôn kế."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện trở suất ρ có đơn vị là:",
+   "options": [
+    "Ω",
+    "Ω·m",
+    "Ω/m",
+    "V/A"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu ρ đo bằng Ω·m, đặc trưng cho vật liệu."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính điện trở từ U và I là:",
+   "options": [
+    "$R = U\\cdot I$",
+    "$R = \\dfrac{I}{U}$",
+    "$R = \\dfrac{U}{I}$",
+    "$R = U + I$"
+   ],
+   "answer": 2,
+   "explanation": "Bài cho $R = \\dfrac{U}{I}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức điện trở của dây dẫn là:",
+   "options": [
+    "$R = \\rho\\dfrac{S}{l}$",
+    "$R = \\dfrac{\\rho}{lS}$",
+    "$R = \\rho\\,l\\,S$",
+    "$R = \\rho\\dfrac{l}{S}$"
+   ],
+   "answer": 3,
+   "explanation": "Bài cho $R = \\rho\\dfrac{l}{S}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật Ohm cho một điện trở",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hiệu điện thế 6 V đặt vào điện trở 30 Ω. Cường độ dòng điện là:",
+   "options": [
+    "0,2 A",
+    "5 A",
+    "180 A",
+    "0,02 A"
+   ],
+   "answer": 0,
+   "explanation": "$I = U/R = 6/30 = 0{,}2$ A."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dây có R = 12 Ω bị cắt lấy một nửa chiều dài. Điện trở đoạn đó là:",
+   "options": [
+    "24 Ω",
+    "12 Ω",
+    "6 Ω",
+    "3 Ω"
+   ],
+   "answer": 2,
+   "explanation": "R tỉ lệ với l nên dài một nửa thì R còn 6 Ω."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đổi đúng: $4{,}7\\ \\text{k}\\Omega$ bằng",
+   "options": [
+    "$47\\ \\Omega$",
+    "$470\\ \\Omega$",
+    "$4\\,700\\ \\Omega$",
+    "$4\\,700\\,000\\ \\Omega$"
+   ],
+   "answer": 2,
+   "explanation": "1 kΩ = 1000 Ω nên 4,7 kΩ = 4700 Ω."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Định luật Ohm cho một điện trở",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về một điện trở khi hiệu điện thế U thay đổi (nhiệt độ không đổi):",
+   "statements": [
+    {
+     "text": "R giữ nguyên khi U tăng.",
+     "answer": true
+    },
+    {
+     "text": "I tăng khi U tăng.",
+     "answer": true
+    },
+    {
+     "text": "R tỉ lệ thuận với U.",
+     "answer": false
+    },
+    {
+     "text": "Đồ thị I theo U là đường thẳng qua gốc toạ độ.",
+     "answer": true
+    }
+   ],
+   "explanation": "R do dây quyết định, không do U; I tỉ lệ thuận với U nên đồ thị là đường thẳng qua gốc."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về $R = \\rho\\dfrac{l}{S}$:",
+   "statements": [
+    {
+     "text": "Dây càng dài thì R càng lớn.",
+     "answer": true
+    },
+    {
+     "text": "Tiết diện càng lớn thì R càng lớn.",
+     "answer": false
+    },
+    {
+     "text": "ρ càng nhỏ thì vật liệu dẫn điện càng tốt.",
+     "answer": true
+    },
+    {
+     "text": "S phải đổi ra m² khi thay số.",
+     "answer": true
+    }
+   ],
+   "explanation": "R tỉ lệ thuận với l, tỉ lệ nghịch với S; ρ nhỏ dẫn điện tốt; 1 mm² = 10⁻⁶ m²."
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Điện trở 15 Ω mắc vào 3 V rồi tăng lên 6 V:",
+   "statements": [
+    {
+     "text": "Lúc đầu I = 0,2 A.",
+     "answer": true
+    },
+    {
+     "text": "Sau khi tăng, I = 0,4 A.",
+     "answer": true
+    },
+    {
+     "text": "Sau khi tăng, R = 30 Ω.",
+     "answer": false
+    },
+    {
+     "text": "I tăng gấp đôi.",
+     "answer": true
+    }
+   ],
+   "explanation": "R vẫn 15 Ω; I = 3/15 = 0,2 A rồi 6/15 = 0,4 A."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Định luật Ohm cho một điện trở",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về đồ thị I theo U của hai dây (trục đứng là I):",
+   "statements": [
+    {
+     "text": "Đường dốc hơn ứng với điện trở nhỏ hơn.",
+     "answer": true
+    },
+    {
+     "text": "Đường dốc hơn ứng với điện trở lớn hơn.",
+     "answer": false
+    },
+    {
+     "text": "Cùng U, dây có I nhỏ hơn thì cản trở nhiều hơn.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị của điện trở đi qua gốc toạ độ.",
+     "answer": true
+    }
+   ],
+   "explanation": "Cùng U mà I lớn hơn thì R nhỏ hơn, đường dốc hơn."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hiệu điện thế 6 V, ampe kế chỉ 200 mA. Điện trở của dây là bao nhiêu Ω?",
+   "answer": "30",
+   "explanation": "Đổi 0,2 A; R = 6/0,2 = 30 Ω."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật Ohm cho một điện trở",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Điện trở 55 Ω đặt vào 220 V. Cường độ dòng điện là bao nhiêu A?",
+   "answer": "4",
+   "explanation": "I = 220/55 = 4 A."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Dây constantan (ρ = 0,5·10⁻⁶ Ω·m) dài 4 m, S = 0,5 mm². Điện trở là bao nhiêu Ω?",
+   "answer": "4",
+   "explanation": "R = 0,5·10⁻⁶·4/(0,5·10⁻⁶) = 4 Ω."
+  },
+  {
+   "type": "short_answer",
+   "kind": "don_vi",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "1 MΩ bằng $10^n$ Ω. Tìm n.",
+   "answer": "6",
+   "explanation": "1 MΩ = 1 000 000 Ω = 10⁶ Ω."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Dây 12 Ω gập đôi thành dây hai sợi chập nhau (dài một nửa, tiết diện gấp đôi). Điện trở mới là bao nhiêu Ω?",
+   "answer": "3",
+   "explanation": "R giảm một nửa do l và giảm một nửa do S: 12/4 = 3 Ω."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Dây nichrome 5 m, R = 55 Ω ở 220 V. Muốn I = 2 A với cùng tiết diện thì dây dài bao nhiêu m?",
+   "answer": "10",
+   "explanation": "R' = 220/2 = 110 Ω gấp đôi nên l' = 10 m."
+  }
+ ]
+}

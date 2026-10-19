@@ -1,0 +1,386 @@
+{
+ "lesson_id": 131,
+ "lesson_title": "Bài 4. Công và công suất",
+ "item_id": 271,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 7,
+   "cong_thuc": 13
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Công cơ học là số đo của đại lượng nào sau đây?",
+   "options": [
+    "Phần năng lượng vật nhận vào hoặc mất đi do tương tác với vật khác",
+    "Tốc độ thực hiện công của vật",
+    "Quãng đường vật dịch chuyển",
+    "Độ lớn của lực tác dụng lên vật"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: công là số đo phần năng lượng mà vật nhận vào hoặc mất đi do tương tác với vật khác."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Nếu vật chuyển dời theo phương vuông góc với phương của lực thì công của lực đó bằng bao nhiêu?",
+   "options": [
+    "Bằng F.s",
+    "Bằng không",
+    "Bằng F/s",
+    "Luôn âm"
+   ],
+   "answer": 1,
+   "explanation": "Lưu ý trong bài: chuyển dời vuông góc với phương của lực thì công bằng không."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đại lượng đặc trưng cho tốc độ thực hiện công được gọi là gì?",
+   "options": [
+    "Hiệu suất",
+    "Công suất",
+    "Năng lượng",
+    "Động năng"
+   ],
+   "answer": 1,
+   "explanation": "Bài định nghĩa công suất là đại lượng đặc trưng cho tốc độ thực hiện công."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hiệu suất của máy là tỉ số giữa đại lượng nào?",
+   "options": [
+    "Công toàn phần và công có ích",
+    "Công hao phí và công toàn phần",
+    "Công có ích và công toàn phần",
+    "Công có ích và công hao phí"
+   ],
+   "answer": 2,
+   "explanation": "Hiệu suất là tỉ số giữa công có ích và công toàn phần."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai hình thức truyền năng lượng cơ bản giữa các vật tương tác là gì?",
+   "options": [
+    "Truyền nhiệt và thực hiện công",
+    "Phát sáng và truyền nhiệt",
+    "Thực hiện công và phát sóng",
+    "Bức xạ và dẫn điện"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu hai hình thức cơ bản là truyền nhiệt và thực hiện công."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Biểu thức tính công cơ học khi vật chuyển dời theo phương của lực là:",
+   "options": [
+    "$A = F/s$",
+    "$A = F.s$",
+    "$A = s/F$",
+    "$A = F.s^2$"
+   ],
+   "answer": 1,
+   "explanation": "Bài cho $A = F.s$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công suất được tính bằng biểu thức nào sau đây (v là tốc độ)?",
+   "options": [
+    "$P = F/v$",
+    "$P = A.t$",
+    "$P = Fv$",
+    "$P = t/A$"
+   ],
+   "answer": 2,
+   "explanation": "Bài cho $P = \\frac{A}{t} = \\frac{Fs}{t} = Fv$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Biểu thức hiệu suất đúng là:",
+   "options": [
+    "$H = \\frac{A_{tp}}{A_{ci}} \\times 100\\%$",
+    "$H = \\frac{A_{ci}}{A_{tp}} \\times 100\\%$",
+    "$H = \\frac{A_{hp}}{A_{tp}} \\times 100\\%$",
+    "$H = A_{ci} - A_{tp}$"
+   ],
+   "answer": 1,
+   "explanation": "Bài: $H = \\frac{A_{ci}}{A_{tp}} \\times 100\\%$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Phát biểu nào về đơn vị công đúng?",
+   "options": [
+    "1 kWh = 3,6 kJ",
+    "1 kWh = 3,6 MJ",
+    "1 kWh = 36 MJ",
+    "1 kWh = 1000 J"
+   ],
+   "answer": 1,
+   "explanation": "Bài cho 1 kWh = 3600000 J = 3,6 MJ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của công suất là:",
+   "options": [
+    "Jun (J)",
+    "Oát (W)",
+    "Niutơn (N)",
+    "Calo (cal)"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu đơn vị công suất trong SI là oát (W)."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Xét công thức $A = F.s$. Các nhận định sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Công thức đúng khi vật chuyển dời theo phương của lực.",
+     "answer": true
+    },
+    {
+     "text": "F là độ lớn của lực, đơn vị N.",
+     "answer": true
+    },
+    {
+     "text": "s là quãng đường dịch chuyển bất kỳ, không cần theo hướng lực.",
+     "answer": false
+    },
+    {
+     "text": "Chuyển dời vuông góc với lực thì công bằng không.",
+     "answer": true
+    }
+   ],
+   "explanation": "Bài lưu ý công thức chỉ đúng khi s theo phương của lực; vuông góc thì công bằng 0."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về công suất, các nhận định sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Công suất là công thực hiện trong một đơn vị thời gian.",
+     "answer": true
+    },
+    {
+     "text": "Công suất càng lớn thì tốc độ thực hiện công càng nhanh.",
+     "answer": true
+    },
+    {
+     "text": "Công suất càng lớn thì tốc độ thực hiện công càng chậm.",
+     "answer": false
+    },
+    {
+     "text": "Công suất đo bằng oát (W) trong hệ SI.",
+     "answer": true
+    }
+   ],
+   "explanation": "Công suất đặc trưng cho tốc độ thực hiện công, đơn vị W."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về hiệu suất, các nhận định sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Công toàn phần = công có ích + công hao phí.",
+     "answer": true
+    },
+    {
+     "text": "$H = \\frac{P_{ci}}{P_{tp}} \\times 100\\%$.",
+     "answer": true
+    },
+    {
+     "text": "Công có ích luôn lớn hơn công toàn phần.",
+     "answer": false
+    },
+    {
+     "text": "$H = \\frac{A_{ci}}{A_{tp}} \\times 100\\%$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Bài cho công thức hiệu suất và công toàn phần = có ích + hao phí nên có ích không vượt toàn phần."
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về đơn vị công suất, các nhận định sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "1 kW = 1000 W.",
+     "answer": true
+    },
+    {
+     "text": "1 HP = 746 W.",
+     "answer": true
+    },
+    {
+     "text": "1 CV = 746 W.",
+     "answer": false
+    },
+    {
+     "text": "1 MW = $10^{6}$ W.",
+     "answer": true
+    }
+   ],
+   "explanation": "Bài: 1 HP = 746 W, 1 CV = 736 W."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Lực 5 N làm vật dịch chuyển 4 m theo hướng của lực. Công thực hiện bằng bao nhiêu jun?",
+   "answer": "20",
+   "explanation": "$A = F.s = 5.4 = 20$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một máy thực hiện công 600 J trong 10 s. Công suất bằng bao nhiêu oát?",
+   "answer": "60",
+   "explanation": "$P = A/t = 600/10 = 60$ W."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Công có ích 80 J, công toàn phần 100 J. Hiệu suất bằng bao nhiêu phần trăm?",
+   "answer": "80",
+   "explanation": "$H = 80/100 \\times 100\\% = 80\\%$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực kéo 20 N, vật chuyển động với tốc độ 3 m/s. Công suất bằng bao nhiêu oát?",
+   "answer": "60",
+   "explanation": "$P = Fv = 20.3 = 60$ W."
+  },
+  {
+   "type": "short_answer",
+   "kind": "don_vi",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Số mũ của 10 trong biểu thức $1\\text{ MJ} = 10^{n}\\text{ J}$ là n bằng bao nhiêu?",
+   "answer": "6",
+   "explanation": "Bài: 1 MJ = $10^{6}$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Công toàn phần 50 J, công hao phí 10 J. Công có ích bằng bao nhiêu jun?",
+   "answer": "40",
+   "explanation": "$A_{ci} = A_{tp} - A_{hp} = 50 - 10 = 40$ J."
+  }
+ ]
+}

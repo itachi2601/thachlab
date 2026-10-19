@@ -1,0 +1,386 @@
+{
+ "lesson_id": 159,
+ "lesson_title": "Chuyên đề 03. Điện trở và định luật Ohm",
+ "item_id": 345,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 7,
+   "cong_thuc": 13
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức $R=U/I$ trong bài được dùng với ý nghĩa nào?",
+   "options": [
+    "Cách xác định $R$ từ hai số đo $U$ và $I$",
+    "Cho biết $R$ tỉ lệ thuận với $U$",
+    "Cho biết $R$ tỉ lệ nghịch với $I$",
+    "Cho biết $R$ phụ thuộc vật liệu và tiết diện"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu $R=U/I$ chỉ là cách xác định $R$ từ hai số đo, còn $R$ phụ thuộc vào $\\rho$, $l$, $S$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tăng hiệu điện thế hai đầu dây constantan từ $3\\ \\text{V}$ lên $6\\ \\text{V}$ (nhiệt độ giữ nguyên) thì điện trở của dây:",
+   "options": [
+    "tăng gấp đôi",
+    "giảm một nửa",
+    "không đổi",
+    "tăng gấp bốn"
+   ],
+   "answer": 2,
+   "explanation": "$U$ gấp đôi thì $I$ gấp đôi, tỉ số $U/I$ không đổi; $R$ chỉ phụ thuộc vật liệu, $l$, $S$, nhiệt độ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Cắt dây thành $n$ đoạn bằng nhau rồi ghép song song. Điện trở bộ so với dây ban đầu $R$ là:",
+   "options": [
+    "$R/n$",
+    "$R/n^2$",
+    "$nR$",
+    "$n^2R$"
+   ],
+   "answer": 1,
+   "explanation": "Mỗi đoạn $R/n$, ghép song song $n$ đoạn được $R/n^2$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Trên đồ thị $I$–$U$ của vật dẫn tuân theo định luật Ohm, độ dốc đường thẳng bằng:",
+   "options": [
+    "$R$",
+    "$1/R$",
+    "$R^2$",
+    "$U\\cdot I$"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu đồ thị $I$–$U$ có độ dốc là $1/R$, còn $U$–$I$ có độ dốc là $R$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 6,
+   "question": "Ampe kế thật có điện trở $R_A$ mắc nối tiếp trong mạch thì số chỉ của nó:",
+   "options": [
+    "lớn hơn dòng thật",
+    "nhỏ hơn dòng thật",
+    "bằng dòng thật",
+    "không xác định"
+   ],
+   "answer": 1,
+   "explanation": "$R_{mach}=R+R_A$ làm số chỉ nhỏ hơn dòng thật."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ $R=\\rho l/S$, điện trở suất được tính bằng:",
+   "options": [
+    "$\\rho=RS/l$",
+    "$\\rho=Rl/S$",
+    "$\\rho=R/(lS)$",
+    "$\\rho=l/(RS)$"
+   ],
+   "answer": 0,
+   "explanation": "Biến đổi $R=\\rho l/S$ cho $\\rho=RS/l$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Dây có $R=20\\ \\Omega$ được kéo dài thêm $50\\%$, thể tích không đổi. Điện trở mới là:",
+   "options": [
+    "$30\\ \\Omega$",
+    "$45\\ \\Omega$",
+    "$13{,}3\\ \\Omega$",
+    "$40\\ \\Omega$"
+   ],
+   "answer": 1,
+   "explanation": "$l_2=1{,}5l_1$ nên $R_2=20\\cdot1{,}5^2=45\\ \\Omega$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Nguồn $12\\ \\text{V}$, $R=10\\ \\Omega$ nối tiếp biến trở ($R_{max}=30\\ \\Omega$). Để dòng bằng $0{,}5\\ \\text{A}$ thì $R_b$ bằng:",
+   "options": [
+    "$24\\ \\Omega$",
+    "$6\\ \\Omega$",
+    "$14\\ \\Omega$",
+    "$34\\ \\Omega$"
+   ],
+   "answer": 2,
+   "explanation": "$R_b=U/I_0-R=24-10=14\\ \\Omega$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 6,
+   "question": "Vôn kế $R_V$ mắc song song với $R$ thì điện trở đoạn đó là:",
+   "options": [
+    "$R+R_V$",
+    "$\\dfrac{R\\,R_V}{R+R_V}$",
+    "$\\dfrac{R+R_V}{R\\,R_V}$",
+    "$R-R_V$"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu $R_P=\\dfrac{R R_V}{R+R_V}\\lt R$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đổi đơn vị đúng là:",
+   "options": [
+    "$1\\ \\text{mm}^2=10^{-3}\\ \\text{m}^2$",
+    "$1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$",
+    "$1\\ \\text{mm}^2=10^{6}\\ \\text{m}^2$",
+    "$1\\ \\text{mm}^2=10^{-9}\\ \\text{m}^2$"
+   ],
+   "answer": 1,
+   "explanation": "Bài ghi $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Về đồ thị $U$–$I$ và $I$–$U$ của vật dẫn:",
+   "statements": [
+    {
+     "text": "Đường thẳng qua gốc toạ độ cho biết $U\\propto I$ và $R$ không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị $U$–$I$: đường dốc hơn có $R$ lớn hơn.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị $I$–$U$: đường dốc hơn có $R$ lớn hơn.",
+     "answer": false
+    },
+    {
+     "text": "Đồ thị cong thì $R$ không đổi theo $U$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$U$–$I$ có độ dốc $R$, $I$–$U$ có độ dốc $1/R$; đồ thị cong thì $R$ đổi theo $U$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Kéo dãn dây với thể tích không đổi:",
+   "statements": [
+    {
+     "text": "$S_1l_1=S_2l_2$.",
+     "answer": true
+    },
+    {
+     "text": "$R_2/R_1=(l_2/l_1)^2$.",
+     "answer": true
+    },
+    {
+     "text": "$R_2/R_1=l_2/l_1$ luôn đúng khi kéo dãn.",
+     "answer": false
+    },
+    {
+     "text": "Đường kính giảm $k$ lần thì $R$ tăng $k^4$ lần.",
+     "answer": true
+    }
+   ],
+   "explanation": "$R\\propto l^2$; $R_2/R_1=l_2/l_1$ chỉ đúng khi $S$ không đổi."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Biến trở nối tiếp với điện trở $R$, nguồn $U$:",
+   "statements": [
+    {
+     "text": "$I_{min}=\\dfrac{U}{R_{max}+R}$.",
+     "answer": true
+    },
+    {
+     "text": "$I_{max}=\\dfrac{U}{R}$ khi $R_b=0$.",
+     "answer": true
+    },
+    {
+     "text": "Muốn dòng $I_0$ thì $R_b=\\dfrac{U}{I_0}+R$.",
+     "answer": false
+    },
+    {
+     "text": "Trước khi đóng mạch nên đưa con chạy về $R_{max}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "$R_b=U/I_0-R$, không phải cộng $R$."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 6,
+   "question": "Về ampe kế, vôn kế có điện trở:",
+   "statements": [
+    {
+     "text": "Sai số tương đối của ampe kế là $\\delta_A=\\dfrac{R_A}{R+R_A}$.",
+     "answer": true
+    },
+    {
+     "text": "Vôn kế mắc song song với đoạn cần đo.",
+     "answer": true
+    },
+    {
+     "text": "Phép đo chính xác khi $R_V\\ll R$.",
+     "answer": false
+    },
+    {
+     "text": "Vôn kế thật chỉ nhỏ hơn hiệu điện thế thật.",
+     "answer": true
+    }
+   ],
+   "explanation": "Chính xác khi $R_A\\ll R$ và $R_V\\gg R$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Dây có $R=8\\ \\Omega$ kéo dài gấp $3$ lần (thể tích không đổi). Tính điện trở mới theo $\\Omega$.",
+   "answer": "72",
+   "explanation": "$R_2=8\\cdot3^2=72\\ \\Omega$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đường kính dây giảm còn một nửa (thể tích không đổi) thì $R$ tăng bao nhiêu lần?",
+   "answer": "16",
+   "explanation": "$k^4=2^4=16$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Dây $100\\ \\Omega$ cắt thành $5$ đoạn bằng nhau rồi ghép song song. Điện trở bộ là bao nhiêu $\\Omega$?",
+   "answer": "4",
+   "explanation": "$R/n^2=100/25=4\\ \\Omega$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Cần $R_{td}=1\\ \\Omega$ từ dây $100\\ \\Omega$ cắt $n$ đoạn bằng nhau ghép song song. Tìm $n$.",
+   "answer": "10",
+   "explanation": "$n=\\sqrt{R/R_x}=\\sqrt{100}=10$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Nguồn $24\\ \\text{V}$, $R=30\\ \\Omega$ nối tiếp biến trở $50\\ \\Omega$. Biết $I_{max}$ có dạng $0{,}x$ A. Tìm chữ số $x$.",
+   "answer": "8",
+   "explanation": "$I_{max}=24/30=0{,}8\\ \\text{A}$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 03. Điện trở và định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dây nicrom $l=8\\ \\text{m}$, $S=0{,}2\\ \\text{mm}^2$, $\\rho=1{,}1\\ \\Omega\\cdot\\text{mm}^2/\\text{m}$. Cắt còn $6\\ \\text{m}$ thì điện trở bao nhiêu $\\Omega$?",
+   "answer": "33",
+   "explanation": "$R=44\\ \\Omega$ cho $8\\ \\text{m}$; $R'=44\\cdot6/8=33\\ \\Omega$."
+  }
+ ]
+}

@@ -1,0 +1,386 @@
+{
+ "lesson_id": 129,
+ "lesson_title": "Bài 2. Động năng. Thế năng",
+ "item_id": 265,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 11
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Động năng của một vật là dạng năng lượng mà vật có được do:",
+   "options": [
+    "nó ở trên cao so với mốc",
+    "nó đang chuyển động",
+    "nó có khối lượng lớn",
+    "nó bị biến dạng"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu động năng là năng lượng của vật có được do nó đang chuyển động."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thế năng trọng trường là năng lượng vật có được khi:",
+   "options": [
+    "vật chuyển động nhanh",
+    "vật có nhiệt độ cao",
+    "vật ở trên cao so với mốc chọn",
+    "vật đứng yên trên mặt đất"
+   ],
+   "answer": 2,
+   "explanation": "Thế năng trọng trường là năng lượng vật có được khi ở trên cao so với mặt đất hoặc mốc được chọn."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai vật cùng khối lượng, vật nào có vận tốc lớn hơn thì:",
+   "options": [
+    "động năng nhỏ hơn",
+    "động năng bằng nhau",
+    "thế năng lớn hơn",
+    "động năng lớn hơn"
+   ],
+   "answer": 3,
+   "explanation": "Cùng khối lượng, vận tốc lớn hơn thì động năng lớn hơn."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai vật ở cùng một độ cao, vật nào có khối lượng lớn hơn thì:",
+   "options": [
+    "thế năng lớn hơn",
+    "thế năng nhỏ hơn",
+    "thế năng bằng nhau",
+    "động năng bằng 0"
+   ],
+   "answer": 0,
+   "explanation": "Cùng độ cao, khối lượng lớn hơn thì thế năng hấp dẫn lớn hơn."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Để nhận biết một vật có động năng hay không, ta xét xem vật đó:",
+   "options": [
+    "có chuyển động so với vật làm mốc hay không",
+    "có ở độ cao so với mặt đất hay không",
+    "có khối lượng lớn hay không",
+    "có bị nung nóng hay không"
+   ],
+   "answer": 0,
+   "explanation": "Vật chuyển động so với vật làm mốc thì có động năng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hành khách ngồi yên trên toa tàu đang chạy. Phát biểu đúng là:",
+   "options": [
+    "Luôn có động năng vì tàu chạy",
+    "Luôn không có động năng",
+    "Có động năng nếu lấy cây bên đường làm mốc",
+    "Có động năng nếu lấy toa tàu làm mốc"
+   ],
+   "answer": 2,
+   "explanation": "Động năng phụ thuộc vật làm mốc: so với cây bên đường người đó chuyển động nên có động năng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Công thức tính động năng đúng là:",
+   "options": [
+    "$W_d=mv^2$",
+    "$W_d=\\frac{1}{2}mv$",
+    "$W_d=\\frac{1}{2}mv^2$",
+    "$W_d=\\frac{1}{2}m^2v$"
+   ],
+   "answer": 2,
+   "explanation": "Bài cho $W_d=\\frac{1}{2}mv^2$; các phương án khác thiếu 1/2 hoặc sai số mũ."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính thế năng trong bài là:",
+   "options": [
+    "$W_t=10mh$",
+    "$W_t=\\frac{10m}{h}$",
+    "$W_t=10mh^2$",
+    "$W_t=\\frac{1}{2}10mh$"
+   ],
+   "answer": 0,
+   "explanation": "Bài cho $W_t=Ph=10mh$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Đơn vị của động năng trong công thức $W_d=\\frac{1}{2}mv^2$ là:",
+   "options": [
+    "N",
+    "J",
+    "kg",
+    "m/s"
+   ],
+   "answer": 1,
+   "explanation": "Bài ghi $W_d$ tính bằng J."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai vật cùng độ cao, vật 1 có khối lượng gấp 3 lần vật 2. Thế năng vật 1 so với vật 2 là:",
+   "options": [
+    "bằng nhau",
+    "gấp 9 lần",
+    "gấp 3 lần",
+    "bằng 1/3"
+   ],
+   "answer": 2,
+   "explanation": "$W_t$ tỉ lệ với $m$ nên $W_{t1}=3W_{t2}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về thế năng trọng trường, xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Giá trị thế năng phụ thuộc vào gốc thế năng được chọn.",
+     "answer": true
+    },
+    {
+     "text": "Thông thường gốc thế năng được chọn tại mặt đất.",
+     "answer": true
+    },
+    {
+     "text": "Vật khối lượng càng lớn ở độ cao càng cao thì thế năng càng lớn.",
+     "answer": true
+    },
+    {
+     "text": "Thế năng không phụ thuộc vào độ cao của vật.",
+     "answer": false
+    }
+   ],
+   "explanation": "Thế năng phụ thuộc khối lượng, độ cao và gốc thế năng."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Về động năng $W_d=\\frac{1}{2}mv^2$, xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Động năng bằng một nửa tích khối lượng và bình phương vận tốc.",
+     "answer": true
+    },
+    {
+     "text": "Hai vật cùng vận tốc khác không, vật khối lượng lớn hơn có động năng lớn hơn.",
+     "answer": true
+    },
+    {
+     "text": "Động năng tỉ lệ thuận với vận tốc (không bình phương).",
+     "answer": false
+    },
+    {
+     "text": "Vật đứng yên so với mốc thì có động năng lớn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Động năng tỉ lệ với $v^2$ và chỉ có khi vật chuyển động so với mốc."
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật khối lượng $m$ chuyển động với vận tốc $v$ có $W_d=\\frac{1}{2}mv^2$. Xét các phát biểu:",
+   "statements": [
+    {
+     "text": "Nếu $v$ tăng gấp đôi, $m$ không đổi thì $W_d$ tăng gấp 4.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $m$ tăng gấp đôi, $v$ không đổi thì $W_d$ tăng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $v$ tăng gấp đôi thì $W_d$ tăng gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Nếu $m$ tăng gấp đôi thì $W_d$ tăng gấp 4.",
+     "answer": false
+    }
+   ],
+   "explanation": "$W_d$ tỉ lệ với $m$ và với $v^2$."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai vật đang rơi có khối lượng như nhau, xét ở cùng một độ cao:",
+   "statements": [
+    {
+     "text": "Thế năng của hai vật như nhau.",
+     "answer": true
+    },
+    {
+     "text": "Chưa thể kết luận về động năng nếu chưa biết vận tốc.",
+     "answer": true
+    },
+    {
+     "text": "Động năng của hai vật chắc chắn bằng nhau.",
+     "answer": false
+    },
+    {
+     "text": "Thế năng của hai vật chắc chắn khác nhau.",
+     "answer": false
+    }
+   ],
+   "explanation": "Cùng khối lượng và độ cao thì thế năng bằng nhau; động năng phụ thuộc vận tốc."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật $m=2$ kg chuyển động với $v=3$ m/s. Động năng của vật là bao nhiêu J?",
+   "answer": "9",
+   "explanation": "$W_d=\\frac{1}{2}\\cdot2\\cdot3^2=9$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật $m=2$ kg ở độ cao $h=5$ m so với gốc thế năng. Thế năng là bao nhiêu J (dùng $W_t=10mh$)?",
+   "answer": "100",
+   "explanation": "$W_t=10\\cdot2\\cdot5=100$ J."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vật có $m=4$ kg và $W_d=8$ J. Vận tốc của vật là bao nhiêu m/s?",
+   "answer": "2",
+   "explanation": "$v^2=2W_d/m=4$ nên $v=2$ m/s."
+  },
+  {
+   "type": "short_answer",
+   "kind": "bien_doi",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật $m=5$ kg có $W_t=100$ J. Độ cao của vật là bao nhiêu m (dùng $W_t=10mh$)?",
+   "answer": "2",
+   "explanation": "$h=W_t/(10m)=100/50=2$ m."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật thứ nhất có khối lượng gấp 3 lần vật thứ hai, cùng độ cao. Thế năng vật thứ nhất gấp mấy lần vật thứ hai?",
+   "answer": "3",
+   "explanation": "$W_{t1}=3W_{t2}$ vì $W_t$ tỉ lệ với khối lượng khi cùng độ cao."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Cùng một vật, vận tốc tăng từ 2 m/s lên 6 m/s. Động năng tăng gấp mấy lần?",
+   "answer": "9",
+   "explanation": "$W_d$ tỉ lệ với $v^2$, nên tăng $(6/2)^2=9$ lần."
+  }
+ ]
+}

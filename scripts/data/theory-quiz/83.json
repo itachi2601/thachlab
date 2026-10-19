@@ -1,0 +1,386 @@
+{
+ "lesson_id": 83,
+ "lesson_title": "Bài 5. Khúc xạ ánh sáng",
+ "item_id": 274,
+ "generated_at": "2026-10-19",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 12,
+   "cong_thuc": 8
+  },
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khúc xạ ánh sáng là hiện tượng nào sau đây?",
+   "options": [
+    "Tia sáng bị hắt trở lại môi trường cũ khi gặp mặt phân cách",
+    "Tia sáng bị gãy khúc khi truyền xiên góc qua mặt phân cách hai môi trường trong suốt khác nhau",
+    "Tia sáng bị hấp thụ hoàn toàn khi vào môi trường thứ hai",
+    "Tia sáng truyền thẳng qua mọi môi trường"
+   ],
+   "answer": 1,
+   "explanation": "Mục II.1 định nghĩa khúc xạ là sự gãy khúc của tia sáng khi truyền xiên góc qua mặt phân cách hai môi trường trong suốt khác nhau."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chiếu tia sáng vuông góc với mặt phân cách hai môi trường (i = 0°) thì tia sáng:",
+   "options": [
+    "Gãy khúc lệch về một bên",
+    "Bị hắt ngược trở lại hoàn toàn",
+    "Đi thẳng, không đổi phương",
+    "Toả ra nhiều hướng"
+   ],
+   "answer": 2,
+   "explanation": "Khi i = 0° thì r = 0°, tia đi thẳng theo pháp tuyến (Câu 1 mục II.1)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Góc tới i là góc giữa:",
+   "options": [
+    "Tia tới và mặt phân cách",
+    "Tia tới và pháp tuyến",
+    "Tia khúc xạ và mặt phân cách",
+    "Tia tới và tia khúc xạ"
+   ],
+   "answer": 1,
+   "explanation": "Bảng ký hiệu ở mục II.1: góc tới là góc giữa tia tới và pháp tuyến."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào đúng với định luật khúc xạ ánh sáng?",
+   "options": [
+    "Tia khúc xạ và tia tới nằm cùng một bên pháp tuyến",
+    "Tia khúc xạ nằm ngoài mặt phẳng tới",
+    "Tia tới và tia khúc xạ nằm ở hai bên pháp tuyến, trong mặt phẳng tới",
+    "Góc khúc xạ luôn bằng góc tới"
+   ],
+   "answer": 2,
+   "explanation": "Mục II.3: tia khúc xạ nằm trong mặt phẳng tới và hai tia ở hai bên pháp tuyến."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ánh sáng đi từ môi trường có chiết suất nhỏ sang môi trường có chiết suất lớn hơn thì:",
+   "options": [
+    "r < i, tia lệch gần pháp tuyến",
+    "r > i, tia lệch xa pháp tuyến",
+    "r = i",
+    "Không có tia khúc xạ"
+   ],
+   "answer": 0,
+   "explanation": "Vào môi trường chiết quang hơn (n₂ > n₁) thì r < i, lệch gần pháp tuyến."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đứng trên bờ nhìn con cá trong hồ, muốn vợt trúng cá thì phải đưa vợt tới:",
+   "options": [
+    "Đúng chỗ nhìn thấy cá",
+    "Nông hơn chỗ nhìn thấy cá",
+    "Sâu hơn chỗ nhìn thấy cá",
+    "Gần bờ hơn chỗ nhìn thấy cá"
+   ],
+   "answer": 2,
+   "explanation": "Mắt thấy ảnh ảo của cá nằm cao hơn cá thật nên cá thật ở sâu hơn (Bẫy 3)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức đúng của chiết suất tuyệt đối của một môi trường là:",
+   "options": [
+    "$n = \\frac{v}{c}$",
+    "$n = c \\cdot v$",
+    "$n = \\frac{c}{v}$",
+    "$n = c - v$"
+   ],
+   "answer": 2,
+   "explanation": "Mục II.2: $n = \\frac{c}{v}$ với c là tốc độ ánh sáng trong chân không."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Biểu thức đúng của định luật khúc xạ ánh sáng là:",
+   "options": [
+    "$n_1 \\sin r = n_2 \\sin i$",
+    "$n_1 \\sin i = n_2 \\sin r$",
+    "$n_1 i = n_2 r$",
+    "$\\frac{\\sin i}{\\sin r} = \\frac{n_1}{n_2}$"
+   ],
+   "answer": 1,
+   "explanation": "Mục II.3: $n_1\\sin i = n_2\\sin r$, tức $\\frac{\\sin i}{\\sin r}=\\frac{n_2}{n_1}$."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Tia sáng từ không khí vào nước ($n=\\frac{4}{3}$), $i = 53^\\circ$, $\\sin 53^\\circ \\approx 0{,}8$. Giá trị $\\sin r$ là:",
+   "options": [
+    "$1{,}07$",
+    "$0{,}6$",
+    "$0{,}8$",
+    "$0{,}4$"
+   ],
+   "answer": 1,
+   "explanation": "$\\sin r = 0{,}8 : \\frac{4}{3} = 0{,}6$ (bài toán mẫu)."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ $n_1\\sin i = n_2 \\sin r$, biểu thức của $\\sin r$ là:",
+   "options": [
+    "$\\sin r = \\frac{n_2 \\sin i}{n_1}$",
+    "$\\sin r = \\frac{n_1 \\sin i}{n_2}$",
+    "$\\sin r = n_1 n_2 \\sin i$",
+    "$\\sin r = \\frac{n_1}{n_2 \\sin i}$"
+   ],
+   "answer": 1,
+   "explanation": "Chia hai vế cho $n_2$ được $\\sin r = \\frac{n_1\\sin i}{n_2}$."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về chiều lệch của tia khúc xạ:",
+   "statements": [
+    {
+     "text": "Từ không khí vào thuỷ tinh thì r < i.",
+     "answer": true
+    },
+    {
+     "text": "Từ thuỷ tinh ra không khí thì tia lệch xa pháp tuyến.",
+     "answer": true
+    },
+    {
+     "text": "Tia khúc xạ luôn lệch về phía pháp tuyến trong mọi trường hợp.",
+     "answer": false
+    },
+    {
+     "text": "Từ nước ra không khí thì r < i.",
+     "answer": false
+    }
+   ],
+   "explanation": "Vào môi trường n lớn hơn: gần pháp tuyến; vào n nhỏ hơn: xa pháp tuyến (Bẫy 1)."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về chiết suất của môi trường:",
+   "statements": [
+    {
+     "text": "Chiết suất tuyệt đối của không khí xấp xỉ 1.",
+     "answer": true
+    },
+    {
+     "text": "Các môi trường khác không khí đều có n > 1.",
+     "answer": true
+    },
+    {
+     "text": "Ánh sáng đi càng chậm trong môi trường thì n càng nhỏ.",
+     "answer": false
+    },
+    {
+     "text": "Chiết suất n có đơn vị là m/s.",
+     "answer": false
+    }
+   ],
+   "explanation": "n = c/v không có đơn vị; v càng nhỏ thì n càng lớn."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Về cách đo góc khi giải bài toán khúc xạ:",
+   "statements": [
+    {
+     "text": "Góc tới và góc khúc xạ đo từ pháp tuyến.",
+     "answer": true
+    },
+    {
+     "text": "Tia hợp với mặt nước góc 60° thì góc tới là 30°.",
+     "answer": true
+    },
+    {
+     "text": "Tia hợp với mặt nước góc 60° thì góc tới là 60°.",
+     "answer": false
+    },
+    {
+     "text": "Góc khúc xạ đo từ mặt phân cách.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục Bẫy 2: góc luôn đo từ pháp tuyến, i = 90° − góc hợp với mặt phân cách."
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Về các công thức liên quan khúc xạ:",
+   "statements": [
+    {
+     "text": "Tính thuận nghịch: $n_{12} = \\frac{1}{n_{21}}$.",
+     "answer": true
+    },
+    {
+     "text": "Chiết suất tỉ đối $n_{21} = \\frac{n_2}{n_1}$.",
+     "answer": true
+    },
+    {
+     "text": "Góc phản xạ i' luôn bằng góc tới i.",
+     "answer": true
+    },
+    {
+     "text": "Góc khúc xạ tính bằng $r = \\frac{i}{n}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Phải chia sin cho n, không chia góc cho n."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dinh_luat",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tia sáng chiếu vuông góc với mặt phân cách. Góc khúc xạ r bằng bao nhiêu độ?",
+   "answer": "0",
+   "explanation": "i = 0° thì r = 0°, tia đi thẳng."
+  },
+  {
+   "type": "short_answer",
+   "kind": "hien_tuong",
+   "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tia sáng chiếu tới mặt phân cách với góc tới 35°. Góc phản xạ i' bằng bao nhiêu độ?",
+   "answer": "35",
+   "explanation": "Góc phản xạ luôn bằng góc tới: i' = i."
+  },
+  {
+   "type": "short_answer",
+   "kind": "dieu_kien",
+   "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Tia sáng từ không khí hợp với mặt nước góc 60°. Góc tới bằng bao nhiêu độ?",
+   "answer": "30",
+   "explanation": "i = 90° − 60° = 30°, vì góc tới đo từ pháp tuyến."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ánh sáng trong khối nhựa có tốc độ $1{,}5\\cdot10^8$ m/s. Chiết suất của khối nhựa bằng bao nhiêu?",
+   "answer": "2",
+   "explanation": "$n = \\frac{3\\cdot10^8}{1{,}5\\cdot10^8} = 2$."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Từ không khí vào nước, $i = 53^\\circ$ và $r \\approx 37^\\circ$. Góc lệch $D=|i-r|$ bằng bao nhiêu độ?",
+   "answer": "16",
+   "explanation": "D = 53° − 37° = 16° (bài toán mẫu)."
+  },
+  {
+   "type": "short_answer",
+   "kind": "tinh_nhanh",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tia sáng từ thuỷ tinh ($n=1{,}5$) ra không khí, i = 30°. Tính $\\sin r$ (viết số thập phân dùng dấu phẩy).",
+   "answer": "0,75",
+   "explanation": "$\\sin r = 1{,}5\\sin 30^\\circ = 0{,}75$."
+  }
+ ]
+}
