@@ -65,7 +65,7 @@
 - $A$ nhỏ nhất theo $A_2\geq 0$:
   - nếu $\cos(\varphi_2-\varphi_1) < 0$ (lệch pha $>90°$): $A_2 = -A_1\cos(\varphi_2-\varphi_1)$ và $A_{min} = A_1|\sin(\varphi_2-\varphi_1)|$.
   - nếu $\cos(\varphi_2-\varphi_1) \geq 0$: $A_{min} = A_1$ tại $A_2 = 0$ (không có cực tiểu trong).
-  Kiểm bằng TABLE: nhập $f(X) = \sqrt{A_1^2 + X^2 + 2A_1X\cos\Delta\varphi}$ rồi thu hẹp bước.
+  Kiểm bằng TABLE: nhập $f(x) = \sqrt{A_1^2 + x^2 + 2A_1x\cos\Delta\varphi}$ (x là phím `x`) rồi thu hẹp bước.
 
 **Tắt dần có ma sát (con lắc lò xo ngang)**
 - Giảm biên độ mỗi nửa chu kì: $\Delta A = \dfrac{2\mu mg}{k}$.

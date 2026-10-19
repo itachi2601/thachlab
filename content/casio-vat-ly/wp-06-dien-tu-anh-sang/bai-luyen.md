@@ -1,6 +1,6 @@
 # 12 bài luyện · Điện từ và ánh sáng (WP-06)
 
-Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**; khi cần, $c = 3.10^8$ m/s. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md`, **chưa thử trên máy thật**.
+Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**; khi cần, $c = 3.10^8$ m/s. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md` (đã đối chiếu sách hướng dẫn chính hãng fx-580VN X; thầy đã thử máy thật 19/10/2026).
 
 ---
 
@@ -40,7 +40,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đáp số.** $T = 1{,}192.10^{-4}$ s; $t_1 = \dfrac{T}{6} = 1{,}987.10^{-5}$ s; $t_2 = \dfrac{T}{8} = 1{,}490.10^{-5}$ s.
 **Bấm máy**
 - `2π√(0.4×10^−3×0.9×10^−6)`, `STO D`; `D÷6`; `D÷8`.
-- Kiểm bằng SOLVE (Rad): `cos(2π÷D×X) = 0.5`, giá trị đầu `10^−5`.
+- Kiểm bằng SOLVE (Rad): `cos(2π÷D×x) = 0.5` (x là phím `x`), giá trị đầu `10^−5`.
 **Bẫy.** $W_đ = W_t$ khi $|q| = \dfrac{Q_0}{\sqrt2}$ (không phải $\dfrac{Q_0}{2}$): góc quay $\dfrac{\pi}{4}$, tức $\dfrac{T}{8}$.
 
 ## Q6 ⭐⭐ Tụ xoay trong mạch chọn sóng
@@ -100,6 +100,6 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đáp số.** 5 bức xạ vân sáng: $0{,}7000$; $0{,}5833$; $0{,}5000$; $0{,}4375$; $0{,}3889\ \mu$m (ứng $k = 5, \dots, 9$).
 4 bức xạ vân tối: $0{,}6364$; $0{,}5385$; $0{,}4667$; $0{,}4118\ \mu$m (ứng $k = 5, \dots, 8$).
 **Bấm máy**
-- Vân sáng: TABLE `f(X) = 3.5÷X` (đơn vị μm, vì $ax/D = 3{,}5\ \mu$m), Start `4`, End `10`, Step `1`; lọc $0{,}38 \leq f \leq 0{,}76$: $X=5\dots9$.
-- Vân tối: `f(X) = 3.5÷(X+0.5)`, Start `4`, End `10`: lọc: $X=5\dots8$.
+- Vân sáng: TABLE `f(x) = 3.5÷x` (đơn vị μm, vì $ax/D = 3{,}5\ \mu$m), Start `4`, End `10`, Step `1`; lọc $0{,}38 \leq f \leq 0{,}76$: $x=5\dots9$.
+- Vân tối: `f(x) = 3.5÷(x+0.5)`, Start `4`, End `10`: lọc: $x=5\dots8$.
 **Bẫy.** $ax/D = 10^{-3}\cdot 7\cdot10^{-3}/2 = 3{,}5\cdot 10^{-6}$ m $= 3{,}5\ \mu$m. Kiểm $k=4$ cho vân sáng ($0{,}875\ \mu$m) và vân tối ($0{,}7778\ \mu$m) đều ngoài vùng nhìn thấy; $k=10$ vân sáng ($0{,}35\ \mu$m) và $k=9$ vân tối ($0{,}3684\ \mu$m) cũng ngoài.

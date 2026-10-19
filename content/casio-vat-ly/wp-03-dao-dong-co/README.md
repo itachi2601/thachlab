@@ -8,6 +8,6 @@
 | `tinh.py` | tính lại toàn bộ đáp số |
 
 **Thể lệ tạm:** làm tròn 4 chữ số có nghĩa; chưa biết thời gian/số bài thật. Phải rà lại khi có công văn (WP-00).
-**Chưa thử trên máy thật:** quy trình bấm máy lấy từ `../wp-01-so-tay-fx580vnx/so-tay.md`.
+Quy trình bấm máy lấy từ `../wp-01-so-tay-fx580vnx/so-tay.md`, đã đối chiếu sách hướng dẫn chính hãng fx-580VN X; thầy đã thử máy thật 19/10/2026 (bốn chỗ suy từ nguồn: đã thầy thử, chưa ghi kết quả chi tiết).
 **Bản quyền:** đề tự soạn, số liệu tự chọn.
-**Kiểm:** lần 1 `tinh.py`; lần 2 `kiem-code` giải độc lập 16 bài (18/10/2026): 16/16 đáp số khớp; đã sửa công thức arctan ở M4, điều kiện A nhỏ nhất, điều kiện quãng đường tắt dần, biến nhớ W thay A. **Sửa 18/10 (sau WP-06):** biến nhớ `W` không có trên máy, đã đổi thành `D` trong các lệnh bấm. **Còn lại:** thầy bấm thử máy; rà lại khi có thể lệ.
+**Kiểm:** lần 1 `tinh.py`; lần 2 `kiem-code` giải độc lập 16 bài (18/10/2026): 16/16 đáp số khớp; đã sửa công thức arctan ở M4, điều kiện A nhỏ nhất, điều kiện quãng đường tắt dần, biến nhớ W thay A. **Sửa 18/10 (sau WP-06):** biến nhớ `W` không có trên máy, đã đổi thành `D` trong các lệnh bấm; **19/10:** còn sót `W²` ở D1 và `A` ở D11, đã sửa thành `D`. **Còn lại:** thầy bấm thử máy; rà lại khi có thể lệ.

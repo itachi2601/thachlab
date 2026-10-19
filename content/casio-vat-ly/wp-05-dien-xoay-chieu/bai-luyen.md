@@ -1,6 +1,6 @@
 # 12 bài luyện · Điện xoay chiều (WP-05)
 
-Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md`, **chưa thử trên máy thật**. Biến nhớ: dùng `D` cho $\omega$, tránh trùng ký hiệu đại lượng.
+Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md` (đã đối chiếu sách hướng dẫn chính hãng fx-580VN X; thầy đã thử máy thật 19/10/2026). Biến nhớ: dùng `D` cho $\omega$, tránh trùng ký hiệu đại lượng.
 
 ---
 
@@ -26,8 +26,8 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đề.** Nhà máy truyền đi công suất $100$ kW ở điện áp $10$ kV, $\cos\varphi = 0{,}9$, điện trở tổng dây $10\ \Omega$. Tính công suất hao phí và hiệu suất truyền tải. Nếu tăng điện áp lên gấp đôi (các đại lượng khác không đổi) thì sao?
 **Đáp số.** $\Delta P = 1235$ W; $H = 98{,}77\%$; sau khi tăng: $\Delta P = 308{,}6$ W; $H = 99{,}69\%$.
 **Bấm máy**
-- `(100000²×10)÷(10000²×0.9²)`; `1−Ans÷100000`.
-- Gấp đôi $U$: `Ans÷4` ở bước hao phí.
+- `(100000²×10)÷(10000²×0.9²)`, `STO A` (lưu $\Delta P$); rồi `1−A÷100000`.
+- Gấp đôi $U$: `A÷4` (hoặc `Ans÷4` ngay sau bước $\Delta P$, trước khi tính $H$), rồi `1−Ans÷100000`.
 **Bẫy.** Đổi kW, kV về W, V trước khi tính; có $\cos^2\varphi$ ở mẫu.
 
 ## E4 ⭐ Máy biến áp
@@ -44,7 +44,7 @@ $i = 2{,}105\cos(100\pi t - 1{,}052)$ A.
 $u_L = 273{,}6\cos(100\pi t + 0{,}5191)$ V.
 $u_C = 126{,}3\cos(100\pi t - 2{,}622)$ V.
 **Bấm máy**
-- Số phức, **Rad**. Gõ `(120√2∠0) ÷ (40+70i)`, `=`, dạng r∠θ: $2{,}105\angle -1{,}052$.
+- Số phức, **Rad**. Gõ `(120√2∠0) ÷ (40+70i)` (∠ là `SHIFT ENG`, *i* là `ENG`), `=`, rồi `OPTN ▼ 1` (▶r∠θ): $2{,}105\angle -1{,}052$.
 - $u_L$: biên độ $2{,}105\times130$; pha $-1{,}052 + \dfrac{\pi}{2}$.
 - $u_C$: biên độ $2{,}105\times60$; pha $-1{,}052 - \dfrac{\pi}{2}$.
 **Bẫy.** Dùng biên độ của $u$ thì ra biên độ của $i$ (không phải hiệu dụng). $u_L$ sớm pha $\dfrac{\pi}{2}$ so với $i$, không so với $u$.
@@ -55,7 +55,7 @@ $u_C = 126{,}3\cos(100\pi t - 2{,}622)$ V.
 **Bấm máy**
 - $d = 70 - 30 = 40$. (a): `40−10`; `120²÷(2×40)`.
 - (b): `√(10²+40²)` → `STO D`; `120²÷(2×(D+10))`.
-- Kiểm bằng TABLE: `f(X) = 120²×X÷((X+10)²+40²)`, Start `30`, End `50`, Step `1`: lớn nhất quanh $X = 41$.
+- Kiểm bằng TABLE: `f(x) = 120²×x÷((x+10)²+40²)`, Start `30`, End `50`, Step `1`: lớn nhất quanh $x = 41$.
 **Bẫy.** (a) ĐK $r < d$ thoả ($10 < 40$). Nếu $r \geq 40$ thì $R=0$. Hai ý (a), (b) cho hai kết quả $R$ khác nhau, đừng lẫn.
 
 ## E7 ⭐⭐ $C$ thay đổi, $U_C$ cực đại
@@ -65,7 +65,7 @@ $u_C = 126{,}3\cos(100\pi t - 2{,}622)$ V.
 - `(30²+40²)÷40` → $62{,}5$, `STO D`.
 - `1÷(100π×D)×10^6` → $50{,}93\ \mu$F.
 - `100×√(30²+40²)÷30`.
-- Kiểm: TABLE `f(X) = 100X÷√(30²+(40−X)²)`, Start `50`, End `75`, Step `2.5`.
+- Kiểm: TABLE `f(x) = 100x÷√(30²+(40−x)²)`, Start `50`, End `75`, Step `2.5`.
 **Bẫy.** Đây không phải cộng hưởng ($Z_C = 40$ sẽ cho $U_C = 133{,}3$ V, nhỏ hơn).
 
 ## E8 ⭐⭐ $L$ thay đổi, $U_L$ cực đại
@@ -88,8 +88,8 @@ $u_C = 126{,}3\cos(100\pi t - 2{,}622)$ V.
 **Đáp số.** $Z_{tổng} = 70{,}71 - 70{,}71\mathrm{i}\ (\Omega)$; $Z_X = 70{,}71 + 29{,}29\mathrm{i}\ (\Omega)$; $R = 70{,}71\ \Omega$; $L = 0{,}09323$ H.
 **Bấm máy**
 - Số phức, **Độ**. `(200∠0) ÷ (2∠45)`, `=`: $100\angle -45$.
-- Chuyển a+bi: $70{,}71 - 70{,}71\mathrm{i}$. Cộng `+100i`: $70{,}71 + 29{,}29\mathrm{i}$.
-- $L$: `29.29÷(100π)` (dùng `Ans` phần ảo cho đủ chữ số).
+- Chuyển a+bi: `OPTN ▼ 2` (▶a+bi): $70{,}71 - 70{,}71\mathrm{i}$. Cộng `+100i`: $70{,}71 + 29{,}29\mathrm{i}$.
+- $L$: `29.29÷(100π)`; để đủ chữ số, lấy phần ảo của `Ans` bằng `OPTN 4` (ImP).
 **Bẫy.** $Z_{tổng} = Z_X + Z_C$ với $Z_C = -100\mathrm{i}$, nên $Z_X = Z_{tổng} + 100\mathrm{i}$.
 
 ## E11 ⭐⭐⭐ Hai tần số cho cùng cường độ
@@ -97,8 +97,9 @@ $u_C = 126{,}3\cos(100\pi t - 2{,}622)$ V.
 **Đáp số.** $f_0 = 60{,}00$ Hz; $C = 35{,}18\ \mu$F; $Z = 69{,}63\ \Omega$; $I = 0{,}8617$ A; $\cos\varphi = 0{,}4309$; $\varphi_1 = -64{,}48°$, $\varphi_2 = +64{,}48°$ (cùng $Z$, cùng $I$, pha đối nhau).
 **Bấm máy**
 - `√(40×90)` → $60$; `1÷((2π×60)²×0.2)×10^6` → `STO C`.
-- `CALC` công thức $Z(f) = \sqrt{30^2 + (2\pi f\,0{,}2 - \dfrac{1}{2\pi f\,C})^2}$ với $f = 40$ rồi $f = 90$: hai kết quả bằng nhau.
-- `60÷Z`; `30÷Z`.
+- Gõ công thức $Z(f) = \sqrt{30^2 + (2\pi f\,0{,}2 - \dfrac{1}{2\pi f\,C})^2}$ với $f$ là biến `x` (máy không có biến f): `√(30²+(2π×x×0.2−1÷(2π×x×C×10^−6))²)` (C đang lưu theo μF nên nhân `10^−6`).
+- `CALC` với x = `40`, rồi x = `90`: hai kết quả bằng nhau. Lưu $Z(40)$ vào một biến: `STO E`.
+- `60÷E`; `30÷E` (máy không có biến Z).
 **Lời giải.** $\omega_1\omega_2 = \dfrac{1}{LC} = \omega_0^2$ nên $f_0 = \sqrt{f_1f_2}$.
 **Bẫy.** Hệ thức chỉ cho đúng khi $I$ (hay $Z$) bằng nhau tại hai tần số; không dùng cho hai tần số bất kì.
 

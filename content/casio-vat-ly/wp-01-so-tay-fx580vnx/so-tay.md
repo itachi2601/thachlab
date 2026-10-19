@@ -1,6 +1,8 @@
 # Sổ tay fx-580VN X cho Vật lí (WP-01)
 
-> **Quy ước phím.** `SHIFT x` là phím vàng phía trên phím x; `ALPHA x` là chữ đỏ. Tên chế độ và thứ tự menu ghi theo cách gọi trên máy, **chưa thử trên máy thật** (xem `README.md`). Số thứ tự trong menu có thể lệch giữa các đời máy, nên sổ tay ghi tên mục, không ghi số mục.
+> **Quy ước phím.** `SHIFT x` là phím vàng phía trên phím x; `ALPHA x` là chữ đỏ. Tên chế độ và thứ tự menu đã đối chiếu sách hướng dẫn chính hãng fx-580VN X và thầy đã thử máy thật (19/10/2026; xem `README.md`).
+> Phím `x` là phím biến x riêng của máy (không phải `ALPHA )`, phím này cho ra y).
+> Phím `STO` là phím riêng, không cần ALPHA.
 > **Hằng số:** đề cho giá trị nào thì dùng giá trị đó; hằng số có sẵn trong máy khác SGK ở chữ số thứ 4–6 (xem mục 8).
 
 ---
@@ -10,9 +12,18 @@
 **Dùng khi:** luôn luôn, trước bài đầu tiên.
 
 1. `SHIFT MENU` (SETUP) → **Đơn vị góc**: chọn **Độ** khi đề cho góc bằng độ; chọn **Rad** khi có `ωt`, `π`, `cos(5πt − π/3)`.
-2. SETUP → **Dạng hiển thị**: chọn dạng viết dòng (LineIO) khi cần xem số thập phân ngay; dạng toán (MathIO) hiện phân số, căn.
+2. SETUP → **Dạng hiển thị** (Input/Output). Tên các dạng trên máy:
+   - MathI/MathO: hiện phân số, căn.
+   - MathI/DecimalO: nhập dạng toán, ra số thập phân ngay.
+   - LineI/LineO.
+   - LineI/DecimalO.
+   - Muốn ra số thập phân thì chọn MathI/DecimalO, hoặc bấm `SHIFT =` (≈) sau khi tính.
 3. Số chữ số: SETUP → **Fix / Sci / Norm**. Giữ **Norm** khi tính trung gian; chỉ đặt Fix hoặc Sci khi cần đọc kết quả theo quy tắc làm tròn của thể lệ.
-4. Biến nhớ: lưu bằng `SHIFT RCL` (STO) rồi phím biến. **Chỉ có các biến A, B, C, D, E, F, X, Y, M** (không có W, Z…); `X` đang dùng cho SOLVE/TABLE nên đừng dùng làm ô lưu. Gọi bằng `ALPHA` + phím biến.
+4. Biến nhớ: lưu bằng phím `STO` (phím riêng) rồi phím biến, không cần ALPHA.
+   - Máy có 9 biến **A, B, C, D, E, F, x, y, z**, cộng bộ nhớ độc lập M. Không có W, t, f.
+   - `x` đang dùng cho SOLVE/TABLE nên đừng dùng làm ô lưu.
+   - Gọi biến bằng `ALPHA` + phím biến.
+   - Xem giá trị các biến: `SHIFT STO` (RECALL).
 5. `Ans` là kết quả lần tính liền trước; `Ans` giữ **đủ chữ số** dù màn hình hiện ít.
 
 **Bẫy**
@@ -26,10 +37,10 @@
 **Dùng khi:** phương trình không giải gọn bằng đại số (hàm lượng giác, mũ, nhiều số hạng). Bài luyện S1–S3.
 
 **Quy trình**
-1. Gõ vế trái, bấm `ALPHA CALC` (dấu `=`), gõ vế phải. Ẩn gõ bằng `ALPHA )` (X).
-2. Bấm `SHIFT CALC` (SOLVE).
-3. Máy hỏi giá trị đầu của X: nhập số **gần nghiệm cần tìm**, bấm `=`.
-4. Đọc nghiệm X. Máy còn hiện hai vế (Left, Right): hiệu gần 0 mới tin nghiệm.
+1. Gõ vế trái, bấm `ALPHA CALC` (dấu `=`), gõ vế phải. Ẩn gõ bằng **phím `x`** (hoặc `ALPHA (`); không dùng `ALPHA )` vì phím này cho ra y.
+2. Bấm `SHIFT CALC` (SOLVE). SOLVE chỉ dùng được trong phương thức Calculate.
+3. Máy hỏi giá trị đầu của x: nhập số **gần nghiệm cần tìm**, bấm `=`, rồi bấm `=` thêm một lần nữa để giải.
+4. Đọc nghiệm x. Máy còn hiện **L−R** (hiệu hai vế): L−R gần 0 mới tin nghiệm.
 
 **Cách chọn giá trị đầu**
 - Phương trình lượng giác có vô số nghiệm: **mỗi giá trị đầu cho một nghiệm khác nhau**. Muốn nghiệm dương nhỏ nhất thì cho giá trị đầu nhỏ nhưng dương, rồi kiểm lại bằng cách thử nghiệm nhỏ hơn.
@@ -37,7 +48,7 @@
 
 **Bẫy**
 - SOLVE cho **một** nghiệm rồi dừng. Đề hỏi "lần thứ n" hay "thời điểm đầu tiên" thì phải tự kiểm có nghiệm nhỏ hơn hay không.
-- Biến khác X (đã gán A, B…) vẫn giữ giá trị cũ. Xoá hoặc gán lại trước bài mới.
+- Biến khác x (đã gán A, B…) vẫn giữ giá trị cũ. Xoá hoặc gán lại trước bài mới.
 
 ---
 
@@ -62,13 +73,14 @@
 
 **Quy trình**
 1. `MENU` → **Bảng giá trị** (Table).
-2. Nhập `f(X)` (X gõ bằng `ALPHA )`). Nếu máy hỏi `g(X)` thì bấm `=` bỏ qua.
+2. Muốn máy không hỏi g(x): vào SETUP → Table → **f(x)** trước (khi đó bảng tối đa 45 dòng). Nhập `f(x)` (x gõ bằng **phím `x`**).
+   - Biến khác x trong f(x) được coi là hằng số, nên `ALPHA )` (y) sẽ ra bảng hằng mà máy không báo lỗi.
 3. Nhập **Start**, **End**, **Step**, mỗi giá trị kết thúc bằng `=`.
 4. Cuộn bằng phím mũi tên để đọc.
 5. **Thu hẹp:** thấy cực trị gần X₀ thì chạy lại bảng quanh X₀ với bước nhỏ hơn.
 
 **Bẫy**
-- Số hàng bảng bị giới hạn; (End − Start) / Step không được quá lớn. Báo "Argument ERROR" thì tăng Step hoặc thu hẹp khoảng.
+- Số hàng bảng bị giới hạn: tối đa 45 dòng với f(x), 30 dòng với f(x),g(x). (End − Start) / Step không được quá lớn. Báo **Range ERROR** thì tăng Step hoặc thu hẹp khoảng.
 - Bảng chỉ cho giá trị gần đúng theo bước đã chọn. Đáp số cuối của đề tự luận nên kiểm lại bằng công thức (ví dụ f₀ = 1/(2π√LC)).
 
 ---
@@ -79,9 +91,17 @@
 
 **Quy trình**
 1. `MENU` → **Số phức**. Đơn vị góc phải khớp (Độ hoặc Rad).
-2. Nhập số phức theo kiểu **cực**: `A ∠ φ`, với `∠` là `SHIFT (−)`. Hoặc kiểu đại số `a + b i`, `i` là phím `ENG`.
-3. Chọn dạng kết quả: `SHIFT 2` (CMPLX) → **r∠θ** (xem biên độ và pha) hoặc **a+bi** (xem phần thực, ảo).
-4. Lấy môđun / argument riêng: `SHIFT hyp` (Abs) và `SHIFT 2` → **arg**.
+2. Nhập số phức theo kiểu **cực**: `A ∠ φ`, với `∠` là `SHIFT ENG` (cùng phím với *i*). Hoặc kiểu đại số `a + b i`, `i` là phím `ENG`.
+3. Chọn dạng kết quả, bấm ở cuối biểu thức:
+   - `OPTN ▼ 1` (▶r∠θ): xem biên độ và pha.
+   - `OPTN ▼ 2` (▶a+bi): xem phần thực, ảo.
+   - Có thể đặt dạng mặc định ở SETUP → ▼ → Complex.
+4. Lấy riêng từng thành phần:
+   - Môđun: `SHIFT (` (Abs).
+   - Argument: `OPTN 1` (Arg).
+   - Liên hợp: `OPTN 2` (Conjg).
+   - Phần thực: `OPTN 3` (ReP).
+   - Phần ảo: `OPTN 4` (ImP).
 
 **Ba phép hay dùng**
 - Tổng hợp dao động: `A₁∠φ₁ + A₂∠φ₂` → biên độ A, pha ban đầu φ.
@@ -91,7 +111,8 @@
 **Quy ước biên độ:** dùng biên độ thì ra biên độ; dùng giá trị hiệu dụng thì ra hiệu dụng. Đừng trộn.
 
 **Bẫy**
-- Góc φ ra cả hai dạng (Độ, Rad) tuỳ SETUP; ghi đúng đơn vị đề hỏi.
+- Góc φ ra Độ hay Rad tuỳ SETUP; ghi đúng đơn vị đề hỏi.
+- Máy cho θ trong khoảng (−180°; 180°].
 - Phương trình `u = U₀cos(ωt + φ)` ứng với số phức `U₀∠φ`; pha `sin` phải đổi sang `cos` (trừ π/2) trước khi nhập.
 
 ---
@@ -102,9 +123,14 @@
 
 **Quy trình**
 1. `MENU` → **Vectơ**. Chọn VctA, đặt số chiều (2 hoặc 3), nhập các toạ độ. Lặp lại cho VctB.
-2. `AC` về màn hình tính. Gọi vectơ bằng `SHIFT 5` (VECTOR) → VctA, VctB.
-3. **Tích có hướng:** `VctA × VctB`. **Tích vô hướng:** `SHIFT 5` → **Dot**: `VctA Dot VctB`. **Độ dài:** `Abs(VctA)` (`SHIFT hyp`).
-4. **Góc giữa hai vectơ:** `cos⁻¹( (VctA Dot VctB) / (Abs(VctA) × Abs(VctB)) )`, đơn vị góc đặt Độ.
+2. `AC` về màn hình tính. Gọi vectơ bằng `OPTN`:
+   - VctA = `OPTN 3`.
+   - VctB = `OPTN 4`.
+   - VctAns = `OPTN ▼ 1`.
+3. **Tích có hướng:** `VctA × VctB`. **Tích vô hướng:** `OPTN ▼ 2` (Dot Product), màn hình hiện dấu "•". **Độ dài:** `Abs(VctA)`, tức `SHIFT (` rồi `OPTN 3` rồi `)`.
+4. **Góc giữa hai vectơ**, hai cách:
+   - `cos⁻¹( (VctA • VctB) / (Abs(VctA) × Abs(VctB)) )`, đơn vị góc đặt Độ.
+   - Ngắn hơn: `Angle(VctA,VctB)` (`OPTN ▼ 3`); dấu phẩy gõ bằng `SHIFT )`.
 
 **Bẫy**
 - Thứ tự `v × B` khác `B × v` (đổi dấu).
@@ -119,29 +145,36 @@
 **Quy trình**
 1. `MENU` → **Thống kê**. Chọn kiểu:
    - **1 biến** (trung bình, độ lệch chuẩn),
-   - **A+Bx** (đường thẳng),
-   - **e^x** (hàm mũ `y = A·e^{Bx}`).
+   - **y=a+bx** (đường thẳng; phím 2),
+   - **y=a·e^(bx)** (hàm mũ; ▼ 1). Hệ số ghi chữ thường **a, b**.
 2. Nhập dữ liệu vào cột X (và Y). Bấm `AC` thoát bảng.
-3. `SHIFT 1` (STAT) → **Var** để lấy `n`, `x̄`, `σx` (chia n), `sx` (chia n−1). → **Reg** để lấy `A`, `B`, `r` (hệ số tương quan).
-4. Dự đoán điểm mới: `SHIFT 1` → **Reg** → `ŷ`, `x̂`.
+3. Xem cả bảng kết quả: `OPTN` → 1-Variable Calc / 2-Variable Calc / Regression Calc. Lấy từng giá trị để chèn vào phép tính:
+   - `OPTN ▼ 2` (Variable): `n`, `x̄`, `σx` (chia n), `sx` (chia n−1).
+   - `OPTN ▼ 4` (Regression): `a`, `b`, `r` (hệ số tương quan).
+4. Dự đoán điểm mới: `OPTN ▼ 4` (Regression) → `ŷ`, `x̂`.
 
 **Chọn độ lệch chuẩn nào:** đề Casio thường nêu cách tính sai số. Chưa có thể lệ thì ghi rõ dùng `sx` (n−1) hay `σx` (n).
 
 **Bẫy**
 - Quên xoá dữ liệu cũ: nhập bảng mới đè lên bảng cũ, còn dòng thừa. Kiểm `n`.
-- Đổi kiểu hồi quy thì bảng nhập bị xoá.
-- Hồi quy e^x yêu cầu mọi `y > 0`.
+- Dữ liệu bị xoá khi ra khỏi Statistics, khi đổi giữa 1 biến và 2 biến, hoặc khi đổi cài đặt Statistics (cột Freq). Xoá hết bằng `OPTN 2` (Editor) → Delete All.
+- Gõ `ALPHA B` lấy **biến nhớ B** (giá trị cũ), không phải hệ số hồi quy b; máy không báo lỗi. Hệ số b phải chèn bằng `OPTN ▼ 4` → b.
+- Hồi quy mũ yêu cầu mọi `y > 0`.
 
 ---
 
 ## 8. Hằng số và đổi đơn vị
 
-**Dùng khi:** thế hằng số vật lí vào công thức; đổi km/h ↔ m/s, atm ↔ Pa, eV ↔ J. Bài luyện K1–K3.
+**Dùng khi:** thế hằng số vật lí vào công thức; đổi km/h ↔ m/s, atm ↔ Pa; eV ↔ J thì nhân/chia với e. Bài luyện K1–K3.
 
 **Quy trình**
-- Hằng số: `SHIFT 7` (CONST), chọn theo **mã số in trong bảng ở nắp máy** (tra bảng, không đoán số). Máy chèn giá trị đủ chữ số.
-- Đổi đơn vị: `SHIFT 8` (CONV), chọn cặp đơn vị có trong bảng.
-- Tiền tố SI: dùng `ENG` hoặc gõ `×10^`; đừng gõ `E` thay `×10^` nếu không chắc máy hiểu.
+- Hằng số: `SHIFT 7` (CONST) mở menu **danh mục** (Universal, Electromagnetic, Atomic&Nuclear, Physico-Chem, Adopted Values, Other), rồi chọn số mục. Máy chèn giá trị đủ chữ số.
+  - h = `SHIFT 7 1 1`.
+  - c₀ = `SHIFT 7 1 3`.
+  - e = `SHIFT 7 2 3`.
+- Đổi đơn vị: `SHIFT 8` (CONV), chọn cặp đơn vị có trong bảng (có km/h ↔ m/s ở Velocity, atm ↔ Pa ở Pressure; **không có** eV ↔ J: dùng e đề cho hoặc `SHIFT 7 2 3`).
+- Tiền tố SI khi **nhập** (k, m, μ, n, p): `OPTN` → Engineer Symbol, hoặc gõ ×10^x. Phím `ENG` chỉ đổi cách **hiển thị** kết quả.
+- Gõ luỹ thừa 10 bằng phím `×10^x`, đừng gõ "E".
 
 **Quy tắc chọn giá trị**
 - Đề **cho số** (h = 6,625.10⁻³⁴ J.s…) thì dùng số đề cho, **không** gọi hằng số có sẵn, vì hai kết quả có thể khác ở chữ số có nghĩa thứ 4–5.

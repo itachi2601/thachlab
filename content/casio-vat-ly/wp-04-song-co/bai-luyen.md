@@ -1,6 +1,6 @@
 # 12 bài luyện · Sóng cơ (WP-04)
 
-Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md`, **chưa thử trên máy thật**.
+Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md` (đã đối chiếu sách hướng dẫn chính hãng fx-580VN X; thầy đã thử máy thật 19/10/2026).
 
 ---
 
@@ -61,7 +61,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 - `10√2 − 10` $= 4{,}142$.
 - Cực đại: $|k| \cdot 1{,}2 < 4{,}142$ nên $|k| \leq 3$: 7 điểm.
 - Cực tiểu: $|k + 0{,}5| \cdot 1{,}2 < 4{,}142$ nên $k + 0{,}5 \in \{\pm 0{,}5; \pm1{,}5; \pm 2{,}5\}$: 6 điểm.
-- Hoặc TABLE: cực đại `f(X) = 1.2X`; cực tiểu `f(X) = 1.2(X+0.5)`; Start `-4`, End `3`, Step `1`; đếm hàng có $|f| < 4{,}142$.
+- Hoặc TABLE: cực đại `f(x) = 1.2x`; cực tiểu `f(x) = 1.2(x+0.5)`; Start `-4`, End `3`, Step `1`; đếm hàng có $|f| < 4{,}142$.
 **Bẫy.** Ở mỗi giá trị $d_2 - d_1$ khác $0$, có **một** điểm trên $CD$ ($CD$ nằm một nửa mặt phẳng; hiệu đường đi đơn điệu theo vị trí). Riêng $k=0$ là điểm giữa $CD$, cũng chỉ một điểm.
 
 ## W8 ⭐⭐ Một đầu cố định, một đầu tự do
@@ -69,7 +69,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đáp số.** $f_1 = 20{,}00$ Hz; có $180$ Hz ($5$ bụng) và $220$ Hz ($6$ bụng).
 **Bấm máy**
 - `60÷(4×0.75)` $= 20$.
-- Bảng: `f(X) = (2X+1)×20`, Start `0`, End `12`, Step `1`: đọc các hàng $150 \leq f \leq 250$.
+- Bảng: `f(x) = (2x+1)×20`, Start `0`, End `12`, Step `1`: đọc các hàng $150 \leq f \leq 250$.
 - Số bụng $= n + 1$: $180 \to n = 4$; $220 \to n = 5$.
 **Bẫy.** Bội chẵn (40, 80…) không có sóng dừng vì đầu tự do phải là bụng.
 
@@ -86,7 +86,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đáp số.** Cực đại bậc $k_{max} = 6$: $x = 2{,}111$ cm.
 **Bấm máy**
 - `20÷3` $= 6{,}67$ nên $k_{max} = 6$.
-- SOLVE: `√(X²+400) − X = 18`, giá trị đầu `2`. Hoặc `(400−18²)÷(2×18)`.
+- SOLVE: `√(x²+400) − x = 18`, giá trị đầu `2`. Hoặc `(400−18²)÷(2×18)`.
 **Bẫy.** Chọn $k = 1$ cho điểm **xa** $A$ nhất ($x = 65{,}17$ cm), không phải gần nhất.
 
 ## W11 ⭐⭐⭐ Thời gian li độ không vượt ngưỡng

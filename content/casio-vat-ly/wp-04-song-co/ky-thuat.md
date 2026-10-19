@@ -14,8 +14,8 @@
 - Tốc độ dao động cực đại của phần tử: $v_{max} = \omega A = 2\pi f A$; so với tốc độ truyền: $\dfrac{v_{max}}{v} = \dfrac{2\pi A}{\lambda}$. **Hai tốc độ này khác nhau, đừng nhầm.**
 
 **Thao tác máy**
-- Phương trình sóng: lưu $\lambda$ vào `D`, rồi `CALC` với $x$ và $t$ ở chế độ **Rad**.
-- Tìm điểm cùng pha / ngược pha trong khoảng $[d_1, d_2]$: TABLE với $f(X) = \dfrac{X}{\lambda}$ (số bước sóng); các hàng có giá trị nguyên là cùng pha với nguồn, giá trị bán nguyên là ngược pha.
+- Phương trình sóng: lưu $\lambda$ vào `D`, rồi `CALC` với hai biến `x` và `y` (máy không có biến t; dùng `y` thay cho $t$) ở chế độ **Rad**.
+- Tìm điểm cùng pha / ngược pha trong khoảng $[d_1, d_2]$: TABLE với $f(x) = \dfrac{x}{\lambda}$ (số bước sóng); các hàng có giá trị nguyên là cùng pha với nguồn, giá trị bán nguyên là ngược pha.
 
 **Bẫy**
 - Công thức $u(x,t)$ có dấu trừ khi sóng truyền theo chiều $+x$; truyền ngược thì dấu cộng.
@@ -44,7 +44,7 @@ Hai nguồn $A, B$ cách nhau $AB$, cùng biên độ, $\lambda$ cho trước. G
 **Điểm cực đại gần nguồn nhất trên đường thẳng vuông góc $AB$ tại $A$** (nguồn cùng pha)
 - $d_1 = x$, $d_2 = \sqrt{x^2 + AB^2}$, cực đại bậc $k$: $\sqrt{x^2 + AB^2} - x = k\lambda$.
 - Giải: $x = \dfrac{AB^2 - (k\lambda)^2}{2k\lambda}$, điều kiện $0 < k\lambda < AB$. Điểm **gần $A$ nhất** ứng với $k$ **lớn nhất** thoả điều kiện; điểm xa nhất ứng với $k = 1$.
-- Máy: `SOLVE` với $\sqrt{X^2 + AB^2} - X = k\lambda$, giá trị đầu nhỏ.
+- Máy: `SOLVE` với $\sqrt{x^2 + AB^2} - x = k\lambda$, giá trị đầu nhỏ.
 
 **Bẫy**
 - Đổi nguồn cùng pha thành ngược pha là đổi hẳn cực đại ↔ cực tiểu.
@@ -68,7 +68,7 @@ Hai nguồn $A, B$ cách nhau $AB$, cùng biên độ, $\lambda$ cho trước. G
 
 **Thao tác máy**
 - Mũ và log: `10^(...)` và `log(...)` (log thập phân); đừng dùng `ln`.
-- Tìm tần số thoả điều kiện nằm trong khoảng: TABLE với $f(X) = (2X+1)\dfrac{v}{4\ell}$, $X = 0,1,2,\dots$; đọc các hàng nằm trong khoảng.
+- Tìm tần số thoả điều kiện nằm trong khoảng: TABLE với $f(x) = (2x+1)\dfrac{v}{4\ell}$, $x = 0,1,2,\dots$; đọc các hàng nằm trong khoảng.
 
 **Bẫy**
 - Đầu tự do là **bụng**, đầu cố định là **nút**.

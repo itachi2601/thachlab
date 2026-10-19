@@ -1,6 +1,6 @@
 # 12 bài luyện · Dao động cơ (WP-03)
 
-Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md`, **chưa thử trên máy thật**.
+Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm tròn tạm **4 chữ số có nghĩa**. Đáp số sinh từ `tinh.py`. Quy trình bấm máy theo `../wp-01-so-tay-fx580vnx/so-tay.md` (đã đối chiếu sách hướng dẫn chính hãng fx-580VN X; thầy đã thử máy thật 19/10/2026).
 
 ---
 
@@ -10,7 +10,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Bấm máy**
 - Gõ `√(50÷0.2)`, `STO D`.
 - `2π÷D` cho $T$; `D÷(2π)` cho $f$.
-- `D×0.06` cho $v_{max}$; `W²×0.06` cho $a_{max}$; `0.5×50×0.06²` cho $W$.
+- `D×0.06` cho $v_{max}$; `D²×0.06` cho $a_{max}$; `0.5×50×0.06²` cho $W$.
 **Bẫy.** Đổi $m$ về kg và $A$ về m trước khi thế.
 
 ## D2 ⭐ Con lắc đơn góc nhỏ
@@ -33,7 +33,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đề.** $x_1 = 8\cos\left(2\pi t + \dfrac{\pi}{6}\right)$, $x_2 = 8\cos\left(2\pi t + \dfrac{\pi}{2}\right)$ (cm). Tìm biên độ và pha ban đầu của dao động tổng hợp.
 **Đáp số.** $A = 13{,}86$ cm; $\varphi = 1{,}047$ rad $= \dfrac{\pi}{3}$.
 **Bấm máy**
-- Số phức, **Độ**: `8∠30 + 8∠90`, `=`, dạng r∠θ: $13{,}86\angle 60$.
+- Số phức, **Độ**: `8∠30 + 8∠90` (∠ là `SHIFT ENG`), `=`, rồi `OPTN ▼ 1` (▶r∠θ): $13{,}86\angle 60$.
 **Lời giải.** Hai biên độ bằng nhau nên pha tổng hợp là trung bình cộng: $\dfrac{30° + 90°}{2} = 60°$, $A = 2\cdot 8\cos 30°$.
 
 ## D5 ⭐⭐ Thời điểm đầu tiên (SOLVE)
@@ -41,7 +41,7 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 **Đáp số.** $t = 0{,}1500$ s ($= \dfrac{T}{4}$).
 **Bấm máy**
 - Pha ban đầu $\varphi = \dfrac{\pi}{3}$ (vì $x>0$, $v<0$). Rad.
-- Gõ `10cos(2π÷0.6×X + π÷3) = −5√3`, `SHIFT CALC`, giá trị đầu `0.1`.
+- Gõ `10cos(2π÷0.6×x + π÷3) = −5√3` (x là phím `x`), `SHIFT CALC`, giá trị đầu `0.1`, bấm `=`, rồi `=` thêm một lần để giải.
 **Lời giải.** Từ pha $60°$ đến pha $150°$ là $90°$ nên $t = T/4 = 0{,}15$ s.
 **Bẫy.** $\varphi = -\dfrac{\pi}{3}$ thì vật đang đi chiều dương: sai chiều thì sai đáp số.
 
@@ -99,16 +99,17 @@ Mức: ⭐ cơ bản · ⭐⭐ đúng cấp thi · ⭐⭐⭐ phân loại. Làm 
 - `2×0.05×0.2×10÷100` → $0{,}002$.
 - $\omega$: `√(100÷0.2)` `STO D`; $v_1$: `D×(0.1−0.001)` (với $x_0 = 0{,}001$ m).
 - `100×0.1²÷(2×0.05×0.2×10)`.
-- $N = 0{,}1 \div 0{,}002 = 50$; `50×π÷A`.
+- $N = 0{,}1 \div 0{,}002 = 50$; `50×π÷D`.
 **Bẫy.** $N$ nguyên nên vật dừng đúng ở O. Nếu $N$ có phần thập phân thì phải xét thêm.
 
 ## D12 ⭐⭐⭐ Biên độ tổng hợp nhỏ nhất (TABLE)
 **Đề.** $x_1 = 6\cos\left(\omega t + \dfrac{\pi}{3}\right)$ cm và $x_2 = A_2\cos\left(\omega t - \dfrac{\pi}{2}\right)$ cm, $A_2$ thay đổi được. Tìm $A_2$ để biên độ tổng hợp nhỏ nhất, giá trị nhỏ nhất đó, và pha ban đầu khi đó.
 **Đáp số.** $A_2 = 5{,}196$ cm; $A_{min} = 3{,}000$ cm; $\varphi = 0$.
 **Bấm máy**
-- Bảng: `f(X) = √(36+X²+12X×cos(150))` (SETUP Độ), Start `0`, End `10`, Step `1`: nhỏ nhất quanh $X=5$ hoặc 6.
+- Table (SETUP → Table → f(x) trước): `f(x) = √(36+x²+12x×cos(150))` (SETUP Độ; x là phím `x`), Start `0`, End `10`, Step `1`: nhỏ nhất quanh $x=5$ hoặc 6.
 - Thu hẹp: Start `4.5`, End `6`, Step `0.1`: nhỏ nhất tại $5{,}2$.
-- Kiểm công thức: `−6cos(150)`$= 5{,}196$; `6sin(150)`$= 3$.
-- Pha: Số phức, `6∠60 + 5.196∠−90`, `=`: $3\angle 0$.
+- Kiểm công thức: `−6cos(150)`$= 5{,}196$, lưu vào biến: `STO A`; `6sin(150)`$= 3$.
+- Pha: Số phức, `6∠60 + A∠−90` (dùng biến A, không gõ `5.196` đã làm tròn), `=`: $3\angle 0$.
+- Gõ `5.196` thay cho A thì máy ra $3\angle 0{,}0029°$, không đúng $0$.
 **Lời giải.** $\Delta\varphi = 150°$; cực tiểu khi $x_2$ triệt tiêu thành phần ảo của $x_1$.
 **Bẫy.** Bảng cho nghiệm gần đúng (5,2); đáp số cuối là công thức (5,196).

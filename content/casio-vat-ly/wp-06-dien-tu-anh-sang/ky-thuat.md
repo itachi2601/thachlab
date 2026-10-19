@@ -59,8 +59,8 @@
 - Dịch màn ra xa $\Delta D$: $\Delta i = \dfrac{\lambda\Delta D}{a}$ nên $\lambda = \dfrac{a\,\Delta i}{\Delta D}$.
 
 **Thao tác máy**
-- Vân trùng: TABLE với $f(X) = X\dfrac{\lambda_1}{\lambda_2}$; tìm hàng đầu tiên có giá trị nguyên (kiểm bằng phân số tối giản).
-- Ánh sáng trắng: TABLE $f(X) = \dfrac{ax}{XD}$ theo $X = k$ nguyên; lọc hàng nằm trong $[0{,}38; 0{,}76]$.
+- Vân trùng: TABLE với $f(x) = x\dfrac{\lambda_1}{\lambda_2}$ (x là phím `x`); tìm hàng đầu tiên có giá trị nguyên (kiểm bằng phân số tối giản).
+- Ánh sáng trắng: TABLE $f(x) = \dfrac{a\,x_M}{xD}$ ($x_M$ là vị trí điểm xét) theo $x = k$ nguyên; lọc hàng nằm trong $[0{,}38; 0{,}76]$.
 
 **Bẫy**
 - Đổi $\mu$m, mm về m.

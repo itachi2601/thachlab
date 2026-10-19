@@ -26,5 +26,5 @@ $\Delta\ell_0 = \dfrac{gT^2}{4\pi^2} = 3{,}972$ cm; $A = 1{,}986$ cm; $v_{max} =
 - Gõ: `9.8×0.4²÷(4π²)`.
 
 **M4.** Hai dao động vuông pha ($30° - (-60°) = 90°$): $A = 5{,}000$ cm; $\varphi = 30° - \arctan\dfrac34 = -0{,}1199$ rad $(-6{,}870°)$.
-$x = 5\cos(2\pi t - 0{,}1199) = 2{,}5$: $2\pi t - 0{,}1199 = \pm\dfrac{\pi}{3} + 2k\pi$; nghiệm dương nhỏ nhất $t = 0{,}1857$ s (dùng $\varphi$ chính xác; thế $\varphi$ đã làm tròn $-0{,}1199$ thì ra $0{,}1858$, chênh do làm tròn).
-- Gõ SOLVE: `5cos(2πX − 0.1199) = 2.5`, giá trị đầu `0.2`. Kiểm: nghiệm $-\dfrac{\pi}{3}$ cho $t<0$.
+$x = 5\cos(2\pi t - 0{,}1199) = 2{,}5$: $2\pi t - 0{,}1199 = \pm\dfrac{\pi}{3} + 2k\pi$; nghiệm dương nhỏ nhất $t = 0{,}1857$ s (thế $\varphi$ đã làm tròn $-0{,}1199$ vẫn ra $0{,}1857$).
+- Gõ SOLVE: `5cos(2πx − 0.1199) = 2.5` (x là phím `x`), giá trị đầu `0.2`. Kiểm: nghiệm $-\dfrac{\pi}{3}$ cho $t<0$.

@@ -15,7 +15,7 @@
 - Điện áp hai đầu từng phần tử: $U_R = IR$, $U_L = IZ_L$, $U_C = IZ_C$; $U^2 = U_R^2 + (U_L - U_C)^2$. $U_L$ hoặc $U_C$ **có thể lớn hơn** $U$.
 - $u_R$ cùng pha với $i$; $u_L$ sớm pha $\dfrac{\pi}{2}$ so với $i$; $u_C$ trễ pha $\dfrac{\pi}{2}$ so với $i$.
 
-**Số phức (CMPLX)**
+**Số phức (Complex)**
 - $Z = R + (Z_L - Z_C)\,\mathrm{i}$; $I = \dfrac{U}{Z}$ (cả hai nhập dạng cực $a\angle\varphi$).
 - Cuộn dây có điện trở $r$: $Z_d = r + Z_L\mathrm{i}$.
 - Hộp đen $X$ nối tiếp với phần tử đã biết: $Z_X = \dfrac{U}{I} - Z_{biết}$ (số phức), rồi đọc phần thực → $R$, phần ảo dương → $L$, phần ảo âm → $C$.
@@ -50,7 +50,7 @@
 - Hai tần số $\omega_1, \omega_2$ cho **cùng** $I$ (hay cùng $Z$, $P$, $\cos\varphi$): $\omega_1\omega_2 = \dfrac{1}{LC} = \omega_0^2$; hai pha đối nhau, $\varphi_1 = -\varphi_2$.
 
 **Dùng TABLE để kiểm**
-1. Nhập $f(X)$ là đại lượng cần cực đại (ví dụ $U_C$ theo $Z_C$): bảng bước lớn, rồi thu hẹp.
+1. Nhập $f(x)$ (x là phím `x`) là đại lượng cần cực đại (ví dụ $U_C$ theo $Z_C$): bảng bước lớn, rồi thu hẹp.
 2. Đáp số cuối ghi theo công thức, bảng chỉ để kiểm.
 
 **Bẫy**
