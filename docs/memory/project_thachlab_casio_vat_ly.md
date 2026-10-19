@@ -27,3 +27,6 @@ Kế hoạch + bảng trạng thái từng gói: `docs/KE-HOACH-CASIO-VAT-LY.md`
 - Tốn token ít khi mỗi gói chạy đúng một vòng: tinh.py → viết → 1 agent kiểm → sửa → commit.
 
 Xem [[project-thachlab-khoa-hsg9-vat-ly]] cho quy trình soạn tương tự.
+
+**Lên web 19/10/2026:** lớp `casio-vat-ly` (môn cùng tên), chương 1 + bài 179–183 (Sổ tay, Dao động cơ, Sóng cơ, Điện xoay chiều, Điện từ & ánh sáng), mini-test = đề tự luận 984→đề mới (`subject_code=casio-vat-ly`). ĐÃ BẬT HIỆN 19/10. Phím/biến đã sửa theo sách fx-580VN X + thầy thử máy (báo cáo `content/casio-vat-ly/KIEM-PHIM-OPUS.md`). Dựng/đăng lại: `bash scripts/dang-casio-vat-ly.sh` (md → pandoc → bundle → upload-lesson; `--dry`, `--publish`). Lớp không hiện ở trang chủ (OpenClasses loại), vào bằng `/lop-hoc/casio-vat-ly`. Còn: WP-00/02/07–11, công văn thể lệ 2026–27.
+- Rút kinh nghiệm: pandoc đổi `<`,`>`,`'` trong công thức thành `&lt;`/`&#39;` → KaTeX lỗi; luôn `html.unescape` + `\lt`/`\gt` trong math, rồi quét `.katex-error` trên bản thật. Đề do `upload-lesson` tạo mặc định `published=true` nên phải ẩn tay cùng bài. Terminal mở trong worktree đã xoá thì `cd` về repo trước khi chạy.
