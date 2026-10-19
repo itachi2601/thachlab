@@ -111,3 +111,9 @@ Thầy chốt: hạn đăng ký 6 giờ trước giờ học, tối đa 3 chủ 
 - Rollback: `perf/rollback/20261017230000_phu_dao_bo_de_luyen_tap.down.sql`.
 
 - 2026-10-18: ngưỡng mở mới theo khảo sát HS — cửa sổ 12 câu kiểm tra gần nhất của bài×dạng, ≥10 câu sai ≥50% (đường tắt 5–9 câu sai ≥80%); migration 20261018120000 đã chạy, open 574→205; ở tầng YCCĐ chỉ ~10% cặp đủ 10 câu nên giữ mục ở tầng bài×dạng. Rollback: perf/rollback/20261018120000_phu_dao_nguong_10_cau.down.sql.
+
+**2026-10-18 (tối) — bổ sung cho dòng ngưỡng 10 câu ở trên (commit `5df9b5e2f`, `5504c57b7`, cả hai migration ĐÃ chạy):**
+- `20261018120000_phu_dao_nguong_10_cau`: mở mục khi trong 12 câu kiểm tra gần nhất của bài×dạng có ≥10 câu sai ≥50% (đường tắt 5–9 câu sai ≥80%). Dọn 418 mục auto thành dismissed (note "đổi ngưỡng 10 câu, bỏ 18/10/2026"), open 574→205 (110 em). Mục giữ ở tầng bài×dạng vì tầng YCCĐ chỉ ~10% cặp đủ 10 câu (đo `exam_question_results`, đề kiểm tra).
+- `20261018133000_phu_dao_khong_mo_lai_muc_da_dong`: sửa lỗi bản trên — mục `cleared` (kể cả đạt bài tự kiểm tra) bị mở lại vì cửa sổ 12 câu còn câu sai cũ; nay chỉ mở lại khi có đề kiểm tra mới hơn `cleared_at`. Khôi phục mục 1880. Rollback ở `perf/rollback/20261018120000_*.down.sql`, `…133000_*.down.sql`.
+- Bài thoát phụ đạo từ 17/10: 7 lượt/7 em, 3 lượt đạt (mục 1718, 1880, 1710). Mục 1710 đạt 80% rồi thành `tutored` lúc 14:06 — nghi trợ giảng tick đúng chủ đề đã ghi đè trạng thái đã đóng; CHƯA kiểm chứng, CHƯA sửa.
+- Treo: (1) `student_outcome_gaps` vẫn cửa sổ 2 bài, lệch với ngưỡng mới; (2) chưa báo trợ giảng/HS về việc mục giảm 574→205; (3) chưa xem UI danh sách sau đổi; (4) chưa deploy nếu UI có đổi (lần này chỉ đổi DB, không cần deploy).

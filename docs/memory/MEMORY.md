@@ -8,7 +8,7 @@
 - [Giảm token 28/9](project_thachlab_token_hygiene.md) — .claudeignore, đọc DATABASE.md thay vì dò schema
 - [Phiên song song](project_thachlab_concurrent_sessions.md) — `git commit -- <path>`; claude/* tự gộp vào main
 - [No progress updates](feedback_no_progress_updates.md) — im lặng giữa chừng, báo 1 lần cuối
-- [wrap_up viết nội dung trước](feedback_wrap_up_viet_noi_dung_truoc.md) — nhận xét nằm trong tin nhắn trước box câu hỏi
+- [wrap_up viết nội dung trước](feedback_wrap_up_viet_noi_dung_truoc.md) — nhận xét trước box câu hỏi
 - [Lệnh terminal = khối bash](feedback_lenh_terminal_khoi_bash.md) — lệnh thầy chạy đặt trong khối bash
 - [Chạy script giúp thầy](feedback_chay_script_giup.md) — có script thì chạy trong tab terminal rồi tự kiểm
 - [Deploy autonomy](feedback_deploy_autonomy.md) — test local xong tự deploy prod
@@ -27,7 +27,7 @@
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết: duyệt là đăng, không PR
 - [Không in lệnh hoàn tác](feedback_khong_in_lenh_hoan_tac.md) — chỉ nêu file sao lưu
 - [Không đốt credit API](feedback_khong_dot_credit_api.md) — soạn trực tiếp trong phiên Mac; batch chỉ khi
-- [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — ví dụ/câu hỏi/lời giải: mỗi trường hợp một dòng
+- [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — mỗi trường hợp một dòng
 - [Chặng commit + ra-soat.md](feedback_chang_commit_ra_soat_ban_giao.md) — commit mỗi chặng, lỗi ghi ra-soat.md
 ## Hạ tầng & tra cứu
 - [Supabase](project_supabase_configured.md) — Singapore; key ở .env.local
@@ -42,7 +42,6 @@
 - [Skill azota](project_thachlab_azota_skill.md) — bước 6 xuat_thachlab.py → Word kèm nhãn YCCĐ
 - [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md) — bước 7 xuat_thachlab.py
 - [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md) — mặc định script upload-lesson.mts
-- [Tài nguyên bài học + PhET hàng loạt](project_thachlab_tai_nguyen_bai_hoc_skill.md) — 49 bài/55 khối đã đăng 18/10
 - [Skill latex](project_thachlab_latex_skill.md) — cache công thức + sinh HTML bằng script
 - [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md) — kiểm công cụ có sẵn trước khi cho agent viết lại
 - [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
@@ -76,21 +75,22 @@
 - [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — trạng thái sửa chưa rõ
 - [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục ẩn, chờ gắn đề
 ## Giao diện & sản phẩm
+- [Lịch công tác tuần](project_thachlab_lich_tuan.md) — skill lich-tuan + /tai-khoan, mốc bài; thầy chạy cai-skill.sh
 - [Chương trình DT 16/10](project_thachlab_dt_audit.md) — DT-01/03/04/07/12/16
 - [Rà soát giao diện 13/10](project_thachlab_ra_soat_giao_dien.md) — 10 điểm + 2 lỗi; phân công ở
 - [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
-- [Báo live đang học](project_thachlab_bao_live_dang_hoc.md) — heartbeat mới ở lý thuyết, chưa có ở đề/luyện tập
+- [Báo live đang học](project_thachlab_bao_live_dang_hoc.md) — heartbeat chỉ ở lý thuyết
 - [Mobile PWA](project_thachlab_mobile_pwa.md) — push thông báo + nhắc lùi dần đã deploy 18/10
-- [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc, chờ thầy chốt mục 5
+- [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc, chờ thầy chốt
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — /dieu-khoan deploy 12/10; treo nhãn nguồn từng câu
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn xong 12/10, chờ thầy duyệt rồi đăng
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật
-- [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — deploy 12/10, chưa thử HS thật, thiếu nút làm lại
-- [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10 + Theo chương/Cả khoá (HSG: Theo
+- [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — deploy 12/10, chưa thử HS thật
+- [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10; treo thử 375px thật
 ## Việc mới 30/9
-- [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi x 5 giờ bám 7 bài hiện có
+- [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi; flip-1 lên web; treo duyệt bảng 12 buổi
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — xong 14/10; treo Gemini tìm ảnh, chưa deploy
 - [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — 19/10: viet-lai8 L12 kq-01..28 xong chưa ghi DB
 - [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10

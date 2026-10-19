@@ -79,3 +79,4 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [HS Test + gieo/dọn dữ liệu thử](project_thachlab_hs_test_accounts.md) — 2 tài khoản lớp 12, đổi mật khẩu bằng scripts/doi-mk-hs-test.mjs
 - [Rà UI HS tìm bài/ôn tập 17/10](project_thachlab_ui_hs_tim_bai_on_tap.md) — 4 đợt đã lên site; treo 2 điểm nhỏ
 - [Gán lớp cho đề](project_thachlab_gan_lop_de.md) — 17/10 gán hết trừ 10 đề AVCN (cố ý trống); RLS giấu đề lớp khác
+- [Tài nguyên bài học + PhET hàng loạt](project_thachlab_tai_nguyen_bai_hoc_skill.md) — 49 bài/55 khối đã đăng 18/10
