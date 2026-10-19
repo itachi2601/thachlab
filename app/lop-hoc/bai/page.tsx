@@ -876,17 +876,23 @@ function LessonLoader() {
     })();
   }, [session, items]);
 
-  // Điểm và dấu đã học của chính tài khoản. Chế độ giáo viên không đọc, không ghi.
+  // Điểm và dấu đã học của chính tài khoản. Truy vấn chạy song song với phần còn lại ngay khi có
+  // session (không chờ hồ sơ, giữ tốc độ cũ cho học sinh); chế độ giáo viên chỉ bỏ kết quả, không áp.
+  const teacherViewRef = useRef(isTeacherView);
+  teacherViewRef.current = isTeacherView;
   useEffect(() => {
-    if (!session || !items || !recordProgress) return;
+    if (!session || !items) return;
     fetchMyLessonPageProgress(session.user.id, items)
       .then(({ progress: nextProgress, scores: nextScores, done: nextDone }) => {
+        if (teacherViewRef.current) return;
         setProgress(nextProgress);
         setScores(nextScores);
         setDone(nextDone);
       })
-      .catch(() => setProgress(new Map()));
-  }, [session, items, recordProgress]);
+      .catch(() => {
+        if (!teacherViewRef.current) setProgress(new Map());
+      });
+  }, [session, items]);
 
   // Mọi mã đề đã gắn vào bài (luyện tập/kiểm tra/bài tập mẫu/lý thuyết) — nguồn câu hỏi cho
   // "Luyện 10 câu phần này" của LessonMasteryCard, tái dùng examIds đã có sẵn từ items, không
