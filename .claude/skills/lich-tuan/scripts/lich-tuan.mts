@@ -149,6 +149,29 @@ const slots = (spec: any, kind: string, n: number, avoidDays: number[]) => {
 const sk = slots(rules.the_thao.truot_bang, "Trượt băng", rules.the_thao.truot_bang.min_buoi, [1]);
 slots(rules.the_thao.gym, "Tập gym", rules.the_thao.gym.min_buoi, []); // gym được cùng ngày với trượt băng (gym trước, trượt sau)
 
+// 5a. nội dung từng buổi tập (references/lich-co-dinh.json → noi_dung_tap): lesson = tên buổi, note = chi tiết
+{
+  const nd = rules.noi_dung_tap;
+  if (nd) {
+    const pick = (kind: string, list: { ten: string; note: string }[], khung: string, chooser: (e: Ev, left: { ten: string; note: string }[]) => { ten: string; note: string } | undefined) => {
+      const left = [...list];
+      const ses = evs.filter((e) => e.title === kind).sort((a, b) => a.weekday - b.weekday || toMin(a.start) - toMin(b.start));
+      for (const e of ses) {
+        const c = chooser(e, left) ?? left[0] ?? list[(ses.indexOf(e)) % list.length];
+        const i = left.indexOf(c); if (i >= 0) left.splice(i, 1);
+        e.lesson = c.ten; e.note = [c.note, khung].filter(Boolean).join(" · ");
+      }
+    };
+    const sameDay = (e: Ev, other: string) => evs.some((o) => o.weekday === e.weekday && o.title === other);
+    pick("Trượt băng", nd.truot_bang, nd.khung_truot_bang, (e, left) => {
+      if (toMin(e.start) >= 17 * 60) return left.find((x) => /Ôn nhẹ/.test(x.ten));
+      if (sameDay(e, "Tập gym")) return left.find((x) => /Edge/.test(x.ten));
+      return left.find((x) => !/Ôn nhẹ|Edge/.test(x.ten)) ?? left[0];
+    });
+    pick("Tập gym", nd.gym, nd.khung_gym, (e, left) => (sameDay(e, "Trượt băng") ? left.find((x) => /Thân trên/.test(x.ten)) : left.find((x) => !/Thân trên/.test(x.ten)) ?? left[0]));
+  }
+}
+
 // 5b. thời gian phát triển thachlab: sau khi xếp thể thao, lấy khoảng trống dài nhất mỗi ngày (>= tối thiểu), tối đa `toi_da_phut`
 {
   const pt = rules.phat_trien_thachlab ?? { min_buoi: 4, toi_thieu_phut: 120, toi_da_phut: 180, tu: "08:00", den: "21:30", dem: 15 };

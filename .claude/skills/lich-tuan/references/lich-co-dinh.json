@@ -44,7 +44,9 @@
       "where": "Cao Thắng"
     }
   ],
-  "ten_thay": ["thạch"],
+  "ten_thay": [
+    "thạch"
+  ],
   "loc_lich_cong_tac": [
     "trưởng khoa",
     "phó khoa",
@@ -97,5 +99,42 @@
     "tu": "08:00",
     "den": "21:30",
     "dem": 15
+  },
+  "noi_dung_tap": {
+    "_ghi_chu": "Nội dung từng buổi tập (Claude đề xuất 19/10/2026, thầy duyệt). Script gán: trượt băng bắt đầu ≥17:00 → 'Ôn nhẹ'; cùng ngày có gym → 'Edge & turn'; còn lại theo thứ tự danh sách. Gym cùng ngày trượt băng → 'Thân trên + core' (chân để cho buổi băng); còn lại theo thứ tự. `lesson` = tên buổi (hiện rõ), `note` = chi tiết (gập).",
+    "khung_truot_bang": "Khung 2 giờ: 10′ khởi động ngoài băng (hông, cổ chân, đứng một chân) → 15′ stroking + edge FO/FI/BO/BI, crossover hai chiều → 60′ trọng tâm → 15′ tự do, thả lỏng.",
+    "khung_gym": "Khung 90′: 10′ khởi động (hông, cổ chân, xoay ngực) → bài chính 60–65′ → 10′ giãn.",
+    "truot_bang": [
+      {
+        "ten": "Trượt băng · Edge & turn",
+        "note": "Power pull; chuỗi edge liên tiếp; 3-turn FO/FI cả hai chân; mohawk; back crossover. Cường độ thấp, chú trọng độ sạch của edge (vừa gym xong, chân không tươi)."
+      },
+      {
+        "ten": "Trượt băng · Nhảy",
+        "note": "Waltz jump: tư thế cất cánh ở lan can → hop nửa vòng → waltz jump từ back crossover, giữ tư thế tiếp băng 3 giây. Tối đa 20–30 lần nhảy. Chỉ chuyển sang salchow khi waltz jump tiếp băng đều trên BO edge."
+      },
+      {
+        "ten": "Trượt băng · Spin",
+        "note": "Two-foot spin → one-foot upright spin vào từ FO edge, mục tiêu 3+ vòng, thoát trên BO edge; chuẩn bị back spin bằng pivot BI. Thêm chuỗi footwork cho vui."
+      },
+      {
+        "ten": "Trượt băng · Ôn nhẹ",
+        "note": "Cuối ngày dài, sân đông: stroking chất lượng, edge theo nhạc, ôn các yếu tố trong tuần ở 70% sức, quay 2–3 clip để xem lại. Không thử yếu tố mới."
+      }
+    ],
+    "gym": [
+      {
+        "ten": "Gym · Thân trên + core",
+        "note": "Cùng ngày lên băng → chân để nguyên. Đẩy ngực/hít đất, kéo xô hoặc xà, đẩy vai, row, face pull (3×8–12). Core: dead bug, Pallof press, side plank."
+      },
+      {
+        "ten": "Gym · Chân nặng",
+        "note": "Squat 3×6–8; Bulgarian split squat 3×8/chân; Romanian deadlift 3×8; lateral lunge; nâng bắp chân; dạng hông bằng dây; đứng một chân trên đệm mềm. Không xếp sát trước buổi nhảy."
+      },
+      {
+        "ten": "Gym · Toàn thân + sức bật",
+        "note": "Hip thrust hoặc trap-bar deadlift 3×6; box jump và hop một chân 3×5 (tập tiếp đất như tiếp băng); ném bóng xoay thân (xoay khi nhảy/spin); Copenhagen plank; 10′ cardio nhẹ."
+      }
+    ]
   }
 }

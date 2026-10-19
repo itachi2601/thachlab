@@ -13,6 +13,14 @@ metadata:
 - `scripts/ghi-moc-bai.mts`: `--khoa` (xem mốc), `--tim "<tên>"` (id chủ đề tầng bài), `<course>:<topic>:<ngày>` ghi qua `teaching_set` với `set_config(request.jwt.claims, sub=uid thầy)` bằng `supabase db query --linked` (chạy trong tab terminal, Bash bị chặn supabase.co).
 - Mốc đã ghi 2026-10-18 theo thầy báo: 10L3 (1) & 10L4 (2) → 22 Tổng hợp và phân tích lực; 11L4 (3) giữ 45 Giao thoa sóng (đã học tới giao thoa ánh sáng, là chủ đề con); 11L5 (4) → 46 Sóng dừng; 12L1 A4 (5) & A5 (6) → 68 Đại cương dòng điện xoay chiều. Thầy xác nhận đúng.
 
+**Bổ sung 2026-10-19 (commit c6c26b64f, 545bf175c, 032e3a03d; deploy nhánh deploy 5eef2ee, kiểm trên site thật):**
+- Mục công tác có chữ "Thạch" = thầy → luôn giữ (`ten_thay` trong `lich-co-dinh.json`, note "CÓ TÊN THẦY"); cả trường chỉ một người tên Thạch.
+- Lịch công tác được ưu tiên: việc khác trùng giờ chỉ ghi cảnh báo "cần nhờ người dạy/dự thay" (khung "Cần chú ý — nhờ người xem hộ" ở đầu mục Lịch tuần), không tự bỏ; hai mục công tác trùng nhau thì thầy chọn mục dự (script bước 5b).
+- Tuần 19–25/10 có cảnh báo Thứ 6 23/10: hội thảo kỹ năng xanh 07:30–11:30 (có tên thầy) trùng dạy TACN tiết 1–2, duyệt đồ án, và hội thảo khuôn mẫu Duy Tân 10:00. Chờ thầy nhờ người xem hộ, chưa cập nhật lịch theo lựa chọn nào.
+- Giờ tiết Cao Thắng đã chốt: 45 phút, nghỉ 5 phút, nghỉ 10 phút giữa tiết 3–4; sáng 6h30, chiều 12h30 (ghi trong SKILL.md). TKB đọc từ portal sau khi thầy tự đăng nhập trong tab trình duyệt.
+
+**Bổ sung 2026-10-19 (tối):** nội dung từng buổi trượt băng/gym (`noi_dung_tap` trong `lich-co-dinh.json`, bước 5a trong `lich-tuan.mts`) đã ghi vào `staff_week_plans` tuần 19/10 (34 mục). Nhận xét lịch đã nêu với thầy: T3 gym rồi 2 giờ sau lên băng (giải quyết bằng gym thân trên), T7 băng 17:30 sau ngày dài → buổi Ôn nhẹ, T2 giữ là ngày nghỉ tập. Thầy chưa cho địa điểm sân băng/gym.
+
 **Quyết định không suy ra từ code:** thầy nêu lớp theo "thứ" có thể lệch `thpt_course_schedules` (nói "lớp 10 thứ 2" trong khi 10L3 dạy thứ 3) → đối chiếu theo tên khoá, nêu cách hiểu khi báo. Mốc chỉ nhận chủ đề `parent_id null` đúng khối (RPC từ chối chủ đề con).
 
 **Còn chờ:**
