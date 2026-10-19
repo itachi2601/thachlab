@@ -41,7 +41,7 @@ const THPT_QUICK_LINKS = [
   { label: "Vật lý 11", href: "/lop-hoc/lop-11" },
   { label: "Vật lý 12", href: "/lop-hoc/lop-12" },
   { label: "Thi chuyên & HSG", href: "/lop-hoc/khtn-9?subject=hsg-vat-ly" },
-  { label: "Bảng xếp hạng", href: "/lop-hoc/xep-hang" },
+  { label: "Học sinh giỏi Giải toán trên máy tính cầm tay", href: "/lop-hoc/casio-vat-ly" },
 ];
 
 export default function Navbar() {
