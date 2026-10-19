@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check, ChevronDown, FileText, Play } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { useTeacherView } from "@/components/auth/useTeacherView";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import PracticeSession from "@/components/lessons/PracticeSession";
@@ -50,7 +51,9 @@ export default function InlineLessonAccordion({
   progress?: InlineLessonProgress;
   onItemCompleted?: () => void;
 }) {
-  const { session, profile } = useAuth();
+  const { session, profile, loading } = useAuth();
+  const { isTeacherView } = useTeacherView();
+  const recordProgress = !loading && !!session && !isTeacherView;
   const isStudent = profile?.role === "student";
   const articleRef = useRef<HTMLElement>(null);
   const presenceOpenedAt = useRef("");
@@ -84,7 +87,7 @@ export default function InlineLessonAccordion({
   }, [open]);
 
   useEffect(() => {
-    if (!open || !session) return;
+    if (!open || !recordProgress || !session) return;
     presenceOpenedAt.current = new Date().toISOString();
     const beat = () => {
       if (document.visibilityState !== "visible") return;
@@ -102,7 +105,7 @@ export default function InlineLessonAccordion({
       window.clearInterval(timer);
       document.removeEventListener("visibilitychange", beat);
     };
-  }, [open, session, lesson.id]);
+  }, [open, session, lesson.id, recordProgress]);
 
   // DT-01: open/leave của bài (thời lượng = giây tab hiển thị). Chỉ ghi cho học sinh; gom lô, xem services/learning-events.ts.
   useEffect(() => {
@@ -174,7 +177,7 @@ export default function InlineLessonAccordion({
   }, [completedCount, items, lesson.id, onProgress, session, userProgressLoaded]);
 
   function complete(item: LessonItem) {
-    if (!session || done.has(item.id)) return;
+    if (!recordProgress || !session || done.has(item.id)) return;
     setDone((current) => new Set(current).add(item.id));
     onItemCompleted?.();
     void markItemDone(session.user.id, item.id);

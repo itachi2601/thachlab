@@ -10,6 +10,8 @@ import ContentHtml from "@/components/exams/ContentHtml";
 import TheoryRpBar, { TheoryRpHint, useTheoryRp } from "@/components/lessons/TheoryRpBar";
 import { useReadDepth } from "@/components/lessons/useReadDepth";
 import { useAuth } from "@/components/auth/AuthProvider";
+import TeacherViewBanner from "@/components/auth/TeacherViewBanner";
+import { useTeacherView } from "@/components/auth/useTeacherView";
 import AroundReadMore from "@/components/lessons/AroundReadMore";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
@@ -213,11 +215,13 @@ function VideoBlock({
   done,
   loggedIn,
   onDone,
+  showMarkDone = true,
 }: {
   item: LessonItem;
   done: boolean;
   loggedIn: boolean;
   onDone: () => void;
+  showMarkDone?: boolean;
 }) {
   const [playing, setPlaying] = useState(false);
   const embed = youTubeEmbed(item.video_url);
@@ -257,7 +261,7 @@ function VideoBlock({
             <FileText size={15} /> Tài liệu PDF
           </a>
         )}
-        {loggedIn && (
+        {loggedIn && showMarkDone && (
           <button type="button" className={`lesson-done ${done ? "is-done" : ""}`} onClick={onDone} disabled={done}>
             <Check size={14} /> {done ? "Đã xem" : "Đánh dấu đã xem"}
           </button>
@@ -307,6 +311,8 @@ function TheoryBlock({
   done,
   loggedIn,
   onDone,
+  recordProgress = true,
+  forceAllOpen = false,
 }: {
   item: LessonItem;
   defaultOpen: boolean;
@@ -315,6 +321,10 @@ function TheoryBlock({
   done: boolean;
   loggedIn: boolean;
   onDone: () => void;
+  /** false = chế độ giáo viên: không gọi RP, không gửi độ sâu đọc. */
+  recordProgress?: boolean;
+  /** Mở sẵn mọi mốc để đọc, không đi lần lượt bằng nút Tiếp. */
+  forceAllOpen?: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const hasBody = item.body_html.trim() !== "";
@@ -327,15 +337,21 @@ function TheoryBlock({
   const total = sections.length;
   const estimate = useMemo(() => estimateTheoryTime(item.body_html), [item.body_html]);
   const [openSections, setOpenSections] = useState<Set<number>>(() => new Set([0]));
-  const [allOpen, setAllOpen] = useState(false);
+  const [allOpen, setAllOpen] = useState(forceAllOpen);
+  const [seenForceAll, setSeenForceAll] = useState(forceAllOpen);
+  // Hồ sơ giáo viên có thể về sau lúc mount: mở hết mốc khi biết là chế độ giáo viên.
+  if (forceAllOpen !== seenForceAll) {
+    setSeenForceAll(forceAllOpen);
+    if (forceAllOpen) setAllOpen(true);
+  }
   const [resumeIndex, setResumeIndex] = useState<number | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
-  const rp = useTheoryRp(item.id, loggedIn && open ? item.body_html : "", rootRef);
+  const rp = useTheoryRp(item.id, recordProgress && loggedIn && open ? item.body_html : "", rootRef);
   const quizTotal = useMemo(() => (item.body_html.match(/class="[^"]*\btl-quiz\b/g) ?? []).length, [item.body_html]);
   // Việc 6: độ sâu cuộn (mốc h3) + tỉ lệ bấm quiz, gửi khi rời mục/ẩn tab — không thêm round-trip lúc tải.
   useReadDepth({
     itemId: item.id,
-    active: loggedIn && open && hasBody,
+    active: recordProgress && loggedIn && open && hasBody,
     h3Total: total,
     quizTotal,
     rootRef,
@@ -504,8 +520,8 @@ function TheoryBlock({
             <FileText size={15} /> Tài liệu PDF
           </a>
         )}
-        {loggedIn && open && hasBody && <TheoryRpBar rp={rp} />}
-        {loggedIn && open && (
+        {recordProgress && loggedIn && open && hasBody && <TheoryRpBar rp={rp} />}
+        {recordProgress && loggedIn && open && (
           <button type="button" className={`lesson-done ${done ? "is-done" : ""}`} onClick={onDone} disabled={done}>
             <Check size={14} /> {done ? "Đã tự xác nhận đọc" : "Tôi đã đọc xong"}
           </button>
@@ -521,11 +537,13 @@ function TheoryQuizBlock({
   itemId,
   status,
   loggedIn,
+  teacherView = false,
 }: {
   examId: number;
   itemId: number;
   status: TheoryStatusResult | undefined;
   loggedIn: boolean;
+  teacherView?: boolean;
 }) {
   const attempted = !!status && status.attemptCount > 0;
   const tone =
@@ -535,10 +553,12 @@ function TheoryQuizBlock({
       <div>
         <p className="lesson-block-title">Kiểm tra nhanh</p>
         <p className="lesson-block-sub">
-          {status?.status === "passed" && `Đúng ${status.bestCorrect} câu — `}
-          {status?.status === "completed_not_passed" &&
+          {!teacherView && status?.status === "passed" && `Đúng ${status.bestCorrect} câu — `}
+          {!teacherView && status?.status === "completed_not_passed" &&
             `Đúng ${status.bestCorrect} câu, chưa đạt (lần ${status.attemptCount}) — `}
-          {loggedIn ? (
+          {teacherView ? (
+            <span className="lesson-status">Xem đáp án, không ghi lượt làm</span>
+          ) : loggedIn ? (
             <span className={tone}>{status?.label ?? "Chưa bắt đầu"}</span>
           ) : (
             <span className="lesson-status">Đăng nhập để làm và lưu kết quả</span>
@@ -546,8 +566,8 @@ function TheoryQuizBlock({
         </p>
       </div>
       {loggedIn ? (
-        <Link href={`/kiem-tra/lam?id=${examId}&item=${itemId}`} className={attempted ? "lesson-btn-ghost" : "lesson-btn"}>
-          {attempted ? "Làm lại" : "Làm kiểm tra nhanh"}
+        <Link href={`/kiem-tra/lam?id=${examId}&item=${itemId}`} className={attempted && !teacherView ? "lesson-btn-ghost" : "lesson-btn"}>
+          {teacherView ? "Xem đề và đáp án" : attempted ? "Làm lại" : "Làm kiểm tra nhanh"}
         </Link>
       ) : (
         <Link href="/dang-nhap" className="lesson-btn">
@@ -568,6 +588,7 @@ function ExamRow({
   metaStatus,
   statusLabel,
   passed,
+  teacherView = false,
 }: {
   examId: number;
   itemId?: number | null;
@@ -579,6 +600,7 @@ function ExamRow({
   /** Nhãn Đạt/Chưa đạt/Chờ chấm/Đã nộp — chỉ có khi mục này đã tính được trạng thái. */
   statusLabel?: string;
   passed?: boolean;
+  teacherView?: boolean;
 }) {
   if (!exam) {
     const notice = !loggedIn
@@ -613,16 +635,18 @@ function ExamRow({
         <p className="lesson-block-title">{exam.title}</p>
         <p className="lesson-block-sub">
           {exam.duration_minutes} phút · {counts || `${exam.question_count} câu`}
-          <span className={attempted && passed !== false ? "lesson-status-done" : attempted ? "lesson-status" : "lesson-status"}>
-            {attempted ? `${statusLabel ?? "Đã làm"} · ${score} điểm` : "Chưa làm"}
-          </span>
+          {!teacherView && (
+            <span className={attempted && passed !== false ? "lesson-status-done" : attempted ? "lesson-status" : "lesson-status"}>
+              {attempted ? `${statusLabel ?? "Đã làm"} · ${score} điểm` : "Chưa làm"}
+            </span>
+          )}
         </p>
       </div>
       <Link
         href={`/kiem-tra/lam?id=${examId}${itemId ? `&item=${itemId}` : ""}`}
-        className={attempted ? "lesson-btn-ghost" : "lesson-btn"}
+        className={attempted && !teacherView ? "lesson-btn-ghost" : "lesson-btn"}
       >
-        {attempted ? "Làm lại" : "Làm bài"}
+        {teacherView ? "Xem đề và đáp án" : attempted ? "Làm lại" : "Làm bài"}
       </Link>
     </div>
   );
@@ -672,10 +696,13 @@ function LessonHomeLink() {
 }
 
 function LessonLoader() {
-  const { session, profile } = useAuth();
-  // B1/N1 (docs/QUY-TAC-THIET-KE.md): Trình chiếu là công cụ của người dạy, học sinh không thấy.
-  // `profile` đã tính cả chế độ "Xem như học sinh" của admin nên preview hiện đúng giao diện HS.
-  const canPresent = profile?.role === "admin" || profile?.role === "instructor" || profile?.role === "tro_giang";
+  const { session, loading } = useAuth();
+  const { isTeacherView } = useTeacherView();
+  // B1/N1: Trình chiếu và ghi chú lúc dạy chỉ ở chế độ giáo viên.
+  // "Xem như học sinh" tắt isTeacherView nên hiện đúng giao diện học sinh.
+  const canPresent = isTeacherView;
+  // Chờ hồ sơ: lúc loading, isTeacherView còn false — đừng ghi tiến độ trong khoảng đó.
+  const recordProgress = !loading && !!session && !isTeacherView;
   const searchParams = useSearchParams();
   const id = Number(searchParams.get("id"));
   const classSlug = searchParams.get("class");
@@ -847,7 +874,11 @@ function LessonLoader() {
         setExamMetaStatus("error");
       }
     })();
-    // điểm cao nhất, mục đã đánh dấu và trạng thái từng mục: cùng 1 lượt truy vấn song song
+  }, [session, items]);
+
+  // Điểm và dấu đã học của chính tài khoản. Chế độ giáo viên không đọc, không ghi.
+  useEffect(() => {
+    if (!session || !items || !recordProgress) return;
     fetchMyLessonPageProgress(session.user.id, items)
       .then(({ progress: nextProgress, scores: nextScores, done: nextDone }) => {
         setProgress(nextProgress);
@@ -855,7 +886,7 @@ function LessonLoader() {
         setDone(nextDone);
       })
       .catch(() => setProgress(new Map()));
-  }, [session, items]);
+  }, [session, items, recordProgress]);
 
   // Mọi mã đề đã gắn vào bài (luyện tập/kiểm tra/bài tập mẫu/lý thuyết) — nguồn câu hỏi cho
   // "Luyện 10 câu phần này" của LessonMasteryCard, tái dùng examIds đã có sẵn từ items, không
@@ -1043,6 +1074,7 @@ function LessonLoader() {
   }
 
   function markLessonDone() {
+    if (!recordProgress) return;
     setLessonMarked(true);
     try {
       window.localStorage.setItem(`${LESSON_DONE_STORE}${id}`, "1");
@@ -1078,7 +1110,7 @@ function LessonLoader() {
   }
 
   function markDone(item: LessonItem) {
-    if (!session || done.has(item.id)) return;
+    if (!recordProgress || !session || done.has(item.id)) return;
     setDone((prev) => new Set(prev).add(item.id));
     markItemDone(session.user.id, item.id);
   }
@@ -1131,7 +1163,7 @@ function LessonLoader() {
 
   /** Bài đã học xong = mọi mục học liệu của bài đều đã đánh dấu/đã làm đề. */
   function lessonComplete(lesson: Lesson): boolean {
-    if (!session || !items || lesson.id !== id) return false;
+    if (isTeacherView || !session || !items || lesson.id !== id) return false;
     return items.length > 0 && items.every(isDone);
   }
 
@@ -1344,6 +1376,7 @@ function LessonLoader() {
     const itemByExamId = new Map(kiemTraItems.flatMap((i) => i.exam_ids.map((eid) => [eid, i])));
     return (
       <div className={`lesson-shell lesson-page ${isAvcn ? "lesson-shell--cttc" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
+        <TeacherViewBanner />
         <div className="lesson-layout lesson-layout--exam">
           <aside className="lesson-nav lesson-nav--compact" aria-label="Điều hướng bài học">
             {prevLesson && (
@@ -1411,6 +1444,7 @@ function LessonLoader() {
                       metaStatus={examMetaStatus}
                       statusLabel={graded?.label}
                       passed={graded ? graded.status === "passed" : undefined}
+                      teacherView={isTeacherView}
                     />
                   );
                 })
@@ -1482,7 +1516,7 @@ function LessonLoader() {
                   onToggleChapter={toggleChapter}
                   lessonHref={siblingHref}
                   isLessonDone={lessonComplete}
-                  showProgress={!!session}
+                  showProgress={!!session && !isTeacherView}
                   filterLessonIds={matchingLessonIds}
                 />
               </div>
@@ -1505,7 +1539,7 @@ function LessonLoader() {
   const lessonTheoryPassed = !!session && progress.get(assignmentItem?.id ?? -1)?.theory?.status === "passed";
   // N4: chip "Bài học" và đếm "4 mục · 4 phần" bị bỏ (tab ngay dưới đã cho biết) — chỉ giữ thứ có ích.
   const hasLessonMeta = lessonKind !== "bai_hoc" || !!assignmentItem?.due_at || lessonTheoryPassed;
-  const stepLabel = lessonMarked ? "Đã học xong" : `Mục ${Math.max(activeIndex, 0) + 1}/${totalTabs || 1}`;
+  const stepLabel = !isTeacherView && lessonMarked ? "Đã học xong" : `Mục ${Math.max(activeIndex, 0) + 1}/${totalTabs || 1}`;
 
   // Mục lục bài này = các h2/h3 có id trong TAB đang mở (heading do nội dung soạn sẵn sinh ra).
   // Cột phải dùng; ở bước này chỉ cần activeHeading được cập nhật.
@@ -1538,6 +1572,7 @@ function LessonLoader() {
             done={done.has(item.id)}
             loggedIn={!!session}
             onDone={() => markDone(item)}
+            showMarkDone={recordProgress}
           />
         );
 
@@ -1551,6 +1586,8 @@ function LessonLoader() {
               done={done.has(item.id)}
               loggedIn={!!session}
               onDone={() => markDone(item)}
+              recordProgress={recordProgress}
+              forceAllOpen={isTeacherView}
             />
             {item.exam_ids.length > 0 && (
               <TheoryQuizBlock
@@ -1558,6 +1595,7 @@ function LessonLoader() {
                 itemId={item.id}
                 status={progress.get(item.id)?.theory}
                 loggedIn={!!session}
+                teacherView={isTeacherView}
               />
             )}
           </div>
@@ -1590,6 +1628,7 @@ function LessonLoader() {
                       metaStatus={examMetaStatus}
                       statusLabel={graded?.label}
                       passed={graded ? graded.status === "passed" : undefined}
+                      teacherView={isTeacherView}
                     />
                   );
                 })}
@@ -1647,12 +1686,13 @@ function LessonLoader() {
               itemId={item.id}
               passScore={item.practice_pass_score}
               color={ACCENT}
+              recordProgress={recordProgress}
               onActiveChange={(active) => {
                 practiceActiveRef.current = active;
               }}
             />
           )}
-          {session && (
+          {recordProgress && (
             <div className="lesson-block-foot">
               <button
                 type="button"
@@ -1803,7 +1843,7 @@ function LessonLoader() {
     return (
       <>
         {/* Thẻ tiến độ khoá: vòng tròn %, số bài đã học, nút Tiếp tục học. */}
-        {courseLessons.length > 0 && (
+        {courseLessons.length > 0 && !isTeacherView && (
           <div className="lesson-progress-summary">
             <ProgressRing percent={courseLessons.length ? (courseDone / courseLessons.length) * 100 : 0} />
             <div>
@@ -1892,7 +1932,7 @@ function LessonLoader() {
 
         {/* Mức độ nắm vững — chuyển từ cuối bài sang đây, giữ nguyên props và nút "Luyện thêm". */}
         {items && items.length > 0 && (
-          <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={!!session} />
+          <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={recordProgress} />
         )}
 
         {/* Câu sai liên quan: chỉ dùng reviewContexts đã mang theo từ trang làm đề — 0 request.
@@ -2024,6 +2064,7 @@ function LessonLoader() {
 
   return (
     <div className={`lesson-shell lesson-page ${isAvcn ? "lesson-shell--cttc" : ""} ${dim ? "is-dim" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
+      <TeacherViewBanner />
       <div className="lesson-layout">
         {/* Cột trái trong bài chỉ cần: bài trước · bài sau (link về chương đã có ở breadcrumb) (N4: không lặp mục lục cả lớp —
             cây chương đầy đủ nằm trong ngăn kéo "Mục lục" và ở trang lớp). */}
@@ -2087,12 +2128,14 @@ function LessonLoader() {
           {/* Header + thanh tiến độ + 6 tab nằm chung một khối: cả khối dính dưới navbar, mà
               header vẫn chỉ cao bằng nội dung (không phình ra che bài). */}
           <div className="lesson-content">
-            <div className="lesson-progressbar" aria-label={`Đã học ${progressDone} trên ${totalTabs} mục`}>
-              <span style={{ width: `${totalTabs ? Math.round((progressDone / totalTabs) * 100) : 0}%` }} />
-              <small>
-                Đã học {progressDone}/{totalTabs} mục
-              </small>
-            </div>
+            {!isTeacherView && (
+              <div className="lesson-progressbar" aria-label={`Đã học ${progressDone} trên ${totalTabs} mục`}>
+                <span style={{ width: `${totalTabs ? Math.round((progressDone / totalTabs) * 100) : 0}%` }} />
+                <small>
+                  Đã học {progressDone}/{totalTabs} mục
+                </small>
+              </div>
+            )}
 
             {tabNav}
 
@@ -2151,17 +2194,19 @@ function LessonLoader() {
           <Menu size={16} aria-hidden />
           <span>Mục lục</span>
         </button>
-        <button
-          type="button"
-          className={`lesson-bottom-done ${lessonMarked ? "is-done" : ""}`}
-          onClick={markLessonDone}
-          disabled={lessonMarked}
-          aria-pressed={lessonMarked}
-          aria-label={lessonMarked ? "Đã đánh dấu: học xong bài này" : "Đánh dấu đã học xong bài này"}
-        >
-          {lessonMarked ? <Check size={16} aria-hidden /> : <span className="lesson-checkbox" aria-hidden />}
-          <span>Học xong</span>
-        </button>
+        {!isTeacherView && (
+          <button
+            type="button"
+            className={`lesson-bottom-done ${lessonMarked ? "is-done" : ""}`}
+            onClick={markLessonDone}
+            disabled={lessonMarked}
+            aria-pressed={lessonMarked}
+            aria-label={lessonMarked ? "Đã đánh dấu: học xong bài này" : "Đánh dấu đã học xong bài này"}
+          >
+            {lessonMarked ? <Check size={16} aria-hidden /> : <span className="lesson-checkbox" aria-hidden />}
+            <span>Học xong</span>
+          </button>
+        )}
 
         <span className="lesson-bottom-step" aria-live="polite">
           {stepLabel}
@@ -2197,9 +2242,11 @@ function LessonLoader() {
             <div className="lesson-drawer-head">
               <div>
                 <p className="lesson-drawer-title">Nội dung khoá {chapterFullLabel || ""}</p>
-                <small>
-                  Đã học {progressDone}/{totalTabs} mục
-                </small>
+                {!isTeacherView && (
+                  <small>
+                    Đã học {progressDone}/{totalTabs} mục
+                  </small>
+                )}
               </div>
               <button type="button" onClick={() => setDrawerOpen(false)} aria-label="Đóng mục lục">
                 <X size={17} aria-hidden />
@@ -2215,7 +2262,7 @@ function LessonLoader() {
                 onToggleChapter={toggleChapter}
                 lessonHref={siblingHref}
                 isLessonDone={lessonComplete}
-                showProgress={!!session}
+                showProgress={!!session && !isTeacherView}
                 filterLessonIds={matchingLessonIds}
               />
               {renderSidePanels()}

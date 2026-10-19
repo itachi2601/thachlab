@@ -96,6 +96,7 @@ export default function ExamRunner({
   itemId = null,
   minCorrect = null,
   theoryLessonId = null,
+  teacherView = false,
 }: {
   exam: Exam;
   /** Mục bài học đang gắn đề này (nếu có) — dùng để ghi nhận exam_attempts. */
@@ -105,16 +106,26 @@ export default function ExamRunner({
   /** Chỉ có khi đây là quiz kiểm tra nhanh cuối lý thuyết: bài học SỞ HỮU mục lý thuyết đó —
    *  dùng để "Ôn ngay" nhảy đúng đoạn (q.theorySection) thay vì tra theo topic chung chung. */
   theoryLessonId?: number | null;
+  /** Giáo viên xem đáp án. "Làm thử" vẫn ở trong bộ nhớ: không tạo lượt, không lưu nháp, không ghi điểm. */
+  teacherView?: boolean;
 }) {
   const { session, profile } = useAuth();
   const [phase, setPhase] = useState<Phase>("intro");
+  const [tryMode, setTryMode] = useState(false);
+  // Rời chế độ giáo viên giữa chừng (bật "Xem như học sinh") thì bỏ phiên làm thử,
+  // kẻo đồng hồ/nộp bài của phiên đó bắt đầu ghi xuống DB.
+  if (!teacherView && tryMode) {
+    setTryMode(false);
+    if (phase !== "intro") setPhase("intro");
+  }
+  const memoryOnly = teacherView || tryMode;
   const [rpNotice, setRpNotice] = useState<StartRpNotice | null>(null);
   useEffect(() => {
-    if (!session) return;
+    if (!session || memoryOnly) return;
     let alive = true;
     fetchStartRpNotice(exam.id, itemId).then((n) => alive && setRpNotice(n)).catch(() => {});
     return () => { alive = false; };
-  }, [session, exam.id, itemId]);
+  }, [session, exam.id, itemId, memoryOnly]);
   const [responses, setResponses] = useState<QuestionResponse[]>(() =>
     emptyResponses(exam.questions),
   );
@@ -150,7 +161,7 @@ export default function ExamRunner({
   // màn hình giới thiệu, undefined = đang dò, null = không có.
   const [resumable, setResumable] = useState<OpenExamAttempt | null | undefined>(undefined);
   useEffect(() => {
-    if (!session || phase !== "intro") return;
+    if (!session || phase !== "intro" || memoryOnly) return;
     let cancelled = false;
     findOpenExamAttempt(session.user.id, exam.id).then((a) => {
       if (!cancelled) setResumable(a);
@@ -158,7 +169,7 @@ export default function ExamRunner({
     return () => {
       cancelled = true;
     };
-  }, [session, exam.id, phase]);
+  }, [session, exam.id, phase, memoryOnly]);
 
   const answeredCount = exam.questions.filter((q, i) =>
     isAnswered(q, responses[i]),
@@ -183,7 +194,7 @@ export default function ExamRunner({
   // Lưu điểm — retry-an-toàn: kiểm tra client_token đã có chưa trước khi insert,
   // để bấm "Thử lại" sau lỗi mạng không tạo thêm một lượt làm mới.
   const save = useCallback(() => {
-    if (!session) return;
+    if (!session || memoryOnly) return;
     setSaveState("saving");
     const finalResponses = responsesRef.current;
     const summary = gradeExam(exam.questions, finalResponses);
@@ -240,7 +251,7 @@ export default function ExamRunner({
         /* bảng phân tích chưa có / lỗi mạng / đã có từ lượt lưu trước — bỏ qua */
       }
     })();
-  }, [exam, session]);
+  }, [exam, session, memoryOnly]);
 
   // submit được gọi từ nút bấm và từ interval hết giờ — chuyển màn hình 1 lần rồi lưu
   const submit = useCallback(() => {
@@ -276,13 +287,14 @@ export default function ExamRunner({
   // lần ghi trước; ngoài ra cứ tối đa 2 phút ghi một lần dù không đổi để đồng hồ còn lại
   // (seconds_left) không lệch quá 2 phút khi khôi phục. Trước đây ghi vô điều kiện mỗi 15s.
   const flushProgress = useCallback((force: boolean) => {
+    if (memoryOnly) return;
     const dirty = responsesRef.current !== lastSavedResponsesRef.current;
     const stale = Date.now() - lastSavedAtRef.current >= 120_000;
     if (!force && !dirty && !stale) return;
     lastSavedResponsesRef.current = responsesRef.current;
     lastSavedAtRef.current = Date.now();
     void saveExamAttemptProgress(clientTokenRef.current, responsesRef.current, secondsLeftRef.current);
-  }, []);
+  }, [memoryOnly]);
 
   useEffect(() => {
     if (phase !== "running") return;
@@ -350,6 +362,42 @@ export default function ExamRunner({
     return () => clearTimeout(timer);
   }, [violationBanner]);
 
+  if (teacherView && !tryMode) {
+    const blanks = emptyResponses(exam.questions);
+    return (
+      <div className="mx-auto max-w-3xl">
+        <h1 className="font-display text-2xl font-bold text-ink">{exam.title}</h1>
+        <p className="mt-2 text-sm text-muted">
+          {exam.questions.length} câu · đáp án và lời giải
+        </p>
+        <Button variant="outline" className="mt-4 min-h-11" onClick={() => setTryMode(true)}>
+          Làm thử
+        </Button>
+        <div className="mt-6 space-y-6">
+          {groupQuestionIndexesByType(exam.questions).map((section) => (
+            <section key={section.type}>
+              <h2 className="mb-3 text-sm font-semibold text-muted">
+                {QUESTION_TYPE_LABELS[section.type]}
+              </h2>
+              <div className="space-y-4">
+                {section.indices.map((i) => (
+                  <QuestionCard
+                    key={i}
+                    index={i + 1}
+                    question={exam.questions[i]}
+                    response={blanks[i]}
+                    review
+                    selfCheck
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   if (phase === "intro") {
     const fullSeconds = exam.duration_minutes * 60;
     // responses lưu lại có thể lệch số câu nếu đề đã bị sửa từ lúc bắt đầu — bỏ qua cho an toàn.
@@ -358,13 +406,13 @@ export default function ExamRunner({
     const savedSecondsLeft = resumable ? Math.min(fullSeconds, resumable.secondsLeft ?? fullSeconds) : null;
 
     function beginExam() {
-      if (resumable) {
+      if (resumable && !memoryOnly) {
         clientTokenRef.current = resumable.clientToken;
         if (savedResponses) {
           responsesRef.current = savedResponses;
           setResponses(savedResponses);
         }
-      } else if (session) {
+      } else if (session && !memoryOnly) {
         void startExamAttempt(session.user.id, clientTokenRef.current, exam.id, itemId);
       }
       const startSecondsLeft = savedSecondsLeft ?? fullSeconds;
@@ -385,6 +433,11 @@ export default function ExamRunner({
           {exam.questions.length} câu · {exam.duration_minutes} phút · nộp bài
           là có điểm ngay kèm lời giải
         </p>
+        {memoryOnly && (
+          <p className="mt-2 text-sm text-muted">
+            Làm thử trên máy này — không tạo lượt làm, không ghi điểm.
+          </p>
+        )}
         <p className="mt-2 text-sm text-muted">
           Học sinh:{" "}
           <span className="font-semibold text-ink">
@@ -417,8 +470,17 @@ export default function ExamRunner({
           onClick={beginExam}
           className="mt-6 w-full py-3 transition-transform hover:-translate-y-0.5"
         >
-          {resumable ? "Làm tiếp bài đang dở" : "Bắt đầu làm bài"}
+          {resumable && !memoryOnly ? "Làm tiếp bài đang dở" : "Bắt đầu làm bài"}
         </Button>
+        {memoryOnly && (
+          <button
+            type="button"
+            onClick={() => setTryMode(false)}
+            className="mt-2 min-h-11 w-full text-sm font-semibold text-primary"
+          >
+            Xem đáp án
+          </button>
+        )}
         <p className="mt-3 text-center text-[13px] text-muted">
           Bài thi chạy toàn màn hình; rời khỏi tab hoặc thoát toàn màn hình sẽ được ghi nhận.
         </p>
@@ -616,8 +678,10 @@ export default function ExamRunner({
       minCorrect={minCorrect}
       theoryLessonId={theoryLessonId}
       usedSeconds={usedSeconds}
-      saveState={saveState}
+      saveState={memoryOnly ? "idle" : saveState}
       onRetry={save}
+      memoryOnly={memoryOnly}
+      onBackToAnswers={memoryOnly ? () => { setTryMode(false); setPhase("intro"); } : undefined}
     />
   );
 }

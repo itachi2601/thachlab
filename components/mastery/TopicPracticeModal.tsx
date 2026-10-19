@@ -6,6 +6,7 @@ import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { useTeacherView } from "@/components/auth/useTeacherView";
 import { useToast } from "@/components/ui/Toast";
 import type { PracticePick } from "@/services/lessons";
 import { markFirstPracticeDone } from "@/lib/pwa-install";
@@ -125,7 +126,9 @@ export default function TopicPracticeModal({
   onClose: () => void;
   onFinished?: () => void;
 }) {
-  const { session } = useAuth();
+  const { session, loading } = useAuth();
+  const { isTeacherView } = useTeacherView();
+  const recordProgress = !loading && !!session && !isTeacherView;
   const toast = useToast();
   const [phase, setPhase] = useState<Phase>("loading");
   const [picks, setPicks] = useState<PracticePick[]>([]);
@@ -262,19 +265,21 @@ export default function TopicPracticeModal({
     try {
       const summary = gradeExam(questions, responses);
       clientToken.current ??= crypto.randomUUID();
-      await savePracticeSession({
-        studentId: session.user.id,
-        lessonId: multi ? null : lessonId,
-        itemId: null,
-        picks,
-        responses,
-        score10: summary.score10,
-        correctCount: summary.correctCount,
-        durationSeconds: Math.min(elapsed, limit),
-        timedOut: timeUp,
-        clientToken: clientToken.current,
-      });
-      markFirstPracticeDone();
+      if (recordProgress) {
+        await savePracticeSession({
+          studentId: session.user.id,
+          lessonId: multi ? null : lessonId,
+          itemId: null,
+          picks,
+          responses,
+          score10: summary.score10,
+          correctCount: summary.correctCount,
+          durationSeconds: Math.min(elapsed, limit),
+          timedOut: timeUp,
+          clientToken: clientToken.current,
+        });
+        markFirstPracticeDone();
+      }
       if (multi) {
         const rows = buildQuestionResults(questions, responses);
         const acc = new Map<number, LessonResult>();

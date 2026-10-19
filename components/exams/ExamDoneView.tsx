@@ -44,6 +44,8 @@ export default function ExamDoneView({
   usedSeconds,
   saveState,
   onRetry,
+  memoryOnly = false,
+  onBackToAnswers,
 }: {
   exam: Exam;
   responses: QuestionResponse[];
@@ -53,6 +55,9 @@ export default function ExamDoneView({
   usedSeconds: number;
   saveState: "idle" | "saving" | "saved" | "failed";
   onRetry: () => void;
+  /** Làm thử của giáo viên: điểm chỉ nằm trên máy, không có dòng "đã ghi nhận". */
+  memoryOnly?: boolean;
+  onBackToAnswers?: () => void;
 }) {
   const { profile } = useAuth();
 
@@ -110,23 +115,31 @@ export default function ExamDoneView({
         lessonByTopic={lessonByTopic}
         detailAnchor="xem-lai-bai-lam"
       />
-      {hasEssay && (
+      {hasEssay && !memoryOnly && (
         <p className="mt-3 text-center text-xs text-warn">
           Đề có {exam.questions.filter((q) => q.type === "essay").length} câu tự luận — thầy/cô chấm xong,
           điểm sẽ được cập nhật.
         </p>
       )}
+      {memoryOnly && (
+        <p className="mt-3 text-center text-sm text-muted">Làm thử trên máy này — không ghi điểm.</p>
+      )}
 
       <div className="mt-4 flex flex-col items-center gap-2 text-center text-xs text-slate-500">
-        {saveState === "saving" && <span>Đang lưu điểm…</span>}
-        {saveState === "saved" && <span>✓ Đã ghi nhận</span>}
-        {saveState === "failed" && (
+        {!memoryOnly && saveState === "saving" && <span>Đang lưu điểm…</span>}
+        {!memoryOnly && saveState === "saved" && <span>✓ Đã ghi nhận</span>}
+        {!memoryOnly && saveState === "failed" && (
           <>
             <span className="text-red-300">Chưa lưu được điểm — kiểm tra mạng rồi thử lại, đừng tắt trang này.</span>
             <Button variant="outline" size="sm" onClick={onRetry}>
               Thử lại
             </Button>
           </>
+        )}
+        {memoryOnly && onBackToAnswers && (
+          <Button variant="outline" className="min-h-11" onClick={onBackToAnswers}>
+            Xem đáp án
+          </Button>
         )}
       </div>
 

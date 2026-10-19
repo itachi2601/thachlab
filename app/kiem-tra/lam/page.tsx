@@ -1,12 +1,14 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
 import ReadingZone from "@/components/ui/ReadingZone";
 import { useAuth } from "@/components/auth/AuthProvider";
+import TeacherViewBanner from "@/components/auth/TeacherViewBanner";
+import { useTeacherView } from "@/components/auth/useTeacherView";
 import ExamRunner from "@/components/exams/ExamRunner";
 import type { Exam } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
@@ -26,6 +28,7 @@ function readIdFromLocation(): number | null {
 
 function ExamLoader() {
   const { session, realProfile } = useAuth();
+  const { isTeacherView } = useTeacherView();
   const searchParams = useSearchParams();
   const [fallbackId, setFallbackId] = useState<number | null>(() => readIdFromLocation());
 
@@ -126,11 +129,17 @@ function ExamLoader() {
       });
   }, [session, itemId]);
 
-  if (!id)
-    return <p className="text-center text-slate-400">Thiếu mã đề trong địa chỉ.</p>;
-  if (error) return <p className="text-center text-red-400">{error}</p>;
-  if (!exam) return <p className="text-center text-slate-400">Đang tải đề…</p>;
-  return <ExamRunner exam={exam} itemId={itemId} minCorrect={minCorrect} theoryLessonId={theoryLessonId} />;
+  let body: ReactNode;
+  if (!id) body = <p className="text-center text-slate-400">Thiếu mã đề trong địa chỉ.</p>;
+  else if (error) body = <p className="text-center text-red-400">{error}</p>;
+  else if (!exam) body = <p className="text-center text-slate-400">Đang tải đề…</p>;
+  else body = <ExamRunner exam={exam} itemId={itemId} minCorrect={minCorrect} theoryLessonId={theoryLessonId} teacherView={isTeacherView} />;
+  return (
+    <>
+      <TeacherViewBanner />
+      {body}
+    </>
+  );
 }
 
 export default function TakeExamPage() {

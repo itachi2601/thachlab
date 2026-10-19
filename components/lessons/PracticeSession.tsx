@@ -134,6 +134,7 @@ export default function PracticeSession({
   passScore = null,
   color = "#F59E0B",
   onActiveChange,
+  recordProgress = true,
 }: {
   examIds: number[];
   /** Đề chung của bài (kiểm tra/thi/BTVN...) — câu của các đề này cũng vào ngân hàng luyện tập, khử trùng. */
@@ -145,6 +146,8 @@ export default function PracticeSession({
   color?: string;
   /** Báo cho trang bài: phiên đang làm dở (đã bấm Bắt đầu, chưa nộp) — trang hỏi trước khi đổi tab. */
   onActiveChange?: (active: boolean) => void;
+  /** false = chế độ giáo viên: chấm trên máy, không ghi practice_sessions. */
+  recordProgress?: boolean;
 }) {
   const { session } = useAuth();
   const [bank, setBank] = useState<PracticePick[]>([]);
@@ -244,7 +247,10 @@ export default function PracticeSession({
 
   const save = useCallback(
     (used: number, timedOut: boolean) => {
-      if (!session) return;
+      if (!session || !recordProgress) {
+        setSaveState("idle");
+        return;
+      }
       const finalPicks = picksRef.current;
       const finalResponses = responsesRef.current;
       const summary = gradeExam(
@@ -283,7 +289,7 @@ export default function PracticeSession({
         }
       });
     },
-    [session, lessonId, itemId, ladderScope],
+    [session, lessonId, itemId, ladderScope, recordProgress],
   );
 
   const submit = useCallback(
@@ -367,7 +373,7 @@ export default function PracticeSession({
     responsesRef.current = finalResponses;
     setPicks(finalPicks);
     setResponses(finalResponses);
-    if (studentId) {
+    if (studentId && recordProgress) {
       recordSpacing(
         studentId,
         items.map((i) => ({ hash: questionHash(i.pick.question), correct: i.correct })),

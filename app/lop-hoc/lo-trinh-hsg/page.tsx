@@ -6,6 +6,8 @@ import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useAuth } from "@/components/auth/AuthProvider";
+import TeacherViewBanner from "@/components/auth/TeacherViewBanner";
+import { useTeacherView } from "@/components/auth/useTeacherView";
 import { supabaseConfigured } from "@/services/supabase";
 import { fetchLessonsStatic } from "@/services/static-content";
 import { fetchMyProgressMarks, summarizeLessonProgress, type LessonWithItemRefs, type MyProgressMarks } from "@/services/lessons";
@@ -33,6 +35,7 @@ import { SessionLessons, TaskList, type LessonProgressMap } from "@/components/l
  */
 export default function LoTrinhHsgPage() {
   const { session } = useAuth();
+  const { isTeacherView } = useTeacherView();
   const userId = session?.user.id ?? null;
   const [today, setToday] = useState<string | null>(null);
   const [lessons, setLessons] = useState<LessonWithItemRefs[] | null>(null);
@@ -47,14 +50,14 @@ export default function LoTrinhHsgPage() {
   }, []);
 
   useEffect(() => {
-    if (!userId || !supabaseConfigured) return;
+    if (!userId || !supabaseConfigured || isTeacherView) return;
     setTicks(loadTicks(userId));
     fetchMyProgressMarks(userId).then(setMarks).catch(() => setMarks(null));
-  }, [userId]);
+  }, [userId, isTeacherView]);
 
   const progress: LessonProgressMap | null = useMemo(
-    () => (lessons && marks ? summarizeLessonProgress(lessons, marks) : null),
-    [lessons, marks],
+    () => (isTeacherView || !lessons || !marks ? null : summarizeLessonProgress(lessons, marks)),
+    [isTeacherView, lessons, marks],
   );
 
   const toggle = userId
@@ -76,6 +79,7 @@ export default function LoTrinhHsgPage() {
       <Navbar />
       <main className="min-h-screen w-full bg-bg">
         <div className="mx-auto w-full max-w-2xl px-4 pb-20 pt-24 sm:px-6">
+          <TeacherViewBanner />
           <Link href={HSG_HREF} className="lesson-link inline-flex min-h-11 items-center gap-1 text-sm">
             <ArrowLeft className="h-4 w-4" aria-hidden /> Khoá HSG Vật lí 9
           </Link>
