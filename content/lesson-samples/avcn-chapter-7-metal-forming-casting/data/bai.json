@@ -1,1785 +1,1791 @@
 {
- "meta": {
-  "chapter": 7,
-  "prefix": "tl7",
-  "title_en": "Metal Forming and Casting",
-  "title_vi": "Gia công kim loại bằng biến dạng và đúc",
-  "minutes": 30,
-  "muc_tieu": [
-   "Nhận ra 20 từ ⭐ (rèn, cán, uốn, đúc, khuôn, lò nung…) khi thấy ảnh hoặc đọc định nghĩa (Part 1).",
-   "Tìm được câu trả lời trong Article 1 (Metal forming) và Article 2 (Casting) để điền một từ và chọn Đúng/Sai (Part 2).",
-   "Dùng được mẫu câu <em>X involves V-ing</em> và <em>can be + V-ed</em> để dịch (Part 4–5)."
-  ],
-  "de_thi": [
-   [
-    "Part 1 · 2,5 đ",
-    "10 câu chọn từ theo định nghĩa hoặc ảnh",
-    "Mục 3 Từ vựng"
-   ],
-   [
-    "Part 2 · 2,5 đ",
-    "Đọc lại Article 1 hoặc 2, điền 1 từ + Đúng/Sai",
-    "Mục 4 Bài đọc"
-   ],
-   [
-    "Part 3 · 2 đ",
-    "Điền từ cho sẵn vào đoạn văn",
-    "Mục 7 Các bước đúc cát"
-   ],
-   [
-    "Part 4 · 2 đ",
-    "Dịch Anh → Việt",
-    "Mục 4 + mục 5 mẫu câu"
-   ],
-   [
-    "Part 5 · 1 đ",
-    "Dịch Việt → Anh một câu",
-    "Mục 5 mẫu câu"
-   ]
-  ],
-  "flashcard": "/flashcard/avcn-chapter-7.html",
-  "doan_tieu_de": "việc này tên gì?",
-  "doan_mo_dau": "Hai cảnh dưới đây em có thể đã thấy ở xưởng cơ khí hoặc xưởng đúc. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
-  "them_nhan": "biến dạng dẻo, bột kim loại, chi tiết đúc"
- },
- "khoi_dong": [
-  {
-   "img": "bending",
-   "hoi": "Chiếc máy này ép tấm thép gập thành chữ V hoặc chữ L. Quá trình này tiếng Anh gọi là gì?",
-   "lua_chon": [
-    "bending",
-    "welding",
-    "cutting"
-   ],
-   "dap": 0,
-   "fb_ok": "<em>bending</em> /ˈbendɪŋ/ là uốn, gập: lực ép làm kim loại gập đi một góc.",
-   "fb_no": "Tấm thép không bị cắt, cũng không bị hàn: nó chỉ bị ép cho gập lại. Quá trình nào làm kim loại gập một góc?"
-  },
-  {
-   "img": "casting",
-   "hoi": "Kim loại sáng rực đang được rót vào khuôn. Tiếng Anh gọi công đoạn này là gì?",
-   "lua_chon": [
-    "rolling",
-    "drilling",
-    "casting"
-   ],
-   "dap": 2,
-   "fb_ok": "<em>casting</em> /ˈkɑːstɪŋ/ là đúc: nấu chảy kim loại rồi rót vào khuôn cho đông cứng.",
-   "fb_no": "Kim loại đang ở thể lỏng và được rót vào khuôn. Quá trình nào làm như vậy?"
-  }
- ],
- "tu_vung": [
-  {
-   "ten": "Cụm A · Gia công biến dạng: nóng, nguội, cán, rèn",
-   "tu": [
-    {
-     "term": "metal-forming",
-     "ipa": "",
-     "vi": "gia công kim loại bằng biến dạng, tạo hình kim loại",
-     "def": "A process where materials get plastic deformation to obtain the required shape.",
-     "img": "metal-forming",
-     "tier": 1
-    },
-    {
-     "term": "hot-working",
-     "ipa": "",
-     "vi": "gia công nóng",
-     "def": "Plastic deformation of metals above their recrystallization temperature.",
-     "img": "hot-working",
-     "tier": 1
-    },
-    {
-     "term": "cold-working",
-     "ipa": "",
-     "vi": "gia công nguội",
-     "def": "Plastic deformation of metals below the recrystallization temperature.",
-     "img": "cold-working",
-     "tier": 1
-    },
-    {
-     "term": "rolling",
-     "ipa": "/ˈrəʊlɪŋ/",
-     "vi": "cán (kim loại)",
-     "def": "Passing metal between rollers to reduce its thickness.",
-     "img": "rolling",
-     "tier": 1
-    },
-    {
-     "term": "forging",
-     "ipa": "/ˈfɔːdʒɪŋ/",
-     "vi": "rèn",
-     "def": "The process in which metals are formed using compressive forces.",
-     "img": "forging",
-     "tier": 1
+  "meta": {
+    "chapter": 7,
+    "prefix": "tl7",
+    "title_en": "Metal Forming and Casting",
+    "title_vi": "Gia công kim loại bằng biến dạng và đúc",
+    "minutes": 30,
+    "muc_tieu": [
+      "Nhận ra 20 từ ⭐ (rèn, cán, uốn, đúc, khuôn, lò nung…) khi thấy ảnh hoặc đọc định nghĩa (Part 1).",
+      "Tìm được câu trả lời trong Article 1 (Metal forming) và Article 2 (Casting) để điền một từ và chọn Đúng/Sai (Part 2).",
+      "Dùng được mẫu câu <em>X involves V-ing</em> và <em>can be + V-ed</em> để dịch (Part 4–5)."
+    ],
+    "de_thi": [
+      [
+        "Part 1 · 2,5 đ",
+        "10 câu chọn từ theo định nghĩa hoặc ảnh",
+        "Mục 3 Từ vựng"
+      ],
+      [
+        "Part 2 · 2,5 đ",
+        "Đọc lại Article 1 hoặc 2, điền 1 từ + Đúng/Sai",
+        "Mục 4 Bài đọc"
+      ],
+      [
+        "Part 3 · 2 đ",
+        "Điền từ cho sẵn vào đoạn văn",
+        "Mục 7 Các bước đúc cát"
+      ],
+      [
+        "Part 4 · 2 đ",
+        "Dịch Anh → Việt",
+        "Mục 4 + mục 5 mẫu câu"
+      ],
+      [
+        "Part 5 · 1 đ",
+        "Dịch Việt → Anh một câu",
+        "Mục 5 mẫu câu"
+      ]
+    ],
+    "flashcard": "/flashcard/avcn-chapter-7.html",
+    "doan_tieu_de": "việc này tên gì?",
+    "doan_mo_dau": "Hai cảnh dưới đây em có thể đã thấy ở xưởng cơ khí hoặc xưởng đúc. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
+    "them_nhan": "biến dạng dẻo, bột kim loại, chi tiết đúc",
+    "boi_canh": {
+      "tieu_de": "Lời dặn của thợ cả ở xưởng đúc",
+      "tinh_huong": "Sáng nay ở xưởng đúc, em đang dọn khuôn cát thì thợ cả người nước ngoài chỉ vào bàn và nói: “Check the <strong>pattern</strong> first, then wait for the <strong>molten</strong> metal from the <strong>furnace</strong>.” Em nghe không kịp, chỉ biết gật đầu, không rõ nên kiểm tra thứ gì hay đứng chờ ở đâu.",
+      "viec_can_lam": "Nhận ra pattern, molten và furnace trong lời dặn ở xưởng đúc để biết mình phải kiểm tra mẫu đúc trước, rồi chờ kim loại lỏng từ lò nung.",
+      "quay_lai": "Giờ em hiểu thợ cả bảo kiểm tra thứ gì và chờ kim loại lỏng từ đâu chưa?"
     }
-   ],
-   "quiz": {
-    "hoi": "Part 1 hỏi: <em>\"Plastic deformation of metals below the recrystallization temperature.\"</em>",
+  },
+  "khoi_dong": [
+    {
+      "img": "bending",
+      "hoi": "Chiếc máy này ép tấm thép gập thành chữ V hoặc chữ L. Quá trình này tiếng Anh gọi là gì?",
+      "lua_chon": [
+        "bending",
+        "welding",
+        "cutting"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>bending</em> /ˈbendɪŋ/ là uốn, gập: lực ép làm kim loại gập đi một góc.",
+      "fb_no": "Tấm thép không bị cắt, cũng không bị hàn: nó chỉ bị ép cho gập lại. Quá trình nào làm kim loại gập một góc?"
+    },
+    {
+      "img": "casting",
+      "hoi": "Kim loại sáng rực đang được rót vào khuôn. Tiếng Anh gọi công đoạn này là gì?",
+      "lua_chon": [
+        "rolling",
+        "drilling",
+        "casting"
+      ],
+      "dap": 2,
+      "fb_ok": "<em>casting</em> /ˈkɑːstɪŋ/ là đúc: nấu chảy kim loại rồi rót vào khuôn cho đông cứng.",
+      "fb_no": "Kim loại đang ở thể lỏng và được rót vào khuôn. Quá trình nào làm như vậy?"
+    }
+  ],
+  "tu_vung": [
+    {
+      "ten": "Cụm A · Gia công biến dạng: nóng, nguội, cán, rèn",
+      "tu": [
+        {
+          "term": "metal-forming",
+          "ipa": "",
+          "vi": "gia công kim loại bằng biến dạng, tạo hình kim loại",
+          "def": "A process where materials get plastic deformation to obtain the required shape.",
+          "img": "metal-forming",
+          "tier": 1
+        },
+        {
+          "term": "hot-working",
+          "ipa": "",
+          "vi": "gia công nóng",
+          "def": "Plastic deformation of metals above their recrystallization temperature.",
+          "img": "hot-working",
+          "tier": 1
+        },
+        {
+          "term": "cold-working",
+          "ipa": "",
+          "vi": "gia công nguội",
+          "def": "Plastic deformation of metals below the recrystallization temperature.",
+          "img": "cold-working",
+          "tier": 1
+        },
+        {
+          "term": "rolling",
+          "ipa": "/ˈrəʊlɪŋ/",
+          "vi": "cán (kim loại)",
+          "def": "Passing metal between rollers to reduce its thickness.",
+          "img": "rolling",
+          "tier": 1
+        },
+        {
+          "term": "forging",
+          "ipa": "/ˈfɔːdʒɪŋ/",
+          "vi": "rèn",
+          "def": "The process in which metals are formed using compressive forces.",
+          "img": "forging",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"Plastic deformation of metals below the recrystallization temperature.\"</em>",
+        "lua_chon": [
+          "hot-working",
+          "cold-working",
+          "rolling",
+          "forging"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>below</em> (dưới): dưới nhiệt độ kết tinh lại là gia công nguội.",
+        "fb_no": "Gạch từ khoá <em>below</em>. Trên nhiệt độ kết tinh lại là gia công nóng, còn dưới thì gọi là gì?"
+      }
+    },
+    {
+      "ten": "Cụm B · Gia công kim loại tấm: uốn, vuốt, đột, cắt",
+      "tu": [
+        {
+          "term": "bending",
+          "ipa": "/ˈbendɪŋ/",
+          "vi": "uốn, gập",
+          "def": "A process by which metal is deformed at an angle when force is applied.",
+          "img": "bending",
+          "tier": 1
+        },
+        {
+          "term": "deep drawing",
+          "ipa": "",
+          "vi": "dập vuốt sâu",
+          "def": "A sheet metal forming process where a punch forces the sheet to pull in from the flange area.",
+          "img": "deep-drawing",
+          "tier": 1
+        },
+        {
+          "term": "spinning",
+          "ipa": "/ˈspɪnɪŋ/",
+          "vi": "ép tạo hình quay (miết)",
+          "def": "A process in which a metal disc or tube is rotated at high speed and formed into a round part.",
+          "img": "spinning",
+          "tier": 1
+        },
+        {
+          "term": "piercing",
+          "ipa": "/ˈpɪəsɪŋ/",
+          "vi": "đột lỗ",
+          "def": "A process in which a machining tool makes a round or other shaped hole in raw metal.",
+          "img": "piercing",
+          "tier": 1
+        },
+        {
+          "term": "shearing",
+          "ipa": "/ˈʃɪərɪŋ/",
+          "vi": "cắt (tấm kim loại bằng hai lưỡi cắt)",
+          "def": "Cutting sheet metal with two blades, without making chips.",
+          "img": "shearing",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A process in which a metal disc or tube is rotated at high speed and formed into a round part.\"</em>",
+        "lua_chon": [
+          "bending",
+          "spinning",
+          "piercing",
+          "shearing"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>rotated at high speed</em> (quay tốc độ cao): spinning.",
+        "fb_no": "Gạch từ khoá <em>rotated at high speed</em>. Uốn, đột lỗ, cắt đều không cần quay tròn. Quá trình nào cho đĩa kim loại quay?"
+      }
+    },
+    {
+      "ten": "Cụm C · Đúc",
+      "tu": [
+        {
+          "term": "casting",
+          "ipa": "/ˈkɑːstɪŋ/",
+          "vi": "đúc",
+          "def": "Heating metal until it is molten and pouring it into a mould.",
+          "img": "casting",
+          "tier": 1
+        },
+        {
+          "term": "sand casting",
+          "ipa": "",
+          "vi": "đúc cát",
+          "def": "A manufacturing process in which liquid metal is poured into a sand mold.",
+          "img": "sand-casting",
+          "tier": 1
+        },
+        {
+          "term": "investment casting",
+          "ipa": "",
+          "vi": "đúc sáp chảy (đúc mẫu chảy)",
+          "def": "A method of metal casting in which molten metal is poured into a mold made by means of a wax model.",
+          "img": "investment-casting",
+          "tier": 1
+        },
+        {
+          "term": "molten",
+          "ipa": "/ˈməʊltən/",
+          "vi": "nóng chảy, ở thể lỏng",
+          "def": "Melted into a liquid by heat.",
+          "img": "molten",
+          "tier": 1
+        },
+        {
+          "term": "mould",
+          "ipa": "/məʊld/",
+          "vi": "khuôn đúc (tiếng Mỹ: mold; đời thường còn là nấm mốc)",
+          "def": "A hollow shape that gives liquid metal its form.",
+          "img": "mould",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A manufacturing process in which liquid metal is poured into a sand mold.\"</em>",
+        "lua_chon": [
+          "investment casting",
+          "sand casting",
+          "forging",
+          "extrusion"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>sand mold</em> (khuôn cát): sand casting.",
+        "fb_no": "Gạch từ khoá <em>sand mold</em>. Khuôn làm bằng sáp là investment casting. Khuôn làm bằng gì thì đúc loại đó?"
+      }
+    },
+    {
+      "ten": "Cụm D · Đúc, thiêu kết, ép đùn: dụng cụ và thiết bị",
+      "tu": [
+        {
+          "term": "die",
+          "ipa": "/daɪ/",
+          "vi": "khuôn (khuôn dập, khuôn ép; đời thường: chết, con xúc xắc)",
+          "def": "A shaping tool that metal is pressed or poured into.",
+          "img": "die",
+          "tier": 1
+        },
+        {
+          "term": "pattern",
+          "ipa": "/ˈpætn/",
+          "vi": "mẫu đúc (đời thường: hoa văn)",
+          "def": "A model of the part, used to make the cavity in a sand mold.",
+          "img": "pattern",
+          "tier": 1
+        },
+        {
+          "term": "furnace",
+          "ipa": "/ˈfɜːnɪs/",
+          "vi": "lò nung (lò nấu kim loại)",
+          "def": "A very hot chamber used for heating or melting metal.",
+          "img": "furnace",
+          "tier": 1
+        },
+        {
+          "term": "sintering",
+          "ipa": "/ˈsɪntərɪŋ/",
+          "vi": "thiêu kết (nung bột kim loại cho dính lại)",
+          "def": "Heating compressed metal powder, without melting it, until the particles join together.",
+          "img": "sintering",
+          "tier": 1
+        },
+        {
+          "term": "extrusion",
+          "ipa": "/ɪkˈstruːʒn/",
+          "vi": "ép đùn",
+          "def": "Forcing heated metal through a die to make long bars or tubes.",
+          "img": "extrusion",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"Heating compressed metal powder, without melting it, until the particles join together.\"</em>",
+        "lua_chon": [
+          "extrusion",
+          "sintering",
+          "pattern",
+          "furnace"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>powder</em> (bột) và <em>without melting</em> (không nấu chảy): sintering.",
+        "fb_no": "Gạch từ khoá <em>powder</em> và <em>without melting</em>. Ép đùn dùng kim loại được nung nóng, ép qua khuôn. Quá trình nào chỉ nung bột cho dính lại?"
+      }
+    }
+  ],
+  "tu_vung_them": [
+    {
+      "term": "plastic deformation",
+      "vi": "biến dạng dẻo (đổi hình dạng vĩnh viễn, không trở lại như cũ)"
+    },
+    {
+      "term": "recrystallization temperature",
+      "vi": "nhiệt độ kết tinh lại (mốc chia gia công nóng và gia công nguội)"
+    },
+    {
+      "term": "metal powder",
+      "vi": "bột kim loại",
+      "img": "metal-powder"
+    },
+    {
+      "term": "compress",
+      "vi": "nén, ép chặt"
+    },
+    {
+      "term": "waste",
+      "vi": "phế liệu, phần thừa bỏ đi"
+    },
+    {
+      "term": "flange",
+      "vi": "mép gờ (phần rìa của tấm phôi kim loại)"
+    },
+    {
+      "term": "punch",
+      "vi": "chày đột, chày dập (đời thường: đấm)"
+    },
+    {
+      "term": "heat resistance",
+      "vi": "khả năng chịu nhiệt"
+    },
+    {
+      "term": "ingot",
+      "vi": "thỏi kim loại đúc sẵn",
+      "img": "ingot"
+    },
+    {
+      "term": "crucible",
+      "vi": "nồi nấu kim loại (chén nung)",
+      "img": "crucible"
+    },
+    {
+      "term": "anvil",
+      "vi": "đe (bệ thép để đặt phôi khi rèn)",
+      "img": "anvil"
+    },
+    {
+      "term": "pulley",
+      "vi": "ròng rọc, puly",
+      "img": "pulley"
+    },
+    {
+      "term": "propeller",
+      "vi": "chân vịt, cánh quạt",
+      "img": "propeller"
+    },
+    {
+      "term": "crankshaft",
+      "vi": "trục khuỷu",
+      "img": "crankshaft"
+    },
+    {
+      "term": "engine block",
+      "vi": "thân máy, block động cơ",
+      "img": "engine-block"
+    }
+  ],
+  "bai_doc": [
+    {
+      "ten": "Article 1 · Metal forming",
+      "cau": [
+        [
+          "<b>Metal-forming</b> processes use a remarkable property of metals — their ability to flow plastically in the solid state without concurrent deterioration of properties.",
+          "Các quá trình gia công kim loại bằng biến dạng tận dụng một đặc tính đáng chú ý của kim loại: khả năng chảy dẻo ở thể rắn mà tính chất không bị giảm sút.",
+          {
+            "doan": [
+              {
+                "tu": "Metal-forming",
+                "lua_chon": [
+                  "gia công kim loại bằng biến dạng",
+                  "đúc kim loại",
+                  "hàn kim loại"
+                ],
+                "dap": 0,
+                "giai": "metal-forming là tạo hình kim loại bằng cách làm nó biến dạng, không cần nấu chảy."
+              }
+            ],
+            "nghia": {
+              "remarkable property": "đặc tính đáng chú ý",
+              "flow plastically": "chảy dẻo (biến dạng dẻo)",
+              "solid state": "thể rắn",
+              "concurrent": "đồng thời",
+              "deterioration": "sự giảm chất lượng"
+            }
+          }
+        ],
+        [
+          "Moreover, by simply moving the metal to the desired shape, there is little or no <b>waste</b>.",
+          "Hơn nữa, chỉ cần dịch chuyển kim loại đến hình dạng mong muốn nên gần như không có phế liệu.",
+          {
+            "doan": [
+              {
+                "tu": "waste",
+                "lua_chon": [
+                  "năng lượng",
+                  "phế liệu, phần thừa",
+                  "tiếng ồn"
+                ],
+                "dap": 1,
+                "giai": "waste là phần thừa bỏ đi. Tạo hình bằng cách dịch chuyển kim loại thì gần như không có phần thừa."
+              }
+            ],
+            "nghia": {
+              "moreover": "hơn nữa",
+              "simply": "đơn giản chỉ cần",
+              "desired shape": "hình dạng mong muốn",
+              "little or no": "ít hoặc không có"
+            }
+          }
+        ],
+        [
+          "Metal-forming processes are classified into two categories: <b>hot-working</b> processes and <b>cold-working</b> processes.",
+          "Các quá trình gia công kim loại bằng biến dạng được chia thành hai nhóm: gia công nóng và gia công nguội.",
+          {
+            "doan": [
+              {
+                "tu": "hot-working",
+                "lua_chon": [
+                  "gia công nóng",
+                  "gia công nguội",
+                  "hàn nóng"
+                ],
+                "dap": 0,
+                "giai": "hot là nóng, working là gia công: hot-working là gia công nóng."
+              },
+              {
+                "tu": "cold-working",
+                "lua_chon": [
+                  "làm nguội máy",
+                  "gia công nguội",
+                  "gia công nóng"
+                ],
+                "dap": 1,
+                "giai": "cold là nguội (lạnh), cold-working là gia công nguội."
+              }
+            ],
+            "nghia": {
+              "classified into": "được chia thành",
+              "categories": "nhóm, loại"
+            }
+          }
+        ],
+        [
+          "Hot-working is defined as the <b>plastic deformation</b> of metals above their <b>recrystallization temperature</b>.",
+          "Gia công nóng được định nghĩa là sự biến dạng dẻo của kim loại ở nhiệt độ trên nhiệt độ kết tinh lại.",
+          {
+            "doan": [
+              {
+                "tu": "plastic deformation",
+                "lua_chon": [
+                  "biến dạng dẻo",
+                  "gãy vỡ",
+                  "ăn mòn"
+                ],
+                "dap": 0,
+                "giai": "plastic ở đây không phải nhựa mà là dẻo: kim loại đổi hình dạng và giữ nguyên hình dạng mới."
+              },
+              {
+                "tu": "recrystallization temperature",
+                "lua_chon": [
+                  "nhiệt độ nóng chảy",
+                  "nhiệt độ kết tinh lại",
+                  "nhiệt độ phòng"
+                ],
+                "dap": 1,
+                "giai": "recrystallization là kết tinh lại, temperature là nhiệt độ. Đây là mốc chia gia công nóng và nguội."
+              }
+            ],
+            "nghia": {
+              "is defined as": "được định nghĩa là",
+              "above": "trên"
+            }
+          }
+        ],
+        [
+          "Cold-working is the plastic deformation of metals <b>below</b> the recrystallization temperature.",
+          "Gia công nguội là sự biến dạng dẻo của kim loại ở nhiệt độ dưới nhiệt độ kết tinh lại.",
+          {
+            "doan": [
+              {
+                "tu": "below",
+                "lua_chon": [
+                  "trên",
+                  "dưới",
+                  "gần"
+                ],
+                "dap": 1,
+                "giai": "below là bên dưới, ngược nghĩa với above. Part 2 hay đục đúng chỗ này."
+              }
+            ],
+            "nghia": {
+              "plastic deformation": "biến dạng dẻo",
+              "recrystallization temperature": "nhiệt độ kết tinh lại"
+            }
+          }
+        ],
+        [
+          "In most cases of manufacturing, such cold forming is done at <b>room temperature</b>.",
+          "Trong đa số trường hợp sản xuất, việc tạo hình nguội như vậy được thực hiện ở nhiệt độ phòng.",
+          {
+            "doan": [
+              {
+                "tu": "room temperature",
+                "lua_chon": [
+                  "nhiệt độ lò",
+                  "nhiệt độ phòng",
+                  "nhiệt độ nóng chảy"
+                ],
+                "dap": 1,
+                "giai": "room là phòng, room temperature là nhiệt độ phòng, khoảng 20 đến 25 độ C."
+              }
+            ],
+            "nghia": {
+              "in most cases": "trong đa số trường hợp",
+              "manufacturing": "sản xuất, chế tạo",
+              "cold forming": "tạo hình nguội",
+              "is done": "được thực hiện"
+            }
+          }
+        ],
+        [
+          "Some of the metal-forming processes that are of major importance in modern manufacturing are: <b>rolling</b>, <b>forging</b>, <b>shearing</b>, <b>spinning</b>, <b>bending</b>, <b>drawing</b> and <b>piercing</b>.",
+          "Một số quá trình gia công biến dạng rất quan trọng trong sản xuất hiện đại là: cán, rèn, cắt tấm, ép tạo hình quay, uốn, kéo (vuốt) và đột lỗ."
+        ]
+      ],
+      "tu_khoa": {
+        "rolling": "cán (kim loại)",
+        "forging": "rèn",
+        "shearing": "cắt tấm",
+        "spinning": "ép tạo hình quay",
+        "bending": "uốn, gập",
+        "drawing": "kéo, vuốt (kéo kim loại qua khuôn)",
+        "piercing": "đột lỗ"
+      },
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Hot-working is the plastic deformation of metals ______ their recrystallization temperature.\"</em>",
+        "lua_chon": [
+          "above",
+          "below",
+          "near"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 4 của bài: <em>plastic deformation of metals above their recrystallization temperature</em>. Tìm từ khoá <em>Hot-working is defined as</em>.",
+        "fb_no": "Tìm câu có <em>Hot-working is defined as</em>. Từ nào đứng ngay trước <em>their recrystallization temperature</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Cold forming is usually done at room temperature.\"</em>",
+        "dap": true,
+        "fb_ok": "Câu này ĐÚNG. Câu 6: <em>such cold forming is done at room temperature</em>.",
+        "fb_no": "Đọc lại câu 6: tạo hình nguội thường làm ở nhiệt độ nào?"
+      }
+    },
+    {
+      "ten": "Article 2a · Casting, sintering, extrusion",
+      "cau": [
+        [
+          "Metal can be formed into shapes using heat and <b>pressure</b>.",
+          "Kim loại có thể được tạo thành các hình dạng bằng nhiệt và áp lực.",
+          {
+            "doan": [
+              {
+                "tu": "pressure",
+                "lua_chon": [
+                  "nhiệt độ",
+                  "áp suất, áp lực",
+                  "khuôn"
+                ],
+                "dap": 1,
+                "giai": "pressure là áp suất, áp lực. Kim loại được tạo hình nhờ nhiệt và áp lực."
+              }
+            ],
+            "nghia": {
+              "can be formed into": "có thể được tạo thành",
+              "shapes": "hình dạng",
+              "using": "bằng cách dùng",
+              "heat": "nhiệt"
+            }
+          }
+        ],
+        [
+          "<b>Casting</b> involves heating metal until it becomes <b>molten</b> (liquid) and pouring it, or forcing it under pressure, into a mould called a die.",
+          "Đúc gồm việc nung kim loại cho đến khi nóng chảy (ở thể lỏng) rồi rót nó, hoặc ép nó dưới áp lực, vào một khuôn gọi là die.",
+          {
+            "doan": [
+              {
+                "tu": "Casting",
+                "lua_chon": [
+                  "cán",
+                  "đúc",
+                  "hàn"
+                ],
+                "dap": 1,
+                "giai": "cast là đúc. Casting là quá trình đúc: rót kim loại lỏng vào khuôn."
+              },
+              {
+                "tu": "molten",
+                "lua_chon": [
+                  "nóng chảy, ở thể lỏng",
+                  "đông cứng",
+                  "bị gỉ"
+                ],
+                "dap": 0,
+                "giai": "molten là nóng chảy. Kim loại molten ở thể lỏng, sáng rực vì rất nóng."
+              }
+            ],
+            "nghia": {
+              "involves": "bao gồm việc",
+              "heating": "nung",
+              "pouring": "rót",
+              "forcing": "ép",
+              "mould": "khuôn",
+              "die": "khuôn (dập, ép)"
+            }
+          }
+        ],
+        [
+          "Instead of being cast, metal components can be formed by <b>sintering</b>.",
+          "Thay vì được đúc, các chi tiết kim loại có thể được tạo ra bằng thiêu kết.",
+          {
+            "doan": [
+              {
+                "tu": "sintering",
+                "lua_chon": [
+                  "thiêu kết",
+                  "nấu chảy",
+                  "hàn"
+                ],
+                "dap": 0,
+                "giai": "sintering là thiêu kết: nung bột kim loại cho các hạt dính lại mà không nấu chảy."
+              }
+            ],
+            "nghia": {
+              "instead of": "thay vì",
+              "components": "chi tiết, bộ phận",
+              "can be formed by": "có thể được tạo ra bằng"
+            }
+          }
+        ],
+        [
+          "This is done by using metal <b>powder</b> instead of molten metal.",
+          "Việc này được thực hiện bằng cách dùng bột kim loại thay cho kim loại nóng chảy.",
+          {
+            "doan": [
+              {
+                "tu": "powder",
+                "lua_chon": [
+                  "bột",
+                  "phoi",
+                  "thanh"
+                ],
+                "dap": 0,
+                "giai": "powder là bột. Metal powder là bột kim loại, rất mịn."
+              }
+            ],
+            "nghia": {
+              "this is done by": "việc này được làm bằng cách",
+              "instead of": "thay vì",
+              "molten metal": "kim loại nóng chảy"
+            }
+          }
+        ],
+        [
+          "The powder is placed in a <b>die</b> and <b>compressed</b> into a solid mass.",
+          "Bột được đặt vào khuôn rồi bị nén thành một khối đặc.",
+          {
+            "doan": [
+              {
+                "tu": "die",
+                "lua_chon": [
+                  "khuôn",
+                  "chết",
+                  "xúc xắc"
+                ],
+                "dap": 0,
+                "giai": "die đời thường là chết hoặc con xúc xắc. Ở xưởng, die là khuôn mà kim loại hoặc bột được ép vào."
+              },
+              {
+                "tu": "compressed",
+                "lua_chon": [
+                  "nở ra",
+                  "nén",
+                  "nấu chảy"
+                ],
+                "dap": 1,
+                "giai": "compress là nén, ép chặt lại. Bột bị nén thành một khối đặc."
+              }
+            ],
+            "nghia": {
+              "is placed in": "được đặt vào",
+              "solid mass": "khối đặc"
+            }
+          }
+        ],
+        [
+          "It is then heated (though not melted) until it becomes <b>sintered</b> – that is, the powder particles join together structurally, due to the heat.",
+          "Sau đó nó được nung (nhưng không bị nóng chảy) cho đến khi được thiêu kết, nghĩa là các hạt bột liên kết với nhau về mặt cấu trúc nhờ nhiệt.",
+          {
+            "doan": [
+              {
+                "tu": "sintered",
+                "lua_chon": [
+                  "bị rỉ sét",
+                  "bị cong",
+                  "được thiêu kết"
+                ],
+                "dap": 2,
+                "giai": "sintered là đã được thiêu kết (sintering là thiêu kết). Các hạt bột dính vào nhau nhờ nhiệt, không chảy."
+              }
+            ],
+            "nghia": {
+              "heated (though not melted)": "được nung (nhưng không bị chảy)",
+              "that is": "nghĩa là",
+              "particles": "hạt",
+              "join together": "liên kết lại với nhau",
+              "structurally": "về mặt cấu trúc",
+              "due to": "nhờ, do"
+            }
+          }
+        ],
+        [
+          "Metal can also be shaped by <b>extruding</b> it into long lengths.",
+          "Kim loại cũng có thể được tạo hình bằng cách ép đùn thành những đoạn dài.",
+          {
+            "doan": [
+              {
+                "tu": "extruding",
+                "lua_chon": [
+                  "cắt",
+                  "uốn",
+                  "ép đùn"
+                ],
+                "dap": 2,
+                "giai": "extrude là ép đùn: đẩy kim loại qua khuôn để ra thanh hoặc ống dài."
+              }
+            ],
+            "nghia": {
+              "also": "cũng",
+              "shaped": "được tạo hình",
+              "long lengths": "những đoạn dài"
+            }
+          }
+        ],
+        [
+          "<b>Extrusion</b> involves heating metal until it is molten, then forcing it at high pressure through a shaping tool – also called a die – to form bars or tubes, for example.",
+          "Ép đùn gồm việc nung kim loại đến khi nóng chảy, rồi ép nó ở áp suất cao qua một dụng cụ tạo hình, cũng gọi là die, để tạo ra chẳng hạn các thanh hoặc ống.",
+          {
+            "doan": [
+              {
+                "tu": "Extrusion",
+                "lua_chon": [
+                  "đúc",
+                  "rèn",
+                  "ép đùn"
+                ],
+                "dap": 2,
+                "giai": "Extrusion là ép đùn, danh từ của extrude: ép kim loại qua khuôn để ra thanh, ống."
+              }
+            ],
+            "nghia": {
+              "involves": "bao gồm việc",
+              "at high pressure": "ở áp suất cao",
+              "shaping tool": "dụng cụ tạo hình",
+              "bars": "thanh",
+              "tubes": "ống",
+              "for example": "chẳng hạn"
+            }
+          }
+        ],
+        [
+          "At the same time, the metal cools and becomes <b>solid</b>.",
+          "Đồng thời, kim loại nguội đi và trở nên rắn.",
+          {
+            "doan": [
+              {
+                "tu": "solid",
+                "lua_chon": [
+                  "lỏng",
+                  "rắn",
+                  "mềm"
+                ],
+                "dap": 1,
+                "giai": "solid là rắn (thể rắn), ngược với liquid là lỏng."
+              }
+            ],
+            "nghia": {
+              "at the same time": "đồng thời",
+              "cools": "nguội đi",
+              "becomes": "trở nên"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Sintering uses metal ______ instead of molten metal.\"</em>",
+        "lua_chon": [
+          "powder",
+          "wire",
+          "sand"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 4: <em>using metal powder instead of molten metal</em>. Sintering dùng bột kim loại.",
+        "fb_no": "Tìm câu có <em>instead of molten metal</em>. Từ nào đứng ngay sau <em>metal</em> ở đó?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"In sintering, the powder is heated until it melts.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Câu 6: <em>heated (though not melted)</em>. Bột chỉ được nung cho các hạt dính lại, không chảy.",
+        "fb_no": "Đọc lại câu 6, chú ý phần trong ngoặc <em>(though not melted)</em>."
+      }
+    },
+    {
+      "ten": "Article 2b · Sand casting",
+      "cau": [
+        [
+          "<b>Sand casting</b> is the most widely used casting process because of its <b>flexibility</b>, heat resistance, and relatively low cost.",
+          "Đúc cát là quá trình đúc được dùng rộng rãi nhất nhờ tính linh hoạt, khả năng chịu nhiệt và chi phí tương đối thấp.",
+          {
+            "doan": [
+              {
+                "tu": "Sand casting",
+                "lua_chon": [
+                  "đúc cát",
+                  "cát xây dựng",
+                  "đúc sáp"
+                ],
+                "dap": 0,
+                "giai": "sand là cát, casting là đúc: sand casting là đúc cát, đổ kim loại vào khuôn làm bằng cát."
+              },
+              {
+                "tu": "flexibility",
+                "lua_chon": [
+                  "độ cứng",
+                  "tính linh hoạt",
+                  "độ bóng"
+                ],
+                "dap": 1,
+                "giai": "flexibility là tính linh hoạt: đúc cát làm được nhiều kích cỡ và hình dạng khác nhau."
+              }
+            ],
+            "nghia": {
+              "the most widely used": "được dùng rộng rãi nhất",
+              "heat resistance": "khả năng chịu nhiệt",
+              "relatively low cost": "chi phí tương đối thấp"
+            }
+          }
+        ],
+        [
+          "The sand casting process involves the use of a <b>furnace</b>, metal, <b>pattern</b>, and sand mold.",
+          "Quá trình đúc cát cần dùng lò nung, kim loại, mẫu đúc và khuôn cát.",
+          {
+            "doan": [
+              {
+                "tu": "furnace",
+                "lua_chon": [
+                  "lò xo",
+                  "lò nung",
+                  "bếp ga"
+                ],
+                "dap": 1,
+                "giai": "furnace là lò nung, nơi nấu chảy kim loại ở nhiệt độ rất cao."
+              },
+              {
+                "tu": "pattern",
+                "lua_chon": [
+                  "hoa văn",
+                  "mẫu đúc",
+                  "đồ gá"
+                ],
+                "dap": 1,
+                "giai": "pattern đời thường là hoa văn. Trong đúc là mẫu đúc: vật mẫu giống chi tiết để tạo lòng khuôn trong cát."
+              }
+            ],
+            "nghia": {
+              "involves the use of": "cần dùng",
+              "sand mold": "khuôn cát"
+            }
+          }
+        ],
+        [
+          "The metal is melted in the furnace and then <b>ladled</b> and poured into the <b>cavity</b> of the sand mold, which is formed by the pattern.",
+          "Kim loại được nấu chảy trong lò, rồi được múc và rót vào lòng khuôn cát, lòng khuôn này được tạo ra bởi mẫu đúc.",
+          {
+            "doan": [
+              {
+                "tu": "ladled",
+                "lua_chon": [
+                  "cán mỏng",
+                  "múc, rót bằng gáo",
+                  "tán đinh"
+                ],
+                "dap": 1,
+                "giai": "ladle là cái gáo múc. Ladled là được múc bằng gáo rồi rót."
+              },
+              {
+                "tu": "cavity",
+                "lua_chon": [
+                  "sâu răng",
+                  "lòng khuôn",
+                  "vết nứt"
+                ],
+                "dap": 1,
+                "giai": "cavity đời thường là lỗ sâu ở răng. Trong đúc là lòng khuôn: hốc rỗng nơi kim loại được rót vào."
+              }
+            ],
+            "nghia": {
+              "is melted": "được nấu chảy",
+              "poured into": "rót vào",
+              "is formed by": "được tạo nên bởi"
+            }
+          }
+        ],
+        [
+          "The sand casting is used to produce a wide variety of metal components with <b>complex geometries</b>.",
+          "Đúc cát được dùng để sản xuất rất nhiều loại chi tiết kim loại có hình dạng phức tạp.",
+          {
+            "doan": [
+              {
+                "tu": "complex geometries",
+                "lua_chon": [
+                  "hình dạng phức tạp",
+                  "hình học đơn giản",
+                  "vật liệu nặng"
+                ],
+                "dap": 0,
+                "giai": "complex là phức tạp, geometries là các hình dạng. Đúc cát làm được cả chi tiết có hình dạng phức tạp."
+              }
+            ],
+            "nghia": {
+              "is used to produce": "được dùng để sản xuất",
+              "a wide variety of": "rất nhiều loại",
+              "metal components": "chi tiết kim loại"
+            }
+          }
+        ],
+        [
+          "These parts can vary greatly in size and weight, ranging from a couple <b>ounces</b> to several <b>tons</b>.",
+          "Các chi tiết này có thể rất khác nhau về kích thước và khối lượng, từ vài ounce đến vài tấn.",
+          {
+            "doan": [
+              {
+                "tu": "ounces",
+                "lua_chon": [
+                  "đơn vị khối lượng nhỏ",
+                  "đơn vị chiều dài",
+                  "đơn vị nhiệt độ"
+                ],
+                "dap": 0,
+                "giai": "ounce là đơn vị khối lượng nhỏ (khoảng 28 gam). A couple ounces là vài ounce."
+              },
+              {
+                "tu": "tons",
+                "lua_chon": [
+                  "tấn",
+                  "tuần",
+                  "tấm"
+                ],
+                "dap": 0,
+                "giai": "ton là tấn (1000 kg). Several tons là vài tấn: chi tiết rất nặng."
+              }
+            ],
+            "nghia": {
+              "vary greatly": "khác nhau rất nhiều",
+              "size and weight": "kích thước và khối lượng",
+              "ranging from … to …": "từ … đến …",
+              "a couple": "vài"
+            }
+          }
+        ],
+        [
+          "Some smaller sand cast parts include components as <b>gears</b>, <b>pulleys</b>, crankshafts, connecting rods, and propellers.",
+          "Một số chi tiết đúc cát nhỏ hơn gồm các bộ phận như bánh răng, puly, trục khuỷu, thanh truyền và chân vịt.",
+          {
+            "doan": [
+              {
+                "tu": "gears",
+                "lua_chon": [
+                  "ống dẫn",
+                  "bánh răng",
+                  "khớp nối"
+                ],
+                "dap": 1,
+                "giai": "gear là bánh răng, bộ phận truyền chuyển động có răng."
+              },
+              {
+                "tu": "pulleys",
+                "lua_chon": [
+                  "bu lông",
+                  "cánh quạt",
+                  "ròng rọc (puly)"
+                ],
+                "dap": 2,
+                "giai": "pulley là ròng rọc, puly: bánh có rãnh để quấn dây hoặc đai."
+              }
+            ],
+            "nghia": {
+              "smaller": "nhỏ hơn",
+              "include": "gồm",
+              "crankshafts": "trục khuỷu",
+              "connecting rods": "thanh truyền",
+              "propellers": "chân vịt, cánh quạt"
+            }
+          }
+        ],
+        [
+          "Larger applications include <b>housings</b> for large equipment and heavy machine bases.",
+          "Các ứng dụng lớn hơn gồm vỏ cho thiết bị lớn và bệ của máy nặng.",
+          {
+            "doan": [
+              {
+                "tu": "housings",
+                "lua_chon": [
+                  "nhà ở",
+                  "vỏ máy, hộp che",
+                  "giá treo"
+                ],
+                "dap": 1,
+                "giai": "housing đời thường là nhà ở. Trong cơ khí là vỏ máy, hộp che thiết bị."
+              }
+            ],
+            "nghia": {
+              "larger applications": "ứng dụng lớn hơn",
+              "equipment": "thiết bị",
+              "heavy machine bases": "bệ máy nặng"
+            }
+          }
+        ],
+        [
+          "Sand casting is also common in producing automobile components, such as <b>engine blocks</b>, engine manifolds, cylinder heads, and transmission cases.",
+          "Đúc cát cũng phổ biến khi sản xuất các chi tiết ô tô, như thân máy, ống góp, nắp xi lanh và vỏ hộp số.",
+          {
+            "doan": [
+              {
+                "tu": "engine blocks",
+                "lua_chon": [
+                  "vô lăng",
+                  "thân máy (block động cơ)",
+                  "lốp xe"
+                ],
+                "dap": 1,
+                "giai": "engine block là thân máy, khối kim loại lớn chứa các xi lanh của động cơ."
+              }
+            ],
+            "nghia": {
+              "is also common in": "cũng phổ biến trong",
+              "producing": "sản xuất",
+              "automobile components": "chi tiết ô tô",
+              "engine manifolds": "ống góp động cơ",
+              "cylinder heads": "nắp xi lanh (mặt máy)",
+              "transmission cases": "vỏ hộp số"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Sand casting is the most widely used casting process because of its flexibility, heat resistance, and relatively low ______.\"</em>",
+        "lua_chon": [
+          "cost",
+          "weight",
+          "speed"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 1 của bài: <em>flexibility, heat resistance, and relatively low cost</em>.",
+        "fb_no": "Tìm câu đầu tiên của bài. Từ nào đứng ngay sau <em>relatively low</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Sand casting can only make very small parts.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Câu 5: <em>ranging from a couple ounces to several tons</em>: từ rất nhẹ đến rất nặng.",
+        "fb_no": "Đọc lại câu 5: chi tiết đúc cát có kích thước và khối lượng thế nào?"
+      }
+    }
+  ],
+  "bang": {
+    "ten": "Phương pháp nào cần gì? (Article 1 và 2, hay ra Đúng/Sai)",
+    "cot": [
+      "Process",
+      "Ghi nhớ"
+    ],
+    "hang": [
+      [
+        "hot-working",
+        "<strong>above</strong> recrystallization temperature"
+      ],
+      [
+        "cold-working",
+        "<strong>below</strong> recrystallization temperature<br>thường ở nhiệt độ phòng"
+      ],
+      [
+        "casting",
+        "kim loại <strong>molten</strong> + <strong>die</strong> (mould)<br>rót vào, hoặc ép dưới áp lực"
+      ],
+      [
+        "sintering",
+        "<strong>metal powder</strong> + die<br>nung nhưng <strong>không chảy</strong>"
+      ],
+      [
+        "extrusion",
+        "kim loại molten ép ở <strong>high pressure</strong> qua die<br>ra thanh, ống dài"
+      ]
+    ]
+  },
+  "mau_cau": [
+    {
+      "ten": "Mẫu 1 · X involves V-ing (X bao gồm việc… / X cần…)",
+      "vd": [
+        [
+          "Casting involves heating metal until it becomes molten.",
+          "Đúc bao gồm việc nung kim loại cho đến khi nó nóng chảy."
+        ],
+        [
+          "Extrusion involves heating metal and forcing it through a die.",
+          "Ép đùn gồm việc nung kim loại rồi ép nó qua khuôn."
+        ],
+        [
+          "The sand casting process involves the use of a furnace, metal, pattern, and sand mold.",
+          "Quá trình đúc cát cần dùng lò nung, kim loại, mẫu đúc và khuôn cát."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>X + involves + V-ing</strong> (hoặc + danh từ).",
+        "Dịch: \"X bao gồm việc…\" hoặc \"X cần…\".",
+        "Part 5 hay cho câu mô tả một quá trình: dùng mẫu này."
+      ]
+    },
+    {
+      "ten": "Mẫu 2 · can be + V-ed (có thể được…)",
+      "vd": [
+        [
+          "Metal can be formed into shapes using heat and pressure.",
+          "Kim loại có thể được tạo thành các hình dạng bằng nhiệt và áp lực."
+        ],
+        [
+          "Metal can also be shaped by extruding it into long lengths.",
+          "Kim loại cũng có thể được tạo hình bằng cách ép đùn thành những đoạn dài."
+        ],
+        [
+          "Metal components can be formed by sintering.",
+          "Các chi tiết kim loại có thể được tạo ra bằng thiêu kết."
+        ]
+      ],
+      "ghi_chu": [
+        "Thấy <strong>can be + V-ed</strong> → dịch \"có thể được…\".",
+        "<strong>using + thứ dùng</strong> → dịch \"bằng…\".",
+        "<strong>by + V-ing</strong> → dịch \"bằng cách…\"."
+      ]
+    }
+  ],
+  "gan_nhan": {
+    "svg": "sand_mold_diagram.svg",
+    "tieu_de": "Khuôn cát: gọi tên 7 bộ phận",
+    "mo_ta": "Bài Listening và Article 2 tả các bộ phận này. Nhìn hình, tự gọi tên 7 bộ phận trước, rồi mở đáp án.",
+    "chu_thich": "Mặt cắt khuôn cát khi đang rót kim loại. 7 bộ phận đánh số.",
+    "bo_phan": [
+      [
+        "cope",
+        "hộp khuôn trên (nửa khuôn trên)"
+      ],
+      [
+        "drag",
+        "hộp khuôn dưới (nửa khuôn dưới)"
+      ],
+      [
+        "sand",
+        "cát đầm chặt trong khuôn"
+      ],
+      [
+        "cavity",
+        "lòng khuôn, nơi kim loại được rót vào"
+      ],
+      [
+        "sprue",
+        "lỗ rót, đường rót thẳng đứng"
+      ],
+      [
+        "gate",
+        "rãnh dẫn kim loại vào lòng khuôn"
+      ],
+      [
+        "ladle",
+        "gáo rót kim loại nóng chảy"
+      ]
+    ],
+    "hoi": "Bộ phận số 6 (rãnh nhỏ nối lỗ rót với lòng khuôn) tên là gì?",
     "lua_chon": [
-     "hot-working",
-     "cold-working",
-     "rolling",
-     "forging"
+      "sprue",
+      "gate",
+      "cavity",
+      "cope"
     ],
     "dap": 1,
-    "fb_ok": "Từ khoá <em>below</em> (dưới): dưới nhiệt độ kết tinh lại là gia công nguội.",
-    "fb_no": "Gạch từ khoá <em>below</em>. Trên nhiệt độ kết tinh lại là gia công nóng, còn dưới thì gọi là gì?"
-   }
+    "fb_ok": "<em>gate</em> là rãnh dẫn kim loại từ lỗ rót (sprue) vào lòng khuôn (cavity).",
+    "fb_no": "Sprue là đường rót đi thẳng xuống. Rãnh nằm ngang nối nó với lòng khuôn là bộ phận nào?"
   },
-  {
-   "ten": "Cụm B · Gia công kim loại tấm: uốn, vuốt, đột, cắt",
-   "tu": [
-    {
-     "term": "bending",
-     "ipa": "/ˈbendɪŋ/",
-     "vi": "uốn, gập",
-     "def": "A process by which metal is deformed at an angle when force is applied.",
-     "img": "bending",
-     "tier": 1
-    },
-    {
-     "term": "deep drawing",
-     "ipa": "",
-     "vi": "dập vuốt sâu",
-     "def": "A sheet metal forming process where a punch forces the sheet to pull in from the flange area.",
-     "img": "deep-drawing",
-     "tier": 1
-    },
-    {
-     "term": "spinning",
-     "ipa": "/ˈspɪnɪŋ/",
-     "vi": "ép tạo hình quay (miết)",
-     "def": "A process in which a metal disc or tube is rotated at high speed and formed into a round part.",
-     "img": "spinning",
-     "tier": 1
-    },
-    {
-     "term": "piercing",
-     "ipa": "/ˈpɪəsɪŋ/",
-     "vi": "đột lỗ",
-     "def": "A process in which a machining tool makes a round or other shaped hole in raw metal.",
-     "img": "piercing",
-     "tier": 1
-    },
-    {
-     "term": "shearing",
-     "ipa": "/ˈʃɪərɪŋ/",
-     "vi": "cắt (tấm kim loại bằng hai lưỡi cắt)",
-     "def": "Cutting sheet metal with two blades, without making chips.",
-     "img": "shearing",
-     "tier": 1
-    }
-   ],
-   "quiz": {
-    "hoi": "Part 1 hỏi: <em>\"A process in which a metal disc or tube is rotated at high speed and formed into a round part.\"</em>",
-    "lua_chon": [
-     "bending",
-     "spinning",
-     "piercing",
-     "shearing"
-    ],
-    "dap": 1,
-    "fb_ok": "Từ khoá <em>rotated at high speed</em> (quay tốc độ cao): spinning.",
-    "fb_no": "Gạch từ khoá <em>rotated at high speed</em>. Uốn, đột lỗ, cắt đều không cần quay tròn. Quá trình nào cho đĩa kim loại quay?"
-   }
-  },
-  {
-   "ten": "Cụm C · Đúc",
-   "tu": [
-    {
-     "term": "casting",
-     "ipa": "/ˈkɑːstɪŋ/",
-     "vi": "đúc",
-     "def": "Heating metal until it is molten and pouring it into a mould.",
-     "img": "casting",
-     "tier": 1
-    },
-    {
-     "term": "sand casting",
-     "ipa": "",
-     "vi": "đúc cát",
-     "def": "A manufacturing process in which liquid metal is poured into a sand mold.",
-     "img": "sand-casting",
-     "tier": 1
-    },
-    {
-     "term": "investment casting",
-     "ipa": "",
-     "vi": "đúc sáp chảy (đúc mẫu chảy)",
-     "def": "A method of metal casting in which molten metal is poured into a mold made by means of a wax model.",
-     "img": "investment-casting",
-     "tier": 1
-    },
-    {
-     "term": "molten",
-     "ipa": "/ˈməʊltən/",
-     "vi": "nóng chảy, ở thể lỏng",
-     "def": "Melted into a liquid by heat.",
-     "img": "molten",
-     "tier": 1
-    },
-    {
-     "term": "mould",
-     "ipa": "/məʊld/",
-     "vi": "khuôn đúc (tiếng Mỹ: mold; đời thường còn là nấm mốc)",
-     "def": "A hollow shape that gives liquid metal its form.",
-     "img": "mould",
-     "tier": 1
-    }
-   ],
-   "quiz": {
-    "hoi": "Part 1 hỏi: <em>\"A manufacturing process in which liquid metal is poured into a sand mold.\"</em>",
-    "lua_chon": [
-     "investment casting",
-     "sand casting",
-     "forging",
-     "extrusion"
-    ],
-    "dap": 1,
-    "fb_ok": "Từ khoá <em>sand mold</em> (khuôn cát): sand casting.",
-    "fb_no": "Gạch từ khoá <em>sand mold</em>. Khuôn làm bằng sáp là investment casting. Khuôn làm bằng gì thì đúc loại đó?"
-   }
-  },
-  {
-   "ten": "Cụm D · Đúc, thiêu kết, ép đùn: dụng cụ và thiết bị",
-   "tu": [
-    {
-     "term": "die",
-     "ipa": "/daɪ/",
-     "vi": "khuôn (khuôn dập, khuôn ép; đời thường: chết, con xúc xắc)",
-     "def": "A shaping tool that metal is pressed or poured into.",
-     "img": "die",
-     "tier": 1
-    },
-    {
-     "term": "pattern",
-     "ipa": "/ˈpætn/",
-     "vi": "mẫu đúc (đời thường: hoa văn)",
-     "def": "A model of the part, used to make the cavity in a sand mold.",
-     "img": "pattern",
-     "tier": 1
-    },
-    {
-     "term": "furnace",
-     "ipa": "/ˈfɜːnɪs/",
-     "vi": "lò nung (lò nấu kim loại)",
-     "def": "A very hot chamber used for heating or melting metal.",
-     "img": "furnace",
-     "tier": 1
-    },
-    {
-     "term": "sintering",
-     "ipa": "/ˈsɪntərɪŋ/",
-     "vi": "thiêu kết (nung bột kim loại cho dính lại)",
-     "def": "Heating compressed metal powder, without melting it, until the particles join together.",
-     "img": "sintering",
-     "tier": 1
-    },
-    {
-     "term": "extrusion",
-     "ipa": "/ɪkˈstruːʒn/",
-     "vi": "ép đùn",
-     "def": "Forcing heated metal through a die to make long bars or tubes.",
-     "img": "extrusion",
-     "tier": 1
-    }
-   ],
-   "quiz": {
-    "hoi": "Part 1 hỏi: <em>\"Heating compressed metal powder, without melting it, until the particles join together.\"</em>",
-    "lua_chon": [
-     "extrusion",
-     "sintering",
-     "pattern",
-     "furnace"
-    ],
-    "dap": 1,
-    "fb_ok": "Từ khoá <em>powder</em> (bột) và <em>without melting</em> (không nấu chảy): sintering.",
-    "fb_no": "Gạch từ khoá <em>powder</em> và <em>without melting</em>. Ép đùn dùng kim loại được nung nóng, ép qua khuôn. Quá trình nào chỉ nung bột cho dính lại?"
-   }
-  }
- ],
- "tu_vung_them": [
-  {
-   "term": "plastic deformation",
-   "vi": "biến dạng dẻo (đổi hình dạng vĩnh viễn, không trở lại như cũ)"
-  },
-  {
-   "term": "recrystallization temperature",
-   "vi": "nhiệt độ kết tinh lại (mốc chia gia công nóng và gia công nguội)"
-  },
-  {
-   "term": "metal powder",
-   "vi": "bột kim loại",
-   "img": "metal-powder"
-  },
-  {
-   "term": "compress",
-   "vi": "nén, ép chặt"
-  },
-  {
-   "term": "waste",
-   "vi": "phế liệu, phần thừa bỏ đi"
-  },
-  {
-   "term": "flange",
-   "vi": "mép gờ (phần rìa của tấm phôi kim loại)"
-  },
-  {
-   "term": "punch",
-   "vi": "chày đột, chày dập (đời thường: đấm)"
-  },
-  {
-   "term": "heat resistance",
-   "vi": "khả năng chịu nhiệt"
-  },
-  {
-   "term": "ingot",
-   "vi": "thỏi kim loại đúc sẵn",
-   "img": "ingot"
-  },
-  {
-   "term": "crucible",
-   "vi": "nồi nấu kim loại (chén nung)",
-   "img": "crucible"
-  },
-  {
-   "term": "anvil",
-   "vi": "đe (bệ thép để đặt phôi khi rèn)",
-   "img": "anvil"
-  },
-  {
-   "term": "pulley",
-   "vi": "ròng rọc, puly",
-   "img": "pulley"
-  },
-  {
-   "term": "propeller",
-   "vi": "chân vịt, cánh quạt",
-   "img": "propeller"
-  },
-  {
-   "term": "crankshaft",
-   "vi": "trục khuỷu",
-   "img": "crankshaft"
-  },
-  {
-   "term": "engine block",
-   "vi": "thân máy, block động cơ",
-   "img": "engine-block"
-  }
- ],
- "bai_doc": [
-  {
-   "ten": "Article 1 · Metal forming",
-   "cau": [
-    [
-     "<b>Metal-forming</b> processes use a remarkable property of metals — their ability to flow plastically in the solid state without concurrent deterioration of properties.",
-     "Các quá trình gia công kim loại bằng biến dạng tận dụng một đặc tính đáng chú ý của kim loại: khả năng chảy dẻo ở thể rắn mà tính chất không bị giảm sút.",
-     {
-      "doan": [
-       {
-        "tu": "Metal-forming",
-        "lua_chon": [
-         "gia công kim loại bằng biến dạng",
-         "đúc kim loại",
-         "hàn kim loại"
-        ],
-        "dap": 0,
-        "giai": "metal-forming là tạo hình kim loại bằng cách làm nó biến dạng, không cần nấu chảy."
-       }
-      ],
-      "nghia": {
-       "remarkable property": "đặc tính đáng chú ý",
-       "flow plastically": "chảy dẻo (biến dạng dẻo)",
-       "solid state": "thể rắn",
-       "concurrent": "đồng thời",
-       "deterioration": "sự giảm chất lượng"
-      }
-     }
-    ],
-    [
-     "Moreover, by simply moving the metal to the desired shape, there is little or no <b>waste</b>.",
-     "Hơn nữa, chỉ cần dịch chuyển kim loại đến hình dạng mong muốn nên gần như không có phế liệu.",
-     {
-      "doan": [
-       {
-        "tu": "waste",
-        "lua_chon": [
-         "năng lượng",
-         "phế liệu, phần thừa",
-         "tiếng ồn"
-        ],
-        "dap": 1,
-        "giai": "waste là phần thừa bỏ đi. Tạo hình bằng cách dịch chuyển kim loại thì gần như không có phần thừa."
-       }
-      ],
-      "nghia": {
-       "moreover": "hơn nữa",
-       "simply": "đơn giản chỉ cần",
-       "desired shape": "hình dạng mong muốn",
-       "little or no": "ít hoặc không có"
-      }
-     }
-    ],
-    [
-     "Metal-forming processes are classified into two categories: <b>hot-working</b> processes and <b>cold-working</b> processes.",
-     "Các quá trình gia công kim loại bằng biến dạng được chia thành hai nhóm: gia công nóng và gia công nguội.",
-     {
-      "doan": [
-       {
-        "tu": "hot-working",
-        "lua_chon": [
-         "gia công nóng",
-         "gia công nguội",
-         "hàn nóng"
-        ],
-        "dap": 0,
-        "giai": "hot là nóng, working là gia công: hot-working là gia công nóng."
-       },
-       {
-        "tu": "cold-working",
-        "lua_chon": [
-         "làm nguội máy",
-         "gia công nguội",
-         "gia công nóng"
-        ],
-        "dap": 1,
-        "giai": "cold là nguội (lạnh), cold-working là gia công nguội."
-       }
-      ],
-      "nghia": {
-       "classified into": "được chia thành",
-       "categories": "nhóm, loại"
-      }
-     }
-    ],
-    [
-     "Hot-working is defined as the <b>plastic deformation</b> of metals above their <b>recrystallization temperature</b>.",
-     "Gia công nóng được định nghĩa là sự biến dạng dẻo của kim loại ở nhiệt độ trên nhiệt độ kết tinh lại.",
-     {
-      "doan": [
-       {
-        "tu": "plastic deformation",
-        "lua_chon": [
-         "biến dạng dẻo",
-         "gãy vỡ",
-         "ăn mòn"
-        ],
-        "dap": 0,
-        "giai": "plastic ở đây không phải nhựa mà là dẻo: kim loại đổi hình dạng và giữ nguyên hình dạng mới."
-       },
-       {
-        "tu": "recrystallization temperature",
-        "lua_chon": [
-         "nhiệt độ nóng chảy",
-         "nhiệt độ kết tinh lại",
-         "nhiệt độ phòng"
-        ],
-        "dap": 1,
-        "giai": "recrystallization là kết tinh lại, temperature là nhiệt độ. Đây là mốc chia gia công nóng và nguội."
-       }
-      ],
-      "nghia": {
-       "is defined as": "được định nghĩa là",
-       "above": "trên"
-      }
-     }
-    ],
-    [
-     "Cold-working is the plastic deformation of metals <b>below</b> the recrystallization temperature.",
-     "Gia công nguội là sự biến dạng dẻo của kim loại ở nhiệt độ dưới nhiệt độ kết tinh lại.",
-     {
-      "doan": [
-       {
-        "tu": "below",
-        "lua_chon": [
-         "trên",
-         "dưới",
-         "gần"
-        ],
-        "dap": 1,
-        "giai": "below là bên dưới, ngược nghĩa với above. Part 2 hay đục đúng chỗ này."
-       }
-      ],
-      "nghia": {
-       "plastic deformation": "biến dạng dẻo",
-       "recrystallization temperature": "nhiệt độ kết tinh lại"
-      }
-     }
-    ],
-    [
-     "In most cases of manufacturing, such cold forming is done at <b>room temperature</b>.",
-     "Trong đa số trường hợp sản xuất, việc tạo hình nguội như vậy được thực hiện ở nhiệt độ phòng.",
-     {
-      "doan": [
-       {
-        "tu": "room temperature",
-        "lua_chon": [
-         "nhiệt độ lò",
-         "nhiệt độ phòng",
-         "nhiệt độ nóng chảy"
-        ],
-        "dap": 1,
-        "giai": "room là phòng, room temperature là nhiệt độ phòng, khoảng 20 đến 25 độ C."
-       }
-      ],
-      "nghia": {
-       "in most cases": "trong đa số trường hợp",
-       "manufacturing": "sản xuất, chế tạo",
-       "cold forming": "tạo hình nguội",
-       "is done": "được thực hiện"
-      }
-     }
-    ],
-    [
-     "Some of the metal-forming processes that are of major importance in modern manufacturing are: <b>rolling</b>, <b>forging</b>, <b>shearing</b>, <b>spinning</b>, <b>bending</b>, <b>drawing</b> and <b>piercing</b>.",
-     "Một số quá trình gia công biến dạng rất quan trọng trong sản xuất hiện đại là: cán, rèn, cắt tấm, ép tạo hình quay, uốn, kéo (vuốt) và đột lỗ."
-    ]
-   ],
-   "tu_khoa": {
-    "rolling": "cán (kim loại)",
-    "forging": "rèn",
-    "shearing": "cắt tấm",
-    "spinning": "ép tạo hình quay",
-    "bending": "uốn, gập",
-    "drawing": "kéo, vuốt (kéo kim loại qua khuôn)",
-    "piercing": "đột lỗ"
-   },
-   "quiz": {
-    "hoi": "Part 2.1 điền một từ: <em>\"Hot-working is the plastic deformation of metals ______ their recrystallization temperature.\"</em>",
-    "lua_chon": [
-     "above",
-     "below",
-     "near"
-    ],
-    "dap": 0,
-    "fb_ok": "Câu 4 của bài: <em>plastic deformation of metals above their recrystallization temperature</em>. Tìm từ khoá <em>Hot-working is defined as</em>.",
-    "fb_no": "Tìm câu có <em>Hot-working is defined as</em>. Từ nào đứng ngay trước <em>their recrystallization temperature</em>?"
-   },
-   "dung_sai": {
-    "hoi": "Part 2.2 Đúng/Sai: <em>\"Cold forming is usually done at room temperature.\"</em>",
-    "dap": true,
-    "fb_ok": "Câu này ĐÚNG. Câu 6: <em>such cold forming is done at room temperature</em>.",
-    "fb_no": "Đọc lại câu 6: tạo hình nguội thường làm ở nhiệt độ nào?"
-   }
-  },
-  {
-   "ten": "Article 2a · Casting, sintering, extrusion",
-   "cau": [
-    [
-     "Metal can be formed into shapes using heat and <b>pressure</b>.",
-     "Kim loại có thể được tạo thành các hình dạng bằng nhiệt và áp lực.",
-     {
-      "doan": [
-       {
-        "tu": "pressure",
-        "lua_chon": [
-         "nhiệt độ",
-         "áp suất, áp lực",
-         "khuôn"
-        ],
-        "dap": 1,
-        "giai": "pressure là áp suất, áp lực. Kim loại được tạo hình nhờ nhiệt và áp lực."
-       }
-      ],
-      "nghia": {
-       "can be formed into": "có thể được tạo thành",
-       "shapes": "hình dạng",
-       "using": "bằng cách dùng",
-       "heat": "nhiệt"
-      }
-     }
-    ],
-    [
-     "<b>Casting</b> involves heating metal until it becomes <b>molten</b> (liquid) and pouring it, or forcing it under pressure, into a mould called a die.",
-     "Đúc gồm việc nung kim loại cho đến khi nóng chảy (ở thể lỏng) rồi rót nó, hoặc ép nó dưới áp lực, vào một khuôn gọi là die.",
-     {
-      "doan": [
-       {
-        "tu": "Casting",
-        "lua_chon": [
-         "cán",
-         "đúc",
-         "hàn"
-        ],
-        "dap": 1,
-        "giai": "cast là đúc. Casting là quá trình đúc: rót kim loại lỏng vào khuôn."
-       },
-       {
-        "tu": "molten",
-        "lua_chon": [
-         "nóng chảy, ở thể lỏng",
-         "đông cứng",
-         "bị gỉ"
-        ],
-        "dap": 0,
-        "giai": "molten là nóng chảy. Kim loại molten ở thể lỏng, sáng rực vì rất nóng."
-       }
-      ],
-      "nghia": {
-       "involves": "bao gồm việc",
-       "heating": "nung",
-       "pouring": "rót",
-       "forcing": "ép",
-       "mould": "khuôn",
-       "die": "khuôn (dập, ép)"
-      }
-     }
-    ],
-    [
-     "Instead of being cast, metal components can be formed by <b>sintering</b>.",
-     "Thay vì được đúc, các chi tiết kim loại có thể được tạo ra bằng thiêu kết.",
-     {
-      "doan": [
-       {
-        "tu": "sintering",
-        "lua_chon": [
-         "thiêu kết",
-         "nấu chảy",
-         "hàn"
-        ],
-        "dap": 0,
-        "giai": "sintering là thiêu kết: nung bột kim loại cho các hạt dính lại mà không nấu chảy."
-       }
-      ],
-      "nghia": {
-       "instead of": "thay vì",
-       "components": "chi tiết, bộ phận",
-       "can be formed by": "có thể được tạo ra bằng"
-      }
-     }
-    ],
-    [
-     "This is done by using metal <b>powder</b> instead of molten metal.",
-     "Việc này được thực hiện bằng cách dùng bột kim loại thay cho kim loại nóng chảy.",
-     {
-      "doan": [
-       {
-        "tu": "powder",
-        "lua_chon": [
-         "bột",
-         "phoi",
-         "thanh"
-        ],
-        "dap": 0,
-        "giai": "powder là bột. Metal powder là bột kim loại, rất mịn."
-       }
-      ],
-      "nghia": {
-       "this is done by": "việc này được làm bằng cách",
-       "instead of": "thay vì",
-       "molten metal": "kim loại nóng chảy"
-      }
-     }
-    ],
-    [
-     "The powder is placed in a <b>die</b> and <b>compressed</b> into a solid mass.",
-     "Bột được đặt vào khuôn rồi bị nén thành một khối đặc.",
-     {
-      "doan": [
-       {
-        "tu": "die",
-        "lua_chon": [
-         "khuôn",
-         "chết",
-         "xúc xắc"
-        ],
-        "dap": 0,
-        "giai": "die đời thường là chết hoặc con xúc xắc. Ở xưởng, die là khuôn mà kim loại hoặc bột được ép vào."
-       },
-       {
-        "tu": "compressed",
-        "lua_chon": [
-         "nở ra",
-         "nén",
-         "nấu chảy"
-        ],
-        "dap": 1,
-        "giai": "compress là nén, ép chặt lại. Bột bị nén thành một khối đặc."
-       }
-      ],
-      "nghia": {
-       "is placed in": "được đặt vào",
-       "solid mass": "khối đặc"
-      }
-     }
-    ],
-    [
-     "It is then heated (though not melted) until it becomes <b>sintered</b> – that is, the powder particles join together structurally, due to the heat.",
-     "Sau đó nó được nung (nhưng không bị nóng chảy) cho đến khi được thiêu kết, nghĩa là các hạt bột liên kết với nhau về mặt cấu trúc nhờ nhiệt.",
-     {
-      "doan": [
-       {
-        "tu": "sintered",
-        "lua_chon": [
-         "bị rỉ sét",
-         "bị cong",
-         "được thiêu kết"
-        ],
-        "dap": 2,
-        "giai": "sintered là đã được thiêu kết (sintering là thiêu kết). Các hạt bột dính vào nhau nhờ nhiệt, không chảy."
-       }
-      ],
-      "nghia": {
-       "heated (though not melted)": "được nung (nhưng không bị chảy)",
-       "that is": "nghĩa là",
-       "particles": "hạt",
-       "join together": "liên kết lại với nhau",
-       "structurally": "về mặt cấu trúc",
-       "due to": "nhờ, do"
-      }
-     }
-    ],
-    [
-     "Metal can also be shaped by <b>extruding</b> it into long lengths.",
-     "Kim loại cũng có thể được tạo hình bằng cách ép đùn thành những đoạn dài.",
-     {
-      "doan": [
-       {
-        "tu": "extruding",
-        "lua_chon": [
-         "cắt",
-         "uốn",
-         "ép đùn"
-        ],
-        "dap": 2,
-        "giai": "extrude là ép đùn: đẩy kim loại qua khuôn để ra thanh hoặc ống dài."
-       }
-      ],
-      "nghia": {
-       "also": "cũng",
-       "shaped": "được tạo hình",
-       "long lengths": "những đoạn dài"
-      }
-     }
-    ],
-    [
-     "<b>Extrusion</b> involves heating metal until it is molten, then forcing it at high pressure through a shaping tool – also called a die – to form bars or tubes, for example.",
-     "Ép đùn gồm việc nung kim loại đến khi nóng chảy, rồi ép nó ở áp suất cao qua một dụng cụ tạo hình, cũng gọi là die, để tạo ra chẳng hạn các thanh hoặc ống.",
-     {
-      "doan": [
-       {
-        "tu": "Extrusion",
-        "lua_chon": [
-         "đúc",
-         "rèn",
-         "ép đùn"
-        ],
-        "dap": 2,
-        "giai": "Extrusion là ép đùn, danh từ của extrude: ép kim loại qua khuôn để ra thanh, ống."
-       }
-      ],
-      "nghia": {
-       "involves": "bao gồm việc",
-       "at high pressure": "ở áp suất cao",
-       "shaping tool": "dụng cụ tạo hình",
-       "bars": "thanh",
-       "tubes": "ống",
-       "for example": "chẳng hạn"
-      }
-     }
-    ],
-    [
-     "At the same time, the metal cools and becomes <b>solid</b>.",
-     "Đồng thời, kim loại nguội đi và trở nên rắn.",
-     {
-      "doan": [
-       {
-        "tu": "solid",
-        "lua_chon": [
-         "lỏng",
-         "rắn",
-         "mềm"
-        ],
-        "dap": 1,
-        "giai": "solid là rắn (thể rắn), ngược với liquid là lỏng."
-       }
-      ],
-      "nghia": {
-       "at the same time": "đồng thời",
-       "cools": "nguội đi",
-       "becomes": "trở nên"
-      }
-     }
-    ]
-   ],
-   "quiz": {
-    "hoi": "Part 2.1 điền một từ: <em>\"Sintering uses metal ______ instead of molten metal.\"</em>",
-    "lua_chon": [
-     "powder",
-     "wire",
-     "sand"
-    ],
-    "dap": 0,
-    "fb_ok": "Câu 4: <em>using metal powder instead of molten metal</em>. Sintering dùng bột kim loại.",
-    "fb_no": "Tìm câu có <em>instead of molten metal</em>. Từ nào đứng ngay sau <em>metal</em> ở đó?"
-   },
-   "dung_sai": {
-    "hoi": "Part 2.2 Đúng/Sai: <em>\"In sintering, the powder is heated until it melts.\"</em>",
-    "dap": false,
-    "fb_ok": "Câu này SAI. Câu 6: <em>heated (though not melted)</em>. Bột chỉ được nung cho các hạt dính lại, không chảy.",
-    "fb_no": "Đọc lại câu 6, chú ý phần trong ngoặc <em>(though not melted)</em>."
-   }
-  },
-  {
-   "ten": "Article 2b · Sand casting",
-   "cau": [
-    [
-     "<b>Sand casting</b> is the most widely used casting process because of its <b>flexibility</b>, heat resistance, and relatively low cost.",
-     "Đúc cát là quá trình đúc được dùng rộng rãi nhất nhờ tính linh hoạt, khả năng chịu nhiệt và chi phí tương đối thấp.",
-     {
-      "doan": [
-       {
-        "tu": "Sand casting",
-        "lua_chon": [
-         "đúc cát",
-         "cát xây dựng",
-         "đúc sáp"
-        ],
-        "dap": 0,
-        "giai": "sand là cát, casting là đúc: sand casting là đúc cát, đổ kim loại vào khuôn làm bằng cát."
-       },
-       {
-        "tu": "flexibility",
-        "lua_chon": [
-         "độ cứng",
-         "tính linh hoạt",
-         "độ bóng"
-        ],
-        "dap": 1,
-        "giai": "flexibility là tính linh hoạt: đúc cát làm được nhiều kích cỡ và hình dạng khác nhau."
-       }
-      ],
-      "nghia": {
-       "the most widely used": "được dùng rộng rãi nhất",
-       "heat resistance": "khả năng chịu nhiệt",
-       "relatively low cost": "chi phí tương đối thấp"
-      }
-     }
-    ],
-    [
-     "The sand casting process involves the use of a <b>furnace</b>, metal, <b>pattern</b>, and sand mold.",
-     "Quá trình đúc cát cần dùng lò nung, kim loại, mẫu đúc và khuôn cát.",
-     {
-      "doan": [
-       {
-        "tu": "furnace",
-        "lua_chon": [
-         "lò xo",
-         "lò nung",
-         "bếp ga"
-        ],
-        "dap": 1,
-        "giai": "furnace là lò nung, nơi nấu chảy kim loại ở nhiệt độ rất cao."
-       },
-       {
-        "tu": "pattern",
-        "lua_chon": [
-         "hoa văn",
-         "mẫu đúc",
-         "đồ gá"
-        ],
-        "dap": 1,
-        "giai": "pattern đời thường là hoa văn. Trong đúc là mẫu đúc: vật mẫu giống chi tiết để tạo lòng khuôn trong cát."
-       }
-      ],
-      "nghia": {
-       "involves the use of": "cần dùng",
-       "sand mold": "khuôn cát"
-      }
-     }
-    ],
-    [
-     "The metal is melted in the furnace and then <b>ladled</b> and poured into the <b>cavity</b> of the sand mold, which is formed by the pattern.",
-     "Kim loại được nấu chảy trong lò, rồi được múc và rót vào lòng khuôn cát, lòng khuôn này được tạo ra bởi mẫu đúc.",
-     {
-      "doan": [
-       {
-        "tu": "ladled",
-        "lua_chon": [
-         "cán mỏng",
-         "múc, rót bằng gáo",
-         "tán đinh"
-        ],
-        "dap": 1,
-        "giai": "ladle là cái gáo múc. Ladled là được múc bằng gáo rồi rót."
-       },
-       {
-        "tu": "cavity",
-        "lua_chon": [
-         "sâu răng",
-         "lòng khuôn",
-         "vết nứt"
-        ],
-        "dap": 1,
-        "giai": "cavity đời thường là lỗ sâu ở răng. Trong đúc là lòng khuôn: hốc rỗng nơi kim loại được rót vào."
-       }
-      ],
-      "nghia": {
-       "is melted": "được nấu chảy",
-       "poured into": "rót vào",
-       "is formed by": "được tạo nên bởi"
-      }
-     }
-    ],
-    [
-     "The sand casting is used to produce a wide variety of metal components with <b>complex geometries</b>.",
-     "Đúc cát được dùng để sản xuất rất nhiều loại chi tiết kim loại có hình dạng phức tạp.",
-     {
-      "doan": [
-       {
-        "tu": "complex geometries",
-        "lua_chon": [
-         "hình dạng phức tạp",
-         "hình học đơn giản",
-         "vật liệu nặng"
-        ],
-        "dap": 0,
-        "giai": "complex là phức tạp, geometries là các hình dạng. Đúc cát làm được cả chi tiết có hình dạng phức tạp."
-       }
-      ],
-      "nghia": {
-       "is used to produce": "được dùng để sản xuất",
-       "a wide variety of": "rất nhiều loại",
-       "metal components": "chi tiết kim loại"
-      }
-     }
-    ],
-    [
-     "These parts can vary greatly in size and weight, ranging from a couple <b>ounces</b> to several <b>tons</b>.",
-     "Các chi tiết này có thể rất khác nhau về kích thước và khối lượng, từ vài ounce đến vài tấn.",
-     {
-      "doan": [
-       {
-        "tu": "ounces",
-        "lua_chon": [
-         "đơn vị khối lượng nhỏ",
-         "đơn vị chiều dài",
-         "đơn vị nhiệt độ"
-        ],
-        "dap": 0,
-        "giai": "ounce là đơn vị khối lượng nhỏ (khoảng 28 gam). A couple ounces là vài ounce."
-       },
-       {
-        "tu": "tons",
-        "lua_chon": [
-         "tấn",
-         "tuần",
-         "tấm"
-        ],
-        "dap": 0,
-        "giai": "ton là tấn (1000 kg). Several tons là vài tấn: chi tiết rất nặng."
-       }
-      ],
-      "nghia": {
-       "vary greatly": "khác nhau rất nhiều",
-       "size and weight": "kích thước và khối lượng",
-       "ranging from … to …": "từ … đến …",
-       "a couple": "vài"
-      }
-     }
-    ],
-    [
-     "Some smaller sand cast parts include components as <b>gears</b>, <b>pulleys</b>, crankshafts, connecting rods, and propellers.",
-     "Một số chi tiết đúc cát nhỏ hơn gồm các bộ phận như bánh răng, puly, trục khuỷu, thanh truyền và chân vịt.",
-     {
-      "doan": [
-       {
-        "tu": "gears",
-        "lua_chon": [
-         "ống dẫn",
-         "bánh răng",
-         "khớp nối"
-        ],
-        "dap": 1,
-        "giai": "gear là bánh răng, bộ phận truyền chuyển động có răng."
-       },
-       {
-        "tu": "pulleys",
-        "lua_chon": [
-         "bu lông",
-         "cánh quạt",
-         "ròng rọc (puly)"
-        ],
-        "dap": 2,
-        "giai": "pulley là ròng rọc, puly: bánh có rãnh để quấn dây hoặc đai."
-       }
-      ],
-      "nghia": {
-       "smaller": "nhỏ hơn",
-       "include": "gồm",
-       "crankshafts": "trục khuỷu",
-       "connecting rods": "thanh truyền",
-       "propellers": "chân vịt, cánh quạt"
-      }
-     }
-    ],
-    [
-     "Larger applications include <b>housings</b> for large equipment and heavy machine bases.",
-     "Các ứng dụng lớn hơn gồm vỏ cho thiết bị lớn và bệ của máy nặng.",
-     {
-      "doan": [
-       {
-        "tu": "housings",
-        "lua_chon": [
-         "nhà ở",
-         "vỏ máy, hộp che",
-         "giá treo"
-        ],
-        "dap": 1,
-        "giai": "housing đời thường là nhà ở. Trong cơ khí là vỏ máy, hộp che thiết bị."
-       }
-      ],
-      "nghia": {
-       "larger applications": "ứng dụng lớn hơn",
-       "equipment": "thiết bị",
-       "heavy machine bases": "bệ máy nặng"
-      }
-     }
-    ],
-    [
-     "Sand casting is also common in producing automobile components, such as <b>engine blocks</b>, engine manifolds, cylinder heads, and transmission cases.",
-     "Đúc cát cũng phổ biến khi sản xuất các chi tiết ô tô, như thân máy, ống góp, nắp xi lanh và vỏ hộp số.",
-     {
-      "doan": [
-       {
-        "tu": "engine blocks",
-        "lua_chon": [
-         "vô lăng",
-         "thân máy (block động cơ)",
-         "lốp xe"
-        ],
-        "dap": 1,
-        "giai": "engine block là thân máy, khối kim loại lớn chứa các xi lanh của động cơ."
-       }
-      ],
-      "nghia": {
-       "is also common in": "cũng phổ biến trong",
-       "producing": "sản xuất",
-       "automobile components": "chi tiết ô tô",
-       "engine manifolds": "ống góp động cơ",
-       "cylinder heads": "nắp xi lanh (mặt máy)",
-       "transmission cases": "vỏ hộp số"
-      }
-     }
-    ]
-   ],
-   "quiz": {
-    "hoi": "Part 2.1 điền một từ: <em>\"Sand casting is the most widely used casting process because of its flexibility, heat resistance, and relatively low ______.\"</em>",
-    "lua_chon": [
-     "cost",
-     "weight",
-     "speed"
-    ],
-    "dap": 0,
-    "fb_ok": "Câu 1 của bài: <em>flexibility, heat resistance, and relatively low cost</em>.",
-    "fb_no": "Tìm câu đầu tiên của bài. Từ nào đứng ngay sau <em>relatively low</em>?"
-   },
-   "dung_sai": {
-    "hoi": "Part 2.2 Đúng/Sai: <em>\"Sand casting can only make very small parts.\"</em>",
-    "dap": false,
-    "fb_ok": "Câu này SAI. Câu 5: <em>ranging from a couple ounces to several tons</em>: từ rất nhẹ đến rất nặng.",
-    "fb_no": "Đọc lại câu 5: chi tiết đúc cát có kích thước và khối lượng thế nào?"
-   }
-  }
- ],
- "bang": {
-  "ten": "Phương pháp nào cần gì? (Article 1 và 2, hay ra Đúng/Sai)",
-  "cot": [
-   "Process",
-   "Ghi nhớ"
-  ],
-  "hang": [
-   [
-    "hot-working",
-    "<strong>above</strong> recrystallization temperature"
-   ],
-   [
-    "cold-working",
-    "<strong>below</strong> recrystallization temperature<br>thường ở nhiệt độ phòng"
-   ],
-   [
-    "casting",
-    "kim loại <strong>molten</strong> + <strong>die</strong> (mould)<br>rót vào, hoặc ép dưới áp lực"
-   ],
-   [
-    "sintering",
-    "<strong>metal powder</strong> + die<br>nung nhưng <strong>không chảy</strong>"
-   ],
-   [
-    "extrusion",
-    "kim loại molten ép ở <strong>high pressure</strong> qua die<br>ra thanh, ống dài"
-   ]
-  ]
- },
- "mau_cau": [
-  {
-   "ten": "Mẫu 1 · X involves V-ing (X bao gồm việc… / X cần…)",
-   "vd": [
-    [
-     "Casting involves heating metal until it becomes molten.",
-     "Đúc bao gồm việc nung kim loại cho đến khi nó nóng chảy."
-    ],
-    [
-     "Extrusion involves heating metal and forcing it through a die.",
-     "Ép đùn gồm việc nung kim loại rồi ép nó qua khuôn."
-    ],
-    [
-     "The sand casting process involves the use of a furnace, metal, pattern, and sand mold.",
-     "Quá trình đúc cát cần dùng lò nung, kim loại, mẫu đúc và khuôn cát."
-    ]
-   ],
-   "ghi_chu": [
-    "Công thức: <strong>X + involves + V-ing</strong> (hoặc + danh từ).",
-    "Dịch: \"X bao gồm việc…\" hoặc \"X cần…\".",
-    "Part 5 hay cho câu mô tả một quá trình: dùng mẫu này."
-   ]
-  },
-  {
-   "ten": "Mẫu 2 · can be + V-ed (có thể được…)",
-   "vd": [
-    [
-     "Metal can be formed into shapes using heat and pressure.",
-     "Kim loại có thể được tạo thành các hình dạng bằng nhiệt và áp lực."
-    ],
-    [
-     "Metal can also be shaped by extruding it into long lengths.",
-     "Kim loại cũng có thể được tạo hình bằng cách ép đùn thành những đoạn dài."
-    ],
-    [
-     "Metal components can be formed by sintering.",
-     "Các chi tiết kim loại có thể được tạo ra bằng thiêu kết."
-    ]
-   ],
-   "ghi_chu": [
-    "Thấy <strong>can be + V-ed</strong> → dịch \"có thể được…\".",
-    "<strong>using + thứ dùng</strong> → dịch \"bằng…\".",
-    "<strong>by + V-ing</strong> → dịch \"bằng cách…\"."
-   ]
-  }
- ],
- "gan_nhan": {
-  "svg": "sand_mold_diagram.svg",
-  "tieu_de": "Khuôn cát: gọi tên 7 bộ phận",
-  "mo_ta": "Bài Listening và Article 2 tả các bộ phận này. Nhìn hình, tự gọi tên 7 bộ phận trước, rồi mở đáp án.",
-  "chu_thich": "Mặt cắt khuôn cát khi đang rót kim loại. 7 bộ phận đánh số.",
-  "bo_phan": [
-   [
-    "cope",
-    "hộp khuôn trên (nửa khuôn trên)"
-   ],
-   [
-    "drag",
-    "hộp khuôn dưới (nửa khuôn dưới)"
-   ],
-   [
-    "sand",
-    "cát đầm chặt trong khuôn"
-   ],
-   [
-    "cavity",
-    "lòng khuôn, nơi kim loại được rót vào"
-   ],
-   [
-    "sprue",
-    "lỗ rót, đường rót thẳng đứng"
-   ],
-   [
-    "gate",
-    "rãnh dẫn kim loại vào lòng khuôn"
-   ],
-   [
-    "ladle",
-    "gáo rót kim loại nóng chảy"
-   ]
-  ],
-  "hoi": "Bộ phận số 6 (rãnh nhỏ nối lỗ rót với lòng khuôn) tên là gì?",
-  "lua_chon": [
-   "sprue",
-   "gate",
-   "cavity",
-   "cope"
-  ],
-  "dap": 1,
-  "fb_ok": "<em>gate</em> là rãnh dẫn kim loại từ lỗ rót (sprue) vào lòng khuôn (cavity).",
-  "fb_no": "Sprue là đường rót đi thẳng xuống. Rãnh nằm ngang nối nó với lòng khuôn là bộ phận nào?"
- },
- "sop": {
-  "tieu_de": "Các bước đúc cát: điền từ (kiểu Part 3)",
-  "mo_ta": "Thử với đoạn tả các bước đúc cát (viết lại từ bài Listening):",
-  "hop_tu": [
-   "pattern",
-   "drag",
-   "cope",
-   "molten",
-   "cool"
-  ],
-  "doan": "Sand casting has simple steps. First, the (1) ______ is placed inside the lower box, called the (2) ______ box, and sand is packed tightly around it. Then the upper box, the (3) ______ box, is placed over it. After the pattern is removed, (4) ______ metal is poured into the cavity and left to (5) ______.",
-  "dap": [
-   "pattern",
-   "drag",
-   "cope",
-   "molten",
-   "cool"
-  ],
-  "quiz": {
-   "hoi": "Chỗ trống (4): <em>\"After the pattern is removed, (4) ______ metal is poured into the cavity.\"</em>",
-   "lua_chon": [
-    "cope",
-    "drag",
-    "molten",
-    "pattern"
-   ],
-   "dap": 2,
-   "fb_ok": "<em>molten</em> = nóng chảy. Dấu hiệu: chỗ trống đứng ngay trước danh từ <em>metal</em>, nên cần tính từ nói kim loại đang ở thể nào.",
-   "fb_no": "Chỗ trống đứng ngay trước danh từ <em>metal</em>: cần tính từ cho biết kim loại đang ở trạng thái nào khi được rót."
-  }
- },
- "tra_bai": [
-  [
-   "Hot-working và cold-working khác nhau chỗ nào?",
-   "Hot-working: trên nhiệt độ kết tinh lại.<br>Cold-working: dưới nhiệt độ đó, thường ở nhiệt độ phòng."
-  ],
-  [
-   "Đúc cát cần dùng những gì? (4 thứ)",
-   "Furnace, metal, pattern, sand mold."
-  ],
-  [
-   "Sintering khác casting chỗ nào?",
-   "Sintering dùng metal powder, nung nhưng không chảy.<br>Casting dùng kim loại molten (nóng chảy)."
-  ],
-  [
-   "Extrusion cho ra sản phẩm dạng gì?",
-   "Bars hoặc tubes (thanh, ống dài), ép qua die ở áp suất cao."
-  ],
-  [
-   "<em>Die</em> và <em>pattern</em> khác nhau chỗ nào?",
-   "Die: khuôn mà kim loại được ép hoặc rót vào.<br>Pattern: vật mẫu để tạo lòng khuôn (cavity) trong khuôn cát."
-  ],
-  [
-   "Deep drawing, spinning, piercing: mỗi từ là gì?",
-   "Deep drawing: dập vuốt sâu (chày kéo tấm kim loại vào).<br>Spinning: ép tạo hình đĩa hoặc ống kim loại quay.<br>Piercing: đột lỗ."
-  ],
-  [
-   "Dịch: <em>Casting involves heating metal until it becomes molten.</em>",
-   "Đúc bao gồm việc nung kim loại cho đến khi nó nóng chảy."
-  ],
-  [
-   "Dịch sang tiếng Anh: <em>Kim loại có thể được tạo hình bằng thiêu kết.</em>",
-   "Metal can be formed by sintering."
-  ]
- ],
- "de_mau": {
-  "part1": [
-   {
-    "q": "It is a manufacturing process in which liquid metal is poured into a sand mold.",
-    "opts": [
-     "Piercing",
-     "Spinning",
-     "Sand casting",
-     "Forging"
-    ],
-    "ans": 2,
-    "why": "<em>liquid metal … sand mold</em> → sand casting."
-   },
-   {
-    "q": "Look at the picture and choose the correct answer.",
-    "opts": [
-     "bending",
-     "spinning",
-     "forging",
-     "piercing"
-    ],
-    "ans": 1,
-    "why": "Tấm kim loại đang quay trên máy tiện và được miết thành hình loa → spinning.",
-    "img": "spinning"
-   },
-   {
-    "q": "It is the process in which metals are formed and shaped using compressive forces.",
-    "opts": [
-     "casting",
-     "piercing",
-     "forging",
-     "bending"
-    ],
-    "ans": 2,
-    "why": "<em>compressive forces</em> (lực nén) → forging."
-   },
-   {
-    "q": "It is a process in which raw metal is pierced with a machining tool, resulting in the creation of a circular or other shaped hole.",
-    "opts": [
-     "spinning",
-     "bending",
-     "piercing",
-     "rolling"
-    ],
-    "ans": 2,
-    "why": "<em>pierced … hole</em> → piercing."
-   },
-   {
-    "q": "It is a method of metal casting in which a molten metal is poured into a mold that has been created by means of a wax model.",
-    "opts": [
-     "Investment casting",
-     "Sand casting",
-     "Sintering",
-     "Extrusion"
-    ],
-    "ans": 0,
-    "why": "<em>wax model</em> (mẫu sáp) → investment casting."
-   },
-   {
-    "q": "It is a process by which metal can be deformed when applying force to the subject, which causes it to bend at an angle.",
-    "opts": [
-     "bending",
-     "shearing",
-     "rolling",
-     "forging"
-    ],
-    "ans": 0,
-    "why": "<em>bend at an angle</em> → bending."
-   },
-   {
-    "q": "Look at the picture and choose the correct answer.",
-    "opts": [
-     "die",
-     "pattern",
-     "furnace",
-     "ladle"
-    ],
-    "ans": 1,
-    "why": "Vật mẫu bằng gỗ giống bánh răng, dùng để tạo lòng khuôn trong cát → pattern.",
-    "img": "pattern"
-   },
-   {
-    "q": "Look at the picture and choose the correct answer.",
-    "opts": [
-     "furnace",
-     "mould",
-     "anvil",
-     "die"
-    ],
-    "ans": 0,
-    "why": "Buồng kín nung phôi đến nhiệt độ rất cao, nhìn thấy ánh đỏ bên trong → furnace.",
-    "img": "furnace"
-   }
-  ],
-  "part1_chien_thuat": [
-   "Gạch từ khoá trong định nghĩa: <em>sand mold</em>, <em>wax model</em>, <em>pierced</em>, <em>bend</em>, <em>compressive</em>…",
-   "So từ khoá với nghĩa đã học ở mục Từ vựng.",
-   "Câu có ảnh: nhìn hình dạng và thiết bị (miết kim loại trên máy quay = spinning, vật mẫu bằng gỗ = pattern, lò nấu = furnace).",
-   "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
-  ],
-  "part2": {
-   "doan": "Sand casting is the most widely used casting process because of its flexibility, heat resistance, and relatively low cost. The sand casting process involves the use of a furnace, metal, pattern, and sand mold. The metal is melted in the furnace and then ladled and poured into the cavity of the sand mold, which is formed by the pattern. The sand casting is used to produce a wide variety of metal components with complex geometries. These parts can vary greatly in size and weight, ranging from a couple ounces to several tons. Some smaller sand cast parts include components as gears, pulleys, crankshafts, connecting rods, and propellers. Larger applications include housings for large equipment and heavy machine bases. Sand casting is also common in producing automobile components, such as engine blocks, engine manifolds, cylinder heads, and transmission cases.",
-   "dien": [
-    {
-     "q": "The sand casting process involves the use of a furnace, metal, ______, and sand mold.",
-     "ans": "pattern",
-     "opts": [
+  "sop": {
+    "tieu_de": "Các bước đúc cát: điền từ (kiểu Part 3)",
+    "mo_ta": "Thử với đoạn tả các bước đúc cát (viết lại từ bài Listening):",
+    "hop_tu": [
       "pattern",
-      "powder",
-      "flange"
-     ],
-     "why": "Câu 2: <em>a furnace, metal, pattern, and sand mold</em>."
-    },
-    {
-     "q": "The metal is melted in the furnace and then ______ and poured into the cavity of the sand mold.",
-     "ans": "ladled",
-     "opts": [
-      "ladled",
-      "forged",
-      "cooled"
-     ],
-     "why": "Câu 3: <em>then ladled and poured into the cavity</em>."
-    },
-    {
-     "q": "These parts can vary greatly in size and weight, ranging from a couple ounces to several ______.",
-     "ans": "tons",
-     "opts": [
-      "tons",
-      "meters",
-      "hours"
-     ],
-     "why": "Câu 5: <em>from a couple ounces to several tons</em>."
-    },
-    {
-     "q": "Larger applications include housings for large equipment and heavy machine ______.",
-     "ans": "bases",
-     "opts": [
-      "bases",
-      "powders",
-      "holes"
-     ],
-     "why": "Câu 7: <em>heavy machine bases</em>."
+      "drag",
+      "cope",
+      "molten",
+      "cool"
+    ],
+    "doan": "Sand casting has simple steps. First, the (1) ______ is placed inside the lower box, called the (2) ______ box, and sand is packed tightly around it. Then the upper box, the (3) ______ box, is placed over it. After the pattern is removed, (4) ______ metal is poured into the cavity and left to (5) ______.",
+    "dap": [
+      "pattern",
+      "drag",
+      "cope",
+      "molten",
+      "cool"
+    ],
+    "quiz": {
+      "hoi": "Chỗ trống (4): <em>\"After the pattern is removed, (4) ______ metal is poured into the cavity.\"</em>",
+      "lua_chon": [
+        "cope",
+        "drag",
+        "molten",
+        "pattern"
+      ],
+      "dap": 2,
+      "fb_ok": "<em>molten</em> = nóng chảy. Dấu hiệu: chỗ trống đứng ngay trước danh từ <em>metal</em>, nên cần tính từ nói kim loại đang ở thể nào.",
+      "fb_no": "Chỗ trống đứng ngay trước danh từ <em>metal</em>: cần tính từ cho biết kim loại đang ở trạng thái nào khi được rót."
     }
-   ],
-   "ds": [
-    {
-     "q": "Sand casting is the most widely used casting process.",
-     "ans": true,
-     "why": "Chép gần nguyên câu đầu của bài."
-    },
-    {
-     "q": "The cavity of the sand mold is formed by the furnace.",
-     "ans": false,
-     "why": "Câu 3: cavity <em>is formed by the pattern</em>, không phải furnace."
-    },
-    {
-     "q": "Sand cast parts are always very small.",
-     "ans": false,
-     "why": "Câu 5: nặng nhẹ khác nhau, <em>from a couple ounces to several tons</em>. Chữ <em>always</em> báo hiệu Sai."
-    },
-    {
-     "q": "Engine blocks and cylinder heads are sand cast automobile components.",
-     "ans": true,
-     "why": "Câu cuối: <em>such as engine blocks, engine manifolds, cylinder heads</em>…"
-    }
-   ]
   },
-  "part2_chien_thuat": [
-   "Đọc câu hỏi trước, gạch từ khoá (ví dụ <em>ounces</em>, <em>machine</em>).",
-   "Tìm câu trong đoạn có cùng từ khoá rồi chép đúng từ đứng ở chỗ trống.",
-   "Đúng/Sai: so từng chữ với đoạn.",
-   "Chữ <em>always</em>, <em>only</em>, <em>all</em> trong câu hỏi thường làm câu Sai.",
-   "Nếu hai câu cùng nói về một chỗ, câu có số liệu hoặc tên bộ phận là câu cần so."
+  "tra_bai": [
+    [
+      "Hot-working và cold-working khác nhau chỗ nào?",
+      "Hot-working: trên nhiệt độ kết tinh lại.<br>Cold-working: dưới nhiệt độ đó, thường ở nhiệt độ phòng."
+    ],
+    [
+      "Đúc cát cần dùng những gì? (4 thứ)",
+      "Furnace, metal, pattern, sand mold."
+    ],
+    [
+      "Sintering khác casting chỗ nào?",
+      "Sintering dùng metal powder, nung nhưng không chảy.<br>Casting dùng kim loại molten (nóng chảy)."
+    ],
+    [
+      "Extrusion cho ra sản phẩm dạng gì?",
+      "Bars hoặc tubes (thanh, ống dài), ép qua die ở áp suất cao."
+    ],
+    [
+      "<em>Die</em> và <em>pattern</em> khác nhau chỗ nào?",
+      "Die: khuôn mà kim loại được ép hoặc rót vào.<br>Pattern: vật mẫu để tạo lòng khuôn (cavity) trong khuôn cát."
+    ],
+    [
+      "Deep drawing, spinning, piercing: mỗi từ là gì?",
+      "Deep drawing: dập vuốt sâu (chày kéo tấm kim loại vào).<br>Spinning: ép tạo hình đĩa hoặc ống kim loại quay.<br>Piercing: đột lỗ."
+    ],
+    [
+      "Dịch: <em>Casting involves heating metal until it becomes molten.</em>",
+      "Đúc bao gồm việc nung kim loại cho đến khi nó nóng chảy."
+    ],
+    [
+      "Dịch sang tiếng Anh: <em>Kim loại có thể được tạo hình bằng thiêu kết.</em>",
+      "Metal can be formed by sintering."
+    ]
   ],
-  "part3": {
-   "hop_tu": [
-    "waste",
-    "hot-working",
-    "cold-working",
-    "shearing",
-    "modern"
-   ],
-   "doan": "Metal-forming moves the metal to the shape we want, so there is little or no (1) ______. Plastic deformation above the recrystallization temperature is called (2) ______. Plastic deformation below it, usually at room temperature, is called (3) ______. Cutting sheet metal with two blades, without making chips, is called (4) ______. These processes are very important in (5) ______ manufacturing.",
-   "dap": [
-    "waste",
-    "hot-working",
-    "cold-working",
-    "shearing",
-    "modern"
-   ],
-   "chien_thuat": [
-    "Đọc cả câu trước khi điền.",
-    "Chỗ (2) có <em>above</em>, chỗ (3) có <em>below</em>: nhớ hot trên, cold dưới.",
-    "Chỗ (1) đứng sau <em>little or no</em> → danh từ, nghĩa \"phần thừa\".",
-    "Chỗ (4): cắt tấm kim loại bằng hai lưỡi cắt, không tạo phoi → shearing.",
-    "Chỗ (5) đứng trước <em>manufacturing</em> → tính từ.",
-    "Từ nào chắc thì điền trước, gạch khỏi hộp."
-   ]
+  "de_mau": {
+    "part1": [
+      {
+        "q": "It is a manufacturing process in which liquid metal is poured into a sand mold.",
+        "opts": [
+          "Piercing",
+          "Spinning",
+          "Sand casting",
+          "Forging"
+        ],
+        "ans": 2,
+        "why": "<em>liquid metal … sand mold</em> → sand casting."
+      },
+      {
+        "q": "Look at the picture and choose the correct answer.",
+        "opts": [
+          "bending",
+          "spinning",
+          "forging",
+          "piercing"
+        ],
+        "ans": 1,
+        "why": "Tấm kim loại đang quay trên máy tiện và được miết thành hình loa → spinning.",
+        "img": "spinning"
+      },
+      {
+        "q": "It is the process in which metals are formed and shaped using compressive forces.",
+        "opts": [
+          "casting",
+          "piercing",
+          "forging",
+          "bending"
+        ],
+        "ans": 2,
+        "why": "<em>compressive forces</em> (lực nén) → forging."
+      },
+      {
+        "q": "It is a process in which raw metal is pierced with a machining tool, resulting in the creation of a circular or other shaped hole.",
+        "opts": [
+          "spinning",
+          "bending",
+          "piercing",
+          "rolling"
+        ],
+        "ans": 2,
+        "why": "<em>pierced … hole</em> → piercing."
+      },
+      {
+        "q": "It is a method of metal casting in which a molten metal is poured into a mold that has been created by means of a wax model.",
+        "opts": [
+          "Investment casting",
+          "Sand casting",
+          "Sintering",
+          "Extrusion"
+        ],
+        "ans": 0,
+        "why": "<em>wax model</em> (mẫu sáp) → investment casting."
+      },
+      {
+        "q": "It is a process by which metal can be deformed when applying force to the subject, which causes it to bend at an angle.",
+        "opts": [
+          "bending",
+          "shearing",
+          "rolling",
+          "forging"
+        ],
+        "ans": 0,
+        "why": "<em>bend at an angle</em> → bending."
+      },
+      {
+        "q": "Look at the picture and choose the correct answer.",
+        "opts": [
+          "die",
+          "pattern",
+          "furnace",
+          "ladle"
+        ],
+        "ans": 1,
+        "why": "Vật mẫu bằng gỗ giống bánh răng, dùng để tạo lòng khuôn trong cát → pattern.",
+        "img": "pattern"
+      },
+      {
+        "q": "Look at the picture and choose the correct answer.",
+        "opts": [
+          "furnace",
+          "mould",
+          "anvil",
+          "die"
+        ],
+        "ans": 0,
+        "why": "Buồng kín nung phôi đến nhiệt độ rất cao, nhìn thấy ánh đỏ bên trong → furnace.",
+        "img": "furnace"
+      }
+    ],
+    "part1_chien_thuat": [
+      "Gạch từ khoá trong định nghĩa: <em>sand mold</em>, <em>wax model</em>, <em>pierced</em>, <em>bend</em>, <em>compressive</em>…",
+      "So từ khoá với nghĩa đã học ở mục Từ vựng.",
+      "Câu có ảnh: nhìn hình dạng và thiết bị (miết kim loại trên máy quay = spinning, vật mẫu bằng gỗ = pattern, lò nấu = furnace).",
+      "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
+    ],
+    "part2": {
+      "doan": "Sand casting is the most widely used casting process because of its flexibility, heat resistance, and relatively low cost. The sand casting process involves the use of a furnace, metal, pattern, and sand mold. The metal is melted in the furnace and then ladled and poured into the cavity of the sand mold, which is formed by the pattern. The sand casting is used to produce a wide variety of metal components with complex geometries. These parts can vary greatly in size and weight, ranging from a couple ounces to several tons. Some smaller sand cast parts include components as gears, pulleys, crankshafts, connecting rods, and propellers. Larger applications include housings for large equipment and heavy machine bases. Sand casting is also common in producing automobile components, such as engine blocks, engine manifolds, cylinder heads, and transmission cases.",
+      "dien": [
+        {
+          "q": "The sand casting process involves the use of a furnace, metal, ______, and sand mold.",
+          "ans": "pattern",
+          "opts": [
+            "pattern",
+            "powder",
+            "flange"
+          ],
+          "why": "Câu 2: <em>a furnace, metal, pattern, and sand mold</em>."
+        },
+        {
+          "q": "The metal is melted in the furnace and then ______ and poured into the cavity of the sand mold.",
+          "ans": "ladled",
+          "opts": [
+            "ladled",
+            "forged",
+            "cooled"
+          ],
+          "why": "Câu 3: <em>then ladled and poured into the cavity</em>."
+        },
+        {
+          "q": "These parts can vary greatly in size and weight, ranging from a couple ounces to several ______.",
+          "ans": "tons",
+          "opts": [
+            "tons",
+            "meters",
+            "hours"
+          ],
+          "why": "Câu 5: <em>from a couple ounces to several tons</em>."
+        },
+        {
+          "q": "Larger applications include housings for large equipment and heavy machine ______.",
+          "ans": "bases",
+          "opts": [
+            "bases",
+            "powders",
+            "holes"
+          ],
+          "why": "Câu 7: <em>heavy machine bases</em>."
+        }
+      ],
+      "ds": [
+        {
+          "q": "Sand casting is the most widely used casting process.",
+          "ans": true,
+          "why": "Chép gần nguyên câu đầu của bài."
+        },
+        {
+          "q": "The cavity of the sand mold is formed by the furnace.",
+          "ans": false,
+          "why": "Câu 3: cavity <em>is formed by the pattern</em>, không phải furnace."
+        },
+        {
+          "q": "Sand cast parts are always very small.",
+          "ans": false,
+          "why": "Câu 5: nặng nhẹ khác nhau, <em>from a couple ounces to several tons</em>. Chữ <em>always</em> báo hiệu Sai."
+        },
+        {
+          "q": "Engine blocks and cylinder heads are sand cast automobile components.",
+          "ans": true,
+          "why": "Câu cuối: <em>such as engine blocks, engine manifolds, cylinder heads</em>…"
+        }
+      ]
+    },
+    "part2_chien_thuat": [
+      "Đọc câu hỏi trước, gạch từ khoá (ví dụ <em>ounces</em>, <em>machine</em>).",
+      "Tìm câu trong đoạn có cùng từ khoá rồi chép đúng từ đứng ở chỗ trống.",
+      "Đúng/Sai: so từng chữ với đoạn.",
+      "Chữ <em>always</em>, <em>only</em>, <em>all</em> trong câu hỏi thường làm câu Sai.",
+      "Nếu hai câu cùng nói về một chỗ, câu có số liệu hoặc tên bộ phận là câu cần so."
+    ],
+    "part3": {
+      "hop_tu": [
+        "waste",
+        "hot-working",
+        "cold-working",
+        "shearing",
+        "modern"
+      ],
+      "doan": "Metal-forming moves the metal to the shape we want, so there is little or no (1) ______. Plastic deformation above the recrystallization temperature is called (2) ______. Plastic deformation below it, usually at room temperature, is called (3) ______. Cutting sheet metal with two blades, without making chips, is called (4) ______. These processes are very important in (5) ______ manufacturing.",
+      "dap": [
+        "waste",
+        "hot-working",
+        "cold-working",
+        "shearing",
+        "modern"
+      ],
+      "chien_thuat": [
+        "Đọc cả câu trước khi điền.",
+        "Chỗ (2) có <em>above</em>, chỗ (3) có <em>below</em>: nhớ hot trên, cold dưới.",
+        "Chỗ (1) đứng sau <em>little or no</em> → danh từ, nghĩa \"phần thừa\".",
+        "Chỗ (4): cắt tấm kim loại bằng hai lưỡi cắt, không tạo phoi → shearing.",
+        "Chỗ (5) đứng trước <em>manufacturing</em> → tính từ.",
+        "Từ nào chắc thì điền trước, gạch khỏi hộp."
+      ]
+    },
+    "part4": {
+      "en": "Metal can be formed into shapes using heat and pressure. Casting involves heating metal until it becomes molten (liquid) and pouring it, or forcing it under pressure, into a mould called a die. Instead of being cast, metal components can be formed by sintering. This is done by using metal powder instead of molten metal. The powder is placed in a die and compressed into a solid mass. It is then heated (though not melted) until it becomes sintered – that is, the powder particles join together structurally, due to the heat.",
+      "vi": "Kim loại có thể được tạo thành các hình dạng bằng nhiệt và áp lực. Đúc gồm việc nung kim loại cho đến khi nóng chảy (ở thể lỏng) rồi rót nó, hoặc ép nó dưới áp lực, vào một khuôn gọi là die. Thay vì được đúc, các chi tiết kim loại có thể được tạo ra bằng thiêu kết. Việc này được thực hiện bằng cách dùng bột kim loại thay cho kim loại nóng chảy. Bột được đặt vào khuôn và bị nén thành một khối đặc. Sau đó nó được nung (nhưng không bị nóng chảy) cho đến khi được thiêu kết, nghĩa là các hạt bột liên kết với nhau về mặt cấu trúc nhờ nhiệt.",
+      "chien_thuat": [
+        "Cắt câu dài tại dấu phẩy và dấu gạch ngang.",
+        "Giữ nguyên thuật ngữ đã học: đúc, nóng chảy, khuôn, bột kim loại, thiêu kết.",
+        "<em>involves</em> → \"bao gồm việc\".",
+        "<em>instead of</em> → \"thay vì\".",
+        "<em>(though not melted)</em> → \"(dù không bị chảy)\".",
+        "Dịch được nửa đoạn vẫn có điểm thành phần."
+      ]
+    },
+    "part5": {
+      "vi": "Đúc bao gồm việc nung kim loại cho đến khi nó nóng chảy rồi rót vào khuôn.",
+      "en": "Casting involves heating metal until it becomes molten and pouring it into a mould.",
+      "chien_thuat": [
+        "Dùng mẫu 1: <strong>X involves V-ing</strong>.",
+        "X = casting; hai việc = heating và pouring.",
+        "Chỉ viết được <em>Casting is pouring molten metal into a mould.</em> vẫn có một phần điểm."
+      ]
+    }
   },
-  "part4": {
-   "en": "Metal can be formed into shapes using heat and pressure. Casting involves heating metal until it becomes molten (liquid) and pouring it, or forcing it under pressure, into a mould called a die. Instead of being cast, metal components can be formed by sintering. This is done by using metal powder instead of molten metal. The powder is placed in a die and compressed into a solid mass. It is then heated (though not melted) until it becomes sintered – that is, the powder particles join together structurally, due to the heat.",
-   "vi": "Kim loại có thể được tạo thành các hình dạng bằng nhiệt và áp lực. Đúc gồm việc nung kim loại cho đến khi nóng chảy (ở thể lỏng) rồi rót nó, hoặc ép nó dưới áp lực, vào một khuôn gọi là die. Thay vì được đúc, các chi tiết kim loại có thể được tạo ra bằng thiêu kết. Việc này được thực hiện bằng cách dùng bột kim loại thay cho kim loại nóng chảy. Bột được đặt vào khuôn và bị nén thành một khối đặc. Sau đó nó được nung (nhưng không bị nóng chảy) cho đến khi được thiêu kết, nghĩa là các hạt bột liên kết với nhau về mặt cấu trúc nhờ nhiệt.",
-   "chien_thuat": [
-    "Cắt câu dài tại dấu phẩy và dấu gạch ngang.",
-    "Giữ nguyên thuật ngữ đã học: đúc, nóng chảy, khuôn, bột kim loại, thiêu kết.",
-    "<em>involves</em> → \"bao gồm việc\".",
-    "<em>instead of</em> → \"thay vì\".",
-    "<em>(though not melted)</em> → \"(dù không bị chảy)\".",
-    "Dịch được nửa đoạn vẫn có điểm thành phần."
-   ]
-  },
-  "part5": {
-   "vi": "Đúc bao gồm việc nung kim loại cho đến khi nó nóng chảy rồi rót vào khuôn.",
-   "en": "Casting involves heating metal until it becomes molten and pouring it into a mould.",
-   "chien_thuat": [
-    "Dùng mẫu 1: <strong>X involves V-ing</strong>.",
-    "X = casting; hai việc = heating và pouring.",
-    "Chỉ viết được <em>Casting is pouring molten metal into a mould.</em> vẫn có một phần điểm."
-   ]
+  "luyen_tap": {
+    "mc": [
+      {
+        "q": "Plastic deformation of metals above their recrystallization temperature.",
+        "opts": [
+          "cold-working",
+          "hot-working",
+          "rolling",
+          "casting"
+        ],
+        "ans": 1,
+        "why": "above → hot-working."
+      },
+      {
+        "q": "Plastic deformation of metals below the recrystallization temperature.",
+        "opts": [
+          "hot-working",
+          "sintering",
+          "cold-working",
+          "forging"
+        ],
+        "ans": 2,
+        "why": "below → cold-working."
+      },
+      {
+        "q": "A process in which a metal disc or tube is rotated at high speed and formed into a round part.",
+        "opts": [
+          "piercing",
+          "spinning",
+          "bending",
+          "shearing"
+        ],
+        "ans": 1,
+        "why": "rotated at high speed → spinning."
+      },
+      {
+        "q": "The process in which metals are formed and shaped using compressive forces.",
+        "opts": [
+          "forging",
+          "casting",
+          "sintering",
+          "piercing"
+        ],
+        "ans": 0,
+        "why": "compressive forces → forging."
+      },
+      {
+        "q": "A process in which a machining tool makes a round or other shaped hole in raw metal.",
+        "opts": [
+          "bending",
+          "shearing",
+          "rolling",
+          "piercing"
+        ],
+        "ans": 3,
+        "why": "hole → piercing."
+      },
+      {
+        "q": "A process by which metal is deformed at an angle when force is applied.",
+        "opts": [
+          "bending",
+          "spinning",
+          "casting",
+          "sintering"
+        ],
+        "ans": 0,
+        "why": "angle → bending."
+      },
+      {
+        "q": "A sheet metal forming process where a punch forces the sheet to pull in from the flange area.",
+        "opts": [
+          "spinning",
+          "deep drawing",
+          "piercing",
+          "extrusion"
+        ],
+        "ans": 1,
+        "why": "punch + flange → deep drawing."
+      },
+      {
+        "q": "A manufacturing process in which liquid metal is poured into a sand mold.",
+        "opts": [
+          "investment casting",
+          "sand casting",
+          "forging",
+          "extrusion"
+        ],
+        "ans": 1,
+        "why": "sand mold → sand casting."
+      },
+      {
+        "q": "A method of metal casting in which molten metal is poured into a mold made by means of a wax model.",
+        "opts": [
+          "sand casting",
+          "sintering",
+          "investment casting",
+          "deep drawing"
+        ],
+        "ans": 2,
+        "why": "wax model → investment casting."
+      },
+      {
+        "q": "Melted into a liquid by heat.",
+        "opts": [
+          "molten",
+          "solid",
+          "sintered",
+          "plastic"
+        ],
+        "ans": 0,
+        "why": "melted into a liquid → molten."
+      },
+      {
+        "q": "A shaping tool that metal is pressed or poured into.",
+        "opts": [
+          "pattern",
+          "furnace",
+          "ladle",
+          "die"
+        ],
+        "ans": 3,
+        "why": "shaping tool → die."
+      },
+      {
+        "q": "A model of the part, used to make the cavity in a sand mold.",
+        "opts": [
+          "pattern",
+          "die",
+          "flange",
+          "punch"
+        ],
+        "ans": 0,
+        "why": "model + cavity → pattern."
+      },
+      {
+        "q": "Heating compressed metal powder, without melting it, until the particles join together.",
+        "opts": [
+          "extrusion",
+          "rolling",
+          "sintering",
+          "casting"
+        ],
+        "ans": 2,
+        "why": "powder + without melting → sintering."
+      },
+      {
+        "q": "Forcing heated metal through a die to make long bars or tubes.",
+        "opts": [
+          "extrusion",
+          "forging",
+          "bending",
+          "shearing"
+        ],
+        "ans": 0,
+        "why": "through a die + bars or tubes → extrusion."
+      },
+      {
+        "q": "The upper box of a sand mold.",
+        "opts": [
+          "drag",
+          "cope",
+          "pattern",
+          "sprue"
+        ],
+        "ans": 1,
+        "why": "upper box → cope (drag là hộp dưới)."
+      },
+      {
+        "q": "The lower box of a sand mold.",
+        "opts": [
+          "cope",
+          "gate",
+          "drag",
+          "ladle"
+        ],
+        "ans": 2,
+        "why": "lower box → drag."
+      },
+      {
+        "q": "The vertical channel through which molten metal is poured into the mold.",
+        "opts": [
+          "cavity",
+          "sprue",
+          "pattern",
+          "flange"
+        ],
+        "ans": 1,
+        "why": "vertical channel → sprue."
+      },
+      {
+        "q": "Complete: \"Metal-forming processes are classified into two categories: hot-working processes and ______ processes.\"",
+        "opts": [
+          "cold-working",
+          "sintering",
+          "casting",
+          "piercing"
+        ],
+        "ans": 0,
+        "why": "Article 1, câu 3."
+      },
+      {
+        "q": "Complete: \"Sand casting is the most widely used casting process because of its flexibility, heat resistance, and relatively low ______.\"",
+        "opts": [
+          "weight",
+          "speed",
+          "cost",
+          "noise"
+        ],
+        "ans": 2,
+        "why": "Article 2b, câu 1."
+      },
+      {
+        "q": "Complete: \"The powder is placed in a die and ______ into a solid mass.\"",
+        "opts": [
+          "melted",
+          "poured",
+          "extruded",
+          "compressed"
+        ],
+        "ans": 3,
+        "why": "Article 2a, câu 5."
+      }
+    ],
+    "tf": [
+      {
+        "q": "Read Article 1 (Metal forming). Mark each statement True or False.",
+        "st": [
+          [
+            "Metal-forming processes produce a lot of waste.",
+            false
+          ],
+          [
+            "Hot-working is done above the recrystallization temperature.",
+            true
+          ],
+          [
+            "Cold forming is usually done at room temperature.",
+            true
+          ],
+          [
+            "Cold-working is done above the recrystallization temperature.",
+            false
+          ]
+        ],
+        "why": "Metal forming: little or no waste. Hot-working above, cold-working below the recrystallization temperature, usually at room temperature."
+      },
+      {
+        "q": "Read Article 2a (Casting, sintering, extrusion). Mark each statement True or False.",
+        "st": [
+          [
+            "Casting involves pouring molten metal into a mould.",
+            true
+          ],
+          [
+            "Sintering uses molten metal.",
+            false
+          ],
+          [
+            "In sintering, the powder is heated until it melts.",
+            false
+          ],
+          [
+            "In extrusion, metal is forced through a die to form bars or tubes.",
+            true
+          ]
+        ],
+        "why": "Sintering uses metal powder heated (though not melted). Extrusion forces metal through a die."
+      },
+      {
+        "q": "Read Article 2b (Sand casting). Mark each statement True or False.",
+        "st": [
+          [
+            "Sand casting is the most widely used casting process.",
+            true
+          ],
+          [
+            "The sand casting process uses a furnace, metal, pattern, and sand mold.",
+            true
+          ],
+          [
+            "Sand casting can only make small parts.",
+            false
+          ],
+          [
+            "Engine blocks and cylinder heads can be sand cast.",
+            true
+          ]
+        ],
+        "why": "Sand casting is widely used, needs furnace + metal + pattern + sand mold, makes parts from ounces to tons, including engine blocks and cylinder heads."
+      }
+    ]
   }
- },
- "luyen_tap": {
-  "mc": [
-   {
-    "q": "Plastic deformation of metals above their recrystallization temperature.",
-    "opts": [
-     "cold-working",
-     "hot-working",
-     "rolling",
-     "casting"
-    ],
-    "ans": 1,
-    "why": "above → hot-working."
-   },
-   {
-    "q": "Plastic deformation of metals below the recrystallization temperature.",
-    "opts": [
-     "hot-working",
-     "sintering",
-     "cold-working",
-     "forging"
-    ],
-    "ans": 2,
-    "why": "below → cold-working."
-   },
-   {
-    "q": "A process in which a metal disc or tube is rotated at high speed and formed into a round part.",
-    "opts": [
-     "piercing",
-     "spinning",
-     "bending",
-     "shearing"
-    ],
-    "ans": 1,
-    "why": "rotated at high speed → spinning."
-   },
-   {
-    "q": "The process in which metals are formed and shaped using compressive forces.",
-    "opts": [
-     "forging",
-     "casting",
-     "sintering",
-     "piercing"
-    ],
-    "ans": 0,
-    "why": "compressive forces → forging."
-   },
-   {
-    "q": "A process in which a machining tool makes a round or other shaped hole in raw metal.",
-    "opts": [
-     "bending",
-     "shearing",
-     "rolling",
-     "piercing"
-    ],
-    "ans": 3,
-    "why": "hole → piercing."
-   },
-   {
-    "q": "A process by which metal is deformed at an angle when force is applied.",
-    "opts": [
-     "bending",
-     "spinning",
-     "casting",
-     "sintering"
-    ],
-    "ans": 0,
-    "why": "angle → bending."
-   },
-   {
-    "q": "A sheet metal forming process where a punch forces the sheet to pull in from the flange area.",
-    "opts": [
-     "spinning",
-     "deep drawing",
-     "piercing",
-     "extrusion"
-    ],
-    "ans": 1,
-    "why": "punch + flange → deep drawing."
-   },
-   {
-    "q": "A manufacturing process in which liquid metal is poured into a sand mold.",
-    "opts": [
-     "investment casting",
-     "sand casting",
-     "forging",
-     "extrusion"
-    ],
-    "ans": 1,
-    "why": "sand mold → sand casting."
-   },
-   {
-    "q": "A method of metal casting in which molten metal is poured into a mold made by means of a wax model.",
-    "opts": [
-     "sand casting",
-     "sintering",
-     "investment casting",
-     "deep drawing"
-    ],
-    "ans": 2,
-    "why": "wax model → investment casting."
-   },
-   {
-    "q": "Melted into a liquid by heat.",
-    "opts": [
-     "molten",
-     "solid",
-     "sintered",
-     "plastic"
-    ],
-    "ans": 0,
-    "why": "melted into a liquid → molten."
-   },
-   {
-    "q": "A shaping tool that metal is pressed or poured into.",
-    "opts": [
-     "pattern",
-     "furnace",
-     "ladle",
-     "die"
-    ],
-    "ans": 3,
-    "why": "shaping tool → die."
-   },
-   {
-    "q": "A model of the part, used to make the cavity in a sand mold.",
-    "opts": [
-     "pattern",
-     "die",
-     "flange",
-     "punch"
-    ],
-    "ans": 0,
-    "why": "model + cavity → pattern."
-   },
-   {
-    "q": "Heating compressed metal powder, without melting it, until the particles join together.",
-    "opts": [
-     "extrusion",
-     "rolling",
-     "sintering",
-     "casting"
-    ],
-    "ans": 2,
-    "why": "powder + without melting → sintering."
-   },
-   {
-    "q": "Forcing heated metal through a die to make long bars or tubes.",
-    "opts": [
-     "extrusion",
-     "forging",
-     "bending",
-     "shearing"
-    ],
-    "ans": 0,
-    "why": "through a die + bars or tubes → extrusion."
-   },
-   {
-    "q": "The upper box of a sand mold.",
-    "opts": [
-     "drag",
-     "cope",
-     "pattern",
-     "sprue"
-    ],
-    "ans": 1,
-    "why": "upper box → cope (drag là hộp dưới)."
-   },
-   {
-    "q": "The lower box of a sand mold.",
-    "opts": [
-     "cope",
-     "gate",
-     "drag",
-     "ladle"
-    ],
-    "ans": 2,
-    "why": "lower box → drag."
-   },
-   {
-    "q": "The vertical channel through which molten metal is poured into the mold.",
-    "opts": [
-     "cavity",
-     "sprue",
-     "pattern",
-     "flange"
-    ],
-    "ans": 1,
-    "why": "vertical channel → sprue."
-   },
-   {
-    "q": "Complete: \"Metal-forming processes are classified into two categories: hot-working processes and ______ processes.\"",
-    "opts": [
-     "cold-working",
-     "sintering",
-     "casting",
-     "piercing"
-    ],
-    "ans": 0,
-    "why": "Article 1, câu 3."
-   },
-   {
-    "q": "Complete: \"Sand casting is the most widely used casting process because of its flexibility, heat resistance, and relatively low ______.\"",
-    "opts": [
-     "weight",
-     "speed",
-     "cost",
-     "noise"
-    ],
-    "ans": 2,
-    "why": "Article 2b, câu 1."
-   },
-   {
-    "q": "Complete: \"The powder is placed in a die and ______ into a solid mass.\"",
-    "opts": [
-     "melted",
-     "poured",
-     "extruded",
-     "compressed"
-    ],
-    "ans": 3,
-    "why": "Article 2a, câu 5."
-   }
-  ],
-  "tf": [
-   {
-    "q": "Read Article 1 (Metal forming). Mark each statement True or False.",
-    "st": [
-     [
-      "Metal-forming processes produce a lot of waste.",
-      false
-     ],
-     [
-      "Hot-working is done above the recrystallization temperature.",
-      true
-     ],
-     [
-      "Cold forming is usually done at room temperature.",
-      true
-     ],
-     [
-      "Cold-working is done above the recrystallization temperature.",
-      false
-     ]
-    ],
-    "why": "Metal forming: little or no waste. Hot-working above, cold-working below the recrystallization temperature, usually at room temperature."
-   },
-   {
-    "q": "Read Article 2a (Casting, sintering, extrusion). Mark each statement True or False.",
-    "st": [
-     [
-      "Casting involves pouring molten metal into a mould.",
-      true
-     ],
-     [
-      "Sintering uses molten metal.",
-      false
-     ],
-     [
-      "In sintering, the powder is heated until it melts.",
-      false
-     ],
-     [
-      "In extrusion, metal is forced through a die to form bars or tubes.",
-      true
-     ]
-    ],
-    "why": "Sintering uses metal powder heated (though not melted). Extrusion forces metal through a die."
-   },
-   {
-    "q": "Read Article 2b (Sand casting). Mark each statement True or False.",
-    "st": [
-     [
-      "Sand casting is the most widely used casting process.",
-      true
-     ],
-     [
-      "The sand casting process uses a furnace, metal, pattern, and sand mold.",
-      true
-     ],
-     [
-      "Sand casting can only make small parts.",
-      false
-     ],
-     [
-      "Engine blocks and cylinder heads can be sand cast.",
-      true
-     ]
-    ],
-    "why": "Sand casting is widely used, needs furnace + metal + pattern + sand mold, makes parts from ounces to tons, including engine blocks and cylinder heads."
-   }
-  ]
- }
 }

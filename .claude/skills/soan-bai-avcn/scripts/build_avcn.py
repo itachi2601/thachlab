@@ -95,10 +95,17 @@ def details(summary: str, inner: str, cls="tl-details") -> str:
 def sec_thi() -> str:
     rows = "".join(f"<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>" for a, b, c in M["de_thi"])
     muc_tieu = "".join(f"<li>{x}</li>" for x in M["muc_tieu"])
+    bang = details("Xem 5 Part của đề ứng với mục nào trong bài", f'<div class="table-scroll"><table class="tl-table avcn-tbl"><thead><tr><th>Part</th><th>Đề hỏi gì</th><th>Học ở mục</th></tr></thead><tbody>{rows}</tbody></table></div>')
+    bc = M.get("boi_canh")
+    if bc:  # mở bài bằng tình huống ở xưởng; mục tiêu + đề thi thu vào mục gập
+        return (f'<h3>{ROMAN[0]}. {bc["tieu_de"]}</h3>'
+                + think("🔧 Tình huống ở xưởng", f'<p>{bc["tinh_huong"]}</p>')
+                + f'<p><strong>Hôm nay em sẽ:</strong> {bc["viec_can_lam"]}</p>'
+                + details("Mục tiêu bài và đề cuối kỳ", f'<p>Học xong chương này em cần:</p><ul>{muc_tieu}</ul>'
+                          '<p>Đề cuối kỳ có 5 Part; ba Part đầu chỉ cần <strong>nhận ra từ</strong> và <strong>tìm lại câu trong bài đọc</strong>.</p>' + bang))
     return (f'<h3>{ROMAN[0]}. Chương này cho em bao nhiêu điểm trong đề cuối kỳ?</h3>'
             f'<p>Đề cuối kỳ luôn có 5 Part. Ba Part đầu (7 điểm) chỉ cần <strong>nhận ra từ</strong> và <strong>tìm lại câu trong bài đọc</strong>. Học xong chương này em cần:</p>'
-            f'<ul>{muc_tieu}</ul>'
-            + details("Xem 5 Part của đề ứng với mục nào trong bài", f'<div class="table-scroll"><table class="tl-table avcn-tbl"><thead><tr><th>Part</th><th>Đề hỏi gì</th><th>Học ở mục</th></tr></thead><tbody>{rows}</tbody></table></div>'))
+            f'<ul>{muc_tieu}</ul>' + bang)
 
 
 # ---------- Mục 1: đoán ----------
@@ -277,7 +284,8 @@ def sec_tra_bai() -> str:
     items = "".join(details(q, f'<p>{a}</p>') for q, a in D["tra_bai"])
     return (f'<h3>{ROMAN[7]}. Trả bài: gấp sách lại, trả lời 8 câu</h3>'
             '<p>Nhớ lại được là nhớ lâu. Với mỗi câu: <strong>nói ra đáp án trước</strong>, rồi mới bấm mở. Câu nào không trả lời được thì quay lên mục tương ứng, rồi sang tab <strong>Đề mẫu</strong>.</p>'
-            + think("🎤 Trả bài", items))
+            + think("🎤 Trả bài", items)
+            + (f'<p><strong>Quay lại tình huống đầu bài:</strong> {M["boi_canh"]["quay_lai"]}</p>' if M.get("boi_canh") else ""))
 
 
 def build_theory() -> str:

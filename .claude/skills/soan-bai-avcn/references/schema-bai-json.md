@@ -12,6 +12,7 @@ danh sách). Quiz: `dap` là chỉ số 0-based trong `lua_chon`; phản hồi k
 | `meta.title_en`, `meta.title_vi` | str | ✓ | |
 | `meta.minutes` | int | ✓ | ước lượng đọc (20–30) |
 | `meta.doan_tieu_de`, `meta.doan_mo_dau`, `meta.them_nhan` | str | | tiêu đề/lời dẫn mục Đoán và nhãn hộp từ ⭐⭐ khi chương không nói về máy (mặc định = bản Chapter 8) |
+| `meta.boi_canh` | obj | | Mở bài bằng bối cảnh (thay mục "bao nhiêu điểm"): `tieu_de` ≤8 chữ, `tinh_huong` 40–60 chữ ngôi "em" cảnh xưởng thật + 2–3 từ khoá trong `<strong>`, `viec_can_lam` 1 câu, `quay_lai` 1 câu hỏi cuối mục Trả bài. Không nhắc điểm/đề. Sinh bằng `npx tsx scripts/sinh-boi-canh-avcn.mts` rồi `--ap-dung` |
 | `meta.muc_tieu` | str[] | ✓ | 3 mục tiêu đo được, gắn Part |
 | `meta.de_thi` | [str,str,str][] | ✓ | 5 hàng: Part · điểm, đề hỏi gì, học ở mục nào |
 | `khoi_dong` | obj[] (2) | ✓ | `{img, hoi, lua_chon[3], dap, fb_ok, fb_no}` — ảnh máy/dụng cụ quen ở xưởng |

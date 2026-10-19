@@ -1,1821 +1,1827 @@
 {
- "meta": {
-  "chapter": 2,
-  "prefix": "tl2",
-  "title_en": "Safety at Work",
-  "title_vi": "An toàn lao động",
-  "minutes": 30,
-  "muc_tieu": [
-   "Nhận ra 20 từ ⭐ (đồ bảo hộ, biển báo, từ chỉ tai nạn và nơi làm việc) khi thấy ảnh hoặc đọc định nghĩa (Part 1).",
-   "Tìm được câu trả lời trong Article 1 (xưởng sửa ô tô) và Article 2 (thông báo khi có cháy) để điền một từ và chọn Đúng/Sai (Part 2).",
-   "Dùng được mẫu câu <em>X protects Y from Z</em> và bị động <em>are caused by…</em> để dịch (Part 4–5)."
-  ],
-  "de_thi": [
-   [
-    "Part 1 · 2,5 đ",
-    "10 câu chọn từ theo định nghĩa hoặc ảnh (đồ bảo hộ, biển báo, tai nạn)",
-    "Mục III Từ vựng"
-   ],
-   [
-    "Part 2 · 2,5 đ",
-    "Đọc lại Article 1 hoặc 2, điền 1 từ + Đúng/Sai",
-    "Mục IV Bài đọc"
-   ],
-   [
-    "Part 3 · 2 đ",
-    "Điền từ cho sẵn vào đoạn văn về xưởng ô tô",
-    "Mục VII Xưởng ô tô: điền từ"
-   ],
-   [
-    "Part 4 · 2 đ",
-    "Dịch Anh → Việt",
-    "Mục IV Bài đọc + mục V mẫu câu"
-   ],
-   [
-    "Part 5 · 1 đ",
-    "Dịch Việt → Anh một câu",
-    "Mục V mẫu câu"
-   ]
-  ],
-  "flashcard": "/flashcard/avcn-chapter-2.html",
-  "doan_tieu_de": "đồ này tên gì?",
-  "doan_mo_dau": "Hai thứ dưới đây em đã thấy ở xưởng hoặc ngoài đường. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
-  "them_nhan": "từ chỉ rủi ro, nơi làm việc và xử lý khi có cháy"
- },
- "khoi_dong": [
-  {
-   "img": "fire-extinguisher",
-   "hoi": "Bình màu đỏ treo trên tường xưởng, dùng khi có cháy. Tiếng Anh gọi là gì?",
-   "lua_chon": [
-    "fire extinguisher",
-    "fire alarm",
-    "fire exit"
-   ],
-   "dap": 0,
-   "fb_ok": "<em>fire extinguisher</em> là bình chữa cháy. Động từ <em>extinguish</em> là dập tắt, sẽ gặp trong Article 2.",
-   "fb_no": "Alarm là còi báo, exit là lối thoát. Thứ em cầm xịt vào đám cháy là gì?"
-  },
-  {
-   "img": "pit",
-   "hoi": "Xưởng sửa xe có cái hố này dưới nền: xe đậu lên trên, thợ đi xuống để làm việc dưới gầm. Tiếng Anh gọi là gì?",
-   "lua_chon": [
-    "pit",
-    "locker room",
-    "confined areas"
-   ],
-   "dap": 0,
-   "fb_ok": "<em>pit</em> là cái hố. Ở xưởng ô tô, pit là hố cho thợ đứng dưới gầm xe, sẽ gặp trong Article 1.",
-   "fb_no": "Locker room là phòng thay đồ, confined areas là chỗ hẹp, kín. Cái hố dưới nền xưởng tên là gì?"
-  }
- ],
- "tu_vung": [
-  {
-   "ten": "Cụm A · Bảo vệ đầu, mắt, tai, mũi, tay",
-   "tu": [
-    {
-     "term": "safety helmet",
-     "ipa": "/ˈseɪfti ˈhelmɪt/",
-     "vi": "mũ bảo hộ",
-     "def": "Protects the head from accidental injury.",
-     "img": "helmet",
-     "tier": 1
-    },
-    {
-     "term": "safety goggles",
-     "ipa": "/ˈseɪfti ˈɡɒɡlz/",
-     "vi": "kính bảo hộ",
-     "def": "Provide protection to the eyes.",
-     "img": "goggles",
-     "tier": 1
-    },
-    {
-     "term": "ear protectors",
-     "ipa": "/ɪə prəˈtektəz/",
-     "vi": "chụp tai chống ồn",
-     "def": "Protect ears against noise.",
-     "img": "ear-protectors",
-     "tier": 1
-    },
-    {
-     "term": "protective mask",
-     "ipa": "/prəˈtektɪv mɑːsk/",
-     "vi": "khẩu trang, mặt nạ chống bụi và khí độc",
-     "def": "Protects from inhaling harmful air particles as dusts, vapours, fumes and gases.",
-     "img": "mask",
-     "tier": 1
-    },
-    {
-     "term": "safety gloves",
-     "ipa": "/ˈseɪfti ɡlʌvz/",
-     "vi": "găng tay bảo hộ",
-     "def": "Handle heavy materials such as breeze-blocks, beams and avoid injuries.",
-     "img": "gloves",
-     "tier": 1
+  "meta": {
+    "chapter": 2,
+    "prefix": "tl2",
+    "title_en": "Safety at Work",
+    "title_vi": "An toàn lao động",
+    "minutes": 30,
+    "muc_tieu": [
+      "Nhận ra 20 từ ⭐ (đồ bảo hộ, biển báo, từ chỉ tai nạn và nơi làm việc) khi thấy ảnh hoặc đọc định nghĩa (Part 1).",
+      "Tìm được câu trả lời trong Article 1 (xưởng sửa ô tô) và Article 2 (thông báo khi có cháy) để điền một từ và chọn Đúng/Sai (Part 2).",
+      "Dùng được mẫu câu <em>X protects Y from Z</em> và bị động <em>are caused by…</em> để dịch (Part 4–5)."
+    ],
+    "de_thi": [
+      [
+        "Part 1 · 2,5 đ",
+        "10 câu chọn từ theo định nghĩa hoặc ảnh (đồ bảo hộ, biển báo, tai nạn)",
+        "Mục III Từ vựng"
+      ],
+      [
+        "Part 2 · 2,5 đ",
+        "Đọc lại Article 1 hoặc 2, điền 1 từ + Đúng/Sai",
+        "Mục IV Bài đọc"
+      ],
+      [
+        "Part 3 · 2 đ",
+        "Điền từ cho sẵn vào đoạn văn về xưởng ô tô",
+        "Mục VII Xưởng ô tô: điền từ"
+      ],
+      [
+        "Part 4 · 2 đ",
+        "Dịch Anh → Việt",
+        "Mục IV Bài đọc + mục V mẫu câu"
+      ],
+      [
+        "Part 5 · 1 đ",
+        "Dịch Việt → Anh một câu",
+        "Mục V mẫu câu"
+      ]
+    ],
+    "flashcard": "/flashcard/avcn-chapter-2.html",
+    "doan_tieu_de": "đồ này tên gì?",
+    "doan_mo_dau": "Hai thứ dưới đây em đã thấy ở xưởng hoặc ngoài đường. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
+    "them_nhan": "từ chỉ rủi ro, nơi làm việc và xử lý khi có cháy",
+    "boi_canh": {
+      "tieu_de": "Biển báo trước cửa xưởng",
+      "tinh_huong": "Sáng đầu tiên đi thực tập, em đứng trước cửa xưởng thì thợ cả người nước ngoài chỉ vào tấm biển xanh dương và nói: \"Wear your <strong>safety goggles</strong> and <strong>safety shoes</strong>, this is a <strong>mandatory sign</strong>.\" Em chỉ nghe hiểu loáng thoáng, đứng ngập ngừng, không biết phải mang gì mới được vào.",
+      "viec_can_lam": "Nhận ra loại biển báo và gọi đúng tên đồ bảo hộ bằng tiếng Anh để mang đủ trước khi vào xưởng.",
+      "quay_lai": "Giờ em nghe lệnh của thợ cả và biết mình phải mang gì để vào xưởng chưa?"
     }
-   ],
-   "quiz": {
-    "hoi": "Part 1 hỏi: <em>\"Provide protection to the eyes.\"</em>",
+  },
+  "khoi_dong": [
+    {
+      "img": "fire-extinguisher",
+      "hoi": "Bình màu đỏ treo trên tường xưởng, dùng khi có cháy. Tiếng Anh gọi là gì?",
+      "lua_chon": [
+        "fire extinguisher",
+        "fire alarm",
+        "fire exit"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>fire extinguisher</em> là bình chữa cháy. Động từ <em>extinguish</em> là dập tắt, sẽ gặp trong Article 2.",
+      "fb_no": "Alarm là còi báo, exit là lối thoát. Thứ em cầm xịt vào đám cháy là gì?"
+    },
+    {
+      "img": "pit",
+      "hoi": "Xưởng sửa xe có cái hố này dưới nền: xe đậu lên trên, thợ đi xuống để làm việc dưới gầm. Tiếng Anh gọi là gì?",
+      "lua_chon": [
+        "pit",
+        "locker room",
+        "confined areas"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>pit</em> là cái hố. Ở xưởng ô tô, pit là hố cho thợ đứng dưới gầm xe, sẽ gặp trong Article 1.",
+      "fb_no": "Locker room là phòng thay đồ, confined areas là chỗ hẹp, kín. Cái hố dưới nền xưởng tên là gì?"
+    }
+  ],
+  "tu_vung": [
+    {
+      "ten": "Cụm A · Bảo vệ đầu, mắt, tai, mũi, tay",
+      "tu": [
+        {
+          "term": "safety helmet",
+          "ipa": "/ˈseɪfti ˈhelmɪt/",
+          "vi": "mũ bảo hộ",
+          "def": "Protects the head from accidental injury.",
+          "img": "helmet",
+          "tier": 1
+        },
+        {
+          "term": "safety goggles",
+          "ipa": "/ˈseɪfti ˈɡɒɡlz/",
+          "vi": "kính bảo hộ",
+          "def": "Provide protection to the eyes.",
+          "img": "goggles",
+          "tier": 1
+        },
+        {
+          "term": "ear protectors",
+          "ipa": "/ɪə prəˈtektəz/",
+          "vi": "chụp tai chống ồn",
+          "def": "Protect ears against noise.",
+          "img": "ear-protectors",
+          "tier": 1
+        },
+        {
+          "term": "protective mask",
+          "ipa": "/prəˈtektɪv mɑːsk/",
+          "vi": "khẩu trang, mặt nạ chống bụi và khí độc",
+          "def": "Protects from inhaling harmful air particles as dusts, vapours, fumes and gases.",
+          "img": "mask",
+          "tier": 1
+        },
+        {
+          "term": "safety gloves",
+          "ipa": "/ˈseɪfti ɡlʌvz/",
+          "vi": "găng tay bảo hộ",
+          "def": "Handle heavy materials such as breeze-blocks, beams and avoid injuries.",
+          "img": "gloves",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"Provide protection to the eyes.\"</em>",
+        "lua_chon": [
+          "safety helmet",
+          "safety goggles",
+          "ear protectors",
+          "protective mask"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>the eyes</em> (mắt): safety goggles là kính bảo hộ.",
+        "fb_no": "Gạch từ khoá <em>the eyes</em>. Thứ nào đeo lên mắt, không phải lên đầu hay tai?"
+      }
+    },
+    {
+      "ten": "Cụm B · Bảo vệ thân, chân, lưng, đầu gối",
+      "tu": [
+        {
+          "term": "protective apron",
+          "ipa": "/prəˈtektɪv ˈeɪprən/",
+          "vi": "tạp dề bảo hộ (yếm hàn)",
+          "def": "Protects the body against welding work.",
+          "img": "apron",
+          "tier": 1
+        },
+        {
+          "term": "safety shoes",
+          "ipa": "/ˈseɪfti ʃuːz/",
+          "vi": "giày bảo hộ",
+          "def": "Protect the feet from accidental injury.",
+          "img": "safety-shoes",
+          "tier": 1
+        },
+        {
+          "term": "safety harness",
+          "ipa": "/ˈseɪfti ˈhɑːnɪs/",
+          "vi": "dây đai an toàn (chống rơi ngã)",
+          "def": "Avoids the worker falling.",
+          "img": "harness",
+          "tier": 1
+        },
+        {
+          "term": "dorsal belt",
+          "ipa": "/ˈdɔːsl belt/",
+          "vi": "đai lưng bảo vệ lưng",
+          "def": "Handles heavy materials and protects the back.",
+          "img": "dorsal-belt",
+          "tier": 1
+        },
+        {
+          "term": "knee pads",
+          "ipa": "/niː pædz/",
+          "vi": "miếng đệm bảo vệ đầu gối",
+          "def": "Protect knees on the ground while working.",
+          "img": "knee-pads",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"Avoids the worker falling.\"</em>",
+        "lua_chon": [
+          "dorsal belt",
+          "knee pads",
+          "safety harness",
+          "safety shoes"
+        ],
+        "dap": 2,
+        "fb_ok": "Từ khoá <em>falling</em> (rơi, ngã): dây đai an toàn giữ người làm việc trên cao khỏi rơi.",
+        "fb_no": "Gạch từ khoá <em>falling</em>. Dorsal belt lo cho lưng, knee pads lo cho đầu gối. Thứ nào giữ người khỏi rơi?"
+      }
+    },
+    {
+      "ten": "Cụm C · Năm loại biển báo an toàn",
+      "tu": [
+        {
+          "term": "prohibition sign",
+          "ipa": "/ˌprəʊhɪˈbɪʃn saɪn/",
+          "vi": "biển cấm",
+          "def": "A safety sign which tells you what you must not do.",
+          "img": "sign-prohibition",
+          "tier": 1
+        },
+        {
+          "term": "hazard sign",
+          "ipa": "/ˈhæzəd saɪn/",
+          "vi": "biển cảnh báo nguy hiểm (warning sign)",
+          "def": "A safety sign which warns you of danger.",
+          "img": "sign-hazard",
+          "tier": 1
+        },
+        {
+          "term": "mandatory sign",
+          "ipa": "/ˈmændətri saɪn/",
+          "vi": "biển bắt buộc",
+          "def": "A safety sign which tells you what you must do.",
+          "img": "sign-mandatory",
+          "tier": 1
+        },
+        {
+          "term": "fire safety sign",
+          "ipa": "/ˈfaɪə ˈseɪfti saɪn/",
+          "vi": "biển phòng cháy chữa cháy",
+          "def": "A safety sign which shows where fire equipment and fire alarms are.",
+          "img": "sign-fire",
+          "tier": 1
+        },
+        {
+          "term": "general safety sign",
+          "ipa": "/ˈdʒenrəl ˈseɪfti saɪn/",
+          "vi": "biển chỉ dẫn an toàn chung (biển an toàn: lối thoát, cứu thương)",
+          "def": "A safety sign which shows safe places, such as an exit or first aid.",
+          "img": "sign-general",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A safety sign which tells you what you must do, for example 'Wear protective gloves'.\"</em>",
+        "lua_chon": [
+          "hazard sign",
+          "mandatory sign",
+          "prohibition sign",
+          "fire safety sign"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>must do</em> (phải làm): mandatory sign, biển bắt buộc. Câu này đã ra trong đề cuối kỳ.",
+        "fb_no": "Gạch cụm <em>must do</em>. Prohibition là biển cho biết điều KHÔNG được làm. Biển nào cho biết điều PHẢI làm?"
+      }
+    },
+    {
+      "ten": "Cụm D · Tai nạn và nơi làm việc",
+      "tu": [
+        {
+          "term": "confined areas",
+          "ipa": "/kənˈfaɪnd ˈeəriəz/",
+          "vi": "không gian hẹp, kín (hầm, bồn, khoang…)",
+          "def": "A space with limited entry that is not suitable for people.",
+          "img": "confined-areas",
+          "tier": 1
+        },
+        {
+          "term": "overexertion",
+          "ipa": "/ˌəʊvərɪɡˈzɜːʃn/",
+          "vi": "gắng sức quá mức",
+          "def": "Too much use of physical or mental energy; hard work.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "sprain",
+          "ipa": "/spreɪn/",
+          "vi": "bong gân",
+          "def": "Damage to one or more ligaments in a joint, often caused by trauma.",
+          "img": "sprain",
+          "tier": 1
+        },
+        {
+          "term": "apprentice",
+          "ipa": "/əˈprentɪs/",
+          "vi": "người học việc, thợ học nghề",
+          "def": "Someone who works for a skilled person for a particular period.",
+          "img": "apprentice",
+          "tier": 1
+        },
+        {
+          "term": "locker room",
+          "ipa": "/ˈlɒkə ruːm/",
+          "vi": "phòng thay đồ có tủ cá nhân",
+          "def": "A room for changing clothes.",
+          "img": "locker-room",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"Damage to one or more ligaments in a joint, often caused by trauma.\"</em>",
+        "lua_chon": [
+          "strain",
+          "sprain",
+          "overexertion",
+          "slip"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>ligaments in a joint</em> (dây chằng ở khớp): sprain là bong gân. Strain là căng cơ, nói về muscle.",
+        "fb_no": "Gạch cụm <em>ligaments in a joint</em>. Strain nói về muscle (cơ). Từ nào nói về dây chằng ở khớp?"
+      }
+    }
+  ],
+  "tu_vung_them": [
+    {
+      "term": "fire extinguisher",
+      "vi": "bình chữa cháy",
+      "img": "fire-extinguisher"
+    },
+    {
+      "term": "first-aid kit",
+      "vi": "hộp sơ cứu",
+      "img": "first-aid-kit"
+    },
+    {
+      "term": "eyewash station",
+      "vi": "trạm rửa mắt khẩn cấp",
+      "img": "eyewash"
+    },
+    {
+      "term": "alarm button",
+      "vi": "nút báo cháy",
+      "img": "sign-fire"
+    },
+    {
+      "term": "pit",
+      "vi": "hố làm việc dưới gầm xe",
+      "img": "pit"
+    },
+    {
+      "term": "strain",
+      "vi": "căng cơ, giãn cơ (nói về muscle)"
+    },
+    {
+      "term": "slip",
+      "vi": "trượt, tuột (tay)"
+    },
+    {
+      "term": "shower facilities",
+      "vi": "khu nhà tắm"
+    },
+    {
+      "term": "injuries",
+      "vi": "chấn thương"
+    },
+    {
+      "term": "risk",
+      "vi": "rủi ro, nguy cơ"
+    },
+    {
+      "term": "sharp",
+      "vi": "sắc, nhọn"
+    },
+    {
+      "term": "satisfy",
+      "vi": "đáp ứng, làm hài lòng"
+    },
+    {
+      "term": "ventilated",
+      "vi": "được thông gió"
+    },
+    {
+      "term": "fire brigade",
+      "vi": "đội cứu hoả"
+    },
+    {
+      "term": "assembly point",
+      "vi": "điểm tập trung (khi sơ tán)"
+    }
+  ],
+  "bai_doc": [
+    {
+      "ten": "Article 1 · At automobile services shop",
+      "cau": [
+        [
+          "At most shops the work environment is well-lighted and properly <b>ventilated</b>.",
+          "Ở hầu hết các xưởng, môi trường làm việc đủ sáng và được thông gió tốt.",
+          {
+            "doan": [
+              {
+                "tu": "ventilated",
+                "lua_chon": [
+                  "được thông gió",
+                  "được lau sạch",
+                  "được sơn mới"
+                ],
+                "dap": 0,
+                "giai": "ventilated là được thông gió, có không khí lưu thông. Xưởng kín mà không thông gió thì ngột ngạt."
+              }
+            ],
+            "nghia": {
+              "At most shops": "ở hầu hết các xưởng",
+              "work environment": "môi trường làm việc",
+              "well-lighted": "đủ sáng",
+              "properly": "đúng cách, tốt"
+            }
+          }
+        ],
+        [
+          "However some shops are <b>drafty</b> and noisy.",
+          "Tuy nhiên một số xưởng có gió lùa và ồn.",
+          {
+            "doan": [
+              {
+                "tu": "drafty",
+                "lua_chon": [
+                  "có gió lùa",
+                  "có mùi khét",
+                  "rất rộng"
+                ],
+                "dap": 0,
+                "giai": "draft là luồng gió lùa; drafty là có gió lùa, hay bị gió thổi qua."
+              }
+            ],
+            "nghia": {
+              "However": "tuy nhiên",
+              "noisy": "ồn ào"
+            }
+          }
+        ],
+        [
+          "Moreover, on a hot summer or <b>frigid</b> winter day shop temperatures are not always ideal.",
+          "Hơn nữa, vào ngày hè nóng hoặc ngày đông rất lạnh, nhiệt độ trong xưởng không phải lúc nào cũng lý tưởng.",
+          {
+            "doan": [
+              {
+                "tu": "frigid",
+                "lua_chon": [
+                  "rất lạnh",
+                  "rất nóng",
+                  "rất ẩm"
+                ],
+                "dap": 0,
+                "giai": "frigid là lạnh buốt. Câu đối lập hot summer với frigid winter."
+              }
+            ],
+            "nghia": {
+              "Moreover": "hơn nữa",
+              "temperatures": "nhiệt độ",
+              "not always ideal": "không phải lúc nào cũng lý tưởng"
+            }
+          }
+        ],
+        [
+          "Some shops that specialize in oil changes and <b>lubrication</b> use an arrangement commonly called a <b>pit</b>.",
+          "Một số xưởng chuyên thay nhớt và bôi trơn dùng một cách bố trí thường gọi là hố làm việc.",
+          {
+            "doan": [
+              {
+                "tu": "lubrication",
+                "lua_chon": [
+                  "sự bôi trơn",
+                  "sự làm nguội",
+                  "sự lau chùi"
+                ],
+                "dap": 0,
+                "giai": "lubricate là bôi trơn (dầu mỡ); lubrication là việc bôi trơn máy móc."
+              },
+              {
+                "tu": "pit",
+                "lua_chon": [
+                  "hố làm việc dưới gầm xe",
+                  "cái ghim",
+                  "hạt quả"
+                ],
+                "dap": 0,
+                "giai": "pit đời thường là hạt quả hoặc cái hố. Ở xưởng ô tô, pit là hố để thợ đứng dưới gầm xe."
+              }
+            ],
+            "nghia": {
+              "specialize in": "chuyên về",
+              "oil changes": "thay nhớt",
+              "arrangement": "cách bố trí",
+              "commonly called": "thường được gọi là"
+            }
+          }
+        ],
+        [
+          "Customers drive their <b>vehicles</b> into the shop.",
+          "Khách hàng lái xe của họ vào xưởng.",
+          {
+            "doan": [
+              {
+                "tu": "vehicles",
+                "lua_chon": [
+                  "phương tiện, xe cộ",
+                  "dụng cụ",
+                  "phụ tùng"
+                ],
+                "dap": 0,
+                "giai": "vehicle là phương tiện giao thông: ô tô, xe tải, xe máy."
+              }
+            ],
+            "nghia": {
+              "Customers": "khách hàng",
+              "drive": "lái",
+              "into the shop": "vào xưởng"
+            }
+          }
+        ],
+        [
+          "The <b>mechanic</b> then enters the pit to perform the work.",
+          "Sau đó thợ máy đi xuống hố để thực hiện công việc.",
+          {
+            "doan": [
+              {
+                "tu": "mechanic",
+                "lua_chon": [
+                  "thợ máy",
+                  "kỹ sư thiết kế",
+                  "người lái xe"
+                ],
+                "dap": 0,
+                "giai": "mechanic là thợ máy, thợ sửa chữa máy móc và xe."
+              }
+            ],
+            "nghia": {
+              "then": "sau đó",
+              "enters": "đi vào",
+              "perform the work": "thực hiện công việc"
+            }
+          }
+        ],
+        [
+          "Pit areas are <b>typically</b> not well-ventilated and can be hot during summer months.",
+          "Khu vực hố thường không thông gió tốt và có thể nóng vào những tháng hè.",
+          {
+            "doan": [
+              {
+                "tu": "typically",
+                "lua_chon": [
+                  "thường là",
+                  "hiếm khi",
+                  "chỉ một lần"
+                ],
+                "dap": 0,
+                "giai": "typically là thường, thông thường; gần nghĩa với usually."
+              }
+            ],
+            "nghia": {
+              "areas": "khu vực",
+              "not well-ventilated": "không thông gió tốt",
+              "hot": "nóng",
+              "during summer months": "trong những tháng hè"
+            }
+          }
+        ],
+        [
+          "The very nature of the work also means that mechanics can <b>seldom</b> avoid handling <b>greasy</b> and dirty parts.",
+          "Chính bản chất công việc cũng có nghĩa là thợ máy hiếm khi tránh được việc cầm các chi tiết dính dầu mỡ và bẩn.",
+          {
+            "doan": [
+              {
+                "tu": "seldom",
+                "lua_chon": [
+                  "hiếm khi",
+                  "thường xuyên",
+                  "luôn luôn"
+                ],
+                "dap": 0,
+                "giai": "seldom là hiếm khi, gần nghĩa với rarely; trái nghĩa với often."
+              },
+              {
+                "tu": "greasy",
+                "lua_chon": [
+                  "dính dầu mỡ",
+                  "rất nóng",
+                  "bóng loáng"
+                ],
+                "dap": 0,
+                "giai": "grease là dầu mỡ bôi trơn; greasy là dính đầy dầu mỡ."
+              }
+            ],
+            "nghia": {
+              "nature of the work": "bản chất công việc",
+              "avoid": "tránh",
+              "handling": "cầm, xử lý",
+              "dirty parts": "chi tiết bẩn"
+            }
+          }
+        ],
+        [
+          "According to the latest Statistics, the rate of illnesses and <b>injuries</b> is higher for mechanics than the national average rate.",
+          "Theo số liệu thống kê mới nhất, tỉ lệ bệnh tật và chấn thương ở thợ máy cao hơn mức trung bình toàn quốc.",
+          {
+            "doan": [
+              {
+                "tu": "injuries",
+                "lua_chon": [
+                  "chấn thương",
+                  "bệnh nghề nghiệp",
+                  "tai nạn giao thông"
+                ],
+                "dap": 0,
+                "giai": "injury là chấn thương, vết thương; injuries là số nhiều. Hay ra trong Part 3."
+              }
+            ],
+            "nghia": {
+              "According to": "theo",
+              "latest Statistics": "số liệu thống kê mới nhất",
+              "illnesses": "bệnh tật",
+              "rate": "tỉ lệ",
+              "national average": "trung bình toàn quốc"
+            }
+          }
+        ],
+        [
+          "Part of the <b>risk</b> comes from lifting heavy tools, equipment or parts.",
+          "Một phần rủi ro đến từ việc nâng các dụng cụ, thiết bị hoặc chi tiết nặng.",
+          {
+            "doan": [
+              {
+                "tu": "risk",
+                "lua_chon": [
+                  "rủi ro, nguy cơ",
+                  "tiền lương",
+                  "số liệu"
+                ],
+                "dap": 0,
+                "giai": "risk là rủi ro, khả năng bị hại. Hay ra trong Part 3."
+              }
+            ],
+            "nghia": {
+              "Part of": "một phần của",
+              "comes from": "đến từ",
+              "lifting": "nâng, nhấc",
+              "heavy": "nặng",
+              "equipment": "thiết bị"
+            }
+          }
+        ],
+        [
+          "Other injuries, such as small burns, <b>bruises</b> or cuts, are caused from contact with hot or <b>sharp</b> parts,",
+          "Các chấn thương khác, như bỏng nhỏ, vết bầm hoặc vết cắt, do tiếp xúc với chi tiết nóng hoặc sắc,",
+          {
+            "doan": [
+              {
+                "tu": "bruises",
+                "lua_chon": [
+                  "vết bầm",
+                  "vết bỏng",
+                  "vết gãy"
+                ],
+                "dap": 0,
+                "giai": "bruise là vết bầm tím dưới da do va đập."
+              },
+              {
+                "tu": "sharp",
+                "lua_chon": [
+                  "sắc, nhọn",
+                  "nóng",
+                  "trơn"
+                ],
+                "dap": 0,
+                "giai": "sharp là sắc, nhọn: dao, mảnh kim loại sắc. Hay ra trong Part 3."
+              }
+            ],
+            "nghia": {
+              "Other": "khác",
+              "such as": "chẳng hạn như",
+              "burns": "vết bỏng",
+              "cuts": "vết cắt",
+              "contact with": "tiếp xúc với"
+            }
+          }
+        ],
+        [
+          "the need to reach into <b>confined areas</b> or having a tool <b>slip</b> under pressure.",
+          "việc phải thò tay vào những chỗ hẹp, kín, hoặc để dụng cụ tuột tay khi đang dùng lực.",
+          {
+            "doan": [
+              {
+                "tu": "confined areas",
+                "lua_chon": [
+                  "không gian hẹp, kín",
+                  "khu vực rộng",
+                  "khu nghỉ ngơi"
+                ],
+                "dap": 0,
+                "giai": "confine là giam trong phạm vi nhỏ; confined areas là chỗ hẹp, ít lối vào."
+              },
+              {
+                "tu": "slip",
+                "lua_chon": [
+                  "trượt, tuột tay",
+                  "gãy",
+                  "rơi vỡ"
+                ],
+                "dap": 0,
+                "giai": "slip là trượt. A tool slips là dụng cụ tuột khỏi tay hoặc trượt khỏi vật."
+              }
+            ],
+            "nghia": {
+              "the need to": "việc cần phải",
+              "reach into": "với tay vào",
+              "tool": "dụng cụ",
+              "under pressure": "khi bị dùng lực, dưới áp lực"
+            }
+          }
+        ],
+        [
+          "Strains and <b>sprains</b> were also common and were typically caused by <b>overexertion</b>.",
+          "Căng cơ và bong gân cũng phổ biến và thường do gắng sức quá mức.",
+          {
+            "doan": [
+              {
+                "tu": "sprains",
+                "lua_chon": [
+                  "bong gân",
+                  "căng cơ",
+                  "vết cắt"
+                ],
+                "dap": 0,
+                "giai": "sprain là bong gân (dây chằng ở khớp). Strain là căng cơ."
+              },
+              {
+                "tu": "overexertion",
+                "lua_chon": [
+                  "gắng sức quá mức",
+                  "ngủ quá giờ",
+                  "ăn quá no"
+                ],
+                "dap": 0,
+                "giai": "over là quá, exertion là sự dùng sức. Overexertion là gắng sức quá mức."
+              }
+            ],
+            "nghia": {
+              "Strains": "căng cơ",
+              "common": "phổ biến",
+              "typically caused by": "thường do"
+            }
+          }
+        ],
+        [
+          "Technicians may work as a team or be assisted by an <b>apprentice</b> or helper when doing heavy work, such as removing engines and transmissions.",
+          "Kỹ thuật viên có thể làm theo nhóm hoặc được người học việc hay người phụ giúp khi làm việc nặng, như tháo động cơ và hộp số.",
+          {
+            "doan": [
+              {
+                "tu": "apprentice",
+                "lua_chon": [
+                  "người học việc",
+                  "kỹ sư trưởng",
+                  "khách hàng"
+                ],
+                "dap": 0,
+                "giai": "apprentice là người học việc, làm cho một thợ lành nghề trong một thời gian. Hay ra Part 1 và Part 3."
+              }
+            ],
+            "nghia": {
+              "Technicians": "kỹ thuật viên",
+              "assisted by": "được giúp bởi",
+              "helper": "người phụ giúp",
+              "removing": "tháo ra",
+              "transmissions": "hộp số"
+            }
+          }
+        ],
+        [
+          "Many employers provide uniforms, <b>locker rooms</b>, and <b>shower facilities</b>.",
+          "Nhiều chủ doanh nghiệp cung cấp đồng phục, phòng thay đồ có tủ và khu nhà tắm.",
+          {
+            "doan": [
+              {
+                "tu": "locker rooms",
+                "lua_chon": [
+                  "phòng thay đồ có tủ",
+                  "phòng họp",
+                  "nhà kho"
+                ],
+                "dap": 0,
+                "giai": "locker là tủ có khoá; locker room là phòng thay đồ."
+              },
+              {
+                "tu": "shower facilities",
+                "lua_chon": [
+                  "khu nhà tắm",
+                  "khu rửa xe",
+                  "nhà ăn"
+                ],
+                "dap": 0,
+                "giai": "shower là vòi sen, facilities là khu vực, cơ sở. Hay ra Part 3."
+              }
+            ],
+            "nghia": {
+              "employers": "chủ sử dụng lao động",
+              "provide": "cung cấp",
+              "uniforms": "đồng phục"
+            }
+          }
+        ],
+        [
+          "Most automotive service technicians and mechanics work a <b>standard</b> 40 hour week.",
+          "Hầu hết kỹ thuật viên và thợ máy dịch vụ ô tô làm việc 40 giờ một tuần theo chuẩn.",
+          {
+            "doan": [
+              {
+                "tu": "standard",
+                "lua_chon": [
+                  "tiêu chuẩn, thông thường",
+                  "tối đa",
+                  "ngoài giờ"
+                ],
+                "dap": 0,
+                "giai": "standard là tiêu chuẩn, thông thường. A standard 40 hour week là tuần làm việc 40 giờ như thường lệ."
+              }
+            ],
+            "nghia": {
+              "Most": "hầu hết",
+              "automotive": "thuộc ô tô",
+              "service technicians": "kỹ thuật viên dịch vụ",
+              "week": "tuần"
+            }
+          }
+        ],
+        [
+          "Some may work evenings and weekends to <b>satisfy</b> customer service needs.",
+          "Một số có thể làm buổi tối và cuối tuần để đáp ứng nhu cầu dịch vụ khách hàng.",
+          {
+            "doan": [
+              {
+                "tu": "satisfy",
+                "lua_chon": [
+                  "đáp ứng, làm hài lòng",
+                  "từ chối",
+                  "kiểm tra"
+                ],
+                "dap": 0,
+                "giai": "satisfy là làm cho thoả mãn, đáp ứng. Hay ra Part 3."
+              }
+            ],
+            "nghia": {
+              "Some": "một số người",
+              "evenings": "buổi tối",
+              "weekends": "cuối tuần",
+              "needs": "nhu cầu"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Part of the ______ comes from lifting heavy tools, equipment or parts.\"</em>",
+        "lua_chon": [
+          "risk",
+          "rate",
+          "heat"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 10 của bài: <em>Part of the risk comes from lifting heavy tools</em>. Tìm từ khoá <em>lifting heavy tools</em>.",
+        "fb_no": "Tìm câu có <em>lifting heavy tools</em>. Từ nào đứng ngay sau <em>Part of the</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"Strains and sprains were typically caused by hot parts.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>were typically caused by overexertion</em> (gắng sức quá mức). Hot parts gây bỏng.",
+        "fb_no": "Đọc lại câu 13: strains and sprains do cái gì gây ra? Còn hot or sharp parts gây ra chấn thương nào?"
+      },
+      "tu_khoa": {}
+    },
+    {
+      "ten": "Article 2 · In case of fire!",
+      "cau": [
+        [
+          "Fire <b>kills</b>, often very quickly.",
+          "Lửa có thể giết người, thường rất nhanh.",
+          {
+            "doan": [
+              {
+                "tu": "kills",
+                "lua_chon": [
+                  "giết chết, gây tử vong",
+                  "dập tắt",
+                  "làm nóng"
+                ],
+                "dap": 0,
+                "giai": "kill là giết, gây chết người. Fire kills: cháy gây tử vong."
+              }
+            ],
+            "nghia": {
+              "Fire": "lửa, đám cháy",
+              "often": "thường",
+              "very quickly": "rất nhanh"
+            }
+          }
+        ],
+        [
+          "It is important to know exactly what to do if a fire <b>breaks out</b>.",
+          "Điều quan trọng là biết chính xác phải làm gì nếu có hoả hoạn bùng lên.",
+          {
+            "doan": [
+              {
+                "tu": "breaks out",
+                "lua_chon": [
+                  "bùng phát",
+                  "bị dập tắt",
+                  "dừng lại"
+                ],
+                "dap": 0,
+                "giai": "break out là bùng ra, xảy ra đột ngột (cháy, chiến tranh, dịch)."
+              }
+            ],
+            "nghia": {
+              "important": "quan trọng",
+              "exactly": "chính xác",
+              "what to do": "phải làm gì"
+            }
+          }
+        ],
+        [
+          "Lives may depend on it.",
+          "Mạng sống có thể phụ thuộc vào điều đó.",
+          {
+            "doan": [],
+            "nghia": {
+              "Lives": "mạng sống",
+              "may": "có thể",
+              "depend on": "phụ thuộc vào"
+            }
+          }
+        ],
+        [
+          "If you find a fire, do not try to <b>put it out</b> yourself.",
+          "Nếu em thấy cháy, đừng tự cố dập lửa.",
+          {
+            "doan": [
+              {
+                "tu": "put it out",
+                "lua_chon": [
+                  "dập tắt nó",
+                  "đốt nó lên",
+                  "chạy khỏi nó"
+                ],
+                "dap": 0,
+                "giai": "put out (a fire) là dập tắt. Đề Đúng/Sai hay hỏi câu này."
+              }
+            ],
+            "nghia": {
+              "find": "thấy, phát hiện",
+              "do not try to": "đừng cố",
+              "yourself": "tự mình"
+            }
+          }
+        ],
+        [
+          "Break the cover on the nearest <b>alarm button</b> and press it hard.",
+          "Đập vỡ nắp che trên nút báo cháy gần nhất và nhấn mạnh.",
+          {
+            "doan": [
+              {
+                "tu": "alarm button",
+                "lua_chon": [
+                  "nút báo cháy",
+                  "nút nguồn",
+                  "chuông cửa"
+                ],
+                "dap": 0,
+                "giai": "alarm là còi báo động; alarm button là nút bấm kích hoạt còi báo cháy."
+              }
+            ],
+            "nghia": {
+              "Break": "đập vỡ",
+              "cover": "nắp che",
+              "nearest": "gần nhất",
+              "press": "nhấn",
+              "hard": "mạnh"
+            }
+          }
+        ],
+        [
+          "All staff should know where these are.",
+          "Mọi nhân viên nên biết các nút này ở đâu.",
+          {
+            "doan": [],
+            "nghia": {
+              "staff": "nhân viên",
+              "should": "nên",
+              "know": "biết",
+              "where": "ở đâu"
+            }
+          }
+        ],
+        [
+          "Dial 114 to call the <b>fire brigade</b>.",
+          "Gọi số 114 để gọi đội cứu hoả.",
+          {
+            "doan": [
+              {
+                "tu": "fire brigade",
+                "lua_chon": [
+                  "đội cứu hoả",
+                  "còi báo cháy",
+                  "bình chữa cháy"
+                ],
+                "dap": 0,
+                "giai": "brigade là một đội; fire brigade là đội cứu hoả, lính cứu hoả."
+              }
+            ],
+            "nghia": {
+              "Dial": "quay số, bấm số gọi",
+              "call": "gọi"
+            }
+          }
+        ],
+        [
+          "Leave by the nearest <b>exit</b>.",
+          "Rời đi bằng lối thoát gần nhất.",
+          {
+            "doan": [
+              {
+                "tu": "exit",
+                "lua_chon": [
+                  "lối thoát, lối ra",
+                  "lối vào",
+                  "cửa sổ"
+                ],
+                "dap": 0,
+                "giai": "exit là lối ra. Biển EXIT màu xanh lá là general safety sign."
+              }
+            ],
+            "nghia": {
+              "Leave": "rời đi",
+              "nearest": "gần nhất"
+            }
+          }
+        ],
+        [
+          "Close all the doors.",
+          "Đóng tất cả các cửa.",
+          {
+            "doan": [],
+            "nghia": {
+              "Close": "đóng",
+              "all": "tất cả",
+              "doors": "cửa"
+            }
+          }
+        ],
+        [
+          "<b>Assist</b> any service users near you.",
+          "Giúp đỡ bất kỳ người dùng dịch vụ nào ở gần em.",
+          {
+            "doan": [
+              {
+                "tu": "Assist",
+                "lua_chon": [
+                  "giúp đỡ",
+                  "bỏ mặc",
+                  "báo cáo"
+                ],
+                "dap": 0,
+                "giai": "assist là giúp đỡ, hỗ trợ; assistant là người trợ lý."
+              }
+            ],
+            "nghia": {
+              "service users": "người dùng dịch vụ (khách, người được phục vụ)",
+              "near you": "ở gần em"
+            }
+          }
+        ],
+        [
+          "Go to the <b>assembly point</b>.",
+          "Đi đến điểm tập trung.",
+          {
+            "doan": [
+              {
+                "tu": "assembly point",
+                "lua_chon": [
+                  "điểm tập trung khi sơ tán",
+                  "điểm lắp ráp máy",
+                  "điểm bán hàng"
+                ],
+                "dap": 0,
+                "giai": "assembly ở đây là sự tập hợp người. Assembly point là nơi mọi người tập trung khi sơ tán."
+              }
+            ],
+            "nghia": {
+              "Go to": "đi đến"
+            }
+          }
+        ],
+        [
+          "Do not stop to collect <b>belongings</b>.",
+          "Đừng dừng lại để lấy đồ đạc.",
+          {
+            "doan": [
+              {
+                "tu": "belongings",
+                "lua_chon": [
+                  "đồ đạc cá nhân",
+                  "đồ chữa cháy",
+                  "công cụ làm việc"
+                ],
+                "dap": 0,
+                "giai": "belong là thuộc về; belongings là đồ thuộc về mình: điện thoại, túi, ví."
+              }
+            ],
+            "nghia": {
+              "Do not": "đừng",
+              "stop to": "dừng lại để",
+              "collect": "gom, lấy"
+            }
+          }
+        ],
+        [
+          "Do not go back into the building <b>until</b> you have been told it is safe to do so.",
+          "Đừng quay lại tòa nhà cho đến khi em được báo là an toàn để làm vậy.",
+          {
+            "doan": [
+              {
+                "tu": "until",
+                "lua_chon": [
+                  "cho đến khi",
+                  "bởi vì",
+                  "mặc dù"
+                ],
+                "dap": 0,
+                "giai": "until là cho đến khi. Not … until = chưa được … cho đến khi được báo an toàn."
+              }
+            ],
+            "nghia": {
+              "go back into": "quay trở lại vào",
+              "building": "tòa nhà",
+              "have been told": "đã được báo",
+              "safe": "an toàn"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"Dial 114 to call the fire ______.\"</em>",
+        "lua_chon": [
+          "brigade",
+          "alarm",
+          "exit"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 7 của bài: <em>Dial 114 to call the fire brigade.</em> Chép nguyên từ.",
+        "fb_no": "Tìm câu có <em>Dial 114</em>. Từ cuối câu là gì?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"If you find a fire, you should first try to put it out yourself.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>do not try to put it out yourself</em>. Việc đầu tiên là bấm nút báo cháy.",
+        "fb_no": "Đọc lại câu 4: đứng trước <em>try to put it out</em> có chữ gì?"
+      },
+      "tu_khoa": {}
+    }
+  ],
+  "bang": {
+    "ten": "Năm loại biển báo: màu và hình (đề hay hỏi ý nghĩa)",
+    "cot": [
+      "Biển",
+      "Ý nghĩa · ví dụ"
+    ],
+    "hang": [
+      [
+        "prohibition sign",
+        "<strong>must not</strong> do (cấm)<br>vòng tròn đỏ, gạch chéo<br>vd: No smoking (cấm hút thuốc)"
+      ],
+      [
+        "hazard sign",
+        "<strong>warns</strong> of danger (cảnh báo)<br>tam giác vàng viền đen<br>vd: Water from this tap is very hot"
+      ],
+      [
+        "mandatory sign",
+        "<strong>must do</strong> (bắt buộc)<br>vòng tròn xanh dương<br>vd: Wear protective gloves"
+      ],
+      [
+        "fire safety sign",
+        "chỉ thiết bị chữa cháy, nút báo cháy<br>vuông đỏ<br>vd: fire alarm button"
+      ],
+      [
+        "general safety sign",
+        "chỉ lối thoát, nơi an toàn, cứu thương<br>vuông xanh lá<br>vd: This way to the exit"
+      ]
+    ]
+  },
+  "mau_cau": [
+    {
+      "ten": "Mẫu 1 · X protects Y from Z (X bảo vệ Y khỏi Z)",
+      "vd": [
+        [
+          "A safety helmet protects the head from accidental injury.",
+          "Mũ bảo hộ bảo vệ đầu khỏi chấn thương do tai nạn."
+        ],
+        [
+          "Ear protectors protect ears against noise.",
+          "Chụp tai bảo vệ tai khỏi tiếng ồn."
+        ],
+        [
+          "A protective mask protects workers from inhaling harmful dust.",
+          "Khẩu trang bảo hộ bảo vệ công nhân khỏi hít phải bụi có hại."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>X + protect(s) + Y + from / against + Z</strong>.",
+        "X số ít thì <em>protects</em>, X số nhiều thì <em>protect</em>.",
+        "Dịch: \"X bảo vệ Y khỏi Z\".",
+        "Part 5 hay cho câu \"… bảo vệ … khỏi …\" → dùng mẫu này."
+      ]
+    },
+    {
+      "ten": "Mẫu 2 · bị động + by (được / bị … bởi …)",
+      "vd": [
+        [
+          "Strains and sprains are typically caused by overexertion.",
+          "Căng cơ và bong gân thường do gắng sức quá mức gây ra."
+        ],
+        [
+          "Other injuries are caused by contact with hot or sharp parts.",
+          "Các chấn thương khác do tiếp xúc với chi tiết nóng hoặc sắc gây ra."
+        ],
+        [
+          "Technicians may be assisted by an apprentice.",
+          "Kỹ thuật viên có thể được người học việc giúp đỡ."
+        ]
+      ],
+      "ghi_chu": [
+        "Thấy <strong>is / are / were + V-ed</strong> → dịch \"được\" hoặc \"bị\".",
+        "Thấy <strong>by + danh từ</strong> → dịch \"bởi\" hoặc \"do\".",
+        "<strong>caused by</strong> → \"do … gây ra\".",
+        "Muốn dịch tự nhiên, đảo câu: \"Overexertion causes strains\" → \"Gắng sức quá mức gây căng cơ\"."
+      ]
+    }
+  ],
+  "gan_nhan": {
+    "svg": "ppe_diagram.svg",
+    "tieu_de": "Đồ bảo hộ trên người công nhân: gọi tên 7 món",
+    "mo_ta": "Part 1 hay cho ảnh đồ bảo hộ. Nhìn hình, tự gọi tên 7 món trước, rồi mở đáp án.",
+    "chu_thich": "Công nhân mặc đầy đủ đồ bảo hộ. 7 món đánh số.",
+    "bo_phan": [
+      [
+        "safety helmet",
+        "mũ bảo hộ"
+      ],
+      [
+        "safety goggles",
+        "kính bảo hộ"
+      ],
+      [
+        "ear protectors",
+        "chụp tai chống ồn"
+      ],
+      [
+        "protective mask",
+        "khẩu trang, mặt nạ chống bụi và khí độc"
+      ],
+      [
+        "safety gloves",
+        "găng tay bảo hộ"
+      ],
+      [
+        "protective apron",
+        "tạp dề bảo hộ"
+      ],
+      [
+        "safety shoes",
+        "giày bảo hộ"
+      ]
+    ],
+    "hoi": "Món số 6 (che phía trước thân người, bảo vệ cơ thể khi hàn) tên là gì?",
     "lua_chon": [
-     "safety helmet",
-     "safety goggles",
-     "ear protectors",
-     "protective mask"
+      "dorsal belt",
+      "protective apron",
+      "safety harness",
+      "knee pads"
     ],
     "dap": 1,
-    "fb_ok": "Từ khoá <em>the eyes</em> (mắt): safety goggles là kính bảo hộ.",
-    "fb_no": "Gạch từ khoá <em>the eyes</em>. Thứ nào đeo lên mắt, không phải lên đầu hay tai?"
-   }
+    "fb_ok": "<em>protective apron</em> là tạp dề bảo hộ, che thân người. Định nghĩa trong đề: protects the body against welding work.",
+    "fb_no": "Dorsal belt ôm quanh lưng, harness có dây vắt qua vai, knee pads ở đầu gối. Món nào che phía trước thân?"
   },
-  {
-   "ten": "Cụm B · Bảo vệ thân, chân, lưng, đầu gối",
-   "tu": [
-    {
-     "term": "protective apron",
-     "ipa": "/prəˈtektɪv ˈeɪprən/",
-     "vi": "tạp dề bảo hộ (yếm hàn)",
-     "def": "Protects the body against welding work.",
-     "img": "apron",
-     "tier": 1
-    },
-    {
-     "term": "safety shoes",
-     "ipa": "/ˈseɪfti ʃuːz/",
-     "vi": "giày bảo hộ",
-     "def": "Protect the feet from accidental injury.",
-     "img": "safety-shoes",
-     "tier": 1
-    },
-    {
-     "term": "safety harness",
-     "ipa": "/ˈseɪfti ˈhɑːnɪs/",
-     "vi": "dây đai an toàn (chống rơi ngã)",
-     "def": "Avoids the worker falling.",
-     "img": "harness",
-     "tier": 1
-    },
-    {
-     "term": "dorsal belt",
-     "ipa": "/ˈdɔːsl belt/",
-     "vi": "đai lưng bảo vệ lưng",
-     "def": "Handles heavy materials and protects the back.",
-     "img": "dorsal-belt",
-     "tier": 1
-    },
-    {
-     "term": "knee pads",
-     "ipa": "/niː pædz/",
-     "vi": "miếng đệm bảo vệ đầu gối",
-     "def": "Protect knees on the ground while working.",
-     "img": "knee-pads",
-     "tier": 1
+  "sop": {
+    "tieu_de": "Xưởng ô tô: điền từ (kiểu Part 3)",
+    "mo_ta": "Thử với đoạn nói về xưởng sửa ô tô (viết lại từ Article 1):",
+    "hop_tu": [
+      "ventilated",
+      "locker room",
+      "shower facilities",
+      "apprentice",
+      "satisfy"
+    ],
+    "doan": "A good workshop is well-lighted and properly (1) ______. Mechanics change into uniforms in the (2) ______ and wash in the (3) ______ after work. Heavy jobs need a team, so an (4) ______ may help the technician. Some mechanics work at weekends to (5) ______ customer needs.",
+    "dap": [
+      "ventilated",
+      "locker room",
+      "shower facilities",
+      "apprentice",
+      "satisfy"
+    ],
+    "quiz": {
+      "hoi": "Chỗ trống (4): <em>\"Heavy jobs need a team, so an (4) ______ may help the technician.\"</em>",
+      "lua_chon": [
+        "ventilated",
+        "apprentice",
+        "satisfy",
+        "locker room"
+      ],
+      "dap": 1,
+      "fb_ok": "<em>apprentice</em> = người học việc, giúp thợ chính. Dấu hiệu: trước chỗ trống là <em>an</em>, từ cần điền bắt đầu bằng nguyên âm và chỉ người.",
+      "fb_no": "Trước chỗ trống là <em>an</em>: danh từ số ít bắt đầu bằng nguyên âm. Ai giúp kỹ thuật viên làm việc nặng?"
     }
-   ],
-   "quiz": {
-    "hoi": "Part 1 hỏi: <em>\"Avoids the worker falling.\"</em>",
-    "lua_chon": [
-     "dorsal belt",
-     "knee pads",
-     "safety harness",
-     "safety shoes"
-    ],
-    "dap": 2,
-    "fb_ok": "Từ khoá <em>falling</em> (rơi, ngã): dây đai an toàn giữ người làm việc trên cao khỏi rơi.",
-    "fb_no": "Gạch từ khoá <em>falling</em>. Dorsal belt lo cho lưng, knee pads lo cho đầu gối. Thứ nào giữ người khỏi rơi?"
-   }
   },
-  {
-   "ten": "Cụm C · Năm loại biển báo an toàn",
-   "tu": [
-    {
-     "term": "prohibition sign",
-     "ipa": "/ˌprəʊhɪˈbɪʃn saɪn/",
-     "vi": "biển cấm",
-     "def": "A safety sign which tells you what you must not do.",
-     "img": "sign-prohibition",
-     "tier": 1
-    },
-    {
-     "term": "hazard sign",
-     "ipa": "/ˈhæzəd saɪn/",
-     "vi": "biển cảnh báo nguy hiểm (warning sign)",
-     "def": "A safety sign which warns you of danger.",
-     "img": "sign-hazard",
-     "tier": 1
-    },
-    {
-     "term": "mandatory sign",
-     "ipa": "/ˈmændətri saɪn/",
-     "vi": "biển bắt buộc",
-     "def": "A safety sign which tells you what you must do.",
-     "img": "sign-mandatory",
-     "tier": 1
-    },
-    {
-     "term": "fire safety sign",
-     "ipa": "/ˈfaɪə ˈseɪfti saɪn/",
-     "vi": "biển phòng cháy chữa cháy",
-     "def": "A safety sign which shows where fire equipment and fire alarms are.",
-     "img": "sign-fire",
-     "tier": 1
-    },
-    {
-     "term": "general safety sign",
-     "ipa": "/ˈdʒenrəl ˈseɪfti saɪn/",
-     "vi": "biển chỉ dẫn an toàn chung (biển an toàn: lối thoát, cứu thương)",
-     "def": "A safety sign which shows safe places, such as an exit or first aid.",
-     "img": "sign-general",
-     "tier": 1
-    }
-   ],
-   "quiz": {
-    "hoi": "Part 1 hỏi: <em>\"A safety sign which tells you what you must do, for example 'Wear protective gloves'.\"</em>",
-    "lua_chon": [
-     "hazard sign",
-     "mandatory sign",
-     "prohibition sign",
-     "fire safety sign"
-    ],
-    "dap": 1,
-    "fb_ok": "Từ khoá <em>must do</em> (phải làm): mandatory sign, biển bắt buộc. Câu này đã ra trong đề cuối kỳ.",
-    "fb_no": "Gạch cụm <em>must do</em>. Prohibition là biển cho biết điều KHÔNG được làm. Biển nào cho biết điều PHẢI làm?"
-   }
-  },
-  {
-   "ten": "Cụm D · Tai nạn và nơi làm việc",
-   "tu": [
-    {
-     "term": "confined areas",
-     "ipa": "/kənˈfaɪnd ˈeəriəz/",
-     "vi": "không gian hẹp, kín (hầm, bồn, khoang…)",
-     "def": "A space with limited entry that is not suitable for people.",
-     "img": "confined-areas",
-     "tier": 1
-    },
-    {
-     "term": "overexertion",
-     "ipa": "/ˌəʊvərɪɡˈzɜːʃn/",
-     "vi": "gắng sức quá mức",
-     "def": "Too much use of physical or mental energy; hard work.",
-     "img": null,
-     "tier": 1
-    },
-    {
-     "term": "sprain",
-     "ipa": "/spreɪn/",
-     "vi": "bong gân",
-     "def": "Damage to one or more ligaments in a joint, often caused by trauma.",
-     "img": "sprain",
-     "tier": 1
-    },
-    {
-     "term": "apprentice",
-     "ipa": "/əˈprentɪs/",
-     "vi": "người học việc, thợ học nghề",
-     "def": "Someone who works for a skilled person for a particular period.",
-     "img": "apprentice",
-     "tier": 1
-    },
-    {
-     "term": "locker room",
-     "ipa": "/ˈlɒkə ruːm/",
-     "vi": "phòng thay đồ có tủ cá nhân",
-     "def": "A room for changing clothes.",
-     "img": "locker-room",
-     "tier": 1
-    }
-   ],
-   "quiz": {
-    "hoi": "Part 1 hỏi: <em>\"Damage to one or more ligaments in a joint, often caused by trauma.\"</em>",
-    "lua_chon": [
-     "strain",
-     "sprain",
-     "overexertion",
-     "slip"
-    ],
-    "dap": 1,
-    "fb_ok": "Từ khoá <em>ligaments in a joint</em> (dây chằng ở khớp): sprain là bong gân. Strain là căng cơ, nói về muscle.",
-    "fb_no": "Gạch cụm <em>ligaments in a joint</em>. Strain nói về muscle (cơ). Từ nào nói về dây chằng ở khớp?"
-   }
-  }
- ],
- "tu_vung_them": [
-  {
-   "term": "fire extinguisher",
-   "vi": "bình chữa cháy",
-   "img": "fire-extinguisher"
-  },
-  {
-   "term": "first-aid kit",
-   "vi": "hộp sơ cứu",
-   "img": "first-aid-kit"
-  },
-  {
-   "term": "eyewash station",
-   "vi": "trạm rửa mắt khẩn cấp",
-   "img": "eyewash"
-  },
-  {
-   "term": "alarm button",
-   "vi": "nút báo cháy",
-   "img": "sign-fire"
-  },
-  {
-   "term": "pit",
-   "vi": "hố làm việc dưới gầm xe",
-   "img": "pit"
-  },
-  {
-   "term": "strain",
-   "vi": "căng cơ, giãn cơ (nói về muscle)"
-  },
-  {
-   "term": "slip",
-   "vi": "trượt, tuột (tay)"
-  },
-  {
-   "term": "shower facilities",
-   "vi": "khu nhà tắm"
-  },
-  {
-   "term": "injuries",
-   "vi": "chấn thương"
-  },
-  {
-   "term": "risk",
-   "vi": "rủi ro, nguy cơ"
-  },
-  {
-   "term": "sharp",
-   "vi": "sắc, nhọn"
-  },
-  {
-   "term": "satisfy",
-   "vi": "đáp ứng, làm hài lòng"
-  },
-  {
-   "term": "ventilated",
-   "vi": "được thông gió"
-  },
-  {
-   "term": "fire brigade",
-   "vi": "đội cứu hoả"
-  },
-  {
-   "term": "assembly point",
-   "vi": "điểm tập trung (khi sơ tán)"
-  }
- ],
- "bai_doc": [
-  {
-   "ten": "Article 1 · At automobile services shop",
-   "cau": [
+  "tra_bai": [
     [
-     "At most shops the work environment is well-lighted and properly <b>ventilated</b>.",
-     "Ở hầu hết các xưởng, môi trường làm việc đủ sáng và được thông gió tốt.",
-     {
-      "doan": [
-       {
-        "tu": "ventilated",
-        "lua_chon": [
-         "được thông gió",
-         "được lau sạch",
-         "được sơn mới"
-        ],
-        "dap": 0,
-        "giai": "ventilated là được thông gió, có không khí lưu thông. Xưởng kín mà không thông gió thì ngột ngạt."
-       }
-      ],
-      "nghia": {
-       "At most shops": "ở hầu hết các xưởng",
-       "work environment": "môi trường làm việc",
-       "well-lighted": "đủ sáng",
-       "properly": "đúng cách, tốt"
-      }
-     }
+      "Thiết bị nào bảo vệ tai khỏi tiếng ồn?",
+      "Ear protectors."
     ],
     [
-     "However some shops are <b>drafty</b> and noisy.",
-     "Tuy nhiên một số xưởng có gió lùa và ồn.",
-     {
-      "doan": [
-       {
-        "tu": "drafty",
-        "lua_chon": [
-         "có gió lùa",
-         "có mùi khét",
-         "rất rộng"
-        ],
-        "dap": 0,
-        "giai": "draft là luồng gió lùa; drafty là có gió lùa, hay bị gió thổi qua."
-       }
-      ],
-      "nghia": {
-       "However": "tuy nhiên",
-       "noisy": "ồn ào"
-      }
-     }
+      "<em>Safety harness</em> dùng làm gì? <em>Dorsal belt</em> dùng làm gì?",
+      "Safety harness: tránh cho người làm việc bị rơi ngã. Dorsal belt: nâng vật nặng và bảo vệ lưng."
     ],
     [
-     "Moreover, on a hot summer or <b>frigid</b> winter day shop temperatures are not always ideal.",
-     "Hơn nữa, vào ngày hè nóng hoặc ngày đông rất lạnh, nhiệt độ trong xưởng không phải lúc nào cũng lý tưởng.",
-     {
-      "doan": [
-       {
-        "tu": "frigid",
-        "lua_chon": [
-         "rất lạnh",
-         "rất nóng",
-         "rất ẩm"
-        ],
-        "dap": 0,
-        "giai": "frigid là lạnh buốt. Câu đối lập hot summer với frigid winter."
-       }
-      ],
-      "nghia": {
-       "Moreover": "hơn nữa",
-       "temperatures": "nhiệt độ",
-       "not always ideal": "không phải lúc nào cũng lý tưởng"
-      }
-     }
+      "Biển nào cho biết điều em PHẢI làm? Biển nào cho biết điều KHÔNG được làm?",
+      "PHẢI làm: mandatory sign. KHÔNG được làm: prohibition sign."
     ],
     [
-     "Some shops that specialize in oil changes and <b>lubrication</b> use an arrangement commonly called a <b>pit</b>.",
-     "Một số xưởng chuyên thay nhớt và bôi trơn dùng một cách bố trí thường gọi là hố làm việc.",
-     {
-      "doan": [
-       {
-        "tu": "lubrication",
-        "lua_chon": [
-         "sự bôi trơn",
-         "sự làm nguội",
-         "sự lau chùi"
-        ],
-        "dap": 0,
-        "giai": "lubricate là bôi trơn (dầu mỡ); lubrication là việc bôi trơn máy móc."
-       },
-       {
-        "tu": "pit",
-        "lua_chon": [
-         "hố làm việc dưới gầm xe",
-         "cái ghim",
-         "hạt quả"
-        ],
-        "dap": 0,
-        "giai": "pit đời thường là hạt quả hoặc cái hố. Ở xưởng ô tô, pit là hố để thợ đứng dưới gầm xe."
-       }
-      ],
-      "nghia": {
-       "specialize in": "chuyên về",
-       "oil changes": "thay nhớt",
-       "arrangement": "cách bố trí",
-       "commonly called": "thường được gọi là"
-      }
-     }
+      "<em>Sprain</em> và <em>strain</em> khác nhau chỗ nào?",
+      "Sprain là bong gân (dây chằng ở khớp). Strain là căng cơ (muscle). Cả hai thường do overexertion."
     ],
     [
-     "Customers drive their <b>vehicles</b> into the shop.",
-     "Khách hàng lái xe của họ vào xưởng.",
-     {
-      "doan": [
-       {
-        "tu": "vehicles",
-        "lua_chon": [
-         "phương tiện, xe cộ",
-         "dụng cụ",
-         "phụ tùng"
-        ],
-        "dap": 0,
-        "giai": "vehicle là phương tiện giao thông: ô tô, xe tải, xe máy."
-       }
-      ],
-      "nghia": {
-       "Customers": "khách hàng",
-       "drive": "lái",
-       "into the shop": "vào xưởng"
-      }
-     }
+      "<em>Confined areas</em> là chỗ như thế nào?",
+      "Chỗ hẹp, ít lối vào, không thích hợp cho người. Thợ máy đôi khi phải thò tay vào đó."
     ],
     [
-     "The <b>mechanic</b> then enters the pit to perform the work.",
-     "Sau đó thợ máy đi xuống hố để thực hiện công việc.",
-     {
-      "doan": [
-       {
-        "tu": "mechanic",
-        "lua_chon": [
-         "thợ máy",
-         "kỹ sư thiết kế",
-         "người lái xe"
-        ],
-        "dap": 0,
-        "giai": "mechanic là thợ máy, thợ sửa chữa máy móc và xe."
-       }
-      ],
-      "nghia": {
-       "then": "sau đó",
-       "enters": "đi vào",
-       "perform the work": "thực hiện công việc"
-      }
-     }
+      "Thấy cháy thì việc đầu tiên là gì? Gọi số nào?",
+      "Không tự dập lửa: bấm nút báo cháy (alarm button), gọi 114 (fire brigade), rời đi bằng exit gần nhất."
     ],
     [
-     "Pit areas are <b>typically</b> not well-ventilated and can be hot during summer months.",
-     "Khu vực hố thường không thông gió tốt và có thể nóng vào những tháng hè.",
-     {
-      "doan": [
-       {
-        "tu": "typically",
-        "lua_chon": [
-         "thường là",
-         "hiếm khi",
-         "chỉ một lần"
-        ],
-        "dap": 0,
-        "giai": "typically là thường, thông thường; gần nghĩa với usually."
-       }
-      ],
-      "nghia": {
-       "areas": "khu vực",
-       "not well-ventilated": "không thông gió tốt",
-       "hot": "nóng",
-       "during summer months": "trong những tháng hè"
-      }
-     }
+      "Dịch: <em>Ear protectors protect ears against noise.</em>",
+      "Chụp tai bảo vệ tai khỏi tiếng ồn."
     ],
     [
-     "The very nature of the work also means that mechanics can <b>seldom</b> avoid handling <b>greasy</b> and dirty parts.",
-     "Chính bản chất công việc cũng có nghĩa là thợ máy hiếm khi tránh được việc cầm các chi tiết dính dầu mỡ và bẩn.",
-     {
-      "doan": [
-       {
-        "tu": "seldom",
-        "lua_chon": [
-         "hiếm khi",
-         "thường xuyên",
-         "luôn luôn"
-        ],
-        "dap": 0,
-        "giai": "seldom là hiếm khi, gần nghĩa với rarely; trái nghĩa với often."
-       },
-       {
-        "tu": "greasy",
-        "lua_chon": [
-         "dính dầu mỡ",
-         "rất nóng",
-         "bóng loáng"
-        ],
-        "dap": 0,
-        "giai": "grease là dầu mỡ bôi trơn; greasy là dính đầy dầu mỡ."
-       }
-      ],
-      "nghia": {
-       "nature of the work": "bản chất công việc",
-       "avoid": "tránh",
-       "handling": "cầm, xử lý",
-       "dirty parts": "chi tiết bẩn"
-      }
-     }
-    ],
-    [
-     "According to the latest Statistics, the rate of illnesses and <b>injuries</b> is higher for mechanics than the national average rate.",
-     "Theo số liệu thống kê mới nhất, tỉ lệ bệnh tật và chấn thương ở thợ máy cao hơn mức trung bình toàn quốc.",
-     {
-      "doan": [
-       {
-        "tu": "injuries",
-        "lua_chon": [
-         "chấn thương",
-         "bệnh nghề nghiệp",
-         "tai nạn giao thông"
-        ],
-        "dap": 0,
-        "giai": "injury là chấn thương, vết thương; injuries là số nhiều. Hay ra trong Part 3."
-       }
-      ],
-      "nghia": {
-       "According to": "theo",
-       "latest Statistics": "số liệu thống kê mới nhất",
-       "illnesses": "bệnh tật",
-       "rate": "tỉ lệ",
-       "national average": "trung bình toàn quốc"
-      }
-     }
-    ],
-    [
-     "Part of the <b>risk</b> comes from lifting heavy tools, equipment or parts.",
-     "Một phần rủi ro đến từ việc nâng các dụng cụ, thiết bị hoặc chi tiết nặng.",
-     {
-      "doan": [
-       {
-        "tu": "risk",
-        "lua_chon": [
-         "rủi ro, nguy cơ",
-         "tiền lương",
-         "số liệu"
-        ],
-        "dap": 0,
-        "giai": "risk là rủi ro, khả năng bị hại. Hay ra trong Part 3."
-       }
-      ],
-      "nghia": {
-       "Part of": "một phần của",
-       "comes from": "đến từ",
-       "lifting": "nâng, nhấc",
-       "heavy": "nặng",
-       "equipment": "thiết bị"
-      }
-     }
-    ],
-    [
-     "Other injuries, such as small burns, <b>bruises</b> or cuts, are caused from contact with hot or <b>sharp</b> parts,",
-     "Các chấn thương khác, như bỏng nhỏ, vết bầm hoặc vết cắt, do tiếp xúc với chi tiết nóng hoặc sắc,",
-     {
-      "doan": [
-       {
-        "tu": "bruises",
-        "lua_chon": [
-         "vết bầm",
-         "vết bỏng",
-         "vết gãy"
-        ],
-        "dap": 0,
-        "giai": "bruise là vết bầm tím dưới da do va đập."
-       },
-       {
-        "tu": "sharp",
-        "lua_chon": [
-         "sắc, nhọn",
-         "nóng",
-         "trơn"
-        ],
-        "dap": 0,
-        "giai": "sharp là sắc, nhọn: dao, mảnh kim loại sắc. Hay ra trong Part 3."
-       }
-      ],
-      "nghia": {
-       "Other": "khác",
-       "such as": "chẳng hạn như",
-       "burns": "vết bỏng",
-       "cuts": "vết cắt",
-       "contact with": "tiếp xúc với"
-      }
-     }
-    ],
-    [
-     "the need to reach into <b>confined areas</b> or having a tool <b>slip</b> under pressure.",
-     "việc phải thò tay vào những chỗ hẹp, kín, hoặc để dụng cụ tuột tay khi đang dùng lực.",
-     {
-      "doan": [
-       {
-        "tu": "confined areas",
-        "lua_chon": [
-         "không gian hẹp, kín",
-         "khu vực rộng",
-         "khu nghỉ ngơi"
-        ],
-        "dap": 0,
-        "giai": "confine là giam trong phạm vi nhỏ; confined areas là chỗ hẹp, ít lối vào."
-       },
-       {
-        "tu": "slip",
-        "lua_chon": [
-         "trượt, tuột tay",
-         "gãy",
-         "rơi vỡ"
-        ],
-        "dap": 0,
-        "giai": "slip là trượt. A tool slips là dụng cụ tuột khỏi tay hoặc trượt khỏi vật."
-       }
-      ],
-      "nghia": {
-       "the need to": "việc cần phải",
-       "reach into": "với tay vào",
-       "tool": "dụng cụ",
-       "under pressure": "khi bị dùng lực, dưới áp lực"
-      }
-     }
-    ],
-    [
-     "Strains and <b>sprains</b> were also common and were typically caused by <b>overexertion</b>.",
-     "Căng cơ và bong gân cũng phổ biến và thường do gắng sức quá mức.",
-     {
-      "doan": [
-       {
-        "tu": "sprains",
-        "lua_chon": [
-         "bong gân",
-         "căng cơ",
-         "vết cắt"
-        ],
-        "dap": 0,
-        "giai": "sprain là bong gân (dây chằng ở khớp). Strain là căng cơ."
-       },
-       {
-        "tu": "overexertion",
-        "lua_chon": [
-         "gắng sức quá mức",
-         "ngủ quá giờ",
-         "ăn quá no"
-        ],
-        "dap": 0,
-        "giai": "over là quá, exertion là sự dùng sức. Overexertion là gắng sức quá mức."
-       }
-      ],
-      "nghia": {
-       "Strains": "căng cơ",
-       "common": "phổ biến",
-       "typically caused by": "thường do"
-      }
-     }
-    ],
-    [
-     "Technicians may work as a team or be assisted by an <b>apprentice</b> or helper when doing heavy work, such as removing engines and transmissions.",
-     "Kỹ thuật viên có thể làm theo nhóm hoặc được người học việc hay người phụ giúp khi làm việc nặng, như tháo động cơ và hộp số.",
-     {
-      "doan": [
-       {
-        "tu": "apprentice",
-        "lua_chon": [
-         "người học việc",
-         "kỹ sư trưởng",
-         "khách hàng"
-        ],
-        "dap": 0,
-        "giai": "apprentice là người học việc, làm cho một thợ lành nghề trong một thời gian. Hay ra Part 1 và Part 3."
-       }
-      ],
-      "nghia": {
-       "Technicians": "kỹ thuật viên",
-       "assisted by": "được giúp bởi",
-       "helper": "người phụ giúp",
-       "removing": "tháo ra",
-       "transmissions": "hộp số"
-      }
-     }
-    ],
-    [
-     "Many employers provide uniforms, <b>locker rooms</b>, and <b>shower facilities</b>.",
-     "Nhiều chủ doanh nghiệp cung cấp đồng phục, phòng thay đồ có tủ và khu nhà tắm.",
-     {
-      "doan": [
-       {
-        "tu": "locker rooms",
-        "lua_chon": [
-         "phòng thay đồ có tủ",
-         "phòng họp",
-         "nhà kho"
-        ],
-        "dap": 0,
-        "giai": "locker là tủ có khoá; locker room là phòng thay đồ."
-       },
-       {
-        "tu": "shower facilities",
-        "lua_chon": [
-         "khu nhà tắm",
-         "khu rửa xe",
-         "nhà ăn"
-        ],
-        "dap": 0,
-        "giai": "shower là vòi sen, facilities là khu vực, cơ sở. Hay ra Part 3."
-       }
-      ],
-      "nghia": {
-       "employers": "chủ sử dụng lao động",
-       "provide": "cung cấp",
-       "uniforms": "đồng phục"
-      }
-     }
-    ],
-    [
-     "Most automotive service technicians and mechanics work a <b>standard</b> 40 hour week.",
-     "Hầu hết kỹ thuật viên và thợ máy dịch vụ ô tô làm việc 40 giờ một tuần theo chuẩn.",
-     {
-      "doan": [
-       {
-        "tu": "standard",
-        "lua_chon": [
-         "tiêu chuẩn, thông thường",
-         "tối đa",
-         "ngoài giờ"
-        ],
-        "dap": 0,
-        "giai": "standard là tiêu chuẩn, thông thường. A standard 40 hour week là tuần làm việc 40 giờ như thường lệ."
-       }
-      ],
-      "nghia": {
-       "Most": "hầu hết",
-       "automotive": "thuộc ô tô",
-       "service technicians": "kỹ thuật viên dịch vụ",
-       "week": "tuần"
-      }
-     }
-    ],
-    [
-     "Some may work evenings and weekends to <b>satisfy</b> customer service needs.",
-     "Một số có thể làm buổi tối và cuối tuần để đáp ứng nhu cầu dịch vụ khách hàng.",
-     {
-      "doan": [
-       {
-        "tu": "satisfy",
-        "lua_chon": [
-         "đáp ứng, làm hài lòng",
-         "từ chối",
-         "kiểm tra"
-        ],
-        "dap": 0,
-        "giai": "satisfy là làm cho thoả mãn, đáp ứng. Hay ra Part 3."
-       }
-      ],
-      "nghia": {
-       "Some": "một số người",
-       "evenings": "buổi tối",
-       "weekends": "cuối tuần",
-       "needs": "nhu cầu"
-      }
-     }
+      "Dịch sang tiếng Anh: <em>Mũ bảo hộ bảo vệ đầu.</em>",
+      "A safety helmet protects the head."
     ]
-   ],
-   "quiz": {
-    "hoi": "Part 2.1 điền một từ: <em>\"Part of the ______ comes from lifting heavy tools, equipment or parts.\"</em>",
-    "lua_chon": [
-     "risk",
-     "rate",
-     "heat"
-    ],
-    "dap": 0,
-    "fb_ok": "Câu 10 của bài: <em>Part of the risk comes from lifting heavy tools</em>. Tìm từ khoá <em>lifting heavy tools</em>.",
-    "fb_no": "Tìm câu có <em>lifting heavy tools</em>. Từ nào đứng ngay sau <em>Part of the</em>?"
-   },
-   "dung_sai": {
-    "hoi": "Part 2.2 Đúng/Sai: <em>\"Strains and sprains were typically caused by hot parts.\"</em>",
-    "dap": false,
-    "fb_ok": "Câu này SAI. Bài viết <em>were typically caused by overexertion</em> (gắng sức quá mức). Hot parts gây bỏng.",
-    "fb_no": "Đọc lại câu 13: strains and sprains do cái gì gây ra? Còn hot or sharp parts gây ra chấn thương nào?"
-   },
-   "tu_khoa": {}
-  },
-  {
-   "ten": "Article 2 · In case of fire!",
-   "cau": [
-    [
-     "Fire <b>kills</b>, often very quickly.",
-     "Lửa có thể giết người, thường rất nhanh.",
-     {
-      "doan": [
-       {
-        "tu": "kills",
-        "lua_chon": [
-         "giết chết, gây tử vong",
-         "dập tắt",
-         "làm nóng"
+  ],
+  "de_mau": {
+    "part1": [
+      {
+        "q": "Provide protection to the eyes.",
+        "opts": [
+          "safety helmet",
+          "safety goggles",
+          "ear protectors",
+          "protective mask"
         ],
-        "dap": 0,
-        "giai": "kill là giết, gây chết người. Fire kills: cháy gây tử vong."
-       }
-      ],
-      "nghia": {
-       "Fire": "lửa, đám cháy",
-       "often": "thường",
-       "very quickly": "rất nhanh"
-      }
-     }
-    ],
-    [
-     "It is important to know exactly what to do if a fire <b>breaks out</b>.",
-     "Điều quan trọng là biết chính xác phải làm gì nếu có hoả hoạn bùng lên.",
-     {
-      "doan": [
-       {
-        "tu": "breaks out",
-        "lua_chon": [
-         "bùng phát",
-         "bị dập tắt",
-         "dừng lại"
+        "ans": 1,
+        "why": "<em>protection to the eyes</em> → safety goggles."
+      },
+      {
+        "q": "Look at the picture and choose the correct answer.",
+        "opts": [
+          "safety goggles",
+          "protective mask",
+          "ear protectors",
+          "safety gloves"
         ],
-        "dap": 0,
-        "giai": "break out là bùng ra, xảy ra đột ngột (cháy, chiến tranh, dịch)."
-       }
-      ],
-      "nghia": {
-       "important": "quan trọng",
-       "exactly": "chính xác",
-       "what to do": "phải làm gì"
-      }
-     }
-    ],
-    [
-     "Lives may depend on it.",
-     "Mạng sống có thể phụ thuộc vào điều đó.",
-     {
-      "doan": [],
-      "nghia": {
-       "Lives": "mạng sống",
-       "may": "có thể",
-       "depend on": "phụ thuộc vào"
-      }
-     }
-    ],
-    [
-     "If you find a fire, do not try to <b>put it out</b> yourself.",
-     "Nếu em thấy cháy, đừng tự cố dập lửa.",
-     {
-      "doan": [
-       {
-        "tu": "put it out",
-        "lua_chon": [
-         "dập tắt nó",
-         "đốt nó lên",
-         "chạy khỏi nó"
+        "ans": 2,
+        "why": "Hai chụp tai nối bằng quai qua đầu → ear protectors.",
+        "img": "ear-protectors"
+      },
+      {
+        "q": "A safety sign which tells you what you must do, for example \"Wear protective gloves\".",
+        "opts": [
+          "hazard sign",
+          "mandatory sign",
+          "prohibition sign",
+          "fire safety sign"
         ],
-        "dap": 0,
-        "giai": "put out (a fire) là dập tắt. Đề Đúng/Sai hay hỏi câu này."
-       }
-      ],
-      "nghia": {
-       "find": "thấy, phát hiện",
-       "do not try to": "đừng cố",
-       "yourself": "tự mình"
-      }
-     }
-    ],
-    [
-     "Break the cover on the nearest <b>alarm button</b> and press it hard.",
-     "Đập vỡ nắp che trên nút báo cháy gần nhất và nhấn mạnh.",
-     {
-      "doan": [
-       {
-        "tu": "alarm button",
-        "lua_chon": [
-         "nút báo cháy",
-         "nút nguồn",
-         "chuông cửa"
+        "ans": 1,
+        "why": "<em>must do</em> → mandatory sign."
+      },
+      {
+        "q": "Someone who works for a skilled person for a particular period.",
+        "opts": [
+          "engineer",
+          "supervisor",
+          "technician",
+          "apprentice"
         ],
-        "dap": 0,
-        "giai": "alarm là còi báo động; alarm button là nút bấm kích hoạt còi báo cháy."
-       }
-      ],
-      "nghia": {
-       "Break": "đập vỡ",
-       "cover": "nắp che",
-       "nearest": "gần nhất",
-       "press": "nhấn",
-       "hard": "mạnh"
-      }
-     }
-    ],
-    [
-     "All staff should know where these are.",
-     "Mọi nhân viên nên biết các nút này ở đâu.",
-     {
-      "doan": [],
-      "nghia": {
-       "staff": "nhân viên",
-       "should": "nên",
-       "know": "biết",
-       "where": "ở đâu"
-      }
-     }
-    ],
-    [
-     "Dial 114 to call the <b>fire brigade</b>.",
-     "Gọi số 114 để gọi đội cứu hoả.",
-     {
-      "doan": [
-       {
-        "tu": "fire brigade",
-        "lua_chon": [
-         "đội cứu hoả",
-         "còi báo cháy",
-         "bình chữa cháy"
+        "ans": 3,
+        "why": "<em>works for a skilled person</em> → apprentice."
+      },
+      {
+        "q": "Handles heavy materials and protects the back.",
+        "opts": [
+          "knee pads",
+          "dorsal belt",
+          "safety harness",
+          "safety helmet"
         ],
-        "dap": 0,
-        "giai": "brigade là một đội; fire brigade là đội cứu hoả, lính cứu hoả."
-       }
-      ],
-      "nghia": {
-       "Dial": "quay số, bấm số gọi",
-       "call": "gọi"
-      }
-     }
-    ],
-    [
-     "Leave by the nearest <b>exit</b>.",
-     "Rời đi bằng lối thoát gần nhất.",
-     {
-      "doan": [
-       {
-        "tu": "exit",
-        "lua_chon": [
-         "lối thoát, lối ra",
-         "lối vào",
-         "cửa sổ"
+        "ans": 1,
+        "why": "<em>protects the back</em> (dorsal = thuộc lưng) → dorsal belt."
+      },
+      {
+        "q": "A room for changing clothes.",
+        "opts": [
+          "locker room",
+          "shower facilities",
+          "confined areas",
+          "pit"
         ],
-        "dap": 0,
-        "giai": "exit là lối ra. Biển EXIT màu xanh lá là general safety sign."
-       }
+        "ans": 0,
+        "why": "<em>changing clothes</em> → locker room."
+      }
+    ],
+    "part1_chien_thuat": [
+      "Gạch từ khoá trong định nghĩa: <em>eyes</em>, <em>must do</em>, <em>skilled person</em>, <em>back</em>, <em>changing clothes</em>…",
+      "Chia nhóm trong đầu: đầu/mắt/tai/mũi/tay, thân/chân/lưng, biển báo, tai nạn và nơi làm việc.",
+      "Câu có ảnh: nhìn bộ phận cơ thể được bảo vệ (tai → ear protectors, mắt → goggles).",
+      "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
+    ],
+    "part2": {
+      "doan": "In case of fire! Fire kills, often very quickly. It is important to know exactly what to do if a fire breaks out. Lives may depend on it. If you find a fire, do not try to put it out yourself. Break the cover on the nearest alarm button and press it hard. All staff should know where these are. Dial 114 to call the fire brigade. Leave by the nearest exit. Close all the doors. Assist any service users near you. Go to the assembly point. Do not stop to collect belongings. Do not go back into the building until you have been told it is safe to do so.",
+      "dien": [
+        {
+          "q": "Dial 114 to call the fire ______.",
+          "ans": "brigade",
+          "opts": [
+            "brigade",
+            "alarm",
+            "exit"
+          ],
+          "why": "Câu <em>Dial 114 to call the fire brigade</em>."
+        },
+        {
+          "q": "Break the cover on the nearest alarm ______ and press it hard.",
+          "ans": "button",
+          "opts": [
+            "button",
+            "door",
+            "exit"
+          ],
+          "why": "Câu <em>nearest alarm button</em>."
+        },
+        {
+          "q": "Leave by the nearest ______.",
+          "ans": "exit",
+          "opts": [
+            "pit",
+            "exit",
+            "helmet"
+          ],
+          "why": "Câu <em>Leave by the nearest exit</em>."
+        },
+        {
+          "q": "Go to the assembly ______.",
+          "ans": "point",
+          "opts": [
+            "point",
+            "room",
+            "door"
+          ],
+          "why": "Câu <em>Go to the assembly point</em>."
+        }
       ],
-      "nghia": {
-       "Leave": "rời đi",
-       "nearest": "gần nhất"
-      }
-     }
-    ],
-    [
-     "Close all the doors.",
-     "Đóng tất cả các cửa.",
-     {
-      "doan": [],
-      "nghia": {
-       "Close": "đóng",
-       "all": "tất cả",
-       "doors": "cửa"
-      }
-     }
-    ],
-    [
-     "<b>Assist</b> any service users near you.",
-     "Giúp đỡ bất kỳ người dùng dịch vụ nào ở gần em.",
-     {
-      "doan": [
-       {
-        "tu": "Assist",
-        "lua_chon": [
-         "giúp đỡ",
-         "bỏ mặc",
-         "báo cáo"
-        ],
-        "dap": 0,
-        "giai": "assist là giúp đỡ, hỗ trợ; assistant là người trợ lý."
-       }
-      ],
-      "nghia": {
-       "service users": "người dùng dịch vụ (khách, người được phục vụ)",
-       "near you": "ở gần em"
-      }
-     }
-    ],
-    [
-     "Go to the <b>assembly point</b>.",
-     "Đi đến điểm tập trung.",
-     {
-      "doan": [
-       {
-        "tu": "assembly point",
-        "lua_chon": [
-         "điểm tập trung khi sơ tán",
-         "điểm lắp ráp máy",
-         "điểm bán hàng"
-        ],
-        "dap": 0,
-        "giai": "assembly ở đây là sự tập hợp người. Assembly point là nơi mọi người tập trung khi sơ tán."
-       }
-      ],
-      "nghia": {
-       "Go to": "đi đến"
-      }
-     }
-    ],
-    [
-     "Do not stop to collect <b>belongings</b>.",
-     "Đừng dừng lại để lấy đồ đạc.",
-     {
-      "doan": [
-       {
-        "tu": "belongings",
-        "lua_chon": [
-         "đồ đạc cá nhân",
-         "đồ chữa cháy",
-         "công cụ làm việc"
-        ],
-        "dap": 0,
-        "giai": "belong là thuộc về; belongings là đồ thuộc về mình: điện thoại, túi, ví."
-       }
-      ],
-      "nghia": {
-       "Do not": "đừng",
-       "stop to": "dừng lại để",
-       "collect": "gom, lấy"
-      }
-     }
-    ],
-    [
-     "Do not go back into the building <b>until</b> you have been told it is safe to do so.",
-     "Đừng quay lại tòa nhà cho đến khi em được báo là an toàn để làm vậy.",
-     {
-      "doan": [
-       {
-        "tu": "until",
-        "lua_chon": [
-         "cho đến khi",
-         "bởi vì",
-         "mặc dù"
-        ],
-        "dap": 0,
-        "giai": "until là cho đến khi. Not … until = chưa được … cho đến khi được báo an toàn."
-       }
-      ],
-      "nghia": {
-       "go back into": "quay trở lại vào",
-       "building": "tòa nhà",
-       "have been told": "đã được báo",
-       "safe": "an toàn"
-      }
-     }
-    ]
-   ],
-   "quiz": {
-    "hoi": "Part 2.1 điền một từ: <em>\"Dial 114 to call the fire ______.\"</em>",
-    "lua_chon": [
-     "brigade",
-     "alarm",
-     "exit"
-    ],
-    "dap": 0,
-    "fb_ok": "Câu 7 của bài: <em>Dial 114 to call the fire brigade.</em> Chép nguyên từ.",
-    "fb_no": "Tìm câu có <em>Dial 114</em>. Từ cuối câu là gì?"
-   },
-   "dung_sai": {
-    "hoi": "Part 2.2 Đúng/Sai: <em>\"If you find a fire, you should first try to put it out yourself.\"</em>",
-    "dap": false,
-    "fb_ok": "Câu này SAI. Bài viết <em>do not try to put it out yourself</em>. Việc đầu tiên là bấm nút báo cháy.",
-    "fb_no": "Đọc lại câu 4: đứng trước <em>try to put it out</em> có chữ gì?"
-   },
-   "tu_khoa": {}
-  }
- ],
- "bang": {
-  "ten": "Năm loại biển báo: màu và hình (đề hay hỏi ý nghĩa)",
-  "cot": [
-   "Biển",
-   "Ý nghĩa · ví dụ"
-  ],
-  "hang": [
-   [
-    "prohibition sign",
-    "<strong>must not</strong> do (cấm)<br>vòng tròn đỏ, gạch chéo<br>vd: No smoking (cấm hút thuốc)"
-   ],
-   [
-    "hazard sign",
-    "<strong>warns</strong> of danger (cảnh báo)<br>tam giác vàng viền đen<br>vd: Water from this tap is very hot"
-   ],
-   [
-    "mandatory sign",
-    "<strong>must do</strong> (bắt buộc)<br>vòng tròn xanh dương<br>vd: Wear protective gloves"
-   ],
-   [
-    "fire safety sign",
-    "chỉ thiết bị chữa cháy, nút báo cháy<br>vuông đỏ<br>vd: fire alarm button"
-   ],
-   [
-    "general safety sign",
-    "chỉ lối thoát, nơi an toàn, cứu thương<br>vuông xanh lá<br>vd: This way to the exit"
-   ]
-  ]
- },
- "mau_cau": [
-  {
-   "ten": "Mẫu 1 · X protects Y from Z (X bảo vệ Y khỏi Z)",
-   "vd": [
-    [
-     "A safety helmet protects the head from accidental injury.",
-     "Mũ bảo hộ bảo vệ đầu khỏi chấn thương do tai nạn."
-    ],
-    [
-     "Ear protectors protect ears against noise.",
-     "Chụp tai bảo vệ tai khỏi tiếng ồn."
-    ],
-    [
-     "A protective mask protects workers from inhaling harmful dust.",
-     "Khẩu trang bảo hộ bảo vệ công nhân khỏi hít phải bụi có hại."
-    ]
-   ],
-   "ghi_chu": [
-    "Công thức: <strong>X + protect(s) + Y + from / against + Z</strong>.",
-    "X số ít thì <em>protects</em>, X số nhiều thì <em>protect</em>.",
-    "Dịch: \"X bảo vệ Y khỏi Z\".",
-    "Part 5 hay cho câu \"… bảo vệ … khỏi …\" → dùng mẫu này."
-   ]
-  },
-  {
-   "ten": "Mẫu 2 · bị động + by (được / bị … bởi …)",
-   "vd": [
-    [
-     "Strains and sprains are typically caused by overexertion.",
-     "Căng cơ và bong gân thường do gắng sức quá mức gây ra."
-    ],
-    [
-     "Other injuries are caused by contact with hot or sharp parts.",
-     "Các chấn thương khác do tiếp xúc với chi tiết nóng hoặc sắc gây ra."
-    ],
-    [
-     "Technicians may be assisted by an apprentice.",
-     "Kỹ thuật viên có thể được người học việc giúp đỡ."
-    ]
-   ],
-   "ghi_chu": [
-    "Thấy <strong>is / are / were + V-ed</strong> → dịch \"được\" hoặc \"bị\".",
-    "Thấy <strong>by + danh từ</strong> → dịch \"bởi\" hoặc \"do\".",
-    "<strong>caused by</strong> → \"do … gây ra\".",
-    "Muốn dịch tự nhiên, đảo câu: \"Overexertion causes strains\" → \"Gắng sức quá mức gây căng cơ\"."
-   ]
-  }
- ],
- "gan_nhan": {
-  "svg": "ppe_diagram.svg",
-  "tieu_de": "Đồ bảo hộ trên người công nhân: gọi tên 7 món",
-  "mo_ta": "Part 1 hay cho ảnh đồ bảo hộ. Nhìn hình, tự gọi tên 7 món trước, rồi mở đáp án.",
-  "chu_thich": "Công nhân mặc đầy đủ đồ bảo hộ. 7 món đánh số.",
-  "bo_phan": [
-   [
-    "safety helmet",
-    "mũ bảo hộ"
-   ],
-   [
-    "safety goggles",
-    "kính bảo hộ"
-   ],
-   [
-    "ear protectors",
-    "chụp tai chống ồn"
-   ],
-   [
-    "protective mask",
-    "khẩu trang, mặt nạ chống bụi và khí độc"
-   ],
-   [
-    "safety gloves",
-    "găng tay bảo hộ"
-   ],
-   [
-    "protective apron",
-    "tạp dề bảo hộ"
-   ],
-   [
-    "safety shoes",
-    "giày bảo hộ"
-   ]
-  ],
-  "hoi": "Món số 6 (che phía trước thân người, bảo vệ cơ thể khi hàn) tên là gì?",
-  "lua_chon": [
-   "dorsal belt",
-   "protective apron",
-   "safety harness",
-   "knee pads"
-  ],
-  "dap": 1,
-  "fb_ok": "<em>protective apron</em> là tạp dề bảo hộ, che thân người. Định nghĩa trong đề: protects the body against welding work.",
-  "fb_no": "Dorsal belt ôm quanh lưng, harness có dây vắt qua vai, knee pads ở đầu gối. Món nào che phía trước thân?"
- },
- "sop": {
-  "tieu_de": "Xưởng ô tô: điền từ (kiểu Part 3)",
-  "mo_ta": "Thử với đoạn nói về xưởng sửa ô tô (viết lại từ Article 1):",
-  "hop_tu": [
-   "ventilated",
-   "locker room",
-   "shower facilities",
-   "apprentice",
-   "satisfy"
-  ],
-  "doan": "A good workshop is well-lighted and properly (1) ______. Mechanics change into uniforms in the (2) ______ and wash in the (3) ______ after work. Heavy jobs need a team, so an (4) ______ may help the technician. Some mechanics work at weekends to (5) ______ customer needs.",
-  "dap": [
-   "ventilated",
-   "locker room",
-   "shower facilities",
-   "apprentice",
-   "satisfy"
-  ],
-  "quiz": {
-   "hoi": "Chỗ trống (4): <em>\"Heavy jobs need a team, so an (4) ______ may help the technician.\"</em>",
-   "lua_chon": [
-    "ventilated",
-    "apprentice",
-    "satisfy",
-    "locker room"
-   ],
-   "dap": 1,
-   "fb_ok": "<em>apprentice</em> = người học việc, giúp thợ chính. Dấu hiệu: trước chỗ trống là <em>an</em>, từ cần điền bắt đầu bằng nguyên âm và chỉ người.",
-   "fb_no": "Trước chỗ trống là <em>an</em>: danh từ số ít bắt đầu bằng nguyên âm. Ai giúp kỹ thuật viên làm việc nặng?"
-  }
- },
- "tra_bai": [
-  [
-   "Thiết bị nào bảo vệ tai khỏi tiếng ồn?",
-   "Ear protectors."
-  ],
-  [
-   "<em>Safety harness</em> dùng làm gì? <em>Dorsal belt</em> dùng làm gì?",
-   "Safety harness: tránh cho người làm việc bị rơi ngã. Dorsal belt: nâng vật nặng và bảo vệ lưng."
-  ],
-  [
-   "Biển nào cho biết điều em PHẢI làm? Biển nào cho biết điều KHÔNG được làm?",
-   "PHẢI làm: mandatory sign. KHÔNG được làm: prohibition sign."
-  ],
-  [
-   "<em>Sprain</em> và <em>strain</em> khác nhau chỗ nào?",
-   "Sprain là bong gân (dây chằng ở khớp). Strain là căng cơ (muscle). Cả hai thường do overexertion."
-  ],
-  [
-   "<em>Confined areas</em> là chỗ như thế nào?",
-   "Chỗ hẹp, ít lối vào, không thích hợp cho người. Thợ máy đôi khi phải thò tay vào đó."
-  ],
-  [
-   "Thấy cháy thì việc đầu tiên là gì? Gọi số nào?",
-   "Không tự dập lửa: bấm nút báo cháy (alarm button), gọi 114 (fire brigade), rời đi bằng exit gần nhất."
-  ],
-  [
-   "Dịch: <em>Ear protectors protect ears against noise.</em>",
-   "Chụp tai bảo vệ tai khỏi tiếng ồn."
-  ],
-  [
-   "Dịch sang tiếng Anh: <em>Mũ bảo hộ bảo vệ đầu.</em>",
-   "A safety helmet protects the head."
-  ]
- ],
- "de_mau": {
-  "part1": [
-   {
-    "q": "Provide protection to the eyes.",
-    "opts": [
-     "safety helmet",
-     "safety goggles",
-     "ear protectors",
-     "protective mask"
-    ],
-    "ans": 1,
-    "why": "<em>protection to the eyes</em> → safety goggles."
-   },
-   {
-    "q": "Look at the picture and choose the correct answer.",
-    "opts": [
-     "safety goggles",
-     "protective mask",
-     "ear protectors",
-     "safety gloves"
-    ],
-    "ans": 2,
-    "why": "Hai chụp tai nối bằng quai qua đầu → ear protectors.",
-    "img": "ear-protectors"
-   },
-   {
-    "q": "A safety sign which tells you what you must do, for example \"Wear protective gloves\".",
-    "opts": [
-     "hazard sign",
-     "mandatory sign",
-     "prohibition sign",
-     "fire safety sign"
-    ],
-    "ans": 1,
-    "why": "<em>must do</em> → mandatory sign."
-   },
-   {
-    "q": "Someone who works for a skilled person for a particular period.",
-    "opts": [
-     "engineer",
-     "supervisor",
-     "technician",
-     "apprentice"
-    ],
-    "ans": 3,
-    "why": "<em>works for a skilled person</em> → apprentice."
-   },
-   {
-    "q": "Handles heavy materials and protects the back.",
-    "opts": [
-     "knee pads",
-     "dorsal belt",
-     "safety harness",
-     "safety helmet"
-    ],
-    "ans": 1,
-    "why": "<em>protects the back</em> (dorsal = thuộc lưng) → dorsal belt."
-   },
-   {
-    "q": "A room for changing clothes.",
-    "opts": [
-     "locker room",
-     "shower facilities",
-     "confined areas",
-     "pit"
-    ],
-    "ans": 0,
-    "why": "<em>changing clothes</em> → locker room."
-   }
-  ],
-  "part1_chien_thuat": [
-   "Gạch từ khoá trong định nghĩa: <em>eyes</em>, <em>must do</em>, <em>skilled person</em>, <em>back</em>, <em>changing clothes</em>…",
-   "Chia nhóm trong đầu: đầu/mắt/tai/mũi/tay, thân/chân/lưng, biển báo, tai nạn và nơi làm việc.",
-   "Câu có ảnh: nhìn bộ phận cơ thể được bảo vệ (tai → ear protectors, mắt → goggles).",
-   "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
-  ],
-  "part2": {
-   "doan": "In case of fire! Fire kills, often very quickly. It is important to know exactly what to do if a fire breaks out. Lives may depend on it. If you find a fire, do not try to put it out yourself. Break the cover on the nearest alarm button and press it hard. All staff should know where these are. Dial 114 to call the fire brigade. Leave by the nearest exit. Close all the doors. Assist any service users near you. Go to the assembly point. Do not stop to collect belongings. Do not go back into the building until you have been told it is safe to do so.",
-   "dien": [
-    {
-     "q": "Dial 114 to call the fire ______.",
-     "ans": "brigade",
-     "opts": [
-      "brigade",
-      "alarm",
-      "exit"
-     ],
-     "why": "Câu <em>Dial 114 to call the fire brigade</em>."
+      "ds": [
+        {
+          "q": "If you discover a fire, first try to extinguish it.",
+          "ans": false,
+          "why": "Bài viết <em>do not try to put it out yourself</em>."
+        },
+        {
+          "q": "Shut all the doors.",
+          "ans": true,
+          "why": "<em>Close all the doors</em>: shut và close cùng nghĩa."
+        },
+        {
+          "q": "Once out, go to a safe place to wait.",
+          "ans": true,
+          "why": "<em>Go to the assembly point</em>: điểm tập trung là nơi an toàn."
+        },
+        {
+          "q": "Return to the building when you think it is safe.",
+          "ans": false,
+          "why": "Bài viết <em>until you have been told it is safe</em>: phải được báo, không tự nghĩ."
+        }
+      ]
     },
-    {
-     "q": "Break the cover on the nearest alarm ______ and press it hard.",
-     "ans": "button",
-     "opts": [
-      "button",
-      "door",
-      "exit"
-     ],
-     "why": "Câu <em>nearest alarm button</em>."
+    "part2_chien_thuat": [
+      "2.1: tìm từ khoá của câu hỏi trong đoạn.",
+      "2.1: chép <em>đúng từ</em> ở chỗ tương ứng, không tự đặt từ.",
+      "2.2: so từng chữ với câu trong đoạn.",
+      "2.2: đề thường đổi một chỗ hoặc dùng từ đồng nghĩa: <em>extinguish</em> = put out, <em>shut</em> = close, <em>think</em> ≠ <em>been told</em>."
+    ],
+    "part3": {
+      "hop_tu": [
+        "risk",
+        "injuries",
+        "sharp",
+        "overexertion",
+        "apprentice"
+      ],
+      "doan": "Part of the (1) ______ comes from lifting heavy tools, equipment or parts. Other (2) ______, such as small burns or cuts, are caused from contact with hot or (3) ______ parts. Strains and sprains are typically caused by (4) ______. Technicians may be assisted by an (5) ______ when doing heavy work.",
+      "dap": [
+        "risk",
+        "injuries",
+        "sharp",
+        "overexertion",
+        "apprentice"
+      ],
+      "chien_thuat": [
+        "Đọc cả câu trước khi điền.",
+        "Chỗ (2) đứng sau <em>Other</em> và trước dấu phẩy, số nhiều, nói về burns hoặc cuts → danh từ số nhiều.",
+        "Chỗ (3) đứng trước <em>parts</em> và đi cùng <em>hot or</em> → tính từ.",
+        "Chỗ (5) đứng sau <em>an</em> → danh từ chỉ người, bắt đầu bằng nguyên âm.",
+        "Từ nào chắc thì điền trước, gạch khỏi hộp."
+      ]
     },
-    {
-     "q": "Leave by the nearest ______.",
-     "ans": "exit",
-     "opts": [
-      "pit",
-      "exit",
-      "helmet"
-     ],
-     "why": "Câu <em>Leave by the nearest exit</em>."
+    "part4": {
+      "en": "At most shops the work environment is well-lighted and properly ventilated. However, some shops are drafty and noisy. Moreover, on a hot summer or frigid winter day shop temperatures are not always ideal.",
+      "vi": "Ở hầu hết các xưởng, môi trường làm việc đủ sáng và được thông gió tốt. Tuy nhiên, một số xưởng có gió lùa và ồn. Hơn nữa, vào ngày hè nóng hoặc ngày đông rất lạnh, nhiệt độ trong xưởng không phải lúc nào cũng lý tưởng.",
+      "chien_thuat": [
+        "Cắt đoạn thành từng câu, dịch từng câu.",
+        "Giữ nguyên thuật ngữ đã học: xưởng, thông gió, nhiệt độ.",
+        "<em>However</em> → \"tuy nhiên\", <em>Moreover</em> → \"hơn nữa\".",
+        "<em>not always ideal</em> → \"không phải lúc nào cũng lý tưởng\".",
+        "Dịch được nửa đoạn vẫn có điểm thành phần."
+      ]
     },
-    {
-     "q": "Go to the assembly ______.",
-     "ans": "point",
-     "opts": [
-      "point",
-      "room",
-      "door"
-     ],
-     "why": "Câu <em>Go to the assembly point</em>."
+    "part5": {
+      "vi": "Mũ bảo hộ bảo vệ đầu khỏi chấn thương.",
+      "en": "A safety helmet protects the head from injury.",
+      "chien_thuat": [
+        "Dùng mẫu 1: <strong>X protects Y from Z</strong>.",
+        "X = a safety helmet, Y = the head, Z = injury.",
+        "X số ít → <em>protects</em> (có s).",
+        "Viết <em>A safety helmet protects the head.</em> vẫn có một phần điểm."
+      ]
     }
-   ],
-   "ds": [
-    {
-     "q": "If you discover a fire, first try to extinguish it.",
-     "ans": false,
-     "why": "Bài viết <em>do not try to put it out yourself</em>."
-    },
-    {
-     "q": "Shut all the doors.",
-     "ans": true,
-     "why": "<em>Close all the doors</em>: shut và close cùng nghĩa."
-    },
-    {
-     "q": "Once out, go to a safe place to wait.",
-     "ans": true,
-     "why": "<em>Go to the assembly point</em>: điểm tập trung là nơi an toàn."
-    },
-    {
-     "q": "Return to the building when you think it is safe.",
-     "ans": false,
-     "why": "Bài viết <em>until you have been told it is safe</em>: phải được báo, không tự nghĩ."
-    }
-   ]
   },
-  "part2_chien_thuat": [
-   "2.1: tìm từ khoá của câu hỏi trong đoạn.",
-   "2.1: chép <em>đúng từ</em> ở chỗ tương ứng, không tự đặt từ.",
-   "2.2: so từng chữ với câu trong đoạn.",
-   "2.2: đề thường đổi một chỗ hoặc dùng từ đồng nghĩa: <em>extinguish</em> = put out, <em>shut</em> = close, <em>think</em> ≠ <em>been told</em>."
-  ],
-  "part3": {
-   "hop_tu": [
-    "risk",
-    "injuries",
-    "sharp",
-    "overexertion",
-    "apprentice"
-   ],
-   "doan": "Part of the (1) ______ comes from lifting heavy tools, equipment or parts. Other (2) ______, such as small burns or cuts, are caused from contact with hot or (3) ______ parts. Strains and sprains are typically caused by (4) ______. Technicians may be assisted by an (5) ______ when doing heavy work.",
-   "dap": [
-    "risk",
-    "injuries",
-    "sharp",
-    "overexertion",
-    "apprentice"
-   ],
-   "chien_thuat": [
-    "Đọc cả câu trước khi điền.",
-    "Chỗ (2) đứng sau <em>Other</em> và trước dấu phẩy, số nhiều, nói về burns hoặc cuts → danh từ số nhiều.",
-    "Chỗ (3) đứng trước <em>parts</em> và đi cùng <em>hot or</em> → tính từ.",
-    "Chỗ (5) đứng sau <em>an</em> → danh từ chỉ người, bắt đầu bằng nguyên âm.",
-    "Từ nào chắc thì điền trước, gạch khỏi hộp."
-   ]
-  },
-  "part4": {
-   "en": "At most shops the work environment is well-lighted and properly ventilated. However, some shops are drafty and noisy. Moreover, on a hot summer or frigid winter day shop temperatures are not always ideal.",
-   "vi": "Ở hầu hết các xưởng, môi trường làm việc đủ sáng và được thông gió tốt. Tuy nhiên, một số xưởng có gió lùa và ồn. Hơn nữa, vào ngày hè nóng hoặc ngày đông rất lạnh, nhiệt độ trong xưởng không phải lúc nào cũng lý tưởng.",
-   "chien_thuat": [
-    "Cắt đoạn thành từng câu, dịch từng câu.",
-    "Giữ nguyên thuật ngữ đã học: xưởng, thông gió, nhiệt độ.",
-    "<em>However</em> → \"tuy nhiên\", <em>Moreover</em> → \"hơn nữa\".",
-    "<em>not always ideal</em> → \"không phải lúc nào cũng lý tưởng\".",
-    "Dịch được nửa đoạn vẫn có điểm thành phần."
-   ]
-  },
-  "part5": {
-   "vi": "Mũ bảo hộ bảo vệ đầu khỏi chấn thương.",
-   "en": "A safety helmet protects the head from injury.",
-   "chien_thuat": [
-    "Dùng mẫu 1: <strong>X protects Y from Z</strong>.",
-    "X = a safety helmet, Y = the head, Z = injury.",
-    "X số ít → <em>protects</em> (có s).",
-    "Viết <em>A safety helmet protects the head.</em> vẫn có một phần điểm."
-   ]
+  "luyen_tap": {
+    "mc": [
+      {
+        "q": "Provide protection to the eyes.",
+        "opts": [
+          "safety goggles",
+          "safety helmet",
+          "knee pads",
+          "safety shoes"
+        ],
+        "ans": 0,
+        "why": "protection to the eyes → safety goggles."
+      },
+      {
+        "q": "Protects from inhaling harmful air particles as dusts, vapours, fumes and gases.",
+        "opts": [
+          "ear protectors",
+          "protective mask",
+          "safety gloves",
+          "dorsal belt"
+        ],
+        "ans": 1,
+        "why": "inhaling … dusts, fumes → protective mask."
+      },
+      {
+        "q": "Protects the body against welding work.",
+        "opts": [
+          "protective apron",
+          "safety harness",
+          "knee pads",
+          "ear protectors"
+        ],
+        "ans": 0,
+        "why": "body against welding → protective apron."
+      },
+      {
+        "q": "Protect the feet from accidental injury.",
+        "opts": [
+          "safety helmet",
+          "knee pads",
+          "safety shoes",
+          "safety gloves"
+        ],
+        "ans": 2,
+        "why": "the feet → safety shoes."
+      },
+      {
+        "q": "Avoids the worker falling.",
+        "opts": [
+          "dorsal belt",
+          "safety harness",
+          "knee pads",
+          "safety goggles"
+        ],
+        "ans": 1,
+        "why": "falling → safety harness."
+      },
+      {
+        "q": "Handles heavy materials and protects the back.",
+        "opts": [
+          "safety harness",
+          "knee pads",
+          "dorsal belt",
+          "protective apron"
+        ],
+        "ans": 2,
+        "why": "protects the back → dorsal belt."
+      },
+      {
+        "q": "Protect knees on the ground while working.",
+        "opts": [
+          "knee pads",
+          "safety shoes",
+          "dorsal belt",
+          "safety gloves"
+        ],
+        "ans": 0,
+        "why": "knees → knee pads."
+      },
+      {
+        "q": "A safety sign which tells you what you must not do.",
+        "opts": [
+          "mandatory sign",
+          "hazard sign",
+          "prohibition sign",
+          "fire safety sign"
+        ],
+        "ans": 2,
+        "why": "must not do → prohibition sign."
+      },
+      {
+        "q": "A safety sign which warns you of danger.",
+        "opts": [
+          "prohibition sign",
+          "hazard sign",
+          "mandatory sign",
+          "general safety sign"
+        ],
+        "ans": 1,
+        "why": "warns of danger → hazard sign."
+      },
+      {
+        "q": "A safety sign which tells you what you must do.",
+        "opts": [
+          "hazard sign",
+          "prohibition sign",
+          "mandatory sign",
+          "fire safety sign"
+        ],
+        "ans": 2,
+        "why": "must do → mandatory sign."
+      },
+      {
+        "q": "Damage to one or more ligaments in a joint, often caused by trauma.",
+        "opts": [
+          "strain",
+          "sprain",
+          "slip",
+          "overexertion"
+        ],
+        "ans": 1,
+        "why": "ligaments in a joint → sprain. Strain là căng cơ."
+      },
+      {
+        "q": "Too much use of physical or mental energy; hard work.",
+        "opts": [
+          "overexertion",
+          "sprain",
+          "apprentice",
+          "risk"
+        ],
+        "ans": 0,
+        "why": "energy, hard work → overexertion."
+      },
+      {
+        "q": "A space with limited entry that is not suitable for people.",
+        "opts": [
+          "locker room",
+          "confined areas",
+          "shower facilities",
+          "assembly point"
+        ],
+        "ans": 1,
+        "why": "limited entry → confined areas."
+      },
+      {
+        "q": "A room for changing clothes.",
+        "opts": [
+          "confined areas",
+          "pit",
+          "locker room",
+          "shower facilities"
+        ],
+        "ans": 2,
+        "why": "changing clothes → locker room."
+      },
+      {
+        "q": "Which equipment protects the head?",
+        "opts": [
+          "safety helmet",
+          "safety goggles",
+          "ear protectors",
+          "knee pads"
+        ],
+        "ans": 0,
+        "why": "the head → safety helmet."
+      },
+      {
+        "q": "Which equipment protects the hands?",
+        "opts": [
+          "safety shoes",
+          "safety gloves",
+          "dorsal belt",
+          "protective mask"
+        ],
+        "ans": 1,
+        "why": "the hands → safety gloves."
+      },
+      {
+        "q": "Which equipment protects the ears against noise?",
+        "opts": [
+          "ear protectors",
+          "safety goggles",
+          "protective mask",
+          "safety helmet"
+        ],
+        "ans": 0,
+        "why": "noise → ear protectors."
+      },
+      {
+        "q": "Complete: \"Dial 114 to call the fire ______.\"",
+        "opts": [
+          "alarm",
+          "brigade",
+          "exit",
+          "button"
+        ],
+        "ans": 1,
+        "why": "Article 2, câu 7."
+      },
+      {
+        "q": "Complete: \"Technicians may be assisted by an ______.\"",
+        "opts": [
+          "mechanic",
+          "apprentice",
+          "customer",
+          "manager"
+        ],
+        "ans": 1,
+        "why": "Article 1: assisted by an apprentice or helper."
+      },
+      {
+        "q": "Complete: \"Leave by the nearest ______.\"",
+        "opts": [
+          "pit",
+          "exit",
+          "helmet",
+          "apron"
+        ],
+        "ans": 1,
+        "why": "Article 2: Leave by the nearest exit."
+      }
+    ],
+    "tf": [
+      {
+        "q": "Read Article 1 (shop environment). Mark each statement True or False.",
+        "st": [
+          [
+            "Most shops are well-lighted and properly ventilated.",
+            true
+          ],
+          [
+            "Pit areas are typically well-ventilated and cool in summer.",
+            false
+          ],
+          [
+            "Mechanics can seldom avoid handling greasy and dirty parts.",
+            true
+          ],
+          [
+            "The rate of injuries is lower for mechanics than the national average.",
+            false
+          ]
+        ],
+        "why": "Pit areas are not well-ventilated and can be hot; the rate of illnesses and injuries is higher for mechanics."
+      },
+      {
+        "q": "Read Article 1 (injuries). Mark each statement True or False.",
+        "st": [
+          [
+            "Strains and sprains were typically caused by overexertion.",
+            true
+          ],
+          [
+            "Mechanics always work alone on heavy jobs.",
+            false
+          ],
+          [
+            "Many employers provide uniforms, locker rooms, and shower facilities.",
+            true
+          ],
+          [
+            "Most mechanics work a standard 60 hour week.",
+            false
+          ]
+        ],
+        "why": "Technicians may work as a team or be assisted by an apprentice; a standard week is 40 hours."
+      },
+      {
+        "q": "Read Article 2 (In case of fire!). Mark each statement True or False.",
+        "st": [
+          [
+            "If you find a fire, first try to put it out yourself.",
+            false
+          ],
+          [
+            "Close all the doors.",
+            true
+          ],
+          [
+            "Do not stop to collect belongings.",
+            true
+          ],
+          [
+            "Go back into the building as soon as the fire looks small.",
+            false
+          ]
+        ],
+        "why": "Do not put it out yourself; do not go back until you have been told it is safe."
+      }
+    ]
   }
- },
- "luyen_tap": {
-  "mc": [
-   {
-    "q": "Provide protection to the eyes.",
-    "opts": [
-     "safety goggles",
-     "safety helmet",
-     "knee pads",
-     "safety shoes"
-    ],
-    "ans": 0,
-    "why": "protection to the eyes → safety goggles."
-   },
-   {
-    "q": "Protects from inhaling harmful air particles as dusts, vapours, fumes and gases.",
-    "opts": [
-     "ear protectors",
-     "protective mask",
-     "safety gloves",
-     "dorsal belt"
-    ],
-    "ans": 1,
-    "why": "inhaling … dusts, fumes → protective mask."
-   },
-   {
-    "q": "Protects the body against welding work.",
-    "opts": [
-     "protective apron",
-     "safety harness",
-     "knee pads",
-     "ear protectors"
-    ],
-    "ans": 0,
-    "why": "body against welding → protective apron."
-   },
-   {
-    "q": "Protect the feet from accidental injury.",
-    "opts": [
-     "safety helmet",
-     "knee pads",
-     "safety shoes",
-     "safety gloves"
-    ],
-    "ans": 2,
-    "why": "the feet → safety shoes."
-   },
-   {
-    "q": "Avoids the worker falling.",
-    "opts": [
-     "dorsal belt",
-     "safety harness",
-     "knee pads",
-     "safety goggles"
-    ],
-    "ans": 1,
-    "why": "falling → safety harness."
-   },
-   {
-    "q": "Handles heavy materials and protects the back.",
-    "opts": [
-     "safety harness",
-     "knee pads",
-     "dorsal belt",
-     "protective apron"
-    ],
-    "ans": 2,
-    "why": "protects the back → dorsal belt."
-   },
-   {
-    "q": "Protect knees on the ground while working.",
-    "opts": [
-     "knee pads",
-     "safety shoes",
-     "dorsal belt",
-     "safety gloves"
-    ],
-    "ans": 0,
-    "why": "knees → knee pads."
-   },
-   {
-    "q": "A safety sign which tells you what you must not do.",
-    "opts": [
-     "mandatory sign",
-     "hazard sign",
-     "prohibition sign",
-     "fire safety sign"
-    ],
-    "ans": 2,
-    "why": "must not do → prohibition sign."
-   },
-   {
-    "q": "A safety sign which warns you of danger.",
-    "opts": [
-     "prohibition sign",
-     "hazard sign",
-     "mandatory sign",
-     "general safety sign"
-    ],
-    "ans": 1,
-    "why": "warns of danger → hazard sign."
-   },
-   {
-    "q": "A safety sign which tells you what you must do.",
-    "opts": [
-     "hazard sign",
-     "prohibition sign",
-     "mandatory sign",
-     "fire safety sign"
-    ],
-    "ans": 2,
-    "why": "must do → mandatory sign."
-   },
-   {
-    "q": "Damage to one or more ligaments in a joint, often caused by trauma.",
-    "opts": [
-     "strain",
-     "sprain",
-     "slip",
-     "overexertion"
-    ],
-    "ans": 1,
-    "why": "ligaments in a joint → sprain. Strain là căng cơ."
-   },
-   {
-    "q": "Too much use of physical or mental energy; hard work.",
-    "opts": [
-     "overexertion",
-     "sprain",
-     "apprentice",
-     "risk"
-    ],
-    "ans": 0,
-    "why": "energy, hard work → overexertion."
-   },
-   {
-    "q": "A space with limited entry that is not suitable for people.",
-    "opts": [
-     "locker room",
-     "confined areas",
-     "shower facilities",
-     "assembly point"
-    ],
-    "ans": 1,
-    "why": "limited entry → confined areas."
-   },
-   {
-    "q": "A room for changing clothes.",
-    "opts": [
-     "confined areas",
-     "pit",
-     "locker room",
-     "shower facilities"
-    ],
-    "ans": 2,
-    "why": "changing clothes → locker room."
-   },
-   {
-    "q": "Which equipment protects the head?",
-    "opts": [
-     "safety helmet",
-     "safety goggles",
-     "ear protectors",
-     "knee pads"
-    ],
-    "ans": 0,
-    "why": "the head → safety helmet."
-   },
-   {
-    "q": "Which equipment protects the hands?",
-    "opts": [
-     "safety shoes",
-     "safety gloves",
-     "dorsal belt",
-     "protective mask"
-    ],
-    "ans": 1,
-    "why": "the hands → safety gloves."
-   },
-   {
-    "q": "Which equipment protects the ears against noise?",
-    "opts": [
-     "ear protectors",
-     "safety goggles",
-     "protective mask",
-     "safety helmet"
-    ],
-    "ans": 0,
-    "why": "noise → ear protectors."
-   },
-   {
-    "q": "Complete: \"Dial 114 to call the fire ______.\"",
-    "opts": [
-     "alarm",
-     "brigade",
-     "exit",
-     "button"
-    ],
-    "ans": 1,
-    "why": "Article 2, câu 7."
-   },
-   {
-    "q": "Complete: \"Technicians may be assisted by an ______.\"",
-    "opts": [
-     "mechanic",
-     "apprentice",
-     "customer",
-     "manager"
-    ],
-    "ans": 1,
-    "why": "Article 1: assisted by an apprentice or helper."
-   },
-   {
-    "q": "Complete: \"Leave by the nearest ______.\"",
-    "opts": [
-     "pit",
-     "exit",
-     "helmet",
-     "apron"
-    ],
-    "ans": 1,
-    "why": "Article 2: Leave by the nearest exit."
-   }
-  ],
-  "tf": [
-   {
-    "q": "Read Article 1 (shop environment). Mark each statement True or False.",
-    "st": [
-     [
-      "Most shops are well-lighted and properly ventilated.",
-      true
-     ],
-     [
-      "Pit areas are typically well-ventilated and cool in summer.",
-      false
-     ],
-     [
-      "Mechanics can seldom avoid handling greasy and dirty parts.",
-      true
-     ],
-     [
-      "The rate of injuries is lower for mechanics than the national average.",
-      false
-     ]
-    ],
-    "why": "Pit areas are not well-ventilated and can be hot; the rate of illnesses and injuries is higher for mechanics."
-   },
-   {
-    "q": "Read Article 1 (injuries). Mark each statement True or False.",
-    "st": [
-     [
-      "Strains and sprains were typically caused by overexertion.",
-      true
-     ],
-     [
-      "Mechanics always work alone on heavy jobs.",
-      false
-     ],
-     [
-      "Many employers provide uniforms, locker rooms, and shower facilities.",
-      true
-     ],
-     [
-      "Most mechanics work a standard 60 hour week.",
-      false
-     ]
-    ],
-    "why": "Technicians may work as a team or be assisted by an apprentice; a standard week is 40 hours."
-   },
-   {
-    "q": "Read Article 2 (In case of fire!). Mark each statement True or False.",
-    "st": [
-     [
-      "If you find a fire, first try to put it out yourself.",
-      false
-     ],
-     [
-      "Close all the doors.",
-      true
-     ],
-     [
-      "Do not stop to collect belongings.",
-      true
-     ],
-     [
-      "Go back into the building as soon as the fire looks small.",
-      false
-     ]
-    ],
-    "why": "Do not put it out yourself; do not go back until you have been told it is safe."
-   }
-  ]
- }
 }
