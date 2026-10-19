@@ -270,6 +270,7 @@ export default function InlineLessonAccordion({
                             {item.kind === "luyen_tap" && (
                               <div className="mt-3">
                                 <PracticeSession
+                                  recordProgress={recordProgress}
                                   examIds={item.exam_ids}
                                   poolExamIds={lessonExamIds}
                                   lessonId={lesson.id}

@@ -60,7 +60,7 @@ export default function LoTrinhHsgPage() {
     [isTeacherView, lessons, marks],
   );
 
-  const toggle = userId
+  const toggle = userId && !isTeacherView
     ? (id: string) => {
         const next = { ...ticks, [id]: !ticks[id] };
         setTicks(next);
