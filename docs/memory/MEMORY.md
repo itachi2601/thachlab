@@ -92,6 +92,6 @@
 ## Việc mới 30/9
 - [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi; flip-1 lên web; treo duyệt bảng 12 buổi
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — xong 14/10; treo Gemini tìm ảnh, chưa deploy
-- [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — 19/10: viết lại lời giải L10–12 ĐÃ ghi DB (3.354 câu); còn câu ảnh, `{,}`
+- [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — 19/10: lời giải L9–12 + đúng/sai + TLN ĐÃ ghi DB; 20/10: chuẩn 20.762/22.513; chờ thầy duyệt `viet-lai13/14/15/lech.json` (~850 câu); còn 819 thiếu Sai vì
 - [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10
 - [Cải tiến chương 1 L12 + toàn site](project_thachlab_cai_tien_chuong1_l12.md) — đo 112 bài 18/10
