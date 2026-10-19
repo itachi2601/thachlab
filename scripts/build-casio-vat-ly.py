@@ -53,12 +53,18 @@ def clean(md: str) -> str:
     return "\n".join(out)
 
 
+def unesc(tex: str) -> str:
+    """Trong công thức, KaTeX cần ký tự thật: pandoc đổi < > & thành thực thể HTML nên phải trả về \\lt \\gt."""
+    import html as _h
+    return _h.unescape(tex.replace("&lt;", r"\lt ").replace("&gt;", r"\gt "))
+
+
 def pandoc(md: str, shift: int = 0) -> str:
     html = subprocess.run(
         ["pandoc", "-f", "markdown+hard_line_breaks-smart", "-t", "html", "--mathjax", "--wrap=none", f"--shift-heading-level-by={shift}"],
         input=clean(md), capture_output=True, text=True, check=True).stdout
-    html = re.sub(r'<span class="math inline">\\\((.*?)\\\)</span>', r"$\1$", html, flags=re.S)
-    html = re.sub(r'<span class="math display">\\\[(.*?)\\\]</span>', r"$$\1$$", html, flags=re.S)
+    html = re.sub(r'<span class="math inline">\\\((.*?)\\\)</span>', lambda m: "$" + unesc(m.group(1)) + "$", html, flags=re.S)
+    html = re.sub(r'<span class="math display">\\\[(.*?)\\\]</span>', lambda m: "$$" + unesc(m.group(1)) + "$$", html, flags=re.S)
     return html.strip()
 
 

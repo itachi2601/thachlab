@@ -19,7 +19,8 @@ CH=$(rest "chapters?subject_code=eq.casio-vat-ly&select=id" | python3 -c 'import
 
 if [[ "${1:-}" == "--publish" ]]; then
   rest "lessons?chapter_id=eq.$CH" -X PATCH -H "Content-Type: application/json" -d '{"published":true}' -o /dev/null
-  echo "Đã bật Hiện cả 5 bài Casio."; exit 0
+  rest "exams?subject_code=eq.casio-vat-ly" -X PATCH -H "Content-Type: application/json" -d '{"published":true}' -o /dev/null
+  echo "Đã bật Hiện cả 5 bài và 5 đề mini-test Casio."; exit 0
 fi
 
 declare -a PAIRS=(
@@ -35,4 +36,6 @@ for pair in "${PAIRS[@]}"; do
   echo "══ $title (bài $ID) ══"
   npx tsx scripts/upload-lesson.mts "content/casio-vat-ly/_dung/$dir/bundle.json" --lesson "$ID" --target luyen_tap --mode replace
 done
-echo "Xong. Bài vẫn ẩn. Xem thử ở /quan-tri hoặc lớp /lop-hoc/casio-vat-ly (tài khoản thầy)."
+# Đề do upload-lesson tạo ra mặc định published=true và hiện trong hub lớp: giữ ẩn cùng bài tới khi duyệt.
+rest "exams?subject_code=eq.casio-vat-ly" -X PATCH -H "Content-Type: application/json" -d '{"published":false}' -o /dev/null
+echo "Xong. Bài và đề vẫn ẩn. Xem thử ở /quan-tri hoặc lớp /lop-hoc/casio-vat-ly (tài khoản thầy)."
