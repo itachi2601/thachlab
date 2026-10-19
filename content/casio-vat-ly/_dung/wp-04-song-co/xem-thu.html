@@ -1,0 +1,221 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><style>body{font:16px/1.6 system-ui;max-width:720px;margin:0 auto;padding:16px}code{background:#eee;padding:1px 4px;border-radius:4px}</style><h1>Sóng cơ</h1><blockquote>
+<p>Công cụ máy: bài <strong>Sổ tay máy Casio fx-580VN X</strong>. Mỗi công thức ghi kèm <strong>điều kiện áp dụng</strong>. Thể lệ tạm: làm tròn 4 chữ số có nghĩa.</p>
+</blockquote>
+<hr />
+<h3 id="trang-1-sóng-truyền-và-độ-lệch-pha">Trang 1 · Sóng truyền và độ lệch pha</h3>
+<p><strong>Công thức</strong></p>
+<ul>
+<li>$\lambda = vT = \dfrac{v}{f}$.</li>
+<li>Nguồn $u_0 = A\cos(\omega t + \varphi)$ thì điểm cách nguồn $x$ (sóng truyền từ nguồn, không mất năng lượng): $u(x,t) = A\cos\left(\omega t + \varphi - \dfrac{2\pi x}{\lambda}\right)$.</li>
+<li>Độ lệch pha giữa hai điểm trên phương truyền cách nhau $d$: $\Delta\varphi = \dfrac{2\pi d}{\lambda}$.
+<ul>
+<li>Cùng pha: $d = k\lambda$. Ngược pha: $d = (k+\tfrac12)\lambda$. Vuông pha: $d = (2k+1)\tfrac{\lambda}{4}$ ($k$ nguyên).</li>
+</ul></li>
+<li>Tốc độ dao động cực đại của phần tử: $v_{max} = \omega A = 2\pi f A$; so với tốc độ truyền: $\dfrac{v_{max}}{v} = \dfrac{2\pi A}{\lambda}$. <strong>Hai tốc độ này khác nhau, đừng nhầm.</strong></li>
+</ul>
+<p><strong>Thao tác máy</strong></p>
+<ul>
+<li>Phương trình sóng: lưu $\lambda$ vào <code>D</code>, rồi <code>CALC</code> với hai biến <code>x</code> và <code>y</code> (máy không có biến t; dùng <code>y</code> thay cho $t$) ở chế độ <strong>Rad</strong>.</li>
+<li>Tìm điểm cùng pha / ngược pha trong khoảng $[d_1, d_2]$: TABLE với $f(x) = \dfrac{x}{\lambda}$ (số bước sóng); các hàng có giá trị nguyên là cùng pha với nguồn, giá trị bán nguyên là ngược pha.</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Công thức $u(x,t)$ có dấu trừ khi sóng truyền theo chiều $+x$; truyền ngược thì dấu cộng.</li>
+<li>Đổi $\lambda$ và $x$ cùng đơn vị (cm hay m).</li>
+</ul>
+<hr />
+<h3 id="trang-2-giao-thoa-hai-nguồn">Trang 2 · Giao thoa hai nguồn</h3>
+<p>Hai nguồn $A, B$ cách nhau $AB$, cùng biên độ, $\lambda$ cho trước. Gọi $d_1, d_2$ là khoảng cách từ điểm $M$ tới $A, B$.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Hai nguồn <strong>cùng pha</strong></th>
+<th>Hai nguồn <strong>ngược pha</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cực đại</td>
+<td>$d_2 - d_1 = k\lambda$</td>
+<td>$d_2 - d_1 = (k+\tfrac12)\lambda$</td>
+</tr>
+<tr>
+<td>Cực tiểu</td>
+<td>$d_2 - d_1 = (k+\tfrac12)\lambda$</td>
+<td>$d_2 - d_1 = k\lambda$</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Đếm số cực trị trên đoạn $AB$</strong></p>
+<ol type="1">
+<li>Với mọi điểm trên đoạn $AB$: $|d_2 - d_1| \lt  AB$ (<strong>bất đẳng thức chặt</strong>, vì $A$ và $B$ là nguồn, không tính).</li>
+<li>Giải bất phương trình theo $k$ nguyên; số nghiệm là số cực trị.</li>
+<li>Cực trị nào có hiệu đường đi bằng $\pm AB$ (xảy ra khi $\dfrac{AB}{\lambda}$ nguyên với họ $k\lambda$, hoặc bán nguyên với họ $(k+\tfrac12)\lambda$) ứng với chính $A, B$ nên <strong>loại</strong>; bất đẳng thức chặt ở bước 1 đã loại sẵn.</li>
+</ol>
+<p><strong>Đếm trên đoạn không phải $AB$ (ví dụ cạnh $CD$ của hình vuông, hình chữ nhật)</strong></p>
+<ul>
+<li>Tính $d_2 - d_1$ ở hai đầu mút (đây là giá trị lớn nhất và nhỏ nhất của hiệu đường đi trên đoạn đó, <strong>khi hiệu đường đi đơn điệu theo vị trí</strong>, đúng cho cạnh đối diện của hình vuông/chữ nhật nối hai nguồn).</li>
+<li>Đếm $k$ nguyên để $k\lambda$ (hoặc $(k+\tfrac12)\lambda$) nằm <strong>giữa</strong> hai giá trị đó. Mút của đoạn: nếu rơi đúng vào cực trị thì xét theo đề (đề thường nói "kể cả hai đầu" hoặc "không kể").</li>
+</ul>
+<p><strong>Điểm cực đại gần nguồn nhất trên đường thẳng vuông góc $AB$ tại $A$</strong> (nguồn cùng pha)</p>
+<ul>
+<li>$d_1 = x$, $d_2 = \sqrt{x^2 + AB^2}$, cực đại bậc $k$: $\sqrt{x^2 + AB^2} - x = k\lambda$.</li>
+<li>Giải: $x = \dfrac{AB^2 - (k\lambda)^2}{2k\lambda}$, điều kiện $0 \lt  k\lambda \lt  AB$. Điểm <strong>gần $A$ nhất</strong> ứng với $k$ <strong>lớn nhất</strong> thoả điều kiện; điểm xa nhất ứng với $k = 1$.</li>
+<li>Máy: <code>SOLVE</code> với $\sqrt{x^2 + AB^2} - x = k\lambda$, giá trị đầu nhỏ.</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Đổi nguồn cùng pha thành ngược pha là đổi hẳn cực đại ↔︎ cực tiểu.</li>
+<li>$k$ có thể âm; đếm cả hai phía của đường trung trực.</li>
+</ul>
+<hr />
+<h3 id="trang-3-sóng-dừng-và-sóng-âm">Trang 3 · Sóng dừng và sóng âm</h3>
+<p><strong>Sóng dừng trên dây</strong> (điều kiện: sóng tới và phản xạ có cùng tần số, biên độ)</p>
+<ul>
+<li>Hai nút liên tiếp (hoặc hai bụng liên tiếp) cách nhau $\dfrac{\lambda}{2}$; nút – bụng liên tiếp cách $\dfrac{\lambda}{4}$.</li>
+<li><strong>Hai đầu cố định:</strong> $\ell = n\dfrac{\lambda}{2}$, $n$ = số bụng; $f_n = n\dfrac{v}{2\ell}$.</li>
+<li><strong>Một đầu cố định, một đầu tự do:</strong> $\ell = (2n+1)\dfrac{\lambda}{4}$ ($n=0,1,2,\dots$); số bụng (kể cả đầu tự do) $= n+1$; $f = (2n+1)\dfrac{v}{4\ell}$, chỉ các hoạ âm bậc <strong>lẻ</strong>.</li>
+<li>Biên độ tại điểm cách một nút đoạn $d$: $A_d = A_b\left|\sin\dfrac{2\pi d}{\lambda}\right|$ ($A_b$ là biên độ bụng).</li>
+<li>Các điểm khác nhau trong cùng một bó sóng dao động <strong>cùng pha</strong>; hai bó liền kề <strong>ngược pha</strong>.</li>
+</ul>
+<p><strong>Sóng âm</strong> (nguồn điểm, không hấp thụ)</p>
+<ul>
+<li>Cường độ âm $I = \dfrac{P}{4\pi r^2}$; $I \propto \dfrac{1}{r^2}$.</li>
+<li>Mức cường độ âm $L = 10\log\dfrac{I}{I_0}$ (dB), $I_0 = 10^{-12}$ W/m².</li>
+<li>Hiệu mức: $L_1 - L_2 = 20\log\dfrac{r_2}{r_1}$ (chỉ khi cùng một nguồn điểm); thêm $n$ nguồn giống hệt cùng vị trí <strong>không kết hợp</strong> (cộng cường độ) thì $L$ tăng $10\log n$; nguồn kết hợp cộng biên độ nên không áp dụng.</li>
+</ul>
+<p><strong>Thao tác máy</strong></p>
+<ul>
+<li>Mũ và log: <code>10^(...)</code> và <code>log(...)</code> (log thập phân); đừng dùng <code>ln</code>.</li>
+<li>Tìm tần số thoả điều kiện nằm trong khoảng: TABLE với $f(x) = (2x+1)\dfrac{v}{4\ell}$, $x = 0,1,2,\dots$; đọc các hàng nằm trong khoảng.</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Đầu tự do là <strong>bụng</strong>, đầu cố định là <strong>nút</strong>.</li>
+<li>$L_1 - L_2 = 20\log(r_2/r_1)$ dùng khoảng cách tới <strong>nguồn</strong>; trung điểm của hai điểm cách nguồn $r_A$, $r_B$ thẳng hàng cùng phía là $\dfrac{r_A + r_B}{2}$.</li>
+</ul><h3>W1 ⭐ Phương trình sóng và độ lệch pha</h3><p>Nguồn $u_0 = 3\cos(20\pi t)$ (cm, s), tốc độ truyền sóng $2$ m/s. Tính bước sóng; độ lệch pha giữa điểm $M$ cách nguồn $25$ cm và nguồn; li độ của $M$ tại $t = 0{,}04$ s.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\lambda = 20{,}00$ cm; $\Delta\varphi = 7{,}854$ rad $\left(= \dfrac{5\pi}{2}\right)$, tức vuông pha; $u_M = 1{,}763$ cm.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>λ</code>: <code>200÷10</code> $= 20$ cm, <code>STO D</code>.</li>
+<li>Δφ: <code>2π×25÷D</code> $= 7{,}854$, <code>STO B</code>.</li>
+<li>SETUP <strong>Rad</strong>, rồi <code>3cos(20π×0.04 − B)</code> $= 1{,}763$.</li>
+</ul>
+<p><strong>Bẫy.</strong> $f = \dfrac{\omega}{2\pi} = 10$ Hz; $\lambda = \dfrac{200}{10}$ cm, không phải $\dfrac{2}{10}$ cm.</p>
+</details><h3>W2 ⭐ Mức cường độ âm</h3><p>Nguồn âm điểm công suất $0{,}5$ W. Tính cường độ âm và mức cường độ âm tại điểm cách nguồn $10$ m. Nếu khoảng cách tăng gấp đôi, mức cường độ âm giảm bao nhiêu dB?</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $I = 3{,}979.10^{-4}$ W/m²; $L = 86{,}00$ dB; giảm $6{,}021$ dB (còn $79{,}98$ dB).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>0.5÷(4π×10²)</code>, <code>STO D</code>.</li>
+<li><code>10×log(D÷10^−12)</code>.</li>
+<li>Giảm: <code>20×log(2)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Dùng <code>log</code> (thập phân), không dùng <code>ln</code>.</p>
+</details><h3>W3 ⭐ Sóng dừng hai đầu cố định</h3><p>Dây dài $0{,}9$ m hai đầu cố định, tần số $50$ Hz, quan sát được $3$ bụng. Tính bước sóng, tốc độ truyền sóng và tần số nhỏ nhất để có sóng dừng trên dây đó.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\lambda = 0{,}6000$ m; $v = 30{,}00$ m/s; $f_1 = 16{,}67$ Hz.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>2×0.9÷3</code> → <code>STO D</code>; <code>D×50</code>; rồi <code>30÷(2×0.9)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $n$ là số <strong>bụng</strong>, không phải số nút.</p>
+</details><h3>W4 ⭐ Tốc độ dao động và tốc độ truyền sóng</h3><p>Sóng biên độ $2$ mm, tần số $25$ Hz, tốc độ truyền $0{,}5$ m/s. Tính bước sóng, tốc độ dao động cực đại của phần tử môi trường và tỉ số $v_{max}/v$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\lambda = 2{,}000$ cm; $v_{max} = 0{,}3142$ m/s; $\dfrac{v_{max}}{v} = 0{,}6283$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>0.5÷25</code>; <code>2π×25×0.002</code>; <code>Ans÷0.5</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Đổi $A$ về m trước khi nhân.</p>
+</details><h3>W5 ⭐⭐ Đếm cực đại và cực tiểu, nguồn cùng pha</h3><p>Hai nguồn $A, B$ cùng pha, $AB = 19$ cm, $f = 25$ Hz, tốc độ sóng $0{,}8$ m/s. Có bao nhiêu điểm cực đại và cực tiểu trên đoạn $AB$?</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\lambda = 3{,}200$ cm; $11$ cực đại; $12$ cực tiểu.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>80÷25</code> $= 3{,}2$ cm, <code>STO D</code>; <code>19÷D</code> $= 5{,}9375$.</li>
+<li>Cực đại: $|k| \lt  5{,}9375$ nên $k = -5 \dots 5$.</li>
+<li>Cực tiểu: $|k + 0{,}5| \lt  5{,}9375$ nên $k = -6 \dots 5$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Cực tiểu nhiều hơn cực đại một khi phần thập phân của $AB/\lambda$ lớn hơn 0,5.</p>
+</details><h3>W6 ⭐⭐ Hai nguồn ngược pha</h3><p>Như W5 nhưng hai nguồn <strong>ngược pha</strong> và $AB = 17{,}5$ cm. Đếm cực đại và cực tiểu trên $AB$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $10$ cực đại; $11$ cực tiểu.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>17.5÷3.2</code> $= 5{,}469$.</li>
+<li>Cực đại: $|k + 0{,}5| \lt  5{,}469$ nên $k = -5 \dots 4$.</li>
+<li>Cực tiểu: $|k| \lt  5{,}469$ nên $k = -5 \dots 5$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Quên đổi vai trò cực đại ↔︎ cực tiểu khi đổi pha nguồn.</p>
+</details><h3>W7 ⭐⭐ Cực trị trên cạnh hình vuông</h3><p>Hai nguồn $A, B$ cùng pha, $ABCD$ là hình vuông cạnh $10$ cm, $\lambda = 1{,}2$ cm. Đếm số điểm cực đại và cực tiểu trên cạnh $CD$ (không kể $C, D$).</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $|d_2 - d_1|$ biến thiên từ $0$ đến $10\sqrt2 - 10 = 4{,}142$ cm: $7$ cực đại; $6$ cực tiểu.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>10√2 − 10</code> $= 4{,}142$.</li>
+<li>Cực đại: $|k| \cdot 1{,}2 \lt  4{,}142$ nên $|k| \leq 3$: 7 điểm.</li>
+<li>Cực tiểu: $|k + 0{,}5| \cdot 1{,}2 \lt  4{,}142$ nên $k + 0{,}5 \in \{\pm 0{,}5; \pm1{,}5; \pm 2{,}5\}$: 6 điểm.</li>
+<li>Hoặc TABLE: cực đại <code>f(x) = 1.2x</code>; cực tiểu <code>f(x) = 1.2(x+0.5)</code>; Start <code>-4</code>, End <code>3</code>, Step <code>1</code>; đếm hàng có $|f| \lt  4{,}142$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Ở mỗi giá trị $d_2 - d_1$ khác $0$, có <strong>một</strong> điểm trên $CD$ ($CD$ nằm một nửa mặt phẳng; hiệu đường đi đơn điệu theo vị trí). Riêng $k=0$ là điểm giữa $CD$, cũng chỉ một điểm.</p>
+</details><h3>W8 ⭐⭐ Một đầu cố định, một đầu tự do</h3><p>Dây dài $0{,}75$ m, một đầu cố định, một đầu tự do, tốc độ truyền sóng $60$ m/s. Tìm tần số nhỏ nhất; và các tần số trong khoảng $150$–$250$ Hz kèm số bụng tương ứng.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $f_1 = 20{,}00$ Hz; có $180$ Hz ($5$ bụng) và $220$ Hz ($6$ bụng).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>60÷(4×0.75)</code> $= 20$.</li>
+<li>Bảng: <code>f(x) = (2x+1)×20</code>, Start <code>0</code>, End <code>12</code>, Step <code>1</code>: đọc các hàng $150 \leq f \leq 250$.</li>
+<li>Số bụng $= n + 1$: $180 \to n = 4$; $220 \to n = 5$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Bội chẵn (40, 80…) không có sóng dừng vì đầu tự do phải là bụng.</p>
+</details><h3>W9 ⭐⭐ Biên độ điểm trên dây sóng dừng</h3><p>Dây hai đầu cố định có sóng dừng, biên độ bụng $4$ cm, $\lambda = 60$ cm. (a) Biên độ điểm cách nút gần nhất $5$ cm. (b) Khoảng cách nhỏ nhất giữa hai điểm có cùng biên độ $2\sqrt2$ cm.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> (a) $A = 2{,}000$ cm. (b) $15{,}00$ cm $\left(= \dfrac{\lambda}{4}\right)$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Rad: <code>4×abs(sin(2π×5÷60))</code>.</li>
+<li>(b): $|\sin\theta| = \dfrac{\sqrt2}{2}$ nên $\theta = \dfrac{\pi}{4}$, $\dfrac{3\pi}{4}$, …; khoảng cách giữa hai vị trí liên tiếp $= \dfrac{\lambda}{4}$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Các điểm biên độ $\dfrac{A_b}{\sqrt2}$ cách nhau đều $\dfrac{\lambda}{4}$, không phải $\dfrac{\lambda}{8}$ ($\lambda/8$ là khoảng cách tới nút).</p>
+</details><h3>W10 ⭐⭐ Điểm cực đại gần nguồn nhất (SOLVE)</h3><p>Hai nguồn cùng pha $A, B$ cách nhau $20$ cm, $\lambda = 3$ cm. Trên đường thẳng vuông góc với $AB$ tại $A$, tìm điểm cực đại gần $A$ nhất (khác $A$).</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> Cực đại bậc $k_{max} = 6$: $x = 2{,}111$ cm.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>20÷3</code> $= 6{,}67$ nên $k_{max} = 6$.</li>
+<li>SOLVE: <code>√(x²+400) − x = 18</code>, giá trị đầu <code>2</code>. Hoặc <code>(400−18²)÷(2×18)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Chọn $k = 1$ cho điểm <strong>xa</strong> $A$ nhất ($x = 65{,}17$ cm), không phải gần nhất.</p>
+</details><h3>W11 ⭐⭐⭐ Thời gian li độ không vượt ngưỡng</h3><p>Sóng dừng trên dây, biên độ bụng $4$ cm, chu kì $0{,}2$ s. Điểm $M$ có biên độ $2\sqrt3$ cm. Trong một chu kì, tính khoảng thời gian li độ của $M$ có độ lớn không vượt quá $2$ cm.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> Tỉ lệ $0{,}3918\ T$; $t = 0{,}07837$ s.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Độ lớn $\left|2\sqrt3\cos\theta\right| \leq 2$ nên $|\cos\theta| \leq \dfrac{1}{\sqrt3}$.</li>
+<li>Độ: <code>1 − 2×cos⁻¹(1÷√3)÷180</code> $= 0{,}3918$ (giữ <code>cos⁻¹</code> trả độ ở chế độ Độ; tỉ lệ của $T$).</li>
+<li>Nhân $0{,}2$.</li>
+</ul>
+<p><strong>Lời giải.</strong> Trong nửa chu kì $\theta$ chạy $180°$; li độ vượt ngưỡng khi $|\cos\theta| \gt  c$ trong hai cung mỗi cung $\arccos c$; còn lại $180° - 2\arccos c$ thoả.<br />
+<strong>Bẫy.</strong> Đổi arccos ra độ rồi chia $180$ (nửa chu kì), không chia $360$.</p>
+</details><h3>W12 ⭐⭐⭐ Mức cường độ âm tại trung điểm</h3><p>Nguồn âm điểm $O$; $A$ và $B$ thẳng hàng với $O$, cùng phía. Mức cường độ âm tại $A$ là $60$ dB, tại $B$ là $40$ dB. Tính mức cường độ âm tại trung điểm $M$ của $AB$. Nếu đặt thêm một nguồn giống hệt tại $O$ (hai nguồn <strong>không kết hợp</strong>, cường độ cộng lại) thì mức tại $M$ là bao nhiêu?</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $L_M = 45{,}19$ dB; sau khi thêm nguồn: $48{,}20$ dB.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>$L_A - L_B = 20 = 20\log\dfrac{OB}{OA}$ nên $OB = 10\ OA$.</li>
+<li>$OM = \dfrac{OA + OB}{2} = 5{,}5\ OA$.</li>
+<li><code>60 − 20×log(5.5)</code> $= 45{,}19$; rồi <code>Ans + 10×log(2)</code> $= 48{,}20$.</li>
+</ul>
+<p><strong>Bẫy.</strong> $OM$ là trung bình cộng hai <strong>khoảng cách tới nguồn</strong>, không phải trung bình cộng hai mức dB.</p>
+</details><h3>Câu 1</h3><p>Sóng ngang có phương trình $u = 6\cos(4\pi t - 0{,}02\pi x)$ (cm; $x$ tính bằng cm, $t$ bằng s). Tìm tần số, bước sóng, tốc độ truyền sóng và tốc độ dao động cực đại của phần tử môi trường.</p><details><summary>Đáp án</summary><pre>$\omega = 4\pi$ nên $f = 2{,}000$ Hz. $\dfrac{2\pi}{\lambda} = 0{,}02\pi$ nên $\lambda = 100{,}0$ cm. $v = \lambda f = 200{,}0$ cm/s. $v_{max} = \omega A = 4\pi\cdot 6 = 75{,}40$ cm/s.
+- Gõ: `4π×6`.</pre></details><h3>Câu 2</h3><p>Hai nguồn $A, B$ cùng pha, $AB = 12$ cm, bước sóng $1{,}5$ cm. Có bao nhiêu điểm dao động cực đại và cực tiểu trên đoạn $AB$ (không kể hai nguồn $A, B$)?</p><details><summary>Đáp án</summary><pre>$\dfrac{AB}{\lambda} = 8$ (nguyên). Cực đại: $|k| < 8$ (loại $k=\pm8$ ứng với chính $A, B$) nên $k = -7 \dots 7$: $15$ điểm. Cực tiểu: $|k + 0{,}5| < 8$ nên $k = -8 \dots 7$: $16$ điểm.</pre></details><h3>Câu 3</h3><p>Dây dài $0{,}6$ m, một đầu cố định, một đầu tự do, có sóng dừng với $4$ bụng (kể cả bụng ở đầu tự do), tần số $70$ Hz. Tính bước sóng và tốc độ truyền sóng.</p><details><summary>Đáp án</summary><pre>$\ell = (2n+1)\dfrac{\lambda}{4}$ với $n + 1 = 4$ nên $n = 3$, $\ell = \dfrac{7\lambda}{4}$. $\lambda = \dfrac{4\ell}{7} = 0{,}3429$ m; $v = \lambda f = 24{,}00$ m/s.
+- Gõ: `4×0.6÷7`, `×70`.</pre></details><h3>Câu 4</h3><p>Tại điểm cách nguồn âm điểm $2$ m, mức cường độ âm là $70$ dB. Tính (a) cường độ âm tại đó, (b) công suất nguồn, (c) khoảng cách từ nguồn đến điểm có mức cường độ âm $50$ dB.</p><details><summary>Đáp án</summary><pre>(a) $I = 10^{-12}\cdot 10^{7} = 1{,}000.10^{-5}$ W/m². (b) $P = 4\pi r^2 I = 4\pi\cdot 4\cdot 10^{-5} = 5{,}027.10^{-4}$ W. (c) $L_1 - L_2 = 20 = 20\log\dfrac{r_2}{2}$ nên $r_2 = 20{,}00$ m.
+- Gõ: `4π×4×10^−5`.</pre></details><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]})</script>

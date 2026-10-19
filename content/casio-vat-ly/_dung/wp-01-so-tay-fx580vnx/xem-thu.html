@@ -1,0 +1,471 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><style>body{font:16px/1.6 system-ui;max-width:720px;margin:0 auto;padding:16px}code{background:#eee;padding:1px 4px;border-radius:4px}</style><h1>Sổ tay máy Casio fx-580VN X</h1><blockquote>
+<p><strong>Quy ước phím.</strong> <code>SHIFT x</code> là phím vàng phía trên phím x; <code>ALPHA x</code> là chữ đỏ. Tên chế độ và thứ tự menu đã đối chiếu sách hướng dẫn chính hãng fx-580VN X (cập nhật 19/10/2026).<br />
+Phím <code>x</code> là phím biến x riêng của máy (không phải <code>ALPHA )</code>, phím này cho ra y).<br />
+Phím <code>STO</code> là phím riêng, không cần ALPHA.<br />
+<strong>Hằng số:</strong> đề cho giá trị nào thì dùng giá trị đó; hằng số có sẵn trong máy khác SGK ở chữ số thứ 4–6 (xem mục 8).</p>
+</blockquote>
+<hr />
+<h3 id="chuẩn-bị-máy-làm-đầu-mỗi-buổi-thi-và-mỗi-buổi-luyện">1. Chuẩn bị máy (làm đầu mỗi buổi thi và mỗi buổi luyện)</h3>
+<p><strong>Dùng khi:</strong> luôn luôn, trước bài đầu tiên.</p>
+<ol type="1">
+<li><code>SHIFT MENU</code> (SETUP) → <strong>Đơn vị góc</strong>: chọn <strong>Độ</strong> khi đề cho góc bằng độ; chọn <strong>Rad</strong> khi có <code>ωt</code>, <code>π</code>, <code>cos(5πt − π/3)</code>.</li>
+<li>SETUP → <strong>Dạng hiển thị</strong> (Input/Output). Tên các dạng trên máy:
+<ul>
+<li>MathI/MathO: hiện phân số, căn.</li>
+<li>MathI/DecimalO: nhập dạng toán, ra số thập phân ngay.</li>
+<li>LineI/LineO.</li>
+<li>LineI/DecimalO.</li>
+<li>Muốn ra số thập phân thì chọn MathI/DecimalO, hoặc bấm <code>SHIFT =</code> (≈) sau khi tính.</li>
+</ul></li>
+<li>Số chữ số: SETUP → <strong>Fix / Sci / Norm</strong>. Giữ <strong>Norm</strong> khi tính trung gian; chỉ đặt Fix hoặc Sci khi cần đọc kết quả theo quy tắc làm tròn của thể lệ.</li>
+<li>Biến nhớ: lưu bằng phím <code>STO</code> (phím riêng) rồi phím biến, không cần ALPHA.
+<ul>
+<li>Máy có 9 biến <strong>A, B, C, D, E, F, x, y, z</strong>, cộng bộ nhớ độc lập M. Không có W, t, f.</li>
+<li><code>x</code> đang dùng cho SOLVE/TABLE nên đừng dùng làm ô lưu.</li>
+<li>Gọi biến bằng <code>ALPHA</code> + phím biến.</li>
+<li>Xem giá trị các biến: <code>SHIFT STO</code> (RECALL).</li>
+</ul></li>
+<li><code>Ans</code> là kết quả lần tính liền trước; <code>Ans</code> giữ <strong>đủ chữ số</strong> dù màn hình hiện ít.</li>
+</ol>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Quên đổi Rad ↔︎ Độ: lỗi số 1 ở dao động và sóng. Nhìn biểu tượng <strong>D</strong> hoặc <strong>R</strong> trên thanh trạng thái trước mỗi bài có hàm lượng giác.</li>
+<li>Tính trung gian rồi gõ lại số đã làm tròn trên màn hình: sai ở chữ số cuối. Luôn dùng <code>Ans</code> hoặc biến nhớ.</li>
+</ul>
+<hr />
+<h3 id="solve-giải-phương-trình-theo-một-ẩn">2. SOLVE: giải phương trình theo một ẩn</h3>
+<p><strong>Dùng khi:</strong> phương trình không giải gọn bằng đại số (hàm lượng giác, mũ, nhiều số hạng). Bài luyện S1–S3.</p>
+<p><strong>Quy trình</strong></p>
+<ol type="1">
+<li>Gõ vế trái, bấm <code>ALPHA CALC</code> (dấu <code>=</code>), gõ vế phải. Ẩn gõ bằng <strong>phím <code>x</code></strong> (hoặc <code>ALPHA (</code>); không dùng <code>ALPHA )</code> vì phím này cho ra y.</li>
+<li>Bấm <code>SHIFT CALC</code> (SOLVE). SOLVE chỉ dùng được trong phương thức Calculate.</li>
+<li>Máy hỏi giá trị đầu của x: nhập số <strong>gần nghiệm cần tìm</strong>, bấm <code>=</code>, rồi bấm <code>=</code> thêm một lần nữa để giải.</li>
+<li>Đọc nghiệm x. Máy còn hiện <strong>L−R</strong> (hiệu hai vế): L−R gần 0 mới tin nghiệm.</li>
+</ol>
+<p><strong>Cách chọn giá trị đầu</strong></p>
+<ul>
+<li>Phương trình lượng giác có vô số nghiệm: <strong>mỗi giá trị đầu cho một nghiệm khác nhau</strong>. Muốn nghiệm dương nhỏ nhất thì cho giá trị đầu nhỏ nhưng dương, rồi kiểm lại bằng cách thử nghiệm nhỏ hơn.</li>
+<li>Phương trình có nghiệm vật lí rõ khoảng nào (nhiệt độ cân bằng nằm giữa hai nhiệt độ ban đầu) thì lấy giá trị đầu trong khoảng đó.</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>SOLVE cho <strong>một</strong> nghiệm rồi dừng. Đề hỏi "lần thứ n" hay "thời điểm đầu tiên" thì phải tự kiểm có nghiệm nhỏ hơn hay không.</li>
+<li>Biến khác x (đã gán A, B…) vẫn giữ giá trị cũ. Xoá hoặc gán lại trước bài mới.</li>
+</ul>
+<hr />
+<h3 id="calc-tính-lại-cùng-một-công-thức-với-số-liệu-khác">3. CALC: tính lại cùng một công thức với số liệu khác</h3>
+<p><strong>Dùng khi:</strong> một công thức, nhiều bộ số (con lắc ở nhiều chiều dài, công suất ở nhiều giá trị R). Bài luyện C1, C2.</p>
+<p><strong>Quy trình</strong></p>
+<ol type="1">
+<li>Gõ công thức, dùng chữ biến thay cho số thay đổi (<code>ALPHA</code> + phím biến).</li>
+<li>Bấm <code>CALC</code>. Máy hỏi từng biến, nhập giá trị, bấm <code>=</code>.</li>
+<li>Xong một bộ số, bấm <code>CALC</code> lần nữa để nhập bộ khác. Giữ nguyên biến nào không đổi bằng cách bấm <code>=</code> khi máy hỏi lại.</li>
+</ol>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Công thức có biến cũ còn nhớ giá trị: máy hiện giá trị cũ làm mặc định. Đọc kỹ rồi mới bấm <code>=</code>.</li>
+<li>Gõ <code>4π²</code> phải có ngoặc đúng chỗ. Ví dụ <code>2π√(l/g)</code>: căn bao cả <code>l/g</code>.</li>
+</ul>
+<hr />
+<h3 id="table-bảng-giá-trị-hàm-fx">4. TABLE: bảng giá trị hàm f(x)</h3>
+<p><strong>Dùng khi:</strong> tìm cực đại/cực tiểu gần đúng, đếm số giá trị nguyên, so sánh hàm trên một khoảng. Bài luyện T1–T3.</p>
+<p><strong>Quy trình</strong></p>
+<ol type="1">
+<li><code>MENU</code> → <strong>Bảng giá trị</strong> (Table).</li>
+<li>Muốn máy không hỏi g(x): vào SETUP → Table → <strong>f(x)</strong> trước (khi đó bảng tối đa 45 dòng). Nhập <code>f(x)</code> (x gõ bằng <strong>phím <code>x</code></strong>).
+<ul>
+<li>Biến khác x trong f(x) được coi là hằng số, nên <code>ALPHA )</code> (y) sẽ ra bảng hằng mà máy không báo lỗi.</li>
+</ul></li>
+<li>Nhập <strong>Start</strong>, <strong>End</strong>, <strong>Step</strong>, mỗi giá trị kết thúc bằng <code>=</code>.</li>
+<li>Cuộn bằng phím mũi tên để đọc.</li>
+<li><strong>Thu hẹp:</strong> thấy cực trị gần X₀ thì chạy lại bảng quanh X₀ với bước nhỏ hơn.</li>
+</ol>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Số hàng bảng bị giới hạn: tối đa 45 dòng với f(x), 30 dòng với f(x),g(x). (End − Start) / Step không được quá lớn. Báo <strong>Range ERROR</strong> thì tăng Step hoặc thu hẹp khoảng.</li>
+<li>Bảng chỉ cho giá trị gần đúng theo bước đã chọn. Đáp số cuối của đề tự luận nên kiểm lại bằng công thức (ví dụ f₀ = 1/(2π√LC)).</li>
+</ul>
+<hr />
+<h3 id="số-phức-cmplx">5. Số phức (CMPLX)</h3>
+<p><strong>Dùng khi:</strong> tổng hợp dao động điều hoà cùng tần số, mạch RLC nối tiếp, tìm phần tử trong hộp đen. Bài luyện X1–X4.</p>
+<p><strong>Quy trình</strong></p>
+<ol type="1">
+<li><code>MENU</code> → <strong>Số phức</strong>. Đơn vị góc phải khớp (Độ hoặc Rad).</li>
+<li>Nhập số phức theo kiểu <strong>cực</strong>: <code>A ∠ φ</code>, với <code>∠</code> là <code>SHIFT ENG</code> (cùng phím với <em>i</em>). Hoặc kiểu đại số <code>a + b i</code>, <code>i</code> là phím <code>ENG</code>.</li>
+<li>Chọn dạng kết quả, bấm ở cuối biểu thức:
+<ul>
+<li><code>OPTN ▼ 1</code> (▶r∠θ): xem biên độ và pha.</li>
+<li><code>OPTN ▼ 2</code> (▶a+bi): xem phần thực, ảo.</li>
+<li>Có thể đặt dạng mặc định ở SETUP → ▼ → Complex.</li>
+</ul></li>
+<li>Lấy riêng từng thành phần:
+<ul>
+<li>Môđun: <code>SHIFT (</code> (Abs).</li>
+<li>Argument: <code>OPTN 1</code> (Arg).</li>
+<li>Liên hợp: <code>OPTN 2</code> (Conjg).</li>
+<li>Phần thực: <code>OPTN 3</code> (ReP).</li>
+<li>Phần ảo: <code>OPTN 4</code> (ImP).</li>
+</ul></li>
+</ol>
+<p><strong>Ba phép hay dùng</strong></p>
+<ul>
+<li>Tổng hợp dao động: <code>A₁∠φ₁ + A₂∠φ₂</code> → biên độ A, pha ban đầu φ.</li>
+<li>Dòng điện phức: <code>I = U / Z</code>, với <code>Z = R + (Z_L − Z_C) i</code>. Nhập <code>U</code> cực, <code>Z</code> đại số.</li>
+<li>Tìm dao động thành phần: <code>x₂ = x − x₁</code>.</li>
+</ul>
+<p><strong>Quy ước biên độ:</strong> dùng biên độ thì ra biên độ; dùng giá trị hiệu dụng thì ra hiệu dụng. Đừng trộn.</p>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Góc φ ra Độ hay Rad tuỳ SETUP; ghi đúng đơn vị đề hỏi.</li>
+<li>Máy cho θ trong khoảng (−180°; 180°].</li>
+<li>Phương trình <code>u = U₀cos(ωt + φ)</code> ứng với số phức <code>U₀∠φ</code>; pha <code>sin</code> phải đổi sang <code>cos</code> (trừ π/2) trước khi nhập.</li>
+</ul>
+<hr />
+<h3 id="vectơ">6. Vectơ</h3>
+<p><strong>Dùng khi:</strong> tích có hướng (lực từ <code>F = q v × B</code>, momen), tích vô hướng (công <code>A = F·s</code>, góc giữa hai vectơ). Bài luyện V1, V2.</p>
+<p><strong>Quy trình</strong></p>
+<ol type="1">
+<li><code>MENU</code> → <strong>Vectơ</strong>. Chọn VctA, đặt số chiều (2 hoặc 3), nhập các toạ độ. Lặp lại cho VctB.</li>
+<li><code>AC</code> về màn hình tính. Gọi vectơ bằng <code>OPTN</code>:
+<ul>
+<li>VctA = <code>OPTN 3</code>.</li>
+<li>VctB = <code>OPTN 4</code>.</li>
+<li>VctAns = <code>OPTN ▼ 1</code>.</li>
+</ul></li>
+<li><strong>Tích có hướng:</strong> <code>VctA × VctB</code>. <strong>Tích vô hướng:</strong> <code>OPTN ▼ 2</code> (Dot Product), màn hình hiện dấu "•". <strong>Độ dài:</strong> <code>Abs(VctA)</code>, tức <code>SHIFT (</code> rồi <code>OPTN 3</code> rồi <code>)</code>.</li>
+<li><strong>Góc giữa hai vectơ</strong>, hai cách:
+<ul>
+<li><code>cos⁻¹( (VctA • VctB) / (Abs(VctA) × Abs(VctB)) )</code>, đơn vị góc đặt Độ.</li>
+<li>Ngắn hơn: <code>Angle(VctA,VctB)</code> (<code>OPTN ▼ 3</code>); dấu phẩy gõ bằng <code>SHIFT )</code>.</li>
+</ul></li>
+</ol>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Thứ tự <code>v × B</code> khác <code>B × v</code> (đổi dấu).</li>
+<li>Hai vectơ phải cùng số chiều.</li>
+</ul>
+<hr />
+<h3 id="thống-kê-và-hồi-quy">7. Thống kê và hồi quy</h3>
+<p><strong>Dùng khi:</strong> trung bình ± độ lệch chuẩn của nhiều lần đo; vẽ đường thẳng qua các điểm đo (T² theo l, U theo I); hồi quy mũ cho phóng xạ. Bài luyện St1–St3.</p>
+<p><strong>Quy trình</strong></p>
+<ol type="1">
+<li><code>MENU</code> → <strong>Thống kê</strong>. Chọn kiểu:
+<ul>
+<li><strong>1 biến</strong> (trung bình, độ lệch chuẩn),</li>
+<li><strong>y=a+bx</strong> (đường thẳng; phím 2),</li>
+<li><strong>y=a·e^(bx)</strong> (hàm mũ; ▼ 1). Hệ số ghi chữ thường <strong>a, b</strong>.</li>
+</ul></li>
+<li>Nhập dữ liệu vào cột X (và Y). Bấm <code>AC</code> thoát bảng.</li>
+<li>Xem cả bảng kết quả: <code>OPTN</code> → 1-Variable Calc / 2-Variable Calc / Regression Calc. Lấy từng giá trị để chèn vào phép tính:
+<ul>
+<li><code>OPTN ▼ 2</code> (Variable): <code>n</code>, <code>x̄</code>, <code>σx</code> (chia n), <code>sx</code> (chia n−1).</li>
+<li><code>OPTN ▼ 4</code> (Regression): <code>a</code>, <code>b</code>, <code>r</code> (hệ số tương quan).</li>
+</ul></li>
+<li>Dự đoán điểm mới: <code>OPTN ▼ 4</code> (Regression) → <code>ŷ</code>, <code>x̂</code>.</li>
+</ol>
+<p><strong>Chọn độ lệch chuẩn nào:</strong> đề Casio thường nêu cách tính sai số. Chưa có thể lệ thì ghi rõ dùng <code>sx</code> (n−1) hay <code>σx</code> (n).</p>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Quên xoá dữ liệu cũ: nhập bảng mới đè lên bảng cũ, còn dòng thừa. Kiểm <code>n</code>.</li>
+<li>Dữ liệu bị xoá khi ra khỏi Statistics, khi đổi giữa 1 biến và 2 biến, hoặc khi đổi cài đặt Statistics (cột Freq). Xoá hết bằng <code>OPTN 2</code> (Editor) → Delete All.</li>
+<li>Gõ <code>ALPHA B</code> lấy <strong>biến nhớ B</strong> (giá trị cũ), không phải hệ số hồi quy b; máy không báo lỗi. Hệ số b phải chèn bằng <code>OPTN ▼ 4</code> → b.</li>
+<li>Hồi quy mũ yêu cầu mọi <code>y &gt; 0</code>.</li>
+</ul>
+<hr />
+<h3 id="hằng-số-và-đổi-đơn-vị">8. Hằng số và đổi đơn vị</h3>
+<p><strong>Dùng khi:</strong> thế hằng số vật lí vào công thức; đổi km/h ↔︎ m/s, atm ↔︎ Pa; eV ↔︎ J thì nhân/chia với e. Bài luyện K1–K3.</p>
+<p><strong>Quy trình</strong></p>
+<ul>
+<li>Hằng số: <code>SHIFT 7</code> (CONST) mở menu <strong>danh mục</strong> (Universal, Electromagnetic, Atomic&amp;Nuclear, Physico-Chem, Adopted Values, Other), rồi chọn số mục. Máy chèn giá trị đủ chữ số.
+<ul>
+<li>h = <code>SHIFT 7 1 1</code>.</li>
+<li>c₀ = <code>SHIFT 7 1 3</code>.</li>
+<li>e = <code>SHIFT 7 2 3</code>.</li>
+</ul></li>
+<li>Đổi đơn vị: <code>SHIFT 8</code> (CONV), chọn cặp đơn vị có trong bảng (có km/h ↔︎ m/s ở Velocity, atm ↔︎ Pa ở Pressure; <strong>không có</strong> eV ↔︎ J: dùng e đề cho hoặc <code>SHIFT 7 2 3</code>).</li>
+<li>Tiền tố SI khi <strong>nhập</strong> (k, m, μ, n, p): <code>OPTN</code> → Engineer Symbol, hoặc gõ ×10^x. Phím <code>ENG</code> chỉ đổi cách <strong>hiển thị</strong> kết quả.</li>
+<li>Gõ luỹ thừa 10 bằng phím <code>×10^x</code>, đừng gõ "E".</li>
+</ul>
+<p><strong>Quy tắc chọn giá trị</strong></p>
+<ul>
+<li>Đề <strong>cho số</strong> (h = 6,625.10⁻³⁴ J.s…) thì dùng số đề cho, <strong>không</strong> gọi hằng số có sẵn, vì hai kết quả có thể khác ở chữ số có nghĩa thứ 4–5.</li>
+<li>Đề <strong>không cho</strong> thì dùng hằng số trong máy và ghi giá trị đã dùng.</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Đổi sai khối (cm³ → m³ nhân 10⁻⁶, không phải 10⁻³).</li>
+<li>Khối lượng hạt nhân: đề cho theo u thì nhân 931,5 MeV/c² (hoặc giá trị đề cho), đừng đổi ra kg rồi nhân c² nếu không cần.</li>
+</ul>
+<hr />
+<h3 id="bảng-tra-nhanh-chọn-công-cụ-nào">Bảng tra nhanh: chọn công cụ nào?</h3>
+<table>
+<thead>
+<tr>
+<th>Tình huống</th>
+<th>Công cụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tìm t, x, l… trong phương trình có sin/cos/mũ</td>
+<td>SOLVE</td>
+</tr>
+<tr>
+<td>Một công thức, nhiều bộ số</td>
+<td>CALC</td>
+</tr>
+<tr>
+<td>Cực trị gần đúng, đếm giá trị nguyên</td>
+<td>TABLE</td>
+</tr>
+<tr>
+<td>Tổng hợp dao động, mạch RLC, hộp đen</td>
+<td>Số phức</td>
+</tr>
+<tr>
+<td>Lực từ, công, góc giữa vectơ</td>
+<td>Vectơ</td>
+</tr>
+<tr>
+<td>Nhiều lần đo, đường thẳng, phóng xạ thực nghiệm</td>
+<td>Thống kê</td>
+</tr>
+<tr>
+<td>Thế hằng số, đổi đơn vị</td>
+<td>CONST / CONV</td>
+</tr>
+</tbody>
+</table><h3>S1 ⭐⭐ Thời điểm vật qua li độ 2 cm</h3><p>Vật dao động $x = 4\cos\left(5\pi t - \dfrac{\pi}{3}\right)$ (cm, s). Tìm thời điểm đầu tiên $t \gt  0$ vật có $x = 2$ cm.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $t = 0{,}1333$ s (đúng $\dfrac{2}{15}$ s).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>SETUP: đơn vị góc <strong>Rad</strong>.</li>
+<li>Gõ <code>4cos(5πx − π÷3) = 2</code> (x là phím <code>x</code>).</li>
+<li><code>SHIFT CALC</code> (SOLVE), giá trị đầu x = <code>0.1</code>, bấm <code>=</code>, rồi bấm <code>=</code> thêm một lần để giải.</li>
+<li>Lưu ý: $t = 0$ cũng thoả $x(0)=2$ nhưng đề cần $t\gt 0$. Giá trị đầu gần 0 có thể làm máy trả về $t = 0$ hoặc nghiệm âm: khi đó đổi giá trị đầu sang <code>0.1</code>.</li>
+</ul>
+<p><strong>Lời giải.</strong> $\cos\left(5\pi t - \frac{\pi}{3}\right) = \frac12$ nên $5\pi t - \frac{\pi}{3} = \pm\frac{\pi}{3} + 2k\pi$. Nghiệm dương nhỏ nhất: $5\pi t = \frac{2\pi}{3}$, $t = \frac{2}{15}$ s.<br />
+<strong>Bẫy.</strong> Để máy ở Độ thì ra số vô nghĩa. Giá trị đầu khác nhau cho nghiệm khác nhau.</p>
+</details><h3>S2 ⭐ Nhiệt độ cân bằng</h3><p>Thả cục nhôm 0,3 kg ở 100 °C ($c = 880$ J/kg.K) vào 0,5 kg nước ở 20 °C ($c = 4180$ J/kg.K). Bỏ qua mất mát nhiệt. Tìm nhiệt độ cân bằng.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $t = 28{,}97$ °C.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Gõ <code>0.3×880×(100−x) = 0.5×4180×(x−20)</code>.</li>
+<li><code>SHIFT CALC</code>, giá trị đầu x = <code>50</code>, bấm <code>=</code>, rồi <code>=</code> thêm một lần.</li>
+</ul>
+<p><strong>Lời giải.</strong> $m_1c_1(t_1 - t) = m_2c_2(t - t_2)$ nên $t = \dfrac{m_1c_1t_1 + m_2c_2t_2}{m_1c_1 + m_2c_2}$.<br />
+<strong>Bẫy.</strong> Nghiệm phải nằm giữa 20 và 100; ngoài khoảng đó là gõ sai dấu.</p>
+</details><h3>S3 ⭐⭐ Thời gian phóng xạ</h3><p>Co-60 có chu kì bán rã $T = 5{,}27$ năm. Sau bao lâu thì còn lại 30% số hạt ban đầu?</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $t = 9{,}154$ năm.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Gõ <code>2^(−x÷5.27) = 0.3</code>.</li>
+<li><code>SHIFT CALC</code>, giá trị đầu x = <code>5</code>, bấm <code>=</code>, rồi <code>=</code> thêm một lần.</li>
+</ul>
+<p><strong>Lời giải.</strong> $\dfrac{N}{N_0} = 2^{-t/T}$ nên $t = T\log_2\dfrac{1}{0{,}3}$.<br />
+<strong>Bẫy.</strong> Gõ <code>2^−x÷5.27</code> thiếu ngoặc thì máy hiểu $(2^{-x})/5{,}27$.</p>
+<hr />
+<h2 id="b.-calc">B. CALC</h2>
+</details><h3>C1 ⭐ Chu kì con lắc đơn</h3><p>Con lắc đơn dài $l$ tại nơi $g = 9{,}8$ m/s². Tính chu kì với $l = 0{,}8$; $1{,}0$; $1{,}2$ m.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $T = 1{,}795$ s; $2{,}007$ s; $2{,}199$ s.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Gõ <code>2π√(A÷9.8)</code> (A là biến, <code>ALPHA</code> + phím A).</li>
+<li><code>CALC</code>, nhập A = <code>0.8</code>, <code>=</code>.</li>
+<li><code>CALC</code> lại, nhập A = <code>1</code>, rồi A = <code>1.2</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Căn phải bao cả <code>A÷9.8</code>.</p>
+</details><h3>C2 ⭐⭐ Công suất mạch RLC theo R</h3><p>Mạch RLC nối tiếp, $U = 200$ V, $Z_L - Z_C = 40\ \Omega$. Tính $P = \dfrac{U^2R}{R^2 + (Z_L - Z_C)^2}$ khi $R = 20; 40; 60; 80\ \Omega$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $P = 400$ W; $500$ W; $461{,}5$ W; $400$ W. Công suất lớn nhất tại $R = |Z_L - Z_C| = 40\ \Omega$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Gõ <code>200²×A÷(A²+40²)</code>.</li>
+<li><code>CALC</code>, lần lượt A = <code>20</code>, <code>40</code>, <code>60</code>, <code>80</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Phải có ngoặc quanh mẫu số.</p>
+<hr />
+<h2 id="c.-table">C. TABLE</h2>
+</details><h3>T1 ⭐⭐ Cộng hưởng điện</h3><p>Mạch RLC nối tiếp: $R = 50\ \Omega$, $L = 0{,}1$ H, $C = 25\ \mu$F, $U = 100$ V. Lập bảng $I(f)$ với $f$ từ 80 đến 120 Hz, bước 5 Hz, rồi thu hẹp bước 0,5 Hz. Tìm $f$ làm $I$ lớn nhất.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> Bước 5 Hz: lớn nhất tại 100 Hz ($I = 1{,}9997$ A). Bước 0,5 Hz: tại 100,5 Hz. Kiểm bằng công thức: $f_0 = \dfrac{1}{2\pi\sqrt{LC}} = 100{,}66$ Hz.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>MENU</code> → Table (SETUP → Table → f(x) trước để máy không hỏi g(x)). Nhập <code>f(x) = 100÷√(50²+(2πx×0.1 − 1÷(2πx×25×10^−6))²)</code> (x là phím <code>x</code>).</li>
+<li>Start = <code>80</code>, End = <code>120</code>, Step = <code>5</code>.</li>
+<li>Chạy lại với Start = <code>98</code>, End = <code>103</code>, Step = <code>0.5</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Bảng chỉ cho giá trị theo bước; đáp số cuối tính bằng công thức. Đơn vị góc: không ảnh hưởng ở bài này nhưng nên để Rad.</p>
+</details><h3>T2 ⭐ Đếm cực đại giao thoa</h3><p>Hai nguồn cùng pha cách nhau $AB = 10{,}5$ cm, bước sóng $\lambda = 2$ cm. Có bao nhiêu điểm dao động cực đại trên đoạn $AB$?</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> 11 điểm ($k = -5, \dots, 5$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Table: <code>f(x) = 2x</code> (hiệu đường đi $k\lambda$), Start = <code>-6</code>, End = <code>6</code>, Step = <code>1</code>.</li>
+<li>Đếm các hàng có $|f(x)| \lt  10{,}5$: 11 hàng.</li>
+</ul>
+<p><strong>Lời giải.</strong> Cực đại cùng pha: $d_2 - d_1 = k\lambda$, $|k\lambda| \lt  AB$ nên $|k| \lt  5{,}25$.<br />
+<strong>Bẫy.</strong> Không tính hai đầu A, B (nguồn). Điều kiện là bất đẳng thức chặt.</p>
+</details><h3>T3 ⭐⭐ Vân trùng của hai bức xạ</h3><p>Giao thoa Y-âng: $a = 1$ mm, $D = 2$ m, hai bức xạ $\lambda_1 = 0{,}45\ \mu$m và $\lambda_2 = 0{,}60\ \mu$m. Tìm vị trí vân sáng trùng đầu tiên (khác vân trung tâm).</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $x = 3{,}6$ mm.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Table: <code>f(x) = 0.45x÷0.6</code>, Start = <code>1</code>, End = <code>20</code>, Step = <code>1</code>.</li>
+<li>Tìm hàng đầu tiên mà $f(x)$ là số nguyên: x = 4 cho 3.</li>
+</ul>
+<p><strong>Lời giải.</strong> $k_1/k_2 = \lambda_2/\lambda_1 = 4/3$, $x = k_1\dfrac{\lambda_1D}{a} = 4 \times 0{,}9 = 3{,}6$ mm.<br />
+<strong>Bẫy.</strong> Bảng làm tròn hiển thị; số nguyên giả (như 2,9999) vẫn chấp nhận được, nhưng kiểm bằng tỉ số tối giản.</p>
+<hr />
+<h2 id="d.-số-phức">D. Số phức</h2>
+</details><h3>X1 ⭐ Tổng hợp hai dao động</h3><p>$x_1 = 3\cos\left(10t + \dfrac{\pi}{3}\right)$ và $x_2 = 4\cos\left(10t - \dfrac{\pi}{6}\right)$ (cm). Tìm biên độ và pha ban đầu của dao động tổng hợp.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $A = 5$ cm; $\varphi = 0{,}1199$ rad ($6{,}870°$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>MENU</code> → Số phức, SETUP: <strong>Độ</strong>.</li>
+<li>Gõ <code>3∠60 + 4∠−30</code> (∠ là <code>SHIFT ENG</code>; dấu trừ của góc gõ bằng phím <code>(−)</code>), bấm <code>=</code>.</li>
+<li><code>OPTN ▼ 1</code> (▶r∠θ) ở cuối biểu thức để đọc $5\angle 6{,}870$.</li>
+<li>Muốn rad: đổi SETUP sang Rad rồi bấm lại <code>=</code> (hoặc đổi độ sang rad bằng $\varphi\times\pi/180$).</li>
+</ul>
+<p><strong>Lời giải.</strong> Hai dao động vuông pha ($60° - (-30°) = 90°$) nên $A = \sqrt{3^2 + 4^2} = 5$, $\varphi = 60° - \arctan\frac43 = 6{,}87°$.<br />
+<strong>Bẫy.</strong> Đề cho rad mà nhập độ (hoặc ngược lại).</p>
+</details><h3>X2 ⭐⭐ Dòng điện qua mạch RLC</h3><p>Mạch nối tiếp có $R = 30\ \Omega$, $Z_L = 80\ \Omega$, $Z_C = 40\ \Omega$, $u = 100\sqrt2\cos(100\pi t)$ (V). Viết biểu thức $i$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $i = 2\sqrt2\cos(100\pi t - 0{,}9273)$ A, tức $I = 2$ A hiệu dụng, trễ pha hơn $u$ góc $0{,}9273$ rad ($53{,}13°$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Chế độ Số phức, SETUP: <strong>Rad</strong>.</li>
+<li>Gõ <code>(100√2∠0) ÷ (30+40i)</code> (<em>i</em> là phím <code>ENG</code>), <code>=</code>, dạng r∠θ (<code>OPTN ▼ 1</code>): $2\sqrt2\angle -0{,}9273$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Dùng biên độ ($100\sqrt2$) thì ra biên độ $2\sqrt2$; dùng 100 thì ra hiệu dụng 2. Trộn hai loại là sai.</p>
+</details><h3>X3 ⭐⭐ Hộp đen</h3><p>Hộp đen chứa $R$ nối tiếp $L$. Đặt $u = 200\cos\left(100\pi t + \dfrac{\pi}{6}\right)$ (V) thì $i = 2\cos\left(100\pi t - \dfrac{\pi}{6}\right)$ (A). Tìm $R$ và $L$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $R = 50\ \Omega$; $Z_L = 86{,}60\ \Omega$; $L = 0{,}2757$ H.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Số phức, SETUP: Rad.</li>
+<li>Gõ <code>(200∠(π÷6)) ÷ (2∠(−π÷6))</code>, <code>=</code>, dạng a+bi (<code>OPTN ▼ 2</code>): $50 + 86{,}60i$.</li>
+<li>$L = Z_L/\omega$: gõ <code>86.60254 ÷ (100π)</code> hoặc lấy phần ảo của <code>Ans</code> bằng <code>OPTN 4</code> (ImP).</li>
+</ul>
+<p><strong>Bẫy.</strong> Phần ảo dương cho cuộn cảm, phần ảo âm cho tụ điện.</p>
+</details><h3>X4 ⭐⭐ Tìm dao động thành phần</h3><p>Dao động tổng hợp $x = 6\cos\left(\omega t + \dfrac{\pi}{3}\right)$, một thành phần $x_1 = 4\cos\left(\omega t + \dfrac{\pi}{6}\right)$ (cm). Tìm thành phần còn lại.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $A_2 = 3{,}230$ cm; $\varphi_2 = 1{,}715$ rad ($98{,}26°$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Số phức, SETUP: Rad.</li>
+<li>Gõ <code>6∠(π÷3) − 4∠(π÷6)</code>, <code>=</code>, rồi <code>OPTN ▼ 1</code> (▶r∠θ).</li>
+</ul>
+<p><strong>Bẫy.</strong> Argument nằm góc phần tư thứ hai ($\cos\lt 0$, $\sin\gt 0$); máy tự cho 98,26° đúng, đừng tự cộng $\pi$.</p>
+<hr />
+<h2 id="e.-vectơ">E. Vectơ</h2>
+</details><h3>V1 ⭐⭐ Lực Lorentz</h3><p>Hạt $q = 1{,}6.10^{-19}$ C có vận tốc $\vec v = (2.10^5; 3.10^5; 0)$ m/s trong từ trường $\vec B = (0; 0; 0{,}5)$ T. Tính $\vec F = q\,\vec v \times \vec B$ và độ lớn.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\vec F = (2{,}4.10^{-14};\ -1{,}6.10^{-14};\ 0)$ N; $F = 2{,}884.10^{-14}$ N.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>MENU</code> → Vector: VctA = (<code>2×10^5</code>, <code>3×10^5</code>, <code>0</code>); VctB = (<code>0</code>, <code>0</code>, <code>0.5</code>).</li>
+<li><code>AC</code>, gõ <code>1.6×10^−19 × (VctA × VctB)</code> (VctA = <code>OPTN 3</code>, VctB = <code>OPTN 4</code>), <code>=</code>.</li>
+<li>Độ lớn: <code>Abs(VctAns)</code> (<code>SHIFT (</code>, rồi VctAns = <code>OPTN ▼ 1</code>, rồi <code>)</code>).</li>
+</ul>
+<p><strong>Bẫy.</strong> Đổi thứ tự thành $\vec B \times \vec v$ thì ra vectơ đối.</p>
+</details><h3>V2 ⭐ Công và góc</h3><p>Lực $\vec F = (4; -3; 2)$ N tác dụng làm vật dời $\vec d = (2; 1; 5)$ m. Tính công và góc giữa $\vec F$ và $\vec d$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $A = 15$ J; $\alpha = 59{,}43°$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>VctA = (4, −3, 2); VctB = (2, 1, 5).</li>
+<li><code>VctA • VctB</code> (Dot Product = <code>OPTN ▼ 2</code>) = <code>15</code>.</li>
+<li>Góc, cách 1: SETUP Độ, gõ <code>cos⁻¹(15 ÷ (Abs(VctA)×Abs(VctB)))</code>.</li>
+<li>Góc, cách 2: <code>Angle(VctA,VctB)</code> (<code>OPTN ▼ 3</code>; dấu phẩy là <code>SHIFT )</code>).</li>
+</ul>
+<p><strong>Bẫy.</strong> Không để Rad khi đề hỏi góc bằng độ.</p>
+<hr />
+<h2 id="f.-thống-kê">F. Thống kê</h2>
+</details><h3>St1 ⭐ Trung bình và sai số</h3><p>Đo gia tốc rơi tự do 5 lần: 9,78; 9,83; 9,80; 9,86; 9,81 (m/s²). Tính giá trị trung bình và độ lệch chuẩn.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\bar g = 9{,}816$; $\sigma_x = 0{,}02728$ (chia $n$); $s_x = 0{,}03050$ (chia $n-1$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>MENU</code> → Statistics → <strong>1-Variable</strong>; nhập 5 giá trị vào cột x.</li>
+<li><code>AC</code>, <code>OPTN</code> → 1-Variable Calc để đọc $\bar x$, $\sigma x$, $sx$ (hoặc <code>OPTN ▼ 2</code> để chèn từng giá trị).</li>
+</ul>
+<p><strong>Bẫy.</strong> Đề yêu cầu loại nào thì ghi loại đó; chưa có thể lệ thì ghi rõ trong bài.</p>
+</details><h3>St2 ⭐⭐ Hồi quy T² theo l</h3><p>Con lắc đơn có $l$ (m): 0,30; 0,50; 0,70; 0,90; 1,10 và $T^2$ (s²): 1,22; 2,01; 2,78; 3,60; 4,37. Dùng $T^2 = \dfrac{4\pi^2}{g}l$ để tìm $g$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $b = 3{,}945$; $a = 0{,}0345$; $r = 0{,}99996$; $g = \dfrac{4\pi^2}{b} = 10{,}01$ m/s².<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Statistics → <strong>y=a+bx</strong>; x = $l$, y = $T^2$.</li>
+<li><code>AC</code>, <code>OPTN</code> → Regression Calc để đọc a, b, r.</li>
+<li>Gõ <code>4π² ÷ b</code>, với b chèn bằng <code>OPTN ▼ 4</code> → b.</li>
+</ul>
+<p><strong>Bẫy.</strong> Đọc nhầm a (tung độ gốc) thay b (hệ số góc). Gõ <code>ALPHA B</code> sẽ lấy biến nhớ B, không phải hệ số b.</p>
+</details><h3>St3 ⭐⭐ Hồi quy mũ cho phóng xạ</h3><p>Số đếm $N$ theo thời gian $t$ (giờ): (0; 1000), (2; 640), (4; 410), (6; 262), (8; 168). Giả sử $N = ae^{bt}$, tìm chu kì bán rã.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $b = -0{,}2230$ h⁻¹; $a \approx 999{,}9$; $r = -1{,}000$; $T = \dfrac{\ln 2}{-b} = 3{,}108$ giờ.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Statistics → <strong>y=a·e^(bx)</strong> (hồi quy mũ); nhập $t$ vào x, $N$ vào y.</li>
+<li><code>AC</code>, <code>OPTN</code> → Regression Calc để đọc b.</li>
+<li>Gõ <code>ln(2) ÷ (−b)</code>, với b chèn bằng <code>OPTN ▼ 4</code> → b (không gõ <code>ALPHA B</code>).</li>
+</ul>
+<p><strong>Bẫy.</strong> Hồi quy mũ cần mọi $N\gt 0$. $T$ dương nên dùng $-b$.</p>
+<hr />
+<h2 id="g.-hằng-số-và-đổi-đơn-vị">G. Hằng số và đổi đơn vị</h2>
+</details><h3>K1 ⭐ Năng lượng photon</h3><p>Tính năng lượng photon ánh sáng $\lambda = 500$ nm theo J và eV. Cho $h = 6{,}626.10^{-34}$ J.s, $c = 3.10^8$ m/s, $1\ \text{eV} = 1{,}602.10^{-19}$ J.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số (đề cho số, dùng số đề cho).</strong> $\varepsilon = \dfrac{hc}{\lambda} = 3{,}976.10^{-19}$ J $= 2{,}482$ eV.<br />
+<strong>Ghi chú.</strong> Dùng hằng số chính xác ($h = 6{,}62607015.10^{-34}$; $c = 299792458$) cho $3{,}973.10^{-19}$ J $= 2{,}480$ eV. Hai kết quả khác ở chữ số thứ 4: <strong>dùng giá trị đề cho</strong>.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Gõ <code>6.626×10^−34 × 3×10^8 ÷ (500×10^−9)</code>, <code>=</code>.</li>
+<li>Chia cho <code>1.602×10^−19</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $500$ nm $= 500\times10^{-9}$ m, không phải $10^{-6}$.</p>
+</details><h3>K2 ⭐⭐ Năng lượng liên kết He-4</h3><p>$m_p = 1{,}0073$ u; $m_n = 1{,}0087$ u; $m_{He} = 4{,}0015$ u; $1\ \text{u} = 931{,}5$ MeV/c². Tính độ hụt khối, năng lượng liên kết và năng lượng liên kết riêng của hạt nhân He-4.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\Delta m = 0{,}0305$ u; $W_{lk} = 28{,}41$ MeV; $W_{lkr} = 7{,}103$ MeV/nuclon.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Gõ <code>2×1.0073 + 2×1.0087 − 4.0015</code>, <code>=</code>, rồi <code>×931.5</code>, <code>=</code>, rồi <code>÷4</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> He-4 có 2 proton và 2 nơtron. Chia cho số khối 4.</p>
+</details><h3>K3 ⭐ Thể tích khí lí tưởng</h3><p>2 mol khí lí tưởng ở 300 K, áp suất $1{,}013.10^5$ Pa. Cho $R = 8{,}314$ J/(mol.K). Tính thể tích theo lít.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $V = \dfrac{nRT}{p} = 0{,}04924$ m³ $= 49{,}24$ lít.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Gõ <code>2×8.314×300 ÷ (1.013×10^5)</code>, <code>=</code>; nhân <code>1000</code> để ra lít.</li>
+</ul>
+<p><strong>Bẫy.</strong> $1\ \text{m}^3 = 1000$ lít (không phải 100).</p>
+</details><h3>Câu 1</h3><p>Vật dao động $x = 4\cos\left(5\pi t - \dfrac{\pi}{3}\right)$ (cm, s). Tìm thời điểm đầu tiên $t > 0$ vật có $x = 2$ cm.</p><details><summary>Đáp án</summary><pre>**Đáp số.** $t = 0{,}1333$ s (đúng $\dfrac{2}{15}$ s).
+**Bấm máy**
+- SETUP: đơn vị góc **Rad**.
+- Gõ `4cos(5πx − π÷3) = 2` (x là phím `x`).
+- `SHIFT CALC` (SOLVE), giá trị đầu x = `0.1`, bấm `=`, rồi bấm `=` thêm một lần để giải.
+- Lưu ý: $t = 0$ cũng thoả $x(0)=2$ nhưng đề cần $t>0$. Giá trị đầu gần 0 có thể làm máy trả về $t = 0$ hoặc nghiệm âm: khi đó đổi giá trị đầu sang `0.1`.
+**Lời giải.** $\cos\left(5\pi t - \frac{\pi}{3}\right) = \frac12$ nên $5\pi t - \frac{\pi}{3} = \pm\frac{\pi}{3} + 2k\pi$. Nghiệm dương nhỏ nhất: $5\pi t = \frac{2\pi}{3}$, $t = \frac{2}{15}$ s.
+**Bẫy.** Để máy ở Độ thì ra số vô nghĩa. Giá trị đầu khác nhau cho nghiệm khác nhau.</pre></details><h3>Câu 2</h3><p>Mạch RLC nối tiếp: $R = 50\ \Omega$, $L = 0{,}1$ H, $C = 25\ \mu$F, $U = 100$ V. Lập bảng $I(f)$ với $f$ từ 80 đến 120 Hz, bước 5 Hz, rồi thu hẹp bước 0,5 Hz. Tìm $f$ làm $I$ lớn nhất.</p><details><summary>Đáp án</summary><pre>**Đáp số.** Bước 5 Hz: lớn nhất tại 100 Hz ($I = 1{,}9997$ A). Bước 0,5 Hz: tại 100,5 Hz. Kiểm bằng công thức: $f_0 = \dfrac{1}{2\pi\sqrt{LC}} = 100{,}66$ Hz.
+**Bấm máy**
+- `MENU` → Table (SETUP → Table → f(x) trước để máy không hỏi g(x)). Nhập `f(x) = 100÷√(50²+(2πx×0.1 − 1÷(2πx×25×10^−6))²)` (x là phím `x`).
+- Start = `80`, End = `120`, Step = `5`.
+- Chạy lại với Start = `98`, End = `103`, Step = `0.5`.
+**Bẫy.** Bảng chỉ cho giá trị theo bước; đáp số cuối tính bằng công thức. Đơn vị góc: không ảnh hưởng ở bài này nhưng nên để Rad.</pre></details><h3>Câu 3</h3><p>$x_1 = 3\cos\left(10t + \dfrac{\pi}{3}\right)$ và $x_2 = 4\cos\left(10t - \dfrac{\pi}{6}\right)$ (cm). Tìm biên độ và pha ban đầu của dao động tổng hợp.</p><details><summary>Đáp án</summary><pre>**Đáp số.** $A = 5$ cm; $\varphi = 0{,}1199$ rad ($6{,}870°$).
+**Bấm máy**
+- `MENU` → Số phức, SETUP: **Độ**.
+- Gõ `3∠60 + 4∠−30` (∠ là `SHIFT ENG`; dấu trừ của góc gõ bằng phím `(−)`), bấm `=`.
+- `OPTN ▼ 1` (▶r∠θ) ở cuối biểu thức để đọc $5\angle 6{,}870$.
+- Muốn rad: đổi SETUP sang Rad rồi bấm lại `=` (hoặc đổi độ sang rad bằng $\varphi\times\pi/180$).
+**Lời giải.** Hai dao động vuông pha ($60° - (-30°) = 90°$) nên $A = \sqrt{3^2 + 4^2} = 5$, $\varphi = 60° - \arctan\frac43 = 6{,}87°$.
+**Bẫy.** Đề cho rad mà nhập độ (hoặc ngược lại).</pre></details><h3>Câu 4</h3><p>Con lắc đơn có $l$ (m): 0,30; 0,50; 0,70; 0,90; 1,10 và $T^2$ (s²): 1,22; 2,01; 2,78; 3,60; 4,37. Dùng $T^2 = \dfrac{4\pi^2}{g}l$ để tìm $g$.</p><details><summary>Đáp án</summary><pre>**Đáp số.** $b = 3{,}945$; $a = 0{,}0345$; $r = 0{,}99996$; $g = \dfrac{4\pi^2}{b} = 10{,}01$ m/s².
+**Bấm máy**
+- Statistics → **y=a+bx**; x = $l$, y = $T^2$.
+- `AC`, `OPTN` → Regression Calc để đọc a, b, r.
+- Gõ `4π² ÷ b`, với b chèn bằng `OPTN ▼ 4` → b.
+**Bẫy.** Đọc nhầm a (tung độ gốc) thay b (hệ số góc). Gõ `ALPHA B` sẽ lấy biến nhớ B, không phải hệ số b.</pre></details><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]})</script>

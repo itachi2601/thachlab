@@ -1,0 +1,220 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><style>body{font:16px/1.6 system-ui;max-width:720px;margin:0 auto;padding:16px}code{background:#eee;padding:1px 4px;border-radius:4px}</style><h1>Điện từ và sóng ánh sáng</h1><blockquote>
+<p>Công cụ máy: bài <strong>Sổ tay máy Casio fx-580VN X</strong>. Mỗi công thức ghi kèm điều kiện áp dụng. Khi cần $c$, đề cho $c = 3.10^8$ m/s; thể lệ tạm: làm tròn 4 chữ số có nghĩa.</p>
+</blockquote>
+<hr />
+<h3 id="trang-1-mạch-dao-động-lc-và-sóng-điện-từ">Trang 1 · Mạch dao động LC và sóng điện từ</h3>
+<p><strong>Mạch LC lí tưởng</strong> (không điện trở, không bức xạ)</p>
+<ul>
+<li>$\omega = \dfrac{1}{\sqrt{LC}}$; $T = 2\pi\sqrt{LC}$; $f = \dfrac{1}{2\pi\sqrt{LC}}$.</li>
+<li>$q = Q_0\cos(\omega t + \varphi)$; $i = q' = -\omega Q_0\sin(\omega t + \varphi)$ nên $I_0 = \omega Q_0$; $U_0 = \dfrac{Q_0}{C}$.</li>
+<li>Hệ thức: $I_0 = \omega Q_0 = U_0\sqrt{\dfrac{C}{L}}$.</li>
+<li>Năng lượng: $W = \dfrac{Q_0^2}{2C} = \dfrac12 CU_0^2 = \dfrac12 LI_0^2$ <strong>không đổi</strong>. Năng lượng điện và từ biến thiên với chu kì $\dfrac{T}{2}$.</li>
+<li>Thời gian ngắn nhất (tính trong mạch lí tưởng, từ lúc $q = Q_0$):
+<ul>
+<li>$q$ giảm từ $Q_0$ xuống $\dfrac{Q_0}{2}$: $\dfrac{T}{6}$.</li>
+<li>$q$ giảm từ $Q_0$ xuống $0$: $\dfrac{T}{4}$.</li>
+<li>$W_đ$ bằng $W_t$ lần đầu: $\dfrac{T}{8}$.</li>
+</ul></li>
+</ul>
+<p><strong>Ghép tụ</strong> (cùng cuộn cảm $L$): từ $\dfrac{1}{f^2} = 4\pi^2LC$:</p>
+<ul>
+<li>Hai tụ <strong>song song</strong>: $C = C_1 + C_2$ nên $\dfrac{1}{f^2} = \dfrac{1}{f_1^2} + \dfrac{1}{f_2^2}$.</li>
+<li>Hai tụ <strong>nối tiếp</strong>: $\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2}$ nên $f^2 = f_1^2 + f_2^2$.</li>
+</ul>
+<p>(Đừng nhầm hai trường hợp: tụ song song làm $f$ <strong>giảm</strong>, nối tiếp làm $f$ <strong>tăng</strong>.)</p>
+<p><strong>Sóng điện từ</strong></p>
+<ul>
+<li>$\lambda = \dfrac{c}{f} = cT$ (trong chân không/không khí).</li>
+<li>Mạch chọn sóng thu cộng hưởng khi $f_{mạch} = f_{sóng}$: $\lambda = 2\pi c\sqrt{LC}$.</li>
+<li>Tụ xoay có điện dung tăng <strong>bậc nhất</strong> theo góc xoay $\theta$ từ $0°$ đến $180°$: $C(\theta) = C_{min} + \dfrac{\theta}{180°}(C_{max} - C_{min})$.
+<ul>
+<li>Khi đó $C$ tăng đều nhưng $\lambda \propto \sqrt{C}$ <strong>không</strong> tăng đều theo $\theta$.</li>
+</ul></li>
+</ul>
+<p><strong>Thao tác máy</strong></p>
+<ul>
+<li>Lưu $\omega$ vào <code>D</code> (không dùng <code>A</code> nếu đang lưu biên độ).</li>
+<li>Khi viết $10^{-12}$ dùng <code>×10^−12</code>, tránh nhầm với <code>E</code>.</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Đổi mH, μF, pF về H, F trước khi thế.</li>
+<li>$T = 2\pi\sqrt{LC}$ là chu kì dao động điện; chu kì biến thiên của năng lượng là $\dfrac{T}{2}$.</li>
+</ul>
+<hr />
+<h3 id="trang-2-giao-thoa-ánh-sáng-y-âng">Trang 2 · Giao thoa ánh sáng (Y-âng)</h3>
+<p><strong>Công thức</strong></p>
+<ul>
+<li>Khoảng vân: $i = \dfrac{\lambda D}{a}$.</li>
+<li>Vân sáng: $x_k = ki$ ($k$ nguyên, $k = 0$ là vân trung tâm).</li>
+<li>Vân tối: $x = \left(k + \dfrac12\right)i$ ($k$ nguyên). <strong>Vân tối thứ $n$ tính từ trung tâm ứng $k = n - 1$</strong>, tức $x = \left(n - \dfrac12\right)i$ (vân tối thứ 3 ở $2{,}5i$).</li>
+<li>Khoảng cách giữa vân sáng bậc $m$ và vân tối thứ $n$: cùng phía $|mi - (n - \tfrac12)i|$; khác phía $(m + n - \tfrac12)i$.</li>
+</ul>
+<p><strong>Đếm vân trong trường giao thoa</strong> (rộng $L$, <strong>đối xứng</strong> qua vân trung tâm)</p>
+<ul>
+<li>Vân sáng: mọi $k$ nguyên có $|ki| \leq \dfrac{L}{2}$: số vân sáng $= 2\left\lfloor \dfrac{L}{2i}\right\rfloor + 1$.</li>
+<li>Vân tối: mọi $k$ nguyên có $\left|(k + \tfrac12)i\right| \leq \dfrac{L}{2}$: đếm các giá trị $k = 0, 1, 2, \dots$ rồi nhân đôi.</li>
+<li>Nếu vân nằm đúng mép trường thì đề thường nói "kể cả"/"không kể".</li>
+</ul>
+<p><strong>Nhiều bức xạ</strong></p>
+<ul>
+<li>Vân sáng trùng nhau của hai bức xạ: $k_1\lambda_1 = k_2\lambda_2$, $\dfrac{k_1}{k_2} = \dfrac{\lambda_2}{\lambda_1}$. <strong>Rút gọn về phân số tối giản</strong> $\dfrac{p}{q}$: vân trùng đầu tiên (khác trung tâm) ở $x = p\,i_1 = q\,i_2$; các vân trùng cách nhau $p\,i_1$.</li>
+<li>Số vân trùng trong trường $L$: $2\left\lfloor \dfrac{L}{2\,p\,i_1}\right\rfloor + 1$ (kể cả vân trung tâm).</li>
+<li>Ánh sáng trắng ($0{,}38 \leq \lambda \leq 0{,}76\ \mu$m): tại vị trí $x$, các bức xạ cho vân sáng có $\lambda = \dfrac{ax}{kD}$; cho vân tối có $\lambda = \dfrac{ax}{(k + \frac12)D}$. Đếm $k$ nguyên thoả khoảng $\lambda$.</li>
+</ul>
+<p><strong>Thay đổi thiết bị</strong></p>
+<ul>
+<li>Dịch màn ra xa $\Delta D$: $\Delta i = \dfrac{\lambda\Delta D}{a}$ nên $\lambda = \dfrac{a\,\Delta i}{\Delta D}$.</li>
+</ul>
+<p><strong>Thao tác máy</strong></p>
+<ul>
+<li>Vân trùng: TABLE với $f(x) = x\dfrac{\lambda_1}{\lambda_2}$ (x là phím <code>x</code>); tìm hàng đầu tiên có giá trị nguyên (kiểm bằng phân số tối giản).</li>
+<li>Ánh sáng trắng: TABLE $f(x) = \dfrac{a\,x_M}{xD}$ ($x_M$ là vị trí điểm xét) theo $x = k$ nguyên; lọc hàng nằm trong $[0{,}38; 0{,}76]$.</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Đổi $\mu$m, mm về m.</li>
+<li>Phần nguyên ($\lfloor\ \rfloor$) khi đếm, đừng làm tròn thường.</li>
+</ul>
+<hr />
+<h3 id="trang-3-khúc-xạ-tán-sắc-lăng-kính">Trang 3 · Khúc xạ, tán sắc, lăng kính</h3>
+<p><strong>Khúc xạ</strong></p>
+<ul>
+<li>$n_1\sin i = n_2\sin r$; $n = \dfrac{c}{v}$.</li>
+<li>Phản xạ toàn phần: ánh sáng đi từ môi trường chiết quang hơn ($n_1$) sang kém hơn ($n_2\lt n_1$) với góc tới $i \geq i_{gh}$, $\sin i_{gh} = \dfrac{n_2}{n_1}$. Nếu $i \lt  i_{gh}$ thì vẫn có tia khúc xạ.</li>
+</ul>
+<p><strong>Tán sắc</strong></p>
+<ul>
+<li>Chiết suất phụ thuộc bước sóng: $n_{tím} \gt  n_{đỏ}$ nên tia tím lệch nhiều hơn.</li>
+<li>Lăng kính <strong>góc chiết quang nhỏ</strong>, tia tới gần pháp tuyến: góc lệch $D = (n - 1)A$.</li>
+<li>Bề rộng quang phổ trên màn vuông góc cách lăng kính $d$: $d\left(\tan D_{tím} - \tan D_{đỏ}\right)$; gần đúng góc nhỏ: $d\,(D_{tím} - D_{đỏ})$ (rad). Hai kết quả khác nhau cỡ 0,5%.</li>
+</ul>
+<p><strong>Thao tác máy</strong></p>
+<ul>
+<li>Góc: đặt SETUP <strong>Độ</strong> cho $\sin^{-1}$, $\tan$ trên độ; đổi sang <strong>Rad</strong> khi cần $(n-1)A$ với $A$ bằng rad.</li>
+<li>Kiểm điều kiện phản xạ toàn phần trước khi tính $r$ (tính $i_{gh}$ trước).</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>$\sin r \gt  1$ cho $\sin^{-1}$ lỗi: đó là dấu hiệu phản xạ toàn phần.</li>
+<li>Cộng góc lệch tia đỏ và tím dùng hiệu, không dùng tổng.</li>
+</ul><h3>Q1 ⭐ Mạch dao động LC</h3><p>Mạch LC có $L = 2$ mH, $C = 0{,}5\ \mu$F, điện tích cực đại $Q_0 = 2\ \mu$C. Tính $\omega$, $T$, $f$, $I_0$, $U_0$ và năng lượng dao động.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\omega = 3{,}162.10^4$ rad/s; $T = 1{,}987.10^{-4}$ s; $f = 5033$ Hz; $I_0 = 0{,}06325$ A; $U_0 = 4{,}000$ V; $W = 4{,}000.10^{-6}$ J.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>1÷√(2×10^−3×0.5×10^−6)</code>, <code>STO D</code>.</li>
+<li><code>2π÷D</code>; <code>D÷(2π)</code>; <code>D×2×10^−6</code>; <code>2×10^−6÷(0.5×10^−6)</code>; <code>(2×10^−6)²÷(2×0.5×10^−6)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> mH → $10^{-3}$ H, μF → $10^{-6}$ F.</p>
+</details><h3>Q2 ⭐ Sóng điện từ và mạch chọn sóng</h3><ol type="a">
+<li>Đài phát sóng $90$ MHz: tính bước sóng. (b) Cuộn cảm $L = 1\ \mu$H cần tụ điện dung bao nhiêu để thu sóng đó?</li>
+</ol>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> (a) $\lambda = 3{,}333$ m. (b) $C = 3{,}127$ pF.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>3×10^8÷(90×10^6)</code>.</li>
+<li>$C = \dfrac{1}{4\pi^2f^2L}$: <code>1÷((2π×90×10^6)²×10^−6)×10^12</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Cộng hưởng khi $f_{mạch} = f_{sóng}$; hoặc dùng $C = \dfrac{1}{L}\left(\dfrac{\lambda}{2\pi c}\right)^2$. Hai cách cho cùng kết quả.</p>
+</details><h3>Q3 ⭐ Khoảng vân, vân sáng và vân tối</h3><p>Y-âng: $\lambda = 0{,}6\ \mu$m, $a = 1$ mm, $D = 2$ m. Tính khoảng vân, vị trí vân sáng bậc 3 và vân tối thứ 3 (tính từ vân trung tâm, một phía).</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $i = 1{,}200$ mm; vân sáng bậc 3: $3{,}600$ mm; vân tối thứ 3: $3{,}000$ mm ($= 2{,}5i$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>0.6×10^−6×2÷(10^−3)×10^3</code> → $1{,}2$ mm, <code>STO D</code>.</li>
+<li><code>3×D</code>; <code>2.5×D</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Vân tối thứ 3 ở $2{,}5i$ (không phải $3{,}5i$ và không phải $3i$).</p>
+</details><h3>Q4 ⭐ Khúc xạ và góc giới hạn</h3><p>Tia sáng từ không khí tới mặt thuỷ tinh $n = 1{,}5$ với góc tới $40°$. Tính góc khúc xạ. Tính góc giới hạn phản xạ toàn phần khi ánh sáng đi từ thuỷ tinh ra không khí.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $r = 25{,}37°$; $i_{gh} = 41{,}81°$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Độ. <code>sin⁻¹(sin(40)÷1.5)</code>; <code>sin⁻¹(1÷1.5)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Sang môi trường chiết quang kém hơn mới có phản xạ toàn phần.</p>
+</details><h3>Q5 ⭐⭐ Thời gian ngắn nhất trong mạch LC</h3><p>Mạch LC có $L = 0{,}4$ mH, $C = 0{,}9\ \mu$F. Tại $t = 0$ tụ tích điện cực đại. Tính chu kì, thời gian ngắn nhất để điện tích giảm còn một nửa, và thời gian ngắn nhất để năng lượng điện bằng năng lượng từ.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $T = 1{,}192.10^{-4}$ s; $t_1 = \dfrac{T}{6} = 1{,}987.10^{-5}$ s; $t_2 = \dfrac{T}{8} = 1{,}490.10^{-5}$ s.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>2π√(0.4×10^−3×0.9×10^−6)</code>, <code>STO D</code>; <code>D÷6</code>; <code>D÷8</code>.</li>
+<li>Kiểm bằng SOLVE (Rad): <code>cos(2π÷D×x) = 0.5</code> (x là phím <code>x</code>), giá trị đầu <code>10^−5</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $W_đ = W_t$ khi $|q| = \dfrac{Q_0}{\sqrt2}$ (không phải $\dfrac{Q_0}{2}$): góc quay $\dfrac{\pi}{4}$, tức $\dfrac{T}{8}$.</p>
+</details><h3>Q6 ⭐⭐ Tụ xoay trong mạch chọn sóng</h3><p>Mạch chọn sóng có $L = 2\ \mu$H, tụ xoay $C$ tăng bậc nhất theo góc xoay từ $10$ pF ($0°$) đến $250$ pF ($180°$). (a) Dải bước sóng thu được. (b) Góc xoay để thu sóng $25$ m.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> (a) $\lambda_{min} = 8{,}430$ m; $\lambda_{max} = 42{,}15$ m. (b) $C = 87{,}95$ pF; $\theta = 58{,}46°$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>$\lambda = 2\pi c\sqrt{LC}$: <code>2π×3×10^8×√(2×10^−6×10×10^−12)</code>; rồi với <code>250×10^−12</code>.</li>
+<li>$C = \dfrac{1}{L}\left(\dfrac{\lambda}{2\pi c}\right)^2$: <code>(25÷(2π×3×10^8))²÷(2×10^−6)×10^12</code> $= 87{,}95$ pF.</li>
+<li><code>180×(87.95−10)÷(250−10)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $\theta$ bậc nhất theo $C$, không theo $\lambda$ (dùng tỉ lệ $\lambda$ cho $\theta$ là sai).</p>
+</details><h3>Q7 ⭐⭐ Đếm vân trong trường giao thoa</h3><p>Y-âng: $\lambda = 0{,}5\ \mu$m, $a = 0{,}8$ mm, $D = 1{,}6$ m. Trường giao thoa rộng $21{,}5$ mm, đối xứng qua vân trung tâm. Đếm số vân sáng và vân tối.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $i = 1{,}000$ mm; $21$ vân sáng; $22$ vân tối.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>0.5×10^−6×1.6÷(0.8×10^−3)×10^3</code> $= 1$ mm.</li>
+<li>$\dfrac{L}{2i} = 10{,}75$: vân sáng $2\times10 + 1 = 21$.</li>
+<li>Vân tối: $\left(k+\tfrac12\right)\cdot 1 \leq 10{,}75$ nên $k = 0,\dots,10$: 11 mỗi bên, tổng $22$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Phần thập phân $0{,}75 \gt  0{,}5$ nên số vân tối (22) lớn hơn số vân sáng (21).</p>
+</details><h3>Q8 ⭐⭐ Hai bức xạ, vân trùng</h3><p>Y-âng: $a = 1{,}2$ mm, $D = 1{,}8$ m, $\lambda_1 = 0{,}48\ \mu$m, $\lambda_2 = 0{,}64\ \mu$m. Tìm vị trí vân sáng trùng gần vân trung tâm nhất và số vân sáng trùng trong trường rộng $30$ mm (đối xứng, kể cả vân trung tâm).</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $i_1 = 0{,}7200$ mm; $i_2 = 0{,}9600$ mm; $\dfrac{k_1}{k_2} = \dfrac{4}{3}$; $x = 2{,}880$ mm; $11$ vân trùng.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>0.64÷0.48</code> $= \dfrac43$ (dạng phân số tối giản $\dfrac43$).</li>
+<li><code>4×0.72</code> $= 2{,}88$ mm; kiểm <code>3×0.96</code>.</li>
+<li>Số vân trùng: $2\lfloor\dfrac{15}{2{,}88}\rfloor + 1 = 2\times5 + 1 = 11$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Phải rút gọn phân số: nếu lấy $k_1 : k_2 = 0{,}64 : 0{,}48$ không rút gọn sẽ cho vị trí sai.</p>
+</details><h3>Q9 ⭐⭐ Dịch màn, tìm bước sóng</h3><p>Y-âng: $a = 1{,}5$ mm. Khi dịch màn ra xa thêm $0{,}75$ m thì khoảng vân tăng từ $0{,}9$ mm lên $1{,}2$ mm. Tìm $\lambda$ và khoảng cách ban đầu từ hai khe tới màn.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\lambda = 0{,}6000\ \mu$m; $D = 2{,}250$ m.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>1.5×10^−3×0.3×10^−3÷0.75×10^6</code> $= 0{,}6\ \mu$m.</li>
+<li><code>0.9×10^−3×1.5×10^−3÷(0.6×10^−6)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $\Delta i = \dfrac{\lambda\Delta D}{a}$; dùng $i_{sau}$ thay $\Delta i$ là sai.</p>
+</details><h3>Q10 ⭐⭐ Tán sắc qua lăng kính</h3><p>Lăng kính góc chiết quang $A = 6°$, chiết suất $n_{đỏ} = 1{,}642$, $n_{tím} = 1{,}685$. Chùm sáng trắng hẹp tới gần pháp tuyến mặt bên (dùng công thức góc nhỏ $D = (n-1)A$ cho góc lệch). Tính góc lệch tia đỏ, tia tím và bề rộng quang phổ trên màn vuông góc đặt cách lăng kính $2$ m.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $D_đ = 3{,}852°$; $D_t = 4{,}110°$; chênh $0{,}2580°$; bề rộng $9{,}050$ mm (gần đúng góc nhỏ: $9{,}006$ mm).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>(1.642−1)×6</code>; <code>(1.685−1)×6</code>.</li>
+<li>Độ: <code>2×(tan(4.11) − tan(3.852))×1000</code> $= 9{,}050$ mm.</li>
+</ul>
+<p><strong>Bẫy.</strong> Công thức $D = (n-1)A$ chỉ dùng khi $A$ nhỏ và tia tới gần pháp tuyến; kết quả hai cách tính khác nhau cỡ $0{,}5\%$, đề cho cách nào dùng cách đó.</p>
+</details><h3>Q11 ⭐⭐⭐ Ghép tụ</h3><p>Cuộn cảm $L = 1$ mH nối với tụ $C_1$ thì tần số dao động $12$ kHz, nối với tụ $C_2$ thì $16$ kHz. Tìm $C_1$, $C_2$, và tần số khi dùng $L$ với (a) hai tụ nối tiếp, (b) hai tụ song song.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $C_1 = 0{,}1759\ \mu$F; $C_2 = 0{,}09895\ \mu$F; (a) $f = 20{,}00$ kHz; (b) $f = 9{,}600$ kHz.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>1÷((2π×12000)²×10^−3)×10^6</code>; tương tự với <code>16000</code>.</li>
+<li><ol type="a">
+<li><code>√(12²+16²)</code>; (b) <code>12×16÷√(12²+16²)</code>.</li>
+</ol></li>
+<li>Kiểm bằng điện dung: nối tiếp $C = \dfrac{C_1C_2}{C_1+C_2}$ rồi $f = \dfrac{1}{2\pi\sqrt{LC}}$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Nối tiếp thì $f$ tăng ($20 \gt  16$), song song thì $f$ giảm ($9{,}6 \lt  12$). Nhầm hai trường hợp là lỗi phổ biến.</p>
+</details><h3>Q12 ⭐⭐⭐ Ánh sáng trắng, đếm bức xạ</h3><p>Y-âng: $a = 1$ mm, $D = 2$ m, ánh sáng trắng $0{,}38\ \mu\text{m} \leq \lambda \leq 0{,}76\ \mu$m. Tại điểm $M$ cách vân trung tâm $7{,}0$ mm, có bao nhiêu bức xạ cho vân sáng, bao nhiêu bức xạ cho vân tối? Nêu bước sóng.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> 5 bức xạ vân sáng: $0{,}7000$; $0{,}5833$; $0{,}5000$; $0{,}4375$; $0{,}3889\ \mu$m (ứng $k = 5, \dots, 9$).<br />
+4 bức xạ vân tối: $0{,}6364$; $0{,}5385$; $0{,}4667$; $0{,}4118\ \mu$m (ứng $k = 5, \dots, 8$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Vân sáng: TABLE <code>f(x) = 3.5÷x</code> (đơn vị μm, vì $ax/D = 3{,}5\ \mu$m), Start <code>4</code>, End <code>10</code>, Step <code>1</code>; lọc $0{,}38 \leq f \leq 0{,}76$: $x=5\dots9$.</li>
+<li>Vân tối: <code>f(x) = 3.5÷(x+0.5)</code>, Start <code>4</code>, End <code>10</code>: lọc: $x=5\dots8$.</li>
+</ul>
+<p><strong>Bẫy.</strong> $ax/D = 10^{-3}\cdot 7\cdot10^{-3}/2 = 3{,}5\cdot 10^{-6}$ m $= 3{,}5\ \mu$m. Kiểm $k=4$ cho vân sáng ($0{,}875\ \mu$m) và vân tối ($0{,}7778\ \mu$m) đều ngoài vùng nhìn thấy; $k=10$ vân sáng ($0{,}35\ \mu$m) và $k=9$ vân tối ($0{,}3684\ \mu$m) cũng ngoài.</p>
+</details><h3>Câu 1</h3><p>Mạch LC có $L = 8$ mH và $C = 2$ nF. Tính tần số dao động, bước sóng điện từ mà mạch có thể thu, và cường độ dòng điện cực đại khi hiệu điện thế cực đại giữa hai bản tụ là $5$ V.</p><details><summary>Đáp án</summary><pre>$f = \dfrac{1}{2\pi\sqrt{LC}} = 3{,}979.10^4$ Hz; $\lambda = \dfrac{c}{f} = 7540$ m; $I_0 = U_0\sqrt{\dfrac{C}{L}} = 2{,}500.10^{-3}$ A.
+- Gõ: `1÷(2π√(8×10^−3×2×10^−9))`; `3×10^8÷Ans`; `5√(2×10^−9÷(8×10^−3))`.</pre></details><h3>Câu 2</h3><p>Y-âng: $\lambda = 0{,}55\ \mu$m, $a = 0{,}5$ mm, $D = 1$ m. Tính khoảng cách giữa vân sáng bậc 2 ở một bên vân trung tâm và vân tối thứ 3 ở bên kia vân trung tâm.</p><details><summary>Đáp án</summary><pre>$i = 1{,}100$ mm. Vân sáng bậc 2: $2i = 2{,}200$ mm; vân tối thứ 3: $2{,}5i = 2{,}750$ mm; khác phía nên khoảng cách $= 4{,}5i = 4{,}950$ mm.</pre></details><h3>Câu 3</h3><p>Tia sáng đi từ nước ($n = \dfrac43$) ra không khí với góc tới $40°$. Tính góc giới hạn phản xạ toàn phần và góc khúc xạ (nếu có).</p><details><summary>Đáp án</summary><pre>$i_{gh} = \sin^{-1}\dfrac34 = 48{,}59°$. Vì $40° < 48{,}59°$ nên có tia khúc xạ: $\sin r = \dfrac43\sin40° = 0{,}8571$, $r = 58{,}99°$.
+- Gõ (Độ): `sin⁻¹(1÷(4÷3))`; `sin⁻¹(4÷3×sin(40))`.</pre></details><h3>Câu 4</h3><p>Mạch chọn sóng có cuộn cảm $L = 5\ \mu$H. Cần điện dung bao nhiêu để thu sóng bước sóng $30$ m?</p><details><summary>Đáp án</summary><pre>$C = \dfrac{1}{L}\left(\dfrac{\lambda}{2\pi c}\right)^2 = 50{,}66$ pF.
+- Gõ: `(30÷(2π×3×10^8))²÷(5×10^−6)×10^12`.</pre></details><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]})</script>

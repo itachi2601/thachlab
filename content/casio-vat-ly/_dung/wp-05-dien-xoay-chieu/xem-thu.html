@@ -1,0 +1,216 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><style>body{font:16px/1.6 system-ui;max-width:720px;margin:0 auto;padding:16px}code{background:#eee;padding:1px 4px;border-radius:4px}</style><h1>Điện xoay chiều</h1><blockquote>
+<p>Công cụ máy: bài <strong>Sổ tay máy Casio fx-580VN X</strong>. Mỗi công thức ghi kèm điều kiện áp dụng. <strong>Quy ước:</strong> $U, I$ là giá trị hiệu dụng, $U_0, I_0$ là biên độ; số phức nhập cùng loại (hiệu dụng với hiệu dụng, biên độ với biên độ). Thể lệ tạm: làm tròn 4 chữ số có nghĩa.</p>
+</blockquote>
+<hr />
+<h3 id="trang-1-mạch-rlc-nối-tiếp-và-số-phức">Trang 1 · Mạch RLC nối tiếp và số phức</h3>
+<p><strong>Công thức</strong></p>
+<ul>
+<li>$Z_L = \omega L$; $Z_C = \dfrac{1}{\omega C}$; $Z = \sqrt{R^2 + (Z_L - Z_C)^2}$; $I = \dfrac{U}{Z}$.</li>
+<li>$\tan\varphi = \dfrac{Z_L - Z_C}{R}$, $\varphi = \varphi_u - \varphi_i$.
+<ul>
+<li>$Z_L \gt  Z_C$: $\varphi \gt  0$, $u$ <strong>sớm</strong> pha hơn $i$ (mạch cảm kháng).</li>
+<li>$Z_L \lt  Z_C$: $\varphi \lt  0$, $u$ <strong>trễ</strong> pha hơn $i$ (mạch dung kháng).</li>
+</ul></li>
+<li>$\cos\varphi = \dfrac{R}{Z}$; $P = UI\cos\varphi = I^2R$.</li>
+<li>Điện áp hai đầu từng phần tử: $U_R = IR$, $U_L = IZ_L$, $U_C = IZ_C$; $U^2 = U_R^2 + (U_L - U_C)^2$. $U_L$ hoặc $U_C$ <strong>có thể lớn hơn</strong> $U$.</li>
+<li>$u_R$ cùng pha với $i$; $u_L$ sớm pha $\dfrac{\pi}{2}$ so với $i$; $u_C$ trễ pha $\dfrac{\pi}{2}$ so với $i$.</li>
+</ul>
+<p><strong>Số phức (Complex)</strong></p>
+<ul>
+<li>$Z = R + (Z_L - Z_C)\,\mathrm{i}$; $I = \dfrac{U}{Z}$ (cả hai nhập dạng cực $a\angle\varphi$).</li>
+<li>Cuộn dây có điện trở $r$: $Z_d = r + Z_L\mathrm{i}$.</li>
+<li>Hộp đen $X$ nối tiếp với phần tử đã biết: $Z_X = \dfrac{U}{I} - Z_{biết}$ (số phức), rồi đọc phần thực → $R$, phần ảo dương → $L$, phần ảo âm → $C$.</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>Dạng phức chỉ cho đúng khi $U$ và $I$ cùng loại (cùng hiệu dụng hoặc cùng biên độ); tỉ số $\dfrac{U_0}{I_0} = \dfrac{U}{I}$ nên $Z$ giống nhau.</li>
+<li>Phần thực của $Z_X$ có thể ra âm do sai dữ liệu: kiểm lại dấu của pha.</li>
+<li>Góc $\varphi$ máy cho theo Độ hay Rad tuỳ SETUP.</li>
+</ul>
+<hr />
+<h3 id="trang-2-cực-trị">Trang 2 · Cực trị</h3>
+<p><strong>Cộng hưởng</strong> (thay $\omega$, hoặc $L$, hoặc $C$ cho đến khi $Z_L = Z_C$)</p>
+<ul>
+<li>$\omega^2LC = 1$; $Z = R$; $I_{max} = \dfrac{U}{R}$; $P_{max} = \dfrac{U^2}{R}$; $\cos\varphi = 1$; $u$ cùng pha $i$.</li>
+</ul>
+<p><strong>$R$ thay đổi</strong> ($U, L, C, \omega$ cố định)</p>
+<ul>
+<li>Điện trở $R$ thuần, không cuộn dây điện trở: $P_{max}$ khi $R = |Z_L - Z_C|$; $P_{max} = \dfrac{U^2}{2|Z_L - Z_C|}$.</li>
+<li>Có cuộn dây điện trở $r$ nối tiếp với biến trở $R$, $d = |Z_L - Z_C|$:
+<ul>
+<li><strong>Công suất toàn mạch</strong> cực đại khi $R + r = d$, <strong>nếu $r \lt  d$</strong>; nếu $r \geq d$ thì $P$ giảm khi $R$ tăng nên cực đại tại $R = 0$.</li>
+<li><strong>Công suất trên $R$</strong> cực đại khi $R = \sqrt{r^2 + d^2}$, và $P_{R\,max} = \dfrac{U^2}{2(R + r)}$.</li>
+</ul></li>
+<li>Hai giá trị $R_1, R_2$ cho cùng $P$ (mạch <strong>không</strong> có $r$): $R_1R_2 = d^2$; $R_1 + R_2 = \dfrac{U^2}{P}$.
+<ul>
+<li>Có cuộn dây điện trở $r$ (tính $P$ toàn mạch): $(R_1 + r)(R_2 + r) = d^2$; $R_1 + R_2 + 2r = \dfrac{U^2}{P}$.</li>
+</ul></li>
+</ul>
+<p><strong>$C$ thay đổi</strong> ($R, L, \omega$ cố định)</p>
+<ul>
+<li>$U_C$ cực đại khi $Z_C = \dfrac{R^2 + Z_L^2}{Z_L}$; $U_{C\,max} = \dfrac{U\sqrt{R^2 + Z_L^2}}{R}$.</li>
+</ul>
+<p><strong>$L$ thay đổi</strong> ($R, C, \omega$ cố định)</p>
+<ul>
+<li>$U_L$ cực đại khi $Z_L = \dfrac{R^2 + Z_C^2}{Z_C}$; $U_{L\,max} = \dfrac{U\sqrt{R^2 + Z_C^2}}{R}$.</li>
+</ul>
+<p><strong>$\omega$ thay đổi</strong> ($R, L, C$ cố định)</p>
+<ul>
+<li>$U_C$ cực đại tại $\omega^2 = \dfrac{1}{LC} - \dfrac{R^2}{2L^2}$ <strong>với điều kiện</strong> $R^2 \lt  \dfrac{2L}{C}$; $U_{C\,max} = \dfrac{2UL}{R\sqrt{4LC - R^2C^2}}$. (Nếu điều kiện không thoả, $U_C$ giảm theo $\omega$.)</li>
+<li>Hai tần số $\omega_1, \omega_2$ cho <strong>cùng</strong> $I$ (hay cùng $Z$, $P$, $\cos\varphi$): $\omega_1\omega_2 = \dfrac{1}{LC} = \omega_0^2$; hai pha đối nhau, $\varphi_1 = -\varphi_2$.</li>
+</ul>
+<p><strong>Dùng TABLE để kiểm</strong></p>
+<ol type="1">
+<li>Nhập $f(x)$ (x là phím <code>x</code>) là đại lượng cần cực đại (ví dụ $U_C$ theo $Z_C$): bảng bước lớn, rồi thu hẹp.</li>
+<li>Đáp số cuối ghi theo công thức, bảng chỉ để kiểm.</li>
+</ol>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>$U_{C\,max}$ khi thay $C$ khác $U_C$ ở cộng hưởng: ở cộng hưởng $U_C = \dfrac{U}{R}\sqrt{\dfrac{L}{C}}$ chưa phải cực đại.</li>
+<li>Đừng áp công thức $R = |Z_L - Z_C|$ cho mạch có cuộn dây điện trở: phải cộng $r$.</li>
+</ul>
+<hr />
+<h3 id="trang-3-truyền-tải-điện-máy-biến-áp-máy-phát">Trang 3 · Truyền tải điện, máy biến áp, máy phát</h3>
+<p><strong>Truyền tải điện</strong> ($P$ là công suất nơi phát, $r$ là điện trở tổng của dây, $U$ là điện áp nơi phát, $\cos\varphi$ là hệ số công suất của tải)</p>
+<ul>
+<li>$I = \dfrac{P}{U\cos\varphi}$; $\Delta P = I^2r = \dfrac{P^2r}{U^2\cos^2\varphi}$; hiệu suất $H = 1 - \dfrac{\Delta P}{P}$.</li>
+<li>Khi $P, r, \cos\varphi$ không đổi: $\Delta P \propto \dfrac{1}{U^2}$.</li>
+<li>Bài toán "bao nhiêu hộ dân": công suất tải $= P - \Delta P$; chia cho công suất mỗi hộ; <strong>làm tròn xuống</strong> (không đủ cho hộ cuối).</li>
+</ul>
+<p><strong>Máy biến áp lí tưởng</strong></p>
+<ul>
+<li>$\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1} = \dfrac{I_1}{I_2}$.</li>
+<li>Có hiệu suất $H$: $P_2 = H\,P_1$. Cường độ phía sơ cấp: $I_1 = \dfrac{P_1}{U_1\cos\varphi_1}$ ($\cos\varphi_1 = 1$ nếu đề không nói).</li>
+</ul>
+<p><strong>Máy phát điện xoay chiều</strong></p>
+<ul>
+<li>$f = np$ ($n$ vòng/s, $p$ cặp cực); $E_0 = \omega N\Phi_0$, $E = \dfrac{E_0}{\sqrt2}$.</li>
+</ul>
+<p><strong>Bẫy</strong></p>
+<ul>
+<li>$\cos\varphi$ có bình phương trong $\Delta P$: bỏ quên là sai.</li>
+<li>Công suất nơi phát (đầu đường dây) khác công suất nhận (tải).</li>
+</ul><h3>E1 ⭐ Mạch RLC nối tiếp</h3><p>Đặt $u = 200\sqrt2\cos(100\pi t)$ (V) vào mạch nối tiếp $R = 60\ \Omega$, $L = \dfrac{0{,}4}{\pi}$ H, $C = \dfrac{250}{3\pi}\ \mu$F. Tính $Z_L$, $Z_C$, $Z$, $I$, $\cos\varphi$, $P$, $U_R$, $U_L$, $U_C$ và độ lệch pha của $u$ so với $i$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $Z_L = 40{,}00\ \Omega$; $Z_C = 120{,}0\ \Omega$; $Z = 100{,}0\ \Omega$; $I = 2{,}000$ A; $\cos\varphi = 0{,}6000$; $P = 240{,}0$ W; $U_R = 120{,}0$ V; $U_L = 80{,}00$ V; $U_C = 240{,}0$ V; $\varphi = -53{,}13°$ ($u$ trễ pha hơn $i$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>100π×0.4÷π</code> → $40$; <code>1÷(100π×250×10^−6÷(3π))</code> → $120$.</li>
+<li><code>√(60²+(40−120)²)</code> → $100$; <code>200÷100</code> → $2$.</li>
+<li><code>60÷100</code>; <code>2²×60</code>; Độ: <code>tan⁻¹((40−120)÷60)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $U_C = 240\ \text{V} \gt  U = 200\ \text{V}$ là bình thường, không phải sai.</p>
+</details><h3>E2 ⭐ Cộng hưởng</h3><p>Mạch RLC nối tiếp $R = 25\ \Omega$, $L = 0{,}5$ H, $C = 20\ \mu$F, $U = 100$ V, tần số thay đổi. Tìm tần số cộng hưởng, $I$, $P$ và $U_C$ tại cộng hưởng.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $f_0 = 50{,}33$ Hz; $I = 4{,}000$ A; $P = 400{,}0$ W; $U_C = 632{,}5$ V.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>1÷(2π√(0.5×20×10^−6))</code> → <code>STO F</code>.</li>
+<li><code>100÷25</code>; <code>100²÷25</code>.</li>
+<li>$U_C = I\cdot Z_C$: <code>4×1÷(2π×F×20×10^−6)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $U_C \gg U$ ở cộng hưởng khi $R$ nhỏ: nguy hiểm trong thực tế.</p>
+</details><h3>E3 ⭐ Hao phí truyền tải</h3><p>Nhà máy truyền đi công suất $100$ kW ở điện áp $10$ kV, $\cos\varphi = 0{,}9$, điện trở tổng dây $10\ \Omega$. Tính công suất hao phí và hiệu suất truyền tải. Nếu tăng điện áp lên gấp đôi (các đại lượng khác không đổi) thì sao?</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\Delta P = 1235$ W; $H = 98{,}77\%$; sau khi tăng: $\Delta P = 308{,}6$ W; $H = 99{,}69\%$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>(100000²×10)÷(10000²×0.9²)</code>, <code>STO A</code> (lưu $\Delta P$); rồi <code>1−A÷100000</code>.</li>
+<li>Gấp đôi $U$: <code>A÷4</code> (hoặc <code>Ans÷4</code> ngay sau bước $\Delta P$, trước khi tính $H$), rồi <code>1−Ans÷100000</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Đổi kW, kV về W, V trước khi tính; có $\cos^2\varphi$ ở mẫu.</p>
+</details><h3>E4 ⭐ Máy biến áp</h3><p>Máy biến áp có $N_1 = 1100$ vòng, $N_2 = 60$ vòng, $U_1 = 220$ V, tải $4\ \Omega$ ở thứ cấp, hiệu suất $90\%$ (coi $\cos\varphi_1 = 1$). Tính $U_2$, $I_2$, công suất thứ cấp, công suất sơ cấp và $I_1$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $U_2 = 12{,}00$ V; $I_2 = 3{,}000$ A; $P_2 = 36{,}00$ W; $P_1 = 40{,}00$ W; $I_1 = 0{,}1818$ A.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>220×60÷1100</code>; <code>Ans÷4</code>; <code>12×3</code>; <code>36÷0.9</code>; <code>40÷220</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Với hiệu suất &lt; 100%, $I_1 \neq I_2\dfrac{N_2}{N_1}$ (kết quả đó là $0{,}1636$ A, sai).</p>
+</details><h3>E5 ⭐⭐ Biểu thức dòng điện bằng số phức</h3><p>Đặt $u = 120\sqrt2\cos(100\pi t)$ (V) vào mạch nối tiếp $R = 40\ \Omega$, $Z_L = 130\ \Omega$, $Z_C = 60\ \Omega$. Viết biểu thức $i$, $u_L$ và $u_C$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $Z = 80{,}62\ \Omega$; $I_0 = 2{,}105$ A ($I = 1{,}488$ A).<br />
+$i = 2{,}105\cos(100\pi t - 1{,}052)$ A.<br />
+$u_L = 273{,}6\cos(100\pi t + 0{,}5191)$ V.<br />
+$u_C = 126{,}3\cos(100\pi t - 2{,}622)$ V.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Số phức, <strong>Rad</strong>. Gõ <code>(120√2∠0) ÷ (40+70i)</code> (∠ là <code>SHIFT ENG</code>, <em>i</em> là <code>ENG</code>), <code>=</code>, rồi <code>OPTN ▼ 1</code> (▶r∠θ): $2{,}105\angle -1{,}052$.</li>
+<li>$u_L$: biên độ $2{,}105\times130$; pha $-1{,}052 + \dfrac{\pi}{2}$.</li>
+<li>$u_C$: biên độ $2{,}105\times60$; pha $-1{,}052 - \dfrac{\pi}{2}$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Dùng biên độ của $u$ thì ra biên độ của $i$ (không phải hiệu dụng). $u_L$ sớm pha $\dfrac{\pi}{2}$ so với $i$, không so với $u$.</p>
+</details><h3>E6 ⭐⭐ Cuộn dây có điện trở, biến trở $R$</h3><p>Cuộn dây $r = 10\ \Omega$, $Z_L = 70\ \Omega$ nối tiếp biến trở $R$ và tụ $Z_C = 30\ \Omega$; $U = 120$ V. (a) Tìm $R$ để công suất toàn mạch cực đại và giá trị đó. (b) Tìm $R$ để công suất trên $R$ cực đại và giá trị đó.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> (a) $R = 30{,}00\ \Omega$; $P_{max} = 180{,}0$ W. (b) $R = 41{,}23\ \Omega$; $P_{R\,max} = 140{,}5$ W.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>$d = 70 - 30 = 40$. (a): <code>40−10</code>; <code>120²÷(2×40)</code>.</li>
+<li>(b): <code>√(10²+40²)</code> → <code>STO D</code>; <code>120²÷(2×(D+10))</code>.</li>
+<li>Kiểm bằng TABLE: <code>f(x) = 120²×x÷((x+10)²+40²)</code>, Start <code>30</code>, End <code>50</code>, Step <code>1</code>: lớn nhất quanh $x = 41$.</li>
+</ul>
+<p><strong>Bẫy.</strong> (a) ĐK $r \lt  d$ thoả ($10 \lt  40$). Nếu $r \geq 40$ thì $R=0$. Hai ý (a), (b) cho hai kết quả $R$ khác nhau, đừng lẫn.</p>
+</details><h3>E7 ⭐⭐ $C$ thay đổi, $U_C$ cực đại</h3><p>Mạch $R = 30\ \Omega$, $Z_L = 40\ \Omega$, $U = 100$ V, $\omega = 100\pi$ rad/s, $C$ thay đổi. Tìm $Z_C$, $C$ và $U_{C\,max}$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $Z_C = 62{,}50\ \Omega$; $C = 50{,}93\ \mu$F; $U_{C\,max} = 166{,}7$ V.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>(30²+40²)÷40</code> → $62{,}5$, <code>STO D</code>.</li>
+<li><code>1÷(100π×D)×10^6</code> → $50{,}93\ \mu$F.</li>
+<li><code>100×√(30²+40²)÷30</code>.</li>
+<li>Kiểm: TABLE <code>f(x) = 100x÷√(30²+(40−x)²)</code>, Start <code>50</code>, End <code>75</code>, Step <code>2.5</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Đây không phải cộng hưởng ($Z_C = 40$ sẽ cho $U_C = 133{,}3$ V, nhỏ hơn).</p>
+</details><h3>E8 ⭐⭐ $L$ thay đổi, $U_L$ cực đại</h3><p>Mạch $R = 40\ \Omega$, $Z_C = 30\ \Omega$, $U = 100$ V, $\omega = 100\pi$ rad/s, $L$ thay đổi. Tìm $Z_L$, $L$ và $U_{L\,max}$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $Z_L = 83{,}33\ \Omega$; $L = 0{,}2653$ H; $U_{L\,max} = 125{,}0$ V.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>(40²+30²)÷30</code> → <code>STO D</code>; <code>D÷(100π)</code>; <code>100×√(40²+30²)÷40</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Nhập $Z_L$ vào $L$ cần chia cho $\omega$.</p>
+</details><h3>E9 ⭐⭐ $\omega$ thay đổi, $U_C$ cực đại</h3><p>Mạch nối tiếp $R = 20\ \Omega$, $L = 0{,}1$ H, $C = 20\ \mu$F, $U = 100$ V, tần số thay đổi. Tìm $\omega$ và $f$ để $U_C$ cực đại, và $U_{C\,max}$. So với $U_C$ ở cộng hưởng.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> Điều kiện $R^2 = 400 \lt  \dfrac{2L}{C} = 10000$ thoả. $\omega = 692{,}8$ rad/s; $f = 110{,}3$ Hz; $U_{C\,max} = 357{,}1$ V (ở cộng hưởng chỉ $353{,}6$ V).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>√(1÷(0.1×20×10^−6) − 20²÷(2×0.1²))</code> → $692{,}8$; <code>÷(2π)</code>.</li>
+<li><code>100×2×0.1÷(20×√(4×0.1×20×10^−6 − 20²×(20×10^−6)²))</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $\omega_{U_C max} \neq \omega_0$ (với $R\neq0$); chỉ gần nhau khi $R$ nhỏ.</p>
+</details><h3>E10 ⭐⭐ Hộp đen nối tiếp với tụ</h3><p>Hộp $X$ (chứa $R$ nối tiếp $L$) nối tiếp với tụ $Z_C = 100\ \Omega$. Đặt $u = 200\cos(100\pi t)$ (V) thì $i = 2\cos\left(100\pi t + \dfrac{\pi}{4}\right)$ (A). Tìm $R$ và $L$ của hộp $X$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $Z_{tổng} = 70{,}71 - 70{,}71\mathrm{i}\ (\Omega)$; $Z_X = 70{,}71 + 29{,}29\mathrm{i}\ (\Omega)$; $R = 70{,}71\ \Omega$; $L = 0{,}09323$ H.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Số phức, <strong>Độ</strong>. <code>(200∠0) ÷ (2∠45)</code>, <code>=</code>: $100\angle -45$.</li>
+<li>Chuyển a+bi: <code>OPTN ▼ 2</code> (▶a+bi): $70{,}71 - 70{,}71\mathrm{i}$. Cộng <code>+100i</code>: $70{,}71 + 29{,}29\mathrm{i}$.</li>
+<li>$L$: <code>29.29÷(100π)</code>; để đủ chữ số, lấy phần ảo của <code>Ans</code> bằng <code>OPTN 4</code> (ImP).</li>
+</ul>
+<p><strong>Bẫy.</strong> $Z_{tổng} = Z_X + Z_C$ với $Z_C = -100\mathrm{i}$, nên $Z_X = Z_{tổng} + 100\mathrm{i}$.</p>
+</details><h3>E11 ⭐⭐⭐ Hai tần số cho cùng cường độ</h3><p>Mạch nối tiếp $R = 30\ \Omega$, $L = 0{,}2$ H; $U = 60$ V. Khi $f_1 = 40$ Hz hoặc $f_2 = 90$ Hz thì dòng điện hiệu dụng như nhau. Tìm tần số cộng hưởng, $C$, và (tại $f_1$) $Z$, $I$, $\cos\varphi$, $\varphi$; so sánh với $f_2$.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $f_0 = 60{,}00$ Hz; $C = 35{,}18\ \mu$F; $Z = 69{,}63\ \Omega$; $I = 0{,}8617$ A; $\cos\varphi = 0{,}4309$; $\varphi_1 = -64{,}48°$, $\varphi_2 = +64{,}48°$ (cùng $Z$, cùng $I$, pha đối nhau).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>√(40×90)</code> → $60$; <code>1÷((2π×60)²×0.2)×10^6</code> → <code>STO C</code>.</li>
+<li>Gõ công thức $Z(f) = \sqrt{30^2 + (2\pi f\,0{,}2 - \dfrac{1}{2\pi f\,C})^2}$ với $f$ là biến <code>x</code> (máy không có biến f): <code>√(30²+(2π×x×0.2−1÷(2π×x×C×10^−6))²)</code> (C đang lưu theo μF nên nhân <code>10^−6</code>).</li>
+<li><code>CALC</code> với x = <code>40</code>, rồi x = <code>90</code>: hai kết quả bằng nhau. Lưu $Z(40)$ vào một biến: <code>STO E</code>.</li>
+<li><code>60÷E</code>; <code>30÷E</code> (máy không có biến Z).</li>
+</ul>
+<p><strong>Lời giải.</strong> $\omega_1\omega_2 = \dfrac{1}{LC} = \omega_0^2$ nên $f_0 = \sqrt{f_1f_2}$.<br />
+<strong>Bẫy.</strong> Hệ thức chỉ cho đúng khi $I$ (hay $Z$) bằng nhau tại hai tần số; không dùng cho hai tần số bất kì.</p>
+</details><h3>E12 ⭐⭐⭐ Số hộ dân được cấp điện</h3><p>Trạm phát giữ công suất nơi phát và $\cos\varphi$ không đổi. Khi truyền với điện áp $2$ kV thì cấp đủ cho $100$ hộ và hao phí trên dây bằng $20\%$ công suất nơi phát. Nếu tăng điện áp lên $4$ kV thì cấp đủ cho tối đa bao nhiêu hộ (mỗi hộ tiêu thụ như nhau)?</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> Hao phí còn $5\%$; công suất tới tải $0{,}95P$ so với $0{,}8P$ trước; $n = 100\cdot\dfrac{0{,}95}{0{,}8} = 118{,}75$, vậy <strong>118 hộ</strong>.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>20÷4</code> → $5\%$ (hao phí tỉ lệ nghịch bình phương $U$: $\dfrac{2^2}{4^2} = \dfrac14$).</li>
+<li><code>100×(1−0.05)÷(1−0.2)</code> → $118{,}75$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Làm tròn <strong>xuống</strong>: với $119$ hộ không đủ điện. Dùng hao phí $= 20\%/2$ (nhầm tỉ lệ nghịch $U$) cho đáp số sai.</p>
+</details><h3>Câu 1</h3><p>Đặt $u = 100\sqrt2\cos(100\pi t)$ (V) vào mạch nối tiếp $R = 30\ \Omega$, $L = \dfrac{0{,}5}{\pi}$ H, $C = \dfrac{10^{-3}}{\pi}$ F. Tính $Z$, $I$, $\cos\varphi$, $P$ và độ lệch pha của $u$ so với $i$.</p><details><summary>Đáp án</summary><pre>$Z_L = 50\ \Omega$, $Z_C = 10\ \Omega$; $Z = \sqrt{30^2 + 40^2} = 50{,}00\ \Omega$; $I = 2{,}000$ A; $\cos\varphi = 0{,}6000$; $P = I^2R = 120{,}0$ W; $\varphi = +53{,}13°$ ($u$ sớm pha hơn $i$).
+- Gõ: `√(30²+(50−10)²)`; `100÷Ans`; `30÷50`; `2²×30`.</pre></details><h3>Câu 2</h3><p>Mạch nối tiếp $R = 20\ \Omega$, $L = \dfrac{0{,}4}{\pi}$ H, $C$ thay đổi, $U = 120$ V, $f = 50$ Hz. Tìm $C$ để cộng hưởng, rồi $I$ và $P$ khi đó.</p><details><summary>Đáp án</summary><pre>$Z_L = 40\ \Omega$ nên cộng hưởng khi $Z_C = 40\ \Omega$: $C = \dfrac{1}{\omega Z_C} = 79{,}58\ \mu$F. $I = \dfrac{U}{R} = 6{,}000$ A; $P = \dfrac{U^2}{R} = 720{,}0$ W.
+- Gõ: `1÷(100π×40)×10^6`.</pre></details><h3>Câu 3</h3><p>Truyền công suất $500$ kW ở điện áp $50$ kV, $\cos\varphi = 0{,}8$, điện trở tổng dây $20\ \Omega$. Tính cường độ dòng điện trên dây, công suất hao phí và hiệu suất truyền tải.</p><details><summary>Đáp án</summary><pre>$I = \dfrac{P}{U\cos\varphi} = 12{,}50$ A; $\Delta P = I^2r = 3125$ W; $H = 1 - \dfrac{3125}{500000} = 99{,}38\%$.
+- Gõ: `500000÷(50000×0.8)`; `12.5²×20`.</pre></details><h3>Câu 4</h3><p>Mạch nối tiếp $R = 20\ \Omega$, $Z_C = 15\ \Omega$, $U = 80$ V, $\omega = 100\pi$ rad/s; $L$ thay đổi. Tìm $L$ để $U_L$ cực đại và giá trị cực đại.</p><details><summary>Đáp án</summary><pre>$Z_L = \dfrac{R^2 + Z_C^2}{Z_C} = \dfrac{625}{15} = 41{,}67\ \Omega$; $L = \dfrac{Z_L}{\omega} = 0{,}1326$ H; $U_{L\,max} = \dfrac{U\sqrt{R^2 + Z_C^2}}{R} = \dfrac{80\cdot25}{20} = 100{,}0$ V.
+- Gõ: `(20²+15²)÷15`; `÷(100π)`; `80×√(20²+15²)÷20`.</pre></details><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]})</script>

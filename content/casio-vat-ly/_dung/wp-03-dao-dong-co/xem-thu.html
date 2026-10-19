@@ -1,0 +1,224 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><style>body{font:16px/1.6 system-ui;max-width:720px;margin:0 auto;padding:16px}code{background:#eee;padding:1px 4px;border-radius:4px}</style><h1>Dao động cơ</h1><blockquote>
+<p>Công cụ máy xem bài <strong>Sổ tay máy Casio fx-580VN X</strong>. Trang này chỉ ghi <strong>công thức và cách nghĩ theo từng dạng</strong>, cùng thao tác máy ứng với dạng đó. Thể lệ tạm: làm tròn 4 chữ số có nghĩa, đơn vị gốc trong ngoặc.</p>
+</blockquote>
+<hr />
+<h3 id="trang-1-phương-trình-dao-động-pha-và-tìm-thời-điểm">Trang 1 · Phương trình dao động, pha, và tìm thời điểm</h3>
+<p><strong>Công thức</strong></p>
+<ul>
+<li>$x = A\cos(\omega t + \varphi)$; $v = -A\omega\sin(\omega t + \varphi)$; $a = -\omega^2 x$.</li>
+<li>$\omega = \dfrac{2\pi}{T} = 2\pi f$; $v_{max} = \omega A$; $a_{max} = \omega^2 A$.</li>
+<li>Hệ thức độc lập: $A^2 = x^2 + \dfrac{v^2}{\omega^2}$.</li>
+<li>Phương trình $\sin$ đổi sang $\cos$: $\sin\theta = \cos\left(\theta - \dfrac{\pi}{2}\right)$.</li>
+</ul>
+<p><strong>Dạng A · Tính $x, v, a$ tại thời điểm $t$</strong></p>
+<ol type="1">
+<li>Máy để <strong>Rad</strong> (vì $\omega t$ tính bằng rad).</li>
+<li>Lưu $\omega t + \varphi$ vào biến (ví dụ B) rồi dùng lại: <code>4π×0.25 + π÷6</code> → <code>STO B</code>.</li>
+<li>Tính <code>5cos(B)</code>, <code>−5×4π×sin(B)</code>, <code>−(4π)²×5cos(B)</code>.</li>
+</ol>
+<p><em>Bẫy:</em> quên đổi đơn vị $x$ (cm) trước khi dùng $a$ theo m/s².</p>
+<p><strong>Dạng B · Thời điểm vật qua một li độ</strong></p>
+<ol type="1">
+<li>Viết $x(t) = x_0$, đặt $\theta = \omega t + \varphi$.</li>
+<li><code>SOLVE</code> với giá trị đầu <strong>gần nghiệm mong muốn</strong>.</li>
+<li>Phân biệt chiều chuyển động bằng dấu $v$: tại nghiệm tìm được, tính $-A\omega\sin\theta$.</li>
+</ol>
+<p><em>Bẫy:</em> SOLVE chỉ trả một nghiệm. Muốn nghiệm thứ hai, đổi giá trị đầu sang vùng khác, hoặc cộng $T$.</p>
+<p><strong>Dạng C · Quãng đường trong khoảng thời gian $\Delta t$</strong></p>
+<ol type="1">
+<li>$\Delta t = nT + \delta$ (hoặc $n\dfrac{T}{2} + \delta$): mỗi chu kì đi $4A$, mỗi nửa chu kì đi $2A$.</li>
+<li>Phần dư $\delta$: tính pha đầu và pha cuối, cộng đoạn từng khúc ($A \to 0$, $0 \to -A$…), nhớ khi qua biên phải đổi chiều.</li>
+</ol>
+<p><em>Bẫy:</em> dùng $v\cdot t$ cho dao động điều hoà (vận tốc thay đổi).</p>
+<hr />
+<h3 id="trang-2-con-lắc-lò-xo-con-lắc-đơn-và-năng-lượng">Trang 2 · Con lắc lò xo, con lắc đơn, và năng lượng</h3>
+<p><strong>Con lắc lò xo</strong></p>
+<ul>
+<li>$\omega = \sqrt{\dfrac{k}{m}}$; $T = 2\pi\sqrt{\dfrac{m}{k}}$.</li>
+<li>Năng lượng: $W = \dfrac12 kA^2 = \dfrac12 m\omega^2A^2$; $W_t = \dfrac12 kx^2$; $W_đ = W - W_t$.</li>
+<li>Đổi nhanh: $W_đ = nW_t$ khi $x = \pm\dfrac{A}{\sqrt{n+1}}$.</li>
+<li>Treo thẳng đứng: $\Delta\ell_0 = \dfrac{mg}{k}$ ($= \dfrac{gT^2}{4\pi^2}$).
+<ul>
+<li>$F_{max} = k(\Delta\ell_0 + A)$.</li>
+<li>$F_{min} = k(\Delta\ell_0 - A)$ nếu $A \lt  \Delta\ell_0$; $F_{min} = 0$ nếu $A \geq \Delta\ell_0$ (lò xo có lúc không biến dạng).</li>
+</ul></li>
+</ul>
+<p><strong>Con lắc đơn</strong></p>
+<ul>
+<li>$T = 2\pi\sqrt{\dfrac{\ell}{g}}$. Góc nhỏ: $v_{max} \approx \sqrt{g\ell}\,\alpha_0$.</li>
+<li>Góc bất kì (chính xác):
+<ul>
+<li>$v = \sqrt{2g\ell(\cos\alpha - \cos\alpha_0)}$.</li>
+<li>$\tau = mg(3\cos\alpha - 2\cos\alpha_0)$.</li>
+</ul></li>
+<li>Thay đổi chu kì: $\dfrac{T'}{T} = \sqrt{\dfrac{\ell'}{\ell}\cdot\dfrac{g}{g'}}$.
+<ul>
+<li>Nhiệt độ tăng $\Delta t$: $\ell' = \ell(1 + \alpha\Delta t)$.</li>
+<li>Đồng hồ chạy chậm mỗi ngày: $86400\left(1 - \dfrac{T}{T'}\right)$ giây.</li>
+</ul></li>
+</ul>
+<p><strong>Thao tác máy</strong></p>
+<ul>
+<li><code>CALC</code> cho cùng công thức nhiều bộ số.</li>
+<li>Với cos của góc độ (ví dụ $\alpha_0 = 60°$): đổi SETUP sang <strong>Độ</strong>, hoặc nhập <code>60×π÷180</code> ở chế độ Rad.</li>
+</ul>
+<p><em>Bẫy:</em> $A \lt  \Delta\ell_0$ hay không quyết định $F_{min}$; luôn tính $\Delta\ell_0$ trước.</p>
+<hr />
+<h3 id="trang-3-tổng-hợp-tắt-dần-cực-trị-bằng-table">Trang 3 · Tổng hợp, tắt dần, cực trị bằng TABLE</h3>
+<p><strong>Tổng hợp dao động (số phức)</strong></p>
+<ul>
+<li>$A\angle\varphi = A_1\angle\varphi_1 + A_2\angle\varphi_2$; tìm thành phần: $x_2 = x - x_1$.</li>
+<li>Biên độ: $A^2 = A_1^2 + A_2^2 + 2A_1A_2\cos(\varphi_2 - \varphi_1)$.</li>
+<li>$A$ nhỏ nhất theo $A_2\geq 0$:
+<ul>
+<li>nếu $\cos(\varphi_2-\varphi_1) \lt  0$ (lệch pha $\gt 90°$): $A_2 = -A_1\cos(\varphi_2-\varphi_1)$ và $A_{min} = A_1|\sin(\varphi_2-\varphi_1)|$.</li>
+<li>nếu $\cos(\varphi_2-\varphi_1) \geq 0$: $A_{min} = A_1$ tại $A_2 = 0$ (không có cực tiểu trong).<br />
+Kiểm bằng TABLE: nhập $f(x) = \sqrt{A_1^2 + x^2 + 2A_1x\cos\Delta\varphi}$ (x là phím <code>x</code>) rồi thu hẹp bước.</li>
+</ul></li>
+</ul>
+<p><strong>Tắt dần có ma sát (con lắc lò xo ngang)</strong></p>
+<ul>
+<li>Giảm biên độ mỗi nửa chu kì: $\Delta A = \dfrac{2\mu mg}{k}$.</li>
+<li>Vị trí cân bằng tạm: $x_0 = \dfrac{\mu mg}{k}$; tốc độ cực đại lần đầu: $v_1 = \omega(A_0 - x_0)$.</li>
+<li>Vật <strong>dừng</strong> ngay sau nửa chu kì thứ $n$, với $n$ nhỏ nhất thoả $A_0 - n\,\Delta A \leq \dfrac{\Delta A}{2}$ (tức $|x| \leq x_0$ nên lực đàn hồi không thắng nổi ma sát nghỉ). Thời gian $t = n\dfrac{T}{2}$.</li>
+<li>Khi $N = \dfrac{A_0}{\Delta A}$ nguyên: $n = N$, vật dừng đúng ở O và quãng đường $S = \dfrac{kA_0^2}{2\mu mg}$.</li>
+<li>Khi $N$ không nguyên: vật dừng ở $x_d = A_0 - n\Delta A$, $S = \dfrac{k(A_0^2 - x_d^2)}{2\mu mg}$.</li>
+</ul>
+<p><em>Bẫy:</em> dùng $S = \dfrac{kA_0^2}{2\mu mg}$ khi vật không dừng ở O là sai.</p>
+<p><strong>Dùng TABLE thế nào cho gọn</strong></p>
+<ol type="1">
+<li>Bảng bước lớn (khoảng 10 hàng) để thấy vùng cực trị.</li>
+<li>Thu hẹp quanh cực trị, bước 0,1 hoặc 0,01.</li>
+<li>Kiểm lại bằng công thức đại số, ghi đáp số theo công thức.</li>
+</ol><h3>D1 ⭐ Con lắc lò xo: đại lượng cơ bản</h3><p>Con lắc lò xo $k = 50$ N/m, $m = 200$ g, biên độ $A = 6$ cm. Tính $\omega$, $T$, $f$, $v_{max}$, $a_{max}$ và cơ năng.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\omega = 15{,}81$ rad/s; $T = 0{,}3974$ s; $f = 2{,}516$ Hz; $v_{max} = 0{,}9487$ m/s; $a_{max} = 15{,}00$ m/s²; $W = 0{,}09000$ J.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Gõ <code>√(50÷0.2)</code>, <code>STO D</code>.</li>
+<li><code>2π÷D</code> cho $T$; <code>D÷(2π)</code> cho $f$.</li>
+<li><code>D×0.06</code> cho $v_{max}$; <code>D²×0.06</code> cho $a_{max}$; <code>0.5×50×0.06²</code> cho $W$.</li>
+</ul>
+<p><strong>Bẫy.</strong> Đổi $m$ về kg và $A$ về m trước khi thế.</p>
+</details><h3>D2 ⭐ Con lắc đơn góc nhỏ</h3><p>Con lắc đơn $\ell = 0{,}75$ m, $g = 9{,}81$ m/s², biên độ góc $8°$. Tính chu kì (công thức góc nhỏ) và tốc độ cực đại (công thức chính xác và gần đúng).</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $T = 1{,}737$ s (góc nhỏ); $v_{max} = 0{,}3784$ m/s (chính xác), $0{,}3787$ m/s (gần đúng $\sqrt{g\ell}\,\alpha_0$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>SETUP <strong>Độ</strong>: <code>√(2×9.81×0.75×(1−cos(8)))</code>.</li>
+<li>Gần đúng: đổi sang <strong>Rad</strong>, gõ <code>√(9.81×0.75)×(8π÷180)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Ở Rad mà gõ <code>cos(8)</code> là cos của 8 rad, sai hoàn toàn.</p>
+</details><h3>D3 ⭐ Li độ, vận tốc, gia tốc tại một thời điểm</h3><p>$x = 5\cos\left(4\pi t + \dfrac{\pi}{6}\right)$ (cm, s). Tính $x$, $v$, $a$ tại $t = 0{,}25$ s.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $x = -4{,}330$ cm; $v = 31{,}42$ cm/s; $a = 683{,}8$ cm/s².<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Rad. Gõ <code>4π×0.25 + π÷6</code>, <code>STO B</code>.</li>
+<li><code>5cos(B)</code>; <code>−5×4π×sin(B)</code>; <code>−(4π)²×5cos(B)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Vật ở li độ âm và $v\gt 0$: đang đi về phía dương.</p>
+</details><h3>D4 ⭐ Tổng hợp hai dao động</h3><p>$x_1 = 8\cos\left(2\pi t + \dfrac{\pi}{6}\right)$, $x_2 = 8\cos\left(2\pi t + \dfrac{\pi}{2}\right)$ (cm). Tìm biên độ và pha ban đầu của dao động tổng hợp.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $A = 13{,}86$ cm; $\varphi = 1{,}047$ rad $= \dfrac{\pi}{3}$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Số phức, <strong>Độ</strong>: <code>8∠30 + 8∠90</code> (∠ là <code>SHIFT ENG</code>), <code>=</code>, rồi <code>OPTN ▼ 1</code> (▶r∠θ): $13{,}86\angle 60$.</li>
+</ul>
+<p><strong>Lời giải.</strong> Hai biên độ bằng nhau nên pha tổng hợp là trung bình cộng: $\dfrac{30° + 90°}{2} = 60°$, $A = 2\cdot 8\cos 30°$.</p>
+</details><h3>D5 ⭐⭐ Thời điểm đầu tiên (SOLVE)</h3><p>Vật dao động điều hoà biên độ 10 cm, chu kì 0,6 s. Tại $t = 0$, vật ở li độ 5 cm và đang đi theo chiều âm. Tìm thời điểm đầu tiên vật có li độ $-5\sqrt3$ cm.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $t = 0{,}1500$ s ($= \dfrac{T}{4}$).<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Pha ban đầu $\varphi = \dfrac{\pi}{3}$ (vì $x\gt 0$, $v\lt 0$). Rad.</li>
+<li>Gõ <code>10cos(2π÷0.6×x + π÷3) = −5√3</code> (x là phím <code>x</code>), <code>SHIFT CALC</code>, giá trị đầu <code>0.1</code>, bấm <code>=</code>, rồi <code>=</code> thêm một lần để giải.</li>
+</ul>
+<p><strong>Lời giải.</strong> Từ pha $60°$ đến pha $150°$ là $90°$ nên $t = T/4 = 0{,}15$ s.<br />
+<strong>Bẫy.</strong> $\varphi = -\dfrac{\pi}{3}$ thì vật đang đi chiều dương: sai chiều thì sai đáp số.</p>
+</details><h3>D6 ⭐⭐ Quãng đường trong khoảng thời gian dài</h3><p>$x = 6\cos\left(4\pi t - \dfrac{\pi}{3}\right)$ (cm, s). Tính quãng đường vật đi được từ $t = 0$ đến $t = 1{,}375$ s.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $s = 63{,}80$ cm.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>$T = 0{,}5$ s, $\Delta t = 2T + 0{,}75T$.</li>
+<li>$2T$: <code>2×4×6</code> $= 48$ cm.</li>
+<li>Phần $0{,}75T$ ứng với pha $-60° \to 210°$:
+<ul>
+<li>từ pha $-60°$ đến $0°$: <code>6−3</code>$= 3$ cm.</li>
+<li>từ $0°$ đến $180°$: <code>2×6</code>$= 12$ cm.</li>
+<li>từ $180°$ đến $210°$: <code>6−6cos(30°)</code>$= 0{,}8038$ cm.</li>
+</ul></li>
+<li>Cộng: <code>48+3+12+0.8038</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $0{,}75T$ không phải lúc nào cũng $3A$; phụ thuộc vị trí đầu.</p>
+</details><h3>D7 ⭐⭐ Lực đàn hồi con lắc treo thẳng đứng</h3><p>Lò xo treo thẳng đứng, $k = 100$ N/m, $m = 0{,}25$ kg, $g = 9{,}8$ m/s². Tính $\Delta\ell_0$, $T$, lực đàn hồi cực đại và cực tiểu khi biên độ (a) 2 cm, (b) 5 cm.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\Delta\ell_0 = 2{,}450$ cm; $T = 0{,}3142$ s.<br />
+(a) $F_{max} = 4{,}450$ N; $F_{min} = 0{,}4500$ N.<br />
+(b) $F_{max} = 7{,}450$ N; $F_{min} = 0$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>0.25×9.8÷100</code> cho $\Delta\ell_0$, <code>STO A</code>.</li>
+<li><code>100(A+0.02)</code>, <code>100(A−0.02)</code>; rồi <code>100(A+0.05)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Ở (b) $A \gt  \Delta\ell_0$ nên $F_{min} = 0$, không phải $k(\Delta\ell_0 - A) \lt  0$.</p>
+</details><h3>D8 ⭐⭐ Đồng hồ quả lắc chạy chậm</h3><p>Đồng hồ quả lắc chạy đúng ở $t_1$. Thanh treo có hệ số nở dài $\alpha = 1{,}2.10^{-5}\ \text{K}^{-1}$; nhiệt độ tăng thêm $30$ °C. Tính tỉ số $T'/T$ và số giây đồng hồ chạy chậm mỗi ngày.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $\dfrac{T'}{T} = 1{,}00018$; chậm $15{,}55$ s mỗi ngày.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>√(1+1.2×10^−5×30)</code>, <code>STO A</code>.</li>
+<li><code>86400×(1−1÷A)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Chỉ dùng $\dfrac{86400\,\alpha\Delta t}{2}$ nếu đề cho phép gần đúng; ở đây dùng công thức chính xác.</p>
+</details><h3>D9 ⭐⭐ Động năng, thế năng</h3><p>Con lắc lò xo $m = 0{,}1$ kg, $k = 40$ N/m, $A = 5$ cm. Tại $x = 3$ cm tính thế năng, động năng, tốc độ. Tìm li độ để động năng gấp 3 lần thế năng.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $W = 0{,}05000$ J; $W_t = 0{,}01800$ J; $W_đ = 0{,}03200$ J; $v = 0{,}8000$ m/s; $x = \pm 2{,}500$ cm.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>0.5×40×0.05²</code> → <code>STO A</code>; <code>0.5×40×0.03²</code>; <code>A−Ans</code>; <code>√(2×Ans÷0.1)</code>.</li>
+<li>Li độ: <code>0.05÷√(3+1)</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Đổi cm sang m. Đáp số $x = \pm$ hai giá trị.</p>
+</details><h3>D10 ⭐⭐ Con lắc đơn góc lớn</h3><p>Con lắc đơn $\ell = 1$ m, $m = 0{,}1$ kg, $g = 9{,}8$ m/s², biên độ góc $60°$. Tại vị trí $\alpha = 30°$ tính tốc độ và lực căng dây.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $v = 2{,}678$ m/s; $\tau = 1{,}566$ N.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>SETUP <strong>Độ</strong>. <code>√(2×9.8×1×(cos(30)−cos(60)))</code>.</li>
+<li><code>0.1×9.8×(3cos(30)−2cos(60))</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> Dùng công thức góc nhỏ ($\alpha$ rad) ở góc $60°$ sai nhiều.</p>
+</details><h3>D11 ⭐⭐⭐ Tắt dần có ma sát</h3><p>Con lắc lò xo ngang, $k = 100$ N/m, $m = 0{,}2$ kg, hệ số ma sát $\mu = 0{,}05$, $g = 10$ m/s². Kéo vật đến $A_0 = 10$ cm rồi thả nhẹ. Tính (a) độ giảm biên độ mỗi nửa chu kì, (b) tốc độ cực đại lần đầu, (c) tổng quãng đường, (d) thời gian đến khi dừng.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> (a) $\Delta A = 2{,}000$ mm. (b) $v_1 = 2{,}214$ m/s. (c) $S = 5{,}000$ m. (d) $N = 50$ nửa chu kì, $t = 7{,}025$ s.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li><code>2×0.05×0.2×10÷100</code> → $0{,}002$.</li>
+<li>$\omega$: <code>√(100÷0.2)</code> <code>STO D</code>; $v_1$: <code>D×(0.1−0.001)</code> (với $x_0 = 0{,}001$ m).</li>
+<li><code>100×0.1²÷(2×0.05×0.2×10)</code>.</li>
+<li>$N = 0{,}1 \div 0{,}002 = 50$; <code>50×π÷D</code>.</li>
+</ul>
+<p><strong>Bẫy.</strong> $N$ nguyên nên vật dừng đúng ở O. Nếu $N$ có phần thập phân thì phải xét thêm.</p>
+</details><h3>D12 ⭐⭐⭐ Biên độ tổng hợp nhỏ nhất (TABLE)</h3><p>$x_1 = 6\cos\left(\omega t + \dfrac{\pi}{3}\right)$ cm và $x_2 = A_2\cos\left(\omega t - \dfrac{\pi}{2}\right)$ cm, $A_2$ thay đổi được. Tìm $A_2$ để biên độ tổng hợp nhỏ nhất, giá trị nhỏ nhất đó, và pha ban đầu khi đó.</p>
+<details class="casio-ans"><summary>Xem đáp số và cách bấm máy</summary>
+<p><strong>Đáp số.</strong> $A_2 = 5{,}196$ cm; $A_{min} = 3{,}000$ cm; $\varphi = 0$.<br />
+<strong>Bấm máy</strong></p>
+<ul>
+<li>Table (SETUP → Table → f(x) trước): <code>f(x) = √(36+x²+12x×cos(150))</code> (SETUP Độ; x là phím <code>x</code>), Start <code>0</code>, End <code>10</code>, Step <code>1</code>: nhỏ nhất quanh $x=5$ hoặc 6.</li>
+<li>Thu hẹp: Start <code>4.5</code>, End <code>6</code>, Step <code>0.1</code>: nhỏ nhất tại $5{,}2$.</li>
+<li>Kiểm công thức: <code>−6cos(150)</code>$= 5{,}196$, lưu vào biến: <code>STO A</code>; <code>6sin(150)</code>$= 3$.</li>
+<li>Pha: Số phức, <code>6∠60 + A∠−90</code> (dùng biến A, không gõ <code>5.196</code> đã làm tròn), <code>=</code>: $3\angle 0$.</li>
+<li>Gõ <code>5.196</code> thay cho A thì máy ra $3\angle 0{,}0029°$, không đúng $0$.</li>
+</ul>
+<p><strong>Lời giải.</strong> $\Delta\varphi = 150°$; cực tiểu khi $x_2$ triệt tiêu thành phần ảo của $x_1$.<br />
+<strong>Bẫy.</strong> Bảng cho nghiệm gần đúng (5,2); đáp số cuối là công thức (5,196).</p>
+</details><h3>Câu 1</h3><p>Một vật dao động điều hoà có tốc độ cực đại $0{,}2\pi$ m/s và gia tốc cực đại $4\pi^2$ m/s². Tính tần số góc, biên độ và chu kì.</p><details><summary>Đáp án</summary><pre>$\omega = \dfrac{a_{max}}{v_{max}} = 62{,}83$ rad/s $(= 20\pi)$; $A = \dfrac{v_{max}}{\omega} = 1{,}000$ cm; $T = 0{,}1000$ s.
+- Gõ: `4π²÷(0.2π)`, `STO D`; `0.2π÷D×100` (cm); `2π÷D`.</pre></details><h3>Câu 2</h3><p>Hai con lắc đơn dao động tại cùng một nơi. Trong cùng khoảng thời gian, con lắc thứ nhất thực hiện 30 dao động, con lắc thứ hai thực hiện 36 dao động. Hiệu chiều dài hai con lắc là $0{,}44$ m. Tính chiều dài và chu kì mỗi con lắc, lấy $g = 9{,}8$ m/s².</p><details><summary>Đáp án</summary><pre>$\dfrac{T_1}{T_2} = \dfrac{36}{30} = 1{,}2$ nên $\dfrac{\ell_1}{\ell_2} = 1{,}44$; $\ell_1 - \ell_2 = 0{,}44\ell_2 = 0{,}44$ nên $\ell_2 = 1{,}000$ m, $\ell_1 = 1{,}440$ m.
+$T_1 = 2{,}409$ s; $T_2 = 2{,}007$ s.
+- Gõ: `2π√(1.44÷9.8)`; `2π√(1÷9.8)`.</pre></details><h3>Câu 3</h3><p>Con lắc lò xo treo thẳng đứng dao động điều hoà với chu kì $0{,}4$ s tại nơi $g = 9{,}8$ m/s². Tỉ số giữa lực đàn hồi cực đại và cực tiểu là $3$. Tính độ biến dạng ở vị trí cân bằng, biên độ và tốc độ cực đại.</p><details><summary>Đáp án</summary><pre>$\dfrac{\Delta\ell_0 + A}{\Delta\ell_0 - A} = 3$ nên $A = \dfrac{\Delta\ell_0}{2}$ (và $A<\Delta\ell_0$ nên $F_{min}\neq 0$ hợp lệ).
+$\Delta\ell_0 = \dfrac{gT^2}{4\pi^2} = 3{,}972$ cm; $A = 1{,}986$ cm; $v_{max} = \dfrac{2\pi}{T}A = 31{,}19$ cm/s.
+- Gõ: `9.8×0.4²÷(4π²)`.</pre></details><h3>Câu 4</h3><p>$x_1 = 4\cos\left(2\pi t + \dfrac{\pi}{6}\right)$ và $x_2 = 3\cos\left(2\pi t - \dfrac{\pi}{3}\right)$ (cm, s). Tìm biên độ, pha ban đầu của dao động tổng hợp và thời điểm đầu tiên $t > 0$ vật có li độ $2{,}5$ cm (chấp nhận sai số $\pm 0{,}0001$ s do làm tròn pha).</p><details><summary>Đáp án</summary><pre>Hai dao động vuông pha ($30° - (-60°) = 90°$): $A = 5{,}000$ cm; $\varphi = 30° - \arctan\dfrac34 = -0{,}1199$ rad $(-6{,}870°)$.
+$x = 5\cos(2\pi t - 0{,}1199) = 2{,}5$: $2\pi t - 0{,}1199 = \pm\dfrac{\pi}{3} + 2k\pi$; nghiệm dương nhỏ nhất $t = 0{,}1857$ s (thế $\varphi$ đã làm tròn $-0{,}1199$ vẫn ra $0{,}1857$).
+- Gõ SOLVE: `5cos(2πx − 0.1199) = 2.5` (x là phím `x`), giá trị đầu `0.2`. Kiểm: nghiệm $-\dfrac{\pi}{3}$ cho $t<0$.</pre></details><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script><script>renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]})</script>
