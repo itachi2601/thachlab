@@ -42,6 +42,7 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 - Gộp các tiết liền nhau cùng môn/lớp thành một mục; ghi giờ vào đầu tiết đầu và cuối tiết cuối.
 
 ## Quy ước (thầy chốt 18/10/2026)
+- **Lịch công tác tuần được ưu tiên** (thầy chốt 19/10/2026): việc khác trùng giờ với mục công tác thì KHÔNG tự bỏ, chỉ ghi cảnh báo "cần nhờ người dạy/dự thay" ở khung Cần chú ý (đầu mục Lịch tuần) để thầy nhờ người xem hộ. Hai mục công tác trùng nhau thì để thầy chọn mục dự. Script tự sinh các cảnh báo này (bước 5b).
 - **Mục công tác có chữ "Thạch" (Thầy Thạch, Đ/c Thạch, Diệu Thạch…) là thầy — luôn giữ** dù không có trưởng/phó khoa hay giao ban. Cả trường chỉ có một người tên Thạch (thầy chốt 19/10/2026), nên khớp chữ "thạch" là đủ; từ khoá ở `ten_thay` trong `references/lich-co-dinh.json`. Mục khớp được ghi chú "CÓ TÊN THẦY".
 - Sáng T7 8h–11h dạy HSG KHTN 9 ở THCS Trần Văn Ơn.
 - T2: họp cán bộ 7h15–8h15, sau đó cà phê cùng cán bộ bộ môn; 10h có việc khác (nội dung chưa rõ, giả định 1 giờ — hỏi thầy tên việc).

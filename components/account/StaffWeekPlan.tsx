@@ -175,6 +175,12 @@ export default function StaffWeekPlan() {
 
       {plan && (
         <>
+          {plan.warnings.length > 0 && (
+            <div className="mt-4 rounded-2xl border border-warn p-4" role="alert">
+              <h3 className="text-sm font-bold text-warn">Cần chú ý — nhờ người xem hộ</h3>
+              <ul className="mt-2 space-y-2 text-sm text-ink">{plan.warnings.map((w, i) => <li key={i}>{w}</li>)}</ul>
+            </div>
+          )}
           {next && (
             <p className="mt-4 rounded-xl border border-primary bg-primary-soft px-4 py-3 text-sm text-ink">
               <span className="font-bold">{next.label}</span>
@@ -230,9 +236,6 @@ export default function StaffWeekPlan() {
             })}
           </div>
 
-          {plan.warnings.length > 0 && (
-            <ul className="mt-4 space-y-1 text-sm text-warn">{plan.warnings.map((w, i) => <li key={i}>{w}</li>)}</ul>
-          )}
           <p className="mt-4 text-xs text-muted">Cập nhật {new Date(plan.updated_at).toLocaleString("vi-VN")}</p>
         </>
       )}

@@ -177,6 +177,25 @@ slots(rules.the_thao.gym, "Tập gym", rules.the_thao.gym.min_buoi, []); // gym 
   if (cand.length < pt.min_buoi) warn.push(`Phát triển thachlab: chỉ có ${cand.length}/${pt.min_buoi} khoảng trống đủ ${pt.toi_thieu_phut} phút.`);
 }
 
+// 5b. ưu tiên lịch công tác: việc khác trùng giờ thì ghi "nhờ người xem hộ"; hai mục công tác trùng nhau thì để thầy chọn
+{
+  const DN = ["", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"];
+  const cts = evs.filter((e) => e.src === "lịch công tác");
+  const over = (a: Ev, b: Ev) => a !== b && a.weekday === b.weekday && toMin(a.start) < toMin(b.end) && toMin(a.end) > toMin(b.start);
+  for (const c of cts) {
+    const when = `${DN[c.weekday]} ${fmt(dayOf(c.weekday))}`;
+    for (const e of evs) {
+      if (!over(c, e)) continue;
+      if (e.src === "lịch công tác") {
+        if (cts.indexOf(c) < cts.indexOf(e)) warn.push(`${when}: hai mục công tác trùng giờ — "${c.title.slice(0, 45)}" (${c.start}–${c.end}) và "${e.title.slice(0, 45)}" (${e.start}–${e.end}). Thầy chọn mục dự, mục còn lại nhờ người dự hộ.`);
+        continue;
+      }
+      e.note = [e.note, `NHƯỜNG LỊCH CÔNG TÁC — cần nhờ người xem hộ`].filter(Boolean).join(" · ");
+      warn.push(`${when}: "${e.title.slice(0, 45)}" (${e.start}–${e.end}) trùng "${c.title.slice(0, 45)}" (${c.start}–${c.end}). Ưu tiên lịch công tác — cần nhờ người dạy/dự thay.`);
+    }
+  }
+}
+
 // 6. xuất
 const NAME = ["", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"];
 let out = `# Lịch tuần ${fmt(mon)}–${fmt(dayOf(7))}/${mon.getFullYear()}\n\n`;
