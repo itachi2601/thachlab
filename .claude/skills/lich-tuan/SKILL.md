@@ -42,6 +42,7 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 - Gộp các tiết liền nhau cùng môn/lớp thành một mục; ghi giờ vào đầu tiết đầu và cuối tiết cuối.
 
 ## Quy ước (thầy chốt 18/10/2026)
+- **Mục công tác ghi tên "Thầy/Đ/c Diệu Thạch" (hoặc Ngô Diệu Thạch) là thầy — luôn giữ** dù không có trưởng/phó khoa hay giao ban (thầy dặn 19/10/2026). Danh sách cách viết ở `ten_thay` trong `references/lich-co-dinh.json`; mục khớp tên được ghi chú "CÓ TÊN THẦY". Gặp cách viết khác (ví dụ "Đ/c Thạch" chung với người khác) thì hỏi thầy, đừng đoán.
 - Sáng T7 8h–11h dạy HSG KHTN 9 ở THCS Trần Văn Ơn.
 - T2: họp cán bộ 7h15–8h15, sau đó cà phê cùng cán bộ bộ môn; 10h có việc khác (nội dung chưa rõ, giả định 1 giờ — hỏi thầy tên việc).
 - Duyệt đồ án 8h30–9h30 vào T4 và T6 (thầy xác nhận 18/10/2026; T2 không có duyệt đồ án).

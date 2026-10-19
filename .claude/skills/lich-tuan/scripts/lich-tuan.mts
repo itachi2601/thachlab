@@ -117,9 +117,11 @@ for (const l of ctLines) {
   else blocks[blocks.length - 1].text += " | " + l.text;
 }
 const kw = (rules.loc_lich_cong_tac as string[]).map((s) => s.toLowerCase());
+const myName = ((rules.ten_thay ?? []) as string[]).map((s) => s.toLowerCase()); // mục có đích danh thầy: luôn giữ
 for (const b of blocks) {
   const low = b.text.toLowerCase();
-  const hit = kw.find((k) => low.includes(k));
+  const byName = myName.find((k) => low.includes(k));
+  const hit = byName ?? kw.find((k) => low.includes(k));
   if (!hit) continue;
   const t = b.text.match(/^(\d{1,2})h(\d{0,2})/);
   const r = b.text.match(/^(\d{1,2})h(\d{0,2})\s*[-–]\s*(\d{1,2})h(\d{0,2})/);
@@ -130,7 +132,7 @@ for (const b of blocks) {
   const where = parts[0].match(/tại\s+(.+)$/i)?.[1];
   const title = parts.length > 1 ? parts[1] : parts[0];
   const tp = parts.slice(2).join(" | ");
-  evs.push({ weekday: b.day, start, end, title: title.slice(0, 200), where, src: "lịch công tác", note: [tp.slice(0, 300), !t ? "KHÔNG rõ giờ — kiểm bản gốc" : r ? "" : "giờ kết thúc ước 90 phút"].filter(Boolean).join(" · ") });
+  evs.push({ weekday: b.day, start, end, title: title.slice(0, 200), where, src: "lịch công tác", note: [byName ? "CÓ TÊN THẦY" : "", tp.slice(0, 300), !t ? "KHÔNG rõ giờ — kiểm bản gốc" : r ? "" : "giờ kết thúc ước 90 phút"].filter(Boolean).join(" · ") });
   console.error(`  [lịch công tác] "${title.slice(0, 60)}" khớp "${hit}"`);
 }
 if (ct && !blocks.length) warn.push("Tải được trang công tác nhưng không tách được mục — dán nội dung vào file rồi dùng --cong-tac.");
