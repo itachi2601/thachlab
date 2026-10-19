@@ -38,6 +38,7 @@ FILES=(
   "supabase/migrations/20261016170000_ta_he_so_phu_dao_1_1_1_2.sql|Hệ số phụ đạo trợ giảng 1,1 (1–2 em) / 1,2 (3–4 em) để chi phí tăng tối đa ~10% (hàm ta_monthly_policy)|lúc nào cũng được, chỉ đổi 1 hàm|chạy lại bản trong 20261016150000_ta_diem_thay_mac_dinh_day.sql"
   "supabase/migrations/20261016130000_hsg9_dot3_muc_noi_dung.sql|Khoá HSG Vật lí: tạo mục Lý thuyết + Bài tập mẫu (rỗng) cho CĐ15 Âm (150), CĐ16 (164), CĐ12 (153), bài vẫn ẩn|lúc nào cũng được (chỉ chèn)"
   "supabase/migrations/20261017120000_rate_limit_hardening.sql|Giới hạn tần suất: bảng rate_hits + rl_allow, chặn dò resolve_login_email/quiz_join, vá search_path hàm definer|lúc nào cũng được, nhưng nên ngoài giờ HS làm bài"
+  "supabase/migrations/20261019120000_lop_casio_giai_vat_li_mtct.sql|Lớp + môn Giải Vật lí trên máy tính cầm tay (Casio): 1 chương + 5 bài ẩn (chỉ chèn dữ liệu)|lúc nào cũng được"
   "supabase/migrations/20261017150000_reset_code_manh_hon.sql|Mã đặt lại mật khẩu RS + 10 hex (trước 6), CHECK hạn tối đa 7 ngày cho bản ghi mới|lúc nào cũng được"
   "supabase/migrations/20261017190000_rank_bat_het_de_kiem_tra.sql|Bật nguồn RP mọi đề Kiểm tra/BTVN còn thiếu + đề đã nộp (mùa 4, 5) rồi tính lại mùa, có sao lưu|ngoài giờ học sinh làm bài"
   "supabase/migrations/20261017200000_rank_thong_bao_cong_bu_nang_nguong.sql|Chuông báo em được cộng bù RP + nâng min_rp mọi bậc mùa 4, 5 lên ×1,07 rồi tính lại, báo em tụt bậc, có sao lưu rank_tiers|ngoài giờ học sinh làm bài (chạy sau 20261017190000)"

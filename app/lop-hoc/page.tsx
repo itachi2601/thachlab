@@ -25,6 +25,8 @@ import {
   displayClassesByGrade,
   AVCN_CLASS_SLUG,
   AVCN_SUBJECT_CODE,
+  CASIO_CLASS_SLUG,
+  CASIO_SUBJECT_CODE,
   expandClassIdsByGrade,
   fetchMyClassRequest,
 } from "@/services/classes";
@@ -230,9 +232,16 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     effectiveSlug ? c.slug === effectiveSlug : c.id === activeId,
   );
   const isAvcn = active?.slug === AVCN_CLASS_SLUG;
-  const subjectCode = isAvcn ? AVCN_SUBJECT_CODE : classGrade(active?.name ?? "") === "9" ? activeSubjectCode : "vat-ly";
+  const isCasio = active?.slug === CASIO_CLASS_SLUG;
+  const subjectCode = isAvcn
+    ? AVCN_SUBJECT_CODE
+    : isCasio
+    ? CASIO_SUBJECT_CODE
+    : classGrade(active?.name ?? "") === "9"
+    ? activeSubjectCode
+    : "vat-ly";
   const activeDisplayName = active
-    ? isAvcn
+    ? isAvcn || isCasio
       ? active.name
       : classGrade(active.name) === "9"
       ? subjectCode === HSG_SUBJECT_CODE

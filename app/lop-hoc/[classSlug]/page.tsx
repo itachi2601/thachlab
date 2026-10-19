@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ClassHubPage from "../page";
-import { MANAGED_CLASSES, AVCN_CLASS_SLUG } from "@/services/classes";
+import { MANAGED_CLASSES, AVCN_CLASS_SLUG, CASIO_CLASS_SLUG } from "@/services/classes";
 
 export const dynamicParams = false;
 
@@ -22,6 +22,13 @@ export async function generateMetadata({
     return {
       title: "Anh văn chuyên ngành Cơ khí — CTTC",
       description: "Từ vựng, đọc hiểu tài liệu kỹ thuật và luyện đề cuối kỳ Anh văn chuyên ngành Cơ khí cho sinh viên CTTC.",
+    };
+  }
+
+  if (classSlug === CASIO_CLASS_SLUG) {
+    return {
+      title: "Giải Vật lí trên máy tính cầm tay — Casio fx-580VN X",
+      description: "Kỹ thuật bấm máy Casio fx-580VN X và bài luyện theo chuyên đề cho kỳ thi Giải Vật lí trên máy tính cầm tay.",
     };
   }
 

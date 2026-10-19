@@ -13,6 +13,10 @@ interface ManagedClassSeed {
 export const AVCN_CLASS_SLUG = "avcn";
 export const AVCN_SUBJECT_CODE = "avcn";
 
+/** Lớp "Giải Vật lí trên máy tính cầm tay" (Casio fx-580VN X) — lớp riêng, môn riêng, không thuộc khối THPT 9–12. */
+export const CASIO_CLASS_SLUG = "casio-vat-ly";
+export const CASIO_SUBJECT_CODE = "casio-vat-ly";
+
 export const MANAGED_CLASSES: ManagedClassSeed[] = [
   {
     name: "KHTN 9",
@@ -49,6 +53,14 @@ export const MANAGED_CLASSES: ManagedClassSeed[] = [
     color: "#0284C7",
     icon: "📘",
     sort_order: 6,
+  },
+  // Lớp ôn thi Giải Vật lí trên máy tính cầm tay (19/10/2026): nội dung = môn academic_subjects 'casio-vat-ly'.
+  {
+    name: "Giải Vật lí trên máy tính cầm tay",
+    slug: CASIO_CLASS_SLUG,
+    color: "#F59E0B",
+    icon: "🧮",
+    sort_order: 7,
   },
 ];
 

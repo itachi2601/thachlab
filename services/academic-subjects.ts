@@ -5,6 +5,8 @@ export const ACADEMIC_SUBJECTS = [
   { code: "hsg-vat-ly", label: "Vật lí HSG & chuyên", icon: "🏆" },
   // Anh văn chuyên ngành Cơ khí (CTTC) — lớp riêng slug "avcn", không phải tab môn của KHTN 9.
   { code: "avcn", label: "Anh văn chuyên ngành Cơ khí", icon: "📘" },
+  // Giải Vật lí trên máy tính cầm tay (Casio fx-580VN X) — lớp riêng slug "casio-vat-ly".
+  { code: "casio-vat-ly", label: "Giải Vật lí trên máy tính cầm tay", icon: "🧮" },
 ] as const;
 
 export type AcademicSubjectCode = (typeof ACADEMIC_SUBJECTS)[number]["code"];
@@ -15,7 +17,7 @@ export const HSG_HREF = `/lop-hoc/khtn-9?subject=${HSG_SUBJECT_CODE}`;
 
 export function subjectsForGrade(grade: string) {
   void grade; // điểm mở rộng để giới hạn môn theo khối khi có cấu hình riêng
-  return ACADEMIC_SUBJECTS.filter((subject) => subject.code !== HSG_SUBJECT_CODE && subject.code !== "avcn");
+  return ACADEMIC_SUBJECTS.filter((subject) => subject.code !== HSG_SUBJECT_CODE && subject.code !== "avcn" && subject.code !== "casio-vat-ly");
 }
 
 export function academicSubject(code: string | null | undefined) {
