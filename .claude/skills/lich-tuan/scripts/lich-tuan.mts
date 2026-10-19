@@ -225,6 +225,27 @@ if (arg("--ghi")) {
   if (we) throw we;
   console.log(`Đã ghi ${events.length} mục vào staff_week_plans (${email}, tuần ${iso(mon)}).`);
 }
+// 7. .ics cho Lịch Apple: UID cố định theo ngày+tiêu đề nên chạy lại rồi nhập lại sẽ cập nhật, không tạo trùng. Giờ đổi sang UTC (VN = UTC+7, không DST).
+{
+  const esc = (t: string) => t.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
+  const utc = (d: Date, t: string) => { const [y, mo, da] = iso(d).split("-").map(Number); const m = toMin(t) - 7 * 60; return new Date(Date.UTC(y, mo - 1, da, 0, m)).toISOString().replace(/[-:]/g, "").replace(/\.\d+Z$/, "Z"); };
+  const fold = (l: string) => (l.length <= 70 ? l : l.match(/.{1,70}/g)!.join("\r\n "));
+  const stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d+Z$/, "Z");
+  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//thachlab//lich-tuan//VI", "CALSCALE:GREGORIAN", "X-WR-CALNAME:Thạch – công tác"];
+  for (const e of evs) {
+    const d = dayOf(e.weekday);
+    const slug = Buffer.from(e.title).toString("base64url").slice(0, 24);
+    const desc = [e.lesson, e.note, `Nguồn: ${e.src}`].filter(Boolean).join("\n");
+    lines.push("BEGIN:VEVENT", `UID:${iso(d)}-${slug}@thachlab.id.vn`, `DTSTAMP:${stamp}`, `DTSTART:${utc(d, e.start)}`, `DTEND:${utc(d, e.end)}`, `SUMMARY:${esc(e.title)}`);
+    if (e.where) lines.push(`LOCATION:${esc(e.where)}`);
+    lines.push(`DESCRIPTION:${esc(desc)}`, "END:VEVENT");
+  }
+  lines.push("END:VCALENDAR");
+  const icsFile = path.join(root, `scripts/data/lich-tuan/${iso(mon)}.ics`);
+  fs.mkdirSync(path.dirname(icsFile), { recursive: true });
+  fs.writeFileSync(icsFile, lines.map(fold).join("\r\n") + "\r\n");
+  console.log(`→ ${icsFile}  (mở bằng: open "${icsFile}")`);
+}
 const file = path.join(root, `scripts/data/lich-tuan/${iso(mon)}.md`);
 fs.writeFileSync(file, out);
 console.log(out + `\n→ ${file}`);
