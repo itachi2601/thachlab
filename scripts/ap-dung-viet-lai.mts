@@ -27,7 +27,10 @@ for (const k of kq.values()) {
   if (k.ghi_chu && String(k.ghi_chu).trim()) { lech.push({ id: k.id, db: dbAnswer(r.question), agent: k.answer, ghi_chu: k.ghi_chu, khop: true }); bo.ghiChu++; continue; }
   const ex = tachMuiTen(lamSach(String(k.explanation ?? "")));
   if (plain(ex).length < 80) { bo.ngan++; continue; }
-  if (!/(sai|không đúng|không khớp) vì/i.test(plain(ex))) { bo.ngan++; lech.push({ id: k.id, loi: "thiếu Sai vì" }); continue; }
+  const loai = r.question.type;
+  if (loai === "multiple_choice" && !/(sai|không đúng|không khớp) vì/i.test(plain(ex))) { bo.ngan++; lech.push({ id: k.id, loi: "thiếu Sai vì" }); continue; }
+  if (loai === "true_false" && !["a", "b", "c", "d"].every((c) => new RegExp(`<p[^>]*>\\s*${c}\\)\\s*(Đúng|Sai)\\.`).test(ex))) { bo.ngan++; lech.push({ id: k.id, loi: "thiếu a)–d) Đúng./Sai." }); continue; }
+  if (loai === "short_answer" && !/Đáp số/.test(plain(ex))) { bo.ngan++; lech.push({ id: k.id, loi: "thiếu Đáp số" }); continue; }
   if (katexLoi(ex) > 0 || loiMuiTen(ex) > 0) { bo.katex++; lech.push({ id: k.id, loi: "katex/mui_ten", ex }); continue; }
   plan.push({ id: k.id, truoc: r.question, sau: { ...r.question, explanation: ex } });
 }
