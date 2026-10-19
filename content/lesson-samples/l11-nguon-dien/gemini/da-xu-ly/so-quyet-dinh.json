@@ -1,6 +1,6 @@
 {
   "bai": "l11-nguon-dien",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -123,5 +123,101 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-nguon-dien/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành vôn kế của pin gần như đứng yên ở 2,98 V (hụt chút ít so với 3,0 V, mục 3 giải thích), khớp với U < 𝓔 khi mạch kín."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ 'Trong nguồn, công của lực lạ lớn hơn độ lớn công cản của lực điện', giữ nguyên LaTeX."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ ký hiệu I_đm, mở rộng chú thích thành '(đm: đoản mạch, không phải định mức)' để khỏi đổi ký hiệu ở nhiều chỗ."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm '(vì q = It)' và '(định luật Joule)' vào câu dẫn định luật Ohm toàn mạch."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi riêng ampe kế đọc tới 0,01 A và vôn kế đọc tới 0,01 V; bỏ liệt kê các giá trị R (đã có trong bảng) để bù chữ."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục III sát trần nên thêm phép tính 0,45 A → 1,36 V và 0,25 A → 0,75 V vào hộp details ngay dưới bảng Bẫy 3."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết đủ 9,0 − 3,0·1,0 = 6,0 V trong lời giải câu c."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước mô phỏng cho số cụ thể pin 9 V, R = 10 Ω, r tăng lên 2 Ω, bước Rút ra có đáp số I = 0,75 A, U = 7,5 V."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, phản hồi đã nhấn lỗi 'dây nóng' nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi B đã nhấn công lực điện mạch ngoài là Uq nhỏ hơn 1,5 J mỗi coulomb."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn U/I là R mạch ngoài và có câu r = −ΔU/ΔI trước quiz."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi quên cộng r ở phản hồi B và mục Đọc đề."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 ngay trước quiz đã nhấn hở mạch và mạch kín khác nhau."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề và bảng Bẫy 2 đã nhấn chiều dòng trong nguồn."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn U nhỏ hơn 𝓔 khi có dòng ở nhiều chỗ, phản hồi A nêu rõ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Thí nghiệm tụ/pin (II.1): vôn kế của pin đổi từ 'đứng ở 3,0 V' thành 'gần như đứng yên ở 2,98 V' (hai pin r ≈ 0,6 Ω, I ≈ 0,03 A qua 100 Ω).",
+      "Mục II.2: A_l > A_đ nay ghi rõ là trong nguồn, so sánh với độ lớn công cản của lực điện.",
+      "Thí nghiệm đo U (II.3): ampe kế đọc tới 0,01 A, vôn kế đọc tới 0,01 V; bước Làm bỏ liệt kê R (giá trị vẫn nằm trong bảng).",
+      "Mục II.4: thêm (vì q = It) và (định luật Joule) trong phép dẫn 𝓔 = I(R + r).",
+      "Mục II.4: chú thích I_đm thêm 'không phải định mức'.",
+      "Quiz 2 phản hồi B bỏ '(mục 3)'; quiz 4 phản hồi D rút gọn thành 'vì r nối tiếp R' (không đổi vật lí).",
+      "Bẫy 3 (trong details): thêm phép tính pin mới I = 1,5/3,3 ≈ 0,45 A, U ≈ 1,36 V và pin gần hết I = 0,25 A, U = 0,75 V.",
+      "Bài mẫu câu c (trong details): viết đủ U' = 9,0 − 3,0·1,0 = 6,0 V.",
+      "Mô phỏng PhET (trong details): thêm số liệu pin 9 V, R = 10 Ω, r = 2 Ω cho I = 0,75 A, U = 7,5 V."
+    ],
+    "so_tu_them": 23,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-nguon-dien/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

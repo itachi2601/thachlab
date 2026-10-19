@@ -1,6 +1,6 @@
 {
   "bai": "l11-dien-the",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -112,5 +112,105 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-dien-the/gemini/da-xu-ly/theory.src.202610091140.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (chú thích Hình 2 không có trong HTML)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm hai dòng vào ô Đọc bảng (mục sát trần): d = 10 cm là khoảng cách hai lá, với điểm đo thì V = Ex, x đóng vai d."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng đọc đề ghi rõ từ M tới bản âm là cùng chiều đường sức nên d = +x."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phần Rút ra ghi vôn kế số hiện V_đỏ − V_đen nên đổi que thì đổi dấu."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Vòng trước đã thêm A = qU, nay chèn thêm bước (−e)(−200 V) = +200·(e·1 V) trong details."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi A ghi rõ lấy E = 6 V/m (đặt U vào chỗ E), 6·0,05 = 0,3 V."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi phương án B thành −20 V; +60 μJ và phản hồi B ghi phép tính W = (−3)(−20) = +60 μJ."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: d dương khi hình chiếu của vectơ MN cùng chiều đường sức, âm khi ngược chiều."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua dòng 🔑 và ví dụ cầu thang nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về q = −e đã có trước Câu 2 từ vòng 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Lý do vòng trước còn đúng: mục II sát trần và phản hồi đã dặn x tính bằng mét."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở dòng Đại lượng đại số và Bẫy 1."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ cos không phải sin đã có trước Câu 5 từ vòng 1."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua tiêu đề đổi điểm đầu và bước c lời giải."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở dòng Đổi mốc: mọi V đổi, U giữ nguyên."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 1: phương án nhiễu B đổi từ '−20 V; −60 μJ' thành '−20 V; +60 μJ', phản hồi B kèm phép tính W = (−3)(−20) = +60 μJ (đáp án đúng A không đổi).",
+      "Mục II.3 thí nghiệm vôn kế: thêm ý vôn kế số hiện V_đỏ − V_đen, đổi que thì đổi dấu.",
+      "Mục II.4: d dương khi hình chiếu của vectơ MN cùng chiều đường sức, âm khi ngược chiều.",
+      "Mục II.4 ô Đọc bảng (details): thêm d = 10 cm là khoảng cách hai lá, U = 6,0 V giữa hai lá, với điểm đo V = Ex.",
+      "Câu 3: phản hồi A ghi 6 V/m · 0,05 m = 0,3 V; bỏ câu 'đúng giữa hai bản thì được nửa hiệu điện thế' ở phản hồi đúng.",
+      "Bài toán mẫu, bảng đọc đề: thêm từ M tới bản âm cùng chiều đường sức nên d = +x (V_M = +30 V).",
+      "Bước 3 điền khuyết: thêm bước (−e)(−200 V) = +200·(e·1 V) = 200 eV (số không đổi).",
+      "Cắt bớt: câu 'Viết đủ A = qU_MN với cả hai dấu' ở phản hồi Câu 2, rút gọn ví dụ trượt dốc và phản hồi D Câu 7 (không đổi nội dung vật lí)."
+    ],
+    "so_tu_them": 4,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-dien-the/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

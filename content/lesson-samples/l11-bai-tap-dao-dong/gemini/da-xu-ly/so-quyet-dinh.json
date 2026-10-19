@@ -1,6 +1,6 @@
 {
   "bai": "l11-bai-tap-dao-dong",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-10",
     "model": "claude-opus-5-5",
@@ -130,5 +130,105 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-bai-tap-dao-dong/gemini/da-xu-ly/theory.src.202610100630.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng ⚠ trước Câu 7 nay phân biệt pha ban đầu φ chọn trong (−π;π] (nơi áp quy tắc dấu Họ 3) với pha ωt+φ tăng và được vượt π."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gạch đầu dòng hình chiếu ở Họ 4 thêm mốc: pha ±π/2 thì vật qua O, pha 0 hoặc π thì vật ở biên."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi chú công thức A² đổi thành 'chia hai vế hệ thức độc lập ở Họ 2 cho ω² rồi chuyển vế'; không thêm ví dụ số vì mục II đã dài."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 3 thêm câu: T = 1,203 s làm tròn tới cùng hàng với sai số nên ghi 1,20 s (bù bằng cách rút 'Chia cả giá trị lẫn sai số cho 10' thành 'Chia 10')."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Rút ra của thí nghiệm quay chậm thêm 'một chu kì ứng với 0,80·240 = 192 khung'."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không chuyển cả thí nghiệm; chỉ chuyển câu kết luận 'nửa quãng đường không phải nửa thời gian' (kèm lý do gần biên đi chậm) lên dòng ⚠ ở Họ 4, trước Câu 5."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Họ 2 ghi một lần $v_{max} = |v|_{max} = A\\omega$ để thống nhất ký hiệu tốc độ cực đại."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng bài mẫu tách hai dòng: T = 2π/ω → họ 1, v_max = Aω → họ 2."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán, phản hồi đã nhấn biên–biên là nửa dao động; thêm ⚠ sẽ lộ đáp án."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn $-\\cos\\alpha = \\cos(\\alpha+\\pi)$ ngay trước Câu 1."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'a luôn trái dấu x' trước Câu 2."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ chia cả giá trị lẫn sai số cho 10 đã có từ vòng trước."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy tắc $v_0 \\lt 0$ thì $\\varphi \\gt 0$ đã có ngay trong Họ 3 trước Câu 4."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu 'Từ O tới A/2: quét 30°, mất T/12' không có trong bài (ý chống lỗi B đã xử lý qua c6)."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 Bẫy 2 đã nhấn 'quãng đường cộng từng đoạn' trước Câu 6."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ hai lần qua O cách nhau T/2 đã có từ vòng trước."
+      }
+    ],
+    "doi_noi_dung": [
+      "Họ 2: ghi $v_{max} = |v|_{max} = A\\omega$ (thống nhất ký hiệu tốc độ cực đại).",
+      "Câu 3 (phản hồi đúng): thêm quy tắc làm tròn giá trị T = 1,203 s tới cùng hàng với sai số thành 1,20 s; đáp án A không đổi.",
+      "Họ 3: công thức $A^2 = x_0^2 + (v_0/\\omega)^2$ ghi rõ là chia hệ thức độc lập cho ω² rồi chuyển vế.",
+      "Họ 4: thêm mốc pha ±π/2 ứng với vật qua O, pha 0 hoặc π ứng với biên.",
+      "Họ 4: dòng ⚠ T/4 thêm 'gần biên vật đi chậm, nên nửa quãng đường không phải nửa thời gian' (câu này bỏ khỏi bước Rút ra của thí nghiệm quay chậm).",
+      "Thí nghiệm quay chậm: thêm một chu kì = 0,80·240 = 192 khung (192/12 = 16, 192/6 = 32 khớp bảng).",
+      "Bài mẫu (bảng phân tích): T = 2π/ω xếp vào họ 1, v_max = Aω giữ ở họ 2.",
+      "Câu 7 (dòng ⚠): phân biệt pha ban đầu φ ∈ (−π;π] với pha ωt+φ được vượt π."
+    ],
+    "so_tu_them": 40,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-bai-tap-dao-dong/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

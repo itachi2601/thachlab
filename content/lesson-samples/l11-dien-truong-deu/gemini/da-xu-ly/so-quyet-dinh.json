@@ -1,6 +1,6 @@
 {
   "bai": "l11-dien-truong-deu",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -114,5 +114,112 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-dien-truong-deu/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục Cách tạo thêm điều kiện hai bản rộng hơn nhiều so với khoảng cách d, ý \"xa mép\" đã có ở dòng gần mép bản ngay dưới."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Rút ra viết lại: V là hiệu điện thế từ thanh âm tới điểm đo nên V/x là E trên đoạn x, mọi đoạn cùng E = U/d nên trường đều."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Theo phương án 2: details chỉ giữ ý sai số vôn kế ±0,1 V như nhau mọi hàng, bỏ hai phép tính sẵn đáp án câu 3 (phản hồi quiz vẫn có số)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước t = x/v0 thay vào y và chú thích nhánh là nửa parabol ứng với x ≥ 0, bù bằng rút gọn câu Mẹo ném ngang."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng Bẫy 1 sửa thành \"Electron hoặc ion âm (q<0)\" cho khớp câu dẫn."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng sai ở Bẫy 3 ghi rõ U = 100 V trước d = 2 cm."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục II.3 thêm điều kiện bỏ qua trọng lực khi mg rất nhỏ so với |q|E (electron, proton, ion), khớp câu Trả bài 6."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (chú thích Hình 4 không có trong bài)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thử thách ⭐⭐⭐ ghi rõ D = 20 cm = 200 mm và gắn đơn vị mm cho 200, 225, 25 trong các phép tính."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q1 đã giải thích D (giọt âm bị bản âm đẩy), không thêm ⚠ vào câu dự đoán trước khi học."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q2 đã chỉ ra lối nghĩ theo điện tích điểm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đề câu đã nêu sai số cố định ±0,1 V và phản hồi xử lí B, thêm ⚠ sẽ lộ đáp án."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu q > 0 lệch về bản âm ngay trước quiz và phản hồi nhắc tìm chiều E trước."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn chiều đường sức là chiều lực lên điện tích dương."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 ngay trước quiz đã ghi lực bằng 0 và quỹ đạo thẳng khi ra khỏi bản."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và dòng 🔑 đã nhấn đổi d ra mét."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về y tỉ lệ với t² đã thêm trước quiz q8 ở vòng 1."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1 Cách tạo: thêm điều kiện hai bản rộng hơn nhiều so với khoảng cách d.",
+      "II.2 thí nghiệm đo, bước Rút ra: giải thích V là hiệu điện thế từ thanh âm tới điểm đo nên V/x là E trên đoạn x.",
+      "II.2 details \"Sai số đến từ đâu?\": bỏ phép tính 10 V/m (7 %) và 2 V/m (1,3 %), chỉ giữ sai số ±0,1 V như nhau mọi hàng (số liệu vẫn có trong phản hồi q3).",
+      "II.3: thêm điều kiện bỏ qua trọng lực mg ≪ |q|E.",
+      "II.3: thêm bước khử t (t = x/v0 thay vào y) và giải thích nhánh parabol ứng với x ≥ 0.",
+      "II.3: rút gọn câu Mẹo ném ngang thành \"Ném ngang, đổi g thành a\" với a = |q|E/m.",
+      "Bẫy 1 bảng: \"Electron hoặc ion âm (q<0)\".",
+      "Bẫy 3 bảng: dòng sai ghi rõ U = 100 V.",
+      "Thử thách ⭐⭐⭐: ghi D = 20 cm = 200 mm, gắn đơn vị mm cho 200, 225, 25 (kết quả 20 mm, 22,5 mm, 2,5 mm không đổi).",
+      "Bỏ câu \"Chọn lại nhé.\" ở phản hồi sai q1 để bù độ dài."
+    ],
+    "so_tu_them": 42,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-dien-truong-deu/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

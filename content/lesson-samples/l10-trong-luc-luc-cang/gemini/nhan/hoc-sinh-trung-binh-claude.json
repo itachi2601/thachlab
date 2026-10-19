@@ -6,170 +6,175 @@
     {
       "id": "c1",
       "vi_tri": "I. Mở bài: chiếc đĩa CD treo trên tường",
-      "trich_nguyen_van": "sợi dây kéo dài xuống luôn đi qua <strong>đúng tâm lỗ</strong>, chỗ không hề có thép",
-      "loai": "khác",
-      "muc": "nhỏ",
-      "em_hieu_la": "Đĩa CD làm bằng thép? Ngay câu dự đoán sau lại ghi 'dù chỗ đó không có nhựa', nên học sinh không rõ đĩa làm bằng gì.",
-      "de_xuat": "Đổi 'không hề có thép' thành 'không hề có nhựa' cho khớp với phương án B và lời phản hồi."
+      "trich_nguyen_van": "Bài này dùng cách đó cho hệ vật nối dây qua ròng rọc.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Với hệ qua ròng rọc, cứ cộng hết các lực (kể cả P_A, T) rồi chia tổng khối lượng. Điều này mâu thuẫn với mục 5: \"viết F = ma riêng cho từng vật\". Em không biết nên dùng cách nào.",
+      "de_xuat": "Ghi rõ: bài mẫu viết phương trình riêng cho từng vật. Nếu coi cả hệ là một vật thì hợp lực chỉ là P_B, vì P_A bị phản lực cân bằng và T là nội lực."
     },
     {
       "id": "c2",
-      "vi_tri": "2. Trọng tâm",
-      "trich_nguyen_van": "Vật phẳng, mỏng, có dạng <strong>đối xứng</strong>: trọng tâm ở <strong>tâm đối xứng</strong>",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Cứ có hình đối xứng là trọng tâm ở tâm, kể cả khi một nửa vật nặng hơn nửa kia.",
-      "de_xuat": "Thêm điều kiện 'đồng chất (khối lượng phân bố đều)' vào gạch đầu dòng này để nối với gạch đầu dòng về phân bố khối lượng."
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$P_A$ cân bằng phản lực $\\vec N$ của bàn",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Phản lực chưa được giới thiệu trong bài. Kí hiệu N trùng với đơn vị niutơn (N), em dễ đọc nhầm thành \"P_A cân bằng với 1 niutơn\".",
+      "de_xuat": "Thêm nửa câu: \"phản lực (lực đỡ) của mặt bàn, kí hiệu $\\vec N$, vuông góc mặt bàn, hướng lên\". Nhắc rõ N ở đây là tên lực, không phải đơn vị."
     },
     {
       "id": "c3",
-      "vi_tri": "IV. Trả bài",
-      "trich_nguyen_van": "Treo ở hai điểm khác nhau · kẻ theo dây dọi · giao điểm là $G$.",
-      "loai": "khác",
-      "muc": "nhỏ",
-      "em_hieu_la": "Thí nghiệm dùng ba lỗ A, B, C mà trả bài chỉ cần hai, nên không biết cần mấy lần treo mới đúng.",
-      "de_xuat": "Ghi rõ 'hai lần treo là đủ tìm G, lần thứ ba để kiểm tra' ở thí nghiệm hoặc ở câu trả bài."
+      "vi_tri": "Bẫy 2: lực căng luôn bằng trọng lượng vật treo",
+      "trich_nguyen_van": "Công thức: $a$ hướng lên thì $T = m(g + a)$; $a$ hướng xuống thì $T = m(g - a)$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Hai công thức để học thuộc. Em dễ gán \"đi xuống\" với g − a mà quên trường hợp đi xuống chậm dần (bài ⭐⭐). Phải tới phản hồi Câu 4 mới thấy T − P = ma.",
+      "de_xuat": "Thêm một dòng suy ra ngay trước công thức: chọn chiều dương theo hướng gia tốc, $T - P = ma$ ⇒ $T = m(g+a)$; đổi chiều thì ra $m(g-a)$."
     },
     {
       "id": "c4",
-      "vi_tri": "3. Trọng lượng",
-      "trich_nguyen_van": "Trung bình bốn hàng $\\approx 9{,}7$ N/kg, khớp $g \\approx 9{,}8$ m/s²",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "5. Hệ vật nối dây qua ròng rọc",
+      "trich_nguyen_van": "Vật B đi xuống nhanh dần nên T < P_B (mũi tên đỏ dài hơn).",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "N/kg và m/s² là hai đơn vị khác nhau, sao lại so sánh được với nhau.",
-      "de_xuat": "Thêm một dòng: 1 N/kg = 1 (kg·m/s²)/kg = 1 m/s², nên P/m có cùng đơn vị với g."
+      "em_hieu_la": "Kí hiệu P_B xuất hiện trước khi được định nghĩa ở bài mẫu. Lí do T < P_B chỉ được giải thích ở Bẫy 2 phía sau. Em cũng không rõ mũi tên đỏ là T hay P_B.",
+      "de_xuat": "Ghi \"mũi tên đỏ P_B dài hơn mũi tên T\" và thêm \"(xem Bẫy 2)\"."
     },
     {
       "id": "c5",
-      "vi_tri": "4. Lực căng dây",
-      "trich_nguyen_van": "Dây nhẹ, không dãn: $T$ như nhau ở mọi điểm của đoạn dây",
-      "loai": "mơ_hồ",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "⚠ Khi đổi $m_A$, đừng xét $T = m_A a$: cả $m_A$ lẫn $a$ cùng đổi.",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Phải có cả 'nhẹ' và 'không dãn' thì T mới như nhau. Mục 5 lại tách 'không dãn' cho cùng a, 'nhẹ' cho cùng T, nên học sinh không rõ điều kiện nào dùng cho kết luận nào.",
-      "de_xuat": "Sửa thành 'Dây nhẹ: T như nhau ở mọi điểm' cho thống nhất với cách tách điều kiện ở mục 5."
+      "em_hieu_la": "Câu này đặt ngay trước Câu 6 nên lộ cách loại phương án B. Nó cũng chỉ bảo \"đừng\" mà không nói nên dùng phương trình nào.",
+      "de_xuat": "Chuyển câu này vào phản hồi Câu 6, hoặc sửa thành \"hãy dùng $T = P_B - m_B a$, vì chỉ có a đổi\"."
     },
     {
       "id": "c6",
-      "vi_tri": "5. Hệ vật nối dây qua ròng rọc",
-      "trich_nguyen_van": "Cách giải: viết $\\vec F = m\\vec a$ <strong>riêng cho từng vật</strong>",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "4. Lực căng dây",
+      "trich_nguyen_van": "Chiều: từ hai đầu dây hướng vào phần giữa dây — tức là kéo vật về phía dây.",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "F là một lực nào đó, chẳng hạn chỉ thay T hoặc chỉ thay P vào, thay vì hợp lực.",
-      "de_xuat": "Ghi rõ $\\vec F$ là hợp lực của mọi lực tác dụng lên vật đó, chiếu lên chiều dương đã chọn."
+      "em_hieu_la": "Chữ \"hướng vào\" dễ lẫn với tên Bẫy 3 \"chĩa vào trong vật\" và câu \"đi ra khỏi vật\". Em không chắc mũi tên vào hay ra.",
+      "de_xuat": "Thêm \"(đối với vật: mũi tên đi ra khỏi vật, dọc theo dây)\" để khớp với Bẫy 3."
     },
     {
       "id": "c7",
-      "vi_tri": "5. Hệ vật nối dây qua ròng rọc",
-      "trich_nguyen_van": "Vật B đi xuống nhanh dần nên <em>T</em> &lt; <em>P</em><sub>B</sub> (mũi tên đỏ dài hơn).",
-      "loai": "nhảy_bước",
+      "vi_tri": "4. Lực căng dây",
+      "trich_nguyen_van": "Dây nhẹ: $T$ như nhau ở mọi điểm của đoạn dây (và qua ròng rọc nhẹ, nhẵn).",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Kết luận T < P_B xuất hiện trước khi bài giải thích quan hệ giữa gia tốc và T (Bẫy 2), cũng trước khi đề bài đặt tên A, B.",
-      "de_xuat": "Thêm '(xem Bẫy 2 và Bài toán mẫu)' vào chú thích Hình 4, hoặc chuyển câu này xuống sau lời giải."
+      "em_hieu_la": "\"Nhẹ\" chỉ là dây khá nhẹ. Em không hiểu đó là điều kiện bỏ qua khối lượng dây/ròng rọc, và \"nhẵn\" là bỏ qua ma sát trục.",
+      "de_xuat": "Thêm ngoặc: \"nhẹ = khối lượng không đáng kể; nhẵn = không ma sát\"."
     },
     {
       "id": "c8",
-      "vi_tri": "Bẫy 2: lực căng luôn bằng trọng lượng vật treo",
-      "trich_nguyen_van": "Gia tốc $a$ hướng lên (đi lên nhanh dần)",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Trọng tâm: tâm đối xứng · có thể ngoài vật · dây dọi tìm được.",
       "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "'a hướng lên' chỉ có nghĩa là đi lên nhanh dần. Vì vậy gặp bài ⭐⭐ 'đi xuống chậm dần' học sinh sẽ dùng $T = m(g - a)$ = 450 N.",
-      "de_xuat": "Ghi đủ hai trường hợp trong ngoặc: 'đi lên nhanh dần hoặc đi xuống chậm dần'; hàng dưới: 'đi xuống nhanh dần hoặc đi lên chậm dần'."
+      "muc": "nhỏ",
+      "em_hieu_la": "Mọi vật đối xứng đều có trọng tâm ở tâm đối xứng. Điều kiện \"đồng chất\" nêu ở mục 2 đã bị bỏ mất.",
+      "de_xuat": "Sửa thành \"vật đồng chất, đối xứng: tâm đối xứng\"."
     },
     {
       "id": "c9",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "$P_A$ cân bằng $N$",
-      "loai": "từ_chưa_giải_thích",
-      "muc": "khó",
-      "em_hieu_la": "N là đơn vị niutơn, vì cả bài dùng 'N' làm đơn vị. Phản lực pháp tuyến chưa hề được giới thiệu trong bài.",
-      "de_xuat": "Viết 'P_A cân bằng phản lực $\\vec N$ của mặt bàn' và nhắc rằng ở đây N là kí hiệu lực, không phải đơn vị."
+      "vi_tri": "2. Trọng tâm",
+      "trich_nguyen_van": "Làm lại với $B$, rồi $C$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bắt buộc phải treo ba lần. Hình 2 chỉ vẽ hai lỗ, còn Trả bài lại nói lần thứ ba chỉ để kiểm tra, nên em thấy mâu thuẫn.",
+      "de_xuat": "Ghi ngay trong thí nghiệm: \"hai đường đã đủ xác định G; đường thứ ba để kiểm tra\"."
     },
     {
       "id": "c10",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "gợi ý: dùng phương trình của vật nào thì gọn hơn?",
-      "loai": "mơ_hồ",
+      "vi_tri": "3. Trọng lượng",
+      "trich_nguyen_van": "Trung bình bốn hàng $\\approx 9{,}7$ N/kg",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Đáp án ở đây dùng T = m_A a nên phương trình A là 'gọn hơn'. Đến Câu 6 lại được bảo dùng phương trình của B gọn hơn, hai lời khuyên có vẻ ngược nhau.",
-      "de_xuat": "Nói rõ tiêu chí: tính số thì dùng phương trình có ít số hạng (A); xét xu hướng khi đổi m_A thì dùng phương trình có đại lượng không đổi (B)."
+      "em_hieu_la": "Em tự cộng các số trong bảng: (10,0 + 9,5 + 9,7 + 9,8)/4 = 9,75, làm tròn ra 9,8 chứ không phải 9,7. Em nghi bài tính sai.",
+      "de_xuat": "Ghi \"≈ 9,73 N/kg (tính từ số chưa làm tròn)\", hoặc ghi 9,75."
     },
     {
       "id": "c11",
       "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "Nếu đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 2 của lời giải.",
-      "loai": "mơ_hồ",
+      "trich_nguyen_van": "Cộng hai phương trình: $P_B = (m_A + m_B)a$",
+      "loai": "nhảy_bước",
       "muc": "nhỏ",
-      "em_hieu_la": "Có hai 'bước 2': bước 2 của lời giải mẫu (P_B − T = m_B a) và 'Bước 2 (em điền)' (tính a). Học sinh dễ mở nhầm.",
-      "de_xuat": "Ghi rõ 'xem lại bước 2 (phương trình của vật B) trong 🧮 lời giải bài mẫu'."
+      "em_hieu_la": "Em không thấy ngay T biến mất ở đâu khi cộng hai phương trình.",
+      "de_xuat": "Viết thêm một bước: $T + (P_B - T) = m_A a + m_B a$, T triệt tiêu."
     },
     {
       "id": "c12",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "A. Tăng dần, tiến gần tới $5$ N nhưng không vượt",
+      "vi_tri": "I. Mở bài: chiếc đĩa CD treo trên tường",
+      "trich_nguyen_van": "Điểm buộc dây là chỗ đặt lực căng, không phải trọng lực.",
       "loai": "phương_án_nhiễu_khó_hiểu",
       "muc": "nhỏ",
-      "em_hieu_la": "Đề chỉ thay khối A một lần nên không rõ 'tăng dần' là tăng theo thời gian trong lúc chuyển động hay tăng khi đổi sang khối nặng hơn.",
-      "de_xuat": "Sửa đề thành 'Khối A càng nặng thì lực căng dây khi hệ chuyển động…' và phương án thành 'càng lớn, tiến gần 5 N nhưng không vượt'."
-    },
-    {
-      "id": "c13",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "gạch \"nhẹ\", \"không dãn\", \"nhẵn\", \"từ nghỉ\" — đó là dữ kiện ngầm",
-      "loai": "từ_chưa_giải_thích",
-      "muc": "nhỏ",
-      "em_hieu_la": "'Từ nghỉ' chắc cũng dùng vào công thức nào đó. Nhưng trong bài nó không được dùng ở bước nào, nên học sinh không biết nó ngầm cho điều gì.",
-      "de_xuat": "Thêm ngoặc: 'từ nghỉ: vận tốc đầu bằng 0, hệ chuyển động theo chiều vật B đi xuống'."
+      "em_hieu_la": "Phản hồi sai có giải thích A và C nhưng bỏ sót D (điểm thấp nhất). Chọn D thì em không biết mình sai ở đâu.",
+      "de_xuat": "Thêm: \"D nhầm 'gần đất nhất' với điểm đặt; trọng lực không đặt ở chỗ thấp nhất mà ở trọng tâm\"."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "du_doan",
+      "cau": "Dự đoán (tl62-q1)",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Cho rằng lực đặt ở chỗ dây giữ vật, lẫn điểm đặt lực căng với điểm đặt trọng lực.",
+      "loi_tu_duy": "Lẫn điểm đặt lực căng (chỗ buộc dây) với điểm đặt trọng lực.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Điểm buộc dây là chỗ đặt <em>lực căng</em>, không phải trọng lực."
+      "trich_nguyen_van": "Điểm buộc dây là chỗ đặt lực căng, không phải trọng lực."
     },
     {
-      "cau": "cau1",
+      "cau": "Hành trang câu 1 (ht62-q1)",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quên đổi 200 g sang kg trước khi nhân với g.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $1960$ N là để nguyên đơn vị gam."
+    },
+    {
+      "cau": "Hành trang câu 2 (ht62-q2)",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Đồng nhất 'vẫn là bao gạo đó' với trọng lượng không đổi, quên g thay đổi theo độ cao.",
+      "loi_tu_duy": "Lấy m chia F do nhớ lộn công thức a = F/m.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $0{,}25$ là lấy $m$ chia $F$."
+    },
+    {
+      "cau": "Câu 1 (tl62-q2)",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nghĩ vẫn là bao gạo đó nên cả khối lượng lẫn trọng lượng không đổi; quên g đổi theo nơi.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Mang vật tới nơi $g = 9{,}78$ m/s²: khối lượng vẫn $1$ kg, trọng lượng còn $9{,}78$ N."
     },
     {
-      "cau": "cau2",
+      "cau": "Câu 2 (tl62-q3)",
       "dap_an_sai_hap_dan": "C",
       "loi_tu_duy": "Xe chạy ngang nên nghĩ lực kéo nằm ngang và đặt ở trọng tâm như trọng lực.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "<strong>Phương:</strong> trùng với chính sợi dây."
+      "trich_nguyen_van": "Phương: trùng với chính sợi dây."
     },
     {
-      "cau": "cau3",
+      "cau": "Câu 3 (tl62-q4)",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Giữ đúng khối lượng nhưng vẫn dùng g = 9,8 của Trái Đất khi tính trọng lượng trên Mặt Trăng.",
+      "loi_tu_duy": "Dùng theo thói quen g = 9,8 của Trái Đất dù đang ở Mặt Trăng.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Đổi theo $g$ của nơi đặt vật"
     },
     {
-      "cau": "cau4",
+      "cau": "Câu 4 (tl62-q5)",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Mặc định T = P, bỏ qua gia tốc của thang máy.",
+      "loi_tu_duy": "Coi lực căng cáp luôn bằng trọng lượng, quên thang đang có gia tốc.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$T = P$ chỉ đúng khi vật treo <strong>đứng yên hoặc chuyển động thẳng đều</strong>."
+      "trich_nguyen_van": "$T = P$ chỉ đúng khi vật treo đứng yên hoặc chuyển động thẳng đều."
     },
     {
-      "cau": "cau5",
+      "cau": "Câu 5 (tl62-q6)",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Quen ví dụ đèn treo, coi lực căng luôn thẳng đứng để cân bằng trọng lực, không theo hướng dây đang lệch.",
+      "loi_tu_duy": "Quen hình dây treo thẳng đứng nên nghĩ lực căng luôn thẳng đứng lên, kể cả khi dây lệch.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "lực căng lên vật luôn <strong>đi ra khỏi vật, dọc theo dây</strong>"
+      "trich_nguyen_van": "lực căng lên vật luôn đi ra khỏi vật, dọc theo dây"
     },
     {
-      "cau": "cau6",
+      "cau": "Câu 6 (tl62-q7)",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Dùng T = m_A a (công thức vừa được gợi ý là gọn ở bài điền bước), thấy a giảm nên kết luận T giảm, quên m_A tăng.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Nhìn T = m_A a, thấy a giảm nên kết luận T giảm, quên m_A đang tăng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "⚠ Khi đổi $m_A$, đừng xét $T = m_A a$: cả $m_A$ lẫn $a$ cùng đổi."
     }
   ]
 }

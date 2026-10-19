@@ -108,7 +108,7 @@
 <li>Trung bình: $\bar t = \dfrac{t_1 + t_2 + \dots + t_n}{n}$.</li>
 <li>Từng lần: $\Delta t_i = |t_i - \bar t|$; lấy trung bình được $\overline{\Delta t}$.</li>
 <li>Sai số của $t$: $\Delta t = \overline{\Delta t} + \Delta t_{\text{dc}}$ (độ phân tán giữa các lần cộng giới hạn của đồng hồ).</li>
-<li>Sai số tương đối: tích, thương thì cộng sai số tương đối. $t^2 = t \cdot t$ nên phần của $t$ tính hai lần: $$\delta = \dfrac{\Delta g}{\bar g} = \dfrac{\Delta s}{s} + 2\dfrac{\Delta t}{\bar t}$$</li>
+<li>Sai số tương đối của đại lượng $x$ là $\dfrac{\Delta x}{x}$. Tích, thương thì cộng sai số tương đối. $t^2 = t \cdot t$ nên phần của $t$ tính hai lần ($t$ lệch $1\,\%$ thì $t^2$ lệch khoảng $2\,\%$): $$\delta = \dfrac{\Delta g}{\bar g} = \dfrac{\Delta s}{s} + 2\dfrac{\Delta t}{\bar t}$$</li>
 <li>Kết quả: $\Delta g = \delta \cdot \bar g$, viết $g = \bar g \pm \Delta g$.</li>
 </ul>
 
@@ -142,7 +142,7 @@
 <ul>
 <li>Từ $s = \dfrac{g}{2}t^2$: $s$ theo $t^2$ là <strong>đường thẳng qua gốc</strong>.</li>
 <li>Độ dốc $= \dfrac{g}{2}$, nên $g = 2 \cdot \text{độ dốc}$.</li>
-<li>Lợi: vẽ đường thẳng qua gốc khớp nhất với cả năm điểm, điểm nào lệch thì thấy ngay.</li>
+<li>Lợi: đường thẳng dùng cả năm điểm, điểm lệch thấy ngay.</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l10-do-g-02">
@@ -198,7 +198,7 @@
 </thead>
 <tbody>
 <tr><td>Mép dưới bi → tia sáng</td><td>Đúng đoạn bi rơi</td></tr>
-<tr><td>Mặt nam châm → tia sáng</td><td>$s$ quá dài, $g$ lệch cùng phía</td></tr>
+<tr><td>Mặt nam châm → tia sáng</td><td>$s$ quá dài, $g$ lệch cùng một chiều ở mọi lần đo</td></tr>
 </tbody>
 </table>
 </div>
@@ -209,14 +209,14 @@
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 3.</strong> Bi thật sự rơi $0{,}500\ \text{m}$ trong $t = 0{,}319\ \text{s}$ (đo đúng). Nhóm đo $s$ từ mặt nam châm nên ghi $0{,}510\ \text{m}$. Gia tốc nhóm tính ra:</p>
+<p><strong>Câu 3.</strong> Tình huống khác bảng mục 3: bi thật sự rơi $0{,}500\ \text{m}$ trong $t = 0{,}319\ \text{s}$ (đo đúng). Nhóm đo $s$ từ mặt nam châm nên ghi $0{,}510\ \text{m}$. Gia tốc nhóm tính ra:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl56-q4" id="tl56-q4a"><label for="tl56-q4a" class="tl-opt tl-no">A. Nhỏ hơn $9{,}83\ \text{m/s}^2$, vì $s$ ghi dài hơn thì bi rơi chậm hơn</label>
 <input type="radio" name="tl56-q4" id="tl56-q4b"><label for="tl56-q4b" class="tl-opt tl-no">B. Vẫn bằng $9{,}83\ \text{m/s}^2$, vì $g$ chỉ phụ thuộc thời gian</label>
 <input type="radio" name="tl56-q4" id="tl56-q4c"><label for="tl56-q4c" class="tl-opt tl-ok">C. Lớn hơn: $\dfrac{2 \cdot 0{,}510}{0{,}319^2} \approx 10{,}02\ \text{m/s}^2$, lệch khoảng $+2\,\%$</label>
 <input type="radio" name="tl56-q4" id="tl56-q4d"><label for="tl56-q4d" class="tl-opt tl-no">D. Lớn hơn, nhưng lấy trung bình nhiều lần sẽ bù lại</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $g = 2s/t^2$ tỉ lệ với $s$: $s$ lớn hơn $2\,\%$ thì $g$ lớn hơn $2\,\%$. Đúng giá trị $\dfrac{2 \cdot 0{,}500}{0{,}319^2} \approx 9{,}83\ \text{m/s}^2$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: thời gian $t$ đã đo đúng, không đổi; $s$ lớn thì tử số lớn, $g$ lớn. B quên $s$ ở tử số. D: lệch cùng một phía ở mọi lần nên trung bình không bù được (Bẫy 2).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: $t$ đo đúng, không đổi, còn $s$ ở tử số lớn thì $g$ lớn. B quên $s$ ở tử số. D: lệch cùng một phía ở mọi lần nên trung bình không bù được (Bẫy 2).</p></div>
 </div>
 </div>
 
@@ -232,7 +232,7 @@
 <tbody>
 <tr><td>Lệch lên xuống thất thường</td><td>Lệch cùng một phía mọi lần</td></tr>
 <tr><td>Lấy trung bình thì giảm</td><td>Lấy trung bình không giảm</td></tr>
-<tr><td>Ví dụ: $t$ mỗi lần lên xuống vài phần nghìn giây</td><td>Ví dụ: từ dư giữ bi; đo $s$ sai gốc</td></tr>
+<tr><td>Ví dụ: $t$ mỗi lần lên xuống vài phần nghìn giây</td><td>Ví dụ: từ dư giữ bi (ngắt điện rồi nam châm vẫn hút yếu)<br>Đo $s$ sai gốc</td></tr>
 </tbody>
 </table>
 </div>
@@ -367,7 +367,7 @@
 
 <details class="tl-details">
 <summary>🔁 Thử sức đổi dụng cụ: thay đồng hồ bằng điện thoại $240$ khung/s</summary>
-<p>Đề gốc, nhưng $\Delta t_{\text{dc}} = \dfrac{1}{240} \approx 0{,}0042\ \text{s}$. Khi đó $\Delta t \approx 0{,}0005 + 0{,}0042 = 0{,}0047\ \text{s}$; $\delta \approx 0{,}00125 + \dfrac{2 \cdot 0{,}0047}{0{,}404} \approx 0{,}0245$; $\Delta g \approx 0{,}24\ \text{m/s}^2$. Sai số khoảng gấp $2{,}7$ lần, vì dụng cụ kém.</p>
+<p>Đề gốc, nhưng $\Delta t_{\text{dc}} = \dfrac{1}{240} \approx 0{,}0042\ \text{s}$. Khi đó $\Delta t \approx 0{,}0005 + 0{,}0042 = 0{,}0047\ \text{s}$; $\delta \approx 0{,}00125 + \dfrac{2 \cdot 0{,}0047}{0{,}404} \approx 0{,}0245$; $\Delta g \approx 0{,}24\ \text{m/s}^2$. Sai số khoảng gấp $2{,}8$ lần ($\delta$: $0{,}0245$ so với $0{,}0087$), vì dụng cụ kém.</p>
 </details>
 
 <p>⚠ $s$ tỉ lệ với $t^2$, không phải với $t$.</p>
@@ -403,7 +403,7 @@
 <summary>⭐ Thử thách phân tầng</summary>
 <ul>
 <li><strong>⭐</strong> Thả bi từ $s = 1{,}000\ \text{m}$, đo $t = 0{,}452\ \text{s}$. Tính $g$. <em>Đáp số: $g = \dfrac{2 \cdot 1{,}000}{0{,}452^2} \approx 9{,}79\ \text{m/s}^2$</em></li>
-<li><strong>⭐⭐</strong> Dùng hai điểm $(0{,}0620;\ 0{,}300)$ và $(0{,}1030;\ 0{,}500)$ của bảng $s$–$t^2$ để tính độ dốc rồi $g$. <em>(độ dốc $= \dfrac{0{,}200}{0{,}0410} \approx 4{,}88\ \text{m/s}^2$; $g \approx 9{,}76\ \text{m/s}^2$)</em></li>
+<li><strong>⭐⭐</strong> Dùng hai điểm $(t^2;\ s) = (0{,}0620\ \text{s}^2;\ 0{,}300\ \text{m})$ và $(0{,}1030\ \text{s}^2;\ 0{,}500\ \text{m})$ của bảng $s$–$t^2$ để tính độ dốc rồi $g$. <em>(độ dốc $= \dfrac{0{,}200}{0{,}0410} \approx 4{,}88\ \text{m/s}^2$<br>$g \approx 9{,}76\ \text{m/s}^2$<br>Hơi khác $9{,}72$ ở mục 4 vì mỗi điểm số liệu có sai số, nên cách chuẩn là lấy hai điểm trên đường thẳng đã vẽ)</em></li>
 <li><strong>⭐⭐⭐</strong> Với $\Delta t = 0{,}002\ \text{s}$ và bỏ qua $\Delta s/s$, muốn $\delta$ không quá $1\,\%$ thì phải thả từ độ cao tối thiểu bao nhiêu? <em>($\dfrac{2 \cdot 0{,}002}{t} \le 0{,}01$ nên $t \ge 0{,}4\ \text{s}$; $s = \dfrac{1}{2} \cdot 9{,}8 \cdot 0{,}4^2 \approx 0{,}78\ \text{m}$)</em></li>
 </ul>
 </details>

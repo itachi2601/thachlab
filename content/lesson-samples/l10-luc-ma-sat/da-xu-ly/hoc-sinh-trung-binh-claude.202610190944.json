@@ -1,0 +1,191 @@
+{
+  "bai": "Bài 18. Lực ma sát",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Đẩy thùng $55$ kg trên sàn ngang bằng lực ngang $220$ N; $\\mu = 0{,}35$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài vừa dạy 'đứng yên thì không dùng μN' và 'đọc đề quyết định loại ma sát'. Nhưng đề Câu 6 không nói thùng có trượt không và không cho μ_n. Nếu lấy tỉ lệ μ_n/μ ≈ 1,2 như bảng đo thì F_msn max ≈ 226 N > 220 N, tức thùng có thể đứng yên. Học sinh làm đúng theo bài lại bị kẹt.",
+      "de_xuat": "Thêm vào đề cụm 'thùng đang trượt', hoặc cho ma sát nghỉ cực đại nhỏ hơn 220 N."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Đo hệ số ma sát",
+      "trich_nguyen_van": "$F_{\\text{nghỉ max}}/N \\approx$ 0,36–0,38 (đó là $\\mu_n$).",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Ký hiệu μ_n chỉ xuất hiện trong khung ẩn, không có định nghĩa 'hệ số ma sát nghỉ' và không có công thức F_msn max = μ_n N. Ngay sau đó thí nghiệm nâng ván lại dùng μ_n như đã biết, nên học sinh không phân biệt được μ và μ_n dùng lúc nào.",
+      "de_xuat": "Ở mục 1 thêm dòng: '$F_{\\text{msn max}} = \\mu_n N$, μ_n là hệ số ma sát nghỉ, thường lớn hơn μ một chút'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "4. Áp lực $N$: không phải lúc nào cũng bằng $mg$",
+      "trich_nguyen_van": "hộp bắt đầu trượt khi $h \\approx 0{,}34$ m ($\\alpha \\approx 20^\\circ$)",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài không nói cách đổi h ra α. Học sinh dễ lấy tanα = h/L = 0,34 rồi suy ra μ_n = 0,34, trong khi đúng phải là sinα = h/L.",
+      "de_xuat": "Ghi rõ: 'sin α = h/L = 0,34 ⇒ α ≈ 20°, rồi μ_n = tan 20° ≈ 0,36'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "4. Áp lực $N$: không phải lúc nào cũng bằng $mg$",
+      "trich_nguyen_van": "tương tự $\\mu \\approx \\tan 17^\\circ \\approx 0{,}30$, khớp bảng đo bằng lực kế.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ 'tương tự' bỏ qua lý do: trượt đều thì hợp lực bằng 0, nên mg sinα = μ mg cosα. Học sinh không thấy vì sao lần này ra μ chứ không phải μ_n.",
+      "de_xuat": "Viết thêm: 'trượt đều ⇒ hợp lực bằng 0 ⇒ mg sinα = μ mg cosα ⇒ μ = tan α'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Áp lực $N$: không phải lúc nào cũng bằng $mg$",
+      "trich_nguyen_van": "lực kéo \"nhấc\" bớt vật, $N = mg - F\\sin\\alpha$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Công thức được cho sẵn, không chiếu lên phương thẳng đứng và không nói α đo so với phương ngang. Vì vậy học sinh không biết vì sao dùng sin chứ không phải cos, và dễ rơi đúng vào bẫy C của Câu 2.",
+      "de_xuat": "Thêm một dòng: 'α là góc giữa dây và mặt ngang; chiếu lên phương thẳng đứng: N + F sinα − mg = 0'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "$N$: ngang $mg$ · kéo chếch $mg - F\\sin\\alpha$ · dốc $mg\\cos\\alpha$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cùng ký hiệu α được dùng cho góc chếch của dây và góc nghiêng của dốc. Học sinh dễ ghép nhầm hai công thức, ví dụ khi gặp vật bị kéo chếch trên mặt nghiêng.",
+      "de_xuat": "Đặt ký hiệu khác cho góc dây (ví dụ β), hoặc ghi rõ 'α: góc dây với mặt ngang' và 'α: góc nghiêng của dốc'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "2. Ma sát trượt",
+      "trich_nguyen_van": "$N$: độ lớn áp lực (N).",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "N lúc được gọi là áp lực (vật ép lên mặt), lúc là lực 'cân bằng P_y' tác dụng lên vật, ở Câu 5 lại là 'phản lực N'. Học sinh lẫn lộn không biết N đặt lên vật nào khi vẽ hình.",
+      "de_xuat": "Thêm một câu: 'N là phản lực của mặt lên vật, có độ lớn bằng áp lực vật ép lên mặt'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "I. Mở bài: thùng nước không chịu nhúc nhích",
+      "trich_nguyen_van": "C. Bằng $\\mu mg$, tính theo công thức ma sát",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu μ và công thức ma sát chưa được giới thiệu ở mở bài. Học sinh không hiểu phương án C nói gì, nên phương án này không còn tác dụng nhiễu.",
+      "de_xuat": "Đổi C thành 'Bằng một giá trị cố định, không phụ thuộc lực đẩy'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$\\tan 30^\\circ \\approx 0{,}58 \\gt 0{,}20$ nên bạn nhỏ trượt được",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 4 nói vật bắt đầu trượt khi tanα = μ_n, nhưng ở đây lại so tanα với μ trượt. Học sinh vốn hay nhầm điều kiện áp dụng sẽ không biết điều kiện nào đúng.",
+      "de_xuat": "Ghi: 'cần tan α lớn hơn μ_n (thường chỉ hơn μ một chút); 0,58 lớn hơn nhiều so với 0,20 nên chắc chắn trượt'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "3. Đo hệ số ma sát",
+      "trich_nguyen_van": "Lần đo nào kém tin cậy nhất?",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu hỏi đòi dùng sai số tương đối và quy ước 'nửa vạch chia', nhưng hai ý này chỉ có trong khung ẩn. Học sinh dễ chọn lần 3 vì tỉ số lệch nhất.",
+      "de_xuat": "Thêm gợi ý trước câu hỏi: 'Lực kế đọc sai khoảng ±0,05 N; so sai số này với từng số đo'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 1: ma sát lúc nào cũng bằng $\\mu N$",
+      "trich_nguyen_van": "$F = \\mu N$, không đổi",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Không đổi' không nói rõ là không đổi theo gì. Học sinh có thể hiểu ma sát trượt không đổi kể cả khi N đổi, trái với ý 'tỉ lệ với áp lực N' ở mục 2.",
+      "de_xuat": "Sửa thành 'F = μN, không đổi khi tăng lực kéo (nếu N giữ nguyên)'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$a = \\dfrac{0 - 16}{2 \\cdot 2} = -4\\ \\text{m/s}^2$; $F_{\\text{ms}} = 86 \\cdot 4 = 344$ N",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức v² − v0² = 2as không được ghi ra, và dấu âm của a biến mất ở bước sau mà không giải thích. Học sinh không thấy 16 từ đâu ra và vì sao F_ms dương.",
+      "de_xuat": "Ghi: 'v² − v0² = 2as ⇒ a = −4 m/s²; độ lớn ma sát F_ms = m|a| = 344 N'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "3. Đo hệ số ma sát",
+      "trich_nguyen_van": "Tính $F_{\\text{trượt}}/N$ cho từng lần đo.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cùng một đại lượng được viết bằng nhiều ký hiệu: F_mst, F_ms, F_trượt, F. Tương tự với F_msn max và F_nghỉ max. Học sinh tưởng đó là các đại lượng khác nhau.",
+      "de_xuat": "Thống nhất dùng F_mst và F_msn max trong toàn bài."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "phụ thuộc tốc độ và hình dạng vật — học ở Bài 19.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Danh mục yêu cầu cần đạt có 'Lực cản của chất lưu và lực nâng', nhưng bài chỉ nhắc một câu trong khung ẩn rồi đẩy sang Bài 19. Học sinh không đạt được yêu cầu này.",
+      "de_xuat": "Bổ sung một mục ngắn về lực cản chất lưu và lực nâng, hoặc chỉnh lại danh mục yêu cầu của bài."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ rằng vật chưa chuyển động thì chưa có ma sát.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn A: nếu không có ma sát thì lực $50$ N phải làm thùng chạy."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Trực giác cho rằng chỗ chạm nhỏ hơn thì ma sát nhỏ hơn, tức coi diện tích có mặt trong công thức.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A và B đều tưởng diện tích nằm trong công thức."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Không biết α đo so với phương nào nên lấy nhầm cos thay cho sin. Bài chỉ cho sẵn công thức, không chiếu lên phương thẳng đứng.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "$12{,}1$ N là nhầm $\\sin$ với $\\cos$"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Theo thói quen lấy áp lực bằng mg.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Bẫy 2: áp lực luôn bằng $mg$"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lấy luôn ma sát nghỉ cực đại làm ma sát nghỉ thực tế.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đứng yên: dùng cân bằng lực, không dùng $\\mu N$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Dùng N = mg như trên mặt ngang, quên rằng trên dốc N = mg cosα.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Mặt nghiêng góc $\\alpha$</td><td>$mg\\cos\\alpha$"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy chiều chuyển động của người làm mốc thay cho chiều chân có xu hướng trượt.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ma sát ngược chiều trượt tương đối giữa hai mặt, không nhất thiết ngược chiều chuyển động của vật."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lấy lực đẩy chia khối lượng, quên trừ ma sát. Bài chưa có ví dụ mẫu nào về vật bị đẩy ngang có ma sát ở phần không ẩn.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

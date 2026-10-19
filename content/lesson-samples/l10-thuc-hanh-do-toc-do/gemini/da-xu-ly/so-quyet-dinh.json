@@ -1,6 +1,6 @@
 {
   "bai": "l10-thuc-hanh-do-toc-do",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-08",
     "model": "claude-opus-5-5",
@@ -101,5 +101,102 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-thuc-hanh-do-toc-do/gemini/da-xu-ly/theory.src.202610081647.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu kết quả ở mục II.1 thêm vế \"với Δv = v̄·δv\" để bước 4 bài toán mẫu có chỗ dựa."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chốt quy ước \"bài này lấy một độ chia\" và ghi độ chia thước dây ở Thí nghiệm 1 là 2 mm cho khớp Δs = 0,002 m."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài dùng ô số liệu @@DT1@@/@@TBAR@@, không có chuỗi 0,11/3,03)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài dùng ô số liệu @@DT2@@/@@TBAR2@@ và bảng sinh tự động __BANG_TN2__)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng \"sai số 0,001 s\" trong bảng Dữ liệu → kiến thức thêm: chỉ đọc một lần nên Δt lấy bằng sai số dụng cụ (khác Thí nghiệm 2 đo 5 lần)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 3 ghi ngay v = d/t là tốc độ trung bình trên bề rộng d (xem mục 4), không chuyển vị trí Câu 1."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại thành: với cùng tốc độ xe, kéo dài đường chạy thì t lớn hơn mà độ lệch bấm không đổi nên δt nhỏ hơn."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Tấm chắn ở tổng kết tách thành ba dòng, thêm ý rộng thì δd nhỏ hơn, hợp khi xe chạy gần đều."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bẫy 3 thêm công thức δA = ΔA/Ā kèm giải thích A là đại lượng đo bất kì, Ā là giá trị trung bình."
+      },
+      {
+        "id": "q-du-doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi câu dự đoán đã nhấn \"không số nào sai, mỗi số chỉ là một lần đo\", không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gộp với c6: ý d/t là tốc độ trung bình đã đặt ngay trong mục 3 trước Câu 1, không thêm dòng ⚠ riêng để khỏi lặp."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán và phản hồi đã nhấn đồng hồ tốt không sửa được độ trễ người bấm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về độ lệch ngẫu nhiên và độ lệch cùng một phía đã thêm ở vòng 1, đang có trước Câu 3."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ngay trước câu: cần so với giá trị đo, tức dùng sai số tương đối."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Dữ liệu → kiến thức, bước 1 lời giải và dòng Đọc đề ở tổng kết đều nhấn đổi cm ra m."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.1: câu kết quả thêm Δv = v̄·δv (cách suy sai số tuyệt đối từ sai số tương đối).",
+      "Mục II.1: sai số dụng cụ chốt quy ước \"bài này lấy một độ chia\" (khớp Δd = 0,1 cm với thước mm, Δt = 0,001 s).",
+      "Thí nghiệm 1: ghi thước dây có độ chia nhỏ nhất 2 mm để Δs = 0,002 m đúng quy ước một độ chia. Số liệu và ô tính không đổi.",
+      "Mục II.1: bỏ ngoặc \"s đo bằng thước, t bằng đồng hồ\" ở dòng v = s/t (đã có trong khoá và Thí nghiệm 1).",
+      "Mục II.3: thêm ý v = d/t là tốc độ trung bình trên bề rộng d (xem mục 4), viết gọn dòng tấm chắn.",
+      "Mục II.4: dòng thu hẹp d bỏ lặp \"đồng hồ chia tới 0,001 s\".",
+      "Bẫy 1: bỏ câu \"Chỉ có nhiều lần đo mới cho thấy nó lệch bao nhiêu\" (trùng bảng). Câu đường dài thêm điều kiện cùng tốc độ xe.",
+      "Bẫy 3: thêm δA = ΔA/Ā và nghĩa của A, Ā.",
+      "Bài toán mẫu, bảng Dữ liệu → kiến thức: Δt = 0,001 s lấy bằng sai số dụng cụ vì chỉ đọc một lần. Kết quả không đổi.",
+      "Tổng kết: dòng Tấm chắn thêm ý rộng thì δd nhỏ hơn, hợp khi xe chạy gần đều."
+    ],
+    "so_tu_them": 30,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-do-toc-do/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

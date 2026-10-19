@@ -5,133 +5,181 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "1. Thí nghiệm của Galilei",
-      "trich_nguyen_van": "Nếu máng (2) nằm ngang, bi không bao giờ lên được $h_0$ nên sẽ lăn mãi với vận tốc không đổi.",
-      "loai": "nhảy_bước",
+      "vi_tri": "3. Quán tính",
+      "trich_nguyen_van": "Vì có quán tính, vận tốc không đổi được tức thời; lực phải tác dụng trong một khoảng thời gian.",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Em không thấy vì sao 'không lên được $h_0$' lại dẫn tới 'vận tốc không đổi'. Em cũng dễ tưởng kết luận này đo được trong thí nghiệm, trong khi đó là suy luận tưởng tượng (bỏ ma sát, máng nằm ngang).",
-      "de_xuat": "Thêm một câu nối: 'Trên máng ngang không có dốc kéo bi chậm lại, nếu cũng không có ma sát thì không còn gì làm đổi vận tốc, nên bi lăn mãi. Đây là suy luận, không phải số đo'."
+      "em_hieu_la": "Cả bài dùng cụm 'vận tốc không đổi' với nghĩa 'vận tốc giữ nguyên'. Vì vậy học sinh dễ đọc câu này thành 'có quán tính thì vận tốc giữ nguyên ngay tức thời', ngược với ý 'vận tốc không thể thay đổi ngay lập tức'.",
+      "de_xuat": "Viết lại thành: 'Vì có quán tính, vận tốc không thể thay đổi ngay lập tức; lực phải tác dụng trong một khoảng thời gian.'"
     },
     {
       "id": "c2",
-      "vi_tri": "1. Thí nghiệm của Galilei",
-      "trich_nguyen_van": "Hai hàng đầu chỉ chênh 0,7 cm, gần bằng sai số của thước, nên phải đo lặp nhiều lần.",
-      "loai": "từ_chưa_giải_thích",
-      "muc": "nhỏ",
-      "em_hieu_la": "Em không biết 'sai số của thước' là bao nhiêu. Thước chia 0,5 cm mà 0,7 cm lớn hơn 0,5 cm, nên em không hiểu vì sao gọi là 'gần bằng'.",
-      "de_xuat": "Ghi rõ con số sai số dùng để so sánh, ví dụ 'sai số mỗi lần đọc khoảng ±0,5 cm, cả hai lần đọc cộng lại tới ~1 cm'."
+      "vi_tri": "3. Quán tính",
+      "trich_nguyen_van": "chuyển động thẳng đều khi hợp lực bằng $\\vec 0$ là chuyển động theo quán tính",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh hiểu 'chuyển động theo quán tính' chỉ xảy ra khi hợp lực bằng 0. Đến Câu 3 ('Đá vẫn đi lên nhờ quán tính', lúc trọng lực ≠ 0) và biến thể Tắt máy ('vẫn lăn thêm một đoạn nhờ quán tính', lúc có lực cản), các em thấy mâu thuẫn và nhầm điều kiện áp dụng.",
+      "de_xuat": "Thêm một câu phân biệt: 'Mọi vật luôn có quán tính, kể cả khi có lực; chỉ khi hợp lực bằng 0 thì chuyển động mới là thẳng đều theo quán tính.'"
     },
     {
       "id": "c3",
-      "vi_tri": "2. Định luật 1 Newton",
-      "trich_nguyen_van": "ô tô chạy thẳng đều vẫn chịu bốn lực. Chúng cân bằng nhau từng cặp",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "🧪 Thử với mô phỏng PhET: Quán tính và Chuyển động (Định luật 1)",
+      "trich_nguyen_van": "kim đồng hồ tốc độ đứng yên: vật tiếp tục chuyển động thẳng đều mãi mãi",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Bài không nêu tên bốn lực. Chú thích Hình 2 dùng ngay ký hiệu $F_k$, $F_c$, $N$, $P$ mà chưa giải thích, mãi tới phản hồi Câu 1 và bảng Bài 1 em mới đoán ra.",
-      "de_xuat": "Viết rõ trong câu: 'lực kéo $F_k$, lực cản $F_c$ (phương ngang); trọng lực $P$, lực đỡ $N$ (phương đứng)'."
+      "em_hieu_la": "Chữ 'đứng yên' trong bài vốn để chỉ vật, nên học sinh có thể tưởng thùng hàng đứng yên. Câu này vì thế nghe như tự mâu thuẫn với 'tiếp tục chuyển động'.",
+      "de_xuat": "Viết: 'kim tốc độ giữ nguyên ở khoảng 20 m/s, không giảm: vật tiếp tục chuyển động thẳng đều'."
     },
     {
       "id": "c4",
-      "vi_tri": "3. Quán tính",
-      "trich_nguyen_van": "tài xế giỏi không phanh \"đột ngột\": xe luôn giảm tốc từ từ. Hành khách không bám tay vịn sẽ lao tiếp về phía trước",
+      "vi_tri": "🧪 Thử với mô phỏng PhET: Quán tính và Chuyển động (Định luật 1)",
+      "trich_nguyen_van": "rồi buông tay ra (lực tác dụng bằng 0)",
       "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Em hiểu là xe giảm tốc từ từ mà hành khách vẫn lao về trước. Điều này ngược với bảng ngay trên, vốn gắn việc chúi người với phanh gấp.",
-      "de_xuat": "Tách thành hai ý: 'Tài xế giỏi giảm tốc từ từ; nếu phải phanh gấp, hành khách không bám tay vịn sẽ lao tiếp về phía trước'."
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh hiểu là thùng không còn lực nào tác dụng. Điều này đi ngược Bẫy 2: thùng vẫn chịu trọng lực và lực đỡ, chỉ có hợp lực bằng 0.",
+      "de_xuat": "Đổi thành '(lực đẩy bằng 0, hợp lực bằng 0)'."
     },
     {
       "id": "c5",
-      "vi_tri": "3. Quán tính",
-      "trich_nguyen_van": "Gõ đuôi cán búa xuống nền",
-      "loai": "thiếu_ví_dụ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Em không biết vật nào dừng, vật nào giữ vận tốc. Em dễ nghĩ đầu búa bị 'đẩy' xuống, đúng cái bẫy 3.",
-      "de_xuat": "Thêm một dòng giải thích: 'cán chạm nền dừng lại, đầu búa vẫn giữ vận tốc đi xuống nên trượt sâu vào cán'; tương tự cho giũ áo."
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "Không lực hoặc hợp lực bằng 0 → đứng yên mãi, hoặc thẳng đều mãi.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Đáp án mẫu bỏ mất điều kiện 'đang đứng yên' / 'đang chuyển động'. Học sinh có thể nghĩ vật có thể đứng yên hoặc thẳng đều tùy ý, ví dụ xe đang chạy mà hợp lực bằng 0 thì có thể dừng lại. Mục '✅ Mang về sau bài học' cũng lặp đúng lỗi này.",
+      "de_xuat": "Viết: 'đang đứng yên thì đứng yên mãi; đang chuyển động thì thẳng đều mãi'. Sửa giống vậy ở mục Mang về."
     },
     {
       "id": "c6",
-      "vi_tri": "Bài 2: quả bóng trong toa tàu",
-      "trich_nguyen_van": "Nếu em đã chọn Chắc mà vẫn sai, đọc lại mục II.3.",
-      "loai": "khác",
-      "muc": "khó",
-      "em_hieu_la": "Mục II.3 không có tình huống vật được thả rơi trong xe đang chạy. Đọc lại, em vẫn không thấy ý 'rời tay chỉ mất lực đỡ, không mất vận tốc ngang'.",
-      "de_xuat": "Thêm vào mục II.3 một dòng bảng hoặc một câu về vật rời tay trong xe chạy đều vẫn giữ vận tốc ngang của xe; hoặc chỉ tới thí nghiệm đồng xu và nói rõ điểm giống nhau."
+      "vi_tri": "1. Thí nghiệm của Galilei",
+      "trich_nguyen_van": "Máng (2) nằm ngang thì không còn dốc làm bi chậm, nếu cũng không ma sát thì bi lăn mãi với vận tốc không đổi",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu ngay trước nói 'không ma sát thì bi luôn lên đúng h0'. Học sinh không thấy câu đó liên quan gì tới kết luận lăn mãi.",
+      "de_xuat": "Thêm ý: 'máng ngang thì bi không bao giờ lên được tới h0, nên nó cứ lăn mãi'."
     },
     {
       "id": "c7",
-      "vi_tri": "Bài 1: xe tải chạy thẳng đều",
-      "trich_nguyen_van": "$m = \\dfrac{3000}{0{,}05 \\cdot 10} = 6000$ kg",
+      "vi_tri": "📊 Bấm xem: bảng số liệu mẫu và câu hỏi về sai số",
+      "trich_nguyen_van": "mỗi lần đọc thước có thể lệch cỡ một độ chia (0,5 cm), nên hiệu hai lần đọc có thể lệch gần 1 cm",
       "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Em không thấy bước $F_k = F_c = 0{,}05mg$ rồi mới chia, nên không hiểu công thức chia này ở đâu ra.",
-      "de_xuat": "Viết thêm: 'Thẳng đều nên $F_k = F_c = 0{,}05 \\cdot m g$, suy ra $m = F_k/(0{,}05g)$'."
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không hiểu vì sao lệch 0,5 cm lại thành gần 1 cm, vì bài không nói rõ là sai số của hai lần đọc cộng lại.",
+      "de_xuat": "Thêm: 'mỗi lần lệch 0,5 cm, hai lần cộng lại có thể lệch 0,5 + 0,5 ≈ 1 cm'."
     },
     {
       "id": "c8",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "bị tông từ phía sau, xe vọt tới, đầu giữ vị trí cũ nên ngả mạnh ra sau",
+      "vi_tri": "3. Quán tính",
+      "trich_nguyen_van": "Khi xe chạy thẳng đều, vật rời tay chỉ mất lực đỡ, vẫn giữ vận tốc ngang của xe.",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Em hiểu quán tính là giữ vị trí, trái với định nghĩa đã học: giữ vận tốc.",
-      "de_xuat": "Đổi thành 'đầu vẫn giữ vận tốc cũ (gần như đứng yên) trong khi thân bị ghế đẩy tới, nên đầu ngả mạnh ra sau'."
+      "em_hieu_la": "Câu này đặt ngay sau đoạn phanh gấp nên lạc ý. 'Lực đỡ' ở đây là lực của tay, trong khi trước đó N là lực đỡ của mặt đường. Học sinh dễ nhầm hai lực này.",
+      "de_xuat": "Ghi rõ 'mất lực đỡ của tay' và chuyển câu này xuống Bài 2 (quả bóng trong toa tàu)."
     },
     {
       "id": "c9",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "dây và túi khí tạo lực giữ người lại trong thời gian dài hơn",
+      "vi_tri": "III. Ba cái bẫy của bài này",
+      "trich_nguyen_van": "A. Lực ném hướng lên và trọng lực",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ở Câu 3, phương án A và C ('Lực ném lớn hơn trọng lực nên đá đi lên') cùng một ý: đều có lực ném và trọng lực. Học sinh phân vân giữa hai phương án vì tưởng có một cái đúng hơn.",
+      "de_xuat": "Thay C bằng một nhiễu khác hẳn, ví dụ 'Chỉ có lực ném, hướng lên'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "🚗 Bấm xem: bốn nơi đang dùng bài này",
+      "trich_nguyen_van": "giữ người lại trong thời gian dài hơn so với khi đập thẳng vào vô lăng hay kính, nên lực tác dụng lên người nhỏ hơn",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa giải thích vì sao thời gian dài hơn thì lực nhỏ hơn (phải dùng định luật 2). Học sinh chỉ có thể học thuộc câu này.",
+      "de_xuat": "Thêm: 'cùng làm người dừng lại, đổi vận tốc càng chậm thì lực càng nhỏ (sẽ học ở định luật 2)'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "🚗 Bấm xem: bốn nơi đang dùng bài này",
+      "trich_nguyen_van": "còn đầu vẫn giữ vận tốc cũ (gần như đứng yên) nên ngả mạnh ra sau",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Em không biết 'dài hơn' là so với cái gì, cũng không biết vì sao thời gian dài hơn thì an toàn hơn.",
-      "de_xuat": "Ghi rõ: 'dài hơn so với khi đập thẳng vào vô lăng, kính; lực giữ nhỏ hơn nên ít chấn thương'."
+      "em_hieu_la": "Đề không nói xe đang đỗ. Học sinh thắc mắc vì sao vận tốc cũ lại 'gần như đứng yên' nếu xe đang chạy.",
+      "de_xuat": "Ghi rõ 'xe đang đứng yên thì bị tông từ phía sau'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
+      "trich_nguyen_van": "em phải tự trả lời được 6 câu ở mục Trả bài",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tự kiểm tra cũng đánh số Câu 1–6, còn Kiểm tra hành trang lại có Câu 1–2. Học sinh dễ tưởng '6 câu' là 6 câu Tự kiểm tra.",
+      "de_xuat": "Đánh số riêng cho từng loại, ví dụ Tự kiểm tra 'TK1–TK6', Trả bài '1–6'."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "du_doan",
+      "cau": "Dự đoán trước khi học (tl59-q1)",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Nghĩ gậy truyền một 'lực đẩy' tích trữ vào bánh, lực này hao dần nên bánh chậm lại.",
+      "loi_tu_duy": "Nghĩ gậy truyền một 'lực đẩy' vào bánh và lực đó hao dần, theo kiểu Aristotle.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Gậy không cất \"lực đẩy\" nào vào bánh để hao dần; lực chỉ có khi gậy còn chạm bánh."
     },
     {
-      "cau": "cau1",
-      "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Biết lực kéo bằng lực cản nên nhầm 'hợp lực' với 'lực kéo'. Đây là hai phương án gần giống nhau về chữ.",
+      "cau": "Kiểm tra hành trang Câu 1 (ht59-q1)",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy v/t = 15/10 thay vì Δv/Δt.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Chúng cân bằng nhau từng cặp, nên hợp lực bằng $\\vec 0$."
+      "trich_nguyen_van": "Ra $1{,}5\\ \\text{m/s}^2$ là lấy $v$ chia $t$: gia tốc phải lấy $\\Delta v$, không lấy $v$."
     },
     {
-      "cau": "cau2",
+      "cau": "Kiểm tra hành trang Câu 2 (ht59-q2)",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy A có 'cùng độ lớn, ngược chiều' nên chọn, bỏ qua điều kiện hai lực phải cùng đặt lên một vật.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn A là nhầm với cặp lực đặt lên hai vật khác nhau (sẽ gặp ở định luật 3 Newton)"
+    },
+    {
+      "cau": "Tự kiểm tra Câu 1 (tl59-q2)",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Xe chạy về phía trước thì hợp lực phải hướng về phía trước.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Lực không phải nguyên nhân gây ra chuyển động."
+    },
+    {
+      "cau": "Tự kiểm tra Câu 2 (tl59-q3)",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Nhầm chiều: nghĩ người đi theo hướng rẽ của xe.",
+      "loi_tu_duy": "Nghĩ người bị kéo theo chiều rẽ của xe, quên rằng thân người giữ hướng cũ.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Xe rẽ gấp sang trái | Người nghiêng sang phải"
     },
     {
-      "cau": "cau3",
+      "cau": "Tự kiểm tra Câu 3 (tl59-q4)",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Tưởng lực ném vẫn đi theo hòn đá sau khi rời tay, kiểu suy nghĩ Aristotle.",
+      "loi_tu_duy": "Đá đang đi lên thì phải còn lực ném hướng lên, tức là tưởng lực đi theo vật sau khi rời tay.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Hết lực đẩy thì vật dừng | Vật dừng vì có lực cản"
+      "trich_nguyen_van": "Lực luôn theo chiều chạy | Lực có thể ngược chiều chạy"
     },
     {
-      "cau": "cau4",
+      "cau": "Tự kiểm tra Câu 4 (tl59-q5)",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Nghĩ lực đỡ phải 'thắng' trọng lực thì mới giữ được sách. Phương án A đã bị lộ qua tên bẫy nên D hấp dẫn hơn.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Nghĩ lực đỡ phải 'thắng' trọng lực thì sách mới không rơi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Vật đứng yên: lực đỡ không cần thắng trọng lực, chỉ cần cân bằng với nó."
     },
     {
-      "cau": "cau5",
+      "cau": "Tự kiểm tra Câu 5 (tl59-q6)",
       "dap_an_sai_hap_dan": "B",
       "loi_tu_duy": "Coi quán tính là một lực đẩy người về phía trước.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Không có lực nào đẩy em về trước: sàn xe kéo chân em chậm lại cùng xe, còn thân em vẫn giữ vận tốc cũ."
+      "trich_nguyen_van": "Quán tính là tính chất · không phải lực"
     },
     {
-      "cau": "cau6",
+      "cau": "Tự kiểm tra Câu 6 (tl59-q7)",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Tưởng bóng mất vận tốc ngang khi rời tay, nên 'đứng lại' trong khi tàu chạy tới.",
+      "loi_tu_duy": "Tưởng bóng mất vận tốc ngang khi rời tay nên bị tàu bỏ lại phía sau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Rời tay là mất lực của tay, không mất vận tốc."
+    },
+    {
+      "cau": "Điền bước còn thiếu",
+      "dap_an_sai_hap_dan": "F_c = 0,04 · 80 000 = 3200 N",
+      "loi_tu_duy": "Chép lại hệ số 0,04 của đề gốc, không để ý đề mới đã đổi thành 0,05.",
       "bai_da_nhan_manh": false,
       "trich_nguyen_van": ""
     }

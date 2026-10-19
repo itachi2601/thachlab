@@ -11,7 +11,7 @@
 
 <h3>I. Mở bài: tốc độ gấp đôi, quãng phanh gấp mấy?</h3>
 
-<p>Một xe máy chạy $36\ \text{km/h}$ trên đường khô. Người lái bóp phanh, xe trượt thêm $10\ \text{m}$ rồi dừng. Hôm sau, cũng xe đó, cũng đoạn đường đó, nhưng chạy $72\ \text{km/h}$ và phanh y như cũ.</p>
+<p>Một xe máy chạy $36\ \text{km/h}$ trên đường khô. Người lái bóp phanh, xe trượt thêm $10\ \text{m}$ rồi dừng. Hôm sau, cũng xe đó, cũng đoạn đường đó, nhưng chạy $72\ \text{km/h}$ và phanh y như cũ (tốc độ giảm nhanh như hôm trước, tức cùng gia tốc).</p>
 
 <figure class="fig" data-tl="1"><svg viewBox="0 0 400 240" role="img" aria-label="Hai lần phanh cùng một xe: ở 36 km/h xe dừng sau 10 m; ở 72 km/h chưa biết xe dừng ở đâu"><defs></defs><line x1="14.0" y1="92.0" x2="390.0" y2="92.0" stroke="currentColor" stroke-width="2" opacity="1"/><rect x="56" y="66" width="56" height="18" rx="4" fill="#fb923c" fill-opacity=".35" stroke="currentColor" stroke-width="2"/><path d="M66,66 L74,54 L94,54 L102,66" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="68" cy="86" r="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="86" r="6" fill="none" stroke="currentColor" stroke-width="2"/><text x="20.0" y="44.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">36 km/h</text><line x1="112.0" y1="48.0" x2="112.0" y2="98.0" stroke="#f87171" stroke-width="2" stroke-dasharray="4 3" opacity="1"/><line x1="182.0" y1="48.0" x2="182.0" y2="98.0" stroke="currentColor" stroke-width="2.4" opacity="1"/><line x1="114.0" y1="110.0" x2="180.0" y2="110.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><path d="M114,105 v10 M180.0,105 v10" stroke="currentColor" stroke-width="1.5"/><text x="147.0" y="126.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">10 m</text><text x="190.0" y="62.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">dừng</text><line x1="14.0" y1="192.0" x2="390.0" y2="192.0" stroke="currentColor" stroke-width="2" opacity="1"/><rect x="56" y="166" width="56" height="18" rx="4" fill="#38bdf8" fill-opacity=".35" stroke="currentColor" stroke-width="2"/><path d="M66,166 L74,154 L94,154 L102,166" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="68" cy="186" r="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="100" cy="186" r="6" fill="none" stroke="currentColor" stroke-width="2"/><text x="20.0" y="144.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">72 km/h</text><line x1="112.0" y1="148.0" x2="112.0" y2="198.0" stroke="#f87171" stroke-width="2" stroke-dasharray="4 3" opacity="1"/><line x1="114.0" y1="210.0" x2="384.0" y2="210.0" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" opacity="1"/><text x="250.0" y="228.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">dừng ở đâu?</text><text x="118.0" y="22.0" fill="#f87171" font-size="13" font-weight="600" text-anchor="start">bắt đầu phanh</text></svg><figcaption>Hình 1. Cùng xe, cùng đường, cùng cách phanh. Chỉ khác tốc độ lúc bắt đầu phanh.</figcaption></figure>
 
@@ -36,7 +36,7 @@
 
 <ul>
 <li><strong>Chuyển động thẳng biến đổi đều:</strong> quỹ đạo thẳng, gia tốc không đổi (cả độ lớn lẫn hướng).</li>
-<li>Gia tốc: $a = \dfrac{\Delta v}{\Delta t} = \dfrac{v - v_0}{t - t_0}$, đơn vị $\text{m/s}^2$.</li>
+<li>Gia tốc: $a = \dfrac{\Delta v}{\Delta t} = \dfrac{v - v_0}{t - t_0}$, với $v_0$, $v$ là vận tốc lúc $t_0$, lúc $t$. Đơn vị $\text{m/s}^2$.</li>
 <li><strong>Nhanh dần đều:</strong> $a$ cùng dấu $v$ $(a \cdot v \gt 0)$</li>
 <li><strong>Chậm dần đều:</strong> $a$ ngược dấu $v$ $(a \cdot v \lt 0)$</li>
 </ul>
@@ -45,7 +45,7 @@
 
 <details class="tl-details">
 <summary>🤔 Thế thì sao: sau bao lâu người đó dừng hẳn? (tự tính rồi bấm)</summary>
-<p>Từ định nghĩa $a = \dfrac{v - v_0}{t}$ với $v = 0$ (dừng hẳn): $0 = 6 + (-0{,}5)t$, nên $t = 12\ \text{s}$. Mỗi giây mất $0{,}5\ \text{m/s}$, mất hết $6\ \text{m/s}$ thì cần $12$ giây.</p>
+<p>Chọn $t_0 = 0$ lúc bắt đầu trôi, định nghĩa thành $a = \dfrac{v - v_0}{t}$, tức $v = v_0 + at$ (công thức ở mục 2). Dừng hẳn thì $v = 0$: $0 = 6 + (-0{,}5)t$, nên $t = 12\ \text{s}$. Mỗi giây mất $0{,}5\ \text{m/s}$, mất hết $6\ \text{m/s}$ thì cần $12$ giây.</p>
 </details>
 
 <h4>2. Công thức vận tốc và đồ thị v–t</h4>
@@ -86,7 +86,7 @@
 
 <details class="tl-details">
 <summary>📊 Đọc bảng: hàng nào có $v$ kém tin cậy nhất? (gợi ý: $\tau = b/v$; tự trả lời rồi bấm)</summary>
-<p>Hàng cuối. Ở đó $\tau = 0{,}026\ \text{s}$, sai một vạch $0{,}001\ \text{s}$ là lệch khoảng $4\,\%$; ở hàng đầu $\tau = 0{,}064\ \text{s}$ chỉ lệch khoảng $1{,}6\,\%$. Xe càng nhanh, $\tau$ càng ngắn, sai số tương đối càng lớn. Nguồn sai khác: $v = b/\tau$ thật ra là vận tốc <em>trung bình</em> lúc đi qua cổng; bề rộng tấm chắn đo bằng thước; ma sát dọc máng không đều.</p>
+<p>Hàng cuối. Đổi $b = 2{,}00\ \text{cm} = 0{,}02\ \text{m}$, ở đó $\tau = 0{,}02/0{,}77 \approx 0{,}026\ \text{s}$. Sai một vạch $0{,}001\ \text{s}$ là lệch khoảng $0{,}001/0{,}026 \approx 4\,\%$.<br>Ở hàng đầu $\tau = 0{,}02/0{,}31 \approx 0{,}064\ \text{s}$, chỉ lệch khoảng $0{,}001/0{,}064 \approx 1{,}6\,\%$.<br>Xe càng nhanh, $\tau$ càng ngắn, sai số tương đối càng lớn. Nguồn sai khác: $v = b/\tau$ thật ra là vận tốc <em>trung bình</em> lúc đi qua cổng; bề rộng tấm chắn đo bằng thước; ma sát dọc máng không đều.</p>
 </details>
 
 <div class="tl-box tl-box--think">
@@ -98,7 +98,7 @@
 <input type="radio" name="tl54-q2" id="tl54-q2c"><label for="tl54-q2c" class="tl-opt tl-no">C. $7\ \text{m/s}^2$</label>
 <input type="radio" name="tl54-q2" id="tl54-q2d"><label for="tl54-q2d" class="tl-opt tl-no">D. $-6\ \text{m/s}^2$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ $t = 0$ đến $t = 6\ \text{s}$, $v$ giảm từ $7$ xuống $1\ \text{m/s}$: $a = \dfrac{1 - 7}{6} = -1\ \text{m/s}^2$. Đường dốc xuống, $v$ vẫn dương: chậm dần đều.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $+1$ là quên dấu: đường dốc xuống thì $a \lt 0$. $7$ là đọc <em>độ cao</em> ($v_0$) thay vì <em>độ dốc</em>. $-6$ là lấy $\Delta v$ mà quên chia cho $\Delta t = 6\ \text{s}$. Gia tốc $= \dfrac{\Delta v}{\Delta t}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $+1$ là quên dấu: đường dốc xuống thì $a \lt 0$. $7$ là đọc <em>độ cao</em> ($v_0$) thay vì <em>độ dốc</em>. $-6$ là lấy $\Delta v$ mà quên chia cho $\Delta t = 6\ \text{s}$.</p></div>
 </div>
 </div>
 
@@ -110,7 +110,7 @@
 <li>Độ dịch chuyển $=$ <strong>diện tích</strong> giữa đồ thị $v$–$t$ và trục $t$.</li>
 <li>Hình thang có hai đáy $v_0$, $v$, chiều cao $t$: $d = \dfrac{v_0 + v}{2}\, t$, tức <strong>vận tốc trung bình × thời gian</strong>.</li>
 <li>Thay $v = v_0 + at$: $d = v_0t + \tfrac12 at^2$.</li>
-<li>Không đổi chiều chuyển động: quãng đường $s = d$.</li>
+<li>Không đổi chiều chuyển động: quãng đường $s = |d|$, bằng $d$ nếu chọn chiều dương theo chiều chuyển động.</li>
 </ul>
 
 <figure class="fig" data-tl="1"><svg viewBox="0 0 400 290" role="img" aria-label="Hình thang dưới đồ thị v–t chia thành hình chữ nhật v0 t bằng 8 m và tam giác một nửa a t bình phương bằng 8 m"><defs><marker id="f3-k9" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs><line x1="50.0" y1="248.0" x2="357.4" y2="248.0" stroke="currentColor" stroke-width="1.8" marker-end="url(#f3-k9)"/><line x1="50.0" y1="248.0" x2="50.0" y2="39.0" stroke="currentColor" stroke-width="1.8" marker-end="url(#f3-k9)"/><line x1="114.0" y1="248.0" x2="114.0" y2="253.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="114.0" y="268.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">1</text><line x1="178.0" y1="248.0" x2="178.0" y2="253.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="178.0" y="268.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">2</text><line x1="242.0" y1="248.0" x2="242.0" y2="253.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="242.0" y="268.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">3</text><line x1="306.0" y1="248.0" x2="306.0" y2="253.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="306.0" y="268.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">4</text><line x1="45.0" y1="192.0" x2="50.0" y2="192.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="41.0" y="197.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">2</text><line x1="45.0" y1="136.0" x2="50.0" y2="136.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="41.0" y="141.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">4</text><line x1="45.0" y1="80.0" x2="50.0" y2="80.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="41.0" y="85.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">6</text><text x="42.0" y="268.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">O</text><text x="350.4" y="238.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">t (s)</text><text x="58.0" y="40.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">v (m/s)</text><rect x="50" y="192" width="256" height="56" fill="rgba(56,189,248,.28)"/><polygon points="50,192 306,80 306,192" fill="rgba(52,211,153,.30)"/><line x1="50.0" y1="192.0" x2="306.0" y2="80.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="306.0" y1="80.0" x2="306.0" y2="248.0" stroke="currentColor" stroke-width="1.4" stroke-dasharray="4 3" opacity="1"/><line x1="50.0" y1="192.0" x2="306.0" y2="192.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.6"/><text x="178.0" y="226.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">v<tspan baseline-shift="sub" font-size="12">0</tspan>t = 8 m</text><text x="226.7" y="164.7" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">½at² = 8 m</text><text x="314.0" y="76.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">v = 6 m/s</text></svg><figcaption>Hình 3. $v_0 = 2\ \text{m/s}$, $a = 1\ \text{m/s}^2$, $t = 4\ \text{s}$. Diện tích hình thang $= \dfrac{2 + 6}{2}\cdot 4 = 8 + 8 = 16\ \text{m}$: chữ nhật xanh dương là $v_0t$, tam giác xanh lá là $\tfrac12at^2$.</figcaption></figure>
@@ -137,7 +137,7 @@
 <p><strong>🔑 Không có $t$ · $v^2 - v_0^2 = 2ad$ · quãng phanh theo $v_0^2$</strong></p>
 
 <ul>
-<li>Khử $t$ giữa $v = v_0 + at$ và $d = v_0t + \tfrac12 at^2$ được: $v^2 - v_0^2 = 2ad$.</li>
+<li>Khử $t$ giữa $v = v_0 + at$ và $d = \dfrac{v_0 + v}{2}\, t$ được: $v^2 - v_0^2 = 2ad$.</li>
 <li>Dùng khi đề <strong>không cho và không hỏi thời gian</strong>.</li>
 <li>Phanh tới dừng ($v = 0$): $d = \dfrac{v_0^2}{2|a|}$. Tốc độ gấp đôi, quãng phanh gấp bốn.</li>
 </ul>
@@ -153,7 +153,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> tính quãng phanh ở bốn tốc độ, cùng gia tốc phanh $5\ \text{m/s}^2$ (số giả định cho đường khô, chưa tính lúc người lái phản xạ).</li>
 <li><strong>Quan sát:</strong> bảng dưới.</li>
-<li><strong>Rút ra:</strong> $36 \to 72\ \text{km/h}$ (gấp đôi) thì $10 \to 40\ \text{m}$ (gấp bốn). Đây chính là đáp án câu dự đoán.</li>
+<li><strong>Rút ra:</strong> $36 \to 72\ \text{km/h}$ (gấp đôi) thì $10 \to 40\ \text{m}$ (gấp bốn).</li>
 </ol>
 </div>
 
@@ -290,7 +290,7 @@
 </details>
 <details class="tl-details">
 <summary>4. Công thức độ dịch chuyển và phương trình chuyển động? Khi nào $s = d$? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>$d = v_0t + \tfrac12 at^2$ (vận tốc trung bình × thời gian) · $x = x_0 + v_0t + \tfrac12 at^2$ · $s = d$ khi không đổi chiều.</p>
+<p>$d = v_0t + \tfrac12 at^2$ (vận tốc trung bình × thời gian) · $x = x_0 + v_0t + \tfrac12 at^2$ · không đổi chiều thì $s = |d|$, bằng $d$ khi chiều dương theo chiều chuyển động.</p>
 </details>
 <details class="tl-details">
 <summary>5. Công thức không chứa $t$? Vì sao quãng phanh tăng nhanh theo tốc độ? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
@@ -315,12 +315,12 @@
 <tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
 </thead>
 <tbody>
-<tr><td>"đang dừng … khởi hành"</td><td>$v_{01} = 0$ → $x_1 = \tfrac12 at^2$</td></tr>
-<tr><td>"gia tốc $2\ \text{m/s}^2$"</td><td>$a = 2\ \text{m/s}^2$, cùng chiều dương</td></tr>
+<tr><td>"đang dừng … khởi hành"</td><td>$v_{01} = 0$ → $x_1 = x_{01} + \tfrac12 a_1t^2$</td></tr>
+<tr><td>"gia tốc $2\ \text{m/s}^2$"</td><td>$a_1 = 2\ \text{m/s}^2$, cùng chiều dương</td></tr>
 <tr><td>"đúng lúc đó … đi qua vạch dừng"</td><td>Cùng gốc thời gian, cùng gốc toạ độ: $x_{01} = x_{02} = 0$</td></tr>
 <tr><td>"thẳng đều $10\ \text{m/s}$"</td><td>$a_2 = 0$ → $x_2 = 10t$</td></tr>
 <tr><td>"đuổi kịp, ở đâu"</td><td>Gặp nhau: $x_1 = x_2$</td></tr>
-<tr><td>"vận tốc lúc đó"</td><td>$v_1 = at$</td></tr>
+<tr><td>"vận tốc lúc đó"</td><td>$v_1 = a_1t$</td></tr>
 </tbody>
 </table>
 </div>
@@ -356,7 +356,7 @@
 <p>Cùng lúc đèn xanh, xe máy ở cách vạch dừng $75\ \text{m}$, chạy đều $10\ \text{m/s}$ <strong>về phía</strong> ô tô. Giữ chiều dương như cũ, xe máy ở phía trước vạch, $x_{02} = +75\ \text{m}$: $x_2 = 75 - 10t$. Gặp nhau: $t^2 = 75 - 10t$, tức $t^2 + 10t - 75 = 0$, hay $(t - 5)(t + 15) = 0$, nên $t = 5\ \text{s}$ (loại nghiệm $-15$). Chỗ gặp: $x = 25\ \text{m}$ tính từ vạch dừng.</p>
 </details>
 
-<p>⚠ Khoảng cách giữa hai xe khác quãng đường mỗi xe đã đi: nó còn tăng khi xe đi trước còn nhanh hơn, và bắt đầu giảm khi xe đi sau nhanh hơn.</p>
+<p>⚠ Khoảng cách giữa hai xe là $\Delta x = x_2 - x_1 = 10t - t^2$, không phải quãng đường một xe đã đi. Xe máy (đang ở trước) còn nhanh hơn ô tô thì $\Delta x$ tăng, ô tô nhanh hơn xe máy thì $\Delta x$ bắt đầu giảm.</p>
 
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl54-q7-conf" value="chac"> Chắc</label>
@@ -369,7 +369,7 @@
 <input type="radio" name="tl54-q7" id="tl54-q7b"><label for="tl54-q7b" class="tl-opt tl-no">B. Lúc $t = 10\ \text{s}$, ngay trước khi gặp</label>
 <input type="radio" name="tl54-q7" id="tl54-q7c"><label for="tl54-q7c" class="tl-opt tl-no">C. Khoảng cách tăng đều, không có lúc nào lớn nhất</label>
 <input type="radio" name="tl54-q7" id="tl54-q7d"><label for="tl54-q7d" class="tl-opt tl-ok">D. Lúc $t = 5\ \text{s}$, khi hai xe cùng vận tốc</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trước $5\ \text{s}$ xe máy nhanh hơn nên bỏ xa thêm; sau $5\ \text{s}$ ô tô nhanh hơn nên rút ngắn. Khoảng cách lớn nhất: $10 \cdot 5 - 5^2 = 25\ \text{m}$, đúng bằng phần tô xanh ở Hình 4 (bấm mở ngay dưới câu này).</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Trước $5\ \text{s}$ xe máy nhanh hơn nên bỏ xa thêm; sau $5\ \text{s}$ ô tô nhanh hơn nên rút ngắn. Khoảng cách lớn nhất: $\Delta x = 10 \cdot 5 - 5^2 = 25\ \text{m}$, đúng bằng phần tô xanh ở Hình 4.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: lúc đó hai xe cùng ở vạch, khoảng cách bằng $0$. B: lúc $10\ \text{s}$ hai xe gặp nhau, khoảng cách cũng bằng $0$. C quên rằng ô tô nhanh dần, đến lúc nào đó sẽ nhanh hơn xe máy. Khoảng cách đổi từ tăng sang giảm khi hai vận tốc bằng nhau. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đọc lại dòng ⚠ ngay trên câu này.</p></div>
 </div>
 </div>
@@ -395,7 +395,7 @@
 <summary>⭐ Thử thách phân tầng</summary>
 <ul>
 <li><strong>⭐</strong> Xe khởi hành từ nghỉ với $a = 2\ \text{m/s}^2$. Sau $5\ \text{s}$, vận tốc và quãng đường? <em>($10\ \text{m/s}$; $25\ \text{m}$)</em></li>
-<li><strong>⭐⭐</strong> Vật nhanh dần đều từ nghỉ, đi được $5\ \text{m}$ trong <strong>giây thứ ba</strong>. Tìm $a$. <em>($d_3 - d_2 = \tfrac12 a(9 - 4) = 5$, nên $a = 2\ \text{m/s}^2$)</em></li>
+<li><strong>⭐⭐</strong> Vật nhanh dần đều từ nghỉ, đi được $5\ \text{m}$ trong <strong>giây thứ ba</strong>. Tìm $a$. <em>(Giây thứ ba là từ $t = 2$ đến $t = 3\ \text{s}$, nên lấy $d_3 - d_2$ với $d_3$, $d_2$ là quãng đường trong $3\ \text{s}$ đầu và $2\ \text{s}$ đầu.<br>$d_3 - d_2 = \tfrac12 a(9 - 4) = 5$, nên $a = 2\ \text{m/s}^2$)</em></li>
 <li><strong>⭐⭐⭐</strong> Ô tô chạy $15\ \text{m/s}$; người lái mất $0{,}8\ \text{s}$ mới đạp phanh, rồi xe chậm dần đều với gia tốc độ lớn $6\ \text{m/s}^2$. Tổng quãng đường từ lúc thấy vật cản tới lúc dừng? <em>($12 + 18{,}75 = 30{,}75\ \text{m}$; trong $0{,}8\ \text{s}$ phản xạ xe vẫn chạy đều)</em></li>
 </ul>
 </details>

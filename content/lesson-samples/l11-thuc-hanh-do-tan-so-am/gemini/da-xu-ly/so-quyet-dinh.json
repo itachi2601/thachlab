@@ -1,6 +1,6 @@
 {
   "bai": "l11-thuc-hanh-do-tan-so-am",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-10",
     "model": "claude-opus-5-5",
@@ -153,5 +153,118 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-thuc-hanh-do-tan-so-am/gemini/da-xu-ly/theory.src.202610100630.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng sai số dụng cụ nay nêu f tỉ lệ nghịch L nên Δf/f = ΔL/L = 0,1/9,1 ≈ 1,1 % rồi mới nhân với f̄ ra 4,8 Hz."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ví dụ cụ thể sau \"cùng pha liên tiếp\": hai đỉnh liên tiếp, hoặc hai lần liên tiếp sóng cắt trục đi lên."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ ký hiệu Δf̄ theo SGK, nhưng tách Trả bài 5 thành từng dòng và in đậm rằng sau dấu ± là Δf tổng, không phải Δf̄."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng câu 4 nói rõ điều quyết định là bề rộng L chứ không phải N, màn rộng 10 ô nên chọn N và TIME/DIV cho L gần kín màn."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa Δf_i lần 2 và 5 thành 3,8 Hz cho khớp bảng, trung bình vẫn ≈ 3,1 Hz."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ 4–8 chu kì dành cho cảm biến, ghi âm phóng to được thì lấy nhiều hơn như N = 10."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài chỉ có mốc FIG4, không có chú thích hình), và di chuyển hình là đổi cấu trúc."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng Bẫy 2 thêm ví dụ 200 μs/ô = 0,2 ms/ô."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong khung mô phỏng ghi v ≈ 340 m/s của không khí."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ví dụ tại chỗ: Δf = 8 ở hàng đơn vị nên 440,6 làm tròn thành 441."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi câu 1 đã nhấn độ to ứng với biên độ, không cần thêm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ đổi ms ra s trước câu 2 đã thêm ở vòng trước."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mẹo Nhân – Chia – Đổi – Lật ngay trước câu 3 đã nhấn bước chia cho N."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ sai số nằm ở bề rộng L đã thêm ở vòng trước."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 ngay trên câu 5 đã nhấn n đỉnh cho n − 1 chu kì."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bước đổi ms ra s đã nhấn ở mục II.2, ⚠ câu 2 và mẹo."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lỗi nhầm số chu kì N với chu kì T chưa được nhấn, thêm dòng ⚠ trước câu 7."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mở rộng dòng ⚠ sẵn có trước câu 8 thành \"Tính lại theo độ chia mới\" để tránh dùng lại con số 2,3 ô cũ."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.3: Δf_i lần 2 và lần 5 đổi 3,9 → 3,8 Hz (khớp bảng với f̄ = 440,6), Δf̄ ≈ 3,1 Hz không đổi.",
+      "II.3: sai số dụng cụ viết qua Δf/f = ΔL/L = 0,1/9,1 ≈ 1,1 %, Δf_dc ≈ 4,8 Hz không đổi.",
+      "II.3: thêm ví dụ làm tròn Δf = 8 (hàng đơn vị) nên f̄ = 440,6 → 441.",
+      "II.3 phản hồi q4: điều quyết định là bề rộng L, màn rộng 10 ô, chọn N và TIME/DIV cho L gần kín màn.",
+      "II.2: \"cùng pha liên tiếp\" kèm ví dụ hai đỉnh liên tiếp hoặc hai lần cắt trục đi lên.",
+      "II.1 khung PhET: thêm v ≈ 340 m/s cho không khí.",
+      "II.4: quy tắc 4–8 chu kì áp cho cảm biến, ghi âm phóng to lấy nhiều hơn (N = 10).",
+      "Bẫy 2: ví dụ 200 μs/ô = 0,2 ms/ô.",
+      "Thêm ⚠ trước q7 (số chu kì N khác chu kì T) và mở rộng ⚠ trước q8 (tính lại theo độ chia mới).",
+      "Trả bài 5: nhấn sau dấu ± là Δf tổng, không phải Δf̄; Trả bài 2 và 5 tách mỗi ý một dòng.",
+      "Cắt câu lặp: ví dụ 440 Hz ở II.1 rút gọn, bỏ chú thích lặp ở bullet công thức, phản hồi q2, q3, q6 bỏ đoạn lặp."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-thuc-hanh-do-tan-so-am/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

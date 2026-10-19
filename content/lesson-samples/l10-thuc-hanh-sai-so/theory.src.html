@@ -19,10 +19,10 @@
 <div class="tl-quiz">
 <input type="radio" name="tl48-q1" id="tl48-q1a"><label for="tl48-q1a" class="tl-opt tl-no">A. Một bạn chắc chắn đọc sai, vì kích thước thật chỉ có một con số</label>
 <input type="radio" name="tl48-q1" id="tl48-q1b"><label for="tl48-q1b" class="tl-opt tl-ok">B. Cả hai có thể đúng: phép đo nào cũng có sai số, dụng cụ chia nhỏ hơn thì sát giá trị thật hơn</label>
-<input type="radio" name="tl48-q1" id="tl48-q1c"><label for="tl48-q1c" class="tl-opt tl-no">C. Số nhiều chữ số hơn luôn gần giá trị thật hơn</label>
+<input type="radio" name="tl48-q1" id="tl48-q1c"><label for="tl48-q1c" class="tl-opt tl-no">C. Bạn A chỉ cần ghi thành $12{,}00\ \text{mm}$ là chính xác ngang bạn B</label>
 <input type="radio" name="tl48-q1" id="tl48-q1d"><label for="tl48-q1d" class="tl-opt tl-no">D. Thước kẻ hỏng vì không đọc được phần lẻ</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Đo không bao giờ cho giá trị thật tuyệt đối. Việc cần học là <strong>ước lượng sai số</strong> và <strong>ghi kết quả kèm sai số</strong>.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A coi mỗi đại lượng chỉ có một con số đọc được. C nhầm số chữ số với độ chính xác: số chữ số do dụng cụ quyết định, ghi thêm không làm sát hơn. D: thước vạch $1\ \text{mm}$ không hỏng, chỉ chia thô hơn thước điện tử.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A coi mỗi đại lượng chỉ có một con số đọc được. C nhầm số chữ số với độ chính xác: số chữ số do dụng cụ quyết định, tự ghi thêm số 0 không làm sát hơn. D: thước vạch $1\ \text{mm}$ không hỏng, chỉ chia thô hơn thước điện tử.</p></div>
 </div>
 </div>
 
@@ -127,13 +127,14 @@
 
 <h4>4. Sai số tuyệt đối của phép đo trực tiếp</h4>
 
-<p><strong>🔑 Trung bình · lệch từng lần · lệch trung bình · cộng sai số dụng cụ</strong></p>
+<p><strong>🔑 Lệch trung bình + sai số dụng cụ</strong></p>
 
 <ul>
 <li>Giá trị trung bình: $\overline{A} = \dfrac{A_1 + A_2 + \dots + A_n}{n}$.</li>
 <li>Sai số tuyệt đối từng lần: $\Delta A_i = |\overline{A} - A_i|$.</li>
 <li>Trung bình các lần: $\overline{\Delta A} = \dfrac{\Delta A_1 + \Delta A_2 + \dots + \Delta A_n}{n}$.</li>
 <li>Sai số tuyệt đối của phép đo: $$\Delta A = \overline{\Delta A} + \Delta A_{\text{dc}}$$</li>
+<li>Chỉ đo 1 lần: $\Delta A = \Delta A_{\text{dc}}$ (như Hình 1).</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l10-sai-so-01">
@@ -147,7 +148,7 @@
 
 __BANG_TN1__
 
-<p>$\overline{t} = 20{,}07\ \text{s}$; cột $\Delta t_i = |\overline{t} - t_i|$; đồng hồ số: $\Delta t_{\text{dc}} = 0{,}01\ \text{s}$.</p>
+<p>$\overline{t} = \dfrac{100{,}35}{5} = 20{,}07\ \text{s}$; cột $\Delta t_i = |\overline{t} - t_i|$; đồng hồ số: $\Delta t_{\text{dc}} = 0{,}01\ \text{s}$.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -171,7 +172,7 @@ __BANG_TN1__
 
 <h4>5. Sai số tỉ đối</h4>
 
-<p><strong>🔑 δA = ΔA chia Ā · phần trăm · càng nhỏ càng chính xác</strong></p>
+<p><strong>🔑 Sai số tỉ đối: ΔA chia Ā</strong></p>
 
 <ul>
 <li>$$\delta A = \dfrac{\Delta A}{\overline{A}} \cdot 100\,\%$$</li>
@@ -194,7 +195,7 @@ __BANG_TN1__
 <li>$A = X^{n}\dfrac{Y^{m}}{Z^{k}}$ thì $\delta A = n\,\delta X + m\,\delta Y + k\,\delta Z$: số mũ nhân với sai số tỉ đối của chính nó.</li>
 </ul>
 
-<p>Ví dụ: hiệu hai đoạn đo được: $\Delta(l_1 - l_2) = \Delta l_1 + \Delta l_2$. Hình lập phương $V = a^3$: $\delta V = 3\,\delta a$.</p>
+<p>Ví dụ: hình lập phương $V = a^3$ có $\delta V = 3\,\delta a$.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -211,12 +212,12 @@ __BANG_TN1__
 
 <h4>7. Ghi kết quả đo và chữ số có nghĩa</h4>
 
-<p><strong>🔑 A = Ā ± ΔA · ΔA 1–2 chữ số · Ā cùng bậc thập phân</strong></p>
+<p><strong>🔑 Ghi A = Ā ± ΔA</strong></p>
 
 <ul>
 <li>Kết quả là một khoảng: $A = \overline{A} \pm \Delta A$.</li>
-<li>$\Delta A$ viết đến <strong>1–2 chữ số có nghĩa</strong> (CSCN).</li>
-<li>$\overline{A}$ viết đến <strong>cùng bậc thập phân</strong> với $\Delta A$.</li>
+<li>$\Delta A$ viết đến <strong>1–2 chữ số có nghĩa</strong> (CSCN): thường giữ 2 nếu chữ số đầu là 1 hoặc 2, còn lại giữ 1.</li>
+<li>$\overline{A}$ viết đến <strong>cùng bậc thập phân</strong> với $\Delta A$ (cùng số chữ số sau dấu phẩy).</li>
 </ul>
 
 <p>Ví dụ: $s = 1{,}52723\ \text{m}$, $\Delta s = 0{,}002\ \text{m}$ thì $s = (1{,}527 \pm 0{,}002)\ \text{m}$.</p>
@@ -411,7 +412,7 @@ __BANG_TN1__
 
 <div class="tl-box" data-exp="tn-l10-sai-so-03">
 <p class="tl-label">📝 Đề bài</p>
-<p>Đo $g$ bằng con lắc đơn: $g = \dfrac{4\pi^2 l}{T^2}$. Dây dài $l = 1{,}000\ \text{m}$, thước ĐCNN $1\ \text{mm}$ (sai số dụng cụ bằng một ĐCNN). Thời gian $t$ của 10 dao động (chu kì $T$ là thời gian của một dao động) đo 5 lần bằng đồng hồ số ĐCNN $0{,}01\ \text{s}$, kết quả ở bảng trên. Bỏ qua sai số của $\pi$. Tính $g$ và ghi kết quả.</p>
+<p>Đo $g$ bằng con lắc đơn: $g = \dfrac{4\pi^2 l}{T^2}$. Dây dài $l = 1{,}000\ \text{m}$, thước ĐCNN $1\ \text{mm}$ (sai số dụng cụ bằng một ĐCNN). Thời gian $t$ của 10 dao động (chu kì $T$ là thời gian của một dao động) đo 5 lần bằng đồng hồ số ĐCNN $0{,}01\ \text{s}$, kết quả ở bảng mục II.4. Bỏ qua sai số của $\pi$. Tính $g$ và ghi kết quả.</p>
 </div>
 
 <div class="table-scroll">
@@ -433,10 +434,10 @@ __BANG_TN1__
 <details class="tl-details">
 <summary>🧮 Bấm xem lời giải</summary>
 <ol class="tl-steps">
-<li><strong>Chu kì:</strong> $\overline{t} = 20{,}07\ \text{s}$, $\Delta t = 0{,}14 + 0{,}01 = 0{,}15\ \text{s}$ (bảng) nên $T = 2{,}007\ \text{s}$.</li>
-<li><strong>Sai số tỉ đối của $T$:</strong> $\Delta T = \dfrac{\Delta t}{10} = 0{,}015\ \text{s}$ nên $\delta T = \dfrac{0{,}015}{2{,}007} = \dfrac{0{,}15}{20{,}07} \approx 0{,}747\,\%$.</li>
+<li><strong>Chu kì:</strong> $\overline{t} = 20{,}07\ \text{s}$, $\Delta t = 0{,}14 + 0{,}01 = 0{,}15\ \text{s}$ (Câu 2) nên $T = 2{,}007\ \text{s}$.</li>
+<li><strong>Sai số tỉ đối của $T$:</strong> $T = \dfrac{t}{10}$ với số 10 là số đếm, không có sai số, nên $\Delta T = \dfrac{\Delta t}{10} = 0{,}015\ \text{s}$ và $\delta T = \dfrac{0{,}015}{2{,}007} = \dfrac{0{,}15}{20{,}07} \approx 0{,}747\,\%$.</li>
 <li><strong>Giá trị trung bình:</strong> $$\overline{g} = \dfrac{4\pi^2 \cdot 1{,}000}{2{,}007^2} \approx 9{,}80\ \text{m/s}^2$$</li>
-<li><strong>Sai số của $l$:</strong> ở bài này đề quy ước lấy một ĐCNN (không phải nửa ĐCNN như ở mục II), nên $\delta l = \dfrac{0{,}001}{1{,}000} = 0{,}1\,\%$.</li>
+<li><strong>Sai số của $l$:</strong> quy tắc chung ở mục II.3 cho thước vạch là nửa ĐCNN, nhưng đề đã quy ước lấy một ĐCNN thì làm theo đề: $\delta l = \dfrac{0{,}001}{1{,}000} = 0{,}1\,\%$.</li>
 <li><strong>Sai số của $g$:</strong> $g$ chứa $l$ và $T^2$, nên $\delta g = \delta l + 2\,\delta T \approx 0{,}1 + 2 \cdot 0{,}747 \approx 1{,}6\,\%$.</li>
 <li><strong>Sai số tuyệt đối:</strong> $\Delta g = 9{,}80 \cdot 0{,}016 \approx 0{,}16\ \text{m/s}^2$.</li>
 <li><strong>Ghi kết quả:</strong> $$g = (9{,}80 \pm 0{,}16)\ \text{m/s}^2$$</li>
@@ -479,7 +480,7 @@ __BANG_TN1__
 <summary>⭐ Thử thách phân tầng</summary>
 <ul>
 <li><strong>⭐</strong> Thước ĐCNN $1\ \text{mm}$ đo một lần chiếc bút được $143{,}0\ \text{mm}$, lấy $\Delta A$ bằng nửa ĐCNN. Tính $\delta A$. <em>Đáp số: $\dfrac{0{,}5}{143{,}0} \approx 0{,}35\,\%$</em></li>
-<li><strong>⭐⭐</strong> Cạnh hình vuông $a = (20{,}0 \pm 0{,}2)\ \text{cm}$. Ghi kết quả diện tích $S$. <em>($\delta a = 1\,\%$, $\delta S = 2\,\%$, $S = 400\ \text{cm}^2$, $\Delta S = 8$: $S = (400 \pm 8)\ \text{cm}^2$)</em></li>
+<li><strong>⭐⭐</strong> Cạnh hình vuông $a = (20{,}0 \pm 0{,}2)\ \text{cm}$. Ghi kết quả diện tích $S$. <em>$\delta a = 1\,\%$<br>$\delta S = 2\,\%$<br>$S = 400\ \text{cm}^2$, tức $4{,}00 \cdot 10^{2}\ \text{cm}^2$ (3 CSCN như $a$)<br>$\Delta S = 8\ \text{cm}^2$<br>$S = (400 \pm 8)\ \text{cm}^2$</em></li>
 <li><strong>⭐⭐⭐</strong> Khối lập phương $a = (5{,}00 \pm 0{,}05)\ \text{cm}$, $m = (1000 \pm 5)\ \text{g}$. Ghi kết quả khối lượng riêng $\rho = m/a^3$. <em>($\delta m = 0{,}5\,\%$, $\delta a = 1\,\%$; $\delta\rho = 0{,}5 + 3 \cdot 1 = 3{,}5\,\%$; $\rho = 8{,}00$, $\Delta\rho = 0{,}28$: $\rho = (8{,}00 \pm 0{,}28)\ \text{g/cm}^3$)</em></li>
 </ul>
 </details>

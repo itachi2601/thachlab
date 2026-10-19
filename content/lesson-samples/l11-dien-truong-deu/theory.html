@@ -25,7 +25,7 @@
 <input type="radio" name="tl37-q1" id="tl37-q1c"><label for="tl37-q1c" class="tl-opt tl-no">C. Lệch lên theo một đường thẳng xiên</label>
 <input type="radio" name="tl37-q1" id="tl37-q1d"><label for="tl37-q1d" class="tl-opt tl-no">D. Cong dần xuống phía bản âm</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Giọt âm bị bản dương hút, bản âm đẩy, nên lực điện hướng lên và không đổi. Vận tốc ngang giữ nguyên, vận tốc dọc tăng dần — giống hệt hòn đá ném ngang, chỉ là "rơi" lên trên. Đổi lượng điện tích của giọt là đổi chỗ chạm lon.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — bay vuông góc đường sức không có nghĩa là không có lực; lực điện vẫn tác dụng, theo phương vuông góc với vận tốc ban đầu. C — lực không đổi làm vận tốc dọc tăng dần, nên đường đi cong chứ không thẳng. D — giọt mang điện âm, bị bản âm đẩy ra chứ không bị hút về. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — bay vuông góc đường sức không có nghĩa là không có lực; lực điện vẫn tác dụng, theo phương vuông góc với vận tốc ban đầu. C — lực không đổi làm vận tốc dọc tăng dần, nên đường đi cong chứ không thẳng. D — giọt mang điện âm, bị bản âm đẩy ra chứ không bị hút về.</p></div>
 </div>
 </div>
 
@@ -37,7 +37,7 @@
 
 <ul>
 <li><strong>Điện trường đều:</strong> vectơ $\vec E$ tại mọi điểm bằng nhau — cùng phương, cùng chiều, cùng độ lớn.</li>
-<li><strong>Cách tạo:</strong> hai bản kim loại phẳng song song, cách nhau $d$, tích điện trái dấu. Giữa hai bản có hiệu điện thế $U$.</li>
+<li><strong>Cách tạo:</strong> hai bản kim loại phẳng song song, rộng hơn nhiều so với khoảng cách $d$ giữa chúng, tích điện trái dấu. Giữa hai bản có hiệu điện thế $U$.</li>
 <li><strong>Đường sức:</strong> thẳng, song song, cách đều nhau.</li>
 <li>Phương vuông góc với hai bản; chiều từ bản dương sang bản âm.</li>
 <li>Gần mép bản, đường sức cong ra: ở đó không còn đều.</li>
@@ -87,7 +87,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> dán hai thanh đồng song song lên giấy dẫn điện, cách nhau $d = 6{,}0$ cm. Nối với nguồn $U = 9{,}0$ V. Que đo âm của vôn kế số chạm thanh âm; que dương đặt lần lượt cách thanh âm $x = 1$, $2$, $3$, $4$, $5$ cm, ở giữa tờ giấy.</li>
 <li><strong>Quan sát:</strong> số đọc $V$ tăng đều theo $x$: mỗi cm thêm $1{,}5$ V (số liệu minh hoạ tính từ mô hình, lý tưởng hơn số đo thật).</li>
-<li><strong>Rút ra:</strong> $V/x$ không đổi, bằng $U/d$. Điện trường giữa hai thanh là đều.</li>
+<li><strong>Rút ra:</strong> $V$ là hiệu điện thế từ thanh âm tới điểm đo, nên $V/x$ là $E$ trên đoạn dài $x$. Mọi đoạn cho cùng $E = U/d$: điện trường giữa hai thanh là đều.</li>
 </ol>
 </div>
 
@@ -108,7 +108,7 @@
 
 <details class="tl-details">
 <summary>👀 Sai số đến từ đâu?</summary>
-<p>Vôn kế lệch $\pm 0{,}1$ V. Ở $x = 1$ cm, $E$ lệch tới $\dfrac{0{,}1}{0{,}01} = 10$ V/m (gần 7 %). Ở $x = 5$ cm chỉ lệch $\dfrac{0{,}1}{0{,}05} = 2$ V/m (khoảng 1,3 %). Ngoài ra: đặt que lệch vị trí vài mm, và đo gần mép giấy thì trường không đều.</p>
+<p>Vôn kế lệch $\pm 0{,}1$ V, như nhau ở mọi hàng của bảng.<br>Đặt que lệch vị trí vài mm.<br>Đo gần mép giấy thì trường không đều.</p>
 </details>
 
 <p>Vôn kế sai số $\pm 0{,}1$ V. Muốn tính $E$ chính xác nhất từ <strong>một</strong> hàng của bảng, nên chọn hàng nào?</p>
@@ -126,7 +126,7 @@
 
 <p><strong>🔑 Ngang thẳng đều · dọc nhanh dần đều · quỹ đạo parabol</strong></p>
 
-<p>Điện tích $q$, khối lượng $m$ bay vào với $\vec v_0$ vuông góc đường sức. Chân không, bỏ qua trọng lực. Gốc $O$ tại điểm hạt bắt đầu vào trường, $Oy$ cùng chiều lực điện.</p>
+<p>Điện tích $q$, khối lượng $m$ bay vào với $\vec v_0$ vuông góc đường sức. Chân không, bỏ qua trọng lực (được phép khi $mg$ rất nhỏ so với $|q|E$, như với electron, proton, ion). Gốc $O$ tại điểm hạt bắt đầu vào trường, $Oy$ cùng chiều lực điện.</p>
 
 <ul>
 <li>Lực điện: $F = |q|E = |q|\dfrac{U}{d}$, không đổi, vuông góc $\vec v_0$.</li>
@@ -135,7 +135,7 @@
 <li>Theo $Oy$ (dọc lực): nhanh dần đều, $y = \tfrac12 a t^2$.</li>
 </ul>
 
-<p>Khử $t$ được phương trình quỹ đạo — một nhánh <strong>parabol</strong>:</p>
+<p>Từ $x = v_0 t$ có $t = x/v_0$, thay vào $y$ được phương trình quỹ đạo — một nhánh <strong>parabol</strong> (chỉ nửa ứng với $x \geq 0$):</p>
 
 <p>$$y = \dfrac{|q|\,U}{2\,m\,d\,v_0^2}\,x^2$$</p>
 
@@ -145,7 +145,7 @@
 <li>Bề lõm parabol hướng vào bản tích điện trái dấu với $q$. Độ lớn luôn tính bằng $|q|$.</li>
 </ul>
 
-<p>Mẹo: <strong>"Ném ngang, đổi g thành a"</strong> — mọi công thức ném ngang dùng lại được, chỉ thay $g$ bằng $a = \dfrac{|q|E}{m}$.</p>
+<p>Mẹo: <strong>"Ném ngang, đổi g thành a"</strong>, với $a = \dfrac{|q|E}{m}$.</p>
 
 <figure class="fig" data-tl="1" data-exp="tn-l11-dien-truong-deu-03"><svg viewBox="0 0 440 240" role="img" aria-label="Hai bản nằm ngang, bản trên dương, bản dưới âm, đường sức hướng xuống. Điện tích dương bay ngang vào giữa, chịu lực hướng xuống, cong theo parabol về bản âm. Electron chịu lực hướng lên, cong về bản dương. Ra khỏi bản cả hai đi thẳng"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="60" y="30" width="270" height="8" rx="2" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="60" y="202" width="270" height="8" rx="2" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><text x="60" y="22" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">+ + + + + + + + +</text><text x="60" y="228" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">− − − − − − − − −</text><line x1="110.0" y1="40.0" x2="110.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><line x1="150.0" y1="40.0" x2="150.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><line x1="250.0" y1="40.0" x2="250.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><line x1="290.0" y1="40.0" x2="290.0" y2="200.0" stroke="#fb923c" stroke-width="1.6" opacity="0.45" marker-end="url(#f3-o)"/><text x="256" y="186" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">E</text><line x1="14.0" y1="120.0" x2="54.0" y2="120.0" stroke="#34d399" stroke-width="3" opacity="1" marker-end="url(#f3-g)"/><text x="24" y="112.0" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">v₀</text><polyline fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" points="60.0,120.0 66.0,120.0 72.0,120.1 78.0,120.2 84.0,120.4 90.0,120.6 96.0,120.9 102.0,121.2 108.0,121.6 114.0,122.0 120.0,122.5 126.0,123.0 132.0,123.6 138.0,124.2 144.0,124.8 150.0,125.6 156.0,126.3 162.0,127.1 168.0,128.0 174.0,128.9 180.0,129.9 186.0,130.9 192.0,132.0 198.0,133.1 204.0,134.2 210.0,135.4 216.0,136.7 222.0,138.0 228.0,139.4 234.0,140.8 240.0,142.2 246.0,143.7 252.0,145.3 258.0,146.9 264.0,148.5 270.0,150.2 276.0,152.0 282.0,153.8 288.0,155.7 294.0,157.6 300.0,159.5 306.0,161.5 312.0,163.6 318.0,165.7 324.0,167.8 330.0,170.0"/><line x1="330.0" y1="170.0" x2="420.0" y2="203.3" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" opacity="0.9"/><text x="342" y="160" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">q &gt; 0</text><circle cx="195.0" cy="132.5" r="5" fill="currentColor"/><line x1="195.0" y1="138.5" x2="195.0" y2="166.5" stroke="#f87171" stroke-width="3" opacity="1" marker-end="url(#f3-r)"/><text x="203.0" y="166.5" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">F</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="round" points="60.0,120.0 66.0,120.0 72.0,119.9 78.0,119.8 84.0,119.6 90.0,119.4 96.0,119.1 102.0,118.8 108.0,118.4 114.0,118.0 120.0,117.5 126.0,117.0 132.0,116.4 138.0,115.8 144.0,115.2 150.0,114.4 156.0,113.7 162.0,112.9 168.0,112.0 174.0,111.1 180.0,110.1 186.0,109.1 192.0,108.0 198.0,106.9 204.0,105.8 210.0,104.6 216.0,103.3 222.0,102.0 228.0,100.6 234.0,99.2 240.0,97.8 246.0,96.3 252.0,94.7 258.0,93.1 264.0,91.5 270.0,89.8 276.0,88.0 282.0,86.2 288.0,84.3 294.0,82.4 300.0,80.5 306.0,78.5 312.0,76.4 318.0,74.3 324.0,72.2 330.0,70.0"/><line x1="330.0" y1="70.0" x2="420.0" y2="36.7" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6 4" opacity="0.9"/><text x="342" y="92" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">electron</text><circle cx="195.0" cy="107.5" r="5" fill="#38bdf8"/><line x1="195.0" y1="101.5" x2="195.0" y2="73.5" stroke="#f87171" stroke-width="3" opacity="1" marker-end="url(#f3-r)"/><text x="203.0" y="81.5" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">F</text></svg><figcaption>Hình 3. Cùng bay ngang vào giữa: $q \gt 0$ bị lực $F$ kéo về <strong>bản âm</strong>, electron về <strong>bản dương</strong>. Trong khe: parabol; ra khỏi bản: đi thẳng. Sơ đồ <strong>không đúng tỉ lệ</strong>.</figcaption></figure>
 
@@ -187,7 +187,7 @@
 <thead><tr><th>Hạt (trường $\vec E$ hướng sang phải)</th><th>Lực điện</th></tr></thead>
 <tbody>
 <tr><td>Proton ($q\gt 0$)</td><td>Sang phải, cùng chiều $\vec E$</td></tr>
-<tr><td>Ion âm ($q\lt 0$)</td><td>Sang trái, ngược chiều $\vec E$</td></tr>
+<tr><td>Electron hoặc ion âm ($q\lt 0$)</td><td>Sang trái, ngược chiều $\vec E$</td></tr>
 </tbody>
 </table>
 </div>
@@ -237,7 +237,7 @@
 <table class="tl-table">
 <thead><tr><th>Sai</th><th>Đúng</th></tr></thead>
 <tbody>
-<tr><td>$d = 2$ cm, $E = 100/2 = 50$ V/m</td><td>$d = 0{,}02$ m, $E = 5000$ V/m</td></tr>
+<tr><td>$U = 100$ V, $d = 2$ cm, $E = 100/2 = 50$ V/m</td><td>$d = 0{,}02$ m, $E = 5000$ V/m</td></tr>
 <tr><td>Dùng $E = U/d$ cho điện tích điểm</td><td>Chỉ dùng cho điện trường đều, xa mép bản</td></tr>
 </tbody>
 </table>
@@ -394,7 +394,7 @@
 
 <details class="tl-details">
 <summary>⭐⭐⭐ Đặt màn cách mép ra của hai bản $D = 20$ cm. Vệt sáng lệch khỏi điểm giữa màn bao nhiêu?</summary>
-<p>Ra khỏi bản, electron đi thẳng (bẫy 2). Lệch thêm $D\tan\alpha = 200\cdot0{,}10 = 20$ mm. Tổng: $Y = 2{,}5 + 20 = 22{,}5$ mm.<br>Mẹo kiểm: đường thẳng đó kéo ngược đi qua trung điểm hai bản, $Y = (L/2 + D)\tan\alpha = 225\cdot0{,}10 = 22{,}5$ mm.<br>Vì sao qua trung điểm: $\tan\alpha = \dfrac{v_y}{v_0} = \dfrac{aL}{v_0^2}$, còn $y = \dfrac{aL^2}{2v_0^2} = \dfrac{L}{2}\tan\alpha$ (ở đây $25\cdot0{,}10 = 2{,}5$ mm).<br>Vậy lùi từ mép ra một đoạn $L/2$ thì đường thẳng hạ đúng $y$, về lại trục bay ban đầu.</p>
+<p>Ra khỏi bản, electron đi thẳng (bẫy 2). Với $D = 20$ cm $= 200$ mm: lệch thêm $D\tan\alpha = 200\ \text{mm}\cdot0{,}10 = 20$ mm. Tổng: $Y = 2{,}5 + 20 = 22{,}5$ mm.<br>Mẹo kiểm: đường thẳng đó kéo ngược đi qua trung điểm hai bản, $Y = (L/2 + D)\tan\alpha = 225\ \text{mm}\cdot0{,}10 = 22{,}5$ mm.<br>Vì sao qua trung điểm: $\tan\alpha = \dfrac{v_y}{v_0} = \dfrac{aL}{v_0^2}$, còn $y = \dfrac{aL^2}{2v_0^2} = \dfrac{L}{2}\tan\alpha$ (ở đây $25\ \text{mm}\cdot0{,}10 = 2{,}5$ mm).<br>Vậy lùi từ mép ra một đoạn $L/2$ thì đường thẳng hạ đúng $y$, về lại trục bay ban đầu.</p>
 </details>
 </div>
 

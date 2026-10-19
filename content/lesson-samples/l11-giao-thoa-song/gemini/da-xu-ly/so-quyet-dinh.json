@@ -1,6 +1,6 @@
 {
   "bai": "l11-giao-thoa-song",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -102,5 +102,108 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-giao-thoa-song/gemini/da-xu-ly/theory.src.202610091138.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này là chú thích hình, không có trong HTML bài)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm 2 câu trước bảng mục 2: đi xa hơn kλ thì trễ k chu kì nên cùng pha, xa hơn (k+½)λ thì trễ thêm nửa chu kì nên ngược pha; cắt chữ ở thí nghiệm và video cùng mục để bù."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong mô phỏng PhET đổi 'Δd = kλ' thành '$d_2-d_1=k\\lambda$' cho thống nhất ký hiệu."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục đang sát trần nên thêm vào details mục 3 lập luận dịch M một đoạn x thì hiệu đường đi đổi 2x, đủ λ khi x = λ/2, chỉ đúng trên AB."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu 'mạnh gấp đôi' không có trong bài)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng đầu mục 4: hai khe được chiếu từ cùng một nguồn nên là hai nguồn kết hợp cùng pha, vân sáng là cực đại, vân tối là cực tiểu."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm định nghĩa khoảng vân trùng và lý do chọn p, q nhỏ nhất (vân trùng gần vân trung tâm nhất)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lời giải ghi rõ 7 giá trị âm, k = 0, 6 giá trị dương và thêm bước kiểm tra 12 + 2 = 14 cực tiểu."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu 2 (thực nằm trong khung Thử sức sau mục V) viết thành MA = d1 = 12 cm, MB = d2 = 15 cm."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm '(a: biên độ mỗi sóng)' ở dòng cực đại và '(a: khoảng cách hai khe)' ở dòng khe Young trong phần Mang về."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành 'cùng phương dao động' ở dòng 🔑, câu trả bài 1 và phần Mang về."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn chỗ to chỗ nhỏ khi đi dọc hàng ghế, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 1 đã được thêm ở vòng 1."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhắc chia cho λ trước khi kết luận, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhắc tính cả k = 0, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn nguyên + ½ là vân tối, không cần thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.1: 'cùng phương' thành 'cùng phương dao động' (dòng 🔑, trả bài câu 1, Mang về).",
+      "Mục II.1: dòng ví dụ rút còn 'hai loa nối cùng một máy phát âm' (ví dụ mũi nhọn đã có ở thí nghiệm khay sóng).",
+      "Mục II.2: thêm 2 câu trước bảng: hiệu đường đi kλ thì trễ k chu kì nên cùng pha, (k+½)λ thì trễ thêm nửa chu kì nên ngược pha.",
+      "Mục II.2 (details PhET): Δd = kλ đổi thành d2 − d1 = kλ.",
+      "Mục II.3 (details): thêm lập luận dịch M một đoạn x thì d2 − d1 đổi 2x, nên hai cực đại liên tiếp cách λ/2, chỉ đúng trên AB.",
+      "Mục II.4: thêm dòng hai khe là hai nguồn kết hợp cùng pha, vân sáng ứng với cực đại, vân tối ứng với cực tiểu.",
+      "Mục II.4 (details hai ánh sáng): định nghĩa khoảng vân trùng là khoảng cách hai vân sáng trùng liên tiếp, vân trung tâm là vân trùng đầu tiên.",
+      "Lời giải bài mẫu câu b: thêm đếm 7 + 1 + 6 = 14 và bước kiểm tra cực tiểu 12 + 2 = 14 (λ/4 = 0,375 cm < 0,5 cm). Số liệu và kết quả không đổi.",
+      "Câu 2: ghi MA = d1 = 12 cm, MB = d2 = 15 cm (số liệu và đáp án B không đổi).",
+      "Mang về: chú thích a là biên độ mỗi sóng ở dòng cực đại, a là khoảng cách hai khe ở dòng khe Young.",
+      "Rút gọn câu chữ ở thí nghiệm khay sóng, thí nghiệm khe Young, mẹo mục 2 và câu 'Nhìn vào' của hai video mục II để bù chữ."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-giao-thoa-song/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

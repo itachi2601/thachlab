@@ -3,7 +3,7 @@
 <ul>
 <li>Định nghĩa <strong>điện trở</strong> $R = U/I$, đơn vị ôm; đổi đúng kΩ, mA.</li>
 <li>Phát biểu <strong>định luật Ohm</strong>; đọc <strong>đường đặc trưng vôn – ampe</strong>.</li>
-<li>Giải thích vì sao kim loại có điện trở; nóng thì $R$ tăng, NTC thì giảm.</li>
+<li>Giải thích vì sao kim loại có điện trở; nóng thì $R$ tăng, điện trở nhiệt NTC thì giảm.</li>
 </ul>
 <p>Cuối bài em tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 16 phút · 8 câu tự kiểm tra.</p>
 </div>
@@ -114,7 +114,7 @@
 
 <details class="tl-details">
 <summary>👀 Sai số đến từ đâu?</summary>
-<p>Vôn kế lệch $\pm 0{,}1$ V, ampe kế lệch $\pm 0{,}01$ A. Sai số tương đối của $R$ cộng từ hai phép đo: ở hàng 1,0 V là $\dfrac{0{,}1}{1{,}0} + \dfrac{0{,}01}{0{,}10} = 20\ \%$ (lệch tới 2 Ω); ở hàng 5,0 V chỉ $2\ \% + 2\ \% = 4\ \%$ (lệch 0,4 Ω). Cách tốt nhất: vẽ cả 5 điểm rồi lấy độ dốc của đường thẳng.</p>
+<p>Vôn kế lệch $\pm 0{,}1$ V, ampe kế lệch $\pm 0{,}01$ A. Sai số tương đối là sai số dụng cụ chia cho số đo. Với $R = U/I$, sai số tương đối của $R$ cộng từ hai phép đo: ở hàng 1,0 V là $\dfrac{0{,}1}{1{,}0} + \dfrac{0{,}01}{0{,}10} = 20\ \%$ (lệch tới 2 Ω); ở hàng 5,0 V chỉ $2\ \% + 2\ \% = 4\ \%$ (lệch 0,4 Ω). Cách tốt nhất: vẽ cả 5 điểm rồi lấy độ dốc của đường thẳng.</p>
 </details>
 
 <h4>3. Định luật Ohm</h4>
@@ -128,7 +128,7 @@
 </div>
 
 <ul>
-<li>Ví dụ: LED cần 20 mA, điện trở nối tiếp chịu 3 V: $R = 3/0{,}02 = 150\ \Omega$.</li>
+<li>Ví dụ: LED cần 20 mA $= 0{,}02$ A, hiệu điện thế hai đầu riêng điện trở nối tiếp là 3 V: $R = 3/0{,}02 = 150\ \Omega$.</li>
 <li>"$I$ tỉ lệ thuận $U$" chỉ đúng khi $R$ không đổi. Với dây tóc, $I = U/R$ vẫn dùng được ở từng trạng thái, lấy $R$ ở nhiệt độ lúc đó (phần 5).</li>
 </ul>
 
@@ -185,7 +185,7 @@
 
 <ul>
 <li>Đường <strong>cong</strong>, dốc giảm dần khi $U$ tăng: dây tóc nóng lên nên $R$ tăng.</li>
-<li>Điốt (linh kiện bán dẫn) cũng không thẳng: theo chiều nghịch dòng gần bằng không, chiều thuận dòng tăng vọt.</li>
+<li>Điốt (linh kiện bán dẫn) cũng không thẳng: chỉ dẫn điện theo một chiều, gọi là chiều thuận (dòng tăng vọt); theo chiều ngược lại dòng gần bằng không.</li>
 </ul>
 
 <div class="tl-box tl-box--rule">
@@ -219,7 +219,7 @@
 <ul>
 <li><strong>Điện trở nhiệt</strong>: $R$ đổi rất mạnh theo nhiệt độ, dùng làm cảm biến.</li>
 <li><strong>NTC</strong> (hệ số âm): nóng thì $R$ giảm mạnh.</li>
-<li><strong>PTC</strong> (hệ số dương): nóng thì $R$ tăng vọt; cầu chì tự phục hồi trong sạc.</li>
+<li><strong>PTC</strong> (hệ số dương): nóng thì $R$ tăng vọt, dùng làm cầu chì tự phục hồi trong sạc. Quá dòng làm PTC nóng, $R$ tăng vọt nên dòng gần như bị chặn. Nguội lại thì $R$ nhỏ, mạch dẫn bình thường.</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-dien-tro-ohm-03">
@@ -227,7 +227,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> đồng hồ vạn năng thang Ω kẹp hai chân NTC 10 kΩ; nhúng NTC cùng nhiệt kế vào nước 25, 35, 45, 55 °C (4 lần đo), chờ ổn định rồi ghi.</li>
 <li><strong>Quan sát:</strong> 10,0 kΩ → 6,5 → 4,3 → 3,0 kΩ: nóng thêm 30 °C, $R$ giảm hơn 3 lần.</li>
-<li><strong>Rút ra:</strong> NTC ngược với kim loại: nóng thì $R$ giảm. Đo $R$ là suy ra nhiệt độ: đó là cảm biến nhiệt.</li>
+<li><strong>Rút ra:</strong> đo $R$ là suy ra nhiệt độ: đó là cảm biến nhiệt.</li>
 </ol>
 </div>
 
@@ -284,7 +284,7 @@
 <input type="radio" name="tl42-q5" id="tl42-q5c"><label for="tl42-q5c" class="tl-opt tl-ok">C. $R$ vẫn 10 Ω, $I$ tăng từ 0,20 A lên 0,40 A</label>
 <input type="radio" name="tl42-q5" id="tl42-q5d"><label for="tl42-q5d" class="tl-opt tl-no">D. $R$ giảm còn 5 Ω, $I$ tăng gấp 4</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Điện trở do vật liệu và nhiệt độ quyết định, không đổi theo $U$. Dòng theo định luật Ohm: $I = 4{,}0/10 = 0{,}40$ A, gấp đôi.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — nếu $R$ gấp đôi mà $I$ giữ nguyên thì $U/I$ đúng là 20 Ω, nhưng không có lý do vật lí nào để $R$ tự tăng: nhiệt độ không đổi. B — $R$ và $I$ cùng gấp đôi thì $U$ phải gấp 4, trái đề. D — $R$ không giảm khi tăng $U$; $I$ gấp 4 là nhân nhầm hai lần. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — nếu $R$ gấp đôi mà $I$ giữ nguyên thì $U/I$ đúng là 20 Ω, nhưng không có lý do vật lí nào để $R$ tự tăng: nhiệt độ không đổi. B — $R$ và $I$ cùng gấp đôi thì $U$ phải gấp 4, trái đề. D — nếu $R$ còn 5 Ω thì $I = 4{,}0/5 = 0{,}80$ A, đúng là gấp 4. Nhưng nhiệt độ không đổi thì $R$ không có lý do gì để giảm. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
 <h4>Bẫy 2: "Cái gì nóng lên cũng tăng điện trở"</h4>
@@ -310,7 +310,7 @@
 <input type="radio" name="tl42-q6" id="tl42-q6c"><label for="tl42-q6c" class="tl-opt tl-no">C. Không đổi, vì NTC không phải kim loại</label>
 <input type="radio" name="tl42-q6" id="tl42-q6d"><label for="tl42-q6d" class="tl-opt tl-no">D. Giảm về 0, vì NTC thành siêu dẫn</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> NTC nóng thì $R$ giảm: thí nghiệm cho 4,3 kΩ ở 45 °C. Mạch sạc đọc giá trị này để biết pin nóng và giảm dòng sạc.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — công thức bậc nhất với $\alpha \gt 0$ là của kim loại; NTC có hệ số nhiệt <em>âm</em>. C — "điện trở nhiệt" được chế tạo chính vì $R$ đổi mạnh theo nhiệt độ, không thể không đổi. D — siêu dẫn chỉ xảy ra ở vài kelvin, không phải lúc nóng lên 45 °C.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B — công thức bậc nhất với $\alpha \gt 0$ là của kim loại; NTC có hệ số nhiệt <em>âm</em>. C — "điện trở nhiệt" được chế tạo chính vì $R$ đổi mạnh theo nhiệt độ, không thể không đổi. D — siêu dẫn chỉ xảy ra ở nhiệt độ rất thấp (cỡ vài đến vài chục kelvin), không phải lúc nóng lên 45 °C.</p></div>
 </div>
 </div>
 
@@ -404,7 +404,7 @@
 <ol class="tl-steps">
 <li>a) $R = \dfrac{U}{I} = \dfrac{12}{0{,}25} = 48\ \Omega$.</li>
 <li>b) $R = R_0[1 + \alpha(t - t_0)]$ → $\dfrac{R}{R_0} = \dfrac{48}{4{,}0} = 12 = 1 + \alpha(t - 20)$.</li>
-<li>$\alpha(t - 20) = 12 - 1 = 11$ → $t - 20 = \dfrac{11}{4{,}5\cdot10^{-3}} \approx 2444$ → $t \approx 2{,}5\cdot10^{3}$ °C (làm tròn 2 chữ số có nghĩa như dữ liệu).</li>
+<li>$\alpha(t - 20) = 12 - 1 = 11$ → $t - 20 = \dfrac{11}{4{,}5\cdot10^{-3}} \approx 2444$ → $t \approx 2444 + 20 \approx 2464$ °C $\approx 2{,}5\cdot10^{3}$ °C (làm tròn 2 chữ số có nghĩa như dữ liệu).</li>
 <li>c) Lúc vừa bật: $I_0 = \dfrac{U}{R_0} = \dfrac{12}{4{,}0} = 3{,}0$ A, gấp $3{,}0/0{,}25 = 12$ lần dòng bình thường.</li>
 <li>Kiểm tra: $t$ cỡ 2 500 °C hợp lí với dây tóc vonfram (nóng chảy ở 3 400 °C). Tỉ số dòng 12 bằng đúng tỉ số điện trở 48/4,0 — vì cùng $U$, $I$ tỉ lệ nghịch $R$.</li>
 </ol>
@@ -440,7 +440,7 @@
 
 <details class="tl-details">
 <summary>🔄 Đổi chiều: biết $R$, tìm nhiệt độ</summary>
-<p>Dây tóc $R_0 = 2{,}0\ \Omega$ ở 20 °C, đo được $R = 11\ \Omega$. $R/R_0 = 5{,}5 = 1 + 4{,}5\cdot10^{-3}(t - 20)$ → $t - 20 = 4{,}5/(4{,}5\cdot10^{-3}) = 1000$ → $t = 1020$ °C. Đây chính là nguyên lí nhiệt kế điện trở.</p>
+<p>Dây tóc $R_0 = 2{,}0\ \Omega$ ở 20 °C, đo được $R = 6{,}5\ \Omega$. $R/R_0 = 3{,}25 = 1 + 4{,}5\cdot10^{-3}(t - 20)$ → $4{,}5\cdot10^{-3}(t - 20) = 3{,}25 - 1 = 2{,}25$ → $t - 20 = 2{,}25/(4{,}5\cdot10^{-3}) = 500$ → $t = 520$ °C. Đây chính là nguyên lí nhiệt kế điện trở.</p>
 </details>
 
 <h3>VI. Điện trở trong đời sống</h3>
@@ -465,8 +465,8 @@
 </details>
 
 <details class="tl-details">
-<summary>⭐⭐⭐ Cuộn dây đồng động cơ máy giặt: 1,50 Ω ở 20 °C; chạy một giờ, tắt máy đo ngay được 1,80 Ω. Cuộn dây nóng bao nhiêu độ? Vì sao phải đo "ngay"?</summary>
-<p>$\alpha_{\text{Cu}} = 3{,}9\cdot10^{-3}$ K⁻¹ (tra cứu, gần đúng). $R/R_0 = 1{,}80/1{,}50 = 1{,}20 = 1 + 3{,}9\cdot10^{-3}(t - 20)$ → $t - 20 = 0{,}20/(3{,}9\cdot10^{-3}) \approx 51$ → $t \approx 71$ °C. Phải đo ngay vì cuộn dây nguội dần sau khi tắt, chờ lâu thì $R$ giảm và tính ra nhiệt độ thấp hơn thực. Đây là phép đo tiêu chuẩn khi kiểm tra động cơ.</p>
+<summary>⭐⭐⭐ Cuộn dây đồng động cơ máy giặt: 1,50 Ω ở 20 °C; chạy một giờ, tắt máy đo ngay được 1,80 Ω. Nhiệt độ cuộn dây lúc đó là bao nhiêu? Vì sao phải đo "ngay"?</summary>
+<p>$\alpha_{\text{Cu}} = 3{,}9\cdot10^{-3}$ K⁻¹ (tra cứu, gần đúng). $R/R_0 = 1{,}80/1{,}50 = 1{,}20 = 1 + 3{,}9\cdot10^{-3}(t - 20)$ → $t - 20 = 0{,}20/(3{,}9\cdot10^{-3}) \approx 51$ (nóng thêm khoảng 51 °C) → $t \approx 71$ °C. Phải đo ngay vì cuộn dây nguội dần sau khi tắt, chờ lâu thì $R$ giảm và tính ra nhiệt độ thấp hơn thực. Đây là phép đo tiêu chuẩn khi kiểm tra động cơ.</p>
 </details>
 </div>
 

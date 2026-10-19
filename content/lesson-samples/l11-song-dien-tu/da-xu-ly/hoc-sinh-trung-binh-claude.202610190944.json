@@ -1,0 +1,200 @@
+{
+  "bai": "Bài 11. Sóng điện từ",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Sóng điện từ là gì?",
+      "trich_nguyen_van": "Faraday: từ trường biến thiên sinh dòng điện cảm ứng. Maxwell tiên đoán sóng điện từ.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Hai câu đứng rời nhau. Em không thấy vì sao từ dòng điện cảm ứng lại suy ra được một sóng lan đi. Bài thiếu ý điện trường biến thiên sinh từ trường và ngược lại.",
+      "de_xuat": "Thêm một câu nối: \"Maxwell: điện trường biến thiên cũng sinh ra từ trường; hai trường sinh ra nhau liên tiếp nên lan đi trong không gian\"."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Sóng điện từ là gì?",
+      "trich_nguyen_van": "Sóng điện từ: điện từ trường biến thiên tuần hoàn, lan truyền trong không gian.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Điện từ trường\" được dùng ngay trong định nghĩa mà bài không giải thích ở đâu. Em đoán là một loại trường thứ ba, khác điện trường và từ trường.",
+      "de_xuat": "Ghi kèm trong ngoặc: \"điện từ trường = điện trường và từ trường gắn liền, cùng biến thiên\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "1. Sóng điện từ là gì?",
+      "trich_nguyen_van": "bật – tắt công tắc đèn cạnh đó thì loa kêu \"rẹt\".",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em thấy hiện tượng nhưng không biết nó minh hoạ ý nào. Bài không nói tia lửa điện ở công tắc là nguồn phát sóng điện từ và radio đã thu được sóng đó.",
+      "de_xuat": "Thêm nửa câu: \"vì tia lửa điện nhỏ ở công tắc phát ra sóng điện từ, radio thu được\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Truyền cả trong chân không, nhanh nhất là $c$",
+      "trich_nguyen_van": "Trong điện môi (nước, thuỷ tinh): chậm hơn $c$, tuỳ hằng số điện môi.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Điện môi\" và \"hằng số điện môi\" chưa học, vì chương Điện trường nằm sau chương Sóng. Em sẽ nghĩ đây là kiến thức phải nhớ.",
+      "de_xuat": "Bỏ cụm \"tuỳ hằng số điện môi\" hoặc ghi \"(sẽ học ở chương Điện trường)\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "2. Truyền cả trong chân không, nhanh nhất là $c$",
+      "trich_nguyen_van": "$\\lambda$ (m): bước sóng trong chân không",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em nhớ công thức λ = c/f và dùng luôn cho sóng trong nước, thuỷ tinh. Điều kiện \"trong chân không\" chỉ nằm ở dòng chú thích. Mãi tới bảng ở Bẫy 2 mới có λ = v/f, và v không được định nghĩa.",
+      "de_xuat": "Ngay sau công thức, thêm dòng: \"Trong môi trường khác: λ = v/f, với v là tốc độ sóng trong môi trường đó (v < c)\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
+      "trich_nguyen_van": "Tính bước sóng từ tần số và ngược lại.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Mọi ví dụ và câu hỏi đều cho f rồi tính λ. Không có bài nào cho λ rồi tính f, nên chiều \"ngược lại\" em chưa được luyện.",
+      "de_xuat": "Thêm một ví dụ ngắn, chẳng hạn: \"ăng ten thu sóng λ = 3 m thì f = c/λ = 10^8 Hz\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Đo tốc độ sóng điện từ bằng lò vi sóng",
+      "trich_nguyen_van": "Hai vệt chảy liền nhau cách nhau nửa bước sóng.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em phải học thuộc d = λ/2 mà không hiểu lí do. Vì vậy em dễ lấy luôn λ = d. Sóng dừng chưa được học.",
+      "de_xuat": "Thêm một câu: \"sóng phản xạ qua lại trong lò tạo các điểm nóng nhất cách nhau nửa bước sóng (học kĩ ở bài Sóng dừng)\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "3. Đo tốc độ sóng điện từ bằng lò vi sóng",
+      "trich_nguyen_van": "Đặt thanh sô-cô-la lên, quay 15–20 giây.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu trước vừa dặn thanh KHÔNG quay, câu này lại bảo \"quay 15–20 giây\". Em không rõ có phải xoay thanh hay không.",
+      "de_xuat": "Đổi \"quay 15–20 giây\" thành \"bật lò 15–20 giây\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Thang sóng điện từ",
+      "trich_nguyen_van": "Trải từ hàng chục km tới dưới $10^{-12}\\ \\text{m}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ngay dưới ghi sóng vô tuyến tới 100 km, còn câu này ghi \"hàng chục km\". Em không biết số nào đúng.",
+      "de_xuat": "Thống nhất một con số, ví dụ đổi thành \"từ khoảng 100 km\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "4. Thang sóng điện từ",
+      "trich_nguyen_van": "Trong truyền thông, vô tuyến + vi sóng thường gọi chung là sóng vô tuyến.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bảng tách vi sóng thành một vùng riêng. Phần chi tiết lại xếp vi sóng vào sóng cực ngắn của vô tuyến. Em lẫn lộn thang có bảy hay sáu vùng, và vi sóng có phải sóng vô tuyến không.",
+      "de_xuat": "Nói rõ: \"Khi kể bảy vùng thì tách vi sóng riêng; khi nói về truyền thông thì gộp vi sóng vào sóng vô tuyến\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "5. Sóng điện từ trong truyền thông",
+      "trich_nguyen_van": "Liên lạc dùng chủ yếu sóng vô tuyến, nhất là vi sóng: FM, truyền hình, 4G/5G, wifi, bluetooth, GPS.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em hiểu FM và truyền hình cũng là vi sóng. Nhưng theo bảng thang sóng, FM 100 MHz (λ = 3 m) thuộc vùng vô tuyến, không phải vi sóng.",
+      "de_xuat": "Tách danh sách thành hai nhóm: vô tuyến (FM, phát thanh) và vi sóng (4G/5G, wifi, bluetooth, GPS, truyền hình vệ tinh)."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "5. Sóng điện từ trong truyền thông",
+      "trich_nguyen_van": "trộn tín hiệu vào sóng mang cao tần, ăng ten phát đi.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "\"Sóng mang\", \"cao tần\" và \"trộn\" đều chưa được giải thích. Em nghĩ hai sóng chỉ được cộng chồng lên nhau, nên không làm được mục tiêu \"giải thích gửi tin đi bằng cách nào\".",
+      "de_xuat": "Thêm một câu: \"sóng mang là sóng điện từ tần số cao do máy tạo ra; tín hiệu âm thanh làm biên độ (AM) hoặc tần số (FM) của sóng mang thay đổi theo\"."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "5. Sóng điện từ trong truyền thông",
+      "trich_nguyen_van": "đo thời gian sóng đi (hoặc đi – về) để tính khoảng cách, tốc độ.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không biết khi nào phải chia đôi thời gian. Gặp bài ra-đa, em sẽ dùng s = ct mà quên rằng sóng đi cả chiều về.",
+      "de_xuat": "Thêm ví dụ một dòng: \"ra-đa nhận tiếng vọng sau t thì khoảng cách s = c·t/2\"."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
+      "trich_nguyen_van": "<td>\"đài FM 100 MHz\"</td><td>$f_1 = 10^{8}\\ \\text{Hz}$</td>",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bảng đổi thẳng 100 MHz ra 10^8 Hz mà không ghi 1 MHz = 10^6 Hz. Quy đổi kHz chỉ xuất hiện trong phản hồi Câu 4 và ở phần Mang về cuối bài, nên em dễ nhầm kHz với MHz khi làm Câu 4.",
+      "de_xuat": "Ghi ngay trong bảng: \"1 kHz = 10^3 Hz; 1 MHz = 10^6 Hz; 1 GHz = 10^9 Hz\" trước khi đổi."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "VI. Sóng điện từ quanh em, thử thách và mang về",
+      "trich_nguyen_van": "đồng hồ máy thu GPS lệch $1\\ \\mu\\text{s}$ thì khoảng cách sai bao nhiêu? Vì sao vệ tinh GPS cần đồng hồ nguyên tử?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Vế đầu nói đồng hồ máy thu, vế sau lại hỏi đồng hồ trên vệ tinh. Em không rõ đồng hồ nào cần chính xác.",
+      "de_xuat": "Đổi vế đầu thành \"đồng hồ đo thời gian sóng truyền lệch 1 μs\" để thống nhất với vế sau."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "Dự đoán trước khi học",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đề viết \"gần như chân không\" nên em nghĩ vẫn còn chút khí để sóng đi theo.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "ở độ cao vài trăm km trở lên, không khí loãng tới mức coi như chân không"
+    },
+    {
+      "cau": "Câu 1",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Chỉ dùng điều kiện B vuông góc với phương truyền mà quên thêm điều kiện B vuông góc với E.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Tại mỗi điểm, vectơ cường độ điện trường $\\vec{E}$ và vectơ cảm ứng từ $\\vec{B}$ vuông góc với nhau."
+    },
+    {
+      "cau": "Câu 2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy luôn λ = d vì không hiểu tại sao khoảng cách hai vệt chỉ là nửa bước sóng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Hai vệt chảy liền nhau cách nhau nửa bước sóng."
+    },
+    {
+      "cau": "Câu 3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "300 nm gần 380 nm nên em coi là vẫn nằm trong dải nhìn thấy, không so đúng biên của vùng tím.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đỏ dài nhất (760 nm), tím ngắn nhất (380 nm)"
+    },
+    {
+      "cau": "Bẫy 1",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nghĩ rằng sóng âm tần số rất cao (siêu âm) thì đi được trong chân không.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "sóng âm là sóng cơ, tần số cao đến đâu cũng cần phần tử môi trường"
+    },
+    {
+      "cau": "Bẫy 2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Gắn tần số lớn với chạy nhanh, quên rằng trong chân không c cố định và λ giảm bù cho f tăng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chân không: mọi sóng điện từ cùng tốc độ $c = 3\\cdot 10^{8}\\ \\text{m/s}$"
+    },
+    {
+      "cau": "Bẫy 3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ nhạc là âm thanh nên cả hai chặng đều là sóng âm, không nhận ra bluetooth là vi sóng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chữ \"vi\" (micro) chỉ bước sóng ngắn, không nói về âm."
+    },
+    {
+      "cau": "Câu 4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đổi nhầm kHz thành MHz vì trước đó chỉ gặp MHz, GHz mà chưa thấy quy đổi kHz.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

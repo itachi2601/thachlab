@@ -1,6 +1,6 @@
 {
   "bai": "l10-thuc-hanh-dong-luong",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -109,5 +109,238 @@
       "lint_do_dai lỗi"
     ],
     "sao_luu": "content/lesson-samples/l10-thuc-hanh-dong-luong/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ vế sai \"hai xe chạy tới thì p ≠ 0\", thay bằng: hai xe đang chạy tới nhau thì $p = m_1v_1 + m_2v_2$ tính có dấu, không nhất thiết bằng 0."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ $v_1'$, $v_2'$ là tốc độ (luôn dương) và bỏ chữ \"của $v$\" ở mục 1 để dấu chỉ gán một lần (Hình 3 nằm ngoài HTML, trợ giảng rà chú thích)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nguồn viết \"1{,}5\\,\\% \\lt 1{,}9\\,\\%$\"), dù lo ngại là thật: không làm tròn $v$ thì $\\delta \\approx 1{,}3\\,\\%$, trợ giảng nên cân nhắc ghi quy tắc làm tròn."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: số liệu nằm trong bảng __BANG_A2__ chèn ngoài, giữ quyết định vòng trước."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Số liệu TN2 nằm ở bảng chèn ngoài nên không thay số trong HTML được, dấu ≤ đã bao trường hợp $|p'| = \\Delta p'$."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: hàng số liệu thuộc bảng __BANG_B2__ chèn ngoài."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"gắn thêm gia trọng (quả nặng) lên xe 1 hoặc xe 2\", không khẳng định lần nào vì bảng chèn ngoài."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details> thêm câu nối: $p$ đọc ở cổng 1 nhỏ hơn $p$ thật lúc va chạm nên $p'$ đo được lớn hơn, và ghi $a = g\\sin\\alpha \\approx gh/L$ khi góc nhỏ."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng ⚠ sửa thành \"Gấp đôi khối lượng một xe hay cả hai xe chưa chắc làm $v'$ giảm một nửa\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án đúng B thêm điều kiện \"với $v_1$ như cũ\", giữ nguyên id và vị trí tl-ok."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng đổi thành \"Cả hai xe đều ra số dương\" → \"Xe đi ngược chiều dương: gán $p \\lt 0$\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vế giải thích \"Hệ kín (hệ hai xe, ngoại lực cân bằng nhau)\"."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi A, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ đổi cm sang m trước Câu 1 đã có từ vòng trước."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Vòng trước chấp nhận nhưng bài chưa có, nay thêm dòng ⚠ trước Câu 2: xe nặng hơn chắn cổng lâu hơn vì $t$ tỉ lệ nghịch với $v$."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 1, không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở Bẫy 2 (dính nhau thì cộng khối lượng), không thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 3 (lệch cùng phía là sai số hệ thống), không thêm."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 6 đã có từ vòng trước (nay chỉ làm rõ theo c9)."
+      }
+    ],
+    "doi_noi_dung": [
+      "TN2 (mục 4): bỏ khẳng định \"hai xe chạy tới bật nhau thì p ≠ 0\", thay bằng p = m₁v₁ + m₂v₂ tính có dấu, không nhất thiết bằng 0.",
+      "TN2: ghi rõ v₁′, v₂′ là tốc độ (luôn dương), dấu đặt vào p₁′ = −m₁v₁′.",
+      "Mục 1: \"dấu của v do em gán\" đổi thành \"dấu do em gán\" để thống nhất với cách đặt dấu vào p ở TN2.",
+      "Mục 1: thêm định nghĩa ngắn hệ kín (hệ hai xe, ngoại lực cân bằng nhau).",
+      "TN1: gia trọng gắn lên xe 1 hoặc xe 2 (trợ giảng đối chiếu cột m₁, m₂ trong __BANG_A1__).",
+      "Thêm dòng ⚠ trước Câu 2 (t tỉ lệ nghịch với v), bỏ câu gợi ý cuối phản hồi sai Câu 2 và vế \"khi hai xe nặng khác nhau thì t₁′, t₂′ khác nhau\" ở Quan sát TN2 để bù độ dài.",
+      "Câu 6: phương án đúng B thêm \"với v₁ như cũ\", phản hồi đúng bỏ câu lặp \"p và p′ cùng gấp đôi\".",
+      "Dòng ⚠ trước Câu 6: nói rõ gấp đôi khối lượng một xe hay cả hai xe.",
+      "Bẫy 3: rút gọn hai gạch đầu dòng ma sát và băng nghiêng (nội dung vật lí giữ nguyên).",
+      "Details băng nghiêng: thêm a = g·sinα ≈ gh/L (góc nhỏ) và giải thích p đọc ở cổng 1 nhỏ hơn p thật nên p′ đo được lớn hơn p.",
+      "Lưu ý trợ giảng: bài \"Điền bước\" cho δ ≈ 1,5 % do làm tròn v 3 chữ số, không làm tròn ra ≈ 1,3 % (chưa sửa)."
+    ],
+    "so_tu_them": -23,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-dong-luong/gemini/da-xu-ly/theory.src.202610191619.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thay bằng \"hai xe đang chạy tới nhau thì p = m1v1 + m2v2 có dấu\", vòng này chỉ rút gọn chữ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bài đã ghi rõ v1', v2' là tốc độ (luôn dương) từ vòng 2, giữ nguyên."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nguồn có thêm \"\\lt 1{,}9\\,\\%\"), giữ quyết định vòng 2, trợ giảng vẫn nên cân nhắc quy tắc làm tròn vì không làm tròn v thì δ ≈ 1,3 %."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: hàng số liệu thuộc bảng __BANG_A2__ chèn ngoài, giữ quyết định cũ."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Số liệu TN2 nằm ở bảng chèn ngoài nên không thay số trong HTML, dấu ≤ đã bao trường hợp |p'| = Δp'."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: hàng số liệu thuộc bảng __BANG_B2__ chèn ngoài."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã sửa vòng 2 thành \"gắn thêm gia trọng (quả nặng) lên xe 1 hoặc xe 2\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Câu nối p đọc ở cổng 1 nhỏ hơn p thật và a = g sinα ≈ gh/L đã có trong details từ vòng 2."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ đã ghi \"một xe hay cả hai xe\" từ vòng 2."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phương án B đã có điều kiện \"với v1 như cũ\" từ vòng 2."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ô bảng đã đổi thành \"Cả hai xe đều ra số dương\" từ vòng 2."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã có vế \"Hệ kín (hệ hai xe, ngoại lực cân bằng nhau)\" từ vòng 2."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi A, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ đổi cm sang m trước Câu 1 đã có."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 2 đã có, vòng này rút gọn thành \"t tỉ lệ nghịch với v: xe nặng hơn chắn cổng lâu hơn\"."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 1, không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở Bẫy 2 (dính nhau thì cộng khối lượng), không thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 3 (lệch cùng phía là sai số hệ thống), không thêm."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 6 đã có từ vòng trước."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3: bỏ dòng \"δ ≤ ε: không phân biệt được p' với p\" vì trùng dòng 🔑.",
+      "Mục 3: chuyển ý \"sai số của s triệt tiêu vì cùng tấm cản quang\" vào details lần 1, details tách mỗi ý một dòng và thêm kết luận δ = 2,2 % < ε = 2,5 % (số liệu không đổi).",
+      "Mục 3: câu lần 3 rút thành \"kiểm lại băng, cổng quang rồi đo lại\" (vẫn giữ δ = 2,5 % > ε = 1,9 %, số trong bảng chèn ngoài trợ giảng vẫn nên đối chiếu).",
+      "Mục 4: gộp gọn danh sách, bỏ \"p' = p1' + p2'\" ở danh sách (còn ở bước Rút ra và Trả bài 4), dòng p = 0 chỉ còn \"so |p'| với sai số Δp'\" (công thức Δp' trong details).",
+      "Mục 4: dòng ⚠ trước Câu 2 viết lại thành \"t tỉ lệ nghịch với v: xe nặng hơn chắn cổng lâu hơn\".",
+      "Mở bài, TN1, Bẫy 3 (bảng và dòng thao tác sai), Mang về (bỏ \"ghi chiều dương\" trùng dòng Đo): rút gọn câu chữ, không đổi vật lí."
+    ],
+    "so_tu_them": -72,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-dong-luong/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

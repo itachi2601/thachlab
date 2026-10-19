@@ -1,0 +1,139 @@
+{
+  "bai": "Bài 19. Lực cản và lực nâng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: hai tờ giấy giống hệt nhau",
+      "trich_nguyen_van": "D. Lực đẩy Archimedes của không khí lên tờ phẳng lớn hơn, vì nó to hơn",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Thuật ngữ 'lực đẩy Archimedes' xuất hiện ngay câu dự đoán, lặp lại ở Câu 1 và mục II.3, nhưng đến mục II.4 mới được định nghĩa. Học sinh chỉ dựa vào trí nhớ mơ hồ từ THCS.",
+      "de_xuat": "Thêm một dòng nhắc ngắn ở mục I hoặc đầu mục II: lực đẩy Archimedes là lực chất lưu đẩy vật lên, sẽ học kĩ ở II.4."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Lực cản của chất lưu",
+      "trich_nguyen_van": "gần như theo $v^2$; kiểm: $v^2/n \\approx 1{,}2$ ở cả bốn hàng",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Ký hiệu n không được định nghĩa, bảng chỉ ghi 'Số phễu'. Học sinh cũng không thấy vì sao chia v² cho số phễu lại kiểm được quan hệ lực cản ∝ v².",
+      "de_xuat": "Ghi rõ 'n là số phễu, tỉ lệ với trọng lượng, tức tỉ lệ với lực cản khi rơi đều; nếu F_c ∝ v² thì v²/n phải gần như không đổi'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "1. Lực cản của chất lưu",
+      "trich_nguyen_van": "Lực cản ở $v$ gấp đôi đã đủ lớn gấp 4",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh không nối được 'trọng lượng gấp 4' với 'lực cản gấp 4', vì bước 'rơi đều nên F_c = P' nằm ở hộp thí nghiệm phía trên, không được nhắc lại ở đây.",
+      "de_xuat": "Thêm vế đầu: 'Rơi đều nên F_c = P; P gấp 4 nên F_c gấp 4, trong khi v chỉ gấp 2'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Vật rơi trong không khí: ba giai đoạn",
+      "trich_nguyen_van": "Mở dù: lực cản tăng vọt, người chậm dần, rồi rơi đều chỉ khoảng $5\\ \\text{m/s}$.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Pha chậm dần khi mở dù không thuộc ba giai đoạn vừa học. Học sinh không biết lúc đó lực cản lớn hơn trọng lượng, nên dễ lẫn sang phương án C của Câu 3.",
+      "de_xuat": "Thêm một câu: 'Lúc vừa mở dù, F_c > P nên hợp lực hướng lên, người chậm dần cho tới khi F_c giảm về bằng P'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "5. Vì sao có lực đẩy: chênh lệch áp suất",
+      "trich_nguyen_van": "$F_2 - F_1 = \\Delta p \\cdot S = \\rho g \\Delta h S = \\rho g V$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Hai bước bị ngầm: áp lực = áp suất × diện tích (F = pS), và V = S·Δh. Cả hai đều không được nêu, nên học sinh không thấy vì sao hiệu áp lực lại bằng Δp·S.",
+      "de_xuat": "Thêm: 'F_1 = p_1 S, F_2 = p_2 S nên F_2 − F_1 = (p_2 − p_1)S; khối hộp có V = S·Δh'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "5. Vì sao có lực đẩy: chênh lệch áp suất",
+      "trich_nguyen_van": "$\\Delta p$ <strong>không phụ thuộc</strong> $p_0$, chỉ tỉ lệ với $\\Delta h$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ 'chỉ' khiến học sinh hiểu Δp chỉ phụ thuộc Δh, quên mất ρ. Đáp án Trả bài câu 5 cũng chỉ ghi 'tỉ lệ với Δh'.",
+      "de_xuat": "Sửa thành 'phụ thuộc ρ của chất lỏng và tỉ lệ với Δh, không phụ thuộc p_0', và sửa tương tự ở Trả bài câu 5."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "6. Nổi, lơ lửng hay chìm",
+      "trich_nguyen_van": "<td>$P \\lt F_A$</td><td>nổi lên, tới khi $F_A$ của phần chìm bằng $P$</td>",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh dễ gộp 'nổi lên' (đang chuyển động) với 'nổi' (đứng yên trên mặt) thành một, rồi nhớ 'vật nổi thì F_A > P'. Dòng tổng kết 'So P với F_A: chìm · lơ lửng · nổi' bỏ mất điều kiện 'khi chìm hẳn' nên càng củng cố hiểu lầm này.",
+      "de_xuat": "Thêm một hàng riêng 'Nổi yên trên mặt: F_A (phần chìm) = P', và ghi 'khi chìm hẳn' vào dòng tổng kết."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "<strong>Cân bằng:</strong> vật đứng yên, $T + F_A = P$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không rõ T là lực gì và chiều ra sao. Bài cũng không nói số chỉ lực kế chính bằng lực dây kéo vật lên, nên không hiểu vì sao T và F_A được cộng với nhau.",
+      "de_xuat": "Thêm: 'T là lực lực kế kéo vật lên (bằng số chỉ lực kế); T và F_A cùng hướng lên, P hướng xuống'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 1: rơi đều là hết lực",
+      "trich_nguyen_van": "<p class=\"tl-conf\">Em chắc bao nhiêu?",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ô chọn mức độ chắc chắn nằm trước hộp câu hỏi, nên học sinh phải chọn 'Chắc/Không chắc' khi chưa đọc câu 3. Câu 6 cũng bị như vậy.",
+      "de_xuat": "Đặt ô 'Em chắc bao nhiêu?' ngay sau các phương án, trước phần phản hồi."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy viên giấy rơi nhanh thì cho là nó nặng hơn, quên rằng vo tròn không đổi khối lượng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Hình 1. Cùng trọng lượng P (mũi tên đỏ dài bằng nhau)."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Gộp 'ma sát' và 'lực cản' thành một loại lực cản chung, không phân biệt ma sát lưỡi giày với lực cản của không khí.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ bảng 'P < F_A → nổi' rồi áp vào tàu đang nổi yên, nhầm 'nổi lên' với 'nổi cân bằng'.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "nổi lên, tới khi $F_A$ của phần chìm bằng $P$"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Cho rằng vật đang đi xuống thì lực hướng xuống phải lớn hơn, tức nghĩ chuyển động cần hợp lực cùng chiều.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "lực cản bằng trọng lượng, hợp lực bằng 0: rơi đều với tốc độ giới hạn"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy V là thể tích cả khối gỗ thay vì thể tích phần chìm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$V$ cả vật (vật đang nổi) | $V$ phần chìm"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy áp suất tăng theo độ sâu thì suy ra lực đẩy cũng tăng theo, nhầm p với Δp.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Áp suất tăng theo độ sâu, nhưng lực đẩy chỉ phụ thuộc chênh lệch áp suất"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Dùng lại kết quả 3,4 N của bài mẫu chìm hoàn toàn, không giảm V còn một nửa.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đọc đề: gạch \"chìm hoàn toàn\", \"một nửa\", \"nổi\" — chúng cho $V$ phần chìm."
+    }
+  ]
+}

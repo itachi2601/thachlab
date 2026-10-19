@@ -1,6 +1,6 @@
 {
   "bai": "l11-dien-tro-dinh-luat-ohm",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -115,5 +115,122 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-dien-tro-dinh-luat-ohm/gemini/da-xu-ly/theory.src.202610091138.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước trung gian 4,5·10⁻³(t − 20) = 3,25 − 1 = 2,25 trước khi chia (số liệu theo c4 mới)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi câu hỏi thành \"Nhiệt độ cuộn dây lúc đó là bao nhiêu?\" và ghi rõ trong lời giải nóng thêm khoảng 51 °C, t ≈ 71 °C."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ t ≈ 2444 + 20 ≈ 2464 °C ≈ 2,5·10³ °C, vẫn một đáp số cuối."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi số đo mục Đổi chiều từ 11 Ω sang 6,5 Ω (tránh trùng phương án nhiễu D và trùng số 4,5 với α), tính lại t = 520 °C."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi D sửa thành: R còn 5 Ω thì I = 0,80 A đúng là gấp 4, nhưng nhiệt độ không đổi thì R không có lý do để giảm."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm định nghĩa sai số tương đối (sai số dụng cụ chia số đo) vào hộp details; không đưa lên trước quiz vì sẽ lộ đáp án và dòng ⚠ vòng trước đã nêu ý sai số cố định."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"nhiệt độ rất thấp (cỡ vài đến vài chục kelvin)\", khớp bảng Tc."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ 20 mA = 0,02 A và 3 V là hiệu điện thế hai đầu riêng điện trở nối tiếp."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giải thích chiều thuận là chiều duy nhất điốt dẫn điện (dòng tăng vọt), chiều ngược lại dòng gần bằng không; không thêm thuật ngữ anốt."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm cơ chế: quá dòng làm PTC nóng, R tăng vọt chặn dòng, nguội lại thì dẫn bình thường; bù độ dài bằng cắt câu lặp ý trong Rút ra của thí nghiệm NTC."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục tiêu viết \"điện trở nhiệt NTC thì giảm\"."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán mở bài, không gợi ý trước; phản hồi và bài toán mẫu đã nhấn."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về đổi kΩ ra Ω đã thêm từ vòng trước."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ \"cùng ra 10 Ω chưa chắc tin cậy như nhau\" đã có từ vòng trước."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở thí nghiệm đèn và Bẫy 1, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 đã nhấn đúng lỗi này ngay trước quiz."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn \"Đúng với kim loại, sai với NTC\" ngay trước quiz."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và mục 2 đã nhấn độ dốc I–U là 1/R."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài điền bước ngay trước đã nhấn lỗi quên số \"1 +\"."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục Đổi chiều (details): R đo được đổi 11 Ω → 6,5 Ω; R/R₀ = 3,25, thêm bước 4,5·10⁻³(t − 20) = 2,25, t − 20 = 500, t = 520 °C.",
+      "Bài toán mẫu b: ghi rõ t ≈ 2444 + 20 ≈ 2464 °C ≈ 2,5·10³ °C.",
+      "Thử thách ⭐⭐⭐: câu hỏi đổi thành nhiệt độ cuộn dây; lời giải ghi nóng thêm khoảng 51 °C, t ≈ 71 °C.",
+      "Quiz q5, phản hồi D: R = 5 Ω thì I = 0,80 A (gấp 4), sai vì nhiệt độ không đổi nên R không giảm.",
+      "Quiz q6, phản hồi D: siêu dẫn ở nhiệt độ rất thấp, cỡ vài đến vài chục kelvin (khớp bảng Tc).",
+      "Mục II.3 ví dụ LED: 3 V là hiệu điện thế riêng trên điện trở, 20 mA = 0,02 A.",
+      "Mục II.5: điốt chỉ dẫn theo chiều thuận (dòng tăng vọt), chiều ngược lại dòng gần bằng không.",
+      "Mục II.6: thêm cơ chế cầu chì tự phục hồi PTC; Rút ra thí nghiệm NTC bỏ câu lặp \"NTC ngược với kim loại\".",
+      "Hộp \"Sai số đến từ đâu?\": thêm định nghĩa sai số tương đối = sai số dụng cụ chia số đo.",
+      "Mục tiêu: \"NTC\" ghi rõ là điện trở nhiệt NTC."
+    ],
+    "so_tu_them": 40,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-dien-tro-dinh-luat-ohm/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

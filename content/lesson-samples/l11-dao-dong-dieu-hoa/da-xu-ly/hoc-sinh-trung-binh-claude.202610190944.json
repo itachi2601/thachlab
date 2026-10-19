@@ -1,0 +1,170 @@
+{
+  "bai": "Bài 1. Dao động điều hoà",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Đồ thị li độ – thời gian",
+      "trich_nguyen_van": "$A$: giá trị lớn nhất của li độ.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Từ 'li độ' và ký hiệu x được dùng từ tên mục 3, nhưng chỉ được định nghĩa ở bảng mục 4. Em dễ hiểu li độ là khoảng cách hay quãng đường, nên nghĩ li độ luôn dương.",
+      "de_xuat": "Định nghĩa li độ x (vị trí so với VTCB, có dấu) ngay đầu mục 3 hoặc ngay dưới Hình 1, trước khi dùng A và đồ thị."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Dao động cơ",
+      "trich_nguyen_van": "vật dao động quanh vị trí cân bằng O, giữa hai biên −A và +A.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Biên' và ký hiệu A xuất hiện ở chú thích Hình 1 khi chưa giải thích. Em không biết biên là gì, cũng không biết vì sao một bên mang dấu âm.",
+      "de_xuat": "Thêm một dòng: 'Biên là vị trí xa VTCB nhất, nơi vật dừng lại rồi quay về; khoảng cách từ O tới biên là A (định nghĩa ở mục 3)'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Dao động tuần hoàn",
+      "trich_nguyen_van": "Cùng khoảng thời gian · Về chỗ cũ · Cùng hướng cũ",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mục này chỉ có các từ khoá, câu định nghĩa đầy đủ chỉ có ở phần Trả bài. Em không hiểu vì sao phải 'cùng hướng cũ', nên có thể tính một lần đu đi qua chỗ cũ (theo chiều ngược lại) là đã lặp lại.",
+      "de_xuat": "Viết thành câu định nghĩa, kèm ví dụ: đu qua VTCB theo chiều ngược lại thì chưa phải lặp lại, phải qua VTCB lần kế tiếp theo cùng chiều mới tính."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Đồ thị li độ – thời gian",
+      "trich_nguyen_van": "$T$: khoảng thời gian để vật lặp lại một dao động.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "'Một dao động' chưa được định nghĩa, nên em không biết đó là đi từ biên sang biên hay đi trọn một vòng. Định nghĩa này cũng không nối với con số '3 giây' ở phần Mở bài.",
+      "de_xuat": "Ghi rõ: 'T là thời gian ngắn nhất để vật trở lại vị trí cũ theo chiều cũ; cái đu ở Mở bài có T = 3 s'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Đồ thị li độ – thời gian",
+      "trich_nguyen_van": "đồ thị li độ theo thời gian có dạng hình sin.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục trước nói 'mô tả bằng hàm côsin', mục này lại nói 'hình sin'. Em có thể nghĩ phương trình phải viết bằng sin, hoặc nghĩ có hai loại dao động khác nhau.",
+      "de_xuat": "Thêm câu: 'Đường hình sin là tên chung cho đồ thị của cả hàm sin lẫn côsin; hai đồ thị chỉ lệch nhau theo trục thời gian'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "4. Phương trình dao động điều hoà",
+      "trich_nguyen_van": "cho biết trạng thái lúc $t$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Trạng thái' chưa được giải thích, ở Bẫy hay gặp lại dùng tiếp ('trở về đúng trạng thái cũ'). Em không biết trạng thái gồm những gì.",
+      "de_xuat": "Ghi rõ trong bảng: 'trạng thái = vị trí (li độ) và chiều chuyển động của vật'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Phương trình dao động điều hoà",
+      "trich_nguyen_van": "$\\omega$ | tần số góc | đơn vị rad/s",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chỉ nêu tên và đơn vị của ω, không nói ω liên hệ với chu kì T. Vì vậy em không thấy ω = 2π ứng với T = 1 s.",
+      "de_xuat": "Thêm một dòng ω = 2π/T, kèm ví dụ ω = 2π rad/s thì T = 1 s."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Phương trình dao động điều hoà",
+      "trich_nguyen_van": "Đồ thị giữ nguyên hình dạng, chỉ dịch sang trái hoặc phải.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài không nói tăng hay giảm φ thì đồ thị dịch về phía nào, nên em chỉ nhớ được câu 'dịch trái hoặc phải' chung chung.",
+      "de_xuat": "Thêm ví dụ: so sánh φ = 0 với φ = π/2, và nói rõ đồ thị dịch về phía nào."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "5. Liên hệ với chuyển động tròn đều",
+      "trich_nguyen_van": "Chiếu đèn pin từ phía trước để van xe in bóng lên tường.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Nếu chiếu vuông góc mặt bánh xe lên bức tường song song với bánh, bóng van vẽ ra một đường tròn, không phải đoạn thẳng. Làm theo hướng dẫn này, em sẽ không thấy bóng chạy qua lại.",
+      "de_xuat": "Ghi rõ: chiếu đèn theo phương nằm trong mặt phẳng bánh xe, tức nhìn bánh xe từ cạnh, lên bức tường vuông góc với mặt bánh."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "5. Liên hệ với chuyển động tròn đều",
+      "trich_nguyen_van": "Hình chiếu $Q$ dao động điều hoà: $x = A\\cos(\\omega t + \\varphi)$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài nói A là bán kính, ω là tốc độ góc, nhưng không nói φ ứng với gì trên đường tròn, cũng không nói chiếu lên trục nào. Em không biết dựng vị trí M lúc t = 0 từ φ.",
+      "de_xuat": "Thêm câu: 'φ là góc giữa OM và trục Ox lúc t = 0; Q là hình chiếu của M lên trục Ox'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "III. Bẫy hay gặp",
+      "trich_nguyen_van": "Con số đứng trước côsin cho em gợi ý.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Trong câu này, con số đứng trước côsin là −3. Gợi ý này có thể khiến em chọn lại đúng đáp án sai −3 cm.",
+      "de_xuat": "Đổi gợi ý thành: 'Bỏ dấu trừ trước côsin bằng cách đưa nó vào pha (−cosα = cos(α+π)), rồi đọc A'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "từ biên này sang biên kia ứng với $M$ quay nửa vòng.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Mục 5 chưa nói hai biên ứng với vị trí nào của M trên đường tròn, cũng chưa nói đi từ biên sang biên là nửa chu kì. Em dễ cho rằng đi từ biên sang biên là trọn một chu kì (2 s).",
+      "de_xuat": "Ở mục 5, thêm câu: 'M ở hai đầu đường kính nằm trên trục Ox thì Q ở hai biên; đi từ biên này sang biên kia mất T/2'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Hình chiếu của chuyển động tròn đều: $R = A$, tốc độ góc $= \\omega$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu R chưa từng xuất hiện, mục 5 dùng 'bán kính OM = A'. Em không biết R là gì.",
+      "de_xuat": "Thay R bằng 'bán kính OM = A', cho thống nhất với mục 5."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "chạy lên xuống nhờ trục khuỷu quay",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không biết trục khuỷu là gì, nên không thấy được sự giống nhau với cái bóng của van xe.",
+      "de_xuat": "Thêm chú thích ngắn: 'trục khuỷu là trục có tay quay, đầu tay quay chạy vòng tròn như van xe'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "tl1-p1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ rằng tuần hoàn thì tốc độ phải đều, nên thấy đu lúc nhanh lúc chậm là kết luận không tuần hoàn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "nhanh hay chậm không quan trọng."
+    },
+    {
+      "cau": "tl1-q1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi li độ là khoảng cách tới VTCB nên bỏ dấu. Phương án D (8 cm) thì do nhầm sang khoảng cách giữa hai biên.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$x$ là vị trí so với VTCB, có thể âm"
+    },
+    {
+      "cau": "tl1-q2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đọc thẳng hệ số đứng trước côsin là biên độ, không đưa dấu trừ vào pha. Gợi ý ở phản hồi sai còn làm lỗi này mạnh thêm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$A \\gt 0$; dấu trừ nằm ở pha"
+    },
+    {
+      "cau": "tl1-q3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Để máy tính ở chế độ độ: cos(1,57°) ≈ 1, nên ra x ≈ 10 cm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "ngầm: góc tính bằng rad"
+    },
+    {
+      "cau": "thu_thach",
+      "dap_an_sai_hap_dan": "2 s",
+      "loi_tu_duy": "Tưởng đi từ biên này sang biên kia là trọn một chu kì, vì chưa có câu nào gắn biên với vị trí của M trên đường tròn.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

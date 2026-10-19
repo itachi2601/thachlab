@@ -1,0 +1,175 @@
+{
+  "bai": "Bài 12. Chuyển động ném",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "6. Ném xiên khác ném ngang ở đâu? Viết tầm cao, thời gian bay, tầm xa.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Đọc tới mục IV em chưa học ném xiên (nằm ở mục VI). Em sẽ tưởng phải thuộc những công thức chưa từng thấy, hoặc mở đáp án ra chép mà không hiểu.",
+      "de_xuat": "Chuyển câu 6, hoặc cả mục Trả bài, xuống sau mục VI cho khớp với lời dặn '6 câu ở mục Trả bài' ở phần Mục tiêu."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Phân tích vận tốc ban đầu",
+      "trich_nguyen_van": "vận tốc đầu $\\vec v_0$ hợp với phương ngang góc $\\alpha$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Ở mục II.4, $\\alpha$ là góc của vận tốc tức thời ($\\tan\\alpha=gt/v_0$). Sang ném xiên, $\\alpha$ lại là góc ném. Trong 'Mang về' hai nghĩa này đứng liền nhau, nên em dễ thế nhầm, ví dụ coi góc ném là góc vận tốc lúc chạm đất.",
+      "de_xuat": "Đổi ký hiệu góc lệch của vận tốc trong ném ngang thành $\\beta$ (hoặc $\\theta$) ở mục II.4, bài toán mẫu, Trả bài 5 và Mang về."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Điểm cao nhất, thời gian bay, tầm xa",
+      "trich_nguyen_van": "Tầm xa $L=v_0\\cos\\alpha\\cdot t=\\dfrac{v_0^2\\sin 2\\alpha}{g}$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em không hiểu vì sao $v_0\\cos\\alpha\\cdot\\dfrac{2v_0\\sin\\alpha}{g}$ lại thành $\\sin2\\alpha$. Đẳng thức $2\\sin\\alpha\\cos\\alpha=\\sin2\\alpha$ bài không nêu, và lớp 10 thường chưa học.",
+      "de_xuat": "Thêm bước trung gian $L=\\dfrac{2v_0^2\\sin\\alpha\\cos\\alpha}{g}$ kèm chú thích $2\\sin\\alpha\\cos\\alpha=\\sin2\\alpha$."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Điểm cao nhất, thời gian bay, tầm xa",
+      "trich_nguyen_van": "suy ra thời gian lên $t_{lên}=\\dfrac{v_0\\sin\\alpha}{g}$ và tầm cao $H=\\dfrac{v_0^2\\sin^2\\alpha}{2g}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Từ $v_y=0$ em ra được $t_{lên}$, nhưng không biết $H$ lấy từ đâu. Em không nghĩ tới việc thế $t_{lên}$ vào $y$. Thời gian bay 'khi $y=0$' cũng phải giải phương trình mà bài bỏ qua.",
+      "de_xuat": "Viết rõ bước thế $t_{lên}$ vào $y=v_0\\sin\\alpha\\,t-\\frac12gt^2$ để ra $H$, và bước giải $y=0$ để ra $t=2t_{lên}$."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "VI. Ném xiên: vẫn là tách hai phương",
+      "trich_nguyen_van": "ở đây chọn Oy hướng lên nên $g$ mang dấu trừ.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em sẽ thế $g=-10$ vào $H=\\dfrac{v_0^2\\sin^2\\alpha}{2g}$ và ra $H$ âm, hoặc ra thời gian bay âm.",
+      "de_xuat": "Viết: 'nên $a_y=-g$, trong đó $g$ vẫn là số dương (9,8 hoặc 10 m/s²)'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "Bẫy 3: \"ném ngang là chuyển động nhanh dần đều\"",
+      "trich_nguyen_van": "D. Tầm xa $L$ của vật",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "Bài định nghĩa tầm xa là 'quãng đường ngang đi được', mà $x=v_0t$ tăng đều theo thời gian. Nếu em hiểu tầm xa là $x$ thì D cũng đúng, nên em phân vân giữa A và D. Phản hồi sai lại không nói gì về D.",
+      "de_xuat": "Thay D bằng một đại lượng rõ ràng không tăng đều (ví dụ toạ độ $y$), hoặc ghi rõ $L$ là giá trị cố định lúc chạm đất, và thêm phản hồi riêng cho D."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Bẫy 3: \"ném ngang là chuyển động nhanh dần đều\"",
+      "trich_nguyen_van": "gia tốc của tốc độ lúc đầu bằng 0 vì $\\vec g$ vuông góc với $\\vec v$, về sau mới tiến tới $g$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài vừa nói gia tốc luôn là $\\vec g$ không đổi, giờ lại nói 'gia tốc lúc đầu bằng 0'. Em thấy hai câu mâu thuẫn và không biết 'gia tốc của tốc độ' là gì.",
+      "de_xuat": "Thay bằng ví dụ số: với $v_0=10$ m/s và $g=10$ m/s², tại $t=0;1;2$ s thì $v=10;\\ 14{,}1;\\ 22{,}4$ m/s, mỗi giây tăng 4,1 rồi 8,2, tức là không đều."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Vận tốc tại một điểm",
+      "trich_nguyen_van": "Khi chạm đất $v_y=gt=\\sqrt{2gh}$, do đó $v_{cd}=\\sqrt{v_0^2+2gh}$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không thấy ngay $g\\sqrt{2h/g}=\\sqrt{2gh}$. Ký hiệu $v_{cd}$ cũng chưa được giải thích.",
+      "de_xuat": "Thêm bước $v_y=g\\sqrt{\\dfrac{2h}{g}}=\\sqrt{2gh}$ và ghi rõ '$v_{cd}$: vận tốc lúc chạm đất'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "3. Thời gian bay và tầm xa",
+      "trich_nguyen_van": "và lực cản không khí — bỏ qua nên kết quả đo hơi nhỏ hơn tính toán.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không rõ 'kết quả' là $L$ đo hay $v_0$ suy ra. Bảng cũng không có cột 'tính toán' nào để so.",
+      "de_xuat": "Viết: 'lực cản làm $L$ đo hơi ngắn, nên $v_0=L/t$ suy ra hơi nhỏ hơn vận tốc thật của súng'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "3. Thời gian bay và tầm xa",
+      "trich_nguyen_van": "Bốn lần đo lệch nhau chưa tới $0{,}02$ m/s (khoảng $1\\%$).",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em tự trừ 1,51 − 1,49 = 0,02 và thấy con số này bằng đúng 0,02, không phải 'chưa tới'.",
+      "de_xuat": "Sửa thành 'lệch nhau nhiều nhất 0,02 m/s'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "I. Mở bài: máy bay cứu hộ thả gói hàng",
+      "trich_nguyen_van": "cùng thời gian rơi $t=\\sqrt{2h/g}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "$h$ và $g$ xuất hiện trước khi được định nghĩa ở II.1. Em đoán được nghĩa nhưng thấy công thức hiện ra mà không có nguồn gốc.",
+      "de_xuat": "Thêm '($h$ là độ cao thả, công thức sẽ chứng minh ở mục II.3)'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "4. Bài toán mẫu ném xiên",
+      "trich_nguyen_van": "Lúc chạm sân, bóng cũng có tốc độ 20 m/s vì cùng độ cao lúc sút.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không biết vì sao cùng độ cao thì cùng tốc độ, vì bài chưa chứng minh điều này.",
+      "de_xuat": "Thêm: 'khi chạm sân $v_y=-10$ m/s (đối xứng), $v=\\sqrt{17{,}3^2+10^2}\\approx20$ m/s'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "VII. Đời sống và mang về",
+      "trich_nguyen_van": "Ném ngang từ $h=45$ m, lấy $g=10$ m/s². Tính thời gian rơi.",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài ⭐ và bài ⭐⭐ đầu tiên trùng số với bài 'Điền bước còn thiếu' ($h=45$ m, $v_0=20$ m/s), nên làm lại không luyện thêm được gì.",
+      "de_xuat": "Đổi số, ví dụ $h=80$ m và $v_0=15$ m/s."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ gói rơi thẳng đứng có đường đi ngắn hơn nên chạm đất trước.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đường đi dài hơn không có nghĩa là rơi lâu hơn"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi $L$ tỉ lệ thuận với $h$ nên nghĩ $L$ gấp đôi thì $h$ gấp đôi, quên dấu căn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn $2h$ là quên dấu căn"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ B ném nhanh hơn, bay xa hơn nên phải bay lâu hơn, vậy A chạm đất trước.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "em vẫn đang cho vận tốc ném ảnh hưởng tới thời gian rơi"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy tốc độ tổng tăng dần nên gán luôn cho phương ngang.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn \"tăng dần\" là nhìn tổng quãng đường (đường chéo) chứ không nhìn riêng phương ngang."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thấy gia tốc $g$ không đổi nên nghĩ tốc độ $v$ tăng đều. Ngoài ra D cũng gây phân vân vì $x=v_0t$ tăng đều.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn $v$ là lẫn \"tốc độ lớn dần\" với \"tốc độ tăng đều\""
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Mang quy tắc ném ngang 'thời gian chỉ do $h$' sang ném xiên: cùng đá từ mặt đất nên nghĩ cùng thời gian bay. Thêm nữa, C và D mở đầu giống nhau ('Hai quả cùng tầm xa').",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "chỉ thời gian bay và tầm cao là khác"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nhầm $\\sin$ với $\\cos$ khi tách $\\vec v_0$, lấy $v_0\\sin60^\\circ$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $17{,}3$ m/s là dùng $\\sin60^\\circ$ thay cho $\\cos60^\\circ$"
+    }
+  ]
+}

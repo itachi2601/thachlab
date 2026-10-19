@@ -5,111 +5,75 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "3. Họ 3: viết phương trình từ lúc t = 0",
-      "trich_nguyen_van": "Chọn dấu: $v_0 = -A\\omega\\sin\\varphi$, nên $v_0 \\gt 0$ thì $\\varphi \\lt 0$",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "⚠ Pha $\\omega t + \\varphi$ cứ tăng, được phép vượt $\\pi$.",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Biểu thức vận tốc theo sin xuất hiện lần đầu ở đây. Họ 2 chỉ cho v_max và hệ thức độc lập. Học sinh không biết công thức này từ đâu ra, nên học thuộc quy tắc dấu mà không hiểu.",
-      "de_xuat": "Ở Họ 2 thêm một gạch đầu dòng: v = −Aω sin(ωt + φ), lúc t = 0 thì v₀ = −Aω sinφ."
+      "em_hieu_la": "Học sinh vừa học ở Họ 1 rằng $\\varphi \\in (-\\pi;\\pi]$, nên dễ coi 'pha' và 'pha ban đầu' là một. Khi đó hai câu trông như mâu thuẫn. Quy tắc Họ 3 'v0>0 thì φ<0' cũng chỉ đúng trong khoảng (−π;π], nhưng bài không nói điều kiện này.",
+      "de_xuat": "Ở Họ 1 hoặc Họ 4, thêm một câu: 'pha ban đầu φ chọn trong (−π;π]; pha ωt+φ tăng theo t và có thể vượt π; quy tắc dấu ở Họ 3 chỉ áp dụng cho φ'."
     },
     {
       "id": "c2",
-      "vi_tri": "4. Họ 4: thời gian, quãng đường bằng vòng tròn pha",
-      "trich_nguyen_van": "Từ O tới $A/2$: quét $30^\\circ$, mất $T/12$.",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "đã vượt mốc $-\\dfrac{\\pi}{2}$, nên vật qua O lần đầu khi pha bằng $\\dfrac{\\pi}{2}$",
       "loai": "nhảy_bước",
       "muc": "khó",
-      "em_hieu_la": "Các mốc T/12, T/6 chỉ có trong chú thích Hình 3, không có phép suy ra. Học sinh không biết vì sao là 30° chứ không phải 45°. Câu 5 và Trả bài 4 đều dựa vào chỗ này.",
-      "de_xuat": "Đưa vào thân bài một dòng: hình chiếu bằng A/2 thì M lệch 30° so với trục dọc (sin30° = 1/2), nên quét 30° và mất T/12."
+      "em_hieu_la": "Ở Họ 4 bài chưa nói vật ở O ứng với pha ±π/2 trên vòng tròn; ý này chỉ nằm rải rác trong Bẫy 1 dưới dạng pha ban đầu. Học sinh sẽ không hiểu vì sao 'mốc' là −π/2 và π/2.",
+      "de_xuat": "Thêm vào danh sách gạch đầu dòng của Họ 4: 'x = 0 khi M ở pha π/2 (đi chiều âm) hoặc −π/2, tức 3π/2 (đi chiều dương); x = ±A khi pha bằng 0 hoặc π'."
     },
     {
       "id": "c3",
-      "vi_tri": "4. Họ 4: thời gian, quãng đường bằng vòng tròn pha",
-      "trich_nguyen_van": "Vẽ điểm M trên vòng tròn bán kính $A$, góc pha $\\omega t + \\varphi$, quay ngược chiều kim đồng hồ.",
-      "loai": "mơ_hồ",
+      "vi_tri": "3. Họ 3: viết phương trình từ lúc t = 0",
+      "trich_nguyen_van": "$A^2 = x_0^2 + (v_0/\\omega)^2$ (chính là hệ thức độc lập ở Họ 2)",
+      "loai": "nhảy_bước",
       "muc": "nhỏ",
-      "em_hieu_la": "Bài không nói góc pha đo từ tia nào. Học sinh có thể đặt góc 0 ở đỉnh vòng tròn.",
-      "de_xuat": "Ghi rõ: góc đo từ bán trục Ox dương (nằm ngang, hướng sang phải)."
+      "em_hieu_la": "Học sinh không thấy ngay bước biến đổi từ $v^2 = \\omega^2(A^2 - x^2)$ sang công thức này. Công thức cũng không được dùng trong ví dụ hay câu hỏi nào.",
+      "de_xuat": "Ghi thêm một dòng biến đổi: chia hai vế cho ω² rồi chuyển x² sang vế phải. Nên kèm một ví dụ số ngắn có cho $v_0$."
     },
     {
       "id": "c4",
-      "vi_tri": "IV. Trả bài",
-      "trich_nguyen_van": "$T/4$ ra đúng $A$ chỉ khi bắt đầu ở O hoặc ở biên",
+      "vi_tri": "2. Họ 2: quan hệ x, v, a",
+      "trich_nguyen_van": "$\\bar t_{10} = 12{,}03\\ \\text{s}$, $T = 1{,}203\\ \\text{s}$",
       "loai": "khác",
-      "muc": "khó",
-      "em_hieu_la": "Mục Họ 4 chỉ nói nửa chu kì 2A, một chu kì 4A. Điều kiện cho T/4 chưa từng được dạy, vậy mà Trả bài lại hỏi. Học sinh sẽ tưởng T/4 luôn đi được A.",
-      "de_xuat": "Thêm vào danh sách Họ 4: chỉ khi xuất phát ở O hoặc ở biên thì T/4 mới đi được đúng A."
+      "muc": "nhỏ",
+      "em_hieu_la": "Thí nghiệm ghi T = 1,203 s, nhưng đáp án Câu 3 lại ghi 1,20. Bài không nói phải làm tròn giá trị cho cùng hàng với sai số, nên học sinh sẽ băn khoăn hoặc tự viết 1,203 ± 0,02.",
+      "de_xuat": "Trong phản hồi Câu 3, thêm câu: 'giá trị T làm tròn đến cùng hàng với sai số 0,02, nên 1,203 thành 1,20'."
     },
     {
       "id": "c5",
-      "vi_tri": "2. Họ 2: quan hệ x, v, a",
-      "trich_nguyen_van": "$\\Delta T \\approx 0{,}015\\ \\text{s}$, làm tròn lên $0{,}02\\ \\text{s}$.",
+      "vi_tri": "4. Họ 4: thời gian, quãng đường bằng vòng tròn pha",
+      "trich_nguyen_van": "nửa đường gần O mất khoảng 16 khung ($\\approx\\dfrac{T}{12}$)",
       "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Quy tắc làm tròn sai số lên chỉ xuất hiện trong phản hồi. Giá trị thật là 0,0145, nên học sinh dễ làm tròn thành 0,01. Hai phương án A (0,02) và D (0,03) lại rất gần nhau.",
-      "de_xuat": "Ghi quy tắc ngay trong đề Câu 3: sai số được làm tròn lên, giữ một chữ số có nghĩa."
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không biết vì sao 16 khung lại xấp xỉ T/12, vì bài thiếu bước đổi chu kì ra số khung.",
+      "de_xuat": "Thêm bước: T = 0,80 s ứng với 0,80·240 = 192 khung; 192/12 = 16 khung và 192/6 = 32 khung."
     },
     {
       "id": "c6",
-      "vi_tri": "2. Họ 2: quan hệ x, v, a",
-      "trich_nguyen_van": "Sai số của $t_{10}$ lấy bằng nửa khoảng chênh lớn nhất trong bảng.",
-      "loai": "mơ_hồ",
+      "vi_tri": "4. Họ 4: thời gian, quãng đường bằng vòng tròn pha",
+      "trich_nguyen_van": "Nửa quãng đường không phải nửa thời gian.",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Cụm 'khoảng chênh lớn nhất' có thể bị hiểu là độ lệch lớn nhất so với giá trị trung bình (0,15), chứ không phải hiệu max − min.",
-      "de_xuat": "Viết rõ: (giá trị lớn nhất − giá trị nhỏ nhất)/2."
+      "em_hieu_la": "Ý chống lại cách nghĩ 'thời gian tỉ lệ với quãng đường' chỉ xuất hiện sau Câu 5. Vì vậy học sinh làm Câu 5 dễ chọn B (coi đoạn −A/2→A/2 dài A thì mất T/4).",
+      "de_xuat": "Chuyển thí nghiệm quay chậm, hoặc câu kết luận của nó, lên trước Câu 5."
     },
     {
       "id": "c7",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "b) Vật qua O lần đầu khi pha bằng $\\dfrac{\\pi}{2}$",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Pha −π/2 cũng cho x = 0. Học sinh không hiểu vì sao chọn π/2, và có thể tính Δφ = π/6 rồi ra 1/12 s.",
-      "de_xuat": "Thêm một câu: pha đang tăng từ −π/3, mà −π/3 > −π/2, nên vật đã qua mốc −π/2; mốc tiếp theo cho x = 0 là π/2."
+      "vi_tri": "2. Họ 2: quan hệ x, v, a",
+      "trich_nguyen_van": "tốc độ cực đại $|v|_{max} = A\\omega$ khi qua O",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cùng một đại lượng mà dòng in đậm, bài mẫu và thử thách viết $v_{max}$, còn ở đây viết $|v|_{max}$. Học sinh có thể nghĩ đây là hai đại lượng khác nhau (vận tốc cực đại và tốc độ cực đại).",
+      "de_xuat": "Thống nhất một ký hiệu, hoặc ghi rõ một lần: '$v_{max}$ ở bài này là tốc độ cực đại, tức $|v|_{max}$'."
     },
     {
       "id": "c8",
       "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "Vật qua O khi pha bằng $\\dfrac{\\pi}{2}$ (lần 1) rồi $\\dfrac{3\\pi}{2}$ (lần 2).",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Cách đếm 'lần thứ n' (mỗi lần cách nhau nửa vòng) chưa được dạy trước Câu 7. Bài lại quy định φ ∈ (−π;π], nên học sinh nghĩ pha không được vượt quá π.",
-      "de_xuat": "Trước Câu 7 thêm một dòng: mỗi lần qua O cách nhau π, tức T/2; pha tức thời ωt + φ được phép lớn hơn π."
-    },
-    {
-      "id": "c9",
-      "vi_tri": "3. Họ 3: viết phương trình từ lúc t = 0",
-      "trich_nguyen_van": "Tìm $A$: đề cho thẳng, hoặc $A^2 = x_0^2 + (v_0/\\omega)^2$.",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Học sinh không nhận ra đây chính là hệ thức độc lập của Họ 2, nên coi như một công thức mới phải học thuộc.",
-      "de_xuat": "Ghi thêm: suy từ v² = ω²(A² − x²) ở Họ 2."
-    },
-    {
-      "id": "c10",
-      "vi_tri": "IV. Trả bài",
-      "trich_nguyen_van": "2. Ba công thức nối $x$, $v$, $a$ không cần $t$?",
+      "trich_nguyen_van": "$T = \\dfrac{2\\pi}{\\omega}$, $v_{max} = A\\omega$ → họ 2",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Đáp án có |v|max = Aω, công thức này không chứa x. Học sinh sẽ băn khoăn thế nào mới là 'nối x, v, a'.",
-      "de_xuat": "Đổi câu hỏi thành: ba công thức chủ chốt của Họ 2."
-    },
-    {
-      "id": "c11",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "Lần đầu tới đó, M ở nửa trên, pha $2\\pi/3$.",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Không giải thích vì sao chọn +2π/3 chứ không phải −2π/3.",
-      "de_xuat": "Thêm: vật tới −4 khi đang đi từ biên dương về, tức đi chiều âm, nên M ở nửa trên."
-    },
-    {
-      "id": "c12",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "chỉnh $T$ đúng $2\\ \\text{s}$ để mỗi nửa dao động là một tiếng \"tích\".",
-      "loai": "khác",
-      "muc": "nhỏ",
-      "em_hieu_la": "Đồng hồ ở Mở bài có T = 1,6 s. Học sinh có thể thắc mắc đồng hồ của bà bị sai.",
-      "de_xuat": "Ghi: đồng hồ chuẩn có T = 2 s (đồng hồ ở Mở bài chỉ là số minh hoạ)."
+      "em_hieu_la": "Công thức T = 2π/ω nằm ở Họ 1 nhưng bảng lại xếp vào họ 2. Học sinh đang tập 'gọi đúng họ' sẽ không biết chu kì thuộc họ nào.",
+      "de_xuat": "Tách thành hai dòng: 'chu kì' → họ 1; 'tốc độ cực đại' → họ 2."
     }
   ],
   "du_doan_loi_sai": [
@@ -118,63 +82,56 @@
       "dap_an_sai_hap_dan": "A",
       "loi_tu_duy": "Coi đi từ biên này sang biên kia là một chu kì.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Biên trái sang biên phải mới là <strong>nửa</strong> dao động."
+      "trich_nguyen_van": "Biên trái sang biên phải mới là nửa dao động."
     },
     {
       "cau": "cau1",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Biết A phải dương nên bỏ dấu trừ, nhưng quên chuyển dấu trừ vào pha thành +π.",
+      "loi_tu_duy": "Biết A phải dương nên bỏ luôn dấu trừ, không chuyển dấu trừ vào pha.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Dấu trừ trước $\\cos$: $-\\cos\\alpha = \\cos(\\alpha + \\pi)$."
     },
     {
       "cau": "cau2",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Thay |x| = 3 vào a = −ω²x nên mất dấu, ra gia tốc âm.",
+      "loi_tu_duy": "Thay |x| = 3 vào a = −ω²x nên mất dấu của x, ra a âm.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "$a = -\\omega^2 x$: $a$ luôn trái dấu $x$."
     },
     {
       "cau": "cau3",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Chia giá trị t₁₀ cho 10 nhưng giữ nguyên sai số 0,15 s.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Chia giá trị t10 cho 10 nhưng giữ nguyên sai số 0,15. Ba phương án đều có 1,20 nên dễ nhầm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "⚠ Từ $t_{10}$ sang $T$: chia cả giá trị lẫn sai số cho 10."
     },
     {
       "cau": "cau4",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Suy luận trực giác 'đi chiều âm thì φ âm', ngược với quy tắc dấu.",
+      "loi_tu_duy": "Suy trực giác 'đi chiều âm thì φ âm', ngược với quy tắc v0 = −Aω sinφ.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$v_0 \\lt 0$ thì $\\varphi \\gt 0$"
+      "trich_nguyen_van": "Đi chiều dương → $\\varphi$ âm"
     },
     {
       "cau": "cau5",
-      "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Lẫn mốc T/6 (từ A/2 ra biên) với mốc T/12 (từ O tới A/2), rồi nhân đôi.",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy đoạn −A/2→A/2 dài A, bằng đoạn O→biên, nên lấy luôn T/4. Đây là cách nghĩ thời gian tỉ lệ với quãng đường.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Từ O tới $A/2$: quét $30^\\circ$, mất $T/12$."
     },
     {
       "cau": "cau6",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Chỉ tính đoạn từ +A sang −A, quên cộng đoạn từ −A về O.",
+      "loi_tu_duy": "Chỉ tính đoạn +A→−A (8 cm), quên cộng đoạn quay về O.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Quãng đường cộng từng đoạn · độ dời lấy cuối trừ đầu"
     },
     {
       "cau": "cau7",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Tính đúng lần qua O thứ nhất nhưng không biết cộng thêm T/2 để ra lần thứ hai.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
-    },
-    {
-      "cau": "Trả bài 5",
-      "dap_an_sai_hap_dan": "T/4 luôn đi được A",
-      "loi_tu_duy": "Chia đều quãng 4A cho 4 phần tư chu kì, bất kể vật xuất phát ở đâu.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Làm theo thói quen tìm lần qua O đầu tiên (π/3→π/2), không đọc kĩ chữ 'lần thứ hai'.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Hai lần qua O liên tiếp cách nhau $\\dfrac{T}{2}$."
     }
   ]
 }

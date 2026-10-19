@@ -1,6 +1,6 @@
 {
   "bai": "l10-luc-can-luc-nang",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -102,5 +102,251 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-luc-can-luc-nang/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa giải thích: ra 10^-2 là đổi theo bình phương như diện tích, thể tích phải lập phương (10^-1)^3 = 10^-3; giữ nguyên phương án C."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Rút ra nay ghi tốc độ giới hạn tuỳ hình dạng và trọng lượng, cùng một người thì dù càng rộng tốc độ giới hạn càng nhỏ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 5 nói rõ 1,67 N là số chỉ lực kế, lực đẩy luôn là 0,98 N."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích ngắn: Δh là chiều cao vật, không phải quãng hạ thêm 40 cm."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong hộp nhận xét thêm bước v² tỉ lệ n và bốn giá trị v²/n = 1,19; 1,25; 1,18; 1,25 (đã tính lại từ bảng)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng ghi '$\\rho_v$: khối lượng riêng của vật' ngay lần đầu dùng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm 'rồi không tăng nữa: đó là tốc độ giới hạn khi chưa mở dù'."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm 'lồng khít (hình dạng ngoài giữ nguyên)' để kết luận lực cản đổi theo tốc độ có cơ sở."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giai đoạn 2 nay viết hợp lực giảm nên gia tốc giảm, vẫn nhanh dần nhưng tăng tốc chậm lại."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm '(p₁, p₂: áp suất tại hai mặt, đều đã gồm p₀)'; việc p₀ không ảnh hưởng Δp đã có ở gạch đầu dòng ngay trên."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đánh số lại ba dãy câu là đổi cấu trúc toàn bài, và mục tiêu đã ghi rõ 'mục Trả bài'."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán cố ý để học sinh đoán trước, phản hồi đã nhấn hai tờ cùng khối lượng nên không thêm ⚠."
+      },
+      {
+        "id": "q-ht1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ đúng lỗi nhầm lít với cm³ nên không thêm ⚠."
+      },
+      {
+        "id": "q-ht2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ lỗi quên nhân g nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ phân biệt lực cản không khí với ma sát đã thêm ở vòng trước."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng II.6 đã nhấn 'khi đã nổi yên: F_A = P, không lớn hơn'."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Cả mục Bẫy 1 ngay trước Câu 3 đã nhấn rơi đều là hai lực cân bằng."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng và dòng 🔑 Bẫy 2 ngay trước Câu 4 đã nhấn V phần chìm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Cả mục Bẫy 3 ngay trước Câu 5 đã nhấn lực đẩy không đổi theo độ sâu."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đề in đậm 'một nửa', Bẫy 2 đã nhấn V phần chìm và phản hồi chỉ lại Bẫy 2."
+      }
+    ],
+    "doi_noi_dung": [
+      "Hành trang Câu 1, phản hồi sai: phương án 10^-2 giải thích là đổi theo bình phương (diện tích) thay vì lập phương, (10^-1)^3 = 10^-3.",
+      "II.1 thí nghiệm phễu: nêu các phễu lồng khít, hình dạng ngoài giữ nguyên, chỉ trọng lượng đổi.",
+      "II.1 hộp nhận xét: thêm bước v² tỉ lệ n và bốn giá trị v²/n = 1,19; 1,25; 1,18; 1,25 (tính lại từ bảng v, số liệu bảng không đổi).",
+      "II.2 giai đoạn 2: hợp lực giảm nên gia tốc giảm, vẫn nhanh dần nhưng tăng tốc chậm lại.",
+      "II.2 ví dụ nhảy dù: 50 m/s là tốc độ giới hạn khi chưa mở dù.",
+      "II.2 ví dụ nhảy dù: tốc độ giới hạn phụ thuộc hình dạng và trọng lượng (trước ghi chỉ theo hình dạng).",
+      "II.5: p₁, p₂ là áp suất tại mặt trên, mặt dưới, đều đã gồm p₀.",
+      "III Câu 5 phản hồi đúng: Δh là chiều cao vật, không phải quãng hạ thêm 40 cm.",
+      "III Câu 5 phản hồi đúng: 1,67 N là số chỉ lực kế, lực đẩy luôn 0,98 N.",
+      "V bảng dữ kiện: định nghĩa ρ_v là khối lượng riêng của vật.",
+      "Cắt bớt chữ để bù: phản hồi đúng Câu 1, dòng khinh khí cầu ở II.3, câu hỏi video phễu, câu cuối phản hồi sai Câu 5 (nội dung vật lí không đổi)."
+    ],
+    "so_tu_them": 30,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-luc-can-luc-nang/gemini/da-xu-ly/theory.src.202610191619.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã sửa giải thích: ra 10^-2 là đổi theo bình phương như diện tích, thể tích phải lập phương."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã ghi tốc độ giới hạn tuỳ hình dạng và trọng lượng, cùng một người thì dù càng rộng tốc độ giới hạn càng nhỏ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi Câu 5 đã nói rõ 1,67 N là số chỉ lực kế, lực đẩy luôn là 0,98 N."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi Câu 5 đã chú thích Δh là chiều cao vật, không phải quãng hạ thêm 40 cm."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Hộp nhận xét đã có bước v² tỉ lệ n và bốn giá trị v²/n."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ô bảng đã ghi ρ_v là khối lượng riêng của vật ngay lần đầu dùng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã có 'rồi không tăng nữa: đó là tốc độ giới hạn khi chưa mở dù'."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã ghi các phễu lồng khít, hình dạng ngoài giữ nguyên."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Giai đoạn 2 đã viết hợp lực giảm nên gia tốc giảm, vẫn nhanh dần nhưng tăng tốc chậm lại."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã ghi p₁, p₂ là áp suất tại hai mặt, đều đã gồm p₀."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ từ chối: đánh số lại ba dãy câu là đổi cấu trúc toàn bài, mục tiêu đã ghi rõ 'mục Trả bài'."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn hai tờ cùng khối lượng nên không thêm ⚠."
+      },
+      {
+        "id": "q-ht1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ đúng lỗi nhầm lít với cm³ nên không thêm ⚠."
+      },
+      {
+        "id": "q-ht2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ lỗi quên nhân g nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ phân biệt lực cản không khí với ma sát đã có từ vòng 1."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng II.6 đã nhấn 'khi đã nổi yên: F_A = P, không lớn hơn'."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục Bẫy 1 (bảng và dòng 🔑) ngay trước Câu 3 đã nhấn rơi đều là hai lực cân bằng."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng và dòng 🔑 Bẫy 2 ngay trước Câu 4 đã nhấn V phần chìm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục Bẫy 3 ngay trước Câu 5 đã nhấn lực đẩy không đổi theo độ sâu."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn V phần chìm và phản hồi Câu 6 chỉ lại Bẫy 2 nên không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Phản hồi Câu 2 (tàu thép), phương án A: đổi 'thép luôn nặng hơn nước' thành 'thép nào cũng có khối lượng riêng lớn hơn nước'.",
+      "Phản hồi Câu 3, phương án D: viết rõ 'đi xuống đều không cần hợp lực hướng xuống'.",
+      "Bẫy 1: bỏ câu mở đầu lặp ý với bảng và dòng 🔑 (nội dung vật lí giữ ở bảng).",
+      "Bẫy 3: bỏ câu mở đầu về chênh lệch áp suất (đã có ở II.5 và phản hồi Câu 5).",
+      "II.2 ví dụ nhảy dù: bỏ chú thích quy đổi ≈ 180 km/h, số liệu 50 m/s và 5 m/s giữ nguyên.",
+      "II.3: rút gọn gạch đầu dòng máy bay và 'Trong nước' (trỏ sang mục 4), nội dung không đổi.",
+      "Cắt câu đuôi lặp ý ở phản hồi câu dự đoán, Câu 1, Câu 2, Câu 4 và gợi ý 'Nhìn vào' của video phễu, chuyển các phản hồi nhiều ý sang mỗi ý một dòng; chú thích ký hiệu công thức F_A tách mỗi ký hiệu một dòng."
+    ],
+    "so_tu_them": -125,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-luc-can-luc-nang/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

@@ -5,178 +5,142 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "Bẫy 3: đổi vòng/phút sang rad/s",
-      "trich_nguyen_van": "Gộp lại: $\\omega = \\dfrac{2\\pi n}{60}$ với $n$ tính bằng vòng/phút.",
-      "loai": "khác",
+      "vi_tri": "Bẫy 1: \"tốc độ không đổi thì vận tốc không đổi\"",
+      "trich_nguyen_van": "Vẽ hai mũi tên vuông góc rồi trừ.",
+      "loai": "nhảy_bước",
       "muc": "khó",
-      "em_hieu_la": "Ở mục II.2, $n$ là số vòng đếm được trong $\\Delta t$ ($T = \\Delta t/n$); ở đây $n$ lại là vòng/phút. Mục Mang về cũng có \"$\\Delta t = n\\cdot T$ cho $n$ vòng\". Học sinh có thể thay số vòng đếm được (ví dụ 3 vòng của đĩa lò vi sóng) vào $2\\pi n/60$ dù thời gian không phải 1 phút.",
-      "de_xuat": "Dùng một ký hiệu riêng cho số vòng mỗi phút (ví dụ $N$ hoặc $n_{\\text{ph}}$), và ghi rõ ngay cạnh công thức: \"$n$ ở đây là số vòng trong 1 phút\"."
+      "em_hieu_la": "Học sinh không biết trừ hai vectơ bằng hình. Bài cũng chưa giải thích vì sao sau một phần tư vòng thì v₂ vuông góc v₁. Học sinh dễ đoán mò giữa 0, 10 và 20.",
+      "de_xuat": "Thêm một hình nhỏ trước Câu 4: bán kính quay 90° nên hai tiếp tuyến vuông góc; đặt v₂ và −v₁ chung gốc, hợp lực là cạnh huyền."
     },
     {
       "id": "c2",
-      "vi_tri": "V. Bài toán mẫu: tốc độ điểm trên vành bánh xe đạp",
-      "trich_nguyen_van": "Cách tính tắt: $v = \\pi d n$.",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Thay $d = 0{,}6$, $n = 120$ được $226$ rồi ghi luôn là m/s. Bài không nói công thức này cho kết quả theo m/phút khi $n$ tính bằng vòng/phút.",
-      "de_xuat": "Ghi rõ: \"$v = \\pi d n$ (m/phút nếu $n$ là vòng/phút; chia tiếp cho 60 để ra m/s)\"."
+      "vi_tri": "Bẫy 1: \"tốc độ không đổi thì vận tốc không đổi\"",
+      "trich_nguyen_van": "Ra $20\\ \\text{m/s}$ là trường hợp nửa vòng ($\\vec v_2$ ngược $\\vec v_1$), không phải một phần tư vòng.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh ra 20 thường là do cộng thẳng 10 + 10, không phải nghĩ tới nửa vòng. Lời giải thích này không trúng lỗi của em.",
+      "de_xuat": "Bổ sung: \"hoặc em đã cộng hai độ lớn 10 + 10 như hai số cùng phương\"."
     },
     {
       "id": "c3",
-      "vi_tri": "Bẫy 1: \"tốc độ không đổi thì vận tốc không đổi\"",
-      "trich_nguyen_van": "Ra $10\\ \\text{m/s}$ là cộng trừ vectơ như số thường.",
-      "loai": "phương_án_nhiễu_khó_hiểu",
+      "vi_tri": "V. Bài toán mẫu: tốc độ điểm trên vành bánh xe đạp",
+      "trich_nguyen_van": "$n = 120$ vòng/phút → chia 60 ra $f$",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Cộng trừ như số thường cho $0$ hoặc $20$, không ra $10$. Học sinh không hiểu phương án D đến từ đâu, và nhầm nó với lời giải thích của phương án A.",
-      "de_xuat": "Sửa lời giải thích D cho đúng lỗi thật, ví dụ \"tưởng độ biến thiên vận tốc bằng chính độ lớn vận tốc\", hoặc thay D bằng một phương án nhiễu có nguồn gốc rõ."
+      "em_hieu_la": "Ký hiệu n có ba nghĩa trong bài: số vòng trong Δt (mục 2), vòng/phút (Bẫy 3, bài mẫu), số vòng trong Δt = n·T (Mang về). Học sinh dễ chia 60 cả khi n là số vòng trong Δt bất kì.",
+      "de_xuat": "Dùng ký hiệu riêng cho vòng/phút (ví dụ n_ph), hoặc ghi rõ đơn vị của n mỗi lần dùng."
     },
     {
       "id": "c4",
-      "vi_tri": "Bẫy 1: \"tốc độ không đổi thì vận tốc không đổi\"",
-      "trich_nguyen_van": "Hiệu hai vectơ vuông góc: $|\\Delta\\vec v| = \\sqrt{10^2 + 10^2} \\approx 14{,}1\\ \\text{m/s}$.",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Không rõ vì sao phép trừ hai vectơ lại dùng Pitago giống phép cộng. Phần thân bài cũng chưa hướng dẫn cách vẽ $\\vec v_2 - \\vec v_1$.",
-      "de_xuat": "Thêm một câu: \"$\\vec v_2 - \\vec v_1 = \\vec v_2 + (-\\vec v_1)$; $-\\vec v_1$ vẫn vuông góc với $\\vec v_2$ nên dùng Pitago\", kèm hình hai mũi tên."
+      "vi_tri": "3. Tốc độ và tốc độ góc: $v = \\omega r$",
+      "trich_nguyen_van": "$v = \\dfrac{\\theta}{t}\\, r = \\omega r$ (tròn đều nên $\\theta/t$ chính là $\\omega$)",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 2 định nghĩa ω bằng Δθ/Δt, mục 3 lại dùng θ/t. Học sinh có thể nghĩ đây là hai công thức khác nhau.",
+      "de_xuat": "Viết thống nhất Δs = Δθ·r, v = Δs/Δt, hoặc ghi một câu rằng θ, t tính từ lúc bắt đầu."
     },
     {
       "id": "c5",
-      "vi_tri": "2. Tốc độ góc, chu kì, tần số",
-      "trich_nguyen_van": "Trái Đất tự quay một vòng mất $24\\ \\text{h} = 86\\,400\\ \\text{s}$.",
-      "loai": "thiếu_ví_dụ",
+      "vi_tri": "4. Vectơ vận tốc: luôn tiếp tuyến",
+      "trich_nguyen_van": "các giọt nước bắn ra thành vệt <strong>thẳng</strong> ngay từ chỗ rời vành",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Ví dụ dừng ở việc đổi đơn vị, không tính ra $\\omega$. Học sinh không biết đây là đề tự làm hay bài bị thiếu.",
-      "de_xuat": "Viết tiếp: \"nên $\\omega = 2\\pi/86\\,400 \\approx 7{,}27\\cdot10^{-5}\\ \\text{rad/s}$\"."
+      "em_hieu_la": "Học sinh hiểu là giọt nước bay thẳng mãi. Khi thấy vệt thực tế cong xuống, em sẽ thấy mâu thuẫn với thí nghiệm.",
+      "de_xuat": "Thêm: \"đoạn đầu gần như thẳng theo tiếp tuyến; xa hơn bị trọng lực kéo cong xuống\"."
     },
     {
       "id": "c6",
-      "vi_tri": "2. Tốc độ góc, chu kì, tần số",
-      "trich_nguyen_van": "dán một mẩu băng dính lên mép đĩa xoay, cách tâm $r = 14{,}0\\ \\text{cm}$",
-      "loai": "khác",
-      "muc": "nhỏ",
-      "em_hieu_la": "Cho $r$ mà phần xử lí số liệu không dùng tới. Học sinh dễ tưởng phải dùng $r$ để tính $\\omega$, tức là nghĩ $\\omega$ phụ thuộc $r$.",
-      "de_xuat": "Thêm một dòng tính $v = \\omega r \\approx 0{,}088\\ \\text{m/s}$ và ghi chú \"$\\omega$ không cần $r$\", hoặc bỏ số $r$."
-    },
-    {
-      "id": "c7",
-      "vi_tri": "3. Tốc độ và tốc độ góc: $v = \\omega r$",
-      "trich_nguyen_van": "Cung $s = \\theta r$, chia cho $t$: $v = \\omega r$.",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "$\\omega$ được định nghĩa là $\\Delta\\theta/\\Delta t$, nhưng ở đây lại thấy $\\theta/t$. Học sinh không rõ vì sao $\\theta/t$ chính là $\\omega$.",
-      "de_xuat": "Ghi xen giữa: \"$\\dfrac{s}{t} = \\dfrac{\\theta}{t}\\cdot r$, mà $\\dfrac{\\theta}{t} = \\omega$ (tròn đều, tính từ lúc $\\theta = 0$)\"."
-    },
-    {
-      "id": "c8",
-      "vi_tri": "4. Vectơ vận tốc: luôn tiếp tuyến",
-      "trich_nguyen_van": "Nhìn từ bên cạnh, bánh xe đạp quay ngược chiều kim đồng hồ.",
-      "loai": "khác",
-      "muc": "khó",
-      "em_hieu_la": "Phần thân bài chỉ nói \"Chiều: theo chiều chuyển động\", không chỉ cách xác định chiều trái/phải từ chiều quay. Mẹo mặt đồng hồ chỉ xuất hiện trong phản hồi sai, nên học sinh sẽ đoán giữa B và D.",
-      "de_xuat": "Đưa mẹo \"đi ngược chiều kim từ số 6 tới 5, 4, 3\" vào mục 4 hoặc Hình 4, có mũi tên chiều quay, trước Câu 3."
-    },
-    {
-      "id": "c9",
-      "vi_tri": "4. Vectơ vận tốc: luôn tiếp tuyến",
-      "trich_nguyen_van": "các giọt nước bắn ra thành vệt thẳng, sát vành bánh",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "\"Sát vành bánh\" dễ được đọc thành giọt nước bám theo vành một đoạn. Cách đọc này đúng với phương án nhiễu C của Câu 3.",
-      "de_xuat": "Đổi thành \"bắt đầu ngay tại vành rồi đi thẳng theo tiếp tuyến, không bám theo vành\"."
-    },
-    {
-      "id": "c10",
-      "vi_tri": "VI. Đời sống và mang về",
-      "trich_nguyen_van": "người ở xích đạo đi với $v = \\dfrac{2\\pi R}{T} \\approx 463\\ \\text{m/s}$ mà không hề thấy.",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Giá trị $R$ chưa được cho ở đây (chỉ xuất hiện sau, ở thử thách ⭐⭐⭐), nên học sinh không tự kiểm được con số 463.",
-      "de_xuat": "Thêm \"$R \\approx 6370\\ \\text{km}$\" ngay trong dòng này."
-    },
-    {
-      "id": "c11",
-      "vi_tri": "VI. Đời sống và mang về",
-      "trich_nguyen_van": "bán kính quỹ đạo là $r = R\\cos 21^\\circ \\approx 5947\\ \\text{km}$",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Không có hình, học sinh không thấy vì sao lại là $\\cos$ của vĩ độ.",
-      "de_xuat": "Thêm một câu hoặc hình mặt cắt: \"tam giác vuông giữa tâm Trái Đất, Hà Nội và trục quay cho $r = R\\cos\\varphi$\"."
-    },
-    {
-      "id": "c12",
-      "vi_tri": "✅ Mang về sau bài học",
-      "trich_nguyen_van": "Mốc quen: Trái Đất quanh Mặt Trời $T = 365$ ngày; quanh trục $T = 24\\ \\text{h}$.",
-      "loai": "khác",
-      "muc": "nhỏ",
-      "em_hieu_la": "Số liệu \"quanh Mặt Trời 365 ngày\" chưa xuất hiện trong thân bài mà lại có trong phần tổng kết. Học sinh không biết có phải nhớ thêm điều này không.",
-      "de_xuat": "Bỏ mốc 365 ngày khỏi phần Mang về, hoặc thêm một dòng ví dụ tương ứng ở mục II.2."
-    },
-    {
-      "id": "c13",
       "vi_tri": "Bẫy 2: \"cùng quay theo một vật thì cùng tốc độ\"",
       "trich_nguyen_van": "🔑 Chung ω, T, f · Riêng v theo r",
       "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Bảng tóm tắt của Bẫy 2 nằm sau Câu 5, nên học sinh làm câu hỏi trước khi được nhắc lại cái bẫy.",
-      "de_xuat": "Chuyển dòng 🔑 và bảng lên trước Câu 5."
+      "em_hieu_la": "Bảng tóm tắt then chốt của Bẫy 2 nằm sau Câu 5. Học sinh làm câu hỏi trước khi được nhắc quy tắc của bẫy.",
+      "de_xuat": "Đưa dòng 🔑 và bảng lên trước Câu 5, giống thứ tự ở Bẫy 1 và Bẫy 3."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "1. Chuyển động tròn đều và radian",
+      "trich_nguyen_van": "Vị trí của vật cho bằng <strong>cung $s$</strong> đã đi",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa nói cung s đo từ đâu, nên học sinh không rõ \"vị trí\" so với điểm nào.",
+      "de_xuat": "Thêm \"tính từ một điểm mốc chọn trước trên đường tròn (điểm A ở Hình 2)\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu: tốc độ điểm trên vành bánh xe đạp",
+      "trich_nguyen_van": "⚠ Giữ nguyên tốc độ: viết $v = \\omega r$ ra trước, đừng đoán $n$ tăng hay giảm theo cảm giác.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Giữ nguyên tốc độ\" đọc như một mệnh lệnh chung. Học sinh không biết câu này dành cho tình huống nào.",
+      "de_xuat": "Đổi thành \"⚠ Khi đề yêu cầu giữ nguyên tốc độ v: …\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "VI. Đời sống và mang về",
+      "trich_nguyen_van": "hợp với bán kính $R$ một góc bằng vĩ độ, nên bán kính quỹ đạo là $r = R\\cos 21^\\circ$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không có hình, học sinh không thấy được tam giác vuông. Em không biết vì sao lại là cos chứ không phải sin.",
+      "de_xuat": "Thêm hình mặt cắt Trái Đất có trục, xích đạo và tam giác vuông với cạnh huyền R."
     }
   ],
   "du_doan_loi_sai": [
     {
       "cau": "cau0",
-      "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Thấy người ngoài chạy nhanh hơn nên suy ra người đó cũng quay hết vòng nhanh hơn, tức là gộp tốc độ và tốc độ góc làm một.",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ rằng nắm tay nhau thì mọi người nhanh như nhau, chưa tách được quay nhanh (góc) và chạy nhanh (mét/giây).",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Hàng người vẫn thẳng suốt lúc xoay."
+      "trich_nguyen_van": "Em đang dùng một chữ \"nhanh\" cho hai ý khác nhau."
     },
     {
       "cau": "cau1",
-      "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Thấy 3,14 giống π nên lấy luôn độ dài cung làm góc, quên chia cho bán kính.",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhớ công thức là phép chia nhưng chia ngược r/s.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Đo góc bằng radian: $\\theta = \\dfrac{s}{r}$ (rad)."
+      "trich_nguyen_van": "Nhớ: góc (rad) = cung chia bán kính."
     },
     {
       "cau": "cau2",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Vừa đọc ví dụ kim giây $\\pi/30$ ngay trước đó nên nhầm kim phút với kim giây (T = 60 s thay vì 3600 s). Bài chưa nêu T của kim phút trước câu hỏi.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Lấy luôn kết quả π/30 quen thuộc từ ví dụ kim giây, không xác định lại T của kim phút.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "⚠ Mỗi kim có chu kì riêng: xác định đúng $T$ của kim được hỏi rồi mới tính."
     },
     {
       "cau": "cau3",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Đã biết phương tiếp tuyến nằm ngang nhưng xác định sai chiều khi chuyển từ \"ngược chiều kim đồng hồ\" sang trái/phải tại điểm thấp nhất.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Biết tiếp tuyến nằm ngang nhưng hình dung chiều quay ngược chiều kim đồng hồ ở điểm thấp nhất thành đi sang trái.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "⚠ Tìm chiều vận tốc: hình dung mặt đồng hồ trên bánh, lần theo chiều quay từ điểm đang xét."
     },
     {
       "cau": "cau4",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Trừ hai tốc độ 10 − 10 = 0, coi vận tốc như con số vì tốc độ không đổi.",
+      "loi_tu_duy": "Trừ hai độ lớn 10 − 10 = 0, coi tốc độ không đổi là vận tốc không đổi.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Vận tốc đổi (dù chỉ đổi hướng) thì vật có gia tốc."
+      "trich_nguyen_van": "Tròn đều: <strong>đổi hướng liên tục</strong>"
     },
     {
       "cau": "cau5",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Cho rằng hai điểm cùng một cánh quạt thì đi nhanh như nhau, bỏ qua quãng đường một vòng khác nhau theo r.",
+      "loi_tu_duy": "Cùng một cánh quạt nên nghĩ mọi đại lượng đều bằng nhau, kể cả v.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Mọi điểm trên cùng một vật quay có cùng $\\omega$, $T$, $f$; điểm xa tâm có $v$ lớn hơn."
     },
     {
       "cau": "cau6",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Chia 60 xong là dừng, lấy f = 25 vòng/s làm ω, quên nhân 2π.",
+      "loi_tu_duy": "Chia 60 xong là dừng, nhầm f (vòng/s) với ω (rad/s).",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "chia 60 được vòng/s, tức là $f$."
+      "trich_nguyen_van": "🔑 Chia 60 · Nhân 2π"
     },
     {
       "cau": "cau7",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Nghĩ đường kính giảm một nửa thì số vòng/phút cũng giảm một nửa (tỉ lệ thuận), không nhận ra v giữ nguyên nên ω tỉ lệ nghịch với r. Câu \"bánh càng nhỏ thì càng phải quay nhiều vòng\" chỉ xuất hiện ở mục VI, sau câu hỏi.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Cho rằng bánh nhỏ đi một nửa thì số vòng cũng giảm một nửa, không viết v = ωr để thấy quan hệ tỉ lệ nghịch.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "viết $v = \\omega r$ ra trước, đừng đoán $n$ tăng hay giảm theo cảm giác."
     }
   ]
 }

@@ -5,144 +5,162 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "2. Động năng — lớn ở giữa",
-      "trich_nguyen_van": "$$E_d=\\dfrac{1}{2}m\\omega^2 A^2\\sin^2(\\omega t+\\varphi)$$",
-      "loai": "nhảy_bước",
+      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
+      "trich_nguyen_van": "Năm hàng tính ra đều cho $W=0{,}128$ J.",
+      "loai": "khác",
       "muc": "khó",
-      "em_hieu_la": "Từ $E_d=\\frac12 mv^2$ sang ngay $\\sin^2$ mà bài không nhắc $v=-\\omega A\\sin(\\omega t+\\varphi)$. Học sinh không biết $\\sin^2$ từ đâu ra, cũng không biết vì sao dấu trừ biến mất.",
-      "de_xuat": "Chèn một dòng ngay trước: \"Vì $v=-\\omega A\\sin(\\omega t+\\varphi)$ nên $v^2=\\omega^2A^2\\sin^2(\\omega t+\\varphi)$\"."
+      "em_hieu_la": "Thí nghiệm đã đo và chứng minh cơ năng bảo toàn. Thực ra $E_d$ được tính bằng $\\frac{1}{2}k(A^2-x^2)$, nên tổng luôn bằng $\\frac{1}{2}kA^2$ theo cách tính. Đây là phép tính vòng, không phải quan sát.",
+      "de_xuat": "Ghi rõ đây là bảng tính minh hoạ, không phải kết quả đo. Nếu muốn kiểm thật thì cần đo $v$ (ví dụ bằng cổng quang) để tính $E_d=\\frac{1}{2}mv^2$ độc lập."
     },
     {
       "id": "c2",
-      "vi_tri": "2. Động năng — lớn ở giữa",
-      "trich_nguyen_van": "$$E_d=\\dfrac{1}{2}m\\omega^2(A^2-x^2)$$",
+      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
+      "trich_nguyen_van": "$\\omega=\\sqrt{200}\\approx 14{,}1$ rad/s.",
       "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Hệ thức $v^2=\\omega^2(A^2-x^2)$ đến mục 5 mới xuất hiện, lại nằm trong phần ẩn. Ở đây học sinh phải chấp nhận công thức mà không biết vì sao.",
-      "de_xuat": "Ghi ngay cạnh công thức: \"dùng $\\sin^2=1-\\cos^2$, hay $v^2=\\omega^2(A^2-x^2)$\"."
+      "muc": "nhỏ",
+      "em_hieu_la": "Không rõ số 200 ở đâu ra. Phải tự nhận ra đó là $k/m=40/0{,}200$ với $m$ đã đổi sang kg.",
+      "de_xuat": "Viết đủ: $\\omega=\\sqrt{k/m}=\\sqrt{40/0{,}200}=\\sqrt{200}\\approx 14{,}1$ rad/s, rồi $T=2\\pi/\\omega$."
     },
     {
       "id": "c3",
-      "vi_tri": "2. Động năng — lớn ở giữa",
-      "trich_nguyen_van": "$E_{d,\\max}=\\dfrac{1}{2}m v_{\\max}^2=\\dfrac{1}{2}m\\omega^2 A^2$",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
+      "trich_nguyen_van": "nếu đặt mốc $x=0$ tại chỗ lò xo chưa dãn (cách VTCB đúng $\\Delta\\ell=4{,}9$ cm)",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "$v_{\\max}$ được dùng mà chưa nói $v_{\\max}=\\omega A$. Hệ thức này chỉ hiện ra ở phản hồi câu 7. Học sinh không tự nối hai vế của đẳng thức này được.",
-      "de_xuat": "Thêm \"($v_{\\max}=\\omega A$)\" ngay sau $v_{\\max}$ ở lần dùng đầu tiên."
+      "em_hieu_la": "Con lắc nằm ngang cũng có VTCB lệch khỏi chỗ lò xo chưa dãn. Ngoài ra con số $0{,}04802$ J chỉ là thế năng đàn hồi; phần trọng trường mà mục \"Vì sao mốc thế năng phải ở VTCB?\" nhắc tới bị bỏ qua.",
+      "de_xuat": "Tách riêng ý này: nói rõ chỉ lò xo treo đứng mới có VTCB khác vị trí chưa dãn. Với lò xo nằm ngang, hai vị trí này trùng nhau."
     },
     {
       "id": "c4",
-      "vi_tri": "3. Hai cái đổi chỗ — đồ thị theo li độ",
-      "trich_nguyen_van": "Hai đường cắt nhau tại $x=\\pm\\dfrac{A}{\\sqrt{2}}$, nơi $E_t=E_d$.",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Kết quả được nêu trước, mục 5 mới giải thích. Học sinh đọc đến đây chỉ học thuộc mà không biết lí do.",
-      "de_xuat": "Thêm nửa câu: \"vì $E_t=E_d=W/2$ nên $x^2=A^2/2$\"."
+      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
+      "trich_nguyen_van": "Chọn màn hình <strong>Năng lượng</strong>. Kéo quả lắc lệch rồi thả.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Mô phỏng PhET là con lắc đơn, không phải con lắc lò xo. Nếu em đổi khối lượng trong mô phỏng và thấy năng lượng đổi, em sẽ tưởng bài sai khi nói \"W không phụ thuộc m\".",
+      "de_xuat": "Thêm một câu: đây là con lắc đơn, thế năng là $mgh$ nên phụ thuộc $m$; kết luận \"không phụ thuộc $m$\" chỉ đúng cho con lắc lò xo khi giữ $k$ và $A$."
     },
     {
       "id": "c5",
-      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
-      "trich_nguyen_van": "Biết $W=\\dfrac{1}{2}kA^2$ không đổi; con lắc lò xo không phụ thuộc $m$.",
+      "vi_tri": "VI. Đời sống và mang về",
+      "trich_nguyen_van": "Trên cao, vận tốc bằng không, thế năng $mgh=196$ J.",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Câu này dễ bị hiểu là \"con lắc lò xo (mọi đại lượng) không phụ thuộc $m$\". Sang mục 6 thì gặp $T=2\\pi\\sqrt{m/k}$ phụ thuộc $m$, học sinh sẽ thấy mâu thuẫn.",
-      "de_xuat": "Sửa thành \"với con lắc lò xo, $W$ không phụ thuộc $m$ (nhưng $T$ thì có)\"."
+      "em_hieu_la": "Ở đây cơ năng đổi theo $m$ (40 kg), trái với \"W không theo m\" vừa học. Bài chỉ nói xích đu khác ở chỗ ma sát, không nói khác ở chỗ phụ thuộc khối lượng.",
+      "de_xuat": "Thêm: với xích đu (con lắc đơn), $W=mgh$ tỉ lệ với $m$; chỉ con lắc lò xo giữ $k$, $A$ mới có $W$ không đổi khi đổi $m$."
     },
     {
       "id": "c6",
-      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
-      "trich_nguyen_van": "kéo tới $A=8{,}0$ cm rồi thả. Giữ vật tại đúng năm vạch",
+      "vi_tri": "4. Cơ năng — tổng không đổi",
+      "trich_nguyen_van": "Con lắc lò xo: $W$ phụ thuộc $k$ và $A$, <strong>không phụ thuộc $m$</strong>.",
       "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Vừa \"thả\" lại vừa \"giữ vật\" tại các vạch, học sinh không biết thí nghiệm làm thế nào. Hơn nữa $E_d$ được tính bằng công thức chứ không đo, nên mục \"Quan sát: năm hàng đều cho 0,128 J\" là tính vòng. Học sinh có thể tưởng đã kiểm chứng bằng đo đạc.",
-      "de_xuat": "Ghi rõ đây là bước tính kiểm tra tại năm vị trí, không phải đo $E_d$; hoặc chỉ ra cách đo $v$ để có $E_d$ thật."
+      "em_hieu_la": "Đổi $m$ trong mọi tình huống thì $W$ đều không đổi. Em sẽ áp dụng sai cả khi đề cho cùng vận tốc ban đầu chứ không cho cùng $A$.",
+      "de_xuat": "Ghi điều kiện ngay tại đây: \"khi giữ nguyên $k$ và $A$\". Mục tiêu đầu bài cũng nên ghi kèm điều kiện này."
     },
     {
       "id": "c7",
-      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
-      "trich_nguyen_van": "đo độ dãn thêm $\\Delta\\ell=4{,}9$ cm. Tính $k=mg/\\Delta\\ell=40$ N/m.",
+      "vi_tri": "3. Hai cái đổi chỗ — đồ thị theo li độ",
+      "trich_nguyen_van": "$E_t$ và $E_d$ biến thiên tuần hoàn với tần số góc $2\\omega$, tần số $2f$, chu kì $T/2$",
       "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Không thấy bước đổi $4{,}9$ cm thành $0{,}049$ m và $200$ g thành $0{,}2$ kg. Học sinh thế thẳng số sẽ ra $0{,}4$ hoặc $400$.",
-      "de_xuat": "Viết $k=\\dfrac{0{,}200\\times 9{,}8}{0{,}049}=40$ N/m."
+      "muc": "khó",
+      "em_hieu_la": "Mục đang vẽ đồ thị theo li độ (parabol) rồi chuyển ngay sang chu kì. Em dễ tìm \"chu kì\" trên parabol của Hình 2, trong khi chu kì chỉ có nghĩa với đồ thị theo thời gian (Hình 3).",
+      "de_xuat": "Thêm một câu chuyển: \"Giờ xét theo thời gian $t$ (không phải theo $x$)\" và dẫn tới Hình 3."
     },
     {
       "id": "c8",
-      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
-      "trich_nguyen_van": "Nếu treo đứng mà đặt mốc $x=0$ tại chỗ lò xo chưa dãn",
-      "loai": "nhảy_bước",
+      "vi_tri": "3. Hai cái đổi chỗ — đồ thị theo li độ",
+      "trich_nguyen_van": "Đồ thị $E_t(x)$ là parabol <strong>lõm lên</strong> (đáy ở VTCB).",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Thí nghiệm đang làm nằm ngang, đoạn này đột ngột chuyển sang treo đứng. Học sinh khó nhận ra đây là tình huống khác.",
-      "de_xuat": "Mở đầu bằng \"Ở bước đo $k$ (lò xo treo đứng), nếu…\"."
+      "em_hieu_la": "\"Lõm lên\" và \"lõm xuống\" dễ bị hiểu ngược. Em phải dựa vào ngoặc đáy/đỉnh mới đoán ra.",
+      "de_xuat": "Viết \"parabol quay bề lõm lên trên (hình chữ U, đáy ở VTCB)\" và \"hình chữ U ngược\" cho $E_d$."
     },
     {
       "id": "c9",
       "vi_tri": "5. Năm chỗ trên một chu kì",
-      "trich_nguyen_van": "C không gắn với phương trình $E_d=E_t$.",
-      "loai": "phương_án_nhiễu_khó_hiểu",
+      "trich_nguyen_van": "Có hai li độ $\\pm A/\\sqrt{2}$, mỗi li độ vật đi qua hai lần (đi và về).",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Phản hồi cho phương án C quá chung chung. Học sinh chọn 8 không hiểu mình đã đếm thừa ở đâu.",
-      "de_xuat": "Nói rõ: \"chỉ có 2 li độ, mỗi li độ qua 2 lần, nên 4 lần; không phải 8\"."
+      "em_hieu_la": "Quy tắc \"mỗi li độ qua hai lần\" đúng với mọi li độ. Áp dụng cho biên $\\pm A$ sẽ ra 4 lần $E_t$ max, mâu thuẫn với dòng \"$E_t$ max: 2 lần\".",
+      "de_xuat": "Thêm: \"trừ hai biên, vì ở biên vật chỉ chạm một lần rồi quay lại\"."
     },
     {
       "id": "c10",
-      "vi_tri": "VI. Đời sống và mang về",
-      "trich_nguyen_van": "biên độ càng lớn, năng lượng va chạm càng tăng theo $A^2$",
+      "vi_tri": "1. Thế năng — mốc ở vị trí cân bằng",
+      "trich_nguyen_van": "Đặt mốc chỗ khác thì công thức này không còn dùng được.",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Bài chưa định nghĩa \"năng lượng va chạm\", học sinh không rõ nó có phải là $W$ hay không.",
-      "de_xuat": "Thay bằng \"cơ năng dao động $W$ tăng theo $A^2$\"."
+      "em_hieu_la": "Mốc thế năng bắt buộc phải ở VTCB theo định luật. Thực ra mốc là quy ước được chọn để dùng gọn công thức $\\frac{1}{2}kx^2$.",
+      "de_xuat": "Đổi thành \"Ta chọn mốc ở VTCB để dùng được công thức gọn $\\frac{1}{2}kx^2$\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "6. Con lắc lò xo nằm ngang — đo để kiểm",
+      "trich_nguyen_van": "đo độ dãn thêm $\\Delta\\ell=4{,}9$ cm",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không rõ \"thêm\" là so với lúc nào. Em có thể nghĩ lò xo đã có sẵn một độ dãn khác trước đó.",
+      "de_xuat": "Viết \"độ dãn so với chiều dài tự nhiên khi vật đứng yên ở VTCB\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "VI. Đời sống và mang về",
+      "trich_nguyen_van": "Muốn đỡ sốc thì phải giữ biên độ nhỏ.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không rõ \"đỡ sốc\" là gì và vì sao liên quan tới $W$. Đây là kết luận đời sống mà không có cơ chế giải thích.",
+      "de_xuat": "Nói cụ thể: biên độ nhỏ thì cơ năng dao động nhỏ (theo $A^2$), máy rung ít hơn."
     }
   ],
   "du_doan_loi_sai": [
     {
       "cau": "cau1",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Đồng nhất vận tốc bằng không với năng lượng bằng không.",
+      "loi_tu_duy": "Coi vận tốc bằng không là năng lượng bằng không, quên thế năng.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Năng lượng không mất: nó đang nằm hết ở $E_t$."
     },
     {
       "cau": "cau2",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Nhầm thế năng với động năng, nghĩ chỗ chuyển động mạnh nhất thì năng lượng nào cũng lớn nhất.",
+      "loi_tu_duy": "Gắn \"chuyển động mạnh nhất\" với năng lượng lớn nhất nói chung, lẫn thế năng với động năng.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Mốc ở VTCB · Lớn ở biên"
+      "trich_nguyen_van": "$E_{t,\\max}=\\dfrac{1}{2}kA^2=\\dfrac{1}{2}m\\omega^2 A^2$ tại biên $x=\\pm A$."
     },
     {
       "cau": "cau3",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Đếm số nghiệm li độ mà quên mỗi vị trí được đi qua hai lần trong một chu kì.",
+      "loi_tu_duy": "Đếm số nghiệm li độ thay vì đếm số lần vật đi qua mỗi li độ.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Đếm lần qua · Không chỉ đếm chỗ"
+      "trich_nguyen_van": "🔑 Đếm lần qua · Không chỉ đếm chỗ"
     },
     {
       "cau": "cau4",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Thấy $m$ trong $\\frac12 mv^2$ nên cho rằng $W$ tăng theo $m$, quên rằng $v_{\\max}$ giảm khi $m$ tăng.",
+      "loi_tu_duy": "Thấy $m$ trong $\\frac{1}{2}mv^2$ nhưng quên rằng $v_{\\max}$ giảm khi $m$ tăng.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$\\omega^2=k/m$ nên $m$ bị triệt. Còn lại $\\dfrac{1}{2}kA^2$."
+      "trich_nguyen_van": "$\\omega^2=k/m$ nên $W=\\dfrac{1}{2}kA^2$, không còn $m$"
     },
     {
       "cau": "cau5",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Cho rằng năng lượng có cùng chu kì với li độ, không để ý $E_t$ cực đại ở cả hai biên.",
+      "loi_tu_duy": "Cho rằng năng lượng cùng chu kì với li độ, quên $E_t$ lên đỉnh ở cả hai biên. Phương án C cũng hấp dẫn vì vừa học \"4 lần\".",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Năng lượng nhanh gấp đôi"
+      "trich_nguyen_van": "🔑 Năng lượng nhanh gấp đôi"
     },
     {
       "cau": "cau6",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Nghĩ \"chia đôi năng lượng\" tương ứng với \"chia đôi biên độ\", quên rằng năng lượng tỉ lệ với $x^2$.",
+      "loi_tu_duy": "Nghĩ năng lượng chia đôi thì li độ cũng chia đôi, quên $E_t$ tỉ lệ $x^2$.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Chỗ $E_d=E_t$ là chia căn hai, không phải một nửa biên độ."
     },
     {
       "cau": "cau7",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Ngay trước câu này học sinh vừa tính $W$ tỉ lệ $A^2$, nên áp luôn tỉ lệ bình phương cho vận tốc. Bài chưa nêu $v_{\\max}=\\omega A$ trong phần lí thuyết.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Lấy tỉ lệ theo $A^2$ của cơ năng gán cho vận tốc cực đại.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "⚠ $v_{\\max}=\\omega A$ tỉ lệ với $A$, còn $W$ mới tỉ lệ với $A^2$."
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "bai": "l10-dong-nang-the-nang",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -120,5 +120,124 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-dong-nang-the-nang/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ phanh viết lại với v₀ là tốc độ lúc bắt đầu phanh: 0 − ½mv₀² = −F_h s, s = mv₀²/(2F_h), đồng bộ cả phản hồi Câu 2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Làm thêm một câu: cổng quang đo thời gian khúc gỗ che tia sáng, bề rộng chia thời gian ra v (gộp gọn câu 4 lần đo để bù chữ)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ cụm mơ hồ «lực phát động thắng/lực cản thắng», chỉ giữ dấu của tổng công."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng ⚠ thêm «chia cho 3,6», phản hồi đúng Câu 2 ghi v₀ = 72/3,6 = 20 m/s."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm «Lấy g = 10 m/s²» vào ví dụ cuốn sách."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Vòng trước chỉ thêm góc 90° − α, nay thêm lí do: mặt nghiêng góc α so với phương ngang, trọng lực thẳng đứng nên hợp đường đi góc 90° − α (hình không sửa được)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu Rút ra thêm bước: hai điểm cao nhất có v = 0 nên theo định lí động năng công trọng lực xuống và lên triệt tiêu, rút gọn câu Quan sát để bù."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Vòng trước đã sửa chỗ này nhưng vẫn chưa nêu lỗi, nay nêu: nhân 4 cho động năng rồi nhân thêm 2 vì xe nhanh gấp đôi."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng Bẫy 3 tách hai dòng: trọng lực trên dốc công ≠ 0 và phản lực vuông góc đường đi công = 0."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ «(Hình 4)» ở Câu 7 vì đề đã tả đủ điểm D, không chắc hình có D."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong lời giải mẫu thêm chú thích A_P là công của trọng lực, khác điểm A."
+      },
+      {
+        "id": "q-Dự đoán trước khi học",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, phản hồi đã nhấn quãng lết tỉ lệ bình phương tốc độ."
+      },
+      {
+        "id": "q-Câu 1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ hệ số ½ đã có trước Câu 1 từ vòng trước."
+      },
+      {
+        "id": "q-Câu 2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ đổi km/h đã có trước Câu 2 (vòng này bổ sung chia 3,6 theo c4)."
+      },
+      {
+        "id": "q-Câu 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Hộp định lí thế năng ngay trước đã nhấn đầu trừ cuối."
+      },
+      {
+        "id": "q-Câu 4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ lập tỉ số rồi mới bình phương đã có trước Câu 4."
+      },
+      {
+        "id": "q-Câu 5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 và dòng dưới mốc thì W_t âm đã nhấn lỗi này."
+      },
+      {
+        "id": "q-Câu 6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 ngay trước Câu 6 đã nhấn lỗi bỏ quên ma sát."
+      },
+      {
+        "id": "q-Câu 7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu 3 và bài toán mẫu đã nhấn lấy hiệu độ cao, giữ quyết định vòng trước."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài, phản hồi sai: phương án D (16 m) giải thích là nhân 4 cho động năng rồi nhân thêm 2 vì nhanh gấp đôi, đáp án 8 m giữ nguyên.",
+      "II.2: ví dụ phanh dùng v₀ (tốc độ lúc bắt đầu phanh): 0 − ½mv₀² = −F_h s, s = mv₀²/(2F_h), quãng phanh tỉ lệ v₀².",
+      "II.2: bỏ cụm «lực phát động thắng/lực cản thắng» ở hai dòng tổng công dương/âm.",
+      "II.2 thí nghiệm 1: thêm cách cổng quang đo tốc độ (bề rộng khúc gỗ chia thời gian che sáng).",
+      "II.2: ⚠ đổi km/h thêm «chia cho 3,6», phản hồi Câu 2 ghi v₀ = 72/3,6 = 20 m/s và phương trình dùng v₀ (kết quả 40 m không đổi).",
+      "II.3 ví dụ cuốn sách: thêm «Lấy g = 10 m/s²» (kết quả 10 J, 6 J, −5 J không đổi).",
+      "II.4 mặt nghiêng: ghi góc α so với phương ngang, trọng lực thẳng đứng nên hợp đường đi góc 90° − α.",
+      "II.4 thí nghiệm con lắc: Rút ra thêm bước v = 0 ở hai điểm cao nhất, theo định lí động năng công trọng lực xuống và lên triệt tiêu.",
+      "III Bẫy 3 bảng: tách thành trọng lực trên dốc công ≠ 0 và phản lực công = 0.",
+      "IV Trả bài: bỏ câu dẫn trùng với lời nhắc trong từng summary.",
+      "V lời giải: chú thích A_P là công, khác điểm A.",
+      "V Câu 7: bỏ «(Hình 4)», đáp án 14,1 m/s giữ nguyên."
+    ],
+    "so_tu_them": 34,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-dong-nang-the-nang/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

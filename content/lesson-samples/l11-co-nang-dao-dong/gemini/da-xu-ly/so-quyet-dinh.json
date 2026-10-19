@@ -1,6 +1,6 @@
 {
   "bai": "l11-co-nang-dao-dong",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -110,5 +110,123 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-co-nang-dao-dong/gemini/da-xu-ly/theory.src.202610091138.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Quan sát nói rõ năm hàng tất nhiên cho 0,128 J vì $E_d$ tính từ $\\frac12k(A^2-x^2)$ (bảng minh hoạ), bước Rút ra thay câu lặp về $m$ bằng cách kiểm thật: đo $v$ bằng cổng quang."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết đủ $\\omega=\\sqrt{k/m}=\\sqrt{40/0{,}200}=\\sqrt{200}\\approx 14{,}1$ rad/s."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details Sai số thêm dòng 0,04802 J chỉ là thế năng đàn hồi và dòng lò xo nằm ngang có VTCB trùng chỗ chưa dãn."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm lưu ý trong details PhET: đây là con lắc đơn, $mgh$ tỉ lệ $m$; \"W không phụ thuộc m\" chỉ cho con lắc lò xo giữ $k$, $A$."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Rút ra của ví dụ xích đu thêm câu: khác con lắc lò xo, ở đây $W=mgh$ tỉ lệ với $m$."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 4 và Mục tiêu ghi điều kiện \"giữ nguyên $k$ và $A$\" cho kết luận không phụ thuộc $m$."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mở câu chu kì bằng \"Xét theo thời gian $t$ (không phải theo $x$)\"; không gắn số hình vì không chắc nội dung FIG3."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành parabol \"hình chữ U\" (đáy ở VTCB) và \"hình chữ U ngược\" (đỉnh ở VTCB)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng câu 3 thêm: riêng ở biên vật chỉ chạm một lần rồi quay lại."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nói rõ mốc là quy ước, chọn ở VTCB để dùng công thức gọn, đặt chỗ khác thì $E_t$ lệch một hằng số; summary đổi \"phải\" thành \"chọn\"."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ chữ \"thêm\", ghi \"độ dãn $\\Delta\\ell=4{,}9$ cm so với lúc chưa treo\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay bằng \"Giữ biên độ nhỏ thì $W$ nhỏ, máy rung ít hơn\"."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn: phản hồi câu dự đoán và details mục 2 nói năng lượng nằm ở $E_t$."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng dòng 🔑 \"Mốc ở VTCB · Lớn ở biên\" và công thức $E_{t,\\max}$ tại biên."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng dòng 🔑 \"Đếm lần qua · Không chỉ đếm chỗ\"."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mẹo mục 4 và bảng bẫy III.1."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng bảng và dòng 🔑 \"Năng lượng nhanh gấp đôi\"."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mẹo mục 5 và bảng bẫy III.3."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước câu 7 đã thêm ở vòng 1 và còn trong bài."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục tiêu và mục II.4: \"W không phụ thuộc m\" thêm điều kiện giữ nguyên $k$ và $A$.",
+      "Mục II.1: details mốc thế năng nói rõ mốc là quy ước, đặt chỗ khác thì $E_t$ lệch một hằng số.",
+      "Mục II.1: bỏ ví dụ lò xo cửa (lặp với mục I và VI); mục II.2: bỏ ví dụ xích đu (lặp) để bù chữ.",
+      "Mục II.3: parabol $E_t(x)$ \"hình chữ U\", $E_d(x)$ \"hình chữ U ngược\"; câu chu kì $T/2$ mở bằng \"Xét theo thời gian $t$\".",
+      "Quiz 3: phản hồi đúng thêm ý ở biên vật chỉ chạm một lần.",
+      "Thí nghiệm II.6: $\\Delta\\ell=4{,}9$ cm ghi rõ so với lúc chưa treo (số không đổi).",
+      "Thí nghiệm II.6: nói rõ $W=0{,}128$ J là tất nhiên do cách tính (bảng minh hoạ); muốn kiểm thật phải đo $v$ bằng cổng quang; bỏ câu lặp \"đổi m thì W vẫn 0,128 J\".",
+      "Mục II.6: viết đủ $\\omega=\\sqrt{40/0{,}200}=\\sqrt{200}\\approx 14{,}1$ rad/s (số không đổi).",
+      "Details Sai số: 0,04802 J chỉ là thế năng đàn hồi; lò xo nằm ngang có VTCB trùng chỗ chưa dãn.",
+      "Details PhET: lưu ý mô phỏng là con lắc đơn, $mgh$ tỉ lệ $m$.",
+      "Mục VI: lò xo gá máy đổi thành biên độ nhỏ thì $W$ nhỏ, máy rung ít; ví dụ xích đu thêm $W=mgh$ tỉ lệ với $m$."
+    ],
+    "so_tu_them": 18,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-co-nang-dao-dong/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

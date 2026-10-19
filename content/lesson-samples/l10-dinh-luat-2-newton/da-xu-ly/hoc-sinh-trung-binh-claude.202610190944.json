@@ -1,0 +1,175 @@
+{
+  "bai": "Bài 15. Định luật 2 Newton",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: cùng một cú đẩy trên sân băng",
+      "trich_nguyen_van": "chọn C là lẫn \"khó đẩy\" với \"đà\"",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không rõ \"đà\" là gì và khác \"khó đẩy\" ở đâu, nên không biết mình sai chỗ nào khi chọn C.",
+      "de_xuat": "Viết rõ: chọn C là nghĩ vật nặng tăng tốc nhanh hơn, trong khi vật nặng thực ra khó đổi vận tốc hơn."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Gia tốc tỉ lệ thuận với lực",
+      "trich_nguyen_van": "tính $a = \\dfrac{2s}{t^2}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phải nhận công thức này mà không biết nó ở đâu ra. Công thức động học chỉ xuất hiện ở mục 5, trong một ô gập.",
+      "de_xuat": "Thêm ngoặc: \"(từ $s = \\tfrac12 at^2$, vì xe xuất phát từ nghỉ)\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "1. Gia tốc tỉ lệ thuận với lực",
+      "trich_nguyen_van": "Tính $F/a$ cho từng lần đo. Lần đo nào kém tin cậy nhất?",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em chỉ đoán theo số F/a lệch xa 0,50 nhất. Sai số cảm biến ±0,01 N và sai số đồng hồ ±0,01 s chỉ có trong đáp án, nên em không tự lập luận được.",
+      "de_xuat": "Ghi độ chính xác của cảm biến lực và cổng quang ngay trong bước \"Làm\" của thí nghiệm."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "1. Gia tốc tỉ lệ thuận với lực",
+      "trich_nguyen_van": "Chọn C là lấy độ tăng của lực ($0{,}40$ N) gán thẳng cho gia tốc",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em chọn A (\"vẫn là chiếc xe cũ\") mà phản hồi không nói gì về A, nên không biết sai ở đâu.",
+      "de_xuat": "Thêm câu: \"Chọn A là quên rằng xe giữ nguyên khối lượng nhưng lực đã đổi, nên gia tốc phải đổi.\""
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Phát biểu định luật 2 Newton",
+      "trich_nguyen_van": "Gia tốc của vật cùng hướng với lực tác dụng lên vật.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Khi có nhiều lực, em lấy một lực bất kỳ (ví dụ lực kéo) để xác định hướng và độ lớn gia tốc. Trả bài câu 1 cũng chỉ ghi \"cùng hướng lực\".",
+      "de_xuat": "Đổi \"lực tác dụng lên vật\" thành \"hợp lực tác dụng lên vật\" trong cả ba gạch đầu dòng và trong đáp án Trả bài câu 1."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "4. Khối lượng là mức quán tính",
+      "trich_nguyen_van": "xe con giảm tốc $10\\ \\text{m/s}^2$, dừng sau $20$ m; xe tải chỉ giảm tốc $1\\ \\text{m/s}^2$, trượt tới $200$ m",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Các số 10, 20, 1, 200 hiện ra không có phép tính. Bài không đổi 1,5 tấn ra 1500 kg, và công thức $v^2 - v_0^2 = 2as$ chưa được giới thiệu, nên em không tự kiểm lại được.",
+      "de_xuat": "Ghi phép tính: $a = 15000/1500 = 10$; $s = 20^2/(2\\cdot10) = 20$ m (tương tự cho xe tải) và dẫn tới công thức ở mục 5."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Bẫy 1: $F$ trong công thức là lực kéo",
+      "trich_nguyen_van": "Bẫy 1: $F$ trong công thức là lực kéo",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Đọc lướt tiêu đề, em tưởng đây là một quy tắc đúng: F là lực kéo.",
+      "de_xuat": "Đánh dấu rõ quan niệm sai, ví dụ: \"Bẫy 1 (hiểu sai): F trong công thức là lực kéo\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "Bẫy 2: lực hướng đâu, vật chạy hướng đó",
+      "trich_nguyen_van": "Bẫy 2: lực hướng đâu, vật chạy hướng đó",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tiêu đề nghe như một khẳng định đúng, dễ bị nhớ ngược.",
+      "de_xuat": "Thêm \"(hiểu sai)\" vào tiêu đề, hoặc viết thành câu hỏi \"Lực hướng đâu thì vật chạy hướng đó?\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 1: $F$ trong công thức là lực kéo",
+      "trich_nguyen_van": "$a = (F_{\\text{k}} - F_{\\text{ms}}) / m$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em học thuộc công thức trừ này và dùng cho mọi bài, kể cả khi lực kéo xiên hoặc không ngược chiều ma sát.",
+      "de_xuat": "Ghi kèm điều kiện: \"khi lực kéo nằm ngang, cùng phương và ngược chiều ma sát\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 3: lẫn khối lượng với trọng lượng, quên đổi gam",
+      "trich_nguyen_van": "$P = mg$, đổi theo nơi đặt vật",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu $g$ xuất hiện mà không nói là gì, đơn vị gì, xấp xỉ bao nhiêu.",
+      "de_xuat": "Thêm: \"$g$ là gia tốc rơi tự do, gần mặt đất $g \\approx 9{,}8\\ \\text{m/s}^2$\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 3: lẫn khối lượng với trọng lượng, quên đổi gam",
+      "trich_nguyen_van": "lẫn khối lượng với trọng lượng",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Bẫy có hai vế nhưng Câu 5 chỉ kiểm tra đổi gam. Em vẫn có thể thế trọng lượng (N) vào chỗ $m$ mà không bị phát hiện.",
+      "de_xuat": "Thêm một ví dụ ngắn: vật có trọng lượng 20 N, tìm $m = P/g$ trước rồi mới dùng $a = F/m$."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$a = \\dfrac{0 - 225}{50} = -4{,}5\\ \\text{m/s}^2$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em không thấy 225 là $15^2$ và 50 là $2\\cdot25$. Hệ số 2 bị giấu, nên ở Câu 6 em dễ chia cho $s$ luôn. Bước đổi 1,2 tấn = 1200 kg cũng bị bỏ qua.",
+      "de_xuat": "Viết đầy đủ: $a = \\dfrac{0^2 - 15^2}{2\\cdot 25}$ và ghi \"$m = 1{,}2$ tấn $= 1200$ kg\"."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Ô tô $1$ tấn đang chạy $36$ km/h",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa nhắc đổi km/h sang m/s. Em dễ thế thẳng 36 vào công thức, và đáp án cũng không ghi $v_0 = 10$ m/s.",
+      "de_xuat": "Thêm vào đáp án: \"$36$ km/h $= 10$ m/s\"; và thêm \"đổi km/h ra m/s\" vào mục Mang về."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chỉ nhìn lực: cùng lực 80 N thì nghĩ gia tốc phải như nhau, bỏ qua khối lượng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn A là quên rằng khối lượng cũng quyết định"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nghĩ theo phép cộng: lực tăng thêm 0,40 thì gia tốc tăng thêm 0,40. Đáp số 0,80 lại trùng với số 0,81 trong bảng thí nghiệm nên càng dễ tin.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Giữ khối lượng · lực gấp đôi · gia tốc gấp đôi"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Mang theo mẫu \"gấp ba\" từ Câu 1 sang, nên làm ngược chiều tỉ lệ khi đại lượng tăng lên là khối lượng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Giữ lực · khối lượng gấp đôi · gia tốc một nửa"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy lực kéo 100 N chia 20 kg, quên trừ lực ma sát.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nhiều bạn lấy lực kéo chia khối lượng, quên ma sát."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất hướng gia tốc với hướng vận tốc (xe đang chạy về bắc).",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Định luật nói gia tốc cùng hướng lực, không nói vận tốc."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thế 200 g trực tiếp vào mẫu số, không đổi ra kg.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đổi gam ra kg trước khi thế số"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Tính $a = v_0^2/s$ vì quên hệ số 2 trong $2as$. Bài mẫu viết sẵn mẫu số 50 nên không cho thấy hệ số này.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

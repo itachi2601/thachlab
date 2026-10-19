@@ -1,6 +1,6 @@
 {
   "bai": "l10-dinh-luat-3-newton",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -120,5 +120,121 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-dinh-luat-3-newton/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bẫy 2 sửa thành \"Lực bằng nhau, và nếu đó là hợp lực lên mỗi xe thì F = ma cho m_A a_A = m_B a_B\"; điều kiện ở mục Mang về xử lí cùng c2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mang về thêm \"(khi lực tương tác là hợp lực lên mỗi vật)\" và ⭐⭐⭐ thêm dòng giải thích vì sao không dùng được hệ thức đó (còn lực đất đẩy, ma sát)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án ⭐⭐⭐ thêm hai dòng: định nghĩa T là lực căng dây và chỉ rõ định luật III cho dây kéo ngựa về sau nên có −T."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 5 ghi \"đang đứng yên\", phản hồi ghi \"xuất phát từ nghỉ\", Nhắc nhanh thêm v = at (từ v = v₀ + at, v₀ = 0)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 5 đổi thành \"đẩy nhau một lúc rồi buông tay\", phản hồi đúng giải thích thời gian bằng nhau vì lực cùng xuất hiện, cùng mất đi."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"Phần V tính cụ thể với hai bạn trượt băng có khối lượng khác nhau\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 2 sửa thành \"cùng là lực đàn hồi, do dây và móc đèn đều bị biến dạng\", cắt câu lặp định nghĩa cặp lực ở phản hồi sai để bù chữ."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm nửa câu \"vì bàn chân không trượt trên đất\" sau \"ma sát nghỉ\"."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn trong phản hồi Câu 0, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-ht1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi nhân F với m."
+      },
+      {
+        "id": "q-ht2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu ý nghĩa dấu trừ."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bước Quan sát đã nêu sai số đọc ±0,1 N và phản hồi giải thích phương án B."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 và bảng so sánh đã nhấn điều kiện cùng một vật."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục II.2 và Bẫy 2 đã nhấn lực bằng nhau dù nặng nhẹ khác nhau."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 và dòng 🔑 đã nhấn."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn vai trò khối lượng, phần v = at được bổ sung qua c5."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài toán mẫu và phần điền bước đã cho thấy vật nặng gia tốc nhỏ, phản hồi đã giải thích phương án D."
+      }
+    ],
+    "doi_noi_dung": [
+      "Bẫy 2: hệ thức m_A a_A = m_B a_B kèm điều kiện lực tương tác là hợp lực lên mỗi xe.",
+      "Mang về: thêm điều kiện \"khi lực tương tác là hợp lực lên mỗi vật\" cho m_A a_A = m_B a_B.",
+      "Thử thách ⭐⭐⭐: thêm định nghĩa T, giải thích dấu −T theo định luật III, và lí do không dùng m_A a_A = m_B a_B (kết quả a = 1 m/s², T = 500 N không đổi).",
+      "Câu 2 (phản hồi đúng): \"lực đàn hồi của dây\" → \"lực đàn hồi, do dây và móc đèn đều bị biến dạng\".",
+      "Câu 5 (đề): thêm \"đang đứng yên\", \"trong cùng một khoảng thời gian\" → \"một lúc\".",
+      "Câu 5 (phản hồi đúng): thời gian tác dụng bằng nhau vì lực cùng xuất hiện, cùng mất đi.",
+      "Câu 5 (phản hồi đúng): v = at vì xuất phát từ nghỉ.",
+      "Nhắc nhanh: thêm v = at (từ v = v₀ + at với v₀ = 0).",
+      "Mục VI (Đi bộ): giải thích ma sát nghỉ vì bàn chân không trượt trên đất."
+    ],
+    "so_tu_them": 14,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-dinh-luat-3-newton/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

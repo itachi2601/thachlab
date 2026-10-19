@@ -1,6 +1,6 @@
 {
   "bai": "l10-chuyen-dong-thang-bien-doi-deu",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-08",
     "model": "claude-opus-5-5",
@@ -106,5 +106,124 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-chuyen-dong-thang-bien-doi-deu/gemini/da-xu-ly/theory.src.202610081648.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details trượt băng đã ghi rõ chọn $t_0 = 0$ nên định nghĩa thành $a = (v - v_0)/t$, tức $v = v_0 + at$, rồi mới thay $v = 0$."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngay sau công thức gia tốc: $v_0$, $v$ là vận tốc lúc $t_0$, lúc $t$."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Details đọc bảng viết rõ đổi $b = 0{,}02$ m, $\\tau = 0{,}02/0{,}77 \\approx 0{,}026$ s và $0{,}001/0{,}026 \\approx 4\\,\\%$, hàng đầu tương tự."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài không có phép tính hình thang $\\frac{2+6}{2}\\cdot 4$)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành $s = |d|$, bằng $d$ nếu chọn chiều dương theo chiều chuyển động, và sửa đáp án Trả bài câu 4 cho khớp."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gạch đầu dòng giờ ghi khử $t$ giữa $v = v_0 + at$ và $d = \\frac{v_0+v}{2}t$, khớp phần Xem thêm."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích \"tốc độ giảm nhanh như hôm trước, tức cùng gia tốc\" sau \"phanh y như cũ\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đòi chuyển mục Trả bài hoặc chuyển câu 6 là đổi cấu trúc mục, vòng trước đã từ chối cùng lý do và lý do vẫn đúng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại dòng ⚠: khoảng cách $\\Delta x = x_2 - x_1 = 10t - t^2$, tăng khi xe máy (ở trước) nhanh hơn, giảm khi ô tô nhanh hơn."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 6 ghi $\\Delta x = 10 \\cdot 5 - 5^2$, công thức $\\Delta x = 10t - t^2$ đã có ở dòng ⚠ ngay trên."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng dữ liệu dùng thống nhất $a_1$ và ghi $x_1 = x_{01} + \\tfrac12 a_1t^2$, $v_1 = a_1t$."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án thử thách ⭐⭐ giải thích giây thứ ba là từ $t = 2$ đến $3$ s và $d_3$, $d_2$ là quãng đường trong 3 s, 2 s đầu."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi câu dự đoán và mục II.4, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã chỉ đúng lỗi quên chia $\\Delta t$ và bài đã nêu độ dốc $= \\Delta v/\\Delta t$, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 3 đã nhấn vận tốc trung bình × thời gian, không thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn đúng lỗi này, không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn đúng lỗi này, không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn đúng lỗi này, không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 6 đã thêm ở vòng 1, vòng này chỉ viết lại cho rõ theo c9."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài: \"phanh y như cũ\" thêm chú thích \"tốc độ giảm nhanh như hôm trước, tức cùng gia tốc\".",
+      "II.1: thêm giải nghĩa $v_0$, $v$ là vận tốc lúc $t_0$, lúc $t$ ngay sau công thức gia tốc.",
+      "II.1 details trượt băng: thêm bước chọn $t_0 = 0$ → $v = v_0 + at$, kết quả $t = 12$ s giữ nguyên.",
+      "II.2 details đọc bảng: ghi phép tính $\\tau = 0{,}02/0{,}77 \\approx 0{,}026$ s, $0{,}001/0{,}026 \\approx 4\\,\\%$, hàng đầu $\\tau = 0{,}02/0{,}31 \\approx 0{,}064$ s, $\\approx 1{,}6\\,\\%$ (số liệu giữ nguyên).",
+      "II.3: \"quãng đường $s = d$\" → \"$s = |d|$, bằng $d$ nếu chọn chiều dương theo chiều chuyển động\".",
+      "Trả bài câu 4: đáp án đổi thành $s = |d|$ khi không đổi chiều, bằng $d$ khi chiều dương theo chiều chuyển động.",
+      "II.4: gạch đầu dòng khử $t$ đổi sang dùng $d = \\frac{v_0+v}{2}t$ cho khớp phần chứng minh.",
+      "Bảng dữ liệu bài toán mẫu: ký hiệu gia tốc ô tô đổi $a$ → $a_1$, dòng 1 thành $x_1 = x_{01} + \\tfrac12 a_1t^2$, dòng cuối $v_1 = a_1t$.",
+      "Dòng ⚠ trước Câu 6: viết lại với $\\Delta x = x_2 - x_1 = 10t - t^2$, nói rõ xe máy ở trước.",
+      "Phản hồi đúng Câu 6: ghi $\\Delta x = 10 \\cdot 5 - 5^2 = 25$ m (kết quả giữ nguyên).",
+      "Thử thách ⭐⭐: giải thích giây thứ ba (từ $t = 2$ đến $3$ s) và ý nghĩa $d_3$, $d_2$, kết quả $a = 2\\ \\text{m/s}^2$ giữ nguyên.",
+      "Cắt bù độ dài: bỏ câu lặp \"Gia tốc $= \\Delta v/\\Delta t$\" ở phản hồi sai Câu 1, bỏ \"Đây chính là đáp án câu dự đoán\" ở ví dụ quãng phanh, bỏ \"(bấm mở ngay dưới câu này)\" ở phản hồi đúng Câu 6."
+    ],
+    "so_tu_them": 24,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-chuyen-dong-thang-bien-doi-deu/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

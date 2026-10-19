@@ -1,6 +1,6 @@
 {
   "bai": "l10-giai-bai-toan-dong-luc-hoc",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -124,5 +124,119 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-giai-bai-toan-dong-luc-hoc/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Rút ra của thí nghiệm 2 tự viết định luật II cho từng vật (T = m1a, m2g − T = m2a) rồi cộng để T triệt tiêu, không còn dựa vào phản hồi đúng của Câu 3."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Kiểm trượt nay ghi: giả sử đứng yên thì T = P2 = 10 N, m1 cần ma sát nghỉ 10 N, vượt mức trần 4 N nên hệ chuyển động."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô Xem thêm suy ra tanα ≤ μn từ mg sinα ≤ μn mg cosα và đổi μ thành μn ở cụm mức trần."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án ⭐⭐⭐ ghi rõ phép giả sử cùng chạy (a = 6/3, 12/3) và a ván = (12 − 3)/2, mỗi ý một dòng."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích (bỏ qua ma sát giữa ván và sàn) ngay sau chữ nhẵn."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng: chỉ đúng với góc nhỏ, xiên quá thì F cosα giảm nhiều nên lại tốn sức hơn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn μN = 0,3 · 200 = 60 N trước phép tính a."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thống nhất ký hiệu F_ms trong phần hành trang (phản hồi Câu H2 và Nhắc nhanh)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi số câu hành trang thành Câu H1, Câu H2, giữ nguyên id/name quiz."
+      },
+      {
+        "id": "q-du-doan-muc-I",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai và hộp quy tắc mặt nghiêng đã nhấn khối lượng triệt tiêu, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-hanh-trang-1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã chỉ rõ nhầm P cosα với thành phần vuông góc."
+      },
+      {
+        "id": "q-hanh-trang-2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã chỉ rõ 250 N là chia N cho μ."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn dây nhấc bớt thùng ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn N = mg cosα nhỏ hơn mg."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn chiều dương đi vòng theo dây để dùng chung a."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy trình và bảng lực thừa đã nhấn mỗi lực phải có vật gây ra, lực đà không phải lực."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn ma sát trượt tỉ lệ với N."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng làm sai/làm đúng đã nhấn giữ chiều dương, a không đổi dấu."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ma sát nghỉ tìm từ định luật II, μn N chỉ là mức trần."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.2 ví dụ kéo ngang: thêm μN = 0,3 · 200 = 60 N trước khi tính a = 1 m/s² (số không đổi).",
+      "Thí nghiệm 2, bước Rút ra: bỏ tham chiếu Câu 3, thay bằng T = m1a và m2g − T = m2a cộng lại → a = m2g/(m1 + m2) = 2,0 m/s² (số không đổi).",
+      "Ô Xem thêm mặt nghiêng: suy ra tanα ≤ μn từ mg sinα ≤ μn mg cosα; mức trần ghi μn mg cosα thay cho μ mg cosα.",
+      "Bài toán mẫu, bước Kiểm trượt: giả sử đứng yên T = P2 = 10 N, ma sát nghỉ cần 10 N > mức trần 4 N → hệ trượt.",
+      "Thử thách ⭐⭐⭐: ghi mức trần 3 N, a = 6/3 = 2 m/s² (cần 2 N), a = 12/3 = 4 m/s² (cần 4 N), khi trượt khối 3 m/s², ván (12 − 3)/2 = 4,5 m/s²; chú thích sàn nhẵn là bỏ qua ma sát ván–sàn.",
+      "Mục VI kéo bao gạo: thêm giới hạn chỉ đúng với góc nhỏ vì F cosα giảm.",
+      "Hành trang: ký hiệu F_mst đổi thành F_ms; Câu 1, Câu 2 đổi thành Câu H1, Câu H2."
+    ],
+    "so_tu_them": 5,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-giai-bai-toan-dong-luc-hoc/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

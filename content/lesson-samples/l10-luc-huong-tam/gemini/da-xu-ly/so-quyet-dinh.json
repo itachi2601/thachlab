@@ -1,6 +1,6 @@
 {
   "bai": "l10-luc-huong-tam",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -135,5 +135,124 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-luc-huong-tam/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 1 đổi thành \"Lực ma sát giữ xe đi vòng (mục 2) cũng phải gấp bốn\", mục VI (details) ghi rõ \"lực bám dính giữa nước và vải\"."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nguồn viết \"$v$\" trong công thức LaTeX)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ lồng vắt ghi tần số f = 10 vòng/s và ω = 2πf (Bài 31) trước khi thay số."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng ⚠ trước Câu 2 viết lại: lực thật luôn có vật gây ra, \"lực li tâm\" không có vật nào gây ra."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết thành \"Khi lực hướng tâm cần có mω²r vượt ma sát nghỉ lớn nhất, xu trượt\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thống nhất dùng \"sai số tương đối\" và ghi nguồn quy tắc (Bài 3)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng \"Nhìn vào\" của video ghi rõ vòng đệm sắt đóng vai quả nặng M."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu \"Mọi điểm trên cùng một vật quay có chung ω\" trước Câu 5, bù bằng cắt câu hỏi thừa ở phản hồi Câu 3."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng dữ liệu ghi v = 36/3,6 = 10 m/s (chia 3,6), lời giải ghi 15,8·3,6 ≈ 57 km/h."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước nhân hai vế với r/m và thay số v²max = 6000·50/1200 = 250."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi 1 N = 1 kg·m/s² nên √(N·m/kg) = √(m²/s²) = m/s."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp số ⭐⭐⭐ ghi r = 6800 km = 6,8·10⁶ m, v = 7,7·10³ m/s, mỗi ý một dòng."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định cũ: câu dự đoán trước khi học, thêm ⚠ sẽ lộ đáp án, phản hồi đã gỡ lỗi D."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về số mũ của v đã thêm trước Câu 1 ở vòng trước."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 2 đã thêm vòng trước, vòng này viết rõ hơn theo c4."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"Vẽ thêm nó là đếm một lực hai lần\" ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề Bẫy 2 và câu dẫn đã đặt vấn đề \"lực li tâm\" ngay trước quiz."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn đại lượng giữ nguyên, nay thêm câu cùng ω theo c8, không cần dòng ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng dữ liệu ngay trước quiz đã nhấn đổi đơn vị, nay ghi rõ phép chia 3,6 theo c9."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1 Câu 1 phản hồi đúng: \"Lực bám\" đổi thành \"Lực ma sát giữ xe đi vòng (mục 2) cũng phải gấp bốn\".",
+      "II.1 ví dụ lồng vắt: ghi tần số f = 10 vòng/s, ω = 2πf = 20π ≈ 62,8 rad/s (kết quả 790 m/s² không đổi).",
+      "II.2 thí nghiệm đồng xu: xu trượt khi lực hướng tâm cần có mω²r vượt ma sát nghỉ lớn nhất.",
+      "II.2 dòng ⚠ trước Câu 2: lực thật luôn có vật gây ra, \"lực li tâm\" không có vật gây ra.",
+      "II.3 video: vòng đệm sắt đóng vai quả nặng M.",
+      "II.3 nhận xét (details): dùng thống nhất \"sai số tương đối\", ghi nguồn Bài 3.",
+      "Bẫy 3: thêm \"Mọi điểm trên cùng một vật quay có chung ω\" trước Câu 5.",
+      "V bảng dữ liệu: v = 36/3,6 = 10 m/s.",
+      "V lời giải: v²max = 6000·50/1200 = 250, vmax ≈ 15,8 m/s, 15,8·3,6 ≈ 57 km/h (số không đổi).",
+      "V kiểm tra đơn vị: 1 N = 1 kg·m/s² nên √(N·m/kg) = m/s.",
+      "VI ⭐⭐⭐: r = 6800 km = 6,8·10⁶ m, v = 7,7·10³ m/s, a ≈ 8,7 m/s² (số không đổi).",
+      "VI máy giặt (details): \"lực bám\" ghi rõ là lực bám dính giữa nước và vải."
+    ],
+    "so_tu_them": 18,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-luc-huong-tam/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

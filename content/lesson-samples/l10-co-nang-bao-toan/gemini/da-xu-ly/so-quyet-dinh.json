@@ -1,6 +1,6 @@
 {
   "bai": "l10-co-nang-bao-toan",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -127,5 +127,120 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-co-nang-bao-toan/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ A_P là công của trọng lực và A_P = mgz₁ − mgz₂ = W_t1 − W_t2 ngay trong câu \"Vì sao đúng\"."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Điều kiện viết lại: chỉ trọng lực (hay lực đàn hồi) sinh công, các lực khác hoặc không có, hoặc không sinh công."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details>: tách mức chung 96–97% (hệ thống) với phần lần 5 cm lệch thêm 0,3–1% (ngẫu nhiên), đổi ví dụ thành lệch 1 mm = 2% của 5 cm nhưng 0,5% của 20 cm."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tiêu đề cột đổi thành \"W_d đáy / W_t đầu (%)\", câu dẫn rút gọn để bù chữ."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi A_c là một trường hợp riêng của A_khác và thêm dòng lực kéo: ΔW = A_khác > 0 vào khung Mang về."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 6 viết phép tính mốc ban công với z = −15 m, ra v² = 400."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"W_d tỉ lệ với v²\" trước kết luận W_d chỉ bằng ¼W."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục tiêu ghi kèm A_c là công của ma sát, lực cản."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gắn vào câu có sẵn: chọn mốc ở cành thì quả táo trên có W = 0 (so với 10 J khi mốc ở đất)."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details>: thêm câu đường tới mép dài hơn tới B nên mất hơn 200 J, cần đẩy đà lớn hơn 2,8 m/s một chút."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng trước: phản hồi đã nhấn bẫy A, thêm ⚠ trước câu dự đoán làm hỏng mục đích dự đoán."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ nhắc hệ số ½ trước Câu 1 đã có từ vòng trước."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ riêng trước Câu 2: tính ra v² rồi nhớ khai căn (lỗi B chưa được nhắc, dòng ⚠ cũ chỉ nói về m)."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng trước: thứ tự W₂ − W₁ và dấu âm đã nhấn trong công thức và phản hồi."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ tốc độ không đổi chưa đủ đã có trước Câu 4."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng trước: Bẫy 2 và dòng 🔑 \"Giữ tổng · không giữ từng phần\" đã nhấn."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 6: bóng ném lên rồi mới rơi, động năng lúc ném vẫn có trong W₁ (dòng ⚠ cũ chỉ nói về mốc)."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng trước, nay phản hồi Câu 7 còn nói rõ W_d tỉ lệ với v² (góp ý c7)."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục tiêu: ghi rõ A_c là công của ma sát, lực cản.",
+      "II.1: thêm ví dụ mốc ở cành thì quả táo trên cành có W = 0 (mốc ở đất là 10 J).",
+      "II.2: điều kiện bảo toàn viết lại thành \"chỉ trọng lực (lực đàn hồi) sinh công, các lực khác hoặc không có, hoặc không sinh công\".",
+      "II.2: chứng minh ghi rõ A_P là công trọng lực, A_P = mgz₁ − mgz₂ = W_t1 − W_t2.",
+      "Bảng con lắc: tiêu đề cột cuối đổi thành W_d đáy / W_t đầu (%), số liệu giữ nguyên.",
+      "Nhận xét con lắc (details): mức 96–97% là sai số hệ thống, phần lần 5 cm thấp thêm 0,3–1% là ngẫu nhiên, ví dụ lệch 1 mm = 2% của 5 cm và 0,5% của 20 cm (thay cho 2 mm = 4%).",
+      "Thêm ⚠ trước Câu 2: ra v² phải khai căn.",
+      "II.4: A_c là trường hợp riêng của A_khác, Mang về thêm dòng lực kéo cùng chiều: ΔW = A_khác > 0.",
+      "Rút gọn ví dụ Lan ở II.4, bỏ \"thành nhiệt và tiếng tách\" ở thí nghiệm bóng bàn, bỏ ví dụ \"trượt cầu trượt có ma sát\" ở bảng Bẫy 1 để bù chữ.",
+      "Thêm ⚠ trước Câu 6: động năng lúc ném vẫn có trong W₁.",
+      "Phản hồi đúng Câu 6: viết phép tính mốc ban công ½m·10² + 0 = ½mv² + m·10·(−15), ra v² = 400.",
+      "Phản hồi sai Câu 7: thêm W_d tỉ lệ với v² nên v bằng nửa v_O thì W_d = ¼W.",
+      "Details đẩy đà: thêm câu thực tế mất hơn 200 J nên cần v lớn hơn 2,8 m/s một chút."
+    ],
+    "so_tu_them": 30,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-co-nang-bao-toan/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

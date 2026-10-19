@@ -1,6 +1,6 @@
 {
   "bai": "l10-cong-suat",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -113,5 +113,110 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-cong-suat/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ tên máy/thang A, B (đổi sẽ phải sửa đề và phương án), chỉ ghi rõ \"Phương án A/B/C\" trong phản hồi sai Câu 1 và Câu 7 như đã làm ở Câu 4."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Làm của thí nghiệm đạp xe ghi \"giảm số (chuyển sang số nhẹ)\" để nối với Mục tiêu và Câu 6."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại dòng Quan sát: số cũ ấn hết sức mà xe chậm dần, dễ phải dừng, số nhẹ ấn vừa sức và lên hết dốc dù chậm."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Khung quy tắc mục 3 thêm: $P = F v$ tức thời đúng cả khi $F$ thay đổi, miễn cùng hướng $v$."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ xe đạp điện cho tốc độ $18$ km/h và đổi $18/3{,}6 = 5$ m/s trước khi tính $F = P/v$."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng \"biết $P$, tìm $t$: $t = A/P$\" ngay trước Câu 7 và sửa phản hồi sai chỉ về dòng đó thay cho phần thử sức."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ xe đạp điện ghi rõ $250$ W là công suất tối đa khi động cơ chạy hết sức."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 6 thêm \"chạy hết công suất\" và \"vẫn giữ ga hết cỡ\", đáp án C và phản hồi giữ nguyên."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bẫy 2 thêm ví dụ đèn $40$ W bật $5$ h: $200$ Wh $= 0{,}2$ kWh, bù bằng cách bỏ câu hỏi phản tư trong phản hồi đúng Câu 4."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn lỗi gắn công với thời gian, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nêu phương án A chưa chia cho $t$, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định cũ: phản hồi sai đã nêu D coi 1 CV bằng 1 kW."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Ví dụ xe đạp điện nay đã làm mẫu đổi km/h ra m/s ngay trước Câu 3, không cần thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn trích không khớp nguồn nhưng tên mục Bẫy 1 và phản hồi đã nhấn công suất lớn chưa chắc công lớn."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Ví dụ mới $40$ W · $5$ h $= 0{,}2$ kWh đã nhấn bước chia $1\\,000$, không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tên mục Bẫy 3 và ví dụ mục 3 đã nhấn công suất tối đa cố định, không thêm ⚠."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng mẫu $t = A/P$ mới thêm ngay trước Câu 7 cùng phản hồi sai về phương án C đã đủ nhấn."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.3 ví dụ xe đạp điện: $250$ W ghi rõ là công suất tối đa, tốc độ cho dạng $18$ km/h $= 5$ m/s. Kết quả $50$ N và $25$ N không đổi.",
+      "II.3 khung quy tắc: thêm ý $P = F v$ tức thời đúng cả khi $F$ thay đổi, miễn $F$ cùng hướng $v$.",
+      "Thí nghiệm đạp xe lên dốc: Làm ghi giảm số = số nhẹ. Quan sát: số cũ dễ phải dừng, số nhẹ lên hết dốc dù chậm.",
+      "Bẫy 2: thêm ví dụ đèn $40$ W bật $5$ h được $200$ Wh $= 0{,}2$ kWh.",
+      "Câu 6: đề thêm \"chạy hết công suất\" và \"giữ ga hết cỡ\". Đáp án C giữ nguyên.",
+      "Bài toán mẫu: thêm dòng $t = A/P$ trước Câu 7. Phản hồi sai Câu 7 chỉ về dòng này. Kết quả $20$ s không đổi.",
+      "Câu 3 phản hồi sai: phương án C rút gọn thành quên tiền tố k, $30\\,000$ W $= 30$ kW.",
+      "Cắt để giữ hạn mức: \"(số minh hoạ)\" ở ví dụ II.1, rút gọn gạch Mở rộng (bỏ bếp ga, nhà máy điện), bỏ dòng cuối phản hồi sai Câu 1, bỏ câu hỏi phản tư trong phản hồi đúng Câu 4."
+    ],
+    "so_tu_them": 35,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-cong-suat/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

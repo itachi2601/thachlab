@@ -50,7 +50,7 @@
 
 <ul>
 <li>$v$ biến thiên điều hoà, cùng tần số với $x$.</li>
-<li>$v$ sớm pha $\pi/2$ so với $x$ ($x$ trễ $v$ một góc $\pi/2$): vuông pha.</li>
+<li>$v$ sớm pha $\pi/2$ so với $x$: vuông pha.</li>
 <li>$|v|_{min}=0$ tại hai biên. $|v|_{max}=A\omega$ khi qua vị trí cân bằng.</li>
 <li>$v_{min}=-A\omega$ khi qua O theo chiều âm. $v_{max}=+A\omega$ khi qua O theo chiều dương.</li>
 <li>$\vec v$ cùng chiều chuyển động. $v\gt 0$ là chiều dương.</li>
@@ -66,7 +66,7 @@
 <p class="tl-label">🔬 Thí nghiệm: đo A, T rồi tính v và a</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> con lắc lò xo nằm ngang. Kéo lệch $A=4{,}0$ cm (thước, sai số $0{,}1$ cm) rồi thả. Bấm thời gian 10 dao động, năm lần: $8{,}02$ s; $7{,}96$ s; $8{,}08$ s; $7{,}94$ s; $8{,}00$ s.</li>
-<li><strong>Quan sát:</strong> $T=t_{10}/10$. Trung bình $T=0{,}800$ s, $\omega=7{,}854$ rad/s. Tính bằng công thức mục 1, 2 và 4: $v_{max}=31{,}42$ cm/s. Tại $x=2{,}0$ cm: tốc độ $27{,}21$ cm/s, $a=-123{,}4$ cm/s². Tại biên $x=4{,}0$ cm: tốc độ $0$, $a=-246{,}7$ cm/s².</li>
+<li><strong>Quan sát:</strong> $T=t_{10}/10$. Trung bình $T=0{,}800$ s, $\omega=2\pi/T=7{,}854$ rad/s. Tính bằng $A\omega$, $|v|=\omega\sqrt{A^{2}-x^{2}}$ (mục 4) và $a=-\omega^{2}x$ (mục 2): $v_{max}=31{,}42$ cm/s. Tại $x=2{,}0$ cm: tốc độ $27{,}21$ cm/s, $a=-123{,}4$ cm/s². Tại biên $x=4{,}0$ cm: tốc độ $0$, $a=-246{,}7$ cm/s².</li>
 <li><strong>Rút ra:</strong> $v_{max}=A\omega$ (mục 1). Càng xa O, tốc độ càng nhỏ và $|a|$ càng lớn.</li>
 </ol>
 <div class="table-scroll"><table class="tl-table">
@@ -177,15 +177,15 @@
 </tbody>
 </table></div>
 
-<p>Dưới đây $v_{max}$, $a_{max}$ chỉ độ lớn: $|v|_{max}=A\omega$, $|a|_{max}=A\omega^{2}$.</p>
+<p>Dưới đây dùng độ lớn $|v|_{max}=A\omega$, $|a|_{max}=A\omega^{2}$.</p>
 <p>Dấu $\pm$ của $v$ theo chiều chuyển động, không theo dấu $x$. Dấu $\mp$ ở gia tốc nghĩa là $a$ trái dấu với $x$.</p>
 
 <ul>
 <li><strong>O:</strong> $x=0$; $v=\pm A\omega$; $a=0$.</li>
-<li><strong>$\pm A/2$:</strong> $v=\pm v_{max}\sqrt{3}/2$; $a=\mp a_{max}/2$.</li>
-<li><strong>$\pm A\sqrt{2}/2$:</strong> $v=\pm v_{max}\sqrt{2}/2$; $a=\mp a_{max}\sqrt{2}/2$.</li>
-<li><strong>$\pm A\sqrt{3}/2$:</strong> $v=\pm v_{max}/2$; $a=\mp a_{max}\sqrt{3}/2$.</li>
-<li><strong>Biên $\pm A$:</strong> $v=0$; $a=\mp a_{max}$.</li>
+<li><strong>$\pm A/2$:</strong> $v=\pm|v|_{max}\sqrt{3}/2$; $a=\mp|a|_{max}/2$.</li>
+<li><strong>$\pm A\sqrt{2}/2$:</strong> $v=\pm|v|_{max}\sqrt{2}/2$; $a=\mp|a|_{max}\sqrt{2}/2$.</li>
+<li><strong>$\pm A\sqrt{3}/2$:</strong> $v=\pm|v|_{max}/2$; $a=\mp|a|_{max}\sqrt{3}/2$.</li>
+<li><strong>Biên $\pm A$:</strong> $v=0$; $a=\mp|a|_{max}$.</li>
 </ul>
 
 <details class="tl-details">
@@ -211,7 +211,7 @@
 
 <p>$$A^{2}=x^{2}+v^{2}/\omega^{2}$$</p>
 
-<p>Đồ thị $x$–$v$ là một elip. Thế $x=A/2$ thì $(1/2)^{2}+(v/A\omega)^{2}=1$, nên $|v|=A\omega\sqrt{3}/2$. Cứ thế ra các mốc còn lại ở mục trên.</p>
+<p>Đồ thị $x$–$v$ là một elip. Thế $x=A/2$ thì $(1/2)^{2}+(v/A\omega)^{2}=1$, nên $|v|=A\omega\sqrt{3}/2$.</p>
 
 <p>$$(1/2)^{2}+(\sqrt{3}/2)^{2}=1$$</p>
 
@@ -236,9 +236,9 @@
 
 <p><strong>🔑 Từ O ra xa: 12 · 8 · 6 · 4</strong></p>
 
-<p>Cách suy: từ O tới $A/2$, góc quét trên vòng tròn lượng giác là $\pi/6$, nên $\Delta t=\frac{\pi/6}{2\pi}T=T/12$.</p>
+<p>Cách suy: $x=A\cos\theta$, tại O thì $|\theta|=\pi/2$, tại $A/2$ thì $|\theta|=\pi/3$. Góc quét trên vòng tròn lượng giác là $\pi/2-\pi/3=\pi/6$, nên $\Delta t=\frac{\pi/6}{2\pi}T=T/12$.</p>
 
-<p>Thời gian ngắn nhất từ $x=0$ tới các mốc (vòng tròn lượng giác):</p>
+<p>Thời gian ngắn nhất từ O tới các mốc:</p>
 
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>Từ O tới</th><th>Thời gian</th></tr></thead>
@@ -255,7 +255,7 @@
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>Đoạn</th><th>Thời gian</th></tr></thead>
 <tbody>
-<tr><td>$-A/2$ đến $A/2$</td><td>$T/6$</td></tr>
+<tr><td>$-A/2$ đến $A/2$ (qua O)</td><td>$T/6=2\times T/12$</td></tr>
 <tr><td>$A/2$ đến $A\sqrt{2}/2$</td><td>$T/24$</td></tr>
 <tr><td>$A\sqrt{2}/2$ đến $A\sqrt{3}/2$</td><td>$T/24$</td></tr>
 <tr><td>$A\sqrt{3}/2$ đến $A$</td><td>$T/12$</td></tr>
@@ -395,7 +395,7 @@
 </details>
 <details class="tl-details">
 <summary>6. Thời gian từ O và đoạn liền kề. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Tới $A/2$, $A\sqrt{2}/2$, $A\sqrt{3}/2$, $A$: $T/12$, $T/8$, $T/6$, $T/4$. Liền kề: $T/6$, $T/24$, $T/24$, $T/12$. Góc: $T\leftrightarrow 2\pi$, $T/2\leftrightarrow\pi$, $T/3\leftrightarrow 2\pi/3$, $T/4\leftrightarrow\pi/2$, $T/6\leftrightarrow\pi/3$, $T/8\leftrightarrow\pi/4$, $T/12\leftrightarrow\pi/6$.</p>
+<p>Từ O tới $A/2$, $A\sqrt{2}/2$, $A\sqrt{3}/2$, $A$: $T/12$, $T/8$, $T/6$, $T/4$.<br>Từ $-A/2$ tới $A/2$ (qua O): $T/6=2\times T/12$.<br>Từ $A/2$ ra biên: $T/24$, $T/24$, $T/12$.<br>Góc: $T\leftrightarrow 2\pi$, $T/2\leftrightarrow\pi$, $T/3\leftrightarrow 2\pi/3$, $T/4\leftrightarrow\pi/2$, $T/6\leftrightarrow\pi/3$, $T/8\leftrightarrow\pi/4$, $T/12\leftrightarrow\pi/6$.</p>
 </details>
 </div>
 
@@ -416,7 +416,7 @@
 <tr><td>$\omega=10$ rad/s</td><td>$\omega=10$</td><td>$a=-\omega^{2}x$</td></tr>
 <tr><td>$t=0$ ở biên dương</td><td>$A\cos\varphi=A\Rightarrow\varphi=0$</td><td>$x=A\cos(\omega t)$</td></tr>
 <tr><td>qua $x=2$ cm chiều âm</td><td>$x=2$, $v\lt 0$</td><td>$A^{2}=x^{2}+v^{2}/\omega^{2}$</td></tr>
-<tr><td>từ biên dương tới $x=2$ cm</td><td>xuất phát ở biên, không phải O</td><td>$T/4-T/12=T/6$</td></tr>
+<tr><td>từ biên dương tới $x=2$ cm</td><td>xuất phát ở biên, không phải O</td><td>biên tới O: $T/4$<br>O tới $A/2$: $T/12$<br>còn $T/4-T/12=T/6$</td></tr>
 <tr><td>giữ đơn vị cm, s</td><td>không đổi sang m</td><td>cùng hệ trong một bài</td></tr>
 </tbody>
 </table></div>
@@ -442,6 +442,7 @@
 <li>$$a=-400\cos(10t)\ \text{cm/s}^{2}$$</li>
 <li>Tại $x=2$ cm: $(2/4)^{2}+(v/40)^{2}=1$, nên $|v|=20\sqrt{3}$ cm/s. Chiều âm: $v=-20\sqrt{3}$ cm/s.</li>
 <li>$a=-\omega^{2}x=-200$ cm/s². Cùng dấu với $v$, nên đang nhanh dần về O.</li>
+<li>Chu kì: $T=2\pi/\omega=\pi/5$ s.</li>
 <li>Từ biên tới $x=A/2$: $\cos(10t)=1/2$, $10t=\pi/3$, $t=\pi/30$ s $=T/6$.</li>
 <li><strong>Kiểm tra:</strong> $x^{2}+v^{2}/\omega^{2}=4+12=16=A^{2}$. $a$ trái dấu $x$.</li>
 </ol>
@@ -463,7 +464,7 @@
 
 <details class="tl-details">
 <summary>Thử sức đổi pha: t = 0 ở biên âm, lần đầu qua O thì v bằng bao nhiêu?</summary>
-<p>$\varphi=\pi$, $x=-4\cos(10t)$ cm, $v=40\sin(10t)$ cm/s. Lần đầu $x=0$ lúc $t=T/4$, $v=+40$ cm/s.</p>
+<p>$t=0$ ở biên âm: $A\cos\varphi=-A\Rightarrow\varphi=\pi$.<br>$x=4\cos(10t+\pi)=-4\cos(10t)$ cm, vì $\cos(\theta+\pi)=-\cos\theta$.<br>$v=40\sin(10t)$ cm/s.<br>Lần đầu $x=0$ lúc $t=T/4$, $v=+40$ cm/s.</p>
 </details>
 
 <h3>VI. Đời sống, thử thách và mang về</h3>
@@ -485,7 +486,7 @@
 
 <details class="tl-details">
 <summary>⭐⭐ x = −A√3/2, A = 4 cm, ω = 10 rad/s, đang ra biên âm. Tính v và a.</summary>
-<p>$|v|=v_{max}/2=20$ cm/s và $v=-20$ cm/s. $a=+a_{max}\sqrt{3}/2=+200\sqrt{3}$ cm/s². $v$ và $a$ ngược chiều: chậm dần.</p>
+<p>$|v|=|v|_{max}/2=20$ cm/s.<br>Đang ra biên âm nên $v=-20$ cm/s.<br>$a=-\omega^{2}x=+|a|_{max}\sqrt{3}/2=+200\sqrt{3}$ cm/s².<br>$v$ và $a$ ngược chiều: chậm dần.</p>
 </details>
 
 <details class="tl-details">

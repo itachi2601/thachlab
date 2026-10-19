@@ -5,142 +5,144 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "2. Hệ quy chiếu: xác định vị trí và thời điểm",
-      "trich_nguyen_van": "Lấy đầu thước làm gốc $O$, trục $X$ dương sang phải.",
-      "loai": "khác",
-      "muc": "nhỏ",
-      "em_hieu_la": "Ngay trên đó vừa gọi là trục $Ox$, toạ độ là $x$ thường. Giờ lại là trục $X$ hoa, nên em tưởng $X$ là một trục khác hoặc một đại lượng khác $x$.",
-      "de_xuat": "Dùng thống nhất 'trục $Ox$' và $x$ thường ở mục 2, ở Câu 2 ('Cùng trục $X$ như Hình 2') và ở mục Đời sống."
+      "vi_tri": "4. Quãng đường đi được và so sánh với độ dịch chuyển",
+      "trich_nguyen_van": "Thẳng, <strong>không đổi chiều</strong>: độ lớn $d = s$.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mục 3 dùng $d = x_2 - x_1$ là số có dấu. Ở đây cùng chữ $d$ lại là độ lớn, còn khung 🔑 viết $|d| \\leq s$. Em không biết $d$ lúc nào có dấu, lúc nào là độ lớn.",
+      "de_xuat": "Quy ước một lần ngay trong mục 3: $d$ là giá trị có dấu trên trục, $|d|$ (hoặc $d$ in thường không dấu khi không có trục) là độ lớn. Sau đó dùng thống nhất $|d| = s$ ở mục 4 và các bảng Bẫy."
     },
     {
       "id": "c2",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "vị trí ghi theo km ($X$ là vị trí); hiệu hai vị trí là độ dịch chuyển có dấu ($\\Delta X$).",
-      "loai": "khác",
-      "muc": "nhỏ",
-      "em_hieu_la": "Cả bài viết $d = \\Delta x = x_2 - x_1$ với $x$ thường, đến đây thành $\\Delta X$ hoa, nên em không chắc đây có phải cùng công thức không.",
-      "de_xuat": "Đổi thành '$x$ là vị trí; … ($\\Delta x$)' cho khớp với mục 3."
+      "vi_tri": "Bẫy 3: cộng độ dịch chuyển như cộng số",
+      "trich_nguyen_van": "Trong bảng, $d_1$ và $d_2$ là độ lớn từng đoạn (số dương), không mang dấu.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Vừa học ở Bẫy 2 rằng $d$ phải giữ dấu, sang Bẫy 3 lại phải bỏ dấu. Em dễ thay $d_2 = -0{,}5$ vào $|d_1 - d_2|$, đúng lỗi mà Câu 6 phải cảnh báo riêng.",
+      "de_xuat": "Đổi kí hiệu trong bảng Bẫy 3 thành $|d_1|$, $|d_2|$ (hoặc $a$, $b$) để không trùng với $d$ có dấu ở Bẫy 2."
     },
     {
       "id": "c3",
-      "vi_tri": "2. Hệ quy chiếu: xác định vị trí và thời điểm",
-      "trich_nguyen_van": "Vật ở điểm $M$ có toạ độ $x = \\overline{OM}$ (có dấu).",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "3. Độ dịch chuyển",
+      "trich_nguyen_van": "<strong>Rút ra:</strong> đoạn đã chạy $60 + 30 = 90\\ \\text{cm}$, nhưng $d = 50 - 20 = 30\\ \\text{cm}$.",
+      "loai": "thiếu_ví_dụ",
       "muc": "khó",
-      "em_hieu_la": "$OM$ là độ dài đoạn thẳng nên luôn dương; em không biết dấu gạch trên đầu nghĩa là 'độ dài đại số', nên không hiểu vì sao toạ độ lại có dấu.",
-      "de_xuat": "Thêm: '$\\overline{OM}$ là độ dài đại số: bằng $OM$ nếu $M$ ở phía dương của $O$, bằng $-OM$ nếu ở phía âm', kèm một ví dụ điểm có toạ độ âm trên thước."
+      "em_hieu_la": "Ví dụ duy nhất trước Câu 2 cho $d$ dương. Câu 2 lại ra $d$ âm, trong khi cách hiểu dấu âm mãi đến Bẫy 2 mới giảng. Em dễ chọn $30$ cm.",
+      "de_xuat": "Thêm một dòng vào ví dụ: nếu xe lùi về $x_2 = 10$ cm thì $d = 10 - 20 = -10$ cm, dấu âm nghĩa là điểm cuối nằm phía âm so với điểm đầu."
     },
     {
       "id": "c4",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "$d = s$ chỉ khi thẳng, không đổi chiều.",
-      "loai": "khác",
-      "muc": "khó",
-      "em_hieu_la": "Ở Câu 4, xe đi thẳng, không đổi chiều mà $d = -5$, $s = 5$, tức $d \\neq s$. Em thấy hai chỗ mâu thuẫn và không biết tin chỗ nào. Chìa khoá Bẫy 1 'Thẳng + không đổi chiều mới có $d = s$' cũng gặp lỗi này.",
-      "de_xuat": "Sửa thành '$|d| = s$ chỉ khi thẳng, không đổi chiều' ở cả mục Mang về lẫn chìa khoá Bẫy 1."
+      "vi_tri": "3. Độ dịch chuyển",
+      "trich_nguyen_van": "Cùng trục $Ox$ như Hình 2.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chú thích Hình 2 không ghi chiều dương. Lời giải của Câu 2 lại dựa vào ý \"$40$ nằm bên trái $70$\". Em phải tự nhớ lại ví dụ cây thước ở mục 2.",
+      "de_xuat": "Ghi thêm vào chú thích Hình 2: \"gốc $O$ ở đầu thước, chiều dương sang phải\"."
     },
     {
       "id": "c5",
       "vi_tri": "4. Quãng đường đi được và so sánh với độ dịch chuyển",
-      "trich_nguyen_van": "$s$ cộng dồn · luôn $\\geq 0$ · $d \\leq s$",
-      "loai": "mơ_hồ",
+      "trich_nguyen_van": "Cột $s$ lệch tới $0{,}7\\ \\text{cm}$",
+      "loai": "nhảy_bước",
       "muc": "nhỏ",
-      "em_hieu_la": "Mục 3 nói $d$ có dấu. Vậy $d \\leq s$ đúng hiển nhiên khi $d$ âm, em không biết đang so độ lớn hay so giá trị có dấu.",
-      "de_xuat": "Viết $|d| \\leq s$ (hoặc 'độ lớn $d \\leq s$') ở chìa khoá mục 4 và ở dòng 'Quãng đường' trong Mang về."
+      "em_hieu_la": "Phần đọc bảng chỉ tính sẵn nửa vòng và chữ L. Con số $0{,}7$ lại đến từ dòng trọn vòng ($2\\pi \\cdot 10 \\approx 62{,}8$), dòng này không được tính. Em không biết $0{,}7$ ở đâu ra.",
+      "de_xuat": "Thêm phép tính: trọn vòng $s = 2\\pi r \\approx 62{,}8$ cm, đo được $63{,}5$ cm, lệch $0{,}7$ cm."
     },
     {
       "id": "c6",
-      "vi_tri": "Bẫy 3: cộng độ dịch chuyển như cộng số",
-      "trich_nguyen_van": "Ngược chiều: độ lớn $d = |d_1 - d_2|$",
+      "vi_tri": "4. Quãng đường đi được và so sánh với độ dịch chuyển",
+      "trich_nguyen_van": "chỉ ray thẳng cho $d \\approx s$",
       "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Bẫy 2 vừa dạy $d$ có dấu. Em thay $d_1 = 1{,}2$, $d_2 = -0{,}5$ (đi về Tây) vào thì ra $1{,}7$ km ở Câu 6.",
-      "de_xuat": "Ghi rõ: 'ở đây $d_1, d_2$ là độ lớn từng đoạn (số dương); nếu dùng giá trị có dấu thì $d = d_1 + d_2$'."
+      "muc": "nhỏ",
+      "em_hieu_la": "Vừa đọc \"độ lớn $d = s$\", giờ lại thấy \"$d \\approx s$\" và số đo $30{,}2$ khác $30{,}0$. Em có thể nghĩ đi thẳng thì $d$ cũng không thật sự bằng $s$.",
+      "de_xuat": "Ghi rõ: về lí thuyết $d = s$; số đo lệch $0{,}2$ cm chỉ do sai số dụng cụ."
     },
     {
       "id": "c7",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "$\\tan\\alpha = \\dfrac{0{,}5}{1{,}2} \\approx 0{,}417$, nên $\\alpha \\approx 23^\\circ$",
-      "loai": "nhảy_bước",
+      "vi_tri": "4. Quãng đường đi được và so sánh với độ dịch chuyển",
+      "trich_nguyen_van": "Sai số dụng cụ: sợi chỉ $\\pm 1\\ \\text{cm}$, thước $\\pm 0{,}2\\ \\text{cm}$.",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Em có $\\tan\\alpha$ nhưng không biết làm sao ra $23^\\circ$, tưởng phải tra bảng hoặc nhớ sẵn.",
-      "de_xuat": "Thêm: 'bấm máy tính SHIFT tan (0,417) ≈ 22,6° ≈ 23°' và nhắc đặt máy ở chế độ độ (D)."
+      "em_hieu_la": "Thuật ngữ \"sai số dụng cụ\" và kí hiệu $\\pm$ xuất hiện không giải thích. Em không biết nó liên quan gì tới câu hỏi \"vì sao lệch\".",
+      "de_xuat": "Thêm nửa câu: \"tức là mỗi lần đo bằng sợi chỉ có thể lệch tới $1$ cm, nên các độ lệch trong bảng đều nằm trong phạm vi này\"."
     },
     {
       "id": "c8",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "$t = 0{,}1\\ \\text{h}$ → $v_{tb} = s/t$",
-      "loai": "nhảy_bước",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "<strong>Hệ quy chiếu</strong>: vật mốc + trục toạ độ + đồng hồ.",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Em dễ để nguyên $t = 6$ rồi chia $1{,}7/6$, hoặc không hiểu vì sao 6 phút lại thành 0,1 h.",
-      "de_xuat": "Viết rõ: '$t = 6/60 = 0{,}1\\ \\text{h}$ (đổi sang giờ vì $s$ tính bằng km)'."
+      "em_hieu_la": "Mục 2 và Trả bài đều có \"gốc thời gian\", riêng phần tổng kết bỏ mất. Em có thể ghi nhớ thiếu thành phần này.",
+      "de_xuat": "Sửa thành: vật mốc + trục toạ độ + gốc thời gian + đồng hồ."
     },
     {
       "id": "c9",
-      "vi_tri": "Bẫy 1: \"đi bao nhiêu thì dịch chuyển bấy nhiêu\"",
-      "trich_nguyen_van": "A. Thang máy đi thẳng từ tầng 1 lên tầng 8, không dừng và không quay xuống",
-      "loai": "phương_án_nhiễu_khó_hiểu",
+      "vi_tri": "Bẫy 3: cộng độ dịch chuyển như cộng số",
+      "trich_nguyen_van": "Hướng: góc $\\alpha$ so với đoạn 1, $\\tan\\alpha = d_2 / d_1$",
+      "loai": "thiếu_ví_dụ",
       "muc": "nhỏ",
-      "em_hieu_la": "Em tưởng 'không dừng' cũng là điều kiện để $d = s$, trong khi chìa khoá chỉ nêu 'thẳng + không đổi chiều'.",
-      "de_xuat": "Bỏ 'không dừng', hoặc ghi chú trong phản hồi rằng dừng giữa chừng không làm thay đổi $d$ hay $s$."
+      "em_hieu_la": "Câu 5 chỉ hỏi độ lớn. Công thức hướng không được luyện cho đến bài toán mẫu, nên em không rõ \"đoạn 1\" là đoạn nào và góc đo từ đâu.",
+      "de_xuat": "Trong lời giải Câu 5, thêm: $\\tan\\alpha = 8/6$, $\\alpha \\approx 53^\\circ$ lệch từ Bắc sang Đông."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "⚠ Công thức $|d_1 - d_2|$ dùng độ lớn từng đoạn: thay $d_2 = 0{,}5$, không phải $-0{,}5$.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Lời nhắc đặt trước các phương án đã chỉ sẵn em phải dùng công thức hai đoạn ngược chiều. Câu này không còn kiểm tra được em có nhận ra \"quay lại\" hay không.",
+      "de_xuat": "Chuyển lời nhắc này vào phần phản hồi \"Chưa đúng\"."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "du_doan",
+      "cau": "cau_du_doan",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Đồng nhất 'đi' với 'dịch chuyển' theo nghĩa đời thường.",
+      "loi_tu_duy": "Hiểu theo đời thường: \"đi 60 m\" tức là \"dịch chuyển 60 m\".",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "quãng đường đi được cộng dồn mọi mét em trượt ($60\\ \\text{m}$); độ dịch chuyển chỉ so điểm cuối với điểm đầu."
+      "trich_nguyen_van": "Có <strong>hai đại lượng khác nhau</strong>"
     },
     {
       "cau": "cau1",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Nhớ rằng Trái Đất thường được coi là chất điểm (khi quay quanh Mặt Trời) nên chọn luôn, không để ý đây là chuyển động tự quay.",
+      "loi_tu_duy": "Nghĩ Trái Đất rất nhỏ trong vũ trụ nên là chất điểm, bỏ qua việc đang xét chuyển động quay quanh trục.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "B và D: vật quay tại chỗ, các phần của vật đi theo những đường khác nhau nên không thu về một điểm được."
+      "trich_nguyen_van": "B và D: vật quay tại chỗ, các phần của vật đi theo những đường khác nhau"
     },
     {
       "cau": "cau2",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Tính đúng khoảng cách 70 − 40 nhưng bỏ dấu, hoặc lấy điểm lớn trừ điểm nhỏ.",
-      "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$30\\ \\text{cm}$ là quên dấu: điểm cuối $40$ nằm bên trái điểm đầu $70$."
+      "loi_tu_duy": "Lấy hiệu \"số lớn trừ số nhỏ\" nên ra 30 cm. Trước câu này chưa có ví dụ nào cho $d$ âm.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "Dấu của $d$ cho biết hướng so với chiều dương."
     },
     {
       "cau": "cau3",
-      "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Thấy xe đi một chiều từ chân lên đỉnh, không quay lại, nên nghĩ đã đủ điều kiện; quên điều kiện 'thẳng'.",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thấy chữ \"đi thẳng\" là cho $|d| = s$, quên điều kiện không đổi chiều.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "D đi đường cong: đoạn thẳng nối chân và đỉnh ngắn hơn đường đèo, nên $d \\lt s$."
+      "trich_nguyen_van": "Điều kiện đủ hai ý: <em>thẳng</em> và <em>không đổi chiều</em>."
     },
     {
       "cau": "cau4",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Áp dụng 'độ dài không âm' cho cả độ dịch chuyển, bỏ dấu của $d$.",
+      "loi_tu_duy": "Cho rằng độ dài không thể âm nên bỏ dấu của $d$.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Dấu âm không phải lỗi: nó cho biết vật dịch chuyển ngược chiều dương đã chọn."
+      "trich_nguyen_van": "Dấu âm không phải lỗi: nó cho biết vật dịch chuyển <strong>ngược chiều dương</strong> đã chọn."
     },
     {
       "cau": "cau5",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Cộng hai độ dịch chuyển như cộng số, thực chất ra quãng đường.",
+      "loi_tu_duy": "Cộng hai đoạn như cộng số, lẫn độ dịch chuyển với quãng đường.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "quãng đường là $7\\ \\text{m}$, nhưng độ dịch chuyển không phải $7\\ \\text{m}$."
+      "trich_nguyen_van": "quãng đường là $7\\ \\text{m}$, nhưng độ dịch chuyển <strong>không phải</strong> $7\\ \\text{m}$"
     },
     {
       "cau": "cau6",
-      "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Tính đúng $d = 0{,}7$ km rồi dùng luôn $d$ để chia thời gian, nhầm tốc độ trung bình với vận tốc ($d/t$, vừa nhắc ở mục 5).",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chép khuôn bài toán mẫu vừa làm (cùng số 1,2 và 0,5) nên dùng Pi-ta-go dù hai đoạn cùng phương.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$v_{tb} = s/t$ dùng quãng đường."
-    },
-    {
-      "cau": "cau6",
-      "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Thay $d_2 = -0{,}5$ (có dấu, theo Bẫy 2) vào công thức $|d_1 - d_2|$ của Bẫy 3 nên ra $1{,}7$ km. Lỗi này không phải do coi $d = s$ như phản hồi giải thích.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "trich_nguyen_van": "A dùng Pi-ta-go khi hai đoạn <em>cùng phương</em> — chỉ dùng khi vuông góc."
     }
   ]
 }

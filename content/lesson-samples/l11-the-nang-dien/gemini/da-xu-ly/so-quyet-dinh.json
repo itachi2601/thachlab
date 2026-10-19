@@ -1,6 +1,6 @@
 {
   "bai": "l11-the-nang-dien",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -132,5 +132,117 @@
       "lint_do_dai lỗi"
     ],
     "sao_luu": "content/lesson-samples/l11-the-nang-dien/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu 1 ngay sau đó chính là bài luyện hai dấu âm và phản hồi đã làm mẫu đủ phép nhân dấu, thêm ví dụ sẽ lộ đáp án trong khi mục II đã vượt hạn mức."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: mốc ở bản âm thì từ M về mốc là xuôi đường sức, nên $d \\gt 0$ và bằng khoảng cách từ M tới bản âm."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Rút ra tách hai dòng: tạm nhận số chỉ vôn kế là công trên 1 C dương về lá âm (mốc lá âm), rồi thay $q = 1$ C, $d = x$ vào $W = qEd$ được $W = Ex$."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu \"W = qV cũng tỉ lệ với x\" không có trong bài, ý mốc lá âm đã được ghi khi sửa c3)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng trước: bảng chốt đặt sau khi tự thử, đưa lên trước sẽ lộ đáp án Câu 5 và đổi cấu trúc mục."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào bước b: từ M hay N đi xuống bản âm đều xuôi đường sức nên $d_M = +0{,}01$ m, $d_N = +0{,}03$ m."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước c ghi rõ electron tới điểm ngay trên M, cùng độ cao với N, hình chiếu từ M tới đó cũng là $d = -0{,}02$ m."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi D thành: lấy 1 cm của mốc cũ nhưng gán dấu âm ($d = -0{,}01$ m) của hướng đi lên, phân biệt rõ với A."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay \"bù lại\" bằng: đoạn đi vuông góc lực có công bằng 0, đoạn đi ngược lực có công âm trừ đúng phần đi thừa."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm $k = 9\\cdot10^9$ N·m²/C² và câu \"Lấy cả dấu của $q$ và $Q$\"."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, nhấn trước sẽ lộ đáp án và phản hồi đã nêu lỗi lấy quãng đường như lực ma sát."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn $q$ lấy cả dấu và phản hồi nêu lỗi chỉ giữ một dấu âm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mẹo mgh ngay trước câu đã nhấn $q \\lt 0$ thì càng xa mốc thế năng càng âm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 3: đổi mốc thì từng $W$ đổi nhưng hiệu $W_M - W_N$ không đổi."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 ngay trước câu đã nêu lỗi nhầm $s\\sin\\alpha$."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"phải chọn mốc\" và nay thêm dòng ⚠ ở mục II.5 về hiệu thế năng."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn lỗi lấy độ dài đường đi làm $d$."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục II.3 đã định nghĩa $d$ là hình chiếu có dấu từ M tới mốc và nay nói rõ dấu dương chỉ do mốc ở bản âm."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.3: câu mốc bản âm viết lại thành $d \\gt 0$ vì từ M về bản âm là xuôi đường sức, $d$ bằng khoảng cách tới bản âm.",
+      "Mục II.3: công thức $W = kqQ/r$ thêm $k = 9\\cdot10^9$ N·m²/C² và lưu ý lấy cả dấu $q$, $Q$.",
+      "Mục II.4 bước Rút ra: số chỉ vôn kế là công trên 1 C dương về lá âm (mốc lá âm), thay $q = 1$ C, $d = x$ được $W = Ex$ với $E \\approx 60$ V/m (bỏ cụm 0,60 V/cm ở đây, vẫn còn trong khung sai số).",
+      "Mục II.5: thêm dòng ⚠ trước Câu 3 về hiệu $W_M - W_N$ không phụ thuộc mốc.",
+      "Mở bài: phản hồi sai câu dự đoán giải thích đoạn vuông góc lực có công 0, đoạn ngược lực có công âm.",
+      "Bài toán mẫu b: thêm $d_M = +0{,}01$ m, $d_N = +0{,}03$ m (số liệu và kết quả không đổi).",
+      "Bài toán mẫu c: nói rõ điểm đến ngay trên M, cùng độ cao N, $d = -0{,}02$ m (kết quả không đổi).",
+      "Câu 7: phản hồi phương án D nêu đúng cách ra $+3{,}2\\cdot10^{-18}$ J là $d = -0{,}01$ m.",
+      "Cắt để bù độ dài: câu phụ ở phản hồi đúng Câu 3, 4, 6 và phản hồi sai Câu 2, 6, câu dự đoán.",
+      "Trả bài và thử thách khá: đổi các ý ghép bằng \"·\"/\";\" thành mỗi ý một dòng."
+    ],
+    "so_tu_them": -2,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-the-nang-dien/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

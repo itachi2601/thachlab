@@ -1,0 +1,173 @@
+{
+  "bai": "Bài 26. Cơ năng và định luật bảo toàn cơ năng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Cơ năng",
+      "trich_nguyen_van": "quả táo $0{,}2\\ \\text{kg}$ treo yên trên cành cao $5\\ \\text{m}$, mốc ở mặt đất: $W_\\text{d} = 0$",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Ví dụ duy nhất trước Câu 1 có v = 0 nên không có phép tính ½mv². Học sinh vào Câu 1 mà chưa thấy mẫu tính động năng, dễ quên hệ số ½ (ra 38 J).",
+      "de_xuat": "Thêm một ví dụ ngắn có v ≠ 0, ví dụ táo đang rơi, tính đủ ½mv² rồi cộng với mgz."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Định luật bảo toàn cơ năng",
+      "trich_nguyen_van": "🔑 Chỉ lực thế sinh công · cơ năng không đổi",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không biết \"lực thế\" là gì. Thuật ngữ này không được định nghĩa ở đâu trong bài, còn khung ngay dưới lại nói \"trọng lực (hay lực đàn hồi)\".",
+      "de_xuat": "Thay \"lực thế\" bằng \"trọng lực, lực đàn hồi\", hoặc ghi rõ \"lực thế (như trọng lực, lực đàn hồi)\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Định luật bảo toàn cơ năng",
+      "trich_nguyen_van": "Rơi từ độ cao $h$, xuất phát nghỉ: $v = \\sqrt{2gh}$.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Nghĩ công thức chỉ dùng cho rơi tự do, không áp dụng được cho máng nhẵn ở Câu 2. Bài cũng chưa nói ra rằng m đã triệt tiêu nên kết quả không cần khối lượng, dễ chọn D \"thiếu khối lượng\".",
+      "de_xuat": "Ghi: \"Rơi hoặc trượt trên máng nhẵn từ độ cao h, xuất phát nghỉ: v = √(2gh), m triệt tiêu ở hai vế nên không cần khối lượng.\""
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Định luật bảo toàn cơ năng",
+      "trich_nguyen_van": "vật chỉ chịu tác dụng của trọng lực (hay lực đàn hồi)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Điều kiện có nhắc lực đàn hồi, nhưng công thức ngay dưới chỉ có mgz. Học sinh không biết lực đàn hồi thì cộng thêm gì vào công thức.",
+      "de_xuat": "Ghi chú cạnh công thức: \"công thức này cho trường hợp chỉ có trọng lực; có lò xo xem mục Xem thêm\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "🧷 Xem thêm: cơ năng có lò xo",
+      "trich_nguyen_van": "thế năng gồm cả thế năng đàn hồi: $W = \\frac{1}{2}mv^2 + \\frac{1}{2}k(\\Delta l)^2$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ \"gồm cả\" gợi ý cộng thêm vào mgz, nhưng công thức lại bỏ mất mgz. Các ký hiệu k và Δl cũng không được giải thích.",
+      "de_xuat": "Nói rõ đây là lò xo nằm ngang (mgz không đổi nên bỏ), và chú thích k là độ cứng, Δl là độ biến dạng."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Kiểm chứng bằng con lắc",
+      "trich_nguyen_van": "tấm chắn sáng đo tốc độ trung bình qua cổng, hơi nhỏ hơn tốc độ lớn nhất",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bước \"Làm\" không hề nhắc tới tấm chắn sáng, nên học sinh không hình dung được nó gắn ở đâu và vì sao nó đo ra tốc độ trung bình.",
+      "de_xuat": "Thêm vào bước Làm: \"gắn tấm chắn sáng bề rộng d lên quả nặng; cổng quang đo thời gian chắn, v = d/t\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "3. Kiểm chứng bằng con lắc",
+      "trich_nguyen_van": "Lần $h = 5\\ \\text{cm}$ lệch nhiều nhất ($96{,}0\\,\\%$): đo sai $h$ chỉ $2\\ \\text{mm}$ đã là $4\\,\\%$ của $5\\ \\text{cm}$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hai đoạn liền nhau đưa ra hai kiểu nguyên nhân: sai số đo h (có thể lệch lên hoặc xuống) và sai số hệ thống (luôn làm thiếu). Học sinh không rõ cái nào giải thích chỗ nào. Thuật ngữ \"sai số hệ thống\" cũng không được nhắc lại định nghĩa.",
+      "de_xuat": "Tách rõ: \"sai số đo h làm kết quả dao động lên xuống; việc luôn dưới 100% là sai số hệ thống (lệch về một phía)\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Khi có ma sát, lực cản",
+      "trich_nguyen_van": "Tổng quát: $\\Delta W$ bằng công của mọi lực khác trọng lực và lực đàn hồi.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Cùng một khung vừa ghi ΔW = A_c với A_c < 0, vừa nói có thể A > 0 thì cơ năng tăng. Mục \"Mang về\" lại ghi \"ΔW = A_c < 0\". Học sinh không biết A_c là công lực cản hay công mọi lực khác, nên dễ áp dấu âm cho cả thang máy hay lực nâng.",
+      "de_xuat": "Dùng ký hiệu riêng, ví dụ A_khác, cho trường hợp tổng quát, và ghi rõ \"A_c: công của ma sát, lực cản, luôn âm\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Khi có ma sát, lực cản",
+      "trich_nguyen_van": "ở đỉnh $v = 0$, nên cơ năng tỉ lệ với độ cao đỉnh",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài vừa nhấn \"cơ năng phụ thuộc mốc\", nhưng ở đây không nói mốc đặt ở đâu. \"Tỉ lệ\" chỉ đúng khi mốc ở mặt bàn.",
+      "de_xuat": "Thêm \"(mốc thế năng ở mặt bàn)\" sau \"ở đỉnh v = 0\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 1: cơ năng lúc nào cũng bảo toàn",
+      "trich_nguyen_van": "Ô tô xuống dốc có phanh; trượt cầu trượt có ma sát",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Bảng chưa có ví dụ chuyển động đều mà cơ năng vẫn giảm. Câu 4 phương án A (nhảy dù tốc độ không đổi) đến trước Bẫy 2, nên học sinh dễ nghĩ \"tốc độ không đổi thì cơ năng không đổi\".",
+      "de_xuat": "Thêm vào cột Không bảo toàn: \"vật rơi đều trong không khí (tốc độ không đổi nhưng độ cao giảm)\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 3: mỗi vị trí một mốc thế năng",
+      "trich_nguyen_van": "Chọn mốc trước; mọi $z$ đo từ đó, dưới mốc thì $z \\lt 0$",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Bài đã nói \"cơ năng cũng phụ thuộc mốc\" mà chưa nói tốc độ và độ biến thiên thế năng không phụ thuộc mốc. Ý này chỉ có trong phản hồi Câu 6, nên học sinh dễ chọn D.",
+      "de_xuat": "Thêm một dòng: \"Đổi mốc thì W đổi, nhưng hiệu thế năng và tốc độ tính ra không đổi\", kèm một ví dụ hai mốc."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "⭐ Thử thách phân tầng",
+      "trich_nguyen_van": "độ cao $h = l(1 - \\cos 60^\\circ) = 0{,}4\\ \\text{m}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không có hình nên học sinh không tự suy ra được vì sao độ cao là l(1 − cos α).",
+      "de_xuat": "Thêm một câu: \"vị trí thả thấp hơn điểm treo l·cos α, vị trí thấp nhất thấp hơn điểm treo l, nên h = l − l·cos α\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đoạn mở bài vừa kể Lan lên thấp dần, nên học sinh bỏ qua giả thiết \"không ma sát\" và cho rằng chuyển động tự làm hao năng lượng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chọn A là nghĩ chuyển động tự làm hao năng lượng; chỉ ma sát, lực cản mới làm mất."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quên hệ số ½ khi tính động năng. Ví dụ quả táo trước đó có v = 0 nên học sinh chưa từng được thấy cách tính ½mv².",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Không thấy khối lượng trong đề thì nghĩ không tính được; cũng không chắc v = √(2gh) dùng được cho máng hay chỉ cho rơi.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "Rơi từ độ cao $h$, xuất phát nghỉ: $v = \\sqrt{2gh}$."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy cơ năng đầu trừ cơ năng cuối nên ra số dương, mất dấu của công cản.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\Delta W = W_2 - W_1 = A_\\text{c}$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy tốc độ không đổi thì nghĩ động năng không đổi, rồi suy ra cơ năng bảo toàn, quên rằng độ cao đang giảm. Bẫy 2 nằm sau câu này.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Đồng nhất cơ năng với động năng, nghĩ chỗ nhanh nhất thì cơ năng lớn nhất.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "🔑 Giữ tổng · không giữ từng phần"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nhớ câu \"cơ năng phụ thuộc mốc\" rồi suy rộng ra tốc độ cũng phụ thuộc mốc. Bài chưa nói tốc độ không phụ thuộc mốc trước câu này.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nghĩ động năng bằng thế năng khi tốc độ bằng nửa tốc độ cực đại, nhầm v với v².",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ở độ cao $2{,}5\\ \\text{m}$: $W_\\text{t} = 5\\ \\text{J}$, nên $W_\\text{d} = 5\\ \\text{J}$"
+    }
+  ]
+}

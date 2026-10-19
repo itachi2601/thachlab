@@ -1,0 +1,182 @@
+{
+  "bai": "Bài 14. Bài tập về sóng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Họ B: giao thoa sóng cơ (Dạng 6–8)",
+      "trich_nguyen_van": "🔑 Cùng pha: cực đại $d_2-d_1=k\\lambda$ · cực tiểu $(k+\\tfrac12)\\lambda$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài dùng $d_1$, $d_2$ ở cả Dạng 6, 7 mà không nói đó là khoảng cách từ điểm M tới từng nguồn. Em dễ lẫn với $d$ ở Dạng 3, vốn là khoảng cách giữa hai điểm trên phương truyền sóng.",
+      "de_xuat": "Thêm ngay dưới dòng 🔑: \"$d_1$, $d_2$ là khoảng cách từ điểm M đang xét tới nguồn 1 và nguồn 2\"."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Họ B: giao thoa sóng cơ (Dạng 6–8)",
+      "trich_nguyen_van": "đếm số $k$ nguyên thoả $-\\dfrac{S_1S_2}{\\lambda}\\lt k\\lt\\dfrac{S_1S_2}{\\lambda}$ cho cực đại",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức viết hai nguồn là $S_1S_2$, còn Hình 2, Bài toán mẫu và Câu 6 lại dùng AB. Em phải tự đoán rằng $S_1S_2$ chính là AB.",
+      "de_xuat": "Dùng thống nhất một ký hiệu, hoặc ghi rõ \"$S_1S_2$ (tức AB) là khoảng cách hai nguồn\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Họ B: giao thoa sóng cơ (Dạng 6–8)",
+      "trich_nguyen_van": "<strong>Dạng 7 (biên độ):</strong> $A_M=2A\\left|\\cos\\left[\\pi\\dfrac{d_2-d_1}{\\lambda}\\right]\\right|$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ A cùng lúc là tên \"Họ A\", tên nguồn A và biên độ $A$. Bài không nói $A$ ở đây là biên độ của mỗi nguồn.",
+      "de_xuat": "Ghi \"$A$ là biên độ sóng do mỗi nguồn gửi tới\" ở Dạng 7 và Dạng 15."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Họ C: giao thoa ánh sáng, khe Young (Dạng 9–12)",
+      "trich_nguyen_van": "đo khoảng cách $L$ của <strong>6 vân sáng liên tiếp</strong> (tức 5 khoảng vân)",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ở Dạng 10, $L$ là bề rộng trường giao thoa đối xứng. Ngay sau đó, trong thí nghiệm, $L$ lại là khoảng cách 6 vân sáng liên tiếp. Em có thể đem $L=9{,}74$ mm thay vào $N_s=2[L/2i]+1$.",
+      "de_xuat": "Đổi ký hiệu trong thí nghiệm thành $\\ell$ (hoặc $L_6$) để khác với bề rộng trường $L$ ở Dạng 10."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Họ C: giao thoa ánh sáng, khe Young (Dạng 9–12)",
+      "trich_nguyen_van": "B. Sai số tuyệt đối của thước chia cho 5, nên $i$ chính xác hơn",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "Đáp án đúng nói về \"sai số tuyệt đối\", còn phản hồi sai lại nói \"Cái đổi là sai số tương đối\". Em không biết rốt cuộc thứ được giảm là sai số nào.",
+      "de_xuat": "Viết một câu nối hai ý: \"sai số tuyệt đối của $i$ bằng sai số thước chia 5, nên sai số tương đối của $i$ nhỏ đi\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Họ C: giao thoa ánh sáng, khe Young (Dạng 9–12)",
+      "trich_nguyen_van": "Thước sai chừng $\\pm0{,}5\\ \\text{mm}$ cho mỗi lần đọc",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ghi $L$ chính xác tới 0,1 mm (9,6; 9,8; 9,7…), trong khi phản hồi nói thước sai ±0,5 mm. Hai số liệu này nhìn như mâu thuẫn.",
+      "de_xuat": "Hoặc ghi bảng theo độ chia của thước, hoặc nói rõ ±0,5 mm là ước lượng thô của độ chia nhỏ nhất."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Họ D: sóng dừng (Dạng 13–15)",
+      "trich_nguyen_van": "Một đầu cố định, một đầu tự do: $n+1$ bụng và $n+1$ nút.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Câu ngay trước dùng $n$ là số bụng (hai đầu cố định), nên em hiểu $n$ vẫn là số bụng. Thực ra ở đây $n$ lấy từ $L=(2n+1)\\lambda/4$. Câu 3 dễ sai vì chỗ này.",
+      "de_xuat": "Viết: \"với $n$ lấy từ $L=(2n+1)\\tfrac{\\lambda}{4}$, có $n+1$ bụng và $n+1$ nút\"."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "Bẫy 3. Nút, bụng: hai đầu cũng là nút",
+      "trich_nguyen_van": "🔑 $n$ bó → $n+1$ nút · đầu cố định là nút · đầu tự do là bụng",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Bó\" xuất hiện lần đầu ở đây, không có định nghĩa. Dạng 13 trước đó nói \"$n$ bụng\", nên em không chắc bó và bụng có phải một thứ.",
+      "de_xuat": "Thêm \"(một bó là đoạn giữa hai nút liền kề, mỗi bó chứa một bụng)\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Họ D: sóng dừng (Dạng 13–15)",
+      "trich_nguyen_van": "$f_1=\\dfrac{v}{4L}=\\dfrac{340}{4\\cdot0{,}17}=500\\ \\text{Hz}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Số 340 hiện ra mà bước Làm không cho. Em phải tự đoán đó là tốc độ âm trong không khí, tính bằng m/s.",
+      "de_xuat": "Ghi ở bước Làm: \"tốc độ âm trong không khí $v=340\\ \\text{m/s}$\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "1. Họ A: sóng cơ và sóng điện từ (Dạng 1–5)",
+      "trich_nguyen_van": "$u_M=A\\cos\\left(\\omega t-\\dfrac{2\\pi x}{\\lambda}\\right)$; M trễ pha hơn nguồn $\\dfrac{2\\pi x}{\\lambda}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Dạng 3 gọi khoảng cách là $d$, Dạng 4 đổi sang $x$ (từ nguồn), Dạng 15 lại dùng $x$ là khoảng cách tới nút. $\\omega$ cũng chưa được giới thiệu.",
+      "de_xuat": "Ghi \"$x$ là khoảng cách từ M tới nguồn, $\\omega=2\\pi f$\" ngay trong Dạng 4."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 2. Hai nguồn cùng pha hay ngược pha?",
+      "trich_nguyen_van": "Ở Dạng 8, đoạn nối hai nguồn vẫn chạy $-\\dfrac{S_1S_2}{\\lambda}$ tới $\\dfrac{S_1S_2}{\\lambda}$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu đọc như thể \"đoạn nối hai nguồn\" chạy từ số này tới số kia. Thực ra cái chạy trong khoảng đó là giá trị $k$ (hoặc $k+\\tfrac12$).",
+      "de_xuat": "Sửa thành \"miền giá trị vẫn là $-\\tfrac{S_1S_2}{\\lambda}$ tới $\\tfrac{S_1S_2}{\\lambda}$\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "<strong>Dây đàn ghi-ta, sáo (họ D):</strong> đổi chiều dài thì đổi $f=\\dfrac{v}{2L}$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chỉ dạy $f=v/2L$ cho \"hai đầu nút\" và $v/4L$ cho ống một đầu kín. Sáo là ống hở, nên em không biết vì sao lại dùng $v/2L$.",
+      "de_xuat": "Bỏ \"sáo\", hoặc thêm \"(ống hở hai đầu: hai đầu bụng, cũng cho $f=v/2L$)\"."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "1. Họ A: sóng cơ và sóng điện từ (Dạng 1–5)",
+      "trich_nguyen_van": "$3\\pi=\\pi+2\\pi$ nên hơn kém $\\pi$ đúng một chu kỳ $2\\pi$, tức là ngược pha",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu \"hơn kém $\\pi$ đúng một chu kỳ $2\\pi$\" khó đọc. Em không rõ cái gì hơn kém cái gì.",
+      "de_xuat": "Viết: \"$3\\pi=\\pi+2\\pi$; bỏ đi một vòng $2\\pi$ còn $\\pi$, nên ngược pha\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0 (Dự đoán)",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đếm số ngọn (5) thay vì số khoảng giữa các ngọn (4).",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "5 ngọn liên tiếp chỉ có <strong>4 khoảng</strong> giữa các ngọn"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nhân $1{,}5$ với $\\pi$ thay vì với $2\\pi$, ra $3\\pi/2$ rồi tưởng là vuông pha hoặc không đặc biệt.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chỗ nhầm hay gặp là đổi $1{,}5\\lambda$ thành \"$\\dfrac{3\\pi}{2}$\"."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lẫn \"đo đoạn dài hơn\" với \"khoảng vân lớn hơn\", không phân biệt đại lượng cần đo với sai số của phép đo.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$i$ không đổi dù đo cách nào."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thấy $L=3\\cdot\\tfrac{\\lambda}{4}$ liền lấy 3 là số bụng, hoặc coi $n$ ở Dạng 13 là số bụng như trường hợp hai đầu cố định.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "Số lần đó phải là số lẻ $2n+1$, rồi đếm $n+1$."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Tính $L/i=7{,}5$ rồi làm tròn lên 8, hoặc lẫn với số vân tối $N_t=8$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "lấy phần nguyên (không làm tròn), nhân 2 rồi cộng 1."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Áp ngược quy tắc \"$n$ bụng → $n+1$ nút\" thành số bụng bằng số nút cộng 1.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "5 nút tạo ra 4 khoảng, mỗi khoảng một bụng."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chép nguyên kết quả bài mẫu cùng pha, quên rằng nguồn ngược pha làm điều kiện cực đại và cực tiểu đổi chỗ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "🔑 Ngược pha: cực đại và cực tiểu đổi chỗ"
+    },
+    {
+      "cau": "Điền bước còn thiếu (AB = 21 cm, cực tiểu)",
+      "dap_an_sai_hap_dan": "22 cực tiểu",
+      "loi_tu_duy": "Dùng dấu ≤ nên tính cả hai giá trị $k+\\tfrac12=\\pm10{,}5$ nằm đúng tại A, B.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "hai giá trị $k+\\tfrac12=\\pm10{,}5$ nằm đúng tại A, B nên bị loại"
+    }
+  ]
+}

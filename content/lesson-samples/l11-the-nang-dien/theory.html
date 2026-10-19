@@ -22,7 +22,7 @@
 <input type="radio" name="tl38-q0" id="tl38-q0c"><label for="tl38-q0c" class="tl-opt tl-ok">C. Bằng nhau, vì cùng đầu, cùng cuối</label>
 <input type="radio" name="tl38-q0" id="tl38-q0d"><label for="tl38-q0d" class="tl-opt tl-no">D. Hạt bay cong bằng 0, vì nó không đi theo hướng lực</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Công của lực điện chỉ phụ thuộc <strong>điểm đầu và điểm cuối</strong>, không phụ thuộc đường đi. Hai hạt cùng điện tích, cùng đầu, cùng cuối nên công bằng nhau. Mục II.2 giải thích vì sao.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lấy quãng đường làm thước đo công, như với lực ma sát; B và D nghĩ đi lệch hướng lực thì "mất" công. Với lực điện, đoạn đi lệch hướng ở chỗ này được bù lại ở chỗ khác. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lấy quãng đường làm thước đo công, như với lực ma sát; B và D nghĩ đi lệch hướng lực thì "mất" công. Với lực điện, đoạn đi vuông góc lực có công bằng 0, đoạn đi ngược lực có công âm trừ đúng phần đi thừa.</p></div>
 </div>
 </div>
 
@@ -83,9 +83,9 @@ $$A_{MN} = qEd$$
 <ul>
 <li><strong>Thế năng điện</strong> của $q$ tại M: đặc trưng cho khả năng sinh công của điện trường khi đặt $q$ tại M.</li>
 <li>Số đo: $W_M$ = công của lực điện khi $q$ đi từ M tới <strong>điểm mốc</strong> thế năng.</li>
-<li>Điện trường đều: $W_M = qEd$, với $d$ là <strong>hình chiếu có dấu</strong> của đoạn từ M tới mốc lên đường sức. Mốc ở <strong>bản âm</strong> thì $d$ đúng bằng khoảng cách từ M tới bản âm và dương.</li>
+<li>Điện trường đều: $W_M = qEd$, với $d$ là <strong>hình chiếu có dấu</strong> của đoạn từ M tới mốc lên đường sức. Mốc ở <strong>bản âm</strong> thì từ M về mốc là xuôi đường sức, nên $d \gt 0$ và bằng khoảng cách từ M tới bản âm.</li>
 <li>Điện trường bất kì, mốc ở <strong>vô cực</strong>: $W_M = A_{M\infty} = V_M\,q$ ($V_M$: điện thế tại M, học ở mục 6).</li>
-<li>Điện tích $q$ cách điện tích điểm $Q$ một đoạn $r$ (mốc vô cực): $W = k\dfrac{qQ}{r}$.</li>
+<li>Điện tích $q$ cách điện tích điểm $Q$ một đoạn $r$ (mốc vô cực): $W = k\dfrac{qQ}{r}$ với $k = 9\cdot10^9$ N·m²/C². Lấy cả dấu của $q$ và $Q$.</li>
 </ul>
 <p>Mẹo <strong>"qEd như mgh"</strong>: $q$ giống khối lượng, $E$ giống $g$, $d$ giống độ cao tính từ mốc. Nhưng $m$ luôn dương còn $q$ có dấu: với $q \lt 0$, càng xa mốc thế năng càng âm.</p>
 <div class="tl-box tl-box--think">
@@ -97,7 +97,7 @@ $$A_{MN} = qEd$$
 <input type="radio" name="tl38-q2" id="tl38-q2c"><label for="tl38-q2c" class="tl-opt tl-no">C. Không xác định, vì còn tuỳ đường đi về mốc</label>
 <input type="radio" name="tl38-q2" id="tl38-q2d"><label for="tl38-q2d" class="tl-opt tl-ok">D. Âm, vì $q \lt 0$ nên $qEd \lt 0$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $W = qEd$ với $q \lt 0$, $E \gt 0$, $d = 0{,}02$ m $\gt 0$ nên $W \lt 0$. Electron đi về bản âm thì bị đẩy ngược, lực điện sinh công âm.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A quên dấu âm của electron. B nhầm thế năng với động năng: đứng yên vẫn có thế năng. C quên rằng công không phụ thuộc đường đi. Thay vào $W = qEd$ và giữ dấu $q$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A quên dấu âm của electron. B nhầm thế năng với động năng: đứng yên vẫn có thế năng. C quên rằng công không phụ thuộc đường đi.</p></div>
 </div>
 </div>
 
@@ -108,7 +108,7 @@ $$A_{MN} = qEd$$
 <ol class="tl-steps">
 <li><strong>Làm:</strong> khay nước muối loãng, hai lá đồng song song cách nhau $10{,}0$ cm, nối nguồn $6{,}0$ V. Cực âm vôn kế nối lá âm; que đo đặt tại $x = 2{,}0$; $4{,}0$; $6{,}0$; $8{,}0$ cm tính từ lá âm.</li>
 <li><strong>Quan sát:</strong> số chỉ tăng đều theo $x$; tỉ số $V/x$ gần như không đổi (bảng).</li>
-<li><strong>Rút ra:</strong> vôn kế đo công của lực điện trên mỗi culông (mục 6 gọi là hiệu điện thế). Vậy số chỉ là công lực điện làm 1 C dương đi từ que đo về lá âm, tức thế năng của 1 C tại đó. Nó tỉ lệ $x$: đúng $W = qEd$, với $E \approx 60$ V/m $= 0{,}60$ V/cm.</li>
+<li><strong>Rút ra:</strong> tạm nhận số chỉ vôn kế là công lực điện làm 1 C dương đi từ que đo về lá âm (mục 6 gọi là hiệu điện thế), tức thế năng của 1 C tại đó với mốc ở lá âm.<br>Thay $q = 1$ C, $d = x$ vào $W = qEd$ được $W = Ex$: tỉ lệ $x$, với $E \approx 60$ V/m.</li>
 </ol>
 </div>
 <div class="table-scroll"><table class="tl-table">
@@ -134,6 +134,7 @@ $$A_{MN} = W_M - W_N = -\Delta W$$
 <li>Từ nghỉ, chỉ có lực điện: điện tích tự đi theo hướng lực (proton xuôi, electron ngược đường sức) nên $A = qEd \gt 0$, và $A = \tfrac12 mv^2 \Rightarrow v = \sqrt{\dfrac{2A}{m}}$.</li>
 </ul>
 <p><strong>Ví dụ:</strong> ống tia X trong máy chụp X-quang răng. Electron rời catôt gần như đứng yên; thế năng điện giảm, động năng tăng, tốc độ đạt cỡ $10^8$ m/s rồi đập vào anôt tạo ra tia X.</p>
+<p>⚠ Đổi mốc thì từng giá trị $W$ đổi, nhưng hiệu $W_M - W_N$ thì không đổi.</p>
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Điện tích đi từ M đến N, lực điện sinh công $A_{MN} = +2$ mJ. Thế năng điện của nó:</p>
@@ -142,7 +143,7 @@ $$A_{MN} = W_M - W_N = -\Delta W$$
 <input type="radio" name="tl38-q3" id="tl38-q3b"><label for="tl38-q3b" class="tl-opt tl-no">B. Tăng 2 mJ, vì công dương thêm thế năng</label>
 <input type="radio" name="tl38-q3" id="tl38-q3c"><label for="tl38-q3c" class="tl-opt tl-no">C. Không đổi, vì công không phụ thuộc đường đi</label>
 <input type="radio" name="tl38-q3" id="tl38-q3d"><label for="tl38-q3d" class="tl-opt tl-no">D. Tăng hay giảm còn tuỳ mốc thế năng</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $W_M - W_N = +2$ mJ nên $W_N$ nhỏ hơn $W_M$ đúng 2 mJ. Lực điện "tiêu" thế năng để sinh công.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $W_M - W_N = +2$ mJ nên $W_N$ nhỏ hơn $W_M$ đúng 2 mJ.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B lật dấu: $A = W_M - W_N$, không phải $W_N - W_M$. C lẫn "không phụ thuộc đường đi" với "không đổi". D: mốc làm đổi từng giá trị $W$, nhưng hiệu $W_M - W_N$ thì không.</p></div>
 </div>
 </div>
@@ -178,7 +179,7 @@ $$A_{MN} = W_M - W_N = -\Delta W$$
 <input type="radio" name="tl38-q4" id="tl38-q4b"><label for="tl38-q4b" class="tl-opt tl-no">B. $1{,}39\cdot10^{-17}$ J</label>
 <input type="radio" name="tl38-q4" id="tl38-q4c"><label for="tl38-q4c" class="tl-opt tl-ok">C. $8{,}0\cdot10^{-18}$ J</label>
 <input type="radio" name="tl38-q4" id="tl38-q4d"><label for="tl38-q4d" class="tl-opt tl-no">D. $0$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $d = 5\cos60^\circ = 2{,}5$ cm. $A = 1{,}6\cdot10^{-19}\cdot2000\cdot0{,}025 = 8{,}0\cdot10^{-18}$ J. Em giải thích được cho bạn ngồi cạnh vì sao dùng $\cos$ chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $d = 5\cos60^\circ = 2{,}5$ cm. $A = 1{,}6\cdot10^{-19}\cdot2000\cdot0{,}025 = 8{,}0\cdot10^{-18}$ J.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lấy cả 5 cm làm $d$. B chiếu nhầm bằng $\sin60^\circ$. D tưởng đi xiên thì không sinh công. Hình chiếu lên đường sức là $5\cos60^\circ$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
@@ -225,27 +226,27 @@ $$A_{MN} = W_M - W_N = -\Delta W$$
 <p class="tl-label">🎤 Trả bài (tự đọc to, rồi bấm xem)</p>
 <details class="tl-details">
 <summary>1. Công thức công của lực điện trong điện trường đều? $d$ là gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>$A_{MN} = qEd$ · $q$ có dấu · $d$ = hình chiếu MN lên đường sức, có dấu.</p>
+<p>$A_{MN} = qEd$<br>$q$ có dấu.<br>$d$ = hình chiếu MN lên đường sức, có dấu.</p>
 </details>
 <details class="tl-details">
 <summary>2. Công của lực điện phụ thuộc gì, không phụ thuộc gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Phụ thuộc điểm đầu, điểm cuối · không phụ thuộc đường đi · lực thế · vòng kín $A = 0$.</p>
+<p>Phụ thuộc điểm đầu, điểm cuối.<br>Không phụ thuộc đường đi.<br>Lực điện là lực thế.<br>Vòng kín: $A = 0$.</p>
 </details>
 <details class="tl-details">
 <summary>3. Thế năng điện đặc trưng cho gì? Số đo bằng gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Khả năng sinh công của điện trường tại M · bằng công lực điện từ M tới mốc.</p>
+<p>Khả năng sinh công của điện trường tại M.<br>Bằng công lực điện từ M tới mốc.</p>
 </details>
 <details class="tl-details">
 <summary>4. Viết $W_M$ trong điện trường đều và trong điện trường điện tích điểm. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Đều, mốc bản âm: $W_M = qEd$ · điện tích điểm, mốc vô cực: $W = k\dfrac{qQ}{r} = V_M q$.</p>
+<p>Đều, mốc bản âm: $W_M = qEd$.<br>Điện tích điểm, mốc vô cực: $W = k\dfrac{qQ}{r} = V_M q$.</p>
 </details>
 <details class="tl-details">
 <summary>5. Công liên hệ với thế năng thế nào? $A \gt 0$ thì thế năng ra sao? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>$A_{MN} = W_M - W_N$ · công dương, thế năng giảm · công âm, thế năng tăng.</p>
+<p>$A_{MN} = W_M - W_N$<br>Công dương: thế năng giảm.<br>Công âm: thế năng tăng.</p>
 </details>
 <details class="tl-details">
 <summary>6. Khi nào điện tích di chuyển mà lực điện vẫn không sinh công? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Đi vuông góc đường sức ($d = 0$) · đi vòng kín về chỗ cũ.</p>
+<p>Đi vuông góc đường sức ($d = 0$).<br>Đi vòng kín về chỗ cũ.</p>
 </details>
 </div>
 
@@ -275,9 +276,9 @@ $$A_{MN} = W_M - W_N = -\Delta W$$
 <li>MP vuông góc đường sức: $A_{MP} = 0$.</li>
 <li>PN ngược chiều đường sức, $d = -0{,}02$ m:<br>$A_{PN} = (-1{,}6\cdot10^{-19})\cdot2000\cdot(-0{,}02) = 6{,}4\cdot10^{-18}$ J.</li>
 <li>a) $A_{MPN} = 0 + 6{,}4\cdot10^{-18} = 6{,}4\cdot10^{-18}$ J.</li>
-<li>b) $W_M = (-1{,}6\cdot10^{-19})\cdot2000\cdot0{,}01 = -3{,}2\cdot10^{-18}$ J.<br>$W_N = (-1{,}6\cdot10^{-19})\cdot2000\cdot0{,}03 = -9{,}6\cdot10^{-18}$ J.</li>
+<li>b) Từ M hay từ N đi xuống bản âm (mốc) đều xuôi đường sức nên $d \gt 0$: $d_M = +0{,}01$ m, $d_N = +0{,}03$ m.<br>$W_M = (-1{,}6\cdot10^{-19})\cdot2000\cdot0{,}01 = -3{,}2\cdot10^{-18}$ J.<br>$W_N = (-1{,}6\cdot10^{-19})\cdot2000\cdot0{,}03 = -9{,}6\cdot10^{-18}$ J.</li>
 <li>Kiểm lại: $W_M - W_N = -3{,}2\cdot10^{-18} + 9{,}6\cdot10^{-18} = 6{,}4\cdot10^{-18}$ J, khớp câu a.</li>
-<li>c) Electron từ nghỉ bị kéo thẳng lên; lên tới cách bản âm 3 cm thì hình chiếu vẫn là $d = -0{,}02$ m, công vẫn là $6{,}4\cdot10^{-18}$ J:<br>$v = \sqrt{\dfrac{2A}{m}} = \sqrt{\dfrac{2\cdot6{,}4\cdot10^{-18}}{9{,}1\cdot10^{-31}}} \approx 3{,}75\cdot10^{6}$ m/s.</li>
+<li>c) Electron từ nghỉ bị kéo thẳng lên, tới điểm ngay trên M, cùng độ cao với N (cách bản âm 3 cm). Hình chiếu từ M tới điểm đó cũng là $d = -0{,}02$ m nên công cũng bằng $6{,}4\cdot10^{-18}$ J:<br>$v = \sqrt{\dfrac{2A}{m}} = \sqrt{\dfrac{2\cdot6{,}4\cdot10^{-18}}{9{,}1\cdot10^{-31}}} \approx 3{,}75\cdot10^{6}$ m/s.</li>
 <li><strong>Kiểm tra kết quả:</strong> electron bị bản dương hút lên, đi lên thì lực cùng hướng đi, công phải dương ✓. Thế năng giảm, động năng tăng ✓. Tốc độ nhỏ hơn tốc độ ánh sáng rất nhiều ✓.</li>
 </ol>
 </details>
@@ -303,8 +304,8 @@ $$A_{MN} = W_M - W_N = -\Delta W$$
 <input type="radio" name="tl38-q6" id="tl38-q6b"><label for="tl38-q6b" class="tl-opt tl-no">B. $1{,}92\cdot10^{-17}$ J</label>
 <input type="radio" name="tl38-q6" id="tl38-q6c"><label for="tl38-q6c" class="tl-opt tl-no">C. $-6{,}4\cdot10^{-18}$ J</label>
 <input type="radio" name="tl38-q6" id="tl38-q6d"><label for="tl38-q6d" class="tl-opt tl-no">D. $0$, vì đường cong không dọc đường sức</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng điểm đầu M, cùng điểm cuối N nên công không đổi: $6{,}4\cdot10^{-18}$ J. Độ dài 6 cm là dữ kiện gây nhiễu.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B lấy cả 6 cm làm $d$ và bỏ dấu. C quên dấu âm của electron. D tưởng đường cong thì không sinh công. Công chỉ phụ thuộc M và N. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng điểm đầu M, cùng điểm cuối N nên công không đổi: $6{,}4\cdot10^{-18}$ J.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B lấy cả 6 cm làm $d$ và bỏ dấu. C quên dấu âm của electron. D tưởng đường cong thì không sinh công. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 <p><strong>Câu 7.</strong> Vẫn đề trên, nhưng chọn mốc thế năng ở <strong>bản dương</strong>. Thế năng của electron tại M là:</p>
 <div class="tl-quiz">
@@ -313,7 +314,7 @@ $$A_{MN} = W_M - W_N = -\Delta W$$
 <input type="radio" name="tl38-q7" id="tl38-q7c"><label for="tl38-q7c" class="tl-opt tl-no">C. $-9{,}6\cdot10^{-18}$ J</label>
 <input type="radio" name="tl38-q7" id="tl38-q7d"><label for="tl38-q7d" class="tl-opt tl-no">D. $+3{,}2\cdot10^{-18}$ J</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ M lên bản dương: đi 3 cm ngược đường sức, $d = -0{,}03$ m. $W_M = (-1{,}6\cdot10^{-19})\cdot2000\cdot(-0{,}03) = +9{,}6\cdot10^{-18}$ J.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A vẫn dùng mốc cũ ở bản âm. C lấy $d = +0{,}03$ m, quên rằng đi lên là ngược đường sức. D dùng khoảng cách 1 cm tới bản âm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A vẫn dùng mốc cũ ở bản âm. C lấy $d = +0{,}03$ m, quên rằng đi lên là ngược đường sức. D lấy 1 cm của mốc cũ nhưng gán dấu âm ($d = -0{,}01$ m) của hướng đi lên.</p></div>
 </div>
 </div>
 
@@ -328,7 +329,7 @@ $$A_{MN} = W_M - W_N = -\Delta W$$
 </details>
 <details class="tl-details">
 <summary>⭐⭐ Thử thách khá: tam giác đều ABC cạnh 10 cm, $\vec E$ đều $3000$ V/m song song BC, chiều từ B đến C. Tính $A_{AB}$, $A_{BC}$, $A_{CA}$ với $q = +2\ \mu$C.</summary>
-<p>Chiếu lên chiều B → C: AB có $d = -5$ cm, BC có $d = +10$ cm, CA có $d = -5$ cm. $A_{AB} = -3\cdot10^{-4}$ J; $A_{BC} = 6\cdot10^{-4}$ J; $A_{CA} = -3\cdot10^{-4}$ J. Tổng bằng 0: đúng tính chất vòng kín.</p>
+<p>Chiếu lên chiều B → C: AB có $d = -5$ cm, BC có $d = +10$ cm, CA có $d = -5$ cm.<br>$A_{AB} = -3\cdot10^{-4}$ J<br>$A_{BC} = 6\cdot10^{-4}$ J<br>$A_{CA} = -3\cdot10^{-4}$ J<br>Tổng bằng 0: đúng tính chất vòng kín.</p>
 </details>
 <details class="tl-details">
 <summary>⭐⭐⭐ Thách đấu: nếu công lực điện phụ thuộc đường đi thì có chế được "máy chạy mãi" không?</summary>

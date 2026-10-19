@@ -1,0 +1,155 @@
+{
+  "bai": "Bài 18. Điện trường đều",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Cường độ điện trường: E = U/d",
+      "trich_nguyen_van": "$x$ (cm)</th><th>$V$ (V)</th><th>$V/x$ (V/m)",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Lấy 1,5/1,0 thì ra 1,5 chứ không ra 150. Em không hiểu vì sao bảng ghi 150 V/m, trong khi bài vừa dặn 'd đổi ra mét'.",
+      "de_xuat": "Thêm cột x (m) với các giá trị 0,010 … 0,050, hoặc ghi chú dưới bảng: 'V/x tính với x đổi ra mét, ví dụ 1,5/0,010 = 150'."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Cường độ điện trường: E = U/d",
+      "trich_nguyen_van": "vì $1\\ \\text{V} = 1\\ \\text{J/C} = 1\\ \\text{N·m/C}$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em thuộc chuỗi đổi đơn vị nhưng không biết vì sao vôn lại bằng J/C, vì định nghĩa hiệu điện thế theo công chưa được nhắc trong bài.",
+      "de_xuat": "Thêm nửa câu: 'U là công làm dời 1 C giữa hai bản, nên 1 V = 1 J/C; mà 1 J = 1 N·m'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Cường độ điện trường: E = U/d",
+      "trich_nguyen_van": "số đọc $V$ tăng đều theo $x$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ V vừa là số đọc của vôn kế, vừa là đơn vị vôn (cột ghi '$V$ (V)'). Em dễ lẫn đại lượng với đơn vị.",
+      "de_xuat": "Đặt tên số đọc là $U_x$ (hiệu điện thế giữa que đo và thanh âm) để khỏi trùng với đơn vị V."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Điện tích bay vào vuông góc với đường sức",
+      "trich_nguyen_van": "Sách hay viết gộp: $y = \\pm\\dfrac{qU}{2mdv_0^2}x^2$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em không rõ khi nào lấy dấu +, khi nào lấy dấu −. Ngay trên là công thức có |q|, giờ lại thêm ± với q có dấu, em sợ bị trừ dấu hai lần.",
+      "de_xuat": "Nói rõ: 'dấu ± chỉ chiều lệch, chọn theo trục Oy; khi tính độ lớn thì dùng |q|'. Hoặc bỏ dòng này."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Điện tích bay vào vuông góc với đường sức",
+      "trich_nguyen_van": "Theo $Ox$ (dọc $\\vec v_0$): thẳng đều, $x = v_0 t$.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Gốc O đặt ở đâu, Oy hướng lên hay xuống? Em không biết, nên không hiểu vì sao y = ½at² mà không có y₀.",
+      "de_xuat": "Thêm: 'Gốc O tại điểm hạt bắt đầu vào trường, Oy cùng chiều lực điện'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "3. Điện tích bay vào vuông góc với đường sức",
+      "trich_nguyen_van": "D — có lực điện vuông góc vận tốc thì phải lệch.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em tưởng lực luôn vuông góc với vận tốc trong suốt quá trình bay. Như vậy mâu thuẫn với 'vận tốc dọc tăng dần'.",
+      "de_xuat": "Sửa thành 'vuông góc với vận tốc ban đầu $\\vec v_0$', thống nhất với câu dự đoán ở mở bài."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Bẫy 2: \"Ra khỏi hai bản vẫn cong tiếp\"",
+      "trich_nguyen_van": "Bảng tóm tắt chuyển động của electron khi còn trong vùng hai bản.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Tiêu đề nêu bẫy 'ra khỏi bản' nhưng bảng chỉ có cột 'Trong vùng hai bản'. Em không biết đáp án đúng cho phần ngoài bản là gì trước khi làm câu hỏi.",
+      "de_xuat": "Thêm cột 'Ra khỏi hai bản': lực = 0, quỹ đạo thẳng, $v_x = v_0$, $v_y$ giữ giá trị lúc ra."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu: electron bay qua hai bản",
+      "trich_nguyen_van": "$2{,}5$ mm $\\lt 10$ mm nên electron <strong>không chạm bản</strong>",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng dữ liệu ghi 'cách mỗi bản 1,0 cm', lời giải bỗng so với 10 mm. Em phải tự nối hai con số này.",
+      "de_xuat": "Viết rõ: '$d/2 = 1{,}0$ cm $= 10$ mm; $2{,}5$ mm < $10$ mm'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "VI. Điện trường đều trong đời sống",
+      "trich_nguyen_van": "Mẹo kiểm: đường thẳng đó kéo ngược đi qua trung điểm hai bản",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không hiểu vì sao đường kéo ngược lại đi qua đúng điểm L/2. Kết quả này xuất hiện mà không có lí do.",
+      "de_xuat": "Thêm một dòng: 'vì $y = \\tfrac12 L\\tan\\alpha$ (do $\\tan\\alpha = 2y/L$), nên đường thẳng cắt trục giữa tại $L/2$'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "V. Bài toán mẫu: electron bay qua hai bản",
+      "trich_nguyen_van": "Độ lệch tỉ lệ với $U$.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Em khái quát thành 'độ lệch tỉ lệ thuận với mọi thứ thay đổi', rồi áp dụng tuyến tính cho $v_0$ ở câu ngay sau.",
+      "de_xuat": "Bổ sung ngay sau câu này: 'nhưng $y$ tỉ lệ nghịch với $v_0^2$ (xem mẫu số của phương trình quỹ đạo)'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Hiểu 'vuông góc đường sức' là không chịu lực theo hướng bay, nên nghĩ hạt đi thẳng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "bay vuông góc đường sức không có nghĩa là không có lực"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Áp dụng trực giác điện tích điểm 'càng gần càng mạnh' cho hai bản phẳng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "em đang nghĩ theo điện tích điểm (càng gần càng mạnh)"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy mọi hàng đều cho 150 V/m nên cho là độ tin cậy như nhau, bỏ qua sai số cố định ±0,1 V.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ở $x = 5$ cm chỉ lệch $\\dfrac{0{,}1}{0{,}05} = 2$ V/m"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Học thuộc 'lệch về bản dương' từ ví dụ electron rồi áp dụng cho proton mà không xét dấu q.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$q \\gt 0$: lực cùng chiều $\\vec E$, lệch về <strong>bản âm</strong>."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cho rằng lực điện luôn cùng chiều đường sức, quên electron mang điện âm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chiều đường sức là chiều lực lên điện tích <strong>dương</strong>. Electron thì ngược lại."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ quỹ đạo parabol là 'đà' của hạt, nên ra khỏi trường hạt vẫn cong tiếp.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "Trong khe: parabol; ra khỏi bản: đi thẳng."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Có đổi đơn vị nhưng chỉ đổi mm ra cm (0,4 cm), chưa đổi ra mét.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$d = 2$ cm, $E = 100/2 = 50$ V/m"
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Suy tuyến tính: v₀ gấp đôi thì t giảm một nửa, rồi cho y cũng giảm một nửa, quên y tỉ lệ với t².",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

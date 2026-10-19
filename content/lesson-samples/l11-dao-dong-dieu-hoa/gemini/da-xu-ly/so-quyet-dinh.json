@@ -1,6 +1,6 @@
 {
   "bai": "l11-dao-dong-dieu-hoa",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -126,5 +126,106 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-dao-dong-dieu-hoa/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 1 đã thêm dòng định nghĩa li độ x (vị trí so với VTCB, có thể âm) ngay đầu mục 3, trước dòng định nghĩa A."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài hiện đã định nghĩa T là thời gian ngắn nhất về chỗ cũ theo hướng cũ, T = 3 s)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 1 đã thêm details ở mục 3 nói hình sin là tên chung cho đồ thị hàm sin và côsin."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ô tần số góc đã có ω = 2π/T từ vòng 1, nối được ω với chu kì."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (ô pha hiện đã ghi vị trí và chiều chuyển động lúc t)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (mục 5 hiện đã nói chiếu lên trục Ox và φ là góc giữa OM với Ox lúc t = 0)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (mục VI hiện đã viết bán kính = A)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (phản hồi sai của Tự kiểm tra 2 đã đổi thành đưa dấu trừ vào pha rồi mới đọc A)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lời giải bài mẫu ghi thêm bước trung gian 5π·0,1 + π/2 = π/2 + π/2 = π."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này không còn trong mục 1)."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 mô phỏng gọi thống nhất là độ cứng (mô phỏng gọi là hằng số lò xo) và thêm details kết luận ẩn để đối chiếu."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án details mục 2 nói rõ mỗi lần đi về khác lần trước thì không tuần hoàn, còn nhanh chậm trong một lần đi về vẫn tuần hoàn."
+      },
+      {
+        "id": "q-tl1-p1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn nhanh hay chậm không quan trọng, không cần thêm ⚠."
+      },
+      {
+        "id": "q-tl1-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy ngay trước quiz đã nhấn x có thể âm."
+      },
+      {
+        "id": "q-tl1-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy đã nhấn A > 0, dấu trừ nằm ở pha."
+      },
+      {
+        "id": "q-tl1-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng dữ liệu bài mẫu và phản hồi sai đã nhắc chế độ radian."
+      },
+      {
+        "id": "q-thu_thach",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ biên này sang biên kia chưa phải trọn một chu kì đã có trước Thử thách từ vòng 1."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 2 (details mạnh dần yếu dần): phân biệt mỗi lần đi về khác nhau (không tuần hoàn) với nhanh chậm trong cùng một lần đi về (vẫn tuần hoàn).",
+      "Mục 5 (details mô phỏng PhET): bước 3 đổi tên thành độ cứng của lò xo (mô phỏng gọi là hằng số lò xo).",
+      "Mục 5 (details mô phỏng PhET): thêm details kết luận: vật nặng hơn thì chu kì dài hơn, lò xo cứng hơn thì chu kì ngắn hơn.",
+      "Bài toán mẫu (lời giải): thêm bước trung gian 5π·0,1 = π/2, pha = π/2 + π/2 = π (kết quả không đổi, x = −6 cm)."
+    ],
+    "so_tu_them": 0,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-dao-dong-dieu-hoa/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

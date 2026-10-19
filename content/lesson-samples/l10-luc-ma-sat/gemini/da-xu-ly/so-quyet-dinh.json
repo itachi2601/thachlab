@@ -1,6 +1,6 @@
 {
   "bai": "l10-luc-ma-sat",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -134,5 +134,124 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-luc-ma-sat/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này không có trong bài, phần nhận xét vẫn là chỗ giữ __NHANXET__); việc gọi tên μ_n đã xử lý ở c2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Rút ra ở thí nghiệm nâng ván viết rõ: lúc sắp trượt ma sát nghỉ đạt cực đại F_msn max = μ_n N và cân bằng P_x."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm phương trình trượt đều mg sinα = μ mg cosα, ghi rõ đây là ma sát trượt cân bằng P_x."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước chiếu Ox thêm F_ms = μN = μmg cosα, hướng lên dốc ngược Ox nên mang dấu trừ."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước tốc độ ghi v² − v0² = 2as với v0 = 0 trước khi ra v = √(2as)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Hộp công thức thêm một dòng: N in nghiêng là áp lực, chữ N sau con số là đơn vị niutơn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Làm của thí nghiệm gọi tên ma sát lăn và trỏ tới mục 5."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng 🔑 đổi \"bằng lực đẩy\" thành \"cân bằng lực gây trượt\" cho khớp trường hợp P_x trên dốc."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng ⚠ trước quiz là chủ đích của bài để nhấn lỗi sai hấp dẫn (đã chốt ở vòng trước), không chuyển vào phản hồi."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng trước: lực cản và lực nâng là Bài 19 riêng trong sách Kết nối tri thức, thêm mục là đổi cấu trúc."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng coi đường nằm ngang nên N = mg = 860 N, rồi μ = 344/860 = 0,4."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích lỗi chọn A, không thêm ⚠."
+      },
+      {
+        "id": "q-hanh_trang_cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn nhầm sin/cos, không thêm ⚠."
+      },
+      {
+        "id": "q-hanh_trang_cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn nhầm khối lượng với trọng lượng, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Thí nghiệm và phản hồi đã nhấn ma sát không phụ thuộc diện tích."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ về F sinα và F cosα trước câu."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 và dòng 🔑 đã nhấn không lấy mức cực đại khi đứng yên."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn N = mg cosα trên dốc (trích ghép từ hai ô bảng)."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn ma sát ngược chiều trượt tương đối."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ trước Câu 6, không thêm."
+      }
+    ],
+    "doi_noi_dung": [
+      "Thí nghiệm nâng ván (Rút ra): ghi F_msn max = μ_n N cân bằng P_x khi sắp trượt, và mg sinα = μ mg cosα khi trượt đều; số liệu μ_n ≈ 0,36, μ ≈ 0,30 không đổi.",
+      "Hộp công thức ma sát trượt: bỏ \"(N)\" sau áp lực, thêm dòng phân biệt ký hiệu N (áp lực) với đơn vị N (niutơn).",
+      "Mục II.1: dòng 🔑 đổi \"bằng lực đẩy\" thành \"cân bằng lực gây trượt\".",
+      "Thí nghiệm đổi mặt tiếp xúc: gọi tên ma sát lăn khi kê bút chì, trỏ tới mục 5.",
+      "Lời giải bài toán mẫu: thêm F_ms = μ mg cosα và lí do dấu trừ trên Ox; thêm v² − v0² = 2as với v0 = 0; kết quả 3,2 m/s² và 3,6 m/s không đổi.",
+      "Thử sức xe đạp: thêm giả thiết đường ngang, N = mg = 860 N, μ = 344/860 = 0,4 không đổi.",
+      "Bù độ dài: rút gọn ví dụ có lợi/có hại ở mục 5 và bỏ câu \"đỡ bớt một phần trọng lượng\" trong phản hồi đúng Câu 2 (số liệu không đổi)."
+    ],
+    "so_tu_them": 13,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-luc-ma-sat/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

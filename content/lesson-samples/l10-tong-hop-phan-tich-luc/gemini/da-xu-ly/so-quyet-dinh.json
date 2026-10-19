@@ -1,6 +1,6 @@
 {
   "bai": "l10-tong-hop-phan-tich-luc",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -141,5 +141,282 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-tong-hop-phan-tich-luc/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Rút ra của thí nghiệm mặt phẳng nghiêng nêu góc giữa P và ván là 90° − α nên P_x = P cos(90° − α) = P sin α, dẫn sang Bẫy 3."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án Trả bài câu 4 thêm dòng: trên dốc α là góc nghiêng nên dọc dốc P sin α, vuông góc dốc P cos α; mục Mang về giữ nguyên vì đang hiện ngay."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong khung 📐 (details) thêm dẫn giải hình thoi: đường chéo chia đôi góc, nửa đường chéo bằng F₁cos(α/2)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong khung 📐 chỉ rõ ba đỉnh tam giác lực và góc 180° − α tại ngọn F₁ làm dấu trừ thành dấu cộng."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 1 tách dòng, thêm lỗi quên dấu cos 120° = −0,5 cũng ra 17,3 N và giải thích 0 N chỉ khi hai lực bằng nhau ngược chiều."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục này có trong Bài 13 KNTT nên không ghi Đọc thêm; đã thêm vào Mục tiêu và Trả bài câu 7, không thêm quiz vì phải giữ số quiz."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bẫy 2 và phản hồi Câu 4 gọi N là lực đỡ của bàn, tránh chữ phản lực mang hai nghĩa."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng nhắc định luật III Newton trước bảng so sánh, đồng thời rút gọn dòng ⚠ và phản hồi sai Câu 4 để bù độ dài."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bẫy 3 chỉ rõ hai cặp cạnh vuông góc: phương vuông góc dốc ⟂ mặt dốc, phương thẳng đứng ⟂ phương ngang."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng Bài 1 sửa: trọng lực và lực đỡ của băng triệt tiêu nhau, trên mặt ngang chỉ còn hai lực kéo."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước kiểm tra Bài 1 ghi θ ≈ 53° > 45°, gần hướng bắc hơn hướng đông."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 6 thêm giải thích phương án Tăng lên: câu chốt dùng khi giữ nguyên T, ở đây hợp lực cố định bằng P."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu Nhìn vào dưới video thêm: quả nặng thay lực kế 3, trọng lượng của nó đóng vai F₃."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lực là vectơ, không cộng số (phản hồi và Bẫy 1)."
+      },
+      {
+        "id": "q-ht-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ rõ 5 cm là dùng sin cho cạnh đối."
+      },
+      {
+        "id": "q-ht-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn góc tù có cos âm."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 1 nhắc cos 120° = −0,5, phản hồi sai nêu lỗi quên dấu."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 6 và phản hồi đã nhấn F₃ phải ngược hướng hợp lực."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 khoảng giá trị hợp lực đã nhấn ngay trước câu."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ trước Câu 4, chữ phản lực hai nghĩa đã sửa theo c8."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và dòng 🔑 đã nhấn dọc dốc dùng sin."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phần thử sức đổi số đã nêu chiều biến thiên của T, phản hồi sai đã bổ sung theo c13."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục tiêu: thêm ý hợp lực hai lực song song cùng chiều (F = F₁ + F₂, F₁/F₂ = d₂/d₁), số câu Trả bài 6 → 7.",
+      "Trả bài: thêm câu 7 về hai lực song song cùng chiều.",
+      "Trả bài câu 4: thêm trường hợp dốc (dọc dốc P sin α, vuông góc dốc P cos α).",
+      "Mục 1, video: quả nặng thay lực kế 3, trọng lượng đóng vai F₃.",
+      "Mục 3, khung 📐: thêm dẫn giải F = 2F₁cos(α/2) bằng hình thoi và giải thích góc 180° − α trong tam giác lực (đổi summary).",
+      "Câu 1: thêm dòng ⚠ cos 120° = −0,5; phản hồi sai nêu 17,3 N do lấy nhầm 60° hoặc quên dấu, 0 N chỉ khi hai lực bằng nhau ngược chiều.",
+      "Mục 5, thí nghiệm mặt phẳng nghiêng: góc giữa P và ván là 90° − α, P_x = P cos(90° − α) = P sin α.",
+      "Mục 6: rút gọn ví dụ đèn treo, nội dung vật lí giữ nguyên.",
+      "Bẫy 2: N gọi là lực đỡ của bàn, thêm dòng nhắc định luật III Newton, rút gọn dòng ⚠ và phản hồi sai Câu 4.",
+      "Bẫy 3: chỉ rõ cặp cạnh vuông góc (phương vuông góc dốc ⟂ mặt dốc, thẳng đứng ⟂ ngang).",
+      "Câu 3, Câu 5: phản hồi sai tách mỗi ý một dòng, rút gọn câu lặp.",
+      "Bài 1: dòng Bỏ qua ma sát sửa thành trọng lực và lực đỡ của băng triệt tiêu, mặt ngang chỉ còn hai lực kéo; bước kiểm tra thêm θ ≈ 53° > 45°.",
+      "Câu 6: phản hồi sai giải thích phương án Tăng lên (hợp lực cố định bằng P); phản hồi đúng bỏ câu trực giác để bù độ dài."
+    ],
+    "so_tu_them": 80,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-tong-hop-phan-tich-luc/gemini/da-xu-ly/theory.src.202610191619.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã sửa bước Rút ra thành góc giữa P và ván là 90° − α nên P_x = P sin α, câu trích là bản cũ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đáp án Trả bài câu 4 đã có dòng trên dốc dọc dốc là P sin α, vuông góc dốc là P cos α."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Khung 📐 đã có dẫn giải hình thoi cho F = 2F₁cos(α/2)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Khung 📐 đã chỉ rõ ba đỉnh tam giác lực và góc 180° − α làm dấu trừ thành dấu cộng."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi sai Câu 1 đã nêu lỗi quên dấu cos 120° và giải thích phương án 0 N."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Mục tiêu và Trả bài câu 7 đã có hai lực song song cùng chiều (nội dung KNTT, không ghi Đọc thêm)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bẫy 2 và phản hồi Câu 4 đã gọi N là lực đỡ của bàn."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng nhắc định luật III Newton đã có trước bảng so sánh, vòng này chỉ rút gọn câu chữ."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bẫy 3 đã chỉ rõ hai cặp cạnh vuông góc, vòng này chỉ tách dòng cho gọn."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bảng Bài 1 đã ghi trọng lực và lực đỡ của băng triệt tiêu nhau."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Lời giải Bài 1 đã viết θ ≈ 53° > 45°, gần hướng bắc hơn."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi sai Câu 6 đã giải thích phương án Tăng lên."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Khung video đã nói quả nặng thay lực kế 3, trọng lượng đóng vai F₃."
+      },
+      {
+        "id": "q-du-doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lực là vectơ, không cộng số."
+      },
+      {
+        "id": "q-hanh-trang-1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu dùng sin ra cạnh đối."
+      },
+      {
+        "id": "q-hanh-trang-2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu góc tù có cos âm."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã có dòng ⚠ cos 120° = −0,5 trước câu và phản hồi nêu lỗi quên dấu."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích phương án cùng hướng cho tổng 10 N."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 khoảng giá trị hợp lực đứng ngay trước câu."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ về cặp A lên B và B lên A trước câu."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và dòng 🔑 đã nhấn P sin α dọc dốc."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phần thử sức đổi số và phản hồi đã nêu chiều biến thiên của T."
+      }
+    ],
+    "doi_noi_dung": [
+      "Hành trang Câu 2, phản hồi đúng: bỏ câu 'hai lực hợp góc 120° có hợp lực nhỏ hơn mỗi lực' vì chỉ đúng khi hai lực bằng nhau (vd 10 N và 1 N cho hợp lực ≈ 9,5 N).",
+      "Mục tiêu: bỏ công thức trong các gạch đầu dòng (đã có ở thân bài), thời gian đọc 19 → 18 phút.",
+      "Mục 2: bảng hai lực cùng phương đổi thành hai dòng, nội dung giữ nguyên.",
+      "Mục 6: bỏ ví dụ đèn treo (đã có ở Bài 2), gộp ý ba lực đồng quy, đồng phẳng vào một gạch đầu dòng.",
+      "Thí nghiệm vòng nhẫn và thí nghiệm mặt phẳng nghiêng: rút gọn câu chữ, giữ số liệu 0,5; 1,0; 1,4 N và lập luận góc 90° − α.",
+      "Cắt câu lặp ý để đạt hạn mức: câu hỏi mở bài, câu cuối phản hồi đúng Dự đoán, ⚠ cos 120°, ví dụ kéo xe chếch, Bẫy 2, Bẫy 3, phản hồi sai Câu 2, bảng Bài 1, mục Mang về."
+    ],
+    "so_tu_them": -230,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-tong-hop-phan-tich-luc/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

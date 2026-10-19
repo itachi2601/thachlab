@@ -1,6 +1,6 @@
 {
   "bai": "l11-bai-tap-song",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -132,5 +132,145 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-bai-tap-song/gemini/da-xu-ly/theory.src.202610091138.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nguồn là \"D. lệch pha $\\dfrac{3\\pi}{2}$ nên không đặc biệt\", trích thiếu \"lệch pha\")."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dạng 7 ghi rõ điều kiện nguồn cùng pha, cùng biên độ và thêm câu nguồn ngược pha thì đổi cos thành sin."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dạng 8 thêm \"nguồn cùng pha\" vào tiêu đề và câu \"Ngược pha: xem Bẫy 2\"."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dạng 14 ghi m=2n+1 (cùng n như Dạng 13), quy ước đầu cố định/kín là nút, tự do/hở là bụng đặt trong details ghi chú họ D."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào details ghi chú họ D: hai đầu bụng (ống hở hai đầu) cũng cho f₁=v/2L."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dạng 12 viết lại: từ x=kλD/a rút λ=ax/(kD), giải 0,38≤ax/(kD)≤0,76 để tìm k nguyên."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm details \"ký hiệu khe Young\" giải thích a, D, i, x (để không tăng phần hiện ngay)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không đổi ký hiệu, thêm dòng trong details khe Young: L ở Dạng 10 là bề rộng trường giao thoa, khác L chiều dài dây/ống ở họ D."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Làm thí nghiệm khe Young ghi rõ đo bằng thước milimét, ước lượng tới phần mười mm."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lời giải ⭐⭐⭐ thêm lý do chọn k₁=5, k₂=4 và phép đổi đơn vị khi tính i₁, mỗi ý một dòng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách thành hai dòng: L bằng số nguyên lần λ/2 và L bằng số lẻ lần λ/4."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Luật sửa yêu cầu giữ nguyên mọi id/for/name của quiz nên không đổi mã câu."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm details ký hiệu họ A: P là công suất nguồn, R là khoảng cách tới nguồn, ∼ đọc là tỉ lệ với."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Details họ D thêm ví dụ x=λ/8 cho A_M=A√2 và nhắc đo x từ bụng thì dùng |cos|."
+      },
+      {
+        "id": "c15",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Details họ A thêm thứ tự thang sóng theo λ giảm dần, ghi số liệu vùng nhìn thấy 0,38–0,76 μm."
+      },
+      {
+        "id": "c16",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Details họ A thêm: nguồn u₀=Acos(ωt+φ) thì u_M=Acos(ωt+φ−2πx/λ)."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn 5 ngọn chỉ có 4 khoảng, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng trước: phản hồi đã nêu đúng lỗi đổi 1,5λ thành 3π/2."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lý do từ chối vòng trước chỉ phủ phương án A, nên thêm dòng ⚠: gộp nhiều khoảng vân chỉ tác động tới phép đo bằng thước, không tới a và D."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về số lần λ/4 đã thêm ở vòng trước."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lấy phần nguyên, không làm tròn."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và phản hồi đã nhấn 5 nút tạo 4 khoảng."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn cực đại và cực tiểu đổi chỗ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Dạng 7: thêm điều kiện nguồn cùng pha, cùng biên độ và ghi chú nguồn ngược pha thì A_M=2A|sin(π(d₂−d₁)/λ)|.",
+      "Dạng 8: ghi rõ áp dụng cho nguồn cùng pha, ngược pha xem Bẫy 2.",
+      "Dạng 12: thêm bước rút λ=ax/(kD) từ x=kλD/a và bất phương trình 0,38≤ax/(kD)≤0,76.",
+      "Dạng 14: m=2n+1 (cùng n như Dạng 13).",
+      "Details mới họ A: P, R, ký hiệu ∼, phương trình nguồn có pha ban đầu φ, thứ tự thang sóng điện từ (nhìn thấy 0,38–0,76 μm).",
+      "Details mới họ C: ký hiệu a, D, i, x và phân biệt L (bề rộng trường) với L (chiều dài dây/ống).",
+      "Details mới họ D: đầu cố định/kín là nút, tự do/hở là bụng, ống hở hai đầu f₁=v/2L, ví dụ x=λ/8 cho A_M=A√2, đo x từ bụng thì dùng |cos|.",
+      "Thí nghiệm khe Young: ghi đo bằng thước milimét, ước lượng tới phần mười mm (số liệu giữ nguyên).",
+      "Câu 2: thêm dòng ⚠ trước quiz về a và D không được lợi từ việc gộp nhiều khoảng vân.",
+      "Câu 4 phản hồi đúng: bỏ phần tính số vân tối N_t=8 (để cắt độ dài, đáp án không đổi).",
+      "Câu 6 phản hồi sai: rút gọn thành \"ngược pha thì số cực đại và số cực tiểu hoán đổi\".",
+      "Thử thách ⭐⭐⭐: thêm lý do k₁=5, k₂=4 và phép tính i₁=0,48·10⁻⁶·2/10⁻³ m=0,96 mm (kết quả x=4,8 mm không đổi).",
+      "Hộp ✅: dòng sóng dừng tách thành L bằng số nguyên lần λ/2 và L bằng số lẻ lần λ/4."
+    ],
+    "so_tu_them": 30,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-bai-tap-song/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

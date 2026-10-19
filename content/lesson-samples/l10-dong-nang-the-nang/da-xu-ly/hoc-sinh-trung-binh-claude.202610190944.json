@@ -1,0 +1,164 @@
+{
+  "bai": "Bài 25. Động năng, thế năng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "I. Mở bài: bóp phanh xe đạp",
+      "trich_nguyen_van": "Chọn D là tính thừa một lần nhân: tốc độ gấp $2$ thì quãng lết gấp $2^2 = 4$, không phải $2^4 = 16$.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "Phản hồi nói hệ số là 16, nhưng phương án D là 16 m, tức chỉ gấp 8 lần 2 m. Nếu quãng lết gấp 16 thì phải là 32 m. Học sinh chọn D đọc xong càng rối, không biết mình sai ở đâu.",
+      "de_xuat": "Sửa thành: 'Chọn D là nhân thêm một lần nữa (8 × 2) hoặc bình phương hai lần; quãng lết chỉ gấp 4, tức 2 · 4 = 8 m.'"
+    },
+    {
+      "id": "c2",
+      "vi_tri": "1. Động năng",
+      "trich_nguyen_van": "Chỉ phụ thuộc tốc độ, không phụ thuộc hướng vận tốc.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ 'chỉ' khiến em hiểu động năng chỉ phụ thuộc v, không phụ thuộc khối lượng m, trái với công thức ngay bên trên.",
+      "de_xuat": "Viết: 'Với cùng một vật, động năng phụ thuộc độ lớn vận tốc (tốc độ), không phụ thuộc hướng vận tốc.'"
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Định lí động năng",
+      "trich_nguyen_van": "Từ $s/v^2 = \\frac{1}{2\\mu g} \\approx 0{,}20$, với $g = 10\\ \\text{m/s}^2$, suy ra hệ số ma sát $\\mu \\approx 0{,}25$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài chỉ có $s = mv^2/(2F_h)$. Biểu thức 1/(2μg) và ký hiệu μ xuất hiện đột ngột, em không biết nó từ đâu ra.",
+      "de_xuat": "Thêm một dòng: 'Ma sát trượt $F_{ms} = \\mu mg$, thay vào $s = mv^2/(2F_{ms})$ được $s/v^2 = 1/(2\\mu g)$.'"
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Thế năng trọng trường",
+      "trich_nguyen_van": "Mốc mặt bàn: $6\\ \\text{J}$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hai mốc kia đều có phép tính, riêng mốc mặt bàn chỉ có kết quả. Em không chắc z lấy 2,0 hay 0,8 hay 1,2 m.",
+      "de_xuat": "Ghi đủ: 'Mốc mặt bàn: $z = 2{,}0 - 0{,}8 = 1{,}2$ m, $W_t = 0{,}5\\cdot 10\\cdot 1{,}2 = 6$ J.'"
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Thế năng trọng trường",
+      "trich_nguyen_van": "Mốc ở mặt đất thì $z = h$, $W_\\text{t} = mgh$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu h chưa được định nghĩa. Em không rõ h là độ cao so với mặt đất hay so với vị trí bất kì.",
+      "de_xuat": "Thêm: '(h: độ cao của vật so với mặt đất)'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "4. Công của trọng lực và lực thế",
+      "trich_nguyen_van": "Vật đi từ $M$ đến $N$ dưới tác dụng của lực thế:",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "'Lực thế' được dùng từ tiêu đề và đầu hộp nhưng chưa được định nghĩa. Cuối hộp chỉ liệt kê vài lực, nên em coi lực thế là một danh sách phải thuộc, không biết tiêu chí nhận ra.",
+      "de_xuat": "Đặt định nghĩa lên đầu hộp: 'Lực thế là lực mà công của nó chỉ phụ thuộc điểm đầu, điểm cuối, không phụ thuộc đường đi.'"
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Công của trọng lực và lực thế",
+      "trich_nguyen_van": "Đi xuống: $A_P \\gt 0$ (công phát động), thế năng giảm.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Dòng trên vừa viết $A_{MN}$, dòng này lại đổi sang $A_P$ mà không giải thích. Em tưởng đây là hai đại lượng khác nhau.",
+      "de_xuat": "Ghi rõ: 'Với trọng lực P, $A_P = A_{MN}$.'"
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Công của trọng lực và lực thế",
+      "trich_nguyen_van": "$A = mgs\\cos(90^\\circ - \\alpha) = mgs\\sin\\alpha = mgh$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không thấy vì sao góc giữa trọng lực và đường đi là 90° − α, cũng không thấy vì sao s sin α = h.",
+      "de_xuat": "Thêm: 'Trọng lực thẳng đứng hợp với mặt nghiêng góc 90° − α; trong tam giác vuông, s sin α = h.'"
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Khối lượng triệt tiêu: $v_B^2 = v_A^2 + 2g(z_A - z_B) = 100 + 300 = 400$, khớp.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Công thức rút gọn này hiện ra không có bước chia cho ½m. Câu 7 lại dùng đúng công thức này, và phương án 17,3 m/s bắt lỗi 'quên hệ số 2 khi khử ½m', nên em dễ sai đúng chỗ bài chưa chỉ.",
+      "de_xuat": "Viết bước trung gian: '$\\frac{1}{2}mv_B^2 - \\frac{1}{2}mv_A^2 = mg(z_A - z_B)$, chia hai vế cho $\\frac{1}{2}m$ được …'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "$v^2 = 100 + 400$, $v \\approx 22{,}4\\ \\text{m/s}$ với mọi hướng ném",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Đề không cho g. Số 400 trong $v^2$ (đơn vị m²/s², bằng 2gh) lại trùng với công 400 J ngay trước, nên em tưởng cộng thẳng công (J) vào $v^2$.",
+      "de_xuat": "Thêm 'lấy g = 10 m/s²' vào đề và ghi: '$v^2 = v_0^2 + 2A/m = 100 + 2\\cdot 400/2$'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 2: thế năng là con số cố định của vật",
+      "trich_nguyen_van": "Em chắc bao nhiêu?",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ô hỏi mức chắc chắn nằm trước đề Câu 5, nên em phải chọn 'Chắc/Không chắc' khi chưa đọc câu hỏi. Câu 7 cũng vậy.",
+      "de_xuat": "Chuyển ô 'Em chắc bao nhiêu?' xuống sau đề và các phương án, ngay trước phần phản hồi."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "Dự đoán (mở bài)",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ tốc độ gấp đôi thì quãng phanh gấp đôi (tỉ lệ bậc nhất).",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Quãng phanh tỉ lệ với $v^2$. Xe đạp ở mở bài: $v$ gấp đôi nên quãng lết gấp bốn"
+    },
+    {
+      "cau": "Câu 1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Quên hệ số ½, tính 50 · 64 = 3200 J.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "Câu 2",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thay thẳng 72 km/h vào công thức, không đổi ra m/s.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "đổi km/h ra m/s"
+    },
+    {
+      "cau": "Câu 3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy cả độ cao 30 m, quên điểm cuối vẫn cao 5 m.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Thế năng đầu trừ cuối; không phụ thuộc đường đi."
+    },
+    {
+      "cau": "Câu 4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Bình phương tốc độ cuối (9² = 81) mà không lập tỉ số với tốc độ đầu. Bẫy 1 chỉ nói trường hợp 'gấp 2 thành gấp 4', không nói phải lập tỉ số trước.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "Câu 5",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Tính đúng thế năng −10 J nhưng coi công bằng độ biến thiên thế năng (cuối trừ đầu), nên ra −10 J.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Thế năng đầu trừ cuối; không phụ thuộc đường đi."
+    },
+    {
+      "cau": "Câu 6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chỉ tính công của lực kéo 3000 J, bỏ quên công âm của ma sát.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Bẫy 3: định lí động năng chỉ tính công của lực kéo"
+    },
+    {
+      "cau": "Câu 7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Dùng cả độ cao 13 m của D, quên B đã cao 3 m nên toa chỉ lên thêm 10 m.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Công trọng lực = thế năng đầu trừ cuối; không theo đường đi, không theo mốc."
+    }
+  ]
+}

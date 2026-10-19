@@ -1,6 +1,6 @@
 {
   "bai": "l11-song-dung",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -117,5 +117,266 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-song-dung/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 0 thay ngoặc f=k·v/2l bằng chú thích v là tốc độ truyền sóng trên dây, công thức sẽ học ở mục II.3."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Rút ra của thí nghiệm dây thun định nghĩa mỗi múi giữa hai nút liên tiếp là một bó sóng dài λ/2, rút gọn vế đầu để bù chữ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 2 mô phỏng PhET thêm ghi chú công thức ở mục 3, k là số bó."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng ký hiệu tách mỗi ý một dòng và nói rõ k ở từng trường hợp (số bó từ 1, hoặc số bó nguyên từ 0 với số bụng k+1)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay bằng lập luận k bó nguyên cộng nửa bó: l=kλ/2+λ/4=(2k+1)λ/4, gộp với câu trước để giữ độ dài."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ 6,25 Hz và 12,5 Hz được tính ở hộp bấm xem bên dưới."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc: máy rung có biên độ rất nhỏ nên đầu A coi gần đúng là nút."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi 'đáy này sang đáy kia' thành 'vị trí cao nhất +2A xuống vị trí thấp nhất −2A', sửa thống nhất ở phản hồi sai Câu 3."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'mà đếm trùng hai nút ở giữa, vốn là nút chung của hai bó kề nhau'."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 2 nêu lỗi: rút sai l=λ/2 thành λ=l/2 và bỏ qua số bó."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lời giải câu c thêm 2k+1=8 cho k=3,5, không nguyên."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lời giải câu b thêm: k=4 là số nguyên nên có sóng dừng, k không nguyên thì không có."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chuyển bước kiểm tra lên ngay sau số nút câu b và ghi rõ 'Kiểm tra câu b'."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi 'đầu dây để lỏng' thành 'đầu dây không bị giữ' để không lẫn với dây chùng."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn v không đổi nên f tăng, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã tách rõ λ/2 (nút–nút) với λ/4 (nút–bụng)."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã chỉ đúng lỗi lấy l/3."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Ngay trước câu hỏi đã có 'đừng lẫn với biên độ 2A'."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn cả hai sóng đều tới nút."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 và phản hồi đã nhấn lỗi dùng công thức hai đầu cố định."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và phản hồi đã nhấn hai đầu dây cũng là nút."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy chính (lẫn số bó với số nút, phương án C) đã được nhấn trong phản hồi, không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục I, phản hồi đúng Câu 0: bỏ ngoặc f=k·v/(2l), thêm chú thích v là tốc độ truyền sóng trên dây.",
+      "Mục II.2, thí nghiệm dây thun: định nghĩa bó sóng là đoạn giữa hai nút liên tiếp, dài λ/2; bụng là chỗ vồng mạnh nhất.",
+      "Mục II.3, ký hiệu: k (hai đầu cố định) là số bó từ 1; k (một đầu tự do) là số bó nguyên từ 0, số bụng k+1.",
+      "Mục II.3, phản hồi sai Câu 2: phương án 0,6 m giải thích là rút sai l=λ/2 thành λ=l/2.",
+      "Mục II.4, thí nghiệm đo: đầu A gắn máy rung coi gần đúng là nút vì biên độ máy rung rất nhỏ.",
+      "Mục II.5: thêm suy luận l=kλ/2+λ/4=(2k+1)λ/4 cho dây một đầu tự do.",
+      "Mục II.5, Rút ra: ghi rõ 6,25 Hz và 12,5 Hz là giá trị tính ở hộp bấm xem, không phải quan sát.",
+      "Mục II.6 và phản hồi sai Câu 3: bề rộng 4A mô tả là từ vị trí cao nhất +2A xuống thấp nhất −2A.",
+      "Mục V, lời giải câu b: thêm tiêu chí k=4 nguyên nên có sóng dừng; bước kiểm tra chuyển lên ngay sau câu b.",
+      "Mục V, lời giải câu c: thêm 2k+1=8 → k=3,5 không nguyên."
+    ],
+    "so_tu_them": 60,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-song-dung/gemini/da-xu-ly/theory.src.202610191637.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm chú thích v là tốc độ truyền sóng, công thức học ở mục II.3; bài hiện tại đã có."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bước Rút ra thí nghiệm dây thun đã định nghĩa mỗi múi giữa hai nút liên tiếp là một bó sóng dài λ/2."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bước 2 mô phỏng PhET đã ghi (công thức ở mục 3, k là số bó)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ký hiệu đã tách từng dòng và nói rõ nghĩa của k ở mỗi trường hợp."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Mục 5 đã có lập luận l=kλ/2+λ/4=(2k+1)λ/4."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã ghi 6,25 Hz và 12,5 Hz được tính ở hộp bấm xem bên dưới."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã có ngoặc: biên độ rung rất nhỏ nên A coi gần đúng là nút."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã đổi thành từ vị trí cao nhất +2A xuống vị trí thấp nhất −2A, thống nhất ở phản hồi Câu 3."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi Câu 6 đã ghi đếm trùng hai nút chung của hai bó kề nhau."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi Câu 2 đã nêu lỗi rút sai l=λ/2 thành λ=l/2 và bỏ qua số bó."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Lời giải câu c đã có 2k+1=8 cho k=3,5, không nguyên."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Lời giải câu b đã nêu k=4 nguyên nên có sóng dừng, k không nguyên thì không có."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bước kiểm tra đã nằm ngay sau số nút câu b và ghi rõ Kiểm tra câu b."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bảng Bẫy 2 đã đổi thành đầu dây không bị giữ."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn v không đổi nên f tăng, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã tách λ/2 (nút–nút) với λ/4 (nút–bụng)."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã chỉ đúng lỗi lấy l/3."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 6 đã có câu đừng lẫn với biên độ 2A ngay trước quiz."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 và phản hồi sai đã nhấn hai sóng vẫn tới nút."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 và phản hồi sai đã nhấn lỗi dùng công thức hai đầu cố định."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và phản hồi sai đã nhấn hai đầu dây cũng là nút."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nêu lỗi lẫn số bó với số nút và nhấn tính k=2lf/v, không làm tròn, đủ để sửa cả lỗi phương án A; bài đang phải cắt chữ nên không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục VI: bỏ ví dụ máy giặt rung ở tần số cộng hưởng (cắt độ dài; đó là cộng hưởng, không hẳn sóng dừng).",
+      "Mục 4: bỏ câu dẫn λ=2l/k, v=λf trong lời văn vì đã có ở dòng 🔑 và tiêu đề cột bảng đo; số liệu bảng giữ nguyên.",
+      "Mục 5, thí nghiệm đầu tự do: bước Rút ra bỏ ý lặp 'chiều dài là số lẻ lần λ/4' (đã có ở đoạn trên), giữ 6,25 Hz thay cho 12,5 Hz."
+    ],
+    "so_tu_them": -150,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-song-dung/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

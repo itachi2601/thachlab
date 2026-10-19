@@ -1,6 +1,6 @@
 {
   "bai": "l10-thuc-hanh-sai-so",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -105,5 +105,123 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-thuc-hanh-sai-so/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chỉ thêm phép tính t̄ = 100,35/5 = 20,07 s, không ghi sẵn Δt = 0,15 s vì sẽ lộ đáp án Câu 2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề ghi \"kết quả ở bảng mục II.4\", bước 1 lời giải đổi \"(bảng)\" thành \"(Câu 2)\" là nơi có Δt̄ = 0,14 s."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 2 lời giải thêm: T = t/10, số 10 là số đếm không có sai số nên ΔT = Δt/10."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục II.4 thêm dòng \"Chỉ đo 1 lần: ΔA = ΔA_dc (như Hình 1)\", bù chữ bằng rút gọn các dòng 🔑."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm tiêu chí: thường giữ 2 CSCN nếu chữ số đầu là 1 hoặc 2, còn lại giữ 1 (khớp 0,15, 0,18, 0,28, 8)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(cùng số chữ số sau dấu phẩy)\" sau \"cùng bậc thập phân\"."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa tại đáp án ⭐⭐ (trong details): ghi 400 cm² tức 4,00·10² cm² (3 CSCN như a), tách mỗi ý một dòng, không thêm dòng vào bảng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng trước: danh sách 5 thứ nguyên và kí hiệu K theo SGK Kết nối tri thức, mục II đã vượt trần."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đơn vị và thứ nguyên nằm trong Bài 3 sách Kết nối tri thức, và chuyển mục là đổi cấu trúc bài."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 4 lời giải chỉ rõ quy tắc nửa ĐCNN ở mục II.3 và nói đề đã cho quy ước thì làm theo đề."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án C đổi thành \"Bạn A chỉ cần ghi thành 12,00 mm là chính xác ngang bạn B\", phản hồi sai nói rõ tự ghi thêm số 0 không làm sát hơn."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn C nhầm số chữ số với độ chính xác, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về hệ số 1/2, 2 không có thứ nguyên đã thêm ở vòng trước."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Công thức ΔA = ΔĀ + ΔA_dc và phản hồi đã nhấn lỗi quên cộng sai số dụng cụ."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục II.6 đã nhấn số mũ nhân sai số tỉ đối kèm ví dụ δV = 3δa."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục II.7 đã nhấn Ā cùng bậc thập phân, nay thêm \"cùng số chữ số sau dấu phẩy\" (c6)."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 và bảng so sánh đã nhấn đo nhiều lần không giảm sai số hệ thống."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 \"So δA, không so ΔA\" và bước Rút ra của thí nghiệm đã nhấn, mục III sát trần."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng quy tắc CSCN đã có dòng số 0 đứng đầu không có nghĩa kèm ví dụ 0,0005."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.4: t̄ ghi thêm phép tính 100,35/5 = 20,07 s (trợ giảng đối chiếu tổng 5 số ở bảng __BANG_TN1__ có đúng 100,35 s).",
+      "Mục II.4: thêm quy tắc đo 1 lần thì ΔA = ΔA_dc (như Hình 1).",
+      "Mục II.7: ΔA thường giữ 2 CSCN nếu chữ số đầu là 1 hoặc 2, còn lại giữ 1.",
+      "Mục II.7: Ā cùng bậc thập phân với ΔA được giải thích là cùng số chữ số sau dấu phẩy.",
+      "Câu dự đoán: phương án nhiễu C đổi thành \"Bạn A chỉ cần ghi thành 12,00 mm là chính xác ngang bạn B\", phản hồi sai sửa cho khớp.",
+      "Bài toán mẫu: đề chỉ rõ bảng mục II.4, bước 1 ghi nguồn Δt̄ = 0,14 s là Câu 2 (kết quả không đổi).",
+      "Bài toán mẫu bước 2: T = t/10 với số 10 không có sai số nên ΔT = Δt/10.",
+      "Bài toán mẫu bước 4: nêu quy tắc nửa ĐCNN ở mục II.3, đề cho quy ước một ĐCNN thì theo đề (δl = 0,1 % không đổi).",
+      "Thử thách ⭐⭐: ghi S = 400 cm² tức 4,00·10² cm² (3 CSCN), ΔS thêm đơn vị cm², kết quả (400 ± 8) cm² không đổi.",
+      "Mục II.6: bỏ ví dụ Δ(l1 − l2) = Δl1 + Δl2 (đã có trong dòng quy tắc trừ cũng cộng sai số) để bù chữ.",
+      "Rút gọn dòng 🔑 các mục II.4, II.5, II.7 để bù chữ."
+    ],
+    "so_tu_them": 12,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-sai-so/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

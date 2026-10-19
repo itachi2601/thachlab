@@ -1,6 +1,6 @@
 {
   "bai": "l11-luc-coulomb",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -129,5 +129,234 @@
       "lint_do_dai lỗi"
     ],
     "sao_luu": "content/lesson-samples/l11-luc-coulomb/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không chuyển bài ⭐⭐ (đổi cấu trúc), thay bằng một dòng dưới Hình 2 chỉ rõ đây là tình huống bài ⭐⭐ và vì sao hai lực vuông góc (một hút một đẩy, góc C vuông)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm hai dòng dưới bảng: cùng hút/cùng đẩy thì α = góc ACB, một hút một đẩy thì α = 180° − góc ACB."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng: chân không (ε = 1), không khí (ε ≈ 1) thì bỏ ε, còn F = k|q₁q₂|/r²; dòng điện môi giữ nguyên."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chú thích tách mỗi ý một dòng: ε₀ chỉ dùng để tính k, không thay vào chỗ ε; ε ≥ 1 không có đơn vị."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giải nghĩa ngay tại chỗ: trừ bì là đưa số cân về 0 khi đã có quả cầu A."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details ghi rõ 5 % là sai số tối đa, độ lệch thực trong bảng (~2 %) nằm trong giới hạn đó."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 lời giải (trong details) thêm rút gọn 10⁻³/(9·10⁹) = 10⁻¹²/9, khai căn được 10⁻⁶/3."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án bước 2–3 thêm F/k ≈ 6,4·10⁻¹⁴ và căn ≈ 2,53·10⁻⁷, tách mỗi ý một dòng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu 7: từ |q| = r√(F/k), lực gấp n lần thì q chỉ gấp √n lần (gộp với q-cau7)."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng câu 6 viết thống nhất k|q₁q₂|/(εr²) như bảng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Nhiễm điện và bảo toàn điện tích là nền cho thí nghiệm và Bẫy 2 của bài; đổi mục tiêu/định vị lại mục 1 là đổi cấu trúc."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã giải thích vì sao A sai, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 thừa/thiếu electron và phản hồi đã nhấn, không thêm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 2 đã in đậm lực giảm ε lần, không thêm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy tắc gần điện tích nhỏ và cùng dấu ở giữa đã in đậm trước quiz, không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 Đổi SI trước · Bình phương r sau đã nhấn, không thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 Xét lại dấu và bảng Bẫy 2 đã nhấn, không thêm."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng cặp lực và câu định luật III Newton đã nhấn, không thêm."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Vòng trước chấp nhận nhưng bài chưa có dòng ⚠, nay thêm trước câu 7 (q chỉ gấp √n khi lực gấp n)."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 2, hộp định luật: chú thích tách dòng, ε₀ chỉ dùng để tính k (không thay vào chỗ ε), ε không có đơn vị; bỏ ngoặc lịch sử '(Coulomb đo bằng cân xoắn, 1785)' ở nhãn.",
+      "Mục 2: thêm dòng chân không (ε = 1), không khí (ε ≈ 1) thì bỏ ε, dùng F = k|q₁q₂|/r²; chuyển '(chân không ε = 1, không khí ε ≈ 1)' từ chú thích xuống dòng này.",
+      "Mục 3: giải nghĩa trừ bì (đưa số cân về 0 khi đã có A); bỏ ngoặc 'bảng dưới là số liệu minh hoạ tính từ mô hình' ở bước Làm (vẫn nêu ở tiêu đề mục và trong details).",
+      "Mục 3, details: 5 % ở r = 6 cm là sai số tối đa, độ lệch thực 3,53 so với 3,6 (~2 %) nằm trong giới hạn.",
+      "Mục 4: thêm quy tắc góc α = góc ACB (cùng hút/cùng đẩy) và α = 180° − góc ACB (một hút một đẩy); dòng dưới Hình 2 nối với bài ⭐⭐, α = 90°.",
+      "Bẫy 3, phản hồi đúng câu 6: công thức thêm ε ở mẫu số.",
+      "Mục V, lời giải bước 3: thêm rút gọn 10⁻³/(9·10⁹) = 10⁻¹²/9, căn 10⁻⁶/3, nhân 0,06 ra 2·10⁻⁸ C.",
+      "Mục V, bài điền khuyết 60°: thêm F/k ≈ 6,4·10⁻¹⁴, căn ≈ 2,53·10⁻⁷, |q| ≈ 7,6·10⁻⁹ C (khớp đáp số cũ).",
+      "Mục V: thêm dòng ⚠ trước câu 7 (lực gấp n thì q gấp √n); rút gọn phản hồi đúng và phương án B trong phản hồi sai câu 7.",
+      "Cắt để giữ hạn mức: 'Mục II.1 giải thích kỹ hơn' (câu 0), '(hoặc lược nhựa, bóng bay)', '(bài toán mẫu ở mục V)', câu hỏi phụ cuối phản hồi đúng câu 4, 'Đổi SI trước, rồi mới thay số' (câu 4), 'Cộng có dấu rồi chia đều' (câu 5)."
+    ],
+    "so_tu_them": -3,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-luc-coulomb/gemini/da-xu-ly/theory.src.202610191637.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm dòng dưới Hình 2 chỉ rõ tình huống bài ⭐⭐ và vì sao α = 90°, giữ nguyên."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Hai dòng α = góc ACB / α = 180° − góc ACB đã có dưới bảng hợp lực."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng chân không (ε = 1), không khí (ε ≈ 1) bỏ ε đã có ở mục 2."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Chú thích ε₀ chỉ dùng để tính k, ε ≥ 1 không đơn vị đã tách dòng trong khung định luật."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã giải nghĩa trừ bì là đưa số cân về 0 khi đã có A."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Details đã ghi 5 % là sai số tối đa, độ lệch thực ~2 % nằm trong giới hạn."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bước 3 lời giải đã có rút gọn 10⁻¹²/9 và căn 10⁻⁶/3."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đáp án bước 2–3 đã có F/k ≈ 6,4·10⁻¹⁴ và căn ≈ 2,53·10⁻⁷."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ q gấp √n lần đã có ngay trước câu 7."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi đúng câu 6 đã viết k|q₁q₂|/(εr²) thống nhất với bảng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ lý do vòng 2: nhiễm điện và bảo toàn điện tích là nền cho thí nghiệm và Bẫy 2, định vị lại mục 1 là đổi cấu trúc."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã giải thích vì sao A sai, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 thừa/thiếu electron và phản hồi đã nhấn."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 2 đã in đậm lực giảm ε lần."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy tắc gần điện tích nhỏ hơn đã in đậm trước quiz."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 Đổi SI trước, bình phương r sau đã nhấn."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 Xét lại dấu và bảng Bẫy 2 đã nhấn."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng và câu cặp lực–phản lực đã nhấn."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ q tỉ lệ √F đã có trước câu 7 từ vòng trước."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 1: ví dụ thanh thuỷ tinh +13 nC (n ≈ 8,1·10¹⁰ electron) chuyển vào details, số liệu giữ nguyên.",
+      "Mục 1: bỏ câu 'Nối bằng dây dẫn rồi cắt dây cũng vậy' và ngoặc '(hạt nhân dương, electron âm)' để giảm độ dài.",
+      "Mục 1, thí nghiệm lon nhôm: bỏ 'đầu…trên bàn' và 'dù không bị chạm' (lặp ý với '(không chạm)')."
+    ],
+    "so_tu_them": -46,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-luc-coulomb/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

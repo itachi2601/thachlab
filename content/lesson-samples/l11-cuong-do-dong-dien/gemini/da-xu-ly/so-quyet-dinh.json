@@ -1,6 +1,6 @@
 {
   "bai": "l11-cuong-do-dong-dien",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -154,5 +154,116 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-cuong-do-dong-dien/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng dưới bảng TN2: hàng 10 phút có Δt = 600 s, Δq = 1,50·600 = 900 C, khớp 250·3,6 = 900 C."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ câu 3 để học sinh tự suy từ Δq = IΔt (gợi ý sẽ lộ cách ra 12 C), nhưng dòng mẫu thêm theo c1 đã cho sẵn bước nhân với 600 s và câu hỏi được viết gọn lại."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Rút ra TN1 đã ghi dấu − chỉ báo chiều, độ lớn vẫn 0,30 A (vòng 1); thêm cùng ý vào khung đổi chiều cho chỗ −120 A."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Quan sát TN3 viết bước trung gian 1,5·8,5·1,6·10^(−6+28−19) = 20,4·10³ = 2,04·10⁴ và đơn vị m²·m⁻³·C = C/m."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Khung chi tiết ghi rõ đoạn dây dài ℓ = 1 cm = 0,01 m."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'ion dương chỉ dao động quanh nút mạng (vị trí cố định trong tinh thể)', đúng vật lí hơn 'đứng yên'."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng bài mẫu nói rõ: v có hướng, không phải tốc độ chuyển động nhiệt hỗn loạn (rất nhanh nhưng không tạo dòng)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm '(vì sao nóng: xem bài điện trở)' sau câu j lớn nên nóng hơn."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng câu 8 tính từ v chưa làm tròn: 3,53·10⁻⁴/2 ≈ 1,8·10⁻⁴ m/s = 0,18 mm/s."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán, phản hồi đã tách rõ tốc độ lan điện trường với tốc độ trôi, không cần ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ 'Đổi phút ra giây trước khi nhân' đã có từ vòng 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ lý do vòng 1 (⚠ riêng sẽ lộ cách ra 12 C), nay dòng mẫu 10 phút = 600 s dưới bảng đã nhấn việc đổi đơn vị."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ 'Cùng I chưa chắc cùng v' đã có từ vòng 1."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'Tăng I trong cùng dây là tăng v, không phải n' ngay trước bẫy."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ định nghĩa xoay chiều trước câu 6 đã có từ vòng 1."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 ngay trước câu đã nhấn đổi mC ra C và phút ra s."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu 4 (có ⚠) và phản hồi đã nhấn S gấp đôi thì v giảm một nửa."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.2: thêm dòng dưới bảng TN2: 10 phút = 600 s, Δq = 1,50·600 = 900 C = 250·3,6 C.",
+      "II.2: câu 3 viết gọn 'Dòng lệch ±0,02 A thì điện lượng ở hàng 10 phút lệch cỡ bao nhiêu?', đáp án vẫn ±12 C.",
+      "II.3: 'ion dương đứng yên ở nút mạng' → 'ion dương chỉ dao động quanh nút mạng (vị trí cố định trong tinh thể)'.",
+      "II.4 TN3: thêm bước 1,5·8,5·1,6·10^(−6+28−19) = 20,4·10³ = 2,04·10⁴ C/m và đơn vị m²·m⁻³·C = C/m.",
+      "II.4 khung chi tiết: ghi rõ ℓ = 1 cm = 0,01 m (n S ℓ ≈ 1,3·10²¹ không đổi).",
+      "V bảng dữ liệu: v có hướng, phân biệt với tốc độ chuyển động nhiệt hỗn loạn.",
+      "Câu 8 phản hồi đúng: 0,35/2 = 0,18 → 3,53·10⁻⁴/2 ≈ 1,8·10⁻⁴ m/s = 0,18 mm/s.",
+      "Khung đổi chiều: thêm dấu − của −120 A chỉ báo chiều, độ lớn vẫn 120 A.",
+      "II.1: rút gọn dòng '1 A = 1 C/s: mỗi giây 1 C qua tiết diện' còn '1 A = 1 C/s' (ví dụ 9 A ngay dưới đã nói ý mỗi giây)."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-cuong-do-dong-dien/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

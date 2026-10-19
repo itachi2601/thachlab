@@ -1,0 +1,148 @@
+{
+  "bai": "Bài 30. Thực hành: Xác định động lượng của vật trước và sau va chạm",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "4. Thí nghiệm 2: hai xe đẩy nhau",
+      "trich_nguyen_van": "Đọc $t_1'$ (cổng 1) và $t_2'$ (cổng 2).",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ở Thí nghiệm 1, $t_1'$ là thời gian cặp xe qua cổng 2. Ở Thí nghiệm 2, cùng ký hiệu $t_1'$ lại là thời gian xe 1 qua cổng 1. Học sinh dễ đem nhầm số liệu hoặc công thức giữa hai thí nghiệm.",
+      "de_xuat": "Đổi ký hiệu thời gian cặp xe qua cổng 2 ở Thí nghiệm 1 thành $t'$ (khớp với $v'$), giữ $t_1'$, $t_2'$ cho Thí nghiệm 2."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "4. Thí nghiệm 2: hai xe đẩy nhau",
+      "trich_nguyen_van": "Trong đề, thí nghiệm này hay gọi là va chạm đàn hồi (hai xe đẩy nhau bằng lò xo, không dính nhau).",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh hiểu rằng va chạm đàn hồi nghĩa là hai xe đứng yên rồi bật ra. Gặp đề có hai xe chạy tới va nhau qua lò xo, em sẽ không nhận ra đó cũng là va chạm đàn hồi, hoặc áp sai điều kiện $p = 0$.",
+      "de_xuat": "Nói rõ đây chỉ là cách gọi trong một số đề. Nhấn mạnh điều kiện $p = 0$ chỉ đúng khi hai xe cùng đứng yên lúc đầu."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "4. Thí nghiệm 2: hai xe đẩy nhau",
+      "trich_nguyen_van": "$p = 0$ không chia được: so $|p'|$ với $\\Delta p' = \\Delta p_1' + \\Delta p_2'$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em không biết tính $\\Delta p_1'$ bằng cách nào, vì trước đó bài chỉ cho sai số tỉ đối $\\Delta p/p$. Vì vậy em không tự ra được cột $\\Delta p'$ = 0,0010; 0,0007 trong bảng.",
+      "de_xuat": "Thêm một dòng tính mẫu cho lần 1: $\\Delta p_1' = |p_1'|(\\Delta m/m_1 + \\Delta t/t_1')$ ≈ 0,0005, tương tự $\\Delta p_2'$ ≈ 0,0005, cộng lại được 0,0010."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "4. Thí nghiệm 2: hai xe đẩy nhau",
+      "trich_nguyen_van": "−0,0502 ; +0,0495 | −0,0007 ; 0,0007",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tự tính lại từ bảng số đo: lần 2 có $p_1'$ = 0,405·0,0500/0,404 ≈ 0,0501, nên $p'$ ≈ −0,0006. Lần 1 có $p_2'$ ≈ 0,0508, nên $p'$ ≈ +0,0008. Lần 3 có $p_2'$ ≈ 0,0495. Các số đều lệch bảng một đơn vị cuối. Riêng lần 2, $|p'| = \\Delta p'$ nằm sát ngưỡng, em không biết kết luận ra sao, và bài cũng không viết kết luận cho thí nghiệm 2.",
+      "de_xuat": "Tính lại bảng thứ hai từ đúng số đo (không làm tròn $v$ giữa chừng), và thêm một câu kết luận $|p'| \\le \\Delta p'$ cho từng lần."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. Xử lí số liệu: so $p'$ với $p$",
+      "trich_nguyen_van": "3 | 0,1928 → 0,1879 | 2,5 % ; 1,9 %",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tự tính: $v'$ = 0,0500/0,214 ≈ 0,2336, nên $p'$ = 0,803·0,2336 ≈ 0,1876 chứ không phải 0,1879. Khi đó $\\delta$ ≈ 2,7 %. Con số 0,1879 chỉ ra được nếu làm tròn $v'$ thành 0,234. Em tính lại sẽ không khớp và không biết mình sai ở đâu.",
+      "de_xuat": "Ghi rõ quy tắc làm tròn $v$ đến 3 chữ số trước khi nhân, hoặc sửa thành 0,1876 và $\\delta$ ≈ 2,7 %."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$\\dfrac{\\Delta p'}{p'} = \\dfrac{0{,}002}{0{,}505} + \\dfrac{0{,}001}{0{,}140}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề cho $\\Delta m = 0{,}001$ kg, nhưng lời giải lại dùng 0,002 mà không nói lý do. Em nghĩ đây là lỗi đánh máy, hoặc lúc tự làm sẽ dùng 0,001.",
+      "de_xuat": "Ghi chú ngay trong bước 4: \"cân hai xe nên $\\Delta m = 2 \\cdot 0{,}001 = 0{,}002$ kg\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "2. Thí nghiệm 1: va chạm mềm",
+      "trich_nguyen_van": "lấy số đo lần đầu của đồng hồ. Làm 3 lần, đổi gia trọng mỗi lần.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không biết \"gia trọng\" là gì. Em cũng không hiểu vì sao đồng hồ lại có nhiều số đo, nên không rõ \"lần đầu\" là số nào.",
+      "de_xuat": "Giải thích: gia trọng là quả nặng gắn thêm lên xe để đổi khối lượng. Số đo lần đầu là lần xe chắn cổng đầu tiên, trước khi xe có thể bật lại qua cổng."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Thí nghiệm 2: hai xe đẩy nhau",
+      "trich_nguyen_van": "Hình 3. Bố trí thí nghiệm 2, hai xe cùng khối lượng nên hai mũi tên dài bằng nhau.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng số liệu ngay dưới có lần 2 và lần 3 với hai xe khác khối lượng. Em có thể nghĩ thí nghiệm 2 luôn dùng hai xe bằng nhau và hai tốc độ luôn bằng nhau.",
+      "de_xuat": "Thêm vào chú thích: \"(ứng với lần 1; khi khối lượng khác nhau thì xe nhẹ có mũi tên vận tốc dài hơn)\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "4. Thí nghiệm 2: hai xe đẩy nhau",
+      "trich_nguyen_van": "D là $3$ lần: không có hệ thức nào cho hệ số $3$.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh chọn D thường vì đã dùng $(m_1 + m_2)/m_2 = 3$, tức là lẫn với công thức va chạm mềm. Phản hồi bảo \"không có hệ thức nào\" nên em không nhận ra lỗi của mình.",
+      "de_xuat": "Sửa thành: \"D dùng $(m_1+m_2)/m_2$ như va chạm mềm; ở đây hai xe tách nhau nên không cộng khối lượng\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 3: \"$p'$ khác $p$ là thí nghiệm hỏng\"",
+      "trich_nguyen_van": "(số liệu minh hoạ tính từ mô hình): tốc độ thật ở chỗ va chạm lớn hơn số đọc ở cổng 1.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không biết \"mô hình\" ở đây là gì. Cột $a$ = 0,016 m/s² hiện ra mà không có công thức, nên em không tự kiểm lại được.",
+      "de_xuat": "Thêm một dòng: \"$a \\approx g\\dfrac{h}{L}$, $v_{thật}^2 = v^2 + 2ax$\" kèm phép tính cho $h$ = 2 mm."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Từ \"lực lò xo lên hai xe bằng nhau\" suy thẳng ra tốc độ bằng nhau, quên rằng khối lượng khác nhau thì gia tốc khác nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A: lực bằng nhau nhưng khối lượng khác nhau thì gia tốc khác nhau."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đề cho bề rộng 5,00 cm, trong khi mọi ví dụ trước đều đã ghi sẵn 0,0500 m. Em thay thẳng số 5,00 mà không đổi đơn vị.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ xe nặng gấp đôi thì thời gian chỉ bằng một nửa, tức viết $m_1t_1' = m_2t_2'$, lẫn giữa tỉ lệ thuận và tỉ lệ nghịch khi thay $v = s/t$.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy cả hai tích $mv$ đều dương (vì đồng hồ chỉ cho $t$ dương) rồi cộng lại, quên gán dấu trừ cho xe đi ngược chiều dương.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Xe đi ngược chiều dương: $p \\lt 0$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quen công thức trước va chạm $p = m_1v_1$ nên sau va chạm vẫn chỉ nhân với $m_1$, quên rằng cả cặp xe cùng chuyển động.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dính nhau thì cộng khối lượng"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nghĩ lệch nhỏ thì là sai số ngẫu nhiên và lấy trung bình sẽ hết, không để ý cả ba lần đều lệch cùng một phía.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Lệch cùng một phía | Sai số hệ thống | Làm nhiều lần không giảm"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thấy khối lượng cặp xe tăng gấp đôi thì cho rằng $v'$ giảm một nửa, quên rằng $p$ cũng gấp đôi. Trước câu này, bài chưa viết công thức $v' = \\dfrac{m_1}{m_1+m_2}v_1$ để em thấy rằng chỉ tỉ số khối lượng mới quyết định $v'$.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

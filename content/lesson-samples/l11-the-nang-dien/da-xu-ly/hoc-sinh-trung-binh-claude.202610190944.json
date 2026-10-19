@@ -1,0 +1,182 @@
+{
+  "bai": "Bài 19. Thế năng điện",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
+      "trich_nguyen_van": "Khoảng 18 phút · 8 câu tự kiểm tra.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Các câu chỉ được đánh số từ Câu 1 đến Câu 7, câu Dự đoán không có số. Em đếm ra 7 câu và nghĩ mình bỏ sót một câu.",
+      "de_xuat": "Ghi rõ \"1 câu dự đoán + 7 câu tự kiểm tra\", hoặc đánh số câu Dự đoán là Câu 0."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Thế năng điện",
+      "trich_nguyen_van": "Điện trường bất kì, mốc ở vô cực: $W_M = A_{M\\infty} = V_M\\,q$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Ký hiệu $V_M$ xuất hiện mà chưa được định nghĩa (mãi tới mục 6 mới có). Em không biết $V_M$ là gì, dễ tưởng là vận tốc hoặc đơn vị vôn.",
+      "de_xuat": "Bỏ vế $V_M q$ ở mục 3, hoặc thêm chú thích \"$V_M$ là điện thế tại M, định nghĩa ở mục 6\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Thế năng điện",
+      "trich_nguyen_van": "Điện trường đều, mốc ở bản âm: $W_M = qEd$, với $d$ là khoảng cách từ M tới bản âm.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em hiểu $d$ trong công thức thế năng là \"khoảng cách\", luôn dương. Sang Câu 7 (mốc ở bản dương), em sẽ lấy $d = +0{,}03$ m, trong khi đáp án lại dùng $d = -0{,}03$ m.",
+      "de_xuat": "Nói rõ: tổng quát $d$ là hình chiếu có dấu của đoạn từ M tới mốc; chỉ khi mốc ở bản âm thì $d$ mới bằng khoảng cách và dương. Thêm một dòng mẫu cho trường hợp mốc ở bản dương."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Thế năng điện",
+      "trich_nguyen_van": "Mẹo \"qEd như mgh\": $q$ giống khối lượng, $E$ giống $g$, $d$ giống độ cao tính từ mốc.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Khối lượng luôn dương, nên em suy ra \"cao hơn mốc thì thế năng dương\" và chọn A ở Câu 2. Ở bài toán mẫu, electron đi lên mà thế năng lại giảm, em thấy trái với mẹo.",
+      "de_xuat": "Thêm ngay sau mẹo: \"Mẹo chỉ khớp với điện tích dương; với electron, $q<0$ nên càng xa bản âm thế năng càng âm.\""
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Đo thử: thế năng tăng đều theo khoảng cách tới bản âm",
+      "trich_nguyen_van": "Xa bản âm · thế năng lớn · tỉ lệ thuận",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em ghi nhớ thành quy tắc chung \"xa bản âm thì thế năng lớn\". Quy tắc này sai với electron ở Câu 2 và bài toán mẫu: $W_N=-9{,}6\\cdot10^{-18}$ J nhỏ hơn $W_M$ dù N xa bản âm hơn.",
+      "de_xuat": "Sửa dòng khoá thành \"Với $q>0$: xa bản âm, thế năng lớn; với $q<0$: ngược lại\"; tiêu đề mục cũng ghi rõ là đo cho 1 C dương."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "4. Đo thử: thế năng tăng đều theo khoảng cách tới bản âm",
+      "trich_nguyen_van": "số vôn kế chỉ là công lực điện làm 1 C đi từ que đo về lá âm, tức thế năng của 1 C tại đó",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em chưa học hiệu điện thế (để sang mục 6) nên không hiểu vì sao số chỉ vôn kế lại là công trên 1 C. Hình 3 còn dùng $W = qV$ khi chưa định nghĩa $V$.",
+      "de_xuat": "Thêm một câu nói trước \"vôn kế đo công lực điện trên mỗi culông, sẽ học kĩ ở mục 6\", hoặc chuyển thí nghiệm này ra sau mục 6."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Đo thử: thế năng tăng đều theo khoảng cách tới bản âm",
+      "trich_nguyen_van": "<th>$x$ (cm)</th><th>$V$ đo (V)</th><th>$V/x$ (V/m)</th>",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em tự chia 1,18/2,0 được 0,59 nhưng bảng ghi 59,0, nên tưởng mình tính sai. Bảng không nói đã đổi cm ra m. Chữ V vừa là tên đại lượng vừa là đơn vị cũng gây rối.",
+      "de_xuat": "Thêm một dòng tính mẫu: \"1,18 V / 0,020 m = 59,0 V/m\", hoặc thêm cột V/x tính theo V/cm."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "5. Công bằng độ giảm thế năng",
+      "trich_nguyen_van": "Từ nghỉ, đi dọc đường sức một đoạn $d$: $qEd = \\tfrac12 mv^2$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em thay số cho electron với $q<0$, $d>0$ thì được số âm dưới căn và bị kẹt. Bài không nói điều kiện $qEd>0$, tức điện tích phải tự đi theo hướng lực điện.",
+      "de_xuat": "Ghi: \"đi theo hướng lực điện (proton xuôi, electron ngược đường sức) nên $qEd>0$\"; hoặc viết thẳng $v=\\sqrt{2A/m}$ như trong bài toán mẫu."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "5. Công bằng độ giảm thế năng",
+      "trich_nguyen_van": "động năng tăng tới cỡ $10^8$ m/s (đã cần tính tương đối)",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu này gán đơn vị m/s cho động năng, khiến em lẫn động năng với tốc độ. Cụm \"tính tương đối\" lại chưa được giải thích.",
+      "de_xuat": "Sửa thành \"tốc độ tăng tới cỡ $10^8$ m/s (gần tốc độ ánh sáng)\" và bỏ cụm \"tính tương đối\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "5. Công bằng độ giảm thế năng",
+      "trich_nguyen_van": "$$A_{MN} = W_M - W_N = -\\Delta W_t$$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu $W_t$ chỉ xuất hiện ở chỗ này, các mục khác đều viết $W$. Em không rõ chữ t nghĩa là gì.",
+      "de_xuat": "Viết thống nhất là $-\\Delta W$ với $\\Delta W = W_N - W_M$."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 1: lấy $d$ là độ dài đường đi",
+      "trich_nguyen_van": "Proton đi đoạn MN dài 5 cm, MN hợp với chiều đường sức góc $60^\\circ$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Trước Câu 4, bài chỉ cho sẵn độ dài hình chiếu (3 cm), chưa bao giờ dạy cách tính hình chiếu từ góc. Em có thể dùng sin hoặc lúng túng; lời phản hồi còn hỏi \"vì sao dùng cos\" dù bài chưa dạy.",
+      "de_xuat": "Thêm vào bảng Bẫy 1 một dòng: \"MN dài $s$ hợp với đường sức góc $\\alpha$: $d = s\\cos\\alpha$\", kèm một hình nhỏ."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "Bẫy 3: tưởng thế năng có một giá trị \"tuyệt đối\"",
+      "trich_nguyen_van": "<tr><td>Điểm A</td><td>$6$ mJ; $2$ mJ</td><td>$4$ mJ</td></tr>",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chữ A ở đây là tên điểm mốc, nhưng cả bài dùng A cho công. Em dễ đọc lẫn thành \"mốc đặt ở công A\". Ngoài ra dòng khoá 🔑 lại đặt sau Câu 5 chứ không đặt đầu mục như các bẫy khác.",
+      "de_xuat": "Đổi tên điểm thành O hoặc K, và chuyển dòng 🔑 cùng bảng lên trước Câu 5."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó",
+      "trich_nguyen_van": "M cách bản âm 1 cm, N cách 3 cm",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề không cho khoảng cách từ N tới bản âm. Em phải tự cộng 1 + 2 = 3 cm (đoạn MP nằm ngang không làm đổi độ cao), nhưng bảng ghi như thể đề đã cho sẵn.",
+      "de_xuat": "Ghi rõ \"N cách bản âm 1 + 2 = 3 cm (MP nằm ngang không đổi khoảng cách)\"."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi công tỉ lệ với quãng đường như lực ma sát: đường cong dài hơn thì công lớn hơn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A lấy quãng đường làm thước đo công, như với lực ma sát"
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chỉ giữ dấu âm của electron mà quên rằng đi ngược đường sức thì $d$ cũng âm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A chỉ lấy một dấu âm (của $q$ hoặc của $d$) mà quên dấu kia."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Áp mẹo \"qEd như mgh\" theo nghĩa đen: cao hơn mốc thì thế năng dương, quên rằng $q$ của electron âm. Mẹo trong bài còn củng cố thêm lỗi này.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A quên dấu âm của electron."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lật dấu: nghĩ lực điện sinh công dương thì \"tích thêm\" thế năng, tức dùng $W_N - W_M$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "B lật dấu: $A = W_M - W_N$, không phải $W_N - W_M$."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Bài chưa dạy công thức $d = s\\cos\\alpha$, nên học sinh chiếu bằng sin, hoặc phân vân không biết dùng sin hay cos.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Coi thế năng tại mỗi điểm là giá trị cố định, không phụ thuộc mốc.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "D: mốc làm đổi từng giá trị $W$, nhưng hiệu $W_M - W_N$ thì không."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Đã nắm công không phụ thuộc đường đi, nhưng khi thay số lại bỏ dấu âm của electron.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "C quên dấu âm của electron."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Dùng định nghĩa \"$d$ là khoảng cách\" ở mục 3 nên lấy $d = +0{,}03$ m; không biết rằng với mốc ở bản dương, $d$ là hình chiếu có dấu, đi lên ngược đường sức nên âm.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

@@ -6,188 +6,161 @@
     {
       "id": "c1",
       "vi_tri": "1. Hướng vận tốc đổi → có gia tốc hướng tâm",
-      "trich_nguyen_van": "quay 600 vòng/phút ($\\omega = 20\\pi \\approx 62{,}8\\ \\text{rad/s}$)",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Không biết 20π từ đâu ra. Bài không ghi phép đổi 600 vòng/phút → 10 vòng/s → ω = 2π·10, và cũng không đổi 20 cm ra 0,2 m trước khi tính 790.",
-      "de_xuat": "Ghi rõ: 600 vòng/phút = 10 vòng/s, ω = 2π·10 = 20π rad/s; r = 20 cm = 0,20 m; a = (62,8)²·0,20 ≈ 790 m/s²."
+      "trich_nguyen_van": "Lực bám cần có cũng gấp bốn.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Lực bám' là một loại lực mới. Thuật ngữ này xuất hiện trước khi mục 2 giới thiệu lực hướng tâm và ma sát nghỉ, cả bài cũng không định nghĩa (mục VI dùng lại).",
+      "de_xuat": "Thay bằng 'Lực ma sát nghỉ giữa lốp và đường (đóng vai lực hướng tâm, xem mục 2) cần có cũng gấp bốn.'"
     },
     {
       "id": "c2",
       "vi_tri": "1. Hướng vận tốc đổi → có gia tốc hướng tâm",
-      "trich_nguyen_van": "thay $v = \\omega r$ vào $\\dfrac{v^2}{r}$ là ra $\\omega^2 r$",
-      "loai": "từ_chưa_giải_thích",
+      "trich_nguyen_van": "⚠ Để ý số mũ của v trong công thức.",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Hệ thức v = ωr được dùng như đã biết. Học sinh quên bài trước sẽ không biết nó đến từ đâu.",
-      "de_xuat": "Thêm một vế nhắc lại: \"(nhớ lại Bài 31: v = ωr)\"."
+      "em_hieu_la": "Không rõ phải để ý gì. Lời nhắc không nói hệ quả nên em vẫn dễ chọn 'tăng gấp đôi' ở Câu 1.",
+      "de_xuat": "Viết rõ: '$v$ có số mũ 2, nên $v$ đổi bao nhiêu lần thì $a_{\\text{ht}}$ đổi theo bình phương của số lần đó.'"
     },
     {
       "id": "c3",
       "vi_tri": "1. Hướng vận tốc đổi → có gia tốc hướng tâm",
-      "trich_nguyen_van": "Vẽ hiệu $\\Delta\\vec v = \\vec v_2 - \\vec v_1$ của hai lúc gần nhau: $\\Delta\\vec v$ chĩa vào tâm.",
-      "loai": "mơ_hồ",
+      "trich_nguyen_van": "quay 600 vòng/phút = 10 vòng/s ($\\omega = 2\\pi \\cdot 10 = 20\\pi",
+      "loai": "nhảy_bước",
       "muc": "nhỏ",
-      "em_hieu_la": "Khi đặt chung gốc, Δv nằm ở chỗ khác chứ không nằm trên vòng tròn, nên học sinh không rõ \"chĩa vào tâm\" nghĩa là gì.",
-      "de_xuat": "Nói rõ: Δv song song với bán kính tại vị trí giữa hai điểm và hướng vào tâm; hai lúc càng gần nhau thì điều này càng đúng."
+      "em_hieu_la": "Không biết vì sao nhân 2π với 10. Công thức ω = 2πf và tên 'tần số f' không được nhắc lại.",
+      "de_xuat": "Thêm 'tần số f = 10 vòng/s, ω = 2πf (Bài 31)' trước khi thay số."
     },
     {
       "id": "c4",
-      "vi_tri": "3. Đo thử: $F = m v^2/r$ có đúng không?",
-      "trich_nguyen_van": "lực căng dây $Mg$ đóng vai lực hướng tâm",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Không thấy vì sao lực căng dây lại bằng đúng Mg. Bài bỏ qua lí do quả nặng đứng yên nên lực căng cân bằng trọng lượng của nó.",
-      "de_xuat": "Thêm: \"Quả nặng đứng yên nên lực căng dây = trọng lượng Mg; lực căng ấy truyền qua dây kéo nút vào tâm.\""
+      "vi_tri": "2. Lực hướng tâm: tên gọi một vai, không phải lực mới",
+      "trich_nguyen_van": "⚠ Chỉ tính lực do một vật cụ thể gây ra.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Tính' có thể hiểu là tính độ lớn. Lời nhắc cũng không nối với 'lực li tâm' ở phương án D Câu 2, vì Bẫy 2 nằm sau câu này.",
+      "de_xuat": "Viết: 'Chỉ kể những lực mà em chỉ ra được vật nào gây ra; \"lực li tâm\" không có vật gây ra nên không kể.'"
     },
     {
       "id": "c5",
-      "vi_tri": "3. Đo thử: $F = m v^2/r$ có đúng không?",
-      "trich_nguyen_van": "quả nặng càng lớn, phải quay càng nhanh thì kẹp mới đứng yên",
+      "vi_tri": "2. Lực hướng tâm: tên gọi một vai, không phải lực mới",
+      "trich_nguyen_van": "khi $m\\omega^2 r$ cần lớn hơn giới hạn ấy, xu trượt",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Không hiểu vai trò của kẹp. Kẹp đứng yên so với đâu, và vì sao điều đó quan trọng?",
-      "de_xuat": "Ghi: \"kẹp đứng yên sát miệng ống nghĩa là bán kính giữ đúng 0,50 m\"."
+      "em_hieu_la": "Câu bị cụt nên khó đọc. Em không rõ $m\\omega^2 r$ là lực cần có hay lực đang có.",
+      "de_xuat": "Viết: 'khi lực hướng tâm cần có $m\\omega^2 r$ vượt quá ma sát nghỉ lớn nhất, xu trượt.'"
     },
     {
       "id": "c6",
       "vi_tri": "3. Đo thử: $F = m v^2/r$ có đúng không?",
-      "trich_nguyen_van": "$m v^2/r$ (N)",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Từ t₁₀ = 10,2 s nhảy thẳng sang 0,95 N, học sinh không tự kiểm lại được. Bảng thiếu các bước trung gian T và v.",
-      "de_xuat": "Thêm cột T và v, hoặc giải mẫu hàng 1: T = 1,02 s; v = 2π·0,5/1,02 ≈ 3,08 m/s; F = 0,05·3,08²/0,5 ≈ 0,95 N."
+      "trich_nguyen_van": "sai số tỉ đối của tích bằng tổng sai số tỉ đối các thừa số, nên sai số tương đối của $F$ gấp đôi",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Tỉ đối' và 'tương đối' giống như hai khái niệm khác nhau. Quy tắc cộng sai số được dùng mà không nhắc nguồn.",
+      "de_xuat": "Dùng thống nhất một từ ('sai số tương đối') và ghi '(quy tắc ở bài Sai số trong phép đo)'."
     },
     {
       "id": "c7",
       "vi_tri": "3. Đo thử: $F = m v^2/r$ có đúng không?",
-      "trich_nguyen_van": "Vì $F \\sim 1/T^2$, sai số tương đối của $F$ gấp đôi của $t$.",
-      "loai": "từ_chưa_giải_thích",
-      "muc": "khó",
-      "em_hieu_la": "Ký hiệu ∼ chưa giải thích. Quy tắc \"lũy thừa 2 thì sai số tương đối nhân đôi\" cũng chưa học, nên con số 7% xuất hiện mà không hiểu vì sao.",
-      "de_xuat": "Giải thích ∼ là \"tỉ lệ với\", rồi nêu một câu quy tắc: đại lượng tỉ lệ với bình phương thì sai số tương đối gấp đôi."
+      "trich_nguyen_van": "nút cao su quay, vòng đệm sắt treo dưới",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Video treo 'vòng đệm sắt' còn văn bản treo 'quả nặng M', nên em không chắc hai thí nghiệm là một.",
+      "de_xuat": "Thêm câu 'vòng đệm sắt trong video đóng vai quả nặng M'."
     },
     {
       "id": "c8",
-      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
-      "trich_nguyen_van": "Gỡ hai hiểu lầm: lực hướng tâm là \"lực mới\", và \"lực li tâm\" làm vật văng ra.",
-      "loai": "khác",
-      "muc": "nhỏ",
-      "em_hieu_la": "Mục tiêu nói có hai hiểu lầm nhưng mục III lại là \"Ba cái bẫy\". Bẫy 3 (r lớn thì a lớn hay nhỏ) không có trong mục tiêu.",
-      "de_xuat": "Sửa thành \"Gỡ ba hiểu lầm\" và thêm hiểu lầm về sự phụ thuộc của a_ht vào r."
+      "vi_tri": "Bẫy 3: $r$ lớn thì $a_{\\text{ht}}$ lớn hay nhỏ?",
+      "trich_nguyen_van": "Cả hai đều đúng — tuỳ đại lượng nào giữ nguyên.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Biết phải xét đại lượng giữ nguyên nhưng không biết với đĩa CD thì cái gì giữ nguyên. Ý 'cùng một vật quay thì cùng ω' chỉ có trong phản hồi và bảng sau Câu 5, nên dễ nhầm điều kiện và chọn C.",
+      "de_xuat": "Trước Câu 5 thêm: 'Mọi điểm trên cùng một vật rắn quay có cùng ω; hai xe khác khúc cua cùng 36 km/h thì cùng v.'"
     },
     {
       "id": "c9",
-      "vi_tri": "2. Lực hướng tâm: tên gọi một vai, không phải lực mới",
-      "trich_nguyen_van": "Chọn D: hợp lực bằng 0 cũng cho chuyển động thẳng",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$v = 10\\ \\text{m/s}$ → tròn đều, đổi đơn vị",
       "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Phương án D không nói hợp lực bằng 0, nên học sinh không hiểu vì sao phản hồi lại nói về hợp lực bằng 0.",
-      "de_xuat": "Nói rõ giả định: \"Nếu lực li tâm cân bằng hấp dẫn thì hợp lực bằng 0, vệ tinh sẽ đi thẳng.\""
+      "muc": "khó",
+      "em_hieu_la": "Phép đổi 36 km/h ra 10 m/s chưa lần nào được trình bày, cả ở mục II lẫn ở đây. Câu 6 lại bắt đổi 72 km/h, và kết quả 15,8 m/s ra 57 km/h cũng không ghi phép nhân.",
+      "de_xuat": "Ghi '36 km/h = 36 000 m/3600 s = 10 m/s (chia 3,6); ngược lại nhân 3,6'."
     },
     {
       "id": "c10",
-      "vi_tri": "2. Lực hướng tâm: tên gọi một vai, không phải lực mới",
-      "trich_nguyen_van": "lực mặt băng đẩy ngang vào lưỡi giày",
-      "loai": "mơ_hồ",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$$v_{\\text{max}} = \\sqrt{\\frac{F_{\\text{max}}\\, r}{m}} = \\sqrt{250}$$",
+      "loai": "nhảy_bước",
       "muc": "khó",
-      "em_hieu_la": "Bài vừa nói lực hướng tâm phải là một lực đã học, nhưng ví dụ này không gọi tên lực. Học sinh không biết đó là ma sát hay phản lực, dễ nghĩ đây là một lực mới.",
-      "de_xuat": "Gọi tên lực: \"thành phần nằm ngang của phản lực/ma sát mặt băng lên lưỡi giày\"."
+      "em_hieu_la": "Em không tự biến đổi được từ $mv^2/r = F$ sang căn bậc hai. Con số 250 cũng hiện ra mà không có bước thay số.",
+      "de_xuat": "Thêm hai dòng: '$v_{\\max}^2 = F_{\\max} r/m$' và '$= 6000\\cdot 50/1200 = 250$'."
     },
     {
       "id": "c11",
       "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "$v_{\\text{max}}$ không phụ thuộc $m$ ($\\sqrt{0{,}5\\, g r}$)",
+      "trich_nguyen_van": "Đơn vị $\\sqrt{\\text{N}\\cdot\\text{m/kg}} = \\text{m/s}$ khớp.",
       "loai": "nhảy_bước",
       "muc": "nhỏ",
-      "em_hieu_la": "Biểu thức √(0,5gr) hiện ra mà không có phép thay F_max = 0,5mg vào công thức, nên không thấy m bị triệt tiêu ở đâu.",
-      "de_xuat": "Thêm một dòng: thay F_max = 0,5mg vào √(F_max·r/m) được √(0,5gr), m triệt tiêu."
+      "em_hieu_la": "Không thấy vì sao N·m/kg lại thành m²/s².",
+      "de_xuat": "Thêm '1 N = 1 kg·m/s² nên N·m/kg = m²/s²'."
     },
     {
       "id": "c12",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "$F_{\\text{max}} = 0{,}16 \\cdot 12\\,000 = 1920\\ \\text{N}$",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Số 12 000 xuất hiện mà không ghi đó là mg = 1200·10. Học sinh có thể tưởng đây là số mới trong đề.",
-      "de_xuat": "Viết 0,16·mg = 0,16·1200·10 = 1920 N."
-    },
-    {
-      "id": "c13",
       "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "$a \\approx 0{,}99\\ \\text{m/s}^2 \\lt 3\\ \\text{m/s}^2$: không trượt",
+      "trich_nguyen_van": "Trạm vũ trụ bay tròn ở độ cao $400\\ \\text{km}$ (bán kính Trái Đất $6400\\ \\text{km}$) với tốc độ $7{,}7\\ \\text{km/s}$.",
       "loai": "nhảy_bước",
       "muc": "khó",
-      "em_hieu_la": "Bài mẫu so sánh lực (N), ở đây lại so gia tốc với 3 m/s² mà không giải thích 3 từ đâu ra (0,3g). Học sinh không hiểu vì sao được so gia tốc.",
-      "de_xuat": "Ghi: điều kiện mω²r ≤ 0,3mg, chia hai vế cho m được ω²r ≤ 0,3g = 3 m/s²."
-    },
-    {
-      "id": "c14",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "làm nghiêng mặt đường để phản lực góp thêm vào lực hướng tâm",
-      "loai": "từ_chưa_giải_thích",
-      "muc": "nhỏ",
-      "em_hieu_la": "Không hình dung được phản lực \"góp\" vào lực hướng tâm thế nào, vì cả bài chỉ xét đường nằm ngang, nơi phản lực bị triệt tiêu.",
-      "de_xuat": "Thêm nửa câu: mặt nghiêng làm phản lực nghiêng theo, có một phần hướng vào tâm cua."
-    },
-    {
-      "id": "c15",
-      "vi_tri": "Bẫy 1: vẽ thêm \"lực hướng tâm\" bên cạnh các lực khác",
-      "trich_nguyen_van": "🔑 Lực hướng tâm = vai diễn · không vẽ thêm",
-      "loai": "khác",
-      "muc": "nhỏ",
-      "em_hieu_la": "Khung Tự kiểm tra của Câu 3 (và Câu 5 ở Bẫy 3) chưa đóng trước bảng. Vì vậy bảng và dòng chìa khoá bị lọt vào trong khung câu hỏi, rồi có một thẻ </div> thừa.",
-      "de_xuat": "Đóng thẻ div của khung Tự kiểm tra ngay sau khối tl-quiz và xoá </div> thừa sau dòng 🔑, ở cả Bẫy 1 và Bẫy 3."
+      "em_hieu_la": "Dễ lấy r = 400 km hoặc 6400 km. Đáp số chỉ ghi 8,7 m/s², không có r = 6800 km và không có bước đổi km ra m, nên em không tự đối chiếu được.",
+      "de_xuat": "Ghi trong đáp số: 'r = 6400 + 400 = 6800 km = 6,8·10⁶ m; v = 7,7·10³ m/s; a = v²/r ≈ 8,7 m/s²'."
     }
   ],
   "du_doan_loi_sai": [
     {
       "cau": "du_doan",
-      "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Đồng nhất gia tốc với sự thay đổi tốc độ (số trên đồng hồ), quên vận tốc là vectơ.",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Lấy cảm giác bị xô ra ngoài làm hướng gia tốc của xe.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Gia tốc đo độ biến đổi của vectơ vận tốc, cả độ lớn lẫn hướng."
+      "trich_nguyen_van": "Chọn D là tin vào cảm giác bị \"văng ra\"; cảm giác ấy đến từ quán tính của người"
     },
     {
       "cau": "cau1",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Nghĩ tuyến tính \"v gấp đôi thì a gấp đôi\", quên v nằm trong bình phương.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Nghĩ a tỉ lệ thuận với v, quên bình phương.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "⚠ Để ý số mũ của v trong công thức."
     },
     {
       "cau": "cau2",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Tin có \"lực li tâm\" cân bằng hấp dẫn để vệ tinh không rơi. Câu này đặt trước Bẫy 2 nên lúc làm, học sinh chưa được gỡ hiểu lầm này.",
+      "loi_tu_duy": "Tưởng vệ tinh không rơi vì có lực li tâm cân bằng hấp dẫn. Bẫy 2 (gỡ lực li tâm) lại nằm sau câu này.",
       "bai_da_nhan_manh": false,
       "trich_nguyen_van": ""
     },
     {
       "cau": "cau3",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Coi lực hướng tâm là một lực riêng nên vẽ thêm bên cạnh ma sát nghỉ.",
+      "loi_tu_duy": "Vẽ lực hướng tâm như một lực riêng bên cạnh ma sát nghỉ, tức đếm một lực hai lần.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Lực hướng tâm là tên vai của một lực đã có. Vẽ thêm nó là đếm một lực hai lần."
+      "trich_nguyen_van": "Vẽ thêm nó là đếm một lực hai lần."
     },
     {
       "cau": "cau4",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Lấy cảm giác bị xô ra ngoài làm bằng chứng có lực đẩy ra, không nghĩ tới quán tính.",
+      "loi_tu_duy": "Gán cảm giác bị dồn ra ngoài cho một 'lực li tâm' có thật.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Không có lực nào hướng ra; vật chỉ giữ hướng cũ"
+      "trich_nguyen_van": "cảm giác ấy đến từ quán tính của người, không phải hướng gia tốc của xe"
     },
     {
       "cau": "cau5",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Dùng a = v²/r và ngầm coi v của A và B bằng nhau, không nhận ra cùng một vật quay thì cùng ω.",
+      "loi_tu_duy": "Dùng a = v²/r như thể hai điểm cùng v, không nhận ra các điểm trên cùng đĩa có cùng ω.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Cả hai đều đúng — tuỳ đại lượng nào giữ nguyên."
     },
     {
       "cau": "cau6",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Thế thẳng 72 km/h vào công thức, quên đổi ra m/s.",
+      "loi_tu_duy": "Thế thẳng 72 km/h vào công thức, chưa đổi ra m/s. Bài chưa từng trình bày phép chia 3,6.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Đọc đề: đổi km/h ra m/s; tìm lực nào hướng vào tâm."
+      "trich_nguyen_van": "→ tròn đều, đổi đơn vị"
     }
   ]
 }

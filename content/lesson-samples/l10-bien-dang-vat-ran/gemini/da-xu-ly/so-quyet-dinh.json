@@ -1,6 +1,6 @@
 {
   "bai": "l10-bien-dang-vat-ran",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -95,5 +95,137 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-bien-dang-vat-ran/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 1 đã viết lại dòng Chiều thành ba dòng cụ thể (dãn kéo vật về phía lò xo, nén đẩy vật ra xa), bài hiện tại đã có sửa."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành 'Điểm đặt: lên vật gắn hoặc tì vào mỗi đầu lò xo', thống nhất ở Trả bài câu 3."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án Trả bài câu 3 viết lại từng dòng, khớp mục 2: dãn kéo vật về phía lò xo, nén đẩy vật ra xa lò xo."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng dẫn bảng thêm phép tính mỗi quả 50 g cho F = 0,05 · 9,8 = 0,49 N, bù chữ bằng cách rút gọn thí nghiệm bút bi và ví dụ yên xe."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: phần nhận xét vẫn là chỗ giữ chỗ __NHAN_XET_TN2__."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng trong details mô phỏng: hệ số đàn hồi trong mô phỏng chính là độ cứng k."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng 1: Bẫy 2 cố ý cho làm Câu 4 trước rồi mới giải thích, chuyển câu lên sẽ lộ đáp án và đổi cấu trúc."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu này không có trong HTML bài (có thể nằm trong chú thích hình)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details Mở rộng ghi E là suất đàn hồi (suất Y-âng), đơn vị Pa."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án D đổi thành 'k không đổi, lò xo dãn tổng cộng 6 cm' để tách rõ với C; vẫn là đáp án đúng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không sửa được chú thích hình nên viết lại phản hồi Câu 5: 'xem lại Hình 4: sau điểm A, đồ thị cong đi, không còn thẳng'."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng l2 − l1 = (l0 + Δl2) − (l0 + Δl1) = (P2 − P1)/k trong details, kết quả giữ k = 50 N/m, l0 = 20 cm."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng: lò xo nhẹ nên tại chỗ nối nửa dưới kéo nửa trên đúng 1 N, không phải 0,5 N."
+      },
+      {
+        "id": "c14",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án B thêm lý do 'vì phần dài thêm gấp đôi' cho cân với A, C, D."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn 'cái gấp đôi là độ dãn, không phải chiều dài' nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu cáp thang máy bị kéo ra và nhắc xét chiều cặp lực nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi chia 3/6 chưa đổi cm ra m nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu 400 N là do quên đổi cm ra m nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã tách 'dãn tổng 6 cm' với 'thêm 2 cm', D cũng đã ghi 'tổng cộng' nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói treo đứng hay nằm không thay được điều kiện giới hạn đàn hồi nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-dien_buoc",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Lời giải đã nhấn 'ai ra 31 cm là đã cộng như lò xo dãn' nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói 5 cm mới là độ dãn, chưa cộng l0 nên không thêm dòng ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.2, Điểm đặt lực đàn hồi: 'ở hai đầu lò xo, lên vật tiếp xúc' đổi thành 'lên vật gắn hoặc tì vào mỗi đầu lò xo' (Trả bài câu 3 sửa theo).",
+      "Mục II.3, dòng dẫn bảng TN2: thêm 'mỗi quả 50 g cho F = 0,05 · 9,8 = 0,49 N' (g = 9,8 giữ nguyên; trợ giảng kiểm cột F của __BANG_TN2__ khớp 0,49 N/quả).",
+      "Details mô phỏng PhET: thêm chú thích 'Hệ số đàn hồi' trong mô phỏng chính là độ cứng k.",
+      "Details Mở rộng: E được gọi tên là suất đàn hồi (suất Y-âng), đơn vị Pa.",
+      "Dự đoán mở bài: phương án đúng B thêm lý do 'vì phần dài thêm gấp đôi'; đáp án và phản hồi không đổi.",
+      "Câu 4, đáp án đúng D: 'lò xo dãn 6 cm' thành 'lò xo dãn tổng cộng 6 cm'; đáp án vẫn là D.",
+      "Câu 5, phản hồi sai: chỉ rõ xem Hình 4 chỗ sau điểm A đồ thị cong đi, không còn thẳng (trợ giảng kiểm Hình 4 thật có đoạn cong sau A).",
+      "Mục V, details 'Thử sức đổi chiều': thêm dòng l2 − l1 = Δl2 − Δl1 = (P2 − P1)/k; kết quả không đổi k = 50 N/m, l0 = 20 cm.",
+      "Mục VI, thử thách ⭐⭐: thêm lý do lực truyền nguyên 1 N qua chỗ nối (lò xo nhẹ), không phải 0,5 N; kết quả không đổi 0,5 cm, k = 200 N/m.",
+      "Cắt chữ bù hạn mức: thí nghiệm bút bi bỏ 'cho duỗi hẳn ra', ví dụ yên xe đạp rút gọn, Bẫy 3 bỏ câu 'Xét một tình huống cụ thể.'"
+    ],
+    "so_tu_them": 5,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-bien-dang-vat-ran/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

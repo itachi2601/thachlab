@@ -1,6 +1,6 @@
 {
   "bai": "l10-dong-luong",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -99,5 +99,108 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-dong-luong/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc ngay tại bước Làm: lực không đổi thì diện tích dưới đồ thị F–t là FΔt, bù chữ bằng cách rút gọn chú thích bảng và phản hồi Câu 1."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu này không có trong bài (phần nhận xét là chỗ giữ __NHANXET__)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu này không có trong bài, giống lý do vòng trước."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu này nằm trong nội dung sinh tự động __NHANXET__, không có trong bài."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại ô bảng Bẫy 3: lực đỡ N = F + mg nên chỉ nhỏ hơn xấp xỉ ngần ấy lần khi N lớn hơn nhiều mg, bỏ chữ \"nó\" mơ hồ, độ dài giữ nguyên."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trả bài câu 6 tách thành hai dòng: hợp lực nhỏ đi bấy nhiêu lần, lực đỡ của đệm nhỏ đi xấp xỉ như vậy (trong details)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: đáp án ⭐⭐⭐ là chỗ giữ __DAP_AN__ sinh tự động, không có công thức này trong bài."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm bước gọi v là tốc độ bật lại thì v₂ = −v, nên |Δp| = 0,45|−v − 12| = 0,45(12 + v), mỗi bước một dòng (trong details)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: trong bài dấu $ đóng sau \"= 0,54 kg·m/s\", không sau \"(4 − (−5))\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc ở dòng góc bất kì: α là góc giữa hai vector chung gốc, không phải góc trong tam giác nên mang dấu +, bù chữ bằng cắt cụm thừa trong mục II."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, phản hồi sai đã chỉ ra lỗi chỉ nhìn khối lượng, thêm ⚠ sẽ lộ đáp án."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn động lượng phụ thuộc hệ quy chiếu ở mục 1, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ FΔt cho ra Δp, chưa phải tốc độ đã được thêm ở vòng trước."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở dòng 🔑 và bảng Bẫy 1, không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở dòng 🔑 mục 2 và bảng Bẫy 2, không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở dòng 🔑 và bảng Bẫy 3, không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài toán mẫu đã nhấn bước chia cho Δt, không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.2, dòng góc bất kì: thêm chú thích α là góc giữa hai vector chung gốc, không phải góc trong tam giác, nên công thức mang dấu +.",
+      "Mục II.4, bước Làm: thêm \"lực không đổi thì diện tích dưới đồ thị F–t là FΔt\".",
+      "Mục II.4, bước Rút ra: rút chú thích bảng còn \"(số liệu minh hoạ)\", bỏ cụm \"chưa phải số đo thật\".",
+      "Bảng Bẫy 3, dòng F: lực đỡ N = F + mg (F là hợp lực), nên chỉ nhỏ hơn xấp xỉ tỉ lệ Δt khi N lớn hơn nhiều mg.",
+      "Trả bài câu 6: hợp lực lên người nhỏ đi đúng bấy nhiêu lần, lực đỡ của đệm nhỏ đi xấp xỉ như vậy.",
+      "Thử sức đổi chiều: thêm bước v₂ = −v nên |Δp| = 0,45(12 + v); kết quả v ≈ 4,7 m/s giữ nguyên."
+    ],
+    "so_tu_them": 4,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-dong-luong/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

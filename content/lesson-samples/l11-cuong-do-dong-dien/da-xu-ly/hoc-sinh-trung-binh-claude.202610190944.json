@@ -1,0 +1,216 @@
+{
+  "bai": "Bài 22. Cường độ dòng điện",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Đo điện lượng sạc vào điện thoại",
+      "trich_nguyen_van": "🔑 Dòng không đổi · điện lượng tỉ lệ thời gian",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Thuật ngữ 'dòng không đổi' được dùng ở mục II.2 và trong Rút ra, nhưng đến mục II.3 mới định nghĩa. Em sẽ coi Δq = IΔt dùng được cho mọi dòng, không thấy đó là điều kiện áp dụng.",
+      "de_xuat": "Thêm một dòng ở đầu mục 2: 'Dòng không đổi (định nghĩa kỹ ở mục 3): I giữ nguyên theo thời gian; chỉ khi đó mới dùng Δq = IΔt'."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Đo điện lượng sạc vào điện thoại",
+      "trich_nguyen_van": "Dòng dao động $\\pm0{,}02$ A: trong 10 phút điện lượng lệch $0{,}02\\cdot600 = 12$ C",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Khung 'Sai số đến từ đâu?' nằm ngay trên câu tự kiểm tra 3 và chứa sẵn phép tính lẫn đáp án 12 C. Em mở ra là chọn D mà không phải tự suy nghĩ.",
+      "de_xuat": "Chuyển khung 'Sai số đến từ đâu?' xuống sau câu tự kiểm tra 3, hoặc bỏ con số 12 C trong khung."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Đo điện lượng sạc vào điện thoại",
+      "trich_nguyen_van": "$1$ mAh $= 3{,}6$ C.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hệ số 3,6 xuất hiện không có giải thích. Em sẽ học thuộc con số mà không biết nó đến từ đâu, dễ nhớ nhầm thành 3600 hoặc 0,36.",
+      "de_xuat": "Viết rõ: 1 mAh = 10⁻³ A · 3600 s = 3,6 C."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Đo điện lượng sạc vào điện thoại",
+      "trich_nguyen_van": "Dòng không đổi 1,50 A: điện lượng tỉ lệ với thời gian, độ dốc là I.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ghi thời gian bằng phút. Em tính độ dốc 900/10 = 90 rồi thắc mắc vì sao không bằng 1,50 A.",
+      "de_xuat": "Ghi rõ 'độ dốc là I khi trục thời gian tính bằng giây (900 C / 600 s = 1,50 A)'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "1. Cường độ dòng điện là gì?",
+      "trich_nguyen_van": "Đảo pin: đồng hồ hiện $-0{,}30$ A.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Dấu âm chưa được giải thích ở đây. Mục I còn nói ampe kế là đồng hồ kim. Em có thể nghĩ cường độ dòng điện có thể âm thật, tức điện tích 'âm đi', và chưa biết dấu trừ chỉ báo chiều.",
+      "de_xuat": "Thêm: 'Dấu − chỉ dòng chạy vào ampe kế theo chiều ngược với lúc đầu; độ lớn I vẫn là 0,30 A'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
+      "trich_nguyen_van": "nối cường độ dòng điện với mật độ và tốc độ trôi của hạt tải điện",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài dùng chữ 'mật độ' cho hai đại lượng khác nhau: n (hạt/m³) và j (A/m²). Em dễ nhầm n với j, ví dụ nghĩ 'mật độ tăng khi dòng tăng'.",
+      "de_xuat": "Luôn ghi đầy đủ 'mật độ hạt tải n' và 'mật độ dòng điện j', đồng thời thêm một câu đối chiếu đơn vị của hai đại lượng."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Cường độ dòng điện và hạt tải điện",
+      "trich_nguyen_van": "Trong $\\Delta t$, hạt qua $S$ là hạt trong hình trụ dài $v\\,\\Delta t$ trước $S$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài bỏ qua hai bước: vì sao chiều dài trụ là vΔt (quãng đường mỗi hạt đi được), và thể tích trụ = S·vΔt. Em thấy N = nSvΔt xuất hiện đột ngột.",
+      "de_xuat": "Thêm hai bước: 'mỗi hạt đi được quãng vΔt' và 'thể tích trụ V = S·vΔt, nên N = n·V'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "3. Chiều dòng điện và dòng điện không đổi",
+      "trich_nguyen_van": "Phải: dòng một chiều sau chỉnh lưu, chỉ chiều không đổi.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Chỉnh lưu' không được giải thích ở đâu trong bài, nhưng lại xuất hiện lại trong câu tự kiểm tra 6. Em không hình dung được dòng đó từ đâu ra.",
+      "de_xuat": "Thêm chú thích ngắn: 'bộ chỉnh lưu: thiết bị biến dòng đổi chiều thành dòng chỉ đi một chiều'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 2: \"Một chiều thì là không đổi\"",
+      "trich_nguyen_van": "C. Dòng xoay chiều, vì cường độ thay đổi",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "'Dòng xoay chiều' chỉ được định nghĩa trong phần phản hồi sai. Bảng so sánh của Bẫy 2 không có cột xoay chiều, nên em dễ nghĩ cứ cường độ thay đổi là xoay chiều.",
+      "de_xuat": "Thêm vào bảng Bẫy 2 một dòng: 'Xoay chiều: chiều đổi qua lại; đồ thị I(t) cắt trục t'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 1: \"Dòng mạnh là electron chạy như ánh sáng\"",
+      "trich_nguyen_van": "từ $0{,}049$ lên $0{,}098$ mm/s",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề câu 5 chỉ nói 'cùng một dây đồng', không nêu tiết diện. Con số 0,049 mm/s lại là của dây 1,5 mm², nên em không biết số này lấy từ đâu.",
+      "de_xuat": "Ghi rõ 'với dây 1,5 mm² ở mục II.4: từ 0,049 lên 0,098 mm/s'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 3: ampe kế mắc song song, đơn vị để nguyên",
+      "trich_nguyen_van": "$300$ mC trong 2 phút: $I = 300/2$",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Bảng bẫy dùng đúng số liệu của câu tự kiểm tra 7 và ghi sẵn phép tính 0,300/120 ngay bên trên. Câu hỏi không còn kiểm tra được gì.",
+      "de_xuat": "Đổi số trong bảng bẫy, ví dụ '450 mC trong 3 phút', để câu 7 vẫn buộc em tự đổi đơn vị."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "Bẫy 3: ampe kế mắc song song, đơn vị để nguyên",
+      "trich_nguyen_van": "B — $300/120 = 2{,}5$ là quên đổi mC ra C, kết quả lớn gấp nghìn lần.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Thực ra giữ mC chia cho s vẫn ra đúng 2,5 mA. Đọc phản hồi này, em hiểu là bắt buộc đổi mC ra C, trong khi lỗi thật là gắn sai đơn vị A cho kết quả.",
+      "de_xuat": "Sửa thành: 'B — 300 mC/120 s = 2,5 mC/s = 2,5 mA; ghi thành 2,5 A là gắn sai đơn vị, lớn gấp nghìn lần'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "Bẫy 3: ampe kế mắc song song, đơn vị để nguyên",
+      "trich_nguyen_van": "Không: ampe kế điện trở rất nhỏ, đoản mạch pin",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Điện trở' và 'đoản mạch' chưa được học trong bài này. Em chỉ nhớ máy móc 'không được nối' mà không hiểu vì sao.",
+      "de_xuat": "Thêm nửa câu: 'ampe kế gần như không cản dòng, nối thẳng vào pin thì dòng rất lớn, hỏng pin và ampe kế'."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "✅ Mang về sau bài học",
+      "trich_nguyen_van": "cỡ phần mười đến vài mm/s",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu 1, bảng Bẫy 1 và mọi ví dụ trong bài đều cho kết quả dưới 1 mm/s. Tóm tắt lại ghi 'vài mm/s', nên em không biết nhớ con số nào.",
+      "de_xuat": "Thống nhất một cách nói, ví dụ 'dây điện thường: dưới 1 mm/s'."
+    },
+    {
+      "id": "c15",
+      "vi_tri": "VI. Cường độ dòng điện trong đời sống",
+      "trich_nguyen_van": "electron trôi nhanh hơn và va chạm nhiều hơn trong mỗi đơn vị tiết diện",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cụm 'va chạm trong mỗi đơn vị tiết diện' không rõ nghĩa. Em không nối được j lớn với dây nóng hơn.",
+      "de_xuat": "Nói gọn: 'cùng I, dây nhỏ có j lớn, mỗi phần dây phải chở nhiều dòng hơn nên nóng hơn'. Phần giải thích sâu để dành cho bài điện trở."
+    },
+    {
+      "id": "c16",
+      "vi_tri": "I. Mở bài: kim ampe kế trên bộ sạc ắc quy",
+      "trich_nguyen_van": "Vừa cắm sạc, kim nhảy từ 4 lên 9.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chưa cắm sạc thì sao kim đã ở 4? Câu hỏi '9 nhiều hơn 4 ở chỗ nào' cũng không được trả lời lại ở phần nào sau đó.",
+      "de_xuat": "Sửa thành 'kim nhảy lên 9 A rồi dần giảm về 4 A', và ở cuối mục II.1 thêm câu: '9 A nghĩa là mỗi giây 9 C qua dây, nhiều hơn 4 C'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy đèn sáng tức thì nên suy ra electron phải chạy nhanh như ánh sáng, gộp tốc độ lan của điện trường với tốc độ trôi của hạt.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "tốc độ ánh sáng là tốc độ điện trường lan dọc dây, không phải tốc độ của từng electron"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nhân 3 A với 2 mà để nguyên phút, chưa đổi ra 120 s.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhân sai số dòng với 10 phút mà không đổi ra 600 s. Hoặc chọn A vì cho rằng sai số điện lượng bằng sai số dòng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dòng dao động $\\pm0{,}02$ A: trong 10 phút điện lượng lệch $0{,}02\\cdot600 = 12$ C"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Cho rằng cùng I thì mọi thứ khác như nhau, quên S nằm dưới mẫu trong v = I/(Sne). Câu khóa 'tiết diện to' ở đầu mục còn gợi ý S lớn thì 'tốt hơn'.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ dòng mạnh hơn là có nhiều electron hơn trong dây, nhầm n (số hạt/m³) với số hạt đi qua mỗi giây.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Tăng $I$ trong cùng dây là tăng $v$, không phải $n$."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chỉ kiểm tra điều kiện chiều không đổi, bỏ quên điều kiện cường độ không đổi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dòng điện không đổi: chiều và cường độ không đổi theo thời gian."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Hiểu 'xoay chiều' là cường độ thay đổi, vì bài chưa định nghĩa xoay chiều trước câu hỏi.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đổi phút ra giây nhưng giữ số 300 (mC) rồi gắn đơn vị A. Hai phương án B và C chỉ khác tiền tố, nên em dễ chọn nhầm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$I = 0{,}300/120$ (đổi mC ra C, phút ra s)"
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Chép lại kết quả 0,35 mm/s của bài mẫu vì cùng I = 120 A, quên S đã đổi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "cùng $I$, cùng $n$, $S$ gấp đôi thì $v$ giảm một nửa."
+    }
+  ]
+}

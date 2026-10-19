@@ -38,7 +38,7 @@
 <p class="tl-label">📘 Ba loại năng lượng của một máy</p>
 <ul>
 <li><strong>Toàn phần</strong> $W_{tp}$: năng lượng máy nhận vào.</li>
-<li><strong>Có ích</strong> $W_{ci}$: phần thành dạng ta cần (cơ năng, ánh sáng...).</li>
+<li><strong>Có ích</strong> $W_{ci}$: phần thành dạng ta cần (cơ năng, ánh sáng...). Nếu phần này là công thì gọi là <em>công có ích</em>.</li>
 <li><strong>Hao phí</strong> $W_{hp}$: phần thành nhiệt, âm, rung.</li>
 </ul>
 $$W_{tp} = W_{ci} + W_{hp}$$
@@ -49,7 +49,7 @@ $$W_{tp} = W_{ci} + W_{hp}$$
 
 <ul>
 <li>Máy bơm nước: điện năng thành cơ năng đẩy nước; vỏ máy nóng lên và rung là phần bỏ đi.</li>
-<li>Tủ lạnh: lốc máy nóng lên và rung ồn. Nhiệt và tiếng ồn là hao phí.</li>
+<li>Tủ lạnh: lốc máy nóng lên và rung ồn là hao phí.</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l10-hieu-suat-01">
@@ -69,7 +69,7 @@ $$W_{tp} = W_{ci} + W_{hp}$$
 <input type="radio" name="tl72-q2" id="tl72-q2b"><label for="tl72-q2b" class="tl-opt tl-no">B. $500\ \text{kJ}$</label>
 <input type="radio" name="tl72-q2" id="tl72-q2c"><label for="tl72-q2c" class="tl-opt tl-no">C. $4\ \text{kJ}$</label>
 <input type="radio" name="tl72-q2" id="tl72-q2d"><label for="tl72-q2d" class="tl-opt tl-ok">D. $1500\ \text{kJ}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $W_{hp} = W_{tp} - W_{ci} = 2000 - 500 = 1500\ \text{kJ}$. Phần lớn năng lượng xăng thành nhiệt.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $W_{hp} = W_{tp} - W_{ci} = 2000 - 500 = 1500\ \text{kJ}$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $2500\ \text{kJ}$ là cộng hai số thay vì lấy toàn phần trừ có ích. $500\ \text{kJ}$ chính là phần có ích, không phải hao phí. $4\ \text{kJ}$ là chia $2000$ cho $500$. Viết $W_{tp} = W_{ci} + W_{hp}$ rồi suy ra $W_{hp}$.</p></div>
 </div>
 </div>
@@ -91,8 +91,8 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 </div>
 
 <ul>
-<li>Bóng sợi đốt $60\ \text{W}$ cho $3{,}6\ \text{W}$ ánh sáng (minh hoạ): $H = 3{,}6/60 = 6\,\%$.</li>
-<li>Bóng LED $9\ \text{W}$ cho cùng $3{,}6\ \text{W}$ ánh sáng (minh hoạ): $H = 3{,}6/9 = 40\,\%$.</li>
+<li>Bóng sợi đốt $60\ \text{W}$ cho $3{,}6\ \text{W}$ ánh sáng (minh hoạ): $H = 3{,}6/60 = 0{,}06 = 6\,\%$.</li>
+<li>Bóng LED $9\ \text{W}$ cho cùng $3{,}6\ \text{W}$ ánh sáng (minh hoạ): $H = 3{,}6/9 = 0{,}40 = 40\,\%$.</li>
 </ul>
 
 <div class="tl-box tl-box--think">
@@ -103,7 +103,7 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 <input type="radio" name="tl72-q3" id="tl72-q3b"><label for="tl72-q3b" class="tl-opt tl-no">B. $20\,\%$</label>
 <input type="radio" name="tl72-q3" id="tl72-q3c"><label for="tl72-q3c" class="tl-opt tl-no">C. $125\,\%$</label>
 <input type="radio" name="tl72-q3" id="tl72-q3d"><label for="tl72-q3d" class="tl-opt tl-no">D. $1{,}0\ \text{kW}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $H = P_{ci}/P_{tp} = 4{,}0/5{,}0 = 0{,}80 = 80\,\%$. Em giải thích được cho bạn ngồi cạnh vì sao phần $1{,}0\ \text{kW}$ còn lại không thành cơ năng chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $H = P_{ci}/P_{tp} = 4{,}0/5{,}0 = 0{,}80 = 80\,\%$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $20\,\%$ là tỉ lệ hao phí, không phải hiệu suất. $125\,\%$ là chia ngược toàn phần cho có ích. $1{,}0\ \text{kW}$ là công suất hao phí: hiệu suất không có đơn vị watt. Lấy có ích chia toàn phần.</p></div>
 </div>
 </div>
@@ -111,7 +111,7 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 <div class="tl-box tl-box--exp" data-exp="tn-l10-hieu-suat-02">
 <p class="tl-label">🔬 Thí nghiệm: đo hiệu suất của ván nghiêng</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> xe gỗ $0{,}40\ \text{kg}$ (trọng lượng $4{,}0\ \text{N}$, lấy $g = 10\ \text{m/s}^2$). Dùng lực kế kéo đều xe lên theo ván, nâng xe cao $h = 20\ \text{cm}$. Đổi ván sang bốn góc $\alpha = 15^\circ$; $25^\circ$; $35^\circ$; $45^\circ$. Mỗi lần đọc lực kéo $F$, đo quãng đường $s$ trên ván, tính $W_{tp} = F\cdot s$. Công có ích luôn là $W_{ci} = mgh = 0{,}80\ \text{J}$.</li>
+<li><strong>Làm:</strong> xe gỗ $0{,}40\ \text{kg}$ (trọng lượng $4{,}0\ \text{N}$, lấy $g = 10\ \text{m/s}^2$). Dùng lực kế kéo đều xe lên theo ván, nâng xe cao $h = 20\ \text{cm}$. Đổi ván sang bốn góc $\alpha = 15^\circ$; $25^\circ$; $35^\circ$; $45^\circ$. Mỗi lần đọc lực kéo $F$, đo quãng đường $s$ trên ván. Toàn phần là công ta bỏ ra $W_{tp} = F\cdot s$, gồm cả phần thắng ma sát. Việc cần là nâng xe lên cao $h$, nên có ích luôn là $W_{ci} = mgh = 0{,}80\ \text{J}$.</li>
 <li><strong>Quan sát:</strong> $W_{tp}$ lớn hơn $0{,}80\ \text{J}$ ở cả bốn góc.</li>
 <li><strong>Rút ra:</strong> $H = W_{ci}/W_{tp}$ luôn nhỏ hơn $100\,\%$ vì có ma sát giữa xe và ván.</li>
 </ol>
@@ -151,7 +151,7 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 
 <ul>
 <li>Ma sát biến cơ năng thành nhiệt; dây dẫn nóng lên; máy rung và kêu. Các hao phí này giảm được, không xoá hết được.</li>
-<li>Ròng rọc, mặt phẳng nghiêng chỉ <em>đổi</em> lực kéo, không bớt công: vẫn có ma sát nên $W_{tp} \gt W_{ci}$.</li>
+<li>Ròng rọc, mặt phẳng nghiêng giảm lực kéo nhưng phải kéo quãng đường dài hơn, nên không lợi về công. Thêm ma sát nên $W_{tp} \gt W_{ci}$.</li>
 <li>Nên $W_{hp} \gt 0$ và $H \lt 100\,\%$.</li>
 <li><strong>Ghép nối tiếp</strong>: máy sau nhận năng lượng ra của máy trước, nên $H = H_1\cdot H_2\cdots$ (đổi mỗi $H$ ra số thập phân rồi mới nhân).</li>
 <li><strong>Giảm hao phí</strong>: bôi trơn, bảo dưỡng, cách nhiệt, bớt khâu truyền, dùng thiết bị hiệu suất cao.</li>
@@ -177,7 +177,7 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 </thead>
 <tbody>
 <tr><td>Làm nhanh hay chậm, đo bằng W</td><td>Có ích bao nhiêu phần, không đơn vị</td></tr>
-<tr><td>Máy mạnh là máy có $P_{ci}$ lớn</td><td>Máy lớn hay nhỏ đều có $H \lt 100\,\%$</td></tr>
+<tr><td>Máy mạnh là máy có $P_{ci}$ lớn</td><td>Máy $H$ cao chưa chắc có $P_{ci}$ lớn, còn tuỳ $P_{tp}$</td></tr>
 </tbody>
 </table>
 </div>
@@ -230,7 +230,7 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 <input type="radio" name="tl72-q5" id="tl72-q5b"><label for="tl72-q5b" class="tl-opt tl-ok">B. $75\,\%$</label>
 <input type="radio" name="tl72-q5" id="tl72-q5c"><label for="tl72-q5c" class="tl-opt tl-no">C. $133\,\%$</label>
 <input type="radio" name="tl72-q5" id="tl72-q5d"><label for="tl72-q5d" class="tl-opt tl-no">D. $600\ \text{J}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $W_{ci} = 800 - 200 = 600\ \text{J}$; $H = 600/800 = 0{,}75$.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $W_{ci} = 800 - 200 = 600\ \text{J}$; $H = 600/800 = 0{,}75 = 75\,\%$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $25\,\%$ là lấy hao phí chia toàn phần, tức tử số sai. $133\,\%$ là $800/600$, toàn phần chia có ích nên ra hơn $100\,\%$. $600\ \text{J}$ là phần có ích, hiệu suất không có đơn vị J. Tìm $W_{ci}$ rồi chia cho $W_{tp}$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy đọc lại dòng ⚠ ngay trên câu hỏi.</p></div>
 </div>
 </div>
@@ -309,7 +309,7 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 </thead>
 <tbody>
 <tr><td>"cabin cùng người $300\ \text{kg}$"</td><td>$m = 300\ \text{kg}$; trọng lượng $mg = 3000\ \text{N}$</td></tr>
-<tr><td>"nâng đều, cao $5\ \text{m}$"</td><td>$h = 5\ \text{m}$; nâng đều nên $W_{ci} = mgh$</td></tr>
+<tr><td>"nâng đều, cao $5\ \text{m}$"</td><td>$h = 5\ \text{m}$; nâng đều nên động năng không đổi, $W_{ci} = mgh$</td></tr>
 <tr><td>"trong $20\ \text{s}$"</td><td>$t = 20\ \text{s}$; $P = W/t$</td></tr>
 <tr><td>"điện tiêu thụ $1{,}25\ \text{kW}$"</td><td>$P_{tp} = 1250\ \text{W}$: phần máy nhận vào</td></tr>
 <tr><td>"hiệu suất, nhiệt hao phí"</td><td>$H = P_{ci}/P_{tp}$; $W_{hp} = W_{tp} - W_{ci}$</td></tr>
@@ -339,7 +339,7 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 </ol>
 <details class="tl-details">
 <summary>Xem bước 1–2 và kết quả</summary>
-<p>$W_{ci} = 200\cdot 10\cdot 6 = 12\,000\ \text{J}$<br>$P_{ci} = 12\,000/12 = 1000\ \text{W}$<br>$H = 1000/2000 = 50\,\%$</p>
+<p>$W_{ci} = 200\cdot 10\cdot 6 = 12\,000\ \text{J}$<br>$P_{ci} = 12\,000/12 = 1000\ \text{W}$<br>$H = 1000/2000 = 50\,\%$<br>Cùng một máy nhưng tải và tốc độ khác thì $H$ có thể khác: $H$ không phải số cố định của máy.</p>
 </details>
 </div>
 
@@ -355,7 +355,7 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 <label><input type="radio" name="tl72-q7-conf" value="khong"> Không chắc</label></p>
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 6.</strong> Vẫn thang máy ở đề bài ($H = 60\,\%$) nâng tải $300\ \text{kg}$ lên $5\ \text{m}$, nhưng chạy nhanh gấp đôi, chỉ trong $10\ \text{s}$. Công suất điện thang máy tiêu thụ là:</p>
+<p><strong>Câu 6.</strong> Vẫn thang máy ở đề bài, coi $H$ giữ nguyên $60\,\%$, nâng tải $300\ \text{kg}$ lên $5\ \text{m}$, nhưng chạy nhanh gấp đôi, chỉ trong $10\ \text{s}$. Công suất điện thang máy tiêu thụ là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl72-q7" id="tl72-q7a"><label for="tl72-q7a" class="tl-opt tl-ok">A. $2{,}5\ \text{kW}$</label>
 <input type="radio" name="tl72-q7" id="tl72-q7b"><label for="tl72-q7b" class="tl-opt tl-no">B. $1{,}25\ \text{kW}$</label>

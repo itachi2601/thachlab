@@ -1,6 +1,6 @@
 {
   "bai": "l10-an-toan-phong-thuc-hanh",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -134,5 +134,122 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-an-toan-phong-thuc-hanh/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bài chỉ mới thêm nhóm Bảo quản vào bước Rút ra, nay ghi thêm ở danh sách và Trả bài 2 rằng nhóm này thường không có khung riêng, nhận ra qua hình bên trong (không đụng dòng 🔑)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu: dấu — của DC ghi cạnh số vôn, khác dấu \"−\" ghi ở cực âm."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng Bẫy 1 ghi kèm định nghĩa quá áp: hiệu điện thế nguồn lớn hơn định mức."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề điền bước nói rõ nước đã dời đi và dây đã xếp gọn."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"chỗ ướt\" thành chỗ cồn đổ, chỗ đang cháy, và ghi dừng tay, lùi ra là việc đầu tiên khi có sự cố."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu dẫn Hình 4 tách rõ bốn bước sửa lỗi trước khi bật nguồn và bốn bước khi có sự cố bất ngờ."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 1 ghi bộ nguồn có cả cổng DC và cổng AC, phương án A thành \"Output AC, núm ở vạch 6 V, vì cũng là 6 V\", phản hồi A sửa cho khớp."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 lời giải thành \"kiểm tra bóng đang nối ở Output DC\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nguồn ghi mốc __TILE__, không phải \"3\")."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm nửa câu ở phản hồi D: dòng điện không đi từ tay này qua ngực sang tay kia."
+      },
+      {
+        "id": "q-cau_du_doan_mo_bai",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, thêm ⚠ trước câu sẽ lộ đáp án, và phản hồi đã nhấn găng không thay được việc ngắt nguồn."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ngay trước câu: vạch 12 V cho bóng hơn gấp đôi định mức và có thể cháy."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về tia lửa điện đã có trước Câu 2 từ vòng 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về tia laser phản xạ đã có trước Câu 3 từ vòng 1."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bảng Bẫy 1 đã nhấn quá áp cháy, chập ngay lần bật đầu từ vòng 1."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về thuỷ tinh nóng gặp nước lạnh đã có trước Câu 5 từ vòng 1."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng 1: bảng Bẫy 3 và dòng 🔑 phép của giáo viên đã nhấn."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng 1: bài đã nhấn không dùng dây hở và quy tắc kiểm tra thiết bị."
+      }
+    ],
+    "doi_noi_dung": [
+      "Câu 1: đề đổi thành bộ nguồn có Output 3–12 V gồm cả cổng DC và cổng AC; phương án A thành \"Output AC, núm ở vạch 6 V\"; phản hồi A thêm ý cùng 6 V vẫn không dùng được (đáp án D giữ nguyên).",
+      "Bảng Bẫy 1: định nghĩa quá áp là hiệu điện thế nguồn lớn hơn định mức.",
+      "Mục Đọc nhãn: phân biệt dấu — (DC, ghi cạnh số vôn) với dấu − (cực âm).",
+      "Nhóm kí hiệu Bảo quản: ghi thường không có khung riêng, nhận ra qua hình bên trong (danh sách và Trả bài 2).",
+      "Bài điền bước (bóng 3 V): đề thêm dây đã xếp gọn.",
+      "Lời giải bài toán mẫu bước 3: \"kiểm tra bóng đang nối ở Output DC\" thay cho \"nối bóng vào Output DC\".",
+      "Tình huống cồn cháy: dừng, lùi ra là việc đầu tiên, chỉ tắt nguồn nếu không phải đi qua chỗ cồn đổ hay chỗ đang cháy.",
+      "Câu dẫn Hình 4: phân biệt bốn bước sửa lỗi trước khi bật nguồn với bốn bước xử lí sự cố bất ngờ.",
+      "Phản hồi câu dự đoán: giải thích mẹo một tay là tránh dòng điện đi từ tay này qua ngực sang tay kia.",
+      "Thí nghiệm nhiệt: bỏ cụm \"nhiệt kế đo tới 200 °C\" để bù độ dài, số liệu không đổi."
+    ],
+    "so_tu_them": 40,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-an-toan-phong-thuc-hanh/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

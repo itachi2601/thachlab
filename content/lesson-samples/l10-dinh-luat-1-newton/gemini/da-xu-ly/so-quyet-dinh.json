@@ -1,6 +1,6 @@
 {
   "bai": "l10-dinh-luat-1-newton",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -103,5 +103,136 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-dinh-luat-1-newton/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành \"vận tốc không thể thay đổi tức thời\" để không đọc nhầm thành \"vận tốc giữ nguyên\"."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một gạch đầu dòng ở II.3: vật luôn có quán tính kể cả khi chịu lực, lực chỉ làm vận tốc đổi dần; bù chữ bằng cách bỏ câu vật rời tay ở đoạn xe buýt (xem c8)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bài không có mục mô phỏng PhET."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bài không có mục mô phỏng PhET."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án Trả bài 1 và dòng Định luật 1 ở Mang về nay ghi đủ hai điều kiện, mỗi ý một dòng: đang đứng yên thì đứng yên mãi, đang chuyển động thì thẳng đều mãi."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu Rút ra nối với ý h0: máng ngang thì bi mãi không lên lại được h0 và không còn dốc làm chậm, nên không ma sát thì lăn mãi."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details ghi rõ hiệu hai lần đọc gộp sai số của cả hai lần, có thể lệch tới 0,5 + 0,5 = 1 cm."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ câu vật rời tay khỏi đoạn phanh gấp ở II.3 và gộp ý vào dòng ⚠ của Bài 2 thành \"mất lực đỡ của tay, không mất vận tốc ngang đang có\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay phương án C Câu 3 bằng \"Chỉ có lực ném, hướng lên\" và sửa phản hồi sai cho khớp, đáp án đúng vẫn là B."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm ý cùng làm người dừng lại thì vận tốc đổi càng chậm, lực càng nhỏ (sẽ học ở định luật 2 Newton)."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ tình huống xe đang đứng yên bị tông từ phía sau, nên vận tốc cũ của đầu là đứng yên."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục tiêu đã ghi rõ \"6 câu ở mục Trả bài\", còn đánh số lại toàn bộ quiz là đổi cấu trúc."
+      },
+      {
+        "id": "q-tl59-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn ý gậy không cất lực đẩy, và đây là câu dự đoán nên không cảnh báo trước."
+      },
+      {
+        "id": "q-ht59-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi lấy v chia t."
+      },
+      {
+        "id": "q-ht59-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn điều kiện cùng đặt lên một vật."
+      },
+      {
+        "id": "q-tl59-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ngay trước quiz: lực không gây ra chuyển động, ô tô chịu bốn lực cân bằng từng cặp."
+      },
+      {
+        "id": "q-tl59-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng quán tính đã nêu rẽ trái thì người nghiêng sang phải."
+      },
+      {
+        "id": "q-tl59-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 ngay trước câu hỏi đã nhấn ý này."
+      },
+      {
+        "id": "q-tl59-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ về lực đỡ chỉ cần cân bằng trọng lực ngay trước Câu 4."
+      },
+      {
+        "id": "q-tl59-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn mở Bẫy 3, bảng hiểu sai/hiểu đúng và dòng 🔑 đã nhấn ý này."
+      },
+      {
+        "id": "q-tl59-q7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ trước Câu 6, nay ghi rõ thêm là vận tốc ngang."
+      },
+      {
+        "id": "q-dien-buoc",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ \"Hệ số lực cản đã đổi thành 0,05\" trước các bước điền."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1 Rút ra: kết luận máng (2) nằm ngang nay nối với ý h0 (bi mãi không lên lại được h0, không còn dốc làm chậm, không ma sát thì lăn mãi với vận tốc không đổi).",
+      "Details số liệu Galilei: hiệu hai lần đọc gộp sai số của cả hai lần, 0,5 + 0,5 = 1 cm (số liệu bảng không đổi).",
+      "II.3: \"vận tốc không đổi được tức thời\" đổi thành \"vận tốc không thể thay đổi tức thời\".",
+      "II.3: thêm ý vật luôn có quán tính, kể cả khi đang chịu lực (lực chỉ làm vận tốc đổi dần).",
+      "II.3 đoạn xe buýt: bỏ câu vật rời tay giữ vận tốc ngang của xe, ý này nay nằm ở dòng ⚠ Bài 2 (mất lực đỡ của tay, không mất vận tốc ngang).",
+      "III Câu 3: phương án nhiễu C đổi thành \"Chỉ có lực ném, hướng lên\" và phản hồi sai sửa theo (đáp án đúng vẫn B).",
+      "IV Trả bài 1 và VI Mang về: định luật 1 ghi đủ điều kiện đang đứng yên hoặc đang chuyển động.",
+      "V Điền bước còn thiếu: thêm dòng ⚠ nhắc hệ số lực cản là 0,05 (kết quả 4000 N không đổi).",
+      "VI details: túi khí và dây an toàn thêm ý vận tốc đổi càng chậm thì lực càng nhỏ (định luật 2); tựa đầu ghi rõ tình huống xe đang đứng yên bị tông từ sau."
+    ],
+    "so_tu_them": 17,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-dinh-luat-1-newton/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

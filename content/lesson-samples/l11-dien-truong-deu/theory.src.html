@@ -25,7 +25,7 @@
 <input type="radio" name="tl37-q1" id="tl37-q1c"><label for="tl37-q1c" class="tl-opt tl-no">C. Lệch lên theo một đường thẳng xiên</label>
 <input type="radio" name="tl37-q1" id="tl37-q1d"><label for="tl37-q1d" class="tl-opt tl-no">D. Cong dần xuống phía bản âm</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Giọt âm bị bản dương hút, bản âm đẩy, nên lực điện hướng lên và không đổi. Vận tốc ngang giữ nguyên, vận tốc dọc tăng dần — giống hệt hòn đá ném ngang, chỉ là "rơi" lên trên. Đổi lượng điện tích của giọt là đổi chỗ chạm lon.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — bay vuông góc đường sức không có nghĩa là không có lực; lực điện vẫn tác dụng, theo phương vuông góc với vận tốc ban đầu. C — lực không đổi làm vận tốc dọc tăng dần, nên đường đi cong chứ không thẳng. D — giọt mang điện âm, bị bản âm đẩy ra chứ không bị hút về. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — bay vuông góc đường sức không có nghĩa là không có lực; lực điện vẫn tác dụng, theo phương vuông góc với vận tốc ban đầu. C — lực không đổi làm vận tốc dọc tăng dần, nên đường đi cong chứ không thẳng. D — giọt mang điện âm, bị bản âm đẩy ra chứ không bị hút về.</p></div>
 </div>
 </div>
 
@@ -37,7 +37,7 @@
 
 <ul>
 <li><strong>Điện trường đều:</strong> vectơ $\vec E$ tại mọi điểm bằng nhau — cùng phương, cùng chiều, cùng độ lớn.</li>
-<li><strong>Cách tạo:</strong> hai bản kim loại phẳng song song, cách nhau $d$, tích điện trái dấu. Giữa hai bản có hiệu điện thế $U$.</li>
+<li><strong>Cách tạo:</strong> hai bản kim loại phẳng song song, rộng hơn nhiều so với khoảng cách $d$ giữa chúng, tích điện trái dấu. Giữa hai bản có hiệu điện thế $U$.</li>
 <li><strong>Đường sức:</strong> thẳng, song song, cách đều nhau.</li>
 <li>Phương vuông góc với hai bản; chiều từ bản dương sang bản âm.</li>
 <li>Gần mép bản, đường sức cong ra: ở đó không còn đều.</li>
@@ -87,7 +87,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> dán hai thanh đồng song song lên giấy dẫn điện, cách nhau $d = 6{,}0$ cm. Nối với nguồn $U = 9{,}0$ V. Que đo âm của vôn kế số chạm thanh âm; que dương đặt lần lượt cách thanh âm $x = 1$, $2$, $3$, $4$, $5$ cm, ở giữa tờ giấy.</li>
 <li><strong>Quan sát:</strong> số đọc $V$ tăng đều theo $x$: mỗi cm thêm $1{,}5$ V (số liệu minh hoạ tính từ mô hình, lý tưởng hơn số đo thật).</li>
-<li><strong>Rút ra:</strong> $V/x$ không đổi, bằng $U/d$. Điện trường giữa hai thanh là đều.</li>
+<li><strong>Rút ra:</strong> $V$ là hiệu điện thế từ thanh âm tới điểm đo, nên $V/x$ là $E$ trên đoạn dài $x$. Mọi đoạn cho cùng $E = U/d$: điện trường giữa hai thanh là đều.</li>
 </ol>
 </div>
 
@@ -108,7 +108,7 @@
 
 <details class="tl-details">
 <summary>👀 Sai số đến từ đâu?</summary>
-<p>Vôn kế lệch $\pm 0{,}1$ V. Ở $x = 1$ cm, $E$ lệch tới $\dfrac{0{,}1}{0{,}01} = 10$ V/m (gần 7 %). Ở $x = 5$ cm chỉ lệch $\dfrac{0{,}1}{0{,}05} = 2$ V/m (khoảng 1,3 %). Ngoài ra: đặt que lệch vị trí vài mm, và đo gần mép giấy thì trường không đều.</p>
+<p>Vôn kế lệch $\pm 0{,}1$ V, như nhau ở mọi hàng của bảng.<br>Đặt que lệch vị trí vài mm.<br>Đo gần mép giấy thì trường không đều.</p>
 </details>
 
 <p>Vôn kế sai số $\pm 0{,}1$ V. Muốn tính $E$ chính xác nhất từ <strong>một</strong> hàng của bảng, nên chọn hàng nào?</p>
@@ -126,7 +126,7 @@
 
 <p><strong>🔑 Ngang thẳng đều · dọc nhanh dần đều · quỹ đạo parabol</strong></p>
 
-<p>Điện tích $q$, khối lượng $m$ bay vào với $\vec v_0$ vuông góc đường sức. Chân không, bỏ qua trọng lực. Gốc $O$ tại điểm hạt bắt đầu vào trường, $Oy$ cùng chiều lực điện.</p>
+<p>Điện tích $q$, khối lượng $m$ bay vào với $\vec v_0$ vuông góc đường sức. Chân không, bỏ qua trọng lực (được phép khi $mg$ rất nhỏ so với $|q|E$, như với electron, proton, ion). Gốc $O$ tại điểm hạt bắt đầu vào trường, $Oy$ cùng chiều lực điện.</p>
 
 <ul>
 <li>Lực điện: $F = |q|E = |q|\dfrac{U}{d}$, không đổi, vuông góc $\vec v_0$.</li>
@@ -135,7 +135,7 @@
 <li>Theo $Oy$ (dọc lực): nhanh dần đều, $y = \tfrac12 a t^2$.</li>
 </ul>
 
-<p>Khử $t$ được phương trình quỹ đạo — một nhánh <strong>parabol</strong>:</p>
+<p>Từ $x = v_0 t$ có $t = x/v_0$, thay vào $y$ được phương trình quỹ đạo — một nhánh <strong>parabol</strong> (chỉ nửa ứng với $x \geq 0$):</p>
 
 <p>$$y = \dfrac{|q|\,U}{2\,m\,d\,v_0^2}\,x^2$$</p>
 
@@ -145,7 +145,7 @@
 <li>Bề lõm parabol hướng vào bản tích điện trái dấu với $q$. Độ lớn luôn tính bằng $|q|$.</li>
 </ul>
 
-<p>Mẹo: <strong>"Ném ngang, đổi g thành a"</strong> — mọi công thức ném ngang dùng lại được, chỉ thay $g$ bằng $a = \dfrac{|q|E}{m}$.</p>
+<p>Mẹo: <strong>"Ném ngang, đổi g thành a"</strong>, với $a = \dfrac{|q|E}{m}$.</p>
 
 <!--FIG3-->
 
@@ -187,7 +187,7 @@
 <thead><tr><th>Hạt (trường $\vec E$ hướng sang phải)</th><th>Lực điện</th></tr></thead>
 <tbody>
 <tr><td>Proton ($q\gt 0$)</td><td>Sang phải, cùng chiều $\vec E$</td></tr>
-<tr><td>Ion âm ($q\lt 0$)</td><td>Sang trái, ngược chiều $\vec E$</td></tr>
+<tr><td>Electron hoặc ion âm ($q\lt 0$)</td><td>Sang trái, ngược chiều $\vec E$</td></tr>
 </tbody>
 </table>
 </div>
@@ -237,7 +237,7 @@
 <table class="tl-table">
 <thead><tr><th>Sai</th><th>Đúng</th></tr></thead>
 <tbody>
-<tr><td>$d = 2$ cm, $E = 100/2 = 50$ V/m</td><td>$d = 0{,}02$ m, $E = 5000$ V/m</td></tr>
+<tr><td>$U = 100$ V, $d = 2$ cm, $E = 100/2 = 50$ V/m</td><td>$d = 0{,}02$ m, $E = 5000$ V/m</td></tr>
 <tr><td>Dùng $E = U/d$ cho điện tích điểm</td><td>Chỉ dùng cho điện trường đều, xa mép bản</td></tr>
 </tbody>
 </table>
@@ -394,7 +394,7 @@
 
 <details class="tl-details">
 <summary>⭐⭐⭐ Đặt màn cách mép ra của hai bản $D = 20$ cm. Vệt sáng lệch khỏi điểm giữa màn bao nhiêu?</summary>
-<p>Ra khỏi bản, electron đi thẳng (bẫy 2). Lệch thêm $D\tan\alpha = 200\cdot0{,}10 = 20$ mm. Tổng: $Y = 2{,}5 + 20 = 22{,}5$ mm.<br>Mẹo kiểm: đường thẳng đó kéo ngược đi qua trung điểm hai bản, $Y = (L/2 + D)\tan\alpha = 225\cdot0{,}10 = 22{,}5$ mm.<br>Vì sao qua trung điểm: $\tan\alpha = \dfrac{v_y}{v_0} = \dfrac{aL}{v_0^2}$, còn $y = \dfrac{aL^2}{2v_0^2} = \dfrac{L}{2}\tan\alpha$ (ở đây $25\cdot0{,}10 = 2{,}5$ mm).<br>Vậy lùi từ mép ra một đoạn $L/2$ thì đường thẳng hạ đúng $y$, về lại trục bay ban đầu.</p>
+<p>Ra khỏi bản, electron đi thẳng (bẫy 2). Với $D = 20$ cm $= 200$ mm: lệch thêm $D\tan\alpha = 200\ \text{mm}\cdot0{,}10 = 20$ mm. Tổng: $Y = 2{,}5 + 20 = 22{,}5$ mm.<br>Mẹo kiểm: đường thẳng đó kéo ngược đi qua trung điểm hai bản, $Y = (L/2 + D)\tan\alpha = 225\ \text{mm}\cdot0{,}10 = 22{,}5$ mm.<br>Vì sao qua trung điểm: $\tan\alpha = \dfrac{v_y}{v_0} = \dfrac{aL}{v_0^2}$, còn $y = \dfrac{aL^2}{2v_0^2} = \dfrac{L}{2}\tan\alpha$ (ở đây $25\ \text{mm}\cdot0{,}10 = 2{,}5$ mm).<br>Vậy lùi từ mép ra một đoạn $L/2$ thì đường thẳng hạ đúng $y$, về lại trục bay ban đầu.</p>
 </details>
 </div>
 

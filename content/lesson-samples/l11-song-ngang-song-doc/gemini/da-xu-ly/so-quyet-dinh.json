@@ -1,6 +1,6 @@
 {
   "bai": "l11-song-ngang-song-doc",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-10",
     "model": "claude-opus-5-5",
@@ -112,5 +112,125 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-song-ngang-song-doc/gemini/da-xu-ly/theory.src.202610100630.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu hỏi quiz Bẫy 2 đổi quy ước thành '$u \\gt 0$ là lệch theo chiều dương trục $x$' cho khớp danh sách, và thêm dòng 'đổi quy ước thì nén và dãn đổi chỗ cho nhau'."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm điều kiện ($u \\gt 0$ theo chiều $+x$) vào cả hai dòng Nén và Dãn ở khung Mang về."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng 'Nén – dãn gần nhất: cách λ/2' vào khung Mang về."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm 'sóng âm trong không khí' vào dòng Ví dụ của mục Sóng dọc, đồng thời rút gọn phản hồi đúng của q2 để bù độ dài."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi 'vùng giãn' thành 'vùng dãn' trong phần mô phỏng cho thống nhất toàn bài."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details, giải thích rằng độ trễ bấm tay gần như không đổi và sai số tỉ đối là sai số chia cho giá trị đo."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào danh sách Sóng âm ở mục 4 dòng: sang môi trường khác thì $f$ giữ theo nguồn, $v$ đổi nên $\\lambda$ đổi."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn bước trung gian $1/4{,}5 - 1/8 \\approx 0{,}0972$ s/km rồi $d = 20/0{,}0972 \\approx 206$ km."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án Trả bài câu 1 tách thành từng dòng và thêm ý sóng cơ ngang cũng không truyền trong chân không, khác sóng điện từ."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại thành 'Nếu sóng tới M trước khi tới O (M sớm pha hơn O) thì dùng dấu +'."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chuyển câu định nghĩa sóng cơ ra một đoạn riêng ngay dưới tiêu đề mục II, trước mục 1 Sóng ngang."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q1 đã nhấn lỗi chọn A nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q2 đã nhấn lỗi chọn B nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nói rõ ánh sáng không phải sóng cơ nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q4 đã nhấn lỗi quên bình phương nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q5 đã nhấn lỗi gán $v \\cdot t$ cho phao nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q6 đã giải thích vì sao đỉnh đồ thị không phải vùng nén nên không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã có câu chốt so với phương truyền sóng, không so với mặt đất."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi q8 đã nhấn lỗi coi 0,2 m là cả bước sóng nên không thêm dòng ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II: định nghĩa sóng cơ chuyển từ danh sách Sóng ngang lên thành đoạn mở đầu mục II.",
+      "Mục 2 Sóng dọc: dòng Ví dụ thêm 'sóng âm trong không khí'.",
+      "Quiz tl28-q2: phản hồi đúng rút gọn, bỏ phần mô tả màng loa nén, dãn; nội dung vật lí không đổi.",
+      "Mục 4: thêm dòng 'Sang môi trường khác: $f$ giữ nguyên theo nguồn, $v$ đổi nên $\\lambda = v/f$ đổi'.",
+      "Bẫy 2, câu hỏi quiz tl28-q6: quy ước '$u \\gt 0$ lệch theo chiều truyền' đổi thành 'lệch theo chiều dương trục $x$'.",
+      "Bẫy 2, danh sách: thêm dòng 'Đổi quy ước ($u \\gt 0$ theo chiều âm trục $x$) thì nén và dãn đổi chỗ cho nhau'.",
+      "Bẫy 3: câu chốt bỏ cụm 'hay với dây'.",
+      "Details đọc bảng TN: giải thích sai số tỉ đối là sai số chia cho giá trị đo, và độ trễ bấm tay gần như không đổi.",
+      "Details ôn bài 8: điều kiện dùng dấu + ghi rõ là khi sóng tới M trước O (M sớm pha hơn O).",
+      "Trả bài câu 1: thêm ý sóng cơ ngang không truyền trong chân không, khác sóng điện từ.",
+      "Thách đấu động đất: thêm bước trung gian $1/4{,}5 - 1/8 \\approx 0{,}0972$ s/km; kết quả $d \\approx 206$ km không đổi.",
+      "Mang về: dòng Nén và dòng Dãn thêm điều kiện $u \\gt 0$ theo chiều $+x$.",
+      "Mang về: thêm dòng 'Nén – dãn gần nhất: cách $\\lambda/2$'."
+    ],
+    "so_tu_them": 38,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-song-ngang-song-doc/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

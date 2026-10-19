@@ -1,6 +1,6 @@
 {
   "bai": "l10-trong-luc-luc-cang",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -122,5 +122,257 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-trong-luc-luc-cang/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng hành trang câu 2 đổi thành: bài mẫu viết F = ma cho từng vật rồi cộng lại, lực căng triệt tiêu, hợp lực chỉ còn trọng lượng vật treo."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng dữ liệu thêm \"(lực đỡ, hướng lên)\" sau phản lực $\\vec N$; kí hiệu có mũi tên vectơ nên đã tách khỏi đơn vị N từ vòng trước."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng công thức Bẫy 2 thành phần suy ra từ định luật 2 (chiều dương theo gia tốc, T − P = ma và P − T = ma), mỗi trường hợp một dòng; bù bằng cắt câu hỏi phụ trong phản hồi đúng Câu 4."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu nằm trong chú thích hình, không có trong bài)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ dòng ⚠ trước Câu 6 nhưng thêm hướng đúng: xét phương trình của vật B, nơi chỉ có a đổi."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(vẽ trên vật: mũi tên đi ra khỏi vật)\" vào dòng Chiều của lực căng cho khớp Bẫy 3."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: dây nhẹ (khối lượng không đáng kể), ròng rọc nhẹ, nhẵn (không ma sát); bù bằng bỏ gạch đầu dòng \"ròng rọc cố định chỉ đổi hướng\" vốn lặp ý với thí nghiệm 3."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Khung Mang về thêm điều kiện \"vật đồng chất, đối xứng thì ở tâm đối xứng\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thí nghiệm ghi rõ hai đường đã đủ xác định G, lần treo C để kiểm tra; bù bằng rút gọn ví dụ dây dọi ở mục 1."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trung bình từ P/m chưa làm tròn là 9,73 N/kg (không phải 9,75 của các số đã làm tròn), ghi rõ trong <details>."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 lời giải viết thêm T + (P_B − T) = m_A a + m_B a, T triệt tiêu."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai câu dự đoán tách mỗi phương án một dòng và thêm dòng cho D (chỗ gần đất nhất không phải điểm đặt trọng lực)."
+      },
+      {
+        "id": "q-tl62-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn điểm buộc dây là chỗ đặt lực căng, không cần thêm ⚠."
+      },
+      {
+        "id": "q-ht62-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi để nguyên đơn vị gam, không cần thêm ⚠."
+      },
+      {
+        "id": "q-ht62-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi lấy m chia F, không cần thêm ⚠."
+      },
+      {
+        "id": "q-tl62-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Ví dụ 9,8 → 9,78 N đã nhấn khối lượng giữ nguyên, trọng lượng đổi theo g."
+      },
+      {
+        "id": "q-tl62-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn phương lực căng trùng với sợi dây."
+      },
+      {
+        "id": "q-tl62-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 đã nhấn trọng lượng đổi theo g nơi đặt vật."
+      },
+      {
+        "id": "q-tl62-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn T = P chỉ khi không có gia tốc."
+      },
+      {
+        "id": "q-tl62-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn lực căng luôn đi ra khỏi vật, dọc theo dây."
+      },
+      {
+        "id": "q-tl62-q7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 6 đã thêm ở vòng 1 (vòng này chỉ bổ sung hướng xét phương trình vật B)."
+      }
+    ],
+    "doi_noi_dung": [
+      "Details bảng đo trọng lượng: trung bình P/m sửa từ ≈ 9,7 thành ≈ 9,73 N/kg (tính từ P/m chưa làm tròn), kết luận khớp g không đổi.",
+      "Bẫy 2: công thức T = m(g ± a) nay được suy ra từ T − P = ma (a hướng lên) và P − T = ma (a hướng xuống), chiều dương theo gia tốc.",
+      "Phản hồi đúng Câu 4: bỏ câu hỏi phụ về cáp đứt lúc khởi động, số liệu 5 250 N giữ nguyên.",
+      "Lời giải bài mẫu bước 3: thêm T + (P_B − T) = m_A a + m_B a, T triệt tiêu; kết quả a = 2 m/s², T = 4 N không đổi.",
+      "Dòng ⚠ trước Câu 6: thêm hướng dùng phương trình vật B (chỉ a đổi).",
+      "Hành trang câu 2: phản hồi đúng nói rõ khi cộng phương trình hai vật thì lực căng triệt tiêu, hợp lực chỉ còn trọng lượng vật treo.",
+      "Mục II.4: dây nhẹ = khối lượng không đáng kể, ròng rọc nhẵn = không ma sát; chiều lực căng trên vật là mũi tên đi ra khỏi vật.",
+      "Mục II.5: bỏ gạch đầu dòng \"ròng rọc cố định chỉ đổi hướng lực căng\" (ý này vẫn nằm ở kết luận thí nghiệm 3 và khung Mang về).",
+      "Thí nghiệm trọng tâm: hai đường dây dọi đủ xác định G, lần treo C để kiểm tra.",
+      "Bảng dữ liệu bài mẫu: phản lực $\\vec N$ chú thích là lực đỡ hướng lên.",
+      "Khung Mang về: trọng tâm ở tâm đối xứng chỉ với vật đồng chất, đối xứng."
+    ],
+    "so_tu_them": 20,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-trong-luc-luc-cang/gemini/da-xu-ly/theory.src.202610191619.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã sửa phản hồi hành trang câu 2 (viết F = ma từng vật rồi cộng, T triệt tiêu), câu trích không còn trong bài."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm \"(lực đỡ, hướng lên)\" sau phản lực $\\vec N$ trong bảng dữ liệu."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm dòng suy ra T − P = ma và P − T = ma theo chiều gia tốc ở Bẫy 2."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu nằm trong chú thích hình, không có trong bài)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm hướng đúng vào dòng ⚠: xét phương trình của vật B, nơi chỉ có a đổi."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm \"(vẽ trên vật: mũi tên đi ra khỏi vật)\" vào dòng Chiều."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã giải thích dây nhẹ (khối lượng không đáng kể), ròng rọc nhẵn (không ma sát)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Khung Mang về đã có \"vật đồng chất, đối xứng thì ở tâm đối xứng\"."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Thí nghiệm đã ghi hai đường đủ xác định G, lần treo C để kiểm tra."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Details đã ghi 9,73 N/kg tính từ P/m chưa làm tròn."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Lời giải đã có bước T + (P_B − T) = m_A a + m_B a, T triệt tiêu."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi sai câu dự đoán đã có dòng riêng cho D."
+      },
+      {
+        "id": "q-tl62-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn điểm buộc dây là chỗ đặt lực căng, không cần thêm ⚠."
+      },
+      {
+        "id": "q-ht62-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi để nguyên đơn vị gam."
+      },
+      {
+        "id": "q-ht62-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi lấy m chia F."
+      },
+      {
+        "id": "q-tl62-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Ví dụ 9,8 → 9,78 N ở mục 3 đã nhấn khối lượng giữ nguyên, trọng lượng đổi theo g."
+      },
+      {
+        "id": "q-tl62-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 4 đã nhấn phương lực căng trùng với sợi dây và điểm đặt ở chỗ tiếp xúc."
+      },
+      {
+        "id": "q-tl62-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 đã nhấn trọng lượng đổi theo g nơi đặt vật."
+      },
+      {
+        "id": "q-tl62-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn T = P chỉ khi không có gia tốc."
+      },
+      {
+        "id": "q-tl62-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 và bảng vẽ đúng/sai đã nhấn lực căng dọc theo dây, mũi chĩa ra xa vật."
+      },
+      {
+        "id": "q-tl62-q7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 6 đã có từ vòng 1, vòng 2 bổ sung hướng xét phương trình vật B."
+      }
+    ],
+    "doi_noi_dung": [
+      "Lint độ dài: cắt ~140 từ hiện ngay, không đổi kiến thức hay số liệu nào.",
+      "Mục II.3: bỏ gạch đầu dòng \"đo trọng lượng bằng lực kế, khối lượng bằng cân\" (vẫn có ở bảng Bẫy 1 và Trả bài 4).",
+      "Mục II.3: viết gọn ví dụ 1 kg, g = 9,8 → 9,78 m/s², số liệu giữ nguyên (9,8 N → 9,78 N).",
+      "Bẫy 2: bỏ câu ví dụ thang máy khởi động (đã có ở Câu 4 và mục Đời sống).",
+      "Thí nghiệm 1: gộp bước treo đĩa CD vào dòng Quan sát, vẫn dẫn Hình 2c."
+    ],
+    "so_tu_them": -140,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-trong-luc-luc-cang/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

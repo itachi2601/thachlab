@@ -5,169 +5,115 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "I. Mở bài: đồ thị chuyến đi xe đạp",
-      "trich_nguyen_van": "toạ độ $x$ của một bạn đi xe đạp theo thời gian $t$",
+      "vi_tri": "Bẫy 3: đọc quãng đường ở điểm cuối của đồ thị",
+      "trich_nguyen_van": "Đọc ở điểm cuối (so với điểm đầu)",
       "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Bài tên là đồ thị độ dịch chuyển – thời gian nhưng Hình 1 lại vẽ toạ độ x. Em không biết đồ thị x–t và d–t là một hay hai loại. Mối liên hệ x = d chỉ xuất hiện sau, ở mục 2.",
-      "de_xuat": "Thêm một câu ngay dưới Hình 1: gốc toạ độ ở nhà, nơi bạn xuất phát, nên ở đây x chính là độ dịch chuyển d."
+      "muc": "khó",
+      "em_hieu_la": "Cứ đọc giá trị d ở điểm cuối là ra độ dịch chuyển. Nhưng ở Hình 3, đường ④ có d = 14 m lúc t = 0, tức trục đứng là toạ độ chứ không phải độ dịch chuyển tính từ chỗ xuất phát. Với xe ④, đọc thẳng ở điểm cuối (2 m) sẽ sai; phải lấy 2 − 14 = −12 m.",
+      "de_xuat": "Ghi rõ một lần: trục đứng là vị trí tính từ gốc; độ dịch chuyển = d cuối − d đầu, chỉ bằng d ở điểm cuối khi vật xuất phát tại gốc."
     },
     {
       "id": "c2",
       "vi_tri": "4. Độ dốc là vận tốc",
       "trich_nguyen_van": "④ đi xuống (hai đầu ghi số 14 và 2 trên trục)",
-      "loai": "mơ_hồ",
+      "loai": "khác",
       "muc": "khó",
-      "em_hieu_la": "Mục 3 vừa dạy d = vt, tức lúc t = 0 thì d = 0. Xe ④ lại có d = 14 m ngay lúc t = 0. Em không hiểu xe chưa đi sao đã 'dịch chuyển' 14 m, và không biết lúc nào dùng được d = vt.",
-      "de_xuat": "Nói rõ d ở Hình 3 được đo từ một gốc chung (vị trí so với mốc) chứ không đo từ chỗ xuất phát của từng xe, và viết dạng tổng quát d = d₀ + vt."
+      "em_hieu_la": "Mục 2 nói chỉ khi x₀ = 0 thì x = d. Ở đây xe ④ xuất phát với d = 14 m, nên em không biết d là toạ độ hay độ dịch chuyển. Em dễ nghĩ xe ④ đã dịch chuyển 14 m ngay lúc t = 0.",
+      "de_xuat": "Thêm một câu dưới Hình 3: 'Ở hình này trục đứng là vị trí so với gốc chung; xe ④ xuất phát cách gốc 14 m.'"
     },
     {
       "id": "c3",
-      "vi_tri": "Bẫy 1: coi đồ thị là con đường",
-      "trich_nguyen_van": "Trục đứng là vị trí, không phải độ cao",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Hai câu liền nhau gọi trục đứng hai tên khác nhau: trên là 'độ dịch chuyển', dưới lại là 'vị trí'. Em không chắc đó là cùng một đại lượng hay khác nhau.",
-      "de_xuat": "Thống nhất một tên, hoặc ghi rõ: vị trí đo từ gốc đặt tại chỗ xuất phát chính là độ dịch chuyển."
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Thay thẳng vào $d = 8 - 2t$ là sai.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Công thức d = d₀ + v(t − t₀) xuất hiện lần đầu ở đây. Mục 2 chỉ dạy x = x₀ + vt với t₀ = 0. Biểu thức 8 − 2t cũng chưa hề được ai viết ra, nên em không hiểu nó từ đâu tới và vì sao bị coi là sai.",
+      "de_xuat": "Giới thiệu dạng d = d₀ + v(t − t₀) ở mục 2 (trường hợp đoạn bắt đầu lúc t₀ ≠ 0). Ở đây chỉ ra rằng thay t = 8 vào 8 − 2t cho −8 m, vô lí."
     },
     {
       "id": "c4",
       "vi_tri": "3. Vẽ đồ thị từ bảng số liệu",
       "trich_nguyen_van": "Độ dốc: 30 cm : 6 s = 5 cm/s.",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Bài không nói 30 cm và 6 s lấy từ hai điểm nào. Em tưởng đây là chia d/t của một hàng trong bảng, dù bài vừa dặn không chia từng hàng. Cách này cũng chính là lỗi '2/4' mà Câu 2 chê. Trong bảng, hàng 30 cm lại ứng với 6,1 s chứ không phải 6 s.",
-      "de_xuat": "Ghi rõ hai điểm đọc trên đường kẻ, ví dụ (0 s; 0 cm) và (6 s; 30 cm), rồi viết phép tính (30 − 0)/(6 − 0) = 5 cm/s."
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ghi 30 cm ứng với 6,1 s, sao hình lại lấy 6 s? Bài cũng dặn lấy hai điểm xa nhau, mà (0; 0) và (6; 30) chưa phải xa nhất. Em không biết nên đọc số ở bảng hay ở đường kẻ.",
+      "de_xuat": "Nói rõ: điểm (6 s; 30 cm) đọc trên đường thẳng đã kẻ, không phải lấy từ bảng. Nên dùng hai điểm xa hơn, ví dụ (0; 0) và (10 s; 50 cm)."
     },
     {
       "id": "c5",
-      "vi_tri": "Bẫy 2: đường nằm cao hơn là xe nhanh hơn",
-      "trich_nguyen_van": "Đường ① đi lên ($v = 4\\ \\text{m/s}$)",
-      "loai": "nhảy_bước",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Đồ thị $d$–$t$ của một vận động viên trượt băng là đường thẳng qua",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Vận tốc 4 m/s của xe ① xuất hiện lần đầu trong lời phản hồi. Chú thích Hình 3 không cho số nào của đường ①, nên em không biết con số này từ đâu ra.",
-      "de_xuat": "Ghi toạ độ một điểm của đường ① trong chú thích Hình 3, hoặc tính ngay trong phản hồi: v₁ = (8 − 0)/(2 − 0) = 4 m/s."
+      "em_hieu_la": "Ngay trên vừa nói đường trượt băng là vòng cong nên phải vẽ s chứ không phải d. Xuống câu ⭐ lại vẽ d–t cho vận động viên trượt băng, nên em thấy mâu thuẫn.",
+      "de_xuat": "Ghi rõ ở câu ⭐ là 'trượt thẳng' hoặc đổi sang vật khác chuyển động thẳng."
     },
     {
       "id": "c6",
-      "vi_tri": "2. Phương trình chuyển động thẳng đều",
-      "trich_nguyen_van": "Chạy về vạch mốc thì $v$ bằng bao nhiêu?",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Đề không nói xe chạy về với tốc độ cũ, vậy mà đáp số là −1,5 m/s. Em không biết mình phải tự giả sử tốc độ không đổi.",
-      "de_xuat": "Sửa thành: 'Nếu xe chạy về vạch mốc với cùng tốc độ 1,5 m/s thì v bằng bao nhiêu?'"
-    },
-    {
-      "id": "c7",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "đường ray thẳng",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Xe ① có $x = 4t$, xe ④ có $x = 14 - 3t$",
       "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Bảng dữ liệu trích một cụm 'đường ray thẳng' không có trong đề. Đề viết 'đường thẳng ở sân trường', nên em đi tìm câu đó trong đề mà không thấy.",
-      "de_xuat": "Trích đúng cụm trong đề: \"chạy trên đường thẳng ở sân trường\"."
-    },
-    {
-      "id": "c8",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "đếm thời gian từ lúc bắt đầu đoạn",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Mục 2 chỉ dạy x = x₀ + vt với t₀ = 0. Với đoạn BC, em sẽ thay thẳng vào d = 8 − 2t và ra −8 m. Em không hiểu vì sao lại có (t − 6).",
-      "de_xuat": "Thêm một dòng: khi đoạn bắt đầu ở t₀ ≠ 0 thì d = d₀ + v(t − t₀); ở đây t − t₀ = 8 − 6 = 2 s."
-    },
-    {
-      "id": "c9",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "xem lại dòng \"chiều dương\" trong bảng dữ liệu",
-      "loai": "thiếu_ví_dụ",
-      "muc": "khó",
-      "em_hieu_la": "Câu 7 hỏi việc đổi chiều dương, nhưng bài chưa có đoạn nào dạy đổi chiều dương thì dấu thay đổi ra sao. Dòng 'chiều dương' trong bảng chỉ mô tả quy ước cũ, nên xem lại cũng không giúp được gì.",
-      "de_xuat": "Thêm vào mục 2 một gạch đầu dòng: đổi chiều dương thì x, d, v đều đổi dấu, đồ thị lật ngược qua trục t. Kèm một ví dụ ngắn."
-    },
-    {
-      "id": "c10",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "đồ thị độ cao theo thời gian cho biết thang đi nhanh hay chậm; độ dốc chính là tốc độ đó",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Bẫy 1 vừa dặn 'không phải độ cao', giờ ví dụ thang máy lại vẽ đúng độ cao. Bài cũng vừa dạy độ dốc là vận tốc có dấu, giờ lại gọi là 'tốc độ'. Em không biết nên tin câu nào.",
-      "de_xuat": "Nói rõ: thang máy đi theo đường thẳng đứng nên vị trí trùng với độ cao, và độ dốc là vận tốc (âm khi thang đi xuống)."
-    },
-    {
-      "id": "c11",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "vẽ quãng đường theo thời gian từng vòng",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Bẫy 3 vừa tách quãng đường khỏi độ dịch chuyển, giờ ví dụ lại vẽ quãng đường. Em không biết đồ thị s–t có phải là đồ thị d–t không.",
-      "de_xuat": "Ghi chú: trượt vòng không phải chuyển động thẳng nên ở đây vẽ quãng đường s, chứ không phải độ dịch chuyển d."
-    },
-    {
-      "id": "c12",
-      "vi_tri": "1. Quỹ đạo, độ dịch chuyển và quãng đường",
-      "trich_nguyen_van": "quỹ đạo thẳng, tốc độ không đổi.",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Em có thể nghĩ: đi ra 2 m/s rồi quay về ngay 2 m/s (tốc độ không đổi) cũng là thẳng đều. Trong khi đó mục 4 lại nói đồ thị của thẳng đều có một độ dốc duy nhất.",
-      "de_xuat": "Bổ sung 'và không đổi chiều' (tức vận tốc không đổi) vào định nghĩa chuyển động thẳng đều."
+      "em_hieu_la": "Hình 3 dùng trục d, giờ lại dùng x cho đúng hai đường đó. Em không chắc x và d ở đây có phải cùng một đại lượng không.",
+      "de_xuat": "Dùng thống nhất một kí hiệu, hoặc ghi chú '(ở đây x chính là d trên Hình 3)'."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "du_doan",
+      "cau": "Dự đoán trước khi học",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Thấy 'nằm ngang' thì liên tưởng tới 'đều, không đổi', tưởng là tốc độ không đổi.",
+      "loi_tu_duy": "Hiểu 'nằm ngang' là 'đều, ổn định', rồi gán với chạy tốc độ không đổi.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Nằm ngang = đứng yên"
+      "trich_nguyen_van": "B nhầm \"nằm ngang\" với \"đều\": chạy đều thì $x$ vẫn tăng đều, đồ thị là đường xiên."
     },
     {
       "cau": "cau1",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Coi độ dịch chuyển bằng quãng đường, cộng luôn đoạn quay lại thay vì trừ.",
+      "loi_tu_duy": "Coi độ dịch chuyển luôn bằng quãng đường, quên trường hợp quay đầu.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "quãng đường vẫn cộng thêm (luôn dương), còn độ dịch chuyển giảm, có thể âm"
+      "trich_nguyen_van": "Quay đầu: $\\lvert d\\rvert \\ne s$"
     },
     {
       "cau": "cau2",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Tính đúng độ lớn 12/4 = 3 nhưng bỏ dấu, quên rằng đường đi xuống thì vận tốc âm.",
+      "loi_tu_duy": "Tính đúng độ lớn 12/4 nhưng bỏ dấu, vì nghĩ vận tốc là số dương như tốc độ.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Dốc âm = đi ngược"
+      "trich_nguyen_van": "$3\\ \\text{m/s}$ là quên dấu — đường đi xuống thì $v$ âm."
     },
     {
       "cau": "cau3",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "B và D gần giống nhau, chỉ khác nhanh/chậm. Học sinh đảo hai từ này hoặc đọc lướt nên chọn nhầm.",
+      "loi_tu_duy": "Nhầm thứ tự dốc ít/dốc nhiều với chậm/nhanh vì hai phương án B và D gần giống nhau.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Dốc nhiều = nhanh"
+      "trich_nguyen_van": "D đảo nhanh/chậm: dốc <strong>ít</strong> là chậm, dốc <strong>nhiều</strong> là nhanh."
     },
     {
       "cau": "cau4",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Nhầm 'd tăng' với 'v tăng': thấy đồ thị đi lên thì nghĩ xe đang tăng tốc.",
+      "loi_tu_duy": "Thấy d tăng thì nghĩ vận tốc tăng, lẫn giá trị với độ dốc.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Độ dốc không đổi: vận tốc không đổi."
+      "trich_nguyen_van": "C nhầm $d$ tăng với $v$ tăng — $d$ tăng đều thì $v$ không đổi"
     },
     {
       "cau": "cau5",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Hai đường trùng nhau ở một điểm thì tưởng hai xe giống nhau ở mọi thứ, kể cả vận tốc.",
+      "loi_tu_duy": "Cho rằng hai đường cắt nhau nghĩa là hai xe 'bằng nhau' về mọi mặt, kể cả vận tốc.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Hai đường cắt nhau: cùng vị trí"
     },
     {
       "cau": "cau6",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Lấy điểm xa nhất (5 m) làm độ dịch chuyển, thay vì so điểm cuối với điểm đầu.",
+      "loi_tu_duy": "Lấy điểm xa nhất (5 m) làm độ dịch chuyển, nhất là khi bài vừa dặn 'điểm cuối cho d' mà chưa nói rõ trường hợp xuất phát không ở gốc.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Đọc ở điểm cuối (so với điểm đầu)"
+      "trich_nguyen_van": "D lấy điểm xa nhất làm độ dịch chuyển, trong khi $d$ chỉ so điểm cuối với điểm đầu."
     },
     {
       "cau": "cau7",
-      "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Nhớ hình đoạn BC là 'đi xuống' nên giữ v âm. Học sinh chỉ đổi dấu vị trí mà không nhận ra chiều về vạch mốc nay là chiều dương.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Chỉ nghĩ đến chiều chạy nên đổi dấu v, quên rằng vị trí d cũng là đại lượng có hướng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "⚠ Đổi chiều dương thì mọi đại lượng có hướng đều đổi dấu: cả $d$ lẫn $v$"
     }
   ]
 }

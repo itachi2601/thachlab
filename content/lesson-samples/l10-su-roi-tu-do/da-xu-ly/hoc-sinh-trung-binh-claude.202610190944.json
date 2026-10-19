@@ -1,0 +1,148 @@
+{
+  "bai": "Bài 10. Sự rơi tự do",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Công thức rơi tự do",
+      "trich_nguyen_van": "Đây chính là công thức Bài 9 với ${v_0 = 0}$ và ${a = g}$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không nhớ công thức tổng quát của Bài 9 (v = v₀ + at, d = v₀t + ½at², v² − v₀² = 2ad) nên không thấy ba công thức rơi tự do được suy ra thế nào, phải học thuộc rời rạc.",
+      "de_xuat": "Ghi lại ba công thức tổng quát của Bài 9 ngay trên dòng này, rồi gạch thay v₀ = 0, a = g để ra từng công thức rơi tự do."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Công thức rơi tự do",
+      "trich_nguyen_van": "(bằng độ dịch chuyển, vì vật không đổi chiều): $d = s = \\dfrac{1}{2}gt^2$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ký hiệu d xuất hiện lần đầu trong bài mà không được nói là độ dịch chuyển. Sau đó bài chỉ dùng s, nên dễ băn khoăn có phải phân biệt d và s khi làm bài hay không.",
+      "de_xuat": "Viết rõ 'd (độ dịch chuyển) = s (quãng đường)', rồi nói từ đây bài chỉ dùng s."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Đặc điểm của chuyển động rơi tự do",
+      "trich_nguyen_van": "mỗi khoảng dài hơn khoảng trước đúng $9{,}8\\ \\text{cm}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không biết vì sao chênh lệch đúng 9,8 cm (= g·Δt² với Δt = 0,1 s). Cũng không nối được 'chênh đều 9,8 cm' với tỉ lệ 1 : 3 : 5 : 7 ở mẹo ngay dưới, vì bài không cho độ dài khoảng đầu (4,9 cm).",
+      "de_xuat": "Ghi các khoảng cụ thể 4,9 – 14,7 – 24,5 – 34,3 cm, chỉ ra chúng chênh nhau 9,8 cm và tỉ lệ 1 : 3 : 5 : 7."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "2. Đặc điểm của chuyển động rơi tự do",
+      "trich_nguyen_van": "Các khoảng dài thêm đều đặn, tức vận tốc tăng đều: nhanh dần đều.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chưa thấy vì sao 'khoảng dài thêm đều' lại suy ra 'vận tốc tăng đều'. Học sinh dễ chỉ ghi nhớ câu này mà không hiểu.",
+      "de_xuat": "Thêm một câu: mỗi khoảng chia 0,1 s là tốc độ trung bình trong khoảng đó, các tốc độ này tăng thêm 0,98 m/s sau mỗi 0,1 s."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "1. Rơi trong không khí và rơi tự do",
+      "trich_nguyen_van": "Lực cản càng nhỏ so với trọng lực thì vật rơi càng nhanh",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Hai dòng liền nhau dùng 'trọng lực' rồi 'trọng lượng'. Học sinh dễ tưởng đây là hai đại lượng khác nhau và phân vân nên so lực cản với cái nào.",
+      "de_xuat": "Thống nhất một từ, hoặc thêm chú thích 'trọng lượng là độ lớn của trọng lực'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "4. Gia tốc rơi tự do",
+      "trich_nguyen_van": "$g$ phụ thuộc <strong>vĩ độ địa lí</strong> và <strong>độ cao</strong>; càng lên cao, $g$ càng nhỏ.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chỉ nói chiều thay đổi theo độ cao. Chiều thay đổi theo vĩ độ thì phải tự đọc ra từ bảng, nên dễ không nhận ra g tăng dần từ xích đạo về địa cực.",
+      "de_xuat": "Thêm vế 'càng về gần địa cực, g càng lớn (xem bảng)'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "4. Gia tốc rơi tự do",
+      "trich_nguyen_van": "năm lần đo cho $g$ từ $9{,}52$ đến $9{,}66\\ \\text{m/s}^2$, sát nhau và gần ${9{,}8\\ \\text{m/s}^2}$: tại một nơi, bi rơi với cùng một gia tốc",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh thấy các giá trị đều thấp hơn 9,8 và lệch nhau 0,14 mà vẫn được gọi là 'gần'. Họ cũng có thể tưởng thí nghiệm với một hòn bi đã chứng minh được 'mọi vật cùng g'.",
+      "de_xuat": "Nói rõ thí nghiệm chỉ cho thấy gia tốc không đổi theo quãng rơi, còn 'mọi vật cùng g' đã được chứng minh bằng ống Newton."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "4. Gia tốc rơi tự do",
+      "trich_nguyen_van": "vẽ $\\sqrt{s}$ theo $t$: hệ số góc bằng $\\sqrt{g/2}$, còn phần trễ chỉ làm đường thẳng dịch sang một bên",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Các cụm 'sai số hệ thống', 'dư từ', 'hệ số góc' và việc vẽ √s theo t đều không được giải thích. Học sinh không theo được và dễ bỏ qua cả đoạn.",
+      "de_xuat": "Thêm một câu giải thích s = ½g(t − δ)² nên √s = √(g/2)·(t − δ), hoặc đánh dấu đoạn này là mở rộng, không bắt buộc."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 1: \"Vật nặng rơi nhanh hơn\"",
+      "trich_nguyen_van": "B. Lông chim lơ lửng, vì trên Mặt Trăng không có trọng lực",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Trước câu này, bài chưa từng nói Mặt Trăng cũng hút vật. Học sinh nhầm 'không có không khí' với 'không có trọng lực' mà không có chỗ nào trong bài để đối chiếu.",
+      "de_xuat": "Thêm vào bảng hoặc mục II.4 một dòng: 'trên Mặt Trăng g ≈ 1,6 m/s², vẫn có trọng lực'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "V. Bài toán mẫu: chậu hoa rơi từ ban công",
+      "trich_nguyen_van": "độ cao gấp 4 (80 m) thì thời gian rơi có gấp 4?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài tập đứng ngay trước dùng 45 m, nên học sinh dễ tưởng 'gấp 4' là so với 45 m và 'đề gốc' là đề 45 m.",
+      "de_xuat": "Viết rõ 'gấp 4 đề gốc 20 m (80 m)'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cho rằng vật nặng hơn rơi nhanh hơn, bỏ qua việc vo tròn đã làm giảm lực cản.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Thứ quyết định nhanh hay chậm là <strong>lực cản không khí</strong>, không phải nặng hay nhẹ."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nghĩ tờ giấy để phẳng rơi thẳng xuống thì chỉ chịu trọng lực, quên rằng lực cản lên nó lớn so với trọng lượng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Rơi trong không khí mà lực cản <strong>không đáng kể</strong> so với trọng lượng: cũng coi là rơi tự do."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quên hệ số ½, tính s = gt².",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Chấp nhận lực cản bằng 0 nhưng vẫn ngầm nghĩ vật nhẹ thì chậm hơn, nên chọn phương án 'chênh ít hơn'.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Khi không còn lực cản, mọi vật có cùng gia tốc $g$."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nhầm 'giây thứ 2' với '2 giây đầu', lấy luôn s₂ = 19,6 m.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "\"Trong giây thứ 3\" chỉ là quãng từ ${t = 2\\ \\text{s}}$ đến ${t = 3\\ \\text{s}}$."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Nhớ có căn nhưng lấy nhầm dòng 'độ cao gấp 2 thì t gấp √2' trong bảng Bẫy 3. Đây là kiểu nhầm hai phương án gần giống nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Độ cao gấp 4</td><td>$t$ và $v$ chạm đất gấp 2"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Rút h từ v² = 2gh nhưng quên số 2 ở mẫu, tính h = v²/g.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

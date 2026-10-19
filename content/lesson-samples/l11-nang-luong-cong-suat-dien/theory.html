@@ -80,7 +80,7 @@
 <li>Từ nhãn suy ra: $I_{\text{đm}} = P_{\text{đm}}/U_{\text{đm}}$ và $R = U_{\text{đm}}^2/P_{\text{đm}}$. Đèn 220 V – 100 W có $R = 220^2/100 = 484\ \Omega$.</li>
 </ul>
 
-<p>Mẹo nhớ: <strong>"U bình chia P ra R"</strong>.</p>
+<p>Mẹo nhớ: <strong>"U bình phương chia P ra R"</strong>.</p>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-nang-luong-dien-02">
 <p class="tl-label">🔬 Thí nghiệm: kiểm nhãn đèn xe máy 12 V – 21 W</p>
@@ -124,8 +124,7 @@
 <p>$$H = \dfrac{A_{\text{ích}}}{A_{\text{tp}}} = \dfrac{UIt}{\mathcal{E}It} = \dfrac{U}{\mathcal{E}}$$</p>
 
 <ul>
-<li>Mạch ngoài thuần điện trở, $R$ là điện trở tương đương: $U = IR$, $\mathcal{E} = I(R + r)$ nên $H = \dfrac{R}{R + r}$. Mạch ngoài có quạt, động cơ hay pin đang sạc (không chỉ là điện trở): chỉ dùng $H = U/\mathcal{E}$.</li>
-<li>$R$ càng lớn so với $r$, $H$ càng gần $100\ \%$.</li>
+<li>Mạch ngoài thuần điện trở, $R$ là điện trở tương đương: thay $U = IR$ vào $U = \mathcal{E} - Ir$ được $\mathcal{E} = I(R + r)$, nên $H = \dfrac{R}{R + r}$. Mạch ngoài có quạt, động cơ hay pin đang sạc (không chỉ là điện trở): chỉ dùng $H = U/\mathcal{E}$.</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-nang-luong-dien-03">
@@ -139,12 +138,12 @@
 
 <div class="table-scroll">
 <table class="tl-table">
-<thead><tr><th>$R$ ($\Omega$)</th><th>$U$ (V)</th><th>$H = U/\mathcal{E}$</th></tr></thead>
+<thead><tr><th>$R$ ($\Omega$)</th><th>$I$ (A)</th><th>$U$ (V)</th><th>$H = U/\mathcal{E}$</th></tr></thead>
 <tbody>
-<tr><td>$1{,}0$</td><td>$1{,}50$</td><td>$50\ \%$</td></tr>
-<tr><td>$2{,}0$</td><td>$2{,}00$</td><td>$66{,}7\ \%$</td></tr>
-<tr><td>$4{,}0$</td><td>$2{,}40$</td><td>$80\ \%$</td></tr>
-<tr><td>$9{,}0$</td><td>$2{,}70$</td><td>$90\ \%$</td></tr>
+<tr><td>$1{,}0$</td><td>$1{,}50$</td><td>$1{,}50$</td><td>$50\ \%$</td></tr>
+<tr><td>$2{,}0$</td><td>$1{,}00$</td><td>$2{,}00$</td><td>$66{,}7\ \%$</td></tr>
+<tr><td>$4{,}0$</td><td>$0{,}60$</td><td>$2{,}40$</td><td>$80\ \%$</td></tr>
+<tr><td>$9{,}0$</td><td>$0{,}30$</td><td>$2{,}70$</td><td>$90\ \%$</td></tr>
 </tbody>
 </table>
 </div>
@@ -155,17 +154,17 @@
 
 <details class="tl-details">
 <summary>👀 Sai số đến từ đâu?</summary>
-<p>Vôn kế lệch $\pm 0{,}05$ V: ở hàng $U = 1{,}50$ V, $H$ lệch tới $0{,}05/3{,}0 \approx 0{,}017$, tức $1{,}7$ điểm phần trăm ($50\ \%$ thành $48$–$52\ \%$); ở hàng $2{,}70$ V cũng lệch $1{,}7$ điểm phần trăm vì cùng chia cho $\mathcal{E}$. Lớn hơn là sai số của $\mathcal{E}$ và $r$: pin xả lâu thì $r$ tăng, $\mathcal{E}$ giảm, nên đo nhanh và nghỉ giữa các lần. Dây nối, kẹp và ampe kế nối tiếp với nguồn cộng thêm vào $r$, nên $U$, $H$ đo thấp hơn công thức một chút.</p>
+<p>Vôn kế lệch $\pm 0{,}05$ V: ở hàng $U = 1{,}50$ V, $H$ lệch tới $0{,}05/3{,}0 \approx 0{,}017$, tức $1{,}7$ điểm phần trăm (cộng hoặc trừ thẳng vào số %: $50\ \%$ thành khoảng $48$–$52\ \%$); ở hàng $2{,}70$ V cũng lệch $1{,}7$ điểm phần trăm vì cùng chia cho $\mathcal{E}$. Lớn hơn là sai số của $\mathcal{E}$ và $r$: pin xả lâu thì $r$ tăng, $\mathcal{E}$ giảm, nên đo nhanh và nghỉ giữa các lần. Dây nối, kẹp và ampe kế nối tiếp với nguồn cộng thêm vào $r$, nên $U$, $H$ đo thấp hơn công thức một chút.</p>
 </details>
 
 <p>Nhìn bảng: khi $R$ tăng mãi, hiệu suất nguồn thay đổi thế nào?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl44-q4" id="tl44-q4a"><label for="tl44-q4a" class="tl-opt tl-no">A. Giảm, vì $I$ giảm</label>
 <input type="radio" name="tl44-q4" id="tl44-q4b"><label for="tl44-q4b" class="tl-opt tl-no">B. Không đổi, vì $\mathcal{E}$ không đổi</label>
-<input type="radio" name="tl44-q4" id="tl44-q4c"><label for="tl44-q4c" class="tl-opt tl-no">C. Tăng rồi giảm, lớn nhất khi $R = r$</label>
+<input type="radio" name="tl44-q4" id="tl44-q4c"><label for="tl44-q4c" class="tl-opt tl-no">C. Tăng, đạt đúng $100\ \%$ khi $R$ đủ lớn</label>
 <input type="radio" name="tl44-q4" id="tl44-q4d"><label for="tl44-q4d" class="tl-opt tl-ok">D. Tăng dần, tiến tới $100\ \%$ nhưng không chạm</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $H = R/(R + r)$: $R$ càng lớn thì $r$ càng "lép", $H$ tiến sát 1. Không bao giờ bằng 1 vì luôn có $r \gt 0$. Đổi lại, $I$ rất nhỏ nên mạch ngoài nhận ít công suất.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $I$ giảm nhưng $U$ tăng; $H$ đi theo $U$, không theo $I$. B — $\mathcal{E}$ không đổi, nhưng $U = \mathcal{E} - Ir$ đổi theo $I$. C — "lớn nhất khi $R = r$" là chuyện của <em>công suất mạch ngoài</em>, không phải hiệu suất (xem ⭐⭐⭐ cuối bài). Đọc lại cột $H$: chỉ tăng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $I$ giảm nhưng $U$ tăng; $H$ đi theo $U$, không theo $I$. B — $\mathcal{E}$ không đổi, nhưng $U = \mathcal{E} - Ir$ đổi theo $I$. C — muốn $H = 100\ \%$ thì phải có $r = 0$; nguồn thật luôn có $r \gt 0$ nên $H$ chỉ tiến sát $100\ \%$. Đọc lại cột $H$: chỉ tăng.</p></div>
 </div>
 
 <h4>5. An toàn điện: đoản mạch và cầu chì</h4>
@@ -176,7 +175,7 @@
 <li><strong>Đoản mạch</strong> (ngắn mạch): hai cực nguồn nối thẳng, $R \to 0$, dòng $I = \mathcal{E}/r$ rất lớn vì $r$ nhỏ.</li>
 <li>Nhiệt $I^2r$ trong nguồn và $I^2R_{\text{dây}}$ tăng vọt → cháy. Riêng khi làm việc bình thường (không đoản mạch) với cùng dòng $I$, pin cũ ($r$ lớn) hao $I^2r$ trong nguồn nhiều hơn.</li>
 <li>Ví dụ: ắc quy xe máy $\mathcal{E} = 12$ V, $r = 0{,}02\ \Omega$ bị chiếc chìa khoá chạm hai cực: $I \approx 600$ A, nhiệt trong ắc quy $600^2 \cdot 0{,}02 = 7200$ W. Chìa khoá có $R$ nhỏ nhưng khác 0, với $600$ A thì $I^2R$ trong nó vẫn rất lớn: chìa đỏ rực, ắc quy có thể nổ.</li>
-<li>Bảo vệ: <strong>cầu chì / aptomat</strong> đúng dòng định mức, đứt trước khi dây nóng; dây dẫn tiết diện đủ; không để kim loại chạm hai cực ắc quy.</li>
+<li>Bảo vệ: <strong>cầu chì / aptomat</strong> tự ngắt mạch khi dòng vượt dòng định mức của nó, trước khi dây kịp nóng; dây dẫn tiết diện đủ; không để kim loại chạm hai cực ắc quy.</li>
 </ul>
 
 <details class="tl-details">
@@ -247,6 +246,7 @@
 </table>
 </div>
 
+<p>Đèn sáng hơn là đèn có công suất <em>thực</em> lớn hơn. Cùng $U_{\text{đm}}$ thì đèn có $P_{\text{đm}}$ nhỏ lại có $R = U_{\text{đm}}^2/P_{\text{đm}}$ lớn.</p>
 <p>Đèn 1 ghi 220 V – 100 W, đèn 2 ghi 220 V – 40 W, mắc <strong>nối tiếp</strong> vào $220$ V (coi $R$ không đổi). Đèn nào sáng hơn?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl44-q7" id="tl44-q7a"><label for="tl44-q7a" class="tl-opt tl-no">A. Đèn 1, vì $100$ W lớn hơn $40$ W</label>
@@ -254,7 +254,7 @@
 <input type="radio" name="tl44-q7" id="tl44-q7c"><label for="tl44-q7c" class="tl-opt tl-ok">C. Đèn 2, vì $R$ lớn hơn và $P = I^2R$</label>
 <input type="radio" name="tl44-q7" id="tl44-q7d"><label for="tl44-q7d" class="tl-opt tl-no">D. Cả hai sáng đúng định mức, vì mắc đúng $220$ V</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_1 = 484\ \Omega$, $R_2 = 1210\ \Omega$, $I = 220/1694 \approx 0{,}13$ A. $P_1 = I^2R_1 \approx 8{,}2$ W, $P_2 \approx 20{,}4$ W: đèn 40 W sáng hơn, cả hai đều mờ. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — 100 W là công suất khi đèn được đúng 220 V; nối tiếp thì mỗi đèn chỉ được một phần. B — cùng $I$ nhưng $R$ khác nhau, nên $I^2R$ khác nhau. D — 220 V chia cho hai đèn, không đèn nào đủ 220 V. Nối tiếp: hỏi $R$ nào lớn hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — 100 W là công suất khi đèn được đúng 220 V; nối tiếp thì mỗi đèn chỉ được một phần. B — cùng $I$ nhưng $R$ khác nhau, nên $I^2R$ khác nhau. D — 220 V chia cho hai đèn, không đèn nào đủ 220 V.</p></div>
 </div>
 
 <h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
@@ -288,8 +288,8 @@
 </details>
 
 <details class="tl-details">
-<summary>6. Vì sao đoản mạch gây cháy? Bảo vệ bằng gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>$R \to 0$ · $I = \mathcal{E}/r$ rất lớn · nhiệt $I^2r$, $I^2R_{\text{dây}}$ tăng vọt · cầu chì, aptomat đúng dòng định mức, dây đủ tiết diện.</p>
+<summary>6. Vì sao đoản mạch gây cháy? Bảo vệ bằng gì, chọn cầu chì thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p>$R \to 0$ nên $I = \mathcal{E}/r$ rất lớn, nhiệt $I^2r$ và $I^2R_{\text{dây}}$ tăng vọt.<br>Bảo vệ: cầu chì, aptomat đúng dòng định mức, dây đủ tiết diện.<br>Chọn cầu chì có dòng định mức hơi lớn hơn dòng làm việc: ấm $8{,}2$ A dùng cầu chì $10$ A.</p>
 </details>
 </div>
 
@@ -394,7 +394,7 @@
 
 <details class="tl-details">
 <summary>⭐⭐⭐ Nguồn $\mathcal{E} = 12$ V, $r = 1{,}0\ \Omega$, $R$ thay đổi được. $R$ bằng bao nhiêu thì mạch ngoài nhận công suất lớn nhất? $H$ lúc đó?</summary>
-<p>$P_R = I^2R = \dfrac{\mathcal{E}^2R}{(R + r)^2}$. Thử: $R = 0{,}5\ \Omega$ cho $32$ W; $R = 1{,}0\ \Omega$ cho $36$ W; $R = 2{,}0\ \Omega$ cho $32$ W. Lớn nhất khi $R = r$, $P_{\max} = \dfrac{\mathcal{E}^2}{4r} = 36$ W, nhưng khi đó $H = \dfrac{r}{2r} = 50\ \%$: nửa năng lượng nóng trong nguồn. Đây là lý do đáp án "Tăng rồi giảm, lớn nhất khi $R = r$" ở câu hỏi "$R$ tăng mãi" (mục II.4) sai: cực đại ở $R = r$ là của công suất, không phải hiệu suất.</p>
+<p>$P_R = I^2R = \dfrac{\mathcal{E}^2R}{(R + r)^2}$. Thử: $R = 0{,}5\ \Omega$ cho $32$ W; $R = 1{,}0\ \Omega$ cho $36$ W; $R = 2{,}0\ \Omega$ cho $32$ W. Lớn nhất khi $R = r$, $P_{\max} = \dfrac{\mathcal{E}^2}{4r} = 36$ W, nhưng khi đó $H = \dfrac{r}{2r} = 50\ \%$: nửa năng lượng nóng trong nguồn. Đừng lẫn với hiệu suất (mục II.4): $H$ chỉ tăng theo $R$, còn cực đại ở $R = r$ là của công suất mạch ngoài.</p>
 </details>
 </div>
 
@@ -404,12 +404,12 @@
 <li>$A = UIt$ · jun · $t$ bằng giây.</li>
 <li>$1$ kWh $= 3{,}6\cdot10^{6}$ J · công tơ đếm kWh.</li>
 <li>Công suất: $P = UI = I^2R = U^2/R$ · oát.</li>
-<li>Nhãn: $U_{\text{đm}}$, $P_{\text{đm}}$ · "U bình chia P ra R".</li>
+<li>Nhãn: $U_{\text{đm}}$, $P_{\text{đm}}$ · "U bình phương chia P ra R".</li>
 <li>Nguồn: $A_{ng} = \mathcal{E}It$, $P_{ng} = \mathcal{E}I = UI + I^2r$.</li>
 <li>Hiệu suất: $H = U/\mathcal{E} = R/(R + r)$ · $R$ lớn, $H$ cao.</li>
 <li>kW là tốc độ · kWh là tổng.</li>
 <li>Nối tiếp: $I^2R$ · song song: $U^2/R$.</li>
 <li>Đoản mạch: $I = \mathcal{E}/r$ · cầu chì đứt trước dây.</li>
-<li>Đọc đề: gặp "nguồn" hỏi $\mathcal{E}I$.<br>Gặp "mạch ngoài", "thiết bị" hỏi $UI$.<br>Cần kết quả ra jun: đổi phút, giờ ra giây.<br>Cần kết quả ra kWh: giữ kW và giờ, không đổi ra giây.</li>
+<li>Đọc đề: gặp "công suất của nguồn" hỏi $\mathcal{E}I$.<br>Gặp "toả nhiệt trong nguồn" hỏi $I^2r$.<br>Gặp "hiệu điện thế hai cực nguồn" hỏi $U = \mathcal{E} - Ir$.<br>Gặp "mạch ngoài", "thiết bị" hỏi $UI$.<br>Cần kết quả ra jun: đổi phút, giờ ra giây.<br>Cần kết quả ra kWh: giữ kW và giờ, không đổi ra giây.</li>
 </ul>
 </div>

@@ -6,157 +6,184 @@
     {
       "id": "c1",
       "vi_tri": "I. Mở bài: gảy dây đàn rồi bấm phím",
-      "trich_nguyen_van": "vẫn một bó sóng nhưng bước sóng giảm một nửa, nên tần số tăng gấp đôi",
+      "trich_nguyen_van": "Trên dây dài $l$ hai đầu cố định, tần số nhỏ nhất của sóng dừng là $f_0=\\dfrac{v}{2l}$",
       "loai": "từ_chưa_giải_thích",
-      "muc": "khó",
-      "em_hieu_la": "Từ 'bó sóng' xuất hiện ở Hình 1 và Câu 1, còn thí nghiệm dây thun lại gọi là 'múi'. Bài không nói rõ bó/múi là đoạn giữa hai nút liên tiếp, dài λ/2. Học sinh dễ tưởng một bó là một bước sóng, đúng lỗi của Câu 2.",
-      "de_xuat": "Ở mục 2. Nút sóng và bụng sóng, thêm một câu định nghĩa: 'Bó sóng (múi) là đoạn dây giữa hai nút liên tiếp, dài λ/2'. Giữ chú thích Hình 1 chỉ nhắc tới 'đoạn rung'."
+      "muc": "nhỏ",
+      "em_hieu_la": "Phản hồi dùng 'sóng dừng', $v$ và công thức $f_0$ khi chưa học (mục II.1 và II.3 mới định nghĩa). Em chỉ chép công thức mà không hiểu vì sao $l$ giảm thì $f$ tăng.",
+      "de_xuat": "Thêm một câu: 'công thức này sẽ học ở mục II.3, $v$ là tốc độ truyền sóng trên dây', hoặc chỉ giải thích bằng lời ở phần mở bài."
     },
     {
       "id": "c2",
-      "vi_tri": "Bẫy 3: \"có bao nhiêu bó thì có bấy nhiêu nút\"",
-      "trich_nguyen_van": "Một đầu cố định, một đầu tự do",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Dòng trên cùng bảng ghi 'Hai đầu cố định, k bó', nên học sinh hiểu k ở dòng dưới cũng là số bó. Thực ra k ở đây lấy từ l=(2k+1)λ/4, dây có k bó nguyên cộng nửa bó. Học sinh đếm số bó trên hình rồi cộng 1 sẽ ra sai số nút và số bụng.",
-      "de_xuat": "Ghi rõ trong ô: 'Một đầu cố định, một đầu tự do, l=(2k+1)λ/4 (k bó nguyên + nửa bó)' để tách nghĩa của k."
+      "vi_tri": "2. Nút sóng và bụng sóng",
+      "trich_nguyen_van": "dây chia thành những múi vồng lên vồng xuống, có chỗ đứng yên hẳn",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Thí nghiệm gọi là 'múi', còn Hình 1, Câu 1 và PhET gọi là 'bó sóng'. Bài không định nghĩa 'bó sóng', nên em không chắc hai từ này là một.",
+      "de_xuat": "Ghi ngay ở đây: 'mỗi múi (gọi là một bó sóng) là đoạn dây giữa hai nút liên tiếp, dài $\\lambda/2$'."
     },
     {
       "id": "c3",
-      "vi_tri": "5. Dây một đầu tự do: đo bằng λ/4",
-      "trich_nguyen_van": "cùng sợi dây, tần số nhỏ nhất giảm còn một nửa ($6{,}25\\ \\text{Hz}$ thay cho $12{,}5\\ \\text{Hz}$)",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Các số 12,5 Hz, 6,25 Hz và 18,75 Hz hiện ra mà không có phép tính nào. Mục này cũng không nhắc lại rằng đây là dây l=0,80 m, v=20 m/s của thí nghiệm trước. Bảng ở mục 4 lại không có dòng k=1. Học sinh không biết các số này lấy từ đâu.",
-      "de_xuat": "Thêm một dòng tính: 'Dây cũ l=0,80 m, v≈20 m/s: hai đầu cố định f0=v/(2l)=12,5 Hz; một đầu tự do f0=v/(4l)=6,25 Hz; 3λ/4 ứng với 3×6,25=18,75 Hz; 25 Hz=4×6,25 là số chẵn nên mất sóng dừng'."
+      "vi_tri": "2. Nút sóng và bụng sóng",
+      "trich_nguyen_van": "Chúng có theo tỉ lệ $1:2:3$ không? Đối chiếu với $l = k\\dfrac{\\lambda}{2}$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức $l=k\\lambda/2$ chỉ được đưa ra ở mục 3, phía sau. Ở đây em chưa biết $k$ là gì nên không đối chiếu được.",
+      "de_xuat": "Chuyển bước 2–3 của mô phỏng xuống sau mục 3, hoặc ghi rõ '(công thức ở mục 3, $k$ là số bó)'."
     },
     {
       "id": "c4",
-      "vi_tri": "5. Dây một đầu tự do: đo bằng λ/4",
-      "trich_nguyen_van": "đầu B vung mạnh nhất</strong>; đoạn dây dài $\\dfrac{3\\lambda}{4}$",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Bài không nói vì sao dây ứng với 3λ/4 chứ không phải λ/4, chẳng hạn nhờ thấy một nút ở giữa dây. Tên 'đầu B' cũng chưa được gán ở thí nghiệm mục 4.",
-      "de_xuat": "Thêm: 'thấy một nút ở giữa dây (ngoài đầu cố định) nên dây dài 3λ/4'. Ở thí nghiệm mục 4, đặt tên hai đầu là A (máy rung) và B."
+      "vi_tri": "3. Điều kiện để có sóng dừng",
+      "trich_nguyen_van": "Ký hiệu: $l$ chiều dài dây · $\\lambda$ bước sóng · $v$ tốc độ truyền sóng · $k$ nguyên.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em nghĩ $k$ ở cả hai dòng đều là 'số bó'. Gặp dây một đầu tự do có 2 bụng, em đặt $k=2$ và viết $l=5\\lambda/4$, trong khi đúng là $k=1$ (Hình 3).",
+      "de_xuat": "Ghi rõ ý nghĩa của $k$ ở từng dòng: dòng 1, $k$ = số bó (từ 1); dòng 2, $k$ = số bó nguyên (từ 0), còn số bụng là $k+1$."
     },
     {
       "id": "c5",
       "vi_tri": "5. Dây một đầu tự do: đo bằng λ/4",
-      "trich_nguyen_van": "Dây hai đầu cố định cần $l=\\dfrac{\\lambda}{2}$, tức $\\lambda=2l$.",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Chữ 'cần' khiến học sinh dễ tưởng điều kiện sóng dừng là l=λ/2. Thực ra đây chỉ là trường hợp tần số nhỏ nhất (k=1).",
-      "de_xuat": "Sửa thành 'Ở tần số nhỏ nhất, dây hai đầu cố định có l=λ/2…; dây một đầu tự do có l=λ/4…'."
+      "trich_nguyen_van": "Vì bụng gần nút nhất cách nhau $\\dfrac{\\lambda}{4}$, chiều dài dây phải là số lẻ lần $\\dfrac{\\lambda}{4}$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em không thấy vì sao từ 'cách nhau $\\lambda/4$' lại suy ra được 'số lẻ'. Câu này nghe như một quy tắc phải học thuộc.",
+      "de_xuat": "Thêm bước: dây gồm $k$ bó nguyên cộng nửa bó ở đầu tự do, tức $l=k\\dfrac{\\lambda}{2}+\\dfrac{\\lambda}{4}=(2k+1)\\dfrac{\\lambda}{4}$."
     },
     {
       "id": "c6",
-      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
-      "trich_nguyen_van": "dây một đầu tự do cần $f$ là số <em>lẻ</em> lần $\\dfrac{v}{4l}=5\\ \\text{Hz}$",
+      "vi_tri": "5. Dây một đầu tự do: đo bằng λ/4",
+      "trich_nguyen_van": "cùng sợi dây, tần số nhỏ nhất giảm còn một nửa ($6{,}25\\ \\text{Hz}$ thay cho $12{,}5\\ \\text{Hz}$)",
       "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Bảng mục 3 chỉ cho f0=v/(4l), không có dạng tổng quát f=(2k+1)v/(4l). Thử thách ⭐⭐⭐ lại cần đúng dạng này. Học sinh không biết 'số lẻ lần' từ đâu ra.",
-      "de_xuat": "Thêm vào bảng mục 3: hai đầu cố định f=k·v/(2l); một đầu tự do f=(2k+1)·v/(4l)."
+      "muc": "khó",
+      "em_hieu_la": "Thí nghiệm chỉ quan sát ở 25 Hz và 18,75 Hz. Bảng mục 4 bắt đầu từ $k=2$ (24,9 Hz), nên em không biết 6,25 Hz và 12,5 Hz lấy từ đâu mà ghi là 'rút ra'.",
+      "de_xuat": "Ghi '(tính ở mục bấm xem bên dưới: $f_0=v/2l$ và $v/4l$ với $v\\approx20$ m/s)' hoặc đổi thành 'suy ra bằng tính toán'."
     },
     {
       "id": "c7",
       "vi_tri": "4. Đo bước sóng và tốc độ truyền sóng từ sóng dừng",
-      "trich_nguyen_van": "bước sóng tính ra lần lượt $0{,}80$; $0{,}53$; $0{,}40$; $0{,}32\\ \\text{m}$",
-      "loai": "khác",
+      "trich_nguyen_van": "căng dây đàn hồi dài $0{,}80\\ \\text{m}$: đầu A gắn máy rung, đầu B buộc vào giá.",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Bảng có cột k, f, v nhưng thiếu cột λ. Học sinh phải tự ghép bốn giá trị λ trong lời văn với từng dòng, nên khó kiểm tra lại v=λf.",
-      "de_xuat": "Thêm cột 'λ=2l/k (m)' vào bảng, giữa cột f và cột v."
+      "em_hieu_la": "Tiêu đề ghi 'hai đầu cố định' nhưng đầu A đang rung. Em không hiểu vì sao đầu gắn máy rung lại được tính là nút, kể cả ở mục 5 ('nút ở đầu A').",
+      "de_xuat": "Thêm: 'máy rung có biên độ rất nhỏ nên đầu A coi gần đúng là nút'."
     },
     {
       "id": "c8",
-      "vi_tri": "Bẫy 1: nghĩ rằng nút là chỗ \"sóng không tới\"",
-      "trich_nguyen_van": "Năng lượng không chạy qua nút, nằm lại trong từng bó",
+      "vi_tri": "6. Biên độ dao động của một điểm trên dây",
+      "trich_nguyen_van": "Bề rộng vùng dao động của bụng (từ đáy này sang đáy kia) bằng $4A$",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Câu này đặt ngay cạnh quan niệm sai 'dây không nhận năng lượng'. Học sinh dễ đọc thành lời xác nhận rằng nút không có năng lượng, tức là củng cố đúng quan niệm sai.",
-      "de_xuat": "Viết rõ: 'Dây vẫn nhận năng lượng từ nguồn; năng lượng tích lại trong các bó, chỉ không truyền dọc dây qua nút'."
+      "em_hieu_la": "'Đáy này sang đáy kia' dễ hiểu thành khoảng cách ngang giữa hai chỗ thấp nhất trên dây. Đó là một khoảng cách dọc dây, không phải khoảng vung lên xuống.",
+      "de_xuat": "Viết 'từ vị trí cao nhất $+2A$ xuống vị trí thấp nhất $-2A$', dùng thống nhất cả ở phản hồi Câu 3."
     },
     {
       "id": "c9",
-      "vi_tri": "Bẫy 1: nghĩ rằng nút là chỗ \"sóng không tới\"",
-      "trich_nguyen_van": "Ở nút, hai sóng <em>vẫn tới</em> nhưng lệch pha nửa chu kì.",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "Bẫy 3: \"có bao nhiêu bó thì có bấy nhiêu nút\"",
+      "trich_nguyen_van": "Chọn 6 là lấy 2 nút cho mỗi bó ($2k$) mà quên hai nút ở giữa do hai bó dùng chung.",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Cả bài dùng 'ngược pha', đến phản hồi này lại đổi thành 'lệch pha nửa chu kì' mà không nối hai cách nói. Học sinh không chắc đây có phải cùng một ý.",
-      "de_xuat": "Sửa thành 'vẫn tới nhưng ngược pha (lệch nhau nửa chu kì) nên cộng lại bằng 0'."
+      "em_hieu_la": "Lỗi ở đây là đếm trùng hai nút chung, không phải 'quên'. Chữ 'quên' làm em tưởng phải cộng thêm nút.",
+      "de_xuat": "Sửa thành 'mà đếm trùng hai nút ở giữa, vốn là nút chung của hai bó kề nhau'."
     },
     {
       "id": "c10",
-      "vi_tri": "6. Biên độ dao động của một điểm trên dây",
-      "trich_nguyen_van": "Điểm cách nút gần nhất đoạn $x$ có biên độ $A_M=2A\\left|\\sin\\left(2\\pi\\dfrac{x}{\\lambda}\\right)\\right|$",
-      "loai": "thiếu_ví_dụ",
+      "vi_tri": "3. Điều kiện để có sóng dừng",
+      "trich_nguyen_van": "Ra $0{,}6\\ \\text{m}$ là lấy $\\dfrac{l}{2}$.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
       "muc": "nhỏ",
-      "em_hieu_la": "Công thức đưa ra mà không có ví dụ số nào, và không câu tự kiểm tra nào dùng tới. Học sinh không biết thay x thế nào, cũng không kiểm tra được rằng x=λ/4 cho ra 2A.",
-      "de_xuat": "Thêm một dòng: 'x=λ/4 → A_M=2A (bụng); x=λ/12 → A_M=2A·sin(π/6)=A'."
+      "em_hieu_la": "Em không hiểu vì sao lại có người lấy $l/2$, nên phản hồi không giúp em nhận ra mình nhầm ở đâu.",
+      "de_xuat": "Nêu lỗi tư duy, ví dụ: 'lấy $l/2$ là nhầm $l=\\lambda/2$ thành $\\lambda=l/2$', hoặc bỏ câu này."
     },
     {
       "id": "c11",
-      "vi_tri": "VI. Sóng dừng trong đời sống và mang về",
-      "trich_nguyen_van": "hai sóng cùng biên độ · ngược chiều · giao thoa",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
+      "trich_nguyen_van": "$\\dfrac{l}{\\lambda/4}=\\dfrac{1{,}0}{0{,}125}=8$ — số chẵn, không có số nguyên $k$ nào thoả mãn.",
+      "loai": "nhảy_bước",
       "muc": "nhỏ",
-      "em_hieu_la": "Từ 'giao thoa' không xuất hiện ở đâu khác trong bài. Câu tóm tắt cũng bỏ mất 'cùng bước sóng' so với định nghĩa ở mục 1, nên học sinh học thuộc một định nghĩa thiếu.",
-      "de_xuat": "Sửa thành 'hai sóng cùng biên độ · cùng bước sóng · truyền ngược chiều chồng lên nhau'."
+      "em_hieu_la": "Em không thấy liên hệ giữa 'chẵn' và 'không có $k$', vì bài không viết phương trình cần giải.",
+      "de_xuat": "Thêm: '$2k+1=8$ → $k=3{,}5$, không nguyên'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
+      "trich_nguyen_van": "Bước 3 (em điền): có sóng dừng không, và có bao nhiêu nút?",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Với dây hai đầu cố định, lời giải mẫu câu b chỉ tính $k=4$ mà chưa nói 'phải nguyên mới có sóng dừng'. Tiêu chí này chỉ xuất hiện sau, ở phản hồi Câu 7, nên em không biết dựa vào đâu để trả lời.",
+      "de_xuat": "Thêm vào bước 3 của lời giải câu b: '$k=4$ là số nguyên nên có sóng dừng; nếu $k$ không nguyên thì không có'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
+      "trich_nguyen_van": "Kiểm tra: 4 bó chiếm $4\\times\\dfrac{\\lambda}{2}=4\\times0{,}25=1{,}0\\ \\text{m}$, đúng bằng $l$. Kết quả câu b hợp lý.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bước kiểm tra câu b lại đặt sau câu c, nên em đọc nhầm là đang kiểm tra câu c.",
+      "de_xuat": "Chuyển bước kiểm tra lên ngay sau bước 4 (số nút câu b)."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "Bẫy 2: dây một đầu tự do mà vẫn dùng $l=k\\dfrac{\\lambda}{2}$",
+      "trich_nguyen_van": "Một đầu cố định, một đầu tự do (vòng trượt, đầu dây để lỏng)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em hiểu 'để lỏng' là dây chùng, không căng, và dễ nhầm với điều kiện dây phải căng.",
+      "de_xuat": "Thay bằng 'đầu dây buông thõng, không bị giữ' hoặc chỉ giữ ví dụ vòng trượt."
     }
   ],
   "du_doan_loi_sai": [
     {
       "cau": "cau0",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Nghĩ rằng cùng sợi dây thì mọi đại lượng đều giữ nguyên. Học sinh lẫn tốc độ v (do dây quyết định) với tần số f (phụ thuộc chiều dài đoạn rung).",
+      "loi_tu_duy": "Nghĩ 'cùng sợi dây, cùng sức căng' thì mọi thứ không đổi, lẫn '$v$ không đổi' thành '$f$ không đổi'.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "mà $v$ không đổi, nên $f=\\dfrac{v}{\\lambda}$ phải tăng"
+      "trich_nguyen_van": "Dây ngắn lại thì bước sóng dài nhất đặt vừa trên dây cũng ngắn lại; mà $v$ không đổi, nên $f=\\dfrac{v}{\\lambda}$ phải tăng."
     },
     {
       "cau": "cau1",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Lẫn khoảng cách nút–nút với nút–bụng, vì hai con số λ/2 và λ/4 được nêu sát nhau.",
+      "loi_tu_duy": "Lẫn khoảng cách nút–nút với nút–bụng ($\\lambda/4$), hai giá trị đứng cạnh nhau trong cùng gạch đầu dòng.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Nút và bụng liền kề mới cách nhau $\\dfrac{\\lambda}{4}$."
     },
     {
       "cau": "cau2",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Coi mỗi bó dài một bước sóng nên lấy l/3. Lỗi này càng dễ mắc vì 'bó' chưa được định nghĩa là λ/2.",
+      "loi_tu_duy": "Coi mỗi bó dài một bước sóng nên lấy $\\lambda=l/3$.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "mỗi bó dài $\\dfrac{\\lambda}{2}$ chứ không phải $\\lambda$"
+      "trich_nguyen_van": "Ra $0{,}4\\ \\text{m}$ là em lấy $\\dfrac{l}{3}$ — nhưng mỗi bó dài $\\dfrac{\\lambda}{2}$ chứ không phải $\\lambda$."
     },
     {
       "cau": "cau3",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Đồng nhất bề rộng vùng dao động với biên độ, quên rằng bụng vung từ +2A xuống −2A.",
+      "loi_tu_duy": "Đồng nhất bề rộng vùng dao động với biên độ, chọn cùng giá trị $2A$ cho cả hai.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "bằng $4A$ — đừng lẫn với biên độ $2A$"
+      "trich_nguyen_van": "đừng lẫn với biên độ $2A$"
     },
     {
       "cau": "cau4",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Thấy nút đứng yên nên suy ra không có sóng tới đó.",
+      "loi_tu_duy": "Thấy nút đứng yên nên nghĩ không có sóng truyền tới chỗ đó.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "cả hai sóng đều tới</strong>, nhưng <strong>ngược pha</strong> nên triệt tiêu"
+      "trich_nguyen_van": "Nếu không có sóng tới thì hết sóng dừng ngay."
     },
     {
       "cau": "cau5",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Dùng theo thói quen công thức hai đầu cố định f0=v/(2l)=10 Hz, không để ý đề cho một đầu tự do.",
+      "loi_tu_duy": "Không đếm số đầu cố định, dùng luôn $f_0=v/2l$ của dây hai đầu cố định nên ra 10 Hz.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Dấu hiệu để chọn đúng: <strong>đếm số đầu cố định</strong>."
+      "trich_nguyen_van": "Ra $10\\ \\text{Hz}$ là em dùng công thức của dây hai đầu cố định."
     },
     {
       "cau": "cau6",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Cho rằng số nút bằng số bó, quên rằng hai đầu cố định cũng là nút.",
+      "loi_tu_duy": "Cho số nút bằng số bó, quên rằng hai đầu dây cố định cũng là nút.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$k$ bó có $k-1$ nút ở giữa, cộng hai đầu thành $k+1$ nút"
+      "trich_nguyen_van": "Chọn 3 là quên rằng hai đầu dây cũng là nút."
     },
     {
       "cau": "cau7",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Có hai đường dẫn tới 4. Một là lẫn số bó với số nút. Hai là nhớ máy móc kết quả '4 bó' của bài toán mẫu, vốn cùng dây l=1,0 m, v=20 m/s nhưng ở f=40 Hz.",
+      "loi_tu_duy": "Có hai lỗi dễ gặp. Một là tính số nút $k+1=4$ rồi chọn nhầm thành số bó. Hai là quên thừa số 2, tính $l/\\lambda=1{,}5$ rồi làm tròn thành 2 (phương án A); bài chưa giải thích phương án A.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Chọn 4 là lẫn số bó với số nút (nút $=k+1$)."
     }

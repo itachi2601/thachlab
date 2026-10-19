@@ -9,129 +9,138 @@
       "trich_nguyen_van": "Dài dần: nhanh dần, a cùng chiều v. Ngắn dần: chậm dần, a ngược chiều v.",
       "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Ký hiệu a xuất hiện ở Hình 1 (mục 1), nhưng đến mục 2 gia tốc mới được định nghĩa. Em sẽ không biết a là gì và tại sao lại có 'chiều'.",
-      "de_xuat": "Ở chú thích Hình 1 bỏ phần về a, hoặc ghi rõ 'a là gia tốc, xem mục 2'."
+      "em_hieu_la": "Học sinh gặp ký hiệu a (vectơ gia tốc) và quy tắc cùng chiều/ngược chiều ngay ở chú thích Hình 1. Lúc này bài chưa định nghĩa gia tốc (mục 2) và chưa nêu quy tắc nhanh dần/chậm dần (mục 3), nên em không biết a là gì.",
+      "de_xuat": "Bỏ vế về a khỏi chú thích Hình 1, hoặc ghi thêm “(a là gia tốc, xem mục 2–3)”."
     },
     {
       "id": "c2",
-      "vi_tri": "2. Gia tốc",
-      "trich_nguyen_van": "thả xe lăn xuống máng nghiêng ($\\sin\\alpha \\approx 0{,}05$)",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "3. Nhanh dần đều và chậm dần đều",
+      "trich_nguyen_van": "$a \\cdot v \\gt 0$",
+      "loai": "nhảy_bước",
       "muc": "khó",
-      "em_hieu_la": "Em nghĩ phải dùng sinα và g = 9,8 m/s² (cũng chưa được giải thích) để tính gia tốc trong bảng. Em lại thấy α trùng với góc α của đồ thị ở mục 4, nên nghĩ hai góc này là một.",
-      "de_xuat": "Nói rõ sinα và g chỉ để mô tả thí nghiệm, gia tốc tính từ Δv/Δt. Hoặc bỏ hai số này để α chỉ dùng cho đồ thị ở mục 4."
+      "em_hieu_la": "Bảng dùng dấu của a và v (giá trị đại số theo chiều dương) trong khi mục 2 chỉ nói về vectơ và độ lớn. Học sinh không hiểu vectơ thì “nhân” với nhau ra dấu thế nào. Việc dấu phụ thuộc chiều dương mãi tới Bẫy 2 mới được nói.",
+      "de_xuat": "Thêm một câu ngay trước bảng: “Chọn chiều dương; v, a mang dấu + nếu cùng chiều dương, dấu − nếu ngược chiều dương”."
     },
     {
       "id": "c3",
-      "vi_tri": "4. Đồ thị vận tốc – thời gian",
-      "trich_nguyen_van": "dốc hơn thì $a$ lớn hơn (khi chọn cùng tỉ lệ hai trục): $$a = \\tan\\alpha",
+      "vi_tri": "2. Gia tốc",
+      "trich_nguyen_van": "Chuyển động thẳng, không đổi chiều: $a = \\dfrac{\\Delta v}{\\Delta t} = \\dfrac{v_2 - v_1}{\\Delta t}$.",
       "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Em sẽ lấy thước đo góc trên hình rồi bấm tan, bất kể tỉ lệ hai trục. Em cũng không biết α lấy thế nào khi đồ thị đi xuống (a âm).",
-      "de_xuat": "Nhấn rằng luôn tính a = (v₂ − v₁)/(t₂ − t₁) từ số đọc trên trục, còn tanα chỉ đúng khi hai trục cùng tỉ lệ. Thêm một câu nói đồ thị đi xuống cho tanα âm."
+      "em_hieu_la": "Học sinh hiểu công thức đại số này chỉ dùng khi vật không đổi chiều. Nhưng thử thách ⭐⭐⭐ lại áp dụng cho vật đổi chiều. Em sẽ không biết điều kiện “không đổi chiều” là bắt buộc hay chỉ là trường hợp đang xét.",
+      "de_xuat": "Ghi rõ: “Trên đường thẳng, chọn chiều dương thì a = (v₂ − v₁)/Δt với v mang dấu; công thức vẫn đúng cả khi vật đổi chiều”."
     },
     {
       "id": "c4",
       "vi_tri": "4. Đồ thị vận tốc – thời gian",
-      "trich_nguyen_van": "Nếu $v \\lt 0$ thì ngược lại, nên vẫn xét dấu $a \\cdot v$.",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Em không rõ 'ngược lại' là đi lên thành chậm dần hay là a đổi dấu. Mục này cũng vừa ghi 'không đổi chiều' mà lại xét thêm v < 0.",
-      "de_xuat": "Viết hẳn ra: khi v < 0, đồ thị đi lên (a > 0) là chậm dần, đi xuống (a < 0) là nhanh dần."
+      "trich_nguyen_van": "Luôn tính $a$ bằng số đọc trên hai trục, không đo góc trên hình (góc vẽ ra phụ thuộc tỉ lệ trục).",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài vừa viết a = tanα rồi lại cấm đo góc α. Học sinh thấy hai câu mâu thuẫn và không biết a = tanα còn dùng được lúc nào.",
+      "de_xuat": "Viết lại thành “a = Δv/Δt (về hình học là độ dốc, tanα chỉ đúng khi tính theo số chia trên hai trục)” để tanα không bị hiểu là góc đo bằng thước đo độ."
     },
     {
       "id": "c5",
-      "vi_tri": "2. Gia tốc",
-      "trich_nguyen_van": "đọc là <strong>\"mỗi giây, vận tốc tăng thêm $2\\ \\text{m/s}$\"</strong>",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Em nhớ máy móc 'gia tốc = vận tốc tăng'. Gặp a = −3 m/s² ở bài toán mẫu, em lúng túng vì không biết đọc thế nào.",
-      "de_xuat": "Đổi thành 'mỗi giây, vận tốc thay đổi 2 m/s' cho khớp với Trả bài câu 3 và mục Mang về."
+      "vi_tri": "Bẫy 3: \"Tốc độ không đổi thì không có gia tốc\"",
+      "trich_nguyen_van": "Ghép chung gốc, Δv = v2 − v1 khác 0 và hướng vào phía trong cua",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh chưa biết trừ hai vectơ bằng hình: ghép chung gốc rồi nối ngọn nào tới ngọn nào. Vì vậy em không tự thấy Δv hướng vào trong cua và chỉ nhớ máy móc kết luận. Câu 5 (phương án B) lại dựa đúng vào chỗ này.",
+      "de_xuat": "Thêm một câu: “Vẽ v₁ và v₂ chung gốc; Δv là mũi tên đi từ ngọn v₁ tới ngọn v₂”."
     },
     {
       "id": "c6",
-      "vi_tri": "2. Gia tốc",
-      "trich_nguyen_van": "C đảo ngược phép chia: sau $0{,}5\\ \\text{s}$ vận tốc chỉ tăng $0{,}5 \\cdot 0{,}5 = 0{,}25\\ \\text{m/s}$.",
-      "loai": "phương_án_nhiễu_khó_hiểu",
-      "muc": "nhỏ",
-      "em_hieu_la": "Em đã chọn C nhưng không thấy mình đã chia ngược chỗ nào, vì phản hồi chỉ đưa ra con số đúng.",
-      "de_xuat": "Ghi rõ: C ứng với 1 : 0,5 = 2 m/s², tức đã lấy thời gian làm mẫu số sai chỗ."
+      "vi_tri": "⭐ Thử thách phân tầng",
+      "trich_nguyen_van": "$v = 4 - 2 \\cdot 3 = -2\\ \\text{m/s}$: vật đã đổi chiều lúc $t = 2\\ \\text{s}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Công thức v = v₀ + at chưa xuất hiện trong bài, mốc t = 2 s cũng không được giải thích là lúc v = 0. Học sinh không tự lập được bước này từ định nghĩa a = Δv/Δt.",
+      "de_xuat": "Thêm bước: “Từ a = (v − v₀)/t suy ra v = v₀ + at; v = 0 khi 4 − 2t = 0, tức t = 2 s”."
     },
     {
       "id": "c7",
-      "vi_tri": "3. Nhanh dần đều và chậm dần đều",
-      "trich_nguyen_van": "$\\vec a$ vẫn hướng xuống dốc như lúc đi lên",
-      "loai": "nhảy_bước",
+      "vi_tri": "1. Chuyển động biến đổi",
+      "trich_nguyen_van": "chuyển động thẳng có độ lớn vận tốc tăng đều hoặc giảm đều theo thời gian.",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Em không biết vì sao lúc bi lên dốc thì a hướng xuống dốc, vì bài chưa nói ra điều đó.",
-      "de_xuat": "Thêm một câu: lúc lên dốc bi chậm dần nên a ngược chiều v, tức a hướng xuống dốc (như Hình 1)."
+      "em_hieu_la": "Thử thách ⭐⭐⭐ và ví dụ bi lên dốc rồi lăn xuống có gia tốc không đổi, nhưng độ lớn vận tốc giảm rồi lại tăng. Học sinh không biết các chuyển động đó có còn là “thẳng biến đổi đều” theo định nghĩa này không.",
+      "de_xuat": "Bổ sung: “tương đương: chuyển động thẳng có gia tốc không đổi”, hoặc ghi chú rằng trường hợp đổi chiều được xét theo từng giai đoạn."
     },
     {
       "id": "c8",
       "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "Vận tốc trung bình $7{,}5\\ \\text{m/s}$ nhân $5\\ \\text{s}$ cũng ra $37{,}5\\ \\text{m}$ ✓.",
-      "loai": "nhảy_bước",
+      "trich_nguyen_van": "Xe không đổi chiều nên quãng đường bằng độ dịch chuyển: $s = d$",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Em không biết số 7,5 m/s ở đâu ra, vì bài chưa dạy cách tính vận tốc trung bình khi biến đổi đều.",
-      "de_xuat": "Ghi rõ (15 + 0) : 2 = 7,5 m/s và nói cách này chỉ dùng được cho chuyển động biến đổi đều."
+      "em_hieu_la": "Ký hiệu s xuất hiện lần đầu ở đây, các mục trước chỉ dùng d. Học sinh có thể nghĩ s là một đại lượng mới.",
+      "de_xuat": "Ghi “quãng đường s” ngay ở đề bài hoặc ở mục 4 cạnh chữ “quãng đường”."
     },
     {
       "id": "c9",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "đồ thị là tam giác, $s = \\dfrac{1}{2} \\cdot 15 \\cdot 5 = 37{,}5\\ \\text{m}$",
-      "loai": "khác",
+      "vi_tri": "2. Gia tốc",
+      "trich_nguyen_van": "C đảo ngược phép chia: tăng $1\\ \\text{m/s}$ sau $0{,}5\\ \\text{s}$ ứng với $a = 1 : 0{,}5 = 2\\ \\text{m/s}^2$",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Mục 4 gọi diện tích là độ dịch chuyển d, ở đây lại gọi là s. Em tưởng đây là hai đại lượng khác nhau.",
-      "de_xuat": "Ghi thêm 's = d vì xe không đổi chiều', hoặc dùng cùng một ký hiệu."
+      "em_hieu_la": "Học sinh không thấy phép chia nào bị “đảo ngược” trong phương án C, vì C chỉ là đặt sai số liệu. Lời giải thích khiến em càng rối.",
+      "de_xuat": "Đổi thành “C gán nhầm số: tăng 1 m/s sau 0,5 s nghĩa là a = 2 m/s², không phải 0,5 m/s²”."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "2. Gia tốc",
+      "trich_nguyen_van": "mỗi số sai tới $\\pm 0{,}005\\ \\text{m/s}$. Mỗi $\\Delta v$ chỉ khoảng $0{,}1\\ \\text{m/s}$, nên sai số làm tròn chiếm tới $\\pm 10\\,\\%$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh lấy 0,005 : 0,1 = 5% và không hiểu vì sao bài ra 10%. Bài thiếu bước: Δv là hiệu của hai số, mỗi số sai ±0,005, nên Δv sai tới ±0,01.",
+      "de_xuat": "Thêm “Δv là hiệu hai số đọc nên sai tới ±0,01 m/s”."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "Dự đoán (mở bài)",
+      "cau": "dudoan",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Chỉ so phần tăng Δv = 10 m/s ở cả hai xe mà bỏ qua thời gian.",
+      "loi_tu_duy": "Chỉ so phần tăng Δv bằng nhau (10 m/s) mà không chia cho thời gian.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "C chỉ nhìn phần tăng $\\Delta v$ mà quên thời gian."
     },
     {
       "cau": "cau1",
-      "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Đọc 0,5 m/s² thành 'mỗi giây đi 0,5 m', tức nhầm gia tốc với quãng đường.",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Thấy C có đủ hai con số 0,5 và “vận tốc tăng”, gần giống đáp án đúng, nên chọn mà không kiểm tra tỉ số 1 : 0,5.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Mỗi giây, vận tốc thay đổi $3\\ \\text{m/s}$. Không phải mỗi giây đi $3\\ \\text{m}$."
+      "trich_nguyen_van": "Mẹo đọc đơn vị: $a = 2\\ \\text{m/s}^2$ đọc là <strong>\"mỗi giây, vận tốc thay đổi $2\\ \\text{m/s}$\"</strong>"
     },
     {
       "cau": "cau2",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Quen với các ví dụ xuất phát từ v = 0 nên lấy 10 : 3, quên trừ vận tốc đầu 4 m/s.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Lấy vận tốc cuối chia thời gian (10 : 3), quên trừ vận tốc đầu 4 m/s vì quen các ví dụ xuất phát từ v = 0.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "⚠ Lấy $\\Delta v = v_2 - v_1$: đồ thị không bắt đầu từ $v = 0$ thì phải trừ vận tốc đầu."
     },
     {
       "cau": "cau3",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Lấy luôn vận tốc đạt được 6 m/s làm gia tốc, quên chia cho Δt = 2 s.",
-      "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Xe máy ở phần mở bài: $a = \\dfrac{10 - 0}{5} = 2\\ \\text{m/s}^2$."
+      "loi_tu_duy": "Nhận đúng máy bay có a = 0 nên tin luôn vế sau, lấy 6 m/s làm gia tốc mà không chia cho 2 s. Đây là kiểu nhầm phương án gần giống.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
     },
     {
       "cau": "cau4",
-      "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Xác định đúng v < 0, nhưng vẫn giữ phản xạ 'chậm dần thì a âm' mà không xét tích a·v.",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Gán “chậm dần = a âm” theo thói quen và bỏ qua việc chiều dương đã chọn ngược chiều chuyển động nên v < 0.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Xét tích a·v, không xét riêng dấu a"
+      "trich_nguyen_van": "Dấu của $a$ phụ thuộc <strong>chiều dương em chọn</strong>."
     },
     {
       "cau": "cau5",
-      "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Đồng nhất tốc độ (số trên đồng hồ) với vận tốc vectơ, bỏ qua việc vận tốc đổi hướng.",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Biết là “có gia tốc” nhưng nghĩ gia tốc luôn hướng theo chiều chuyển động, vì không tự thực hiện được phép trừ vectơ trên Hình 3.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Đổi hướng cũng là đổi vận tốc"
+      "trich_nguyen_van": "Δv = v2 − v1 khác 0 và hướng vào phía trong cua, nên xe có gia tốc."
     },
     {
       "cau": "cau6",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Quên đổi km/h ra m/s nên lấy thẳng 36 : 4 = 9.",
+      "loi_tu_duy": "Chia thẳng 36 : 4, quên đổi km/h sang m/s.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Đọc đề: đổi $\\text{km/h}$ ra $\\text{m/s}$ · \"dừng lại\" là $v_2 = 0$ · ghi chiều dương."
     }

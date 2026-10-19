@@ -5,151 +5,142 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "2. Cường độ điện trường: E = U/d",
-      "trich_nguyen_van": "$x$ (cm)</th><th>$V$ (V)</th><th>$V/x$ (V/m)",
-      "loai": "khác",
+      "vi_tri": "1. Điện trường đều giữa hai bản song song",
+      "trich_nguyen_van": "hai bản kim loại phẳng song song, cách nhau $d$, tích điện trái dấu.",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Lấy 1,5/1,0 thì ra 1,5 chứ không ra 150. Em không hiểu vì sao bảng ghi 150 V/m, trong khi bài vừa dặn 'd đổi ra mét'.",
-      "de_xuat": "Thêm cột x (m) với các giá trị 0,010 … 0,050, hoặc ghi chú dưới bảng: 'V/x tính với x đổi ra mét, ví dụ 1,5/0,010 = 150'."
+      "em_hieu_la": "Cứ hai bản song song trái dấu là có điện trường đều, bất kể bản to hay nhỏ so với khoảng cách d. Điều kiện 'bản rộng' chỉ xuất hiện muộn, trong phản hồi câu 2 ('Hai bản rộng thì khác').",
+      "de_xuat": "Thêm vào mục Cách tạo: 'kích thước bản rất lớn so với d', và nói rõ chỉ vùng xa mép mới là điện trường đều."
     },
     {
       "id": "c2",
       "vi_tri": "2. Cường độ điện trường: E = U/d",
-      "trich_nguyen_van": "vì $1\\ \\text{V} = 1\\ \\text{J/C} = 1\\ \\text{N·m/C}$",
-      "loai": "từ_chưa_giải_thích",
-      "muc": "nhỏ",
-      "em_hieu_la": "Em thuộc chuỗi đổi đơn vị nhưng không biết vì sao vôn lại bằng J/C, vì định nghĩa hiệu điện thế theo công chưa được nhắc trong bài.",
-      "de_xuat": "Thêm nửa câu: 'U là công làm dời 1 C giữa hai bản, nên 1 V = 1 J/C; mà 1 J = 1 N·m'."
+      "trich_nguyen_van": "Rút ra: $V/x$ không đổi, bằng $U/d$. Điện trường giữa hai thanh là đều.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không thấy vì sao V/x không đổi lại chứng tỏ trường đều. Học sinh cũng dễ lẫn ký hiệu $V$ (số đọc) với đơn vị V và với $U$.",
+      "de_xuat": "Thêm một câu: 'V là hiệu điện thế giữa điểm đo và thanh âm, nên V/x chính là E trên đoạn x; mọi đoạn cho cùng E nghĩa là E như nhau mọi nơi'."
     },
     {
       "id": "c3",
       "vi_tri": "2. Cường độ điện trường: E = U/d",
-      "trich_nguyen_van": "số đọc $V$ tăng đều theo $x$",
-      "loai": "mơ_hồ",
+      "trich_nguyen_van": "Ở $x = 5$ cm chỉ lệch $\\dfrac{0{,}1}{0{,}05} = 2$ V/m (khoảng 1,3 %).",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Chữ V vừa là số đọc của vôn kế, vừa là đơn vị vôn (cột ghi '$V$ (V)'). Em dễ lẫn đại lượng với đơn vị.",
-      "de_xuat": "Đặt tên số đọc là $U_x$ (hiệu điện thế giữa que đo và thanh âm) để khỏi trùng với đơn vị V."
+      "em_hieu_la": "Hộp 'Sai số đến từ đâu?' đặt ngay trước câu 3 và đã tính sẵn đáp án, nên câu hỏi gần như không còn phải suy nghĩ.",
+      "de_xuat": "Chuyển hộp 'Sai số đến từ đâu?' xuống sau câu 3, hoặc chỉ giữ ý 'sai số vôn kế cố định ±0,1 V' mà không tính sẵn hai trường hợp."
     },
     {
       "id": "c4",
       "vi_tri": "3. Điện tích bay vào vuông góc với đường sức",
-      "trich_nguyen_van": "Sách hay viết gộp: $y = \\pm\\dfrac{qU}{2mdv_0^2}x^2$",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Em không rõ khi nào lấy dấu +, khi nào lấy dấu −. Ngay trên là công thức có |q|, giờ lại thêm ± với q có dấu, em sợ bị trừ dấu hai lần.",
-      "de_xuat": "Nói rõ: 'dấu ± chỉ chiều lệch, chọn theo trục Oy; khi tính độ lớn thì dùng |q|'. Hoặc bỏ dòng này."
+      "trich_nguyen_van": "Khử $t$ được phương trình quỹ đạo — một nhánh <strong>parabol</strong>:",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phương trình quỹ đạo hiện ra luôn, không biết khử t bằng cách nào. Từ 'nhánh' cũng chưa được giải thích.",
+      "de_xuat": "Ghi thêm bước 'từ $x = v_0t$ suy ra $t = x/v_0$, thay vào $y = \\tfrac12 at^2$', và giải thích 'nhánh' là chỉ nửa parabol với x ≥ 0."
     },
     {
       "id": "c5",
-      "vi_tri": "3. Điện tích bay vào vuông góc với đường sức",
-      "trich_nguyen_van": "Theo $Ox$ (dọc $\\vec v_0$): thẳng đều, $x = v_0 t$.",
-      "loai": "thiếu_ví_dụ",
+      "vi_tri": "Bẫy 1: \"Lực điện luôn cùng chiều đường sức\"",
+      "trich_nguyen_van": "Ion âm ($q\\lt 0$)",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Gốc O đặt ở đâu, Oy hướng lên hay xuống? Em không biết, nên không hiểu vì sao y = ½at² mà không có y₀.",
-      "de_xuat": "Thêm: 'Gốc O tại điểm hạt bắt đầu vào trường, Oy cùng chiều lực điện'."
+      "em_hieu_la": "Câu dẫn nói 'Electron thì ngược lại' nhưng bảng lại ghi ion âm, nên học sinh có thể băn khoăn electron có nằm trong trường hợp này không.",
+      "de_xuat": "Ghi 'Electron hoặc ion âm ($q<0$)' cho khớp với câu dẫn."
     },
     {
       "id": "c6",
-      "vi_tri": "3. Điện tích bay vào vuông góc với đường sức",
-      "trich_nguyen_van": "D — có lực điện vuông góc vận tốc thì phải lệch.",
-      "loai": "mơ_hồ",
+      "vi_tri": "Bẫy 3: thay d bằng cm, dùng E = U/d mọi nơi",
+      "trich_nguyen_van": "$d = 2$ cm, $E = 100/2 = 50$ V/m",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Em tưởng lực luôn vuông góc với vận tốc trong suốt quá trình bay. Như vậy mâu thuẫn với 'vận tốc dọc tăng dần'.",
-      "de_xuat": "Sửa thành 'vuông góc với vận tốc ban đầu $\\vec v_0$', thống nhất với câu dự đoán ở mở bài."
+      "em_hieu_la": "Không biết số 100 lấy từ đâu, vì bảng chưa hề cho U.",
+      "de_xuat": "Ghi rõ '$U = 100$ V, $d = 2$ cm' ở đầu dòng sai."
     },
     {
       "id": "c7",
-      "vi_tri": "Bẫy 2: \"Ra khỏi hai bản vẫn cong tiếp\"",
-      "trich_nguyen_van": "Bảng tóm tắt chuyển động của electron khi còn trong vùng hai bản.",
-      "loai": "thiếu_ví_dụ",
+      "vi_tri": "IV. Trả bài: nhớ lại trước khi giải bài tập",
+      "trich_nguyen_van": "Điều kiện bỏ qua trọng lực?",
+      "loai": "từ_chưa_giải_thích",
       "muc": "khó",
-      "em_hieu_la": "Tiêu đề nêu bẫy 'ra khỏi bản' nhưng bảng chỉ có cột 'Trong vùng hai bản'. Em không biết đáp án đúng cho phần ngoài bản là gì trước khi làm câu hỏi.",
-      "de_xuat": "Thêm cột 'Ra khỏi hai bản': lực = 0, quỹ đạo thẳng, $v_x = v_0$, $v_y$ giữ giá trị lúc ra."
+      "em_hieu_la": "Trước mục này bài chỉ nói 'bỏ qua trọng lực' như một giả thiết, chưa nêu điều kiện. Phép so sánh mg với |q|E chỉ xuất hiện sau, ở bài toán mẫu, nên học sinh không có gì để nhớ lại.",
+      "de_xuat": "Ở mục II.3, thêm một câu: 'bỏ qua trọng lực khi mg rất nhỏ so với |q|E, như với electron, proton, ion'."
     },
     {
       "id": "c8",
       "vi_tri": "V. Bài toán mẫu: electron bay qua hai bản",
-      "trich_nguyen_van": "$2{,}5$ mm $\\lt 10$ mm nên electron <strong>không chạm bản</strong>",
-      "loai": "nhảy_bước",
+      "trich_nguyen_van": "Electron lệch lên về bản dương; ra khỏi bản lệch $2{,}5$ mm, nhỏ hơn $10$ mm",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Bảng dữ liệu ghi 'cách mỗi bản 1,0 cm', lời giải bỗng so với 10 mm. Em phải tự nối hai con số này.",
-      "de_xuat": "Viết rõ: '$d/2 = 1{,}0$ cm $= 10$ mm; $2{,}5$ mm < $10$ mm'."
+      "em_hieu_la": "Chú thích Hình 4 đã nêu đáp số câu c trước khi học sinh tự giải.",
+      "de_xuat": "Bỏ các con số khỏi chú thích Hình 4, hoặc chuyển hình vào trong phần lời giải."
     },
     {
       "id": "c9",
       "vi_tri": "VI. Điện trường đều trong đời sống",
-      "trich_nguyen_van": "Mẹo kiểm: đường thẳng đó kéo ngược đi qua trung điểm hai bản",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Em không hiểu vì sao đường kéo ngược lại đi qua đúng điểm L/2. Kết quả này xuất hiện mà không có lí do.",
-      "de_xuat": "Thêm một dòng: 'vì $y = \\tfrac12 L\\tan\\alpha$ (do $\\tan\\alpha = 2y/L$), nên đường thẳng cắt trục giữa tại $L/2$'."
-    },
-    {
-      "id": "c10",
-      "vi_tri": "V. Bài toán mẫu: electron bay qua hai bản",
-      "trich_nguyen_van": "Độ lệch tỉ lệ với $U$.",
+      "trich_nguyen_van": "Lệch thêm $D\\tan\\alpha = 200\\cdot0{,}10 = 20$ mm.",
       "loai": "khác",
-      "muc": "khó",
-      "em_hieu_la": "Em khái quát thành 'độ lệch tỉ lệ thuận với mọi thứ thay đổi', rồi áp dụng tuyến tính cho $v_0$ ở câu ngay sau.",
-      "de_xuat": "Bổ sung ngay sau câu này: 'nhưng $y$ tỉ lệ nghịch với $v_0^2$ (xem mẫu số của phương trình quỹ đạo)'."
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề cho D = 20 cm mà phép tính lại dùng 200 không kèm đơn vị. Học sinh có thể tưởng đã đổi sai đơn vị.",
+      "de_xuat": "Viết '$D = 200$ mm, $D\\tan\\alpha = 200\\text{ mm}\\cdot0{,}10 = 20$ mm'."
     }
   ],
   "du_doan_loi_sai": [
     {
       "cau": "cau1",
-      "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Hiểu 'vuông góc đường sức' là không chịu lực theo hướng bay, nên nghĩ hạt đi thẳng.",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Cho rằng điện tích luôn bị đẩy theo chiều đường sức, từ bản dương xuống bản âm, mà không xét dấu của giọt mực.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "bay vuông góc đường sức không có nghĩa là không có lực"
+      "trich_nguyen_van": "Chiều đường sức là chiều lực lên điện tích dương. Electron thì ngược lại."
     },
     {
       "cau": "cau2",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Áp dụng trực giác điện tích điểm 'càng gần càng mạnh' cho hai bản phẳng.",
+      "loi_tu_duy": "Áp dụng hình ảnh điện tích điểm (càng gần càng mạnh) cho hai bản phẳng.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "em đang nghĩ theo điện tích điểm (càng gần càng mạnh)"
+      "trich_nguyen_van": "vectơ $\\vec E$ tại mọi điểm bằng nhau — cùng phương, cùng chiều, cùng độ lớn."
     },
     {
       "cau": "cau3",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Thấy mọi hàng đều cho 150 V/m nên cho là độ tin cậy như nhau, bỏ qua sai số cố định ±0,1 V.",
+      "loi_tu_duy": "Thấy mọi hàng đều ra 150 V/m nên nghĩ độ tin cậy như nhau, không xét sai số cố định ±0,1 V chia cho x.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Ở $x = 5$ cm chỉ lệch $\\dfrac{0{,}1}{0{,}05} = 2$ V/m"
+      "trich_nguyen_van": "Ở $x = 5$ cm chỉ lệch $\\dfrac{0{,}1}{0{,}05} = 2$ V/m (khoảng 1,3 %)."
     },
     {
       "cau": "cau4",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Học thuộc 'lệch về bản dương' từ ví dụ electron rồi áp dụng cho proton mà không xét dấu q.",
+      "loi_tu_duy": "Không xác định chiều E (từ bản dương dưới lên bản âm trên), nghĩ theo thói quen 'dương hút về dương' hoặc mặc định E hướng xuống.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$q \\gt 0$: lực cùng chiều $\\vec E$, lệch về <strong>bản âm</strong>."
+      "trich_nguyen_van": "$q \\gt 0$: lực cùng chiều $\\vec E$, lệch về bản âm."
     },
     {
       "cau": "cau5",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Cho rằng lực điện luôn cùng chiều đường sức, quên electron mang điện âm.",
+      "loi_tu_duy": "Đồng nhất chiều lực điện với chiều đường sức cho mọi điện tích, quên electron mang điện âm.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Chiều đường sức là chiều lực lên điện tích <strong>dương</strong>. Electron thì ngược lại."
+      "trich_nguyen_van": "Chiều đường sức là chiều lực lên điện tích dương. Electron thì ngược lại."
     },
     {
       "cau": "cau6",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Nghĩ quỹ đạo parabol là 'đà' của hạt, nên ra khỏi trường hạt vẫn cong tiếp.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": "Trong khe: parabol; ra khỏi bản: đi thẳng."
+      "loi_tu_duy": "Nghĩ chuyển động cong có 'đà' nên tiếp tục cong sau khi hết lực, nhầm quán tính về hướng với quán tính về độ cong.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Bằng $0$ (hết trường)"
     },
     {
       "cau": "cau7",
-      "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Có đổi đơn vị nhưng chỉ đổi mm ra cm (0,4 cm), chưa đổi ra mét.",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Để nguyên d bằng mm khi thay vào E = U/d. Ví dụ trong bài chỉ minh hoạ đổi cm ra m, chưa có trường hợp mm.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$d = 2$ cm, $E = 100/2 = 50$ V/m"
+      "trich_nguyen_van": "E bằng U chia d · d đổi ra mét"
     },
     {
       "cau": "cau8",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Suy tuyến tính: v₀ gấp đôi thì t giảm một nửa, rồi cho y cũng giảm một nửa, quên y tỉ lệ với t².",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Thấy t giảm một nửa nên cho y cũng giảm một nửa, quên rằng y tỉ lệ với t².",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$y$ tỉ lệ với $t^2$ chứ không tỉ lệ với $t$."
     }
   ]
 }

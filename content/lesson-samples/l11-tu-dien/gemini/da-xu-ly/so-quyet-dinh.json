@@ -1,6 +1,6 @@
 {
   "bai": "l11-tu-dien",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -108,5 +108,124 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-tu-dien/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ mẹo ½QU, thêm các dòng riêng: chọn dạng chứa đại lượng giữ nguyên, C cố định dùng ½CU², Q giữ dùng Q²/2C."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chú thích ghi \"(C, culông)\" và tách ba đại lượng thành ba dòng thay cho dấu \"·\"."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(điện môi bị phá, tụ hỏng thành vật dẫn)\" ở lần nhắc đầu, rút gọn câu trùng ý ở ý 3 để bù chữ."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Loại tụ thêm \"tụ hoá (lớp ôxit mỏng, điện dung lớn)\"."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai đổi thành \"B là số nhà sản xuất ghi trên vỏ, không phải số đo\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details>: dải nằm ngang dày ΔQ, dài U, lấp tam giác cạnh trục Q, tam giác này bằng phần tô (cùng là nửa hình chữ nhật Q×U)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn bước Q₁ + Q₂ = 20 μC, Q₁ = C₁U, Q₂ = C₂U nên (C₁ + C₂)U = 20, mỗi bước một dòng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng đổi thành hai dòng: đổi ra F thì W ra J, giữ μF thì W ra μJ."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gợi ý thêm \"U = Q/C, tụ 2 μF có C chỉ bằng nửa tụ 4 μF, nên U₁ = 2U₂\"."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giải thích U_{i,max} là số vôn ghi trên vỏ tụ i, tách quy tắc song song/nối tiếp thành từng dòng, trỏ tới Thử thách khá; bỏ câu hỏi phụ ở phản hồi q4 để bù chữ."
+      },
+      {
+        "id": "q-tl40-q0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn chỗ phải chờ vài giây, không thêm ⚠."
+      },
+      {
+        "id": "q-tl40-q1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm ⚠, nhưng sửa lập luận phản hồi: A sai vì nạp tụ chỉ tốn rất ít điện của pin, C sai vì LED còn loé lại khi tụ phóng."
+      },
+      {
+        "id": "q-tl40-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã phân biệt số ghi trên vỏ với số đo và nêu sai số chế tạo."
+      },
+      {
+        "id": "q-tl40-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn Q tăng theo U, mẹo đã được sửa theo c1 nên không thêm ⚠."
+      },
+      {
+        "id": "q-tl40-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn C = Q/U chỉ là cách tính."
+      },
+      {
+        "id": "q-tl40-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 và mẹo ghép ngược điện trở đã nhấn lỗi cộng thẳng."
+      },
+      {
+        "id": "q-tl40-q6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về kéo bản ra xa (C giảm) đã thêm ở vòng 1."
+      },
+      {
+        "id": "q-tl40-q7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 đã nhấn \"tụ nhỏ chịu hiệu điện thế lớn\"."
+      },
+      {
+        "id": "q-thu-thach-kha",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Gợi ý đã ghi rõ 75 V, không phải 100 V."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 1: dòng Loại tụ thêm tụ hoá (điện môi là lớp ôxit mỏng, điện dung lớn).",
+      "Quiz q1, phản hồi sai: lập luận loại A đổi thành \"nạp tụ chỉ tốn rất ít điện của pin\", loại C vì LED còn loé lại khi tụ phóng.",
+      "Mục 2: chú thích C = Q/U ghi rõ đơn vị của Q là C (culông), tách thành ba dòng.",
+      "Mục 2: giải nghĩa đánh thủng ngay lần đầu (điện môi bị phá, tụ hỏng thành vật dẫn); mục 3 rút câu này còn \"Quá mức thì tụ bị đánh thủng\".",
+      "Quiz q2: bỏ câu giải thích lần đo 2 V ở phản hồi đúng (phản hồi sai đã nói), số trung bình 481 μF giữ nguyên.",
+      "Mục 4: mẹo năng lượng thêm quy tắc chọn dạng: C cố định dùng ½CU², Q giữ (ngắt nguồn) dùng Q²/2C.",
+      "Mục 4 <details>: dải công U·ΔQ là dải nằm ngang lấp tam giác cạnh trục Q, diện tích bằng phần tô dưới đường trong Hình 2, cùng bằng ½QU.",
+      "Quiz q3, phản hồi sai: gộp giải thích C và D thành \"đều trái công thức\".",
+      "Mục 5 <details>: ví dụ ghép tụ đã tích thêm bước (C₁ + C₂)U = 20 μC, kết quả U = 4 V, Q₁ = 8 μC, Q₂ = 12 μC không đổi.",
+      "Bẫy 2: giải thích U_{i,max} là số vôn ghi trên vỏ tụ, công thức nối tiếp viết U = Q_max/C_bộ.",
+      "Bài toán mẫu, bảng đọc đề: đổi ra F thì W ra J, giữ μF thì W ra μJ.",
+      "Thử thách khá: thêm lí do U₁ = 2U₂ (U = Q/C, C₁ bằng nửa C₂), đáp số 75 V giữ nguyên."
+    ],
+    "so_tu_them": 10,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-tu-dien/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

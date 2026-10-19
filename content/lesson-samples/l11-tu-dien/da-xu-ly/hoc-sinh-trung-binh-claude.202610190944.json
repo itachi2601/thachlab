@@ -1,0 +1,146 @@
+{
+  "bai": "Bài 21. Tụ điện",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "1. Tụ điện là gì",
+      "trich_nguyen_van": "nối hai đầu tụ qua LED nhưng đảo chiều LED so với lúc nạp (dòng phóng ngược chiều dòng nạp)",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không hiểu vì sao phải đảo LED. Bài chưa nói LED chỉ cho dòng đi một chiều, nên học sinh tưởng đảo hay không cũng được.",
+      "de_xuat": "Thêm nửa câu: \"LED chỉ sáng khi dòng đi đúng một chiều, mà dòng phóng ngược chiều dòng nạp nên phải đảo LED\"."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Điện dung C = Q/U",
+      "trich_nguyen_van": "tụ hoá thường có sai số chế tạo tới ±20%",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "\"Tụ hoá\" không có trong danh sách loại tụ ở mục 1, nên học sinh không biết tụ 470 μF trong thí nghiệm có phải tụ hoá hay không.",
+      "de_xuat": "Ở thí nghiệm ghi rõ \"tụ hoá (tụ điện phân) 470 μF – 16 V\", hoặc thêm tụ hoá vào gạch đầu dòng \"Loại tụ\"."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. C do cấu tạo quyết định",
+      "trich_nguyen_van": "Điện môi chỉ chịu được $E_{\\max}$, nên $U_{\\max}=E_{\\max}\\,d$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chưa rõ E_max là đại lượng gì, có liên quan gì tới số vôn ghi trên vỏ tụ ở mục 2.",
+      "de_xuat": "Viết: \"Mỗi điện môi chỉ chịu được cường độ điện trường lớn nhất $E_{\\max}$ (gọi là cường độ điện trường giới hạn)\", rồi nối với số vôn ghi trên vỏ."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. C do cấu tạo quyết định",
+      "trich_nguyen_van": "Mỗi lần chỉ đổi một yếu tố, các lần khác trả về $d$ = 1 mm và tấm đủ 0,04 m²",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cụm \"các lần khác trả về\" khó đọc. Học sinh có thể tưởng các thay đổi cộng dồn (vừa tăng d vừa trượt lệch), rồi thắc mắc sao cả hai đều ra 180 pF.",
+      "de_xuat": "Viết: \"Trước mỗi lần đổi, đưa tụ về trạng thái gốc (d = 1 mm, chồng kín 0,04 m²), rồi chỉ đổi một yếu tố\"."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "3. C do cấu tạo quyết định",
+      "trich_nguyen_van": "$$C=\\dfrac{\\varepsilon S}{9\\cdot10^{9}\\cdot4\\pi d}$$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không biết số 9·10⁹ từ đâu ra, nên dễ chép sai hoặc quên khi làm bài.",
+      "de_xuat": "Thêm chú thích: \"9·10⁹ là hằng số k trong định luật Coulomb (N·m²/C²)\"."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "4. Năng lượng của tụ",
+      "trich_nguyen_van": "Năng lượng là diện tích tam giác dưới đường $Q$–$U$ (Hình 2).",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không hiểu vì sao diện tích dưới đồ thị lại là năng lượng, đành chấp nhận ½ như con số học thuộc.",
+      "de_xuat": "Thêm một câu: \"Mỗi phần điện tích nhỏ ΔQ đưa lên tụ tốn công U·ΔQ (một dải hẹp dưới đồ thị); cộng các dải lại được diện tích tam giác ½QU\"."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Bẫy 2: nhầm nối tiếp với song song",
+      "trich_nguyen_van": "($Q_{\\max}$ là số nhỏ nhất của $C_iU_{i,\\max}$, rồi $U=Q/C_{\\text{bộ}}$)",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Quy tắc viết gọn bằng ký hiệu, không có ví dụ đi kèm. Thử thách khá ở mục VI lại giải theo cách khác (U₁ = 2U₂), nên học sinh không biết hai cách có phải là một.",
+      "de_xuat": "Trong gợi ý Thử thách khá, thêm dòng theo đúng quy tắc này: Q_max = min(2·50; 4·50) = 100 μC, C_bộ = 4/3 μF, U = 100 : (4/3) = 75 V."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "Bẫy 3: còn nối nguồn hay đã ngắt nguồn",
+      "trich_nguyen_van": "Chèn điện môi ($C$ tăng)",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Bảng chỉ có trường hợp chèn điện môi, nhưng câu hỏi ngay sau lại là kéo bản ra xa. Học sinh dễ chép nguyên ô \"U = Q/C giảm\" sang câu hỏi và chọn \"Giảm một nửa\".",
+      "de_xuat": "Thêm cột \"Kéo bản ra xa (C giảm)\" với hai ô: nối nguồn thì Q giảm; ngắt nguồn thì U tăng."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó",
+      "trich_nguyen_van": "Cộng năng lượng từng tụ: $\\tfrac12\\cdot3\\cdot8^2+\\tfrac12\\cdot6\\cdot4^2=96+48=144$ μJ.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Bảng phân tích dặn \"Đổi ra F nếu tính năng lượng\", nhưng ở bước kiểm tra lại giữ nguyên μF mà vẫn ra μJ. Học sinh thấy hai chỗ mâu thuẫn và không biết lúc nào được bỏ qua bước đổi đơn vị.",
+      "de_xuat": "Ghi rõ ở bước kiểm tra: \"giữ C bằng μF thì W ra μJ (vì μF·V² = μJ)\", hoặc đổi ra F như ở bước 4."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ pin cấp điện trực tiếp cho bóng, không để ý tới khoảng chờ vài giây.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nếu pin cấp thẳng thì đâu cần chờ vài giây sau mỗi lần chụp."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy đèn tắt là nghĩ ngay nguồn cạn, chưa hình dung được dòng ngừng khi tụ đã đầy.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Pin vẫn tốt và LED vẫn loé lại được khi tụ phóng, nên A và C không đúng."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Tin số ghi trên vỏ hơn số đo được, không phân biệt giá trị danh định với giá trị thực đo.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "B là số danh định, không phải số đo."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Dùng W = ½QU nhưng giữ Q cố định, quên rằng Q cũng tăng theo U.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra \"2 lần\" là quên rằng $Q$ cũng tăng theo $U$"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đọc C = Q/U như một quan hệ nhân quả: U tăng thì C giảm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Công thức $C = Q/U$ là cách tính C, không phải cái làm ra C."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quen với điện trở nối tiếp (cộng thẳng) nên cộng thẳng hai điện dung.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "ghép tụ \"ngược\" ghép điện trở — song song thì cộng thẳng, nối tiếp thì cộng nghịch đảo."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Chép kết luận \"ngắt nguồn thì U = Q/C giảm\" của trường hợp chèn điện môi trong bảng sang trường hợp kéo bản ra xa, không xét lại C tăng hay giảm.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "C là cho $U$ đổi cùng chiều với $C$."
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ tụ nhỏ thì chịu hiệu điện thế nhỏ (U tỉ lệ thuận với C), nên gán 4 V cho tụ 2 μF.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nối tiếp thì $Q$ bằng nhau, nên $U_i = Q/C_i$: tụ nhỏ chịu hiệu điện thế lớn."
+    }
+  ]
+}

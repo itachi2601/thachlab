@@ -1,6 +1,6 @@
 {
   "bai": "l10-toc-do-van-toc",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-08",
     "model": "claude-opus-5-5",
@@ -127,5 +127,224 @@
       "lint_do_dai lỗi"
     ],
     "sao_luu": "content/lesson-samples/l10-toc-do-van-toc/gemini/da-xu-ly/theory.src.202610081647.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ví dụ ghi rõ phép đổi 12,3 × 3,6 ≈ 44 km/h, dòng đơn vị thay \"Mẹo nhớ\" bằng lý do 1 km/h = 1000 m/3600 s."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi gốc vectơ vận tốc trung bình đặt ở vị trí đầu của vật (điểm A ở Hình 2), cập nhật cả đáp án Trả bài 3 (mỗi ý một dòng)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích ngắn \"$d$ là độ lớn của $\\vec d$\" ngay sau $d = s$."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: hai ô bảng bị ghép bằng dấu \"|\" không có trong bài."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô \"Viết sai\" ghi rõ điều kiện \"mũi vuông góc bờ ($\\vec v_{12} \\perp \\vec v_{23}$)\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không chuyển quiz (đổi cấu trúc), chỉ sửa phương án C (vẫn là đáp án đúng) thành \"Không đổi so với khi nước chảy 3 m/s\" để bỏ con số 30 s lộ đáp án."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Rút ra của thí nghiệm tờ giấy gán (1) ngòi bút, (2) giấy, (3) bàn, vệt xiên ứng với $\\vec v_{12}$, đường dọc thước ứng với $\\vec v_{13}$."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details ⭐⭐⭐ định nghĩa α là góc giữa $\\vec v_{12}$ và $\\vec v_{13}$, nêu cạnh đối $v_{23} = 3$, cạnh huyền $v_{12} = 5$, mỗi ý một dòng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Khung Mục tiêu ghi \"6 câu hỏi nhớ lại ở mục Trả bài (khác các câu trắc nghiệm)\"."
+      },
+      {
+        "id": "q-Dự đoán mở bài",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, phản hồi đã nhấn độ dịch chuyển, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"tốc độ trung bình chỉ là một số cho cả chuyến đi\" ngay trước câu, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 3 đã nhấn vận tốc tức thời là tiếp tuyến, tách với vận tốc trung bình, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Định nghĩa vận tốc kéo theo và cách đánh số đã có ngay trước, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 ngay trước câu đã nhấn $d = 0$ khi về chỗ cũ, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn điều kiện cùng thời gian, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng cộng vận tốc và bảng Bẫy 3 đã nhấn chiều theo vận tốc lớn hơn, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 7 (A)",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng phân tích đề đã nhấn chỉ $\\vec v_{12}$ đưa ca nô sang bờ, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 7 (D)",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bài chưa nhấn, thêm một dòng ⚠ trước Câu 7: kết luận \"nước nhanh hơn thì bị cuốn lùi\" ở Câu 6 chỉ dùng khi hai vận tốc ngược chiều."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.1: dòng đơn vị nêu lý do 1 km/h = 1000 m/3600 s nên km/h → m/s chia 3,6, ví dụ vòng đua ghi rõ 12,3 × 3,6 ≈ 44 km/h.",
+      "Mục II.3: gốc vectơ vận tốc trung bình đặt ở vị trí đầu của vật (điểm A ở Hình 2), sửa cả đáp án Trả bài 3.",
+      "Mục II.3: thêm \"$d$ là độ lớn của $\\vec d$\" ở dòng $d = s$.",
+      "Ví dụ xe đồ chơi: kết luận sửa thành \"độ lớn vận tốc trung bình nhỏ hơn tốc độ trung bình\" (so độ lớn với tốc độ, không so vectơ với vô hướng).",
+      "Thí nghiệm tờ giấy: gán (1) ngòi bút, (2) giấy, (3) bàn; vệt xiên trên giấy ứng với $\\vec v_{12}$, đường dọc thước ứng với $\\vec v_{13}$.",
+      "Bảng Bẫy 3: dòng ca nô ghi điều kiện mũi vuông góc bờ ($\\vec v_{12} \\perp \\vec v_{23}$), số liệu giữ nguyên 4, 3, 5 m/s.",
+      "Câu 7: phương án C (đáp án đúng, giữ tl-ok) đổi thành \"Không đổi so với khi nước chảy 3 m/s\", phản hồi giữ t = 30 s, BC = 150 m; thêm dòng ⚠ trước câu.",
+      "Thử thách ⭐⭐⭐: định nghĩa α là góc giữa $\\vec v_{12}$ và $\\vec v_{13}$, $\\sin\\alpha = 3/5$, α ≈ 37°, kết quả 4 m/s và 30 s không đổi.",
+      "Cắt để bù chữ: câu dẫn lặp ý ở đầu mục Trả bài, cụm \"3 + 4 thành 5, không phải 7\" ở Bẫy 3 (trùng bảng), rút gọn phản hồi sai Câu 2 và câu Dự đoán."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-toc-do-van-toc/gemini/da-xu-ly/theory.src.202610191619.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã ghi rõ phép đổi 12,3 × 3,6 ≈ 44 km/h và lý do 1 km/h = 1000 m/3600 s, bài hiện tại đã có."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bài đã ghi gốc vectơ vận tốc trung bình đặt ở vị trí đầu của vật (điểm A ở Hình 2)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bài đã có chú thích \"$d$ là độ lớn của $\\vec d$\" ngay sau $d = s$."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: hai ô bảng bị ghép bằng dấu \"|\" không có trong bài (giữ quyết định vòng 2)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ô \"Viết sai\" đã ghi rõ \"mũi vuông góc bờ ($\\vec v_{12} \\perp \\vec v_{23}$)\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phương án C đã đổi thành \"Không đổi so với khi nước chảy 3 m/s\", không còn lộ con số 30 s."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng Rút ra đã gán (1) ngòi bút, (2) giấy, (3) bàn và vệt xiên ứng với $\\vec v_{12}$; vòng này chỉ rút gọn câu chữ để đủ hạn mức."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đáp án ⭐⭐⭐ đã định nghĩa α, cạnh đối $v_{23} = 3$, cạnh huyền $v_{12} = 5$, mỗi ý một dòng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Khung Mục tiêu đã ghi \"6 câu hỏi nhớ lại ở mục Trả bài (khác các câu trắc nghiệm)\"."
+      },
+      {
+        "id": "q-Dự đoán mở bài",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn vận tốc trung bình dùng độ dịch chuyển, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"tốc độ trung bình chỉ là một số cho cả chuyến đi\" ngay trước câu, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 3 đã nhấn vận tốc tức thời là tiếp tuyến, tách với vận tốc trung bình, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Định nghĩa vận tốc kéo theo và ví dụ cùng chiều đã có ngay trước, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 ngay trước câu đã nhấn $d = 0$ khi về chỗ cũ, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn trung bình cộng chỉ đúng khi cùng thời gian, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng cộng vận tốc và bảng Bẫy 3 đã nhấn chiều theo vận tốc lớn hơn, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phương án A: bảng phân tích đề đã nhấn chỉ $\\vec v_{12}$ đưa ca nô sang bờ, không thêm ⚠."
+      },
+      {
+        "id": "q-Câu 7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phương án D: bài đã có dòng ⚠ \"nước nhanh hơn thì bị cuốn lùi chỉ dùng khi hai vận tốc ngược chiều\" ngay trước Câu 7."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.3, ví dụ xe đồ chơi: bỏ câu kết \"Đường cong → độ lớn vận tốc trung bình nhỏ hơn tốc độ trung bình\" (đã có ở Bẫy 1), số liệu giữ nguyên.",
+      "Mục II.4: bỏ dòng định nghĩa riêng hệ đứng yên/hệ chuyển động, gộp vào dòng Đánh số thành \"(3) hệ đứng yên (gắn với vật làm gốc)\".",
+      "Mục II.4: rút gọn dòng Rút ra của thí nghiệm tờ giấy và ví dụ toa tàu, kết quả $v_{13} = 11$ m/s giữ nguyên.",
+      "Bẫy 2: bỏ câu \"Sai trong hầu hết trường hợp\" (bảng ngay dưới đã nêu khi nào đúng)."
+    ],
+    "so_tu_them": -48,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-toc-do-van-toc/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

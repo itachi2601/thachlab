@@ -1,6 +1,6 @@
 {
   "bai": "l11-mo-ta-song",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -124,5 +124,201 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-mo-ta-song/gemini/da-xu-ly/theory.src.202610091140.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong bảng ẩn đã ghi kèm Δφ = 2kπ, (2k+1)π, (2k+1)π/2 ngay ở cột trái, không thêm cột hay dời bảng."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bước sóng thêm 'trên cùng một phương truyền' cho khớp Trả bài 3, bù bằng cắt câu lặp ở mục 3."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nói rõ khi sóng truyền ngược chiều thì nguồn nằm xa phía x dương, O chỉ là gốc toạ độ có u_O đã biết."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào ô u−x cách suy chiều truyền bằng dịch thử dạng dây (không chép sẵn quy tắc sườn để giữ Câu 3, không thêm hình), bù bằng cắt câu lặp ở mục 3 và phản hồi Câu 1."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng nhắc 'u = Acosφ thì v = −ωA sinφ' từ bài dao động điều hoà trước công thức v_M."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nguồn không có '$' mở trước 2cos(6,5π), biểu thức nằm giữa chuỗi u_M = ...)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô dữ liệu đổi thành t = 0,1625 s, khi đã có T = 0,05 s thì t/T = 3,25 tức t = 3T + T/4."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng dây đàn nói rõ không có nhịp áp từ ngoài nên f không bị khoá, chiều dài dây quy định λ, khác với lò xo do tay gảy."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi dòng thành 'Từ đỉnh thứ nhất đến đỉnh thứ n (các đỉnh liên tiếp)'."
+      },
+      {
+        "id": "q-tl8-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mở bài đã nhấn 'chỉ chậm hơn một nhịp', không thêm ⚠."
+      },
+      {
+        "id": "q-tl8-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích nhiễu 6,25 = v/T."
+      },
+      {
+        "id": "q-tl8-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn Bẫy 1 ngay trước đã nhấn lá chỉ nhấp nhô tại chỗ."
+      },
+      {
+        "id": "q-tl8-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 ngay trước đã nhấn không có quy luật cái nào lớn hơn."
+      },
+      {
+        "id": "q-tl8-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề và đoạn dẫn Bẫy 3 đã nhấn đọc nhãn trục hoành."
+      },
+      {
+        "id": "q-tl8-q6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lỗi đảo thành f/v vòng này khác lỗi vòng trước và bài chưa nhấn, nên thêm dòng ⚠ kiểm đơn vị λ = v/f trước Câu 2."
+      },
+      {
+        "id": "q-tl8-q7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ 'đừng đoán theo độ dốc' đã thêm ở vòng 1."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 2 bảng đại lượng: định nghĩa bước sóng thêm điều kiện 'trên cùng một phương truyền'.",
+      "Mục 2 bảng lệch pha (details): thêm Δφ = 2kπ (cùng pha), (2k+1)π (ngược pha), (2k+1)π/2 (vuông pha); dòng d = (n−1)λ ghi rõ là từ đỉnh thứ nhất đến đỉnh thứ n.",
+      "Mục 3 (details sóng ngược chiều): nguồn ở phía x dương, O chỉ là gốc toạ độ nên điểm x > 0 nhận sóng trước O.",
+      "Mục 4 ô đồ thị u−x: thêm cách suy chiều truyền bằng dịch thử dạng dây sang phải/trái.",
+      "Bài toán mẫu, bảng đọc đề: t/T = 0,1625/0,05 = 3,25 nên t = 3T + T/4 (số liệu không đổi).",
+      "Lời giải câu c: nhắc u = Acosφ thì v = −ωA sinφ trước khi tính v_M.",
+      "Câu 2: thêm dòng ⚠ λ = v/f, không phải f/v, kiểm đơn vị.",
+      "Dây đàn: không có nhịp áp từ ngoài nên f không bị khoá, chiều dài dây quy định λ (khác lò xo do tay gảy)."
+    ],
+    "so_tu_them": 39,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-mo-ta-song/gemini/da-xu-ly/theory.src.202610191637.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã ghi kèm Δφ = 2kπ, (2k+1)π, (2k+1)π/2 ở cột trái bảng ẩn."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ô bước sóng đã có 'trên cùng một phương truyền' từ vòng 2."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã nói rõ nguồn nằm xa phía x dương, O chỉ là gốc toạ độ."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ô u−x đã có cách dịch thử dạng dây để suy chiều truyền từ vòng 2."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng nhắc 'u = Acosφ thì v = −ωA sinφ' đã có trong lời giải."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng 2: trích không khớp nguồn (nguồn không có '$' mở ngay trước 2cos(6,5π))."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bảng đọc đề đã ghi 'khi đã có T = 0,05 s thì t/T = 3,25'."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng dây đàn đã nói rõ không có nhịp áp từ ngoài nên f không bị khoá."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng bảng đã đổi thành 'Từ đỉnh thứ nhất đến đỉnh thứ n (các đỉnh liên tiếp)'."
+      },
+      {
+        "id": "q-tl8-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mở bài vẫn giữ 'chỉ chậm hơn một nhịp', không thêm ⚠."
+      },
+      {
+        "id": "q-tl8-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích nhiễu 6,25 = v/T."
+      },
+      {
+        "id": "q-tl8-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn Bẫy 1 ngay trước đã nhấn lá chỉ nhấp nhô tại chỗ."
+      },
+      {
+        "id": "q-tl8-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 ngay trước đã nhấn không có quy luật cái nào lớn hơn."
+      },
+      {
+        "id": "q-tl8-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề và đoạn dẫn Bẫy 3 đã nhấn đọc nhãn trục hoành."
+      },
+      {
+        "id": "q-tl8-q6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ 'λ = v/f, không phải f/v' đã có trước Câu 2 (chỉ rút gọn chữ vòng này)."
+      },
+      {
+        "id": "q-tl8-q7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ 'đừng đoán theo độ dốc' đã thêm từ vòng 1."
+      }
+    ],
+    "doi_noi_dung": [
+      "Bài toán mẫu mục V: đề rút gọn chữ (bỏ 'điều hoà', 'trên mặt nước' ở câu b, viết lại câu c), số liệu và mọi kết quả giữ nguyên; câu dẫn 'cho dữ liệu gì, gọi kiến thức nào' chuyển vào details bảng đọc đề.",
+      "Câu 2 (tl8-q6): đề viết gọn thành 'Sóng có v = 40 cm/s, f = 20 Hz', số liệu và đáp án ngược pha không đổi."
+    ],
+    "so_tu_them": -100,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-mo-ta-song/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

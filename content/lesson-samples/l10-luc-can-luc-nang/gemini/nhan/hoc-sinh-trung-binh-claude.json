@@ -5,135 +5,167 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "I. Mở bài: hai tờ giấy giống hệt nhau",
-      "trich_nguyen_van": "D. Lực đẩy Archimedes của không khí lên tờ phẳng lớn hơn, vì nó to hơn",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "🧰 Kiểm tra hành trang",
+      "trich_nguyen_van": "Ra $10^{-2}$ là đổi như đơn vị độ dài, quên rằng thể tích có lập phương.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
       "muc": "nhỏ",
-      "em_hieu_la": "Thuật ngữ 'lực đẩy Archimedes' xuất hiện ngay câu dự đoán, lặp lại ở Câu 1 và mục II.3, nhưng đến mục II.4 mới được định nghĩa. Học sinh chỉ dựa vào trí nhớ mơ hồ từ THCS.",
-      "de_xuat": "Thêm một dòng nhắc ngắn ở mục I hoặc đầu mục II: lực đẩy Archimedes là lực chất lưu đẩy vật lên, sẽ học kĩ ở II.4."
+      "em_hieu_la": "Học sinh thử đổi như độ dài (1 dm = 0,1 m) thì ra 10^-1, không ra 10^-2. Lời giải thích không khớp với phương án nên học sinh không hiểu mình sai ở đâu.",
+      "de_xuat": "Sửa thành 'Ra 10^-2 là đổi như đơn vị diện tích (bình phương) thay vì lập phương', hoặc đổi phương án C thành 10^-1 m³."
     },
     {
       "id": "c2",
-      "vi_tri": "1. Lực cản của chất lưu",
-      "trich_nguyen_van": "gần như theo $v^2$; kiểm: $v^2/n \\approx 1{,}2$ ở cả bốn hàng",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "🪂 Ví dụ: người nhảy dù (số liệu minh hoạ)",
+      "trich_nguyen_van": "mỗi hình dạng có một tốc độ giới hạn riêng; dù rộng cho tốc độ giới hạn nhỏ.",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Ký hiệu n không được định nghĩa, bảng chỉ ghi 'Số phễu'. Học sinh cũng không thấy vì sao chia v² cho số phễu lại kiểm được quan hệ lực cản ∝ v².",
-      "de_xuat": "Ghi rõ 'n là số phễu, tỉ lệ với trọng lượng, tức tỉ lệ với lực cản khi rơi đều; nếu F_c ∝ v² thì v²/n phải gần như không đổi'."
+      "em_hieu_la": "Học sinh hiểu tốc độ giới hạn chỉ phụ thuộc hình dạng. Điều này trái với thí nghiệm phễu ngay trước: cùng hình dạng nhưng khác trọng lượng thì tốc độ rơi đều khác nhau.",
+      "de_xuat": "Viết: 'tốc độ giới hạn phụ thuộc hình dạng và trọng lượng vật; cùng trọng lượng, dù rộng cho tốc độ giới hạn nhỏ'."
     },
     {
       "id": "c3",
-      "vi_tri": "1. Lực cản của chất lưu",
-      "trich_nguyen_van": "Lực cản ở $v$ gấp đôi đã đủ lớn gấp 4",
-      "loai": "nhảy_bước",
+      "vi_tri": "Bẫy 3: càng sâu, lực đẩy càng lớn",
+      "trich_nguyen_van": "Thí nghiệm lực kế ở mục II.4 cũng cho $1{,}67\\ \\text{N}$ ở mọi độ sâu.",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Học sinh không nối được 'trọng lượng gấp 4' với 'lực cản gấp 4', vì bước 'rơi đều nên F_c = P' nằm ở hộp thí nghiệm phía trên, không được nhắc lại ở đây.",
-      "de_xuat": "Thêm vế đầu: 'Rơi đều nên F_c = P; P gấp 4 nên F_c gấp 4, trong khi v chỉ gấp 2'."
+      "em_hieu_la": "Câu hỏi đang hỏi về lực đẩy, nên học sinh tưởng lực đẩy Archimedes bằng 1,67 N. Thực ra 1,67 N là số chỉ lực kế, còn lực đẩy là 0,98 N.",
+      "de_xuat": "Viết: 'lực kế vẫn chỉ 1,67 N ở mọi độ sâu, tức lực đẩy vẫn là 2,65 − 1,67 = 0,98 N'."
     },
     {
       "id": "c4",
-      "vi_tri": "2. Vật rơi trong không khí: ba giai đoạn",
-      "trich_nguyen_van": "Mở dù: lực cản tăng vọt, người chậm dần, rồi rơi đều chỉ khoảng $5\\ \\text{m/s}$.",
+      "vi_tri": "Bẫy 3: càng sâu, lực đẩy càng lớn",
+      "trich_nguyen_van": "chênh lệch $\\rho g \\Delta h$ giữ nguyên",
       "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Pha chậm dần khi mở dù không thuộc ba giai đoạn vừa học. Học sinh không biết lúc đó lực cản lớn hơn trọng lượng, nên dễ lẫn sang phương án C của Câu 3.",
-      "de_xuat": "Thêm một câu: 'Lúc vừa mở dù, F_c > P nên hợp lực hướng lên, người chậm dần cho tới khi F_c giảm về bằng P'."
+      "em_hieu_la": "Đề cho độ sâu đổi từ 20 cm sang 60 cm, nên học sinh dễ lấy Δh = 40 cm (độ hạ thêm). Từ đó học sinh nghĩ Δp, và cả lực đẩy, thay đổi.",
+      "de_xuat": "Ghi rõ: 'Δh ở đây là chiều cao của vật (khoảng cách mặt trên – mặt dưới), không phải quãng hạ sâu thêm'."
     },
     {
       "id": "c5",
-      "vi_tri": "5. Vì sao có lực đẩy: chênh lệch áp suất",
-      "trich_nguyen_van": "$F_2 - F_1 = \\Delta p \\cdot S = \\rho g \\Delta h S = \\rho g V$",
+      "vi_tri": "📊 Bấm xem nhận xét",
+      "trich_nguyen_van": "kiểm thấy $v^2/n \\approx 1{,}2$ ở cả bốn hàng.",
       "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Hai bước bị ngầm: áp lực = áp suất × diện tích (F = pS), và V = S·Δh. Cả hai đều không được nêu, nên học sinh không thấy vì sao hiệu áp lực lại bằng Δp·S.",
-      "de_xuat": "Thêm: 'F_1 = p_1 S, F_2 = p_2 S nên F_2 − F_1 = (p_2 − p_1)S; khối hộp có V = S·Δh'."
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không thấy vì sao 'lực cản tỉ lệ v²' dẫn tới 'v²/n không đổi'. Bài cũng không đưa bốn giá trị để học sinh tự kiểm.",
+      "de_xuat": "Thêm câu 'lực cản ∝ n và lực cản ∝ v² nên v² ∝ n', rồi ghi bốn giá trị 1,19; 1,25; 1,18; 1,25."
     },
     {
       "id": "c6",
-      "vi_tri": "5. Vì sao có lực đẩy: chênh lệch áp suất",
-      "trich_nguyen_van": "$\\Delta p$ <strong>không phụ thuộc</strong> $p_0$, chỉ tỉ lệ với $\\Delta h$.",
-      "loai": "mơ_hồ",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$\\rho_v$ → tìm thể tích",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Chữ 'chỉ' khiến học sinh hiểu Δp chỉ phụ thuộc Δh, quên mất ρ. Đáp án Trả bài câu 5 cũng chỉ ghi 'tỉ lệ với Δh'.",
-      "de_xuat": "Sửa thành 'phụ thuộc ρ của chất lỏng và tỉ lệ với Δh, không phụ thuộc p_0', và sửa tương tự ở Trả bài câu 5."
+      "em_hieu_la": "Chỉ số v không được giải thích. Ngay trước đó v là vận tốc, nên học sinh có thể tưởng đây là đại lượng gắn với tốc độ.",
+      "de_xuat": "Ghi '$\\rho_v$: khối lượng riêng của vật (nhôm)' ngay lần đầu dùng."
     },
     {
       "id": "c7",
-      "vi_tri": "6. Nổi, lơ lửng hay chìm",
-      "trich_nguyen_van": "<td>$P \\lt F_A$</td><td>nổi lên, tới khi $F_A$ của phần chìm bằng $P$</td>",
+      "vi_tri": "🪂 Ví dụ: người nhảy dù (số liệu minh hoạ)",
+      "trich_nguyen_van": "sau khoảng $12\\ \\text{s}$, tốc độ đạt cỡ $50\\ \\text{m/s}$",
       "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Học sinh dễ gộp 'nổi lên' (đang chuyển động) với 'nổi' (đứng yên trên mặt) thành một, rồi nhớ 'vật nổi thì F_A > P'. Dòng tổng kết 'So P với F_A: chìm · lơ lửng · nổi' bỏ mất điều kiện 'khi chìm hẳn' nên càng củng cố hiểu lầm này.",
-      "de_xuat": "Thêm một hàng riêng 'Nổi yên trên mặt: F_A (phần chìm) = P', và ghi 'khi chìm hẳn' vào dòng tổng kết."
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không biết 50 m/s là tốc độ giới hạn khi chưa mở dù hay chỉ là tốc độ tại giây thứ 12. Phải đọc tới Hình 3 mới rõ.",
+      "de_xuat": "Thêm: 'tốc độ không tăng thêm nữa, ổn định cỡ 50 m/s: đây là tốc độ giới hạn khi chưa mở dù'."
     },
     {
       "id": "c8",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "<strong>Cân bằng:</strong> vật đứng yên, $T + F_A = P$",
-      "loai": "nhảy_bước",
+      "vi_tri": "🔬 Thí nghiệm: phễu giấy rơi",
+      "trich_nguyen_van": "Chồng lần lượt 1, 2, 3, 4 phễu (trọng lượng gấp 1, 2, 3, 4)",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Học sinh không rõ T là lực gì và chiều ra sao. Bài cũng không nói số chỉ lực kế chính bằng lực dây kéo vật lên, nên không hiểu vì sao T và F_A được cộng với nhau.",
-      "de_xuat": "Thêm: 'T là lực lực kế kéo vật lên (bằng số chỉ lực kế); T và F_A cùng hướng lên, P hướng xuống'."
+      "em_hieu_la": "Bài không nói chồng phễu thì hình dạng ngoài vẫn giữ nguyên. Học sinh không thấy vì sao có thể kết luận lực cản chỉ đổi theo tốc độ.",
+      "de_xuat": "Thêm: 'các phễu lồng khít nên hình dạng ngoài không đổi, chỉ trọng lượng thay đổi'."
     },
     {
       "id": "c9",
-      "vi_tri": "Bẫy 1: rơi đều là hết lực",
-      "trich_nguyen_van": "<p class=\"tl-conf\">Em chắc bao nhiêu?",
+      "vi_tri": "2. Vật rơi trong không khí: ba giai đoạn",
+      "trich_nguyen_van": "$v$ tăng, lực cản tăng dần, hợp lực giảm: <strong>nhanh dần không đều</strong>.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Dòng chốt viết 'gia tốc giảm', còn gạch đầu dòng chỉ nói 'hợp lực giảm' rồi 'nhanh dần không đều'. Học sinh không nối được hai cách nói và có thể hiểu 'không đều' là lúc nhanh lúc chậm.",
+      "de_xuat": "Viết: 'hợp lực giảm nên gia tốc a = F/m giảm: vẫn nhanh dần nhưng tăng tốc chậm lại'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "5. Vì sao có lực đẩy: chênh lệch áp suất",
+      "trich_nguyen_van": "Áp lực lên mặt trên $F_1 = p_1 S$, lên mặt dưới $F_2 = p_2 S$",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài không định nghĩa p₁, p₂. Hình 4 lại nói mũi tên chỉ vẽ phần do nước, nên học sinh không rõ p₁, p₂ có gồm p₀ hay không.",
+      "de_xuat": "Thêm: 'p₁, p₂: áp suất tại mặt trên, mặt dưới (đều gồm p₀, nên p₀ triệt tiêu khi trừ)'."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
+      "trich_nguyen_van": "em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>",
       "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Ô chọn mức độ chắc chắn nằm trước hộp câu hỏi, nên học sinh phải chọn 'Chắc/Không chắc' khi chưa đọc câu 3. Câu 6 cũng bị như vậy.",
-      "de_xuat": "Đặt ô 'Em chắc bao nhiêu?' ngay sau các phương án, trước phần phản hồi."
+      "em_hieu_la": "Bài có ba dãy câu đánh số trùng nhau: Câu 1–2 Hành trang, Câu 1–6 Tự kiểm tra, câu 1–6 Trả bài. Học sinh dễ lẫn khi được nhắc 'xem lại câu 1'.",
+      "de_xuat": "Đánh số riêng từng dãy, ví dụ HT1–HT2, TK1–TK6, TB1–TB6."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "du_doan",
+      "cau": "Dự đoán trước khi học (tl64-q1)",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Thấy viên giấy rơi nhanh thì cho là nó nặng hơn, quên rằng vo tròn không đổi khối lượng.",
+      "loi_tu_duy": "Thấy viên giấy vo chặt, cầm 'chắc tay' nên nghĩ nó nặng hơn, quên rằng khối lượng không đổi khi đổi hình dạng.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Hình 1. Cùng trọng lượng P (mũi tên đỏ dài bằng nhau)."
+      "trich_nguyen_van": "Hai tờ cùng khối lượng nên cùng trọng lượng."
     },
     {
-      "cau": "cau1",
+      "cau": "Kiểm tra hành trang – Câu 1",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Gộp 'ma sát' và 'lực cản' thành một loại lực cản chung, không phân biệt ma sát lưỡi giày với lực cản của không khí.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Nhớ lẫn 1 lít với 1 ml = 1 cm³, nên chọn 10^-6.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $10^{-6}$ là nhầm lít với $\\text{cm}^3$"
     },
     {
-      "cau": "cau2",
+      "cau": "Kiểm tra hành trang – Câu 2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Quen công thức KHTN 8 p = d·h nhưng lấy d = 1000 (lẫn với ρ), tức quên nhân g.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ra $2000$ Pa là quên nhân $g$."
+    },
+    {
+      "cau": "Tự kiểm tra – Câu 1",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Nhớ bảng 'P < F_A → nổi' rồi áp vào tàu đang nổi yên, nhầm 'nổi lên' với 'nổi cân bằng'.",
+      "loi_tu_duy": "Gộp mọi lực cản chuyển động thành 'ma sát', nên nghĩ tư thế thuôn giúp giảm ma sát với mặt băng.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "nổi lên, tới khi $F_A$ của phần chìm bằng $P$"
+      "trich_nguyen_van": "⚠ Lực cản của không khí khác ma sát giữa hai mặt rắn tiếp xúc."
     },
     {
-      "cau": "cau3",
-      "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Cho rằng vật đang đi xuống thì lực hướng xuống phải lớn hơn, tức nghĩ chuyển động cần hợp lực cùng chiều.",
+      "cau": "Tự kiểm tra – Câu 2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ 'nổi' nghĩa là lực đẩy thắng trọng lượng, nhầm điều kiện đang nổi lên với điều kiện nổi yên.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "lực cản bằng trọng lượng, hợp lực bằng 0: rơi đều với tốc độ giới hạn"
+      "trich_nguyen_van": "khi đã nổi yên: $F_A = P$, không lớn hơn"
     },
     {
-      "cau": "cau4",
+      "cau": "Tự kiểm tra – Câu 3",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Mang câu 'mở dù lực cản lớn hơn trọng lượng' trong ví dụ sang giai đoạn đã rơi đều, nghĩ lực cản lớn hơn để 'giữ' không cho nhanh thêm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "tới khi bằng trọng lượng thì rơi đều chỉ khoảng $5\\ \\text{m/s}$"
+    },
+    {
+      "cau": "Tự kiểm tra – Câu 4",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Lấy V là thể tích cả khối gỗ thay vì thể tích phần chìm.",
+      "loi_tu_duy": "Lấy V là thể tích cả khối gỗ (2,0 dm³) vì đề cho số này trước, không phân biệt với phần chìm.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$V$ cả vật (vật đang nổi) | $V$ phần chìm"
+      "trich_nguyen_van": "ρ chất lỏng · V phần chìm · đổi ra m³"
     },
     {
-      "cau": "cau5",
+      "cau": "Tự kiểm tra – Câu 5",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Thấy áp suất tăng theo độ sâu thì suy ra lực đẩy cũng tăng theo, nhầm p với Δp.",
+      "loi_tu_duy": "Áp suất tăng theo độ sâu nên suy ra lực đẩy cũng tăng tỉ lệ, lẫn p với F_A.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Áp suất tăng theo độ sâu, nhưng lực đẩy chỉ phụ thuộc chênh lệch áp suất"
+      "trich_nguyen_van": "Chìm hẳn rồi · sâu mấy cũng thế"
     },
     {
-      "cau": "cau6",
+      "cau": "Tự kiểm tra – Câu 6",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Dùng lại kết quả 3,4 N của bài mẫu chìm hoàn toàn, không giảm V còn một nửa.",
+      "loi_tu_duy": "Chép kết quả 3,4 N của bài toán mẫu vừa giải ngay phía trên mà không để ý chỉ nhúng một nửa, tức không giảm V phần chìm.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Đọc đề: gạch \"chìm hoàn toàn\", \"một nửa\", \"nổi\" — chúng cho $V$ phần chìm."
+      "trich_nguyen_van": "ρ chất lỏng · V phần chìm · đổi ra m³"
     }
   ]
 }

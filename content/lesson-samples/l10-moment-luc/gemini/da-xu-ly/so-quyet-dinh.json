@@ -1,6 +1,6 @@
 {
   "bai": "l10-moment-luc",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -111,5 +111,114 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-moment-luc/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mở bài thêm \"Cả hai người đều ấn vuông góc với cán\", ví dụ mục 1 ghi rõ vì lực vuông góc cán nên d bằng khoảng cách tới chỗ đặt tay."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (chú thích hình không có trong bài)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (chú thích Hình 3 không có trong bài)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài không có mục PhET)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mẹo chọn trục nói rõ \"trục\" là điểm tự chọn để tính moment, không cần là trục quay thật."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Khung ngẫu lực thêm dòng: trục nằm ngoài hai giá thì M = F d₂ − F d₁, vẫn bằng F d."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Khung ngẫu lực tách hai trường hợp: thước trên bàn quay quanh trọng tâm, vô lăng có trục cố định quay quanh chính trục đó."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài là hai ô bảng, không có dấu \"→\" giữa hai cụm)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng ⚠ trước Câu 3 đổi thành góc giữa lực và đường nối trục với điểm đặt (cán, mặt cửa) dùng sin, góc với phương vuông góc đường đó dùng cos."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn lỗi chọn A (Minh lực lớn hơn vẫn thua)."
+      },
+      {
+        "id": "q-ht-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi chọn đoạn nối tới điểm bất kì."
+      },
+      {
+        "id": "q-ht-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi dùng cos thay sin."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi để nguyên 30 cm, giữ quyết định vòng trước."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi làm ngược tỉ lệ, giữ quyết định vòng trước."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Lỗi lấy 0,25 m đã được nhấn ở tiêu đề Bẫy 1, bảng so sánh và phản hồi Câu 3."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Thí nghiệm cửa, bảng Bẫy 2 và phản hồi đã nhấn giá lực qua trục thì M = 0."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn lỗi chỉ tính một lực với bán kính 0,18 m, giữ quyết định vòng trước."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 Bẫy 2 và phản hồi đã nhấn lỗi so lực thay vì so moment."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài: ghi rõ cả hai người ấn vuông góc với cán, ví dụ mục 1 nêu vì vậy d bằng khoảng cách tới chỗ đặt tay (số liệu 24 và 45 N·m giữ nguyên).",
+      "Mục 1: câu \"Nếu nhổ đinh cần khoảng 40 N·m\" thay cho câu \"Giả định…\", bỏ dòng \"giá lực qua trục thì M = 0\" ở danh sách vì đã có trong thí nghiệm cửa, Bẫy 2 và phần Mang về.",
+      "Khung Moment lực: bỏ dòng lặp \"Bằng lực nhân cánh tay đòn\" (công thức giữ nguyên).",
+      "Điều kiện cân bằng: nêu rõ \"trục\" khi tính moment là điểm tự chọn, không cần là trục quay thật.",
+      "Ngẫu lực: thêm trường hợp vật có trục cố định (vô lăng) thì quay quanh trục đó.",
+      "Ngẫu lực: thêm công thức trục ngoài hai giá M = F d₂ − F d₁ = F d (d₂ > d₁).",
+      "Bẫy 1 (dòng ⚠): góc giữa lực và đường nối trục với điểm đặt (cán, mặt cửa) dùng sin, khớp với thử thách ⭐⭐ góc với mặt cửa."
+    ],
+    "so_tu_them": 15,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-moment-luc/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

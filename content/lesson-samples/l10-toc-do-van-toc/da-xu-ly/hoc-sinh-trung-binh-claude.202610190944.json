@@ -1,0 +1,182 @@
+{
+  "bai": "Bài 5. Tốc độ và vận tốc",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Vận tốc",
+      "trich_nguyen_van": "Vectơ vận tốc: gốc ở vật · hướng theo độ dịch chuyển · độ dài tỉ lệ độ lớn.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mọi vectơ vận tốc, kể cả vận tốc tức thời, đều hướng theo độ dịch chuyển cả quãng. Vì vậy ở Câu 2 em chọn C (từ A sang B).",
+      "de_xuat": "Ghi rõ: vận tốc trung bình hướng theo độ dịch chuyển, còn vận tốc tức thời hướng theo chiều vật đang đi tại điểm đó."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Vận tốc",
+      "trich_nguyen_van": "Tiếp tuyến với cung tại $M$, theo chiều xe đang chạy",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Lý thuyết chỉ nói 'hướng theo chiều vật đang đi', không nói 'tiếp tuyến'. Em không nối được hai cách diễn đạt nên đáp án đúng trông lạ.",
+      "de_xuat": "Thêm vào ý vận tốc tức thời: 'trên quỹ đạo cong, hướng này là tiếp tuyến với quỹ đạo tại điểm đó'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "4. Tính tương đối và công thức cộng vận tốc",
+      "trich_nguyen_van": "em đi về đầu toa $1\\ \\text{m/s}$ so với toa; tàu chạy $10\\ \\text{m/s}$ so với đường ray",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "'Đầu toa' có thể là đầu nào cũng được. Ví dụ cộng thẳng 1 + 10 mà không nói vì cùng chiều, nên em không biết khi nào thì cộng.",
+      "de_xuat": "Viết 'em đi về phía đầu tàu (cùng chiều tàu chạy)… hai vectơ cùng chiều nên $v_{13} = 1 + 10 = 11$ m/s'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "Bẫy 3: cộng tốc độ như cộng hai con số",
+      "trich_nguyen_van": "Bơi ngược dòng: $1{,}5 + 2 = 3{,}5\\ \\text{m/s}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ngay trên đã cho sẵn đáp án Câu 6 với đúng số liệu (0,5 m/s theo chiều dòng nước). Em chỉ chép lại, không thật sự tự suy ra.",
+      "de_xuat": "Đổi số liệu ở bảng Bẫy 3 (ví dụ 1 m/s và 3 m/s) để Câu 6 vẫn kiểm tra được."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "V. Bài toán mẫu: ca nô qua sông",
+      "trich_nguyen_van": "$v_{13}$, $t$, $BC$ = ?",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Các điểm A, B, C chưa được định nghĩa trong chữ, chỉ có ở hình. Em không biết BC là đoạn nào. Điểm A, B ở Hình 2 lại mang nghĩa khác.",
+      "de_xuat": "Ghi trong đề: A là điểm xuất phát, B là điểm đối diện A ở bờ bên kia, C là điểm cập bến."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "V. Bài toán mẫu: ca nô qua sông",
+      "trich_nguyen_van": "Chỉ thành phần vuông góc bờ đưa ca nô sang",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bài chưa dạy 'thành phần' của vectơ. Em không hiểu vì sao lại chia cho 4 mà không chia cho 5, chỉ thấy đây là một quy tắc phải nhớ.",
+      "de_xuat": "Thêm một câu: 'nước chảy dọc bờ nên không đẩy ca nô lại gần hay ra xa bờ; khoảng cách tới bờ chỉ giảm nhờ $v_{12}$'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "Bẫy 2: tốc độ trung bình = trung bình cộng các tốc độ",
+      "trich_nguyen_van": "Lấy cả quãng $120\\ \\text{km}$ cho dễ",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không hiểu vì sao chọn 120. Câu 'kết quả không phụ thuộc quãng đường chọn' em cũng phải tin suông.",
+      "de_xuat": "Nói rõ: chọn 120 vì chia hết cho cả 40 và 60; chọn số khác (ví dụ 240 km) vẫn ra 48 km/h."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "$v_{13} = \\sqrt{5^2 - 3^2} = 4\\ \\text{m/s}$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Bảng ba trường hợp chỉ có tổng bình phương. Em không biết vì sao ở đây lại là hiệu, và trường hợp này (v13 vuông góc bờ) không có trong bảng.",
+      "de_xuat": "Thêm gợi ý: lần này $\\vec v_{13} \\perp \\vec v_{23}$ nên $\\vec v_{12}$ là cạnh huyền, vì vậy $v_{12}^2 = v_{13}^2 + v_{23}^2$."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "thời gian đi hết một đoạn đường tính từ tổng quãng đường xe chạy, không phải từ khoảng cách điểm đầu–cuối",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu này không rõ 'tính thời gian từ quãng đường' nghĩa là gì, cũng không rõ liên hệ với tốc kế ra sao.",
+      "de_xuat": "Viết lại: 'muốn ước lượng thời gian chuyến đi, lấy tổng quãng đường chia tốc độ trung bình, không dùng khoảng cách đường chim bay'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "I. Mở bài: một vòng đường đua trượt băng",
+      "trich_nguyen_van": "Bảng điện tử báo tốc độ trung bình khoảng $12\\ \\text{m/s}$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mở bài ghi 12 m/s, phản hồi lại nói 12,3 m/s 'chính là con số trên bảng điện tử'. Em phân vân hai số này có khác nhau không.",
+      "de_xuat": "Ghi thống nhất 'khoảng 12,3 m/s' ở cả mở bài và phản hồi."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "1. Tốc độ trung bình",
+      "trich_nguyen_van": "cùng $0{,}3\\ \\text{s}$ sai nhưng trên $16\\ \\text{s}$ chỉ còn khoảng $2\\,\\%$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không biết 16 s ở đâu ra vì bài không nói đoạn đường dài bao nhiêu.",
+      "de_xuat": "Ghi rõ 'đo đoạn 20 m (đi mất khoảng 16 s)'."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu: ca nô qua sông",
+      "trich_nguyen_van": "không phải $4\\ \\text{m/s}$ (Bẫy 2)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "4 m/s vừa là vận tốc ca nô so với nước, vừa là trung bình cộng của 7 và 1. Em không rõ bài đang cảnh báo lỗi nào.",
+      "de_xuat": "Viết 'không phải $(7+1)/2 = 4$ m/s (Bẫy 2)'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "1. Tốc độ trung bình",
+      "trich_nguyen_van": "Quãng đường chia thời gian · vô hướng · nhanh hay chậm",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài dùng 'vô hướng' ngay từ đầu mà không giải thích. Em đoán là 'không có hướng' nhưng không chắc.",
+      "de_xuat": "Thêm ngoặc: 'vô hướng (chỉ có độ lớn, không có hướng)'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "Dự đoán mở bài",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy quãng đường chia thời gian cho cả vận tốc, vì chưa phân biệt quãng đường với độ dịch chuyển.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đi vòng về chỗ cũ: tốc độ trung bình $\\gt 0$, vận tốc trung bình $= 0$."
+    },
+    {
+      "cau": "Câu 1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy số tốc kế tại một thời điểm làm tốc độ trung bình cả đường; hoặc ngại đổi 15 phút sang giờ nên chọn luôn con số có sẵn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Tốc độ trung bình chỉ là một số cho cả chuyến đi."
+    },
+    {
+      "cau": "Câu 2",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Áp ý 'vectơ vận tốc hướng theo độ dịch chuyển' cho cả vận tốc tức thời, nên trộn vận tốc trung bình cả quãng với vận tốc tại M.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "vận tốc tại một thời điểm, hướng theo chiều vật đang đi"
+    },
+    {
+      "cau": "Câu 3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Hiểu 'kéo theo' là vận tốc của em (em bị kéo theo tàu) mà không đánh số (1)(2)(3). Có em chọn D vì ví dụ không nói rõ em đi cùng chiều tàu.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\vec v_{23}$: vận tốc kéo theo (hệ chuyển động so với hệ đứng yên)."
+    },
+    {
+      "cau": "Câu 4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Dùng quãng đường cho cả vận tốc trung bình, quên rằng về chỗ cũ thì độ dịch chuyển bằng 0.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chỉ đúng khi vật đi thẳng và không quay đầu."
+    },
+    {
+      "cau": "Câu 5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy trung bình cộng hai tốc độ, không để ý đề cho cùng quãng đường chứ không phải cùng thời gian.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Chỉ khi hai đoạn đi cùng thời gian"
+    },
+    {
+      "cau": "Câu 6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Tính đúng độ lớn 0,5 m/s nhưng giữ chiều theo ý định bơi của người, không xét vận tốc nào lớn hơn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\lvert 1{,}5 - 2 \\rvert = 0{,}5\\ \\text{m/s}$, theo chiều dòng nước"
+    },
+    {
+      "cau": "Câu 7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ vận tốc so với bờ lớn hơn thì sang sông nhanh hơn, lấy bề rộng sông chia cho v13. Bài chỉ khẳng định chứ chưa giải thích vì sao chỉ v12 quyết định thời gian.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$AB = 120\\ \\text{m}$ → chỉ $\\vec v_{12}$ đưa ca nô sang bờ"
+    }
+  ]
+}

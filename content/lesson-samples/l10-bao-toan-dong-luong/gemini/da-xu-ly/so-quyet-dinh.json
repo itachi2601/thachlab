@@ -1,6 +1,6 @@
 {
   "bai": "l10-bao-toan-dong-luong",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -100,5 +100,229 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-bao-toan-dong-luong/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ ký hiệu $v$ như SGK (khung va chạm mềm đã tách nghĩa từ vòng trước), chỉ sửa chú thích hộp phản lực thành từng dòng và ghi rõ $\\vec v$ là vận tốc ngay sau khi tách."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng ở mục 3: thực tế hai vật rời nhau vẫn có thể mất một phần động năng, chỉ coi là đàn hồi khi đề cho."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi \"mất động năng\" thành \"động năng giảm\" ở tổng kết và đáp án Trả bài câu 4 (không dùng \"mất một phần\" vì ví dụ $v = 0$ mất toàn bộ)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (phần nhận xét đang là mốc __NHANXET__)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"$m_2$ càng lớn, tỉ số $v/v_1$ càng nhỏ\" để so sánh công bằng khi $v_1$ thay đổi."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong hộp \"vì sao lại bảo toàn\" thêm hai dòng nêu $\\vec F_{21}$ là lực vật 2 lên vật 1, $\\vec F_{12}$ là lực vật 1 lên vật 2."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Lời giải mẫu thêm bước trung gian $\\dfrac{480 - 300}{180}$ trước $\\dfrac{180}{180}$."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm \"(so với hệ quy chiếu mà tên lửa lúc đầu đứng yên)\" sau $800\\ \\text{m/s}$, kết quả không đổi."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án D đổi thành một giai đoạn \"Suốt cả quá trình, từ lúc bi lăn tới đến lúc dừng hẳn\" (không dùng đề xuất vì trùng B), phản hồi sai gộp B và D."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Hình chiếu tổng ngoại lực lên một phương bằng 0 → động lượng bảo toàn theo phương đó\"."
+      },
+      {
+        "id": "q-tl74-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi D và Bẫy 2, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-tl74-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ma sát mặt đường là ngoại lực trong phản hồi B."
+      },
+      {
+        "id": "q-tl74-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đề câu hỏi và phản hồi đã yêu cầu kiểm cả hai điều kiện."
+      },
+      {
+        "id": "q-tl74-q4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ đổi gam ra kilôgam đã thêm trước câu 4 ở vòng 1."
+      },
+      {
+        "id": "q-tl74-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 và dòng 🔑 về dấu đứng ngay trước câu này."
+      },
+      {
+        "id": "q-tl74-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 và dòng 🔑 \"động lượng luôn giữ\" đã nhấn."
+      },
+      {
+        "id": "q-tl74-q7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục \"Coi gần đúng là kín\" và bảng Bẫy 3 đã nhấn."
+      },
+      {
+        "id": "q-tl74-q8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 và bước \"Đọc dấu\" trong bài mẫu đã nhấn."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 1 Hệ kín: phát biểu bảo toàn theo một phương đổi thành \"hình chiếu tổng ngoại lực lên một phương bằng 0\".",
+      "Thí nghiệm 1, Quan sát: kết luận đổi thành \"$m_2$ càng lớn, tỉ số $v/v_1$ càng nhỏ\" (khớp $v/v_1 = m_1/(m_1+m_2)$).",
+      "Hộp \"vì sao lại bảo toàn\": thêm định nghĩa $\\vec F_{21}$ (lực vật 2 lên vật 1) và $\\vec F_{12}$ (lực vật 1 lên vật 2).",
+      "Mục 3: thêm dòng va chạm thực tế rời nhau vẫn có thể mất một phần động năng, chỉ coi là đàn hồi khi đề cho.",
+      "Hộp phản lực: ghi rõ $\\vec v$ là vận tốc phần phụt ra ngay sau khi tách.",
+      "Câu 7: phương án nhiễu D đổi thành \"Suốt cả quá trình, từ lúc bi lăn tới đến lúc dừng hẳn\"; phản hồi sai gộp B và D, C giữ ý không cần bàn nhẵn.",
+      "Bài toán mẫu: thêm bước $v = \\dfrac{480 - 300}{180}$, kết quả $1\\ \\text{m/s}$ không đổi.",
+      "Thử thách tên lửa: nêu rõ $800\\ \\text{m/s}$ là so với hệ quy chiếu tên lửa lúc đầu đứng yên, đáp số $\\approx 89\\ \\text{m/s}$ giữ nguyên.",
+      "Tổng kết và Trả bài câu 4: \"mất động năng\" đổi thành \"động năng giảm\".",
+      "Đáp án Trả bài 1–6 và chú thích hai hộp công thức tách mỗi ý một dòng (thay dấu \"·\" bằng xuống dòng)."
+    ],
+    "so_tu_them": 34,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-bao-toan-dong-luong/gemini/da-xu-ly/theory.src.202610191619.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Khung va chạm mềm đã tách nghĩa $v_1, v_2$ (trước) và $v$ (chung sau), hộp phản lực đã ghi rõ vận tốc ngay sau khi tách từ vòng trước."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng \"Thực tế, hai vật rời nhau vẫn có thể mất một phần động năng. Chỉ coi là đàn hồi khi đề cho.\" đã có ở mục 3 từ vòng 2."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Tổng kết và đáp án Trả bài câu 4 đã ghi \"động năng giảm\" từ vòng 2."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (phần nhận xét vẫn là mốc __NHANXET__)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Quan sát thí nghiệm 1 đã ghi \"$m_2$ càng lớn, tỉ số $v/v_1$ càng nhỏ\" từ vòng 2."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Hộp \"vì sao lại bảo toàn\" đã có hai dòng nêu nghĩa $\\vec F_{21}$ và $\\vec F_{12}$."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Lời giải mẫu đã có bước trung gian $\\dfrac{480 - 300}{180}$."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Thử thách tên lửa đã ghi rõ vận tốc khí so với hệ quy chiếu mà tên lửa lúc đầu đứng yên."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phương án D câu 7 đã đổi thành một giai đoạn \"Suốt cả quá trình...\" từ vòng 2."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Mục 1 đã ghi \"Hình chiếu tổng ngoại lực lên một phương bằng 0\" từ vòng 2."
+      },
+      {
+        "id": "q-tl74-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi D và Bẫy 2, không thêm dòng ⚠."
+      },
+      {
+        "id": "q-tl74-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi B đã nêu ma sát mặt đường là ngoại lực."
+      },
+      {
+        "id": "q-tl74-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đề câu hỏi và phản hồi đã yêu cầu kiểm cả hai điều kiện."
+      },
+      {
+        "id": "q-tl74-q4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ đổi gam ra kilôgam đã có trước câu 4 từ vòng 1."
+      },
+      {
+        "id": "q-tl74-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 và dòng 🔑 về dấu đứng ngay trước câu này."
+      },
+      {
+        "id": "q-tl74-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 và dòng 🔑 \"động lượng luôn giữ\" đã nhấn."
+      },
+      {
+        "id": "q-tl74-q7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục \"Coi gần đúng là kín\" và bảng Bẫy 3 đã nhấn."
+      },
+      {
+        "id": "q-tl74-q8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 và bước \"Đọc dấu\" trong bài mẫu đã nhấn."
+      }
+    ],
+    "doi_noi_dung": [
+      "Sửa lint độ dài: cắt khoảng 95 từ hiện ngay, không đổi số liệu, quiz hay bảng Trả bài.",
+      "Mục 2, hộp định luật: bỏ dòng \"Động lượng đo bằng kg·m/s\" (đã học ở Bài 28).",
+      "Thí nghiệm 1: rút gọn câu cổng quang đo $v_1$ và $v$, bỏ ngoặc \"tính từ mô hình, làm tròn như số đọc thật\" (vẫn ghi là số liệu minh hoạ). Câu \"Nhìn vào\" của video 1 rút gọn.",
+      "Thí nghiệm 2, Rút ra: đổi thành \"động lượng và động năng chuyển gần trọn sang xe 2\" cho khớp quan sát \"xe 1 gần như dừng\".",
+      "Mục 1: ví dụ đá rơi vào xe cát rút gọn thành \"ray chỉ đỡ theo phương đứng → chỉ bảo toàn theo phương ngang\". Câu ví dụ hệ An + Bình rút gọn, giữ nguyên lập luận.",
+      "Mục 4: bỏ dòng ví dụ súng/tên lửa/con mực (đã có ở quiz 4, thí nghiệm 3 và phần đời sống). Thí nghiệm 3 bỏ ý \"không cần đẩy vào vật bên ngoài\" (còn trong mục Đời sống).",
+      "Bẫy 3: bỏ câu \"Định luật chỉ nối trạng thái ngay trước với ngay sau va chạm\" vì trùng dòng 🔑 ngay dưới bảng.",
+      "Trả bài: bỏ câu dẫn \"Với mỗi câu: nói bằng lời của em trước...\" vì từng câu hỏi đã ghi sẵn lời nhắc này."
+    ],
+    "so_tu_them": -95,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-bao-toan-dong-luong/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

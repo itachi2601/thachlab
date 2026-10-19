@@ -39,7 +39,7 @@
 <ul>
 <li><strong>Chuyển động tròn:</strong> quỹ đạo là một đường tròn.</li>
 <li><strong>Chuyển động tròn đều:</strong> quỹ đạo tròn và <strong>tốc độ không đổi</strong>.</li>
-<li>Vị trí của vật cho bằng <strong>cung $s$</strong> đã đi, hoặc bằng <strong>độ dịch chuyển góc $\theta$</strong> — góc ở tâm mà bán kính nối vật quét được.</li>
+<li>Vị trí của vật cho bằng <strong>cung $s$</strong> đã đi tính từ một điểm mốc chọn trước, hoặc bằng <strong>độ dịch chuyển góc $\theta$</strong> — góc ở tâm mà bán kính nối vật quét được.</li>
 <li>Đo góc bằng radian: $\theta = \dfrac{s}{r}$ (rad). Cung dài đúng bằng bán kính thì $\theta = 1\ \text{rad}$.</li>
 <li>Đổi đơn vị: $180^\circ = \pi\ \text{rad}$, nên $1\ \text{rad} \approx 57{,}3^\circ$.</li>
 </ul>
@@ -134,8 +134,8 @@
 <p><strong>🔑 Cùng ω · Xa tâm hơn thì nhanh hơn</strong></p>
 
 <ul>
-<li>Tốc độ (còn gọi là tốc độ dài): $v = \dfrac{s}{t}$, không đổi trong chuyển động tròn đều.</li>
-<li>Cung $s = \theta r$, chia cho $t$: $v = \dfrac{\theta}{t}\, r = \omega r$ (tròn đều nên $\theta/t$ chính là $\omega$).</li>
+<li>Tốc độ (còn gọi là tốc độ dài): $v = \dfrac{\Delta s}{\Delta t}$, không đổi trong chuyển động tròn đều.</li>
+<li>Cung $\Delta s = \Delta\theta \cdot r$, chia cho $\Delta t$: $v = \dfrac{\Delta\theta}{\Delta t}\, r = \omega r$.</li>
 <li>Một vòng dài $2\pi r$ đi hết trong $T$: $v = \dfrac{2\pi r}{T} = 2\pi f r$.</li>
 <li>Mọi điểm trên cùng một vật quay có cùng $\omega$, $T$, $f$; điểm xa tâm có $v$ lớn hơn.</li>
 </ul>
@@ -161,7 +161,7 @@
 <p class="tl-label">🔬 Ví dụ ngoài sân: giọt nước văng khỏi bánh xe đạp</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> dựng xe đạp ngược trên yên và tay lái, nhỏ nước lên lốp rồi quay bánh xe bằng tay (người xem đứng lệch sang bên, tránh mặt phẳng bánh).</li>
-<li><strong>Quan sát:</strong> các giọt nước bắn ra thành vệt <strong>thẳng</strong> ngay từ chỗ rời vành, không bám theo vành, không bắn theo bán kính ra ngoài.</li>
+<li><strong>Quan sát:</strong> đoạn đầu vệt nước gần như <strong>thẳng</strong> ngay từ chỗ rời vành (xa hơn mới bị trọng lực kéo cong xuống), không bám theo vành, không bắn theo bán kính ra ngoài.</li>
 <li><strong>Rút ra:</strong> giọt nước rời bánh thì giữ vận tốc ở chỗ rời, tức là tiếp tuyến với vành bánh.</li>
 </ol>
 </div>
@@ -208,8 +208,8 @@
 <input type="radio" name="tl76-q4" id="tl76-q4b"><label for="tl76-q4b" class="tl-opt tl-ok">B. $14{,}1\ \text{m/s}$</label>
 <input type="radio" name="tl76-q4" id="tl76-q4c"><label for="tl76-q4c" class="tl-opt tl-no">C. $20\ \text{m/s}$</label>
 <input type="radio" name="tl76-q4" id="tl76-q4d"><label for="tl76-q4d" class="tl-opt tl-no">D. $10\ \text{m/s}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sau một phần tư vòng, $\vec v_2$ vuông góc với $\vec v_1$, cùng độ lớn $10\ \text{m/s}$. Viết $\vec v_2 - \vec v_1 = \vec v_2 + (-\vec v_1)$, mà $-\vec v_1$ vẫn vuông góc với $\vec v_2$, nên $|\Delta\vec v| = \sqrt{10^2 + 10^2} \approx 14{,}1\ \text{m/s}$. Tốc độ không đổi mà vận tốc vẫn đổi.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0$ là trừ hai <em>tốc độ</em> $10 - 10$ — đúng cái bẫy này. Ra $20\ \text{m/s}$ là trường hợp nửa vòng ($\vec v_2$ ngược $\vec v_1$), không phải một phần tư vòng. Ra $10\ \text{m/s}$ là tưởng độ biến thiên vận tốc bằng chính độ lớn vận tốc. Vẽ hai mũi tên vuông góc rồi trừ. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sau một phần tư vòng, bán kính quay $90^\circ$ nên tiếp tuyến cũng quay $90^\circ$: $\vec v_2$ vuông góc với $\vec v_1$, cùng độ lớn $10\ \text{m/s}$. Viết $\vec v_2 - \vec v_1 = \vec v_2 + (-\vec v_1)$, mà $-\vec v_1$ vẫn vuông góc với $\vec v_2$, nên $|\Delta\vec v| = \sqrt{10^2 + 10^2} \approx 14{,}1\ \text{m/s}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ra $0$ là trừ hai <em>tốc độ</em> $10 - 10$ — đúng cái bẫy này. Ra $20\ \text{m/s}$ là cộng thẳng $10 + 10$, chỉ đúng khi $\vec v_2$ ngược $\vec v_1$ (nửa vòng). Ra $10\ \text{m/s}$ là tưởng độ biến thiên vận tốc bằng chính độ lớn vận tốc. Nối đuôi $-\vec v_1$ vào $\vec v_2$: hai cạnh góc vuông dài $10$, $\Delta\vec v$ là cạnh huyền. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
 <h4>Bẫy 2: "cùng quay theo một vật thì cùng tốc độ"</h4>
@@ -345,7 +345,7 @@
 </details>
 </div>
 
-<p>⚠ Giữ nguyên tốc độ: viết $v = \omega r$ ra trước, đừng đoán $n$ tăng hay giảm theo cảm giác.</p>
+<p>⚠ Khi đề yêu cầu giữ nguyên tốc độ $v$: viết $v = \omega r$ ra trước, đừng đoán $n$ tăng hay giảm theo cảm giác.</p>
 
 <p><strong>Câu 7.</strong> Một chiếc xe đạp bánh nhỏ có bánh xe đường kính $30\ \text{cm}$ (bằng nửa bánh ở bài mẫu). Muốn điểm trên vành có đúng tốc độ như bài mẫu, bánh xe phải quay:</p>
 <div class="tl-quiz">
@@ -369,7 +369,7 @@
 <summary>🎯 Thử thách phân tầng: ⭐ · ⭐⭐ · ⭐⭐⭐ (bấm xem gợi ý)</summary>
 <p><strong>⭐</strong> Động cơ quay $3000$ vòng/phút. Tính $\omega$. <em>Gợi ý:</em> $f = 50\ \text{Hz}$, $\omega = 100\pi \approx 314\ \text{rad/s}$.</p>
 <p><strong>⭐⭐</strong> Kim phút dài $10\ \text{cm}$, kim giờ dài $6\ \text{cm}$. Tốc độ đầu kim phút gấp mấy lần đầu kim giờ? <em>Gợi ý:</em> $\omega$ gấp 12 lần (1 h so với 12 h), $r$ gấp $\dfrac{10}{6}$ lần, nên $v$ gấp $12 \cdot \dfrac{10}{6} = 20$ lần.</p>
-<p><strong>⭐⭐⭐</strong> Hà Nội ở vĩ độ khoảng $21^\circ$, bán kính Trái Đất $R = 6370\ \text{km}$. Tính tốc độ của một người đứng yên ở Hà Nội do Trái Đất tự quay ($T = 24\ \text{h}$). Vì sao không dùng thẳng $R$? <em>Gợi ý:</em> người đó quay quanh <strong>trục</strong> Trái Đất. Hạ đường vuông góc từ Hà Nội xuống trục: đoạn này song song với mặt phẳng xích đạo, hợp với bán kính $R$ một góc bằng vĩ độ, nên bán kính quỹ đạo là $r = R\cos 21^\circ \approx 5947\ \text{km}$, và $v = \dfrac{2\pi r}{T} \approx 432\ \text{m/s}$, nhỏ hơn ở xích đạo.</p>
+<p><strong>⭐⭐⭐</strong> Hà Nội ở vĩ độ khoảng $21^\circ$, bán kính Trái Đất $R = 6370\ \text{km}$. Tính tốc độ của một người đứng yên ở Hà Nội do Trái Đất tự quay ($T = 24\ \text{h}$). Vì sao không dùng thẳng $R$? <em>Gợi ý:</em> người đó quay quanh <strong>trục</strong> Trái Đất. Hạ đường vuông góc từ Hà Nội xuống trục: đoạn này song song với mặt phẳng xích đạo, hợp với bán kính $R$ một góc bằng vĩ độ. Trong tam giác vuông có cạnh huyền $R$, đoạn này là cạnh kề của góc đó nên dùng cos: bán kính quỹ đạo là $r = R\cos 21^\circ \approx 5947\ \text{km}$, và $v = \dfrac{2\pi r}{T} \approx 432\ \text{m/s}$, nhỏ hơn ở xích đạo.</p>
 </details>
 
 <div class="tl-box tl-box--rule">

@@ -1,6 +1,6 @@
 {
   "bai": "l11-nang-luong-cong-suat-dien",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -117,5 +117,118 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-nang-luong-cong-suat-dien/gemini/da-xu-ly/theory.src.202610091138.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Câu pin cũ đã được sửa ở vòng 1 thành \"khi làm việc bình thường (không đoản mạch)\", gạch đầu dòng trước đã nói đoản mạch I = ℰ/r lớn vì r nhỏ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Đọc đề tách cụ thể: \"công suất của nguồn\" → ℰI, \"toả nhiệt trong nguồn\" → I²r, \"hiệu điện thế hai cực nguồn\" → U = ℰ − Ir."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng trước quiz Bẫy 3: sáng hơn là công suất thực lớn hơn, cùng U_đm thì P_đm nhỏ có R lớn; bỏ câu chốt lặp ý cuối phản hồi sai để bù độ dài."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết rõ: thay U = IR vào U = ℰ − Ir được ℰ = I(R + r)."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm cột I (A) vào bảng: 1,50; 1,00; 0,60; 0,30 (khớp U = ℰ − Ir với ℰ = 3,0 V, r = 1,0 Ω)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm giải thích: điểm phần trăm là cộng hoặc trừ thẳng vào số %."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi mẹo nhớ thành \"U bình phương chia P ra R\" ở mục II.2 và ở Mang về."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay nhiễu C bằng \"Tăng, đạt đúng 100 % khi R đủ lớn\" (dựa trên r > 0 đã học), sửa phản hồi và câu nhắc lại trong ⭐⭐⭐ cho khớp."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gạch đầu dòng Bảo vệ nói rõ cầu chì/aptomat tự ngắt mạch khi dòng vượt dòng định mức; bỏ gạch \"R càng lớn H càng gần 100 %\" ở II.4 (trùng Rút ra và Mang về) để bù độ dài."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu Trả bài 6 hỏi thêm cách chọn cầu chì, đáp án (trong details) ghi: dòng định mức hơi lớn hơn dòng làm việc, ấm 8,2 A dùng 10 A."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn Wh chia 1000 mới ra kWh, câu dự đoán không gợi trước."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn t tính bằng giây ở mục 1 và trong phản hồi."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ P tỉ lệ với U² ngay trước quiz."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phần Quan sát đã nhấn I giảm nhưng U tăng."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 ngay trước quiz đã phân biệt kW và kWh."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn ℰI lớn hơn UI một phần I²r."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 đã nhấn nối tiếp R lớn nhận nhiều hơn, nay có thêm dòng nối P_đm nhỏ với R lớn."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ tử số của H là R ngay trước câu hỏi."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.4: thêm bước suy ra ℰ = I(R + r) từ U = IR thay vào U = ℰ − Ir.",
+      "II.4: bỏ gạch đầu dòng \"R càng lớn so với r, H càng gần 100 %\" (ý còn ở bước Rút ra, quiz 4 và Mang về).",
+      "II.4 bảng pin AA: thêm cột I = 1,50; 1,00; 0,60; 0,30 A (ℰ = 3,0 V, r = 1,0 Ω, kiểm U = ℰ − Ir).",
+      "II.4 details sai số: giải thích điểm phần trăm (±1,7 cộng trừ thẳng vào số %, 50 % thành khoảng 48–52 %).",
+      "II.4 quiz 4: phương án nhiễu C đổi thành \"Tăng, đạt đúng 100 % khi R đủ lớn\", phản hồi: muốn H = 100 % phải có r = 0.",
+      "VI ⭐⭐⭐: câu cuối đổi thành nhắc không lẫn cực đại công suất tại R = r với hiệu suất (không còn nhắc phương án C cũ).",
+      "II.5: cầu chì/aptomat tự ngắt mạch khi dòng vượt dòng định mức.",
+      "III Bẫy 3: thêm dòng trước quiz 7: độ sáng theo công suất thực, cùng U_đm thì P_đm nhỏ có R = U_đm²/P_đm lớn; bỏ câu \"Nối tiếp: hỏi R nào lớn hơn\" trong phản hồi sai.",
+      "IV Trả bài 6: thêm cách chọn cầu chì (dòng định mức hơi lớn hơn dòng làm việc, ấm 8,2 A dùng cầu chì 10 A).",
+      "Mang về: dòng Đọc đề tách thành công suất của nguồn → ℰI, toả nhiệt trong nguồn → I²r, hiệu điện thế hai cực nguồn → U = ℰ − Ir.",
+      "Mẹo nhớ đổi thành \"U bình phương chia P ra R\" (II.2 và Mang về)."
+    ],
+    "so_tu_them": 33,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-nang-luong-cong-suat-dien/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

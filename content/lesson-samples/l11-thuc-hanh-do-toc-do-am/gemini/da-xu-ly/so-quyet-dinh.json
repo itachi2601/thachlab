@@ -1,6 +1,6 @@
 {
   "bai": "l11-thuc-hanh-do-toc-do-am",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-10",
     "model": "claude-opus-5-5",
@@ -127,5 +127,111 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-thuc-hanh-do-toc-do-am/gemini/da-xu-ly/theory.src.202610100630.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi câu 1 giải thích tần số cộng hưởng là tần số cột khí tự rung mạnh nhất (xem mục II.3) và thêm (đáy kín, miệng hở) cho ống một đầu kín."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 2 PhET hỏi thẳng 'Âm cao có truyền nhanh hơn không (bẫy 3, mục III)?'."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích ngắn: âm đơn sắc là âm chỉ một tần số, không hoạ âm."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tiêu đề mục 3 thành 'bụng sát trên miệng ống', Trả bài 3 và Mang về ghi bụng cao hơn miệng ống một đoạn e."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Nêu quy tắc tổng/hiệu cộng sai số tuyệt đối, tích/thương cộng sai số tỉ đối, hiện phép chia 0,26/68,32 và Δf/f = 1/500 = 0,2 %."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi 'Kết quả (chỉ tính sai số ngẫu nhiên)' và trong details sai số tính lại khi cộng ±0,2 cm: Δv ≈ 6 m/s, v = 342 ± 6 m/s."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết thành công thức Δl = Δl̄ + Δl_dc kèm giải nghĩa 'độ lệch trung bình cộng thêm sai số dụng cụ'."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tách gạch riêng 'Đầu kín (chọn một cách)': mặt nước hoặc pít-tông, đọc l ở vạch chuẩn trên pít-tông; bù chữ bằng cách cắt thang tần số máy phát."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Tính lại: 4e ≈ 2,2 cm, v thiếu cỡ 9 m/s, khớp với phản hồi sai (343 − 334)."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ thổi vào cột khí, không gõ thân chai đã thêm ở vòng 1 và còn trong bài."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn âm cơ bản f0 quyết định nốt và đề nói rõ cùng nốt La."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn điều kiện số lẻ lần λ/4 ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ so với khoảng v̄ ± Δv đã thêm ở vòng 1 và còn trước câu 4."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn hiệu chỉnh e ở mục 3, nay thêm củng cố qua c4 nên không cần dòng ⚠ riêng."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tiêu đề Bẫy 2, công thức và mẹo 'hiệu hai lần, nửa bước sóng' đã nhấn."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 2 đã nói v không phụ thuộc f và tiêu đề Bẫy 3 nêu sẵn bẫy."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở 30 °C thì v ≈ 349 m/s, không phải 343."
+      }
+    ],
+    "doi_noi_dung": [
+      "Bẫy 1, phản hồi đúng câu 5: 4e ≈ 2,2 cm (trước ghi 2 cm), v thiếu cỡ 9 m/s (trước ghi 10 m/s), từ λ = 85,8 cm và 4l1 = 83,6 cm.",
+      "Details sai số: thêm tính lại khi cộng sai số dụng cụ 0,2 cm, Δl ≈ 0,26 cm, Δλ ≈ 1,06 cm, Δv/v̄ ≈ 1,75 %, Δv ≈ 6 m/s, ghi v = 342 ± 6 m/s.",
+      "Mục 5: kết quả v = 341,6 ± 2,0 m/s ghi rõ là chỉ tính sai số ngẫu nhiên (số không đổi, câu 4 giữ nguyên khoảng 339,6 đến 343,6).",
+      "Mục 5: thêm quy tắc tổng/hiệu cộng sai số tuyệt đối, tích/thương cộng sai số tỉ đối, hiện Δλ/λ̄ = 0,26/68,32 ≈ 0,4 % và Δf/f = 1/500 = 0,2 %.",
+      "Details sai số: công thức Δl = Δl̄ + Δl_dc.",
+      "Mục 3 tiêu đề, Trả bài 3, Mang về: bụng nằm cao hơn miệng ống một đoạn e (trước ghi miệng ống là bụng).",
+      "Mục 3: âm đơn sắc giải thích là âm chỉ một tần số, không hoạ âm.",
+      "Mục 4: tách gạch đầu kín, pít-tông đọc l ở vạch chuẩn; bỏ thang tần số 100 Hz đến 1 kHz của máy phát.",
+      "Câu 1, phản hồi đúng: tần số cộng hưởng là tần số cột khí tự rung mạnh nhất."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-thuc-hanh-do-toc-do-am/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

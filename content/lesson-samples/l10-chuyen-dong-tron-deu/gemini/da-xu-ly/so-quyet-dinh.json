@@ -1,6 +1,6 @@
 {
   "bai": "l10-chuyen-dong-tron-deu",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -129,5 +129,109 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-chuyen-dong-tron-deu/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm hình (cấm chèn ảnh); phản hồi đúng thêm lí do bán kính quay 90° nên tiếp tuyến quay 90°, phản hồi sai thay câu 'vẽ rồi trừ' bằng cách nối đuôi −v₁ vào v₂ để Δv là cạnh huyền."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa giải thích phương án 20 m/s thành lỗi cộng thẳng 10 + 10, chỉ đúng khi v₂ ngược v₁ (nửa vòng)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 1 đã ghi rõ n là số vòng trong 1 phút ở Bẫy 3, và bảng bài mẫu đã kèm đơn vị 'n = 120 vòng/phút'."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết thống nhất v = Δs/Δt, Δs = Δθ·r nên v = (Δθ/Δt)·r = ωr, bỏ dạng θ/t."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi quan sát thành đoạn đầu vệt nước gần như thẳng, xa hơn mới bị trọng lực kéo cong xuống."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Vòng trước đã từ chối với lý do còn đúng: Bẫy 2 cố ý cho làm câu trước rồi chốt bảng, chuyển bảng là đổi cấu trúc mục."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm 'tính từ một điểm mốc chọn trước' cho cung s (không dẫn tới điểm trên hình vì chưa rõ nhãn hình)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi dòng ⚠ thành 'Khi đề yêu cầu giữ nguyên tốc độ v: …'."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không thêm hình (cấm chèn ảnh); thêm câu trong details: r là cạnh kề của góc vĩ độ trong tam giác vuông cạnh huyền R nên dùng cos."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi câu dự đoán (một chữ 'nhanh' cho hai ý), không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn lỗi chia ngược r/s trong phản hồi, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về chu kì riêng của từng kim đã có trước Câu 2 từ vòng 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ tìm chiều vận tốc bằng mặt đồng hồ đã có trước Câu 3 từ vòng 1."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở tên Bẫy 1 và bảng tốc độ/vận tốc, không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mục II.3 (cùng ω, xa tâm v lớn hơn), không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn chia 60 rồi nhân 2π ở Bẫy 3, không thêm ⚠."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 7 đã có từ vòng 1 (vòng này chỉ làm rõ tình huống theo c8)."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1: cung s ghi rõ tính từ một điểm mốc chọn trước trên đường tròn.",
+      "II.3: đổi v = s/t thành v = Δs/Δt và Δs = Δθ·r nên v = (Δθ/Δt)·r = ωr, bỏ dạng θ/t.",
+      "II.4 thí nghiệm giọt nước: đoạn đầu vệt nước gần như thẳng theo tiếp tuyến, xa hơn bị trọng lực kéo cong xuống.",
+      "Câu 4 phản hồi đúng: thêm lí do v₂ ⊥ v₁ (bán kính quay 90° nên tiếp tuyến quay 90°), bỏ câu lặp 'Tốc độ không đổi mà vận tốc vẫn đổi'.",
+      "Câu 4 phản hồi sai: phương án 20 m/s giải thích là cộng thẳng 10 + 10 (chỉ đúng khi nửa vòng); hướng dẫn nối đuôi −v₁ vào v₂, Δv là cạnh huyền.",
+      "V: dòng ⚠ trước Câu 7 ghi rõ tình huống 'khi đề yêu cầu giữ nguyên tốc độ v'.",
+      "VI ⭐⭐⭐ (details): thêm lí do dùng cos (r là cạnh kề góc vĩ độ, cạnh huyền R); số 5947 km và 432 m/s giữ nguyên, đã kiểm."
+    ],
+    "so_tu_them": 12,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-chuyen-dong-tron-deu/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

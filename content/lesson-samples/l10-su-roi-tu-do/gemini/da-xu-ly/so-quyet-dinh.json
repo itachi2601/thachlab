@@ -1,6 +1,6 @@
 {
   "bai": "l10-su-roi-tu-do",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-08",
     "model": "claude-opus-5-5",
@@ -106,5 +106,100 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-su-roi-tu-do/gemini/da-xu-ly/theory.src.202610081647.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Lập luận 'dài thêm đều ⇒ vận tốc tăng đều' đã thêm ở vòng 1; nối số __DSS__ với g phụ thuộc số liệu minh hoạ chưa chốt và mục II đang vượt trần."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào Rút ra TN3: g nhích dần theo s là do sai số đo, không do độ cao, chênh vài chục cm thì g gần như không đổi."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành: quyển sách \"che gió\", không bị không khí cản thì tờ giấy nhẹ vẫn rơi nhanh như sách."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu dẫn ghi rõ rút t từ h = ½gt² và rút v từ v² = 2gh (hoặc v = gt); bù chữ bằng cách bỏ ví dụ 5 m lặp với mẹo 5–20–45–80."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi B đổi thành: bình phương 4 thay vì lấy căn bậc hai của 4."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Thêm câu về Mặt Trăng trước Câu 3 sẽ lộ đáp án, phản hồi đã giải thích Mặt Trăng vẫn hút vật (giữ hướng c9 vòng trước)."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng ghi rõ t là thời gian rơi tìm ở câu a."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dây dọi đã học ở KHTN 6 (phương của trọng lực) và mục II đang vượt trần."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi câu dự đoán, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn ở dòng \"lực cản không đáng kể so với trọng lượng\" ngay trước Câu 1."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ hệ số ½ trước Câu 2 đã thêm ở vòng 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn \"không còn lực cản, mọi vật cùng gia tốc g\"."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 2 và bảng đã phân biệt giây thứ n với n giây đầu."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn t tăng theo căn bậc hai của độ cao, bảng tách dòng gấp 4."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ số 2 ở mẫu trước Câu 6 đã thêm ở vòng 1."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.1 TN1 Rút ra: lần thả (2) nói rõ không bị không khí cản thì tờ giấy nhẹ vẫn rơi nhanh như sách.",
+      "II.3: câu dẫn công thức chạm đất ghi rõ rút t từ h = ½gt², rút v từ v² = 2gh (hoặc v = gt).",
+      "II.3: bỏ ví dụ thả từ 5 m (t = 1 s, v = 10 m/s) vì lặp với mẹo 5–20–45–80 m.",
+      "II.4: gộp hai dòng đầu (cùng gia tốc g, gọi là gia tốc rơi tự do, đơn vị m/s²).",
+      "II.4 TN3 Rút ra: thêm g nhích dần theo s là do sai số đo, không do độ cao (chênh vài chục cm thì g gần như không đổi).",
+      "III Câu 5 phản hồi B: giải thích là bình phương 4 thay vì lấy căn bậc hai.",
+      "V bảng đọc đề: t trong s(t) − s(t − 1) là thời gian rơi tìm ở câu a.",
+      "Trả bài 2–6, Xem bước 2–3, Thử thách ⭐: tách mỗi ý một dòng bằng <br>, nội dung không đổi."
+    ],
+    "so_tu_them": 23,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-su-roi-tu-do/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

@@ -1,6 +1,6 @@
 {
   "bai": "l10-do-dich-chuyen-quang-duong",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-08",
     "model": "claude-opus-5-5",
@@ -109,5 +109,112 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-do-dich-chuyen-quang-duong/gemini/da-xu-ly/theory.src.202610081647.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục 3 thêm 'còn độ lớn là $|d|$'; mục 4 đổi 'độ lớn $d = s$', 'độ lớn $d \\lt s$' thành $|d| = s$, $|d| \\lt s$ cho thống nhất với khung 🔑."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đổi kí hiệu phải sửa đồng loạt bảng Bẫy 3, bảng dữ liệu bài toán mẫu và phản hồi Câu 6 (vượt 2 câu), trong khi dòng chú thích độ lớn dưới bảng đã có."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào bước Rút ra: lùi tới $x_2 = 10$ cm thì $d = -10$ cm, dấu âm vì điểm cuối nằm phía âm; bù chữ bằng cách bỏ mệnh đề 'vì từng mét thân xe…' và chữ 'dài'."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Không sửa được chú thích hình nên ghi ngay trong đề Câu 2: '(gốc ở đầu thước, chiều dương sang phải)'."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details thêm phép tính trọn vòng $s = 2\\pi r \\approx 62{,}8$ cm, $d = 0$."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Rút ra thêm '(lí thuyết bằng nhau, lệch nhỏ do sai số đo)'."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details giải thích sai số dụng cụ là mức lệch tối đa mỗi lần đo và các độ lệch trong bảng đều nằm trong phạm vi đó."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Mục Mang về sửa thành 'vật mốc + trục toạ độ + gốc thời gian + đồng hồ'."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 5 thêm hướng: lệch khỏi hướng Bắc (đoạn 1) về phía Đông với $\\tan\\alpha = 8/6$, $\\alpha \\approx 53^\\circ$."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ dòng ⚠ trước quiz Câu 6 (đảo quyết định q-cau6-B vòng 1) vì nó lộ hướng giải, nguyên nhân thay $d_2 = -0{,}5$ đã có sẵn trong phản hồi sai cho B."
+      },
+      {
+        "id": "q-cau_du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn có hai đại lượng khác nhau, không cần ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã giải thích B và D là vật quay tại chỗ."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Sau sửa c3, ví dụ ngay trước Câu 2 đã có trường hợp $d$ âm và lí do, thêm ⚠ sẽ lặp ý và gợi đáp án."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 và phản hồi đã nhấn đủ hai điều kiện thẳng và không đổi chiều."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn mở Bẫy 2 đã nhấn dấu âm chỉ hướng ngược chiều dương."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn mở Bẫy 3 đã nhấn cộng như số chỉ ra quãng đường."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 đã tách cùng phương và vuông góc, phản hồi sai cho A đã nêu rõ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3: thêm 'còn độ lớn là $|d|$' sau câu về dấu của $d$.",
+      "Ví dụ xe lùi (mục 3): thêm trường hợp lùi tới $x_2 = 10$ cm thì $d = 10 - 20 = -10$ cm.",
+      "Câu 2: đề thêm '(gốc ở đầu thước, chiều dương sang phải)'.",
+      "Mục 4: 'độ lớn $d = s$' và 'độ lớn $d \\lt s$' đổi thành $|d| = s$ và $|d| \\lt s$.",
+      "Thí nghiệm ray uốn: bước Rút ra thêm 'lí thuyết bằng nhau, lệch nhỏ do sai số đo' cho ray thẳng.",
+      "Details đọc bảng: thêm trọn vòng $s = 2\\pi r \\approx 62{,}8$ cm, $d = 0$; trợ giảng kiểm TABLE1 xem độ lệch $0{,}7$ cm của cột $s$ có đúng ở dòng tương ứng không.",
+      "Details đọc bảng: thêm giải thích sai số dụng cụ (sợi chỉ ±1 cm, thước ±0,2 cm) bao trùm các độ lệch trong bảng.",
+      "Câu 5 phản hồi đúng: thêm hướng $\\tan\\alpha = 8/6$, $\\alpha \\approx 53^\\circ$ tính từ hướng Bắc về phía Đông.",
+      "Câu 6: bỏ dòng ⚠ về $d_2 = 0{,}5$ trước quiz (đảo q-cau6-B vòng 1); phản hồi sai cho B giữ nguyên nguyên nhân này.",
+      "Mang về: hệ quy chiếu thêm 'gốc thời gian'."
+    ],
+    "so_tu_them": 33,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-do-dich-chuyen-quang-duong/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

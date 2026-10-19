@@ -6,123 +6,184 @@
     {
       "id": "c1",
       "vi_tri": "2. Lực đàn hồi của lò xo",
-      "trich_nguyen_van": "Chiều: lò xo dãn → kéo vào; lò xo nén → đẩy ra.",
+      "trich_nguyen_van": "<strong>Chiều:</strong> ngược chiều biến dạng.",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Không rõ 'kéo vào' là vào đâu. Có thể hiểu là kéo vật vào trong lò xo, hoặc kéo về phía điểm treo, và chưa nối được với chữ 'ngược chiều biến dạng' nằm ở chú thích Hình 3.",
-      "de_xuat": "Ghi rõ: dãn → lực kéo vật ở đầu lò xo về phía giữa lò xo; nén → đẩy vật ra xa giữa lò xo, tức luôn ngược chiều biến dạng."
+      "em_hieu_la": "Không rõ \"chiều biến dạng\" là chiều của lực tác dụng hay chiều dịch chuyển của đầu lò xo. Học sinh dễ đoán theo kiểu 'ngược chiều lực' mà không gắn với vật nào.",
+      "de_xuat": "Viết rõ: \"ngược chiều dịch chuyển của đầu lò xo so với lúc chưa biến dạng (vạch đứt ở Hình 3)\"."
     },
     {
       "id": "c2",
-      "vi_tri": "3. Định luật Hooke",
-      "trich_nguyen_van": "$l_0$: chiều dài tự nhiên; $l$: chiều dài lúc biến dạng (m).",
-      "loai": "khác",
+      "vi_tri": "2. Lực đàn hồi của lò xo",
+      "trich_nguyen_van": "<strong>Điểm đặt:</strong> ở hai đầu lò xo, lên vật tiếp xúc.",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Ô quy tắc không ghi đơn vị của F và Δl, chỉ có (m) gắn với l. Lỗi quên đổi cm ra m được nhấn ở mọi câu quiz, nhưng chính ô định luật lại không nêu rõ.",
-      "de_xuat": "Thêm vào ô quy tắc: F (N), Δl (m), k (N/m), giống câu 4 mục Trả bài."
+      "em_hieu_la": "Câu cụt, không rõ lực đặt lên chính lò xo hay lên vật, nên học sinh dễ vẽ điểm đặt trên thân lò xo.",
+      "de_xuat": "Sửa thành: \"đặt lên vật gắn (hoặc tì) vào mỗi đầu lò xo\"."
     },
     {
       "id": "c3",
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "Hai đầu lò xo · trục lò xo · dãn → kéo vào, nén → đẩy ra.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chưa rõ \"kéo vào\" là vào đâu (vào tâm lò xo hay vào vật). Mục 2 lại viết là \"kéo vật về phía lò xo\", nên đáp án tóm tắt lệch với phần học.",
+      "de_xuat": "Ghi thống nhất với mục 2: \"dãn → kéo vật về phía lò xo, nén → đẩy vật ra xa lò xo\"."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "3. Định luật Hooke",
+      "trich_nguyen_van": "Bảng số liệu minh hoạ ($g = 9{,}8\\ \\text{m/s}^2$, chưa phải số đo thật):",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Cột F hiện ra 0,49 N mà không có phép tính từ 50 g. Ở mọi chỗ khác bài lấy g = 10, nên học sinh tự tính sẽ ra 0,5 N và tưởng bảng sai.",
+      "de_xuat": "Thêm một dòng: \"Mỗi quả: F = 0,05 · 9,8 = 0,49 N (ở đây lấy g = 9,8, các bài toán sau lấy g = 10)\"."
+    },
+    {
+      "id": "c5",
       "vi_tri": "3. Định luật Hooke",
       "trich_nguyen_van": "Trung bình $k \\approx 25{,}1\\ \\text{N/m}$, các hàng lệch nhau không quá $3\\,\\%$",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Tự tính hai hàng với nhau: 25,8 và 24,8 lệch khoảng 4 %, không khớp với '3 %'. Câu đúng chỉ khi so mỗi hàng với trung bình.",
-      "de_xuat": "Sửa thành 'mỗi hàng lệch so với trung bình không quá 3 %'."
+      "em_hieu_la": "Tự so 25,8 với 24,8 ra khoảng 4%, không khớp con số \"không quá 3%\". Chỉ khi so với trung bình (25,8 so với 25,1 ≈ 2,8%) mới đúng.",
+      "de_xuat": "Sửa thành \"mỗi hàng lệch so với trung bình không quá 3%\"."
     },
     {
-      "id": "c4",
-      "vi_tri": "Bẫy 1: lấy chiều dài $l$ thay cho độ biến dạng $\\Delta l$",
-      "trich_nguyen_van": "Không tỉ lệ với lực",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Thấy treo nặng hơn thì l cũng tăng, nên dễ hiểu 'không tỉ lệ' thành 'không liên quan tới lực'. Học sinh sẽ bối rối vì điều này trái với quan sát.",
-      "de_xuat": "Ghi: 'Tăng theo lực nhưng không tỉ lệ (gấp đôi lực thì l không gấp đôi)', và dẫn lại ví dụ 22 → 24 cm ở mục I."
+      "id": "c6",
+      "vi_tri": "3. Định luật Hooke",
+      "trich_nguyen_van": "Đổi <strong>Hệ số đàn hồi</strong> của lò xo rồi lặp lại với cùng lực.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Bài chỉ dùng từ \"độ cứng k\". Gặp \"Hệ số đàn hồi\" trong mô phỏng, học sinh tưởng là một đại lượng mới và không nối được với k.",
+      "de_xuat": "Thêm chú thích ngay sau: \"(Hệ số đàn hồi trong mô phỏng chính là độ cứng k)\"."
     },
     {
-      "id": "c5",
+      "id": "c7",
       "vi_tri": "Bẫy 2: \"kéo mạnh hơn thì $k$ lớn hơn\"",
       "trich_nguyen_van": "Khi $F$ tăng, $\\Delta l$ cũng tăng theo đúng tỉ lệ nên thương số $F/\\left|\\Delta l\\right|$ giữ nguyên.",
       "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Câu gỡ bẫy nằm sau Câu 4, Hình 5, thí nghiệm và cả hộp Mở rộng. Học sinh gặp câu hỏi trước khi được giải thích, rồi đọc lời giải thích ở chỗ xa câu nêu bẫy.",
-      "de_xuat": "Chuyển câu này lên ngay sau câu 'Nhìn k = F/|Δl| dễ tưởng F tăng thì k tăng'."
-    },
-    {
-      "id": "c6",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "Lực tăng $2\\ \\text{N}$ thì dài thêm $4\\ \\text{cm}$: $k = 2/0{,}04 = 50\\ \\text{N/m}$. Với $1\\ \\text{N}$",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Không hiểu vì sao được lấy hiệu hai lực chia cho hiệu hai chiều dài khi chưa biết l0. Cũng không thấy '1 N' ở đâu ra, vì đề cho 100 g chứ không cho lực.",
-      "de_xuat": "Thêm bước: P1 = 1 N, P2 = 3 N; vì Δl tỉ lệ với F nên phần chênh 26 − 22 = 4 cm ứng với lực chênh 2 N; sau đó viết 1 N = lực của vật 100 g."
-    },
-    {
-      "id": "c7",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "mỗi nửa chịu cùng lực nên chỉ dãn $0{,}5\\ \\text{cm}$",
-      "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "'Chịu cùng lực' không giải thích được vì sao dãn một nửa. Học sinh có thể nghĩ cùng lực thì phải dãn bằng lò xo nguyên, tức 1 cm.",
-      "de_xuat": "Viết: lò xo nguyên chịu 1 N dãn 1 cm, mỗi nửa (cũng chịu 1 N) dãn 0,5 cm, cộng lại thành 1 cm; tách riêng một nửa, treo 1 N vẫn dãn 0,5 cm."
+      "em_hieu_la": "Câu gỡ bẫy then chốt nằm sau Câu 4, Hình 5, thí nghiệm và phần Mở rộng. Lúc làm Câu 4, học sinh chưa được nghe lý do k không đổi.",
+      "de_xuat": "Chuyển câu này lên ngay sau \"Nhìn k = F/|Δl| dễ tưởng F tăng thì k tăng\", trước Câu 4."
     },
     {
       "id": "c8",
-      "vi_tri": "Bẫy 3: dùng định luật Hooke cho mọi lực",
-      "trich_nguyen_van": "C. Sai, phải tính $100/8 = 12{,}5\\ \\text{cm}$",
+      "vi_tri": "Bẫy 2: \"kéo mạnh hơn thì $k$ lớn hơn\"",
+      "trich_nguyen_van": "Mỗi lò xo là một đường thẳng riêng, độ dốc chính là độ cứng",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Không nói trục nào là F, trục nào là Δl. Nếu vẽ Δl theo F thì độ dốc là 1/k, nên học sinh có thể kết luận ngược: đường dốc hơn là lò xo mềm hơn.",
+      "de_xuat": "Ghi rõ: \"đồ thị F (trục đứng) theo Δl (trục ngang), đường càng dốc thì lò xo càng cứng\"."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "Bẫy 2: \"kéo mạnh hơn thì $k$ lớn hơn\"",
+      "trich_nguyen_van": "$E$ (Pa) phụ thuộc vật liệu.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "E xuất hiện như một ký hiệu không tên, học sinh không biết gọi nó là gì để tra cứu.",
+      "de_xuat": "Viết: \"E gọi là suất đàn hồi (suất Young), đơn vị Pa, phụ thuộc vật liệu\"."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 2: \"kéo mạnh hơn thì $k$ lớn hơn\"",
+      "trich_nguyen_van": "D. $k$ không đổi, lò xo dãn $6\\ \\text{cm}$",
       "loai": "phương_án_nhiễu_khó_hiểu",
       "muc": "nhỏ",
-      "em_hieu_la": "Phương án gắn đơn vị cm cho phép chia k/F, không có nghĩa về đơn vị. Học sinh phải đoán xem 12,5 cm từ đâu ra.",
-      "de_xuat": "Đổi thành 'Sai, phải tính 100/8 = 12,5 m' hoặc bỏ đơn vị, để nhiễu chỉ còn là lỗi chia ngược."
+      "em_hieu_la": "Đặt cạnh C (\"dãn thêm 3 cm nữa\"), học sinh dễ đọc D thành \"dãn thêm 6 cm\" và loại D vì thấy quá nhiều.",
+      "de_xuat": "Sửa D thành \"k không đổi, lò xo dãn tổng cộng 6 cm so với chiều dài tự nhiên\"."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "Bẫy 3: dùng định luật Hooke cho mọi lực",
+      "trich_nguyen_van": "Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại đoạn cong sau điểm A ở Hình 4.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chú thích Hình 4 không nhắc tới \"đoạn cong\", chỉ nói \"Sau A (minh hoạ)\", nên học sinh không chắc phải nhìn chỗ nào.",
+      "de_xuat": "Bổ sung vào chú thích Hình 4: \"Sau A, đồ thị cong đi, lực không còn tỉ lệ với độ dãn\"."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "(lấy hiệu hai chiều dài thì $l_0$ tự triệt tiêu)",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không thấy vì sao l0 triệt tiêu và vì sao được lấy 2 N chia 4 cm, khi cả hai số đều không phải độ dãn so với l0.",
+      "de_xuat": "Viết một dòng: l2 − l1 = (l0 + Δl2) − (l0 + Δl1) = Δl2 − Δl1 = (P2 − P1)/k."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "Khi đó hai nửa nối tiếp, nửa nào cũng chịu đủ $1\\ \\text{N}$ và dãn bằng nhau",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Học sinh dễ nghĩ mỗi nửa chỉ chịu 0,5 N (chia đôi lực), vì bài chưa giải thích vì sao lực truyền nguyên qua từng nửa.",
+      "de_xuat": "Thêm: \"Lò xo nhẹ nên tại chỗ nối, nửa dưới kéo nửa trên đúng bằng lực vật kéo nửa dưới, tức 1 N\"."
+    },
+    {
+      "id": "c14",
+      "vi_tri": "I. Mở bài: cái cân treo ở chợ",
+      "trich_nguyen_van": "B. $24\\ \\text{cm}$",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "A, C, D đều kèm lý do, riêng B trơ trọi một con số. Học sinh đoán được B là đáp án mà không cần suy nghĩ.",
+      "de_xuat": "Thêm lý do cho B tương tự các phương án khác, ví dụ \"B. 24 cm, vì phần dài thêm gấp đôi\", hoặc bỏ lý do ở cả bốn phương án."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "du_doan",
+      "cau": "Dự đoán trước khi học",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Gấp đôi lực thì gấp đôi cả chiều dài 22 cm, không tách phần dài thêm.",
+      "loi_tu_duy": "Treo gấp đôi thì nhân đôi cả chiều dài đọc được (22 cm) thay vì nhân đôi phần dài thêm.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Cái gấp đôi là độ dãn, không phải chiều dài."
+      "trich_nguyen_van": "Cái gấp đôi là <strong>độ dãn</strong>, không phải chiều dài."
     },
     {
-      "cau": "cau1",
+      "cau": "Câu 1",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Cáp thang máy chịu tải nặng nên tưởng là bị 'đè', không xét chiều cặp lực ở hai đầu.",
+      "loi_tu_duy": "Thấy buồng thang nặng đè lên dây cáp nên nghĩ là nén, không xét chiều cặp lực ở hai đầu dây.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Hỏi lại: lực ở hai đầu hướng vào trong hay ra ngoài vật?"
+      "trich_nguyen_van": "Cáp thang máy, dây chun, dây đàn đều bị hai đầu <em>kéo ra</em>: đó là biến dạng kéo."
     },
     {
-      "cau": "cau2",
+      "cau": "Câu 2",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Chia 3/6 mà quên đổi 6 cm ra 0,06 m.",
+      "loi_tu_duy": "Chia 3/6, giữ độ dãn ở đơn vị cm, quên đổi ra m.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Ra $0{,}5$ là chia $3/6$, chưa đổi $6\\ \\text{cm}$ ra $0{,}06\\ \\text{m}$."
+      "trich_nguyen_van": "Bước dễ quên nhất là đổi cm ra m."
     },
     {
-      "cau": "cau3",
+      "cau": "Câu 3",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Tính đúng Δl = 4 cm nhưng nhân thẳng với k mà không đổi ra mét.",
+      "loi_tu_duy": "Đã tránh được bẫy l/Δl, tính đúng Δl = 4 nhưng nhân thẳng 100 · 4 mà không đổi cm sang m.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "$400\\ \\text{N}$ là tính đúng $\\Delta l = 4$ nhưng quên đổi cm ra m."
     },
     {
-      "cau": "cau4",
+      "cau": "Câu 4",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Phương án gần giống D: nhầm 'dãn thêm' với 'dãn tổng cộng', hoặc lấy 3 N thành 3 cm.",
+      "loi_tu_duy": "Nhầm \"đổi sang vật 3 N\" thành treo thêm, rồi gán số newton thành số cm dãn thêm. Hai phương án C và D gần giống nhau nên dễ chọn nhầm.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "tức chỉ thêm $2\\ \\text{cm}$ so với lúc treo $2\\ \\text{N}$ — đừng lấy số newton làm số cm."
+      "trich_nguyen_van": "lò xo dãn tổng cộng $6\\ \\text{cm}$, tức chỉ thêm $2\\ \\text{cm}$ so với lúc treo $2\\ \\text{N}$"
     },
     {
-      "cau": "cau5",
+      "cau": "Câu 5",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Nhầm điều kiện áp dụng: tưởng điều kiện của Hooke là cách treo, không phải giới hạn đàn hồi.",
+      "loi_tu_duy": "Nhầm điều kiện áp dụng: các ví dụ trong bài đều treo thẳng đứng nên tưởng điều kiện của Hooke là cách treo, không phải giới hạn đàn hồi.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "quên điều kiện \"trong giới hạn đàn hồi\" — treo đứng hay nằm không cứu được."
     },
     {
-      "cau": "cau6",
+      "cau": "Điền bước còn thiếu",
+      "dap_an_sai_hap_dan": "31 cm",
+      "loi_tu_duy": "Quen cộng độ biến dạng vào l0 như ở bài treo vật, quên rằng lò xo bị nén thì phải trừ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Ai ra $31\\ \\text{cm}$ là đã cộng như lò xo dãn."
+    },
+    {
+      "cau": "Câu 6",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Dừng ở độ dãn 5 cm, quên cộng chiều dài tự nhiên để ra chiều dài l.",
+      "loi_tu_duy": "Tính xong độ dãn 5 cm là dừng, lấy luôn độ dãn làm chiều dài, quên cộng l0.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "$5\\ \\text{cm}$ mới là độ dãn, chưa cộng $l_0$ (Bẫy 1)."
     }

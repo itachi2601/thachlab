@@ -6,143 +6,125 @@
     {
       "id": "c1",
       "vi_tri": "2. Hiệu suất",
-      "trich_nguyen_van": "Ván thoải thì quãng đường $s$ dài hơn ($77{,}3\\ \\text{cm}$ so với $28{,}3\\ \\text{cm}$)",
+      "trich_nguyen_van": "tính $W_{tp} = F\\cdot s$. Công có ích luôn là $W_{ci} = mgh = 0{,}80\\ \\text{J}$.",
       "loai": "nhảy_bước",
       "muc": "khó",
-      "em_hieu_la": "Bảng chỉ có cột W_tp và H, không có cột s và F. Hai giá trị 77,3 cm và 28,3 cm xuất hiện mà không có cách tính, nên em không biết chúng từ đâu ra.",
-      "de_xuat": "Thêm cột s (cm) và F (N) vào bảng, hoặc ghi rõ s = h/sinα (0,20/sin15° ≈ 0,773 m)."
+      "em_hieu_la": "Cả F·s và mgh đều là công nâng xe. Em không biết vì sao F·s là toàn phần còn mgh là có ích, nên dễ đảo vai trò hai đại lượng.",
+      "de_xuat": "Thêm một câu: \"Việc ta cần là nâng xe lên cao h, nên công có ích là mgh. Công của lực kéo F·s là công ta phải bỏ ra, gồm cả phần thắng ma sát, nên đó là toàn phần.\""
     },
     {
       "id": "c2",
-      "vi_tri": "2. Hiệu suất",
-      "trich_nguyen_van": "xe trượt lâu hơn trên bề mặt có ma sát nên công hao phí $W_{hp} = W_{tp} - W_{ci}$ lớn hơn",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Cùng thang máy ấy, nâng tải $200\\ \\text{kg}$ lên cao $6\\ \\text{m}$ trong $12\\ \\text{s}$",
       "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Chữ 'lâu hơn' khiến em nghĩ hao phí phụ thuộc thời gian kéo. Thực ra nó phụ thuộc quãng đường trượt (và lực ma sát).",
-      "de_xuat": "Đổi 'trượt lâu hơn' thành 'trượt quãng đường dài hơn, công ma sát = lực ma sát × s lớn hơn'."
+      "em_hieu_la": "Cùng thang máy mà ở đây H = 50 %. Sang Câu 6 lại ghi \"Vẫn thang máy ở đề bài (H = 60 %)\" và giữ H không đổi. Em không biết H có phải số cố định của máy không, và khi nào được coi H giữ nguyên.",
+      "de_xuat": "Ghi rõ sau kết quả 50 %: \"H của cùng một máy có thể đổi theo tải; ở Câu 6 đề cho sẵn H = 60 % giữ nguyên nên mới dùng được.\""
     },
     {
       "id": "c3",
-      "vi_tri": "2. Hiệu suất",
-      "trich_nguyen_van": "Sai số: lực kế sai $\\pm 0{,}02\\ \\text{N}$, ở $F \\approx 2{,}0\\ \\text{N}$ đã là $1\\,\\%$.",
-      "loai": "nhảy_bước",
+      "vi_tri": "3. Vì sao $H$ luôn nhỏ hơn 100 %; ghép nhiều máy",
+      "trich_nguyen_van": "Ròng rọc, mặt phẳng nghiêng chỉ <em>đổi</em> lực kéo, không bớt công",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Bài không cho giá trị F ở lần đo nào. Em không biết 2,0 N ứng với góc nào.",
-      "de_xuat": "Ghi rõ 'ở góc 15°, F ≈ 2,0 N' hoặc đưa cột F vào bảng số liệu."
+      "em_hieu_la": "Em không rõ \"không bớt công\" là gì. Em có thể hiểu thành \"không có hao phí\", ngược với ý của bài.",
+      "de_xuat": "Viết rõ: \"không cho lợi về công: lực kéo giảm bao nhiêu lần thì quãng đường kéo dài ra bấy nhiêu lần\"."
     },
     {
       "id": "c4",
       "vi_tri": "2. Hiệu suất",
-      "trich_nguyen_van": "Cùng khoảng thời gian $t$, chia tử và mẫu cho $t$ thì được công suất:",
-      "loai": "nhảy_bước",
+      "trich_nguyen_van": "$H = 3{,}6/60 = 6\\,\\%$",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Em không nhớ ngay vì sao W/t lại thành P. Bài không nhắc lại công thức P = W/t ở đây.",
-      "de_xuat": "Thêm một dòng: 'nhớ P = W/t, nên W_ci/t = P_ci và W_tp/t = P_tp'."
+      "em_hieu_la": "Công thức có nhân 100 %, còn ví dụ thì bỏ bước này (3,6/60 = 0,06). Ở Câu 4 lời giải lại dừng ở 0,75 mà đáp án ghi 75 %. Em không chắc khi nào phải nhân 100 %.",
+      "de_xuat": "Viết đủ bước đổi ở cả hai chỗ: \"3,6/60 = 0,06 = 6 %\" và \"600/800 = 0,75 = 75 %\"."
     },
     {
       "id": "c5",
-      "vi_tri": "Bẫy 2: lấy nhầm tử số và mẫu số",
-      "trich_nguyen_van": "$H$ tính bằng %",
-      "loai": "mơ_hồ",
+      "vi_tri": "1. Năng lượng có ích và hao phí",
+      "trich_nguyen_van": "trong đó $500\\ \\text{kJ}$ thành công có ích để xe chạy",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Mục 2 nói H 'không có đơn vị', ở đây lại nói 'tính bằng %'. Em có thể nghĩ % là một đơn vị giống J hay W.",
-      "de_xuat": "Ghi: 'H là tỉ số không đơn vị, thường viết dưới dạng %'."
+      "em_hieu_la": "Mục vừa học gọi là \"năng lượng có ích\", câu hỏi lại dùng \"công có ích\". Em không biết hai cụm này có phải cùng một đại lượng $W_{ci}$ không.",
+      "de_xuat": "Thêm vào hộp định nghĩa: \"Khi máy sinh công, phần có ích còn gọi là công có ích, kí hiệu cũng là $W_{ci}$\"."
     },
     {
       "id": "c6",
-      "vi_tri": "3. Vì sao $H$ luôn nhỏ hơn 100 %; ghép nhiều máy",
-      "trich_nguyen_van": "<strong>Ghép nối tiếp</strong>: máy sau nhận năng lượng ra của máy trước, nên $H = H_1\\cdot H_2\\cdots$",
-      "loai": "thiếu_ví_dụ",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "nâng đều nên $W_{ci} = mgh$",
+      "loai": "nhảy_bước",
       "muc": "nhỏ",
-      "em_hieu_la": "Em có thể nhân thẳng 30 · 90 rồi ra 2700 %. Lời nhắc đổi sang số thập phân chỉ nằm trong phản hồi sai của Câu 5.",
-      "de_xuat": "Thêm ngay sau công thức: 'đổi mỗi H ra số thập phân (30 % = 0,30) rồi mới nhân'."
+      "em_hieu_la": "Bài không nói vì sao chữ \"đều\" quan trọng. Em sẽ áp mgh cả khi thang máy tăng tốc.",
+      "de_xuat": "Bổ sung: \"nâng đều nên vận tốc không đổi, động năng không tăng, toàn bộ công có ích chỉ làm tăng thế năng mgh\"."
     },
     {
       "id": "c7",
       "vi_tri": "Bẫy 1: hiệu suất cao thì máy mạnh",
-      "trich_nguyen_van": "Máy lớn thì $P$ lớn",
+      "trich_nguyen_van": "Máy lớn hay nhỏ đều có $H \\lt 100\\,\\%$",
       "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Em không rõ P ở đây là P_tp hay P_ci. Chữ 'mạnh' ở tiêu đề cũng chưa được định nghĩa, trong khi Câu 3 lại so sánh P_ci.",
-      "de_xuat": "Ghi rõ 'máy mạnh = P_ci lớn' và dùng P_ci trong bảng so sánh."
+      "em_hieu_la": "Dòng này không đối chiếu với cột công suất bên cạnh. Em không thấy nó liên quan gì tới bẫy \"hiệu suất cao thì máy mạnh\".",
+      "de_xuat": "Đổi thành: \"Máy có H cao chưa chắc có $P_{ci}$ lớn, vì còn phụ thuộc $P_{tp}$ nhận vào\"."
     },
     {
       "id": "c8",
-      "vi_tri": "Bẫy 2: lấy nhầm tử số và mẫu số",
-      "trich_nguyen_van": "hãy đọc lại hàng đầu của bảng",
+      "vi_tri": "2. Hiệu suất",
+      "trich_nguyen_van": "Vì sao ván thoải lại hao phí nhiều hơn?",
       "loai": "khác",
-      "muc": "khó",
-      "em_hieu_la": "Bẫy chính của Câu 4 là đề cho phần hao phí chứ không cho phần có ích. Bảng Bẫy 2 không nói gì về trường hợp này, và câu 'đề cho hao phí thì trừ trước' chỉ xuất hiện ở tổng kết cuối bài.",
-      "de_xuat": "Thêm một hàng vào bảng Bẫy 2: 'Đề cho hao phí → trừ ra W_ci trước' / 'Lấy hao phí chia toàn phần'."
-    },
-    {
-      "id": "c9",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "động cơ xăng chỉ vào cỡ một phần tư đến một phần ba",
-      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Câu bị thiếu chủ ngữ, em không biết 'một phần tư đến một phần ba' là của cái gì.",
-      "de_xuat": "Sửa thành 'hiệu suất động cơ xăng chỉ cỡ 25–33 %'."
-    },
-    {
-      "id": "c10",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "hãy làm lại phần thử sức",
-      "loai": "mơ_hồ",
-      "muc": "nhỏ",
-      "em_hieu_la": "Bài có cả 'Thử sức đổi chiều' lẫn 'Thử thách phân tầng', em không chắc phải làm lại phần nào.",
-      "de_xuat": "Ghi rõ 'làm lại phần Thử sức đổi chiều: biết hiệu suất, tìm điện năng'."
+      "em_hieu_la": "Bảng chỉ có $W_{tp}$ và H, không có cột F và s. Em không có số liệu quãng đường để tự trả lời trước khi mở phần nhận xét.",
+      "de_xuat": "Thêm cột $s$ (cm) và $W_{hp}$ (J) vào bảng để học sinh tự so sánh."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "du_doan",
+      "cau": "Dự đoán",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Nghĩ phần năng lượng không thành ánh sáng thì mất đi.",
+      "loi_tu_duy": "Nghĩ phần năng lượng không thành ánh sáng thì mất đi, chưa nghĩ tới bảo toàn năng lượng.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Chọn A thì năng lượng tự biến mất, trái với định luật bảo toàn."
+      "trich_nguyen_van": "Năng lượng không tự mất đi, cũng không tự sinh ra."
     },
     {
-      "cau": "cau1",
-      "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Lấy luôn con số 500 kJ có trong đề làm đáp án, nhầm phần có ích thành phần hao phí.",
-      "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$500\\ \\text{kJ}$ chính là phần có ích, không phải hao phí."
-    },
-    {
-      "cau": "cau2",
-      "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Tính hiệu số 5 − 4 rồi chia cho toàn phần, ra tỉ lệ hao phí thay vì hiệu suất.",
-      "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$20\\,\\%$ là tỉ lệ hao phí, không phải hiệu suất."
-    },
-    {
-      "cau": "cau3",
+      "cau": "Câu 1",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Cho rằng H cao hơn thì máy cho nhiều công suất có ích hơn, bỏ qua P_tp khác nhau.",
+      "loi_tu_duy": "Thấy hai số liền cộng lại, chưa xác định 2000 kJ chính là toàn phần.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$W_{tp} = W_{ci} + W_{hp}$"
+    },
+    {
+      "cau": "Câu 2",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Tính phần 1,0 kW mất đi rồi chia cho 5,0 kW, tức nhầm tỉ lệ hao phí với hiệu suất.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cho biết <strong>bao nhiêu phần trăm</strong> năng lượng nhận vào thành có ích."
+    },
+    {
+      "cau": "Câu 3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cho rằng H cao hơn thì máy cho nhiều công suất có ích hơn, quên nhân với $P_{tp}$.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Hiệu suất ≠ công suất"
     },
     {
-      "cau": "cau4",
+      "cau": "Câu 4",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Lấy thẳng số 200 J đề cho (hao phí) chia 800 J, không trừ để ra phần có ích trước.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Lấy luôn số 200 J đề cho đặt lên tử số, không trừ ra phần có ích trước.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đề cho phần hao phí thì trừ ra $W_{ci}$ trước, rồi mới chia cho $W_{tp}$."
     },
     {
-      "cau": "cau5",
+      "cau": "Câu 5",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Lấy trung bình hai hiệu suất vì thấy cộng ra 170 % là vô lí.",
+      "loi_tu_duy": "Nghĩ hiệu suất cả hệ là trung bình của hai khâu. Bảng Bẫy 3 chỉ nêu lỗi cộng, không nêu lỗi lấy trung bình.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "Luôn nhỏ hơn từng $H$ thành phần"
     },
     {
-      "cau": "cau6",
+      "cau": "Câu 6",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Coi công suất điện 1,25 kW là thông số cố định của thang máy, không đổi khi thời gian nâng giảm.",
-      "bai_da_nhan_manh": false,
-      "trich_nguyen_van": ""
+      "loi_tu_duy": "Coi công suất điện 1,25 kW là thông số cố định của thang máy, bỏ qua việc thời gian nâng giảm một nửa.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Công suất điện không phải số cố định của máy"
     }
   ]
 }

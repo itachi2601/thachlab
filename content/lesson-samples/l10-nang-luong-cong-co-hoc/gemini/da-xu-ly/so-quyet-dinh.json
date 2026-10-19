@@ -1,6 +1,6 @@
 {
   "bai": "l10-nang-luong-cong-co-hoc",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -91,5 +91,116 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-nang-luong-cong-co-hoc/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc giải thích d chếch trên phương ngang góc θ, P chếch dưới phương ngang 90° nên góc giữa là 90°+θ (không thêm hình vì không được chèn ảnh)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Quan sát đổi thành \"Fs luôn xấp xỉ Ph = 0,40 J, chỉ lớn hơn một chút và tăng dần theo s\", bỏ câu \"Công của lực kéo ≈ Ph\" ở Rút ra cho khỏi mâu thuẫn với bảng."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào phần nhận xét (trong details): ma sát lăn cũng ngược chiều chuyển động nên sinh công cản, nhỏ hơn ma sát trượt nhiều."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án Trả bài 6 đổi \"s = 0\" thành \"d = 0\" cho khớp bảng Bẫy 1; Trả bài 3 đã có d = s khi đi thẳng một chiều."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi tên bước 3 lời giải thành \"Tính N để suy ra ma sát\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dữ kiện ngầm viết thành \"không chuyển động theo phương thẳng đứng nên lực hướng lên bằng lực hướng xuống: N + F sinα_F = P\"."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ \"F_ms = μN với μ = 0,05\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án ⭐⭐⭐ thêm \"trên dốc N = P cos30° (phần trọng lực vuông góc mặt dốc)\" và tách mỗi ý một dòng."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng \"Lấy g = 10 m/s² cho cả ba câu\" đầu mục thử thách, bỏ ghi chú g riêng ở câu ⭐⭐."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (sau \"Điện năng (động cơ)<br>\" là \"Quang năng\", không phải \"Thế năng\")."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"vật đi xuống, độ cao giảm h\" để rõ h là độ chênh cao."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, thêm cảnh báo sẽ lộ đáp án; phản hồi sai đã giải thích lỗi đo công bằng cảm giác mỏi."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (thiếu thẻ strong), và bài đã nhấn F cosα ở Mẹo nhớ cùng phản hồi nêu lỗi dùng sin."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 2 đã thêm ở vòng 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 1 (bưng khay đi ngang, α = 90°, A = 0)."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 2 (s của vật nhận lực)."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở bảng Bẫy 3 (lực dọc dốc thì α = 0°), phản hồi sai đã nêu lỗi phương án C."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng dữ liệu đã nhấn F sin30° làm giảm áp lực, thêm ⚠ về N trước câu sẽ lộ đáp án."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.3 công trọng lực: \"vật đi xuống độ cao h\" thành \"vật đi xuống, độ cao giảm h\" (h là độ chênh cao).",
+      "II.3 dốc: thêm giải thích góc 90°+θ (d chếch trên phương ngang góc θ, P chếch dưới phương ngang 90°).",
+      "II.3 thí nghiệm 2: Quan sát nói Fs ≈ Ph = 0,40 J, lớn hơn một chút và tăng theo s; bỏ câu \"Công của lực kéo ≈ Ph = 0,40 J\" ở Rút ra; bảng số liệu không đổi.",
+      "II.3 nhận xét (details): nêu ma sát lăn ở bánh xe cũng sinh công cản, nhỏ hơn ma sát trượt.",
+      "II.2: rút gọn phản hồi Câu 1 (bỏ ý lực kéo cung cấp năng lượng cho vali), phản hồi sai Câu 2 (ý C), bỏ câu \"Tổng năng lượng không đổi\" sau ví dụ quạt để bù độ dài.",
+      "Bài toán mẫu bảng dữ liệu: N + F sinα_F = P kèm lời giải thích lực lên bằng lực xuống; ghi μ = 0,05.",
+      "Lời giải bước 3 đổi tên thành \"Tính N để suy ra ma sát\" (N = 280 N không đổi).",
+      "Trả bài 6: \"s = 0\" đổi thành \"d = 0\".",
+      "Thử thách: g = 10 m/s² dùng chung cho ba câu; ⭐⭐⭐ thêm N = P cos30°, kết quả A_P = 40 J, F_ms ≈ 1,73 N, A_ms ≈ −6,9 J không đổi."
+    ],
+    "so_tu_them": 10,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-nang-luong-cong-co-hoc/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

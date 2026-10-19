@@ -1,6 +1,6 @@
 {
   "bai": "l11-tat-dan-cuong-buc",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -151,5 +151,242 @@
       "lint_do_dai lỗi"
     ],
     "sao_luu": "content/lesson-samples/l11-tat-dan-cuong-buc/gemini/da-xu-ly/theory.src.202610091139.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phương án B q4 đổi thành \"chênh 1,8 cm vượt ngưỡng 0,4 cm\", phản hồi đúng và phản hồi C so với 0,4 cm cho khớp bảng và bài toán mẫu."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giả thuyết trong details viết lại thành mỗi lần qua lại chậm hơn, ghi rõ đó là khoảng thời gian gần đúng giữa hai lần qua cân bằng, không phải chu kì xác định."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu này nằm ở chú thích hình, không có trong HTML bài)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu công thức chỉ để tạo số minh hoạ, không cần nhớ, và β càng lớn thì biên độ tụt càng nhanh."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành \"Ngoại lực cùng chiều chuyển động\", đúng vật lí vì lực bù sinh công dương."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm $f_0 = 1/T_0$, $\\omega_0 = 2\\pi f_0$ vào dòng đầu mục duy trì, bù chữ bằng cách bỏ câu lặp \"Chu kì bằng chu kì riêng\"."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi A q3 ghi \"bộ phận bù năng lượng của đồng hồ (cơ cấu thoát)\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào phản hồi D q5: lực cưỡng bức có f = f0 là cộng hưởng, vẫn là cưỡng bức vì lực đặt liên tục, còn duy trì do chính nhịp của hệ quyết định lúc bù."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ \"trục f chia đều\" vì không cần cho học sinh, giữ ý cản nhỏ/cản lớn."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Details mục 5 ghi rõ cản lớn làm đỉnh lệch nhẹ xuống dưới f0, bài coi đỉnh tại f0 gần đúng như SGK, và câu dưới Hình 3 đổi thành \"Đỉnh coi như tại f0\"."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề a) đổi thành \"Chỉnh lực tới tần số nào thì có cộng hưởng?\", lời giải bước 2 ghi rõ f = 12 Hz."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay \"hoạ âm của dây\" bằng \"tần số dao động của dây đàn\"."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi D q1 và ví dụ xích đu đã nhấn nhún không đổi chu kì."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ma sát quá lớn thì về cân bằng rồi dừng."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mẹo \"bù một nhịp, không đẩy suốt\" đã nhấn ngay trước quiz."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mục 3 đã nhấn f vật = f lực, còn chỗ so với 0,2 cm đã sửa theo c1."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước q5: nhịp nhún có trùng chu kì riêng thì chỗ phân biệt vẫn là lịch đẩy, không phải chu kì."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn vật dao động theo tần số lực."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 đã nhấn, còn chữ \"chu kì đổi\" ở mục tắt dần đã sửa theo c2."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước q8 đã thêm ở vòng trước."
+      }
+    ],
+    "doi_noi_dung": [
+      "q4: phương án đúng B, phản hồi đúng và phản hồi C đổi ngưỡng so sánh từ 0,2 cm thành 0,4 cm (kết luận không đổi vì 1,8 cm > 0,4 cm).",
+      "Details bảng tắt dần: giả thuyết ghi là thời gian qua lại gần đúng, không phải chu kì xác định.",
+      "Câu dẫn bảng tắt dần: thêm công thức e^(-βt) chỉ để tạo số minh hoạ, không cần nhớ (số liệu không đổi).",
+      "Mục duy trì: ngoại lực ghi rõ cùng chiều chuyển động.",
+      "Mục duy trì: thêm f0 = 1/T0 và ω0 = 2πf0, bỏ câu lặp \"Chu kì bằng chu kì riêng\".",
+      "Mục 4: bỏ \"trục f chia đều\" và dòng Mẹo lặp ý 🔑, câu dưới Hình 3 đổi thành \"Đỉnh coi như tại f0 = 2,0 Hz\".",
+      "Details mục 5: ghi cản lớn làm đỉnh lệch nhẹ xuống dưới f0, bài coi gần đúng tại f0 (trợ giảng kiểm chú thích Hình 3 \"Đỉnh đúng tại f0\" nằm ngoài HTML).",
+      "q5: thêm dòng ⚠ trước quiz, phản hồi D thêm phân biệt cưỡng bức có f = f0 (cộng hưởng) với duy trì.",
+      "q3: phản hồi A giải thích cơ cấu thoát là bộ phận bù năng lượng.",
+      "Bài toán mẫu: đề a) hỏi chỉnh tới tần số nào thì cộng hưởng, lời giải bước 2 ghi f = f0 = 12 Hz.",
+      "Hộp đàn: thay \"hoạ âm của dây\" bằng \"tần số dao động của dây đàn\".",
+      "Cắt chữ bù hạn mức: rút gọn phản hồi đúng q7, bỏ câu hỏi gợi mở cuối phản hồi đúng q8."
+    ],
+    "so_tu_them": 25,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-tat-dan-cuong-buc/gemini/da-xu-ly/theory.src.202610191637.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã đổi phương án B q4 và phản hồi C sang ngưỡng 0,4 cm, bài hiện tại đã có."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Giả thuyết trong details đã ghi là khoảng thời gian gần đúng giữa hai lần qua cân bằng, không phải chu kì xác định."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (câu nằm ở chú thích hình, không có trong HTML), giữ quyết định vòng trước."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bài đã có câu công thức chỉ để tạo số minh hoạ, không cần nhớ, β càng lớn thì tụt càng nhanh."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bài đã ghi \"Ngoại lực cùng chiều chuyển động\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng đầu mục duy trì đã có $f_0 = 1/T_0$ và $\\omega_0 = 2\\pi f_0$."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi A q3 đã ghi \"bộ phận bù năng lượng của đồng hồ (cơ cấu thoát)\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi sai q5 đã có dòng cưỡng bức với f = f0 vẫn là cưỡng bức, duy trì do nhịp của hệ quyết định lúc bù."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Câu \"trục f chia đều\" đã được bỏ ở vòng trước, bài hiện không còn."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Mục 4 đã ghi \"Đỉnh coi như tại f0\" và details mục 5 nói rõ cản lớn đỉnh lệch nhẹ, coi gần đúng như SGK."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đề câu a đã là \"Chỉnh lực tới tần số nào thì có cộng hưởng?\"."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ví dụ hộp đàn đã đổi thành \"gần tần số dao động của dây đàn\"."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở thí nghiệm xích đu và phản hồi D, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ý ma sát quá lớn thì về cân bằng rồi dừng."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng mẹo \"bù một nhịp, không đẩy suốt\"."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn $f_{vật} = f_{lực}$ ở mục 3 và phương án B đã so với 0,4 cm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về lịch đẩy khi nhịp nhún trùng chu kì riêng đã có ngay trước q5."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã nhấn vật dao động theo tần số lực."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 3 đã nhấn không có chu kì xác định và chữ \"chu kì đổi\" đã được sửa."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về |f − f0| đã có trước q8 từ vòng 1."
+      }
+    ],
+    "doi_noi_dung": [],
+    "so_tu_them": -27,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-tat-dan-cuong-buc/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

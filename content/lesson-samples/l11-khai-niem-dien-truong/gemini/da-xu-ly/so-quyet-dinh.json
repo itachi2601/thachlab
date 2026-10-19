@@ -1,6 +1,6 @@
 {
   "bai": "l11-khai-niem-dien-truong",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -111,5 +111,229 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-khai-niem-dien-truong/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa điện tích thử ngay ở mục 1 (dương hoặc âm, đủ nhỏ để không làm đổi điện trường cần đo), mục 2 giữ nguyên câu dùng thuật ngữ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng đơn vị viết thành 'V/m, bằng N/C (vôn V sẽ học ở bài Điện thế)', bỏ phần đơn vị F, q để bù độ dài."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng tính mẫu cho lần đo đầu: F ≈ 4,0·10⁻³ N, E = 4,0·10⁵ V/m (đã kiểm khớp bảng)."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong hộp sai số ghi rõ lần 2 ≈ 4 %, lần 4 ≈ 8 % và viết đủ phép tính lí thuyết với Q = 40 nC, r = 0,04 m."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 4 nói rõ: ở bảng II.3, q giảm một nửa thì F giảm một nửa, E gần như giữ nguyên."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng: trong dầu, nước… ε > 1 nên E nhỏ hơn trong chân không ε lần."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng đọc đề ghi rõ góc vuông đối diện cạnh dài nhất AB, tức tại M."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm lí do (trong details): ngoài đoạn AB hai vectơ cùng chiều, ngoài đường AB không cùng phương, nên không triệt tiêu."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ dùng E = 2E₁cos(α/2) với α = 120°, tổng hướng về đỉnh thứ ba còn vectơ thứ ba hướng ra xa đỉnh đó."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi B Câu 5 viết lại: hai vectơ cùng phương, cùng độ lớn chỉ cộng ra 0 (ngược chiều) hoặc 2E₁ (cùng chiều)."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 3 thêm: D cũng đúng vì ở điện tích dương đường sức luôn đi ra, không bao giờ đi vào."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn trong phản hồi ('Không có gió nào…'), không thêm dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy tắc q < 0 thì F ngược chiều E đã in đậm ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mẹo r gấp đôi/gấp ba đã đặt ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã in đậm 'không khép kín' ở đặc điểm đường sức và phản hồi sai nay giải thích thêm D, không cần dòng ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu 'E=F/q là cách đo, không phải nguyên nhân' và bảng Bẫy 1 đã nhấn ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy tắc chiều dương ra, âm vào đã in đậm ở mục II.3 và phản hồi D giải thích rõ."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'phụ thuộc góc giữa hai vectơ', đề in đậm 'trung điểm', phản hồi C giải thích rõ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.1: định nghĩa điện tích thử (dương hoặc âm, đủ nhỏ để không làm đổi điện trường cần đo).",
+      "Mục II.2: dòng đơn vị đổi thành 'V/m, bằng N/C (vôn V sẽ học ở bài Điện thế)', bỏ 'F tính bằng N, q bằng C'.",
+      "Mục II.3: thêm dòng ε > 1 (dầu, nước) thì E nhỏ hơn trong chân không ε lần.",
+      "Mục II.3, thí nghiệm cân: thêm tính mẫu dòng đầu F = 4,1·10⁻⁴·9,8 ≈ 4,0·10⁻³ N, E = 4,0·10⁵ V/m (bảng giữ nguyên).",
+      "Mục II.3, hộp sai số: sai số đọc lần 2 ≈ 4 %, lần 4 ≈ 8 %; lí thuyết 9·10⁹·40·10⁻⁹/0,04² = 2,25·10⁵ V/m.",
+      "Câu 2, phản hồi sai: bỏ câu nhắc lại mẹo n² (đã có ngay trên).",
+      "Mục II.4, thí nghiệm điện phổ: bỏ 'hạt cỏ khô' và câu lặp 'chỗ chuỗi mau là chỗ điện trường mạnh'.",
+      "Câu 3, phản hồi sai: thêm giải thích D đúng (ở điện tích dương đường sức luôn đi ra).",
+      "Câu 4, phản hồi đúng: nối với bảng II.3 (q giảm một nửa thì F giảm một nửa, E gần như giữ nguyên).",
+      "Bẫy 2: bỏ câu 'Phải vẽ từng E ra rồi mới cộng' (trùng hàng cuối bảng).",
+      "Câu 5, phản hồi B: tổng hai vectơ cùng phương, cùng độ lớn chỉ là 0 (ngược chiều) hoặc 2E₁ (cùng chiều).",
+      "Mục V, bảng đọc đề: góc vuông đối diện cạnh dài nhất AB nên tại M.",
+      "Thử thách ⭐⭐: thêm lí do điểm E = 0 không nằm ngoài đoạn AB (kết quả r₁ = 6 cm, r₂ = 3 cm không đổi).",
+      "Thử thách ⭐⭐⭐: ghi rõ α = 120° trong E = 2E₁cos(α/2), tổng hai vectơ hướng về đỉnh thứ ba, ngược chiều vectơ thứ ba."
+    ],
+    "so_tu_them": 22,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-khai-niem-dien-truong/gemini/da-xu-ly/theory.src.202610191637.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã định nghĩa điện tích thử ở mục II.1 (dương hoặc âm, đủ nhỏ), bài hiện tại đã có."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng đơn vị đã ghi 'V/m, bằng N/C (vôn V sẽ học ở bài Điện thế)'."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng tính mẫu lần đo đầu (F ≈ 4,0·10⁻³ N, E = 4,0·10⁵ V/m) đã có trong bước Quan sát, vòng này giữ nguyên."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Hộp sai số đã ghi lần 2 ≈ 4 %, lần 4 ≈ 8 % và phép tính lí thuyết với Q = 40 nC."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi đúng Câu 4 đã nói rõ q giảm một nửa thì F giảm một nửa, E gần như giữ nguyên."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng 'Trong dầu, nước… ε > 1 nên E nhỏ hơn ε lần' đã có và được giữ khi cắt chữ."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bảng đọc đề đã ghi góc vuông đối diện cạnh dài nhất AB, tức tại M."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Lời giải ⭐⭐ đã giải thích vì sao ngoài đoạn AB và ngoài đường AB không triệt tiêu."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Lời giải ⭐⭐⭐ đã ghi rõ E = 2E₁cos(α/2) với α = 120° và chiều tổng hướng về đỉnh thứ ba."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi B Câu 5 đã viết lại: cùng phương, cùng độ lớn chỉ cộng ra 0 hoặc 2E₁."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi sai Câu 3 đã giải thích D đúng vì ở điện tích dương đường sức luôn đi ra."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nhấn 'Không có gió nào…', không cần dòng ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy tắc q < 0 thì F ngược chiều E đã in đậm ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Mẹo r gấp đôi thì E còn một phần tư vẫn đặt ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã in đậm 'không khép kín' và phản hồi sai đã giải thích D, lí do vòng trước còn đúng."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu 'E=F/q là cách đo, không phải nguyên nhân' và bảng Bẫy 1 đã nhấn ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Quy tắc dương ra, âm vào đã in đậm ở mục II.3 và phản hồi D giải thích rõ."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn 'phụ thuộc góc giữa hai vectơ', đề in đậm 'trung điểm', phản hồi C giải thích rõ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.3, Mẹo: bỏ vế 'r gấp ba thì còn một phần chín' (lặp với bước Rút ra và trùng đáp án Câu 2), giữ vế r gấp đôi.",
+      "Mục II.3, thí nghiệm cân: rút gọn câu chữ bước Làm/Quan sát/Rút ra, mọi số liệu (10 nC, 40 nC, 3–4–6 cm, 5 nC, bảng) giữ nguyên.",
+      "Mục III, bảng Bẫy 1: bỏ dòng so sánh đơn vị (V/m và N), đơn vị đã nêu ở mục II.2.",
+      "Mở bài: rút gọn câu tình huống (bỏ 'cây', 'trên bàn'), tình huống không đổi."
+    ],
+    "so_tu_them": -37,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-khai-niem-dien-truong/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

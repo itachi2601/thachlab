@@ -1,6 +1,6 @@
 {
   "bai": "l10-thuc-hanh-do-g",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-08",
     "model": "claude-opus-5-5",
@@ -132,5 +132,105 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-thuc-hanh-do-g/gemini/da-xu-ly/theory.src.202610081648.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm định nghĩa sai số tương đối Δx/x và ví dụ ngắn t lệch 1 % thì t² lệch khoảng 2 % ngay tại chỗ, bù bằng rút gọn dòng 'Lợi' ở mục 4."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: tiêu đề cột nằm trong bảng chèn tự động __BANG_TN1__, không có trong bài."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng trước đã thêm ngoặc '(lên xuống giữa các lần, xem Bẫy 2)' giải nghĩa tại chỗ, không chuyển định nghĩa lên để giữ cấu trúc mục."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong đáp án Thử thách ⭐⭐ ghi rõ 9,76 hơi khác 9,72 vì điểm số liệu có sai số, cách chuẩn là lấy điểm trên đường thẳng đã vẽ."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'g lệch cùng một chiều ở mọi lần đo' cho rõ nghĩa, vẫn không nêu chiều lệch để giữ Câu 3 (lý do từ chối vòng trước vẫn tôn trọng)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 3 mở bằng 'Tình huống khác bảng mục 3', giữ nguyên số liệu 0,319 s và kết quả."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng Bẫy 2 giải thích từ dư: ngắt điện rồi nam châm vẫn hút yếu, tách hai ví dụ thành hai dòng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa thành 'khoảng gấp 2,8 lần (δ: 0,0245 so với 0,0087)' vì 0,0245/0,0087 ≈ 2,8."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ thứ tự (t²; s) kèm đơn vị s² và m cho hai điểm của Thử thách ⭐⭐."
+      },
+      {
+        "id": "q-du_doan_muc_I",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi câu dự đoán, không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng trước: phản hồi đã chỉ rõ B là quên nhân 2, mục II đang sát trần độ dài."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ trước Câu 2, không thêm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ trước Câu 3, không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ trước Câu 4, không thêm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 'Xét cả khoảng' và bảng Bẫy 3 đã nhấn, không thêm."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ trước Câu 6, không thêm."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.3: thêm định nghĩa sai số tương đối Δx/x và ví dụ t lệch 1 % thì t² lệch khoảng 2 % trước công thức δ.",
+      "Mục II.4: rút gọn dòng 'Lợi' thành 'đường thẳng dùng cả năm điểm, điểm lệch thấy ngay' (bù độ dài).",
+      "Bẫy 1: bảng ghi 'g lệch cùng một chiều ở mọi lần đo' (không nêu chiều để giữ Câu 3).",
+      "Câu 3: đề ghi rõ là tình huống khác bảng mục 3, số liệu 0,319 s, 9,83 và 10,02 m/s² giữ nguyên.",
+      "Câu 3 phản hồi sai A: rút gọn câu, nội dung giữ nguyên.",
+      "Bẫy 2: giải thích từ dư (ngắt điện rồi nam châm vẫn hút yếu), tách hai ví dụ hệ thống thành hai dòng.",
+      "Thử sức điện thoại: tỉ số sai số sửa 2,7 thành 2,8 (δ 0,0245/0,0087 ≈ 2,82).",
+      "Thử thách ⭐⭐: ghi (t²; s) có đơn vị, thêm ghi chú 9,76 khác 9,72 do sai số số liệu, chuẩn là lấy điểm trên đường thẳng."
+    ],
+    "so_tu_them": 16,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-do-g/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

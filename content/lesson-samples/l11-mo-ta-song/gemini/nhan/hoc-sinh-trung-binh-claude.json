@@ -5,171 +5,135 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
-      "trich_nguyen_van": "Li độ $u_M = 2\\cos(40\\pi \\cdot 0{,}0125) = 2\\cos\\dfrac{\\pi}{2} = 0$: M đang ở vị trí cân bằng.",
-      "loai": "nghi_sai_đáp_án",
+      "vi_tri": "2. Năm đại lượng đặc trưng (bảng tra nhanh)",
+      "trich_nguyen_van": "Vuông pha, gần nhau nhất",
+      "loai": "từ_chưa_giải_thích",
       "muc": "khó",
-      "em_hieu_la": "Tính lại: sóng cần $d/v = 9/60 = 0{,}15$ s $= 3T$ mới tới M. Vậy tại $t = T/4 = 0{,}0125$ s, M chưa dao động, nhưng bài vẫn thay $t$ vào $u_M$ và kết luận M 'đang đi theo chiều âm'. Học sinh trung bình vốn hay nhầm điều kiện áp dụng sẽ tin rằng $u_M$ dùng được với mọi $t \\ge 0$.",
-      "de_xuat": "Đổi thời điểm thành $t = 3T + \\dfrac{T}{4}$ (hoặc $t = 0{,}1625$ s), và ghi rõ ở mục 3 rằng $u_M$ chỉ đúng khi $t \\ge \\dfrac{d}{v}$."
+      "em_hieu_la": "Bảng dùng 'cùng pha / ngược pha / vuông pha' trước khi mục 3 định nghĩa độ trễ pha Δφ. Học sinh không biết 'vuông pha' ứng với Δφ bằng bao nhiêu. Ý nghĩa này chỉ lộ ra muộn, ở bài điền bước ('ứng với π/2').",
+      "de_xuat": "Thêm cột 'Độ lệch pha' (0 hoặc 2kπ; π hoặc (2k+1)π; π/2 hoặc (2k+1)π/2), hoặc chuyển bảng này xuống sau mục 3."
     },
     {
       "id": "c2",
-      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
-      "trich_nguyen_van": "Chiều chuyển động: $v_M = u_M' = -80\\pi\\sin(40\\pi t)$.",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "2. Năm đại lượng đặc trưng (bảng tra nhanh)",
+      "trich_nguyen_van": "cũng là khoảng cách hai điểm gần nhau nhất cùng pha",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Bài dùng đạo hàm $u_M'$ mà không nhắc lại, trong khi chương Sóng thường học trước bài đạo hàm của Toán 11. Thêm nữa, đây là chữ $v$ thứ ba, ngay sau Bẫy 2 vừa dặn đừng lẫn hai chữ $v$. Học sinh dễ nhầm $v_M$ với tốc độ truyền sóng.",
-      "de_xuat": "Nhắc công thức vận tốc dao động $v = -\\omega A\\sin(\\omega t + \\varphi)$ từ chương Dao động thay cho ký hiệu đạo hàm, và ghi rõ $v_M$ là vận tốc dao động của phần tử, không phải tốc độ truyền sóng."
+      "em_hieu_la": "Học sinh nghĩ hai điểm cùng pha bất kì (kể cả không cùng phương truyền) gần nhau nhất thì cách nhau λ. Bảng thiếu điều kiện 'trên cùng một phương truyền' mà mục Trả bài câu 3 lại có.",
+      "de_xuat": "Bổ sung 'trên cùng một phương truyền sóng' vào ô định nghĩa bước sóng trong bảng cho khớp với Trả bài."
     },
     {
       "id": "c3",
-      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
-      "trich_nguyen_van": "hai đại lượng khác nhau, không so sánh \"hơn kém\"",
+      "vi_tri": "3. Độ trễ pha và phương trình sóng",
+      "trich_nguyen_van": "Điểm có $x \\gt 0$ nhận sóng trước O nên sớm pha hơn O.",
       "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Đề câu d yêu cầu 'so sánh', bảng đọc đề lại bảo 'không so sánh hơn kém', rồi lời giải kết luận '$v_{max}$ lớn hơn $v$'. Học sinh không biết rốt cuộc có được so sánh hay không.",
-      "de_xuat": "Viết lại thành: 'tính cả hai rồi so sánh số; nhớ rằng không có quy luật chung cái nào luôn lớn hơn'."
+      "em_hieu_la": "Cả mục coi O là nguồn. Đọc câu này, học sinh không hiểu vì sao một điểm lại nhận sóng trước chính nguồn. Học sinh cũng không rõ khi đó nguồn nằm ở đâu.",
+      "de_xuat": "Nói rõ: trường hợp này nguồn nằm xa phía x dương, O chỉ là gốc toạ độ có phương trình u_O đã biết, không phải nguồn."
     },
     {
       "id": "c4",
-      "vi_tri": "VI. Sóng trong đời sống, thử thách phân tầng và mang về",
-      "trich_nguyen_van": "tức lệch pha vuông pha (một phần tư vòng pha)",
-      "loai": "khác",
+      "vi_tri": "4. Đồ thị sóng: hai loại, đừng lẫn",
+      "trich_nguyen_van": "Chiều truyền sóng: cần biết thêm một điểm đang lên hay xuống",
+      "loai": "nhảy_bước",
       "muc": "khó",
-      "em_hieu_la": "$\\dfrac{3\\pi}{2}$ là ba phần tư vòng chứ không phải một phần tư. Dòng này mâu thuẫn với mẹo 'xa nguồn bao nhiêu bước sóng, trễ pha bấy nhiêu vòng', vì $d/\\lambda = 3/4$.",
-      "de_xuat": "Sửa thành '$\\dfrac{3\\pi}{2}$ (ba phần tư vòng), vẫn là vuông pha vì lệch một số lẻ lần $\\dfrac{\\pi}{2}$'."
+      "em_hieu_la": "Mục này nói suy được chiều truyền nhưng không chỉ cách suy. Quy tắc 'sườn trước đi lên, sườn sau đi xuống' mãi đến Câu 3 phần V mới xuất hiện, và lại nằm trong phản hồi quiz.",
+      "de_xuat": "Thêm ngay vào mục 4 quy tắc sườn trước/sườn sau kèm một hình u–x có mũi tên lên/xuống."
     },
     {
       "id": "c5",
       "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
-      "trich_nguyen_van": "nguyên cộng $\\dfrac{1}{4}$ → vuông pha",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Quy tắc bỏ sót trường hợp 'nguyên cộng 3/4'. Học sinh áp dụng máy móc sẽ kết luận $d = \\dfrac{3\\lambda}{4}$ (câu ⭐⭐) không phải vuông pha. Bảng 'Vuông pha, gần nhau nhất $d = \\dfrac{\\lambda}{4}$' cũng không nói đến các khoảng cách khác.",
-      "de_xuat": "Ghi thành 'nguyên cộng $\\dfrac{1}{4}$ hoặc $\\dfrac{3}{4}$ → vuông pha'."
+      "trich_nguyen_van": "$v_M = -\\omega A\\sin(40\\pi t - 6\\pi) = -80\\pi\\sin(40\\pi t)$ cm/s",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức vận tốc dao động v = −ωA sin(...) được dùng thẳng mà không nhắc là đạo hàm của u, cũng không nhắc là đã học ở bài dao động. Học sinh có thể quên dấu trừ hoặc quên đổi cos thành sin.",
+      "de_xuat": "Thêm một dòng nhắc: 'nhớ lại từ dao động điều hoà: u = Acos(φ) thì v = −ωA sin(φ)'."
     },
     {
       "id": "c6",
       "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
-      "trich_nguyen_van": "Hãy tưởng tượng nửa chu kì sau: đỉnh sóng dịch sang phải một đoạn",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Sau đúng nửa chu kì, sóng dịch $\\dfrac{\\lambda}{2}$ và đỉnh biến thành hõm, nên hình dung này không cho ra 'ngay sau đó P đi lên'. Câu ⭐⭐⭐ ở mục VI cũng lặp lại cách lập luận 'nửa chu kì sau' này.",
-      "de_xuat": "Thay 'nửa chu kì sau' bằng 'một khoảng thời gian rất ngắn sau' ở cả Câu 3 và câu ⭐⭐⭐."
+      "trich_nguyen_van": "$2\\cos(6{,}5\\pi) = 2\\cos\\dfrac{\\pi}{2} = 0$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh không thấy ngay bước 6,5π = 6π + π/2 và việc bỏ 3 vòng 2π. Cách 'bỏ vòng trọn' chỉ được dạy ở bài điền bước phía sau.",
+      "de_xuat": "Ghi rõ '6,5π = 6π + π/2, bỏ 6π (ba vòng trọn)' trước khi ra cos(π/2)."
     },
     {
       "id": "c7",
-      "vi_tri": "3. Độ trễ pha và phương trình sóng",
-      "trich_nguyen_van": "Sóng truyền ngược chiều dương (từ phải sang trái) thì M <em>sớm</em> pha hơn nguồn",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Nếu $d$ là khoảng cách tới nguồn thì sóng vẫn tới M sau O, tức M phải trễ pha. Câu này mâu thuẫn với dòng ngay dưới 'điểm nào sóng tới sau thì bị trừ pha'. Học sinh sẽ hỏi: vậy cộng hay trừ?",
-      "de_xuat": "Nói rõ công thức dấu cộng dùng tọa độ $x$ (với $x < 0$ ở phía sóng tới), còn tính theo khoảng cách $d$ thì luôn trừ pha."
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó",
+      "trich_nguyen_van": "$t = 3T + \\dfrac{T}{4}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng đọc đề ghi t = 3T + T/4 như một dữ liệu có sẵn trong đề, trong khi T chưa được tính ở bước này.",
+      "de_xuat": "Đổi thành 'tính t/T = 0,1625/0,05 = 3,25 → t = 3T + T/4' hoặc chuyển phép tính này sang lời giải."
     },
     {
       "id": "c8",
-      "vi_tri": "3. Độ trễ pha và phương trình sóng",
-      "trich_nguyen_van": "Thay $\\omega = \\dfrac{2\\pi}{T}$ và $v = \\dfrac{\\lambda}{T}$ vào, ta được dạng hay dùng nhất:",
-      "loai": "nhảy_bước",
-      "muc": "nhỏ",
-      "em_hieu_la": "Học sinh không thấy vì sao $\\omega\\dfrac{d}{v}$ thành $\\dfrac{2\\pi d}{\\lambda}$.",
-      "de_xuat": "Chèn một dòng trung gian: $\\omega\\dfrac{d}{v} = \\dfrac{2\\pi}{T}\\cdot\\dfrac{dT}{\\lambda} = \\dfrac{2\\pi d}{\\lambda}$."
+      "vi_tri": "VI. Sóng trong đời sống, thử thách phân tầng và mang về",
+      "trich_nguyen_van": "Lên dây căng hơn làm $v$ tăng, bấm phím cho dây ngắn lại làm $\\lambda$ giảm, cả hai đều làm $f = \\dfrac{v}{\\lambda}$ tăng",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Trước đó bài nhấn mạnh 'f do nguồn quyết định, không đổi; căng dây thì λ tăng'. Ở đây căng dây lại làm f tăng còn λ do chiều dài dây quy định. Học sinh sẽ thấy hai chỗ mâu thuẫn và không biết khi nào f bị khoá.",
+      "de_xuat": "Nói rõ ở dây đàn không có nguồn áp nhịp, chính chiều dài dây khoá λ nên f thay đổi theo v; khác với thí nghiệm lò xo, nơi tay người gảy khoá f."
     },
     {
       "id": "c9",
-      "vi_tri": "4. Đồ thị sóng: hai loại, đừng lẫn",
-      "trich_nguyen_van": "Cho biết bước sóng, hình dạng sợi dây và chiều truyền sóng",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Học sinh nghĩ chỉ nhìn một hình $u-x$ là biết chiều truyền. Thực ra phải biết thêm chiều chuyển động của một điểm. Tương tự, bài nói $u-t$ cho biết 'đi lên hay đi xuống' nhưng không dạy cách đọc.",
-      "de_xuat": "Bổ sung: 'chiều truyền sóng suy ra được khi biết thêm một điểm đang đi lên hay xuống (quy tắc sườn ở Câu 3)'."
-    },
-    {
-      "id": "c10",
-      "vi_tri": "VI. Sóng trong đời sống, thử thách phân tầng và mang về",
-      "trich_nguyen_van": "bấm phím cho dây ngắn lại làm $\\lambda$ giảm nên nốt cao hơn.",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Bài vừa dặn '$f$ bị khoá theo nguồn, $\\lambda$ đổi theo $v$', giờ $\\lambda$ lại đổi làm $f$ đổi. Bài bỏ qua bước '$v$ không đổi nên $f = v/\\lambda$ tăng'. Vế 'căng hơn làm $v$ tăng' cũng không nói hệ quả là gì.",
-      "de_xuat": "Thêm: 'dây đàn ngắn lại quy định $\\lambda$, $v$ không đổi nên $f = \\dfrac{v}{\\lambda}$ tăng, nốt cao hơn'."
-    },
-    {
-      "id": "c11",
       "vi_tri": "2. Năm đại lượng đặc trưng (bảng tra nhanh)",
-      "trich_nguyen_van": "đếm số khung hình giữa hai lần dây đạt đỉnh tại cùng một điểm để suy ra $T$",
-      "loai": "nhảy_bước",
+      "trich_nguyen_van": "$n$ đỉnh sóng liên tiếp",
+      "loai": "mơ_hồ",
       "muc": "nhỏ",
-      "em_hieu_la": "Học sinh không biết đổi số khung hình ra giây thế nào. Cụm 'quay chậm (240 fps)' chưa giải thích, và vật thí nghiệm đổi tên từ 'lò xo' sang 'dây'.",
-      "de_xuat": "Ghi '$T = \\dfrac{\\text{số khung hình}}{240}$ s' và giải thích 240 fps là 240 khung hình mỗi giây."
-    },
-    {
-      "id": "c12",
-      "vi_tri": "2. Năm đại lượng đặc trưng (bảng tra nhanh)",
-      "trich_nguyen_van": "Em nào ra $6{,}25$ là đã chia nhầm.",
-      "loai": "phương_án_nhiễu_khó_hiểu",
-      "muc": "nhỏ",
-      "em_hieu_la": "Học sinh chọn A ($0{,}16 = T/v$) không nhận được giải thích riêng.",
-      "de_xuat": "Thêm: 'ra $0{,}16$ là đã lấy $T/v$'."
-    },
-    {
-      "id": "c13",
-      "vi_tri": "4. Đồ thị sóng: hai loại, đừng lẫn",
-      "trich_nguyen_van": "cường độ $I = \\dfrac{P}{S}$ (W/m²)",
-      "loai": "từ_chưa_giải_thích",
-      "muc": "nhỏ",
-      "em_hieu_la": "Ký hiệu $P$ chưa được định nghĩa, học sinh có thể nhầm với áp suất.",
-      "de_xuat": "Ghi '$P$ là công suất của nguồn (W)'."
+      "em_hieu_la": "Bảng có tiêu đề 'Hai điểm trên cùng phương truyền' nên học sinh không rõ d ở dòng này là khoảng cách giữa hai đỉnh nào.",
+      "de_xuat": "Ghi 'khoảng cách từ đỉnh thứ nhất đến đỉnh thứ n: d = (n−1)λ'."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "Dự đoán trước khi học (tl8-q1)",
+      "cau": "tl8-q1 (Dự đoán trước khi học)",
       "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Hình dung sóng là cả khán đài rung cùng lúc, không để ý mỗi chỗ trễ một nhịp.",
+      "loi_tu_duy": "Học sinh hình dung sóng là cả môi trường rung lên cùng lúc, không thấy các phần tử dao động lệch nhịp nhau.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "người ghế B làm y hệt, chỉ chậm hơn một nhịp."
+      "trich_nguyen_van": "người ghế B làm y hệt, chỉ chậm hơn một nhịp"
     },
     {
-      "cau": "Câu 1 (tl8-q2)",
+      "cau": "tl8-q2 (Câu 1)",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Nhớ lẫn với $v = \\dfrac{\\lambda}{T}$ nên lấy $v/T = 6{,}25$.",
+      "loi_tu_duy": "Học sinh nhớ v = λ/T rồi đảo nhầm thành λ = v/T.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Công thức cần dùng là $\\lambda = vT$, không phải $\\dfrac{v}{T}$."
+      "trich_nguyen_van": "Ra $6{,}25$ là đã lấy $\\dfrac{v}{T}$."
     },
     {
-      "cau": "Bẫy 1 (tl8-q3)",
+      "cau": "tl8-q3 (Bẫy 1)",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Theo trực giác, sóng đẩy vật trôi theo chiều truyền.",
+      "loi_tu_duy": "Học sinh dựa vào trực giác 'sóng xô vật đi', nhầm truyền năng lượng với truyền vật chất.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "một chiếc lá trên mặt nước chỉ nhấp nhô lên xuống."
+      "trich_nguyen_van": "một chiếc lá trên mặt nước chỉ nhấp nhô lên xuống"
     },
     {
-      "cau": "Bẫy 2 (tl8-q4)",
+      "cau": "tl8-q4 (Bẫy 2)",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Cho rằng phần tử chỉ rung nhẹ nên luôn chậm hơn sóng. Hoặc quên đổi $A$ ra mét, ra 628 không khớp phương án nào rồi chọn đại.",
+      "loi_tu_duy": "Học sinh cho rằng phần tử không thể dao động nhanh hơn tốc độ sóng chạy, nên tự đặt ra một quy luật so sánh không có thật.",
       "bai_da_nhan_manh": true,
       "trich_nguyen_van": "không có quy luật \"cái nào lớn hơn\""
     },
     {
-      "cau": "Bẫy 3 (tl8-q5)",
+      "cau": "tl8-q5 (Bẫy 3)",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Đường sin trông giống sợi dây nên mặc định trục hoành là $x$.",
+      "loi_tu_duy": "Học sinh quen coi đường sin là 'hình sóng' trong không gian nên mặc định khoảng cách hai đỉnh là bước sóng.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Không đọc nhãn trục hoành là lỗi mất điểm phổ biến nhất của bài này."
+      "trich_nguyen_van": "Luôn đọc nhãn trục hoành trước."
     },
     {
-      "cau": "Câu 2 (tl8-q6)",
+      "cau": "tl8-q6 (Câu 2)",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Ra $\\Delta\\varphi = 5\\pi$ rồi nghĩ 'số nguyên lần $\\pi$' là cùng pha, lẫn $k\\pi$ với $k2\\pi$.",
-      "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Đi thêm $\\dfrac{\\lambda}{2}$ thì trễ pha $\\pi$: hai điểm ngược pha nhau."
+      "loi_tu_duy": "Học sinh đảo công thức thành λ = f/v = 0,5 cm, được d/λ = 10 là số nguyên nên kết luận cùng pha.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
     },
     {
-      "cau": "Câu 3 (tl8-q7)",
+      "cau": "tl8-q7 (Câu 3)",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Thấy sườn dốc xuống về bên phải nên nghĩ P 'trượt' xuống. Lời giải thích 'nửa chu kì sau' lại gây rối khi học sinh thử hình dung.",
+      "loi_tu_duy": "Học sinh thấy sườn phải dốc xuống nên đoán điểm P đi xuống theo hình dạng, không hình dung đỉnh sóng dịch tới.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "sườn trước đi lên, sườn sau đi xuống"
+      "trich_nguyen_van": "Đừng đoán theo độ dốc của sườn: hình dung đỉnh sóng dịch sang phải một chút"
     }
   ]
 }

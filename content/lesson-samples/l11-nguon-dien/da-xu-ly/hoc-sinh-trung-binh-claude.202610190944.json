@@ -1,0 +1,175 @@
+{
+  "bai": "Bài 24. Nguồn điện",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "3. Điện trở trong và hiệu điện thế hai cực",
+      "trich_nguyen_van": "Tính $r$ từ hai hàng xa nhau nhất: $r = \\dfrac{1{,}40 - 0{,}90}{0{,}60 - 0{,}10} = 1{,}0\\ \\Omega$.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Mở hộp 'Sai số đến từ đâu?' nằm ngay trước câu hỏi 'r của pin bằng bao nhiêu?' là thấy luôn đáp số 1,0 Ω. Câu tự kiểm tra và nút 'Chắc/Không chắc' mất tác dụng.",
+      "de_xuat": "Chuyển hộp 'Sai số đến từ đâu?' xuống sau câu hỏi tính r, hoặc bỏ phép tính r ra khỏi hộp đó."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "3. Điện trở trong và hiệu điện thế hai cực",
+      "trich_nguyen_van": "Độ dốc đường thẳng $= -r$.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em tự tính ΔU/ΔI = (0,90 − 1,40)/(0,60 − 0,10) = −1. Sau đó lời giải câu hỏi lại ghi ΔU/ΔI = 0,50/0,50 = +1. Em không rõ dấu trừ đi đâu và vì sao độ dốc lại là −r.",
+      "de_xuat": "Thêm một câu: 'U = 𝓔 − rI có dạng y = b − ax nên độ dốc là −r'. Trong lời giải, ghi r = −ΔU/ΔI (hoặc |ΔU|/ΔI)."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "4. Định luật Ohm cho toàn mạch và đoản mạch",
+      "trich_nguyen_van": "công của nguồn $\\mathcal{E}It$ bằng nhiệt toả ở $R$ và $r$, suy ra $\\mathcal{E} = I(R + r)$.",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em không biết 𝓔It từ đâu ra. Em cũng không thấy nhiệt toả được viết bằng công thức nào, nên chữ 'suy ra' như nhảy thẳng tới kết quả.",
+      "de_xuat": "Viết đủ các bước: A = 𝓔q với q = It; nhiệt toả là I²Rt + I²rt; cho 𝓔It = I²Rt + I²rt rồi chia hai vế cho It."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "4. Định luật Ohm cho toàn mạch và đoản mạch",
+      "trich_nguyen_van": "dòng lớn nhất $I_{\\text{đm}} = \\mathcal{E}/r$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chỉ số 'đm' thường được dùng cho 'định mức', nên em dễ hiểu I_đm là dòng định mức. Bài không nói 'đm' ở đây là viết tắt của 'đoản mạch'.",
+      "de_xuat": "Ghi rõ 'I_đm (đm: đoản mạch)' ngay lần đầu xuất hiện, hoặc đổi sang ký hiệu I_ngắn mạch / I_max."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Định luật Ohm cho toàn mạch và đoản mạch",
+      "trich_nguyen_van": "ampe kế chỉ cỡ vài ampe, gấp hàng trăm lần dòng qua một LED.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bước 'Làm' chỉ có dây đồng nối thẳng hai cực, không có ampe kế. Em không biết ampe kế mắc ở đâu, và dòng qua LED là bao nhiêu để so sánh.",
+      "de_xuat": "Thêm vào bước Làm: 'mắc ampe kế nối tiếp với dây'; ghi kèm dòng qua LED cỡ 10–20 mA."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "2. Lực lạ và suất điện động",
+      "trich_nguyen_van": "Mạch ngoài: lực điện đưa electron từ (−) tới (+); dòng điện chạy từ (+) về (−).",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Gạch đầu dòng trước nói về electron, gạch sau đổi sang 'điện tích dương' mà không giải thích. Em dễ nhầm rằng trong nguồn electron cũng đi từ (−) sang (+). Ở Bẫy 2, em cũng không hiểu chữ 'quy ước'.",
+      "de_xuat": "Thêm một câu: 'Chiều dòng điện quy ước là chiều dịch chuyển của điện tích dương; electron đi ngược lại'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "2. Lực lạ và suất điện động",
+      "trich_nguyen_van": "B — công của lực điện ở mạch ngoài là $Uq$, mà $U$ chỉ bằng $1{,}5$ V khi chưa có dòng.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "khó",
+      "em_hieu_la": "Phản hồi cho A và B dùng kiến thức 'U < 𝓔 khi có dòng' của mục 3, lúc này em chưa học. Câu cũng tự mâu thuẫn: chưa có dòng thì làm gì có 1 C chạy qua mạch ngoài.",
+      "de_xuat": "Sửa phản hồi B thành: 'U hai cực khi có dòng nhỏ hơn 𝓔 (xem mục 3), nên lực điện ở mạch ngoài làm công ít hơn 1,5 J cho mỗi coulomb'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "Bẫy 1: \"Suất điện động là hiệu điện thế hai cực\"",
+      "trich_nguyen_van": "Công của lực lạ trong nguồn",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng ghi 𝓔 là 'công' và U là 'công'. Em dễ nhớ thành 𝓔 = A, quên mất phải chia cho q, trái với 𝓔 = A/q đã học.",
+      "de_xuat": "Sửa hai ô thành 'Công của lực lạ trên mỗi coulomb (trong nguồn)' và 'Công của lực điện trên mỗi coulomb (mạch ngoài)'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "5. Ghép nguồn thành bộ",
+      "trich_nguyen_van": "Hỗn hợp đối xứng: $n$ dãy × $m$ nguồn nối tiếp",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Em dễ đảo m với n trong r_b = mr/n. Mục tiêu có ghép nguồn nhưng cả mục không có ví dụ số hay câu tự kiểm tra nào cho hỗn hợp và xung đối.",
+      "de_xuat": "Thêm một ví dụ số, chẳng hạn 6 pin (1,5 V; 0,6 Ω) ghép 2 dãy × 3 pin, cho 𝓔_b = 4,5 V và r_b = 0,9 Ω, kèm một câu trắc nghiệm."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "VI. Nguồn điện trong đời sống",
+      "trich_nguyen_van": "vừa đủ — đèn tối rõ như ở mở bài.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Đề nói đèn 'còn sáng rõ khi U ≥ 9,0 V', mà 9,6 V ≥ 9,0 V lại bị gọi là 'tối rõ'. Em không biết ắc quy yếu đạt hay không đạt. Lời giải cũng không trả lời thẳng 'cái nào đạt'. Ắc quy mới lại 'chỉ hơi tối', trong khi mở bài nói 'tối hẳn'.",
+      "de_xuat": "Kết luận rõ: 'Cả hai đều đạt (r ≤ 0,06 Ω); ắc quy yếu chỉ vừa đủ, đèn tối hơn hẳn ắc quy mới'. Bỏ cụm 'tối rõ', hoặc chỉnh lại câu ở mở bài cho khớp."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "3. Điện trở trong và hiệu điện thế hai cực",
+      "trich_nguyen_van": "hiệu $\\mathcal{E} - U$ tăng đúng tỉ lệ với $I$: $\\mathcal{E} - U = Ir$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bảng chỉ có cột I và U, em phải tự lấy 1,50 trừ từng giá trị U mới thấy được 'tỉ lệ', nên kết luận như rơi từ trên xuống.",
+      "de_xuat": "Thêm cột '𝓔 − U (V)' vào bảng (0,10; 0,15; 0,30; 0,50; 0,60) để thấy ngay nó bằng I × 1,0."
+    },
+    {
+      "id": "c12",
+      "vi_tri": "V. Bài toán mẫu: nguồn nuôi một điện trở",
+      "trich_nguyen_van": "(ngầm) \"mạch kín\"",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề đã ghi rõ 'thành mạch kín', vậy mà bảng lại gọi là 'ngầm'. Cụm trích 'hiệu điện thế giữa hai cực' cũng không khớp chữ trong đề ('hiệu điện thế hai cực nguồn').",
+      "de_xuat": "Bỏ chữ '(ngầm)' và trích đúng nguyên văn đề: 'hiệu điện thế hai cực nguồn'."
+    },
+    {
+      "id": "c13",
+      "vi_tri": "I. Mở bài: đèn pha tối đi lúc bấm đề",
+      "trich_nguyen_van": "C. Dòng đề rất lớn qua điện trở trong, hai cực ắc quy tụt áp",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đáp án đúng dùng thuật ngữ 'điện trở trong' mà em chưa gặp. Em chỉ chọn được bằng cách loại trừ, không phải bằng suy luận.",
+      "de_xuat": "Đổi phương án C thành 'Bên trong ắc quy cũng cản dòng; dòng đề lớn làm hai cực ắc quy tụt áp'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi nguồn như một 'kho điện' cố định chia cho các thiết bị, nên mô tơ lấy nhiều thì đèn bị lấy bớt.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A — không có mạch nào \"dồn\" điện: đèn vẫn nối trực tiếp hai cực ắc quy"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Đồng nhất số ghi trên vỏ pin với hiệu điện thế hai cực lúc đang dùng; lúc này chưa học U = 𝓔 − Ir.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Con số trên vỏ pin là suất điện động, không phải hiệu điện thế lúc đang dùng."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Áp dụng thói quen R = U/I cho một hàng của bảng, ra điện trở mạch ngoài chứ không phải r.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "C — $U/I = 0{,}90/0{,}60 = 1{,}5$ là điện trở mạch ngoài $R$ ở hàng cuối, không phải $r$."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Dùng định luật Ohm cho đoạn mạch I = 𝓔/R, quên cộng điện trở trong vào mẫu.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "B — $6{,}0/2{,}5 = 2{,}4$ là quên cộng $r$ vào mẫu."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Nghĩ vôn kế lí tưởng luôn chỉ đúng số ghi trên pin, không phân biệt hở mạch với mạch kín.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A — khi có dòng $0{,}5$ A, pin mất $Ir = 0{,}25$ V bên trong, hai cực không còn đủ $1{,}5$ V."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Ngoại suy từ mạch ngoài 'dòng đi từ (+) sang (−)' cho mọi chỗ; lẫn chiều electron với chiều quy ước vì bài không định nghĩa 'quy ước'.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dòng từ cực (−) lên cực (+)"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy luôn U bằng 𝓔 mà không tính độ giảm thế Ir; một số em tính ra Ir = 1,0 V rồi dừng ở đó, chọn B.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "A — $12$ V là $\\mathcal{E}$, chỉ bằng $U$ khi không có dòng."
+    }
+  ]
+}

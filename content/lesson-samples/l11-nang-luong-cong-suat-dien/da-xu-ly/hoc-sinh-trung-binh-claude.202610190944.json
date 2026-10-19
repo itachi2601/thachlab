@@ -1,0 +1,164 @@
+{
+  "bai": "Bài 25. Năng lượng điện và công suất điện",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Công suất điện: P = UI",
+      "trich_nguyen_van": "$9{,}0$ V: $1{,}55$ A; $6{,}0$ V: $1{,}30$ A, đỏ mờ.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Bài đo ở 9 V và 6 V nhưng không dùng hai số này. Tính lại: R ≈ 5,8 Ω và 4,6 Ω, tức R thay đổi theo U. Ngay sau đó quiz lại yêu cầu 'coi R không đổi' và kết luận U giảm một nửa thì P giảm 4 lần. Thí nghiệm thật cho P(6 V) = 7,8 W, không phải 21/4 ≈ 5,25 W. Em không biết nên tin số đo hay tin công thức.",
+      "de_xuat": "Thêm một dòng ở mục Rút ra: tính R ở 6 V (≈ 4,6 Ω), nói rõ dây tóc nguội thì R giảm, nên 'coi R không đổi' trong bài tập chỉ là phép gần đúng."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "✅ Mang về sau bài học",
+      "trich_nguyen_van": "gặp \"phút, giờ\" đổi ra giây trước.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em hiểu là luôn phải đổi ra giây. Nhưng ví dụ công tơ, quiz điều hoà và phần tiền điện đều giữ giờ để ra kWh. Em sẽ đổi 8 giờ ra giây rồi không biết ra kWh thế nào.",
+      "de_xuat": "Ghi rõ điều kiện: tính ra jun thì đổi t ra giây; tính ra kWh thì dùng kW và giờ, không đổi ra giây."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "5. An toàn điện: đoản mạch và cầu chì",
+      "trich_nguyen_van": "Pin cũ ($r$ lớn) thì cùng một dòng điện, nhiệt $I^2r$ hao ngay trong nguồn nhiều hơn.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Câu này đặt trong đoạn đoản mạch, mà khi đoản mạch thì I = ℰ/r, nên pin cũ có dòng nhỏ hơn chứ không 'cùng một dòng'. Em sẽ hiểu nhầm là pin cũ đoản mạch nguy hiểm hơn.",
+      "de_xuat": "Tách câu này ra khỏi ý đoản mạch, hoặc nói rõ: 'khi làm việc bình thường với cùng dòng I, pin cũ hao I²r nhiều hơn'."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "5. An toàn điện: đoản mạch và cầu chì",
+      "trich_nguyen_van": "nhiệt trong ắc quy $600^2 \\cdot 0{,}02 = 7200$ W — chìa khoá đỏ rực",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Con số 7200 W là nhiệt trong ắc quy, nhưng câu lại kết luận là chìa khoá đỏ rực. Bài lại vừa coi R → 0, nên em không thấy vì sao chìa khoá nóng.",
+      "de_xuat": "Thêm: 'chìa khoá có R nhỏ nhưng khác 0, với I = 600 A thì I²R_khoá vẫn rất lớn'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "4. Hiệu suất của nguồn điện",
+      "trich_nguyen_van": "Có động cơ hay máy thu: chỉ dùng $H = U/\\mathcal{E}$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Máy thu' chưa được giải thích ở đâu trong bài. Em không rõ khi nào mạch 'có máy thu' để biết phải bỏ công thức R/(R+r).",
+      "de_xuat": "Thêm ví dụ trong ngoặc: '(như quạt, động cơ, pin đang sạc: mạch ngoài không chỉ là điện trở)'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "5. An toàn điện: đoản mạch và cầu chì",
+      "trich_nguyen_van": "Bảo vệ: <strong>cầu chì / aptomat</strong> đúng dòng định mức",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "nhỏ",
+      "em_hieu_la": "'Aptomat' không được giải thích. Em không biết nó khác cầu chì chỗ nào.",
+      "de_xuat": "Thêm: 'aptomat: công tắc tự ngắt khi dòng quá lớn, bật lại được, không phải thay như cầu chì'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "VI. Năng lượng điện trong đời sống",
+      "trich_nguyen_van": "Hiệu suất của ấm? ($c = 4200$ J/kg·K)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chỉ định nghĩa hiệu suất của nguồn, H = U/ℰ. Em có thể tìm U và ℰ thay vì lấy Q có ích chia điện năng.",
+      "de_xuat": "Ghi một dòng trước lời giải: 'hiệu suất thiết bị = năng lượng có ích / điện năng tiêu thụ', khác H của nguồn."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "VI. Năng lượng điện trong đời sống",
+      "trich_nguyen_van": "$700$ W, $1$ giờ/ngày, $30$ ngày: $0{,}7 \\cdot 30 = 21$ kWh",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Phép tính thiếu thừa số giờ, không khớp với quy tắc 'kWh = kW × số giờ'. Em tưởng số ngày thay được cho số giờ.",
+      "de_xuat": "Viết đủ: 0,7 · 1 · 30 = 21 kWh."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu: nguồn nuôi bộ sấy",
+      "trich_nguyen_van": "chỉ $\\dfrac{1}{300}$ kWh, pin không \"ăn\" nổi một số điện",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề nói 'nguồn điện' nuôi bộ sấy, mà ở mở bài 'ăn' nghĩa là thiết bị tiêu thụ. Ở đây 'pin ăn' khiến em lẫn ai phát, ai nhận.",
+      "de_xuat": "Đổi thành: 'bộ sấy chỉ nhận 1/300 kWh, chưa tới một số điện'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "Bẫy 3: đèn công suất lớn thì luôn sáng hơn",
+      "trich_nguyen_van": "$R$ lớn toả nhiệt nhiều hơn (10 Ω và 100 Ω nối tiếp)",
+      "loai": "lặp_ý",
+      "muc": "nhỏ",
+      "em_hieu_la": "Dòng này nhắc lại 'R lớn nhận nhiều hơn' và chỉ nêu tên hai điện trở, không có con số nào.",
+      "de_xuat": "Thay bằng số cụ thể, ví dụ hai điện trở 10 Ω và 100 Ω nối tiếp vào 110 V: I = 1 A, P = 10 W và 100 W."
+    },
+    {
+      "id": "c11",
+      "vi_tri": "1. Năng lượng điện tiêu thụ: A = UIt",
+      "trich_nguyen_van": "(đổ thêm nước lạnh nếu ấm tự ngắt)",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không rõ vì sao phải đổ thêm nước. Em cũng không biết nếu ấm tự ngắt giữa chừng thì phép đo 10 phút còn đúng không.",
+      "de_xuat": "Thêm lý do: 'để ấm chạy liên tục đủ 10 phút ở 1800 W'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhân 100 W × 10 h ra 1000 và coi luôn là số điện (kWh), quên rằng kết quả đang ở Wh.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$100 \\times 10 = 1000$ đúng, nhưng đơn vị là Wh; chia 1000 mới ra kWh."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Để nguyên t = 15 phút trong A = UIt. Ví dụ công tơ ngay trước đó lại dùng giờ, càng dễ bỏ qua bước đổi ra giây.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$U$ (V), $I$ (A), $t$ (s) thì $A$ ra jun (J)."
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Coi P tỉ lệ thuận với U nên chia đôi. Thí nghiệm đèn xe máy cũng không cho thấy P giảm theo bình phương.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thấy I giảm thì nghĩ mọi đại lượng 'hiệu quả' đều giảm, không để ý U tăng.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$R$ tăng thì $I$ giảm ($1{,}50 \\to 0{,}30$ A) nhưng $U$ tăng dần về phía $3{,}0$ V."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Tính đúng số 288 nhưng ghi đơn vị kW, vì kW và kWh trông gần giống nhau.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "kW là tốc độ · kWh là tổng."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tính UI (công suất mạch ngoài) rồi coi là công suất của nguồn.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Toàn phần: cả phần nóng trong nguồn"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy công suất ghi trên nhãn làm công suất thực, không để ý cách mắc nối tiếp.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nối tiếp — cùng $I$ … Dùng $P = I^2R$ … $R$ lớn nhận nhiều hơn"
+    },
+    {
+      "cau": "cau8",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Đặt nhầm r lên tử số, thành r/(R+r), vì nhớ công thức theo dạng 'một điện trở chia tổng'.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

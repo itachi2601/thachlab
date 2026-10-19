@@ -42,7 +42,7 @@ $$\vec p = m\vec v$$
 
 <ul>
 <li>Là <strong>vector</strong>, cùng hướng với vận tốc.</li>
-<li>Đặc trưng cho khả năng <strong>truyền chuyển động</strong> của vật khi tương tác với vật khác.</li>
+<li>Đặc trưng cho khả năng <strong>truyền chuyển động</strong> khi tương tác với vật khác.</li>
 <li><strong>Phụ thuộc hệ quy chiếu</strong>, vì vận tốc phụ thuộc hệ quy chiếu.</li>
 </ul>
 
@@ -66,7 +66,7 @@ $$\vec p = m\vec v$$
 <input type="radio" name="tl73-q2" id="tl73-q2c"><label for="tl73-q2c" class="tl-opt tl-no">C. $0$ và $0\ \text{kg}\cdot\text{m/s}$</label>
 <input type="radio" name="tl73-q2" id="tl73-q2d"><label for="tl73-q2d" class="tl-opt tl-no">D. $900$ và $0\ \text{kg}\cdot\text{m/s}$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> So với toa, hành khách đứng yên: $p = 0$. So với sân ga, $v = 15\ \text{m/s}$: $p = 60 \cdot 15 = 900\ \text{kg}\cdot\text{m/s}$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B và C coi động lượng là "của riêng vật", không đổi theo người quan sát — nhưng $\vec v$ đổi theo hệ quy chiếu nên $\vec p$ cũng đổi. D đảo ngược hai hệ: ngồi yên trên tàu nghĩa là $v = 0$ <em>so với tàu</em>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B và C coi động lượng là "của riêng vật" — nhưng $\vec v$ đổi theo hệ quy chiếu nên $\vec p$ cũng đổi. D đảo ngược hai hệ: ngồi yên trên tàu nghĩa là $v = 0$ <em>so với tàu</em>.</p></div>
 </div>
 </div>
 
@@ -81,7 +81,7 @@ $$\vec p = m\vec v$$
 <li>Cùng hướng ($\alpha = 0^\circ$): $p = p_1 + p_2$</li>
 <li>Ngược hướng ($\alpha = 180^\circ$): $p = |p_1 - p_2|$</li>
 <li>Vuông góc ($\alpha = 90^\circ$): $p = \sqrt{p_1^2 + p_2^2}$</li>
-<li>Góc $\alpha$ bất kì: $p^2 = p_1^2 + p_2^2 + 2p_1p_2\cos\alpha$</li>
+<li>Góc $\alpha$ bất kì (góc giữa hai vector chung gốc, không phải góc trong tam giác, nên mang dấu $+$): $p^2 = p_1^2 + p_2^2 + 2p_1p_2\cos\alpha$</li>
 <li>Nếu $p_1 = p_2$, công thức trên rút gọn thành: $p = 2p_1\cos\dfrac{\alpha}{2}$</li>
 </ul>
 
@@ -134,9 +134,9 @@ $$\vec F = \frac{\Delta\vec p}{\Delta t}$$
 <div class="tl-box tl-box--exp" data-exp="tn-l10-dongluong-01">
 <p class="tl-label">🔬 Thí nghiệm: xe bật vào đệm lò xo</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> xe $m = 0{,}250\ \text{kg}$ chạy trên ray đệm khí tới đệm lò xo gắn cảm biến lực. Cổng quang đo vận tốc lúc tới $v_1$ và lúc bật lại $v_2$ (chiều dương là chiều xe chạy tới). Phần mềm tính xung lượng bằng diện tích dưới đồ thị $F$–$t$. Đo 4 lần, đẩy mạnh dần.</li>
+<li><strong>Làm:</strong> xe $m = 0{,}250\ \text{kg}$ chạy trên ray đệm khí tới đệm lò xo gắn cảm biến lực. Cổng quang đo vận tốc lúc tới $v_1$ và lúc bật lại $v_2$ (chiều dương là chiều xe chạy tới). Phần mềm tính xung lượng bằng diện tích dưới đồ thị $F$–$t$ (lực không đổi thì diện tích này là $F\Delta t$). Đo 4 lần, đẩy mạnh dần.</li>
 <li><strong>Quan sát:</strong> $v_2$ luôn âm và nhỏ hơn $v_1$ về độ lớn. Xung lượng tăng theo tốc độ đẩy.</li>
-<li><strong>Rút ra:</strong> so $|m(v_2 - v_1)|$ với số cảm biến ở bảng dưới (số liệu minh hoạ, chưa phải số đo thật).</li>
+<li><strong>Rút ra:</strong> so $|m(v_2 - v_1)|$ với số cảm biến ở bảng dưới (số liệu minh hoạ).</li>
 </ol>
 </div>
 
@@ -248,7 +248,7 @@ __BANG__
 <tbody>
 <tr><td>$\Delta p$</td><td>Như nhau (cùng $m$, cùng tốc độ chạm, cùng dừng hẳn)</td></tr>
 <tr><td>$\Delta t$</td><td>Dài hơn nhiều lần</td></tr>
-<tr><td>$F$</td><td>Hợp lực nhỏ hơn đúng ngần ấy lần<br>Lực đỡ của đệm hoặc sàn chỉ nhỏ hơn xấp xỉ ngần ấy lần, khi nó lớn hơn nhiều trọng lượng</td></tr>
+<tr><td>$F$</td><td>Hợp lực nhỏ hơn đúng ngần ấy lần<br>Lực đỡ $N = F + mg$ nên chỉ nhỏ hơn xấp xỉ ngần ấy lần, khi $N$ lớn hơn nhiều trọng lượng $mg$</td></tr>
 </tbody>
 </table>
 </div>
@@ -298,7 +298,7 @@ __BANG__
 </details>
 <details class="tl-details">
 <summary>6. Đệm hơi cứu hộ giúp người nhảy xuống an toàn nhờ đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>$\Delta p$ không đổi.<br>$\Delta t$ dài ra nhiều lần.<br>Lực tác dụng lên người nhỏ đi bấy nhiêu lần.</p>
+<p>$\Delta p$ không đổi.<br>$\Delta t$ dài ra nhiều lần.<br>Hợp lực lên người nhỏ đi bấy nhiêu lần.<br>Lực đỡ của đệm nhỏ đi xấp xỉ như vậy.</p>
 </details>
 </div>
 
@@ -356,7 +356,7 @@ Tường đẩy bóng $180\ \text{N}$, hướng ra xa tường.</li>
 
 <details class="tl-details">
 <summary>🔁 Thử sức đổi chiều: biết lực, tìm tốc độ bật lại</summary>
-<p>Cùng quả bóng bay tới tường $12\ \text{m/s}$, chạm tường $0{,}05\ \text{s}$, tường đẩy bóng lực trung bình $150\ \text{N}$. Khi đó $|\Delta p| = 150 \cdot 0{,}05 = 7{,}5\ \text{kg}\cdot\text{m/s}$, nên $0{,}45\,(12 + v) = 7{,}5$ và $v = 7{,}5/0{,}45 - 12 \approx 4{,}7\ \text{m/s}$ (bật ngược lại).</p>
+<p>Cùng quả bóng bay tới tường $12\ \text{m/s}$, chạm tường $0{,}05\ \text{s}$, tường đẩy bóng lực trung bình $150\ \text{N}$. Khi đó $|\Delta p| = 150 \cdot 0{,}05 = 7{,}5\ \text{kg}\cdot\text{m/s}$.<br>Gọi $v$ là tốc độ bật lại thì $v_2 = -v$ (chiều dương là chiều tới), nên $|\Delta p| = 0{,}45\,|-v - 12| = 0{,}45\,(12 + v) = 7{,}5$.<br>Suy ra $v = 7{,}5/0{,}45 - 12 \approx 4{,}7\ \text{m/s}$ (bật ngược lại).</p>
 </details>
 
 <p class="tl-conf">Em chắc bao nhiêu?

@@ -1,6 +1,6 @@
 {
   "bai": "l10-do-thi-dich-chuyen-thoi-gian",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-08",
     "model": "claude-opus-5-5",
@@ -125,5 +125,92 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-do-thi-dich-chuyen-thoi-gian/gemini/da-xu-ly/theory.src.202610081647.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bẫy 3 nay nói độ dịch chuyển = d cuối trừ d đầu, chỉ đọc thẳng ở điểm cuối khi vật xuất phát ở gốc; bảng, dòng 🔑 và Mang về sửa theo, bù chữ bằng cách bỏ câu gợi ý cuối phản hồi đúng Câu 4."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (cụm \"hai đầu ghi số 14 và 2 trên trục\" không có trong bài)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong details Thử sức, nối d = d₀ + v(t − t₀) với x = x₀ + vt (bấm lại đồng hồ từ đầu đoạn) và chỉ ra 8 − 2t cho −8 m lúc t = 8 s là vô lí; không chuyển công thức lên mục 2 vì mục đó đã sát trần."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (bài viết phân số 30 cm/6 s trong details, không có câu \"Độ dốc: 30 cm : 6 s = 5 cm/s.\")."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu ⭐ ghi rõ vận động viên trượt băng trên một đoạn đường thẳng, hết mâu thuẫn với ví dụ đường vòng."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu ⭐⭐ thêm chú thích x là giá trị d đọc trên trục đứng Hình 3, cùng một gốc."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi sai (B nhầm nằm ngang với đều), không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở dòng 🔑 \"Quay đầu: |d| ≠ s\" và phản hồi C, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"Dốc âm = đi ngược\" và phản hồi \"quên dấu\", không thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"Dốc nhiều = nhanh\" và phản hồi D đảo nhanh/chậm, không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn \"Độ dốc không đổi: vận tốc không đổi\" và phản hồi C, không thêm ⚠."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua bảng Bẫy 2 \"Hai đường cắt nhau: cùng vị trí\", không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi D và nay Bẫy 3 nói rõ d cuối trừ d đầu, không thêm ⚠."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ đổi chiều dương thì cả d lẫn v đổi dấu đã thêm trước Câu 7 ở vòng 1."
+      }
+    ],
+    "doi_noi_dung": [
+      "Bẫy 3: độ dịch chuyển = d cuối − d đầu, chỉ đọc thẳng ở điểm cuối khi vật xuất phát ở gốc (bảng ô trái, dòng 🔑 và mục Mang về sửa theo).",
+      "Câu 4 (phản hồi đúng): bỏ câu gợi ý giải thích cho bạn ngồi cạnh để bù độ dài mục III, nội dung vật lí giữ nguyên.",
+      "Mục V Thử sức: d = d₀ + v(t − t₀) giải thích là x = x₀ + vt bấm lại đồng hồ từ t₀ = 6 s; viết nhầm d = 8 − 2t cho d = −8 m lúc t = 8 s, vô lí; kết quả đúng vẫn d = 4 m.",
+      "Mục VI ⭐: vận động viên trượt băng trên đoạn đường thẳng, đáp số giữ 12 m/s.",
+      "Mục VI ⭐⭐: ghi rõ x là giá trị d trên trục đứng Hình 3 (cùng gốc), đáp số giữ t = 2 s, x = 8 m."
+    ],
+    "so_tu_them": -7,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-do-thi-dich-chuyen-thoi-gian/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

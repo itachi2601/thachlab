@@ -1,0 +1,155 @@
+{
+  "bai": "Bài 20. Điện thế",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "2. Điện thế: thế năng của một culông",
+      "trich_nguyen_van": "Suy ra: $W_M=qV_M$, và $q=\\dfrac{A}{V}$ nếu biết công và điện thế.",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em sẽ lấy bất kỳ công nào (ví dụ $A_{MN}$) chia cho $V_M$ để ra $q$. Công thức không nói A là công từ đâu tới đâu, V là điện thế điểm nào.",
+      "de_xuat": "Viết rõ $q=\\dfrac{A_{M\\infty}}{V_M}$ (mốc ở vô cực), hoặc dùng $q=\\dfrac{A_{MN}}{U_{MN}}$; nếu không cần thì bỏ vế này."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Điện thế: thế năng của một culông",
+      "trich_nguyen_van": "$$V_M=\\dfrac{W_M}{q}=\\dfrac{A_{M\\infty}}{q}$$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Em nghĩ điện thế luôn tính bằng công đưa điện tích ra vô cực. Tới đề mẫu chọn mốc ở bản âm, em không hiểu $V_M=30$ V ứng với công đưa điện tích đi đâu. Trả bài cũng chỉ ghi 'mốc: Trái Đất hoặc vô cực'.",
+      "de_xuat": "Thêm một câu: tổng quát $V_M=\\dfrac{A_{M\\to\\text{mốc}}}{q}$, vô cực chỉ là một cách chọn mốc; có thể chọn mốc ở bất kỳ điểm nào, ví dụ một bản cực."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "3. Hiệu điện thế",
+      "trich_nguyen_van": "$A=qU_{MN}=(-1{,}6\\cdot10^{-19})(-50)=+8{,}0\\cdot10^{-18}$ J $=50$ eV",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "eV chỉ được định nghĩa trong ô 'Bấm xem thêm' (phần tự chọn). Em bỏ qua ô đó thì không biết eV là gì, nhưng Câu 2, đề mẫu câu c và Câu 6 đều đòi đổi ra eV.",
+      "de_xuat": "Đưa định nghĩa $1\\ \\text{eV}=1{,}6\\cdot10^{-19}$ J ra danh sách gạch đầu dòng ngay dưới khung hiệu điện thế, không để trong ô ẩn."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "4. Liên hệ $U=Ed$ trong điện trường đều",
+      "trich_nguyen_van": "$d$: khoảng cách hai điểm đo <strong>dọc đường sức</strong>, tức hình chiếu của MN lên phương $\\vec E$ (m).",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Mục 1 nói d 'có dấu', còn ở đây gọi d là 'khoảng cách' nên em tưởng d luôn dương. Khi đó $U_{MN}$ lúc nào cũng dương, và em không biết khi nào $U_{MN}$ âm.",
+      "de_xuat": "Ghi thống nhất với mục 1: d là hình chiếu có dấu, dương khi N lệch về phía chiều đường sức so với M, âm khi ngược lại."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "Bẫy 2: \"U = E nhân độ dài MN\"",
+      "trich_nguyen_van": "MN xiên thì lấy <strong>hình chiếu</strong> (Hình 2)",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Em biết phải chiếu nhưng không biết dùng cos hay sin, và với góc nào. Công thức $d=MN\\cos60^\\circ$ chỉ xuất hiện trong phản hồi sau Câu 5, nên dễ chọn nhầm 43,3 V.",
+      "de_xuat": "Thêm ngay câu này: $d=MN\\cos\\alpha$ với $\\alpha$ là góc giữa MN và đường sức, kèm một ví dụ số."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó",
+      "trich_nguyen_van": "b) Từ bản âm đi ngược đường sức một đoạn $0{,}005$ m, điện thế tăng",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Bài chưa nói đường sức giữa hai bản hướng từ bản dương sang bản âm. Vì vậy em không rõ vì sao đi từ bản âm lại là 'ngược đường sức'.",
+      "de_xuat": "Thêm vào bảng phân tích đề một dòng: 'đường sức hướng từ bản dương sang bản âm'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "I. Mở bài: con chim đậu trên dây 500 kV",
+      "trich_nguyen_van": "Hai chân chim cùng trên một dây: hiệu điện thế giữa A và B gần bằng 0.",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Chú thích Hình 1 nằm trước câu dự đoán và đã cho sẵn đáp án C, nên em không còn phải tự dự đoán.",
+      "de_xuat": "Chuyển nội dung giải thích của chú thích Hình 1 vào ô 'Bấm xem: số liệu của Hình 1' sau câu dự đoán; chú thích chỉ mô tả hình."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "VI. Điện thế trong đời sống",
+      "trich_nguyen_van": "(số cỡ, chưa kiểm nguồn)",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đây là ghi chú nội bộ của người soạn lọt vào bài. Em sẽ hoài nghi con số của bugi.",
+      "de_xuat": "Kiểm nguồn rồi xoá ghi chú này khỏi bản cho học sinh."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó",
+      "trich_nguyen_van": "Công: $(-e)(0-200)=200$ eV $=3{,}2\\cdot10^{-17}$ J.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em không hiểu vì sao nhân $-e$ với vôn lại ra thẳng eV mà không qua J. Lời giải mẫu đi theo hướng ngược lại: tính J trước rồi mới đổi ra eV.",
+      "de_xuat": "Ghi thêm: '$e\\cdot1\\ \\text{V}=1$ eV nên $(-e)(-200\\ \\text{V})=200$ eV', hoặc tính J trước như lời giải mẫu."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "V. Bài toán mẫu: đọc đề đến đâu, nghĩ kiến thức đến đó",
+      "trich_nguyen_van": "C quên rằng càng xa bản dương điện thế càng thấp, và $U$ không đổi dấu khi đổi mốc.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Giá trị −120 V thường do em lấy $V_--V_+$ (đảo thứ tự), không phải do đổi mốc. Phản hồi chẩn đoán sai nguyên nhân, và đề cũng không viết rõ ký hiệu $U_{+-}$.",
+      "de_xuat": "Trong đề Câu 7 ghi rõ $U_{+-}=V_+-V_-$; phản hồi C nói thêm: −120 V là do đảo thứ tự hai điểm."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "cau0",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tin rằng chim an toàn vì chân cách điện, theo kinh nghiệm đời thường, chứ không nghĩ tới hiệu điện thế.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Nguy hiểm là chạm cùng lúc dây và cột (V = 0)."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Cho rằng điện thế đổi dấu theo điện tích đặt vào, vì $q_2$ âm.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Thế năng chia điện tích · của điểm · không phụ thuộc q"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Bỏ dấu âm của điện tích electron hoặc của $U_{MN}$, nên ra công âm.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Đổi sai cm sang m (5 cm thành 0,5 m) rồi nhân với $E=60$ V/m.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "tức hình chiếu của MN lên phương $\\vec E$ (m)."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Áp dụng máy móc $V=W/q$ với $q<0$, quên rằng W cũng đổi dấu theo q.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đại lượng đại số: dấu do điện trường và mốc quyết định."
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nhầm cos với sin khi chiếu MN lên đường sức. Bài chỉ nói 'lấy hình chiếu' mà không cho công thức.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": "MN xiên thì lấy <strong>hình chiếu</strong> (Hình 2)"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "D",
+      "loi_tu_duy": "Chép lại kết quả câu c của đề mẫu, không đổi điểm đầu từ bản âm sang M.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "c) Điểm đầu: bản âm ($0$ V), điểm cuối: bản dương ($120$ V)"
+    },
+    {
+      "cau": "cau7",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Giữ nguyên $V_M=30$ V khi đổi mốc, lẫn tính chất không đổi của U sang V.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đổi mốc: mọi $V$ đổi, $U$ giữ nguyên."
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "bai": "Bài 9. Chuyển động thẳng biến đổi đều",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "6. Bài toán hai xe gặp nhau: lập phương trình thế nào, gặp nhau khi nào?",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Mục Trả bài nằm trước mục V, nên em phải trả lời câu 6 về hai xe gặp nhau trước khi được học. Điều kiện x₁ = x₂ chỉ xuất hiện ở bài toán mẫu phía sau.",
+      "de_xuat": "Chuyển mục Trả bài xuống sau mục V (trước VI), hoặc đưa câu 6 ra sau bài toán mẫu."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "2. Công thức vận tốc và đồ thị v–t",
+      "trich_nguyen_van": "thời gian $\\tau$ tấm chắn rộng $d = 2{,}00\\ \\text{cm}$ đi qua cổng. Tính $v = d/\\tau$.",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ký hiệu d vừa là bề rộng tấm chắn, vừa (ở mục tiêu và mục 3) là độ dịch chuyển. Em dễ nghĩ v = d/τ là độ dịch chuyển chia thời gian, rồi lẫn với gợi ý τ = d/v.",
+      "de_xuat": "Đổi ký hiệu bề rộng tấm chắn thành b (hoặc ℓ): v = b/τ, τ = b/v."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "2. Công thức vận tốc và đồ thị v–t",
+      "trich_nguyen_van": "0,892 | 0,44 | 0,50 (hàng 2 bảng thí nghiệm)",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Tự chia 0,44/0,892 em được 0,493 ≈ 0,49, không phải 0,50. Em sẽ băn khoăn mình tính sai hay bảng sai.",
+      "de_xuat": "Sửa ô v/t hàng 2 thành 0,49 (hoặc chỉnh v để khớp)."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "1. Gia tốc không đổi: nhanh dần đều, chậm dần đều",
+      "trich_nguyen_van": "$0 = 6 + (-0{,}5)t$, nên $t = 12\\ \\text{s}$.",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Lời giải dùng công thức v = v₀ + at, trong khi mục 2 mới giới thiệu công thức này. Em không rõ phương trình này lấy từ đâu.",
+      "de_xuat": "Ghi rõ là suy từ định nghĩa a = (v − v₀)/t với v = 0, hoặc dẫn sang mục 2."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "Bẫy 2: thay $t$ quá lúc xe đã dừng",
+      "trich_nguyen_van": "Ra quãng đường nhỏ dần, thậm chí âm",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em hiểu là quãng đường có thể âm. Trong khi mục 3 nói quãng đường s = d chỉ khi không đổi chiều.",
+      "de_xuat": "Viết: 'Ra độ dịch chuyển d nhỏ dần, thậm chí âm (sai vì xe không chạy lùi)'."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "V. Bài toán mẫu: ô tô đuổi xe máy",
+      "trich_nguyen_van": "Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại Bẫy 3.",
+      "loai": "thiếu_ví_dụ",
+      "muc": "khó",
+      "em_hieu_la": "Bài chưa nêu ở đâu rằng khoảng cách lớn nhất khi hai vận tốc bằng nhau; Bẫy 3 cũng không nói điều này. Em bị dẫn về một mục không có câu trả lời.",
+      "de_xuat": "Thêm một dòng trước Câu 6: 'khoảng cách đổi từ tăng sang giảm khi v₁ = v₂', và sửa lời dẫn cho khớp."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "V. Bài toán mẫu: ô tô đuổi xe máy",
+      "trich_nguyen_van": "$a = 2\\ \\text{m/s}^2$, cùng chiều dương … $a_2 = 0$ → $x_2 = 10t$",
+      "loai": "khác",
+      "muc": "nhỏ",
+      "em_hieu_la": "Ô tô dùng a không chỉ số, xe máy dùng a₂. Em không chắc a có phải a₁ không.",
+      "de_xuat": "Ghi thống nhất a₁ = 2 m/s², a₂ = 0 và x₁ = ½a₁t²."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "V. Bài toán mẫu: ô tô đuổi xe máy",
+      "trich_nguyen_van": "tức $t^2 + 10t - 75 = 0$, nên $t = 5\\ \\text{s}$ (loại nghiệm $-15$).",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Nghiệm xuất hiện ngay mà không có bước giải phương trình bậc hai. Đề cũng chưa nói rõ xe máy ở phía trước vạch theo chiều dương.",
+      "de_xuat": "Thêm bước (t − 5)(t + 15) = 0 và ghi 'xe máy ở x₀₂ = +75 m, phía trước vạch'."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "VI. Đời sống và tổng kết",
+      "trich_nguyen_van": "từ $v^2 = 2ad$, máy bay cần đạt $75\\ \\text{m/s}$ với $a = 2\\ \\text{m/s}^2$",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em có thể nghĩ v² = 2ad là một công thức khác. Thật ra đây là công thức gốc với v₀ = 0, nhưng điều kiện v₀ = 0 không được nói.",
+      "de_xuat": "Viết: 'từ v² − v₀² = 2ad với v₀ = 0 (máy bay xuất phát từ nghỉ)'."
+    },
+    {
+      "id": "c10",
+      "vi_tri": "V. Bài toán mẫu: ô tô đuổi xe máy",
+      "trich_nguyen_van": "Ô tô gặp xe máy khi đã nhanh gấp đôi, đúng vì nó phải bù phần bị bỏ xa.",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Em thấy 'bù phần bị bỏ xa' giải thích được vì sao ô tô nhanh hơn, nhưng không giải thích vì sao đúng gấp đôi.",
+      "de_xuat": "Bổ sung: cùng quãng đường, cùng thời gian nên vận tốc trung bình ô tô (0 + v₁)/2 = 10, suy ra v₁ = 20 m/s."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Coi quãng phanh tỉ lệ thuận với tốc độ, quên rằng thời gian phanh cũng tăng gấp đôi.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Phanh tới dừng ($v = 0$): $d = \\dfrac{v_0^2}{2|a|}$. Tốc độ gấp đôi, quãng phanh gấp bốn."
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Thấy độ dốc của B có độ lớn giống A (1 m/s²) nên lấy luôn +1, quên dấu của đường dốc xuống.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "dốc lên thì $a \\gt 0$, dốc xuống thì $a \\lt 0$"
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Dùng s = v·t của chuyển động đều với v₀ = 10 m/s, bỏ phần tăng tốc.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$d = \\dfrac{v_0 + v}{2}\\, t$, tức vận tốc trung bình × thời gian"
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Chỉ nhìn dấu của a: thấy a âm là kết luận chậm dần, không so với dấu của v.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Dấu của $a$ chỉ cho biết $\\vec a$ cùng hay ngược chiều dương đã chọn."
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Thay thẳng t = 8 s vào d = v₀t + ½at², không kiểm tra xe đã dừng lúc 5 s.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Phanh thì tính lúc dừng trước"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Đọc đồ thị v–t như đồ thị vị trí: hai đường cắt nhau thì nghĩ là hai xe ở cùng chỗ.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Hai đường cắt nhau chỉ nghĩa là lúc đó hai xe cùng vận tốc."
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lẫn 'khoảng cách giữa hai xe' với 'quãng đường đã đi' (lớn nhất lúc 10 s). Em chưa có tiêu chí 'cực đại khi v₁ = v₂'.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    }
+  ]
+}

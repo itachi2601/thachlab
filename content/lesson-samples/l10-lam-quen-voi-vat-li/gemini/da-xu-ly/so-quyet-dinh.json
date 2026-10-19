@@ -1,6 +1,6 @@
 {
   "bai": "l10-lam-quen-voi-vat-li",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -137,5 +137,110 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-lam-quen-voi-vat-li/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong <details> mục 4 thêm chú thích tách dòng: $h$ là độ cao thả (m), $g \\approx 9{,}8\\ \\text{m/s}^2$ là gia tốc rơi tự do (học ở bài Sự rơi tự do)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bài dùng mốc __NS__/__TS__/__G__, không có số 38,3 hay 0,64."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Định nghĩa trong bảng mục 4 đổi thành \"lời đoán nguyên nhân, chưa được kiểm tra\", để \"dự đoán\" chỉ còn nghĩa là điều đo/thấy được."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng ⚠ thêm ví dụ đối chiếu lấy từ thí nghiệm mực (câu hỏi \"vì sao\" ↔ giả thuyết \"chắc do…\"), không dùng ví dụ sách-giấy để khỏi lộ đáp án Câu 3."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại theo SGK KNTT: CMCN lần thứ tư (từ đầu thế kỉ XXI) dựa trên trí tuệ nhân tạo, robot, internet toàn cầu, vật liệu nano, bỏ ý \"tự động hoá thay thủ công\"."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng Công nghiệp đổi \"robot hút bụi\" thành \"robot\", khớp với đáp án Trả bài câu 3."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô bảng Bẫy 3 đổi \"Chưa khác thật\" thành \"Chưa kết luận được là khác\", khớp câu văn phía trên."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bài ghi mốc __CHENH__, không có số 2,7."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 4 nêu rõ đây là giả thuyết: mỗi góc mất $3 : 4 = 0{,}75\\ \\text{s}$, cần đo để kiểm tra."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán trước khi học, phản hồi và dòng 🔑 \"mọi cấp độ\" đã nhấn, thêm ⚠ sẽ lộ đáp án."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng trước đã nêu tiêu chí vi mô \"không quan sát được bằng mắt thường\" ở mục 1."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ lý do vòng trước: bảng mục 3 đã tách nhiễu xạ tia X (nghiên cứu) khỏi X-quang (y tế), thêm ⚠ sẽ lộ chính bẫy của câu."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ trước Câu 3 đã có từ vòng trước, vòng này thêm ví dụ qua c4."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua tiêu đề Bẫy 1 và bảng lí thuyết/thực nghiệm."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua bảng Bẫy 2 và dòng 🔑 \"Bác bỏ cũng là kết quả\"."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn qua câu mở Bẫy 3 và bảng so chênh lệch với sai số."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Kết luận lời giải và phản hồi A đã nhấn rằng G1 bị bác bỏ."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục 3: câu CMCN lần thứ tư sửa theo SGK KNTT (từ đầu thế kỉ XXI, nền là trí tuệ nhân tạo, robot, internet toàn cầu, vật liệu nano), bỏ ý \"tự động hoá thay thủ công\".",
+      "Mục 3: bảng dòng Công nghiệp đổi \"robot hút bụi\" thành \"robot\".",
+      "Mục 4: định nghĩa giả thuyết trong bảng đổi thành \"lời đoán nguyên nhân, chưa được kiểm tra\".",
+      "Mục 4 (details): thêm chú thích $h$ là độ cao thả, $g \\approx 9{,}8\\ \\text{m/s}^2$ là gia tốc rơi tự do.",
+      "Mục 5: dòng ⚠ thêm ví dụ câu hỏi \"Vì sao mực loang nhanh hơn ở cốc nóng?\" và giả thuyết \"chắc do phân tử nước nóng chuyển động nhanh hơn\".",
+      "Câu 3: bỏ câu \"Em giải thích được cho bạn ngồi cạnh chưa?\" trong phản hồi đúng để bù độ dài.",
+      "Câu 4: phản hồi đúng ghi 0,75 s là giả thuyết $3 : 4$, cần đo kiểm tra (số liệu 30 s, 33 s không đổi); phản hồi sai rút gọn câu cuối.",
+      "Bẫy 3: ô bảng \"Chưa khác thật\" đổi thành \"Chưa kết luận được là khác\"."
+    ],
+    "so_tu_them": 10,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-lam-quen-voi-vat-li/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

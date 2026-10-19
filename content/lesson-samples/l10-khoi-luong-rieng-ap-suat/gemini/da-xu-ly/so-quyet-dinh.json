@@ -1,6 +1,6 @@
 {
   "bai": "l10-khoi-luong-rieng-ap-suat",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -129,5 +129,259 @@
       "lint_do_dai lỗi"
     ],
     "sao_luu": "content/lesson-samples/l10-khoi-luong-rieng-ap-suat/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đòi thêm hai câu Tự kiểm tra mới, làm đổi số quiz và cấu trúc mục, vượt phạm vi sửa tại chỗ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ A, B ngang mức, cùng trong một chất lỏng liên thông, đứng yên nên p_A = p_B, và thêm dòng phản chứng: phía trên mức A, hai điểm ngang mức ở hai chất lỏng khác nhau thì áp suất khác nhau."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu về cột dầu hoả 10 cm không có trong HTML của bài."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ký hiệu thành V_chìm trong hộp quy tắc, ví dụ khúc gỗ và mục Mang về."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu hỏi video đổi thành \"phun mạnh nhất ngay tại miệng lỗ\", vì tầm xa còn phụ thuộc độ cao lỗ."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi B sửa thành cộng nhầm p_a thành 10⁴ Pa, phản hồi D thành vừa quên nhân g vừa quên cộng p_a."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 sửa thành \"áp lực của nước muối lên đáy\"."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: phần đổi chiều trong bài vẫn là placeholder __DOICHIEU__."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng 1 kg/L = 1 g/cm³ = 1000 kg/m³ (nước 1 kg/L) trong details mô phỏng."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm (1 dm³ = 1 lít = 10⁻³ m³) tại ví dụ khúc gỗ và ghi 1 lít = 1 dm³ trong bảng đổi đơn vị Bẫy 3."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bảng đổi đơn vị Bẫy 3 thêm dòng: bài tập thường lấy tròn 1,0·10⁵ Pa hoặc theo số đề cho."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bỏ \"(760 mmHg)\" khỏi bảng đổi đơn vị."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi Câu 7 trỏ về details \"nước ở chỗ loe đè lên đâu?\" ở Bẫy 1 thay cho bước 3."
+      },
+      {
+        "id": "q-du-doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi câu dự đoán đã nhấn lỗi A nên bỏ qua."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ρ là đặc trưng của chất và phản hồi đã nói lỗi B."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz Câu 2: áp lực là trọng lượng F = mg, không phải m."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz Câu 3: viết dạng a·10ⁿ thì đếm kỹ số chữ số 0."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ so độ sâu h trước quiz."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn cộng p_a ở dòng 🔑 và bảng Bẫy 2."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn đổi mọi đại lượng về SI."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nói 90 N chỉ đúng khi thành thẳng đứng và nay trỏ về details bình loe (theo c13)."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục II.5: điều kiện p_A = p_B ghi rõ ngang mức, cùng chất lỏng liên thông, đứng yên; thêm dòng phía trên mức A hai điểm ngang mức ở hai chất lỏng khác nhau thì áp suất khác nhau.",
+      "Mục II.6 và Mang về: F_A = ρ_ℓ g V_chìm (thay V bằng V_chìm); details ví dụ gỗ ghi V_chìm = 1,2 dm³ và 1 dm³ = 1 lít = 10⁻³ m³.",
+      "Mục II.6: bỏ ví dụ \"gỗ nổi trên nước\" ở danh sách, giữ ví dụ sắt trên thuỷ ngân (gỗ đã có trong details).",
+      "Details mô phỏng mật độ: thêm 1 kg/L = 1 g/cm³ = 1000 kg/m³.",
+      "Video II.4: câu hỏi đổi từ \"phun xa nhất\" sang \"phun mạnh nhất ngay tại miệng lỗ\".",
+      "Câu 2: thêm ⚠ F = mg trước quiz.",
+      "Câu 3: thêm ⚠ đếm số mũ khi viết a·10ⁿ; bỏ câu \"vòi tầng thấp chảy mạnh hơn\" trong phản hồi đúng.",
+      "Câu 5 phản hồi: 1,6·10⁵ là cộng nhầm p_a thành 10⁴ Pa; 1,5·10⁴ là vừa quên g vừa quên p_a.",
+      "Bẫy 2: bỏ câu chuyển \"Thử với một thợ lặn.\"",
+      "Bẫy 3 bảng: 1 lít = 1 dm³; dòng 1 atm bỏ (760 mmHg), thêm bài tập thường lấy 1,0·10⁵ Pa hoặc theo số đề cho.",
+      "Điền bước: bước 3 hỏi áp lực của nước muối lên đáy (đáp án trong __DIENBUOC__ là 741,6 N, không cộng p_a).",
+      "Câu 7 phản hồi: trỏ về details bình loe ở Bẫy 1 thay cho bước 3 lời giải mẫu."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-khoi-luong-rieng-ap-suat/gemini/da-xu-ly/theory.src.202610191619.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ từ chối vòng 2: thêm hai câu Tự kiểm tra làm đổi số quiz và bài đang vượt hạn mức độ dài."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã ghi rõ điều kiện cùng chất lỏng liên thông, đứng yên và thêm dòng phản chứng; vòng này chỉ gọn câu, giữ nguyên ý."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: câu cột dầu hoả 10 cm không có trong bài."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bài đã dùng thống nhất V_chìm trong hộp quy tắc, ví dụ khúc gỗ và Mang về."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Câu hỏi video đã là phun mạnh nhất ngay tại miệng lỗ."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi B và D của Câu 5 đã sửa ở vòng 2."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bước 3 đã ghi áp lực của nước muối lên đáy."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: phần đổi chiều vẫn là placeholder __DOICHIEU__."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Details mô phỏng đã có 1 kg/L = 1 g/cm³ = 1000 kg/m³."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ví dụ khúc gỗ và bảng đổi đơn vị đã có 1 dm³ = 1 lít = 10⁻³ m³."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bảng đổi đơn vị Bẫy 3 đã ghi lấy tròn 1,0·10⁵ Pa hoặc theo số đề cho."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã bỏ (760 mmHg) ở vòng 2."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi Câu 7 đã trỏ về details nước ở chỗ loe ở Bẫy 1."
+      },
+      {
+        "id": "q-du-doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi câu dự đoán đã nhấn lỗi A nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ρ là đặc trưng của chất và phản hồi nói rõ lỗi B."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Trước Câu 2 đã có dòng ⚠ áp lực là trọng lượng F = mg."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Trước Câu 3 đã có dòng ⚠ đếm kỹ số mũ khi viết a·10ⁿ."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ so độ sâu h trước Câu 4 đã có từ vòng 1."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn cộng p_a ở định nghĩa Bẫy 2 và dòng 🔑 nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu mở Bẫy 3 nay nhắc ngay trước quiz phải đổi về SI nên không thêm ⚠."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Details Bẫy 1 và phản hồi Câu 7 đã nhấn điều kiện thành thẳng đứng."
+      }
+    ],
+    "doi_noi_dung": [
+      "Bảng khối lượng riêng mục II.1: bỏ hai dòng Xăng (~700) và Dầu hoả (~800) không được dùng trong bài.",
+      "Bẫy 1: bỏ bảng Nghĩ sai/Đúng; ý không phụ thuộc hình dạng bình chuyển vào dòng 🔑.",
+      "Bẫy 2: bỏ dòng bảng 'Đề hỏi áp suất tại điểm / do chất lỏng' vì trùng dòng 🔑.",
+      "Bẫy 3: câu 'chỉ đúng khi mọi đại lượng ở SI' sau quiz chuyển thành một vế ngắn ở câu mở trước Câu 6.",
+      "Mục II.5: gọn câu hai chất lỏng (B ngang mức A), giữ điều kiện cùng chất lỏng liên thông, đứng yên.",
+      "Trả bài: bỏ 6 lời nhắc lặp '(nói bằng lời của em trước, rồi mới bấm xem)' ở tiêu đề từng câu, giữ nguyên câu hỏi và đáp án."
+    ],
+    "so_tu_them": -145,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-khoi-luong-rieng-ap-suat/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

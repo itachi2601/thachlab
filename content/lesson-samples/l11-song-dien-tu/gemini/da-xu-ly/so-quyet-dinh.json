@@ -1,6 +1,6 @@
 {
   "bai": "l11-song-dien-tu",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-10",
     "model": "claude-opus-5-5",
@@ -143,5 +143,238 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-song-dien-tu/gemini/da-xu-ly/theory.src.202610100630.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng định nghĩa d (khoảng cách giữa tâm hai vệt sô-cô-la chảy liền nhau) ngay dưới dòng f = 2,45 GHz, trước hộp giải thích λ/2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: chú thích Hình 3 không có trong HTML bài (chỉ có mốc FIG3)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng đơn vị μm, nm, pm (mỗi đơn vị một dòng) trước bảng thang sóng và ghi 3·10⁻⁷ m = 300·10⁻⁹ m trong phản hồi Câu 3."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Các mốc không mâu thuẫn (gamma bắt đầu dưới 10 pm và kéo dài xuống dưới 10⁻¹² m), còn chú thích Hình 4 không có trong HTML để sửa."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Hộp chi tiết ghi rõ sóng cực ngắn chính là vùng vi sóng trong bảng bảy vùng."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi sóng vô tuyến hiểu rộng gồm cả vi sóng và đổi nhóm con thành λ > 1 m cho AM, FM để hết trùng chữ."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gọi tên quá trình ở dòng trước: tín hiệu làm biên độ hoặc tần số sóng mang biến đổi theo, gọi là biến điệu."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ví dụ trong details (λ = 600 nm vào thuỷ tinh v = 2·10⁸ m/s: f = 5·10¹⁴ Hz giữ nguyên, λ' = 400 nm) và thêm ω vào Trả bài 6."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích (0 K ≈ −273 °C, nhiệt độ thấp nhất có thể) trong hộp chi tiết."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước Rút ra ghi vỏ kim loại kín (gọi là lồng Faraday) cho khớp tiêu đề video."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi A đã nhấn không khí ở độ cao lớn coi như chân không, không thêm."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài và phản hồi D đã nhấn B vuông góc với E, không thêm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đề câu đã nêu nửa bước sóng và nay có định nghĩa d, không thêm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu biên tím 380 nm ngay trước và phản hồi B đã nhấn, không thêm."
+      },
+      {
+        "id": "q-bay1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn siêu âm là sóng cơ ở câu dự đoán và phản hồi D, không thêm."
+      },
+      {
+        "id": "q-bay2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn mọi sóng điện từ cùng tốc độ c trong chân không, không thêm."
+      },
+      {
+        "id": "q-bay3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước câu hỏi loa bluetooth: xét từng chặng riêng, tai người chỉ nghe được sóng âm."
+      },
+      {
+        "id": "q-dien_buoc",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bước 3 đã hỏi riêng thời gian A nghe câu trả lời và lời giải nhấn chiều ngược lại, không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về 1 kHz = 10³ Hz đã thêm trước Câu 4 ở vòng 1."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.3: thêm định nghĩa d là khoảng cách giữa tâm hai vệt sô-cô-la chảy liền nhau, ngay dưới f = 2,45 GHz.",
+      "II.4: thêm dòng đơn vị 1 μm = 10⁻⁶ m, 1 nm = 10⁻⁹ m, 1 pm = 10⁻¹² m trước bảng thang sóng.",
+      "Câu 3 (phản hồi đúng): thêm bước 3·10⁻⁷ m = 300·10⁻⁹ m = 300 nm.",
+      "II.4 (details): sóng cực ngắn chính là vùng vi sóng trong bảng bảy vùng, hồng ngoại thêm 0 K ≈ −273 °C.",
+      "II.4: rút gọn câu tách vi sóng khi kể bảy vùng, gộp vào vô tuyến trong truyền thông (nội dung giữ nguyên).",
+      "II.5: sóng vô tuyến hiểu rộng gồm cả vi sóng, nhóm λ > 1 m cho AM, FM, quá trình làm sóng mang biến đổi theo tín hiệu gọi là biến điệu.",
+      "II.2 (details): thêm ví dụ đổi môi trường λ = 600 nm vào thuỷ tinh v = 2·10⁸ m/s → f = 5·10¹⁴ Hz giữ nguyên, λ' = 400 nm (2/3).",
+      "II.2: thí nghiệm hộp sắt ghi vỏ kim loại kín gọi là lồng Faraday.",
+      "III Bẫy 3: thêm dòng ⚠ tai người chỉ nghe được sóng âm trước câu loa bluetooth.",
+      "IV Trả bài 6: thêm ω vào nhóm đại lượng giữ nguyên khi đổi môi trường.",
+      "Cắt bù độ dài: bỏ \"Chọn lại nhé/Thử lại nhé\" ở phản hồi sai câu dự đoán, Câu 1–3, Bẫy 3, bỏ \"gần mấy cũng vậy\" ở Bẫy 1, bỏ câu nhắc lặp \"Nhớ: 1 kHz…\" ở phản hồi Câu 4."
+    ],
+    "so_tu_them": 6,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l11-song-dien-tu/gemini/da-xu-ly/theory.src.202610191637.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm dòng định nghĩa d ngay dưới f = 2,45 GHz, trước hộp giải thích λ/2."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: chú thích Hình 3 không có trong HTML bài (chỉ có mốc FIG3)."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm dòng đơn vị μm, nm, pm trước bảng và ghi 300·10⁻⁹ m trong phản hồi Câu 3."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ lý do vòng 2: các mốc không mâu thuẫn, chú thích Hình 4 không nằm trong HTML để sửa."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã ghi trong hộp chi tiết sóng cực ngắn chính là vùng vi sóng trong bảng bảy vùng."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã ghi sóng vô tuyến hiểu rộng gồm cả vi sóng, nhóm con đổi thành λ > 1 m."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã gọi tên quá trình là biến điệu ở dòng trước."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm ví dụ ánh sáng 600 nm vào thuỷ tinh trong details và Trả bài 6 đã có ω."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bài đã có ngoặc (0 K ≈ −273 °C, nhiệt độ thấp nhất có thể)."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Bước Rút ra thí nghiệm hộp sắt đã ghi vỏ kim loại kín gọi là lồng Faraday."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi A đã nhấn không khí ở độ cao lớn coi như chân không, không thêm."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi D đã nhấn điều kiện B vuông góc E, không thêm."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đề câu nêu nửa bước sóng và phản hồi A đã nhấn quên nhân 2, không thêm."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nêu biên tím 380 nm ngay trước quiz, không thêm."
+      },
+      {
+        "id": "q-bay1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Siêu âm là sóng cơ đã nhấn ở câu dự đoán và phản hồi D, không thêm."
+      },
+      {
+        "id": "q-bay2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài và bảng đã nhấn mọi sóng điện từ cùng tốc độ c trong chân không, không thêm."
+      },
+      {
+        "id": "q-bay3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trước quiz đã có dòng ⚠ xét từng chặng, tai chỉ nghe được sóng âm, không thêm dòng nữa."
+      },
+      {
+        "id": "q-dien_buoc",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu hỏi bước 3 đã hỏi riêng chiều câu trả lời về A, không thêm."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ đổi tiền tố kHz/MHz đã có trước Câu 4 từ vòng 1."
+      }
+    ],
+    "doi_noi_dung": [
+      "Sửa lint độ dài: cắt khoảng 50 từ hiện ngay để tổng xuống dưới 2500 và mục II.4 xuống dưới 350, không đổi số liệu nào.",
+      "II.4: rút câu tách/gộp vi sóng còn \"Trong truyền thông, vi sóng được gộp vào sóng vô tuyến\" (bảng đã tách vi sóng riêng).",
+      "II.4: thí nghiệm điều khiển ti vi, bước Rút ra rút còn \"hồng ngoại (λ ≈ 940 nm), dài hơn ánh sáng đỏ nên mắt không thấy\".",
+      "III Bẫy 2: bỏ đoạn ví dụ ánh sáng đỏ và tím từ Mặt Trời tới cùng lúc (lặp ý bảng và phản hồi quiz).",
+      "II.3: bước Làm thí nghiệm sô-cô-la rút định nghĩa d lặp lại thành \"Đo d\" (định nghĩa d vẫn ở ngay dưới dòng khoá).",
+      "Khung Mục tiêu giữ __PHUT__ để bản build tính lại (khoảng 18 phút với ~2485 từ)."
+    ],
+    "so_tu_them": -52,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-song-dien-tu/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

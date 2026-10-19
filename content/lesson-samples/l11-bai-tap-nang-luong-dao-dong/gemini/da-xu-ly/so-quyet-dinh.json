@@ -1,6 +1,6 @@
 {
   "bai": "l11-bai-tap-nang-luong-dao-dong",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-10",
     "model": "claude-opus-5-5",
@@ -127,5 +127,130 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-bai-tap-nang-luong-dao-dong/gemini/da-xu-ly/theory.src.202610100630.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Họ 4: ghi α₀ là góc lệch lớn nhất (biên độ góc) ở dòng cơ năng và α là góc lệch đang xét ở dòng tốc độ."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thống nhất ngưỡng 'khoảng 10° trở xuống' ở bảng Bẫy 3 và Trả bài câu 6, khớp với Mở bài coi 10° là góc nhỏ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm phép đổi ½k = 24,5 J/m² = 24,5·10³ mJ/10⁴ cm² = 2,45 mJ/cm², không thêm cột vào bảng để giữ độ dài."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi 'Năng lượng có chu kì T/2' thành 'Wđ, Wt có chu kì T/2', ở mục Mang về thêm '(W không đổi)'."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng Câu 3 ghi rõ các thời điểm T/8… ứng với t = 0 ở biên hoặc VTCB, còn khoảng T/4 luôn đúng."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi h ≈ 0,268 m để 40·9,8·0,268 ≈ 105 J bấm khớp."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay D (127 m/s) bằng 2,22 m/s = 0,785·√8, phản hồi nói đổi rad đúng nhưng 45° không phải góc nhỏ."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu dẫn k = 200 N/m, A = 2 cm, dòng 2 cột đúng thành phép giữ mũ 2, dòng 3 ghi 0,04 J = 40 mJ (J sang mJ: nhân 1000)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong lời giải bước b (trong details) thêm: chia tỉ lệ nên giữ cm được, khi thế vào công thức năng lượng hay tốc độ mới đổi ra m."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Họ 1: thay 'Từ đó' bằng bước ½mv² = ½mω²(A² − x²) (vì k = mω²) rồi mới ra |v|."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi câu dự đoán đã nhấn lỗi quên bình phương nên bỏ qua."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng từ khoá và phản hồi A đã nhấn W trừ Wt."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng ⚠ Bẫy của Họ 2 đã nhấn lỗi quên cộng 1 phần."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ trước Câu 3 từ vòng trước."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng ⚠ Bẫy của Họ 4 đã nhấn lỗi dùng cos α₀."
+      },
+      {
+        "id": "q-cau5-A",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Lời dẫn Bẫy 2 đã nhấn lỗi lấy chu kì năng lượng làm chu kì dao động."
+      },
+      {
+        "id": "q-cau5-B",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước Câu 5: khoảng lặp đọc trên đồ thị thế năng chính là T/2, không phải T."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Tên mục và dòng từ khoá Bẫy 3 đã nhấn việc đổi ra rad."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ trước Câu 7 từ vòng trước."
+      },
+      {
+        "id": "q-tu_kiem_tra_bay1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 1 vẫn ghi rõ 'J sang mJ: nhân 1000'."
+      }
+    ],
+    "doi_noi_dung": [
+      "Họ 1: thêm bước ½mv² = ½mω²(A² − x²) (vì k = mω²) dẫn tới |v| = ω√(A² − x²).",
+      "Họ 1: bỏ gạch đầu dòng 'Đổi cm sang m trước khi bình phương' vì Bẫy 1 đã nêu.",
+      "Mục II: bỏ câu mở 'Mọi bài tập năng lượng dao động rơi vào bốn họ' để bù độ dài.",
+      "Thí nghiệm lò xo: thêm phép đổi ½k = 24,5 J/m² = 2,45 mJ/cm².",
+      "Họ 3 và Mang về: chu kì T/2, tần số 2f gán cho Wđ, Wt, ghi W không đổi.",
+      "Câu 3 phản hồi đúng: các thời điểm T/8, 3T/8… ứng với t = 0 ở biên hoặc VTCB, khoảng T/4 không phụ thuộc gốc thời gian.",
+      "Họ 4: định nghĩa α₀ là góc lệch lớn nhất (biên độ góc) và α là góc lệch đang xét.",
+      "Ví dụ xích đu: h ≈ 0,268 m (thay 0,27), W ≈ 105 J và v ≈ 2,3 m/s không đổi.",
+      "Câu 4: phương án D đổi từ 127 m/s thành 2,22 m/s (công thức góc nhỏ với α₀ = 0,785 rad), phản hồi D sửa theo, đáp án A 2,16 m/s giữ nguyên.",
+      "Ngưỡng góc nhỏ thống nhất 'khoảng 10° trở xuống' ở bảng Bẫy 3 và Trả bài câu 6.",
+      "Bẫy 1: thêm dữ kiện k = 200 N/m, A = 2 cm, sửa cột 'Viết đúng' dòng 2 (0,02² = 0,0004, ra 0,04 J) và dòng 3 (0,04 J = 40 mJ).",
+      "Bẫy 2: thêm dòng ⚠ trước Câu 5, bỏ câu hỏi 'Em giải thích được cho bạn ngồi cạnh chưa?' trong phản hồi đúng.",
+      "Bài toán mẫu bước b (trong details): ghi chú x = A/√(n+1) giữ cm được vì chỉ chia tỉ lệ."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-bai-tap-nang-luong-dao-dong/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

@@ -1,6 +1,6 @@
 {
   "bai": "l11-thuc-hanh-do-sdd-pin",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -144,5 +144,121 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l11-thuc-hanh-do-sdd-pin/gemini/da-xu-ly/theory.src.202610091137.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào câu đo lần hai ở mở bài số đọc ampe kế mắc nối tiếp 0,53 A (khớp lần đo 6 của bảng)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dành Δ cho sai số: phản hồi câu 2 và phản hồi B câu 4 đổi thành \"hiệu hai U, hiệu hai I\"."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi C câu 2 ghi điện trở toàn mạch là R0 + Rx + r."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng câu 3 và câu 6 nói rõ 1,9 A mới sát thang, pin mới (r ≈ 0,26 Ω) cho cỡ 6 A thì vượt thang."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đưa lời giải thích ±0,002 A theo cấp chính xác ra ngay dòng sai số ở mục II.4, bỏ câu lặp trong hộp ẩn."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong hộp \"Sai số đến từ đâu?\" ghi ampe kế không nằm giữa M, N (vôn kế kẹp sát cực pin) nên không cộng vào r."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi câu 4 viết \"hiệu U của lần 2 và lần 3\", \"hiệu U là 1,48 − 1,06\" thay cho U2 − U3, U1 − U6."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Sửa câu thành \"lấy ℰ − U rồi mới chia cho I\" và thêm dòng bảng ℰ/I → R0 + Rx + r (toàn mạch)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng nhắc quy tắc r = X/Y thì Δr/r = ΔX/X + ΔY/Y trong lời giải câu c."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 1 (c12) đã thêm câu \"ước lượng thô: A, B đọc trên đường, coi mỗi điểm lệch cỡ sai số dụng cụ\"."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi D câu 1 và thí nghiệm pin mới."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về U/I của một điểm đã thêm ở vòng 1."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ lý do vòng 1: bài đã nêu R0 chỉ để chặn dòng khi Rx = 0."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ lý do vòng 1: thí nghiệm và phản hồi C đã nhấn các điểm chỉ nằm gần đường thẳng."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về Ir là phần mất trong pin đã thêm ở vòng 1."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bảng Bẫy 2 đã ghi ampe kế mắc song song pin là đoản mạch."
+      },
+      {
+        "id": "q-cau7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gộp với c8: dòng bảng ℰ/I là toàn mạch và câu \"trừ U trước rồi chia I\" đặt ngay trước câu 7, không thêm ⚠ riêng để khỏi lặp."
+      },
+      {
+        "id": "q-cau8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 3 đã nhấn U/I là điện trở mạch ngoài."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mục I: thêm số đọc ampe kế 0,53 A khi động cơ quay (khớp lần đo 6: 0,534 A, 1,06 V).",
+      "Câu 2 phản hồi C: điện trở toàn mạch ghi R0 + Rx + r thay cho R + r.",
+      "Câu 3 phản hồi đúng: không R0, pin cũ cho 1,9 A (sát thang 2 A), pin mới r ≈ 0,26 Ω cho cỡ 6 A (1,58/0,26), vượt thang.",
+      "Câu 6 phản hồi đúng: thêm ý pin mới r nhỏ hơn thì dòng vượt thang 2 A.",
+      "Mục II.4: ghi ±0,002 A lấy theo cấp chính xác, lớn hơn chữ số cuối 0,001 A.",
+      "Hộp \"Sai số đến từ đâu?\": ampe kế không nằm giữa M, N nên không cộng vào r.",
+      "Câu 4 phản hồi: hiệu U lần 1 và 6 viết 1,48 − 1,06 = 0,42 V, lần 2 và 3 là 0,04 V (bỏ ký hiệu U1 − U6, U2 − U3); bỏ câu lặp về chọn điểm trên đường.",
+      "Bẫy 3: câu dẫn đổi thành \"lấy ℰ − U rồi chia I\"; bảng thêm dòng ℰ/I = R0 + Rx + r.",
+      "Mục V câu c: thêm dòng nhắc quy tắc Δr/r = ΔX/X + ΔY/Y cho thương."
+    ],
+    "so_tu_them": 10,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l11-thuc-hanh-do-sdd-pin/gemini/da-xu-ly/theory.src.202610191637.html"
   }
 }

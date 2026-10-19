@@ -34,20 +34,20 @@
 <p><strong>🔑 Đo $s$ · đo $t$ · chia · ghi sai số</strong></p>
 
 <ul>
-<li>Tốc độ trung bình trên đoạn đo: $v = \dfrac{s}{t}$ ($s$ đo bằng thước, $t$ bằng đồng hồ).</li>
+<li>Tốc độ trung bình trên đoạn đo: $v = \dfrac{s}{t}$.</li>
 <li>Đo $n$ lần, lấy <strong>giá trị trung bình</strong> $\bar t$.</li>
 <li><strong>Sai số tuyệt đối</strong> $\Delta t$: trung bình các độ lệch $|t_i - \bar t|$.</li>
-<li>Đại lượng chỉ đo một lần (như $s$, $d$): $\Delta$ lấy bằng <strong>sai số dụng cụ</strong>, thường bằng nửa hoặc một độ chia nhỏ nhất.</li>
+<li>Đại lượng chỉ đo một lần (như $s$, $d$): $\Delta$ lấy bằng <strong>sai số dụng cụ</strong>, thường bằng nửa hoặc một độ chia nhỏ nhất (bài này lấy <strong>một độ chia</strong>).</li>
 <li><strong>Sai số tương đối</strong> $\delta t = \dfrac{\Delta t}{\bar t}$, đổi ra phần trăm.</li>
 <li>Thương hai đại lượng: $\delta v = \delta s + \delta t$.</li>
 </ul>
 
-<p>Mẹo nhớ: <strong>"chia thì cộng phần trăm"</strong>. Kết quả viết $v = \bar v \pm \Delta v$.</p>
+<p>Mẹo nhớ: <strong>"chia thì cộng phần trăm"</strong>. Kết quả viết $v = \bar v \pm \Delta v$ với $\Delta v = \bar v \cdot \delta v$.</p>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l10-do-toc-do-01">
 <p class="tl-label">🔬 Thí nghiệm 1: thước và đồng hồ bấm giây</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> kẻ vạch xuất phát và vạch đích cách nhau $1{,}20\ \text{m}$ (thước dây, $\Delta s = 0{,}002\ \text{m}$). Cho xe đồ chơi chạy đều qua; một bạn bấm lúc xe qua vạch đầu và vạch cuối. Lặp 5 lần.</li>
+<li><strong>Làm:</strong> kẻ vạch xuất phát và vạch đích cách nhau $1{,}20\ \text{m}$ (thước dây độ chia nhỏ nhất $2\ \text{mm}$, $\Delta s = 0{,}002\ \text{m}$). Cho xe đồ chơi chạy đều qua; một bạn bấm lúc xe qua vạch đầu và vạch cuối. Lặp 5 lần.</li>
 <li><strong>Quan sát:</strong> năm số $t$ lệch nhau cỡ vài phần mười giây (bảng dưới, số liệu minh hoạ).</li>
 <li><strong>Rút ra:</strong> người bấm trễ hoặc sớm ngẫu nhiên, nên số đo lệch hai phía quanh giá trị trung bình.</li>
 </ol>
@@ -98,8 +98,8 @@ __BANG_TN1__
 <!--FIG3-->
 
 <ul>
-<li>Gắn lên xe một <strong>tấm chắn</strong> bề rộng $d$. Khi qua cổng, tấm chắn che tia sáng trong thời gian $t$.</li>
-<li>Đồng hồ hiện số ghi $t$; tốc độ là $v = \dfrac{d}{t}$.</li>
+<li>Xe gắn một <strong>tấm chắn</strong> bề rộng $d$, khi qua cổng thì che tia sáng trong thời gian $t$.</li>
+<li>Đồng hồ hiện số ghi $t$; tốc độ là $v = \dfrac{d}{t}$, tức <strong>tốc độ trung bình</strong> trên bề rộng $d$ (xem mục 4).</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l10-do-toc-do-02">
@@ -131,7 +131,7 @@ __BANG_TN2__
 <input type="radio" name="tl51-q2" id="tl51-q2b"><label for="tl51-q2b" class="tl-opt tl-no">B. Vì xe bị cổng quang làm chạy chậm lại khi đi qua nên đồng hồ ghi được rõ hơn</label>
 <input type="radio" name="tl51-q2" id="tl51-q2c"><label for="tl51-q2c" class="tl-opt tl-no">C. Vì $d/t$ luôn đúng bằng tốc độ tức thời tại cổng nên không còn sai số nào đáng kể</label>
 <input type="radio" name="tl51-q2" id="tl51-q2d"><label for="tl51-q2d" class="tl-opt tl-no">D. Vì đồng hồ hiện số hoàn toàn không có sai số nên kết quả luôn đúng tuyệt đối</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tia sáng bị chắn thì đồng hồ chạy, hết chắn thì đồng hồ dừng, không cần tay người.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tia sáng bị chắn thì đồng hồ chạy, hết chắn thì dừng, không cần tay người.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B: cách đo không làm xe đổi tốc độ. C: $d/t$ vẫn là tốc độ trung bình trên bề rộng tấm chắn (xem mục 4). D: đồng hồ chỉ chia tới $0{,}001\ \text{s}$ nên vẫn có sai số, chỉ là nhỏ hơn bấm tay.</p></div>
 </div>
 </div>
@@ -143,7 +143,7 @@ __BANG_TN2__
 <ul>
 <li>$d/t$ là tốc độ trung bình <strong>trong lúc tấm chắn đi qua</strong>, không phải tốc độ tại một điểm.</li>
 <li>Xe đang đổi tốc độ thì tấm chắn càng rộng, $d/t$ càng lệch khỏi tốc độ tức thời tại cổng (lúc mép trước chạm tia sáng).</li>
-<li>Thu hẹp $d$ thì $t$ cũng ngắn lại, đồng hồ chia tới $0{,}001\ \text{s}$ sẽ làm tròn mạnh.</li>
+<li>Thu hẹp $d$ thì $t$ cũng ngắn lại, đồng hồ sẽ làm tròn mạnh.</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l10-do-toc-do-03">
@@ -166,7 +166,7 @@ __BANG_TN3__
 
 <h4>Bẫy 1: "Đồng hồ tốt hoặc đo một lần là đủ"</h4>
 
-<p>Độ trễ của người bấm là lỗi <strong>ngẫu nhiên</strong>: lúc sớm, lúc muộn. Chỉ có nhiều lần đo mới cho thấy nó lệch bao nhiêu.</p>
+<p>Độ trễ của người bấm là lỗi <strong>ngẫu nhiên</strong>: lúc sớm, lúc muộn.</p>
 
 <div class="table-scroll">
 <table class="tl-table">
@@ -180,7 +180,7 @@ __BANG_TN3__
 </table>
 </div>
 
-<p>Riêng độ dài đường: độ lệch bấm không đổi, nên đường dài hơn thì $t$ lớn hơn, $\delta t$ nhỏ hơn.</p>
+<p>Với cùng tốc độ xe, kéo dài đường chạy thì $t$ lớn hơn mà độ lệch bấm không đổi, nên $\delta t$ nhỏ hơn.</p>
 
 <p><strong>🔑 Nhiều lần · trung bình · đường dài</strong></p>
 
@@ -232,7 +232,7 @@ __BANG_TN3__
 
 <h4>Bẫy 3: "Sai số tuyệt đối nhỏ là đo tốt"</h4>
 
-<p>Sai $1\ \text{cm}$ trên $10\ \text{m}$ chỉ là $0{,}1\ \%$, còn sai $1\ \text{mm}$ trên $2\ \text{cm}$ đã là $5\ \%$. Cần so với giá trị đo, tức dùng sai số tương đối.</p>
+<p>Sai $1\ \text{cm}$ trên $10\ \text{m}$ chỉ là $0{,}1\ \%$, còn sai $1\ \text{mm}$ trên $2\ \text{cm}$ đã là $5\ \%$. Cần so với giá trị đo, tức dùng sai số tương đối $\delta A = \Delta A/\bar A$ ($A$ là đại lượng đo bất kì, $\bar A$ là giá trị trung bình của nó).</p>
 
 <div class="table-scroll">
 <table class="tl-table">
@@ -307,7 +307,7 @@ __BANG_TN3__
 <tr><td>"rộng $2{,}0\ \text{cm}$"</td><td>$d = 0{,}020\ \text{m}$ (đổi sang m)</td></tr>
 <tr><td>"sai số $0{,}1\ \text{cm}$"</td><td>$\delta d = \dfrac{0{,}1}{2{,}0}$</td></tr>
 <tr><td>"hiện $0{,}050\ \text{s}$"</td><td>$t = 0{,}050\ \text{s}$</td></tr>
-<tr><td>"sai số $0{,}001\ \text{s}$"</td><td>$\delta t = \dfrac{0{,}001}{0{,}050}$</td></tr>
+<tr><td>"sai số $0{,}001\ \text{s}$"</td><td>Chỉ đọc một lần nên $\Delta t$ lấy bằng sai số dụng cụ (khác Thí nghiệm 2 đo 5 lần).<br>$\delta t = \dfrac{0{,}001}{0{,}050}$</td></tr>
 <tr><td>"tính tốc độ"</td><td>$v = d/t$; chia thì cộng phần trăm</td></tr>
 </tbody>
 </table>
@@ -387,7 +387,7 @@ __BANG_TN3__
 <li><strong>Sai số tương đối</strong>: $\delta = \Delta/\bar A$, chia thì cộng phần trăm.</li>
 <li><strong>Bấm tay</strong>: rẻ · trễ phản xạ · kéo dài đường.</li>
 <li><strong>Cổng quang</strong>: $v = d/t$, không trễ, chỉ đo tại cổng.</li>
-<li><strong>Tấm chắn</strong>: hẹp thì sát tức thời · quá hẹp thì $t$ quá ngắn.</li>
+<li><strong>Tấm chắn</strong>: hẹp thì sát tức thời.<br>Quá hẹp thì $t$ quá ngắn.<br>Rộng thì $\delta d$ nhỏ hơn, hợp khi xe chạy gần đều.</li>
 <li><strong>Video</strong>: $v = \Delta x/\Delta t$ theo khung hình, thấy cả quá trình.</li>
 <li>Đọc đề: đổi $\text{cm}$ ra $\text{m}$ · tính $\delta$ từng đại lượng · cộng lại.</li>
 </ul>

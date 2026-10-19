@@ -1,6 +1,6 @@
 {
   "bai": "l10-thuc-hanh-tong-hop-luc",
-  "vong": 1,
+  "vong": 3,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -123,5 +123,248 @@
       "lint_do_dai lỗi"
     ],
     "sao_luu": "content/lesson-samples/l10-thuc-hanh-tong-hop-luc/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm vào dòng định nghĩa: δ tính bằng N, khác sai số tỉ đối δF ở phần hành trang (giữ ký hiệu để khớp SGK)."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bảng kết quả là mốc __BANG_A2__, không có chuỗi này trong bài."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thay 'công thức tổng quát gọn thành' bằng lý do hình học: đường chéo hình thoi chia đôi góc α và vuông góc đường chéo kia nên F = 2F₁cos(α/2), không dùng công thức hạ bậc của Toán 11."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết lại: gọi T là lực căng mỗi dây, dây lệch α/2 so với phương thẳng đứng nên chỉ phần T·cos(α/2) đỡ vật; rút gọn câu dây đứt để bù độ dài."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ trong ngoặc: 0,05 N do thước cộng khoảng 0,02 N do góc đo lệch 1°, không tách thêm gạch đầu dòng để giữ hạn mức."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ô góc bù sửa thành: chỉ là góc trong tam giác, công thức F vẫn thay α đo ở O."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đề Câu 6 thêm ngoặc: nhóm phải thay vật khác để lực kế 1, 2 vẫn chỉ 2,0 N, đáp án và phản hồi giữ nguyên."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Ô mức chắc chắn đặt ngay trước khung quiz là quy ước khuôn bài, dời vào trong khung là đổi cấu trúc."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Dòng thanh AB trong bảng dụng cụ chỉ ghi dùng cho thí nghiệm phụ (mục Bấm xem), ghi chú cân thanh chuyển vào bước Làm của thí nghiệm đó kèm lý do trừ một nửa."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm ngoặc: bài này lấy cả một độ chia, không lấy nửa, cho an toàn (SGK cho phép nửa hoặc một độ chia)."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi đúng thêm bước thế F_B = P − F_A để ra F_A(d_A + d_B) = P·d_B, phần chuyển bảng và dòng chốt lên trước không làm vì đổi cấu trúc."
+      },
+      {
+        "id": "q-tl67-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở phản hồi sai (D chỉ đúng khi α = 0°), và câu dự đoán không nên gợi ý trước."
+      },
+      {
+        "id": "q-ht67-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn: phản hồi giải thích ra 7 N là cộng như hai lực cùng chiều."
+      },
+      {
+        "id": "q-ht67-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn: phản hồi giải thích 20% là ngược tỉ số."
+      },
+      {
+        "id": "q-tl67-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ không cộng thẳng hai số chỉ trước quiz."
+      },
+      {
+        "id": "q-tl67-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mục 3 và mục 4: δ > Δ thì kiểm dụng cụ trước khi nghi quy tắc."
+      },
+      {
+        "id": "q-tl67-q8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn bằng dòng 🔑 'vật gần đầu nào, đầu đó gánh nhiều' và phản hồi B."
+      },
+      {
+        "id": "q-tl67-q4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ quyết định vòng 1: dòng 'lệch số 0 cộng vào mọi lần đọc' ngay trước Câu 3 đã nói sai lệch cộng dồn, thêm ⚠ sẽ lộ đáp án."
+      },
+      {
+        "id": "q-tl67-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn α đo ở nút O, ô góc bù nay ghi rõ công thức vẫn thay α."
+      },
+      {
+        "id": "q-tl67-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bài đã nhấn ở mục II.1: F₃ cân bằng với F, cùng độ lớn, ngược chiều."
+      },
+      {
+        "id": "q-tl67-q7",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã có dòng ⚠ về đại lượng được giữ cố định trước quiz."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài, phản hồi đúng câu dự đoán: giới thiệu T là lực căng mỗi dây, dây lệch α/2 so với phương thẳng đứng nên phần đỡ vật là T·cos(α/2), câu về dây đứt rút gọn.",
+      "Mục II.1, bảng dụng cụ: dòng thanh AB chỉ ghi dùng cho thí nghiệm phụ hai lực song song, ghi chú cân thanh (nhẹ hơn 0,1 N bỏ qua, nặng hơn trừ nửa trọng lượng) chuyển vào bước Làm trong mục Bấm xem, thêm lý do: thanh đồng chất trọng tâm ở giữa.",
+      "Mục II.2, lần 2: F = 2F₁cos(α/2) nay giải thích bằng tính chất đường chéo hình thoi (chia đôi góc, vuông góc nhau), kết quả 3,46 N giữ nguyên.",
+      "Mục II.3: δ ghi rõ tính bằng N, khác sai số tỉ đối δF, ΔF = 0,1 N ghi rõ là lấy cả một độ chia, không lấy nửa.",
+      "Mục II.4: 0,07 N tách thành 0,05 N (thước) cộng khoảng 0,02 N (góc lệch 1°), trợ giảng cần đối chiếu 0,02 N với số liệu lần 3 trong __BANG_A2__.",
+      "Bẫy 2: ô góc bù sửa thành 'chỉ là góc trong tam giác, công thức F vẫn thay α đo ở O'.",
+      "Câu 6 (tl67-q7): đề thêm 'nhóm phải thay vật khác để lực kế 1, 2 vẫn chỉ 2,0 N', đáp án B và các số 3,46 N, 2,83 N giữ nguyên.",
+      "Câu hỏi nhanh hai lực song song: phản hồi đúng thêm bước thế F_B = P − F_A, F_A(d_A + d_B) = P·d_B, ví dụ 2,5 N và 0,5 N giữ nguyên."
+    ],
+    "so_tu_them": 5,
+    "trang_thai": "loi-lint",
+    "loi": [
+      "lint_do_dai lỗi"
+    ],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-tong-hop-luc/gemini/da-xu-ly/theory.src.202610191619.html"
+  },
+  "vong3_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thêm ngoặc phân biệt δ (N) với sai số tỉ đối δF ở hành trang, giữ nguyên."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bảng kết quả là mốc __BANG_A2__, không có chuỗi này."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Vòng 2 đã thay bằng lý do hình học hình thoi; vòng này chỉ dời câu kiểm tính toán vào một Bấm xem để giảm số từ."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi câu dự đoán đã giới thiệu T và góc α/2 với phương thẳng đứng."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Nguồn 0,07 N đã ghi rõ; vòng này dời phân tích sai số vẽ vào Bấm xem ngay dưới mục 4 để đạt hạn mức."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ô góc bù đã ghi chỉ là góc trong tam giác, công thức vẫn thay α đo ở O."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đề Câu 6 đã có ngoặc nhóm thay vật để lực kế 1, 2 vẫn chỉ 2,0 N."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Giữ lý do vòng 2: vị trí ô mức chắc chắn là quy ước khuôn bài, dời đi là đổi cấu trúc quiz."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Ghi chú cân thanh đã nằm trong bước Làm của thí nghiệm phụ, bảng dụng cụ chỉ ghi dùng cho thí nghiệm phụ."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Đã có ngoặc nói rõ bài lấy một độ chia thay vì nửa; vòng này chỉ rút gọn chữ."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Phản hồi đúng đã có bước thế F_B = P − F_A; phần dời bảng vẫn từ chối vì đổi cấu trúc."
+      },
+      {
+        "id": "q-tl67-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn ở phản hồi sai, câu dự đoán không nên gợi ý trước."
+      },
+      {
+        "id": "q-ht67-q1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn: phản hồi giải thích ra 7 N là cộng như hai lực cùng chiều."
+      },
+      {
+        "id": "q-ht67-q2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn: phản hồi nêu ra 20% là ngược tỉ số."
+      },
+      {
+        "id": "q-tl67-q2",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ không cộng thẳng hai số chỉ đã có trước quiz."
+      },
+      {
+        "id": "q-tl67-q3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn ở mục 3 và mục 4: δ > Δ thì kiểm dụng cụ trước khi nghi quy tắc."
+      },
+      {
+        "id": "q-tl67-q8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn bằng dòng 🔑 vật gần đầu nào, đầu đó gánh nhiều và phản hồi B."
+      },
+      {
+        "id": "q-tl67-q4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng ⚠ trước quiz Câu 3: để ý dấu của hai số lệch trước khi nghĩ chúng bù trừ nhau."
+      },
+      {
+        "id": "q-tl67-q5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn: bảng Bẫy 2 ghi công thức vẫn thay α đo ở O, và bullet α đo ở nút O."
+      },
+      {
+        "id": "q-tl67-q6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đã nhấn ở mục 1: F₃ cân bằng với F, cùng độ lớn, ngược chiều."
+      },
+      {
+        "id": "q-tl67-q7",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về đại lượng được giữ cố định đã có trước quiz Câu 6."
+      }
+    ],
+    "doi_noi_dung": [],
+    "so_tu_them": -245,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-thuc-hanh-tong-hop-luc/gemini/da-xu-ly/theory.src.202610191700.html"
   }
 }

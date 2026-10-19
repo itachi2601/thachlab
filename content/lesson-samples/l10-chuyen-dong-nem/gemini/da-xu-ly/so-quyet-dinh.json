@@ -1,6 +1,6 @@
 {
   "bai": "l10-chuyen-dong-nem",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-08",
     "model": "claude-opus-5-5",
@@ -125,5 +125,131 @@
       "lint_do_dai lỗi"
     ],
     "sao_luu": "content/lesson-samples/l10-chuyen-dong-nem/gemini/da-xu-ly/theory.src.202610081647.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi rõ là công thức nhân đôi (Toán 11), giữ dạng 2v0²sinαcosα/g, thêm phép kiểm bằng số α = 30° trong details 'vì sao hai góc phụ nhau'."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng trung gian H = v0²sin²α/g − v0²sin²α/(2g) = v0²sin²α/(2g) ngay trong câu, không tăng chữ."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi 'bóng của nó' thành 'hình chiếu của vật trên mặt đất có chạy đều không'."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành 'Đọc đề ném ngang: hỏi thời gian chỉ cần h (ném xiên cần thêm v0 và α)'."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Ghi điều kiện 'ném từ mặt đất' ở VI.2, ở dòng công thức ném xiên của Mang về và ở Trả bài 6 (trong details)."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Giữ ký hiệu α, ghi rõ trong Trả bài 5 đó là góc giữa vận tốc tại thời điểm t và phương ngang, khác góc ném ở mục VI."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Chèn bước g√(2h/g) = √(g²·2h/g) = √(2gh)."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bài không có câu 'đoạn rơi tăng dần 1 : 3 : 5 : 7 : 9'."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: bài không có '(H∼sin²α)', chỗ tương ứng đã viết sin²60°:sin²30° = 3."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng cho phương án C (hạ thấp thì t giảm nên L giảm) và tách phản hồi thành từng dòng."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm dòng cho phương án D (quỹ đạo cong nhưng v_x không đổi), bỏ câu nhắc 'tách hai phương' để bù chữ."
+      },
+      {
+        "id": "c12",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi thành 'Câu Trả bài số 6 để dành tới khi học xong mục VI'."
+      },
+      {
+        "id": "c13",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn: mục I không có câu 'Hai gói luôn ngang nhau: cùng hàng thì cùng lúc chạm đất'."
+      },
+      {
+        "id": "q-cau0",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn 'đường đi dài hơn không có nghĩa là rơi lâu hơn', không thêm ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nhấn lỗi quên dấu căn, không thêm ⚠."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nêu riêng phương án C, không thêm ⚠."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn Bẫy 2 và phản hồi sai đã nhấn, không thêm ⚠."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Đoạn Bẫy 3 và phản hồi sai đã có ví dụ số cho phương án C."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã giải thích hai tác động bù nhau, không thêm ⚠."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi sai đã nêu lỗi dùng sin60° thay cos60°, không thêm ⚠."
+      }
+    ],
+    "doi_noi_dung": [
+      "II.4: thêm bước trung gian v_y = g√(2h/g) = √(g²·2h/g) = √(2gh).",
+      "VI.2: thêm dòng trung gian H = v0²sin²α/g − v0²sin²α/(2g) = v0²sin²α/(2g).",
+      "VI.2: nêu 2sinαcosα = sin2α là công thức nhân đôi (Toán 11); details thêm kiểm số α = 30°: 2×0,5×0,866 ≈ 0,866 = sin60°.",
+      "Điều kiện 'ném từ mặt đất' cho t = 2v0sinα/g và L = v0²sin2α/g: thêm ở VI.2, dòng công thức ném xiên của Mang về và Trả bài 6.",
+      "Mang về: dòng 'Đọc đề' chỉ áp cho ném ngang, ném xiên thì t còn phụ thuộc v0 và α.",
+      "Trả bài 5: α ở tanα = gt/v0 là góc lệch vận tốc tại thời điểm t, khác góc ném.",
+      "Câu 1 (tl57-q2): phản hồi sai thêm giải thích phương án C (h/2 làm t và L giảm).",
+      "Câu 3 (tl57-q5): phản hồi sai thêm giải thích phương án D (quỹ đạo cong nhưng v_x không đổi).",
+      "Câu 2 (tl57-q4): phản hồi sai bỏ vế lặp 'cùng t mà v0 gấp bốn thì L gấp bốn' (đã có ở phản hồi đúng).",
+      "VII Thể thao: bỏ ví dụ 'đánh đầu bóng từ trên cao là ném ngang' (không chắc ném ngang).",
+      "VI video: câu hỏi đổi 'bóng của nó' thành 'hình chiếu của vật trên mặt đất'.",
+      "VI.1: rút gọn dòng thứ ba, bỏ 'Ox: thẳng đều' vì đã có ở dòng 🔑 và bảng.",
+      "Thí nghiệm 2: bỏ câu 'Bảng là tầm xa đo được và vận tốc ném suy ra'.",
+      "Câu 1: nhãn bỏ '(chọn là có đáp án)'."
+    ],
+    "so_tu_them": 9,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-chuyen-dong-nem/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

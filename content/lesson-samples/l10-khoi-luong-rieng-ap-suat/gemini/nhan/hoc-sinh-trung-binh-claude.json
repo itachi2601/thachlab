@@ -5,178 +5,178 @@
   "gop_y": [
     {
       "id": "c1",
-      "vi_tri": "5. Bình thông nhau",
-      "trich_nguyen_van": "so áp suất ở A (mặt phân cách) và B (cùng mức ngang, bên kia, cùng trong một chất lỏng)",
-      "loai": "nhảy_bước",
+      "vi_tri": "🎯 Mục tiêu bài học hôm nay",
+      "trich_nguyen_van": "Vận dụng vào bình thông nhau và lực đẩy Archimedes.",
+      "loai": "thiếu_ví_dụ",
       "muc": "khó",
-      "em_hieu_la": "Công thức ρ₁h₁ = ρ₂h₂ hiện ra ngay mà không viết p_A, p_B. Em không thấy vì sao p_a và g biến mất. Em cũng không thấy vì sao phải chọn đúng mức mặt phân cách, nên dễ chọn một mức ngang bất kỳ.",
-      "de_xuat": "Thêm một dòng: p_A = p_a + ρ₁gh₁, p_B = p_a + ρ₂gh₂; vì p_A = p_B nên triệt tiêu p_a và g, còn ρ₁h₁ = ρ₂h₂."
+      "em_hieu_la": "Mục II.5 và II.6 không có câu Tự kiểm tra nào, chỉ có lời giải ẩn trong details và Thử thách. Học sinh không được luyện vận dụng ρ₁h₁ = ρ₂h₂ và F_A với V phần chìm, dù mục tiêu ghi phải làm được.",
+      "de_xuat": "Thêm một câu Tự kiểm tra sau II.5 (tính cột nước cân bằng cột dầu) và một câu sau II.6, trong đó có phương án nhiễu thế V toàn phần thay cho V phần chìm."
     },
     {
       "id": "c2",
       "vi_tri": "5. Bình thông nhau",
-      "trich_nguyen_van": "$h_1$, $h_2$: chiều cao từ mức ngang A, B lên tới mặt thoáng mỗi nhánh.",
+      "trich_nguyen_van": "A, B cùng nằm trong một chất lỏng nên $p_A = p_B$",
       "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Bài không nói ρ₁ là dầu hay nước, cũng không nói h₁ thuộc nhánh nào. Vì vậy em dễ ghép ρ của dầu với chiều cao cột nước.",
-      "de_xuat": "Ghi rõ: ρ₁, h₁ là dầu ở nhánh chứa A; ρ₂, h₂ là nước ở nhánh chứa B, h₂ đo từ B lên mặt nước. Thêm số của Hình 3: 800·0,10 = 1000·0,08."
+      "em_hieu_la": "II.4 vừa dạy 'cùng độ sâu → cùng áp suất'. Ở đây A và B lại có độ sâu khác nhau tính từ mặt thoáng mỗi nhánh, nên học sinh thấy mâu thuẫn. Học sinh cũng có thể áp dụng nhầm 'cùng mức ngang' cho một điểm trong dầu và một điểm trong nước.",
+      "de_xuat": "Ghi rõ điều kiện: hai điểm cùng mức ngang trong cùng một chất lỏng liên thông, đứng yên thì cùng áp suất. Thêm ví dụ phản chứng: điểm trong dầu ngang mức với điểm trong nước thì áp suất không bằng nhau."
     },
     {
       "id": "c3",
-      "vi_tri": "6. Lực đẩy Archimedes: hệ quả của Δp",
-      "trich_nguyen_van": "$\\rho_{\\text{vật}} \\lt \\rho_{\\ell}$ thì nổi; $\\rho_{\\text{vật}} \\gt \\rho_{\\ell}$ thì chìm; bằng nhau thì lơ lửng.",
-      "loai": "nhảy_bước",
+      "vi_tri": "5. Bình thông nhau",
+      "trich_nguyen_van": "cột dầu hoả 10 cm cân với cột nước 8 cm, mặt dầu cao hơn mặt nước bên kia",
+      "loai": "thiếu_ví_dụ",
       "muc": "khó",
-      "em_hieu_la": "Bài chuyển thẳng từ F_A sang điều kiện so sánh ρ mà không so F_A với trọng lượng. Em học thuộc điều kiện nhưng không biết nó đến từ đâu.",
-      "de_xuat": "Thêm: khi vật chìm hẳn thì P = ρ_vật·g·V và F_A = ρ_ℓ·g·V; F_A > P ⇔ ρ_vật < ρ_ℓ nên vật nổi lên."
+      "em_hieu_la": "Con số chỉ nằm trong chú thích hình, không có phép tính nào. Học sinh không biết ρ₁ là dầu hay nước, và không biết 8 cm được suy ra thế nào.",
+      "de_xuat": "Thêm một dòng tính ngay dưới công thức: 800·0,10 = 1000·h₂ ⇒ h₂ = 0,08 m, chỉ rõ ρ₁ là dầu (nhánh trái) và ρ₂ là nước."
     },
     {
       "id": "c4",
       "vi_tri": "6. Lực đẩy Archimedes: hệ quả của Δp",
-      "trich_nguyen_van": "$F_A = \\rho_{\\ell}\\, g\\, V$",
-      "loai": "thiếu_ví_dụ",
+      "trich_nguyen_van": "$V$: thể tích phần chìm",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Không có ví dụ số nào, cũng không có câu tự kiểm tra nào cho F_A. Với vật nổi, em dễ thế thể tích cả vật thay cho thể tích phần chìm.",
-      "de_xuat": "Thêm một ví dụ số với khúc gỗ nổi: cho V_vật và V_chìm khác nhau, yêu cầu tính F_A bằng V_chìm và đối chiếu với trọng lượng gỗ."
+      "em_hieu_la": "Cùng ký hiệu V nhưng mang hai nghĩa. Ở mục 1, V là thể tích vật (P = ρVg). Ở đây V là thể tích phần chìm, và phần 'Mang về' lại ghi F_A = ρ_ℓ g V. Học sinh dễ thế thể tích cả vật, đúng lỗi 20 N mà bài cảnh báo.",
+      "de_xuat": "Dùng thống nhất ký hiệu V_chìm trong hộp quy tắc, trong ví dụ khúc gỗ và trong 'Mang về sau bài học'."
     },
     {
       "id": "c5",
-      "vi_tri": "Bẫy 2: áp suất tuyệt đối hay áp suất dư?",
-      "trich_nguyen_van": "Áp suất tuyệt đối tại chỗ thợ lặn là:",
-      "loai": "từ_chưa_giải_thích",
-      "muc": "khó",
-      "em_hieu_la": "Cụm 'áp suất tuyệt đối' chưa xuất hiện ở mục 4. Bảng định nghĩa lại nằm sau câu hỏi, nên em không biết có phải cộng p_a hay không.",
-      "de_xuat": "Trước Câu 5 thêm một câu: 'Áp suất tuyệt đối p = p_a + ρgh (tính cả khí quyển); áp suất dư chỉ là ρgh.'"
+      "vi_tri": "4. Áp suất chất lỏng",
+      "trich_nguyen_van": "Tia nước ở lỗ nào phun xa nhất, và điều đó cho biết gì về áp suất theo độ sâu?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Học sinh đồng nhất 'phun xa' với 'áp suất lớn'. Nhưng tầm xa còn phụ thuộc độ cao của lỗ so với chỗ tia rơi xuống, nên nếu thấy tia ở lỗ giữa xa hơn thì học sinh dễ rút ra kết luận sai. Thí nghiệm bên dưới lại dùng chữ 'mạnh nhất'.",
+      "de_xuat": "Đổi câu hỏi thành 'Tia ở lỗ nào phun ra mạnh nhất ngay tại miệng lỗ?' cho khớp với phần Quan sát của thí nghiệm chai nhựa."
     },
     {
       "id": "c6",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "(khí quyển ép cả mặt nước lẫn mặt dưới đáy bể nên không tính vào)",
-      "loai": "mơ_hồ",
-      "muc": "khó",
-      "em_hieu_la": "Ý b vừa cho áp suất tại đáy là 1,05·10⁵ Pa, nên em dễ nhân 1,05·10⁵ × 0,24 = 25 200 N. Lời giải thích trong ngoặc quá gọn, em không hiểu vì sao bỏ p_a.",
-      "de_xuat": "Ghi rõ: đề hỏi áp lực 'của nước' nên chỉ dùng ρgh. Dùng 1,05·10⁵ Pa sẽ ra 25 200 N, tức áp lực tổng của nước và khí quyển lên mặt trong đáy bể."
+      "vi_tri": "Bẫy 2: áp suất tuyệt đối hay áp suất dư?",
+      "trich_nguyen_van": "$1{,}6\\cdot 10^5$ là cộng $p_a$ nhưng nhớ nhầm 1 atm $= 10^4\\ \\text{Pa}$.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Đề đã cho sẵn p_a = 1,0·10⁵ Pa, học sinh không cần nhớ 1 atm là bao nhiêu. Vì vậy lời giải thích cho phương án B nghe vô lý, học sinh không nhận ra lỗi của mình.",
+      "de_xuat": "Giải thích B là chép nhầm p_a thành 10⁴ Pa khi cộng. Ở phương án D, nói rõ là vừa quên nhân g vừa quên cộng p_a."
     },
     {
       "id": "c7",
-      "vi_tri": "Bẫy 1: \"nhiều nước thì đáy chịu áp suất lớn\"",
-      "trich_nguyen_van": "Chọn C là nghĩ hai bình \"cân nhau\" vì một bình hẹp, một bình nhiều nước.",
-      "loai": "phương_án_nhiễu_khó_hiểu",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "<strong>Bước 3 (em điền):</strong> áp lực lên đáy $= \\;?$",
+      "loai": "mơ_hồ",
       "muc": "khó",
-      "em_hieu_la": "Em vừa học 'như nhau, không phụ thuộc lượng nước' ở câu Dự đoán và Hình 4, nên chọn C mà không so h (30 cm và 20 cm). Phản hồi lại nêu một lý do khác, không trúng lỗi của em.",
-      "de_xuat": "Sửa thành: 'Chọn C là nhớ máy móc \"áp suất như nhau\"; điều đó chỉ đúng khi cùng độ sâu, còn ở đây h khác nhau.'"
+      "em_hieu_la": "Ngay trước đó, lời giải mẫu vừa nhấn mạnh phải phân biệt 'áp lực của nước' với áp lực của cả nước lẫn khí quyển. Ở đây đề chỉ ghi 'áp lực lên đáy', nên học sinh có thể cộng p_a và ra khoảng 24 700 N, không khớp với đáp án 741,6 N.",
+      "de_xuat": "Sửa thành 'áp lực của nước muối lên đáy = ?'."
     },
     {
       "id": "c8",
-      "vi_tri": "3. Áp lực và áp suất",
-      "trich_nguyen_van": "đặt đứng trên mặt $10\\ \\text{cm} \\times 5\\ \\text{cm}$",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "$h = \\dfrac{p - p_a}{\\rho g} = \\dfrac{4000}{1000 \\cdot 10}$",
       "loai": "nhảy_bước",
-      "muc": "khó",
-      "em_hieu_la": "Câu 2 bắt đổi 50 cm² ra m², nhưng mục 3 chưa chỉ cách đổi; quy tắc 1 cm² = 10⁻⁴ m² chỉ có ở Bẫy 3 phía sau. Em dễ đổi sai thành 0,5 m² hoặc 5·10⁻² m².",
-      "de_xuat": "Thêm vào hộp quy tắc mục 3 dòng: '1 cm² = 10⁻⁴ m² (vì 1 cm = 10⁻² m)'."
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức có (p − p_a) nhưng thế ngay 4000 vào tử số. Học sinh có thể tưởng p = 4000 Pa rồi trừ tiếp 10⁵ Pa và ra h âm.",
+      "de_xuat": "Chèn một bước: 'áp kế chỉ áp suất dư nên p − p_a = 4000 Pa'."
     },
     {
       "id": "c9",
-      "vi_tri": "1. Khối lượng riêng",
-      "trich_nguyen_van": "chai nước $1{,}5$ lít có $V = 1{,}5\\cdot 10^{-3}\\ \\text{m}^3$",
-      "loai": "nhảy_bước",
+      "vi_tri": "6. Lực đẩy Archimedes: hệ quả của Δp",
+      "trich_nguyen_van": "Mô phỏng này gọi khối lượng riêng là \"mật độ\" (đơn vị kg/L)",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Phép đổi lít ra m³ được dùng mà không nêu; quy tắc chỉ có trong bảng ở Bẫy 3.",
-      "de_xuat": "Thêm ngoặc: '(1 lít = 1 dm³ = 10⁻³ m³)'."
+      "em_hieu_la": "Bài không cho cách đổi kg/L sang kg/m³. Học sinh đọc được gỗ khoảng 0,4 kg/L nhưng không so được với bảng ghi nước 1000 kg/m³.",
+      "de_xuat": "Thêm: 1 kg/L = 1 g/cm³ = 1000 kg/m³, nên nước có mật độ 1 kg/L."
     },
     {
       "id": "c10",
-      "vi_tri": "2. Đo khối lượng riêng bằng cân và bình chia độ",
-      "trich_nguyen_van": "Hàng đầu (khối $8\\ \\text{cm}^3$) lệch nhiều nhất, khoảng $2{,}3\\,\\%$.",
-      "loai": "khác",
+      "vi_tri": "6. Lực đẩy Archimedes: hệ quả của Δp",
+      "trich_nguyen_van": "khúc gỗ $2\\ \\text{dm}^3$ nặng $12\\ \\text{N}$ nổi, phần chìm $1{,}2\\ \\text{dm}^3$",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Em tính từ số 2,64 trong bảng: (2,70 − 2,64)/2,70 ≈ 2,2 %, không khớp 2,3 %. Em sẽ nghĩ mình tính sai.",
-      "de_xuat": "Ghi 'khoảng 2,2 %', hoặc nói rõ là dùng giá trị chưa làm tròn 21,1/8 = 2,6375."
+      "em_hieu_la": "Đơn vị dm³ chưa hề được đổi ở đâu trong bài (bảng đổi đơn vị chỉ có lít). Học sinh không hiểu vì sao 1,2 dm³ lại thành 1,2·10⁻³ m³.",
+      "de_xuat": "Ghi kèm '(1 dm³ = 1 lít = 10⁻³ m³)' ngay tại ví dụ, và thêm dòng dm³ vào bảng đổi đơn vị ở Bẫy 3."
     },
     {
       "id": "c11",
-      "vi_tri": "Bẫy 1: \"nhiều nước thì đáy chịu áp suất lớn\"",
-      "trich_nguyen_van": "Bình thắt miệng thì ngược lại: thành nghiêng ép xuống nước.",
-      "loai": "mơ_hồ",
+      "vi_tri": "4. Áp suất chất lỏng",
+      "trich_nguyen_van": "khoảng $1{,}013\\cdot 10^5\\ \\text{Pa}$ (1 atm)",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Câu này không nói hệ quả với áp lực lên đáy, nên em không rõ 'ngược lại' là lớn hơn hay nhỏ hơn trọng lượng nước.",
-      "de_xuat": "Thêm: 'nên áp lực lên đáy bình thắt miệng lớn hơn trọng lượng nước trong bình'."
+      "em_hieu_la": "Mục II.4 dùng 1,013·10⁵ Pa, còn Câu 5 và bài toán mẫu dùng 1,0·10⁵ Pa. Học sinh không biết khi nào lấy giá trị nào, và có thể nghĩ đáp án lệch vì chọn sai.",
+      "de_xuat": "Thêm câu: 'Bài tập thường lấy tròn p_a ≈ 1,0·10⁵ Pa; nếu đề cho sẵn giá trị thì dùng giá trị đề cho.'"
     },
     {
       "id": "c12",
-      "vi_tri": "V. Bài toán mẫu",
-      "trich_nguyen_van": "$h = \\dfrac{p - p_a}{\\rho g} = \\dfrac{4000}{1000 \\cdot 10}$",
-      "loai": "mơ_hồ",
+      "vi_tri": "Bẫy 3: thế số sai đơn vị",
+      "trich_nguyen_van": "$1{,}013\\cdot 10^5\\ \\text{Pa}$ (760 mmHg)",
+      "loai": "từ_chưa_giải_thích",
       "muc": "nhỏ",
-      "em_hieu_la": "Thấy p − p_a, em có thể lấy 4000 trừ thêm 10⁵, không nhận ra 4000 chính là p − p_a.",
-      "de_xuat": "Viết thẳng: h = p_dư/(ρg) = 4000/(1000·10)."
+      "em_hieu_la": "Đơn vị mmHg xuất hiện lần đầu mà không có giải thích. Học sinh không biết đó là đơn vị gì và có phải đổi nó không.",
+      "de_xuat": "Bỏ '(760 mmHg)', hoặc ghi chú ngắn: 'mmHg là độ cao cột thuỷ ngân, không dùng trong bài này'."
     },
     {
       "id": "c13",
-      "vi_tri": "VI. Đời sống và tổng kết",
-      "trich_nguyen_van": "thân rỗng chứa không khí nên khối lượng riêng trung bình nhỏ hơn nước",
-      "loai": "từ_chưa_giải_thích",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy làm lại bước 3 của lời giải mẫu.",
+      "loai": "khác",
       "muc": "nhỏ",
-      "em_hieu_la": "Mục 6 chỉ nói về vật đặc. Em không biết 'khối lượng riêng trung bình' tính thế nào cho một vật rỗng.",
-      "de_xuat": "Thêm: 'khối lượng riêng trung bình = tổng khối lượng tàu / tổng thể tích phần vỏ kín, kể cả phần rỗng'."
+      "em_hieu_la": "Bước 3 của lời giải mẫu bàn về chuyện có cộng p_a hay không, chứ không bàn về bình loe. Còn bước 5 lại kiểm tra F = mg, chính là điều khiến học sinh chọn 90 N. Học sinh chọn sai sẽ không biết phải xem lại chỗ nào.",
+      "de_xuat": "Trỏ học sinh tới mục 'Bấm xem: nước ở chỗ loe đè lên đâu?' và nhắc rằng F = mg chỉ đúng khi thành bình thẳng đứng."
     }
   ],
   "du_doan_loi_sai": [
     {
-      "cau": "du_doan",
+      "cau": "du-doan",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Nghĩ nhiều nước phía trên thì đè nặng hơn, đồng nhất áp suất với tổng lượng nước.",
+      "loi_tu_duy": "Cho rằng càng nhiều nước phía trên thì nước đè càng nặng, tức là lấy trọng lượng nước thay cho áp suất.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "nước ở xa hai bên không đè lên tai em"
+      "trich_nguyen_van": "Chọn A là nghĩ \"nhiều nước thì đè nặng hơn\": nước ở xa hai bên không đè lên tai em."
     },
     {
       "cau": "cau1",
       "dap_an_sai_hap_dan": "B",
-      "loi_tu_duy": "Thấy vật nhỏ đi nên nghĩ mọi đại lượng đều giảm, quên V cũng giảm theo cùng tỉ lệ.",
+      "loi_tu_duy": "Thấy vật nhỏ đi một nửa thì cho mọi đại lượng đều giảm một nửa, quên rằng V ở mẫu số cũng giảm.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Mỗi chất có một $\\rho$ riêng: dùng để nhận biết chất."
+      "trich_nguyen_van": "Khối lượng riêng là đặc trưng của chất, không của vật to hay nhỏ."
     },
     {
       "cau": "cau2",
-      "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Thế S = 50 theo cm² mà không đổi ra m², vì mục 3 chưa nêu quy tắc đổi.",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Lấy khối lượng 2 kg làm áp lực, không đổi sang trọng lượng F = mg. Phần thân mục II.3 không nhắc rằng áp lực ở đây là trọng lượng.",
       "bai_da_nhan_manh": false,
       "trich_nguyen_van": ""
     },
     {
       "cau": "cau3",
-      "dap_an_sai_hap_dan": "D",
-      "loi_tu_duy": "Nhầm điều kiện: nghĩ chung một bồn thì cùng áp suất, bỏ qua điều kiện cùng độ sâu.",
-      "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Cùng chất lỏng đứng yên, cùng độ sâu → cùng áp suất."
-    },
-    {
-      "cau": "cau4",
-      "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Nhớ máy móc 'áp suất như nhau, không phụ thuộc lượng nước' từ câu Dự đoán và Hình 4, không để ý hai bình có h khác nhau.",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tính đúng 120 000 nhưng đếm sai số mũ khi viết dưới dạng 1,2·10ⁿ, vì A và B chỉ khác nhau ở số mũ. Lời giải thích của bài chỉ quy A về lỗi quên nhân g.",
       "bai_da_nhan_manh": false,
       "trich_nguyen_van": ""
     },
     {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "C",
+      "loi_tu_duy": "Nhớ máy móc câu 'áp suất không phụ thuộc lượng nước' rồi kết luận hai bình bằng nhau, bỏ qua việc so độ sâu h.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "⚠ \"Không phụ thuộc lượng nước\" không có nghĩa mọi bình đều như nhau: so độ sâu $h$ trước."
+    },
+    {
       "cau": "cau5",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Chỉ tính ρgh, quên cộng p_a; thuật ngữ 'tuyệt đối' chưa được định nghĩa trước câu hỏi.",
+      "loi_tu_duy": "Chỉ tính ρgh và quên cộng p_a khi đề hỏi áp suất tuyệt đối tại một điểm.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "$p_a$: áp suất khí quyển trên mặt thoáng, khoảng $1{,}013\\cdot 10^5\\ \\text{Pa}$ (1 atm)."
+      "trich_nguyen_van": "Tại điểm: cộng pₐ · do chất lỏng: chỉ ρgh"
     },
     {
       "cau": "cau6",
       "dap_an_sai_hap_dan": "C",
-      "loi_tu_duy": "Đổi ρ ra kg/m³ nhưng quên đổi h = 50 cm ra m: chỉ đổi một trong hai đại lượng.",
+      "loi_tu_duy": "Nhớ đổi ρ sang kg/m³ vì bài đã cảnh báo, nhưng quên đổi h = 50 cm sang mét.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Đề hay cho $\\rho$ theo g/cm³, $h$ theo cm, $S$ theo cm²."
+      "trich_nguyen_van": "Công thức $p = \\rho g h$ và $p = F/S$ chỉ đúng khi mọi đại lượng ở đơn vị SI."
     },
     {
       "cau": "cau7",
       "dap_an_sai_hap_dan": "A",
-      "loi_tu_duy": "Lấy áp lực lên đáy bằng trọng lượng nước như ở bài mẫu bể thành thẳng, áp dụng sai cho bình loe.",
+      "loi_tu_duy": "Áp dụng 'áp lực lên đáy = trọng lượng nước' từ bước kiểm tra của bài mẫu, không để ý điều kiện thành thẳng đứng. Chỗ bài giải thích bình loe lại nằm ẩn trong details.",
       "bai_da_nhan_manh": true,
-      "trich_nguyen_van": "Phần nước nằm trên thành nghiêng của bình loe tựa lên thành bình, không đè lên đáy."
+      "trich_nguyen_van": "Phần nước nằm trên thành nghiêng của bình loe tựa lên thành bình, không đè lên đáy"
     }
   ]
 }

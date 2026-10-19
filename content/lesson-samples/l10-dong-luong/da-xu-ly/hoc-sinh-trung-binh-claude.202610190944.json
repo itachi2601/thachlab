@@ -1,0 +1,139 @@
+{
+  "bai": "Bài 28. Động lượng",
+  "vai": "trung-binh",
+  "nguon": "claude",
+  "gop_y": [
+    {
+      "id": "c1",
+      "vi_tri": "4. Đo xung lượng bằng cảm biến lực",
+      "trich_nguyen_van": "Phần mềm tính xung lượng từ đồ thị $F$–$t$.",
+      "loai": "từ_chưa_giải_thích",
+      "muc": "khó",
+      "em_hieu_la": "Chưa biết xung lượng được tính từ đồ thị bằng cách nào. Ý 'diện tích dưới đồ thị là xung lượng' chỉ xuất hiện sau đó, ở chú thích Hình 3 của Bẫy 3.",
+      "de_xuat": "Thêm ngay sau câu này: 'xung lượng bằng diện tích phần nằm dưới đường $F$–$t$ (xem Hình 3)'."
+    },
+    {
+      "id": "c2",
+      "vi_tri": "4. Đo xung lượng bằng cảm biến lực",
+      "trich_nguyen_van": "Có khớp số cảm biến không? Chênh lệch có lớn hơn sai số dụng cụ không?",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Đề hỏi so với sai số dụng cụ nhưng chưa cho con số sai số nào. Giá trị ±0,01 m/s và ±2 % chỉ có trong phần 'Bấm xem nhận xét', nên học sinh không tự làm được.",
+      "de_xuat": "Ghi sai số cổng quang (±0,01 m/s) và sai số cảm biến (±2 %) ngay trong bước 'Làm' hoặc trong khung 'Đọc số liệu'."
+    },
+    {
+      "id": "c3",
+      "vi_tri": "4. Đo xung lượng bằng cảm biến lực",
+      "trich_nguyen_van": "Mọi chênh lệch đều nhỏ hơn tổng hai sai số (cảm biến $\\pm 2\\,\\%$ và cổng quang $\\pm 0{,}005$).",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không biết cộng một sai số tính theo % với một sai số tính theo kg·m/s ra sao. Cũng không biết vì sao Δp sai cỡ ±0,005.",
+      "de_xuat": "Làm mẫu cho lần 1: Δv sai ±0,02 nên Δp sai ±0,25·0,02 = ±0,005; 2 % của 0,176 là ≈0,0035; tổng ≈0,0085, lớn hơn chênh lệch 0,004."
+    },
+    {
+      "id": "c4",
+      "vi_tri": "Bẫy 1: tính $\\Delta p$ bằng hiệu hai độ lớn",
+      "trich_nguyen_van": "Cùng xe đó:<br>$\\Delta p = -2m$",
+      "loai": "mơ_hồ",
+      "muc": "khó",
+      "em_hieu_la": "Dễ đọc '−2m' thành '−2 mét'. Đoạn này cũng chưa nói chiều dương là chiều nào, nên không hiểu dấu trừ từ đâu ra.",
+      "de_xuat": "Viết: 'Chọn chiều dương là chiều xe tới: $\\Delta p = m(-1 - 1) = -2m$ (kg·m/s), với $m$ là khối lượng xe'."
+    },
+    {
+      "id": "c5",
+      "vi_tri": "Bẫy 3: đệm mềm làm giảm $\\Delta p$",
+      "trich_nguyen_van": "Hợp lực nhỏ hơn đúng ngần ấy lần (bỏ qua trọng lực)",
+      "loai": "khác",
+      "muc": "khó",
+      "em_hieu_la": "Ở bài ⭐⭐⭐, Δt chênh 50 lần (0,50 s so với 0,01 s) nhưng lực đệm chỉ chênh khoảng 34 lần. Học sinh sẽ thấy mâu thuẫn với chữ 'đúng ngần ấy lần' và nhầm 'hợp lực' với 'lực đệm'.",
+      "de_xuat": "Ghi rõ: 'hợp lực nhỏ hơn đúng ngần ấy lần; lực đệm $N$ chỉ xấp xỉ như vậy khi $N \\gg mg$' và nhắc lại ý này ở bài ⭐⭐⭐."
+    },
+    {
+      "id": "c6",
+      "vi_tri": "V. Bài toán mẫu",
+      "trich_nguyen_van": "nên $0{,}45\\,(12 + v) = 7{,}5$ và $v = 7{,}5/0{,}45 - 12$",
+      "loai": "nhảy_bước",
+      "muc": "khó",
+      "em_hieu_la": "Không hiểu vì sao lại là '12 + v' trong khi bài mẫu viết $v_2 - v_1$. Chỗ này đột ngột dùng $v$ là độ lớn, còn $v_2 = -v$ thì không được nói ra.",
+      "de_xuat": "Thêm bước: 'gọi tốc độ bật lại là $v$, thì $v_2 = -v$; $|\\Delta p| = m|{-v} - 12| = m(12 + v)$'."
+    },
+    {
+      "id": "c7",
+      "vi_tri": "2. Động lượng của hệ nhiều vật",
+      "trich_nguyen_van": "Nếu $p_1 = p_2$: $p = 2p_1\\cos\\dfrac{\\alpha}{2}$",
+      "loai": "nhảy_bước",
+      "muc": "nhỏ",
+      "em_hieu_la": "Công thức này xuất hiện không có lời giải thích, học sinh phải học thuộc mà không biết nó suy ra từ công thức góc bất kì. Bài ⭐⭐ lại dùng đúng công thức này.",
+      "de_xuat": "Thêm một dòng: 'thay $p_1 = p_2$ vào công thức góc bất kì, dùng $1 + \\cos\\alpha = 2\\cos^2(\\alpha/2)$'."
+    },
+    {
+      "id": "c8",
+      "vi_tri": "IV. Trả bài",
+      "trich_nguyen_van": "Động lượng của hệ hai vật tính thế nào? Bốn trường hợp góc?",
+      "loai": "mơ_hồ",
+      "muc": "nhỏ",
+      "em_hieu_la": "Mục 2 liệt kê năm dòng (có thêm trường hợp $p_1 = p_2$), nên học sinh không chắc 'bốn trường hợp' là những trường hợp nào.",
+      "de_xuat": "Sửa thành 'Bốn trường hợp góc (và trường hợp $p_1 = p_2$)?' hoặc thống nhất số trường hợp ở cả hai mục."
+    },
+    {
+      "id": "c9",
+      "vi_tri": "3. Xung lượng và độ biến thiên động lượng",
+      "trich_nguyen_van": "C chia $F$ cho cả $m$ lẫn $\\Delta t$: $50/(2 \\cdot 0{,}2)$ — đó là nhầm thời gian vào mẫu số.",
+      "loai": "phương_án_nhiễu_khó_hiểu",
+      "muc": "nhỏ",
+      "em_hieu_la": "Câu 'nhầm thời gian vào mẫu số' chưa cho học sinh biết đúng ra $\\Delta t$ phải nằm ở đâu.",
+      "de_xuat": "Viết: 'đúng là $v = F\\Delta t/m$, tức $\\Delta t$ nằm ở tử số, không phải mẫu số'."
+    }
+  ],
+  "du_doan_loi_sai": [
+    {
+      "cau": "du_doan_mo_bai",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ vật nặng hơn thì khó dừng hơn, chỉ nhìn khối lượng mà bỏ qua tốc độ.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau1",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Coi động lượng là thuộc tính riêng của vật, lấy $v = 15$ m/s cho cả hai hệ quy chiếu.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Phụ thuộc hệ quy chiếu, vì vận tốc phụ thuộc hệ quy chiếu."
+    },
+    {
+      "cau": "cau2",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Tính được $\\Delta p = F\\Delta t = 10$ rồi lấy luôn làm tốc độ, quên chia cho $m$.",
+      "bai_da_nhan_manh": false,
+      "trich_nguyen_van": ""
+    },
+    {
+      "cau": "cau3",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Lấy hiệu hai độ lớn $0{,}06(5-4)$, không gán dấu âm cho vận tốc ngược chiều.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Bật ngược lại → hai vận tốc trái dấu"
+    },
+    {
+      "cau": "cau4",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Cộng hai độ lớn 120 + 160 như cộng số, bỏ qua góc vuông giữa hướng đông và hướng bắc.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Cộng vector · không cộng số"
+    },
+    {
+      "cau": "cau5",
+      "dap_an_sai_hap_dan": "B",
+      "loi_tu_duy": "Nghĩ đệm hay gập gối làm giảm $\\Delta p$, trong khi thực ra chỉ kéo dài $\\Delta t$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "Đệm giữ nguyên $\\Delta p$ · kéo dài $\\Delta t$ · giảm $F$"
+    },
+    {
+      "cau": "cau6",
+      "dap_an_sai_hap_dan": "A",
+      "loi_tu_duy": "Dừng ở $|\\Delta p| = 18\\,000$ và coi đó là lực, quên chia cho $\\Delta t$.",
+      "bai_da_nhan_manh": true,
+      "trich_nguyen_van": "$\\Delta t = 0{,}05\\ \\text{s}$ → dùng $\\vec F = \\Delta\\vec p/\\Delta t$"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "bai": "l10-dinh-luat-2-newton",
-  "vong": 1,
+  "vong": 2,
   "vong1_sua_api": {
     "ngay": "2026-10-09",
     "model": "claude-opus-5-5",
@@ -120,5 +120,128 @@
     "trang_thai": "da-sua",
     "loi": [],
     "sao_luu": "content/lesson-samples/l10-dinh-luat-2-newton/gemini/da-xu-ly/theory.src.202610090924.html"
+  },
+  "vong2_sua_api": {
+    "ngay": "2026-10-19",
+    "model": "claude-opus-5-5",
+    "quyet_dinh": [
+      {
+        "id": "c1",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Câu đầu mở bài thêm \"bằng lực 80 N\" để chữ \"cũng 80 N\" ở câu sau có chỗ dựa."
+      },
+      {
+        "id": "c2",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đổi ký hiệu $M$ thành $m$ trong bước Làm của thí nghiệm 1 cho thống nhất với $F = ma$."
+      },
+      {
+        "id": "c3",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm câu gợi ý \"Nếu a tỉ lệ thuận với F thì tỉ số F/a gần như không đổi\" trước yêu cầu tính."
+      },
+      {
+        "id": "c4",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Trong ô nhận xét, viết lại: ma sát sót lại gần như như nhau mọi lần đo nên chiếm phần lớn nhất so với lực nhỏ nhất 0,10 N."
+      },
+      {
+        "id": "c5",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Phản hồi sai Câu 1 thêm dòng: bảng cho F/a ≈ 0,50 kg nên lúc đầu a ≈ 0,40 m/s², nối được với phương án C và với a = F/m."
+      },
+      {
+        "id": "c6",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm chú thích \"(khối nặng đặt thêm lên xe)\" sau từ gia trọng."
+      },
+      {
+        "id": "c7",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Gạch 2 sửa thành \"độ lớn của hợp lực\" và dòng ký hiệu ghi \"hợp lực, tức tổng vectơ mọi lực tác dụng lên vật\", tách mỗi ký hiệu một dòng."
+      },
+      {
+        "id": "c8",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Bước 3 thêm quy tắc dấu theo chiều dương và ý \"a < 0 là gia tốc ngược chiều dương\"; bù độ dài bằng cắt dòng \"Hai kiểu bài\" (trùng Mục tiêu) và nửa sau gạch quán tính (trùng dòng 🔑)."
+      },
+      {
+        "id": "c9",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Viết F = 1200·(−4,5) = −5400 N rồi nói độ lớn 5400 N, dấu trừ là ngược chiều chuyển động; sửa phản hồi đúng Câu 6 theo cùng cách."
+      },
+      {
+        "id": "c10",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Thêm một dòng dưới dòng 🔑: 1 g = 10⁻³ kg, nên 250 g = 0,25 kg (không dùng 200 g để khỏi lộ đáp án Câu 5)."
+      },
+      {
+        "id": "c11",
+        "quyet_dinh": "chap_nhan",
+        "ghi_chu": "Đáp án ⭐⭐ thêm các bước m₁ = F/2, m₂ = F/3, tổng 5F/6, a = 1,2 m/s², mỗi bước một dòng."
+      },
+      {
+        "id": "q-du_doan",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Câu dự đoán, phản hồi đã nhấn lỗi A, không cần dòng ⚠."
+      },
+      {
+        "id": "q-ht1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi lấy t chia v, câu ôn hành trang không cần ⚠."
+      },
+      {
+        "id": "q-ht2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Phản hồi đã nêu lỗi quên số 2, câu ôn hành trang không cần ⚠."
+      },
+      {
+        "id": "q-cau1",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 tỉ lệ và phản hồi C đã nhấn lỗi cộng thẳng độ tăng lực."
+      },
+      {
+        "id": "q-cau2",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 \"khối lượng gấp đôi · gia tốc một nửa\" đã nhấn ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau3",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Bẫy 1 đã nhấn lỗi quên trừ ma sát ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau4",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Trích không khớp nguồn (nguồn có thẻ strong), và Bẫy 2 đã nhấn gia tốc khác vận tốc."
+      },
+      {
+        "id": "q-cau5",
+        "quyet_dinh": "tu_choi",
+        "ghi_chu": "Dòng 🔑 đổi gam ra kg cùng dòng ví dụ mới đã đứng ngay trước câu hỏi."
+      },
+      {
+        "id": "q-cau6",
+        "quyet_dinh": "da_sua_truoc",
+        "ghi_chu": "Dòng ⚠ về hệ số 2 đã thêm ở vòng trước; bẫy dấu của phương án D được xử lý qua c9."
+      }
+    ],
+    "doi_noi_dung": [
+      "Mở bài: nêu lực đẩy 80 N ngay ở lần đẩy bạn nhỏ 40 kg (số liệu không đổi).",
+      "II.1 thí nghiệm: ký hiệu khối lượng xe đổi M → m.",
+      "II.1 phản hồi sai Câu 1: thêm F/a ≈ 0,50 kg nên lúc đầu a ≈ 0,20/0,50 = 0,40 m/s².",
+      "II.1 ô nhận xét: ma sát sót lại gần như không đổi nên ảnh hưởng tương đối lớn nhất ở F = 0,10 N, làm F/a nhích lên.",
+      "II.3: gạch 2 định luật sửa thành tỉ lệ thuận với độ lớn hợp lực; chú thích F = tổng vectơ mọi lực tác dụng lên vật.",
+      "II.4: cắt nửa sau gạch \"khối lượng càng lớn, vận tốc càng khó thay đổi\" (trùng dòng 🔑).",
+      "II.5 bước 3: thêm quy tắc dấu (cùng chiều dương +, ngược chiều −) và a < 0 là gia tốc ngược chiều dương; cắt dòng \"Hai kiểu bài\".",
+      "Bẫy 3: thêm dòng 1 g = 10⁻³ kg, 250 g = 0,25 kg.",
+      "V thử sức: F = 1200·(−4,5) = −5400 N, độ lớn 5400 N, ngược chiều chuyển động.",
+      "V Câu 6 phản hồi đúng: F = 1000·(−5) = −5000 N, độ lớn 5000 N (đáp án A giữ nguyên).",
+      "VI ⭐⭐: thêm lời giải m₁ = F/2, m₂ = F/3, m₁ + m₂ = 5F/6, a = 1,2 m/s²."
+    ],
+    "so_tu_them": 45,
+    "trang_thai": "da-sua",
+    "loi": [],
+    "sao_luu": "content/lesson-samples/l10-dinh-luat-2-newton/gemini/da-xu-ly/theory.src.202610191619.html"
   }
 }

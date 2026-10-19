@@ -31,8 +31,6 @@
 
 <h3>II. Bốn họ bài tập năng lượng</h3>
 
-<p>Mọi bài tập năng lượng dao động rơi vào bốn họ.</p>
-
 <p>Bài 5 ghi $E_d$, $E_t$; nhiều đề ghi $W_{\text{đ}}$, $W_t$. Hai cách ghi cùng nghĩa. Mốc thế năng luôn ở vị trí cân bằng (VTCB).</p>
 
 <table class="tl-table">
@@ -53,8 +51,7 @@
 <li>Cơ năng: $W=\tfrac12 kA^2=\tfrac12 m\omega^2A^2$, không đổi khi bỏ ma sát.</li>
 <li>Thế năng: $W_t=\tfrac12 kx^2$ — dùng li độ $x$, không dùng $A$.</li>
 <li>Động năng: $W_{\text{đ}}=W-W_t=\tfrac12 k(A^2-x^2)$, hoặc $\tfrac12 mv^2$.</li>
-<li>Từ đó tốc độ: $|v|=\omega\sqrt{A^2-x^2}$, lớn nhất $v_{\max}=\omega A$ ở VTCB.</li>
-<li>Đổi cm sang m <strong>trước</strong> khi bình phương.</li>
+<li>Từ $\tfrac12 mv^2=\tfrac12 m\omega^2(A^2-x^2)$ (vì $k=m\omega^2$): $|v|=\omega\sqrt{A^2-x^2}$, lớn nhất $v_{\max}=\omega A$ ở VTCB.</li>
 </ul>
 
 <p>Ví dụ: $k=40\ \text{N/m}$, $A=10\ \text{cm}$, $x=6\ \text{cm}$. Khi đó $W=\tfrac12\cdot40\cdot0{,}10^2=0{,}20\ \text{J}$; $W_t=\tfrac12\cdot40\cdot0{,}06^2=0{,}072\ \text{J}$; $W_{\text{đ}}=0{,}128\ \text{J}$.</p>
@@ -82,7 +79,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> treo quả nặng $m=250\ \text{g}$, lò xo dãn thêm $5{,}0\ \text{cm}$, nên $k=\dfrac{mg}{\Delta\ell}=49\ \text{N/m}$ ($g=9{,}8\ \text{m/s}^2$). Kéo xuống lần lượt $A=1;\,1{,}5;\,2;\,3;\,4\ \text{cm}$ (nhỏ hơn $\Delta\ell$ để lò xo luôn dãn) (thước $\pm1\ \text{mm}$), thả. Điện thoại quay 240 hình/giây, đo tốc độ khi vật qua VTCB.</li>
 <li><strong>Quan sát:</strong> bảng dưới (số minh hoạ, tính từ mô hình kèm sai số dụng cụ, chưa phải số đo thật).</li>
-<li><strong>Rút ra:</strong> tỉ số $W/A^2$ gần như không đổi, khoảng $2{,}3\text{–}2{,}4\ \text{mJ/cm}^2$, nên $W\propto A^2$. Lò xo thẳng đứng vẫn có $W=\tfrac12 kA^2$ khi mốc ở VTCB và $A$ tính từ VTCB. Mô hình $\tfrac12 k=2{,}45\ \text{mJ/cm}^2$; số đo thấp hơn chừng 2–7%.</li>
+<li><strong>Rút ra:</strong> tỉ số $W/A^2$ gần như không đổi, khoảng $2{,}3\text{–}2{,}4\ \text{mJ/cm}^2$, nên $W\propto A^2$. Lò xo thẳng đứng vẫn có $W=\tfrac12 kA^2$ khi mốc ở VTCB và $A$ tính từ VTCB. Mô hình $\tfrac12 k=24{,}5\ \text{J/m}^2=24{,}5\cdot\dfrac{10^3\ \text{mJ}}{10^4\ \text{cm}^2}=2{,}45\ \text{mJ/cm}^2$; số đo thấp hơn chừng 2–7%.</li>
 </ol>
 <table class="tl-table">
 <thead><tr><th>$A$ (cm)</th><th>$v_{\max}$ đo (cm/s)</th><th>$\tfrac12 mv_{\max}^2$ (mJ)</th></tr></thead>
@@ -137,7 +134,7 @@
 <ul>
 <li>Theo $x$: $W_t$ là parabol đáy ở VTCB, $W_{\text{đ}}$ là parabol úp, $W$ là đường ngang.</li>
 <li>Theo $t$: $W_t$, $W_{\text{đ}}$ lên xuống quanh $\tfrac12W$, ngược pha nhau.</li>
-<li>Năng lượng có chu kì $T/2$, tần số $2f$; li độ có chu kì $T$.</li>
+<li>$W_{\text{đ}}$, $W_t$ có chu kì $T/2$, tần số $2f$; li độ có chu kì $T$.</li>
 <li>Đọc đồ thị: đỉnh cao nhất là $W$; hai đỉnh $W_t$ liền nhau cách $T/2$.</li>
 <li>$W_{\text{đ}}=W_t$ tại $x=\pm\dfrac{A}{\sqrt2}$: bốn lần mỗi chu kì, hai lần liền nhau cách $T/4$.</li>
 </ul>
@@ -156,7 +153,7 @@
 <input type="radio" name="tl26-q4" id="tl26-q4b"><label for="tl26-q4b" class="tl-opt tl-no">B. $T/8$</label>
 <input type="radio" name="tl26-q4" id="tl26-q4c"><label for="tl26-q4c" class="tl-opt tl-no">C. $T$</label>
 <input type="radio" name="tl26-q4" id="tl26-q4d"><label for="tl26-q4d" class="tl-opt tl-ok">D. $T/4$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai đường cắt nhau tại $T/8$, $3T/8$, $5T/8$, $7T/8$: bốn lần mỗi chu kì, cách đều $T/4$.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Với $t=0$ lúc vật ở biên hoặc VTCB, hai đường cắt nhau tại $T/8$, $3T/8$, $5T/8$, $7T/8$: bốn lần mỗi chu kì. Đổi gốc thời gian thì các thời điểm dời đi, nhưng khoảng cách luôn đều $T/4$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là khoảng giữa hai đỉnh $W_t$ (chu kì năng lượng), không phải giữa hai giao điểm. B là thời gian từ biên (hoặc VTCB) tới giao điểm gần nhất. C bỏ qua việc mỗi chu kì có bốn giao điểm.</p></div>
 </div>
 
@@ -166,8 +163,8 @@
 
 <ul>
 <li>Độ cao so với đáy (đáy chính là VTCB): $h=l(1-\cos\alpha)$.</li>
-<li>Cơ năng: $W=mgl(1-\cos\alpha_0)$.</li>
-<li>Tốc độ ở góc $\alpha$: $v=\sqrt{2gl(\cos\alpha-\cos\alpha_0)}$.</li>
+<li>Cơ năng: $W=mgl(1-\cos\alpha_0)$, với $\alpha_0$ là góc lệch lớn nhất (biên độ góc).</li>
+<li>Tốc độ ở góc lệch $\alpha$ đang xét: $v=\sqrt{2gl(\cos\alpha-\cos\alpha_0)}$.</li>
 <li>Qua đáy: $v_{\max}=\sqrt{2gl(1-\cos\alpha_0)}$.</li>
 <li>Góc nhỏ, $\alpha_0$ tính bằng rad: $W\approx\tfrac12 mgl\alpha_0^2$, $v_{\max}\approx\alpha_0\sqrt{gl}$.</li>
 </ul>
@@ -181,7 +178,7 @@
 <ol class="tl-steps">
 <li><strong>Làm:</strong> dây xích đu dài $2{,}0\ \text{m}$, bạn ngồi nặng $40\ \text{kg}$. Đo góc lệch lớn nhất bằng ứng dụng đo góc trên điện thoại: $30^\circ$. Bỏ ma sát trong một lượt, $g=9{,}8\ \text{m/s}^2$.</li>
 <li><strong>Quan sát:</strong> ở biên đu dừng một thoáng; qua đáy nhanh nhất.</li>
-<li><strong>Rút ra:</strong> $h=2{,}0(1-\cos30^\circ)\approx0{,}27\ \text{m}$; $W=mgh\approx105\ \text{J}$; qua đáy $v=\sqrt{2gh}\approx2{,}3\ \text{m/s}$.</li>
+<li><strong>Rút ra:</strong> $h=2{,}0(1-\cos30^\circ)\approx0{,}268\ \text{m}$; $W=mgh\approx105\ \text{J}$; qua đáy $v=\sqrt{2gh}\approx2{,}3\ \text{m/s}$.</li>
 </ol>
 </div>
 
@@ -190,9 +187,9 @@
 <input type="radio" name="tl26-q5" id="tl26-q5a"><label for="tl26-q5a" class="tl-opt tl-ok">A. $2{,}16\ \text{m/s}$</label>
 <input type="radio" name="tl26-q5" id="tl26-q5b"><label for="tl26-q5b" class="tl-opt tl-no">B. $3{,}36\ \text{m/s}$</label>
 <input type="radio" name="tl26-q5" id="tl26-q5c"><label for="tl26-q5c" class="tl-opt tl-no">C. $4{,}69\ \text{m/s}$</label>
-<input type="radio" name="tl26-q5" id="tl26-q5d"><label for="tl26-q5d" class="tl-opt tl-no">D. $127\ \text{m/s}$</label>
+<input type="radio" name="tl26-q5" id="tl26-q5d"><label for="tl26-q5d" class="tl-opt tl-no">D. $2{,}22\ \text{m/s}$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v=\sqrt{2\cdot10\cdot0{,}8\,(1-\cos45^\circ)}=\sqrt{16\cdot0{,}293}\approx2{,}16\ \text{m/s}$. Góc $45^\circ$ không nhỏ nên dùng công thức $\cos$, không xấp xỉ.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B dùng $\cos\alpha_0$ thay cho $1-\cos\alpha_0$. C quên lấy căn: $16\cdot0{,}293=4{,}69$ mới là $v^2$. D thế số $45$ (độ) vào $v=\alpha_0\sqrt{gl}$: công thức góc nhỏ đòi rad, và $45^\circ$ cũng không phải góc nhỏ.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B dùng $\cos\alpha_0$ thay cho $1-\cos\alpha_0$. C quên lấy căn: $16\cdot0{,}293=4{,}69$ mới là $v^2$. D dùng $v\approx\alpha_0\sqrt{gl}=0{,}785\cdot\sqrt8\approx2{,}22$: đổi rad đúng nhưng $45^\circ$ không phải góc nhỏ, phải dùng công thức $\cos$.</p></div>
 </div>
 
 <h3>III. Ba cái bẫy mất điểm</h3>
@@ -203,12 +200,14 @@
 
 <p>Để nguyên cm thì kết quả lớn gấp $10^4$ lần, vì $1\ \text{cm}^2=10^{-4}\ \text{m}^2$. Lò xo trong bài học mà ra hàng trăm jun là dấu hiệu sai đơn vị.</p>
 
+<p>Ví dụ: lò xo $k=200\ \text{N/m}$, $A=2\ \text{cm}$, tính $W$.</p>
+
 <table class="tl-table">
 <thead><tr><th>Viết sai</th><th>Viết đúng</th></tr></thead>
 <tbody>
 <tr><td>$\tfrac12\cdot200\cdot2^2=400\ \text{J}$ (để cm)</td><td>$\tfrac12\cdot200\cdot0{,}02^2=0{,}04\ \text{J}$</td></tr>
-<tr><td>$\tfrac12\cdot200\cdot0{,}02=2\ \text{J}$ (quên mũ 2)</td><td>$0{,}04\ \text{J}=40\ \text{mJ}$</td></tr>
-<tr><td>$0{,}04\ \text{J}=0{,}04\ \text{mJ}$</td><td>J sang mJ: nhân 1000</td></tr>
+<tr><td>$\tfrac12\cdot200\cdot0{,}02=2\ \text{J}$ (quên mũ 2)</td><td>Giữ mũ 2: $0{,}02^2=0{,}0004$, ra $0{,}04\ \text{J}$</td></tr>
+<tr><td>$0{,}04\ \text{J}=0{,}04\ \text{mJ}$</td><td>$0{,}04\ \text{J}=40\ \text{mJ}$ (J sang mJ: nhân 1000)</td></tr>
 </tbody>
 </table>
 
@@ -223,6 +222,8 @@
 
 <p>Đề cho đồ thị năng lượng rồi hỏi chu kì dao động: đây là chỗ hay nhầm nhất.</p>
 
+<p>⚠ Khoảng lặp đọc trên đồ thị thế năng chính là $T/2$, không phải $T$.</p>
+
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl26-q6c" value="chac"> Chắc</label>
 <label><input type="radio" name="tl26-q6c" value="khong"> Không chắc</label></p>
@@ -232,7 +233,7 @@
 <input type="radio" name="tl26-q6" id="tl26-q6b"><label for="tl26-q6b" class="tl-opt tl-no">B. $0{,}125\ \text{s}$</label>
 <input type="radio" name="tl26-q6" id="tl26-q6c"><label for="tl26-q6c" class="tl-opt tl-no">C. $1{,}0\ \text{s}$</label>
 <input type="radio" name="tl26-q6" id="tl26-q6d"><label for="tl26-q6d" class="tl-opt tl-ok">D. $0{,}5\ \text{s}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thế năng có chu kì $T/2=0{,}25\ \text{s}$, nên $T=0{,}5\ \text{s}$. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thế năng có chu kì $T/2=0{,}25\ \text{s}$, nên $T=0{,}5\ \text{s}$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lấy luôn chu kì năng lượng làm chu kì dao động. B chia đôi, đi ngược chiều: năng lượng đổi <em>nhanh</em> hơn li độ. C nhân 4, lẫn với khoảng $T/4$ giữa hai lần $W_{\text{đ}}=W_t$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
@@ -268,7 +269,7 @@
 <thead><tr><th>Công thức</th><th>Góc nhập vào</th></tr></thead>
 <tbody>
 <tr><td>$\cos\alpha$ (mọi góc)</td><td>độ, máy tính để chế độ độ</td></tr>
-<tr><td>$\tfrac12 mgl\alpha_0^2$, $\alpha_0\sqrt{gl}$</td><td>rad, chỉ khi góc nhỏ (dưới $10^\circ$)</td></tr>
+<tr><td>$\tfrac12 mgl\alpha_0^2$, $\alpha_0\sqrt{gl}$</td><td>rad, chỉ khi góc nhỏ (khoảng $10^\circ$ trở xuống)</td></tr>
 </tbody>
 </table>
 
@@ -289,7 +290,7 @@
 <details class="tl-details"><summary>5. Con lắc đơn: cơ năng và tốc độ ở góc $\alpha$?</summary>
 <p>$W=mgl(1-\cos\alpha_0)$. $v=\sqrt{2gl(\cos\alpha-\cos\alpha_0)}$.</p></details>
 <details class="tl-details"><summary>6. Khi nào dùng $W\approx\tfrac12 mgl\alpha_0^2$? Góc tính bằng gì?</summary>
-<p>Góc nhỏ (dưới khoảng $10^\circ$). $\alpha_0$ tính bằng rad.</p></details>
+<p>Góc nhỏ (khoảng $10^\circ$ trở xuống). $\alpha_0$ tính bằng rad.</p></details>
 </div>
 
 <h3>V. Bài toán mẫu</h3>
@@ -319,7 +320,7 @@
 <ol class="tl-steps">
 <li>$\omega=\sqrt{\dfrac{100}{0{,}1}}=\sqrt{1000}=10\sqrt{10}\approx10\pi\ \text{rad/s}$ (lấy $\pi^2\approx10$), nên $f=\dfrac{\omega}{2\pi}=5\ \text{Hz}$.</li>
 <li>a) $W=\tfrac12\cdot100\cdot0{,}04^2=0{,}08\ \text{J}=80\ \text{mJ}$.</li>
-<li>b) $n+1=4$: $x=\pm\dfrac{4}{\sqrt4}=\pm2\ \text{cm}$.</li>
+<li>b) $n+1=4$: $x=\pm\dfrac{4}{\sqrt4}=\pm2\ \text{cm}$. Đây chỉ là chia tỉ lệ nên giữ cm được, khi thế vào công thức năng lượng hay tốc độ mới phải đổi ra m.</li>
 <li>$W_{\text{đ}}=\tfrac34W=0{,}06\ \text{J}$, nên $v=\sqrt{\dfrac{2\cdot0{,}06}{0{,}1}}=\sqrt{1{,}2}\approx1{,}10\ \text{m/s}$.</li>
 <li>c) Động năng có tần số $2f=10\ \text{Hz}$.</li>
 </ol>
@@ -387,7 +388,7 @@
 <li>Đổi mét trước, bình phương sau</li>
 <li>$W_t$ dùng $x$; $W_{\text{đ}}=W-W_t$</li>
 <li>$W_{\text{đ}}=nW_t$: chia $\sqrt{n+1}$</li>
-<li>Năng lượng: chu kì $T/2$, tần số $2f$</li>
+<li>$W_{\text{đ}}$, $W_t$: chu kì $T/2$, tần số $2f$ ($W$ không đổi)</li>
 <li>Con lắc đơn: $1-\cos\alpha_0$; góc nhỏ đổi rad</li>
 <li>Đọc đề: gạch dữ kiện → gọi họ → tính → kiểm $W_t+W_{\text{đ}}=W$</li>
 </ul>
