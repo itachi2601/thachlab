@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Công suất điện, định luật Joule–Lenz",
+  "topic": "Công suất điện và nhiệt lượng Joule–Lenz",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Trên một ấm điện có ghi $220\\ \\text{V}-1210\\ \\text{W}$. Coi điện trở của ấm không đổi. Phát biểu nào sau đây đúng?</p>",
+    "options": [
+     "Ấm luôn tiêu thụ công suất $1210\\ \\text{W}$ dù mắc vào hiệu điện thế bao nhiêu.",
+     "Khi mắc vào $220\\ \\text{V}$, cường độ dòng điện qua ấm là $5{,}5\\ \\text{A}$ và điện trở của ấm là $40\\ \\Omega$.",
+     "Điện trở của ấm là $R=\\dfrac{U}{P}\\approx0{,}18\\ \\Omega$.",
+     "Khi mắc vào $110\\ \\text{V}$, ấm tiêu thụ công suất $605\\ \\text{W}$."
+    ],
+    "answer": 1,
+    "explanation": "<p>Số $1210\\ \\text{W}$ là công suất định mức, tức công suất ấm tiêu thụ khi mắc đúng $220\\ \\text{V}$.</p><p>Khi đó $I=\\dfrac{P}{U}=\\dfrac{1210}{220}=5{,}5\\ \\text{A}$ và $R=\\dfrac{U^2}{P}=\\dfrac{220^2}{1210}=40\\ \\Omega$. Đáp án B.</p><p>A sai: công suất thực tế thay đổi theo hiệu điện thế đặt vào.</p><p>C sai: $\\dfrac{U}{P}$ không phải công thức điện trở, đúng phải là $R=\\dfrac{U^2}{P}$.</p><p>D sai: với $R$ không đổi, $P'=P\\left(\\dfrac{U'}{U}\\right)^2=1210\\cdot\\dfrac{1}{4}=302{,}5\\ \\text{W}$, không phải giảm một nửa.</p>",
+    "topic": "Công suất định mức",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Nhầm công suất định mức với công suất thực tế; công suất chỉ bằng định mức khi mắc đúng hiệu điện thế định mức.",
+     "C": "Ghép sai công thức R = U/P; đúng phải là R = U²/P.",
+     "D": "Cho rằng P tỉ lệ bậc nhất với U; thực tế khi R không đổi thì P tỉ lệ với U², U giảm một nửa thì P giảm 4 lần."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một ti vi có công suất $120\\ \\text{W}$, mỗi ngày dùng $5$ giờ. Đơn giá điện là $2500$ đồng/kWh. Số tiền điện phải trả cho ti vi trong $30$ ngày là bao nhiêu?</p>",
+    "options": [
+     "$45\\,000\\,000$ đồng",
+     "$1\\,500$ đồng",
+     "$9\\,000$ đồng",
+     "$45\\,000$ đồng"
+    ],
+    "answer": 3,
+    "explanation": "<p>Điện năng tiêu thụ: $A=P\\cdot t=0{,}12\\ \\text{kW}\\cdot(5\\cdot30)\\ \\text{h}=18\\ \\text{kWh}$.</p><p>Tiền điện: $18\\cdot2500=45\\,000$ đồng. Đáp án D.</p><p>A sai vì giữ $P=120\\ \\text{W}$, ra $18\\,000$ \"Wh\" rồi nhân thẳng với đơn giá tính theo kWh.</p><p>B sai vì chỉ tính một ngày ($0{,}6\\ \\text{kWh}$). C sai vì quên nhân số giờ mỗi ngày ($0{,}12\\cdot30=3{,}6\\ \\text{kWh}$).</p>",
+    "topic": "Điện năng và tiền điện",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Không đổi W sang kW: lấy 18 000 Wh nhân với đơn giá tính theo kWh.",
+     "B": "Chỉ tính điện năng của một ngày (0,6 kWh), quên nhân 30 ngày.",
+     "C": "Quên nhân 5 giờ mỗi ngày, chỉ tính 0,12 kW × 30 h = 3,6 kWh."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Hai bóng đèn Đ$_1$ ($220\\ \\text{V}-100\\ \\text{W}$) và Đ$_2$ ($220\\ \\text{V}-25\\ \\text{W}$) được mắc nối tiếp vào hiệu điện thế $220\\ \\text{V}$. Coi điện trở các đèn không đổi. Phát biểu nào sau đây đúng?</p>",
+    "options": [
+     "Đèn Đ$_2$ sáng hơn, công suất tiêu thụ của Đ$_2$ là $16\\ \\text{W}$.",
+     "Đèn Đ$_1$ sáng hơn, công suất tiêu thụ của Đ$_1$ là $16\\ \\text{W}$.",
+     "Hai đèn sáng như nhau vì có cùng cường độ dòng điện chạy qua.",
+     "Đèn Đ$_2$ sáng hơn, công suất tiêu thụ của Đ$_2$ là $25\\ \\text{W}$."
+    ],
+    "answer": 0,
+    "explanation": "<p>$R_1=\\dfrac{220^2}{100}=484\\ \\Omega$, $R_2=\\dfrac{220^2}{25}=1936\\ \\Omega$.</p><p>$I=\\dfrac{220}{484+1936}=\\dfrac{1}{11}\\ \\text{A}$, nên $P_1=I^2R_1=4\\ \\text{W}$ và $P_2=I^2R_2=16\\ \\text{W}$.</p><p>Mắc nối tiếp thì $I$ như nhau, $P=I^2R$ nên đèn có điện trở lớn hơn (Đ$_2$) sáng hơn. Đáp án A.</p><p>B đổi nhầm vai trò hai đèn. C sai vì cùng $I$ nhưng khác $R$ nên khác công suất. D lấy công suất định mức thay cho công suất thực tế.</p>",
+    "topic": "Công suất thực tế khi mắc nối tiếp",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "B": "Cho rằng đèn có công suất định mức lớn hơn thì luôn sáng hơn và gán nhầm 16 W cho Đ1; thực tế P1 = 4 W.",
+     "C": "Cho rằng cùng dòng điện thì cùng độ sáng; công suất P = I²R còn phụ thuộc R.",
+     "D": "Lấy công suất định mức 25 W làm công suất thực tế, trong khi đèn không được mắc đúng 220 V."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Điện trở $R_0=12\\ \\Omega$ mắc nối tiếp với biến trở $R$ vào hiệu điện thế không đổi $U=24\\ \\text{V}$. Bỏ qua điện trở dây nối. Để công suất tiêu thụ trên biến trở bằng $9\\ \\text{W}$ thì giá trị của $R$ là</p>",
+    "options": [
+     "chỉ $R=12\\ \\Omega$.",
+     "$R=64\\ \\Omega$.",
+     "$R=4\\ \\Omega$ hoặc $R=36\\ \\Omega$.",
+     "chỉ $R=36\\ \\Omega$, vì khi $R<R_0$ thì công suất trên biến trở luôn nhỏ hơn $9\\ \\text{W}$."
+    ],
+    "answer": 2,
+    "explanation": "<p>$P_R=\\dfrac{U^2R}{(R+R_0)^2}=\\dfrac{576R}{(R+12)^2}=9\\Rightarrow(R+12)^2=64R$.</p><p>Khai triển: $R^2-40R+144=0\\Leftrightarrow(R-4)(R-36)=0$, nên $R=4\\ \\Omega$ hoặc $R=36\\ \\Omega$. Đáp án C.</p><p>A sai: $R=R_0=12\\ \\Omega$ cho công suất cực đại $P_{\\max}=\\dfrac{U^2}{4R_0}=12\\ \\text{W}$, không phải $9\\ \\text{W}$.</p><p>B sai vì dùng $P=\\dfrac{U^2}{R}$ với toàn bộ $24\\ \\text{V}$, bỏ qua $R_0$.</p><p>D sai: thử $R=4\\ \\Omega$ thì $I=1{,}5\\ \\text{A}$, $P_R=1{,}5^2\\cdot4=9\\ \\text{W}$. Mỗi giá trị $P_R<P_{\\max}$ ứng với hai giá trị $R$, có tích bằng $R_0^2=144$.</p>",
+    "topic": "Cực trị công suất trên biến trở",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "A": "Nhầm với điều kiện công suất cực đại R = R0; giá trị đó cho P_max = 12 W chứ không phải 9 W.",
+     "B": "Áp dụng P = U²/R cho biến trở với cả 24 V, quên rằng R0 chia một phần hiệu điện thế.",
+     "D": "Bỏ sót nghiệm R = 4 Ω; phương trình bậc hai có hai nghiệm nằm hai phía R0."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Trong một gia đình dùng mạng điện $220\\ \\text{V}$ có một bếp điện $220\\ \\text{V}-1000\\ \\text{W}$ và một nồi cơm điện $220\\ \\text{V}-600\\ \\text{W}$. Xét các phát biểu sau.</p>",
+    "statements": [
+     {
+      "text": "Các thiết bị điện trong nhà được mắc song song để mỗi thiết bị đều nhận hiệu điện thế $220\\ \\text{V}$ và hoạt động độc lập với nhau.",
+      "answer": true
+     },
+     {
+      "text": "Cầu chì bảo vệ mạch được mắc song song với các thiết bị cần bảo vệ.",
+      "answer": false
+     },
+     {
+      "text": "Ở quạt điện, phần điện năng biến thành nhiệt năng là năng lượng hao phí.",
+      "answer": true
+     },
+     {
+      "text": "Nếu bếp và nồi cơm cùng hoạt động đúng định mức trong $2$ giờ thì số chỉ công tơ tăng thêm $3200$ số.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: mắc song song nên mỗi thiết bị nhận đúng $220\\ \\text{V}$, tắt hay hỏng một thiết bị thì thiết bị khác vẫn chạy.</p><p>b) Sai: cầu chì mắc nối tiếp trên dây pha để ngắt mạch khi dòng điện quá lớn. Nếu mắc song song, nó không ngắt được dòng qua thiết bị.</p><p>c) Đúng: quạt cần cơ năng, nên nhiệt toả ra trên cuộn dây là hao phí.</p><p>d) Sai: $A=(1+0{,}6)\\ \\text{kW}\\cdot2\\ \\text{h}=3{,}2\\ \\text{kWh}$, tức công tơ tăng $3{,}2$ số. Con số $3200$ là kết quả tính bằng Wh, chưa đổi sang kWh.</p>",
+    "topic": "Mạng điện gia đình",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "0": "Mắc song song: cùng hiệu điện thế 220 V, các thiết bị hoạt động độc lập.",
+     "1": "Cầu chì phải mắc nối tiếp trên dây pha thì mới ngắt được dòng điện khi quá tải.",
+     "2": "Quạt cần cơ năng, nên nhiệt năng toả ra là hao phí.",
+     "3": "1,6 kW × 2 h = 3,2 kWh = 3,2 số; 3200 là số Wh, nhầm đơn vị."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một ấm điện $220\\ \\text{V}-1000\\ \\text{W}$ được mắc vào hiệu điện thế $220\\ \\text{V}$ để đun $1{,}5\\ \\text{kg}$ nước từ $25^\\circ\\text{C}$ đến sôi ở $100^\\circ\\text{C}$ thì mất $10$ phút. Nhiệt dung riêng của nước là $4200\\ \\text{J/(kg.K)}$. Coi điện trở của ấm không đổi.</p>",
+    "statements": [
+     {
+      "text": "Nhiệt lượng có ích để đun sôi lượng nước là $472\\,500\\ \\text{J}$.",
+      "answer": true
+     },
+     {
+      "text": "Hiệu suất của ấm là $78{,}75\\%$.",
+      "answer": true
+     },
+     {
+      "text": "Nếu hiệu điện thế chỉ còn $200\\ \\text{V}$ thì công suất của ấm khoảng $909\\ \\text{W}$.",
+      "answer": false
+     },
+     {
+      "text": "Ở $200\\ \\text{V}$, với cùng hiệu suất, thời gian đun sôi lượng nước trên khoảng $11$ phút.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $Q_{\\text{ích}}=1{,}5\\cdot4200\\cdot75=472\\,500\\ \\text{J}$.</p><p>b) Đúng: $A=1000\\cdot600=600\\,000\\ \\text{J}$, $H=\\dfrac{472\\,500}{600\\,000}=78{,}75\\%$.</p><p>c) Sai: $P'=1000\\cdot\\left(\\dfrac{200}{220}\\right)^2\\approx826\\ \\text{W}$. Con số $909\\ \\text{W}$ là kết quả khi coi $P$ tỉ lệ bậc nhất với $U$.</p><p>d) Sai: cần cùng điện năng $600\\,000\\ \\text{J}$ nên $t'=\\dfrac{600\\,000}{826{,}4}\\approx726\\ \\text{s}\\approx12{,}1$ phút. \"11 phút\" ứng với công suất sai $909\\ \\text{W}$.</p>",
+    "topic": "Hiệu suất ấm điện, công suất thực tế",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "Q = m·c·Δt = 1,5·4200·75 = 472 500 J.",
+     "1": "H = Q_ích/A = 472 500/600 000 = 78,75%.",
+     "2": "P tỉ lệ với U² khi R không đổi: khoảng 826 W, không phải 909 W.",
+     "3": "Thời gian tỉ lệ nghịch với công suất: 600·(220/200)² ≈ 726 s ≈ 12,1 phút."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một bếp điện $220\\ \\text{V}-1100\\ \\text{W}$ hoạt động đúng định mức. Dây nối từ ổ cắm đến bếp có tổng điện trở $0{,}4\\ \\Omega$. Tính nhiệt lượng toả ra trên dây nối trong $2$ giờ, theo đơn vị kJ.</p>",
+    "answer": "72",
+    "explanation": "<p>Bếp hoạt động đúng định mức nên $I=\\dfrac{P}{U}=\\dfrac{1100}{220}=5\\ \\text{A}$. Dòng điện này cũng chạy qua dây nối.</p><p>Theo định luật Joule–Lenz: $Q=I^2R_{\\text{dây}}t=5^2\\cdot0{,}4\\cdot7200=72\\,000\\ \\text{J}=72\\ \\text{kJ}$.</p><p>Bẫy 1: dùng $Q=\\dfrac{U^2t}{R_{\\text{dây}}}$ với $U=220\\ \\text{V}$. Hiệu điện thế $220\\ \\text{V}$ đặt lên bếp, không phải lên dây nối, nên kết quả này sai rất lớn.</p><p>Bẫy 2: quên đổi $2$ giờ ra giây, ra $Q=20\\ \\text{J}$.</p>",
+    "topic": "Hao phí trên dây dẫn",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một ấm nhôm khối lượng $0{,}4\\ \\text{kg}$ chứa $2\\ \\text{kg}$ nước ở $20^\\circ\\text{C}$, được đun bằng bếp điện $220\\ \\text{V}-1500\\ \\text{W}$. Do sụt áp, hiệu điện thế thực tế chỉ còn $200\\ \\text{V}$. Coi điện trở của bếp không đổi. Hiệu suất truyền nhiệt từ bếp cho ấm và nước là $80\\%$. Nhiệt dung riêng của nước là $4200\\ \\text{J/(kg.K)}$, của nhôm là $880\\ \\text{J/(kg.K)}$. Tính thời gian đun sôi nước ($100^\\circ\\text{C}$), theo đơn vị phút, làm tròn đến $0{,}1$ phút.</p>",
+    "answer": "11,8",
+    "explanation": "<p>Nhiệt lượng có ích (cả nước và ấm): $Q=(2\\cdot4200+0{,}4\\cdot880)\\cdot80=8752\\cdot80=700\\,160\\ \\text{J}$.</p><p>Điện năng cần cung cấp: $A=\\dfrac{Q}{H}=\\dfrac{700\\,160}{0{,}8}=875\\,200\\ \\text{J}$.</p><p>Công suất thực tế: $P'=1500\\cdot\\left(\\dfrac{200}{220}\\right)^2\\approx1239{,}7\\ \\text{W}$.</p><p>Thời gian: $t=\\dfrac{875\\,200}{1239{,}7}\\approx706\\ \\text{s}\\approx11{,}8$ phút.</p><p>Các bẫy thường gặp:</p><p>– Bỏ nhiệt lượng làm nóng ấm: ra khoảng $11{,}3$ phút.</p><p>– Quên hiệu suất: ra khoảng $9{,}4$ phút.</p><p>– Dùng công suất định mức $1500\\ \\text{W}$: ra khoảng $9{,}7$ phút.</p>",
+    "topic": "Đun nước có kể ấm, sụt áp",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}

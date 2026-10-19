@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Âm thanh",
+  "topic": "Âm thanh",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Vật A thực hiện $660$ dao động trong $2\\ \\text{s}$. Vật B thực hiện $1500$ dao động trong $5\\ \\text{s}$. Cả hai vật đều phát ra âm truyền tới tai một người. Phát biểu nào sau đây đúng?</p>",
+    "options": [
+     "Âm do B phát ra cao hơn vì B thực hiện nhiều dao động hơn A.",
+     "Âm do B phát ra cao hơn vì chu kì dao động của B nhỏ hơn của A.",
+     "Âm do A phát ra cao hơn vì tần số của A là $330\\ \\text{Hz}$, lớn hơn tần số $300\\ \\text{Hz}$ của B.",
+     "Âm do A phát ra to hơn vì tần số dao động của A lớn hơn."
+    ],
+    "answer": 2,
+    "explanation": "<p>Tần số của A: $f_A=\\dfrac{N}{t}=\\dfrac{660}{2}=330\\ \\text{Hz}$.</p><p>Tần số của B: $f_B=\\dfrac{1500}{5}=300\\ \\text{Hz}$.</p><p>Tần số lớn hơn thì âm cao hơn, nên âm của A cao hơn. Đáp án C.</p><p>A sai vì so số dao động mà không chia cho thời gian; B dao động trong thời gian dài hơn.</p><p>B sai vì $T_B=\\dfrac{1}{300}\\ \\text{s}$ lớn hơn $T_A=\\dfrac{1}{330}\\ \\text{s}$.</p><p>D sai vì độ to phụ thuộc biên độ, không phụ thuộc tần số.</p>",
+    "topic": "Tần số, độ cao của âm",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "So tổng số dao động mà quên chia cho thời gian; tần số là số dao động trong 1 giây.",
+     "B": "Tính sai chu kì; T_B = 1/300 s thực ra lớn hơn T_A = 1/330 s.",
+     "D": "Nhầm âm cao với âm to; độ to do biên độ quyết định, không do tần số."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một người thấy tia chớp, sau đó $4{,}5\\ \\text{s}$ thì nghe tiếng sấm. Coi ánh sáng truyền tức thời so với âm. Tốc độ âm trong không khí là $340\\ \\text{m/s}$. Chỗ xảy ra sét cách người đó bao xa?</p>",
+    "options": [
+     "$765\\ \\text{m}$",
+     "$75{,}6\\ \\text{m}$",
+     "$6750\\ \\text{m}$",
+     "$1530\\ \\text{m}$"
+    ],
+    "answer": 3,
+    "explanation": "<p>Ánh sáng tới mắt gần như ngay lập tức. Vì vậy $4{,}5\\ \\text{s}$ là thời gian âm đi một chiều từ chỗ sét tới tai.</p><p>$s=v\\,t=340\\cdot4{,}5=1530\\ \\text{m}$. Đáp án D.</p><p>A sai vì chia đôi như bài tiếng vang, trong khi âm sấm chỉ đi một chiều.</p><p>B sai vì lấy $v/t$ thay cho $v\\cdot t$.</p><p>C sai vì dùng tốc độ âm trong nước ($1500\\ \\text{m/s}$).</p>",
+    "topic": "Tốc độ truyền âm – chớp và sấm",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Chia 2 như bài tiếng vang; âm sấm chỉ đi một chiều nên không chia.",
+     "B": "Lấy v chia t thay vì nhân; quãng đường là s = v·t.",
+     "C": "Dùng nhầm tốc độ âm trong nước 1500 m/s thay cho không khí."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một tàu dùng máy phát siêu âm hướng thẳng xuống đáy biển. Sau $1{,}6\\ \\text{s}$ kể từ lúc phát, máy thu được tín hiệu phản xạ từ đáy biển. Tốc độ siêu âm trong nước biển là $1500\\ \\text{m/s}$. Độ sâu của biển tại đó là</p>",
+    "options": [
+     "$2400\\ \\text{m}$",
+     "$1200\\ \\text{m}$",
+     "$272\\ \\text{m}$",
+     "$600\\ \\text{m}$"
+    ],
+    "answer": 1,
+    "explanation": "<p>Trong $1{,}6\\ \\text{s}$, siêu âm đi xuống đáy rồi phản xạ trở lại, tức là đi quãng đường $2d$.</p><p>$d=\\dfrac{v\\,t}{2}=\\dfrac{1500\\cdot1{,}6}{2}=1200\\ \\text{m}$. Đáp án B.</p><p>A sai vì quên chia 2, đây là bẫy thường gặp nhất.</p><p>C sai vì dùng tốc độ âm trong không khí $340\\ \\text{m/s}$.</p><p>D sai vì chia 4, tức là chia đôi thêm một lần không cần thiết.</p>",
+    "topic": "Đo độ sâu bằng siêu âm",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Quên chia 2; 1,6 s là thời gian đi và về.",
+     "C": "Dùng tốc độ âm trong không khí 340 m/s, trong khi siêu âm truyền trong nước.",
+     "D": "Chia 2 hai lần; quãng đường đi – về chỉ bằng 2d."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một ô tô chạy thẳng đều với tốc độ $20\\ \\text{m/s}$ về phía một vách núi. Khi ô tô bóp còi, sau $3\\ \\text{s}$ người lái nghe được tiếng vang từ vách núi. Tốc độ âm trong không khí là $340\\ \\text{m/s}$. Lúc nghe tiếng vang, ô tô cách vách núi bao nhiêu?</p>",
+    "options": [
+     "$480\\ \\text{m}$",
+     "$540\\ \\text{m}$",
+     "$510\\ \\text{m}$",
+     "$450\\ \\text{m}$"
+    ],
+    "answer": 0,
+    "explanation": "<p>Gọi $d$ là khoảng cách từ ô tô tới vách lúc bóp còi.</p><p>Âm đi tới vách rồi quay lại gặp xe; xe cũng tiến lại gần vách. Tổng quãng đường của âm và của xe bằng $2d$.</p><p>$(340+20)\\cdot3=2d$ nên $d=540\\ \\text{m}$.</p><p>Trong $3\\ \\text{s}$ xe đi được $20\\cdot3=60\\ \\text{m}$. Lúc nghe tiếng vang, xe cách vách $540-60=480\\ \\text{m}$. Đáp án A.</p><p>B là khoảng cách lúc bóp còi, chưa phải lúc nghe.</p><p>C bỏ qua chuyển động của xe: $\\dfrac{340\\cdot3}{2}=510\\ \\text{m}$.</p><p>D lấy kết quả sai $510\\ \\text{m}$ rồi trừ $60\\ \\text{m}$.</p>",
+    "topic": "Nguồn âm chuyển động và tiếng vang",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "B": "Trả lời khoảng cách lúc bóp còi, quên trừ quãng đường xe đã đi trong 3 s.",
+     "C": "Coi xe đứng yên, dùng d = vt/2 = 510 m.",
+     "D": "Coi xe đứng yên để có 510 m rồi mới trừ 60 m; hai bước mâu thuẫn nhau."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Xét các phát biểu sau về âm thanh. Lấy tốc độ âm trong không khí là $340\\ \\text{m/s}$; tiếng vang nghe được khi âm phản xạ tới tai chậm hơn âm trực tiếp ít nhất $\\dfrac{1}{15}\\ \\text{s}$.</p>",
+    "statements": [
+     {
+      "text": "Âm không truyền được trong chân không.",
+      "answer": true
+     },
+     {
+      "text": "Tai người bình thường nghe được âm có tần số $25\\,000\\ \\text{Hz}$.",
+      "answer": false
+     },
+     {
+      "text": "Gảy cùng một dây đàn mạnh hơn làm dây dao động với biên độ lớn hơn, nên âm phát ra to hơn.",
+      "answer": true
+     },
+     {
+      "text": "Một người đứng cách bức tường $8\\ \\text{m}$ vỗ tay thì nghe được tiếng vang tách biệt khỏi âm trực tiếp.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: âm cần môi trường rắn, lỏng hoặc khí để truyền.</p><p>b) Sai: $25\\,000\\ \\text{Hz}>20\\,000\\ \\text{Hz}$, đây là siêu âm, tai người không nghe được.</p><p>c) Đúng: biên độ dao động càng lớn thì âm càng to.</p><p>d) Sai: âm phản xạ chậm hơn âm trực tiếp $\\Delta t=\\dfrac{2\\cdot8}{340}\\approx0{,}047\\ \\text{s}<\\dfrac{1}{15}\\approx0{,}067\\ \\text{s}$. Muốn nghe tiếng vang phải đứng cách tường ít nhất khoảng $11{,}3\\ \\text{m}$.</p>",
+    "topic": "Sóng âm, độ to, tiếng vang",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "0": "Âm cần môi trường vật chất để truyền; chân không không truyền âm.",
+     "1": "Tai người nghe được 20 Hz – 20 000 Hz; 25 000 Hz là siêu âm.",
+     "2": "Độ to phụ thuộc biên độ; gảy mạnh thì biên độ lớn, âm to.",
+     "3": "Độ trễ 16/340 ≈ 0,047 s nhỏ hơn 1/15 s; cần khoảng cách từ khoảng 11,3 m trở lên."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một nguồn phát âm có tần số $680\\ \\text{Hz}$. Âm truyền trong không khí với tốc độ $340\\ \\text{m/s}$, sau đó đi vào nước, nơi tốc độ âm là $1500\\ \\text{m/s}$.</p>",
+    "statements": [
+     {
+      "text": "Bước sóng của âm trong không khí là $0{,}5\\ \\text{m}$.",
+      "answer": true
+     },
+     {
+      "text": "Khi vào nước, tần số của âm tăng lên vì tốc độ truyền âm tăng.",
+      "answer": false
+     },
+     {
+      "text": "Bước sóng của âm trong nước xấp xỉ $2{,}21\\ \\text{m}$.",
+      "answer": true
+     },
+     {
+      "text": "Âm đi quãng đường $30\\ \\text{m}$ trong nước mất $0{,}2\\ \\text{s}$.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $\\lambda_{kk}=\\dfrac{v}{f}=\\dfrac{340}{680}=0{,}5\\ \\text{m}$.</p><p>b) Sai: khi âm đổi môi trường, tần số do nguồn quyết định nên giữ nguyên. Chỉ tốc độ và bước sóng thay đổi.</p><p>c) Đúng: $\\lambda_n=\\dfrac{1500}{680}\\approx2{,}21\\ \\text{m}$.</p><p>d) Sai: $t=\\dfrac{30}{1500}=0{,}02\\ \\text{s}$. Con số $0{,}2\\ \\text{s}$ sai một bậc 10.</p>",
+    "topic": "Bước sóng và đổi môi trường",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "λ = v/f = 340/680 = 0,5 m.",
+     "1": "Tần số do nguồn quyết định, giữ nguyên khi đổi môi trường; tốc độ tăng thì bước sóng tăng.",
+     "2": "λ = 1500/680 ≈ 2,21 m.",
+     "3": "t = s/v = 30/1500 = 0,02 s, không phải 0,2 s."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một người đứng giữa hai vách núi song song, trên đường thẳng vuông góc với hai vách, rồi hét lên một tiếng. Người đó nghe tiếng vang thứ nhất sau $0{,}6\\ \\text{s}$ và tiếng vang thứ hai sau $1{,}4\\ \\text{s}$ kể từ lúc hét. Hai tiếng vang này lần lượt do âm phản xạ một lần trên vách gần và trên vách xa. Tốc độ âm trong không khí là $340\\ \\text{m/s}$. Khoảng cách giữa hai vách núi là bao nhiêu mét?</p>",
+    "answer": "340",
+    "explanation": "<p>Khoảng cách tới vách gần: $d_1=\\dfrac{340\\cdot0{,}6}{2}=102\\ \\text{m}$.</p><p>Khoảng cách tới vách xa: $d_2=\\dfrac{340\\cdot1{,}4}{2}=238\\ \\text{m}$.</p><p>Khoảng cách giữa hai vách: $d_1+d_2=102+238=340\\ \\text{m}$.</p><p>Bẫy 1: quên chia 2 sẽ ra $680\\ \\text{m}$.</p><p>Bẫy 2: lấy hiệu thời gian $0{,}8\\ \\text{s}$ để tính sẽ ra $136\\ \\text{m}$, sai vì người đứng giữa hai vách nên phải cộng hai khoảng cách.</p>",
+    "topic": "Tiếng vang và đo khoảng cách",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một người gõ mạnh vào một đầu ống thép dài. Người khác áp tai vào đầu kia của ống thì nghe được hai tiếng gõ cách nhau $0{,}5\\ \\text{s}$: một tiếng truyền qua thép, một tiếng truyền qua không khí. Tốc độ âm trong thép là $6000\\ \\text{m/s}$, trong không khí là $340\\ \\text{m/s}$. Chiều dài ống thép là bao nhiêu mét? Làm tròn đến $0{,}1\\ \\text{m}$.</p>",
+    "answer": "180,2",
+    "explanation": "<p>Âm qua thép tới trước, âm qua không khí tới sau.</p><p>Hiệu thời gian: $\\dfrac{L}{340}-\\dfrac{L}{6000}=0{,}5$.</p><p>Suy ra $L=\\dfrac{0{,}5\\cdot340\\cdot6000}{6000-340}=\\dfrac{1\\,020\\,000}{5660}\\approx180{,}2\\ \\text{m}$.</p><p>Bẫy 1: bỏ qua thời gian truyền trong thép, tính $L=340\\cdot0{,}5=170\\ \\text{m}$.</p><p>Bẫy 2: dùng hiệu tốc độ, tính $L=(6000-340)\\cdot0{,}5=2830\\ \\text{m}$. Cách này sai vì thời gian không tỉ lệ với hiệu tốc độ.</p>",
+    "topic": "Hai tiếng qua hai môi trường",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}

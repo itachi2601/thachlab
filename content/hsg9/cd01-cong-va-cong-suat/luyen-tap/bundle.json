@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Công và công suất",
+  "topic": "Công và công suất",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Trong các trường hợp sau, trường hợp nào có lực thực hiện công cơ học?</p>",
+    "options": [
+     "Một người đứng yên, giơ thùng hàng nặng trên đầu trong $5$ phút.",
+     "Lực kéo của đầu máy làm đoàn tàu chạy trên đường ray nằm ngang.",
+     "Trọng lực tác dụng lên quả bóng đang lăn trên sân nằm ngang.",
+     "Áp lực của mặt bàn nằm ngang lên quyển sách đang trượt trên mặt bàn."
+    ],
+    "answer": 1,
+    "explanation": "<p>Lực sinh công khi có lực tác dụng vào vật và vật dịch chuyển theo phương không vuông góc với phương của lực.</p><p>Lực kéo của đầu máy cùng phương với chuyển động của đoàn tàu nên sinh công. Đáp án B.</p><p>A sai: thùng hàng không dịch chuyển nên không có công cơ học, dù người rất mỏi.</p><p>C sai: trọng lực thẳng đứng, quả bóng dịch chuyển theo phương ngang, hai phương vuông góc nên trọng lực không sinh công.</p><p>D sai: lực mặt bàn tác dụng lên sách (phản lực) có phương thẳng đứng, vuông góc với phương dịch chuyển ngang nên không sinh công.</p>",
+    "topic": "Điều kiện có công cơ học",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Đồng nhất cảm giác mỏi với công cơ học; vật không dịch chuyển thì không có công.",
+     "C": "Cho rằng hễ có lực và có chuyển động là có công, bỏ qua điều kiện phương lực không vuông góc với phương dịch chuyển.",
+     "D": "Không nhận ra phản lực có phương thẳng đứng, vuông góc với phương dịch chuyển ngang."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một cần cẩu nâng đều một kiện hàng có khối lượng $600\\ \\text{kg}$ lên cao $15\\ \\text{m}$ trong thời gian $30\\ \\text{s}$. Công suất của cần cẩu khi nâng kiện hàng là</p>",
+    "options": [
+     "$300\\ \\text{W}$",
+     "$180\\ \\text{kW}$",
+     "$2{,}7\\ \\text{MW}$",
+     "$3\\ \\text{kW}$"
+    ],
+    "answer": 3,
+    "explanation": "<p>Trọng lượng kiện hàng: $P=10m=10\\cdot600=6000\\ \\text{N}$.</p><p>Công nâng: $A=P\\cdot h=6000\\cdot15=90\\,000\\ \\text{J}$.</p><p>Công suất: $\\mathcal{P}=\\dfrac{A}{t}=\\dfrac{90\\,000}{30}=3000\\ \\text{W}=3\\ \\text{kW}$. Đáp án D.</p><p>A sai do dùng khối lượng $600$ thay cho trọng lượng $6000\\ \\text{N}$. B sai do nhân trọng lượng với thời gian thay vì với độ cao. C sai do nhân công với thời gian thay vì chia.</p>",
+    "topic": "Công suất",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Quên đổi khối lượng sang trọng lượng (P = 10m), lấy 600·15/30.",
+     "B": "Nhầm quãng đường với thời gian: lấy 6000·30.",
+     "C": "Hiểu sai công thức công suất, lấy A·t thay vì A/t."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Dùng một palăng gồm một ròng rọc cố định và một ròng rọc động (có $2$ nhánh dây đỡ ròng rọc động) để kéo đều một vật khối lượng $45\\ \\text{kg}$ lên cao $3\\ \\text{m}$. Ròng rọc động có khối lượng $5\\ \\text{kg}$; bỏ qua ma sát và khối lượng dây. Hiệu suất của palăng là</p>",
+    "options": [
+     "$90\\%$",
+     "$100\\%$",
+     "$\\approx81{,}8\\%$",
+     "$\\approx88{,}9\\%$"
+    ],
+    "answer": 0,
+    "explanation": "<p>Lực kéo: $F=\\dfrac{P_v+P_{rr}}{2}=\\dfrac{450+50}{2}=250\\ \\text{N}$; đầu dây đi $s=2h=6\\ \\text{m}$.</p><p>$A_{toàn}=F\\cdot s=250\\cdot6=1500\\ \\text{J}$; $A_{ích}=P_v\\cdot h=450\\cdot3=1350\\ \\text{J}$.</p><p>$H=\\dfrac{1350}{1500}\\cdot100\\%=90\\%$. Kiểm tra: $A_{hp}=P_{rr}\\cdot h=50\\cdot3=150\\ \\text{J}$, $1350+150=1500\\ \\text{J}$. Đáp án A.</p><p>B sai: bỏ qua ma sát nhưng vẫn phải tốn công nâng ròng rọc động nên $H<100\\%$.</p><p>C sai: tính công nâng ròng rọc theo quãng đường dây $6\\ \\text{m}$ ($300\\ \\text{J}$) thay vì độ cao $3\\ \\text{m}$.</p><p>D sai: lấy $H=\\dfrac{P_v-P_{rr}}{P_v}$, tức chia công hao phí cho công có ích thay vì cho công toàn phần.</p>",
+    "topic": "Palăng kể khối lượng ròng rọc động",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "B": "Nghĩ bỏ qua ma sát là máy lí tưởng; quên công nâng ròng rọc động.",
+     "C": "Tính công nâng ròng rọc động theo quãng đường đầu dây s = 2h thay vì độ cao h.",
+     "D": "Lấy H = 1 − Ahp/Aích (chia cho công có ích) thay vì Aích/Atoàn."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một ô tô khối lượng $1{,}2$ tấn chạy đều lên một con dốc với vận tốc $36\\ \\text{km/h}$; cứ đi được $100\\ \\text{m}$ trên dốc thì ô tô lên cao thêm $4\\ \\text{m}$. Lực cản (ma sát) tác dụng lên xe có độ lớn không đổi $600\\ \\text{N}$, ngược chiều chuyển động. Công suất của động cơ là</p>",
+    "options": [
+     "$6\\ \\text{kW}$",
+     "$4{,}8\\ \\text{kW}$",
+     "$10{,}8\\ \\text{kW}$",
+     "$38{,}88\\ \\text{kW}$"
+    ],
+    "answer": 2,
+    "explanation": "<p>Xét quãng đường $l=100\\ \\text{m}$ trên dốc, xe lên cao $h=4\\ \\text{m}$. Trọng lượng xe $P=12\\,000\\ \\text{N}$.</p><p>Theo định luật về công: $F\\cdot l=P\\cdot h+F_{ms}\\cdot l$, suy ra $F=\\dfrac{12\\,000\\cdot4}{100}+600=480+600=1080\\ \\text{N}$.</p><p>$v=36\\ \\text{km/h}=10\\ \\text{m/s}$, nên $\\mathcal{P}=F\\cdot v=1080\\cdot10=10\\,800\\ \\text{W}=10{,}8\\ \\text{kW}$. Đáp án C.</p><p>A sai vì chỉ tính lực thắng ma sát (quên công nâng xe lên cao). B sai vì chỉ tính phần nâng xe (quên ma sát). D sai vì không đổi $36\\ \\text{km/h}$ sang $\\text{m/s}$.</p>",
+    "topic": "Công suất tức thời P = F.v",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "A": "Coi như xe chạy trên đường ngang, lực kéo chỉ bằng lực cản 600 N.",
+     "B": "Chỉ tính thành phần lực ứng với nâng xe lên cao P·h/l = 480 N, quên lực cản.",
+     "D": "Thay v = 36 vào công thức mà không đổi km/h sang m/s."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một thùng gỗ khối lượng $20\\ \\text{kg}$ được kéo trượt đều trên sàn nằm ngang bằng lực $50\\ \\text{N}$ có phương ngang. Thùng đi được $12\\ \\text{m}$ trong $20\\ \\text{s}$.</p>",
+    "statements": [
+     {
+      "text": "Công của lực kéo là $600\\ \\text{J}$.",
+      "answer": true
+     },
+     {
+      "text": "Công của trọng lực tác dụng lên thùng là $2400\\ \\text{J}$.",
+      "answer": false
+     },
+     {
+      "text": "Công suất trung bình của lực kéo là $30\\ \\text{W}$.",
+      "answer": true
+     },
+     {
+      "text": "Công của lực ma sát bằng $+600\\ \\text{J}$ vì độ lớn lực ma sát bằng độ lớn lực kéo.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $A=F\\cdot s=50\\cdot12=600\\ \\text{J}$.</p><p>b) Sai: trọng lực thẳng đứng, vuông góc với phương dịch chuyển ngang nên công của trọng lực bằng $0$. Con số $2400\\ \\text{J}$ là do nhân nhầm $200\\ \\text{N}\\cdot12\\ \\text{m}$.</p><p>c) Đúng: $\\mathcal{P}=\\dfrac{600}{20}=30\\ \\text{W}$.</p><p>d) Sai: thùng chuyển động đều nên $F_{ms}=50\\ \\text{N}$, nhưng lực ma sát ngược chiều dịch chuyển nên công của nó là $-600\\ \\text{J}$ (độ lớn $600\\ \\text{J}$).</p>",
+    "topic": "Công của lực kéo và lực ma sát",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "0": "A = F·s = 50·12 = 600 J, lực cùng phương dịch chuyển.",
+     "1": "Trọng lực vuông góc với phương dịch chuyển ngang nên không sinh công; nhân P·s là lỗi.",
+     "2": "P = A/t = 600/20 = 30 W.",
+     "3": "Lực ma sát ngược chiều dịch chuyển nên công âm: −600 J."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Người ta đẩy đều một kiện hàng khối lượng $80\\ \\text{kg}$ lên sàn xe tải theo một tấm ván nghiêng dài $5\\ \\text{m}$, đầu trên cao $1{,}2\\ \\text{m}$ so với mặt đất. Lực đẩy có phương dọc theo tấm ván, độ lớn $240\\ \\text{N}$. Lực ma sát giữa kiện hàng và ván có độ lớn không đổi.</p>",
+    "statements": [
+     {
+      "text": "Công có ích để đưa kiện hàng lên sàn xe là $960\\ \\text{J}$.",
+      "answer": true
+     },
+     {
+      "text": "Hiệu suất của mặt phẳng nghiêng là $75\\%$.",
+      "answer": false
+     },
+     {
+      "text": "Lực ma sát giữa kiện hàng và ván có độ lớn $240\\ \\text{N}$.",
+      "answer": false
+     },
+     {
+      "text": "Nếu bỏ qua ma sát thì lực đẩy cần thiết dọc theo ván là $192\\ \\text{N}$.",
+      "answer": true
+     }
+    ],
+    "explanation": "<p>a) Đúng: $A_{ích}=P\\cdot h=800\\cdot1{,}2=960\\ \\text{J}$.</p><p>b) Sai: $A_{toàn}=F\\cdot l=240\\cdot5=1200\\ \\text{J}$, nên $H=\\dfrac{960}{1200}\\cdot100\\%=80\\%$.</p><p>c) Sai: $A_{hp}=1200-960=240\\ \\text{J}$, nên $F_{ms}=\\dfrac{240}{5}=48\\ \\text{N}$. Bẫy: nhầm lực ma sát bằng lực đẩy (chỉ đúng trên mặt ngang).</p><p>d) Đúng: lí tưởng $F=\\dfrac{P\\cdot h}{l}=\\dfrac{800\\cdot1{,}2}{5}=192\\ \\text{N}$.</p>",
+    "topic": "Mặt phẳng nghiêng có ma sát",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "Aích = P·h = 800·1,2 = 960 J.",
+     "1": "H = 960/1200 = 80%, không phải 75%.",
+     "2": "Trên mặt nghiêng lực đẩy phải thắng cả ma sát và thành phần nâng vật; Fms = 240 J / 5 m = 48 N.",
+     "3": "F lí tưởng = P·h/l = 960/5 = 192 N."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một máy bơm đưa $900$ lít nước lên bể chứa ở độ cao $12\\ \\text{m}$ trong thời gian $3$ phút. Hiệu suất của máy bơm là $75\\%$. Lấy $1$ lít nước có khối lượng $1\\ \\text{kg}$. Công suất toàn phần của máy bơm là bao nhiêu oát?</p>",
+    "answer": "800",
+    "explanation": "<p>Khối lượng nước $900\\ \\text{kg}$, trọng lượng $P=9000\\ \\text{N}$.</p><p>Công có ích: $A_{ích}=P\\cdot h=9000\\cdot12=108\\,000\\ \\text{J}$.</p><p>Công toàn phần: $A_{toàn}=\\dfrac{A_{ích}}{H}=\\dfrac{108\\,000}{0{,}75}=144\\,000\\ \\text{J}$.</p><p>$t=3$ phút $=180\\ \\text{s}$, nên $\\mathcal{P}=\\dfrac{144\\,000}{180}=800\\ \\text{W}$.</p><p>Bẫy: nhân với hiệu suất thay vì chia sẽ ra $450\\ \\text{W}$; quên đổi phút sang giây sẽ ra $48\\,000\\ \\text{W}$; chỉ tính công suất có ích sẽ ra $600\\ \\text{W}$.</p>",
+    "topic": "Hiệu suất và công suất máy bơm",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một palăng có $4$ nhánh dây song song trực tiếp đỡ một khung gồm hai ròng rọc động (mỗi ròng rọc động có khối lượng $2\\ \\text{kg}$) gắn cùng với vật nặng $92\\ \\text{kg}$, nên cả khung và vật cùng đi lên một độ cao. Người kéo đều đầu dây tự do bằng lực $260\\ \\text{N}$ để nâng vật lên cao $2\\ \\text{m}$. Bỏ qua khối lượng dây; ma sát ở các ổ trục là đáng kể. Hiệu suất của palăng là bao nhiêu phần trăm? Làm tròn đến $0{,}1\\%$.</p>",
+    "answer": "88,5",
+    "explanation": "<p>Có $n=4$ nhánh dây nên đầu dây đi $s=4h=8\\ \\text{m}$.</p><p>Công toàn phần: $A_{toàn}=F\\cdot s=260\\cdot8=2080\\ \\text{J}$.</p><p>Công có ích: $A_{ích}=P_v\\cdot h=920\\cdot2=1840\\ \\text{J}$.</p><p>$H=\\dfrac{1840}{2080}\\cdot100\\%\\approx88{,}5\\%$.</p><p>Kiểm tra: công nâng hai ròng rọc động $40\\cdot2=80\\ \\text{J}$, công thắng ma sát $2080-1840-80=160\\ \\text{J}$, tổng hao phí $240\\ \\text{J}$, khớp với $A_{toàn}-A_{ích}$.</p><p>Bẫy: tính công có ích gồm cả ròng rọc động ($960\\cdot2=1920\\ \\text{J}$) sẽ ra $\\approx92{,}3\\%$; lấy $s=h$ sẽ ra hiệu suất vượt $100\\%$, vô lí.</p>",
+    "topic": "Palăng có ma sát và ròng rọc động",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}

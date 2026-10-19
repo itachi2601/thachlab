@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Chuyển động và đồ thị",
+  "topic": "Chuyển động và đồ thị",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một ô tô đi nửa đầu quãng đường AB với vận tốc $40\\ \\text{km/h}$ và nửa sau quãng đường với vận tốc $60\\ \\text{km/h}$. Coi chuyển động trên mỗi nửa là đều. Vận tốc trung bình của ô tô trên cả quãng đường AB là bao nhiêu?</p>",
+    "options": [
+     "$50\\ \\text{km/h}$",
+     "$48\\ \\text{km/h}$",
+     "$24\\ \\text{km/h}$",
+     "Không xác định được vì chưa biết độ dài quãng đường AB."
+    ],
+    "answer": 1,
+    "explanation": "<p>Gọi $s$ là độ dài AB. Thời gian đi hết quãng đường là $t=\\dfrac{s/2}{40}+\\dfrac{s/2}{60}=\\dfrac{s}{80}+\\dfrac{s}{120}=\\dfrac{s}{48}$.</p><p>Vận tốc trung bình $v_{tb}=\\dfrac{s}{t}=48\\ \\text{km/h}$, đúng với công thức $v_{tb}=\\dfrac{2v_1v_2}{v_1+v_2}=\\dfrac{2\\cdot40\\cdot60}{100}=48\\ \\text{km/h}$. Đáp án B.</p><p>A là trung bình cộng. Kết quả này chỉ đúng khi hai chặng có thời gian bằng nhau. Ở đây chặng chậm kéo dài hơn nên $v_{tb}$ nhỏ hơn $50$.</p><p>C quên hệ số 2 trong công thức trung bình điều hoà.</p><p>D sai vì $s$ được rút gọn khi lập tỉ số.</p>",
+    "topic": "Vận tốc trung bình – chia nửa quãng đường",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Lấy trung bình cộng hai vận tốc; điều này chỉ đúng khi chia đều thời gian, không đúng khi chia đều quãng đường.",
+     "C": "Nhớ sai công thức thành v1·v2/(v1+v2), thiếu hệ số 2.",
+     "D": "Không nhận ra s bị triệt tiêu khi tính v_tb = s/t_tổng."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một đoàn tàu dài $150\\ \\text{m}$ chạy đều với vận tốc $54\\ \\text{km/h}$ qua một cây cầu dài $300\\ \\text{m}$. Thời gian tính từ lúc đầu tàu bắt đầu lên cầu đến lúc đuôi tàu rời khỏi cầu là bao nhiêu?</p>",
+    "options": [
+     "$10\\ \\text{s}$",
+     "$20\\ \\text{s}$",
+     "$30\\ \\text{s}$",
+     "$8{,}33\\ \\text{s}$"
+    ],
+    "answer": 2,
+    "explanation": "<p>Đổi đơn vị: $v=54\\ \\text{km/h}=\\dfrac{54}{3{,}6}=15\\ \\text{m/s}$.</p><p>Từ lúc đầu tàu lên cầu đến lúc đuôi tàu rời cầu, tàu đi được $s=L+S=150+300=450\\ \\text{m}$.</p><p>Thời gian $t=\\dfrac{450}{15}=30\\ \\text{s}$. Đáp án C.</p><p>A chỉ tính chiều dài tàu. B chỉ tính chiều dài cầu.</p><p>D lấy $450$ chia cho $54$ mà không đổi km/h sang m/s.</p>",
+    "topic": "Đoàn tàu qua cầu",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Coi quãng đường bằng chiều dài tàu (150 m), áp dụng cho trường hợp vượt vật đứng yên.",
+     "B": "Coi tàu là chất điểm, chỉ tính chiều dài cầu 300 m.",
+     "D": "Không đổi đơn vị, lấy 450 m chia cho 54 km/h."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Đồ thị vận tốc – thời gian của một xe gồm ba đoạn thẳng:</p><p>- Trong $10\\ \\text{s}$ đầu, vận tốc tăng đều từ $0$ đến $12\\ \\text{m/s}$.</p><p>- Trong $20\\ \\text{s}$ tiếp theo, vận tốc giữ không đổi $12\\ \\text{m/s}$.</p><p>- Trong $6\\ \\text{s}$ cuối, vận tốc giảm đều về $0$.</p><p>Quãng đường xe đi được trong cả $36\\ \\text{s}$ là bao nhiêu?</p>",
+    "options": [
+     "$432\\ \\text{m}$",
+     "$372\\ \\text{m}$",
+     "$240\\ \\text{m}$",
+     "$336\\ \\text{m}$"
+    ],
+    "answer": 3,
+    "explanation": "<p>Quãng đường bằng diện tích dưới đồ thị $v$–$t$.</p><p>Tam giác đầu: $\\dfrac{1}{2}\\cdot10\\cdot12=60\\ \\text{m}$. Hình chữ nhật: $20\\cdot12=240\\ \\text{m}$. Tam giác cuối: $\\dfrac{1}{2}\\cdot6\\cdot12=36\\ \\text{m}$.</p><p>Tổng $s=60+240+36=336\\ \\text{m}$. Đáp án D.</p><p>A coi xe chạy $12\\ \\text{m/s}$ suốt $36\\ \\text{s}$.</p><p>B quên nhân $\\dfrac{1}{2}$ cho tam giác cuối.</p><p>C chỉ tính đoạn vận tốc không đổi.</p>",
+    "topic": "Diện tích dưới đồ thị v–t",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Nhân vận tốc lớn nhất với tổng thời gian, bỏ qua các giai đoạn tăng/giảm tốc.",
+     "B": "Tính diện tích tam giác cuối như hình chữ nhật (quên hệ số 1/2).",
+     "C": "Cho rằng chỉ đoạn nằm ngang mới có quãng đường, bỏ qua diện tích hai tam giác."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Đúng $4$ giờ, kim giờ và kim phút của một đồng hồ chạy đều. Sau đó, lần đầu tiên hai kim nằm thẳng hàng ngược chiều nhau (tạo góc $180^\\circ$) là lúc mấy giờ? Làm tròn đến giây.</p>",
+    "options": [
+     "$4$ giờ $54$ phút $33$ giây",
+     "$4$ giờ $21$ phút $49$ giây",
+     "$4$ giờ $50$ phút",
+     "$4$ giờ $32$ phút $44$ giây"
+    ],
+    "answer": 0,
+    "explanation": "<p>Kim phút quay $6^\\circ$/phút, kim giờ quay $0{,}5^\\circ$/phút. Kim phút đuổi kim giờ với vận tốc tương đối $5{,}5^\\circ$/phút.</p><p>Lúc 4 giờ, kim giờ ở $120^\\circ$, đi trước kim phút $120^\\circ$. Để hai kim ngược chiều lần đầu, kim phút phải bắt kịp kim giờ rồi vượt thêm $180^\\circ$, tức là thu hẹp và vượt tổng cộng $120+180=300^\\circ$.</p><p>Thời gian cần: $t=\\dfrac{300}{5{,}5}\\approx54{,}545$ phút $\\approx54$ phút $33$ giây. Thời điểm là $4$ giờ $54$ phút $33$ giây. Đáp án A.</p><p>B là thời điểm hai kim trùng nhau ($\\dfrac{120}{5{,}5}$ phút).</p><p>C coi kim giờ đứng yên ở số 4.</p><p>D chỉ tính $\\dfrac{180}{5{,}5}$ phút, bỏ qua khoảng cách ban đầu $120^\\circ$.</p>",
+    "topic": "Bài toán kim đồng hồ",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "B": "Nhầm điều kiện ngược chiều với trùng nhau, chỉ tính 120/5,5 phút.",
+     "C": "Coi kim giờ đứng yên ở vạch số 4, nên kim phút chỉ cần đến vạch số 10.",
+     "D": "Quên khoảng cách góc ban đầu 120°, chỉ lấy 180°/5,5."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một canô chạy xuôi dòng từ bến A đến bến B cách nhau $72\\ \\text{km}$ mất $3$ giờ, rồi chạy ngược dòng từ B về A mất $4$ giờ. Coi vận tốc riêng của canô và vận tốc dòng nước không đổi.</p>",
+    "statements": [
+     {
+      "text": "Vận tốc của dòng nước là $3\\ \\text{km/h}$.",
+      "answer": true
+     },
+     {
+      "text": "Vận tốc riêng của canô (so với nước) là $20\\ \\text{km/h}$.",
+      "answer": false
+     },
+     {
+      "text": "Một chiếc bè thả trôi tự do từ A đến B mất $24$ giờ.",
+      "answer": true
+     },
+     {
+      "text": "Nếu dòng nước chảy mạnh hơn mà vận tốc riêng của canô giữ nguyên thì tổng thời gian đi và về giữa hai bến không đổi.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $v_x=\\dfrac{72}{3}=24\\ \\text{km/h}$, $v_{ng}=\\dfrac{72}{4}=18\\ \\text{km/h}$, nên $v_n=\\dfrac{24-18}{2}=3\\ \\text{km/h}$.</p><p>b) Sai: $v_t=\\dfrac{24+18}{2}=21\\ \\text{km/h}$.</p><p>c) Đúng: $t_{bè}=\\dfrac{72}{3}=24$ giờ. Kiểm tra lại: $\\dfrac{2\\cdot3\\cdot4}{4-3}=24$ giờ.</p><p>d) Sai: $t=\\dfrac{s}{v_t+v_n}+\\dfrac{s}{v_t-v_n}=\\dfrac{2sv_t}{v_t^2-v_n^2}$. Khi $v_n$ tăng, mẫu số giảm nên $t$ tăng. Phần thời gian tiết kiệm khi xuôi dòng nhỏ hơn phần thời gian mất thêm khi ngược dòng.</p>",
+    "topic": "Chuyển động trên dòng nước",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "0": "v_n = (v_x − v_ng)/2 = (24 − 18)/2 = 3 km/h.",
+     "1": "v_t = (v_x + v_ng)/2 = 21 km/h; dễ tính nhầm thành trung bình của thời gian hay lấy 72/3,6.",
+     "2": "Bè trôi theo nước với vận tốc v_n: 72/3 = 24 h.",
+     "3": "Tổng thời gian 2sv_t/(v_t² − v_n²) tăng khi v_n tăng; bẫy là nghĩ phần xuôi bù đúng phần ngược."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Hai thành phố A và B cách nhau $140\\ \\text{km}$. Lúc $6$ giờ, xe thứ nhất đi từ A về B với vận tốc $40\\ \\text{km/h}$. Lúc $7$ giờ, xe thứ hai đi từ B về A với vận tốc $60\\ \\text{km/h}$. Coi hai xe chuyển động thẳng đều trên cùng một đường thẳng.</p>",
+    "statements": [
+     {
+      "text": "Lúc $7$ giờ, khoảng cách giữa hai xe là $100\\ \\text{km}$.",
+      "answer": true
+     },
+     {
+      "text": "Hai xe gặp nhau lúc $8$ giờ tại điểm cách A $80\\ \\text{km}$.",
+      "answer": true
+     },
+     {
+      "text": "Chọn gốc toạ độ tại A, chiều dương từ A đến B, mốc thời gian lúc $6$ giờ thì phương trình toạ độ của xe thứ hai là $x_2=140-60t$ (km, h) với $t\\ge1$.",
+      "answer": false
+     },
+     {
+      "text": "Hai xe cách nhau $25\\ \\text{km}$ tại đúng một thời điểm là $7$ giờ $45$ phút.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: đến 7 giờ, xe 1 đã đi $40\\ \\text{km}$, nên khoảng cách còn lại là $140-40=100\\ \\text{km}$.</p><p>b) Đúng: $x_1=40t$ và $x_2=140-60(t-1)$. Cho $x_1=x_2$: $40t=200-60t$, suy ra $t=2$ h, tức 8 giờ. Khi đó $x=80\\ \\text{km}$.</p><p>c) Sai: xe 2 xuất phát muộn 1 giờ so với mốc nên phải viết $x_2=140-60(t-1)$. Biểu thức $140-60t$ coi như xe 2 chạy từ 6 giờ.</p><p>d) Sai: $|x_1-x_2|=|100t-200|=25$ cho $t=1{,}75$ h (7 giờ 45 phút) hoặc $t=2{,}25$ h (8 giờ 15 phút). Trước 7 giờ khoảng cách luôn lớn hơn $100\\ \\text{km}$ nên không có nghiệm nào khác. Bẫy thường gặp: quên trường hợp hai xe đã gặp nhau rồi ra xa nhau.</p>",
+    "topic": "Hai xe gặp nhau, xuất phát lệch giờ",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "0": "Xe 1 đi trước 1 giờ được 40 km nên còn cách 100 km lúc 7 giờ.",
+     "1": "Từ 7 giờ, hai xe ngược chiều: t = 100/(40 + 60) = 1 h, gặp lúc 8 giờ tại 40 + 40 = 80 km.",
+     "2": "Xuất phát lệch giờ phải viết (t − 1) trong phương trình toạ độ.",
+     "3": "Có hai thời điểm: trước khi gặp (7 giờ 45) và sau khi gặp (8 giờ 15)."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một người đi xe máy từ A đến B. Nửa đầu quãng đường người đó đi với vận tốc $20\\ \\text{km/h}$. Trên nửa quãng đường còn lại, nửa thời gian đầu người đó đi với vận tốc $36\\ \\text{km/h}$, nửa thời gian sau đi với vận tốc $24\\ \\text{km/h}$. Vận tốc trung bình của người đó trên cả quãng đường AB là bao nhiêu km/h?</p>",
+    "answer": "24",
+    "explanation": "<p>Trên nửa sau, hai khoảng thời gian bằng nhau nên vận tốc trung bình của chặng này là $\\dfrac{36+24}{2}=30\\ \\text{km/h}$.</p><p>Cả quãng đường gồm hai nửa bằng nhau với vận tốc $20$ và $30\\ \\text{km/h}$: $v_{tb}=\\dfrac{2\\cdot20\\cdot30}{20+30}=24\\ \\text{km/h}$.</p><p>Bẫy 1: lấy trung bình cộng ba vận tốc $\\dfrac{20+36+24}{3}\\approx26{,}7\\ \\text{km/h}$.</p><p>Bẫy 2: lấy $\\dfrac{20+30}{2}=25\\ \\text{km/h}$, trong khi hai nửa quãng đường có thời gian khác nhau.</p>",
+    "topic": "Vận tốc trung bình nhiều chặng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Tàu thứ nhất dài $180\\ \\text{m}$ chạy với vận tốc $72\\ \\text{km/h}$ đuổi theo tàu thứ hai dài $120\\ \\text{m}$ chạy cùng chiều với vận tốc $54\\ \\text{km/h}$ trên hai đường ray song song. Tính thời gian (giây) từ lúc đầu tàu thứ nhất ngang đuôi tàu thứ hai đến lúc đuôi tàu thứ nhất vượt qua đầu tàu thứ hai.</p>",
+    "answer": "60",
+    "explanation": "<p>Đổi đơn vị: $v_1=20\\ \\text{m/s}$, $v_2=15\\ \\text{m/s}$. Vận tốc tương đối khi cùng chiều là $20-15=5\\ \\text{m/s}$.</p><p>Quãng đường tương đối phải vượt là $L_1+L_2=180+120=300\\ \\text{m}$.</p><p>Thời gian $t=\\dfrac{300}{5}=60\\ \\text{s}$.</p><p>Bẫy 1: cộng vận tốc như khi ngược chiều, ra $\\dfrac{300}{35}\\approx8{,}6\\ \\text{s}$.</p><p>Bẫy 2: chỉ lấy chiều dài một tàu, ra $36\\ \\text{s}$ hoặc $24\\ \\text{s}$.</p>",
+    "topic": "Hai đoàn tàu cùng chiều vượt nhau",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   }
+  ]
+ }
+}

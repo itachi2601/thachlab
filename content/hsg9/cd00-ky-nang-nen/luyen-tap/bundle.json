@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Kỹ năng nền",
+  "topic": "Kỹ năng nền",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Dùng phân tích đơn vị (thứ nguyên) để kiểm tra. Trong các biểu thức sau ($U$ là hiệu điện thế, $I$ là cường độ dòng điện, $R$ là điện trở, $t$ là thời gian, $A$ là công), biểu thức nào có cùng đơn vị với công suất (oát, $\\text{W}$)?</p>",
+    "options": [
+     "$I^2\\cdot R\\cdot t$",
+     "$\\dfrac{U^2}{R}$",
+     "$\\dfrac{U}{I^2}$",
+     "$A\\cdot t$"
+    ],
+    "answer": 1,
+    "explanation": "<p>Thay đơn vị vào: $\\dfrac{\\text{V}^2}{\\Omega}=\\dfrac{\\text{V}^2}{\\text{V}/\\text{A}}=\\text{V}\\cdot\\text{A}=\\text{W}$. Đáp án B.</p><p>A sai: $\\text{A}^2\\cdot\\Omega\\cdot\\text{s}=\\text{W}\\cdot\\text{s}=\\text{J}$. Đây là đơn vị của điện năng, không phải công suất.</p><p>C sai: $\\dfrac{\\text{V}}{\\text{A}^2}=\\dfrac{\\Omega}{\\text{A}}$, không phải một đại lượng quen thuộc nào.</p><p>D sai: $\\text{J}\\cdot\\text{s}$. Công suất là công chia cho thời gian, không phải công nhân với thời gian.</p>",
+    "topic": "Phân tích đơn vị",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Nhầm công thức điện năng (có nhân t) với công suất; I²Rt có đơn vị J.",
+     "C": "Nhớ sai dạng P = I²R thành U/I²; đơn vị Ω/A không phải W.",
+     "D": "Nhầm P = A/t thành A·t; đơn vị J·s không phải W."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một điện trở $R_0=10\\ \\Omega$ mắc nối tiếp với một biến trở $R$ vào nguồn có hiệu điện thế không đổi $12\\ \\text{V}$. Bỏ qua điện trở dây nối. Ban đầu $R=10\\ \\Omega$. Khi tăng $R$ lên $20\\ \\Omega$ thì cường độ dòng điện trong mạch là bao nhiêu?</p>",
+    "options": [
+     "$0{,}3\\ \\text{A}$, vì $R$ tăng gấp đôi nên $I$ giảm một nửa.",
+     "$1{,}2\\ \\text{A}$, vì $I=\\dfrac{U}{R_0}$ không phụ thuộc biến trở.",
+     "$0{,}4\\ \\text{A}$",
+     "$0{,}6\\ \\text{A}$, vì hiệu điện thế nguồn không đổi nên dòng điện không đổi."
+    ],
+    "answer": 2,
+    "explanation": "<p>Mạch nối tiếp nên $I=\\dfrac{U}{R_0+R}$. Đây là quan hệ tỉ lệ nghịch với tổng, không phải tỉ lệ nghịch với $R$.</p><p>Ban đầu $I_1=\\dfrac{12}{10+10}=0{,}6\\ \\text{A}$. Lúc sau $I_2=\\dfrac{12}{10+20}=0{,}4\\ \\text{A}$. Đáp án C.</p><p>A sai: áp dụng $\\dfrac{I_2}{I_1}=\\dfrac{R_1}{R_2}$ như tỉ lệ nghịch đơn thuần. Thực tế điện trở toàn mạch chỉ tăng từ $20\\ \\Omega$ lên $30\\ \\Omega$, tức gấp $1{,}5$ lần chứ không phải gấp đôi.</p><p>B sai: bỏ quên biến trở trong điện trở toàn mạch.</p><p>D sai: hiệu điện thế không đổi nhưng điện trở toàn mạch tăng thì $I$ phải giảm.</p>",
+    "topic": "Tỉ lệ nghịch với tổng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Coi I tỉ lệ nghịch với R đơn thuần, viết I₂/I₁ = R₁/R₂; phải dùng tổng R₀ + R.",
+     "B": "Quên biến trở trong điện trở toàn mạch nối tiếp.",
+     "D": "Cho rằng U không đổi thì I không đổi, bỏ qua sự thay đổi của điện trở toàn mạch."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một học sinh dùng đồng hồ bấm giây có độ chia nhỏ nhất $0{,}01\\ \\text{s}$ để đo thời gian một viên bi lăn hết máng nghiêng. Năm lần đo được: $2{,}46\\ \\text{s}$; $2{,}52\\ \\text{s}$; $2{,}49\\ \\text{s}$; $2{,}51\\ \\text{s}$; $2{,}47\\ \\text{s}$. Sai số dụng cụ lấy bằng nửa độ chia nhỏ nhất. Sai số tuyệt đối bằng sai số ngẫu nhiên trung bình cộng với sai số dụng cụ, làm tròn lên đến một chữ số có nghĩa. Cách ghi kết quả nào đúng?</p>",
+    "options": [
+     "$t=2{,}49\\pm0{,}03\\ \\text{s}$",
+     "$t=2{,}49\\pm0{,}02\\ \\text{s}$",
+     "$t=2{,}5\\pm0{,}03\\ \\text{s}$",
+     "$t=2{,}49\\pm0{,}005\\ \\text{s}$"
+    ],
+    "answer": 0,
+    "explanation": "<p>Giá trị trung bình: $t_{tb}=\\dfrac{2{,}46+2{,}52+2{,}49+2{,}51+2{,}47}{5}=\\dfrac{12{,}45}{5}=2{,}49\\ \\text{s}$.</p><p>Độ lệch từng lần: $0{,}03;\\ 0{,}03;\\ 0;\\ 0{,}02;\\ 0{,}02$. Sai số ngẫu nhiên trung bình: $\\Delta t_{ng}=\\dfrac{0{,}10}{5}=0{,}02\\ \\text{s}$.</p><p>Sai số dụng cụ: $\\Delta t_{dc}=0{,}005\\ \\text{s}$. Sai số tuyệt đối: $\\Delta t=0{,}025\\ \\text{s}$, làm tròn lên thành $0{,}03\\ \\text{s}$.</p><p>Kết quả: $t=2{,}49\\pm0{,}03\\ \\text{s}$. Đáp án A.</p><p>B quên cộng sai số dụng cụ. C làm tròn giá trị trung bình không cùng hàng thập phân với sai số. D chỉ lấy sai số dụng cụ, bỏ sai số ngẫu nhiên.</p>",
+    "topic": "Sai số và ghi kết quả đo",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "B": "Chỉ lấy sai số ngẫu nhiên, quên cộng sai số dụng cụ 0,005 s.",
+     "C": "Làm tròn giá trị trung bình sai: phải giữ cùng hàng thập phân với sai số (hàng phần trăm).",
+     "D": "Chỉ lấy sai số dụng cụ, bỏ qua sai số ngẫu nhiên do các lần đo khác nhau."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Để xác định điện trở $R=\\dfrac{U}{I}$, một học sinh đo được $U=6{,}0\\pm0{,}1\\ \\text{V}$ và $I=0{,}50\\pm0{,}02\\ \\text{A}$. Dùng quy tắc: sai số tương đối của một thương bằng tổng các sai số tương đối. Sai số tuyệt đối làm tròn đến một chữ số có nghĩa. Kết quả đúng là:</p>",
+    "options": [
+     "$R=12{,}0\\pm0{,}1\\ \\Omega$",
+     "$R=12{,}0\\pm0{,}3\\ \\Omega$",
+     "$R=12\\pm5\\ \\Omega$",
+     "$R=12{,}0\\pm0{,}7\\ \\Omega$"
+    ],
+    "answer": 3,
+    "explanation": "<p>Giá trị: $R=\\dfrac{6{,}0}{0{,}50}=12{,}0\\ \\Omega$.</p><p>Sai số tương đối: $\\delta R=\\dfrac{0{,}1}{6{,}0}+\\dfrac{0{,}02}{0{,}50}\\approx0{,}0167+0{,}04=0{,}0567$.</p><p>Sai số tuyệt đối: $\\Delta R=R\\cdot\\delta R\\approx12\\cdot0{,}0567\\approx0{,}68\\ \\Omega$, làm tròn thành $0{,}7\\ \\Omega$.</p><p>Kết quả: $R=12{,}0\\pm0{,}7\\ \\Omega$. Đáp án D.</p><p>A cộng thẳng sai số tuyệt đối $0{,}1+0{,}02$, quy tắc này chỉ dùng cho phép cộng và phép trừ. B trừ hai sai số tương đối thay vì cộng. C chia hai sai số tuyệt đối cho nhau $\\dfrac{0{,}1}{0{,}02}=5$.</p>",
+    "topic": "Lan truyền sai số",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "A": "Cộng sai số tuyệt đối 0,1 + 0,02 ≈ 0,1; quy tắc này chỉ dùng cho phép cộng/trừ, phép chia phải cộng sai số tương đối.",
+     "B": "Lấy hiệu hai sai số tương đối (0,04 − 0,0167)·12 ≈ 0,3; với phép chia, sai số tương đối vẫn cộng lại.",
+     "C": "Áp dụng công thức R = U/I cho chính các sai số: ΔR = ΔU/ΔI = 5, sai về bản chất."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một xe chuyển động thẳng theo ba giai đoạn. Từ $0$ đến $10\\ \\text{s}$, vận tốc tăng đều từ $0$ đến $8\\ \\text{m/s}$. Từ $10\\ \\text{s}$ đến $30\\ \\text{s}$, xe chạy đều với vận tốc $8\\ \\text{m/s}$. Từ $30\\ \\text{s}$ đến $34\\ \\text{s}$, vận tốc giảm đều về $0$. Dùng ý nghĩa diện tích dưới đồ thị $v$–$t$ để xét các mệnh đề sau.</p>",
+    "statements": [
+     {
+      "text": "Quãng đường xe đi trong $10\\ \\text{s}$ đầu là $40\\ \\text{m}$.",
+      "answer": true
+     },
+     {
+      "text": "Quãng đường xe đi trong giai đoạn chạy đều là $240\\ \\text{m}$.",
+      "answer": false
+     },
+     {
+      "text": "Tổng quãng đường xe đi trong cả quá trình là $216\\ \\text{m}$.",
+      "answer": true
+     },
+     {
+      "text": "Vận tốc trung bình trên cả quá trình bằng $4\\ \\text{m/s}$ (trung bình cộng của vận tốc lớn nhất và nhỏ nhất).",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: diện tích tam giác $\\dfrac{1}{2}\\cdot10\\cdot8=40\\ \\text{m}$.</p><p>b) Sai: giai đoạn đều kéo dài $30-10=20\\ \\text{s}$, nên $s=8\\cdot20=160\\ \\text{m}$. Con số $240\\ \\text{m}$ là do lấy nhầm mốc $30\\ \\text{s}$ làm thời gian.</p><p>c) Đúng: giai đoạn cuối $\\dfrac{1}{2}\\cdot4\\cdot8=16\\ \\text{m}$. Tổng $40+160+16=216\\ \\text{m}$.</p><p>d) Sai: $v_{tb}=\\dfrac{s_{\\text{tổng}}}{t_{\\text{tổng}}}=\\dfrac{216}{34}\\approx6{,}35\\ \\text{m/s}$. Vận tốc trung bình không phải trung bình cộng các vận tốc.</p>",
+    "topic": "Diện tích dưới đồ thị v–t",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "Diện tích tam giác: ½·10·8 = 40 m.",
+     "1": "Nhầm thời điểm 30 s với khoảng thời gian; thời gian chạy đều chỉ là 20 s nên s = 160 m.",
+     "2": "Cộng diện tích ba phần: 40 + 160 + 16 = 216 m.",
+     "3": "Vận tốc trung bình là tổng quãng đường chia tổng thời gian (≈ 6,35 m/s), không phải trung bình cộng các vận tốc."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Xét tính đúng sai của các phép đổi đơn vị sau.</p>",
+    "statements": [
+     {
+      "text": "$72\\ \\text{km/h}=20\\ \\text{m/s}$.",
+      "answer": true
+     },
+     {
+      "text": "$1{,}5\\ \\text{kWh}=5{,}4\\cdot10^{6}\\ \\text{J}$.",
+      "answer": true
+     },
+     {
+      "text": "$0{,}5\\ \\text{mm}^2=5\\cdot10^{-4}\\ \\text{m}^2$.",
+      "answer": false
+     },
+     {
+      "text": "$250\\ \\text{mA}=2{,}5\\ \\text{A}$.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $72:3{,}6=20\\ \\text{m/s}$.</p><p>b) Đúng: $1{,}5\\cdot3{,}6\\cdot10^6=5{,}4\\cdot10^6\\ \\text{J}$.</p><p>c) Sai: $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$ nên $0{,}5\\ \\text{mm}^2=5\\cdot10^{-7}\\ \\text{m}^2$. Lỗi thường gặp là chỉ đổi theo $1\\ \\text{mm}=10^{-3}\\ \\text{m}$ mà quên bình phương.</p><p>d) Sai: $250\\ \\text{mA}=250\\cdot10^{-3}\\ \\text{A}=0{,}25\\ \\text{A}$.</p>",
+    "topic": "Đổi đơn vị",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "0": "1 m/s = 3,6 km/h nên 72 km/h = 72/3,6 = 20 m/s.",
+     "1": "1 kWh = 3,6·10⁶ J nên 1,5 kWh = 5,4·10⁶ J.",
+     "2": "Đơn vị diện tích phải bình phương hệ số: 1 mm² = 10⁻⁶ m², không phải 10⁻³ m².",
+     "3": "1 mA = 10⁻³ A nên 250 mA = 0,25 A; nhầm dịch dấu phẩy hai chữ số."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Khảo sát một bóng đèn sợi đốt, học sinh đo được: khi $U=2\\ \\text{V}$ thì $I=0{,}30\\ \\text{A}$; khi $U=6\\ \\text{V}$ thì $I=0{,}50\\ \\text{A}$. Coi đồ thị $I$–$U$ trong khoảng này gần đúng là đoạn thẳng. Dùng nội suy tuyến tính, hãy ước lượng cường độ dòng điện qua đèn khi $U=5\\ \\text{V}$ (đơn vị ampe, làm tròn đến $0{,}01\\ \\text{A}$).</p>",
+    "answer": "0,45",
+    "explanation": "<p>Nội suy tuyến tính: $I=I_1+(I_2-I_1)\\cdot\\dfrac{U-U_1}{U_2-U_1}$.</p><p>Thay số: $I=0{,}30+0{,}20\\cdot\\dfrac{5-2}{6-2}=0{,}30+0{,}15=0{,}45\\ \\text{A}$.</p><p>Bẫy: coi $I$ tỉ lệ thuận với $U$ rồi tính $I=0{,}50\\cdot\\dfrac{5}{6}\\approx0{,}42\\ \\text{A}$. Cách này sai vì đường thẳng nối hai điểm đo không đi qua gốc toạ độ, do điện trở đèn thay đổi theo nhiệt độ.</p>",
+    "topic": "Nội suy đồ thị",
+    "form": "bai_tap",
+    "difficulty": "de"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một điện trở $R_0$ chưa biết mắc nối tiếp với biến trở $R$ vào nguồn có hiệu điện thế $U$ không đổi chưa biết. Bỏ qua điện trở dây nối. Khi $R=4\\ \\Omega$ thì dòng điện trong mạch là $1{,}5\\ \\text{A}$; khi $R=10\\ \\Omega$ thì dòng điện là $0{,}9\\ \\text{A}$. Phải điều chỉnh biến trở đến giá trị bao nhiêu ôm để dòng điện trong mạch là $1{,}2\\ \\text{A}$? Làm tròn đến $0{,}01\\ \\Omega$.</p>",
+    "answer": "6,25",
+    "explanation": "<p>Viết định luật Ôm cho hai trạng thái: $U=1{,}5\\,(R_0+4)=0{,}9\\,(R_0+10)$.</p><p>Suy ra $1{,}5R_0+6=0{,}9R_0+9$, nên $0{,}6R_0=3$ và $R_0=5\\ \\Omega$. Khi đó $U=1{,}5\\cdot9=13{,}5\\ \\text{V}$.</p><p>Muốn $I=1{,}2\\ \\text{A}$ thì $R_0+R=\\dfrac{13{,}5}{1{,}2}=11{,}25\\ \\Omega$, suy ra $R=6{,}25\\ \\Omega$.</p><p>Bẫy: coi $I$ tỉ lệ nghịch với $R$, viết $\\dfrac{I_2}{I_1}=\\dfrac{R_1}{R_2}$, sẽ ra kết quả sai. Phải dùng tỉ lệ nghịch với tổng $R_0+R$.</p>",
+    "topic": "Rút tỉ số hai trạng thái",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}

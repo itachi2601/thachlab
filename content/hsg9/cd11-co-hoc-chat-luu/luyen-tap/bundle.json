@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Cơ học chất lưu",
+  "topic": "Cơ học chất lưu",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Ba bình có đáy phẳng nằm ngang, diện tích đáy bằng nhau. Bình 1 hình trụ thẳng đứng, bình 2 loe miệng (miệng rộng hơn đáy), bình 3 thóp miệng (miệng hẹp hơn đáy). Đổ nước vào cả ba bình sao cho mặt thoáng ở cùng độ cao so với đáy. Phát biểu nào sau đây đúng?</p>",
+    "options": [
+     "Bình 2 chứa nhiều nước nhất nên áp suất của nước lên đáy bình 2 lớn nhất.",
+     "Áp suất và áp lực của nước lên đáy ba bình đều như nhau.",
+     "Áp lực của nước lên đáy mỗi bình đều bằng trọng lượng nước chứa trong bình đó.",
+     "Bình 3 chứa ít nước nhất nên áp suất của nước lên đáy bình 3 nhỏ nhất."
+    ],
+    "answer": 1,
+    "explanation": "<p>Áp suất ở đáy là $p=d\\cdot h$. Áp suất này chỉ phụ thuộc trọng lượng riêng của chất lỏng và độ sâu, không phụ thuộc lượng nước hay hình dạng bình. Ba bình cùng $d$, cùng $h$ nên áp suất đáy như nhau.</p><p>Áp lực đáy là $F=p\\cdot S$. Ba bình có cùng $S$ nên áp lực đáy cũng như nhau. Đáp án B.</p><p>A và D sai vì gắn áp suất đáy với lượng nước trong bình. Áp suất đáy chỉ phụ thuộc độ sâu $h$.</p><p>C chỉ đúng với bình trụ thẳng đứng. Với bình loe miệng, $F_{\\text{đáy}}$ nhỏ hơn trọng lượng nước. Với bình thóp miệng, $F_{\\text{đáy}}$ lớn hơn trọng lượng nước.</p>",
+    "topic": "Áp suất, áp lực lên đáy bình",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Cho rằng áp suất đáy phụ thuộc lượng chất lỏng; thực ra p = d.h chỉ phụ thuộc độ sâu.",
+     "C": "Tổng quát hoá kết quả của bình trụ cho mọi bình; với bình loe hoặc thóp miệng thì F_đáy khác trọng lượng nước.",
+     "D": "Lại gắn áp suất với lượng nước; bình thóp miệng có cùng h nên có cùng áp suất đáy."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một thùng cao $1{,}5\\ \\text{m}$ đựng đầy dầu hỏa có khối lượng riêng $800\\ \\text{kg/m}^3$. Áp suất do dầu gây ra tại điểm $M$ cách đáy thùng $0{,}5\\ \\text{m}$ là bao nhiêu?</p>",
+    "options": [
+     "$4\\,000\\ \\text{Pa}$",
+     "$12\\,000\\ \\text{Pa}$",
+     "$8\\,000\\ \\text{Pa}$",
+     "$10\\,000\\ \\text{Pa}$"
+    ],
+    "answer": 2,
+    "explanation": "<p>Độ sâu của $M$ tính từ mặt thoáng là $h=1{,}5-0{,}5=1{,}0\\ \\text{m}$.</p><p>Trọng lượng riêng của dầu là $d=10\\cdot800=8\\,000\\ \\text{N/m}^3$.</p><p>Áp suất tại $M$: $p=d\\cdot h=8\\,000\\cdot1{,}0=8\\,000\\ \\text{Pa}$. Đáp án C.</p><p>A dùng nhầm khoảng cách tới đáy ($0{,}5\\ \\text{m}$) làm độ sâu.</p><p>B tính áp suất tại đáy thùng ($h=1{,}5\\ \\text{m}$), không phải tại $M$.</p><p>D dùng trọng lượng riêng của nước thay cho dầu.</p>",
+    "topic": "Áp suất chất lỏng p = d.h",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Lấy khoảng cách từ M tới đáy (0,5 m) làm h; h phải đo từ mặt thoáng xuống.",
+     "B": "Dùng chiều cao cả thùng 1,5 m, tức là tính áp suất ở đáy thay vì tại M.",
+     "D": "Dùng d = 10 000 N/m³ của nước thay cho d = 8 000 N/m³ của dầu."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Treo một vật đặc vào lực kế, ở ngoài không khí lực kế chỉ $5{,}4\\ \\text{N}$. Nhúng vật chìm hoàn toàn trong nước (khối lượng riêng $1\\,000\\ \\text{kg/m}^3$), vật không chạm đáy, lực kế chỉ $3{,}4\\ \\text{N}$. Khối lượng riêng của chất làm vật là</p>",
+    "options": [
+     "$2\\,700\\ \\text{kg/m}^3$",
+     "$1\\,700\\ \\text{kg/m}^3$",
+     "$1\\,588\\ \\text{kg/m}^3$",
+     "$27\\,000\\ \\text{kg/m}^3$"
+    ],
+    "answer": 0,
+    "explanation": "<p>Lực đẩy Archimedes: $F_A=P-P_{bk}=5{,}4-3{,}4=2\\ \\text{N}$.</p><p>Thể tích vật: $V=\\dfrac{F_A}{d_n}=\\dfrac{2}{10\\,000}=2\\cdot10^{-4}\\ \\text{m}^3$.</p><p>Khối lượng vật: $m=\\dfrac{P}{10}=0{,}54\\ \\text{kg}$. Suy ra $D=\\dfrac{m}{V}=\\dfrac{0{,}54}{2\\cdot10^{-4}}=2\\,700\\ \\text{kg/m}^3$. Đáp án A.</p><p>B lấy số chỉ trong nước $3{,}4\\ \\text{N}$ làm trọng lượng vật.</p><p>C tính thể tích từ số chỉ trong nước, tức coi $3{,}4\\ \\text{N}$ là lực đẩy.</p><p>D quên chia cho $10$ khi đổi trọng lượng sang khối lượng.</p>",
+    "topic": "Lực đẩy Archimedes, trọng lượng biểu kiến",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "B": "Dùng số chỉ lực kế trong nước (3,4 N) làm trọng lượng: m = 0,34 kg, cho D = 1 700 kg/m³.",
+     "C": "Coi số chỉ trong nước là lực đẩy Archimedes, được V = 3,4·10⁻⁴ m³ và D ≈ 1 588 kg/m³.",
+     "D": "Lấy m = 5,4 kg (quên chia g), làm kết quả lớn gấp 10 lần."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một cục nước đá khối lượng $200\\ \\text{g}$, bên trong có một hòn sỏi khối lượng $30\\ \\text{g}$, khối lượng riêng $2\\,500\\ \\text{kg/m}^3$. Cục đá đang nổi trong một bình nước hình trụ có diện tích đáy $50\\ \\text{cm}^2$. Khi đá tan hết, hòn sỏi chìm xuống đáy. Khối lượng riêng của nước là $1\\,000\\ \\text{kg/m}^3$. So với lúc đá chưa tan, mực nước trong bình</p>",
+    "options": [
+     "không thay đổi.",
+     "hạ xuống $0{,}6\\ \\text{cm}$.",
+     "dâng lên $0{,}36\\ \\text{cm}$.",
+     "hạ xuống $0{,}36\\ \\text{cm}$."
+    ],
+    "answer": 3,
+    "explanation": "<p>Ban đầu cả khối nổi nên chiếm chỗ một thể tích nước là $V_1=\\dfrac{200+30}{1}=230\\ \\text{cm}^3$.</p><p>Sau khi tan, $200\\ \\text{g}$ nước đá thành $200\\ \\text{cm}^3$ nước. Hòn sỏi chìm, chỉ chiếm thể tích thực $\\dfrac{30}{2{,}5}=12\\ \\text{cm}^3$. Vậy $V_2=212\\ \\text{cm}^3$.</p><p>Phần thể tích chiếm chỗ giảm $\\Delta V=230-212=18\\ \\text{cm}^3$. Mực nước hạ $\\Delta h=\\dfrac{18}{50}=0{,}36\\ \\text{cm}$. Đáp án D.</p><p>A sai: kết luận \"không đổi\" chỉ đúng khi dị vật nhẹ hơn nước.</p><p>B coi như phần chiếm chỗ $30\\ \\text{cm}^3$ của sỏi mất hẳn, quên rằng sỏi vẫn chiếm $12\\ \\text{cm}^3$.</p><p>C tính đúng độ lớn nhưng nhầm chiều thay đổi.</p>",
+    "topic": "Nước đá chứa dị vật tan chảy",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "A": "Áp dụng máy móc kết luận 'đá tan mực nước không đổi'; kết luận này sai khi dị vật nặng hơn nước.",
+     "B": "Lấy Δh = m_v/(D_n·S) = 30/50, quên phần thể tích thực 12 cm³ mà sỏi vẫn chiếm khi nằm ở đáy.",
+     "C": "Nghĩ sỏi chìm thì chiếm thêm chỗ nên nước dâng; thực ra lúc nổi nó chiếm chỗ nhiều hơn (30 cm³ so với 12 cm³)."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một bình thông nhau hình chữ U có hai nhánh giống nhau, tiết diện mỗi nhánh $8\\ \\text{cm}^2$, đang chứa nước (khối lượng riêng $1\\,000\\ \\text{kg/m}^3$). Đổ dầu (khối lượng riêng $800\\ \\text{kg/m}^3$) vào nhánh trái cho tới khi cột dầu cao $15\\ \\text{cm}$. Dầu không hòa tan trong nước và không tràn sang nhánh phải.</p>",
+    "statements": [
+     {
+      "text": "Mặt thoáng của dầu ở nhánh trái cao hơn mặt thoáng của nước ở nhánh phải $3\\ \\text{cm}$.",
+      "answer": true
+     },
+     {
+      "text": "Mực nước ở nhánh phải dâng lên $12\\ \\text{cm}$ so với lúc chưa đổ dầu.",
+      "answer": false
+     },
+     {
+      "text": "Khối lượng dầu đã đổ vào là $96\\ \\text{g}$.",
+      "answer": true
+     },
+     {
+      "text": "Áp suất tại đáy nhánh trái lớn hơn áp suất tại đáy nhánh phải vì nhánh trái có thêm cột dầu.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>Chọn mặt phẳng chuẩn qua mặt phân cách dầu – nước ở nhánh trái. Điều kiện cân bằng áp suất: $d_d h_d=d_n h_n$. Suy ra $h_n=\\dfrac{8\\,000\\cdot15}{10\\,000}=12\\ \\text{cm}$.</p><p>a) Đúng: độ chênh mặt thoáng là $15-12=3\\ \\text{cm}$.</p><p>b) Sai: hai nhánh cùng tiết diện nên nước nhánh trái hạ $x$ và nhánh phải dâng $x$, với $2x=12$. Vậy nước nhánh phải chỉ dâng $6\\ \\text{cm}$. Con số $12\\ \\text{cm}$ là độ cao cột nước tính từ mặt phẳng chuẩn.</p><p>c) Đúng: $V=15\\cdot8=120\\ \\text{cm}^3$, nên $m=0{,}8\\cdot120=96\\ \\text{g}$.</p><p>d) Sai: hai đáy nằm cùng một mặt phẳng ngang trong cùng khối nước đứng yên, nối thông nhau, nên áp suất bằng nhau.</p>",
+    "topic": "Bình thông nhau hai chất lỏng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "0": "d_d.h_d = d_n.h_n cho h_n = 12 cm, nên độ chênh là 15 − 12 = 3 cm.",
+     "1": "Nhầm h_n = 12 cm (tính từ mặt phân cách) với độ dâng; độ dâng thực tế là 12/2 = 6 cm.",
+     "2": "m = D.V = 0,8 g/cm³ · 120 cm³ = 96 g.",
+     "3": "Các điểm cùng mức ngang trong cùng chất lỏng đứng yên, liên thông, thì có áp suất bằng nhau."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một khối gỗ đặc thể tích $500\\ \\text{cm}^3$, khối lượng riêng $600\\ \\text{kg/m}^3$, được thả nổi tự do trên mặt nước (khối lượng riêng $1\\,000\\ \\text{kg/m}^3$).</p>",
+    "statements": [
+     {
+      "text": "Thể tích phần gỗ chìm trong nước là $300\\ \\text{cm}^3$.",
+      "answer": true
+     },
+     {
+      "text": "Lực đẩy Archimedes tác dụng lên khối gỗ là $5\\ \\text{N}$.",
+      "answer": false
+     },
+     {
+      "text": "Nếu thả khối gỗ vào dầu có khối lượng riêng $800\\ \\text{kg/m}^3$ thì gỗ vẫn nổi và thể tích phần chìm lớn hơn khi ở trong nước.",
+      "answer": true
+     },
+     {
+      "text": "Muốn dìm khối gỗ chìm hoàn toàn trong nước cần một lực ấn thẳng đứng xuống tối thiểu $3\\ \\text{N}$.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>Trọng lượng khối gỗ: $P=10\\cdot600\\cdot5\\cdot10^{-4}=3\\ \\text{N}$.</p><p>a) Đúng: $\\dfrac{V_{ch}}{V}=\\dfrac{600}{1\\,000}$, nên $V_{ch}=300\\ \\text{cm}^3$.</p><p>b) Sai: vật nổi cân bằng nên $F_A=P=3\\ \\text{N}$. Con số $5\\ \\text{N}$ là lực đẩy khi gỗ chìm hoàn toàn.</p><p>c) Đúng: $600&lt;800$ nên gỗ vẫn nổi trong dầu. Phần chìm $V_{ch}=\\dfrac{600}{800}\\cdot500=375\\ \\text{cm}^3$, lớn hơn $300\\ \\text{cm}^3$.</p><p>d) Sai: khi chìm hoàn toàn, $F_A=5\\ \\text{N}$. Lực ấn tối thiểu là $F=F_A-P=5-3=2\\ \\text{N}$.</p>",
+    "topic": "Điều kiện nổi, vật nổi tự do",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "0": "V_ch/V = D_v/D_n = 0,6, nên V_ch = 300 cm³.",
+     "1": "Dùng cả thể tích vật để tính F_A; khi vật nổi tự do thì F_A = P = 3 N.",
+     "2": "Chất lỏng nhẹ hơn thì vật phải chìm sâu hơn để lực đẩy vẫn cân bằng trọng lượng: 375 cm³.",
+     "3": "Nhầm lực ấn với trọng lượng vật; lực ấn đúng là F_A(max) − P = 2 N."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một bình hình trụ đứng có diện tích đáy $40\\ \\text{cm}^2$. Trong bình có lớp nước cao $25\\ \\text{cm}$, phía trên là lớp dầu cao $10\\ \\text{cm}$ (dầu không hòa tan trong nước). Khối lượng riêng của nước là $1\\,000\\ \\text{kg/m}^3$, của dầu là $800\\ \\text{kg/m}^3$. Tính áp lực của chất lỏng tác dụng lên đáy bình theo đơn vị niutơn, làm tròn đến $0{,}1\\ \\text{N}$.</p>",
+    "answer": "13,2",
+    "explanation": "<p>Áp suất ở đáy bằng tổng áp suất do hai lớp chất lỏng gây ra: $p=d_d h_d+d_n h_n=8\\,000\\cdot0{,}10+10\\,000\\cdot0{,}25=800+2\\,500=3\\,300\\ \\text{Pa}$.</p><p>Diện tích đáy: $S=40\\cdot10^{-4}=4\\cdot10^{-3}\\ \\text{m}^2$.</p><p>Áp lực lên đáy: $F=p\\cdot S=3\\,300\\cdot4\\cdot10^{-3}=13{,}2\\ \\text{N}$.</p><p>Bẫy 1: dùng tổng chiều cao $35\\ \\text{cm}$ với trọng lượng riêng của nước sẽ ra $14\\ \\text{N}$.</p><p>Bẫy 2: chỉ tính lớp nước sẽ ra $10\\ \\text{N}$.</p>",
+    "topic": "Áp lực đáy bình nhiều lớp chất lỏng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một khối gỗ đặc thể tích $400\\ \\text{cm}^3$ được buộc bằng sợi dây mảnh vào đáy một bình nước hình trụ có diện tích đáy $80\\ \\text{cm}^2$. Khi khối gỗ chìm hoàn toàn và đứng yên, lực căng dây là $1\\ \\text{N}$. Khối lượng riêng của nước là $1\\,000\\ \\text{kg/m}^3$. Dây bị đứt, khối gỗ nổi lên và nằm cân bằng trên mặt nước. Mực nước trong bình hạ xuống bao nhiêu xentimét? Làm tròn đến $0{,}01\\ \\text{cm}$.</p>",
+    "answer": "1,25",
+    "explanation": "<p>Khi gỗ bị giữ chìm hoàn toàn, lực đẩy là $F_A=d_n V=10\\,000\\cdot4\\cdot10^{-4}=4\\ \\text{N}$.</p><p>Cân bằng lực: $F_A=P+T$, suy ra $P=4-1=3\\ \\text{N}$.</p><p>Khi nổi tự do, $F_A'=P=3\\ \\text{N}$. Phần chìm là $V_{ch}=\\dfrac{3}{10\\,000}=3\\cdot10^{-4}\\ \\text{m}^3=300\\ \\text{cm}^3$.</p><p>Thể tích nước bị chiếm chỗ giảm $\\Delta V=400-300=100\\ \\text{cm}^3$, đúng bằng $\\dfrac{T}{d_n}$.</p><p>Mực nước hạ $\\Delta h=\\dfrac{100}{80}=1{,}25\\ \\text{cm}$.</p><p>Bẫy: lấy cả thể tích gỗ chia cho diện tích đáy ($\\dfrac{400}{80}=5\\ \\text{cm}$), quên rằng gỗ nổi vẫn chiếm chỗ $300\\ \\text{cm}^3$ nước.</p>",
+    "topic": "Lực căng dây và biến thiên mực nước",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}

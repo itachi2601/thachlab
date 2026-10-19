@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Động năng, thế năng, cơ năng",
+  "topic": "Động năng, thế năng, cơ năng",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một ô tô đang chuyển động thẳng. Nếu khối lượng của ô tô giữ nguyên còn vận tốc tăng gấp $3$ lần thì động năng của ô tô thay đổi thế nào?</p>",
+    "options": [
+     "Tăng gấp $3$ lần.",
+     "Tăng gấp $9$ lần.",
+     "Tăng gấp $6$ lần.",
+     "Không đổi vì khối lượng không đổi."
+    ],
+    "answer": 1,
+    "explanation": "<p>Động năng $W_đ=\\dfrac{1}{2}mv^2$ tỉ lệ với bình phương vận tốc.</p><p>Khi $v'=3v$ thì $W_đ'=\\dfrac{1}{2}m(3v)^2=9\\cdot\\dfrac{1}{2}mv^2=9W_đ$. Đáp án B.</p><p>A sai vì coi động năng tỉ lệ bậc nhất với $v$.</p><p>C sai vì nhân $3$ với $2$ thay vì bình phương.</p><p>D sai vì động năng phụ thuộc cả khối lượng lẫn vận tốc.</p>",
+    "topic": "Động năng phụ thuộc vận tốc",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Coi động năng tỉ lệ thuận với v. Thực tế động năng tỉ lệ với v² nên tăng 3² = 9 lần.",
+     "C": "Nhầm phép bình phương với phép nhân đôi (3·2 = 6) do thấy số 2 trong công thức.",
+     "D": "Cho rằng động năng chỉ phụ thuộc khối lượng, bỏ qua vai trò của vận tốc."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một hộp có khối lượng $2\\ \\text{kg}$ đặt trên nóc tủ cao $2{,}5\\ \\text{m}$ so với sàn nhà. Chọn mốc thế năng tại mặt bàn cao $0{,}8\\ \\text{m}$ so với sàn. Thế năng trọng trường của hộp là</p>",
+    "options": [
+     "$50\\ \\text{J}$",
+     "$16\\ \\text{J}$",
+     "$34\\ \\text{J}$",
+     "$66\\ \\text{J}$"
+    ],
+    "answer": 2,
+    "explanation": "<p>Độ cao của hộp so với mốc (mặt bàn) là $h=2{,}5-0{,}8=1{,}7\\ \\text{m}$.</p><p>$W_t=mgh=2\\cdot10\\cdot1{,}7=34\\ \\text{J}$. Đáp án C.</p><p>A sai vì tính theo mốc tại sàn ($h=2{,}5\\ \\text{m}$), không đúng mốc đề yêu cầu.</p><p>B sai vì dùng độ cao của mặt bàn ($0{,}8\\ \\text{m}$) làm độ cao của vật.</p><p>D sai vì cộng hai độ cao thay vì lấy hiệu.</p>",
+    "topic": "Thế năng và mốc thế năng",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Quên đổi mốc, vẫn tính độ cao so với sàn: 2·10·2,5 = 50 J.",
+     "B": "Lấy độ cao của mặt bàn làm độ cao của vật: 2·10·0,8 = 16 J.",
+     "D": "Cộng hai độ cao (2,5 + 0,8 = 3,3 m) thay vì lấy hiệu so với mốc."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Từ mặt đất, một quả bóng được ném thẳng đứng lên trên với vận tốc $12\\ \\text{m/s}$. Bỏ qua lực cản của không khí, chọn mốc thế năng tại mặt đất. Ở độ cao nào thì động năng của quả bóng bằng thế năng của nó?</p>",
+    "options": [
+     "$7{,}2\\ \\text{m}$",
+     "$1{,}8\\ \\text{m}$",
+     "$2{,}4\\ \\text{m}$",
+     "$3{,}6\\ \\text{m}$"
+    ],
+    "answer": 3,
+    "explanation": "<p>Cơ năng được bảo toàn và bằng $W=\\dfrac{1}{2}mv_0^2=mgh_{max}$, suy ra $h_{max}=\\dfrac{v_0^2}{2g}=\\dfrac{144}{20}=7{,}2\\ \\text{m}$.</p><p>Khi $W_đ=W_t$ thì $W=2W_t$, tức $mgh_{max}=2mgh$, nên $h=\\dfrac{h_{max}}{2}=3{,}6\\ \\text{m}$. Đáp án D.</p><p>A là độ cao cực đại, tại đó động năng bằng 0.</p><p>B là $\\dfrac{h_{max}}{4}$, sai do nhầm động năng bằng thế năng với vận tốc giảm còn một nửa.</p><p>C là $\\dfrac{h_{max}}{3}$, ứng với $W_đ=2W_t$.</p>",
+    "topic": "Vị trí động năng bằng thế năng",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Nhầm với độ cao cực đại, nơi động năng bằng 0 chứ không bằng thế năng.",
+     "B": "Hiểu sai rằng vận tốc giảm còn một nửa (động năng còn 1/4) thì động năng bằng thế năng.",
+     "C": "Chia cơ năng thành 3 phần, ứng với trường hợp Wđ = 2Wt chứ không phải Wđ = Wt."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một ô tô khối lượng $1200\\ \\text{kg}$ đang chạy trên đường ngang với vận tốc $54\\ \\text{km/h}$ thì hãm phanh. Coi lực hãm không đổi và bằng $6000\\ \\text{N}$, bỏ qua các lực cản khác. Quãng đường ô tô đi được từ lúc hãm phanh đến khi dừng lại là</p>",
+    "options": [
+     "$22{,}5\\ \\text{m}$",
+     "$45\\ \\text{m}$",
+     "$291{,}6\\ \\text{m}$",
+     "$1{,}5\\ \\text{m}$"
+    ],
+    "answer": 0,
+    "explanation": "<p>Đổi đơn vị: $v=54:3{,}6=15\\ \\text{m/s}$.</p><p>Động năng ban đầu $W_đ=\\dfrac{1}{2}\\cdot1200\\cdot15^2=135\\,000\\ \\text{J}$. Toàn bộ động năng này bị công của lực hãm triệt tiêu: $F\\cdot s=W_đ$.</p><p>$s=\\dfrac{135\\,000}{6000}=22{,}5\\ \\text{m}$. Đáp án A.</p><p>B sai vì quên hệ số $\\dfrac{1}{2}$ trong công thức động năng.</p><p>C sai vì không đổi $54\\ \\text{km/h}$ sang m/s.</p><p>D sai vì không bình phương vận tốc.</p>",
+    "topic": "Quãng đường phanh",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "B": "Quên hệ số 1/2, tính Wđ = mv² = 270 000 J nên ra quãng đường gấp đôi.",
+     "C": "Thay trực tiếp 54 km/h vào công thức mà không đổi sang m/s.",
+     "D": "Quên bình phương vận tốc: (1/2)·1200·15/6000 = 1,5 m."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một vật có khối lượng $0{,}5\\ \\text{kg}$ được thả rơi không vận tốc đầu từ độ cao $20\\ \\text{m}$ so với mặt đất. Bỏ qua lực cản không khí, chọn mốc thế năng tại mặt đất.</p>",
+    "statements": [
+     {
+      "text": "Thế năng của vật tại vị trí thả là $100\\ \\text{J}$.",
+      "answer": true
+     },
+     {
+      "text": "Khi vật xuống tới độ cao $5\\ \\text{m}$, động năng của vật là $25\\ \\text{J}$.",
+      "answer": false
+     },
+     {
+      "text": "Vận tốc của vật ngay trước khi chạm đất là $20\\ \\text{m/s}$.",
+      "answer": true
+     },
+     {
+      "text": "Nếu thay bằng vật khối lượng $1\\ \\text{kg}$ thả từ cùng độ cao thì vận tốc khi chạm đất lớn gấp đôi.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $W_t=mgh=0{,}5\\cdot10\\cdot20=100\\ \\text{J}$, đây cũng là cơ năng của vật.</p><p>b) Sai: ở độ cao $5\\ \\text{m}$ thì $W_t=0{,}5\\cdot10\\cdot5=25\\ \\text{J}$, nên $W_đ=100-25=75\\ \\text{J}$. Giá trị $25\\ \\text{J}$ là thế năng, không phải động năng.</p><p>c) Đúng: $v=\\sqrt{2gh}=\\sqrt{2\\cdot10\\cdot20}=20\\ \\text{m/s}$.</p><p>d) Sai: $v=\\sqrt{2gh}$ không phụ thuộc khối lượng, nên vận tốc vẫn là $20\\ \\text{m/s}$.</p>",
+    "topic": "Bảo toàn cơ năng khi vật rơi",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "0": "Wt = mgh = 0,5·10·20 = 100 J.",
+     "1": "Ở độ cao 5 m, thế năng mới là 25 J; động năng bằng 100 − 25 = 75 J.",
+     "2": "v = √(2gh) = √400 = 20 m/s.",
+     "3": "Vận tốc chạm đất không phụ thuộc khối lượng; khối lượng gấp đôi chỉ làm động năng gấp đôi."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một vật nhỏ khối lượng $2\\ \\text{kg}$ được thả nhẹ từ đỉnh một mặt phẳng nghiêng cao $3\\ \\text{m}$, có hình chiếu ngang dài $4\\ \\text{m}$ (chiều dài mặt nghiêng $5\\ \\text{m}$). Chân dốc nối liền với một mặt ngang. Hệ số ma sát giữa vật với mặt nghiêng và với mặt ngang đều là $\\mu=0{,}25$. Chọn mốc thế năng tại mặt ngang. Biết công của lực ma sát trên mặt nghiêng là $A_{ms}=\\mu mg\\cdot d$, với $d$ là hình chiếu ngang của quãng đường. Vận tốc làm tròn đến $0{,}01\\ \\text{m/s}$.</p>",
+    "statements": [
+     {
+      "text": "Công của lực ma sát khi vật trượt hết mặt nghiêng có độ lớn $20\\ \\text{J}$.",
+      "answer": true
+     },
+     {
+      "text": "Vận tốc của vật tại chân dốc xấp xỉ $7{,}75\\ \\text{m/s}$.",
+      "answer": false
+     },
+     {
+      "text": "Sau khi xuống chân dốc, vật trượt thêm $8\\ \\text{m}$ trên mặt ngang rồi dừng lại.",
+      "answer": true
+     },
+     {
+      "text": "Nếu thay bằng mặt nghiêng khác cũng cao $3\\ \\text{m}$ nhưng hình chiếu ngang $6\\ \\text{m}$ (cùng hệ số ma sát) thì vật vẫn dừng lại cách chân dốc $8\\ \\text{m}$.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: $A_{ms}=\\mu mg\\cdot d=0{,}25\\cdot2\\cdot10\\cdot4=20\\ \\text{J}$. Nếu lấy quãng đường $5\\ \\text{m}$ dọc mặt nghiêng sẽ ra sai $25\\ \\text{J}$.</p><p>b) Sai: cơ năng ban đầu $W_t=2\\cdot10\\cdot3=60\\ \\text{J}$. Tại chân dốc $W_đ=60-20=40\\ \\text{J}$, nên $v=\\sqrt{\\dfrac{2\\cdot40}{2}}=\\sqrt{40}\\approx6{,}32\\ \\text{m/s}$. Giá trị $7{,}75\\ \\text{m/s}=\\sqrt{60}$ là kết quả khi bỏ qua ma sát.</p><p>c) Đúng: trên mặt ngang, $F_{ms}=\\mu mg=5\\ \\text{N}$, nên $s=\\dfrac{40}{5}=8\\ \\text{m}$.</p><p>d) Sai: với dốc mới, $A_{ms}=0{,}25\\cdot20\\cdot6=30\\ \\text{J}$, tại chân dốc $W_đ=30\\ \\text{J}$, vật chỉ trượt thêm $\\dfrac{30}{5}=6\\ \\text{m}$. Dốc này có $\\dfrac{3}{6}=0{,}5>0{,}25$ nên vật vẫn tự trượt xuống được. Nhận xét: tổng hình chiếu ngang từ đỉnh tới chỗ dừng luôn là $\\dfrac{h}{\\mu}=12\\ \\text{m}$.</p>",
+    "topic": "Mặt phẳng nghiêng có ma sát",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "0": "Công ma sát trên mặt nghiêng tính theo hình chiếu ngang 4 m: 0,25·20·4 = 20 J, không phải theo chiều dài 5 m.",
+     "1": "7,75 m/s ứng với bỏ qua ma sát; khi có ma sát, Wđ = 40 J nên v = √40 ≈ 6,32 m/s.",
+     "2": "Toàn bộ 40 J động năng bị công ma sát 5 N triệt tiêu trên quãng đường 8 m.",
+     "3": "Dốc thoải hơn làm công ma sát trên dốc lớn hơn (30 J), vật chỉ còn trượt thêm 6 m."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Từ độ cao $15\\ \\text{m}$ so với mặt đất, một hòn đá được ném thẳng đứng xuống dưới với vận tốc ban đầu $5\\ \\text{m/s}$. Bỏ qua lực cản không khí. Vận tốc của hòn đá ngay trước khi chạm đất là bao nhiêu m/s? Làm tròn đến $0{,}01\\ \\text{m/s}$.</p>",
+    "answer": "18,03",
+    "explanation": "<p>Chọn mốc thế năng tại mặt đất.</p><p>Ở vị trí ném, cơ năng là $W_1=\\dfrac{1}{2}mv_0^2+mgh$. Ngay trước khi chạm đất, cơ năng là $W_2=\\dfrac{1}{2}mv^2$.</p><p>Bảo toàn cơ năng: $v^2=v_0^2+2gh=25+2\\cdot10\\cdot15=325$, nên $v=\\sqrt{325}\\approx18{,}03\\ \\text{m/s}$.</p><p>Bẫy thường gặp: cộng thẳng $v_0+\\sqrt{2gh}=5+\\sqrt{300}\\approx22{,}32\\ \\text{m/s}$ (cộng vận tốc thay vì cộng năng lượng), hoặc bỏ quên $v_0$ và ra $\\approx17{,}32\\ \\text{m/s}$.</p>",
+    "topic": "Ném thẳng đứng xuống",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Một máng gồm hai đoạn cong nhẵn (không ma sát) ở hai bên, nối với nhau bởi đoạn nằm ngang $AB$ dài $1{,}5\\ \\text{m}$; $A$ là chân máng cong bên trái, $B$ là chân máng cong bên phải. Hệ số ma sát giữa vật và đoạn $AB$ là $\\mu=0{,}25$. Thả nhẹ một vật nhỏ trên máng cong bên trái từ độ cao $2\\ \\text{m}$ so với $AB$. Vật trượt qua lại nhiều lần rồi dừng hẳn trên đoạn $AB$. Hỏi vị trí vật dừng lại cách điểm $B$ bao nhiêu mét? Làm tròn đến $0{,}01\\ \\text{m}$.</p>",
+    "answer": "0,5",
+    "explanation": "<p>Chọn mốc thế năng tại mặt $AB$. Cơ năng ban đầu là $W=mgh$. Trên hai máng cong không có ma sát, cơ năng chỉ bị mất trên $AB$. Vật dừng hẳn khi toàn bộ cơ năng đã chuyển thành nhiệt.</p><p>Gọi $s$ là tổng quãng đường vật đi trên $AB$: $mgh=\\mu mg\\cdot s$, suy ra $s=\\dfrac{h}{\\mu}=\\dfrac{2}{0{,}25}=8\\ \\text{m}$.</p><p>Ta có $8=5\\cdot1{,}5+0{,}5$, tức vật đi trọn $5$ lần chiều dài $AB$ rồi thêm $0{,}5\\ \\text{m}$.</p><p>Vật xuất phát từ $A$. Sau số lẻ lần (5 lần) đi hết $AB$, vật ở $B$, lên máng phải rồi quay lại, đi tiếp $0{,}5\\ \\text{m}$ theo hướng từ $B$ về $A$ thì dừng. Vậy vật dừng cách $B$ là $0{,}5\\ \\text{m}$ (cách $A$ là $1\\ \\text{m}$).</p><p>Bẫy: tính đúng $0{,}5\\ \\text{m}$ dư nhưng lại đo từ $A$, hoặc cho rằng vật dừng ngay khi tới một chân máng.</p>",
+    "topic": "Bài toán nhiều giai đoạn có ma sát",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}

@@ -1,0 +1,176 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Luyện tập — Lực",
+  "topic": "Lực",
+  "difficulty": "trung-binh",
+  "duration_minutes": 20,
+  "subject_code": "hsg-vat-ly",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một thùng hàng khối lượng $15\\ \\text{kg}$ đặt trên sàn nằm ngang. Hệ số ma sát nghỉ giữa thùng và sàn là $0{,}4$, hệ số ma sát trượt là $0{,}3$. Một người kéo thùng bằng lực nằm ngang $25\\ \\text{N}$ nhưng thùng vẫn đứng yên. Lực ma sát mà sàn tác dụng lên thùng có độ lớn bằng bao nhiêu?</p>",
+    "options": [
+     "$60\\ \\text{N}$",
+     "$25\\ \\text{N}$",
+     "$45\\ \\text{N}$",
+     "$0\\ \\text{N}$"
+    ],
+    "answer": 1,
+    "explanation": "<p>Thùng đứng yên nên hợp lực theo phương ngang bằng 0. Ma sát nghỉ cân bằng lực kéo: $F_{msn}=25\\ \\text{N}$, ngược chiều lực kéo.</p><p>Kiểm tra: ma sát nghỉ cực đại là $\\mu_nN=0{,}4\\cdot150=60\\ \\text{N}$, lớn hơn $25\\ \\text{N}$, nên thùng chưa trượt là hợp lí. Đáp án B.</p><p>A là giá trị cực đại $\\mu_nN$, chỉ đạt được khi thùng sắp trượt. C là $\\mu_tN=0{,}3\\cdot150=45\\ \\text{N}$, chỉ dùng khi thùng đang trượt. D sai vì nếu không có ma sát thì lực $25\\ \\text{N}$ đã làm thùng chuyển động.</p>",
+    "topic": "Ma sát nghỉ",
+    "form": "ly_thuyet",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Lấy ma sát nghỉ cực đại μN = 60 N làm ma sát đang có; khi vật đứng yên, ma sát nghỉ chỉ bằng lực kéo.",
+     "C": "Dùng công thức ma sát trượt μt·N = 45 N trong khi vật không trượt.",
+     "D": "Cho rằng vật đứng yên thì không có ma sát; thực tế ma sát nghỉ đang cân bằng lực kéo."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Hai lực $F_1=15\\ \\text{N}$ và $F_2=20\\ \\text{N}$ cùng đặt tại một điểm, phương của chúng vuông góc với nhau. Hợp lực của hai lực có độ lớn bằng bao nhiêu?</p>",
+    "options": [
+     "$35\\ \\text{N}$",
+     "$5\\ \\text{N}$",
+     "$25\\ \\text{N}$",
+     "Khoảng $13{,}2\\ \\text{N}$"
+    ],
+    "answer": 2,
+    "explanation": "<p>Hai lực vuông góc nên hợp lực là đường chéo hình chữ nhật: $R=\\sqrt{15^2+20^2}=\\sqrt{625}=25\\ \\text{N}$. Đáp án C.</p><p>A ($35\\ \\text{N}$) chỉ đúng khi hai lực cùng chiều. B ($5\\ \\text{N}$) chỉ đúng khi hai lực ngược chiều.</p><p>D là $\\sqrt{20^2-15^2}\\approx13{,}2\\ \\text{N}$: lấy hiệu thay vì tổng các bình phương. Kết quả này thậm chí nhỏ hơn $F_2$, trong khi hai lực vuông góc luôn cho hợp lực lớn hơn từng lực thành phần.</p>",
+    "topic": "Hợp lực hai lực vuông góc",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "A": "Cộng độ lớn như hai lực cùng chiều, bỏ qua phương của lực.",
+     "B": "Trừ độ lớn như hai lực ngược chiều.",
+     "D": "Dùng nhầm hiệu các bình phương √(20² − 15²) thay vì tổng các bình phương."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Hai lò xo nhẹ có độ cứng $k_1=60\\ \\text{N/m}$ và $k_2=40\\ \\text{N/m}$ được nối tiếp nhau thành một dây treo thẳng đứng. Treo vào đầu dưới một vật $0{,}6\\ \\text{kg}$. Khi vật đứng yên, tổng độ dãn của hệ hai lò xo bằng bao nhiêu?</p>",
+    "options": [
+     "$6\\ \\text{cm}$",
+     "$10\\ \\text{cm}$",
+     "$15\\ \\text{cm}$",
+     "$25\\ \\text{cm}$"
+    ],
+    "answer": 3,
+    "explanation": "<p>Ghép nối tiếp: $\\dfrac1k=\\dfrac1{60}+\\dfrac1{40}=\\dfrac{5}{120}$, nên $k=24\\ \\text{N/m}$.</p><p>Vật cân bằng: $k\\Delta l=mg=6\\ \\text{N}$, suy ra $\\Delta l=\\dfrac{6}{24}=0{,}25\\ \\text{m}=25\\ \\text{cm}$. Đáp án D.</p><p>Có thể kiểm tra theo từng lò xo: mỗi lò xo đều chịu lực $6\\ \\text{N}$, nên dãn $\\dfrac{6}{60}=10\\ \\text{cm}$ và $\\dfrac{6}{40}=15\\ \\text{cm}$. Tổng là $25\\ \\text{cm}$.</p><p>A dùng công thức ghép song song $k=100\\ \\text{N/m}$. B và C chỉ tính độ dãn của một lò xo.</p>",
+    "topic": "Ghép lò xo",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "A": "Dùng nhầm công thức ghép song song k = k1 + k2 = 100 N/m.",
+     "B": "Chỉ tính độ dãn của lò xo k1, quên cộng độ dãn của lò xo còn lại.",
+     "C": "Chỉ tính độ dãn của lò xo k2, quên cộng độ dãn của lò xo k1."
+    }
+   },
+   {
+    "type": "multiple_choice",
+    "question": "<p>Một chiếc đèn khối lượng $6\\ \\text{kg}$ được treo đứng yên bằng hai sợi dây nhẹ, đối xứng nhau. Mỗi dây hợp với phương nằm ngang một góc $30^\\circ$. Lực căng của mỗi dây là bao nhiêu? Lấy $\\cos30^\\circ\\approx0{,}866$.</p>",
+    "options": [
+     "$60\\ \\text{N}$",
+     "$30\\ \\text{N}$",
+     "Khoảng $34{,}6\\ \\text{N}$",
+     "$120\\ \\text{N}$"
+    ],
+    "answer": 0,
+    "explanation": "<p>Trọng lượng $P=60\\ \\text{N}$. Mỗi dây hợp với phương ngang góc $\\varphi=30^\\circ$, nên thành phần thẳng đứng của lực căng mỗi dây là $T\\sin30^\\circ$.</p><p>Cân bằng theo phương đứng: $2T\\sin30^\\circ=P$, suy ra $T=\\dfrac{60}{2\\cdot0{,}5}=60\\ \\text{N}$. Đáp án A.</p><p>B chia đôi trọng lượng như hai dây thẳng đứng. C dùng $\\cos30^\\circ$, tức coi $30^\\circ$ là góc với phương thẳng đứng. D là $\\dfrac{P}{\\sin30^\\circ}$, quên rằng có hai dây cùng gánh vật.</p>",
+    "topic": "Lực căng dây treo",
+    "form": "bai_tap",
+    "difficulty": "trung-binh",
+    "distractorNotes": {
+     "B": "Chia đôi P như hai dây song song thẳng đứng, bỏ qua độ nghiêng của dây.",
+     "C": "Dùng cos thay sin, nhầm góc với phương ngang thành góc với phương thẳng đứng: 60/(2·0,866).",
+     "D": "Viết T·sin30° = P như chỉ có một dây, quên chia cho hai dây."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Hai lực $F_1=7\\ \\text{N}$ và $F_2=10\\ \\text{N}$ cùng đặt tại một điểm. Góc $\\alpha$ giữa hai lực có thể thay đổi từ $0^\\circ$ đến $180^\\circ$.</p>",
+    "statements": [
+     {
+      "text": "Hợp lực có độ lớn lớn nhất là $17\\ \\text{N}$, đạt được khi hai lực cùng chiều.",
+      "answer": true
+     },
+     {
+      "text": "Với một góc $\\alpha$ thích hợp, hợp lực có thể có độ lớn $2\\ \\text{N}$.",
+      "answer": false
+     },
+     {
+      "text": "Khi $\\alpha$ tăng dần từ $0^\\circ$ đến $180^\\circ$ thì độ lớn hợp lực giảm dần.",
+      "answer": true
+     },
+     {
+      "text": "Khi $\\alpha=60^\\circ$, hợp lực có độ lớn khoảng $12{,}2\\ \\text{N}$.",
+      "answer": false
+     }
+    ],
+    "explanation": "<p>a) Đúng: hai lực cùng chiều cho $R_{max}=7+10=17\\ \\text{N}$.</p><p>b) Sai: hợp lực luôn thỏa mãn $|10-7|\\le R\\le17$, tức nhỏ nhất là $3\\ \\text{N}$. Giá trị $2\\ \\text{N}$ nằm ngoài khoảng này.</p><p>c) Đúng: $R^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$. Khi $\\alpha$ tăng từ $0^\\circ$ đến $180^\\circ$, $\\cos\\alpha$ giảm nên $R$ giảm.</p><p>d) Sai: $R^2=49+100+2\\cdot7\\cdot10\\cdot0{,}5=219$, nên $R\\approx14{,}8\\ \\text{N}$. Giá trị $12{,}2\\ \\text{N}=\\sqrt{149}$ ứng với hai lực vuông góc.</p>",
+    "topic": "Khoảng giá trị hợp lực",
+    "form": "bai_tap",
+    "difficulty": "de",
+    "distractorNotes": {
+     "0": "Hợp lực lớn nhất khi hai lực cùng chiều: 7 + 10 = 17 N.",
+     "1": "Hợp lực nhỏ nhất là |10 − 7| = 3 N, nên không thể bằng 2 N.",
+     "2": "cos α giảm khi α tăng từ 0° đến 180°, nên R giảm dần.",
+     "3": "Quên số hạng 2F1F2cos α: √149 ≈ 12,2 N là trường hợp vuông góc; với 60° thì R ≈ 14,8 N."
+    }
+   },
+   {
+    "type": "true_false",
+    "question": "<p>Một vật khối lượng $5\\ \\text{kg}$ đặt trên mặt phẳng nghiêng góc $30^\\circ$ so với phương ngang. Hệ số ma sát nghỉ giữa vật và mặt nghiêng là $0{,}7$. Lấy $\\cos30^\\circ\\approx0{,}866$, $\\tan35^\\circ\\approx0{,}70$.</p>",
+    "statements": [
+     {
+      "text": "Áp lực của vật lên mặt nghiêng có độ lớn khoảng $43{,}3\\ \\text{N}$.",
+      "answer": true
+     },
+     {
+      "text": "Vật đứng yên và lực ma sát tác dụng lên vật có độ lớn khoảng $30{,}3\\ \\text{N}$.",
+      "answer": false
+     },
+     {
+      "text": "Thay vật bằng một vật cùng chất liệu nhưng khối lượng $10\\ \\text{kg}$, giữ nguyên góc nghiêng, thì vật mới sẽ trượt xuống.",
+      "answer": false
+     },
+     {
+      "text": "Nếu nâng dần mặt nghiêng lên thì vật bắt đầu trượt khi góc nghiêng vượt quá khoảng $35^\\circ$.",
+      "answer": true
+     }
+    ],
+    "explanation": "<p>a) Đúng: $N=P\\cos30^\\circ=50\\cdot0{,}866\\approx43{,}3\\ \\text{N}$.</p><p>b) Sai: thành phần kéo vật xuống dốc là $P\\sin30^\\circ=25\\ \\text{N}$. Ma sát nghỉ cực đại là $0{,}7\\cdot43{,}3\\approx30{,}3\\ \\text{N}$, lớn hơn $25\\ \\text{N}$, nên vật đứng yên. Khi đó ma sát nghỉ chỉ bằng $25\\ \\text{N}$; con số $30{,}3\\ \\text{N}$ là giá trị cực đại.</p><p>c) Sai: điều kiện đứng yên là $\\tan\\alpha\\le\\mu_n$. Khối lượng triệt tiêu ở hai vế, và $\\tan30^\\circ\\approx0{,}577<0{,}7$, nên vật $10\\ \\text{kg}$ vẫn đứng yên.</p><p>d) Đúng: vật bắt đầu trượt khi $\\tan\\alpha>0{,}7$, tức $\\alpha>35^\\circ$.</p>",
+    "topic": "Mặt phẳng nghiêng có ma sát",
+    "form": "bai_tap",
+    "difficulty": "kho",
+    "distractorNotes": {
+     "0": "N = P cos α, không phải N = P.",
+     "1": "Vật đứng yên thì F_msn = P sin α = 25 N; μN = 30,3 N chỉ là giá trị cực đại.",
+     "2": "Điều kiện trượt tan α > μ không phụ thuộc khối lượng, vì m triệt tiêu.",
+     "3": "Góc bắt đầu trượt thỏa tan α = μn = 0,7, cho α ≈ 35°."
+    }
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Dùng một đòn bẩy nhẹ để nâng một tảng đá khối lượng $36\\ \\text{kg}$. Tảng đá tì lên đòn tại điểm cách điểm tựa $0{,}25\\ \\text{m}$. Người tác dụng lực vuông góc với đòn ở phía bên kia điểm tựa, tại điểm cách điểm tựa $1{,}2\\ \\text{m}$. Khi đòn nằm cân bằng, lực của người có độ lớn bao nhiêu niutơn?</p>",
+    "answer": "75",
+    "explanation": "<p>Trọng lượng tảng đá: $P=360\\ \\text{N}$, cánh tay đòn $d_1=0{,}25\\ \\text{m}$.</p><p>Lực của người vuông góc với đòn nên cánh tay đòn $d_2=1{,}2\\ \\text{m}$.</p><p>Cân bằng moment quanh điểm tựa: $360\\cdot0{,}25=F\\cdot1{,}2$, suy ra $F=\\dfrac{90}{1{,}2}=75\\ \\text{N}$.</p><p>Bẫy: đảo ngược tỉ lệ, viết $F=\\dfrac{360\\cdot1{,}2}{0{,}25}=1728\\ \\text{N}$. Cánh tay đòn của người dài hơn thì lực của người phải nhỏ hơn trọng lượng tảng đá.</p>",
+    "topic": "Đòn bẩy hai lực",
+    "form": "bai_tap",
+    "difficulty": "trung-binh"
+   },
+   {
+    "type": "short_answer",
+    "question": "<p>Thanh đồng chất AB dài $2\\ \\text{m}$, khối lượng $6\\ \\text{kg}$, đặt trên điểm tựa O cách đầu A một đoạn $0{,}5\\ \\text{m}$. Ở đầu B treo một vật $2\\ \\text{kg}$, ở đầu A treo một vật có khối lượng $m$ chưa biết sao cho thanh nằm cân bằng theo phương ngang. Lực mà điểm tựa O đỡ thanh có độ lớn bao nhiêu niutơn?</p>",
+    "answer": "200",
+    "explanation": "<p>Trọng lượng thanh $P=60\\ \\text{N}$ đặt tại trung điểm G, cách A $1\\ \\text{m}$. Suy ra $OG=0{,}5\\ \\text{m}$, $OB=1{,}5\\ \\text{m}$; G và B cùng ở một phía của O.</p><p>Chọn trục quay tại O để phản lực không có moment. Moment quay về phía B: $60\\cdot0{,}5+20\\cdot1{,}5=60\\ \\text{N·m}$.</p><p>Moment quay về phía A: $P_A\\cdot0{,}5$. Cân bằng moment cho $P_A=120\\ \\text{N}$, tức $m=12\\ \\text{kg}$.</p><p>Tổng lực bằng 0: $N=120+60+20=200\\ \\text{N}$.</p><p>Bẫy: bỏ qua trọng lượng thanh sẽ được $P_A=60\\ \\text{N}$ và $N=80\\ \\text{N}$. Một bẫy khác là quên cộng trọng lượng thanh vào phản lực, ra $140\\ \\text{N}$.</p>",
+    "topic": "Thanh có khối lượng, quy tắc moment",
+    "form": "bai_tap",
+    "difficulty": "kho"
+   }
+  ]
+ }
+}
