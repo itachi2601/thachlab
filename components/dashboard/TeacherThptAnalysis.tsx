@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { BarChart3, ChevronDown, Tv } from "lucide-react";
-import { expandClassIdsByGrade, type ClassStudent } from "@/services/classes";
+import { AVCN_CLASS_SLUG, AVCN_SUBJECT_CODE, expandClassIdsByGrade, type ClassStudent } from "@/services/classes";
 import type { SchoolClass } from "@/features/exams/types";
 import type { ExamQuestion } from "@/features/exams/types";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
@@ -43,6 +43,24 @@ function heat(pctVal: number) {
   if (pctVal >= 35) return "bg-amber-500/20 text-amber-300";
   if (pctVal >= 15) return "bg-white/10 text-slate-300";
   return "bg-emerald-500/15 text-emerald-300";
+}
+
+async function fetchAvcnLessonExams(isAvcn: boolean): Promise<{ id: number; title: string }[]> {
+  if (!isAvcn) return [];
+  try {
+    const sb = getSupabase();
+    const { data: items } = await sb
+      .from("lesson_items")
+      .select("exam_ids, lessons!inner(chapters!inner(subject_code))")
+      .in("kind", ["luyen_tap", "kiem_tra"])
+      .eq("lessons.chapters.subject_code", AVCN_SUBJECT_CODE);
+    const ids = Array.from(new Set((items ?? []).flatMap((i: { exam_ids: number[] | null }) => i.exam_ids ?? [])));
+    if (ids.length === 0) return [];
+    const { data } = await sb.from("exams").select("id, title").in("id", ids).order("id", { ascending: false });
+    return (data ?? []) as { id: number; title: string }[];
+  } catch {
+    return [];
+  }
 }
 
 export default function TeacherThptAnalysis({
@@ -87,8 +105,9 @@ export default function TeacherThptAnalysis({
         .select("exam_id, exams(title)")
         .in("class_id", classIds),
       fetchClassExamResults(studentIds).catch(() => []),
+      fetchAvcnLessonExams(classes.find((c) => c.id === classId)?.slug === AVCN_CLASS_SLUG),
     ])
-      .then(([assigned, rows]) => {
+      .then(([assigned, rows, avcnExams]) => {
         if (cancelled) return;
         const submitted = new Map<number, Set<string>>();
         const titles = new Map<number, string>();
@@ -103,6 +122,8 @@ export default function TeacherThptAnalysis({
           const t = Array.isArray(a.exams) ? a.exams[0]?.title : a.exams?.title;
           mine.set(a.exam_id, t ?? titles.get(a.exam_id) ?? `Đề #${a.exam_id}`);
         }
+        // Đề AVCN không gán lớp (lớp vào tự do) nên lấy theo mục Luyện tập/Kiểm tra của bài, chưa ai nộp vẫn hiện.
+        avcnExams.forEach((e) => mine.set(e.id, e.title));
         const toItem = (id: number, title: string, own: boolean) => ({ id, title, own, done: submitted.get(id)?.size ?? 0 });
         const list = [
           ...[...mine.entries()].map(([id, t]) => toItem(id, t, true)),
