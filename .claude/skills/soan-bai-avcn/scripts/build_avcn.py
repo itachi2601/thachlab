@@ -103,8 +103,8 @@ def sec_thi() -> str:
                 + f'<p><strong>Hôm nay em sẽ:</strong> {bc["viec_can_lam"]}</p>'
                 + details("Mục tiêu bài và đề cuối kỳ", f'<p>Học xong chương này em cần:</p><ul>{muc_tieu}</ul>'
                           '<p>Đề cuối kỳ có 5 Part; ba Part đầu chỉ cần <strong>nhận ra từ</strong> và <strong>tìm lại câu trong bài đọc</strong>.</p>' + bang))
-    return (f'<h3>{ROMAN[0]}. Chương này cho em bao nhiêu điểm trong đề cuối kỳ?</h3>'
-            f'<p>Đề cuối kỳ luôn có 5 Part. Ba Part đầu (7 điểm) chỉ cần <strong>nhận ra từ</strong> và <strong>tìm lại câu trong bài đọc</strong>. Học xong chương này em cần:</p>'
+    return (f'<h3>{ROMAN[0]}. Chương này học gì cho đề cuối kỳ?</h3>'
+            f'<p>Đề cuối kỳ luôn có 5 Part. Ba Part đầu chỉ cần <strong>nhận ra từ</strong> và <strong>tìm lại câu trong bài đọc</strong>. Học xong chương này em cần:</p>'
             f'<ul>{muc_tieu}</ul>' + bang)
 
 
@@ -152,7 +152,7 @@ def sec_tu_vung() -> str:
             for t in with_img) + '</div>'
     if plain:
         inner += '<ul class="avcn-list">' + "".join(f'<li><strong>{t["term"]}</strong> {speak(t["term"])} — {t["vi"]}</li>' for t in plain) + '</ul>'
-    out.append(details(f'⭐⭐ {len(D["tu_vung_them"])} từ thêm cho em muốn trên 7 điểm ({M.get("them_nhan", "bộ phận máy tiện, từ mô tả")})', inner))
+    out.append(details(f'⭐⭐ {len(D["tu_vung_them"])} từ thêm cho em muốn làm tốt hơn ({M.get("them_nhan", "bộ phận máy tiện, từ mô tả")})', inner))
     return "".join(out)
 
 
@@ -322,7 +322,7 @@ def worked_examples():
         return f'<div class="tl-box tl-box--rule"><p class="tl-label">🎯 Chiến thuật</p>{nl(items)}</div>'
 
     # Part 1
-    body = ['<p><strong>Part 1: Choose the correct answer.</strong> (đề thật 10 câu · 2,5 điểm)</p>', tactic(e["part1_chien_thuat"])]
+    body = ['<p><strong>Part 1: Choose the correct answer.</strong> (đề thật 10 câu)</p>', tactic(e["part1_chien_thuat"])]
     for i, q in enumerate(e["part1"], 1):
         if q.get("img"):  # câu "Look at the picture": nhúng ảnh thật (khoá ảnh trong credits.json), không ghi chú [hình: …] lộ đáp án
             body.append(photo(q["img"], f"Hình câu {i}", small=True))
@@ -330,7 +330,7 @@ def worked_examples():
     out.append({"label": "Part 1 · Chọn từ theo định nghĩa / ảnh", "body_html": "".join(body)})
     # Part 2
     p2 = e["part2"]
-    body = ['<p><strong>Part 2: Read the article and answer the questions.</strong> (2,5 điểm)</p>', tactic(e["part2_chien_thuat"]),
+    body = ['<p><strong>Part 2: Read the article and answer the questions.</strong></p>', tactic(e["part2_chien_thuat"]),
             f'<div class="avcn-passage"><p>{p2["doan"]}</p></div>', '<p><strong>2.1 Fill in the blanks with one word from the article.</strong></p>']
     for i, q in enumerate(p2["dien"], 1):
         body.append(quiz(f'<strong>{i}.</strong> {q["q"]}', q["opts"], q["opts"].index(q["ans"]), q["why"], "Tìm câu trong đoạn có cùng từ khoá với câu hỏi, rồi chép đúng từ.", prefix=X))
@@ -340,7 +340,7 @@ def worked_examples():
     out.append({"label": "Part 2 · Đọc hiểu: điền 1 từ + Đúng/Sai", "body_html": "".join(body)})
     # Part 3
     p3 = e["part3"]
-    body = ['<p><strong>Part 3: Fill in the blanks using the words in the box.</strong> (2 điểm)</p>', tactic(p3["chien_thuat"]),
+    body = ['<p><strong>Part 3: Fill in the blanks using the words in the box.</strong></p>', tactic(p3["chien_thuat"]),
             f'<p class="avcn-box">Hộp từ: {" · ".join(f"<strong>{w}</strong>" for w in p3["hop_tu"])}</p>',
             f'<div class="avcn-passage"><p>{p3["doan"]}</p></div>']
     for i, w in enumerate(p3["dap"], 1):
@@ -348,14 +348,14 @@ def worked_examples():
     out.append({"label": "Part 3 · Điền từ cho sẵn", "body_html": "".join(body)})
     # Part 4
     p4 = e["part4"]
-    body = ['<p><strong>Part 4: Translate the paragraph into Vietnamese.</strong> (2 điểm)</p>', tactic(p4["chien_thuat"]),
+    body = ['<p><strong>Part 4: Translate the paragraph into Vietnamese.</strong></p>', tactic(p4["chien_thuat"]),
             f'<div class="avcn-passage"><p>{p4["en"]}</p></div>',
             '<p>Viết bản dịch của em ra giấy trước, rồi mới mở bản tham khảo và tự so từng cụm.</p>',
             details("Bản dịch tham khảo", f'<p>{p4["vi"]}</p>')]
     out.append({"label": "Part 4 · Dịch Anh → Việt", "body_html": "".join(body)})
     # Part 5
     p5 = e["part5"]
-    body = ['<p><strong>Part 5: Translate the sentence into English.</strong> (1 điểm)</p>', tactic(p5["chien_thuat"]),
+    body = ['<p><strong>Part 5: Translate the sentence into English.</strong></p>', tactic(p5["chien_thuat"]),
             f'<div class="avcn-passage"><p>{p5["vi"]}</p></div>',
             '<p>Viết câu tiếng Anh của em ra giấy trước, rồi mới mở câu tham khảo.</p>',
             details("Câu tham khảo", f'<p>{p5["en"]}</p>')]

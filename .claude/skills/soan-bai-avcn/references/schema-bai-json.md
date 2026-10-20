@@ -14,7 +14,7 @@ danh sách). Quiz: `dap` là chỉ số 0-based trong `lua_chon`; phản hồi k
 | `meta.doan_tieu_de`, `meta.doan_mo_dau`, `meta.them_nhan` | str | | tiêu đề/lời dẫn mục Đoán và nhãn hộp từ ⭐⭐ khi chương không nói về máy (mặc định = bản Chapter 8) |
 | `meta.boi_canh` | obj | | Mở bài bằng bối cảnh (thay mục "bao nhiêu điểm"): `tieu_de` ≤8 chữ, `tinh_huong` 40–60 chữ ngôi "em" cảnh xưởng thật + 2–3 từ khoá trong `<strong>`, `viec_can_lam` 1 câu, `quay_lai` 1 câu hỏi cuối mục Trả bài. Không nhắc điểm/đề. Sinh bằng `npx tsx scripts/sinh-boi-canh-avcn.mts` rồi `--ap-dung` |
 | `meta.muc_tieu` | str[] | ✓ | 3 mục tiêu đo được, gắn Part |
-| `meta.de_thi` | [str,str,str][] | ✓ | 5 hàng: Part · điểm, đề hỏi gì, học ở mục nào |
+| `meta.de_thi` | [str,str,str][] | ✓ | 5 hàng: Part, đề hỏi gì, học ở mục nào — **không ghi số điểm** (tránh HS thấy bài học xoay quanh điểm) |
 | `khoi_dong` | obj[] (2) | ✓ | `{img, hoi, lua_chon[3], dap, fb_ok, fb_no}` — ảnh máy/dụng cụ quen ở xưởng |
 | `tu_vung` | obj[] (4) | ✓ | mỗi cụm `{ten, tu[5], quiz}`; `tu[i] = {term, ipa, vi, def, img|null, tier:1}`; `def` là định nghĩa kiểu Part 1 (mệnh đề danh từ ≤ 15 từ); `quiz` dạng Part 1 (4 lựa chọn) |
 | `tu_vung_them` | `{term, vi}[]` (≈12) | ✓ | từ ⭐⭐: bộ phận, từ mô tả; dùng cho mục gắn nhãn (`vi` tra theo `term`) |
@@ -34,3 +34,6 @@ danh sách). Quiz: `dap` là chỉ số 0-based trong `lua_chon`; phản hồi k
 | `luyen_tap.tf` | obj[] (3) | ✓ | `{q, st:[[text, bool]×4], why}` — mỗi câu bám một đoạn Article |
 
 Khoá ảnh `img` phải có trong `public/assets/avcn/chapter-<n>/credits.json`; `null` = thẻ không ảnh (chiếm cả hàng).
+
+**Không đưa con số điểm vào chỗ HS thấy** (tiêu đề Part của đề mẫu, bảng `de_thi`, chiến thuật Part 4–5): nội dung học
+nêu việc cần làm và cách tự kiểm; câu trấn an viết theo hướng "phần đúng vẫn được ghi nhận", không "vẫn có điểm thành phần".

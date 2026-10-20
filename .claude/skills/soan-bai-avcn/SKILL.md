@@ -67,6 +67,9 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
    bai_tap_mau, exam + luyen_tap). Bật bài: `update lessons set published=true where id=<id>`. Deploy theo `scripts/deploy.sh`
    (site tĩnh, build đọc DB). Commit theo đường dẫn cụ thể.
 8. **Rút kinh nghiệm** vào mục cuối file này (bắt buộc với bài có nội dung).
+9. **Sửa nội dung đã đăng mà không đổi đề** (lý thuyết + bài tập mẫu, giữ kết quả HS đã làm): dựng lại bundle rồi
+   `npx tsx scripts/cap-nhat-avcn-noi-dung.mts --dry-run` → `--apply` (chỉ ghi `ly_thuyet.body_html` +
+   `bai_tap_mau.questions/subtitle` của 10 chương, tự sao lưu `scripts/logs/` và đối chiếu sau ghi). Sau đó deploy.
 
 ## Ranh giới
 - Không chép nguyên văn giải thích của sách khác; định nghĩa Part 1 viết lại ngắn kiểu đề (một mệnh đề danh từ).
@@ -91,3 +94,4 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
 - 2026-10-16 · `lint_theory` báo giả "quiz #2 có 2 đáp án tl-ok" ở mọi chương có nút Flashcard (class `tl-ok` của link) — bỏ qua, `check_quizzes` mới là thước đo.
 - 2026-10-20 · Mở bài bằng "Chương này cho bao nhiêu điểm" làm SV yếu thấy xa nghề → mở bằng tình huống xưởng (`meta.boi_canh`), mục tiêu + bảng Part gập lại; chương mới: chạy `scripts/sinh-boi-canh-avcn.mts` (API, ~10 lời gọi ngắn, `max_tokens` ≥6000 vì mô hình có suy nghĩ), đọc lại từng bản trước `--ap-dung`. Mẫu tình huống hơi giống nhau giữa các chương ("thợ cả nước ngoài… em đứng ngẩn") — chương sau nên đổi vai/cảnh (khách hàng, email đặt vật tư, nhãn máy, catalogue).
 - 2026-10-20 · Chapter 9 (CAD/CAM): giáo trình không có hộp từ cho Vocabulary/Listening → Part 3 tự viết lại; `kiem-code` bắt được: phương án nhiễu cũng đúng (Design/Drafting khi đoạn mở bằng "Computer Aided Design"), bỏ dòng gạch đầu dòng giáo trình nhưng câu hỏi vẫn dựa vào đó, đường dẫn số trong SVG băng qua ô khác, đề mẫu Part 1 chỉ 6/10 câu, mô tả ảnh sai màu → viết bai.json bằng script Python (gen.py) để sửa hàng loạt; ghi chú mọi chỗ sửa chính tả giáo trình trong `nghia`; `.env.local` mất khoá Azure sau sự cố 17/10 nên chưa sinh mp3 (bước 4b).
+- 2026-10-20 · Thầy góp ý 10 bài AVCN còn nói nhiều về điểm số (mở bài "bao nhiêu điểm", bảng "Part · 2,5 đ", "trên 7 điểm", "vẫn có điểm thành phần") → bỏ con số điểm khỏi mọi chỗ HS thấy: mở bằng `meta.boi_canh`, bảng Part chỉ nêu việc cần làm, chiến thuật Part 4–5 viết "phần đúng vẫn được ghi nhận". Số điểm chỉ giữ trong tài liệu nội bộ (skill, đề xuất). Đã cập nhật 10 chương bằng `scripts/cap-nhat-avcn-noi-dung.mts` (chỉ ly_thuyet + bai_tap_mau, sao lưu + đối chiếu sau ghi).
