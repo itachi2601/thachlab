@@ -47,6 +47,28 @@ export default function ChapterTree(p: Props) {
         const open = !p.chaptersOnly && p.openChapterIds.has(chapter.id);
         const done = lessons.filter(p.isLessonDone).length;
         const picked = p.mode === "pick" && chapter.id === p.currentChapterId;
+        // Chương chỉ có 1 bài (AVCN: mỗi chương là 1 bài) → dòng chương là link vào bài luôn,
+        // không mở thêm một dòng con lặp lại đúng tên đó (N4).
+        const onlyLesson =
+          p.mode === "learn" && !p.chaptersOnly && !p.readOnly && shown.length === 1 ? shown[0] : null;
+        if (onlyLesson) {
+          const isCurrent = onlyLesson.id === p.currentLessonId;
+          const isDone = p.isLessonDone(onlyLesson);
+          return (
+            <div key={chapter.id}>
+              <Link
+                href={p.lessonHref(onlyLesson)}
+                onClick={() => p.onLessonClick?.(onlyLesson)}
+                className={`lesson-tree-chapter ${isCurrent ? "is-current" : ""}`}
+                aria-current={isCurrent ? "page" : undefined}
+              >
+                <em>{chapterIndex + 1}</em>
+                <span>{chapterDisplayTitle(chapter.title)}</span>
+                <small>{isDone ? "Xong" : ""}</small>
+              </Link>
+            </div>
+          );
+        }
         return (
           <div key={chapter.id}>
             <button

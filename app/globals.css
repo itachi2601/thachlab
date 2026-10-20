@@ -1207,6 +1207,10 @@ html[data-theme="light"] .lesson-shell .lesson-sample-actions button.is-ghost { 
 .class-continue .lesson-btn { display: inline-flex; align-items: center; gap: 6px; }
 .class-toc-toolbar { display: flex; justify-content: flex-end; margin-bottom: -8px; }
 .class-chapter-head { display: flex; width: 100%; min-height: 44px; align-items: center; gap: 12px; border: 0; background: none; padding: 4px 0; color: #fff; text-align: left; cursor: pointer; }
+/* Chương chỉ có 1 bài (AVCN): tiêu đề chương là link vào bài — bỏ gạch chân mặc định của <a>. */
+.class-chapter-head--link { text-decoration: none; }
+.class-chapter-head--link:hover .class-chapter-title { text-decoration: underline; text-underline-offset: 3px; }
+a.lesson-tree-chapter { text-decoration: none; }
 .class-chapter-head svg { flex: 0 0 auto; color: #64748b; transition: transform .2s; }
 .class-chapter-title { min-width: 0; flex: 1; font-family: var(--font-display), sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; }
 .class-chapter-num { color: var(--lesson-accent-text); }

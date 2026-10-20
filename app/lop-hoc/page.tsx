@@ -520,11 +520,39 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     const chapterCompleted = chapterLessons.reduce((sum, lesson) => sum + (lessonProgress.get(lesson.id)?.completed ?? 0), 0);
     const collapsed = !desktop && collapsedChapters.has(ch.id);
     const showAccountProgress = !!session && !isTeacherView;
+    // Chương chỉ có đúng 1 bài (AVCN: mỗi chương là 1 bài): tiêu đề chương chính là link vào bài —
+    // không lặp lại một dòng bài cùng tên ngay bên dưới (N4 — không lặp thông tin).
+    const only = chapterLessons.length === 1 && semesterExams.length === 0 ? chapterLessons[0] : null;
+    const onlyP = only ? lessonProgress.get(only.id) : undefined;
+    const onlyPercent = onlyP?.total ? Math.round((onlyP.completed / onlyP.total) * 100) : 0;
+    const onlyMeta = !only
+      ? ""
+      : !showAccountProgress
+        ? `${only.itemCount} mục`
+        : onlyPercent === 100
+          ? "Hoàn thành"
+          : onlyPercent > 0
+            ? `Đang học · ${onlyPercent}%`
+            : "Chưa học";
     let lessonNumber = 0;
     return (
       <Fragment key={ch.id}>
         <section id={desktop ? `chapter-pick-${ch.id}` : `chapter-${ch.id}`} className="class-chapter">
-          {desktop ? (
+          {only ? (
+            <Link
+              href={lessonHref(only)}
+              onClick={() => rememberLesson(only)}
+              className="class-chapter-head class-chapter-head--link"
+            >
+              <span className="class-chapter-title">
+                <span className="class-chapter-num">Chương {chapterIndex + 1}</span> · {chapterDisplayTitle(ch.title)}
+              </span>
+              <small className={`class-chapter-count ${onlyPercent === 100 ? "is-done" : ""}`}>
+                {onlyPercent === 100 ? <Check size={13} aria-label="Xong" /> : onlyMeta}
+              </small>
+              <ArrowRight size={16} aria-hidden />
+            </Link>
+          ) : desktop ? (
             <div className="class-chapter-head class-chapter-head--static">
               <span className="class-chapter-title">
                 <span className="class-chapter-num">Chương {chapterIndex + 1}</span> · {chapterDisplayTitle(ch.title)}
@@ -549,7 +577,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
               <ChevronDown size={17} className={collapsed ? "" : "rotate-180"} />
             </button>
           )}
-          {showAccountProgress && chapterTotal > 0 && (
+          {!only && showAccountProgress && chapterTotal > 0 && (
             <div className="class-chapter-progress">
               <span className="class-chapter-progress-bar">
                 <i style={{ width: `${Math.round((chapterCompleted / chapterTotal) * 100)}%` }} />
@@ -557,7 +585,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
               <small>{chapterCompleted}/{chapterTotal} mục</small>
             </div>
           )}
-          {!collapsed && (
+          {!only && !collapsed && (
             <ol id={desktop ? `chapter-lessons-pick-${ch.id}` : `chapter-lessons-${ch.id}`} className="class-lessons">
               {chapterLessons.length === 0 && (
                 <li className="lesson-muted">Chưa có bài học trong chương này.</li>
