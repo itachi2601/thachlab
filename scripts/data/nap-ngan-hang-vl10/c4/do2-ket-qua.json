@@ -1,0 +1,1713 @@
+[
+ {
+  "key": "c4-1-mc-002",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công $A = F\\cdot s$, đơn vị là jun (J): $1\\ \\text{J} = 1\\ \\text{N}\\cdot\\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">Vì $1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 1\\ \\text{J} = 1\\ \\text{kg}\\cdot\\text{m}^2/\\text{s}^2$.</p><p class=\"text-base leading-relaxed my-2\">Phương án B: $\\text{W/s} = \\text{J/s}^2$, không phải đơn vị công.</p><p class=\"text-base leading-relaxed my-2\">Phương án D: $\\text{kg}\\cdot\\text{s}^2/\\text{m}^2$, không đúng.</p><p class=\"text-base leading-relaxed my-2\">Phương án C: \"k.J\" viết sai dạng, không chọn.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong",
+   "katex-loi:5"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-003",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Kilô óat giờ (kWh) là đơn vị của công (năng lượng), được tính từ công thức $A = P\\cdot t$ với $P$ là công suất (kW) và $t$ là thời gian (h).</p><p class=\"text-base leading-relaxed my-2\">$1\\ \\text{kWh} = 1000\\ \\text{W} \\cdot 3600\\ \\text{s} = 3{,}6\\cdot 10^6\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ kWh là đơn vị của công cơ học (công, năng lượng), không phải của hiệu suất (không có đơn vị), công suất (W, kW) hay động lượng (kg.m/s).</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-004",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi: $A = F s\\cos\\alpha$, là đại lượng vô hướng và có thể dương, âm hoặc bằng 0 (giá trị đại số).</p><p class=\"text-base leading-relaxed my-2\">A sai: lực là vectơ nhưng công là đại lượng vô hướng.</p><p class=\"text-base leading-relaxed my-2\">B sai: trong chuyển động tròn đều, lực hướng tâm luôn vuông góc với vận tốc (độ dời tức thời) nên $\\alpha = 90^\\circ$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = 0$.</p><p class=\"text-base leading-relaxed my-2\">C đúng: công là đại lượng vô hướng, có giá trị đại số.</p><p class=\"text-base leading-relaxed my-2\">D sai: vật chuyển động thẳng đều thì hợp lực bằng $0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ công của hợp lực bằng $0$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-005",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi: $A = F s \\cos\\alpha$, trong đó $\\alpha$ là góc giữa lực và hướng độ dời. Lực chỉ sinh công khi điểm đặt của lực có độ dời và $\\cos\\alpha \\neq 0$.</p><p class=\"text-base leading-relaxed my-2\">A sai: lực vuông góc với phương chuyển động thì $\\alpha = 90^\\circ$, $\\cos\\alpha = 0$ nên $A = 0$.</p><p class=\"text-base leading-relaxed my-2\">B sai: lực song song với phương chuyển động mà vật không chuyển dời ($s = 0$) thì vẫn không sinh công. Điều kiện này chưa đủ.</p><p class=\"text-base leading-relaxed my-2\">C sai: lực làm vật biến dạng nhưng điểm đặt không dịch chuyển thì không có công theo nghĩa cơ học. Điều kiện này không đủ.</p><p class=\"text-base leading-relaxed my-2\">D đúng: lực tác dụng lên vật làm vật chuyển dời, tức là có lực và có độ dời, phù hợp với định nghĩa công cơ học trong chương trình phổ thông.</p><p class=\"text-base leading-relaxed my-2\">Đáp án: D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-006",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi: $A = F s \\cos\\alpha$, với $\\alpha$ là góc giữa hướng của lực và hướng chuyển động (độ dời).</p><p class=\"text-base leading-relaxed my-2\">Lực không sinh công khi $A = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\cos\\alpha = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\alpha = 90^{0}$, tức là lực vuông góc với hướng chuyển động.</p><p class=\"text-base leading-relaxed my-2\">A: $\\alpha = 0^{0}$ nên $A \\gt 0$ (sinh công dương). B và C: $\\alpha \\gt 90^{0}$ nên $\\cos\\alpha \\lt 0$, $A \\lt 0$ (công cản), vẫn có sinh công.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>D</b>.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-007",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Wh (oát giờ) là đơn vị năng lượng (công): $1\\,\\text{Wh} = 1\\,\\text{W}\\times 1\\,\\text{h}$.</p><p class=\"text-base leading-relaxed my-2\">Đổi: $1\\,\\text{W}=1\\,\\text{J/s}$ và $1\\,\\text{h}=3600\\,\\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 1\\,\\text{Wh} = 1\\,\\text{J/s}\\times 3600\\,\\text{s}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 1\\,\\text{Wh} = 3600\\,\\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">CV (mã lực) là đơn vị công suất, không phải năng lượng nên D sai. Chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-008",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi: $A = F.s.\\cos\\alpha$, trong đó $\\alpha$ là góc giữa vectơ lực và vectơ độ dời.</p><p class=\"text-base leading-relaxed my-2\">A đúng: công là đại lượng vô hướng.</p><p class=\"text-base leading-relaxed my-2\">B đúng: công có giá trị đại số, có thể dương, âm hoặc bằng 0.</p><p class=\"text-base leading-relaxed my-2\">C đúng: biểu thức $F.s.\\cos\\alpha$ là công thức tính công (ở đây viết với lực $F_{ms}$ là một trường hợp cụ thể của lực).</p><p class=\"text-base leading-relaxed my-2\">D sai: khi $90^\\circ \\lt \\alpha \\le 180^\\circ$ thì $\\cos\\alpha \\lt 0$ nên $A \\lt 0$ (công cản, ví dụ công của lực ma sát); khi $\\alpha = 90^\\circ$ thì $A = 0$. Vậy công không phải luôn dương.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>D</b>.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [
+   "katex-loi:1"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-009",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực: $A = F s \\cos\\alpha$, với $\\alpha$ là góc giữa vectơ lực và vectơ độ dời. Công âm khi $\\alpha \\gt 90^\\circ$, tức lực có thành phần ngược chiều chuyển động.</p><p class=\"text-base leading-relaxed my-2\">Trên mặt phẳng nằm ngang, vật chuyển động theo phương ngang:</p><p class=\"text-base leading-relaxed my-2\">- Trọng lực vuông góc với độ dời ($\\alpha = 90^\\circ$)</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = 0$.</p><p class=\"text-base leading-relaxed my-2\">- Lực phát động, lực kéo cùng chiều (hoặc có thành phần cùng chiều) chuyển động ($\\alpha \\lt 90^\\circ$)</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A \\gt 0$.</p><p class=\"text-base leading-relaxed my-2\">- Lực ma sát trượt ngược chiều chuyển động ($\\alpha = 180^\\circ$)</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = -F_{ms}s \\lt 0$.</p><p class=\"text-base leading-relaxed my-2\">Vậy lực thực hiện công âm là lực ma sát. Chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-010",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi: $A = F\\,s\\cos\\alpha$, với $\\alpha$ là góc giữa lực và chiều chuyển động (độ dời).</p><p class=\"text-base leading-relaxed my-2\">Điều kiện để $A = 0$ khi $F \\neq 0$ và $s \\neq 0$: $\\cos\\alpha = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\alpha = 90^{o}$ (lực vuông góc với phương chuyển động).</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra các phương án khác: $\\alpha = 0^{o}$ thì $A = Fs \\gt 0$; $\\alpha = 60^{o}$ thì $A = 0{,}5Fs \\gt 0$; $\\alpha = 180^{o}$ thì $A = -Fs \\lt 0$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>D</b>.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-011",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi: $A = F d \\cos\\alpha$, với $\\alpha$ là góc giữa $\\overrightarrow{F}$ và $\\overrightarrow{d}$.</p><p class=\"text-base leading-relaxed my-2\">Lực cùng chiều với độ dịch chuyển nên $\\alpha = 0^\\circ$, do đó $\\cos\\alpha = 1$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = Fd \\gt 0$ (với $F \\gt 0$, $d \\gt 0$): lực sinh công dương (công phát động).</p><p class=\"text-base leading-relaxed my-2\">Phương án C (\"$A \\neq 0$\") tuy cũng không sai về giá trị nhưng không nêu đúng dấu của công; đáp án chính xác nhất là A.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-013",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Một vật có khả năng sinh công khi nó có năng lượng (động năng hoặc thế năng) so với mốc xác định và có thể truyền năng lượng đó cho vật khác.</p><p class=\"text-base leading-relaxed my-2\">A. Dòng nước lũ đang chảy mạnh có động năng lớn</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ có khả năng sinh công (đẩy trôi vật cản).</p><p class=\"text-base leading-relaxed my-2\">B. Viên đạn đang bay có động năng</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ có khả năng sinh công (xuyên vào mục tiêu).</p><p class=\"text-base leading-relaxed my-2\">C. Búa máy đang rơi có động năng và thế năng</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ có khả năng sinh công (đóng cọc).</p><p class=\"text-base leading-relaxed my-2\">D. Hòn đá nằm trên mặt đất: vận tốc bằng 0 nên động năng bằng 0, độ cao so với mặt đất bằng 0 nên thế năng bằng 0</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ không có khả năng sinh công.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-014",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của trọng lực: $A = P\\,d\\cos\\alpha = mg(h_1 - h_2)$, chỉ phụ thuộc vị trí đầu và cuối (lực thế), không phụ thuộc hình dạng quỹ đạo.</p><p class=\"text-base leading-relaxed my-2\">A. Sai: vật đi lên thì $h_2 \\gt h_1$ nên $A \\lt 0$. Công trọng lực có thể âm, dương hoặc bằng 0, nên đây là đặc điểm không đúng.</p><p class=\"text-base leading-relaxed my-2\">B. Đúng: chuyển động trên mặt phẳng ngang thì $h_1 = h_2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 0$.</p><p class=\"text-base leading-relaxed my-2\">C. Đúng: quỹ đạo khép kín thì vị trí đầu trùng vị trí cuối</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 0$.</p><p class=\"text-base leading-relaxed my-2\">D. Đúng: $A = W_{t1} - W_{t2}$ là độ giảm thế năng.</p><p class=\"text-base leading-relaxed my-2\">Vậy đáp án là A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-016",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn năng lượng: năng lượng không tự sinh ra hay mất đi, chỉ chuyển hóa từ dạng này sang dạng khác hoặc truyền từ vật này sang vật khác. Định luật này đúng với mọi hiện tượng tự nhiên.</p><p class=\"text-base leading-relaxed my-2\">A. Bếp nguội đi: nhiệt năng của bếp truyền sang môi trường xung quanh, năng lượng được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">B. Xe dừng lại khi tắt máy: động năng của xe chuyển hóa thành nhiệt năng do ma sát (làm nóng phanh, mặt đường, không khí), năng lượng được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">C. Bàn là nguội đi: nhiệt năng truyền ra môi trường, năng lượng được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Cả ba hiện tượng đều tuân theo định luật bảo toàn năng lượng, nên không có hiện tượng nào vi phạm.</p><p class=\"text-base leading-relaxed my-2\">Đáp án: D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-017",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Máy phát điện biến đổi cơ năng thành điện năng. Quá trình này tuân theo định luật bảo toàn và chuyển hóa năng lượng: năng lượng không tự mất đi mà chỉ chuyển từ dạng này sang dạng khác.</p><p class=\"text-base leading-relaxed my-2\">Trong máy phát điện thực tế luôn có hao phí do ma sát ở ổ trục, do tỏa nhiệt Jun–Lenxơ trong cuộn dây, do dòng Fu-cô và từ trễ trong lõi sắt,...</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Một phần cơ năng biến thành nhiệt năng và các dạng năng lượng khác ngoài điện năng, nên $W_{điện} \\lt W_{cơ}$ (hiệu suất $H \\lt 1$).</p><p class=\"text-base leading-relaxed my-2\">Phương án A và D không có cơ sở vật lí. Phương án C sai vì năng lượng không tự biến mất.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>B</b>.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-018",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Máy phát điện gió: gió (không khí chuyển động) có động năng, làm quay cánh quạt (tuabin) và rôto của máy phát.</p><p class=\"text-base leading-relaxed my-2\">Rôto quay trong từ trường làm từ thông qua cuộn dây biến thiên, sinh ra suất điện động cảm ứng (hiện tượng cảm ứng điện từ).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Động năng của gió (một dạng cơ năng) được chuyển hóa thành điện năng.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-019",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Pin mặt trời hoạt động dựa trên hiệu ứng quang điện trong của chất bán dẫn: hai cực của pin luôn có hiệu điện thế không đổi chiều, nên pin cung cấp dòng điện một chiều.</p><p class=\"text-base leading-relaxed my-2\">Máy phát điện gió hoạt động dựa trên hiện tượng cảm ứng điện từ: tuabin quay làm từ thông qua cuộn dây biến thiên tuần hoàn, nên suất điện động và dòng điện biến đổi theo chiều, tức là dòng xoay chiều.</p><p class=\"text-base leading-relaxed my-2\">Xét các phương án còn lại:</p><p class=\"text-base leading-relaxed my-2\">- A sai vì công suất phụ thuộc vào quy mô của thiết bị, không phải đặc điểm khác biệt về bản chất dòng điện.</p><p class=\"text-base leading-relaxed my-2\">- C sai vì cả hai nguồn đều phụ thuộc thời tiết (ánh sáng, gió), pin mặt trời cũng không hoạt động vào ban đêm.</p><p class=\"text-base leading-relaxed my-2\">- D sai vì đảo ngược loại dòng điện của hai nguồn.</p><p class=\"text-base leading-relaxed my-2\">Vậy đáp án là <b>B</b>.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-024",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công cơ học: $A = F\\,s$, đơn vị là J, với $1\\ \\text{J} = 1\\ \\text{N.m}$.</p><p class=\"text-base leading-relaxed my-2\">Mà $1\\ \\text{N} = 1\\ \\text{kg.m/s}^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 1\\ \\text{J} = 1\\ \\text{kg.m/s}^2 \\cdot \\text{m} = 1\\ \\text{kg.m}^2/\\text{s}^2$.</p><p class=\"text-base leading-relaxed my-2\">A. N/m là đơn vị của độ cứng lò xo: sai.</p><p class=\"text-base leading-relaxed my-2\">B. $\\text{kg.m}^2/\\text{s}^2$ là đơn vị của công: đúng.</p><p class=\"text-base leading-relaxed my-2\">C. N/s không phải đơn vị của công: sai.</p><p class=\"text-base leading-relaxed my-2\">D. $\\text{kg.m}^2/\\text{s}$ là đơn vị của động lượng nhân với mét (momen động lượng): sai.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>B</b>.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong",
+   "katex-loi:2"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-026",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của trọng lực: $A = P\\,s\\,\\cos\\alpha = mg\\,\\Delta h$ (với $\\Delta h$ là độ giảm độ cao). Trọng lực không sinh công khi vật không thay đổi độ cao, tức là khi trọng lực vuông góc với độ dời.</p><p class=\"text-base leading-relaxed my-2\">A. Vật rơi tự do: độ cao giảm nên trọng lực sinh công dương.</p><p class=\"text-base leading-relaxed my-2\">B. Vật chuyển động trên mặt phẳng ngang: độ dời nằm ngang, vuông góc với trọng lực nên $\\alpha = 90^\\circ$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = P\\,s\\cos 90^\\circ = 0$.</p><p class=\"text-base leading-relaxed my-2\">C. Vật trượt trên mặt phẳng nghiêng: độ cao thay đổi nên trọng lực có sinh công.</p><p class=\"text-base leading-relaxed my-2\">D. Vật ném ngang: độ cao giảm dần nên trọng lực sinh công.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-027",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của một lực là công cản khi $A = F s \\cos\\alpha \\lt 0$, tức là góc giữa lực và độ dời $\\alpha \\gt 90^\\circ$ (lực có thành phần ngược chiều chuyển động).</p><p class=\"text-base leading-relaxed my-2\">A. Lực kéo cùng chiều chuyển động</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A \\gt 0$, là công phát động. Sai.</p><p class=\"text-base leading-relaxed my-2\">B. Vật ném ngang đi xuống, trọng lực có thành phần cùng chiều độ dời (hướng xuống)</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = mgh \\gt 0$, là công phát động. Sai.</p><p class=\"text-base leading-relaxed my-2\">C. Vật trượt lên mặt phẳng nghiêng, độ cao tăng nên trọng lực ngược chiều với thành phần dịch chuyển theo phương thẳng đứng</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = -mgh \\lt 0$, là công cản. Đúng.</p><p class=\"text-base leading-relaxed my-2\">D. Vật rơi tự do, trọng lực cùng chiều độ dời</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A \\gt 0$, là công phát động. Sai.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: chọn <b>C</b>.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-028",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công cơ học $A = F s \\cos\\alpha$ chỉ xuất hiện khi có lực tác dụng lên vật và điểm đặt của lực dịch chuyển theo phương không vuông góc với lực.</p><p class=\"text-base leading-relaxed my-2\">A. Người ngồi đọc báo: không có lực tác dụng làm vật dịch chuyển</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ không có công cơ học.</p><p class=\"text-base leading-relaxed my-2\">B. Lực sĩ đỡ tạ đứng yên: có lực nâng nhưng quãng đường $s = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = 0$.</p><p class=\"text-base leading-relaxed my-2\">C. Người đi xe đạp xuống dốc không đạp: xe chuyển động nhờ trọng lực, người không tác dụng lực sinh công</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ loại. Công là của trọng lực chứ không phải do người thực hiện.</p><p class=\"text-base leading-relaxed my-2\">D. Học sinh kéo nước từ giếng lên: lực kéo của người làm gàu nước dịch chuyển theo hướng lực</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ người thực hiện công cơ học.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>D</b>.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-029",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công cơ học của một lực chỉ xuất hiện khi lực tác dụng lên vật và vật có độ dịch chuyển theo phương không vuông góc với lực: $A = F s\\cos\\alpha \\neq 0$.</p><p class=\"text-base leading-relaxed my-2\">A. Xe không chuyển động nên $s = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = 0$. Không có công cơ học.</p><p class=\"text-base leading-relaxed my-2\">B. Quả tạ đứng yên nên $s = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = 0$. Không có công cơ học.</p><p class=\"text-base leading-relaxed my-2\">C. Quả bưởi rơi xuống: trọng lực tác dụng lên quả bưởi và quả bưởi dịch chuyển theo phương của trọng lực</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = P h \\gt 0$. Có công cơ học.</p><p class=\"text-base leading-relaxed my-2\">D. Vật trượt đều trên mặt bàn nhẵn nằm ngang, không ma sát: chỉ có trọng lực và phản lực, cả hai đều vuông góc với độ dịch chuyển</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = 0$. Không có lực nào sinh công (vật chuyển động theo quán tính).</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>C</b>.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-030",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực: $A = F s\\cos\\alpha$, với $\\alpha$ là góc giữa lực và hướng dịch chuyển.</p><p class=\"text-base leading-relaxed my-2\">A) Lực cản ngược hướng chuyển động nên sinh công âm, đây là công do lực cản sinh ra khi vật chuyển động. Phát biểu này được chấp nhận là đúng.</p><p class=\"text-base leading-relaxed my-2\">B) Lực vuông góc với hướng dịch chuyển có $\\alpha = 90^\\circ$ nên $\\cos\\alpha = 0$ và $A = 0$. Phát biểu đúng.</p><p class=\"text-base leading-relaxed my-2\">C) Trong chuyển động tròn đều, lực hướng tâm luôn vuông góc với vận tốc (tức vuông góc với dịch chuyển) nên không sinh công. Phát biểu đúng.</p><p class=\"text-base leading-relaxed my-2\">D) Vật có gia tốc thì hợp lực khác không, nhưng công của hợp lực có thể dương, âm hoặc bằng 0. Chẳng hạn:</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ vật chuyển động chậm dần: hợp lực ngược hướng chuyển động nên công âm;</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ chuyển động tròn đều: có gia tốc hướng tâm nhưng công bằng 0.</p><p class=\"text-base leading-relaxed my-2\">Vậy phát biểu D sai.</p><p class=\"text-base leading-relaxed my-2\">Đáp án: D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-033",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật trượt xuống mặt phẳng nghiêng góc $\\alpha$: lực ma sát trượt ngược chiều chuyển động nên sinh công cản.</p><p class=\"text-base leading-relaxed my-2\">Phản lực pháp tuyến: $N=mg\\cos\\alpha$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ms}=\\mu N=\\mu mg\\cos\\alpha$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_{ms}=F_{ms}\\,s\\cos180^\\circ=-\\mu mg\\,s\\cos\\alpha$</p><p class=\\\"text-base leading-relaxed my-2\\\">Độ lớn công là $\\mu mgs\\cos\\alpha$ (công âm), nên chọn phương án chứa $\\cos\\alpha$: B.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "B",
+  "kq": "LECH",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-034",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của trọng lực: $A_P = P\\,s\\cos\\beta$, với $\\beta$ là góc giữa vectơ trọng lực $\\vec P$ và vectơ độ dời $\\vec s$.</p><p class=\"text-base leading-relaxed my-2\">Mặt phẳng nghiêng hợp với phương ngang góc $\\alpha$. Vật đi lên dọc mặt phẳng nghiêng nên $\\vec s$ hợp với phương thẳng đứng hướng lên góc $90^\\circ-\\alpha$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Góc giữa $\\vec P$ (hướng xuống) và $\\vec s$ là $\\beta = 90^\\circ + \\alpha$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_P = mg\\,s\\cos(90^\\circ+\\alpha) = -mg\\,s\\sin\\alpha$.</p><p class=\"text-base leading-relaxed my-2\">Cách khác: vật lên cao thêm $h = s\\sin\\alpha$ nên trọng lực sinh công cản, $A_P=-mgh=-mgs\\sin\\alpha$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>C</b>.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-035",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Lực không đổi, vật chuyển động thẳng nên công của lực là $A = F s \\cos\\alpha$, với $\\alpha$ là góc giữa phương của lực và phương chuyển động (độ dời).</p><p class=\"text-base leading-relaxed my-2\">Thay số: $A = 5 \\cdot 6 \\cdot \\cos 60^\\circ$</p><p class=\\\"text-base leading-relaxed my-2\\\">$\\Rightarrow A = 30 \\cdot 0{,}5$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 15\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-036",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do, trọng lực cùng chiều chuyển động nên công của trọng lực là $A = P\\cdot s = mgs$.</p><p class=\"text-base leading-relaxed my-2\">Quãng đường vật rơi trong 5 s đầu: $s = \\dfrac{1}{2}gt^2 = \\dfrac{1}{2}\\cdot 10\\cdot 5^2 = 125$ m.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = mgs = 3\\cdot 10\\cdot 125 = 3750$ J.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-037",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do không vận tốc đầu: $h=\\frac{1}{2}gt^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2\\cdot180}{10}}=6$ s.</p><p class=\"text-base leading-relaxed my-2\">Quãng đường đi được trong 4 s đầu: $s_4=\\frac{1}{2}\\cdot10\\cdot4^2=80$ m.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Quãng đường trong 2 s cuối: $s=180-80=100$ m.</p><p class=\"text-base leading-relaxed my-2\">Công của trọng lực: $A=mgs=8\\cdot10\\cdot100=8000$ J.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>C</b>.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-038",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của trọng lực chỉ phụ thuộc độ giảm độ cao: $A = mg\\Delta h$, trong đó $\\Delta h$ là quãng đường rơi theo phương thẳng đứng.</p><p class=\"text-base leading-relaxed my-2\">Thành phần chuyển động theo phương thẳng đứng của vật ném ngang là rơi tự do không vận tốc đầu: $\\Delta h = \\dfrac{1}{2}gt^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta h = \\dfrac{1}{2}\\cdot 9{,}8\\cdot 4^2 = 78{,}4$ m</p><p class=\"text-base leading-relaxed my-2\">Với $m = 200$ g $= 0{,}2$ kg: $A = mg\\Delta h$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 0{,}2\\cdot 9{,}8\\cdot 78{,}4 \\approx 153{,}7$ J $\\approx 154$ J</p><p class=\"text-base leading-relaxed my-2\">Chọn đáp án C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-039",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật thả rơi tự do (v₀ = 0), chuyển động nhanh dần đều với gia tốc $g$. Chiều dương hướng xuống nên công của trọng lực là $A = mg\\,\\Delta s$.</p><p class=\"text-base leading-relaxed my-2\">Quãng đường vật đi được trong giây thứ năm: $\\Delta s = s_5 - s_4 = \\frac{1}{2}g(5^2 - 4^2)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta s = \\frac{1}{2}\\cdot 10\\cdot 9 = 45$ m</p><p class=\"text-base leading-relaxed my-2\">Công của trọng lực: $A = mg\\,\\Delta s = 2\\cdot 10\\cdot 45$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 900$ J. Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-040",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Máy bay chuyển động nhanh dần đều từ trạng thái nghỉ, $t = 2$ phút $= 120$ s, $h = 2000$ m. Chọn chiều dương hướng lên.</p><p class=\"text-base leading-relaxed my-2\">$h=\\frac{1}{2}at^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a=\\frac{2h}{t^2}=\\frac{2\\cdot 2000}{120^2}\\approx 0,278$ m/s$^2$</p><p class=\"text-base leading-relaxed my-2\">Định luật II Newton: $F-mg=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=m(g+a)=8.10^3\\cdot(10+0,278)\\approx 8,222.10^4$ N</p><p class=\"text-base leading-relaxed my-2\">Công của động cơ: $A=F\\cdot h=8,222.10^4\\cdot 2000\\approx 1,644.10^8$ J.</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-042",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Xe chuyển động trên đường nằm ngang nên phản lực $N = mg$. Lực ma sát trượt có độ lớn: $F_{ms} = \\mu N = \\mu m g$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ms} = 0{,}05 \\cdot 2000 \\cdot 10 = 1000$ N.</p><p class=\"text-base leading-relaxed my-2\">Lực ma sát ngược chiều chuyển động, nên công của nó là: $A_{ms} = -F_{ms}\\, s$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_{ms} = -1000 \\cdot 200 = -2\\cdot 10^5$ J $= -200$ kJ.</p><p class=\"text-base leading-relaxed my-2\">Vận tốc $v = 72$ km/h không ảnh hưởng đến công của lực ma sát. Đáp án: A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-043",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn chiều dương hướng lên, thang máy bắt đầu chuyển động từ trạng thái nghỉ ($v_0=0$). Áp dụng định luật II Newton: $F - mg = ma$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = m(g+a) = 1000\\cdot(10+2) = 12000$ N.</p><p class=\"text-base leading-relaxed my-2\">Quãng đường trong 5 s: $s = \\dfrac{1}{2}at^2 = \\dfrac{1}{2}\\cdot 2\\cdot 5^2 = 25$ m.</p><p class=\"text-base leading-relaxed my-2\">Công của động cơ: $A = Fs = 12000\\cdot 25 = 300000$ J $= 300$ kJ.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-044",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vì khối gỗ trượt đều trên mặt phẳng nghiêng nhẵn nên hợp lực bằng 0. Chọn trục Ox dọc mặt phẳng nghiêng, chiều hướng lên; lực đẩy $\\vec F$ nằm ngang, hợp với mặt phẳng nghiêng góc $\\alpha = 25^0$.</p><p class=\"text-base leading-relaxed my-2\">Dọc theo mặt phẳng nghiêng: $F\\cos\\alpha = P\\sin\\alpha$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = P\\tan\\alpha = 50\\tan 25^0 \\approx 23{,}32$ N</p><p class=\"text-base leading-relaxed my-2\">Công của lực đẩy: $A = F s\\cos\\alpha = P s\\sin\\alpha$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 50\\cdot 1\\cdot \\sin 25^0 \\approx 21{,}13$ J</p><p class=\"text-base leading-relaxed my-2\">Giá trị này gần nhất với phương án B (21,22 J). Phương án A (23,32) là độ lớn lực F, không phải công.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-1-mc-045",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn chiều dương theo chiều chuyển động. Áp dụng định luật II Newton cho vật: $\\vec F_k+\\vec P+\\vec N+\\vec F_{ms}=m\\vec a$.</p><p class=\"text-base leading-relaxed my-2\">Theo phương ngang: $F\\cos\\alpha-\\mu N=ma$.</p><p class=\"text-base leading-relaxed my-2\">Theo phương thẳng đứng: $N=mg-F\\sin\\alpha$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F(\\cos\\alpha+\\mu\\sin\\alpha)=m(a+\\mu g)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=\\dfrac{8(1+0{,}2\\cdot 9{,}8)}{0{,}5+0{,}2\\cdot 0{,}866}\\approx 35{,}17$ N.</p><p class=\"text-base leading-relaxed my-2\">Quãng đường sau 4 s: $s=\\dfrac12at^2=\\dfrac12\\cdot1\\cdot4^2=8$ m.</p><p class=\"text-base leading-relaxed my-2\">Công của lực kéo: $A=Fs\\cos\\alpha=35{,}17\\cdot8\\cdot0{,}5\\approx140{,}7$ J.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>B</b>.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-047",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Mặt phẳng nghiêng: $\\sin\\alpha = \\dfrac{h}{l} = 0{,}6$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$\\cos\\alpha = 0{,}8$.</p><p class=\"text-base leading-relaxed my-2\">Lực ma sát trượt: $F_{ms} = \\mu mg\\cos\\alpha = 0{,}2\\cdot 2\\cdot 10\\cdot 0{,}8 = 3{,}2$ N.</p><p class=\"text-base leading-relaxed my-2\">Quãng đường vật đi được: $s = \\dfrac{l}{2} = 5$ m.</p><p class=\"text-base leading-relaxed my-2\">Lực ma sát ngược chiều chuyển động nên $A_{ms} = -F_{ms}\\,s$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_{ms} = -3{,}2\\cdot 5 = -16$ J.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-048",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Từ $\\tan\\beta = 0{,}75$ (tam giác 3-4-5)</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\sin\\beta = 0{,}6$.</p><p class=\"text-base leading-relaxed my-2\">Độ cao vật lên được: $h = s\\sin\\beta = 5\\cdot 0{,}6 = 3$ m.</p><p class=\"text-base leading-relaxed my-2\">Trọng lực là lực thế; khi vật đi lên thì công của trọng lực âm: $A_P = -mgh$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_P = -2\\cdot 10\\cdot 3 = -60$ J.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-049",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Xe chuyển động đều nên hợp lực dọc mặt phẳng nghiêng bằng 0. Chọn chiều dương dọc mặt phẳng nghiêng, hướng lên dốc: lực kéo $F$ hướng lên; thành phần trọng lực $P\\sin\\alpha$ và lực ma sát $F_{ms}$ hướng xuống.</p><p class=\"text-base leading-relaxed my-2\">$F = mg\\sin 30^\\circ + F_{ms}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = 50\\cdot 10\\cdot 0{,}5 + 40 = 290$ N</p><p class=\"text-base leading-relaxed my-2\">Công của lực kéo (cùng hướng chuyển động, $s = 10$ m): $A = F\\cdot s$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 290\\cdot 10 = 2900$ J</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-050",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của trọng lực chỉ phụ thuộc vào độ chênh lệch độ cao giữa vị trí đầu và vị trí cuối, không phụ thuộc dạng quỹ đạo: $A = mg(h_1 - h_2)$.</p><p class=\"text-base leading-relaxed my-2\">Quả tạ rời tay ở độ cao $h_1 = 2$ m và rơi xuống đất ($h_2 = 0$).</p><p class=\"text-base leading-relaxed my-2\">$A = mg h = 2\\cdot 10\\cdot 2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 40$ J (dương vì trọng lực cùng chiều với độ dịch chuyển theo phương thẳng đứng, hướng xuống).</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-051",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi: $A = F s \\cos\\alpha$, với $\\alpha$ là góc giữa lực và hướng dịch chuyển. Hòm trượt theo phương ngang, dây hợp với phương ngang góc $60^\\circ$ nên $\\alpha = 60^\\circ$.</p><p class=\"text-base leading-relaxed my-2\">$A = 150 \\cdot 10 \\cdot \\cos 60^\\circ$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 150 \\cdot 10 \\cdot 0{,}5 = 750\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn đáp án B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-052",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực kéo không đổi: $A = F s \\cos\\alpha$, trong đó $\\alpha$ là góc giữa phương của lực và phương dịch chuyển (phương ngang).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\cos\\alpha = \\dfrac{A}{F s} = \\dfrac{500}{100\\cdot 8} = 0{,}625$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\alpha \\approx 51{,}3^\\circ \\approx 51^\\circ$</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn đáp án C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-054",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Kiện hàng bắt đầu nâng từ nghỉ ($v_0=0$), chuyển động thẳng nhanh dần đều. Chọn chiều dương hướng lên.</p><p class=\"text-base leading-relaxed my-2\">$h=\\dfrac{1}{2}at^2$ với $h=10$ m, $t=5$ s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a=\\dfrac{2h}{t^2}=\\dfrac{2\\cdot 10}{25}=0{,}8\\ \\text{m/s}^2$</p><p class=\"text-base leading-relaxed my-2\">Định luật II Newton: $F-mg=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=m(g+a)=5000\\cdot 10{,}8=54000$ N</p><p class=\"text-base leading-relaxed my-2\">Quãng đường đi được trong giây thứ 5:</p><p class=\"text-base leading-relaxed my-2\">$s_5=\\dfrac{1}{2}a(5^2-4^2)=\\dfrac{1}{2}\\cdot 0{,}8\\cdot 9=3{,}6$ m</p><p class=\"text-base leading-relaxed my-2\">Công của lực nâng trong giây thứ 5:</p><p class=\"text-base leading-relaxed my-2\">$A=F\\,s_5=54000\\cdot 3{,}6=194400\\ \\text{J}\\approx 1{,}94\\cdot 10^5$ J</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>B</b>.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-055",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trọng lực là lực thế nên công của trọng lực chỉ phụ thuộc vị trí đầu và vị trí cuối: $A = mg(h_1 - h_2)$.</p><p class=\"text-base leading-relaxed my-2\">Vật được ném lên rồi quay về đúng vị trí ban đầu nên $h_1 = h_2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = mg(h_1 - h_2) = 0$.</p><p class=\"text-base leading-relaxed my-2\">Cách khác: công khi đi lên là $-mgh$, công khi đi xuống là $+mgh$, tổng bằng 0.</p><p class=\"text-base leading-relaxed my-2\">Vậy công của trọng lực trong thời gian đó bằng 0. Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-mc-057",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Giả thiết: lực $\\vec F$ kéo vật hướng chếch lên trên, hợp với phương ngang góc $30^\\circ$; vật bắt đầu chuyển động từ trạng thái nghỉ. Chọn chiều dương theo chiều chuyển động.</p><p class=\"text-base leading-relaxed my-2\">Theo phương thẳng đứng: $N = mg - F\\sin30^\\circ = 20 - 5 = 15$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ms} = \\mu N = 0{,}2\\cdot 15 = 3$ N.</p><p class=\"text-base leading-relaxed my-2\">Theo phương ngang: $ma = F\\cos30^\\circ - F_{ms}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a = \\dfrac{10\\cdot 0{,}866 - 3}{2} \\approx 2{,}83$ m/s².</p><p class=\"text-base leading-relaxed my-2\">Quãng đường sau 5 s: $s = \\dfrac12 at^2 = \\dfrac12\\cdot 2{,}83\\cdot 25 \\approx 35{,}4$ m.</p><p class=\"text-base leading-relaxed my-2\">Công của lực F: $A = Fs\\cos30^\\circ = 10\\cdot 35{,}4\\cdot 0{,}866 \\approx 306{,}4$ J.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-tf-058",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Điều kiện áp dụng: lực $F=5$ N không đổi, cùng phương chuyển động, mặt sàn nằm ngang không ma sát nên hợp lực bằng $F$. Vật xuất phát từ nghỉ ($v_0=0$).</p><p class=\"text-base leading-relaxed my-2\">a) Theo định luật II Newton: $a=\\dfrac{F}{m}=\\dfrac{5}{10}=0{,}5\\ m/s^2$. Vậy ý a) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Quãng đường trong giây thứ nhất: $s_1=\\dfrac{1}{2}at^2=\\dfrac{1}{2}\\cdot 0{,}5\\cdot 1^2=0{,}25$ m.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_1=F s_1=5\\cdot 0{,}25=1{,}25$ J, khác 1 J. Vậy ý b) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Quãng đường trong giây thứ hai: $s_2=\\dfrac{1}{2}a(2^2-1^2)=0{,}25\\cdot 3=0{,}75$ m. Vậy ý c) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Quãng đường trong giây thứ ba: $s_3=\\dfrac{1}{2}a(3^2-2^2)=0{,}25\\cdot 5=1{,}25$ m.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_3=F s_3=5\\cdot 1{,}25=6{,}25$ J, khác 5 J. Vậy ý d) <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "ai": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-tf-060",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn chiều dương là chiều chuyển động. Tàu chuyển động nhanh dần đều nên dùng $v^2-v_0^2=2as$.</p><p class=\"text-base leading-relaxed my-2\">$a=\\dfrac{v^2-v_0^2}{2s}=\\dfrac{20^2-15^2}{2\\cdot 2000}\\approx 0{,}04375\\ m/s^2$.</p><p class=\"text-base leading-relaxed my-2\">a) Gia tốc khoảng $0{,}044\\ m/s^2$, không phải $0{,}4\\ m/s^2$</p><p class=\"text-base leading-relaxed my-2\">⇒ Sai.</p><p class=\"text-base leading-relaxed my-2\">Lực ma sát: $F_{ms}=\\mu mg=0{,}005\\cdot 10^5\\cdot 9{,}8=4900\\ N$.</p><p class=\"text-base leading-relaxed my-2\">Định luật II Niu-tơn: $F-F_{ms}=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=ma+F_{ms}=10^5\\cdot 0{,}04375+4900=9275\\ N$.</p><p class=\"text-base leading-relaxed my-2\">b) Lực kéo bằng $9275\\ N$, không phải $8900\\ N$</p><p class=\"text-base leading-relaxed my-2\">⇒ Sai.</p><p class=\"text-base leading-relaxed my-2\">$t=\\dfrac{v-v_0}{a}=\\dfrac{5}{0{,}04375}\\approx 114{,}3\\ s$.</p><p class=\"text-base leading-relaxed my-2\">c) Thời gian khoảng $114\\ s$, không phải $125\\ s$</p><p class=\"text-base leading-relaxed my-2\">⇒ Sai.</p><p class=\"text-base leading-relaxed my-2\">$A=F\\cdot s=9275\\cdot 2000=1{,}855\\cdot 10^7\\ J$.</p><p class=\"text-base leading-relaxed my-2\">d) Công của đầu máy bằng $18\\,550\\,000\\ J$, không phải $17\\,800\\,000\\ J$</p><p class=\"text-base leading-relaxed my-2\">⇒ Sai.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   false,
+   false,
+   false
+  ],
+  "ai": [
+   false,
+   false,
+   false,
+   false
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-1-tf-061",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $m=1500$ kg, $v=54$ km/h $=15$ m/s, $v_0=0$, $\\mu=0,02$ (ký hiệu \"m\" trong đề là lỗi ký tự của $\\mu$).</p><p class=\"text-base leading-relaxed my-2\">a) Gia tốc: $a=\\dfrac{v-v_0}{t}=\\dfrac{15}{15}=1$ m/s², không phải 0,5 m/s². Ý a) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Áp dụng định luật II Newton theo phương chuyển động (chiều dương cùng chiều chuyển động): $F-\\mu mg=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=m(a+\\mu g)=1500\\,(1+0,2)=1800$ N. Ý b) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Quãng đường: $s=\\dfrac{1}{2}at^2=\\dfrac{1}{2}\\cdot1\\cdot15^2=112,5$ m. Ý c) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Công của lực kéo: $A=Fs=1800\\cdot112,5=202500$ J</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A=20,25\\cdot10^4$ J. Ý d) <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   true,
+   true,
+   true
+  ],
+  "ai": [
+   false,
+   true,
+   true,
+   true
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-tf-062",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi: $m = 2000$ kg; $v = 72$ km/h $= 20$ m/s; $s = 200$ m. Chuyển động nhanh dần đều, $v_0 = 0$: $v^2 = 2as$.</p><p class=\"text-base leading-relaxed my-2\">a) $a = \\dfrac{v^2}{2s} = \\dfrac{20^2}{2\\cdot 200} = 1\\ \\text{m/s}^2$ → <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Lực ma sát: $F_{ms} = \\mu mg = 0{,}05\\cdot 2000\\cdot 10 = 1000$ N. Định luật II Newton (chiều dương là chiều chuyển động): $F - F_{ms} = ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = ma + F_{ms} = 2000\\cdot 1 + 1000 = 3000$ N. Vậy ý b) → <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $A_F = Fs = 3000\\cdot 200 = 6\\cdot 10^5$ J $= 600$ kJ, không phải 600 J → <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $A_{ms} = -F_{ms}s = -1000\\cdot 200 = -2\\cdot 10^5$ J $= -200$ kJ → <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "ai": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-tf-063",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Lấy $g = 10\\ \\text{m/s}^2$. Thang máy được kéo lên đều (hoặc vừa đủ để nâng lên) thì lực căng cực tiểu cân bằng với trọng lực.</p><p class=\"text-base leading-relaxed my-2\">a) Để kéo thang máy lên, lực căng tối thiểu phải bằng trọng lượng của thang máy: $T_{min} = P$. Ý a) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $P = mg = 600 \\cdot 10 = 6000\\ \\text{N}$. Ý b) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $T_{min} = P = 6000\\ \\text{N}$, không phải $600\\ \\text{N}$. Ý c) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $A_{min} = T_{min}\\cdot h = 6000 \\cdot 150$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_{min} = 9\\cdot 10^5\\ \\text{J}$, không phải $900\\ \\text{J}$. Ý d) <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   true,
+   false,
+   false
+  ],
+  "ai": [
+   true,
+   true,
+   false,
+   false
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-tf-064",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do không vận tốc đầu, chọn chiều dương hướng xuống: $s=\\frac{1}{2}gt^2=5t^2$ (m).</p><p class=\"text-base leading-relaxed my-2\">a) $s_3=5\\cdot 3^2=45$ m</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $s_4=5\\cdot 4^2=80$ m, không phải 60 m</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Quãng đường trong giây thứ 4: $\\Delta s=s_4-s_3=80-45=35$ m, không phải 25 m</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Công của trọng lực: $A=mg\\Delta s=8\\cdot 10\\cdot 35$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A=2800$ J</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "ai": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-tf-065",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi $m = 2$ tấn $= 2000$ kg. Giả sử thang máy bắt đầu chuyển động từ trạng thái nghỉ ($v_0=0$), nhanh dần đều với $a = 2$ m/s². Chọn chiều dương hướng lên.</p><p class=\"text-base leading-relaxed my-2\">Định luật II Newton: $F - P = ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = m(g+a) = 2000\\cdot(10+2) = 24000$ N.</p><p class=\"text-base leading-relaxed my-2\">a) $F = 24000$ N, không phải 2400 N. Vậy ý a <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $s = \\frac{1}{2}at^2 = \\frac{1}{2}\\cdot 2\\cdot 5^2 = 25$ m. Vậy ý b <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Quãng đường đi trong giây thứ 5: $\\Delta s = s_5 - s_4 = 25 - \\frac{1}{2}\\cdot 2\\cdot 4^2$</p><p class=\\\"text-base leading-relaxed my-2\\\">$\\Rightarrow \\Delta s = 25 - 16 = 9$ m, không phải 5 m. Vậy ý c <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $A = F\\cdot s = 24000\\cdot 25 = 600000$ J. Vậy ý d <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "ai": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-tf-066",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Giả thiết: vật bắt đầu từ nghỉ, cần cẩu nâng lên nhanh dần đều với $a=0,5$ m/s², $m=5000$ kg. Chọn chiều dương hướng lên.</p><p class=\"text-base leading-relaxed my-2\">a) Theo định luật II Newton: $F-P=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=m(g+a)=5000\\cdot(10+0,5)=52500$ N, khác 55000 N. Ý a) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $s=\\frac{1}{2}at^2=\\frac{1}{2}\\cdot0,5\\cdot5^2=6,25$ m, khác 5 m. Ý b) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $s=2,25$ m</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\frac{1}{2}\\cdot0,5\\cdot t^2=2,25$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=3$ s. Ý c) <b>Đúng</b> (với thời gian 3 s).</p><p class=\"text-base leading-relaxed my-2\">d) Sau 3 s, $s=2,25$ m: $A=F\\cdot s=52500\\cdot2,25=118125$ J. Ý d) <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   false,
+   true,
+   true
+  ],
+  "ai": [
+   false,
+   false,
+   true,
+   true
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-tf-067",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">a) Vật chịu trọng lực $\\vec P$, lực kéo $\\vec F_k$, phản lực pháp tuyến $\\vec N$ và lực ma sát $\\vec F_{ms}$. Vậy ý a) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Chọn chiều dương theo chiều chuyển động. Theo phương thẳng đứng: $N = mg - F_k\\sin30°$.</p><p class=\"text-base leading-relaxed my-2\">Theo phương ngang: $F_k\\cos30° - \\mu N = ma$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_k(\\cos30° + \\mu\\sin30°) = m(a+\\mu g)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_k = \\dfrac{10(2+0{,}2\\cdot 9{,}8)}{0{,}866+0{,}1} \\approx 41$ N. Vậy ý b) (40 N) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $s = \\tfrac12 at^2 = \\tfrac12\\cdot 2\\cdot 5^2 = 25$ m. Vậy ý c) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $A = F_k s\\cos30° = 40{,}99\\cdot 25\\cdot 0{,}866 \\approx 887{,}5$ J. Vậy ý d) <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   true
+  ],
+  "ai": [
+   true,
+   false,
+   true,
+   true
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-069",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi cùng phương chuyển dời: $A = F\\cdot d$.</p><p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $d = 8\\ \\text{nm} = 8\\cdot10^{-9}\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">$A = 1{,}5\\cdot10^{-12}\\cdot 8\\cdot10^{-9}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 12\\cdot10^{-21}\\ \\text{J} = 1{,}2\\cdot10^{-20}\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Vậy $X = 1{,}2$.</p>",
+  "type": "short_answer",
+  "final": "1,2",
+  "ai": "1,2",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-070",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Lực ma sát là lực duy nhất sinh công (trọng lực và phản lực vuông góc với phương chuyển động), nên áp dụng định lí động năng: $A_{ms} = W_{đ2} - W_{đ1}$.</p><p class=\"text-base leading-relaxed my-2\">Vật dừng lại nên $v_2 = 0$:</p><p class=\"text-base leading-relaxed my-2\">$A_{ms} = 0 - \\dfrac{1}{2}mv_1^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_{ms} = -\\dfrac{1}{2}\\cdot 10\\cdot 10^2 = -500$ J</p><p class=\"text-base leading-relaxed my-2\">Vậy công của lực ma sát là $-500$ J (công cản, độ lớn 500 J), không phụ thuộc hệ số ma sát.</p>",
+  "type": "short_answer",
+  "final": "-500",
+  "ai": "-500",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-071",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trọng lực: $P = mg = 600\\cdot 10 = 6000\\ \\text{N}$. Thang xuống đều nên hợp lực bằng 0 (hay độ biến thiên động năng bằng 0).</p><p class=\"text-base leading-relaxed my-2\">Chiều dương hướng xuống, quãng đường $h = 150\\ \\text{m}$. Công của trọng lực: $A_P = Ph = 6000\\cdot150 = 9\\cdot10^5\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Công của lực căng (hướng lên): $A_T = -Th = -5400\\cdot150 = -8,1\\cdot10^5\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Định lý động năng: $A_P + A_T + A_h = \\Delta W_đ = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_h = -(9\\cdot10^5 - 8,1\\cdot10^5) = -9\\cdot10^4\\ \\text{J} = -90\\ \\text{kJ}$</p><p class=\"text-base leading-relaxed my-2\">Vậy hệ thống hãm thực hiện công có độ lớn $90\\ \\text{kJ}$ (công âm, là công cản).</p>",
+  "type": "short_answer",
+  "final": "90",
+  "ai": "90",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-072",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công tối thiểu của xe nâng bằng độ tăng thế năng của kiện hàng (nâng đều, không làm tăng động năng): $A = mgh$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m = \\dfrac{A}{gh}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m = \\dfrac{9600}{10 \\cdot 0{,}8} = 1200\\ \\text{kg}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m = 1{,}2$ tấn.</p>",
+  "type": "short_answer",
+  "final": "1,2",
+  "ai": "1,2",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-073",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do không vận tốc đầu, quãng đường $s=\\frac{1}{2}gt^2$. Giây thứ năm là khoảng thời gian từ $t=4$ s đến $t=5$ s.</p><p class=\"text-base leading-relaxed my-2\">$s_5=\\frac{1}{2}g(5^2-4^2)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow s_5=\\frac{1}{2}\\cdot 10\\cdot 9=45$ m.</p><p class=\"text-base leading-relaxed my-2\">Trọng lực cùng hướng với chuyển động nên công: $A=mgs_5$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A=2\\cdot 10\\cdot 45=900$ J.</p><p class=\"text-base leading-relaxed my-2\">Vậy công của trọng lực trong giây thứ năm là $900$ J.</p>",
+  "type": "short_answer",
+  "final": "900",
+  "ai": "900",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-074",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật thả rơi tự do (v₀ = 0), chọn chiều dương hướng xuống. Thời gian rơi hết độ cao: $h=\\frac{1}{2}gt^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2\\cdot 180}{10}}=6$ s</p><p class=\"text-base leading-relaxed my-2\">Quãng đường vật đi được trong 4 s đầu: $s_4=\\frac{1}{2}gt_4^2=\\frac{1}{2}\\cdot 10\\cdot 4^2=80$ m</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Quãng đường đi được trong 2 s cuối: $s=h-s_4=180-80=100$ m</p><p class=\"text-base leading-relaxed my-2\">Trọng lực cùng hướng với độ dời nên: $A=mgs=8\\cdot 10\\cdot 100=8000$ J</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A=8$ kJ</p>",
+  "type": "short_answer",
+  "final": "8",
+  "ai": "8",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-075",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do (chuyển động thẳng nhanh dần đều, $v_0=0$, gia tốc $g$), trọng lực cùng chiều chuyển động nên công trọng lực dương: $A=mgs$.</p><p class=\"text-base leading-relaxed my-2\">Quãng đường rơi sau $t=2$ s: $s=\\dfrac{1}{2}gt^2=\\dfrac{1}{2}\\cdot 9{,}8\\cdot 2^2=19{,}6$ m.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A=mgs=2\\cdot 9{,}8\\cdot 19{,}6=384{,}16$ J.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A\\approx 384$ J.</p>",
+  "type": "short_answer",
+  "final": "384",
+  "ai": "384",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-076",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Giai đoạn 1 (nhấc vật lên cao): lực nâng của người cân bằng với trọng lực, $F = mg$, cùng hướng với độ dời nên người thực hiện công dương.</p><p class=\"text-base leading-relaxed my-2\">$A_1 = mgh = 5 \\cdot 10 \\cdot 1{,}2 = 60\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Giai đoạn 2 (mang vật đi ngang đều): lực nâng của người hướng thẳng đứng lên, vuông góc với độ dời nằm ngang.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_2 = F s \\cos 90^\\circ = 0$</p><p class=\"text-base leading-relaxed my-2\">Công tổng cộng người thực hiện:</p><p class=\"text-base leading-relaxed my-2\">$A = A_1 + A_2 = 60 + 0 = 60\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Đáp số: $60\\ \\text{J}$.</p>",
+  "type": "short_answer",
+  "final": "60",
+  "ai": "60",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-077",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trực thăng chuyển động nhanh dần đều từ nghỉ, t = 0,5 phút = 30 s, chọn chiều dương hướng lên. Gọi a là gia tốc.</p><p class=\"text-base leading-relaxed my-2\">Định luật II Newton: $F - mg = ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = m(g + a)$</p><p class=\"text-base leading-relaxed my-2\">Độ cao: $h = \\dfrac{1}{2}at^2 = 450a$</p><p class=\"text-base leading-relaxed my-2\">Công của động cơ: $A = F h = m(g+a)\\cdot 450a$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 6000\\,(10 + a)\\cdot 450a = 64{,}8.10^6$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a^2 + 10a - 24 = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a = 2\\ \\text{m/s}^2$ (loại nghiệm $a = -12$).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow h = 450\\cdot 2 = 900$ m.</p>",
+  "type": "short_answer",
+  "final": "900",
+  "ai": "900",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-079",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Máy bay chuyển động thẳng nhanh dần đều, bắt đầu từ trạng thái nghỉ ($v_0=0$), $t=120$ s, $h=1440$ m.</p><p class=\"text-base leading-relaxed my-2\">$h=\\dfrac{1}{2}at^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a=\\dfrac{2h}{t^2}=\\dfrac{2\\cdot1440}{120^2}=0{,}2\\ \\text{m/s}^2$</p><p class=\"text-base leading-relaxed my-2\">Chọn chiều dương hướng lên. Định luật II Newton: $F-mg=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=m(g+a)=5\\cdot10^3\\cdot10{,}2=5{,}1\\cdot10^4\\ \\text{N}$</p><p class=\"text-base leading-relaxed my-2\">Công của động cơ: $A=F\\cdot h=5{,}1\\cdot10^4\\cdot1440$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A=73{,}44\\cdot10^6\\ \\text{J}\\approx 73{,}4\\ \\text{MJ}$</p>",
+  "type": "short_answer",
+  "final": "73.4",
+  "ai": "73,4",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-080",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn chiều dương hướng lên. Thang máy chuyển động nhanh dần đều từ trạng thái nghỉ ($v_0=0$) với $a=2\\ m/s^2$ (đề ghi thiếu số mũ, sửa thành m/s²).</p><p class=\"text-base leading-relaxed my-2\">Định luật II Newton: $F - mg = ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = m(g+a) = 1000\\cdot(10+2) = 12000\\ N$</p><p class=\"text-base leading-relaxed my-2\">Quãng đường đi được trong 5 s đầu: $s = \\dfrac{1}{2}at^2 = \\dfrac{1}{2}\\cdot 2\\cdot 5^2 = 25\\ m$</p><p class=\"text-base leading-relaxed my-2\">Công của động cơ: $A = F\\cdot s = 12000\\cdot 25 = 300000\\ J$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 300\\ kJ$</p>",
+  "type": "short_answer",
+  "final": "300",
+  "ai": "300",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-082",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi: $A = F s \\cos\\alpha$, trong đó $\\alpha$ là góc giữa lực kéo và phương dịch chuyển (phương ngang).</p><p class=\"text-base leading-relaxed my-2\">Thay số: $A = 150 \\cdot 29 \\cdot \\cos 30^0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 4350 \\cdot 0{,}866 \\approx 3767$ J</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A \\approx 3{,}77$ kJ.</p>",
+  "type": "short_answer",
+  "final": "3,77",
+  "ai": "3,77",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-083",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực không đổi: $A = F s \\cos\\alpha$, với $\\alpha$ là góc giữa lực và hướng dịch chuyển (phương ngang, thùng trượt trên sàn).</p><p class=\"text-base leading-relaxed my-2\">Dây hợp với phương thẳng đứng góc $30^0$ nên hợp với phương ngang góc $\\alpha = 90^0 - 30^0 = 60^0$.</p><p class=\"text-base leading-relaxed my-2\">$A = F s \\cos 60^0 = 200 \\cdot 2 \\cdot 0{,}5$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 200\\ \\text{J}$</p>",
+  "type": "short_answer",
+  "final": "200",
+  "ai": "200",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-084",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Các lực tác dụng: lực kéo $F=70$ N (dọc mặt phẳng nghiêng), trọng lực $P$, phản lực $N$, lực ma sát $F_{ms}$. Chọn chiều dương dọc mặt phẳng nghiêng, hướng lên (chiều chuyển động).</p><p class=\"text-base leading-relaxed my-2\">Thành phần trọng lực dọc mặt phẳng nghiêng: $P\\sin\\alpha = mg\\sin30^\\circ = 3\\cdot10\\cdot0{,}5 = 15$ N.</p><p class=\"text-base leading-relaxed my-2\">Phản lực: $N = mg\\cos30^\\circ = 30\\cdot\\dfrac{\\sqrt3}{2} \\approx 25{,}98$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ms} = \\mu N = 0{,}05\\cdot25{,}98 \\approx 1{,}299$ N.</p><p class=\"text-base leading-relaxed my-2\">Các công: $A_F = Fs = 70\\cdot2 = 140$ J; $A_P = -P\\sin\\alpha\\cdot s = -30$ J; $A_{ms} = -F_{ms}s \\approx -2{,}6$ J; $A_N = 0$ (N vuông góc với chuyển động).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = A_F + A_P + A_{ms} + A_N = 140 - 30 - 2{,}6 + 0 \\approx 107{,}4$ J.</p><p class=\"text-base leading-relaxed my-2\">Vậy tổng công của các lực tác dụng lên vật là khoảng $107{,}4$ J.</p>",
+  "type": "short_answer",
+  "final": "107,4",
+  "ai": "107,4",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-1-sa-086",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Áp dụng định lí động năng cho quá trình vật trượt hết dốc (phản lực pháp tuyến không sinh công): $A_P + A_{ms} = \\frac{1}{2}mv_2^2-\\frac{1}{2}mv_1^2$.</p><p class=\"text-base leading-relaxed my-2\">Công của trọng lực: $A_P = mgs\\sin\\alpha = 1,5\\cdot 10\\cdot 8\\cdot 0,5 = 60$ J.</p><p class=\"text-base leading-relaxed my-2\">Độ biến thiên động năng: $\\Delta W_đ = \\frac{1}{2}\\cdot 1,5\\cdot(6^2-2^2) = 24$ J.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_{ms} = \\Delta W_đ - A_P = 24 - 60$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_{ms} = -36$ J (công cản).</p>",
+  "type": "short_answer",
+  "final": "-36",
+  "ai": "-36",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-mc-001",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công suất là đại lượng đặc trưng cho tốc độ thực hiện công, được tính bằng công sinh ra trong một đơn vị thời gian.</p><p class=\"text-base leading-relaxed my-2\">$P=\\dfrac{A}{t}$, đơn vị là oát (W), với $1\\ \\text{W}=1\\ \\text{J/s}$.</p><p class=\"text-base leading-relaxed my-2\">Các phương án B, C, D sai vì không đúng định nghĩa và sai đơn vị. Chẳng hạn $\\dfrac{A}{s}$ có đơn vị là N, đó là lực chứ không phải công suất.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-mc-012",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Hiệu suất: $H=\\dfrac{A_{ich}}{A_{tp}}$, trong đó $A_{ich}$ là công có ích, $A_{tp}$ là công toàn phần.</p><p class=\"text-base leading-relaxed my-2\">Theo định luật bảo toàn năng lượng, công có ích không thể lớn hơn công toàn phần: $A_{ich}\\le A_{tp}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow H\\le 1$.</p><p class=\"text-base leading-relaxed my-2\">Mặt khác $A_{ich}\\gt 0$ nên $H\\gt 0$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 0\\lt H\\le 1$. Dấu bằng chỉ xảy ra trong trường hợp lí tưởng (không có hao phí). Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-mc-021",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Hiệu suất của máy: $H=\\dfrac{A_{ci}}{A_{tp}}\\times 100\\%$, tức là thương số giữa công có ích và công toàn phần, không phải hiệu số.</p><p class=\"text-base leading-relaxed my-2\">A đúng: hiệu suất cho biết tỉ lệ giữa công có ích và công toàn phần.</p><p class=\"text-base leading-relaxed my-2\">B sai: hiệu suất không tính bằng hiệu số $A_{tp}-A_{ci}$ (hiệu số này là công hao phí).</p><p class=\"text-base leading-relaxed my-2\">C đúng: hiệu suất là thương số $\\dfrac{A_{ci}}{A_{tp}}$.</p><p class=\"text-base leading-relaxed my-2\">D đúng: do luôn có hao phí nên $A_{ci}\\lt A_{tp}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$H\\lt 1$.</p><p class=\"text-base leading-relaxed my-2\">Vậy phát biểu sai là B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-mc-026",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Quạt điện biến đổi điện năng thành cơ năng (làm quay cánh quạt, tạo gió): đây là năng lượng có ích.</p><p class=\"text-base leading-relaxed my-2\">Khi hoạt động, dòng điện chạy qua dây quấn động cơ làm toả nhiệt (hiệu ứng Joule), đồng thời có ma sát ở ổ trục: một phần năng lượng chuyển thành nhiệt năng làm nóng động cơ và truyền ra môi trường.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Phần năng lượng hao phí là nhiệt năng.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>C</b>.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-mc-027",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đơn vị công suất ở nước Anh là mã lực, kí hiệu HP (horse power). Đề bị mất kí hiệu nên đã bổ sung ngầm theo ngữ cảnh \"50 HP\".</p><p class=\"text-base leading-relaxed my-2\">Quy đổi: $1\\ \\text{HP} \\approx 746\\ \\text{W}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P = 50 \\times 746\\ \\text{W} = 37\\,300\\ \\text{W}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P = 37{,}3\\ \\text{kW}$</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-tf-031",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật chuyển động thẳng đều, công của lực kéo: $A = Fs\\cos\\alpha$, công suất $P = A/t$.</p><p class=\"text-base leading-relaxed my-2\">a) $A = 20\\cdot 2\\cdot\\cos 30^\\circ = 20\\sqrt3 \\approx 34{,}6$ J, khác 20 J. Kết luận: Sai.</p><p class=\"text-base leading-relaxed my-2\">b) $P = \\dfrac{A}{t} = \\dfrac{34{,}6}{4} \\approx 8{,}66$ W, khác 3 W. Kết luận: Sai.</p><p class=\"text-base leading-relaxed my-2\">c) $A = 20\\cdot 10\\cdot\\cos 30^\\circ \\approx 173$ J, khác 3 J. Kết luận: Sai.</p><p class=\"text-base leading-relaxed my-2\">d) $P = \\dfrac{173}{15} \\approx 11{,}5$ W, khác 3 W. Kết luận: Sai.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   false,
+   false,
+   false
+  ],
+  "ai": [
+   false,
+   false,
+   false,
+   false
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-2-tf-033",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "kq": "khong-co-ket-qua",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-tf-036",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi: $54$ km/h $=15$ m/s; $m=4000$ kg. Khi chuyển động đều: lực kéo bằng lực cản, $F_c=\\dfrac{P}{v}=\\dfrac{20000}{10}=2000$ N.</p><p class=\"text-base leading-relaxed my-2\">a) $a=\\dfrac{v^2-v_0^2}{2s}=\\dfrac{15^2-10^2}{2\\cdot 250}=0{,}25$ m/s². Ý a <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Định luật II Newton: $F-F_c=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=2000+4000\\cdot0{,}25=3000$ N</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P=Fv=3000\\cdot15=45000$ W $\\neq 4500$ W. Ý b <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $v_{tb}=\\dfrac{10+15}{2}=12{,}5$ m/s. Ý c <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $P_{tb}=F\\,v_{tb}=3000\\cdot12{,}5=37500$ W $\\neq 357000$ W. Ý d <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "ai": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-tf-038",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi $v = 54$ km/h $= 15$ m/s. Trên đường ngang, ô tô chuyển động đều nên lực kéo cân bằng lực ma sát: $F_{ms} = F = \\dfrac{P}{v}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ms} = \\dfrac{5000}{15} \\approx 333{,}3$ N.</p><p class=\"text-base leading-relaxed my-2\">a) $F_{ms} \\approx 333$ N, không phải 1000 N nên <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $\\mu = \\dfrac{F_{ms}}{mg} = \\dfrac{333{,}3}{10000} = \\dfrac{1}{30}$ (lấy $g = 10$ m/s²) nên <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Lên dốc đều: $F = mg\\sin\\alpha + \\mu mg\\cos\\alpha$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Với độ dốc $\\sin\\alpha \\approx 0{,}04$, $\\cos\\alpha \\approx 1$: $F \\approx 400 + 333 \\approx 733$ N nên <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $P' = F v = 733\\cdot 15 \\approx 11000$ W, khác 10599 W nên <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   true,
+   true,
+   false
+  ],
+  "ai": [
+   false,
+   true,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-tf-039",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Lưu lượng: $500$ lít/phút $=500$ kg/phút</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ khối lượng nước bơm trong 1 s là $m=\\dfrac{500}{60}\\approx 8{,}333$ kg.</p><p class=\"text-base leading-relaxed my-2\">Công có ích trong 1 s (lấy $g=10$ m/s²): $A_{ci}=mgh=8{,}333\\cdot10\\cdot10=833{,}3$ J.</p><p class=\"text-base leading-relaxed my-2\">a) Công cần thiết để đưa nước lên cao (trong 1 s) là $833{,}3$ J</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Đúng.</p><p class=\"text-base leading-relaxed my-2\">b) Công thực tế của động cơ: $A_{tp}=\\dfrac{A_{ci}}{H}=\\dfrac{833{,}3}{0{,}8}\\approx1041{,}7$ J, khác $1401{,}6$ J</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Sai.</p><p class=\"text-base leading-relaxed my-2\">c) Công suất: $P=\\dfrac{A_{tp}}{t}=\\dfrac{1041{,}7}{1}\\approx1041{,}7$ W, xấp xỉ $1041{,}6$ W (sai khác do làm tròn)</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Đúng.</p><p class=\"text-base leading-relaxed my-2\">d) Trong 30 phút $=1800$ s: $A=P\\,t=1041{,}7\\cdot1800\\approx1\\,875\\,000$ J, khác $1\\,874\\,268$ J</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Sai.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "ai": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-tf-041",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Nâng đều nên lực nâng bằng trọng lượng: $F = mg = 1000\\cdot 10 = 10^4$ N.</p><p class=\"text-base leading-relaxed my-2\">Công có ích: $A_{ich} = F h = 10^4\\cdot 10 = 10^5$ J.</p><p class=\"text-base leading-relaxed my-2\">a) Công của lực nâng là $10^5$ J, không phải $2.10^5$ J</p><p class=\"text-base leading-relaxed my-2\">⇒ <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $A_{tp} = \\dfrac{A_{ich}}{H} = \\dfrac{10^5}{0,6}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_{tp} \\approx 166667$ J, không phải 500000 J</p><p class=\"text-base leading-relaxed my-2\">⇒ <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $P = \\dfrac{A_{tp}}{t} = \\dfrac{166667}{30}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P \\approx 5555,6$ W, xấp xỉ 5555,5 W</p><p class=\"text-base leading-relaxed my-2\">⇒ <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Với 2 tấn, công có ích gấp đôi; giữ nguyên công suất động cơ thì $t' = 2t = 60$ s</p><p class=\"text-base leading-relaxed my-2\">⇒ <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   false,
+   true,
+   true
+  ],
+  "ai": [
+   false,
+   false,
+   true,
+   true
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-tf-042",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">a) Kéo đều nên $F = mg = 12\\cdot 10 = 120$ N.</p><p class=\"text-base leading-relaxed my-2\">$A = F h = 120\\cdot 8 = 960$ J. Vậy ý a) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $\\mathcal{P} = \\dfrac{A}{t} = \\dfrac{960}{16} = 60$ W $\\neq 90$ W. Vậy ý b) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Kéo nhanh dần đều từ trạng thái nghỉ: $h = \\dfrac{1}{2}at^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a = \\dfrac{2h}{t^2} = \\dfrac{2\\cdot 8}{2^2} = 4$ m/s$^2$.</p><p class=\"text-base leading-relaxed my-2\">$F - mg = ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = m(g+a) = 12\\cdot 14 = 168$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A' = F h = 168\\cdot 8 = 1344$ J.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mathcal{P}' = \\dfrac{1344}{2} = 672$ W $\\neq 627$ W. Vậy ý c) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $H = \\dfrac{A_{ich}}{A_{tp}} = \\dfrac{960}{1344} \\approx 0{,}714 = 71{,}4\\%$. Vậy ý d) <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "ai": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-tf-043",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn chiều dương là chiều chuyển động. Xe chuyển động nhanh dần đều từ nghỉ nên $v^2 = 2as$.</p><p class=\"text-base leading-relaxed my-2\">$a = \\dfrac{v^2}{2s} = \\dfrac{12^2}{2\\cdot 144} = 0{,}5$ m/s².</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t = \\dfrac{v}{a} = 24$ s.</p><p class=\"text-base leading-relaxed my-2\">Định luật II Newton: $F - F_{ms} = ma$ với $F_{ms} = \\mu mg = 1000$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = ma + F_{ms} = 2500\\cdot 0{,}5 + 1000 = 2250$ N.</p><p class=\"text-base leading-relaxed my-2\">a) Công của lực kéo: $A = Fs = 2250\\cdot 144 = 324000$ J. Kết luận: Đúng.</p><p class=\"text-base leading-relaxed my-2\">b) Công suất: $P = \\dfrac{A}{t} = \\dfrac{324000}{24} = 13500$ W = 13,5 kW, khác 15,3 kW. Kết luận: Sai.</p><p class=\"text-base leading-relaxed my-2\">c) Công hao phí là công thắng ma sát: $A_{ms} = F_{ms}s = 1000\\cdot 144 = 144000$ J, khác 104000 J. Kết luận: Sai.</p><p class=\"text-base leading-relaxed my-2\">d) Công có ích là động năng: $W_đ = \\tfrac12 mv^2 = 180000$ J.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow H = \\dfrac{180000}{324000} \\approx 55{,}6\\%$. Kết luận: Đúng.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "ai": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-2-tf-044",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đề không cho độ dời; từ đáp số suy ra $s = 2$ m. Lực kéo hướng lên, hợp góc $45^\\circ$ với phương ngang.</p><p class=\"text-base leading-relaxed my-2\">a) $A = F s\\cos\\alpha = 10\\cdot 2\\cdot \\cos 45^\\circ = 14{,}14$ J. <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Phản lực: $N = P - F\\sin\\alpha = 20 - 10\\cdot 0{,}7071 = 12{,}93$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ms} = \\mu N = 0{,}2\\cdot 12{,}93 = 2{,}586$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow |A_{ms}| = F_{ms}\\, s = 2{,}586\\cdot 2 = 5{,}17$ J (công thực là $-5{,}17$ J, độ lớn $5{,}17$ J). <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $A_{ci} = A - |A_{ms}| = 14{,}14 - 5{,}17 = 8{,}97$ J. <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $H = \\dfrac{A_{ci}}{A} = \\dfrac{8{,}97}{14{,}14} \\approx 63{,}4\\%$ $\\neq 60\\%$. <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "ai": [
+   true,
+   true,
+   true,
+   false
+  ],
+  "kq": "LECH",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-045",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công suất của động cơ bằng công thực hiện được trong một đơn vị thời gian: $P = \\dfrac{A}{t}$.</p><p class=\"text-base leading-relaxed my-2\">Thay số: $A = 1000\\ \\text{J}$, $t = 10\\ \\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P = \\dfrac{1000}{10} = 100\\ \\text{W}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy công suất của động cơ là $100\\ \\text{W}$.</p>",
+  "type": "short_answer",
+  "final": "100",
+  "ai": "100",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-046",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của lực kéo không đổi: $A = F s \\cos\\alpha$ (góc $\\alpha = 30^\\circ$, giả định vì đề mất ký tự góc).</p><p class=\"text-base leading-relaxed my-2\">$A = 20 \\cdot 2 \\cdot \\cos 30^\\circ \\approx 34{,}64\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Công suất: $\\mathcal{P} = \\dfrac{A}{t}$</p><p class=\\\"text-base leading-relaxed my-2\\\">$\\Rightarrow \\mathcal{P} = \\dfrac{34{,}64}{4} \\approx 8{,}66\\ \\text{W}$</p><p class=\"text-base leading-relaxed my-2\">Vậy công suất của lực là $8{,}66$ W.</p>",
+  "type": "short_answer",
+  "final": "8,66",
+  "ai": "8,66",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-047",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Gàu chuyển động đều nên hợp lực bằng 0, lực kéo cân bằng với trọng lực: $F = P = mg = 10 \\cdot 10 = 100\\ \\text{N}$.</p><p class=\"text-base leading-relaxed my-2\">Công của lực kéo: $A = F\\cdot h = 100 \\cdot 5 = 500\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Thời gian: $t = 1\\ \\text{phút}\\ 40\\ \\text{s} = 100\\ \\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">Công suất: $\\mathcal{P} = \\dfrac{A}{t} = \\dfrac{500}{100}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mathcal{P} = 5\\ \\text{W}$.</p>",
+  "type": "short_answer",
+  "final": "5",
+  "ai": "5",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-2-sa-049",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Người leo cầu thang với tốc độ coi như không đổi nên công người thực hiện bằng độ tăng thế năng: $A = mgh$.</p><p class=\"text-base leading-relaxed my-2\">$A = 60\\cdot 10\\cdot 8 = 4800\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Công suất: $P = \\dfrac{A}{t}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P = \\dfrac{4800}{10} = 480\\ \\text{W}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P = \\dfrac{480}{746} \\approx 0{,}64\\ \\text{HP}$</p><p class=\"text-base leading-relaxed my-2\">Kết luận: $P \\approx 0{,}64$ HP.</p>",
+  "type": "short_answer",
+  "final": "0.64",
+  "ai": "0,64",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-050",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Khi nâng tạ lên đều, lực nâng bằng trọng lượng của tạ: $F = P = mg$.</p><p class=\"text-base leading-relaxed my-2\">Công của lực nâng: $A = mgh = 80\\cdot 10\\cdot 0{,}6 = 480\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Công suất: $\\mathcal{P} = \\dfrac{A}{t}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mathcal{P} = \\dfrac{480}{0{,}8} = 600\\ \\text{W}$.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: công suất của học sinh là $600\\ \\text{W}$.</p>",
+  "type": "short_answer",
+  "final": "600",
+  "ai": "600",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-051",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do không vận tốc đầu, chuyển động nhanh dần đều với gia tốc $g$. Trọng lực cùng hướng với vận tốc nên công suất tức thời là $P = F v = mg\\,v$.</p><p class=\"text-base leading-relaxed my-2\">Vận tốc tại thời điểm $t = 2\\ \\text{s}$: $v = gt = 10 \\cdot 2 = 20\\ \\text{m/s}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P = mg\\,v = 2 \\cdot 10 \\cdot 20$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P = 400\\ \\text{W}$.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: công suất tức thời của trọng lực tại thời điểm 2 s là $400\\ \\text{W}$.</p>",
+  "type": "short_answer",
+  "final": "400",
+  "ai": "400",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-052",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Lực kéo của động cơ cùng hướng chuyển động nên công của lực kéo: $A = F\\cdot s$.</p><p class=\"text-base leading-relaxed my-2\">$A = 20000 \\cdot 18 = 3{,}6\\cdot 10^5\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Công suất trung bình: $\\mathcal{P} = \\dfrac{A}{t}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mathcal{P} = \\dfrac{3{,}6\\cdot 10^5}{10} = 3{,}6\\cdot 10^4\\ \\text{W}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mathcal{P} = 36\\ \\text{kW}$.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: 36 kW.</p>",
+  "type": "short_answer",
+  "final": "36",
+  "ai": "36",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-053",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Ô tô chuyển động đều trên đường nằm ngang nên hợp lực bằng 0: lực kéo của động cơ cân bằng với lực ma sát, $F = F_{ms} = \\mu m g$.</p><p class=\"text-base leading-relaxed my-2\">Công suất của động cơ: $P = F v$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = \\dfrac{P}{v} = \\dfrac{20000}{10} = 2000\\ \\text{N}$</p><p class=\"text-base leading-relaxed my-2\">Từ $F = \\mu m g$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mu = \\dfrac{F}{mg} = \\dfrac{2000}{4000\\cdot 10} = 0{,}05$</p><p class=\"text-base leading-relaxed my-2\">Vậy hệ số ma sát là $\\mu = 0{,}05$ (lấy $g = 10\\ \\text{m/s}^2$).</p>",
+  "type": "short_answer",
+  "final": "0,05",
+  "ai": "0,05",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-055",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi: $v_1=54$ km/h $=15$ m/s; $v_2=72$ km/h $=20$ m/s; $m=8\\cdot10^5$ kg; $s=2000$ m; $\\mu=0{,}005$.</p><p class=\"text-base leading-relaxed my-2\">Chuyển động nhanh dần đều: $a=\\dfrac{v_2^2-v_1^2}{2s}=\\dfrac{400-225}{4000}=0{,}04375$ m/s².</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=\\dfrac{v_2-v_1}{a}=\\dfrac{5}{0{,}04375}\\approx 114{,}29$ s.</p><p class=\"text-base leading-relaxed my-2\">Định lý động năng: $A_F-\\mu mgs=\\dfrac12 m(v_2^2-v_1^2)$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_F=\\mu mgs+\\dfrac12 m(v_2^2-v_1^2)=4\\cdot10^4\\cdot2000+\\dfrac12\\cdot8\\cdot10^5\\cdot175=1{,}5\\cdot10^8$ J.</p><p class=\"text-base leading-relaxed my-2\">Công suất trung bình: $P=\\dfrac{A_F}{t}=\\dfrac{1{,}5\\cdot10^8}{114{,}29}\\approx1{,}31\\cdot10^6$ W $\\approx 1{,}31$ MW.</p>",
+  "type": "short_answer",
+  "final": "1,31",
+  "ai": "1,31",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-056",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công suất 800 kW là công suất toàn phần của động cơ; hiệu suất $H = 0{,}8$ nên công suất có ích (dùng để kéo tàu) là:</p><p class=\"text-base leading-relaxed my-2\">$P_{ci} = H\\cdot P = 0{,}8\\cdot 800 = 640\\ \\text{kW} = 6{,}4\\cdot10^5\\ \\text{W}$</p><p class=\"text-base leading-relaxed my-2\">Tàu chạy với vận tốc không đổi, công suất có ích liên hệ với lực kéo: $P_{ci} = F v$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = \\dfrac{P_{ci}}{v} = \\dfrac{6{,}4\\cdot10^5}{20}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = 3{,}2\\cdot10^4\\ \\text{N} = 32\\ \\text{kN}$</p>",
+  "type": "short_answer",
+  "final": "32",
+  "ai": "32",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-058",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công suất phát điện (có ích): $P = 200000\\ \\text{kW} = 2\\cdot10^{8}\\ \\text{W}$, hiệu suất $H = 80\\%$.</p><p class=\"text-base leading-relaxed my-2\">Công suất của dòng nước tại tua bin: $P_{n} = \\dfrac{P}{H} = \\dfrac{2\\cdot10^{8}}{0,8} = 2,5\\cdot10^{8}\\ \\text{W}$.</p><p class=\"text-base leading-relaxed my-2\">Trong mỗi giây, khối lượng nước $m = \\rho Q$ rơi từ độ cao $h$, nên thế năng giảm chuyển thành công: $P_{n} = \\dfrac{mgh}{t} = \\rho Q g h$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow Q = \\dfrac{P_{n}}{\\rho g h}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow Q = \\dfrac{2,5\\cdot10^{8}}{1000\\cdot10\\cdot1000} = 25\\ \\text{m}^3/\\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy lưu lượng nước là $25\\ \\text{m}^3/\\text{s}$.</p>",
+  "type": "short_answer",
+  "final": "25",
+  "ai": "25",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-2-sa-059",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Ô tô lên dốc đều nên hợp lực dọc mặt dốc bằng 0. Lấy $g = 10\\ m/s^2$; $v = 10{,}8\\ km/h = 3\\ m/s$; $m = 2000\\ kg$; $P = 60000\\ W$.</p><p class=\"text-base leading-relaxed my-2\">Lực kéo của động cơ: $F = \\dfrac{P}{v} = \\dfrac{60000}{3} = 20000\\ N$.</p><p class=\"text-base leading-relaxed my-2\">Cân bằng dọc mặt dốc: $F = mg\\sin\\alpha + \\mu mg\\cos\\alpha$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mu = \\dfrac{F - mg\\sin\\alpha}{mg\\cos\\alpha}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mu = \\dfrac{20000 - 2000\\cdot 10\\cdot 0{,}5}{2000\\cdot 10\\cdot \\frac{\\sqrt3}{2}} = \\dfrac{10000}{17320{,}5}\\approx 0{,}577$</p><p class=\"text-base leading-relaxed my-2\">Kết luận: $\\mu \\approx 0{,}58$.</p>",
+  "type": "short_answer",
+  "final": "0,58",
+  "ai": "0,58",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-001",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Động năng của vật khối lượng $m$ chuyển động với tốc độ $v$ là năng lượng do chuyển động mà có, được tính bằng công thức:</p><p class=\"text-base leading-relaxed my-2\">$W_đ = \\frac{1}{2}mv^{2}$</p><p class=\"text-base leading-relaxed my-2\">Phương án A ($mv$) là biểu thức của động lượng; B và D sai về hệ số hoặc số mũ của $v$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>C</b>.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong",
+   "katex-loi:1"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-002",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Động năng của vật khối lượng $m$ chuyển động với tốc độ $v$ là $W_đ = \\dfrac{1}{2}mv^2$.</p><p class=\"text-base leading-relaxed my-2\">Vì $m \\gt 0$ và $v^2 \\ge 0$ nên $W_đ \\ge 0$, tức là động năng có thể dương (khi $v \\ne 0$) hoặc bằng không (khi $v = 0$).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Động năng chỉ có độ lớn, không có hướng nên là đại lượng vô hướng.</p><p class=\"text-base leading-relaxed my-2\">Do đó: động năng là đại lượng vô hướng, có thể dương hoặc bằng không. Chọn <b>B</b>.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-003",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Định lí động năng: độ biến thiên động năng của vật bằng tổng công của tất cả các ngoại lực (hợp lực) tác dụng lên vật.</p><p class=\"text-base leading-relaxed my-2\">$W_{d2}-W_{d1}=A_{ngoai\\ luc}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Phương án A, B, C chỉ nêu công của một loại lực riêng lẻ, không đủ trong trường hợp tổng quát.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-004",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Động năng của vật khối lượng $m$, tốc độ $v$: $W_đ = \\dfrac{1}{2}mv^2$.</p><p class=\"text-base leading-relaxed my-2\">A sai: tích khối lượng và vận tốc là động lượng $p = mv$, không phải động năng.</p><p class=\"text-base leading-relaxed my-2\">B đúng: $W_đ = \\dfrac{1}{2}mv^2$ chỉ phụ thuộc $m$ và độ lớn $v$ nên là đại lượng vô hướng.</p><p class=\"text-base leading-relaxed my-2\">C sai: trong hệ kín thì động lượng được bảo toàn; động năng không nhất thiết bảo toàn (ví dụ va chạm mềm).</p><p class=\"text-base leading-relaxed my-2\">D sai: động năng bằng một nửa tích khối lượng và bình phương vận tốc, thiếu hệ số $\\dfrac{1}{2}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-005",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Động năng $W_đ=\\dfrac{1}{2}mv^2$ không đổi khi và chỉ khi độ lớn vận tốc $v$ không đổi (khối lượng $m$ không đổi).</p><p class=\"text-base leading-relaxed my-2\">A. Chuyển động thẳng đều: $v$ không đổi</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$W_đ$ không đổi. Phát biểu đúng.</p><p class=\"text-base leading-relaxed my-2\">B. Chuyển động với gia tốc không đổi (khác 0): vận tốc biến thiên đều theo thời gian $v=v_0+at$, độ lớn $v$ thay đổi (ví dụ rơi tự do, chuyển động thẳng biến đổi đều)</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$W_đ$ thay đổi. Phát biểu sai.</p><p class=\"text-base leading-relaxed my-2\">C. Chuyển động tròn đều: tốc độ không đổi</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$W_đ$ không đổi. Phát biểu đúng.</p><p class=\"text-base leading-relaxed my-2\">D. Chuyển động cong đều: quỹ đạo cong, tốc độ không đổi</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$W_đ$ không đổi. Phát biểu đúng.</p><p class=\"text-base leading-relaxed my-2\">Vậy phát biểu sai là B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-006",
+  "type": "multiple_choice",
+  "final": "B",
+  "kq": "khong-co-ket-qua",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-007",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Động năng của vật khối lượng $m$, vận tốc $v$: $W_đ = \\dfrac{1}{2}mv^2$.</p><p class=\"text-base leading-relaxed my-2\">A đúng: $W_đ \\ge 0$, bằng 0 khi $v = 0$, nên có thể dương hoặc bằng không.</p><p class=\"text-base leading-relaxed my-2\">B đúng: vận tốc phụ thuộc hệ quy chiếu</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ động năng cũng phụ thuộc hệ quy chiếu.</p><p class=\"text-base leading-relaxed my-2\">C đúng: $W_đ \\sim m$ khi $v$ không đổi.</p><p class=\"text-base leading-relaxed my-2\">D sai: $W_đ$ tỉ lệ với bình phương vận tốc ($v^2$), không tỉ lệ thuận với $v$.</p><p class=\"text-base leading-relaxed my-2\">Vậy đặc điểm không phải của động năng là phương án D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-012",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Động năng của vật khối lượng $m$ chuyển động với tốc độ $v$: $W_đ = \\dfrac{1}{2}mv^2$.</p><p class=\"text-base leading-relaxed my-2\">A sai: $W_đ$ tỉ lệ thuận với bình phương vận tốc, không tỉ lệ thuận với vận tốc.</p><p class=\"text-base leading-relaxed my-2\">B đúng: $W_đ$ chỉ có độ lớn, không có hướng (vô hướng) và vì $m\\gt 0$, $v^2\\ge 0$ nên $W_đ\\ge 0$.</p><p class=\"text-base leading-relaxed my-2\">C sai: động năng là đại lượng vô hướng nên không có chiều, không thể nói cùng chiều với vận tốc.</p><p class=\"text-base leading-relaxed my-2\">D sai: động năng còn phụ thuộc khối lượng; vật có $W_đ$ lớn hơn nhưng khối lượng lớn hơn nhiều vẫn có thể chuyển động chậm hơn.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>B</b>.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-017",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Động năng của vật khối lượng $m$ chuyển động với tốc độ $v$ là $W_đ = \\frac{1}{2}mv^{2}$ (đề bị mất ký hiệu $W_đ$ ở vế trái).</p><p class=\"text-base leading-relaxed my-2\">A đúng: đây là biểu thức xác định động năng.</p><p class=\"text-base leading-relaxed my-2\">B đúng: $m \\gt 0$, $v^{2} \\ge 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$W_đ \\ge 0$, và động năng là đại lượng vô hướng.</p><p class=\"text-base leading-relaxed my-2\">C đúng: động năng là năng lượng vật có được do chuyển động.</p><p class=\"text-base leading-relaxed my-2\">D sai: năng lượng vật có được do ở độ cao $z$ so với mặt đất là thế năng trọng trường $W_t = mgz$, không phải động năng.</p><p class=\"text-base leading-relaxed my-2\">Vậy phát biểu sai là D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-020",
+  "type": "multiple_choice",
+  "final": "D",
+  "kq": "khong-co-ket-qua",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-024",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Định lí động năng: công của ngoại lực tác dụng lên vật bằng độ biến thiên động năng của vật.</p><p class=\"text-base leading-relaxed my-2\">$A = W_{đ2} - W_{đ1}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = \\dfrac{1}{2}mv_2^2 - \\dfrac{1}{2}mv_1^2$</p><p class=\"text-base leading-relaxed my-2\">Phương án C ($mv_1 - mv_2$) là dạng của động lượng nên sai. Chọn phương án có biểu thức $A=\\dfrac{1}{2}mv_2^2-\\dfrac{1}{2}mv_1^2$: đáp án B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong",
+   "katex-loi:1"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-031",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Động năng của chất điểm: $W_đ=\\dfrac{1}{2}mv^2$, với $m=100\\ g=0,1\\ kg$.</p><p class=\"text-base leading-relaxed my-2\">Vận tốc là đạo hàm của tọa độ theo thời gian: $v=x'(t)$. Phương trình chuyển động trong đề bị mất, nên ở đây suy ra $v$ từ các phương án (xem ghi chú).</p><p class=\"text-base leading-relaxed my-2\">Với dạng $x=2+\\dfrac{t^2}{2}$ thì $v=x'=t$ nên tại $t=4\\ s$: $v=4\\ m/s$.</p><p class=\"text-base leading-relaxed my-2\">$W_đ=\\dfrac{1}{2}\\cdot 0,1\\cdot 4^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_đ=0,8\\ J$.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-036",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Áp dụng định lí động năng cho vật trượt không vận tốc đầu trên mặt phẳng nghiêng: $mgh - F_{ms}s = \\dfrac{1}{2}mv^2$, với $h = s\\sin\\alpha = 2\\cdot 0{,}5 = 1\\ m$.</p><p class=\"text-base leading-relaxed my-2\">Với $F_{ms}=1\\ N$: $2\\cdot 10\\cdot 1 - 1\\cdot 2 = \\dfrac{1}{2}\\cdot 2\\cdot v^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v^2 = 18$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v \\approx 4{,}24\\ m/s$, không trùng phương án nào.</p><p class=\"text-base leading-relaxed my-2\">Đáp án $2\\ m/s$ ứng với $v^2=4$, tức $F_{ms}=8\\ N$ (khi đó $20-8\\cdot 2=4$). Có khả năng đề bị lỗi số liệu; phương án gần với đáp án đề là $2\\ m/s$.</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-3-mc-039",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật bắt đầu chuyển động (vận tốc đầu bằng 0), áp dụng định lí động năng với lực $F$ không đổi: $A = F s = \\dfrac{1}{2}mv^2$.</p><p class=\"text-base leading-relaxed my-2\">Khi lực tăng 3 lần ($F' = 3F$) và cùng quãng đường $s$: $F's = \\dfrac{1}{2}mv'^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{v'^2}{v^2} = \\dfrac{F'}{F} = 3$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v' = v\\sqrt{3} \\approx 1{,}73v$.</p><p class=\"text-base leading-relaxed my-2\">Hai phương án A và B có cùng giá trị (xấp xỉ); chọn A là giá trị số $1{,}73v$.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "A",
+  "kq": "LECH",
+  "flags": [
+   "cong-thuc-rong",
+   "katex-loi:1"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-mc-040",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Áp dụng định lí động năng cho viên đạn khi xuyên qua tấm gỗ (chọn chiều dương là chiều chuyển động, lực cản ngược chiều nên công cản âm): $A = -F_c s = \\frac{1}{2}mv_2^2-\\frac{1}{2}mv_1^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_c = \\dfrac{m(v_1^2-v_2^2)}{2s}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_c = \\dfrac{0{,}01\\,(300^2-100^2)}{2\\cdot 0{,}05} = 8\\cdot10^3\\ \\text{N}$.</p><p class=\"text-base leading-relaxed my-2\">Lực cản ngược chiều chuyển động nên lực cản trung bình là $-8\\cdot10^3$ N. Chọn C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [
+   "dau-vet-markup"
+  ],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-3-tf-042",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $m = 2\\ \\text{tấn} = 2000\\ \\text{kg}$; $v = 100\\ \\text{km/s} = 10^5\\ \\text{m/s}$.</p><p class=\"text-base leading-relaxed my-2\">a) Trọng lượng $P = mg$ phụ thuộc gia tốc trọng trường $g$ nơi vật ở. Khi bay vào Trái Đất, $g$ thay đổi so với ngoài vũ trụ nên trọng lượng thay đổi. Vậy ý a) Sai.</p><p class=\"text-base leading-relaxed my-2\">b) $W_đ = \\dfrac{1}{2}mv^2 = \\dfrac{1}{2}\\cdot 2000\\cdot (10^5)^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_đ = 10^{13}\\ \\text{J} \\neq 5.10^{12}\\ \\text{J}$. Vậy ý b) Sai.</p><p class=\"text-base leading-relaxed my-2\">c) Với $v = 80\\ \\text{km/s} = 8.10^4\\ \\text{m/s}$: $W_đ = \\dfrac{1}{2}\\cdot 2000\\cdot (8.10^4)^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_đ = 6,4.10^{12}\\ \\text{J}$. Vậy ý c) Đúng.</p><p class=\"text-base leading-relaxed my-2\">d) Với $m' = \\dfrac{m}{2}$, $v' = 1,5v$: $W_đ' = \\dfrac{1}{2}\\cdot\\dfrac{m}{2}\\cdot(1,5v)^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_đ' = 1,125\\cdot\\dfrac{1}{2}mv^2 \\neq W_đ$. (Nếu hiểu $v' = \\dfrac{v}{2}$ thì $W_đ' = \\dfrac{W_đ}{8}$, cũng khác.) Vậy ý d) Sai.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   false,
+   true,
+   false
+  ],
+  "ai": [
+   false,
+   false,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-3-tf-048",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi: $m=2000$ kg; $v_{AB}=7,2$ km/h $=2$ m/s; $v_C=72$ km/h $=20$ m/s. Hệ số ma sát $\\mu=0,2$.</p><p class=\"text-base leading-relaxed my-2\">a) Trên AB xe chuyển động đều nên $F=F_{ms}=\\mu mg=0,2\\cdot2000\\cdot10=4000$ N, không phải 4800 N. Vậy ý a Sai.</p><p class=\"text-base leading-relaxed my-2\">b) Trên dốc BC (không ma sát): $a=g\\sin30^\\circ=5$ m/s².</p><p class=\"text-base leading-relaxed my-2\">$v_C^2-v_B^2=2a\\cdot BC$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow BC=\\dfrac{20^2-2^2}{2\\cdot5}=39,6$ m. Vậy ý b Đúng.</p><p class=\"text-base leading-relaxed my-2\">c) Công của trọng lực: $A=mg\\cdot BC\\sin30^\\circ=2000\\cdot10\\cdot39,6\\cdot0,5=396000$ J, không phải 369000 J. Vậy ý c Sai.</p><p class=\"text-base leading-relaxed my-2\">d) Định lý động năng trên CD: $-\\mu' mgs=0-\\dfrac12 mv_C^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mu'=\\dfrac{v_C^2}{2gs}=\\dfrac{400}{2\\cdot10\\cdot200}=0,1$. Vậy ý d Đúng.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "ai": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-sa-050",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Động năng phụ thuộc hệ quy chiếu: $W_đ=\\dfrac{1}{2}mv^2$ với $v$ là tốc độ của vật đối với hệ quy chiếu đang xét.</p><p class=\"text-base leading-relaxed my-2\">Chọn hệ quy chiếu gắn với ô tô: người ngồi yên trên xe nên $v=0$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_đ=\\dfrac{1}{2}\\cdot 50\\cdot 0^2=0$ J.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: động năng của người đối với ô tô bằng $0$ J (tốc độ 54 km/h chỉ là dữ kiện của ô tô so với mặt đất).</p>",
+  "type": "short_answer",
+  "final": "0",
+  "ai": "0",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-sa-059",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $m = 1,5$ tấn $= 1500$ kg; $v_1 = 36$ km/h $= 10$ m/s; $v_2 = 5$ m/s.</p><p class=\"text-base leading-relaxed my-2\">Độ biến thiên động năng: $\\Delta W_đ = \\dfrac{1}{2}m v_2^2 - \\dfrac{1}{2}m v_1^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta W_đ = \\dfrac{1}{2}\\cdot 1500\\cdot (5^2 - 10^2)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta W_đ = 750\\cdot(-75) = -56250$ J.</p><p class=\"text-base leading-relaxed my-2\">Động năng giảm một lượng $56250$ J (độ lớn thay đổi là $56250$ J).</p>",
+  "type": "short_answer",
+  "final": "56250",
+  "ai": "56250",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-3-sa-060",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $v_0 = 72\\ \\text{km/h} = 20\\ \\text{m/s}$, $v = 0$, $s = 75\\ \\text{m}$, $m = 1000\\ \\text{kg}$.</p><p class=\"text-base leading-relaxed my-2\">Sau khi tắt máy và hãm phanh, lực cản tổng hợp theo phương chuyển động (lực ma sát/lực hãm) là lực duy nhất sinh công. Áp dụng định lí động năng: $A_{ms} = W_{d2} - W_{d1}$.</p><p class=\"text-base leading-relaxed my-2\">$-F_{ms}\\, s = 0 - \\dfrac{1}{2} m v_0^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ms} = \\dfrac{m v_0^2}{2s}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ms} = \\dfrac{1000\\cdot 20^2}{2\\cdot 75} = \\dfrac{400000}{150} \\approx 2666{,}7\\ \\text{N}$</p><p class=\"text-base leading-relaxed my-2\">Kết luận: $F_{ms} \\approx 2667\\ \\text{N}$.</p>",
+  "type": "short_answer",
+  "final": "2667",
+  "ai": "2667",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-001",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Thế năng trọng trường của vật khối lượng $m$ ở độ cao $z$ so với mốc thế năng (mặt đất) bằng công của trọng lực khi vật di chuyển từ vị trí đó về mốc thế năng.</p><p class=\"text-base leading-relaxed my-2\">Công của trọng lực khi vật rơi từ độ cao $z$ xuống mặt đất: $A = P z = mgz$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_t = mgz$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn đáp án A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-003",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Người đứng yên trong thang máy nên chuyển động cùng thang máy, đi lên với vận tốc không đổi $v$.</p><p class=\"text-base leading-relaxed my-2\">Động năng: $W_đ = \\dfrac{1}{2}mv^2$ với $m$, $v$ không đổi</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ động năng không đổi.</p><p class=\"text-base leading-relaxed my-2\">Thế năng (gốc tại mặt đất): $W_t = mgh$, độ cao $h$ tăng dần khi đi lên</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ thế năng tăng.</p><p class=\"text-base leading-relaxed my-2\">Vậy thế năng tăng và động năng không đổi. Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-008",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trọng lực là lực thế: công của trọng lực chỉ phụ thuộc vị trí đầu và vị trí cuối, không phụ thuộc hình dạng đường đi.</p><p class=\"text-base leading-relaxed my-2\">$A_P = W_{t1} - W_{t2} = mgh_1 - mgh_2$</p><p class=\"text-base leading-relaxed my-2\">A đúng: công của trọng lực bằng hiệu thế năng tại vị trí đầu và vị trí cuối.</p><p class=\"text-base leading-relaxed my-2\">B sai: vật đi từ cao xuống thấp thì $h_1 \\gt h_2$ nên $A_P \\gt 0$, trọng lực sinh công dương.</p><p class=\"text-base leading-relaxed my-2\">C sai: đưa vật từ thấp lên cao thì $h_1 \\lt h_2$ nên $A_P \\lt 0$, trọng lực sinh công âm.</p><p class=\"text-base leading-relaxed my-2\">D sai: công của trọng lực không phụ thuộc dạng đường đi, nên công theo đường thẳng và theo đường gấp khúc giữa hai điểm là bằng nhau.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "katex-loi:4"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-009",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Thế năng trọng trường của vật ở gần mặt đất: $W_t = mgz$, trong đó $m$ là khối lượng, $g$ là gia tốc trọng trường, $z$ là độ cao của vật so với mốc thế năng.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Thế năng phụ thuộc vào khối lượng $m$, độ cao $z$ và gia tốc trọng trường $g$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Thế năng không phụ thuộc vào động năng của vật (động năng $W_đ=\\dfrac{1}{2}mv^2$ phụ thuộc vận tốc, là đại lượng khác).</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>B</b>.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-010",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do chỉ chịu tác dụng của trọng lực, chọn mốc thế năng tại mặt đất. Thế năng của vật là $W_t = mgh$ và động năng là $W_đ = \\dfrac{1}{2}mv^2$.</p><p class=\"text-base leading-relaxed my-2\">Khi vật rơi xuống, độ cao $h$ giảm dần.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Thế năng $W_t = mgh$ giảm dần. Vậy A đúng và C sai.</p><p class=\"text-base leading-relaxed my-2\">Vận tốc rơi tự do tăng dần theo công thức $v = gt$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Động năng $W_đ = \\dfrac{1}{2}mv^2$ tăng dần, nên B sai.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Động lượng $p = mv$ tăng dần, nên D sai.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-011",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Xét từng phát biểu về thế năng trọng trường.</p><p class=\"text-base leading-relaxed my-2\">A đúng: thế năng trọng trường là năng lượng mà vật có do được đặt tại một vị trí xác định trong trọng trường của Trái Đất.</p><p class=\"text-base leading-relaxed my-2\">B sai: thế năng trọng trường là một dạng năng lượng nên có đơn vị là jun (J), không phải đơn vị ghi trong phương án B.</p><p class=\"text-base leading-relaxed my-2\">C đúng: $W_t = mgz$, với $z$ là độ cao so với mốc thế năng.</p><p class=\"text-base leading-relaxed my-2\">D đúng: mốc thế năng được chọn tùy ý, thường chọn là mặt đất.</p><p class=\"text-base leading-relaxed my-2\">Vậy phát biểu sai là B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-012",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật đi lên tới điểm cao nhất rồi trượt xuống đúng vị trí ban đầu, nên quãng đường đi là $2s$ còn độ cao ban đầu và cuối bằng nhau.</p><p class=\"text-base leading-relaxed my-2\">Trọng lực là lực thế nên công chỉ phụ thuộc hiệu độ cao giữa vị trí đầu và cuối: $A_P = mg(h_1-h_2)$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Vì $h_1=h_2$ nên $A_P=0$.</p><p class=\"text-base leading-relaxed my-2\">Lực ma sát trượt luôn ngược chiều chuyển động nên công luôn âm: $A_{ms}=-F_{ms}\\cdot 2s \\lt 0$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ A sai (công ma sát khác 0).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ B sai vì $A_P+A_{ms}=A_{ms}\\neq 0$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ D sai vì $A_P-A_{ms}=-A_{ms}\\neq 0$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn C: công của trọng lực bằng 0.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-013",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Cơ năng của vật chỉ được bảo toàn khi vật chỉ chịu tác dụng của lực thế (trọng lực, lực đàn hồi, ...). Nếu có lực không phải lực thế (lực ma sát, lực cản, lực kéo, ...) thì các lực này sinh công nên cơ năng thay đổi.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Phương án A sai: cơ năng không được bảo toàn, độ biến thiên cơ năng bằng công của lực không phải lực thế: $\\Delta W = A_{\\text{không thế}}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Phương án B, C sai: động năng và thế năng đều có thể thay đổi khi vật chuyển động, không có định luật bảo toàn riêng cho từng loại.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Phương án D đúng: năng lượng toàn phần (gồm cơ năng và các dạng năng lượng khác như nhiệt năng, ...) luôn được bảo toàn theo định luật bảo toàn năng lượng; phần cơ năng giảm đi chuyển hóa thành dạng năng lượng khác.</p><p class=\"text-base leading-relaxed my-2\">Đáp án: D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-014",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trọng lực là lực thế: công của trọng lực chỉ phụ thuộc vị trí đầu và vị trí cuối, không phụ thuộc hình dạng đường đi, $A = mg(h_1 - h_2)$.</p><p class=\"text-base leading-relaxed my-2\">A đúng: trong miền hẹp gần mặt đất, gia tốc trọng trường $\\vec{g}$ có phương, chiều, độ lớn không đổi nên trọng trường là đều.</p><p class=\"text-base leading-relaxed my-2\">B đúng: đường khép kín có $h_1 = h_2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = 0$.</p><p class=\"text-base leading-relaxed my-2\">C sai: công của trọng lực trên đường cong hở không nhất thiết khác không. Nếu hai điểm đầu và cuối cùng độ cao thì $A = 0$, dù đường đi là cong hở.</p><p class=\"text-base leading-relaxed my-2\">D đúng: $W_t = mgh$, vật đi lên thì $h$ tăng</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$W_t$ tăng.</p><p class=\"text-base leading-relaxed my-2\">Vậy phát biểu sai là C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-4-mc-016",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Cơ năng $W = W_đ + W_t$. Định lí biến thiên cơ năng: $\\Delta W = A_{\\text{lực không phải lực thế}}$.</p><p class=\"text-base leading-relaxed my-2\">A đúng: khi chỉ có lực thế tác dụng thì $W_đ + W_t$ không đổi</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$\\Delta W_t = -\\Delta W_đ$, tức độ tăng thế năng bằng độ giảm động năng.</p><p class=\"text-base leading-relaxed my-2\">B đúng: chỉ có lực thế tác dụng thì $A_{\\text{không thế}} = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$\\Delta W = 0$, cơ năng được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">C đúng: ngoại lực (không phải lực thế) sinh công âm thì $\\Delta W = A \\lt 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ cơ năng giảm.</p><p class=\"text-base leading-relaxed my-2\">D sai: cơ năng chỉ không đổi khi vật chỉ chịu tác dụng của lực thế (trọng lực, lực đàn hồi). Khi có lực ma sát, lực cản hay lực kéo sinh công thì cơ năng thay đổi.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>D</b>.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-022",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn mốc thế năng tại mặt đất, trục Oz hướng lên. Đáy giếng nằm dưới mốc nên độ cao $z=-h$ (âm).</p><p class=\"text-base leading-relaxed my-2\">Thế năng trọng trường: $W_t = mgz = -mgh$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_t = -2\\cdot 10\\cdot 5 = -100\\ J$ (với $h=5$ m, $g=10\\ m/s^2$).</p><p class=\"text-base leading-relaxed my-2\">Vậy thế năng của vật ở đáy giếng là $-100\\ J$. Chọn A.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "A",
+  "kq": "LECH",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-024",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do (v₀ = 0), độ giảm thế năng trong một khoảng thời gian bằng công của trọng lực: $\\Delta W_t = mgs$ với $s$ là quãng đường rơi trong khoảng thời gian đó.</p><p class=\"text-base leading-relaxed my-2\">Quãng đường rơi trong giây thứ hai bằng hiệu quãng đường rơi sau 2 s và sau 1 s: $s = \\frac{1}{2}g t_2^2 - \\frac{1}{2}g t_1^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow s = \\frac{1}{2}\\cdot 10\\cdot (2^2 - 1^2) = 15\\ \\text{m}$</p><p class=\"text-base leading-relaxed my-2\">Đổi $m = 100\\ \\text{g} = 0{,}1\\ \\text{kg}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Delta W_t = mgs = 0{,}1\\cdot 10\\cdot 15$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta W_t = 15\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Chọn đáp án A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-025",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn gốc thế năng tại mặt đất. Bỏ qua sức cản không khí nên cơ năng bảo toàn: $W = mgh_0 + \\frac{1}{2}mv_0^2 = m(10\\cdot 20 + \\frac{1}{2}\\cdot 10^2) = 250m$ (J).</p><p class=\"text-base leading-relaxed my-2\">Tại vị trí $W_t = W_đ$ thì $W = 2W_t = 2mgh$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 250m = 2m\\cdot 10\\cdot h$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow h = 12{,}5$ m.</p><p class=\"text-base leading-relaxed my-2\">Độ cao cực đại của vật là $20 + \\frac{10^2}{2\\cdot 10} = 25$ m, lớn hơn 12,5 m nên vị trí này vật đạt được. Chọn C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-026",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Bỏ qua sức cản không khí nên chỉ có trọng lực tác dụng, cơ năng bảo toàn. Công của trọng lực bằng độ biến thiên động năng của vật.</p><p class=\"text-base leading-relaxed my-2\">Tại vị trí cao nhất vận tốc bằng 0. Với $m = 0{,}2\\ \\text{kg}$ và $v_0 = 10\\ \\text{m/s}$:</p><p class=\"text-base leading-relaxed my-2\">$A_P = W_{đ2} - W_{đ1} = 0 - \\dfrac{1}{2}mv_0^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A_P = -\\dfrac{1}{2}\\cdot 0{,}2\\cdot 10^2 = -10\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra bằng công thức khác: độ cao cực đại $h = \\dfrac{v_0^2}{2g} = 5\\ \\text{m}$ (với $g = 10\\ \\text{m/s}^2$), nên $A_P = -mgh = -0{,}2\\cdot 10\\cdot 5 = -10\\ \\text{J}$. Kết quả này không phụ thuộc vào giá trị $g$.</p><p class=\"text-base leading-relaxed my-2\">Vật đi lên nên trọng lực sinh công âm. Đáp án: C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-028",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Công của trọng lực chỉ phụ thuộc độ chênh lệch độ cao giữa vị trí đầu và cuối: $A = mg(h_1 - h_2)$.</p><p class=\"text-base leading-relaxed my-2\">Vật đi xuống từ $h_1 = 25\\ \\text{m}$ đến $h_2 = 10\\ \\text{m}$ nên trọng lực sinh công dương.</p><p class=\"text-base leading-relaxed my-2\">$A = 400\\cdot 10\\cdot (25-10)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 60000\\ \\text{J} = 60\\ \\text{kJ}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-029",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Bỏ qua sức cản không khí nên cơ năng của vật được bảo toàn. Chọn gốc thế năng tại vị trí ném.</p><p class=\"text-base leading-relaxed my-2\">Tại vị trí ném: $W = \\dfrac{1}{2}mv_0^2$ với $m = 0{,}2\\ \\text{kg}$, $v_0 = 10\\ \\text{m/s}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W = \\dfrac{1}{2}\\cdot 0{,}2\\cdot 10^2 = 10\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Tại độ cao cực đại, vận tốc bằng 0 nên động năng bằng 0.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_t = W = 10\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra: $h_{max} = \\dfrac{v_0^2}{2g} = 5\\ \\text{m}$ và $W_t = mgh = 0{,}2\\cdot 10\\cdot 5 = 10\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy thế năng tại độ cao cực đại là $10\\ \\text{J}$. Chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-mc-030",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn gốc thế năng tại vị trí ném, chiều dương hướng lên, bỏ qua sức cản nên vật chuyển động với gia tốc $-g$.</p><p class=\"text-base leading-relaxed my-2\">Độ cao của vật sau $t = 3$ s: $h = v_0 t - \\dfrac{1}{2}g t^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow h = 20\\cdot 3 - \\dfrac{1}{2}\\cdot 10\\cdot 3^2 = 15$ m</p><p class=\"text-base leading-relaxed my-2\">Thế năng của vật: $W_t = mgh$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_t = 0{,}2\\cdot 10\\cdot 15 = 30$ J</p><p class=\"text-base leading-relaxed my-2\">Vật lên cao nhất sau 2 s rồi rơi xuống, tại $t=3$ s vật vẫn ở độ cao 15 m so với vị trí ném. Vậy chọn C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-tf-031",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">a) Thế năng trọng trường của vật: $W_t = mgh$, phụ thuộc độ cao $h$ của vật so với mốc thế năng, tức phụ thuộc vị trí của vật trong trọng trường. Phát biểu <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Khi lực tác dụng lên vật làm vật dịch chuyển và thay đổi trạng thái chuyển động, năng lượng được truyền cho vật dưới dạng công. Phát biểu <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Thế năng là một dạng năng lượng nên có đơn vị là Joule (J). Phát biểu <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Thế năng là đại lượng vô hướng nhưng có thể âm, bằng 0 hoặc dương tùy cách chọn mốc thế năng. Ví dụ vật ở dưới mốc thì $h \\lt 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_t \\lt 0$. Phát biểu <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   true,
+   true,
+   false
+  ],
+  "ai": [
+   false,
+   true,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-tf-033",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do (chuyển động thẳng nhanh dần đều, $v_0=0$, gia tốc $g$). Đổi $m=0{,}5\\ kg$, chọn gốc thế năng tại mặt đất.</p><p class=\"text-base leading-relaxed my-2\">a) Quãng đường sau $2\\ s$: $s=\\frac{1}{2}gt^2=\\frac{1}{2}\\cdot 10\\cdot 2^2=20\\ m$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Độ cao của vật so với mặt đất: $h=h_0-s=45-20=25\\ m$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ vật cách mặt đất $25\\ m$, không phải $20\\ m$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Thế năng tại thời điểm $2\\ s$: $W_t=mgh=0{,}5\\cdot 10\\cdot 25=125\\ J$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Khi $h=15\\ m$: $W_t=mgh=0{,}5\\cdot 10\\cdot 15=75\\ J$$\\neq 95\\ J$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "ai": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-tf-034",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Lấy $g=10\\ m/s^2$. Thế năng trọng trường $W_t=mgz$ (z là độ cao so với mốc thế năng).</p><p class=\"text-base leading-relaxed my-2\">Độ giảm thế năng: $W_1-W_2=mgh=600-(-800)=1400\\ J$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow h=\\dfrac{1400}{4\\cdot 10}=35\\ m$</p><p class=\"text-base leading-relaxed my-2\">Vị trí đầu: $z_1=\\dfrac{600}{40}=15\\ m$ (trên mốc). Mặt đất: $z_2=\\dfrac{-800}{40}=-20\\ m$ (dưới mốc 20 m).</p><p class=\"text-base leading-relaxed my-2\">a) Độ cao khi thả đến mặt đất là 35 m, không phải 20 m. <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Mốc thế năng cách mặt đất 20 m, không phải 15 m. <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Độ cao ban đầu của vật là 35 m. <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Vận tốc khi chạm đất: $v=\\sqrt{2gh}=\\sqrt{2\\cdot 10\\cdot 35}\\approx 26{,}5\\ m/s$, không phải 10 m/s. <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   false,
+   true,
+   false
+  ],
+  "ai": [
+   false,
+   false,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-4-tf-036",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "kq": "khong-co-ket-qua",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c4-4-sa-037",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Thế năng trọng trường (chọn mốc thế năng tại mặt đất, độ cao $z$ tính từ mốc): $W_t = mgz$.</p><p class=\"text-base leading-relaxed my-2\">$W_t = 5 \\cdot 10 \\cdot 10$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_t = 500\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Kết luận: thế năng trọng trường của vật là $500\\ \\text{J}$.</p>",
+  "type": "short_answer",
+  "final": "500",
+  "ai": "500",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "ai"
+ },
+ {
+  "key": "c4-4-sa-038",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do không vận tốc đầu, nên quãng đường rơi trong giây thứ hai bằng quãng đường rơi trong 2 s trừ quãng đường rơi trong 1 s.</p><p class=\"text-base leading-relaxed my-2\">Độ giảm thế năng bằng công của trọng lực: $\\Delta W_t = mg\\,\\Delta h$.</p><p class=\"text-base leading-relaxed my-2\">Quãng đường rơi sau $t$ giây: $h = \\frac{1}{2}gt^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow h_2 = \\frac{1}{2}\\cdot 10\\cdot 2^2 = 20\\ \\text{m}$ và $h_1 = \\frac{1}{2}\\cdot 10\\cdot 1^2 = 5\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta h = h_2 - h_1 = 15\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">Khối lượng $m = 100\\ \\text{g} = 0{,}1\\ \\text{kg}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta W_t = mg\\,\\Delta h = 0{,}1\\cdot 10\\cdot 15 = 15\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy độ giảm thế năng của vật trong giây thứ hai là $15\\ \\text{J}$.</p>",
+  "type": "short_answer",
+  "final": "15",
+  "ai": "15",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ }
+]

@@ -16,7 +16,8 @@ const suaND: Record<string, any> = fs.existsSync(DIR + "sua-noi-dung.json") ? JS
 const bySig = new Map([...final].map(([k, q]) => [sig(q), k]));
 const r = await (await fetch(`${U}/rest/v1/question_bank?note=eq.${NOTE}&select=id,question,archived&order=id&limit=1000`, { headers: { apikey: K, Authorization: `Bearer ${K}` } })).json();
 const giu = new Set(do2.filter((o) => o.kq !== "khop" || o.flags.includes("khong-co-loi-giai")).map((o) => o.key));
-giu.add("c3-6-mc-008"); // lời giải trống + nghi 2 đáp án đúng → chờ viết tay
+giu.add("c3-6-mc-008");
+if (fs.existsSync(DIR + "loai-them.json")) for (const k of JSON.parse(fs.readFileSync(DIR + "loai-them.json", "utf8"))) giu.add(k); // câu lỗi hiển thị phát hiện sau dò: giữ ẨN để xoá // lời giải trống + nghi 2 đáp án đúng → chờ viết tay
 const fixMath = (s: string) => s.replace(/(?<!\\)\$(?!\$)([^$]+?)\$/g, (_m, t) => "$" + t.replace(/&gt;/g, "\\gt ").replace(/&lt;/g, "\\lt ").replace(/&amp;/g, "&") + "$");
 const fixTxt = (s: string) => fixMath(s).replace(/\s*\*{2,}\s*$/g, "").replace(/\*\*(?=[.\s]*$)/g, "").trim();
 const sql = ["begin;"]; const show: number[] = []; let sua = 0, khongKhop = 0;
