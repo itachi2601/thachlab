@@ -30,7 +30,7 @@ MC = [
  # Part 3 · điền từ
  ("A ______ sign shows where fire equipment and fire alarms are.", ["fire safety","prohibition","hazard","mandatory"], "<em>fire equipment and fire alarms</em> → fire safety sign."),
  ("Wear a ______ to avoid inhaling dust, vapours and fumes.", ["protective mask","safety harness","knee pads","dorsal belt"], "<em>inhaling</em> (hít vào) bụi, khói → protective mask."),
- ("Many employers provide uniforms, ______ rooms and shower facilities.", ["locker","confined","sharp","greasy"], "<em>locker rooms</em> = phòng thay đồ có tủ cá nhân."),
+ ("A room for changing clothes is called a ______ room.", ["locker","confined","sharp","greasy"], "<em>changing clothes</em> → locker room, phòng thay đồ có tủ cá nhân."),
  ("Work at height needs a safety ______ to avoid falling.", ["harness","helmet","apron","goggles"], "<em>avoid falling</em> → safety harness."),
  ("Lifting heavy parts is a ______ to your back, so wear a dorsal belt.", ["risk","apprentice","locker","pit"], "<em>a risk to your back</em> = nguy cơ cho lưng."),
  # Part 4 · chọn bản dịch đúng
