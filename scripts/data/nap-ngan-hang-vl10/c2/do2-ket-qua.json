@@ -1266,6 +1266,7 @@
  },
  {
   "key": "c2-3-tf-065",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Phương trình $x = x_0 + vt$ với $x=50-20t$ (km, h) cho $x_0 = 50$ km và $v = -20$ km/h. Chiều dương Ox hướng Bắc – Nam, tức là hướng về phía Nam.</p><p class=\"text-base leading-relaxed my-2\">a) Tại $t=0$, $x_0 = 50\\ \\text{km} \\gt 0$ nên vật xuất phát cách gốc tọa độ 50 km về phía Nam. <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $v=-20$ km/h \\lt 0 nên vật chuyển động ngược chiều dương, tức về phía Bắc, với tốc độ 20 km/h. Ý này nói về phía Nam nên <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Sau 3 h: $x_3 = 50 - 20\\cdot 3 = -10$ km.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow d = x_3 - x_0 = -10 - 50 = -60$ km.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Độ dịch chuyển có độ lớn 60 km về phía Bắc, không phải 50 km. <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Sau 3 h, $x_3=-10$ km \\lt 0 nên xe cách gốc tọa độ 10 km về phía Bắc. Về độ lớn và hướng thì đúng, nên ý d) <b>Đúng</b>.</p>",
   "type": "true_false",
   "final": [
    true,
@@ -1273,7 +1274,13 @@
    false,
    true
   ],
-  "kq": "khong-co-ket-qua",
+  "ai": [
+   true,
+   false,
+   false,
+   false
+  ],
+  "kq": "LECH",
   "flags": [],
   "duyet": "khop-2-nguon"
  },
@@ -1935,9 +1942,11 @@
  },
  {
   "key": "c2-6-mc-050",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chuyển động thẳng chậm dần đều, chọn chiều dương là chiều chuyển động của tàu: $v_0 = 90$ km/h $= 25$ m/s, $a = -0,5$ m/s², vận tốc cuối $v = 0$.</p><p class=\"text-base leading-relaxed my-2\">Công thức độc lập thời gian: $v^2 - v_0^2 = 2as$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow s = \\dfrac{v^2 - v_0^2}{2a}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow s = \\dfrac{0 - 25^2}{2\\cdot(-0,5)} = 625$ m</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra lại: $25^2 = 625$, chia cho $1$ được $625$ m. Đáp án này ứng với phương án D, nên cần đối chiếu lại với đáp án đã nêu.</p><p class=\"text-base leading-relaxed my-2\">Kết quả tính đúng là $s = 625$ m, tức phương án D.</p>",
   "type": "multiple_choice",
   "final": "D",
-  "kq": "khong-co-ket-qua",
+  "ai": "B",
+  "kq": "LECH",
   "flags": [
    "cong-thuc-rong"
   ],
@@ -2026,17 +2035,17 @@
   "key": "c2-6-mc-060",
   "type": "multiple_choice",
   "final": "A",
-  "ai": "C",
-  "kq": "LECH",
+  "kq": "khong-co-ket-qua",
   "flags": [],
   "duyet": "khop-2-nguon"
  },
  {
   "key": "c2-6-mc-061",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn chiều dương là chiều chuyển động, gốc tọa độ tại vị trí ban đầu: $x_0=0$, $v_0=20$ m/s.</p><p class=\"text-base leading-relaxed my-2\">Chuyển động chậm dần đều nên $a=-2$ m/s$^2$ (ngược chiều dương).</p><p class=\"text-base leading-relaxed my-2\">Phương trình chuyển động: $x=x_0+v_0t+\\dfrac{1}{2}at^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow x=20t-t^2$ (m).</p><p class=\"text-base leading-relaxed my-2\">Phương án A, C có hệ số $v_0$ âm nên sai; B và D cùng hiển thị $20t+t^2$ do lỗi ký tự, dạng đúng $20t-t^2$ khớp với D (đã mất dấu trừ). Chọn D.</p>",
   "type": "multiple_choice",
   "final": "D",
-  "ai": "",
-  "kq": "LECH",
+  "ai": "D",
+  "kq": "khop",
   "flags": [
    "cong-thuc-rong"
   ],
@@ -2174,6 +2183,7 @@
  },
  {
   "key": "c2-6-tf-080",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi $v_0 = 54$ km/h $= 15$ m/s. Ô tô chuyển động thẳng chậm dần đều, chọn chiều dương là chiều chuyển động.</p><p class=\"text-base leading-relaxed my-2\">$v^2 - v_0^2 = 2as$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a = \\dfrac{5^2 - 15^2}{2\\cdot 250} = -0{,}4$ m/s²</p><p class=\"text-base leading-relaxed my-2\">$t = \\dfrac{v - v_0}{a} = \\dfrac{5-15}{-0{,}4} = 25$ s</p><p class=\"text-base leading-relaxed my-2\">$t' = \\dfrac{0 - v_0}{a} = \\dfrac{-15}{-0{,}4} = 37{,}5$ s</p><p class=\"text-base leading-relaxed my-2\">a) Xe chuyển động thẳng theo một chiều nên độ dịch chuyển $d = 250$ m. Ý a Đúng.</p><p class=\"text-base leading-relaxed my-2\">b) Gia tốc có độ lớn $0{,}4$ m/s² ($a=-0{,}4$ m/s² do chậm dần). Ý b Đúng.</p><p class=\"text-base leading-relaxed my-2\">c) $t = 25$ s. Ý c Đúng.</p><p class=\"text-base leading-relaxed my-2\">d) Thời gian đến khi dừng hẳn là $37{,}5$ s, không phải $35$ s. Ý d Sai.</p>",
   "type": "true_false",
   "final": [
    true,
@@ -2349,6 +2359,7 @@
  },
  {
   "key": "c2-6-tf-091",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">So sánh với $x=x_0+v_0t+\\frac{1}{2}at^2$: $x_0=12$ cm, $v_0=-18$ cm/s, $a=12$ cm/s².</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=-18+12t$ (cm/s).</p><p class=\"text-base leading-relaxed my-2\">a) $v_0=-18$ cm/s (ngược chiều dương), không phải 18 cm/s. Sai.</p><p class=\"text-base leading-relaxed my-2\">b) Gia tốc $a=12$ cm/s² nhưng vật chỉ chậm dần khi $0\\lt t\\lt 1{,}5$ s ($v$ và $a$ trái dấu), sau đó nhanh dần. Kết luận chung \"chuyển động chậm dần\" là Sai.</p><p class=\"text-base leading-relaxed my-2\">c) $t=2$ s: $v=-18+12\\cdot2=6$ cm/s $\\neq 8$ cm/s. Sai.</p><p class=\"text-base leading-relaxed my-2\">d) $v=36$: $-18+12t=36$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=4{,}5$ s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow x=6\\cdot4{,}5^2-18\\cdot4{,}5+12=52{,}5$ cm $=525$ mm. Đúng.</p>",
   "type": "true_false",
   "final": [
    false,
@@ -2489,6 +2500,7 @@
  },
  {
   "key": "c2-6-tf-100",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">a) Đồ thị cho thấy vận tốc tăng trong 4 s đầu (chuyển động nhanh dần) và giảm trong 4 s sau (chuyển động chậm dần). Ý này <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Gia tốc trong khoảng từ giây thứ 2 đến giây thứ 4 là $a=\\dfrac{\\Delta v}{\\Delta t}=7{,}5\\ \\text{m/s}^2$. Ý này <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Quãng đường bằng diện tích dưới đồ thị, $s = 75$ m. Tốc độ trung bình là $v_{tb}=\\dfrac{s}{t}=\\dfrac{75}{8}=9{,}375$ m/s. Ý này <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Phương trình $x_3=25+5t+3{,}75t^2$ có hệ số $\\tfrac12 a=3{,}75$ nên $a=+7{,}5\\ \\text{m/s}^2$, cùng dấu với vận tốc đầu $v_0=5$ m/s. Như vậy xe chuyển động nhanh dần trong 4 s cuối. Điều này mâu thuẫn với đồ thị, vì trong 4 s cuối xe chuyển động chậm dần. Ý này <b>Sai</b>.</p>",
   "type": "true_false",
   "final": [
    true,
@@ -2778,9 +2790,10 @@
  },
  {
   "key": "c2-7-mc-016",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đề bài bị cắt cụt (chỉ còn \"Hai vật có khối lượng $m_1$\"), thiếu dữ kiện nên không thể xác định chắc chắn đáp án.</p><p class=\"text-base leading-relaxed my-2\">Với dạng bài thường gặp (hai vật cùng động lượng hoặc cùng động năng): $p = mv$ nên $v = \\dfrac{p}{m}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Khối lượng càng lớn thì vận tốc càng nhỏ; nếu $m_1 \\gt m_2$ thì $v_1 \\lt v_2$.</p><p class=\"text-base leading-relaxed my-2\">Chọn tạm đáp án A (phỏng đoán do đề thiếu dữ kiện).</p>",
   "type": "multiple_choice",
   "final": "C",
-  "ai": "B",
+  "ai": "A",
   "kq": "LECH",
   "flags": [],
   "duyet": "khop-2-nguon"
@@ -3516,6 +3529,7 @@
  },
  {
   "key": "c2-7-tf-089",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vật rơi tự do: $s=\\frac12 gt^2$. Gọi $t$ là tổng thời gian rơi; quãng đường 3 s cuối: $\\frac12 gt^2-\\frac12 g(t-3)^2=345$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 4,9(6t-9)=345$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t\\approx 13,23$ s; độ cao $h=\\frac12 gt^2\\approx 858,3$ m.</p><p class=\"text-base leading-relaxed my-2\">a) $t\\approx13,2$ s ≠ 14 s → Sai.</p><p class=\"text-base leading-relaxed my-2\">b) $s_{10}=\\frac12\\cdot9,8\\cdot10^2=490$ m → Đúng.</p><p class=\"text-base leading-relaxed my-2\">c) $\\Delta s=\\frac12 g(10^2-9^2)=4,9\\cdot19=93,1$ m ≠ 100 m → Sai.</p><p class=\"text-base leading-relaxed my-2\">d) $h\\approx858,3$ m ≠ 857,66 m → Sai.</p>",
   "type": "true_false",
   "final": [
    false,
@@ -3527,9 +3541,9 @@
    false,
    true,
    false,
-   true
+   false
   ],
-  "kq": "LECH",
+  "kq": "khop",
   "flags": [],
   "duyet": "ai"
  },
@@ -3725,6 +3739,7 @@
  },
  {
   "key": "c2-7-tf-100",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn O ở đỉnh tháp, chiều dương hướng xuống, mặt đất ở $y=20$ m. Vật 1: $y_1=5t^2$. Vật 2 buông sau 2 s tại $y=5$ m, không vận tốc đầu: $y_2=5+5(t-2)^2$ với $t\\ge 2$ s.</p><p class=\"text-base leading-relaxed my-2\">a) Phương trình đúng của vật 2 là $y_2=5+5(t-2)^2$, không phải $5+5t^2$</p><p class=\"text-base leading-relaxed my-2\">⇒ Sai.</p><p class=\"text-base leading-relaxed my-2\">b) Vật 1 chạm đất khi $5t^2=20$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=2$ s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v_1=gt=20$ m/s, khác 17 m/s</p><p class=\"text-base leading-relaxed my-2\">⇒ Sai.</p><p class=\"text-base leading-relaxed my-2\">c) Vật 2 rơi quãng đường 15 m: $15=5\\tau^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\tau=\\sqrt3\\approx1{,}73$ s (tính từ lúc buông vật 2)</p><p class=\"text-base leading-relaxed my-2\">⇒ Đúng.</p><p class=\"text-base leading-relaxed my-2\">d) $v_2=g\\tau\\approx17{,}3$ m/s $\\lt v_1=20$ m/s, nên vận tốc chạm đất của vật 1 lớn hơn vật 2</p><p class=\"text-base leading-relaxed my-2\">⇒ Sai.</p>",
   "type": "true_false",
   "final": [
    true,
@@ -4111,6 +4126,7 @@
  },
  {
   "key": "c2-8-mc-016",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn gốc thời gian lúc vật ở gốc tọa độ. Theo trục $Ox$ vật chuyển động đều, theo trục $Oy$ vật chuyển động nhanh dần đều (vận tốc đầu theo $Oy$ bằng 0).</p><p class=\"text-base leading-relaxed my-2\">Phương trình chuyển động: $x = v_x t$ và $y = \\dfrac{1}{2} a t^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t = \\dfrac{x}{v_x}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow y = \\dfrac{a}{2v_x^2} x^2$</p><p class=\"text-base leading-relaxed my-2\">Đây là phương trình parabol $y = kx^2$ có trục đối xứng là $Oy$, đỉnh tại $O$. Như vậy quỹ đạo là parabol có trục đối xứng là $Oy$, ứng với phương án A.</p><p class=\"text-base leading-relaxed my-2\">Tuy nhiên, nếu đề muốn nói chuyển động đều theo $Oy$ và nhanh dần đều theo $Ox$ thì mới ra B. Theo đúng đề đã cho (đều theo $Ox$, nhanh dần đều theo $Oy$), đáp án đúng là A.</p>",
   "type": "multiple_choice",
   "final": "A",
   "ai": "B",
@@ -4221,6 +4237,7 @@
  },
  {
   "key": "c2-8-mc-031",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn hệ trục: gốc O tại điểm ném, Ox nằm ngang theo $\\vec v_0$, Oy thẳng đứng hướng xuống. Bỏ qua sức cản không khí.</p><p class=\"text-base leading-relaxed my-2\">Phương trình chuyển động: $x=v_0t$ và $y=\\dfrac{1}{2}gt^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow y=\\dfrac{g}{2v_0^2}x^2$: quỹ đạo là một phần đường parabol, nên D đúng.</p><p class=\"text-base leading-relaxed my-2\">Chuyển động ném ngang gồm chuyển động đều theo phương ngang (theo quán tính, ở độ cao không đổi) và rơi tự do theo phương thẳng đứng, nên A đúng.</p><p class=\"text-base leading-relaxed my-2\">Thời gian rơi: $t=\\sqrt{\\dfrac{2h}{g}}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Tầm xa: $L=v_0t=v_0\\sqrt{\\dfrac{2h}{g}}$, tăng khi $v_0$ và $h$ tăng, nên B đúng.</p><p class=\"text-base leading-relaxed my-2\">Hai chuyển động thành phần diễn ra đồng thời nên thời gian của chúng bằng nhau đúng bằng thời gian chuyển động của vật, không phải \"xấp xỉ\". Cách phát biểu ở C mang tính tách rời hai thời gian, không chính xác bằng cách nói chúng luôn bằng nhau. Vì vậy C là khẳng định sai trong các phương án (các phương án còn lại đều đúng).</p><p class=\"text-base leading-relaxed my-2\">Kết luận: chọn C.</p>",
   "type": "multiple_choice",
   "final": "A",
   "ai": "C",
@@ -4642,6 +4659,7 @@
  },
  {
   "key": "c2-8-tf-069",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chọn gốc tại vị trí ném, Ox nằm ngang theo hướng ném, Oy thẳng đứng hướng xuống. Ném ngang gồm chuyển động đều theo Ox và rơi tự do theo Oy.</p><p class=\"text-base leading-relaxed my-2\">Thời gian rơi: $t=\\sqrt{\\dfrac{2h}{g}}=\\sqrt{\\dfrac{2\\cdot5}{10}}=1$ s.</p><p class=\"text-base leading-relaxed my-2\">a) $v_0=\\dfrac{L}{t}=10\\sqrt3$ m/s. Ý a <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $v_x=10\\sqrt3$ m/s, $v_y=gt=10$ m/s.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=\\sqrt{v_x^2+v_y^2}=\\sqrt{300+100}=20$ m/s, khác $20\\sqrt3$ m/s. Ý b <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $\\tan\\alpha=\\dfrac{v_y}{v_x}=\\dfrac{10}{10\\sqrt3}=\\dfrac{1}{\\sqrt3}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\alpha=30^\\circ$. Ý c <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Khoảng cách từ vị trí ném đến nơi chạm đất: $d=\\sqrt{L^2+h^2}=\\sqrt{300+25}=5\\sqrt{13}\\approx18{,}03$ m, không bằng $10\\sqrt3$ m (tầm xa). Ý d <b>Sai</b> (đề cụt nội dung, xét theo khoảng cách đường thẳng).</p>",
   "type": "true_false",
   "final": [
    true,

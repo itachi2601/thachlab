@@ -3,7 +3,7 @@
 //   npx tsx scripts/batch-do-lan2-vl10.mts thu      → do2-ket-qua.json + báo cáo
 import Anthropic from "@anthropic-ai/sdk";
 import fs from "node:fs";
-import { SYSTEM, prompt, khop, katexLoi } from "./lib/giai-lai-chung.mts";
+import { SYSTEM, prompt, khop, katexLoi, tachMuiTen } from "./lib/giai-lai-chung.mts";
 const L = fs.readFileSync(".env.local", "utf8").split("\n");
 const anth = new Anthropic({ apiKey: L.find((l) => l.startsWith("ANTHROPIC_API_KEY="))!.slice(18).trim() });
 const DIR = (process.env.VL10_DIR ?? "scripts/data/nap-ngan-hang-vl10") + "/", STATE = DIR + "do2-state.json";
@@ -14,7 +14,9 @@ const forP = (q: any) => ({ ...q, question: strip(q.question), options: q.option
 const prior: any[] = fs.existsSync(DIR + "do2-ket-qua.json") ? JSON.parse(fs.readFileSync(DIR + "do2-ket-qua.json", "utf8")) : [];
 if (process.argv[2] === "nop") {
   // --chi-thieu: chỉ nộp lại các câu lượt trước chưa có kết quả (lỗi parse/cắt cụt); thu sẽ GỘP với kết quả cũ
-  const ds = process.argv.includes("--chi-thieu") ? ghi.filter((k) => prior.find((o) => o.key === k)?.kq === "khong-co-ket-qua") : ghi;
+  const keysFile = process.argv.find((a) => a.startsWith("--keys="))?.slice(7);
+  const only: string[] | null = keysFile ? JSON.parse(fs.readFileSync(keysFile, "utf8")) : null;
+  const ds = only ? ghi.filter((k) => only.includes(k)) : process.argv.includes("--chi-thieu") ? ghi.filter((k) => prior.find((o) => o.key === k)?.kq === "khong-co-ket-qua") : ghi;
   const reqs = ds.map((k) => ({ custom_id: k, params: { model: "claude-sonnet-5-5", max_tokens: 32000, output_config: { effort: "medium" }, system: SYSTEM, messages: [{ role: "user" as const, content: prompt(forP(final.get(k))) }] } as any }));
   const b = await anth.messages.batches.create({ requests: reqs });
   fs.writeFileSync(STATE, JSON.stringify({ batch_id: b.id, n: reqs.length, keys: ds })); console.log("Đã nộp", reqs.length, b.id);
@@ -43,7 +45,7 @@ if (process.argv[2] === "nop") {
     if (!q.explanation) flags.push("khong-co-loi-giai");
     const a = ai[k]; let kq = "khong-co-ket-qua";
     if (a && !a.loi) kq = khop(q, a.answer) ? "khop" : "LECH";
-    out.push({ key: k, type: q.type, final: q.type === "multiple_choice" ? "ABCD"[q.answer] : q.type === "true_false" ? q.statements.map((s: any) => s.answer) : q.answer, ai: a?.answer, kq, flags, duyet: q.duyet });
+    out.push({ key: k, expl: a?.explanation ? tachMuiTen(String(a.explanation)) : undefined, type: q.type, final: q.type === "multiple_choice" ? "ABCD"[q.answer] : q.type === "true_false" ? q.statements.map((s: any) => s.answer) : q.answer, ai: a?.answer, kq, flags, duyet: q.duyet });
   }
   fs.writeFileSync(DIR + "do2-ket-qua.json", JSON.stringify(out, null, 1));
   const dem: Record<string, number> = {}; out.forEach((o) => (dem[o.kq] = (dem[o.kq] ?? 0) + 1));
