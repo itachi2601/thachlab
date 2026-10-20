@@ -326,21 +326,14 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 .lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
 
 /* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
-   Thẻ "Nên làm tiếp" bấm được cả thẻ (nút thật phủ trong suốt lên thẻ); mỗi bài một hàng: số · tên · trạng thái. */
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
 @media (max-width: 639px) {
   .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
   .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
     .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
   .lesson-layout--pick .class-toc { gap: 12px; }
-  .lesson-layout--pick .class-continue--main {
-    position: relative;
-    gap: 2px;
-    border-radius: 14px;
-    padding: 10px 14px;
-  }
-  .lesson-layout--pick .class-continue--main .lesson-btn { position: absolute; inset: 0; width: 100%; opacity: 0; }
-  .lesson-layout--pick .class-toc-toolbar { display: none; }
-  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
   .lesson-layout--pick .class-chapter-progress small { display: none; }
   .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
   .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
@@ -360,15 +353,6 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương xếp NGAY TRÊN tabbar toàn site ----------
-   Giữ tabbar để học sinh luôn quay về được 5 nút chính; thanh chương nằm trên nó (56px). */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .lesson-bottombar--pick { bottom: calc(56px + env(safe-area-inset-bottom, 0px)); padding-bottom: 6px; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(118px + env(safe-area-inset-bottom, 0px)); }
-  body:has(.lesson-bottombar--pick) .mobile-more-backdrop { z-index: 46; }
-  body:has(.lesson-bottombar--pick) .mobile-more { z-index: 47; }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -1042,12 +1026,20 @@ html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
   50% { opacity: 1; transform: scale(1); }
 }
 
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Chapter 8: Chipping Machining</h1><p class="sub">Anh văn chuyên ngành Cơ khí</p><span class="exam-content"><h3>VII. Vận hành máy tiện: điền động từ (kiểu Part 3)</h3><p>Part 3 cho một hộp từ và một đoạn văn có chỗ trống. Cách làm: đọc cả câu, nhìn từ đứng <em>ngay sau</em> chỗ trống, rồi chọn từ trong hộp. Thử với đoạn hướng dẫn vận hành máy tiện:</p><p class="avcn-box">Hộp từ: <strong>check</strong> · <strong>locked</strong> · <strong>Locate</strong> · <strong>Use</strong> · <strong>press</strong></p><div class="avcn-passage"><p>Before starting the lathe, (1) ______ that the CSS function switch is OFF and the spindle speed dial is at the minimum, and make sure the cross slide is (2) ______. (3) ______ the master switch on the back of the lathe and turn it to the "ON" position; the power lamp will light. (4) ______ the spindle ON/OFF lever to start or stop the spindle and chuck. To stop a freewheeling chuck and cut power to the motor, (5) ______ down on the foot brake. <button type="button" class="tl-speak" data-tl-speak="Before starting the lathe,  that the CSS function switch is OFF and the spindle speed dial is at the minimum, and make sure the cross slide is .  the master switch on the back of the lathe and turn it to the &quot;ON&quot; position; the power lamp will light.  the spindle ON/OFF lever to start or stop the spindle and chuck. To stop a freewheeling chuck and cut power to the motor,  down on the foot brake." aria-label="Nghe">🔊</button></p></div><div class="tl-box tl-box--think"><p class="tl-label">✅ Kiểm tra</p><p>Chỗ trống (5): <em>"… cut power to the motor, (5) ______ down on the foot brake."</em></p><div class="tl-quiz"><input type="radio" name="tl8-q42" id="tl8-q42a"><label for="tl8-q42a" class="tl-opt tl-no">a. Locate</label><input type="radio" name="tl8-q42" id="tl8-q42b" checked><label for="tl8-q42b" class="tl-opt tl-ok">b. press</label><input type="radio" name="tl8-q42" id="tl8-q42c"><label for="tl8-q42c" class="tl-opt tl-no">c. check</label><input type="radio" name="tl8-q42" id="tl8-q42d"><label for="tl8-q42d" class="tl-opt tl-no">d. locked</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>press down on</em> = đạp xuống.<br>Dấu hiệu: sau chỗ trống có <em>down on</em>, cần động từ nguyên mẫu.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chỗ trống đứng đầu câu lệnh, sau nó là <em>down on the foot brake</em> (đạp phanh chân).<br>Động từ nào đi với <em>down</em>?</p></div></div></div><details class="tl-details" open><summary>Xem đáp án cả 5 chỗ trống</summary><ul class="avcn-list"><li>(1) check</li><li>(2) locked</li><li>(3) Locate</li><li>(4) Use</li><li>(5) press</li></ul></details>
+<div class="lesson-page"><div class="wrap"><h1>Chapter 8: Chipping Machining</h1><p class="sub">Anh văn chuyên ngành Cơ khí</p><span class="exam-content"><h3>VII. Vận hành máy tiện: điền động từ (kiểu Part 3)</h3><p>Part 3 cho một hộp từ và một đoạn văn có chỗ trống. Cách làm: đọc cả câu, nhìn từ đứng <em>ngay sau</em> chỗ trống, rồi chọn từ trong hộp. Thử với đoạn hướng dẫn vận hành máy tiện:</p><p class="avcn-box">Hộp từ: <strong>check</strong> · <strong>locked</strong> · <strong>Locate</strong> · <strong>Use</strong> · <strong>press</strong></p><div class="avcn-passage"><p>Before starting the lathe, (1) ______ that the CSS function switch is OFF and the spindle speed dial is at the minimum, and make sure the cross slide is (2) ______. (3) ______ the master switch on the back of the lathe and turn it to the "ON" position; the power lamp will light. (4) ______ the spindle ON/OFF lever to start or stop the spindle and chuck. To stop a freewheeling chuck and cut power to the motor, (5) ______ down on the foot brake. <button type="button" class="tl-speak" data-tl-speak="Before starting the lathe,  that the CSS function switch is OFF and the spindle speed dial is at the minimum, and make sure the cross slide is .  the master switch on the back of the lathe and turn it to the &quot;ON&quot; position; the power lamp will light.  the spindle ON/OFF lever to start or stop the spindle and chuck. To stop a freewheeling chuck and cut power to the motor,  down on the foot brake." data-tl-audio="/assets/avcn/chapter-8/audio/e2ff118983.mp3" aria-label="Nghe">🔊</button></p></div><div class="tl-box tl-box--think"><p class="tl-label">✅ Kiểm tra</p><p>Chỗ trống (5): <em>"… cut power to the motor, (5) ______ down on the foot brake."</em></p><div class="tl-quiz"><input type="radio" name="tl8-q42" id="tl8-q42a"><label for="tl8-q42a" class="tl-opt tl-no">a. Locate</label><input type="radio" name="tl8-q42" id="tl8-q42b" checked><label for="tl8-q42b" class="tl-opt tl-ok">b. press</label><input type="radio" name="tl8-q42" id="tl8-q42c"><label for="tl8-q42c" class="tl-opt tl-no">c. check</label><input type="radio" name="tl8-q42" id="tl8-q42d"><label for="tl8-q42d" class="tl-opt tl-no">d. locked</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>press down on</em> = đạp xuống.<br>Dấu hiệu: sau chỗ trống có <em>down on</em>, cần động từ nguyên mẫu.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chỗ trống đứng đầu câu lệnh, sau nó là <em>down on the foot brake</em> (đạp phanh chân).<br>Động từ nào đi với <em>down</em>?</p></div></div></div><details class="tl-details" open><summary>Xem đáp án cả 5 chỗ trống</summary><ul class="avcn-list"><li>(1) check</li><li>(2) locked</li><li>(3) Locate</li><li>(4) Use</li><li>(5) press</li></ul></details>
 </span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>

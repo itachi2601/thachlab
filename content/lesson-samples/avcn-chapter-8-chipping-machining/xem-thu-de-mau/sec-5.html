@@ -326,21 +326,14 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 .lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
 
 /* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
-   Thẻ "Nên làm tiếp" bấm được cả thẻ (nút thật phủ trong suốt lên thẻ); mỗi bài một hàng: số · tên · trạng thái. */
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
 @media (max-width: 639px) {
   .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
   .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
     .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
   .lesson-layout--pick .class-toc { gap: 12px; }
-  .lesson-layout--pick .class-continue--main {
-    position: relative;
-    gap: 2px;
-    border-radius: 14px;
-    padding: 10px 14px;
-  }
-  .lesson-layout--pick .class-continue--main .lesson-btn { position: absolute; inset: 0; width: 100%; opacity: 0; }
-  .lesson-layout--pick .class-toc-toolbar { display: none; }
-  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
   .lesson-layout--pick .class-chapter-progress small { display: none; }
   .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
   .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
@@ -360,15 +353,6 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương xếp NGAY TRÊN tabbar toàn site ----------
-   Giữ tabbar để học sinh luôn quay về được 5 nút chính; thanh chương nằm trên nó (56px). */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .lesson-bottombar--pick { bottom: calc(56px + env(safe-area-inset-bottom, 0px)); padding-bottom: 6px; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(118px + env(safe-area-inset-bottom, 0px)); }
-  body:has(.lesson-bottombar--pick) .mobile-more-backdrop { z-index: 46; }
-  body:has(.lesson-bottombar--pick) .mobile-more { z-index: 47; }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -1042,12 +1026,20 @@ html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
   50% { opacity: 1; transform: scale(1); }
 }
 
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Đề mẫu — Chapter 8: Chipping Machining</h1><p class="sub">5 Part, Part 1–3 tự chấm</p><span class="exam-content"><h3>Part 5 · Dịch Việt → Anh</h3><p><strong>Part 5: Translate the sentence into English.</strong> (1 điểm)</p><div class="tl-box tl-box--rule"><p class="tl-label">🎯 Chiến thuật</p><ul class="avcn-list"><li>Dùng mẫu 1: <strong>X is called Y</strong>.</li><li>X = "the waste produced when metal is cut".</li><li>Viết ngắn vẫn đúng: <em>The waste is called swarf.</em> đã có nửa điểm.</li></ul></div><div class="avcn-passage"><p>Phế phẩm sinh ra khi cắt kim loại được gọi là phoi.</p></div><p>Viết câu tiếng Anh của em ra giấy trước, rồi mới mở câu tham khảo.</p><details class="tl-details" open><summary>Câu tham khảo</summary><p>The waste produced when metal is cut is called swarf (or chips).</p></details></span></div></div>
+<div class="lesson-page"><div class="wrap"><h1>Đề mẫu — Chapter 8: Chipping Machining</h1><p class="sub">5 Part, Part 1–3 tự chấm</p><span class="exam-content"><h3>Part 5 · Dịch Việt → Anh</h3><p><strong>Part 5: Translate the sentence into English.</strong></p><div class="tl-box tl-box--rule"><p class="tl-label">🎯 Chiến thuật</p><ul class="avcn-list"><li>Dùng mẫu 1: <strong>X is called Y</strong>.</li><li>X = "the waste produced when metal is cut".</li><li>Viết ngắn vẫn đúng: <em>The waste is called swarf.</em> là đủ ý.</li></ul></div><div class="avcn-passage"><p>Phế phẩm sinh ra khi cắt kim loại được gọi là phoi.</p></div><p>Viết câu tiếng Anh của em ra giấy trước, rồi mới mở câu tham khảo.</p><details class="tl-details" open><summary>Câu tham khảo</summary><p>The waste produced when metal is cut is called swarf (or chips).</p></details></span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>

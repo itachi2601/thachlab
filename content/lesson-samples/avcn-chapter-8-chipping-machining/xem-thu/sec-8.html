@@ -326,21 +326,14 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 .lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
 
 /* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
-   Thẻ "Nên làm tiếp" bấm được cả thẻ (nút thật phủ trong suốt lên thẻ); mỗi bài một hàng: số · tên · trạng thái. */
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
 @media (max-width: 639px) {
   .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
   .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
     .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
   .lesson-layout--pick .class-toc { gap: 12px; }
-  .lesson-layout--pick .class-continue--main {
-    position: relative;
-    gap: 2px;
-    border-radius: 14px;
-    padding: 10px 14px;
-  }
-  .lesson-layout--pick .class-continue--main .lesson-btn { position: absolute; inset: 0; width: 100%; opacity: 0; }
-  .lesson-layout--pick .class-toc-toolbar { display: none; }
-  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
   .lesson-layout--pick .class-chapter-progress small { display: none; }
   .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
   .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
@@ -360,15 +353,6 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương xếp NGAY TRÊN tabbar toàn site ----------
-   Giữ tabbar để học sinh luôn quay về được 5 nút chính; thanh chương nằm trên nó (56px). */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .lesson-bottombar--pick { bottom: calc(56px + env(safe-area-inset-bottom, 0px)); padding-bottom: 6px; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(118px + env(safe-area-inset-bottom, 0px)); }
-  body:has(.lesson-bottombar--pick) .mobile-more-backdrop { z-index: 46; }
-  body:has(.lesson-bottombar--pick) .mobile-more { z-index: 47; }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -1042,13 +1026,21 @@ html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
   50% { opacity: 1; transform: scale(1); }
 }
 
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Chapter 8: Chipping Machining</h1><p class="sub">Anh văn chuyên ngành Cơ khí</p><span class="exam-content"><h3>VIII. Trả bài: gấp sách lại, trả lời 8 câu</h3><p>Nhớ lại được là nhớ lâu. Với mỗi câu: <strong>nói ra đáp án trước</strong>, rồi mới bấm mở. Câu nào không trả lời được thì quay lên mục tương ứng, rồi sang tab <strong>Đề mẫu</strong>.</p><div class="tl-box tl-box--think"><p class="tl-label">🎤 Trả bài</p><details class="tl-details" open><summary>Máy nào làm <em>phôi</em> quay? Máy nào làm <em>dao</em> quay?</summary><p>Lathe (tiện) quay phôi. Milling machine (phay) và drill (khoan) quay dao.</p></details><details class="tl-details" open><summary><em>Swarf</em> và <em>chips</em> khác nhau không?</summary><p>Không. Cả hai đều là phoi, phế phẩm sinh ra khi cắt.</p></details><details class="tl-details" open><summary><em>Drilling</em> và <em>boring</em> khác nhau chỗ nào?</summary><p>Drilling tạo lỗ mới. Boring mở rộng lỗ đã có.</p></details><details class="tl-details" open><summary><em>Kerf</em> là gì? Nó rộng hơn hay hẹp hơn lưỡi cưa?</summary><p>Mạch cắt do lưỡi cưa để lại, rộng hơn lưỡi cưa một chút.</p></details><details class="tl-details" open><summary><em>Hole saw</em> lấy ra cái gì khi cắt?</summary><p>Một lõi (core) vật liệu hình trụ.</p></details><details class="tl-details" open><summary>Dịch: <em>The workpiece is held in a fixed position.</em></summary><p>Phôi được giữ ở vị trí cố định.</p></details><details class="tl-details" open><summary>Dịch sang tiếng Anh: <em>Phế phẩm sinh ra khi cắt được gọi là phoi.</em></summary><p>The waste produced during cutting is called swarf (or chips).</p></details><details class="tl-details" open><summary>Ba loại cưa dùng lưỡi có răng?</summary><p>Circular saw, band saw, power hacksaw.</p></details></div>
-</span></div></div>
+<div class="lesson-page"><div class="wrap"><h1>Chapter 8: Chipping Machining</h1><p class="sub">Anh văn chuyên ngành Cơ khí</p><span class="exam-content"><h3>VIII. Trả bài: gấp sách lại, trả lời 8 câu</h3><p>Nhớ lại được là nhớ lâu. Với mỗi câu: <strong>nói ra đáp án trước</strong>, rồi mới bấm mở. Câu nào không trả lời được thì quay lên mục tương ứng, rồi sang tab <strong>Đề mẫu</strong>.</p><div class="tl-box tl-box--think"><p class="tl-label">🎤 Trả bài</p><details class="tl-details" open><summary>Máy nào làm <em>phôi</em> quay? Máy nào làm <em>dao</em> quay?</summary><p>Lathe (tiện) quay phôi. Milling machine (phay) và drill (khoan) quay dao.</p></details><details class="tl-details" open><summary><em>Swarf</em> và <em>chips</em> khác nhau không?</summary><p>Không. Cả hai đều là phoi, phế phẩm sinh ra khi cắt.</p></details><details class="tl-details" open><summary><em>Drilling</em> và <em>boring</em> khác nhau chỗ nào?</summary><p>Drilling tạo lỗ mới. Boring mở rộng lỗ đã có.</p></details><details class="tl-details" open><summary><em>Kerf</em> là gì? Nó rộng hơn hay hẹp hơn lưỡi cưa?</summary><p>Mạch cắt do lưỡi cưa để lại, rộng hơn lưỡi cưa một chút.</p></details><details class="tl-details" open><summary><em>Hole saw</em> lấy ra cái gì khi cắt?</summary><p>Một lõi (core) vật liệu hình trụ.</p></details><details class="tl-details" open><summary>Dịch: <em>The workpiece is held in a fixed position.</em></summary><p>Phôi được giữ ở vị trí cố định.</p></details><details class="tl-details" open><summary>Dịch sang tiếng Anh: <em>Phế phẩm sinh ra khi cắt được gọi là phoi.</em></summary><p>The waste produced during cutting is called swarf (or chips).</p></details><details class="tl-details" open><summary>Ba loại cưa dùng lưỡi có răng?</summary><p>Circular saw, band saw, power hacksaw.</p></details></div><p><strong>Quay lại tình huống đầu bài:</strong> Giờ em nghe lại câu dặn của thợ cả bên máy tiện và biết phải làm gì chưa?</p>
+<details class="tl-details" open><summary>Nguồn ảnh (13 ảnh)</summary><ul class="avcn-list"><li>lathe: Oleg Bor, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Metal_lathe._School_workshop.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>milling machine: Dan Bollinger, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Bridgeport_knee_mill_restored.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>drill press: LHOON, CC BY-SA 2.5, <a href="https://commons.wikimedia.org/wiki/File:Drillpress.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>bench grinder: Артём В., CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Bench_Grinder.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>band saw: S.J. de Waard, CC BY 2.5, <a href="https://commons.wikimedia.org/wiki/File:Metal_cutting_bandsaw_(01).JPG" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>turning: David English, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Turning_on_a_Mandrel.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>end mills: Progress and Poverty, CC BY 4.0, <a href="https://commons.wikimedia.org/wiki/File:End_Mills_and_Drill_Bit.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>swarf: Marco Bernardini, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:Drill_bit_with_swarf.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>boring: David English, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Lathe_Boring.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>drill bit: andersen_mrjh, CC BY-SA 2.0, <a href="https://commons.wikimedia.org/wiki/File:Twist_Drill_Bit_(6954956907).jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>hacksaw: Luke Milburn, CC BY 2.0, <a href="https://commons.wikimedia.org/wiki/File:Hacksaw_with_grey_handle.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>hole saw: Joost J. Bakker  IJmuiden, CC BY 2.0, <a href="https://commons.wikimedia.org/wiki/File:7_piece_Hole_Saw_(51883934902).jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>circular saw blade: Atomicdragon136, CC BY 4.0, <a href="https://commons.wikimedia.org/wiki/File:Miter_saw_blade.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li></ul></details></span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
