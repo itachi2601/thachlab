@@ -1,0 +1,1776 @@
+{
+  "meta": {
+    "chapter": 9,
+    "prefix": "tl9",
+    "title_en": "CAD/CAM",
+    "title_vi": "Thiết kế và gia công có máy tính",
+    "minutes": 30,
+    "doan_tieu_de": "việc này tên gì?",
+    "doan_mo_dau": "Hai hình dưới đây là máy và vật em hay gặp khi làm việc với máy tính ở xưởng. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.",
+    "them_nhan": "từ dùng khi nói về thiết kế và gia công bằng máy tính",
+    "boi_canh": {
+      "tieu_de": "Email đặt hàng của khách",
+      "tinh_huong": "Khách nước ngoài gửi email đặt 200 chi tiết, kèm một file và dòng chữ: \"Please check the <strong>CAD</strong> drawing and send us the <strong>CNC</strong> program before Friday.\" Thợ cả đọc xong quay sang hỏi em: \"Làm được không?\" Em chỉ nhận ra mấy chữ viết tắt, không biết file này dùng để làm gì, nên đứng im.",
+      "viec_can_lam": "Hiểu CAD, CAM, CNC khác nhau chỗ nào để biết file của khách dùng vào bước nào và máy làm ra chi tiết ra sao.",
+      "quay_lai": "Giờ em đọc hiểu email của khách và biết file đó đi qua những bước nào chưa?"
+    },
+    "muc_tieu": [
+      "Nhận ra 20 từ ⭐ (CAD, CAM, CNC, prototype, simulation, machinist…) khi đọc định nghĩa hoặc nhìn ảnh (Part 1).",
+      "Tìm được câu trả lời trong 2 bài đọc (công nghệ CAD-CAM và sự khác nhau giữa CAD với CAM) để điền một từ và chọn Đúng/Sai (Part 2).",
+      "Dùng được mẫu câu <em>X stands for Y</em> và <em>X is used to + V</em> để dịch (Part 4–5)."
+    ],
+    "de_thi": [
+      [
+        "Part 1 · 2,5 đ",
+        "10 câu chọn từ theo định nghĩa hoặc ảnh",
+        "Mục III Từ vựng"
+      ],
+      [
+        "Part 2 · 2,5 đ",
+        "Đọc lại một bài đọc, điền 1 từ + Đúng/Sai",
+        "Mục IV Bài đọc"
+      ],
+      [
+        "Part 3 · 2 đ",
+        "Điền từ cho sẵn vào đoạn văn",
+        "Mục VII Điền từ"
+      ],
+      [
+        "Part 4 · 2 đ",
+        "Dịch Anh → Việt",
+        "Mục IV + mục V mẫu câu"
+      ],
+      [
+        "Part 5 · 1 đ",
+        "Dịch Việt → Anh một câu",
+        "Mục V mẫu câu"
+      ]
+    ]
+  },
+  "khoi_dong": [
+    {
+      "img": "cnc",
+      "hoi": "Máy trong ảnh có màn hình điều khiển và chạy theo chương trình máy tính để gia công kim loại. Tiếng Anh gọi tắt là gì?",
+      "lua_chon": [
+        "CNC machine",
+        "hand drill",
+        "bench vice"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>CNC machine</em> /ˌsiː en ˈsiː/ là máy điều khiển số bằng máy tính: máy tự chạy theo chương trình.",
+      "fb_no": "Nhìn màn hình và cửa kính của máy. Máy này chạy bằng tay quay hay bằng chương trình máy tính?"
+    },
+    {
+      "img": "prototype",
+      "hoi": "Vật màu hồng nhạt này được in 3D thử trước khi sản xuất số lượng lớn. Loại sản phẩm thử đầu tiên này tiếng Anh gọi là gì?",
+      "lua_chon": [
+        "prototype",
+        "spare part",
+        "blueprint"
+      ],
+      "dap": 0,
+      "fb_ok": "<em>prototype</em> /ˈprəʊtətaɪp/ là mẫu thử: bản làm đầu tiên để kiểm tra trước khi làm hàng loạt.",
+      "fb_no": "Vật này mới làm thử, chưa phải hàng bán. Từ nào nói về bản làm thử đầu tiên?"
+    }
+  ],
+  "tu_vung": [
+    {
+      "ten": "Cụm A · CAD, CAM, CNC và phần mềm",
+      "tu": [
+        {
+          "term": "CAD",
+          "ipa": "/ˌsiː eɪ ˈdiː/",
+          "vi": "thiết kế có sự hỗ trợ của máy tính",
+          "def": "The use of computers to create and change designs.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "CAM",
+          "ipa": "/kæm/",
+          "vi": "gia công có sự hỗ trợ của máy tính",
+          "def": "The use of computer software to control machine tools that make products.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "CNC",
+          "ipa": "/ˌsiː en ˈsiː/",
+          "vi": "điều khiển số bằng máy tính",
+          "def": "A way of controlling a machine tool with a computer program.",
+          "img": "cnc",
+          "tier": 1
+        },
+        {
+          "term": "software",
+          "ipa": "/ˈsɒftweə/",
+          "vi": "phần mềm",
+          "def": "Programs that tell a computer what to do.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "automation",
+          "ipa": "/ˌɔːtəˈmeɪʃn/",
+          "vi": "tự động hoá",
+          "def": "The use of machines to do work without human help.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"The use of computers to create and change designs.\"</em>",
+        "lua_chon": [
+          "CAM",
+          "CAD",
+          "CNC",
+          "automation"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>create and change designs</em> (tạo và sửa thiết kế): CAD = Computer-Aided <em>Design</em>.",
+        "fb_no": "Gạch từ khoá <em>designs</em>. Trong CAD, CAM, CNC, chữ viết tắt nào có chữ D?"
+      }
+    },
+    {
+      "ten": "Cụm B · Thiết kế và thử nghiệm",
+      "tu": [
+        {
+          "term": "design",
+          "ipa": "/dɪˈzaɪn/",
+          "vi": "thiết kế",
+          "def": "To plan how a product will look and work.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "drawing",
+          "ipa": "/ˈdrɔːɪŋ/",
+          "vi": "bản vẽ",
+          "def": "A picture that shows the shape and size of a part.",
+          "img": "drawing",
+          "tier": 1
+        },
+        {
+          "term": "3D model",
+          "ipa": "/θriː diː ˈmɒdl/",
+          "vi": "mô hình 3D",
+          "def": "A computer shape that shows a part with length, width and height.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "prototype",
+          "ipa": "/ˈprəʊtətaɪp/",
+          "vi": "mẫu thử",
+          "def": "The first test version of a product, made before mass production.",
+          "img": "prototype",
+          "tier": 1
+        },
+        {
+          "term": "simulation",
+          "ipa": "/ˌsɪmjuˈleɪʃn/",
+          "vi": "mô phỏng",
+          "def": "A computer test that shows how a design will behave.",
+          "img": "simulation",
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A computer test that shows how a design will behave.\"</em>",
+        "lua_chon": [
+          "prototype",
+          "drawing",
+          "simulation",
+          "3D model"
+        ],
+        "dap": 2,
+        "fb_ok": "Từ khoá <em>computer test</em> (thử bằng máy tính): simulation = mô phỏng, không cần làm vật thật.",
+        "fb_no": "Gạch từ khoá <em>computer test</em>. Prototype là vật thật, còn từ nào là cách thử ngay trên máy tính?"
+      }
+    },
+    {
+      "ten": "Cụm C · Gia công và sản xuất",
+      "tu": [
+        {
+          "term": "manufacturing",
+          "ipa": "/ˌmænjuˈfæktʃərɪŋ/",
+          "vi": "sản xuất, chế tạo",
+          "def": "The process of making products, often in a factory.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "machine tool",
+          "ipa": "/məˈʃiːn tuːl/",
+          "vi": "máy công cụ",
+          "def": "A power-driven machine that cuts or shapes metal.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "machinist",
+          "ipa": "/məˈʃiːnɪst/",
+          "vi": "thợ gia công, thợ máy",
+          "def": "A skilled worker who sets up and runs machine tools.",
+          "img": "machinist",
+          "tier": 1
+        },
+        {
+          "term": "mass production",
+          "ipa": "/ˌmæs prəˈdʌkʃn/",
+          "vi": "sản xuất hàng loạt",
+          "def": "Making large numbers of the same product, usually by machines.",
+          "img": "production-line",
+          "tier": 1
+        },
+        {
+          "term": "geometry",
+          "ipa": "/dʒiˈɒmətri/",
+          "vi": "hình dạng và kích thước của chi tiết",
+          "def": "The shape and size of a part, shown by lines, surfaces and solids.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A skilled worker who sets up and runs machine tools.\"</em>",
+        "lua_chon": [
+          "engineer",
+          "machinist",
+          "designer",
+          "inspector"
+        ],
+        "dap": 1,
+        "fb_ok": "Từ khoá <em>sets up and runs machine tools</em>: machinist. Article 2: CAM software is mostly used by a trained machinist.",
+        "fb_no": "Gạch từ khoá <em>runs machine tools</em> (vận hành máy). Người thiết kế dùng CAD, còn người chạy máy là ai?"
+      }
+    },
+    {
+      "ten": "Cụm D · Ưu điểm và nhược điểm",
+      "tu": [
+        {
+          "term": "reliable",
+          "ipa": "/rɪˈlaɪəbl/",
+          "vi": "đáng tin cậy, ổn định",
+          "def": "Able to be trusted to work well every time.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "human error",
+          "ipa": "/ˌhjuːmən ˈerə/",
+          "vi": "lỗi do con người",
+          "def": "A mistake made by a person, not by a machine.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "labour cost",
+          "ipa": "/ˈleɪbə kɒst/",
+          "vi": "chi phí nhân công",
+          "def": "The money paid to workers for their work.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "virus",
+          "ipa": "/ˈvaɪrəs/",
+          "vi": "vi-rút máy tính",
+          "def": "A harmful program that damages files on a computer.",
+          "img": null,
+          "tier": 1
+        },
+        {
+          "term": "unemployment",
+          "ipa": "/ˌʌnɪmˈplɔɪmənt/",
+          "vi": "thất nghiệp",
+          "def": "The situation of having no job when you want to work.",
+          "img": null,
+          "tier": 1
+        }
+      ],
+      "quiz": {
+        "hoi": "Part 1 hỏi: <em>\"A mistake made by a person, not by a machine.\"</em>",
+        "lua_chon": [
+          "labour cost",
+          "virus",
+          "human error",
+          "unemployment"
+        ],
+        "dap": 2,
+        "fb_ok": "Từ khoá <em>mistake</em> + <em>by a person</em>: human error. Article 1: CAM gives a more reliable finish, there is no human error.",
+        "fb_no": "Gạch từ khoá <em>mistake</em> (lỗi). Ba từ kia nói về tiền, chương trình hại máy, mất việc."
+      }
+    }
+  ],
+  "tu_vung_them": [
+    {
+      "term": "toolpath",
+      "vi": "đường chạy dao do phần mềm CAM tính",
+      "img": "cam-sim"
+    },
+    {
+      "term": "cutting tool",
+      "vi": "dao cắt, dụng cụ cắt"
+    },
+    {
+      "term": "finished part",
+      "vi": "chi tiết hoàn thiện"
+    },
+    {
+      "term": "finished product",
+      "vi": "thành phẩm"
+    },
+    {
+      "term": "production run",
+      "vi": "một đợt sản xuất"
+    },
+    {
+      "term": "realistic",
+      "vi": "giống thật, sát thực tế"
+    },
+    {
+      "term": "advantage",
+      "vi": "ưu điểm"
+    },
+    {
+      "term": "disadvantage",
+      "vi": "nhược điểm"
+    },
+    {
+      "term": "corrupted file",
+      "vi": "tệp bị hỏng"
+    },
+    {
+      "term": "experienced",
+      "vi": "có kinh nghiệm"
+    },
+    {
+      "term": "modify",
+      "vi": "sửa đổi, chỉnh lại"
+    },
+    {
+      "term": "assemble",
+      "vi": "lắp ráp"
+    },
+    {
+      "term": "curve",
+      "vi": "đường cong"
+    },
+    {
+      "term": "surface",
+      "vi": "bề mặt"
+    },
+    {
+      "term": "solid",
+      "vi": "khối đặc"
+    },
+    {
+      "term": "analyze",
+      "vi": "phân tích"
+    },
+    {
+      "term": "conventional",
+      "vi": "truyền thống, thông thường"
+    },
+    {
+      "term": "purpose",
+      "vi": "mục đích"
+    }
+  ],
+  "bai_doc": [
+    {
+      "ten": "Article 1 · CAD-CAM technology (giáo trình: Article 1)",
+      "cau": [
+        [
+          "<b>CAD</b>-CAM technology is the result of decades of efforts by numerous people in the name of production <b>automation</b>.",
+          "Công nghệ CAD-CAM là kết quả nỗ lực nhiều thập kỷ của rất nhiều người vì sự tự động hoá sản xuất.",
+          {
+            "doan": [
+              {
+                "tu": "CAD",
+                "lua_chon": [
+                  "thiết kế có máy tính",
+                  "gia công có máy tính",
+                  "điều khiển số"
+                ],
+                "dap": 0,
+                "giai": "CAD = Computer-Aided Design: thiết kế có sự hỗ trợ của máy tính."
+              },
+              {
+                "tu": "automation",
+                "lua_chon": [
+                  "tự động hoá",
+                  "thất nghiệp",
+                  "bản vẽ"
+                ],
+                "dap": 0,
+                "giai": "automation là tự động hoá: máy làm việc không cần người can thiệp."
+              }
+            ],
+            "nghia": {
+              "decades": "nhiều thập kỷ",
+              "efforts": "những nỗ lực",
+              "numerous": "rất nhiều",
+              "production": "sản xuất"
+            }
+          }
+        ],
+        [
+          "It is the vision of innovators and inventors, mathematicians and <b>machinists</b>, who are all working to build the future and drive production with technology.",
+          "Đó là tầm nhìn của những người đổi mới, nhà phát minh, nhà toán học và thợ gia công, những người cùng xây dựng tương lai và thúc đẩy sản xuất bằng công nghệ.",
+          {
+            "doan": [
+              {
+                "tu": "machinists",
+                "lua_chon": [
+                  "thợ gia công",
+                  "kế toán",
+                  "bảo vệ"
+                ],
+                "dap": 0,
+                "giai": "machinist là thợ vận hành máy công cụ, gia công chi tiết."
+              }
+            ],
+            "nghia": {
+              "vision": "tầm nhìn",
+              "innovators": "người đổi mới",
+              "inventors": "nhà phát minh",
+              "mathematicians": "nhà toán học",
+              "drive": "thúc đẩy"
+            }
+          }
+        ],
+        [
+          "A lot of people use the term \"CAD-CAM\" when they talk about the <b>software</b> that is used to make things with a <b>CNC</b> machine.",
+          "Nhiều người dùng thuật ngữ \"CAD-CAM\" khi nói về phần mềm dùng để làm ra đồ vật bằng máy CNC.",
+          {
+            "doan": [
+              {
+                "tu": "software",
+                "lua_chon": [
+                  "phần mềm",
+                  "phần cứng",
+                  "dây điện"
+                ],
+                "dap": 0,
+                "giai": "software là phần mềm: chương trình chạy trong máy tính."
+              },
+              {
+                "tu": "CNC",
+                "lua_chon": [
+                  "điều khiển số bằng máy tính",
+                  "chi phí nhân công",
+                  "bản vẽ 2D"
+                ],
+                "dap": 0,
+                "giai": "CNC = máy điều khiển số: chạy theo chương trình máy tính."
+              }
+            ],
+            "nghia": {
+              "a lot of": "nhiều",
+              "term": "thuật ngữ",
+              "used to make": "dùng để làm ra"
+            }
+          }
+        ],
+        [
+          "<b>CAD</b> stands for Computer-Aided <b>Design</b> and <b>CAM</b> stands for Computer-Aided <b>Manufacturing</b>, both of which are used to make things.",
+          "CAD là viết tắt của thiết kế có máy tính hỗ trợ, còn CAM là viết tắt của sản xuất có máy tính hỗ trợ, cả hai đều dùng để làm ra đồ vật.",
+          {
+            "doan": [
+              {
+                "tu": "CAM",
+                "lua_chon": [
+                  "gia công có máy tính",
+                  "phần mềm",
+                  "mô phỏng"
+                ],
+                "dap": 0,
+                "giai": "CAM = Computer-Aided Manufacturing: gia công, sản xuất có máy tính hỗ trợ."
+              },
+              {
+                "tu": "Manufacturing",
+                "lua_chon": [
+                  "sản xuất, chế tạo",
+                  "thiết kế",
+                  "vẽ"
+                ],
+                "dap": 0,
+                "giai": "manufacturing là sản xuất, chế tạo sản phẩm."
+              }
+            ],
+            "nghia": {
+              "stands for": "viết tắt của",
+              "both of which": "cả hai thứ đó"
+            }
+          }
+        ],
+        [
+          "CAD/CAM software is used to design and manufacture <b>prototypes</b>, finished products, and production runs of products.",
+          "Phần mềm CAD/CAM được dùng để thiết kế và chế tạo mẫu thử, thành phẩm và các đợt sản xuất.",
+          {
+            "doan": [
+              {
+                "tu": "prototypes",
+                "lua_chon": [
+                  "mẫu thử",
+                  "phụ tùng",
+                  "hợp đồng"
+                ],
+                "dap": 0,
+                "giai": "prototype là bản làm thử đầu tiên, trước khi sản xuất hàng loạt."
+              }
+            ],
+            "nghia": {
+              "design": "thiết kế",
+              "manufacture": "chế tạo",
+              "finished products": "thành phẩm",
+              "production runs": "các đợt sản xuất"
+            }
+          }
+        ],
+        [
+          "This technology was developed during the 1980s and is now widespread in industry and academia.",
+          "Công nghệ này được phát triển trong những năm 1980 và hiện nay phổ biến trong công nghiệp và trường học.",
+          {
+            "doan": [],
+            "nghia": {
+              "was developed … is now": "giáo trình viết sai ngữ pháp (were developed … now widespread), đã sửa",
+              "developed": "được phát triển",
+              "widespread": "phổ biến, lan rộng",
+              "industry": "công nghiệp",
+              "academia": "giới học thuật"
+            }
+          }
+        ],
+        [
+          "It also has advantages and disadvantages.",
+          "Nó cũng có ưu điểm và nhược điểm.",
+          {
+            "doan": [],
+            "nghia": {
+              "advantages": "ưu điểm (giáo trình viết \"the advantages\", đã bỏ the)",
+              "disadvantages": "nhược điểm"
+            }
+          }
+        ],
+        [
+          "Very <b>realistic</b> designs can be produced to show clients what their product will look like.",
+          "Có thể tạo ra các thiết kế rất giống thật để cho khách hàng thấy sản phẩm của họ sẽ trông thế nào.",
+          {
+            "doan": [
+              {
+                "tu": "realistic",
+                "lua_chon": [
+                  "giống thật",
+                  "đắt tiền",
+                  "nguy hiểm"
+                ],
+                "dap": 0,
+                "giai": "realistic là giống thật: nhìn như vật thật."
+              }
+            ],
+            "nghia": {
+              "produced": "được tạo ra",
+              "clients": "khách hàng",
+              "look like": "trông giống"
+            }
+          }
+        ],
+        [
+          "Products can be machined at high speed 24 hours a day – this means lots of products can be made in a short time.",
+          "Sản phẩm có thể được gia công tốc độ cao 24 giờ mỗi ngày, nghĩa là làm được nhiều sản phẩm trong thời gian ngắn.",
+          {
+            "doan": [],
+            "nghia": {
+              "machined": "được gia công",
+              "high speed": "tốc độ cao",
+              "lots of": "nhiều",
+              "a short time": "thời gian ngắn"
+            }
+          }
+        ],
+        [
+          "CAM gives a high quality and more <b>reliable</b> finish – there is no <b>human error</b>.",
+          "CAM cho chất lượng cao và bề mặt hoàn thiện ổn định hơn, không có lỗi do con người.",
+          {
+            "doan": [
+              {
+                "tu": "reliable",
+                "lua_chon": [
+                  "ổn định, đáng tin",
+                  "dễ vỡ",
+                  "rẻ tiền"
+                ],
+                "dap": 0,
+                "giai": "reliable là đáng tin cậy: lần nào làm cũng tốt như lần nào."
+              },
+              {
+                "tu": "human error",
+                "lua_chon": [
+                  "lỗi do con người",
+                  "chi phí nhân công",
+                  "thiếu điện"
+                ],
+                "dap": 0,
+                "giai": "human error là lỗi do người làm sai, không phải máy."
+              }
+            ],
+            "nghia": {
+              "quality": "chất lượng",
+              "finish": "bề mặt hoàn thiện"
+            }
+          }
+        ],
+        [
+          "You can <b>mass-produce</b> complicated products, each part can be made by a different machine so they can be assembled quickly.",
+          "Có thể sản xuất hàng loạt các sản phẩm phức tạp, mỗi bộ phận làm bằng một máy khác nhau nên lắp ráp được nhanh.",
+          {
+            "doan": [
+              {
+                "tu": "mass-produce",
+                "lua_chon": [
+                  "sản xuất hàng loạt",
+                  "sửa chữa",
+                  "đóng gói"
+                ],
+                "dap": 0,
+                "giai": "mass-produce là sản xuất hàng loạt: làm số lượng lớn cùng một loại."
+              }
+            ],
+            "nghia": {
+              "complicated": "phức tạp",
+              "each part": "mỗi bộ phận",
+              "assembled": "được lắp ráp",
+              "quickly": "nhanh"
+            }
+          }
+        ],
+        [
+          "<b>Labour</b> costs are low.",
+          "Chi phí nhân công thấp.",
+          {
+            "doan": [
+              {
+                "tu": "Labour",
+                "lua_chon": [
+                  "nhân công, lao động",
+                  "vật liệu",
+                  "điện năng"
+                ],
+                "dap": 0,
+                "giai": "labour là sức lao động; labour cost là tiền trả cho người làm."
+              }
+            ],
+            "nghia": {
+              "costs": "chi phí",
+              "low": "thấp"
+            }
+          }
+        ],
+        [
+          "Designs can be sent around the world.",
+          "Thiết kế có thể được gửi đi khắp thế giới.",
+          {
+            "doan": [],
+            "nghia": {
+              "sent": "được gửi",
+              "around the world": "khắp thế giới"
+            }
+          }
+        ],
+        [
+          "Expensive.",
+          "Đắt tiền.",
+          {
+            "doan": [
+              {
+                "tu": "Expensive",
+                "lua_chon": [
+                  "đắt tiền",
+                  "rẻ tiền",
+                  "nhanh"
+                ],
+                "dap": 0,
+                "giai": "expensive là đắt: tốn nhiều tiền để mua và dùng."
+              }
+            ],
+            "nghia": {
+              "Expensives": "giáo trình viết sai chính tả, đã sửa thành Expensive"
+            }
+          }
+        ],
+        [
+          "Computers can be affected by software problems, <b>viruses</b> and corrupted files meaning work could be lost.",
+          "Máy tính có thể bị ảnh hưởng bởi lỗi phần mềm, vi-rút và tệp hỏng, nghĩa là công việc có thể bị mất.",
+          {
+            "doan": [
+              {
+                "tu": "viruses",
+                "lua_chon": [
+                  "vi-rút máy tính",
+                  "thợ gia công",
+                  "bản vẽ"
+                ],
+                "dap": 0,
+                "giai": "virus là chương trình có hại làm hỏng tệp trên máy tính."
+              }
+            ],
+            "nghia": {
+              "affected": "bị ảnh hưởng",
+              "software problems": "lỗi phần mềm",
+              "corrupted files": "tệp bị hỏng",
+              "lost": "bị mất"
+            }
+          }
+        ],
+        [
+          "Requiring <b>experienced</b> workers.",
+          "Cần thợ có kinh nghiệm.",
+          {
+            "doan": [
+              {
+                "tu": "experienced",
+                "lua_chon": [
+                  "có kinh nghiệm",
+                  "còn trẻ",
+                  "mới vào nghề"
+                ],
+                "dap": 0,
+                "giai": "experienced là có kinh nghiệm: làm lâu năm nên thành thạo."
+              }
+            ],
+            "nghia": {
+              "Requiring": "đòi hỏi",
+              "worker": "giáo trình viết số ít, đã sửa thành workers"
+            }
+          }
+        ],
+        [
+          "Fewer workers are needed, so <b>unemployment</b> might increase and traditional skills will be lost.",
+          "Cần ít công nhân hơn nên thất nghiệp có thể tăng và các kỹ năng truyền thống sẽ mất đi.",
+          {
+            "doan": [
+              {
+                "tu": "unemployment",
+                "lua_chon": [
+                  "thất nghiệp",
+                  "tăng lương",
+                  "nghỉ phép"
+                ],
+                "dap": 0,
+                "giai": "unemployment là tình trạng không có việc làm."
+              }
+            ],
+            "nghia": {
+              "fewer": "ít hơn (đếm được)",
+              "increase": "tăng",
+              "traditional skills": "kỹ năng truyền thống"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"CAM gives a high quality and more ______ finish.\"</em>",
+        "lua_chon": [
+          "reliable",
+          "expensive",
+          "realistic"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu 10 của bài: <em>a high quality and more reliable finish</em>. Tìm từ khoá <em>high quality</em> rồi chép từ đứng sau <em>more</em>.",
+        "fb_no": "Tìm câu có <em>high quality</em>. Từ nào đứng ngay sau <em>and more</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"CAM gives a more reliable finish because there is a lot of human error.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>there is no human error</em> (không có lỗi do con người). Đề hay đổi <em>no</em> thành nghĩa ngược lại.",
+        "fb_no": "Đọc lại câu 10: bài nói về lỗi do con người thế nào?"
+      }
+    },
+    {
+      "ten": "Article 2 · Difference between CAD and CAM (giáo trình: Article 2)",
+      "cau": [
+        [
+          "Computer Aided <b>Design</b> (CAD) is the use of computers for designing models of physical products,",
+          "Thiết kế có máy tính hỗ trợ (CAD) là việc dùng máy tính để thiết kế mô hình của sản phẩm thực,",
+          {
+            "doan": [
+              {
+                "tu": "Design",
+                "lua_chon": [
+                  "thiết kế",
+                  "gia công",
+                  "lắp ráp"
+                ],
+                "dap": 0,
+                "giai": "design là thiết kế: lên kế hoạch hình dạng và chức năng của sản phẩm."
+              }
+            ],
+            "nghia": {
+              "use of computers": "việc dùng máy tính",
+              "models": "mô hình",
+              "physical products": "sản phẩm vật lý (giáo trình viết physical product, thiếu s, đã sửa)"
+            }
+          }
+        ],
+        [
+          "which means computers are used to aid in creating the design, modifying the design and analyzing the designing activities.",
+          "nghĩa là máy tính được dùng để hỗ trợ tạo thiết kế, sửa thiết kế và phân tích các hoạt động thiết kế.",
+          {
+            "doan": [],
+            "nghia": {
+              "aid in": "hỗ trợ việc",
+              "creating": "tạo ra",
+              "modifying": "sửa đổi",
+              "analyzing": "phân tích"
+            }
+          }
+        ],
+        [
+          "CAD is also known as Computer Aided <b>Drafting</b>.",
+          "CAD cũng được gọi là vẽ kỹ thuật có máy tính hỗ trợ.",
+          {
+            "doan": [
+              {
+                "tu": "Drafting",
+                "lua_chon": [
+                  "vẽ kỹ thuật",
+                  "gia công",
+                  "sửa chữa"
+                ],
+                "dap": 0,
+                "giai": "drafting là vẽ bản vẽ kỹ thuật."
+              }
+            ],
+            "nghia": {
+              "also known as": "còn được gọi là"
+            }
+          }
+        ],
+        [
+          "The <b>purpose</b> of CAD is making 2D technical <b>drawings</b> and 3D <b>models</b>.",
+          "Mục đích của CAD là tạo bản vẽ kỹ thuật 2D và mô hình 3D.",
+          {
+            "doan": [
+              {
+                "tu": "drawings",
+                "lua_chon": [
+                  "bản vẽ",
+                  "máy công cụ",
+                  "phần mềm"
+                ],
+                "dap": 0,
+                "giai": "drawing là bản vẽ: hình vẽ cho thấy hình dạng và kích thước."
+              },
+              {
+                "tu": "models",
+                "lua_chon": [
+                  "mô hình",
+                  "mô phỏng",
+                  "thợ máy"
+                ],
+                "dap": 0,
+                "giai": "model là mô hình: bản dựng của chi tiết trên máy tính."
+              }
+            ],
+            "nghia": {
+              "purpose": "mục đích",
+              "technical": "kỹ thuật"
+            }
+          }
+        ],
+        [
+          "So in simple we can say CAD represents your part <b>geometry</b> to the computer.",
+          "Nói đơn giản, CAD đưa hình dạng chi tiết của em vào máy tính.",
+          {
+            "doan": [
+              {
+                "tu": "geometry",
+                "lua_chon": [
+                  "hình dạng và kích thước",
+                  "khối lượng",
+                  "màu sắc"
+                ],
+                "dap": 0,
+                "giai": "geometry là hình học của chi tiết: hình dạng và kích thước."
+              }
+            ],
+            "nghia": {
+              "represents": "thể hiện, đưa vào",
+              "in simple": "nói đơn giản"
+            }
+          }
+        ],
+        [
+          "CAD software is mostly used by an engineer.",
+          "Phần mềm CAD chủ yếu do kỹ sư sử dụng.",
+          {
+            "doan": [],
+            "nghia": {
+              "mostly": "chủ yếu",
+              "engineer": "kỹ sư"
+            }
+          }
+        ],
+        [
+          "Computer Aided <b>Manufacturing</b> (CAM) is the use of computer software to control <b>machine tools</b> in the manufacturing of modules.",
+          "Sản xuất có máy tính hỗ trợ (CAM) là việc dùng phần mềm máy tính để điều khiển máy công cụ khi chế tạo các chi tiết.",
+          {
+            "doan": [
+              {
+                "tu": "machine tools",
+                "lua_chon": [
+                  "máy công cụ",
+                  "dụng cụ cầm tay",
+                  "phụ tùng"
+                ],
+                "dap": 0,
+                "giai": "machine tool là máy chạy bằng động lực để cắt hoặc tạo hình kim loại."
+              }
+            ],
+            "nghia": {
+              "control": "điều khiển",
+              "modules": "các chi tiết, cụm"
+            }
+          }
+        ],
+        [
+          "CAM transforms engineering designs into end products.",
+          "CAM biến thiết kế kỹ thuật thành sản phẩm cuối.",
+          {
+            "doan": [],
+            "nghia": {
+              "transforms": "biến đổi",
+              "end products": "sản phẩm cuối"
+            }
+          }
+        ],
+        [
+          "CAM is different than the conventional manufacturing as it implements <b>automation</b> in the manufacturing process.",
+          "CAM khác sản xuất truyền thống vì nó đưa tự động hoá vào quá trình sản xuất.",
+          {
+            "doan": [
+              {
+                "tu": "automation",
+                "lua_chon": [
+                  "tự động hoá",
+                  "mô phỏng",
+                  "nhân công"
+                ],
+                "dap": 0,
+                "giai": "automation là tự động hoá: máy chạy mà không cần người làm từng bước."
+              }
+            ],
+            "nghia": {
+              "conventional": "truyền thống",
+              "implements": "đưa vào, áp dụng",
+              "process": "quá trình"
+            }
+          }
+        ],
+        [
+          "CAM is also known as Computer Aided Modeling or Machining.",
+          "CAM cũng được gọi là lập mô hình hoặc gia công có máy tính hỗ trợ.",
+          {
+            "doan": [],
+            "nghia": {
+              "Modeling": "lập mô hình",
+              "Machining": "gia công cắt gọt"
+            }
+          }
+        ],
+        [
+          "The purpose of CAM is using 3D models to design machining processes.",
+          "Mục đích của CAM là dùng mô hình 3D để thiết kế quy trình gia công.",
+          {
+            "doan": [],
+            "nghia": {
+              "machining processes": "quy trình gia công"
+            }
+          }
+        ],
+        [
+          "So in simple we can say CAM converts the geometry to machine tools.",
+          "Nói đơn giản, CAM chuyển hình dạng chi tiết sang cho máy công cụ.",
+          {
+            "doan": [],
+            "nghia": {
+              "converts": "chuyển đổi"
+            }
+          }
+        ],
+        [
+          "So, without CAD, CAM has no meaning.",
+          "Vì vậy, không có CAD thì CAM không có ý nghĩa.",
+          {
+            "doan": [],
+            "nghia": {
+              "without": "không có",
+              "meaning": "ý nghĩa"
+            }
+          }
+        ],
+        [
+          "CAM software is mostly used by a trained <b>machinist</b>.",
+          "Phần mềm CAM chủ yếu do thợ gia công được đào tạo sử dụng.",
+          {
+            "doan": [
+              {
+                "tu": "machinist",
+                "lua_chon": [
+                  "thợ gia công",
+                  "kỹ sư thiết kế",
+                  "nhân viên văn phòng"
+                ],
+                "dap": 0,
+                "giai": "machinist là thợ vận hành máy công cụ."
+              }
+            ],
+            "nghia": {
+              "trained": "được đào tạo"
+            }
+          }
+        ]
+      ],
+      "quiz": {
+        "hoi": "Part 2.1 điền một từ: <em>\"CAM software is mostly used by a trained ______.\"</em>",
+        "lua_chon": [
+          "machinist",
+          "engineer",
+          "clerk"
+        ],
+        "dap": 0,
+        "fb_ok": "Câu cuối của bài: <em>CAM software is mostly used by a trained machinist</em>. Chú ý: CAD mới là phần mềm của kỹ sư.",
+        "fb_no": "Tìm câu có <em>CAM software</em>. Từ nào đứng sau <em>a trained</em>?"
+      },
+      "dung_sai": {
+        "hoi": "Part 2.2 Đúng/Sai: <em>\"CAD and CAM can be used without each other because they belong to different stages.\"</em>",
+        "dap": false,
+        "fb_ok": "Câu này SAI. Bài viết <em>without CAD, CAM has no meaning</em>: CAM cần mô hình do CAD tạo ra.",
+        "fb_no": "Tìm câu có <em>without CAD</em>. Bài nói CAM thế nào khi không có CAD?"
+      }
+    }
+  ],
+  "bang": {
+    "ten": "So sánh CAD và CAM (Article 2, hay ra Đúng/Sai)",
+    "cot": [
+      "Hỏi gì",
+      "CAD",
+      "CAM"
+    ],
+    "hang": [
+      [
+        "Viết tắt",
+        "Computer Aided <strong>Design</strong>",
+        "Computer Aided <strong>Manufacturing</strong>"
+      ],
+      [
+        "Mục đích",
+        "2D <strong>drawings</strong> và 3D <strong>models</strong>",
+        "dùng 3D model để thiết kế <strong>machining</strong>"
+      ],
+      [
+        "Với hình dạng chi tiết",
+        "<strong>represents</strong> geometry cho máy tính",
+        "<strong>converts</strong> geometry cho máy công cụ"
+      ],
+      [
+        "Ai dùng",
+        "an <strong>engineer</strong>",
+        "a trained <strong>machinist</strong>"
+      ],
+      [
+        "Quan hệ",
+        "làm trước",
+        "<strong>no meaning</strong> without CAD"
+      ]
+    ]
+  },
+  "mau_cau": [
+    {
+      "ten": "Mẫu 1 · X stands for Y (X là viết tắt của Y)",
+      "vd": [
+        [
+          "CAD stands for Computer-Aided Design.",
+          "CAD là viết tắt của thiết kế có máy tính hỗ trợ."
+        ],
+        [
+          "CAM stands for Computer-Aided Manufacturing.",
+          "CAM là viết tắt của sản xuất có máy tính hỗ trợ."
+        ],
+        [
+          "CNC stands for Computer Numerical Control.",
+          "CNC là viết tắt của điều khiển số bằng máy tính."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>X + stands for + Y</strong>.",
+        "Dịch: \"X là viết tắt của Y\".",
+        "Chữ cái đầu của Y khớp với các chữ trong X (Computer Aided Design → CAD)."
+      ]
+    },
+    {
+      "ten": "Mẫu 2 · X is used to + V (X được dùng để …)",
+      "vd": [
+        [
+          "CAD software is used to make 2D drawings and 3D models.",
+          "Phần mềm CAD được dùng để tạo bản vẽ 2D và mô hình 3D."
+        ],
+        [
+          "CAM software is used to control machine tools.",
+          "Phần mềm CAM được dùng để điều khiển máy công cụ."
+        ],
+        [
+          "Simulation is used to find problems without building a prototype.",
+          "Mô phỏng được dùng để tìm lỗi mà không cần làm mẫu thử."
+        ]
+      ],
+      "ghi_chu": [
+        "Công thức: <strong>X + is used + to + V</strong>.",
+        "Dịch: \"X được dùng để …\".",
+        "<em>to + V</em> chỉ mục đích; V đứng ở dạng nguyên mẫu, không chia."
+      ]
+    }
+  ],
+  "gan_nhan": {
+    "svg": "cadcam_flow.svg",
+    "tieu_de": "Từ file thiết kế đến chi tiết: gọi tên 6 phần",
+    "mo_ta": "Từ Part 1 hay hỏi tên từng bước từ CAD đến CAM. Nhìn hình, tự gọi tên 6 phần trước, rồi mở đáp án.",
+    "chu_thich": "Hình mô phỏng quy trình CAD/CAM: máy tính, mô hình 3D, đường chạy dao, máy CNC, dao cắt, chi tiết xong. 6 phần đánh số.",
+    "bo_phan": [
+      [
+        "CAD software",
+        "phần mềm thiết kế trên máy tính"
+      ],
+      [
+        "3D model",
+        "mô hình 3D của chi tiết"
+      ],
+      [
+        "toolpath",
+        "đường chạy dao do phần mềm CAM tính"
+      ],
+      [
+        "CNC machine",
+        "máy điều khiển số"
+      ],
+      [
+        "cutting tool",
+        "dao cắt"
+      ],
+      [
+        "finished part",
+        "chi tiết hoàn thiện"
+      ]
+    ],
+    "hoi": "Phần số 3 (đường màu đỏ ngoằn ngoèo, là đường mà dao sẽ chạy trên phôi) tên là gì?",
+    "lua_chon": [
+      "toolpath",
+      "drawing",
+      "geometry",
+      "virus"
+    ],
+    "dap": 0,
+    "fb_ok": "<em>toolpath</em> = đường chạy dao. Phần mềm CAM biến mô hình 3D thành đường này, rồi máy CNC chạy theo.",
+    "fb_no": "Số 3 là đường dao sẽ đi. Từ nào ghép từ <em>tool</em> (dụng cụ) với <em>path</em> (đường đi)?"
+  },
+  "sop": {
+    "tieu_de": "CAD/CAM trong xưởng: điền từ (kiểu Part 3)",
+    "mo_ta": "Thử với đoạn viết lại từ phần Reading:",
+    "hop_tu": [
+      "software",
+      "simulation",
+      "prototype",
+      "automation",
+      "reliable"
+    ],
+    "doan": "CAD (1) ______ lets an engineer draw a part on the screen instead of on paper. A (2) ______ shows how the design will behave before anything is built. This saves the cost of making a (3) ______. CAM then runs the machines, so (4) ______ replaces manual work and the finish is more (5) ______.",
+    "dap": [
+      "software",
+      "simulation",
+      "prototype",
+      "automation",
+      "reliable"
+    ],
+    "quiz": {
+      "hoi": "Chỗ trống (2): <em>\"A (2) ______ shows how the design will behave before anything is built.\"</em>",
+      "lua_chon": [
+        "prototype",
+        "simulation",
+        "automation",
+        "reliable"
+      ],
+      "dap": 1,
+      "fb_ok": "<em>simulation</em> = mô phỏng. Từ khoá <em>shows how the design will behave before anything is built</em> (thử trước khi làm vật thật).",
+      "fb_no": "Gạch từ khoá <em>before anything is built</em>. Prototype là vật đã làm ra, còn từ nào là cách thử trên máy tính?"
+    }
+  },
+  "tra_bai": [
+    [
+      "CAD và CAM viết tắt của gì?",
+      "CAD = Computer-Aided Design (thiết kế); CAM = Computer-Aided Manufacturing (gia công, sản xuất)."
+    ],
+    [
+      "CAD còn gọi là gì? CAM còn gọi là gì?",
+      "CAD = Computer Aided Drafting. CAM = Computer Aided Modeling or Machining."
+    ],
+    [
+      "Mục đích của CAD là gì?",
+      "Tạo bản vẽ kỹ thuật 2D và mô hình 3D (CAD represents your part geometry to the computer)."
+    ],
+    [
+      "Ai thường dùng CAD, ai thường dùng CAM?",
+      "CAD: kỹ sư (engineer). CAM: thợ gia công được đào tạo (trained machinist)."
+    ],
+    [
+      "Nêu hai ưu điểm của CAD/CAM.",
+      "Chọn hai: thiết kế giống thật; gia công 24 giờ/ngày; chất lượng ổn định, không có lỗi do con người; chi phí nhân công thấp; gửi thiết kế đi khắp thế giới."
+    ],
+    [
+      "Nêu hai nhược điểm của CAD/CAM.",
+      "Chọn hai: đắt; lỗi phần mềm, vi-rút, tệp hỏng; cần thợ có kinh nghiệm; ít việc làm hơn nên thất nghiệp có thể tăng."
+    ],
+    [
+      "Dịch: <em>CAM is used to control machine tools.</em>",
+      "CAM được dùng để điều khiển máy công cụ."
+    ],
+    [
+      "Dịch sang tiếng Anh: <em>CAD là viết tắt của thiết kế có máy tính hỗ trợ.</em>",
+      "CAD stands for Computer-Aided Design."
+    ]
+  ],
+  "de_mau": {
+    "part1": [
+      {
+        "q": "Look at the picture. Which word matches it?",
+        "opts": [
+          "drawing",
+          "prototype",
+          "simulation",
+          "mass production"
+        ],
+        "ans": 3,
+        "why": "Ảnh dây chuyền lắp ráp ô tô: nhiều xe giống nhau làm liên tục → mass production.",
+        "img": "production-line"
+      },
+      {
+        "q": "The use of computer software to control machine tools that make products.",
+        "opts": [
+          "CAD",
+          "CAM",
+          "CNC",
+          "software"
+        ],
+        "ans": 1,
+        "why": "<em>control machine tools … make products</em> → CAM."
+      },
+      {
+        "q": "The first test version of a product, made before mass production.",
+        "opts": [
+          "prototype",
+          "drawing",
+          "simulation",
+          "machinist"
+        ],
+        "ans": 0,
+        "why": "<em>first test version</em> → prototype."
+      },
+      {
+        "q": "A computer test that shows how a design will behave.",
+        "opts": [
+          "geometry",
+          "3D model",
+          "simulation",
+          "automation"
+        ],
+        "ans": 2,
+        "why": "<em>computer test … behave</em> → simulation."
+      },
+      {
+        "q": "Able to be trusted to work well every time.",
+        "opts": [
+          "realistic",
+          "reliable",
+          "expensive",
+          "complicated"
+        ],
+        "ans": 1,
+        "why": "<em>trusted … every time</em> → reliable."
+      },
+      {
+        "q": "A skilled worker who sets up and runs machine tools.",
+        "opts": [
+          "engineer",
+          "designer",
+          "machinist",
+          "clerk"
+        ],
+        "ans": 2,
+        "why": "<em>sets up and runs machine tools</em> → machinist."
+      },
+      {
+        "q": "A way of controlling a machine tool with a computer program.",
+        "opts": [
+          "CAD",
+          "CNC",
+          "drawing",
+          "virus"
+        ],
+        "ans": 1,
+        "why": "<em>controlling a machine tool with a computer program</em> → CNC."
+      },
+      {
+        "q": "A mistake made by a person, not by a machine.",
+        "opts": [
+          "human error",
+          "labour cost",
+          "virus",
+          "unemployment"
+        ],
+        "ans": 0,
+        "why": "<em>mistake … by a person</em> → human error."
+      },
+      {
+        "q": "The money paid to workers for their work.",
+        "opts": [
+          "unemployment",
+          "labour cost",
+          "software",
+          "geometry"
+        ],
+        "ans": 1,
+        "why": "<em>money paid to workers</em> → labour cost."
+      },
+      {
+        "q": "A computer shape that shows a part with length, width and height.",
+        "opts": [
+          "drawing",
+          "3D model",
+          "toolpath",
+          "simulation"
+        ],
+        "ans": 1,
+        "why": "<em>length, width and height</em> → 3D model."
+      }
+    ],
+    "part1_chien_thuat": [
+      "Gạch từ khoá trong định nghĩa: <em>control machine tools</em>, <em>first test version</em>, <em>computer test</em>, <em>trusted</em>, <em>runs machine tools</em>…",
+      "So từ khoá với nghĩa đã học ở mục Từ vựng.",
+      "Câu có ảnh: nhìn việc gì đang xảy ra (nhiều xe giống nhau trên dây chuyền = mass production, máy có màn hình điều khiển = CNC machine).",
+      "Không bỏ trống: loại 2 đáp án chắc chắn sai rồi chọn."
+    ],
+    "part2": {
+      "doan": "Computer Aided Design (CAD) is the use of computers for designing models of physical product which means computers are used to aid in creating the design, modifying the design and analyzing the designing activities. CAD is also known as Computer Aided Drafting. The purpose of CAD is making 2D technical drawings and 3D models. So in simple we can say CAD represents your part geometry to the computer. CAD software is mostly used by an engineer. Computer Aided Manufacturing (CAM) is the use of computer software to control machine tools in the manufacturing of modules. CAM transforms engineering designs into end products. CAM is different than the conventional manufacturing as it implements automation in the manufacturing process. CAM is also known as Computer Aided Modeling or Machining. So in simple we can say CAM converts the geometry to machine tools. So, without CAD, CAM has no meaning. CAM software is mostly used by a trained machinist.",
+      "dien": [
+        {
+          "q": "CAD is also known as Computer Aided ______.",
+          "ans": "Drafting",
+          "opts": [
+            "Drafting",
+            "Machining",
+            "Modeling"
+          ],
+          "why": "Câu 2: <em>CAD is also known as Computer Aided Drafting</em>. Modeling và Machining là tên khác của CAM."
+        },
+        {
+          "q": "The purpose of CAD is making 2D technical drawings and 3D ______.",
+          "ans": "models",
+          "opts": [
+            "models",
+            "machines",
+            "products"
+          ],
+          "why": "Câu 3: <em>2D technical drawings and 3D models</em>."
+        },
+        {
+          "q": "CAM transforms engineering designs into end ______.",
+          "ans": "products",
+          "opts": [
+            "products",
+            "tools",
+            "drawings"
+          ],
+          "why": "Câu 7: <em>CAM transforms engineering designs into end products</em>."
+        },
+        {
+          "q": "CAM software is mostly used by a trained ______.",
+          "ans": "machinist",
+          "opts": [
+            "machinist",
+            "engineer",
+            "clerk"
+          ],
+          "why": "Câu cuối: <em>mostly used by a trained machinist</em>."
+        }
+      ],
+      "ds": [
+        {
+          "q": "In CAD, computers are not used to create 2D technical drawings because engineers mostly draw on paper.",
+          "ans": false,
+          "why": "Bài viết <em>The purpose of CAD is making 2D technical drawings and 3D models</em>: CAD dùng máy tính để vẽ."
+        },
+        {
+          "q": "CAD can be also understood as Computer Aided Drafting.",
+          "ans": true,
+          "why": "Chép gần nguyên câu 2: <em>CAD is also known as Computer Aided Drafting</em>."
+        },
+        {
+          "q": "Operating automatically is the difference between CAM and traditional methods.",
+          "ans": true,
+          "why": "Câu 8: <em>CAM is different than the conventional manufacturing as it implements automation</em>."
+        },
+        {
+          "q": "CAD and CAM can be implemented without each other as they belong to different stages of manufacturing.",
+          "ans": false,
+          "why": "Bài viết <em>without CAD, CAM has no meaning</em>: CAM cần CAD."
+        }
+      ]
+    },
+    "part2_chien_thuat": [
+      "2.1: tìm từ khoá của câu hỏi trong đoạn.",
+      "2.1: chép <em>đúng từ</em> ở chỗ tương ứng, không tự đặt từ.",
+      "2.2: so từng chữ với câu trong đoạn.",
+      "2.2: đề thường chỉ đổi <em>một</em> chỗ hoặc thêm <em>not</em>, <em>only</em>, <em>without</em>: CAD ↔ CAM, Drafting ↔ Modeling, có ↔ không."
+    ],
+    "part3": {
+      "hop_tu": [
+        "design",
+        "automation",
+        "prototypes",
+        "machinist",
+        "expensive"
+      ],
+      "doan": "CAD/CAM software is used to (1) ______ and manufacture products. CAM brings (2) ______ into the manufacturing process, so machines can run without a worker at each step. Realistic designs help clients see the product before the factory makes any (3) ______. CAM software is mostly used by a trained (4) ______. A big disadvantage is that the system is (5) ______ to buy.",
+      "dap": [
+        "design",
+        "automation",
+        "prototypes",
+        "machinist",
+        "expensive"
+      ],
+      "chien_thuat": [
+        "Đọc cả câu trước khi điền.",
+        "Chỗ (1) đứng sau <em>to</em> và trước <em>and manufacture</em> → động từ nguyên mẫu: design.",
+        "Chỗ (2) đứng sau <em>brings</em> → danh từ không đếm được: automation.",
+        "Chỗ (3) đứng sau <em>any</em> và trước dấu chấm → danh từ số nhiều: prototypes.",
+        "Chỗ (4) đứng sau <em>a trained</em> → danh từ chỉ người: machinist.",
+        "Chỗ (5) đứng sau <em>is</em> → tính từ: expensive.",
+        "Từ nào chắc thì điền trước, gạch khỏi hộp."
+      ]
+    },
+    "part4": {
+      "en": "CAD/CAM software is used to design and manufacture prototypes, finished products, and production runs of products. This technology was developed during the 1980s and is now widespread in industry and academia.",
+      "vi": "Phần mềm CAD/CAM được dùng để thiết kế và chế tạo mẫu thử, thành phẩm và các đợt sản xuất. Công nghệ này được phát triển trong những năm 1980 và hiện nay phổ biến trong công nghiệp và trường học.",
+      "chien_thuat": [
+        "Cắt câu dài tại <em>to design and manufacture</em> và <em>and is now</em>.",
+        "Giữ nguyên thuật ngữ đã học: phần mềm, mẫu thử, thành phẩm, công nghiệp.",
+        "<em>is used to + V</em> → \"được dùng để\" (mẫu 2).",
+        "<em>was developed</em> → \"được phát triển\".",
+        "Dịch được nửa đoạn vẫn có điểm thành phần."
+      ]
+    },
+    "part5": {
+      "vi": "CAD là viết tắt của thiết kế có máy tính hỗ trợ và được dùng để tạo bản vẽ 2D và mô hình 3D.",
+      "en": "CAD stands for Computer-Aided Design and is used to make 2D drawings and 3D models.",
+      "chien_thuat": [
+        "Dùng mẫu 1: <strong>X stands for Y</strong>.",
+        "Nối vế sau bằng mẫu 2: <strong>is used to + V</strong>.",
+        "Viết được <em>CAD stands for Computer-Aided Design.</em> vẫn có một phần điểm."
+      ]
+    }
+  },
+  "luyen_tap": {
+    "mc": [
+      {
+        "q": "Part 1: \"The use of computers to create and change designs.\"",
+        "opts": [
+          "CAM",
+          "CAD",
+          "CNC",
+          "software"
+        ],
+        "ans": 1,
+        "why": "<em>create and change designs</em> → CAD."
+      },
+      {
+        "q": "Part 1: \"The use of computer software to control machine tools that make products.\"",
+        "opts": [
+          "CAD",
+          "CNC",
+          "CAM",
+          "automation"
+        ],
+        "ans": 2,
+        "why": "<em>control machine tools … make products</em> → CAM."
+      },
+      {
+        "q": "Part 1: \"A way of controlling a machine tool with a computer program.\"",
+        "opts": [
+          "CAD",
+          "CNC",
+          "drawing",
+          "prototype"
+        ],
+        "ans": 1,
+        "why": "<em>controlling … with a computer program</em> → CNC."
+      },
+      {
+        "q": "Part 1: \"Programs that tell a computer what to do.\"",
+        "opts": [
+          "geometry",
+          "software",
+          "automation",
+          "virus"
+        ],
+        "ans": 1,
+        "why": "<em>Programs … tell a computer</em> → software."
+      },
+      {
+        "q": "Part 1: \"The use of machines to do work without human help.\"",
+        "opts": [
+          "automation",
+          "unemployment",
+          "simulation",
+          "manufacturing"
+        ],
+        "ans": 0,
+        "why": "<em>without human help</em> → automation."
+      },
+      {
+        "q": "Part 1: \"A picture that shows the shape and size of a part.\"",
+        "opts": [
+          "prototype",
+          "drawing",
+          "simulation",
+          "machinist"
+        ],
+        "ans": 1,
+        "why": "<em>picture … shape and size</em> → drawing."
+      },
+      {
+        "q": "Part 1: \"A computer shape that shows a part with length, width and height.\"",
+        "opts": [
+          "3D model",
+          "2D drawing",
+          "virus",
+          "toolpath"
+        ],
+        "ans": 0,
+        "why": "<em>length, width and height</em> → 3D model."
+      },
+      {
+        "q": "Part 1: \"The first test version of a product, made before mass production.\"",
+        "opts": [
+          "simulation",
+          "prototype",
+          "finished part",
+          "geometry"
+        ],
+        "ans": 1,
+        "why": "<em>first test version</em> → prototype."
+      },
+      {
+        "q": "Part 1: \"A computer test that shows how a design will behave.\"",
+        "opts": [
+          "simulation",
+          "prototype",
+          "drawing",
+          "automation"
+        ],
+        "ans": 0,
+        "why": "<em>computer test</em> → simulation."
+      },
+      {
+        "q": "Part 1: \"The process of making products, often in a factory.\"",
+        "opts": [
+          "manufacturing",
+          "design",
+          "unemployment",
+          "software"
+        ],
+        "ans": 0,
+        "why": "<em>making products</em> → manufacturing."
+      },
+      {
+        "q": "Part 1: \"A skilled worker who sets up and runs machine tools.\"",
+        "opts": [
+          "designer",
+          "engineer",
+          "machinist",
+          "clerk"
+        ],
+        "ans": 2,
+        "why": "<em>runs machine tools</em> → machinist."
+      },
+      {
+        "q": "Part 1: \"Making large numbers of the same product, usually by machines.\"",
+        "opts": [
+          "mass production",
+          "simulation",
+          "prototype",
+          "drawing"
+        ],
+        "ans": 0,
+        "why": "<em>large numbers of the same product</em> → mass production."
+      },
+      {
+        "q": "Part 1: \"Able to be trusted to work well every time.\"",
+        "opts": [
+          "realistic",
+          "reliable",
+          "expensive",
+          "experienced"
+        ],
+        "ans": 1,
+        "why": "<em>trusted … every time</em> → reliable."
+      },
+      {
+        "q": "Part 1: \"A mistake made by a person, not by a machine.\"",
+        "opts": [
+          "virus",
+          "labour cost",
+          "human error",
+          "unemployment"
+        ],
+        "ans": 2,
+        "why": "<em>mistake … by a person</em> → human error."
+      },
+      {
+        "q": "Hình gắn nhãn: \"The path that the cutter follows to remove metal, planned by CAM software.\"",
+        "opts": [
+          "toolpath",
+          "drawing",
+          "geometry",
+          "software"
+        ],
+        "ans": 0,
+        "why": "<em>path that the cutter follows</em> → toolpath."
+      },
+      {
+        "q": "Hình gắn nhãn: \"The sharp part of a machine that cuts the metal.\"",
+        "opts": [
+          "finished part",
+          "cutting tool",
+          "3D model",
+          "prototype"
+        ],
+        "ans": 1,
+        "why": "<em>sharp part … cuts</em> → cutting tool."
+      },
+      {
+        "q": "Hình gắn nhãn: \"The part that is ready after all the machining steps.\"",
+        "opts": [
+          "finished part",
+          "toolpath",
+          "simulation",
+          "virus"
+        ],
+        "ans": 0,
+        "why": "<em>ready after all the machining steps</em> → finished part."
+      },
+      {
+        "q": "Complete: \"CAD stands for Computer-Aided ______.\"",
+        "opts": [
+          "Design",
+          "Machining",
+          "Manufacturing",
+          "Mass production"
+        ],
+        "ans": 0,
+        "why": "Article 1, câu 4: <em>CAD stands for Computer-Aided Design</em>."
+      },
+      {
+        "q": "Complete: \"CAM is different than the conventional manufacturing as it implements ______ in the manufacturing process.\"",
+        "opts": [
+          "automation",
+          "unemployment",
+          "virus",
+          "geometry"
+        ],
+        "ans": 0,
+        "why": "Article 2: <em>it implements automation</em>."
+      },
+      {
+        "q": "Complete: \"Fewer workers are needed, so ______ might increase and traditional skills will be lost.\"",
+        "opts": [
+          "automation",
+          "unemployment",
+          "simulation",
+          "quality"
+        ],
+        "ans": 1,
+        "why": "Article 1: <em>so unemployment might increase</em>."
+      }
+    ],
+    "tf": [
+      {
+        "q": "Read Article 1 (advantages). Mark each statement True or False.",
+        "st": [
+          [
+            "Products can be machined 24 hours a day.",
+            true
+          ],
+          [
+            "CAM gives a more reliable finish because there is no human error.",
+            true
+          ],
+          [
+            "Labour costs are high.",
+            false
+          ],
+          [
+            "Designs cannot be sent around the world.",
+            false
+          ]
+        ],
+        "why": "Article 1: <em>24 hours a day</em>, <em>there is no human error</em>, <em>Labour costs are low</em>, <em>Designs can be sent around the world</em>."
+      },
+      {
+        "q": "Read Article 1 (disadvantages). Mark each statement True or False.",
+        "st": [
+          [
+            "Computers can be affected by viruses.",
+            true
+          ],
+          [
+            "CAD/CAM systems do not need experienced workers.",
+            false
+          ],
+          [
+            "Unemployment might increase.",
+            true
+          ],
+          [
+            "Corrupted files never cause work to be lost.",
+            false
+          ]
+        ],
+        "why": "Article 1: <em>viruses and corrupted files meaning work could be lost</em>; <em>Requiring experienced worker</em>; <em>unemployment might increase</em>."
+      },
+      {
+        "q": "Read Article 2. Mark each statement True or False.",
+        "st": [
+          [
+            "CAD software is mostly used by an engineer.",
+            true
+          ],
+          [
+            "CAM software is mostly used by a trained machinist.",
+            true
+          ],
+          [
+            "CAD converts the geometry to machine tools.",
+            false
+          ],
+          [
+            "Without CAD, CAM has no meaning.",
+            true
+          ]
+        ],
+        "why": "Article 2: CAD <em>represents</em> geometry to the computer, còn CAM <em>converts</em> geometry to machine tools."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1114 @@
+<!doctype html><html lang="vi"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<style>
+:root{color-scheme:dark}
+body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
+.exam-content{display:block}
+h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+/* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
+/* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
+.exam-content {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+/* Vùng ĐỀ giống đề giấy (thầy chốt 11/10/2026): serif Tinos (= Times New Roman về số đo), chữ ≥ 17px, dòng ≥ 1,6.
+   Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
+   Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
+.exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
+.exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
+@media (max-width: 640px) {
+  .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
+}
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
+}
+
+/* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
+   nếu công thức dài hơn khung — biên độ, không phụ thuộc biến của .lesson-shell
+   vì .exam-content còn dùng ở khu quản trị/kết quả không có khung đó. */
+.exam-content .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.9em 0;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.06);
+  padding: 12px 16px;
+}
+
+/* Khối công thức dài (.fx dùng trong nội dung soạn tay, .katex-display) tự cuộn ngang
+   trong chính nó — chỉ khối công thức cuộn, không đẩy tràn cả trang trên điện thoại.
+   Dùng :where() để độ ưu tiên bằng 0, không đè lên khung riêng của .exam-content ở trên. */
+:where(.fx, .katex-display) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Công thức nội dòng ($...$) là một khối inline không tự ngắt — nếu dài hơn
+   bề ngang màn hình điện thoại, nó đẩy tràn cả trang thay vì chỉ cuộn riêng.
+   Cho phép nó cuộn ngang trong chính nó, không phá layout xung quanh. */
+.exam-content .katex {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}
+
+/* Bảng dán từ Word thường có min-width cố định (vd 560px) — cuộn ngang riêng
+   trong khung của nó, không đẩy tràn cả trang trên điện thoại. */
+.table-scroll {
+  max-width: 100%;
+  margin: 0.75em 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ảnh chèn trong câu hỏi/lời giải không thuộc .eq/.figure (vd hình quét dán
+   ngoài luồng Azota/LaTeX chuẩn) render theo kích thước gốc — tràn ngang trên
+   điện thoại vì không quy tắc nào giới hạn nó, và .lesson-shell overflow:clip
+   cắt mất phần tràn thay vì cho cuộn. Chặn ở mức chung trước, các quy tắc cụ
+   thể hơn bên dưới (.eq, .figure) vẫn ghi đè bình thường. */
+.exam-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ảnh công thức gốc là nét đen trên nền trắng — đảo màu cho hợp nền tối */
+.exam-content img.eq {
+  display: inline-block;
+  /* chiều cao thật đặt inline theo kích thước gốc trong Word */
+  width: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  margin: 0 0.15em;
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* Giao diện sáng: khung câu hỏi đổi sang nền trắng, ảnh công thức (đen trên
+   nền trắng) không cần đảo màu nữa — nếu vẫn đảo, chữ công thức sẽ ngả trắng
+   và biến mất trên nền trắng. Trừ bảng "Xem như trợ giảng" vì khung đó luôn
+   giữ nền tối bất kể theme. */
+html[data-theme="light"] .exam-content img.eq {
+  filter: none;
+}
+html[data-theme="light"] .review-board .exam-content img.eq {
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+.exam-content img.figure {
+  display: block;
+  max-width: min(100%, 360px);
+  margin: 0.75rem auto;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  padding: 0.75rem;
+}
+
+/* M5: ảnh scan/dán ngoài luồng (không .eq/.figure) cũng có khung sáng đệm 12px
+   đồng nhất — ô trắng trần giữa nền tối gây loá cục bộ. */
+.exam-content img:not(.eq):not(.figure) {
+  background: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* SVG trần (không bọc trong figure.fig) render theo kích thước gốc trong HTML
+   lưu — nếu rộng hơn khung (đồ thị, sơ đồ), nó tràn ngang cả trang trên điện
+   thoại vì không có quy tắc nào giới hạn nó. Chặn ở mức chung trước, quy tắc
+   cụ thể hơn bên dưới (figure.fig svg) vẫn ghi đè bình thường. */
+.exam-content svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hình vẽ SVG nội tuyến (đồ thị, sơ đồ vẽ lại) — không nền trắng, nét theo currentColor */
+.exam-content figure.fig {
+  max-width: min(100%, 420px);
+  margin: 0.9rem auto;
+}
+.exam-content figure.fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.exam-content figure.fig figcaption {
+  margin-top: 0.35rem;
+  font-size: var(--fs-sm);
+  color: #94a3b8;
+  text-align: center;
+}
+
+/* Bài lý thuyết tương tác (không JS): hộp dự đoán/định nghĩa, <details> bấm mở, trắc nghiệm tự chấm
+   bằng radio + :checked (HTML lưu DB không được chứa <script>/on*=). Mẫu: content/lesson-samples/. */
+.exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
+.exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
+.exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-box--rule .tl-label { color: #fbbf24; }
+.exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
+.exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
+.exam-content .tl-details > summary::-webkit-details-marker { display: none; }
+.exam-content .tl-details > summary::after { content: "▾"; float: right; transition: transform .15s; }
+.exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
+.exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
+.exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
+.exam-content .tl-opt:hover { border-color: #22d3ee; }
+.exam-content .tl-quiz > input:focus-visible + .tl-opt { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-quiz > input:checked + .tl-opt.tl-ok { border-color: #34d399; background: rgba(52,211,153,.18); }
+.exam-content .tl-quiz > input:checked + .tl-opt.tl-no { border-color: #f87171; background: rgba(248,113,113,.16); }
+.exam-content .tl-fb { display: none; padding: 10px 14px; border-radius: 10px; }
+.exam-content .tl-fb p { margin: 0; text-align: left; }
+.exam-content .tl-fb--ok { background: rgba(52,211,153,.14); }
+.exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
+.exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
+.exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
+.exam-content .tl-table th { background: rgba(148,163,184,.14); }
+html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
+html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
+/* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
+   --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
+.exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
+.exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
+.exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
+.exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
+.exam-content .tl-sim__row > input:checked + .tl-sim__chip { border-color: #22d3ee; background: rgba(34,211,238,.16); }
+.exam-content .tl-sim__row > input:focus-visible + .tl-sim__chip { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-sim svg { display: block; width: 100%; max-width: 420px; margin: 0 auto; height: auto; }
+.exam-content .tl-sim__st { display: none; margin-top: 8px; }
+.exam-content .tl-sim__st p { margin: 2px 0; }
+.exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
+.exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
+.exam-content .tl-sim__leg li { margin: 2px 0; }
+.exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
+.exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
+.exam-content .tl-sim .sim-sh { transform: scaleY(calc(var(--L) / 120)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-hd { transform: translateY(calc(var(--L) * -1px)) rotate(calc(90deg * (1 - var(--sg)))); transform-box: fill-box; transform-origin: 50% 0; opacity: clamp(0, calc(var(--L) * var(--L)), 1); transition: transform .25s ease, opacity .25s ease; }
+.exam-content .tl-sim .a-F { --L: calc(9 * var(--i) * var(--s)); --sg: var(--s); }
+.exam-content .tl-sim .a-Q { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Fp { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Pm { --L: -60; --sg: -1; }
+.exam-content .tl-sim .a-N { --L: calc(60 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .a-Pc { --L: -40; --sg: -1; }
+.exam-content .tl-sim .a-Np { --L: calc(-60 - 9 * var(--i) * var(--s)); --sg: -1; }
+.exam-content .tl-sim .a-Qb { --L: calc(100 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .sim-bar { transform: scaleX(calc(var(--i) * var(--s) / 5)); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-wn { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) { --s: -1; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wp { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wn { display: inline; }
+@media (prefers-reduced-motion: reduce) { .exam-content .tl-sim :is(.sim-sh, .sim-hd, .sim-bar) { transition: none; } }
+.exam-content .tl-sim:has(.tls-i0:checked) { --i: 0; }
+.exam-content .tl-sim:has(.tls-i1:checked) { --i: 1; }
+.exam-content .tl-sim:has(.tls-i2:checked) { --i: 2; }
+.exam-content .tl-sim:has(.tls-i3:checked) { --i: 3; }
+.exam-content .tl-sim:has(.tls-i4:checked) { --i: 4; }
+.exam-content .tl-sim:has(.tls-i5:checked) { --i: 5; }
+.exam-content .tl-sim:has(.tls-i0:checked) .st-0 { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-f:checked) .st-1p { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-r:checked) .st-1n { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-f:checked) .st-2p { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-r:checked) .st-2n { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-f:checked) .st-3p { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-r:checked) .st-3n { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-f:checked) .st-4p { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-r:checked) .st-4n { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-f:checked) .st-5p { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-r:checked) .st-5n { display: block; }
+html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-content .tl-sim__chip { border-color: rgba(15,23,42,.28); }
+/* Mô phỏng bài Tổng hợp lực (L10): hai dây kéo xe + lực kế trên dốc. Chỉ radio + CSS. */
+.exam-content .tl-sim--keo > svg,
+.exam-content .tl-sim--doc > svg { display: none; }
+.exam-content .tl-sim--keo:has(.k-a0:checked) > svg.k-a0,
+.exam-content .tl-sim--keo:has(.k-a60:checked) > svg.k-a60,
+.exam-content .tl-sim--keo:has(.k-a90:checked) > svg.k-a90,
+.exam-content .tl-sim--keo:has(.k-a120:checked) > svg.k-a120,
+.exam-content .tl-sim--keo:has(.k-a180:checked) > svg.k-a180,
+.exam-content .tl-sim--doc:has(.n-a0:checked) > svg.n-a0,
+.exam-content .tl-sim--doc:has(.n-a15:checked) > svg.n-a15,
+.exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
+.exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
+.exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
+/* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
+.exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
+.exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
+.exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
+.exam-content .tl-steps > li { margin-bottom: 8px; }
+.exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
+.exam-content .tl-box .tl-details { background: transparent; }
+html[data-theme="light"] .exam-content .tl-box--exp .tl-label { color: #047857; }
+html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: #b45309; }
+
+/* ============================================================
+   TRANG CHƯƠNG — chế độ "pick" (đồng bộ khung với trang bài học)
+     < 1024px   accordion cả khoá ở cột giữa như trước, KHÔNG cột trái, không dải sticky
+     >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
+   ============================================================ */
+.class-pick-desktop { display: none; }
+.class-pick-mobile { display: grid; gap: 16px; }
+
+@media (max-width: 1023px) {
+  /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
+  .lesson-layout--pick { display: block; max-width: none; padding: 0; }
+  .lesson-layout--pick .lesson-nav { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
+  .lesson-layout--pick .class-pick-mobile { display: none; }
+  /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
+  .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
+  }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
+}
+
+/* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
+@media (min-width: 1320px) {
+  .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
+}
+
+/* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
+   chữ sans-serif hệ thống 16px/1.75, công thức KaTeX nằm liền dòng (không khung, không cuộn riêng).
+   Nền phẳng áp cho mọi .lesson-shell (trang lớp/chương, bài, khoá học) để đồng bộ với trang bài; phần chữ chỉ cho .lesson-page; giao diện tối; giao diện sáng giữ nguyên. */
+html:not([data-theme="light"]) .lesson-shell { background: #0f172a; }
+html:not([data-theme="light"]) .lesson-shell::before { display: none; }
+.lesson-page .exam-content { font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif; font-size: 1rem; line-height: 1.75; }
+.lesson-page .exam-content .katex { display: inline; max-width: none; overflow: visible; vertical-align: baseline; }
+.lesson-page .exam-content .katex-display { margin: 1em 0; padding: 0; border: 0; border-radius: 0; background: none; text-align: center; }
+.lesson-page .exam-content .katex-display > .katex { display: block; }
+/* Dấu căn KaTeX (\sqrt) là một <svg> có height theo thuộc tính; quy tắc ".exam-content svg { height: auto }"
+   ở trên làm nó xẹp về 0 nên mọi công thức căn mất dấu √ (hiện thành "I/2" thay vì "I/√2"). Trả lại chiều cao KaTeX. */
+.exam-content .katex svg { height: inherit; max-width: none; }
+
+/* ==================================================================
+   CHẾ ĐỘ TRÌNH CHIẾU BÀI GIẢNG — dạy lý thuyết trên lớp, chiếu tivi/máy chiếu
+   (components/lessons/LessonPresenter.tsx, mở từ nút ở tab Lý thuyết của /lop-hoc/bai)
+
+   Nguyên tắc thiết kế:
+   - Nội dung là nhân vật chính: không navbar, không cây chương, không nút thường
+     trực — thanh điều khiển tự ẩn sau ~3 giây, đụng chuột/chạm là hiện lại.
+   - Nền mặc định SÁNG (chữ đậm trên nền sáng) vì phòng học bật đèn; nút "Nền tối"
+     dành cho phòng tối cho đỡ chói. Nền SÁNG cũng là lý do phải tắt đảo màu ảnh
+     công thức (img.eq) ở dưới — ảnh gốc vốn là nét đen trên nền trắng.
+   - Cỡ chữ do --presenter-zoom quyết định (nhân vào 1,3rem) để Ctrl +/− chỉnh ngay
+     trong lúc chiếu cho vừa tầm nhìn của từng phòng/từng tivi.
+   - Trang chiếu TRÀN gần hết bề ngang màn hình, chỉ chừa lề nhỏ (xem .presenter-slide):
+     tivi/máy chiếu lớp học là 16:9, cap bề ngang cũ 1180px làm hụt ~740px trên tivi
+     1920 (nội dung co thành một cột hẹp giữa màn hình, chữ xuống dòng sớm).
+   - Khung vẽ (canvas) nằm TRÊN nội dung nhưng DƯỚI thanh điều khiển: đang bật bút
+     vẫn bấm được nút, mà nét vẽ lại nằm trên chữ.
+   ================================================================== */
+
+/* Lớp phủ chờ chunk / báo lỗi chunk — cùng nền với lớp phủ thật để không chớp sáng. */
+.lesson-presenter-loading { position: fixed; inset: 0; z-index: 120; display: flex; align-items: center; justify-content: center; background: #0b1220; padding: 24px; color: #e2e8f0; font-size: 15px; text-align: center; }
+.lesson-presenter-loading.is-error { color: #fca5a5; }
+
+.lesson-presenter {
+  --pres-text: #e8eefc;
+  --pres-muted: #9fb0cc;
+  --pres-heading: #fff;
+  --pres-accent: #60a5fa;
+  --pres-line: rgba(148,163,184,.24);
+  --pres-surface: rgba(15,23,42,.86);
+  --pres-panel: #101a2e;
+  position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
+  background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
+}
+.lesson-presenter[data-bg="light"] {
+  --pres-text: #17233a;
+  --pres-muted: #59678a;
+  --pres-heading: #0b1220;
+  --pres-accent: #1d4ed8;
+  --pres-line: rgba(15,23,42,.16);
+  --pres-surface: rgba(255,255,255,.92);
+  --pres-panel: #fff;
+  background: #f4f6fb;
+}
+
+/* Khung vẽ tay: luôn hiện (nét cũ còn nguyên khi tắt bút), chỉ nhận chuột khi đang bật bút. */
+.presenter-canvas { position: absolute; inset: 0; z-index: 15; width: 100%; height: 100%; pointer-events: none; touch-action: none; }
+.presenter-canvas.is-active { pointer-events: auto; cursor: crosshair; }
+
+/* Thanh trên/dưới: tự ẩn, và khi ẩn thì không chặn cả nét vẽ lẫn cú bấm. */
+.presenter-top { position: absolute; z-index: 20; top: 0; left: 0; right: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 16px 20px; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.presenter-bar { position: absolute; z-index: 20; bottom: clamp(14px, 3vh, 28px); left: 50%; display: flex; width: max-content; max-width: min(96vw, 1120px); align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 7px 9px; box-shadow: 0 18px 40px -22px rgba(2,6,23,.6); opacity: 0; transform: translate(-50%, 12px); transition: opacity .2s, transform .2s; }
+.presenter-top, .presenter-bar { pointer-events: none; }
+.lesson-presenter.is-chrome .presenter-top { opacity: 1; }
+.lesson-presenter.is-chrome .presenter-bar { opacity: 1; transform: translate(-50%, 0); }
+.lesson-presenter.is-chrome .presenter-top > *, .lesson-presenter.is-chrome .presenter-bar > * { pointer-events: auto; }
+
+.presenter-info { display: grid; gap: 3px; min-width: 0; max-width: 46vw; border: 1px solid var(--pres-line); border-radius: 12px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 8px 14px; }
+.presenter-info strong { overflow: hidden; font-size: 13.5px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.presenter-info span { color: var(--pres-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+.presenter-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.presenter-actions button, .presenter-bar button { display: inline-flex; min-height: 36px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 10px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: border-color .15s, color .15s, background-color .15s; }
+.presenter-bar button { border-radius: 999px; }
+.presenter-actions button:hover, .presenter-bar button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-actions button:disabled, .presenter-bar button:disabled { opacity: .35; cursor: default; }
+.presenter-actions .presenter-close:hover { border-color: #f87171; color: #f87171; }
+.presenter-bar button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.lesson-presenter[data-bg="light"] .presenter-bar button.is-on { background: rgba(29,78,216,.12); }
+.presenter-bar .presenter-page { font-variant-numeric: tabular-nums; }
+.presenter-bar-sep { flex: 0 0 auto; width: 1px; align-self: stretch; margin: 0 4px; background: var(--pres-line); }
+.presenter-zoom { min-width: 46px; color: var(--pres-muted); font-size: 12px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+.presenter-colors { display: inline-flex; align-items: center; gap: 5px; padding: 0 3px; }
+.presenter-colors button { width: 22px; height: 22px; min-height: 22px; border: 2px solid transparent; border-radius: 50%; background: var(--dot); padding: 0; box-shadow: 0 0 0 1px var(--pres-line); }
+.presenter-colors button.is-current { border-color: var(--pres-heading); box-shadow: 0 0 0 2px var(--pres-surface); }
+
+/* Lề ngang chỉ để nội dung không dính sát mép màn hình (và không chui dưới nét vẽ ở rìa):
+   bề ngang thật của trang chiếu do .presenter-slide quyết định, không cap ở đây. */
+.presenter-stage { position: relative; z-index: 10; flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; padding: clamp(64px, 9vh, 108px) clamp(16px, 2.4vw, 48px) clamp(96px, 13vh, 150px); scrollbar-width: thin; }
+.presenter-stage::-webkit-scrollbar { width: 10px; }
+.presenter-stage::-webkit-scrollbar-thumb { border-radius: 999px; background: rgba(148,163,184,.32); }
+
+/* Trang chiếu dùng hết bề ngang còn lại của khung (không cap max-width): trên tivi 1920
+   chữ chạy tới sát hai mép, chỉ chừa lề của .presenter-stage. Muốn chữ to/nhỏ thì dùng
+   Ctrl +/− (--presenter-zoom) chứ không thu hẹp cột nội dung. */
+.presenter-slide { max-width: none; margin: 0 auto; color: var(--pres-text); font-size: calc(1.3rem * var(--presenter-zoom, 1)); line-height: 1.68; animation: presenter-slide-in .22s ease-out; }
+@keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
+
+.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
+
+/* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
+   khung công thức khối) vì ở đây chữ phải to theo --presenter-zoom và phẳng như slide. */
+.presenter-prose.exam-content { display: block; color: var(--pres-text); font-family: var(--font-body), sans-serif; font-size: 1em; line-height: 1.68; }
+.presenter-prose p { margin: 0 0 .85em; }
+.presenter-prose > :last-child { margin-bottom: 0; }
+.presenter-prose :is(ul, ol) { margin: 0 0 .85em; padding-left: 1.45em; }
+.presenter-prose li { margin-bottom: .3em; }
+.presenter-prose :is(h3, h4) { margin: 1.05em 0 .45em; color: var(--pres-heading); font-size: 1.1em; font-weight: 700; line-height: 1.3; }
+.presenter-prose :is(strong, b) { color: var(--pres-heading); }
+.presenter-prose :is(img, svg, table, .table-scroll) { max-width: 100%; }
+.presenter-prose .katex-display { margin: .85em 0; border: 0; border-radius: 0; background: none; padding: 0; text-align: center; }
+.presenter-prose .katex { vertical-align: baseline; }
+.presenter-prose .exam-content-raw-tex { background: rgba(148,163,184,.18); color: inherit; }
+/* Ảnh công thức trong bài là nét đen trên nền trắng: nền tối thì đảo màu, nền sáng để nguyên. */
+.lesson-presenter[data-bg="dark"] .presenter-prose img.eq { filter: invert(.88) hue-rotate(180deg); }
+.lesson-presenter[data-bg="light"] .presenter-prose img.eq { filter: none; }
+/* Khối "tl-*" soạn cho nền tối (nhãn cyan/vàng trên nền mờ) — đổi sang bảng màu đọc được trên nền sáng. */
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-box, .tl-details) { border-color: rgba(15,23,42,.18); background: rgba(15,23,42,.045); }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-label { color: #0e7490; }
+.lesson-presenter[data-bg="light"] .presenter-prose .tl-box--rule .tl-label { color: #b45309; }
+.lesson-presenter[data-bg="light"] .presenter-prose :is(.tl-table th, .tl-table td, .tl-opt) { border-color: rgba(15,23,42,.22); }
+
+.presenter-cover { display: grid; justify-items: center; gap: 16px; padding: clamp(20px, 7vh, 80px) 0; text-align: center; }
+.presenter-cover-kicker { margin: 0; color: var(--pres-accent); font-family: var(--font-mono), monospace; font-size: .78em; letter-spacing: .16em; text-transform: uppercase; }
+.presenter-cover h1 { max-width: 18em; margin: 0; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 2.3em; font-weight: 700; letter-spacing: -.02em; line-height: 1.16; }
+.presenter-cover-sub { margin: 0; color: var(--pres-muted); font-size: .95em; }
+.presenter-cover-start { display: inline-flex; min-height: 52px; align-items: center; gap: 8px; margin-top: 4px; border: 0; border-radius: 999px; background: #3b82f6; padding: 0 26px; color: #fff; font-family: inherit; font-size: 1em; font-weight: 700; cursor: pointer; }
+.presenter-cover-start:hover { background: #2563eb; }
+.presenter-cover kbd, .presenter-draw-hint kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 1px 6px; font-family: var(--font-mono), monospace; font-size: .84em; }
+
+.presenter-panel { position: absolute; z-index: 30; top: 50%; left: 50%; display: flex; max-height: min(82vh, 760px); flex-direction: column; overflow: hidden; border: 1px solid var(--pres-line); border-radius: 16px; background: var(--pres-panel); box-shadow: 0 30px 70px -30px rgba(2,6,23,.7); transform: translate(-50%, -50%); }
+.presenter-panel--menu { width: min(92vw, 560px); }
+.presenter-panel--help { width: min(92vw, 640px); }
+.presenter-panel-head { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--pres-line); padding: 12px 14px; }
+.presenter-panel-head p { display: inline-flex; align-items: center; gap: 7px; margin: 0; color: var(--pres-heading); font-size: 13.5px; font-weight: 700; }
+.presenter-panel-head button { display: inline-flex; width: 30px; height: 30px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid var(--pres-line); border-radius: 8px; background: none; color: var(--pres-muted); cursor: pointer; }
+.presenter-panel-head button:hover { border-color: #f87171; color: #f87171; }
+.presenter-panel-body { overflow-y: auto; padding: 12px 14px 16px; }
+.presenter-menu-group + .presenter-menu-group { margin-top: 14px; }
+.presenter-menu-title { margin: 0 0 6px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+.presenter-menu-group ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.presenter-menu-group button { display: flex; width: 100%; align-items: baseline; gap: 10px; border: 0; border-radius: 8px; background: none; padding: 7px 9px; color: var(--pres-text); font-family: inherit; font-size: 13.5px; line-height: 1.45; text-align: left; cursor: pointer; }
+.presenter-menu-group button:hover { background: rgba(148,163,184,.16); }
+.presenter-menu-group button.is-current { background: rgba(59,130,246,.18); color: var(--pres-accent); font-weight: 700; }
+.presenter-menu-group button > span { flex: 0 0 auto; min-width: 24px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: 12px; font-variant-numeric: tabular-nums; }
+.presenter-menu-group button.is-current > span { color: inherit; }
+.presenter-keys { display: grid; gap: 9px; margin: 0; }
+.presenter-keys > div { display: grid; grid-template-columns: minmax(132px, auto) 1fr; align-items: baseline; gap: 14px; }
+.presenter-keys dt { margin: 0; white-space: nowrap; }
+.presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
+.presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
+.presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
+
+.presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
+.presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
+
+.presenter-draw-hint { position: absolute; z-index: 22; bottom: clamp(76px, 11vh, 100px); left: 50%; margin: 0; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); backdrop-filter: blur(8px); padding: 6px 14px; color: var(--pres-muted); font-size: 12px; white-space: nowrap; transform: translateX(-50%); }
+
+@media (max-width: 900px) {
+  .presenter-btn-text { display: none; }
+  .presenter-info { max-width: 40vw; padding: 6px 11px; }
+  .presenter-info span { display: none; }
+}
+@media (max-width: 639px) {
+  .presenter-top { padding: 12px; }
+  /* Điện thoại: thanh điều khiển xuống 2 hàng — cuộn ngang thì các nút cỡ chữ nằm ngoài tầm
+     mắt, không biết là có; và chừa thêm chỗ đáy để hàng chữ cuối không bị thanh che. */
+  .presenter-bar { flex-wrap: wrap; justify-content: center; row-gap: 5px; max-width: min(94vw, 460px); border-radius: 18px; overflow: visible; }
+  .presenter-bar-sep { display: none; }
+  .presenter-zoom { min-width: 38px; }
+  .presenter-stage { padding-left: 14px; padding-right: 14px; padding-bottom: 172px; }
+  .presenter-keys > div { grid-template-columns: 1fr; gap: 3px; }
+  .presenter-draw-hint { display: none; }
+}
+/* Nhấn ý chính như trang mẫu: chữ đậm sáng hơn thân bài, tiêu đề lớn, đoạn cách nhau rõ. */
+.lesson-page .exam-content :is(strong, b) { color: #fff; font-weight: 700; }
+.lesson-page .exam-content :is(h2, h3, h4) { color: #fff; font-weight: 700; line-height: 1.35; margin: 1.6em 0 .6em; }
+.lesson-page .exam-content h2 { font-size: 1.5rem; }
+.lesson-page .exam-content h3 { font-size: 1.3rem; }
+.lesson-page .exam-content h4 { font-size: 1.1rem; }
+.lesson-page .exam-content p { margin: 0 0 1em; }
+/* Lề trái/phải của nội dung trong <details> bài lý thuyết: phải có .lesson-page để thắng `p`/`h3`… ở trên (cùng 0,2,1, dòng sau thắng) — chỉ đặt lề ngang, lề dưới vẫn do từng phần tử quyết định. */
+.lesson-page .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.lesson-page .exam-content .tl-details > :is(table, .tl-table) { width: calc(100% - 28px); }
+.lesson-page .exam-content .tl-details > span > .katex-display { margin-left: 14px; margin-right: 14px; }
+html[data-theme="light"] .lesson-page .exam-content :is(strong, b, h2, h3, h4) { color: #0f172a; }
+
+/* Đồng bộ trang bài: navbar/footer cùng họ nền #0f172a; đầu trang chọn lớp xếp dọc. */
+html:not([data-theme="light"]) header.fixed.top-0 { background-color: rgba(15, 23, 42, .92); }
+html:not([data-theme="light"]) footer#contact { background-color: #0b1220; }
+.lesson-main--single > .lesson-head { display: block; margin: 22px 0 36px; }
+.lesson-main--single > .lesson-head h1 { max-width: 18ch; }
+.lesson-main--single > .lesson-head .lesson-lead { margin-top: 10px; max-width: 60ch; }
+
+/* ---------- P1/P2 kha-nang-doc (02/10/2026) ---------- */
+/* Chuẩn ở docs/UI.md. Số đo WCAG tính bằng scripts/check-a11y.mjs — đổi màu thì đo lại. */
+
+/* Màu nhấn tiêu đề (thay chữ gradient). Tối: #60a5fa = 7,9:1 trên #05070b, #fb923c = 8,9:1.
+   Sáng: #1d4ed8 = 6,4:1 trên #f8fafc, #c2410c = 5,2:1 trên trắng. */
+:root { --accent-brand-text: #60a5fa; --accent-warm-text: #fb923c; }
+/* C3: thang chữ vùng nội dung học sinh — chỉ 3 mức nhỏ (cỡ thân = 16px; tiêu đề lấy từ h1/h2/h3) thay cho 12,5/13/13,5/15/15,5 rải rác. */
+:root { --fs-cap: 12px; --fs-sm: 14px; --fs-body: 16px; }
+html[data-theme="light"] { --accent-brand-text: #1d4ed8; --accent-warm-text: #c2410c; }
+
+/* Công cụ đọc dùng chung (components/ui/ReadingZone.tsx — /phu-huynh, /kiem-tra/lam).
+   Dùng lại .lesson-tool/.lesson-fonttools nên phải cấp các biến --lesson-* mà .lesson-shell đặt. */
+.read-zone-tools { --lesson-line: rgba(148,163,184,.24); --lesson-accent-line: rgba(59,130,246,.45); --lesson-accent-soft: rgba(59,130,246,.12); --lesson-accent-text: #93c5fd; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; margin-bottom: 14px; }
+html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); --lesson-accent-text: #1d4ed8; }
+
+/* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
+   rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
+html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
+html.is-dim[data-theme="light"] .text-white { color: #33291a; }
+html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
+html.is-dim[data-theme="light"] :is(.bg-\[\#05070B\], .bg-\[\#05070B\]\/90, .bg-\[\#080D1A\], .bg-\[\#0B1220\]\/\[0\.98\]) { background-color: rgb(251 247 234 / .94); }
+html.is-dim[data-theme="light"] :is(.border-white\/10, .border-white\/15, .border-white\/\[0\.07\]) { border-color: rgba(120,96,40,.24); }
+
+/* Người dùng bật "tăng tương phản" ở hệ điều hành: chữ phụ và viền đậm hơn, chữ nhấn sáng hơn. */
+@media (prefers-contrast: more) {
+  html:not([data-theme="light"]) { --color-muted: #cbd5e1; --color-line: rgba(255,255,255,.32); --accent-brand-text: #93c5fd; --accent-warm-text: #fdba74; }
+  html:not([data-theme="light"]) :is(.text-slate-500, .text-slate-400) { color: #cbd5e1; }
+  html:not([data-theme="light"]) [class*="text-primary"] { color: #93c5fd; }
+  html[data-theme="light"] { --color-muted: #1e293b; --color-line: rgba(15,23,42,.42); --accent-brand-text: #1e3a8a; --accent-warm-text: #9a3412; }
+  html[data-theme="light"] :is(.text-slate-500, .text-slate-400, .text-slate-300) { color: #1e293b !important; }
+  :is(.border-white\/10, .border-white\/15, .border-white\/\[0\.07\]) { border-color: var(--color-line); }
+  .lesson-shell, .cnc-shell, .cnc-page { --lesson-line: var(--color-line); --cnc-line: var(--color-line); --cnc-faint: var(--color-muted); }
+}
+@media (forced-colors: active) {
+  .text-gradient, .text-gradient--warm, .cnc-header-grid h1 em { color: CanvasText; }
+}
+
+/* ============================================================
+   Trang bài học — đợt gọn 2/10/2026 (docs/QUY-TAC-THIET-KE.md: B1, N4, H2, M5, C3)
+   ============================================================ */
+/* N4/B1: trên điện thoại breadcrumb chỉ còn lặp tên bài (đã có nút quay lại + h1) → ẩn hẳn
+   để nội dung học lên cao hơn. Mục cuối breadcrumb đã bỏ khỏi TSX; desktop vẫn giữ "Lớp › Chương". */
+@media (max-width: 639px) {
+  .lesson-breadcrumb { display: none; }
+}
+
+/* M5: mọi hình raster trong bài dùng MỘT kiểu khung sáng thống nhất (nền trắng, đệm 10px, bo 10px)
+   thay vì ô trắng chói, đệm/bo mỗi nơi một khác trên nền tối. Hình mới nên vẽ SVG nền trong suốt. */
+.lesson-prose img.figure {
+  display: block;
+  max-width: min(100%, 440px);
+  height: auto;
+  margin: 0.75rem auto;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+}
+html[data-theme="light"] .lesson-prose img.figure,
+.lesson-page.is-dim .lesson-prose img.figure { box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12); }
+
+/* H2/N7: bảng dán từ Word kiểu "chữ | hình" (có <img>): chữ không in đậm cả đoạn (th mặc định
+   bold), và dưới 760px xếp DỌC — chữ trước, hình ngay dưới, rộng 100% — thay vì cuộn ngang
+   làm cắt mất cột hình. Chỉ nhắm bảng có hình; bảng số liệu thật vẫn cuộn ngang như cũ. */
+.lesson-prose .table-scroll table:has(img) :is(th, td) { font-weight: 400; }
+@media (max-width: 759px) {
+  .lesson-prose .table-scroll:has(img) { overflow-x: visible; }
+  .lesson-prose .table-scroll table:has(img) { display: block; width: 100%; min-width: 0 !important; }
+  .lesson-prose .table-scroll table:has(img) :is(thead, tbody, tr, th, td) { display: block; width: 100% !important; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td) { border: 0; padding: 10px 12px; }
+  .lesson-prose .table-scroll table:has(img) :is(th, td):has(img) { padding-top: 0; }
+  .lesson-prose .table-scroll table:has(img) img.figure { max-width: min(100%, 480px); margin: 0 auto; }
+}
+/* RankCelebrationModal: pop-up chúc mừng lên rank / đạt danh hiệu.
+   Trình tự: thẻ hiện → huy chương xoay 3D 3 vòng thu nhỏ→phóng to (0,25–1,3 s) → loé sáng + sóng + tia lan ra (1,3 s) → chữ → pháo hoa (canvas, trên cùng). */
+@keyframes rcl-card-in { from { opacity: 0; transform: scale(.8) translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes rcl-badge-in { 0% { opacity: 0; transform: rotateY(0) scale(.15); } 15% { opacity: 1; } 100% { opacity: 1; transform: rotateY(1080deg) scale(1); } }
+@keyframes rcl-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes rcl-rays-in { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.1) rotate(0); } 100% { opacity: .45; transform: translate(-50%, -50%) scale(1) rotate(60deg); } }
+@keyframes rcl-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes rcl-glow { 0%, 100% { opacity: .55; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); } }
+@keyframes rcl-flash { 0% { opacity: 0; transform: scale(.2); } 25% { opacity: .95; } 100% { opacity: 0; transform: scale(4.5); } }
+@keyframes rcl-ring { 0% { opacity: .9; transform: scale(.3); } 100% { opacity: 0; transform: scale(5); } }
+@keyframes rcl-shine { 0%, 55% { transform: translateX(-120%) skewX(-20deg); } 100% { transform: translateX(120%) skewX(-20deg); } }
+.rcl-card { animation: rcl-card-in .4s ease-out; }
+.rcl-stage { perspective: 700px; }
+.rcl-badge { opacity: 0; animation: rcl-badge-in 1.05s .25s cubic-bezier(.2,.7,.2,1) forwards; }
+.rcl-rise { opacity: 0; animation: rcl-rise .5s ease-out forwards; }
+.rcl-rays { opacity: 0; animation: rcl-rays-in 1.4s 1.25s ease-out forwards, rcl-spin 30s 2.65s linear infinite; }
+.rcl-glow { animation: rcl-glow 2.6s ease-in-out infinite; }
+.rcl-flash { position: absolute; left: 50%; top: 50%; width: 170px; height: 170px; margin: -85px 0 0 -85px; border-radius: 50%; opacity: 0; pointer-events: none; animation: rcl-flash 1.1s 1.25s ease-out forwards; }
+.rcl-ring { position: absolute; left: 50%; top: 50%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border: 3px solid; border-radius: 50%; opacity: 0; pointer-events: none; animation: rcl-ring 1.3s 1.25s ease-out forwards; }
+.rcl-ring2 { animation-delay: 1.45s; border-width: 2px; }
+.rcl-shine { overflow: hidden; background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%); mix-blend-mode: overlay; animation: rcl-shine 3s 2.6s ease-in-out infinite; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .rcl-card, .rcl-badge, .rcl-rise, .rcl-rays, .rcl-glow, .rcl-shine, .rcl-flash, .rcl-ring { animation: none; opacity: 1; } .rcl-rays { opacity: .45; } .rcl-flash, .rcl-ring { opacity: 0; } }
+
+/* ============================================================
+   P1/P2/P4 — khối PHỤ HUYNH (45–60 tuổi) · docs/QUY-TAC-THIET-KE-PHU-HUYNH.md
+   Phạm vi: class .parent-page (đặt ở <main> của /phu-huynh). Trang học sinh KHÔNG bị đổi.
+   Vì sao có khối này thay vì sửa từng component: các component của phụ huynh
+   (StudentResultsDashboard viewer="parent", ParentHomeworkNotes, CatchupCard) dùng chung
+   với trang học sinh — nâng sàn cỡ chữ theo phạm vi trang là cách duy nhất không kéo
+   giao diện học sinh 14–18 tuổi theo.
+   ============================================================ */
+/* P1 sàn cỡ chữ: thân 18px, nhãn phụ 15px (nghiên cứu: thân ≥17–18px, nhãn 15–16px, không có
+   12–13px cho câu cần đọc — docs/NGHIEN-CUU-PHU-HUYNH-45-60.md §2). Dùng rem (KHÔNG px) để nút
+   A+/A− của ReadingZone — thứ phụ huynh lão thị cần nhất — vẫn phóng được toàn bộ chữ trong trang. */
+.parent-page { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-xs) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-\[11px\], .text-\[12px\], .text-\[13px\]) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-sm) { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-base) { font-size: 1.1875rem; }
+.parent-page :is(.text-lg) { font-size: 1.3125rem; }
+/* P2 tương phản: chữ phụ phải ≥ 4,5:1 (AA) và nhắm 7:1 (AAA) — #64748b trên nền sáng chỉ 4,76:1.
+   #475569 trên #fff = 7,0:1; trên panel tối #b8c4d6 = 9,3:1. */
+.parent-page :is(.text-slate-500, .text-slate-400) { color: #475569; }
+html[data-theme="dark"] .parent-page :is(.text-slate-500, .text-slate-400) { color: #b8c4d6; }
+/* Chế độ "Dịu mắt" (kem/nâu): #6b5a3e = 5,8:1 → đậm lên #57492f = 7,6:1 trên #f5efe0. */
+html.is-dim[data-theme="light"] .parent-page :is(.text-slate-500, .text-slate-400, .text-slate-300) { color: #57492f; }
+/* P2 (và tinh thần "đọc được trong phòng thiếu sáng"): màu nhấn/trạng thái trong khối phụ huynh
+   đạt ≥7:1 ở theme sáng — lớp override sáng phía trên ép #0e7490/#047857/#b91c1c/#a16207
+   (4,9–5,9:1) bằng !important nên ở đây cũng phải !important. Theme tối giữ nguyên (đều >9:1). */
+html[data-theme="light"] .parent-page :is(.text-cyan-300, .text-cyan-400) { color: #155e75 !important; }
+html[data-theme="light"] .parent-page :is(.text-emerald-300, .text-emerald-200) { color: #065f46 !important; }
+html[data-theme="light"] .parent-page :is(.text-red-300, .text-red-200) { color: #991b1b !important; }
+html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { color: #92400e !important; }
+/* P4 đích chạm ≥ 48px (≥ 3rem) và P18 hạn chế gõ: ô nhập ≥ 18px để iOS không tự phóng to. */
+.parent-page :is(button, select, summary) { min-height: 3rem; }
+.parent-page a[class*="rounded-xl"], .parent-page a[class*="rounded-full"], .parent-page a[class*="rounded-2xl"] { min-height: 3rem; }
+.parent-page :is(input, select, textarea) { font-size: 1.125rem; }
+/* Công cụ đọc (Dịu mắt · A− / A+): globals đặt 13px cho .lesson-tool — đúng cho học sinh nhưng
+   13px là chữ nhỏ nhất trên trang phụ huynh, mà đây lại đúng là nút người lão thị cần bấm. */
+.parent-page .read-zone-tools :is(button, span) { font-size: .9375rem; }
+.parent-page .read-zone-tools :is(button) { min-width: 2.75rem; }
+/* P6 con số phải to và thẳng cột; P12 không dựa vào màu: luôn có nhãn chữ đi kèm. */
+.parent-page .parent-num { font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+/* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
+.parent-page .parent-copy { max-width: 44rem; }
+
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
+
+/* Bài tập mẫu — tự giải từng bước (components/lessons/StepwiseSolution.tsx, 9/10/2026). D2 đích chạm ≥ 44px, L1 phản hồi tức thì, N7 một kiểu nhấn. */
+.exam-content .bt-step--ask { padding: 12px 12px 12px; border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.exam-content .bt-step--locked { opacity: .45; margin: 0 0 14px; }
+.exam-content .bt-ask { margin: 8px 0 0 36px; }
+.exam-content .bt-ask + .bt-ask { margin-top: 14px; }
+.exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
+.exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
+.exam-content .bt-ask-unit { color: #94a3b8; }
+.exam-content .bt-ask-row .lesson-btn-ghost { min-height: 44px; }
+.exam-content .bt-choice { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; background: rgba(255,255,255,.03); color: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+.exam-content .bt-choice:hover { background: rgba(255,255,255,.07); }
+.exam-content .bt-choice:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+.exam-content .bt-feedback { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
+.exam-content .bt-feedback--wrong { background: rgba(248,113,113,.12); }
+.exam-content .bt-feedback--ok { background: rgba(52,211,153,.10); }
+.exam-content .bt-show-all { display: block; margin: 4px 0 18px 36px; min-height: 44px; padding: 0; border: 0; background: none; color: #94a3b8; font-size: 14px; text-decoration: underline; cursor: pointer; }
+.exam-content .bt-flash { border-radius: 10px; box-shadow: 0 0 0 3px rgba(251,191,36,.6); transition: box-shadow .4s; }
+.bt-goroi-btn { display: block; width: 100%; min-height: 44px; white-space: normal; text-align: left; }
+.bt-nhan-dang { margin: 0 0 10px; padding: 8px 12px; border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; background: rgba(255,255,255,.04); font-size: 15px; line-height: 1.6; }
+.bt-nhan-dang .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .exam-content :is(.bt-step--ask, .bt-ask-input, .bt-choice) { border-color: rgba(15,23,42,.28); background: rgba(15,23,42,.03); }
+html[data-theme="light"] .exam-content .bt-choice:hover { background: rgba(15,23,42,.07); }
+html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: #475569; }
+html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
+html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+
+/* ==========================================================================
+   NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
+   ==========================================================================
+   Vì sao có khối này: trước đây theme TỐI là mặc định, nên hàng trăm chỗ trong JSX viết
+   thẳng class màu của nền tối — `bg-[#0B1020]`, `bg-white/5` (ô sáng mờ trên nền đen),
+   `border-white/10`, gradient `from-[#172c46]`, quầng sáng `shadow-[0_0_24px_…]`. Bật nền
+   sáng lên thì những chỗ đó thành mảng xám bết hoặc mảng tối lẫn trong trang trắng — đúng
+   cảm giác "màu không đẹp" mà thầy thấy.
+
+   Cách xử lý ở đây là LƯỚI AN TOÀN theo token, không phải nguồn màu:
+   · quét bằng attribute selector KHÔNG phân biệt hoa/thường (`i`) vì JSX viết lẫn
+     `bg-[#0B1020]` và `bg-[#0b1020]`, kèm cả biến thể mờ `/80`, `/[0.98]`;
+   · `[class~="…"]` (khớp ĐÚNG một token class) cho các idiom `bg-white/10` để KHÔNG đụng
+     `hover:bg-white/20` — biến thể hover xử riêng, nếu không nút mất phản hồi khi trỏ;
+   · mọi giá trị lấy từ token ở @theme, nên đổi bảng màu chỉ sửa một nơi.
+   Sửa gốc vẫn phải làm ở component (bỏ hex, dùng bg-panel/text-ink/border-line) — lưới này
+   chỉ để không còn ô tối nào lọt ra ngoài. Khi component đã sạch thì các rule dưới thành vô hại.
+   ========================================================================== */
+
+/* (1) Nền tối hard-code → mặt thẻ. Mọi biến thể hoa/thường + độ mờ đều khớp. */
+html[data-theme="light"] [class*="bg-[#04060a]" i],
+html[data-theme="light"] [class*="bg-[#05070b]" i],
+html[data-theme="light"] [class*="bg-[#050914]" i],
+html[data-theme="light"] [class*="bg-[#070b16]" i],
+html[data-theme="light"] [class*="bg-[#080d18]" i],
+html[data-theme="light"] [class*="bg-[#080d1a]" i],
+html[data-theme="light"] [class*="bg-[#080d1d]" i],
+html[data-theme="light"] [class*="bg-[#0a1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1220]" i],
+html[data-theme="light"] [class*="bg-[#0b1324]" i],
+html[data-theme="light"] [class*="bg-[#10192a]" i],
+html[data-theme="light"] [class*="bg-[#111a2e]" i],
+html[data-theme="light"] [class*="bg-[#172033]" i] {
+  background-color: var(--color-panel) !important;
+}
+
+/* (2) Ô sáng mờ trên nền tối (`bg-white/5`) → ô xám nhạt trên nền sáng. Giữ nguyên thứ bậc
+   đậm/nhạt giữa các mức để chỗ nào đậm hơn vẫn nổi hơn. */
+html[data-theme="light"] [class~="bg-white/5"],
+html[data-theme="light"] [class~="hover:bg-white/5"]:hover,
+html[data-theme="light"] [class~="bg-white/[.01]"],
+html[data-theme="light"] [class~="bg-white/[0.01]"] { background-color: rgba(15, 23, 42, .035) !important; }
+html[data-theme="light"] [class~="bg-white/[.02]"],
+html[data-theme="light"] [class~="bg-white/[0.02]"],
+html[data-theme="light"] [class~="bg-white/[.025]"],
+html[data-theme="light"] [class~="bg-white/[0.025]"],
+html[data-theme="light"] [class~="bg-white/[.03]"],
+html[data-theme="light"] [class~="bg-white/[0.03]"],
+html[data-theme="light"] [class~="bg-white/[.035]"],
+html[data-theme="light"] [class~="bg-white/[0.035]"],
+html[data-theme="light"] [class~="bg-white/[.04]"],
+html[data-theme="light"] [class~="bg-white/[0.04]"],
+html[data-theme="light"] [class~="bg-white/[.05]"],
+html[data-theme="light"] [class~="bg-white/[0.05]"],
+html[data-theme="light"] [class~="bg-white/[.06]"],
+html[data-theme="light"] [class~="bg-white/[0.06]"],
+html[data-theme="light"] [class~="bg-white/[.07]"],
+html[data-theme="light"] [class~="bg-white/[0.07]"],
+html[data-theme="light"] [class~="bg-white/[.08]"],
+html[data-theme="light"] [class~="bg-white/[0.08]"] { background-color: rgba(15, 23, 42, .05) !important; }
+html[data-theme="light"] [class~="bg-white/10"],
+html[data-theme="light"] [class~="hover:bg-white/10"]:hover { background-color: rgba(15, 23, 42, .055) !important; }
+html[data-theme="light"] [class~="bg-white/[0.14]"],
+html[data-theme="light"] [class~="bg-white/15"],
+html[data-theme="light"] [class~="hover:bg-white/15"]:hover { background-color: rgba(15, 23, 42, .075) !important; }
+html[data-theme="light"] [class~="bg-white/20"],
+html[data-theme="light"] [class~="hover:bg-white/20"]:hover { background-color: rgba(15, 23, 42, .09) !important; }
+
+/* (3) Viền trắng mờ trên nền tối → viền xám trên nền sáng. Không đụng /60 và /70: đó là khung
+   trắng cố ý đè LÊN ảnh/camera (QrScannerCard), phải giữ trắng. */
+html[data-theme="light"] [class~="border-white/5"],
+html[data-theme="light"] [class~="hover:border-white/5"]:hover { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="border-white/10"],
+html[data-theme="light"] [class~="hover:border-white/10"]:hover { border-color: rgba(15, 23, 42, .10) !important; }
+html[data-theme="light"] [class~="border-white/15"],
+html[data-theme="light"] [class~="hover:border-white/15"]:hover { border-color: rgba(15, 23, 42, .14) !important; }
+html[data-theme="light"] [class~="border-white/20"],
+html[data-theme="light"] [class~="hover:border-white/20"]:hover { border-color: rgba(15, 23, 42, .18) !important; }
+html[data-theme="light"] [class~="border-white/25"],
+html[data-theme="light"] [class~="hover:border-white/25"]:hover { border-color: rgba(15, 23, 42, .22) !important; }
+html[data-theme="light"] [class~="border-white/30"],
+html[data-theme="light"] [class~="hover:border-white/30"]:hover { border-color: rgba(15, 23, 42, .26) !important; }
+html[data-theme="light"] [class~="border-white/40"],
+html[data-theme="light"] [class~="hover:border-white/40"]:hover { border-color: rgba(15, 23, 42, .34) !important; }
+html[data-theme="light"] [class~="divide-white/5"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="divide-white/10"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .10) !important; }
+
+/* (4) Gradient nền tối + quầng sáng neon (M6: không gradient/glow ở vùng đọc và làm bài).
+   `background-image: none` là cách chắc nhất vì Tailwind dựng gradient qua biến --tw-gradient-*. */
+html[data-theme="light"] [class*="from-[#172c46]" i],
+html[data-theme="light"] [class*="via-[#0e1c32]" i],
+html[data-theme="light"] [class*="to-[#071426]" i],
+html[data-theme="light"] [class*="to-[#091627]" i],
+html[data-theme="light"] [class*="to-[#101a3a]" i],
+html[data-theme="light"] [class*="from-[#183a4a]" i],
+html[data-theme="light"] [class*="from-[#0b1020]" i],
+html[data-theme="light"] [class*="to-[#0b1020]" i] { background-image: none !important; }
+html[data-theme="light"] [class*="shadow-[0_0_"],
+html[data-theme="light"] [class*="shadow-[0_2px_4px_rgba(0,0,0"] { box-shadow: 0 1px 2px rgb(15 23 42 / .06) !important; }
+
+/* (5) Hai chỗ đặc biệt, phải đổi cả nền lẫn chữ vì chữ thừa hưởng màu của nền tối:
+   · badge 📖 của bài học (nền navy đậm, không đặt màu chữ) → chip nhấn nhạt;
+   · dải cảnh báo rời trang khi làm bài (nền nâu đậm + chữ amber) → nền amber rất nhạt. */
+html[data-theme="light"] [class*="bg-[#1d3461]" i] {
+  background-color: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
+}
+html[data-theme="light"] [class*="bg-[#2a2210]" i] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+/* Nút đặc màu teal đậm ở trang chủ (bg-[#155e75] + chữ trắng, hover bg-[#0e7490]): theo M3 chỉ
+   giữ MỘT màu nhấn cho hành động, nên đưa về primary thay vì thêm sắc độ bão hoà thứ hai. */
+html[data-theme="light"] [class*="bg-[#155e75]" i],
+html[data-theme="light"] [class*="bg-[#0e7490]" i] { background-color: var(--color-primary) !important; }
+
+/* (6) Không gian học CNC: vài mảng tối viết trong CSS (không phải class JSX) nên lưới ở trên
+   không với tới. Khung code thì CỐ Ý giữ tối (như trình soạn thảo) — chỉ đổi các mảng UI. */
+html[data-theme="light"] .cnc-embedded .cnc-programming-tabs button,
+html[data-theme="light"] .cnc-embedded .cnc-programming-suite > div.grid > div.bg-white,
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group {
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted);
+}
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group > header { background: var(--color-surface-2) !important; color: var(--color-ink); }
+
+/* ==========================================================================
+   PHẠM VI THEO NHÓM NGƯỜI XEM — cùng một bảng màu, khác số đo thị giác
+   ==========================================================================
+   Không phải "mỗi trang một bộ màu" (như vậy là phá N4/M3 và làm site rối), mà là: cùng hệ
+   thần, đổi đúng những chỗ nghiên cứu nói phải đổi cho từng lứa tuổi. */
+
+/* PHỤ HUYNH 45–60 — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1, P2, P5, P6).
+   Nền hơi ngả ấm (không dùng trắng tinh để giảm chói với người lão thị), chữ phụ tối hơn để
+   đạt ≥7:1 (AAA), nhấn dùng xanh navy đậm cho trang trọng và đủ tương phản. Cỡ chữ và đích
+   chạm đã có ở khối "P1/P2/P4 — khối PHỤ HUYNH" phía trên.
+
+   `html:not(.is-dim)` là BẮT BUỘC: "Dịu mắt" đặt token trên <html>, mà token khai ở phần tử con
+   luôn thắng token thừa hưởng — thiếu điều kiện này thì bật Dịu mắt ở /phu-huynh vẫn ra nền trắng
+   ấm thay vì nền kem, tức là vô hiệu hoá đúng tính năng dành cho người lão thị. */
+html:not(.is-dim) .parent-page {
+  --color-bg: #f7f7f4;
+  --color-panel: #ffffff;
+  --color-surface-2: #f1f1ec;
+  --color-ink: #14181f;          /* 15,9:1 trên #f7f7f4 */
+  --color-muted: #3d4653;        /* 8,9:1 trên #f7f7f4, 9,8:1 trên trắng — vượt AAA 7:1 */
+  --color-line: rgba(20, 24, 31, .14);
+  /* Phụ huynh phải thấy rõ ô nhập/viền hơn học sinh ⇒ viền đậm hơn (4,2:1 trên trắng). */
+  --color-line-strong: #767f8d;
+  --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+/* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
+   tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ
+   Dịu mắt vẫn đổi được nền sang kem. */
+.parent-page { background: var(--color-bg); }
+
+/* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
+   nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
+   nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
+html[data-theme="light"] .teacher-dashboard {
+  --color-bg: #f4f5f7;
+  --color-panel: #ffffff;
+  --color-surface-2: #eceef2;
+  --color-line: rgba(15, 23, 42, .12);
+}
+
+/* RP bài lý thuyết: thanh nộp câu tự chấm (đích chạm >=44px) */
+.theory-rp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: var(--fs-sm); color: #cbd5e1; }
+.theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
+.theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
+html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
+
+/* Bài Anh văn chuyên ngành (AVCN, lớp avcn): thẻ từ vựng có ảnh, câu đọc chạm hiện dịch, nút nghe 🔊
+   (<button data-tl-speak> — trang bài học xử lý uỷ quyền, HTML lưu DB không chứa JS). Mẫu: content/lesson-samples/avcn-*. */
+.exam-content .avcn-photo img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 12px; }
+.exam-content .avcn-photo figcaption { opacity: .85; }
+.exam-content .avcn-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.exam-content .avcn-card { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; }
+.exam-content .avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-card img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; }
+.exam-content .avcn-card__body p { margin: 0 0 4px; text-align: left; }
+.exam-content .avcn-term { font-weight: 700; font-size: 1.1rem; }
+.exam-content .avcn-term small { font-weight: 400; font-size: .9rem; opacity: .8; }
+.exam-content .avcn-star { font-size: .8rem; }
+.exam-content .avcn-vi { color: #22d3ee; font-weight: 600; }
+html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
+.exam-content .avcn-def { font-size: .95rem; }
+.exam-content .tl-speak { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; padding: 0 6px; border: 1px solid rgba(148,163,184,.4); border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; vertical-align: middle; }
+.exam-content .tl-speak:hover { border-color: #22d3ee; }
+.exam-content .avcn-sent { margin: 6px 0; }
+.exam-content .avcn-sent > summary { font-weight: 400; line-height: 1.6; }
+.exam-content .avcn-n { font-weight: 700; opacity: .7; margin-right: 4px; }
+.exam-content .avcn-trans { opacity: .9; }
+.exam-content .avcn-list { padding-left: 18px; }
+.exam-content .avcn-list li { margin: 6px 0; text-align: left; }
+.exam-content .avcn-box { padding: 8px 12px; border: 1px dashed rgba(148,163,184,.6); border-radius: 10px; text-align: left; }
+.exam-content .avcn-passage { padding: 12px 14px; border-left: 3px solid #22d3ee; background: rgba(148,163,184,.08); border-radius: 0 10px 10px 0; margin: 10px 0; }
+.exam-content .avcn-passage p { margin: 0; text-align: left; line-height: 1.7; }
+@media (max-width: 420px) { .exam-content .avcn-card { grid-template-columns: 88px 1fr; } .exam-content .avcn-card img { width: 88px; height: 66px; } }
+.exam-content .avcn-card.avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-tbl :is(th, td):first-child { white-space: nowrap; }
+.exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
+.exam-content .avcn-term .tl-speak { margin-left: 2px; }
+.exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+.exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
+.exam-content figure.fig svg{display:block;width:100%;height:auto}
+.exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
+
+</style>
+<div class="lesson-page"><div class="wrap"><h1>Chapter 9: CAD/CAM</h1><p class="sub">Anh văn chuyên ngành Cơ khí</p><span class="exam-content"><h3>I. Email đặt hàng của khách</h3><div class="tl-box tl-box--think"><p class="tl-label">🔧 Tình huống ở xưởng</p><p>Khách nước ngoài gửi email đặt 200 chi tiết, kèm một file và dòng chữ: "Please check the <strong>CAD</strong> drawing and send us the <strong>CNC</strong> program before Friday." Thợ cả đọc xong quay sang hỏi em: "Làm được không?" Em chỉ nhận ra mấy chữ viết tắt, không biết file này dùng để làm gì, nên đứng im.</p></div><p><strong>Hôm nay em sẽ:</strong> Hiểu CAD, CAM, CNC khác nhau chỗ nào để biết file của khách dùng vào bước nào và máy làm ra chi tiết ra sao.</p><details class="tl-details"><summary>Mục tiêu bài và đề cuối kỳ</summary><p>Học xong chương này em cần:</p><ul><li>Nhận ra 20 từ ⭐ (CAD, CAM, CNC, prototype, simulation, machinist…) khi đọc định nghĩa hoặc nhìn ảnh (Part 1).</li><li>Tìm được câu trả lời trong 2 bài đọc (công nghệ CAD-CAM và sự khác nhau giữa CAD với CAM) để điền một từ và chọn Đúng/Sai (Part 2).</li><li>Dùng được mẫu câu <em>X stands for Y</em> và <em>X is used to + V</em> để dịch (Part 4–5).</li></ul><p>Đề cuối kỳ có 5 Part; ba Part đầu chỉ cần <strong>nhận ra từ</strong> và <strong>tìm lại câu trong bài đọc</strong>.</p><details class="tl-details"><summary>Xem 5 Part của đề ứng với mục nào trong bài</summary><div class="table-scroll"><table class="tl-table avcn-tbl"><thead><tr><th>Part</th><th>Đề hỏi gì</th><th>Học ở mục</th></tr></thead><tbody><tr><td>Part 1 · 2,5 đ</td><td>10 câu chọn từ theo định nghĩa hoặc ảnh</td><td>Mục III Từ vựng</td></tr><tr><td>Part 2 · 2,5 đ</td><td>Đọc lại một bài đọc, điền 1 từ + Đúng/Sai</td><td>Mục IV Bài đọc</td></tr><tr><td>Part 3 · 2 đ</td><td>Điền từ cho sẵn vào đoạn văn</td><td>Mục VII Điền từ</td></tr><tr><td>Part 4 · 2 đ</td><td>Dịch Anh → Việt</td><td>Mục IV + mục V mẫu câu</td></tr><tr><td>Part 5 · 1 đ</td><td>Dịch Việt → Anh một câu</td><td>Mục V mẫu câu</td></tr></tbody></table></div></details></details>
+<h3>II. Đoán trước khi học: việc này tên gì?</h3><p>Hai hình dưới đây là máy và vật em hay gặp khi làm việc với máy tính ở xưởng. Chọn tên tiếng Anh theo trực giác, sai cũng không sao.</p><figure class="fig avcn-photo"><img src="file:///Users/MAC/Projects/thachlab/public/assets/avcn/chapter-9/cnc.webp" alt="Fabriko de Sichuan Jinxing Compressor Manufacturing Co., Ltd 03" width="1000" height="750"><figcaption>Fabriko de Sichuan Jinxing Compressor Manufacturing Co., Ltd 03 · Ảnh: RG72, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Fabriko_de_Sichuan_Jinxing_Compressor_Manufacturing_Co.,_Ltd_03.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="tl-box tl-box--think"><p class="tl-label">🤔 Dự đoán</p><p>Máy trong ảnh có màn hình điều khiển và chạy theo chương trình máy tính để gia công kim loại. Tiếng Anh gọi tắt là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q1" id="tl9-q1a"><label for="tl9-q1a" class="tl-opt tl-ok">a. CNC machine</label><input type="radio" name="tl9-q1" id="tl9-q1b"><label for="tl9-q1b" class="tl-opt tl-no">b. hand drill</label><input type="radio" name="tl9-q1" id="tl9-q1c"><label for="tl9-q1c" class="tl-opt tl-no">c. bench vice</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>CNC machine</em> /ˌsiː en ˈsiː/ là máy điều khiển số bằng máy tính: máy tự chạy theo chương trình.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nhìn màn hình và cửa kính của máy.<br>Máy này chạy bằng tay quay hay bằng chương trình máy tính?</p></div></div></div><figure class="fig avcn-photo"><img src="file:///Users/MAC/Projects/thachlab/public/assets/avcn/chapter-9/prototype.webp" alt="3D-printed antenna (25204204843)" width="1000" height="666"><figcaption>3D-printed antenna (25204204843) · Ảnh: European Space Agency, CC BY-SA 2.0, <a href="https://commons.wikimedia.org/wiki/File:3D-printed_antenna_(25204204843).jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="tl-box tl-box--think"><p class="tl-label">🤔 Dự đoán</p><p>Vật màu hồng nhạt này được in 3D thử trước khi sản xuất số lượng lớn. Loại sản phẩm thử đầu tiên này tiếng Anh gọi là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q2" id="tl9-q2a"><label for="tl9-q2a" class="tl-opt tl-ok">a. prototype</label><input type="radio" name="tl9-q2" id="tl9-q2b"><label for="tl9-q2b" class="tl-opt tl-no">b. spare part</label><input type="radio" name="tl9-q2" id="tl9-q2c"><label for="tl9-q2c" class="tl-opt tl-no">c. blueprint</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>prototype</em> /ˈprəʊtətaɪp/ là mẫu thử: bản làm đầu tiên để kiểm tra trước khi làm hàng loạt.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Vật này mới làm thử, chưa phải hàng bán.<br>Từ nào nói về bản làm thử đầu tiên?</p></div></div></div>
+<h3>III. 20 từ ⭐ phải nhận ra</h3><p>Học theo cụm 5 từ. Mỗi từ: nhìn ảnh, nghe, đọc nghĩa, rồi đọc <em>định nghĩa tiếng Anh</em>, vì Part 1 ra đề bằng chính định nghĩa đó. Sau mỗi cụm có một câu kiểm tra, làm ngay.</p><h4>Cụm A · CAD, CAM, CNC và phần mềm</h4><div class="avcn-cards"><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">CAD <small>/ˌsiː eɪ ˈdiː/</small> <button type="button" class="tl-speak" data-tl-speak="CAD" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">thiết kế có sự hỗ trợ của máy tính</p><p class="avcn-def">The use of computers to create and change designs. <button type="button" class="tl-speak" data-tl-speak="The use of computers to create and change designs." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">CAM <small>/kæm/</small> <button type="button" class="tl-speak" data-tl-speak="CAM" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">gia công có sự hỗ trợ của máy tính</p><p class="avcn-def">The use of computer software to control machine tools that make products. <button type="button" class="tl-speak" data-tl-speak="The use of computer software to control machine tools that make products." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card"><img src="file:///Users/MAC/Projects/thachlab/public/assets/avcn/chapter-9/cnc.webp" alt="CNC" width="1000" height="750"><div class="avcn-card__body"><p class="avcn-term">CNC <small>/ˌsiː en ˈsiː/</small> <button type="button" class="tl-speak" data-tl-speak="CNC" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">điều khiển số bằng máy tính</p><p class="avcn-def">A way of controlling a machine tool with a computer program. <button type="button" class="tl-speak" data-tl-speak="A way of controlling a machine tool with a computer program." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">software <small>/ˈsɒftweə/</small> <button type="button" class="tl-speak" data-tl-speak="software" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">phần mềm</p><p class="avcn-def">Programs that tell a computer what to do. <button type="button" class="tl-speak" data-tl-speak="Programs that tell a computer what to do." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">automation <small>/ˌɔːtəˈmeɪʃn/</small> <button type="button" class="tl-speak" data-tl-speak="automation" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">tự động hoá</p><p class="avcn-def">The use of machines to do work without human help. <button type="button" class="tl-speak" data-tl-speak="The use of machines to do work without human help." aria-label="Nghe">🔊</button></p></div></div></div><div class="tl-box tl-box--think"><p class="tl-label">✅ Kiểm tra cụm này</p><p>Part 1 hỏi: <em>"The use of computers to create and change designs."</em></p><div class="tl-quiz"><input type="radio" name="tl9-q3" id="tl9-q3a"><label for="tl9-q3a" class="tl-opt tl-no">a. CAM</label><input type="radio" name="tl9-q3" id="tl9-q3b"><label for="tl9-q3b" class="tl-opt tl-ok">b. CAD</label><input type="radio" name="tl9-q3" id="tl9-q3c"><label for="tl9-q3c" class="tl-opt tl-no">c. CNC</label><input type="radio" name="tl9-q3" id="tl9-q3d"><label for="tl9-q3d" class="tl-opt tl-no">d. automation</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ khoá <em>create and change designs</em> (tạo và sửa thiết kế): CAD = Computer-Aided <em>Design</em>.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá <em>designs</em>.<br>Trong CAD, CAM, CNC, chữ viết tắt nào có chữ D?</p></div></div></div><h4>Cụm B · Thiết kế và thử nghiệm</h4><div class="avcn-cards"><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">design <small>/dɪˈzaɪn/</small> <button type="button" class="tl-speak" data-tl-speak="design" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">thiết kế</p><p class="avcn-def">To plan how a product will look and work. <button type="button" class="tl-speak" data-tl-speak="To plan how a product will look and work." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card"><img src="file:///Users/MAC/Projects/thachlab/public/assets/avcn/chapter-9/drawing.webp" alt="drawing" width="1000" height="670"><div class="avcn-card__body"><p class="avcn-term">drawing <small>/ˈdrɔːɪŋ/</small> <button type="button" class="tl-speak" data-tl-speak="drawing" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">bản vẽ</p><p class="avcn-def">A picture that shows the shape and size of a part. <button type="button" class="tl-speak" data-tl-speak="A picture that shows the shape and size of a part." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">3D model <small>/θriː diː ˈmɒdl/</small> <button type="button" class="tl-speak" data-tl-speak="3D model" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">mô hình 3D</p><p class="avcn-def">A computer shape that shows a part with length, width and height. <button type="button" class="tl-speak" data-tl-speak="A computer shape that shows a part with length, width and height." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card"><img src="file:///Users/MAC/Projects/thachlab/public/assets/avcn/chapter-9/prototype.webp" alt="prototype" width="1000" height="666"><div class="avcn-card__body"><p class="avcn-term">prototype <small>/ˈprəʊtətaɪp/</small> <button type="button" class="tl-speak" data-tl-speak="prototype" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">mẫu thử</p><p class="avcn-def">The first test version of a product, made before mass production. <button type="button" class="tl-speak" data-tl-speak="The first test version of a product, made before mass production." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card"><img src="file:///Users/MAC/Projects/thachlab/public/assets/avcn/chapter-9/simulation.webp" alt="simulation" width="934" height="817"><div class="avcn-card__body"><p class="avcn-term">simulation <small>/ˌsɪmjuˈleɪʃn/</small> <button type="button" class="tl-speak" data-tl-speak="simulation" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">mô phỏng</p><p class="avcn-def">A computer test that shows how a design will behave. <button type="button" class="tl-speak" data-tl-speak="A computer test that shows how a design will behave." aria-label="Nghe">🔊</button></p></div></div></div><div class="tl-box tl-box--think"><p class="tl-label">✅ Kiểm tra cụm này</p><p>Part 1 hỏi: <em>"A computer test that shows how a design will behave."</em></p><div class="tl-quiz"><input type="radio" name="tl9-q4" id="tl9-q4a"><label for="tl9-q4a" class="tl-opt tl-no">a. prototype</label><input type="radio" name="tl9-q4" id="tl9-q4b"><label for="tl9-q4b" class="tl-opt tl-no">b. drawing</label><input type="radio" name="tl9-q4" id="tl9-q4c"><label for="tl9-q4c" class="tl-opt tl-ok">c. simulation</label><input type="radio" name="tl9-q4" id="tl9-q4d"><label for="tl9-q4d" class="tl-opt tl-no">d. 3D model</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ khoá <em>computer test</em> (thử bằng máy tính): simulation = mô phỏng, không cần làm vật thật.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá <em>computer test</em>.<br>Prototype là vật thật, còn từ nào là cách thử ngay trên máy tính?</p></div></div></div><h4>Cụm C · Gia công và sản xuất</h4><div class="avcn-cards"><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">manufacturing <small>/ˌmænjuˈfæktʃərɪŋ/</small> <button type="button" class="tl-speak" data-tl-speak="manufacturing" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">sản xuất, chế tạo</p><p class="avcn-def">The process of making products, often in a factory. <button type="button" class="tl-speak" data-tl-speak="The process of making products, often in a factory." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">machine tool <small>/məˈʃiːn tuːl/</small> <button type="button" class="tl-speak" data-tl-speak="machine tool" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">máy công cụ</p><p class="avcn-def">A power-driven machine that cuts or shapes metal. <button type="button" class="tl-speak" data-tl-speak="A power-driven machine that cuts or shapes metal." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card"><img src="file:///Users/MAC/Projects/thachlab/public/assets/avcn/chapter-9/machinist.webp" alt="machinist" width="798" height="800"><div class="avcn-card__body"><p class="avcn-term">machinist <small>/məˈʃiːnɪst/</small> <button type="button" class="tl-speak" data-tl-speak="machinist" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">thợ gia công, thợ máy</p><p class="avcn-def">A skilled worker who sets up and runs machine tools. <button type="button" class="tl-speak" data-tl-speak="A skilled worker who sets up and runs machine tools." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card"><img src="file:///Users/MAC/Projects/thachlab/public/assets/avcn/chapter-9/production-line.webp" alt="mass production" width="1000" height="666"><div class="avcn-card__body"><p class="avcn-term">mass production <small>/ˌmæs prəˈdʌkʃn/</small> <button type="button" class="tl-speak" data-tl-speak="mass production" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">sản xuất hàng loạt</p><p class="avcn-def">Making large numbers of the same product, usually by machines. <button type="button" class="tl-speak" data-tl-speak="Making large numbers of the same product, usually by machines." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">geometry <small>/dʒiˈɒmətri/</small> <button type="button" class="tl-speak" data-tl-speak="geometry" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">hình dạng và kích thước của chi tiết</p><p class="avcn-def">The shape and size of a part, shown by lines, surfaces and solids. <button type="button" class="tl-speak" data-tl-speak="The shape and size of a part, shown by lines, surfaces and solids." aria-label="Nghe">🔊</button></p></div></div></div><div class="tl-box tl-box--think"><p class="tl-label">✅ Kiểm tra cụm này</p><p>Part 1 hỏi: <em>"A skilled worker who sets up and runs machine tools."</em></p><div class="tl-quiz"><input type="radio" name="tl9-q5" id="tl9-q5a"><label for="tl9-q5a" class="tl-opt tl-no">a. engineer</label><input type="radio" name="tl9-q5" id="tl9-q5b"><label for="tl9-q5b" class="tl-opt tl-ok">b. machinist</label><input type="radio" name="tl9-q5" id="tl9-q5c"><label for="tl9-q5c" class="tl-opt tl-no">c. designer</label><input type="radio" name="tl9-q5" id="tl9-q5d"><label for="tl9-q5d" class="tl-opt tl-no">d. inspector</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ khoá <em>sets up and runs machine tools</em>: machinist.<br>Article 2: CAM software is mostly used by a trained machinist.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá <em>runs machine tools</em> (vận hành máy).<br>Người thiết kế dùng CAD, còn người chạy máy là ai?</p></div></div></div><h4>Cụm D · Ưu điểm và nhược điểm</h4><div class="avcn-cards"><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">reliable <small>/rɪˈlaɪəbl/</small> <button type="button" class="tl-speak" data-tl-speak="reliable" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">đáng tin cậy, ổn định</p><p class="avcn-def">Able to be trusted to work well every time. <button type="button" class="tl-speak" data-tl-speak="Able to be trusted to work well every time." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">human error <small>/ˌhjuːmən ˈerə/</small> <button type="button" class="tl-speak" data-tl-speak="human error" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">lỗi do con người</p><p class="avcn-def">A mistake made by a person, not by a machine. <button type="button" class="tl-speak" data-tl-speak="A mistake made by a person, not by a machine." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">labour cost <small>/ˈleɪbə kɒst/</small> <button type="button" class="tl-speak" data-tl-speak="labour cost" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">chi phí nhân công</p><p class="avcn-def">The money paid to workers for their work. <button type="button" class="tl-speak" data-tl-speak="The money paid to workers for their work." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">virus <small>/ˈvaɪrəs/</small> <button type="button" class="tl-speak" data-tl-speak="virus" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">vi-rút máy tính</p><p class="avcn-def">A harmful program that damages files on a computer. <button type="button" class="tl-speak" data-tl-speak="A harmful program that damages files on a computer." aria-label="Nghe">🔊</button></p></div></div><div class="avcn-card avcn-card--noimg"><div class="avcn-card__body"><p class="avcn-term">unemployment <small>/ˌʌnɪmˈplɔɪmənt/</small> <button type="button" class="tl-speak" data-tl-speak="unemployment" aria-label="Nghe">🔊</button> <span class="avcn-star">⭐</span></p><p class="avcn-vi">thất nghiệp</p><p class="avcn-def">The situation of having no job when you want to work. <button type="button" class="tl-speak" data-tl-speak="The situation of having no job when you want to work." aria-label="Nghe">🔊</button></p></div></div></div><div class="tl-box tl-box--think"><p class="tl-label">✅ Kiểm tra cụm này</p><p>Part 1 hỏi: <em>"A mistake made by a person, not by a machine."</em></p><div class="tl-quiz"><input type="radio" name="tl9-q6" id="tl9-q6a"><label for="tl9-q6a" class="tl-opt tl-no">a. labour cost</label><input type="radio" name="tl9-q6" id="tl9-q6b"><label for="tl9-q6b" class="tl-opt tl-no">b. virus</label><input type="radio" name="tl9-q6" id="tl9-q6c"><label for="tl9-q6c" class="tl-opt tl-ok">c. human error</label><input type="radio" name="tl9-q6" id="tl9-q6d"><label for="tl9-q6d" class="tl-opt tl-no">d. unemployment</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ khoá <em>mistake</em> + <em>by a person</em>: human error.<br>Article 1: CAM gives a more reliable finish, there is no human error.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá <em>mistake</em> (lỗi).<br>Ba từ kia nói về tiền, chương trình hại máy, mất việc.</p></div></div></div><details class="tl-details"><summary>⭐⭐ 18 từ thêm cho em muốn trên 7 điểm (từ dùng khi nói về thiết kế và gia công bằng máy tính)</summary><div class="avcn-cards"><div class="avcn-card"><img src="file:///Users/MAC/Projects/thachlab/public/assets/avcn/chapter-9/cam-sim.webp" alt="toolpath" width="1000" height="548"><div class="avcn-card__body"><p class="avcn-term">toolpath <button type="button" class="tl-speak" data-tl-speak="toolpath" aria-label="Nghe">🔊</button></p><p class="avcn-vi">đường chạy dao do phần mềm CAM tính</p></div></div></div><ul class="avcn-list"><li><strong>cutting tool</strong> <button type="button" class="tl-speak" data-tl-speak="cutting tool" aria-label="Nghe">🔊</button> — dao cắt, dụng cụ cắt</li><li><strong>finished part</strong> <button type="button" class="tl-speak" data-tl-speak="finished part" aria-label="Nghe">🔊</button> — chi tiết hoàn thiện</li><li><strong>finished product</strong> <button type="button" class="tl-speak" data-tl-speak="finished product" aria-label="Nghe">🔊</button> — thành phẩm</li><li><strong>production run</strong> <button type="button" class="tl-speak" data-tl-speak="production run" aria-label="Nghe">🔊</button> — một đợt sản xuất</li><li><strong>realistic</strong> <button type="button" class="tl-speak" data-tl-speak="realistic" aria-label="Nghe">🔊</button> — giống thật, sát thực tế</li><li><strong>advantage</strong> <button type="button" class="tl-speak" data-tl-speak="advantage" aria-label="Nghe">🔊</button> — ưu điểm</li><li><strong>disadvantage</strong> <button type="button" class="tl-speak" data-tl-speak="disadvantage" aria-label="Nghe">🔊</button> — nhược điểm</li><li><strong>corrupted file</strong> <button type="button" class="tl-speak" data-tl-speak="corrupted file" aria-label="Nghe">🔊</button> — tệp bị hỏng</li><li><strong>experienced</strong> <button type="button" class="tl-speak" data-tl-speak="experienced" aria-label="Nghe">🔊</button> — có kinh nghiệm</li><li><strong>modify</strong> <button type="button" class="tl-speak" data-tl-speak="modify" aria-label="Nghe">🔊</button> — sửa đổi, chỉnh lại</li><li><strong>assemble</strong> <button type="button" class="tl-speak" data-tl-speak="assemble" aria-label="Nghe">🔊</button> — lắp ráp</li><li><strong>curve</strong> <button type="button" class="tl-speak" data-tl-speak="curve" aria-label="Nghe">🔊</button> — đường cong</li><li><strong>surface</strong> <button type="button" class="tl-speak" data-tl-speak="surface" aria-label="Nghe">🔊</button> — bề mặt</li><li><strong>solid</strong> <button type="button" class="tl-speak" data-tl-speak="solid" aria-label="Nghe">🔊</button> — khối đặc</li><li><strong>analyze</strong> <button type="button" class="tl-speak" data-tl-speak="analyze" aria-label="Nghe">🔊</button> — phân tích</li><li><strong>conventional</strong> <button type="button" class="tl-speak" data-tl-speak="conventional" aria-label="Nghe">🔊</button> — truyền thống, thông thường</li><li><strong>purpose</strong> <button type="button" class="tl-speak" data-tl-speak="purpose" aria-label="Nghe">🔊</button> — mục đích</li></ul></details>
+<h3>IV. Bài đọc: Part 2 của đề lấy nguyên văn từ đây</h3><p>Đọc từng câu tiếng Anh trước. Chạm vào câu: <strong>đoán nghĩa từ in đậm trước</strong> (chọn 1 trong 3), từ khác chưa biết thì chạm xem nghĩa, rồi mới tự dịch cả câu và mở bản dịch. Bấm 🔊 để nghe. Mục tiêu không phải dịch hay, mà là <strong>nhớ câu nào nói về cái gì</strong> để khi thi tìm lại được.</p><h4>Article 1 · CAD-CAM technology (giáo trình: Article 1)</h4><details class="tl-details avcn-sent"><summary><span class="avcn-n">(1)</span> <b>CAD</b>-CAM technology is the result of decades of efforts by numerous people in the name of production <b>automation</b>. <button type="button" class="tl-speak" data-tl-speak="CAD-CAM technology is the result of decades of efforts by numerous people in the name of production automation." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>CAD</b> <button type="button" class="tl-speak" data-tl-speak="CAD" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q7" id="tl9-q7a"><label for="tl9-q7a" class="tl-opt tl-ok">a. thiết kế có máy tính</label><input type="radio" name="tl9-q7" id="tl9-q7b"><label for="tl9-q7b" class="tl-opt tl-no">b. gia công có máy tính</label><input type="radio" name="tl9-q7" id="tl9-q7c"><label for="tl9-q7c" class="tl-opt tl-no">c. điều khiển số</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> CAD = Computer-Aided Design: thiết kế có sự hỗ trợ của máy tính.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>thiết kế có máy tính</b>.<br>CAD = Computer-Aided Design: thiết kế có sự hỗ trợ của máy tính.</p></div></div><p><b>automation</b> <button type="button" class="tl-speak" data-tl-speak="automation" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q8" id="tl9-q8a"><label for="tl9-q8a" class="tl-opt tl-ok">a. tự động hoá</label><input type="radio" name="tl9-q8" id="tl9-q8b"><label for="tl9-q8b" class="tl-opt tl-no">b. thất nghiệp</label><input type="radio" name="tl9-q8" id="tl9-q8c"><label for="tl9-q8c" class="tl-opt tl-no">c. bản vẽ</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> automation là tự động hoá: máy làm việc không cần người can thiệp.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>tự động hoá</b>. automation là tự động hoá: máy làm việc không cần người can thiệp.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>decades <button type="button" class="tl-speak" data-tl-speak="decades" aria-label="Nghe">🔊</button></summary><p>nhiều thập kỷ</p></details></li><li><details class="tl-details"><summary>efforts <button type="button" class="tl-speak" data-tl-speak="efforts" aria-label="Nghe">🔊</button></summary><p>những nỗ lực</p></details></li><li><details class="tl-details"><summary>numerous <button type="button" class="tl-speak" data-tl-speak="numerous" aria-label="Nghe">🔊</button></summary><p>rất nhiều</p></details></li><li><details class="tl-details"><summary>production <button type="button" class="tl-speak" data-tl-speak="production" aria-label="Nghe">🔊</button></summary><p>sản xuất</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Công nghệ CAD-CAM là kết quả nỗ lực nhiều thập kỷ của rất nhiều người vì sự tự động hoá sản xuất.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(2)</span> It is the vision of innovators and inventors, mathematicians and <b>machinists</b>, who are all working to build the future and drive production with technology. <button type="button" class="tl-speak" data-tl-speak="It is the vision of innovators and inventors, mathematicians and machinists, who are all working to build the future and drive production with technology." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>machinists</b> <button type="button" class="tl-speak" data-tl-speak="machinists" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q9" id="tl9-q9a"><label for="tl9-q9a" class="tl-opt tl-ok">a. thợ gia công</label><input type="radio" name="tl9-q9" id="tl9-q9b"><label for="tl9-q9b" class="tl-opt tl-no">b. kế toán</label><input type="radio" name="tl9-q9" id="tl9-q9c"><label for="tl9-q9c" class="tl-opt tl-no">c. bảo vệ</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> machinist là thợ vận hành máy công cụ, gia công chi tiết.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>thợ gia công</b>. machinist là thợ vận hành máy công cụ, gia công chi tiết.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>vision <button type="button" class="tl-speak" data-tl-speak="vision" aria-label="Nghe">🔊</button></summary><p>tầm nhìn</p></details></li><li><details class="tl-details"><summary>innovators <button type="button" class="tl-speak" data-tl-speak="innovators" aria-label="Nghe">🔊</button></summary><p>người đổi mới</p></details></li><li><details class="tl-details"><summary>inventors <button type="button" class="tl-speak" data-tl-speak="inventors" aria-label="Nghe">🔊</button></summary><p>nhà phát minh</p></details></li><li><details class="tl-details"><summary>mathematicians <button type="button" class="tl-speak" data-tl-speak="mathematicians" aria-label="Nghe">🔊</button></summary><p>nhà toán học</p></details></li><li><details class="tl-details"><summary>drive <button type="button" class="tl-speak" data-tl-speak="drive" aria-label="Nghe">🔊</button></summary><p>thúc đẩy</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Đó là tầm nhìn của những người đổi mới, nhà phát minh, nhà toán học và thợ gia công, những người cùng xây dựng tương lai và thúc đẩy sản xuất bằng công nghệ.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(3)</span> A lot of people use the term "CAD-CAM" when they talk about the <b>software</b> that is used to make things with a <b>CNC</b> machine. <button type="button" class="tl-speak" data-tl-speak="A lot of people use the term &quot;CAD-CAM&quot; when they talk about the software that is used to make things with a CNC machine." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>software</b> <button type="button" class="tl-speak" data-tl-speak="software" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q10" id="tl9-q10a"><label for="tl9-q10a" class="tl-opt tl-ok">a. phần mềm</label><input type="radio" name="tl9-q10" id="tl9-q10b"><label for="tl9-q10b" class="tl-opt tl-no">b. phần cứng</label><input type="radio" name="tl9-q10" id="tl9-q10c"><label for="tl9-q10c" class="tl-opt tl-no">c. dây điện</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> software là phần mềm: chương trình chạy trong máy tính.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>phần mềm</b>. software là phần mềm: chương trình chạy trong máy tính.</p></div></div><p><b>CNC</b> <button type="button" class="tl-speak" data-tl-speak="CNC" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q11" id="tl9-q11a"><label for="tl9-q11a" class="tl-opt tl-ok">a. điều khiển số bằng máy tính</label><input type="radio" name="tl9-q11" id="tl9-q11b"><label for="tl9-q11b" class="tl-opt tl-no">b. chi phí nhân công</label><input type="radio" name="tl9-q11" id="tl9-q11c"><label for="tl9-q11c" class="tl-opt tl-no">c. bản vẽ 2D</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> CNC = máy điều khiển số: chạy theo chương trình máy tính.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>điều khiển số bằng máy tính</b>.<br>CNC = máy điều khiển số: chạy theo chương trình máy tính.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>a lot of <button type="button" class="tl-speak" data-tl-speak="a lot of" aria-label="Nghe">🔊</button></summary><p>nhiều</p></details></li><li><details class="tl-details"><summary>term <button type="button" class="tl-speak" data-tl-speak="term" aria-label="Nghe">🔊</button></summary><p>thuật ngữ</p></details></li><li><details class="tl-details"><summary>used to make <button type="button" class="tl-speak" data-tl-speak="used to make" aria-label="Nghe">🔊</button></summary><p>dùng để làm ra</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Nhiều người dùng thuật ngữ "CAD-CAM" khi nói về phần mềm dùng để làm ra đồ vật bằng máy CNC.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(4)</span> <b>CAD</b> stands for Computer-Aided <b>Design</b> and <b>CAM</b> stands for Computer-Aided <b>Manufacturing</b>, both of which are used to make things. <button type="button" class="tl-speak" data-tl-speak="CAD stands for Computer-Aided Design and CAM stands for Computer-Aided Manufacturing, both of which are used to make things." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>CAM</b> <button type="button" class="tl-speak" data-tl-speak="CAM" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q12" id="tl9-q12a"><label for="tl9-q12a" class="tl-opt tl-ok">a. gia công có máy tính</label><input type="radio" name="tl9-q12" id="tl9-q12b"><label for="tl9-q12b" class="tl-opt tl-no">b. phần mềm</label><input type="radio" name="tl9-q12" id="tl9-q12c"><label for="tl9-q12c" class="tl-opt tl-no">c. mô phỏng</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> CAM = Computer-Aided Manufacturing: gia công, sản xuất có máy tính hỗ trợ.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>gia công có máy tính</b>.<br>CAM = Computer-Aided Manufacturing: gia công, sản xuất có máy tính hỗ trợ.</p></div></div><p><b>Manufacturing</b> <button type="button" class="tl-speak" data-tl-speak="Manufacturing" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q13" id="tl9-q13a"><label for="tl9-q13a" class="tl-opt tl-ok">a. sản xuất, chế tạo</label><input type="radio" name="tl9-q13" id="tl9-q13b"><label for="tl9-q13b" class="tl-opt tl-no">b. thiết kế</label><input type="radio" name="tl9-q13" id="tl9-q13c"><label for="tl9-q13c" class="tl-opt tl-no">c. vẽ</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> manufacturing là sản xuất, chế tạo sản phẩm.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>sản xuất, chế tạo</b>. manufacturing là sản xuất, chế tạo sản phẩm.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>stands for <button type="button" class="tl-speak" data-tl-speak="stands for" aria-label="Nghe">🔊</button></summary><p>viết tắt của</p></details></li><li><details class="tl-details"><summary>both of which <button type="button" class="tl-speak" data-tl-speak="both of which" aria-label="Nghe">🔊</button></summary><p>cả hai thứ đó</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">CAD là viết tắt của thiết kế có máy tính hỗ trợ, còn CAM là viết tắt của sản xuất có máy tính hỗ trợ, cả hai đều dùng để làm ra đồ vật.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(5)</span> CAD/CAM software is used to design and manufacture <b>prototypes</b>, finished products, and production runs of products. <button type="button" class="tl-speak" data-tl-speak="CAD/CAM software is used to design and manufacture prototypes, finished products, and production runs of products." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>prototypes</b> <button type="button" class="tl-speak" data-tl-speak="prototypes" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q14" id="tl9-q14a"><label for="tl9-q14a" class="tl-opt tl-ok">a. mẫu thử</label><input type="radio" name="tl9-q14" id="tl9-q14b"><label for="tl9-q14b" class="tl-opt tl-no">b. phụ tùng</label><input type="radio" name="tl9-q14" id="tl9-q14c"><label for="tl9-q14c" class="tl-opt tl-no">c. hợp đồng</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> prototype là bản làm thử đầu tiên, trước khi sản xuất hàng loạt.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>mẫu thử</b>. prototype là bản làm thử đầu tiên, trước khi sản xuất hàng loạt.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>design <button type="button" class="tl-speak" data-tl-speak="design" aria-label="Nghe">🔊</button></summary><p>thiết kế</p></details></li><li><details class="tl-details"><summary>manufacture <button type="button" class="tl-speak" data-tl-speak="manufacture" aria-label="Nghe">🔊</button></summary><p>chế tạo</p></details></li><li><details class="tl-details"><summary>finished products <button type="button" class="tl-speak" data-tl-speak="finished products" aria-label="Nghe">🔊</button></summary><p>thành phẩm</p></details></li><li><details class="tl-details"><summary>production runs <button type="button" class="tl-speak" data-tl-speak="production runs" aria-label="Nghe">🔊</button></summary><p>các đợt sản xuất</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Phần mềm CAD/CAM được dùng để thiết kế và chế tạo mẫu thử, thành phẩm và các đợt sản xuất.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(6)</span> This technology was developed during the 1980s and is now widespread in industry and academia. <button type="button" class="tl-speak" data-tl-speak="This technology was developed during the 1980s and is now widespread in industry and academia." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Công nghệ này được phát triển trong những năm 1980 và hiện nay phổ biến trong công nghiệp và trường học.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(7)</span> It also has advantages and disadvantages. <button type="button" class="tl-speak" data-tl-speak="It also has advantages and disadvantages." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Nó cũng có ưu điểm và nhược điểm.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(8)</span> Very <b>realistic</b> designs can be produced to show clients what their product will look like. <button type="button" class="tl-speak" data-tl-speak="Very realistic designs can be produced to show clients what their product will look like." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>realistic</b> <button type="button" class="tl-speak" data-tl-speak="realistic" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q15" id="tl9-q15a"><label for="tl9-q15a" class="tl-opt tl-ok">a. giống thật</label><input type="radio" name="tl9-q15" id="tl9-q15b"><label for="tl9-q15b" class="tl-opt tl-no">b. đắt tiền</label><input type="radio" name="tl9-q15" id="tl9-q15c"><label for="tl9-q15c" class="tl-opt tl-no">c. nguy hiểm</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> realistic là giống thật: nhìn như vật thật.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>giống thật</b>. realistic là giống thật: nhìn như vật thật.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>produced <button type="button" class="tl-speak" data-tl-speak="produced" aria-label="Nghe">🔊</button></summary><p>được tạo ra</p></details></li><li><details class="tl-details"><summary>clients <button type="button" class="tl-speak" data-tl-speak="clients" aria-label="Nghe">🔊</button></summary><p>khách hàng</p></details></li><li><details class="tl-details"><summary>look like <button type="button" class="tl-speak" data-tl-speak="look like" aria-label="Nghe">🔊</button></summary><p>trông giống</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Có thể tạo ra các thiết kế rất giống thật để cho khách hàng thấy sản phẩm của họ sẽ trông thế nào.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(9)</span> Products can be machined at high speed 24 hours a day – this means lots of products can be made in a short time. <button type="button" class="tl-speak" data-tl-speak="Products can be machined at high speed 24 hours a day – this means lots of products can be made in a short time." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Sản phẩm có thể được gia công tốc độ cao 24 giờ mỗi ngày, nghĩa là làm được nhiều sản phẩm trong thời gian ngắn.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(10)</span> CAM gives a high quality and more <b>reliable</b> finish – there is no <b>human error</b>. <button type="button" class="tl-speak" data-tl-speak="CAM gives a high quality and more reliable finish – there is no human error." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>reliable</b> <button type="button" class="tl-speak" data-tl-speak="reliable" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q16" id="tl9-q16a"><label for="tl9-q16a" class="tl-opt tl-ok">a. ổn định, đáng tin</label><input type="radio" name="tl9-q16" id="tl9-q16b"><label for="tl9-q16b" class="tl-opt tl-no">b. dễ vỡ</label><input type="radio" name="tl9-q16" id="tl9-q16c"><label for="tl9-q16c" class="tl-opt tl-no">c. rẻ tiền</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> reliable là đáng tin cậy: lần nào làm cũng tốt như lần nào.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>ổn định, đáng tin</b>. reliable là đáng tin cậy: lần nào làm cũng tốt như lần nào.</p></div></div><p><b>human error</b> <button type="button" class="tl-speak" data-tl-speak="human error" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q17" id="tl9-q17a"><label for="tl9-q17a" class="tl-opt tl-ok">a. lỗi do con người</label><input type="radio" name="tl9-q17" id="tl9-q17b"><label for="tl9-q17b" class="tl-opt tl-no">b. chi phí nhân công</label><input type="radio" name="tl9-q17" id="tl9-q17c"><label for="tl9-q17c" class="tl-opt tl-no">c. thiếu điện</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> human error là lỗi do người làm sai, không phải máy.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>lỗi do con người</b>. human error là lỗi do người làm sai, không phải máy.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>quality <button type="button" class="tl-speak" data-tl-speak="quality" aria-label="Nghe">🔊</button></summary><p>chất lượng</p></details></li><li><details class="tl-details"><summary>finish <button type="button" class="tl-speak" data-tl-speak="finish" aria-label="Nghe">🔊</button></summary><p>bề mặt hoàn thiện</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">CAM cho chất lượng cao và bề mặt hoàn thiện ổn định hơn, không có lỗi do con người.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(11)</span> You can <b>mass-produce</b> complicated products, each part can be made by a different machine so they can be assembled quickly. <button type="button" class="tl-speak" data-tl-speak="You can mass-produce complicated products, each part can be made by a different machine so they can be assembled quickly." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>mass-produce</b> <button type="button" class="tl-speak" data-tl-speak="mass-produce" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q18" id="tl9-q18a"><label for="tl9-q18a" class="tl-opt tl-ok">a. sản xuất hàng loạt</label><input type="radio" name="tl9-q18" id="tl9-q18b"><label for="tl9-q18b" class="tl-opt tl-no">b. sửa chữa</label><input type="radio" name="tl9-q18" id="tl9-q18c"><label for="tl9-q18c" class="tl-opt tl-no">c. đóng gói</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> mass-produce là sản xuất hàng loạt: làm số lượng lớn cùng một loại.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>sản xuất hàng loạt</b>. mass-produce là sản xuất hàng loạt: làm số lượng lớn cùng một loại.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>complicated <button type="button" class="tl-speak" data-tl-speak="complicated" aria-label="Nghe">🔊</button></summary><p>phức tạp</p></details></li><li><details class="tl-details"><summary>each part <button type="button" class="tl-speak" data-tl-speak="each part" aria-label="Nghe">🔊</button></summary><p>mỗi bộ phận</p></details></li><li><details class="tl-details"><summary>assembled <button type="button" class="tl-speak" data-tl-speak="assembled" aria-label="Nghe">🔊</button></summary><p>được lắp ráp</p></details></li><li><details class="tl-details"><summary>quickly <button type="button" class="tl-speak" data-tl-speak="quickly" aria-label="Nghe">🔊</button></summary><p>nhanh</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Có thể sản xuất hàng loạt các sản phẩm phức tạp, mỗi bộ phận làm bằng một máy khác nhau nên lắp ráp được nhanh.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(12)</span> <b>Labour</b> costs are low. <button type="button" class="tl-speak" data-tl-speak="Labour costs are low." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>Labour</b> <button type="button" class="tl-speak" data-tl-speak="Labour" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q19" id="tl9-q19a"><label for="tl9-q19a" class="tl-opt tl-ok">a. nhân công, lao động</label><input type="radio" name="tl9-q19" id="tl9-q19b"><label for="tl9-q19b" class="tl-opt tl-no">b. vật liệu</label><input type="radio" name="tl9-q19" id="tl9-q19c"><label for="tl9-q19c" class="tl-opt tl-no">c. điện năng</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> labour là sức lao động; labour cost là tiền trả cho người làm.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>nhân công, lao động</b>. labour là sức lao động; labour cost là tiền trả cho người làm.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>costs <button type="button" class="tl-speak" data-tl-speak="costs" aria-label="Nghe">🔊</button></summary><p>chi phí</p></details></li><li><details class="tl-details"><summary>low <button type="button" class="tl-speak" data-tl-speak="low" aria-label="Nghe">🔊</button></summary><p>thấp</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Chi phí nhân công thấp.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(13)</span> Designs can be sent around the world. <button type="button" class="tl-speak" data-tl-speak="Designs can be sent around the world." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Thiết kế có thể được gửi đi khắp thế giới.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(14)</span> Expensive. <button type="button" class="tl-speak" data-tl-speak="Expensive." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>Expensive</b> <button type="button" class="tl-speak" data-tl-speak="Expensive" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q20" id="tl9-q20a"><label for="tl9-q20a" class="tl-opt tl-ok">a. đắt tiền</label><input type="radio" name="tl9-q20" id="tl9-q20b"><label for="tl9-q20b" class="tl-opt tl-no">b. rẻ tiền</label><input type="radio" name="tl9-q20" id="tl9-q20c"><label for="tl9-q20c" class="tl-opt tl-no">c. nhanh</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> expensive là đắt: tốn nhiều tiền để mua và dùng.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>đắt tiền</b>. expensive là đắt: tốn nhiều tiền để mua và dùng.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>Expensives <button type="button" class="tl-speak" data-tl-speak="Expensives" aria-label="Nghe">🔊</button></summary><p>giáo trình viết sai chính tả, đã sửa thành Expensive</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Đắt tiền.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(15)</span> Computers can be affected by software problems, <b>viruses</b> and corrupted files meaning work could be lost. <button type="button" class="tl-speak" data-tl-speak="Computers can be affected by software problems, viruses and corrupted files meaning work could be lost." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>viruses</b> <button type="button" class="tl-speak" data-tl-speak="viruses" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q21" id="tl9-q21a"><label for="tl9-q21a" class="tl-opt tl-ok">a. vi-rút máy tính</label><input type="radio" name="tl9-q21" id="tl9-q21b"><label for="tl9-q21b" class="tl-opt tl-no">b. thợ gia công</label><input type="radio" name="tl9-q21" id="tl9-q21c"><label for="tl9-q21c" class="tl-opt tl-no">c. bản vẽ</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> virus là chương trình có hại làm hỏng tệp trên máy tính.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>vi-rút máy tính</b>. virus là chương trình có hại làm hỏng tệp trên máy tính.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>affected <button type="button" class="tl-speak" data-tl-speak="affected" aria-label="Nghe">🔊</button></summary><p>bị ảnh hưởng</p></details></li><li><details class="tl-details"><summary>software problems <button type="button" class="tl-speak" data-tl-speak="software problems" aria-label="Nghe">🔊</button></summary><p>lỗi phần mềm</p></details></li><li><details class="tl-details"><summary>corrupted files <button type="button" class="tl-speak" data-tl-speak="corrupted files" aria-label="Nghe">🔊</button></summary><p>tệp bị hỏng</p></details></li><li><details class="tl-details"><summary>lost <button type="button" class="tl-speak" data-tl-speak="lost" aria-label="Nghe">🔊</button></summary><p>bị mất</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Máy tính có thể bị ảnh hưởng bởi lỗi phần mềm, vi-rút và tệp hỏng, nghĩa là công việc có thể bị mất.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(16)</span> Requiring <b>experienced</b> workers. <button type="button" class="tl-speak" data-tl-speak="Requiring experienced workers." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>experienced</b> <button type="button" class="tl-speak" data-tl-speak="experienced" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q22" id="tl9-q22a"><label for="tl9-q22a" class="tl-opt tl-ok">a. có kinh nghiệm</label><input type="radio" name="tl9-q22" id="tl9-q22b"><label for="tl9-q22b" class="tl-opt tl-no">b. còn trẻ</label><input type="radio" name="tl9-q22" id="tl9-q22c"><label for="tl9-q22c" class="tl-opt tl-no">c. mới vào nghề</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> experienced là có kinh nghiệm: làm lâu năm nên thành thạo.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>có kinh nghiệm</b>. experienced là có kinh nghiệm: làm lâu năm nên thành thạo.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>Requiring <button type="button" class="tl-speak" data-tl-speak="Requiring" aria-label="Nghe">🔊</button></summary><p>đòi hỏi</p></details></li><li><details class="tl-details"><summary>worker <button type="button" class="tl-speak" data-tl-speak="worker" aria-label="Nghe">🔊</button></summary><p>giáo trình viết số ít, đã sửa thành workers</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Cần thợ có kinh nghiệm.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(17)</span> Fewer workers are needed, so <b>unemployment</b> might increase and traditional skills will be lost. <button type="button" class="tl-speak" data-tl-speak="Fewer workers are needed, so unemployment might increase and traditional skills will be lost." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>unemployment</b> <button type="button" class="tl-speak" data-tl-speak="unemployment" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q23" id="tl9-q23a"><label for="tl9-q23a" class="tl-opt tl-ok">a. thất nghiệp</label><input type="radio" name="tl9-q23" id="tl9-q23b"><label for="tl9-q23b" class="tl-opt tl-no">b. tăng lương</label><input type="radio" name="tl9-q23" id="tl9-q23c"><label for="tl9-q23c" class="tl-opt tl-no">c. nghỉ phép</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> unemployment là tình trạng không có việc làm.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>thất nghiệp</b>. unemployment là tình trạng không có việc làm.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>fewer <button type="button" class="tl-speak" data-tl-speak="fewer" aria-label="Nghe">🔊</button></summary><p>ít hơn (đếm được)</p></details></li><li><details class="tl-details"><summary>increase <button type="button" class="tl-speak" data-tl-speak="increase" aria-label="Nghe">🔊</button></summary><p>tăng</p></details></li><li><details class="tl-details"><summary>traditional skills <button type="button" class="tl-speak" data-tl-speak="traditional skills" aria-label="Nghe">🔊</button></summary><p>kỹ năng truyền thống</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Cần ít công nhân hơn nên thất nghiệp có thể tăng và các kỹ năng truyền thống sẽ mất đi.</p></details></details><div class="tl-box tl-box--think"><p class="tl-label">🔎 Tập làm Part 2 với bài này</p><p>Part 2.1 điền một từ: <em>"CAM gives a high quality and more ______ finish."</em></p><div class="tl-quiz"><input type="radio" name="tl9-q24" id="tl9-q24a"><label for="tl9-q24a" class="tl-opt tl-ok">a. reliable</label><input type="radio" name="tl9-q24" id="tl9-q24b"><label for="tl9-q24b" class="tl-opt tl-no">b. expensive</label><input type="radio" name="tl9-q24" id="tl9-q24c"><label for="tl9-q24c" class="tl-opt tl-no">c. realistic</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Câu 10 của bài: <em>a high quality and more reliable finish</em>.<br>Tìm từ khoá <em>high quality</em> rồi chép từ đứng sau <em>more</em>.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tìm câu có <em>high quality</em>.<br>Từ nào đứng ngay sau <em>and more</em>?</p></div></div><p>Part 2.2 Đúng/Sai: <em>"CAM gives a more reliable finish because there is a lot of human error."</em></p><div class="tl-quiz"><input type="radio" name="tl9-q25" id="tl9-q25a"><label for="tl9-q25a" class="tl-opt tl-no">a. True (Đúng)</label><input type="radio" name="tl9-q25" id="tl9-q25b"><label for="tl9-q25b" class="tl-opt tl-ok">b. False (Sai)</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Câu này SAI.<br>Bài viết <em>there is no human error</em> (không có lỗi do con người).<br>Đề hay đổi <em>no</em> thành nghĩa ngược lại.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đọc lại câu 10: bài nói về lỗi do con người thế nào?</p></div></div></div><h4>Article 2 · Difference between CAD and CAM (giáo trình: Article 2)</h4><details class="tl-details avcn-sent"><summary><span class="avcn-n">(1)</span> Computer Aided <b>Design</b> (CAD) is the use of computers for designing models of physical products, <button type="button" class="tl-speak" data-tl-speak="Computer Aided Design (CAD) is the use of computers for designing models of physical products," aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>Design</b> <button type="button" class="tl-speak" data-tl-speak="Design" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q26" id="tl9-q26a"><label for="tl9-q26a" class="tl-opt tl-ok">a. thiết kế</label><input type="radio" name="tl9-q26" id="tl9-q26b"><label for="tl9-q26b" class="tl-opt tl-no">b. gia công</label><input type="radio" name="tl9-q26" id="tl9-q26c"><label for="tl9-q26c" class="tl-opt tl-no">c. lắp ráp</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> design là thiết kế: lên kế hoạch hình dạng và chức năng của sản phẩm.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>thiết kế</b>. design là thiết kế: lên kế hoạch hình dạng và chức năng của sản phẩm.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>use of computers <button type="button" class="tl-speak" data-tl-speak="use of computers" aria-label="Nghe">🔊</button></summary><p>việc dùng máy tính</p></details></li><li><details class="tl-details"><summary>models <button type="button" class="tl-speak" data-tl-speak="models" aria-label="Nghe">🔊</button></summary><p>mô hình</p></details></li><li><details class="tl-details"><summary>physical products <button type="button" class="tl-speak" data-tl-speak="physical products" aria-label="Nghe">🔊</button></summary><p>sản phẩm vật lý (giáo trình viết physical product, thiếu s, đã sửa)</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Thiết kế có máy tính hỗ trợ (CAD) là việc dùng máy tính để thiết kế mô hình của sản phẩm thực,</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(2)</span> which means computers are used to aid in creating the design, modifying the design and analyzing the designing activities. <button type="button" class="tl-speak" data-tl-speak="which means computers are used to aid in creating the design, modifying the design and analyzing the designing activities." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">nghĩa là máy tính được dùng để hỗ trợ tạo thiết kế, sửa thiết kế và phân tích các hoạt động thiết kế.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(3)</span> CAD is also known as Computer Aided <b>Drafting</b>. <button type="button" class="tl-speak" data-tl-speak="CAD is also known as Computer Aided Drafting." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>Drafting</b> <button type="button" class="tl-speak" data-tl-speak="Drafting" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q27" id="tl9-q27a"><label for="tl9-q27a" class="tl-opt tl-ok">a. vẽ kỹ thuật</label><input type="radio" name="tl9-q27" id="tl9-q27b"><label for="tl9-q27b" class="tl-opt tl-no">b. gia công</label><input type="radio" name="tl9-q27" id="tl9-q27c"><label for="tl9-q27c" class="tl-opt tl-no">c. sửa chữa</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> drafting là vẽ bản vẽ kỹ thuật.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>vẽ kỹ thuật</b>. drafting là vẽ bản vẽ kỹ thuật.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>also known as <button type="button" class="tl-speak" data-tl-speak="also known as" aria-label="Nghe">🔊</button></summary><p>còn được gọi là</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">CAD cũng được gọi là vẽ kỹ thuật có máy tính hỗ trợ.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(4)</span> The <b>purpose</b> of CAD is making 2D technical <b>drawings</b> and 3D <b>models</b>. <button type="button" class="tl-speak" data-tl-speak="The purpose of CAD is making 2D technical drawings and 3D models." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>drawings</b> <button type="button" class="tl-speak" data-tl-speak="drawings" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q28" id="tl9-q28a"><label for="tl9-q28a" class="tl-opt tl-ok">a. bản vẽ</label><input type="radio" name="tl9-q28" id="tl9-q28b"><label for="tl9-q28b" class="tl-opt tl-no">b. máy công cụ</label><input type="radio" name="tl9-q28" id="tl9-q28c"><label for="tl9-q28c" class="tl-opt tl-no">c. phần mềm</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> drawing là bản vẽ: hình vẽ cho thấy hình dạng và kích thước.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>bản vẽ</b>. drawing là bản vẽ: hình vẽ cho thấy hình dạng và kích thước.</p></div></div><p><b>models</b> <button type="button" class="tl-speak" data-tl-speak="models" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q29" id="tl9-q29a"><label for="tl9-q29a" class="tl-opt tl-ok">a. mô hình</label><input type="radio" name="tl9-q29" id="tl9-q29b"><label for="tl9-q29b" class="tl-opt tl-no">b. mô phỏng</label><input type="radio" name="tl9-q29" id="tl9-q29c"><label for="tl9-q29c" class="tl-opt tl-no">c. thợ máy</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> model là mô hình: bản dựng của chi tiết trên máy tính.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>mô hình</b>. model là mô hình: bản dựng của chi tiết trên máy tính.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>purpose <button type="button" class="tl-speak" data-tl-speak="purpose" aria-label="Nghe">🔊</button></summary><p>mục đích</p></details></li><li><details class="tl-details"><summary>technical <button type="button" class="tl-speak" data-tl-speak="technical" aria-label="Nghe">🔊</button></summary><p>kỹ thuật</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Mục đích của CAD là tạo bản vẽ kỹ thuật 2D và mô hình 3D.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(5)</span> So in simple we can say CAD represents your part <b>geometry</b> to the computer. <button type="button" class="tl-speak" data-tl-speak="So in simple we can say CAD represents your part geometry to the computer." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>geometry</b> <button type="button" class="tl-speak" data-tl-speak="geometry" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q30" id="tl9-q30a"><label for="tl9-q30a" class="tl-opt tl-ok">a. hình dạng và kích thước</label><input type="radio" name="tl9-q30" id="tl9-q30b"><label for="tl9-q30b" class="tl-opt tl-no">b. khối lượng</label><input type="radio" name="tl9-q30" id="tl9-q30c"><label for="tl9-q30c" class="tl-opt tl-no">c. màu sắc</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> geometry là hình học của chi tiết: hình dạng và kích thước.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>hình dạng và kích thước</b>. geometry là hình học của chi tiết: hình dạng và kích thước.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>represents <button type="button" class="tl-speak" data-tl-speak="represents" aria-label="Nghe">🔊</button></summary><p>thể hiện, đưa vào</p></details></li><li><details class="tl-details"><summary>in simple <button type="button" class="tl-speak" data-tl-speak="in simple" aria-label="Nghe">🔊</button></summary><p>nói đơn giản</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Nói đơn giản, CAD đưa hình dạng chi tiết của em vào máy tính.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(6)</span> CAD software is mostly used by an engineer. <button type="button" class="tl-speak" data-tl-speak="CAD software is mostly used by an engineer." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Phần mềm CAD chủ yếu do kỹ sư sử dụng.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(7)</span> Computer Aided <b>Manufacturing</b> (CAM) is the use of computer software to control <b>machine tools</b> in the manufacturing of modules. <button type="button" class="tl-speak" data-tl-speak="Computer Aided Manufacturing (CAM) is the use of computer software to control machine tools in the manufacturing of modules." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>machine tools</b> <button type="button" class="tl-speak" data-tl-speak="machine tools" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q31" id="tl9-q31a"><label for="tl9-q31a" class="tl-opt tl-ok">a. máy công cụ</label><input type="radio" name="tl9-q31" id="tl9-q31b"><label for="tl9-q31b" class="tl-opt tl-no">b. dụng cụ cầm tay</label><input type="radio" name="tl9-q31" id="tl9-q31c"><label for="tl9-q31c" class="tl-opt tl-no">c. phụ tùng</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> machine tool là máy chạy bằng động lực để cắt hoặc tạo hình kim loại.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>máy công cụ</b>. machine tool là máy chạy bằng động lực để cắt hoặc tạo hình kim loại.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>control <button type="button" class="tl-speak" data-tl-speak="control" aria-label="Nghe">🔊</button></summary><p>điều khiển</p></details></li><li><details class="tl-details"><summary>modules <button type="button" class="tl-speak" data-tl-speak="modules" aria-label="Nghe">🔊</button></summary><p>các chi tiết, cụm</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Sản xuất có máy tính hỗ trợ (CAM) là việc dùng phần mềm máy tính để điều khiển máy công cụ khi chế tạo các chi tiết.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(8)</span> CAM transforms engineering designs into end products. <button type="button" class="tl-speak" data-tl-speak="CAM transforms engineering designs into end products." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">CAM biến thiết kế kỹ thuật thành sản phẩm cuối.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(9)</span> CAM is different than the conventional manufacturing as it implements <b>automation</b> in the manufacturing process. <button type="button" class="tl-speak" data-tl-speak="CAM is different than the conventional manufacturing as it implements automation in the manufacturing process." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>automation</b> <button type="button" class="tl-speak" data-tl-speak="automation" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q32" id="tl9-q32a"><label for="tl9-q32a" class="tl-opt tl-ok">a. tự động hoá</label><input type="radio" name="tl9-q32" id="tl9-q32b"><label for="tl9-q32b" class="tl-opt tl-no">b. mô phỏng</label><input type="radio" name="tl9-q32" id="tl9-q32c"><label for="tl9-q32c" class="tl-opt tl-no">c. nhân công</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> automation là tự động hoá: máy chạy mà không cần người làm từng bước.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>tự động hoá</b>. automation là tự động hoá: máy chạy mà không cần người làm từng bước.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>conventional <button type="button" class="tl-speak" data-tl-speak="conventional" aria-label="Nghe">🔊</button></summary><p>truyền thống</p></details></li><li><details class="tl-details"><summary>implements <button type="button" class="tl-speak" data-tl-speak="implements" aria-label="Nghe">🔊</button></summary><p>đưa vào, áp dụng</p></details></li><li><details class="tl-details"><summary>process <button type="button" class="tl-speak" data-tl-speak="process" aria-label="Nghe">🔊</button></summary><p>quá trình</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">CAM khác sản xuất truyền thống vì nó đưa tự động hoá vào quá trình sản xuất.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(10)</span> CAM is also known as Computer Aided Modeling or Machining. <button type="button" class="tl-speak" data-tl-speak="CAM is also known as Computer Aided Modeling or Machining." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">CAM cũng được gọi là lập mô hình hoặc gia công có máy tính hỗ trợ.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(11)</span> The purpose of CAM is using 3D models to design machining processes. <button type="button" class="tl-speak" data-tl-speak="The purpose of CAM is using 3D models to design machining processes." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Mục đích của CAM là dùng mô hình 3D để thiết kế quy trình gia công.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(12)</span> So in simple we can say CAM converts the geometry to machine tools. <button type="button" class="tl-speak" data-tl-speak="So in simple we can say CAM converts the geometry to machine tools." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Nói đơn giản, CAM chuyển hình dạng chi tiết sang cho máy công cụ.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(13)</span> So, without CAD, CAM has no meaning. <button type="button" class="tl-speak" data-tl-speak="So, without CAD, CAM has no meaning." aria-label="Nghe">🔊</button></summary><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Vì vậy, không có CAD thì CAM không có ý nghĩa.</p></details></details><details class="tl-details avcn-sent"><summary><span class="avcn-n">(14)</span> CAM software is mostly used by a trained <b>machinist</b>. <button type="button" class="tl-speak" data-tl-speak="CAM software is mostly used by a trained machinist." aria-label="Nghe">🔊</button></summary><p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p><p><b>machinist</b> <button type="button" class="tl-speak" data-tl-speak="machinist" aria-label="Nghe">🔊</button> nghĩa là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q33" id="tl9-q33a"><label for="tl9-q33a" class="tl-opt tl-ok">a. thợ gia công</label><input type="radio" name="tl9-q33" id="tl9-q33b"><label for="tl9-q33b" class="tl-opt tl-no">b. kỹ sư thiết kế</label><input type="radio" name="tl9-q33" id="tl9-q33c"><label for="tl9-q33c" class="tl-opt tl-no">c. nhân viên văn phòng</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> machinist là thợ vận hành máy công cụ.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nghĩa đúng: <b>thợ gia công</b>. machinist là thợ vận hành máy công cụ.</p></div></div><p><strong>Bước 2.</strong> Từ khác chưa biết? Chạm để xem nghĩa.</p><ul class="avcn-list"><li><details class="tl-details"><summary>trained <button type="button" class="tl-speak" data-tl-speak="trained" aria-label="Nghe">🔊</button></summary><p>được đào tạo</p></details></li></ul><p><strong>Bước 3.</strong> Ghép lại, tự dịch cả câu trong đầu, rồi mới mở bản dịch.</p><details class="tl-details"><summary>Xem bản dịch cả câu</summary><p class="avcn-trans">Phần mềm CAM chủ yếu do thợ gia công được đào tạo sử dụng.</p></details></details><div class="tl-box tl-box--think"><p class="tl-label">🔎 Tập làm Part 2 với bài này</p><p>Part 2.1 điền một từ: <em>"CAM software is mostly used by a trained ______."</em></p><div class="tl-quiz"><input type="radio" name="tl9-q34" id="tl9-q34a"><label for="tl9-q34a" class="tl-opt tl-ok">a. machinist</label><input type="radio" name="tl9-q34" id="tl9-q34b"><label for="tl9-q34b" class="tl-opt tl-no">b. engineer</label><input type="radio" name="tl9-q34" id="tl9-q34c"><label for="tl9-q34c" class="tl-opt tl-no">c. clerk</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Câu cuối của bài: <em>CAM software is mostly used by a trained machinist</em>.<br>Chú ý: CAD mới là phần mềm của kỹ sư.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tìm câu có <em>CAM software</em>.<br>Từ nào đứng sau <em>a trained</em>?</p></div></div><p>Part 2.2 Đúng/Sai: <em>"CAD and CAM can be used without each other because they belong to different stages."</em></p><div class="tl-quiz"><input type="radio" name="tl9-q35" id="tl9-q35a"><label for="tl9-q35a" class="tl-opt tl-no">a. True (Đúng)</label><input type="radio" name="tl9-q35" id="tl9-q35b"><label for="tl9-q35b" class="tl-opt tl-ok">b. False (Sai)</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Câu này SAI.<br>Bài viết <em>without CAD, CAM has no meaning</em>: CAM cần mô hình do CAD tạo ra.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tìm câu có <em>without CAD</em>.<br>Bài nói CAM thế nào khi không có CAD?</p></div></div></div><div class="tl-box tl-box--rule"><p class="tl-label">📘 So sánh CAD và CAM (Article 2, hay ra Đúng/Sai)</p><div class="table-scroll"><table class="tl-table avcn-tbl"><thead><tr><th>Hỏi gì</th><th>CAD</th><th>CAM</th></tr></thead><tbody><tr><td>Viết tắt</td><td>Computer Aided <strong>Design</strong></td><td>Computer Aided <strong>Manufacturing</strong></td></tr><tr><td>Mục đích</td><td>2D <strong>drawings</strong> và 3D <strong>models</strong></td><td>dùng 3D model để thiết kế <strong>machining</strong></td></tr><tr><td>Với hình dạng chi tiết</td><td><strong>represents</strong> geometry cho máy tính</td><td><strong>converts</strong> geometry cho máy công cụ</td></tr><tr><td>Ai dùng</td><td>an <strong>engineer</strong></td><td>a trained <strong>machinist</strong></td></tr><tr><td>Quan hệ</td><td>làm trước</td><td><strong>no meaning</strong> without CAD</td></tr></tbody></table></div></div>
+<h3>V. Hai mẫu câu đủ dùng cho Part 4 và Part 5</h3><p>Không cần học hết ngữ pháp. Đề dịch của chương này chỉ dùng hai mẫu dưới đây.</p><div class="tl-box tl-box--rule"><p class="tl-label">📘 Mẫu 1 · X stands for Y (X là viết tắt của Y)</p><ul class="avcn-list"><li>CAD stands for Computer-Aided Design. <button type="button" class="tl-speak" data-tl-speak="CAD stands for Computer-Aided Design." aria-label="Nghe">🔊</button><br><span class="avcn-trans">CAD là viết tắt của thiết kế có máy tính hỗ trợ.</span></li><li>CAM stands for Computer-Aided Manufacturing. <button type="button" class="tl-speak" data-tl-speak="CAM stands for Computer-Aided Manufacturing." aria-label="Nghe">🔊</button><br><span class="avcn-trans">CAM là viết tắt của sản xuất có máy tính hỗ trợ.</span></li><li>CNC stands for Computer Numerical Control. <button type="button" class="tl-speak" data-tl-speak="CNC stands for Computer Numerical Control." aria-label="Nghe">🔊</button><br><span class="avcn-trans">CNC là viết tắt của điều khiển số bằng máy tính.</span></li></ul><ul class="avcn-list"><li>Công thức: <strong>X + stands for + Y</strong>.</li><li>Dịch: "X là viết tắt của Y".</li><li>Chữ cái đầu của Y khớp với các chữ trong X (Computer Aided Design → CAD).</li></ul></div><div class="tl-box tl-box--rule"><p class="tl-label">📘 Mẫu 2 · X is used to + V (X được dùng để …)</p><ul class="avcn-list"><li>CAD software is used to make 2D drawings and 3D models. <button type="button" class="tl-speak" data-tl-speak="CAD software is used to make 2D drawings and 3D models." aria-label="Nghe">🔊</button><br><span class="avcn-trans">Phần mềm CAD được dùng để tạo bản vẽ 2D và mô hình 3D.</span></li><li>CAM software is used to control machine tools. <button type="button" class="tl-speak" data-tl-speak="CAM software is used to control machine tools." aria-label="Nghe">🔊</button><br><span class="avcn-trans">Phần mềm CAM được dùng để điều khiển máy công cụ.</span></li><li>Simulation is used to find problems without building a prototype. <button type="button" class="tl-speak" data-tl-speak="Simulation is used to find problems without building a prototype." aria-label="Nghe">🔊</button><br><span class="avcn-trans">Mô phỏng được dùng để tìm lỗi mà không cần làm mẫu thử.</span></li></ul><ul class="avcn-list"><li>Công thức: <strong>X + is used + to + V</strong>.</li><li>Dịch: "X được dùng để …".</li><li><em>to + V</em> chỉ mục đích; V đứng ở dạng nguyên mẫu, không chia.</li></ul></div>
+<h3>VI. Từ file thiết kế đến chi tiết: gọi tên 6 phần</h3><p>Từ Part 1 hay hỏi tên từng bước từ CAD đến CAM. Nhìn hình, tự gọi tên 6 phần trước, rồi mở đáp án.</p><figure class="fig" data-tl="1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="system-ui,-apple-system,sans-serif">
+  <rect width="800" height="400" fill="#ffffff"/>
+  <!-- 1 CAD software: laptop -->
+  <rect x="30" y="140" width="190" height="120" rx="8" fill="#e2e8f0" stroke="#1e293b" stroke-width="3"/>
+  <rect x="44" y="152" width="162" height="96" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+  <path d="M10 270 L240 270 L228 290 L22 290 Z" fill="#94a3b8" stroke="#1e293b" stroke-width="3"/>
+  <!-- 2 3D model on screen -->
+  <g stroke="#1e293b" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M95 200 L135 182 L175 200 L135 218 Z" fill="#bae6fd"/>
+    <path d="M95 200 L135 218 L135 238 L95 220 Z" fill="#7dd3fc"/>
+    <path d="M175 200 L135 218 L135 238 L175 220 Z" fill="#38bdf8"/>
+  </g>
+  <!-- arrow 1 -->
+  <path d="M245 210 L300 210" stroke="#1e293b" stroke-width="4" fill="none"/><path d="M300 198 L322 210 L300 222 Z" fill="#1e293b"/>
+  <!-- 3 toolpath -->
+  <rect x="335" y="150" width="130" height="120" rx="8" fill="#f8fafc" stroke="#1e293b" stroke-width="3"/>
+  <path d="M352 170 L448 170 L448 188 L352 188 L352 206 L448 206 L448 224 L352 224 L352 242 L448 242" fill="none" stroke="#dc2626" stroke-width="4" stroke-linejoin="round"/>
+  <!-- arrow 2 -->
+  <path d="M480 210 L520 210" stroke="#1e293b" stroke-width="4" fill="none"/><path d="M520 198 L542 210 L520 222 Z" fill="#1e293b"/>
+  <!-- 4 CNC machine -->
+  <rect x="555" y="120" width="150" height="170" rx="10" fill="#cbd5e1" stroke="#1e293b" stroke-width="3"/>
+  <rect x="570" y="190" width="120" height="80" rx="4" fill="#f1f5f9" stroke="#1e293b" stroke-width="2.5"/>
+  <rect x="570" y="132" width="50" height="40" rx="4" fill="#38bdf8" stroke="#1e293b" stroke-width="2.5"/>
+  <!-- 5 cutting tool -->
+  <rect x="624" y="132" width="14" height="40" fill="#64748b" stroke="#1e293b" stroke-width="2"/>
+  <path d="M624 172 L638 172 L631 200 Z" fill="#fbbf24" stroke="#1e293b" stroke-width="2"/>
+  <!-- 6 finished part -->
+  <g stroke="#1e293b" stroke-width="2.5" stroke-linejoin="round">
+    <rect x="610" y="228" width="60" height="34" rx="3" fill="#fbbf24"/>
+    <circle cx="640" cy="245" r="9" fill="#f1f5f9"/>
+  </g>
+  <!-- leader lines -->
+  <g stroke="#0284c7" stroke-width="2.5" fill="none">
+    <line x1="125" y1="66" x2="125" y2="140"/>
+    <line x1="150" y1="338" x2="148" y2="228"/>
+    <line x1="400" y1="66" x2="400" y2="150"/>
+    <line x1="630" y1="66" x2="630" y2="120"/>
+    <line x1="724" y1="132" x2="638" y2="160"/>
+    <line x1="560" y1="338" x2="635" y2="258"/>
+  </g>
+  <g font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="125" cy="46" r="20" fill="#0284c7"/><text x="125" y="54">1</text>
+    <circle cx="150" cy="358" r="20" fill="#0284c7"/><text x="150" y="366">2</text>
+    <circle cx="400" cy="46" r="20" fill="#0284c7"/><text x="400" y="54">3</text>
+    <circle cx="630" cy="46" r="20" fill="#0284c7"/><text x="630" y="54">4</text>
+    <circle cx="744" cy="124" r="20" fill="#0284c7"/><text x="744" y="132">5</text>
+    <circle cx="560" cy="358" r="20" fill="#0284c7"/><text x="560" y="366">6</text>
+  </g>
+</svg>
+<figcaption>Hình 1. Hình mô phỏng quy trình CAD/CAM: máy tính, mô hình 3D, đường chạy dao, máy CNC, dao cắt, chi tiết xong. 6 phần đánh số.</figcaption></figure><div class="tl-box tl-box--think"><p class="tl-label">✅ Kiểm tra</p><p>Phần số 3 (đường màu đỏ ngoằn ngoèo, là đường mà dao sẽ chạy trên phôi) tên là gì?</p><div class="tl-quiz"><input type="radio" name="tl9-q36" id="tl9-q36a"><label for="tl9-q36a" class="tl-opt tl-ok">a. toolpath</label><input type="radio" name="tl9-q36" id="tl9-q36b"><label for="tl9-q36b" class="tl-opt tl-no">b. drawing</label><input type="radio" name="tl9-q36" id="tl9-q36c"><label for="tl9-q36c" class="tl-opt tl-no">c. geometry</label><input type="radio" name="tl9-q36" id="tl9-q36d"><label for="tl9-q36d" class="tl-opt tl-no">d. virus</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>toolpath</em> = đường chạy dao.<br>Phần mềm CAM biến mô hình 3D thành đường này, rồi máy CNC chạy theo.</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Số 3 là đường dao sẽ đi.<br>Từ nào ghép từ <em>tool</em> (dụng cụ) với <em>path</em> (đường đi)?</p></div></div></div><details class="tl-details"><summary>Xem đáp án 6 bộ phận</summary><ul class="avcn-list"><li><strong>1. CAD software</strong> <button type="button" class="tl-speak" data-tl-speak="CAD software" aria-label="Nghe">🔊</button> — phần mềm thiết kế trên máy tính</li><li><strong>2. 3D model</strong> <button type="button" class="tl-speak" data-tl-speak="3D model" aria-label="Nghe">🔊</button> — mô hình 3D của chi tiết</li><li><strong>3. toolpath</strong> <button type="button" class="tl-speak" data-tl-speak="toolpath" aria-label="Nghe">🔊</button> — đường chạy dao do phần mềm CAM tính</li><li><strong>4. CNC machine</strong> <button type="button" class="tl-speak" data-tl-speak="CNC machine" aria-label="Nghe">🔊</button> — máy điều khiển số</li><li><strong>5. cutting tool</strong> <button type="button" class="tl-speak" data-tl-speak="cutting tool" aria-label="Nghe">🔊</button> — dao cắt</li><li><strong>6. finished part</strong> <button type="button" class="tl-speak" data-tl-speak="finished part" aria-label="Nghe">🔊</button> — chi tiết hoàn thiện</li></ul></details>
+<h3>VII. CAD/CAM trong xưởng: điền từ (kiểu Part 3)</h3><p>Part 3 cho một hộp từ và một đoạn văn có chỗ trống. Cách làm: đọc cả câu, nhìn từ đứng <em>ngay sau</em> chỗ trống, rồi chọn từ trong hộp. Thử với đoạn viết lại từ phần Reading:</p><p class="avcn-box">Hộp từ: <strong>software</strong> · <strong>simulation</strong> · <strong>prototype</strong> · <strong>automation</strong> · <strong>reliable</strong></p><div class="avcn-passage"><p>CAD (1) ______ lets an engineer draw a part on the screen instead of on paper. A (2) ______ shows how the design will behave before anything is built. This saves the cost of making a (3) ______. CAM then runs the machines, so (4) ______ replaces manual work and the finish is more (5) ______. <button type="button" class="tl-speak" data-tl-speak="CAD  lets an engineer draw a part on the screen instead of on paper. A  shows how the design will behave before anything is built. This saves the cost of making a . CAM then runs the machines, so  replaces manual work and the finish is more ." aria-label="Nghe">🔊</button></p></div><div class="tl-box tl-box--think"><p class="tl-label">✅ Kiểm tra</p><p>Chỗ trống (2): <em>"A (2) ______ shows how the design will behave before anything is built."</em></p><div class="tl-quiz"><input type="radio" name="tl9-q37" id="tl9-q37a"><label for="tl9-q37a" class="tl-opt tl-no">a. prototype</label><input type="radio" name="tl9-q37" id="tl9-q37b"><label for="tl9-q37b" class="tl-opt tl-ok">b. simulation</label><input type="radio" name="tl9-q37" id="tl9-q37c"><label for="tl9-q37c" class="tl-opt tl-no">c. automation</label><input type="radio" name="tl9-q37" id="tl9-q37d"><label for="tl9-q37d" class="tl-opt tl-no">d. reliable</label><div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> <em>simulation</em> = mô phỏng.<br>Từ khoá <em>shows how the design will behave before anything is built</em> (thử trước khi làm vật thật).</p></div><div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Gạch từ khoá <em>before anything is built</em>.<br>Prototype là vật đã làm ra, còn từ nào là cách thử trên máy tính?</p></div></div></div><details class="tl-details"><summary>Xem đáp án cả 5 chỗ trống</summary><ul class="avcn-list"><li>(1) software</li><li>(2) simulation</li><li>(3) prototype</li><li>(4) automation</li><li>(5) reliable</li></ul></details>
+<h3>VIII. Trả bài: gấp sách lại, trả lời 8 câu</h3><p>Nhớ lại được là nhớ lâu. Với mỗi câu: <strong>nói ra đáp án trước</strong>, rồi mới bấm mở. Câu nào không trả lời được thì quay lên mục tương ứng, rồi sang tab <strong>Đề mẫu</strong>.</p><div class="tl-box tl-box--think"><p class="tl-label">🎤 Trả bài</p><details class="tl-details"><summary>CAD và CAM viết tắt của gì?</summary><p>CAD = Computer-Aided Design (thiết kế); CAM = Computer-Aided Manufacturing (gia công, sản xuất).</p></details><details class="tl-details"><summary>CAD còn gọi là gì? CAM còn gọi là gì?</summary><p>CAD = Computer Aided Drafting. CAM = Computer Aided Modeling or Machining.</p></details><details class="tl-details"><summary>Mục đích của CAD là gì?</summary><p>Tạo bản vẽ kỹ thuật 2D và mô hình 3D (CAD represents your part geometry to the computer).</p></details><details class="tl-details"><summary>Ai thường dùng CAD, ai thường dùng CAM?</summary><p>CAD: kỹ sư (engineer). CAM: thợ gia công được đào tạo (trained machinist).</p></details><details class="tl-details"><summary>Nêu hai ưu điểm của CAD/CAM.</summary><p>Chọn hai: thiết kế giống thật; gia công 24 giờ/ngày; chất lượng ổn định, không có lỗi do con người; chi phí nhân công thấp; gửi thiết kế đi khắp thế giới.</p></details><details class="tl-details"><summary>Nêu hai nhược điểm của CAD/CAM.</summary><p>Chọn hai: đắt; lỗi phần mềm, vi-rút, tệp hỏng; cần thợ có kinh nghiệm; ít việc làm hơn nên thất nghiệp có thể tăng.</p></details><details class="tl-details"><summary>Dịch: <em>CAM is used to control machine tools.</em></summary><p>CAM được dùng để điều khiển máy công cụ.</p></details><details class="tl-details"><summary>Dịch sang tiếng Anh: <em>CAD là viết tắt của thiết kế có máy tính hỗ trợ.</em></summary><p>CAD stands for Computer-Aided Design.</p></details></div><p><strong>Quay lại tình huống đầu bài:</strong> Giờ em đọc hiểu email của khách và biết file đó đi qua những bước nào chưa?</p>
+<details class="tl-details"><summary>Nguồn ảnh (7 ảnh)</summary><ul class="avcn-list"><li>cnc: RG72, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:Fabriko_de_Sichuan_Jinxing_Compressor_Manufacturing_Co.,_Ltd_03.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>prototype: European Space Agency, CC BY-SA 2.0, <a href="https://commons.wikimedia.org/wiki/File:3D-printed_antenna_(25204204843).jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>drawing: Seattle Municipal Archives from Seattle, WA, CC BY 2.0, <a href="https://commons.wikimedia.org/wiki/File:Seattle_-_University_Bridge_blueprint,_1915_(49781358396).jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>simulation: Ajay B. Harish, CC BY-SA 4.0, <a href="https://commons.wikimedia.org/wiki/File:LinearDynamicMobileImpact.png" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>machinist: Eugen Nosko, CC BY-SA 3.0 de, <a href="https://commons.wikimedia.org/wiki/File:Fotothek_df_n-15_0000669_Zerspannungsfacharbeiter.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>production line: Marek Ślusarczyk (Tupungato) Photo portfolio, CC BY 3.0, <a href="https://commons.wikimedia.org/wiki/File:002_Production_line_-_car_assembly_line_in_General_Motors_Manufacturing_Poland_-_Gliwice,_Poland.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li><li>cam sim: Delcam Plc., CC BY-SA 3.0, <a href="https://commons.wikimedia.org/wiki/File:PowerMILL_Turbine_Simulation.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></li></ul></details></span></div></div>
+<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script>
+renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
+</script>
+<script>
+const bar=document.createElement('div');
+bar.style.cssText='position:sticky;top:0;z-index:9;background:#0b1220;border-bottom:1px solid #1e293b;padding:8px 16px;margin:-20px -16px 16px;display:flex;gap:8px;align-items:center;font-size:12px;color:#94a3b8';
+const b1=document.createElement('button');b1.textContent='Mở tất cả đáp án';
+const b2=document.createElement('button');b2.textContent='Đóng lại';
+for(const b of [b1,b2]) b.style.cssText='background:#1e293b;color:#e2e8f0;border:0;border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer';
+b1.onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=true);
+b2.onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=false);
+bar.append(b1,b2);document.body.prepend(bar);
+</script></html>
