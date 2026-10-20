@@ -1,0 +1,1239 @@
+[
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 1,
+  "flags": [],
+  "stem": "Tại nơi có gia tốc trọng trường $g,$ chọn gốc thế năng tại mặt đất thì biểu thức tính thế năng trọng trường của một vật có khối lượng m đặt tại độ cao $z$ là",
+  "options": [
+   [
+    "A",
+    "$=mgz.$",
+    true
+   ],
+   [
+    "B",
+    "$0,5mgz.$",
+    false
+   ],
+   [
+    "C",
+    "$=\\frac{1}{4}mgz.$",
+    false
+   ],
+   [
+    "D",
+    "$=2mgz.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Thế năng trọng trường $= mgz.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 2,
+  "flags": [],
+  "stem": "Thế năng trọng trường của một vật là đại lượng",
+  "options": [
+   [
+    "A",
+    "vô hướng và luôn dương.",
+    false
+   ],
+   [
+    "B",
+    "vô hướng và luôn âm.",
+    false
+   ],
+   [
+    "C",
+    "vô hướng có thể bằng $0.$",
+    true
+   ],
+   [
+    "D",
+    "vector ngược hướng với vận tốc.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Thế năng trọng trường của một vật là đại lượng vô hướng có thể bằng $0.$ Vì vật nằm trên mốc thế năng thì thế năng dương, nằm tại gốc thế năng thì bằng $0,$ vật nằm dưới gốc thế năng thì nó nhỏ hơn không.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 3,
+  "flags": [],
+  "stem": "Một người đứng yên trong thang máy và thang máy đi lên với vận tốc không đổi. Lấy mặt đất làm gốc thế năng thì thế năng của người",
+  "options": [
+   [
+    "A",
+    "giảm và động năng tăng.",
+    false
+   ],
+   [
+    "B",
+    "giảm và động không đổi.",
+    false
+   ],
+   [
+    "C",
+    "tăng và động năng giảm.",
+    false
+   ],
+   [
+    "D",
+    "tăng và động năng không đổi.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Do vận tốc không đổi nên động năng không đổi. Độ cao của vật tăng so với gốc thế năng nên thế năng tăng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 4,
+  "flags": [],
+  "stem": "Khi một vật từ độ cao $z,$ với cùng tốc độ đầu, rơi xuống đất theo những con đường khác nhau thì",
+  "options": [
+   [
+    "A",
+    "độ lớn vận tốc chạm đất khác nhau.",
+    false
+   ],
+   [
+    "B",
+    "thời gian rơi khác nhau.",
+    true
+   ],
+   [
+    "C",
+    "công của trọng lực khác nhau.",
+    false
+   ],
+   [
+    "D",
+    "gia tốc rơi khác nhau.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Áp dụng định luật bảo toàn cơ năng thì cơ năng lúc ném bằng cơ năng lúc chạm đất, do hai vật ở cùng độ cao nên động năng khi chạm đất sẽ bằng nhau nên độ lớn vận tốc chạm đất là bằng nhau.\nCông của trọng lực bằng độ giảm thế năng nên công của trọng lực bằng nhau.\nGia tốc rơi luôn bằng $g.$\nThời gian rơi được xác định theo biểu thức $z=v_{0y}t+\\frac{1}{2}gt^{2}$ nên ban đầu vật bay theo các hướng khác nhau thì $ v_{0y}$ có giá trị khác nhau dẫn đến t khác nhau.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 5,
+  "flags": [],
+  "stem": "Khi một vật chuyển động rơi tự do từ trên xuống dưới với gốc thế năng tại mặt đất thì",
+  "options": [
+   [
+    "A",
+    "thế năng của vật giảm dần.",
+    true
+   ],
+   [
+    "B",
+    "động năng của vật giảm dần.",
+    false
+   ],
+   [
+    "C",
+    "thế năng của vật tăng dần.",
+    false
+   ],
+   [
+    "D",
+    "động lượng của vật giảm dần.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Vận tốc tăng dần nên động lượng và động năng tăng dần.\nĐộ cao giảm nên thế năng giảm dần.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 6,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về thế năng?",
+  "options": [
+   [
+    "A",
+    "Thế năng trọng trường của một vật là năng lượng mà vật có do nó được đặt tại một vị trí xác định trong trọng trường của Trái đất.",
+    false
+   ],
+   [
+    "B",
+    "Thế năng trọng trường có đơn vị $N/m^{2}.$",
+    true
+   ],
+   [
+    "C",
+    "Thế năng trọng trường xác định bằng biểu thức $= mgz.$",
+    false
+   ],
+   [
+    "D",
+    "Khi tính thế năng trọng trường, có thể chọn mặt đất làm mốc tính thế năng.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Thế năng trọng trường xác định bằng biểu thức $= mgz.$\nĐơn vị của thế năng là $\\lbrack J \\rbrack=\\left\\lbrack kg.m/s^{2} \\right\\rbrack.m =\\lbrack N.m \\rbrack.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 7,
+  "flags": [],
+  "stem": "Thế năng trọng trường của một vật tại một thời điểm xác định là năng lượng **không phụ thuộc** vào",
+  "options": [
+   [
+    "A",
+    "vị trí của vật.",
+    false
+   ],
+   [
+    "B",
+    "khối lượng của vật và gia tốc trọng trường.",
+    false
+   ],
+   [
+    "C",
+    "vận tốc của vật.",
+    true
+   ],
+   [
+    "D",
+    "mốc tính thế năng.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Thế năng trọng trường xác định bằng biểu thức $= mgz,$ không phụ thuộc vào vận tốc của vật.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 8,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Phát biểu nào sau đây là **đúng** khi nói về thế năng trọng trường?",
+  "options": [
+   [
+    "A",
+    "Công của trọng lực bằng hiệu thế năng tại vị trí đầu và tại vị trí cuối.",
+    true
+   ],
+   [
+    "B",
+    "Trọng lực sinh công âm khi vật đi từ cao xuống thấp.",
+    false
+   ],
+   [
+    "C",
+    "Trọng lực sinh công dương khi đưa vật từ thấp lên cao.",
+    false
+   ],
+   [
+    "D",
+    "Công của trọng lực đi theo đường thẳng nối hai điểm đầu và cuối bao giờ cũng nhỏ hơn đi theo đường gấp khúc giữa hai điểm đó.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 9,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Thế năng trọng trường của một vật **không phụ thuộc** vào",
+  "options": [
+   [
+    "A",
+    "khối lượng của vật.",
+    false
+   ],
+   [
+    "B",
+    "động năng của vật.",
+    true
+   ],
+   [
+    "C",
+    "độ cao của vật.",
+    false
+   ],
+   [
+    "D",
+    "gia tốc trọng trường.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 10,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Chọn mốc thế năng tại mặt đất. Khi một vật chuyển động rơi tự do từ trên xuống dưới thì",
+  "options": [
+   [
+    "A",
+    "thế năng của vật giảm dần.",
+    true
+   ],
+   [
+    "B",
+    "động năng của vật giảm dần.",
+    false
+   ],
+   [
+    "C",
+    "thế năng của vật tăng dần.",
+    false
+   ],
+   [
+    "D",
+    "động lượng của vật giảm dần.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 11,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về thế năng trọng trường?",
+  "options": [
+   [
+    "A",
+    "Thế năng trọng trường của một vật là năng lượng mà vật có do nó được đặt tại một vị trí xác định trong trọng trường của Trái đất.",
+    false
+   ],
+   [
+    "B",
+    "Thế năng trọng trường có đơn vị là $2.$",
+    true
+   ],
+   [
+    "C",
+    "Thế năng trọng trường xác định bằng biểu thức $= mgz.$",
+    false
+   ],
+   [
+    "D",
+    "Khi tính thế năng trọng tường, có thể chọn mặt đất làm mốc tính thế năng.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 12,
+  "flags": [],
+  "stem": "Một vật trượt trên mặt nghiêng có ma sát, sau khi lên tới điểm cao nhất nó trượt xuống vị trí ban đầu. Trong quá trình chuyển động trên.",
+  "options": [
+   [
+    "A",
+    "công của lực ma sát tác dụng vào vật bằng $0.$",
+    false
+   ],
+   [
+    "B",
+    "tổng công của trọng lực và lực ma sát tác dụng vào vật bằng $0.$",
+    false
+   ],
+   [
+    "C",
+    "công của trọng lực tác dụng vào vật bằng $0.$",
+    true
+   ],
+   [
+    "D",
+    "hiệu giữa công của trọng lực và lực ma sát tác dụng vào vật bằng $0.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Lực ma sát không phải là lực thế vì công của nó phụ thuộc vào hình dạng đường đi.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 13,
+  "flags": [],
+  "stem": "Khi vật chịu tác dụng của lực không phải là lực thế",
+  "options": [
+   [
+    "A",
+    "cơ năng của vật được bảo toàn.",
+    false
+   ],
+   [
+    "B",
+    "động năng của vật được bảo toàn.",
+    false
+   ],
+   [
+    "C",
+    "thế năng của vật được bảo toàn.",
+    false
+   ],
+   [
+    "D",
+    "năng lượng toàn phần của vật được bảo toàn.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Lực không phải là lực thế cơ năng không được bảo toàn mà năng lượng toàn phần được bảo toàn.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 14,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về thế năng trọng trường?",
+  "options": [
+   [
+    "A",
+    "Trong miền hẹp trên mặt đất, trọng trường là đều.",
+    false
+   ],
+   [
+    "B",
+    "Đi dọc một đường khép kín công của trọng trường bằng không.",
+    false
+   ],
+   [
+    "C",
+    "Đi theo những đường cong hở công của trọng trường sẽ khác không.",
+    false
+   ],
+   [
+    "D",
+    "Vật đi từ thấp lên cao thế năng của trọng trường của vật tăng",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Vật đi từ thấp lên cao thế năng của trọng trường của vật tăng **sai** vì phụ thuộc vào lúc chọn gốc thế năng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 15,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về thế năng và lực thế?",
+  "options": [
+   [
+    "A",
+    "Thế năng được xác định sai kém một hằng số cộng.",
+    false
+   ],
+   [
+    "B",
+    "Lực vạn vật hấp dẫn, lực đàn hồi, lực tĩnh điện là các lực thế.",
+    false
+   ],
+   [
+    "C",
+    "Lực cản của môi trường không khí, nước. cũng là lực thế.",
+    true
+   ],
+   [
+    "D",
+    "Lực ma sát không phải là lực thế vì công của nó theo mọi đường khép kín đếu khác không",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Lực cản của môi trường không khí, nước. là lực không thế.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 16,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về thế năng trọng trường?",
+  "options": [
+   [
+    "A",
+    "Trong trường hợp lực thế độ tăng thế năng bằng độ giảm động năng.",
+    false
+   ],
+   [
+    "B",
+    "Nếu các ngọai lực tác dụng lên vật là các lực thế thì cơ năng của vật được bảo toàn.",
+    false
+   ],
+   [
+    "C",
+    "Ngọai lực sinh công âm làm giảm cơ năng của vật.",
+    false
+   ],
+   [
+    "D",
+    "Trong mọi trường hợp, động năng và thế năng có thể thay đổi nhưng cơ năng thì luôn không đổi.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Trong mọi trường hợp, động năng và thế năng có thể thay đổi nhưng cơ năng thì luôn không đổi là sai. Chỉ đúng khi chỉ có các lực thế.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 17,
+  "flags": [],
+  "stem": "Lực **không phải** là lực thế là",
+  "options": [
+   [
+    "A",
+    "lực ma sát.",
+    true
+   ],
+   [
+    "B",
+    "trọng lực.",
+    false
+   ],
+   [
+    "C",
+    "lực đàn hồi.",
+    false
+   ],
+   [
+    "D",
+    "lực tĩnh điện.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Vì công của lực ma sát phụ thuộc vào hình dạng đường đi nên lực ma sát không phải là lực thế.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 18,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **đúng** khi nói về thế năng trọng trường?",
+  "options": [
+   [
+    "A",
+    "Thế năng trọng trường luôn mang giá trị dương vì độ cao h luôn luôn dương.",
+    false
+   ],
+   [
+    "B",
+    "Độ giảm thế năng phụ thuộc vào cách chọn gốc thế năng.",
+    false
+   ],
+   [
+    "C",
+    "Động năng và thế năng đều phụ thuộc tính chất của lực tác dụng.",
+    false
+   ],
+   [
+    "D",
+    "Trong trọng trường, ở vị trí cao hơn vật luôn có thế năng lớn hơn.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Thế năng trọng trường có giá trị âm, dương hoặc bằng không tùy thuộc vào việc chọn mốc thế năng.\nNhưng độ giảm thế năng chỉ phụ vào khoảng cách giữa điểm đầu và điểm cuối nên không phụ thuộc vào cách chọn mốc thế năng.\nLực tác dụng có thể khác nhau nhưng nêu gây cho vật cùng vật tốc, hay đưa vật lên cùng độ cao so với mốc thì động năng và thế năng sẽ có giá trị như nhau.\nThế năng phụ thuộc vào độ cao của vật so với mộc nên z lớn thì thế năng lớn.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 19,
+  "flags": [],
+  "stem": "Một vật có khối lượng $1 kg$ và có thế năng $1 J$ đối với mặt đất. Lấy $ g=9,8 m/s^{2}.$ Khi đó vật ở độ cao bằng",
+  "options": [
+   [
+    "A",
+    "$0,102 m.$",
+    true
+   ],
+   [
+    "B",
+    "$1 m.$",
+    false
+   ],
+   [
+    "C",
+    "$9,813 m.$",
+    false
+   ],
+   [
+    "D",
+    "$2 m.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Chọn mặt đất là mốc thế năng. Ta có $m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 20,
+  "flags": [],
+  "stem": "Một vật có khối lượng $m=3 kg$ được đặt ở điểm A trong trọng trường và thế năng tại vị trí đó bằng $ W_{tA} = 600 J.$ Thả tự do cho vật rơi tới mặt đất O, tại đó thế năng của vật bằng $ W_{tO}= -900 J.$ Lấy $ g=10 m/s^{2}.$ Độ cao của $ A$ so với mặt đất là",
+  "options": [
+   [
+    "A",
+    "$60 m.$",
+    false
+   ],
+   [
+    "B",
+    "$50 m.$",
+    true
+   ],
+   [
+    "C",
+    "$9,8 m.$",
+    false
+   ],
+   [
+    "D",
+    "$32 m.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Ta có công của trọng lực khi vật di chuyển từ $A$ đến $ O$\n$A_{A\\rightarrow O}= W_{t}\\left( A \\right)– W_{t}\\left( O \\right)= mgh_{AO}\\Rightarrow h_{AO}= 50 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 21,
+  "flags": [],
+  "stem": "Một vật có khối lượng $m,$ đang nằm yên thì nó **có thể** có",
+  "options": [
+   [
+    "A",
+    "vận tốc.",
+    false
+   ],
+   [
+    "B",
+    "động năng.",
+    false
+   ],
+   [
+    "C",
+    "động lượng.",
+    false
+   ],
+   [
+    "D",
+    "thế năng.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Khi vật nằm yên thì $v=0$ nên $=\\frac{1}{2}mv^{2} = 0$ và $ p = mv = 0.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 22,
+  "flags": [],
+  "stem": "Chọn mốc thế năng trọng trường tại mặt đất, thế năng của vật nặng $2 kg$ ở đáy một giếng sâu $ m$ so với mặt đất tại nơi có gia tốc $2$ là",
+  "options": [
+   [
+    "A",
+    "$-100 J.$",
+    false
+   ],
+   [
+    "B",
+    "$100 J.$",
+    false
+   ],
+   [
+    "C",
+    "$200 J.$",
+    false
+   ],
+   [
+    "D",
+    "$-200 J.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Vì mốc thế năng tại mặt đất nên tại độ sâu ta có $z= -10 m.$\nThế năng trọng trường của vật là\n$W=mgz=2.10.\\left( -10 \\right)= -200J.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 23,
+  "flags": [],
+  "stem": "Một vật có khối lượng $2 kg$ rơi không vận tốc đầu từ độ cao $z=8 m.$ Biết rằng toàn bộ thế năng truyền cho vật lún vào đất. Lấy $ g=9,8 m/s^{2}.$ Thế năng của vật lúc bắt đầu rơi và công của lực cản thực hiện khi vật lún vào đất là",
+  "options": [
+   [
+    "A",
+    "$156,8 J$ và $156,8 J.$",
+    true
+   ],
+   [
+    "B",
+    "$15,6 J$ và $160 J.$",
+    false
+   ],
+   [
+    "C",
+    "$156,8 J$ và $160 J.$",
+    false
+   ],
+   [
+    "D",
+    "$15,7 J$ và $156,8 J.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Chọn mốc tính thế năng tại mặt đất.\nThế năng ban đầu của vật là $W_{t} = mgz = 2.9,8.8 = 156,8 J.$\nKhi vật rơi xuống đất, toàn bộ thế năng ban đầu của vật chuyển hóa thành công của lực cản. Nên công của lực cản cũng bằng $156,8 J.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 24,
+  "flags": [],
+  "stem": "Một vật có khối lượng $100 gram$ được thả rơi tự do. Lấy $.$ Độ giảm thế năng của vật trong giây thứ hai bằng",
+  "options": [
+   [
+    "A",
+    "$15 J.$",
+    true
+   ],
+   [
+    "B",
+    "$20 J.$",
+    false
+   ],
+   [
+    "C",
+    "$10 J.$",
+    false
+   ],
+   [
+    "D",
+    "$25 J.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Quãng đường vật rơi được trong giây thứ $2$ là $ Ds_{2} =s_{2}-s_{1}=\\frac{1}{2}g\\left( t^{2}2 \\right)-t^{1}2=\\frac{1}{2}.10.\\left( 2^{2} \\right)-1^{2} = 15 m.$\n$ÞDh=h_{1}-h_{2}=Ds_{2}=15 m.$\nĐộ giảm thế năng trong giây thứ $2$ là $\\Delta W_{t} = mg\\Delta h = 0,1.10.15 = 15 J.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 25,
+  "flags": [],
+  "stem": "Ở độ cao$20 m,$ một vật được ném thẳng đứng lên cao với vận tốc ban đầu $= 10 m/s.$ Lấy$.$ Bỏ qua sức cản không khí. Độ cao mà ở đó thế năng bằng động năng của vật là",
+  "options": [
+   [
+    "A",
+    "$15 m.$",
+    false
+   ],
+   [
+    "B",
+    "$25 m.$",
+    false
+   ],
+   [
+    "C",
+    "$12,5 m.$",
+    true
+   ],
+   [
+    "D",
+    "$35 m.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Chọn gốc thế năng tại mặt đất $Þ$ Tại vị trí ném $ O$ có $ W_{O}=W_{do}+W_{t0}=mgh_{0}+\\frac{1}{2}mv^{0}2$\nGọi A là vị trí có $W_{dA}=W_{tA}ÞW_{A}=W_{dA}+W_{tA}=2W_{tA}=2mgh_{A}$\nVì vật chỉ chịu tác dụng của trọng lực nên cơ năng được bảo toàn, do đó\n$W_{O}=W_{A}Ûmgh_{0}+\\frac{1}{2}mv^{0}2=2mgh_{A}$\n$Þh_{A}=\\frac{mgh_{0}}{}+\\frac{1}{2}mv^{0}22mg=\\frac{gh_{0}}{}+\\frac{1}{2}v^{0}22g=\\frac{10.20+0,5.10^{2}}{2.10}=12,5 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 26,
+  "flags": [],
+  "stem": "Một vật có khối lượng $200 gram$ được ném thẳng đứng lên cao với vận tốc ban đầu $10 m/s.$ Lấy $,$ bỏ qua sức cản không khí. Khi vật lên đến vị trí cao nhất thì trọng lực đã thực hiện một công là",
+  "options": [
+   [
+    "A",
+    "$10 J.$",
+    false
+   ],
+   [
+    "B",
+    "$20 J.$",
+    false
+   ],
+   [
+    "C",
+    "$-10 J.$",
+    true
+   ],
+   [
+    "D",
+    "$-20 J.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Chọn gốc thế năng tại mặt đất.\nCơ năng của vật tại vị trí ném $W_{1}=\\frac{1}{2}mv_{0}{}^{2}=10 J.$\nCơ năng của vật tại vị trí cao nhất $W_{2} = mgh = 2h$\nÁp dụng định luật bảo toàn cơ năng $W_{1} = W_{2}Þh=5 m.$\nCông của trọng lực $A = Ph.cos\\left( 180^{0} \\right)= mg.h.cos\\left( 180^{0} \\right)= -10 J.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 27,
+  "flags": [],
+  "stem": "Một tảng đá khối lượng $50 kg$ đang nằm trên sườn núi tại vị trí $ M$ có độ cao $300 m$ so với mặt đường thì bị lăn xuống đáy vực tại vị trí $ N$ có độ sâu 30 m so với mặt đường. Lấy $2.$ Nếu chọn gốc thế năng là mặt đường thì thế năng của tảng đá tại các vị trí $ M$ và $ N$ lần lượt",
+  "options": [
+   [
+    "A",
+    "$15 kJ,-15 kJ.$",
+    false
+   ],
+   [
+    "B",
+    "$150 kJ,-15 kJ.$",
+    true
+   ],
+   [
+    "C",
+    "$1500 kJ,15 kJ.$",
+    false
+   ],
+   [
+    "D",
+    "$150 kJ,-150 kJ.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Thế năng của tảng đá tại $M$ là $ W_{t}=mgz_{1}=50.300.10=150000J=150 kJ.$\nThế năng của tảng đá tại $N$ là $ W_{t}=mgz_{2}=50.\\left( -30 \\right).10= -15000J= -15 kJ.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 28,
+  "flags": [],
+  "stem": "Một cần cẩu nâng một vật khối lượng $400 kg$ lên đến vị trí có độ cao $25 m$ so với mặt đất. Lấy $2.$ Công của trọng lực khi cần cẩu di chuyển vật này xuống phía dưới tới vị trí có độ cao $10 m$ là",
+  "options": [
+   [
+    "A",
+    "$100 kJ.$",
+    false
+   ],
+   [
+    "B",
+    "$75 kJ.$",
+    false
+   ],
+   [
+    "C",
+    "$40 kJ.$",
+    false
+   ],
+   [
+    "D",
+    "$60 kJ.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Chọn mốc tính thế năng trọng trường là mặt đất.\nCông của trọng lực khi cần cẩu di chuyển vật xuống phía dưới tới vị trí có độ cao 10 m là\n$A_{P}=W_{t_{1}}-W_{t_{2}}=mg\\left( z_{1} \\right)-z_{2}=400.10.\\left( 25-10 \\right)=60000 J=60 kJ.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 29,
+  "flags": [],
+  "stem": "Một vật có khối lượng $200 gram$ được ném thẳng đứng từ dưới lên với vận tốc ban đầu $10\\frac{m}{s}.$ Lấy $2.$ Bỏ qua sức cản của không khí. Khi đạt độ cao cực đại thì thế năng bằng",
+  "options": [
+   [
+    "A",
+    "$10 J.$",
+    true
+   ],
+   [
+    "B",
+    "$20 J.$",
+    false
+   ],
+   [
+    "C",
+    "$30 J.$",
+    false
+   ],
+   [
+    "D",
+    "$40 J.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Chọn gốc thế năng trọng trường tại vị trí lúc ném\n\nLúc bắt đầu ném $z=0$\nThế năng $W_{t1}=0$\nĐộng năng $W_{d_{1}}=\\frac{1}{2}mv^{2}=\\frac{1}{2}0,2.10^{2}=10 J$\nCơ năng $W_{1}=W_{d_{1}}+W_{t1}=10 J$\nKhi đạt độ cao cực đại $v=0$$Þ$$W_{d2}=0$\nCơ năng $W_{2}=W_{t2}$\nTheo định luật bảo toàn cơ năng $W_{2}=W_{1}ÛW_{t2}=10 J$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "mc",
+  "num": 30,
+  "flags": [],
+  "stem": "Một vật có khối lượng $200 gram$ được ném thẳng đứng từ dưới lên với vận tốc ban đầu 20 m/s. Lấy $2.$ Bỏ qua sức cản của không khí. Sau khi ném $3 s$ thì thế năng của vật bằng",
+  "options": [
+   [
+    "A",
+    "$10 J.$",
+    false
+   ],
+   [
+    "B",
+    "$20 J.$",
+    false
+   ],
+   [
+    "C",
+    "$30 J.$",
+    true
+   ],
+   [
+    "D",
+    "$40 J.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Chọn gốc thế năng trọng trường tại vị trí lúc ném\nĐộ cao của vật sau $3 s$ là $z=v_{0}t+\\frac{1}{2}at^{2}=20.3+\\frac{1}{2}\\left( -10 \\right).3^{2}=15 m$\nThế năng của vật $W_{t}=mgz=0,2.10.15=30 J.$\n\n**[\\\n**",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "tf",
+  "num": 1,
+  "flags": [],
+  "stem": "Cho các phát biểu sau, phát biểu nào **đúng**, phát biểu nào **sai**?",
+  "statements": [
+   [
+    "a",
+    "Thế năng trọng trường của một vật không phụ thuộc vào vị trí của vật tronng trọng trường đó.",
+    "S"
+   ],
+   [
+    "b",
+    "Truyền năng lượng cho vật bằng cách tác dụng lực làm thay đổi trạng thái chuyển động gọi là thực hiện công.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Đơn vị của thế năng là Joule.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Thế năng là đại lượng vô hướng, luôn dương.",
+    "S"
+   ]
+  ],
+  "solution": "a. Thế năng trọng trường của vật phụ thuộc vào mốc thế năng, nên phụ thuộc vào vị trí của vật.\n\nb. Việc truyền năng lượng cho vật bằng cách tác dụng lực lên vật và làm thay đổi trạng thái chuyển động được gọi là thực hiện công cơ học ( gọi tắt là thực hiện công).\n\nd. Thế năng là đại lượng vô hướng, có thể âm, dương hoặc bằng không.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "tf",
+  "num": 2,
+  "flags": [],
+  "stem": "Một vật có khối lượng $50 kg.$ Vật đang ở độ cao $20 m$ so với mặt đất.",
+  "statements": [
+   [
+    "a",
+    "Thế năng của vật khi gốc thế năng ở mặt đất là $10000 J.$",
+    "Đ"
+   ],
+   [
+    "b",
+    "Chọn gốc thế năng ở trần nhà cao $10 m.$ Thì thế năng của vật là $5000 J.$",
+    "Đ"
+   ],
+   [
+    "c",
+    "Thế năng của vật là $6000$ nếu chọn gốc thế năng ở trần nhà cao $6 m.$",
+    "S"
+   ],
+   [
+    "d",
+    "Chọn gốc thế năng ở đáy giếng sâu $10 m$ thì thế năng của vật là $15000 J.$",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Chọn gốc thế năng ở mặt đất $W_{t}=mgz=50.10.20=10000 J.$\n\nb. Chọn gốc thế năng ở trần nhà cao $10 m$$W_{t}=mgz=50.10.10=5000 J.$\nc. Chọn gốc thế năng ở trần nhà cao $6 m$$W_{t}=mgz=50.10.14=7000 J.$\nd. Chọn gốc thế năng ở đáy giếng sâu $10 m$$W_{t}=mgz=50.10.30=15000 J.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "tf",
+  "num": 3,
+  "flags": [],
+  "stem": "Một học sinh của trung tâm bồi dưỡng kiến thức Hà Nội thả một vật rơi tự do có khối lượng $500 gram$ từ độ cao $45 m$ so với mặt đất, bỏ qua ma sát với không khí. Vật chuyển động sau $2 s$ kể từ lúc thả. Cho $ g = 10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Quãng đường chuyển động của vật sau hai giây là $20 m.$",
+    "Đ"
+   ],
+   [
+    "b",
+    "Vật cách mặt đất $20 m.$",
+    "S"
+   ],
+   [
+    "c",
+    "Thế năng của vật là $125 J.$",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nếu vật cách mặt đất $15 m$ thì thế năng của vật là $95 J.$",
+    "S"
+   ]
+  ],
+  "solution": "a. Quãng đường chuyển động của vật sau hai giây là $s=\\frac{1}{2}gt^{2}=\\frac{1}{2}.10.2^{2}=20 m.$\nb. Vậy vật cách mặt đất $z = 45-20 = 25 m.$\nc. Thế năng của vật $W = mgz = 0,5.10.25 = 125 J.$\nd. Thế năng của vật khi vật cách mặt đất $15 m$ là $ W = mgz = 0,5.10.15 = 75 J.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "tf",
+  "num": 4,
+  "flags": [],
+  "stem": "Một vật có khối lượng $4 kg$ được đặt ở vị trí trong trọng trường và có thế năng tại đó $= 600 J.$ Thả vật rơi tự do đến mặt đất có thế năng $= -800 J.$",
+  "statements": [
+   [
+    "a",
+    "Độ cao của vật khi thả tự do đến mặt đất là $20 m.$",
+    "Đ"
+   ],
+   [
+    "b",
+    "Mốc thế năng cách mặt đất $15 m.$",
+    "S"
+   ],
+   [
+    "c",
+    "Độ cao ban đầu của vật là $35 m.$",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vận tốc của vật khi thả rơi là $10 m/s.$",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Ta có độ cao của vật so với vị trí làm mốc thế năng\n$W_{t1}=mgz_{1}Þz_{1}=\\frac{W_{t1}}{mg}=\\frac{600}{4.10}=15 m$\n$W_{t2}= -mgz_{2}Þ -800= -4.10.z_{2}Þz_{2}=20 m$\nb. Mốc thế năng của vật là vị trí cao nhất cách mặt đất $20 m$ và các vị trí rơi là $15 m.$\nc. Độ cao ban đầu của vật là $h=15+20=35 m.$\nd. Ta có công chuyển động của vật $\\left\\{ \\begin{array}{r}\nW_{1} \\\\\n \\\\\n\\mathbf{=} \\\\\nW \\\\\n{}_{t1} \\\\\n\\end{array} \\right.\\ \\mathbf{=}600\\ JW_{2}\\mathbf{=}W_{d2}$\nTheo định luật bảo toàn cơ năng$W_{1}=W_{2}Û600=\\frac{1}{2}mv^{2}Þ600=\\frac{1}{2}.4v^{2}Þv=10\\sqrt{3} m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một vật có khối lượng $m = 5 kg$ được đặt ở một vị trí trong trọng trường và có thế năng tại đó bằng $ W_{t1}=600 J.$ Thả tự do cho vật rơi tới mặt đất, tại đó thế năng của vật bằng $ W_{t2}= -1000 J.$ Lấy $ g = 10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Độ cao của vật khi chưa thả cách gốc thế năng $20 m.$",
+    "Đ"
+   ],
+   [
+    "b",
+    "Gốc thế năng cách mặt đất $20 m.$",
+    "Đ"
+   ],
+   [
+    "c",
+    "Độ cao của vật khi chưa thả so với mặt đất là $35 m.$",
+    "S"
+   ],
+   [
+    "d",
+    "Vận tốc của vật khi thả rơi là $10 m/s.$",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c4-4/media/image359.png"
+  ]
+ },
+ {
+  "file": "c4-4",
+  "part": "tf",
+  "num": 6,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một người có khối lượng $60kg$ đứng trên mặt đất và cạnh một cái giếng nước, lấy $2.$ Một người tại $ A$ cách mặt đất $3 m$ về phía trên và tại đáy giếng cách mặt đất $5 m$ với gốc thế năng tại mặt đất.",
+  "statements": [
+   [
+    "a",
+    "Thế năng của người đó tại $A$ là $1800 J.$",
+    "Đ"
+   ],
+   [
+    "b",
+    "Thế năng của người đó tại đáy giêng là $3000 J.$",
+    "S"
+   ],
+   [
+    "c",
+    "Nếu chọn gốc thế năng ở đáy giếng thì thế năng của người đó tại $A$ là $4800 J.$",
+    "Đ"
+   ],
+   [
+    "d",
+    "Công của trọng lực khi người di chuyển từ đáy giếng lên độ cao $3 m$ so với mặt đất là $4800 J.$",
+    "S"
+   ]
+  ],
+  "solution": "![A diagram of a line with a red dot and blue line Description automatically generated](media/c4-4/media/image378.png){width=\"0.7798611111111111in\" height=\"2.0180555555555557in\"} a. Khi chọn mốc thế năng tại mặt đất (tại $O$)\n\nThế năng của người tại $A$ cách mặt đất $3 m$ về phía trên $\\left( z_{A} \\right)=3 m$$W_{tA}=mgz_{A}=60.10.3=1800 J.$\n\nb. Thế năng của người tại đáy giếng $\\left( z_{D} \\right)= -5 m$ $ W_{tD}=mgz_{D}=60.10.\\left( -5 \\right)= -3000 J.$\nc. Khi chọn mốc thế năng tại đáy giếng (tại $D$)\nThế năng của người tại $A$ cách mặt đất $3 m$ về phía trên $\\left( z_{A} \\right)=3+5=8 m$\n![A diagram of a line with text Description automatically generated](media/c4-4/media/image390.png){width=\"0.7923611111111111in\" height=\"1.6583333333333334in\"} $W_{tA}=mgz_{A}=60.10.8=4800 J.$\nThế năng của người tại đáy giếng $\\left( z_{D} \\right)=0ÞW_{tD}=mgz_{D}=0 J.$\n\nd. Công của trọng lực khi người di chuyến từ đáy giếng lên độ cao $3 m$ so với mặt đất$ A_{P}= -P.s= -mgs= -60.10.8= -4800 J$\n\nĐộ giảm thế năng của người khi người di chuyến từ đáy giếng lên độ cao $3 m$ so với mặt đất $ W_{tD}-W_{tA}=0-4800= -4800 J.$\n\nTừ kết quả trên ta thấy công của trọng lực chính bằng độ giảm thế năng trên quãng đường trên.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "sa",
+  "num": 1,
+  "flags": [],
+  "stem": "Một vật có khối lượng $5 kg,$ đang đứng yên ở độ cao $10 m.$ Lấy $2.$ Thế năng trọng trường của vật có giá trị là bao nhiêu Joule?",
+  "solution": "Thế năng trọng trường của vật$W_{t} = mgh = 5.10.9,8 = 490 J.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "sa",
+  "num": 2,
+  "flags": [],
+  "stem": "Một vật có khối lượng $100 gram$ được thả rơi tự do. Lấy $.$ Độ giảm thế năng của vật trong giây thứ hai bằng bao nhiêu $ Joule?$",
+  "solution": "Quãng đường vật rơi được trong giây thứ $2$ là $ Ds_{2} =s_{2}-s_{1}=\\frac{1}{2}g\\left( t^{2}2 \\right)-t^{1}2=\\frac{1}{2}.10.\\left( 2^{2} \\right)-1^{2} = 15 m.$\n$ÞDh=h_{1}-h_{2} = Ds_{2}=15 m.$\nĐộ giảm thế năng trong giây thứ $2$ là $ DW_{t}= mgDh= 0,1.10.15 = 15 J.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "sa",
+  "num": 3,
+  "flags": [],
+  "stem": "Một vật có khối lượng $2 kg$ được thả rơi tự do từ độ cao $18 m.$ Biết $ g = 10 m/s^{2}.$ Công suất trung bình của trọng lực trong $1,5 s$ đầu tiên là bao nhiêu Watt?",
+  "solution": "Ta có $A_{P} = W_{t1}-W_{t2} = mgz_{1}-mgz_{2} = mg(z_{1}-z_{2}) = mgs = 2.10.\\left( \\frac{1}{2} \\right).10.1,5^{2} = 225 J.$\nCông suất trung bình của trọng lực trong $1,5 s$ đầu tiên $ P = \\frac{A_{P}}{t} = \\frac{225}{1,5} = 150 W.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c4-4",
+  "part": "sa",
+  "num": 4,
+  "flags": [],
+  "stem": "Một vật có khối lượng $4 kg$ đặt ở một vị trí trong trọng trường mà có thế năng là $= 600 J.$ Thả vật rơi tụ do tới mặt đất tại đó thế năng của vật là $800 J.$ Lấy $2.$ Vật được thả rơi cách mặt đất bao nhiêu mét?",
+  "solution": "Ta có độ cao của vật so với vị trí làm mốc thế năng $\\left\\{ \\begin{array}{r}\nW_{t1} \\\\\n \\\\\n\\mathbf{=} \\\\\nm \\\\\ng \\\\\nz \\\\\n{}_{1} \\\\\n\\end{array} \\right.\\ \\mathbf{Þ}z_{1}\\mathbf{=}\\frac{W_{t1}}{mg}\\mathbf{=}\\frac{600}{4.10}\\mathbf{=}15\\ m.W_{t2}\\mathbf{=}mgz_{2}\\mathbf{Þ}z_{2}\\mathbf{=}\\frac{W_{t2}}{mg}\\mathbf{=}\\frac{\\mathbf{-}800}{4.10}\\mathbf{= -}20\\ m.$\nVậy mốc thế năng của vật cách vật là vị trí cách mặt đất $20 m$ và cách vị trí rơi $15 m.$\nĐộ cao ban đầu của vật là $h=15+20=35 m.$",
+  "hasImg": false,
+  "imgs": []
+ }
+]

@@ -17,8 +17,11 @@ if os.environ.get('VL10_DO2'):
                      'nguon': o['final'], 'haiku': (hk.get(o['key']) or {}).get('giai'), 'sonnet': o.get('ai'), 'goc': q['gocLoiGiai'],
                      'giaiAI': q.get('explanation', ''), 'lydo': 'Dò lần 2: ' + ('Sonnet giải lại LỆCH đáp án đang ghi' if o['kq'] == 'LECH' else 'Sonnet không trả được kết quả') + ' (cột Nguồn = đáp án đang ghi; Haiku = lượt giải đầu; Sonnet = lần 2)', 'ghiChuAI': ''})
     cau = {}
+loai_kod = []
 for k, q in cau.items():
     h = hk.get(k, {}); s = sn.get(k)
+    if os.environ.get('VL10_CHI_HAI_MAY_DONG_Y') and s and s.get('trangThai') != 'khop' and json.dumps(s.get('giai')) != json.dumps(h.get('giai')):
+        loai_kod.append(k); continue   # Haiku ≠ Sonnet: không ổn định → loại luôn
     if h.get('trangThai') == 'khop' or (s and s['trangThai'] == 'khop'): continue
     lydo = {'LECH': 'Đáp án nguồn lệch với lời giải độc lập', 'khong-co-dap-so-nguon': 'Lời giải gốc không nêu đáp số',
             'chua-co-ket-qua': 'Chưa có kết quả giải'}.get((s or h).get('trangThai'), '?')
@@ -26,6 +29,7 @@ for k, q in cau.items():
                  'nguon': (s or h).get('nguon'), 'haiku': h.get('giai'), 'sonnet': s.get('giai') if s else None,
                  'goc': q['gocLoiGiai'], 'giaiAI': (s or h).get('explanation', ''), 'lydo': lydo, 'ghiChuAI': ((s or h).get('ghi_chu') or '')})
 os.makedirs(f'{H}/duyet', exist_ok=True)
+json.dump(loai_kod, open(f'{H}/loai-khong-on-dinh.json', 'w'))
 json.dump(rows, open(f'{H}/duyet/items.json' if not os.environ.get('VL10_DO2') else f'{H}/duyet/items-do2.json', 'w'), ensure_ascii=False, indent=1)
 data = json.dumps({'rows': rows}, ensure_ascii=False).replace('<', '\\u003c')
 html = '''<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

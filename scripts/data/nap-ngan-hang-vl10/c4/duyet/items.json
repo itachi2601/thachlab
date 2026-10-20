@@ -1,0 +1,350 @@
+[
+ {
+  "key": "c4-1-mc-041",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Cho một máy bay lên thẳng có khối lượng 8.10$^{3}$ kg, sau thời gian 2 phút máy bay lên được độ cao là 2000 m. Lấy g = 10 m/s$^{2}$. Công của động cơ khi chuyển động thẳng đều là</p>",
+  "options": [
+   "10$^{8}$ J.",
+   "2.10$^{8}$ J.",
+   "3.10$^{8}$ J.",
+   "4.10$^{8}$ J."
+  ],
+  "statements": null,
+  "nguon": "A",
+  "haiku": "B",
+  "sonnet": "B",
+  "goc": "Ta có công của động cơ là $A=Fh$\nVì máy bay chuyển động đi lên thẳng đều nên $F=P=mg=8.10^{3}.10=8.10^{4} N.$\nCông của động cơ $A=F.h=5.10^{4}.2000=10^{8} J.$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Máy bay chuyển động thẳng đều nên hợp lực bằng 0: lực nâng của động cơ $F = P = mg$.</p><p class=\"text-base leading-relaxed my-2\">Công của động cơ: $A = F\\cdot h = mgh$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 8.10^{3}\\cdot 10\\cdot 2000 = 1{,}6.10^{8}\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Giá trị này gần nhất với phương án $2.10^{8}$ J nên chọn B.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Tính đúng theo đề được A = 1,6.10^8 J, không trùng chính xác phương án nào; chọn B là gần nhất (đề có thể có sai số liệu hoặc đáp án làm tròn)."
+ },
+ {
+  "key": "c4-1-mc-044",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một khối gỗ có trọng lượng là P = 50 N được đẩy trượt đều lên trên một mặt phẳng nghiêng nhẵn với góc nghiêng 25$^{0}$ so với phương ngang. Biết khối gỗ di chuyển được một đoạn 1 m trên mặt phẳng nghiêng. Công mà người đẩy thực hiện trên khối gỗ nếu lực tác dụng song song với mặt phẳng ngang là</p>",
+  "options": [
+   "23,32 J",
+   "21,22 J",
+   "107,35J",
+   "103,53J"
+  ],
+  "statements": null,
+  "nguon": "A",
+  "haiku": "B",
+  "sonnet": "B",
+  "goc": "Xét lực có phương song song với mặt phẳng ngang, ta có\n![Sách bài tập Vật lí 10 Bài 15: Năng lượng và công - Chân trời sáng tạo (ảnh 1)](media/c4-1/media/image128.png){width=\"2.6180555555555554in\" height=\"1.2916666666666667in\"}\n**C**hiếu ox\n$P.sin25^{0}=F.cos25^{0}ÞF=P.tan25^{0}$\n**C**ông mà người thực hiện là\n$A=F.d=P.tan25^{0}.d=23,32(J)$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Vật trượt đều nên hợp lực bằng 0. Chọn trục dọc mặt phẳng nghiêng, chiều dương hướng lên; lực đẩy $\\vec F$ nằm ngang, mặt phẳng nhẵn nên không có ma sát.</p><p class=\"text-base leading-relaxed my-2\">Chiếu lên phương mặt phẳng nghiêng: $F\\cos\\alpha - P\\sin\\alpha = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F = P\\tan\\alpha = 50\\tan 25^\\circ \\approx 23{,}32$ N</p><p class=\"text-base leading-relaxed my-2\">Góc giữa $\\vec F$ và độ dời là $\\alpha$: $A = F s\\cos\\alpha$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = P s\\sin\\alpha = 50\\cdot 1\\cdot\\sin 25^\\circ \\approx 21{,}1$ J</p><p class=\"text-base leading-relaxed my-2\">Giá trị gần nhất là 21,22 J (phương án A = 23,32 J là sai vì bỏ qua $\\cos\\alpha$). Chọn B.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề hiểu 'song song với mặt phẳng ngang' là lực đẩy nằm ngang. Kết quả tính được 21,13 J, đáp án B (21,22 J) lệch nhẹ do làm tròn của đề."
+ },
+ {
+  "key": "c4-1-tf-060",
+  "type": "true_false",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một đoàn tàu có khối lượng 100 tấn chuyển động nhanh dần đều từ địa điểm A đến địa điểm B cách nhau 2 km, khi đó vận tốc của tàu tăng từ 15 m/s đến 20 m/s. Cho biết hệ số ma sát là 0,005. Lấy g = 9,8m/s$^{2}$. Tính thời gian tàu chạy và công của đầu máy tàu trên đoạn đường AB.</p>",
+  "options": null,
+  "statements": [
+   {
+    "text": "Gia tốc chuyển động của đoàn tàu là $0,4 m/s^{2}.$",
+    "answer": true
+   },
+   {
+    "text": "Lực kéo của đầu máy của đoàn tàu với đường có độ lớn 8900 N.",
+    "answer": true
+   },
+   {
+    "text": "Tàu chày từ A đến B với thời gian 125 s.",
+    "answer": true
+   },
+   {
+    "text": "Công mà đầu máy của đoàn tàu thực hiện là 17800000 J.",
+    "answer": true
+   }
+  ],
+  "nguon": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "haiku": [
+   false,
+   false,
+   false,
+   false
+  ],
+  "sonnet": [
+   false,
+   false,
+   false,
+   false
+  ],
+  "goc": "a. Gia tốc của đoàn tàu là $a=\\frac{v^{2}}{}-v^{0}22s=\\frac{20^{2}}{}-15^{2}2.2000=0,04 m/s^{2}.$\n\nb. Gọi $\\overrightarrow{F}$ là lực kéo của đầu máy và ${\\overrightarrow{F}}_{ms}$ là lực ma sát trên đoàn tàu, ta được\n\n$\\overrightarrow{F}+{\\overrightarrow{F}}_{ms}+\\overrightarrow{P}+\\overrightarrow{N}=m\\overrightarrow{a}ÞF-F_{ms}=maÞF=F_{ms}+ma$\n\n\\- Với $F_{ms}=mN=mP=mmgÞF=m\\left( mg+a \\right)=8900 N.$\n\nc. Thời gian tàu chạy từ A đến B là $t=\\frac{v_{2}}{}-v_{1}a=\\frac{20-15}{0,04}=125 s.$\n\nd. Công của đầu máy trên đoạn đường AB là A = Fs = 17800000 J.",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Đổi: $m=10^5$ kg, $s=2000$ m, $v_0=15$ m/s, $v=20$ m/s, $\\mu=0{,}005$. Giả sử tàu chạy trên đường ngang.</p><p class=\"text-base leading-relaxed my-2\">a) $a=\\dfrac{v^2-v_0^2}{2s}=\\dfrac{400-225}{4000}=0{,}04375$ m/s² ≠ 0,4 m/s². Sai.</p><p class=\"text-base leading-relaxed my-2\">b) $F_{ms}=\\mu mg=0{,}005\\cdot10^5\\cdot9{,}8=4900$ N.</p><p class=\"text-base leading-relaxed my-2\">$F-F_{ms}=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=ma+F_{ms}=4375+4900=9275$ N ≠ 8900 N. Sai.</p><p class=\"text-base leading-relaxed my-2\">c) $t=\\dfrac{v-v_0}{a}=\\dfrac{5}{0{,}04375}\\approx114{,}3$ s ≠ 125 s. Sai.</p><p class=\"text-base leading-relaxed my-2\">d) $A=Fs=9275\\cdot2000=1{,}855\\cdot10^7$ J ≠ 17 800 000 J. Sai.</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra bằng định lí động năng: $A=\\tfrac12m(v^2-v_0^2)+F_{ms}s=8{,}75\\cdot10^6+9{,}8\\cdot10^6=1{,}855\\cdot10^7$ J, khớp.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Giả sử đường ngang. Với số liệu đề cho, cả 4 ý đều sai (a≈0,044 m/s²; F≈9275 N; t≈114,3 s; A≈1,855·10^7 J). Các giá trị trong đề có thể lấy từ số liệu khác."
+ },
+ {
+  "key": "c4-2-tf-031",
+  "type": "true_false",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một vật khối lượng m được kéo chuyển động thẳng đều trên sàn bằng một lực F = 20 N hợp với phương ngang góc $30{^\\circ},$ khi vật di chuyển 2 m hết thời gian 4 s.</p>",
+  "options": null,
+  "statements": [
+   {
+    "text": "Công của lực kéo trong 4 s là 20 J.",
+    "answer": false
+   },
+   {
+    "text": "Công suất của lực kéo trong 4s là $3 W.$",
+    "answer": true
+   },
+   {
+    "text": "Nếu vật di chuyển được 10 m thì công của lực kéo là $3 J.$",
+    "answer": true
+   },
+   {
+    "text": "Vật di chuyển 10 m hết 15 s thì công suất của lực kéo là $3 W.$",
+    "answer": false
+   }
+  ],
+  "nguon": [
+   false,
+   true,
+   true,
+   false
+  ],
+  "haiku": [
+   false,
+   false,
+   false,
+   false
+  ],
+  "sonnet": [
+   false,
+   false,
+   false,
+   false
+  ],
+  "goc": "a. Công A của lực kéo trong 4 s là $3 J.$\n\nb. Công suất của lực kéo bằng $3 W.$\n\nc. Công của lực kéo đi được 10 m $3 J.$\n\nd. Công suất của lực kéo đi hết 15 s $33 W.$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Vật chuyển động thẳng đều, lực kéo $F$ không đổi hợp với phương dịch chuyển góc $\\alpha = 30^\\circ$ nên công của lực kéo: $A = F s\\cos\\alpha$.</p><p class=\"text-base leading-relaxed my-2\">Với $s = 2$ m: $A = 20\\cdot 2\\cdot\\cos 30^\\circ = 20\\sqrt3 \\approx 34{,}64$ J.</p><p class=\"text-base leading-relaxed my-2\">a) Công trong 4 s là $34{,}64$ J, không phải $20$ J. Sai.</p><p class=\"text-base leading-relaxed my-2\">b) $P = \\dfrac{A}{t} = \\dfrac{34{,}64}{4}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P \\approx 8{,}66$ W, không phải $3$ W. Sai.</p><p class=\"text-base leading-relaxed my-2\">c) Với $s = 10$ m: $A = 20\\cdot 10\\cdot\\cos 30^\\circ$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A \\approx 173{,}2$ J, không phải $3$ J. Sai.</p><p class=\"text-base leading-relaxed my-2\">d) $P = \\dfrac{173{,}2}{15}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow P \\approx 11{,}5$ W, không phải $3$ W. Sai.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Các giá trị 3 W, 3 J trong đề không khớp với dữ kiện; theo dữ kiện đã cho thì cả 4 ý đều sai."
+ },
+ {
+  "key": "c4-2-tf-043",
+  "type": "true_false",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một xe tải có khối lượng 2,5 tấn, bắt đầu chuyển động thẳng nhanh dần đều. Sau khi đi được quãng đường 144 m thì xe đạt vận tốc 12 m/s. Biết hệ số ma sát giữa xe và mặt đường là $m$= 0,04, lấy $ g = 10 m/s^{2}.$</p>",
+  "options": null,
+  "statements": [
+   {
+    "text": "Công của lực tác dụng lên xe trên quãng đường 144 m đầu tiên là 324000 J.",
+    "answer": true
+   },
+   {
+    "text": "Công suất của lực do động cơ là 15,3 kW.",
+    "answer": true
+   },
+   {
+    "text": "Công hao phí là 104000 J",
+    "answer": false
+   },
+   {
+    "text": "Hiệu suất hoạt động của động cơ là 55,6%.",
+    "answer": true
+   }
+  ],
+  "nguon": [
+   true,
+   true,
+   false,
+   true
+  ],
+  "haiku": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "sonnet": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "goc": "a. Vật chịu tác dụng 4 lực $F+f+N+P=ma$\n\nChiếu lên phương chuyển động $Þ$ $ F-f=ma$\n\nTừ $v^{2}-v_{0}{}^{2}=2as$$Þ$ a = 0,5 m/s^2^.\n\n$Þ$ $ F=ma+mmg$= 2500.0,5 + 0,04.2500.10= 2250 N.\n\nCông $A=Fs$= 2250.144 = 324000 J.\n\nb. Áp dụng $t=\\frac{v-v_{0}}{a}=\\frac{0-12}{0,5}=24 s$$Þ$ $ P=\\frac{324000}{24}=13500 W = 13,5 kW.$\n\nc. Công suất hao phí là công của lực ma sát, công cản\n\n$Þ$ $ A_{ms}=f_{ms}.s=mmg.s$= 0,04.2500.10.144 = 144000 J.\n\nd. $H=\\frac{A_{tp}}{}-A_{vi}A_{tp}=\\frac{324000-144000}{324000}=0,5555=55,6\\%$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Áp dụng: $v^2=2as$ và định luật II Niu-tơn cho chuyển động thẳng nhanh dần đều. Đổi $m=2500$ kg.</p><p class=\"text-base leading-relaxed my-2\">$a=\\dfrac{v^2}{2s}=\\dfrac{12^2}{2\\cdot 144}=0{,}5$ m/s²</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=\\dfrac{v}{a}=24$ s</p><p class=\"text-base leading-relaxed my-2\">$F_{ms}=\\mu mg=0{,}04\\cdot2500\\cdot10=1000$ N</p><p class=\"text-base leading-relaxed my-2\">$F-F_{ms}=ma$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=2500\\cdot0{,}5+1000=2250$ N</p><p class=\"text-base leading-relaxed my-2\">a) $A=Fs=2250\\cdot144=324000$ J. <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $P=\\dfrac{A}{t}=\\dfrac{324000}{24}=13500$ W $=13{,}5$ kW $\\ne 15{,}3$ kW. <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Công hao phí là công của lực ma sát: $A_{ms}=F_{ms}s=1000\\cdot144=144000$ J $\\ne104000$ J. <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Công có ích bằng động năng: $W_đ=\\dfrac12mv^2=180000$ J.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow H=\\dfrac{180000}{324000}\\approx55{,}6\\%$. <b>Đúng</b>.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Ý a) hiểu là công của lực kéo động cơ."
+ },
+ {
+  "key": "c4-2-sa-047",
+  "type": "short_answer",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một gàu nước khối lượng 10 kg kéo cho chuyển động đều lên độ cao 5 m trong thời gian 1 phút 40 giây. Lấy $2 .$ Công suất của lực kéo là bao nhiêu W?</p>",
+  "options": null,
+  "statements": null,
+  "nguon": null,
+  "haiku": "5",
+  "sonnet": "5",
+  "goc": "$W.$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Gàu chuyển động đều nên lực kéo cân bằng với trọng lực: $F = P = mg = 10\\cdot 10 = 100\\ \\text{N}$.</p><p class=\"text-base leading-relaxed my-2\">Công của lực kéo: $A = F\\cdot h = 100\\cdot 5 = 500\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Thời gian: $t = 1\\ \\text{phút}\\ 40\\ \\text{s} = 100\\ \\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">Công suất: $\\mathcal{P} = \\dfrac{A}{t} = \\dfrac{500}{100}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\mathcal{P} = 5\\ \\text{W}$.</p>",
+  "lydo": "Lời giải gốc không nêu đáp số",
+  "ghiChuAI": "Đề lỗi ký tự ở 'Lấy $2 .$', hiểu là g = 10 m/s²."
+ },
+ {
+  "key": "c4-3-mc-036",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một vật khối lượng $m =2 kg$ trượt không vận tốc ban đầu trên mặt phẳng nghiêng dài $2 m,$ góc nghiêng so với mặt phẳng ngang là $a=30{^\\circ}.$ Lấy $ g=10 m/s^{2}.$ Khi lực ma sát trượt $ F = 1 N$thì tốc độ ở cuối mặt phẳng nghiêng là</p>",
+  "options": [
+   "$15 m/s.$",
+   "$2 m/s.$",
+   "$2 m/s.$",
+   "$20 m/s.$"
+  ],
+  "statements": null,
+  "nguon": "C",
+  "haiku": "B",
+  "sonnet": "B",
+  "goc": "Gia tốc của vật\n$Psina-F_{mst}=maÞa=\\frac{Psina-F_{mst}}{m}=\\frac{2.10.sin30^{0}}{}-12=4,5 m/s^{2}.$\nVận tốc cuối mặt phẳng nghiêng $v^{2}-v^{0}2=2.l.aÞ|v|=\\sqrt{2.l.a}=\\sqrt{2.2.4,5}=3\\sqrt{2} m/s.$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Áp dụng định luật II Newton cho vật trượt xuống dọc mặt phẳng nghiêng (chiều dương hướng xuống dốc): $ma = mg\\sin\\alpha - F_{ms}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a = g\\sin\\alpha - \\dfrac{F_{ms}}{m} = 10\\cdot 0{,}5 - \\dfrac{1}{2} = 4{,}5\\ \\text{m/s}^2$</p><p class=\"text-base leading-relaxed my-2\">Vật bắt đầu từ trạng thái nghỉ nên $v^2 = 2as$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v^2 = 2\\cdot 4{,}5\\cdot 2 = 18$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v \\approx 4{,}24\\ \\text{m/s}$</p><p class=\"text-base leading-relaxed my-2\">Kết quả này không trùng với phương án nào trong đề (các phương án hiển thị 15; 2; 2; 20 m/s). Chọn B theo quy ước vì đề có lỗi ký tự.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề lỗi: phương án B và C giống nhau (2 m/s), không có đáp án nào bằng kết quả tính được v = √18 ≈ 4,24 m/s. Có thể một phương án gốc là 4,24 m/s bị lỗi khi chuyển từ Word. Cần kiểm tra lại đề gốc; đáp án B chỉ là chọn tạm."
+ },
+ {
+  "key": "c4-3-mc-040",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một viên đạn khối lượng $m = 10 gram$ bay ngang với vận tốc $300 m/s$ xuyên vào tấm gỗ dày $5 cm.$ Sau khi xuyên qua tấm gỗ, đạn có vận tốc $=100 m/s.$ Lực cản trung bình của tấm gỗ tác dụng lên viên đạn là</p>",
+  "options": [
+   "$N.$",
+   "$-4.10^{-3} N.$",
+   "$-8.10^{-3} N.$",
+   "$N.$ \n<strong>ng dẫn giải</strong> \nCông của lực cản của gỗ tác dụng lên đạn $A= -F_{c}s.$ \nÁp dụng độ biến thiên động năng \n$=AÛ\\frac{1}{2}mv^{2}2-\\frac{1}{2}mv^{1}2 = -F_{c}sÞF_{c}= -\\frac{1}{2}.\\frac{0,01}{0,05}.\\left( 100^{2} \\right)-300^{2}=8.10^{3} N.$ \n**[\\"
+  ],
+  "statements": null,
+  "nguon": "A",
+  "haiku": "C",
+  "sonnet": "C",
+  "goc": "",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Áp dụng định lí động năng cho viên đạn khi xuyên qua tấm gỗ (chỉ lực cản sinh công, chọn chiều dương theo chiều chuyển động): $A = W_{đ2} - W_{đ1}$.</p><p class=\"text-base leading-relaxed my-2\">$-F_c s = \\frac{1}{2}m(v_2^2 - v_1^2)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_c = \\frac{m(v_1^2 - v_2^2)}{2s} = \\frac{0{,}01\\cdot(300^2 - 100^2)}{2\\cdot 0{,}05}$</p><p class=\\\"text-base leading-relaxed my-2\\\">$\\Rightarrow F_c = 8\\cdot10^{3}$ N.</p><p class=\"text-base leading-relaxed my-2\">Lực cản ngược chiều chuyển động nên lực cản trung bình là $-8\\cdot10^{3}$ N. Chọn C.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề lỗi ký tự: phương án A, D mất nội dung; phương án C ghi $-8.10^{-3}$ N, nhiều khả năng là $-8.10^{3}$ N (mất dấu ^, kết quả đúng là 8000 N). Chọn C theo hướng dẫn giải."
+ },
+ {
+  "key": "c4-3-tf-042",
+  "type": "true_false",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một thiên thạch có khối lượng 2 tấn bay với tốc độ 100 km/s trong vũ trụ.</p>",
+  "options": null,
+  "statements": [
+   {
+    "text": "Trọng lượng của thiên thạch không thay đổi nếu như bay vào Trái Đất.",
+    "answer": true
+   },
+   {
+    "text": "Động năng của thiên thạch là $5.10^{12} J.$",
+    "answer": false
+   },
+   {
+    "text": "Nếu tốc độ của thiên thạch giảm còn 80 km/s thì động năng của thiên thạch là $6,4.10^{12} J.$",
+    "answer": true
+   },
+   {
+    "text": "Nếu giảm khối lượng thiên thạch đi một nửa và tăng tốc độ thiên thạch lên một nửa thì động năng của thiên thạch không đổi.",
+    "answer": false
+   }
+  ],
+  "nguon": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "haiku": [
+   false,
+   false,
+   true,
+   false
+  ],
+  "sonnet": null,
+  "goc": "Đổi 2 tấn $=2000 kg,$$v = 100 km/s = 10^{5} m/s.$\n\nb. Động năng của thiên thạch $W_{d}=\\frac{1}{2}mv^{2}=\\frac{1}{2}.2000.\\left( 10^{5} \\right)^{2}=10^{13} J.$\n\nc. Nếu tốc độ của thiên thạch $W_{d}=\\frac{1}{2}mv^{2}=\\frac{1}{2}.2000.\\left( 80.10^{3} \\right)^{2}=6,4.10^{12} J.$\n\nd. Nếu giảm khối lượng thiên thạch đi một nửa và tăng tốc độ thiên thạch lên một nửa thì động năng sẽ tang lên một nửa.\n\nĐộng năng của máy bay lúc này $=\\frac{1}{2}.1000.(2.10^{5})^{2}=2.10^{13} J.$\n\n**Câu 3:** Một vật nặng 3 kg đang đứng yên trên mặt phẳng nhẵn nằm ngang thì bị tác dụng bởi một lực có độ lớn 15 N theo phương song song với mặt ngang trong thời gian 3 s.\n\n| **Phát biểu**                                                                                            | **Đ – S** |\n|:---------------------------------------------------------------------------------------------------------|:---------:|\n| a. Tại thời điểm ban đầu vật đang đứng yên thì trọng lực tác dụng lên vật và phản lực có độ lớn bằng 0. |   **S**   |\n| b. Vận tốc lớn nhất của vật bằng 15 m/s.                                                                |   **Đ**   |\n| c. Công mà lực đã thực hiện có giá trị bằng 337,5 J.                                                    |   **Đ**   |\n| d. Động năng lớn nhất của vật bằng 337,5 J.                                                             |   **Đ**   |\n\n**Hướng dẫn giải**\na. Gia tốc $a=\\frac{F}{m}=\\frac{15}{13}=5 m/s^{2}.$\n\nTa có $v_{max}=v_{0}+at$ với $t=3 s Þv=5.3=15 m/s.$\n\nc. Quãng đường vật di chuyển $s=\\frac{1}{2}at^{2}=\\frac{1}{2}.5.3^{2}=22,5 m.$\nCông mà lực đã thực hiện$A = Fs.cosa=15.22,5=337,5 J.$\nd. Động năng lớn nhất  $2 = \\frac{1}{2}.3.15 = 337,5 J.$\nCó thể sử dụng định lí động năng $= A,$ mà $= 0$$ÞW_{d_{max}} = 337,5 J.$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $m = 2 \\text{ tấn} = 2000 \\text{ kg}$, $v = 100 \\text{ km/s} = 10^5 \\text{ m/s}$.</p><p class=\"text-base leading-relaxed my-2\"><b>a) Sai.</b> Trọng lượng là lực hấp dẫn của Trái Đất tác dụng lên vật: $P = mg$. Khi ở ngoài vũ trụ xa, trọng lượng của thiên thạch gần bằng 0. Khi bay vào vùng hấp dẫn của Trái Đất, trọng lượng có giá trị $P = mg \\neq 0$, nên trọng lượng thay đổi.</p><p class=\"text-base leading-relaxed my-2\"><b>b) Sai.</b> Động năng: $W_d = \\dfrac{1}{2}mv^2 = \\dfrac{1}{2}\\cdot 2000\\cdot(10^5)^2 = 10^{13} \\text{ J}$. Giá trị $5.10^{12}$ J là sai.</p><p class=\"text-base leading-relaxed my-2\"><b>c) Đúng.</b> Với $v' = 80 \\text{ km/s} = 8.10^4 \\text{ m/s}$: $W_d' = \\dfrac{1}{2}\\cdot 2000\\cdot(8.10^4)^2 = 6,4.10^{12} \\text{ J}$.</p><p class=\"text-base leading-relaxed my-2\"><b>d) Sai.</b> Khối lượng còn $m' = \\dfrac{m}{2}$, tốc độ tăng thành $v' = 1{,}5v$. Khi đó: $W_d' = \\dfrac{1}{2}\\cdot\\dfrac{m}{2}\\cdot(1{,}5v)^2 = \\dfrac{1}{2}mv^2\\cdot\\dfrac{2{,}25}{2} = 1{,}125\\,W_d$. Động năng tăng khoảng 12,5%, không đổi là sai.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Ý a) phụ thuộc cách hiểu: trong vũ trụ xa thiên thạch gần như không có trọng lượng, nên đáp án 'Sai' dựa trên việc trọng lượng chỉ xuất hiện khi chịu hấp dẫn của Trái Đất."
+ },
+ {
+  "key": "c4-4-mc-014",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây là <strong>sai</strong> khi nói về thế năng trọng trường?</p>",
+  "options": [
+   "Trong miền hẹp trên mặt đất, trọng trường là đều.",
+   "Đi dọc một đường khép kín công của trọng trường bằng không.",
+   "Đi theo những đường cong hở công của trọng trường sẽ khác không.",
+   "Vật đi từ thấp lên cao thế năng của trọng trường của vật tăng"
+  ],
+  "statements": null,
+  "nguon": "D",
+  "haiku": "C",
+  "sonnet": "C",
+  "goc": "Vật đi từ thấp lên cao thế năng của trọng trường của vật tăng **sai** vì phụ thuộc vào lúc chọn gốc thế năng.",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Trọng lực là lực thế: công của trọng lực chỉ phụ thuộc vị trí đầu và vị trí cuối, không phụ thuộc hình dạng đường đi, $A = mg(h_1 - h_2)$.</p><p class=\"text-base leading-relaxed my-2\">A đúng: trong miền hẹp gần mặt đất, $\\vec g$ không đổi về hướng và độ lớn nên trọng trường là đều.</p><p class=\"text-base leading-relaxed my-2\">B đúng: đường khép kín có $h_1 = h_2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$A = 0$.</p><p class=\"text-base leading-relaxed my-2\">C sai: công của trọng lực trên đường cong hở bằng $mg(h_1 - h_2)$. Nếu hai điểm đầu và cuối cùng độ cao thì công vẫn bằng 0, nên không thể khẳng định công luôn khác không.</p><p class=\"text-base leading-relaxed my-2\">D đúng: $W_t = mgh$ nên khi $h$ tăng thì thế năng tăng.</p><p class=\"text-base leading-relaxed my-2\">Vậy phát biểu sai là C.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": ""
+ },
+ {
+  "key": "c4-4-tf-034",
+  "type": "true_false",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng $4 kg$ được đặt ở vị trí trong trọng trường và có thế năng tại đó $= 600 J.$ Thả vật rơi tự do đến mặt đất có thế năng $= -800 J.$</p>",
+  "options": null,
+  "statements": [
+   {
+    "text": "Độ cao của vật khi thả tự do đến mặt đất là $20 m.$",
+    "answer": true
+   },
+   {
+    "text": "Mốc thế năng cách mặt đất $15 m.$",
+    "answer": false
+   },
+   {
+    "text": "Độ cao ban đầu của vật là $35 m.$",
+    "answer": true
+   },
+   {
+    "text": "Vận tốc của vật khi thả rơi là $10 m/s.$",
+    "answer": true
+   }
+  ],
+  "nguon": [
+   true,
+   false,
+   true,
+   true
+  ],
+  "haiku": [
+   false,
+   false,
+   true,
+   false
+  ],
+  "sonnet": [
+   false,
+   false,
+   true,
+   false
+  ],
+  "goc": "a. Ta có độ cao của vật so với vị trí làm mốc thế năng\n$W_{t1}=mgz_{1}Þz_{1}=\\frac{W_{t1}}{mg}=\\frac{600}{4.10}=15 m$\n$W_{t2}= -mgz_{2}Þ -800= -4.10.z_{2}Þz_{2}=20 m$\nb. Mốc thế năng của vật là vị trí cao nhất cách mặt đất $20 m$ và các vị trí rơi là $15 m.$\nc. Độ cao ban đầu của vật là $h=15+20=35 m.$\nd. Ta có công chuyển động của vật $\\left\\{ \\begin{array}{r}\nW_{1} \\\\\n \\\\\n\\mathbf{=} \\\\\nW \\\\\n{}_{t1} \\\\\n\\end{array} \\right.\\ \\mathbf{=}600\\ JW_{2}\\mathbf{=}W_{d2}$\nTheo định luật bảo toàn cơ năng$W_{1}=W_{2}Û600=\\frac{1}{2}mv^{2}Þ600=\\frac{1}{2}.4v^{2}Þv=10\\sqrt{3} m/s.$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Chọn $g=10\\ m/s^2$. Độ giảm thế năng bằng công của trọng lực (không phụ thuộc mốc): $W_{t1}-W_{t2}=mgh$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow h=\\dfrac{600-(-800)}{4\\cdot 10}=35\\ m$.</p><p class=\"text-base leading-relaxed my-2\">Thế năng tại mặt đất $-800=mg z_2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow z_2=-20\\ m$, tức mốc thế năng cách mặt đất $20\\ m$ (mặt đất dưới mốc). Vị trí đầu: $600=mgz_1$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow z_1=15\\ m$ trên mốc, cách mặt đất $15+20=35\\ m$.</p><p class=\"text-base leading-relaxed my-2\">a) Độ cao khi thả đến mặt đất là $35\\ m$ chứ không phải $20\\ m$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Sai.</p><p class=\"text-base leading-relaxed my-2\">b) Mốc thế năng cách mặt đất $20\\ m$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Sai.</p><p class=\"text-base leading-relaxed my-2\">c) Độ cao ban đầu $35\\ m$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Đúng.</p><p class=\"text-base leading-relaxed my-2\">d) Vận tốc khi chạm đất $v=\\sqrt{2gh}=\\sqrt{700}\\approx 26{,}5\\ m/s\\neq 10\\ m/s$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Sai.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Lấy g = 10 m/s². Ý d) đề không nói rõ thời điểm; vận tốc lúc chạm đất ≈ 26,5 m/s nên cho Sai."
+ },
+ {
+  "key": "c4-4-sa-037",
+  "type": "short_answer",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng $5 kg,$ đang đứng yên ở độ cao $10 m.$ Lấy $2.$ Thế năng trọng trường của vật có giá trị là bao nhiêu Joule?</p>",
+  "options": null,
+  "statements": null,
+  "nguon": "490",
+  "haiku": "500",
+  "sonnet": "500",
+  "goc": "Thế năng trọng trường của vật$W_{t} = mgh = 5.10.9,8 = 490 J.$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Thế năng trọng trường (chọn mốc thế năng tại mặt đất): $W_t = mgh$.</p><p class=\"text-base leading-relaxed my-2\">Lấy $g = 10\\ \\text{m/s}^2$, $m = 5\\ \\text{kg}$, $h = 10\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow W_t = 5 \\cdot 10 \\cdot 10 = 500\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: thế năng trọng trường của vật là $500\\ \\text{J}$.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề bị mất giá trị g (chỉ còn 'Lấy 2.'). Giả định g = 10 m/s². Nếu dùng g = 9,8 m/s² thì kết quả là 490 J."
+ }
+]
