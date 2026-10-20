@@ -19,7 +19,10 @@ if dup: err.append(f"id trùng: {sorted(dup)}")
 if "<img" in h: warn.append("có <img> — ảnh phải .webp ≤150 KB, qua Storage")
 for i, qz in enumerate(re.split(r'(?=<div class="tl-quiz">)', h)[1:], 1):
     seg = qz.split("</div>\n</div>")[0] if "</div>\n</div>" in qz else qz
-    ok = seg.count('class="tl-opt tl-ok"'); no = seg.count('class="tl-opt tl-no"')
+    # Chỉ <label> mới là phương án; link phụ (vd. nút "Mở bộ Flashcard" dùng lại class tl-opt tl-ok)
+    # không được tính là đáp án thứ hai — báo giả này từng chặn đăng 7 chương AVCN (20/10/2026).
+    ok = len(re.findall(r'<label[^>]*class="tl-opt tl-ok"', seg))
+    no = len(re.findall(r'<label[^>]*class="tl-opt tl-no"', seg))
     if ok != 1: err.append(f"quiz #{i}: có {ok} đáp án tl-ok (cần đúng 1)")
     if no < 1: err.append(f"quiz #{i}: không có đáp án tl-no")
     ins = re.findall(r'<input type="radio" name="([^"]+)" id="([^"]+)">\s*<label for="([^"]+)"', seg)

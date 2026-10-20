@@ -102,8 +102,10 @@ def sec_thi() -> str:
     bang = details("Xem 5 Part của đề ứng với mục nào trong bài", f'<div class="table-scroll"><table class="tl-table avcn-tbl"><thead><tr><th>Part</th><th>Đề hỏi gì</th><th>Học ở mục</th></tr></thead><tbody>{rows}</tbody></table></div>')
     bc = M.get("boi_canh")
     if bc:  # mở bài bằng tình huống ở xưởng; mục tiêu + đề thi thu vào mục gập
-        # Câu tiếng Anh của nhân vật trong tình huống (thợ cả): nghe lại đúng câu đó, giọng nam.
-        nghe = (f'<p>🎧 Nghe lại đúng câu thợ cả nói: {speak(bc["cau_noi"], bc.get("giong") or "")}</p>'
+        # Câu tiếng Anh của nhân vật trong tình huống (thợ cả / khách / tờ ghi chú): nghe lại đúng câu đó.
+        # `nhan_nghe` khai theo vai người nói — chương nào nhân vật không phải thợ cả thì đừng ghi "thợ cả".
+        nhan = bc.get("nhan_nghe") or "Nghe lại đúng câu thợ cả nói"
+        nghe = (f'<p>🎧 {nhan}: {speak(bc["cau_noi"], bc.get("giong") or "")}</p>'
                 if bc.get("cau_noi") else "")
         return (f'<h3>{ROMAN[0]}. {bc["tieu_de"]}</h3>'
                 + think("🔧 Tình huống ở xưởng", f'<p>{bc["tinh_huong"]}</p>{nghe}')

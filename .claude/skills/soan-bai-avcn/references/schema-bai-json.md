@@ -15,6 +15,7 @@ danh sách). Quiz: `dap` là chỉ số 0-based trong `lua_chon`; phản hồi k
 | `meta.boi_canh` | obj | | Mở bài bằng bối cảnh (thay mục "bao nhiêu điểm"): `tieu_de` ≤8 chữ, `tinh_huong` 40–60 chữ ngôi "em" cảnh xưởng thật + 2–3 từ khoá trong `<strong>`, `viec_can_lam` 1 câu, `quay_lai` 1 câu hỏi cuối mục Trả bài. Không nhắc điểm/đề. Sinh bằng `npx tsx scripts/sinh-boi-canh-avcn.mts` rồi `--ap-dung` |
 | `meta.boi_canh.cau_noi` | str | | Câu tiếng Anh của nhân vật trong tình huống (thợ cả) — build gắn nút 🔊 nghe lại đúng câu đó; thiếu thì không có nút |
 | `meta.boi_canh.giong` | `"nam"` | | Giọng đọc cho `cau_noi`: `"nam"` → mp3 giọng `AZURE_SPEECH_VOICE_NAM` (mặc định en-US-GuyNeural), manifest khoá `nam\|chuỗi`; thiếu = giọng nữ mặc định |
+| `meta.boi_canh.nhan_nghe` | str | | Nhãn dòng nghe, khai theo **vai người nói** (vd. "Nghe lại câu trong email của khách", "Nghe lại lời thợ cả dặn cạnh máy tiện"); thiếu = "Nghe lại đúng câu thợ cả nói" |
 | `meta.muc_tieu` | str[] | ✓ | 3 mục tiêu đo được, gắn Part |
 | `meta.de_thi` | [str,str,str][] | ✓ | 5 hàng: Part, đề hỏi gì, học ở mục nào — **không ghi số điểm** (tránh HS thấy bài học xoay quanh điểm) |
 | `khoi_dong` | obj[] (2) | ✓ | `{img, hoi, lua_chon[3], dap, fb_ok, fb_no}` — ảnh máy/dụng cụ quen ở xưởng |
