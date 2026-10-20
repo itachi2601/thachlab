@@ -7,6 +7,7 @@ import { AVCN_SUBJECT_CODE } from "@/services/classes";
 import { isItemLive, type Lesson, type LessonItem } from "@/features/lessons/types";
 import { dominantStatus, STATUS_LABELS, type ActivityStatus } from "@/features/progress/types";
 import { fetchClassLearningProgress, type ItemProgress } from "@/services/progress";
+import TeacherAvcnExamAnalysis from "@/components/dashboard/TeacherAvcnExamAnalysis";
 
 type Student = { id: string; name: string; className: string };
 
@@ -179,6 +180,11 @@ export default function TeacherAvcnProgress({ students }: { students: Student[] 
           </table>
         </div>
       )}
+
+      <TeacherAvcnExamAnalysis
+        examIds={items.filter((i) => i.kind === "luyen_tap" || i.kind === "kiem_tra").flatMap((i) => i.exam_ids ?? [])}
+        studentIds={studentIds}
+      />
     </div>
   );
 }

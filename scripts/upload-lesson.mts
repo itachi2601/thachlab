@@ -89,6 +89,7 @@ async function main() {
   if (!url) fail("không đọc được NEXT_PUBLIC_SUPABASE_URL từ .env.local");
   const key =
     process.env.SUPABASE_SERVICE_ROLE_KEY ??
+    readEnvLocal("SUPABASE_SERVICE_ROLE_KEY") ??
     (await askHidden("Dán SUPABASE_SERVICE_ROLE_KEY (Settings → API → service_role): "));
   if (!key) fail("thiếu SUPABASE_SERVICE_ROLE_KEY");
 

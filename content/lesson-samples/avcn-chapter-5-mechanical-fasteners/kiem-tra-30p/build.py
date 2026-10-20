@@ -60,6 +60,18 @@ TF = [
 for q, st, why in TF:
     qs.append({"type": "true_false", "question": q, "statements": [{"text": t, "answer": a} for t, a in st],
                "explanation": why, "topic": T, "form": "ly_thuyet", "difficulty": "de"})
+# Đoạn Article chép nguyên văn giáo trình, gắn thẳng vào đề để SV không phải lật lại (split-attention, Mayer)
+import re
+_src = json.load(open(HERE.parent / "data" / "bai.json"))["bai_doc"]
+ART = {n: " ".join(re.sub("<[^>]+>", "", c[0]) for c in _src[n - 1]["cau"]) for n in (2, 3)}
+def with_article(q):
+    m = re.match(r"Article (\d)\.\s*(.*)", q, re.S)
+    if not m or int(m.group(1)) not in ART:
+        return q
+    n = int(m.group(1))
+    return f'<blockquote><strong>Article {n}</strong><br>{ART[n]}</blockquote><p>{m.group(2)}</p>'
+for q in qs:
+    q["question"] = with_article(q["question"])
 base["theory_html"] = ""; base["theory_title"] = ""; base["theory_subtitle"] = ""
 base["worked_examples"] = []; base["raster_images"] = []
 base["exam"] = {"title": "Kiểm tra 30 phút Chapter 5: Mechanical Fasteners", "topic": T, "difficulty": "de",
