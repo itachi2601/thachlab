@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sinh file mp3 giọng neural (Azure Speech, en-US-AriaNeural) cho mọi nút 🔊 của một chương AVCN.
+"""Sinh file mp3 giọng neural (Azure Speech; mặc định nữ en-US-AriaNeural, giọng nam en-US-GuyNeural) cho mọi nút 🔊 của một chương AVCN.
 
 Chạy từ gốc repo, SAU khi đã dựng theory.html một lần:
   python3 .claude/skills/soan-bai-avcn/scripts/tao_giong_doc.py content/lesson-samples/avcn-chapter-<n>-<slug>
@@ -7,10 +7,13 @@ Chạy từ gốc repo, SAU khi đã dựng theory.html một lần:
 
 Đọc data-tl-speak trong theory.html → gọi Azure → ghi public/assets/avcn/chapter-<n>/audio/<sha1[:10]>.mp3
 và audio.json (chuỗi → tên file) cùng thư mục. File đã có thì bỏ qua (chạy lại không tốn thêm hạn mức).
+Nút nào có data-tl-giong="nam" (lời nhân vật nam, vd. thợ cả) thì đọc bằng giọng nam; khoá manifest là "nam|chuỗi".
+Tên file đã băm kèm tên giọng nên bản nam/nữ của cùng một câu không đè nhau.
 Nút 🔊 phát mp3; thiếu file hoặc lỗi tải thì tự rơi về giọng trình duyệt (speechSynthesis).
 
 Khoá Azure Speech (tầng miễn phí F0 ~500.000 ký tự/tháng; một chương ~10.000 ký tự) đặt trong .env.local:
-  AZURE_SPEECH_KEY=…   AZURE_SPEECH_REGION=southeastasia   (tuỳ chọn: AZURE_SPEECH_VOICE, mặc định en-US-AriaNeural)
+  AZURE_SPEECH_KEY=…   AZURE_SPEECH_REGION=southeastasia
+  (tuỳ chọn: AZURE_SPEECH_VOICE, mặc định en-US-AriaNeural; AZURE_SPEECH_VOICE_NAM, mặc định en-US-GuyNeural)
 Không in khoá ra màn hình. Bản thử trước đó dùng edge-tts (không chính thức) chỉ để chọn giọng, không dùng trong pipeline.
 """
 import argparse, hashlib, html, json, os, re, sys, time, urllib.error, urllib.request
@@ -19,6 +22,7 @@ from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parents[4]
 VOICE = "en-US-AriaNeural"
+VOICE_NAM = "en-US-GuyNeural"
 FORMAT = "audio-24khz-48kbitrate-mono-mp3"  # ~6 KB/giây: câu 3 giây ≈ 18 KB
 
 
@@ -34,12 +38,24 @@ def doc_env() -> dict:
 
 
 def gom_chuoi(theory: Path) -> list:
+    """[(chuỗi, giọng)] cho mọi nút tl-speak. Giọng đọc từ data-tl-giong (mặc định "" = giọng nữ)."""
     out = {}
-    for s in re.findall(r'data-tl-speak="([^"]*)"', theory.read_text(encoding="utf-8")):
-        t = html.unescape(s).strip()
-        if t:
-            out.setdefault(t, None)
+    for tag in re.findall(r'<button[^>]*class="tl-speak"[^>]*>', theory.read_text(encoding="utf-8")):
+        m = re.search(r'data-tl-speak="([^"]*)"', tag)
+        if not m:
+            continue
+        t = html.unescape(m.group(1)).strip()
+        if not t:
+            continue
+        g = re.search(r'data-tl-giong="([^"]*)"', tag)
+        out.setdefault((t, (g.group(1).strip() if g else "")), None)
     return list(out)
+
+
+def giong_cua(env: dict, giong: str) -> str:
+    if giong == "nam":
+        return env.get("AZURE_SPEECH_VOICE_NAM", VOICE_NAM)
+    return env.get("AZURE_SPEECH_VOICE", VOICE)
 
 
 def ten_file(text: str, voice: str) -> str:
@@ -87,10 +103,16 @@ def main():
     if a.gioi_han:
         texts = texts[: a.gioi_han]
     env = doc_env()
-    voice = env.get("AZURE_SPEECH_VOICE", VOICE)
-    chars = sum(len(t) for t in texts)
-    print(f"Chapter {ch}: {len(texts)} chuỗi, {chars} ký tự, giọng {voice}")
+    voice = giong_cua(env, "")
+    voice_nam = giong_cua(env, "nam")
+    so_nam = sum(1 for _, g in texts if g == "nam")
+    chars = sum(len(t) for t, _ in texts)
+    print(f"Chapter {ch}: {len(texts)} chuỗi, {chars} ký tự — giọng nữ {voice}, "
+          f"giọng nam {voice_nam} ({so_nam} chuỗi)")
     if a.dry_run:
+        for t, g in texts:
+            if g == "nam":
+                print(f"  nam: {t[:70]}")
         return
     if not env.get("AZURE_SPEECH_KEY"):
         sys.exit("Thiếu AZURE_SPEECH_KEY trong .env.local (xem đầu file script này).")
@@ -100,12 +122,13 @@ def main():
     man_f = out.parent / "audio.json"
     man = json.loads(man_f.read_text(encoding="utf-8")) if man_f.exists() else {}
     moi = 0
-    for t in texts:
-        f = out / ten_file(t, voice)
+    for t, giong in texts:
+        v = giong_cua(env, giong)
+        f = out / ten_file(t, v)
         if not f.exists():
-            f.write_bytes(tong_hop(t, voice, a.toc_do, env, endpoint))
+            f.write_bytes(tong_hop(t, v, a.toc_do, env, endpoint))
             moi += 1
-        man[t] = f.name
+        man[f"nam|{t}" if giong == "nam" else t] = f.name
     man_f.write_text(json.dumps(man, ensure_ascii=False, indent=1), encoding="utf-8")
     kb = sum(p.stat().st_size for p in out.glob("*.mp3")) / 1024
     print(f"Sinh mới {moi}, tổng {len(man)} file, {kb:.0f} KB → {out}  (+ {man_f.name})")

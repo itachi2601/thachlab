@@ -10,21 +10,30 @@ const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
 /** Nút 🔊 bài Anh văn chuyên ngành: mp3 neural đang phát (nếu có), để bấm nút khác thì dừng cái cũ. */
 let speakingAudio: HTMLAudioElement | null = null;
 
-/** Đọc bằng giọng của trình duyệt (en-US, chậm 0.9) — dự phòng khi bài chưa có mp3 hoặc mp3 không tải được. */
-function speakBrowser(text: string) {
+/** Đọc bằng giọng của trình duyệt (en-US, chậm 0.9) — dự phòng khi bài chưa có mp3 hoặc mp3 không tải được.
+ *  `giong` = "nam" (lời nhân vật nam, vd. thợ cả) → xếp hạng giọng nam lên trước. */
+function speakBrowser(text: string, giong = "") {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
   const u = new SpeechSynthesisUtterance(text);
   u.lang = "en-US";
   u.rate = 0.9;
+  const nam = giong === "nam";
   // Nhiều trình duyệt (Safari/iOS, Chrome Mac/Android) bỏ qua `lang` nếu không gán voice → đọc bằng giọng mặc định
   // của máy (tiếng Việt). Chọn giọng en tường minh, xếp hạng: ưu tiên Premium/Enhanced/Neural/Natural và các giọng
-  // tự nhiên đã biết, tránh giọng nén/robot (Fred, Albert, Zarvox…); en-US hơn en-khác.
+  // tự nhiên đã biết, tránh giọng nén/robot (Fred, Albert, Zarvox…); en-US hơn en-khác. Bài AVCN có câu của nhân
+  // vật nam (thợ cả) nên khi `nam` thì cộng điểm giọng nam, trừ điểm giọng nữ — máy nào cũng có ít nhất 1 giọng nam.
+  const NAM = /\b(guy|andrew|brian|christopher|eric|roger|steffan|alex|daniel|james|ryan|mark|thomas|aaron|arthur)\b/i;
+  const NU = /\b(aria|jenny|samantha|ava|allison|nicky|zoe|michelle|sonia|libby|emma|kathy|karen|moira|tessa|victoria)\b/i;
   const score = (v: SpeechSynthesisVoice) => {
     const lang = v.lang.replace("_", "-").toLowerCase();
     if (!lang.startsWith("en")) return -1;
     let s = lang === "en-us" ? 10 : 5;
     if (/premium|enhanced|neural|natural|online/i.test(v.name)) s += 30;
     if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(v.name)) s += 20;
+    if (nam) {
+      if (NAM.test(v.name)) s += 25;
+      if (NU.test(v.name)) s -= 25;
+    }
     if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(v.name)) s -= 40;
     if (v.localService === false) s += 5;
     return s;
@@ -298,22 +307,24 @@ export default function ContentHtml({
       event.stopPropagation();
       const text = speak.dataset.tlSpeak ?? "";
       const audioUrl = speak.dataset.tlAudio;
+      const giong = speak.dataset.tlGiong ?? "";
       if (!text) return;
       speakingAudio?.pause();
       speakingAudio = null;
       if (audioUrl) {
-        // mp3 giọng neural dựng sẵn (Azure Aria); tải lỗi/không phát được thì rơi về giọng trình duyệt
+        // mp3 giọng neural dựng sẵn (Azure Aria; lời nhân vật nam thì Guy); tải lỗi/không phát được thì rơi về
+        // giọng trình duyệt, chọn giọng nam nếu nút có data-tl-giong="nam".
         window.speechSynthesis?.cancel();
         const a = new Audio(audioUrl);
         speakingAudio = a;
         // Bấm nút khác khi mp3 này chưa kịp phát → pause() làm play() bị huỷ (AbortError); khi đó KHÔNG rơi về giọng
         // trình duyệt, nếu không giọng máy đọc câu cũ song song với mp3 mới (2 giọng cùng lúc).
         a.play().catch((e: unknown) => {
-          if (speakingAudio === a && (e as { name?: string })?.name !== "AbortError") speakBrowser(text);
+          if (speakingAudio === a && (e as { name?: string })?.name !== "AbortError") speakBrowser(text, giong);
         });
         return;
       }
-      speakBrowser(text);
+      speakBrowser(text, giong);
       return;
     }
     // Mô phỏng SVG (SMIL begin="indefinite"): chạy MỘT lần mỗi lần bấm, không tự chạy khi đang đọc (B4).

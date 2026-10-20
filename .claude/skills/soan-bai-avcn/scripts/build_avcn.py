@@ -42,11 +42,15 @@ _AUDIO_F = ASSET_DIR / "audio.json"
 AUDIO = json.loads(_AUDIO_F.read_text(encoding="utf-8")) if _AUDIO_F.exists() else {}
 
 
-def speak(text: str) -> str:
-    """Nút 🔊. Có mp3 neural (tao_giong_doc.py → audio.json) thì thêm data-tl-audio; thiếu thì trang tự đọc bằng giọng trình duyệt."""
-    f = AUDIO.get(H.unescape(text).strip())
+def speak(text: str, giong: str = "") -> str:
+    """Nút 🔊. Có mp3 neural (tao_giong_doc.py → audio.json) thì thêm data-tl-audio; thiếu thì trang tự đọc bằng
+    giọng trình duyệt. `giong="nam"` (lời nhân vật nam, vd. thợ cả): mp3 tra khoá "nam|…" trong audio.json và
+    trang chọn giọng nam khi rơi về giọng máy (data-tl-giong)."""
+    t = H.unescape(text).strip()
+    f = AUDIO.get(f"nam|{t}" if giong == "nam" else t)
     au = f' data-tl-audio="{ASSET_URL}/audio/{f}"' if f else ""
-    return f'<button type="button" class="tl-speak" data-tl-speak="{esc(text)}"{au} aria-label="Nghe">🔊</button>'
+    g = ' data-tl-giong="nam"' if giong == "nam" else ""
+    return f'<button type="button" class="tl-speak" data-tl-speak="{esc(text)}"{g}{au} aria-label="Nghe">🔊</button>'
 
 
 def photo(key: str, caption: str, small=False) -> str:
@@ -98,8 +102,11 @@ def sec_thi() -> str:
     bang = details("Xem 5 Part của đề ứng với mục nào trong bài", f'<div class="table-scroll"><table class="tl-table avcn-tbl"><thead><tr><th>Part</th><th>Đề hỏi gì</th><th>Học ở mục</th></tr></thead><tbody>{rows}</tbody></table></div>')
     bc = M.get("boi_canh")
     if bc:  # mở bài bằng tình huống ở xưởng; mục tiêu + đề thi thu vào mục gập
+        # Câu tiếng Anh của nhân vật trong tình huống (thợ cả): nghe lại đúng câu đó, giọng nam.
+        nghe = (f'<p>🎧 Nghe lại đúng câu thợ cả nói: {speak(bc["cau_noi"], bc.get("giong") or "")}</p>'
+                if bc.get("cau_noi") else "")
         return (f'<h3>{ROMAN[0]}. {bc["tieu_de"]}</h3>'
-                + think("🔧 Tình huống ở xưởng", f'<p>{bc["tinh_huong"]}</p>')
+                + think("🔧 Tình huống ở xưởng", f'<p>{bc["tinh_huong"]}</p>{nghe}')
                 + f'<p><strong>Hôm nay em sẽ:</strong> {bc["viec_can_lam"]}</p>'
                 + details("Mục tiêu bài và đề cuối kỳ", f'<p>Học xong chương này em cần:</p><ul>{muc_tieu}</ul>'
                           '<p>Đề cuối kỳ có 5 Part; ba Part đầu chỉ cần <strong>nhận ra từ</strong> và <strong>tìm lại câu trong bài đọc</strong>.</p>' + bang))
