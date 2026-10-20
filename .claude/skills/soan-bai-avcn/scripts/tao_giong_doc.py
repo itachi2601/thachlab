@@ -9,6 +9,9 @@ Chạy từ gốc repo, SAU khi đã dựng theory.html một lần:
 và audio.json (chuỗi → tên file) cùng thư mục. File đã có thì bỏ qua (chạy lại không tốn thêm hạn mức).
 Nút nào có data-tl-giong="nam" (lời nhân vật nam, vd. thợ cả) thì đọc bằng giọng nam; khoá manifest là "nam|chuỗi".
 Tên file đã băm kèm tên giọng nên bản nam/nữ của cùng một câu không đè nhau.
+
+Từ 20/10/2026 sinh thêm mp3 cho **phương án quiz tiếng Anh** (bấm đáp án là phát âm, xem lib/quiz-speak.ts) và cho
+`data-tl-word` của câu hỏi có phương án tiếng Việt; phương án tiếng Việt/True-False bỏ qua (không đọc).
 Nút 🔊 phát mp3; thiếu file hoặc lỗi tải thì tự rơi về giọng trình duyệt (speechSynthesis).
 
 Khoá Azure Speech (tầng miễn phí F0 ~500.000 ký tự/tháng; một chương ~10.000 ký tự) đặt trong .env.local:
@@ -25,6 +28,14 @@ VOICE = "en-US-AriaNeural"
 VOICE_NAM = "en-US-GuyNeural"
 FORMAT = "audio-24khz-48kbitrate-mono-mp3"  # ~6 KB/giây: câu 3 giây ≈ 18 KB
 
+# Cùng luật với build_avcn.py + lib/quiz-speak.ts: phương án tiếng Anh đọc được, tiếng Việt/ngoặc thì không.
+_VIET = re.compile(r"[àáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]", re.I)
+
+
+def doc_duoc(s: str) -> bool:
+    t = html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
+    return bool(t) and bool(re.search(r"[A-Za-z]", t)) and not _VIET.search(t) and "(" not in t and ")" not in t
+
 
 def doc_env() -> dict:
     env = dict(os.environ)
@@ -38,9 +49,11 @@ def doc_env() -> dict:
 
 
 def gom_chuoi(theory: Path) -> list:
-    """[(chuỗi, giọng)] cho mọi nút tl-speak. Giọng đọc từ data-tl-giong (mặc định "" = giọng nữ)."""
+    """[(chuỗi, giọng)] cho mọi nút tl-speak, mọi phương án quiz tiếng Anh và mọi `data-tl-word`.
+    Giọng đọc từ data-tl-giong (mặc định "" = giọng nữ). Cùng luật đọc được với build_avcn.py/lib/quiz-speak.ts."""
+    h = theory.read_text(encoding="utf-8")
     out = {}
-    for tag in re.findall(r'<button[^>]*class="tl-speak"[^>]*>', theory.read_text(encoding="utf-8")):
+    for tag in re.findall(r'<button[^>]*class="tl-speak"[^>]*>', h):
         m = re.search(r'data-tl-speak="([^"]*)"', tag)
         if not m:
             continue
@@ -49,6 +62,16 @@ def gom_chuoi(theory: Path) -> list:
             continue
         g = re.search(r'data-tl-giong="([^"]*)"', tag)
         out.setdefault((t, (g.group(1).strip() if g else "")), None)
+    # Bấm đáp án quiz AVCN là phát âm luôn (20/10/2026): sinh mp3 cho phương án có data-tl-say (build đánh dấu
+    # phương án tiếng Anh) + từ đang hỏi ở data-tl-word. Phương án tiếng Việt không có dấu nên KHÔNG đoán theo chữ.
+    for m in re.finditer(r'<label[^>]*data-tl-say="1"[^>]*>\s*[a-dA-D][.)]\s*([^<]+)</label>', h):
+        t = html.unescape(m.group(1)).strip()
+        if doc_duoc(t):
+            out.setdefault((t, ""), None)
+    for m in re.finditer(r'data-tl-word="([^"]*)"', h):
+        t = html.unescape(m.group(1)).strip()
+        if t:
+            out.setdefault((t, ""), None)
     return list(out)
 
 

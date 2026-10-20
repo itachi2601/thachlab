@@ -22,7 +22,12 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
 - Quy tắc trình bày thầy chốt: **mỗi ý một dòng** (chiến thuật, ghi chú, phản hồi quiz là mảng hoặc tự tách câu);
   nhãn đáp án `a. b. c. d.` chữ thường như đề thật; định nghĩa tiếng Anh giữ nguyên kiểu Part 1; không vai "thầy".
 - HTML lưu DB **không chứa `<script>`/`on*=`**: quiz là radio + CSS (`.tl-quiz`), bản dịch là `<details>`, nút nghe là
-  `<button data-tl-speak>` (trang bài học đọc bằng speechSynthesis).
+  `<button data-tl-speak>` (trang bài học đọc bằng speechSynthesis). Từ 20/10/2026 **bấm một đáp án là nghe luôn**
+  (không cần nút riêng): phương án tiếng Anh mang `data-tl-say="1"` → đọc chính phương án; câu có phương án tiếng Việt
+  khai `data-tl-word="<từ đang hỏi>"` trên `.tl-quiz` → đọc từ đó (tránh giọng Anh đọc "phôi"). Luật chọn từ:
+  `lib/quiz-speak.ts` + test `scripts/test-quiz-speak.mts`; trang xử lý ở `ContentHtml.tsx`; `True (Đúng)`/`False (Sai)`
+  không đọc. Chỉ tab Học/Bài mẫu — không bật ở trang thi. Phương án tiếng Việt **không dấu** (phoi, khoan, ren…) không
+  được đoán theo chữ: chỉ đánh dấu `data-tl-say` khi câu KHÔNG có `data-tl-word`.
 
 ## Quy trình
 
@@ -55,6 +60,9 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
    **Lời nhân vật nam (thợ cả) phải là giọng nam** (thầy chốt 20/10/2026): khai `meta.boi_canh.cau_noi` + `"giong":"nam"` → build gắn
    `data-tl-giong="nam"`, script đọc bằng `AZURE_SPEECH_VOICE_NAM` (mặc định `en-US-GuyNeural`, tên file băm kèm giọng nên không đè bản nữ),
    manifest khoá `nam|chuỗi`; trang rơi về giọng máy cũng chọn giọng nam theo `data-tl-giong` (`ContentHtml.tsx`). Nhãn dòng nghe khai `boi_canh.nhan_nghe` theo vai người nói (khách/email/ghi chú ≠ "thợ cả").
+   Từ 20/10/2026 script cũng sinh mp3 cho **phương án có `data-tl-say="1"`** và **`data-tl-word`** (bấm đáp án là nghe);
+   thứ tự vẫn là dựng → sinh giọng → dựng lại; kiểm `grep -c 'data-tl-say="1"' theory.html` và mọi label đó phải có
+   `data-tl-audio` (thiếu là còn chuỗi chưa sinh).
 5. **Kiểm** (từ gốc repo; `S=.claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts`):
    `python3 $S/lint_theory.py theory.html` · `python3 $S/check_quizzes.py theory.html` · `python3 $S/lint_do_dai.py theory.html`
    (bài từ vựng 10–13 quiz là bình thường, lỗi "quiz > 8" bỏ qua; tổng từ hiện ngay ≤ 2.200) ·
@@ -101,3 +109,4 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
 - 2026-10-20 · Câu mở bài có lời thoại thợ cả nhưng **không có nút nghe** (mục Trả bài lại hỏi "nghe lại câu dặn"), và mọi nút đang đọc bằng Aria nữ → khai `boi_canh.cau_noi` + `"giong":"nam"`, build gắn `data-tl-giong="nam"`, `tao_giong_doc.py` đọc bằng `AZURE_SPEECH_VOICE_NAM` (Guy) và ghi manifest khoá `nam|chuỗi`; `ContentHtml.tsx` rơi về giọng máy cũng ưu tiên giọng nam. Kiểm: `--dry-run` in dòng `nam: …`, `grep 'data-tl-giong="nam"' theory.html` = 1; thử tra manifest bằng một khoá giả rồi hoàn lại để chắc `data-tl-audio` được gắn.
 - 2026-10-20 · Áp giọng nam cho **cả 10 chương**: `cau_noi` lấy đúng câu trong `tinh_huong` (ch4 không có câu thoại → tự viết 1 câu theo từ khoá của bài), `nhan_nghe` theo vai (ch1 anh kỹ sư, ch9 khách email). Sinh mp3: 9 chương thiếu 1 câu, ch9 thiếu **cả chương** (0 mp3 từ 17/10) → sinh 160 file. `lint_theory.py` báo giả "quiz #2 có 2 đáp án tl-ok" vì nút Flashcard dùng `<a class="tl-opt tl-ok">`, chặn `cap-nhat-ly-thuyet.sh` ở 7 chương → sửa lint chỉ đếm `<label … tl-opt tl-ok>` (đã thử: 2 label → báo 2, chỉ link → 1).
 - 2026-10-20 · Chuẩn đầu ra còn nói nhiều về đề/Part → thầy chốt viết lại thành **4 gạch đầu dòng kiến thức** mỗi chương (hiểu/biết/phân biệt, bỏ "nhận ra 20 từ ⭐"), bỏ hẳn bảng 5 Part khỏi tab Học (bảng Part chỉ còn ở tab Bài mẫu); `build_avcn.py` đổi khối thành "Chuẩn đầu ra của chương", `meta.de_thi` giữ làm dữ liệu nội bộ nhưng không render; trước khi ghi DB đã soát DB↔bundle chỉ khác đúng khối đó (script tách `</details>` lồng nhau), rồi `cap-nhat-avcn-noi-dung.mts --dry-run` → `--apply`.
+- 2026-10-20 · Bấm đáp án là phát âm: định làm trong `handleChange` (radio) nhưng Chrome **không bắn `change` cho React khi bấm `<label>`** (label chỉ check input rồi dispatch `change` native; React 19 nghe `click` cho radio) → `dataset.answered` cũng không được ghi. Cách đúng: xử lý ở `click` trên `label.tl-opt` (mỗi lần bấm đều đọc, kể cả bấm lại để nghe lại) + nhánh `input[type=radio]` cho bàn phím; `playSpeech` tự bỏ bản trùng trong 200ms để WebView có bắn cả click+change không đọc 2 lần. Kiểm bằng trang tạm `app/dev/…` + Chrome headless/CDP (giả `speechSynthesis.speak` và `new Audio`, bấm bằng `Input.dispatchMouseEvent` — `.click()` không phải input tin cậy). Bài học phụ: đừng đoán "phương án tiếng Anh" bằng dấu tiếng Việt — "phoi/khoan/ren/nhanh" không dấu sẽ bị đọc bằng giọng Anh; build đánh dấu `data-tl-say` theo ngữ cảnh câu (có `data-tl-word` thì bỏ).

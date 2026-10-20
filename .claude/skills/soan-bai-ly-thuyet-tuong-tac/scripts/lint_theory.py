@@ -17,7 +17,7 @@ ids = re.findall(r'\bid="([^"]+)"', h)
 dup = {i for i in ids if ids.count(i) > 1}
 if dup: err.append(f"id trùng: {sorted(dup)}")
 if "<img" in h: warn.append("có <img> — ảnh phải .webp ≤150 KB, qua Storage")
-for i, qz in enumerate(re.split(r'(?=<div class="tl-quiz">)', h)[1:], 1):
+for i, qz in enumerate(re.split(r'(?=<div class="tl-quiz")', h)[1:], 1):
     seg = qz.split("</div>\n</div>")[0] if "</div>\n</div>" in qz else qz
     # Chỉ <label> mới là phương án; link phụ (vd. nút "Mở bộ Flashcard" dùng lại class tl-opt tl-ok)
     # không được tính là đáp án thứ hai — báo giả này từng chặn đăng 7 chương AVCN (20/10/2026).

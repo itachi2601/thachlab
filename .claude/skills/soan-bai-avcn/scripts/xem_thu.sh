@@ -6,11 +6,16 @@ BAI="${1:?thư mục bài}"
 ROOT="$(cd "$(dirname "$0")/../../../.." && pwd)"
 S="$ROOT/.claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"
 TITLE="$(python3 -c "import json;m=json.load(open('$BAI/data/bai.json'))['meta'];print(f\"Chapter {m['chapter']}: {m['title_en']}\")")"
-SPEAK='<script>document.addEventListener("click",e=>{const b=e.target.closest("[data-tl-speak]");if(!b)return;e.preventDefault();e.stopPropagation();const u=new SpeechSynthesisUtterance(b.dataset.tlSpeak);u.lang="en-US";u.rate=0.9;speechSynthesis.cancel();speechSynthesis.speak(u);});</script></body>'
+SPEAK='<script>const VI=/[àáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]/i;function doc(t){return !!t&&!/[()]/.test(t)&&/[A-Za-z]/.test(t)&&!VI.test(t)}function noi(t){if(!t)return;const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=0.9;speechSynthesis.cancel();speechSynthesis.speak(u)}document.addEventListener("click",e=>{const b=e.target.closest("[data-tl-speak]");if(b){e.preventDefault();e.stopPropagation();noi(b.dataset.tlSpeak);return}const l=e.target.closest("label.tl-opt");if(!l)return;const q=l.closest(".tl-quiz");if(!q)return;const w=(q.dataset.tlWord||"").trim();if(w){noi(w);return}const t=(l.textContent||"").replace(/^\s*[a-dA-D][.)]\s+/,"").trim();if(doc(t))noi(t)});</script></body>'
 fix() { # ảnh file:// cho Chrome headless, bỏ lazy để chụp đủ ảnh, thêm nút nghe
   sed -i '' -e "s#src=\"/assets/#src=\"file://$ROOT/public/assets/#g" -e 's# loading="lazy"##g' "$1"/*.html
   python3 - "$1/xem-thu.html" "$SPEAK" <<'PY'
-import sys; p, js = sys.argv[1], sys.argv[2]; s = open(p).read(); open(p, "w").write(s.replace("</body>", js, 1))
+import sys; p, js = sys.argv[1], sys.argv[2]; s = open(p).read()
+js = js.replace("</body>", "")
+# build_preview.py không ghi </body> (chỉ </html>), nên chèn trước </html> khi thiếu </body> — trước 20/10/2026
+# script nghe không được chèn vào bản xem thử vì lý do này.
+s = s.replace("</body>", js + "</body>", 1) if "</body>" in s else s.replace("</html>", js + "</html>", 1)
+open(p, "w").write(s)
 PY
 }
 rm -rf "$BAI/xem-thu" "$BAI/xem-thu-de-mau"

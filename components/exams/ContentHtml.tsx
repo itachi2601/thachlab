@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { withQuestionTables } from "@/lib/question-table";
+import { quizSpeakText } from "@/lib/quiz-speak";
 import { sanitizeContentHtml } from "@/lib/sanitize-html-client";
 import imageDimensions from "@/features/lessons/image-dimensions.json";
 
@@ -9,6 +10,9 @@ const IMAGE_DIMENSIONS = imageDimensions as Record<string, number[]>;
 
 /** Nút 🔊 bài Anh văn chuyên ngành: mp3 neural đang phát (nếu có), để bấm nút khác thì dừng cái cũ. */
 let speakingAudio: HTMLAudioElement | null = null;
+
+/** Chuỗi vừa đọc, để `click` + `change` của cùng một lần bấm không đọc 2 lần. */
+let lastSpoken = { text: "", at: 0 };
 
 /** Đọc bằng giọng của trình duyệt (en-US, chậm 0.9) — dự phòng khi bài chưa có mp3 hoặc mp3 không tải được.
  *  `giong` = "nam" (lời nhân vật nam, vd. thợ cả) → xếp hạng giọng nam lên trước. */
@@ -45,6 +49,46 @@ function speakBrowser(text: string, giong = "") {
   if (voice) u.voice = voice;
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(u);
+}
+
+/** Phát một chuỗi của bài AVCN: ưu tiên mp3 neural dựng sẵn (data-tl-audio), không có thì giọng trình duyệt.
+ *  Mỗi lần chỉ một tiếng: dừng mp3 cũ và huỷ giọng máy đang đọc trước khi phát cái mới. */
+function playSpeech(text: string, audioUrl = "", giong = "") {
+  if (!text) return;
+  // Cùng một lần bấm có thể phát sinh cả `click` (do mình xử lý) và `change` (một số WebView): chỉ đọc một lần.
+  const now = Date.now();
+  if (text === lastSpoken.text && now - lastSpoken.at < 200) return;
+  lastSpoken = { text, at: now };
+  speakingAudio?.pause();
+  speakingAudio = null;
+  if (audioUrl) {
+    // Bấm nút khác khi mp3 này chưa kịp phát → pause() làm play() bị huỷ (AbortError); khi đó KHÔNG rơi về giọng
+    // trình duyệt, nếu không giọng máy đọc câu cũ song song với mp3 mới (2 giọng cùng lúc).
+    window.speechSynthesis?.cancel();
+    const a = new Audio(audioUrl);
+    speakingAudio = a;
+    a.play().catch((e: unknown) => {
+      if (speakingAudio === a && (e as { name?: string })?.name !== "AbortError") speakBrowser(text, giong);
+    });
+    return;
+  }
+  speakBrowser(text, giong);
+}
+
+/** Bấm một phương án quiz AVCN → đọc từ của câu đó (xem lib/quiz-speak.ts): câu hỏi có phương án tiếng Việt
+ *  thì đọc từ tiếng Anh đang hỏi (data-tl-word), còn lại đọc phương án vừa bấm nếu build đánh dấu đọc được
+ *  (data-tl-say="1": phương án tiếng Anh; "True (Đúng)"/"False (Sai)" không có dấu này). */
+function speakQuizOption(label: HTMLElement) {
+  const quiz = label.closest<HTMLElement>(".tl-quiz");
+  if (!quiz) return;
+  const word = (quiz.dataset.tlWord ?? "").trim();
+  if (word) {
+    playSpeech(word, quiz.dataset.tlAudio ?? "");
+    return;
+  }
+  if (label.dataset.tlSay !== "1") return;
+  const text = quizSpeakText(label.textContent ?? "");
+  if (text) playSpeech(text, label.dataset.tlAudio ?? "");
 }
 
 /** Hình SVG có hoạt hình SMIL (`<animate>`): người dùng bật "giảm chuyển động" thì bỏ hoạt hình, hình đứng yên ở khung đầu. */
@@ -300,31 +344,29 @@ export default function ContentHtml({
   function handleClick(event: React.MouseEvent<HTMLSpanElement>) {
     if (!(event.target instanceof Element)) return;
     // Nút nghe 🔊 của bài Anh văn chuyên ngành: <button data-tl-speak="…"> — HTML lưu DB không chứa JS,
-    // đọc bằng speechSynthesis của trình duyệt (en-US, chậm 0.9). Không lan ra <summary> bao ngoài.
+    // đọc bằng mp3 neural nếu có, không thì speechSynthesis của trình duyệt (en-US, chậm 0.9).
+    // Không lan ra <summary> bao ngoài.
     const speak = event.target.closest("button[data-tl-speak]");
     if (speak instanceof HTMLButtonElement) {
       event.preventDefault();
       event.stopPropagation();
       const text = speak.dataset.tlSpeak ?? "";
-      const audioUrl = speak.dataset.tlAudio;
-      const giong = speak.dataset.tlGiong ?? "";
       if (!text) return;
-      speakingAudio?.pause();
-      speakingAudio = null;
-      if (audioUrl) {
-        // mp3 giọng neural dựng sẵn (Azure Aria; lời nhân vật nam thì Guy); tải lỗi/không phát được thì rơi về
-        // giọng trình duyệt, chọn giọng nam nếu nút có data-tl-giong="nam".
-        window.speechSynthesis?.cancel();
-        const a = new Audio(audioUrl);
-        speakingAudio = a;
-        // Bấm nút khác khi mp3 này chưa kịp phát → pause() làm play() bị huỷ (AbortError); khi đó KHÔNG rơi về giọng
-        // trình duyệt, nếu không giọng máy đọc câu cũ song song với mp3 mới (2 giọng cùng lúc).
-        a.play().catch((e: unknown) => {
-          if (speakingAudio === a && (e as { name?: string })?.name !== "AbortError") speakBrowser(text, giong);
-        });
-        return;
-      }
-      speakBrowser(text, giong);
+      playSpeech(text, speak.dataset.tlAudio, speak.dataset.tlGiong ?? "");
+      return;
+    }
+    // Bấm phương án quiz AVCN: đọc từ của câu mỗi lần bấm (bấm lại để nghe lại). Một số WebView phát sinh thêm
+    // `change` cho cùng lần bấm — playSpeech tự bỏ qua bản trùng trong 200ms.
+    const opt = event.target.closest("label.tl-opt");
+    if (opt instanceof HTMLElement) {
+      speakQuizOption(opt);
+      return;
+    }
+    // Chọn bằng bàn phím/tap vào radio (ô radio ẩn, nhãn mới bấm được): event rơi vào input, nhãn là sibling sau.
+    const radio = event.target.closest('input[type="radio"]');
+    if (radio instanceof HTMLInputElement) {
+      const label = radio.nextElementSibling;
+      if (label instanceof HTMLElement && label.classList.contains("tl-opt")) speakQuizOption(label);
       return;
     }
     // Mô phỏng SVG (SMIL begin="indefinite"): chạy MỘT lần mỗi lần bấm, không tự chạy khi đang đọc (B4).
@@ -370,6 +412,11 @@ export default function ContentHtml({
     if (input.type === "radio" && input.name) {
       picks.current.byKey[input.name] = input.id;
       markAnswered(input);
+      // Dự phòng cho WebView bắn `change` (Chrome bấm label không bắn change cho React — đã xử lý ở handleClick).
+      // Khôi phục đáp án cũ lúc render lại KHÔNG đi qua đây (useLayoutEffect gọi markAnswered trực tiếp) nên
+      // không tự phát tiếng khi mở/đổi trang.
+      const label = input.nextElementSibling;
+      if (label instanceof HTMLElement && label.classList.contains("tl-opt")) speakQuizOption(label);
     } else if (input.type === "checkbox") {
       if (input.checked) picks.current.byKey[input.id] = input.id;
       else delete picks.current.byKey[input.id];

@@ -38,6 +38,17 @@ def esc(s: str) -> str:
     return H.escape(s, quote=True)
 
 
+# Phương án tiếng Anh đọc được (bấm là phát âm, xem lib/quiz-speak.ts): có chữ, không dấu tiếng Việt, không ngoặc
+# (ngoặc là chú thích "True (Đúng)", "sự phát (điện)" — không đọc). Cùng luật với tao_giong_doc.py.
+_VIET = re.compile(r"[àáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ]", re.I)
+
+
+def doc_duoc(s: str) -> bool:
+    t = H.unescape(re.sub(r"<[^>]+>", "", s)).strip()
+    return bool(t) and bool(re.search(r"[A-Za-z]", t)) and not _VIET.search(t) and "(" not in t and ")" not in t
+
+
+
 _AUDIO_F = ASSET_DIR / "audio.json"
 AUDIO = json.loads(_AUDIO_F.read_text(encoding="utf-8")) if _AUDIO_F.exists() else {}
 
@@ -64,17 +75,32 @@ def photo(key: str, caption: str, small=False) -> str:
             f'width="{c["w"]}" height="{c["h"]}"><figcaption>{caption} · {credit}</figcaption></figure>')
 
 
-def quiz(hoi: str, lua_chon, dap: int, fb_ok: str, fb_no: str, lead="", prefix=None) -> str:
-    """Trắc nghiệm tự chấm (radio + CSS). Nhãn a. b. c. d. chữ thường như đề AVCN thật."""
+def quiz(hoi: str, lua_chon, dap: int, fb_ok: str, fb_no: str, lead="", prefix=None, word="") -> str:
+    """Trắc nghiệm tự chấm (radio + CSS). Nhãn a. b. c. d. chữ thường như đề AVCN thật.
+
+    `word` = từ tiếng Anh đang hỏi (câu có phương án tiếng Việt, vd. "workpieces nghĩa là gì?"): trang đọc từ này
+    khi HS bấm đáp án (data-tl-word). Không khai thì trang đọc chính phương án nếu là tiếng Anh."""
     _qn[0] += 1
     n = f"{prefix or P}-q{_qn[0]}"
+    qw = H.unescape(word).strip()
+    qattr = ""
+    if qw:
+        f = AUDIO.get(qw)
+        qattr = f' data-tl-word="{esc(qw)}"' + (f' data-tl-audio="{ASSET_URL}/audio/{f}"' if f else "")
     opts = []
     for i, o in enumerate(lua_chon):
         cls = "tl-ok" if i == dap else "tl-no"
-        opts.append(f'<input type="radio" name="{n}" id="{n}{chr(97+i)}"><label for="{n}{chr(97+i)}" class="tl-opt {cls}">{chr(97+i)}. {o}</label>')
+        # Phương án tiếng Anh trong câu không khai `word`: bấm đáp án là đọc chính phương án đó. Câu có phương án
+        # tiếng Việt (word khác rỗng) thì không đánh dấu — trang đọc `word`, tránh giọng Anh đọc "phôi"/"phoi".
+        say = (not qw) and doc_duoc(o)
+        # mp3 neural của phương án (nếu đã sinh) — bấm đáp án là nghe luôn, không cần nút 🔊 riêng.
+        f = AUDIO.get(H.unescape(re.sub(r"<[^>]+>", "", o)).strip()) if say else None
+        say_attr = ' data-tl-say="1"' if say else ""
+        au = f' data-tl-audio="{ASSET_URL}/audio/{f}"' if f else ""
+        opts.append(f'<input type="radio" name="{n}" id="{n}{chr(97+i)}"><label for="{n}{chr(97+i)}" class="tl-opt {cls}"{say_attr}{au}>{chr(97+i)}. {o}</label>')
     fb_ok = nl(re.sub(r"^Đúng\.\s*", "", fb_ok))
     fb_no = nl(re.sub(r"^Chưa đúng\.\s*", "", fb_no))
-    return (f'{lead}<p>{hoi}</p><div class="tl-quiz">{"".join(opts)}'
+    return (f'{lead}<p>{hoi}</p><div class="tl-quiz"{qattr}>{"".join(opts)}'
             f'<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> {fb_ok}</p></div>'
             f'<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> {fb_no}</p></div></div>')
 
@@ -192,7 +218,7 @@ def sec_bai_doc() -> str:
                     assert len(d["lua_chon"]) == 3, f"{a['ten']} câu {i} '{d['tu']}': cần đúng 3 phương án"
                     dung = d["lua_chon"][d["dap"]]
                     qs.append(quiz(f'<b>{d["tu"]}</b> {speak(d["tu"])} nghĩa là gì?', d["lua_chon"], d["dap"],
-                                   d["giai"], f"Nghĩa đúng: <b>{dung}</b>. {d['giai']}"))
+                                   d["giai"], f"Nghĩa đúng: <b>{dung}</b>. {d['giai']}", word=d["tu"]))
                 inner += '<p><strong>Bước 1.</strong> Đoán nghĩa từ in đậm. Chọn rồi mới biết đáp án, sai cũng không sao.</p>' + "".join(qs)
                 nghia = them.get("nghia") or {}
                 if nghia:
