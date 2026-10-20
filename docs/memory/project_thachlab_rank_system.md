@@ -115,3 +115,7 @@ Thầy chốt: điểm kiểm tra trên lớp là điểm thật, phải tính R
 - `20261017235000_rank_bat_kiem_tra_nhanh_10rp.sql` (`4e213595a`): bật 10 RP cho 26 đề "Kiểm tra nhanh/Kiểm tra hiểu bài/Luyện tập" lẻ mùa 4 (mùa 5 đã đủ), tính lại mùa; đề nằm trong mục Luyện tập của bài KHÔNG bật (đã tính qua `practice_item`). Sao lưu `rank_sources_backup_20261017b`. Thầy chốt giữ 20 RP cho #206, #209 (mùa 4), #7 (mùa 5).
 - Rà: chuỗi ngày đã tính mọi bài ≥7 từ `20261011200000` (đừng tin bản `rank_on_result` trong file 20260929 — sắp theo tên migration, không theo mtime). Mục tiêu tuần chỉ đếm đề thuộc `rank_sources`, đúng ý.
 - Câu chữ "Làm lại không cộng thêm RP" đã đổi (`310fab3ca`) cho khớp `rp_first_attempt_only = 0`.
+
+## 2026-10-20 — Cộng bù RP Kiểm tra nhanh 19/10 (ĐÃ CHẠY)
+- `20261020090000_rank_bat_nguon_kiem_tra_nhanh_19_10.sql`: đề #1003, #979 (mùa 5), #1032 tạo sau đợt 17/10 nên chưa có `rank_sources`; bật 10 RP + recompute → +159 RP (23 em, #1003) và +160 RP (24 lượt, #979). #1032 (1 em, không thuộc mùa nào) không có RP là đúng. Sao lưu `rank_sources_backup_20261020`.
+- Bài học: đề "Kiểm tra nhanh" tạo SAU 17/10 không tự có nguồn RP → cần bật sau mỗi đợt tạo đề (hoặc trigger tự bật).
