@@ -64,7 +64,7 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
    (tab Học, bấm được, 🔊 đọc) + `xem-thu-de-mau/` + ảnh 375 px. **Xem ảnh bằng mắt** (giao agent `kiem-code` đọc ảnh để
    tiết kiệm token phiên chính): ảnh thẻ hiển thị, thẻ không ảnh chiếm cả hàng, bảng không bẻ chữ, số SVG đọc được.
    Gửi `xem-thu/xem-thu.html` + `xem-thu-de-mau/xem-thu.html` cho thầy duyệt.
-7. **Đăng (Mac, tab terminal)**: bài đã có hàng `lessons` (migration `20261013100000_lop_avcn…` tạo 10 bài, Chapter n = `sort_order` n,
+7. **Đăng (Mac, tab terminal)**: bài đã có hàng `lessons` (migration `20261013100000_lop_avcn…` tạo 10 bài, Chapter n = `sort_order` n; từ 20/10/2026 mỗi bài nằm trong **chương riêng** cùng `sort_order` — migration `20261020190000_avcn_tach_10_chuong`, tiêu đề chương bỏ tiền tố "Chapter n:",
    9 bài còn `published=false`). Lấy id: `supabase db query --linked "select y.id,y.title,y.published from lessons y join chapters x on x.id=y.chapter_id where x.subject_code='avcn' order by y.sort_order"`.
    Rồi `npx tsx scripts/upload-lesson.mts content/lesson-samples/avcn-chapter-<n>-<slug>/bundle.json --lesson <id>` (ghi ly_thuyet,
    bai_tap_mau, exam + luyen_tap). Bật bài: `update lessons set published=true where id=<id>`. Deploy theo `scripts/deploy.sh`

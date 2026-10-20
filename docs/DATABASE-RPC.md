@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 371 hàm, sinh tự động 2026-10-18
+# Hàm SQL / RPC (schema public) — 372 hàm, sinh tự động 2026-10-20
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -19,9 +19,10 @@ repo — xem trên Supabase Dashboard).
 - `can_edit_teaching(p_class bigint)` → boolean
 - `can_manage_class(p_class_id bigint)` → boolean
 - `can_manage_course(p_course_id bigint)` → boolean
+- `claim_notification_pushes(p_now timestamp with time zone)` → TABLE(notification_id bigint, subscription_id bigint, endpoint text, p256dh text, auth_key text, title text, body text, href text)
 - `claim_parent_by_child_info(p_name text, p_birth date, p_phone text)` → TABLE(status text, student_name text, class_name text)
 - `claim_parent_link(p_code text)` → TABLE(student_name text, class_name text)
-- `claim_push_reminders_due(p_now timestamp with time zone)` → TABLE(subscription_id bigint, student_id uuid, endpoint text, p256dh text, auth_key text, topic_name text, lesson_id bigint, level text)
+- `claim_push_reminders_due(p_now timestamp with time zone)` → TABLE(subscription_id bigint, student_id uuid, endpoint text, p256dh text, auth_key text, topic_name text, lesson_id bigint, level text, inactive_days integer)
 - `claim_staff_invite(p_code text)` → TABLE(role text, class_name text, tier text)
 - `cleanup_old_machine_photos(p_course_id bigint, p_keep_session_id bigint)` → text[]
 - `count_question_types(qs jsonb)` → jsonb
