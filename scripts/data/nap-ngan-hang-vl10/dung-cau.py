@@ -3,7 +3,7 @@
 Bỏ (ghi vào loai-ra.json kèm lý do): câu có hình, câu cờ lỗi tách, câu tự luận định tính.
   python3 dung-cau.py c3-1 c3-2 ..."""
 import json, re, sys, os
-H = os.path.dirname(os.path.abspath(__file__))
+H = os.environ.get('VL10_DIR') or os.path.dirname(os.path.abspath(__file__))
 P = '<p class="text-base leading-relaxed my-2">'
 
 def inline(s):

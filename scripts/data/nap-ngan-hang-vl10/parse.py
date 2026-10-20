@@ -4,7 +4,7 @@ Không dùng LLM. Câu nào không tách sạch thì gắn flag, không đoán.
   python3 parse.py c3-1 c3-2 ..."""
 import json, re, sys, os
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.environ.get('VL10_DIR') or os.path.dirname(os.path.abspath(__file__))
 
 def clean_math(s):
     """Làm gọn LaTeX sinh từ MathType (\\mathit{F}\\mathbf{=}...)."""
@@ -117,7 +117,30 @@ def parse_file(name):
             item['stem'] = clean_math(tidy(stem))
             item['statements'] = [[l, clean_math(tidy(tx)), v.upper()] for l, tx, v in rows]
             if [r[0] for r in rows] != ['a', 'b', 'c', 'd']:
-                flags.append('bang-dung-sai-khong-du-4-y')
+                # dạng không bảng: 4 ý a\. b\. c\. d\. là dòng thường, đúng/sai nằm trong lời giải
+                lines = body.split('\n')
+                st = {}
+                for ln in lines:
+                    m2 = re.match(r'^\s*([a-d])\s*(?:\\)?[.)]\s*(.+)$', ln)
+                    if m2 and m2.group(1) not in st: st[m2.group(1)] = m2.group(2).strip()
+                first = re.search(r'(?m)^\s*a\s*(?:\\)?[.)]', body)
+                stem2 = body[:first.start()] if first else body
+                vs = {}
+                for ln in sol.split('\n'):
+                    m3 = re.match(r'^\s*([a-d])\s*(?:\\)?[.)]\s*(.+)$', ln)
+                    if m3 and m3.group(1) not in vs:
+                        t3 = m3.group(2)
+                        v = re.findall(r'\*\*\s*(đúng|sai)\s*\*\*', t3[:240], flags=re.I)
+                        if not v: v = re.findall(r'(?:phát biểu|ý|mệnh đề|nhận định|kết luận)[^.;]{0,40}?\b(đúng|sai)\b', t3[:240], flags=re.I)
+                        if len(set(x.lower() for x in v)) == 1: vs[m3.group(1)] = 'Đ' if v[0].lower() == 'đúng' else 'S'
+                if sorted(st) == ['a', 'b', 'c', 'd'] and sorted(vs) == ['a', 'b', 'c', 'd']:
+                    rows = [(l, st[l], vs[l]) for l in 'abcd']
+                    item['stem'] = clean_math(tidy(stem2))
+                    flags.append('ds-tu-loi-giai')
+                else:
+                    flags.append('bang-dung-sai-khong-du-4-y')
+                    if sorted(st) == ['a', 'b', 'c', 'd']: flags.append('thieu-' + ''.join(sorted(set('abcd') - set(vs))))
+            item['statements'] = [[l, clean_math(tidy(tx)), v.upper()] for l, tx, v in rows]
         else:  # sa / tl
             item['stem'] = clean_math(tidy(body))
         item['solution'] = clean_math(tidy(sol))

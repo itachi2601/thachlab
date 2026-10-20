@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Dựng duyet/duyet.html cho các câu chưa khớp (giữa đáp án nguồn và 2 lượt giải độc lập). Không dùng LLM, không đụng DB."""
 import json, os
-H = os.path.dirname(os.path.abspath(__file__))
+TITLE = os.environ.get('VL10_TITLE', 'Chương III')
+H = os.environ.get('VL10_DIR') or os.path.dirname(os.path.abspath(__file__))
 cau = {q['key']: q for q in json.load(open(f'{H}/cau-bank.json'))}
 hk = {o['key']: o for o in json.load(open(f'{H}/ket-qua-haiku.json'))}
 sn = {o['key']: o for o in json.load(open(f'{H}/ket-qua.json')) if o['trangThai'] != 'chua-co-ket-qua'}
@@ -17,7 +18,7 @@ for k, q in cau.items():
 json.dump(rows, open(f'{H}/duyet/items.json', 'w'), ensure_ascii=False, indent=1)
 data = json.dumps({'rows': rows}, ensure_ascii=False).replace('<', '\\u003c')
 html = '''<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Duyệt câu VL10 Chương III</title>
+<title>Duyệt câu VL10 __TITLE__</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <style>
 :root{--bg:#f7f7f5;--card:#fff;--ink:#1d1d1b;--mut:#666;--line:#ddd;--acc:#1a56db;--warn:#fff4cc;--ok:#1a7f37}
@@ -36,12 +37,12 @@ h2{margin:0 0 8px;font-size:17px}.mut{color:var(--mut);font-size:14px}
 label.c{display:block;padding:8px 0;min-height:44px}textarea,input[type=text]{width:100%;box-sizing:border-box;font:inherit;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
 details{margin-top:8px}summary{cursor:pointer;min-height:32px}
 </style></head><body>
-<header><strong>Duyệt VL10 Chương III</strong><button class="p" id="pick">Chọn file lưu (phan-hoi.json)</button><button id="dl">Tải JSON về</button><span id="st" class="mut">Chưa chọn file — tạm lưu trong trình duyệt</span><span id="cnt" class="mut"></span></header>
+<header><strong>Duyệt VL10 __TITLE__</strong><button class="p" id="pick">Chọn file lưu (phan-hoi.json)</button><button id="dl">Tải JSON về</button><span id="st" class="mut">Chưa chọn file — tạm lưu trong trình duyệt</span><span id="cnt" class="mut"></span></header>
 <main id="m"></main>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 <script>
-const D=__DATA__;const KEY='duyet-vl10-c3';let fh=null,R={};
+const D=__DATA__;const KEY='duyet-vl10-__TITLE__';let fh=null,R={};
 try{R=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 const L='ABCD',S='abcd';
 const fmt=a=>a==null?'—':Array.isArray(a)?a.map((v,i)=>S[i]+':'+(v?'Đ':'S')).join(' '):String(a);
@@ -68,7 +69,7 @@ document.getElementById('pick').onclick=async()=>{if(!window.showSaveFilePicker)
 fh=await showSaveFilePicker({suggestedName:'phan-hoi.json',types:[{description:'JSON',accept:{'application/json':['.json']}}]});save()};
 document.getElementById('dl').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(R,null,1)],{type:'application/json'}));a.download='phan-hoi.json';a.click()};
 window.addEventListener('load',()=>setTimeout(render,300));
-</script></body></html>'''.replace('__DATA__', data)
+</script></body></html>'''.replace('__DATA__', data).replace('__TITLE__', TITLE)
 open(f'{H}/duyet/duyet.html', 'w', encoding='utf8').write(html)
 from collections import Counter
 print(len(rows), Counter(r['lydo'] for r in rows))

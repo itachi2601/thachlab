@@ -1,0 +1,1646 @@
+[
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 1,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Đối với một vật chuyển động, đặc điểm nào sau đây chỉ là của quãng đường đi được, **không phải** của độ dịch chuyển?",
+  "options": [
+   [
+    "A",
+    "Có phương và chiều xác địch.",
+    false
+   ],
+   [
+    "B",
+    "Có đơn vị đo là mét.",
+    false
+   ],
+   [
+    "C",
+    "Không thể có độ lớn bằng 0.",
+    true
+   ],
+   [
+    "D",
+    "Có thể có độ lớn bằng 0.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 2,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Độ dịch chuyển và quãng đường đi được của vật có độ lớn bằng nhau khi vật",
+  "options": [
+   [
+    "A",
+    "chuyển động tròn.",
+    false
+   ],
+   [
+    "B",
+    "chuyển động thẳng và không đổi chiều.",
+    true
+   ],
+   [
+    "C",
+    "chuyển động thẳng và chỉ đổi chiều 1 lần.",
+    false
+   ],
+   [
+    "D",
+    "chuyển động thẳng và chỉ đổi chiều 2 lần.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 3,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Phát biểu nào sau đây là **đúng** khi nói về độ dịch chuyển?",
+  "options": [
+   [
+    "A",
+    "Véctơ độ dịch chuyển thay đổi phương liên tục khi vật chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "Véctơ độ dịch chuyển có độ lớn luôn bằng quãng đường đi được của chất điểm.",
+    false
+   ],
+   [
+    "C",
+    "Khi vật chuyển động thẳng không đổi chiều, độ lớn của véc tơ độ dịch chuyển bằng quãng đường đi được.",
+    true
+   ],
+   [
+    "D",
+    "Vận tốc tức thời cho ta biết chiều chuyển động nên luôn có giá trị dương.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 4,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về độ dịch chuyển?",
+  "options": [
+   [
+    "A",
+    "Véc tơ độ dịch chuyển là một véc tơ nối vị trí đầu và vị trí cuối của vật chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "Véc tơ độ dịch chuyển có độ lớn luôn bằng quãng đường đi được của vật.",
+    true
+   ],
+   [
+    "C",
+    "Khi vật đi từ điểm A đến điểm B, sau đó đến điểm C, rồi quay về A thì độ dịch chuyển của vật có độ lớn bằng 0.",
+    false
+   ],
+   [
+    "D",
+    "Độ dịch chuyển có thể có giá trị âm, dương, hoặc bằng không.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 5,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Quãng đường và độ lớn của độ dịch chuyển của một vật chuyển động có cùng độ lớn khi vật",
+  "options": [
+   [
+    "A",
+    "chuyển động thẳng và đổi chiều chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "chuyển động thẳng và không đổi chiều chuyển động.",
+    true
+   ],
+   [
+    "C",
+    "đi từ điểm A đến điểm B, sau đó đến điểm C, rồi quay về A.",
+    false
+   ],
+   [
+    "D",
+    "đi từ điểm A đến điểm B, sau đó đến điểm C, rồi quay về",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 6,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một xe ô tô xuất phát từ tỉnh A, đi đến tỉnh B, rồi lại trở về vị trí xuất phát ở tỉnh",
+  "options": [
+   [
+    "A",
+    "Xe này đã dịch chuyển so với vị trí xuất phát một đoạn bằng \n**A.** AB.",
+    false
+   ],
+   [
+    "B",
+    "0.",
+    true
+   ],
+   [
+    "C",
+    "$\\frac{AB}{2}.$",
+    false
+   ],
+   [
+    "D",
+    "$\\frac{AB}{4}.$ \n![A diagram of a half moon Description automatically generated](media/c2-1/media/image7.png){width=\"2.7017825896762906in\" height=\"0.7291666666666666in\"}**Câu 7:** Một ô tô chuyển động trên đường thẳng. Tại thời điểm t~1~, ô tô ở cách vị trí xuất phát 5 km. Tại thời điểm t~2~, ô tô cách vị trí xuất phát 12 km. Từ thời điểm t~1~ đến thời điểm t~2~, độ dịch chuyển của ô tô bằng \n**A.** 5 km. **B.** 0. **C.** 17 km **[D.** 7 km",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image7.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 8,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một vật ở hình vẽ chuyển động thẳng, mỗi giờ đi được 40 km. Vị trí của vật trên trục Ox tại thời điểm 12 h cách O \n![A black line with a white background Description automatically generated](media/c2-1/media/image8.png){width=\"2.592654199475066in\" height=\"0.7791655730533683in\"}",
+  "options": [
+   [
+    "A",
+    "40 km.",
+    false
+   ],
+   [
+    "B",
+    "120 km.",
+    false
+   ],
+   [
+    "C",
+    "160 km.",
+    true
+   ],
+   [
+    "D",
+    "480 km",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image8.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 9,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về độ dịch chuyển của một vật?",
+  "options": [
+   [
+    "A",
+    "Khi vật chuyển động thẳng, không đổi chiều thì độ lớn của độ dịch chuyển và quãng đường đi được bằng nhau (d = s).",
+    false
+   ],
+   [
+    "B",
+    "Có thể nhận giá trị dương, âm hoặc bằng 0.",
+    false
+   ],
+   [
+    "C",
+    "Độ dịch chuyển được biểu diễn bằng một mũi tên nối vị trí đầu và vị trí cuối của chuyển động, có độ lớn chính bằng khoảng cách giữa vị trí đầu và vị trí cuối. Kí hiệu là $\\overrightarrow{d_{ }}$.",
+    false
+   ],
+   [
+    "D",
+    "Khi vật chuyển động thẳng, có đổi chiều thì độ lớn của độ dịch chuyển và quãng đường đi được bằng nhau (d = s).",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 10,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Phát biểu nào sau đây là **đúng** khi nói về độ dịch chuyển?",
+  "options": [
+   [
+    "A",
+    "Vectơ độ dịch chuyển thay đổi phương liên tục khi vật chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "Vectơ độ dịch chuyển có độ lớn luôn bằng quãng đường đi được của vật.",
+    false
+   ],
+   [
+    "C",
+    "Trong chuyển động thẳng độ dịch chuyển bằng độ biến thiên tọa độ.",
+    true
+   ],
+   [
+    "D",
+    "Độ dịch chuyển có giá trị luôn dương.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 11,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về độ dịch chuyển?",
+  "options": [
+   [
+    "A",
+    "Vectơ độ dịch chuyển là một vectơ nối vị trí đầu và vị trí cuối của một vật chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "Vật đi từ A đến B, từ B đến C rồi từ C về A thì có độ dịch chuyển bằng AB + BC + CA.",
+    true
+   ],
+   [
+    "C",
+    "Vật đi từ A đến B, từ B đến C rồi từ C về A thì có độ dịch chuyển bằng 0.",
+    false
+   ],
+   [
+    "D",
+    "Độ dịch chuyển có thể dương, âm hoặc bằng 0.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 12,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một vật bắt đầu chuyển động từ điểm O đến điểm A, sau đó chuyển động về điểm B (hình vẽ). Quãng đường và độ dịch chuyển của vật tương ứng bằng \n![Ảnh có chứa ăng-ten Mô tả được tạo tự động](media/c2-1/media/image9.png){width=\"2.498611111111111in\" height=\"0.4076388888888889in\"}",
+  "options": [
+   [
+    "A",
+    "2 m, - 2 m.",
+    false
+   ],
+   [
+    "B",
+    "8m, - 2 m.",
+    true
+   ],
+   [
+    "C",
+    "2 m, 2 m.",
+    false
+   ],
+   [
+    "D",
+    "8m, - 8m.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image9.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 13,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một người lái xe ô tô đi thẳng 6 km theo hướng Tây, sau đó rẽ trái đi thẳng theo hướng nam 4 km rồi quay sang hướng Đông đi 3 km. Quãng đường đi được của ô tô là",
+  "options": [
+   [
+    "A",
+    "13 km.",
+    true
+   ],
+   [
+    "B",
+    "16 km.",
+    false
+   ],
+   [
+    "C",
+    "5 km.",
+    false
+   ],
+   [
+    "D",
+    "10 km.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 14,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Hình vẽ bên dưới mô tả độ dịch chuyển của 4 vật. \n![Ảnh có chứa văn bản, đồng hồ, ăng-ten Mô tả được tạo tự động](media/c2-1/media/image10.png){width=\"1.8958333333333333in\" height=\"1.1666666666666667in\"} \nPhát biểu nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Vật 1 đi 200 m theo hướng Nam.",
+    false
+   ],
+   [
+    "B",
+    "Vật 2 đi 200 m theo hướng 45^0^ Đông – Bắc.",
+    true
+   ],
+   [
+    "C",
+    "Vật 3 đi 30 m theo hướng Đông.",
+    false
+   ],
+   [
+    "D",
+    "Vật 4 đi 100 m theo hướng Đông.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image10.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 14,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Hai người đi xe đạp từ A đến C, người thứ nhất đi theo đường từ A đến B, rồi từ B đến C, người thứ hai đi thẳng từ A đến C (Hình vẽ). Cả hai đều về đích cùng một lúc. \n![A diagram of a person riding a bike Description automatically generated](media/c2-1/media/image11.jpeg){width=\"1.9006922572178477in\" height=\"1.379582239720035in\"} \nPhát biểu nào sau đây là **sai**?",
+  "options": [
+   [
+    "A",
+    "Người thứ nhất đi được quãng đường 8 km.",
+    false
+   ],
+   [
+    "B",
+    "Độ dịch chuyển của người thứ nhất và người thứ hai bằng nhau.",
+    false
+   ],
+   [
+    "C",
+    "Độ dịch chuyển và quãng đường đi được của người thứ nhất bằng nhau.",
+    true
+   ],
+   [
+    "D",
+    "Độ dịch chuyển của người thứ nhất là 5, 7 km, hướng 45^0^ Đông – Bắc.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image11.jpeg"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 16,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một người bơi ngang từ bờ bên này sang bờ bên kia của một dòng sông rộng 50 m có dòng chảy theo hướng từ Bắc xuống Nam. Do nước sông chảy mạnh nên khi sang đến bờ bên kia thì người đó đã trôi xuôi theo dòng nước 50 m. Độ dịch chuyển của người đó.",
+  "options": [
+   [
+    "A",
+    "70, 7 km.",
+    true
+   ],
+   [
+    "B",
+    "50 km.",
+    false
+   ],
+   [
+    "C",
+    "100 km.",
+    false
+   ],
+   [
+    "D",
+    "35,35 km.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 17,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Khi so sánh quãng đường và độ dịch chuyển, phát biểu nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Véc tơ độ dịch chuyển thay đổi phương liên tục khi vật chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "Véc tơ độ dịch chuyển có độ lớn luôn bằng quãng đường đi được của chất điểm.",
+    false
+   ],
+   [
+    "C",
+    "Khi vật chuyển động thẳng không đổi chiều, độ lớn của véc tơ độ dịch chuyển bằng quãng đường đi được.",
+    true
+   ],
+   [
+    "D",
+    "Quãng đường và độ dịch chuyển luôn có giá trị đương.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 18,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Khi nói về độ dịch chuyển phát biểu nào sau đây **chưa chính xác**?",
+  "options": [
+   [
+    "A",
+    "Véc tơ độ dịch chuyển là một véc tơ nối vị trí đầu và vị trí cuối của vật chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "Véc tơ độ dịch chuyển có độ lớn luôn bằng quãng đường đi được của vật.",
+    true
+   ],
+   [
+    "C",
+    "Khi vật đi từ điểm A đến điểm B, sau đó đến điểm C, rồi quay về A thì độ dịch chuyển của vật có độ lớn bằng 0.",
+    false
+   ],
+   [
+    "D",
+    "Độ dịch chuyển có thể có giá trị âm, dương, hoặc bằng không.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 19,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Quãng đường và độ dịch chuyển của một vật chuyển động có cùng giá trị khi",
+  "options": [
+   [
+    "A",
+    "vật chuyển động theo quỹ đạo thẳng.",
+    false
+   ],
+   [
+    "B",
+    "vật chuyển động theo quỹ đạo thẳng theo chiều âm.",
+    false
+   ],
+   [
+    "C",
+    "vật chuyển động theo quỹ đạo thẳng theo chiều dương.",
+    true
+   ],
+   [
+    "D",
+    "vật chuyển động theo quỹ đạo quỹ đạo cong.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 20,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Quãng đường và độ dịch chuyển của một vật chuyển động có cùng độ lớn khi",
+  "options": [
+   [
+    "A",
+    "vật chuyển động theo quỹ đạo thẳng.",
+    true
+   ],
+   [
+    "B",
+    "vật chuyển động theo quỹ đạo thẳng theo chiều âm.",
+    false
+   ],
+   [
+    "C",
+    "vật chuyển động theo quỹ đạo thẳng theo chiều dương.",
+    false
+   ],
+   [
+    "D",
+    "vật chuyển động theo quỹ đạo quỹ đạo cong.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 21,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Khi so sánh quãng đường và độ dịch chuyển kết luận nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Quãng đường luôn luôn lớn hơn hoặc bằng độ lớn của độ dịch chuyển.",
+    true
+   ],
+   [
+    "B",
+    "Quãng đường luôn luôn nhỏ hơn hoặc bằng độ lớn của độ dịch chuyển.",
+    false
+   ],
+   [
+    "C",
+    "Quãng đường luôn luôn bằng độ lớn của độ dịch chuyển.",
+    false
+   ],
+   [
+    "D",
+    "Quãng đường luôn luôn nhỏ hơn độ lớn của độ dịch chuyển.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 22,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Phát biểu nào sau đây nói về độ dịch chuyển?",
+  "options": [
+   [
+    "A",
+    "Con tàu đã đi 200 km về phía đông nam.",
+    false
+   ],
+   [
+    "B",
+    "Một xe ô tô đã đi 200 km từ Hà Nội đến Nam Định.",
+    true
+   ],
+   [
+    "C",
+    "Máy bay đã bay được 500 km về thành phố Hồ Chí Minh.",
+    false
+   ],
+   [
+    "D",
+    "Bạn An đã đi được 1km về phía sân vận động.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 23,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Bạn Thủy thực hiện một hành trình trên một đường thẳng như hình vẽ. Phát biểu nào sau đây là **đúng**? \n![A screen shot of a video Description automatically generated](media/c2-1/media/image12.png){width=\"6.074594269466317in\" height=\"1.55125in\"}",
+  "options": [
+   [
+    "A",
+    "Khi đi từ nhà đến trường quãng đường bằng -1000m.",
+    false
+   ],
+   [
+    "B",
+    "Khi đi từ nhà đến trường sau đó quay về siêu thị quãng đường bằng 1200m.",
+    true
+   ],
+   [
+    "C",
+    "Khi đi từ nhà đến trường độ dịch chuyển bằng -1000m.",
+    false
+   ],
+   [
+    "D",
+    "Khi đi từ nhà đến trường sau đó quay về siêu thị độ dịch chuyển bằng -8000m.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image12.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 24,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Bạn Minh chuyển động trên sân vận động xuất phát từ đi điểm A qua B rồi đến C. kết luận nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Quãng đường gấp đôi độ dịch chuyển khi tam giác ABC là tam giác đều.",
+    true
+   ],
+   [
+    "B",
+    "Quãng đường gấp đôi độ dịch chuyển khi tam giác ABC là tam giác vuông.",
+    false
+   ],
+   [
+    "C",
+    "Quãng đường bằng độ dịch chuyển khi tam giác ABC là tam giác đều.",
+    false
+   ],
+   [
+    "D",
+    "Quãng đường bằng độ dịch chuyển khi tam giác ABC là tam giác vuông.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 25,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một vận động viên thực hiện bơi 400m dọc theo đường bơi có chiều dài 80 m. Người đó bơi hết đường bơi rồi quay lại chỗ xuất phát bơi tiếp hết đường bơi lại tiếp tục quay lại cứ như thế hoàn thành. Trong quá trình bơi người đó đã",
+  "options": [
+   [
+    "A",
+    "đi được quãng đường 200m.",
+    false
+   ],
+   [
+    "B",
+    "đi được quãng đường 80m.",
+    false
+   ],
+   [
+    "C",
+    "đã dời được độ dịch chuyển 80m.",
+    true
+   ],
+   [
+    "D",
+    "đã dời được độ dịch chuyển bằng 0.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 26,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Vị trí của một ô tô tính bằng km theo thời gian được biểu diễn dưới đây \n![A line graph with numbers and a triangle Description automatically generated](media/c2-1/media/image13.png){width=\"3.647222222222222in\" height=\"2.073611111111111in\"} \nKết luận nào sau đây không **chính xác**?",
+  "options": [
+   [
+    "A",
+    "Quãng đường đi được từ 0 h đến 1 h là 40 km.",
+    false
+   ],
+   [
+    "B",
+    "Độ dịch chuyển từ 0 h đến 9 h là 160 km.",
+    true
+   ],
+   [
+    "C",
+    "Quãng đường đi được từ 1 h đến 5 h là 120 km.",
+    false
+   ],
+   [
+    "D",
+    "Độ dịch chuyển từ 1 h đến 3 h là 0 km.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image13.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 27,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một người chuyển động 30 m theo hướng Bắc, sau đó đi 20 m theo hướng Đông và cuối cùng là 30$\\sqrt{2}$ m theo hướng Tây Nam một góc 45^o^ so với hướng Tây. Sự dịch chuyển của người từ vị trí đầu sẽ là",
+  "options": [
+   [
+    "A",
+    "10 m dọc theo phía Bắc.",
+    false
+   ],
+   [
+    "B",
+    "10 m về phía Nam.",
+    false
+   ],
+   [
+    "C",
+    "10 m dọc theo phía Tây.",
+    true
+   ],
+   [
+    "D",
+    "10 về phía Đông.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 28,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một giáo viên Vật lý đi 4 mét Đông, 2 mét Nam, 4 mét Tây, và cuối cùng là 2 mét Bắc. Tính độ dịch chuyển và quãng đường giáo viên ấy đi được \n![A diagram of a diagram of a diagram Description automatically generated with medium confidence](media/c2-1/media/image14.jpeg){width=\"2.251709317585302in\" height=\"1.25875in\"}",
+  "options": [
+   [
+    "A",
+    "d = 12 m, s = 12 m.",
+    false
+   ],
+   [
+    "B",
+    "d = 12 m, s = 0 m.",
+    false
+   ],
+   [
+    "C",
+    "d = 0 m, s = 12 m.",
+    true
+   ],
+   [
+    "D",
+    "d = 24 m, s = 12 m.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image14.jpeg"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 29,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một du khách lái xe về hướng Đông 10 km rồi rẽ sang tay phải và lái xe 3 km. Sau đó, anh ta lái xe về hướng Tây (rẽ phải) 3 km. Anh ta, sau đó rẽ trái và lái xe 2 km. Cuối cùng anh ta rẽ sang phải và đi được 7 km. Anh ta cách điểm xuất phát bao xa và anh ta đang hướng nào so với vị trí xuất phát?",
+  "options": [
+   [
+    "A",
+    "10 km, hướng Đông.",
+    false
+   ],
+   [
+    "B",
+    "9 km, hướng Bắc.",
+    false
+   ],
+   [
+    "C",
+    "8 km, hướng Tây.",
+    false
+   ],
+   [
+    "D",
+    "5km, hướng Nam",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 30,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một chiếc thuyền xuôi dòng sông chuyển động theo hướng đông 5 km, sau đó vượt sông chuyển động 3 km về hướng nam. Khi đến bờ bên kia, nó di chuyển về phía tây qua 1 km và đến cầu cảng. Độ dịch chuyển của thuyền là",
+  "options": [
+   [
+    "A",
+    "5 km.",
+    true
+   ],
+   [
+    "B",
+    "9 km.",
+    false
+   ],
+   [
+    "C",
+    "8 km.",
+    false
+   ],
+   [
+    "D",
+    "1 km.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 31,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một ô tô chuyển động thẳng trên đường cao tốc từ điểm P đến điểm Q đến điểm R và điểm S, sau đó quay lại điểm Q và cuối cùng đến điểm R như hình vẽ bên. Quãng đường đi được và độ dịch chuyển của ôtô là có giá trị lần lượt là \n![Các ví dụ đã giải quyết về khoảng cách và độ dịch chuyển](media/c2-1/media/image15.png){width=\"4.486071741032371in\" height=\"0.6315616797900262in\"}",
+  "options": [
+   [
+    "A",
+    "8 km, 32 km.",
+    false
+   ],
+   [
+    "B",
+    "32 km, 8 km.",
+    true
+   ],
+   [
+    "C",
+    "15 km, 8 km.",
+    false
+   ],
+   [
+    "D",
+    "12 km, 7 km.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image15.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 32,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một người đi dọc con đường của một hình chữ nhật từ điểm P đến điểm R như hình dưới đây. Quãng đường vật đi được là \n![vấn đề đã giải quyết](media/c2-1/media/image16.png){width=\"2.0623468941382326in\" height=\"1.1353116797900262in\"}",
+  "options": [
+   [
+    "A",
+    "5,35 km.",
+    false
+   ],
+   [
+    "B",
+    "14 km.",
+    false
+   ],
+   [
+    "C",
+    "7 km.",
+    true
+   ],
+   [
+    "D",
+    "28 km.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image16.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 33,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "![Các câu hỏi đã giải quyết được khoảng cách và độ dịch chuyển](media/c2-1/media/image17.png){width=\"1.6194510061242344in\" height=\"1.59125in\"}Một xe máy đi từ điểm P đến Q đến R đến S và cuối cùng đến P theo một đường tròn như hình vẽ bên. Độ dịch chuyển của chiếc xe máy là",
+  "options": [
+   [
+    "A",
+    "5πkm.",
+    false
+   ],
+   [
+    "B",
+    "5 km.",
+    false
+   ],
+   [
+    "C",
+    "10πkm.",
+    false
+   ],
+   [
+    "D",
+    "0 km.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image17.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 34,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một xe chuyển động từ điểm P đến Q đến R đến S theo đường tròn như hình vẽ bên. Tính độ dịch chuyển của xe \n![A white circle with black text Description automatically generated](media/c2-1/media/image18.png){width=\"1.6142749343832021in\" height=\"1.59125in\"}",
+  "options": [
+   [
+    "A",
+    "8π km.",
+    false
+   ],
+   [
+    "B",
+    "8 km",
+    false
+   ],
+   [
+    "C",
+    "8$\\sqrt{2}$ km",
+    false
+   ],
+   [
+    "D",
+    "16 π km.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image18.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 35,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Xét một vật chuyển động trên một đường thẳng. Độ dịch chuyển của vật đi từ điểm gốc O theo thời gian được biểu diễn trong hình dưới đây. Các phần khác nhau của chuyển động của nó được biểu diễn bằng P, Q, R, S, T, U, V và W. Phát biểu nào sau đây là **sai**? \n![A diagram of a graph Description automatically generated](media/c2-1/media/image19.jpeg){width=\"5.590277777777778in\" height=\"2.457638888888889in\"}",
+  "options": [
+   [
+    "A",
+    "Trong 2 giây đầu, quãng đường đi được 60m.",
+    false
+   ],
+   [
+    "B",
+    "Từ giây thứ 6 đến giây thứ 8, quãng đường đi được là 60m.",
+    false
+   ],
+   [
+    "C",
+    "Trong 14 giây, độ dịch chuyển của vật bằng 0.",
+    false
+   ],
+   [
+    "D",
+    "Từ giây thứ 4 đến giây thứ 6, quãng đường đi được là 10 m.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image19.jpeg"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 36,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "![Ảnh có chứa văn bản, thiết bị, nhiệt kế Mô tả được tạo tự động](media/c2-1/media/image20.png){width=\"4.98160542432196in\" height=\"1.12in\"}Chuyển động của các vật P, Q, R, S và T được đánh dấu trên một thang chia độ như hình vẽ bên. Phát biểu nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Quãng đường vật P đi được là 3 m.",
+    true
+   ],
+   [
+    "B",
+    "Độ dịch chuyển của vật T là 7m.",
+    false
+   ],
+   [
+    "C",
+    "Độ dịch chuyển của vật S là 7m.",
+    false
+   ],
+   [
+    "D",
+    "Quãng đường đi được của vật R là 3m.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image20.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 37,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Bạn An lái chiếc xe tay ga của mình 7 km về phía bắc. Bạn dừng lại để ăn trưa và sau đó lái xe 5 km về phía đông. Phát biểu nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Quãng đường đi được của bạn An là 8,6 km.",
+    false
+   ],
+   [
+    "B",
+    "Độ dịch chuyển của bạn An là 8,6 km, có hướng đông bắc.",
+    true
+   ],
+   [
+    "C",
+    "Độ dịch chuyển của bạn An là 12 km, có hướng đông bắc.",
+    false
+   ],
+   [
+    "D",
+    "Quãng đường đi được của bạn An là 2 km.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 38,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Bạn Hùng đi bộ đến quán tạm hóa để mua đồ dùng cá nhân. Từ nhà, Hùng đi bộ 1 km về phía đông, sau đó 1 km về phía nam và sau đó 1 km về phía đông một lần nữa. Phát biểu nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Quãng đường đi được của Hùng là 1 km.",
+    false
+   ],
+   [
+    "B",
+    "Độ dịch chuyển của Hùng là 2,24 km, có hướng đông nam.",
+    true
+   ],
+   [
+    "C",
+    "Độ dịch chuyển của Hùng là 3 km, có hướng đông nam.",
+    false
+   ],
+   [
+    "D",
+    "Quãng đường đi được của Hùng là 2,24 km.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 39,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một vật di chuyển theo quỹ đạo giống hình bên dưới. \n![A diagram of a square with a line and a line with a point Description automatically generated with medium confidence](media/c2-1/media/image21.jpeg){width=\"3.565298556430446in\" height=\"2.2525in\"} \nPhát biểu nào sau đây là **sai**?",
+  "options": [
+   [
+    "A",
+    "Quãng đường vật đi được từ A đến F là 115 m.",
+    false
+   ],
+   [
+    "B",
+    "Độ dịch chuyển của vật từ A đến F là 115 m.",
+    true
+   ],
+   [
+    "C",
+    "Quãng đường của vật từ A đến D bằng 85 m.",
+    false
+   ],
+   [
+    "D",
+    "Độ dịch chuyển của vật từ A đến F là 45 m.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image21.jpeg"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "mc",
+  "num": 40,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một vật đi trên quỹ đạo giống hình. Độ dịch chuyển và quãng đường vật đi được \n![A diagram of a circle with a line and a circle with a line and a circle with a circle with a circle and a circle with a circle with a circle with a circle with a circle with Description automatically generated](media/c2-1/media/image22.jpeg){width=\"2.8463702974628173in\" height=\"1.425in\"}",
+  "options": [
+   [
+    "A",
+    "d = 5m, s = 5m.",
+    false
+   ],
+   [
+    "B",
+    "d = 2,5πm, s = 2,5πm.",
+    false
+   ],
+   [
+    "C",
+    "d = 5m, s = 2,5πm.",
+    true
+   ],
+   [
+    "D",
+    "d = 2,5πm, s = 5m.****",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image22.jpeg"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Xét quãng đường AB dài 1000 m với A là vị trí nhà của em và B là vị trí của bưu điện như hình vẽ.\n\n![A drawing of a store Description automatically generated](media/c2-1/media/image23.png){width=\"4.5in\" height=\"1.0833333333333333in\"}\n\nTiệm tạp hóa nằm tại vị trí C là trung điểm của AB. Nếu chọn nhà em làm gốc tọa độ và chiều dương hướng từ nhà em đến bưu điện.",
+  "statements": [
+   [
+    "a",
+    "Quãng đường đi từ nhà đến bưu điện rồi trở lại tiệm tạp hóa là 1500 m.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Độ dịch chuyển khi đi từ nhà đến bưu điện rồi quay trở về nhà là 2000 m.",
+    "S"
+   ],
+   [
+    "c",
+    "Quãng đường đi từ tiệm tạp hóa đến bưu điện là 500 m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ dịch chuyển khi đi từ tiệm tạp hóa đến bưu điện rồi quay về nhà là 500 m.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Khi đi từ nhà đến bưu điện rồi trờ lại tiệm tạp hóa đi được quãng đường $s = AB + BC=1000+500=1500 m.$\n\nb. Phát biểu này **sai.** Độ dịch chuyển khi đi từ nhà đến bưu điện rồi quay trở về nhà $d = 0.$\n\nc. Phát biểu này **đúng.** Quãng đường đi từ tiệm tạp hóa đến bưu điện là $s = BC = 500 m.$\n\nd. Phát biểu này **sai.** Độ dịch chuyển khi đi từ tiệm tạp hóa đến bưu điện rồi quay trở về nhà$d=CA= -500 m.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image23.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một vận động viên chạy từ một siêu thị (A) đến cổng Sân Vận Động (D) theo hai quỹ đạo khác nhau. Hãy xác định độ dịch chuyển và quãng đường chạy được của người vận động viên trong 2 trường hợp trên.\n\n![A diagram of a diagram Description automatically generated with medium confidence](media/c2-1/media/image28.png){width=\"3.1743055555555557in\" height=\"1.2875in\"}",
+  "statements": [
+   [
+    "a",
+    "Người này đi từ siêu thị đến đường Điện Biên Phủ rồi đi hết đường Lê Lợi đi được quãng đường $s=AC.$",
+    "S"
+   ],
+   [
+    "b",
+    "Độ dịch chuyển của người đó khi đi từ siêu thị theo con đường Điện Biên Phủ - Lê Lợi – Văn Cao đến sân vận động bằng với độ dịch chuyển của người đó khi đi đến sân vận động theo đường Lê Duẩn.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Độ dịch chuyển của vận động viên đi từ siêu thị đến Lê Duẩn rồi đi hết đường là Văn Cao là AC.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ dịch chuyển của vận động điên đi từ siêu thị đến sân vận động rồi về lại siêu thị bằng 0.",
+    "Đ"
+   ]
+  ],
+  "solution": "\\` a. Phát biểu này **đúng.** Người này đi từ siêu thị đến đường Điện Biên Phủ rồi đi hết đường Lê Lợi đi được quãng đường $s=AB+BC.$\n\nb. Phát biểu này **đúng.** Độ dịch chuyển đến sân vận động trong hai tuyến đường là bằng nhau $d=AD.$\n\nc. Phát biểu này **đúng.** Độ dịch chuyển của vận động viên đi từ siêu thị đến Lê Duẩn rồi đi hết đường là Văn Cao là AC.\n\nd. Phát biểu này **đúng.** Độ dịch chuyển của vận động điên đi từ siêu thị đến sân vận động rồi về lại siêu thị là $d=0.$\n\n![A map of a city Description automatically generated](media/c2-1/media/image33.png){width=\"2.035416666666667in\" height=\"2.147222222222222in\"} **Câu 3:** Trong hình 4.6 người đi xe máy (1), người đi bộ (2), người đi ô tô (3) đều khởi hành từ siêu thị A để đi đến bưu điện B.\n\na. Quãng đường đi từ siêu thị đến bưu điện của xe máy lớn hơn của ô tô.\n\nb. Độ dịch chuyển của người đi bộ nhỏ hơn độ dịch chuyển của người đi xe máy.\n\nc. Quãng đường đi từ siêu thị đến bưu điện của ba người là như nhau.\n\nd. Độ dịch chuyển của ba người là bằng nhau khi đi từ siêu thị đến bưu điện.\n\n**Hướng dẫn giải**\n\na. Phát biểu này **sai.** Quãng đường đi từ siêu thị đến xe máy nhỏ hơn ô tô $s_{1}<s_{3}.$\n\nb. Phát biểu này **sai.** Độ dịch chuyển của 3 người là như nhau $d=AB.$\n\nc. Phát biểu này **đúng.** Quãng đường đi từ siêu thị đến bưu điện là $s_{2}<s_{1}<s_{3}.$\n\nd. Phát biểu này **đúng.** Độ dịch chuyển của 3 người là như nhau $d=AB.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image28.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y",
+   "thieu-c",
+   "co-hinh"
+  ],
+  "stem": "Bạn A đi xe đạp từ nhà qua trạm xăng, tới siêu thị mua đồ rồi quay về nhà cất đồ, sau đó đi xe đến trường như hình dưới đây. Chọn hệ tọa độ có gốc là vị trí nhà bạn A, trục Ox trùng với đường đi từ nhà bạn A tới trường.\n\n![A road with a small store and a small store Description automatically generated with medium confidence](media/c2-1/media/image38.png){width=\"4.166666666666667in\" height=\"1.6041666666666667in\"}\n\na. Quãng đường đi từ trạm xăng đến siêu thị mua đồ rồi về nhà cất đồ là 1200 m.\n\nb. Độ dịch chuyển của bạn A đi từ nhà đến siêu thị rồi quay về nhà cất đồ là 1600 m.\n\nc. Quãng đường của bạn A đi được trên cả chuyến đi là 2800 m.\n\nd. Độ dịch chuyển của bạn A đi được trên cả chuyến là 2800 m.",
+  "statements": [],
+  "solution": "a. Phát biểu này **đúng.** Quãng đường đi từ trạm xăng đến siêu thị mua đồ rồi về nhà cất đồ là $s=CS+SN=400+800=1200$ m.\n\nb. Phát biểu này **sai.** Độ dịch chuyển của bạn A đi từ nhà đến siêu thị rồi quay về nhà cất đồ là d = 0.\n\nc Phát biểu này **đúng.** Quãng đường của bạn A đi được trên cả chuyến đi là\n\ns = 2.NS + NT = 2.800 + 1200 = 2800 m.\n\nd. Phát biểu này **sai.** Độ dịch chuyển của bạn A đi được trên cả chuyến là d = NT = 1200 m.",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image38.png"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "**[KNTT]** Một ô tô chuyển động trên đường thẳng. Tại thời điểm t~1~, ô tô ở cách vị trí xuất phát 5 km. Tại thời điểm t~2~, ô tô ở cách vị trí xuất phát 12 km Từ t~1~ đến t~2~, độ dịch chuyển của ô tô đã thay đổi một đoạn bằng bao nhiêu?\n\n![](media/c2-1/media/image41.svg){width=\"6.322916666666667in\" height=\"0.6041666666666666in\"}",
+  "statements": [
+   [
+    "a",
+    "Tại thời điểm t~1~, độ dịch chuyển của ô tô là 5 km.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Từ lúc bắt đầu xuất phát đến thời điểm t~2~ ô tô đi được 7 km.",
+    "S"
+   ],
+   [
+    "c",
+    "Quãng đường đi từ thời điểm t~1~ đến thời điểm t~2~ là 12 km.",
+    "S"
+   ],
+   [
+    "d",
+    "Độ dịch chuyển của ô tô đi từ thời điểm t~1~ đến thời điểm t~2~ là 7 km.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Tại thời điểm t~1~, độ dịch chuyển $d=5$ km.\n\nb. Phát biểu này **sai.** Từ thời điểm bắt đầu đến thời điểm t~2~ quãng đường đi được $s=12$ km.\n\nc. Phát biểu này **sai.** Quãng đường đi được từ thời điểm t~1~ đến thời điểm t~2~ là $s=12-5=7$ km.\n\nd. Phát biểu này **đúng.** Độ dịch chuyển của ô tô $d=s=7$ km.",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-1/media/image41.svg"
+  ]
+ },
+ {
+  "file": "c2-1",
+  "part": "tf",
+  "num": 6,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Hai anh em bơi trong bể bơi thiếu niên có chiều dài 20 m. Hai anh em xuất phát từ đầu bể bơi đến cuối bể bơi thì người em dừng lại nghỉ, còn người anh quay lại bơi tiếp về đầu bể mới nghỉ.",
+  "statements": [
+   [
+    "a",
+    "Quãng đường bơi được của người em là 20 m.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Độ dịch chuyển của người em là 0m.",
+    "S"
+   ],
+   [
+    "c",
+    "Quãng đường bơi được của người anh là 20 m.",
+    "S"
+   ],
+   [
+    "d",
+    "Độ dịch chuyển của người anh là 0.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Quãng đường bơi được của người em s~em~ = 20 m.\n\nb. Phát biểu này **sai.** Độ dịch chuyển của người em d~em~ = s~em~ = 20 m.\n\nc. Phát biểu này **sai.** Quãng đường bơi được của người anh s~anh~ = 40 m.\n\nd. Phát biểu này **đúng.** Độ dịch chuyển của người anh d~anh~ = 0.\n\n![A diagram of a compass Description automatically generated](media/c2-1/media/image45.png){width=\"1.6333333333333333in\" height=\"2.075in\"} **Câu 7:** Một người đi xe máy đi thẳng 6 km theo hướng Tây trong thời gian 9 phút sau đó rẽ phải và đi thẳng theo hướng Bắc 8 km trong thời gian 11 phút. Tính quãng đường và độ dịch chuyển của vật.\n\na. Độ dịch chuyển của xe đi theo hướng Tây – Bắc.\n\nb. Quãng đường xe đi được là 14 km.\n\nc. Độ dịch chuyển của xe đi được là 14 km.\n\nd. Độ dịch chuyển của xe khi đi rồi trở về vị trí ban đầu là 0.\n\n**Hướng dẫn giải**\n\na. Phát biểu này **đúng.**\n\nb. Phát biểu này **đúng.** Quãng đường đi được s = s~1~ + s~2~ = 6 + 8 = 14 km.\n\nc. Phát biểu này **sai.** Độ dịch chuyển của xe đi được $d=\\sqrt{6^{2}+8^{2}}=10km.$\n\nd. Phát biểu này **đúng.** Độ dịch chuyển của xe đi được rồi trở lại vị trí ban đầu $d=0.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "tf",
+  "num": 8,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một người đi bằng thuyền với tốc độ 2 m/s về phía đông. Sau khi đi được 2,2 km, người này lên ô tô đi về phía bắc trong 15 phút với tốc độ 60 km/h. Xác định quãng đường và độ dịch chuyển mà người đó đi được.",
+  "statements": [
+   [
+    "a",
+    "Xe đi được 15 km trong 15 phút khi đi về phía Bắc.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Quãng đường xe đi được là 17 km.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Độ dịch chuyển mà người đó đi được là 17,2km.",
+    "S"
+   ],
+   [
+    "d",
+    "Độ dịch chuyển người đó đi và về là 0.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Quãng đường người đó đi trong 15 phút là $s_{2}=v_{2}t_{2}=60.0,25=15$ km.\n\nb. Phát biểu này **đúng.**\n\nQuãng đường mà người đó đi được là s = s~1~ + s~2~ =s~1~ + v~2~t~2~ = 2,2 + 60.0,25 = 17,2 km.\n\nc. Phát biểu này **sai.** Độ dịch chuyển của người đó là $d=\\sqrt{2,2^{2}+15^{2}}=15,16 km.$\n\nd. Phát biểu này **đúng.** Độ dịch chuyển người đó đi và về là d = 0.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-1",
+  "part": "tf",
+  "num": 9,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một người đi xe máy từ nhà đến bến xe bus cách nhà 6$km$ về phía đông. Đến bến xe, người đó lên xe bus đi tiếp $20 km$ về phía bắc.",
+  "statements": [
+   [
+    "a",
+    "Quãng đường người đó đi được là 26 km.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Độ dịch chuyển của người đó đi được là 26 km.",
+    "S"
+   ],
+   [
+    "c",
+    "Hướng dịch chuyển của người đó là 90^0^.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Người này dịch chuyển theo hướng Đông – Bắc.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Quãng đường đi được $s=6+20=26 km.$\n\nb. Phát biểu này **sai.** Độ dịch chuyển vì ${\\overrightarrow{d}}_{1}\\bot{\\overrightarrow{d}}_{2}\\Rightarrowd = \\sqrt{d_{1}^{2} + d_{2}^{2}} = \\sqrt{6^{2} + 20^{2}} = 20,88 km.$\n\nc. Phát biểu này **đúng.**: Ta có:$\\tan\\alpha=\\frac{20}{6}\\Rightarrow\\alpha\\approx81^{0}26'$. Hướng dịch chuyển của người đó là 81^0^26^’^\n\nd. Phát biểu này **đúng.**",
+  "hasImg": false,
+  "imgs": []
+ }
+]

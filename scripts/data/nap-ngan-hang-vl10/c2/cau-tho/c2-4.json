@@ -1,0 +1,1185 @@
+[
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 1,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Đồ thị độ dịch chuyển – thời gian của chất điểm chuyển động thẳng đều có dạng là",
+  "options": [
+   [
+    "A",
+    "song song với trục tọa độ Ot.",
+    false
+   ],
+   [
+    "B",
+    "vuông góc với trục tọa độ.",
+    false
+   ],
+   [
+    "C",
+    "đường xiên góc luôn đi qua gốc tọa độ.",
+    false
+   ],
+   [
+    "D",
+    "đường xiên góc có thể không đi qua gốc tọa độ.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 2,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Đồ thị độ dịch chuyển - thời gian trong chuyển động thẳng của một chiếc xe có dạng như hình vẽ. Trong khoảng thời gian nào xe chuyển động thẳng đều? \n![A diagram of a line with arrows and letters Description automatically generated with medium confidence](media/c2-4/media/image17.png){width=\"1.75in\" height=\"1.125in\"}",
+  "options": [
+   [
+    "A",
+    "Chỉ trong khoảng thời gian từ 0 đến t~1~.",
+    true
+   ],
+   [
+    "B",
+    "Chỉ trong khoảng thời gian từ t~1~ đến t~2~.",
+    false
+   ],
+   [
+    "C",
+    "Trong khoảng thời gian từ 0 đến t~2~.",
+    false
+   ],
+   [
+    "D",
+    "Không có lúc nào xe chuyển động thẳng đều.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image17.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 3,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Trong chuyển động quãng đường đi và độ dịch chuyển có độ lớn bằng nhau khi vật chuyển động",
+  "options": [
+   [
+    "A",
+    "thẳng đều.",
+    false
+   ],
+   [
+    "B",
+    "theo quỹ đạo thẳng và không đổi chiều.",
+    true
+   ],
+   [
+    "C",
+    "theo quỹ đạo bất kì.",
+    false
+   ],
+   [
+    "D",
+    "theo quỹ đạo thẳng và đổi chiều.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 4,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Khi vật đang chuyển động thẳng và đổi chiều đại lượng nào sau đây đổi dấu",
+  "options": [
+   [
+    "A",
+    "tốc độ trung bình và vận tốc trung bình.",
+    false
+   ],
+   [
+    "B",
+    "tốc độ tưc thời.",
+    false
+   ],
+   [
+    "C",
+    "Quãng đường và độ dịch chuyển.",
+    false
+   ],
+   [
+    "D",
+    "độ dịch chuyển và vận tốc.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 5,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Chọn phát biểu **sai**. Độ dịch chuyển trong chuyển động thẳng đều",
+  "options": [
+   [
+    "A",
+    "là hàm bậc nhất của thời gian",
+    false
+   ],
+   [
+    "B",
+    "luôn có giá trị dương",
+    true
+   ],
+   [
+    "C",
+    "có thể âm, dương, hoặc bằng không.",
+    false
+   ],
+   [
+    "D",
+    "có đồ thị là một đoạn thẳng có độ dốc là v.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 6,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Hình vẽ bên là đồ thị độ dịch chuyển - thời gian của một chiếc ô tô chạy từ A đến B trên một đường thẳng. Vận tốc của xe là \n![A graph of a function Description automatically generated](media/c2-4/media/image18.png){width=\"1.9861111111111112in\" height=\"1.488888888888889in\"}",
+  "options": [
+   [
+    "A",
+    "30 km/h.",
+    false
+   ],
+   [
+    "B",
+    "37,5 km/h.",
+    false
+   ],
+   [
+    "C",
+    "30 km/h.",
+    false
+   ],
+   [
+    "D",
+    "18 km/h.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "$v=\\frac{d_{2}-d_{1}}{t_{2}-t_{1}}=\\frac{90}{5}=18 km/h$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image18.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 7,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Trong đồ thị vận tốc của một chuyển động thẳng của một vật như hình bên. Xét quãng đường từ O đến C, đoạn nào ứng với chuyển động thẳng đều? \n![](media/c2-4/media/image20.emf){width=\"1.8125in\" height=\"1.1433639545056868in\"}",
+  "options": [
+   [
+    "A",
+    "OA.",
+    false
+   ],
+   [
+    "B",
+    "AB.",
+    true
+   ],
+   [
+    "C",
+    "BC.",
+    false
+   ],
+   [
+    "D",
+    "OA và BC. \n![A diagram of a line with text Description automatically generated with medium confidence](media/c2-4/media/image21.png){width=\"2.6569444444444446in\" height=\"2.048611111111111in\"}**Câu 8:** Đồ thị độ dịch chuyển – thời gian của một vật chuyển động theo thời gian như hình vẽ. Vật chuyển động \n**[A.** ngược chiều dương với tốc độ 20 km/h. \n**B.** cùng chiều dương với tốc độ 20 km/h. \n**C.** ngược chiều dương với tốc độ 60 km/h. \n**D.** cùng chiều dương với tốc độ 60 km/h.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$v=\\frac{\\Deltad}{\\Deltat}=\\frac{-60}{3}= -20 km/h$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image20.emf",
+   "media/c2-4/media/image21.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 9,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một chất điểm chuyển động trên một đường thẳng. Đồ thị độ dịch chuyển theo thời gian của chất điểm được mô tả trên hình vẽ. Vận tốc trung bình của chất điểm trong khoảng thời gian từ 0,5 s đến 4,5 s là \n![A graph of a line Description automatically generated](media/c2-4/media/image23.png){width=\"1.865761154855643in\" height=\"1.273455818022747in\"}",
+  "options": [
+   [
+    "A",
+    "- 2,25 cm/s.",
+    false
+   ],
+   [
+    "B",
+    "- 0,75 cm/s.",
+    true
+   ],
+   [
+    "C",
+    "2,25 cm/s.",
+    false
+   ],
+   [
+    "D",
+    "0,75 cm/s.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$v=\\frac{\\Deltad}{\\Deltat}=\\frac{-3}{4}= -0,75 m/s$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image23.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 10,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Đồ thị độ dịch chuyển − thời gian của hai chiếc xe (1) và (2) được biểu diễn như hình vẽ bên. Hai xe gặp nhau tại vị trí cách vị trí xuất phát của xe (1) một đoạn \n![A graph of a function Description automatically generated](media/c2-4/media/image25.png){width=\"1.1319455380577428in\" height=\"1.0658727034120734in\"}",
+  "options": [
+   [
+    "A",
+    "40 km.",
+    true
+   ],
+   [
+    "B",
+    "30 km.",
+    false
+   ],
+   [
+    "C",
+    "35 km.",
+    false
+   ],
+   [
+    "D",
+    "70 km.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Từ đồ thị $v_{1}=\\frac{\\Deltad}{\\Deltat}=\\frac{40-80}{2}= -20 km/h$\nHai xe gặp nhau lúc $t=2 h\\Rightarrows_{1}=\\upsilon_{1}t=20.2=40 km$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image25.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 11,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Cho đồ thị độ dịch chuyển – thời gian của hai ô tô chuyển động thẳng đều như hình bên. Vận tốc của 2 ô tô (1) và (2) lần lượt là \n![A diagram of a mathematical equation Description automatically generated](media/c2-4/media/image28.png){width=\"1.7916666666666667in\" height=\"1.2945199037620299in\"}",
+  "options": [
+   [
+    "A",
+    "40 km/h, 60 km/h.",
+    false
+   ],
+   [
+    "B",
+    "60 km/h, 40 km/h.",
+    false
+   ],
+   [
+    "C",
+    "−40 km/h, 40 km/h.",
+    true
+   ],
+   [
+    "D",
+    "40 km/h, −60 km/h.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Xe 1 $v_{1}=\\frac{\\Deltad_{1}}{\\Deltat}=\\frac{20-60}{1}= -40 km/h$\nXe 2 $v_{2}=\\frac{\\Deltad_{2}}{\\Deltat}=\\frac{20-0}{0,5}=40 km/h$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image28.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 12,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Cho đồ thị độ dịch chuyển – thời gian của hai ô tô chuyển động thẳng đều như hình vẽ bên. Phương độ dịch chuyển của 2 ô tô là (x km; t h) \n![A diagram of a mathematical equation Description automatically generated](media/c2-4/media/image28.png){width=\"1.8055555555555556in\" height=\"1.304207130358705in\"}",
+  "options": [
+   [
+    "A",
+    "$\\left\\{ \\begin{array}{r} \n\\mathit{d}_{1}\\mathbf{= -}40\\mathit{t} \\\\ \n\\mathit{d}_{2}\\mathbf{=}60\\mathit{t} \n\\end{array} \\right.\\$",
+    false
+   ],
+   [
+    "B",
+    "$\\left\\{ \\begin{array}{r} \n\\mathit{d}_{1}\\mathbf{= -}40\\mathit{t} \\\\ \n\\mathit{d}_{2}\\mathbf{=}0,25\\mathbf{+}60\\mathit{t} \n\\end{array} \\right.\\$",
+    false
+   ],
+   [
+    "C",
+    "$\\begin{array}{r} \n\\mathit{d}_{1}\\mathbf{=}60\\mathbf{-}40\\mathit{t} \\\\ \n\\mathit{d}_{2}\\mathbf{=}40\\left( \\mathit{t}\\mathbf{-}0,5 \\right) \n\\end{array}$",
+    true
+   ],
+   [
+    "D",
+    "$\\begin{array}{r} \n\\mathit{d}_{1}\\mathbf{= -}40\\mathit{t} \\\\ \n\\mathit{d}_{2}\\mathbf{=}60\\left( \\mathit{t}\\mathbf{-}0,5 \\right) \n\\end{array}$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Xe 1 $d_{1}=d_{01}+v_{1}t=60-40t$\nXe 2 $d_{2}=d_{02}+v_{2}\\left( t-0,5 \\right)=60-40\\left( t-0,5 \\right)$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image28.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 13,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Hình vẽ bên là đồ thị độ dịch chuyển - thời gian của hai xe máy I và II xuất phát từ A chuyển động thẳng đều đến B. Gốc tọa độ O đặt tại",
+  "options": [
+   [
+    "A",
+    "Nếu chọn mốc thời gian là lúc xe I xuất phát thì \n![A graph of a function Description automatically generated](media/c2-4/media/image37.png){width=\"1.8722222222222222in\" height=\"1.7777777777777777in\"} \n**A.** xe II xuất phát từ lúc 1,5 h.",
+    false
+   ],
+   [
+    "B",
+    "tốc độ hai xe bằng nhau.",
+    false
+   ],
+   [
+    "C",
+    "tốc độ của xe I là 25 km/h.",
+    false
+   ],
+   [
+    "D",
+    "tốc độ của xe II là 70/3 km/h.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Tốc độ xe 2 $\\upsilon_{2}=v_{2}=\\frac{\\Deltad}{\\Deltat}=\\frac{70-0}{4-1}=\\frac{70}{3} km/h$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image37.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 14,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Hình vẽ là đồ thị độ dịch chuyển - thời gian của hai xe máy I và II xuất phát từ A chuyển động thẳng đều đến B. Gốc tọa độ O đặt tại",
+  "options": [
+   [
+    "A",
+    "Gọi v~1~, v~2~ lần lượt là vận tốc của xe I và xe II. Tổng (v~1~ + v~2~) **gần giá trị nào nhất** sau đây? \n![A graph of a function Description automatically generated](media/c2-4/media/image39.png){width=\"1.7777777777777777in\" height=\"1.4213560804899388in\"} \n**A.** 100 km/h.",
+    false
+   ],
+   [
+    "B",
+    "64 km/h.",
+    false
+   ],
+   [
+    "C",
+    "96 km/h.",
+    true
+   ],
+   [
+    "D",
+    "150 km/h.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Từ đồ thị $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{1}\\mathbf{=}\\frac{40}{1}\\mathbf{=}40\\ km/h \\\\\n\\mathit{v}_{2}\\mathbf{=}\\frac{140}{2,5}\\mathbf{=}56\\ \\mathit{k}m/\\mathit{h}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\mathit{v}_{1}\\mathbf{+}\\mathit{v}_{2}\\mathbf{=}96\\ km/h$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image39.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 15,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Hình vẽ bên là đồ thị độ dịch chuyển − thời gian của một chiếc xe ô tô chạy từ A đến B trên một đường thẳng. \n![A graph of a line with points Description automatically generated](media/c2-4/media/image41.png){width=\"1.3731266404199476in\" height=\"0.9826093613298338in\"} \nVận tốc của xe bằng",
+  "options": [
+   [
+    "A",
+    "30 km/giờ.",
+    true
+   ],
+   [
+    "B",
+    "150 km/giờ.",
+    false
+   ],
+   [
+    "C",
+    "120 km/giờ.",
+    false
+   ],
+   [
+    "D",
+    "100 km/giờ.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image41.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 16,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Đồ thị độ dịch chuyển – thời gian của một vật chuyển động như hình vẽ. \n![A graph of a function Description automatically generated](media/c2-4/media/image42.png){width=\"1.9893493000874891in\" height=\"1.84375in\"} \nVật chuyển động",
+  "options": [
+   [
+    "A",
+    "ngược chiều dương với tốc độ 20 km/giờ.",
+    true
+   ],
+   [
+    "B",
+    "cùng chiều dương với tốc độ 20 km/giờ.",
+    false
+   ],
+   [
+    "C",
+    "ngược chiều dương với tốc độ 60 km/giờ.",
+    false
+   ],
+   [
+    "D",
+    "cùng chiều dương với tốc độ 60 km/giờ.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image42.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 17,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Hình dưới là đồ thị độ dịch chuyển - thời gian của hai vật chuyển động thẳng cùng hướng. \n![Ảnh có chứa văn bản, thiết bị, thiết bị đo Mô tả được tạo tự động](media/c2-4/media/image43.png){width=\"1.3323687664041994in\" height=\"1.1631944444444444in\"} \nTỉ lệ vận tốc v~A~ v~B~ là",
+  "options": [
+   [
+    "A",
+    "3:1.",
+    false
+   ],
+   [
+    "B",
+    "1:3.",
+    true
+   ],
+   [
+    "C",
+    "$\\sqrt{3}:1.$",
+    false
+   ],
+   [
+    "D",
+    "$1:\\sqrt{3}.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Ta có$\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{A}}\\mathbf{=}\\tan\\left( 30^{0} \\right)\\mathbf{=}\\frac{\\sqrt{3}}{3} \\\\\n\\mathit{v}_{\\mathit{B}}\\mathbf{=}\\tan\\left( 60^{0} \\right)\\mathbf{=}\\sqrt{3}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\frac{\\mathit{v}_{\\mathit{A}}}{\\mathit{v}_{\\mathit{B}}}\\mathbf{=}\\frac{1}{3}$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image43.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 18,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Đồ thị độ dịch chuyển theo thời gian của một chất điểm chuyển động thẳng đểu có dạng như hình vẽ. Phương trình độ dịch chuyển của chất điểm là",
+  "options": [
+   [
+    "A",
+    "$d=1+t.$",
+    true
+   ],
+   [
+    "B",
+    "$d=2t.$",
+    false
+   ],
+   [
+    "C",
+    "$d=2+t.$",
+    false
+   ],
+   [
+    "D",
+    "$d=t.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 19,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Cặp đồ thị nào ở hình dưới đây là của chuyển động thẳng đều? \n![Diagram Description automatically generated](media/c2-4/media/image51.png){width=\"5.2273326771653545in\" height=\"1.075in\"}",
+  "options": [
+   [
+    "A",
+    "$I$ và $ III.$",
+    false
+   ],
+   [
+    "B",
+    "$I$ và $ IV.$",
+    true
+   ],
+   [
+    "C",
+    "$II$ và $ III.$",
+    false
+   ],
+   [
+    "D",
+    "$II$ và $ IV.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image51.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 20,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Hình vẽ bên là đồ thị độ dịch chuyển - thời gian của một chiếc ô tô chạy từ A đến B trên một đường thẳng. Điểm A cách mốc tính độ dịch chuyển bao nhiêu kilômét? Thời điểm xuất phát cách mốc thời gian mấy giờ? \n![A graph of a line with a point Description automatically generated](media/c2-4/media/image60.png){width=\"2.017361111111111in\" height=\"1.567849956255468in\"}",
+  "options": [
+   [
+    "A",
+    "A trùng với mốc tính độ dịch chuyển O, xe xuất phát lúc 0h, tính từ mốc thời gian.",
+    false
+   ],
+   [
+    "B",
+    "A trùng với mốc tính độ dịch chuyển O, xe xuất phát lúc 1h, tính từ mốc thời gian.",
+    false
+   ],
+   [
+    "C",
+    "A cách mốc tính độ dịch chuyển O là 30 km, xe xuất phát lúc 0 h.",
+    false
+   ],
+   [
+    "D",
+    "A cách mốc tính độ dịch chuyển O là 60 km, xe xuất phát lúc 2 h.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image60.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 21,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Đồ thị độ dịch chuyển − thời gian của hai chiếc xe I và II được biểu diễn như hình vẽ bên. Phương trình độ dịch chuyển – thời gian của xe I và II lần lượt là \n![A diagram of a function Description automatically generated](media/c2-4/media/image61.png){width=\"1.5077012248468942in\" height=\"1.3958333333333333in\"}",
+  "options": [
+   [
+    "A",
+    "$d_{1}=20t$ và $ d_{2}=20+10t.$",
+    true
+   ],
+   [
+    "B",
+    "$d_{1}=10t$ và $ d_{2}=20t.$",
+    false
+   ],
+   [
+    "C",
+    "$d_{1}=20+10t$ và $ d_{2}=20t.$",
+    false
+   ],
+   [
+    "D",
+    "$d_{1}=20t$ và $ d_{2}=10t$.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Xe (I) $v_{1}=\\frac{40}{2}=20 km/h\\Rightarrowd_{1}=20t$\nXe (II) $v_{2}=\\frac{40-20}{2}=10 km/h\\Rightarrowd_{2}=20+10t$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image61.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 22,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một vật chuyển động thẳng đều với đồ thị chuyển động như vẽ. \n![A graph of a function Description automatically generated](media/c2-4/media/image72.png){width=\"1.5730336832895888in\" height=\"1.3333333333333333in\"} \nPhương trình độ dịch chuyển – thời gian của vật là",
+  "options": [
+   [
+    "A",
+    "$d=200+50t \\left( km \\right).$",
+    false
+   ],
+   [
+    "B",
+    "$d=200-50t \\left( km \\right).$",
+    true
+   ],
+   [
+    "C",
+    "$d=100+50t \\left( km \\right).$",
+    false
+   ],
+   [
+    "D",
+    "$d=50t \\left( km \\right).$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Khi t = 0, d = d~0~ = 200 km\nKhi t = 3, d = 50 km\nTa viết được $d=d_{0}+vt=200-50t \\left( km \\right).$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image72.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "mc",
+  "num": 23,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Hình dưới mô tả đồ thị độ dịch chuyển – thời gian của hai xe \n![A graph with lines and arrows Description automatically generated](media/c2-4/media/image78.png){width=\"2.25in\" height=\"1.6508147419072616in\"} \nVận tốc của xe 2 bằng vận tốc xe 1 trong khoảng thời gian",
+  "options": [
+   [
+    "A",
+    "từ 0 đến 1 h.",
+    false
+   ],
+   [
+    "B",
+    "Từ 1 h đến 2 h.",
+    false
+   ],
+   [
+    "C",
+    "từ 1 h đến 3 h.",
+    false
+   ],
+   [
+    "D",
+    "từ 2 h đến 3 h.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Dựa vào đồ thị ta thấy ứng với thời gian từ 2 h đến 3 h hai đồ thị song song nhau nên có vận tốc bằng nhau.\n\n****",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image78.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Dựa vào đồ thị ở hình bên xác định:\n\n![A graph of a function Description automatically generated](media/c2-4/media/image79.png){width=\"2.65625in\" height=\"2.0986701662292213in\"}",
+  "statements": [
+   [
+    "a",
+    "Tổng quãng đường của hai chuyển động khi đi được 3 giờ là 240 km.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Vận tốc của vật 1 là 80 km/h.",
+    "S"
+   ],
+   [
+    "c",
+    "Vận tốc của vật 2 là 20 km/h.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Phương trình độ dịch chuyển của vật 1 là $d_{1}=20t$ km.",
+    "S"
+   ]
+  ],
+  "solution": "Chọn thời điểm $t_{1}=0,$ $ t_{2}=3 h.$\n\na. Phát biểu này **đúng.** Khi đi được 3 giờ quãng đường của 2 vật là $s=s_{1}+s_{2}=180+60=240$ km.\n\nb. Phát biểu này **sai.** Vận tốc của vật 1 là $v_{1}=\\frac{d_{2}-d_{1}}{t_{2}-t_{1}}=\\frac{180-0}{3-0}=60 km/h.$\n\nc. Phát biểu này **đúng.** Vận tốc của vật 2 là$v_{2}=\\frac{d_{2}-d_{1}}{t_{2}-t_{1}}=\\frac{60-0}{3-0}=20 km/h.$\n\nd. Phát biểu này **sai.** Từ công thức $v=\\frac{d-d_{0}}{t-t_{0}}$ chọn $\\mathit{t}_{0}\\mathbf{=}0\\mathbf{\\Rightarrow}\\mathit{d}\\mathbf{=}\\mathit{d}_{0}\\mathbf{+}\\mathit{vt}\\mathbf{\\Rightarrow}\\left\\{ \\begin{array}{r}\n\\mathit{d}_{1}\\mathbf{=}60\\mathit{t}\\ \\left( \\mathit{km} \\right) \\\\\n\\mathit{d}_{2}\\mathbf{=}20\\mathit{t}\\ \\left( \\mathit{km} \\right)\n\\end{array} \\right.\\$\n\n![A graph of a line with points and numbers Description automatically generated](media/c2-4/media/image88.png){width=\"2.316666666666667in\" height=\"1.8173611111111112in\"} **Câu 2:** Một vật chuyển động thẳng có đồ thị (d – t) được mô tả như hình.\n\na. Độ dịch chuyển của vật A là 2 m.\n\nb. Vận tốc tức thời của vật A là 2 m/s.\n\nc. Vận tốc tức thời của vật B là 1,6 m/s.\n\nd. Vận tốc tức thời của vật C là 2 m/s.\n\n**Hướng dẫn giải**\n\na. Phát biểu này **đúng.** Độ dịch chuyển của vật A là $d=x_{A}-x_{O}=2-0=2$ m.\n\nb. Phát biểu này **đúng.** Vận tốc tức thời của vật A $v_{A}=\\frac{2-0}{1-0}=2$ m/s.\n\nc. Phát biểu này **sai.** Vận tốc tức thời của vật B $v_{B}=\\frac{4-4}{2,5-2}=0$ m/s.\n\nd. Phát biểu này **sai.** Vận tốc tức thời của vật C $v_{C}=\\frac{3-4}{3,5-3}= -2$ m/s.",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image79.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Hình dưới mô tả đồ thị độ dịch chuyển – thời gian của hai xe.\n\n![A graph of a function Description automatically generated](media/c2-4/media/image93.png){width=\"2.2083333333333335in\" height=\"1.6202449693788277in\"}",
+  "statements": [
+   [
+    "a",
+    "Từ 0 giờ đến 1 giờ, xe 1 và xe 2 chuyển động cùng vận tốc.",
+    "S"
+   ],
+   [
+    "b",
+    "Từ 1 giờ đến 2 giờ, xe 1 không chuyển động.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Xe hai luôn chuyển động theo chiều âm từ 0 giờ đến 2 giờ .",
+    "Đ"
+   ],
+   [
+    "d",
+    "Từ 2 giờ đến 3 giờ xe 1 chuyển động theo chiều dương với tốc độ 40 km/h.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai.** Từ 0 giờ đến 1 giờ, xe 1 chuyển động với vận tốc $v_{1}=\\frac{40-20}{1}=20$ km/h còn xe 2 chuyển động với vận tốc $v_{2}=\\frac{40-80}{1}= -40$ km/h.\n\nb. Phát biểu này **đúng.** Vì từ 1 giờ đến 2 giờ, xe 1 chuyển động với vận tốc bằng 0 tức là xe đứng yên.\n\nc. Phát biểu này **đúng.** Trong khoảng thời gian từ 0 đến 2 h, xe chuyển động đều theo chiều âm với tốc độ 40 km/h.\n\nd. Phát biểu này **sai.** Trong khoảng thời gian từ 2 h đến 3 h, xe chuyển động đều theo chiều âm với tốc độ 40 km/h.",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image93.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Cho đồ thị độ dịch chuyển – thời gian của một người đang bơi trong một bể bơi dài 50 m. ![A graph with lines and numbers Description automatically generated](media/c2-4/media/image96.png){width=\"2.5962193788276466in\" height=\"1.93043416447944in\"}",
+  "statements": [
+   [
+    "a",
+    "Trong 25 giây đầu người đó bơi với vận tốc 2 m/s.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Từ giây thứ 25 đến giây thứ 60, người đó luôn bơi ngược lại.",
+    "S"
+   ],
+   [
+    "c",
+    "Độ dịch chuyển của người đó khi bơi từ B đến C là -25 m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Suốt cả quá trình bơi người đó bơi với vận tốc 0,5 m/s.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Trong 25 giây đầu, người đó bơi theo chiều dương, mỗi giây người đó bơi được $\\frac{50}{25}=2 m.$ Nên vận tốc của người đó là $ v=\\frac{\\Deltad}{\\Deltat}=\\frac{50}{25}=2 m/s.$\n\nb. Phát biểu này **sai.** Từ giây 25 đến giây 35 người đó không bơi. Sau đó, Từ giây 35 đến giây 60 người đó bơi ngược lại.\n\nc. Phát biểu này **đúng.** Độ dịch chuyển của người đó là $25–50= -25 m.$\n\nd. Phát biểu này **sai.** Độ dịch chuyển của người đó là $25–0=25 m.$ Vận tốc của người đó là $v=\\frac{\\Deltad}{\\Deltat}=\\frac{25-0}{60}=\\frac{5}{12} m/s.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image96.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một chiếc xe đồ chơi điều khiển từ xa đang chuyển động trên một đoạn đường thẳng có độ dịch chuyển tại các thời điểm khác nhau được cho trong bảng dưới đây\n\n|   **Thời gian (s)**    |  0  |  2  |  4  |  6  |  8  | 10  | 12  | 14  | 16  | 18  | 20  |\n|:----------------------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n| **Độ dịch chuyển (m)** |  0  |  2  |  4  |  4  |  4  |  7  | 10  |  8  |  6  |  4  |  4  |",
+  "statements": [
+   [
+    "a",
+    "Trong 2 giây đầu, chiếc xe chuyển động với tốc độ 1 m/s.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Từ giây thứ 4 đến giây thứ 8, độ dịch chuyển của xe là 4m.",
+    "S"
+   ],
+   [
+    "c",
+    "Vận tốc tức thời của xe từ giây thứ 18 đến 20 là 0.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Tốc độ tức thời của xe sau 10 giây là 1,5 m/s.",
+    "S"
+   ]
+  ],
+  "solution": "Đồ thị độ dịch chuyển – thời gian của xe đồ chơi\n\n![A graph with lines and dots Description automatically generated](media/c2-4/media/image102.png){width=\"3.052845581802275in\" height=\"1.7697845581802274in\"}\n\na. Phát biểu này **đúng.** Tốc độ của xe trong 2 giây đầu là $v=\\frac{2}{2}=1$ m/s.\n\nb. Phát biểu này **sai.** Từ giây thứ 4 đến giây thứ 8, độ dịch chuyển của xe là d = 0.\n\nc. Phát biểu này **đúng.** Vận tốc tức thời của xe từ giây 18 đến giây 20 là $v=\\frac{4-4}{18-20}=0$ m/s.\n\nd. Phát biểu này **sai.** Tốc độ tức thời của xe sau 10 giây là $v=\\frac{7}{10}=0,7$ m/s.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-4",
+  "part": "tf",
+  "num": 6,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Đồ thị độ dịch chuyển – thời gian trong chuyển động thẳng của một xe ô tô đồ chơi điều khiển từ xa được vẽ ở hình bên\n\n![Không có mô tả.](media/c2-4/media/image106.png){width=\"2.4166666666666665in\" height=\"1.6806080489938757in\"}",
+  "statements": [
+   [
+    "a",
+    "Xe luôn chuyển động ngược hướng từ giây thứ 2 đến giây thứ 10.",
+    "S"
+   ],
+   [
+    "b",
+    "Ở giây thứ 6 xe cách vị trí xuất phát 2 m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Từ giây thứ 4 đến giây thứ 8 thì tốc độ của xe không bằng vận tốc của xe.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Sau 10 giây xe chuyển động thì độ dịch chuyển của xe là 9 m.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai.** Từ giây 2 đến giây 4 xe dừng lại, từ giây 4 đến giây 8 xe đổi chiều chuyển động theo hướng ngược lại với vận tốc nhỏ hơn lúc đi và quay lại vị trí xuất phát, từ giây 8 đến giây 9 xe đi tiếp với vận tốc đó thêm 1 đoạn rồi mới dừng lại, từ giây 9 đến giây 10 xe dừng lại.\n\nb. Phát biểu này **đúng.**\n\nc. Phát biểu này **đúng.** Tốc độ của xe = $v=\\frac{4}{4}=1 m/s.$ Vận tốc của xe $ v= -1 m/s.$\n\nd. Phát biểu này **sai.** Quãng đường đi được của xe là $s=4+0+5+0=9 m$ còn độ dịch chuyển $d= -1 m.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image106.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "tf",
+  "num": 7,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Hình vẽ đồ thị độ dịch chuyển của ba vật chuyển động,\n\n![A graph of a function Description automatically generated](media/c2-4/media/image111.png){width=\"2.068882327209099in\" height=\"1.382674978127734in\"}",
+  "statements": [
+   [
+    "a",
+    "Cả 3 xe đều chuyển động thẳng đều.",
+    "S"
+   ],
+   [
+    "b",
+    "Vận tốc của xe (I) là 10 m/s.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Phương trình độ dịch chuyển của xe (II) là $d_{\\left( II \\right)}=40-5t$(m,s).",
+    "Đ"
+   ],
+   [
+    "d",
+    "Cách vị trí xe (I) khởi hành 30 m thì xe (I) gặp xe (II).",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai.** Chỉ có xe $\\left( I \\right)$ và $\\left( II \\right)$ chuyển động thẳng đều vì có đồ thị độ dịch chuyển - thời gian là đường thẳng. Còn xe $\\left( III \\right)$ là chuyển động thẳng không đều vì đồ thị độ dịch chuyển - thời gian là đường cong.\n\nb. Phát biểu này **đúng.** Vận tốc của xe (I) là $v_{\\left( I \\right)}=\\frac{40}{4}=10$ m/s.\n\nc. Phát biểu này **đúng.** Phương trình độ dịch chuyển của xe (II. là $d_{\\left( II \\right)}=40-5t$(m,s).\n\nd. Phát biểu này **sai.** Xe $\\left( I \\right)$ và $\\left( II \\right)$ gặp nhau tại điểm $ M.$\n\n$\\left\\{ \\begin{array}{r}\nt_{\\mathit{M}}\\mathbf{=}2,67\\ s \\\\\nd_{\\mathit{M}}\\mathbf{=}26,7\\ m\n\\end{array} \\right.\\$cách điểm khởi hành của xe$(I).$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image111.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "tf",
+  "num": 8,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y",
+   "thieu-abcd",
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Từ A cùng một lúc có hai ôtô chạy cùng chiều theo hướng Bắc trên đoạn đường thẳng qua A. Tốc độ của ôtô 1 là 60 km/h và của ôtô 2 là 40 km/h. Sau khi chuyển động được 1,5 h thì ô tô 1 đổi chiều chuyển động ngược lại. Chọn A làm mốc, chọn thời điểm xuất phát của hai xe làm mốc thời gian và chọn chiều chuyển động ban đầu của hai ôtô làm chiều dương.\n\na. Độ dịch chuyển của ô tô 1 đi trên cả quãng đường là 60t.\n\nb. Ô tô 2 chuyển động thẳng đều trên đoạn đường với tốc độ 40 km/h.\n\nc. Thời gian 2 ô tô gặp nhau là 1 giờ 48 phút.\n\nd. Kể từ lúc ô tô 1 xuất phát đến khi là ô tô 2 đi được 108 km.\n\n**Hướng dẫn giải.**\n\nĐồ thị chuyển động của 2 ô tô\n\n![A graph of a function Description automatically generated](media/c2-4/media/image123.png){width=\"2.4965277777777777in\" height=\"1.968416447944007in\"}\n\na. Phát biểu này **sai.** Độ dịch chuyển của xe 1 được chia thành 2 giai đoạn\n\nKhi $t\\leq1,5 h$ ta có $d_{1}=60t$\n\nKhi $t>1,5 h$ ta có $\\left\\{ \\begin{array}{r}\n\\mathit{d}_{1}\\mathbf{=}90\\mathbf{-}60\\left( \\mathit{t}\\mathbf{-}1,5 \\right) \\\\\n\\mathit{d}_{2}\\mathbf{=}40\\mathit{t}\n\\end{array} \\right.\\$\n\nb. Phát biểu này **đúng.** Ô tô $\\left( II \\right)$ chuyển động thẳng đều vì có đồ thị độ dịch chuyển - thời gian là đường thẳng với tốc độ 40 km/h.\n\nc. Phát biểu này **đúng.** Từ đồ thị độ dịch chuyển – thời gian ta thấy hai xe gặp nhau lúc $t>1,5 h.$\n\nMà khi hai xe gặp nhau thì $d_{1}=d_{2}\\Rightarrow90-60\\left( t-1,5 \\right)=40t\\Rightarrowt=\\frac{9}{5} h=1h48'$\n\nd. Phát biểu này **đúng.** Quãng đường mà xe 1 đi được từ lúc xuất phát đến khi gặp nhau là $s_{1}=\\upsilon_{1}t=60.\\frac{9}{5}=108 km.$",
+  "statements": [],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image123.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "tf",
+  "num": 9,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Dựa vào đồ thị, ta xác định:\n\n![A graph of a function Description automatically generated](media/c2-4/media/image132.png){width=\"2.307481408573928in\" height=\"1.7083333333333333in\"}",
+  "statements": [
+   [
+    "a",
+    "Vận tốc của chuyển động (II) là –60 km/h.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Độ dịch chuyển của chuyển động (III) là $d_{III}=60+20t$(km..",
+    "S"
+   ],
+   [
+    "c",
+    "Chuyển động (I) và (II) gặp nhau cách điểm khởi hành của chuyển động (I) là 90 km.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Thời gian chuyển động (II) và (III) gặp nhau lúc 2 giờ 30 phút.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Vận tốc của chuyển động (II) $v_{2}=\\frac{d_{2}-d_{1}}{t_{2}-t_{1}}=\\frac{0-180}{3-0}= -60 km/h.$\n\nb. Phát biểu này **sai.** Phương trình độ dịch chuyển – thời gian của chuyển động (III) $d_{3} = 20t(km).$\n\nc. Phát biểu này **đúng.** Khi chuyển động $\\left( I \\right)$ và $\\left( II \\right)$ gặp nhau $ d_{1}=d_{2}\\Rightarrowt=1,5 h$\n\n\\+ Vị trí gặp nhau cách điểm khởi hành của $\\left( I \\right)$ đoạn $90 km.$\n\nd. Phát biểu này **sai.** Khi chuyển động $\\left( II \\right)$ và $\\left( III \\right)$ gặp nhau $ d_{2}=d_{3}$$\\Rightarrowt=$`<!-- -->`{=html}2 giờ 15 phút.\n\n![A diagram of a triangle Description automatically generated](media/c2-4/media/image145.png){width=\"2.6948851706036745in\" height=\"1.451492782152231in\"} **Câu 10:** Đồ thị độ dịch chuyển - thời gian của một chuyển động thẳng được vẽ trong hình dưới đây\n\na. Quãng đường của chuyển động từ lúc xuất phát đến điểm B là 190 km.\n\nb. Vận tốc của chuyển động đi từ A đến B là 40 km/h.\n\nc. Tốc độ của chuyển động từ lúc xuất phát đến khi đi được 3,25 giây là 49,2 km/h.\n\nd. Tốc độ của chuyển động đi trên cả quãng đường là 54,5 km/h.\n\n**Hướng dẫn giải**\n\na. Phát biểu này **đúng.** Quãng đường của chuyển động từ lúc xuất phát đến điểm B là:$s=OA+AB=80+110=190$ km.\n\nb. Phát biểu này **sai.** Vận tốc của chuyển động đi từ A đến B là $v=\\frac{-30-80}{3,25-0,5}= -40$ km/h.\n\nc. Phát biểu này **sai.** Từ $0 h$ đến $3,25 h$ tốc độ của chuyển động là $v=\\frac{80+80+30}{3,25}\\approx58,4$ km/h.\n\nd. Phát biểu này **đúng.** Tốc độ của chuyển động đi trên cả quãng đường $v=\\frac{80+80+30+30+80}{5,5}\\approx54,5km/h.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image132.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "sa",
+  "num": 1,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một chất điểm chuyển động thẳng đều trên một đường thẳng có đồ thị tọa độ theo thời gian như hình vẽ dưới đây. Quãng đường chất điểm đi được trong 2 giây là bao nhiêu mét?\n\n![A diagram of a graph Description automatically generated](media/c2-4/media/image152.png){width=\"1.2618055555555556in\" height=\"1.2618055555555556in\"}",
+  "solution": "Quãng đường chất điểm đi trong 2 giây là $s = \\left| v \\right|t = 10.2 = 20 m.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image152.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "sa",
+  "num": 2,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một chất điểm chuyển động thẳng đều trên một đường thẳng có đồ thị tọa độ theo thời gian như hình vẽ dưới đây. Quãng đường chất điểm đi được trong 2 giây là bao nhiêu mét?\n\n![A graph of a function Description automatically generated](media/c2-4/media/image154.png){width=\"1.125in\" height=\"1.2569444444444444in\"}",
+  "solution": "Quãng đường chất điểm đi trong 4 giây là $s = \\left| v \\right|t = 2,5.4 = 10 m.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image154.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "sa",
+  "num": 3,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một chất điểm chuyển động thẳng đều trên một đường thẳng có đồ thị quãng đường theo thời gian như hình vẽ dưới đây. Tốc độ của chất điểm trong 2 giờ là bao nhiêu km/h?\n\n![A diagram of a square with arrows and letters Description automatically generated](media/c2-4/media/image156.png){width=\"1.15625in\" height=\"1.2590277777777779in\"}",
+  "solution": "Từ đồ thị ta có $s=100km$ thì $ t=2h.$\nÁp dụng công thức tính tốc độ của chuyển động thẳng đều ta có $v=\\frac{s}{t}=$ $\\frac{100}{2}=50km/h.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image156.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "sa",
+  "num": 4,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một xe ô tô Nissan Sunny chuyển động thẳng đều trên một đường thẳng có đồ thị vận tốc theo thời gian như hình vẽ dưới đây. Quãng đường xe đi được trong 8 giây là bao nhiêu mét?\n\n![A diagram of a square with numbers and points Description automatically generated](media/c2-4/media/image161.png){width=\"1.1979166666666667in\" height=\"1.2236111111111112in\"}",
+  "solution": "Từ đồ thị dễ thấy vận tốc của xe không đổi theo thời gian và $v=15m/s.$\nÁp dụng công thức tính quãng đường của chuyển động thẳng đều ta có $s=vt=15.8=120m.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image161.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "sa",
+  "num": 5,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một xe máy Jupiter mang biển kiểm soát 65-E1-40770 chuyển động trên một đường thẳng có đồ thị tọa độ theo thời gian như hình vẽ dưới đây. Quãng đường xe đã đi được trong 10 phút là bao nhiêu mét?\n\n![A graph of a line with numbers Description automatically generated](media/c2-4/media/image164.png){width=\"2.0659722222222223in\" height=\"1.2680555555555555in\"}",
+  "solution": "Từ đồ thị dễ thấy tổng quãng đường cả đi và về của xe là$s = 20+20=40km.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image164.png"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "sa",
+  "num": 6,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Hình vẽ bên là đồ thị tọa độ − thời gian của một chiếc xe ô tô chạy từ A đến B trên một đường thẳng như hình vẽ. Vận tốc của xe bằng bao nhiêu km/h?\n\n![](media/c2-4/media/image166.emf)",
+  "solution": "Quãng đường xe đi từ A đến B là s =120 km.\nThời gian xe đi từ A đến B t = 4 giờ.\nVận tốc của xe bằng v = s/t = 30 km/h.\n**Câu 7:** Đồ thị tọa độ − thời gian của hai chiếc xe I và II được biểu diễn như hình vẽ bên dưới. Hai xe gặp nhau tại vị trí cách vị trí xuất phát của xe I một đoạn bao nhiêu km?\n![](media/c2-4/media/image167.emf)\n**Hướng dẫn giải**\nKhi hai xe gặp nhau thì xe I đã đi được quãng đường 30 km.",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image166.emf"
+  ]
+ },
+ {
+  "file": "c2-4",
+  "part": "sa",
+  "num": 8,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Cho đồ thị tọa độ của hai ô tô chuyển động thẳng đều như hình vẽ dưới đây. Tổng vận tốc của 2 ô tô là bao nhiêu km/h?\n\n![](media/c2-4/media/image168.emf)",
+  "solution": "Ta có$\\left\\{ \\begin{array}{r}\n\\mathit{v}_{1}\\mathbf{=}\\frac{\\Delta\\mathit{d}_{1}}{\\Delta\\mathit{t}_{1}}\\mathbf{=}\\frac{\\mathbf{-}60}{1,5}\\mathbf{= -}40\\ km/h \\\\\n\\mathit{v}_{2}\\mathbf{=}\\frac{\\Delta\\mathit{d}_{2}}{\\Delta\\mathit{t}_{2}}\\mathbf{=}\\frac{30}{0,5}\\mathbf{=}60\\ km/h\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\mathit{v}\\mathbf{=}\\mathit{v}_{1}\\mathbf{+}\\mathit{v}_{2}\\mathbf{= -}40\\mathbf{+}60\\mathbf{=}20\\ km/h.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-4/media/image168.emf"
+  ]
+ }
+]

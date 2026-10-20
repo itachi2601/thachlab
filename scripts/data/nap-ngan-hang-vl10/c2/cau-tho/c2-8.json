@@ -1,0 +1,2700 @@
+[
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 1,
+  "flags": [],
+  "stem": "Tầm xa $\\left( L \\right)$ của vật chuyển động ném ngang được xác định bằng biểu thức",
+  "options": [
+   [
+    "A",
+    "$L = x_{\\max} = v_{0}\\sqrt{2gh}.$",
+    false
+   ],
+   [
+    "B",
+    "$L = x_{\\max} = v_{0}\\sqrt{\\frac{h}{g}}.$",
+    false
+   ],
+   [
+    "C",
+    "$L = x_{\\max} = v_{0}\\sqrt{\\frac{2h}{g}}.$",
+    true
+   ],
+   [
+    "D",
+    "$L = x_{\\max} = v_{0}\\frac{h}{2g}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Tầm xa của vật chuyển động ném ngang $L = x_{\\max} = v_{0}t = v_{0}\\sqrt{\\frac{2h}{g}}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 2,
+  "flags": [],
+  "stem": "Phương trình quỹ đạo của vật chuyển động ném ngang là",
+  "options": [
+   [
+    "A",
+    "$y = \\frac{g}{2v_{0}}x^{2}.$",
+    false
+   ],
+   [
+    "B",
+    "$y = \\frac{g}{2v_{0}^{2}}x^{2}.$",
+    true
+   ],
+   [
+    "C",
+    "$y = \\frac{g}{v_{0}^{2}}x^{2}.$",
+    false
+   ],
+   [
+    "D",
+    "$y = \\frac{g}{2v_{0}^{2}}x.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Phương trình quỹ đạo của vật chuyển động ném ngang là $\\left\\{ \\begin{array}{r}\n\\mathit{x}\\mathbf{=}\\mathit{v}_{\\mathit{o}}\\mathit{t} \\\\\n\\mathit{y}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\mathit{y\\ \\ }\\mathbf{=}\\mathit{\\ \\ }\\frac{\\mathit{g}}{2\\mathit{v}_{0}^{2}}\\mathit{x}^{2}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 3,
+  "flags": [],
+  "stem": "Công thức tính thời gian của vật chuyển động ném ngang là",
+  "options": [
+   [
+    "A",
+    "$t = \\sqrt{\\frac{2h}{g}}.$",
+    true
+   ],
+   [
+    "B",
+    "$t = \\sqrt{\\frac{h}{2g}}.$",
+    false
+   ],
+   [
+    "C",
+    "$t = \\sqrt{\\frac{h}{g}}.$",
+    false
+   ],
+   [
+    "D",
+    "$t = \\sqrt{2hg}.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Theo phương $Oy$ hình chiếu của chuyển động vật rơi tự do $ y = h = \\frac{1}{2}gt^{2} \\Rightarrow t = \\sqrt{\\frac{2h}{g}}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 4,
+  "flags": [],
+  "stem": "Tại độ cao $h,$ một vật được ném theo phương ngang với vận tốc đầu $ v_{0},$ thời gian chuyển động của vật là $ t.$ Vận tốc của vật khi chạm đất là",
+  "options": [
+   [
+    "A",
+    "$v = gt.$",
+    false
+   ],
+   [
+    "B",
+    "$v = \\sqrt{v_{0}^{2} + \\left( gt \\right)^{2}}.$",
+    true
+   ],
+   [
+    "C",
+    "$v = v_{0} + gt.$",
+    false
+   ],
+   [
+    "D",
+    "$v = \\sqrt{v_{0} + gt^{2}}.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathit{\\ \\ }\\mathbf{=}\\mathit{\\ \\ }\\mathit{v}_{0} \\\\\n\\mathit{v}_{\\mathit{y}}\\mathit{\\ \\ }\\mathbf{=}\\mathit{\\ \\ gt}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\mathit{v\\ \\ }\\mathbf{=}\\mathit{\\ \\ }\\sqrt{\\mathit{v}_{\\mathit{x}}^{2}\\mathit{\\ }\\mathit{\\ }\\mathbf{+}\\mathit{\\ \\ v}_{\\mathit{y}}^{2}}\\mathit{\\ \\ }\\mathbf{=}\\mathit{\\ \\ }\\sqrt{\\mathit{v}_{0}^{2}\\mathit{\\ }\\mathit{\\ }\\mathbf{+}\\mathit{\\ \\ }\\left( \\mathit{gt} \\right)^{2}}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 5,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một vật được ném theo phương ngang từ độ cao h so với mặt đất. Chọn hệ quy chiếu Oxy tại mặt đất (Ox nằm ngang, Oy hướng thẳng đứng lên) thì phương trình quỹ đạo nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "$y=\\frac{1}{2}gt^{2}.$",
+    false
+   ],
+   [
+    "B",
+    "$y=h+\\frac{1}{2}gt^{2}.$",
+    false
+   ],
+   [
+    "C",
+    "$y=h-\\frac{1}{2}gt^{2}.$",
+    true
+   ],
+   [
+    "D",
+    "$y=h-gt^{2}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 6,
+  "flags": [],
+  "stem": "Một máy bay đang thẳng đều ở độ cao $h,$ với tốc độ $ v_{0}$ thì thả rơi một vật. Khi vật chạm đất, máy bay cách chỗ thả vật (bỏ qua sức cản của không khí)",
+  "options": [
+   [
+    "A",
+    "$s=v_{0}\\frac{2h}{g}.$",
+    false
+   ],
+   [
+    "B",
+    "$s=\\frac{2gh}{v_{0}}.$",
+    false
+   ],
+   [
+    "C",
+    "$s=2.v_{0}\\sqrt{gh}.$",
+    false
+   ],
+   [
+    "D",
+    "$s=\\sqrt{\\frac{2hv_{0}^{2}}{g}}.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Vật được thả rơi sẽ chuyển động như vật bị ném ngang từ độ cao $h$ với vận tốc đầu là $v_{0}$. Vị trí vật chạm đất chính là tầm ném xa của vật là$ s=L_{\\max}=v_{0}t=v_{0}\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2hv_{0}^{2}}{g}}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 7,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một vật được ném theo phương ngang với vận tốc ${\\overrightarrow{v}}_{0}$ từ độ cao $ h$ so với mặt đất. Chọn hệ trục toạ độ $ Oxy$ sao cho gốc $ O$ trùng với vị trí ném, $ Ox$ theo chiều ${\\overrightarrow{v}}_{0}, Oy$ hướng thẳng đứng xuống dưới, gốc thời gian là lúc ném. Phương trình quỹ đạo của vật là",
+  "options": [
+   [
+    "A",
+    "$y=\\frac{gx^{2}}{2v_{0}^{2}}-h.$",
+    false
+   ],
+   [
+    "B",
+    "$y=\\frac{gx^{2}}{2v_{0}^{2}}+h.$",
+    false
+   ],
+   [
+    "C",
+    "$y=\\frac{gx^{2}}{2v_{0}^{2}}.$",
+    true
+   ],
+   [
+    "D",
+    "$y=\\frac{gx^{2}}{v_{0}^{2}}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 8,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một vật được ném ngang từ độ cao h với vận tốc $v_{0}$ nào đó. Bỏ qua sức cản của không khí. Thời gian vật rơi đến mặt đất là",
+  "options": [
+   [
+    "A",
+    "$\\sqrt{\\frac{2h}{g}}.$",
+    true
+   ],
+   [
+    "B",
+    "$\\sqrt{\\frac{h}{g}}.$",
+    false
+   ],
+   [
+    "C",
+    "$\\sqrt{\\frac{v_{0}}{g}}.$",
+    false
+   ],
+   [
+    "D",
+    "$\\sqrt{\\frac{h}{2g}}.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 9,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một vật được ném ngang từ độ cao h với vận tốc $v_{0}$ nào đó. Bỏ qua sức cản của không khí. Tầm bay xa của vật là",
+  "options": [
+   [
+    "A",
+    "$v_{0}\\sqrt{\\frac{h}{g}}.$",
+    false
+   ],
+   [
+    "B",
+    "$v_{0}\\sqrt{\\frac{2h}{g}}.$",
+    true
+   ],
+   [
+    "C",
+    "$\\frac{v_{0}^{2}}{g}.$",
+    false
+   ],
+   [
+    "D",
+    "$\\frac{v_{0}^{2}}{2g}.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 10,
+  "flags": [
+   "khong-du-A-D",
+   "khong-gach-chan"
+  ],
+  "stem": "Bi A có khối lượng gấp đôi bi $B.$ Cùng một lúc tại cùng một vị trí, bi A được thả rơi còn bi B được ném theo phương ngang với tốc độ $ v_{o}.$ Bỏ qua sức cản của không khí. Hãy cho biết phát biểu nào dưới đây là **đúng**? \n**A.** A chạm đất trước. **[C.** Cả hai đều chạm đất cùng lúc. \n**B.** A chạm đất sau. **D.** Chưa biết giá trị $v_{o}$ nên chưa kết luận được.",
+  "options": [],
+  "answer": null,
+  "solution": "Bi A có khối lượng gấp đôi bi $B.$ Cùng một lúc tại cùng một vị trí, bi A được thả rơi còn bi B được ném theo phương ngang với tốc độ $ v_{o}.$ Bỏ qua sức cản của không khí. Cả hai đều chạm đất cùng lúc.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 11,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Trong chuyển động ném ngang, gia tốc của vật tại một vị trí bất kỳ luôn có đặc điểm là hướng theo",
+  "options": [
+   [
+    "A",
+    "phương ngang, cùng chiều chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "phương ngang, ngược chiều chuyển động",
+    false
+   ],
+   [
+    "C",
+    "phương thẳng đứng, chiều từ dưới lên trên.",
+    false
+   ],
+   [
+    "D",
+    "phương thẳng đứng, chiều từ trên xuống dưới.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 12,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Từ trên một máy bay đang chuyển động đều theo phương nằm ngang, người ta thả một vật rơi xuống đất. Bỏ qua sức cản của không khí. Nhận xét nào sau đây là **sai**?",
+  "options": [
+   [
+    "A",
+    "Người quan sát đứng trên mặt đất nhìn thấy quỹ đạo của vật là một phần của Parabol.",
+    false
+   ],
+   [
+    "B",
+    "Người quan sát đứng trên máy bay nhìn thấy quỹ đạo của vật là một phần của Parabol.",
+    true
+   ],
+   [
+    "C",
+    "Người quan sát đứng trên máy bay nhìn thấy quỹ đạo của vật là một đường thẳng đứng.",
+    false
+   ],
+   [
+    "D",
+    "Vị trí chạm đất ở ngay phía dưới máy bay theo phương thẳng đứng.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 13,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một pháo sáng được thả ra từ máy bay đang bay đều theo phương thẳng nằm ngang. Bỏ qua sức cản của không khí, pháo sáng sẽ chuyển động ra sao?",
+  "options": [
+   [
+    "A",
+    "Bay phía sau máy bay trên cùng mặt ngang.",
+    false
+   ],
+   [
+    "B",
+    "Giữ thẳng đứng dưới máy bay.",
+    true
+   ],
+   [
+    "C",
+    "Di chuyển phía trước máy bay trên cùng mặt ngang.",
+    false
+   ],
+   [
+    "D",
+    "Phụ thuộc vào độ nhanh theo mặt ngang của máy bay.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 14,
+  "flags": [],
+  "stem": "Quỹ đạo của chuyển động ném ngang là",
+  "options": [
+   [
+    "A",
+    "một đường elip.",
+    false
+   ],
+   [
+    "B",
+    "một đường thẳng.",
+    false
+   ],
+   [
+    "C",
+    "một đường hyperbol.",
+    false
+   ],
+   [
+    "D",
+    "một nhánh parabol.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Quỹ đạo của chuyển động ném ngang là một nhánh parabol.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 15,
+  "flags": [],
+  "stem": "Khi vật được ném theo phương ngang (bỏ qua mọi lực cản) thì trên phương $Ox$",
+  "options": [
+   [
+    "A",
+    "vật chuyển động thẳng đều.",
+    true
+   ],
+   [
+    "B",
+    "vật chuyển động nhanh dần đều.",
+    false
+   ],
+   [
+    "C",
+    "vật có gia tốc $a=g.$",
+    false
+   ],
+   [
+    "D",
+    "phương trình chuyển động $x=v_{0}t+\\frac{1}{2}gt^{2}.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Khi vật được ném theo phương ngang thì trên phương $Ox$ vật chuyển động thẳng đều vì lực tác dụng lên vật theo phương $ Ox$ bằng không.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 16,
+  "flags": [],
+  "stem": "Một vật chuyển động đều dọc theo trục $Ox$ và đồng thời nhanh dần đều theo trục $ Oy.$ Vật đó chuyển động theo",
+  "options": [
+   [
+    "A",
+    "quỹ đạo là parabol có trục đối xứng là $Oy.$",
+    true
+   ],
+   [
+    "B",
+    "quỹ đạo parabol có trục đối xứng là $Ox.$",
+    false
+   ],
+   [
+    "C",
+    "vòng tròn có tâm là gốc $O$ của hệ tọa độ.",
+    false
+   ],
+   [
+    "D",
+    "quỹ đạo elip có tâm đối xứng là gốc $O$ của hệ tọa độ.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Một vật chuyển động đều dọc theo trục $Ox$ và đồng thời nhanh dần đều theo trục $ Oy$ (tương tự chuyển động ném ngang hoặc ném xiên) quỹ đạo là parabol có trục đối xứng là $ Oy.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 17,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một viên bi được đặt trên mặt bàn và được truyền một vận tốc đầu theo phương ngang. \n![](media/c2-8/media/image114.png){width=\"4.375in\" height=\"0.4708333333333333in\"} \nHình nào mô tả quỹ đạo của bóng khi rơi ra khỏi bàn?",
+  "options": [
+   [
+    "A",
+    "Hình $4.$",
+    false
+   ],
+   [
+    "B",
+    "Hình $2.$",
+    true
+   ],
+   [
+    "C",
+    "Hình $1.$",
+    false
+   ],
+   [
+    "D",
+    "Hình $3.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Khi bỏ qua sức cản của không khí. Một vật được ném theo phương ngang với vận tốc ban đầu $v_{0}$ thì\nLực duy nhất tác dụng vào vật trong quá trình chuyển động là trọng lực.\nQuỹ đạo chuyển động của vật là một nhánh của parabol.",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-8/media/image114.png"
+  ]
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 18,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Tại điểm O người ta ném ngang một vật với vận tốc ban đầu $v_{0}.$ Đồ thị nào dưới đây diễn tả **đúng** phân bố vận tốc của vật thành các thành phần ngang dọc khi qua điểm I? \n![](media/c2-8/media/image121.emf){width=\"3.9805555555555556in\" height=\"1.2208333333333334in\"}",
+  "options": [
+   [
+    "A",
+    "Hình$3.$",
+    false
+   ],
+   [
+    "B",
+    "Hình $1.$",
+    true
+   ],
+   [
+    "C",
+    "Hình $2.$",
+    false
+   ],
+   [
+    "D",
+    "Hình $4.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Khi bỏ qua sức cản của không khí. Một vật được ném theo phương ngang với vận tốc ban đầu $v_{0}$ thì\nLực duy nhất tác dụng vào vật trong quá trình chuyển động là trọng lực.\nQuỹ đạo chuyển động của vật là đường cong.\nVéctơ vận tốc tại mỗi điểm trùng với tiếp tuyến của quỹ đạo, gồm hai thành phần Thành phần nằm ngang không đổi bằng vận tốc ban đầu, thành phần theo phương thẳng đứng tăng dần theo công thức $v=gt.$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-8/media/image121.emf"
+  ]
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 19,
+  "flags": [],
+  "stem": "Một vật khối lượng $m,$ được ném ngang từ độ cao $ h$ với vận tốc ban đầu $ v_{0}.$ Tầm bay xa của vật phụ thuộc vào",
+  "options": [
+   [
+    "A",
+    "$m$ và $ v_{0}.$",
+    false
+   ],
+   [
+    "B",
+    "$m$ và $ h.$",
+    false
+   ],
+   [
+    "C",
+    "v~0~ và $h.$",
+    true
+   ],
+   [
+    "D",
+    "$m,v_{0}$ và $ h.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Tầm bay xa của vật là $L=v_{0}\\sqrt{\\frac{2h}{g}}$ phụ thuộc vào v~0~ và $ h.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 20,
+  "flags": [],
+  "stem": "Trong chuyển động ném ngang, gia tốc của vật tại một vị trí bất kì luôn có hướng theo",
+  "options": [
+   [
+    "A",
+    "phương ngang, cùng chiều chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "phương ngang, ngược chiều chuyển động.",
+    false
+   ],
+   [
+    "C",
+    "phương thẳng đứng, chiều từ trên xuống.",
+    true
+   ],
+   [
+    "D",
+    "phương thẳng đứng, chiều từ dưới lên.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Trong chuyển động ném ngang lực duy nhất tác dụng vào vật trong quá trình chuyển động là trọng lực\nÁp dụng định luật II niu tơn ta có $P=ma\\Rightarrowa=g\\Rightarrow$ gia tốc của vật tại một vị trí bất kì luôn có hướng theo phương thẳng đứng, chiều từ trên xuống.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 21,
+  "flags": [],
+  "stem": "Đối với hai vật bị ném ngang thì khẳng định nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Vật nào có vận tốc ban đầu lớn hơn thì bay xa hơn",
+    false
+   ],
+   [
+    "B",
+    "Vật nào có khối lượng lớn hơn thì bay xa hơn",
+    false
+   ],
+   [
+    "C",
+    "Vật nào có khối lượng nhỏ hơn thì bay xa hơn",
+    false
+   ],
+   [
+    "D",
+    "Vật nào có vận tốc ban đầu và độ cao hơn ban đầu lớn hơn thì bay xa hơn",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "$L=v_{0}\\sqrt{\\frac{2h}{g}}$\nNên, đối với hai vật bị ném ngang thì vật nào có vận tốc ban đầu và độ cao hơn ban đầu lớn hơn thì bay xa hơn.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 22,
+  "flags": [],
+  "stem": "Ở cùng một độ cao so với mặt đất, người ta đồng thời thả tự do viên bi A và ném viên bi B theo phương ngang. Bỏ qua sức cản không khí thì",
+  "options": [
+   [
+    "A",
+    "bi A chạm đất trước bi",
+    false
+   ],
+   [
+    "B",
+    "**B.** bi A chạm đất sau bi B.",
+    false
+   ],
+   [
+    "C",
+    "bi A và bi B chạm đất cùng lúc.",
+    true
+   ],
+   [
+    "D",
+    "tầm xa của hai bi như nhau.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Ở cùng một độ cao so với mặt đất, người ta đồng thời thả tự do viên bi A và ném viên bi B theo phương ngang. Bỏ qua sức cản không khí thì bi A và bi B chạm đất cùng lúc.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 23,
+  "flags": [],
+  "stem": "Tại cùng một vị trí, hai vật nhỏ được ném ngang với các vận tốc đầu $v_{1}, v_{2}$ cùng phương trái chiều. Bỏ qua lực cản không khí. Đại lượng nào sau đây của hai chuyển động có giá trị bằng nhau",
+  "options": [
+   [
+    "A",
+    "tầm bay xa.",
+    false
+   ],
+   [
+    "B",
+    "vận tốc chạm đất.",
+    false
+   ],
+   [
+    "C",
+    "thời gian chạm đất.",
+    true
+   ],
+   [
+    "D",
+    "tầm xa và vận tốc.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Tại cùng một vị trí, hai vật nhỏ được ném ngang với các vận tốc đầu $v_{1}, v_{2}$ cùng phương trái chiều thì thời gian chạm đất của hai chuyển động có giá trị bằng nhau.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 24,
+  "flags": [],
+  "stem": "Trong chuyển động của một vật ném ngang, khi độ cao để ném vật tăng gấp hai thì thời gian rơi của vật sẽ",
+  "options": [
+   [
+    "A",
+    "không đổi.",
+    false
+   ],
+   [
+    "B",
+    "giảm một nửa.",
+    false
+   ],
+   [
+    "C",
+    "tăng gấp hai.",
+    false
+   ],
+   [
+    "D",
+    "tăng $\\sqrt{2}$ lần.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Ta có $t=\\sqrt{\\frac{2h}{g}}$ Nên độ cao tăng gấp đôi thì thời gian rơi tăng $\\sqrt{2}$ lần.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 25,
+  "flags": [],
+  "stem": "Một vật bị ném ngang (bỏ qua sức cản của không khí). Lực tác dụng vào vật khi chuyển động là",
+  "options": [
+   [
+    "A",
+    "lực ném.",
+    false
+   ],
+   [
+    "B",
+    "lực ném và trọng lực.",
+    false
+   ],
+   [
+    "C",
+    "lực hướng tâm.",
+    false
+   ],
+   [
+    "D",
+    "trọng lực.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Theo phương thẳng đứng chuyển động của vật là rơi tự do nên chỉ chịu tác dụng của trọng lực",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 26,
+  "flags": [],
+  "stem": "Hai vật ở cùng một độ cao, vật I được ném ngang với vận tốc đầu $v_{0}$, cùng lúc đó vật II được thả rơi tự do. Bỏ qua sức cản của không khí. Kết luận nào sau đậy là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Thời gian rơi phụ thuộc vào khối lượng của vật.",
+    false
+   ],
+   [
+    "B",
+    "Vật I chạm đất cùng lúc với vật II.",
+    true
+   ],
+   [
+    "C",
+    "Vật I chạm đất trước vật II.",
+    false
+   ],
+   [
+    "D",
+    "Vật I chạm đất sau vật II.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Ta có $t=\\sqrt{\\frac{2h}{g}}.$ Thời gian không phụ thuộc vào hình dạng đường đi.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 27,
+  "flags": [],
+  "stem": "Để tăng tầm xa của vật ném theo phương ngang với sức cản không khí không đáng kể thì biện pháp nào sau đây có hiệu quả nhất?",
+  "options": [
+   [
+    "A",
+    "Giảm khối lượng vật ném.",
+    false
+   ],
+   [
+    "B",
+    "Tăng độ cao điểm ném.",
+    false
+   ],
+   [
+    "C",
+    "Giảm độ cao điểm ném.",
+    false
+   ],
+   [
+    "D",
+    "Tăng vận tốc ném.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Tầm ném xa của vật $L=v_{0}\\sqrt{\\frac{2h}{g}}$$\\RightarrowL\\simv_{0}$\nVậy để tăng tầm xa của vật ném theo phương ngang với sức cản không khí không đáng kể thì biện pháp hiệu quả nhất là tăng vận tốc ném.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 28,
+  "flags": [],
+  "stem": "Bi $1$ có trọng lượng lớn gấp đôi bi $2.$ Cùng một lúc tại một vị trí, bi $1$ được thả rơi còn bi $2$ được ném theo phương ngang với tốc độ $ v_{0}.$ Bỏ qua sức cản không khí. Kết luận nào sau đậy là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Hai bi chạm đất cùng lúc.",
+    true
+   ],
+   [
+    "B",
+    "Bi $1$ chạm đất trước.",
+    false
+   ],
+   [
+    "C",
+    "Bi $1$ chạm đất sau.",
+    false
+   ],
+   [
+    "D",
+    "Không biết được.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Thời gian rơi của chuyển động rơi tự do và chuyển động ném ngang không phụ thuộc vào khối lương, được tính bằng công thức $t=\\sqrt{\\frac{2h}{g} }$\nDo ở cùng một vị trí nên hai bi chạm đất cùng lúc.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 29,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Một máy bay đang thẳng đều ở độ cao h, với tốc độ v~0~ thì thả rơi một vật. Bỏ qua sức cản của không khí, khi vật chạm đất, máy bay cách chỗ thả vật một đoạn",
+  "options": [
+   [
+    "A",
+    "$s=v_{0}\\frac{2h}{g}.$",
+    false
+   ],
+   [
+    "B",
+    "$s=\\frac{2gh}{v_{0}}.$",
+    false
+   ],
+   [
+    "C",
+    "$s=2v_{0}\\sqrt{gh}.$",
+    false
+   ],
+   [
+    "D",
+    "$s=\\sqrt{\\frac{2hv_{0}^{2}}{g}}.$ \n**Lời giải** \n**Chọn D**",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 30,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Quỹ đạo của vật chuyển động ném ngang là một",
+  "options": [
+   [
+    "A",
+    "đường elip.",
+    false
+   ],
+   [
+    "B",
+    "đường thẳng.",
+    false
+   ],
+   [
+    "C",
+    "phần đường hyperbol.",
+    false
+   ],
+   [
+    "D",
+    "phần đường parabol. \n**Lời giải** \n**Chọn D** \n**Lời giải** \n**Chọn A** \n**Lời giải** \n**Chọn C**",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 31,
+  "flags": [],
+  "stem": "Đối với một vật bị ném ngang, khẳng định nào sau đây là **sai**?",
+  "options": [
+   [
+    "A",
+    "Chuyển động ném ngang có thể được phân tích thành hai chuyển động thành phần chuyển động theo quán tính ở độ cao không đổi và chuyển động rơi tự do.",
+    true
+   ],
+   [
+    "B",
+    "Vận tốc ban đầu và chiều cao ban đầu càng lớn thì tầm ném xa càng lớn.",
+    false
+   ],
+   [
+    "C",
+    "Khi vật chạm đất thì thời gian rơi tự do xấp xỉ bằng thời gian chuyển theo quán tính.",
+    false
+   ],
+   [
+    "D",
+    "Quỹ đạo chuyển động là một phần đường parabol.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Đối với một vật bị ném ngang, khẳng định chuyển động ném ngang có thể được phân tích thành hai chuyển động thành phần chuyển động theo quán tính ở độ cao không đổi và chuyển động rơi tự do là sai.\n**Lời giải**\n**Chọn D**",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 32,
+  "flags": [],
+  "stem": "Điều nào sau đây **không đúng** khi nói về chuyển động của vật ném ngang?",
+  "options": [
+   [
+    "A",
+    "Quỹ đạo của chuyển động ném ngang là đường thẳng.",
+    true
+   ],
+   [
+    "B",
+    "Vectơ vận tốc tại mỗi điểm trùng với tiếp tuyến với quỹ đạo tại điểm đó.",
+    false
+   ],
+   [
+    "C",
+    "Lực duy nhất tác dụng vào vật là trọng lực (bỏ qua sức cản của không khí).",
+    false
+   ],
+   [
+    "D",
+    "Tầm xa của vật phụ thuộc vào vận tốc ban đầu.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Quỹ đạo chuyển động của một vật được ném theo phương ngang là một đường Parabol có phương trình là $y=\\frac{gx^{2}}{2v_{0}^{2}}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 33,
+  "flags": [],
+  "stem": "Một vật được ném ngang từ độ cao h so với mặt đất với vận tốc ném là u~0~. Nếu vật được ném từ độ cao gấp đôi độ cao ban đầu với vận tốc ban đầu như cũ thì thời gian bay sẽ",
+  "options": [
+   [
+    "A",
+    "tăng gấp đôi.",
+    false
+   ],
+   [
+    "B",
+    "tăng lên $\\sqrt{2}$ lần.",
+    true
+   ],
+   [
+    "C",
+    "không thay đổi.",
+    false
+   ],
+   [
+    "D",
+    "tăng lên gấp bốn.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Ta có$t=\\sqrt{\\frac{2h}{g}},$ h tăng gấp đôi thì t tăng $\\sqrt{2}$ lần.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 34,
+  "flags": [],
+  "stem": "Một vật được ném ngang từ độ cao h so với mặt đất với vận tốc ném là v~0~. Nếu vẫn ở độ cao đó nhưng vận tốc ban đầu của vật được tăng lên gấp đôi thì thời gian bay sẽ",
+  "options": [
+   [
+    "A",
+    "tăng lên gấp đôi.",
+    false
+   ],
+   [
+    "B",
+    "giảm đi gấp bốn.",
+    false
+   ],
+   [
+    "C",
+    "không thay đổi.",
+    true
+   ],
+   [
+    "D",
+    "giảm đi một nửa.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Thời gian chuyển động ném ngang bằng thời gian rơi tự do từ cùng độ cao, không phụ thuộc vận tốc ban đầu.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 35,
+  "flags": [],
+  "stem": "Một vật được ném ngang từ độ cao h so với mặt đất với vận tốc ném là v~0~. Biết rằng khi tiếp đất thì vận tốc của nó bằng 2v~0~. Cho gia tốc trọng trường là g. Độ cao h bằng",
+  "options": [
+   [
+    "A",
+    "$\\frac{v_{0}^{2}}{2g}.$",
+    false
+   ],
+   [
+    "B",
+    "$\\frac{3v_{0}^{2}}{2g}.$",
+    true
+   ],
+   [
+    "C",
+    "$\\frac{v_{0}^{2}}{g}.$",
+    false
+   ],
+   [
+    "D",
+    "$\\frac{2v_{0}^{2}}{g}.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$v=\\sqrt{v_{0}^{2}+2gh}=2v_{0}\\Rightarrowh=\\frac{3v_{0}^{2}}{2g}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 36,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Hai vật được đồng thời ném từ mặt đất lên với vận tốc ban đầu vẽ như Hình 12.1. \n![A diagram of a triangle Description automatically generated](media/c2-8/media/image172.png){width=\"1.7326388888888888in\" height=\"1.4483081802274715in\"} \nNếu bỏ qua sức cản của không khí thì",
+  "options": [
+   [
+    "A",
+    "vật 1 chạm đất trước.",
+    true
+   ],
+   [
+    "B",
+    "hai vật chạm đất cùng một lúc.",
+    false
+   ],
+   [
+    "C",
+    "hai vật có tầm bay cao như nhau.",
+    false
+   ],
+   [
+    "D",
+    "vật 1 có tầm bay cao hơn.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-8/media/image172.png"
+  ]
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 37,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Hai vật được đồng thời ném từ mặt đất lên với vận tốc ban đầu như Hình 12.2. \n![Ảnh có chứa văn bản, ăng-ten Mô tả được tạo tự động](media/c2-8/media/image173.png){width=\"1.90625in\" height=\"1.5729166666666667in\"} \nNếu bỏ qua sức cản của không khí thì câu nào sau đây **không đúng**?",
+  "options": [
+   [
+    "A",
+    "Hai vật chạm đất cùng một lúc.",
+    false
+   ],
+   [
+    "B",
+    "Hai vật cùng có tầm bay xa.",
+    true
+   ],
+   [
+    "C",
+    "Vật 2 có tầm bay xa lớn hơn.",
+    false
+   ],
+   [
+    "D",
+    "Hai vật có cùng tầm bay cao.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-8/media/image173.png"
+  ]
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 38,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một vận động viên sút một quả bóng bầu dục ba lần theo các quỹ đạo a,b và c như hình vẽ. Quỹ đạo nào tương ứng với thời gian chuyển động trong không khí của quả bóng là lâu nhất nếu bỏ qua mọi lực cản? \n![A diagram of a graph Description automatically generated](media/c2-8/media/image174.png){width=\"4.142361111111111in\" height=\"1.983924978127734in\"}",
+  "options": [
+   [
+    "A",
+    "(a).",
+    false
+   ],
+   [
+    "B",
+    "(b).",
+    false
+   ],
+   [
+    "C",
+    "(c).",
+    false
+   ],
+   [
+    "D",
+    "Cả ba trường hợp có thời gian chuyển động như nhau.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-8/media/image174.png"
+  ]
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 39,
+  "flags": [],
+  "stem": "Một vật được ném từ độ cao h = 45 m với vận tốc đầu v~0~ = 20 m/s theo phương nằm ngang. Bỏ qua sức cản của không khí, lấy g = 10 m/s^2^. Tầm ném xa của vật là",
+  "options": [
+   [
+    "A",
+    "30 m.",
+    false
+   ],
+   [
+    "B",
+    "60 m.",
+    true
+   ],
+   [
+    "C",
+    "90 m.",
+    false
+   ],
+   [
+    "D",
+    "180 m.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Tầm xa của vật $L=v_{0}\\sqrt{\\frac{2h}{g}}=20.\\sqrt{\\frac{2.45}{10}}=60 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 40,
+  "flags": [],
+  "stem": "Một máy bay bay theo phương ngang ở độ cao $10 km$ với vận tốc $720 km/h.$ Lấy $ g=9,8 m/s^{2}.$ Để bom rơi **đúng** mục tiêu người phi công phải thả bom từ xa, cách mục tiêu (theo phương ngang) một đoạn là",
+  "options": [
+   [
+    "A",
+    "$4,5 km.$",
+    false
+   ],
+   [
+    "B",
+    "$9 km.$",
+    true
+   ],
+   [
+    "C",
+    "$13,5 km.$",
+    false
+   ],
+   [
+    "D",
+    "$12 km.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Đổi $v_{0}=720 km/h=200 m/s$\nTầm xa $L=v_{0}\\sqrt{\\frac{2h}{g}}=200\\sqrt{\\frac{2.10.10^{3}}{9,8}}=9035 m\\approx9 km.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 41,
+  "flags": [],
+  "stem": "Người ta ném một hòn bi theo phương ngang với vận tốc đầu $15 m/s$ và rơi xuống đất sau $4 s.$ Bỏ qua sức cản không khí, lấy $ g=10 m/s^{2}.$ Quả bóng được ném từ độ cao và tầm xa của nó là",
+  "options": [
+   [
+    "A",
+    "$80 m, 80 m.$",
+    false
+   ],
+   [
+    "B",
+    "$80 m, 60 m.$",
+    true
+   ],
+   [
+    "C",
+    "$60 m, 80 m.$",
+    false
+   ],
+   [
+    "D",
+    "$60 m, 60 m.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Quả bóng được ném từ độ cao và tầm xa của nó là $\\left\\{ \\begin{array}{r}\n\\mathit{h}\\mathbf{=}\\frac{\\mathit{g}\\mathit{t}^{2}}{2}\\mathbf{=}\\mathit{\\ \\ }80\\mathit{\\ \\ m}. \\\\\n\\mathit{L}\\mathbf{=}\\mathit{\\ }\\mathit{v}_{0}\\mathit{t}\\mathbf{=}60\\mathit{\\ \\ m}.\n\\end{array} \\right.\\$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 42,
+  "flags": [],
+  "stem": "Từ độ cao $20 m$ so với đất, một vật được ném theo phương ngang với vận tốc ban đầu $10 m/s.$ Lấy $ g = 10 m/s^{2},$ bỏ qua ma sát. Vận tốc của vật lúc chạm đất bằng",
+  "options": [
+   [
+    "A",
+    "$30 m/s.$",
+    false
+   ],
+   [
+    "B",
+    "$20 m/s.$",
+    false
+   ],
+   [
+    "C",
+    "$22,4 m/s.$",
+    true
+   ],
+   [
+    "D",
+    "$15 m/s.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Ta có $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.20}{10}}=2 s.$\nMặc khác vật tốc chạm đất của vật chuyển động ném $v=\\sqrt{v_{x}^{2}+v_{y}^{2}}=\\sqrt{v_{0}^{2}+(gt)^{2}}=\\sqrt{10^{2}+(10.2)^{2}}=22,4 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 43,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một vật được ném theo phương ngang với vận tốc ban đầu $v_{0}=30 m/s$ ở độ cao $ h=80 m$ so với mặt đất. Bỏ qua sức cản của không khí lấy $ g=10 m/s^{2}.$ Chọn gốc tọa độ tại vị ném, trục $ Ox$ nằm ngang, $ Oy$ phương thẳng đứng hướng xuống. Phương trình quỹ đạo có dạng",
+  "options": [
+   [
+    "A",
+    "$y=\\frac{x^{2}}{90}.$",
+    false
+   ],
+   [
+    "B",
+    "$y=\\frac{x^{2}}{120}.$",
+    false
+   ],
+   [
+    "C",
+    "$y=\\frac{x^{2}}{180}.$",
+    true
+   ],
+   [
+    "D",
+    "$y=\\frac{x^{2}}{150}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "![Description: 43-32](media/c2-8/media/image211.png){width=\"1.7020833333333334in\" height=\"1.1826388888888888in\"}\nPhương trình chuyển đông theo phương Ox là $x=v_{0}t(1)$\nPhương trình chuyển động theo phương Oy $y=\\frac{1}{2}g_{0}t^{2}(2)$\nTừ $(1)\\Rightarrowt=\\frac{x}{v_{0}}$ thế vào phương trình$(2) y=\\frac{1}{2}g\\left( \\frac{x}{v_{0}} \\right)^{2}=\\frac{g}{2.v_{0}^{2}}x^{2}=\\frac{10}{2.30^{2}}x^{2}=\\frac{1}{180}x^{2}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 44,
+  "flags": [],
+  "stem": "Một quả bóng được ném theo phương ngang với vận tốc ban đầu $v_{0}=25 m/s$ và rơi xuống đất sau thời gian $ t=3 s.$ Bỏ qua lực cản của không khí và lấy $ g=9,8 m/s^{2}.$ Quả bóng đã được ném từ độ cao nào và tầm bay xa của quả bóng là bao nhiêu?",
+  "options": [
+   [
+    "A",
+    "$49 m, 72 m.$",
+    false
+   ],
+   [
+    "B",
+    "$45 m, 75 m.$",
+    false
+   ],
+   [
+    "C",
+    "$44,1 m, 75 m.$",
+    true
+   ],
+   [
+    "D",
+    "$50 m, 75 m.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Chọn hệ trục tọa độ $Oxy,$ có gốc $ O$ tại vị trí ném, có $ Ox$ hướng theo chiều véc tơ ${\\overrightarrow{v}}_{0},$ $ Oy$ hướng theo chiều của trọng lực $\\overrightarrow{P}.$ Gốc thời gian tại lúc ném.\nKhi vật chạm đất thì $y=h=\\frac{1}{2}gt^{2}=\\frac{1}{2}.9,8.3^{2}=44,1 m.$\nTầm bay xa của quả bóng $L=x_{\\max}=v_{0}.t=25.3=75 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 45,
+  "flags": [],
+  "stem": "Một vật được ném theo phương ngang với tốc độ v~0~ = 10 m/s từ độ cao h so với mặt đất. Chọn hệ trục tọa độ Oxy sao cho gốc O trùng với vị trí ném, Ox theo chiều của vec tơ v~0~, Oy hướng thẳng đứng xuống dưới, gốc thời gian là lúc ném. Lấy g = 10 m/s^2^, phương trình quỹ đạo của vật là",
+  "options": [
+   [
+    "A",
+    "y = 10t + 5t^2^.",
+    false
+   ],
+   [
+    "B",
+    "y = 10t + 10t.",
+    false
+   ],
+   [
+    "C",
+    "y = 0,05x^2^.",
+    true
+   ],
+   [
+    "D",
+    "y = 0,1x^2^.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Phương trình quỹ đạo của vật là $y=\\frac{gx^{2}}{2v_{0}^{2}}=\\frac{10.x^{2}}{2.10^{2}}=0,05x^{2}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 46,
+  "flags": [],
+  "stem": "Người ta ném một hòn bi theo phương ngang với vận tốc đầu $v_{0}=15 m/s$ và rơi xuống đất sau $ t=4 s.$ Bỏ qua sức cản không khí, lấy $ g=10 m/s^{2}.$ Quả bóng được ném từ độ cao nào và tầm xa của nó là bao nhiêu?",
+  "options": [
+   [
+    "A",
+    "$80 m, 80 m.$",
+    false
+   ],
+   [
+    "B",
+    "$80 m, 60 m.$",
+    true
+   ],
+   [
+    "C",
+    "$60 m, 80 m.$",
+    false
+   ],
+   [
+    "D",
+    "$60 m, 60 m.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Chọn hệ trục tọa độ $Oxy,$ có gốc $ O$ tại vị trí ném, có $ Ox$ hướng theo chiều véc tơ ${\\overrightarrow{v}}_{0},$ $ Oy$ hướng theo chiều của trọng lực $\\overrightarrow{P}.$ Gốc thời gian tại lúc ném.\nKhi vật chạm đất thì $y=h=\\frac{1}{2}gt^{2}=\\frac{1}{2}.10.4^{2}=80 m.$\nTầm bay xa của hòn bi $L=x_{\\max}=v_{0}.t=15.4=60 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 47,
+  "flags": [],
+  "stem": "Một vật được ném ngang từ độ cao $h=20 m,$ với vận tốc ban đầu $ v_{0}=20 m/s.$ Bỏ qua mọi lực cản. Lấy $ g=10 m/s^{2}.$Vận tốc vật khi chạm đất là",
+  "options": [
+   [
+    "A",
+    "$10\\sqrt{2} m/s.$",
+    false
+   ],
+   [
+    "B",
+    "$20 m/s.$",
+    false
+   ],
+   [
+    "C",
+    "$20\\sqrt{2} m/s.$",
+    true
+   ],
+   [
+    "D",
+    "$40 m/s.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Chọn hệ trục tọa độ $Oxy,$ có gốc $ O$ tại vị trí ném, có $ Ox$ hướng theo chiều véc tơ ${\\overrightarrow{v}}_{0},$ $ Oy$ hướng theo chiều của trọng lực $\\overrightarrow{P}.$ Gốc thời gian tại lúc ném.\nThời gian chuyển động của vật $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.20}{10}}=2 s.$\nVận tốc của vật khi chạm đất $v=\\sqrt{v_{x}^{2}+v_{y}^{2}}=\\sqrt{v_{0}^{2}+\\left( gt \\right)^{2}}=\\sqrt{20^{2}+(10.2)^{2}}=20\\sqrt{2} m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 48,
+  "flags": [],
+  "stem": "Một máy bay bay với vận tốc không đổi theo phương nằm ngang ở độ cao h so với mặt đất và thả một vật. Bỏ qua sức cản của không khí và lấy g = 10 m/s^2^ . Khi h = 2,5 km, v~0~ = 120 m/s. Phương trình quỹ đạo của vật khi chọn gốc tọa độ O ở điểm thả vật, Ox hướng theo v~0~, Oy hướng thẳng đứng xuống dưới là",
+  "options": [
+   [
+    "A",
+    "y = x^2^/240.",
+    false
+   ],
+   [
+    "B",
+    "y = x^2^/2880.",
+    true
+   ],
+   [
+    "C",
+    "y = x^2^/120.",
+    false
+   ],
+   [
+    "D",
+    "y = x^2^/1440.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Ta có phương trình quỹ đạo $y=\\frac{gx^{2}}{2v_{0}^{2}}=\\frac{10.x^{2}}{2.120^{2}}=\\frac{x^{2}}{2880}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 49,
+  "flags": [],
+  "stem": "Một vận động viên mô tô địa hình chuyển động theo phương nằm ngang rời khỏi một điểm cao 1,25 m so với mặt đất và chạm đất tại điểm cách đó 10m. Lấy g =10 m/s^2^. Vận tốc tại điểm bắt đầu bay bằng",
+  "options": [
+   [
+    "A",
+    "20m/s.",
+    true
+   ],
+   [
+    "B",
+    "15m/s.",
+    false
+   ],
+   [
+    "C",
+    "10m/s.",
+    false
+   ],
+   [
+    "D",
+    "5m/s.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Tầm bay xa của vật là $L=v_{0}\\sqrt{\\frac{2h}{g}}\\Rightarrowv_{0}=L\\sqrt{\\frac{g}{2h}}=10.\\sqrt{\\frac{10}{2.1,25}}=20 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 50,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một người đứng ở một vách đá nhô ra biển và ném một hòn đá theo phương ngang xuống biển với tốc độ 18 m/s. Vách đá cao 50 m so với mặt nước biển. Lấy g = 9,8 m/s^2^. Sau bao lâu thì hòn đá chạm mặt nước?",
+  "options": [
+   [
+    "A",
+    "3,19 s.",
+    true
+   ],
+   [
+    "B",
+    "2,43 s.",
+    false
+   ],
+   [
+    "C",
+    "4,11 s.",
+    false
+   ],
+   [
+    "D",
+    "2,99 s.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Thời gian từ lúc hòn đá rơi đến lúc chạm mặt nước là $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.50}{9,8}}=3,19$\n![A diagram of a line with arrows and letters Description automatically generated](media/c2-8/media/image265.png){width=\"1.75625in\" height=\"1.3194444444444444in\"}",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 51,
+  "flags": [],
+  "stem": "Từ một đỉnh ngọn tháp cao 80m, một quà cầu được ném theo phương ngang với vận tốc ban đầu 20 m/s. Lấy g = 10 m/s^2^. Chọn hệ trục tọa độ Oxy có gốc O tại điểm ném, Ox hướng theo $v_{0}$, Oy hướngthẳng đứng xuống dưới, x, y tính bằng m. Phương trình quỹ đạo của quả cầu là",
+  "options": [
+   [
+    "A",
+    "$y=\\frac{x^{2}}{80}.$",
+    true
+   ],
+   [
+    "B",
+    "$y=\\frac{x^{2}}{40}.$",
+    false
+   ],
+   [
+    "C",
+    "$y=80x^{2}.$",
+    false
+   ],
+   [
+    "D",
+    "$y=40x^{2}.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Phương trình quỹ đạo của quả cầu $y=\\frac{g}{2v_{0}^{2}}x^{2}\\Rightarrowy=\\frac{1}{80}x^{2}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 52,
+  "flags": [],
+  "stem": "Một quả cầu được ném theo phương ngang từ độ cao 80 m. Sau khi chuyển động 3 s, vận tốc quả cầu hợp với phương ngang một góc 45°. Lấy g = 10m/s^2^. Tính vận tốc ban đầu của quá cầu.",
+  "options": [
+   [
+    "A",
+    "30m/s.",
+    true
+   ],
+   [
+    "B",
+    "$30\\sqrt{2}$ m/s.",
+    false
+   ],
+   [
+    "C",
+    "20m/s.",
+    false
+   ],
+   [
+    "D",
+    "$10\\sqrt{2}$ m/s.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Góc giữa véc tơ vận tốc và phương ngang là $\\alpha$ xác định theo công thức $ tan\\alpha=\\frac{v_{y}}{v_{x}}=\\frac{gt}{v_{0}}\\Rightarrowv_{0}=\\frac{gt}{tan\\alpha}=30 m/s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 53,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Từ độ cao $80 m$ so với mặt đất, một vật nhỏ được ném ngang với tốc độ ban đầu $ v_{0}=20 m/s.$ Bỏ qua sức cản của không khí. Lấy gia tốc rơi tự do $ g=10 m/s^{2}.$ Chọn gốc thời gian là khi ném vật. Véctơ vận tốc của vật hợp với phương thẳng đứng một góc $60 {^\\circ}$ vào thời điểm",
+  "options": [
+   [
+    "A",
+    "$3,46 s.$",
+    false
+   ],
+   [
+    "B",
+    "$1,15 s.$",
+    true
+   ],
+   [
+    "C",
+    "$1,73 s.$",
+    false
+   ],
+   [
+    "D",
+    "$0,58 s.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "![Chương II: Chuyển động ném xiên, chuyển động ném ngang](media/c2-8/media/image284.jpeg){width=\"2.7305555555555556in\" height=\"1.6541666666666666in\"}\nThời gian vật rơi là $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.80}{10}}=4 s.$\nKhi véctơ vận tốc của vật hợp với phương thẳng đứng một góc $60 {^\\circ}$ thì ta có\n![](media/c2-8/media/image287.wmf)\nMà $v_{y}=gt\\Rightarrowt=\\frac{v_{y}}{g}\\approx1,15 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 54,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Từ đỉnh tháp cao $30 m,$ ném một vật nhỏ theo phương ngang với vận tốc ban đầu $ v_{0}=20 m/s.$ Gọi $ M$ là một chất điểm trên quỹ đạo tại thời điểm véctơ vận tốc hợp với phương thẳng đứng một góc $60 {^\\circ}.$ Lấy gia tốc rơi tự do $ g=10 m/s^{2}.$ Khoảng cách từ $ M$ đến mặt đất là",
+  "options": [
+   [
+    "A",
+    "$23,33 m.$",
+    true
+   ],
+   [
+    "B",
+    "$10,33 m.$",
+    false
+   ],
+   [
+    "C",
+    "$12,33 m.$",
+    false
+   ],
+   [
+    "D",
+    "$15,33 m.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Thời gian vật rơi là $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.30}{10}}=\\sqrt{6} s.$\nKhi véctơ vận tốc của vật hợp với phương thẳng đứng một góc $60 {^\\circ}$ thì ta có\n![](media/c2-8/media/image301.wmf) Mà $v_{y}=gt\\Rightarrowt=\\frac{v_{y}}{g}=\\frac{2\\sqrt{3}}{3} s.$\nQuãng đường vật rơi từ lúc ném đến lúc véctơ vận tốc hợp với phương thẳng đứng một góc $60 {^\\circ}$ là\n$y=\\frac{1}{2}gt^{2}=\\frac{1}{2}.10\\left( \\frac{2\\sqrt{3}}{3} \\right)=\\frac{20}{3} m.$\nVậy vị trí này cách mặt đất một đoạn $30-\\frac{20}{3}=23,33 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 55,
+  "flags": [],
+  "stem": "Ở một đồi cao h~0~ = 100 m người ta đặt một súng cối nằm ngang và muốn bắn sao cho quả đạn rơi về phía bên kia của tòa nhà, gần bức tường AB nhất. Biết tòa nhà cao h = 20 m và tường AB cách đường thẳng đứng qua chỗ bắn là l = 100 m. Lấy g = 10 m/s^2^. Tìm khoảng cách từ chỗ bắn viên đạn chạm đất đến chân tường AB.",
+  "options": [
+   [
+    "A",
+    "12,6 m.",
+    false
+   ],
+   [
+    "B",
+    "11,8 m.",
+    true
+   ],
+   [
+    "C",
+    "9,6 m.",
+    false
+   ],
+   [
+    "D",
+    "14,8 m.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Chọn trục tọa độ như hình, gốc tọa độ là chỗ đặt súng, t = 0 là lúc bắn.\nPhương trình quỹ đạo $y=\\frac{gx^{2}}{2v_{0}^{2}}$\nĐể đạn chạm đất gần chân tường nhất thì quỹ đạo của đạn sát đỉnh A của tường nên có $y_{A}=\\frac{gx_{A}^{2}}{2v_{0}^{2}}$\n$\\Rightarrowv_{0}=\\sqrt{\\frac{1}{2}.\\frac{g}{y_{A}}}x_{A}=\\sqrt{\\frac{1.10}{2.80}}.100=25\\left( m/s \\right)$\nVị trí chạm đất là C có $x_{C}=v_{0}\\frac{\\sqrt{2y_{C}}}{g}=v_{0}\\frac{\\sqrt{2h}}{g}=25.\\frac{\\sqrt{2.100}}{10}=111,8m$\nKhoảng cách từ chỗ bắn đạn đến chân tường là BC = 111,8 - 100 = 11,8 m.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 56,
+  "flags": [],
+  "stem": "Từ độ cao 15 m so với mặt đất, một vật được ném chếch lên với vận tốc đầu 20 m/s hợp với phương nằm ngang một góc 30^0^. Lấy g = 10 m/s^2^. Tầm bay xa của vật là",
+  "options": [
+   [
+    "A",
+    "63 m.",
+    false
+   ],
+   [
+    "B",
+    "52 m.",
+    true
+   ],
+   [
+    "C",
+    "26 m.",
+    false
+   ],
+   [
+    "D",
+    "45 m.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Chọn gốc tọa độ là vị trí ném vật, Oy hướng lên. Gốc thời gian là lúc ném vật.\nTa có $y=v_{0}sin\\alphat-\\frac{gt^{2}}{2}$\nKhi vật chạm đất $y= -15 m$\n$\\Rightarrow -15=20.sin30^{0}.t-\\frac{10.t^{2}}{2}\\Rightarrowt=3 s$\nTầm xa mà vật đạt được là $L=v_{0}cos\\alphat=20.cos30^{0}.3=30\\sqrt{3}=52 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 57,
+  "flags": [],
+  "stem": "Từ một đỉnh tháp cao 12m so với mặt đất, người ta ném một hòn đá với vận tốc ban đầu v~0~ = 15 m/s, theo phương hợp với phương nằm ngang một góc α = 45^0^. Lấy g = 10 m/s^2^. Khi chạm đất, hòn đá có vận tốc bằng",
+  "options": [
+   [
+    "A",
+    "18,6 m/s.",
+    false
+   ],
+   [
+    "B",
+    "24,2 m/s.",
+    false
+   ],
+   [
+    "C",
+    "28,8 m/s.",
+    false
+   ],
+   [
+    "D",
+    "21,4 m/s.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Chọn gốc tọa độ tại đỉnh tháp, Oy hướng lên. Gốc thời gian là lúc ném vật.\nVận tốc $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0}cos\\alpha\\mathbf{=}7,5\\sqrt{2} \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{v}_{0}sin\\alpha\\mathbf{-}\\mathit{gt}\\mathbf{=}7,5\\sqrt{2}\\mathbf{-}9,8\\mathit{t}\n\\end{array} \\right.\\$\nCó $y=v_{0}sin\\alphat-\\frac{gt^{2}}{2}=7,5\\sqrt{2}-4,9t^{2}$\nTại mặt đất thì $y= -12m\\Rightarrow7,5\\sqrt{2}t-4,9t^{2}= -12$\n$\\Rightarrowt=2,985 s\\Rightarrowv_{y}=7,5\\sqrt{2}-9,8t= -18,6 m/s$\n$\\Rightarrowv=\\sqrt{v_{x}^{2}+v_{y}^{2}}=21,4 m/s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "mc",
+  "num": 58,
+  "flags": [],
+  "stem": "Một người đứng trên mặt đất, ném một hòn đá với vận tốc ban đầu v~0~, theo phương hợp với phương nằm ngang một góc α. Góc lệch α có giá trị bằng bao nhiêu để có thể ném vật ra xa nhất so với vị trí ném?",
+  "options": [
+   [
+    "A",
+    "90^0^.",
+    false
+   ],
+   [
+    "B",
+    "45^0^.",
+    true
+   ],
+   [
+    "C",
+    "15^0^.",
+    false
+   ],
+   [
+    "D",
+    "30^0^.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Tầm bay xa $L=\\frac{v_{0}^{2}.sin2\\alpha}{g}\\RightarrowL_{\\max}\\Leftrightarrow(sin2\\alpha)_{\\max}\\Leftrightarrow\\alpha=45^{0}$\n\n****",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Từ độ cao $h=80 m,$ người ta ném một vật theo phương ngang với vận tốc ban đầu $ v_{0} = 20 m/s.$ Lấy $ g = 10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Sau khi ném vật 1s vật có tọa độ tại M (20; 5).",
+    "Đ"
+   ],
+   [
+    "b",
+    "Phương trình quỹ đạo của vật có dạng y = $\\frac{1}{80}$ x^2^. Quỹ đạo của vật là 1 nhánh parabol",
+    "Đ"
+   ],
+   [
+    "c",
+    "Vận tốc của vật đạt được khi chạm đất là 40 m/s.",
+    "S"
+   ],
+   [
+    "d",
+    "Tầm ném xa L = 100 m.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**.\n\nPhương trình chuyển động và phương trình vận tốc của vật theo phương Ox$\\left\\{ \\begin{array}{r}\n\\mathit{x}\\mathbf{=}\\mathit{v}_{0}\\mathit{t}\\mathbf{=}20\\mathit{t\\ }\\left( \\mathit{m} \\right) \\\\\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0}\\mathbf{=}20\\mathit{\\ }(m/s)\\mathbf{=}hs\n\\end{array} \\right.\\$\n\nPhương trình chuyển động và phương trình vận tốc của vật theo phương Oy$\\left\\{ \\begin{array}{r}\n\\mathit{y}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\\mathbf{=}5\\mathit{t}^{2}\\mathit{\\ }\\left( \\mathit{m} \\right) \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\\mathbf{=}10\\mathit{t\\ }(m/s)\n\\end{array} \\right.\\$\n\nSau khi ném vật 1 giây, vật ở M có tọa độ $\\left\\{ \\begin{array}{r}\n\\mathit{x}\\mathbf{=}20.1\\mathbf{=}20\\mathit{\\ }\\left( \\mathit{m} \\right)\\mathit{\\ } \\\\\n\\mathit{y}\\mathbf{=}5.1^{2}\\mathbf{=}5\\mathit{\\ \\ \\ \\ \\ }\\left( \\mathit{m} \\right)\\mathit{\\ }\n\\end{array} \\right.\\$\n\nb. Phát biểu này **đúng**. Phương trình quỹ đạo của vật $y=\\frac{1}{2}gt^{2}=\\frac{1}{2}g\\left( \\frac{x}{v_{0}} \\right)^{2}=\\frac{g}{2v_{0}^{2}}x^{2}=\\frac{10}{2.20^{2}}.x^{2}=\\frac{1}{80}x^{2}$\n\nTa thấy quỹ đạo của vật có hình dạng một nhánh parabol.\n\nc. Phát biểu này **sai**.\n\nThời gian vật chạm đất $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.80}{10}}=4 s.$\n\nVận tốc của vật khi chạm đất $v=\\sqrt{v_{x}^{2}+v_{y}^{2}}=\\sqrt{v_{0}^{2}+\\left( gt \\right)^{2}}=\\sqrt{20^{2}+(10.4)^{2}}=20\\sqrt{5} m/s.$\n\nd. Phát biểu này **sai**. Tầm ném xa $L=v_{0}t=20.4=80 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Từ độ cao h = 20 m, một vật được ném ngang với vận tốc ban đầu $v$~0~ = 5 m/s. Chọn hệ trục toạ độ $ Oxy$ như hình vẽ. Lấy g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Phương trình chuyển theo phương Ox và Oy lần lượt là: x = 5t và y = 5t^2^.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Vận tốc của vật lúc chạm đất là 10$\\sqrt{2}$ m/s.",
+    "S"
+   ],
+   [
+    "c",
+    "Phương trình quỹ đạo của vật có y = x^2^.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Tại độ cao h’ = 10 m vật có vận tốc theo phương thẳng đứng là v = 15 m/s.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**.\n\nPhương trình chuyển động theo phương Ox là $x = v_{0}t = 5t$\n\nPhương trình chuyển động theo phương Oy là $y = \\frac{1}{2}gt^{2}$\n\nb. Phát biểu này **sai**. Khoảng thời gian t vật chạm đất, với $t = \\sqrt{\\frac{2h}{g}} = \\sqrt{\\frac{2.20}{10}} = 2 s.$\n\nVận tốc của vật lúc chạm đất là $v = \\sqrt{\\left( v_{0}t \\right)^{2} + (gt)^{2}} = \\sqrt{(5.2)^{2} + (10.2)^{2}} = 22,36 m/s.$\n\nc. Phát biểu này **đúng**. Phương trình quĩ đạo của vật là$y = \\frac{g}{2v_{0}}x^{2}=\\frac{10}{2.5}x^{2}=x^{2}$\nd. Phát biểu này **sai**.\nThời gian vật chuyển động đến vị trí có độ cao 10 m là $t_{1} = \\sqrt{\\frac{2.h_{1}}{g}} = \\sqrt{\\frac{2.(20 - 10)}{10}} = \\sqrt{2} = 1,41 s.$\nVận tốc của vật theo phương Oy là $y = \\frac{1}{2}gt_{1}^{2} = \\frac{1}{2}10.2 = 10 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được ném ngang từ độ cao 20 m, có tầm ném xa 6 m. Cho g = 10 m/s^2^. Tính:",
+  "statements": [
+   [
+    "a",
+    "Thời gian chuyển động của vật là 1,5 s.",
+    "S"
+   ],
+   [
+    "b",
+    "Vận tốc ban đầu của vật là 2m/s.",
+    "S"
+   ],
+   [
+    "c",
+    "Vận tốc của vật khi chạm đất là 20,88 m/s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Phương trình quỹ đạo của vật có dạng y = $\\frac{5}{9}$ x^2^.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Thời gian chuyển động của vật $t = \\sqrt{\\frac{2h}{g}} = \\sqrt{\\frac{2.20}{10}} = 2 s.$\nb. Phát biểu này **sai**. Vận tốc ban đầu $v_{0} = \\frac{L}{t} = \\frac{6}{2} = 3 m/s.$\nc. Phát biểu này **đúng**. Vận tốc của vật khi chạm đất $v = \\sqrt{(v_{0}.t)^{2} + (g.t)^{2}} = \\sqrt{(3.2)^{2} + (10.2)^{2}} = 20,88 m/s.$\nd. Phát biểu này **đúng.**\nPhương trình chuyển động theo phương Ox là x = $v_{0}$ t = 3t.\nPhương trình chuyển động theo phương Oy là y = $\\frac{1}{2}$ gt^2^ = 5t^2^ .\nPhương trình quỹ đạo y = 1/2 gt^2^ = 1/2 .10. (x/3)^2^ = 5/9.x^2^.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một người ném một viên bi theo phương ngang với vận tốc $20 m/s$ từ đỉnh một tháp cao $320 m.$ Lấy $ g = 10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Phương trình chuyển động của viên bi có dạng y = x^2^/40",
+    "S"
+   ],
+   [
+    "b",
+    "Thời gian rơi của viên bi là 8 s.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Vị trí vật chạm đất cách vị trí ném 160 m theo phương ngang.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vận tốc của viên bi khi chạm đất là 20$\\sqrt{7}$ m/s.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**.\n\nTheo phương $Ox$ vật chuyển động thẳng đều với vận tốc $20 m/s$\n\n$x = x_{0} + vt = 0 + 20t = 20t (1)$\n\n$v_{x} = v = 20 m/s (2)$\n\nTheo phương $Oy$ vật rơi tự do\n\n$y = \\frac{1}{2}gt^{2} = 5t^{2}(3)$\n\n$v_{y} = gt = 10t( 4)$\n\nTừ $(1)$ và (3) ta có phương trình chuyển động của vật\n\n$y = 5.\\left( \\frac{x}{20} \\right)^{2} = \\frac{x^{2}}{80}$\n\nb. Phát biểu này **đúng**. Thời gian rơi của viên bi là t = $\\sqrt{\\frac{2h}{g}}$ = 8 s.\n\nc. Phát biểu này **đúng.** Khi viên bi chạm đất $y = 320\\Rightarrow5t^{2}=320\\Rightarrowt = 8s\\Rightarrowx = vt = 20.8 = 160 m.$\n\nd. Phát biểu này **sai.**\n\nVận tốc của viên bi khi chạm đất $\\left\\{ \\begin{array}{r}\nv_{x} = \\ 20m/s \\\\\nv_{y} = \\ g.t\\  = \\ 10.8\\  = \\ 80m/s\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}v_{d} = \\sqrt{v_{x}^{2} + v_{y}^{2}} = \\sqrt{20^{2} + 80^{2}} = 20\\sqrt{17}m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một máy bay bay theo phương ngang ở độ cao $9 km$ với tốc độ $720 km/h.$",
+  "statements": [
+   [
+    "a",
+    "Thời gian từ lúc máy bay bắt đầu thả hàng đến lúc hàng chạm mặt đất mất 30$\\sqrt{2}$ s.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Máy bay phải thả hàng trước mục tiêu với khoảng cách là 9000 m.",
+    "S"
+   ],
+   [
+    "c",
+    "Phương trình chuyển động của máy bay là y = $\\frac{x^{2}}{20}$",
+    "S"
+   ],
+   [
+    "d",
+    "Quỹ đạo chuyển động của hàng cứu trợ có hình dạng là 1 nhánh parabol.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**. Thời gian rơi của hàng cứu trợ là t = $\\sqrt{\\frac{2h}{g}}$ = 30$\\sqrt{2}$ s.\n\nb. Phát biểu này **sai**.Theo phương $Ox$ vật chuyển động thẳng đều với vận tốc $720 km/h = 200 m/s.$\n\n$x = x_{0} + vt = 0 + 200t = 200t\\$\n\nTheo phương $Oy$ vật rơi tự do $ y = \\frac{1}{2}gt^{2} = 5t^{2}$\n\nKhi hàng chạm đất $y = 9000\\Rightarrow5t^{2}=9000\\Rightarrowt = 30\\sqrt{2} s.$\n\nĐể ném trúng mục tiêu thì khoảng cách ném là\n\n$x = x_{0} + vt = 0 + 20t = 200t = 200.30\\sqrt{2} = 6000\\sqrt{2} = 8485,28 m.$\n\nc. Phát biểu này **sai**. Chuyển động của máy bay là chuyển động thẳng đều có PT chuyển động là $x = x_{0} + vt = 0 + 200t = 200t\\$\n\nd. Phát biểu này **đúng**.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 6,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Từ đỉnh một ngọn tháp cao 80m, một quả cầu được ném theo phương ngang với vận tốc ban đầu 20m/s.",
+  "statements": [
+   [
+    "a",
+    "Sau khi ném 2s vật có tọa độ tại A (40;20) .",
+    "Đ"
+   ],
+   [
+    "b",
+    "Quỹ đạo của vật này là 1 đường parabol.",
+    "S"
+   ],
+   [
+    "c",
+    "Sau 2,3 giây thì vật chạm đất.",
+    "S"
+   ],
+   [
+    "d",
+    "Vận tốc của nó khi chạm đất là $20\\sqrt{5}$ m/s.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**. Phương trình tọa độ $\\left\\{ \\begin{array}{r}\n\\mathit{x}\\mathbf{=}\\mathit{v}_{0}\\mathit{t} \\\\\n\\mathit{y}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\n\\end{array} \\right.\\$\n\nSau khi ném 2 s thì tọa độ của vật là $\\left\\{ \\begin{array}{r}\n\\mathit{x}\\mathbf{=}\\mathit{v}_{0}\\mathit{t}\\mathbf{=}20.2\\mathbf{=}40\\mathit{\\ \\ }m. \\\\\n\\mathit{y}\\mathbf{=}\\frac{1}{2}\\mathit{g}.\\mathit{t}^{2}\\mathbf{=}\\frac{1}{2}10.2^{2}\\mathbf{=}20\\mathit{\\ \\ }m.\n\\end{array} \\right.\\$\n\nb. Phát biểu này **sai**. Phương trình quỹ đạo của quả cầu $y=\\frac{1}{2}\\frac{g}{v_{0}^{2}}.x^{2}=\\frac{1}{2}.\\frac{10}{20^{2}}.x^{2}=\\frac{x^{2}}{80}$\n\nQuỹ đạo này là một nửa đường parabol\n\nc. Phát biểu này **sai**. Thời gian chuyển động ném ngang $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.80}{10}}=4 (s)$\n\nd. Phát biểu này **đúng**. Phương trình vận tốc $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0} \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\n\\end{array} \\right.\\$\n\nKhi quả bóng chạm đất $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0}\\mathbf{=}20 \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\\mathbf{=}10.4\\mathbf{=}40\n\\end{array} \\right.\\ \\mathbf{\\Leftrightarrow}\\mathit{v}\\mathbf{=}\\sqrt{\\mathit{v}_{\\mathit{x}}^{2}\\mathbf{+}\\mathit{v}_{\\mathit{y}}^{2}}\\mathbf{=}\\sqrt{20^{2}\\mathbf{+}40^{2}}\\mathbf{=}20\\sqrt{5}\\mathit{\\ \\ }m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 7,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một quả bóng được ném theo phương ngang với vận tốc ban đầu v~O~ = 25 m/s và rơi xuống đất sau 3 s.",
+  "statements": [
+   [
+    "a",
+    "Quả bóng đước ném từ độ cao 45 m.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Tầm ném xa đạt được là 75m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Phương trình chuyển động có dạng y = $\\frac{x^{2}}{155}$ .",
+    "S"
+   ],
+   [
+    "d",
+    "Vận tốc của vật khi chạm đất là $20\\sqrt{2}$ m/s.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Có thời gian rơi $t=\\sqrt{\\frac{2h}{g}}\\Leftrightarrow h=\\frac{gt^{2}}{2}=\\frac{10.3^{2}}{2}=45 m.$\n\nb. Phát biểu này **đúng.** Tầm ném xa $L=v_{0}t=25.3=75 m.$\n\nc. Phát biểu này **sai.** Phương trình chuyển động của vật có dạng y = $\\frac{x^{2}}{125}$\n\nd. Phát biểu này **sai.** Phương trình vận tốc $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0} \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\n\\end{array} \\right.\\$\n\nKhi quả bóng chạm đất $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0}\\mathbf{=}25 \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\\mathbf{=}10.3\\mathbf{=}30\n\\end{array} \\right.\\ \\mathbf{\\Leftrightarrow}\\mathit{v}\\mathbf{=}\\sqrt{\\mathit{v}_{\\mathit{x}}^{2}\\mathbf{+}\\mathit{v}_{\\mathit{y}}^{2}}\\mathbf{=}\\sqrt{25^{2}\\mathbf{+}30^{2}}\\mathbf{=}5\\sqrt{61}\\mathit{\\ \\ }m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 8,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một hòn đá được ném theo phương ngang với vận tốc ban đầu $v_{0} = 10 m/s$ rơi xuống đất cách chỗ ném $10 m.$ Xác định độ cao nơi ném vật và vận tốc của vật lúc chạm đất.",
+  "statements": [
+   [
+    "a",
+    "Chuyển động của hòn đá là chuyển động thẳng đều có quỹ đạo là 1 nhánh parabol.",
+    "S"
+   ],
+   [
+    "b",
+    "Vị trí ném hòn đá cao 5m so với mặt đất.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Vận tốc cực đại của hòn đá xấp xỉ 14 m/s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Sau 0,5 s hòn đá sẽ chạm mặt đất.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai.** Chuyển động của hòn đá là chuyển động tổng hợp của 2 loại: chuyển động thẳng đều theo chiều ngang và chuyển động rơi tự do.\n\nb. Phát biểu này **đúng.** Độ cao nơi ném vật $h=\\frac{1}{2}gt^{2}=\\frac{1}{2}\\cdot10.1^{2}=5 m.$\n\nc. Phát biểu này **đúng.** Vận tốc cực đại khi vật chạm đất\n\n$v=\\sqrt{v_{0}^{2}+\\left( gt \\right)^{2}}=\\sqrt{10^{2}+(10.1)^{2}}=10\\sqrt{2}=14,14 m/s.$\n\nd. Phát biểu này **sai.**Ta có $L=v_{0}t \\Rightarrowt=\\frac{L}{v_{0}}=\\frac{10}{10}=1 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 9,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Viên bi sắt được ném theo phương ngang từ độ cao 80 m. Sau 3 s vận tốc viên bi hợp với phương ngang một góc 45^O^.",
+  "statements": [
+   [
+    "a",
+    "Viên bi có vận tốc ban đầu là 15$\\sqrt{2}$ m/s.",
+    "S"
+   ],
+   [
+    "b",
+    "Sau 1s tính từ lúc vận tốc viên bi hợp với phương ngang một góc 45^O^ thì viên bi chạm đất.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Khoảng cách từ nơi ném đến vị trí viên bi chạm đất là 40$\\sqrt{13}\\$ m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vận tốc cực đại của viên bi là 40 m/s.",
+    "S"
+   ]
+  ],
+  "solution": "Chọn hệ tọa độ Oxy có O trùng vị trí ném, trục Ox trùng với ${\\overrightarrow{v}}_{0}$, trục Oy thẳng đứng chiều từ trên xuống\nChọn gốc thời gian là lúc ném\n\na. Phát biểu này **sai.**\n\nPhương trình vận tốc $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0} \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\n\\end{array} \\right.\\$sau 3 s ta có vận tốc của viên bi theo các phương$\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0} \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\\mathbf{=}3.10\\mathbf{=}30\n\\end{array} \\right.\\$\n\nVận tốc viên bi hợp với phương ngang một góc 45^O^ $\\Rightarrow \\tan 45^{0}=\\frac{v_{y}}{v_{x}}=\\frac{30}{v_{0}} \\Leftrightarrowv_{0}=30 m/s.$\n\nb. Phát biểu này **đúng.** Thời gian chuyển động ném ngang $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.80}{10}}=4 s.$\n\nt’ = t – t~0~ = 4 – 3 = 1 s\n\nc. Phát biểu này **đúng.** Tầm ném xa $L=v_{0}t=30.4=120 m.$\nKhoảng cách từ vị trí ném đến bị trí viên bi chạm đất: D = $\\sqrt{120^{2} + 80^{2}}$ = 40$\\sqrt{13}\\$ m.\n\nd. Phát biểu này **sai.** Khi viên bi chạm đất $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0}\\mathbf{=}30 \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\\mathbf{=}10.4\\mathbf{=}40\n\\end{array} \\right.\\ \\mathbf{\\Leftrightarrow}\\mathit{v}\\mathbf{=}\\sqrt{\\mathit{v}_{\\mathit{x}}^{2}\\mathbf{+}\\mathit{v}_{\\mathit{y}}^{2}}\\mathbf{=}\\sqrt{30^{2}\\mathbf{+}40^{2}}\\mathbf{=}50\\mathit{\\ \\ }m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 10,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y",
+   "thieu-d"
+  ],
+  "stem": "Một người đang chơi ở đỉnh tòa nhà cao 80 m cầm một vật có khối lượng m ném theo phương ngang với vận tốc ban đầu là $30m/s$ xuống đất, bỏ qua lực cản của không khí. Cho $ g=10m/s^{2}.$\n\na. Vận tốc chạm đất của vật theo phương Oy là 40 m/s.\n\nb. Thời gian chuyển động của vật là 4 s.\n\nc. Tầm ném xa của vật là 150 m.\n\nd. Khi vừa chạm đất vật có tốc độ là 60 m/s.",
+  "statements": [],
+  "solution": "a. Phát biểu này **đúng.** Với$\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}30\\mathit{m}/\\mathit{s} \\\\\n\\mathit{H}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\\mathbf{\\Rightarrow}\\mathit{t}\\mathbf{=}4\\mathit{s}\\mathbf{\\Rightarrow}\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\\mathbf{=}10.4\\mathbf{=}40\\mathit{m}/s.\n\\end{array} \\right.\\$\n\nb. Phát biểu này **đúng.**\n\nc. Phát biểu này **sai .** Tầm ném xa $L=v_{0}t=30.4=120 m.$\n\nd. Khi vừa chạm đất vật có tốc độ là $v=\\sqrt{v_{x}^{2}+v_{y}^{2}}\\Rightarrowv=\\sqrt{30^{2}+40^{2}}=50m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 11,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được ném theo phương nằm ngang từ độ cao $5 m$ so với mặt đất, có tầm xa trên mặt đất $ L = 10\\sqrt{3} m.$ Bỏ qua sức cản của không khí. Lấy $ g = 10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Vận tốc ban đầu của vật là 10$\\sqrt{3}$ m/s.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Vận tốc của vật ngay trước khi chạm đất đạt 20$\\sqrt{3}$ m/s.",
+    "S"
+   ],
+   [
+    "c",
+    "Khi chạm đất vận tốc của vật hợp với phương ngang 1 góc 30^0^.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Khoảng cách từ vị trí ném vật đến nơi vật chạm đất là",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.**$a.L=d_{xmax}=v_{0}t=v_{0}\\sqrt{\\frac{2h}{g}}\\Leftrightarrow10\\sqrt{3}=v_{0}\\sqrt{\\frac{2.5}{10}}\\Rightarrowv_{0}=10\\sqrt{3}m/s.$\n\nb. Phát biểu này **sai.** $v_{y}=gt=\\sqrt{2gh}=\\sqrt{2.10.5}=10m/s.$\n\nVận tốc của vật khi chạm đất$v=\\sqrt{v_{x}^{2}+v_{y}^{2}}=20m/s.$\n\nc . Phát biểu này **đúng.** $tan\\alpha=\\frac{v_{y}}{v_{x}}=\\frac{10}{10\\sqrt{3}}=\\frac{1}{\\sqrt{3}}\\Rightarrow\\alpha=30^{0}$\n\nd. Phát biểu này **sai.** Khoảng cách từ vị trí ném vật đến nơi vật chạm đất: D = $\\sqrt{5^{2} + {(10\\sqrt{3})}^{2}}$ = 40$\\sqrt{13}\\$ m.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 12,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y",
+   "thieu-abcd"
+  ],
+  "stem": "Một quả cầu được ném theo phương ngang từ độ cao 80 m so với mặt đất với $v_{0}=30m/s$. Bỏ qua sức cản của không khí. Lấy $ g = 10 m/s^{2}.$\n\na. Thời gian chuyển động của vật là 6 s.\n\nb. Vật bay xa được 120 m theo chiều ngang.\n\nc. Vận tốc chạm đất của vật có độ lớn 40 m/s.\n\nd. Khi chạm đất vận tốc hợp phương ngang 1 góc 30^0^.",
+  "statements": [],
+  "solution": "a. Khi vật chạm đất$t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.80}{10}}=4s.$\n\nb. Khi đó $L=d_{xmax}=v_{0}t=30.4=120m.$\n\nc. Vận tốc chạm đất của vật $v_{y}=gt=10.4=40m/s.$\n\n$\\Rightarrow v=\\sqrt{v_{y}^{2}+v_{x}^{2}}=\\sqrt{40^{2}+30^{2}}=50m/s$\n\n$tan\\alpha=\\frac{v_{y}}{v_{x}}=\\frac{40}{30}=\\frac{4}{3}\\Rightarrow\\alpha=30^{0}$\n\n**[\\\n**\n\n**[Dạng 2 CHUYỂN ĐỘNG NÉM XIÊN**",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một hòn bi được ném từ mặt đất, xiên với góc nghiêng 30° so với phương ngang với vận tốc đầu 20 m/s.",
+  "statements": [
+   [
+    "a",
+    "Độ cao cực đại của vật đạt được là 5 m.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Tầm bay xa của vật là 34,6 m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Độ lớn của vận tốc khi chạm đất là $\\sqrt{199,29}$ m/s.",
+    "S"
+   ],
+   [
+    "d",
+    "Góc hợp bởi phương ngang và vectơ vận tốc lúc bi chạm đất là 30^0^.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Độ cao cực đại $y_{\\max}=\\frac{v_{o}^{2}sin^{2}\\alpha}{2g}=\\frac{20^{2}sin^{2}30^{o}}{2.10}=5 m.$\n\nb. Phát biểu này **đúng.** Tầm bay xa $L = x_{\\max}=\\frac{v_{o}^{2}sin2\\alpha}{g}=\\frac{20^{2}sin^{2}60^{o}}{10}=34,6 m.$\n\nc. Phát biểu này **sai.**\n\nThời gian chuyển động $t=\\frac{2v_{o}sin\\alpha}{g}=\\frac{2.20sin30^{o}}{10}=2 s.$\n\nTa có $\\left\\{ \\begin{array}{r}\nv_{x}\\mathbf{=}v_{o}cos\\alpha\\mathbf{=}20.cos30^{o}\\mathbf{=}17,3\\ m/s \\\\\nv_{y}\\mathbf{=}v_{o}sin\\alpha\\mathbf{-}gt\\mathbf{=}20.sin30^{o}\\mathbf{-}10.2\\mathbf{= -}10\\ m/s\n\\end{array} \\right.\\$\n\nĐộ lớn của vận tốc $v=\\sqrt{v_{x}^{2}+v_{y}^{2}}=\\sqrt{17,3^{2}+(-10)^{2}}=20 m/s.$\n\nd. Phát biểu này **sai.**\n\nGóc hợp bởi hướng của vectơ vận tốc với phương ngang xác định bởi\n\n$tan\\alpha=\\frac{v_{y}}{v_{x}}=\\frac{-10}{17,3}= -\\frac{\\sqrt{3}}{3}\\Rightarrow\\alpha= -30^{o}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một quả bóng được ném về phía bức tường với vận tốc 25 m/s và với góc 45° so với phương ngang. Tường cách nơi ném bóng 22 m.",
+  "statements": [
+   [
+    "a",
+    "Vận tốc của vật theo phương Ox là 17 m/s.",
+    "S"
+   ],
+   [
+    "b",
+    "Quả bóng bay được 1,24 s trước khi đập vào tường.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Quả bóng đập vào tường tại điểm thấp hơn điểm ném 14,17 m.",
+    "S"
+   ],
+   [
+    "d",
+    "Quả bóng không đi qua điểm cao nhất trước khi chạm tường.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai.** Vận tốc phương ngang $v_{x}=v_{o}cos\\alpha=25.\\frac{\\sqrt{2}}{2}=17,68 m/s$\n\nb. Phát biểu này **đúng.** Khi chạm tường thì x = 22 m.\n\nTa có $v_{o}cos\\alpha.t\\Rightarrowt=\\frac{x}{v_{o}cos\\alpha}=\\frac{22}{17,68}=1,24 s.$\n\nc. Phát biểu này **sai.** Độ cao vị trí bóng chạm tường so với điểm ném\n\n$y_{c}=v_{o}sin\\alpha.t-\\frac{1}{2}gt^{2}=25.\\frac{\\sqrt{2}}{2}.1,24-\\frac{1}{2}.10.1,24^{2}=14,17 m$\n\nVậy, điểm bóng đập vào tường cao hơn điểm ném 14,17 m.\n\nd. Phát biểu này **đúng.**\n\nThời gian bóng chuyển động lên đến điểm cao nhất $t'=\\frac{1}{2}\\frac{2v_{o}sin\\alpha}{g}=\\frac{v_{o}sin\\alpha}{g}=\\frac{25.\\frac{\\sqrt{2}}{2}}{10}=1,77 s.$\n\nNhận xét $t=1,24 s<t'=1,77 s$ tức là khi bóng đập vào tường, nó chưa đi qua điểm cao nhất.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Một vật được ném theo phương ngang với vận tốc 10m/s ở độ cao 50 m. Bỏ qua sức cán của không khí và lấy $g=10 m/s^{2}.$\n\na. Phương trình quỹ đạo của vật có dạng y = 0,005x^2^.\n\nb. Sau 4 s thì vật chạm đất.\n\nb. Vật bay xa được 31,6 m (tính theo phương ngang).\n\nc. Vận tốc của vật lúc chạm đất đạt 3,314 m/s.",
+  "statements": [],
+  "solution": "a. Phát biểu này **đúng.** Phương trình quỹ đạo $y=\\frac{1}{2}\\frac{g}{v_{o}^{2}}x^{2}.$\n\nThay số$y=\\frac{1}{2}\\frac{10}{10^{2}}x^{2}$ hay $y=0,005x^{2}$\n\nb. Phát biểu này **sai.** Thời gian vật chạm đất $y=h=\\frac{1}{2}gt^{2}\\Rightarrowt=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.50}{10}=}3,16 s.$\n\nc. Phát biểu này **đúng.** Tầm xa$L=v_{o}t=10.3,16=31,6 m.$\n\nd. Phát biểu này **sai.** Vận tốc khi chạm đất, ta có$v^{2}=v_{x}^{2}+v_{y}^{2}=v_{0}^{2}+g^{2}t^{2}.$\n\nThay số $v^{2}=10^{2}+10^{2}.3,16^{2}=1098,56\\Rightarrowv=33,14 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được ném ngang từ độ cao 75 m. Sau khi chuyển động được 2 giây, vectơ vận tốc của vật hợp với phương ngang một góc 45°. Lấy $g=10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Vật được ném với vận tốc 20 m/s.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Vật chuyển động được 8,37 s trước khi chạm đất.",
+    "S"
+   ],
+   [
+    "c",
+    "Tầm bay xa của vật đạt 77,4 m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ dịch chuyển của vật là 77,4 m.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Vận tốc ban đầu của vật $v_{o}=v_{x}.$\n\nTại thời điểm t = 2 s, $v_{y}=gt=10.2=20 m/s.$\n\nMặt khác ta biết rằng $tan\\alpha=\\frac{v_{y}}{v_{x}}=\\tan45^{o}=1\\Rightarrowv_{o}=v_{x}=20 m/s$.\n\nb. Phát biểu này **sai.** Thời gian chuyển động $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.75}{10}}=3,87 s.$\n\nc. Phát biểu này **đúng.**Tầm bay xa $L=x_{\\max}=v_{o}t=20.3,87=77,4 m.$\n\nd. Phát biểu này **sai.** Độ dịch chuyển của vật : D = $\\sqrt{70^{2} + {77,4}^{2}}$ ≈ 104,36 m.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được ném lên thẳng đứng. Biết rằng vật lên cao được 20 m thì rơi xuống. Cho $g=10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Vận tốc đầu $v_{o}$= 10 m/s.",
+    "S"
+   ],
+   [
+    "b",
+    "Xét ở cùng một độ cao, vật rơi xuống sẽ có tốc độ nhanh hơn khi vật ném lên.",
+    "S"
+   ],
+   [
+    "c",
+    "Ở độ cao 8 m vật có vận tốc là 15,49 m/s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vật mất 4 s để chuyển động từ lúc bắt đầu ném lên cho đến lúc trở về vị trí ban đầu.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai.** Phương trình vận tốc của vật$v=v_{o}-gt.$\n\nDùng công thức $v^{2}-v_{o}^{2}=2as$ với $ s=h,v=0$ và a = -g ta được $ v_{o}=\\sqrt{2gh}=\\sqrt{2.10.20}=20 m/s.$\n\nb. Phát biểu này **sai.** Độ lớn vận tốc trong hai trường hợp là như nhau.\n\nc. Phát biểu này **đúng.** Từ công thức $v^{2}-v_{o}^{2}=2as\\Rightarrowv=\\sqrt{v_{o}^{2}-2gs}=\\sqrt{20^{2}-2.10.8}=15,49 m/s.$\n\nd. Phát biểu này **đúng.** Thời gian vận chuyển động từ lúc ném đến lúc trở về vị trí ban đầu bằng 2 lần thời gian vật chuyển động lên đến điểm cao nhất $t'=2t=2\\frac{v_{o}}{g}=2\\frac{20}{10}=4 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 6,
+  "flags": [
+   "ds-tu-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một vật được ném từ một điểm M ở độ cao $h=45 m$ với vận tốc ban đầu $v_{0}=20 m/s$ lên trên theo phương hợp với phương nằm ngang một góc $45^{0}.$ Lấy![](media/c2-8/media/image440.wmf) bỏ qua lực cản của không khí.",
+  "statements": [
+   [
+    "a",
+    "Phương trình quỹ đạo chuyển động của vật có dạng y = 45 + x – $\\frac{x^{2}}{40}$",
+    "Đ"
+   ],
+   [
+    "b",
+    "Sau khi ném 1 s vật có tọa độ A( 10$\\sqrt{2}$; 54,14).",
+    "Đ"
+   ],
+   [
+    "c",
+    "Độ cao cực đại vật đạt được so với mặt đất là 550 cm.",
+    "S"
+   ],
+   [
+    "d",
+    "Thời gian bay của vật là 1,9 s.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng.** Chọn hệ quy chiếu Oxy như hình vẽ\n\n![](media/c2-8/media/image441.emf)\n\nTại thời điểm ban đầu\n\nChiếu lên trục Ox $\\left\\{ \\begin{array}{r}\n\\mathit{x}_{0}\\mathbf{=}0 \\\\\n\\mathit{v}_{0\\mathit{x}}\\mathbf{=}\\mathit{v}_{0}cos\\alpha\\mathbf{=}10\\sqrt{2}\\ m/s\n\\end{array} \\right.\\$\n\nChiếu lên trục Oy $\\left\\{ \\begin{array}{r}\n\\mathit{y}_{0}\\mathbf{=}45\\ m \\\\\n\\mathit{v}_{0\\mathit{y}}\\mathbf{=}\\mathit{v}_{0}sin\\alpha\\mathbf{=}10\\sqrt{2}\\ m/s\n\\end{array} \\right.\\$\n\nXét tại thời điểm t $\\left\\{ \\begin{array}{r}\n\\mathit{a}_{\\mathit{x}}\\mathbf{=}0 \\\\\n\\mathit{a}_{\\mathit{y}}\\mathbf{= -}\\mathit{g}\n\\end{array} \\right.\\$\n\nChiếu lên trục Ox $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}10\\sqrt{2}\\ m/s \\\\\n\\mathit{x}\\mathbf{=}10\\sqrt{2}\\mathit{t}\\ m\\mathbf{\\Leftrightarrow}\\mathit{t}\\mathbf{=}\\frac{\\mathit{x}}{10\\sqrt{2}}(1)\n\\end{array} \\right.\\$\n\nChiếu lên trục Oy $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}10\\sqrt{2}\\mathbf{-}10\\mathit{t}\\ (m/s) \\\\\n\\mathit{y}\\mathbf{=}45\\mathbf{+}10\\sqrt{2}\\mathit{t}\\mathbf{-}5\\mathit{t}^{2}\\left( \\mathit{m} \\right)(2)\n\\end{array} \\right.\\$\n\nThế (1) vào (2) $\\Rightarrowy=45+x-\\frac{x^{2}}{40}$ Vậy vật có quỹ đạo là một Parabol\n\nb. Phát biểu này **đúng.** Sau khi ném được 1 s, vật có tọa độ $\\left\\{ \\begin{array}{r}\n\\mathit{x}\\mathbf{=}10\\sqrt{2}\\mathit{t}\\mathbf{=}10\\sqrt{2}\\left( \\mathit{m} \\right) \\\\\n\\mathit{y}\\mathbf{=}45\\mathbf{+}10\\sqrt{2}\\mathit{t}\\mathbf{-}5\\mathit{t}^{2}\\mathbf{\\approx}54,14\\left( \\mathit{m} \\right)\n\\end{array} \\right.\\$\n\nc. Phát biểu này **sai.** Khi lên đến độ cao max thì $v_{y}=0\\Rightarrow0=10\\sqrt{2}-10t\\Rightarrowt=\\sqrt{2} s$\n\n$H_{\\max}=y=45+10.\\sqrt{2}.\\sqrt{2}-5\\left( \\sqrt{2} \\right)^{2}=55 m$\n\nd. Phát biểu này **sai.** Khi vật chạm đất thì $y=0$ $\\mathbf{\\Rightarrow}45\\mathbf{+}10\\sqrt{2}\\mathit{t}\\mathbf{-}5\\mathit{t}^{2}\\mathbf{=}0\\mathbf{\\Rightarrow}\\left\\lbrack \\begin{array}{r}\n\\mathit{t}\\mathbf{=}4,73\\left( \\mathit{s} \\right) \\\\\n\\mathit{t}\\mathbf{= -}1,9\\mathit{\\ }\\left( \\mathit{s} \\right)\\mathit{\\ }\\mathbf{<}0\\mathit{\\ }\\left( \\mathit{loai} \\right)\n\\end{array} \\right.\\$\n\nVậy sau 4,73 s thì vật chạm đất.",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-8/media/image440.wmf"
+  ]
+ },
+ {
+  "file": "c2-8",
+  "part": "tf",
+  "num": 7,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y",
+   "thieu-abcd",
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Một diễn viên biểu diễn mô tô bay đang phóng xe trên mặt dốc nằm nghiêng $30^{0}$ để bay qua các ô tô như trong hình $12.3.$ Biết vận tốc của xe mô tô khi rời khỏi đỉnh dốc là $14 m/s.$ Chiều cao của ô tô bằng chiều cao của dốc là $1,6 m,$ chiều dài của ô tô là $3,2 m.$ Lấy $ g = 10 m/s^{2}.$\n\n![Diagram Description automatically generated](media/c2-8/media/image459.png){width=\"2.3958333333333335in\" height=\"1.2083333333333333in\"}\n\na. Thời gian từ khi xe rời đỉnh dốc tới khi đạt độ cao cực đại là 0,7 s.\n\nb. Mô tô có thể bay qua được tối đa là 7 xe ô tô.\n\nc. Độ cao cực đại mà xe đạt được là 5,05 m.\n\nd. Phương trình chuyển động của máy là y = 1,6 + $\\frac{x}{\\sqrt{3}}$ – $\\frac{5x^{2}}{147}$\n\n![Graphical user interface, application, Word Description automatically generated](media/c2-8/media/image460.png){width=\"3.0520833333333335in\" height=\"2.126388888888889in\"}**Hướng dẫn giải**\n\na. Phát biểu này **đúng.** Chọn hệ quy chiếu Oxy như hình vẽ\n\nThời điểm ban đầu\n\nChiếu lên trục Ox $\\left\\{ \\begin{array}{r}\n\\mathit{x}_{0}\\mathbf{=}0 \\\\\n\\mathit{v}_{0\\mathit{x}}\\mathbf{=}\\mathit{v}_{0}cos\\alpha\\mathbf{=}7\\sqrt{3}\\ m/s\n\\end{array} \\right.\\$\n\nChiếu lên trục Oy $\\left\\{ \\begin{array}{r}\n\\mathit{y}_{0}\\mathbf{=}1,6\\ m \\\\\n\\mathit{v}_{0\\mathit{y}}\\mathbf{=}\\mathit{v}_{0}sin\\alpha\\mathbf{=}7(m/s)\n\\end{array} \\right.\\$\n\nXét tại thời điểm t $\\left\\{ \\begin{array}{r}\n\\mathit{a}_{\\mathit{x}}\\mathbf{=}0 \\\\\n\\mathit{a}_{\\mathit{y}}\\mathbf{= -}\\mathit{g}\n\\end{array} \\right.\\$\n\nChiếu lên trục Ox $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}7\\sqrt{3}\\ (m/s) \\\\\n\\mathit{x}\\mathbf{=}7\\sqrt{3}\\mathit{t}\\ (m)\n\\end{array} \\right.\\$\n\nChiếu lên trục Oy $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}7\\mathbf{-}10\\mathit{t}\\left( \\mathit{m}/\\mathit{s} \\right) \\\\\n\\mathit{y}\\mathbf{=}1,6\\mathbf{+}7\\mathit{t}\\mathbf{-}5\\mathit{t}^{2}\\left( \\mathit{m} \\right)\n\\end{array} \\right.\\$\n\nKhi lên đến độ cao max thì$v_{y}=0\\Rightarrow0=7-10t\\Rightarrowt=0,7 s$\n\nb. Phát biểu này **sai.** Khi vật chạm đất thì $\\mathit{y}\\mathbf{=}0\\mathbf{\\Leftrightarrow}1,6\\mathbf{+}7\\mathit{t}\\mathbf{-}5\\mathit{t}^{2}\\mathbf{=}0\\mathbf{\\Leftrightarrow}\\left\\lbrack \\begin{array}{r}\n\\mathit{t}\\mathbf{=}1,6\\left( \\mathit{s} \\right) \\\\\n\\mathit{t}\\mathbf{= -}0,2\\left( \\mathit{s} \\right)\\mathbf{<}0\\left( \\mathit{loai} \\right)\n\\end{array} \\right.\\$\n\nTầm bay xa nhất của mô tô là $L=x_{\\max}=7\\sqrt{3}t=7\\sqrt{3}.1,6\\approx19,4 m$\n\n$\\Rightarrow\\frac{19,4}{3,2}\\approx6,1\\Rightarrow$ Mô tô có thể bay qua 6 xe ô tô.\n\nc. Phát biểu này **sai.** Độ cao cực đại mà xe đạt được là y = 1,6 + 7.0,7 – 5.0,7^2^ = 4,05 m.\n\nd. Phát biểu này **đúng.** Phương trình chuyển động của xe là:\n\nPhương trình chuyển động theo phương Oy: y = 1,6 + 7.t – 5.t^2^\n\nPhương trình chuyển động theo phương Ox: x = 7$\\sqrt{3}$.t\n\nPhương trình chuyển động của xe là: y = 1,6 + $\\frac{x}{\\sqrt{3}}$ – $\\frac{5x^{2}}{147}$\n\n**[\\\n**",
+  "statements": [],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-8/media/image459.png",
+   "media/c2-8/media/image460.png"
+  ]
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 1,
+  "flags": [],
+  "stem": "Một hòn bi lăn dọc theo một cạnh của một mặt bàn hình chữ nhật nằm ngang cao h = 1,25 m. Khi ra khỏi mép bàn, nó rơi xuống nền nhà tại điểm cách mép bàn L = 1,5 m (theo phương ngang). Lấy g = 10 m/s^2^. Thời gian rơi của bi là bao nhiêu giây?",
+  "solution": "Thời gian vật chạm đất là $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.1,25}{10}}=0,5 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 2,
+  "flags": [],
+  "stem": "Một quả bóng được ném theo phương ngang với vận tốc đầu có độ lớn v~0~ = 20 m/s và rơi xuống đất sau 3 s. Lấy g = 10 m/s^2^ và bỏ qua sức cản của không khí. Tầm bay xa (theo phương ngang) của quả bóng bằng bao nhiêu mét?",
+  "solution": "Tầm bay xa của quả bóng là $L=v_{0}t=20.3=60 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 3,
+  "flags": [],
+  "stem": "Một quả bóng được ném theo phương ngang với vận tốc đầu v~0~ = 20 m/s và rơi xuống đất sau 3 s. Lấy g = 10 m/s^2^ và bỏ qua sức cản của không khí. Quả bóng được ném từ độ cao bằng bao nhiêu mét?",
+  "solution": "Bóng rơi từ độ cao $h=\\frac{gt^{2}}{2}=10.\\frac{3^{2}}{2}=45 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 4,
+  "flags": [],
+  "stem": "Một vật được ném ngang từ độ cao h = 9 m. Vận tốc ban đầu có độ lớn v~0~. Tầm xa của vật là 18 m. Tính v~0~, lấy g = 10 m/s^2^. Vận tốc ban đầu của vật có giá trị là bao nhiêu m/s? (kết quả làm tròn đến một chữ số thập phân).",
+  "solution": "Tầm xa của vật $L=v_{0}\\sqrt{\\frac{2h}{g}}\\Rightarrowv_{0}=\\frac{L}{\\sqrt{\\frac{2.9}{10}}}=13,4 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 5,
+  "flags": [],
+  "stem": "Một vật được ném theo phương ngang với vận tốc ban đầu $v_{0}$ ở độ cao $ h=20 m$ so với mặt đất. Bỏ qua sức cản của không khí, lấy $ g=10 m/s^{2}.$ Phương trình quỹ đạo của vật có dạng $ y=\\frac{x^{2}}{20} \\left( m \\right).$ Vận tốc ban đầu của vật có giá trị là bao nhiêu m/s?",
+  "solution": "Ta có phương trình $y=\\frac{g}{2v_{0}^{2}}x^{2}\\Rightarrow\\frac{1}{20}=\\frac{g}{2v_{0}^{2}}\\Rightarrowv_{0}=\\sqrt{\\frac{10.20}{2}}=10 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 6,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một vật được ném ngang ở độ cao $45 m.$ Bỏ qua sức cản của không khí và lấy $ g=10 m/s^{2}.$ Thời gian vật rơi tới khi chạm đất là bao nhiêu giây?",
+  "solution": "![Description: 43-29](media/c2-8/media/image481.png){width=\"1.6152777777777778in\" height=\"1.125in\"}\nPhương trình chuyển đông theo phương Oy $y=\\frac{1}{2}gt^{2}\\Rightarrowt=\\sqrt{\\frac{2y}{g}} =\\sqrt{\\frac{2.45}{10}} =3 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 7,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một vật được ném ngang ở độ cao $80 m$ với vận tốc ban đầu là $30 m/s.$ Lấy $ g=10 m/s^{2}.$ Tầm bay xa của vật là là bao nhiêu mét?",
+  "solution": "![Description: 43-30](media/c2-8/media/image486.png){width=\"1.6444444444444444in\" height=\"1.1541666666666666in\"}\nPhương trình chuyển đông theo phương Oy $y=\\frac{1}{2}gt^{2}\\Rightarrowt=\\sqrt{\\frac{2y}{g}} =\\sqrt{\\frac{2.80}{10}} =4 s.$\nTầm bay xa của vật là $L=v_{0}t =30.4=120 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 8,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một vật được ném ngang từ độ cao $h=9 m$ với vận tốc ban đầu $ v_{0}.$ Vật bay xa $18 m.$ Cho $ g=10 m/s^{2}.$ Vận tốc ban đầu $ v_{0}$ của vật là là bao nhiêu m/s? (kết quả làm tròn đến một chữ số thập phân).",
+  "solution": "![Description: 43-31](media/c2-8/media/image494.png){width=\"1.5770833333333334in\" height=\"1.1055555555555556in\"}\nThời gian chuyển động là $x=v_{0}t\\Rightarrowt=\\frac{x}{v_{0}} (1)$\nPhương trình chuyển đông theo phương Oy $y=\\frac{1}{2}g_{0}t^{2}(2)$\nTừ $(1)\\Rightarrowt=\\frac{x}{v_{0}}$ thế vào phương trình $(2)y=\\frac{1}{2}g\\left( \\frac{x}{v_{0}} \\right)^{2}\\Rightarrowv_{0}=\\sqrt{\\frac{gx^{2}}{2y}}=\\sqrt{\\frac{10.18^{2}}{2.9}}=6\\sqrt{5}\\approx13,4 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 9,
+  "flags": [],
+  "stem": "Trong môn trượt tuyết, một vận động viên sau khi trượt trên đoạn đường dốc thì trượt ra khỏi dóc theo phương ngang ở độ cao 90 m so với mặt đất. Người đó bay xa được 180 m trước khi chạm đất. Lấy g = 9,8 m/s^2^. Tốc độ của vận động viên đó khi rời khỏi dốc là là bao nhiêu m/s? (kết quả làm tròn đến phần nguyên).",
+  "solution": "Tầm bay xa của vận động viên là $L=v_{0}t=v_{0}\\sqrt{\\frac{2h}{g}}\\Rightarrowv_{0}=\\frac{L}{\\sqrt{\\frac{2h}{g}}}=\\frac{180}{\\sqrt{\\frac{2.90}{9,8}}}=42 m/s$\nPhương trình vận tốc $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{x}}\\mathbf{=}\\mathit{v}_{0} \\\\\n\\mathit{v}_{\\mathit{y}}\\mathbf{=}\\mathit{gt}\\mathbf{=}\\mathit{g}\\sqrt{\\frac{2\\mathit{h}}{\\mathit{g}}}\\mathbf{=}\\sqrt{2\\mathit{gh}}\n\\end{array} \\right.\\$\nTốc độ của vận động viên khi dời khỏi dốc là\n$v=\\sqrt{v_{x}^{2}+v_{y}^{2}}=\\sqrt{v_{0}^{2}+2gh}=\\sqrt{42^{2}+2.9,8.90}=42\\sqrt{2}=59,4=60 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 10,
+  "flags": [],
+  "stem": "Một viên đạn được bắn theo phương ngang ở độ cao 180 m phải có vận tốc ban đầu là bao nhiêu để ngay lúc chạm đất có v = 100 m/s? Lấy g = 10 m/s^2^.",
+  "solution": "$t=\\sqrt{\\frac{2h}{g}}=6 s\\Rightarrowv=\\sqrt{v_{0}^{2}+\\left( gt \\right)^{2}}=80 m/s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 11,
+  "flags": [],
+  "stem": "Một viên đạn được bắn theo phương ngang ờ độ cao 180 m. Ngay khi chạm đất vận tốc của viên đạn là v = 100 m/s. Lấy g = 10 m/s^2^. Tầm bay xa của viên đạn là là bao nhiêu mét?",
+  "solution": "$t=\\sqrt{\\frac{2h}{g}}=6 s\\Rightarrowv=\\sqrt{v_{0}^{2}+\\left( gt \\right)^{2}}=80 m/s$\n$L=v_{0}.t=480 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 12,
+  "flags": [],
+  "stem": "Từ độ cao h = 80 m, người ta ném một quả cầu theo phương nằm ngang với v~0~ = 20 m/s. Lấy g = 10 m/s^2^. Ngay khi chạm đất, véc tơ vận tốc của quả cầu hợp với phương ngang một góc là bao nhiêu độ? (kết quả làm tròn đến một chữ số thập phân).",
+  "solution": "$tan\\alpha=\\frac{\\sqrt{2gh}}{v_{0}}=\\frac{\\sqrt{2.10.80}}{20}=2\\Rightarrow\\alpha\\approx63,4^{0}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 13,
+  "flags": [],
+  "stem": "Một vật được ném theo phương ngang với vận tốc v~0~ = l0 m/s từ độ cao h = 10 m so với mặt đất tại nơi có gia tốc trọng trường g = 10m/s^2^. Bỏ qua sức cản không khí. Khoảng cách từ điểm ném tới điểm vật chạm đất bằng bao nhiêu mét? (kết quả làm tròn đến một chữ số thập phân).",
+  "solution": "Tầm xa của vật $L=v_{0}.\\sqrt{\\frac{2h}{g}}=10.\\sqrt{\\frac{2.10}{10}}=10\\sqrt{2} m.$\nKhoảng cách từ điểm ném tới điểm chạm đất$d=\\sqrt{h^{2}+L^{2}}=10\\sqrt{3}\\approx17,3m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 14,
+  "flags": [],
+  "stem": "Một súng cối đặt trên mặt đất, bắn viên đạn bay ra theo phương hợp với phương ngang một góc α = 30^0^, bắn một mục tiêu cách nó một khoảng 100 m. Lấy g = 10 m/s^2^. Vận tốc ban đầu v~0~ của viên đạn bằng bao nhiêu m/s? (kết quả làm tròn đến phần nguyên).",
+  "solution": "Ta có tầm xa $L=\\frac{v_{0}^{2}.sin2\\alpha}{g}=100 m\\Rightarrowv_{0}^{2}=\\frac{L.g}{sin2\\alpha}=\\frac{100.10}{sin60^{0}}=1154,7\\Rightarrowv_{0}=34 m/s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 15,
+  "flags": [],
+  "stem": "Ở một độ cao 0,9 m không đổi, một người thả một viên bi vào lổ trên mặt đất. Lần thứ nhất viên bi rời khỏi tay với vận tốc 10 m/s thì vị trí của viên bi thiếu một đoạn $\\Deltax$, lần thứ hai với vận tốc 20 m/s thì viên bi lại dư một đoạn $\\Deltax.$ Khoảng cách giữa lỗ và người theo phương ngang là bao nhiêu mét? (kết quả làm tròn đến hai chữ số thập phân).",
+  "solution": "Ta có $v_{1}\\sqrt{\\frac{2h}{g}} + \\Delta x = v_{2}\\sqrt{\\frac{2h}{g}} - \\Delta x\\Leftrightarrow\\Delta x = \\frac{v_{2} - v_{1}}{2}\\sqrt{\\frac{2h}{g}} = 5\\sqrt{\\frac{2h}{g}}.$\n\nVậy khoảng cách từ lỗ đến người theo phương ngang là\n$l = v_{2}\\sqrt{\\frac{2h}{g}} - \\Delta x\\Rightarrowl = 20\\sqrt{\\frac{2h}{g}} - 5\\sqrt{\\frac{2h}{g}} = 15\\sqrt{\\frac{2.0,9}{10}} = 6,36 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 16,
+  "flags": [],
+  "stem": "Từ độ cao 7,5 m người ta ném một quả cầu với vận tốc ban đầu 10 m/s, ném xiên góc 45^0^ so với phương ngang. Vật chạm đất tại vị trí cách vị trí ban đầu là bao nhiêu mét?",
+  "solution": "Chọn hệ trục như hình. Gốc thời gian là lúc ném vật.\nTa có $y=v_{0}sin\\alpha t-\\frac{gt^{2}}{2}$\nKhi vật chạm đất thì $y= -7,5m$\n$\\Rightarrow -7,5=10.sin45^{0}.t-\\frac{10.t^{2}}{2}\\Rightarrowt=2,12s$\nTầm xa mà vật đạt được là $L=v_{0}cos\\alphat=10.cos45^{0}.2,12=15 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-8",
+  "part": "sa",
+  "num": 17,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Từ độ cao 15 m so với mặt đất, một vật được ném chếch lên với vectơ vận tốc đầu 20 m/s hợp với phương nằm ngang một góc 30^0^ như hình vẽ.\n\n![A diagram of a mathematical equation Description automatically generated](media/c2-8/media/image517.png){width=\"2.5375in\" height=\"1.6034722222222222in\"}\n\nĐộ cao lớn nhất (so với mặt đất) mà vật đạt được là bao nhiêu mét?",
+  "solution": "Độ cao mà vật đạt được là $H=\\frac{\\left( v.sin\\alpha \\right)^{2}}{2g}=\\frac{\\left( 20.sin30^{0} \\right)^{2}}{2.10}=5 m$\nĐộ cao lớn nhất so với mặt đất mà vật đạt được là $h=15+H=20 m$",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-8/media/image517.png"
+  ]
+ }
+]

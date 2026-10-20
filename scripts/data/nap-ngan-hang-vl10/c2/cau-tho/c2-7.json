@@ -1,0 +1,3600 @@
+[
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 1,
+  "flags": [],
+  "stem": "Chuyển động rơi tự do là",
+  "options": [
+   [
+    "A",
+    "một chuyển động thẳng đều.",
+    false
+   ],
+   [
+    "B",
+    "một chuyển động thẳng nhanh dần.",
+    false
+   ],
+   [
+    "C",
+    "một chuyển động thẳng chậm dần đều.",
+    false
+   ],
+   [
+    "D",
+    "một chuyển động thẳng nhanh dần đều.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Chuyển động rơi tự do là một chuyển động thẳng nhanh dần đều. có quỹ đạo là một đường thẳng và $g\\uparrow \\uparrowv)$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 2,
+  "flags": [],
+  "stem": "Rơi tự do có quỹ đạo là một đường",
+  "options": [
+   [
+    "A",
+    "thẳng.",
+    true
+   ],
+   [
+    "B",
+    "cong.",
+    false
+   ],
+   [
+    "C",
+    "tròn.",
+    false
+   ],
+   [
+    "D",
+    "parabol.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Rơi tự do có quỹ đạo là một đường thẳng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 3,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao h xuống đất, vận tốc của vật ngay trước khi chạm đất là",
+  "options": [
+   [
+    "A",
+    "$v=\\sqrt{2gh}.$",
+    true
+   ],
+   [
+    "B",
+    "$v=\\sqrt{\\frac{h}{2g}}.$",
+    false
+   ],
+   [
+    "C",
+    "$v=\\sqrt{\\frac{2h}{g}}.$",
+    false
+   ],
+   [
+    "D",
+    "$v=\\sqrt{\\frac{gh}{2}}.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Ta có $v^{2}-v_{o}^{2}=2gh\\Rightarrowv=\\sqrt{2gh-v_{o}^{2}}=\\sqrt{2gh} vì v_{o}=0$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 4,
+  "flags": [],
+  "stem": "Trong các công thức tính thời gian vật rơi tự do từ độ cao h cho sau đây, công thức bị **sai** là",
+  "options": [
+   [
+    "A",
+    "$t=\\frac{v}{g}.$",
+    false
+   ],
+   [
+    "B",
+    "$t=\\frac{h}{v_{tb}}.$",
+    false
+   ],
+   [
+    "C",
+    "$t=\\sqrt{\\frac{2h}{g}}.$",
+    false
+   ],
+   [
+    "D",
+    "$t=\\sqrt{2gh}.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Rơi tự do ta có $\\left\\{ \\begin{array}{r}\n\\mathit{h}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\\mathbf{\\Rightarrow}\\mathit{t}\\mathbf{=}\\sqrt{\\frac{2\\mathit{h}}{\\mathit{g}}}. \\\\\n\\mathit{v}\\mathbf{=}\\mathit{gt}\\mathbf{\\Rightarrow}\\mathit{t}\\mathbf{=}\\frac{\\mathit{v}}{\\mathit{g}}. \\\\\n\\mathit{v}_{\\mathit{TB}}\\mathbf{=}\\frac{\\mathit{s}}{\\mathit{t}}\\mathbf{=}\\frac{\\mathit{h}}{\\mathit{t}}\\mathbf{\\Rightarrow}\\mathit{t}\\mathbf{=}\\frac{\\mathit{h}}{\\mathit{v}_{\\mathit{TB}}}.\n\\end{array} \\right.\\$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 5,
+  "flags": [],
+  "stem": "Công thức tính quãng đường đi của vật rơi tự do là",
+  "options": [
+   [
+    "A",
+    "$s=v_{o}t+\\frac{at^{2}}{2}.$",
+    false
+   ],
+   [
+    "B",
+    "$s=\\frac{gt^{2}}{2}.$",
+    true
+   ],
+   [
+    "C",
+    "$s=v_{o}t+\\frac{gt^{2}}{2}.$",
+    false
+   ],
+   [
+    "D",
+    "$s=\\frac{at^{2}}{2}.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Công thức tính quãng đường đi của vật rơi tự do là $s=\\frac{gt^{2}}{2}.$ Vì $ v_{o}=0, a=g.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 6,
+  "flags": [],
+  "stem": "Trong các chuyển động được nêu dưới đây, chuyển động rơi tự do là chuyển động của",
+  "options": [
+   [
+    "A",
+    "chiếc lá rơi.",
+    false
+   ],
+   [
+    "B",
+    "người nhảy dù.",
+    false
+   ],
+   [
+    "C",
+    "hạt bụi bay.",
+    false
+   ],
+   [
+    "D",
+    "mẫu giấy trong bình rút hết không khí.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Mẫu giấy trong bình rút hết không khí là chuyển động rơi tự do.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 7,
+  "flags": [],
+  "stem": "Trong các chuyển động được nêu dưới đây, chuyển động **có thể** được coi là rơi tự do là chuyển động của",
+  "options": [
+   [
+    "A",
+    "viên đạn đang bay trên không trung.",
+    false
+   ],
+   [
+    "B",
+    "phi công đang nhảy dù.",
+    false
+   ],
+   [
+    "C",
+    "quả táo rơi từ trên cây xuống.",
+    true
+   ],
+   [
+    "D",
+    "máy bay đang bay gặp tai nạn và lao xuống.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Quả táo rơi từ trên cây xuống có thể được coi là chuyển động rơi tự do.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 8,
+  "flags": [],
+  "stem": "Ở một nơi trên trái đất (tức ở một vĩ độ xác định), thời gian rơi tự do của một vật phụ thuộc vào",
+  "options": [
+   [
+    "A",
+    "khối lượng của vật.",
+    false
+   ],
+   [
+    "B",
+    "kích thước của vật.",
+    false
+   ],
+   [
+    "C",
+    "độ cao của vật.",
+    true
+   ],
+   [
+    "D",
+    "nhiệt độ của vật.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Công thức tính thời gian rơi tự do $h=\\frac{1}{2}gt^{2}\\Rightarrowt=\\sqrt{\\frac{2h}{g}}.$\nVậy thời gian rơi tự do phụ thuộc vào độ cao của vật.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 9,
+  "flags": [],
+  "stem": "Gia tốc rơi tự do phụ thuộc vào",
+  "options": [
+   [
+    "A",
+    "khối lượng và kích thước vật rơi.",
+    false
+   ],
+   [
+    "B",
+    "độ cao và vĩ độ địa lý.",
+    true
+   ],
+   [
+    "C",
+    "vận tốc đầu và thời gian rơi.",
+    false
+   ],
+   [
+    "D",
+    "áp suất và nhiệt độ môi trường.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Gia tốc rơi tự do phụ thuộc vào độ cao và vĩ độ địa lý.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 10,
+  "flags": [],
+  "stem": "Một vật rơi trong không khí nhanh chậm khác nhau, nguyên nhân quyết định điều đó là do",
+  "options": [
+   [
+    "A",
+    "các vật nặng nhẹ khác nhau.",
+    false
+   ],
+   [
+    "B",
+    "các vật to nhỏ khác nhau.",
+    false
+   ],
+   [
+    "C",
+    "lực cản của không khí lên các vật.",
+    true
+   ],
+   [
+    "D",
+    "các vật làm bằng các chất khác nhau.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Khi vật rơi trong không khí, lực cản không khí tác dụng lên vật chính là yếu tố quyết định đến tốc độ rơi của vật.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 11,
+  "flags": [],
+  "stem": "Chuyển động của vật nào dưới đây **không thể** coi là chuyển động rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Một viên đá nhỏ được thả rơi từ trên cao xuống đất",
+    false
+   ],
+   [
+    "B",
+    "Các hạt mưa nhỏ lúc bắt đầu rơi",
+    false
+   ],
+   [
+    "C",
+    "Một chiếc lá rụng đang rơi từ trên cây xuống đất",
+    true
+   ],
+   [
+    "D",
+    "Một viên bi chì đang rơi ở trong ống thuỷ tinh đặt thẳng đứng và đã được hút chân không",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Vì lực cản không khí ảnh hưởng đến quá trình chuyển động của chiếc lá làm cho chiếc lá không rơi theo phương thẳng đứng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 12,
+  "flags": [],
+  "stem": "Khi rơi tự do thì vật sẽ",
+  "options": [
+   [
+    "A",
+    "có gia tốc tăng dần.",
+    false
+   ],
+   [
+    "B",
+    "rơi theo phương thẳng đứng, chiều từ trên xuống.",
+    true
+   ],
+   [
+    "C",
+    "chịu sức cản của không khí hơn so với các vật rơi bình thường khác.",
+    false
+   ],
+   [
+    "D",
+    "chuyển động thẳng đều.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Rơi tự do là sự rơi của vật chỉ chịu tác dụng của trọng lực. Rơi theo phương thẳng đứng chiều từ trên xuống và chuyển động nhanh dần đều.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 13,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về chuyển động rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Công thức tính vận tốc ở thời điểm t là $v=gt.$",
+    false
+   ],
+   [
+    "B",
+    "Có phương của chuyển động là phương thẳng đứng, chiều từ trên xuống dưới.",
+    false
+   ],
+   [
+    "C",
+    "Là chuyển động thẳng nhanh dần đều với gia tốc $a=g$ và vận tốc đầu $ v_{0}>0.$",
+    true
+   ],
+   [
+    "D",
+    "Công thức tính quãng đường đi được trong thời gian t là $h=\\frac{1}{2}gt^{2}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Trong quá trình vật rơi tự do thì $v_{0}=0.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 14,
+  "flags": [],
+  "stem": "Đặc điểm nào sau đây **phù hợp** với sự rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Chuyển động thẳng đều.",
+    false
+   ],
+   [
+    "B",
+    "Lực cản của không khí lớn.",
+    false
+   ],
+   [
+    "C",
+    "Có vận tốc v = gt.",
+    true
+   ],
+   [
+    "D",
+    "Vận tốc giảm dần theo thời gian.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Rơi tự do là sự rơi của vật chỉ chịu tác dụng của trọng lực. Rơi theo phương thẳng đứng chiều từ trên xuống và chuyển động nhanh dần đều với $v_{0}=0,a=g.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 15,
+  "flags": [],
+  "stem": "Đặc điểm nào sau đây **không phù hợp** với chuyển động rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Chuyển động có phương thẳng đứng và có chiều từ trên xuống.",
+    false
+   ],
+   [
+    "B",
+    "Chuyển động chỉ dưới tác dụng của trọng lực.",
+    false
+   ],
+   [
+    "C",
+    "Chuyển động thẳng nhanh dần đều.",
+    false
+   ],
+   [
+    "D",
+    "Chuyển động thẳng chậm dần đều.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Rơi tự do là sự rơi của vật chỉ chịu tác dụng của trọng lực. Rơi theo phương thẳng đứng chiều từ trên xuống và chuyển động nhanh dần đều.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 16,
+  "flags": [],
+  "stem": "Hai vật có khối lượng $m_{1} < m_{2}$ rơi tự do tại cùng một độ cao với vận tốc tương ứng khi chạm đất là $ v_{1}$và $ v_{2}.$ Kết luận nào sau đây đúng",
+  "options": [
+   [
+    "A",
+    "$v_{1} < v_{2}.$",
+    false
+   ],
+   [
+    "B",
+    "$v_{1} > v_{2}.$",
+    false
+   ],
+   [
+    "C",
+    "$v_{1}= v_{2}.$",
+    true
+   ],
+   [
+    "D",
+    "$v_{1}\\geq v_{2}$ hoặc $ v_{1} < v_{2}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Vận tốc rơi tự do không phụ thuộc vào khối lượng của vật nên $v_{1}= v_{2}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 17,
+  "flags": [],
+  "stem": "Chuyển động **không được** coi là rơi tự do nếu ta thả",
+  "options": [
+   [
+    "A",
+    "một quả táo.",
+    false
+   ],
+   [
+    "B",
+    "một mẫu phấn.",
+    false
+   ],
+   [
+    "C",
+    "một hòn đá.",
+    false
+   ],
+   [
+    "D",
+    "một chiếc lá.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Một chiếc lá rơi không được coi là rơi tự do vì sự rơi tự do chỉ chịu tác dụng của trọng lực.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 18,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về chuyển động rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Sự rơi tự do là chuyển động nhanh dần đều.",
+    false
+   ],
+   [
+    "B",
+    "Trong chân không vật nặng rơi nhanh hơn vật nhẹ.",
+    true
+   ],
+   [
+    "C",
+    "Hai vật rơi tự do luôn chuyển động thẳng đều đối nhau.",
+    false
+   ],
+   [
+    "D",
+    "Gia tốc rơi tự do giảm từ địa cực đến xích đạo.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Trong chân không thời gian vật nặng rơi bằng thời gian vật nhẹ rơi.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 19,
+  "flags": [],
+  "stem": "Một trái banh được ném thẳng đứng từ dưới lên. Đại lượng **không thay đổi** là",
+  "options": [
+   [
+    "A",
+    "độ dời.",
+    false
+   ],
+   [
+    "B",
+    "tọa độ.",
+    false
+   ],
+   [
+    "C",
+    "gia tốc.",
+    true
+   ],
+   [
+    "D",
+    "vận tốc.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Vật được ném thẳng đứng từ dưới lên sẽ chuyển động chậm dần đều nên gia tốc không đổi.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 20,
+  "flags": [],
+  "stem": "Một vật được thả từ một độ cao nào đó. Khi độ cao tăng lên $2$ lần thì thời gian rơi sẽ",
+  "options": [
+   [
+    "A",
+    "tăng $\\sqrt{2}$ lần.",
+    true
+   ],
+   [
+    "B",
+    "tăng $2$ lần.",
+    false
+   ],
+   [
+    "C",
+    "tăng $4$ lần.",
+    false
+   ],
+   [
+    "D",
+    "giảm $2$ lần.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Ta có$\\left\\{ \\begin{array}{r}\n\\mathit{s}_{1}\\mathbf{=}\\frac{1}{2}\\mathit{g}{\\mathit{t}_{1}}^{2}\\mathbf{\\Rightarrow}\\mathit{t}_{1}\\mathbf{=}\\sqrt{\\frac{2\\mathit{s}_{1}}{\\mathit{g}}} \\\\\n\\mathit{s}_{2}\\mathbf{=}2\\mathit{s}_{1}\\mathbf{=}\\frac{1}{2}\\mathit{g}{\\mathit{t}_{2}}^{2}\\mathbf{\\Rightarrow}\\mathit{t}_{2}\\mathbf{=}\\sqrt{\\frac{2\\mathit{s}_{2}}{\\mathit{g}}}\\mathbf{=}\\sqrt{\\frac{2.2\\mathit{s}_{1}}{\\mathit{g}}}\\mathbf{=}\\sqrt{2}\\mathit{t}_{1}.\n\\end{array} \\right.\\$\nVậy khi độ cao tăng lên $2$ lần thì thời gian rơi sẽ tăng $\\sqrt{2}$ lần.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 21,
+  "flags": [],
+  "stem": "Hai giọt nước mưa từ một mái nhà rơi tự do xuống đất. Chúng rời mái nhà cách nhau $0,5 s.$ Khi tới đất, thời điểm chạm đất của chúng cách nhau",
+  "options": [
+   [
+    "A",
+    "nhỏ hơn $0,5 s.$",
+    false
+   ],
+   [
+    "B",
+    "bằng $0,5 s.$",
+    true
+   ],
+   [
+    "C",
+    "lớn hơn $0,5 s.$",
+    false
+   ],
+   [
+    "D",
+    "$\\geq0,5 s.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Hai giọt nước rơi như nhau nên thời điểm chạm đất chúng cách nhau $0,5 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 22,
+  "flags": [],
+  "stem": "Một hòn bi được ném thẳng đứng từ dưới lên cao với vận tốc đầu có độ lớn $v_{0}.$ Bỏ qua sức cản của không khí. Khi chạm đất thì vận tốc của vật là",
+  "options": [
+   [
+    "A",
+    "$1,5 v_{0}.$",
+    false
+   ],
+   [
+    "B",
+    "$0,5 v_{0}.$",
+    false
+   ],
+   [
+    "C",
+    "$v_{0}.$",
+    true
+   ],
+   [
+    "D",
+    "$2 v_{0}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Chọn vị trí ném tại mặt đất, vậy vận tốc ban đầu $v_{0}$ ném dưới lên sẽ cũng là vận tốc khi vật chạm đất.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 23,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao $h$ xuống đất. Công thức tính vận tốc $ v$ của vật rơi tự do phụ thuộc độ cao $ h$ là",
+  "options": [
+   [
+    "A",
+    "$v=2gh.$",
+    false
+   ],
+   [
+    "B",
+    "$v = \\sqrt{gh}.$",
+    false
+   ],
+   [
+    "C",
+    "$v = \\sqrt{\\frac{2h}{g}}.$",
+    false
+   ],
+   [
+    "D",
+    "$v = \\sqrt{2gh}.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Công thức tính vận tốc $v$ của vật rơi tự do phụ thuộc độ cao $ h$ là $ v = \\sqrt{2gh}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 24,
+  "flags": [],
+  "stem": "Thả hai vật rơi tự do đồng thời từ hai độ cao $h_{1}$ và $ h_{2}.$ Biết rằng thời gian rơi của vật thứ nhất bằng $1,5$ lần thời gian rơi của vật thứ hai. Kết luận **đúng** là",
+  "options": [
+   [
+    "A",
+    "$h_{1}=3h_{2}.$",
+    false
+   ],
+   [
+    "B",
+    "$h_{2}=2,25h_{1}.$",
+    false
+   ],
+   [
+    "C",
+    "$h_{1}=2,25h_{2}.$",
+    true
+   ],
+   [
+    "D",
+    "$h_{1}=1,5h_{2}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Ta có$\\left\\{ \\begin{array}{r}\n\\mathit{h}_{1}\\mathbf{=}\\frac{1}{2}\\mathit{g}{\\mathit{t}_{1}}^{2} \\\\\n\\mathit{h}_{2}\\mathbf{=}\\frac{1}{2}\\mathit{g}{\\mathit{t}_{2}}^{2}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\frac{\\mathit{h}_{1}}{\\mathit{h}_{2}}\\mathbf{=}\\frac{{\\mathit{t}_{1}}^{2}}{{\\mathit{t}_{2}}^{2}}\\mathbf{=}\\frac{\\left( 1,5\\mathit{t}_{2} \\right)^{2}}{{\\mathit{t}_{2}}^{2}}\\mathbf{=}1,5^{2}\\mathbf{=}2,25\\mathbf{\\Rightarrow}\\mathit{h}_{1}\\mathbf{=}2,25\\mathit{h}_{2}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 25,
+  "flags": [],
+  "stem": "Vật chuyển động rơi tự do **không có** đặc điểm",
+  "options": [
+   [
+    "A",
+    "vận tốc tỉ lệ với bình phương thời gian chuyển động.",
+    true
+   ],
+   [
+    "B",
+    "tại một vị trí xác định và ở gần mặt đất, mọi vật rơi tự do như nhau.",
+    false
+   ],
+   [
+    "C",
+    "chuyển động theo phương thẳng đứng, chiều từ trên xuống dưới.",
+    false
+   ],
+   [
+    "D",
+    "chuyển động nhanh dần đều với vận tốc đầu bằng không.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Chuyển động rơi tự do là chuyển động nhanh dần đều với vận tốc đầu bằng không, phương thẳng đứng, chiều từ trên xuống dưới. Vận tốc tỉ lệ với thời gian chuyển động $v=gt.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 26,
+  "flags": [],
+  "stem": "Hai vật có khối lượng $m_{1}>m_{2}$ rơi tự do tại cùng một địa điểm. Trong đó $ v_{1},v_{2}$ tương ứng là vận tốc chạm đất của vật thứ nhất và vật thứ hai. Bỏ qua sức cản của không khí thì",
+  "options": [
+   [
+    "A",
+    "vận tốc chạm đất $v_{1}<v_{2}.$",
+    false
+   ],
+   [
+    "B",
+    "vận tốc chạm đất $v_{1}>v_{2}.$",
+    false
+   ],
+   [
+    "C",
+    "vận tốc $v_{1}$ có thể nhỏ hơn hoặc lớn hơn $ v_{2}.$",
+    false
+   ],
+   [
+    "D",
+    "vận tốc chạm đất $v_{1}=v_{2}.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Rơi tự do là sự rơi chỉ chịu tác dụng của trọng lực, mọi vật có khối lượng khác nhau đều rơi như nhau.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 27,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao $h$ xuống đất. Tốc độ của vật lúc chạm đất được tính theo công thức",
+  "options": [
+   [
+    "A",
+    "$v= 2gh.$",
+    false
+   ],
+   [
+    "B",
+    "$v= \\sqrt{2gh}.$",
+    true
+   ],
+   [
+    "C",
+    "$v= \\sqrt{gh}.$",
+    false
+   ],
+   [
+    "D",
+    "$v= \\sqrt{\\frac{2h}{g}}.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Tốc độ của vật lúc chạm đất được tính theo công thức $v= \\sqrt{2gh}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 28,
+  "flags": [],
+  "stem": "Chọn phát biểu **không đúng** về sự rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Trọng lực là nguyên nhân gây ra sự rơi tự do.",
+    false
+   ],
+   [
+    "B",
+    "Gia tốc rơi tự do phụ thuộc vĩ độ địa lý của địa điểm đang xét.",
+    false
+   ],
+   [
+    "C",
+    "Mọi chuyển động nhanh dần đều theo phương thẳng đứng là rơi tự do.",
+    true
+   ],
+   [
+    "D",
+    "Tại một nơi trên trái đất đều rơi tự do với cùng một gia tốc.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Sự rơi tự do là sự rơi dưới tác dụng của trọng lực, có phương thẳng đứng, chiều trên xuống dưới, là chuyển động thẳng nhanh dần đều. Tại một nơi nhất định trên Trái Đất vật đều rơi cùng một gia tốc $g.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 29,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về chuyển động rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Công thức $s=\\frac{1}{2}gt^{2}$ dùng để xác định quãng đường đi được của vật rơi tự do.",
+    false
+   ],
+   [
+    "B",
+    "Chuyển động rơi tự do là chuyển động thẳng nhanh dần đều.",
+    false
+   ],
+   [
+    "C",
+    "Có thể coi sự rơi tự do của chiếc lá khô từ trên cây xuống là sự rơi từ do.",
+    true
+   ],
+   [
+    "D",
+    "Vật rơi tự do khi không chịu sức cản của môi trường.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Chuyển động rơi tự do của các vật thì theo định nghĩa đều giống nhau là chuyển động nhanh dần đều không vận tốc đầu với gia tốc g nên quãng đường $s=v_{0}t+\\frac{1}{2}at^{2}=\\frac{1}{2}gt^{2}.$ Chuyển động rơi tự do là bỏ qua mọi lục cản của môi trường. Do đó chiết lá rơi không thể là rơi tự do vì có lực cản không khí ngoài ra nó còn không chuyển động thẳng đứng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 30,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **sai** khi nói về chuyển động rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Tại một nơi xác định trên Trái Đất và ở gần mặt đất, các vật đều rơi tự do với cùng một gia tốc $g.$",
+    false
+   ],
+   [
+    "B",
+    "Trong chuyển động nhanh dần đều gia tốc cùng dấu với vận tốc $v_{0}.$",
+    false
+   ],
+   [
+    "C",
+    "Gia tốc của chuyển động thẳng biến đổi đều là đại lượng không đổi.",
+    false
+   ],
+   [
+    "D",
+    "Chuyển động rơi tự do là chuyển động thẳng chậm dần đều.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Chuyển động rơi tự do là chuyển động thẳng nhanh dần đều.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 31,
+  "flags": [],
+  "stem": "Đặc điểm nào dưới đây **không phải** là đặc điểm của vật chuyển động rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Chuyển động theo phương thẳng đứng, chiều từ trên xuống dưới.",
+    false
+   ],
+   [
+    "B",
+    "Chuyển động nhanh dần đều.",
+    false
+   ],
+   [
+    "C",
+    "Tại một vị trí xác định và ở gần mặt đất, mọi vật rơi tự do như nhau.",
+    false
+   ],
+   [
+    "D",
+    "Công thức tính vận tốc $v = gt^{2}.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Công thức tính vận tốc $v = gt.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 32,
+  "flags": [],
+  "stem": "Chuyển động nào dưới đây **không thể** coi là chuyển động rơi tự do?",
+  "options": [
+   [
+    "A",
+    "Một viên đá nhỏ được thả rơi từ trên cao xuống mặt đất.",
+    false
+   ],
+   [
+    "B",
+    "Một cái lông chim rơi trong ống thuỷ tinh đặt thẳng đứng và đã được hút chân không.",
+    false
+   ],
+   [
+    "C",
+    "Một chiếc lá rụng đang rơi từ trên cây xuống đất.",
+    true
+   ],
+   [
+    "D",
+    "Một viên bi chì rơi trong ống thuỷ tinh đặt thẳng đứng và đã được hút chân không.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Một chiếc lá rụng đang rơi từ trên cây xuống đất không được coi là chuyển động rơi tự do vì chiếc lá chịu tác dụng của lực cản không khí.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 33,
+  "flags": [],
+  "stem": "Tại cùng một vị trí xác định trên mặt đất và ở cùng độ cao thì",
+  "options": [
+   [
+    "A",
+    "hai vật rơi với cùng vận tốc.",
+    true
+   ],
+   [
+    "B",
+    "vận tốc của vật nặng lớn hơn vận tốc của vật nhẹ.",
+    false
+   ],
+   [
+    "C",
+    "vận tốc của vật nặng nhỏ hơn vận tốc của vật nhẹ.",
+    false
+   ],
+   [
+    "D",
+    "vận tốc của hai vật không đổi.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Tại cùng một vị trí xác định trên mặt đất và ở cùng độ cao thì hai vật rơi với cùng vận tốc.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 34,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao h xuống đất. Nếu thời gian để vật rơi được nửa quãng đường đầu là $t_{1}$ , thời gian vât rơi được nửa quãng đường sau là $ t_{2}$ thì mối quan hệ $ t_{1}$ và $ t_{2}$ là",
+  "options": [
+   [
+    "A",
+    "$t_{1}=t_{2}.$",
+    false
+   ],
+   [
+    "B",
+    "$t_{1}>t_{2}.$",
+    true
+   ],
+   [
+    "C",
+    "$t_{1}<t_{2}.$",
+    false
+   ],
+   [
+    "D",
+    "phụ thuộc khối lượng của vật.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Vì rơi tự do là chuyển động nhanh dần đều nên $t_{2}<t_{1}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 35,
+  "flags": [],
+  "stem": "Vật thứ nhất thả rơi tự do từ độ cao $h_{1},$ vật chạm đất trong thờ gian $ t_{1},$ vật thứ hai thả rơi tự do từ độ cao $ h_{2},$vật chạm đất trong thời gian $ t_{2}.$ Tỉ số $\\frac{t_{1}}{t_{2}}$ bằng",
+  "options": [
+   [
+    "A",
+    "$\\frac{h_{1}}{h_{2}}.$",
+    false
+   ],
+   [
+    "B",
+    "$\\frac{h_{2}}{h_{1}}.$",
+    false
+   ],
+   [
+    "C",
+    "$\\frac{\\sqrt{h_{1}}}{\\sqrt{h_{2}}}.$",
+    true
+   ],
+   [
+    "D",
+    "$\\frac{h_{1}^{2}}{h_{2}^{2}}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Khi các vật chạm đất $\\left\\{ \\begin{array}{r}\n\\mathit{t}_{1}\\mathbf{=}\\sqrt{\\frac{2\\mathit{h}_{1}}{\\mathit{g}}} \\\\\n\\mathit{t}_{2}\\mathbf{=}\\sqrt{\\frac{2\\mathit{h}_{2}}{\\mathit{g}}}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\frac{\\mathit{t}_{1}}{\\mathit{t}_{2}}\\mathbf{=}\\frac{\\sqrt{\\mathit{h}_{1}}}{\\sqrt{\\mathit{h}_{2}}}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 36,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Dạng đồ thị vận tốc – thời gian nào dưới đây mô tả chuyển động rơi tự do của vật ở gần mặt đất? \n$$ ![A diagram of a graph Description automatically generated with medium confidence](media/c2-7/media/image129.png){width=\"4.583333333333333in\" height=\"1.0833333333333333in\"}",
+  "options": [
+   [
+    "A",
+    "Đồ thị (1).",
+    false
+   ],
+   [
+    "B",
+    "Đồ thị (2).",
+    false
+   ],
+   [
+    "C",
+    "Đồ thị (3).",
+    true
+   ],
+   [
+    "D",
+    "Đồ thị (4).",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Ta có $v = gt,$ với $ g$là hằng số nên đồ thị có dạng (3).",
+  "hasImg": true,
+  "imgs": [
+   "media/c2-7/media/image129.png"
+  ]
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 37,
+  "flags": [],
+  "stem": "Một vật rơi tự do thì chuyển động của vật là chuyển động",
+  "options": [
+   [
+    "A",
+    "thẳng đều.",
+    false
+   ],
+   [
+    "B",
+    "thẳng nhanh dần đều.",
+    true
+   ],
+   [
+    "C",
+    "thẳng chậm dần đều.",
+    false
+   ],
+   [
+    "D",
+    "thẳng có gia tốc thay đổi theo thời gian.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Rơi tự do là chuyển động thẳng nhanh dần đều.\nRơi tự do là chuyển động thẳng nhanh dần đều với gia tốc bằng $g=9,8 m/s^{2}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 38,
+  "flags": [],
+  "stem": "Tại cùng một địa điểm, hai vật được thả rơi tự do từ độ cao $h_{1}$ và $ h_{2}$ so với đất. Biết $ h_{1}=2h_{2}.$ Tỉ số vận tốc $\\frac{v_{1}}{v_{2}}$ của hai vật ngay trước khi chạm đất là",
+  "options": [
+   [
+    "A",
+    "0,5.",
+    false
+   ],
+   [
+    "B",
+    "2.",
+    false
+   ],
+   [
+    "C",
+    "4.",
+    false
+   ],
+   [
+    "D",
+    "$\\sqrt{2},$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{1}\\mathbf{=}\\sqrt{2\\mathit{g}\\mathit{h}_{1}} \\\\\n\\mathit{v}_{2}\\mathbf{=}\\sqrt{2\\mathit{g}\\mathit{h}_{2}}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\frac{\\mathit{v}_{1}}{\\mathit{v}_{2}}\\mathbf{=}\\sqrt{\\frac{\\mathit{h}_{1}}{\\mathit{h}_{2}}}\\mathbf{=}\\sqrt{2}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 39,
+  "flags": [],
+  "stem": "Mất 1s để một vật rơi tự do từ độ cao h xuông đất. Nếu vật rơi từ độ cao 9h thì thời gian rơi của vật là",
+  "options": [
+   [
+    "A",
+    "1 s.",
+    false
+   ],
+   [
+    "B",
+    "2 s.",
+    false
+   ],
+   [
+    "C",
+    "3 s.",
+    true
+   ],
+   [
+    "D",
+    "4 s.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{t}_{1}\\mathbf{=}\\sqrt{\\frac{2\\mathit{h}}{\\mathit{g}}} \\\\\n\\mathit{t}_{2}\\mathbf{=}\\sqrt{\\frac{2.9\\mathit{h}}{8}}\\mathbf{=}\\sqrt{\\frac{18\\mathit{h}}{\\mathit{g}}}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\frac{\\mathit{t}_{2}}{\\mathit{t}_{1}}\\mathbf{=}\\sqrt{9}\\mathbf{=}3\\mathbf{\\Rightarrow}\\mathit{t}_{2}\\mathbf{=}3\\mathit{t}_{1}\\mathbf{=}3\\ s$\nChú ý vật rơi tự do từ các độ cao $h_{1}$ và $ h_{2}$thì $\\sqrt{\\frac{h_{1}}{h_{2}}}=\\frac{t_{1}}{t_{2}}=\\frac{v_{1}}{v_{2}}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 40,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao h xuống đất ở nơi có gia tốc trọng trường g. Vận tốc của vật khi đi được nửa quãng đường là",
+  "options": [
+   [
+    "A",
+    "$2gh.$",
+    false
+   ],
+   [
+    "B",
+    "$\\sqrt{2gh}.$",
+    false
+   ],
+   [
+    "C",
+    "$\\sqrt{gh}.$",
+    true
+   ],
+   [
+    "D",
+    "$gh.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Ta có $v=\\sqrt{2g\\frac{h}{2}}=\\sqrt{gh}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 41,
+  "flags": [],
+  "stem": "Khi một vật rơi tự do thì độ tăng vận tốc trong 1 s có độ lớn bằng",
+  "options": [
+   [
+    "A",
+    "$g.$",
+    true
+   ],
+   [
+    "B",
+    "$2g.$",
+    false
+   ],
+   [
+    "C",
+    "$\\sqrt{g}.$",
+    false
+   ],
+   [
+    "D",
+    "$g^{2}.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "$\\Deltav=v_{t+1}-v_{t}=g\\left( t+1 \\right)-gt=g$\nChú ý vận tốc vật rơi tự do đạt được sau n giây là $v=gn$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 42,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao h xuống đất. Gọi $t_{1}$ là thời gian khi vật rơi được quãng đường bằng nửa độ cao, $t$ là thời gian rơi của vật khi vật chạm đất. Tỉ số $\\frac{t_{1}}{t}$ bằng",
+  "options": [
+   [
+    "A",
+    "$\\frac{2}{5}.$",
+    false
+   ],
+   [
+    "B",
+    "$\\frac{1}{\\sqrt{3}}.$",
+    false
+   ],
+   [
+    "C",
+    "$\\frac{\\sqrt{3}}{1}.$",
+    false
+   ],
+   [
+    "D",
+    "$\\frac{1}{\\sqrt{2}}.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Thời gian vật rơi được quãng đường bằng nửa độ cao $\\frac{h}{2}=g\\frac{t_{1}^{2}}{2}\\Rightarrowt_{1}=\\sqrt{\\frac{h}{g}}$\nThời gian rơi của vật khi vật chạm đất là $h=8\\frac{t^{2}}{2}\\Rightarrowt=\\sqrt{\\frac{2h}{8}}\\Rightarrow\\frac{t_{1}}{t}=\\frac{1}{\\sqrt{2}}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 43,
+  "flags": [],
+  "stem": "Hai vật được thả rơi tự do tại nơi có gia tốc rơi tự do $g=10 m/s^{2}.$ Biết rằng vị trí vật thứ nhất được thả rơi cao gấp $4$ lần vị trí vật thứ hai được thả rơi so với mặt đất. Vậy tỉ số vận tốc của vật thứ nhất với vận tốc của vật thứ hai $\\frac{v_{1}}{v_{2}}$ khi chạm đất là",
+  "options": [
+   [
+    "A",
+    "$3.$",
+    false
+   ],
+   [
+    "B",
+    "$4.$",
+    false
+   ],
+   [
+    "C",
+    "$1.$",
+    false
+   ],
+   [
+    "D",
+    "$2.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Gọi $h$ là độ cao khi thả vật.\nÁp dụng cộng thức $v^{2}-v_{0}^{2}=2gs$\nVận tốc của vật khi chạm đất là $v^{2}=2gh\\Rightarrowv=\\sqrt{2gh}$\nVậy tỉ số vận tốc của ngay khi chạm đất sẽ là $\\frac{v_{1}}{v_{2}}=\\frac{\\sqrt{h_{1}}}{\\sqrt{h_{2}}}=\\frac{\\sqrt{4h_{2}}}{\\sqrt{h_{2}}}=2.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 44,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao h xuống mặt đất. Tỉ số giữa quãng đường rơi tự do của vật trong giây thứ n và trong n giây là",
+  "options": [
+   [
+    "A",
+    "$\\left( \\frac{2n-1}{n} \\right)^{2}.$",
+    false
+   ],
+   [
+    "B",
+    "$\\frac{n^{2}-1}{n^{2}}.$",
+    false
+   ],
+   [
+    "C",
+    "$\\frac{2.n-1}{n^{2}}.$",
+    true
+   ],
+   [
+    "D",
+    "$\\left( \\frac{n-1}{n} \\right)^{2}.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Quãng đường rơi tự do của vật trong giây thứ n $\\Deltas_{n}=s_{n}-s_{n-1}=\\frac{1}{2}g\\left( n^{2}-\\left( n-1 \\right)^{2} \\right)=\\frac{g}{2}\\left( 2n-1 \\right)$\nQuãng đường rơi tự do của vật trong n giây $s_{n}=\\frac{1}{2}g.n^{2}$\nSuy ra$\\frac{\\Deltas_{n}}{s_{n}}=\\frac{2n-1}{n^{2}}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 45,
+  "flags": [
+   "khong-gach-chan"
+  ],
+  "stem": "Một vật rơi tự do từ độ cao 80 m xuống đất, g = 10 m/s^2^. Thời gian để vật rơi đến đất là",
+  "options": [
+   [
+    "A",
+    "2 s.",
+    false
+   ],
+   [
+    "B",
+    "3 s.",
+    false
+   ],
+   [
+    "C",
+    "4 s.",
+    false
+   ],
+   [
+    "D",
+    "5 s.",
+    false
+   ]
+  ],
+  "answer": null,
+  "solution": "Áp dụng công thức $s=\\frac{1}{2}gt^{2}\\Rightarrowt=\\sqrt{\\frac{2s}{g}}=\\sqrt{\\frac{2.80}{10}}=4 s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 46,
+  "flags": [],
+  "stem": "Một vật được thả rơi từ độ cao 1280 m so với mặt đất. Lấy $g=10 m/s^{2}.$ Vận tốc của vật khi chạm đất laF",
+  "options": [
+   [
+    "A",
+    "120 m/s.",
+    false
+   ],
+   [
+    "B",
+    "130 m/s.",
+    false
+   ],
+   [
+    "C",
+    "140 m/s.",
+    false
+   ],
+   [
+    "D",
+    "160 m/s.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Áp dụng công thức $v=gt=10.16=160 m/s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 47,
+  "flags": [],
+  "stem": "Một vật được thả rơi từ độ cao 1280 m so với mặt đất. Lấy $g=10 m/s^{2}.$ Khi vận tốc của vật là 40m/s thì vật còn cách mặt đất bao nhiêu? Còn bao lâu nữa thì vật rơi đến đất?",
+  "options": [
+   [
+    "A",
+    "1000 m, 6 s.",
+    false
+   ],
+   [
+    "B",
+    "1200 m, 12 s.",
+    true
+   ],
+   [
+    "C",
+    "800 m, 15 s.",
+    false
+   ],
+   [
+    "D",
+    "900 m, 20 s.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Thời gian để vật đạt được vận tốc 40m/s là $v=gt\\Rightarrow40=10t\\Rightarrowt=4 s$\nQuãng đường vật rơi trong 4s đầu là $h_{3}=\\frac{1}{2}gt_{3}^{4}=\\frac{1}{2}.10.4^{4}=80 m$\nVật cách mặt đấy là $\\Deltah=h-h_{3}=1280-80=1200 m$\nVậy còn 16 – 4 = 12s vật chạm đất",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 48,
+  "flags": [],
+  "stem": "Một người thả một hòn đá từ tầng 2 độ cao h xuống đấy, hòn đá rơi trong 2 s. Nếu thả hòn đá đó từ tầng 32 có độ cao h’ = 16h thì thời gian rơi là",
+  "options": [
+   [
+    "A",
+    "6 s.",
+    false
+   ],
+   [
+    "B",
+    "12 s.",
+    false
+   ],
+   [
+    "C",
+    "8 s.",
+    true
+   ],
+   [
+    "D",
+    "10 s.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Áp dụng công thức$h=\\frac{1}{2}gt^{2}\\Rightarrowt=\\sqrt{\\frac{2h}{g}}=2 s$\nMà $h^{/}=\\frac{1}{2}gt_{1}^{2}\\Rightarrowt_{1}=\\sqrt{\\frac{2h^{/}}{g}}=\\sqrt{\\frac{2.16h}{g}}=8 s$\nVậy hòn đá rơi từ tầng 32 hết 8 s",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 49,
+  "flags": [],
+  "stem": "Một vật rơi tự do ở độ cao $6,3 m,$ lấy $ g = 9,8 m/s^{2}.$ Vận tốc của vật khi chạm đất bằng",
+  "options": [
+   [
+    "A",
+    "$123,8 m/s.$",
+    false
+   ],
+   [
+    "B",
+    "$11,1 m/s.$",
+    true
+   ],
+   [
+    "C",
+    "$1,76 m/s.$",
+    false
+   ],
+   [
+    "D",
+    "$1,13 m/s.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$v = \\sqrt{2gh} = \\sqrt{2.9,8.6,3} = 11,1 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 50,
+  "flags": [],
+  "stem": "Một vật được thả rơi tự do từ đỉnh tháp, nó chạm đất trong thời gian 4 s. Lấy $g=10 m/s^{2}.$ Chiều cao của tháp là",
+  "options": [
+   [
+    "A",
+    "80 m.",
+    true
+   ],
+   [
+    "B",
+    "40 m.",
+    false
+   ],
+   [
+    "C",
+    "20 m.",
+    false
+   ],
+   [
+    "D",
+    "160 m.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "$h=\\frac{1}{2}gt^{2}=\\frac{10}{2}.4^{2}=80 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 51,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao $20 m.$ Lấy $ g=10 m/s^{2}.$ Thời gian chuyển động và vận tốc khi chạm đất là",
+  "options": [
+   [
+    "A",
+    "$2 s$ và $10 m/s.$",
+    false
+   ],
+   [
+    "B",
+    "$4 s$ và $20 m/s.$",
+    false
+   ],
+   [
+    "C",
+    "$4 s$ và $40 m/s.$",
+    false
+   ],
+   [
+    "D",
+    "$2 s$ và $20 m/s.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Thời gian vật chuyển động là $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.20}{10}}=2 s.$\nVận tốc của vật khi chạm đất là $v=gt=10.2=20 \\frac{m}{s.}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 52,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao nào đó, khi chạm đất có vận tốc $30 m/s.$ Lấy $ g=10 m/s^{2}.$ Thời gian vật rơi và độ cao thả vật lần lượt là",
+  "options": [
+   [
+    "A",
+    "$t=2 s, h=20 m.$",
+    false
+   ],
+   [
+    "B",
+    "$t=3,5 s, h=52 m.$",
+    false
+   ],
+   [
+    "C",
+    "$t=3 s, h=45 m.$",
+    true
+   ],
+   [
+    "D",
+    "$t=4 s, h=80 m.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Thời gian vật chuyển động đến khi chạm đất là $t=\\frac{v}{g}=\\frac{30}{10}=3 s.$\nĐộ cao nơi thả vật là $h=\\frac{1}{2}gt^{2}=\\frac{1}{2}10.3^{2}=45 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 53,
+  "flags": [],
+  "stem": "Thả một hòn đá rơi từ độ cao h xuống đất, thời gian rơi là $1 s.$ Nếu thả hòn đá từ độ cao $9h$ thì thời gian rơi là",
+  "options": [
+   [
+    "A",
+    "$3 s.$",
+    true
+   ],
+   [
+    "B",
+    "$2 s.$",
+    false
+   ],
+   [
+    "C",
+    "$1 s.$",
+    false
+   ],
+   [
+    "D",
+    "$4 s.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{t}\\mathbf{=}\\sqrt{\\frac{2\\mathit{h}}{\\mathit{g}}} \\\\\n\\mathit{t}\\mathbf{=}\\sqrt{\\frac{2\\mathit{h}}{\\mathit{g}}}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\frac{\\mathit{t}}{\\mathit{t}}\\mathbf{=}\\sqrt{\\frac{\\mathit{h}}{\\mathit{h}}}\\mathbf{=}\\sqrt{\\frac{9\\mathit{h}}{\\mathit{h}}}\\mathbf{=}3\\mathbf{\\Rightarrow}\\mathit{t}\\mathbf{=}3\\mathit{t}\\mathbf{=}3\\mathit{\\ s}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 54,
+  "flags": [],
+  "stem": "Một vật rơi tự do trong giây cuối cùng đi được quãng đường $45 m,$ lấy $ g=10 m/s^{2}.$ Thời gian rơi của vật là",
+  "options": [
+   [
+    "A",
+    "$5 s.$",
+    true
+   ],
+   [
+    "B",
+    "$4 s.$",
+    false
+   ],
+   [
+    "C",
+    "$3 s.$",
+    false
+   ],
+   [
+    "D",
+    "$6 s.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Gọi t là thời gian rơi\nQuãng đường trong giây cuối là $\\Deltas=s_{t}-s_{\\left( t-1 \\right)}=\\frac{1}{2}gt^{2}-\\frac{1}{2}g\\left( t-1 \\right)^{2}=\\frac{1}{2}g\\left( 2t-1 \\right)=45$ $\\Rightarrowt=5 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 55,
+  "flags": [],
+  "stem": "Một vật được thả không vận tốc đầu. Nếu nó rơi xuống được một khoảng $s_{1}$ trong giây đầu tiên và thêm một đoạn $ s_{2}$ trong giây kế tiếp thì tỉ số $\\frac{s_{2}}{s_{1}}$ là",
+  "options": [
+   [
+    "A",
+    "1.",
+    false
+   ],
+   [
+    "B",
+    "2.",
+    false
+   ],
+   [
+    "C",
+    "3.",
+    true
+   ],
+   [
+    "D",
+    "4.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{s}_{1}\\mathbf{=}\\frac{1}{2}\\mathit{g}.1^{2} \\\\\n\\mathit{s}_{2}\\mathbf{=}\\mathit{s}_{(2)}\\mathbf{-}\\mathit{s}_{1}\\mathbf{=}\\frac{1}{2}\\mathit{g}.2^{2}\\mathbf{-}\\frac{1}{2}\\mathit{g}.1^{2}\\mathbf{=}\\frac{1}{2}\\mathit{g}.3\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\frac{\\mathit{s}_{2}}{\\mathit{s}_{1}}\\mathbf{=}3.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 56,
+  "flags": [],
+  "stem": "Thả một hòn đá từ mép một vách núi dựng đứng xuống vực sâu. Sau $3,96 s$ từ lúc thả thì nghe thấy tiếng hòn đá chạm đáy vực sâu. Biết $ g=9,8 m/s^{2}$ và tốc độ truyền âm trong không khí là $330 m/s.$ Chiều cao vách núi bờ vực đó là",
+  "options": [
+   [
+    "A",
+    "$76,9 m.$",
+    false
+   ],
+   [
+    "B",
+    "$58,5 m.$",
+    false
+   ],
+   [
+    "C",
+    "$68,9 m.$",
+    true
+   ],
+   [
+    "D",
+    "$82,7 m.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "$t=t_{r}+t_{tr}=\\sqrt{\\frac{2.h}{g}}+\\frac{h}{v}\\Leftrightarrow3,96=\\sqrt{\\frac{2.h}{9,8}}+\\frac{h}{330}\\Rightarrowh=68,9 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 57,
+  "flags": [],
+  "stem": "Các giọt nước mưa rơi từ mái nhà xuống sau những khoảng thời gian bằng nhau. Giọt $1$ chạm đất thì giọt $5$ bắt đầu rơi. Biết mái nhà cao $16 m.$ Lấy $ g=10 m/s^{2}.$ Khoảng thời gian rơi giữa các giọt nước kế tiếp nhau bằng",
+  "options": [
+   [
+    "A",
+    "$0,4 s.$",
+    false
+   ],
+   [
+    "B",
+    "$0,45 s.$",
+    true
+   ],
+   [
+    "C",
+    "$1,78 s.$",
+    false
+   ],
+   [
+    "D",
+    "$0,32 s.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Thời gian rơi từ khi thả vật đến khi vật rơi được $h=16 m$ là $ t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.16}{10}}\\approx1,79 s.$\nGiữa giọt thứ $5$ và giọt thứ $1$ cách nhau $4$ khoảng thời gian $\\Rightarrow\\Deltat=\\frac{t}{4}\\approx0,45 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 58,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ trên xuống. Biết rằng trong giây cuối cùng hòn đá rơi được $25 m.$ Lấy $ g=10 m/s^{2}.$ Chiều cao thả vật là",
+  "options": [
+   [
+    "A",
+    "$45 m.$",
+    true
+   ],
+   [
+    "B",
+    "$40 m.$",
+    false
+   ],
+   [
+    "C",
+    "$35 m.$",
+    false
+   ],
+   [
+    "D",
+    "$50 m.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "$\\begin{array}{r}\n\\Delta\\mathit{h}\\mathbf{=}\\mathit{h}_{\\mathit{t}}\\mathbf{-}\\mathit{h}_{\\mathit{t}\\mathbf{-}1}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\\mathbf{-}\\frac{1}{2}\\mathit{g}\\left( \\mathit{t}\\mathbf{-}1 \\right)^{2}\\mathbf{=}\\mathit{gt}\\mathbf{-}\\frac{1}{2}\\mathit{g} \\\\\n\\mathbf{\\Rightarrow}\\mathit{t}\\mathbf{=}\\frac{\\Delta\\mathit{h}}{\\mathit{g}}\\mathbf{+}\\frac{1}{2}\\mathbf{=}\\frac{25}{10}\\mathbf{+}\\frac{1}{2}\\mathbf{=}3\\mathit{\\ s} \\\\\n\\mathbf{\\Rightarrow}\\mathit{h}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\\mathbf{=}45\\mathit{\\ m}.\n\\end{array}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 59,
+  "flags": [],
+  "stem": "Hai hòn đá được thả rơi tự do từ cùng một độ cao nhưng hòn thứ nhất rơi trước hòn thứ hai $1 s.$ Khi hòn đá trước chạm đất thì hòn đá sau còn cách mặt đất $35 m.$ Lấy $ g=10 m/s^{2}.$ Chiều cao hai hòn đá lúc ban đầu là",
+  "options": [
+   [
+    "A",
+    "$75 m.$",
+    false
+   ],
+   [
+    "B",
+    "$80 m.$",
+    true
+   ],
+   [
+    "C",
+    "$85 m.$",
+    false
+   ],
+   [
+    "D",
+    "$90 m.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Do hai vật rơi cách nhau 1 giây nên quãng đường hòn thứ nhất rơi được trong giây cuối chính là khoảng cách của hòn thứ hai tới mặt đất khi hòn thứ nhất chạm đất\n$\\Deltah=h_{t}-h_{t-1}=\\frac{1}{2}gt^{2}-\\frac{1}{2}g\\left( t-1 \\right)^{2}=gt-\\frac{1}{2}g\\Rightarrowt=\\frac{\\Deltah}{g}+\\frac{1}{2}=\\frac{35}{10}+\\frac{1}{2}=4 s\\Rightarrowh=\\frac{1}{2}gt^{2}=80 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 60,
+  "flags": [],
+  "stem": "Từ một sân thượng có độ cao $h=80 m,$ một người buông tự do một hòn sỏi. Một giây sau người này ném thẳng đứng hướng xuống một hòn sỏi thứ hai với vận tốc $v_{0},$ hai hòn sỏi chạm đất cùng lúc. Lấy $g=10 m/s^{2} ,$$v_{0}$ có giá trị là",
+  "options": [
+   [
+    "A",
+    "$v_{0}=5,5 m/s.$",
+    false
+   ],
+   [
+    "B",
+    "$v_{0}=11,7 m/s.$",
+    true
+   ],
+   [
+    "C",
+    "$v_{0}=20,4 m/s.$",
+    false
+   ],
+   [
+    "D",
+    "$v_{0}=15,5 m/s.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.80}{10}}=4 s.$\n$s=v_{0}\\left( t-1 \\right)+\\frac{1}{2}g\\left( t-1 \\right)^{2}\\Leftrightarrow80=v_{0}.3+\\frac{1}{2}10.3^{2}\\Rightarrowv_{0}=11,7m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 61,
+  "flags": [],
+  "stem": "Để ước lượng độ sâu của một giếng cạn nước, bạn Nam dùng đồng hồ bấm giây, ghé sát tai vào miệng giếng và thả một hòn đá rơi tự do từ miệng giếng, sau $3s$ thì Nam nghe thấy tiếng hòn đá đập vào đáy giếng. Giả sử tốc độ truyền âm trong không khí là $330 m/s,$ lấy $ g=9,9 m/s^{2}.$ Độ sâu của giếng **gần nhất với giá trị** nào sau đây?",
+  "options": [
+   [
+    "A",
+    "$43 m.$",
+    false
+   ],
+   [
+    "B",
+    "$45 m.$",
+    false
+   ],
+   [
+    "C",
+    "46 m.",
+    false
+   ],
+   [
+    "D",
+    "$41 m.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Ta có $\\sqrt{\\frac{2h}{g}}+\\frac{h}{v_{a}}=3\\Leftrightarrow\\sqrt{\\frac{2.h}{9,9}}+\\frac{h}{330}=3\\Rightarrowh\\approx41 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 62,
+  "flags": [],
+  "stem": "Thả một hòn đá rơi không vận tốc ban đầu từ miệng một cái hang sâu xuống đến đáy. Sau $4,5 s$ kể từ lúc bắt đầu thả thì nghe tiếng hòn đá chạm vào đáy. Biết tốc độ truyền âm trong không khí là $330 m/s.$ Lấy $ g = 9,8 m/s^{2}.$ Vận tốc của hòn đá khi chạm đáy **gần nhất với giá trị** nào sau đây?",
+  "options": [
+   [
+    "A",
+    "$38,7 m/s.$",
+    false
+   ],
+   [
+    "B",
+    "$45,3 m/s.$",
+    false
+   ],
+   [
+    "C",
+    "$40 m/s.$",
+    false
+   ],
+   [
+    "D",
+    "$42,5 m/s.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Thời gian vật rơi $t_{1}=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2h}{9,8}}$\nThời gian truyền âm $t_{2}=\\frac{h}{v_{am}}=\\frac{h}{330}$\nMà $t_{1}+t_{2}=4,5\\Leftrightarrow\\sqrt{\\frac{2h}{9,8}}+\\frac{h}{330}=4,5\\Rightarrowh=87,83 m\\Rightarrowv=\\sqrt{2gh}=\\sqrt{2.9,8.87,83}=41,5 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 63,
+  "flags": [],
+  "stem": "Người ta thả một hòn đá từ một cửa sổ ở độ cao $8,75 m$ so với mặt đất (vận tốc ban đầu bằng không) vào đúng lúc một hòn bi thép rơi từ trên mái nhà xuống đi ngang qua với tốc độ $15 m/s.$ Bỏ qua sức cản của không khí. Hai vật chạm đất cách nhau một khoảng thời gian $\\Deltat.$ Lấy $ g=10 m/s^{2}.$ Giá trị $\\Deltat$ xấp sỉ bằng",
+  "options": [
+   [
+    "A",
+    "$0,823 s.$",
+    true
+   ],
+   [
+    "B",
+    "$0,802 s.$",
+    false
+   ],
+   [
+    "C",
+    "$0,814 s.$",
+    false
+   ],
+   [
+    "D",
+    "$0,8066 s.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Ta có thời gian rơi của hòn đá là $s=\\frac{1}{2}gt^{2}\\Rightarrowt=\\sqrt{\\frac{2.s}{g}}\\approx1,32 s.$\nThời gian rơi của hòn bi thép là $s'=v_{0}t'+\\frac{1}{2}gt'^{2}$ thay số ta có $ t=0,5 s,$ suy ra $\\Deltat=t-t\\approx0,82 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 64,
+  "flags": [],
+  "stem": "Một người thợ xây ném một viên gạch theo phương thẳng đứng với tốc độ ban đầu $v_{0}$ cho một người khác ở trên tầng cao $4,5 m.$ Người này chỉ việc giơ tay ngang ra là bắt được viên gạch. Lấy $ g=9,8 m/s^{2}.$ Nếu vận tốc viên gạch lúc người kia bắt được là bằng $0$ thì $ v_{0}$ **gần giá trị nào nhất** sau đây?",
+  "options": [
+   [
+    "A",
+    "$9,3 m/s.$",
+    true
+   ],
+   [
+    "B",
+    "$15 m/s.$",
+    false
+   ],
+   [
+    "C",
+    "$12 m/s.$",
+    false
+   ],
+   [
+    "D",
+    "$8,8 m/s.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Viên gạch khi chuyển động thẳng đứng hướng lên là chuyển động thẳng chậm dần đều với gia tốc $a= -g= -9,8 m/s^{2}.$\nTa có $v^{2}-v_{0}^{2}=2as\\Rightarrowv_{0}=\\sqrt{v^{2}-2as}$ thay số ta có $ v_{0}\\approx9,39 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 65,
+  "flags": [],
+  "stem": "Một vật rơi không vận tốc đầu từ đỉnh tòa nhà chung cư có độ cao 320 m xuống đất. Cho g = 10 m/s^2^. Quãng đường vật rơi được trong 2 s đầu tiên và 2 s cuối cùng có giá trị lần lượt là",
+  "options": [
+   [
+    "A",
+    "180 m, 160 m.",
+    true
+   ],
+   [
+    "B",
+    "170 m, 160 m.",
+    false
+   ],
+   [
+    "C",
+    "160 m, 150 m.",
+    false
+   ],
+   [
+    "D",
+    "140 m, 160 m.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Quãng đường vật đi trong 6 s đầu $h_{2}=\\frac{1}{2}.10.6^{2}=180m$\nQuãng đường đi trong 2 s cuối cùng s^’^ = s – s~1~ = 320 – 180 = 160 m.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 66,
+  "flags": [],
+  "stem": "Một vật rơi tự do tại một địa điểm có độ cao 500 m biết g = 10 m/s^2^. Quãng đường vật rơi được trong 5 s đầu tiên là",
+  "options": [
+   [
+    "A",
+    "125 m.",
+    false
+   ],
+   [
+    "B",
+    "152 m.",
+    false
+   ],
+   [
+    "C",
+    "215 m.",
+    true
+   ],
+   [
+    "D",
+    "512 m.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Quãng đường vật rơi trong 5s đầu $h_{5}=\\frac{1}{2}gt_{5}^{2}=\\frac{1}{2}.10.5^{2}=125 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 67,
+  "flags": [],
+  "stem": "Một vật rơi tự do tại một địa điểm có độ cao 500 m, biết g = 10 m/s^2^. Quãng đường vật rơi trong giây thứ 5 là",
+  "options": [
+   [
+    "A",
+    "35 m.",
+    false
+   ],
+   [
+    "B",
+    "54 m.",
+    false
+   ],
+   [
+    "C",
+    "45 m.",
+    true
+   ],
+   [
+    "D",
+    "53 m.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Quãng đường vật rơi trong 4s đầu $h_{4}=\\frac{1}{2}gt_{4}^{2}=\\frac{1}{2}.10.4^{2}=80 m$\nQuãng đường vật rơi trong giây thứ 5 là $\\Deltah=h_{5}-h_{4}=125-80=45 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 68,
+  "flags": [],
+  "stem": "Một vật A được thả rơi từ độ cao $45 m$ xuống mặt đất. Lấy $ g=10 m/s^{2}.$ Quãng đường vật rơi được trong $2$ giây cuối cùng là",
+  "options": [
+   [
+    "A",
+    "$40 m.$",
+    true
+   ],
+   [
+    "B",
+    "$60 m.$",
+    false
+   ],
+   [
+    "C",
+    "$25 m.$",
+    false
+   ],
+   [
+    "D",
+    "$65 m.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Thời gian vật rơi là $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.45}{10}}=3 s.$\nQuãng đường vật rơi trong giây đầu tiên là $s=\\frac{1}{2}gt^{2}=\\frac{1}{2}10.1^{2}=5 m.$\nQuãng đường vật rơi trong $2$ giây cuối cùng là $\\Deltas=45-5=40 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 69,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao $80 m.$ Lấy $ g=10 m/s^{2}.$ Quãng đường vật rơi được trong $2 s$ đầu và trong giây thứ $2$ là",
+  "options": [
+   [
+    "A",
+    "$20 m$ và $10 m.$",
+    false
+   ],
+   [
+    "B",
+    "$20 m$ và $15 m.$",
+    true
+   ],
+   [
+    "C",
+    "$20 m$ và $35 m.$",
+    false
+   ],
+   [
+    "D",
+    "$45 m$ và $20 m.$",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Quãng đường vật rơi trong $2 s$ đầu là $ s_{t=2}=\\frac{1}{2}gt^{2}=\\frac{1}{2}.10.2^{2}=20 m.$\nQuãng đường vật rơi trong giây thứ $2$ là $ s_{2}=s_{t=2}-s_{t=1}=\\frac{1}{2}.10\\left( 2^{2}-1^{2} \\right)=15 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 70,
+  "flags": [],
+  "stem": "Vật rơi tự do trong $7 s.$ Lấy $ g=10 \\frac{m}{s^{2}}.$Quãng đường vật đi trong giây cuối cùng là",
+  "options": [
+   [
+    "A",
+    "$40,5 m.$",
+    false
+   ],
+   [
+    "B",
+    "$63,7 m.$",
+    false
+   ],
+   [
+    "C",
+    "$65 m.$",
+    true
+   ],
+   [
+    "D",
+    "$112,3 m.$",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Quãng đường đi được trong $6 s$ đầu là $ s_{1}=\\frac{1}{2}gt_{1}^{2}=\\frac{1}{2}.10.6^{2}=180 m$\nQuãng đường đi được trong $7 s$ là $ s_{2}=\\frac{1}{2}gt_{2}^{2}=\\frac{1}{2}.10.7^{2}=245 m$\nQuãng đường đi được trong giây cuối cùng $\\Deltas=s_{2}-s_{1}=245-180=65 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 71,
+  "flags": [],
+  "stem": "Một vật rơi tự do không vận tốc đầu. Quãng đường rơi trong giây thứ $2$ là $14,73 m.$ Gia tốc trọng lực ở nơi làm thí nghiệm là",
+  "options": [
+   [
+    "A",
+    "$g=9,82\\frac{m}{s^{2}}.$",
+    true
+   ],
+   [
+    "B",
+    "$g=9,81 \\frac{m}{s^{2}}.$",
+    false
+   ],
+   [
+    "C",
+    "$g=9,80 \\frac{m}{s^{2}}.$",
+    false
+   ],
+   [
+    "D",
+    "$g=7,36 \\frac{m}{s^{2}}.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Ta có $\\Deltas=s_{2}-s_{1}=\\frac{1}{2}g.2^{2}-\\frac{1}{2}g.1^{2}=14,73 \\Rightarrowg=\\frac{2.14,73 }{2^{2}-1^{2}}=9,82 m/s^{2}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 72,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ một độ cao $h.$ Biết rằng trong giây cuối cùng vật rơi được quãng đường $25 m.$ Lấy $ g=10 m/s^{2}.$ Thời gian rơi của vật là",
+  "options": [
+   [
+    "A",
+    "$5 s.$",
+    false
+   ],
+   [
+    "B",
+    "$4 s.$",
+    false
+   ],
+   [
+    "C",
+    "$2 s.$",
+    false
+   ],
+   [
+    "D",
+    "$3 s.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Gọi t là thời gian rơi của vật ta có $h=\\frac{1}{2}gt^{2}$\nTa có$25=\\frac{1}{2}gt^{2}-\\frac{1}{2}g\\left( t-1 \\right)^{2}25=5t^{2}-5\\left( t-1 \\right)^{2}\\Leftrightarrow10t=30\\Rightarrowt=3 s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 73,
+  "flags": [],
+  "stem": "Một học sinh $A$ tung một quả bóng với tốc độ ban đầu $ v_{0}$ đi lên theo phương thẳng đứng cho một bạn $ B$ đứng ở tầng trên. Sau khi ném được $2,2 s$ thì bạn $ B$ giơ tay ra bắt được quả bóng, lúc này độ cao của quả bóng so với lúc bắt đầu ném là $4 m.$ Lấy $ g=10 m/s^{2}.$ Giá trị $ v_{0}$ **gần giá trị nào nhất**?",
+  "options": [
+   [
+    "A",
+    "$12,8 m/s.$",
+    true
+   ],
+   [
+    "B",
+    "$11,7 m/s.$",
+    false
+   ],
+   [
+    "C",
+    "$10 m/s.$",
+    false
+   ],
+   [
+    "D",
+    "$9,6 m/s.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Chọn trục $Oy$ hướng lên, gốc tọa độ tại vị trí ném.\nTa có $y=v_{0}t-\\frac{1}{2}gt^{2}\\Leftrightarrow4=v_{0}.2,2-\\frac{1}{2}.10.2,2^{2}\\Rightarrowv_{0}\\approx12,82 m/s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 74,
+  "flags": [],
+  "stem": "Ở cùng độ cao đủ lớn với vật $A$ người ta thả vật $ B$ rơi sau vật $ A$ một thời gian $0,1 s.$ Sau bao lâu kể từ lúc thả vật $ A$ thì khoảng cách giữa chúng là $1 m?$",
+  "options": [
+   [
+    "A",
+    "$7,5 s.$",
+    false
+   ],
+   [
+    "B",
+    "$8,5 s.$",
+    false
+   ],
+   [
+    "C",
+    "$9,5 s.$",
+    false
+   ],
+   [
+    "D",
+    "$1,05 s.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Chọn trục toạ độ theo phương thẳng đứng, gốc toạ độ tại điểm thả, gốc thời gian lúc thả vật $A$ chiều dương hướng xuống.\nPhương trình chuyển động của hai vật lần lượt là $\\left\\{ \\begin{array}{r}\n\\mathit{y}_{\\mathit{A}}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2} \\\\\n\\mathit{y}_{\\mathit{B}}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\left( \\mathit{t}\\mathbf{-}1 \\right)^{2}\n\\end{array} \\right.\\$\nKhi hai vật cách nhau 1m $y_{A}-y_{B}=\\frac{1}{2}gt^{2}-\\frac{1}{2}g\\left( t-0,1 \\right)^{2}=1$\n$\\Rightarrow\\frac{1}{2}g\\left( 0,2t-0,01 \\right)=1\\Rightarrow\\frac{1}{2}10\\left( 0,2t-0,01 \\right)=1,05 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 75,
+  "flags": [],
+  "stem": "Một học sinh $A$ tung một quả bóng với tốc độ ban đầu $ v_{0}$ đi lên theo phương thẳng đứng cho một bạn $ B$ đứng ở tầng trên. Sau khi ném được $2 s$ quả bóng có độ cao so với lúc bắt đầu ném là $12 m,$ đồng thời bạn $ B$ giơ tay bắt được quả bóng. Lấy $ g=10 m/s^{2}.$ Chiều dương của $ Oy$ hướng lên. Vận tốc của quả bóng lúc bạn $ B$ bắt được là",
+  "options": [
+   [
+    "A",
+    "$-4 m/s.$",
+    true
+   ],
+   [
+    "B",
+    "$5 m/s.$",
+    false
+   ],
+   [
+    "C",
+    "$4 m/s.$",
+    false
+   ],
+   [
+    "D",
+    "$-5 m/s.$",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Chọn gốc tọa độ tại vị trí ném.\nTọa độ của quả bóng $y=v_{0}t-\\frac{1}{2}gt^{2}\\Leftrightarrow12 =2.v_{0}-\\frac{1}{2}.10.2^{2}\\Rightarrowv_{0}=16 m/s.$\nVận tốc của bóng khi bạn $B$ bắt được $ v=v_{0}-gt=16-10.2= -4 m/s.$\nVận tốc khi bắt bóng có giá trị âm chứng tỏ người này bắt được bóng khi nó đang rơi xuống.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 76,
+  "flags": [
+   "khong-gach-chan"
+  ],
+  "stem": "Một viên bi A được thả rơi từ độ cao 30 m. Cùng lúc đó, một viên bi B được bắn theo phương thẳng đứng từ dưới đất lên với vận tốc 25m/s tới va chạm vào bi",
+  "options": [
+   [
+    "A",
+    "Cho g = 10 m/s^2^. Bỏ qua sức cản không khí. Thời điểm 2 viên bi gặp nhau là \n**A.** 1,2 s.",
+    false
+   ],
+   [
+    "B",
+    "2,1 s.",
+    false
+   ],
+   [
+    "C",
+    "3,1 s.",
+    false
+   ],
+   [
+    "D",
+    "1,3 s",
+    false
+   ]
+  ],
+  "answer": null,
+  "solution": "Chọn chiều dương là chiều hướng từ trên xuống dưới, gốc tọa độ tại vị trí viên bi A, gốc thời gian là lúc viên bi A rơi\nPhương trình chuyển động là $y=y_{0}+v_{0}t+\\frac{1}{3}gt^{2}$\nPhương trình chuyển động vật A là $y_{1}=\\frac{1}{2}gt^{2}=5t^{2}$\nPhương trình chuyển động vật B là$y_{2}=30-25t+\\frac{1}{2}gt^{2}=30-25t+5t^{2}$\nKhi gặp nhau thì$y_{1}=y_{2}$ $\\Leftrightarrow5t^{2}=30-25t+5t^{2}$$\\Rightarrow$ t = 1,2 s.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 77,
+  "flags": [],
+  "stem": "Hai bạn Giang và Vân đi chơi ở một tòa nhà cao tầng. Từ tầng 19 của tòa nhà, Giang thả rơi viên bi A thì 1 s sau thì Vân thả rơi viên bi B ở tầng thấp hơn 10 m. Cho g = 9,8 m/s^2^. Hai viên bi sẽ gặp nhau lúc nào, cách tầng 19 bao nhiêu?",
+  "options": [
+   [
+    "A",
+    "1,5 s, 11,25 m.",
+    true
+   ],
+   [
+    "B",
+    "2,5 s, 1,25 m.",
+    false
+   ],
+   [
+    "C",
+    "3,5 s, 11,25 m.",
+    false
+   ],
+   [
+    "D",
+    "1,5 s, 1,25 m",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Chọn trục toạ độ thẳng đứng, chiều dương hướng xuống gốc toạ độ tại vị trí bạn Giang thả ở tầng 19, gốc thời gian lúc bi A rơi.\nPhương trình chuyển động của viên bi A với $\\left\\{ \\begin{array}{r}\nx_{01} = \\ 0\\ m \\\\\nv_{01} = \\ 0\\ m/s\n\\end{array} \\right.\\$$\\mathbf{\\Rightarrow}\\mathit{y}_{1}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}$\nPhương trình chuyển động của viên bi B với $\\left\\{ \\begin{array}{r}\nx_{02} = \\ 10\\ m \\\\\nv_{02} = \\ 0\\ m/s\n\\end{array} \\right.\\$thả rơi sau 1 s so vói gốc thời gian$\\mathit{y}_{2}\\mathbf{=}10\\mathbf{+}\\frac{1}{2}\\mathit{g}\\left( \\mathit{t}\\mathbf{-}1 \\right)^{2}$\nKhi 2 viên bi gặp nhau y~1~ = y~2~ $\\Leftrightarrow\\frac{1}{2}gt^{2}=10+\\frac{1}{2}g\\left( t-1 \\right)^{2}$ $\\Rightarrow$ t = 1,5 s và cách vị trí thả của giang là $y_{1}=\\frac{1}{2}gt^{2}=\\frac{1}{2}.10.1,5^{2}=112,5 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 78,
+  "flags": [],
+  "stem": "Ở một tầng tháp cách mặt đất 45 m, một người thả rơi một vật. Một giây sau, người đó ném vật thứ hai xuống theo hướng thẳng đứng. Hai vật chạm đất cùng lúc. Cho g = 10 m/s^2^. Vận tốc ném vật thứ hai là",
+  "options": [
+   [
+    "A",
+    "15/3 m/s.",
+    false
+   ],
+   [
+    "B",
+    "25/3 m/s.",
+    true
+   ],
+   [
+    "C",
+    "35/3 m/s.",
+    false
+   ],
+   [
+    "D",
+    "20/3 m/s.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Chọn chiều dương là chiều hướng từ trên xuống dưới, gốc tọa độ tại vị trí vật một, gốc thời gian là lúc vật một rơi\nPhương trình chuyển động $y=y_{0}+v_{0}\\left( t-t_{0} \\right)+\\frac{1}{2}g\\left( t-t_{0} \\right)^{2}$\nPhương trình chuyển động vật một là $y_{1}=\\frac{1}{2}gt^{2}=5t^{2}$\nPhương trình chuyển động vật hai là$y_{2}=v_{0}t+\\frac{1}{2}g\\left( t-1 \\right)^{2}=v_{0}t+5\\left( t-1 \\right)^{2}(2)$\nVì chạm đất cùng một lúc nên$y_{1}=y_{2}=45\\Rightarrow45=5t^{2}\\Rightarrowt=3 s$\nThay vào 2 ta có $45=v_{0}t+5\\left( t-1 \\right)^{2}\\Rightarrow45=v_{0}.3+5\\left( 3-1 \\right)^{2}\\Rightarrowv_{0}=\\frac{25}{3} m/s.$.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 79,
+  "flags": [],
+  "stem": "Từ 1 đỉnh tháp người ta buông rơi 1 vật. Một giây sau ở tầng tháp thấp hơn 10 m người ta buông rơi vật thứ 2. Lấy $g=10 m/s^{2}.$ Sau bao lâu hai vật sẽ đụng nhau tính từ lúc vật thứ nhất được buông rơi?",
+  "options": [
+   [
+    "A",
+    "1,5 s.",
+    true
+   ],
+   [
+    "B",
+    "2 s.",
+    false
+   ],
+   [
+    "C",
+    "3 s.",
+    false
+   ],
+   [
+    "D",
+    "9 s",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Chọn hệ quy chiếu và gốc thời gian như hình vẽ.\nCác phương tình tọa độ $\\left\\{ \\begin{array}{r}\n\\mathit{y}_{1}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\\left( \\mathit{m} \\right) \\\\\n\\mathit{y}_{2}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\left( \\mathit{t}\\mathbf{-}1 \\right)^{2}\\mathbf{+}10\\left( \\mathit{m} \\right)\n\\end{array} \\right.\\$\nKhi đụng nhau $y_{1}=y_{2}\\Leftrightarrow\\frac{g}{2}t^{2}-gt+\\frac{1}{2}g+10=\\frac{g}{2}t^{2}\\Rightarrowt=1,5s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "mc",
+  "num": 80,
+  "flags": [],
+  "stem": "Từ sân thượng một cao ốc có độ cao $h=80 m,$ một người thả rơi tự do một hòn sỏi. Một giây sau, người này ném thẳng đứng hướng xuống dưới một hòn sỏi thứ hai với tốc độ $ v_{o}.$ Hai hòn sỏi chạm đất cùng lúc. Lấy $ g=10 m/s^{2}.$ Giá trị của $ v_{o}$ gần nhất với",
+  "options": [
+   [
+    "A",
+    "$20,4 m/s.$",
+    false
+   ],
+   [
+    "B",
+    "$41,7 m/s.$",
+    false
+   ],
+   [
+    "C",
+    "$5,5 m/s.$",
+    false
+   ],
+   [
+    "D",
+    "$11,7 m/s.$",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Chọn hệ quy chiếu\nGốc tọa độ của trục $Oy$ tại vị trí thả.\nChiều dương từ trên xuống.\nGốc thời gian lúc hòn một được thả.\nPhương trình chuyển động của hai hòn đá $\\left\\{ \\begin{array}{r}\n\\mathit{y}_{1}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2} \\\\\n\\mathit{y}_{2}\\mathbf{=}\\mathit{v}_{\\mathit{o}}\\left( \\mathit{t}\\mathbf{-}1 \\right)\\mathbf{+}\\frac{1}{2}\\mathit{g}\\left( \\mathit{t}\\mathbf{-}1 \\right)^{2}\n\\end{array} \\right.\\$\nThời gian rơi của hòn sỏi thứ nhất là $t_{1}=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.80}{10}}=4 s.$\nDo hai hòn sỏi chạm đất cùng một lúc nên Thời gian chuyển động của hòn thứ hai là $t_{2}=4-1=3 s.$\nKhi hòn sỏi thứ hai chạm đất $y_{2}=80 m\\Leftrightarrowv_{o}.3+\\frac{1}{2}.10.3^{2}=80\\Rightarrowv_{o}=\\frac{35}{3} \\approx11,7 m/s.$\n\n****",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật rơi tự do từ độ cao 20 m xuống đất, lấy g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Vận tốc của vật bắt đầu rơi là 20 m/s.",
+    "S"
+   ],
+   [
+    "b",
+    "Quãng đường vật rơi đến khi chạm đất là 40 m.",
+    "S"
+   ],
+   [
+    "c",
+    "Thời gian vật rơi là 2 s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vận tốc của vật vừa chạm đất là 20 m/s.",
+    "Đ"
+   ]
+  ],
+  "solution": "Chọn trục tọa độ Oy trùng với quỹ đạo chuyển động của vật.\n\nGốc tọa độ tại O, chiều dương trùng với chiều chuyển động của vật ( hướng xuống dưới).\n\na. Phát biểu này **sai**. Vật bắt đầu rơi có vận tốc bằng 0.\n\nb. Phát biểu này **sai**. Khi vật chạm đất thì $s = h = 20 m.$\n\nc. Phát biểu này **đúng**. Ta có $h = \\frac{1}{2}gt^{2}\\Rightarrowt = \\sqrt{\\frac{2h}{g}} = \\sqrt{\\frac{2.20}{10}} = 2 s.$\n\nd. Phát biểu này **đúng**. Vận tốc của vật khi vừa chạm đất là $v = gt = 10.2 = 20 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được thả rơi không vận tốc đầu khi vừa chạm đất có v = 70 m/s, g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Chiều cao từ vật đến mặt đất là 300 m.",
+    "S"
+   ],
+   [
+    "b",
+    "Quãng đường vật rơi được là 245 m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Khi vật rơi đến khi chạm đất thì vận tốc của vật tăng dần.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Thời gian rơi của vật là 10 s.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Ta có $v^{2} = 2gh\\Rightarrowh = \\frac{v^{2}}{2g} = \\frac{70^{2}}{2.10} = 245 m.$\n\nb. Phát biểu này **đúng**. Khi vật chạm đất thì $s = h = 245 m.$\n\nc. Phát biểu này **đúng**.\n\nd. Phát biểu này **sai**. Thời gian rơi của vật là $v = gt\\Rightarrowt = \\frac{v}{g} = \\frac{70}{10} = 7 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Người ta thả một vật rơi tự do, sau 4 s vật chạm đất, lấy$g = 10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Vật được thả rơi từ độ cao 80 m.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Khi vật chạm đất thì vận tốc của vật là 80 m/s.",
+    "S"
+   ],
+   [
+    "c",
+    "Sau 2 giây vật đi được 20 m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ cao của vật sau khi thả rơi 2 giây là 40 m.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**. Độ cao thả vật là $h = \\frac{1}{2}gt^{2} = \\frac{1}{2}.10.4^{2} = 80 m.$\n\nb. Phát biểu này **sai**. Vận tốc của vật khi chạm đất là$v = gt = 10.4 = 40 m/s.$\n\nc. Phát biểu này **đúng**. Quãng đường vật đi được sau $2 s$ là $ h_{1} = \\frac{1}{2}gt_{1}^{2} = \\frac{1}{2}.10.2^{2} = 20 m.$\n\nd. Phát biểu này **sai**. Độ cao vật sau khi thả $2 s$ là $\\Delta h = h - h_{1} = 80 - 20 = 60 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một người thả vật rơi tự do, vật chạm đất có v = 30 m/s, g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Khi vật chạm đất vật đi được 2 s.",
+    "S"
+   ],
+   [
+    "b",
+    "Độ cao vật rơi đến khi chạm đất là 45 m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Sau khi đi được 20 m thì vận tốc của vật là 20 m/s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ cao của vật sau khi thả rơi 2 giây là 20 m.",
+    "S"
+   ]
+  ],
+  "solution": "Chọn gốc tọa độ tại vị trí thả vật, mốc thời gian là lúc vật bắt đầu rơi, chiều dương hướng xuống\n\na. Phát biểu này **sai**. Thời gian rơi của vật $v=gt\\Rightarrowt=\\frac{v}{g}=\\frac{30}{10}=3 s.$\n\nb. Phát biểu này **đúng**. Độ cao nơi thả rơi vật cũng chính là quãng đường vật đi được cho đến khi chạm đất$h_{0}=s_{\\max}=\\frac{gt^{2}}{2}=\\frac{10.3^{2}}{2}=45 m.$\n\nc. Phát biểu này **đúng**. Vật tốc của vật khi rơi được 20 m là $v^{2}=2gs\\Rightarrowv=\\sqrt{2gs}=\\sqrt{2.10.20}=20 m/s.$\n\nd. Phát biểu này **sai**. Quãng đường vật đi được sau 2s là $s=\\frac{gt^{2}}{2}=\\frac{10.2^{2}}{2}=20 m.$\n\nĐộ cao của vật sau 2 s là $h=h_{0}-s=45-20=25 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Từ vách núi, một người buông rơi một hòn đá xuống vực sâu. Từ lúc buông cho đến lúc nghe tiếng chạm của hòn đá mất $6,5 s.$ Biết rằng vận tốc truyền âm trong không khí xem như không đổi và bằng 360 m/s. Lấy $ g = 10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Thời gian viên đá rơi đến khi chạm đất là 5 s.",
+    "S"
+   ],
+   [
+    "b",
+    "Thời gian tai ta nghe được tiếng chạm của hòn đá là 0,5 s.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Quãng đường đi được của hòn đá là 216 m.",
+    "S"
+   ],
+   [
+    "d",
+    "Độ cao từ vách núi xuống vực sâu là 180 m.",
+    "Đ"
+   ]
+  ],
+  "solution": "Chọn gốc tọa độ tại vị trí thả vật, mốc thời gian là lúc vật bắt đầu rơi, chiều dương hướng xuống.\n\na. Phát biểu này **sai**. Gọi $t_{1}$ là thời gian viên đá rơi cho đến khi chạm đất, $t_{2}$ là thời gian âm thanh truyền từ đáy vực lên tới tai người nghe.\n\nPhương trình chuyển động của viên đá là$h=\\frac{gt_{1}^{2}}{2}(1)$\n\nPhương trình chuyển động của âm thanh là $h=vt_{2}(2)$\n\nTừ (1) và (2) ta có $\\frac{gt_{1}^{2}}{2}=vt_{2}(3)$\n\nMặt khác theo đề ra ta có $t_{1}+t_{2}=6,5\\Rightarrowt_{2}=6,5-t_{1}(4)$\n\nTừ (3) và (4) ta có $\\frac{gt_{1}^{2}}{2}=v\\left( 6,5-t_{1} \\right)\\Leftrightarrow\\frac{gt_{1}^{2}}{2}+vt_{1}-6,5v=0\\Leftrightarrow\\frac{10t_{1}^{2}}{2}+360t_{1}^{2}-6,5.360=0$\n\nGiải phương trình ta được $\\left\\lbrack \\begin{array}{r}\n\\mathit{t}_{1}\\mathbf{= -}78\\mathit{\\ s\\ } \\\\\n\\mathit{t}_{1}\\mathbf{=}6\\mathit{\\ s}\n\\end{array} \\right.\\$\n\nVì thời gian luôn dương nên ta chọn$t_{1}=6 s.$\n\nb. Phát biểu này **đúng**. Thời gian tai ta nghe được tiếng chạm của hòn đá $t_{2}=6,5-t_{1}=6,5-6=0,5$ s.\n\nc. Phát biểu này **sai**. Quãng đường đi được của hòn đá là: $s=vt_{2}=360.0,5=180$ m.\n\nd. Phát biểu này **đúng**. Độ cao từ vách núi xuống đáy vực $h=\\frac{gt_{1}^{2}}{2}=\\frac{10.6^{2}}{2}=180 m.$\n\n#### [ \n\n#### [Dạng 2 QUÃNG ĐƯỜNG VẬT ĐI TRONG GIÂY THỨ N VÀ TRONG N GIÂY CUỐI\n\n**I. PHƯƠNG PHÁP:**\n\n<table style=\"width:98%;\">\n<colgroup>\n<col style=\"width: 97%\" />\n</colgroup>\n<thead>\n<tr>\n<th style=\"text-align: left;\"><p><strong>1. Quãng đường vật đi trong giây thứ n:</strong></p>\n<p><strong>Bước 1.</strong> Tính quãng đường vật đi trong n giây <span class=\"math inline\">$s_{n}=v_{0}n+\\frac{1}{2}an^{2}$</span></p>\n<p><strong>Bước 2.</strong> Tính quãng đường vật đi trong (n – 1) giây<span class=\"math inline\">$s_{n-1}=v_{0}\\left( n-1 \\right)+\\frac{1}{2}a\\left( n-1 \\right)^{2}$</span></p>\n<p><strong>Bước 3.</strong> Tính quãng đường vật đi trong giây thứ n <span class=\"math inline\"><em>Δ</em><em>s</em><strong>=</strong><em>s</em><sub><em>n</em></sub><strong>−</strong><em>s</em><sub><em>n</em><strong>−</strong>1</sub></span></p>\n<p><strong>2. Quãng đường vật đi trong n giây cuối:</strong></p>\n<p><strong>Bước 1.</strong> Tính quãng đường vật đi trong t giây <span class=\"math inline\">$s_{t}=v_{0}t+\\frac{1}{2}at^{2}$</span></p>\n<p><strong>Bước 2.</strong> Tính quãng đường vật đi trong (t – n) giây <span class=\"math inline\">$s_{n}=v_{0}\\left( t-n \\right)+\\frac{1}{2}a\\left( t-n \\right)^{2}$</span></p>\n<p><strong>Bước 3.</strong> Tính quãng đường vật đi trong n giây cuối</p>\n<p><span class=\"math inline\">$\\Deltas=s-s_{n}=v_{0}t+\\frac{1}{2}at^{2}-\\left\\lbrack v_{0}\\left( t-n \\right)+\\frac{1}{2}a\\left( t-n \\right)^{2} \\right\\rbrack=n\\left( v_{0}+at-\\frac{1}{2}an \\right)= -\\frac{1}{2}an^{2}$</span></p></th>\n</tr>\n</thead>\n<tbody>\n</tbody>\n</table>\n\n**II. BÀI TẬP ÁP DỤNG:**",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật rơi không vận tốc đầu từ độ cao $80 m$ xuống đất. Cho g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Vận tốc của vật lúc vừa chạm đất là 40 m/s.",
+    "Đ"
+   ],
+   [
+    "b",
+    "8 giây là thời gian vật rơi được.",
+    "S"
+   ],
+   [
+    "c",
+    "Quãng đường vật rơi được trong 3,5 giây đầu là 60 m.",
+    "S"
+   ],
+   [
+    "d",
+    "Trong 0,5 giây cuối cùng vật rơi với quãng đường 18,75 m.",
+    "Đ"
+   ]
+  ],
+  "solution": "Chọn gốc tọa độ tại vị trí thả vật, mốc thời gian là lúc vật bắt đầu rơi, chiều dương hướng xuống.\n\na. Phát biểu này **đúng**. Vận tốc của vật lúc vừa chạm đất là $v^{2}=2gs\\Rightarrowv=\\sqrt{2gs}=\\sqrt{2.10.80}=40 m/s.$\n\nb. Phát biểu này **sai**. Thời gian rơi của vật là $s=\\frac{gt^{2}}{2}\\Rightarrowt=\\sqrt{\\frac{2s}{g}}=\\sqrt{\\frac{2.80}{10}}=4 s.$\n\nc. Phát biểu này **sai**. Quãng đường vật rơi được trong 3,5 s đầu là $s_{2}=\\frac{g{t_{2}}^{2}}{2}=\\frac{10.3,5^{2}}{2}=61,25 m.$\n\nd. Phát biểu này **đúng**. Quãng đường vật rơi được trong 0,5 s cuối là $s_{3}=s-s_{2}=80-61,25=18,75 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật rơi tự do không vận tốc đầu từ độ cao $45 m$ xuống đất. Lấy $ g=10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Thời gian rơi của vật là 3 s.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Vật khi chạm đất có vận tốc là 45 m/s.",
+    "S"
+   ],
+   [
+    "c",
+    "Thời gian của vật khi rơi được 10 m là $\\sqrt{2}$ s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Trong 10 m cuối cùng vật rơi với thời gian là 1 s.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**. Thời gian vật rơi $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.45}{10}}=3 s.$\n\nb. Phát biểu này **sai**. Tốc độ của vật khi vừa khi vừa chạm đất là$v=\\sqrt{2gh}=\\sqrt{2.10.45}=30 m/s.$\n\nc. Phát biểu này **đúng**. Thời gian vật rơi $10 m$ đầu tiên $ t_{10dt}=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.10}{10}}=\\sqrt{2} s.$\n\nd. Phát biểu này **sai**. Thời gian vật rơi $10 m$ cuối cùng là$t_{10cc}=t_{45}-t_{35}=3-\\sqrt{\\frac{2.35}{10}}=3-\\sqrt{7} s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật rơi tự do tại một địa điểm có $g=10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Quãng đường vật rơi được trong 5 giây đầu tiên là 125 m.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Độ cao của vật rơi đến khi chạm đất khi vật đi được 15 giây là 375 m.",
+    "S"
+   ],
+   [
+    "c",
+    "Trong 10 giây cuối cùng vật rơi được 250 m.",
+    "S"
+   ],
+   [
+    "d",
+    "Trong giây thứ 5 quãng đường vật rơi là 45 m.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**. Quãng đường vật rơi được trong $5 s$ đầu tiên là$ s=\\frac{1}{2}gt^{2}=\\frac{1}{2}10.5^{2}=125 m.$\n\nb. Phát biểu này **sai**. Quãng đường vật rơi được 1$5 s$ $ h=\\frac{1}{2}gt^{2}=\\frac{1}{2}10.15^{2}=450 m.$\n\nc. Phát biểu này **sai**. Quãng đường vật được trong 10 giây cuối cùng $s=s_{15}-s_{5}=450-125=325$ m.$$\n\nd. Phát biểu này **đúng**. Quãng đường vật rơi được trong giây thứ 5 là$\\Deltas=s_{5s}-s_{4s}=\\frac{1}{2}gt_{5}^{2}-\\frac{1}{2}gt_{4}^{2}=\\frac{1}{2}\\cdot10\\left( 5^{2}-4^{2} \\right)=45 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Trong $3 s$ cuối cùng trước khi chạm đất, vật rơi tự do được quãng đường $345 m.$ Lấy $ g=9,8 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Thời gian vật rơi là 14 s.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Trong 10 giây đầu vật rơi được 490 m.",
+    "S"
+   ],
+   [
+    "c",
+    "Trong giây thứ 10 vật rơi với quãng đường 100 m.",
+    "S"
+   ],
+   [
+    "d",
+    "Thả vật với độ cao 857,66 m.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**. Ta có $\\Deltas=\\frac{1}{2}gt^{2}-\\frac{1}{2}g\\left( t-3 \\right)^{2}=\\frac{1}{2}gt^{2}-\\frac{1}{2}g\\left( t^{2}-6t+9 \\right)=345$ $\\Leftrightarrow\\Deltas=3gt-4,5g=345$ $\\Leftrightarrow345=29,4t-44,1\\Rightarrowt=13,23 s.$\n\nb. Phát biểu này **sai**. Trong 10 giây đầu vật rơi: $s=\\frac{1}{2}.9,8.10^{2}=490$ m.\n\nc. Phát biểu này **sai**. Trong giây thứ 10 vật rơi với quãng đường$\\Deltas_{10}=s_{10}-s_{9}=\\frac{1}{2}gt_{10}^{2}-\\frac{1}{2}gt_{9}^{2}=\\frac{1}{2}.9,8.10^{2}-\\frac{1}{2}.9,8.9^{2}=93,1$ m.\n\nd. Phát biểu này **đúng**. Độ cao của vật lúc thả là$s=\\frac{1}{2}gt^{2}=\\frac{1}{2}.9,8.13,23^{2}=857,66 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được thả rơi tự do từ độ cao 50 m so với mặt đất, lấy g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Thời gian khi vật rơi được 1 m là 0,5 s.",
+    "S"
+   ],
+   [
+    "b",
+    "Khi thả rơi từ độ cao 50 m vật rơi với thời gian $\\sqrt{10}$ s.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Sau 1,5 giây vật rơi được quãng đường 11 m.",
+    "S"
+   ],
+   [
+    "d",
+    "Trong 1 mét cuối cùng vật rơi với thời gian 0,032 s.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Thời gian rơi 1 m đầu tiên là $h_{1} = \\frac{1}{2}gt^{2}\\Rightarrowt = \\sqrt{\\frac{2h_{1}}{g}} = \\sqrt{\\frac{2.1}{10}} = \\frac{1}{\\sqrt{5}}s.$\n\nb. Phát biểu này **đúng**. Thời gian rơi của vật là $h_{50} = \\frac{1}{2}gt^{2}\\Rightarrowt_{50} = \\sqrt{\\frac{2h_{50}}{g}} = \\sqrt{\\frac{2.50}{10}} = \\sqrt{10} s.$\n\nc. Phát biểu này **sai**. Sau 1,5 giây vật rơi được quãng đường $s=\\frac{1}{2}gt_{1,5}^{2}=\\frac{1}{2}.10.1,5^{2}=11,25$ m.\n\nd. Phát biểu này **đúng**. Thời gian rơi 49 m đầu tiên là $h_{49} = \\frac{1}{2}gt^{2}\\Rightarrowt_{49} = \\sqrt{\\frac{2h_{49}}{g}} = \\sqrt{\\frac{2.49}{10}} = 3,13 s.$\n\n\\- Thời gian vật rơi một mét cuối cùng là $\\Delta t = t_{50} - t_{49} = 0,032 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 6,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được thả rơi tự do không vận tốc đầu ở một độ cao h, lấy g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Trong 7 giây đầu tiên vật đi được quãng đường 385 m.",
+    "S"
+   ],
+   [
+    "b",
+    "Quãng đường vật rơi được trong giây thứ 7 là 65 m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Trong thời gian 7 giây cuối cùng vật rơi được 385 m thì thời gian vật rơi từ độ cao h xuống mặt đất là 9s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Thời gian cần thiết để vật rơi 45 m cuối cùng là 0,5 s.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Quãng đường vật rơi được trong 7 giây đầu là $h_{7} = \\frac{1}{2}g.t_{7}^{2} = \\frac{1}{2}.10.7^{2} = 245 m.$\n\nb. Phát biểu này **đúng**. Quãng đường vật rơi được trong 6 giây đầu là $h_{6} = \\frac{1}{2}g.t_{6}^{2} = \\frac{1}{2}.10.6^{2} = 180 m.$\n\nQuãng đường vật rơi được trong giây thứ 7 là $\\Delta h = h_{7} - h_{6} = 245 - 180 = 65 m.$\n\nc. Phát biểu này **đúng**. Gọi thời gian vật rơi là t, quãng đường vật đi được là h. Ta có $h = \\frac{1}{2}gt^{2}$\n\nGọi thời gian vật rơi trừ 7 s cuối cùng là $t’ = (t - 7)$ quãng đường vật đi được là $h'.$\n\nTa có $h' = \\frac{1}{2}gt^{'2} = \\frac{1}{2}g(t - 7)^{2}$\n\nTheo giả thiết $h - h' = 385\\Rightarrow\\frac{1}{2}gt^{2} - \\frac{1}{2}g(t - 7)^{2} = 385\\Rightarrowt = 9 m.$\n\nd. Phát biểu này **sai**. Quãng đường vật rơi là $h = \\frac{1}{2}gt^{2} = 405 m.$\n\nThời gian vật rơi được $h' = 405 - 45$ quãng đường đầu là $ h' = \\frac{1}{2}gt^{'2}\\Rightarrowt' = \\sqrt{\\frac{2h'}{g}} = \\sqrt{\\frac{2.360}{10}} = 6\\sqrt{2} s.$\n\nThời gian để vật rơi 45 m cuối là $\\Delta t = t - t' = 0,515 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 7,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật rơi tự do từ độ cao h. Biết rằng trong $2 s$ cuối cùng vật rơi được quãng đường bằng quãng đường đi trong $5 s$ đầu tiên, $ g = 10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Thời gian vật rơi được 7,25 s.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Vật rơi từ độ cao 280 m.",
+    "S"
+   ],
+   [
+    "c",
+    "Khi vật vừa chạm đất vật có vận tốc 72,5 m/s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Trong 2 giây cuối cùng vật rơi được 150 m.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**. Ta có$\\Deltas=s_{5s}\\Leftrightarrow\\frac{1}{2}gt^{2}-\\frac{1}{2}g\\left( t-2 \\right)^{2}=\\frac{1}{2}gt_{5}^{2}.$\n\n$\\Leftrightarrow\\frac{1}{2}gt^{2}-\\frac{1}{2}gt^{2}+2gt-2g=\\frac{1}{2}gt_{5}^{2}\\Leftrightarrow20t-20=\\frac{1}{2}\\cdot10\\cdot5^{2}$$\\Rightarrowt=7,25 s.$\n\nb. Phát biểu này **sai**. Độ cao lúc thả vật là$s=\\frac{1}{2}gt^{2}=\\frac{1}{2}\\cdot10\\cdot7,25^{2}=262,8125 m.$\n\nc. Phát biểu này **đúng**. Vận tốc của vật lúc vừa chạm đất $v=gt=10.7,25=72,5 m/s.$\n\nd. Phát biểu này **sai**. Trong 2 giây cuối cùng vật rơi được: $s=\\frac{1}{2}.10.5^{2}=125$ m.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 8,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật rơi tự do trong $10$ giây. Lấy $ g=10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Quãng đường vật rơi trong 10 giây là 450 m.",
+    "S"
+   ],
+   [
+    "b",
+    "Khi đi được 8 giây vật rơi được 320 m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Trong 2 giây cuối cùng vật đi được 180 m.",
+    "S"
+   ],
+   [
+    "d",
+    "Trong giây thứ 8 vật đi được 80 m.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Quãng đường vật rơi trong 10 giây là $s=\\frac{1}{2}.10.10^{2}=500$ m.\n\nb. Phát biểu này **đúng**. Khi đi được 8 giây vật rơi được $s=\\frac{1}{2}.10.8^{2}=320$ m.\n\nc. Phát biểu này **sai**. Quãng đường vật rơi trong $2 s$ cuối cùng là .$\\DeltaS=S_{10}-S_{8}=\\frac{1}{2}gt_{10}^{2}-\\frac{1}{2}gt_{8}^{2}=\\frac{1}{2}.10.10^{2}-\\frac{1}{2}.10.8^{2}=180 m.$\n\nd. Phát biểu này **sai**. Trong giây thứ 8: $\\Deltas=s_{8}-s_{7}=\\frac{1}{2}.10.8^{2}-\\frac{1}{2}.10.7^{2}=75$ m.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 9,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật rơi tự do không vận tốc đầu từ độ cao 80 m xuống đất. Lấy g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Thời gian vật rơi đến khi chạm đất là 8 s.",
+    "S"
+   ],
+   [
+    "b",
+    "Đến khi chạm đất vật rơi với vận tốc 40 m/s.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Quãng đường vật rơi trong 2 s đầu tiên là 60 m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Trong 2 giây cuối cùng vật đi được 60 m.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Thời gian vật rơi đến khi chạm đất là $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.80}{10}}=4 s.$\n\nb. Phát biểu này **đúng**. Đến khi chạm đất vật rơi với vận tốc 40 m/s.\n\nc. Phát biểu này **đúng**. Quãng đường vật rơi trong 2 s đầu tiên là $s_{2}=\\frac{1}{2}gt_{2}^{2}=\\frac{1}{2}10.2^{2}=20 m.$\n\nd. Phát biểu này **sai**. Quãng đường vật rơi trong 2 s cuối cùng là$\\Deltas=h-s_{2}=80-20=60 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 10,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được thả rơi tự do không vận tốc đầu từ độ cao h so với mặt đất. Cho g = 10 m/s^2^. Tốc độ của vật khi chạm đất là 30 m/s.",
+  "statements": [
+   [
+    "a",
+    "Thời gian vật rơi đến khi vật chạm mặt đất là 3 giây.",
+    "S"
+   ],
+   [
+    "b",
+    "Độ cao của vật rơi được 60 m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Quãng đường vật rơi trong 2 giây đầu tiên là 20 m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vật rơi được trong giây thứ 2 là 20 m.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Thời gian vật rơi đến khi chạm đất là $t=\\frac{v}{g}=\\frac{30}{10}=3 s.$\n\nb. Phát biểu này **đúng**. Độ cao lúc vật bắt đầu rơi là $h=\\frac{v^{2}-v_{0}^{2}}{2g}=\\frac{30^{2}-0}{2g}=45 m.$\n\nc. Phát biểu này **đúng**. Quãng đường vật rơi trong 2s đầu tiên là $s_{2}=\\frac{1}{2}gt_{2}^{2}=\\frac{1}{2}10.2^{2}=20 m.$\n\nd. Phát biểu này **sai**. Quãng đường vật rơi trong giây thứ 2 là: $\\Deltas=s_{2}-s_{1}=20-5=15 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 11,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được thả rơi tự do không vận tốc đầu từ độ cao$h$ so với mặt đất. Cho $g = 10 m/s^{2}.$ Thời gian vật rơi là $4$ giây.",
+  "statements": [
+   [
+    "a",
+    "Độ cao vật rơi so mặt đất là 80 m.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Khi vật chạm đất vật có vận tốc là 40 m/s.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Trong 3 giây đầu vật đi được 35 m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Quãng đường vật rơi trong giây cuối cùng là 45 m.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **đúng**. Độ cao $h = \\frac{1}{2}gt^{2}=\\frac{1}{2}10.4^{2} = 80 m$\n\nb. Phát biểu này **đúng**. Tốc độ của vật khi vật chạm đất là $v = gt=10.4 = 40 m/s.$\n\nc. Phát biểu này **đúng**. Quãng đường vật rơi trong 3 giây đầu $s = \\frac{1}{2}gt^{2}=\\frac{1}{2}10.3^{2} = 45 m.$\n\nd. Phát biểu này **đúng**. Quãng đường vật rơi trong giây cuối cùng $s' = h - s = 80 - 45=35 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 12,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được thả rơi tự do không vận tốc đầu từ độ cao $h$ so với mặt đất. Cho $ g = 10 m/s^{2}.$ Thời gian vật rơi $10 m$ cuối cùng trước khi chạm đất là $0,2 s.$",
+  "statements": [
+   [
+    "a",
+    "Thời gian vật rơi đến khi chạm đất là 5 giây.",
+    "S"
+   ],
+   [
+    "b",
+    "Độ cao của vật từ lúc thả rơi đến khi chạm đất là 130,05 m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Trong 3 giây đầu vật rơi được 65 m.",
+    "S"
+   ],
+   [
+    "d",
+    "Vận tốc của vật khi vừa chạm đất là 51 m/s.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Gọi $t$ là thời gian từ lúc bắt đầu rơi cho đến khi vật chạm đất.\n\nQuãng đường rơi của vật trong thời gian t là $h=\\frac{1}{2}gt^{2}=5t^{2}$\n\nQuãng đường rơi của vật sau khoảng thời gian $(t - 0,2)\\left( s \\right)$ kể từ khi bắt đầu chuyển động là\n\n$h'=\\frac{1}{2}g\\left( t-0,2 \\right)^{2}=5\\left( t^{2}-0,4t+0,04 \\right)=5t^{2}-2t+0,2$\n\n\\- Quãng đường rơi của vật trong $0,2 s$ cuối là$\\Delta h=h-h'\\Rightarrow10=5t2-5t2+2t-0,2\\Rightarrowt=5,1 s$\n\nb. Phát biểu này **đúng**. Độ cao $h=\\frac{1}{2}gt^{2}=130,05 m.$\n\nc. Phát biểu này **sai**. Trong 3 giây đầu vật rơi: $s=\\frac{1}{2}gt^{2}=\\frac{1}{2}.10.3^{2}=45$ m.\n\nd. Phát biểu này **đúng**. Vận tốc khi vừa chạm đất $v=gt=51 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 13,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật rơi tự do không vận tốc đầu tại nơi có gia tốc trọng trường $g.$ Trong giây thứ $3,$ quãng đường rơi được là $24,5 m$ và tốc độ của vật khi vừa chạm đất là $39,2 m/s.$",
+  "statements": [
+   [
+    "a",
+    "Gia tốc trọng trường trong trường hợp này là 10 m/s^2^.",
+    "S"
+   ],
+   [
+    "b",
+    "Quãng đường vật đi được trong 3 giây là 44,1 m.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Quãng đường vật đi được trong 2 giây là 24,5 m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vật được thả rơi tù độ cao 78,4 m.",
+    "Đ"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Theo đề bài ta có quãng đường đi được trong giây thứ 3 là $\\Delta s = 24,5 m$\n\nGọi$s_{1}$ là quãng đường đi được trong $3 giây$ $\\Rightarrows_{1} = \\frac{1}{2}gt_{1}^{2} = \\frac{1}{2}g3^{2} = 4,5g (1)$\n\nGọi$s_{2}$ là quãng đường đi được trong $2 giây$$\\Rightarrows_{2} = \\frac{1}{2}gt_{2}^{2} = \\frac{1}{2}g.2^{2} = 2g (2)$\n\nTa có phương trình$s_{1} - s_{2} = \\Delta s$$\\Leftrightarrow4,5g-2g=24,5\\Leftrightarrow2,5g=24,5\\Rightarrowg = 9,8 m/s^{2}.$\n\nb. Phát biểu này **đúng**. Quãng đường đi được trong $3 giây$ $\\Rightarrows_{1} = 4,5g =4,5.9,8=44,1$ m.\n\nc. Phát biểu này **đúng**. Quãng đường đi được trong $2 giây$$\\Rightarrows_{2} = 2.9,8 = 19,6$ m.\n\nd. Phát biểu này **đúng**. Áp dụng công thức $v^{2} = 2gh \\Rightarrow h = \\frac{v^{2}}{2g} = \\frac{39,2^{2}}{2.9,8} = 78,4 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 14,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một vật được thả rơi tự do không vận tốc đầu từ độ cao $h$ so với mặt đất tại nơi có gia tốc trọng trường $ g = 10 m/s^{2}.$ Quãng đường vật rơi trong nửa thời gian sau dài hơn quãng đường vật rơi trong nửa thời gian đầu $40 m.$",
+  "statements": [
+   [
+    "a",
+    "Khi chạm đất vật đi được quãng đường 80 m.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Thời gian chạm đất của vật khi rơi là 6 s.",
+    "S"
+   ],
+   [
+    "c",
+    "Vật rơi với vận tốc 80 m/s.",
+    "S"
+   ],
+   [
+    "d",
+    "Quãng đường vật đi được trong nửa thời gian đầu là 20 m.",
+    "Đ"
+   ]
+  ],
+  "solution": "Gọi$t\\$ là thời gian vật rơi chậm đất.\n\n$h$ là quãng đường vật đi được cho đến khi chạm đất.\n\n$h'$ là quãng đường vật đi được trong nửa thời gian đầu.\n\n$h*$ là quãng đường vật đi được trong nửa thời gian sau.\n\nQuãng đường vật đi được cho đến khi chạm đất là $h = \\frac{1}{2}gt^{2} = \\frac{10t^{2}}{2} = 5t^{2}$\n\nQuãng đường vật đi được trong nửa thời gian đầu là $h' = \\frac{1}{2}g\\left( \\frac{t}{2} \\right)^{2} = \\frac{10t^{2}}{8} = \\frac{5}{4}t^{2}$\n\nQuãng đường vật đi được trong nửa thời gian sau là $h* = h - h' = 5t^{2} - \\frac{5}{4}t^{2} = \\frac{15}{4}t^{2}$\n\na. Phát biểu này **đúng**. Quãng đường khi vật chạm đất $s = h = 5t^{2}=5.4^{2} = 80\\$ m.\n\nb. Phát biểu này **sai**. Theo đề bài ta có : $h* - h' = 40$ $\\Leftrightarrow\\frac{15}{4}t^{2} - \\frac{5}{4}t^{2} = 40$ $\\Leftrightarrowt^{2} = 16\\Rightarrowt = 4 s.$\n\nc. Phát biểu này **sai**. Vận tốc của vật rơi là: $v = gt = 10.4 = 40 m/s.$\n\nd. Phát biểu này **đúng**. Quãng đường vật đi được trong nửa thời gian đầu $h' = \\frac{5}{4}t^{2} = \\frac{5.4^{2}}{4}=20$ m.\n\n**[\\\n**\n\n**[Dạng 3 XÁC ĐỊNH VỊ TRÍ 2 VẬT GẶP NHAU ĐƯỢC THẢ RƠI**\n\n**[Ở HAI VỊ TRÍ THỜI ĐIỂM KHÁC NHAU**\n\n####  I. PHƯƠNG PHÁP:\n\n<table style=\"width:98%;\">\n<colgroup>\n<col style=\"width: 98%\" />\n</colgroup>\n<thead>\n<tr>\n<th style=\"text-align: left;\"><p>- Chọn chiều <strong>dương</strong> hướng xuống, gốc toạ độ tại vị trí vật bắt đầu rơi, gốc thời gian lúc bắt đầu rơi (của vật rơi trước..</p>\n<p>- Phương trình chuyển động có dạng <span class=\"math inline\">$y=y_{0}+\\frac{1}{2}gt^{2}$</span></p>\n<p>- Phương trình chuyển động vật 1 là<span class=\"math inline\">$y=y_{01}+\\frac{1}{2}gt^{2}$</span></p>\n<p>- Phương trình chuyển động vật 2 là<span class=\"math inline\">$y=y_{02}+\\frac{1}{2}gt^{2}$</span></p>\n<p>- Hai vật gặp nhau khi chúng có cùng toạ độ, y<sub>1</sub> = y<sub>2</sub> <span class=\"math inline\"><strong>⇒</strong></span>t</p>\n<p>- Thay t vào y<sub>1</sub> hoặc y<sub>2</sub> để tìm vị trí gặp nhau.</p></th>\n</tr>\n</thead>\n<tbody>\n</tbody>\n</table>\n\n####  II. BÀI TẬP VẬN DỤNG:",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Từ đỉnh tháp cao $20 m,$ người ta buông một vật. Sau $2 s,$ thì người ta lại buông vật thứ 2 ở tầng thấp hơn đỉnh tháp$5 m.$ Chọn trục Oy thẳng đứng, gốc O ở đỉnh tháp, chiều dương hướng xuống, thời gian lúc vật 1 bắt đầu rơi, lấy$g=10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Phương trình chuyển động của vật 2 là$x_{2}=5+5t^{2}\\left( m \\right).$",
+    "Đ"
+   ],
+   [
+    "b",
+    "Vận tốc chạm đất của vật 1 là 17 m/s.",
+    "S"
+   ],
+   [
+    "c",
+    "Vật 2 chạm đất mất hết 1,73 giây.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vận tốc chạm đất của vật 1 nhỏ hơn của vật 2.",
+    "S"
+   ]
+  ],
+  "solution": "Chọn trục Oy thẳng đứng, gốc O ở đỉnh tháp, chiều dương hướng xuống, gốc thời gian lúc vật 1 bắt đầu rơi.\n\nPhương trình chuyển động tổng quát có dạng $x=x_{0}+v_{0}t+\\frac{1}{2}a\\left( t-t_{0} \\right)^{2}$\n\na. Phát biểu này **đúng.** Phương trình chuyển động của vật 1 là $\\left\\{ \\begin{array}{r}\n\\mathit{x}_{01}\\mathbf{=}0\\ \\mathit{m} \\\\\n\\mathit{v}_{01}\\mathbf{=}0 \\\\\n\\mathit{a}_{1}\\mathbf{=}10\\ m/s^{2} \\\\\n\\mathit{t}_{01}\\mathbf{=}0 \\\\\n\\mathit{a}\\mathbf{=}10\\ m/s^{2}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\mathit{x}_{1}\\mathbf{=}5\\mathit{t}^{2}\\ \\left( \\mathit{m} \\right)$\n\nb. Phát biểu này **sai.** Vận tốc của vật 1 khi chạm đất là $v_{1}=\\sqrt{2gs_{1}}=\\sqrt{2.10.20}=20 m/s.$\n\nc. Phát biểu này **đúng.** Khi vật 2 chạm đất thì $s_{2} = 15 m mà s_{2}=\\frac{1}{2}gt_{2}^{2}\\$$\\Rightarrowt_{2}=\\sqrt{\\frac{2s_{2}}{g}}=\\sqrt{\\frac{2.15}{10}}=1,73 s.$\n\nd. Phát biểu này **sai.** Vận tốc của vật 2 khi chạm đất là$v_{2} = \\sqrt{2gs_{2}} = \\sqrt{2.10.15} = 10\\sqrt{3} = 17,32 m/s.$ Nên vận tốc của vật 1 lớn hơn vận tốc của vật 2.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Một viên bi A được thả rơi từ độ cao $30 m.$ Cùng lúc đó, một viên bi B được bắn theo phương thẳng đứng từ dưới đất lên với $ v=25 m/s$ tới va chạm vào bi A. Chọn trục Oy thẳng đứng, gốc O ở mặt đất, chiều dường hướng lên, gốc thời gian lúc 2 viên bi bắt đầu chuyển động, $ g=10 m/s^{2}.$ Bỏ qua sức cản không khí.",
+  "statements": [
+   [
+    "a",
+    "Phương trình chuyển động của viên bi A là $y_{A}=30+5t^{2}\\left( m \\right).$",
+    "S"
+   ],
+   [
+    "b",
+    "Thời gian 2 viên bi gặp nhau là 1,2 giây.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Hai viên bi gặp nhau ở vị trí cách mặt đất 22,8 m.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vận tốc của 2 viên bi bằng nhau khi gặp nhau.",
+    "S"
+   ]
+  ],
+  "solution": "a. Phát biểu này **sai**. Phương trình chuyển động của mỗi viên bi là$\\left\\{ \\begin{array}{r}\n\\mathit{y}_{\\mathit{A}}\\mathbf{=}\\mathit{y}_{0\\mathit{A}}\\mathbf{+}\\mathit{v}_{0\\mathit{A}}\\mathit{t}\\mathbf{+}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\\mathbf{=}30\\mathbf{-}5\\mathit{t}^{2}\\mathit{\\ }\\left( \\mathit{m} \\right) \\\\\n\\mathit{y}_{\\mathit{B}}\\mathbf{=}\\mathit{y}_{0\\mathit{B}}\\mathbf{+}\\mathit{v}_{0\\mathit{B}}\\mathit{t}\\mathbf{+}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\\mathbf{=}25\\mathit{t}\\mathbf{-}5\\mathit{t}^{2}\\mathit{\\ }\\left( \\mathit{m} \\right)\n\\end{array} \\right.\\$\nb. Phát biểu này **đúng**. Hai bi gặp nhau khi chúng cùng tọa độ khi$y_{A}=y_{B}\\Leftrightarrow30-5t^{2}=25t-5t^{2}\\Rightarrowt=1,2 s.$\n\nc. Phát biểu này **đúng**. Khi hai viên bi gặp nhau$y_{A}=y_{B}=30-5.1,2^{2}=22,8 m.$\n\nd. Phát biểu này **sai**. Vận tốc mỗi viên bi khi gặp nhau là:$\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{A}}\\mathbf{= -}\\mathit{gt}\\mathbf{= -}12\\ \\ m/s. \\\\\n\\mathit{v}_{\\mathit{B}}\\mathbf{=}\\mathit{v}_{\\mathit{o}}\\mathbf{-}\\mathit{gt}\\mathbf{=}25\\mathbf{-}12\\mathbf{=}13\\ m/s.\n\\end{array} \\right.\\$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "ds-tu-loi-giai"
+  ],
+  "stem": "Ở tầng tháp cách mặt đất $45 m,$ một người thả rơi một vật. Một giây sau, người đó ném vật thứ hai xuống theo phương thẳng đứng. Hai vật chạm đất cùng lúc. Lấy $ g = 10 m/s^{2}.$",
+  "statements": [
+   [
+    "a",
+    "Sau khi vật 1 rơi 45 m trong thời gian 3 giây.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Vật 2 được ném đến khi chạm đất mất 1 giây.",
+    "S"
+   ],
+   [
+    "c",
+    "Vật 2 được ném với vận tốc là 12,5 m/s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Vật 1 rơi với vận tốc 12,5 m/s khi chạm đất.",
+    "S"
+   ]
+  ],
+  "solution": "\\- Chọn trục tọa độ thẳng đứng, trùng với đường đi của hai vật, chiều dương hướng xuống.\n\n\\- Gốc tọa độ tại vị trí cách mặt đất 45 m, mốc thời gian là lúc thả rơi vật thứ nhất.\n\na. Phát biểu này **đúng**. Phương trình chuyển động của vật 1 (vật thả rơi tự do)$y_{1}=h=\\frac{1}{2}gt^{2}$\n\nThời gian rơi từ lúc thả đến lúc chạm đất của vật 1 là $t=\\sqrt{\\frac{2h}{g}}=\\sqrt{\\frac{2.45}{10}}=3 s.$\n\nb. Phát biểu này **sai**. Hai vật chạm đất cùng lúc, vậy thời gian rơi của vật 2 là $t_{2}=3-1=2s.$$$\n\nc. Phát biểu này **đúng**. Hai vật chạm đất cùng lúc: $s=h=v_{0}t+\\frac{1}{2}gt^{2}\\Rightarrow45=v_{0}2+5.2^{2}\\Rightarrowv_{0}=12,5 m/s.$\n\nd. Phát biểu này **sai**. Vật 1 khi chạm đất với vận tốc là $v=gt=10.3=30$ m/s.\n\n**[\\\n**",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 1,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao 80m xuống đất, g = 10 m/s^2^. Thời gian để vật rơi đến đất là bao nhiêu giây?",
+  "solution": "Áp dụng công thức $s=\\frac{1}{2}gt^{2}\\Rightarrowt=\\sqrt{\\frac{2s}{g}}=\\sqrt{\\frac{2.80}{10}}=4 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 2,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ độ cao 80 m xuống đất, g = 10 m/s^2^. Vận tốc lúc vừa chạm đất là bao nhiêu m/s?",
+  "solution": "Vật thả dơi tự do nên v~0~ = 0 m/s $\\Rightarrowv=gt=10.4=40 m/s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 3,
+  "flags": [],
+  "stem": "Một vật được thả rơi không vận tốc đầu khi vừa chạm đất có v = 60 m/s, g = 10 m/s^2^. Quãng đường của vật rơi là bao nhiêu mét?",
+  "solution": "Thả rơi không vận tốc ban đầu nên $v_{0}=0 m/s$\nÁp dụng công thức $v^{2}-v_{0}^{2}=2gs\\Rightarrows=\\frac{60^{2}-0^{2}}{2.10}=180 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 4,
+  "flags": [],
+  "stem": "Một người đứng trên tòa nhà có độ cao 120 m, ném một vật thẳng đứng xuống dưới với vận tốc 10 m/s, cho g = 10 m/s^2^. Kể từ lúc ném vật chạm đất sau mấy giây?",
+  "solution": "Áp dụng công thức $s=v_{0}t+\\frac{1}{2}gt^{2}\\Rightarrow120=10t+5t^{2}$$\\Rightarrow$ t = 4 s (nhận) hoặc t = -6 s (loại).",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 5,
+  "flags": [],
+  "stem": "Người ta thả một vật rơi tự do từ một tòa tháp thì sau 20 s vật chạm đất cho g = 10 m/s^2^. Độ cao của vật sau khi vật thả được 4 s là bao nhiêu mét?",
+  "solution": "Quãng đường vật rơi 4 s đầu tiên $h_{1}=\\frac{1}{2}gt_{1}^{2}=\\frac{1}{2}.10.4^{2}=80 m$\nĐộ cao của vật sau khi thả 4 s là h~2~ = h – h~1~ = 2000 − 80m = 1920 m",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 6,
+  "flags": [],
+  "stem": "Một vật được thả rơi từ độ cao 1280 m so với mặt đất. Lấy $g=10 m/s^{2}.$ Sau khi rơi được 2 s thì vật còn cách mặt đất bao nhiêu mét?",
+  "solution": "Quãng đường vật rơi của 2s đầu tiên $h_{1}=\\frac{1}{2}gt_{1}^{2}=\\frac{1}{2}.10.2^{2}=20 m.$\n\nVậy sau 2 s đầu tiên vật còn cách mặt đất$h_{2}=h-h_{1}=1280-20=1260 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 7,
+  "flags": [],
+  "stem": "Nếu lấy gia tốc rơi tự do là $g = 10\\frac{m}{s^{2}}$ thì tốc độ trung bình $v_{tb}$ của một vật trong chuyển động rơi tự do không vận tốc ban đầu, từ độ cao $45 m$ xuống tới đất sẽ là bao nhiêu m/s?",
+  "solution": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{s}\\mathbf{=}\\frac{1}{2}\\mathit{g}\\mathit{t}^{2}\\mathbf{\\Rightarrow}\\mathit{t}\\mathbf{=}\\sqrt{\\frac{2\\mathit{s}}{\\mathit{g}}}\\mathbf{=}\\sqrt{\\frac{2.45}{10}}\\mathbf{=}3\\ \\mathit{\\ s}. \\\\\n\\mathit{v}_{\\mathit{tb}}\\mathbf{=}\\frac{\\mathit{s}}{\\mathit{t}}\\mathbf{=}\\frac{45}{3}\\mathbf{=}15\\mathit{\\ }\\frac{\\mathit{m}}{\\mathit{s}}.\n\\end{array} \\right.\\$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 8,
+  "flags": [],
+  "stem": "Thả rơi không vận tốc ban đầu một hòn đá từ độ cao $h$ xuống đất. Hòn đá rơi trong $1 s.$ Nếu thả rơi không vận tốc ban đầu hòn đá từ độ cao $4h$ xuống đất thì hòn đá sẽ rơi trong thời gian là bao nhiêu giây?",
+  "solution": "Vật thả rơi ở độ cao h $h=\\frac{1}{2}gt^{2}(1)$\nVật thả rơi ở độ cao 4h $4h=\\frac{1}{2}gt'^{2}(2)$\nTừ $(1)$ và $(2)$ suy ra $\\frac{4h}{h}=\\frac{t'^{2}}{t^{2}}\\Rightarrowt'=2 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 9,
+  "flags": [],
+  "stem": "Hai vật được thả rơi tự do từ hai độ cao $h_{1}$ và $ h_{2}.$ Biết khoảng thời gian rơi của vật thứ nhất dài gấp đôi khoảng thời gian rơi của của vật thứ hai. Tỷ số các độ cao $\\frac{h_{1}}{h_{2}}$ là bao nhiêu?",
+  "solution": "Ta có $\\frac{h_{1}}{h_{2}}=\\frac{\\frac{g{t_{1}}^{2}}{2}}{\\frac{g{t_{2}}^{2}}{2}}=\\frac{{t_{1}}^{2}}{{t_{2}}^{2}}=\\frac{\\left( 2t_{2} \\right)^{2}}{{t_{2}}^{2}}=4.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 10,
+  "flags": [],
+  "stem": "Một vật rơi tự do tại một địa điểm có gia tốc rơi tự do $g = 10 m/s^{2}.$ Quãng đường vật rơi trong giây thứ $5$ bằng bao nhiêu mét?",
+  "solution": "Quãng đường vật rơi được sau $5 s$ $ s_{5}=\\frac{1}{2}gt^{2}=0,5.10.5^{2}=125 m.$\nQuãng đường vật rơi được sau $4 s$ $ s_{4}=\\frac{1}{2}gt^{2}=0,5.10.4^{2}=80 m.$\nQuãng đường vật rơi trong giây thứ 5 $\\Deltas_{5}=s_{5}-s_{4}=125-80=45 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 11,
+  "flags": [],
+  "stem": "Cho một vật rơi tự do từ độ cao h. Trong 2 s cuối cùng trước khi chạm đất, vật rơi được quãng đường 60 m. Lấy g = 10 m/s^2^. Độ cao h của vật lúc thả vật là bao nhiêu mét?",
+  "solution": "Gọi t là thời gian vật rơi cả quãng đường.\nQuãng đường vật rơi trong t giây $h=\\frac{1}{2}gt^{2}$\n\nQuãng đường vật rơi trong (t – 2) giây đầu tiên $h_{t-2}=\\frac{1}{2}g\\left( t-2 \\right)^{2}$\n\nQuãng đường vật rơi trong 2 giây cuối $\\Deltah=h-h_{t-2}\\Rightarrow60=\\frac{1}{2}gt^{2}-\\frac{1}{2}g\\left( t-2 \\right)^{2}\\Rightarrowt=4 s$\nĐộ cao lúc thả vật $h=\\frac{1}{2}gt^{2}=\\frac{1}{2}.10.4^{2}=80 m.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 12,
+  "flags": [],
+  "stem": "Một vật rơi tự do từ đỉnh một toà tháp. Quãng đường vật rơi được trong giây cuối cùng là 7h, trong đó h là quãng đường vật rơi được trong giây đầu tiên. Thời gian để vật chạm đất là bao nhiêu giây?",
+  "solution": "Giả sử vật chạm đất sau thời gian n giây thì\nQuãng đường vật rơi được trong giây thứ n (giây cuối) là $\\Deltas_{n}=\\frac{g}{2}\\left( 2n-1 \\right)$\nTương tự, quãng đường vật rơi được trong giây đầu tiên là $\\Deltas_{1}=\\frac{8}{2}\\left( 2.1-1 \\right)=\\frac{g}{2}$\n$\\Rightarrow\\frac{\\Deltas_{n}}{\\Deltas_{1}}=\\frac{\\frac{g}{2}\\left( 2n-1 \\right)}{\\frac{g}{2}}=2n-1=\\frac{7h}{h}\\Rightarrown=4 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 13,
+  "flags": [],
+  "stem": "Một vật rơi tự do, trong giây cuối cùng vật rơi được quãng đường bằng 45 m. Lấy $g=10 m/s^{2}.$ Thời gian rơi của vật là bao nhiêu giây?",
+  "solution": "Giả sử vật rơi hết quãng đường trong $n$ giây thì $ s_{n}=g\\frac{t^{2}}{2}=g\\frac{n^{2}}{2}$\nQuãng đường vật rơi được trong $\\left( n-1 \\right)$ giây là $ s_{n-1}=g\\frac{\\left( n-1 \\right)^{2}}{2_{}}$\nQuãng đường vật rơi được trong giây cuối (giây thứ $n$) là\n$\\Deltas_{n}=s_{n}-s_{n-1}=g\\frac{n^{2}}{2}-g\\frac{(n-1)^{2}}{2}=g\\left( n-\\frac{1}{2} \\right)$\nThay số $45=10\\left( n-\\frac{1}{2} \\right)\\Rightarrown=5 s$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 14,
+  "flags": [],
+  "stem": "Một vật rơi tự do, biết trong giây cuối cùng vật rơi được quãng đường bằng 25 m. Lấy $g=10 m/s^{2}.$ Quãng đường mà vật đã rơi là bao nhiêu mét?",
+  "solution": "Áp dụng công thức quãng đường vật rơi được trong giây cuối (giây thứ $n)$\n$\\Deltas_{n}=g\\left( n-\\frac{1}{2} \\right)\\Rightarrow25=10\\left( n-\\frac{1}{2} \\right)\\Rightarrown=3 s$\n$\\Rightarrows=g\\frac{t^{2}}{2}=g\\frac{n^{2}}{2}=10\\frac{3^{2}}{2}=45 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 15,
+  "flags": [],
+  "stem": "Một hòn đá thả rơi tự do từ đỉnh toà nhà 25 tầng nó chạm đất trong thời gian 5 s. Lấy $g=10 m/s^{2}.$ Trong giây đầu tiên hòn đá đã đi qua số tầng của toà nhà là bao nhiêu tầng?",
+  "solution": "Gọi chiều cao mỗi tầng nhà là $h$$\\Rightarrow25h=0+g\\frac{5^{2}}{2}\\Rightarrowh=5 m$\nGọi $n$ là số tầng trong giây đầu hòn đá rơi được $\\Rightarrown.5=g\\frac{1^{2}}{2}\\Rightarrown=1$ tầng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 16,
+  "flags": [],
+  "stem": "Một hòn đá rơi tự do từ cửa sổ một toà nhà cao tầng. Sau đó 1 s tại ban công phía dưới cách cửa sổ trên của toà nhà 20 m có một hoà đá khác cũng rơi tự do. Biết cả hai hòn đá cùng chạm đất đồng thời. Lấy $g=10 m/s^{2}.$ Chiều cao của cửa sổ toà nhà trên so với đất là bao nhiêu mét ?",
+  "solution": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{h}\\mathbf{=}\\mathit{g}\\frac{\\mathit{t}^{2}}{2} \\\\\n\\mathit{h}\\mathbf{-}20\\mathbf{=}\\mathit{g}\\frac{\\left( \\mathit{t}\\mathbf{-}1 \\right)^{2}}{2}\n\\end{array} \\right.\\$\n$\\Rightarrowt=2,5 s,h=31,25 m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 17,
+  "flags": [],
+  "stem": "Một vật rơi tự do trong giây cuối cùng rơi được ba phần tư độ cao rơi. Lấy $g=10 \\frac{m}{s^{2}}.$ Thời gian rơi là bao nhiêu giây?",
+  "solution": "Quãng đường đi được trong $t$ giây là $ s=\\frac{1}{2}gt^{2}=5t^{2}$\nQuãng đường đi được trong $t-1$ giây là $ s_{1}=\\frac{1}{2}gt_{1}^{2}=\\frac{1}{2}g\\left( t-1 \\right)^{2}=5\\left( t^{2}-2t+1 \\right)=5t^{2}-10t+5$\nQuãng đường đi được trong giây cuối là $\\Deltas=s-s_{1}=5t^{2}-\\left( 5t^{2}-10t+5 \\right)=10t-5$\n$\\mathbf{\\Leftrightarrow}\\frac{3}{4}.5\\mathit{t}^{2}\\mathbf{=}10\\mathit{t}\\mathbf{-}5\\mathbf{\\Leftrightarrow}\\frac{3}{4}.5\\mathit{t}^{2}\\mathbf{-}10\\mathit{t}\\mathbf{+}5\\mathbf{=}0\\mathbf{\\Rightarrow}\\left\\lbrack \\begin{array}{r}\n\\mathit{t}\\mathbf{=}2\\mathit{\\ s} \\\\\n\\mathit{t}\\mathbf{=}\\frac{2}{3}\\mathit{\\ s}\n\\end{array} \\right.\\$\nVì $t>1 s$ nên $ t=2 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 18,
+  "flags": [],
+  "stem": "Một vật rơi tự do tại nơi có gia tốc $g=10 m/s^{2},$ thời gian rơi là $4$ giây. Thời gian rơi $1 m$ cuối cùng là bao nhiêu giây? (kết quả làm tròn đến hai chữ số thập phân).",
+  "solution": "Quãng đường vật rơi được trong thời gian $4 s$ là $ h=\\frac{1}{2}gt^{2}=\\frac{1}{2}.10.4^{2}=80 m.$\nThời gian rơi từ khi thả vật đến khi vật rơi được $h_{1}=79 m$ là $ t_{1}=\\sqrt{\\frac{2h_{1}}{g}}=\\sqrt{\\frac{2.79}{10}}\\approx3,97 s.$\nThời gian rơi $1$ mét cuối cùng là $ t_{2}=t-t_{1}\\approx0,03 s.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 19,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một vật rơi tự do đi được $10 m$ cuối cùng của quãng đường trong khoảng thời gian $0,25 s.$ Cho $ g=9,8 m/s^{2}.$ Vận tốc của vật ngay trước khi chạm đất là bao nhiêu m/s? (kết quả làm tròn đến phần nguyên).",
+  "solution": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{\\mathit{d}}^{2}\\mathbf{-}\\mathit{v}_{\\mathit{h}}^{2}\\mathbf{=}2\\mathit{gh\\ \\ \\ }(1) \\\\\n\\mathit{v}_{\\mathit{d}}\\mathbf{=}\\mathit{v}_{\\mathit{h}}\\mathbf{+}\\mathit{gt\\ \\ \\ \\ \\ \\ }(2)\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\left( \\mathit{v}_{\\mathit{h}}\\mathbf{+}\\mathit{gt} \\right)^{2}\\mathbf{-}\\mathit{v}_{\\mathit{h}}^{2}\\mathbf{=}2\\mathit{gh}\\mathbf{\\Rightarrow}\\left( \\mathit{v}_{\\mathit{h}}\\mathbf{+}9,8.0,25 \\right)^{2}\\mathbf{-}\\mathit{v}_{\\mathit{h}}^{2}\\mathbf{=}2.10.10\\mathbf{\\Rightarrow}\\mathit{v}_{\\mathit{h}}\\mathbf{=}39,59\\mathit{\\ }m/s$\nThế $v_{h}=39,59 m/s$ vào $(2)\\Rightarrowv_{d}=v_{h}+gt=39,59+9,8.0,25\\approx42 m/s.$\n![A black background with a black square Description automatically generated with medium confidence](media/c2-7/media/image742.png){width=\"0.96333552055993in\" height=\"1.745003280839895in\"}",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c2-7",
+  "part": "sa",
+  "num": 20,
+  "flags": [],
+  "stem": "Quãng đường mà vật rơi tự do không vận tốc ban đầu đi được trong giây thứ tư kể từ lúc bắt đầu chuyển động là $y.$ Trong khoảng thời gian đó, tốc độ của vật đã tăng lên một lượng $\\Deltav.$ Lấy gia tốc rơi tự do $ g = 10 m/s^{2}.$ Độ lớn của $ y.\\Deltav$ là bao nhiêu $ m^{2}/s?$",
+  "solution": "Quãng đường rơi trong giây thứ 4 $y=s_{4}-s_{3}=\\frac{g}{2}\\left( 4^{2}-3^{2} \\right)=35 m.$\nTốc độ tăng trong giây thứ 4 $\\Deltav=gt_{4}–gt_{3}=4g–3g=g=10 m/s.$\n$\\Rightarrowy.\\Deltav=35.10=350 m^{2}/s.$",
+  "hasImg": false,
+  "imgs": []
+ }
+]

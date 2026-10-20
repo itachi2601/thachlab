@@ -9,7 +9,7 @@ import { SYSTEM, prompt, dbAnswer, khop, tachMuiTen, loiMuiTen, katexLoi } from 
 const L = fs.readFileSync(".env.local", "utf8").split("\n");
 const env = (k: string) => L.find((l) => l.startsWith(k + "="))!.slice(k.length + 1).trim();
 const anth = new Anthropic({ apiKey: env("ANTHROPIC_API_KEY") });
-const DIR = "scripts/data/nap-ngan-hang-vl10/", STATE = DIR + "batch-state.json";
+const DIR = (process.env.VL10_DIR ?? "scripts/data/nap-ngan-hang-vl10") + "/", STATE = DIR + "batch-state.json";
 const arg = (n: string) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split("=")[1];
 const MODELS: Record<string, { id: string; in: number; out: number }> = {
   haiku: { id: "claude-haiku-5-5", in: 0.05, out: 0.25 },
