@@ -5,8 +5,18 @@ TITLE = os.environ.get('VL10_TITLE', 'Chương III')
 H = os.environ.get('VL10_DIR') or os.path.dirname(os.path.abspath(__file__))
 cau = {q['key']: q for q in json.load(open(f'{H}/cau-bank.json'))}
 hk = {o['key']: o for o in json.load(open(f'{H}/ket-qua-haiku.json'))}
-sn = {o['key']: o for o in json.load(open(f'{H}/ket-qua.json')) if o['trangThai'] != 'chua-co-ket-qua'}
+sn = {o['key']: o for o in json.load(open(f'{H}/ket-qua.json')) if o['trangThai'] != 'chua-co-ket-qua'} if not os.environ.get('VL10_DO2') else {}
 rows = []
+if os.environ.get('VL10_DO2'):
+    # Duyệt SAU dò lần 2: nguon = đáp án đang ghi trong ngân hàng (cau-final), sonnet = Sonnet giải lại lần 2
+    fin = {q['key']: q for q in json.load(open(f'{H}/cau-final.json'))}
+    for o in json.load(open(f'{H}/do2-ket-qua.json')):
+        if o['kq'] == 'khop': continue
+        q = fin[o['key']]
+        rows.append({'key': o['key'], 'type': q['type'], 'q': q['question'], 'options': q.get('options'), 'statements': q.get('statements'),
+                     'nguon': o['final'], 'haiku': (hk.get(o['key']) or {}).get('giai'), 'sonnet': o.get('ai'), 'goc': q['gocLoiGiai'],
+                     'giaiAI': q.get('explanation', ''), 'lydo': 'Dò lần 2: ' + ('Sonnet giải lại LỆCH đáp án đang ghi' if o['kq'] == 'LECH' else 'Sonnet không trả được kết quả') + ' (cột Nguồn = đáp án đang ghi; Haiku = lượt giải đầu; Sonnet = lần 2)', 'ghiChuAI': ''})
+    cau = {}
 for k, q in cau.items():
     h = hk.get(k, {}); s = sn.get(k)
     if h.get('trangThai') == 'khop' or (s and s['trangThai'] == 'khop'): continue
@@ -15,7 +25,8 @@ for k, q in cau.items():
     rows.append({'key': k, 'type': q['type'], 'q': q['question'], 'options': q.get('options'), 'statements': q.get('statements'),
                  'nguon': (s or h).get('nguon'), 'haiku': h.get('giai'), 'sonnet': s.get('giai') if s else None,
                  'goc': q['gocLoiGiai'], 'giaiAI': (s or h).get('explanation', ''), 'lydo': lydo, 'ghiChuAI': ((s or h).get('ghi_chu') or '')})
-json.dump(rows, open(f'{H}/duyet/items.json', 'w'), ensure_ascii=False, indent=1)
+os.makedirs(f'{H}/duyet', exist_ok=True)
+json.dump(rows, open(f'{H}/duyet/items.json' if not os.environ.get('VL10_DO2') else f'{H}/duyet/items-do2.json', 'w'), ensure_ascii=False, indent=1)
 data = json.dumps({'rows': rows}, ensure_ascii=False).replace('<', '\\u003c')
 html = '''<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Duyệt câu VL10 __TITLE__</title>
@@ -42,7 +53,7 @@ details{margin-top:8px}summary{cursor:pointer;min-height:32px}
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 <script>
-const D=__DATA__;const KEY='duyet-vl10-__TITLE__';let fh=null,R={};
+const D=__DATA__;const KEY='duyet-vl10-__TITLE__'+(__DO2__?'-do2':'');let fh=null,R={};
 try{R=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 const L='ABCD',S='abcd';
 const fmt=a=>a==null?'—':Array.isArray(a)?a.map((v,i)=>S[i]+':'+(v?'Đ':'S')).join(' '):String(a);
@@ -69,7 +80,7 @@ document.getElementById('pick').onclick=async()=>{if(!window.showSaveFilePicker)
 fh=await showSaveFilePicker({suggestedName:'phan-hoi.json',types:[{description:'JSON',accept:{'application/json':['.json']}}]});save()};
 document.getElementById('dl').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(R,null,1)],{type:'application/json'}));a.download='phan-hoi.json';a.click()};
 window.addEventListener('load',()=>setTimeout(render,300));
-</script></body></html>'''.replace('__DATA__', data).replace('__TITLE__', TITLE)
-open(f'{H}/duyet/duyet.html', 'w', encoding='utf8').write(html)
+</script></body></html>'''.replace('__DATA__', data).replace('__TITLE__', TITLE).replace('__DO2__', 'true' if os.environ.get('VL10_DO2') else 'false')
+open(f'{H}/duyet/duyet.html' if not os.environ.get('VL10_DO2') else f'{H}/duyet/duyet-do2.html', 'w', encoding='utf8').write(html)
 from collections import Counter
 print(len(rows), Counter(r['lydo'] for r in rows))

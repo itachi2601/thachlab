@@ -6,10 +6,10 @@ import fs from "node:fs";
 const L = fs.readFileSync(".env.local", "utf8").split("\n");
 const key = L.find((l) => l.startsWith("ANTHROPIC_API_KEY="))!.slice(18).trim();
 const anth = new Anthropic({ apiKey: key });
-const DIR = "scripts/data/nap-ngan-hang-vl10/", STATE = DIR + "gan-nhan-state.json";
+const DIR = (process.env.VL10_DIR ?? "scripts/data/nap-ngan-hang-vl10") + "/", STATE = DIR + "gan-nhan-state.json";
 const daCo: Record<string, any> = fs.existsSync(DIR + "gan-nhan.json") ? JSON.parse(fs.readFileSync(DIR + "gan-nhan.json", "utf8")) : {};
 const cau: any[] = JSON.parse(fs.readFileSync(DIR + "cau-final.json", "utf8")).filter((q: any) => !daCo[q.key]); // chỉ câu chưa có nhãn hợp lệ
-const topics: any[] = JSON.parse(fs.readFileSync(DIR + "chu-de-lop10.json", "utf8")).topics;
+const topics: any[] = JSON.parse(fs.readFileSync("scripts/data/nap-ngan-hang-vl10/chu-de-lop10.json", "utf8")).topics;
 const strip = (s: string) => s.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 const body = (q: any) => `Loại: ${q.type}\nĐề: ${strip(q.question)}\n` + (q.options ? q.options.map((o: string, i: number) => "ABCD"[i] + ". " + strip(o)).join("\n") : "") + (q.statements ? q.statements.map((s: any, i: number) => "abcd"[i] + ") " + strip(s.text)).join("\n") : "");
 if (process.argv[2] === "nop") {

@@ -7,6 +7,11 @@ H = os.environ.get('VL10_DIR') or os.path.dirname(os.path.abspath(__file__))
 P = '<p class="text-base leading-relaxed my-2">'
 
 def inline(s):
+    # không đụng vào trong $...$ khi đổi ~sub~ / ^sup^
+    parts = re.split(r'(\$[^$]*\$)', s)
+    return ''.join(p if (p.startswith('$') and p.endswith('$') and len(p) > 1) else _inline(p) for p in parts).strip()
+
+def _inline(s):
     s = s.replace('\\\n', '\n')
     s = re.sub(r'\[([^\]]*)\]\{\.(?:mark|underline)\}', r'\1', s)
     s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s, flags=re.S)
@@ -15,7 +20,7 @@ def inline(s):
     s = re.sub(r'~([^~\s]+)~', r'$_{\1}$', s)
     s = re.sub(r'\^([^\^\s]+)\^', r'$^{\1}$', s)
     s = s.replace('<', '&lt;') if False else s
-    return s.strip()
+    return s
 
 def html(s):
     paras = [p for p in re.split(r'\n\s*\n', s.strip()) if p.strip()]

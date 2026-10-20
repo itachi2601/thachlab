@@ -7,11 +7,12 @@ import { execSync } from "node:child_process";
 const L = fs.readFileSync(".env.local", "utf8").split("\n");
 const env = (k: string) => L.find((l) => l.startsWith(k + "="))!.slice(k.length + 1).trim();
 const U = env("NEXT_PUBLIC_SUPABASE_URL"), K = env("SUPABASE_SERVICE_ROLE_KEY");
-const DIR = "scripts/data/nap-ngan-hang-vl10/", NOTE = "nap-vl10-c3-20261020";
+const DIR = (process.env.VL10_DIR ?? "scripts/data/nap-ngan-hang-vl10") + "/", NOTE = process.env.VL10_NOTE ?? "nap-vl10-c3-20261020";
 const final = new Map<string, any>(JSON.parse(fs.readFileSync(DIR + "cau-final.json", "utf8")).map((q: any) => [q.key, q]));
 const do2: any[] = JSON.parse(fs.readFileSync(DIR + "do2-ket-qua.json", "utf8"));
 const norm = (s: string) => s.replace(/<[^>]+>/g, "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").toLowerCase().replace(/[^a-z0-9]+/g, "");
 const sig = (q: any) => norm(String(q.question ?? "")).slice(0, 80) + "|" + norm((q.options ?? (q.statements ?? []).map((s: any) => s.text)).join("")).slice(0, 80);
+const suaND: Record<string, any> = fs.existsSync(DIR + "sua-noi-dung.json") ? JSON.parse(fs.readFileSync(DIR + "sua-noi-dung.json", "utf8")) : {};
 const bySig = new Map([...final].map(([k, q]) => [sig(q), k]));
 const r = await (await fetch(`${U}/rest/v1/question_bank?note=eq.${NOTE}&select=id,question,archived&order=id&limit=1000`, { headers: { apikey: K, Authorization: `Bearer ${K}` } })).json();
 const giu = new Set(do2.filter((o) => o.kq !== "khop" || o.flags.includes("khong-co-loi-giai")).map((o) => o.key));
@@ -22,6 +23,10 @@ const sql = ["begin;"]; const show: number[] = []; let sua = 0, khongKhop = 0;
 for (const row of r) {
   const key = bySig.get(sig(row.question)); if (!key) { khongKhop++; continue; }
   const q = JSON.parse(JSON.stringify(row.question));
+  const ov = suaND[key];
+  if (ov?.question) q.question = ov.question;
+  if (ov?.options) q.options = ov.options;
+  if (ov?.statements_text) q.statements = q.statements.map((st: any, i: number) => ({ ...st, text: ov.statements_text[i] }));
   q.question = fixMath(q.question); q.explanation = q.explanation ? fixMath(q.explanation) : q.explanation;
   if (q.options) q.options = q.options.map(fixTxt);
   if (q.statements) q.statements = q.statements.map((s: any) => ({ ...s, text: fixTxt(s.text) }));

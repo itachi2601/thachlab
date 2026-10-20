@@ -14,6 +14,7 @@ def clean_math(s):
             t = re.sub(r'\\mathit\{((?:[^{}]|\{[^{}]*\})*)\}', r'\1', t)
             t = re.sub(r'\\mathbf\{((?:[^{}]|\{[^{}]*\})*)\}', r'\1', t)
             t = re.sub(r'\\mathrm\{([^{}]*)\}', r'\\mathrm{\1}', t)
+        t = re.sub(r'\\(Delta|delta|leq|geq|alpha|beta|gamma|omega|Omega|pi|mu|theta|varphi|lambda|rho|sigma|tau|approx|cdot|times|neq|rightarrow|Rightarrow|uparrow|downarrow)(?=[A-Za-z])', r'\\\1 ', t)
         t = t.replace('\\ ', ' ')
         t = re.sub(r'\s+', ' ', t).strip()
         return '$' + t + '$'

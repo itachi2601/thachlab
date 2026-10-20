@@ -6,15 +6,18 @@ import fs from "node:fs";
 import { SYSTEM, prompt, khop, katexLoi } from "./lib/giai-lai-chung.mts";
 const L = fs.readFileSync(".env.local", "utf8").split("\n");
 const anth = new Anthropic({ apiKey: L.find((l) => l.startsWith("ANTHROPIC_API_KEY="))!.slice(18).trim() });
-const DIR = "scripts/data/nap-ngan-hang-vl10/", STATE = DIR + "do2-state.json";
+const DIR = (process.env.VL10_DIR ?? "scripts/data/nap-ngan-hang-vl10") + "/", STATE = DIR + "do2-state.json";
 const ghi: string[] = JSON.parse(fs.readFileSync(DIR + "ghi-bao-cao.json", "utf8")).ghi;
 const final = new Map<string, any>(JSON.parse(fs.readFileSync(DIR + "cau-final.json", "utf8")).map((q: any) => [q.key, q]));
 const strip = (s: string) => s.replace(/<[^>]+>/g, "").trim();
 const forP = (q: any) => ({ ...q, question: strip(q.question), options: q.options?.map(strip) });
+const prior: any[] = fs.existsSync(DIR + "do2-ket-qua.json") ? JSON.parse(fs.readFileSync(DIR + "do2-ket-qua.json", "utf8")) : [];
 if (process.argv[2] === "nop") {
-  const reqs = ghi.map((k) => ({ custom_id: k, params: { model: "claude-sonnet-5-5", max_tokens: 16000, output_config: { effort: "medium" }, system: SYSTEM, messages: [{ role: "user" as const, content: prompt(forP(final.get(k))) }] } as any }));
+  // --chi-thieu: chỉ nộp lại các câu lượt trước chưa có kết quả (lỗi parse/cắt cụt); thu sẽ GỘP với kết quả cũ
+  const ds = process.argv.includes("--chi-thieu") ? ghi.filter((k) => prior.find((o) => o.key === k)?.kq === "khong-co-ket-qua") : ghi;
+  const reqs = ds.map((k) => ({ custom_id: k, params: { model: "claude-sonnet-5-5", max_tokens: 32000, output_config: { effort: "medium" }, system: SYSTEM, messages: [{ role: "user" as const, content: prompt(forP(final.get(k))) }] } as any }));
   const b = await anth.messages.batches.create({ requests: reqs });
-  fs.writeFileSync(STATE, JSON.stringify({ batch_id: b.id, n: reqs.length })); console.log("Đã nộp", reqs.length, b.id);
+  fs.writeFileSync(STATE, JSON.stringify({ batch_id: b.id, n: reqs.length, keys: ds })); console.log("Đã nộp", reqs.length, b.id);
 } else {
   const st = JSON.parse(fs.readFileSync(STATE, "utf8"));
   for (;;) { const b = await anth.messages.batches.retrieve(st.batch_id); console.log(new Date().toLocaleTimeString(), b.processing_status, JSON.stringify(b.request_counts)); if (b.processing_status === "ended") break; await new Promise((r) => setTimeout(r, 30000)); }
@@ -25,7 +28,9 @@ if (process.argv[2] === "nop") {
     try { const t = r.result.message.content.filter((c: any) => c.type === "text").map((c: any) => c.text).join(""); ai[r.custom_id] = JSON.parse(t.slice(Math.max(0, t.search(/\{\s*"answer"/)), t.lastIndexOf("}") + 1)); } catch { ai[r.custom_id] = { loi: "parse" }; }
   }
   const out: any[] = [];
+  const trongLo = new Set<string>(st.keys ?? ghi);
   for (const k of ghi) {
+    if (!trongLo.has(k)) { out.push(prior.find((o) => o.key === k)); continue; }
     const q = final.get(k); const flags: string[] = [];
     const blob = JSON.stringify([q.question, q.options, q.statements, q.explanation]);
     if (q.type === "multiple_choice" && (q.options?.length !== 4 || !(q.answer >= 0 && q.answer < 4))) flags.push("cau-truc-MC");
