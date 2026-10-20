@@ -209,7 +209,11 @@ for d in (tn1, tn2, tn3, tn4, tn5):
             assert "gia_tri" in t
     assert all(len(h) == len(d["so_lieu_mau"]["cot"]) for h in d["so_lieu_mau"]["hang"])
     assert d["goi_y_mo_phong"]["loai"].split("+")[0] in {"2d_dong_hoc", "so_do_luc", "do_thi", "bang_so_lieu"}
-    (OUT / f"{d['id']}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf8")
+    _f = OUT / f"{d['id']}.json"  # giữ khối video đã chèn sau (chen-video-thi-nghiem.mts), đừng ghi đè
+    if "video" not in d and _f.exists():
+        _v = json.loads(_f.read_text(encoding="utf8")).get("video")
+        if _v: d["video"] = _v
+    _f.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf8")
     print("ghi", d["id"])
 print("bảng TN1:", rows1)
 print("bảng TN4:", rows4)

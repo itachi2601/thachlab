@@ -153,7 +153,11 @@ tn4 = {**BASE, "id": "tn-l10-biendang-04", "ten": "Cân treo ở chợ: lò xo d
                           "diem_nhan": "Bắt nhập dự đoán chiều dài khi treo 2 túi trước khi cho thả."}}
 
 for d in (tn1, tn2, tn3, tn4):
-    (OUT / f"{d['id']}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf8")
+    _f = OUT / f"{d['id']}.json"  # giữ khối video đã chèn sau (chen-video-thi-nghiem.mts), đừng ghi đè
+    if "video" not in d and _f.exists():
+        _v = json.loads(_f.read_text(encoding="utf8")).get("video")
+        if _v: d["video"] = _v
+    _f.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf8")
     print("ghi", d["id"])
 print("bảng TN2:", rows2, "k_tb =", round(k_tb, 2))
 assert re.search(r'data-exp="tn-l10-biendang-0[1-4]"', theory)

@@ -154,5 +154,9 @@ tn3 = dict(CHUNG, **{
 })
 
 for d in (tn1, tn2, tn3):
-    (OUT / f"{d['id']}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf8")
+    _f = OUT / f"{d['id']}.json"  # giữ khối video đã chèn sau (chen-video-thi-nghiem.mts), đừng ghi đè
+    if "video" not in d and _f.exists():
+        _v = json.loads(_f.read_text(encoding="utf8")).get("video")
+        if _v: d["video"] = _v
+    _f.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf8")
     print("ghi", d["id"])

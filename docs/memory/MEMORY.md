@@ -75,7 +75,7 @@
 - [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — trạng thái sửa chưa rõ
 - [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục ẩn, chờ gắn đề
 ## Giao diện & sản phẩm
-- [Lịch công tác tuần](project_thachlab_lich_tuan.md) — skill lich-tuan + /tai-khoan, mốc bài; thầy chạy cai-skill.sh
+- [Lịch công tác tuần](project_thachlab_lich_tuan.md) — skill lich-tuan + /tai-khoan; 19/10: tên thầy, ưu tiên công tác, cảnh báo nhờ xem hộ; chờ thầy chọn T6 23/10
 - [Chương trình DT 16/10](project_thachlab_dt_audit.md) — DT-01/03/04/07/12/16
 - [Rà soát giao diện 13/10](project_thachlab_ra_soat_giao_dien.md) — 10 điểm + 2 lỗi; phân công ở
 - [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
