@@ -3,7 +3,7 @@
 File dùng chung cho mọi phiên, **nạp mỗi phiên nên giữ dưới ~15 KB**: chỉ hiện trạng + việc ĐANG CHỜ. Xong mục nào → chuyển
 - Push thông báo (18/10): 2 migration (150000, 160000) + 2 Edge Function ĐÃ chạy/deploy. Cron `send-notification-push` ĐÃ đặt (jobid 6, mỗi phút trong khung 6–22h VN, active; kiểm 19/10). CÒN: thử điện thoại thật (web đã deploy 19/10 từ 53f8b3cfa: sw.js v5, chuông, PushOptInPrompt, độ sâu đọc, lịch tuần).
 - HSG9 đợt 4 (17/10): cả 6 CĐ (151/152/163/156/158/178) đã ghi DB (ẩn) + deploy; chờ thầy xem `/lop-hoc/bai/?id=…` rồi bật Hiện (bật xong deploy lại để có file tĩnh) — xem `docs/memory/project_thachlab_khoa_hsg9_vat_ly.md`.
-- AVCN giọng thợ cả (20/10): code xong (`data-tl-giong="nam"`, Guy, fallback máy chọn giọng nam; commit `d8e41ca4e`), Chapter 8 đã có nút nghe câu mở bài. CÒN: `.env.local` thiếu `AZURE_SPEECH_KEY` (mất 17/10) → sinh mp3 nam, `cap-nhat-ly-thuyet.sh … 175`, `deploy.sh`; chương 3/5/7 cũng có câu thoại thợ cả, thêm cùng lượt.
+- AVCN giọng thợ cả (20/10): XONG chương 8 — `data-tl-giong="nam"`, mp3 Guy `7775652f82.mp3`, ghi body_html bài 175 (item 356), deploy `db60e13`; nghe ở `/lop-hoc/bai/?id=175` mục I. CÒN: chương 3/5/7 cũng là câu thoại thợ cả, thêm `cau_noi` + `"giong":"nam"` rồi sinh mp3 cùng lượt (chương 1/10 là ghi chú giấy, 9 email khách, 4/6 không có thoại).
 nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầy đủ trước khi rút gọn nằm ở cuối `STATE-archive.md`
 (mục "Bản STATE.md trước khi rút gọn") — grep ở đó khi cần chi tiết một việc cũ.
 
