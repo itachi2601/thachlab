@@ -16,8 +16,8 @@ danh sách). Quiz: `dap` là chỉ số 0-based trong `lua_chon`; phản hồi k
 | `meta.boi_canh.cau_noi` | str | | Câu tiếng Anh của nhân vật trong tình huống (thợ cả) — build gắn nút 🔊 nghe lại đúng câu đó; thiếu thì không có nút |
 | `meta.boi_canh.giong` | `"nam"` | | Giọng đọc cho `cau_noi`: `"nam"` → mp3 giọng `AZURE_SPEECH_VOICE_NAM` (mặc định en-US-GuyNeural), manifest khoá `nam\|chuỗi`; thiếu = giọng nữ mặc định |
 | `meta.boi_canh.nhan_nghe` | str | | Nhãn dòng nghe, khai theo **vai người nói** (vd. "Nghe lại câu trong email của khách", "Nghe lại lời thợ cả dặn cạnh máy tiện"); thiếu = "Nghe lại đúng câu thợ cả nói" |
-| `meta.muc_tieu` | str[] | ✓ | 3 mục tiêu đo được, gắn Part |
-| `meta.de_thi` | [str,str,str][] | ✓ | 5 hàng: Part, đề hỏi gì, học ở mục nào — **không ghi số điểm** (tránh HS thấy bài học xoay quanh điểm) |
+| `meta.muc_tieu` | str[] | ✓ | 4 **chuẩn đầu ra kiến thức** của chương (hiểu/biết/phân biệt), viết theo nội dung bài; không gắn Part, không nhắc điểm hay cấu trúc đề |
+| `meta.de_thi` | [str,str,str][] | | 5 hàng: Part, đề hỏi gì, học ở mục nào — **dữ liệu nội bộ, không còn render** trong tab Học từ 20/10/2026 (bảng Part chỉ còn ở tab Bài mẫu); không ghi số điểm |
 | `khoi_dong` | obj[] (2) | ✓ | `{img, hoi, lua_chon[3], dap, fb_ok, fb_no}` — ảnh máy/dụng cụ quen ở xưởng |
 | `tu_vung` | obj[] (4) | ✓ | mỗi cụm `{ten, tu[5], quiz}`; `tu[i] = {term, ipa, vi, def, img|null, tier:1}`; `def` là định nghĩa kiểu Part 1 (mệnh đề danh từ ≤ 15 từ); `quiz` dạng Part 1 (4 lựa chọn) |
 | `tu_vung_them` | `{term, vi}[]` (≈12) | ✓ | từ ⭐⭐: bộ phận, từ mô tả; dùng cho mục gắn nhãn (`vi` tra theo `term`) |

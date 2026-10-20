@@ -95,13 +95,14 @@ def details(summary: str, inner: str, cls="tl-details") -> str:
     return f'<details class="{cls}"><summary>{summary}</summary>{inner}</details>'
 
 
-# ---------- Mục 0: thi gì ----------
+# ---------- Mục 0: tình huống + chuẩn đầu ra ----------
 def sec_thi() -> str:
-    rows = "".join(f"<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>" for a, b, c in M["de_thi"])
+    # Thầy chốt 20/10/2026: mục này chỉ còn CHUẨN ĐẦU RA KIẾN THỨC — không hiện bảng 5 Part,
+    # không nhắc cấu trúc đề/điểm trong tab Học (bảng Part nằm ở tab Bài mẫu). `meta.de_thi`
+    # vẫn giữ trong bai.json làm dữ liệu đối chiếu nội bộ, không render.
     muc_tieu = "".join(f"<li>{x}</li>" for x in M["muc_tieu"])
-    bang = details("Xem 5 Part của đề ứng với mục nào trong bài", f'<div class="table-scroll"><table class="tl-table avcn-tbl"><thead><tr><th>Part</th><th>Đề hỏi gì</th><th>Học ở mục</th></tr></thead><tbody>{rows}</tbody></table></div>')
     bc = M.get("boi_canh")
-    if bc:  # mở bài bằng tình huống ở xưởng; mục tiêu + đề thi thu vào mục gập
+    if bc:  # mở bài bằng tình huống ở xưởng; chuẩn đầu ra thu vào mục gập
         # Câu tiếng Anh của nhân vật trong tình huống (thợ cả / khách / tờ ghi chú): nghe lại đúng câu đó.
         # `nhan_nghe` khai theo vai người nói — chương nào nhân vật không phải thợ cả thì đừng ghi "thợ cả".
         nhan = bc.get("nhan_nghe") or "Nghe lại đúng câu thợ cả nói"
@@ -110,11 +111,11 @@ def sec_thi() -> str:
         return (f'<h3>{ROMAN[0]}. {bc["tieu_de"]}</h3>'
                 + think("🔧 Tình huống ở xưởng", f'<p>{bc["tinh_huong"]}</p>{nghe}')
                 + f'<p><strong>Hôm nay em sẽ:</strong> {bc["viec_can_lam"]}</p>'
-                + details("Mục tiêu bài và đề cuối kỳ", f'<p>Học xong chương này em cần:</p><ul>{muc_tieu}</ul>'
-                          '<p>Đề cuối kỳ có 5 Part; ba Part đầu chỉ cần <strong>nhận ra từ</strong> và <strong>tìm lại câu trong bài đọc</strong>.</p>' + bang))
-    return (f'<h3>{ROMAN[0]}. Chương này học gì cho đề cuối kỳ?</h3>'
-            f'<p>Đề cuối kỳ luôn có 5 Part. Ba Part đầu chỉ cần <strong>nhận ra từ</strong> và <strong>tìm lại câu trong bài đọc</strong>. Học xong chương này em cần:</p>'
-            f'<ul>{muc_tieu}</ul>' + bang)
+                + details("Chuẩn đầu ra của chương",
+                          f'<p>Sau chương này, em hiểu và nắm được:</p><ul>{muc_tieu}</ul>'))
+    return (f'<h3>{ROMAN[0]}. Chương này học gì?</h3>'
+            f'<p>Sau chương này, em hiểu và nắm được:</p>'
+            f'<ul>{muc_tieu}</ul>')
 
 
 # ---------- Mục 1: đoán ----------
