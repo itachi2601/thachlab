@@ -1075,6 +1075,12 @@ const QuestionRow = memo(function QuestionRow({
   const aiState: AiFigState | undefined =
     ai ?? (q.aiFigure && (q.aiFigure.svg || q.aiFigure.reason) && missingFigure ? { ...q.aiFigure } : undefined);
   const topicKnown = topicGroups.some(({ parent, outcomes }) => parent.name === q.topicName || outcomes.some((o) => o.name === q.topicName));
+  // Hình AI nạp qua <img data:...> thay vì dangerouslySetInnerHTML: SVG nạp bằng <img> thì trình duyệt không
+  // chạy script/sự kiện bên trong. Chuỗi rỗng hoặc không phải chuỗi thì không dựng ảnh.
+  const aiSvgSrc =
+    typeof aiState?.svg === "string" && aiState.svg.trim()
+      ? `data:image/svg+xml;charset=utf-8,${encodeURIComponent(aiState.svg)}`
+      : null;
 
   return (
     <article
@@ -1123,13 +1129,16 @@ const QuestionRow = memo(function QuestionRow({
           </button>
         </div>
       )}
-      {aiState?.svg && !aiState.busy && (
+      {aiSvgSrc && !aiState?.busy && (
         <div className="mt-2 rounded-xl border border-primary/40 bg-primary/5 p-3">
           <p className="mb-1 text-[12px] font-semibold text-primary">
-            {aiState.freeform ? "Hình AI vẽ tự do (không phải đồ thị hàm số) — xem thật kĩ rồi mới lưu" : "Đồ thị vẽ từ thông số AI đưa ra — đối chiếu số liệu rồi mới lưu"}
+            {aiState?.freeform ? "Hình AI vẽ tự do (không phải đồ thị hàm số) — xem thật kĩ rồi mới lưu" : "Đồ thị vẽ từ thông số AI đưa ra — đối chiếu số liệu rồi mới lưu"}
           </p>
-          <div className="rounded-lg bg-white/95 p-2 text-slate-900" dangerouslySetInnerHTML={{ __html: aiState.svg }} />
-          {aiState.summary && <p className="mt-2 text-xs text-slate-300">{aiState.summary}</p>}
+          <div className="rounded-lg bg-white/95 p-2 text-slate-900">
+            {/* eslint-disable-next-line @next/next/no-img-element -- SVG AI dạng data URI, next/image không tối ưu được */}
+            <img src={aiSvgSrc} alt="Hình minh hoạ" className="block h-auto w-full" />
+          </div>
+          {aiState?.summary && <p className="mt-2 text-xs text-slate-300">{aiState.summary}</p>}
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <button type="button" onClick={onAcceptAi} className={`${btnCls} border-emerald-500/50 text-emerald-200`}>
               <Check size={14} /> Dùng hình này
