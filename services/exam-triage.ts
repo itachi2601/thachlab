@@ -20,7 +20,7 @@ export function triageKey(q: ExamQuestion): string {
   return t;
 }
 
-export type TriageReason = "figure" | "context";
+export type TriageReason = "figure" | "context" | "image";
 
 export interface TriageResult {
   /** Chỉ số (0-based) câu ổn. */
@@ -31,7 +31,16 @@ export interface TriageResult {
   review: { index: number; reasons: TriageReason[] }[];
 }
 
-export function triageQuestions(questions: ExamQuestion[]): TriageResult {
+/** Placeholder ảnh trần "media/…" (chưa là URL đã tải lên) chưa khai báo trong raster_images. */
+export function undeclaredMedia(q: ExamQuestion, declared: Set<string>): string[] {
+  const out: string[] = [];
+  for (const m of JSON.stringify(q).matchAll(/(?<!lesson-)\bmedia\/[\w./-]+/g)) {
+    if (!declared.has(m[0]) && !out.includes(m[0])) out.push(m[0]);
+  }
+  return out;
+}
+
+export function triageQuestions(questions: ExamQuestion[], declared: Set<string> = new Set()): TriageResult {
   const seen = new Map<string, number>();
   const res: TriageResult = { ok: [], duplicates: [], review: [] };
   questions.forEach((q, i) => {
@@ -45,6 +54,7 @@ export function triageQuestions(questions: ExamQuestion[]): TriageResult {
     const reasons: TriageReason[] = [];
     if (isMissingFigure(q)) reasons.push("figure");
     if (dependsOnOtherQuestion(q)) reasons.push("context");
+    if (undeclaredMedia(q, declared).length) reasons.push("image");
     if (reasons.length) res.review.push({ index: i, reasons });
     else res.ok.push(i);
   });

@@ -185,20 +185,31 @@ export function validateBundle(input: unknown): BundleCheck {
 
   // placeholder chưa thay hết
   const examQs = isRecord(exam) && Array.isArray(exam.questions) ? exam.questions : [];
-  const allHtml = [
-    theory,
-    ...worked.map((w) => (isRecord(w) ? String(w.body_html ?? "") : "")),
-    // Ảnh trong câu hỏi (\includegraphics trong đề .tex, ảnh Word) cũng phải được khai báo.
-    JSON.stringify(examQs),
-  ].join("\n");
   const declared = new Set(imgs.map((i) => (isRecord(i) ? String(i.placeholder) : "")));
   // (?<!lesson-) loại chuỗi con "media/…" nằm trong URL đã tải lên thật (bucket "lesson-media",
   // vd ".../lesson-media/132/....png") — chỉ những đề vừa dán/sửa (chưa qua Đăng) mới còn placeholder
   // trần "media/…" thật sự chưa khai báo trong raster_images.
-  for (const m of allHtml.matchAll(/(?<!lesson-)\bmedia\/[\w./-]+/g)) {
-    if (!declared.has(m[0]))
-      check.errors.push(`Còn placeholder ảnh chưa khai báo trong raster_images: "${m[0]}".`);
-  }
+  // Báo kèm vị trí (câu số mấy + đầu đề câu) để người duyệt biết câu nào cần sửa.
+  const mediaRe = /(?<!lesson-)\bmedia\/[\w./-]+/g;
+  const reported = new Set<string>();
+  const scan = (html: string, where: string) => {
+    for (const m of html.matchAll(mediaRe)) {
+      if (declared.has(m[0])) continue;
+      const key = `${where}|${m[0]}`;
+      if (reported.has(key)) continue;
+      reported.add(key);
+      check.errors.push(`${where}: còn placeholder ảnh chưa khai báo trong raster_images: "${m[0]}".`);
+    }
+  };
+  scan(theory, "Lý thuyết");
+  worked.forEach((w, i) => scan(isRecord(w) ? String(w.body_html ?? "") : "", `Dạng bài ${i + 1}`));
+  // Ảnh trong câu hỏi (\includegraphics trong đề .tex, ảnh Word) cũng phải được khai báo.
+  examQs.forEach((q, i) => {
+    const raw = JSON.stringify(q);
+    const stem = isRecord(q) ? String(q.question ?? q.text ?? q.content ?? "") : "";
+    const snippet = stem.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim().slice(0, 50);
+    scan(raw, `Câu ${i + 1}${snippet ? ` ("${snippet}…")` : ""}`);
+  });
 
   check.ok = check.errors.length === 0;
   return check;

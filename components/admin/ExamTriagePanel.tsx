@@ -2,11 +2,12 @@
 
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import type { ExamQuestion } from "@/features/exams/types";
-import type { TriageResult } from "@/services/exam-triage";
+import { undeclaredMedia, type TriageResult } from "@/services/exam-triage";
 
 const REASON: Record<string, string> = {
   figure: "Thiếu hình",
   context: "Phụ thuộc câu khác",
+  image: "Ảnh chưa khai báo",
 };
 
 /**
@@ -18,11 +19,14 @@ export function ExamTriagePanel({
   triage,
   include,
   onToggle,
+  declared = new Set<string>(),
 }: {
   questions: ExamQuestion[];
   triage: TriageResult;
   include: Set<number>;
   onToggle: (index: number, on: boolean) => void;
+  /** Placeholder ảnh đã khai báo trong raster_images — để nêu đích danh tên ảnh thiếu ở từng câu. */
+  declared?: Set<string>;
 }) {
   const { ok, duplicates, review } = triage;
   if (!questions.length) return null;
@@ -51,6 +55,11 @@ export function ExamTriagePanel({
                   ))}
                   <span className="ml-auto text-slate-300">Vẫn đăng</span>
                 </label>
+                {reasons.includes("image") && (
+                  <p className="mb-1 text-red-200">
+                    Ảnh thiếu: {undeclaredMedia(questions[index], declared).map((m) => `"${m}"`).join(", ")}
+                  </p>
+                )}
                 <ContentHtml html={questions[index].question} className="max-h-40 overflow-y-auto text-slate-200" />
               </li>
             ))}

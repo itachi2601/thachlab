@@ -180,7 +180,11 @@ export default function AzotaExamComposer() {
   const questions = useMemo(() => examBundle?.exam.questions ?? [], [examBundle]);
   // Phân loại câu: ổn / trùng (tự loại) / cần duyệt (thiếu hình, phụ thuộc câu khác — để riêng, mặc định không đăng).
   // Câu lỗi không còn chặn cả đề. Lựa chọn "Vẫn đăng" gắn với đúng bundle đang xem: đổi file là chọn lại.
-  const triage = useMemo(() => triageQuestions(questions), [questions]);
+  const declaredMedia = useMemo(
+    () => new Set((examBundle?.raster_images ?? []).map((r) => r.placeholder)),
+    [examBundle],
+  );
+  const triage = useMemo(() => triageQuestions(questions, declaredMedia), [questions, declaredMedia]);
   const [includeState, setIncludeState] = useState<{ bundle: LessonBundle | null; set: Set<number> }>({
     bundle: null,
     set: new Set(),
@@ -545,7 +549,7 @@ export default function AzotaExamComposer() {
           </ul>
         )}
 
-        <ExamTriagePanel questions={questions} triage={triage} include={include} onToggle={toggleInclude} />
+        <ExamTriagePanel questions={questions} triage={triage} include={include} onToggle={toggleInclude} declared={declaredMedia} />
 
         <div className="flex flex-wrap items-center gap-3">
           <button
