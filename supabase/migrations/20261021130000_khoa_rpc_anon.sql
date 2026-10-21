@@ -35,7 +35,11 @@ create policy "staff or owner reads milling attempts" on public.cnc_milling_quiz
   for select to anon, authenticated
   using (public.is_staff() or student_id = auth.uid());
 
+-- Hàm MỚI về sau không tự mở cho anon nữa (hàm cần anon phải `grant execute ... to anon` tường minh trong migration của nó).
+alter default privileges for role postgres in schema public revoke execute on functions from public, anon;
+
 -- ROLLBACK:
 --   grant execute on all functions in schema public to public, anon, authenticated;  -- trở về mặc định cũ
 --   drop policy "staff or owner reads milling attempts" on public.cnc_milling_quiz_attempts;
+--   alter default privileges for role postgres in schema public grant execute on functions to public, anon;
 --   create policy "classroom reads live milling attempts" on public.cnc_milling_quiz_attempts for select to anon, authenticated using (true);

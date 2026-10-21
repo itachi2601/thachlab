@@ -65,6 +65,7 @@ FILES=(
   "supabase/migrations/20261018133000_phu_dao_khong_mo_lai_muc_da_dong.sql|Sửa ngưỡng phụ đạo: mục đã đóng (kể cả đạt bài tự kiểm tra) chỉ mở lại khi có đề kiểm tra mới; khôi phục mục bị mở lại nhầm (có rollback)|lúc nào cũng được"
   "supabase/migrations/20261020190000_avcn_tach_10_chuong.sql|AVCN: tách 1 chương 10 bài thành 10 chương, mỗi chương đúng 1 bài (chỉ dữ liệu, idempotent)|lúc nào cũng được"
   "supabase/migrations/20261021120000_on_tap_theo_chang.sql|Buổi ôn tập theo chặng: bảng review_sessions + 6 hàm review_* (thầy/trợ giảng điều phối, học sinh xem chặng; chỉ thêm mới)|lúc nào cũng được"
+  "supabase/migrations/20261021130000_khoa_rpc_anon.sql|Rà bảo mật: thu quyền anon khỏi ~23 hàm definer nội bộ, siết đọc cnc_milling_quiz_attempts, hàm mới mặc định không mở anon (có rollback; thử quiz CNC của HS chưa đăng nhập sau khi chạy)|ngoài giờ HS làm quiz CNC"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
