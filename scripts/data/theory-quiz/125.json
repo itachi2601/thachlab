@@ -1,386 +1,532 @@
 {
-  "lesson_id": 125,
-  "lesson_title": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
-  "item_id": 143,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 125,
+ "lesson_title": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+ "item_id": 143,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 10
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Trong máy phát điện xoay chiều, phần cảm là bộ phận:",
-      "options": [
-        "luôn luôn là bộ phận quay",
-        "luôn luôn là bộ phận đứng yên",
-        "tạo ra từ trường (thường là nam châm)",
-        "sinh suất điện động cảm ứng (cuộn dây)"
-      ],
-      "answer": 2,
-      "explanation": "Bẫy 3 của bài: tên gọi dựa vào nhiệm vụ; phần cảm tạo từ trường, phần ứng là cuộn dây sinh suất điện động, cả hai đều có thể là rô-to hoặc stato."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Vành khuyên và chổi quét chỉ cần dùng khi:",
-      "options": [
-        "phần ứng (cuộn dây) quay, để đưa dòng ra mạch ngoài",
-        "nam châm quay còn cuộn dây đứng yên",
-        "máy phát là máy ba pha",
-        "máy biến áp nối với nguồn một chiều"
-      ],
-      "answer": 0,
-      "explanation": "Nếu nam châm quay, cuộn dây đứng yên thì lấy điện trực tiếp từ hai đầu cuộn dây; chỉ khi phần ứng quay mới cần vành khuyên và chổi quét."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điều nào đúng với máy biến áp lí tưởng?",
-      "options": [
-        "Sinh thêm công suất khi tăng điện áp",
-        "Đổi cả điện áp lẫn tần số của dòng điện",
-        "Cho suất điện động ở cuộn thứ cấp cả với nguồn một chiều không đổi",
-        "Không đổi tần số và không sinh thêm điện năng"
-      ],
-      "answer": 3,
-      "explanation": "Bài nêu máy biến áp không đổi tần số, không sinh thêm điện năng: $U$ tăng bao nhiêu lần thì $I$ giảm bấy nhiêu lần."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lõi máy biến áp được ghép từ nhiều lá thép silic mỏng, sơn cách điện giữa các lá nhằm:",
-      "options": [
-        "tạo thêm điện năng cho cuộn thứ cấp",
-        "giảm dòng Fu-cô làm nóng lõi vô ích",
-        "tăng điện trở của cuộn sơ cấp",
-        "đổi tần số của dòng điện"
-      ],
-      "answer": 1,
-      "explanation": "Dòng Fu-cô chạy trong khối thép làm lõi nóng lên vô ích; lá mỏng cách điện chỉ còn diện tích nhỏ nên dòng xoáy yếu hẳn."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Vì sao đường dây truyền tải điện được đẩy lên điện áp rất cao như 500 kV?",
-      "options": [
-        "Để sinh thêm điện năng",
-        "Để giảm hao phí toả nhiệt trên dây dẫn",
-        "Để giữ cho dòng điện trên dây không đổi chiều",
-        "Để tăng tần số cho động cơ quay nhanh hơn"
-      ],
-      "answer": 1,
-      "explanation": "Với cùng công suất, dòng trên dây $I = P/U$ nhỏ khi $U$ lớn, mà hao phí $\\Delta P = RI^2$ nên giảm mạnh."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét các phát biểu về máy phát điện xoay chiều ba pha:",
-      "statements": [
-        {
-          "text": "Ba suất điện động có cùng tần số.",
-          "answer": true
-        },
-        {
-          "text": "Ba suất điện động có cùng biên độ.",
-          "answer": true
-        },
-        {
-          "text": "Ba suất điện động lệch pha nhau $\\dfrac{2\\pi}{3}$ từng đôi một.",
-          "answer": true
-        },
-        {
-          "text": "Ba cuộn dây trên stato đặt lệch nhau $90^\\circ$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Ba cuộn dây giống nhau đặt lệch $120^\\circ$ (tức $\\frac{2\\pi}{3}$) trên stato nên ba suất điện động chỉ khác nhau ở pha."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét các phát biểu về máy biến áp:",
-      "statements": [
-        {
-          "text": "Máy biến áp hoạt động theo cảm ứng điện từ.",
-          "answer": true
-        },
-        {
-          "text": "Nối cuộn sơ cấp với nguồn một chiều không đổi thì cuộn thứ cấp có suất điện động.",
-          "answer": false
-        },
-        {
-          "text": "Máy biến áp lí tưởng có hiệu suất $H = 1$.",
-          "answer": true
-        },
-        {
-          "text": "Tăng điện áp bằng máy biến áp cũng làm tăng tần số.",
-          "answer": false
-        }
-      ],
-      "explanation": "Nguồn một chiều không đổi cho từ thông không biến thiên nên thứ cấp không có suất điện động; máy biến áp không đổi tần số."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ba cuộn dây của máy phát ba pha lệch pha nhau bao nhiêu độ?",
-      "answer": "120",
-      "explanation": "Bài nêu ba suất điện động lệch pha $\\frac{2\\pi}{3}$, tức $120^\\circ$ từng đôi một."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Một vòng quay của rô-to có 2 cặp cực ứng với bao nhiêu chu kì của dòng điện?",
-      "answer": "2",
-      "explanation": "Bảng so sánh ở bẫy 2: rô-to 2 cặp cực, một vòng quay cho 2 chu kì (nên $f = np$)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lưới ba pha mắc hình sao có mấy dây pha (chưa kể dây trung hoà)?",
-      "answer": "3",
-      "explanation": "Bài nêu lưới ba pha mắc hình sao gồm ba dây pha và một dây trung hoà."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Rô-to có $p$ cặp cực quay $n$ vòng/phút. Tần số dòng điện là:",
-      "options": [
-        "$f = 60np$",
-        "$f = np$",
-        "$f = \\dfrac{n}{60p}$",
-        "$f = \\dfrac{np}{60}$"
-      ],
-      "answer": 3,
-      "explanation": "Bài nêu $f = np$ với $n$ tính bằng vòng/s; đề cho vòng/phút thì $f = \\dfrac{np}{60}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Suất điện động cực đại của khung $N$ vòng, diện tích $S$ quay đều với tốc độ góc $\\omega$ trong từ trường $B$ là:",
-      "options": [
-        "$E_0 = NBS\\omega$",
-        "$E_0 = NB\\omega$",
-        "$E_0 = BS\\omega$",
-        "$E_0 = NBS/\\omega$"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu $E_0 = NBS\\omega$; ba phương án nhiễu lần lượt chia cho $\\omega$, thiếu $S$, thiếu $N$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hệ thức đúng cho máy biến áp lí tưởng là:",
-      "options": [
-        "$\\dfrac{U_1}{U_2} = \\dfrac{N_2}{N_1} = \\dfrac{I_2}{I_1}$",
-        "$U_1N_1 = U_2N_2$",
-        "$\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2} = \\dfrac{I_2}{I_1}$",
-        "$\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2} = \\dfrac{I_1}{I_2}$"
-      ],
-      "answer": 2,
-      "explanation": "Bài nêu $\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2} = \\dfrac{I_2}{I_1}$: điện áp tỉ lệ với số vòng, dòng điện tỉ lệ nghịch."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Máy biến áp lí tưởng có $N_1 = 1000$ vòng, $N_2 = 250$ vòng, $U_1 = 220\\ \\text{V}$. Điện áp thứ cấp là:",
-      "options": [
-        "$220\\ \\text{V}$",
-        "$880\\ \\text{V}$",
-        "$5{,}5\\ \\text{V}$",
-        "$55\\ \\text{V}$"
-      ],
-      "answer": 3,
-      "explanation": "$U_2 = U_1\\dfrac{N_2}{N_1} = 220 \\times \\dfrac{250}{1000} = 55\\ \\text{V}$; 880 V là viết ngược tỉ số."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Với cùng công suất truyền đi, tăng điện áp nơi phát lên 20 lần thì hao phí trên đường dây giảm:",
-      "options": [
-        "20 lần",
-        "400 lần",
-        "200 lần",
-        "40 lần"
-      ],
-      "answer": 1,
-      "explanation": "$\\Delta P = RP^2/U^2$ nên tăng $U$ lên $k$ lần thì hao phí giảm $k^2 = 400$ lần (bài mẫu câu 6)."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Rô-to có 4 cặp cực quay 750 vòng/phút. Xét các phát biểu:",
-      "statements": [
-        {
-          "text": "Tốc độ quay là $n = 12{,}5$ vòng/s.",
-          "answer": true
-        },
-        {
-          "text": "Tần số dòng điện là $50\\ \\text{Hz}$.",
-          "answer": true
-        },
-        {
-          "text": "Tần số dòng điện là $3000\\ \\text{Hz}$.",
-          "answer": false
-        },
-        {
-          "text": "Rô-to 2 cặp cực muốn có cùng tần số $50\\ \\text{Hz}$ phải quay $25$ vòng/s.",
-          "answer": true
-        }
-      ],
-      "explanation": "$n = 750/60 = 12{,}5$ vòng/s, $f = 12{,}5 \\times 4 = 50$ Hz; 3000 là lỗi quên chia 60; với $p = 2$ thì $n = 50/2 = 25$ vòng/s."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Tổ máy phát $20\\ \\text{kW}$, đường dây điện trở $R = 2\\ \\Omega$, $\\cos\\varphi \\approx 1$. Xét các phát biểu:",
-      "statements": [
-        {
-          "text": "Truyền ở $500\\ \\text{V}$ thì dòng trên dây là $40\\ \\text{A}$.",
-          "answer": true
-        },
-        {
-          "text": "Truyền ở $500\\ \\text{V}$ thì hao phí là $3200\\ \\text{W}$.",
-          "answer": true
-        },
-        {
-          "text": "Truyền ở $5000\\ \\text{V}$ thì hao phí là $320\\ \\text{W}$.",
-          "answer": false
-        },
-        {
-          "text": "Truyền ở $500\\ \\text{V}$ thì hiệu suất truyền tải là $84\\%$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ở 500 V: $I = 40$ A, $\\Delta P = 2\\times 40^2 = 3200$ W, $H = 1 - 3200/20000 = 84\\%$; ở 5000 V: $I = 4$ A, $\\Delta P = 32$ W."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Rô-to 4 cặp cực quay 900 vòng/phút. Tần số dòng điện là bao nhiêu Hz?",
-      "answer": "60",
-      "explanation": "$n = 900/60 = 15$ vòng/s nên $f = np = 15 \\times 4 = 60$ Hz."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Máy biến áp lí tưởng: $U_1 = 220\\ \\text{V}$, $I_1 = 2\\ \\text{A}$, $U_2 = 44\\ \\text{V}$. Cường độ $I_2$ bằng bao nhiêu A?",
-      "answer": "10",
-      "explanation": "$\\dfrac{I_2}{I_1} = \\dfrac{U_1}{U_2} = 5$ nên $I_2 = 5 \\times 2 = 10$ A."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Truyền $P = 100\\ \\text{kW}$ ở $U = 5\\ \\text{kV}$ trên dây $R = 5\\ \\Omega$. Hao phí là bao nhiêu W?",
-      "answer": "2000",
-      "explanation": "$I = 10^5/5000 = 20$ A, $\\Delta P = RI^2 = 5 \\times 400 = 2000$ W (mục ⭐⭐⭐ Thách đấu)."
-    }
+  "removed": [
+   {
+    "question": "Máy phát điện xoay chiều một pha cần dùng hai vành khuyên và chổi quét khi",
+    "reason": "nghi_ngo: Phương án D (nam châm là stato) kéo theo cuộn dây là rô-to, tức phần ứng quay, nên cũng phải dùng vành khuyên; nhiễu này thực ra cũng đúng, câu có hai đáp án."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong máy phát điện xoay chiều, phần cảm là bộ phận có nhiệm vụ",
+   "options": [
+    "tạo ra từ trường",
+    "sinh ra suất điện động cảm ứng",
+    "đưa dòng điện ra mạch ngoài",
+    "biến đổi điện áp xoay chiều"
+   ],
+   "answer": 0,
+   "explanation": "Theo mục II.2, phần cảm (nam châm) tạo ra từ trường. Phần ứng (cuộn dây) mới là bộ phận sinh ra suất điện động cảm ứng.",
+   "distractorNotes": {
+    "B": "Nhầm phần cảm với phần ứng: sinh suất điện động cảm ứng là nhiệm vụ của cuộn dây phần ứng.",
+    "C": "Gán nhiệm vụ của vành khuyên và chổi quét cho phần cảm, trong khi phần cảm chỉ tạo ra từ trường.",
+    "D": "Lẫn máy phát điện với máy biến áp: biến đổi điện áp xoay chiều là việc của máy biến áp."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khung dây quay đều trong từ trường đều quanh trục vuông góc với $\\vec{B}$. Trong khung xuất hiện suất điện động xoay chiều vì",
+   "options": [
+    "từ thông qua khung luôn có độ lớn cực đại",
+    "từ thông qua khung biến thiên tuần hoàn",
+    "điện trở của khung biến thiên tuần hoàn",
+    "diện tích của khung biến thiên tuần hoàn"
+   ],
+   "answer": 1,
+   "explanation": "Góc giữa pháp tuyến và $\\vec{B}$ là $\\alpha = \\omega t + \\varphi$ nên $\\Phi = NBS\\cos\\alpha$ biến thiên tuần hoàn và sinh suất điện động cảm ứng xoay chiều. Từ thông lớn nhưng không đổi thì không sinh suất điện động.",
+   "distractorNotes": {
+    "A": "Nhầm độ lớn từ thông với sự biến thiên của nó: từ thông lớn mà không đổi thì không sinh suất điện động.",
+    "C": "Điện trở khung không đổi và chỉ ảnh hưởng cường độ dòng, không phải nguyên nhân sinh suất điện động.",
+    "D": "Khung cứng nên diện tích $S$ không đổi; đại lượng biến thiên là góc giữa pháp tuyến và $\\vec{B}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Máy biến áp là thiết bị dùng để",
+   "options": [
+    "biến đổi cơ năng thành điện năng",
+    "biến đổi cả điện áp lẫn tần số",
+    "biến đổi dòng xoay chiều thành một chiều",
+    "biến đổi điện áp xoay chiều, giữ tần số"
+   ],
+   "answer": 3,
+   "explanation": "Máy biến áp đổi mức điện áp xoay chiều, không đổi tần số và không sinh thêm điện năng (mục II.4). Biến cơ năng thành điện năng là việc của máy phát điện.",
+   "distractorNotes": {
+    "A": "Nhầm máy biến áp với máy phát điện: biến cơ năng thành điện năng là việc của máy phát.",
+    "B": "Tưởng máy biến áp đổi cả tần số, trong khi nó chỉ đổi mức điện áp và giữ nguyên tần số.",
+    "C": "Nhầm với bộ chỉnh lưu: máy biến áp nhận dòng xoay chiều và cho ra dòng xoay chiều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lõi máy biến áp được ghép từ nhiều lá thép silic mỏng, sơn cách điện với nhau. Mục đích của cách ghép này là",
+   "options": [
+    "tăng từ thông rò ra ngoài lõi",
+    "tăng tần số của dòng thứ cấp",
+    "giảm dòng Fu-cô làm nóng lõi",
+    "giảm số vòng của cuộn sơ cấp"
+   ],
+   "answer": 2,
+   "explanation": "Từ thông biến thiên sinh ra dòng Fu-cô trong khối thép làm lõi nóng vô ích. Ghép từ các lá mỏng cách điện thì dòng xoáy yếu hẳn.",
+   "distractorNotes": {
+    "A": "Đảo mục đích: từ thông rò làm $U_2$ thấp hơn lí thuyết nên cần hạn chế, không phải tăng lên.",
+    "B": "Tưởng cấu tạo lõi đổi được tần số, trong khi máy biến áp không làm thay đổi tần số dòng điện.",
+    "D": "Số vòng cuộn sơ cấp do cách quấn dây quyết định, không liên quan đến việc ghép lõi từ các lá mỏng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ba suất điện động do máy phát điện xoay chiều ba pha tạo ra có đặc điểm nào sau đây?",
+   "options": [
+    "cùng biên độ, khác tần số, lệch pha $\\frac{2\\pi}{3}$",
+    "cùng tần số, cùng biên độ, lệch pha $\\frac{2\\pi}{3}$",
+    "cùng tần số, cùng biên độ, lệch pha $\\frac{\\pi}{2}$",
+    "cùng tần số, khác biên độ, cùng pha nhau"
+   ],
+   "answer": 1,
+   "explanation": "Ba cuộn dây giống nhau đặt lệch $\\frac{2\\pi}{3}$ trên stato, rô-to quay đều nên ba suất điện động cùng tần số, cùng biên độ và chỉ lệch pha nhau $\\frac{2\\pi}{3}$.",
+   "distractorNotes": {
+    "A": "Ba cuộn cùng chịu một rô-to quay đều nên tần số của ba suất điện động phải như nhau.",
+    "C": "Nhầm góc lệch: ba cuộn đặt lệch $120^\\circ$ nên suất điện động lệch pha $\\frac{2\\pi}{3}$, không phải $\\frac{\\pi}{2}$.",
+    "D": "Ba cuộn giống nhau nên cùng biên độ, và vì đặt lệch $120^\\circ$ nên không thể cùng pha."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Trước khi truyền tải điện năng đi xa, người ta dùng máy tăng áp để",
+   "options": [
+    "sinh thêm điện năng trên đường dây",
+    "tăng tần số của dòng điện truyền đi",
+    "giữ cho dòng điện không đổi chiều",
+    "giảm hao phí toả nhiệt trên dây dẫn"
+   ],
+   "answer": 3,
+   "explanation": "Với cùng công suất, điện áp càng cao thì dòng $I = P/U$ càng nhỏ, nên hao phí $\\Delta P = RI^2$ giảm. Máy biến áp không sinh thêm điện năng và không đổi tần số.",
+   "distractorNotes": {
+    "A": "Tưởng máy biến áp sinh thêm điện năng, vi phạm bảo toàn năng lượng; thực tế $U$ tăng thì $I$ giảm, $UI$ không đổi.",
+    "B": "Tưởng máy tăng áp đổi tần số, trong khi máy biến áp giữ nguyên tần số dòng điện.",
+    "C": "Dòng trên đường dây vẫn là dòng xoay chiều; máy biến áp không biến dòng xoay chiều thành dòng một chiều."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một máy phát điện xoay chiều một pha trong nhà máy có rô-to là nam châm quay, stato là các cuộn dây đứng yên. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Phần ứng của máy là các cuộn dây, vì chúng sinh ra suất điện động cảm ứng.",
+     "answer": true
+    },
+    {
+     "text": "Ở mọi máy phát, phần cảm luôn là rô-to còn phần ứng luôn là stato.",
+     "answer": false
+    },
+    {
+     "text": "Máy phát này biến đổi cơ năng thành điện năng.",
+     "answer": true
+    },
+    {
+     "text": "Máy này phải dùng vành khuyên và chổi quét để lấy điện ra mạch ngoài.",
+     "answer": false
+    }
+   ],
+   "explanation": "Tên phần cảm, phần ứng dựa vào nhiệm vụ, mỗi phần đều có thể là rô-to hoặc stato nên ý b sai. Cuộn dây đứng yên thì lấy điện trực tiếp, không cần vành khuyên nên ý d sai.",
+   "distractorNotes": {
+    "0": "Phần ứng được gọi theo nhiệm vụ sinh suất điện động, và ở máy này cuộn dây làm đúng nhiệm vụ đó.",
+    "1": "Khái quát sai từ một máy: tên gọi theo nhiệm vụ, có máy cho khung dây phần ứng quay làm rô-to.",
+    "2": "Máy phát nhận cơ năng để làm quay rô-to rồi chuyển thành điện năng, nên phát biểu không thể sai.",
+    "3": "Vành khuyên chỉ cần khi phần ứng quay; ở máy này cuộn dây đứng yên nên lấy điện trực tiếp."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một học sinh tự quấn máy biến áp. Cuộn sơ cấp 200 vòng nối nguồn xoay chiều 12 V. Học sinh thay đổi số vòng cuộn thứ cấp rồi đo $U_2$ bằng vôn kế xoay chiều. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Tăng số vòng cuộn thứ cấp thì $U_2$ đo được tăng.",
+     "answer": true
+    },
+    {
+     "text": "$U_2$ đo được hơi thấp hơn giá trị tính toán, một phần do từ thông rò và điện trở cuộn dây.",
+     "answer": true
+    },
+    {
+     "text": "Khi cuộn thứ cấp nhiều vòng hơn cuộn sơ cấp, máy sinh ra thêm điện năng.",
+     "answer": false
+    },
+    {
+     "text": "Thay bằng nguồn một chiều 12 V không đổi thì vôn kế vẫn chỉ giá trị $U_2$ như cũ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Máy biến áp chỉ đổi điện áp, không sinh thêm điện năng: $U$ tăng thì $I$ giảm. Với nguồn một chiều không đổi, từ thông trong lõi không biến thiên nên cuộn thứ cấp không có suất điện động.",
+   "distractorNotes": {
+    "0": "$U_2 = U_1 N_2/N_1$ tỉ lệ thuận với $N_2$, nên tăng số vòng thứ cấp thì $U_2$ chắc chắn tăng.",
+    "1": "$U_2$ đo được thấp hơn lí thuyết là đúng do từ thông rò và sụt áp trên điện trở cuộn dây.",
+    "2": "Nhầm tăng điện áp với tăng năng lượng: $U$ tăng thì $I$ giảm tương ứng, công suất ra không vượt $P_1$.",
+    "3": "Nguồn một chiều không đổi cho từ thông không biến thiên, nên cuộn thứ cấp không có suất điện động và vôn kế chỉ 0."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: ba cuộn dây giống nhau quấn lệch nhau $120^\\circ$ trên một vòng nhựa, mỗi cuộn nối với một đèn LED. Cho nam châm quay đều, chậm ở tâm vòng. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Ba đèn lần lượt sáng mạnh nhất vì ba suất điện động lệch pha nhau một phần ba chu kì.",
+     "answer": true
+    },
+    {
+     "text": "Ba suất điện động có tần số khác nhau vì ba cuộn dây đặt ở ba vị trí khác nhau.",
+     "answer": false
+    },
+    {
+     "text": "Mô hình này giống máy phát ba pha: stato gồm ba cuộn dây, rô-to là nam châm quay.",
+     "answer": true
+    },
+    {
+     "text": "Ba suất điện động có biên độ khác nhau, cuộn nào có suất điện động trước thì biên độ lớn nhất.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ba cuộn giống nhau và cùng chịu một rô-to quay đều, nên ba suất điện động cùng tần số và cùng biên độ, chỉ lệch pha $\\frac{2\\pi}{3}$. Vì vậy ý b và ý d sai.",
+   "distractorNotes": {
+    "0": "Ba cuộn lệch $120^\\circ$ nên từ thông lần lượt cực đại qua từng cuộn, cách nhau một phần ba chu kì; phát biểu đúng.",
+    "1": "Nhầm lệch vị trí với khác tần số: cùng một nam châm quay đều nên mọi cuộn có cùng tần số.",
+    "2": "Mô hình có đúng cấu tạo máy phát ba pha: ba cuộn đứng yên lệch $120^\\circ$, nam châm quay ở giữa.",
+    "3": "Nhầm thứ tự pha với biên độ: ba cuộn giống nhau, cùng một nam châm nên biên độ bằng nhau, chỉ lệch pha."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Khung dây $N$ vòng, diện tích $S$, quay đều với tốc độ góc $\\omega$ trong từ trường đều $B$, trục quay vuông góc với $\\vec{B}$. Biên độ suất điện động cảm ứng là",
+   "options": [
+    "$E_0 = \\frac{NBS}{\\omega}$",
+    "$E_0 = NBS\\omega$",
+    "$E_0 = BS\\omega$",
+    "$E_0 = NBS\\omega^2$"
+   ],
+   "answer": 1,
+   "explanation": "Biểu thức suất điện động là $e = E_0\\cos(\\omega t + \\varphi')$ với $E_0 = NBS\\omega$. Khung quay càng nhanh thì $E_0$ càng lớn.",
+   "distractorNotes": {
+    "A": "Đảo tỉ lệ với $\\omega$: khung quay nhanh hơn thì từ thông biến thiên nhanh hơn, $E_0$ phải tăng chứ không giảm.",
+    "C": "Quên số vòng $N$: mỗi vòng góp một suất điện động, $N$ vòng nối tiếp nên biên độ phải nhân $N$.",
+    "D": "Bình phương thừa $\\omega$: lấy đạo hàm từ thông theo thời gian chỉ nhân thêm một lần $\\omega$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Rô-to của một máy phát có $p$ cặp cực, quay với tốc độ $n$ vòng/s. Tần số dòng điện do máy phát ra là",
+   "options": [
+    "$f = np$",
+    "$f = \\frac{n}{p}$",
+    "$f = 2np$",
+    "$f = \\frac{p}{n}$"
+   ],
+   "answer": 0,
+   "explanation": "Theo mục II.2, $f = np$ với $n$ tính bằng vòng/s và $p$ là số cặp cực. Viết $f = 2np$ là lỗi lấy số cực thay cho số cặp cực.",
+   "distractorNotes": {
+    "B": "Đảo tỉ lệ với $p$: thêm cặp cực thì mỗi vòng quay cho nhiều chu kì hơn, tần số tăng chứ không giảm.",
+    "C": "Lấy số cực thay cho số cặp cực, trong khi $p$ trong công thức đã là số cặp cực.",
+    "D": "Đảo cả hai đại lượng: $f$ tỉ lệ thuận với tốc độ quay $n$, quay nhanh thì tần số lớn hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Giữ nguyên tốc độ quay của rô-to, thay rô-to 1 cặp cực bằng rô-to 2 cặp cực. Tần số dòng điện do máy phát ra",
+   "options": [
+    "giảm còn một nửa",
+    "không thay đổi",
+    "tăng lên gấp đôi",
+    "tăng lên gấp bốn"
+   ],
+   "answer": 2,
+   "explanation": "Theo $f = np$, giữ $n$ không đổi mà $p$ tăng gấp đôi thì $f$ tăng gấp đôi. Rô-to 2 cặp cực quay một vòng cho 2 chu kì.",
+   "distractorNotes": {
+    "A": "Đảo chiều phụ thuộc: $f = np$ tỉ lệ thuận với $p$, nhiều cặp cực hơn thì tần số tăng.",
+    "B": "Coi $f = n$, bỏ qua số cặp cực, trong khi rô-to 2 cặp cực quay một vòng cho 2 chu kì.",
+    "D": "Áp quy luật bình phương sai chỗ: $f$ tỉ lệ bậc nhất với $p$ nên chỉ tăng gấp đôi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ thức nào sau đây đúng với máy biến áp lí tưởng?",
+   "options": [
+    "$\\frac{U_1}{U_2} = \\frac{N_1}{N_2} = \\frac{I_1}{I_2}$",
+    "$\\frac{U_1}{U_2} = \\frac{N_2}{N_1} = \\frac{I_2}{I_1}$",
+    "$\\frac{U_1}{U_2} = \\frac{N_2}{N_1} = \\frac{I_1}{I_2}$",
+    "$\\frac{U_1}{U_2} = \\frac{N_1}{N_2} = \\frac{I_2}{I_1}$"
+   ],
+   "answer": 3,
+   "explanation": "Cuộn có nhiều vòng thì điện áp lớn, nên $\\frac{U_1}{U_2} = \\frac{N_1}{N_2}$. Công suất không đổi nên dòng điện tỉ lệ nghịch với điện áp: $\\frac{U_1}{U_2} = \\frac{I_2}{I_1}$.",
+   "distractorNotes": {
+    "A": "Quên dòng điện tỉ lệ nghịch với điện áp: công suất bảo toàn nên $I_1/I_2 = U_2/U_1$.",
+    "B": "Đảo tỉ số vòng: cuộn nhiều vòng hơn có điện áp lớn hơn, nên $U_1/U_2 = N_1/N_2$.",
+    "C": "Đảo cả tỉ số vòng lẫn tỉ số dòng, trong khi $U$ tỉ lệ thuận với $N$ còn $I$ tỉ lệ nghịch với $U$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đặt $k = \\frac{N_1}{N_2}$. Máy biến áp lí tưởng là máy tăng áp khi",
+   "options": [
+    "$k \\lt 1$, nên $U_2 \\gt U_1$",
+    "$k \\gt 1$, nên $U_2 \\gt U_1$",
+    "$k \\lt 1$, nên $U_2 \\lt U_1$",
+    "$k \\gt 1$, nên $U_2 \\lt U_1$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $\\frac{U_1}{U_2} = k$: nếu $k \\lt 1$ thì $U_2 \\gt U_1$, đó là máy tăng áp. Nếu $k \\gt 1$ thì đó là máy hạ áp.",
+   "distractorNotes": {
+    "B": "Từ $U_1/U_2 = k \\gt  1$ chỉ suy ra được $U_1 \\gt  U_2$, không thể có $U_2 \\gt  U_1$; suy luận sai từ tỉ số.",
+    "C": "Với $k \\lt  1$ phải có $U_2 \\gt  U_1$; lỗi là viết ngược bất đẳng thức khi đọc tỉ số $U_1/U_2$.",
+    "D": "Suy luận về điện áp đúng nhưng trường hợp này là máy hạ áp, tức nhầm điều kiện tăng áp với hạ áp."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Truyền đi cùng một công suất trên cùng một đường dây. Nếu tăng điện áp nơi phát lên gấp đôi thì công suất hao phí trên dây",
+   "options": [
+    "giảm 2 lần",
+    "giảm 4 lần",
+    "tăng 4 lần",
+    "không đổi"
+   ],
+   "answer": 1,
+   "explanation": "$I = P/U$ giảm 2 lần, mà $\\Delta P = RI^2$ nên hao phí giảm $2^2 = 4$ lần. Chọn \"giảm 2 lần\" là lỗi quên bình phương.",
+   "distractorNotes": {
+    "A": "Quên bình phương: dòng giảm 2 lần nhưng $\\Delta P = RI^2$ nên hao phí giảm $2^2 = 4$ lần.",
+    "C": "Nhầm chiều: tăng $U$ thì $I = P/U$ giảm nên hao phí giảm, không tăng.",
+    "D": "Tưởng hao phí không phụ thuộc điện áp, trong khi $\\Delta P = RP^2/U^2$ phụ thuộc mạnh vào $U$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công suất $P$ được truyền đi ở điện áp $U$ nơi phát ($\\cos\\varphi = 1$) trên đường dây có điện trở $R$. Công suất hao phí trên dây là",
+   "options": [
+    "$\\Delta P = \\frac{RP}{U^2}$",
+    "$\\Delta P = \\frac{RU^2}{P^2}$",
+    "$\\Delta P = \\frac{RP^2}{U^2}$",
+    "$\\Delta P = \\frac{RP^2}{U}$"
+   ],
+   "answer": 2,
+   "explanation": "Ta có $I = P/U$ và $\\Delta P = RI^2$, suy ra $\\Delta P = \\frac{RP^2}{U^2}$ (mục II.5).",
+   "distractorNotes": {
+    "A": "Quên bình phương $P$: vì $I = P/U$ nên $I^2 = P^2/U^2$, cả tử và mẫu đều bình phương.",
+    "B": "Viết ngược tỉ số: dòng trên dây là $I = P/U$, không phải $U/P$.",
+    "D": "Quên bình phương $U$ ở mẫu khi thay $I = P/U$ vào $\\Delta P = RI^2$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nối một máy phát mini có rô-to hai cặp cực với tần số kế. Quay đều rô-to với tốc độ $n$ từ 5 đến 25 vòng/s và ghi tần số $f$ đo được. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Tỉ số $f/n$ đo được xấp xỉ bằng 2, đúng bằng số cặp cực $p$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu tốc độ quay cho theo vòng/phút thì tần số tính bằng $f = \\frac{np}{60}$.",
+     "answer": true
+    },
+    {
+     "text": "Tăng tốc độ quay lên gấp đôi thì tần số đo được giảm một nửa.",
+     "answer": false
+    },
+    {
+     "text": "Đại lượng $p$ trong $f = np$ là tổng số cực của nam châm, ở đây $p = 4$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Theo $f = np$, $f$ tỉ lệ thuận với $n$ nên ý c sai. $p$ là số cặp cực ($p = 2$), không phải số cực, nên ý d sai.",
+   "distractorNotes": {
+    "0": "Tần số tỉ lệ thuận với tốc độ quay, $f/n = p = 2$; độ lệch nhỏ khi đo chỉ là sai số, nên phát biểu đúng.",
+    "1": "Công thức $f = np$ cần $n$ tính theo vòng/s, nên với vòng/phút phải chia 60; phát biểu đúng.",
+    "2": "Đảo tỉ lệ: $f = np$ tỉ lệ thuận với $n$, quay nhanh gấp đôi thì tần số gấp đôi.",
+    "3": "Nhầm số cực với số cặp cực: rô-to hai cặp cực có $p = 2$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một máy biến áp lí tưởng tăng điện áp từ 220 V lên 22 kV. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Điện áp tăng 100 lần nên cường độ dòng điện hiệu dụng giảm 100 lần.",
+     "answer": true
+    },
+    {
+     "text": "Công suất ở cuộn thứ cấp bằng công suất ở cuộn sơ cấp: $P_1 = P_2$.",
+     "answer": true
+    },
+    {
+     "text": "Tần số dòng điện ở cuộn thứ cấp lớn gấp 100 lần ở cuộn sơ cấp.",
+     "answer": false
+    },
+    {
+     "text": "Hiệu suất máy biến áp tính bằng $H = \\frac{U_1I_1\\cos\\varphi_1}{U_2I_2\\cos\\varphi_2}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Máy biến áp không đổi tần số nên ý c sai. Hiệu suất là $H = \\frac{P_2}{P_1} = \\frac{U_2I_2\\cos\\varphi_2}{U_1I_1\\cos\\varphi_1}$, ý d đã viết ngược tử và mẫu.",
+   "distractorNotes": {
+    "0": "Máy lí tưởng giữ tích $UI$ không đổi, nên điện áp tăng 100 lần thì dòng hiệu dụng giảm đúng 100 lần.",
+    "1": "Máy lí tưởng bỏ qua hao phí nên $H = 1$, tức $P_2 = P_1$; phát biểu không thể coi là sai.",
+    "2": "Tưởng máy biến áp đổi tần số theo tỉ số điện áp, trong khi tần số ở hai cuộn như nhau.",
+    "3": "Đảo tử và mẫu: hiệu suất là công suất ra chia công suất vào, tức $P_2/P_1$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 14. Máy phát điện xoay chiều. Máy biến áp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một tổ máy phát công suất $P$ ở điện áp 500 V. Máy được nối vào cuộn sơ cấp 500 vòng của một máy biến áp lí tưởng, còn đường dây có điện trở $R$ nối vào cuộn thứ cấp 5000 vòng. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Máy biến áp này là máy tăng áp vì $k = \\frac{N_1}{N_2} \\lt 1$.",
+     "answer": true
+    },
+    {
+     "text": "Điện áp đưa lên dây tăng 10 lần nên dòng điện trên dây giảm 10 lần.",
+     "answer": true
+    },
+    {
+     "text": "So với khi không dùng máy biến áp, hao phí trên dây giảm 10 lần.",
+     "answer": false
+    },
+    {
+     "text": "Dòng điện trên dây được tính bằng $I = \\frac{U}{R}$, với $U$ là điện áp nơi phát.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hao phí $\\Delta P = RI^2$ tỉ lệ với bình phương dòng điện, nên giảm $10^2 = 100$ lần chứ không phải 10 lần. Dòng trên dây là $I = P/U$; $U$ là điện áp nơi phát, không phải độ sụt áp trên dây, nên không dùng $U/R$.",
+   "distractorNotes": {
+    "0": "$k = 500/5000 = 0{,}1 \\lt  1$ nên $U_2 \\gt  U_1$, đúng là máy tăng áp.",
+    "1": "$U_2 = 5000$ V gấp 10 lần; cùng công suất nên $I = P/U$ giảm đúng 10 lần.",
+    "2": "Quên bình phương: $\\Delta P = RI^2$, dòng giảm 10 lần thì hao phí giảm 100 lần.",
+    "3": "Nhầm điện áp nơi phát với độ sụt áp trên dây: dòng trên dây là $I = P/U$, không phải $U/R$."
+   }
+  }
+ ]
 }

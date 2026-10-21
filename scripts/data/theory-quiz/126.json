@@ -1,362 +1,520 @@
 {
-  "lesson_id": 126,
-  "lesson_title": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
-  "item_id": 145,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 9
-    },
-    "removed": [
-      {
-        "question": "Bảng đo thời gian rơi của nam châm: ống nhựa $0{,}25;\\ 0{,}24;\\ 0{,}26$ s, ống đồng $1{,}8;\\ 2{,}1;\\ 1{,}9$ s. Các phát biểu sau đúng hay sai?",
-        "reason": "Ý 'độ lệch lớn nhất so với trung bình của ống đồng là 0,2 s' phụ thuộc làm tròn: trung bình đúng 1,933 s cho độ lệch 0,17 s, chỉ ra 0,2 s khi dùng 1,9 s đã làm tròn; đáp án đúng/sai không duy nhất."
-      }
-    ]
+ "lesson_id": 126,
+ "lesson_title": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+ "item_id": 145,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 10
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Đàn guitar điện, sạc không dây và bếp từ cùng dựa vào điều kiện chung nào?",
-      "options": [
-        "Nhiệt của mặt bếp biến đổi trực tiếp thành điện",
-        "Nam châm vĩnh cửu đặt thật gần vật cần nạp năng lượng",
-        "Từ thông qua mạch hoặc khối vật dẫn biến thiên theo thời gian",
-        "Sóng Wi-Fi mang năng lượng sang các thiết bị"
-      ],
-      "answer": 2,
-      "explanation": "Cả ba thiết bị đều cần từ thông biến thiên để có suất điện động cảm ứng hoặc dòng Foucault."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Thay dây thép của đàn guitar điện bằng dây nylon, gảy cùng cách. Tín hiệu vào loa thế nào?",
-      "options": [
-        "To hơn, vì dây nylon nhẹ nên rung mạnh hơn",
-        "Không đổi, vì nam châm trong cuộn vẫn còn",
-        "Gần như mất, vì dây nylon không bị từ hoá nên từ thông qua cuộn gần như không đổi",
-        "Đổi sang dòng một chiều, vì dây nylon cách điện"
-      ],
-      "answer": 2,
-      "explanation": "Pickup chỉ cho tín hiệu khi từ thông đổi; dây nylon không nhiễm từ nên không làm từ thông đổi."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Máy biến áp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sạc không dây cho điện thoại cần cuộn trong đế sạc nối với nguồn nào, và vì sao?",
-      "options": [
-        "Nguồn nào cũng được, miễn hai cuộn đặt sát nhau",
-        "Điện một chiều, vì pin chỉ nạp được bằng dòng một chiều",
-        "Điện xoay chiều, vì chỉ dòng biến thiên mới làm từ thông qua cuộn trong máy biến thiên liên tục",
-        "Điện một chiều ổn định, vì dòng không đổi tạo từ trường mạnh nhất"
-      ],
-      "answer": 2,
-      "explanation": "Sạc không dây hoạt động như máy biến áp có khe hở: cần dòng xoay chiều ở cuộn sơ cấp."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vì sao nam châm rơi trong ống đồng chậm hơn trong ống nhựa cùng kích thước?",
-      "options": [
-        "Dòng Foucault trong thành đồng sinh lực từ hãm nam châm",
-        "Ống đồng nặng hơn nên kéo nam châm xuống chậm hơn",
-        "Đồng hút nam châm nên nam châm bị dính vào thành ống",
-        "Không khí trong ống đồng đặc hơn nên cản mạnh hơn"
-      ],
-      "answer": 0,
-      "explanation": "Thành đồng dẫn điện nên có dòng Foucault; theo Lenz, lực từ chống lại chuyển động của nam châm. Nhựa không dẫn điện nên không có dòng đó."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Nồi nào nấu sôi được trên bếp từ thông thường?",
-      "options": [
-        "Nồi gang mà nam châm dính được vào đáy",
-        "Nồi đồng",
-        "Nồi nhôm đáy dày",
-        "Nồi thuỷ tinh"
-      ],
-      "answer": 0,
-      "explanation": "Đáy nhiễm từ gom từ trường vào đáy, dòng Foucault lớn sinh nhiệt ngay trong đáy nồi; nhôm, đồng không nhiễm từ, thuỷ tinh không dẫn điện."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vì sao lõi động cơ và lõi máy biến áp được ghép từ các lá tôn silic mỏng, cách điện với nhau?",
-      "options": [
-        "Để tăng dòng Foucault giúp lõi nóng lên nhanh",
-        "Để cắt vòng xoáy của dòng Foucault, giảm toả nhiệt có hại",
-        "Để lõi chuyển động nhanh hơn trong từ trường",
-        "Để lõi nhẹ hơn mà từ trường không xuyên qua được"
-      ],
-      "answer": 1,
-      "explanation": "Lớp cách điện chặn dòng chạy ngang qua nhiều lá, vòng xoáy nhỏ đi nên nhiệt Joule giảm."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về pickup của đàn guitar điện, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Mỗi cuộn dây có nam châm nằm trong cuộn, đặt dưới dây thép.",
-          "answer": true
-        },
-        {
-          "text": "Đoạn dây thép sát nam châm bị từ hoá.",
-          "answer": true
-        },
-        {
-          "text": "Khi dây rung, từ thông qua cuộn thay đổi và sinh dòng cảm ứng cùng tần số với dây.",
-          "answer": true
-        },
-        {
-          "text": "Nếu dây giữ yên trong lúc nam châm vẫn nằm trong cuộn thì vẫn có dòng cảm ứng ổn định đưa vào loa.",
-          "answer": false
-        }
-      ],
-      "explanation": "Dòng chỉ xuất hiện khi từ thông biến thiên do dây rung; dây và nam châm đứng yên thì từ thông không đổi."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe đang chạy dùng phanh Foucault (nam châm một chiều kẹp đĩa kim loại). Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Đĩa quay trong từ trường thì có dòng Foucault và lực hãm.",
-          "answer": true
-        },
-        {
-          "text": "Năng lượng cơ bị mất chuyển thành nhiệt trên đĩa.",
-          "answer": true
-        },
-        {
-          "text": "Xe đã dừng hẳn thì phanh Foucault vẫn giữ xe vì nam châm còn bật.",
-          "answer": false
-        },
-        {
-          "text": "Phanh tái sinh trả điện về pin, khác với phanh Foucault biến điện năng thành nhiệt.",
-          "answer": true
-        }
-      ],
-      "explanation": "Lực hãm Foucault chỉ có khi đĩa đang chuyển động; đứng yên thì từ thông không đổi. Giữ xe lúc đỗ cần phanh ma sát."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Dòng Foucault được sinh ra trong khối kim loại bằng mấy cách (khối chuyển động trong từ trường; khối đặt trong từ trường biến thiên)? Điền số.",
-      "answer": "2",
-      "explanation": "Bài nêu hai cách: khối chuyển động trong từ trường, hoặc khối nằm trong từ trường biến thiên theo thời gian."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Dây đàn guitar điện rung với tần số 440 Hz. Dòng cảm ứng trong cuộn có tần số bao nhiêu Hz?",
-      "answer": "440",
-      "explanation": "Dòng cảm ứng trong pickup có cùng tần số với dây rung."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Từ thông qua một vòng dây là $\\Phi=2\\cdot10^{-4}\\cos(1{,}6\\cdot10^{5}t)$ Wb. Biên độ suất điện động $e_0$ bằng",
-      "options": [
-        "$320$ V",
-        "$32$ V",
-        "$3{,}2$ V",
-        "$22{,}6$ V"
-      ],
-      "answer": 1,
-      "explanation": "$e=-\\Phi'$ nên $e_0=\\Phi_0\\omega=2\\cdot10^{-4}\\cdot1{,}6\\cdot10^{5}=32$ V."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Công suất toả nhiệt trung bình trên vòng dây điện trở $r$ có suất điện động biên độ $e_0$ được tính đúng bằng",
-      "options": [
-        "$P=e_0^2/r$",
-        "$P=e_0/(r\\sqrt{2})$",
-        "$P=E\\cdot r$ với $E=e_0/\\sqrt{2}$",
-        "$P=E^2/r$ với $E=e_0/\\sqrt{2}$"
-      ],
-      "answer": 3,
-      "explanation": "Công suất trung bình dùng giá trị hiệu dụng: $E=e_0/\\sqrt{2}$, $P=E^2/r$. Thay thẳng $e_0$ vào $P$ sẽ ra gấp đôi."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vẫn $\\Phi=2\\cdot10^{-4}\\cos(1{,}6\\cdot10^{5}t)$ Wb nhưng $r=1{,}00\\ \\Omega$. Công suất trung bình trên vòng là",
-      "options": [
-        "$1024$ W",
-        "$256$ W",
-        "$2048$ W",
-        "$512$ W"
-      ],
-      "answer": 3,
-      "explanation": "$e_0$ và $E$ không đổi, $P=E^2/r$ tỉ lệ nghịch với $r$ nên $1024$ W giảm còn $512$ W."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Với $\\omega=1{,}6\\cdot10^{5}$ rad/s, tần số của từ thông $f=\\omega/(2\\pi)$ gần bằng",
-      "options": [
-        "$1{,}0\\cdot10^{6}$ Hz",
-        "$1{,}6\\cdot10^{5}$ Hz",
-        "$5{,}1\\cdot10^{4}$ Hz",
-        "$2{,}5\\cdot10^{4}$ Hz"
-      ],
-      "answer": 3,
-      "explanation": "$f=\\omega/(2\\pi)=1{,}6\\cdot10^{5}/6{,}28\\approx2{,}5\\cdot10^{4}$ Hz, đúng vùng tần số bếp từ."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Bài toán mẫu: $\\Phi=2\\cdot10^{-4}\\cos(1{,}6\\cdot10^{5}t)$ Wb, $r=0{,}50\\ \\Omega$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$e_0=\\Phi_0\\omega=32$ V.",
-          "answer": true
-        },
-        {
-          "text": "Suất điện động hiệu dụng $E=32$ V.",
-          "answer": false
-        },
-        {
-          "text": "Công suất toả nhiệt trung bình $P=E^2/r=1024$ W.",
-          "answer": true
-        },
-        {
-          "text": "Kết quả $2048$ W là đúng vì dùng được $e_0^2/r$ cho công suất trung bình.",
-          "answer": false
-        }
-      ],
-      "explanation": "$E=e_0/\\sqrt{2}=16\\sqrt{2}$ V nên $P=512/0{,}50=1024$ W; $2048$ W là kết quả sai do dùng biên độ thay cho hiệu dụng."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Từ thông $\\Phi=3\\cdot10^{-4}\\cos(10^{4}t)$ Wb qua một vòng dây. Biên độ suất điện động $e_0$ bằng bao nhiêu vôn?",
-      "answer": "3",
-      "explanation": "$e_0=\\Phi_0\\omega=3\\cdot10^{-4}\\cdot10^{4}=3$ V."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Cùng đề bài mẫu ($e_0=32$ V) nhưng điện trở vòng $r=2{,}00\\ \\Omega$. Công suất trung bình bằng bao nhiêu oát?",
-      "answer": "256",
-      "explanation": "$E^2=(16\\sqrt{2})^2=512$, $P=512/2{,}00=256$ W."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ống đồng ở bảng đo có thời gian rơi $1{,}8;\\ 2{,}1;\\ 1{,}9$ s. Thời gian rơi trung bình bằng bao nhiêu giây (làm tròn một chữ số thập phân)?",
-      "answer": "1,9",
-      "explanation": "$(1{,}8+2{,}1+1{,}9)/3\\approx1{,}9$ s."
-    },
-    {
-      "type": "short_answer",
-      "kind": "don_vi",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Với số liệu bài mẫu, $e_0=\\Phi_0\\omega=32$. Công suất $P=E^2/r$ của vòng $r=0{,}50\\ \\Omega$ có $E^2=512$. Điền công suất (oát).",
-      "answer": "1024",
-      "explanation": "$P=512/0{,}50=1024$ W, cỡ công suất một bếp nhà."
-    }
+  "removed": [
+   {
+    "question": "Treo một tấm nhôm liền khối cho dao động như con lắc giữa hai cực nam châm, sau đó thay bằng tấm nhôm cùng cỡ có rãnh xẻ. Xét các phát biểu sau:",
+    "reason": "nghi_ngo: Ý a viết 'tắt dao động nhanh hơn khi không có nam châm' có thể hiểu thành 'khi không có nam châm thì tấm tắt nhanh hơn' (sai), nên không đúng/sai dứt khoát; các ý b, c, d khớp bài."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dòng điện Foucault là",
+   "options": [
+    "dòng điện cảm ứng sinh ra trong khối vật dẫn chuyển động trong từ trường hoặc đặt trong từ trường biến thiên",
+    "dòng điện do nguồn pin đẩy qua khối vật dẫn đặt trong một từ trường đều không đổi",
+    "dòng điện cảm ứng sinh ra trong khối vật dẫn nằm yên trong một từ trường không đổi",
+    "dòng điện chạy trong cuộn sơ cấp của máy biến áp khi nối với nguồn xoay chiều"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, dòng Foucault (dòng xoáy) là dòng cảm ứng trong lòng khối vật dẫn chuyển động trong từ trường hoặc nằm trong từ trường biến thiên. Từ trường không đổi tác dụng lên khối đứng yên thì không sinh dòng.",
+   "distractorNotes": {
+    "B": "Nhầm dòng do nguồn pin đẩy qua với dòng cảm ứng; dòng Foucault chỉ sinh ra khi từ thông qua khối biến thiên.",
+    "C": "Quên điều kiện từ thông biến thiên; khối nằm yên trong từ trường không đổi thì $\\Delta\\Phi/\\Delta t = 0$, không có dòng.",
+    "D": "Nhầm dòng nguồn chạy trong cuộn dây với dòng cảm ứng khép kín sinh ra ngay trong lòng khối vật dẫn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong một khối kim loại xuất hiện dòng điện Foucault khi",
+   "options": [
+    "khối nằm yên trong từ trường của một nam châm đứng yên",
+    "khối được đặt gần một vật tích điện đứng yên",
+    "từ thông qua khối kim loại biến thiên theo thời gian",
+    "khối được nung nóng tới một nhiệt độ rất cao"
+   ],
+   "answer": 2,
+   "explanation": "Bẫy 2 của bài nêu rõ điều kiện là từ thông qua khối phải biến thiên. Chỉ nằm trong từ trường thì chưa đủ, vì khi đó $\\Delta\\Phi/\\Delta t = 0$.",
+   "distractorNotes": {
+    "A": "Chỉ nằm trong từ trường thì chưa đủ; nam châm và khối cùng đứng yên nên từ thông không đổi, $\\Delta\\Phi/\\Delta t = 0$.",
+    "B": "Vật tích điện đứng yên chỉ tạo điện trường, không làm từ thông qua khối kim loại biến thiên.",
+    "D": "Nhầm tác dụng toả nhiệt của dòng Foucault với nguyên nhân sinh ra nó; nung nóng chỉ là truyền nhiệt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sạc không dây cho điện thoại hoạt động dựa trên",
+   "options": [
+    "dòng điện chạy qua lớp không khí giữa đế sạc và máy",
+    "cảm ứng điện từ giữa cuộn sơ cấp và cuộn thứ cấp",
+    "sự dẫn nhiệt từ đế sạc nóng sang pin của điện thoại",
+    "lực hút của nam châm vĩnh cửu đặt bên trong đế sạc"
+   ],
+   "answer": 1,
+   "explanation": "Cuộn sơ cấp trong đế sạc nối với dòng xoay chiều và tạo từ trường biến thiên. Từ trường này sinh suất điện động cảm ứng trong cuộn thứ cấp sau lưng điện thoại để nạp pin.",
+   "distractorNotes": {
+    "A": "Không khí cách điện; năng lượng truyền sang nhờ từ trường biến thiên, không có dòng điện chạy qua khe hở.",
+    "C": "Đế sạc ấm lên chỉ là hao phí năng lượng, không phải cơ chế truyền năng lượng nạp pin.",
+    "D": "Nam châm vĩnh cửu tạo từ trường không đổi nên không sinh được suất điện động cảm ứng trong cuộn thứ cấp."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Khi đun nước bằng bếp từ với nồi gang, nhiệt làm nóng nước sinh ra chủ yếu ở",
+   "options": [
+    "mặt kính, rồi dẫn nhiệt sang đáy nồi",
+    "cuộn dây, rồi bức xạ hồng ngoại vào nồi",
+    "chỗ đáy nồi cọ xát với mặt kính bếp",
+    "đáy nồi, do dòng Foucault toả nhiệt"
+   ],
+   "answer": 3,
+   "explanation": "Từ trường biến thiên xuyên qua mặt kính cách điện, sinh dòng Foucault trong đáy nồi gang. Chính dòng này toả nhiệt nên mặt kính chỉ hơi ấm nhờ nồi.",
+   "distractorNotes": {
+    "A": "Nhầm với bếp điện mâm nóng; mặt kính cách điện, không sinh dòng nên chỉ hơi ấm nhờ nồi truyền ngược lại.",
+    "B": "Nhầm với bếp hồng ngoại, loại bếp nung nóng mặt kính trước; bếp từ dùng từ trường biến thiên.",
+    "C": "Nếu nhiệt do cọ xát thì nồi nhôm cũng nóng như nồi gang, trái với thực tế (nồi nhôm không nóng như nồi gang)."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Hai tác dụng của dòng điện Foucault là",
+   "options": [
+    "lực hãm điện từ và phát sáng",
+    "lực hãm điện từ và toả nhiệt Joule",
+    "lực đẩy chuyển động và toả nhiệt Joule",
+    "lực đẩy chuyển động và làm lạnh vật"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, dòng Foucault gây lực hãm điện từ chống lại chuyển động (định luật Lenz). Đồng thời nó toả nhiệt Joule $Q = I^2Rt$.",
+   "distractorNotes": {
+    "A": "Dòng Foucault toả nhiệt Joule $Q = I^2Rt$, không phải tác dụng phát sáng.",
+    "C": "Theo định luật Lenz, dòng cảm ứng chống lại chuyển động nên gây lực hãm chứ không đẩy vật.",
+    "D": "Ngược cả hai tác dụng: lực điện từ chống lại chuyển động và dòng điện toả nhiệt chứ không làm lạnh."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lõi máy biến áp được ghép từ các lá thép mỏng sơn cách điện nhằm",
+   "options": [
+    "giảm dòng Foucault, giảm tổn hao năng lượng do toả nhiệt",
+    "tăng dòng Foucault để lõi máy nóng lên nhanh hơn",
+    "làm lõi không còn nằm trong từ trường biến thiên",
+    "tăng điện trở của dây quấn cuộn sơ cấp lên nhiều lần"
+   ],
+   "answer": 0,
+   "explanation": "Các lá mỏng cách điện cắt ngắn đường dòng khép kín nên điện trở tăng và dòng Foucault nhỏ đi. Nhờ đó lõi đỡ nóng và tổn hao năng lượng giảm.",
+   "distractorNotes": {
+    "B": "Đảo mục đích: dòng Foucault trong lõi gây nóng và tổn hao nên cần giảm, không phải tăng.",
+    "C": "Lõi vẫn nằm trong từ trường biến thiên và vẫn dẫn từ tốt; lá mỏng chỉ cắt ngắn đường dòng xoáy.",
+    "D": "Lá thép cách điện làm tăng điện trở mạch dòng xoáy trong lõi, không liên quan điện trở dây quấn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Trong công tơ điện, đĩa nhôm quay trong từ trường của nam châm. Dòng Foucault sinh ra trong đĩa có tác dụng",
+   "options": [
+    "làm đĩa quay nhanh dần mãi",
+    "làm đĩa nhiễm từ thành nam châm",
+    "hãm chuyển động quay của đĩa",
+    "cung cấp điện năng cho công tơ"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu rõ ở công tơ điện, dòng Foucault trong đĩa nhôm có tác dụng hãm đĩa. Lực hãm điện từ luôn chống lại chuyển động.",
+   "distractorNotes": {
+    "A": "Theo định luật Lenz, lực do dòng Foucault chống lại chuyển động nên không thể làm đĩa quay nhanh dần.",
+    "B": "Nhôm không nhiễm từ; dòng Foucault trong đĩa chỉ gây lực hãm chứ không biến đĩa thành nam châm.",
+    "D": "Dòng Foucault tiêu tán năng lượng thành nhiệt, không phải nguồn cung cấp điện năng cho công tơ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Công thức tính suất điện động cảm ứng trong cuộn dây có $N$ vòng là",
+   "options": [
+    "$e_c = -N\\Delta\\Phi\\cdot\\Delta t$",
+    "$e_c = -\\dfrac{\\Delta\\Phi}{N\\Delta t}$",
+    "$e_c = -N\\dfrac{\\Delta t}{\\Delta\\Phi}$",
+    "$e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, $e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$. Suất điện động tỉ lệ với số vòng và với tốc độ biến thiên từ thông.",
+   "distractorNotes": {
+    "A": "Nhân với $\\Delta t$ thay vì chia; suất điện động tỉ lệ với tốc độ biến thiên từ thông $\\Delta\\Phi/\\Delta t$.",
+    "B": "Đặt $N$ xuống mẫu, ngược với việc mỗi vòng góp thêm suất điện động nên $e_c$ tỉ lệ thuận với $N$.",
+    "C": "Đảo vị trí $\\Delta\\Phi$ và $\\Delta t$, làm $e_c$ tỉ lệ nghịch với độ biến thiên từ thông."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ thức đúng của máy biến áp lí tưởng ($U$ là điện áp hiệu dụng) là",
+   "options": [
+    "$\\dfrac{U_2}{U_1} = \\dfrac{N_1}{N_2}$",
+    "$\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$",
+    "$\\dfrac{U_2}{U_1} = \\dfrac{N_2^2}{N_1^2}$",
+    "$\\dfrac{U_2}{U_1} = \\dfrac{N_1 - N_2}{N_1}$"
+   ],
+   "answer": 1,
+   "explanation": "Bài cho $\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$, tức điện áp tỉ lệ thuận với số vòng. Đảo tỉ số và lấy hiệu số vòng là hai lỗi bài đã cảnh báo.",
+   "distractorNotes": {
+    "A": "Đảo tỉ số vòng, lỗi bài đã cảnh báo; điện áp tỉ lệ thuận với số vòng của chính cuộn đó.",
+    "C": "Áp nhầm quan hệ bình phương kiểu $Q = I^2Rt$; điện áp chỉ tỉ lệ bậc nhất với số vòng.",
+    "D": "Lấy hiệu số vòng thay vì tỉ số; hệ thức máy biến áp lí tưởng chỉ dùng tỉ số $N_2/N_1$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một máy biến áp lí tưởng giữ nguyên $U_1$ và $N_1$. Nếu tăng số vòng cuộn thứ cấp $N_2$ lên gấp đôi thì $U_2$",
+   "options": [
+    "tăng gấp đôi",
+    "giảm một nửa",
+    "tăng gấp bốn",
+    "không thay đổi"
+   ],
+   "answer": 0,
+   "explanation": "Từ $U_2 = U_1\\dfrac{N_2}{N_1}$ thấy $U_2$ tỉ lệ thuận với $N_2$. Vì vậy $N_2$ gấp đôi thì $U_2$ cũng gấp đôi.",
+   "distractorNotes": {
+    "B": "Đảo tỉ số vòng nên coi $U_2$ tỉ lệ nghịch với $N_2$, trong khi $U_2 = U_1N_2/N_1$.",
+    "C": "Áp nhầm quan hệ bình phương; $U_2$ chỉ tỉ lệ bậc nhất với $N_2$.",
+    "D": "Tưởng máy biến áp giữ nguyên điện áp, bỏ qua vai trò của tỉ số vòng $N_2/N_1$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo $Q = I^2Rt$, nếu cường độ dòng Foucault trong một khối kim loại tăng gấp đôi, còn $R$ và $t$ không đổi, thì nhiệt toả ra",
+   "options": [
+    "tăng gấp đôi",
+    "giảm một nửa",
+    "tăng gấp bốn",
+    "không thay đổi"
+   ],
+   "answer": 2,
+   "explanation": "Nhiệt toả ra tỉ lệ với bình phương cường độ dòng điện. Do đó $I$ gấp đôi thì $Q$ gấp $2^2 = 4$ lần.",
+   "distractorNotes": {
+    "A": "Quên bình phương cường độ dòng trong $Q = I^2Rt$, coi nhiệt tỉ lệ bậc nhất với $I$.",
+    "B": "Nghĩ ngược chiều; $Q$ tăng theo $I^2$ nên dòng lớn hơn thì nhiệt toả ra nhiều hơn.",
+    "D": "Tưởng nhiệt toả ra chỉ phụ thuộc $R$ và $t$, bỏ qua thừa số $I^2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Trong công thức $e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$, đơn vị của độ biến thiên từ thông $\\Delta\\Phi$ là",
+   "options": [
+    "tesla (T)",
+    "vôn (V)",
+    "ampe (A)",
+    "vêbe (Wb)"
+   ],
+   "answer": 3,
+   "explanation": "Mục Trả bài ghi $\\Delta\\Phi$ là độ biến thiên từ thông, đo bằng vêbe (Wb). Tesla là đơn vị cảm ứng từ, còn vôn là đơn vị của $e_c$.",
+   "distractorNotes": {
+    "A": "Nhầm đơn vị cảm ứng từ $B$ với đơn vị từ thông $\\Phi$.",
+    "B": "Vôn là đơn vị của suất điện động $e_c$, không phải của độ biến thiên từ thông.",
+    "C": "Ampe là đơn vị cường độ dòng điện, không phải đơn vị từ thông."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Từ hệ thức $\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$, điện áp hiệu dụng ở cuộn thứ cấp được tính bằng",
+   "options": [
+    "$U_2 = U_1\\dfrac{N_2}{N_1}$",
+    "$U_2 = U_1\\dfrac{N_1}{N_2}$",
+    "$U_2 = \\dfrac{N_2}{U_1N_1}$",
+    "$U_2 = U_1\\dfrac{N_1 - N_2}{N_1}$"
+   ],
+   "answer": 0,
+   "explanation": "Nhân hai vế của hệ thức với $U_1$ ta được $U_2 = U_1\\dfrac{N_2}{N_1}$. Bài toán mẫu đế sạc dùng đúng phép biến đổi này.",
+   "distractorNotes": {
+    "B": "Đảo tỉ số vòng khi biến đổi; nhân hai vế với $U_1$ thì giữ nguyên $N_2/N_1$.",
+    "C": "Biến đổi sai: chia cho $U_1$ thay vì nhân hai vế với $U_1$.",
+    "D": "Lấy hiệu số vòng thay vì tỉ số, lỗi bài đã cảnh báo khi tính $U_2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ thông qua một cuộn dây biến thiên cùng một lượng $\\Delta\\Phi$ nhưng trong khoảng thời gian chỉ bằng một nửa. Độ lớn suất điện động cảm ứng khi đó",
+   "options": [
+    "giảm một nửa",
+    "tăng gấp đôi",
+    "tăng gấp bốn",
+    "không thay đổi"
+   ],
+   "answer": 1,
+   "explanation": "Theo $e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$, độ lớn $e_c$ tỉ lệ nghịch với $\\Delta t$ khi $\\Delta\\Phi$ không đổi. Thời gian giảm một nửa thì $e_c$ tăng gấp đôi.",
+   "distractorNotes": {
+    "A": "Coi $e_c$ tỉ lệ thuận với $\\Delta t$, trong khi với cùng $\\Delta\\Phi$ thì $e_c$ tỉ lệ nghịch với $\\Delta t$.",
+    "C": "Áp nhầm quan hệ bình phương; $e_c$ chỉ tỉ lệ nghịch bậc nhất với $\\Delta t$.",
+    "D": "Tưởng $e_c$ chỉ phụ thuộc $\\Delta\\Phi$, bỏ qua yếu tố tốc độ biến thiên $\\Delta\\Phi/\\Delta t$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "So sánh bếp điện có mâm nóng và bếp từ khi cùng đun một nồi nước. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Ở bếp từ, cuộn dây dưới mặt kính tạo ra từ trường biến thiên.",
+     "answer": true
+    },
+    {
+     "text": "Mặt kính bếp từ rất nóng vì nhiệt truyền từ mặt kính sang nồi.",
+     "answer": false
+    },
+    {
+     "text": "Bếp từ chỉ đun hiệu quả nồi có đáy nhiễm từ như gang, thép.",
+     "answer": true
+    },
+    {
+     "text": "Đặt nồi nhôm trên bếp từ thì trong đáy nồi không có dòng Foucault nào.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bếp từ không có mâm nóng: nhiệt sinh trong đáy nồi, còn mặt kính chỉ ấm nhờ nồi. Nồi nhôm vẫn có dòng Foucault, nhưng nhôm không nhiễm từ và có điện trở suất thấp nên toả nhiệt rất ít.",
+   "distractorNotes": {
+    "0": "Không thể coi sai vì bếp từ không có mâm nóng; cuộn dây nuôi dòng xoay chiều tần số cao chính là nguồn tạo từ trường biến thiên.",
+    "1": "Coi đúng là nhầm với bếp điện mâm nóng; mặt kính cách điện, không sinh dòng, chỉ ấm nhờ nồi truyền ngược lại.",
+    "2": "Coi sai là quên vật liệu nhiễm từ như gang, thép tập trung từ thông; nồi nhôm, sứ, thủy tinh đun rất kém hoặc không đun được.",
+    "3": "Coi đúng là nhầm \"toả nhiệt rất ít\" với \"không có dòng\"; nhôm dẫn điện nên vẫn có dòng Foucault."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Căng một dây thép trên giá gỗ, đặt sát dưới dây một nam châm và một cuộn dây nối với điện kế nhạy, rồi gảy dây (mô hình bộ cảm ứng của đàn ghi ta điện). Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Kim điện kế rung đúng nhịp dao động của dây thép.",
+     "answer": true
+    },
+    {
+     "text": "Khi dây đã tắt dao động, kim vẫn lệch vì nam châm vẫn còn ở đó.",
+     "answer": false
+    },
+    {
+     "text": "Trong cuộn dây có dòng cảm ứng dù dây thép không chạm vào cuộn dây.",
+     "answer": true
+    },
+    {
+     "text": "Dòng cảm ứng ở đàn ghi ta điện đủ lớn để chạy thẳng loa, không cần máy tăng âm.",
+     "answer": false
+    }
+   ],
+   "explanation": "Dây thép bị từ hoá dao động làm từ thông qua cuộn dây biến thiên, sinh dòng cảm ứng cùng tần số. Dây đứng yên thì từ thông không đổi và không có dòng; dòng này rất nhỏ nên phải qua máy tăng âm.",
+   "distractorNotes": {
+    "0": "Coi sai là bỏ qua việc dây dao động làm từ thông biến thiên đúng nhịp, nên dòng cảm ứng có cùng tần số với dây.",
+    "1": "Coi đúng là nhầm \"có từ trường\" với \"từ thông biến thiên\"; dây đứng yên thì $\\Delta\\Phi/\\Delta t = 0$, kim đứng yên.",
+    "2": "Coi sai là buộc dòng cảm ứng vào sự tiếp xúc; điều kiện chỉ cần từ thông qua cuộn dây biến thiên.",
+    "3": "Coi đúng là quên dòng cảm ứng ở bộ cảm ứng rất nhỏ, phải qua máy tăng âm mới làm loa kêu được."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một cuộn dây có $N$ vòng, từ thông qua mỗi vòng biến thiên một lượng $\\Delta\\Phi$ trong thời gian $\\Delta t$. Suất điện động cảm ứng được tính bằng $e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Độ lớn $e_c$ tỉ lệ thuận với số vòng dây $N$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu từ thông qua cuộn dây không đổi thì $e_c = 0$.",
+     "answer": true
+    },
+    {
+     "text": "Với cùng $\\Delta\\Phi$, khoảng thời gian $\\Delta t$ càng dài thì $e_c$ càng lớn.",
+     "answer": false
+    },
+    {
+     "text": "Đơn vị của $e_c$ là vêbe (Wb).",
+     "answer": false
+    }
+   ],
+   "explanation": "$e_c$ tỉ lệ với $N$ và với tốc độ biến thiên từ thông, nên $\\Delta t$ dài hơn thì $e_c$ nhỏ hơn. Từ thông không đổi cho $\\Delta\\Phi/\\Delta t = 0$; đơn vị của $e_c$ là vôn, còn Wb là đơn vị của từ thông.",
+   "distractorNotes": {
+    "0": "Coi sai là bỏ quên hệ số $N$; mỗi vòng góp một suất điện động nên $e_c$ tỉ lệ thuận với số vòng.",
+    "1": "Coi sai là nhầm có từ thông với từ thông biến thiên; $\\Delta\\Phi = 0$ thì $e_c = 0$.",
+    "2": "Coi đúng là đảo tỉ lệ; với cùng $\\Delta\\Phi$, $e_c$ tỉ lệ nghịch với $\\Delta t$ nên thời gian dài thì $e_c$ nhỏ.",
+    "3": "Coi đúng là nhầm đơn vị từ thông (Wb) với đơn vị suất điện động là vôn (V)."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một đế sạc không dây có cuộn sơ cấp $N_1 = 20$ vòng nối nguồn xoay chiều $U_1 = 12$ V; cuộn sau lưng điện thoại có $N_2 = 15$ vòng. Coi gần đúng như máy biến áp lí tưởng. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Vì $N_2 \\lt N_1$ nên điện áp lí tưởng trên cuộn thứ cấp nhỏ hơn 12 V.",
+     "answer": true
+    },
+    {
+     "text": "Trong hệ thức $\\dfrac{U_2}{U_1} = \\dfrac{N_2}{N_1}$, $N_2$ là số vòng của cuộn nối với pin điện thoại.",
+     "answer": true
+    },
+    {
+     "text": "Điện áp đo được trên cuộn thứ cấp lớn hơn giá trị tính theo máy biến áp lí tưởng.",
+     "answer": false
+    },
+    {
+     "text": "Nếu nối cuộn sơ cấp với nguồn điện không đổi thì đế vẫn sạc được điện thoại.",
+     "answer": false
+    }
+   ],
+   "explanation": "Điện áp tỉ lệ với số vòng, nên $N_2 \\lt N_1$ thì $U_2 \\lt U_1$. Số đo thực tế luôn nhỏ hơn giá trị lí tưởng do từ thông rò; dòng không đổi không tạo từ thông biến thiên nên không có suất điện động cảm ứng.",
+   "distractorNotes": {
+    "0": "Coi sai là đảo tỉ số vòng; thực tế $U_2 = 12 \\times 15/20 = 9{,}0$ V, nhỏ hơn 12 V.",
+    "1": "Coi sai là đảo vai hai cuộn; $N_2$ luôn là cuộn nối thiết bị cần nạp, ở đây là pin điện thoại.",
+    "2": "Coi đúng là quên từ thông rò và điện trở dây khiến số đo luôn nhỏ hơn lí tưởng.",
+    "3": "Coi đúng là quên dòng không đổi không tạo từ thông biến thiên nên cuộn thứ cấp không có suất điện động cảm ứng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Phanh điện từ của xe tải nặng hãm xe bằng lực hãm của dòng Foucault. Suất điện động cảm ứng tỉ lệ với tốc độ biến thiên từ thông, và tốc độ này tỉ lệ với tốc độ của xe. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Khi tốc độ xe giảm một nửa thì lực hãm điện từ cũng giảm theo.",
+     "answer": true
+    },
+    {
+     "text": "Lực hãm của phanh điện từ gần như không đổi ở mọi tốc độ.",
+     "answer": false
+    },
+    {
+     "text": "Khi xe gần dừng hẳn, lực hãm điện từ tiến dần về 0.",
+     "answer": true
+    },
+    {
+     "text": "Chỉ cần phanh điện từ là giữ được xe đứng yên trên dốc.",
+     "answer": false
+    }
+   ],
+   "explanation": "Dòng Foucault và lực hãm tỉ lệ với tốc độ, nên xe càng chậm thì lực hãm càng yếu và về 0 khi xe dừng. Vì vậy xe vẫn cần phanh ma sát để dừng hẳn và giữ xe.",
+   "distractorNotes": {
+    "0": "Coi sai là quên lực hãm tỉ lệ dòng Foucault, mà dòng tỉ lệ tốc độ xe, nên $F \\sim v$ giảm theo.",
+    "1": "Coi đúng là gán đặc điểm của phanh ma sát cho phanh điện từ; lực hãm điện từ phụ thuộc tốc độ.",
+    "2": "Coi sai là quên khi $v \\to 0$ thì tốc độ biến thiên từ thông về 0, dòng Foucault và lực hãm triệt tiêu.",
+    "3": "Coi đúng là quên xe đứng yên thì từ thông không biến thiên, không có lực hãm nào giữ xe trên dốc."
+   }
+  }
+ ]
 }

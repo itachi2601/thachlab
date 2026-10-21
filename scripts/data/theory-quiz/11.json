@@ -1,399 +1,550 @@
 {
-  "lesson_id": 11,
-  "lesson_title": "Bài 10. Lực từ. Cảm ứng từ",
-  "item_id": 52,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": [
-      {
-        "question": "Khung $N = 100$ vòng, diện tích mỗi vòng $S = 10\\ \\text{cm}^2$, dòng $I = 2\\ \\text{A}$, $B = 0{,}1\\ \\text{T}$. Mômen ngẫu lực cực đại bằng:",
-        "reason": "Đáp án đánh dấu sai: M_max = 100×0,1×2×10^-3 = 0,02 N·m nhưng answer trỏ 0,2 N·m"
-      },
-      {
-        "question": "Cảm ứng từ trong lòng ống dây dài có $n$ vòng trên mét, dòng $I$ là:",
-        "reason": "Đáp án đánh dấu sai: answer trỏ 2π·10^-7 nI, trong khi bài và explanation nêu 4π·10^-7 nI"
-      },
-      {
-        "question": "Dây thẳng dài mang dòng $5\\ \\text{A}$. Cảm ứng từ tại điểm cách dây $10\\ \\text{cm}$ là:",
-        "reason": "Đáp án đánh dấu sai: B = 2·10^-7×5/0,1 = 10^-5 T nhưng answer trỏ 10^-4 T"
-      }
-    ]
+ "lesson_id": 11,
+ "lesson_title": "Bài 10. Lực từ. Cảm ứng từ",
+ "item_id": 52,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lực từ. Cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực từ tác dụng lên một đoạn dây dẫn thẳng mang dòng điện, đặt trong từ trường đều, có điểm đặt tại",
+   "options": [
+    "đầu đoạn dây nơi dòng điện đi vào",
+    "trung điểm của đoạn dây dẫn đó",
+    "đầu đoạn dây nơi dòng điện đi ra",
+    "điểm trên dây gần cực Bắc nhất"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, lực từ tác dụng lên đoạn dây mang dòng điện có điểm đặt tại trung điểm của đoạn dây.",
+   "distractorNotes": {
+    "A": "Nhầm điểm đặt với nơi dòng điện đi vào; lực từ phân bố đều dọc dây nên điểm đặt ở trung điểm.",
+    "C": "Tưởng lực đặt ở đầu dòng điện đi ra; điểm đặt lực từ là trung điểm, không phụ thuộc chiều dòng.",
+    "D": "Gắn điểm đặt với vị trí cực nam châm, trong khi từ trường đều nên lực đặt tại trung điểm dây."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực từ tác dụng lên đoạn dây dẫn mang dòng điện đặt trong từ trường có phương",
+   "options": [
+    "trùng với phương của đoạn dây dẫn",
+    "trùng với phương của đường sức từ",
+    "vuông góc với cả đoạn dây và đường sức",
+    "hợp với đoạn dây một góc bằng $45^\\circ$"
+   ],
+   "answer": 2,
+   "explanation": "Lực từ vuông góc với đoạn dây và vuông góc với đường sức từ, tức là vuông góc với mặt phẳng chứa đoạn dây và $\\vec{B}$.",
+   "distractorNotes": {
+    "A": "Lực dọc dây chỉ kéo căng dây, không làm dây lệch ngang như thí nghiệm quan sát được.",
+    "B": "Nhầm phương lực từ với phương $\\vec{B}$; lực từ vuông góc với đường sức chứ không cùng phương.",
+    "D": "Góc $45^\\circ$ không có cơ sở; lực từ vuông góc mặt phẳng chứa dây và $\\vec{B}$ nên vuông góc với dây."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo quy tắc bàn tay trái, đặt bàn tay sao cho các đường cảm ứng từ xuyên vào lòng bàn tay, chiều từ cổ tay đến ngón tay trùng chiều dòng điện. Khi đó ngón cái choãi ra $90^\\circ$ chỉ chiều của",
+   "options": [
+    "lực từ tác dụng lên đoạn dây",
+    "cảm ứng từ của nam châm",
+    "đường sức từ do dòng điện tạo ra",
+    "chuyển động của nam châm thử"
+   ],
+   "answer": 0,
+   "explanation": "Trong quy tắc bàn tay trái, ngón cái choãi ra $90^\\circ$ chỉ chiều lực từ tác dụng lên đoạn dây mang dòng điện.",
+   "distractorNotes": {
+    "B": "Nhầm vai trò: chiều cảm ứng từ là chiều đường sức xuyên vào lòng bàn tay, không phải chiều ngón cái.",
+    "C": "Lẫn với quy tắc nắm tay phải, quy tắc dùng để tìm chiều đường sức do dòng điện tạo ra.",
+    "D": "Quy tắc bàn tay trái cho chiều lực lên dây mang dòng, không nói gì về chuyển động của nam châm thử."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Tính lực từ F = BIl·sinθ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một đoạn dây dẫn mang dòng điện đặt trong từ trường đều. Lực từ tác dụng lên đoạn dây bằng 0 khi",
+   "options": [
+    "đoạn dây vuông góc với đường sức từ",
+    "đoạn dây hợp với đường sức góc $30^\\circ$",
+    "đoạn dây hợp với đường sức góc $60^\\circ$",
+    "đoạn dây song song với đường sức từ"
+   ],
+   "answer": 3,
+   "explanation": "Dây song song đường sức thì $\\alpha = 0^\\circ$ hoặc $180^\\circ$, $\\sin\\alpha = 0$ nên $F = 0$.",
+   "distractorNotes": {
+    "A": "Đảo ngược: dây vuông góc thì $\\sin\\alpha=1$, lực từ lớn nhất $BIl$ chứ không bằng 0.",
+    "B": "Với $30^\\circ$ thì $\\sin\\alpha=0,5\\neq0$ nên lực từ vẫn khác 0, chỉ bằng nửa giá trị cực đại.",
+    "C": "Với $60^\\circ$ thì $\\sin\\alpha\\approx0,87$ nên lực khác 0; chỉ $\\alpha=0^\\circ$ hoặc $180^\\circ$ mới cho $F=0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Cảm ứng từ và đơn vị tesla",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vectơ cảm ứng từ tại một điểm trong từ trường có chiều",
+   "options": [
+    "trùng với chiều dòng điện chạy qua dây thử",
+    "từ cực Bắc sang cực Nam của nam châm thử",
+    "từ cực Nam sang cực Bắc của nam châm thử",
+    "trùng với chiều lực từ tác dụng lên dây thử"
+   ],
+   "answer": 2,
+   "explanation": "Theo bài, chiều của $\\vec{B}$ là chiều từ cực Nam sang cực Bắc của nam châm thử nằm cân bằng tại điểm đó.",
+   "distractorNotes": {
+    "A": "Gắn chiều $\\vec{B}$ với dòng điện dây thử, trong khi $\\vec{B}$ xác định bằng nam châm thử và có sẵn tại điểm đó.",
+    "B": "Đảo chiều quy ước: $\\vec{B}$ đi từ cực Nam sang cực Bắc của nam châm thử, không phải ngược lại.",
+    "D": "Lực từ luôn vuông góc với $\\vec{B}$ nên chiều $\\vec{B}$ không thể trùng chiều lực từ lên dây thử."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Quy tắc bàn tay trái được dùng để xác định",
+   "options": [
+    "chiều đường sức từ quanh dây thẳng",
+    "chiều lực từ lên đoạn dây mang dòng",
+    "chiều đường sức trong lòng ống dây",
+    "độ lớn cảm ứng từ tại một điểm"
+   ],
+   "answer": 1,
+   "explanation": "Bàn tay trái trả lời câu hỏi về chiều lực từ $\\vec{F}$; chiều đường sức của dòng điện xác định bằng quy tắc nắm tay phải.",
+   "distractorNotes": {
+    "A": "Lẫn với quy tắc nắm tay phải, quy tắc dùng để tìm chiều đường sức quanh dây thẳng.",
+    "C": "Chiều đường sức trong lòng ống dây tìm bằng quy tắc nắm tay phải, không phải bàn tay trái.",
+    "D": "Quy tắc bàn tay chỉ cho chiều, không cho độ lớn; độ lớn $B$ tính bằng $F/(Il\\sin\\alpha)$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lực từ tác dụng lên khung dây. Ngẫu lực từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một khung dây chữ nhật mang dòng điện đặt trong từ trường đều. Lực từ tác dụng lên hai cạnh đối diện của khung tạo thành ngẫu lực vì hai lực đó",
+   "options": [
+    "cùng độ lớn, cùng chiều, cùng giá",
+    "khác độ lớn, ngược chiều, cùng giá",
+    "cùng độ lớn, ngược chiều, cùng giá",
+    "cùng độ lớn, ngược chiều, khác giá"
+   ],
+   "answer": 3,
+   "explanation": "Ngẫu lực từ gồm hai lực cùng độ lớn, ngược chiều, không cùng giá. Vì vậy hợp lực bằng 0 nhưng mômen khác 0 nên khung quay.",
+   "distractorNotes": {
+    "A": "Hai lực cùng chiều có hợp lực khác 0 nên không phải ngẫu lực; lực từ lên hai cạnh đối diện ngược chiều.",
+    "B": "Hai lực khác độ lớn thì hợp lực khác 0, hơn nữa cùng giá thì không tạo được mômen quay.",
+    "C": "Hai lực bằng nhau, ngược chiều, cùng giá triệt tiêu hoàn toàn, mômen bằng 0 nên khung không quay."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính lực từ F = BIl·sinθ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đoạn dây dài $l$ mang dòng điện $I$ đặt trong từ trường đều có cảm ứng từ $B$, dây hợp với đường sức góc $\\alpha$. Độ lớn lực từ tác dụng lên đoạn dây là",
+   "options": [
+    "$F = BIl\\sin\\alpha$",
+    "$F = BIl\\cos\\alpha$",
+    "$F = \\dfrac{BI\\sin\\alpha}{l}$",
+    "$F = \\dfrac{BIl}{\\sin\\alpha}$"
+   ],
+   "answer": 0,
+   "explanation": "Biểu thức định luật Ampe trong bài là $F = BIl\\sin\\alpha$, với $\\alpha$ là góc hợp bởi đoạn dây và $\\vec{B}$.",
+   "distractorNotes": {
+    "B": "Nhầm sin với cos; dùng cos thì dây song song đường sức lại cho lực lớn nhất, trái thí nghiệm.",
+    "C": "Đặt $l$ xuống mẫu là sai; lực từ tỉ lệ thuận với chiều dài đoạn dây trong từ trường.",
+    "D": "Chia cho $\\sin\\alpha$ khiến lực vô cùng lớn khi dây song song đường sức, ngược với kết luận $F=0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Cảm ứng từ và đơn vị tesla",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ biểu thức lực từ, độ lớn cảm ứng từ tại vị trí đặt đoạn dây được xác định bằng",
+   "options": [
+    "$B = FIl\\sin\\alpha$",
+    "$B = \\dfrac{Il\\sin\\alpha}{F}$",
+    "$B = \\dfrac{F}{Il\\sin\\alpha}$",
+    "$B = \\dfrac{F\\sin\\alpha}{Il}$"
+   ],
+   "answer": 2,
+   "explanation": "Từ $F = BIl\\sin\\alpha$, chia hai vế cho $Il\\sin\\alpha$ được $B = \\dfrac{F}{Il\\sin\\alpha}$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia khi biến đổi; phải chia hai vế của $F=BIl\\sin\\alpha$ cho $Il\\sin\\alpha$.",
+    "B": "Đảo ngược phân số nên ra nghịch đảo của $B$; lực $F$ phải nằm ở tử số.",
+    "D": "Chuyển $\\sin\\alpha$ lên tử là sai; $\\sin\\alpha$ cùng với $I$, $l$ phải nằm ở mẫu số."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Cảm ứng từ và đơn vị tesla",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị tesla (T) của cảm ứng từ bằng",
+   "options": [
+    "$1\\ \\text{N}\\cdot\\text{A}/\\text{m}$",
+    "$1\\ \\text{N}\\cdot\\text{A}\\cdot\\text{m}$",
+    "$1\\ \\text{A}/(\\text{N}\\cdot\\text{m})$",
+    "$1\\ \\text{N}/(\\text{A}\\cdot\\text{m})$"
+   ],
+   "answer": 3,
+   "explanation": "Từ $B = \\dfrac{F}{Il\\sin\\alpha}$ suy ra $1\\ \\text{T} = 1\\ \\text{N}/(\\text{A}\\cdot\\text{m})$.",
+   "distractorNotes": {
+    "A": "Đặt ampe lên tử là sai; từ $B=F/(Il)$ thì ampe và mét cùng nằm ở mẫu số.",
+    "B": "Nhân tất cả đơn vị với nhau, quên rằng $B$ là lực chia cho tích $Il$.",
+    "C": "Đảo ngược tỉ số; newton phải ở tử vì $B$ tỉ lệ thuận với lực $F$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính lực từ F = BIl·sinθ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một đoạn dây đặt vuông góc với đường sức của một từ trường đều. Nếu tăng cường độ dòng điện qua dây lên gấp đôi và giữ nguyên các yếu tố khác thì lực từ tác dụng lên dây",
+   "options": [
+    "giảm đi một nửa",
+    "tăng lên gấp đôi",
+    "tăng lên gấp bốn",
+    "giữ nguyên không đổi"
+   ],
+   "answer": 1,
+   "explanation": "Theo $F = BIl\\sin\\alpha$, lực từ tỉ lệ thuận với $I$ nên $I$ tăng gấp đôi thì $F$ tăng gấp đôi.",
+   "distractorNotes": {
+    "A": "Đảo tỉ lệ, coi $F$ tỉ lệ nghịch với $I$, trong khi $F=BIl\\sin\\alpha$ tỉ lệ thuận với $I$.",
+    "C": "Tưởng $F$ tỉ lệ với $I^2$, trong khi $I$ chỉ xuất hiện bậc một trong $F=BIl\\sin\\alpha$.",
+    "D": "Lẫn với tính chất $B$ không đổi theo dòng thử; lực từ thì tăng theo $I$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính lực từ F = BIl·sinθ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một đoạn dây đang đặt vuông góc với đường sức của một từ trường đều. Xoay dây cho đến khi dây hợp với đường sức góc $30^\\circ$, giữ nguyên $B$, $I$, $l$. Lực từ tác dụng lên dây",
+   "options": [
+    "giảm còn một nửa",
+    "tăng lên gấp đôi",
+    "giảm còn khoảng 0,87 lần",
+    "giữ nguyên không đổi"
+   ],
+   "answer": 0,
+   "explanation": "Lực từ tỉ lệ với $\\sin\\alpha$. Khi $\\alpha$ đổi từ $90^\\circ$ sang $30^\\circ$, $\\sin\\alpha$ giảm từ 1 xuống 0,5 nên $F$ còn một nửa. Giá trị 0,87 là do nhầm sang $\\sin 60^\\circ$.",
+   "distractorNotes": {
+    "B": "Đảo chiều thay đổi; $\\alpha=90^\\circ$ cho lực cực đại nên xoay sang góc khác lực chỉ có thể giảm.",
+    "C": "Nhầm $\\sin30^\\circ$ với $\\sin60^\\circ\\approx0,87$, tức lấy nhầm góc phụ thay cho góc giữa dây và đường sức.",
+    "D": "Bỏ qua thừa số $\\sin\\alpha$, coi lực từ không phụ thuộc góc giữa dây và đường sức."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Cảm ứng từ và đơn vị tesla",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đặt một đoạn dây thử vuông góc với đường sức tại một điểm trong từ trường đều. Tăng cường độ dòng điện qua dây thử lên gấp đôi thì cảm ứng từ tại điểm đó",
+   "options": [
+    "tăng lên gấp đôi",
+    "giảm đi một nửa",
+    "không thay đổi",
+    "tăng lên gấp bốn"
+   ],
+   "answer": 2,
+   "explanation": "$B$ chỉ phụ thuộc từ trường tại điểm đó. Tăng dòng thử thì $F$ tăng theo tỉ lệ còn $B = F/(Il)$ giữ nguyên.",
+   "distractorNotes": {
+    "A": "Coi $B$ tỉ lệ với dòng thử, quên rằng $F$ tăng theo $I$ nên thương $F/(Il)$ giữ nguyên.",
+    "B": "Thấy $I$ ở mẫu của $B=F/(Il)$ nên cho rằng $B$ giảm, bỏ qua việc $F$ cũng tăng gấp đôi.",
+    "D": "Nhầm $B$ là đại lượng phụ thuộc dòng thử; $B$ là tính chất của từ trường tại điểm đó."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Lực từ tác dụng lên khung dây. Ngẫu lực từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khung dây phẳng gồm $N$ vòng, diện tích mỗi vòng $S$, mang dòng điện $I$, đặt trong từ trường đều có cảm ứng từ $B$. Mômen ngẫu lực từ cực đại tác dụng lên khung là",
+   "options": [
+    "$M_{\\max} = NBIl$",
+    "$M_{\\max} = NBIS$",
+    "$M_{\\max} = \\dfrac{BIS}{N}$",
+    "$M_{\\max} = \\dfrac{NBI}{S}$"
+   ],
+   "answer": 1,
+   "explanation": "Mômen ngẫu lực là $M = NBIS\\sin\\alpha$, đạt cực đại $M_{\\max} = NBIS$ khi mặt phẳng khung song song với đường sức.",
+   "distractorNotes": {
+    "A": "Nhầm chiều dài $l$ với diện tích $S$; mômen ngẫu lực tỉ lệ với diện tích khung.",
+    "C": "Đặt $N$ xuống mẫu là sai; nhiều vòng thì mômen cộng dồn, tỉ lệ thuận với $N$.",
+    "D": "Đặt $S$ xuống mẫu là sai; khung rộng hơn có cánh tay đòn lớn hơn nên mômen tăng theo $S$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Treo một dây nhôm mảnh nằm ngang giữa hai cực của nam châm chữ U, nối hai đầu dây với nguồn điện một chiều rồi đóng mạch.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Đoạn dây mang dòng điện đặt song song với đường sức từ. Lực từ tác dụng lên dây:",
-      "options": [
-        "Lớn nhất",
-        "Khác 0 nhưng nhỏ nhất",
-        "Bằng 0",
-        "Bằng 0 khi dây vuông góc đường sức"
-      ],
-      "answer": 2,
-      "explanation": "Song song đường sức thì $\\alpha = 0^\\circ$, $\\sin\\alpha = 0$ nên $F = 0$."
+     "text": "Khi đóng mạch, dây bị lệch khỏi vị trí ban đầu do lực từ tác dụng lên dây.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điểm đặt của lực từ tác dụng lên đoạn dây mang dòng điện là:",
-      "options": [
-        "Trung điểm của đoạn dây",
-        "Đầu dây nối với cực dương",
-        "Đầu dây nối với cực âm",
-        "Điểm bất kì trên dây, tuỳ cách đặt"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu: điểm đặt là trung điểm của đoạn dây; phương vuông góc với dây và đường sức."
+     "text": "Đảo chiều dòng điện qua dây thì dây vẫn lệch về phía cũ.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Theo quy tắc bàn tay trái, ngón cái choãi ra $90^\\circ$ chỉ:",
-      "options": [
-        "Chiều dòng điện",
-        "Chiều lực từ",
-        "Chiều đường sức từ",
-        "Chiều của cảm ứng từ tại tâm vòng dây"
-      ],
-      "answer": 1,
-      "explanation": "Đường sức xuyên vào lòng bàn tay, cổ tay → ngón tay theo chiều $I$; ngón cái choãi chỉ chiều lực từ $\\vec{F}$."
+     "text": "Nếu đặt dây song song với đường sức từ thì khi đóng mạch dây đứng yên.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Chiều của vectơ cảm ứng từ $\\vec{B}$ tại một điểm là:",
-      "options": [
-        "Từ cực Nam sang cực Bắc của nam châm thử nằm cân bằng tại điểm đó",
-        "Từ cực Bắc sang cực Nam của nam châm thử nằm cân bằng tại điểm đó",
-        "Chiều dòng điện đặt tại điểm đó",
-        "Chiều của lực từ lên dây thử"
-      ],
-      "answer": 0,
-      "explanation": "Phương là phương nam châm thử nằm cân bằng; chiều từ Nam sang Bắc của nam châm thử."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vì sao ngẫu lực từ làm khung dây quay mà không đẩy cả khung đi?",
-      "options": [
-        "Lực từ không tác dụng lên khung kín",
-        "Hai lực cùng chiều nên cộng lại",
-        "Khung nhẹ nên chỉ quay",
-        "Hợp lực bằng 0 nhưng mômen khác 0"
-      ],
-      "answer": 3,
-      "explanation": "Hai cạnh đối diện chịu hai lực cùng độ lớn, ngược chiều, không cùng giá: hợp lực bằng 0, mômen khác 0."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về hai quy tắc bàn tay, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Bàn tay trái dùng để tìm chiều lực từ.",
-          "answer": true
-        },
-        {
-          "text": "Quy tắc nắm tay phải dùng để tìm chiều đường sức quanh dây thẳng có dòng điện.",
-          "answer": true
-        },
-        {
-          "text": "Khi dùng bàn tay trái, ngón cái choãi ra $90^\\circ$.",
-          "answer": true
-        },
-        {
-          "text": "Bàn tay trái dùng để tìm chiều đường sức từ của dây thẳng.",
-          "answer": false
-        }
-      ],
-      "explanation": "Hai quy tắc trả lời hai câu hỏi khác nhau: trái tìm $\\vec{F}$, phải tìm chiều đường sức $\\vec{B}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về từ trường của dòng điện, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Dây thẳng dài: đường sức là các đường tròn đồng tâm nằm trong mặt phẳng vuông góc với dây.",
-          "answer": true
-        },
-        {
-          "text": "Trong lòng ống dây dài, từ trường đều và song song trục ống.",
-          "answer": true
-        },
-        {
-          "text": "Vòng dây tròn: đường sức vào một mặt và ra ở mặt kia.",
-          "answer": true
-        },
-        {
-          "text": "Trong lòng ống dây dài, $\\vec{B}$ vuông góc với trục ống.",
-          "answer": false
-        }
-      ],
-      "explanation": "Trong lòng ống dây dài từ trường đều, song song trục ống."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_luat",
-      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ngón cái bàn tay trái choãi ra bao nhiêu độ so với các ngón tay?",
-      "answer": "90",
-      "explanation": "Quy tắc bàn tay trái: ngón cái choãi $90^\\circ$ chỉ chiều lực từ."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ngẫu lực từ tác dụng lên khung dây gồm bao nhiêu lực cùng độ lớn, ngược chiều?",
-      "answer": "2",
-      "explanation": "Hai cạnh đối diện của khung chịu hai lực từ cùng độ lớn, ngược chiều, không cùng giá."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Dây song song với đường sức từ thì lực từ bằng bao nhiêu newton?",
-      "answer": "0",
-      "explanation": "$\\alpha = 0^\\circ$ hoặc $180^\\circ$ nên $\\sin\\alpha = 0$ và $F = 0$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Độ lớn lực từ tác dụng lên đoạn dây dài $l$ mang dòng $I$ đặt trong từ trường $B$ (góc $\\alpha$ giữa dây và $\\vec{B}$) là:",
-      "options": [
-        "$F = BIl\\cos\\alpha$",
-        "$F = BI^2l\\sin\\alpha$",
-        "$F = BIl\\sin\\alpha$",
-        "$F = \\dfrac{BI}{l\\sin\\alpha}$"
-      ],
-      "answer": 2,
-      "explanation": "Biểu thức định luật Ampe: $F = BIl\\sin\\alpha$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Dây dài $5\\ \\text{cm}$ mang dòng $3\\ \\text{A}$, vuông góc đường sức, $B = 0{,}2\\ \\text{T}$. Lực từ bằng:",
-      "options": [
-        "$3\\ \\text{N}$",
-        "$0{,}03\\ \\text{N}$",
-        "$0{,}3\\ \\text{N}$",
-        "$0{,}015\\ \\text{N}$"
-      ],
-      "answer": 1,
-      "explanation": "$F = BIl = 0{,}2 \\times 3 \\times 0{,}05 = 0{,}03\\ \\text{N}$ (đổi $5\\ \\text{cm} = 0{,}05\\ \\text{m}$)."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Với $F = BIl\\sin\\alpha$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Vuông góc đường sức ($\\alpha = 90^\\circ$) thì lực lớn nhất $F = BIl$.",
-          "answer": true
-        },
-        {
-          "text": "Khi $\\alpha = 180^\\circ$ thì $F = 0$.",
-          "answer": true
-        },
-        {
-          "text": "Giữ nguyên các đại lượng khác, tăng $I$ gấp đôi thì $F$ gấp đôi.",
-          "answer": true
-        },
-        {
-          "text": "Khi $\\alpha = 30^\\circ$ thì $F = BIl$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$\\sin 30^\\circ = 0{,}5$ nên $F = 0{,}5\\,BIl$."
-    },
-    {
-      "type": "true_false",
-      "kind": "bien_doi",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về cảm ứng từ $B = \\dfrac{F}{Il\\sin\\alpha}$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$1\\ \\text{T} = 1\\ \\text{N}/(\\text{A}\\cdot\\text{m})$.",
-          "answer": true
-        },
-        {
-          "text": "Tăng dòng thử gấp đôi thì $F$ tăng gấp đôi còn $B$ tại điểm đó không đổi.",
-          "answer": true
-        },
-        {
-          "text": "$B$ tại một điểm tăng khi tăng cường độ dòng điện thử.",
-          "answer": false
-        },
-        {
-          "text": "Mômen ngẫu lực cực đại $M_{\\max} = NBIS$ khi mặt phẳng khung song song đường sức.",
-          "answer": true
-        }
-      ],
-      "explanation": "$B$ là tính chất của từ trường tại điểm đó; $I$ và $l$ chỉ là thước đo."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Dây dài $20\\ \\text{cm}$, $I = 5\\ \\text{A}$, $B = 0{,}1\\ \\text{T}$, dây hợp đường sức $30^\\circ$. Lực từ bằng bao nhiêu newton?",
-      "answer": "0,05",
-      "explanation": "$F = 0{,}1 \\times 5 \\times 0{,}20 \\times \\sin 30^\\circ = 0{,}05\\ \\text{N}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Dây dài $20\\ \\text{cm}$, $I = 3\\ \\text{A}$, vuông góc đường sức, lực đo được $0{,}06\\ \\text{N}$. Cảm ứng từ $B$ bằng bao nhiêu tesla?",
-      "answer": "0,1",
-      "explanation": "$B = \\dfrac{F}{Il} = \\dfrac{0{,}06}{3 \\times 0{,}20} = 0{,}1\\ \\text{T}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Dây thẳng dài, $I = 15\\ \\text{A}$, điểm cách dây $r = 5\\ \\text{cm}$ có $B = a\\cdot10^{-5}\\ \\text{T}$. Tìm $a$.",
-      "answer": "6",
-      "explanation": "$B = 2\\cdot10^{-7}\\times 15/0{,}05 = 6\\cdot10^{-5}\\ \\text{T}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Quy tắc bàn tay trái, xác định phương chiều lực từ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khung dây $N = 100$ vòng, diện tích mỗi vòng $S = 5\\ \\text{cm}^2$, dòng $I = 2\\ \\text{A}$, đặt trong từ trường đều $B = 0{,}4\\ \\text{T}$. Mômen ngẫu lực cực đại bằng:",
-      "options": [
-        "$0{,}4\\ \\text{N}\\cdot\\text{m}$",
-        "$4\\cdot10^{-4}\\ \\text{N}\\cdot\\text{m}$",
-        "$4\\ \\text{N}\\cdot\\text{m}$",
-        "$0{,}04\\ \\text{N}\\cdot\\text{m}$"
-      ],
-      "answer": 3,
-      "explanation": "$S = 5\\ \\text{cm}^2 = 5\\cdot10^{-4}\\ \\text{m}^2$; $M_{\\max} = NBIS = 100 \\times 0{,}4 \\times 2 \\times 5\\cdot10^{-4} = 0{,}04\\ \\text{N}\\cdot\\text{m}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vòng dây tròn $N = 10$ vòng, bán kính $R = 4\\ \\text{cm}$, dòng $I = 2\\ \\text{A}$. Cảm ứng từ tại tâm vòng dây bằng:",
-      "options": [
-        "$6{,}28\\cdot10^{-4}\\ \\text{T}$",
-        "$3{,}14\\cdot10^{-4}\\ \\text{T}$",
-        "$3{,}14\\cdot10^{-5}\\ \\text{T}$",
-        "$3{,}14\\cdot10^{-6}\\ \\text{T}$"
-      ],
-      "answer": 1,
-      "explanation": "$B = 2\\pi\\cdot10^{-7}\\dfrac{NI}{R} = 2\\pi\\cdot10^{-7}\\times\\dfrac{10\\times 2}{0{,}04} = \\pi\\cdot10^{-4} \\approx 3{,}14\\cdot10^{-4}\\ \\text{T}$ (đổi $4\\ \\text{cm} = 0{,}04\\ \\text{m}$)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ống dây dài $25\\ \\text{cm}$ có $500$ vòng, dòng $I = 0{,}5\\ \\text{A}$. Cảm ứng từ trong lòng ống bằng:",
-      "options": [
-        "$1{,}26\\cdot10^{-3}\\ \\text{T}$",
-        "$1{,}26\\cdot10^{-5}\\ \\text{T}$",
-        "$6{,}28\\cdot10^{-4}\\ \\text{T}$",
-        "$7{,}85\\cdot10^{-5}\\ \\text{T}$"
-      ],
-      "answer": 0,
-      "explanation": "$n = N/l = 500/0{,}25 = 2000$ vòng/m; $B = 4\\pi\\cdot10^{-7} nI = 4\\pi\\cdot10^{-7}\\times 2000\\times 0{,}5 \\approx 1{,}26\\cdot10^{-3}\\ \\text{T}$."
+     "text": "Lực từ tác dụng lên dây có phương trùng với phương đường sức từ giữa hai cực.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Thí nghiệm cho thấy dây lệch khi có dòng điện và lệch ngược lại khi đảo chiều dòng. Dây song song đường sức thì $F = 0$. Lực từ luôn vuông góc với đường sức nên ý d sai.",
+   "distractorNotes": {
+    "0": "Coi là sai tức phủ nhận lực từ, trong khi thí nghiệm cho thấy dây lệch ngay khi đóng mạch.",
+    "1": "Chiều lực từ phụ thuộc chiều dòng theo bàn tay trái, nên đảo dòng thì dây phải lệch ngược lại.",
+    "2": "Dây song song đường sức có $\\sin\\alpha=0$ nên $F=0$, dây không thể bị lệch.",
+    "3": "Lực từ vuông góc với đường sức từ, nên không thể trùng phương với đường sức giữa hai cực."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Tính lực từ F = BIl·sinθ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đặt một đoạn dây dài 5,0 cm vuông góc với đường sức trong khe nam châm. Móc dây vào lực kế, tăng dần cường độ dòng điện $I$ và đọc lực từ $F$.",
+   "statements": [
+    {
+     "text": "Lực từ $F$ tỉ lệ thuận với cường độ dòng điện $I$.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị $F$ theo $I$ gần đúng là một đường thẳng đi qua gốc toạ độ.",
+     "answer": true
+    },
+    {
+     "text": "Thương số $F/(Il)$ tăng dần khi tăng $I$.",
+     "answer": false
+    },
+    {
+     "text": "Dùng đoạn dây dài gấp đôi trong cùng từ trường, với cùng $I$, thì $F$ giảm một nửa.",
+     "answer": false
+    }
+   ],
+   "explanation": "Theo $F = BIl$ (dây vuông góc), $F$ tỉ lệ thuận với $I$ và với $l$. Thương $F/(Il)$ luôn bằng $B$ của khe nên không đổi; dây dài gấp đôi thì $F$ gấp đôi.",
+   "distractorNotes": {
+    "0": "Dây vuông góc nên $F=BIl$ với $B$, $l$ cố định, vì vậy $F$ tỉ lệ thuận với $I$.",
+    "1": "$F$ tỉ lệ thuận với $I$ nên đồ thị là đường thẳng qua gốc; các điểm lệch nhẹ chỉ do sai số đo.",
+    "2": "Thương $F/(Il)$ chính là $B$ của khe, các giá trị đo chỉ dao động do sai số.",
+    "3": "Đảo tỉ lệ; $F=BIl$ tỉ lệ thuận với $l$ nên dây dài gấp đôi thì lực gấp đôi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Cảm ứng từ và đơn vị tesla",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dùng một nam châm thử và một đoạn dây thử mang dòng điện để khảo sát từ trường tại một điểm.",
+   "statements": [
+    {
+     "text": "Cảm ứng từ là đại lượng vectơ đặc trưng cho từ trường về mặt tác dụng lực.",
+     "answer": true
+    },
+    {
+     "text": "Phương của $\\vec{B}$ là phương của nam châm thử nằm cân bằng tại điểm đó.",
+     "answer": true
+    },
+    {
+     "text": "Chiều của $\\vec{B}$ là chiều từ cực Bắc sang cực Nam của nam châm thử.",
+     "answer": false
+    },
+    {
+     "text": "Độ lớn $B$ tại điểm đó phụ thuộc cường độ dòng điện chạy qua đoạn dây thử.",
+     "answer": false
+    }
+   ],
+   "explanation": "Chiều của $\\vec{B}$ là từ cực Nam sang cực Bắc của nam châm thử. $B$ là tính chất của từ trường, không phụ thuộc dòng điện của dây thử.",
+   "distractorNotes": {
+    "0": "Đây chính là định nghĩa cảm ứng từ trong bài: vectơ đặc trưng cho từ trường về mặt tác dụng lực.",
+    "1": "Bài quy ước phương $\\vec{B}$ là phương nam châm thử nằm cân bằng, nên không thể coi là sai.",
+    "2": "Đảo chiều quy ước; $\\vec{B}$ đi từ cực Nam sang cực Bắc của nam châm thử.",
+    "3": "Tăng dòng thử chỉ làm $F$ tăng tỉ lệ, còn $B=F/(Il)$ giữ nguyên vì là tính chất của từ trường."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Lực từ tác dụng lên khung dây. Ngẫu lực từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một khung dây gồm nhiều vòng, có trục quay, đặt giữa hai cực của nam châm rồi nối với pin. Khung không có bộ đổi chiều dòng điện.",
+   "statements": [
+    {
+     "text": "Hai cạnh đối diện của khung chịu hai lực từ cùng độ lớn, ngược chiều, không cùng giá.",
+     "answer": true
+    },
+    {
+     "text": "Hợp lực của hai lực từ đó khác 0 nên khung bị đẩy đi khỏi vị trí ban đầu.",
+     "answer": false
+    },
+    {
+     "text": "Đảo hai cực của pin thì khung quay theo chiều ngược lại.",
+     "answer": true
+    },
+    {
+     "text": "Khung quay rồi dừng lại khi mặt phẳng khung song song với đường sức từ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ngẫu lực có hợp lực bằng 0 nhưng mômen khác 0 nên khung quay mà không bị đẩy đi. Khung dừng khi mặt phẳng khung vuông góc đường sức (lúc đó $M = 0$). Vị trí mặt khung song song đường sức là lúc mômen cực đại.",
+   "distractorNotes": {
+    "0": "Dòng ở hai cạnh đối diện ngược chiều nên hai lực cùng độ lớn, ngược chiều, khác giá, đúng định nghĩa ngẫu lực.",
+    "1": "Hai lực cùng độ lớn, ngược chiều có hợp lực bằng 0; chỉ mômen khác 0 nên khung quay tại chỗ.",
+    "2": "Đảo cực pin làm đổi chiều dòng, lực từ ở hai cạnh đổi chiều nên mômen và chiều quay đảo theo.",
+    "3": "Mặt khung song song đường sức là lúc mômen cực đại; khung chỉ dừng khi mặt khung vuông góc đường sức."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tính lực từ F = BIl·sinθ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một đoạn dây dẫn thẳng mang dòng điện đặt trong từ trường đều, dây hợp với đường sức góc $\\alpha$. Dùng công thức $F = BIl\\sin\\alpha$ để tìm lực từ.",
+   "statements": [
+    {
+     "text": "$\\alpha$ là góc hợp bởi đoạn dây và vectơ cảm ứng từ $\\vec{B}$.",
+     "answer": true
+    },
+    {
+     "text": "Chiều dài $l$ phải đổi ra mét khi thay số để $F$ tính bằng newton.",
+     "answer": true
+    },
+    {
+     "text": "Khi dây hợp với đường sức góc $30^\\circ$, ta thay $\\cos 30^\\circ$ vào công thức.",
+     "answer": false
+    },
+    {
+     "text": "Lực từ đạt giá trị cực đại $BIl$ khi $\\alpha = 0^\\circ$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Công thức dùng $\\sin\\alpha$, không dùng $\\cos\\alpha$, và $l$ tính bằng mét. Lực cực đại $F = BIl$ khi $\\alpha = 90^\\circ$; khi $\\alpha = 0^\\circ$ thì $F = 0$.",
+   "distractorNotes": {
+    "0": "Bài định nghĩa $\\alpha$ là góc giữa đoạn dây và $\\vec{B}$, nên không thể coi phát biểu này sai.",
+    "1": "Phải dùng $B$ (T), $I$ (A), $l$ (m) mới ra $F$ (N); không đổi cm sang m thì kết quả sai 100 lần.",
+    "2": "Công thức dùng $\\sin\\alpha$; thay $\\cos30^\\circ$ là nhầm hàm, cho kết quả lớn gấp khoảng 1,73 lần.",
+    "3": "Tại $\\alpha=0^\\circ$ thì $\\sin\\alpha=0$ nên $F=0$; lực cực đại ứng với $\\alpha=90^\\circ$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Lực từ tác dụng lên khung dây. Ngẫu lực từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khung dây phẳng gồm $N$ vòng, diện tích mỗi vòng $S$, mang dòng điện $I$, đặt trong từ trường đều $B$. Mômen ngẫu lực từ tác dụng lên khung là $M = NBIS\\sin\\alpha$.",
+   "statements": [
+    {
+     "text": "Trong công thức của $M$, $\\alpha$ là góc giữa $\\vec{B}$ và pháp tuyến của mặt phẳng khung.",
+     "answer": true
+    },
+    {
+     "text": "$\\alpha$ trong công thức $M$ có cùng ý nghĩa với $\\alpha$ trong công thức $F = BIl\\sin\\alpha$.",
+     "answer": false
+    },
+    {
+     "text": "Khi mặt phẳng khung vuông góc với đường sức từ thì $M = 0$.",
+     "answer": true
+    },
+    {
+     "text": "Giữ nguyên các yếu tố khác, tăng số vòng $N$ lên gấp đôi thì $M$ giảm một nửa.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài nhấn mạnh $\\alpha$ trong $M$ là góc giữa $\\vec{B}$ và pháp tuyến khung, khác góc trong $F$. Mặt khung vuông góc đường sức thì $M = 0$. $M$ tỉ lệ thuận với $N$ nên $N$ gấp đôi thì $M$ gấp đôi.",
+   "distractorNotes": {
+    "0": "Bài nêu rõ $\\alpha$ trong $M$ là góc giữa $\\vec{B}$ và pháp tuyến khung, nên không thể coi là sai.",
+    "1": "Hai góc khác nhau: trong $F$ là góc giữa dây và $\\vec{B}$, trong $M$ là góc giữa pháp tuyến khung và $\\vec{B}$.",
+    "2": "Mặt khung vuông góc đường sức thì pháp tuyến song song $\\vec{B}$, $\\sin\\alpha=0$ nên $M=0$.",
+    "3": "Đảo tỉ lệ; $M=NBIS\\sin\\alpha$ tỉ lệ thuận với $N$ nên gấp đôi số vòng thì mômen gấp đôi."
+   }
+  }
+ ]
 }

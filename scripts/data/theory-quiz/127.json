@@ -1,386 +1,550 @@
 {
-  "lesson_id": 127,
-  "lesson_title": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
-  "item_id": 183,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 127,
+ "lesson_title": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+ "item_id": 183,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đường sức của điện trường xoáy có đặc điểm nào sau đây?",
+   "options": [
+    "Là đường cong hở, đi ra từ điện tích dương",
+    "Là đường cong kín, bao quanh các đường cảm ứng từ",
+    "Là đường thẳng, song song với đường cảm ứng từ",
+    "Là đường cong hở, kết thúc ở điện tích âm"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: đường sức điện trường xoáy là đường cong kín, bao quanh các đường cảm ứng từ, không có điểm đầu và điểm cuối. Đường sức hở đi từ điện tích dương sang điện tích âm là của điện trường tĩnh.",
+   "distractorNotes": {
+    "A": "Gán đặc điểm điện trường tĩnh cho điện trường xoáy; điện trường xoáy không gắn với điện tích nên đường sức phải khép kín.",
+    "C": "Nhầm quan hệ hình học: đường sức điện trường xoáy bao quanh đường cảm ứng từ, không chạy song song với chúng.",
+    "D": "Lẫn với điện trường tĩnh; đường sức điện trường xoáy khép kín, không có điểm đầu hay điểm cuối nào ở điện tích."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện trường xoáy xuất hiện trong vùng không gian nào sau đây?",
+   "options": [
+    "Vùng có từ trường mạnh nhưng không đổi",
+    "Vùng có điện tích đứng yên",
+    "Vùng có từ trường biến thiên theo thời gian",
+    "Vùng quanh một nam châm đứng yên"
+   ],
+   "answer": 2,
+   "explanation": "Theo bài, từ trường biến thiên sinh ra điện trường xoáy. Thí nghiệm nam châm rơi qua ống dây cho thấy kim điện kế về 0 khi nam châm đứng yên, nên cái cần là sự biến thiên chứ không phải từ trường mạnh.",
+   "distractorNotes": {
+    "A": "Nhầm độ mạnh với sự biến thiên; nam châm đứng yên trong ống thì kim điện kế về 0 dù từ trường mạnh.",
+    "B": "Điện tích đứng yên chỉ sinh điện trường tĩnh có đường sức hở, không phải điện trường xoáy.",
+    "D": "Nam châm đứng yên tạo từ trường không đổi, không biến thiên nên không sinh ra điện trường xoáy."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một sóng điện từ có tần số $f$ truyền trong chân không với tốc độ $c$. Bước sóng $\\lambda$ của sóng này là",
+   "options": [
+    "$\\lambda = cf$",
+    "$\\lambda = \\dfrac{f}{c}$",
+    "$\\lambda = \\dfrac{c}{f}$",
+    "$\\lambda = \\dfrac{c^2}{f}$"
+   ],
+   "answer": 2,
+   "explanation": "Bài cho công thức bước sóng trong chân không $\\lambda = cT = \\dfrac{c}{f}$. Các phương án khác nhân nhầm, đảo tử mẫu hoặc thêm bình phương.",
+   "distractorNotes": {
+    "A": "Nhân nhầm $c$ với $f$; bước sóng là quãng đường đi trong một chu kì nên $\\lambda = cT$, tức chia cho $f$.",
+    "B": "Đảo tử và mẫu; kết quả $f/c$ không có đơn vị mét nên không thể là bước sóng.",
+    "D": "Thêm bình phương vô căn cứ; $c^2/f$ sai thứ nguyên, công thức trong bài chỉ có $c$ bậc một."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dòng điện dịch là",
+   "options": [
+    "điện trường biến thiên giữa hai bản tụ, tương đương dòng điện",
+    "dòng điện tích chạy xuyên qua lớp điện môi giữa hai bản tụ",
+    "dòng điện một chiều do tụ tạo ra khi mắc vào mạch xoay chiều",
+    "dòng electron chạy trong dây nối sau khi tụ đã tích điện xong"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, khi tụ tích hoặc phóng điện thì điện trường giữa hai bản biến thiên. Điện trường biến thiên ấy tương đương một dòng điện chạy qua tụ, gọi là dòng điện dịch, còn lớp điện môi vẫn cách điện.",
+   "distractorNotes": {
+    "B": "Lớp điện môi giữa hai bản tụ cách điện, không có điện tích nào chạy xuyên qua.",
+    "C": "Tụ không biến dòng xoay chiều thành một chiều; dòng điện dịch tồn tại nhờ điện trường giữa hai bản biến thiên.",
+    "D": "Khi tụ đã tích điện xong, điện trường giữa hai bản không còn biến thiên nên không có dòng điện dịch."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ công thức $\\lambda = \\dfrac{c}{f}$, tần số của sóng điện từ trong chân không được tính bằng",
+   "options": [
+    "$f = c\\lambda$",
+    "$f = \\dfrac{c}{\\lambda}$",
+    "$f = \\dfrac{\\lambda}{c}$",
+    "$f = \\dfrac{1}{c\\lambda}$"
+   ],
+   "answer": 1,
+   "explanation": "Nhân hai vế của $\\lambda = \\dfrac{c}{f}$ với $f$ rồi chia cho $\\lambda$, ta được $f = \\dfrac{c}{\\lambda}$. Bài cũng dùng chính công thức này ở bước kiểm tra lại của bài toán mẫu.",
+   "distractorNotes": {
+    "A": "Biến đổi sai: nhân hai vế với $f$ rồi chia cho $\\lambda$ thì $\\lambda$ nằm ở mẫu, không nhân với $c$.",
+    "C": "Đảo tử và mẫu khi rút $f$; tần số tỉ lệ thuận với $c$ chứ không tỉ lệ nghịch.",
+    "D": "Đặt cả $c$ và $\\lambda$ xuống mẫu là sai; từ $\\lambda = c/f$ chỉ được $f = c/\\lambda$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Bên trong một ống dây có dòng điện biến thiên, dù không có điện tích nào, vẫn xuất hiện điện trường. Người ta so sánh điện trường này với điện trường tĩnh quanh một điện tích đứng yên. Xét các phát biểu sau:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đường sức của điện trường xoáy có đặc điểm gì?",
-      "options": [
-        "Là đường thẳng đi từ điện tích dương sang điện tích âm",
-        "Là đường cong kín, bao quanh các đường cảm ứng từ",
-        "Là đường cong hở nối hai điểm ở vô cùng",
-        "Là đường song song với các đường cảm ứng từ"
-      ],
-      "answer": 1,
-      "explanation": "Điện trường xoáy không gắn với điện tích nào nên đường sức khép kín, bao quanh các đường cảm ứng từ."
+     "text": "Điện trường trong ống dây là điện trường xoáy, do từ trường biến thiên sinh ra.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tụ điện mắc nối tiếp với bóng đèn trong mạch xoay chiều, đèn vẫn sáng. Vì sao?",
-      "options": [
-        "Điện trường biến thiên giữa hai bản tụ tương đương dòng điện dịch",
-        "Tụ phóng điện một lần rồi ngắt hẳn",
-        "Điện tích chạy xuyên qua lớp cách điện giữa hai bản tụ",
-        "Tụ biến dòng xoay chiều thành dòng một chiều"
-      ],
-      "answer": 0,
-      "explanation": "Giữa hai bản tụ không có điện tích chạy qua; điện trường biến thiên đóng vai trò dòng điện dịch, gây ra từ trường."
+     "text": "Đường sức của điện trường xoáy xuất phát từ điện tích dương và kết thúc ở điện tích âm.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phát biểu nào đúng về điện từ trường?",
-      "options": [
-        "Là hai trường riêng biệt, không liên quan nhau",
-        "Là từ trường không đổi của nam châm vĩnh cửu",
-        "Là một trường thống nhất gồm điện trường và từ trường biến thiên, tại mỗi điểm $\\vec{E}$ vuông góc $\\vec{B}$",
-        "Là tên gọi khác của điện trường tĩnh quanh điện tích đứng yên"
-      ],
-      "answer": 2,
-      "explanation": "Điện từ trường là một trường thống nhất, hai mặt chuyển hoá qua lại và cùng biến thiên."
+     "text": "Đường sức của điện trường tĩnh là đường không khép kín.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tại một điểm có sóng điện từ truyền qua, nhận xét nào đúng?",
-      "options": [
-        "Hai vectơ lệch pha $\\pi/2$ với nhau",
-        "Hai vectơ song song với phương truyền",
-        "Sóng không truyền được trong chân không",
-        "$\\vec{E}$ vuông góc $\\vec{B}$, cả hai vuông góc phương truyền và cùng pha"
-      ],
-      "answer": 3,
-      "explanation": "Sóng điện từ là sóng ngang, $\\vec{E}\\perp\\vec{B}$, hai vectơ biến thiên điều hoà và cùng pha."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sắp xếp nào đúng theo bước sóng giảm dần?",
-      "options": [
-        "Vô tuyến, hồng ngoại, nhìn thấy, tử ngoại, tia X, tia gamma",
-        "Nhìn thấy, vô tuyến, tia X, gamma, hồng ngoại, tử ngoại",
-        "Gamma, tia X, tử ngoại, nhìn thấy, hồng ngoại, vô tuyến",
-        "Vô tuyến, tử ngoại, nhìn thấy, hồng ngoại, tia X, gamma"
-      ],
-      "answer": 0,
-      "explanation": "Thang sóng điện từ theo bước sóng giảm dần: vô tuyến, hồng ngoại, nhìn thấy, tử ngoại, tia X, gamma."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Khác với sóng cơ, sóng điện từ có điểm nào sau đây?",
-      "options": [
-        "Không mang năng lượng",
-        "Là sóng dọc, không phải sóng ngang",
-        "Truyền được trong chân không với tốc độ $c=3\\cdot10^8$ m/s",
-        "Cần môi trường đàn hồi mới truyền được"
-      ],
-      "answer": 2,
-      "explanation": "Sóng điện từ là lan truyền của điện từ trường nên không cần môi trường; ánh sáng Mặt Trời tới Trái Đất là bằng chứng."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "So sánh điện trường tĩnh và điện trường xoáy, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Điện trường xoáy do từ trường biến thiên gây ra.",
-          "answer": true
-        },
-        {
-          "text": "Đường sức của điện trường tĩnh không khép kín, đi từ điện tích dương sang điện tích âm.",
-          "answer": true
-        },
-        {
-          "text": "Điện trường xoáy bắt buộc phải có điện tích đứng yên sinh ra nó.",
-          "answer": false
-        },
-        {
-          "text": "Đường sức điện trường xoáy bao quanh các đường cảm ứng từ.",
-          "answer": true
-        }
-      ],
-      "explanation": "Điện trường xoáy 'đứng một mình' được, không cần điện tích; chỉ điện trường tĩnh mới cần điện tích."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về sóng điện từ, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Sóng điện từ là sóng ngang.",
-          "answer": true
-        },
-        {
-          "text": "Khi điện trường $\\vec{E}$ của sóng triệt tiêu thì từ trường $\\vec{B}$ đạt cực đại.",
-          "answer": false
-        },
-        {
-          "text": "Sóng điện từ mang năng lượng, có thể gây nhiễu thiết bị điện.",
-          "answer": true
-        },
-        {
-          "text": "Sóng điện từ cũng có phản xạ, khúc xạ, giao thoa và nhiễu xạ.",
-          "answer": true
-        }
-      ],
-      "explanation": "$\\vec{E}$ và $\\vec{B}$ cùng pha nên cùng triệt tiêu; lệch pha như dòng và áp trong mạch là nhầm lẫn."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Thang sóng điện từ trong bài gồm mấy vùng sóng? Điền số.",
-      "answer": "6",
-      "explanation": "Sáu vùng: vô tuyến, hồng ngoại, nhìn thấy, tử ngoại, tia X, tia gamma."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_luat",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trong sóng điện từ, độ lệch pha giữa $\\vec{E}$ và $\\vec{B}$ bằng bao nhiêu rađian?",
-      "answer": "0",
-      "explanation": "$\\vec{E}$ và $\\vec{B}$ biến thiên cùng pha nên độ lệch pha bằng 0."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Đài FM phát ở $100$ MHz trong chân không. Bước sóng bằng",
-      "options": [
-        "$300$ m",
-        "$0{,}3$ m",
-        "$30$ m",
-        "$3$ m"
-      ],
-      "answer": 3,
-      "explanation": "$\\lambda=c/f=3\\cdot10^8/10^8=3$ m."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Tín hiệu $50$ MHz truyền trong cáp với tốc độ $2\\cdot10^8$ m/s. Bước sóng trong cáp bằng",
-      "options": [
-        "$0{,}25$ m",
-        "$6$ m",
-        "$2$ m",
-        "$4$ m"
-      ],
-      "answer": 3,
-      "explanation": "Trong môi trường dùng $\\lambda=v/f=2\\cdot10^8/(5\\cdot10^7)=4$ m; lỗi hay gặp là vẫn dùng $c$ nên ra $6$ m."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Ánh sáng đi từ Mặt Trời đến Trái Đất, $s=1{,}5\\cdot10^{11}$ m, $c=3\\cdot10^8$ m/s. Thời gian truyền là",
-      "options": [
-        "$50$ s",
-        "$500$ s",
-        "$5000$ s",
-        "$2\\cdot10^{-3}$ s"
-      ],
-      "answer": 1,
-      "explanation": "$t=s/c=1{,}5\\cdot10^{11}/(3\\cdot10^8)=500$ s, tức 8 phút 20 giây."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sóng điện từ trong chân không có bước sóng $2$ m. Tần số của nó là",
-      "options": [
-        "$6\\cdot10^{8}$ Hz",
-        "$6\\cdot10^{-9}$ Hz",
-        "$1{,}5\\cdot10^{8}$ Hz",
-        "$1{,}5\\cdot10^{6}$ Hz"
-      ],
-      "answer": 2,
-      "explanation": "$f=c/\\lambda=3\\cdot10^8/2=1{,}5\\cdot10^8$ Hz."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Bài toán mẫu: đài FM $100$ MHz, vệ tinh địa tĩnh cao $35\\,786$ km, $c=3\\cdot10^8$ m/s. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Bước sóng $\\lambda=3$ m, thuộc vùng sóng vô tuyến.",
-          "answer": true
-        },
-        {
-          "text": "Quãng đường tín hiệu đi qua vệ tinh xấp xỉ $2h$.",
-          "answer": true
-        },
-        {
-          "text": "Thời gian đi qua vệ tinh khoảng $0{,}24$ s.",
-          "answer": true
-        },
-        {
-          "text": "Đổi đài sang tần số cao hơn thì tín hiệu đến máy thu nhanh hơn trong chân không.",
-          "answer": false
-        }
-      ],
-      "explanation": "Mọi sóng điện từ trong chân không có cùng tốc độ $c$; đổi tần số chỉ đổi bước sóng, không đổi thời gian trễ."
-    },
-    {
-      "type": "true_false",
-      "kind": "bien_doi",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Về bước sóng và tần số của sóng điện từ, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Sóng wifi $2{,}4$ GHz trong chân không có bước sóng $12{,}5$ cm.",
-          "answer": true
-        },
-        {
-          "text": "Lò vi sóng $2{,}45$ GHz có bước sóng khoảng $12{,}2$ cm.",
-          "answer": true
-        },
-        {
-          "text": "Khi sóng vào thuỷ tinh, tần số của nó giảm xuống.",
-          "answer": false
-        },
-        {
-          "text": "Khi sóng vào thuỷ tinh, tốc độ và bước sóng đều giảm, tần số không đổi.",
-          "answer": true
-        }
-      ],
-      "explanation": "Tần số do nguồn quyết định nên không đổi; vào môi trường chiết suất $n$ thì $v=c/n$ và $\\lambda'=\\lambda/n$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Đài phát ở $150$ MHz trong chân không. Bước sóng bằng bao nhiêu mét?",
-      "answer": "2",
-      "explanation": "$\\lambda=c/f=3\\cdot10^8/(1{,}5\\cdot10^8)=2$ m."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Sóng wifi $2{,}4$ GHz trong chân không có bước sóng bao nhiêu xentimét?",
-      "answer": "12,5",
-      "explanation": "$\\lambda=3\\cdot10^8/(2{,}4\\cdot10^9)=0{,}125$ m $=12{,}5$ cm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sóng điện từ tần số $100$ MHz có chu kì $T=1/f$ bằng bao nhiêu nanô giây?",
-      "answer": "10",
-      "explanation": "$T=1/10^8=10^{-8}$ s $=10$ ns, và $\\lambda=cT=3$ m."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Điện từ trường và sóng điện từ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Gọi qua vệ tinh địa tĩnh, một lượt truyền mất $0{,}24$ s. Độ trễ vòng (đi và về) bằng bao nhiêu giây?",
-      "answer": "0,48",
-      "explanation": "Tiếng đi một lượt, tiếng trả lời về thêm một lượt: $2\\times0{,}24=0{,}48$ s."
+     "text": "Đường sức của hai loại điện trường này có thể cắt nhau.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Điện trường xoáy do từ trường biến thiên sinh ra, có đường sức kín và không gắn với điện tích nào, nên b sai. Bài nêu điểm giống nhau của hai loại là đường sức không cắt nhau, nên d sai.",
+   "distractorNotes": {
+    "0": "Trong ống không có điện tích nào, nên điện trường ở đó chỉ có thể do từ trường biến thiên sinh ra, tức điện trường xoáy.",
+    "1": "Đây là đặc điểm điện trường tĩnh; đường sức điện trường xoáy khép kín, không gắn với điện tích dương hay âm nào.",
+    "2": "Đường sức điện trường tĩnh đi từ điện tích dương sang điện tích âm nên không thể khép kín.",
+    "3": "Bài nêu điểm giống nhau của hai loại điện trường chính là đường sức không bao giờ cắt nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào sau đây về điện từ trường là đúng?",
+   "options": [
+    "Điện trường tĩnh quanh điện tích đứng yên là điện từ trường",
+    "Từ trường của nam châm vĩnh cửu là một điện từ trường",
+    "Điện trường biến thiên và từ trường biến thiên tồn tại riêng rẽ",
+    "Điện trường biến thiên và từ trường biến thiên là hai mặt của một trường"
+   ],
+   "answer": 3,
+   "explanation": "Kết luận của Maxwell trong bài: hai trường biến thiên chuyển hoá qua lại và là hai mặt của một trường thống nhất, gọi là điện từ trường. Điện trường tĩnh hay từ trường không đổi không phải là điện từ trường.",
+   "distractorNotes": {
+    "A": "Điện trường tĩnh không biến thiên nên không sinh từ trường, không phải điện từ trường.",
+    "B": "Nam châm vĩnh cửu chỉ có từ trường không đổi, thiếu sự biến thiên để sinh điện trường.",
+    "C": "Trái kết luận Maxwell: hai trường biến thiên luôn sinh ra nhau, chuyển hoá qua lại nên không tồn tại riêng rẽ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong chân không, nếu tần số của sóng điện từ tăng gấp đôi thì bước sóng của nó",
+   "options": [
+    "tăng gấp đôi",
+    "tăng gấp bốn",
+    "không thay đổi",
+    "giảm một nửa"
+   ],
+   "answer": 3,
+   "explanation": "Theo $\\lambda = \\dfrac{c}{f}$ với $c$ không đổi, bước sóng tỉ lệ nghịch với tần số. Vì vậy khi $f$ tăng gấp đôi thì $\\lambda$ giảm một nửa.",
+   "distractorNotes": {
+    "A": "Nhầm tỉ lệ thuận; theo $\\lambda = c/f$ với $c$ không đổi, bước sóng tỉ lệ nghịch với tần số.",
+    "B": "Tưởng bước sóng phụ thuộc bình phương tần số, trong khi $\\lambda = c/f$ chỉ tỉ lệ nghịch bậc một.",
+    "C": "Nhầm bước sóng với tốc độ truyền; chỉ $c$ không đổi, còn bước sóng thay đổi theo tần số."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mỗi khi bếp từ chạy dòng xoay chiều, một chiếc radio chạy pin đặt cách đó 2 m bị rè, dù không có dây nào nối hai thiết bị. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Dòng điện biến thiên trong bếp từ sinh ra điện từ trường lan tới ăng ten radio.",
+     "answer": true
+    },
+    {
+     "text": "Sóng điện từ là sóng dọc: vectơ $\\vec{E}$ và $\\vec{B}$ dao động dọc theo phương truyền.",
+     "answer": false
+    },
+    {
+     "text": "Sóng điện từ mang năng lượng nên có thể gây nhiễu thiết bị điện.",
+     "answer": true
+    },
+    {
+     "text": "Giống sóng cơ, sóng điện từ không truyền được trong chân không.",
+     "answer": false
+    }
+   ],
+   "explanation": "Sóng điện từ là sóng ngang, $\\vec{E} \\perp \\vec{B}$ và cả hai vuông góc với phương truyền, nên b sai. Sóng điện từ truyền được cả trong chân không với tốc độ $c$, nên d sai.",
+   "distractorNotes": {
+    "0": "Radio chạy pin, không có dây nối, nên chỉ điện từ trường do dòng biến thiên lan tới ăng ten mới gây rè.",
+    "1": "Sóng điện từ là sóng ngang: $\\vec{E} \\perp \\vec{B}$ và cả hai vuông góc với phương truyền.",
+    "2": "Tiếng rè chính là bằng chứng sóng điện từ mang năng lượng tới ăng ten và gây nhiễu thiết bị.",
+    "3": "Mang thói quen của sóng cơ sang; ánh sáng Mặt Trời tới Trái Đất qua chân không chứng tỏ sóng điện từ truyền được."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một sóng điện từ truyền từ chân không vào một môi trường có tốc độ truyền $v \\lt c$. Nhận định nào sau đây là đúng?",
+   "options": [
+    "Tần số không đổi, bước sóng giảm",
+    "Tần số giảm, bước sóng không đổi",
+    "Tần số tăng, bước sóng giảm",
+    "Tần số không đổi, bước sóng tăng"
+   ],
+   "answer": 0,
+   "explanation": "Khi đổi môi trường, tần số do nguồn quyết định nên không đổi. Theo $\\lambda = \\dfrac{v}{f}$, tốc độ giảm thì bước sóng ngắn lại, như ví dụ cáp dẫn 100 MHz trong bài.",
+   "distractorNotes": {
+    "B": "Tần số do nguồn quyết định nên không đổi; khi $v$ giảm thì $\\lambda = v/f$ phải thay đổi.",
+    "C": "Tần số không đổi khi đổi môi trường; môi trường nhận đúng số dao động mỗi giây mà nguồn phát ra.",
+    "D": "Đảo chiều biến đổi; tần số giữ nguyên mà $v$ giảm thì $\\lambda = v/f$ phải ngắn lại."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Tại một điểm có sóng điện từ truyền qua, khi cường độ điện trường bằng 0 thì cảm ứng từ",
+   "options": [
+    "cũng bằng 0, vì $\\vec{E}$ và $\\vec{B}$ cùng pha",
+    "cực đại, vì $\\vec{E}$ và $\\vec{B}$ lệch pha $\\pi/2$",
+    "cực đại, vì năng lượng dồn hết sang từ trường",
+    "khác 0, vì $\\vec{B}$ luôn trễ pha hơn $\\vec{E}$"
+   ],
+   "answer": 0,
+   "explanation": "Trong sóng điện từ, $\\vec{E}$ và $\\vec{B}$ luôn cùng pha nên cùng đạt cực đại và cùng triệt tiêu. Lệch pha $\\pi/2$ là thói quen sai mang từ mạch có tụ điện sang.",
+   "distractorNotes": {
+    "B": "Áp lệch pha $\\pi/2$ giữa $i$ và $u$ của mạch có tụ sang sóng điện từ, trong khi $\\vec{E}$ và $\\vec{B}$ cùng pha.",
+    "C": "Năng lượng dồn qua lại chỉ đúng với mạch gồm tụ và cuộn cảm, không áp dụng cho sóng đang lan truyền.",
+    "D": "$\\vec{B}$ không trễ pha so với $\\vec{E}$; hai vectơ cùng pha nên cùng triệt tiêu cùng lúc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi đổi đơn vị bước sóng ra mét, 1 nm bằng",
+   "options": [
+    "$10^{-3}$ m",
+    "$10^{-6}$ m",
+    "$10^{-9}$ m",
+    "$10^{-12}$ m"
+   ],
+   "answer": 2,
+   "explanation": "Bảng đổi đơn vị trong bài ghi $1\\ \\text{nm} = 10^{-9}$ m. Hai giá trị $10^{-3}$ m và $10^{-6}$ m lần lượt là 1 mm và 1 μm.",
+   "distractorNotes": {
+    "A": "$10^{-3}$ m là 1 mm, nhầm tiền tố mili với nano.",
+    "B": "$10^{-6}$ m là 1 μm, nhầm tiền tố micro với nano.",
+    "D": "Lùi quá ba bậc; $10^{-12}$ m là picomet, còn nano ứng với $10^{-9}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một đài phát sóng điện từ có tần số $f$, chu kì $T$. Sóng truyền trong chân không với tốc độ $c$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Bước sóng của sóng là $\\lambda = cT$.",
+     "answer": true
+    },
+    {
+     "text": "Bước sóng của sóng là $\\lambda = \\dfrac{c}{f}$.",
+     "answer": true
+    },
+    {
+     "text": "Sóng có tần số càng lớn thì bước sóng trong chân không càng lớn.",
+     "answer": false
+    },
+    {
+     "text": "Trong chân không, sóng có tần số lớn hơn thì truyền nhanh hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Theo $\\lambda = cT = \\dfrac{c}{f}$, bước sóng tỉ lệ nghịch với tần số, nên c sai. Trong chân không mọi sóng điện từ truyền cùng tốc độ $c$, nên d sai.",
+   "distractorNotes": {
+    "0": "Bước sóng là quãng đường sóng đi được trong một chu kì nên đúng bằng $cT$.",
+    "1": "Vì $T = 1/f$ nên $\\lambda = cT$ viết lại được thành $\\lambda = c/f$.",
+    "2": "Nhầm tỉ lệ thuận; theo $\\lambda = c/f$ thì tần số càng lớn, bước sóng càng nhỏ.",
+    "3": "Trong chân không mọi sóng điện từ truyền cùng tốc độ $c$, không phụ thuộc tần số."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một sóng điện từ có tần số $f$ truyền trong một môi trường với tốc độ $v$. Bước sóng của sóng trong môi trường đó là",
+   "options": [
+    "$\\lambda = vf$",
+    "$\\lambda = \\dfrac{v}{f}$",
+    "$\\lambda = \\dfrac{c}{f}$",
+    "$\\lambda = \\dfrac{f}{v}$"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: trong môi trường khác, sóng chậm hơn và $\\lambda = \\dfrac{v}{f}$. Dùng $c$ ở đây là lỗi quên đổi tốc độ theo môi trường.",
+   "distractorNotes": {
+    "A": "Nhân nhầm $v$ với $f$; bước sóng bằng tốc độ chia tần số mới có đơn vị mét.",
+    "C": "Quên đổi tốc độ theo môi trường, vẫn dùng $c$ của chân không thay cho $v$.",
+    "D": "Đảo tử và mẫu; $f/v$ không có đơn vị độ dài nên không thể là bước sóng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mắc một tụ điện nối tiếp với đồng hồ đo dòng xoay chiều vào máy phát tần số, giữ điện áp không đổi. Khi tăng tần số, dòng điện đo được tăng và tỉ số $I/f$ gần như không đổi. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Mạch có dòng điện vì điện tích chạy xuyên qua lớp điện môi giữa hai bản tụ.",
+     "answer": false
+    },
+    {
+     "text": "Điện trường biến thiên giữa hai bản tụ tương đương một dòng điện, gọi là dòng điện dịch.",
+     "answer": true
+    },
+    {
+     "text": "Dòng điện dịch gây ra từ trường có đường sức khép kín, bao quanh các đường sức điện.",
+     "answer": true
+    },
+    {
+     "text": "Thí nghiệm này đo trực tiếp được từ trường do dòng điện dịch sinh ra.",
+     "answer": false
+    }
+   ],
+   "explanation": "Lớp điện môi cách điện, cái chạy qua tụ là điện trường biến thiên, nên a sai. Bài ghi rõ thí nghiệm chỉ đo dòng điện, còn việc dòng điện dịch sinh từ trường là kết luận của Maxwell, nên d sai.",
+   "distractorNotes": {
+    "0": "Lớp điện môi cách điện, không có điện tích nào chạy xuyên qua giữa hai bản tụ.",
+    "1": "Không có điện tích qua tụ mà mạch vẫn có dòng, nên cái chạy qua phải là điện trường biến thiên, tức dòng điện dịch.",
+    "2": "Theo Maxwell, điện trường biến thiên sinh từ trường có đường sức khép kín bao quanh các đường sức điện.",
+    "3": "Thí nghiệm chỉ đo dòng bằng đồng hồ; việc dòng điện dịch sinh từ trường là kết luận lí thuyết của Maxwell."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Tín hiệu của một đài phát truyền qua vệ tinh rồi tới máy thu, coi như truyền trong chân không. Nếu đài tăng tần số phát thì thời gian truyền tín hiệu",
+   "options": [
+    "tăng, vì bước sóng ngắn lại",
+    "giảm, vì tần số lớn hơn",
+    "giảm, vì năng lượng sóng lớn hơn",
+    "không đổi, vì tốc độ vẫn là $c$"
+   ],
+   "answer": 3,
+   "explanation": "Thời gian truyền là $t = \\dfrac{s}{c}$, mà mọi sóng điện từ trong chân không đều truyền với cùng tốc độ $c$. Đổi tần số chỉ làm bước sóng thay đổi, đúng như ví dụ đài 120 MHz trong bài.",
+   "distractorNotes": {
+    "A": "Bước sóng ngắn lại không làm tốc độ đổi; thời gian $t = s/c$ không phụ thuộc bước sóng.",
+    "B": "Nhầm tần số với tốc độ truyền; trong chân không mọi tần số đều truyền với cùng tốc độ $c$.",
+    "C": "Năng lượng lớn hơn không làm sóng đi nhanh hơn; tốc độ trong chân không luôn là $c$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo bảng ứng dụng của thang sóng điện từ, bộ điều khiển từ xa của tivi dùng loại bức xạ nào?",
+   "options": [
+    "Tia tử ngoại",
+    "Tia X",
+    "Tia gamma",
+    "Tia hồng ngoại"
+   ],
+   "answer": 3,
+   "explanation": "Bảng trong bài ghi vùng hồng ngoại (0,76 μm đến 1 mm) được dùng cho điều khiển từ xa. Tử ngoại dùng diệt khuẩn, tia X dùng chụp X-quang, tia gamma dùng xạ trị.",
+   "distractorNotes": {
+    "A": "Theo bảng, tia tử ngoại dùng diệt khuẩn, không dùng cho điều khiển từ xa.",
+    "B": "Tia X dùng chụp X-quang, có bước sóng rất ngắn, không phải tia của điều khiển tivi.",
+    "C": "Tia gamma dùng xạ trị ung thư, năng lượng rất lớn, không dùng trong điều khiển từ xa."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một sóng điện từ tần số 100 MHz truyền trong chân không rồi đi vào một cáp dẫn, trong đó tốc độ truyền là $v \\lt c$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Tần số của sóng trong cáp bằng tần số của sóng trong chân không.",
+     "answer": true
+    },
+    {
+     "text": "Bước sóng trong cáp được tính bằng $\\lambda = \\dfrac{v}{f}$.",
+     "answer": true
+    },
+    {
+     "text": "Bước sóng trong cáp dài hơn bước sóng trong chân không.",
+     "answer": false
+    },
+    {
+     "text": "Bước sóng trong cáp vẫn được tính bằng $\\lambda = \\dfrac{c}{f}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Theo bài, trong cáp sóng chậm hơn nên bước sóng ngắn lại, còn tần số vẫn là 100 MHz, nên c sai. Dùng $c$ thay cho $v$ là lỗi quên đổi tốc độ theo môi trường, nên d sai.",
+   "distractorNotes": {
+    "0": "Tần số do nguồn quyết định; nguồn phát bao nhiêu dao động mỗi giây thì môi trường nhận bấy nhiêu.",
+    "1": "Trong môi trường, công thức giữ nguyên dạng, chỉ thay tốc độ $c$ bằng tốc độ $v$ của môi trường.",
+    "2": "Đảo chiều: $v \\lt c$ mà $f$ không đổi thì $\\lambda = v/f$ phải ngắn hơn trong chân không.",
+    "3": "Quên đổi tốc độ theo môi trường; trong cáp phải dùng $v$ chứ không dùng $c$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tốc độ truyền sóng điện từ trong chân không là",
+   "options": [
+    "$3 \\cdot 10^{8}$ m/s",
+    "$3 \\cdot 10^{8}$ km/s",
+    "$3 \\cdot 10^{5}$ m/s",
+    "$3 \\cdot 10^{6}$ m/s"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu sóng điện từ truyền trong chân không với $c = 3 \\cdot 10^8$ m/s. Ghi km/s là nhầm đơn vị, làm giá trị lớn gấp 1000 lần.",
+   "distractorNotes": {
+    "B": "Nhầm đơn vị: $3 \\cdot 10^8$ km/s lớn gấp 1000 lần giá trị thật của $c$.",
+    "C": "Lấy con số $3 \\cdot 10^5$ của đơn vị km/s rồi gắn nhầm sang m/s.",
+    "D": "Sai bậc lũy thừa; $c$ là $3 \\cdot 10^8$ m/s, gấp 100 lần giá trị này."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thang sóng điện từ gồm sáu vùng: sóng vô tuyến, tia hồng ngoại, ánh sáng nhìn thấy, tia tử ngoại, tia X và tia gamma. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Sáu vùng đều là sóng điện từ, cùng bản chất, chỉ khác nhau về bước sóng.",
+     "answer": true
+    },
+    {
+     "text": "Theo bước sóng giảm dần, thứ tự là: vô tuyến → hồng ngoại → nhìn thấy → tử ngoại → tia X → tia gamma.",
+     "answer": true
+    },
+    {
+     "text": "Tia hồng ngoại có bước sóng nhỏ hơn tia tử ngoại.",
+     "answer": false
+    },
+    {
+     "text": "Trong chân không, tia gamma truyền nhanh hơn sóng vô tuyến.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hồng ngoại nằm phía bước sóng dài hơn ánh sáng nhìn thấy, còn tử ngoại nằm phía ngắn hơn, nên c sai. Trong chân không mọi vùng truyền cùng tốc độ $c$, nên d sai.",
+   "distractorNotes": {
+    "0": "Bài khẳng định sáu vùng đều là sóng điện từ, cùng bản chất, chỉ khác nhau bước sóng.",
+    "1": "Thứ tự khớp mẹo \"Vô-Hồng-Nhìn-Tử-X-Gam\", đọc xuôi là bước sóng giảm dần.",
+    "2": "Đảo vị trí hai vùng; hồng ngoại nằm phía bước sóng dài hơn ánh sáng nhìn thấy, tử ngoại phía ngắn hơn.",
+    "3": "Nhầm năng lượng lớn với truyền nhanh; trong chân không mọi vùng đều truyền cùng tốc độ $c$."
+   }
+  }
+ ]
 }

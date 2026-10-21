@@ -1,386 +1,550 @@
 {
-  "lesson_id": 12,
-  "lesson_title": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
-  "item_id": 290,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 12,
+ "lesson_title": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+ "item_id": 290,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm cân dòng điện, nam châm chữ U đặt trên đĩa cân, khung dây treo trên giá riêng. Khi đóng mạch, số chỉ của cân thay đổi. Lực mà cân trực tiếp ghi nhận là",
+   "options": [
+    "lực từ do nam châm tác dụng lên dây dẫn",
+    "phản lực do dây dẫn tác dụng lên nam châm",
+    "trọng lực của khung dây mang dòng điện",
+    "lực giữ của giá đỡ tác dụng lên khung dây"
+   ],
+   "answer": 1,
+   "explanation": "Dây không đặt trên cân. Theo định luật III Newton, nam châm chịu lực $F'$ cùng độ lớn, ngược chiều với lực từ lên dây, và cân đọc lực $F'$ này.",
+   "distractorNotes": {
+    "A": "Nhầm vật chịu lực: lực từ tác dụng lên dây, mà dây không đặt trên cân nên cân không đọc trực tiếp lực này.",
+    "C": "Trọng lực khung dây do giá riêng gánh, không truyền lên cân và cũng không đổi khi đóng mạch.",
+    "D": "Lực giữ của giá tác dụng lên dây và truyền xuống bàn qua giá riêng, không đi qua đĩa cân."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi đang đo, cân chỉ một giá trị dương. Giữ nguyên độ lớn nhưng đảo chiều dòng điện qua khung dây thì số chỉ của cân",
+   "options": [
+    "về 0,00 g vì lực từ bị triệt tiêu",
+    "giữ nguyên cả dấu lẫn độ lớn",
+    "đổi dấu, độ lớn giữ nguyên",
+    "tăng gấp đôi, dấu như trước"
+   ],
+   "answer": 2,
+   "explanation": "Lực từ đổi chiều theo chiều dòng điện, độ lớn không đổi, nên phản lực lên nam châm cũng đổi chiều. Vì vậy số cân đổi dấu mà vẫn cùng độ lớn.",
+   "distractorNotes": {
+    "A": "Mỗi lần chỉ có một dòng điện qua dây, nên đảo chiều không làm lực triệt tiêu mà chỉ đổi chiều lực.",
+    "B": "Chỉ để ý độ lớn lực không đổi mà quên lực từ đổi chiều theo dòng, trong khi cân báo cả dấu.",
+    "D": "Tưởng lực mới cộng dồn với lực cũ, trong khi mỗi lần chỉ có một dòng và lực chỉ đổi chiều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một nhóm để chân giá đỡ khung dây tựa lên chính bệ cân, cùng chỗ với nam châm. Khi đóng mạch, số chỉ của cân",
+   "options": [
+    "gấp đôi độ tăng khối lượng đúng",
+    "đúng bằng độ tăng khi giá đặt riêng",
+    "âm, cùng độ lớn như khi giá đặt riêng",
+    "gần như không đổi so với lúc chưa có dòng"
+   ],
+   "answer": 3,
+   "explanation": "Cân đo tổng lực lên mọi vật tựa trên bệ. Lực từ lên dây và phản lực lên nam châm bằng nhau, ngược chiều nên triệt tiêu trên cân.",
+   "distractorNotes": {
+    "A": "Tưởng cân cộng độ lớn hai lực, quên rằng lực lên dây và lực lên nam châm ngược chiều nên triệt tiêu.",
+    "B": "Bỏ qua lực từ lên dây truyền qua giá xuống bệ cân, ngược chiều với phản lực ép nam châm.",
+    "C": "Số cân chỉ âm khi đảo chiều dòng; ở đây hai lực ngược chiều cùng tác dụng lên bệ nên cân bằng nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đoạn dây nằm ngang, vuông góc với đường sức từ nằm ngang trong khe nam châm đặt trên cân. Khi đóng mạch, số chỉ của cân tăng lên. Lực từ tác dụng lên đoạn dây nằm trong khe nam châm có chiều",
+   "options": [
+    "thẳng đứng, hướng lên trên",
+    "thẳng đứng, hướng xuống dưới",
+    "nằm ngang, dọc theo đường sức",
+    "nằm ngang, dọc theo đoạn dây"
+   ],
+   "answer": 0,
+   "explanation": "Cân tăng nghĩa là nam châm bị ép xuống. Lực lên dây là cặp lực – phản lực với lực đó nên hướng ngược lại, tức là lên trên.",
+   "distractorNotes": {
+    "B": "Nhầm số cân là lực lên dây; cân tăng là nam châm bị ép xuống, nên lực lên dây hướng ngược lại.",
+    "C": "Lực từ vuông góc với đường sức; dây nằm ngang, vuông góc đường sức nên lực có phương thẳng đứng.",
+    "D": "Lực từ luôn vuông góc với chính đoạn dây, không thể hướng dọc theo dây."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong quy trình đo, bước bấm TARE để cân về 0,00 g được thực hiện khi",
+   "options": [
+    "đã đóng mạch và số cân đã ổn định",
+    "vừa đảo chiều dòng điện qua khung",
+    "đã đặt nam châm, chưa có dòng điện",
+    "đã ngắt mạch sau mỗi lần đọc số"
+   ],
+   "answer": 2,
+   "explanation": "Theo quy trình, nam châm được đặt lên đĩa cân rồi bấm TARE khi chưa có dòng. Nhờ vậy, số đọc sau khi đóng mạch chính là $\\Delta m$.",
+   "distractorNotes": {
+    "A": "Bấm TARE lúc đã có dòng sẽ xoá luôn phần lực từ cần đo, nên số đọc không còn là $\\Delta m$.",
+    "B": "Sau khi đảo chiều vẫn có lực từ; bấm TARE lúc này sẽ xoá mất $\\Delta m$ cần đọc.",
+    "D": "Sau mỗi lần ngắt mạch chỉ cần kiểm tra cân về 0,00 g; TARE làm một lần đầu, trước khi có dòng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dây dài $l$ vuông góc với đường sức, mang dòng $I$, làm cân tăng $\\Delta m$. Cảm ứng từ được tính bằng công thức",
+   "options": [
+    "$B = \\dfrac{Il}{\\Delta m\\, g}$",
+    "$B = \\dfrac{\\Delta m\\, g}{Il}$",
+    "$B = \\dfrac{\\Delta m}{Il}$",
+    "$B = \\Delta m\\, g\\, Il$"
+   ],
+   "answer": 1,
+   "explanation": "Ta có $F = BIl$ và $F = \\Delta m\\, g$. Suy ra $B = \\dfrac{\\Delta m\\, g}{Il}$.",
+   "distractorNotes": {
+    "A": "Đảo ngược tỉ số: từ $\\Delta m\\,g = BIl$ phải lấy lực chia cho $Il$, không phải lấy $Il$ chia cho lực.",
+    "C": "Quên nhân $g$: $\\Delta m$ là khối lượng, phải nhân $g$ mới ra lực từ $F$.",
+    "D": "Nhân thay vì chia, trong khi từ $F = BIl$ thì $B$ tỉ lệ nghịch với $Il$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Để kết quả đo $B$ có sai số tương đối nhỏ, nên lấy số liệu ở",
+   "options": [
+    "dòng điện lớn, đóng mạch ngắn rồi ngắt",
+    "dòng điện nhỏ, đóng mạch thật lâu",
+    "dòng điện nhỏ để dây ít bị nóng lên",
+    "dòng bất kì vì sai số luôn như nhau"
+   ],
+   "answer": 0,
+   "explanation": "Sai số tuyệt đối của dụng cụ không đổi, nên số đo càng lớn thì sai số tương đối càng nhỏ. Sau khi đọc số cần ngắt mạch ngay để dây khỏi nóng.",
+   "distractorNotes": {
+    "B": "Đóng mạch lâu làm dây nóng; dòng nhỏ còn cho số đo nhỏ nên sai số tương đối lớn.",
+    "C": "Lấy lợi ích dây ít nóng thay cho tiêu chí sai số; dòng nhỏ cho số đo nhỏ nên sai số tương đối lớn.",
+    "D": "Nhầm sai số tuyệt đối không đổi với sai số tương đối, vốn giảm khi giá trị đo lớn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi thay số vào $B = \\dfrac{\\Delta m\\, g}{Il}$ để $B$ ra đơn vị tesla, với $g$ tính bằng m/s² và $I$ tính bằng A, phải dùng",
+   "options": [
+    "$\\Delta m$ bằng gam, $l$ bằng xentimét",
+    "$\\Delta m$ bằng gam, $l$ bằng mét",
+    "$\\Delta m$ bằng kilôgam, $l$ bằng xentimét",
+    "$\\Delta m$ bằng kilôgam, $l$ bằng mét"
+   ],
+   "answer": 3,
+   "explanation": "Bài nhắc phải đổi $\\Delta m$ sang kg và $l$ sang m trước khi thế số. Quên đổi gam sang kilôgam sẽ làm $B$ lớn gấp $10^3$ lần.",
+   "distractorNotes": {
+    "A": "Giữ nguyên gam và xentimét thì đơn vị không phải SI, $B$ tính ra sai lệch nhiều bậc.",
+    "B": "Quên đổi gam sang kilôgam làm $B$ lớn gấp $10^3$ lần.",
+    "C": "Quên đổi xentimét sang mét làm $B$ nhỏ đi 100 lần."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Giữ nguyên nam châm và khung dây, tăng cường độ dòng điện lên gấp đôi. Độ tăng số chỉ của cân $\\Delta m$ sẽ",
+   "options": [
+    "giảm còn một nửa",
+    "tăng gấp đôi",
+    "tăng gấp bốn",
+    "không thay đổi"
+   ],
+   "answer": 1,
+   "explanation": "Từ $\\Delta m\\, g = BIl$ ta thấy $\\Delta m$ tỉ lệ thuận với $I$. Vì vậy $I$ gấp đôi thì $\\Delta m$ cũng gấp đôi.",
+   "distractorNotes": {
+    "A": "Đảo tỉ lệ: $\\Delta m = BIl/g$ tỉ lệ thuận với $I$, không tỉ lệ nghịch.",
+    "C": "Nhầm thành quan hệ bậc hai, trong khi lực từ $F = BIl$ chỉ tỉ lệ bậc nhất với $I$.",
+    "D": "Nghĩ $B$ không đổi thì $\\Delta m$ không đổi, quên lực từ phụ thuộc trực tiếp vào $I$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong công thức $B = \\dfrac{\\Delta m\\, g}{Il}$ của bài thực hành, $l$ là",
+   "options": [
+    "tổng chiều dài dây quấn của khung",
+    "chu vi của khung dây hình chữ nhật",
+    "phần cạnh dưới nằm trong khe từ trường",
+    "độ cao của khung dây treo trên giá"
+   ],
+   "answer": 2,
+   "explanation": "Bài định nghĩa $l$ là phần cạnh dưới của khung nằm trong khe từ trường và đo bằng thước kẹp. Chỉ phần dây này mới chịu lực từ được cân ghi nhận.",
+   "distractorNotes": {
+    "A": "Chỉ đoạn dây nằm trong khe từ trường mới chịu lực từ, không phải toàn bộ dây quấn.",
+    "B": "Các cạnh khác của khung nằm ngoài khe, gần như không chịu lực từ, nên không lấy chu vi.",
+    "D": "Độ cao khung không nằm trong từ trường nên không quyết định lực từ mà cân ghi nhận."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vẽ đồ thị $\\Delta m$ theo $I$ được một đường thẳng qua gốc toạ độ. Độ dốc của đường thẳng này bằng",
+   "options": [
+    "$\\dfrac{Bl}{g}$",
+    "$\\dfrac{Bg}{l}$",
+    "$\\dfrac{g}{Bl}$",
+    "$Blg$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $\\Delta m = \\dfrac{Bl}{g} I$ suy ra độ dốc bằng $\\dfrac{Bl}{g}$. Do đó $B = \\dfrac{\\text{độ dốc} \\times g}{l}$.",
+   "distractorNotes": {
+    "B": "Hoán đổi vị trí $g$ và $l$ khi biến đổi từ $\\Delta m = \\frac{Bl}{g}I$.",
+    "C": "Lấy nghịch đảo: độ dốc là $\\Delta m/I = Bl/g$, không phải $g/(Bl)$.",
+    "D": "Quên chia cho $g$: $\\Delta m = F/g$ nên $g$ phải nằm ở mẫu số của độ dốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sai số tương đối của cảm ứng từ đo bằng cân dòng điện được tính theo công thức",
+   "options": [
+    "$\\dfrac{\\Delta B}{B} \\approx \\dfrac{\\Delta(\\Delta m)}{\\Delta m} - \\dfrac{\\Delta I}{I} - \\dfrac{\\Delta l}{l}$",
+    "$\\dfrac{\\Delta B}{B} \\approx \\dfrac{\\Delta(\\Delta m)}{\\Delta m} \\cdot \\dfrac{\\Delta I}{I} \\cdot \\dfrac{\\Delta l}{l}$",
+    "$\\Delta B \\approx \\Delta(\\Delta m) + \\Delta I + \\Delta l$",
+    "$\\dfrac{\\Delta B}{B} \\approx \\dfrac{\\Delta(\\Delta m)}{\\Delta m} + \\dfrac{\\Delta I}{I} + \\dfrac{\\Delta l}{l}$"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, sai số tương đối của $B$ bằng tổng các sai số tương đối của $\\Delta m$, $I$ và $l$. Các sai số này luôn được cộng, không trừ hay nhân.",
+   "distractorNotes": {
+    "A": "Sai số tương đối luôn cộng dồn, kể cả của đại lượng ở mẫu số, không bao giờ trừ.",
+    "B": "Nhân các sai số tương đối nhỏ cho kết quả quá nhỏ; quy tắc là cộng chúng lại.",
+    "C": "Cộng các sai số tuyệt đối khác đơn vị là vô nghĩa; phải cộng sai số tương đối."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đoạn dây dài $l$ mang dòng $I$ hợp với đường sức của từ trường đều $B$ một góc $\\theta$. Độ lớn lực từ lên đoạn dây là",
+   "options": [
+    "$F = BIl\\cos\\theta$",
+    "$F = BIl\\sin\\theta$",
+    "$F = BIl\\tan\\theta$",
+    "$F = \\dfrac{BIl}{\\sin\\theta}$"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu rõ $F = BIl\\sin\\theta$, dùng $\\sin\\theta$ chứ không dùng $\\cos\\theta$. Công thức $F = BIl$ chỉ là trường hợp $\\theta = 90^\\circ$.",
+   "distractorNotes": {
+    "A": "Nhầm $\\cos$ với $\\sin$; lực lớn nhất khi dây vuông góc, ứng với $\\sin 90^\\circ = 1$.",
+    "C": "$\\tan\\theta$ tiến tới vô cùng khi dây vuông góc, mâu thuẫn với $F = BIl$ ở $90^\\circ$.",
+    "D": "Chia cho $\\sin\\theta$ làm lực tăng khi dây lệch, ngược thực tế là lực giảm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đo $\\Delta m$ ở nhiều giá trị cường độ dòng điện $I$ rồi vẽ đồ thị $\\Delta m$ theo $I$. Các điểm đo nằm gần",
+   "options": [
+    "một đường parabol đi qua gốc toạ độ",
+    "một đường thẳng nằm ngang",
+    "một đường thẳng đi qua gốc toạ độ",
+    "một đường thẳng cắt trục $\\Delta m$ phía trên gốc"
+   ],
+   "answer": 2,
+   "explanation": "$\\Delta m$ tăng gần đều theo $I$ và bằng 0 khi không có dòng. Vì vậy các điểm nằm sát một đường thẳng qua gốc toạ độ.",
+   "distractorNotes": {
+    "A": "Nhầm $\\Delta m$ phụ thuộc $I^2$, trong khi $\\Delta m = BIl/g$ là bậc nhất theo $I$.",
+    "B": "Đường nằm ngang nghĩa là $\\Delta m$ không đổi theo $I$, trái với số cân tăng đều khi tăng dòng.",
+    "D": "Đã TARE nên khi $I = 0$ cân chỉ 0,00 g, đường thẳng phải đi qua gốc."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một nhóm đặt nam châm chữ U lên đĩa cân điện tử rồi bấm TARE. Khung dây treo trên giá riêng, cạnh dưới nằm ngang trong khe nam châm, vuông góc với đường sức và không chạm vào nam châm hay cân. Đóng mạch cho dòng điện một chiều qua khung thì số cân tăng lên.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trong thí nghiệm cân dòng điện, số tăng thêm trên cân cho biết trực tiếp lực nào?",
-      "options": [
-        "Lực từ tác dụng lên khung dây",
-        "Phản lực của lực từ, tác dụng lên nam châm đặt trên cân",
-        "Trọng lực của khung dây",
-        "Lực căng của dây treo khung"
-      ],
-      "answer": 1,
-      "explanation": "Khung dây treo trên giá riêng nên không nằm trên cân. Nam châm nằm trên đĩa cân chịu phản lực $F'$ cùng độ lớn, ngược chiều lực từ $F$ lên dây, nên cân đọc $F' = \\Delta m\\, g$."
+     "text": "Số cân tăng vì khối lượng của nam châm tăng lên khi có dòng điện chạy qua dây.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vì sao phải bấm TARE khi chưa có dòng điện chạy qua dây?",
-      "options": [
-        "Để số đọc của cân chỉ còn phần tăng thêm do lực từ, bỏ qua khối lượng nam châm",
-        "Để nam châm không bị từ hoá thêm khi đóng mạch",
-        "Để dòng điện chạy qua dây ổn định hơn",
-        "Để cân tự đổi đơn vị sang niutơn"
-      ],
-      "answer": 0,
-      "explanation": "TARE đưa số đọc về 0,00 g khi chưa có dòng. Khi đóng mạch, số cân chính là $\\Delta m$ do phản lực từ gây ra."
+     "text": "Lực từ lên dây và lực dây tác dụng lên nam châm có cùng độ lớn, ngược chiều.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Công thức $F = BIl$ cho lực từ lên đoạn dây chỉ đúng khi",
-      "options": [
-        "Dây song song với đường sức từ",
-        "Dây vuông góc với đường sức từ",
-        "Dây hợp với đường sức từ một góc bất kì",
-        "Dòng điện trong dây xoay chiều"
-      ],
-      "answer": 1,
-      "explanation": "Tổng quát $F = BIl\\sin\\theta$. Công thức $F = BIl$ chỉ là trường hợp $\\theta = 90^\\circ$, khi $\\sin\\theta = 1$."
+     "text": "Ngắt mạch thì số cân trở về 0,00 g.",
+     "answer": true
     },
     {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về bố trí cân dòng điện trong bài, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Khung dây được treo trên giá riêng, không đặt trên đĩa cân.",
-          "answer": true
-        },
-        {
-          "text": "Cân đọc phản lực của lực từ tác dụng lên nam châm.",
-          "answer": true
-        },
-        {
-          "text": "Nếu chân giá đỡ khung tựa lên bệ cân cùng nam châm thì cân vẫn chỉ đúng $\\Delta m$ như cũ.",
-          "answer": false
-        },
-        {
-          "text": "Khi ngắt mạch, số đọc của cân trở về 0,00 g.",
-          "answer": true
-        }
-      ],
-      "explanation": "Giá đỡ tựa lên cân thì lực lên dây và phản lực lên nam châm cùng tác dụng lên hệ trên bệ cân và cân bằng nhau, nên cân gần như không báo gì."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực từ lên dây và phản lực lên nam châm là hai lực",
-      "options": [
-        "Cùng độ lớn, cùng chiều",
-        "Cùng độ lớn, vuông góc nhau",
-        "Khác độ lớn, ngược chiều",
-        "Cùng độ lớn, ngược chiều (định luật III Newton)"
-      ],
-      "answer": 3,
-      "explanation": "Theo định luật III Newton, cặp lực – phản lực luôn cùng độ lớn, ngược chiều."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Độ chia nhỏ nhất của cân điện tử trong bài là bao nhiêu gam?",
-      "answer": "0,01",
-      "explanation": "Bài nêu cân chia 0,01 g, nên sai số tuyệt đối của số đọc là $\\pm 0{,}01\\ \\text{g}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_luat",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Dây hợp với đường sức từ góc $30^\\circ$. Lực từ bằng bao nhiêu lần $BIl$?",
-      "answer": "0,5",
-      "explanation": "$F = BIl\\sin 30^\\circ = 0{,}5\\,BIl$."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về sai số của phép đo $B$ trong bài, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Sai số tương đối của $B$ xấp xỉ tổng các sai số tương đối của $\\Delta m$, $I$ và $l$.",
-          "answer": true
-        },
-        {
-          "text": "Đo ở dòng điện lớn cho sai số tương đối nhỏ hơn đo ở dòng điện nhỏ.",
-          "answer": true
-        },
-        {
-          "text": "Cân luôn có sai số tuyệt đối $0{,}01\\ \\text{g}$ nên sai số tương đối của $\\Delta m$ không phụ thuộc số đọc.",
-          "answer": false
-        },
-        {
-          "text": "Thước kẹp dùng để đo chiều dài $l$ của cạnh dây nằm trong khe từ trường.",
-          "answer": true
-        }
-      ],
-      "explanation": "Sai số tương đối $=\\dfrac{\\text{sai số tuyệt đối}}{\\text{giá trị đo}}$ nên số đo càng lớn thì tỉ lệ càng nhỏ."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đồ thị $\\Delta m$ theo $I$ là đường thẳng qua gốc toạ độ. Độ dốc của đường thẳng đó bằng",
-      "options": [
-        "$\\dfrac{Bg}{l}$",
-        "$\\dfrac{g}{Bl}$",
-        "$\\dfrac{Il}{g}$",
-        "$\\dfrac{Bl}{g}$"
-      ],
-      "answer": 3,
-      "explanation": "Từ $\\Delta m = \\dfrac{Bl}{g} I$, độ dốc là $\\dfrac{Bl}{g}$, nên $B = \\dfrac{\\text{độ dốc}\\times g}{l}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Dây không vuông góc đường sức mà hợp với đường sức góc $\\theta$ ($0^\\circ<\\theta<90^\\circ$). Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lực từ có độ lớn $F = BIl\\sin\\theta$.",
-          "answer": true
-        },
-        {
-          "text": "Nếu vẫn dùng $B = \\dfrac{\\Delta m\\, g}{Il}$ thì $B$ tính ra nhỏ hơn giá trị thật.",
-          "answer": true
-        },
-        {
-          "text": "Lực từ có độ lớn $F = BIl\\cos\\theta$.",
-          "answer": false
-        },
-        {
-          "text": "Lực đo được vẫn bằng $BIl$ như khi dây vuông góc.",
-          "answer": false
-        }
-      ],
-      "explanation": "Lực đo được nhỏ hơn $BIl$ theo hệ số $\\sin\\theta$; chia cho $Il$ như thể vuông góc sẽ ra $B$ nhỏ hơn thật."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Cảm ứng từ trong bài được tính từ số đo của cân bằng công thức",
-      "options": [
-        "$B = \\dfrac{\\Delta m\\, g}{Il}$",
-        "$B = \\dfrac{\\Delta m}{Il}$",
-        "$B = \\dfrac{\\Delta m\\, l}{g\\, I}$",
-        "$B = \\Delta m\\, g\\, Il$"
-      ],
-      "answer": 0,
-      "explanation": "Từ $F = \\Delta m\\, g = BIl$ suy ra $B = \\dfrac{\\Delta m\\, g}{Il}$. Thiếu $g$ là lỗi hay gặp."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Để tính $B$ ra tesla từ $B = \\dfrac{\\Delta m\\, g}{Il}$, cần đổi các đại lượng về đơn vị nào?",
-      "options": [
-        "$\\Delta m$ theo gam, $l$ theo cm",
-        "$\\Delta m$ theo gam, $l$ theo m",
-        "$\\Delta m$ theo kg, $l$ theo m, $I$ theo A",
-        "$\\Delta m$ theo kg, $l$ theo cm"
-      ],
-      "answer": 2,
-      "explanation": "Dùng đơn vị SI: $\\Delta m$ (kg), $g$ (m/s²), $I$ (A), $l$ (m) thì $B$ ra tesla. Quên đổi gam sang kilôgam làm $B$ lớn gấp 1000 lần."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một lần đo có $l = 5{,}0\\ \\text{cm}$, $I = 2{,}0\\ \\text{A}$, cân tăng $\\Delta m = 1{,}20\\ \\text{g}$ (lấy $g = 9{,}81\\ \\text{m/s}^2$). Cảm ứng từ gần nhất với giá trị nào?",
-      "options": [
-        "$5{,}9\\times10^{-3}\\ \\text{T}$",
-        "$0{,}012\\ \\text{T}$",
-        "$1{,}2\\times10^{2}\\ \\text{T}$",
-        "$0{,}12\\ \\text{T}$"
-      ],
-      "answer": 3,
-      "explanation": "$F = 1{,}20\\times10^{-3}\\times9{,}81 \\approx 1{,}18\\times10^{-2}\\ \\text{N}$; $B = \\dfrac{1{,}18\\times10^{-2}}{2{,}0\\times0{,}050} \\approx 0{,}12\\ \\text{T}$. Ra $5{,}9\\times10^{-3}$ là quên chia cho $l$; $0{,}012$ là quên nhân $g$; $1{,}2\\times10^{2}$ là quên đổi gam sang kilôgam."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Với $B = 0{,}10\\ \\text{T}$, $l = 5{,}0\\ \\text{cm}$, $I = 2{,}0\\ \\text{A}$ (lấy $g = 9{,}81\\ \\text{m/s}^2$), cân tăng thêm khoảng",
-      "options": [
-        "$10\\ \\text{g}$",
-        "$1{,}0\\ \\text{g}$",
-        "$0{,}10\\ \\text{g}$",
-        "$1{,}0\\times10^{2}\\ \\text{g}$"
-      ],
-      "answer": 1,
-      "explanation": "$F = BIl = 0{,}10\\times2{,}0\\times0{,}050 = 0{,}010\\ \\text{N}$; $\\Delta m = \\dfrac{F}{g} \\approx 1{,}0\\times10^{-3}\\ \\text{kg} = 1{,}0\\ \\text{g}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Thay khung một vòng bằng cuộn $N$ vòng, mỗi vòng có một cạnh dài $l$ nằm trong khe từ trường. Lực từ tổng cộng lên cuộn là",
-      "options": [
-        "$BIl$",
-        "$\\dfrac{BIl}{N}$",
-        "$NBIl$",
-        "$N^2BIl$"
-      ],
-      "answer": 2,
-      "explanation": "Mỗi vòng có một cạnh chịu lực $BIl$, $N$ vòng cho lực gấp $N$ lần: $F = NBIl$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về các công thức trong bài, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$F = \\Delta m\\, g$ với $\\Delta m$ tính bằng kilôgam.",
-          "answer": true
-        },
-        {
-          "text": "Với cùng nam châm và cùng khung, $I$ gấp đôi thì $\\Delta m$ gấp đôi.",
-          "answer": true
-        },
-        {
-          "text": "$\\dfrac{\\Delta B}{B} \\approx \\dfrac{\\Delta(\\Delta m)}{\\Delta m} - \\dfrac{\\Delta I}{I} - \\dfrac{\\Delta l}{l}$.",
-          "answer": false
-        },
-        {
-          "text": "$B = \\dfrac{\\text{độ dốc}\\times g}{l}$ khi độ dốc của đồ thị $\\Delta m$–$I$ đổi sang kg/A.",
-          "answer": true
-        }
-      ],
-      "explanation": "Các sai số tương đối được cộng, không trừ. $\\Delta m$ tỉ lệ thuận với $I$ vì $F = BIl$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một lần đo có $l = 5{,}0\\ \\text{cm}$, $I = 4{,}0\\ \\text{A}$, $\\Delta m = 2{,}04\\ \\text{g}$ ($g = 9{,}81\\ \\text{m/s}^2$). Tính $B$ theo tesla, làm tròn 1 chữ số thập phân.",
-      "answer": "0,1",
-      "explanation": "$B = \\dfrac{2{,}04\\times10^{-3}\\times9{,}81}{4{,}0\\times0{,}050} \\approx 0{,}10\\ \\text{T}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Cảm ứng từ và đơn vị tesla",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đo $\\Delta m = 1{,}00\\ \\text{g}$ (cân chia $0{,}01\\ \\text{g}$), $I = 5{,}0\\ \\text{A}$ ($\\pm0{,}05\\ \\text{A}$), $l = 5{,}0\\ \\text{cm}$ ($\\pm0{,}5\\ \\text{mm}$). Sai số tương đối của $B$ bằng bao nhiêu phần trăm?",
-      "answer": "3",
-      "explanation": "$\\dfrac{0{,}01}{1{,}00}+\\dfrac{0{,}05}{5{,}0}+\\dfrac{0{,}5}{50} = 1\\% + 1\\% + 1\\% = 3\\%$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ở $I = 2{,}0\\ \\text{A}$ cân tăng $1{,}20\\ \\text{g}$. Giữ nguyên bố trí, ở $I = 5{,}0\\ \\text{A}$ cân tăng bao nhiêu gam? Làm tròn đến số nguyên.",
-      "answer": "3",
-      "explanation": "$\\Delta m$ tỉ lệ thuận với $I$: $\\Delta m = 1{,}20\\times\\dfrac{5{,}0}{2{,}0} = 3{,}0\\ \\text{g}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính lực từ F = BIl·sinθ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Cuộn $10$ vòng, cạnh dưới $l = 4{,}0\\ \\text{cm}$ trong khe có $B = 0{,}12\\ \\text{T}$, dòng $I = 0{,}50\\ \\text{A}$ ($g = 9{,}81\\ \\text{m/s}^2$). Cân tăng bao nhiêu gam? Làm tròn 1 chữ số thập phân.",
-      "answer": "2,4",
-      "explanation": "$F = NBIl = 10\\times0{,}12\\times0{,}50\\times0{,}040 = 0{,}024\\ \\text{N}$; $\\Delta m = \\dfrac{0{,}024}{9{,}81} \\approx 2{,}4\\times10^{-3}\\ \\text{kg} = 2{,}4\\ \\text{g}$."
+     "text": "Vì dây nằm ngang, vuông góc với đường sức nên lực từ lên dây có phương nằm ngang.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "a) Sai: khối lượng nam châm không đổi; cân tăng vì nam châm chịu phản lực của lực từ. b) Đúng: đây là cặp lực – phản lực theo định luật III Newton. c) Đúng: không có dòng thì không có lực từ. d) Sai: dây nằm ngang và vuông góc với đường sức thì lực từ có phương thẳng đứng.",
+   "distractorNotes": {
+    "0": "Khối lượng nam châm không đổi; cân tăng do nam châm chịu phản lực ép xuống, nên ý này không thể đúng.",
+    "1": "Đây là cặp lực – phản lực theo định luật III Newton nên luôn cùng độ lớn, ngược chiều; không thể coi là sai.",
+    "2": "Không có dòng thì không có lực từ, nam châm hết bị ép thêm nên cân về 0,00 g như lúc TARE.",
+    "3": "Lực từ vuông góc với cả dây lẫn đường sức nằm ngang nên phải thẳng đứng, không thể nằm ngang."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai nhóm làm thí nghiệm cân dòng điện và đều mắc lỗi. Nhóm 1 để chân giá đỡ khung dây tựa lên bệ cân cùng với nam châm. Nhóm 2 đặt dây lệch, không vuông góc với đường sức, nhưng vẫn tính $B = \\dfrac{\\Delta m\\, g}{Il}$.",
+   "statements": [
+    {
+     "text": "Ở nhóm 1, cân gần như không đổi khi đóng mạch vì hai lực bằng nhau, ngược chiều cùng tác dụng lên hệ nằm trên bệ cân.",
+     "answer": true
+    },
+    {
+     "text": "Nhóm 1 sửa lỗi bằng cách đặt giá đỡ khung dây đứng riêng, ngoài cân.",
+     "answer": true
+    },
+    {
+     "text": "Ở nhóm 2, cảm ứng từ của nam châm bị giảm do dây đặt lệch đường sức.",
+     "answer": false
+    },
+    {
+     "text": "Nhóm 2 nên chỉnh cho dây song song với đường sức để lực từ lớn nhất.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) Đúng và b) Đúng: cân đo tổng lực lên các vật trên bệ, nên giá đỡ phải đặt ngoài cân. c) Sai: $B$ của nam châm không đổi, chỉ có lực đo được nhỏ đi. d) Sai: lực lớn nhất khi dây vuông góc với đường sức; dây song song thì $\\sin 0^\\circ = 0$, lực bằng 0.",
+   "distractorNotes": {
+    "0": "Lực lên dây truyền qua giá xuống bệ, ngược chiều phản lực lên nam châm, nên hai lực triệt tiêu trên cân.",
+    "1": "Giá đứng ngoài cân thì lực lên dây không truyền vào bệ, cân chỉ còn đọc phản lực lên nam châm.",
+    "2": "$B$ là đặc trưng của nam châm, không đổi; chỉ lực đo được giảm theo $\\sin\\theta$.",
+    "3": "Dây song song đường sức có $\\sin 0^\\circ = 0$ nên lực bằng 0; lực lớn nhất khi dây vuông góc."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Do giá đỡ bị lệch, đoạn dây trong khe hợp với đường sức góc $60^\\circ$ thay vì $90^\\circ$. Nhóm vẫn dùng công thức $B = \\dfrac{\\Delta m\\, g}{Il}$ để tính cảm ứng từ (cho $\\sin 60^\\circ \\approx 0{,}87$).",
+   "statements": [
+    {
+     "text": "Lực từ đo được bằng $\\sin 60^\\circ$ lần lực khi dây vuông góc với đường sức.",
+     "answer": true
+    },
+    {
+     "text": "Giá trị $B$ tính ra nhỏ hơn giá trị thật khoảng 13%.",
+     "answer": true
+    },
+    {
+     "text": "Giá trị $B$ tính ra nhỏ hơn giá trị thật khoảng 50%, vì lực chỉ bằng $\\cos 60^\\circ$ lần lực khi dây vuông góc.",
+     "answer": false
+    },
+    {
+     "text": "Công thức $F = BIl$ đúng với mọi góc giữa dây và đường sức.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) Đúng: $F = BIl\\sin\\theta$. b) Đúng: lực chỉ bằng khoảng 0,87 lần nên $B$ tính ra nhỏ hơn thật khoảng 13%. c) Sai: dùng $\\cos$ là nhầm $\\cos$ với $\\sin$. d) Sai: $F = BIl$ chỉ đúng khi $\\theta = 90^\\circ$.",
+   "distractorNotes": {
+    "0": "Theo $F = BIl\\sin\\theta$, ở $60^\\circ$ lực bằng đúng $\\sin 60^\\circ$ lần lực khi dây vuông góc.",
+    "1": "Lực chỉ còn 0,87 lần mà vẫn chia cho $Il$, nên $B$ tính ra nhỏ hơn thật khoảng 13%.",
+    "2": "Lấy $\\cos 60^\\circ = 0{,}5$ là nhầm $\\cos$ với $\\sin$; hệ số đúng là 0,87.",
+    "3": "$F = BIl$ chỉ là trường hợp riêng $\\theta = 90^\\circ$ của $F = BIl\\sin\\theta$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm cân dòng điện, cảm ứng từ được tính bằng công thức $B = \\dfrac{\\Delta m\\, g}{Il}$, với dây vuông góc đường sức.",
+   "statements": [
+    {
+     "text": "$\\Delta m$ là độ tăng số chỉ của cân khi có dòng điện, sau khi đã bấm TARE.",
+     "answer": true
+    },
+    {
+     "text": "Khi đảo chiều dòng điện, cân chỉ âm; lúc tính $B$ ta lấy $|\\Delta m|$.",
+     "answer": true
+    },
+    {
+     "text": "Với cùng $B$ và $l$, $\\Delta m$ tỉ lệ nghịch với $I$.",
+     "answer": false
+    },
+    {
+     "text": "Đại lượng $\\Delta m\\, g$ là trọng lượng của khung dây.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) Đúng và b) Đúng theo quy trình và cách tính trong bài. c) Sai: $\\Delta m = \\dfrac{BIl}{g}$ tỉ lệ thuận với $I$. d) Sai: $\\Delta m\\, g$ là độ lớn lực từ $F$; trọng lực của dây rất nhỏ nên được bỏ qua.",
+   "distractorNotes": {
+    "0": "TARE khi chưa có dòng nên số đọc sau khi đóng mạch chính là phần tăng do lực từ.",
+    "1": "Đảo chiều chỉ đổi chiều lực, độ lớn giữ nguyên, nên khi tính $B$ dùng trị tuyệt đối.",
+    "2": "Từ $\\Delta m = BIl/g$ thấy $\\Delta m$ tỉ lệ thuận với $I$, không tỉ lệ nghịch.",
+    "3": "$\\Delta m\\,g$ là lực từ đọc qua phản lực lên nam châm; trọng lượng khung do giá gánh, không đè lên cân."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một nhóm đo $\\Delta m$ ở năm giá trị dòng điện $I$, rồi vẽ đồ thị $\\Delta m$ theo $I$. Kết quả là một đường thẳng qua gốc toạ độ có độ dốc $k$.",
+   "statements": [
+    {
+     "text": "Độ dốc của đường thẳng là $k = \\dfrac{Bl}{g}$.",
+     "answer": true
+    },
+    {
+     "text": "Cảm ứng từ được suy ra bằng $B = \\dfrac{k\\, g}{l}$.",
+     "answer": true
+    },
+    {
+     "text": "Cảm ứng từ được suy ra bằng $B = \\dfrac{k\\, l}{g}$.",
+     "answer": false
+    },
+    {
+     "text": "Giữ nguyên nam châm nhưng dùng khung có $l$ lớn hơn thì đường thẳng thoải hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) Đúng và b) Đúng: từ $\\Delta m = \\dfrac{Bl}{g}I$ suy ra $B = \\dfrac{k g}{l}$. c) Sai: đây là lỗi đảo $g$ và $l$ khi biến đổi. d) Sai: $k$ tỉ lệ thuận với $l$, nên $l$ lớn hơn thì đường thẳng dốc hơn.",
+   "distractorNotes": {
+    "0": "Từ $\\Delta m = \\frac{Bl}{g}I$, hệ số đứng trước $I$ chính là độ dốc $Bl/g$.",
+    "1": "Giải $k = Bl/g$ theo $B$: nhân hai vế với $g$ rồi chia cho $l$, ra đúng biểu thức này.",
+    "2": "Đảo vị trí $g$ và $l$ khi biến đổi; từ $k = Bl/g$ phải ra $B = kg/l$.",
+    "3": "$k = Bl/g$ tỉ lệ thuận với $l$, nên $l$ lớn hơn thì đường thẳng dốc hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 11. Thực hành đo độ lớn cảm ứng từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dùng cân chia 0,01 g, ampe kế có sai số $\\pm 0{,}05\\ \\text{A}$ và thước kẹp có sai số $\\pm 0{,}5\\ \\text{mm}$. Nhóm so sánh hai lần đo: một lần ở dòng nhỏ, một lần ở dòng lớn.",
+   "statements": [
+    {
+     "text": "Sai số tương đối của $B$ bằng tổng các sai số tương đối của $\\Delta m$, $I$ và $l$.",
+     "answer": true
+    },
+    {
+     "text": "Sai số tuyệt đối của ampe kế ở hai lần đo như nhau, nên sai số tương đối của $I$ ở hai lần cũng như nhau.",
+     "answer": false
+    },
+    {
+     "text": "Lần đo ở dòng lớn hơn cho $B$ có sai số tương đối nhỏ hơn.",
+     "answer": true
+    },
+    {
+     "text": "Số đọc $\\Delta m$ càng nhỏ thì $\\dfrac{\\Delta(\\Delta m)}{\\Delta m}$ càng nhỏ.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) Đúng: đây là công thức cộng sai số tương đối trong bài. b) Sai: sai số tương đối $\\dfrac{\\Delta I}{I}$ giảm khi $I$ tăng. c) Đúng: $I$ và $\\Delta m$ lớn hơn nên các tỉ số $\\dfrac{\\Delta I}{I}$ và $\\dfrac{\\Delta(\\Delta m)}{\\Delta m}$ đều nhỏ hơn. d) Sai: $\\Delta(\\Delta m)$ cố định, nên $\\Delta m$ càng nhỏ thì tỉ số càng lớn.",
+   "distractorNotes": {
+    "0": "Đây đúng quy tắc trong bài: sai số tương đối của $B$ bằng tổng các sai số tương đối thành phần.",
+    "1": "Sai số tuyệt đối như nhau nhưng chia cho các giá trị $I$ khác nhau nên tỉ số $\\Delta I/I$ khác nhau.",
+    "2": "Dòng lớn làm $I$ và $\\Delta m$ lớn hơn, nên các tỉ số $\\Delta I/I$ và $\\Delta(\\Delta m)/\\Delta m$ đều nhỏ đi.",
+    "3": "Tử số $\\Delta(\\Delta m)$ cố định nên mẫu số $\\Delta m$ càng nhỏ thì tỉ số càng lớn."
+   }
+  }
+ ]
 }

@@ -1,386 +1,520 @@
 {
-  "lesson_id": 13,
-  "lesson_title": "Bài 12. Hiện tượng cảm ứng điện từ",
-  "item_id": 66,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 13,
+ "lesson_title": "Bài 12. Hiện tượng cảm ứng điện từ",
+ "item_id": 66,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 9
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Từ thông qua khung dây",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Từ thông qua mặt một khung dây cho biết điều gì?",
-      "options": [
-        "Nhiệt lượng toả ra trong khung",
-        "Lượng từ trường (số đường sức) xuyên qua mặt khung",
-        "Lực từ tác dụng lên khung dây",
-        "Cường độ dòng điện chạy trong khung"
-      ],
-      "answer": 1,
-      "explanation": "Bài ví von từ thông như lượng mưa hứng được qua miệng vòng: nó đo số đường sức từ xuyên qua mặt khung."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Điều kiện để trong một mạch kín xuất hiện dòng điện cảm ứng là:",
-      "options": [
-        "Mạch kín có nối với nguồn điện (pin)",
-        "Từ thông qua mạch kín biến thiên",
-        "Mạch kín đặt trong từ trường mạnh",
-        "Từ thông qua mạch kín có giá trị lớn"
-      ],
-      "answer": 1,
-      "explanation": "Bài nhấn mạnh: dòng cảm ứng chỉ có khi từ thông biến thiên, không phải khi từ thông lớn."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Nối hai đầu cuộn dây với điện kế rồi đưa nam châm vào lòng cuộn dây và giữ yên ở đó. Khi nam châm đã đứng yên, kim điện kế:",
-      "options": [
-        "Không bao giờ lệch, kể cả lúc nam châm đang chuyển động",
-        "Về 0, vì từ thông qua cuộn dây không còn biến thiên",
-        "Lệch ngược chiều, vì nam châm đã dừng",
-        "Vẫn lệch, vì nam châm còn nằm trong cuộn dây"
-      ],
-      "answer": 1,
-      "explanation": "Kim chỉ lệch khi nam châm đang chuyển động (từ thông biến thiên); đứng yên thì kim về 0."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Phát biểu nào đúng với định luật Lenz?",
-      "options": [
-        "Dòng điện cảm ứng có chiều sao cho từ trường nó sinh ra làm tăng sự biến thiên của từ thông",
-        "Dòng điện cảm ứng luôn có chiều sao cho từ trường nó sinh ra ngược chiều với từ trường ngoài",
-        "Dòng điện cảm ứng có chiều sao cho từ trường nó sinh ra chống lại sự biến thiên của từ thông đã sinh ra nó",
-        "Dòng điện cảm ứng luôn có chiều sao cho từ trường nó sinh ra cùng chiều với từ trường ngoài"
-      ],
-      "answer": 2,
-      "explanation": "Định luật Lenz: từ trường cảm ứng chống lại sự biến thiên từ thông, nên cùng hay ngược chiều từ trường ngoài tuỳ từ thông giảm hay tăng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 7,
-      "question": "Bếp từ làm nóng đáy nồi sắt chủ yếu nhờ:",
-      "options": [
-        "Ánh sáng hồng ngoại từ mặt bếp",
-        "Dòng điện không đổi chạy trực tiếp từ mặt bếp vào nồi",
-        "Dòng điện xoáy cảm ứng trong đáy nồi do từ trường biến thiên nhanh",
-        "Lực hút của nam châm vĩnh cửu trong mặt bếp"
-      ],
-      "answer": 2,
-      "explanation": "Bài nêu: từ trường biến thiên nhanh sinh dòng điện xoáy trong đáy nồi sắt, làm đáy nồi nóng lên."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Thả cùng lúc một cục nam châm và một cục nhôm (cùng kích cỡ) rơi trong ống nhôm thẳng đứng, cục nam châm rơi chậm hơn nhiều. Nguyên nhân là:",
-      "options": [
-        "Ống nhôm không có từ thông nào xuyên qua",
-        "Nam châm rơi làm từ thông qua thành ống biến thiên, dòng xoáy cảm ứng sinh lực cản chuyển động của nó",
-        "Nam châm nhẹ hơn nhôm nên rơi chậm hơn",
-        "Nhôm hút nam châm lên phía trên bằng lực hút tĩnh điện"
-      ],
-      "answer": 1,
-      "explanation": "Theo định luật Lenz, dòng xoáy trong thành ống chống lại chuyển động của nam châm; đó là nguyên lí phanh từ."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Xét định luật Lenz với một cuộn dây kín và một thanh nam châm. Các phát biểu sau:",
-      "statements": [
-        {
-          "text": "Từ thông tăng thì từ trường do dòng cảm ứng sinh ra ngược chiều với từ trường ngoài.",
-          "answer": true
-        },
-        {
-          "text": "Từ thông giảm thì từ trường do dòng cảm ứng sinh ra cùng chiều với từ trường ngoài.",
-          "answer": true
-        },
-        {
-          "text": "Định luật Lenz phù hợp với bảo toàn năng lượng: ta phải tốn công thắng lực cản để đưa nam châm vào.",
-          "answer": true
-        },
-        {
-          "text": "Khi nam châm tiến lại gần, cuộn dây hút nam châm vào.",
-          "answer": false
-        }
-      ],
-      "explanation": "Mẹo nhớ của bài: tiến thì đẩy, lùi thì kéo. Ý 4 sai vì cuộn dây cản nam châm đang tiến vào bằng cách đẩy nó ra."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Để làm từ thông qua một khung dây biến thiên, ta có thể:",
-      "statements": [
-        {
-          "text": "Đưa nam châm lại gần hoặc ra xa khung (đổi $B$).",
-          "answer": true
-        },
-        {
-          "text": "Kéo dãn hoặc thu nhỏ khung dây (đổi $S$).",
-          "answer": true
-        },
-        {
-          "text": "Quay khung trong từ trường để đổi góc $\\alpha$.",
-          "answer": true
-        },
-        {
-          "text": "Giữ khung đứng yên trong từ trường đều không đổi, chỉ cần từ trường đủ mạnh.",
-          "answer": false
-        }
-      ],
-      "explanation": "Từ $\\Phi=BS\\cos\\alpha$ có ba cách đổi $B$, $S$, $\\alpha$. Ý 4 sai vì từ thông lớn nhưng không đổi thì không có dòng cảm ứng."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Từ thông qua khung dây",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Mặt khung hợp với đường sức từ một góc $30^\\circ$. Góc $\\alpha$ giữa pháp tuyến của khung và $\\vec{B}$ bằng bao nhiêu độ?",
-      "answer": "60",
-      "explanation": "$\\alpha$ là góc của pháp tuyến, nên $\\alpha=90^\\circ-30^\\circ=60^\\circ$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Từ thông qua khung dây",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khi mặt khung song song với đường sức từ thì từ thông qua khung bằng bao nhiêu Wb?",
-      "answer": "0",
-      "explanation": "Mặt khung song song $\\vec{B}$ thì $\\alpha=90^\\circ$, $\\cos\\alpha=0$ nên $\\Phi=0$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Từ thông qua khung dây",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Từ thông qua diện tích phẳng $S$ đặt trong từ trường đều $B$, pháp tuyến hợp với $\\vec{B}$ góc $\\alpha$, là:",
-      "options": [
-        "$\\Phi=BS\\sin\\alpha$",
-        "$\\Phi=\\dfrac{B\\cos\\alpha}{S}$",
-        "$\\Phi=BS\\cos\\alpha$",
-        "$\\Phi=\\dfrac{BS}{\\cos\\alpha}$"
-      ],
-      "answer": 2,
-      "explanation": "Bài cho $\\Phi=BS\\cos\\alpha$ với $\\alpha$ là góc giữa pháp tuyến và $\\vec{B}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Từ thông qua khung dây",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đơn vị vê-be (Wb) của từ thông tương đương với:",
-      "options": [
-        "$\\text{T}\\cdot\\text{m}^2$",
-        "$\\text{T}/\\text{m}$",
-        "$\\text{T}/\\text{m}^2$",
-        "$\\text{T}\\cdot\\text{m}$"
-      ],
-      "answer": 0,
-      "explanation": "$\\Phi=BS\\cos\\alpha$ với $B$ đo bằng T và $S$ đo bằng $\\text{m}^2$ nên $1\\ \\text{Wb}=1\\ \\text{T}\\cdot\\text{m}^2$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Độ lớn suất điện động cảm ứng trong mạch kín (một vòng) theo định luật Faraday là:",
-      "options": [
-        "$|e_c|=\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$",
-        "$|e_c|=\\left|\\dfrac{\\Delta t}{\\Delta\\Phi}\\right|$",
-        "$|e_c|=|\\Phi|$",
-        "$|e_c|=|\\Delta\\Phi\\cdot\\Delta t|$"
-      ],
-      "answer": 0,
-      "explanation": "Định luật Faraday: độ lớn suất điện động cảm ứng bằng tốc độ biến thiên từ thông."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Đưa cùng một nam châm vào cuộn dây: lần 1 mất $1\\ \\text{s}$, lần 2 mất $0{,}1\\ \\text{s}$. Độ biến thiên từ thông $\\Delta\\Phi$ hai lần như nhau. So với lần 1, suất điện động cảm ứng lần 2:",
-      "options": [
-        "Lớn hơn 10 lần",
-        "Bằng nhau",
-        "Lớn hơn 100 lần",
-        "Nhỏ hơn 10 lần"
-      ],
-      "answer": 0,
-      "explanation": "$|e_c|=\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$ tỉ lệ nghịch với $\\Delta t$; $\\Delta t$ nhỏ hơn 10 lần nên $e_c$ lớn hơn 10 lần."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Từ thông qua khung dây",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét công thức $\\Phi=BS\\cos\\alpha$. Các phát biểu sau:",
-      "statements": [
-        {
-          "text": "$\\alpha$ là góc giữa pháp tuyến của mặt khung và vectơ $\\vec{B}$.",
-          "answer": true
-        },
-        {
-          "text": "Khi $\\alpha=0^\\circ$ thì $\\Phi=BS$ và đạt cực đại.",
-          "answer": true
-        },
-        {
-          "text": "Khi $\\alpha=90^\\circ$ thì $\\Phi=0$.",
-          "answer": true
-        },
-        {
-          "text": "Đơn vị của $\\Phi$ là tesla (T).",
-          "answer": false
-        }
-      ],
-      "explanation": "Đơn vị của từ thông là Wb (còn T là đơn vị của $B$); ba ý còn lại đúng theo bài."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xét suất điện động cảm ứng. Các phát biểu sau:",
-      "statements": [
-        {
-          "text": "Trong $e_c=-\\dfrac{\\Delta\\Phi}{\\Delta t}$, dấu trừ thể hiện định luật Lenz.",
-          "answer": true
-        },
-        {
-          "text": "Độ lớn $|e_c|=\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$ với một vòng dây.",
-          "answer": true
-        },
-        {
-          "text": "Cuộn $N$ vòng giống nhau thì $|e_c|=N\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$, với $\\Phi$ là từ thông qua một vòng.",
-          "answer": true
-        },
-        {
-          "text": "Mạch có điện trở $R$ thì cường độ dòng cảm ứng $i=|e_c|\\cdot R$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Cường độ dòng cảm ứng là $i=\\dfrac{|e_c|}{R}$ chứ không phải tích; ba ý còn lại đúng theo bài."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Từ thông qua khung dây",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khung dây diện tích $0{,}04\\ \\text{m}^2$ đặt trong từ trường đều $B=0{,}5\\ \\text{T}$, pháp tuyến hợp với $\\vec{B}$ góc $60^\\circ$. Từ thông qua khung là bao nhiêu Wb?",
-      "answer": "0,01",
-      "explanation": "$\\Phi=BS\\cos\\alpha=0{,}5\\cdot0{,}04\\cdot0{,}5=0{,}01\\ \\text{Wb}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Từ thông qua một mạch kín biến thiên đều một lượng $0{,}06\\ \\text{Wb}$ trong $0{,}3\\ \\text{s}$. Độ lớn suất điện động cảm ứng là bao nhiêu V?",
-      "answer": "0,2",
-      "explanation": "$|e_c|=\\dfrac{\\Delta\\Phi}{\\Delta t}=\\dfrac{0{,}06}{0{,}3}=0{,}2\\ \\text{V}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Định luật Faraday và định luật Lenz",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Một cuộn dây $50$ vòng giống nhau; từ thông qua mỗi vòng giảm đều từ $4\\ \\text{mWb}$ về $0$ trong $0{,}02\\ \\text{s}$. Độ lớn suất điện động cảm ứng trong cuộn là bao nhiêu V?",
-      "answer": "10",
-      "explanation": "$|e_c|=N\\dfrac{\\Delta\\Phi}{\\Delta t}=50\\cdot\\dfrac{4\\times10^{-3}}{0{,}02}=10\\ \\text{V}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "don_vi",
-      "topic": "Từ thông qua khung dây",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 6,
-      "question": "Khi giải bài, đổi diện tích $200\\ \\text{cm}^2$ sang $\\text{m}^2$ được bao nhiêu $\\text{m}^2$?",
-      "answer": "0,02",
-      "explanation": "$1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$ nên $200\\ \\text{cm}^2=0{,}02\\ \\text{m}^2$ (bài toán mẫu đổi về SI trước khi tính)."
-    }
+  "removed": [
+   {
+    "question": "Một đoạn dây dẫn dài $\\ell$ chuyển động với vận tốc $\\vec{v}$ cắt các đường sức của từ trường đều $\\vec{B}$. Độ lớn suất điện động cảm ứng là $|e_c| = Bv\\ell\\sin\\theta$.",
+    "reason": "nghi_ngo: Công thức |e_c| = Bvℓsinθ chỉ có ở danh sách tóm tắt đầu body_html, không đoạn nào (kể cả đoạn 4) trình bày, nên học sinh học theo các mục không có căn cứ; đáp án Đ-Đ-S-S thì nhất quán với công thức đã cho."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Từ thông qua khung dây",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong công thức từ thông $\\Phi = BS\\cos\\alpha$, góc $\\alpha$ là góc hợp bởi",
+   "options": [
+    "mặt khung dây và vectơ $\\vec{B}$",
+    "pháp tuyến $\\vec{n}$ của mặt khung và $\\vec{B}$",
+    "một cạnh khung dây và vectơ $\\vec{B}$",
+    "pháp tuyến $\\vec{n}$ và mặt khung dây"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu rõ $\\alpha$ là góc giữa pháp tuyến $\\vec{n}$ của mặt khung và $\\vec{B}$, không phải góc của mặt khung.",
+   "distractorNotes": {
+    "A": "Nhầm góc của mặt khung với góc của pháp tuyến; hai góc này phụ nhau nên giá trị $\\cos$ khác hẳn.",
+    "C": "Cạnh khung nằm trong mặt khung, nên lấy góc này vẫn là nhầm sang góc của mặt khung chứ không phải pháp tuyến.",
+    "D": "Pháp tuyến luôn vuông góc mặt khung nên góc này cố định $90^\\circ$, không phản ánh hướng của $\\vec{B}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Từ thông qua khung dây",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khung dây gồm $N$ vòng, diện tích mỗi vòng $S$, đặt trong từ trường đều $B$, pháp tuyến hợp với $\\vec{B}$ góc $\\alpha$. Từ thông qua khung là",
+   "options": [
+    "$\\Phi = NBS\\cos\\alpha$",
+    "$\\Phi = NBS\\sin\\alpha$",
+    "$\\Phi = \\dfrac{BS\\cos\\alpha}{N}$",
+    "$\\Phi = BS\\cos\\alpha$"
+   ],
+   "answer": 0,
+   "explanation": "Với $N$ vòng dây, bài cho $\\Phi = NBS\\cos\\alpha$; mỗi vòng góp $BS\\cos\\alpha$ nên nhân thêm $N$.",
+   "distractorNotes": {
+    "B": "Nhầm hàm lượng giác: $\\alpha$ là góc pháp tuyến với $\\vec{B}$ nên dùng $\\cos$; $\\sin$ chỉ dùng khi lấy góc của mặt khung.",
+    "C": "Đảo tỉ lệ: mỗi vòng đều góp từ thông $BS\\cos\\alpha$ nên tổng phải nhân $N$, không chia cho $N$.",
+    "D": "Đây chỉ là từ thông qua một vòng, quên nhân thêm số vòng $N$ của khung."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Từ thông qua khung dây",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị của từ thông trong hệ SI là vê-be (Wb), với $1\\ \\text{Wb}$ bằng",
+   "options": [
+    "$1\\ \\text{T}/\\text{m}^2$",
+    "$1\\ \\text{T}\\cdot\\text{m}^2$",
+    "$1\\ \\text{T}\\cdot\\text{m}$",
+    "$1\\ \\text{V}/\\text{s}$"
+   ],
+   "answer": 1,
+   "explanation": "Từ $\\Phi = BS\\cos\\alpha$ với $B$ đo bằng T và $S$ đo bằng $\\text{m}^2$ nên $1\\ \\text{Wb} = 1\\ \\text{T}\\cdot\\text{m}^2$.",
+   "distractorNotes": {
+    "A": "Đảo phép tính: $\\Phi = BS\\cos\\alpha$ là tích của $B$ với diện tích, không phải $B$ chia cho diện tích.",
+    "C": "Quên $S$ là diện tích nên đơn vị phải là $\\text{m}^2$, không phải $\\text{m}$.",
+    "D": "Nhầm quan hệ Faraday: Wb/s mới bằng V, nên Wb tương đương V·s chứ không phải V/s."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Từ thông qua khung dây",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khung dây diện tích $S$ đặt trong từ trường đều $B$, mặt khung hợp với đường sức từ góc $30^\\circ$. Từ thông qua khung là",
+   "options": [
+    "$\\Phi = BS\\cos30^\\circ$",
+    "$\\Phi = BS$",
+    "$\\Phi = BS\\cos60^\\circ$",
+    "$\\Phi = BS\\cos90^\\circ$"
+   ],
+   "answer": 2,
+   "explanation": "Góc $30^\\circ$ là của mặt khung, nên góc của pháp tuyến là $\\alpha = 90^\\circ - 30^\\circ = 60^\\circ$, do đó $\\Phi = BS\\cos60^\\circ$.",
+   "distractorNotes": {
+    "A": "Đưa thẳng góc của mặt khung vào $\\cos$, quên đổi sang góc pháp tuyến $\\alpha = 90^\\circ - 30^\\circ$.",
+    "B": "Coi như mặt khung vuông góc đường sức ($\\alpha = 0^\\circ$), trong khi mặt khung chỉ hợp với đường sức góc $30^\\circ$.",
+    "D": "Coi như khung song song đường sức nên $\\Phi = 0$, trong khi mặt khung vẫn nghiêng $30^\\circ$ so với đường sức."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Từ thông qua khung dây",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đặt khung dây diện tích $S$ giữa hai cực nam châm chữ U (từ trường đều $B$), rồi quay từ từ khung. Từ thông qua khung được tính bằng $\\Phi = BS\\cos\\alpha$.",
+   "statements": [
+    {
+     "text": "Từ thông lớn nhất, bằng $BS$, khi mặt khung vuông góc với đường sức từ.",
+     "answer": true
+    },
+    {
+     "text": "Khi pháp tuyến vuông góc với $\\vec{B}$ ($\\alpha = 90^\\circ$) thì từ thông bằng $BS$.",
+     "answer": false
+    },
+    {
+     "text": "Vì $B$ và $S$ giữ nguyên nên từ thông qua khung không đổi trong lúc quay.",
+     "answer": false
+    },
+    {
+     "text": "Từ thông qua khung được đo bằng đơn vị vê-be (Wb).",
+     "answer": true
+    }
+   ],
+   "explanation": "Mặt khung vuông góc đường sức thì $\\alpha = 0^\\circ$, $\\Phi = BS$ lớn nhất; $\\alpha = 90^\\circ$ thì $\\Phi = 0$. Quay khung làm $\\alpha$ đổi nên $\\Phi$ đổi dù $B$, $S$ không đổi.",
+   "distractorNotes": {
+    "0": "Mặt khung vuông góc đường sức nghĩa là pháp tuyến song song $\\vec{B}$, $\\alpha = 0^\\circ$, $\\cos\\alpha = 1$ nên $\\Phi = BS$ lớn nhất thật.",
+    "1": "Với $\\alpha = 90^\\circ$ thì $\\cos\\alpha = 0$ nên $\\Phi = 0$; nhầm pháp tuyến vuông góc $\\vec{B}$ với mặt khung vuông góc đường sức.",
+    "2": "Quay khung làm $\\alpha$ đổi nên $\\Phi = BS\\cos\\alpha$ đổi dù $B$, $S$ giữ nguyên.",
+    "3": "Đơn vị từ thông trong SI đúng là vê-be, $1\\ \\text{Wb} = 1\\ \\text{T}\\cdot\\text{m}^2$, không có cơ sở coi ý này sai."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Từ thông. Hiện tượng cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong một mạch điện kín xuất hiện dòng điện cảm ứng khi",
+   "options": [
+    "mạch được đặt trong một từ trường rất mạnh",
+    "từ thông qua mạch có giá trị rất lớn",
+    "mạch được đặt trong một từ trường đều",
+    "từ thông qua mạch biến thiên theo thời gian"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, dòng điện cảm ứng chỉ xuất hiện khi từ thông qua mạch kín biến thiên; từ thông lớn nhưng không đổi thì không có dòng.",
+   "distractorNotes": {
+    "A": "Nhầm có từ trường mạnh với từ thông biến thiên; từ trường mạnh nhưng không đổi thì không sinh dòng cảm ứng.",
+    "B": "Nhầm giá trị từ thông với sự biến thiên của nó; từ thông lớn mà không đổi thì kim điện kế vẫn về 0.",
+    "C": "Từ trường đều không đổi qua mạch đứng yên cho từ thông không đổi, nên bản thân nó không gây dòng cảm ứng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Từ thông. Hiện tượng cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Nối hai đầu cuộn dây với điện kế. Đưa thanh nam châm vào lòng cuộn dây rồi giữ yên ở đó. Trong lúc nam châm đứng yên, kim điện kế",
+   "options": [
+    "lệch mạnh nhất vì từ thông lớn nhất",
+    "lệch đều theo chiều lúc đưa vào",
+    "chỉ số 0 vì từ thông không biến thiên",
+    "lệch ngược chiều lúc đưa nam châm vào"
+   ],
+   "answer": 2,
+   "explanation": "Nam châm đứng yên thì từ thông qua cuộn dây không đổi nên không có dòng cảm ứng, kim điện kế về 0.",
+   "distractorNotes": {
+    "A": "Nhầm từ thông lớn với từ thông biến thiên; nam châm đứng yên thì $\\Phi$ không đổi nên không có dòng.",
+    "B": "Tưởng dòng cảm ứng còn duy trì sau khi đưa vào, nhưng dòng chỉ tồn tại khi từ thông còn đang biến thiên.",
+    "D": "Kim lệch ngược chỉ xảy ra khi rút nam châm ra làm từ thông giảm; đứng yên thì từ thông không đổi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Từ thông. Hiện tượng cảm ứng điện từ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Nối cuộn dây 600 vòng với điện kế nhạy. Đưa cực Bắc của thanh nam châm vào cuộn dây với các tốc độ khác nhau, giữ yên một lúc, rồi rút ra.",
+   "statements": [
+    {
+     "text": "Khi đưa nam châm vào và khi rút ra, kim điện kế lệch về hai phía ngược nhau.",
+     "answer": true
+    },
+    {
+     "text": "Đưa nam châm vào càng nhanh thì kim điện kế lệch càng ít.",
+     "answer": false
+    },
+    {
+     "text": "Khi giữ yên nam châm trong cuộn dây, kim điện kế chỉ số 0.",
+     "answer": true
+    },
+    {
+     "text": "Đổi cực nam châm rồi làm lại thì chiều lệch của kim không thay đổi.",
+     "answer": false
+    }
+   ],
+   "explanation": "Thí nghiệm cho thấy: đưa vào và rút ra cho dòng ngược chiều; đưa nhanh thì từ thông biến thiên nhanh nên kim lệch nhiều hơn; giữ yên thì kim về 0; đổi cực thì đổi chiều lệch.",
+   "distractorNotes": {
+    "0": "Đưa vào làm từ thông tăng, rút ra làm từ thông giảm, nên theo Lenz dòng cảm ứng ngược chiều, kim lệch về hai phía.",
+    "1": "Đảo tỉ lệ: đưa nhanh thì từ thông biến thiên nhanh nên dòng mạnh hơn.",
+    "2": "Giữ yên thì từ thông không biến thiên nên không có dòng cảm ứng; chỉ có từ trường thì không đủ làm kim lệch.",
+    "3": "Đổi cực làm đổi chiều từ trường qua cuộn dây nên chiều dòng cảm ứng và chiều lệch kim cũng đổi theo."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Theo định luật Lenz, dòng điện cảm ứng có chiều sao cho từ trường do nó sinh ra",
+   "options": [
+    "chống lại sự biến thiên của từ thông đã sinh ra nó",
+    "luôn ngược chiều với từ trường ngoài đã sinh ra nó",
+    "luôn cùng chiều với từ trường ngoài đã sinh ra nó",
+    "làm tăng thêm sự biến thiên từ thông đã sinh ra nó"
+   ],
+   "answer": 0,
+   "explanation": "Định luật Lenz: từ trường cảm ứng chống lại sự biến thiên từ thông; nó ngược chiều khi từ thông tăng và cùng chiều khi từ thông giảm, nên không phải luôn ngược chiều.",
+   "distractorNotes": {
+    "B": "Chỉ đúng khi từ thông tăng; khi từ thông giảm, từ trường cảm ứng lại cùng chiều từ trường ngoài.",
+    "C": "Chỉ đúng khi từ thông giảm; khi từ thông tăng, từ trường cảm ứng ngược chiều để cản sự tăng.",
+    "D": "Ngược bản chất Lenz: dòng làm tăng biến thiên sẽ khiến năng lượng tự sinh ra, vi phạm bảo toàn năng lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Đưa cực Nam của thanh nam châm lại gần một vòng dây kín theo trục vòng dây. Đầu vòng dây gần nam châm trở thành",
+   "options": [
+    "cực Bắc và hút nam châm lại gần",
+    "cực Nam và đẩy nam châm ra xa",
+    "cực Bắc và đẩy nam châm ra xa",
+    "cực Nam và hút nam châm lại gần"
+   ],
+   "answer": 1,
+   "explanation": "Từ thông tăng nên vòng dây cản nam châm tiến vào (tiến thì đẩy); muốn đẩy thì hai cực phải cùng tên, nên đầu gần là cực Nam.",
+   "distractorNotes": {
+    "A": "Nhầm chiều tác dụng: nam châm tiến lại thì vòng dây phải đẩy để cản, không hút vào; tiến thì đẩy.",
+    "C": "Cực Bắc đối diện cực Nam của nam châm sẽ hút nhau, không thể đẩy; muốn đẩy phải là hai cực cùng tên.",
+    "D": "Hai cực cùng tên đẩy nhau chứ không hút; hơn nữa nam châm tiến lại thì vòng dây phải đẩy ra."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Khi từ thông qua một mạch kín đang giảm, từ trường của dòng điện cảm ứng",
+   "options": [
+    "ngược chiều từ trường ngoài",
+    "vuông góc với từ trường ngoài",
+    "bằng không trong suốt quá trình",
+    "cùng chiều từ trường ngoài"
+   ],
+   "answer": 3,
+   "explanation": "Theo Lenz, khi từ thông giảm, từ trường cảm ứng cùng chiều từ trường ngoài để bù lại phần giảm.",
+   "distractorNotes": {
+    "A": "Áp máy móc \"luôn ngược chiều\"; ngược chiều chỉ khi từ thông tăng, còn từ thông giảm thì phải cùng chiều để bù.",
+    "B": "Từ trường cảm ứng phải cùng phương với từ trường ngoài mới chống lại được biến thiên từ thông, không thể vuông góc.",
+    "C": "Từ thông đang biến thiên nên mạch kín vẫn có dòng cảm ứng, từ trường cảm ứng không thể bằng không."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Thả một nam châm vào ống nhôm thẳng đứng, nam châm rơi chậm hơn hẳn một vật không từ tính cùng hình dạng. Nguyên nhân là",
+   "options": [
+    "ống nhôm hút nam châm giống như hút sắt",
+    "không khí trong ống cản nam châm mạnh hơn",
+    "dòng xoáy trong thành ống cản chuyển động",
+    "nam châm bị mất từ tính khi rơi trong ống"
+   ],
+   "answer": 2,
+   "explanation": "Nam châm rơi làm từ thông qua thành ống biến thiên, sinh dòng xoáy; theo Lenz, dòng này cản chuyển động của nam châm.",
+   "distractorNotes": {
+    "A": "Nhôm không phải chất sắt từ nên không bị nam châm hút như sắt; lực cản đến từ dòng cảm ứng.",
+    "B": "Hai vật cùng hình dạng chịu lực cản không khí như nhau, nên không giải thích được sự rơi chậm hẳn.",
+    "D": "Nam châm không mất từ tính; chính từ trường của nó gây biến thiên từ thông, sinh dòng xoáy cản lại."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Đẩy thanh nam châm về phía một cuộn dây kín, người làm thí nghiệm thấy nặng tay.",
+   "statements": [
+    {
+     "text": "Cảm giác nặng tay là do từ trường của dòng cảm ứng chống lại sự tăng từ thông qua cuộn dây.",
+     "answer": true
+    },
+    {
+     "text": "Đẩy nam châm vào càng nhanh thì người đẩy càng thấy nhẹ tay.",
+     "answer": false
+    },
+    {
+     "text": "Công người đẩy phải bỏ ra để thắng lực cản biến thành điện năng trong cuộn dây.",
+     "answer": true
+    },
+    {
+     "text": "Khi kéo nam châm ra xa, cuộn dây cũng đẩy nam châm ra xa hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mạch luôn cản trở sự thay đổi: đẩy càng nhanh càng nặng tay, công thắng lực cản chuyển thành điện năng. Khi kéo ra, từ thông giảm nên cuộn dây kéo nam châm lại (lùi thì kéo).",
+   "distractorNotes": {
+    "0": "Nam châm tiến lại làm từ thông tăng, dòng cảm ứng tạo từ trường cản sự tăng nên tay phải thắng lực đẩy.",
+    "1": "Đảo tỉ lệ: đẩy nhanh thì từ thông biến thiên nhanh, dòng cảm ứng mạnh hơn nên lực cản và cảm giác nặng tay tăng.",
+    "2": "Theo bảo toàn năng lượng, điện năng trong cuộn dây không tự sinh ra mà do công thắng lực cản chuyển thành.",
+    "3": "Kéo ra làm từ thông giảm nên cuộn dây kéo nam châm lại để bù; áp nhầm \"tiến thì đẩy\" cho trường hợp lùi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Khi từ thông qua một mạch hở biến thiên thì trong mạch",
+   "options": [
+    "có suất điện động cảm ứng nhưng không có dòng điện",
+    "có dòng điện cảm ứng nhưng không có suất điện động",
+    "không có suất điện động và không có dòng điện cảm ứng",
+    "có cả suất điện động và dòng điện cảm ứng chạy qua"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: mạch hở vẫn có suất điện động cảm ứng $e_c$ nhưng không có dòng điện, vì dòng chỉ chạy được trong mạch kín.",
+   "distractorNotes": {
+    "B": "Đảo quan hệ nhân quả: dòng cảm ứng do suất điện động gây ra, không thể có dòng mà thiếu suất điện động.",
+    "C": "Suất điện động cảm ứng xuất hiện chỉ cần từ thông biến thiên, không phụ thuộc mạch kín hay hở.",
+    "D": "Mạch hở không khép kín nên dòng không chạy được, dù vẫn có suất điện động cảm ứng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Từ thông qua một mạch kín biến thiên cùng một lượng $\\Delta\\Phi$, nhưng thời gian biến thiên giảm 10 lần. Độ lớn suất điện động cảm ứng",
+   "options": [
+    "giảm đi 10 lần",
+    "không thay đổi",
+    "tăng lên 100 lần",
+    "tăng lên 10 lần"
+   ],
+   "answer": 3,
+   "explanation": "Theo Faraday $|e_c| = \\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$, $\\Delta\\Phi$ không đổi mà $\\Delta t$ nhỏ hơn 10 lần thì $|e_c|$ lớn hơn 10 lần.",
+   "distractorNotes": {
+    "A": "Đảo tỉ lệ: $|e_c|$ tỉ lệ nghịch với $\\Delta t$, nên $\\Delta t$ giảm thì $|e_c|$ tăng chứ không giảm.",
+    "B": "Chỉ để ý $\\Delta\\Phi$ không đổi mà quên $|e_c|$ là tốc độ biến thiên, phụ thuộc cả $\\Delta t$.",
+    "C": "Nhầm thành tỉ lệ nghịch với bình phương thời gian; $|e_c|$ chỉ tỉ lệ nghịch bậc nhất với $\\Delta t$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Cuộn dây có $N$ vòng, từ thông qua mỗi vòng biến thiên một lượng $\\Delta\\Phi$ trong thời gian $\\Delta t$. Độ lớn suất điện động cảm ứng trong cả cuộn là",
+   "options": [
+    "$|e_c| = N\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$",
+    "$|e_c| = \\dfrac{1}{N}\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$",
+    "$|e_c| = N\\left|\\Delta\\Phi\\cdot\\Delta t\\right|$",
+    "$|e_c| = N\\left|\\dfrac{\\Delta t}{\\Delta\\Phi}\\right|$"
+   ],
+   "answer": 0,
+   "explanation": "Với cuộn $N$ vòng, bài cho $|e_c| = N\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$, trong đó $\\Phi$ là từ thông qua một vòng.",
+   "distractorNotes": {
+    "B": "Các vòng mắc nối tiếp cộng dồn suất điện động nên phải nhân $N$, không chia cho $N$.",
+    "C": "Nhầm tốc độ biến thiên thành tích; $\\Delta\\Phi$ phải chia cho $\\Delta t$, còn Wb·s không phải đơn vị vôn.",
+    "D": "Đảo phân số: $|e_c|$ là $\\Delta\\Phi$ chia $\\Delta t$, biến thiên nhanh ($\\Delta t$ nhỏ) phải cho $|e_c|$ lớn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 6,
+   "question": "Trong định luật Faraday $|e_c| = \\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$, đơn vị Wb/s bằng",
+   "options": [
+    "ampe (A)",
+    "vôn (V)",
+    "tesla (T)",
+    "ôm ($\\Omega$)"
+   ],
+   "answer": 1,
+   "explanation": "Suất điện động đo bằng vôn; bài kiểm tra đơn vị trong bài toán mẫu ghi rõ Wb/s = V.",
+   "distractorNotes": {
+    "A": "Nhầm suất điện động với cường độ dòng; ampe là đơn vị của $i = |e_c|/R$, không phải Wb/s.",
+    "C": "Tesla là đơn vị cảm ứng từ, tương ứng Wb chia diện tích, không phải Wb chia thời gian.",
+    "D": "Ôm là đơn vị điện trở $R$, còn Wb/s là đơn vị của suất điện động."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một khung dây kín có điện trở $R$ đặt trong từ trường đều, cảm ứng từ tăng đều theo thời gian làm từ thông qua khung biến thiên.",
+   "statements": [
+    {
+     "text": "Độ lớn suất điện động cảm ứng trong khung là $|e_c| = \\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu cùng lượng $\\Delta\\Phi$ diễn ra trong thời gian gấp đôi thì $|e_c|$ tăng gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Cường độ dòng điện cảm ứng trong khung là $i = \\dfrac{|e_c|}{R}$.",
+     "answer": true
+    },
+    {
+     "text": "Dấu trừ trong $e_c = -\\dfrac{\\Delta\\Phi}{\\Delta t}$ thể hiện định luật Lenz.",
+     "answer": true
+    }
+   ],
+   "explanation": "$|e_c|$ tỉ lệ nghịch với $\\Delta t$ nên thời gian gấp đôi thì $|e_c|$ giảm một nửa. Các ý còn lại đúng theo định luật Faraday, $i = |e_c|/R$ và ý nghĩa dấu trừ là định luật Lenz.",
+   "distractorNotes": {
+    "0": "Đây chính là định luật Faraday cho khung một vòng: độ lớn $e_c$ bằng tốc độ biến thiên từ thông.",
+    "1": "Đảo tỉ lệ: $|e_c|$ tỉ lệ nghịch với $\\Delta t$ nên thời gian gấp đôi thì $|e_c|$ giảm một nửa.",
+    "2": "Khung kín có điện trở $R$ thì dòng cảm ứng tính theo $i = |e_c|/R$ đúng như bài nêu.",
+    "3": "Dấu trừ biểu thị suất điện động chống lại sự biến thiên từ thông, đúng nội dung định luật Lenz."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật Faraday và định luật Lenz",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một cuộn dây kín gồm $N$ vòng, điện trở $R$. Suất điện động và dòng điện cảm ứng được tính bằng $|e_c| = N\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$ và $i = \\dfrac{|e_c|}{R}$.",
+   "statements": [
+    {
+     "text": "Giữ nguyên tốc độ biến thiên từ thông qua mỗi vòng, tăng số vòng gấp đôi thì $|e_c|$ tăng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Giữ nguyên $|e_c|$, dùng cuộn dây có điện trở gấp đôi thì $i$ giảm một nửa.",
+     "answer": true
+    },
+    {
+     "text": "Trong công thức, $\\Phi$ là từ thông qua cả cuộn dây chứ không phải qua một vòng.",
+     "answer": false
+    },
+    {
+     "text": "Từ thông qua mỗi vòng lớn gấp đôi nhưng không đổi theo thời gian thì $|e_c|$ tăng gấp đôi.",
+     "answer": false
+    }
+   ],
+   "explanation": "$|e_c|$ tỉ lệ với $N$, $i$ tỉ lệ nghịch với $R$. Bài ghi rõ $\\Phi$ là từ thông qua một vòng; từ thông không đổi thì $\\Delta\\Phi = 0$ nên $e_c = 0$ dù từ thông lớn.",
+   "distractorNotes": {
+    "0": "$|e_c|$ tỉ lệ thuận với $N$ khi tốc độ biến thiên qua mỗi vòng giữ nguyên, nên $N$ gấp đôi thì $|e_c|$ gấp đôi.",
+    "1": "Với $|e_c|$ cố định, $i = |e_c|/R$ tỉ lệ nghịch với $R$, nên $R$ gấp đôi thì $i$ giảm một nửa.",
+    "2": "Nếu $\\Phi$ đã là của cả cuộn thì nhân $N$ thêm lần nữa sẽ tính trùng; bài ghi rõ $\\Phi$ qua một vòng.",
+    "3": "Nhầm từ thông lớn với từ thông biến thiên; $\\Phi$ không đổi thì $\\Delta\\Phi = 0$ nên $e_c = 0$ dù $\\Phi$ lớn."
+   }
+  }
+ ]
 }

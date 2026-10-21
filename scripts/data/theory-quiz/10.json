@@ -1,386 +1,550 @@
 {
-  "lesson_id": 10,
-  "lesson_title": "Bài 9. Khái niệm từ trường",
-  "item_id": 42,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 10,
+ "lesson_title": "Bài 9. Khái niệm từ trường",
+ "item_id": 42,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ trường là",
+   "options": [
+    "dạng vật chất tồn tại quanh điện tích đứng yên, tác dụng lực điện",
+    "dạng vật chất tồn tại quanh nam châm, dòng điện, tác dụng lực từ",
+    "môi trường không khí bao quanh nam châm, truyền lực hút sắt vụn",
+    "hình ảnh do mạt sắt tạo ra quanh nam châm, cho thấy lực từ"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, từ trường là dạng vật chất tồn tại quanh nam châm và dòng điện. Nó biểu hiện bằng lực từ tác dụng lên nam châm hay dòng điện đặt trong nó.",
+   "distractorNotes": {
+    "A": "Nhầm từ trường với điện trường: điện tích đứng yên tạo điện trường và lực điện, không tạo lực từ.",
+    "C": "Coi từ trường là không khí, trong khi từ trường là dạng vật chất riêng và không cần môi trường trung gian.",
+    "D": "Đồng nhất từ phổ do mạt sắt tạo ra với chính từ trường; mạt sắt chỉ làm hiện hình dạng của từ trường."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Đường sức từ và từ phổ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bên ngoài một thanh nam châm, các đường sức từ",
+   "options": [
+    "đi ra ở cực nam, đi vào ở cực bắc",
+    "đi ra ở cả hai cực, tỏa ra xa vô hạn",
+    "đi ra ở cực bắc, đi vào ở cực nam",
+    "song song, cách đều nhau từ bắc sang nam"
+   ],
+   "answer": 2,
+   "explanation": "Đường sức từ ra ở cực bắc, vào ở cực nam. Bên trong nam châm, chúng đi tiếp từ nam sang bắc nên đường sức là đường cong kín.",
+   "distractorNotes": {
+    "A": "Đảo ngược chiều quy ước: bên ngoài nam châm, đường sức đi ra ở cực bắc và đi vào ở cực nam.",
+    "B": "Áp hình ảnh đường sức điện của điện tích cho nam châm; đường sức từ khép kín, không có nam châm một cực.",
+    "D": "Lấy đặc điểm của từ trường đều ở khe chữ U hay trong ống dây áp cho thanh nam châm thẳng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai dây dẫn thẳng, dài, đặt song song, có dòng điện chạy cùng chiều. Hai dây",
+   "options": [
+    "hút nhau",
+    "đẩy nhau",
+    "không tương tác",
+    "xoay vuông góc nhau"
+   ],
+   "answer": 0,
+   "explanation": "Dòng điện có từ tính, nên giữa hai dòng điện có tương tác từ. Hai dòng điện song song cùng chiều thì hút nhau, ngược chiều thì đẩy nhau.",
+   "distractorNotes": {
+    "B": "Coi hai dòng cùng chiều như hai cực cùng tên đẩy nhau, trong khi dây dẫn không có cực N, S.",
+    "C": "Tưởng chỉ nam châm mới có tương tác từ, quên rằng dòng điện cũng có từ tính.",
+    "D": "Gán cho hai dây một tác dụng xoay không có trong bài; giữa hai dây song song chỉ có lực hút hoặc đẩy."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hướng của từ trường tại một điểm được quy ước là",
+   "options": [
+    "chiều bắc → nam của kim nam châm nhỏ cân bằng tại đó",
+    "chiều từ điểm đó hướng thẳng về nam châm gần nhất",
+    "phương vuông góc với kim nam châm nhỏ cân bằng tại đó",
+    "chiều nam → bắc của kim nam châm nhỏ cân bằng tại đó"
+   ],
+   "answer": 3,
+   "explanation": "Bài quy ước hướng từ trường tại một điểm là chiều nam → bắc của kim nam châm nhỏ nằm cân bằng tại đó. Đó cũng là chiều mà đầu N của kim chỉ.",
+   "distractorNotes": {
+    "A": "Lấy ngược chiều quy ước: hướng từ trường là chiều từ cực nam sang cực bắc của kim, tức chiều đầu N chỉ.",
+    "B": "Tưởng từ trường luôn hướng về nam châm gần nhất, trong khi hướng phải xác định bằng kim nam châm nhỏ cân bằng.",
+    "C": "Kim nam châm nhỏ nằm dọc theo hướng từ trường chứ không vuông góc với nó."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Đường sức từ và từ phổ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đường sức từ là những đường được vẽ sao cho",
+   "options": [
+    "pháp tuyến tại mỗi điểm trùng hướng từ trường",
+    "tiếp tuyến tại mỗi điểm trùng hướng từ trường",
+    "tiếp tuyến tại mỗi điểm vuông góc hướng từ trường",
+    "mọi điểm trên đường có cùng độ lớn cảm ứng từ"
+   ],
+   "answer": 1,
+   "explanation": "Theo định nghĩa trong bài, đường sức từ có tiếp tuyến tại mỗi điểm trùng với hướng của từ trường tại điểm đó.",
+   "distractorNotes": {
+    "A": "Nhầm pháp tuyến với tiếp tuyến; chính tiếp tuyến tại mỗi điểm mới trùng hướng từ trường.",
+    "C": "Hướng từ trường trùng với tiếp tuyến của đường sức, không vuông góc với tiếp tuyến.",
+    "D": "Độ lớn cảm ứng từ thể hiện qua mật độ đường sức, không phải không đổi dọc theo một đường sức."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Từ trường của nam châm và của dòng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ở vùng nào sau đây, từ trường được xem là từ trường đều?",
+   "options": [
+    "Trong lòng ống dây dài có dòng điện",
+    "Quanh một dây dẫn thẳng có dòng điện",
+    "Sát hai đầu cực của thanh nam châm thẳng",
+    "Giữa hai cực cùng tên đặt đối diện nhau"
+   ],
+   "answer": 0,
+   "explanation": "Từ trường đều có đường sức thẳng, song song và cách đều. Bài nêu hai vùng như vậy: khe giữa hai cực nam châm chữ U và lòng ống dây dài.",
+   "distractorNotes": {
+    "B": "Quanh dây thẳng, đường sức là các vòng tròn đồng tâm nên không song song, không cách đều.",
+    "C": "Sát hai đầu cực, đường sức tỏa ra hoặc chụm lại, mau thưa khác nhau nên từ trường không đều.",
+    "D": "Giữa hai cực cùng tên, đường sức đẩy nhau ra xa và có chỗ từ trường triệt tiêu, nên không đều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Từ trường của nam châm và của dòng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo quy tắc nắm tay phải cho dòng điện thẳng dài, nếu ngón cái chỉ chiều dòng điện thì",
+   "options": [
+    "ngón cái cũng chỉ chiều đường sức từ quanh dây",
+    "các ngón khum lại chỉ chiều ngược đường sức từ",
+    "các ngón khum lại chỉ chiều đường sức từ quanh dây",
+    "lòng bàn tay hướng theo chiều đường sức quanh dây"
+   ],
+   "answer": 2,
+   "explanation": "Với quy tắc nắm tay phải, ngón cái chỉ chiều dòng điện. Các ngón khum lại chỉ chiều đường sức từ, là những đường tròn có tâm nằm trên dây.",
+   "distractorNotes": {
+    "A": "Ngón cái chỉ chiều dòng điện; đường sức là vòng tròn quanh dây nên phải do các ngón khum chỉ chiều.",
+    "B": "Đảo chiều quy tắc: các ngón khum lại chỉ đúng chiều đường sức, không phải chiều ngược lại.",
+    "D": "Quy tắc nắm tay phải dùng chiều các ngón khum, không dùng hướng lòng bàn tay."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Từ trường của nam châm và của dòng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một dây đồng thẳng đứng được luồn qua lỗ giữa tấm bìa. Đặt một la bàn trên bìa, cạnh dây, rồi nối dây với pin, đóng mạch vài giây rồi ngắt.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Kim la bàn trong điện thoại luôn chỉ về một phía (gần hướng bắc) chủ yếu vì:",
-      "options": [
-        "Nam châm trong điện thoại hút kim về một phía cố định",
-        "Trái Đất là một nam châm khổng lồ, từ trường của nó định hướng kim",
-        "Không khí quanh Trái Đất đẩy kim quay theo",
-        "Trọng lực kéo đầu nặng của kim xuống phía bắc"
-      ],
-      "answer": 1,
-      "explanation": "Kim chỉ theo từ trường Trái Đất; đặt gần cửa sắt thì từ trường của vật đó lấn át nên kim lệch."
+     "text": "Khi đóng mạch, kim la bàn lệch khỏi hướng ban đầu.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai dây dẫn thẳng, dài, song song, có dòng điện cùng chiều thì:",
-      "options": [
-        "Đẩy nhau",
-        "Không tương tác",
-        "Hút nhau",
-        "Đẩy nhau rồi hút nhau luân phiên"
-      ],
-      "answer": 2,
-      "explanation": "Dòng điện có từ trường nên hai dây có tương tác từ: cùng chiều hút nhau, ngược chiều đẩy nhau."
+     "text": "Khi ngắt mạch, kim la bàn vẫn giữ nguyên vị trí đã lệch.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hướng của từ trường tại một điểm được quy ước là:",
-      "options": [
-        "Chiều từ cực nam sang cực bắc của kim nam châm nhỏ nằm cân bằng tại điểm đó",
-        "Chiều từ cực bắc sang cực nam của kim nam châm nhỏ nằm cân bằng tại điểm đó",
-        "Hướng của lực từ tác dụng lên một vật sắt đặt tại điểm đó",
-        "Hướng đông – tây cố định tại mọi nơi"
-      ],
-      "answer": 0,
-      "explanation": "Kim nam châm nhỏ nằm cân bằng: chiều nam → bắc của kim là chiều từ trường tại điểm đó."
+     "text": "Đảo hai đầu pin rồi đóng mạch, kim lệch về phía ngược lại.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Đường sức từ và từ phổ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhận định nào đúng về đường sức từ bên ngoài một thanh nam châm?",
-      "options": [
-        "Đi ra từ cực nam và đi vào cực bắc",
-        "Là đường cong hở, có điểm đầu và điểm cuối",
-        "Hai đường sức có thể cắt nhau ở nơi từ trường mạnh",
-        "Đi ra từ cực bắc và đi vào cực nam"
-      ],
-      "answer": 3,
-      "explanation": "Đường sức ra ở cực bắc, vào ở cực nam, khép kín qua trong nam châm và không cắt nhau."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Vì sao cực bắc của kim la bàn chỉ về phía bắc địa lí?",
-      "options": [
-        "Gần bắc địa lí là cực từ bắc của Trái Đất, hút cực bắc của kim",
-        "Trái Đất quay quanh trục kéo kim quay theo",
-        "Gần bắc địa lí là cực từ nam của Trái Đất, hút cực bắc của kim",
-        "Cực bắc địa lí và cực từ bắc của Trái Đất trùng nhau"
-      ],
-      "answer": 2,
-      "explanation": "Hai cực khác tên hút nhau: cực bắc của kim bị hút về cực từ nam, nằm gần bắc địa lí."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về từ trường, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Từ trường tồn tại quanh nam châm và quanh dòng điện.",
-          "answer": true
-        },
-        {
-          "text": "Từ trường biểu hiện bằng lực từ tác dụng lên nam châm hay dòng điện đặt trong nó.",
-          "answer": true
-        },
-        {
-          "text": "Từ trường là thứ nhìn thấy được bằng mắt thường.",
-          "answer": false
-        },
-        {
-          "text": "Ra xa nam châm một khoảng nào đó thì từ trường hoàn toàn biến mất.",
-          "answer": false
-        }
-      ],
-      "explanation": "Từ trường là dạng vật chất không nhìn thấy, yếu dần theo khoảng cách chứ không biến mất; dụng cụ chỉ không phát hiện được khi quá xa."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Đường sức từ và từ phổ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về đường sức từ và từ phổ, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tiếp tuyến tại mỗi điểm của đường sức từ trùng với hướng từ trường tại điểm đó.",
-          "answer": true
-        },
-        {
-          "text": "Chỗ đường sức mau thì từ trường mạnh, chỗ thưa thì yếu.",
-          "answer": true
-        },
-        {
-          "text": "Từ phổ (mạt sắt) cho biết cả chiều của từ trường.",
-          "answer": false
-        },
-        {
-          "text": "Từ trường đều có các đường sức song song và cách đều nhau.",
-          "answer": true
-        }
-      ],
-      "explanation": "Từ phổ chỉ cho hình dạng và mật độ tương đối; chiều từ trường phải xác định bằng kim nam châm nhỏ hay mũi tên trên đường sức vẽ."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một nam châm có bao nhiêu cực?",
-      "answer": "2",
-      "explanation": "Nam châm luôn có hai cực bắc (N) và nam (S); không có nam châm một cực."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Có bao nhiêu cặp đối tượng có tương tác từ (nam châm – nam châm, nam châm – dòng điện, …)?",
-      "answer": "3",
-      "explanation": "Ba cặp: nam châm – nam châm, nam châm – dòng điện, dòng điện – dòng điện."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Cực từ của Trái Đất lệch trục quay khoảng bao nhiêu độ?",
-      "answer": "11",
-      "explanation": "Bài nêu cực từ lệch trục quay khoảng $11^\\circ$ và còn dịch chuyển, nên la bàn có độ từ thiên."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Đường sức từ và từ phổ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đổi đơn vị: $1\\ \\text{mT}$ bằng bao nhiêu tesla?",
-      "options": [
-        "$10^{-3}\\ \\text{T}$",
-        "$10^{3}\\ \\text{T}$",
-        "$10^{-6}\\ \\text{T}$",
-        "$10^{-1}\\ \\text{T}$"
-      ],
-      "answer": 0,
-      "explanation": "Theo bài, $1\\ \\text{mT} = 10^{-3}\\ \\text{T}$ và $1\\ \\mu\\text{T} = 10^{-6}\\ \\text{T}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Tại một nơi, thành phần nằm ngang của từ trường Trái Đất là $B_\\text{đ} = 30\\ \\mu\\text{T}$ hướng bắc; dây dẫn tạo từ trường $40\\ \\mu\\text{T}$ vuông góc với $B_\\text{đ}$. Cảm ứng từ tổng hợp bằng:",
-      "options": [
-        "$70\\ \\mu\\text{T}$",
-        "$10\\ \\mu\\text{T}$",
-        "$35\\ \\mu\\text{T}$",
-        "$50\\ \\mu\\text{T}$"
-      ],
-      "answer": 3,
-      "explanation": "Hai từ trường vuông góc nên $B = \\sqrt{40^2 + 30^2} = 50\\ \\mu\\text{T}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Từ trường dây vuông góc $B_\\text{đ} = 30\\ \\mu\\text{T}$; kim la bàn lệch $45^\\circ$ so với hướng bắc. Biết $\\tan\\alpha = B_1/B_\\text{đ}$, từ trường của dây $B_1$ bằng:",
-      "options": [
-        "$60\\ \\mu\\text{T}$",
-        "$30\\ \\mu\\text{T}$",
-        "$15\\ \\mu\\text{T}$",
-        "$21\\ \\mu\\text{T}$"
-      ],
-      "answer": 1,
-      "explanation": "$\\tan 45^\\circ = 1$ nên $B_1 = B_\\text{đ} = 30\\ \\mu\\text{T}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Từ trường Trái Đất $30\\ \\mu\\text{T}$ hướng bắc; từ trường của dây $40\\ \\mu\\text{T}$ hướng nam (cùng phương, ngược chiều). Cảm ứng từ tổng hợp là:",
-      "options": [
-        "$70\\ \\mu\\text{T}$ hướng bắc",
-        "$10\\ \\mu\\text{T}$ hướng bắc",
-        "$10\\ \\mu\\text{T}$ hướng nam",
-        "$50\\ \\mu\\text{T}$ hướng nam"
-      ],
-      "answer": 2,
-      "explanation": "Cùng phương, ngược chiều thì trừ độ lớn: $40 - 30 = 10\\ \\mu\\text{T}$, hướng theo thành phần lớn hơn (hướng nam)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Hai từ trường $B_1$, $B_2$ vuông góc nhau tại một điểm. Cảm ứng từ tổng hợp tính bằng:",
-      "options": [
-        "$B = B_1 + B_2$",
-        "$B = \\sqrt{B_1^2 + B_2^2}$",
-        "$B = |B_1 - B_2|$",
-        "$B = \\dfrac{B_1 + B_2}{2}$"
-      ],
-      "answer": 1,
-      "explanation": "Hai vectơ vuông góc thì độ lớn tổng hợp tính theo định lí Pi-ta-go; cộng đại số chỉ dùng khi cùng phương."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Khi tổng hợp từ trường của dây và từ trường Trái Đất, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hai từ trường cùng phương, cùng chiều thì cộng đại số độ lớn.",
-          "answer": true
-        },
-        {
-          "text": "Hai từ trường vuông góc thì dùng $B = \\sqrt{B_1^2 + B_2^2}$.",
-          "answer": true
-        },
-        {
-          "text": "Hai từ trường vuông góc nhau thì có thể cộng đại số $B = B_1 + B_2$.",
-          "answer": false
-        },
-        {
-          "text": "Dây tạo từ trường cùng phương, cùng chiều với từ trường Trái Đất thì kim lệch khỏi hướng bắc.",
-          "answer": false
-        }
-      ],
-      "explanation": "Cùng phương cùng chiều thì vectơ tổng vẫn theo hướng bắc nên kim không lệch; vuông góc phải dùng Pi-ta-go."
-    },
-    {
-      "type": "true_false",
-      "kind": "don_vi",
-      "topic": "Đường sức từ và từ phổ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về đơn vị cảm ứng từ, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$1\\ \\mu\\text{T} = 10^{-6}\\ \\text{T}$.",
-          "answer": true
-        },
-        {
-          "text": "$1\\ \\text{mT} = 1000\\ \\mu\\text{T}$.",
-          "answer": true
-        },
-        {
-          "text": "Ở nước ta, từ trường Trái Đất cỡ vài chục $\\mu\\text{T}$.",
-          "answer": true
-        },
-        {
-          "text": "$1\\ \\mu\\text{T} = 10^{-3}\\ \\text{T}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$10^{-6}$ mới là hệ số của $\\mu\\text{T}$; $10^{-3}$ là của mT."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Kim la bàn lệch $53^\\circ$ khi từ trường dây vuông góc với $B_\\text{đ} = 30\\ \\mu\\text{T}$ ($\\tan 53^\\circ \\approx 1{,}33$). Từ trường của dây bằng bao nhiêu $\\mu\\text{T}$?",
-      "answer": "40",
-      "explanation": "$B_1 = B_\\text{đ}\\tan 53^\\circ \\approx 30 \\times 1{,}33 \\approx 40\\ \\mu\\text{T}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "don_vi",
-      "topic": "Đường sức từ và từ phổ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "$2\\ \\text{mT}$ bằng bao nhiêu $\\mu\\text{T}$?",
-      "answer": "2000",
-      "explanation": "$1\\ \\text{mT} = 10^{-3}\\ \\text{T} = 1000\\ \\mu\\text{T}$ nên $2\\ \\text{mT} = 2000\\ \\mu\\text{T}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Từ trường của nam châm và của dòng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Dây tạo từ trường $40\\ \\mu\\text{T}$ cùng phương, cùng chiều với từ trường Trái Đất $30\\ \\mu\\text{T}$. Cảm ứng từ tổng hợp bằng bao nhiêu $\\mu\\text{T}$?",
-      "answer": "70",
-      "explanation": "Cùng phương, cùng chiều nên cộng đại số: $40 + 30 = 70\\ \\mu\\text{T}$."
+     "text": "Kim lệch vì dây có dòng điện trở thành nam châm có cực N và S.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Dòng điện tác dụng lực từ lên kim; đổi chiều dòng thì đổi chiều lực. Ngắt mạch thì kim trở về hướng cũ. Dây dẫn có từ tính nhưng không có cực N, S.",
+   "distractorNotes": {
+    "0": "Thí nghiệm cho thấy khi đóng mạch, dòng điện tác dụng lực từ lên kim nên kim chắc chắn lệch.",
+    "1": "Từ trường của dây chỉ tồn tại khi có dòng điện; ngắt mạch thì chỉ còn từ trường Trái Đất nên kim trở về.",
+    "2": "Đổi chiều dòng điện thì đổi chiều lực từ, nên kim không thể lệch về cùng phía như trước.",
+    "3": "Nhầm có từ tính với có cực: dây dẫn có dòng điện có từ tính nhưng không có cực N, S."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Đường sức từ và từ phổ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đặt một thanh nam châm dưới tấm nhựa trong, rắc mạt sắt mịn lên tấm rồi gõ nhẹ. Mạt sắt nối thành những chuỗi hạt rõ nét.",
+   "statements": [
+    {
+     "text": "Hình ảnh các chuỗi mạt sắt này được gọi là từ phổ.",
+     "answer": true
+    },
+    {
+     "text": "Đường sức từ là những đường có thật, chính là các chuỗi mạt sắt.",
+     "answer": false
+    },
+    {
+     "text": "Gần hai cực, mạt sắt dày đặc vì từ trường ở đó mạnh.",
+     "answer": true
+    },
+    {
+     "text": "Ở chỗ mạt sắt dày nhất, hai đường sức từ có thể cắt nhau.",
+     "answer": false
+    }
+   ],
+   "explanation": "Từ phổ là ảnh thật, còn đường sức từ là đường vẽ theo quy ước. Đường sức mau ở chỗ từ trường mạnh. Qua mỗi điểm chỉ vẽ được một đường sức, nên các đường không cắt nhau.",
+   "distractorNotes": {
+    "0": "Hình ảnh chuỗi mạt sắt quanh nam châm chính là từ phổ, một ảnh thật của từ trường.",
+    "1": "Đồng nhất ảnh thật với đường quy ước: đường sức từ là đường vẽ theo quy ước, không phải chuỗi mạt sắt.",
+    "2": "Mạt sắt dày gần cực phản ánh từ trường mạnh ở đó, đúng với quy ước mau thì mạnh.",
+    "3": "Tại mỗi điểm từ trường chỉ có một hướng dù mạnh đến đâu, nên đường sức không bao giờ cắt nhau."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trái Đất được xem như một nam châm khổng lồ. Một học sinh cầm la bàn đứng ngoài sân, kim la bàn chỉ gần về phía bắc địa lí.",
+   "statements": [
+    {
+     "text": "Kim la bàn được định hướng bởi từ trường của Trái Đất.",
+     "answer": true
+    },
+    {
+     "text": "Gần cực bắc địa lí là cực từ bắc của Trái Đất.",
+     "answer": false
+    },
+    {
+     "text": "Cực bắc của kim bị hút về cực từ nam của Trái Đất.",
+     "answer": true
+    },
+    {
+     "text": "Đặt la bàn sát cửa sắt, kim vẫn chỉ đúng hướng như ngoài sân.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hai cực khác tên thì hút nhau, nên gần bắc địa lí phải là cực từ nam của Trái Đất. Cửa sắt làm thay đổi từ trường tại chỗ đặt la bàn, nên kim bị lệch.",
+   "distractorNotes": {
+    "0": "Trái Đất có từ trường riêng và chính từ trường đó định hướng kim la bàn, không phải lực nào khác.",
+    "1": "Tên cực từ ngược tên địa lí: cực bắc của kim bị hút về đó nên gần bắc địa lí phải là cực từ nam.",
+    "2": "Hai cực khác tên hút nhau, nên cực bắc của kim bị hút về cực từ nam là hoàn toàn hợp lí.",
+    "3": "Cửa sắt làm thay đổi từ trường tại chỗ đặt la bàn, nên kim bị lệch chứ không giữ nguyên hướng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của cảm ứng từ là",
+   "options": [
+    "ampe (A)",
+    "vôn (V)",
+    "niutơn (N)",
+    "tesla (T)"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, độ lớn cảm ứng từ $B$ có đơn vị là tesla, kí hiệu T.",
+   "distractorNotes": {
+    "A": "Ampe là đơn vị cường độ dòng điện, nguồn gây ra từ trường, không phải đơn vị của cảm ứng từ.",
+    "B": "Vôn là đơn vị hiệu điện thế, không liên quan đến độ lớn cảm ứng từ.",
+    "C": "Nhầm lực từ với cảm ứng từ: niutơn là đơn vị của lực, không phải đơn vị của $B$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giá trị $1\\ \\mu\\text{T}$ bằng",
+   "options": [
+    "$10^{-6}$ T",
+    "$10^{-3}$ T",
+    "$10^{6}$ T",
+    "$10^{-9}$ T"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu $1\\ \\mu\\text{T} = 10^{-6}\\ \\text{T}$. Còn $1\\ \\text{mT} = 10^{-3}\\ \\text{T}$.",
+   "distractorNotes": {
+    "B": "Nhầm tiền tố micro với mili: $10^{-3}$ ứng với mT, còn μT nhỏ hơn nghìn lần.",
+    "C": "Sai dấu số mũ: micro là một phần triệu nên phải là lũy thừa âm, nhỏ hơn 1 T.",
+    "D": "$10^{-9}$ là tiền tố nano, nhỏ hơn micro một nghìn lần."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Tại một điểm có hai từ trường thành phần cùng phương, cùng chiều, độ lớn $B_1$ và $B_2$. Độ lớn cảm ứng từ tổng hợp là",
+   "options": [
+    "$B = |B_1 - B_2|$",
+    "$B = B_1 + B_2$",
+    "$B = \\sqrt{B_1^2 + B_2^2}$",
+    "$B = B_1^2 + B_2^2$"
+   ],
+   "answer": 1,
+   "explanation": "Từ trường tổng hợp là tổng vectơ các từ trường thành phần. Khi hai vectơ cùng phương, cùng chiều thì độ lớn được cộng đại số: $B = B_1 + B_2$.",
+   "distractorNotes": {
+    "A": "Lấy hiệu độ lớn là trường hợp hai từ trường cùng phương nhưng ngược chiều.",
+    "C": "Căn của tổng bình phương chỉ dùng khi hai từ trường vuông góc nhau.",
+    "D": "Cộng các bình phương cho kết quả sai thứ nguyên, không phải độ lớn cảm ứng từ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Tại một điểm có hai từ trường thành phần vuông góc nhau, độ lớn $B_1$ và $B_2$. Độ lớn cảm ứng từ tổng hợp là",
+   "options": [
+    "$B = B_1 + B_2$",
+    "$B = |B_1 - B_2|$",
+    "$B = \\sqrt{B_1^2 + B_2^2}$",
+    "$B = B_1^2 + B_2^2$"
+   ],
+   "answer": 2,
+   "explanation": "Hai vectơ vuông góc thì vectơ tổng là cạnh huyền của tam giác vuông. Do đó $B = \\sqrt{B_1^2 + B_2^2}$.",
+   "distractorNotes": {
+    "A": "Cộng đại số chỉ đúng khi hai từ trường cùng phương, cùng chiều, không áp dụng khi vuông góc.",
+    "B": "Lấy hiệu độ lớn chỉ đúng khi hai từ trường cùng phương, ngược chiều.",
+    "D": "Quên lấy căn bậc hai nên sai thứ nguyên; vectơ tổng là cạnh huyền của tam giác vuông."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một la bàn nằm ngang chịu từ trường Trái Đất $\\vec B_\\text{đ}$ hướng bắc và từ trường $\\vec B_1$ của dây dẫn vuông góc với $\\vec B_\\text{đ}$. Góc lệch $\\alpha$ của kim so với hướng bắc thỏa mãn",
+   "options": [
+    "$\\tan\\alpha = B_\\text{đ}/B_1$",
+    "$\\cos\\alpha = B_1/B_\\text{đ}$",
+    "$\\sin\\alpha = B_\\text{đ}/B_1$",
+    "$\\tan\\alpha = B_1/B_\\text{đ}$"
+   ],
+   "answer": 3,
+   "explanation": "Kim chỉ theo từ trường tổng hợp. Trong tam giác vuông, $B_1$ là cạnh đối và $B_\\text{đ}$ là cạnh kề của góc $\\alpha$, nên $\\tan\\alpha = B_1/B_\\text{đ}$.",
+   "distractorNotes": {
+    "A": "Đảo tử với mẫu: góc đo từ hướng bắc nên $B_1$ là cạnh đối, $B_\\text{đ}$ là cạnh kề.",
+    "B": "Côsin là cạnh kề chia cạnh huyền, mà $B_1$ và $B_\\text{đ}$ đều là cạnh góc vuông.",
+    "C": "Sin cần đến cạnh huyền là $B$ tổng hợp, trong khi tỉ số này chỉ gồm hai cạnh góc vuông."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Từ hệ thức $\\tan\\alpha = B_1/B_\\text{đ}$ về góc lệch của kim la bàn, độ lớn từ trường của dây là",
+   "options": [
+    "$B_1 = B_\\text{đ}\\tan\\alpha$",
+    "$B_1 = B_\\text{đ}/\\tan\\alpha$",
+    "$B_1 = \\tan\\alpha/B_\\text{đ}$",
+    "$B_1 = B_\\text{đ}\\cos\\alpha$"
+   ],
+   "answer": 0,
+   "explanation": "Nhân hai vế của $\\tan\\alpha = B_1/B_\\text{đ}$ với $B_\\text{đ}$ được $B_1 = B_\\text{đ}\\tan\\alpha$. Bài toán mẫu dùng đúng bước này: $B_1 = 30\\tan 53^\\circ$.",
+   "distractorNotes": {
+    "B": "Chuyển vế sai: muốn khử mẫu $B_\\text{đ}$ phải nhân hai vế với nó, không phải chia.",
+    "C": "Đảo ngược phân số khi biến đổi, làm sai cả thứ nguyên của $B_1$.",
+    "D": "Tự ý thay tan bằng cos, trong khi hệ thức ban đầu dùng tan."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Từ trường của dây dẫn vuông góc với từ trường Trái Đất tại vị trí la bàn và có độ lớn bằng nó. Kim la bàn lệch khỏi hướng bắc một góc",
+   "options": [
+    "$30^\\circ$",
+    "$45^\\circ$",
+    "$60^\\circ$",
+    "$90^\\circ$"
+   ],
+   "answer": 1,
+   "explanation": "Hai thành phần bằng nhau nên $\\tan\\alpha = 1$, suy ra $\\alpha = 45^\\circ$. Vectơ tổng là đường chéo của hình vuông.",
+   "distractorNotes": {
+    "A": "$\\tan 30^\\circ$ không bằng 1; góc này chỉ đúng khi $B_1$ nhỏ hơn $B_\\text{đ}$ khoảng $\\sqrt3$ lần.",
+    "C": "$\\tan 60^\\circ = \\sqrt3$, ứng với $B_1$ lớn hơn $B_\\text{đ}$, không ứng với hai thành phần bằng nhau.",
+    "D": "Tưởng kim chỉ hẳn theo từ trường của dây, bỏ qua từ trường Trái Đất vẫn tác dụng lên kim."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một la bàn nằm ngang đặt dưới một dây dẫn thẳng. Tại đó, từ trường Trái Đất $\\vec B_\\text{đ}$ hướng bắc; khi có dòng điện, dây tạo thêm từ trường nằm ngang $\\vec B_1$.",
+   "statements": [
+    {
+     "text": "Kim la bàn chỉ theo hướng của từ trường tổng hợp tại đó.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $\\vec B_1$ cũng hướng bắc thì $B = B_1 + B_\\text{đ}$ và kim không lệch.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $\\vec B_1$ vuông góc $\\vec B_\\text{đ}$ thì $B = B_1 + B_\\text{đ}$.",
+     "answer": false
+    },
+    {
+     "text": "Nếu $\\vec B_1$ vuông góc $\\vec B_\\text{đ}$ thì góc lệch thỏa $\\tan\\alpha = B_\\text{đ}/B_1$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Khi hai từ trường cùng phương, ta cộng đại số. Khi chúng vuông góc thì $B = \\sqrt{B_1^2 + B_\\text{đ}^2}$ và $\\tan\\alpha = B_1/B_\\text{đ}$; ý d viết đảo tử với mẫu.",
+   "distractorNotes": {
+    "0": "Kim chịu đồng thời cả hai từ trường nên chỉ theo từ trường tổng hợp, không theo riêng thành phần nào.",
+    "1": "Cùng phương, cùng chiều thì cộng đại số và vectơ tổng vẫn hướng bắc, nên kim không lệch là đúng.",
+    "2": "Cộng đại số chỉ đúng khi cùng phương; hai từ trường vuông góc phải dùng $\\sqrt{B_1^2 + B_\\text{đ}^2}$.",
+    "3": "Góc đo từ hướng bắc nên $B_1$ là cạnh đối, $B_\\text{đ}$ là cạnh kề; hệ thức này đã đảo tử với mẫu."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Vẫn la bàn đặt dưới dây dẫn, từ trường của dây $\\vec B_1$ vuông góc với từ trường Trái Đất $\\vec B_\\text{đ}$ (hướng bắc). Kim lệch khỏi hướng bắc một góc $\\alpha$.",
+   "statements": [
+    {
+     "text": "Tăng cường độ dòng điện để $B_1$ tăng thì góc lệch $\\alpha$ tăng.",
+     "answer": true
+    },
+    {
+     "text": "Đảo chiều dòng điện, kim lệch cùng góc $\\alpha$ nhưng sang phía đối diện.",
+     "answer": true
+    },
+    {
+     "text": "Đảo chiều dòng điện, hai từ trường triệt tiêu nên kim chỉ đúng hướng bắc.",
+     "answer": false
+    },
+    {
+     "text": "Nếu $B_1$ nhỏ hơn $B_\\text{đ}$ thì góc lệch $\\alpha$ lớn hơn $45^\\circ$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ta có $\\tan\\alpha = B_1/B_\\text{đ}$: $B_1$ tăng thì $\\alpha$ tăng, còn $B_1 \\lt B_\\text{đ}$ thì $\\alpha \\lt 45^\\circ$. Đảo chiều dòng, vectơ tổng đối xứng qua phương bắc – nam. Hai từ trường chỉ triệt tiêu khi cùng phương, ngược chiều và bằng nhau.",
+   "distractorNotes": {
+    "0": "Từ $\\tan\\alpha = B_1/B_\\text{đ}$, khi $B_1$ tăng thì tan tăng nên góc lệch chắc chắn tăng.",
+    "1": "Đảo chiều dòng làm vectơ tổng đối xứng qua phương bắc – nam, nên độ lớn góc lệch không đổi.",
+    "2": "Triệt tiêu cần hai từ trường cùng phương, ngược chiều, bằng nhau; ở đây chúng vuông góc nên không triệt tiêu.",
+    "3": "Đảo quan hệ: $B_1 \\lt B_\\text{đ}$ cho $\\tan\\alpha \\lt 1$, nên góc lệch nhỏ hơn $45^\\circ$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Khái niệm từ trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dùng cảm biến từ trường của điện thoại đo cảm ứng từ trên trục một nam châm, tại các khoảng cách khác nhau tính từ mặt cực bắc.",
+   "statements": [
+    {
+     "text": "Cảm ứng từ $\\vec B$ là vectơ có hướng là hướng của từ trường.",
+     "answer": true
+    },
+    {
+     "text": "Đơn vị của cảm ứng từ là tesla, kí hiệu T.",
+     "answer": true
+    },
+    {
+     "text": "Ta có $1\\ \\text{mT} = 10^{-6}\\ \\text{T}$.",
+     "answer": false
+    },
+    {
+     "text": "Càng ra xa nam châm, số đo càng lớn và đường sức càng mau.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đúng là $1\\ \\text{mT} = 10^{-3}\\ \\text{T}$, không phải $10^{-6}\\ \\text{T}$. Càng xa nguồn, từ trường càng yếu, số đo giảm và đường sức càng thưa.",
+   "distractorNotes": {
+    "0": "Cảm ứng từ là vectơ, có hướng trùng hướng từ trường, chứ không chỉ là một độ lớn.",
+    "1": "Tesla đúng là đơn vị SI của cảm ứng từ, kí hiệu T, như bài đã nêu.",
+    "2": "Nhầm mili với micro: $10^{-6}$ T là 1 μT, còn 1 mT bằng $10^{-3}$ T.",
+    "3": "Đảo chiều quan hệ: thực tế ra xa thì số đo giảm và đường sức thưa dần."
+   }
+  }
+ ]
 }
