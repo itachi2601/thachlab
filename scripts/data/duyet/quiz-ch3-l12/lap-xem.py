@@ -23,9 +23,9 @@ for i in IDS:
         t = q["type"]
         h = f'<div class="q"><div class="tag">Câu {n} · {t} · {q.get("kind")} · {q.get("difficulty")}</div><div class="qt">{e(q["question"])}</div>'
         if t == "multiple_choice":
-            h += "<ul>" + "".join(f'<li class="{"ok" if k == q["answer"] else ""}"><b>{L[k]}.</b> {e(o)}</li>' for k, o in enumerate(q["options"])) + "</ul>"
+            h += "<ul>" + "".join(f'<li class="{"ok" if k == q["answer"] else ""}"><b>{L[k]}.</b> {e(o)}' + (f'<div class="why">Vì sao sai: {e(q.get("distractorNotes",{}).get(L[k],""))}</div>' if k != q["answer"] else '') + '</li>' for k, o in enumerate(q["options"])) + "</ul>"
         elif t == "true_false":
-            h += "<ul>" + "".join(f'<li class="{"ok" if s["answer"] else "no"}"><b>{"abcd"[k]})</b> {e(s["text"])} <em>→ {"Đúng" if s["answer"] else "Sai"}</em></li>' for k, s in enumerate(q["statements"])) + "</ul>"
+            h += "<ul>" + "".join(f'<li class="{"ok" if s["answer"] else "no"}"><b>{"abcd"[k]})</b> {e(s["text"])} <em>→ {"Đúng" if s["answer"] else "Sai"}</em><div class="why">Chọn ngược lại là sai vì: {e(q.get("distractorNotes",{}).get(str(k),""))}</div></li>' for k, s in enumerate(q["statements"])) + "</ul>"
         else:
             h += f'<p class="ok2">Đáp án: <b>{e(str(q["answer"]))}</b></p>'
         h += f'<div class="ex">Lời giải: {e(q.get("explanation",""))}</div></div>'
@@ -39,7 +39,7 @@ page = f"""<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name
 .q{{border:1px solid #ddd;border-radius:10px;padding:12px;margin:12px 0}}.tag{{font-size:12px;color:#666}}.qt{{font-weight:600;margin:6px 0}}
 ul{{list-style:none;padding:0;margin:6px 0}}li{{padding:4px 8px;border-radius:6px}}li.ok{{background:#e6f6e9}}li.no{{background:#fdecec}}
 .ex{{background:#f5f5f7;border-radius:8px;padding:8px;font-size:15px;margin-top:6px}}.meta{{color:#666}}nav a{{display:block;padding:2px 0}}
-.rm{{color:#a33;font-size:14px}}.ok2{{background:#e6f6e9;padding:4px 8px;border-radius:6px}}</style></head><body>
+.why{{font-size:14px;color:#8a5a00;margin:2px 0 0 18px}}.rm{{color:#a33;font-size:14px}}.ok2{{background:#e6f6e9;padding:4px 8px;border-radius:6px}}</style></head><body>
 <h1>Quiz lý thuyết Chương 3 lớp 12 — {"BẢN NHÁP mới, chưa kiểm chéo" if NHAP else "bản đang lưu"}</h1><nav>{''.join(nav)}</nav>{''.join(parts)}
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>

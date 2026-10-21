@@ -9,6 +9,7 @@ import {
   QUESTION_STATUS_LABELS,
 } from "@/features/exams/types";
 import Html from "@/components/exams/ContentHtml";
+import { distractorHints } from "@/features/lessons/practice-step";
 import Badge from "@/components/ui/Badge";
 
 const LETTERS = ["A", "B", "C", "D"];
@@ -103,6 +104,8 @@ export default function QuestionCard({
   const status = scored ? questionStatus(q, r) : null;
   const graded = scored && q.type !== "essay" ? gradeQuestion(q, r) : null;
   const border = status ? CARD_TONE[status] : "border-line";
+  // Dòng "vì sao em chọn sai" cho đúng phương án/ý em đã chọn sai (câu có distractorNotes); không hiện khi tự đối chiếu.
+  const hints = scored ? distractorHints(q, r) : [];
 
   return (
     <div className={`exam-paper rounded-2xl border bg-panel p-5 ${border}`}>
@@ -355,6 +358,17 @@ export default function QuestionCard({
               <p className="text-sm text-muted">Điểm tính theo % số chữ đúng so với bản dịch mẫu (không cần gõ đủ dấu).</p>
             </>
           )}
+        </div>
+      )}
+
+      {hints.length > 0 && (
+        <div className="mt-3 space-y-1.5 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-sm text-ink">
+          {hints.map((h) => (
+            <div key={h.label}>
+              <span className="font-semibold">Vì sao {h.label} sai: </span>
+              <Html html={h.note} />
+            </div>
+          ))}
         </div>
       )}
 

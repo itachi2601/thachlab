@@ -120,6 +120,21 @@ export function validateQuiz(data: any, opts: { topics?: Map<number, string[]> |
     }
     if (typeof q.explanation !== "string" || !q.explanation.trim()) at("thiếu explanation");
     else texts.push(q.explanation);
+    {
+      // distractorNotes (21/10/2026): 1 dòng "vì sao em chọn sai" cho mỗi phương án sai (TN) / mỗi ý (Đ–S); giao diện chấm hiện đúng dòng của lựa chọn sai.
+      const dn = q.distractorNotes;
+      const need: string[] = q.type === "multiple_choice" ? ["A", "B", "C", "D"].filter((_, j) => j !== q.answer) : q.type === "true_false" ? ["0", "1", "2", "3"] : [];
+      if (need.length) {
+        const miss = need.filter((k) => typeof dn?.[k] !== "string" || !dn[k].trim());
+        if (miss.length) warnings.push(`Câu ${i + 1}: thiếu distractorNotes cho ${miss.join(",")}`);
+        if (dn && typeof dn === "object") {
+          for (const [k, v] of Object.entries<any>(dn)) {
+            if (!need.includes(k)) at(`distractorNotes có khoá "${k}" không hợp lệ (cần ${need.join(",")})`);
+            else if (typeof v === "string") { texts.push(v); if (v.trim().split(/\s+/).length > 30) at(`distractorNotes["${k}"] dài quá 30 từ`); }
+          }
+        }
+      }
+    }
     if (texts.some((t) => !dollarsBalanced(t))) at("LaTeX lệch dấu $");
     if (q.form !== "ly_thuyet") at('form phải là "ly_thuyet"');
     if (!DIFFICULTIES.includes(q.difficulty)) at(`difficulty "${q.difficulty}" phải thuộc {${DIFFICULTIES.join(", ")}} (mã, không phải nhãn "Dễ"/"Trung bình")`);

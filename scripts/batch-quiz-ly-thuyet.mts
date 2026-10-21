@@ -7,6 +7,8 @@
 //   npx tsx scripts/batch-quiz-ly-thuyet.mts --buoc sinh --nhan [--cho]                  # lấy bản nháp → logs/batch-quiz/sinh/<id>.json
 //   npx tsx scripts/batch-quiz-ly-thuyet.mts --buoc kiem --gui                           # kiểm chéo ĐỘC LẬP các bản nháp đã nhận
 //   npx tsx scripts/batch-quiz-ly-thuyet.mts --buoc kiem --nhan [--cho]                  # loại câu sai → validate → ghi scripts/data/theory-quiz/
+//   npx tsx scripts/batch-quiz-ly-thuyet.mts --buoc ghichu --gui --lesson-ids …          # thêm distractorNotes (vì sao phương án sai) vào bộ ĐÃ có, giữ nguyên câu
+//   npx tsx scripts/batch-quiz-ly-thuyet.mts --buoc ghichu --nhan [--cho]                # gộp ghi chú → validate → ghi đè scripts/data/theory-quiz/ (bản trước: logs/batch-quiz/ban-truoc-ghichu/)
 //
 // Tuỳ chọn: --model (sinh: claude-sonnet-5-5, kiem: claude-opus-5-5) · --effort (medium/high) · --lesson-ids a,b,c
 // Cần .env.local: ANTHROPIC_API_KEY (+ ANTHROPIC_WORKSPACE_ID nếu key cấp tổ chức). Chạy trong tab terminal.
@@ -21,8 +23,8 @@ const LOG = path.join(ROOT, "scripts/logs/batch-quiz");
 const argv = process.argv.slice(2);
 const arg = (n: string) => (argv.includes(`--${n}`) ? argv[argv.indexOf(`--${n}`) + 1] : undefined);
 const flag = (n: string) => argv.includes(`--${n}`);
-const BUOC = (arg("buoc") ?? "sinh") as "sinh" | "kiem";
-if (!["sinh", "kiem"].includes(BUOC)) fail("--buoc phải là sinh hoặc kiem");
+const BUOC = (arg("buoc") ?? "sinh") as "sinh" | "kiem" | "ghichu";
+if (!["sinh", "kiem", "ghichu"].includes(BUOC)) fail("--buoc phải là sinh, kiem hoặc ghichu");
 const MODEL = arg("model") ?? (BUOC === "sinh" ? "claude-sonnet-5-5" : "claude-opus-5-5");
 const EFFORT = (arg("effort") ?? (BUOC === "sinh" ? "medium" : "high")) as "low" | "medium" | "high";
 const IDS = (arg("lesson-ids") ?? "").split(",").map((s) => Number(s.trim())).filter((n) => Number.isInteger(n) && n > 0);
@@ -36,7 +38,7 @@ function env(key: string): string | undefined {
   return l ? l.slice(key.length + 1).trim().replace(/^["']|["']$/g, "") : undefined;
 }
 const mk = (d: string) => { const p = path.join(LOG, d); fs.mkdirSync(p, { recursive: true }); return p; };
-const SINH_DIR = mk("sinh"), KIEM_DIR = mk("kiem"), LAMLAI_DIR = mk("can-lam-lai");
+const SINH_DIR = mk("sinh"), KIEM_DIR = mk("kiem"), LAMLAI_DIR = mk("can-lam-lai"), GHICHU_DIR = mk("ghichu"), TRUOC_DIR = mk("ban-truoc-ghichu");
 const BATCHES = path.join(LOG, "batches.json");
 type BatchRec = { id: string; buoc: string; model: string; lessons: number[]; at: string };
 const readBatches = (): BatchRec[] => (fs.existsSync(BATCHES) ? JSON.parse(fs.readFileSync(BATCHES, "utf8")) : []);
@@ -59,6 +61,7 @@ const FORMAT = `
 {"questions":[ ... 20 câu ... ]}
 Mỗi câu có đủ: "type", "kind", "topic", "form":"ly_thuyet", "difficulty" ("de" hoặc "trung-binh"), "difficultySource":"ai", "theorySection" (số nguyên theo danh sách đoạn được cho; bỏ nếu bài không có đoạn), "question", "explanation", và:
 - multiple_choice: "options": [4 chuỗi khác nhau], "answer": 0..3
+- "distractorNotes" (bắt buộc với multiple_choice và true_false): mỗi giá trị MỘT câu ≤ 25 từ nêu đúng lỗi tư duy khiến học sinh chọn như vậy là sai, không vai "thầy", không nhắc tên phương án khác. multiple_choice: khoá là nhãn "A"|"B"|"C"|"D" của đúng 3 phương án SAI (không có khoá cho phương án đúng). true_false: khoá "0".."3" cho cả 4 ý — viết lý do vì sao chọn ngược lại với đáp án của ý đó là sai (ý đúng: vì sao không thể coi là sai; ý sai: vì sao không thể coi là đúng).
 - true_false: "statements": [{"text":"…","answer":true|false} × đúng 4], ít nhất 1 ý sai
 "topic": nếu được cho danh sách yêu cầu cần đạt thì chọn đúng tên sát nội dung câu; không có thì dùng đúng tên bài.
 Cơ cấu cố định: 14 multiple_choice, 6 true_false, KHÔNG có short_answer; 10 câu kind kiến thức (dinh_nghia|dinh_luat|hien_tuong|dieu_kien) + 10 câu kind công thức (cong_thuc|don_vi|tinh_nhanh|bien_doi). Bài ít công thức thì bù bằng câu kiến thức nhưng vẫn đủ 20 câu.
@@ -68,7 +71,16 @@ const SYS_SINH = `${fs.readFileSync(path.join(REF, "prompt-sinh-cau.md"), "utf8"
 const SYS_KIEM = `${fs.readFileSync(path.join(REF, "prompt-kiem-cheo.md"), "utf8")}\n${BO}
 Áp dụng thêm "Quy tắc loại câu ngoài chương trình" ở trên: câu hỏi kiến thức không thuộc chương trình Vật lí 12 hoặc chỉ lấy từ phần đọc thêm/em có biết → verdict "nghi_ngo" kèm reason bắt đầu bằng "NGOÀI CHƯƠNG TRÌNH".
 ĐỊNH DẠNG ĐẦU RA — chỉ in MỘT đối tượng JSON: {"results":[{"i":1,"verdict":"dung|sai|nghi_ngo","reason":"…","section_ok":true,"section_should_be":null}, … mỗi câu một phần tử]}
+Kiểm cả "distractorNotes": ghi chú nào sai về vật lí, nói đúng phương án đúng là sai, nhắc tên phương án khác, hoặc thiếu so với quy định → verdict "nghi_ngo" kèm reason bắt đầu bằng "GHI CHÚ".
 Nội dung bài và các câu được đưa ngay trong tin nhắn (không cần đọc file). Với câu tính toán, tự tính lại độc lập.`;
+
+const SYS_GHICHU = `Bạn là giáo viên vật lí THPT. Đầu vào: nội dung bài lý thuyết và bộ câu hỏi ĐÃ chốt (đáp án và lời giải đúng). Việc duy nhất: viết "distractorNotes" cho từng câu, KHÔNG sửa câu, đáp án hay lời giải.
+Quy tắc: mỗi ghi chú MỘT câu, ≤ 25 từ, nêu đúng lỗi tư duy khiến học sinh chọn như vậy là sai (nhầm chiều, nhầm đại lượng, áp quy tắc sai điều kiện, đảo tỉ lệ…), bám nội dung bài, không vai "thầy", không nhắc tên phương án khác (thứ tự có thể bị xáo), không nhắc "đáp án đúng là X".
+- multiple_choice: khoá là nhãn "A"|"B"|"C"|"D" của đúng 3 phương án SAI (nhãn theo thứ tự options: 0=A,1=B,2=C,3=D); không có khoá cho phương án đúng.
+- true_false: khoá "0".."3" cho cả 4 ý; viết lý do vì sao chọn NGƯỢC với đáp án của ý đó là sai (ý đúng: vì sao không thể coi là sai; ý sai: vì sao không thể coi là đúng).
+Công thức LaTeX trong $…$, cân dấu $. Trong JSON mỗi dấu \\ của LaTeX viết thành \\\\.
+Nếu thấy đáp án của câu nào có vẻ SAI so với bài, đừng viết ghi chú cho câu đó mà ghi vào "nghi_van".
+ĐỊNH DẠNG: chỉ in MỘT đối tượng JSON: {"notes":[{"i":1,"distractorNotes":{...}}, … mỗi câu trắc nghiệm / đúng–sai một phần tử, i tính từ 1 theo thứ tự câu được đưa], "nghi_van":[{"i":3,"reason":"…"}]}`;
 
 function userSinh(b: Bai, topics: string[] | undefined): string {
   return [`Bài ${b.id}: ${b.title}`, `item_id: ${b.itemId}`, `Danh sách đoạn:\n${secList(b)}`,
@@ -91,13 +103,13 @@ function paramsOf(b: Bai, draft?: unknown[]): Anthropic.MessageCreateParamsNonSt
   return {
     model: MODEL,
     max_tokens: 32000,
-    system: [{ type: "text", text: BUOC === "sinh" ? SYS_SINH : SYS_KIEM, cache_control: { type: "ephemeral" } }],
+    system: [{ type: "text", text: BUOC === "sinh" ? SYS_SINH : BUOC === "ghichu" ? SYS_GHICHU : SYS_KIEM, cache_control: { type: "ephemeral" } }],
     messages: [{ role: "user", content: BUOC === "sinh" ? userSinh(b, topics) : userKiem(b, draft!) }],
     output_config: { effort: EFFORT },
   };
 }
 const draftOf = (id: number) => {
-  const p = path.join(SINH_DIR, `${id}.json`);
+  const p = BUOC === "ghichu" ? path.join(QUIZ_DIR, `${id}.json`) : path.join(SINH_DIR, `${id}.json`);
   return fs.existsSync(p) ? (JSON.parse(fs.readFileSync(p, "utf8")).questions as unknown[]) : null;
 };
 const textOf = (m: Anthropic.Message) => m.content.filter((c): c is Anthropic.TextBlock => c.type === "text").map((c) => c.text).join("");
@@ -112,7 +124,7 @@ async function gui(dryRun: boolean) {
     const b = loadBai(id);
     if (b.multi) console.warn(`  ! bài ${id}: nhiều mục lý thuyết, chỉ dùng mục đầu (itemId ${b.itemId})`);
     let draft: unknown[] | undefined;
-    if (BUOC === "kiem") { draft = draftOf(id) ?? undefined; if (!draft) { console.warn(`  ! bài ${id}: chưa có bản nháp (chạy --buoc sinh --nhan trước), bỏ qua`); continue; } }
+    if (BUOC !== "sinh") { draft = draftOf(id) ?? undefined; if (!draft) { console.warn(`  ! bài ${id}: chưa có bản nháp (chạy --buoc sinh --nhan trước), bỏ qua`); continue; } }
     reqs.push({ custom_id: `${prefix(BUOC)}${id}`, params: paramsOf(b, draft) });
     lessons.push(id);
   }
@@ -151,7 +163,25 @@ async function nhan() {
     if (m.stop_reason === "max_tokens" || m.stop_reason === "refusal") { loi.push(`${id}: ${m.stop_reason}`); continue; }
     try { got.set(id, parseJson(textOf(m))); } catch { loi.push(`${id}: JSON hỏng`); fs.writeFileSync(path.join(LOG, `${id}.${BUOC}.raw.txt`), textOf(m)); }
   }
-  if (BUOC === "sinh") {
+  if (BUOC === "ghichu") {
+    const xong: string[] = [], redo: string[] = [];
+    for (const [id, d] of got) {
+      fs.writeFileSync(path.join(GHICHU_DIR, `${id}.json`), JSON.stringify(d, null, 1));
+      const file = path.join(QUIZ_DIR, `${id}.json`);
+      const quiz = JSON.parse(fs.readFileSync(file, "utf8"));
+      const byI = new Map<number, any>((Array.isArray(d.notes) ? d.notes : []).map((x: any) => [x.i, x.distractorNotes]));
+      const nghi = new Set<number>((Array.isArray(d.nghi_van) ? d.nghi_van : []).map((x: any) => x.i));
+      quiz.questions.forEach((q: any, idx: number) => { const n = byI.get(idx + 1); if (n && typeof n === "object") q.distractorNotes = n; });
+      const { errors, warnings } = validateQuiz(quiz, { topics: loadTopics() });
+      const thieu = warnings.filter((w) => w.includes("distractorNotes")).length;
+      if (errors.length) { fs.writeFileSync(path.join(LAMLAI_DIR, `${id}.ghichu.json`), JSON.stringify(quiz, null, 1)); redo.push(`${id}: ${errors.slice(0, 3).join("; ")}`); continue; }
+      fs.copyFileSync(file, path.join(TRUOC_DIR, `${id}.json`));
+      fs.writeFileSync(file, JSON.stringify(quiz, null, 1) + "\n");
+      xong.push(`${id} (${quiz.questions.length} câu${thieu ? `, ${thieu} câu thiếu ghi chú` : ""}${nghi.size ? `, nghi vấn đáp án: câu ${[...nghi].join(",")}` : ""})`);
+    }
+    console.log(`✓ Đã gộp ghi chú: ${xong.length} bài\n  ${xong.join("\n  ")}`);
+    if (redo.length) console.log(`✗ Cần xem tay (bản ở logs/batch-quiz/can-lam-lai/):\n  ${redo.join("\n  ")}`);
+  } else if (BUOC === "sinh") {
     for (const [id, d] of got) {
       if (!Array.isArray(d.questions)) { loi.push(`${id}: thiếu questions`); continue; }
       fs.writeFileSync(path.join(SINH_DIR, `${id}.json`), JSON.stringify(d, null, 1)); ok.push(id);
