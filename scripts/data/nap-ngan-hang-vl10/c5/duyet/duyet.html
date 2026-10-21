@@ -1,0 +1,53 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Duyệt câu VL10 Chương III</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#1d1d1b;--mut:#666;--line:#ddd;--acc:#1a56db;--warn:#fff4cc;--ok:#1a7f37}
+@media (prefers-color-scheme:dark){:root{--bg:#161616;--card:#202020;--ink:#eee;--mut:#aaa;--line:#3a3a3a;--acc:#6ea0ff;--warn:#4a3f10;--ok:#4cc16a}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,sans-serif}
+header{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);padding:10px 16px;z-index:5;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+button{font:inherit;padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;min-height:44px}
+button.p{background:var(--acc);color:#fff;border-color:var(--acc)}
+main{max-width:860px;margin:0 auto;padding:16px}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 20px}
+section.done{border-color:var(--ok)}
+h2{margin:0 0 8px;font-size:17px}.mut{color:var(--mut);font-size:14px}
+.note{background:var(--warn);padding:8px 12px;border-radius:8px;margin:8px 0}
+.opt{padding:4px 0}.tag{display:inline-block;font-size:13px;border-radius:6px;padding:0 6px;margin-left:6px;border:1px solid var(--line)}
+.ans{margin:10px 0;padding:8px 12px;border-radius:8px;border:1px solid var(--line);font-size:15px}
+label.c{display:block;padding:8px 0;min-height:44px}textarea,input[type=text]{width:100%;box-sizing:border-box;font:inherit;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+details{margin-top:8px}summary{cursor:pointer;min-height:32px}
+</style></head><body>
+<header><strong>Duyệt VL10 Chương III</strong><button class="p" id="pick">Chọn file lưu (phan-hoi.json)</button><button id="dl">Tải JSON về</button><span id="st" class="mut">Chưa chọn file — tạm lưu trong trình duyệt</span><span id="cnt" class="mut"></span></header>
+<main id="m"></main>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script>
+const D={"rows": [{"key": "c5-1-mc-008", "type": "multiple_choice", "q": "\u003cp class=\"text-base leading-relaxed my-2\">Động lượng toàn phần của hệ được tính bằng biểu thức\u003c/p>", "options": ["$p=p_{1}+p_{2}+....$", "$p=\\left( m_{1} \\right)+m_{2}+..v.$", "$p=\\left( m_{1} \\right)+m_{2}+ \\ldotsv.$", "$p=m_{1}v_{1}+m_{2}v_{2}+ \\ldots.$"], "statements": null, "nguon": "D", "haiku": "A", "sonnet": "A", "goc": "Động lượng toàn phần của hệ$p=p_{1}+p_{2}+p_{3}+....\\Leftrightarrowp=m_{1}v_{1}+m_{2}v_{2}+...$", "giaiAI": "\u003cp class=\"text-base leading-relaxed my-2\">Động lượng của một vật: $\\vec{p}_i = m_i\\vec{v}_i$ (đại lượng vectơ).\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">Động lượng toàn phần của hệ bằng tổng vectơ động lượng của các vật trong hệ: $\\vec{p}=\\vec{p}_1+\\vec{p}_2+\\ldots$\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">Phương án B, C sai vì công thức không có nghĩa (gộp khối lượng nhân một vận tốc chung).\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">Phương án D về bản chất cũng là tổng $m_1\\vec{v}_1+m_2\\vec{v}_2+\\ldots$ nhưng khi viết dạng này phải là tổng vectơ; phương án A là biểu thức tổng quát đúng theo định nghĩa trong sách giáo khoa.\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">Vậy chọn A.\u003c/p>", "lydo": "Đáp án nguồn lệch với lời giải độc lập", "ghiChuAI": "Đề lỗi ký tự: các vectơ mất dấu mũi tên. Phương án D cũng gần đúng nếu hiểu là vectơ, nhưng chọn A theo biểu thức định nghĩa trong SGK."}, {"key": "c5-1-tf-053", "type": "true_false", "q": "\u003cp class=\"text-base leading-relaxed my-2\">Một ô tô khối lượng 1 tấn khởi hành từ trạng thái nghỉ có gia tốc không đổi là 1 m/s$^{2}$. Biết ô tô đi được quãng đường 50 m.\u003c/p>", "options": null, "statements": [{"text": "Vận tốc của ô tô sai khi đi được 50 m là 20 m/s.", "answer": false}, {"text": "Động lượng của ô tô là $20000\\sqrt{5} kg.m/s$", "answer": true}, {"text": "Khi ô tô đạt vận tốc 30 m/s thì động lượng của ô tô là 32000 k g . m / s", "answer": false}, {"text": "Để động lượng của ô tô là 25000 k g . m / s thì vận tốc của ô tô là 25 m/s.", "answer": true}], "nguon": [false, true, false, true], "haiku": [false, false, false, true], "sonnet": [false, false, false, true], "goc": "a. Vận tốc của ô tô sau khi đi được quãng đường 50 m là\n$v^{2}-v_{0}^{2}=2as\\Rightarrow v=\\sqrt{2as}=\\sqrt{2.1.1000}=20\\sqrt{5} m/s.$\nb. Động lượng của ô tô $p=mv=1000.20\\sqrt{5}=20000\\sqrt{5} kg.m/s.$\nc. Khi ô tô đạt vận tốc 30 m/s $p=mv=1000.30=30000 kg.m/s.$\nd. Vận tốc của ô tô $v=\\frac{p}{m}=\\frac{25000}{1000}=25 m/s.$", "giaiAI": "\u003cp class=\"text-base leading-relaxed my-2\">Ô tô chuyển động thẳng nhanh dần đều từ nghỉ: $m=1000$ kg, $v_0=0$, $a=1$ m/s$^2$, $s=50$ m.\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">a) $v^2=2as=2\\cdot1\\cdot50=100$\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=10$ m/s, không phải 20 m/s. Ý a \u003cb>Sai\u003c/b>.\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">b) $p=mv=1000\\cdot10=10000$ kg.m/s, khác $20000\\sqrt5$ kg.m/s. Ý b \u003cb>Sai\u003c/b>.\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">c) $v=30$ m/s: $p=mv=1000\\cdot30=30000$ kg.m/s, khác 32000. Ý c \u003cb>Sai\u003c/b>.\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">d) $p=mv$\u003c/p>\u003cp class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=\\dfrac{p}{m}=\\dfrac{25000}{1000}=25$ m/s. Ý d \u003cb>Đúng\u003c/b>.\u003c/p>", "lydo": "Đáp án nguồn lệch với lời giải độc lập", "ghiChuAI": "Ý a có chữ 'sai' thừa (lỗi đánh máy, có thể là 'sau'); đã hiểu là 'sau khi đi được 50 m'."}]};const KEY='duyet-vl10-Chương III'+(false?'-do2':'');let fh=null,R={};
+try{R=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const L='ABCD',S='abcd';
+const fmt=a=>a==null?'—':Array.isArray(a)?a.map((v,i)=>S[i]+':'+(v?'Đ':'S')).join(' '):String(a);
+function render(){const m=document.getElementById('m');m.innerHTML='';
+D.rows.forEach((r,i)=>{const s=document.createElement('section');const v=R[r.key]||{};if(v.choice)s.className='done';
+let body=`<h2>${i+1}/${D.rows.length} · ${r.key} · ${({multiple_choice:'Trắc nghiệm',true_false:'Đúng–Sai',short_answer:'Trả lời ngắn'})[r.type]}</h2><div class="note">${r.lydo}</div><div>${r.q}</div>`;
+if(r.options)body+=r.options.map((o,j)=>`<div class="opt"><b>${L[j]}.</b> ${o}</div>`).join('');
+if(r.statements)body+=r.statements.map((o,j)=>`<div class="opt"><b>${S[j]})</b> ${o.text}</div>`).join('');
+body+=`<div class="ans"><b>Nguồn (file Word):</b> ${fmt(r.nguon)}<br><b>Haiku:</b> ${fmt(r.haiku)} · <b>Sonnet:</b> ${fmt(r.sonnet)}${r.ghiChuAI?'<br><i>Ghi chú AI: '+r.ghiChuAI+'</i>':''}</div>`;
+body+=`<details><summary>Lời giải gốc trong Word</summary><div>${(r.goc||'(trống)').replace(/\n/g,'<br>')}</div></details>`;
+body+=`<details><summary>Lời giải của Sonnet/Haiku</summary><div>${r.giaiAI||'(không có)'}</div></details>`;
+const ch=[['nguon','Đáp án nguồn đúng'],['ai','Đáp án của Sonnet đúng'],['khac','Đáp án khác (ghi bên dưới)'],['bo','Bỏ câu này']];
+body+=ch.map(([c,t])=>`<label class="c"><input type="radio" name="r${i}" value="${c}" ${v.choice===c?'checked':''}> ${t}</label>`).join('');
+body+=`<input type="text" placeholder="Đáp án khác / ghi chú (vd: B, hoặc a Đ b S c Đ d S, hoặc 2,5)" value="${(v.note||'').replace(/"/g,'&quot;')}">`;
+s.innerHTML=body;m.appendChild(s);
+s.querySelectorAll('input[type=radio]').forEach(x=>x.onchange=()=>{(R[r.key]=R[r.key]||{}).choice=x.value;save();s.className='done'});
+s.querySelector('input[type=text]').oninput=e=>{(R[r.key]=R[r.key]||{}).note=e.target.value;save()};});
+if(window.renderMathInElement)renderMathInElement(m,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+document.getElementById('cnt').textContent=Object.values(R).filter(x=>x.choice).length+'/'+D.rows.length+' đã chọn';}
+async function save(){try{localStorage.setItem(KEY,JSON.stringify(R))}catch(e){}
+document.getElementById('cnt').textContent=Object.values(R).filter(x=>x.choice).length+'/'+D.rows.length+' đã chọn';
+if(fh){try{const w=await fh.createWritable();await w.write(JSON.stringify(R,null,1));await w.close();document.getElementById('st').textContent='Đã lưu vào file';}catch(e){document.getElementById('st').textContent='Lỗi ghi file: '+e.message}}}
+document.getElementById('pick').onclick=async()=>{if(!window.showSaveFilePicker){alert('Trình duyệt không hỗ trợ — dùng nút Tải JSON về');return}
+fh=await showSaveFilePicker({suggestedName:'phan-hoi.json',types:[{description:'JSON',accept:{'application/json':['.json']}}]});save()};
+document.getElementById('dl').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(R,null,1)],{type:'application/json'}));a.download='phan-hoi.json';a.click()};
+window.addEventListener('load',()=>setTimeout(render,300));
+</script></body></html>

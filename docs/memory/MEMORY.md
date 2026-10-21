@@ -87,6 +87,7 @@
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — /dieu-khoan deploy 12/10; treo nhãn nguồn từng câu
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn xong 12/10, chờ thầy duyệt rồi đăng
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật
+- [Quy chế + bảng việc TA](project_thachlab_ta_policy.md) — `/tro-giang/viec-can-lam` deploy 16/10; đơn giá/hệ số tháng 11 CHƯA chốt, đừng ghi con số
 - [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — deploy 12/10, chưa thử HS thật
 - [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10; treo thử 375px thật
 ## Việc mới 30/9
@@ -95,5 +96,5 @@
 - [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — 19/10: lời giải L9–12 + đúng/sai + TLN ĐÃ ghi DB; 20/10: chuẩn 20.762/22.513; chờ thầy duyệt `viet-lai13/14/15/lech.json` (~850 câu); còn 819 thiếu Sai vì
 - [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10
 - [Cải tiến chương 1 L12 + toàn site](project_thachlab_cai_tien_chuong1_l12.md) — đo 112 bài 18/10
-- [Nạp ngân hàng VL10 (Word)](project_thachlab_nap_ngan_hang_vl10.md) — Ch.II/III/IV đã nạp 863 câu; còn I, V–VII + Cơ năng
+- [Nạp ngân hàng VL10 (Word)](project_thachlab_nap_ngan_hang_vl10.md) — Ch.II–V đã nạp 896 câu; còn I, VI, VII + Cơ năng
 - [Bỏ câu mơ hồ, đừng giải lại](feedback_bo_cau_mo_ho_thay_vi_giai_lai.md) — nạp ngân hàng: câu khó/lệch thì xoá, không tốn thêm API

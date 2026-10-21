@@ -1,0 +1,67 @@
+[
+ {
+  "key": "c5-1-mc-008",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Động lượng toàn phần của hệ được tính bằng biểu thức</p>",
+  "options": [
+   "$p=p_{1}+p_{2}+....$",
+   "$p=\\left( m_{1} \\right)+m_{2}+..v.$",
+   "$p=\\left( m_{1} \\right)+m_{2}+ \\ldotsv.$",
+   "$p=m_{1}v_{1}+m_{2}v_{2}+ \\ldots.$"
+  ],
+  "statements": null,
+  "nguon": "D",
+  "haiku": "A",
+  "sonnet": "A",
+  "goc": "Động lượng toàn phần của hệ$p=p_{1}+p_{2}+p_{3}+....\\Leftrightarrowp=m_{1}v_{1}+m_{2}v_{2}+...$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Động lượng của một vật: $\\vec{p}_i = m_i\\vec{v}_i$ (đại lượng vectơ).</p><p class=\"text-base leading-relaxed my-2\">Động lượng toàn phần của hệ bằng tổng vectơ động lượng của các vật trong hệ: $\\vec{p}=\\vec{p}_1+\\vec{p}_2+\\ldots$</p><p class=\"text-base leading-relaxed my-2\">Phương án B, C sai vì công thức không có nghĩa (gộp khối lượng nhân một vận tốc chung).</p><p class=\"text-base leading-relaxed my-2\">Phương án D về bản chất cũng là tổng $m_1\\vec{v}_1+m_2\\vec{v}_2+\\ldots$ nhưng khi viết dạng này phải là tổng vectơ; phương án A là biểu thức tổng quát đúng theo định nghĩa trong sách giáo khoa.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn A.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề lỗi ký tự: các vectơ mất dấu mũi tên. Phương án D cũng gần đúng nếu hiểu là vectơ, nhưng chọn A theo biểu thức định nghĩa trong SGK."
+ },
+ {
+  "key": "c5-1-tf-053",
+  "type": "true_false",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một ô tô khối lượng 1 tấn khởi hành từ trạng thái nghỉ có gia tốc không đổi là 1 m/s$^{2}$. Biết ô tô đi được quãng đường 50 m.</p>",
+  "options": null,
+  "statements": [
+   {
+    "text": "Vận tốc của ô tô sai khi đi được 50 m là 20 m/s.",
+    "answer": false
+   },
+   {
+    "text": "Động lượng của ô tô là $20000\\sqrt{5} kg.m/s$",
+    "answer": true
+   },
+   {
+    "text": "Khi ô tô đạt vận tốc 30 m/s thì động lượng của ô tô là 32000 k g . m / s",
+    "answer": false
+   },
+   {
+    "text": "Để động lượng của ô tô là 25000 k g . m / s thì vận tốc của ô tô là 25 m/s.",
+    "answer": true
+   }
+  ],
+  "nguon": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "haiku": [
+   false,
+   false,
+   false,
+   true
+  ],
+  "sonnet": [
+   false,
+   false,
+   false,
+   true
+  ],
+  "goc": "a. Vận tốc của ô tô sau khi đi được quãng đường 50 m là\n$v^{2}-v_{0}^{2}=2as\\Rightarrow v=\\sqrt{2as}=\\sqrt{2.1.1000}=20\\sqrt{5} m/s.$\nb. Động lượng của ô tô $p=mv=1000.20\\sqrt{5}=20000\\sqrt{5} kg.m/s.$\nc. Khi ô tô đạt vận tốc 30 m/s $p=mv=1000.30=30000 kg.m/s.$\nd. Vận tốc của ô tô $v=\\frac{p}{m}=\\frac{25000}{1000}=25 m/s.$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Ô tô chuyển động thẳng nhanh dần đều từ nghỉ: $m=1000$ kg, $v_0=0$, $a=1$ m/s$^2$, $s=50$ m.</p><p class=\"text-base leading-relaxed my-2\">a) $v^2=2as=2\\cdot1\\cdot50=100$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=10$ m/s, không phải 20 m/s. Ý a <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $p=mv=1000\\cdot10=10000$ kg.m/s, khác $20000\\sqrt5$ kg.m/s. Ý b <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $v=30$ m/s: $p=mv=1000\\cdot30=30000$ kg.m/s, khác 32000. Ý c <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $p=mv$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=\\dfrac{p}{m}=\\dfrac{25000}{1000}=25$ m/s. Ý d <b>Đúng</b>.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Ý a có chữ 'sai' thừa (lỗi đánh máy, có thể là 'sau'); đã hiểu là 'sau khi đi được 50 m'."
+ }
+]
