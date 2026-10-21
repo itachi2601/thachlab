@@ -10,13 +10,13 @@ import { SITE_URL } from "@/lib/site";
  */
 
 /** Đường dẫn làm đề trong app (giữ đúng tham số `?id=` mà `/kiem-tra/lam` đang đọc). */
-export function examTakePath(examId: number): string {
-  return `/kiem-tra/lam/?id=${examId}`;
+export function examTakePath(examId: number, itemId?: number | null): string {
+  return itemId ? `/kiem-tra/lam/?id=${examId}&item=${itemId}` : `/kiem-tra/lam/?id=${examId}`;
 }
 
 /** Link đầy đủ để in vào mã QR — điện thoại quét là mở thẳng trình duyệt, không cần cài app. */
-export function examQrUrl(examId: number): string {
-  return `${SITE_URL}${examTakePath(examId)}`;
+export function examQrUrl(examId: number, itemId?: number | null): string {
+  return `${SITE_URL}${examTakePath(examId, itemId)}`;
 }
 
 /**

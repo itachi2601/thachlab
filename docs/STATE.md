@@ -14,6 +14,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
+- **21/10 Ôn tập theo chặng:** `20261021120000_on_tap_theo_chang` ĐÃ CHẠY (bảng `review_sessions` + 8 hàm `review_*`). Client (`/tro-giang/on-tap`, `/lop-hoc/on-tap`, banner ở `/lop-hoc`) CHƯA DEPLOY, chưa thử học sinh/tivi thật. Chi tiết: `docs/memory/project_thachlab_on_tap_theo_chang.md`.
 - **19/10 Casio:** `20261019120000_lop_casio_giai_vat_li_mtct` ĐÃ CHẠY (lớp+môn `casio-vat-ly`, bài 179–183, đề 980–984, 5 bài ẨN). Chờ thầy duyệt trên web rồi `bash scripts/dang-casio-vat-ly.sh --publish`; client (hub `/lop-hoc/casio-vat-ly`) CHƯA DEPLOY. Nguồn `content/casio-vat-ly/`, dựng lại: `bash scripts/dang-casio-vat-ly.sh`.
 - **18/10:** `20261018170000_canh_bao_bo_bai_kt_dung_han_va_is_test` — "Bỏ bài KT" chỉ khi quá hạn (`class_assessments.due_at`) hoặc ≥50% lớp nộp; thêm `profiles.is_test`; sweep chỉ tính HS thật. **Chạy migration TRƯỚC khi deploy** (code select `is_test`). Rồi `npx tsx scripts/don-canh-bao-gia.mts --dry-run` → `--apply` (dry-run thử 18/10: 321 mở → 116 giả). Sweep_engagement_alerts vẫn sinh inactive_7d cho tài khoản thử (UI đã ẩn).
 - **Việc 6 đo độ sâu đọc + quiz:** migration `20261018150000_read_depth_quiz` đã chạy 18/10 22:13; client (4c9f40545) CHƯA DEPLOY; chưa có UI GV đọc RPC `teacher_lesson_read_depth(class, lesson)`.

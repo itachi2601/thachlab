@@ -60,6 +60,7 @@ import { stripHtmlToText } from "@/lib/strip-html";
 import { fetchMyChildren, type LinkedChild } from "@/services/parent-links";
 import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
 import LiveStudyStrip from "@/components/lessons/LiveStudyStrip";
+import ReviewBanner from "@/components/review/ReviewBanner";
 import type { RankStatus } from "@/features/rank/types";
 import ChapterTree, { type ChapterTreeEntry } from "@/components/lessons/ChapterTree";
 import Hsg9WeekCard from "@/components/lop-hoc/Hsg9WeekCard";
@@ -688,6 +689,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
         <main className="min-h-screen w-full pt-[76px]">
           <div className={isAvcn ? "lesson-shell lesson-shell--cttc" : "lesson-shell"}>
             <TeacherViewBanner />
+            <ReviewBanner />
             <div className="lesson-layout lesson-layout--pick">
               <aside className="lesson-nav" aria-label="Chương trình lớp">
                 {active && chapters && lessons && classChapters.length > 0 && (
@@ -883,6 +885,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
       <main className="min-h-screen w-full pt-[76px]">
         <div className="lesson-shell">
           <TeacherViewBanner />
+            <ReviewBanner />
           <div className="lesson-main lesson-main--single">
             <header className="lesson-head">
               <p className="lesson-eyebrow">Học sinh THPT · THCS</p>

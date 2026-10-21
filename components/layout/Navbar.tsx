@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronRight, ClipboardList, Dumbbell, Gamepad2, KeyRound, LayoutDashboard, LogOut, Menu, QrCode, ShieldCheck, Target, User, Users, X } from "lucide-react";
+import { ChevronDown, ChevronRight, ClipboardList, Dumbbell, Gamepad2, ListChecks, KeyRound, LayoutDashboard, LogOut, Menu, QrCode, ShieldCheck, Target, User, Users, X } from "lucide-react";
 import { useAuth, useAuthSnapshot } from "@/components/auth/auth-context";
 import { tabBarShownOn } from "@/components/layout/MobileTabBar";
 import ThemeToggle from "@/components/layout/ThemeToggle";
@@ -304,6 +304,15 @@ export default function Navbar() {
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <Gamepad2 size={16} /> Hoạt động lớp học
+                    </Link>
+                  )}
+                  {(isStaff || isTa) && (
+                    <Link
+                      href="/tro-giang/on-tap"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                    >
+                      <ListChecks size={16} /> Ôn tập theo chặng
                     </Link>
                   )}
                   {profile?.role === "admin" && (

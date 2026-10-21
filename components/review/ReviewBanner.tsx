@@ -1,0 +1,47 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { ListChecks } from "lucide-react";
+import { useAuth } from "@/components/auth/AuthProvider";
+import { usePoll } from "@/components/quiz-live/shared";
+import { getMyReviewState, type MyReviewState } from "@/services/review-session";
+import { REVIEW_STUDENT_PATH } from "@/lib/review-link";
+
+/**
+ * Thẻ nhắc ở /lop-hoc: lớp em đang có buổi ôn tập theo chặng. Không có buổi ôn thì không hiện gì (và không chiếm chỗ).
+ * Chỉ học sinh gọi RPC; hỏi lại mỗi 20 giây để em đang mở trang này thấy ngay khi giáo viên mở chặng.
+ */
+function Inner() {
+  const [data, setData] = useState<MyReviewState | null>(null);
+  usePoll(
+    () => getMyReviewState(null),
+    () => 20000,
+    (d) => setData(d),
+  );
+  if (!data || data.status === "finished") return null;
+  const idx = data.current_stage;
+  return (
+    <div className="mx-auto mb-4 w-full max-w-3xl px-4">
+      <Link
+        href={REVIEW_STUDENT_PATH}
+        className="flex min-h-14 items-center gap-3 rounded-2xl border border-primary bg-primary-soft px-4 py-3 text-ink hover:bg-surface-2"
+      >
+        <ListChecks size={24} className="shrink-0 text-primary" aria-hidden />
+        <span className="min-w-0 flex-1">
+          <span className="block font-bold">{data.title}</span>
+          <span className="block text-sm text-muted">
+            {idx < 0 ? "Chờ giáo viên mở chặng 1" : `Đang ở chặng ${idx + 1}/${data.stages.length} · bấm để vào làm`}
+          </span>
+        </span>
+        <span aria-hidden className="text-xl font-bold text-primary">›</span>
+      </Link>
+    </div>
+  );
+}
+
+export default function ReviewBanner() {
+  const { profile } = useAuth();
+  if (profile?.role !== "student") return null;
+  return <Inner />;
+}

@@ -343,7 +343,7 @@ export default function MobileTabBar() {
     ];
     more = [
       { href: "/thong-bao", label: unread > 0 ? `Thông báo chung (${unread})` : "Thông báo chung" },
-      { href: "/tro-giang/do-vui", label: "Hoạt động lớp học" },
+      { href: "/tro-giang/do-vui", label: "Hoạt động lớp học" }, { href: "/tro-giang/on-tap", label: "Ôn tập theo chặng" },
       { href: "/tro-giang/video", label: "Video" },
       { href: "/tro-giang/quy-che", label: "Quy chế" },
       { href: "/dashboard-thpt", label: "Quản lớp · THPT" },
@@ -356,7 +356,7 @@ export default function MobileTabBar() {
       { key: "notice", label: "Thông báo", href: "/thong-bao", icon: "bell", active: onNotice, badge: countBadge },
     ];
     if (profile?.role === "admin") items.push({ key: "admin", label: "Quản trị", href: "/quan-tri", icon: "shield", active: false });
-    more = [{ href: "/tro-giang/do-vui", label: "Hoạt động lớp học" }, { href: "/tai-khoan", label: "Tài khoản" }, LOGOUT_LINKS.password];
+    more = [{ href: "/tro-giang/do-vui", label: "Hoạt động lớp học" }, { href: "/tro-giang/on-tap", label: "Ôn tập theo chặng" }, { href: "/tai-khoan", label: "Tài khoản" }, LOGOUT_LINKS.password];
   }
 
   const hasMore = more.length > 0;
