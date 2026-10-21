@@ -6,7 +6,7 @@
   python3 build.py front              → src/front.html (bìa, mục lục…)
 Xem make.py để dựng PDF trọn chương.
 """
-import hashlib, html as htmllib, json, re, subprocess, sys
+import os, hashlib, html as htmllib, json, re, subprocess, sys
 from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString, Tag
 from PIL import Image
@@ -23,6 +23,8 @@ CUR = {'lid': 0}
 
 CHAPTER = {'num': 2, 'title': 'Động học', 'sub': 'Mô tả chuyển động — chưa cần hỏi vì sao vật chuyển động',
            'lessons': [49, 50, 51, 52, 53, 54, 55, 56, 57]}
+if os.environ.get('BOOK_CHAPTER') == 'l11-song':   # thử nghiệm lớp 11 · Chương 2 Sóng (bài 8–14 = lesson 27–33)
+    CHAPTER = {'num': 2, 'title': 'Sóng', 'sub': 'Sóng cơ và sóng ánh sáng', 'lessons': [27, 28, 29, 30, 31, 32, 33]}
 
 
 def lesson_url(lid): return f'{BASE_URL}/lop-hoc/bai?id={lid}'
@@ -381,6 +383,10 @@ def convert_theory(raw, lid, keys, marks=None):
     html = re.sub(r'<p class="tl-conf">.*?</p>',
                   '<p class="conf">Em chắc bao nhiêu? <span class="cb"></span> Chắc &nbsp; <span class="cb"></span> Không chắc</p>',
                   html, flags=re.S)
+    html = re.sub(r'<!--.*?-->', '', html, flags=re.S)
+    # video chỉ chiếu trên lớp: iframe không in được → một dòng nhắc + giữ câu "Nhìn vào" để HS ghi
+    html = re.sub(r'<div class="tl-box tl-box--video">\s*<p class="tl-label">[^<]*?:\s*([^<]*)</p>.*?</div>\s*(<p><strong>Nhìn vào:.*?</p>)\s*</div>',
+                  r'<p class="vidnote"><b>▶ Video thầy chiếu trên lớp:</b> \1.</p>\2', html, flags=re.S)
     html = bw.to_print(html)
     html, store = protect_svgs(html)
     soup = soup_of(html)
