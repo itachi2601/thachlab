@@ -14,3 +14,4 @@ Quy tắc:
 - `explanation` không rỗng, 1–2 câu, nêu căn cứ ở bài. Công thức LaTeX `$…$`, cân dấu `$`; `\\` trong JSON phải viết `\\\\`.
 - Không trùng câu; ưu tiên phủ đều các đoạn. Bài ít công thức: lấy hết công thức có, bù bằng câu kiến thức, ghi `review.counts` đúng thực tế.
 - Nếu bài chỉ là công thức chung chung mà hệ số phụ thuộc số liệu ngoài bài → không hỏi số liệu đó.
+- **Phong cách và giới hạn như đề Bộ GD&ĐT**: theo `phong-cach-de-bo-gd.md` (nối ngay phía dưới). Không hỏi kiến thức ngoài chương trình dù bài có nhắc (độ lệch cực từ, giá trị từ trường Trái Đất, năm/tên bác học, phần đọc thêm). Mỗi câu trắc nghiệm kiểm đúng một ý; nhiễu là hiểu lầm kinh điển; bốn phương án cùng độ dài, đáp án đúng không dồn vào phương án dài nhất, phân bố A/B/C/D đều. Đúng–sai: mở bằng một bối cảnh/thí nghiệm trong bài rồi 4 ý. Trả lời ngắn: ghi rõ cách làm tròn trong đề.

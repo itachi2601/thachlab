@@ -64,8 +64,10 @@ Mỗi câu có đủ: "type", "kind", "topic", "form":"ly_thuyet", "difficulty" 
 "topic": nếu được cho danh sách yêu cầu cần đạt thì chọn đúng tên sát nội dung câu; không có thì dùng đúng tên bài.
 Cơ cấu cố định: 10 multiple_choice, 4 true_false, 6 short_answer; 10 câu kind kiến thức (dinh_nghia|dinh_luat|hien_tuong|dieu_kien) + 10 câu kind công thức (cong_thuc|don_vi|tinh_nhanh|bien_doi). Bài ít công thức thì bù bằng câu kiến thức nhưng vẫn đủ 20 câu.
 Công thức LaTeX trong $…$, cân dấu $; dùng \\\\lt, \\\\gt thay cho < >. Trong JSON, mỗi dấu \\ của LaTeX phải viết thành \\\\.`;
-const SYS_SINH = `${fs.readFileSync(path.join(REF, "prompt-sinh-cau.md"), "utf8")}\n(Học sinh có thể là THCS hoặc THPT tuỳ bài; bám đúng mức của bài.)\n${FORMAT}`;
-const SYS_KIEM = `${fs.readFileSync(path.join(REF, "prompt-kiem-cheo.md"), "utf8")}
+const BO = fs.readFileSync(path.join(REF, "phong-cach-de-bo-gd.md"), "utf8");
+const SYS_SINH = `${fs.readFileSync(path.join(REF, "prompt-sinh-cau.md"), "utf8")}\n${BO}\n(Học sinh có thể là THCS hoặc THPT tuỳ bài; bám đúng mức của bài.)\n${FORMAT}`;
+const SYS_KIEM = `${fs.readFileSync(path.join(REF, "prompt-kiem-cheo.md"), "utf8")}\n${BO}
+Áp dụng thêm "Quy tắc loại câu ngoài chương trình" ở trên: câu hỏi kiến thức không thuộc chương trình Vật lí 12 hoặc chỉ lấy từ phần đọc thêm/em có biết → verdict "nghi_ngo" kèm reason bắt đầu bằng "NGOÀI CHƯƠNG TRÌNH".
 ĐỊNH DẠNG ĐẦU RA — chỉ in MỘT đối tượng JSON: {"results":[{"i":1,"verdict":"dung|sai|nghi_ngo","reason":"…","section_ok":true,"section_should_be":null}, … mỗi câu một phần tử]}
 Nội dung bài và các câu được đưa ngay trong tin nhắn (không cần đọc file). Với câu tính toán, tự tính lại độc lập.`;
 
