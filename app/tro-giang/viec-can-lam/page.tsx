@@ -6,31 +6,46 @@ export const metadata = { title: "Việc của trợ giảng" };
 
 type Task = { when: string; title: string; text: string; href?: string; isNew?: boolean };
 
-const ON_CLASS: Task[] = [
-  { when: "Trước buổi", title: "Đến sớm 10 phút, nắm nội dung buổi học", text: "Hỏi thầy bài hôm nay dạy gì, em nào cần chú ý." },
+// Buổi lên lớp: trước → trong → sau
+const CLASS_BEFORE: Task[] = [
+  { when: "Đến sớm 10 phút", title: "Nắm nội dung buổi", text: "Hỏi thầy hôm nay dạy bài gì, em nào cần chú ý, bài nào dễ sai." },
+  { when: "Trước buổi", title: "Làm thử đề thầy gửi", text: "Làm có đáp án để nắm đề, rồi sang trang Chữa bài.", href: "/tro-giang/xem-truoc" },
+];
+
+const CLASS_DURING: Task[] = [
   { when: "10 phút đầu", title: "Kiểm bài tập cả lớp", text: "Ghi lỗi cụ thể lên bài của từng em. Em không làm bài hai buổi liên tiếp thì báo thầy. Việc này nằm trong giờ lên lớp, không tính phí chấm bài riêng." },
   { when: "Khi thầy giảng", title: "Quan sát lớp", text: "Xem em nào mất tập trung, em nào không theo kịp. Không làm việc riêng trong giờ." },
   { when: "Khi lớp làm bài", title: "Đi từng bàn, ít nhất 12 lượt tiếp xúc mỗi buổi", text: "Một em được giúp nhiều lần thì tính nhiều lượt. Gợi ý để em tự làm, không đọc lời giải cho chép. Không bàn điểm số hay năng lực của một em trước các em khác." },
-  { when: "Cuối buổi", title: "Báo thầy 2–3 em cần chú ý và lý do", text: "Nói cụ thể: em nào, vướng bài nào, lỗi gì." },
-  { when: "Khi thầy giao", title: "Chữa bài thay thầy", text: "Chỉ chữa bài tập, không giảng lý thuyết mới. Chuẩn bị lời giải để thầy đối chiếu khi duyệt." },
-  { when: "Buổi phụ đạo", title: "Phụ đạo trực tiếp, tối đa 4 em một buổi", text: "Mở đầu bằng dò bài cũ, mỗi em được hỏi ít nhất một lần. Cuối buổi, mỗi em tự đăng nhập tài khoản của mình để làm bài kiểm tra cuối buổi. Không đưa máy của con cho em." },
-  { when: "Khi thầy chọn", title: "Phỏng vấn riêng vài em", text: "Hỏi từng em, thầy không có mặt, ghi nguyên văn lời em nói. Cách ghi ở phần “Trên web”." },
-  { when: "Mọi buổi", title: "Giờ giấc và tác phong", text: "Vắng thì báo trước ít nhất 24 giờ, việc đột xuất báo ngay khi biết. Muộn quá 15 phút không báo được tính là vắng. Trang phục gọn gàng." },
+  { when: "Khi thầy giao", title: "Chữa bài thay thầy", text: "Chỉ chữa bài tập, không giảng lý thuyết mới. Chuẩn bị lời giải để thầy đối chiếu. Xem đáp án và tỉ lệ đúng từng câu để chọn câu cần chữa kỹ.", href: "/tro-giang/chua-bai" },
+  { when: "Giữa buổi", title: "Hoạt động lớp học (quiz trực tiếp)", text: "Tạo phòng, cho cả lớp quét mã vào chơi.", href: "/tro-giang/do-vui" },
 ];
 
-const ON_WEB: Task[] = [
-  { when: "Sau mỗi buổi", title: "Ghi buổi hôm nay", text: "Chọn loại buổi (lên lớp, phụ đạo, chữa bài), điền các mục. Buổi chưa được duyệt còn sửa được trong 7 ngày. Không còn ghi công hành chính.", href: "/tro-giang/ghi" },
-  { when: "Trước buổi dạy", title: "Làm thử đề thầy gửi", text: "Làm có đáp án để nắm đề, rồi sang Chữa bài.", href: "/tro-giang/xem-truoc" },
-  { when: "Khi chữa bài", title: "Xem đáp án, lời giải, tỉ lệ đúng từng câu", text: "Dùng để chọn câu cần chữa kỹ. Trang này không có nút tạo bài tập về nhà.", href: "/tro-giang/chua-bai" },
-  { when: "Hằng tuần", title: "Nhận em cần phụ đạo", text: "Danh sách xếp em còn hổng nhiều lên đầu. Bấm “Tôi nhận” để nhận. Thẻ của em có phiếu xuất phát nếu em đã làm kiểm tra đầu vào.", href: "/tro-giang/phu-dao" },
-  { when: "Trước buổi phụ đạo", title: "Đăng lịch phụ đạo cho học sinh đặt", text: "Em chọn 1–3 chủ đề và đặt chỗ, chốt trước buổi 6 giờ. Buổi đầy chỗ có hàng chờ; bấm “Mở lượt tiếp” nếu còn chỗ (tối đa 4 em).", href: "/tro-giang/phu-dao?tab=slots" },
-  { when: "Cuối buổi phụ đạo", title: "Tick chủ đề đã dạy, bấm “Mở bài kiểm tra cuối buổi”", text: "Bài mở trong 20 phút, 10 câu. Mỗi em tự làm trên tài khoản của mình." },
+const CLASS_AFTER: Task[] = [
+  { when: "Cuối buổi", title: "Báo thầy 2–3 em cần chú ý và lý do", text: "Nói cụ thể: em nào, vướng bài nào, lỗi gì." },
+  { when: "Ngay sau buổi", title: "Ghi buổi hôm nay trên web", text: "Chọn loại buổi (lên lớp hoặc chữa bài), điền các mục. Buổi chưa được duyệt còn sửa được trong 7 ngày. Không còn ghi công hành chính.", href: "/tro-giang/ghi" },
   { when: "Khi cần", title: "Đăng thông báo cho lớp", text: "Chọn lớp con phụ trách rồi đăng.", href: "/tro-giang/thong-bao" },
-  { when: "Giữa buổi", title: "Hoạt động lớp học (quiz trực tiếp)", text: "Tạo phòng, cho cả lớp quét mã vào chơi.", href: "/tro-giang/do-vui" },
   { when: "Hằng tuần", title: "Ghi tiến trình bài dạy", text: "Tick tuần đã dạy, ghi chú cho năm sau. Thầy và trợ giảng dùng chung.", href: "/tro-giang/tien-trinh" },
-  { when: "Khi thầy nhờ", title: "Phỏng vấn học sinh", text: "Hỏi riêng từng em về kênh tự thoát phụ đạo, gõ nguyên văn lời em, không lưu tên em, không hứa sẽ sửa.", href: "/tro-giang/phong-van", isNew: true },
-  { when: "Tự nguyện", title: "Làm video bài giảng", text: "Nộp video và theo dõi trạng thái.", href: "/tro-giang/video" },
-  { when: "Hằng tuần", title: "Đọc thông báo nhắc của thầy", text: "Trên chuông và trang Thông báo. Tin nhắc chỉ nói việc của riêng con." },
+];
+
+// Buổi phụ đạo: nhận em → đặt lịch → trước → trong → cuối → sau
+const TUTOR_STEPS: Task[] = [
+  { when: "1 · Hằng tuần", title: "Nhận em cần phụ đạo", text: "Danh sách xếp em còn hổng nhiều lên đầu. Bấm “Tôi nhận” để nhận. Thẻ của em có phiếu xuất phát nếu em đã làm kiểm tra đầu vào. Một buổi tối đa 4 em.", href: "/tro-giang/phu-dao" },
+  { when: "2 · Trước buổi", title: "Đăng lịch phụ đạo cho học sinh đặt", text: "Em chọn 1–3 chủ đề và đặt chỗ, chốt trước buổi 6 giờ. Buổi đầy chỗ có hàng chờ; bấm “Mở lượt tiếp” nếu còn chỗ (tối đa 4 em).", href: "/tro-giang/phu-dao?tab=slots" },
+  { when: "3 · Trước buổi", title: "Đọc phiếu xuất phát và chuẩn bị bài", text: "Xem chủ đề đã vững (bỏ qua), cần ôn, hiểu chưa đúng, chưa biết. Phụ đạo bắt đầu từ chỗ em hổng, không dò lại phần em đã vững. Nắm bài trước buổi là một điều kiện tính điểm phụ đạo." },
+  { when: "4 · Đầu buổi", title: "Dò bài cũ", text: "Mỗi em được hỏi ít nhất một lần. Hỏi để em nhớ lại, không đọc đáp án cho em." },
+  { when: "5 · Trong buổi", title: "Dạy lại đúng chủ đề em hổng", text: "Gợi ý từng bước để em tự làm. Không giảng lan sang chủ đề khác. Không bàn điểm số hay năng lực của một em trước các em khác." },
+  { when: "6 · Cuối buổi", title: "Tick chủ đề đã dạy, bấm “Mở bài kiểm tra cuối buổi”", text: "Bài mở trong 20 phút, 10 câu. Mỗi em tự đăng nhập tài khoản của mình để làm. Không đưa máy của con cho em." },
+  { when: "7 · Ngay sau buổi", title: "Ghi buổi phụ đạo", text: "Phiếu đủ từng em. Nhóm có từ 60% số em đạt (đúng từ 7/10 câu) thì buổi đủ 25 điểm; 40–59% được 12,5; dưới 40% thì buổi đó 0 điểm dù đã tick đủ.", href: "/tro-giang/ghi" },
+  { when: "Khi thầy nhờ", title: "Phỏng vấn riêng vài em", text: "Hỏi từng em, thầy không có mặt, gõ nguyên văn lời em, không lưu tên em, không hứa sẽ sửa.", href: "/tro-giang/phong-van", isNew: true },
+];
+
+const RULES: string[] = [
+  "Vắng thì báo trước ít nhất 24 giờ, việc đột xuất báo ngay khi biết. Muộn quá 15 phút không báo được tính là vắng.",
+  "Trang phục gọn gàng. Không dùng điện thoại riêng trong giờ.",
+  "Không đưa máy của con cho học sinh làm bài hay đăng nhập.",
+  "Không đọc lời giải cho chép; không bàn điểm hay năng lực một em trước các em khác.",
+  "Mỗi 20 học sinh có một trợ giảng; con chỉ ghi công những buổi con trực tiếp làm.",
+  "Đọc thông báo nhắc của thầy trên chuông và trang Thông báo. Tin nhắc chỉ nói việc của riêng con.",
 ];
 
 const SCORES: [string, string, string][] = [
@@ -73,19 +88,39 @@ export default function TaskPage() {
         <header>
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-300">Vật lý 10 · 11 · 12 — Thạch Ngô</p>
           <h1 className="mt-3 text-3xl font-bold text-white">Việc của trợ giảng</h1>
-          <p className="mt-3">Việc con làm cùng thầy trên lớp và việc làm trên web. Cập nhật 16/10/2026, đọc cùng trang Quy chế.</p>
+          <p className="mt-3">Việc con làm trong buổi lên lớp và buổi phụ đạo, kèm bước ghi trên web. Cập nhật 21/10/2026, đọc cùng trang Quy chế.</p>
         </header>
 
-        <section>
-          <h2 className="text-xl font-bold text-white">Trên lớp, làm cùng thầy</h2>
-          <p className="mt-1 text-sm">Không qua web. Mỗi 20 học sinh có một trợ giảng.</p>
-          <TaskList items={ON_CLASS} />
+        <section className="rounded-xl border border-white/10 bg-white/5 p-4">
+          <h2 className="text-lg font-bold text-white">Con làm để đạt điều gì</h2>
+          <ul className="mt-2 list-inside list-disc space-y-1 text-sm">
+            <li>Mỗi em trong lớp được giúp ít nhất một lần mỗi buổi, em nào tụt lại thì thầy biết ngay.</li>
+            <li>Em còn hổng được kéo lên qua phụ đạo, và có bằng chứng là bài cuối buổi.</li>
+            <li>Thầy chỉ giảng, mọi việc còn lại của buổi học do con và thầy chia nhau.</li>
+          </ul>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-white">Trên web</h2>
-          <p className="mt-1 text-sm">Đăng nhập tài khoản trợ giảng. Làm ngay sau buổi cho đỡ quên.</p>
-          <TaskList items={ON_WEB} />
+          <h2 className="text-xl font-bold text-white">A. Buổi lên lớp, làm cùng thầy</h2>
+          <h3 className="mt-4 text-sm font-semibold uppercase tracking-widest text-blue-300">Trước buổi</h3>
+          <TaskList items={CLASS_BEFORE} />
+          <h3 className="mt-6 text-sm font-semibold uppercase tracking-widest text-blue-300">Trong buổi</h3>
+          <TaskList items={CLASS_DURING} />
+          <h3 className="mt-6 text-sm font-semibold uppercase tracking-widest text-blue-300">Sau buổi</h3>
+          <TaskList items={CLASS_AFTER} />
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">B. Buổi phụ đạo, con phụ trách</h2>
+          <p className="mt-1 text-sm">Làm theo thứ tự 1 → 7. Phụ đạo chiếm 25 trên 100 điểm tháng.</p>
+          <TaskList items={TUTOR_STEPS} />
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-white">C. Giờ giấc và tác phong, mọi buổi</h2>
+          <ul className="mt-3 list-inside list-disc space-y-2">
+            {RULES.map((r) => (<li key={r}>{r}</li>))}
+          </ul>
         </section>
 
         <section>
@@ -123,6 +158,7 @@ export default function TaskPage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-2 text-sm">Điểm tháng đo đúng các việc ở phần A, B, C: tiếp xúc và kiểm bài (phần A), phụ đạo (phần B), chuyên cần (phần C).</p>
           <p className="mt-3 text-sm">Tháng 10 là tháng chạy thử: chấm và công bố điểm, chưa trừ gì. Từ tháng 11 áp dụng hệ số theo điểm; mức cụ thể chưa chốt, thầy sẽ xem tình hình rồi công bố trước khi áp dụng. Đơn giá, hệ số và việc chia bậc cũng chưa chốt.</p>
         </section>
 
