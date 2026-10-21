@@ -101,7 +101,7 @@ Mỗi hàng một câu/cụm của đề, theo đúng thứ tự đề. Cột D�
 ## Khối công thức / định luật (`.tl-fx`, chốt 21/10/2026)
 Mọi công thức chủ chốt, định luật, định lý: đặt giữa, có khung, chú giải đại lượng ngay dưới (cột ký hiệu canh phải, nghĩa canh trái).
 ```html
-<div class="tl-fx">            <!-- thêm tl-fx--law cho định luật/định lý (viền vàng) -->
+<div class="tl-fx">
 <p class="tl-fx-name">Dạng 3: lệch pha</p>
 <p>$$\Delta\varphi=\dfrac{2\pi d}{\lambda}$$</p>
 <p class="tl-fx-cond">Cùng pha</p>     <!-- điều kiện/trường hợp: chữ nhỏ trên công thức, không để chữ Việt trong \text{} -->
@@ -113,3 +113,12 @@ Mọi công thức chủ chốt, định luật, định lý: đặt giữa, có
 </div>
 ```
 Mỗi công thức một `$$…$$` riêng dòng; không nhét công thức có phân số vào giữa câu (dòng có `.katex` tự giãn `line-height:2`).
+
+## Hệ khung có nghĩa — CHỈ BA loại khung (chốt 21/10/2026, bài mới thêm lớp; bài cũ giữ nguyên)
+Học sinh phản hồi: quá nhiều loại khung thì không biết ô nào quan trọng, khung lồng khung ăn bề ngang 375px. Quy tắc:
+| Ý nghĩa | Lớp | Icon góc phải trên |
+|---|---|---|
+| Phải nhớ: công thức, định luật, "Mang về" | `.tl-fx` (khối công thức), `.tl-box.tl-box--rule.tl-keep` | 📌 vàng |
+| Bẫy mất điểm | `<div class="tl-trap">` bọc `<h4>Bẫy …` + nội dung | ⚠️ đỏ |
+| Tự kiểm tra, Trả bài, biến thể | `.tl-box.tl-box--think.tl-check` | ✍️ xanh dương |
+Mọi thứ còn lại KHÔNG có khung: `.tl-box … tl-note` (mục tiêu, dự đoán, 🔬 thí nghiệm, 🎬 video, 📄 đề bài; chỉ một vạch trái mỏng, màu theo loại) và `<details class="tl-details tl-more">` (bấm xem). Giữ NGUYÊN các lớp cũ (`tl-box--exp`, `tl-box--video`, `tl-box--think`) vì script chèn video/thí nghiệm bám vào chúng; chỉ thêm lớp mới. Nhãn của hộp có khung bỏ emoji đầu (icon góc đã thay). Icon do CSS `::before`, không viết vào HTML. Thêm loại khung thứ tư = phá quy tắc, phải hỏi thầy.

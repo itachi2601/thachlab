@@ -1041,8 +1041,6 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 /* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
    Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
-.exam-content .tl-fx { margin: 18px 0; padding: 14px 16px 16px; border: 1.5px solid var(--color-line, rgba(148,163,184,.4)); border-radius: 12px; background: var(--color-surface-2, rgba(148,163,184,.06)); }
-.exam-content .tl-fx--law { border-color: rgba(250,204,21,.5); background: rgba(250,204,21,.07); }
 .exam-content .tl-fx > p { margin: 0; }
 .exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
 .exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
@@ -1057,6 +1055,28 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
 .lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
 
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, mỗi loại một màu + một icon tròn ở góc phải trên:
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) · ⚠️ bẫy mất điểm (.tl-trap) · ✍️ tự kiểm tra (.tl-check)
+   Mọi thứ còn lại là ghi chú: .tl-note (hộp cũ bỏ viền/nền, chỉ một vạch trái mỏng), .tl-more (mục bấm xem).
+   Không để khung nằm trong khung. Căn cứ: Mayer báo hiệu một cấp (N7), Gestalt tương đồng, nhấn mọi thứ = không nhấn gì. */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: #ca8a04; --kbg: rgba(250,204,21,.08); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--kbg); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: #dc2626; --kbg: rgba(248,113,113,.09); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: #2563eb; --kbg: rgba(37,99,235,.07); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--kc); font-size: 18px; line-height: 1; transform: rotate(8deg); box-shadow: 0 2px 4px rgba(0,0,0,.18); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { --nc: #94a3b8; border: 0; border-left: 3px solid var(--nc); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-note.tl-box--exp { --nc: #34d399; }
+.exam-content .tl-note.tl-box--video { --nc: #a78bfa; }
+.exam-content .tl-note.tl-box--think { --nc: #60a5fa; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid rgba(148,163,184,.55); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
@@ -1064,6 +1084,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </style>
 <div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>III. Ba cái bẫy mất điểm</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1. Đếm ngọn, đếm vân: số mốc ≠ số khoảng</h4>
 
 <p><strong>🔑 Số mốc trừ 1 bằng số khoảng</strong></p>
@@ -1086,7 +1107,9 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\dfrac{L}{2i}=3{,}75$, lấy phần nguyên 3, $N_s=2\cdot3+1=7$ (vân trung tâm và 3 vân mỗi bên).</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Số vân sáng luôn lẻ vì có vân trung tâm. Tính $\dfrac{L}{2i}$, lấy phần nguyên (không làm tròn), nhân 2 rồi cộng 1.</p></div>
 </div>
+</div>
 
+<div class="tl-trap">
 <h4>Bẫy 2. Hai nguồn cùng pha hay ngược pha?</h4>
 
 <p><strong>🔑 Ngược pha: cực đại và cực tiểu đổi chỗ</strong></p>
@@ -1101,11 +1124,13 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <p>Ở Dạng 8, miền giá trị trên đoạn nối hai nguồn vẫn là từ $-\dfrac{S_1S_2}{\lambda}$ tới $\dfrac{S_1S_2}{\lambda}$, nhưng với nguồn ngược pha thì <strong>cực đại lấy $k+\tfrac12$</strong>, cực tiểu lấy $k$. Hai nguồn S₁, S₂ <strong>không tính</strong> vào số điểm đếm, nên dấu là $\lt$ chứ không phải $\le$.</p>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: vì sao ngược pha thì đổi chỗ?</summary>
 <p>Ở trung điểm của AB, hai sóng đến cùng lúc nhưng hai nguồn đã lệch nhau nửa chu kỳ, nên chúng triệt tiêu: trung điểm là <strong>cực tiểu</strong>, ngược với nguồn cùng pha.</p>
 </details>
+</div>
 
+<div class="tl-trap">
 <h4>Bẫy 3. Nút, bụng: hai đầu cũng là nút</h4>
 
 <p><strong>🔑 $n$ bó thì có $n+1$ nút</strong></p>
@@ -1120,6 +1145,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <input type="radio" name="tl14-q6" id="tl14-q6d"><label for="tl14-q6d" class="tl-opt tl-no">D. 6</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $n$ bụng thì có $n+1$ nút, nên $5=n+1$, $n=4$ bụng.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Giữa hai nút liên tiếp có đúng một bụng. 5 nút tạo ra 4 khoảng, mỗi khoảng một bụng.</p></div>
+</div>
 </div>
 
 </span></div></div>

@@ -1041,8 +1041,6 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 /* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
    Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
-.exam-content .tl-fx { margin: 18px 0; padding: 14px 16px 16px; border: 1.5px solid var(--color-line, rgba(148,163,184,.4)); border-radius: 12px; background: var(--color-surface-2, rgba(148,163,184,.06)); }
-.exam-content .tl-fx--law { border-color: rgba(250,204,21,.5); background: rgba(250,204,21,.07); }
 .exam-content .tl-fx > p { margin: 0; }
 .exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
 .exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
@@ -1056,6 +1054,28 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 /* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
 .lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
 .lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, mỗi loại một màu + một icon tròn ở góc phải trên:
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) · ⚠️ bẫy mất điểm (.tl-trap) · ✍️ tự kiểm tra (.tl-check)
+   Mọi thứ còn lại là ghi chú: .tl-note (hộp cũ bỏ viền/nền, chỉ một vạch trái mỏng), .tl-more (mục bấm xem).
+   Không để khung nằm trong khung. Căn cứ: Mayer báo hiệu một cấp (N7), Gestalt tương đồng, nhấn mọi thứ = không nhấn gì. */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: #ca8a04; --kbg: rgba(250,204,21,.08); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--kbg); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: #dc2626; --kbg: rgba(248,113,113,.09); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: #2563eb; --kbg: rgba(37,99,235,.07); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--kc); font-size: 18px; line-height: 1; transform: rotate(8deg); box-shadow: 0 2px 4px rgba(0,0,0,.18); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { --nc: #94a3b8; border: 0; border-left: 3px solid var(--nc); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-note.tl-box--exp { --nc: #34d399; }
+.exam-content .tl-note.tl-box--video { --nc: #a78bfa; }
+.exam-content .tl-note.tl-box--think { --nc: #60a5fa; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid rgba(148,163,184,.55); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
 
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
@@ -1139,13 +1159,13 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <p class="tl-fx-note">Tính xong thì đối chiếu thang sóng ở mục bấm xem bên dưới.</p>
 </div>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>📖 Bấm xem: ký hiệu và ghi chú họ A</summary>
 <p>Nguồn $u_0=A\cos(\omega t+\varphi)$ thì $u_M=A\cos\left(\omega t+\varphi-\dfrac{2\pi x}{\lambda}\right)$<br>
 Thang sóng theo $\lambda$ giảm dần: vô tuyến (cả vi sóng) → hồng ngoại → ánh sáng nhìn thấy $0{,}38$–$0{,}76\ \mu\text{m}$ → tử ngoại → tia X → tia $\gamma$</p>
 </details>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-01">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-baitapsong-01">
 <p class="tl-label">🔬 Thí nghiệm: đo tốc độ sóng nước trong chậu</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> thả nút chai vào chậu nước rộng, gõ nhịp đều một đầu thước xuống mặt nước. Bấm giờ 10 dao động của nút chai, đo khoảng cách 5 ngọn sóng liên tiếp bằng thước.</li>
@@ -1154,7 +1174,7 @@ Thang sóng theo $\lambda$ giảm dần: vô tuyến (cả vi sóng) → hồng 
 </ol>
 </div>
 <!--video:tn-l11-baitapsong-01-->
-<div class="tl-box tl-box--video">
+<div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem thí nghiệm thật: chậu nước, bóng nổi, sóng lan</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/eQSvv7zOxLE?rel=0" title="chậu nước, bóng nổi, sóng lan" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
 <p><strong>Nhìn vào:</strong> Sóng nước lan ra quanh vật nổi trong chậu thế nào?</p>
@@ -1165,8 +1185,8 @@ Thang sóng theo $\lambda$ giảm dần: vô tuyến (cả vi sóng) → hồng 
 
 <p>Ví dụ ngắn cho Dạng 5: đài FM 100 MHz có $\lambda=\dfrac{c}{f}=\dfrac{3\cdot10^8}{10^8}=3\ \text{m}$. Dạng 2: xa nguồn gấp đôi thì $I$ giảm 4 lần.</p>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Hai điểm trên cùng một phương truyền sóng cách nhau $1{,}5\lambda$. Hai điểm đó dao động:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl14-q1" id="tl14-q1a"><label for="tl14-q1a" class="tl-opt tl-no">A. cùng pha</label>
@@ -1221,7 +1241,7 @@ Thang sóng theo $\lambda$ giảm dần: vô tuyến (cả vi sóng) → hồng 
 <p class="tl-fx-note">Nguồn ngược pha: xem Bẫy 2.</p>
 </div>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-02">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-baitapsong-02">
 <p class="tl-label">🔬 Ví dụ: hai loa cùng phát một nốt</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> đặt hai loa cách nhau 2 m, nối cùng một máy phát âm 340 Hz (cùng pha, $v=340\ \text{m/s}$ nên $\lambda=1\ \text{m}$). Đi ngang trước hai loa.</li>
@@ -1230,7 +1250,7 @@ Thang sóng theo $\lambda$ giảm dần: vô tuyến (cả vi sóng) → hồng 
 </ol>
 </div>
 <!--video:tn-l11-baitapsong-02-->
-<div class="tl-box tl-box--video">
+<div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem thí nghiệm thật: hai loa, mic đi qua vùng to–tắt</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/yBBGE3ncQ7U?rel=0" title="hai loa, mic đi qua vùng to–tắt" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
 <p><strong>Nhìn vào:</strong> Mức âm trên đồng hồ đổi thế nào khi mic đi qua các vị trí?</p>
@@ -1300,7 +1320,7 @@ Thang sóng theo $\lambda$ giảm dần: vô tuyến (cả vi sóng) → hồng 
 </ul>
 </div>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>📖 Bấm xem: ký hiệu khe Young</summary>
 <p>$a$: khoảng cách giữa hai khe<br>
 $D$: khoảng cách từ hai khe tới màn<br>
@@ -1309,7 +1329,7 @@ $x$: toạ độ trên màn, tính từ vân trung tâm<br>
 $L$ ở Dạng 10 là bề rộng trường giao thoa, khác $L$ là chiều dài dây hay ống ở họ D</p>
 </details>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-03">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-baitapsong-03">
 <p class="tl-label">🔬 Thí nghiệm đo: bước sóng laser bằng khe Young</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> chiếu laser đỏ qua hai khe cách nhau $a=0{,}50\ \text{mm}$; màn cách khe $D=1{,}50\ \text{m}$. Đo khoảng cách $\ell$ của <strong>6 vân sáng liên tiếp</strong> (tức 5 khoảng vân) bằng thước milimét, ước lượng tới phần mười mm, đo 5 lần.</li>
@@ -1322,7 +1342,7 @@ $L$ ở Dạng 10 là bề rộng trường giao thoa, khác $L$ là chiều dà
 </table>
 </div>
 <!--video:tn-l11-baitapsong-03-->
-<div class="tl-box tl-box--video">
+<div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem thí nghiệm thật: laser qua khe Young, vân trên thước</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/qAGkgZeRvtY?rel=0&start=50&end=70" title="laser qua khe Young, vân trên thước" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
 <p><strong>Nhìn vào:</strong> Hệ vân sáng tối trên màn có thước milimét trông thế nào?</p>
@@ -1389,7 +1409,7 @@ $L$ ở Dạng 10 là bề rộng trường giao thoa, khác $L$ là chiều dà
 </ul>
 </div>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>📖 Bấm xem: ghi chú họ D</summary>
 <p>Đầu cố định, đầu kín là nút<br>
 Đầu tự do, đầu hở là bụng<br>
@@ -1398,7 +1418,7 @@ Ví dụ Dạng 15: $x=\dfrac{\lambda}{8}$ thì $A_M=2A\sin\dfrac{\pi}{4}=A\sqrt
 Nếu đo $x$ từ bụng gần nhất thì dùng $A_M=2A\left|\cos\dfrac{2\pi x}{\lambda}\right|$</p>
 </details>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-04">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-baitapsong-04">
 <p class="tl-label">🔬 Thí nghiệm: thổi vào ống nhựa</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> bịt kín một đầu ống nhựa dài $0{,}17\ \text{m}$, thổi ngang miệng đầu còn lại. Tốc độ âm trong không khí $v=340\ \text{m/s}$.</li>
@@ -1407,7 +1427,7 @@ Nếu đo $x$ từ bụng gần nhất thì dùng $A_M=2A\left|\cos\dfrac{2\pi x
 </ol>
 </div>
 <!--video:tn-l11-baitapsong-04-->
-<div class="tl-box tl-box--video">
+<div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem thí nghiệm thật: ống một đầu kín nhúng nước, cộng hưởng</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/u7wUvEA1v1A?rel=0" title="ống một đầu kín nhúng nước, cộng hưởng" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
 <p><strong>Nhìn vào:</strong> Nốt cộng hưởng to lên khi cột khí trong ống dài bao nhiêu?</p>
@@ -1418,8 +1438,8 @@ Nếu đo $x$ từ bụng gần nhất thì dùng $A_M=2A\left|\cos\dfrac{2\pi x
 
 <figure class="fig" data-tl="1" data-exp="tn-l11-baitapsong-04"><svg viewBox="0 0 440 200" role="img" aria-label="Sóng dừng trên dây một đầu cố định một đầu tự do với L bằng năm phần tư bước sóng: 3 nút và 3 bụng"><line x1="24" y1="100" x2="404" y2="100" stroke="currentColor" stroke-width="1" opacity="0.35"/><polyline fill="none" stroke="#34d399" stroke-width="2.6" opacity="1" points="24.0,100.0 28.0,96.2 32.0,92.4 36.0,88.6 40.0,85.0 44.0,81.4 48.0,78.0 52.0,74.8 56.0,71.7 60.0,68.9 64.0,66.3 68.0,64.0 72.0,61.9 76.0,60.1 80.0,58.7 84.0,57.5 88.0,56.7 92.0,56.2 96.0,56.0 100.0,56.2 104.0,56.7 108.0,57.5 112.0,58.7 116.0,60.1 120.0,61.9 124.0,64.0 128.0,66.3 132.0,68.9 136.0,71.7 140.0,74.8 144.0,78.0 148.0,81.4 152.0,85.0 156.0,88.6 160.0,92.4 164.0,96.2 168.0,100.0 172.0,103.8 176.0,107.6 180.0,111.4 184.0,115.0 188.0,118.6 192.0,122.0 196.0,125.2 200.0,128.3 204.0,131.1 208.0,133.7 212.0,136.0 216.0,138.1 220.0,139.9 224.0,141.3 228.0,142.5 232.0,143.3 236.0,143.8 240.0,144.0 244.0,143.8 248.0,143.3 252.0,142.5 256.0,141.3 260.0,139.9 264.0,138.1 268.0,136.0 272.0,133.7 276.0,131.1 280.0,128.3 284.0,125.2 288.0,122.0 292.0,118.6 296.0,115.0 300.0,111.4 304.0,107.6 308.0,103.8 312.0,100.0 316.0,96.2 320.0,92.4 324.0,88.6 328.0,85.0 332.0,81.4 336.0,78.0 340.0,74.8 344.0,71.7 348.0,68.9 352.0,66.3 356.0,64.0 360.0,61.9 364.0,60.1 368.0,58.7 372.0,57.5 376.0,56.7 380.0,56.2 384.0,56.0"/><polyline fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.55" points="24.0,100.0 28.0,103.8 32.0,107.6 36.0,111.4 40.0,115.0 44.0,118.6 48.0,122.0 52.0,125.2 56.0,128.3 60.0,131.1 64.0,133.7 68.0,136.0 72.0,138.1 76.0,139.9 80.0,141.3 84.0,142.5 88.0,143.3 92.0,143.8 96.0,144.0 100.0,143.8 104.0,143.3 108.0,142.5 112.0,141.3 116.0,139.9 120.0,138.1 124.0,136.0 128.0,133.7 132.0,131.1 136.0,128.3 140.0,125.2 144.0,122.0 148.0,118.6 152.0,115.0 156.0,111.4 160.0,107.6 164.0,103.8 168.0,100.0 172.0,96.2 176.0,92.4 180.0,88.6 184.0,85.0 188.0,81.4 192.0,78.0 196.0,74.8 200.0,71.7 204.0,68.9 208.0,66.3 212.0,64.0 216.0,61.9 220.0,60.1 224.0,58.7 228.0,57.5 232.0,56.7 236.0,56.2 240.0,56.0 244.0,56.2 248.0,56.7 252.0,57.5 256.0,58.7 260.0,60.1 264.0,61.9 268.0,64.0 272.0,66.3 276.0,68.9 280.0,71.7 284.0,74.8 288.0,78.0 292.0,81.4 296.0,85.0 300.0,88.6 304.0,92.4 308.0,96.2 312.0,100.0 316.0,103.8 320.0,107.6 324.0,111.4 328.0,115.0 332.0,118.6 336.0,122.0 340.0,125.2 344.0,128.3 348.0,131.1 352.0,133.7 356.0,136.0 360.0,138.1 364.0,139.9 368.0,141.3 372.0,142.5 376.0,143.3 380.0,143.8 384.0,144.0"/><line x1="24" y1="50" x2="24" y2="150" stroke="currentColor" stroke-width="3.5" opacity="1"/><circle cx="24" cy="100" r="5" fill="currentColor"/><circle cx="168.0" cy="100" r="5" fill="currentColor"/><circle cx="312" cy="100" r="5" fill="currentColor"/><circle cx="96.0" cy="56" r="5.5" fill="#fb923c"/><circle cx="240.0" cy="144" r="5.5" fill="#fb923c"/><circle cx="384.0" cy="56.0" r="5.5" fill="#fb923c"/><circle cx="384" cy="56" r="9" fill="none" stroke="#fb923c" stroke-width="2"/><text x="24" y="28" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">Đầu cố định (nút)</text><text x="380" y="28" fill="#fb923c" font-size="13" font-weight="700" text-anchor="end">Đầu tự do (bụng)</text><text x="24" y="168" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">L = 5·λ/4 = (2n+1)·λ/4 với n = 2: 3 bụng, 3 nút</text><text x="24" y="188" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">chấm sáng: nút · chấm cam: bụng</text></svg><figcaption>Hình 3. Một đầu cố định (nút), một đầu tự do (bụng): $L=(2n+1)\tfrac{\lambda}{4}$. Hình vẽ $n=2$ nên có $n+1=3$ bụng và 3 nút.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Dây dài $0{,}9\ \text{m}$, một đầu cố định, một đầu tự do, sóng có $\lambda=1{,}2\ \text{m}$. Trên dây có mấy bụng sóng?</p>
 <p>⚠ Số lần $\dfrac{\lambda}{4}$ trong $L$ là $2n+1$, chưa phải số bụng.</p>
 <div class="tl-quiz">

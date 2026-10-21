@@ -1041,8 +1041,6 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 /* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
    Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
-.exam-content .tl-fx { margin: 18px 0; padding: 14px 16px 16px; border: 1.5px solid var(--color-line, rgba(148,163,184,.4)); border-radius: 12px; background: var(--color-surface-2, rgba(148,163,184,.06)); }
-.exam-content .tl-fx--law { border-color: rgba(250,204,21,.5); background: rgba(250,204,21,.07); }
 .exam-content .tl-fx > p { margin: 0; }
 .exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
 .exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
@@ -1057,6 +1055,28 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
 .lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
 
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, mỗi loại một màu + một icon tròn ở góc phải trên:
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) · ⚠️ bẫy mất điểm (.tl-trap) · ✍️ tự kiểm tra (.tl-check)
+   Mọi thứ còn lại là ghi chú: .tl-note (hộp cũ bỏ viền/nền, chỉ một vạch trái mỏng), .tl-more (mục bấm xem).
+   Không để khung nằm trong khung. Căn cứ: Mayer báo hiệu một cấp (N7), Gestalt tương đồng, nhấn mọi thứ = không nhấn gì. */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: #ca8a04; --kbg: rgba(250,204,21,.08); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--kbg); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: #dc2626; --kbg: rgba(248,113,113,.09); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: #2563eb; --kbg: rgba(37,99,235,.07); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--kc); font-size: 18px; line-height: 1; transform: rotate(8deg); box-shadow: 0 2px 4px rgba(0,0,0,.18); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { --nc: #94a3b8; border: 0; border-left: 3px solid var(--nc); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-note.tl-box--exp { --nc: #34d399; }
+.exam-content .tl-note.tl-box--video { --nc: #a78bfa; }
+.exam-content .tl-note.tl-box--think { --nc: #60a5fa; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid rgba(148,163,184,.55); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
@@ -1068,7 +1088,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <figure class="fig" data-tl="1"><svg viewBox="0 0 440 212" role="img" aria-label="Bản đồ bốn họ bài tập sóng và dấu hiệu nhận ra họ trong đề"><rect x="10" y="10" width="205" height="90" rx="10" fill="none" stroke="#38bdf8" stroke-width="2.4"/><text x="22" y="38" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">A. Sóng cơ · điện từ</text><text x="22" y="64" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đề có: n ngọn, cách nhau d,</text><text x="22" y="82" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">cường độ, tần số, bước sóng</text><rect x="225" y="10" width="205" height="90" rx="10" fill="none" stroke="#f87171" stroke-width="2.4"/><text x="237" y="38" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">B. Giao thoa sóng cơ</text><text x="237" y="64" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đề có: hai nguồn A, B,</text><text x="237" y="82" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">cực đại, cực tiểu trên AB</text><rect x="10" y="110" width="205" height="90" rx="10" fill="none" stroke="#fb923c" stroke-width="2.4"/><text x="22" y="138" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">C. Khe Young</text><text x="22" y="164" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đề có: a, D, khoảng vân,</text><text x="22" y="182" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">vân sáng, vân tối, trùng vân</text><rect x="225" y="110" width="205" height="90" rx="10" fill="none" stroke="#34d399" stroke-width="2.4"/><text x="237" y="138" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">D. Sóng dừng</text><text x="237" y="164" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đề có: dây, nút, bụng,</text><text x="237" y="182" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đầu cố định, đầu tự do</text></svg><figcaption>Hình 1. Bốn họ gom 15 dạng: nhìn <strong>từ khoá trong đề</strong> là biết dùng công thức nào.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Đề cho: "khoảng cách giữa <strong>5 ngọn sóng</strong> liên tiếp là 2 m". Bước sóng bằng bao nhiêu?</p>
 <div class="tl-quiz">
