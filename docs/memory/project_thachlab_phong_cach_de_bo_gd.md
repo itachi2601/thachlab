@@ -16,3 +16,5 @@ Thầy gửi 2 đề Bộ (2025, 2026 mã 0211) ngày 21/10/2026 để làm chu�
 Liên quan: [[project_thachlab_cai_tien_chuong1_l12]], [[project_thachlab_giai_lai_ngan_hang]].
 
 **21/10 chốt thêm:** quiz lý thuyết cuối bài KHÔNG có câu trả lời ngắn; cơ cấu mới 14 TN + 6 Đ–S = 20 câu (tập trung lý thuyết, công thức, bẫy). Đã sửa prompt, FORMAT trong batch, cảnh báo cơ cấu ở `lib.ts`. Chạy lại batch Ch.3 L12 theo cơ cấu mới. Lần chạy đầu (10/4/6) bị bỏ.
+
+**21/10 ĐÃ ĐĂNG + DEPLOY Ch.3 L12:** 8 đề mới exam 1055–1062 (lesson 10,11,12,13,14,125,126,127; 19–20 câu, 14 TN + 5–6 Đ–S, có `distractorNotes`, Opus soạn + Opus kiểm + kiem-code soát độc lập). Hiện ghi chú "Vì sao B sai" ở `QuestionCard` khi xem kết quả. Đề cũ 759–762, 768–770, 937 CÒN published (câu cũ ngoài chương trình vẫn nằm trong `question_bank`) — chưa ẩn/dọn, chờ thầy quyết. Chưa soạn lại Ch.1, 2, 4 L12. Bước mới `--buoc ghichu` trong `batch-quiz-ly-thuyet.mts` thêm ghi chú vào bộ có sẵn.
