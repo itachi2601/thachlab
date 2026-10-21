@@ -1,386 +1,550 @@
 {
-  "lesson_id": 19,
-  "lesson_title": "Bài 18. An toàn phóng xạ",
-  "item_id": 150,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 19,
+ "lesson_title": "Bài 18. An toàn phóng xạ",
+ "item_id": 150,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào sau đây về tia phóng xạ là đúng?",
+   "options": [
+    "Tia phóng xạ không nhìn thấy được và có khả năng ion hoá môi trường.",
+    "Tia phóng xạ nhìn thấy được và không làm ion hoá môi trường.",
+    "Tia phóng xạ không nhìn thấy được và không xuyên qua được vật chất.",
+    "Tia phóng xạ nhìn thấy được và chỉ gây hại khi bị chiếu rất lâu."
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu tia phóng xạ không nhìn thấy được, có tính ion hoá môi trường và xuyên qua được lớp vật chất mỏng.",
+   "distractorNotes": {
+    "B": "Nhầm tia phóng xạ với ánh sáng nhìn thấy và bỏ qua tính ion hoá, vốn là cơ chế chính gây hại tế bào.",
+    "C": "Tia phóng xạ đúng là không nhìn thấy, nhưng nó xuyên qua được lớp vật chất mỏng và làm đen kính ảnh.",
+    "D": "Tia phóng xạ không nhìn thấy được, và mức hại còn do cường độ, khả năng ion hoá, đâm xuyên chứ không chỉ do thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Mức độ ảnh hưởng của tia phóng xạ lên cơ thể KHÔNG phụ thuộc vào yếu tố nào sau đây?",
+   "options": [
+    "Cường độ của chùm tia phóng xạ.",
+    "Khả năng đâm xuyên của tia phóng xạ.",
+    "Màu sắc của vật chứa nguồn phóng xạ.",
+    "Thời gian cơ thể bị chiếu xạ."
+   ],
+   "answer": 2,
+   "explanation": "Ảnh hưởng phụ thuộc bốn yếu tố: cường độ, khả năng ion hoá, khả năng đâm xuyên và thời gian chiếu. Màu sắc vật chứa không thuộc các yếu tố này.",
+   "distractorNotes": {
+    "A": "Cường độ chùm tia là một trong bốn yếu tố quyết định: chùm càng mạnh thì tác hại càng lớn.",
+    "B": "Khả năng đâm xuyên quyết định tia tác động sâu tới mô nào, nên nằm trong bốn yếu tố.",
+    "D": "Liều tỉ lệ thuận với thời gian chiếu, nên thời gian là yếu tố quyết định mức ảnh hưởng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cùng một liều chiếu, loại tế bào nào trong cơ thể bị tia phóng xạ làm hại nặng nhất?",
+   "options": [
+    "Tế bào đã ngừng phân chia từ lâu.",
+    "Tế bào đang phân chia nhanh.",
+    "Tế bào có kích thước lớn nhất.",
+    "Tế bào nằm xa nguồn nhất."
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu tia phóng xạ làm hỏng tế bào, nặng nhất ở các tế bào phân chia nhanh.",
+   "distractorNotes": {
+    "A": "Tế bào đã biệt hoá, ngừng phân chia có thời gian sửa ADN nên ít nhạy với phóng xạ hơn.",
+    "C": "Kích thước tế bào không quyết định độ nhạy; yếu tố then chốt là tốc độ phân chia và sao chép ADN.",
+    "D": "Câu hỏi đã cố định cùng một liều chiếu, nên khoảng cách tới nguồn không còn là yếu tố phân biệt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Biển cảnh báo phóng xạ được đặt ở đâu?",
+   "options": [
+    "Chỉ ở cổng ra vào của bệnh viện có khoa xạ trị.",
+    "Chỉ trên bao bì thực phẩm đã được chiếu xạ.",
+    "Ở nơi đông người để mọi người đến gần quan sát.",
+    "Tại khu vực có thiết bị phát tia, trên thiết bị và vật chứa nguồn."
+   ],
+   "answer": 3,
+   "explanation": "Biển đặt tại khu vực có thiết bị phát tia phóng xạ, trên thiết bị và trên vật chứa nguồn, để cảnh báo mọi người không tiếp cận.",
+   "distractorNotes": {
+    "A": "Biển phải gắn ngay tại khu vực có nguồn, trên thiết bị và trên vật chứa, không chỉ ở cổng bệnh viện.",
+    "B": "Nhầm biển cảnh báo nguồn phóng xạ với nhãn thực phẩm chiếu xạ; thực phẩm đã chiếu xạ không phải nguồn phát tia.",
+    "C": "Hiểu ngược mục đích: biển cảnh báo để mọi người không tiếp cận, không phải để mời đến gần."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Để chắn tia gamma phát ra từ một nguồn phóng xạ, người ta dùng vật liệu nào?",
+   "options": [
+    "Tấm chì hoặc bê tông đủ dày.",
+    "Một tờ giấy mỏng đặt sát nguồn.",
+    "Một tấm nhôm mỏng vài milimét.",
+    "Một tấm kính mỏng trong suốt."
+   ],
+   "answer": 0,
+   "explanation": "Giấy chặn alpha, nhôm chặn beta, còn gamma và tia X phải dùng chì hoặc bê tông dày.",
+   "distractorNotes": {
+    "B": "Giấy chỉ chặn được alpha; đây là gán khả năng đâm xuyên yếu của alpha cho tia gamma.",
+    "C": "Nhôm vài milimét chặn được beta, còn gamma đâm xuyên mạnh hơn nhiều nên cần chì hoặc bê tông dày.",
+    "D": "Kính mỏng không đủ đặc và dày để làm yếu đáng kể tia gamma đâm xuyên mạnh."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Với nguồn phóng xạ alpha ở dạng bột hở, nguy hiểm chính đối với người làm việc là gì?",
+   "options": [
+    "Tia alpha xuyên qua được tường bê tông dày.",
+    "Tia alpha xuyên qua được tấm chì dày đặt chắn.",
+    "Bụi phóng xạ bị hít hoặc nuốt vào trong cơ thể.",
+    "Tia alpha từ nguồn đi rất xa trong không khí."
+   ],
+   "answer": 2,
+   "explanation": "Alpha bị giấy chặn khi nguồn ở ngoài, nhưng khi bụi alpha vào trong cơ thể thì toàn bộ năng lượng truyền ngay vào mô sống, không thể che chắn.",
+   "distractorNotes": {
+    "A": "Gán cho alpha khả năng đâm xuyên của gamma; thực ra một tờ giấy đã chặn được alpha.",
+    "B": "Alpha đâm xuyên rất yếu, không thể vượt qua chì; mối nguy của nguồn hở nằm ở đường hít và nuốt.",
+    "D": "Alpha chỉ đi vài xentimét trong không khí; nguy hiểm thật sự là bụi phóng xạ lọt vào cơ thể."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "An toàn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Chiếu tia phóng xạ vào thực phẩm nhằm mục đích chính nào?",
+   "options": [
+    "Làm tăng hàm lượng dinh dưỡng của thực phẩm.",
+    "Diệt vi trùng, kéo dài thời hạn sử dụng thực phẩm.",
+    "Làm thực phẩm có màu sắc tươi đẹp hơn ban đầu.",
+    "Làm giảm giá thành của thực phẩm khi bán ra."
+   ],
+   "answer": 1,
+   "explanation": "Chiếu xạ thực phẩm để diệt vi trùng, kéo dài hạn dùng, tránh mọc mầm; nhược điểm là đổi màu, đổi hương vị và giá cao.",
+   "distractorNotes": {
+    "A": "Bài không nêu chiếu xạ làm tăng dinh dưỡng; mục đích là diệt vi trùng và kéo dài hạn dùng.",
+    "C": "Thay đổi màu sắc thực phẩm là nhược điểm của chiếu xạ, bị hiểu nhầm thành mục đích.",
+    "D": "Giá thành cao là nhược điểm của chiếu xạ thực phẩm, không phải lợi ích."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "An toàn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong chẩn đoán bệnh bằng đồng vị phóng xạ, người ta làm như thế nào?",
+   "options": [
+    "Chiếu liều rất cao để diệt tế bào ở cơ quan cần xem.",
+    "Cho bệnh nhân đứng sau tấm chì dày rồi chụp ảnh.",
+    "Pha loãng đồng vị rồi xả ra môi trường để đo.",
+    "Đưa dược chất phóng xạ vào cơ thể, theo dõi vết phóng xạ."
+   ],
+   "answer": 3,
+   "explanation": "Chẩn đoán: đưa đồng vị phóng xạ vào cơ thể qua dược chất rồi theo dõi vết phóng xạ bằng thiết bị phát hiện tia, với liều thấp.",
+   "distractorNotes": {
+    "A": "Nhầm chẩn đoán với xạ trị: liều cao diệt tế bào là điều trị, còn chẩn đoán chỉ dùng liều thấp đủ ghi hình.",
+    "B": "Áp sai nguyên tắc che chắn: tấm chì chặn tia thì thiết bị không ghi được vết phóng xạ từ cơ thể.",
+    "C": "Pha loãng rồi xả ra môi trường là cách xử lí chất thải bị cấm, không phải cách chẩn đoán."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mô có khối lượng $m$ hấp thụ năng lượng bức xạ $E$. Liều hấp thụ $D$ được xác định bởi công thức nào?",
+   "options": [
+    "$D = m/E$",
+    "$D = E/m$",
+    "$D = E\\cdot m$",
+    "$D = E/m^2$"
+   ],
+   "answer": 1,
+   "explanation": "Liều hấp thụ là năng lượng mỗi kilôgam mô hấp thụ: $D = E/m$.",
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu: liều là năng lượng trên mỗi kilôgam mô, nên $E$ phải ở tử số.",
+    "C": "Liều tính cho mỗi kilôgam nên phải chia năng lượng cho khối lượng, không nhân.",
+    "D": "Tự thêm bình phương; liều hấp thụ chỉ tỉ lệ nghịch bậc nhất với khối lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị gray (Gy) của liều hấp thụ bằng",
+   "options": [
+    "$1\\ \\text{J/kg}$",
+    "$1\\ \\text{kg/J}$",
+    "$1\\ \\text{J}\\cdot\\text{kg}$",
+    "$1\\ \\text{J/s}$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $D = E/m$, đơn vị liều hấp thụ là J/kg, tức $1\\ \\text{Gy} = 1\\ \\text{J/kg}$.",
+   "distractorNotes": {
+    "B": "Đảo tử và mẫu: Gy là năng lượng chia khối lượng, tức J/kg.",
+    "C": "Nhân năng lượng với khối lượng thay vì chia, trái với định nghĩa $D = E/m$.",
+    "D": "Nhầm với đơn vị công suất; liều hấp thụ là năng lượng trên khối lượng chứ không trên thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Liều tương đương $H$ liên hệ với liều hấp thụ $D$ và hệ số chất lượng $w_R$ của loại tia theo công thức",
+   "options": [
+    "$H = D/w_R$",
+    "$H = D + w_R$",
+    "$H = w_R D$",
+    "$H = w_R D^2$"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu $H = w_R\\,D$, đơn vị sievert (Sv).",
+   "distractorNotes": {
+    "A": "Chia cho $w_R$ khiến alpha có vẻ ít hại hơn tia X, ngược với ý nghĩa của hệ số chất lượng.",
+    "B": "Hệ số chất lượng là thừa số nhân với liều hấp thụ, không phải số hạng cộng thêm.",
+    "D": "Liều tương đương tỉ lệ bậc nhất với liều hấp thụ, không có bình phương."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Người đứng gần một nguồn phóng xạ điểm lùi ra xa sao cho khoảng cách tới nguồn tăng gấp 3 lần. Suất liều tại chỗ mới",
+   "options": [
+    "giảm 3 lần",
+    "tăng 9 lần",
+    "giảm 6 lần",
+    "giảm 9 lần"
+   ],
+   "answer": 3,
+   "explanation": "Suất liều tỉ lệ nghịch với $r^2$, khoảng cách gấp 3 thì suất liều còn $1/9$.",
+   "distractorNotes": {
+    "A": "Quên bình phương: suất liều tỉ lệ nghịch với $r^2$ chứ không tỉ lệ nghịch với $r$.",
+    "B": "Nhầm chiều: lùi xa thì cùng lượng bức xạ trải trên diện tích lớn hơn nên suất liều giảm.",
+    "C": "Lấy 3 nhân 2 thay vì bình phương; đúng phải là $3^2 = 9$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai kỹ thuật viên cùng đứng cách một nguồn phóng xạ như nhau; người thứ hai ở lại lâu gấp 4 lần người thứ nhất. So với người thứ nhất, liều người thứ hai nhận được",
+   "options": [
+    "giảm 4 lần",
+    "tăng 4 lần",
+    "tăng 16 lần",
+    "không thay đổi"
+   ],
+   "answer": 1,
+   "explanation": "Cùng khoảng cách thì liều tỉ lệ thuận với thời gian phơi nhiễm, nên thời gian gấp 4 thì liều gấp 4.",
+   "distractorNotes": {
+    "A": "Nhầm chiều: ở lâu hơn thì tích luỹ liều nhiều hơn, vì liều tỉ lệ thuận với thời gian.",
+    "C": "Áp nhầm quy luật bình phương của khoảng cách cho thời gian; liều tỉ lệ bậc nhất với thời gian.",
+    "D": "Cùng khoảng cách chỉ cho cùng suất liều; liều tổng vẫn tăng theo thời gian đứng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Tại vị trí đứng, suất liều là $\\dot H$; liều tối đa cho phép mỗi ca là $H$. Thời gian đứng tối đa $t$ được tính bởi",
+   "options": [
+    "$t = H/\\dot H$",
+    "$t = \\dot H/H$",
+    "$t = H\\cdot\\dot H$",
+    "$t = H/\\dot H^2$"
+   ],
+   "answer": 0,
+   "explanation": "Liều = suất liều × thời gian, nên $t = H/\\dot H$ (lấy liều chia cho suất liều).",
+   "distractorNotes": {
+    "B": "Đảo tử và mẫu khi rút $t$ từ $H = \\dot H\\,t$.",
+    "C": "Nhân liều với suất liều không cho đơn vị thời gian; phải lấy liều chia cho suất liều.",
+    "D": "Thêm bình phương vô căn cứ; liều tỉ lệ bậc nhất với suất liều."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong phòng xạ trị áp sát, nguồn phóng xạ đặt sát khối u; kỹ thuật viên bấm nút từ xa, đứng sau tấm chắn chì và đeo liều kế cá nhân trên ngực. Xét các phát biểu sau:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Yếu tố nào KHÔNG thuộc bốn yếu tố quyết định mức ảnh hưởng của tia phóng xạ lên cơ thể?",
-      "options": [
-        "Khả năng ion hoá",
-        "Cường độ chùm tia",
-        "Màu sắc của chùm tia",
-        "Thời gian chiếu xạ"
-      ],
-      "answer": 2,
-      "explanation": "Bốn yếu tố là cường độ chùm tia, khả năng ion hoá, khả năng đâm xuyên và thời gian chiếu xạ; tia phóng xạ không nhìn thấy nên không có màu."
+     "text": "Bấm nút từ xa là áp dụng nguyên tắc tăng khoảng cách tới nguồn.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trong cơ thể, tia phóng xạ gây hại nặng nhất cho loại tế bào nào?",
-      "options": [
-        "Tế bào đang phân chia nhanh (tuỷ xương, niêm mạc ruột)",
-        "Chỉ tế bào lớp sừng ngoài da",
-        "Tế bào đã biệt hoá, ít phân chia",
-        "Mọi tế bào chịu ảnh hưởng như nhau"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu tia phóng xạ làm hỏng tế bào, nặng nhất ở tế bào phân chia nhanh vì ADN dễ đứt và ít thời gian sửa chữa."
+     "text": "Đeo liều kế cá nhân giúp làm giảm liều mà kỹ thuật viên nhận được.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "An toàn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Vì sao nguồn alpha ở dạng bột hở nguy hiểm dù ở ngoài cơ thể chỉ cần tờ giấy là chắn được alpha?",
-      "options": [
-        "Vì tia alpha không bị mô sống hấp thụ nên đi xuyên qua cơ thể",
-        "Vì alpha xuyên thấu mạnh hơn cả tia gamma",
-        "Vì tờ giấy làm hạt alpha mạnh lên",
-        "Bụi alpha có thể bị hít hoặc nuốt vào trong; khi đó alpha mất hết năng lượng ngay tại mô sống và không còn tấm chắn nào"
-      ],
-      "answer": 3,
-      "explanation": "Bẫy 3 của bài: nguy hiểm nhất là lúc nguồn đã vào trong cơ thể, khi đó alpha, beta mất năng lượng ngay tại mô sống."
+     "text": "Tấm chắn chì dùng để chặn tia gamma phát ra từ nguồn.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Biển cảnh báo phóng xạ hình ba cánh được đặt ở đâu?",
-      "options": [
-        "Chỉ trên quần áo của kỹ thuật viên",
-        "Tại khu vực có thiết bị phát tia phóng xạ, trên thiết bị và trên vật chứa nguồn",
-        "Chỉ ở cổng ngoài của cơ sở, không đặt trên thiết bị",
-        "Ở mọi phòng khám, kể cả nơi không có nguồn phóng xạ"
-      ],
-      "answer": 1,
-      "explanation": "Theo bài, biển đặt tại khu vực có thiết bị phát tia, trên thiết bị và trên vật chứa nguồn để mọi người không tiếp cận."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Thứ tự đúng ba bước xử lí chất thải phóng xạ là:",
-      "options": [
-        "Cố định, pha loãng, xả ra môi trường",
-        "Giảm thể tích, cố định, cách li khỏi môi trường",
-        "Cách li, giảm thể tích, pha loãng",
-        "Pha loãng, giảm thể tích, cố định"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu ba bước: giảm thể tích (cô đặc, nén), cố định (xi măng hoá, thuỷ tinh hoá), cách li khỏi môi trường; không pha loãng rồi xả."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét các phát biểu về liều kế, biển cảnh báo và chất thải phóng xạ:",
-      "statements": [
-        {
-          "text": "Liều kế cá nhân đeo trên ngực, đọc định kì và ghi sổ để so với giới hạn liều.",
-          "answer": true
-        },
-        {
-          "text": "Đeo liều kế cá nhân làm giảm liều mà người đeo nhận được.",
-          "answer": false
-        },
-        {
-          "text": "Biển cảnh báo nhằm không cho mọi người tiếp cận và không làm hỏng thiết bị.",
-          "answer": true
-        },
-        {
-          "text": "Đồng vị chu kì dài có thể pha loãng rồi xả ra sông, biển.",
-          "answer": false
-        }
-      ],
-      "explanation": "Liều kế chỉ ghi nhận liều chứ không làm giảm liều; đồng vị chu kì dài phải cách li lâu dài, không pha loãng rồi xả ra môi trường."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "An toàn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét các phát biểu về ứng dụng của tia phóng xạ:",
-      "statements": [
-        {
-          "text": "Chẩn đoán: đưa dược chất phóng xạ vào cơ thể rồi theo dõi vết phóng xạ.",
-          "answer": true
-        },
-        {
-          "text": "Xạ trị ung thư có thể dùng dược chất phóng xạ uống hoặc tiêm.",
-          "answer": true
-        },
-        {
-          "text": "Chẩn đoán cần liều cao hơn xạ trị.",
-          "answer": false
-        },
-        {
-          "text": "Chiếu xạ thực phẩm kéo dài hạn dùng nhưng có thể làm đổi màu, hương vị.",
-          "answer": true
-        }
-      ],
-      "explanation": "Chẩn đoán dùng liều thấp nhất còn đủ ghi hình, xạ trị dùng liều cao đủ diệt tế bào ung thư; chiếu xạ thực phẩm có nhược điểm đổi màu, hương vị, giá cao."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Giới hạn liều nghề nghiệp là 20 mSv/năm. Giới hạn liều với dân thường là bao nhiêu mSv/năm?",
-      "answer": "1",
-      "explanation": "Bài nêu mốc giới hạn: nghề nghiệp 20 mSv/năm, dân thường 1 mSv/năm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hệ số chất lượng $w_R$ của hạt alpha bằng bao nhiêu?",
-      "answer": "20",
-      "explanation": "Bài nêu tia X, gamma, beta có $w_R = 1$ còn alpha có $w_R = 20$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Bài nêu mấy yếu tố quyết định mức ảnh hưởng của tia phóng xạ lên cơ thể (cường độ, ion hoá, đâm xuyên, thời gian chiếu)?",
-      "answer": "4",
-      "explanation": "Bài nêu bốn yếu tố: cường độ chùm tia, khả năng ion hoá, khả năng đâm xuyên và thời gian chiếu xạ."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công thức tính liều tương đương $H$ từ liều hấp thụ $D$ và hệ số chất lượng $w_R$ là:",
-      "options": [
-        "$H = w_R / D$",
-        "$H = D / w_R$",
-        "$H = w_R\\,D^2$",
-        "$H = w_R\\,D$"
-      ],
-      "answer": 3,
-      "explanation": "Liều tương đương $H = w_R D$ (đơn vị Sv); chia cho $w_R$ là lỗi thường gặp."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đơn vị gray (Gy) của liều hấp thụ $D = E/m$ bằng:",
-      "options": [
-        "$1\\ \\text{J/kg}$",
-        "$1\\ \\text{J·kg}$",
-        "$1\\ \\text{kg/J}$",
-        "$1\\ \\text{W/kg}$"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu $1\\ \\text{Gy} = 1\\ \\text{J/kg}$: năng lượng mỗi kilôgam mô hấp thụ."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "An toàn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Kỹ thuật viên lùi từ cách nguồn 1 m ra 3 m. Suất liều của nguồn điểm còn:",
-      "options": [
-        "$1/27$ so với ban đầu",
-        "$1/6$ so với ban đầu",
-        "$1/9$ so với ban đầu",
-        "$1/3$ so với ban đầu"
-      ],
-      "answer": 2,
-      "explanation": "Suất liều tỉ lệ nghịch với bình phương khoảng cách: xa gấp 3 lần thì còn $1/3^2 = 1/9$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "An toàn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Máy đo cho 90 µSv/h tại 1 m. Người đứng cách nguồn 3 m trong 30 phút nhận liều:",
-      "options": [
-        "$45\\ \\mu\\text{Sv}$",
-        "$10\\ \\mu\\text{Sv}$",
-        "$15\\ \\mu\\text{Sv}$",
-        "$5\\ \\mu\\text{Sv}$"
-      ],
-      "answer": 3,
-      "explanation": "Ở 3 m suất liều $90/9 = 10$ µSv/h, nhân $t = 0{,}5$ h được 5 µSv; 45 µSv là liều tại 1 m, 10 µSv quên đổi phút ra giờ."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "An toàn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Biết suất liều $\\dot H$ và liều tối đa cho phép $H$. Thời gian đứng tối đa $t$ tính bằng:",
-      "options": [
-        "$t = H - \\dot H$",
-        "$t = H / \\dot H$",
-        "$t = \\dot H / H$",
-        "$t = H\\,\\dot H$"
-      ],
-      "answer": 1,
-      "explanation": "Liều = suất liều × thời gian nên $t = H/\\dot H$ (bài nhắc: lấy liều chia cho suất liều, nhớ đổi phút ra giờ)."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Liều chiếu xạ và tác hại của phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét các phát biểu về liều hấp thụ và liều tương đương:",
-      "statements": [
-        {
-          "text": "Liều hấp thụ $D = E/m$, đo bằng gray.",
-          "answer": true
-        },
-        {
-          "text": "Tia gamma có hệ số chất lượng $w_R = 1$.",
-          "answer": true
-        },
-        {
-          "text": "Mô nhận liều hấp thụ $0{,}05\\ \\text{Gy}$ từ tia alpha có liều tương đương $1\\ \\text{Sv}$.",
-          "answer": true
-        },
-        {
-          "text": "Khoảng cách tăng gấp đôi thì suất liều giảm một nửa.",
-          "answer": false
-        }
-      ],
-      "explanation": "$H = 20 \\times 0{,}05 = 1$ Sv; suất liều giảm theo bình phương khoảng cách nên xa gấp đôi chỉ còn $1/4$, không phải một nửa."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "An toàn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Máy đo cho 120 µSv/h tại 2 m. Xét các phát biểu:",
-      "statements": [
-        {
-          "text": "Ở 4 m suất liều là 30 µSv/h.",
-          "answer": true
-        },
-        {
-          "text": "Ở 4 m, muốn liều không quá 20 µSv thì được đứng tối đa 40 phút.",
-          "answer": true
-        },
-        {
-          "text": "Ở 1 m suất liều là 240 µSv/h.",
-          "answer": false
-        },
-        {
-          "text": "Ở 2 m, đứng 10 phút nhận 20 µSv.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ở 1 m suất liều là $120 \\times 4 = 480$ µSv/h; ở 4 m là $120/4 = 30$ µSv/h nên $t = 20/30$ h $= 40$ phút; ở 2 m, 10 phút ($1/6$ h) cho 20 µSv."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "An toàn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Nguồn cho 160 µSv/h tại 1 m. Suất liều tại 2 m là bao nhiêu µSv/h?",
-      "answer": "40",
-      "explanation": "Khoảng cách gấp 2 lần nên suất liều giảm $2^2 = 4$ lần: $160/4 = 40$ µSv/h."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "An toàn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Suất liều 40 µSv/h. Đứng 15 phút thì nhận bao nhiêu µSv?",
-      "answer": "10",
-      "explanation": "$t = 15$ phút $= 0{,}25$ h nên $H = 40 \\times 0{,}25 = 10$ µSv (bài mẫu, bước 2)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "don_vi",
-      "topic": "An toàn phóng xạ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Đổi 0,1 mSv ra µSv.",
-      "answer": "100",
-      "explanation": "$1\\ \\text{mSv} = 1000\\ \\mu\\text{Sv}$ nên $0{,}1\\ \\text{mSv} = 100\\ \\mu\\text{Sv}$ (mục ⭐ Cơ bản)."
+     "text": "Rút ngắn thời gian ở gần nguồn không ảnh hưởng đến liều nhận được.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Ba nguyên tắc: giảm thời gian, tăng khoảng cách, che chắn đủ tốt. Liều kế chỉ ghi nhận liều để so với giới hạn, không làm giảm liều; liều tỉ lệ thuận với thời gian.",
+   "distractorNotes": {
+    "0": "Đứng xa nguồn khi vận hành chính là tăng khoảng cách, làm suất liều giảm theo $1/r^2$, nên phát biểu đúng.",
+    "1": "Liều kế chỉ đo và ghi nhận liều để so với giới hạn, không chặn hay làm yếu tia nên không giảm liều.",
+    "2": "Theo bài, chì là vật liệu chắn tia gamma và tia X, nên đây đúng là vai trò của tấm chắn.",
+    "3": "Liều tỉ lệ thuận với thời gian phơi nhiễm, nên rút ngắn thời gian chắc chắn làm giảm liều."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "An toàn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một bệnh viện có chất thải chứa đồng vị phóng xạ chu kì bán rã ngắn (găng tay, giấy lau), còn một nhà máy điện hạt nhân có thanh nhiên liệu đã dùng là chất thải mức cao. Xét các phát biểu về xử lí chất thải phóng xạ:",
+   "statements": [
+    {
+     "text": "Chất thải được phân loại theo mức phóng xạ và chu kì bán rã.",
+     "answer": true
+    },
+    {
+     "text": "Chất thải chứa đồng vị chu kì ngắn có thể lưu giữ chờ phân rã rồi thải theo quy định.",
+     "answer": true
+    },
+    {
+     "text": "Chất thải mức cao có thể pha loãng với nước rồi xả ra sông.",
+     "answer": false
+    },
+    {
+     "text": "Quy trình xử lí là cách li trước, sau đó mới giảm thể tích và cố định.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ba bước theo thứ tự: giảm thể tích → cố định → cách li. Đồng vị chu kì ngắn lưu chờ phân rã; đồng vị chu kì dài phải cách li lâu dài, không pha loãng rồi xả ra môi trường.",
+   "distractorNotes": {
+    "0": "Bài nêu rõ chất thải được phân loại theo mức phóng xạ và chu kì bán rã, nên phát biểu đúng.",
+    "1": "Đồng vị chu kì ngắn sau khoảng 10 chu kì còn dưới 0,1%, nên lưu giữ chờ phân rã là đúng quy trình.",
+    "2": "Pha loãng không làm mất chất phóng xạ; nó vẫn vào nước rồi tích tụ theo chuỗi thức ăn.",
+    "3": "Đảo thứ tự: phải giảm thể tích, cố định trong khối bền rồi mới đem cách li."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một học sinh lập bảng so sánh liều hấp thụ $D$ và liều tương đương $H$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Liều hấp thụ là năng lượng mô hấp thụ trên mỗi kilôgam, đơn vị Gy.",
+     "answer": true
+    },
+    {
+     "text": "Gy và Sv là hai tên gọi của cùng một đại lượng.",
+     "answer": false
+    },
+    {
+     "text": "Liều tương đương đo mức nguy hiểm sinh học, đơn vị Sv.",
+     "answer": true
+    },
+    {
+     "text": "Liều hấp thụ phụ thuộc vào hệ số chất lượng $w_R$ của loại tia.",
+     "answer": false
+    }
+   ],
+   "explanation": "Gy đo năng lượng mô hấp thụ, không phân biệt loại tia; Sv đo mức nguy hiểm, $H = w_R D$ mới phụ thuộc loại tia.",
+   "distractorNotes": {
+    "0": "Đây đúng định nghĩa $D = E/m$ với $1\\ \\text{Gy} = 1\\ \\text{J/kg}$, nên không thể coi là sai.",
+    "1": "Gy đo năng lượng hấp thụ, Sv đo nguy cơ sinh học; hai con số chỉ trùng nhau khi $w_R = 1$.",
+    "2": "Liều tương đương $H = w_R D$ quy mức gây hại về tia X, đơn vị Sv, nên phát biểu đúng.",
+    "3": "Nhầm $D$ với $H$: $w_R$ chỉ xuất hiện trong liều tương đương, còn liều hấp thụ không phân biệt loại tia."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai mẫu mô giống nhau nhận cùng một liều hấp thụ $D$: mẫu thứ nhất do tia alpha, mẫu thứ hai do tia gamma. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hai mẫu có cùng giá trị liều hấp thụ tính theo Gy.",
+     "answer": true
+    },
+    {
+     "text": "Liều tương đương của mẫu chiếu alpha gấp 20 lần mẫu chiếu gamma.",
+     "answer": true
+    },
+    {
+     "text": "Liều tương đương của mẫu chiếu alpha bằng $D$ chia cho 20.",
+     "answer": false
+    },
+    {
+     "text": "Tia gamma có hệ số chất lượng $w_R = 20$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Alpha có $w_R = 20$, gamma có $w_R = 1$; theo $H = w_R D$ thì cùng $D$, mẫu chiếu alpha có $H$ gấp 20 lần.",
+   "distractorNotes": {
+    "0": "Đề cho hai mẫu nhận cùng liều hấp thụ $D$, nên giá trị tính theo Gy bằng nhau.",
+    "1": "Tỉ số liều tương đương bằng tỉ số hệ số chất lượng $20/1$, nên đúng là gấp 20 lần.",
+    "2": "Đảo công thức: phải nhân $D$ với $w_R = 20$, không phải chia.",
+    "3": "Gán nhầm hệ số của alpha cho gamma; gamma, tia X và beta có $w_R = 1$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: đặt ống Geiger cách một nguồn gamma nhỏ lần lượt ở các khoảng cách khác nhau và đo suất liều; lùi xa thì số đếm giảm rất nhanh. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Suất liều tỉ lệ nghịch với bình phương khoảng cách tới nguồn.",
+     "answer": true
+    },
+    {
+     "text": "Lùi từ 1 m ra 2 m thì suất liều giảm một nửa.",
+     "answer": false
+    },
+    {
+     "text": "Lùi từ 2 m ra 4 m thì suất liều giảm 16 lần.",
+     "answer": false
+    },
+    {
+     "text": "Quy luật này do bức xạ từ nguồn điểm trải trên mặt cầu diện tích $4\\pi r^2$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Suất liều tỉ lệ $1/r^2$ vì cùng lượng bức xạ trải trên mặt cầu $4\\pi r^2$. Chia theo tỉ số khoảng cách: xa gấp 2 thì còn $1/4$.",
+   "distractorNotes": {
+    "0": "Số liệu thí nghiệm và lập luận mặt cầu đều cho suất liều tỉ lệ $1/r^2$, nên phát biểu đúng.",
+    "1": "Quên bình phương: xa gấp đôi thì suất liều còn $1/4$, không phải một nửa.",
+    "2": "Bình phương số mét thay vì tỉ số; xa gấp $4/2 = 2$ lần nên suất liều chỉ giảm 4 lần.",
+    "3": "Diện tích mặt cầu $4\\pi r^2$ tăng theo $r^2$ nên mật độ năng lượng giảm theo $1/r^2$; đây đúng là nguồn gốc quy luật."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một kỹ thuật viên đứng ở vị trí cố định gần nguồn phóng xạ; máy đo tại đó hiển thị suất liều $\\dot H$ theo µSv/h. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Suất liều là liều nhận được trong một đơn vị thời gian.",
+     "answer": true
+    },
+    {
+     "text": "Liều nhận được bằng suất liều nhân với thời gian phơi nhiễm.",
+     "answer": true
+    },
+    {
+     "text": "Có thể nhân trực tiếp thời gian tính bằng phút với suất liều theo µSv/h để ra liều theo µSv.",
+     "answer": false
+    },
+    {
+     "text": "Giữ nguyên chỗ đứng, giảm thời gian một nửa thì liều giảm 4 lần.",
+     "answer": false
+    }
+   ],
+   "explanation": "Liều = suất liều × thời gian; suất liều theo µSv/h thì thời gian phải đổi ra giờ. Liều tỉ lệ bậc nhất với thời gian nên giảm nửa thời gian thì liều giảm một nửa.",
+   "distractorNotes": {
+    "0": "Bài định nghĩa suất liều là liều trong một đơn vị thời gian, đo bằng µSv/h, nên phát biểu đúng.",
+    "1": "Quan hệ liều = suất liều × thời gian được nêu trong bài, nên không thể coi là sai.",
+    "2": "Quên đổi đơn vị: suất liều tính theo giờ nên phải đổi phút ra giờ trước khi nhân.",
+    "3": "Áp nhầm bình phương cho thời gian; liều tỉ lệ bậc nhất với thời gian nên chỉ giảm một nửa."
+   }
+  }
+ ]
 }

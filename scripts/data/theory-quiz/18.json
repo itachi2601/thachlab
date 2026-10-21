@@ -1,386 +1,550 @@
 {
-  "lesson_id": 18,
-  "lesson_title": "Bài 17. Hiện tượng phóng xạ",
-  "item_id": 160,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 18,
+ "lesson_title": "Bài 17. Hiện tượng phóng xạ",
+ "item_id": 160,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Hiện tượng phóng xạ. Chu kì bán rã",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phóng xạ là hiện tượng nào sau đây?",
+   "options": [
+    "Hạt nhân không bền tự phát phân rã, phát ra tia phóng xạ và biến thành hạt nhân khác.",
+    "Hạt nhân bền bị kích thích từ bên ngoài, phát ra tia phóng xạ và giữ nguyên loại hạt nhân.",
+    "Nguyên tử mất electron lớp ngoài khi bị nung nóng, phát ra tia phóng xạ ra môi trường.",
+    "Hạt nhân không bền chỉ phân rã khi được chiếu sáng, phát ra tia rồi biến thành hạt nhân khác."
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, phóng xạ là hiện tượng hạt nhân không bền tự phát phân rã, phát ra tia phóng xạ và biến thành hạt nhân khác.",
+   "distractorNotes": {
+    "B": "Phóng xạ không cần kích thích từ ngoài: hạt nhân không bền tự phân rã rồi biến thành hạt nhân khác.",
+    "C": "Lẫn phóng xạ với sự mất electron ở lớp vỏ; phóng xạ xảy ra trong hạt nhân và không cần nung nóng.",
+    "D": "Gán thêm điều kiện chiếu sáng là sai, vì phân rã tự phát, không cần bất kì kích thích bên ngoài nào."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Hiện tượng phóng xạ. Chu kì bán rã",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Một mẫu phóng xạ đặt trước ống đếm Geiger. Lần lượt ngâm mẫu vào nước đá rồi đun nóng mẫu. Nhịp đếm trung bình của ống đếm",
+   "options": [
+    "giảm khi làm lạnh, tăng khi đun nóng.",
+    "tăng khi làm lạnh, giảm khi đun nóng.",
+    "gần như không đổi trong cả hai trường hợp.",
+    "dừng hẳn khi làm lạnh, tăng khi đun nóng."
+   ],
+   "answer": 2,
+   "explanation": "Phóng xạ xảy ra bên trong hạt nhân, không chịu tác động của nhiệt độ, áp suất hay trạng thái hoá học, nên nhịp đếm trung bình giữ nguyên.",
+   "distractorNotes": {
+    "A": "Coi phân rã như phản ứng hoá học, nóng thì nhanh lạnh thì chậm, trong khi nhiệt độ không với tới hạt nhân.",
+    "B": "Tưởng làm lạnh làm hạt nhân co lại nên phân rã nhanh hơn, nhưng nhiệt độ không ảnh hưởng tới tốc độ phân rã.",
+    "D": "Nghĩ lạnh sâu sẽ làm phân rã dừng, quên rằng phóng xạ tự phát và không chịu tác động của nhiệt độ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Các tia phóng xạ α, β, γ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tia $\\alpha$ là dòng các",
+   "options": [
+    "electron $^0_{-1}e$.",
+    "hạt nhân heli $^4_2\\text{He}$.",
+    "positron $^0_1e$.",
+    "photon năng lượng cao."
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, tia $\\alpha$ là dòng hạt nhân heli $^4_2\\text{He}$, mang điện dương.",
+   "distractorNotes": {
+    "A": "Nhầm với dòng electron của tia $\\beta^-$ mang điện âm, trong khi hạt $\\alpha$ mang điện dương.",
+    "C": "Nhầm với positron của tia $\\beta^+$, trong khi hạt $\\alpha$ là hạt nhân heli nặng, mang $+2e$.",
+    "D": "Nhầm với photon không mang điện của tia $\\gamma$, trong khi hạt $\\alpha$ là hạt nhân mang điện dương."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Các tia phóng xạ α, β, γ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cho các tia phóng xạ đi vào điện trường đều giữa hai bản kim loại tích điện trái dấu. Tia nào không bị lệch?",
+   "options": [
+    "Tia $\\alpha$.",
+    "Tia $\\beta^-$.",
+    "Tia $\\beta^+$.",
+    "Tia $\\gamma$."
+   ],
+   "answer": 3,
+   "explanation": "Tia $\\gamma$ là sóng điện từ, không mang điện nên không bị lực điện làm lệch.",
+   "distractorNotes": {
+    "A": "Quên rằng hạt $\\alpha$ mang điện $+2e$ nên chịu lực điện và lệch về bản âm.",
+    "B": "Quên rằng electron mang điện âm nên bị lực điện kéo lệch về bản dương.",
+    "C": "Quên rằng positron mang điện dương nên bị lực điện kéo lệch về bản âm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Các tia phóng xạ α, β, γ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sắp xếp các tia phóng xạ theo khả năng đâm xuyên tăng dần là",
+   "options": [
+    "$\\alpha$, $\\beta$, $\\gamma$.",
+    "$\\gamma$, $\\beta$, $\\alpha$.",
+    "$\\beta$, $\\alpha$, $\\gamma$.",
+    "$\\alpha$, $\\gamma$, $\\beta$."
+   ],
+   "answer": 0,
+   "explanation": "Tia $\\alpha$ bị một tờ giấy chặn, tia $\\beta$ cần vài mm nhôm, tia $\\gamma$ phải dùng chì hoặc bê tông dày.",
+   "distractorNotes": {
+    "B": "Đảo ngược thứ tự, có thể do lẫn khả năng ion hoá (mạnh nhất ở $\\alpha$) với khả năng đâm xuyên.",
+    "C": "Xếp $\\alpha$ đâm xuyên mạnh hơn $\\beta$ là sai, vì một tờ giấy đã chặn được tia $\\alpha$.",
+    "D": "Đặt $\\gamma$ trước $\\beta$ là sai, vì tia $\\gamma$ đâm xuyên mạnh nhất, phải dùng chì hoặc bê tông dày mới chặn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chu kì bán rã $T$ của một chất phóng xạ là thời gian để",
+   "options": [
+    "toàn bộ số hạt nhân của mẫu phân rã hết.",
+    "số hạt nhân của mẫu giảm đi $e$ lần.",
+    "một nửa số hạt nhân của mẫu bị phân rã.",
+    "một hạt nhân bất kì chắc chắn phân rã."
+   ],
+   "answer": 2,
+   "explanation": "Theo bài, chu kì bán rã là thời gian để một nửa số hạt nhân của mẫu chất phóng xạ phân rã.",
+   "distractorNotes": {
+    "A": "Bỏ qua nghĩa chữ \"bán\": sau $T$ chỉ một nửa phân rã, và theo hàm mũ mẫu không bao giờ hết hẳn.",
+    "B": "Giảm $e$ lần ứng với thời gian $1/\\lambda$; định nghĩa $T$ dùng mốc giảm 2 lần, không phải $e$ lần.",
+    "D": "Với một hạt nhân riêng lẻ, $T$ chỉ là xác suất $50\\%$ đã phân rã, không có thời điểm phân rã chắc chắn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Độ phóng xạ và bài toán xác định tuổi",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Chia một mẫu chất phóng xạ thành hai phần bằng nhau. So với mẫu ban đầu, mỗi phần có",
+   "options": [
+    "độ phóng xạ giảm một nửa, chu kì bán rã giảm một nửa.",
+    "độ phóng xạ giảm một nửa, chu kì bán rã không đổi.",
+    "độ phóng xạ không đổi, chu kì bán rã giảm một nửa.",
+    "độ phóng xạ không đổi, chu kì bán rã không đổi."
+   ],
+   "answer": 1,
+   "explanation": "$H = \\lambda N$ nên $N$ giảm một nửa thì $H$ giảm một nửa; còn $T$ chỉ phụ thuộc loại hạt nhân, không phụ thuộc lượng chất.",
+   "distractorNotes": {
+    "A": "Cho rằng $T$ phụ thuộc lượng chất là sai; $T$ là hằng số đặc trưng của loại hạt nhân.",
+    "C": "Đảo vai trò hai đại lượng: $H = \\lambda N$ phụ thuộc lượng chất, còn $T$ thì không.",
+    "D": "Quên $H = \\lambda N$ tỉ lệ với số hạt đang có, nên chia đôi mẫu thì $H$ cũng giảm một nửa."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Độ phóng xạ và bài toán xác định tuổi",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Độ phóng xạ $H$ của một lượng chất phóng xạ là",
+   "options": [
+    "thời gian để một nửa số hạt nhân phân rã.",
+    "số hạt nhân còn lại sau một chu kì bán rã.",
+    "mức nguy hiểm của tia phóng xạ đối với cơ thể.",
+    "số hạt nhân phân rã trong một giây."
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, độ phóng xạ là số hạt nhân phân rã trong một giây, đo mức phóng xạ mạnh hay yếu.",
+   "distractorNotes": {
+    "A": "Nhầm độ phóng xạ với chu kì bán rã; $H$ là số phân rã mỗi giây, không phải một khoảng thời gian.",
+    "B": "Nhầm độ phóng xạ với số hạt còn lại; $H$ là tốc độ phân rã, tính bằng số phân rã mỗi giây.",
+    "C": "Hiểu sai ý nghĩa: độ phóng xạ chỉ đo mức phóng xạ mạnh hay yếu, không đo mức nguy hiểm với cơ thể."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ thức liên hệ giữa hằng số phóng xạ $\\lambda$ và chu kì bán rã $T$ là",
+   "options": [
+    "$\\lambda = \\dfrac{\\ln 2}{T}$.",
+    "$\\lambda = T\\ln 2$.",
+    "$\\lambda = \\dfrac{T}{\\ln 2}$.",
+    "$\\lambda = \\dfrac{1}{2T}$."
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, $\\lambda = \\dfrac{\\ln 2}{T} = \\dfrac{0{,}693}{T}$, đơn vị $1/\\text{s}$.",
+   "distractorNotes": {
+    "B": "Nhân với $T$ cho đơn vị giây, trái với đơn vị $1/\\text{s}$ của $\\lambda$; $\\lambda$ phải tỉ lệ nghịch với $T$.",
+    "C": "Đảo tử và mẫu: phải lấy $\\ln 2$ chia cho $T$, không phải $T$ chia cho $\\ln 2$.",
+    "D": "Hiểu \"một nửa\" thành hệ số $1/2$, quên rằng $2^{-t/T} = e^{-\\lambda t}$ nên trong $\\lambda$ phải có $\\ln 2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một mẫu ban đầu có $N_0$ hạt nhân phóng xạ, chu kì bán rã $T$. Số hạt nhân còn lại sau thời gian $t$ là",
+   "options": [
+    "$N_0\\,2^{t/T}$.",
+    "$N_0\\left(1-2^{-t/T}\\right)$.",
+    "$N_0\\,2^{-t/T}$.",
+    "$N_0\\,e^{-t/\\lambda}$."
+   ],
+   "answer": 2,
+   "explanation": "Định luật phóng xạ: $N_t = N_0\\,2^{-t/T} = N_0\\,e^{-\\lambda t}$, số hạt nhân giảm theo hàm mũ.",
+   "distractorNotes": {
+    "A": "Thiếu dấu trừ ở số mũ khiến số hạt nhân tăng theo thời gian, trái với bản chất phân rã.",
+    "B": "Nhầm số hạt còn lại với số hạt đã phân rã $\\Delta N = N_0(1-2^{-t/T})$.",
+    "D": "Đặt sai vị trí $\\lambda$ trong số mũ; dạng đúng là $e^{-\\lambda t}$, với $\\lambda t$ không thứ nguyên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Độ phóng xạ và bài toán xác định tuổi",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị curi (Ci) của độ phóng xạ có giá trị",
+   "options": [
+    "$1\\ \\text{Ci} = 1\\ \\text{Bq}$.",
+    "$1\\ \\text{Ci} = 3{,}7.10^{10}\\ \\text{Bq}$.",
+    "$1\\ \\text{Ci} = 3{,}7.10^{-10}\\ \\text{Bq}$.",
+    "$1\\ \\text{Ci} = 3{,}7.10^{10}$ phân rã/phút."
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, $1\\ \\text{Ci} = 3{,}7.10^{10}\\ \\text{Bq}$, với $1\\ \\text{Bq}$ là 1 phân rã mỗi giây.",
+   "distractorNotes": {
+    "A": "Lẫn curi với becơren; theo định nghĩa, curi lớn hơn becơren rất nhiều lần.",
+    "C": "Đổi sai chiều luỹ thừa: curi là đơn vị lớn nên chứa rất nhiều becơren, không phải một phần nhỏ của Bq.",
+    "D": "Nhầm đơn vị thời gian: becơren là một phân rã mỗi giây, không phải mỗi phút."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sau thời gian $t = 3T$ ($T$ là chu kì bán rã), số hạt nhân phóng xạ còn lại bằng bao nhiêu phần trăm số hạt nhân ban đầu?",
+   "options": [
+    "$87{,}5\\%$.",
+    "$33{,}3\\%$.",
+    "$25\\%$.",
+    "$12{,}5\\%$."
+   ],
+   "answer": 3,
+   "explanation": "Mỗi chu kì còn một nửa, sau 3 chu kì còn $1/2^3 = 1/8 = 12{,}5\\%$.",
+   "distractorNotes": {
+    "A": "Nhầm phần đã phân rã sau $3T$ với phần còn lại mà đề hỏi.",
+    "B": "Chia tuyến tính cho 3 thay vì lấy $1/2^3$, trong khi số hạt giảm theo hàm mũ.",
+    "C": "Mới tính 2 chu kì; sau $3T$ phải chia thêm cho 2 một lần nữa."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Các tia phóng xạ α, β, γ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hạt nhân $^A_Z X$ phóng xạ $\\beta^-$. Hạt nhân con là",
+   "options": [
+    "$^A_{Z+1}Y$.",
+    "$^A_{Z-1}Y$.",
+    "$^{A-4}_{Z-2}Y$.",
+    "$^{A-1}_{Z+1}Y$."
+   ],
+   "answer": 0,
+   "explanation": "$^A_Z X \\to\\ ^A_{Z+1}Y + ^0_{-1}e$: số khối giữ nguyên, $Z$ tăng 1, hạt nhân con tiến 1 ô.",
+   "distractorNotes": {
+    "B": "Nhầm với phân rã $\\beta^+$; electron mang điện $-1$ nên để bảo toàn điện tích thì $Z$ phải tăng 1.",
+    "C": "Nhầm với phân rã $\\alpha$; electron có số khối 0 nên $A$ không giảm 4.",
+    "D": "Cho $A$ giảm 1 là sai vì electron có số khối bằng 0, số khối hạt nhân con giữ nguyên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Độ phóng xạ và bài toán xác định tuổi",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Liên hệ giữa độ phóng xạ $H$, hằng số phóng xạ $\\lambda$ và số hạt nhân $N$ đang có là",
+   "options": [
+    "$H = \\dfrac{N}{\\lambda}$.",
+    "$H = \\lambda N$.",
+    "$H = \\dfrac{\\lambda}{N}$.",
+    "$H = \\dfrac{N}{T}$."
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, tại thời điểm đang xét $H = \\lambda N$, ban đầu $H_0 = \\lambda N_0$.",
+   "distractorNotes": {
+    "A": "Đưa $\\lambda$ xuống mẫu số là sai; $H$ (phân rã/s) phải bằng $N$ nhân với $\\lambda$ có đơn vị $1/\\text{s}$.",
+    "C": "Cho $H$ tỉ lệ nghịch với $N$ là sai, vì càng nhiều hạt nhân thì số phân rã mỗi giây càng lớn.",
+    "D": "Thiếu hệ số $\\ln 2$ do coi $\\lambda = 1/T$, trong khi đúng phải là $\\lambda = \\ln 2/T$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Hiện tượng phóng xạ. Chu kì bán rã",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đặt một nguồn phóng xạ yếu trước ống đếm Geiger, đếm số xung trong từng phút liên tiếp 5 lần, sau đó đưa nguồn ra xa để đo phông nền. Năm số đếm khác nhau nhưng dao động quanh một giá trị trung bình.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Các tia phóng xạ α, β, γ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hiện tượng phóng xạ là hiện tượng:",
-      "options": [
-        "hạt nhân bị neutron bắn vào rồi vỡ làm đôi",
-        "hạt nhân nhẹ kết hợp thành hạt nhân nặng hơn ở nhiệt độ cao",
-        "hạt nhân không bền tự phát phân rã, phát ra tia phóng xạ và biến thành hạt nhân khác",
-        "nguyên tử phát sáng khi electron chuyển mức"
-      ],
-      "answer": 2,
-      "explanation": "Phóng xạ là phân rã tự phát của hạt nhân không bền, không cần kích thích."
+     "text": "Năm số đếm khác nhau chủ yếu do phóng xạ là quá trình ngẫu nhiên.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Các tia phóng xạ α, β, γ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Yếu tố nào sau đây làm thay đổi nhịp phân rã của một mẫu phóng xạ?",
-      "options": [
-        "Không yếu tố bên ngoài nào (nhiệt độ, áp suất, trạng thái hoá học đều vô hiệu)",
-        "Nung mẫu lên nhiệt độ rất cao",
-        "Nhúng mẫu vào nitơ lỏng",
-        "Nén mẫu dưới áp suất lớn"
-      ],
-      "answer": 0,
-      "explanation": "Phân rã xảy ra bên trong hạt nhân nên điều kiện bên ngoài không tác động được."
+     "text": "Năm số đếm khác nhau chứng tỏ ống đếm bị hỏng, cần thay máy khác.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Các tia phóng xạ α, β, γ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tia $\\alpha$ là dòng:",
-      "options": [
-        "electron $^0_{-1}e$",
-        "hạt nhân heli $^4_2\\text{He}$",
-        "photon bước sóng rất ngắn",
-        "positron $^0_1e$"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu tia $\\alpha$ là hạt nhân heli, mang điện dương nên lệch về bản âm."
+     "text": "Muốn có số đếm do nguồn gây ra phải trừ đi số đếm phông nền.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Các tia phóng xạ α, β, γ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khi bay qua điện trường đều giữa hai bản tụ, tia nào không bị lệch?",
-      "options": [
-        "Tia $\\alpha$",
-        "Tia $\\beta^-$",
-        "Tia $\\beta^+$",
-        "Tia $\\gamma$"
-      ],
-      "answer": 3,
-      "explanation": "Tia $\\gamma$ là sóng điện từ, không mang điện nên bay thẳng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Định luật phóng xạ và chu kì bán rã",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Chu kì bán rã $T$ của một chất phóng xạ là:",
-      "options": [
-        "thời gian để toàn bộ số hạt nhân của mẫu phân rã hết",
-        "thời gian để độ phóng xạ tăng gấp đôi",
-        "thời gian để một nửa số hạt nhân của mẫu phân rã",
-        "số hạt nhân phân rã trong một giây"
-      ],
-      "answer": 2,
-      "explanation": "$T$ là thời gian còn một nửa; số phân rã mỗi giây là độ phóng xạ."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Các tia phóng xạ α, β, γ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhận định nào sau đây về các tia phóng xạ là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tia $\\alpha$ đâm xuyên kém nhất, một tờ giấy đã chặn được.",
-          "answer": true
-        },
-        {
-          "text": "Tia $\\beta^-$ lệch về phía bản âm của tụ điện.",
-          "answer": false
-        },
-        {
-          "text": "Tia $\\gamma$ là sóng điện từ, không mang điện.",
-          "answer": true
-        },
-        {
-          "text": "Tia $\\beta^+$ là dòng positron mang điện dương.",
-          "answer": true
-        }
-      ],
-      "explanation": "Tia $\\beta^-$ là electron nên lệch về bản dương."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Định luật phóng xạ và chu kì bán rã",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về chu kì bán rã và độ phóng xạ, nhận định nào đúng hay sai?",
-      "statements": [
-        {
-          "text": "Sau đúng một chu kì bán rã thì mẫu phân rã hết.",
-          "answer": false
-        },
-        {
-          "text": "Chu kì bán rã không phụ thuộc lượng chất.",
-          "answer": true
-        },
-        {
-          "text": "Chia mẫu làm đôi thì độ phóng xạ của mỗi phần giảm một nửa.",
-          "answer": true
-        },
-        {
-          "text": "Chia mẫu làm đôi thì chu kì bán rã của mỗi phần giảm một nửa.",
-          "answer": false
-        }
-      ],
-      "explanation": "$T$ chỉ phụ thuộc loại hạt nhân; $H=\\lambda N$ giảm theo số hạt."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_luat",
-      "topic": "Các tia phóng xạ α, β, γ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sau phân rã $\\alpha$, hạt nhân con lùi bao nhiêu ô trong bảng tuần hoàn?",
-      "answer": "2",
-      "explanation": "Phân rã $\\alpha$: $Z$ giảm 2 nên hạt nhân con lùi 2 ô."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_luat",
-      "topic": "Các tia phóng xạ α, β, γ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sau phân rã $\\alpha$, số khối $A$ của hạt nhân con giảm đi bao nhiêu?",
-      "answer": "4",
-      "explanation": "Hạt $\\alpha$ là $^4_2\\text{He}$ nên $A$ giảm 4."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Định luật phóng xạ và chu kì bán rã",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sau đúng một chu kì bán rã, số hạt nhân còn lại chiếm bao nhiêu phần trăm số hạt ban đầu?",
-      "answer": "50",
-      "explanation": "Sau mỗi chu kì còn một nửa, tức $50\\%$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Định luật phóng xạ và chu kì bán rã",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Số hạt nhân còn lại của chất phóng xạ sau thời gian $t$ là:",
-      "options": [
-        "$N_t=N_0\\,2^{t/T}$",
-        "$N_t=N_0\\,2^{-T/t}$",
-        "$N_t=N_0\\,2^{-t/T}$",
-        "$N_t=N_0\\left(1-2^{-t/T}\\right)$"
-      ],
-      "answer": 2,
-      "explanation": "Số hạt còn lại giảm theo hàm mũ; $N_0(1-2^{-t/T})$ là số hạt đã phân rã."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Định luật phóng xạ và chu kì bán rã",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hằng số phóng xạ $\\lambda$ liên hệ với chu kì bán rã $T$ bằng:",
-      "options": [
-        "$\\lambda=\\dfrac{\\ln 2}{T}$",
-        "$\\lambda=\\ln 2\\cdot T$",
-        "$\\lambda=\\dfrac{T}{\\ln 2}$",
-        "$\\lambda=\\dfrac{1}{T}$"
-      ],
-      "answer": 0,
-      "explanation": "Bài cho $\\lambda=\\ln2/T=0{,}693/T$, đơn vị $1/\\text{s}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật phóng xạ và chu kì bán rã",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Chất phóng xạ có $T=8$ ngày. Sau $24$ ngày, số hạt nhân còn lại chiếm:",
-      "options": [
-        "$87{,}5\\%$",
-        "$25\\%$",
-        "$50\\%$",
-        "$12{,}5\\%$"
-      ],
-      "answer": 3,
-      "explanation": "$t/T=3$ nên còn $1/2^3=12{,}5\\%$; $87{,}5\\%$ là phần đã phân rã."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Độ phóng xạ và bài toán xác định tuổi",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Độ phóng xạ $H$ liên hệ với số hạt nhân $N$ và hằng số phóng xạ $\\lambda$ bằng:",
-      "options": [
-        "$H=N/\\lambda$",
-        "$H=\\lambda N$",
-        "$H=\\lambda/N$",
-        "$H=N\\,T$"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu $H=\\lambda N$ và $H_0=\\lambda N_0$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Độ phóng xạ và bài toán xác định tuổi",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hệ thức đổi giữa curi và becơren là:",
-      "options": [
-        "$1\\ \\text{Ci}=3{,}7\\cdot10^{10}\\ \\text{Bq}$",
-        "$1\\ \\text{Ci}=3{,}7\\cdot10^{-10}\\ \\text{Bq}$",
-        "$1\\ \\text{Ci}=10^{11}\\ \\text{Bq}$",
-        "$1\\ \\text{Ci}=1\\ \\text{Bq}$"
-      ],
-      "answer": 0,
-      "explanation": "Curi lớn hơn becơren rất nhiều; $1\\ \\text{Bq}$ là một phân rã mỗi giây."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Định luật phóng xạ và chu kì bán rã",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về các công thức của định luật phóng xạ, nhận định nào đúng hay sai?",
-      "statements": [
-        {
-          "text": "$N_t=N_0\\,e^{-\\lambda t}$.",
-          "answer": true
-        },
-        {
-          "text": "Số hạt đã phân rã là $\\Delta N=N_0\\left(1-2^{-t/T}\\right)$.",
-          "answer": true
-        },
-        {
-          "text": "$m_t=m_0\\,2^{-t/T}$.",
-          "answer": true
-        },
-        {
-          "text": "$H_t=H_0\\,2^{t/T}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Độ phóng xạ giảm theo $H_t=H_0\\,2^{-t/T}$, cùng quy luật với $N$ và $m$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Các tia phóng xạ α, β, γ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về phương trình phân rã, nhận định nào đúng hay sai?",
-      "statements": [
-        {
-          "text": "Phân rã $\\alpha$: $A$ giảm 4, $Z$ giảm 2.",
-          "answer": true
-        },
-        {
-          "text": "Phân rã $\\beta^-$: $A$ giữ nguyên, $Z$ tăng 1.",
-          "answer": true
-        },
-        {
-          "text": "Phân rã $\\beta^+$: $A$ giữ nguyên, $Z$ tăng 1.",
-          "answer": false
-        },
-        {
-          "text": "Phát tia $\\gamma$: hạt nhân không đổi ô, chỉ mất năng lượng.",
-          "answer": true
-        }
-      ],
-      "explanation": "Phân rã $\\beta^+$ làm $Z$ giảm 1 (hạt nhân con lùi 1 ô)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật phóng xạ và chu kì bán rã",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Mẫu Na-24 có $T=15$ giờ. Sau $60$ giờ, số hạt nhân còn lại bằng $1/k$ số hạt ban đầu. Tìm $k$.",
-      "answer": "16",
-      "explanation": "$t/T=4$ nên còn $N_0/2^4=N_0/16$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Độ phóng xạ và bài toán xác định tuổi",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nguồn có độ phóng xạ $7{,}4\\cdot10^{10}\\ \\text{Bq}$. Đổi ra curi được bao nhiêu Ci?",
-      "answer": "2",
-      "explanation": "$7{,}4\\cdot10^{10}/3{,}7\\cdot10^{10}=2\\ \\text{Ci}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật phóng xạ và chu kì bán rã",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Mẫu I-131 có $T=8$ ngày, khối lượng ban đầu $80\\ \\text{g}$. Sau $24$ ngày còn bao nhiêu gam?",
-      "answer": "10",
-      "explanation": "$t/T=3$ nên $m=80/2^3=10\\ \\text{g}$."
+     "text": "Nếu đun nóng nguồn thì nhịp đếm trung bình sẽ tăng rõ rệt.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Phóng xạ ngẫu nhiên nên số đếm từng phút thăng giáng thống kê dù máy tốt; phải trừ phông nền; nhiệt độ không ảnh hưởng tới phân rã.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì tính ngẫu nhiên của phóng xạ gây thăng giáng thống kê, đây là nguồn lệch chính.",
+    "1": "Không thể coi là đúng vì số đếm dao động quanh trung bình là thăng giáng thống kê, máy tốt vẫn xảy ra.",
+    "2": "Không thể coi là sai vì phông nền luôn tồn tại, quên trừ thì số đếm của nguồn bị cao.",
+    "3": "Không thể coi là đúng vì phân rã xảy ra trong hạt nhân, nhiệt độ không làm thay đổi nhịp đếm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Các tia phóng xạ α, β, γ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cho các chùm tia $\\alpha$, $\\beta^-$, $\\beta^+$, $\\gamma$ lần lượt bay vào điện trường đều giữa hai bản kim loại tích điện trái dấu.",
+   "statements": [
+    {
+     "text": "Tia $\\alpha$ bị lệch về phía bản âm.",
+     "answer": true
+    },
+    {
+     "text": "Tia $\\beta^-$ bị lệch về phía bản âm.",
+     "answer": false
+    },
+    {
+     "text": "Tia $\\gamma$ đi thẳng vì không mang điện.",
+     "answer": true
+    },
+    {
+     "text": "Tia $\\beta^+$ bị lệch về phía bản dương.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hạt mang điện dương ($\\alpha$, $\\beta^+$) lệch về bản âm, electron ($\\beta^-$) lệch về bản dương, $\\gamma$ không mang điện nên không lệch.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì hạt $\\alpha$ mang điện dương nên bị lực điện kéo về bản âm.",
+    "1": "Không thể coi là đúng vì electron mang điện âm nên bị kéo lệch về bản dương.",
+    "2": "Không thể coi là sai vì $\\gamma$ là sóng điện từ không mang điện, nên không chịu lực điện.",
+    "3": "Không thể coi là đúng vì positron mang điện dương nên lệch về bản âm, giống hạt $\\alpha$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một mẫu chất phóng xạ có chu kì bán rã $T$, hằng số phóng xạ $\\lambda$; ban đầu có $N_0$ hạt nhân, khối lượng $m_0$, độ phóng xạ $H_0$.",
+   "statements": [
+    {
+     "text": "Khối lượng chất phóng xạ còn lại sau thời gian $t$ là $m_t = m_0\\,2^{-t/T}$.",
+     "answer": true
+    },
+    {
+     "text": "Số hạt nhân đã phân rã sau thời gian $t$ là $\\Delta N = N_0\\,2^{-t/T}$.",
+     "answer": false
+    },
+    {
+     "text": "Độ phóng xạ sau thời gian $t$ là $H_t = H_0\\,e^{-\\lambda t}$.",
+     "answer": true
+    },
+    {
+     "text": "Sau thời gian $2T$, số hạt nhân đã phân rã bằng $25\\%$ số hạt ban đầu.",
+     "answer": false
+    }
+   ],
+   "explanation": "$N$, $m$, $H$ cùng giảm theo $2^{-t/T} = e^{-\\lambda t}$; phần đã phân rã là $N_0(1-2^{-t/T})$, sau $2T$ đã phân rã $75\\%$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì khối lượng chất mẹ tỉ lệ với số hạt nhân nên giảm cùng quy luật $2^{-t/T}$.",
+    "1": "Không thể coi là đúng vì $N_0\\,2^{-t/T}$ là số hạt còn lại; số đã phân rã là $N_0(1-2^{-t/T})$.",
+    "2": "Không thể coi là sai vì $2^{-t/T}$ và $e^{-\\lambda t}$ là một khi $\\lambda = \\ln 2/T$.",
+    "3": "Không thể coi là đúng vì $25\\%$ là phần còn lại sau $2T$; phần đã phân rã là $75\\%$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Các tia phóng xạ α, β, γ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hạt nhân $^{238}_{92}\\text{U}$ phóng xạ $\\alpha$ tạo thành hạt nhân con $Y$.",
+   "statements": [
+    {
+     "text": "Hạt nhân con có số khối $A = 234$.",
+     "answer": true
+    },
+    {
+     "text": "Hạt nhân con có số proton $Z = 94$.",
+     "answer": false
+    },
+    {
+     "text": "Hạt nhân con lùi 2 ô trong bảng tuần hoàn so với urani.",
+     "answer": true
+    },
+    {
+     "text": "Nếu sau đó hạt nhân con phát tia $\\gamma$ thì số khối của nó giảm thêm.",
+     "answer": false
+    }
+   ],
+   "explanation": "$^{238}_{92}\\text{U} \\to\\ ^{234}_{90}Y + ^4_2\\text{He}$: $A$ giảm 4, $Z$ giảm 2, con lùi 2 ô; tia $\\gamma$ không làm đổi $A$ và $Z$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì hạt $\\alpha$ mang đi số khối 4, nên $A = 238 - 4 = 234$.",
+    "1": "Không thể coi là đúng vì hạt $\\alpha$ mang điện $+2$ nên $Z$ phải giảm còn 90, không tăng.",
+    "2": "Không thể coi là sai vì $Z$ giảm 2 nghĩa là hạt nhân con lùi 2 ô trong bảng tuần hoàn.",
+    "3": "Không thể coi là đúng vì tia $\\gamma$ chỉ mang năng lượng đi, $A$ và $Z$ của hạt nhân giữ nguyên."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Độ phóng xạ và bài toán xác định tuổi",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét một mẫu chất phóng xạ có độ phóng xạ $H = \\lambda N$, với $\\lambda = \\dfrac{\\ln 2}{T}$.",
+   "statements": [
+    {
+     "text": "$1\\ \\text{Bq}$ bằng 1 phân rã mỗi giây.",
+     "answer": true
+    },
+    {
+     "text": "Đổi độ phóng xạ từ Bq sang Ci thì con số thu được lớn hơn.",
+     "answer": false
+    },
+    {
+     "text": "Cùng một chất, nếu số hạt nhân $N$ tăng gấp đôi thì $H$ tăng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Hai chất có cùng $N$, chất có $T$ lớn gấp đôi thì có $H$ lớn gấp đôi.",
+     "answer": false
+    }
+   ],
+   "explanation": "$H = \\lambda N = \\dfrac{\\ln 2}{T}N$ nên $H$ tỉ lệ thuận với $N$, tỉ lệ nghịch với $T$; curi lớn hơn becơren nên đổi sang Ci con số nhỏ đi.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì becơren được định nghĩa đúng bằng 1 phân rã mỗi giây.",
+    "1": "Không thể coi là đúng vì curi là đơn vị lớn hơn becơren rất nhiều, nên đổi sang Ci con số nhỏ đi.",
+    "2": "Không thể coi là sai vì cùng chất thì $\\lambda$ không đổi, nên $H = \\lambda N$ tỉ lệ thuận với $N$.",
+    "3": "Không thể coi là đúng vì $\\lambda$ tỉ lệ nghịch với $T$, nên $T$ gấp đôi thì $H$ giảm một nửa."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Trong y học dùng mẫu $^{24}_{11}\\text{Na}$ phóng xạ $\\beta^-$ với chu kì bán rã $T = 15$ giờ; ban đầu mẫu có $N_0$ hạt nhân và độ phóng xạ $H_0$.",
+   "statements": [
+    {
+     "text": "Hạt nhân con tạo thành là $^{24}_{12}\\text{Mg}$.",
+     "answer": true
+    },
+    {
+     "text": "Sau 45 giờ, số hạt nhân Na còn lại bằng $N_0/8$.",
+     "answer": true
+    },
+    {
+     "text": "Sau 45 giờ, độ phóng xạ của mẫu còn bằng $H_0/3$.",
+     "answer": false
+    },
+    {
+     "text": "Hằng số phóng xạ của Na-24 có đơn vị là giây (s).",
+     "answer": false
+    }
+   ],
+   "explanation": "Phân rã $\\beta^-$ giữ $A$, tăng $Z$ thành Mg-24; 45 giờ $= 3T$ nên $N$ và $H$ đều chia cho $2^3 = 8$; $\\lambda = \\ln 2/T$ có đơn vị $1/\\text{s}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì phân rã $\\beta^-$ giữ $A = 24$ và tăng $Z$ từ 11 lên 12, tức là magie.",
+    "1": "Không thể coi là sai vì $45/15 = 3$ chu kì, nên số hạt còn lại là $N_0/2^3$.",
+    "2": "Không thể coi là đúng vì $H$ giảm theo $2^{-t/T}$, sau 3 chu kì còn $H_0/8$, không giảm tuyến tính.",
+    "3": "Không thể coi là đúng vì $\\lambda = \\ln 2/T$ là nghịch đảo thời gian, đơn vị $1/\\text{s}$."
+   }
+  }
+ ]
 }

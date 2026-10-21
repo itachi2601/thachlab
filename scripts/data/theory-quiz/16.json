@@ -2,8 +2,8 @@
  "lesson_id": 16,
  "lesson_title": "Bài 15. Năng lượng liên kết hạt nhân",
  "item_id": 147,
- "generated_at": "2026-10-05",
- "generated_by": "claude-code",
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
@@ -16,371 +16,535 @@
  "questions": [
   {
    "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
+   "kind": "dinh_nghia",
+   "topic": "Độ hụt khối. Năng lượng liên kết hạt nhân",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Các prôtôn trong hạt nhân đẩy nhau. Vì sao hạt nhân vẫn đứng vững?",
+   "theorySection": 1,
+   "question": "Lực hạt nhân là",
    "options": [
-    "Vì lực hấp dẫn giữa các prôtôn lớn hơn lực đẩy",
-    "Vì êlectron ở vỏ hút ngược các prôtôn vào trong",
-    "Vì lực hạt nhân hút các nuclôn mạnh hơn hẳn lực đẩy tĩnh điện",
-    "Vì lực đẩy tĩnh điện giữa các prôtôn rất yếu"
+    "lực hút giữa các nuclôn trong hạt nhân",
+    "lực đẩy giữa các nuclôn trong hạt nhân",
+    "lực hút tĩnh điện giữa prôtôn và êlectron",
+    "lực hấp dẫn giữa các nuclôn trong hạt nhân"
    ],
-   "answer": 2,
-   "explanation": "Chỉ lực hạt nhân mới đủ mạnh ở khoảng cách cỡ $10^{-15}$ m để thắng lực đẩy tĩnh điện."
+   "answer": 0,
+   "explanation": "Bài nêu lực hạt nhân là lực hút giữa các nuclôn. Nó không phải lực tĩnh điện, cũng không phải lực hấp dẫn.",
+   "distractorNotes": {
+    "B": "Lực đẩy giữa prôtôn là lực tĩnh điện; lực hạt nhân giữ nuclôn lại nên phải là lực hút.",
+    "C": "Êlectron nằm ở vỏ, cách hạt nhân cỡ $10^{-10}$ m, không tham gia giữ các nuclôn với nhau.",
+    "D": "Lực hấp dẫn giữa nuclôn quá yếu; lực hạt nhân là loại lực riêng, không phải hấp dẫn."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
+   "topic": "Độ hụt khối. Năng lượng liên kết hạt nhân",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Điều nào đúng về lực hạt nhân?",
+   "question": "Bán kính tác dụng của lực hạt nhân vào cỡ",
    "options": [
-    "Lực hút tĩnh điện giữa prôtôn và êlectron",
-    "Lực đẩy giữa các nuclôn, chống lại lực hút tĩnh điện",
-    "Lực hút giữa các nuclôn, tầm tác dụng cỡ $10^{-15}$ m",
-    "Chỉ tác dụng giữa hai prôtôn, không với nơtron"
+    "$10^{-10}$ m",
+    "$10^{-15}$ m",
+    "$10^{-8}$ m",
+    "$10^{-20}$ m"
    ],
-   "answer": 2,
-   "explanation": "Lực hạt nhân hút mọi cặp nuclôn (p–p, p–n, n–n), không phụ thuộc điện tích."
+   "answer": 1,
+   "explanation": "Lực hạt nhân có cường độ rất lớn nhưng tầm tác dụng rất ngắn, cỡ $10^{-15}$ m, tức cỡ kích thước hạt nhân.",
+   "distractorNotes": {
+    "A": "Đây là cỡ kích thước nguyên tử, lớn hơn hạt nhân rất nhiều, không phải tầm lực hạt nhân.",
+    "C": "Khoảng cách này còn lớn hơn cả nguyên tử, trái với tầm tác dụng rất ngắn của lực hạt nhân.",
+    "D": "Khoảng này nhỏ hơn hẳn kích thước hạt nhân; lực hạt nhân tác dụng trong cỡ kích thước hạt nhân."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
+   "topic": "Độ hụt khối. Năng lượng liên kết hạt nhân",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Khối lượng nguyên tử heli-4 đo được nhỏ hơn tổng khối lượng các hạt rời. Phần chênh lệch là:",
+   "question": "Năng lượng liên kết của một hạt nhân là",
    "options": [
-    "Độ hụt khối, phần khối lượng đã chuyển thành năng lượng liên kết",
-    "Khối lượng của các êlectron bị mất đi",
-    "Khối lượng của lực hút giữa các nuclôn",
-    "Sai số phép đo, khối lượng thật phải bằng tổng đó"
-   ],
-   "answer": 0,
-   "explanation": "Khối lượng nguyên tử đã gồm êlectron; chênh lệch lớn hơn sai số hàng nghìn lần, là độ hụt khối thật."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Để so sánh độ bền vững của hai hạt nhân có số nuclôn khác nhau, cần so sánh:",
-   "options": [
-    "Năng lượng liên kết riêng",
-    "Khối lượng hạt nhân",
-    "Năng lượng liên kết",
-    "Độ hụt khối"
-   ],
-   "answer": 0,
-   "explanation": "Năng lượng liên kết tăng theo số nuclôn nên không so được; chia cho $A$ (năng lượng liên kết riêng) mới so được độ bền."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hạt nhân bền vững nhất nằm quanh nguyên tố nào?",
-   "options": [
-    "Hiđrô, vì nhẹ nhất",
-    "Urani-235, vì năng lượng liên kết lớn nhất",
-    "Sắt-56, năng lượng liên kết riêng cỡ $8{,}8$ MeV/nuclôn",
-    "Heli-4, vì chỉ có 4 nuclôn"
+    "năng lượng tối thiểu để tách êlectron khỏi nguyên tử",
+    "năng lượng liên kết tính trung bình cho một nuclôn",
+    "năng lượng tối thiểu để tách hạt nhân thành các nuclôn rời",
+    "năng lượng nghỉ của toàn bộ khối lượng hạt nhân"
    ],
    "answer": 2,
-   "explanation": "Đường cong năng lượng liên kết riêng đạt cực đại quanh sắt-56."
+   "explanation": "Theo bài, năng lượng liên kết là năng lượng tối thiểu để tách hạt nhân thành các nuclôn rời, bằng $\\Delta m c^2$.",
+   "distractorNotes": {
+    "A": "Nhầm với năng lượng ion hoá ở vỏ nguyên tử, không liên quan đến liên kết giữa các nuclôn.",
+    "B": "Năng lượng tính cho một nuclôn là năng lượng liên kết riêng, đã chia thêm cho $A$.",
+    "D": "Năng lượng nghỉ ứng với cả $m_X$, còn năng lượng liên kết chỉ ứng với độ hụt khối $\\Delta m$."
+   }
   },
   {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Xét các phát biểu về độ hụt khối và năng lượng liên kết:",
-   "statements": [
-    {
-     "text": "Năng lượng liên kết là năng lượng tối thiểu để tách hạt nhân thành các nuclôn rời.",
-     "answer": true
-    },
-    {
-     "text": "Khi các nuclôn rời kết hợp thành hạt nhân thì toả năng lượng.",
-     "answer": true
-    },
-    {
-     "text": "Khối lượng hạt nhân luôn lớn hơn tổng khối lượng các nuclôn rời.",
-     "answer": false
-    },
-    {
-     "text": "Phần khối lượng hụt đi đã mất hẳn, không còn tồn tại dưới dạng nào.",
-     "answer": false
-    }
-   ],
-   "explanation": "Tổng nuclôn rời lớn hơn khối lượng hạt nhân; phần hụt chuyển thành năng lượng liên kết theo $E = \\Delta m c^2$."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Xét đường cong năng lượng liên kết riêng:",
-   "statements": [
-    {
-     "text": "Hạt nhân nhẹ có năng lượng liên kết riêng tăng nhanh theo $A$.",
-     "answer": true
-    },
-    {
-     "text": "Cực đại cỡ $8{,}8$ MeV/nuclôn ở vùng $A$ khoảng 50–80.",
-     "answer": true
-    },
-    {
-     "text": "Urani-235 có năng lượng liên kết riêng lớn hơn sắt-56.",
-     "answer": false
-    },
-    {
-     "text": "Hạt nhân rất nặng vỡ ra cũng toả năng lượng.",
-     "answer": true
-    }
-   ],
-   "explanation": "U-235 chỉ còn $7{,}59$ MeV/nuclôn, thấp hơn sắt-56 ($8{,}79$); hai đầu đều toả năng lượng."
-  },
-  {
-   "type": "short_answer",
-   "kind": "hien_tuong",
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
    "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Năng lượng liên kết riêng cực đại cỡ bao nhiêu MeV/nuclôn (quanh sắt-56)?",
-   "answer": "8,8",
-   "explanation": "Bài nêu cực đại cỡ $8{,}8$ MeV/nuclôn."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dieu_kien",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Lực hạt nhân tác dụng trong phạm vi cỡ $10^{n}$ m. Tìm $n$.",
-   "answer": "-15",
-   "explanation": "Tầm lực hạt nhân cỡ $10^{-15}$ m."
-  },
-  {
-   "type": "short_answer",
-   "kind": "hien_tuong",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Năng lượng liên kết hạt nhân lớn hơn năng lượng hoá học cỡ $10^{n}$ lần (\"cả triệu lần\"). Tìm $n$.",
-   "answer": "6",
-   "explanation": "Hoá học cỡ vài eV, hạt nhân cỡ vài MeV, hơn nhau cỡ triệu ($10^6$) lần."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức độ hụt khối của hạt nhân $^A_Z X$ (khối lượng hạt nhân $m_X$) là:",
+   "question": "Hạt nhân càng bền vững khi có",
    "options": [
-    "$\\Delta m = Z m_p + (A - Z) m_n - m_X$",
-    "$\\Delta m = m_X - Z m_p - (A - Z) m_n$",
-    "$\\Delta m = Z m_p + (A - Z) m_n + m_X$",
-    "$\\Delta m = A \\, m_p - m_X$"
-   ],
-   "answer": 0,
-   "explanation": "Độ hụt khối = tổng khối lượng nuclôn rời trừ khối lượng hạt nhân."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Nếu bảng cho khối lượng nguyên tử $m_{\\text{nt}}$ thì độ hụt khối tính bằng:",
-   "options": [
-    "$\\Delta m = Z m_p + (A - Z) m_n - Z m_e - m_{\\text{nt}}$",
-    "$\\Delta m = Z m_p + (A - Z) m_n - m_{\\text{nt}}$",
-    "$\\Delta m = Z m_p + (A - Z) m_n + Z m_e - m_{\\text{nt}}$",
-    "$\\Delta m = m_{\\text{nt}} - Z m_p - (A - Z) m_n$"
-   ],
-   "answer": 2,
-   "explanation": "Khối lượng nguyên tử đã gồm $Z$ êlectron nên phải cộng $Z m_e$ vào tổng các hạt rời."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Một hạt nhân có độ hụt khối $0{,}02$ u. Năng lượng liên kết của nó là:",
-   "options": [
-    "$0{,}02 / 931{,}5 \\approx 2 \\cdot 10^{-5}$ MeV",
-    "$0{,}02 \\times 931{,}5^2 \\approx 1{,}7 \\cdot 10^{4}$ MeV",
-    "$0{,}02$ MeV",
-    "$0{,}02 \\times 931{,}5 = 18{,}6$ MeV"
+    "năng lượng liên kết càng lớn",
+    "số khối càng lớn",
+    "độ hụt khối càng lớn",
+    "năng lượng liên kết riêng càng lớn"
    ],
    "answer": 3,
-   "explanation": "$E_{lk} = \\Delta m \\cdot 931{,}5$ MeV/u $= 18{,}6$ MeV."
+   "explanation": "Bài nêu năng lượng liên kết riêng càng lớn thì hạt nhân càng bền vững; năng lượng liên kết thô phụ thuộc số nuclôn nên không dùng để so độ bền.",
+   "distractorNotes": {
+    "A": "Năng lượng liên kết thô tăng theo số nuclôn nên hạt nhân to có số lớn mà chưa chắc bền.",
+    "B": "Sau vùng sắt, hạt nhân càng nặng thì năng lượng liên kết riêng càng giảm, càng kém bền.",
+    "C": "Độ hụt khối tỉ lệ với năng lượng liên kết toàn phần, cũng lớn theo số nuclôn nên không đo độ bền."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Độ hụt khối. Năng lượng liên kết hạt nhân",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "So với tổng khối lượng các nuclôn rời tạo nên nó, khối lượng của một hạt nhân",
+   "options": [
+    "luôn nhỏ hơn",
+    "luôn lớn hơn",
+    "luôn bằng nhau",
+    "có thể lớn hơn hoặc nhỏ hơn"
+   ],
+   "answer": 0,
+   "explanation": "Tổng khối lượng các nuclôn rời luôn lớn hơn khối lượng hạt nhân. Phần chênh lệch là độ hụt khối $\\Delta m$.",
+   "distractorNotes": {
+    "B": "Hiểu ngược dấu: độ hụt khối dương nghĩa là hạt nhân nhẹ hơn tổng các nuclôn rời.",
+    "C": "Phép đo chính xác cho chênh lệch lớn hơn hẳn sai số đo, đó là hiệu ứng thật.",
+    "D": "Với mọi hạt nhân, tổng nuclôn rời đều lớn hơn khối lượng hạt nhân, không có trường hợp ngược."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Các hạt nhân bền vững nhất có số khối A nằm trong khoảng",
+   "options": [
+    "A nhỏ hơn 10",
+    "A khoảng 50 đến 80",
+    "A lớn hơn 200",
+    "bất kì, mọi hạt nhân bền như nhau"
+   ],
+   "answer": 1,
+   "explanation": "Năng lượng liên kết riêng đạt cực đại cỡ 8,8 MeV/nuclôn ở vùng A khoảng 50–80, quanh sắt-56.",
+   "distractorNotes": {
+    "A": "Hạt nhân rất nhẹ có năng lượng liên kết riêng còn nhỏ, đang tăng nhanh theo $A$.",
+    "C": "Ở vùng nặng, năng lượng liên kết riêng giảm dần nên hạt nhân kém bền hơn vùng giữa.",
+    "D": "Năng lượng liên kết riêng thay đổi theo $A$ và có một đỉnh, nên độ bền các hạt nhân khác nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Độ hụt khối. Năng lượng liên kết hạt nhân",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Khi các nuclôn rời kết hợp lại thành một hạt nhân thì",
+   "options": [
+    "hệ thu vào năng lượng bằng năng lượng liên kết",
+    "hệ không trao đổi năng lượng với bên ngoài",
+    "hệ toả ra năng lượng bằng năng lượng liên kết",
+    "khối lượng của hệ tăng thêm một lượng $\\Delta m$"
+   ],
+   "answer": 2,
+   "explanation": "Năng lượng liên kết bằng năng lượng toả ra khi các nuclôn kết hợp thành hạt nhân; muốn tách hạt nhân ra phải cấp lại đúng bằng ấy.",
+   "distractorNotes": {
+    "A": "Thu năng lượng là quá trình ngược lại: tách hạt nhân thành các nuclôn rời.",
+    "B": "Khối lượng hệ giảm $\\Delta m$, ứng với năng lượng $\\Delta m c^2$ thoát ra ngoài, nên có trao đổi.",
+    "D": "Hạt nhân tạo thành nhẹ hơn tổng nuclôn rời, khối lượng giảm chứ không tăng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính độ hụt khối và năng lượng liên kết",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hạt nhân $^{A}_{Z}X$ có khối lượng $m_X$. Độ hụt khối của hạt nhân là",
+   "options": [
+    "$\\Delta m = Zm_p + Am_n - m_X$",
+    "$\\Delta m = m_X - [Zm_p + (A-Z)m_n]$",
+    "$\\Delta m = (A-Z)m_p + Zm_n - m_X$",
+    "$\\Delta m = Zm_p + (A-Z)m_n - m_X$"
+   ],
+   "answer": 3,
+   "explanation": "Độ hụt khối bằng tổng khối lượng Z prôtôn và (A − Z) nơtron trừ khối lượng hạt nhân.",
+   "distractorNotes": {
+    "A": "Số nơtron là $A-Z$, không phải $A$, vì $A$ là tổng số nuclôn.",
+    "B": "Đảo thứ tự phép trừ cho độ hụt khối âm, trái với việc hạt nhân nhẹ hơn tổng nuclôn rời.",
+    "C": "Tráo vai trò: $Z$ prôtôn phải nhân $m_p$, còn $A-Z$ nơtron phải nhân $m_n$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Năng lượng liên kết riêng của hạt nhân $^{A}_{Z}X$ có năng lượng liên kết $E_{lk}$ là",
+   "options": [
+    "$E_{lkr} = \\dfrac{E_{lk}}{A}$",
+    "$E_{lkr} = \\dfrac{E_{lk}}{Z}$",
+    "$E_{lkr} = E_{lk} \\cdot A$",
+    "$E_{lkr} = \\dfrac{E_{lk}}{A-Z}$"
+   ],
+   "answer": 0,
+   "explanation": "Năng lượng liên kết riêng là năng lượng liên kết tính cho một nuclôn, nên chia $E_{lk}$ cho số khối A.",
+   "distractorNotes": {
+    "B": "Chia cho số prôtôn là bỏ sót nơtron, trong khi nơtron cũng là nuclôn được liên kết.",
+    "C": "Năng lượng cho một nuclôn phải chia cho số nuclôn, không phải nhân với nó.",
+    "D": "$A-Z$ chỉ là số nơtron; phải chia cho toàn bộ $A$ nuclôn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Tính độ hụt khối và năng lượng liên kết",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị khối lượng nguyên tử u có giá trị xấp xỉ",
+   "options": [
+    "$1\\ \\text{u} \\approx 931{,}5\\ \\text{MeV}/c$",
+    "$1\\ \\text{u} \\approx 931{,}5\\ \\text{MeV}/c^2$",
+    "$1\\ \\text{u} \\approx 931{,}5\\ \\text{keV}/c^2$",
+    "$1\\ \\text{u} \\approx 931{,}5\\ \\text{MeV} \\cdot c^2$"
+   ],
+   "answer": 1,
+   "explanation": "Bài cho $1\\ \\text{u} \\approx 931{,}5\\ \\text{MeV}/c^2$, nghĩa là $1\\ \\text{u} \\cdot c^2 = 931{,}5\\ \\text{MeV}$.",
+   "distractorNotes": {
+    "A": "Thiếu bình phương: từ $E = mc^2$ thì khối lượng bằng năng lượng chia $c^2$.",
+    "C": "Nhầm bội số đơn vị: giá trị 931,5 tính theo MeV, lớn hơn keV một nghìn lần.",
+    "D": "Khối lượng bằng năng lượng chia $c^2$, viết nhân $c^2$ là đảo ngược hệ thức."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "tinh_nhanh",
    "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
    "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai hạt nhân X và Y có cùng năng lượng liên kết, số khối của X gấp đôi số khối của Y. Kết luận nào đúng?",
+   "options": [
+    "$E_{lkr}$ của X gấp đôi Y, X bền hơn Y",
+    "$E_{lkr}$ của X bằng Y, hai hạt bền như nhau",
+    "$E_{lkr}$ của X bằng nửa Y, X kém bền hơn Y",
+    "$E_{lkr}$ của X bằng nửa Y, X bền hơn Y"
+   ],
+   "answer": 2,
+   "explanation": "Vì $E_{lkr} = E_{lk}/A$, cùng $E_{lk}$ mà A gấp đôi thì $E_{lkr}$ giảm một nửa; $E_{lkr}$ nhỏ hơn thì kém bền hơn.",
+   "distractorNotes": {
+    "A": "$A$ nằm ở mẫu số của $E_{lkr}$, nên $A$ gấp đôi làm $E_{lkr}$ giảm chứ không tăng.",
+    "B": "Cùng $E_{lk}$ chưa đủ; độ bền so bằng năng lượng tính cho một nuclôn, vốn phụ thuộc $A$.",
+    "D": "$E_{lkr}$ nhỏ hơn nghĩa là mỗi nuclôn bị giữ lỏng hơn, hạt nhân kém bền hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Độ hụt khối. Năng lượng liên kết hạt nhân",
+   "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Hạt nhân có $E_{lk} = 492$ MeV, số khối $A = 56$. Năng lượng liên kết riêng là:",
+   "question": "Từ hệ thức Einstein $E = mc^2$, khối lượng ứng với năng lượng E là",
    "options": [
-    "$492/56 \\approx 8{,}79$ MeV/nuclôn",
-    "$492 \\times 56 \\approx 2{,}76 \\cdot 10^{4}$ MeV/nuclôn",
-    "$492/26 \\approx 18{,}9$ MeV/nuclôn",
-    "$492$ MeV/nuclôn"
+    "$m = Ec^2$",
+    "$m = \\dfrac{E}{c}$",
+    "$m = \\dfrac{c^2}{E}$",
+    "$m = \\dfrac{E}{c^2}$"
+   ],
+   "answer": 3,
+   "explanation": "Chia hai vế của $E = mc^2$ cho $c^2$ được $m = E/c^2$, đúng như bài nêu.",
+   "distractorNotes": {
+    "A": "Biến đổi sai: muốn tách $m$ phải chia hai vế cho $c^2$, không nhân thêm.",
+    "B": "Thiếu bình phương của tốc độ ánh sáng có trong hệ thức Einstein.",
+    "C": "Đảo tử và mẫu: năng lượng $E$ phải nằm ở tử số."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Độ hụt khối. Năng lượng liên kết hạt nhân",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Năng lượng nghỉ của một vật có khối lượng nghỉ $m_0$ là",
+   "options": [
+    "$E_0 = m_0c^2$",
+    "$E_0 = m_0c$",
+    "$E_0 = \\dfrac{m_0c^2}{2}$",
+    "$E_0 = \\dfrac{m_0}{c^2}$"
    ],
    "answer": 0,
-   "explanation": "$E_{lkr} = E_{lk}/A$: chia cho cả 56 nuclôn."
+   "explanation": "Bài nêu khi vật đứng yên, năng lượng của nó là năng lượng nghỉ $E_0 = m_0c^2$.",
+   "distractorNotes": {
+    "B": "Thiếu bình phương của tốc độ ánh sáng trong hệ thức $E = mc^2$.",
+    "C": "Nhầm với dạng công thức động năng; năng lượng nghỉ không có hệ số $\\frac{1}{2}$.",
+    "D": "Năng lượng bằng khối lượng nhân $c^2$; chia cho $c^2$ là đảo ngược hệ thức."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "bien_doi",
    "topic": "Tính độ hụt khối và năng lượng liên kết",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Vì sao tính $E_{lk}$ bằng $931{,}5$ MeV/u mà không nhân thêm $c^2$?",
+   "theorySection": 1,
+   "question": "Khi tính độ hụt khối của hạt nhân $^{A}_{Z}X$ mà đề cho khối lượng nguyên tử (đã gồm Z êlectron) thay cho khối lượng hạt nhân, ta cần",
    "options": [
-    "Vì $931{,}5$ MeV/u đã chứa sẵn $c^2$ ($1\\ \\text{u}\\,c^2 = 931{,}5$ MeV)",
-    "Vì phải nhân $c^2$ sau khi đổi ra MeV",
-    "Vì $c^2$ bằng 1 khi dùng đơn vị u",
-    "Vì năng lượng liên kết không phụ thuộc $c$"
+    "trừ bớt $Zm_e$ khỏi tổng khối lượng các hạt rời",
+    "cộng thêm $Zm_e$ vào tổng khối lượng các hạt rời",
+    "cộng thêm $Am_e$ vào tổng khối lượng các hạt rời",
+    "giữ nguyên công thức, bỏ qua khối lượng êlectron"
    ],
-   "answer": 0,
-   "explanation": "Từ $E = \\Delta m\\,c^2$ với $\\Delta m$ theo u, hệ số $c^2$ đã gộp vào con số $931{,}5$ MeV/u."
+   "answer": 1,
+   "explanation": "Khối lượng nguyên tử đã gồm Z êlectron, nên phải cộng $Zm_e$ vào tổng các hạt rời để hai vế cùng tính êlectron.",
+   "distractorNotes": {
+    "A": "Êlectron đã nằm trong khối lượng nguyên tử nên phía hạt rời phải cộng thêm, trừ đi là ngược chiều.",
+    "C": "Nguyên tử trung hoà có số êlectron bằng số prôtôn $Z$, không bằng số khối $A$.",
+    "D": "Độ hụt khối rất nhỏ, bỏ qua khối lượng êlectron làm sai lệch kết quả đáng kể."
+   }
   },
   {
    "type": "true_false",
-   "kind": "tinh_nhanh",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
+   "kind": "dinh_nghia",
+   "topic": "Độ hụt khối. Năng lượng liên kết hạt nhân",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Bài mẫu heli-4: $m_{\\text{He}} = 4{,}002603$ u, tổng hạt rời (kể cả 2 êlectron) $= 4{,}032980$ u. Xét:",
+   "theorySection": 1,
+   "question": "Hạt nhân heli-4 gồm 2 prôtôn và 2 nơtron. Hai prôtôn đẩy nhau bằng lực tĩnh điện, nhưng hạt nhân vẫn bền vững. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Độ hụt khối $\\Delta m = 0{,}030377$ u.",
+     "text": "Lực hạt nhân giữa các nuclôn mạnh hơn hẳn lực đẩy tĩnh điện giữa hai prôtôn.",
      "answer": true
     },
     {
-     "text": "Năng lượng liên kết $E_{lk} \\approx 28{,}30$ MeV.",
-     "answer": true
-    },
-    {
-     "text": "Năng lượng liên kết riêng $E_{lkr} \\approx 7{,}07$ MeV/nuclôn.",
-     "answer": true
-    },
-    {
-     "text": "Tách hạt nhân thành các nuclôn rời thì toả ra $28{,}30$ MeV.",
+     "text": "Nơtron không mang điện nên không chịu tác dụng của lực hạt nhân.",
      "answer": false
+    },
+    {
+     "text": "Lực hạt nhân chính là lực hấp dẫn giữa các nuclôn.",
+     "answer": false
+    },
+    {
+     "text": "Lực hạt nhân chỉ tác dụng khi các nuclôn ở cách nhau cỡ $10^{-15}$ m.",
+     "answer": true
     }
    ],
-   "explanation": "Tách ra phải cấp vào tối thiểu $28{,}30$ MeV, đúng bằng năng lượng toả ra khi hạt nhân hình thành."
+   "explanation": "Lực hạt nhân là lực hút rất mạnh giữa các nuclôn, không phụ thuộc điện tích (p–p, p–n, n–n đều hút) và có tầm cỡ $10^{-15}$ m. Nó không phải lực hấp dẫn.",
+   "distractorNotes": {
+    "0": "Nếu lực hạt nhân không mạnh hơn lực đẩy tĩnh điện thì hạt nhân heli-4 đã bị bung ra.",
+    "1": "Lực hạt nhân không phụ thuộc điện tích, nơtron vẫn hút các nuclôn khác như prôtôn.",
+    "2": "Lực hấp dẫn quá yếu để thắng lực đẩy tĩnh điện; lực hạt nhân là loại lực riêng.",
+    "3": "Lực hạt nhân có tầm rất ngắn cỡ $10^{-15}$ m, đúng kích thước hạt nhân, nên không thể coi là sai."
+   }
   },
   {
    "type": "true_false",
    "kind": "cong_thuc",
    "topic": "Tính độ hụt khối và năng lượng liên kết",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Xét hệ thức Einstein và các đơn vị:",
+   "question": "Dùng phổ kế khối lượng đo khối lượng nguyên tử heli-4 rồi so với tổng khối lượng 2 prôtôn, 2 nơtron và 2 êlectron rời. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$E = mc^2$, và từ đó $m = E/c^2$.",
+     "text": "Khối lượng nguyên tử heli-4 đo được nhỏ hơn tổng khối lượng các hạt rời đó.",
      "answer": true
     },
     {
-     "text": "$1\\ \\text{u} \\approx 931{,}5\\ \\text{MeV}/c^2$.",
+     "text": "Vì đo khối lượng nguyên tử nên tổng hạt rời phải cộng thêm $2m_e$.",
      "answer": true
     },
     {
-     "text": "Vì $c$ rất lớn nên khối lượng nhỏ ứng với năng lượng khổng lồ.",
-     "answer": true
+     "text": "Phần chênh lệch khối lượng là khối lượng của các êlectron bị mất đi.",
+     "answer": false
     },
     {
-     "text": "Năng lượng liên kết $E_{lk}$ có đơn vị là u.",
+     "text": "Làm tròn các khối lượng về 4,00 u và 1,01 u vẫn tính đúng độ hụt khối.",
      "answer": false
     }
    ],
-   "explanation": "$E_{lk}$ là năng lượng, đơn vị MeV hoặc J; còn u là đơn vị khối lượng của $\\Delta m$."
+   "explanation": "Độ hụt khối là hiệu của hai số lớn gần bằng nhau, chỉ cỡ phần nghìn khối lượng, nên phải giữ số liệu tới phần triệu. Khối lượng nguyên tử đã gồm êlectron nên phần chênh lệch là độ hụt khối.",
+   "distractorNotes": {
+    "0": "Khối lượng hạt nhân đo được nhỏ hơn tổng khối lượng các nuclôn riêng lẻ; chênh lệch này chính là độ hụt khối.",
+    "1": "Khối lượng nguyên tử đã gồm 2 êlectron, không cộng $2m_e$ thì hai vế không cùng tính êlectron.",
+    "2": "Khối lượng nguyên tử đã tính cả êlectron, nên chênh lệch không thể do êlectron bị mất.",
+    "3": "Độ hụt khối chỉ cỡ phần nghìn, làm tròn như vậy xoá mất toàn bộ phần chênh lệch cần tìm."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
+   "type": "true_false",
+   "kind": "hien_tuong",
    "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Hạt nhân $^{16}_{8}\\text{O}$ có $\\Delta m = 0{,}137005$ u. Năng lượng liên kết riêng bằng bao nhiêu MeV/nuclôn (làm tròn hai chữ số thập phân)?",
-   "answer": "7,98",
-   "explanation": "$E_{lk} = 0{,}137005 \\times 931{,}5 \\approx 127{,}6$ MeV; $E_{lkr} = 127{,}6/16 \\approx 7{,}98$."
+   "theorySection": 1,
+   "question": "Xét đồ thị năng lượng liên kết riêng của các hạt nhân theo số khối A. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Năng lượng liên kết riêng đạt cực đại cỡ 8,8 MeV/nuclôn quanh sắt-56.",
+     "answer": true
+    },
+    {
+     "text": "Với hạt nhân nhẹ, năng lượng liên kết riêng tăng nhanh theo A.",
+     "answer": true
+    },
+    {
+     "text": "Với hạt nhân nặng, số khối càng lớn thì hạt nhân càng bền.",
+     "answer": false
+    },
+    {
+     "text": "Hạt nhân rất nặng vỡ thành các hạt nhân trung bình thì thu năng lượng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đường cong tăng nhanh ở vùng nhẹ, đạt đỉnh quanh sắt-56 rồi giảm dần ở vùng nặng. Vì vậy hạt nhân nhẹ hợp lại hoặc hạt nhân nặng vỡ ra đều toả năng lượng.",
+   "distractorNotes": {
+    "0": "Đường cong đạt đỉnh cỡ 8,8 MeV/nuclôn ở vùng quanh sắt-56, nên không thể coi là sai.",
+    "1": "Bên trái đỉnh, $E_{lkr}$ tăng rất nhanh theo $A$, như heli-4 chỉ 4 nuclôn đã đạt 7,07 MeV.",
+    "2": "Sau vùng sắt, $E_{lkr}$ giảm dần theo $A$ nên hạt nhân càng nặng càng kém bền.",
+    "3": "Vỡ ra làm $E_{lkr}$ tăng, tổng năng lượng liên kết tăng nên phần chênh lệch toả ra chứ không thu."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "true_false",
    "kind": "tinh_nhanh",
    "topic": "Tính độ hụt khối và năng lượng liên kết",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Đơteri có $\\Delta m = 0{,}002388$ u. Năng lượng liên kết bằng bao nhiêu MeV (hai chữ số thập phân)?",
-   "answer": "2,22",
-   "explanation": "$E_{lk} = 0{,}002388 \\times 931{,}5 \\approx 2{,}22$ MeV."
+   "theorySection": 3,
+   "question": "Năng lượng liên kết của hạt nhân được tính theo hệ thức $E_{lk} = \\Delta m\\,c^2$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hạt nhân có độ hụt khối gấp đôi thì năng lượng liên kết cũng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $\\Delta m$ tính theo u thì nhân với 931,5 ra MeV, không nhân thêm $c^2$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu đổi $\\Delta m$ ra kg rồi nhân $c^2$ thì được năng lượng tính bằng MeV.",
+     "answer": false
+    },
+    {
+     "text": "Năng lượng liên kết tỉ lệ với bình phương độ hụt khối.",
+     "answer": false
+    }
+   ],
+   "explanation": "$E_{lk}$ tỉ lệ bậc nhất với $\\Delta m$. Hệ số 931,5 MeV/u đã chứa sẵn $c^2$; còn khi dùng kg và m/s thì năng lượng ra đơn vị J.",
+   "distractorNotes": {
+    "0": "$E_{lk}$ tỉ lệ bậc nhất với $\\Delta m$, nên $\\Delta m$ gấp đôi thì $E_{lk}$ gấp đôi.",
+    "1": "$1\\ \\text{u} \\cdot c^2 = 931{,}5\\ \\text{MeV}$ đã gộp sẵn $c^2$; nhân thêm $c^2$ là tính hai lần.",
+    "2": "Dùng kg và $c$ theo m/s thì tích $\\Delta m c^2$ ra đơn vị jun, không phải MeV.",
+    "3": "Bình phương nằm ở tốc độ ánh sáng $c$, còn $E_{lk}$ chỉ tỉ lệ bậc nhất với $\\Delta m$."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Tính độ hụt khối và năng lượng liên kết",
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "1 gam heli-4 chứa $x \\cdot 10^{23}$ nguyên tử (lấy $N_A = 6{,}02 \\cdot 10^{23}$). Tìm $x$.",
-   "answer": "1,5",
-   "explanation": "$N = \\frac{1}{4} \\times 6{,}02 \\cdot 10^{23} \\approx 1{,}5 \\cdot 10^{23}$."
+   "theorySection": 2,
+   "question": "Hạt nhân urani-235 có năng lượng liên kết lớn hơn gần bốn lần hạt nhân sắt-56. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Urani-235 bền hơn sắt-56 vì có năng lượng liên kết lớn hơn.",
+     "answer": false
+    },
+    {
+     "text": "Muốn so độ bền hai hạt nhân phải so năng lượng liên kết riêng.",
+     "answer": true
+    },
+    {
+     "text": "Năng lượng liên kết của urani lớn chủ yếu vì nó có nhiều nuclôn hơn.",
+     "answer": true
+    },
+    {
+     "text": "Hai hạt nhân khác số khối nên không thể so sánh độ bền.",
+     "answer": false
+    }
+   ],
+   "explanation": "Năng lượng liên kết tăng theo số nuclôn nên không dùng để so độ bền. Chia cho A thì urani có năng lượng liên kết riêng thấp hơn sắt, nên sắt bền hơn.",
+   "distractorNotes": {
+    "0": "So năng lượng liên kết thô là sai; chia cho $A$ thì urani có năng lượng liên kết riêng thấp hơn sắt.",
+    "1": "Năng lượng liên kết riêng đưa mọi hạt nhân về cùng thước đo một nuclôn, nên đây đúng là cách so.",
+    "2": "Năng lượng liên kết là của cả hạt nhân, tăng theo số nuclôn; urani có 235 so với 56.",
+    "3": "Năng lượng liên kết riêng so được độ bền cho mọi hạt nhân, bất kể số khối khác nhau."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Cần tìm năng lượng liên kết riêng của hạt nhân $^{A}_{Z}X$ khi biết khối lượng hạt nhân và khối lượng các nuclôn. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Thứ tự tính là: độ hụt khối, rồi năng lượng liên kết, rồi chia cho A.",
+     "answer": true
+    },
+    {
+     "text": "Năng lượng liên kết riêng thường được tính bằng MeV/nuclôn.",
+     "answer": true
+    },
+    {
+     "text": "Giữ nguyên $E_{lk}$ mà A tăng thì năng lượng liên kết riêng tăng.",
+     "answer": false
+    },
+    {
+     "text": "Năng lượng liên kết riêng bằng năng lượng liên kết chia cho Z.",
+     "answer": false
+    }
+   ],
+   "explanation": "$E_{lkr} = E_{lk}/A$ với $E_{lk} = \\Delta m\\,c^2$, đơn vị MeV cho mỗi nuclôn. A ở mẫu số nên A tăng thì $E_{lkr}$ giảm.",
+   "distractorNotes": {
+    "0": "$E_{lkr}$ cần $E_{lk}$, mà $E_{lk}$ lại tính từ $\\Delta m$, nên thứ tự này không thể coi là sai.",
+    "1": "$E_{lkr}$ là năng lượng tính cho một nuclôn nên đơn vị MeV/nuclôn là đúng.",
+    "2": "$A$ nằm ở mẫu số nên giữ nguyên $E_{lk}$ mà $A$ tăng thì $E_{lkr}$ giảm.",
+    "3": "Phải chia cho tổng số nuclôn $A$; chia cho $Z$ là bỏ sót các nơtron."
+   }
   }
  ]
 }

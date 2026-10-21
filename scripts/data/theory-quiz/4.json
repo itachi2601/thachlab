@@ -1,386 +1,532 @@
 {
-  "lesson_id": 4,
-  "lesson_title": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
-  "item_id": 173,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 4,
+ "lesson_title": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+ "item_id": 173,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 10
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nội năng của một vật là",
-      "options": [
-        "động năng chuyển động của cả vật so với mặt đất",
-        "tổng động năng và thế năng của các phân tử cấu tạo nên vật",
-        "nhiệt lượng mà vật đang chứa bên trong",
-        "mức chuyển động trung bình của mỗi phân tử"
-      ],
-      "answer": 1,
-      "explanation": "Bài định nghĩa nội năng là tổng động năng và thế năng của các phân tử; mức chuyển động trung bình của mỗi phân tử là nhiệt độ."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Hai ấm nước đều ở 60 °C: ấm A chứa 200 g, ấm B chứa 2 kg. So với ấm A, ấm B có nội năng",
-      "options": [
-        "bằng nhau, vì nội năng chỉ do nhiệt độ quyết định",
-        "nhỏ hơn, vì nước nhiều thì phân tử chuyển động chậm hơn",
-        "không so sánh được nếu không biết chất làm ấm",
-        "lớn hơn, vì cùng nhiệt độ nhưng có nhiều phân tử hơn"
-      ],
-      "answer": 3,
-      "explanation": "Nhiệt độ chỉ cho mức chuyển động trung bình; nội năng là tổng của cả khối nên khối lượng lớn hơn thì nội năng lớn hơn."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xoa hai bàn tay vào nhau thấy nóng lên. Nội năng của tay đổi bằng cách nào?",
-      "options": [
-        "Thực hiện công, vì lực ma sát làm da dịch chuyển",
-        "Truyền nhiệt, vì tay thấy nóng lên",
-        "Truyền nhiệt, vì hai tay chênh nhiệt độ",
-        "Không đổi, vì nhiệt kế trong phòng không thay đổi"
-      ],
-      "answer": 0,
-      "explanation": "Có lực làm vật dịch chuyển là thực hiện công; hai tay không chênh nhiệt độ nên không thể là truyền nhiệt."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Vận dụng ΔU = A + Q",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phát biểu nào đúng với định luật I của nhiệt động lực học?",
-      "options": [
-        "Nội năng của hệ luôn bằng nhiệt lượng hệ nhận được",
-        "Công hệ nhận được luôn bằng nhiệt lượng hệ toả ra",
-        "Độ biến thiên nội năng của hệ bằng tổng công và nhiệt lượng mà hệ nhận được",
-        "Nhiệt lượng hệ nhận được bằng tích của khối lượng và độ biến thiên nhiệt độ"
-      ],
-      "answer": 2,
-      "explanation": "Bài phát biểu định luật I: $\\Delta U = A + Q$, với $A$ và $Q$ là công và nhiệt lượng hệ nhận được."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Vận dụng ΔU = A + Q",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vì sao khí trong bơm bị nén nhanh thì nóng lên?",
-      "options": [
-        "Nén có $A \\lt 0$ nên nội năng của khí tăng",
-        "Nén làm khí thu nhiệt từ thành bơm nên $Q \\gt 0$ lớn",
-        "Nén có $A \\gt 0$, nhanh nên $Q \\approx 0$, suy ra $\\Delta U \\gt 0$",
-        "Nén làm khối lượng khí tăng lên nên nội năng tăng"
-      ],
-      "answer": 2,
-      "explanation": "Khí bị nén nhận công, không kịp trao đổi nhiệt nên $\\Delta U = A + Q \\gt 0$ và khí nóng lên."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Các nhận định sau về nội năng đúng hay sai?",
-      "statements": [
-        {
-          "text": "Nội năng có đơn vị là jun (J).",
-          "answer": true
-        },
-        {
-          "text": "Nội năng phụ thuộc vào nhiệt độ và thể tích của vật.",
-          "answer": true
-        },
-        {
-          "text": "Cùng một chất, khối lượng càng lớn thì nội năng càng lớn.",
-          "answer": true
-        },
-        {
-          "text": "Nội năng của một vật đo trực tiếp được bằng nhiệt kế.",
-          "answer": false
-        }
-      ],
-      "explanation": "Nội năng không đo trực tiếp được, chỉ đo được phần biến thiên qua công và nhiệt lượng; nhiệt kế đo nhiệt độ."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Các nhận định sau về nhiệt lượng và nội năng đúng hay sai?",
-      "statements": [
-        {
-          "text": "Vật chứa nhiệt lượng bên trong.",
-          "answer": false
-        },
-        {
-          "text": "Nhiệt lượng chỉ tồn tại trong lúc truyền nhiệt giữa hai vật.",
-          "answer": true
-        },
-        {
-          "text": "Nói \"vật có nội năng 500 J\" là đúng.",
-          "answer": true
-        },
-        {
-          "text": "Nội năng là năng lượng truyền đi trong một quá trình.",
-          "answer": false
-        }
-      ],
-      "explanation": "Vật chứa nội năng chứ không chứa nhiệt lượng; nhiệt lượng là năng lượng truyền đi, còn nội năng là năng lượng vật đang có."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Có bao nhiêu cách làm biến đổi nội năng của vật được nêu trong bài?",
-      "answer": "2",
-      "explanation": "Hai cách: thực hiện công và truyền nhiệt."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Vận dụng ΔU = A + Q",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khí giãn nở mà không trao đổi nhiệt với bên ngoài. Nhiệt lượng $Q$ khí nhận được bằng bao nhiêu J?",
-      "answer": "0",
-      "explanation": "Không trao đổi nhiệt nghĩa là $Q = 0$ (và $A \\lt 0$ nên nội năng giảm)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Ấm B có 2 kg nước, ấm A có 200 g nước, cùng 60 °C. Nội năng ấm B gấp khoảng bao nhiêu lần ấm A?",
-      "answer": "10",
-      "explanation": "Khối lượng gấp 10 lần nên số phân tử gấp 10 lần, nội năng gấp khoảng 10 lần."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Vận dụng ΔU = A + Q",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công thức tính nhiệt lượng vật thu vào khi tăng nhiệt độ từ $t_1$ lên $t_2$ là",
-      "options": [
-        "$Q = mc\\left(t_2 - t_1\\right)$",
-        "$Q = \\dfrac{mc}{t_2 - t_1}$",
-        "$Q = \\dfrac{m\\left(t_2 - t_1\\right)}{c}$",
-        "$Q = c\\left(t_2 - t_1\\right)$"
-      ],
-      "answer": 0,
-      "explanation": "Bài viết $Q = mc\\Delta t$ với $\\Delta t = t_2 - t_1$ là độ tăng nhiệt độ."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đơn vị của nhiệt dung riêng $c$ trong hệ thức $Q = mc\\Delta t$ là",
-      "options": [
-        "$\\text{J/kg}$",
-        "$\\text{J·K/kg}$",
-        "$\\text{J}$",
-        "$\\text{J/(kg·K)}$"
-      ],
-      "answer": 3,
-      "explanation": "Từ $c = \\dfrac{Q}{m\\Delta t}$ suy ra đơn vị J/(kg·K); bài ghi nước 4180, nhôm 880 theo đơn vị này."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đun 1,5 kg nước từ 20 °C lên 70 °C, lấy $c = 4200\\ \\text{J/(kg·K)}$. Nhiệt lượng cần cung cấp là",
-      "options": [
-        "$126\\ 000\\ \\text{J}$",
-        "$315\\ 000\\ \\text{J}$",
-        "$441\\ 000\\ \\text{J}$",
-        "$6\\ 300\\ \\text{J}$"
-      ],
-      "answer": 1,
-      "explanation": "$Q = 4200 \\times 1{,}5 \\times \\left(70 - 20\\right) = 315\\ 000\\ \\text{J}$. Lấy $\\Delta t = 20$ hoặc $70$, hay quên $\\Delta t$ đều sai."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Vận dụng ΔU = A + Q",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khí nhận công 50 J và toả nhiệt 20 J ra môi trường. Độ biến thiên nội năng của khí là",
-      "options": [
-        "$+70\\ \\text{J}$",
-        "$-30\\ \\text{J}$",
-        "$+30\\ \\text{J}$",
-        "$-70\\ \\text{J}$"
-      ],
-      "answer": 2,
-      "explanation": "Nhận công: $A = +50$; toả nhiệt: $Q = -20$. $\\Delta U = 50 + \\left(-20\\right) = +30\\ \\text{J}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Vận dụng ΔU = A + Q",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Khí giãn nở và sinh công 80 J. Trong $\\Delta U = A + Q$, công $A$ phải đặt là",
-      "options": [
-        "$A = -80\\ \\text{J}$",
-        "$A = +80\\ \\text{J}$",
-        "$A = +160\\ \\text{J}$",
-        "$A = 0$"
-      ],
-      "answer": 0,
-      "explanation": "Hệ sinh công là mất năng lượng nên $A$ mang dấu âm: $A = -80\\ \\text{J}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Vận dụng ΔU = A + Q",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Các nhận định sau về quy ước dấu trong $\\Delta U = A + Q$ đúng hay sai?",
-      "statements": [
-        {
-          "text": "$A \\gt 0$ nghĩa là hệ nhận công.",
-          "answer": true
-        },
-        {
-          "text": "$Q \\lt 0$ nghĩa là hệ thu nhiệt.",
-          "answer": false
-        },
-        {
-          "text": "$\\Delta U \\gt 0$ nghĩa là nội năng của hệ tăng.",
-          "answer": true
-        },
-        {
-          "text": "$A \\lt 0$ nghĩa là hệ sinh công.",
-          "answer": true
-        }
-      ],
-      "explanation": "$Q \\gt 0$ mới là hệ thu nhiệt; $Q \\lt 0$ là hệ toả nhiệt."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Các nhận định sau về $Q = mc\\Delta t$ đúng hay sai?",
-      "statements": [
-        {
-          "text": "Nhiệt lượng $Q$ có đơn vị là jun.",
-          "answer": true
-        },
-        {
-          "text": "$\\Delta t$ là độ tăng nhiệt độ, tính bằng $t_2 - t_1$.",
-          "answer": true
-        },
-        {
-          "text": "$c$ càng lớn thì vật càng dễ nóng lên, dễ nguội đi.",
-          "answer": false
-        },
-        {
-          "text": "Khối lượng $m$ trong công thức tính bằng gam.",
-          "answer": false
-        }
-      ],
-      "explanation": "$c$ lớn nghĩa là khó nóng, khó nguội; $m$ tính bằng kilôgam."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Vận dụng ΔU = A + Q",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Một lần ấn pit-tông, người bơm thực hiện công 70 J lên khí và khí toả ra ngoài 20 J nhiệt. Độ biến thiên nội năng của khí là bao nhiêu J?",
-      "answer": "50",
-      "explanation": "$A = +70$, $Q = -20$ nên $\\Delta U = 70 - 20 = +50\\ \\text{J}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Nội năng và hai cách làm biến đổi nội năng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhôm có $c = 880\\ \\text{J/(kg·K)}$. Cần bao nhiêu J để 1 kg nhôm tăng thêm 5 K?",
-      "answer": "4400",
-      "explanation": "$Q = mc\\Delta t = 1 \\times 880 \\times 5 = 4400\\ \\text{J}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Vận dụng ΔU = A + Q",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Khí nhận nhiệt 300 J và giãn nở sinh công 120 J. Độ biến thiên nội năng của khí là bao nhiêu J?",
-      "answer": "180",
-      "explanation": "$Q = +300$, $A = -120$ nên $\\Delta U = -120 + 300 = +180\\ \\text{J}$."
-    }
+  "removed": [
+   {
+    "question": "Sáng sớm, thanh kim loại và ghế gỗ cùng ở 5 °C nhưng chạm tay vào kim loại thấy buốt hơn. Lí do là",
+    "reason": "nghi_ngo: NGOÀI CHƯƠNG TRÌNH: câu hỏi về tốc độ dẫn nhiệt của kim loại so với gỗ (KHTN 8), lấy từ phần mở bài, không thuộc yêu cầu cần đạt của bài (nội năng, hai cách biến đổi, Q = mcΔt, định luật I); đáp án C đúng theo bài."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nội năng của một vật là",
+   "options": [
+    "tổng động năng và thế năng của các phân tử cấu tạo nên vật",
+    "tổng động năng và thế năng của cả vật khi vật chuyển động",
+    "nhiệt lượng mà vật nhận được trong quá trình truyền nhiệt",
+    "động năng trung bình của mỗi phân tử cấu tạo nên vật"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, nội năng là tổng động năng và thế năng của các phân tử cấu tạo nên vật, kí hiệu $U$, đơn vị jun.",
+   "distractorNotes": {
+    "B": "Nhầm cơ năng của cả vật chuyển động với năng lượng của các phân tử bên trong vật.",
+    "C": "Nhầm nhiệt lượng là năng lượng truyền đi trong quá trình với năng lượng vật đang có.",
+    "D": "Nhầm mức trung bình mỗi phân tử, vốn gắn với nhiệt độ, với tổng năng lượng của mọi phân tử."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nội năng của một vật phụ thuộc vào",
+   "options": [
+    "nhiệt độ và tốc độ chuyển động của vật",
+    "chỉ nhiệt độ, không phụ thuộc thể tích",
+    "nhiệt độ và thể tích của vật",
+    "độ cao và vận tốc của cả vật"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu nội năng phụ thuộc nhiệt độ và thể tích: thể tích đổi thì khoảng cách phân tử đổi, thế năng phân tử đổi.",
+   "distractorNotes": {
+    "A": "Tốc độ chuyển động của cả vật thuộc về cơ năng, không quyết định năng lượng của phân tử bên trong.",
+    "B": "Bỏ sót thế năng phân tử, vốn thay đổi khi thể tích đổi làm khoảng cách phân tử đổi.",
+    "D": "Độ cao và vận tốc của cả vật quyết định cơ năng chứ không phải nội năng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xoa hai bàn tay vào nhau thấy tay nóng lên. Nội năng của tay đã thay đổi bằng cách",
+   "options": [
+    "truyền nhiệt từ tay này sang tay kia",
+    "thực hiện công nhờ lực ma sát",
+    "truyền nhiệt từ không khí vào tay",
+    "truyền nhiệt vì thấy tay nóng lên"
+   ],
+   "answer": 1,
+   "explanation": "Khi xoa tay, lực ma sát làm da dịch chuyển nên đây là thực hiện công; hai tay không chênh nhiệt độ nên không phải truyền nhiệt.",
+   "distractorNotes": {
+    "A": "Hai bàn tay không chênh nhiệt độ nên không thể có truyền nhiệt giữa chúng.",
+    "C": "Bỏ qua lực ma sát làm da dịch chuyển, nguyên nhân thực sự làm tay nóng lên.",
+    "D": "Phân loại theo cảm giác nóng là sai, vì thực hiện công cũng làm vật nóng lên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bơm nhanh một bánh xe non hơi, thân ống bơm nóng lên rõ rệt. Nguyên nhân chủ yếu là",
+   "options": [
+    "tay người truyền nhiệt cho thân ống bơm",
+    "pit-tông cọ xát mạnh vào thành ống bơm",
+    "không khí bên ngoài truyền nhiệt vào ống",
+    "khí trong bơm bị nén, nhận công nên nóng lên"
+   ],
+   "answer": 3,
+   "explanation": "Thí nghiệm trong bài kết luận: khí bị nén nhận công nên nội năng tăng, khí nóng lên rồi truyền nhiệt ra thân bơm; nóng chủ yếu do nén, không do cọ xát.",
+   "distractorNotes": {
+    "A": "Tay cầm không phải nguồn làm bơm nóng; thí nghiệm cho thấy nóng do khí bị nén.",
+    "B": "Cọ xát có xảy ra nhưng không phải nguyên nhân chủ yếu; phần nóng chính đến từ công nén khí.",
+    "C": "Không khí bên ngoài không nóng hơn ống bơm nên không thể truyền nhiệt vào làm bơm nóng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Nội năng. Định luật 1 của nhiệt động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Phát biểu nào sau đây đúng?",
+   "options": [
+    "Vật ở một trạng thái xác định có nhiệt lượng xác định.",
+    "Nhiệt lượng chỉ tồn tại trong quá trình truyền nhiệt.",
+    "Vật càng nóng thì chứa càng nhiều nhiệt lượng.",
+    "Nhiệt lượng là năng lượng mà vật luôn có sẵn."
+   ],
+   "answer": 1,
+   "explanation": "Vật chứa nội năng chứ không chứa nhiệt lượng; nhiệt lượng chỉ có trong lúc truyền, hết truyền thì không còn nhiệt lượng để nói tới.",
+   "distractorNotes": {
+    "A": "Gắn nhiệt lượng với một trạng thái là nhầm với nội năng, đại lượng vật có ở mỗi trạng thái.",
+    "C": "Quan niệm vật nóng chứa nhiều nhiệt lượng là sai, vì vật chỉ chứa nội năng.",
+    "D": "Năng lượng vật luôn có sẵn là nội năng, còn nhiệt lượng chỉ xuất hiện khi đang truyền nhiệt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Định luật I của nhiệt động lực học: độ biến thiên nội năng của hệ bằng",
+   "options": [
+    "tổng công và nhiệt lượng mà hệ nhận được",
+    "hiệu công và nhiệt lượng mà hệ nhận được",
+    "công mà hệ nhận được, không tính nhiệt lượng",
+    "tổng công và nhiệt lượng mà hệ toả ra"
+   ],
+   "answer": 0,
+   "explanation": "Bài phát biểu: độ biến thiên nội năng của hệ bằng tổng công và nhiệt lượng mà hệ nhận được, $\\Delta U = A + Q$.",
+   "distractorNotes": {
+    "B": "Hệ thức là tổng đại số; dấu âm chỉ xuất hiện qua giá trị âm của A hoặc Q.",
+    "C": "Bỏ sót truyền nhiệt, một trong hai cách làm biến đổi nội năng của hệ.",
+    "D": "Định luật viết cho phần hệ nhận vào; phần hệ toả ra chỉ được tính với dấu âm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Nội năng. Định luật 1 của nhiệt động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính nhiệt lượng vật thu vào khi nhiệt độ tăng từ $t_1$ lên $t_2$ là",
+   "options": [
+    "$Q = mc(t_1 - t_2)$",
+    "$Q = \\dfrac{m(t_2 - t_1)}{c}$",
+    "$Q = mc\\,t_2$",
+    "$Q = mc(t_2 - t_1)$"
+   ],
+   "answer": 3,
+   "explanation": "Bài cho $Q = mc(t_2 - t_1) = mc\\Delta t$, với $\\Delta t$ là độ tăng nhiệt độ.",
+   "distractorNotes": {
+    "A": "Lấy nhiệt độ đầu trừ cuối làm Q âm khi vật thu nhiệt, sai dấu so với quy ước.",
+    "B": "Đặt nhiệt dung riêng xuống mẫu, trong khi chất có c lớn cần nhiều nhiệt hơn.",
+    "C": "Dùng nhiệt độ cuối thay cho độ tăng nhiệt độ $\\Delta t$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Nội năng. Định luật 1 của nhiệt động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị của nhiệt dung riêng trong hệ SI là",
+   "options": [
+    "J/kg",
+    "J/(kg·K)",
+    "J·kg·K",
+    "J/K"
+   ],
+   "answer": 1,
+   "explanation": "Nhiệt dung riêng là nhiệt lượng làm 1 kg chất tăng 1 K, nên đơn vị là J/(kg·K).",
+   "distractorNotes": {
+    "A": "Thiếu phần chia cho độ tăng nhiệt độ, tính bằng K.",
+    "C": "Nhân với kg và K thay vì chia, ngược với $c = Q/(m\\Delta t)$.",
+    "D": "Thiếu phần chia cho khối lượng, tính bằng kg."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Nội năng. Định luật 1 của nhiệt động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đun nóng cùng một chất. Nếu khối lượng tăng gấp đôi và độ tăng nhiệt độ giảm một nửa thì nhiệt lượng cần cung cấp",
+   "options": [
+    "không đổi",
+    "tăng gấp đôi",
+    "tăng gấp bốn",
+    "giảm một nửa"
+   ],
+   "answer": 0,
+   "explanation": "Theo $Q = mc\\Delta t$, $Q$ tỉ lệ thuận với $m$ và $\\Delta t$; $m$ gấp đôi, $\\Delta t$ giảm một nửa nên $Q$ không đổi.",
+   "distractorNotes": {
+    "B": "Chỉ xét khối lượng tăng gấp đôi mà quên độ tăng nhiệt độ giảm một nửa.",
+    "C": "Coi Q tỉ lệ nghịch với $\\Delta t$, trong khi Q tỉ lệ thuận với cả m và $\\Delta t$.",
+    "D": "Chỉ xét $\\Delta t$ giảm một nửa mà quên khối lượng tăng gấp đôi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Nội năng. Định luật 1 của nhiệt động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ $Q = mc\\Delta t$, nhiệt dung riêng được xác định bởi",
+   "options": [
+    "$c = Qm\\Delta t$",
+    "$c = \\dfrac{m\\Delta t}{Q}$",
+    "$c = \\dfrac{Q}{m\\Delta t}$",
+    "$c = \\dfrac{Q\\Delta t}{m}$"
+   ],
+   "answer": 2,
+   "explanation": "Chia hai vế của $Q = mc\\Delta t$ cho $m\\Delta t$ được $c = \\dfrac{Q}{m\\Delta t}$, đúng như bảng số liệu đo c trong bài.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia khi chuyển m và $\\Delta t$ sang vế bên kia.",
+    "B": "Đảo ngược tử số và mẫu số khi biến đổi công thức.",
+    "D": "Để $\\Delta t$ ở tử số, trong khi $\\Delta t$ phải chuyển xuống mẫu cùng với m."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Nội năng. Định luật 1 của nhiệt động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Khi dùng $Q = mc\\Delta t$ với nhiệt kế chia độ theo °C, độ tăng nhiệt độ $\\Delta t$ được lấy bằng cách",
+   "options": [
+    "cộng thêm 273 vào hiệu nhiệt độ",
+    "lấy nhiệt độ cuối, bỏ nhiệt độ đầu",
+    "lấy nhiệt độ đầu trừ nhiệt độ cuối",
+    "trừ thẳng số °C, không cần đổi sang K"
+   ],
+   "answer": 3,
+   "explanation": "Một độ chia °C bằng một độ chia K nên hiệu nhiệt độ theo °C hay K như nhau, trừ thẳng số °C.",
+   "distractorNotes": {
+    "A": "Cộng 273 chỉ dùng khi đổi nhiệt độ tuyệt đối, không dùng cho hiệu nhiệt độ.",
+    "B": "$\\Delta t$ là độ tăng nhiệt độ nên phải trừ đi nhiệt độ đầu.",
+    "C": "Vật thu nhiệt thì lấy nhiệt độ cuối trừ đầu để $\\Delta t$ dương."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Khí trong xilanh giãn nở và sinh công. Theo quy ước dấu trong $\\Delta U = A + Q$ thì",
+   "options": [
+    "$A \\gt 0$",
+    "$A \\lt 0$",
+    "$Q \\lt 0$",
+    "$A = 0$"
+   ],
+   "answer": 1,
+   "explanation": "Định luật I viết cho hệ nhận: hệ sinh công là mất năng lượng nên $A \\lt 0$.",
+   "distractorNotes": {
+    "A": "Dấu dương chỉ dành cho trường hợp hệ nhận công, tức khi khí bị nén.",
+    "C": "Việc sinh công quyết định dấu của A, không quyết định dấu của nhiệt lượng Q.",
+    "D": "Khí giãn nở làm thể tích thay đổi nên có thực hiện công, A khác 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nén khí rất nhanh, khí không kịp trao đổi nhiệt với bên ngoài. Kết luận đúng là",
+   "options": [
+    "$A \\gt 0$, $Q = 0$ nên $\\Delta U \\gt 0$, khí nóng lên",
+    "$A \\lt 0$, $Q = 0$ nên $\\Delta U \\lt 0$, khí lạnh đi",
+    "$A = 0$, $Q \\gt 0$ nên $\\Delta U \\gt 0$, khí nóng lên",
+    "$A \\gt 0$, $Q = 0$ nên $\\Delta U = 0$, khí không đổi"
+   ],
+   "answer": 0,
+   "explanation": "Khí bị nén nhận công $A \\gt 0$, không trao đổi nhiệt $Q = 0$, nên $\\Delta U = A \\gt 0$, khí nóng lên (bảng quá trình trong bài).",
+   "distractorNotes": {
+    "B": "Khí bị nén là nhận công nên A dương, không phải âm.",
+    "C": "Khí không trao đổi nhiệt nên Q bằng 0; nội năng tăng là do công nén.",
+    "D": "Theo $\\Delta U = A + Q$, khi A dương và Q bằng 0 thì $\\Delta U$ phải dương."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai ấm nước đều ở 60 °C: ấm A chứa 200 g nước, ấm B chứa 2 kg nước. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Nhiệt độ cho biết mức chuyển động trung bình của mỗi phân tử nước.",
+     "answer": true
+    },
+    {
+     "text": "Hai ấm có nội năng bằng nhau vì nước ở cùng nhiệt độ.",
+     "answer": false
+    },
+    {
+     "text": "Nước trong ấm B có nội năng lớn hơn vì có nhiều phân tử hơn.",
+     "answer": true
+    },
+    {
+     "text": "Vật có nội năng lớn hơn thì luôn có nhiệt độ cao hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Nhiệt độ là mức trung bình mỗi phân tử, nội năng là tổng của mọi phân tử; cùng nhiệt độ, khối lượng lớn hơn thì nội năng lớn hơn, nên không so nội năng chỉ bằng nhiệt độ.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai, vì nhiệt độ đúng là chỉ mức chuyển động trung bình của mỗi phân tử.",
+    "1": "Không thể coi là đúng, vì cùng nhiệt độ chưa đủ; nội năng còn tăng theo số phân tử, tức khối lượng.",
+    "2": "Không thể coi là sai, vì cùng chất, cùng nhiệt độ, khối lượng lớn hơn thì tổng năng lượng phân tử lớn hơn.",
+    "3": "Không thể coi là đúng, vì bể nước 30 °C có thể có nội năng lớn hơn miếng sắt 1000 °C."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Nội năng và hai cách làm biến đổi nội năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm 1: ấn pit-tông nén khí trong xilanh. Thí nghiệm 2: hơ ống nghiệm chứa khí trên ngọn lửa. Trong cả hai, khí đều nóng lên. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Ở thí nghiệm 1, nội năng của khí thay đổi bằng cách thực hiện công.",
+     "answer": true
+    },
+    {
+     "text": "Ở thí nghiệm 2, nội năng của khí thay đổi bằng cách thực hiện công vì khí nóng lên.",
+     "answer": false
+    },
+    {
+     "text": "Trong cả hai thí nghiệm, nội năng của khí đều tăng.",
+     "answer": true
+    },
+    {
+     "text": "Công và nhiệt lượng là những dạng năng lượng chứa sẵn trong khối khí.",
+     "answer": false
+    }
+   ],
+   "explanation": "Nén khí có lực làm đổi thể tích nên là thực hiện công; hơ trên lửa chỉ có chênh nhiệt độ nên là truyền nhiệt; cả hai làm nội năng tăng. Công và nhiệt lượng là năng lượng đã truyền đi, không chứa trong vật.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai, vì lực đẩy pit-tông làm khí đổi thể tích, đó chính là thực hiện công.",
+    "1": "Không thể coi là đúng, vì hơ trên lửa không có lực làm dịch chuyển, chỉ có chênh nhiệt độ nên là truyền nhiệt.",
+    "2": "Không thể coi là sai, vì khí nóng lên ở cả hai thí nghiệm chứng tỏ nội năng đều tăng.",
+    "3": "Không thể coi là đúng, vì vật chỉ chứa nội năng; công và nhiệt lượng là năng lượng đang truyền đi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Nội năng. Định luật 1 của nhiệt động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đặt một hộp sữa ấm vào tủ lạnh; sau một thời gian, sữa có nhiệt độ bằng nhiệt độ trong tủ. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Trong quá trình làm lạnh, sữa toả nhiệt nên nội năng của sữa giảm.",
+     "answer": true
+    },
+    {
+     "text": "Khi sữa đã bằng nhiệt độ trong tủ thì sự truyền nhiệt dừng lại.",
+     "answer": true
+    },
+    {
+     "text": "Sau khi làm lạnh, sữa chứa một lượng \"nhiệt lượng lạnh\".",
+     "answer": false
+    },
+    {
+     "text": "Khi đã bằng nhiệt độ trong tủ, sữa không còn nội năng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Sữa toả nhiệt tới khi bằng nhiệt độ tủ rồi dừng; cái còn lại là nội năng nhỏ hơn lúc đầu. Vật không chứa nhiệt lượng, còn nội năng thì vật luôn có.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai, vì vật toả nhiệt thì Q âm nên nội năng phải giảm.",
+    "1": "Không thể coi là sai, vì truyền nhiệt chỉ xảy ra khi còn chênh nhiệt độ; hết chênh lệch thì dừng.",
+    "2": "Không thể coi là đúng, vì vật không chứa nhiệt lượng; nhiệt lượng chỉ tồn tại trong lúc truyền.",
+    "3": "Không thể coi là đúng, vì vật luôn có nội năng, sữa chỉ có nội năng nhỏ hơn lúc đầu."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Trong một lần ấn pit-tông bơm xe đạp, người bơm thực hiện công 60 J lên khối khí trong bơm; cùng lúc khối khí truyền ra ngoài 15 J nhiệt lượng qua thành ống bơm. Xét hệ là khối khí, áp dụng $\\Delta U = A + Q$.",
+   "statements": [
+    {
+     "text": "Công khối khí nhận được là $A = +60$ J.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt lượng trong hệ thức là $Q = +15$ J vì có nhiệt trao đổi.",
+     "answer": false
+    },
+    {
+     "text": "Độ biến thiên nội năng là $\\Delta U = 60 + 15 = 75$ J.",
+     "answer": false
+    },
+    {
+     "text": "$\\Delta U \\gt 0$ nên khối khí nóng lên.",
+     "answer": true
+    }
+   ],
+   "explanation": "Khí nhận công nên $A = +60$ J, khí toả nhiệt nên $Q = -15$ J; $\\Delta U = 60 + (-15) = +45$ J, dương nên khí nóng lên.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai, vì tay truyền công cho khí, khí là bên nhận nên A mang dấu dương.",
+    "1": "Không thể coi là đúng, vì khí truyền nhiệt ra ngoài là mất năng lượng nên Q phải âm.",
+    "2": "Không thể coi là đúng, vì ra 75 J là đã quên dấu âm của nhiệt lượng khí toả ra.",
+    "3": "Không thể coi là sai, vì công vào lớn hơn nhiệt mất nên $\\Delta U$ dương, nội năng khí tăng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Nội năng. Định luật 1 của nhiệt động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đo nhiệt dung riêng của nước: đun một lượng nước khối lượng $m$ trong nhiệt lượng kế bằng bếp điện có công suất $P$, đo độ tăng nhiệt độ $\\Delta t$ sau thời gian $\\tau$. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Nhiệt lượng bếp đưa vào trong thời gian $\\tau$ là $Q = P\\tau$.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt dung riêng tính từ số liệu là $c = \\dfrac{P\\tau}{m\\Delta t}$.",
+     "answer": true
+    },
+    {
+     "text": "Toàn bộ nhiệt lượng bếp đưa vào đều dùng để làm nóng nước.",
+     "answer": false
+    },
+    {
+     "text": "Do có mất nhiệt ra môi trường, giá trị $c$ tính được nhỏ hơn giá trị thật.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bếp đưa vào $Q = P\\tau$, nên $c = \\dfrac{P\\tau}{m\\Delta t}$. Một phần nhiệt mất ra môi trường, làm nóng bình nên $\\Delta t$ đo được nhỏ hơn lí tưởng, kéo $c$ tính được lên cao hơn giá trị thật.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai, vì công suất là năng lượng mỗi giây, nhân với thời gian đun ra nhiệt lượng bếp đưa vào.",
+    "1": "Không thể coi là sai, vì thay $Q = P\\tau$ vào $c = Q/(m\\Delta t)$ được đúng biểu thức này.",
+    "2": "Không thể coi là đúng, vì một phần nhiệt mất ra môi trường và làm nóng bình, không vào nước.",
+    "3": "Không thể coi là đúng, vì mất nhiệt làm $\\Delta t$ đo được nhỏ đi, mà $\\Delta t$ ở mẫu số nên c tính ra lớn hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Vận dụng ΔU = A + Q",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét một khối khí và định luật I của nhiệt động lực học $\\Delta U = A + Q$. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Đun khí trong bình kín có thể tích không đổi thì $A = 0$ và $\\Delta U = Q$.",
+     "answer": true
+    },
+    {
+     "text": "Khí giãn nở mà không trao đổi nhiệt thì $\\Delta U \\gt 0$, khí nóng lên.",
+     "answer": false
+    },
+    {
+     "text": "Khí thu nhiệt từ bên ngoài thì $Q \\gt 0$.",
+     "answer": true
+    },
+    {
+     "text": "Khí toả nhiệt ra ngoài thì $Q \\gt 0$ vì có nhiệt đi qua.",
+     "answer": false
+    }
+   ],
+   "explanation": "Thể tích không đổi thì không có công, $\\Delta U = Q$. Khí giãn nở không trao đổi nhiệt thì $A \\lt 0$, $Q = 0$ nên $\\Delta U \\lt 0$, khí lạnh đi. Thu nhiệt $Q \\gt 0$, toả nhiệt $Q \\lt 0$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai, vì thể tích không đổi thì không có công, nội năng chỉ đổi do nhiệt lượng.",
+    "1": "Không thể coi là đúng, vì giãn nở là sinh công, A âm và Q bằng 0 nên nội năng giảm, khí lạnh đi.",
+    "2": "Không thể coi là sai, vì theo quy ước hệ thu nhiệt là nhận năng lượng nên Q dương.",
+    "3": "Không thể coi là đúng, vì toả nhiệt là hệ mất năng lượng nên Q phải âm."
+   }
+  }
+ ]
 }

@@ -1,386 +1,550 @@
 {
-  "lesson_id": 8,
-  "lesson_title": "Bài 7. Phương trình trạng thái của khí lí tưởng",
-  "item_id": 221,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 9,
-      "cong_thuc": 11
-    },
-    "removed": []
+ "lesson_id": 8,
+ "lesson_title": "Bài 7. Phương trình trạng thái của khí lí tưởng",
+ "item_id": 221,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trạng thái của một lượng khí xác định được mô tả bằng ba thông số trạng thái nào?",
+   "options": [
+    "Áp suất, thể tích và khối lượng khí",
+    "Áp suất, thể tích và nhiệt độ tuyệt đối",
+    "Thể tích, khối lượng và nhiệt độ tuyệt đối",
+    "Áp suất, khối lượng và khối lượng mol"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: một lượng khí xác định được mô tả bằng ba thông số trạng thái là áp suất $p$, thể tích $V$ và nhiệt độ tuyệt đối $T$.",
+   "distractorNotes": {
+    "A": "Khối lượng khí chỉ cho biết lượng khí đang xét và giữ nguyên, nên không phải thông số trạng thái.",
+    "C": "Bỏ mất áp suất và đưa khối lượng vào, trong khi khối lượng không đổi với một lượng khí xác định.",
+    "D": "Khối lượng và khối lượng mol dùng để tính số mol, không mô tả trạng thái của khối khí."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quá trình đẳng tích là quá trình biến đổi trạng thái của một lượng khí trong đó",
+   "options": [
+    "thể tích của khí được giữ không đổi",
+    "áp suất của khí được giữ không đổi",
+    "nhiệt độ của khí được giữ không đổi",
+    "tích áp suất và thể tích không đổi"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, quá trình đẳng tích là quá trình biến đổi trạng thái khi thể tích không đổi.",
+   "distractorNotes": {
+    "B": "Giữ áp suất không đổi là quá trình đẳng áp, nhầm tên quá trình.",
+    "C": "Giữ nhiệt độ không đổi là quá trình đẳng nhiệt, nhầm tên quá trình.",
+    "D": "Tích $pV$ không đổi là đặc điểm của quá trình đẳng nhiệt theo định luật Boyle."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong quá trình đẳng tích của một lượng khí xác định, áp suất của khí",
+   "options": [
+    "tỉ lệ nghịch với nhiệt độ tuyệt đối",
+    "tỉ lệ thuận với nhiệt độ Celsius",
+    "tỉ lệ thuận với nhiệt độ tuyệt đối",
+    "không phụ thuộc vào nhiệt độ"
+   ],
+   "answer": 2,
+   "explanation": "Bài phát biểu: trong quá trình đẳng tích của một lượng khí nhất định, áp suất tỉ lệ thuận với nhiệt độ tuyệt đối, $p/T$ = hằng số.",
+   "distractorNotes": {
+    "A": "Đảo quan hệ: bình kín nóng lên thì áp suất tăng, không giảm.",
+    "B": "Thang Celsius có gốc 0 không thật nên áp suất không thể tỉ lệ thuận với $t$.",
+    "D": "Nhầm thể tích không đổi với áp suất không đổi; nhiệt độ tăng thì áp suất tăng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Phương trình $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ chỉ áp dụng được cho hai trạng thái khi",
+   "options": [
+    "thể tích khí ở hai trạng thái bằng nhau",
+    "nhiệt độ khí ở hai trạng thái bằng nhau",
+    "áp suất khí ở hai trạng thái bằng nhau",
+    "lượng khí ở hai trạng thái không thay đổi"
+   ],
+   "answer": 3,
+   "explanation": "Phương trình trạng thái chỉ dùng cho một lượng khí xác định; bơm thêm hay xì bớt khí thì hằng số $pV/T$ thay đổi.",
+   "distractorNotes": {
+    "A": "Thể tích bằng nhau chỉ là trường hợp đẳng tích, còn phương trình dùng được cả khi ba thông số cùng đổi.",
+    "B": "Nhiệt độ bằng nhau chỉ là trường hợp đẳng nhiệt, không phải điều kiện chung của phương trình.",
+    "C": "Áp suất bằng nhau chỉ là trường hợp đẳng áp, không phải điều kiện chung của phương trình."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên đồ thị $p$ – $T$ ($T$ là nhiệt độ tuyệt đối), đường đẳng tích của một lượng khí xác định là",
+   "options": [
+    "đường thẳng có phần kéo dài qua gốc toạ độ",
+    "đường thẳng song song với trục nhiệt độ T",
+    "đường hypebol nằm ở góc phần tư thứ nhất",
+    "đường thẳng song song với trục áp suất p"
+   ],
+   "answer": 0,
+   "explanation": "Vì $p$ tỉ lệ thuận với $T$ khi $V$ không đổi, đường đẳng tích là đường thẳng kéo dài qua gốc toạ độ (Hình 3 của bài).",
+   "distractorNotes": {
+    "B": "Đường song song trục $T$ nghĩa là áp suất không đổi, trái với $p$ tăng theo $T$.",
+    "C": "Hypebol là dạng đường đẳng nhiệt trên đồ thị $p$ – $V$, không phải đường trên đồ thị $p$ – $T$.",
+    "D": "Đường song song trục $p$ ứng với nhiệt độ không đổi, đó là đẳng nhiệt chứ không phải đẳng tích."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên đồ thị $p$ – $T$ có hai đường đẳng tích của cùng một lượng khí. Đường nằm trên (dốc hơn) ứng với",
+   "options": [
+    "thể tích lớn hơn",
+    "thể tích nhỏ hơn",
+    "lượng khí nhiều hơn",
+    "nhiệt độ cao hơn"
+   ],
+   "answer": 1,
+   "explanation": "Ở cùng một $T$, đường nằm trên cho $p$ lớn hơn; cùng lượng khí mà $p$ lớn hơn thì $V$ phải nhỏ hơn vì $pV/T$ không đổi.",
+   "distractorNotes": {
+    "A": "Đoán theo cảm giác \"dốc là to\"; cùng $T$ mà $p$ lớn hơn thì $V$ phải nhỏ hơn.",
+    "C": "Đề đã cho hai đường của cùng một lượng khí nên chúng không thể khác nhau về lượng khí.",
+    "D": "Nhiệt độ là trục hoành, mỗi đường đều đi qua mọi giá trị $T$ nên không gắn với nhiệt độ riêng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Với một lượng khí lí tưởng xác định, hằng số $\\dfrac{pV}{T}$ phụ thuộc vào",
+   "options": [
+    "thể tích bình chứa khí",
+    "cách biến đổi trạng thái",
+    "lượng khí (số mol) đang xét",
+    "nhiệt độ ban đầu của khí"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu hằng số $pV/T$ chỉ phụ thuộc lượng khí đang xét, bằng $nR$, không phụ thuộc cách biến đổi.",
+   "distractorNotes": {
+    "A": "Nhầm với hằng số $p/T$ của quá trình đẳng tích; $pV/T = nR$ không phụ thuộc thể tích bình.",
+    "B": "Hằng số không phụ thuộc cách biến đổi, nên mọi quá trình của cùng lượng khí cho cùng một giá trị.",
+    "D": "Nhiệt độ là thông số trạng thái thay đổi được, còn hằng số giữ nguyên qua mọi trạng thái."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong quá trình đẳng tích, hằng số $\\dfrac{p}{T}$ của khối khí phụ thuộc vào",
+   "options": [
+    "chỉ lượng khí đang xét",
+    "chỉ thể tích bình chứa",
+    "chỉ nhiệt độ ban đầu",
+    "lượng khí và thể tích bình"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu hằng số $p/T = nR/V$ phụ thuộc lượng khí và thể tích bình chứa, khác $pV/T$ chỉ phụ thuộc lượng khí.",
+   "distractorNotes": {
+    "A": "Nhầm với hằng số $pV/T$; vì $p/T = nR/V$ nên hằng số này còn phụ thuộc thể tích bình.",
+    "B": "Bỏ sót lượng khí: hai bình cùng thể tích mà bình nạp nhiều khí hơn có $p/T$ lớn hơn.",
+    "C": "Nhiệt độ thay đổi suốt quá trình mà $p/T$ vẫn giữ nguyên, nên hằng số không phụ thuộc nhiệt độ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phương trình trạng thái của một lượng khí lí tưởng xác định là",
+   "options": [
+    "$\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$",
+    "$\\dfrac{p_1T_1}{V_1}=\\dfrac{p_2T_2}{V_2}$",
+    "$p_1V_1T_1=p_2V_2T_2$",
+    "$\\dfrac{V_1T_1}{p_1}=\\dfrac{V_2T_2}{p_2}$"
+   ],
+   "answer": 0,
+   "explanation": "Bài viết phương trình trạng thái: $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ = hằng số.",
+   "distractorNotes": {
+    "B": "Đảo vị trí $V$ và $T$; thể tích phải ở tử cùng áp suất, nhiệt độ phải ở mẫu.",
+    "C": "Nhân với $T$ thay vì chia; khi nhiệt độ tăng thì tích $pV$ phải tăng theo.",
+    "D": "Đưa áp suất xuống mẫu, trái với việc $p$ và $V$ cùng ở tử số của hằng số $pV/T$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Phương trình Clapeyron – Mendeleev",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phương trình Clapeyron – Mendeleev cho $n$ mol khí lí tưởng là",
+   "options": [
+    "$pT=nRV$",
+    "$pV=nRT$",
+    "$pV=\\dfrac{RT}{n}$",
+    "$\\dfrac{p}{V}=nRT$"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: với $n$ mol khí, $pV = nRT$, $R = 8{,}31\\ \\text{J/(mol·K)}$.",
+   "distractorNotes": {
+    "A": "Đổi chỗ $V$ và $T$; thực ra $pV/T$ mới là hằng số bằng $nR$.",
+    "C": "Đặt số mol xuống mẫu, trong khi nhiều khí hơn thì $pV$ phải lớn hơn.",
+    "D": "Chia cho $V$ thay vì nhân; tích $pV$ mới bằng $nRT$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Phương trình Clapeyron – Mendeleev",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong phương trình $pV=nRT$ với $R=8{,}31\\ \\text{J/(mol·K)}$, nếu áp suất tính bằng Pa thì thể tích phải tính bằng",
+   "options": [
+    "lít (L)",
+    "xentimét khối (cm³)",
+    "đềximét khối (dm³)",
+    "mét khối (m³)"
+   ],
+   "answer": 3,
+   "explanation": "Bài lưu ý: dùng $R = 8{,}31\\ \\text{J/(mol·K)}$ thì $p$ tính bằng Pa, $V$ tính bằng m³.",
+   "distractorNotes": {
+    "A": "Lít quen dùng cho thể tích mol nhưng không phải đơn vị SI đi cùng Pa và $R = 8{,}31$.",
+    "B": "Quên đổi cm³ ra m³ như ở bài toán mẫu; chỉ khi lập tỉ số mới không cần đổi.",
+    "C": "dm³ bằng lít, không phải đơn vị SI đi cùng Pa và $R = 8{,}31$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Vận dụng phương trình trạng thái",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một lượng khí trong bình kín có thể tích không đổi. Nếu nhiệt độ tuyệt đối của khí tăng gấp đôi thì áp suất của khí",
+   "options": [
+    "giảm còn một nửa",
+    "không thay đổi",
+    "tăng gấp đôi",
+    "tăng gấp bốn"
+   ],
+   "answer": 2,
+   "explanation": "Đẳng tích: $p/T$ = hằng số nên $p$ tỉ lệ thuận với $T$; $T$ tăng gấp đôi thì $p$ tăng gấp đôi.",
+   "distractorNotes": {
+    "A": "Nhầm thành tỉ lệ nghịch giống quan hệ giữa $p$ và $V$ trong quá trình đẳng nhiệt.",
+    "B": "Nhầm thể tích không đổi với áp suất không đổi, trong khi nhiệt độ tăng thì áp suất phải tăng.",
+    "D": "Tự thêm bình phương, trong khi đẳng tích thì $p$ tỉ lệ bậc nhất với $T$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Vận dụng phương trình trạng thái",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Từ phương trình trạng thái của một lượng khí xác định, áp suất ở trạng thái 2 được tính bằng",
+   "options": [
+    "$p_2=p_1\\dfrac{V_1}{V_2}\\dfrac{T_2}{T_1}$",
+    "$p_2=p_1\\dfrac{V_2}{V_1}\\dfrac{T_2}{T_1}$",
+    "$p_2=p_1\\dfrac{V_1}{V_2}\\dfrac{T_1}{T_2}$",
+    "$p_2=p_1\\dfrac{V_2}{V_1}\\dfrac{T_1}{T_2}$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ suy ra $p_2=p_1\\dfrac{V_1}{V_2}\\dfrac{T_2}{T_1}$, đúng như lời giải bài toán mẫu.",
+   "distractorNotes": {
+    "B": "Lật ngược tỉ số thể tích, trong khi nén khí cho $V_2$ nhỏ hơn thì áp suất phải tăng.",
+    "C": "Lật ngược tỉ số nhiệt độ, trong khi khí nóng lên thì áp suất phải tăng.",
+    "D": "Lật ngược cả hai tỉ số, sai chiều ảnh hưởng của cả thể tích lẫn nhiệt độ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Vận dụng phương trình trạng thái",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Khi dùng các hệ thức của chất khí, nhiệt độ $0\\ ^\\circ\\text{C}$ phải được đổi thành",
+   "options": [
+    "0 K",
+    "273 K",
+    "−273 K",
+    "100 K"
+   ],
+   "answer": 1,
+   "explanation": "$T\\ (\\text{K}) = t\\ (^\\circ\\text{C}) + 273$, nên $0\\ ^\\circ\\text{C}$ ứng với 273 K.",
+   "distractorNotes": {
+    "A": "Nhầm gốc 0 của thang Celsius với độ không tuyệt đối.",
+    "C": "Trừ thay vì cộng 273, trong khi nhiệt độ tuyệt đối không thể âm.",
+    "D": "Lấy nhầm mốc nước sôi, không áp dụng công thức $T = t + 273$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thả một quả bóng bàn bị bẹp (nhưng chưa nứt) vào cốc nước nóng khoảng 80 °C, vỏ bóng từ từ phồng trở lại. Xét khối khí bên trong bóng:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trạng thái của một lượng khí xác định được mô tả bằng ba thông số nào?",
-      "options": [
-        "Áp suất $p$, khối lượng $m$, nhiệt độ Celsius $t$",
-        "Thể tích $V$, khối lượng riêng $\\rho$, số mol $n$",
-        "Áp suất $p$, thể tích $V$, nhiệt độ tuyệt đối $T$",
-        "Áp suất $p$, thể tích $V$, vận tốc phân tử $v$"
-      ],
-      "answer": 2,
-      "explanation": "Bài nêu: ba thông số trạng thái là áp suất $p$, thể tích $V$ và nhiệt độ tuyệt đối $T$."
+     "text": "Nước nóng truyền nhiệt làm nhiệt độ khí trong bóng tăng.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Điều kiện bắt buộc để áp dụng $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ cho hai trạng thái là gì?",
-      "options": [
-        "Lượng khí không đổi (không bơm thêm, không xì bớt)",
-        "Bình phải luôn kín và có thể tích không đổi",
-        "Nhiệt độ hai trạng thái phải bằng nhau",
-        "Áp suất hai trạng thái phải bằng nhau"
-      ],
-      "answer": 0,
-      "explanation": "Hằng số $pV/T=nR$ gắn với lượng khí; xả bớt hay bơm thêm khí thì hằng số đổi nên không dùng được."
+     "text": "Áp suất khí trong bóng tăng, đẩy vỏ bóng về dạng cũ.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phát biểu nào đúng về quá trình đẳng tích của một lượng khí xác định?",
-      "options": [
-        "Thể tích không đổi, áp suất tỉ lệ nghịch với nhiệt độ tuyệt đối",
-        "Áp suất không đổi, thể tích tỉ lệ thuận với nhiệt độ tuyệt đối",
-        "Nhiệt độ không đổi, áp suất tỉ lệ nghịch với thể tích",
-        "Thể tích không đổi, áp suất tỉ lệ thuận với nhiệt độ tuyệt đối"
-      ],
-      "answer": 3,
-      "explanation": "Bài: trong quá trình đẳng tích, áp suất tỉ lệ thuận với nhiệt độ tuyệt đối, $p/T=$ hằng số."
+     "text": "Bóng phồng lên vì lượng khí bên trong bóng tăng lên.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Trên đồ thị $p$–$T$, hai đường đẳng tích của cùng một lượng khí. Đường nằm trên (dốc hơn) ứng với:",
-      "options": [
-        "Thể tích lớn hơn",
-        "Thể tích nhỏ hơn",
-        "Cùng thể tích nhưng nhiệt độ khác",
-        "Lượng khí ít hơn nhưng cùng thể tích"
-      ],
-      "answer": 1,
-      "explanation": "Cùng $T$ mà $p$ lớn hơn thì bình chật hơn, tức $V$ nhỏ hơn (bài: bình chật thì áp suất lớn hơn)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Thả quả bóng bàn bị bẹp vào cốc nước nóng, vỏ bóng phồng lại. Nguyên nhân là:",
-      "options": [
-        "Nhiệt độ khí trong bóng tăng làm áp suất khí tăng, đẩy vỏ phồng ra",
-        "Nước nóng thấm qua vỏ làm lượng khí trong bóng tăng",
-        "Thể tích khí trong bóng giảm nên áp suất tăng",
-        "Áp suất khí giảm nên vỏ bóng tự giãn ra"
-      ],
-      "answer": 0,
-      "explanation": "Thí nghiệm quả bóng bàn: $T$ tăng làm áp suất khí bên trong tăng, đẩy vỏ bóng về dạng cũ."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhận định nào sau đây về ba định luật chất khí là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Giữ nhiệt độ $T$ không đổi thì phương trình trạng thái cho $p_1V_1=p_2V_2$ (Boyle).",
-          "answer": true
-        },
-        {
-          "text": "Giữ áp suất $p$ không đổi thì phương trình trạng thái cho $V_1/T_1=V_2/T_2$ (Charles).",
-          "answer": true
-        },
-        {
-          "text": "Giữ thể tích $V$ không đổi thì phương trình trạng thái cho $p_1/T_1=p_2/T_2$ (Gay-Lussac).",
-          "answer": true
-        },
-        {
-          "text": "Giữ thể tích $V$ không đổi thì phương trình trạng thái cho $p_1V_1=p_2V_2$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Thông số được giữ không đổi triệt tiêu ở hai vế; $p_1V_1=p_2V_2$ cần $T$ không đổi, không phải $V$."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Nhận định nào sau đây về điều kiện dùng công thức chất khí là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hằng số $pV/T$ chỉ phụ thuộc lượng khí đang xét.",
-          "answer": true
-        },
-        {
-          "text": "Xả bớt khí cho vơi bình rồi nung nóng, vẫn dùng được $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ cho trạng thái trước và sau.",
-          "answer": false
-        },
-        {
-          "text": "Chỉ thang Kelvin có gốc 0 thật nên tỉ số hai nhiệt độ chỉ có nghĩa trên thang Kelvin.",
-          "answer": true
-        },
-        {
-          "text": "Nhiệt độ $0\\ ^\\circ\\text{C}$ ứng với $0\\ \\text{K}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Xả khí làm lượng khí đổi nên hằng số đổi; $0\\ ^\\circ\\text{C}=273\\ \\text{K}$ và chỉ Kelvin có gốc 0 thật."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một lượng khí xác định được mô tả bằng bao nhiêu thông số trạng thái?",
-      "answer": "3",
-      "explanation": "Ba thông số: áp suất $p$, thể tích $V$, nhiệt độ tuyệt đối $T$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Phương trình Clapeyron – Mendeleev",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ở điều kiện tiêu chuẩn ($0\\ ^\\circ\\text{C}$, 1 atm), 1 mol khí chiếm bao nhiêu lít? (đáp số, dấu phẩy)",
-      "answer": "22,4",
-      "explanation": "Bài nêu: ở điều kiện tiêu chuẩn, 1 mol khí chiếm 22,4 lít."
-    },
-    {
-      "type": "short_answer",
-      "kind": "don_vi",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Nhiệt độ $0\\ ^\\circ\\text{C}$ ứng với bao nhiêu kelvin?",
-      "answer": "273",
-      "explanation": "Bài: $0\\ ^\\circ\\text{C}$ là $273\\ \\text{K}$ chứ không phải $0\\ \\text{K}$; $T=t+273$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phương trình trạng thái của khí lí tưởng (một lượng khí xác định) là:",
-      "options": [
-        "$p_1V_1T_1=p_2V_2T_2$",
-        "$\\dfrac{p_1T_1}{V_1}=\\dfrac{p_2T_2}{V_2}$",
-        "$\\dfrac{p_1}{V_1T_1}=\\dfrac{p_2}{V_2T_2}$",
-        "$\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$"
-      ],
-      "answer": 3,
-      "explanation": "Ba chữ một hằng số: $pV/T$ không đổi, $T$ ở dưới mẫu."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hệ thức của quá trình đẳng tích là:",
-      "options": [
-        "$p_1V_1=p_2V_2$",
-        "$\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$",
-        "$\\dfrac{V_1}{T_1}=\\dfrac{V_2}{T_2}$",
-        "$p_1T_1=p_2T_2$"
-      ],
-      "answer": 1,
-      "explanation": "$V$ không đổi nên triệt tiêu, còn $p_1/T_1=p_2/T_2$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Phương trình Clapeyron – Mendeleev",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trong phương trình $pV=nRT$, hằng số khí $R$ bằng:",
-      "options": [
-        "$8{,}31\\ \\text{J/(mol·K)}$",
-        "$22{,}4\\ \\text{J/(mol·K)}$",
-        "$1{,}38\\cdot10^{-23}\\ \\text{J/K}$",
-        "$8{,}31\\ \\text{Pa·m}^3$"
-      ],
-      "answer": 0,
-      "explanation": "Bài: $R=8{,}31\\ \\text{J/(mol·K)}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Phương trình Clapeyron – Mendeleev",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Từ $pV=nRT$ suy ra số mol khí $n$ bằng:",
-      "options": [
-        "$\\dfrac{RT}{pV}$",
-        "$pVRT$",
-        "$\\dfrac{pV}{RT}$",
-        "$\\dfrac{pR}{VT}$"
-      ],
-      "answer": 2,
-      "explanation": "Chia hai vế cho $RT$: $n=\\dfrac{pV}{RT}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Bình kín chứa khí ở $27\\ ^\\circ\\text{C}$, áp suất $3{,}0\\cdot10^5\\ \\text{Pa}$. Nung lên $327\\ ^\\circ\\text{C}$ thì áp suất là:",
-      "options": [
-        "$1{,}5\\cdot10^5\\ \\text{Pa}$",
-        "$6{,}0\\cdot10^5\\ \\text{Pa}$",
-        "$3{,}0\\cdot10^5\\ \\text{Pa}$",
-        "$36\\cdot10^5\\ \\text{Pa}$"
-      ],
-      "answer": 1,
-      "explanation": "Đẳng tích: $p_2=p_1\\cdot T_2/T_1=3{,}0\\cdot10^5\\cdot600/300=6{,}0\\cdot10^5\\ \\text{Pa}$; lấy tỉ số Celsius (327/27) là sai."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Phương trình Clapeyron – Mendeleev",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhận định nào sau đây về phương trình $pV=nRT$ là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Số mol tính theo $n=m/M$ với $m$ là khối lượng khí, $M$ là khối lượng mol.",
-          "answer": true
-        },
-        {
-          "text": "Hằng số $R=8{,}31\\ \\text{J/(mol·K)}$.",
-          "answer": true
-        },
-        {
-          "text": "Hằng số $pV/T$ của một lượng khí bằng $nR$.",
-          "answer": true
-        },
-        {
-          "text": "Hằng số $pV/T$ chỉ phụ thuộc thể tích bình, không phụ thuộc lượng khí.",
-          "answer": false
-        }
-      ],
-      "explanation": "Hằng số $pV/T=nR$ phụ thuộc số mol (lượng khí), không phụ thuộc thể tích bình."
-    },
-    {
-      "type": "true_false",
-      "kind": "bien_doi",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhận định nào sau đây về khí trong bình kín (thể tích không đổi) là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Nhiệt độ tuyệt đối tăng 2 lần thì áp suất tăng 2 lần.",
-          "answer": true
-        },
-        {
-          "text": "Tỉ số $p/T$ không đổi khi $T$ là nhiệt độ Kelvin.",
-          "answer": true
-        },
-        {
-          "text": "Tỉ số $p/t$ không đổi khi $t$ là nhiệt độ Celsius.",
-          "answer": false
-        },
-        {
-          "text": "Có thể suy ra $T_2=T_1\\cdot\\dfrac{p_2}{p_1}$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Đẳng tích: $p_1/T_1=p_2/T_2$ với $T$ Kelvin; Celsius không có gốc 0 thật nên không dùng được."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xilanh chứa $200\\ \\text{cm}^3$ khí ở $1{,}0\\cdot10^5\\ \\text{Pa}$, nén thật chậm (nhiệt độ không đổi) xuống $40\\ \\text{cm}^3$. Áp suất mới bằng bao nhiêu lần $10^5\\ \\text{Pa}$?",
-      "answer": "5",
-      "explanation": "Nhiệt độ không đổi: $p_2=p_1V_1/V_2=1{,}0\\cdot10^5\\cdot200/40=5{,}0\\cdot10^5\\ \\text{Pa}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xilanh chứa $200\\ \\text{cm}^3$ khí ở $27\\ ^\\circ\\text{C}$, $1{,}0\\cdot10^5\\ \\text{Pa}$. Nén nhanh xuống $40\\ \\text{cm}^3$, khí nóng lên $87\\ ^\\circ\\text{C}$. Áp suất mới bằng bao nhiêu lần $10^5\\ \\text{Pa}$?",
-      "answer": "6",
-      "explanation": "$p_2=p_1\\cdot\\dfrac{V_1}{V_2}\\cdot\\dfrac{T_2}{T_1}=1{,}0\\cdot10^5\\cdot5\\cdot1{,}2=6{,}0\\cdot10^5\\ \\text{Pa}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Vận dụng phương trình trạng thái",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Bình kín 40 lít, khí ở $27\\ ^\\circ\\text{C}$ có $6{,}0\\cdot10^5\\ \\text{Pa}$. Nung đến nhiệt độ tuyệt đối bao nhiêu kelvin thì áp suất đạt $8{,}0\\cdot10^5\\ \\text{Pa}$?",
-      "answer": "400",
-      "explanation": "Đẳng tích: $T_2=T_1\\cdot p_2/p_1=300\\cdot8{,}0/6{,}0=400\\ \\text{K}$."
+     "text": "Trong quá trình này chỉ nhiệt độ thay đổi, thể tích và áp suất khí giữ nguyên.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Bóng chưa nứt nên lượng khí không đổi; nhiệt độ tăng làm áp suất tăng, đẩy vỏ phồng ra: cả ba thông số đều đổi.",
+   "distractorNotes": {
+    "0": "Nước nóng truyền nhiệt cho khối khí bên trong bóng, nên không thể cho rằng nhiệt độ khí không tăng.",
+    "1": "Chỉ có áp suất khí tăng mới đẩy được vỏ bóng phồng ra, nên không thể phủ nhận ý này.",
+    "2": "Bóng chưa nứt nên khí không lọt vào được; lượng khí giữ nguyên, chỉ trạng thái của khí thay đổi.",
+    "3": "Vỏ bóng phồng ra tức thể tích tăng, áp suất cũng tăng, nên cả ba thông số đều đổi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một bình khí nén có thể tích không đổi. Bạn An xả bớt khí cho vơi bình, đóng van lại rồi đem bình phơi nắng.",
+   "statements": [
+    {
+     "text": "Dùng được $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ cho trạng thái trước khi xả khí và trạng thái sau khi phơi nắng.",
+     "answer": false
+    },
+    {
+     "text": "Sau khi xả, hằng số $\\dfrac{pV}{T}$ của khí trong bình nhỏ đi.",
+     "answer": true
+    },
+    {
+     "text": "Trong lúc phơi nắng (không xả thêm), khí trong bình biến đổi đẳng tích.",
+     "answer": true
+    },
+    {
+     "text": "Vì bình vẫn kín nên lượng khí trước và sau khi xả là như nhau.",
+     "answer": false
+    }
+   ],
+   "explanation": "Xả khí làm lượng khí đổi nên hằng số $pV/T = nR$ nhỏ đi, không nối được hai trạng thái trước và sau xả; khi phơi nắng, lượng khí và thể tích không đổi nên là đẳng tích.",
+   "distractorNotes": {
+    "0": "Trước và sau khi xả là hai lượng khí khác nhau, hằng số $pV/T$ khác nhau nên không nối được bằng một phương trình.",
+    "1": "Hằng số $pV/T = nR$, số mol giảm khi xả nên hằng số chắc chắn nhỏ đi.",
+    "2": "Sau khi đóng van, lượng khí và thể tích bình đều không đổi, đúng định nghĩa quá trình đẳng tích.",
+    "3": "Bình chỉ kín sau khi đóng van; việc xả trước đó đã làm lượng khí giảm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ phương trình trạng thái $\\dfrac{pV}{T}$ = hằng số của một lượng khí xác định, giữ một thông số không đổi sẽ thu được hệ thức riêng.",
+   "statements": [
+    {
+     "text": "Giữ $T$ không đổi: $p_1V_1=p_2V_2$.",
+     "answer": true
+    },
+    {
+     "text": "Giữ $p$ không đổi: $\\dfrac{V_1}{T_1}=\\dfrac{V_2}{T_2}$.",
+     "answer": true
+    },
+    {
+     "text": "Giữ $V$ không đổi: $p_1T_1=p_2T_2$.",
+     "answer": false
+    },
+    {
+     "text": "Giữ $T$ không đổi: $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Thông số được giữ không đổi triệt tiêu ở hai vế: giữ $T$ còn $pV$ = hằng số; giữ $p$ còn $V/T$ = hằng số; giữ $V$ còn $p/T$ = hằng số.",
+   "distractorNotes": {
+    "0": "Giữ $T$ không đổi thì $T$ triệt tiêu ở hai vế, còn đúng $p_1V_1 = p_2V_2$ của định luật Boyle.",
+    "1": "Giữ $p$ không đổi thì $p$ triệt tiêu ở hai vế, còn đúng $V_1/T_1 = V_2/T_2$.",
+    "2": "Giữ $V$ không đổi thì còn thương $p/T$ là hằng số, không phải tích $pT$.",
+    "3": "Hệ thức $p/T$ không đổi ứng với trường hợp giữ $V$; giữ $T$ thì còn $pV$ không đổi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Vận dụng phương trình trạng thái",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Bình khí nén mini kín để ngoài sân, thể tích không đổi, không ai bơm thêm khí. Buổi sáng khí ở $27\\ ^\\circ\\text{C}$ (300 K), giữa trưa lên $47\\ ^\\circ\\text{C}$ (320 K).",
+   "statements": [
+    {
+     "text": "Áp suất khí giữa trưa bằng áp suất buổi sáng nhân với $\\dfrac{320}{300}$.",
+     "answer": true
+    },
+    {
+     "text": "Áp suất khí tăng theo tỉ số $\\dfrac{47}{27}$, tức gần gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Vì thể tích bình không đổi nên áp suất khí không đổi.",
+     "answer": false
+    },
+    {
+     "text": "Tỉ số $\\dfrac{p}{T}$ của khí trong bình buổi sáng và giữa trưa bằng nhau.",
+     "answer": true
+    }
+   ],
+   "explanation": "Lượng khí và thể tích không đổi nên là đẳng tích: $p/T$ không đổi, áp suất tăng theo tỉ số nhiệt độ tuyệt đối $320/300$.",
+   "distractorNotes": {
+    "0": "Quá trình đẳng tích nên $p$ tỉ lệ thuận với nhiệt độ tuyệt đối, áp suất tăng đúng theo tỉ số $320/300$.",
+    "1": "Thang Celsius không có gốc 0 thật, nên lấy tỉ số $47/27$ là vô nghĩa.",
+    "2": "Thể tích không đổi nhưng nhiệt độ tăng thì áp suất bắt buộc phải tăng.",
+    "3": "Lượng khí và thể tích giữ nguyên nên $p/T$ là hằng số, không thể khác nhau giữa sáng và trưa."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Phương trình Clapeyron – Mendeleev",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phương trình Clapeyron – Mendeleev $pV=nRT$ áp dụng cho $n$ mol khí lí tưởng.",
+   "statements": [
+    {
+     "text": "Số mol $n=\\dfrac{m}{M}$, với $m$ và $M$ dùng cùng gam hoặc cùng kilôgam.",
+     "answer": true
+    },
+    {
+     "text": "Hằng số khí $R=8{,}31\\ \\text{J/(mol·K)}$.",
+     "answer": true
+    },
+    {
+     "text": "Ở điều kiện tiêu chuẩn (0 °C, 1 atm), 1 mol khí chiếm 24,79 lít.",
+     "answer": false
+    },
+    {
+     "text": "Hằng số $\\dfrac{pV}{T}$ của lượng khí bằng $\\dfrac{n}{R}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài nêu $n = m/M$ (cùng đơn vị), $R = 8{,}31\\ \\text{J/(mol·K)}$, $pV/T = nR$; 1 mol khí chiếm 22,4 lít ở điều kiện tiêu chuẩn, còn 24,79 lít là ở điều kiện chuẩn (25 °C, 1 bar).",
+   "distractorNotes": {
+    "0": "Bài yêu cầu rõ $m$ và $M$ phải cùng đơn vị khi tính $n = m/M$, nên không thể coi ý này là sai.",
+    "1": "Đây đúng là giá trị hằng số khí trong bài, dùng khi $p$ tính bằng Pa và $V$ tính bằng m³.",
+    "2": "24,79 lít ứng với điều kiện chuẩn (25 °C, 1 bar); ở điều kiện tiêu chuẩn, 1 mol khí chiếm 22,4 lít.",
+    "3": "Từ $pV = nRT$ suy ra $pV/T = nR$, là tích chứ không phải thương."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Vận dụng phương trình trạng thái",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Thân bơm xe đạp bịt kín đầu vòi chứa $200\\ \\text{cm}^3$ không khí ở $27\\ ^\\circ\\text{C}$ (300 K), áp suất $p_1$. Pittông nén khí xuống còn $40\\ \\text{cm}^3$.",
+   "statements": [
+    {
+     "text": "Nếu nén nhanh làm nhiệt độ khí lên $87\\ ^\\circ\\text{C}$ (360 K) thì $p_2=p_1\\cdot 5\\cdot 1{,}2$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu nén thật chậm để nhiệt độ không đổi thì dùng hệ thức $p_1V_1=p_2V_2$.",
+     "answer": true
+    },
+    {
+     "text": "Để tính tỉ số $\\dfrac{p_2}{p_1}$ bắt buộc phải đổi thể tích từ cm³ ra m³.",
+     "answer": false
+    },
+    {
+     "text": "Nén chậm cho áp suất cuối cao hơn nén nhanh.",
+     "answer": false
+    }
+   ],
+   "explanation": "$p_2 = p_1\\dfrac{V_1}{V_2}\\dfrac{T_2}{T_1} = p_1 \\cdot 5 \\cdot 1{,}2$; nén chậm là đẳng nhiệt nên dùng định luật Boyle. Chỉ lập tỉ số $V_1/V_2$ nên không cần đổi đơn vị; nén nhanh làm khí nóng lên nên áp suất cao hơn nén chậm.",
+   "distractorNotes": {
+    "0": "Ta có $V_1/V_2 = 5$ và $T_2/T_1 = 1{,}2$; thay vào phương trình trạng thái cho đúng biểu thức này.",
+    "1": "Nhiệt độ không đổi thì $T$ triệt tiêu, còn đúng định luật Boyle $p_1V_1 = p_2V_2$.",
+    "2": "Khi chỉ lấy tỉ số $V_1/V_2$, hai thể tích cùng đơn vị là đủ; chỉ khi dùng $pV = nRT$ mới phải đổi.",
+    "3": "Nén nhanh làm khí nóng lên, thêm thừa số $T_2/T_1 \\gt 1$, nên áp suất cao hơn nén chậm."
+   }
+  }
+ ]
 }

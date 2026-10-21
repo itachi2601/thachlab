@@ -1,386 +1,550 @@
 {
-  "lesson_id": 3,
-  "lesson_title": "Bài 2. Thang nhiệt độ",
-  "item_id": 171,
-  "generated_at": "2026-10-05",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 3,
+ "lesson_title": "Bài 2. Thang nhiệt độ",
+ "item_id": 171,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nhiệt độ của một vật cho biết điều gì?",
+   "options": [
+    "Trạng thái cân bằng nhiệt và chiều truyền nhiệt năng",
+    "Tổng nhiệt năng mà vật đang chứa bên trong nó",
+    "Nhiệt lượng mà vật nhận vào trong mỗi giây",
+    "Khối lượng và chất liệu cấu tạo nên vật đó"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: nhiệt độ cho biết trạng thái cân bằng nhiệt và chiều truyền nhiệt năng giữa các vật.",
+   "distractorNotes": {
+    "B": "Lẫn nhiệt độ với nhiệt năng, vốn là tổng động năng và thế năng phân tử chứ không phải mức nóng của vật.",
+    "C": "Lẫn nhiệt độ với nhiệt lượng, là phần năng lượng truyền giữa hai vật và đo bằng jun.",
+    "D": "Khối lượng, chất liệu là đặc điểm của vật, không phải điều nhiệt độ cho biết về chiều truyền nhiệt năng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai vật có nhiệt độ khác nhau tiếp xúc với nhau. Nhiệt năng truyền",
+   "options": [
+    "từ vật có khối lượng lớn sang vật có khối lượng nhỏ",
+    "từ vật có nhiệt năng lớn sang vật có nhiệt năng nhỏ",
+    "từ vật có nhiệt độ cao sang vật có nhiệt độ thấp",
+    "từ vật có nhiệt độ thấp sang vật có nhiệt độ cao"
+   ],
+   "answer": 2,
+   "explanation": "Nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn, bất kể vật nào to hơn. Chiều truyền do nhiệt độ quyết định.",
+   "distractorNotes": {
+    "A": "Vật to hơn chưa chắc nóng hơn; khối lượng không quyết định chiều truyền nhiệt năng.",
+    "B": "Lẫn nhiệt năng với nhiệt độ: chậu nước nhiều nhiệt năng hơn vẫn làm giọt nước nóng hơn nguội đi.",
+    "D": "Đảo ngược chiều truyền: nhiệt năng tự truyền từ vật nóng hơn sang vật lạnh hơn, không theo chiều ngược lại."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai vật tiếp xúc nhau ở trạng thái cân bằng nhiệt khi",
+   "options": [
+    "hai vật có cùng khối lượng và cùng chất",
+    "hai vật có nhiệt độ bằng nhau",
+    "hai vật có nhiệt năng bằng nhau",
+    "hai vật có thể tích bằng nhau"
+   ],
+   "answer": 1,
+   "explanation": "Khi nhiệt độ bằng nhau thì nhiệt năng không truyền nữa, hai vật ở trạng thái cân bằng nhiệt.",
+   "distractorNotes": {
+    "A": "Cân bằng nhiệt chỉ đòi hỏi bằng nhiệt độ; hai vật khác khối lượng, khác chất vẫn cân bằng nhiệt được.",
+    "C": "Lẫn nhiệt năng với nhiệt độ: hai vật cân bằng nhiệt vẫn có thể chứa nhiệt năng rất khác nhau.",
+    "D": "Thể tích không quyết định chiều truyền nhiệt, nên bằng thể tích chẳng nói gì về cân bằng nhiệt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Thang Celsius và thang Kelvin",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai mốc quy ước của thang nhiệt độ Celsius (nước tinh khiết, áp suất tiêu chuẩn) là",
+   "options": [
+    "độ không tuyệt đối là 0 °C, nước sôi là 100 °C",
+    "nước đá đang tan là 0 °C, nước đông đặc là 100 °C",
+    "nước đá đang tan là 32 °C, nước sôi là 212 °C",
+    "nước đá đang tan là 0 °C, nước sôi là 100 °C"
+   ],
+   "answer": 3,
+   "explanation": "Thang Celsius lấy nhiệt độ nóng chảy của nước đá là 0 °C và nhiệt độ sôi của nước là 100 °C, khoảng giữa chia 100 phần.",
+   "distractorNotes": {
+    "A": "Nhầm gốc thang Kelvin sang thang Celsius: độ không tuyệt đối là 0 K, tức khoảng −273 °C.",
+    "B": "Nước đá tan và nước đông đặc cùng ở 0 °C, nên không thể lấy làm mốc 100 °C.",
+    "C": "Nhầm sang hai mốc của thang Fahrenheit, vốn là 32 °F và 212 °F."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Thang Celsius và thang Kelvin",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nhiệt độ 0 K trên thang Kelvin là",
+   "options": [
+    "nhiệt độ nóng chảy của nước đá tinh khiết",
+    "nhiệt độ thấp nhất mà vật có thể có",
+    "nhiệt độ điểm ba của nước tinh khiết",
+    "nhiệt độ ứng với 0 °F trên thang Fahrenheit"
+   ],
+   "answer": 1,
+   "explanation": "Thang Kelvin lấy độ không tuyệt đối làm gốc: 0 K là nhiệt độ thấp nhất vật có thể có, khoảng −273 °C.",
+   "distractorNotes": {
+    "A": "Coi hai thang chung gốc, trong khi nước đá tan ứng với 0 °C, tức khoảng 273 K.",
+    "C": "Điểm ba của nước là mốc thứ hai của thang Kelvin, quy ước 273,16 K, không phải gốc 0 K.",
+    "D": "Mỗi thang có gốc riêng; 0 °F ứng với khoảng −17,8 °C, còn rất xa độ không tuyệt đối."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Thang Celsius và thang Kelvin",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kí hiệu và đơn vị của nhiệt độ trên thang Kelvin là",
+   "options": [
+    "kí hiệu $T$, đơn vị $\\text{K}$",
+    "kí hiệu $T$, đơn vị $^\\circ\\text{K}$",
+    "kí hiệu $t$, đơn vị $^\\circ\\text{C}$",
+    "kí hiệu $t$, đơn vị $\\text{K}$"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: nhiệt độ thang Kelvin có kí hiệu $T$, đơn vị $\\text{K}$, viết 300 K chứ không viết 300 °K.",
+   "distractorNotes": {
+    "B": "Kelvin là đơn vị SI cơ bản, không phải một “độ”, nên không viết dấu độ trước K.",
+    "C": "Kí hiệu $t$ với đơn vị °C thuộc thang Celsius, không dùng cho nhiệt độ Kelvin.",
+    "D": "Ghép nhầm kí hiệu $t$ của thang Celsius với đơn vị K; nhiệt độ Kelvin kí hiệu là $T$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Thang Celsius và thang Kelvin",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ thức liên hệ đúng giữa nhiệt độ $T$ (K) và nhiệt độ $t$ (°C) của cùng một vật (làm tròn) là",
+   "options": [
+    "$T = t - 273$",
+    "$T = 1{,}8t + 273$",
+    "$T = t + 273$",
+    "$T = 273t$"
+   ],
+   "answer": 2,
+   "explanation": "Đổi từ Celsius sang Kelvin chỉ cần cộng 273 (chính xác là 273,15), vì hai thang có độ chia bằng nhau.",
+   "distractorNotes": {
+    "A": "Sai dấu: gốc 0 K nằm dưới 0 °C nên số đọc Kelvin phải lớn hơn số đọc Celsius.",
+    "B": "Lẫn hệ số 1,8 của thang Fahrenheit, trong khi độ chia Kelvin bằng độ chia Celsius.",
+    "D": "Coi hai thang tỉ lệ với nhau, trong khi chúng chỉ lệch gốc một khoảng cố định 273."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Thang nhiệt độ. Nhiệt kế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Gọi $t$ là nhiệt độ theo °C và $t_F$ là nhiệt độ theo °F của cùng một vật. Công thức đúng là",
+   "options": [
+    "$t_F = t + 32$",
+    "$t_F = 1{,}8(t + 32)$",
+    "$t_F = 32t + 1{,}8$",
+    "$t_F = 1{,}8t + 32$"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu: đổi °C sang °F thì nhân 1,8 rồi cộng 32, tức $t_F = 1{,}8t + 32$.",
+   "distractorNotes": {
+    "A": "Quên hai thang chia khoảng khác nhau (100 và 180), nên bỏ mất bước nhân 1,8.",
+    "B": "Cộng 32 trước rồi mới nhân 1,8, làm hệ số 1,8 khuếch đại luôn cả độ lệch mốc.",
+    "C": "Đảo vai trò hai hệ số: 1,8 là tỉ lệ độ chia, còn 32 là độ lệch mốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Thang nhiệt độ. Nhiệt kế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ công thức $t_F = 1{,}8t + 32$, biểu thức tính nhiệt độ Celsius $t$ theo $t_F$ là",
+   "options": [
+    "$t = 1{,}8t_F - 32$",
+    "$t = \\dfrac{t_F - 32}{1{,}8}$",
+    "$t = \\dfrac{t_F}{1{,}8} - 32$",
+    "$t = \\dfrac{t_F + 32}{1{,}8}$"
+   ],
+   "answer": 1,
+   "explanation": "Đổi ngược từ °F sang °C: trừ 32 trước rồi chia cho 1,8.",
+   "distractorNotes": {
+    "A": "Không biến đổi ngược mà vẫn nhân 1,8, nên vừa sai phép toán vừa sai thứ tự.",
+    "C": "Chia 1,8 trước rồi mới trừ 32, sai thứ tự khi giải ngược công thức.",
+    "D": "Sai dấu khi chuyển vế: phải trừ 32 khỏi $t_F$ chứ không được cộng thêm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Thang Celsius và thang Kelvin",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Nhiệt độ của một vật tăng thêm $\\Delta t$ (°C). Trên thang Kelvin, nhiệt độ của vật tăng thêm",
+   "options": [
+    "$\\Delta t$ (K)",
+    "$\\Delta t + 273$ (K)",
+    "$1{,}8\\Delta t$ (K)",
+    "$\\Delta t - 273$ (K)"
+   ],
+   "answer": 0,
+   "explanation": "Khoảng chia hai thang bằng nhau nên khoảng chênh 1 K bằng 1 °C. Số 273 chỉ dùng khi đổi một giá trị nhiệt độ.",
+   "distractorNotes": {
+    "B": "Cộng 273 vào khoảng chênh, trong khi 273 chỉ là độ lệch gốc dùng khi đổi một giá trị.",
+    "C": "Lẫn hệ số 1,8 của thang Fahrenheit, trong khi độ chia Kelvin bằng độ chia Celsius.",
+    "D": "Độ lệch gốc triệt tiêu khi lấy hiệu hai nhiệt độ, nên khoảng chênh không bị trừ 273."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Thang nhiệt độ. Nhiệt kế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữa hai mốc nước đá đang tan và nước sôi, thang Fahrenheit được chia thành bao nhiêu khoảng, và 1 độ chia °C ứng với bao nhiêu độ chia °F?",
+   "options": [
+    "100 khoảng; 1 độ chia °F",
+    "212 khoảng; 2,12 độ chia °F",
+    "180 khoảng; 1,8 độ chia °F",
+    "32 khoảng; 0,32 độ chia °F"
+   ],
+   "answer": 2,
+   "explanation": "Từ 32 °F đến 212 °F chia thành 180 khoảng, nên 1 độ chia °C ứng với 180 : 100 = 1,8 độ chia °F.",
+   "distractorNotes": {
+    "A": "Áp cách chia 100 khoảng của thang Celsius cho thang Fahrenheit, quên hai thang chia khác nhau.",
+    "B": "Lấy luôn mốc trên 212 làm số khoảng, quên trừ đi mốc dưới 32.",
+    "D": "Lấy mốc dưới 32 làm số khoảng, trong khi số khoảng là hiệu 212 − 32."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Thang nhiệt độ. Nhiệt kế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nhiệt kế hồng ngoại điện tử đo nhiệt độ dựa trên",
+   "options": [
+    "sự nở dài của cột chất lỏng trong ống thuỷ tinh",
+    "sự thay đổi điện trở của que đo khi chạm vào vật",
+    "sự nở dài của thanh kim loại mỏng xoắn ốc",
+    "bức xạ điện từ do bề mặt vật phát ra"
+   ],
+   "answer": 3,
+   "explanation": "Cảm biến hồng ngoại nhận bức xạ điện từ do vật phát ra rồi suy ra nhiệt độ bề mặt, không cần chạm vào vật.",
+   "distractorNotes": {
+    "A": "Đó là nguyên lí của nhiệt kế chất lỏng, phải tiếp xúc vật và chờ cột chất lỏng ổn định.",
+    "B": "Đó là nhiệt kế điện trở cần que đo chạm vật, còn nhiệt kế hồng ngoại đo không chạm.",
+    "C": "Đó là nguyên lí nở vì nhiệt của nhiệt kế kim loại, không phải cảm biến nhận bức xạ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Thang nhiệt độ. Nhiệt kế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nhiệt kế chất lỏng (rượu, thuỷ ngân, dầu) hoạt động dựa trên",
+   "options": [
+    "sự thay đổi áp suất khí khi giữ thể tích không đổi",
+    "sự nở dài của cột chất lỏng trong ống thuỷ tinh",
+    "bức xạ điện từ mà chất lỏng phát ra ngoài ống",
+    "sự thay đổi điện trở của chất lỏng theo nhiệt độ"
+   ],
+   "answer": 1,
+   "explanation": "Theo bảng các loại nhiệt kế, nhiệt kế chất lỏng dựa vào sự nở dài của cột chất lỏng trong ống thuỷ tinh.",
+   "distractorNotes": {
+    "A": "Áp suất khí ở thể tích không đổi là nguyên lí của nhiệt kế khí, không phải nhiệt kế chất lỏng.",
+    "C": "Nhận bức xạ điện từ là nguyên lí của nhiệt kế hồng ngoại, không phải nhiệt kế chất lỏng.",
+    "D": "Điện trở thay đổi theo nhiệt độ là nguyên lí của nhiệt kế điện trở dùng bán dẫn hoặc kim loại."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Thang Celsius và thang Kelvin",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Nhiệt độ một vật tăng từ 10 °C lên 20 °C. Nhận xét nào về nhiệt độ của vật trên thang Kelvin là đúng?",
+   "options": [
+    "Tăng thêm 10 K, không hề tăng gấp đôi",
+    "Tăng gấp đôi, vì 20 °C gấp đôi 10 °C",
+    "Tăng thêm 283 K, đúng bằng 10 + 273",
+    "Tăng thêm 18 K, vì phải nhân với 1,8"
+   ],
+   "answer": 0,
+   "explanation": "Khoảng chênh 10 °C bằng 10 K. Muốn so tỉ số phải đổi sang kelvin (283 K và 293 K), nên nhiệt độ không tăng gấp đôi.",
+   "distractorNotes": {
+    "B": "Thang Celsius không có gốc 0 thật nên so tỉ số vô nghĩa; 293 K không gấp đôi 283 K.",
+    "C": "Cộng 273 vào khoảng chênh, trong khi 273 chỉ dùng khi đổi một giá trị nhiệt độ.",
+    "D": "Hệ số 1,8 chỉ dùng khi đổi khoảng chênh sang °F; độ chia Kelvin bằng độ chia Celsius."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Nhiệt độ và cân bằng nhiệt",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong một thí nghiệm, bạn học sinh đổ 100 ml nước khoảng 60 °C và 100 ml nước khoảng 20 °C vào chung một ca, khuấy nhẹ rồi đọc nhiệt kế mỗi phút. Xét các phát biểu sau:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Nhiệt độ và cân bằng nhiệt",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai vật có nhiệt độ khác nhau tiếp xúc nhau thì nhiệt năng truyền:",
-      "options": [
-        "Từ vật có khối lượng lớn hơn sang vật nhỏ hơn",
-        "Từ vật có nhiệt độ cao hơn sang vật có nhiệt độ thấp hơn",
-        "Từ vật chứa nhiều nhiệt lượng hơn sang vật chứa ít hơn",
-        "Theo chiều bất kì, không có quy luật"
-      ],
-      "answer": 1,
-      "explanation": "Chiều truyền do nhiệt độ quyết định, không do khối lượng hay chất liệu."
+     "text": "Nhiệt năng truyền từ phần nước nóng sang phần nước lạnh.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Nhiệt độ và cân bằng nhiệt",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai vật ở trạng thái cân bằng nhiệt khi:",
-      "options": [
-        "Khối lượng của chúng bằng nhau",
-        "Chúng làm bằng cùng một chất",
-        "Nhiệt độ của chúng bằng nhau và không còn truyền nhiệt năng cho nhau",
-        "Nhiệt năng của chúng bằng không"
-      ],
-      "answer": 2,
-      "explanation": "Nhiệt độ bằng nhau thì nhiệt năng không truyền nữa: cân bằng nhiệt."
+     "text": "Khi cả ca nước đã cùng nhiệt độ, nhiệt năng vẫn tiếp tục truyền từ phần nóng sang phần lạnh.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai mốc quy ước của thang nhiệt độ Celsius là:",
-      "options": [
-        "Nước đá đang tan 0 °C và hơi nước đang sôi 100 °C",
-        "Nước đá đang tan 0 °C và nước đá đông đặc 100 °C",
-        "Nhiệt độ thấp nhất 0 °C và cao nhất 100 °C",
-        "Nước đang sôi 0 °C và nước đá 100 °C"
-      ],
-      "answer": 0,
-      "explanation": "Hai mốc là nước đá đang tan (0 °C) và hơi nước đang sôi ở áp suất tiêu chuẩn (100 °C), chia 100 khoảng."
+     "text": "Phần nhiệt năng truyền từ phần nước này sang phần nước kia gọi là nhiệt lượng.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điều nào đúng khi nói về 0 K?",
-      "options": [
-        "Là nhiệt độ nước đá đang tan, tức 0 °C",
-        "Là nhiệt độ thấp nhất có thể có, tức 0 °C",
-        "Là nhiệt độ điểm ba của nước",
-        "Là nhiệt độ thấp nhất có thể có, ứng với −273,15 °C"
-      ],
-      "answer": 3,
-      "explanation": "0 K là độ không tuyệt đối, bằng −273,15 °C."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhiệt kế hồng ngoại bắn vào trán đo được gì?",
-      "options": [
-        "Nhiệt độ bên trong cơ thể, đo trực tiếp qua da",
-        "Bức xạ điện từ phát ra từ bề mặt da, từ đó suy ra nhiệt độ bề mặt",
-        "Thời gian để trán nóng lên rồi so với mốc 0 °C",
-        "Thể tích của một lượng khí trong nhiệt kế"
-      ],
-      "answer": 1,
-      "explanation": "Nhiệt kế hồng ngoại đo bức xạ do vật phát ra, nên cho nhiệt độ bề mặt."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhiệt kế kim loại hoạt động dựa trên tính chất nào?",
-      "options": [
-        "Sự nở dài của cột chất lỏng trong ống thuỷ tinh",
-        "Sự nở thể tích của khí ở áp suất không đổi",
-        "Sự nở dài của thanh kim loại (thẳng hoặc xoắn ốc) khi nhiệt độ thay đổi",
-        "Bức xạ điện từ do vật phát ra"
-      ],
-      "answer": 2,
-      "explanation": "Nhiệt kế kim loại dùng sự nở dài của thanh kim loại; cột chất lỏng là nhiệt kế chất lỏng."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về thang Kelvin, các nhận định sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Nhiệt độ Kelvin không bao giờ âm.",
-          "answer": true
-        },
-        {
-          "text": "Nhiệt độ 300 K được viết đúng là 300 °K.",
-          "answer": false
-        },
-        {
-          "text": "Khoảng chia của thang Kelvin bằng khoảng chia của thang Celsius (1 K = 1 °C).",
-          "answer": true
-        },
-        {
-          "text": "Điểm ba của nước được quy ước là 0 K.",
-          "answer": false
-        }
-      ],
-      "explanation": "Kelvin viết K không có dấu độ; điểm ba của nước là 273,15 K, còn 0 K là độ không tuyệt đối."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Nhiệt độ và cân bằng nhiệt",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về nhiệt độ và nhiệt lượng, các nhận định sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Chiều truyền nhiệt năng do nhiệt độ quyết định.",
-          "answer": true
-        },
-        {
-          "text": "Giọt nước 100 °C rơi vào chậu nước 40 °C thì nhiệt năng truyền từ chậu sang giọt.",
-          "answer": false
-        },
-        {
-          "text": "Nói \"20 °C gấp đôi 10 °C\" là vô nghĩa vì thang Celsius không có gốc 0 thật.",
-          "answer": true
-        },
-        {
-          "text": "Thang Celsius không có giá trị âm.",
-          "answer": false
-        }
-      ],
-      "explanation": "Nhiệt năng đi từ giọt (nóng hơn) sang chậu; thang Celsius có giá trị âm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trên thang Fahrenheit, nước đá đang tan ở bao nhiêu °F?",
-      "answer": "32",
-      "explanation": "Mốc nước đá đang tan là 32 °F, hơi nước sôi là 212 °F."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khoảng giữa hai mốc nước của thang Fahrenheit được chia thành bao nhiêu khoảng bằng nhau?",
-      "answer": "180",
-      "explanation": "212 − 32 = 180 khoảng (thang Celsius là 100 khoảng)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công thức đổi nhiệt độ từ Celsius sang Fahrenheit là:",
-      "options": [
-        "$t(^\\circ\\text{F}) = t(^\\circ\\text{C}) + 32$",
-        "$t(^\\circ\\text{F}) = 1{,}8\\,\\big(t(^\\circ\\text{C}) + 32\\big)$",
-        "$t(^\\circ\\text{F}) = 1{,}8\\,t(^\\circ\\text{C}) - 32$",
-        "$t(^\\circ\\text{F}) = 1{,}8\\,t(^\\circ\\text{C}) + 32$"
-      ],
-      "answer": 3,
-      "explanation": "Nhân 1,8 trước rồi cộng 32; quên nhân 1,8 hoặc sai thứ tự đều sai."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công thức đổi từ Fahrenheit sang Celsius là:",
-      "options": [
-        "$t(^\\circ\\text{C}) = \\dfrac{t(^\\circ\\text{F}) - 32}{1{,}8}$",
-        "$t(^\\circ\\text{C}) = \\dfrac{t(^\\circ\\text{F})}{1{,}8} - 32$",
-        "$t(^\\circ\\text{C}) = 1{,}8\\,\\big(t(^\\circ\\text{F}) - 32\\big)$",
-        "$t(^\\circ\\text{C}) = t(^\\circ\\text{F}) - 273$"
-      ],
-      "answer": 0,
-      "explanation": "Đi ngược lại: trừ 32 trước rồi chia 1,8."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhiệt độ phòng là $25\\ ^\\circ\\text{C}$. Trên thang Fahrenheit đó là:",
-      "options": [
-        "$25\\ ^\\circ\\text{F}$",
-        "$57\\ ^\\circ\\text{F}$",
-        "$77\\ ^\\circ\\text{F}$",
-        "$298\\ ^\\circ\\text{F}$"
-      ],
-      "answer": 2,
-      "explanation": "$1{,}8 \\times 25 + 32 = 77$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Một chi tiết thép nguội từ 200 °C xuống 30 °C. Độ giảm nhiệt độ đó là:",
-      "options": [
-        "$170\\ ^\\circ\\text{C}$, tức $443\\ \\text{K}$ và $306\\ ^\\circ\\text{F}$",
-        "$170\\ ^\\circ\\text{C}$, tức $170\\ \\text{K}$ và $306\\ ^\\circ\\text{F}$",
-        "$170\\ ^\\circ\\text{C}$, tức $170\\ \\text{K}$ và $170\\ ^\\circ\\text{F}$",
-        "$170\\ ^\\circ\\text{C}$, tức $170\\ \\text{K}$ và $138\\ ^\\circ\\text{F}$"
-      ],
-      "answer": 1,
-      "explanation": "Khoảng chênh: 1 K = 1 °C nên giữ nguyên 170; sang °F nhân 1,8: 306. Không cộng 273 cho một khoảng chênh."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Nhôm nóng chảy ở $660\\ ^\\circ\\text{C}$. Các kết quả đổi thang sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Bằng $933\\ \\text{K}$.",
-          "answer": true
-        },
-        {
-          "text": "Bằng $1220\\ ^\\circ\\text{F}$.",
-          "answer": true
-        },
-        {
-          "text": "Bằng $387\\ \\text{K}$.",
-          "answer": false
-        },
-        {
-          "text": "Bằng $692\\ ^\\circ\\text{F}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$660 + 273 = 933$ K; $1{,}8 \\times 660 + 32 = 1220$ °F. 387 K do trừ 273; 692 °F do quên nhân 1,8."
-    },
-    {
-      "type": "true_false",
-      "kind": "bien_doi",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về đổi thang nhiệt độ, các nhận định sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Khoảng chênh 1 K bằng khoảng chênh 1 °C.",
-          "answer": true
-        },
-        {
-          "text": "Khoảng chênh 10 °C ứng với 18 °F.",
-          "answer": true
-        },
-        {
-          "text": "Khi đổi một khoảng chênh từ °C sang K phải cộng thêm 273.",
-          "answer": false
-        },
-        {
-          "text": "Khi đổi một giá trị nhiệt độ từ °C sang K thì cộng thêm 273.",
-          "answer": true
-        }
-      ],
-      "explanation": "273 chỉ dùng khi đổi một giá trị nhiệt độ, không dùng cho khoảng chênh."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Thân nhiệt 37 °C bằng bao nhiêu K (làm tròn theo $T = t + 273$)?",
-      "answer": "310",
-      "explanation": "$37 + 273 = 310$ K."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Đồng hồ lò ghi 392 °F. Nhiệt độ đó bằng bao nhiêu °C?",
-      "answer": "200",
-      "explanation": "$(392 - 32) : 1{,}8 = 200$ °C."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Nhiệt độ xưởng là 30 °C. Đổi sang Kelvin (làm tròn theo $T = t + 273$) được bao nhiêu K?",
-      "answer": "303",
-      "explanation": "$30 + 273 = 303$ K."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Thang Celsius và thang Kelvin",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Bản tin thời tiết Mỹ nói 95 °F. Đổi ra khoảng bao nhiêu °C?",
-      "answer": "35",
-      "explanation": "$(95 - 32) : 1{,}8 = 35$ °C."
+     "text": "Nếu lượng nước lạnh nhiều hơn hẳn thì nhiệt năng sẽ truyền từ phần nước lạnh sang phần nước nóng.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Nhiệt năng truyền từ nơi nhiệt độ cao sang nơi nhiệt độ thấp, phần truyền đi gọi là nhiệt lượng. Khi nhiệt độ bằng nhau thì hết truyền. Chiều truyền không phụ thuộc lượng nước.",
+   "distractorNotes": {
+    "0": "Phần nước 60 °C có nhiệt độ cao hơn nên nhiệt năng phải truyền từ đó sang phần 20 °C.",
+    "1": "Khi cả ca cùng nhiệt độ, nước đã cân bằng nhiệt nên nhiệt năng ngừng truyền, không thể truyền tiếp.",
+    "2": "Bài định nghĩa đúng như vậy: phần nhiệt năng truyền đi giữa hai vật gọi là nhiệt lượng.",
+    "3": "Lượng nước không quyết định chiều truyền; nước lạnh nhiều đến đâu vẫn nhận nhiệt từ phần nóng hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Thang Celsius và thang Kelvin",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phòng thí nghiệm ghi nhiệt độ theo thang Kelvin, còn nhiệt kế ở nhà ghi theo thang Celsius. Xét các phát biểu sau về hai thang đo này:",
+   "statements": [
+    {
+     "text": "Nhiệt độ trên hai thang liên hệ theo hệ thức $T = t + 273$ (làm tròn).",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt độ trên thang Kelvin có thể mang giá trị âm, ví dụ −10 K.",
+     "answer": false
+    },
+    {
+     "text": "Khoảng chênh 1 K bằng khoảng chênh 1 °C.",
+     "answer": true
+    },
+    {
+     "text": "Nước đá tinh khiết đang tan có nhiệt độ 0 K.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hai thang có độ chia bằng nhau và lệch gốc khoảng 273 độ. 0 K là độ không tuyệt đối nên nhiệt độ Kelvin không bao giờ âm. Nước đá tan ở 0 °C, tức khoảng 273 K.",
+   "distractorNotes": {
+    "0": "Hai thang có độ chia bằng nhau và gốc lệch nhau khoảng 273, nên hệ thức cộng 273 là đúng.",
+    "1": "0 K là nhiệt độ thấp nhất có thể có, nên nhiệt độ Kelvin không bao giờ mang giá trị âm.",
+    "2": "Hai thang có khoảng chia bằng nhau, nên khoảng chênh 1 K đúng bằng khoảng chênh 1 °C.",
+    "3": "Nhầm gốc hai thang: nước đá tan là 0 °C, tức khoảng 273 K, còn 0 K là độ không tuyệt đối."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Thang nhiệt độ. Nhiệt kế",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Em đo thân nhiệt bằng nhiệt kế thang Celsius rồi gửi kết quả cho một bác sĩ quen dùng thang Fahrenheit. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Trên thang Fahrenheit, nước đá đang tan ứng với 32 °F, nước sôi ứng với 212 °F.",
+     "answer": true
+    },
+    {
+     "text": "Muốn đổi từ °C sang °F, chỉ cần cộng thêm 32.",
+     "answer": false
+    },
+    {
+     "text": "Muốn đổi từ °F sang °C, trừ 32 rồi chia cho 1,8.",
+     "answer": true
+    },
+    {
+     "text": "Cùng một mức nhiệt độ, số đọc trên thang Fahrenheit luôn bằng số đọc trên thang Celsius.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hai mốc Fahrenheit là 32 °F và 212 °F, khoảng giữa chia 180 phần, nên $t_F = 1{,}8t + 32$ và đổi ngược là trừ 32 rồi chia 1,8. Hai thang khác cả gốc lẫn độ chia nên số đọc khác nhau.",
+   "distractorNotes": {
+    "0": "Đây đúng là hai mốc nước của thang Fahrenheit, khoảng giữa chúng chia thành 180 phần.",
+    "1": "Chỉ cộng 32 là quên hệ số 1,8 sinh ra do hai thang chia khoảng khác nhau.",
+    "2": "Đây là phép biến đổi ngược đúng của $t_F = 1{,}8t + 32$: trừ 32 trước, chia 1,8 sau.",
+    "3": "Hai thang khác cả mốc lẫn độ chia nên số đọc nói chung khác nhau, như 25 °C ứng với 77 °F."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Thang nhiệt độ. Nhiệt kế",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một khay bánh nguội từ 200 °C xuống 30 °C, tức nhiệt độ giảm 170 °C. Xét các phát biểu sau về độ giảm nhiệt độ này:",
+   "statements": [
+    {
+     "text": "Trên thang Kelvin, độ giảm nhiệt độ là 170 K.",
+     "answer": true
+    },
+    {
+     "text": "Trên thang Kelvin, độ giảm nhiệt độ là 170 + 273 = 443 K.",
+     "answer": false
+    },
+    {
+     "text": "Trên thang Fahrenheit, độ giảm nhiệt độ bằng 1,8 lần độ giảm trên thang Celsius.",
+     "answer": true
+    },
+    {
+     "text": "Trên thang Fahrenheit, độ giảm nhiệt độ tính bằng 1,8 × 170 + 32.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đây là khoảng chênh: $\\Delta T(\\text{K}) = \\Delta t(^\\circ\\text{C})$ và $\\Delta t(^\\circ\\text{F}) = 1{,}8\\,\\Delta t(^\\circ\\text{C})$. Các số 273 và 32 chỉ dùng khi đổi một giá trị nhiệt độ.",
+   "distractorNotes": {
+    "0": "Độ chia Kelvin bằng độ chia Celsius, nên khoảng chênh 170 °C cũng chính là 170 K.",
+    "1": "Cộng 273 vào khoảng chênh; 273 là độ lệch gốc, triệt tiêu khi lấy hiệu hai nhiệt độ.",
+    "2": "Mỗi độ chia °C ứng với 1,8 độ chia °F, nên khoảng chênh trên thang °F gấp 1,8 lần.",
+    "3": "Cộng 32 vào khoảng chênh; 32 là độ lệch mốc, chỉ dùng khi đổi một giá trị nhiệt độ."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Thang nhiệt độ. Nhiệt kế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một cốc nước ấm được đo lần lượt bằng nhiệt kế thuỷ ngân, nhiệt kế điện trở và nhiệt kế hồng ngoại. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Nhiệt kế thuỷ ngân dựa vào sự nở dài của cột chất lỏng trong ống thuỷ tinh.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt kế điện trở dựa vào sự thay đổi điện trở của vật liệu theo nhiệt độ.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt kế hồng ngoại đo trực tiếp nhiệt độ bên trong lòng cốc nước.",
+     "answer": false
+    },
+    {
+     "text": "Bắn nhiệt kế hồng ngoại vào mảnh giấy bạc dán ngoài cốc vẫn cho số đo chính xác như khi đo mặt nước.",
+     "answer": false
+    }
+   ],
+   "explanation": "Nhiệt kế chất lỏng dựa vào sự nở dài của cột chất lỏng, nhiệt kế điện trở dựa vào sự thay đổi điện trở. Nhiệt kế hồng ngoại chỉ đo bức xạ bề mặt, nên gặp bề mặt bóng phản xạ mạnh như giấy bạc thì số đo sai lệch.",
+   "distractorNotes": {
+    "0": "Thuỷ ngân là chất lỏng, nên nhiệt kế này dựa vào sự nở dài của cột chất lỏng trong ống.",
+    "1": "Bảng các loại nhiệt kế nêu rõ nhiệt kế điện trở dựa vào điện trở vật liệu thay đổi theo nhiệt độ.",
+    "2": "Nhiệt kế hồng ngoại chỉ nhận bức xạ phát ra từ bề mặt, nên không đo được nhiệt độ bên trong.",
+    "3": "Giấy bạc phản xạ mạnh, phát xạ yếu nên cảm biến nhận ít bức xạ và cho số đo lệch hẳn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Thang Celsius và thang Kelvin",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một lượng khí được giữ thể tích không đổi, bình chứa khí lần lượt được ngâm vào nước đá đang tan, nước ở nhiệt độ phòng, nước ấm và nước sôi; mỗi lần đều đọc áp suất khí. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Áp suất khí tăng đều theo nhiệt độ.",
+     "answer": true
+    },
+    {
+     "text": "Kéo dài đường biểu diễn áp suất theo nhiệt độ, đường này cắt trục nhiệt độ ở khoảng −273 °C.",
+     "answer": true
+    },
+    {
+     "text": "Điểm cắt trục nhiệt độ đó ứng với 0 °C của thang Celsius.",
+     "answer": false
+    },
+    {
+     "text": "Mỗi chất khí cho một điểm cắt khác nhau, nên không xác định được gốc chung cho thang Kelvin.",
+     "answer": false
+    }
+   ],
+   "explanation": "Áp suất tăng đều theo nhiệt độ. Kéo dài đường biểu diễn thì đường này cắt trục nhiệt độ ở −273 °C, và mọi chất khí đều cho cùng điểm cắt này, đó là gốc 0 K của thang Kelvin.",
+   "distractorNotes": {
+    "0": "Các điểm số liệu nằm trên một đường thẳng: áp suất tăng đều theo nhiệt độ.",
+    "1": "Kéo dài đường thẳng áp suất – nhiệt độ về áp suất bằng 0 thì cắt trục nhiệt độ ở khoảng −273 °C.",
+    "2": "Nhầm gốc hai thang: ở 0 °C áp suất vẫn là 100 kPa, còn điểm cắt là 0 K tức −273 °C.",
+    "3": "Thí nghiệm cho thấy mọi chất khí đều cắt trục tại cùng một điểm, nên đó là gốc chung 0 K."
+   }
+  }
+ ]
 }

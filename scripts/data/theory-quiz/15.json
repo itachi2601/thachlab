@@ -2,53 +2,49 @@
  "lesson_id": 15,
  "lesson_title": "Bài 14. Hạt nhân và mô hình nguyên tử",
  "item_id": 138,
- "generated_at": "2026-10-05",
- "generated_by": "claude-code",
- "quiz_min_correct": 15,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 14,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 10,
-   "cong_thuc": 10
+   "kien_thuc": 9,
+   "cong_thuc": 9
   },
-  "removed": []
+  "removed": [
+   {
+    "question": "Khi bắn chùm hạt alpha vào lá vàng mỏng, hầu hết hạt alpha bay thẳng qua lá vàng. Điều đó chứng tỏ",
+    "reason": "nghi_ngo: GHI CHÚ B mâu thuẫn với bài: mục I nói mô hình Thomson (cầu đặc, điện dương rải đều) vẫn cho hầu hết hạt alpha bay thẳng, nên dữ kiện 'hầu hết bay thẳng' chưa đủ loại B; muốn chặt thì thân câu cần thêm dữ kiện 'vài hạt bật ngược'."
+   },
+   {
+    "question": "Hạt nhân $^A_Z X$ có số nơtron $N$ được xác định bởi",
+    "reason": "nghi_ngo: GHI CHÚ B sai về vật lí: nói 'kết quả sẽ âm vì A ≥ Z' trong khi A = Z (như hạt nhân 1H) thì Z − A = 0, không âm; nên sửa thành 'kết quả âm hoặc bằng 0, không ra số nơtron'."
+   }
+  ]
  },
  "questions": [
   {
    "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
+   "kind": "dinh_nghia",
+   "topic": "Cấu trúc hạt nhân",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Trong thí nghiệm lá vàng, hầu hết hạt alpha xuyên thẳng, chỉ một số rất ít lệch mạnh hoặc bật ngược. Điều đó cho thấy nguyên tử:",
+   "theorySection": 1,
+   "question": "Nuclôn là tên gọi chung của",
    "options": [
-    "Là khối cầu đặc, điện dương rải đều khắp nguyên tử",
-    "Gần như trống rỗng, điện dương tập trung ở một vùng rất nhỏ",
-    "Không có hạt nhân, chỉ có các êlectron",
-    "Có êlectron mang gần hết khối lượng"
+    "prôtôn và êlectron",
+    "prôtôn và nơtron",
+    "nơtron và êlectron",
+    "hạt nhân và êlectron"
    ],
    "answer": 1,
-   "explanation": "Hạt alpha xuyên qua dễ vì nguyên tử gần như trống; chỉ hạt đi sát vùng điện dương tập trung (hạt nhân) mới bị lệch mạnh."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Lực hạt nhân có đặc điểm nào sau đây?",
-   "options": [
-    "Rất mạnh và tác dụng ở mọi khoảng cách như lực hấp dẫn",
-    "Rất mạnh nhưng chỉ tác dụng trong phạm vi cỡ $10^{-15}$ m",
-    "Chỉ tác dụng giữa các êlectron ở vỏ nguyên tử",
-    "Là lực đẩy giữa các prôtôn"
-   ],
-   "answer": 1,
-   "explanation": "Lực hạt nhân liên kết các nuclôn, thắng lực đẩy tĩnh điện, tầm tác dụng chỉ cỡ $10^{-15}$ m."
+   "explanation": "Hạt nhân gồm prôtôn và nơtron. Hai loại hạt này gọi chung là nuclôn.",
+   "distractorNotes": {
+    "A": "Nhầm êlectron là thành phần của hạt nhân, trong khi êlectron nằm ở vỏ nguyên tử nên không phải nuclôn.",
+    "C": "Ghép êlectron vào nuclôn là sai, vì chỉ prôtôn và nơtron mới cấu tạo nên hạt nhân.",
+    "D": "Nhầm nuclôn với các thành phần của cả nguyên tử, trong khi nuclôn chỉ là các hạt cấu tạo hạt nhân."
+   }
   },
   {
    "type": "multiple_choice",
@@ -58,163 +54,89 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Cặp hạt nhân nào sau đây là đồng vị của nhau?",
+   "question": "Đồng vị là những nguyên tử có cùng",
    "options": [
-    "$^{16}_{8}\\text{O}$ và $^{17}_{8}\\text{O}$",
-    "$^{3}_{1}\\text{H}$ và $^{3}_{2}\\text{He}$",
-    "$^{14}_{6}\\text{C}$ và $^{14}_{7}\\text{N}$",
-    "$^{13}_{6}\\text{C}$ và $^{14}_{7}\\text{N}$"
-   ],
-   "answer": 0,
-   "explanation": "Đồng vị phải cùng số prôtôn $Z$ (=8) và khác số nơtron; các cặp còn lại khác $Z$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Điểm khác nhau cốt lõi giữa mô hình Bohr và mô hình Rutherford là:",
-   "options": [
-    "Bohr thêm điều kiện êlectron chỉ ở những quỹ đạo có năng lượng xác định",
-    "Bohr thay êlectron bằng nơtron quay quanh hạt nhân",
-    "Bohr cho rằng hạt nhân không mang điện",
-    "Bohr phủ nhận hạt nhân, cho rằng điện dương rải đều"
-   ],
-   "answer": 0,
-   "explanation": "Bohr giữ hạt nhân của Rutherford và bổ sung quy tắc lượng tử hoá quỹ đạo, nhờ đó giải thích được vạch quang phổ."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Vì sao bảng tuần hoàn ghi khối lượng nguyên tử neon là 20,18 chứ không phải số nguyên 20?",
-   "options": [
-    "Vì êlectron của neon chiếm 0,18 u",
-    "Vì khối lượng một nguyên tử neon chỉ đo được gần đúng",
-    "Vì neon có 20,18 nuclôn",
-    "Đó là giá trị trung bình theo tỉ lệ các đồng vị của neon trong tự nhiên"
-   ],
-   "answer": 3,
-   "explanation": "Neon tự nhiên là hỗn hợp $^{20}$Ne (~91%) và $^{22}$Ne (~9%); số khối từng nguyên tử luôn nguyên, còn con số trong bảng là trung bình."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Xét các phát biểu về cấu tạo hạt nhân:",
-   "statements": [
-    {
-     "text": "Prôtôn và nơtron gọi chung là nuclôn.",
-     "answer": true
-    },
-    {
-     "text": "Nơtron mang điện tích $+e$.",
-     "answer": false
-    },
-    {
-     "text": "Êlectron nằm bên trong hạt nhân.",
-     "answer": false
-    },
-    {
-     "text": "Hạt nhân mang điện dương vì chỉ chứa prôtôn mang điện và nơtron không mang điện.",
-     "answer": true
-    }
-   ],
-   "explanation": "Nơtron không mang điện; êlectron nằm ở vỏ nguyên tử; hạt nhân mang điện dương nhờ các prôtôn."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Xét các phát biểu về đồng vị:",
-   "statements": [
-    {
-     "text": "Các đồng vị của một nguyên tố có cùng số prôtôn.",
-     "answer": true
-    },
-    {
-     "text": "Các đồng vị của một nguyên tố có tính chất hoá học giống nhau.",
-     "answer": true
-    },
-    {
-     "text": "$^{14}_{6}\\text{C}$ và $^{14}_{7}\\text{N}$ là hai đồng vị vì cùng số khối 14.",
-     "answer": false
-    },
-    {
-     "text": "Các đồng vị của một nguyên tố có cùng số nơtron.",
-     "answer": false
-    }
-   ],
-   "explanation": "Đồng vị cùng $Z$, khác $N$; chỉ cùng số khối thì chưa đủ (C-14 và N-14 khác $Z$)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "hien_tuong",
-   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hiđrô có bao nhiêu đồng vị được nêu trong bài?",
-   "answer": "3",
-   "explanation": "Bài nêu ba đồng vị của hiđrô: $^1_1$H, $^2_1$H (đơteri), $^3_1$H (triti)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dieu_kien",
-   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Lực hạt nhân chỉ tác dụng trong phạm vi cỡ $10^{n}$ m. Tìm $n$.",
-   "answer": "-15",
-   "explanation": "Bài nêu tầm tác dụng của lực hạt nhân cỡ $10^{-15}$ m."
-  },
-  {
-   "type": "short_answer",
-   "kind": "hien_tuong",
-   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Đồng vị triti $^{3}_{1}\\text{H}$ có bao nhiêu nơtron?",
-   "answer": "2",
-   "explanation": "Ba đồng vị của hiđrô có số nơtron lần lượt là 0, 1, 2; triti có 2 nơtron."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Hạt nhân urani $^{238}_{92}\\text{U}$ có bao nhiêu nuclôn, prôtôn, nơtron?",
-   "options": [
-    "330 nuclôn · 92 prôtôn · 238 nơtron",
-    "238 nuclôn · 238 prôtôn · 92 nơtron",
-    "238 nuclôn · 92 prôtôn · 146 nơtron",
-    "238 nuclôn · 92 prôtôn · 92 nơtron"
+    "số khối $A$ nhưng khác số prôtôn $Z$",
+    "số nơtron $N$ nhưng khác số prôtôn $Z$",
+    "số prôtôn $Z$ nhưng khác số nơtron $N$",
+    "số prôtôn $Z$ và cùng số nơtron $N$"
    ],
    "answer": 2,
-   "explanation": "$A = 238$, $Z = 92$, $N = A - Z = 146$."
+   "explanation": "Đồng vị là các nguyên tử cùng số prôtôn $Z$ nhưng khác số nơtron $N$, do đó khác số khối $A$.",
+   "distractorNotes": {
+    "A": "Cùng số khối mà khác $Z$ là hai nguyên tố khác nhau, vì đồng vị bắt buộc phải cùng số prôtôn.",
+    "B": "Chỉ cùng số nơtron mà khác $Z$ thì vẫn là hai nguyên tố khác nhau, nên không phải đồng vị.",
+    "D": "Cùng cả $Z$ lẫn $N$ là cùng một loại hạt nhân, trong khi đồng vị phải khác số nơtron."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Cấu trúc hạt nhân",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực hạt nhân liên kết các nuclôn có đặc điểm nào sau đây?",
+   "options": [
+    "Là lực đẩy giữa các nuclôn với nhau",
+    "Yếu hơn lực đẩy tĩnh điện giữa prôtôn",
+    "Tác dụng ở mọi khoảng cách như hấp dẫn",
+    "Chỉ tác dụng trong phạm vi cỡ $10^{-15}$ m"
+   ],
+   "answer": 3,
+   "explanation": "Lực hạt nhân hút rất mạnh và thắng lực đẩy tĩnh điện. Nó chỉ tác dụng trong phạm vi cỡ $10^{-15}$ m.",
+   "distractorNotes": {
+    "A": "Nhầm lực hạt nhân là lực đẩy, trong khi đó là lực hút giữ các nuclôn lại với nhau.",
+    "B": "Đảo tương quan: lực hạt nhân thắng lực đẩy tĩnh điện, nếu yếu hơn thì hạt nhân đã vỡ ra.",
+    "C": "Coi lực hạt nhân giống lực hấp dẫn là sai, vì nó có tầm tác dụng rất ngắn, ngoài cỡ $10^{-15}$ m coi như bằng không."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Các đồng vị của cùng một nguyên tố có tính chất hoá học giống nhau vì chúng có cùng",
+   "options": [
+    "số nơtron nên cùng khối lượng hạt nhân",
+    "số prôtôn nên cùng số êlectron ở vỏ",
+    "số khối nên cùng số nuclôn trong hạt nhân",
+    "bán kính nên cùng thể tích của hạt nhân"
+   ],
+   "answer": 1,
+   "explanation": "Đồng vị cùng $Z$ nên cùng số êlectron ở vỏ, vì vậy tính chất hoá học giống nhau. Chúng chỉ khác nhau về khối lượng.",
+   "distractorNotes": {
+    "A": "Đồng vị khác số nơtron nên khác khối lượng hạt nhân, đây là điểm khác chứ không phải điểm chung.",
+    "C": "Đồng vị khác số nơtron nên số khối khác nhau, vì vậy không thể là lí do giống tính chất hoá học.",
+    "D": "Bán kính hạt nhân phụ thuộc số khối nên khác nhau giữa các đồng vị, và cũng không quyết định tính chất hoá học."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Cặp hạt nhân nào sau đây là hai đồng vị của nhau?",
+   "options": [
+    "$^{12}_{6}\\text{C}$ và $^{14}_{6}\\text{C}$",
+    "$^{14}_{6}\\text{C}$ và $^{14}_{7}\\text{N}$",
+    "$^{13}_{6}\\text{C}$ và $^{14}_{7}\\text{N}$",
+    "$^{3}_{1}\\text{H}$ và $^{3}_{2}\\text{He}$"
+   ],
+   "answer": 0,
+   "explanation": "Hai hạt nhân $^{12}_{6}\\text{C}$ và $^{14}_{6}\\text{C}$ cùng $Z = 6$, khác số nơtron, nên là đồng vị. Các cặp còn lại đều khác số prôtôn.",
+   "distractorNotes": {
+    "B": "Hai hạt nhân chỉ cùng số khối 14, còn $Z$ là 6 và 7 nên thuộc hai nguyên tố khác nhau.",
+    "C": "Hai hạt nhân chỉ trùng số nơtron, còn khác số prôtôn nên không phải đồng vị.",
+    "D": "Hai hạt nhân cùng số khối 3 nhưng $Z = 1$ và $Z = 2$, nên là hai nguyên tố khác nhau."
+   }
   },
   {
    "type": "multiple_choice",
@@ -224,33 +146,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Công thức gần đúng cho bán kính hạt nhân có số khối $A$ là:",
+   "question": "Bán kính hạt nhân có số khối $A$ được tính gần đúng theo công thức",
    "options": [
-    "$R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ (m)",
+    "$R = 1{,}2 \\cdot 10^{-15} A$ (m)",
     "$R = 1{,}2 \\cdot 10^{-15} A^{3}$ (m)",
-    "$R = 1{,}2 \\cdot 10^{-15} A^{2/3}$ (m)",
-    "$R = 1{,}2 \\cdot 10^{-15} A$ (m)"
+    "$R = 1{,}2 \\cdot 10^{-15} A^{1/2}$ (m)",
+    "$R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ (m)"
    ],
-   "answer": 0,
-   "explanation": "Bài nêu $R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ m: $R$ tỉ lệ với căn bậc ba của $A$."
+   "answer": 3,
+   "explanation": "Bán kính hạt nhân $R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ (m). Bán kính tăng chậm theo căn bậc ba của số khối.",
+   "distractorNotes": {
+    "A": "Quên số mũ $1/3$ nên coi bán kính tỉ lệ thuận với số khối.",
+    "B": "Nhầm căn bậc ba thành luỹ thừa ba, khiến bán kính tăng quá nhanh theo $A$.",
+    "C": "Nhầm căn bậc ba thành căn bậc hai của số khối."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "cong_thuc",
+   "kind": "tinh_nhanh",
    "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Neon tự nhiên gồm khoảng 91% $^{20}$Ne và 9% $^{22}$Ne. Khối lượng nguyên tử trung bình (theo u) xấp xỉ:",
+   "theorySection": 1,
+   "question": "Hạt nhân X có số khối gấp 8 lần số khối hạt nhân Y. Bán kính hạt nhân X so với bán kính hạt nhân Y",
    "options": [
-    "$0{,}91 \\cdot 20 + 0{,}09 \\cdot 22 \\approx 20{,}18$",
-    "$20 \\cdot 22 / 42 \\approx 10{,}5$",
-    "$(20 + 22)/2 = 21{,}00$",
-    "$0{,}91 \\cdot 22 + 0{,}09 \\cdot 20 \\approx 21{,}82$"
+    "gấp 8 lần",
+    "gấp 2 lần",
+    "gấp $2\\sqrt{2}$ lần",
+    "gấp 512 lần"
    ],
-   "answer": 0,
-   "explanation": "Khối lượng trung bình = tổng (tỉ lệ × số khối) theo tỉ lệ đồng vị, ra 20,18 u."
+   "answer": 1,
+   "explanation": "Vì $R \\sim A^{1/3}$ nên khi $A$ tăng 8 lần thì $R$ tăng $8^{1/3} = 2$ lần.",
+   "distractorNotes": {
+    "A": "Coi $R$ tỉ lệ thuận với $A$, quên lấy căn bậc ba của tỉ số 8.",
+    "C": "Lấy căn bậc hai $\\sqrt{8}$ thay cho căn bậc ba $8^{1/3} = 2$.",
+    "D": "Lấy luỹ thừa ba $8^3$ thay cho căn bậc ba của tỉ số số khối."
+   }
   },
   {
    "type": "multiple_choice",
@@ -260,127 +192,322 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Hệ thức đúng cho đơn vị khối lượng nguyên tử $u$ là:",
+   "question": "Đơn vị khối lượng nguyên tử u có giá trị bằng",
    "options": [
-    "$1\\ \\text{u} \\approx 931{,}5\\ \\text{MeV}/c^2$",
-    "$1\\ \\text{u} \\approx 938{,}3\\ \\text{MeV}/c^2$",
-    "$1\\ \\text{u} \\approx 1{,}6 \\cdot 10^{-13}\\ \\text{MeV}/c^2$",
-    "$1\\ \\text{u} \\approx 1{,}66054\\ \\text{MeV}/c^2$"
+    "$1/12$ khối lượng nguyên tử $^{12}_6\\text{C}$",
+    "khối lượng của đúng một prôtôn",
+    "khối lượng của đúng một nơtron",
+    "khối lượng một nguyên tử $^{1}_1\\text{H}$"
    ],
    "answer": 0,
-   "explanation": "Bài nêu $1\\ \\text{u} = 1{,}66054 \\cdot 10^{-27}$ kg $\\approx 931{,}5$ MeV/$c^2$."
+   "explanation": "Theo định nghĩa, $1$ u bằng $1/12$ khối lượng nguyên tử $^{12}_6\\text{C}$, vào khoảng $1{,}66054 \\cdot 10^{-27}$ kg.",
+   "distractorNotes": {
+    "B": "Prôtôn nặng $1{,}00728$ u, khác 1 u, nên không phải chuẩn để định nghĩa đơn vị u.",
+    "C": "Nơtron nặng $1{,}00866$ u, khác 1 u, nên không được dùng làm chuẩn định nghĩa.",
+    "D": "Nhầm nguyên tử chuẩn: đơn vị u được định nghĩa theo nguyên tử $^{12}_6\\text{C}$, không theo nguyên tử hiđrô."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "tinh_nhanh",
+   "kind": "don_vi",
+   "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Suy từ hệ thức $E = mc^2$, đơn vị khối lượng nguyên tử 1 u xấp xỉ bằng",
+   "options": [
+    "$931{,}5\\ \\text{MeV} \\cdot c^2$",
+    "$931{,}5\\ \\text{J}/c^2$",
+    "$931{,}5\\ \\text{MeV}/c^2$",
+    "$1{,}6 \\cdot 10^{-13}\\ \\text{MeV}/c^2$"
+   ],
+   "answer": 2,
+   "explanation": "Từ $m = E/c^2$, ta có $1$ u $\\approx 931{,}5$ MeV/$c^2$.",
+   "distractorNotes": {
+    "A": "Đảo phép tính: từ $m = E/c^2$, khối lượng là năng lượng chia cho $c^2$, không phải nhân với $c^2$.",
+    "B": "Nhầm đơn vị năng lượng, vì con số 931,5 đi với MeV chứ không đi với jun.",
+    "D": "Lẫn với hệ số đổi $1$ MeV $= 1{,}6 \\cdot 10^{-13}$ J, vốn là quan hệ giữa hai đơn vị năng lượng chứ không phải giá trị của u."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một chất có khối lượng mol nguyên tử $M$, số Avogadro là $N_A$, số khối là $A$. Khối lượng một nguyên tử của chất đó bằng",
+   "options": [
+    "$M \\cdot N_A$",
+    "$N_A / M$",
+    "$M / A$",
+    "$M / N_A$"
+   ],
+   "answer": 3,
+   "explanation": "Một mol gồm $N_A$ nguyên tử, nên khối lượng một nguyên tử bằng $M/N_A$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia, nên kết quả lớn gấp $N_A^2$ lần khối lượng một nguyên tử.",
+    "B": "Đảo tử và mẫu, nên kết quả có đơn vị nghịch đảo của khối lượng.",
+    "C": "Chia cho số khối chỉ cho giá trị gần 1 g/mol, không ra khối lượng một nguyên tử."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đổi sang đơn vị jun, 1 MeV bằng",
+   "options": [
+    "$1{,}6 \\cdot 10^{-19}$ J",
+    "$1{,}6 \\cdot 10^{-13}$ J",
+    "$1{,}6 \\cdot 10^{-16}$ J",
+    "$1{,}6 \\cdot 10^{13}$ J"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài học, $1$ MeV $= 1{,}6 \\cdot 10^{-13}$ J.",
+   "distractorNotes": {
+    "A": "Đây là giá trị của 1 eV, còn thiếu bước nhân thêm $10^6$ khi đổi sang MeV.",
+    "C": "Nhầm tiền tố mega là $10^3$ thay vì $10^6$, nên số mũ thiếu ba bậc.",
+    "D": "Sai dấu số mũ, biến một lượng năng lượng rất nhỏ cỡ hạt nhân thành rất lớn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
    "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Một mol có $N_A$ nguyên tử và khối lượng mol là $M$. Khối lượng một nguyên tử là:",
+   "question": "Coi hạt nhân là hình cầu có bán kính $R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ (m). Thể tích hạt nhân",
    "options": [
-    "$M / N_A$",
-    "$N_A / M$",
-    "Luôn bằng số khối $A$ (tính bằng u)",
-    "$M \\cdot N_A$"
+    "tỉ lệ thuận với số khối $A$",
+    "tỉ lệ thuận với $A^{1/3}$",
+    "tỉ lệ thuận với $A^{3}$",
+    "không phụ thuộc số khối $A$"
    ],
    "answer": 0,
-   "explanation": "Một mol chứa $N_A$ nguyên tử nên khối lượng một nguyên tử bằng $M$ chia $N_A$; số khối chỉ là số đếm nuclôn."
+   "explanation": "Thể tích hình cầu tỉ lệ với $R^3$. Mà $R^3 \\sim (A^{1/3})^3 = A$, nên thể tích tỉ lệ thuận với $A$.",
+   "distractorNotes": {
+    "B": "Nhầm thể tích với bán kính, quên rằng thể tích tỉ lệ với lập phương bán kính.",
+    "C": "Lấy lập phương của $A$ thay vì lập phương của $A^{1/3}$.",
+    "D": "Bán kính phụ thuộc $A$ nên thể tích, vốn tỉ lệ với $R^3$, cũng phải phụ thuộc $A$."
+   }
   },
   {
    "type": "true_false",
-   "kind": "tinh_nhanh",
-   "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
+   "kind": "hien_tuong",
+   "topic": "Cấu trúc hạt nhân",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Một mẫu nhôm $^{27}_{13}\\text{Al}$, khối lượng mol $26{,}98$ g/mol. Xét các phát biểu:",
+   "theorySection": 0,
+   "question": "Bắn chùm hạt alpha vào một lá vàng mỏng. Kết quả: hầu hết hạt bay thẳng qua, một số ít bị lệch mạnh, vài hạt bật ngược lại. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Hạt nhân nhôm có 13 prôtôn.",
+     "text": "Hầu hết hạt alpha bay thẳng qua lá vàng vì nguyên tử gần như trống rỗng.",
      "answer": true
     },
     {
-     "text": "Hạt nhân nhôm có 14 nơtron.",
+     "text": "Hạt alpha bị lệch mạnh là do va chạm với các êlectron của nguyên tử vàng.",
+     "answer": false
+    },
+    {
+     "text": "Hiện tượng vài hạt bật ngược chứng tỏ điện tích dương tập trung ở một vùng rất nhỏ, rất nặng.",
      "answer": true
     },
     {
-     "text": "Bán kính hạt nhân nhôm là $R = 1{,}2 \\cdot 10^{-15} \\cdot 27^{1/3} = 3{,}6 \\cdot 10^{-15}$ m.",
-     "answer": true
-    },
-    {
-     "text": "Khối lượng một nguyên tử nhôm bằng $26{,}98 \\cdot N_A$ gam.",
+     "text": "Kết quả thí nghiệm chứng minh êlectron chỉ chuyển động trên các quỹ đạo có năng lượng xác định.",
      "answer": false
     }
    ],
-   "explanation": "$Z=13$, $N=27-13=14$, $27^{1/3}=3$ nên $R=3{,}6\\cdot10^{-15}$ m; khối lượng một nguyên tử là $M/N_A$ chứ không nhân."
+   "explanation": "Thí nghiệm lá vàng cho thấy nguyên tử gần như trống và có hạt nhân nhỏ, nặng, mang điện dương. Êlectron rất nhẹ nên không làm hạt alpha lệch mạnh. Quỹ đạo có năng lượng xác định là phần Bohr bổ sung sau.",
+   "distractorNotes": {
+    "0": "Coi ý này là sai thì không giải thích được vì sao phần lớn hạt alpha đi qua mà không gặp vật cản nào.",
+    "1": "Êlectron nhẹ hơn nuclôn gần hai nghìn lần nên không thể làm hạt alpha lệch mạnh.",
+    "2": "Điện dương rải đều như mô hình Thomson không thể làm hạt alpha bật ngược, nên phải có một vùng nhỏ và nặng.",
+    "3": "Thí nghiệm lá vàng không cho biết gì về quỹ đạo êlectron, vì quỹ đạo có năng lượng xác định là phần Bohr bổ sung sau."
+   }
   },
   {
    "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
+   "kind": "dinh_nghia",
+   "topic": "Cấu trúc hạt nhân",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Xét bán kính hạt nhân $R = 1{,}2 \\cdot 10^{-15} A^{1/3}$ và các đơn vị:",
+   "question": "Một nguyên tử trung hoà về điện có hạt nhân gồm các prôtôn và nơtron. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "$R$ tỉ lệ với căn bậc ba của số khối $A$.",
+     "text": "Mỗi prôtôn mang điện tích $+e$.",
      "answer": true
     },
     {
-     "text": "Số khối $A$ tăng 8 lần thì $R$ tăng 2 lần.",
-     "answer": true
-    },
-    {
-     "text": "Từ nhôm ($A=27$) đến vàng ($A=197$), $A$ tăng 7,3 lần thì $R$ cũng tăng gần 7,3 lần.",
+     "text": "Mỗi nơtron mang điện tích $-e$.",
      "answer": false
     },
     {
-     "text": "$1\\ \\text{MeV} = 1{,}6 \\cdot 10^{-13}$ J.",
+     "text": "Số êlectron ở vỏ nguyên tử bằng số prôtôn trong hạt nhân.",
      "answer": true
+    },
+    {
+     "text": "Hạt nhân trung hoà về điện vì chứa cả prôtôn lẫn nơtron.",
+     "answer": false
     }
    ],
-   "explanation": "Vì $R \\sim A^{1/3}$ nên $R$ tăng chậm: $A$ tăng 7,3 lần thì $R$ chỉ tăng khoảng 2 lần."
+   "explanation": "Prôtôn mang điện $+e$, nơtron không mang điện. Vì vậy hạt nhân mang điện dương. Nguyên tử trung hoà nên số êlectron ở vỏ bằng số prôtôn.",
+   "distractorNotes": {
+    "0": "Bài học nêu rõ prôtôn mang điện tích $+e$, nên không thể coi ý này là sai.",
+    "1": "Nhầm nơtron với êlectron, vì nơtron không mang điện còn hạt mang điện $-e$ là êlectron ở vỏ.",
+    "2": "Nguyên tử trung hoà nên điện tích âm ở vỏ phải cân bằng đúng điện tích dương của các prôtôn.",
+    "3": "Nơtron không mang điện nên không trung hoà được prôtôn, vì vậy hạt nhân luôn mang điện dương."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Bán kính hạt nhân nhôm ($A=27$) bằng bao nhiêu (đơn vị $10^{-15}$ m)?",
-   "answer": "3,6",
-   "explanation": "$R = 1{,}2 \\cdot 27^{1/3} = 1{,}2 \\cdot 3 = 3{,}6$ (đơn vị $10^{-15}$ m)."
+   "question": "Hiđrô có ba đồng vị: $^1_1\\text{H}$, $^2_1\\text{H}$ (đơteri) và $^3_1\\text{H}$ (triti). Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Hạt nhân của cả ba đồng vị đều có 1 prôtôn.",
+     "answer": true
+    },
+    {
+     "text": "Hạt nhân triti có 3 nơtron.",
+     "answer": false
+    },
+    {
+     "text": "Ba đồng vị này có tính chất hoá học giống nhau.",
+     "answer": true
+    },
+    {
+     "text": "Ba đồng vị này có khối lượng nguyên tử bằng nhau.",
+     "answer": false
+    }
+   ],
+   "explanation": "Cả ba đồng vị có $Z = 1$, với số nơtron lần lượt là 0, 1, 2. Chúng cùng tính chất hoá học nhưng khác khối lượng.",
+   "distractorNotes": {
+    "0": "Chỉ số dưới của cả ba kí hiệu đều là 1, tức mỗi hạt nhân có đúng 1 prôtôn.",
+    "1": "Đọc nhầm số nuclôn thành số nơtron, trong khi triti có $N = 3 - 1 = 2$.",
+    "2": "Cùng số prôtôn nên cùng số êlectron ở vỏ, do đó tính chất hoá học giống nhau.",
+    "3": "Số nơtron lần lượt là 0, 1, 2 nên khối lượng của ba đồng vị khác nhau."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Cấu trúc hạt nhân",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét ba mô hình nguyên tử của Thomson, Rutherford và Bohr. Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Mô hình Thomson coi nguyên tử là quả cầu điện dương đặc, các êlectron cắm rải rác bên trong.",
+     "answer": true
+    },
+    {
+     "text": "Theo mô hình Rutherford, gần như toàn bộ khối lượng nguyên tử tập trung ở hạt nhân.",
+     "answer": true
+    },
+    {
+     "text": "Mô hình Bohr phủ nhận sự tồn tại của hạt nhân nguyên tử.",
+     "answer": false
+    },
+    {
+     "text": "Theo mô hình Bohr, êlectron có thể chuyển động trên quỹ đạo có bán kính bất kì.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bohr giữ nguyên hạt nhân trong mô hình Rutherford. Ông chỉ bổ sung điều kiện: êlectron chỉ ở những quỹ đạo cho phép, có năng lượng xác định.",
+   "distractorNotes": {
+    "0": "Ý này khớp với mô tả mô hình Thomson trong bài: quả cầu dương đặc, êlectron cắm rải rác.",
+    "1": "Rutherford đặt điện tích dương và gần hết khối lượng vào hạt nhân rất nhỏ, nên không thể coi ý này là sai.",
+    "2": "Bohr giữ nguyên hạt nhân của Rutherford, chỉ bổ sung điều kiện về quỹ đạo cho phép của êlectron.",
+    "3": "Điểm mới của Bohr chính là êlectron chỉ ở các quỹ đạo cho phép, có bán kính và năng lượng xác định."
+   }
+  },
+  {
+   "type": "true_false",
    "kind": "cong_thuc",
    "topic": "Kí hiệu hạt nhân, số nuclôn, đồng vị",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Số nơtron trong hạt nhân $^{238}_{92}\\text{U}$ là bao nhiêu?",
-   "answer": "146",
-   "explanation": "$N = A - Z = 238 - 92 = 146$."
+   "theorySection": 1,
+   "question": "Một hạt nhân đồng có kí hiệu $^{65}_{29}\\text{Cu}$. Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Số 29 là số prôtôn trong hạt nhân.",
+     "answer": true
+    },
+    {
+     "text": "Số 65 là số nơtron trong hạt nhân.",
+     "answer": false
+    },
+    {
+     "text": "Hạt nhân có $N = A - Z = 36$ nơtron.",
+     "answer": true
+    },
+    {
+     "text": "Số 65 cho biết khối lượng nguyên tử đồng đúng bằng 65 u.",
+     "answer": false
+    }
+   ],
+   "explanation": "Trong kí hiệu, chỉ số dưới $Z = 29$ là số prôtôn và chỉ số trên $A = 65$ là số nuclôn. Do đó $N = 36$. Số khối là số đếm nuclôn, không phải khối lượng.",
+   "distractorNotes": {
+    "0": "Chỉ số dưới trong kí hiệu $^A_Z X$ luôn là số prôtôn, nên 29 là số prôtôn.",
+    "1": "Nhầm chỉ số trên là số nơtron, trong khi 65 là tổng số nuclôn gồm cả prôtôn và nơtron.",
+    "2": "Phép tính $N = 65 - 29 = 36$ đúng theo hệ thức $A = Z + N$.",
+    "3": "Nhầm số khối với khối lượng: số khối là số đếm nguyên, còn khối lượng theo u là số thực."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "true_false",
    "kind": "don_vi",
    "topic": "Kích thước, khối lượng hạt nhân và đơn vị u",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "$1\\ \\text{MeV} = 1{,}6 \\cdot 10^{m}$ J. Tìm $m$.",
-   "answer": "-13",
-   "explanation": "Bài nêu $1\\ \\text{MeV} = 1{,}6 \\cdot 10^{-13}$ J."
+   "question": "Cho các số liệu: khối lượng prôtôn $m_p \\approx 1{,}00728$ u, khối lượng nơtron $m_n \\approx 1{,}00866$ u; hạt nhân nhôm có số khối 27, khối lượng nguyên tử nhôm là 26,98 u. Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "$1$ u $\\approx 1{,}66054 \\cdot 10^{-27}$ kg.",
+     "answer": true
+    },
+    {
+     "text": "Khối lượng nơtron lớn hơn khối lượng prôtôn.",
+     "answer": true
+    },
+    {
+     "text": "Khối lượng nguyên tử tính theo u luôn đúng bằng số khối $A$.",
+     "answer": false
+    },
+    {
+     "text": "Bán kính hạt nhân tỉ lệ thuận với số khối $A$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ta có $1$ u $\\approx 1{,}66054 \\cdot 10^{-27}$ kg, và $m_n \\gt m_p$. Nhôm có số khối 27 nhưng khối lượng 26,98 u, nên khối lượng không trùng số khối. Ngoài ra $R \\sim A^{1/3}$, không tỉ lệ thuận với $A$.",
+   "distractorNotes": {
+    "0": "Đây đúng là giá trị của đơn vị u được nêu trong bài.",
+    "1": "Theo số liệu đề cho, $1{,}00866$ u lớn hơn $1{,}00728$ u nên nơtron nặng hơn prôtôn.",
+    "2": "Nhầm số khối với khối lượng, vì chính nhôm có $A = 27$ nhưng khối lượng nguyên tử là 26,98 u.",
+    "3": "Quên số mũ $1/3$: $R$ tỉ lệ với $A^{1/3}$ nên tăng chậm hơn nhiều so với $A$."
+   }
   }
  ]
 }
