@@ -113,6 +113,14 @@ def parse_file(name):
                 flags.append('nhieu-gach-chan')
             item['answer'] = ans[0] if len(ans) == 1 else None
         elif b['part'] == 'tf':
+            if '<table' in body:  # pandoc xuất bảng HTML khi ô có nhiều đoạn → đổi về dòng pipe
+                def _tb(m):
+                    out = []
+                    for tr in re.findall(r'<tr>(.*?)</tr>', m.group(0), flags=re.S):
+                        cells = [re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', c)).strip() for c in re.findall(r'<t[dh][^>]*>(.*?)</t[dh]>', tr, flags=re.S)]
+                        if len(cells) == 2: out.append('| ' + cells[0] + ' | ' + cells[1] + ' |')
+                    return '\n\n' + '\n'.join(out) + '\n'
+                body = re.sub(r'<table>.*?</table>', _tb, body, flags=re.S)
             rows = re.findall(r'^\|\s*([a-d])\\?\.\s*(.*?)\s*\|\s*\**\s*([ĐSđs])\s*\**\s*\|', body, flags=re.M)
             stem = body.split('\n\n|')[0] if '\n\n|' in body else body.split('\n|')[0]
             item['stem'] = clean_math(tidy(stem))
