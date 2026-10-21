@@ -213,3 +213,22 @@ export function distractorHints(q: ExamQuestion, r: QuestionResponse): Distracto
   }
   return [];
 }
+
+/** Ghi chú của MỌI phương án sai (giáo viên/trợ giảng xem đề): MC = mọi chữ khác đáp án, đúng–sai = mọi ý có ghi chú. */
+export function allDistractorHints(q: ExamQuestion): DistractorHint[] {
+  const notes = q.distractorNotes;
+  if (!notes) return [];
+  if (q.type === "multiple_choice") {
+    return LETTERS.flatMap((key, i) => {
+      const note = i !== q.answer ? notes[key]?.trim() : "";
+      return note ? [{ label: key, note }] : [];
+    });
+  }
+  if (q.type === "true_false") {
+    return q.statements.flatMap((_, i) => {
+      const note = notes[String(i)]?.trim();
+      return note ? [{ label: `ý ${["a", "b", "c", "d"][i] ?? i + 1})`, note }] : [];
+    });
+  }
+  return [];
+}

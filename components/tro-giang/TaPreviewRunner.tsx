@@ -6,8 +6,9 @@ import QuestionCard from "@/components/exams/QuestionCard";
 import { emptyResponses, isAnswered, type ExamQuestion, type QuestionResponse } from "@/features/exams/types";
 
 /**
- * Trợ giảng làm thử đề thầy gửi: mỗi câu trả lời xong bấm "Xem đáp án" là hiện ngay đáp án + lời giải
- * (QuestionCard chế độ review), rồi sang câu sau. Hết đề → sang trang Chữa bài của đề cho lớp đó.
+ * Trợ giảng xem đề thầy gửi bằng đúng giao diện của giáo viên (ExamRunner teacherView): mỗi câu hiện sẵn đáp án đúng,
+ * lời giải và lý do của MỌI phương án sai (QuestionCard selfCheck). Muốn tự làm trước thì bấm "Tự làm thử câu này":
+ * chọn xong bấm "Xem đáp án" thấy điểm câu đó cùng lý do mọi phương án sai. Hết đề → sang trang Chữa bài của đề cho lớp đó.
  * Không đồng hồ, không lưu điểm, không ghi exam_results — đây là xem trước, không phải bài nộp.
  */
 export default function TaPreviewRunner({
@@ -24,14 +25,22 @@ export default function TaPreviewRunner({
   const router = useRouter();
   const [cur, setCur] = useState(0);
   const [responses, setResponses] = useState<QuestionResponse[]>(() => emptyResponses(questions));
+  // Câu TA chọn tự làm thử: chưa lộ đáp án tới khi bấm "Xem đáp án". Còn lại mặc định hiện như giao diện giáo viên.
+  const [trying, setTrying] = useState<Set<number>>(new Set());
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
 
   const q = questions[cur];
-  const shown = revealed.has(cur);
+  const isTrying = trying.has(cur);
+  const shown = !isTrying || revealed.has(cur);
   const isLast = cur === questions.length - 1;
   const canReveal = isAnswered(q, responses[cur]);
 
   const reveal = () => setRevealed((s) => new Set(s).add(cur));
+  const tryThis = () => {
+    setResponses((rs) => rs.map((x, i) => (i === cur ? emptyResponses([q])[0] : x)));
+    setRevealed((s) => { const n = new Set(s); n.delete(cur); return n; });
+    setTrying((s) => new Set(s).add(cur));
+  };
   const next = () => {
     if (isLast) router.push(`/tro-giang/chua-bai?exam=${examId}&class=${classId}`);
     else setCur(cur + 1);
@@ -55,10 +64,17 @@ export default function TaPreviewRunner({
         question={q}
         response={responses[cur]}
         review={shown}
+        selfCheck={!isTrying}
+        showAllNotes
         onChange={shown ? undefined : (r) => setResponses((rs) => rs.map((x, i) => (i === cur ? r : x)))}
       />
 
       <div className="flex gap-2">
+        {cur > 0 && (
+          <button type="button" onClick={() => setCur(cur - 1)} className="min-h-12 rounded-xl border border-white/15 px-4 font-semibold text-white">
+            ← Trước
+          </button>
+        )}
         {!shown ? (
           <button
             type="button"
@@ -74,8 +90,13 @@ export default function TaPreviewRunner({
           </button>
         )}
       </div>
-      {!shown && (
-        <button type="button" onClick={() => { reveal(); }} className="text-sm text-slate-400 underline">
+      {!isTrying && (
+        <button type="button" onClick={tryThis} className="min-h-11 text-sm text-slate-300 underline">
+          Tự làm thử câu này
+        </button>
+      )}
+      {isTrying && !shown && (
+        <button type="button" onClick={reveal} className="min-h-11 text-sm text-slate-400 underline">
           Bỏ qua, chỉ xem đáp án
         </button>
       )}

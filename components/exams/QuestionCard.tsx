@@ -9,7 +9,7 @@ import {
   QUESTION_STATUS_LABELS,
 } from "@/features/exams/types";
 import Html from "@/components/exams/ContentHtml";
-import { distractorHints } from "@/features/lessons/practice-step";
+import { allDistractorHints, distractorHints } from "@/features/lessons/practice-step";
 import Badge from "@/components/ui/Badge";
 
 const LETTERS = ["A", "B", "C", "D"];
@@ -90,6 +90,8 @@ interface Props {
   review?: boolean;
   /** Xem đáp án để tự đối chiếu (không tính là một lần làm bài) — bỏ điểm/số câu đúng, không tô đỏ. */
   selfCheck?: boolean;
+  /** Giáo viên/trợ giảng: hiện lý do của MỌI phương án sai, không chỉ phương án người xem chọn. Tự bật khi `selfCheck`. */
+  showAllNotes?: boolean;
 }
 
 export default function QuestionCard({
@@ -99,13 +101,14 @@ export default function QuestionCard({
   onChange,
   review = false,
   selfCheck = false,
+  showAllNotes = false,
 }: Props) {
   const scored = review && !selfCheck;
   const status = scored ? questionStatus(q, r) : null;
   const graded = scored && q.type !== "essay" ? gradeQuestion(q, r) : null;
   const border = status ? CARD_TONE[status] : "border-line";
   // Dòng "vì sao em chọn sai" cho đúng phương án/ý em đã chọn sai (câu có distractorNotes); không hiện khi tự đối chiếu.
-  const hints = scored ? distractorHints(q, r) : [];
+  const hints = review && (selfCheck || showAllNotes) ? allDistractorHints(q) : scored ? distractorHints(q, r) : [];
 
   return (
     <div className={`exam-paper rounded-2xl border bg-panel p-5 ${border}`}>
