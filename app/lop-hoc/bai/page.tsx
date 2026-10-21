@@ -653,6 +653,26 @@ function ExamRow({
 }
 
 /** Khung xương trong lúc chờ bài học — cùng lớp bố cục (lesson-shell/lesson-layout) để nội dung về không nhảy. */
+function LessonLoginWall({ title }: { title: string }) {
+  const next = typeof window === "undefined" ? "" : encodeURIComponent(window.location.pathname + window.location.search);
+  return (
+    <div className="mx-auto max-w-xl px-4 py-16 text-center">
+      <h1 className="text-xl font-bold text-slate-900">{title || "Bài học"}</h1>
+      <p className="mt-3 text-base text-slate-700">
+        Bài này dành cho thành viên. Tạo tài khoản <strong>miễn phí</strong> trong 1 phút để học tiếp — không cần thẻ, không mất phí.
+      </p>
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+        <Link href={`/dang-ky/?next=${next}`} className="inline-flex min-h-12 items-center justify-center rounded-lg bg-blue-600 px-6 font-semibold text-white">
+          Tạo tài khoản miễn phí
+        </Link>
+        <Link href={`/dang-nhap/?next=${next}`} className="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-300 px-6 font-semibold text-slate-800">
+          Tôi đã có tài khoản
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 function LessonSkeleton() {
   return (
     <div className="lesson-shell" aria-busy="true" aria-label="Đang tải bài học">
@@ -1366,6 +1386,8 @@ function LessonLoader() {
   if (!id) return <p className="lesson-notice">Thiếu mã bài học trong địa chỉ.</p>;
   if (error) return <p className="lesson-notice text-red-400">{error}</p>;
   if (!items) return <LessonSkeleton />;
+  // Từ 21/10/2026 nội dung bài (trừ vài bài xem thử) chỉ mở cho tài khoản đăng nhập — RLS trả mục rỗng cho khách.
+  if (!loading && !session && items.length === 0) return <LessonLoginWall title={title} />;
 
   // AVCN là học phần CTTC: gốc đường dẫn về hub CTTC, không về bộ chọn lớp THPT.
   const isAvcn = classSlug === AVCN_CLASS_SLUG;

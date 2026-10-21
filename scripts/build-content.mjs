@@ -94,11 +94,11 @@ function plainTextOf(html) {
     .trim();
 }
 
-function writeSearchIndex(generatedAt, lessons, itemsByLesson) {
+function writeSearchIndex(generatedAt, lessons, itemsByLesson, previewIds) {
   const rows = lessons.map((l) => ({
     id: l.id,
     x: (itemsByLesson.get(l.id) ?? [])
-      .filter((it) => it.body_html)
+      .filter((it) => it.body_html && previewIds.has(l.id))
       .map((it) => plainTextOf(it.body_html))
       .join(" "),
   }));
@@ -556,6 +556,7 @@ async function main() {
   const supabase = createClient(url, anonKey, { auth: { persistSession: false } });
 
   let classes, chapters, lessonRows, itemRows, itemColumns;
+  let previewIds = new Set([2, 20, 46]); // mặc định, khớp migration 20261021140000; ghi đè bằng lessons.is_preview
   try {
     // ---- classes (như fetchClasses) ----
     const cls = await supabase
@@ -602,8 +603,18 @@ async function main() {
 
     // ---- lesson_items của các bài đó (metadata + body_html + questions chỉ để đếm) ----
     const lessonIds = lessonRows.map((l) => l.id);
+    // Từ 21/10/2026 lesson_items chỉ mở cho người đã đăng nhập (trừ bài xem thử) nên anon không đủ để đếm mục.
+    // Có service role thì đọc bằng nó (danh mục vẫn đủ số mục/itemRefs); body chỉ ghi ra file tĩnh cho bài xem thử.
+    const itemClient = serviceKey ? createClient(url, serviceKey, { auth: { persistSession: false } }) : supabase;
+    if (!serviceKey) warn("thiếu SUPABASE_SERVICE_ROLE_KEY — danh mục sẽ thiếu số mục của bài không xem thử.");
+    try {
+      const { data } = await supabase.from("lessons").select("id").eq("is_preview", true);
+      previewIds = new Set((data ?? []).map((r) => r.id));
+    } catch {
+      /* chưa chạy migration is_preview → dùng danh sách mặc định */
+    }
     const itemSelect = (columns) => () =>
-      supabase
+      itemClient
         .from("lesson_items")
         .select(`${columns}, body_html, questions`)
         .in("lesson_id", lessonIds)
@@ -689,6 +700,7 @@ async function main() {
   mkdirSync(LESSONS_DIR, { recursive: true });
   let bytes = 0;
   for (const l of lessons) {
+    if (!previewIds.has(l.id)) continue; // bài khoá: client tải qua Supabase sau khi đăng nhập
     const file = {
       generatedAt,
       lesson: l,
@@ -700,7 +712,7 @@ async function main() {
     writeFileSync(join(LESSONS_DIR, `${l.id}.json`), json);
   }
   writeJson(join(OUT_DIR, "catalog.json"), catalog);
-  writeSearchIndex(generatedAt, lessons, itemsByLesson);
+  writeSearchIndex(generatedAt, lessons, itemsByLesson, previewIds);
   const counts = await fetchSiteCounts(url, serviceKey);
   const courses = await fetchPublicCourses(supabase);
   writeJson(
