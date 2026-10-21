@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState, type ComponentProps } from "r
 import dynamic from "next/dynamic";
 import { CheckCircle2, CircleAlert, Flag } from "lucide-react";
 import Html from "@/components/exams/ContentHtml";
-import { distractorHints, isFullyCorrect } from "@/features/lessons/practice-step";
+import { allDistractorHints, distractorHints, isFullyCorrect } from "@/features/lessons/practice-step";
 import LateNightNudge from "@/components/rank/LateNightNudge";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
@@ -498,7 +498,8 @@ export default function ExamRunner({
     const q = exam.questions[cur];
     const isChecked = instant && checked.has(cur);
     const curCorrect = isChecked && isFullyCorrect(q, responses[cur]);
-    const curHints = isChecked ? distractorHints(q, responses[cur]) : [];
+    // Giáo viên/trợ giảng làm thử: thấy lý do của MỌI phương án sai, không chỉ phương án mình chọn.
+    const curHints = isChecked ? (teacherView ? allDistractorHints(q) : distractorHints(q, responses[cur])) : [];
     return (
       <div ref={topRef} className="mx-auto max-w-3xl scroll-mt-24">
         <ConfirmDialog
