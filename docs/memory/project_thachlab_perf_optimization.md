@@ -86,7 +86,7 @@ hổng đã gây ra toàn bộ chuỗi revert/redo ở trên.
 2. `perf5/split-samplegrid` (`ffa5e2c8`) — tách `SampleQuestionsGrid` → `SampleQuestionsGridLazy.tsx`
    bằng `next/dynamic({ssr:false})` + `LazyErrorBoundary`, dùng ở `app/lop-hoc/bai/page.tsx` +
    `InlineLessonAccordion.tsx`. Kết quả: `/lop-hoc/bai` 1038→1029 KB — **CHƯA đạt** mục tiêu <1000 KB.
-   Phát hiện quan trọng: ước tính "~34 KB dư là SampleQuestionsGrid" ở `perf4/RESULT.md` §1 SAI — phần
+   Phát hiện quan trọng: ước tính "~34 KB dư là SampleQuestionsGrid" ở `docs/archive/perf4/RESULT.md` §1 SAI — phần
    dư thật nằm ở `LessonMasteryCard.tsx` + code Navbar/Footer, không phải `SampleQuestionsGrid`. Muốn
    đạt <1000 KB thật sự phải làm đợt riêng động vào `LessonMasteryCard.tsx`/`page.tsx`.
 3. `perf5/test-exam-flow` (`169a494c`, không sửa code) — lần đầu tiên test được luồng làm bài + nộp
@@ -126,8 +126,8 @@ hổng đã gây ra toàn bộ chuỗi revert/redo ở trên.
 commit revert/redo liên tiếp trong git log, và biết `app/error.tsx` mới là lưới an toàn thật.
 **How to apply:** trước khi tách thêm JS bằng `next/dynamic`, luôn bọc `LazyErrorBoundary` (đã có sẵn
 ở `components/ui/LazyErrorBoundary.tsx`) và tin rằng `app/error.tsx` là lưới cuối — nhưng vẫn phải tự
-test xoá-chunk-mở-tab-mới cho MỌI chunk mới, không chỉ chunk cũ. Đọc `perf4/RESULT.md` rồi
-`perf5/RESULT-*.md` (3 file: chunk-error, samplegrid, exam-flow — đọc để thấy trạng thái cuối) trước
+test xoá-chunk-mở-tab-mới cho MỌI chunk mới, không chỉ chunk cũ. Đọc `docs/archive/perf4/RESULT.md` rồi
+`docs/archive/perf5/RESULT-*.md` (3 file: chunk-error, samplegrid, exam-flow — đọc để thấy trạng thái cuối) trước
 khi làm đợt 6. Đợt 6 nên nhắm `/lop-hoc/bai` còn dư ở `LessonMasteryCard.tsx` (xem mục Đợt 5 §2) để
 đạt <1000 KB, và test lại re-render đồng hồ đếm ngược ở đề 70+ câu (mục Đợt 5 §3). Khi chạy nhiều
 worktree/agent song song trên cùng repo: KHÔNG dùng `git stash` trần (xem mục Đợt 5 §5). Liên quan

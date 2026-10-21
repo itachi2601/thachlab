@@ -18,7 +18,7 @@ mỗi agent một **git worktree** (`isolation: "worktree"`), nhánh `perf2/<tê
 - Commit nhỏ, message tiếng Việt. Báo cáo cuối: file đã sửa, số liệu trước/sau, rủi ro, việc còn lại.
 
 ## Pha 0 — Orchestrator khảo sát (tuần tự, ngắn)
-Ghi `perf2/BASELINE2.md`:
+Ghi `docs/archive/perf2/BASELINE2.md`:
 1. **Máy thật học sinh đang dùng.** Tìm trong `docs/ANALYTICS-SETUP.md` và dữ liệu analytics/Supabase
    xem có thu user-agent không. Có thì thống kê: top 10 thiết bị, top 10 phiên bản trình duyệt,
    tỉ lệ iOS < 16 và Android WebView/Chrome < 90. **Không có dữ liệu thì ghi rõ "không đo được"
@@ -102,12 +102,12 @@ Thứ tự: **B → A → C**. Sau mỗi lần merge thì build lại.
 Bắt buộc đầu phiên: `git merge-base --is-ancestor <sha giao việc> HEAD` để chắc chắn đang kiểm đúng code mới.
 - Build sạch, `tsc` qua, lint không tăng lỗi.
 - Lighthouse **preset mobile** (không phải desktop như đợt trước) cho `/`, `/lop-hoc/bai/?id=49`,
-  `/kiem-tra/lam/?id=118`. So với `perf2/BASELINE2.md`.
+  `/kiem-tra/lam/?id=118`. So với `docs/archive/perf2/BASELINE2.md`.
 - Xác minh JS ban đầu 2 trang học sinh đã dưới 1,0 MB.
 - Grep lại `out/**/*.css` và `out/**/*.js`: không còn tính năng vượt mốc đã chốt.
 - KaTeX: bài có công thức phải hiện đúng; bài không có công thức phải **không** tải chunk KaTeX.
 - Reveal: giả lập chunk lỗi (chặn request trong devtools) — nội dung vẫn phải hiện.
 - Mô phỏng con lắc: chuyển tab đi thì rAF phải dừng.
 - Hồi quy: làm đề, gradebook, phụ đạo, Rank, `/quan-tri/chu-de`, một trang CNC.
-- Ghi `perf2/RESULT.md`: số đo trước/sau, mốc trình duyệt đã chốt, việc còn lại, và
+- Ghi `docs/archive/perf2/RESULT.md`: số đo trước/sau, mốc trình duyệt đã chốt, việc còn lại, và
   (theo `AGENTS.md`) lệnh cho Thạch chạy nếu có migration chờ.

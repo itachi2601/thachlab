@@ -30,7 +30,7 @@ Lighthouse desktop: trang chủ 68 → 91, trang bài 78 → 83.
 - Báo cáo cuối: file đã sửa, số đo trước/sau, rủi ro, việc còn lại.
 
 ## Pha 0 — Orchestrator đo mốc (tuần tự, ngắn)
-Build sạch rồi ghi `perf2/BASELINE2.md`:
+Build sạch rồi ghi `docs/archive/perf2/BASELINE2.md`:
 1. JS ban đầu từng trang (dùng lại `perf/chunks-report.mjs`), nêu rõ 2 trang mục tiêu.
 2. Thành phần chunk nền 64/64 trang.
 3. **Lighthouse preset mobile** (đợt trước đo desktop nên số đẹp hơn thực tế) cho `/`,
@@ -92,13 +92,13 @@ Thứ tự: **C → B → A**. Sau mỗi lần merge thì build lại.
 ## Agent D — Kiểm tra độc lập
 Bắt buộc đầu phiên: `git merge-base --is-ancestor <sha giao việc> HEAD` để chắc chắn đang kiểm đúng code mới.
 - Build sạch, `tsc` qua, lint không tăng lỗi.
-- **Lighthouse preset mobile** cho 4 trang ở Pha 0, so với `perf2/BASELINE2.md`.
+- **Lighthouse preset mobile** cho 4 trang ở Pha 0, so với `docs/archive/perf2/BASELINE2.md`.
 - Xác minh JS ban đầu 2 trang học sinh dưới 1,0 MB, và JS nền đã giảm.
 - KaTeX: bài có công thức hiện đúng; bài **không** có công thức phải không tải chunk KaTeX (kiểm bằng tab Network).
 - Reveal: chặn chunk trong devtools — nội dung vẫn phải hiện.
 - Trang công khai (`/`, `/tin-tuc`): kiểm xem còn tải GoTrue không.
 - Hồi quy: đăng nhập HS làm một đề, gradebook, phụ đạo, Rank, `/quan-tri/chu-de`, một trang CNC.
-- Ghi `perf2/RESULT.md`: số đo trước/sau, việc còn lại, và (theo `AGENTS.md`) lệnh cho Thạch chạy
+- Ghi `docs/archive/perf2/RESULT.md`: số đo trước/sau, việc còn lại, và (theo `AGENTS.md`) lệnh cho Thạch chạy
   nếu có migration chờ.
 
 ## Ngoài phạm vi (chỉ ghi đề xuất, không làm)

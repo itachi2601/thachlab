@@ -100,7 +100,7 @@ Pro (tiêu đề) và Inter (chữ thân) ở độ đậm dùng trong hero, sub
   tải và tên bậc hiển thị đúng hai kiểu chữ như cũ.
 - So ảnh chụp trước/sau ở 390px cho 4 trang đã nêu — không được khác nhau.
 - Lighthouse preset mobile cho `/` và `/lop-hoc/bai/?id=49`, ghi LCP/FCP trước và sau.
-- Ghi `perf3/RESULT.md`.
+- Ghi `docs/archive/perf3/RESULT.md`.
 
 ## Sau khi merge
 Nhắc Thạch chạy `scripts/deploy.sh` rồi đo lại PageSpeed trên site thật. CrUX field cần vài ngày

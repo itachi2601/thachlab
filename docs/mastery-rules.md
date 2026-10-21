@@ -1,6 +1,6 @@
 # Quy tắc tính "mức độ thành thạo" (mastery) theo YCCĐ
 
-Nhánh `feat/mastery`, 25/9/2026. Đọc `feat/SURVEY.md` mục 1 + mục 5 (Agent C) trước khi sửa file
+Nhánh `feat/mastery`, 25/9/2026. Đọc `docs/archive/feat/SURVEY.md` mục 1 + mục 5 (Agent C) trước khi sửa file
 này — đã khảo sát schema thật, không đoán.
 
 ## 1. Dữ liệu đầu vào
@@ -69,7 +69,7 @@ Lý do dùng `earned/max` thay vì đếm `is_correct`:
 ## 5. Điểm mở rộng CHƯA làm — trọng số theo mức độ khó
 
 **Chưa** cộng trọng số Dễ/Trung bình/Khó vào công thức mastery. Lý do: nhánh `feat/difficulty`
-(Agent A theo `feat/SURVEY.md` mục 5) đang song song xây hạ tầng `difficulty` — field này **đã tồn
+(Agent A theo `docs/archive/feat/SURVEY.md` mục 5) đang song song xây hạ tầng `difficulty` — field này **đã tồn
 tại** ở `exams.questions[].difficulty` và `question_bank.difficulty` (không phải cột mới), nhưng
 `exam_question_results`/`practice_question_results` (bảng nguồn của mastery) **chưa có cột
 `difficulty`** ở thời điểm khảo sát 25/9/2026. Khi nhánh `feat/difficulty` merge xong và quyết định

@@ -9,7 +9,7 @@ metadata:
 ---
 
 Lỗ hổng phát hiện lúc test luồng làm bài ở worktree `perf5-test-exam-flow`
-(xem `perf5/RESULT-exam-flow.md`): học sinh đã đăng nhập có thể làm và NỘP
+(xem `docs/archive/perf5/RESULT-exam-flow.md`): học sinh đã đăng nhập có thể làm và NỘP
 bất kỳ đề `published` nào qua `/kiem-tra/lam?id=<id>` dù không thuộc lớp
 mình (đoán/chia sẻ id tăng dần) — vì `RequireAuth` ở trang đó không kiểm tra
 lớp, và RLS cũ trên `exams`/`exam_results`/`exam_question_results` chỉ yêu
