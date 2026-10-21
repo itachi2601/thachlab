@@ -13,13 +13,14 @@ import { useAssistantOrDemo } from "@/lib/tro-giang/useAssistant";
 import { fetchMyAssistantClasses, type TaAssistantClass } from "@/lib/tro-giang/queries";
 import { fetchClassStudentIds } from "@/services/classes";
 import { fetchClassExamResults } from "@/services/class-results";
+import { agoLabel } from "@/components/dashboard/ExamPicker";
 import { fetchExamReviewData, type ExamReviewData } from "@/services/analytics";
 
 function Picker() {
   const router = useRouter();
   const [classes, setClasses] = useState<TaAssistantClass[] | null>(null);
   const [classId, setClassId] = useState<number | null>(null);
-  const [exams, setExams] = useState<{ id: number; title: string }[] | null>(null);
+  const [exams, setExams] = useState<{ id: number; title: string; done: number; last: string }[] | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -39,9 +40,14 @@ function Picker() {
       .then((ids) => fetchClassExamResults(ids))
       .then((rows) => {
         if (cancelled) return;
-        const map = new Map<number, string>();
-        rows.forEach((r) => map.set(r.exam_id, r.exams?.title ?? `Đề #${r.exam_id}`));
-        setExams([...map.entries()].map(([id, title]) => ({ id, title })));
+        // rows đã sắp created_at giảm dần → thứ tự chèn Map = đề nộp gần nhất lên đầu
+        const map = new Map<number, { title: string; last: string; kids: Set<string> }>();
+        rows.forEach((r) => {
+          const cur = map.get(r.exam_id) ?? { title: r.exams?.title ?? `Đề #${r.exam_id}`, last: r.created_at, kids: new Set<string>() };
+          cur.kids.add(r.student_id);
+          map.set(r.exam_id, cur);
+        });
+        setExams([...map.entries()].map(([id, v]) => ({ id, title: v.title, done: v.kids.size, last: v.last })));
       })
       .catch(() => !cancelled && setError("Không tải được các đề của lớp."));
     return () => {
@@ -88,7 +94,12 @@ function Picker() {
                 className="flex min-h-12 w-full items-center gap-3 rounded-2xl border border-white/10 bg-panel px-4 py-3 text-left text-white"
               >
                 <Tv size={18} className="shrink-0 text-blue-300" />
-                <span className="flex-1">{e.title}</span>
+                <span className="flex-1">
+                  {e.title}
+                  <span className="block text-xs text-slate-400">
+                    {e.done} em nộp · gần nhất {agoLabel(e.last)}
+                  </span>
+                </span>
               </button>
             </li>
           ))}

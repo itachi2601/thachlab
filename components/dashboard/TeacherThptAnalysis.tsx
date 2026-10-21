@@ -7,6 +7,7 @@ import type { SchoolClass } from "@/features/exams/types";
 import type { ExamQuestion } from "@/features/exams/types";
 import { QUESTION_FORM_LABELS } from "@/features/exams/types";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
+import ExamPicker, { sortByRecent, type PickerExam } from "@/components/dashboard/ExamPicker";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { fetchClassExamResults } from "@/services/class-results";
@@ -78,8 +79,7 @@ export default function TeacherThptAnalysis({
   const reviewBase = profile?.role === "tro_giang" ? "/tro-giang/chua-bai" : "/dashboard-thpt/chua-bai";
   const studentIds = useMemo(() => students.map((s) => s.id), [students]);
 
-  const [exams, setExams] = useState<{ id: number; title: string; own: boolean; done: number }[]>([]);
-  const [search, setSearch] = useState("");
+  const [exams, setExams] = useState<PickerExam[]>([]);
   const [examId, setExamId] = useState<number | null>(null);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
 
@@ -111,7 +111,10 @@ export default function TeacherThptAnalysis({
         if (cancelled) return;
         const submitted = new Map<number, Set<string>>();
         const titles = new Map<number, string>();
+        const lastAt = new Map<number, string>();
         rows.forEach((r) => {
+          // rows đã sắp created_at giảm dần → lần đầu gặp là lượt nộp gần nhất
+          if (!lastAt.has(r.exam_id)) lastAt.set(r.exam_id, r.created_at);
           const set = submitted.get(r.exam_id) ?? new Set<string>();
           set.add(r.student_id);
           submitted.set(r.exam_id, set);
@@ -124,13 +127,13 @@ export default function TeacherThptAnalysis({
         }
         // Đề AVCN không gán lớp (lớp vào tự do) nên lấy theo mục Luyện tập/Kiểm tra của bài, chưa ai nộp vẫn hiện.
         avcnExams.forEach((e) => mine.set(e.id, e.title));
-        const toItem = (id: number, title: string, own: boolean) => ({ id, title, own, done: submitted.get(id)?.size ?? 0 });
-        const list = [
+        const toItem = (id: number, title: string, own: boolean) => ({ id, title, own, done: submitted.get(id)?.size ?? 0, last: lastAt.get(id) ?? null });
+        const list = sortByRecent([
           ...[...mine.entries()].map(([id, t]) => toItem(id, t, true)),
           ...[...titles.entries()].filter(([id]) => !mine.has(id)).map(([id, t]) => toItem(id, t, false)),
-        ];
+        ]);
         setExams(list);
-        setExamId((cur) => (cur !== null && list.some((e) => e.id === cur) ? cur : list.find((e) => e.own)?.id ?? list[0]?.id ?? null));
+        setExamId((cur) => (cur !== null && list.some((e) => e.id === cur) ? cur : list.find((e) => e.done > 0)?.id ?? list.find((e) => e.own)?.id ?? list[0]?.id ?? null));
       })
       .catch(() => setExams([]));
     return () => {
@@ -159,17 +162,6 @@ export default function TeacherThptAnalysis({
 
   const assessment = assessments.find((a) => a.examId === examId) ?? null;
   const assessmentIds = useMemo(() => new Set(assessments.map((a) => a.examId)), [assessments]);
-  const filtered = useMemo(() => {
-    const kw = search.trim().toLowerCase();
-    return kw ? exams.filter((e) => e.title.toLowerCase().includes(kw) || String(e.id) === kw) : exams;
-  }, [exams, search]);
-  const optionLabel = (e: { id: number; title: string; done: number }) => {
-    const tag = assessmentIds.has(e.id) ? "[Định kỳ] " : "";
-    return `${tag}${e.title} · ${e.done}/${students.length} nộp`;
-  };
-  const ownList = filtered.filter((e) => e.own);
-  const otherList = filtered.filter((e) => !e.own);
-
   const topics = useMemo(() => {
     const set = new Map<string, { ly: TopicGap | null; bt: TopicGap | null }>();
     for (const g of matrix ?? []) {
@@ -206,37 +198,10 @@ export default function TeacherThptAnalysis({
 
   return (
     <div className="space-y-5">
+      <ExamPicker exams={exams} value={examId} onChange={setExamId} total={students.length} periodicIds={assessmentIds} />
       <div className="flex flex-wrap items-center gap-3">
         <BarChart3 size={18} className="text-blue-300" />
-        {exams.length > 8 && (
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Tìm đề…"
-            aria-label="Tìm đề"
-            className="w-36 rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
-          />
-        )}
-        <select
-          value={examId ?? ""}
-          onChange={(e) => setExamId(Number(e.target.value))}
-          className="min-w-60 max-w-full rounded-xl border border-white/10 bg-panel px-3 py-2 text-sm text-white focus:border-primary focus:outline-none"
-        >
-          {ownList.length > 0 && (
-            <optgroup label="Đề của khối này">
-              {ownList.map((e) => (
-                <option key={e.id} value={e.id}>{optionLabel(e)}</option>
-              ))}
-            </optgroup>
-          )}
-          {otherList.length > 0 && (
-            <optgroup label="Đề khác lớp đã làm (ngoài khối)">
-              {otherList.map((e) => (
-                <option key={e.id} value={e.id}>{optionLabel(e)}</option>
-              ))}
-            </optgroup>
-          )}
-        </select>
+        <span className="min-w-0 flex-1 truncate text-sm font-semibold text-white">{exams.find((e) => e.id === examId)?.title}</span>
         {assessment ? (
           <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">
             Bài KT định kỳ · {KIND_OPTIONS.find((k) => k.value === assessment.kind)?.label}
