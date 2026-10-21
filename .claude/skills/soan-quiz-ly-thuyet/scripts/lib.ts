@@ -146,8 +146,8 @@ export function validateQuiz(data: any, opts: { topics?: Map<number, string[]> |
     err(`review.counts (${counts.kien_thuc}/${counts.cong_thuc}) ≠ đếm theo kind (${kien}/${cong})`);
   if (!counts) err("thiếu review.counts");
   const byType = (t: string) => qs.filter((q) => q.type === t).length;
-  if (qs.length === 20 && (byType("multiple_choice") !== 10 || byType("true_false") !== 4 || byType("short_answer") !== 6))
-    warnings.push(`cơ cấu ${byType("multiple_choice")} TN / ${byType("true_false")} Đ-S / ${byType("short_answer")} TLN (mẫu: 10/4/6)`);
+  if (qs.length === 20 && (byType("multiple_choice") !== 14 || byType("true_false") !== 6 || byType("short_answer") !== 0))
+    warnings.push(`cơ cấu ${byType("multiple_choice")} TN / ${byType("true_false")} Đ-S / ${byType("short_answer")} TLN (mẫu từ 21/10/2026: 14/6/0, không có TLN)`);
   return { errors, warnings };
 }
 

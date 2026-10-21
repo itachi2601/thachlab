@@ -60,9 +60,8 @@ const FORMAT = `
 Mỗi câu có đủ: "type", "kind", "topic", "form":"ly_thuyet", "difficulty" ("de" hoặc "trung-binh"), "difficultySource":"ai", "theorySection" (số nguyên theo danh sách đoạn được cho; bỏ nếu bài không có đoạn), "question", "explanation", và:
 - multiple_choice: "options": [4 chuỗi khác nhau], "answer": 0..3
 - true_false: "statements": [{"text":"…","answer":true|false} × đúng 4], ít nhất 1 ý sai
-- short_answer: "answer": chuỗi ≤ 4 ký tự chỉ gồm 0-9 , -
 "topic": nếu được cho danh sách yêu cầu cần đạt thì chọn đúng tên sát nội dung câu; không có thì dùng đúng tên bài.
-Cơ cấu cố định: 10 multiple_choice, 4 true_false, 6 short_answer; 10 câu kind kiến thức (dinh_nghia|dinh_luat|hien_tuong|dieu_kien) + 10 câu kind công thức (cong_thuc|don_vi|tinh_nhanh|bien_doi). Bài ít công thức thì bù bằng câu kiến thức nhưng vẫn đủ 20 câu.
+Cơ cấu cố định: 14 multiple_choice, 6 true_false, KHÔNG có short_answer; 10 câu kind kiến thức (dinh_nghia|dinh_luat|hien_tuong|dieu_kien) + 10 câu kind công thức (cong_thuc|don_vi|tinh_nhanh|bien_doi). Bài ít công thức thì bù bằng câu kiến thức nhưng vẫn đủ 20 câu.
 Công thức LaTeX trong $…$, cân dấu $; dùng \\\\lt, \\\\gt thay cho < >. Trong JSON, mỗi dấu \\ của LaTeX phải viết thành \\\\.`;
 const BO = fs.readFileSync(path.join(REF, "phong-cach-de-bo-gd.md"), "utf8");
 const SYS_SINH = `${fs.readFileSync(path.join(REF, "prompt-sinh-cau.md"), "utf8")}\n${BO}\n(Học sinh có thể là THCS hoặc THPT tuỳ bài; bám đúng mức của bài.)\n${FORMAT}`;

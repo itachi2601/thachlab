@@ -14,3 +14,5 @@ Thầy gửi 2 đề Bộ (2025, 2026 mã 0211) ngày 21/10/2026 để làm chu�
 **Tiến độ 21/10:** đã gửi batch sinh `msgbatch_017iJ7GXDhXTyWSkeSLY7cwr` (Sonnet), chuỗi lệnh nhận → kiểm chéo (Opus) → ghi `scripts/data/theory-quiz/<id>.json` chạy ở tab terminal; bản cũ còn trong git. Chưa đăng DB: cần `publish-theory-quiz.mts --replace` + deploy sau khi thầy xem lại (T6). Các chương 1, 2, 4 L12 chưa soạn lại theo chuẩn mới.
 
 Liên quan: [[project_thachlab_cai_tien_chuong1_l12]], [[project_thachlab_giai_lai_ngan_hang]].
+
+**21/10 chốt thêm:** quiz lý thuyết cuối bài KHÔNG có câu trả lời ngắn; cơ cấu mới 14 TN + 6 Đ–S = 20 câu (tập trung lý thuyết, công thức, bẫy). Đã sửa prompt, FORMAT trong batch, cảnh báo cơ cấu ở `lib.ts`. Chạy lại batch Ch.3 L12 theo cơ cấu mới. Lần chạy đầu (10/4/6) bị bỏ.
