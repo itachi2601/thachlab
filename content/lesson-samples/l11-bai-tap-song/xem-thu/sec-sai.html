@@ -15,6 +15,27 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   overflow-wrap: break-word;
   word-break: break-word;
 }
+/* Vùng ĐỀ giống đề giấy (thầy chốt 11/10/2026): serif Tinos (= Times New Roman về số đo), chữ ≥ 17px, dòng ≥ 1,6.
+   Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
+   Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
+.exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
+.exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
+@media (max-width: 640px) {
+  .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
+}
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
+}
 
 /* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
    nếu công thức dài hơn khung — biên độ, không phụ thuộc biến của .lesson-shell
@@ -130,7 +151,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 }
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
-  font-size: 0.85em;
+  font-size: var(--fs-sm);
   color: #94a3b8;
   text-align: center;
 }
@@ -140,7 +161,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
 .exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
 .exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
-.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
 .exam-content .tl-box--rule .tl-label { color: #fbbf24; }
 .exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
 .exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
@@ -162,15 +183,112 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
-.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
-html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
+/* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
+   --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
+.exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
+.exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
+.exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
+.exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
+.exam-content .tl-sim__row > input:checked + .tl-sim__chip { border-color: #22d3ee; background: rgba(34,211,238,.16); }
+.exam-content .tl-sim__row > input:focus-visible + .tl-sim__chip { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-sim svg { display: block; width: 100%; max-width: 420px; margin: 0 auto; height: auto; }
+.exam-content .tl-sim__st { display: none; margin-top: 8px; }
+.exam-content .tl-sim__st p { margin: 2px 0; }
+.exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
+.exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
+.exam-content .tl-sim__leg li { margin: 2px 0; }
+.exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
+.exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
+.exam-content .tl-sim .sim-sh { transform: scaleY(calc(var(--L) / 120)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-hd { transform: translateY(calc(var(--L) * -1px)) rotate(calc(90deg * (1 - var(--sg)))); transform-box: fill-box; transform-origin: 50% 0; opacity: clamp(0, calc(var(--L) * var(--L)), 1); transition: transform .25s ease, opacity .25s ease; }
+.exam-content .tl-sim .a-F { --L: calc(9 * var(--i) * var(--s)); --sg: var(--s); }
+.exam-content .tl-sim .a-Q { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Fp { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Pm { --L: -60; --sg: -1; }
+.exam-content .tl-sim .a-N { --L: calc(60 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .a-Pc { --L: -40; --sg: -1; }
+.exam-content .tl-sim .a-Np { --L: calc(-60 - 9 * var(--i) * var(--s)); --sg: -1; }
+.exam-content .tl-sim .a-Qb { --L: calc(100 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .sim-bar { transform: scaleX(calc(var(--i) * var(--s) / 5)); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-wn { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) { --s: -1; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wp { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wn { display: inline; }
+@media (prefers-reduced-motion: reduce) { .exam-content .tl-sim :is(.sim-sh, .sim-hd, .sim-bar) { transition: none; } }
+.exam-content .tl-sim:has(.tls-i0:checked) { --i: 0; }
+.exam-content .tl-sim:has(.tls-i1:checked) { --i: 1; }
+.exam-content .tl-sim:has(.tls-i2:checked) { --i: 2; }
+.exam-content .tl-sim:has(.tls-i3:checked) { --i: 3; }
+.exam-content .tl-sim:has(.tls-i4:checked) { --i: 4; }
+.exam-content .tl-sim:has(.tls-i5:checked) { --i: 5; }
+.exam-content .tl-sim:has(.tls-i0:checked) .st-0 { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-f:checked) .st-1p { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-r:checked) .st-1n { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-f:checked) .st-2p { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-r:checked) .st-2n { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-f:checked) .st-3p { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-r:checked) .st-3n { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-f:checked) .st-4p { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-r:checked) .st-4n { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-f:checked) .st-5p { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-r:checked) .st-5n { display: block; }
+html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-content .tl-sim__chip { border-color: rgba(15,23,42,.28); }
+/* Mô phỏng bài Tổng hợp lực (L10): hai dây kéo xe + lực kế trên dốc. Chỉ radio + CSS. */
+.exam-content .tl-sim--keo > svg,
+.exam-content .tl-sim--doc > svg { display: none; }
+.exam-content .tl-sim--keo:has(.k-a0:checked) > svg.k-a0,
+.exam-content .tl-sim--keo:has(.k-a60:checked) > svg.k-a60,
+.exam-content .tl-sim--keo:has(.k-a90:checked) > svg.k-a90,
+.exam-content .tl-sim--keo:has(.k-a120:checked) > svg.k-a120,
+.exam-content .tl-sim--keo:has(.k-a180:checked) > svg.k-a180,
+.exam-content .tl-sim--doc:has(.n-a0:checked) > svg.n-a0,
+.exam-content .tl-sim--doc:has(.n-a15:checked) > svg.n-a15,
+.exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
+.exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
+.exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +302,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,30 +311,48 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
+  }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
-   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
-   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -377,6 +513,27 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
 
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
+
 .presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
 .presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
 
@@ -436,6 +593,15 @@ html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); -
 /* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
    rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
 html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
 html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
 html.is-dim[data-theme="light"] .text-white { color: #33291a; }
 html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
@@ -557,6 +723,322 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 /* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
 .parent-page .parent-copy { max-width: 44rem; }
 
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
+
+/* Bài tập mẫu — tự giải từng bước (components/lessons/StepwiseSolution.tsx, 9/10/2026). D2 đích chạm ≥ 44px, L1 phản hồi tức thì, N7 một kiểu nhấn. */
+.exam-content .bt-step--ask { padding: 12px 12px 12px; border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.exam-content .bt-step--locked { opacity: .45; margin: 0 0 14px; }
+.exam-content .bt-ask { margin: 8px 0 0 36px; }
+.exam-content .bt-ask + .bt-ask { margin-top: 14px; }
+.exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
+.exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
+.exam-content .bt-ask-unit { color: #94a3b8; }
+.exam-content .bt-ask-row .lesson-btn-ghost { min-height: 44px; }
+.exam-content .bt-choice { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; background: rgba(255,255,255,.03); color: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+.exam-content .bt-choice:hover { background: rgba(255,255,255,.07); }
+.exam-content .bt-choice:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+.exam-content .bt-feedback { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
+.exam-content .bt-feedback--wrong { background: rgba(248,113,113,.12); }
+.exam-content .bt-feedback--ok { background: rgba(52,211,153,.10); }
+.exam-content .bt-show-all { display: block; margin: 4px 0 18px 36px; min-height: 44px; padding: 0; border: 0; background: none; color: #94a3b8; font-size: 14px; text-decoration: underline; cursor: pointer; }
+.exam-content .bt-flash { border-radius: 10px; box-shadow: 0 0 0 3px rgba(251,191,36,.6); transition: box-shadow .4s; }
+.bt-goroi-btn { display: block; width: 100%; min-height: 44px; white-space: normal; text-align: left; }
+.bt-nhan-dang { margin: 0 0 10px; padding: 8px 12px; border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; background: rgba(255,255,255,.04); font-size: 15px; line-height: 1.6; }
+.bt-nhan-dang .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .exam-content :is(.bt-step--ask, .bt-ask-input, .bt-choice) { border-color: rgba(15,23,42,.28); background: rgba(15,23,42,.03); }
+html[data-theme="light"] .exam-content .bt-choice:hover { background: rgba(15,23,42,.07); }
+html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: #475569; }
+html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
+html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+
+/* ==========================================================================
+   NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
+   ==========================================================================
+   Vì sao có khối này: trước đây theme TỐI là mặc định, nên hàng trăm chỗ trong JSX viết
+   thẳng class màu của nền tối — `bg-[#0B1020]`, `bg-white/5` (ô sáng mờ trên nền đen),
+   `border-white/10`, gradient `from-[#172c46]`, quầng sáng `shadow-[0_0_24px_…]`. Bật nền
+   sáng lên thì những chỗ đó thành mảng xám bết hoặc mảng tối lẫn trong trang trắng — đúng
+   cảm giác "màu không đẹp" mà thầy thấy.
+
+   Cách xử lý ở đây là LƯỚI AN TOÀN theo token, không phải nguồn màu:
+   · quét bằng attribute selector KHÔNG phân biệt hoa/thường (`i`) vì JSX viết lẫn
+     `bg-[#0B1020]` và `bg-[#0b1020]`, kèm cả biến thể mờ `/80`, `/[0.98]`;
+   · `[class~="…"]` (khớp ĐÚNG một token class) cho các idiom `bg-white/10` để KHÔNG đụng
+     `hover:bg-white/20` — biến thể hover xử riêng, nếu không nút mất phản hồi khi trỏ;
+   · mọi giá trị lấy từ token ở @theme, nên đổi bảng màu chỉ sửa một nơi.
+   Sửa gốc vẫn phải làm ở component (bỏ hex, dùng bg-panel/text-ink/border-line) — lưới này
+   chỉ để không còn ô tối nào lọt ra ngoài. Khi component đã sạch thì các rule dưới thành vô hại.
+   ========================================================================== */
+
+/* (1) Nền tối hard-code → mặt thẻ. Mọi biến thể hoa/thường + độ mờ đều khớp. */
+html[data-theme="light"] [class*="bg-[#04060a]" i],
+html[data-theme="light"] [class*="bg-[#05070b]" i],
+html[data-theme="light"] [class*="bg-[#050914]" i],
+html[data-theme="light"] [class*="bg-[#070b16]" i],
+html[data-theme="light"] [class*="bg-[#080d18]" i],
+html[data-theme="light"] [class*="bg-[#080d1a]" i],
+html[data-theme="light"] [class*="bg-[#080d1d]" i],
+html[data-theme="light"] [class*="bg-[#0a1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1220]" i],
+html[data-theme="light"] [class*="bg-[#0b1324]" i],
+html[data-theme="light"] [class*="bg-[#10192a]" i],
+html[data-theme="light"] [class*="bg-[#111a2e]" i],
+html[data-theme="light"] [class*="bg-[#172033]" i] {
+  background-color: var(--color-panel) !important;
+}
+
+/* (2) Ô sáng mờ trên nền tối (`bg-white/5`) → ô xám nhạt trên nền sáng. Giữ nguyên thứ bậc
+   đậm/nhạt giữa các mức để chỗ nào đậm hơn vẫn nổi hơn. */
+html[data-theme="light"] [class~="bg-white/5"],
+html[data-theme="light"] [class~="hover:bg-white/5"]:hover,
+html[data-theme="light"] [class~="bg-white/[.01]"],
+html[data-theme="light"] [class~="bg-white/[0.01]"] { background-color: rgba(15, 23, 42, .035) !important; }
+html[data-theme="light"] [class~="bg-white/[.02]"],
+html[data-theme="light"] [class~="bg-white/[0.02]"],
+html[data-theme="light"] [class~="bg-white/[.025]"],
+html[data-theme="light"] [class~="bg-white/[0.025]"],
+html[data-theme="light"] [class~="bg-white/[.03]"],
+html[data-theme="light"] [class~="bg-white/[0.03]"],
+html[data-theme="light"] [class~="bg-white/[.035]"],
+html[data-theme="light"] [class~="bg-white/[0.035]"],
+html[data-theme="light"] [class~="bg-white/[.04]"],
+html[data-theme="light"] [class~="bg-white/[0.04]"],
+html[data-theme="light"] [class~="bg-white/[.05]"],
+html[data-theme="light"] [class~="bg-white/[0.05]"],
+html[data-theme="light"] [class~="bg-white/[.06]"],
+html[data-theme="light"] [class~="bg-white/[0.06]"],
+html[data-theme="light"] [class~="bg-white/[.07]"],
+html[data-theme="light"] [class~="bg-white/[0.07]"],
+html[data-theme="light"] [class~="bg-white/[.08]"],
+html[data-theme="light"] [class~="bg-white/[0.08]"] { background-color: rgba(15, 23, 42, .05) !important; }
+html[data-theme="light"] [class~="bg-white/10"],
+html[data-theme="light"] [class~="hover:bg-white/10"]:hover { background-color: rgba(15, 23, 42, .055) !important; }
+html[data-theme="light"] [class~="bg-white/[0.14]"],
+html[data-theme="light"] [class~="bg-white/15"],
+html[data-theme="light"] [class~="hover:bg-white/15"]:hover { background-color: rgba(15, 23, 42, .075) !important; }
+html[data-theme="light"] [class~="bg-white/20"],
+html[data-theme="light"] [class~="hover:bg-white/20"]:hover { background-color: rgba(15, 23, 42, .09) !important; }
+
+/* (3) Viền trắng mờ trên nền tối → viền xám trên nền sáng. Không đụng /60 và /70: đó là khung
+   trắng cố ý đè LÊN ảnh/camera (QrScannerCard), phải giữ trắng. */
+html[data-theme="light"] [class~="border-white/5"],
+html[data-theme="light"] [class~="hover:border-white/5"]:hover { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="border-white/10"],
+html[data-theme="light"] [class~="hover:border-white/10"]:hover { border-color: rgba(15, 23, 42, .10) !important; }
+html[data-theme="light"] [class~="border-white/15"],
+html[data-theme="light"] [class~="hover:border-white/15"]:hover { border-color: rgba(15, 23, 42, .14) !important; }
+html[data-theme="light"] [class~="border-white/20"],
+html[data-theme="light"] [class~="hover:border-white/20"]:hover { border-color: rgba(15, 23, 42, .18) !important; }
+html[data-theme="light"] [class~="border-white/25"],
+html[data-theme="light"] [class~="hover:border-white/25"]:hover { border-color: rgba(15, 23, 42, .22) !important; }
+html[data-theme="light"] [class~="border-white/30"],
+html[data-theme="light"] [class~="hover:border-white/30"]:hover { border-color: rgba(15, 23, 42, .26) !important; }
+html[data-theme="light"] [class~="border-white/40"],
+html[data-theme="light"] [class~="hover:border-white/40"]:hover { border-color: rgba(15, 23, 42, .34) !important; }
+html[data-theme="light"] [class~="divide-white/5"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="divide-white/10"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .10) !important; }
+
+/* (4) Gradient nền tối + quầng sáng neon (M6: không gradient/glow ở vùng đọc và làm bài).
+   `background-image: none` là cách chắc nhất vì Tailwind dựng gradient qua biến --tw-gradient-*. */
+html[data-theme="light"] [class*="from-[#172c46]" i],
+html[data-theme="light"] [class*="via-[#0e1c32]" i],
+html[data-theme="light"] [class*="to-[#071426]" i],
+html[data-theme="light"] [class*="to-[#091627]" i],
+html[data-theme="light"] [class*="to-[#101a3a]" i],
+html[data-theme="light"] [class*="from-[#183a4a]" i],
+html[data-theme="light"] [class*="from-[#0b1020]" i],
+html[data-theme="light"] [class*="to-[#0b1020]" i] { background-image: none !important; }
+html[data-theme="light"] [class*="shadow-[0_0_"],
+html[data-theme="light"] [class*="shadow-[0_2px_4px_rgba(0,0,0"] { box-shadow: 0 1px 2px rgb(15 23 42 / .06) !important; }
+
+/* (5) Hai chỗ đặc biệt, phải đổi cả nền lẫn chữ vì chữ thừa hưởng màu của nền tối:
+   · badge 📖 của bài học (nền navy đậm, không đặt màu chữ) → chip nhấn nhạt;
+   · dải cảnh báo rời trang khi làm bài (nền nâu đậm + chữ amber) → nền amber rất nhạt. */
+html[data-theme="light"] [class*="bg-[#1d3461]" i] {
+  background-color: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
+}
+html[data-theme="light"] [class*="bg-[#2a2210]" i] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+/* Nút đặc màu teal đậm ở trang chủ (bg-[#155e75] + chữ trắng, hover bg-[#0e7490]): theo M3 chỉ
+   giữ MỘT màu nhấn cho hành động, nên đưa về primary thay vì thêm sắc độ bão hoà thứ hai. */
+html[data-theme="light"] [class*="bg-[#155e75]" i],
+html[data-theme="light"] [class*="bg-[#0e7490]" i] { background-color: var(--color-primary) !important; }
+
+/* (6) Không gian học CNC: vài mảng tối viết trong CSS (không phải class JSX) nên lưới ở trên
+   không với tới. Khung code thì CỐ Ý giữ tối (như trình soạn thảo) — chỉ đổi các mảng UI. */
+html[data-theme="light"] .cnc-embedded .cnc-programming-tabs button,
+html[data-theme="light"] .cnc-embedded .cnc-programming-suite > div.grid > div.bg-white,
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group {
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted);
+}
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group > header { background: var(--color-surface-2) !important; color: var(--color-ink); }
+
+/* ==========================================================================
+   PHẠM VI THEO NHÓM NGƯỜI XEM — cùng một bảng màu, khác số đo thị giác
+   ==========================================================================
+   Không phải "mỗi trang một bộ màu" (như vậy là phá N4/M3 và làm site rối), mà là: cùng hệ
+   thần, đổi đúng những chỗ nghiên cứu nói phải đổi cho từng lứa tuổi. */
+
+/* PHỤ HUYNH 45–60 — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1, P2, P5, P6).
+   Nền hơi ngả ấm (không dùng trắng tinh để giảm chói với người lão thị), chữ phụ tối hơn để
+   đạt ≥7:1 (AAA), nhấn dùng xanh navy đậm cho trang trọng và đủ tương phản. Cỡ chữ và đích
+   chạm đã có ở khối "P1/P2/P4 — khối PHỤ HUYNH" phía trên.
+
+   `html:not(.is-dim)` là BẮT BUỘC: "Dịu mắt" đặt token trên <html>, mà token khai ở phần tử con
+   luôn thắng token thừa hưởng — thiếu điều kiện này thì bật Dịu mắt ở /phu-huynh vẫn ra nền trắng
+   ấm thay vì nền kem, tức là vô hiệu hoá đúng tính năng dành cho người lão thị. */
+html:not(.is-dim) .parent-page {
+  --color-bg: #f7f7f4;
+  --color-panel: #ffffff;
+  --color-surface-2: #f1f1ec;
+  --color-ink: #14181f;          /* 15,9:1 trên #f7f7f4 */
+  --color-muted: #3d4653;        /* 8,9:1 trên #f7f7f4, 9,8:1 trên trắng — vượt AAA 7:1 */
+  --color-line: rgba(20, 24, 31, .14);
+  /* Phụ huynh phải thấy rõ ô nhập/viền hơn học sinh ⇒ viền đậm hơn (4,2:1 trên trắng). */
+  --color-line-strong: #767f8d;
+  --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+/* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
+   tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ
+   Dịu mắt vẫn đổi được nền sang kem. */
+.parent-page { background: var(--color-bg); }
+
+/* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
+   nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
+   nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
+html[data-theme="light"] .teacher-dashboard {
+  --color-bg: #f4f5f7;
+  --color-panel: #ffffff;
+  --color-surface-2: #eceef2;
+  --color-line: rgba(15, 23, 42, .12);
+}
+
+/* RP bài lý thuyết: thanh nộp câu tự chấm (đích chạm >=44px) */
+.theory-rp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: var(--fs-sm); color: #cbd5e1; }
+.theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
+.theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
+html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
+
+/* Bài Anh văn chuyên ngành (AVCN, lớp avcn): thẻ từ vựng có ảnh, câu đọc chạm hiện dịch, nút nghe 🔊
+   (<button data-tl-speak> — trang bài học xử lý uỷ quyền, HTML lưu DB không chứa JS). Mẫu: content/lesson-samples/avcn-*. */
+.exam-content .avcn-photo img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 12px; }
+.exam-content .avcn-photo figcaption { opacity: .85; }
+.exam-content .avcn-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.exam-content .avcn-card { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; }
+.exam-content .avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-card img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; }
+.exam-content .avcn-card__body p { margin: 0 0 4px; text-align: left; }
+.exam-content .avcn-term { font-weight: 700; font-size: 1.1rem; }
+.exam-content .avcn-term small { font-weight: 400; font-size: .9rem; opacity: .8; }
+.exam-content .avcn-star { font-size: .8rem; }
+.exam-content .avcn-vi { color: #22d3ee; font-weight: 600; }
+html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
+.exam-content .avcn-def { font-size: .95rem; }
+.exam-content .tl-speak { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; padding: 0 6px; border: 1px solid rgba(148,163,184,.4); border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; vertical-align: middle; }
+.exam-content .tl-speak:hover { border-color: #22d3ee; }
+.exam-content .avcn-sent { margin: 6px 0; }
+.exam-content .avcn-sent > summary { font-weight: 400; line-height: 1.6; }
+.exam-content .avcn-n { font-weight: 700; opacity: .7; margin-right: 4px; }
+.exam-content .avcn-trans { opacity: .9; }
+.exam-content .avcn-list { padding-left: 18px; }
+.exam-content .avcn-list li { margin: 6px 0; text-align: left; }
+.exam-content .avcn-box { padding: 8px 12px; border: 1px dashed rgba(148,163,184,.6); border-radius: 10px; text-align: left; }
+.exam-content .avcn-passage { padding: 12px 14px; border-left: 3px solid #22d3ee; background: rgba(148,163,184,.08); border-radius: 0 10px 10px 0; margin: 10px 0; }
+.exam-content .avcn-passage p { margin: 0; text-align: left; line-height: 1.7; }
+@media (max-width: 420px) { .exam-content .avcn-card { grid-template-columns: 88px 1fr; } .exam-content .avcn-card img { width: 88px; height: 66px; } }
+.exam-content .avcn-card.avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-tbl :is(th, td):first-child { white-space: nowrap; }
+.exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
+.exam-content .avcn-term .tl-speak { margin-left: 2px; }
+.exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
@@ -574,19 +1056,19 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 
 <h3>I. Mở bài: cùng một chữ "sóng", bốn kiểu đề</h3>
 
-<p>Phòng ôn thi, bốn đề đặt cạnh nhau. Đề thứ nhất có <em>"5 ngọn sóng liên tiếp"</em>, đề thứ hai có <em>"hai nguồn A, B"</em>, đề thứ ba có <em>"khe Young"</em>, đề thứ tư có <em>"dây đàn hai đầu cố định"</em>. Nhìn thì khác hẳn, mà chương này chỉ có <strong>15 dạng</strong>, và 15 dạng ấy rơi vào đúng 4 họ. Nhận ra họ trong 10 giây là xong nửa bài.</p>
+<p>Phòng ôn thi, bốn đề đặt cạnh nhau. Đề thứ nhất có <em>"5 ngọn sóng liên tiếp"</em>, đề thứ hai có <em>"hai nguồn A, B"</em>, đề thứ ba có <em>"khe Young"</em>, đề thứ tư có <em>"dây đàn hai đầu cố định"</em>. Nhìn thì khác hẳn, nhưng <strong>15 dạng</strong> của chương chỉ rơi vào đúng 4 họ. Nhận ra họ trong 10 giây là xong nửa bài.</p>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 212" role="img" aria-label="Bản đồ bốn họ bài tập sóng và dấu hiệu nhận ra họ trong đề"><rect x="10" y="10" width="205" height="90" rx="10" fill="none" stroke="#38bdf8" stroke-width="2.4"/><text x="22" y="38" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">A. Sóng cơ · điện từ</text><text x="22" y="64" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">đề có: n ngọn, cách nhau d,</text><text x="22" y="82" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">cường độ, tần số, bước sóng</text><rect x="225" y="10" width="205" height="90" rx="10" fill="none" stroke="#f87171" stroke-width="2.4"/><text x="237" y="38" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">B. Giao thoa sóng cơ</text><text x="237" y="64" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">đề có: hai nguồn A, B,</text><text x="237" y="82" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">cực đại, cực tiểu trên AB</text><rect x="10" y="110" width="205" height="90" rx="10" fill="none" stroke="#fb923c" stroke-width="2.4"/><text x="22" y="138" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">C. Khe Young</text><text x="22" y="164" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">đề có: a, D, khoảng vân,</text><text x="22" y="182" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">vân sáng, vân tối, trùng vân</text><rect x="225" y="110" width="205" height="90" rx="10" fill="none" stroke="#34d399" stroke-width="2.4"/><text x="237" y="138" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">D. Sóng dừng</text><text x="237" y="164" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">đề có: dây, nút, bụng,</text><text x="237" y="182" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">đầu cố định, đầu tự do</text></svg><figcaption>Hình 1. Bốn họ gom 15 dạng: nhìn <strong>từ khoá trong đề</strong> là biết dùng công thức nào.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 212" role="img" aria-label="Bản đồ bốn họ bài tập sóng và dấu hiệu nhận ra họ trong đề"><rect x="10" y="10" width="205" height="90" rx="10" fill="none" stroke="#38bdf8" stroke-width="2.4"/><text x="22" y="38" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">A. Sóng cơ · điện từ</text><text x="22" y="64" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đề có: n ngọn, cách nhau d,</text><text x="22" y="82" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">cường độ, tần số, bước sóng</text><rect x="225" y="10" width="205" height="90" rx="10" fill="none" stroke="#f87171" stroke-width="2.4"/><text x="237" y="38" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">B. Giao thoa sóng cơ</text><text x="237" y="64" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đề có: hai nguồn A, B,</text><text x="237" y="82" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">cực đại, cực tiểu trên AB</text><rect x="10" y="110" width="205" height="90" rx="10" fill="none" stroke="#fb923c" stroke-width="2.4"/><text x="22" y="138" fill="#fb923c" font-size="13" font-weight="700" text-anchor="start">C. Khe Young</text><text x="22" y="164" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đề có: a, D, khoảng vân,</text><text x="22" y="182" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">vân sáng, vân tối, trùng vân</text><rect x="225" y="110" width="205" height="90" rx="10" fill="none" stroke="#34d399" stroke-width="2.4"/><text x="237" y="138" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">D. Sóng dừng</text><text x="237" y="164" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đề có: dây, nút, bụng,</text><text x="237" y="182" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">đầu cố định, đầu tự do</text></svg><figcaption>Hình 1. Bốn họ gom 15 dạng: nhìn <strong>từ khoá trong đề</strong> là biết dùng công thức nào.</figcaption></figure>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Đề cho: "khoảng cách giữa <strong>5 ngọn sóng</strong> liên tiếp là 2 m". Bước sóng bằng bao nhiêu?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl14-q0" id="tl14-q0a" checked><label for="tl14-q0a" class="tl-opt tl-no">A. $0{,}4$ m, vì $2 : 5$</label>
-<input type="radio" name="tl14-q0" id="tl14-q0b"><label for="tl14-q0b" class="tl-opt tl-ok">B. $0{,}5$ m, vì $2 : 4$</label>
-<input type="radio" name="tl14-q0" id="tl14-q0c"><label for="tl14-q0c" class="tl-opt tl-no">C. $1$ m, vì $2 : 2$</label>
-<input type="radio" name="tl14-q0" id="tl14-q0d"><label for="tl14-q0d" class="tl-opt tl-no">D. $2$ m, vì cả đoạn là một bước sóng</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> 5 ngọn liên tiếp chỉ có <strong>4 khoảng</strong> giữa các ngọn, mỗi khoảng là một bước sóng: $4\lambda = 2$ m. Đây là bẫy đầu tiên của chương, và nó đứng ngay Dạng 1.</p></div>
+<input type="radio" name="tl14-q0" id="tl14-q0a" checked><label for="tl14-q0a" class="tl-opt tl-no">A. $0{,}4\ \text{m}$, vì $2 : 5$</label>
+<input type="radio" name="tl14-q0" id="tl14-q0b"><label for="tl14-q0b" class="tl-opt tl-ok">B. $0{,}5\ \text{m}$, vì $2 : 4$</label>
+<input type="radio" name="tl14-q0" id="tl14-q0c"><label for="tl14-q0c" class="tl-opt tl-no">C. $1\ \text{m}$, vì $2 : 2$</label>
+<input type="radio" name="tl14-q0" id="tl14-q0d"><label for="tl14-q0d" class="tl-opt tl-no">D. $2\ \text{m}$, vì cả đoạn là một bước sóng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> 5 ngọn liên tiếp chỉ có <strong>4 khoảng</strong> giữa các ngọn, mỗi khoảng là một bước sóng: $4\lambda = 2\ \text{m}$. Đây là bẫy đầu tiên của chương.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Vẽ 5 chấm trên một đường thẳng rồi đếm số <em>khoảng</em> giữa chúng, đừng đếm số chấm. Mỗi khoảng là một bước sóng.</p></div>
 </div>
 </div>
@@ -595,26 +1077,59 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 
 <h4>1. Họ A: sóng cơ và sóng điện từ (Dạng 1–5)</h4>
 
-<p><strong>🔑 $\lambda=vT$ · $n$ ngọn → $n-1$ · $I=\dfrac{P}{4\pi R^2}$ · trễ pha $\dfrac{2\pi d}{\lambda}$</strong></p>
+<p><strong>🔑 $\lambda=vT$: đi một chu kì thì đi một bước sóng</strong></p>
 
-<ul>
-<li><strong>Dạng 1 (đặc trưng):</strong> $f=\dfrac{1}{T}$, $\lambda=vT=\dfrac{v}{f}$.</li>
-<li><strong>Dạng 2 (cường độ):</strong> $I=\dfrac{P}{S}$; sóng cầu $S=4\pi R^2$, nên $I\sim\dfrac{1}{R^2}$.</li>
-<li><strong>Dạng 3 (lệch pha):</strong> $\Delta\varphi=\dfrac{2\pi d}{\lambda}$; $d=k\lambda$ cùng pha, $d=(k+\tfrac12)\lambda$ ngược pha, $d=(2k+1)\tfrac{\lambda}{4}$ vuông pha.</li>
-<li><strong>Dạng 4 (phương trình):</strong> $u_M=A\cos\left(\omega t-\dfrac{2\pi x}{\lambda}\right)$; M trễ pha hơn nguồn $\dfrac{2\pi x}{\lambda}$.</li>
-<li><strong>Dạng 5 (điện từ):</strong> $f=\dfrac{c}{\lambda}$, $c=3\cdot10^8$ m/s, rồi đối chiếu thang sóng.</li>
+<ul class="tl-dang">
+<li><strong>Dạng 1 (đặc trưng)</strong><br>
+$f=\dfrac{1}{T}$<br>
+$\lambda=vT=\dfrac{v}{f}$</li>
+<li><strong>Dạng 2 (cường độ)</strong><br>
+$I=\dfrac{P}{S}$<br>
+Sóng cầu: $S=4\pi R^2$<br>
+Nên $I\sim\dfrac{1}{R^2}$</li>
+<li><strong>Dạng 3 (lệch pha)</strong><br>
+$\Delta\varphi=\dfrac{2\pi d}{\lambda}$<br>
+Cùng pha: $d=k\lambda$<br>
+Ngược pha: $d=(k+\tfrac12)\lambda$<br>
+Vuông pha: $d=(2k+1)\dfrac{\lambda}{4}$</li>
+<li><strong>Dạng 4 (phương trình)</strong><br>
+$u_M=A\cos\left(\omega t-\dfrac{2\pi x}{\lambda}\right)$, $\omega=2\pi f$<br>
+$x$ là khoảng cách từ M tới nguồn<br>
+M trễ pha hơn nguồn $\dfrac{2\pi x}{\lambda}$</li>
+<li><strong>Dạng 5 (điện từ)</strong><br>
+$f=\dfrac{c}{\lambda}$<br>
+$c=3\cdot10^8\ \text{m/s}$<br>
+Rồi đối chiếu thang sóng</li>
 </ul>
+
+<details class="tl-details" open>
+<summary>📖 Bấm xem: ký hiệu và ghi chú họ A</summary>
+<p>$P$: công suất của nguồn (W)<br>
+$R$: khoảng cách từ điểm đang xét tới nguồn<br>
+$I\sim\dfrac{1}{R^2}$ đọc là: $I$ tỉ lệ với $\dfrac{1}{R^2}$<br>
+Nguồn $u_0=A\cos(\omega t+\varphi)$ thì $u_M=A\cos\left(\omega t+\varphi-\dfrac{2\pi x}{\lambda}\right)$<br>
+Thang sóng theo $\lambda$ giảm dần: vô tuyến (cả vi sóng) → hồng ngoại → ánh sáng nhìn thấy $0{,}38$–$0{,}76\ \mu\text{m}$ → tử ngoại → tia X → tia $\gamma$</p>
+</details>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-01">
 <p class="tl-label">🔬 Thí nghiệm: đo tốc độ sóng nước trong chậu</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> thả nút chai vào chậu nước rộng, gõ nhịp đều một đầu thước xuống mặt nước. Bấm giờ 10 dao động của nút chai, đo khoảng cách 5 ngọn sóng liên tiếp bằng thước.</li>
-<li><strong>Quan sát:</strong> 10 dao động mất $5{,}0$ s; 5 ngọn liên tiếp cách nhau $0{,}60$ m.</li>
-<li><strong>Rút ra:</strong> $T=0{,}50$ s; $4\lambda=0{,}60$ nên $\lambda=0{,}15$ m; $v=\dfrac{\lambda}{T}=0{,}30$ m/s.</li>
+<li><strong>Quan sát:</strong> 10 dao động mất $5{,}0\ \text{s}$; 5 ngọn liên tiếp cách nhau $0{,}60\ \text{m}$.</li>
+<li><strong>Rút ra:</strong> $T=0{,}50\ \text{s}$; $4\lambda=0{,}60$ nên $\lambda=0{,}15\ \text{m}$; $v=\dfrac{\lambda}{T}=0{,}30\ \text{m/s}$.</li>
 </ol>
 </div>
+<!--video:tn-l11-baitapsong-01-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem thí nghiệm thật: chậu nước, bóng nổi, sóng lan</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/eQSvv7zOxLE?rel=0" title="chậu nước, bóng nổi, sóng lan" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Sóng nước lan ra quanh vật nổi trong chậu thế nào?</p>
+</div>
 
-<p>Ví dụ ngắn cho Dạng 5: đài FM 100 MHz có $\lambda=\dfrac{c}{f}=\dfrac{3\cdot10^8}{10^8}=3$ m. Dạng 2: đứng xa nguồn gấp đôi thì $R$ gấp đôi, $I$ giảm 4 lần.</p>
+
+
+
+<p>Ví dụ ngắn cho Dạng 5: đài FM 100 MHz có $\lambda=\dfrac{c}{f}=\dfrac{3\cdot10^8}{10^8}=3\ \text{m}$. Dạng 2: xa nguồn gấp đôi thì $I$ giảm 4 lần.</p>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
@@ -624,93 +1139,171 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <input type="radio" name="tl14-q1" id="tl14-q1b"><label for="tl14-q1b" class="tl-opt tl-ok">B. ngược pha</label>
 <input type="radio" name="tl14-q1" id="tl14-q1c"><label for="tl14-q1c" class="tl-opt tl-no">C. vuông pha</label>
 <input type="radio" name="tl14-q1" id="tl14-q1d"><label for="tl14-q1d" class="tl-opt tl-no">D. lệch pha $\dfrac{3\pi}{2}$ nên không đặc biệt</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta\varphi=\dfrac{2\pi\cdot1{,}5\lambda}{\lambda}=3\pi$, hơn kém $\pi$ một số chẵn lần $\pi$ nên là ngược pha. Cách nhanh: $d=(k+\tfrac12)\lambda$ với $k=1$.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\Delta\varphi=\dfrac{2\pi\cdot1{,}5\lambda}{\lambda}=3\pi=\pi+2\pi$, bỏ đi một vòng $2\pi$ còn $\pi$, tức là ngược pha. Cách nhanh: $d=(k+\tfrac12)\lambda$ với $k=1$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tính $\Delta\varphi=\dfrac{2\pi d}{\lambda}$ rồi so với $\pi$, $2\pi$, $\dfrac{\pi}{2}$ cộng thêm các chu kỳ $2\pi$. Chỗ nhầm hay gặp là đổi $1{,}5\lambda$ thành "$\dfrac{3\pi}{2}$".</p></div>
 </div>
 </div>
 
 <h4>2. Họ B: giao thoa sóng cơ (Dạng 6–8)</h4>
 
-<p><strong>🔑 Cùng pha: cực đại $d_2-d_1=k\lambda$ · cực tiểu $(k+\tfrac12)\lambda$</strong></p>
+<p><strong>🔑 Hiệu đường đi $d_2-d_1$ quyết định cực đại, cực tiểu</strong></p>
 
-<ul>
-<li><strong>Dạng 6 (điều kiện):</strong> hai nguồn cùng pha, cực đại $d_2-d_1=k\lambda$; cực tiểu $d_2-d_1=(k+\tfrac12)\lambda$.</li>
-<li><strong>Dạng 7 (biên độ):</strong> $A_M=2A\left|\cos\left[\pi\dfrac{d_2-d_1}{\lambda}\right]\right|$.</li>
-<li><strong>Dạng 8 (đếm):</strong> đếm số $k$ nguyên thoả $-\dfrac{S_1S_2}{\lambda}\lt k\lt\dfrac{S_1S_2}{\lambda}$ cho cực đại; với cực tiểu thay $k$ bằng $k+\tfrac12$.</li>
+<ul class="tl-dang">
+<li><strong>Dạng 6 (điều kiện)</strong><br>
+M cách hai nguồn $S_1$, $S_2$ lần lượt $d_1$, $d_2$; hai nguồn cùng pha<br>
+Cực đại: $d_2-d_1=k\lambda$<br>
+Cực tiểu: $d_2-d_1=(k+\tfrac12)\lambda$</li>
+<li><strong>Dạng 7 (biên độ, nguồn cùng pha, cùng biên độ)</strong><br>
+$A_M=2A\left|\cos\left[\pi\dfrac{d_2-d_1}{\lambda}\right]\right|$<br>
+$A$ là biên độ sóng mỗi nguồn gửi tới M<br>
+Nguồn ngược pha: đổi $\cos$ thành $\sin$</li>
+<li><strong>Dạng 8 (đếm, nguồn cùng pha)</strong><br>
+$S_1S_2$ (tức AB) là khoảng cách hai nguồn<br>
+Cực đại: đếm số $k$ nguyên thoả<br>
+$-\dfrac{S_1S_2}{\lambda}\lt k\lt\dfrac{S_1S_2}{\lambda}$<br>
+Cực tiểu: thay $k$ bằng $k+\tfrac12$<br>
+Ngược pha: xem Bẫy 2</li>
 </ul>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-02">
 <p class="tl-label">🔬 Ví dụ: hai loa cùng phát một nốt</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đặt hai loa cách nhau 2 m, nối cùng một máy phát âm 340 Hz (cùng pha, $v=340$ m/s nên $\lambda=1$ m). Đi ngang trước hai loa, tai nghe to nhỏ thay đổi.</li>
-<li><strong>Quan sát:</strong> tại điểm cách loa 1 là $4{,}0$ m và cách loa 2 là $4{,}5$ m, âm gần như tắt; tại điểm cách đều hai loa, âm to nhất.</li>
-<li><strong>Rút ra:</strong> hiệu đường $0{,}5$ m $=\tfrac12\lambda$ nên là cực tiểu; hiệu đường $0=0\cdot\lambda$ nên là cực đại.</li>
+<li><strong>Làm:</strong> đặt hai loa cách nhau 2 m, nối cùng một máy phát âm 340 Hz (cùng pha, $v=340\ \text{m/s}$ nên $\lambda=1\ \text{m}$). Đi ngang trước hai loa.</li>
+<li><strong>Quan sát:</strong> tại điểm cách loa 1 là $4{,}0\ \text{m}$ và cách loa 2 là $4{,}5\ \text{m}$, âm gần như tắt; tại điểm cách đều hai loa, âm to nhất.</li>
+<li><strong>Rút ra:</strong> hiệu đường $0{,}5\ \text{m}$ $=\tfrac12\lambda$ nên là cực tiểu; hiệu đường $0=0\cdot\lambda$ nên là cực đại.</li>
 </ol>
 </div>
+<!--video:tn-l11-baitapsong-02-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem thí nghiệm thật: hai loa, mic đi qua vùng to–tắt</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/yBBGE3ncQ7U?rel=0" title="hai loa, mic đi qua vùng to–tắt" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Mức âm trên đồng hồ đổi thế nào khi mic đi qua các vị trí?</p>
+</div>
 
-<figure class="fig" data-tl="1" data-exp="tn-l11-baitapsong-02"><svg viewBox="0 0 440 168" role="img" aria-label="Trên đoạn AB bằng 4 bước sóng, hai nguồn cùng pha: 7 cực đại và 8 cực tiểu, A và B không phải điểm đếm"><line x1="40" y1="70" x2="400" y2="70" stroke="currentColor" stroke-width="1.4" opacity="0.5"/><line x1="40" y1="48" x2="40" y2="92" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="400" y1="48" x2="400" y2="92" stroke="currentColor" stroke-width="3" opacity="1"/><text x="40" y="112" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">A</text><text x="400" y="112" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">B</text><circle cx="355.0" cy="70" r="6" fill="#f87171"/><circle cx="310.0" cy="70" r="6" fill="#f87171"/><circle cx="265.0" cy="70" r="6" fill="#f87171"/><circle cx="220.0" cy="70" r="6" fill="#f87171"/><circle cx="175.0" cy="70" r="6" fill="#f87171"/><circle cx="130.0" cy="70" r="6" fill="#f87171"/><circle cx="85.0" cy="70" r="6" fill="#f87171"/><circle cx="377.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="332.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="287.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="242.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="197.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="152.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="107.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="62.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="14" cy="128" r="6" fill="#f87171"/><text x="26" y="132" fill="#f87171" font-size="12" font-weight="700" text-anchor="start">cực đại: 7 điểm</text><circle cx="160" cy="128" r="4.5" fill="#38bdf8"/><text x="172" y="132" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="start">cực tiểu: 8 điểm</text><text x="40" y="18" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">Hai nguồn cùng pha, AB = 4λ</text><text x="40" y="156" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">k = −3 … 3 (cực đại) · k + ½ = −3,5 … 3,5 (cực tiểu)</text></svg><figcaption>Hình 2. Với $AB=4\lambda$: cực đại xen kẽ cực tiểu, hai cực đại liền kề cách nhau $\tfrac{\lambda}{2}$. A, B <strong>không được đếm</strong>.</figcaption></figure>
+
+
+
+<figure class="fig" data-tl="1" data-exp="tn-l11-baitapsong-02"><svg viewBox="0 0 440 168" role="img" aria-label="Trên đoạn AB bằng 4 bước sóng, hai nguồn cùng pha: 7 cực đại và 8 cực tiểu, A và B không phải điểm đếm"><line x1="40" y1="70" x2="400" y2="70" stroke="currentColor" stroke-width="1.4" opacity="0.5"/><line x1="40" y1="48" x2="40" y2="92" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="400" y1="48" x2="400" y2="92" stroke="currentColor" stroke-width="3" opacity="1"/><text x="40" y="112" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">A</text><text x="400" y="112" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">B</text><circle cx="355.0" cy="70" r="6" fill="#f87171"/><circle cx="310.0" cy="70" r="6" fill="#f87171"/><circle cx="265.0" cy="70" r="6" fill="#f87171"/><circle cx="220.0" cy="70" r="6" fill="#f87171"/><circle cx="175.0" cy="70" r="6" fill="#f87171"/><circle cx="130.0" cy="70" r="6" fill="#f87171"/><circle cx="85.0" cy="70" r="6" fill="#f87171"/><circle cx="377.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="332.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="287.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="242.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="197.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="152.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="107.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="62.5" cy="70" r="4.5" fill="#38bdf8"/><circle cx="14" cy="128" r="6" fill="#f87171"/><text x="26" y="132" fill="#f87171" font-size="13" font-weight="700" text-anchor="start">cực đại: 7 điểm</text><circle cx="160" cy="128" r="4.5" fill="#38bdf8"/><text x="172" y="132" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="start">cực tiểu: 8 điểm</text><text x="40" y="18" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">Hai nguồn cùng pha, AB = 4λ</text><text x="40" y="156" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">k = −3 … 3 (cực đại) · k + ½ = −3,5 … 3,5 (cực tiểu)</text></svg><figcaption>Hình 2. Với $AB=4\lambda$: cực đại xen kẽ cực tiểu, hai cực đại liền kề cách nhau $\tfrac{\lambda}{2}$. A, B <strong>không được đếm</strong>.</figcaption></figure>
 
 <h4>3. Họ C: giao thoa ánh sáng, khe Young (Dạng 9–12)</h4>
 
-<p><strong>🔑 $i=\dfrac{\lambda D}{a}$ · sáng $x=ki$ · tối $x=(k+\tfrac12)i$</strong></p>
+<p><strong>🔑 Khoảng vân $i$ là thước đo mọi vị trí vân</strong></p>
 
-<ul>
-<li><strong>Dạng 9 (vị trí):</strong> $i=\dfrac{\lambda D}{a}$; vân sáng $x_s=ki$, vân tối $x_t=(k+\tfrac12)i$.</li>
-<li><strong>Dạng 10 (đếm trên bề rộng $L$):</strong> $N_s=2\left[\dfrac{L}{2i}\right]+1$ luôn lẻ; $N_t=2\left[\dfrac{L}{2i}+0{,}5\right]$ luôn chẵn (dấu $[\ ]$ lấy phần nguyên).</li>
-<li><strong>Dạng 11 (trùng vân):</strong> $k_1\lambda_1=k_2\lambda_2$, rút gọn $\dfrac{k_1}{k_2}=\dfrac{\lambda_2}{\lambda_1}$ về phân số tối giản.</li>
-<li><strong>Dạng 12 (ánh sáng trắng):</strong> $0{,}38\le\lambda\le0{,}76\ \mu\text{m}$; thay vào $\lambda=\dfrac{ax}{kD}$ rồi tìm các $k$ nguyên.</li>
+<ul class="tl-dang">
+<li><strong>Dạng 9 (vị trí)</strong><br>
+$i=\dfrac{\lambda D}{a}$<br>
+Vân sáng: $x_s=ki$<br>
+Vân tối: $x_t=(k+\tfrac12)i$</li>
+<li><strong>Dạng 10 (đếm trên bề rộng $L$)</strong><br>
+$N_s=2\left[\dfrac{L}{2i}\right]+1$, luôn lẻ<br>
+$N_t=2\left[\dfrac{L}{2i}+0{,}5\right]$, luôn chẵn<br>
+Dấu $[\ ]$ lấy phần nguyên</li>
+<li><strong>Dạng 11 (trùng vân)</strong><br>
+$k_1\lambda_1=k_2\lambda_2$<br>
+Rút gọn $\dfrac{k_1}{k_2}=\dfrac{\lambda_2}{\lambda_1}$ về phân số tối giản</li>
+<li><strong>Dạng 12 (ánh sáng trắng)</strong><br>
+$0{,}38\le\lambda\le0{,}76\ \mu\text{m}$<br>
+Từ $x=\dfrac{k\lambda D}{a}$ rút ra $\lambda=\dfrac{ax}{kD}$<br>
+Giải $0{,}38\le\dfrac{ax}{kD}\le0{,}76$ để tìm các $k$ nguyên</li>
 </ul>
+
+<details class="tl-details" open>
+<summary>📖 Bấm xem: ký hiệu khe Young</summary>
+<p>$a$: khoảng cách giữa hai khe<br>
+$D$: khoảng cách từ hai khe tới màn<br>
+$i$: khoảng vân, tức khoảng cách hai vân sáng (hoặc hai vân tối) liền kề<br>
+$x$: toạ độ trên màn, tính từ vân trung tâm<br>
+$L$ ở Dạng 10 là bề rộng trường giao thoa, khác $L$ là chiều dài dây hay ống ở họ D</p>
+</details>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-03">
 <p class="tl-label">🔬 Thí nghiệm đo: bước sóng laser bằng khe Young</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> chiếu laser đỏ qua hai khe cách nhau $a=0{,}50$ mm; màn cách khe $D=1{,}50$ m. Vì một khoảng vân quá nhỏ để đo chính xác, đo khoảng cách $L$ của <strong>6 vân sáng liên tiếp</strong> (tức 5 khoảng vân), đo 5 lần.</li>
+<li><strong>Làm:</strong> chiếu laser đỏ qua hai khe cách nhau $a=0{,}50\ \text{mm}$; màn cách khe $D=1{,}50\ \text{m}$. Đo khoảng cách $\ell$ của <strong>6 vân sáng liên tiếp</strong> (tức 5 khoảng vân) bằng thước milimét, ước lượng tới phần mười mm, đo 5 lần.</li>
 <li><strong>Quan sát:</strong> bảng dưới.</li>
-<li><strong>Rút ra:</strong> $\bar L=9{,}74$ mm; $i=\dfrac{\bar L}{5}=1{,}95$ mm; $\lambda=\dfrac{ia}{D}=0{,}65\ \mu\text{m}$, đúng vùng đỏ.</li>
+<li><strong>Rút ra:</strong> $\bar\ell=9{,}74\ \text{mm}$; $i=\dfrac{\bar\ell}{5}=1{,}95\ \text{mm}$; $\lambda=\dfrac{ia}{D}=0{,}65\ \mu\text{m}$, đúng vùng đỏ.</li>
 </ol>
 <table class="tl-table">
 <thead><tr><th>Lần đo</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
-<tbody><tr><td>$L$ (mm)</td><td>9,6</td><td>9,8</td><td>9,7</td><td>9,9</td><td>9,7</td></tr></tbody>
+<tbody><tr><td>$\ell$ (mm)</td><td>9,6</td><td>9,8</td><td>9,7</td><td>9,9</td><td>9,7</td></tr></tbody>
 </table>
 </div>
+<!--video:tn-l11-baitapsong-03-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem thí nghiệm thật: laser qua khe Young, vân trên thước</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/qAGkgZeRvtY?rel=0&start=50&end=70" title="laser qua khe Young, vân trên thước" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Hệ vân sáng tối trên màn có thước milimét trông thế nào?</p>
+</div>
+
+
+
 
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl14-q2c" value="chac"> Chắc</label>
 <label><input type="radio" name="tl14-q2c" value="khong"> Không chắc</label></p>
-<p><strong>Câu 2.</strong> Vì sao đo $L$ của 5 khoảng vân rồi chia 5, thay vì đo thẳng một khoảng vân?</p>
+<p><strong>Câu 2.</strong> Vì sao đo $\ell$ của 5 khoảng vân rồi chia 5, thay vì đo thẳng một khoảng vân?</p>
+<p>⚠ Gộp nhiều khoảng vân chỉ tác động tới phép đo bằng thước, không tới $a$ và $D$.</p>
 <div class="tl-quiz">
 <input type="radio" name="tl14-q2" id="tl14-q2a"><label for="tl14-q2a" class="tl-opt tl-no">A. Để $i$ lớn hơn thật sự</label>
 <input type="radio" name="tl14-q2" id="tl14-q2b"><label for="tl14-q2b" class="tl-opt tl-ok">B. Sai số tuyệt đối của thước chia cho 5, nên $i$ chính xác hơn</label>
 <input type="radio" name="tl14-q2" id="tl14-q2c"><label for="tl14-q2c" class="tl-opt tl-no">C. Vì công thức chỉ đúng cho 5 khoảng vân</label>
 <input type="radio" name="tl14-q2" id="tl14-q2d"><label for="tl14-q2d" class="tl-opt tl-no">D. Để bỏ qua sai số của $D$ và $a$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thước sai chừng $\pm0{,}5$ mm cho mỗi lần đọc; đo cả đoạn 9,7 mm thì sai số chia cho 5 khi tính $i$ (cỡ $\pm0{,}1$ mm). Đo riêng một khoảng vân 1,95 mm thì cùng mức sai số ấy chiếm tới gần một phần tư giá trị.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $i$ không đổi dù đo cách nào. Cái đổi là <em>sai số tương đối</em> của phép đọc thước. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lấy thô sai số mỗi lần đọc thước milimét là nửa độ chia, $\pm0{,}5\ \text{mm}$; đo cả đoạn 9,7 mm thì sai số chia cho 5 khi tính $i$ (cỡ $\pm0{,}1\ \text{mm}$). Đo riêng một khoảng vân 1,95 mm thì cùng mức sai số ấy chiếm tới gần một phần tư giá trị.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $i$ không đổi dù đo cách nào. Cái giảm là sai số: sai số tuyệt đối của $i$ chỉ bằng sai số thước chia 5, nên <em>sai số tương đối</em> của $i$ nhỏ đi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
 <h4>4. Họ D: sóng dừng (Dạng 13–15)</h4>
 
-<p><strong>🔑 Hai đầu cố định $L=n\dfrac{\lambda}{2}$ · cố định + tự do $L=(2n+1)\dfrac{\lambda}{4}$</strong></p>
+<p><strong>🔑 Hai đầu cố định: $L=n\dfrac{\lambda}{2}$</strong></p>
 
-<ul>
-<li><strong>Dạng 13 (đếm nút, bụng):</strong> hai đầu cố định, $n$ bụng thì có $n+1$ nút. Một đầu cố định, một đầu tự do: $n+1$ bụng và $n+1$ nút.</li>
-<li><strong>Dạng 14 (dây đàn, cột khí):</strong> hai đầu nút $f_n=nf_1$, $f_1=\dfrac{v}{2L}$. Một đầu nút một đầu bụng: $f_m=mf_1$ với $m$ lẻ, $f_1=\dfrac{v}{4L}$.</li>
-<li><strong>Dạng 15 (biên độ):</strong> $A_M=2A\left|\sin\dfrac{2\pi x}{\lambda}\right|$, $x$ là khoảng cách từ M tới nút gần nhất.</li>
+<ul class="tl-dang">
+<li><strong>Dạng 13 (đếm nút, bụng)</strong><br>
+Hai đầu cố định: $n$ bụng thì có $n+1$ nút<br>
+Một đầu cố định, một đầu tự do: $L=(2n+1)\dfrac{\lambda}{4}$<br>
+Khi đó có $n+1$ bụng và $n+1$ nút</li>
+<li><strong>Dạng 14 (dây đàn, cột khí)</strong><br>
+Hai đầu nút: $f_n=nf_1$, $f_1=\dfrac{v}{2L}$<br>
+Một đầu nút, một đầu bụng: $f_m=mf_1$, $f_1=\dfrac{v}{4L}$<br>
+$m=2n+1$ lẻ (cùng $n$ như Dạng 13)</li>
+<li><strong>Dạng 15 (biên độ)</strong><br>
+$A_M=2A\left|\sin\dfrac{2\pi x}{\lambda}\right|$<br>
+$x$ là khoảng cách từ M tới nút gần nhất<br>
+$A$ là biên độ sóng tới</li>
 </ul>
+
+<details class="tl-details" open>
+<summary>📖 Bấm xem: ghi chú họ D</summary>
+<p>Đầu cố định, đầu kín là nút<br>
+Đầu tự do, đầu hở là bụng<br>
+Hai đầu bụng (ống hở hai đầu) cũng cho $f_n=nf_1$ với $f_1=\dfrac{v}{2L}$<br>
+Ví dụ Dạng 15: $x=\dfrac{\lambda}{8}$ thì $A_M=2A\sin\dfrac{\pi}{4}=A\sqrt2$<br>
+Nếu đo $x$ từ bụng gần nhất thì dùng $A_M=2A\left|\cos\dfrac{2\pi x}{\lambda}\right|$</p>
+</details>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-04">
 <p class="tl-label">🔬 Thí nghiệm: thổi vào ống nhựa</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> bịt kín một đầu ống nhựa dài $0{,}17$ m, thổi ngang miệng đầu còn lại.</li>
+<li><strong>Làm:</strong> bịt kín một đầu ống nhựa dài $0{,}17\ \text{m}$, thổi ngang miệng đầu còn lại. Tốc độ âm trong không khí $v=340\ \text{m/s}$.</li>
 <li><strong>Quan sát:</strong> ống kêu một nốt trầm ổn định; nối thêm ống cho dài hơn thì nốt thấp xuống.</li>
-<li><strong>Rút ra:</strong> đầu kín là nút, miệng hở là bụng nên $f_1=\dfrac{v}{4L}=\dfrac{340}{4\cdot0{,}17}=500$ Hz; $L$ tăng thì $f_1$ giảm.</li>
+<li><strong>Rút ra:</strong> đầu kín là nút, miệng hở là bụng nên $f_1=\dfrac{v}{4L}=\dfrac{340}{4\cdot0{,}17}=500\ \text{Hz}$; $L$ tăng thì $f_1$ giảm.</li>
 </ol>
 </div>
+<!--video:tn-l11-baitapsong-04-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem thí nghiệm thật: ống một đầu kín nhúng nước, cộng hưởng</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/u7wUvEA1v1A?rel=0" title="ống một đầu kín nhúng nước, cộng hưởng" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Nốt cộng hưởng to lên khi cột khí trong ống dài bao nhiêu?</p>
+</div>
 
-<figure class="fig" data-tl="1" data-exp="tn-l11-baitapsong-04"><svg viewBox="0 0 440 200" role="img" aria-label="Sóng dừng trên dây một đầu cố định một đầu tự do với L bằng năm phần tư bước sóng: 3 nút và 3 bụng"><line x1="24" y1="100" x2="404" y2="100" stroke="currentColor" stroke-width="1" opacity="0.35"/><polyline fill="none" stroke="#34d399" stroke-width="2.6" opacity="1" points="24.0,100.0 28.0,96.2 32.0,92.4 36.0,88.6 40.0,85.0 44.0,81.4 48.0,78.0 52.0,74.8 56.0,71.7 60.0,68.9 64.0,66.3 68.0,64.0 72.0,61.9 76.0,60.1 80.0,58.7 84.0,57.5 88.0,56.7 92.0,56.2 96.0,56.0 100.0,56.2 104.0,56.7 108.0,57.5 112.0,58.7 116.0,60.1 120.0,61.9 124.0,64.0 128.0,66.3 132.0,68.9 136.0,71.7 140.0,74.8 144.0,78.0 148.0,81.4 152.0,85.0 156.0,88.6 160.0,92.4 164.0,96.2 168.0,100.0 172.0,103.8 176.0,107.6 180.0,111.4 184.0,115.0 188.0,118.6 192.0,122.0 196.0,125.2 200.0,128.3 204.0,131.1 208.0,133.7 212.0,136.0 216.0,138.1 220.0,139.9 224.0,141.3 228.0,142.5 232.0,143.3 236.0,143.8 240.0,144.0 244.0,143.8 248.0,143.3 252.0,142.5 256.0,141.3 260.0,139.9 264.0,138.1 268.0,136.0 272.0,133.7 276.0,131.1 280.0,128.3 284.0,125.2 288.0,122.0 292.0,118.6 296.0,115.0 300.0,111.4 304.0,107.6 308.0,103.8 312.0,100.0 316.0,96.2 320.0,92.4 324.0,88.6 328.0,85.0 332.0,81.4 336.0,78.0 340.0,74.8 344.0,71.7 348.0,68.9 352.0,66.3 356.0,64.0 360.0,61.9 364.0,60.1 368.0,58.7 372.0,57.5 376.0,56.7 380.0,56.2 384.0,56.0"/><polyline fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.55" points="24.0,100.0 28.0,103.8 32.0,107.6 36.0,111.4 40.0,115.0 44.0,118.6 48.0,122.0 52.0,125.2 56.0,128.3 60.0,131.1 64.0,133.7 68.0,136.0 72.0,138.1 76.0,139.9 80.0,141.3 84.0,142.5 88.0,143.3 92.0,143.8 96.0,144.0 100.0,143.8 104.0,143.3 108.0,142.5 112.0,141.3 116.0,139.9 120.0,138.1 124.0,136.0 128.0,133.7 132.0,131.1 136.0,128.3 140.0,125.2 144.0,122.0 148.0,118.6 152.0,115.0 156.0,111.4 160.0,107.6 164.0,103.8 168.0,100.0 172.0,96.2 176.0,92.4 180.0,88.6 184.0,85.0 188.0,81.4 192.0,78.0 196.0,74.8 200.0,71.7 204.0,68.9 208.0,66.3 212.0,64.0 216.0,61.9 220.0,60.1 224.0,58.7 228.0,57.5 232.0,56.7 236.0,56.2 240.0,56.0 244.0,56.2 248.0,56.7 252.0,57.5 256.0,58.7 260.0,60.1 264.0,61.9 268.0,64.0 272.0,66.3 276.0,68.9 280.0,71.7 284.0,74.8 288.0,78.0 292.0,81.4 296.0,85.0 300.0,88.6 304.0,92.4 308.0,96.2 312.0,100.0 316.0,103.8 320.0,107.6 324.0,111.4 328.0,115.0 332.0,118.6 336.0,122.0 340.0,125.2 344.0,128.3 348.0,131.1 352.0,133.7 356.0,136.0 360.0,138.1 364.0,139.9 368.0,141.3 372.0,142.5 376.0,143.3 380.0,143.8 384.0,144.0"/><line x1="24" y1="50" x2="24" y2="150" stroke="currentColor" stroke-width="3.5" opacity="1"/><circle cx="24" cy="100" r="5" fill="currentColor"/><circle cx="168.0" cy="100" r="5" fill="currentColor"/><circle cx="312" cy="100" r="5" fill="currentColor"/><circle cx="96.0" cy="56" r="5.5" fill="#fb923c"/><circle cx="240.0" cy="144" r="5.5" fill="#fb923c"/><circle cx="384.0" cy="56.0" r="5.5" fill="#fb923c"/><circle cx="384" cy="56" r="9" fill="none" stroke="#fb923c" stroke-width="2"/><text x="24" y="28" fill="currentColor" font-size="12" font-weight="400" text-anchor="start">Đầu cố định (nút)</text><text x="380" y="28" fill="#fb923c" font-size="12" font-weight="700" text-anchor="end">Đầu tự do (bụng)</text><text x="24" y="168" fill="#34d399" font-size="12" font-weight="700" text-anchor="start">L = 5·λ/4 = (2n+1)·λ/4 với n = 2: 3 bụng, 3 nút</text><text x="24" y="188" fill="currentColor" font-size="11.5" font-weight="400" text-anchor="start">chấm sáng: nút · chấm cam: bụng</text></svg><figcaption>Hình 3. Một đầu cố định (nút), một đầu tự do (bụng): $L=(2n+1)\tfrac{\lambda}{4}$. Hình vẽ $n=2$ nên có $n+1=3$ bụng và 3 nút.</figcaption></figure>
+
+
+
+<figure class="fig" data-tl="1" data-exp="tn-l11-baitapsong-04"><svg viewBox="0 0 440 200" role="img" aria-label="Sóng dừng trên dây một đầu cố định một đầu tự do với L bằng năm phần tư bước sóng: 3 nút và 3 bụng"><line x1="24" y1="100" x2="404" y2="100" stroke="currentColor" stroke-width="1" opacity="0.35"/><polyline fill="none" stroke="#34d399" stroke-width="2.6" opacity="1" points="24.0,100.0 28.0,96.2 32.0,92.4 36.0,88.6 40.0,85.0 44.0,81.4 48.0,78.0 52.0,74.8 56.0,71.7 60.0,68.9 64.0,66.3 68.0,64.0 72.0,61.9 76.0,60.1 80.0,58.7 84.0,57.5 88.0,56.7 92.0,56.2 96.0,56.0 100.0,56.2 104.0,56.7 108.0,57.5 112.0,58.7 116.0,60.1 120.0,61.9 124.0,64.0 128.0,66.3 132.0,68.9 136.0,71.7 140.0,74.8 144.0,78.0 148.0,81.4 152.0,85.0 156.0,88.6 160.0,92.4 164.0,96.2 168.0,100.0 172.0,103.8 176.0,107.6 180.0,111.4 184.0,115.0 188.0,118.6 192.0,122.0 196.0,125.2 200.0,128.3 204.0,131.1 208.0,133.7 212.0,136.0 216.0,138.1 220.0,139.9 224.0,141.3 228.0,142.5 232.0,143.3 236.0,143.8 240.0,144.0 244.0,143.8 248.0,143.3 252.0,142.5 256.0,141.3 260.0,139.9 264.0,138.1 268.0,136.0 272.0,133.7 276.0,131.1 280.0,128.3 284.0,125.2 288.0,122.0 292.0,118.6 296.0,115.0 300.0,111.4 304.0,107.6 308.0,103.8 312.0,100.0 316.0,96.2 320.0,92.4 324.0,88.6 328.0,85.0 332.0,81.4 336.0,78.0 340.0,74.8 344.0,71.7 348.0,68.9 352.0,66.3 356.0,64.0 360.0,61.9 364.0,60.1 368.0,58.7 372.0,57.5 376.0,56.7 380.0,56.2 384.0,56.0"/><polyline fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.55" points="24.0,100.0 28.0,103.8 32.0,107.6 36.0,111.4 40.0,115.0 44.0,118.6 48.0,122.0 52.0,125.2 56.0,128.3 60.0,131.1 64.0,133.7 68.0,136.0 72.0,138.1 76.0,139.9 80.0,141.3 84.0,142.5 88.0,143.3 92.0,143.8 96.0,144.0 100.0,143.8 104.0,143.3 108.0,142.5 112.0,141.3 116.0,139.9 120.0,138.1 124.0,136.0 128.0,133.7 132.0,131.1 136.0,128.3 140.0,125.2 144.0,122.0 148.0,118.6 152.0,115.0 156.0,111.4 160.0,107.6 164.0,103.8 168.0,100.0 172.0,96.2 176.0,92.4 180.0,88.6 184.0,85.0 188.0,81.4 192.0,78.0 196.0,74.8 200.0,71.7 204.0,68.9 208.0,66.3 212.0,64.0 216.0,61.9 220.0,60.1 224.0,58.7 228.0,57.5 232.0,56.7 236.0,56.2 240.0,56.0 244.0,56.2 248.0,56.7 252.0,57.5 256.0,58.7 260.0,60.1 264.0,61.9 268.0,64.0 272.0,66.3 276.0,68.9 280.0,71.7 284.0,74.8 288.0,78.0 292.0,81.4 296.0,85.0 300.0,88.6 304.0,92.4 308.0,96.2 312.0,100.0 316.0,103.8 320.0,107.6 324.0,111.4 328.0,115.0 332.0,118.6 336.0,122.0 340.0,125.2 344.0,128.3 348.0,131.1 352.0,133.7 356.0,136.0 360.0,138.1 364.0,139.9 368.0,141.3 372.0,142.5 376.0,143.3 380.0,143.8 384.0,144.0"/><line x1="24" y1="50" x2="24" y2="150" stroke="currentColor" stroke-width="3.5" opacity="1"/><circle cx="24" cy="100" r="5" fill="currentColor"/><circle cx="168.0" cy="100" r="5" fill="currentColor"/><circle cx="312" cy="100" r="5" fill="currentColor"/><circle cx="96.0" cy="56" r="5.5" fill="#fb923c"/><circle cx="240.0" cy="144" r="5.5" fill="#fb923c"/><circle cx="384.0" cy="56.0" r="5.5" fill="#fb923c"/><circle cx="384" cy="56" r="9" fill="none" stroke="#fb923c" stroke-width="2"/><text x="24" y="28" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">Đầu cố định (nút)</text><text x="380" y="28" fill="#fb923c" font-size="13" font-weight="700" text-anchor="end">Đầu tự do (bụng)</text><text x="24" y="168" fill="#34d399" font-size="13" font-weight="700" text-anchor="start">L = 5·λ/4 = (2n+1)·λ/4 với n = 2: 3 bụng, 3 nút</text><text x="24" y="188" fill="currentColor" font-size="13" font-weight="400" text-anchor="start">chấm sáng: nút · chấm cam: bụng</text></svg><figcaption>Hình 3. Một đầu cố định (nút), một đầu tự do (bụng): $L=(2n+1)\tfrac{\lambda}{4}$. Hình vẽ $n=2$ nên có $n+1=3$ bụng và 3 nút.</figcaption></figure>
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 3.</strong> Dây dài $0{,}9$ m, một đầu cố định, một đầu tự do, sóng có $\lambda=1{,}2$ m. Trên dây có mấy bụng sóng?</p>
+<p><strong>Câu 3.</strong> Dây dài $0{,}9\ \text{m}$, một đầu cố định, một đầu tự do, sóng có $\lambda=1{,}2\ \text{m}$. Trên dây có mấy bụng sóng?</p>
+<p>⚠ Số lần $\dfrac{\lambda}{4}$ trong $L$ là $2n+1$, chưa phải số bụng.</p>
 <div class="tl-quiz">
 <input type="radio" name="tl14-q3" id="tl14-q3a"><label for="tl14-q3a" class="tl-opt tl-no">A. 1</label>
 <input type="radio" name="tl14-q3" id="tl14-q3b"><label for="tl14-q3b" class="tl-opt tl-ok">B. 2</label>
@@ -725,24 +1318,24 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 
 <h4>Bẫy 1. Đếm ngọn, đếm vân: số mốc ≠ số khoảng</h4>
 
-<p><strong>🔑 Mốc trừ 1 = khoảng · vân sáng lẻ, vân tối chẵn</strong></p>
+<p><strong>🔑 Số mốc trừ 1 bằng số khoảng</strong></p>
 
 <table class="tl-table">
 <thead><tr><th>Đề nói</th><th>Đổi thành</th></tr></thead>
 <tbody>
 <tr><td>$n$ ngọn sóng liên tiếp</td><td>$(n-1)\lambda$</td></tr>
-<tr><td>$n$ vân sáng liên tiếp</td><td>$(n-1)i$</td></tr>
+<tr><td>$n$ vân sáng liên tiếp</td><td>$(n-1)i$ (9 vân sáng → $8i$)</td></tr>
 <tr><td>Trên bề rộng $L$ đối xứng</td><td>vân sáng lẻ, vân tối chẵn</td></tr>
 </tbody>
 </table>
 
-<p><strong>Câu 4.</strong> $i=2$ mm, trường giao thoa đối xứng rộng $L=15$ mm. Số vân sáng trên trường là:</p>
+<p><strong>Câu 4.</strong> $i=2\ \text{mm}$, trường giao thoa đối xứng rộng $L=15\ \text{mm}$. Số vân sáng trên trường là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl14-q4" id="tl14-q4a"><label for="tl14-q4a" class="tl-opt tl-no">A. 6</label>
 <input type="radio" name="tl14-q4" id="tl14-q4b"><label for="tl14-q4b" class="tl-opt tl-ok">B. 7</label>
 <input type="radio" name="tl14-q4" id="tl14-q4c"><label for="tl14-q4c" class="tl-opt tl-no">C. 8</label>
 <input type="radio" name="tl14-q4" id="tl14-q4d"><label for="tl14-q4d" class="tl-opt tl-no">D. 9</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\dfrac{L}{2i}=3{,}75$, lấy phần nguyên 3, $N_s=2\cdot3+1=7$ (vân trung tâm và 3 vân mỗi bên); vân tối $N_t=2[3{,}75+0{,}5]=8$.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\dfrac{L}{2i}=3{,}75$, lấy phần nguyên 3, $N_s=2\cdot3+1=7$ (vân trung tâm và 3 vân mỗi bên).</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Số vân sáng luôn lẻ vì có vân trung tâm. Tính $\dfrac{L}{2i}$, lấy phần nguyên (không làm tròn), nhân 2 rồi cộng 1.</p></div>
 </div>
 
@@ -758,7 +1351,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </tbody>
 </table>
 
-<p>Ở Dạng 8, đoạn nối hai nguồn vẫn chạy $-\dfrac{S_1S_2}{\lambda}$ tới $\dfrac{S_1S_2}{\lambda}$, nhưng với nguồn ngược pha thì <strong>cực đại lấy $k+\tfrac12$</strong>, cực tiểu lấy $k$. Hai nguồn S₁, S₂ <strong>không tính</strong> vào số điểm đếm, nên dấu là $\lt$ chứ không phải $\le$.</p>
+<p>Ở Dạng 8, miền giá trị trên đoạn nối hai nguồn vẫn là từ $-\dfrac{S_1S_2}{\lambda}$ tới $\dfrac{S_1S_2}{\lambda}$, nhưng với nguồn ngược pha thì <strong>cực đại lấy $k+\tfrac12$</strong>, cực tiểu lấy $k$. Hai nguồn S₁, S₂ <strong>không tính</strong> vào số điểm đếm, nên dấu là $\lt$ chứ không phải $\le$.</p>
 
 <details class="tl-details" open>
 <summary>👀 Bấm xem: vì sao ngược pha thì đổi chỗ?</summary>
@@ -767,9 +1360,9 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 
 <h4>Bẫy 3. Nút, bụng: hai đầu cũng là nút</h4>
 
-<p><strong>🔑 $n$ bó → $n+1$ nút · đầu cố định là nút · đầu tự do là bụng</strong></p>
+<p><strong>🔑 $n$ bó thì có $n+1$ nút</strong></p>
 
-<p>Dây hai đầu cố định có $n$ bó thì có $n+1$ nút (hai đầu cũng là nút) và $n$ bụng. Nhầm hay gặp: đếm nút giữa dây rồi quên hai đầu, hoặc coi đầu tự do là nút.</p>
+<p>Dây hai đầu cố định có $n$ bó (một bó là đoạn giữa hai nút liền kề, chứa một bụng) thì có $n+1$ nút và $n$ bụng. Nhầm hay gặp: đếm nút giữa dây rồi quên hai đầu, hoặc coi đầu tự do là nút.</p>
 
 <p><strong>Câu 5.</strong> Dây hai đầu cố định có sóng dừng với <strong>5 nút</strong> (kể cả hai đầu). Số bụng sóng là:</p>
 <div class="tl-quiz">
@@ -786,30 +1379,30 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <div class="tl-box tl-box--think">
 <p class="tl-label">🎤 Trả bài — nói bằng lời của em trước, rồi mới bấm xem</p>
 <details class="tl-details" open><summary>1. Chu kỳ, tần số, bước sóng, tốc độ nối với nhau thế nào?</summary>
-<p>$f=\dfrac{1}{T}$ · $\lambda=vT=\dfrac{v}{f}$. $n$ ngọn liên tiếp → $(n-1)\lambda$.</p></details>
+<p>$f=\dfrac{1}{T}$<br>$\lambda=vT=\dfrac{v}{f}$<br>$n$ ngọn liên tiếp cách nhau $(n-1)\lambda$</p></details>
 <details class="tl-details" open><summary>2. Hai điểm cách nhau $d$ trên phương truyền sóng lệch pha bao nhiêu?</summary>
-<p>$\Delta\varphi=\dfrac{2\pi d}{\lambda}$. Cùng pha: $d=k\lambda$ · Ngược pha: $(k+\tfrac12)\lambda$ · Vuông pha: $(2k+1)\dfrac{\lambda}{4}$.</p></details>
+<p>$\Delta\varphi=\dfrac{2\pi d}{\lambda}$<br>Cùng pha: $d=k\lambda$<br>Ngược pha: $d=(k+\tfrac12)\lambda$<br>Vuông pha: $d=(2k+1)\dfrac{\lambda}{4}$</p></details>
 <details class="tl-details" open><summary>3. Hai nguồn cùng pha: điều kiện cực đại, cực tiểu? Cách đếm trên đoạn nối hai nguồn?</summary>
-<p>Cực đại $d_2-d_1=k\lambda$ · cực tiểu $(k+\tfrac12)\lambda$. Đếm $k$ nguyên trong $\left(-\dfrac{S_1S_2}{\lambda};\dfrac{S_1S_2}{\lambda}\right)$.</p></details>
+<p>Cực đại: $d_2-d_1=k\lambda$<br>Cực tiểu: $d_2-d_1=(k+\tfrac12)\lambda$<br>Đếm $k$ nguyên trong $\left(-\dfrac{S_1S_2}{\lambda};\dfrac{S_1S_2}{\lambda}\right)$</p></details>
 <details class="tl-details" open><summary>4. Khoảng vân, vị trí vân sáng, vân tối? Khi nào hai bức xạ trùng vân?</summary>
-<p>$i=\dfrac{\lambda D}{a}$ · $x_s=ki$ · $x_t=(k+\tfrac12)i$ · trùng: $k_1\lambda_1=k_2\lambda_2$.</p></details>
+<p>$i=\dfrac{\lambda D}{a}$<br>Vân sáng: $x_s=ki$<br>Vân tối: $x_t=(k+\tfrac12)i$<br>Trùng vân: $k_1\lambda_1=k_2\lambda_2$</p></details>
 <details class="tl-details" open><summary>5. Điều kiện sóng dừng cho hai loại dây? Số nút, số bụng?</summary>
-<p>Hai đầu cố định $L=n\dfrac{\lambda}{2}$: $n$ bụng, $n+1$ nút · cố định + tự do $L=(2n+1)\dfrac{\lambda}{4}$: $n+1$ bụng, $n+1$ nút.</p></details>
+<p>Hai đầu cố định: $L=n\dfrac{\lambda}{2}$, có $n$ bụng và $n+1$ nút<br>Cố định và tự do: $L=(2n+1)\dfrac{\lambda}{4}$, có $n+1$ bụng và $n+1$ nút</p></details>
 </div>
 
 <h3>V. Bài toán mẫu</h3>
 
 <div class="tl-box">
 <p class="tl-label">📄 Đề bài</p>
-<p>Hai nguồn sóng nước A, B cùng pha, cách nhau $20$ cm, tần số $50$ Hz, tốc độ truyền sóng $1{,}0$ m/s. Tìm số điểm dao động với biên độ cực đại và cực tiểu trên đoạn AB.</p>
+<p>Hai nguồn sóng nước A, B cùng pha, cách nhau $20\ \text{cm}$, tần số $50\ \text{Hz}$, tốc độ truyền sóng $1{,}0\ \text{m/s}$. Tìm số điểm dao động với biên độ cực đại và cực tiểu trên đoạn AB.</p>
 </div>
 
 <div class="table-scroll"><table class="tl-table tl-table--data">
 <thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
 <tbody>
 <tr><td>"cùng pha"</td><td>cực đại khi $d_2-d_1=k\lambda$</td><td>Dạng 6</td></tr>
-<tr><td>"cách nhau 20 cm"</td><td>$AB=20$ cm</td><td>miền $k$: $\pm\dfrac{AB}{\lambda}$</td></tr>
-<tr><td>"50 Hz", "1,0 m/s"</td><td>$f=50$ Hz; $v=100$ cm/s</td><td>$\lambda=\dfrac{v}{f}$</td></tr>
+<tr><td>"cách nhau 20 cm"</td><td>$AB=20\ \text{cm}$</td><td>miền $k$: $\pm\dfrac{AB}{\lambda}$</td></tr>
+<tr><td>"50 Hz", "1,0 m/s"</td><td>$f=50\ \text{Hz}$; $v=100\ \text{cm/s}$</td><td>$\lambda=\dfrac{v}{f}$</td></tr>
 <tr><td>"cực đại, cực tiểu trên AB"</td><td>đếm, không tính A, B</td><td>Dạng 8</td></tr>
 </tbody>
 </table></div>
@@ -817,14 +1410,14 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <details class="tl-details" open>
 <summary>🧮 Bấm xem lời giải từng bước</summary>
 <ol class="tl-steps">
-<li>$\lambda=\dfrac{v}{f}=\dfrac{100}{50}=2$ cm, nên $\dfrac{AB}{\lambda}=10$.</li>
+<li>$\lambda=\dfrac{v}{f}=\dfrac{100}{50}=2\ \text{cm}$, nên $\dfrac{AB}{\lambda}=10$.</li>
 <li>Cực đại: $-10\lt k\lt10$, $k=-9,\dots,9$, được <strong>19</strong> cực đại.</li>
 <li>Cực tiểu: $-10\lt k+\tfrac12\lt10$, tức $-10{,}5\lt k\lt9{,}5$, $k=-10,\dots,9$, được <strong>20</strong> cực tiểu.</li>
 <li>Kiểm tra: cực đại và cực tiểu xen kẽ nhau nên chênh nhau 1; 20 cực tiểu ôm 19 cực đại là hợp lý.</li>
 </ol>
 </details>
 
-<div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong> — cùng đề, chỉ đổi $AB=21$ cm.</p>
+<div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong> — cùng đề, chỉ đổi $AB=21\ \text{cm}$.</p>
 <ol class="tl-steps">
 <li>$\dfrac{AB}{\lambda}=\dfrac{21}{2}=10{,}5$.</li>
 <li><strong>Bước 2 (em điền):</strong> cực đại thoả $-10{,}5\lt k\lt10{,}5$, có bao nhiêu giá trị $k$?</li>
@@ -834,14 +1427,14 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 
 <div class="tl-box tl-box--think">
 <p class="tl-label">🔁 Thử sức biến thể</p>
-<p><strong>Câu 6.</strong> Giữ $AB=20$ cm, $\lambda=2$ cm nhưng hai nguồn <strong>ngược pha</strong>. Số cực đại và cực tiểu trên AB là:</p>
+<p><strong>Câu 6.</strong> Giữ $AB=20\ \text{cm}$, $\lambda=2\ \text{cm}$ nhưng hai nguồn <strong>ngược pha</strong>. Số cực đại và cực tiểu trên AB là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl14-q5" id="tl14-q5a"><label for="tl14-q5a" class="tl-opt tl-no">A. 19 cực đại, 20 cực tiểu</label>
 <input type="radio" name="tl14-q5" id="tl14-q5b"><label for="tl14-q5b" class="tl-opt tl-ok">B. 20 cực đại, 19 cực tiểu</label>
 <input type="radio" name="tl14-q5" id="tl14-q5c"><label for="tl14-q5c" class="tl-opt tl-no">C. 19 cực đại, 19 cực tiểu</label>
 <input type="radio" name="tl14-q5" id="tl14-q5d"><label for="tl14-q5d" class="tl-opt tl-no">D. 20 cực đại, 20 cực tiểu</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nguồn ngược pha thì hai loại đổi chỗ cho nhau: cực đại lấy $k+\tfrac12$ nên được 20, cực tiểu lấy $k$ nên được 19.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đây là Bẫy 2: ngược pha thì điều kiện cực đại đổi thành $(k+\tfrac12)\lambda$ và cực tiểu thành $k\lambda$, nên con số của hai loại hoán đổi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đây là Bẫy 2: ngược pha thì số cực đại và số cực tiểu hoán đổi cho nhau.</p></div>
 </div>
 </div>
 
@@ -850,7 +1443,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <details class="tl-details" open>
 <summary>🌍 Bấm xem: 3 chỗ gặp lại bốn họ</summary>
 <ul>
-<li><strong>Dây đàn ghi-ta, sáo (họ D):</strong> đổi chiều dài thì đổi $f=\dfrac{v}{2L}$, đổi nốt.</li>
+<li><strong>Dây đàn ghi-ta, sáo (họ D):</strong> đổi chiều dài thì đổi $f=\dfrac{v}{2L}$, đổi nốt. Sáo là ống hở hai đầu nên hai đầu đều là bụng, cũng cho $f=\dfrac{v}{2L}$.</li>
 <li><strong>Loa cùng phát (họ B):</strong> chỗ nghe to nhỏ khác nhau trong phòng vì có điểm cực đại, cực tiểu.</li>
 <li><strong>Sóng FM, Wi-Fi (họ A):</strong> $f=\dfrac{c}{\lambda}$ cho biết kích thước ăng-ten cần dùng.</li>
 </ul>
@@ -859,22 +1452,29 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <details class="tl-details" open>
 <summary>⭐ Thử thách phân tầng</summary>
 <ul>
-<li><strong>⭐</strong> Sóng trên mặt hồ có $f=2$ Hz, $\lambda=0{,}5$ m. Tốc độ truyền sóng? <em>(1 m/s)</em></li>
-<li><strong>⭐⭐</strong> Dây dài $1{,}2$ m, hai đầu cố định, $f=50$ Hz, có 4 bụng. Tốc độ truyền sóng? <em>($\lambda=\dfrac{2L}{n}=0{,}6$ m; $v=\lambda f=30$ m/s)</em></li>
-<li><strong>⭐⭐⭐</strong> Young, $D=2$ m, $a=1$ mm, hai bức xạ $0{,}48\ \mu\text{m}$ và $0{,}60\ \mu\text{m}$. Vị trí vân sáng trùng gần vân trung tâm nhất? <em>($\dfrac{k_1}{k_2}=\dfrac{0{,}60}{0{,}48}=\dfrac54$; $i_1=0{,}96$ mm; $x=5i_1=4{,}8$ mm)</em></li>
+<li><strong>⭐</strong> Sóng trên mặt hồ có $f=2\ \text{Hz}$, $\lambda=0{,}5\ \text{m}$. Tốc độ truyền sóng? <em>(1 m/s)</em></li>
+<li><strong>⭐⭐</strong> Dây dài $1{,}2\ \text{m}$, hai đầu cố định, $f=50\ \text{Hz}$, có 4 bụng. Tốc độ truyền sóng? <em>($\lambda=\dfrac{2L}{n}=0{,}6\ \text{m}$; $v=\lambda f=30\ \text{m/s}$)</em></li>
+<li><strong>⭐⭐⭐</strong> Young, $D=2\ \text{m}$, $a=1\ \text{mm}$, hai bức xạ $0{,}48\ \mu\text{m}$ và $0{,}60\ \mu\text{m}$. Vị trí vân sáng trùng gần vân trung tâm nhất? <em>($\dfrac{k_1}{k_2}=\dfrac{0{,}60}{0{,}48}=\dfrac54$ đã tối giản, nên vân trùng gần nhất ứng với $k_1=5$, $k_2=4$<br>$i_1=\dfrac{\lambda_1D}{a}=\dfrac{0{,}48\cdot10^{-6}\cdot2}{10^{-3}}=0{,}96\cdot10^{-3}\ \text{m}=0{,}96\ \text{mm}$<br>$x=5i_1=4{,}8\ \text{mm}$)</em></li>
 </ul>
 </details>
 
 <div class="tl-box tl-box--rule">
 <p class="tl-label">✅ Mang về sau bài học</p>
 <ul>
-<li>Gọi họ trước: A sóng · B giao thoa cơ · C khe Young · D sóng dừng</li>
+<li>Gọi họ trước khi tính</li>
+<li>Họ A: sóng cơ, điện từ</li>
+<li>Họ B: giao thoa sóng cơ</li>
+<li>Họ C: khe Young</li>
+<li>Họ D: sóng dừng</li>
 <li>Mốc trừ 1 bằng khoảng: $n$ ngọn → $(n-1)\lambda$</li>
-<li>Cùng pha: cực đại $k\lambda$ · ngược pha: cực đại $(k+\tfrac12)\lambda$</li>
+<li>Hai nguồn cùng pha: cực đại tại $k\lambda$</li>
+<li>Hai nguồn ngược pha: cực đại tại $(k+\tfrac12)\lambda$</li>
 <li>Đếm cực trị: không tính hai nguồn, dấu $\lt$</li>
-<li>Khe Young: $i=\dfrac{\lambda D}{a}$ · sáng lẻ, tối chẵn</li>
-<li>Sóng dừng: hai đầu nút $\dfrac{\lambda}{2}$ · một đầu tự do $\dfrac{\lambda}{4}$ lẻ</li>
-<li>Đọc đề: gạch dữ kiện → gọi dạng → tính → kiểm tra đơn vị và số nguyên</li>
+<li>Khe Young: $i=\dfrac{\lambda D}{a}$</li>
+<li>Vân sáng luôn lẻ, vân tối luôn chẵn</li>
+<li>Sóng dừng hai đầu nút: $L$ bằng số nguyên lần $\dfrac{\lambda}{2}$</li>
+<li>Sóng dừng một đầu tự do: $L$ bằng số lẻ lần $\dfrac{\lambda}{4}$</li>
+<li>Đọc đề: gạch dữ kiện, gọi dạng, tính, kiểm tra đơn vị và số nguyên</li>
 </ul>
 </div>
 </span></div></div>

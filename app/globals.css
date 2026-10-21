@@ -3675,3 +3675,8 @@ html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
 html[data-theme="light"] .class-done-tag { color: #475569; }
 html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
 html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }

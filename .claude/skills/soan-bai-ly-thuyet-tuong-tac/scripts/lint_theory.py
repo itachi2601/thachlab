@@ -31,6 +31,15 @@ for i, qz in enumerate(re.split(r'(?=<div class="tl-quiz")', h)[1:], 1):
     if "tl-fb--ok" not in seg or "tl-fb--no" not in seg: err.append(f"quiz #{i}: thiếu .tl-fb--ok/--no")
 if not re.search(r"Trả bài", h): warn.append('thiếu mục "Trả bài" trước bài tập')
 if "tl-box--exp" not in h: warn.append("chưa có thí nghiệm/ví dụ (.tl-box--exp)")
+# Mỗi ý một dòng (thầy chốt 7/10/2026): không ghép nhiều ý bằng " · " trong <li>/<p> (trừ <svg>, bảng)
+_txt = re.sub(r"<svg.*?</svg>|<table.*?</table>", "", h, flags=re.S)
+for m in re.finditer(r"<(?:li|p)[^>]*>([^<]*(?:<(?!/?(?:li|p)\b)[^>]*>[^<]*)*?)</(?:li|p)>", _txt, flags=re.S):
+    if m.group(1).count(" · ") >= 1 and "🔑" in m.group(1) or m.group(1).count(" · ") >= 2:
+        warn.append("ghép nhiều ý bằng \" · \" (mỗi ý một dòng): " + re.sub(r"<[^>]+>|\s+", " ", m.group(1)).strip()[:70])
+# 🔑 chỉ một ý, ngắn
+for m in re.finditer(r"🔑([^<]*(?:<(?!/p)[^>]*>[^<]*)*)</p>", h):
+    if len(re.sub(r"<[^>]+>|\$[^$]*\$", "", m.group(1)).split()) > 14:
+        warn.append("dòng 🔑 quá dài (>14 chữ): " + re.sub(r"<[^>]+>", "", m.group(1)).strip()[:60])
 if "tl-table--data" not in h: warn.append("chưa có bảng Câu trong đề / Dữ liệu / Kiến thức (.tl-table--data)")
 fig = len(re.findall(r'<figure class="fig"', h))
 print(f"{len(h)/1024:.1f} KB · {fig} hình · {len(re.findall('tl-quiz', h))} quiz · {len(re.findall('<details', h))} details")
