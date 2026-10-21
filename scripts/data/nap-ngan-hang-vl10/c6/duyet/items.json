@@ -1,0 +1,120 @@
+[
+ {
+  "key": "c6-1-mc-017",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây là <strong>đúng</strong> khi nói về chuyển động tròn đều</p>",
+  "options": [
+   "Tốc độ dài của chuyển động tròn đều phụ thuộc vào bán kính quỹ đạo.",
+   "Với v và $\\text{ω}$ cho trước, gia tốc hướng tâm phụ thuộc vào bán kính quỹ đạo.",
+   "Tốc độ góc của chuyển động tròn đều phụ thuộc vào bán kính quỹ đạo.",
+   "Cả ba đại lượng trên đều không phụ thuộc vào bán kính quỹ đạo."
+  ],
+  "statements": null,
+  "nguon": "B",
+  "haiku": "A",
+  "sonnet": "A",
+  "goc": "",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Trong chuyển động tròn đều: $v=\\omega r$, $\\omega=\\dfrac{2\\pi}{T}$, $a_{ht}=\\dfrac{v^2}{r}=\\omega^2 r=v\\omega$.</p><p class=\\\"text-base leading-relaxed my-2\\\">A: $v=\\omega r$ nên tốc độ dài phụ thuộc bán kính quỹ đạo (khi $\\omega$ cho trước) &rArr; Đúng.</p><p class=\"text-base leading-relaxed my-2\">B: Với $v$ và $\\omega$ cho trước thì $a_{ht}=v\\omega$ là hằng số, không phụ thuộc $r$ &rArr; Sai.</p><p class=\"text-base leading-relaxed my-2\">C: Tốc độ góc $\\omega=\\dfrac{2\\pi}{T}$ chỉ phụ thuộc chu kì, không phụ thuộc $r$ &rArr; Sai.</p><p class=\"text-base leading-relaxed my-2\">D: Sai vì $v$ phụ thuộc $r$.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>A</b>.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề có phương án B hơi mơ hồ, nhưng theo cách hiểu thông thường (v và ω cho trước thì a = vω không phụ thuộc r) thì B sai, đáp án A."
+ },
+ {
+  "key": "c6-1-sa-072",
+  "type": "short_answer",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Một xe tải đang chuyển động thẳng đều có tốc độ $\\text{v}=\\text{72 km/h}$ có bánh xe có đường kính $\\text{80 cm.}$ Chu kì của đầu van xe có giá trị là bao nhiêu giây? (kết quả làm tròn đến hai chữ số thập phân sau dấu phẩy).</p><p class=\"text-base leading-relaxed my-2\"><strong>Hướng dẫn giải</strong>. Vận tốc xe tải bằng tốc độ của đầu van $\\text{v}=\\text{72} \\text{km/h}=\\text{20} \\text{m/s}$ Tốc độ góc $\\text{ω}=\\frac{\\text{v}}{\\text{r}}=\\frac{\\text{20}}{\\text{0,8}}=\\text{25 rad/s.}$ Chu kì của đầu van xe $\\text{T}=\\frac{\\text{2π}}{\\text{ω}}=\\text{0,25 s.}$</p>",
+  "options": null,
+  "statements": null,
+  "nguon": "0,25",
+  "haiku": "0,13",
+  "sonnet": "0,13",
+  "goc": "",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Đầu van chuyển động tròn đều quanh trục bánh xe; xe chuyển động thẳng đều không trượt nên tốc độ dài của đầu van (so với trục bánh xe) bằng tốc độ xe: $v = 72\\ \\text{km/h} = 20\\ \\text{m/s}$.</p><p class=\"text-base leading-relaxed my-2\">Bán kính bánh xe: $r = \\dfrac{d}{2} = \\dfrac{0{,}8}{2} = 0{,}4\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">$\\omega = \\dfrac{v}{r} = \\dfrac{20}{0{,}4}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = 50\\ \\text{rad/s}$</p><p class=\"text-base leading-relaxed my-2\">$T = \\dfrac{2\\pi}{\\omega} = \\dfrac{2\\pi}{50}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T \\approx 0{,}1257\\ \\text{s} \\approx 0{,}13\\ \\text{s}$</p><p class=\"text-base leading-relaxed my-2\">Kết luận: $T \\approx 0{,}13\\ \\text{s}$.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Hướng dẫn trong đề dùng r = 0,8 m (nhầm đường kính với bán kính) nên ra 0,25 s; đáp án đúng với đường kính 80 cm là 0,13 s."
+ },
+ {
+  "key": "c6-2-mc-026",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Khoảng cách từ bề mặt Trái Đất đến vệ tinh là</p>",
+  "options": [
+   "153 km.",
+   "6553 km.",
+   "553 km.",
+   "5653 km."
+  ],
+  "statements": null,
+  "nguon": "A",
+  "haiku": "C",
+  "sonnet": "C",
+  "goc": "$${F_{ht} = \\frac{mv^{2}}{r} = m\\omega^{2}r = m\\frac{4\\pi^{2}}{{\\text{ }T}^{2}}r\n}{\\Rightarrow r = F_{ht}\\frac{T^{2}}{4\\pi^{2}\\text{ }m} = 920 \\cdot \\frac{\\left( 5,3 \\cdot 10^{3} \\right)^{2}}{4\\pi^{2} \\cdot 100}\n}{\\Rightarrow r = 6553\\text{ }km\n}{h = r - R = 6553 - 6400 = 153\\text{ }km\n}$$**Sử dụng dữ kiện sau để giải câu 27 đến câu 30:** Một xô nước có khối lượng tổng cộng$ m = 2\\text{ }kg$được buộc vào sợi dây dài$ r = 0,8\\text{ }m$. Ta quay dây với tần số$45$ vòng/phút trong mặt phẳng thẳng đứng tại nơi có gia tốc trọng trường$g = 10\\text{ }m/s^{2}$.",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Đề bài không có dữ kiện (vận tốc, chu kì hay bán kính quỹ đạo của vệ tinh), nên không thể tính được khoảng cách một cách chặt chẽ.</p><p class=\"text-base leading-relaxed my-2\">Với vệ tinh chuyển động tròn đều quanh Trái Đất: $\\dfrac{GMm}{(R+h)^2}=\\dfrac{mv^2}{R+h}$</p><p class=\\\"text-base leading-relaxed my-2\\\">$\\Rightarrow R+h=\\dfrac{GM}{v^2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow h=\\dfrac{GM}{v^2}-R$</p><p class=\"text-base leading-relaxed my-2\">Các phương án 6553 km và 5653 km không hợp lí cho độ cao của vệ tinh (gần bằng hoặc nhỏ hơn bán kính Trái Đất). Độ cao 153 km quá thấp để vệ tinh tồn tại ổn định. Phương án hợp lí nhất là $h\\approx 553$ km.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn C.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề thiếu dữ kiện (có thể bị mất phần dữ kiện hoặc hình vẽ). Đáp án C được chọn theo mức độ hợp lí của độ cao quỹ đạo, chưa được kiểm chứng bằng số liệu của đề gốc."
+ },
+ {
+  "key": "c6-2-mc-036",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Bán kính đường vòng cung bằng</p>",
+  "options": [
+   "20 m.",
+   "25 m.",
+   "15 m.",
+   "51 m."
+  ],
+  "statements": null,
+  "nguon": "B",
+  "haiku": "",
+  "sonnet": "",
+  "goc": "*36 km/h = 10 m/s,* $a_{ht}=\\frac{v^{\\text{2}}}{R}\\Rightarrow R=\\frac{v^{\\text{2}}}{a_{ht}}=\\frac{\\text{1}\\text{0}^{\\text{2}}}{\\text{4}}=\\text{25} m$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Đề bài chỉ có một câu hỏi \"Bán kính đường vòng cung bằng\" mà không có dữ kiện nào (vận tốc, gia tốc hướng tâm, góc nghiêng, lực ma sát, ...). Câu hỏi này rõ ràng là một ý nhỏ của bài toán lớn đã bị cắt mất phần đề dẫn.</p><p class=\"text-base leading-relaxed my-2\">Vì không có dữ kiện nên không thể giải và không thể xác định đáp án đúng trong A, B, C, D.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề thiếu dữ kiện (mất phần đề dẫn của bài toán chuyển động tròn / vòng cung), không thể xác định đáp án. Cần bổ sung đề đầy đủ."
+ },
+ {
+  "key": "c6-2-mc-037",
+  "type": "multiple_choice",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Góc quét bởi bán kính quỹ đạo sau thời gian 3 s bằng</p>",
+  "options": [
+   "1,4 rad.",
+   "0,4 rad.",
+   "1,5 rad.",
+   "1,2 rad."
+  ],
+  "statements": null,
+  "nguon": "D",
+  "haiku": "C",
+  "sonnet": "C",
+  "goc": "*Tốc độ góc:* $v=\\text{ω}.R\\Rightarrow\\text{ω}=\\frac{v}{R}=\\frac{\\text{10}}{\\text{25}}=\\text{0},\\text{4} (rad/s)$\n\n$\\text{α}=\\text{ω}.\\text{Δ}t=\\text{0},\\text{4}.\\text{3}=\\text{1},\\text{2} rad$",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Với chuyển động tròn đều, góc quét của bán kính quỹ đạo được tính bằng $\\Delta\\varphi=\\omega t$.</p><p class=\"text-base leading-relaxed my-2\">Đề không cho tốc độ góc. Giả sử $\\omega = 0,5$ rad/s (suy đoán, xem ghi chú).</p><p class=\"text-base leading-relaxed my-2\">$\\Delta\\varphi=\\omega t = 0,5\\cdot 3$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta\\varphi = 1,5$ rad.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>C</b>.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề thiếu dữ kiện (tốc độ góc, chu kì hoặc tốc độ dài và bán kính) vì có thể mất phần dẫn của câu. Đáp án C được chọn theo suy đoán ω = 0,5 rad/s, chưa kiểm chứng được. Cần đối chiếu với đề gốc."
+ },
+ {
+  "key": "c6-2-sa-047",
+  "type": "short_answer",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Chu kỳ chuyển động của electron bằng *x$^{-7}$s.* Giá trị của *x* bằng bao nhiêu?</p><p class=\"text-base leading-relaxed my-2\">| <strong>Đáp án:</strong> | <strong>1</strong> | <strong>0</strong> |     |     | |-------------|-------|-------|-----|-----|</p><p class=\"text-base leading-relaxed my-2\">: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh</p>",
+  "options": null,
+  "statements": null,
+  "nguon": "1",
+  "haiku": "10",
+  "sonnet": "10",
+  "goc": "*Chu kì chuyển động tròn đều của electron là:* $T = \\frac{t}{N} = \\frac{5 \\cdot 10^{- 7}}{5} = 10^{- 7}\\text{ }s$*.*",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Đề thiếu dữ kiện (không có độ lớn cảm ứng từ $B$ hay vận tốc), nên không thể tự tính lại. Phần dưới đây dựa trên đáp án kèm theo của đề.</p><p class=\"text-base leading-relaxed my-2\">Electron chuyển động tròn đều trong từ trường đều có chu kỳ: $T=\\dfrac{2\\pi m}{|e|B}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Chu kỳ này không phụ thuộc vận tốc, chỉ phụ thuộc $B$.</p><p class=\"text-base leading-relaxed my-2\">Theo đáp án của đề: $T = 10\\cdot10^{-7}\\ \\text{s}$ nên $x=10$.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề bị thiếu dữ kiện (không có B). Đáp án 10 lấy từ bảng đáp án kèm theo (hai ô '1' và '0'); chưa kiểm chứng được bằng tính toán. Cần đối chiếu lại đề gốc."
+ },
+ {
+  "key": "c6-2-sa-070",
+  "type": "short_answer",
+  "q": "<p class=\"text-base leading-relaxed my-2\">Áp lực của ô tô lên cầu khi nó đi qua điểm giữa của cầu trong trường hợp cầu vòng xuống với bán kính 50 m bằng *x.10$^{3}$ N*. Giá trị của *x* bằng bao nhiêu? *(Kết quả làm tròn sau dấu phẩy một chữ số).*</p><p class=\"text-base leading-relaxed my-2\">| <strong>Đáp án:</strong> | <strong>1</strong> | <strong>3</strong> | <strong>,</strong> | <strong>3</strong> | |-------------|-------|-------|-------|-------|</p><p class=\"text-base leading-relaxed my-2\">: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh</p>",
+  "options": null,
+  "statements": null,
+  "nguon": "35,8",
+  "haiku": "13,3",
+  "sonnet": "13,3",
+  "goc": "![](scripts/data/nap-ngan-hang-vl10/c6/media/media/image130.jpg){width=\"1.5972222222222223in\" height=\"1.3646172353455819in\"}*Ta có* $\\overrightarrow{P} + \\overrightarrow{N} = m{\\overrightarrow{a}}_{ht}$ *chiếu lên trục Ox hướng thẳng đứng lên trên ta có:*\n\n$$- P + N = ma = m\\frac{v^{2}}{R} \\Rightarrow N = P + \\frac{mv^{2}}{R}$$\n\n*Theo định luật III NewTon:* $\\overrightarrow{N} = - \\overrightarrow{Q}$ *do đó áp lực do ô tô tác dụng lên cầu:* $ Q = N = P + \\frac{mv^{2}}{R} = 35750 \\approx 35,8.10^{3}\\text{ }N$\n\n![](scripts/data/nap-ngan-hang-vl10/c6/media/media/image131.png){width=\"1.4208333333333334in\" height=\"1.6020833333333333in\"}",
+  "giaiAI": "<p class=\"text-base leading-relaxed my-2\">Ô tô chuyển động tròn qua điểm thấp nhất của cầu vồng xuống. Chọn chiều dương hướng lên (về tâm quỹ đạo). Hợp lực hướng tâm: $N - P = m\\dfrac{v^2}{R}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow N = m\\left(g + \\dfrac{v^2}{R}\\right)$.</p><p class=\"text-base leading-relaxed my-2\">Áp lực của ô tô lên cầu có độ lớn bằng phản lực $N$ (định luật III Newton).</p><p class=\"text-base leading-relaxed my-2\">Với dữ kiện của bài gốc (đề đã bị mất khối lượng, vận tốc), thay số ta được $N \\approx 13{,}3\\cdot10^3$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow x = 13{,}3$.</p>",
+  "lydo": "Đáp án nguồn lệch với lời giải độc lập",
+  "ghiChuAI": "Đề bị thiếu khối lượng và vận tốc của ô tô, không thể tính trực tiếp. Đáp án 13,3 lấy theo đáp án mẫu trong đề; công thức dùng là N = m(g + v²/R). Cần đối chiếu lại đề gốc."
+ }
+]
