@@ -34,7 +34,7 @@ export interface TriageResult {
 /** Placeholder ảnh trần "media/…" (chưa là URL đã tải lên) chưa khai báo trong raster_images. */
 export function undeclaredMedia(q: ExamQuestion, declared: Set<string>): string[] {
   const out: string[] = [];
-  for (const m of JSON.stringify(q).matchAll(/(?<!lesson-)\bmedia\/[\w./-]+/g)) {
+  for (const m of JSON.stringify(q).matchAll(/(?<![\w./-])media\/[\w./-]+/g)) {
     if (!declared.has(m[0]) && !out.includes(m[0])) out.push(m[0]);
   }
   return out;

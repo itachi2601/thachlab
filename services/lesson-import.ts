@@ -190,7 +190,7 @@ export function validateBundle(input: unknown): BundleCheck {
   // vd ".../lesson-media/132/....png") — chỉ những đề vừa dán/sửa (chưa qua Đăng) mới còn placeholder
   // trần "media/…" thật sự chưa khai báo trong raster_images.
   // Báo kèm vị trí (câu số mấy + đầu đề câu) để người duyệt biết câu nào cần sửa.
-  const mediaRe = /(?<!lesson-)\bmedia\/[\w./-]+/g;
+  const mediaRe = /(?<![\w./-])media\/[\w./-]+/g;
   const reported = new Set<string>();
   const scan = (html: string, where: string) => {
     for (const m of html.matchAll(mediaRe)) {
