@@ -97,3 +97,19 @@ Chỉ dùng cho 2–3 quiz quan trọng (bẫy, bài toán mẫu). Radio này kh
 </table></div>
 ```
 Mỗi hàng một câu/cụm của đề, theo đúng thứ tự đề. Cột Dữ liệu tự tô vàng. Dữ kiện "ngầm" (bỏ qua ma sát, bắt đầu từ nghỉ) cũng có một hàng riêng.
+
+## Khối công thức / định luật (`.tl-fx`, chốt 21/10/2026)
+Mọi công thức chủ chốt, định luật, định lý: đặt giữa, có khung, chú giải đại lượng ngay dưới (cột ký hiệu canh phải, nghĩa canh trái).
+```html
+<div class="tl-fx">            <!-- thêm tl-fx--law cho định luật/định lý (viền vàng) -->
+<p class="tl-fx-name">Dạng 3: lệch pha</p>
+<p>$$\Delta\varphi=\dfrac{2\pi d}{\lambda}$$</p>
+<p class="tl-fx-cond">Cùng pha</p>     <!-- điều kiện/trường hợp: chữ nhỏ trên công thức, không để chữ Việt trong \text{} -->
+<p>$$d=k\lambda$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$d$</span><span>khoảng cách hai điểm (m)</span></li>
+</ul>
+<p class="tl-fx-note">Ghi chú ngắn (tuỳ chọn).</p>
+</div>
+```
+Mỗi công thức một `$$…$$` riêng dòng; không nhét công thức có phân số vào giữa câu (dòng có `.katex` tự giãn `line-height:2`).

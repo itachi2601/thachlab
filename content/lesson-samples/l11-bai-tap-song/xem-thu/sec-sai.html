@@ -1039,6 +1039,24 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
 .exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
 
+/* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
+   Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
+.exam-content .tl-fx { margin: 18px 0; padding: 14px 16px 16px; border: 1.5px solid var(--color-line, rgba(148,163,184,.4)); border-radius: 12px; background: var(--color-surface-2, rgba(148,163,184,.06)); }
+.exam-content .tl-fx--law { border-color: rgba(250,204,21,.5); background: rgba(250,204,21,.07); }
+.exam-content .tl-fx > p { margin: 0; }
+.exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
+.exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
+.exam-content .tl-fx .katex-display { margin: 4px 0; padding: 6px 0; border: 0; background: none; text-align: center; overflow-x: auto; overflow-y: hidden; }
+.exam-content .tl-fx .katex-display > .katex { display: block; }
+.exam-content ul.tl-fx-def { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--color-line, rgba(148,163,184,.4)); display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: baseline; text-align: left; }
+.exam-content ul.tl-fx-def > li { display: contents; }
+.exam-content ul.tl-fx-def .tl-sym { text-align: right; white-space: nowrap; }
+.exam-content ul.tl-fx-def .tl-sym::after { content: " :"; }
+.exam-content .tl-fx-note { margin-top: 10px !important; font-size: .95em; text-align: left; }
+/* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
+.lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
+.lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
@@ -1079,35 +1097,80 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <p><strong>🔑 $\lambda=vT$: đi một chu kì thì đi một bước sóng</strong></p>
 
-<ul class="tl-dang">
-<li><strong>Dạng 1 (đặc trưng)</strong><br>
-$f=\dfrac{1}{T}$<br>
-$\lambda=vT=\dfrac{v}{f}$</li>
-<li><strong>Dạng 2 (cường độ)</strong><br>
-$I=\dfrac{P}{S}$<br>
-Sóng cầu: $S=4\pi R^2$<br>
-Nên $I\sim\dfrac{1}{R^2}$</li>
-<li><strong>Dạng 3 (lệch pha)</strong><br>
-$\Delta\varphi=\dfrac{2\pi d}{\lambda}$<br>
-Cùng pha: $d=k\lambda$<br>
-Ngược pha: $d=(k+\tfrac12)\lambda$<br>
-Vuông pha: $d=(2k+1)\dfrac{\lambda}{4}$</li>
-<li><strong>Dạng 4 (phương trình)</strong><br>
-$u_M=A\cos\left(\omega t-\dfrac{2\pi x}{\lambda}\right)$, $\omega=2\pi f$<br>
-$x$ là khoảng cách từ M tới nguồn<br>
-M trễ pha hơn nguồn $\dfrac{2\pi x}{\lambda}$</li>
-<li><strong>Dạng 5 (điện từ)</strong><br>
-$f=\dfrac{c}{\lambda}$<br>
-$c=3\cdot10^8\ \text{m/s}$<br>
-Rồi đối chiếu thang sóng</li>
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 1: đặc trưng</p>
+<p>$$f=\dfrac{1}{T}$$</p>
+<p>$$\lambda=vT=\dfrac{v}{f}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$f$</span><span>tần số (Hz)</span></li>
+<li><span class="tl-sym">$T$</span><span>chu kì (s)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+<li><span class="tl-sym">$v$</span><span>tốc độ truyền sóng (m/s)</span></li>
 </ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 2: cường độ</p>
+<p>$$I=\dfrac{P}{S}$$</p>
+<p class="tl-fx-cond">Sóng cầu</p>
+<p>$$S=4\pi R^2$$</p>
+<p class="tl-fx-cond">Suy ra</p>
+<p>$$I\sim\dfrac{1}{R^2}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$I$</span><span>cường độ sóng (W/m²)</span></li>
+<li><span class="tl-sym">$P$</span><span>công suất của nguồn (W)</span></li>
+<li><span class="tl-sym">$S$</span><span>diện tích mặt sóng (m²)</span></li>
+<li><span class="tl-sym">$R$</span><span>khoảng cách từ điểm xét tới nguồn (m)</span></li>
+</ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 3: lệch pha</p>
+<p>$$\Delta\varphi=\dfrac{2\pi d}{\lambda}$$</p>
+<p class="tl-fx-cond">Cùng pha</p>
+<p>$$d=k\lambda$$</p>
+<p class="tl-fx-cond">Ngược pha</p>
+<p>$$d=\left(k+\tfrac12\right)\lambda$$</p>
+<p class="tl-fx-cond">Vuông pha</p>
+<p>$$d=(2k+1)\dfrac{\lambda}{4}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\Delta\varphi$</span><span>độ lệch pha (rad)</span></li>
+<li><span class="tl-sym">$d$</span><span>khoảng cách giữa hai điểm trên phương truyền sóng (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+<li><span class="tl-sym">$k$</span><span>số nguyên</span></li>
+</ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 4: phương trình</p>
+<p>$$u_M=A\cos\left(\omega t-\dfrac{2\pi x}{\lambda}\right)$$</p>
+<p>$$\omega=2\pi f$$</p>
+<p class="tl-fx-cond">M trễ pha hơn nguồn</p>
+<p>$$\Delta\varphi=\dfrac{2\pi x}{\lambda}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$u_M$</span><span>li độ của điểm M</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ sóng</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+<li><span class="tl-sym">$x$</span><span>khoảng cách từ M tới nguồn (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+</ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 5: điện từ</p>
+<p>$$f=\dfrac{c}{\lambda}$$</p>
+<p>$$c=3\cdot10^8\ \text{m/s}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$f$</span><span>tần số (Hz)</span></li>
+<li><span class="tl-sym">$c$</span><span>tốc độ ánh sáng trong chân không</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+</ul>
+<p class="tl-fx-note">Tính xong thì đối chiếu thang sóng ở mục bấm xem bên dưới.</p>
+</div>
 
 <details class="tl-details" open>
 <summary>📖 Bấm xem: ký hiệu và ghi chú họ A</summary>
-<p>$P$: công suất của nguồn (W)<br>
-$R$: khoảng cách từ điểm đang xét tới nguồn<br>
-$I\sim\dfrac{1}{R^2}$ đọc là: $I$ tỉ lệ với $\dfrac{1}{R^2}$<br>
-Nguồn $u_0=A\cos(\omega t+\varphi)$ thì $u_M=A\cos\left(\omega t+\varphi-\dfrac{2\pi x}{\lambda}\right)$<br>
+<p>Nguồn $u_0=A\cos(\omega t+\varphi)$ thì $u_M=A\cos\left(\omega t+\varphi-\dfrac{2\pi x}{\lambda}\right)$<br>
 Thang sóng theo $\lambda$ giảm dần: vô tuyến (cả vi sóng) → hồng ngoại → ánh sáng nhìn thấy $0{,}38$–$0{,}76\ \mu\text{m}$ → tử ngoại → tia X → tia $\gamma$</p>
 </details>
 
@@ -1148,22 +1211,44 @@ Thang sóng theo $\lambda$ giảm dần: vô tuyến (cả vi sóng) → hồng 
 
 <p><strong>🔑 Hiệu đường đi $d_2-d_1$ quyết định cực đại, cực tiểu</strong></p>
 
-<ul class="tl-dang">
-<li><strong>Dạng 6 (điều kiện)</strong><br>
-M cách hai nguồn $S_1$, $S_2$ lần lượt $d_1$, $d_2$; hai nguồn cùng pha<br>
-Cực đại: $d_2-d_1=k\lambda$<br>
-Cực tiểu: $d_2-d_1=(k+\tfrac12)\lambda$</li>
-<li><strong>Dạng 7 (biên độ, nguồn cùng pha, cùng biên độ)</strong><br>
-$A_M=2A\left|\cos\left[\pi\dfrac{d_2-d_1}{\lambda}\right]\right|$<br>
-$A$ là biên độ sóng mỗi nguồn gửi tới M<br>
-Nguồn ngược pha: đổi $\cos$ thành $\sin$</li>
-<li><strong>Dạng 8 (đếm, nguồn cùng pha)</strong><br>
-$S_1S_2$ (tức AB) là khoảng cách hai nguồn<br>
-Cực đại: đếm số $k$ nguyên thoả<br>
-$-\dfrac{S_1S_2}{\lambda}\lt k\lt\dfrac{S_1S_2}{\lambda}$<br>
-Cực tiểu: thay $k$ bằng $k+\tfrac12$<br>
-Ngược pha: xem Bẫy 2</li>
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 6: điều kiện</p>
+<p class="tl-fx-cond">Hai nguồn cùng pha, cực đại</p>
+<p>$$d_2-d_1=k\lambda$$</p>
+<p class="tl-fx-cond">Cực tiểu</p>
+<p>$$d_2-d_1=\left(k+\tfrac12\right)\lambda$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$d_1, d_2$</span><span>khoảng cách từ M tới hai nguồn $S_1$, $S_2$ (m)</span></li>
+<li><span class="tl-sym">$k$</span><span>số nguyên</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
 </ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 7: biên độ, nguồn cùng pha, cùng biên độ</p>
+<p>$$A_M=2A\left|\cos\left[\pi\dfrac{d_2-d_1}{\lambda}\right]\right|$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$A_M$</span><span>biên độ dao động tại M</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ sóng mỗi nguồn gửi tới M</span></li>
+<li><span class="tl-sym">$d_1, d_2$</span><span>khoảng cách từ M tới hai nguồn (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+</ul>
+<p class="tl-fx-note">Nguồn ngược pha: đổi $\cos$ thành $\sin$.</p>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 8: đếm, nguồn cùng pha</p>
+<p class="tl-fx-cond">Cực đại</p>
+<p>$$-\dfrac{S_1S_2}{\lambda}\lt k\lt\dfrac{S_1S_2}{\lambda}$$</p>
+<p class="tl-fx-cond">Cực tiểu</p>
+<p>$$-\dfrac{S_1S_2}{\lambda}\lt k+\tfrac12\lt\dfrac{S_1S_2}{\lambda}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$S_1S_2$</span><span>khoảng cách hai nguồn, tức AB (m)</span></li>
+<li><span class="tl-sym">$k$</span><span>số nguyên, đếm số giá trị thoả bất đẳng thức</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+</ul>
+<p class="tl-fx-note">Nguồn ngược pha: xem Bẫy 2.</p>
+</div>
 
 <div class="tl-box tl-box--exp" data-exp="tn-l11-baitapsong-02">
 <p class="tl-label">🔬 Ví dụ: hai loa cùng phát một nốt</p>
@@ -1189,23 +1274,60 @@ Ngược pha: xem Bẫy 2</li>
 
 <p><strong>🔑 Khoảng vân $i$ là thước đo mọi vị trí vân</strong></p>
 
-<ul class="tl-dang">
-<li><strong>Dạng 9 (vị trí)</strong><br>
-$i=\dfrac{\lambda D}{a}$<br>
-Vân sáng: $x_s=ki$<br>
-Vân tối: $x_t=(k+\tfrac12)i$</li>
-<li><strong>Dạng 10 (đếm trên bề rộng $L$)</strong><br>
-$N_s=2\left[\dfrac{L}{2i}\right]+1$, luôn lẻ<br>
-$N_t=2\left[\dfrac{L}{2i}+0{,}5\right]$, luôn chẵn<br>
-Dấu $[\ ]$ lấy phần nguyên</li>
-<li><strong>Dạng 11 (trùng vân)</strong><br>
-$k_1\lambda_1=k_2\lambda_2$<br>
-Rút gọn $\dfrac{k_1}{k_2}=\dfrac{\lambda_2}{\lambda_1}$ về phân số tối giản</li>
-<li><strong>Dạng 12 (ánh sáng trắng)</strong><br>
-$0{,}38\le\lambda\le0{,}76\ \mu\text{m}$<br>
-Từ $x=\dfrac{k\lambda D}{a}$ rút ra $\lambda=\dfrac{ax}{kD}$<br>
-Giải $0{,}38\le\dfrac{ax}{kD}\le0{,}76$ để tìm các $k$ nguyên</li>
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 9: vị trí</p>
+<p>$$i=\dfrac{\lambda D}{a}$$</p>
+<p class="tl-fx-cond">Vân sáng</p>
+<p>$$x_s=ki$$</p>
+<p class="tl-fx-cond">Vân tối</p>
+<p>$$x_t=\left(k+\tfrac12\right)i$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$i$</span><span>khoảng vân (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng ánh sáng (m)</span></li>
+<li><span class="tl-sym">$D$</span><span>khoảng cách từ hai khe tới màn (m)</span></li>
+<li><span class="tl-sym">$a$</span><span>khoảng cách giữa hai khe (m)</span></li>
+<li><span class="tl-sym">$x$</span><span>vị trí vân so với vân trung tâm (m)</span></li>
+<li><span class="tl-sym">$k$</span><span>số nguyên</span></li>
 </ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 10: đếm trên bề rộng $L$</p>
+<p class="tl-fx-cond">Vân sáng, luôn lẻ</p>
+<p>$$N_s=2\left[\dfrac{L}{2i}\right]+1$$</p>
+<p class="tl-fx-cond">Vân tối, luôn chẵn</p>
+<p>$$N_t=2\left[\dfrac{L}{2i}+0{,}5\right]$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$N_s, N_t$</span><span>số vân sáng, số vân tối</span></li>
+<li><span class="tl-sym">$L$</span><span>bề rộng trường giao thoa (m), vân trung tâm ở giữa</span></li>
+<li><span class="tl-sym">$i$</span><span>khoảng vân (m)</span></li>
+<li><span class="tl-sym">$[\ ]$</span><span>lấy phần nguyên</span></li>
+</ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 11: trùng vân</p>
+<p>$$k_1\lambda_1=k_2\lambda_2$$</p>
+<p>$$\dfrac{k_1}{k_2}=\dfrac{\lambda_2}{\lambda_1}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$k_1, k_2$</span><span>bậc vân của hai bức xạ tại điểm trùng</span></li>
+<li><span class="tl-sym">$\lambda_1, \lambda_2$</span><span>bước sóng của hai bức xạ</span></li>
+</ul>
+<p class="tl-fx-note">Rút gọn $\dfrac{k_1}{k_2}$ về phân số tối giản.</p>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 12: ánh sáng trắng</p>
+<p>$$0{,}38\le\lambda\le0{,}76\ \mu\text{m}$$</p>
+<p>$$x=\dfrac{k\lambda D}{a}\ \Rightarrow\ \lambda=\dfrac{ax}{kD}$$</p>
+<p>$$0{,}38\le\dfrac{ax}{kD}\le0{,}76$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$x$</span><span>vị trí điểm xét (m)</span></li>
+<li><span class="tl-sym">$k$</span><span>số nguyên, cần tìm các giá trị thoả</span></li>
+<li><span class="tl-sym">$a, D$</span><span>như Dạng 9</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng của bức xạ cho vân sáng tại x</span></li>
+</ul>
+</div>
 
 <details class="tl-details" open>
 <summary>📖 Bấm xem: ký hiệu khe Young</summary>
@@ -1256,20 +1378,45 @@ $L$ ở Dạng 10 là bề rộng trường giao thoa, khác $L$ là chiều dà
 
 <p><strong>🔑 Hai đầu cố định: $L=n\dfrac{\lambda}{2}$</strong></p>
 
-<ul class="tl-dang">
-<li><strong>Dạng 13 (đếm nút, bụng)</strong><br>
-Hai đầu cố định: $n$ bụng thì có $n+1$ nút<br>
-Một đầu cố định, một đầu tự do: $L=(2n+1)\dfrac{\lambda}{4}$<br>
-Khi đó có $n+1$ bụng và $n+1$ nút</li>
-<li><strong>Dạng 14 (dây đàn, cột khí)</strong><br>
-Hai đầu nút: $f_n=nf_1$, $f_1=\dfrac{v}{2L}$<br>
-Một đầu nút, một đầu bụng: $f_m=mf_1$, $f_1=\dfrac{v}{4L}$<br>
-$m=2n+1$ lẻ (cùng $n$ như Dạng 13)</li>
-<li><strong>Dạng 15 (biên độ)</strong><br>
-$A_M=2A\left|\sin\dfrac{2\pi x}{\lambda}\right|$<br>
-$x$ là khoảng cách từ M tới nút gần nhất<br>
-$A$ là biên độ sóng tới</li>
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 13: đếm nút, bụng</p>
+<p class="tl-fx-cond">Hai đầu cố định</p>
+<p>$$L=n\dfrac{\lambda}{2}$$</p>
+<p class="tl-fx-cond">Một đầu cố định, một đầu tự do</p>
+<p>$$L=(2n+1)\dfrac{\lambda}{4}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$L$</span><span>chiều dài dây (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+<li><span class="tl-sym">$n$</span><span>số nguyên (hai đầu cố định: $n\ge1$; một đầu tự do: $n\ge0$)</span></li>
 </ul>
+<p class="tl-fx-note">Hai đầu cố định: $n$ bụng, $n+1$ nút. Một đầu tự do: $n+1$ bụng, $n+1$ nút.</p>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 14: dây đàn, cột khí</p>
+<p class="tl-fx-cond">Hai đầu nút</p>
+<p>$$f_n=nf_1,\quad f_1=\dfrac{v}{2L}$$</p>
+<p class="tl-fx-cond">Một đầu nút, một đầu bụng</p>
+<p>$$f_m=mf_1,\quad f_1=\dfrac{v}{4L}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$f_1$</span><span>tần số nhỏ nhất (âm cơ bản)</span></li>
+<li><span class="tl-sym">$n$</span><span>số nguyên dương</span></li>
+<li><span class="tl-sym">$m$</span><span>$2n+1$, số lẻ (cùng $n$ như Dạng 13)</span></li>
+<li><span class="tl-sym">$v$</span><span>tốc độ truyền sóng (m/s)</span></li>
+<li><span class="tl-sym">$L$</span><span>chiều dài dây hoặc cột khí (m)</span></li>
+</ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng 15: biên độ</p>
+<p>$$A_M=2A\left|\sin\dfrac{2\pi x}{\lambda}\right|$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$A_M$</span><span>biên độ dao động tại M</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ sóng tới</span></li>
+<li><span class="tl-sym">$x$</span><span>khoảng cách từ M tới nút gần nhất (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+</ul>
+</div>
 
 <details class="tl-details" open>
 <summary>📖 Bấm xem: ghi chú họ D</summary>
