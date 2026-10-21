@@ -399,6 +399,20 @@ def convert_theory(raw, lid, keys, marks=None):
             tail = box.find_all('p')[-1]
             obj = {'lis': lis, 'tail': tail.decode_contents() if tail is not lab else ''}
             box.extract(); break
+    # Câu N lẻ (không nằm trong khung tl-box): gói lại để vào khung "Tự kiểm tra ngay", đáp án đi theo QR
+    for q in soup.find_all('div', class_='tl-quiz'):
+        if q.find_parent('div', class_='tl-box'): continue
+        grp, cur = [], q.find_previous_sibling()
+        while cur is not None and cur.name == 'p' and len(grp) < 3:
+            grp.insert(0, cur)
+            if cur.find('strong', string=re.compile(r'^\s*Câu\s*\d+')): break
+            cur = cur.find_previous_sibling()
+        if not grp or not grp[0].find('strong', string=re.compile(r'^\s*Câu\s*\d+')): continue
+        box = soup.new_tag('div'); box['class'] = ['tl-box', 'tl-box--think']
+        lab = soup.new_tag('p'); lab['class'] = ['tl-label']; lab.string = 'Tự kiểm tra ngay'
+        grp[0].insert_before(box); box.append(lab)
+        for g in grp: box.append(g.extract())
+        box.append(q.extract())
     out = []
     roman = ''
     for el in list(soup.children):
