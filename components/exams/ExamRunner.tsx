@@ -2,7 +2,9 @@
 
 import { useCallback, useEffect, useRef, useState, type ComponentProps } from "react";
 import dynamic from "next/dynamic";
-import { Flag } from "lucide-react";
+import { CheckCircle2, CircleAlert, Flag } from "lucide-react";
+import Html from "@/components/exams/ContentHtml";
+import { distractorHints, isFullyCorrect } from "@/features/lessons/practice-step";
 import LateNightNudge from "@/components/rank/LateNightNudge";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
@@ -136,6 +138,10 @@ export default function ExamRunner({
   const [usedSeconds, setUsedSeconds] = useState(0);
   const [cur, setCur] = useState(0);
   const [flags, setFlags] = useState<Set<number>>(new Set());
+  // Kiểm tra nhanh cuối lý thuyết: bấm "Kiểm tra" là biết đúng/sai câu đó ngay (L1), câu đã kiểm thì khoá đáp án
+  // nên điểm vẫn là lần chọn đầu. Đề thường (Luyện tập/Kiểm tra) không đổi: có điểm sau khi nộp.
+  const instant = theoryLessonId != null;
+  const [checked, setChecked] = useState<Set<number>>(new Set());
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [violationBanner, setViolationBanner] = useState<{
@@ -430,8 +436,8 @@ export default function ExamRunner({
           {exam.title}
         </h1>
         <p className="mt-3 text-sm text-muted">
-          {exam.questions.length} câu · {exam.duration_minutes} phút · nộp bài
-          là có điểm ngay kèm lời giải
+          {exam.questions.length} câu · {exam.duration_minutes} phút ·{" "}
+          {instant ? "bấm Kiểm tra là biết đúng/sai từng câu, kèm lời giải" : "nộp bài là có điểm ngay kèm lời giải"}
         </p>
         {memoryOnly && (
           <p className="mt-2 text-sm text-muted">
@@ -490,6 +496,9 @@ export default function ExamRunner({
 
   if (phase === "running") {
     const q = exam.questions[cur];
+    const isChecked = instant && checked.has(cur);
+    const curCorrect = isChecked && isFullyCorrect(q, responses[cur]);
+    const curHints = isChecked ? distractorHints(q, responses[cur]) : [];
     return (
       <div ref={topRef} className="mx-auto max-w-3xl scroll-mt-24">
         <ConfirmDialog
@@ -631,15 +640,45 @@ export default function ExamRunner({
             index={cur + 1}
             question={q}
             response={responses[cur]}
-            onChange={(r) => {
-              const next = [...responsesRef.current];
-              next[cur] = r;
-              responsesRef.current = next;
-              setResponses(next);
-            }}
+            review={isChecked}
+            onChange={
+              isChecked
+                ? undefined
+                : (r) => {
+                    const next = [...responsesRef.current];
+                    next[cur] = r;
+                    responsesRef.current = next;
+                    setResponses(next);
+                  }
+            }
           />
         </QuestionSlide>
         </div>
+
+        {isChecked && (
+          <div className="mt-4 space-y-3" role="status" aria-live="polite">
+            {curCorrect ? (
+              <p className="flex items-start gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-base text-emerald-100">
+                <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-emerald-300" aria-hidden />
+                <span>Đúng rồi.</span>
+              </p>
+            ) : (
+              <p className="flex items-start gap-2 rounded-xl border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-base text-amber-100">
+                <CircleAlert size={20} className="mt-0.5 shrink-0 text-amber-300" aria-hidden />
+                <span>Chưa đúng. Đáp án và lời giải ở phía trên.</span>
+              </p>
+            )}
+            {curHints.length > 0 && (
+              <ul className="space-y-2 border-l-2 border-amber-400/60 pl-3 text-base leading-relaxed text-ink">
+                {curHints.map((h) => (
+                  <li key={h.label}>
+                    <b>Vì sao em chọn {h.label} chưa đúng:</b> <Html html={h.note} />
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
 
         {/* mb-28: chừa chỗ để cuộn thanh nút lên khỏi nút Báo lỗi nổi + banner giả lập (D2/D3) */}
         <div className="exam-nav-row mb-28 mt-6 flex items-center gap-2">
@@ -656,7 +695,15 @@ export default function ExamRunner({
             <Flag size={14} />
             {flags.has(cur) ? "Bỏ dấu" : "Đánh dấu"}
           </Button>
-          {cur < lastIndex ? (
+          {instant && !isChecked ? (
+            <Button
+              className="ml-auto min-h-11"
+              disabled={!isAnswered(q, responses[cur])}
+              onClick={() => setChecked((prev) => new Set(prev).add(cur))}
+            >
+              Kiểm tra
+            </Button>
+          ) : cur < lastIndex ? (
             <Button className="ml-auto min-h-11" onClick={() => goTo(cur + 1)}>
               Sau →
             </Button>
