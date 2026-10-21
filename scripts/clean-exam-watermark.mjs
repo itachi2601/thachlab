@@ -23,8 +23,15 @@ function walk(v) {
   return v;
 }
 
-const res = await fetch(`${url}/rest/v1/exams?select=id,title,questions&order=id`, { headers });
-const exams = await res.json();
+// Tải theo trang nhỏ — tải cả bảng một lần bị statement timeout (57014).
+const exams = [];
+for (let off = 0; ; off += 20) {
+  const res = await fetch(`${url}/rest/v1/exams?select=id,title,questions&order=id&limit=20&offset=${off}`, { headers });
+  const page = await res.json();
+  if (!Array.isArray(page)) throw new Error(JSON.stringify(page));
+  exams.push(...page);
+  if (page.length < 20) break;
+}
 const changed = [];
 for (const e of exams) {
   let n = 0;
