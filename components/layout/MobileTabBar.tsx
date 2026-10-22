@@ -326,7 +326,8 @@ export default function MobileTabBar() {
       { key: "class", label: "Bài học", href: "/lop-hoc/cttc", icon: "class", active: match("/lop-hoc") },
       { key: "notice", label: "Thông báo", href: "/thong-bao", icon: "bell", active: onNotice, badge: countBadge },
     ];
-    more = [{ href: "/choi", label: "Vào hoạt động lớp" }, { href: "/tin-nhan", label: "Tin nhắn" }, { href: "/tin-tuc", label: "Tin tức" }, LOGOUT_LINKS.password];
+    // Quét mã: đề kiểm tra chương của CTTC (AVCN) có mã QR + số đề, chiếu ở trang bài (22/10/2026).
+    more = [{ href: "/quet-ma", label: "Quét mã QR" }, { href: "/choi", label: "Vào hoạt động lớp" }, { href: "/tin-nhan", label: "Tin nhắn" }, { href: "/tin-tuc", label: "Tin tức" }, LOGOUT_LINKS.password];
   } else if (kind === "parent") {
     items = [
       { key: "child", label: "Kết quả của con", href: "/phu-huynh", icon: "family", active: match("/phu-huynh") },
@@ -363,7 +364,8 @@ export default function MobileTabBar() {
   const moreBadge = kind === "thpt" || kind === "ta" ? dotIfUnread : undefined;
   const onMore =
     moreOpen ||
-    (kind === "thpt" && (match("/quet-ma") || match("/lop-hoc/ket-qua") || match("/thong-bao") || match("/tin-nhan") || match("/tin-tuc")));
+    (kind === "thpt" && (match("/quet-ma") || match("/lop-hoc/ket-qua") || match("/thong-bao") || match("/tin-nhan") || match("/tin-tuc"))) ||
+    (kind === "cttc" && match("/quet-ma"));
   const columns = items.length + (hasMore ? 1 : 0);
 
   return (

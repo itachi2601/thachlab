@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Home, Maximiz
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
+import ExamQrButton from "@/components/exams/ExamQrButton";
 import TheoryRpBar, { TheoryRpHint, useTheoryRp } from "@/components/lessons/TheoryRpBar";
 import { useReadDepth } from "@/components/lessons/useReadDepth";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -589,6 +590,7 @@ function ExamRow({
   statusLabel,
   passed,
   teacherView = false,
+  showQr = false,
 }: {
   examId: number;
   itemId?: number | null;
@@ -601,6 +603,11 @@ function ExamRow({
   statusLabel?: string;
   passed?: boolean;
   teacherView?: boolean;
+  /**
+   * Hiện số đề + nút "Mã QR" (chiếu lên bảng) — dành cho đề KIỂM TRA (bài kiểm tra chương,
+   * giữa/cuối kì). Đề luyện tập không cần: thầy không chiếu QR cho đề luyện.
+   */
+  showQr?: boolean;
 }) {
   if (!exam) {
     const notice = !loggedIn
@@ -635,6 +642,12 @@ function ExamRow({
         <p className="lesson-block-title">{exam.title}</p>
         <p className="lesson-block-sub">
           {exam.duration_minutes} phút · {counts || `${exam.question_count} câu`}
+          {showQr && (
+            // Số đề để em gõ tay ở trang Quét mã khi camera hỏng / mã trên bảng bị lấp (N3).
+            <span className="rounded-full border border-line px-2 py-0.5 font-mono text-[11px] font-semibold tracking-wide text-muted">
+              Mã đề #{examId}
+            </span>
+          )}
           {!teacherView && (
             <span className={attempted && passed !== false ? "lesson-status-done" : attempted ? "lesson-status" : "lesson-status"}>
               {attempted ? `${statusLabel ?? "Đã làm"} · ${score} điểm` : "Chưa làm"}
@@ -642,12 +655,15 @@ function ExamRow({
           )}
         </p>
       </div>
-      <Link
-        href={`/kiem-tra/lam?id=${examId}${itemId ? `&item=${itemId}` : ""}`}
-        className={attempted && !teacherView ? "lesson-btn-ghost" : "lesson-btn"}
-      >
-        {teacherView ? "Xem đề và đáp án" : attempted ? "Làm lại" : "Làm bài"}
-      </Link>
+      <div className="flex shrink-0 flex-wrap items-stretch gap-2">
+        <Link
+          href={`/kiem-tra/lam?id=${examId}${itemId ? `&item=${itemId}` : ""}`}
+          className={attempted && !teacherView ? "lesson-btn-ghost" : "lesson-btn"}
+        >
+          {teacherView ? "Xem đề và đáp án" : attempted ? "Làm lại" : "Làm bài"}
+        </Link>
+        {showQr && <ExamQrButton examId={examId} title={exam.title} />}
+      </div>
     </div>
   );
 }
@@ -1473,6 +1489,7 @@ function LessonLoader() {
                       statusLabel={graded?.label}
                       passed={graded ? graded.status === "passed" : undefined}
                       teacherView={isTeacherView}
+                      showQr
                     />
                   );
                 })
@@ -1657,6 +1674,7 @@ function LessonLoader() {
                       statusLabel={graded?.label}
                       passed={graded ? graded.status === "passed" : undefined}
                       teacherView={isTeacherView}
+                      showQr={item.kind === "kiem_tra"}
                     />
                   );
                 })}

@@ -55,3 +55,17 @@ trên thachlab (không phải gõ link). Chọn làm 2 bước, đã xong cả h
 - Thử thật trên **iPhone + Android** với tài khoản học sinh (camera quét trong app là thứ duy nhất
   chưa kiểm bằng máy thật).
 - QR cho đề **CNC** (`CncExamComposer`) và cho trang đăng bài học (`LessonImporter`) — chưa làm.
+
+## 22/10/2026 — mã + QR ngay trong trang bài, và CTTC quét được
+
+- **Sinh viên CTTC vào được `/quet-ma`**: icon QR ở Navbar không còn loại `track === "cttc"`; menu "Thêm"
+  của thanh đáy CTTC thêm dòng "Quét mã QR" (đứng trước "Vào hoạt động lớp").
+- **Đề kiểm tra trong trang bài có "Mã đề #N" + nút "Mã QR"**: `ExamRow` (`app/lop-hoc/bai/page.tsx`)
+  nhận cờ `showQr`, bật cho mục `kiem_tra` và cho trang bài chỉ-gồm-đề (`isPeriodicExam`). Đề luyện tập
+  không hiện — thầy không chiếu QR cho đề luyện.
+- Nút mở `components/exams/ExamQrOverlay.tsx` (màn chiếu trắng, QR lớn, số đề lớn) — phần vẽ QR nạp
+  bằng `next/dynamic` lúc bấm nên gói QR không vào JS đầu trang bài. Dùng chung `examQrUrl` +
+  `makeQrCode` với trang soạn đề, nên QR ở đây và QR ở `/quan-tri/sua-de` không thể lệch nhau.
+- Vì sao: lúc kiểm tra chương thầy đang chiếu trang bài, không phải mở trang quản trị; đề AVCN
+  ("Kiểm tra Chapter N": 916, 1051, 1053…) chỉ cần gắn vào mục `kiem_tra` là tự có mã + QR.
+- Chưa kiểm: máy thật iPhone/Android; chụp 375px (phiên 22/10 không có trình duyệt tự động).

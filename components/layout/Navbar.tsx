@@ -187,7 +187,9 @@ export default function Navbar() {
           <span className="hidden sm:inline-flex">
             <ThemeToggle />
           </span>
-          {profile?.role === "student" && profile.track !== "cttc" && (
+          {/* Mọi học sinh/sinh viên (THPT và CTTC) đều quét mã được — đề kiểm tra chương của
+              CTTC (AVCN) cũng có mã QR chiếu ở trang bài (22/10/2026). */}
+          {profile?.role === "student" && (
             <Link
               href="/quet-ma"
               aria-label="Quét mã QR vào lớp"
