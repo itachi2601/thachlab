@@ -86,3 +86,10 @@ npx tsx scripts/deepseek-sua-lint.mts --limit 15 --apply   # ghi thật; rồi g
 ## 4. Điểm tổng sau phản biện
 Giữ 6,4/10 nhưng **Bảo mật hạ 7,5 → 7,0** (thêm lỗ lộ đáp án), **Tinh gọn tách thành Code 8 / Repo 4**. Ưu tiên P0 #1 giữ
 nguyên vị trí đầu, mở rộng phạm vi như 2.2.
+
+## 5. Nhật ký lượt chạy DeepSeek
+- 2026-10-22 · Lượt 1 (`--limit 15 --apply`, nhánh `deepseek/lint-1`): 14/15 file sạch eslint, 1 file tsc đỏ tự hoàn tác, 1 file
+  298 dòng bị cắt phản hồi (đặt `DEEPSEEK_MAX_TOKENS=32000`). `kiem-code` soát: 13 đạt, 1 đổi hành vi thật
+  (`TeacherChecklistPanel` mất reset danh sách khi không chọn phiên) → Claude sửa bằng mẫu state gắn khoá. Hai file rườm rà
+  (`CncMillingLiveMonitor`, `HsgGradingAdmin`) giữ nguyên. Chi phí ~160k token DeepSeek cho 14 file.
+  → Quy tắc: model rẻ hay "bỏ nhánh reset" để qua lint; prompt lượt sau đã nhấn mạnh giữ mọi nhánh `setState([])`/`null`.

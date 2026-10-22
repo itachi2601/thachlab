@@ -24,7 +24,9 @@ export default function TeacherChecklistPanel({ courseId, students }: { courseId
   const [lessonId, setLessonId] = useState<ChecklistLessonId>("lesson-4-turn");
   const [sessions, setSessions] = useState<ChecklistSession[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
-  const [attempts, setAttempts] = useState<ChecklistAttempt[]>([]);
+  // Lượt chấm gắn với id phiên: đổi phiên hoặc hết phiên thì danh sách về rỗng ngay lúc render, không hiện dữ liệu cũ.
+  const [attemptsFor, setAttemptsFor] = useState<{ id: number; rows: ChecklistAttempt[] } | null>(null);
+  const attempts = selectedId !== null && attemptsFor?.id === selectedId ? attemptsFor.rows : [];
   const [creating, setCreating] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -42,8 +44,8 @@ export default function TeacherChecklistPanel({ courseId, students }: { courseId
     if (!selectedId) return;
     let cancelled = false;
     void fetchChecklistAttempts(courseId, { sessionId: selectedId })
-      .then((rows) => { if (!cancelled) setAttempts(rows); })
-      .catch(() => { if (!cancelled) setAttempts([]); });
+      .then((rows) => { if (!cancelled) setAttemptsFor({ id: selectedId, rows }); })
+      .catch(() => { if (!cancelled) setAttemptsFor({ id: selectedId, rows: [] }); });
     return () => { cancelled = true; };
   }, [courseId, selectedId]);
 

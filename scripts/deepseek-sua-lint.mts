@@ -120,7 +120,8 @@ Nhiệm vụ: sửa ĐÚNG các lỗi ESLint được liệt kê trong MỘT fil
    - react-hooks/preserve-manual-memoization: sửa mảng phụ thuộc useMemo/useCallback cho đủ và đúng, không xoá memo.
    - react-hooks/immutability: không mutate biến/props/state trong render; tạo bản sao.
    - react/no-unescaped-entities: thay ' " > } bằng &apos; &quot; &gt; &#125; hoặc đưa vào {"..."}.
-5. Nếu một lỗi KHÔNG thể sửa an toàn mà không đổi hành vi, để nguyên dòng đó và ghi vào "notes" lý do, kèm số dòng.
+5. KHÔNG bỏ nhánh reset (setX([]) / setX(null) khi khoá rỗng hoặc đổi): chuyển nó thành giá trị suy ra lúc render (state gắn khoá, so sánh khoá), đừng xoá.
+6. Nếu một lỗi KHÔNG thể sửa an toàn mà không đổi hành vi, để nguyên dòng đó và ghi vào "notes" lý do, kèm số dòng.
 Trả về DUY NHẤT một JSON hợp lệ dạng {"file": "<toàn bộ nội dung file sau khi sửa>", "notes": "<ngắn gọn, tiếng Việt, mỗi lỗi một dòng>"}.
 Không bọc trong markdown, không giải thích ngoài JSON.`;
 
@@ -316,6 +317,7 @@ async function main() {
       }
       saveTried(tried);
       summary.push(`TSC ĐỎ → hoàn tác ${toRevert.join(", ")} (log ${relative(ROOT, join(RUN_DIR, "tsc.txt"))})`);
+      for (const f of toRevert) applied.splice(applied.indexOf(f), 1);
       console.log(`  tsc đỏ → đã hoàn tác ${toRevert.length} file. Xem ${relative(ROOT, join(RUN_DIR, "tsc.txt"))}`);
     } else {
       console.log("  tsc sạch.");
