@@ -66,3 +66,4 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 
 ## 12/10/2026 — KHTN 9 cơ học 129–131 (chưa đăng)
 - Soạn + kiểm chéo xong, chờ thầy duyệt ảnh xem thử, chọn clip, bấm thử PhET, gắn topic; chi tiết `docs/memory/project_thachlab_l9_co_hoc_129_131.md`. Skill mới `.claude/skills/phet/` — Mac: `git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh`.
+- **22/10 Phản biện rà soát:** `docs/RA-SOAT-DU-AN-2026-10-22-PHAN-BIEN.md` — báo cáo khớp ~95 %; sửa 1 câu sai (`@xmldom/xmldom` còn 3 script dùng), thêm lỗ lộ đáp án qua `exams.questions` (P0 #1 phải lược đáp án + chấm server). Script DeepSeek dọn lint: `npx tsx scripts/deepseek-sua-lint.mts --limit 3` (dry-run, Mac), `--apply` rồi `kiem-code` soát diff.
