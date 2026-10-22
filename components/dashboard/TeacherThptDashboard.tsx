@@ -99,11 +99,13 @@ export default function TeacherThptDashboard() {
   const [alertsView, setAlertsView] = useState<"alerts" | "early" | "tutoring">("alerts");
   const preferredClassId = useRef<number | null>(null);
   const [lastSessionState, setLastSessionState] = useState<{ classId: number; value: string | null } | null>(null);
-  const [idleThisWeekState, setIdleThisWeekState] = useState<{ classId: number; value: number } | null>(null);
+  // Gắn với đúng mảng students đã đếm (không gắn classId): khi vừa đổi lớp, students còn là của lớp cũ nên
+  // nếu gắn classId mới sẽ hiện số sai một lúc và tốn một request thừa.
+  const [idleThisWeekState, setIdleThisWeekState] = useState<{ list: ClassStudent[]; value: number } | null>(null);
   // Giá trị suy ra: đổi lớp (hoặc chưa chọn lớp) thì coi như chưa có dữ liệu,
   // thay cho việc reset state bằng setState đồng bộ trong effect.
   const lastSession = lastSessionState && lastSessionState.classId === selectedClassId ? lastSessionState.value : null;
-  const idleThisWeek = idleThisWeekState && idleThisWeekState.classId === selectedClassId ? idleThisWeekState.value : null;
+  const idleThisWeek = idleThisWeekState && idleThisWeekState.list === students ? idleThisWeekState.value : null;
   const [tabsMore, setTabsMore] = useState(false);
   const tabsRef = useRef<HTMLElement | null>(null);
 
@@ -184,8 +186,7 @@ export default function TeacherThptDashboard() {
   }, [selectedClassId]);
 
   useEffect(() => {
-    if (students.length === 0 || !selectedClassId) return;
-    const classId = selectedClassId;
+    if (students.length === 0) return;
     let cancelled = false;
     const monday = new Date();
     monday.setHours(0, 0, 0, 0);
@@ -194,11 +195,11 @@ export default function TeacherThptDashboard() {
       .then((rows) => {
         if (cancelled) return;
         const done = new Set(rows.map((r) => r.student_id));
-        setIdleThisWeekState({ classId, value: students.filter((s) => !done.has(s.id)).length });
+        setIdleThisWeekState({ list: students, value: students.filter((s) => !done.has(s.id)).length });
       })
       .catch(() => undefined);
     return () => { cancelled = true; };
-  }, [students, selectedClassId]);
+  }, [students]);
 
   useEffect(() => {
     const el = tabsRef.current;

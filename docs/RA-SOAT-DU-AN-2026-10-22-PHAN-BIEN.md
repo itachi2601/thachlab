@@ -97,3 +97,8 @@ nguyên vị trí đầu, mở rộng phạm vi như 2.2.
   (nhánh `deepseek/lint-2`). Soát: 4 đạt; `PhysicsPostRibbon` cập nhật cache cả khi `setItem` lỗi (lệch với localStorage) →
   `return` trong catch; `Hsg9WeekCard` tính ngày/giờ trong `useState` làm mất chống lệch hydrate → `useSyncExternalStore` với
   server snapshot null. Script thêm bước dừng khi cây tụt sau `origin/main`. Lint toàn repo còn 74 lỗi / 32 file.
+- 2026-10-22 · Lượt 3 (`--limit 20 --apply`, nhánh `deepseek/lint-3`, 40 lỗi/20 file, ~260k token): 2 agent `kiem-code` soát song
+  song → 19 đạt, 1 sửa nhẹ (`TeacherThptDashboard`: effect đếm "chưa làm bài" thêm dep `selectedClassId` nên chạy với students
+  lớp cũ khi vừa đổi lớp → gắn kết quả với tham chiếu `students`, dep chỉ `[students]`). Góp ý không chặn: `lo-trinh-hsg` cache
+  tick cấp module chỉ nạp lại khi đổi key; `AdminShell` drawer nhớ trạng thái theo path. Lint còn 34 lỗi / 12 file, trong đó
+  5 file > 900 dòng (LessonsAdmin, QuestionBankAdmin, CncCourseWorkspace, `lop-hoc/bai`, `lop-hoc`) cần Claude tách trước.
