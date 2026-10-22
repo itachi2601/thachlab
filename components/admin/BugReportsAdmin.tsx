@@ -57,15 +57,26 @@ export default function BugReportsAdmin() {
   // reqId: bỏ kết quả của lần tải cũ nếu thầy đã đổi tab/bấm làm mới trong lúc chờ
   // (tránh danh sách tab trước ghi đè lên tab hiện tại).
   const reqId = useRef(0);
+  // Chỉ set state bên trong callback async → effect bên dưới không set state đồng bộ.
   const load = useCallback(() => {
     const id = ++reqId.current;
-    setLoading(true);
-    setError("");
     fetchBugReports(tab === "all" ? undefined : tab)
       .then((rows) => id === reqId.current && setReports(rows))
       .catch((cause) => id === reqId.current && setError(cause instanceof Error ? cause.message : "Không tải được danh sách."))
       .finally(() => id === reqId.current && setLoading(false));
   }, [tab]);
+
+  // Bắt đầu một lượt tải mới từ thao tác của người dùng (đổi tab / làm mới / sau khi lưu).
+  function beginLoad() {
+    setLoading(true);
+    setError("");
+  }
+
+  function reload() {
+    beginLoad();
+    load();
+  }
+
   useEffect(() => {
     load();
   }, [load]);
@@ -81,7 +92,7 @@ export default function BugReportsAdmin() {
             {reports.length} mục{tab === "all" && moiCount > 0 && <span className="ml-1 font-bold text-red-300">· {moiCount} mới</span>}
           </p>
         </div>
-        <button onClick={load} disabled={loading} className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm font-bold text-slate-300 disabled:opacity-40">
+        <button onClick={reload} disabled={loading} className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm font-bold text-slate-300 disabled:opacity-40">
           <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
           Làm mới
         </button>
@@ -92,7 +103,10 @@ export default function BugReportsAdmin() {
           <button
             key={t.value}
             type="button"
-            onClick={() => setTab(t.value)}
+            onClick={() => {
+              setTab(t.value);
+              beginLoad();
+            }}
             className={`rounded-xl border px-4 py-2 text-sm font-bold transition-colors ${
               tab === t.value ? "border-cyan-400/40 bg-cyan-500/10 text-white" : "border-white/10 text-slate-400 hover:border-white/20 hover:text-slate-200"
             }`}
@@ -169,7 +183,7 @@ export default function BugReportsAdmin() {
         </div>
       )}
 
-      {selected && <BugReportDetailModal report={selected} onClose={() => setSelected(null)} onChanged={load} />}
+      {selected && <BugReportDetailModal report={selected} onClose={() => setSelected(null)} onChanged={reload} />}
     </div>
   );
 }

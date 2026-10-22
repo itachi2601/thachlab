@@ -35,29 +35,33 @@ export default function CncVideoAdmin() {
   useEffect(() => {
     if (!lessonId) return;
     let cancelled = false;
-    setLoading(true);
-    setTitle("");
-    setUrl("");
     fetchCncLessonVideos(lessonId)
       .then((v) => {
         if (!cancelled) {
           setVideos(v);
           setReady(true);
+          setLoading(false);
         }
       })
       .catch(() => {
         if (!cancelled) {
           setVideos([]);
           setReady(false);
+          setLoading(false);
         }
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
       });
     return () => {
       cancelled = true;
     };
   }, [lessonId]);
+
+  function handleLessonChange(next: string | null) {
+    setLessonId(next);
+    if (!next) return;
+    setLoading(true);
+    setTitle("");
+    setUrl("");
+  }
 
   async function handleAdd() {
     if (!lessonId) return;
@@ -109,7 +113,7 @@ export default function CncVideoAdmin() {
         Bài học
         <select
           value={lessonId ?? ""}
-          onChange={(e) => setLessonId(e.target.value || null)}
+          onChange={(e) => handleLessonChange(e.target.value || null)}
           className="mt-1 w-full rounded-xl border border-white/10 bg-panel px-3 py-2 text-white sm:max-w-md"
         >
           {lessons.map((l) => (

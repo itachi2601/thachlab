@@ -25,17 +25,21 @@ export default function CncMillingLiveMonitor() {
   const [resetting, setResetting] = useState(false);
   const [resetError, setResetError] = useState("");
 
-  const refresh = useCallback(async () => {
-    try {
-      setAttempts(await fetchAllCncMillingQuizAttempts());
-      setReady(true);
-      setNow(Date.now());
-    } catch {
-      setReady(false);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+  const refresh = useCallback(
+    () => fetchAllCncMillingQuizAttempts()
+      .then((data) => {
+        setAttempts(data);
+        setReady(true);
+        setNow(Date.now());
+      })
+      .catch(() => {
+        setReady(false);
+      })
+      .finally(() => {
+        setLoading(false);
+      }),
+    [],
+  );
 
   const resetResults = useCallback(async () => {
     if (attempts.length === 0 || !window.confirm(
@@ -56,10 +60,31 @@ export default function CncMillingLiveMonitor() {
   }, [attempts.length, refresh]);
 
   useEffect(() => {
-    void refresh();
-    const channel = subscribeToCncMillingQuizAttempts(() => void refresh());
+    let cancelled = false;
+
+    fetchAllCncMillingQuizAttempts()
+      .then((data) => {
+        if (cancelled) return;
+        setAttempts(data);
+        setReady(true);
+        setNow(Date.now());
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setReady(false);
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setLoading(false);
+      });
+
+    const channel = subscribeToCncMillingQuizAttempts(() => {
+      if (cancelled) return;
+      void refresh();
+    });
     const timer = window.setInterval(() => setNow(Date.now()), 10_000);
     return () => {
+      cancelled = true;
       window.clearInterval(timer);
       void unsubscribeFromCncMillingQuizAttempts(channel);
     };

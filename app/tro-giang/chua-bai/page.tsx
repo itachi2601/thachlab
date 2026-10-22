@@ -16,11 +16,13 @@ import { fetchClassExamResults } from "@/services/class-results";
 import { agoLabel } from "@/components/dashboard/ExamPicker";
 import { fetchExamReviewData, type ExamReviewData } from "@/services/analytics";
 
+type ExamRow = { id: number; title: string; done: number; last: string };
+
 function Picker() {
   const router = useRouter();
   const [classes, setClasses] = useState<TaAssistantClass[] | null>(null);
   const [classId, setClassId] = useState<number | null>(null);
-  const [exams, setExams] = useState<{ id: number; title: string; done: number; last: string }[] | null>(null);
+  const [exams, setExams] = useState<{ classId: number; rows: ExamRow[] } | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -35,7 +37,6 @@ function Picker() {
   useEffect(() => {
     if (!classId) return;
     let cancelled = false;
-    setExams(null);
     fetchClassStudentIds(classId)
       .then((ids) => fetchClassExamResults(ids))
       .then((rows) => {
@@ -47,13 +48,19 @@ function Picker() {
           cur.kids.add(r.student_id);
           map.set(r.exam_id, cur);
         });
-        setExams([...map.entries()].map(([id, v]) => ({ id, title: v.title, done: v.kids.size, last: v.last })));
+        setExams({
+          classId,
+          rows: [...map.entries()].map(([id, v]) => ({ id, title: v.title, done: v.kids.size, last: v.last })),
+        });
       })
       .catch(() => !cancelled && setError("Không tải được các đề của lớp."));
     return () => {
       cancelled = true;
     };
   }, [classId]);
+
+  // Đề chỉ hợp lệ với lớp đang chọn → suy ra trạng thái "đang tải" trực tiếp lúc render.
+  const examRows = exams && exams.classId === classId ? exams.rows : null;
 
   if (error) return <p className="text-red-400">{error}</p>;
   if (!classes) return <p className="text-slate-400">Đang tải…</p>;
@@ -79,15 +86,15 @@ function Picker() {
           </option>
         ))}
       </select>
-      {exams === null ? (
+      {examRows === null ? (
         <p className="text-slate-400">Đang tải đề…</p>
-      ) : exams.length === 0 ? (
+      ) : examRows.length === 0 ? (
         <p className="rounded-2xl border border-dashed border-white/10 p-6 text-center text-sm text-slate-500">
           Lớp này chưa có lượt làm bài kiểm tra nào.
         </p>
       ) : (
         <ul className="space-y-2">
-          {exams.map((e) => (
+          {examRows.map((e) => (
             <li key={e.id}>
               <button
                 onClick={() => router.push(`/tro-giang/chua-bai?exam=${e.id}&class=${classId}`)}

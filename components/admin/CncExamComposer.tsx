@@ -20,7 +20,10 @@ export default function CncExamComposer() {
   const toast = useToast();
   const [bankKey, setBankKey] = useState<string>(CNC_QUIZ_BANKS[0]?.key ?? "");
   const [bankMeta, setBankMeta] = useState<CncExamBankMeta[]>([]);
-  const [examId, setExamId] = useState<number | null>(null);
+  // Id ngân hàng đã tải xong, gắn với bankKey tương ứng — suy ra examId lúc render
+  // nên không cần setState đồng bộ trong effect khi đổi ngân hàng.
+  const [loadedExamRow, setLoadedExamRow] = useState<{ bankKey: string; id: number | null } | null>(null);
+  const examId = loadedExamRow && loadedExamRow.bankKey === bankKey ? loadedExamRow.id : null;
   const [examBundle, setExamBundle] = useState<LessonBundle | null>(null);
   const [busy, setBusy] = useState(false);
   const [log, setLog] = useState<string[]>([]);
@@ -31,10 +34,19 @@ export default function CncExamComposer() {
   }, []);
 
   useEffect(() => {
-    setExamId(null);
+    let cancelled = false;
     fetchCncExamRow(bankKey)
-      .then((row) => setExamId(row?.id ?? null))
-      .catch(() => setExamId(null));
+      .then((row) => {
+        if (cancelled) return;
+        setLoadedExamRow({ bankKey, id: row?.id ?? null });
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setLoadedExamRow({ bankKey, id: null });
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [bankKey]);
 
   const bank = CNC_QUIZ_BANKS.find((b) => b.key === bankKey) ?? null;
@@ -101,7 +113,9 @@ export default function CncExamComposer() {
       setDoneLink("/lop-hoc/cnc");
       toast("success", "Đã đăng đề.");
       fetchCncExamBankMeta().then(setBankMeta).catch(() => undefined);
-      fetchCncExamRow(bankKey).then((row) => setExamId(row?.id ?? null)).catch(() => undefined);
+      fetchCncExamRow(bankKey)
+        .then((row) => setLoadedExamRow({ bankKey, id: row?.id ?? null }))
+        .catch(() => undefined);
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       push(`✕ ${msg}`);

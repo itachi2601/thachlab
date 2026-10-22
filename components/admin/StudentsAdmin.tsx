@@ -19,24 +19,26 @@ const TABS: { id: Tab; label: string; icon: typeof UserRound }[] = [
   { id: "roster", label: "Nhập danh sách", icon: FileSpreadsheet },
 ];
 
+function readTabFromUrl(): Tab {
+  if (typeof window === "undefined") return "profile";
+  const requested = new URLSearchParams(window.location.search).get("tab");
+  if (requested === "pending" || requested === "profile" || requested === "roster" || requested === "unassigned") {
+    return requested;
+  }
+  return "profile";
+}
+
 export default function StudentsAdmin() {
   const { profile } = useAuth();
   const isAdmin = profile?.role === "admin";
   const tabs = isAdmin ? [...TABS, { id: "unassigned" as const, label: "Chưa phân lớp", icon: UserX }] : TABS;
-  const [tab, setTab] = useState<Tab>("profile");
+  const [tab, setTab] = useState<Tab>(readTabFromUrl);
   const [classes, setClasses] = useState<SchoolClass[]>([]);
   const [selectedClassId, setSelectedClassId] = useState<number | null>(null);
   const [students, setStudents] = useState<ClassStudent[]>([]);
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
   const [studentsNonce, setStudentsNonce] = useState(0);
   const [loadError, setLoadError] = useState("");
-
-  useEffect(() => {
-    const requested = new URLSearchParams(window.location.search).get("tab");
-    if (requested === "pending" || requested === "profile" || requested === "roster" || requested === "unassigned") {
-      setTab(requested);
-    }
-  }, []);
 
   // ?student=<id> (từ ô tìm chung): mở thẳng lớp đang học và hồ sơ của em đó.
   const wanted = useRef<{ classId: number | null; studentId: string } | null>(null);

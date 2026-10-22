@@ -38,7 +38,14 @@ export default function TeacherChecklistPanel({ courseId, students }: { courseId
     setSelectedId((current) => rows.some((item) => item.id === current) ? current : rows[0]?.id ?? null);
   }).catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được phiên chấm.")), [courseId, lessonId]);
   useEffect(() => { void load(); }, [load]);
-  useEffect(() => { if (!selectedId) { setAttempts([]); return; } void fetchChecklistAttempts(courseId, { sessionId: selectedId }).then(setAttempts).catch(() => setAttempts([])); }, [courseId, selectedId]);
+  useEffect(() => {
+    if (!selectedId) return;
+    let cancelled = false;
+    void fetchChecklistAttempts(courseId, { sessionId: selectedId })
+      .then((rows) => { if (!cancelled) setAttempts(rows); })
+      .catch(() => { if (!cancelled) setAttempts([]); });
+    return () => { cancelled = true; };
+  }, [courseId, selectedId]);
 
   async function createSession() {
     setBusy(true); setError("");

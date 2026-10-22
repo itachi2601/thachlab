@@ -13,13 +13,13 @@ export default function TeacherDrawingApprovals({ courseId, onPendingCountChange
   const toast = useToast();
   const [submissions, setSubmissions] = useState<CncDrawingSubmission[]>([]);
   const [feedback, setFeedback] = useState<Record<number, string>>({});
-  const [loading, setLoading] = useState(true);
+  const [settledCourseId, setSettledCourseId] = useState<number | null>(null);
+  const loading = settledCourseId !== courseId;
   const [ready, setReady] = useState(true);
   const [reviewingId, setReviewingId] = useState<number | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
     fetchCncDrawingSubmissionsByCourse(courseId)
       .then((data) => {
         if (!cancelled) {
@@ -32,7 +32,7 @@ export default function TeacherDrawingApprovals({ courseId, onPendingCountChange
         if (!cancelled) setReady(false);
       })
       .finally(() => {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) setSettledCourseId(courseId);
       });
     return () => { cancelled = true; };
   }, [courseId]);

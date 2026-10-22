@@ -290,7 +290,11 @@ export default function ExamLibraryAdmin({
 
   // Mở sẵn đề từ link báo lỗi — chỉ 1 lần lúc vào trang.
   useEffect(() => {
-    if (initialExamId) void selectExam(initialExamId);
+    const id = initialExamId;
+    if (!id) return;
+    // Không gọi setState đồng bộ trong thân effect: hoãn sang macrotask, vẫn chạy ngay sau khi vào trang.
+    const t = setTimeout(() => void selectExam(id), 0);
+    return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

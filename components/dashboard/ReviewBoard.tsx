@@ -45,7 +45,11 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
   });
   const [reveal, setReveal] = useState(0); // 0 none, 1 answer, 2 explanation
   const [onlyHard, setOnlyHard] = useState(false);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(() => {
+    if (typeof window === "undefined") return 1;
+    const saved = Number(localStorage.getItem("rb-zoom"));
+    return saved >= ZOOM_MIN && saved <= ZOOM_MAX ? saved : 1;
+  });
   const [catalog, setCatalog] = useState<{ grade: string | null; chapters: Chapter[]; lessons: LessonWithItemRefs[] } | null>(null);
   const [creatingReview, setCreatingReview] = useState(false);
   const [reviewCreated, setReviewCreated] = useState(false);
@@ -63,11 +67,6 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
   const { questions, stats } = data;
   const q = questions[idx];
   const stat = stats[idx];
-
-  useEffect(() => {
-    const saved = Number(localStorage.getItem("rb-zoom"));
-    if (saved >= ZOOM_MIN && saved <= ZOOM_MAX) setZoom(saved);
-  }, []);
 
   const zoomBy = (delta: number) => {
     setZoom((z) => {

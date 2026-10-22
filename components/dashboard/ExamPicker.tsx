@@ -50,6 +50,8 @@ export default function ExamPicker({
   const [search, setSearch] = useState("");
   const [showAll, setShowAll] = useState(false);
   const [showEmpty, setShowEmpty] = useState(false);
+  // Mốc thời gian ổn định cho lần render đầu, tránh gọi Date.now() trong render.
+  const [now] = useState(() => Date.now());
 
   const { submitted, empty, matches } = useMemo(() => {
     const sorted = sortByRecent(exams);
@@ -78,7 +80,7 @@ export default function ExamPicker({
           {e.title}
         </span>
         <span className="text-xs text-slate-400">
-          {e.done > 0 && e.last ? `Nộp ${e.done}/${total} · gần nhất ${agoLabel(e.last)}` : "Chưa ai nộp"}
+          {e.done > 0 && e.last ? `Nộp ${e.done}/${total} · gần nhất ${agoLabel(e.last, now)}` : "Chưa ai nộp"}
           {!e.own && " · ngoài khối"}
         </span>
       </button>
@@ -87,7 +89,6 @@ export default function ExamPicker({
 
   const groups: { label: string; items: PickerExam[] }[] = [];
   if (!matches) {
-    const now = Date.now();
     const today: PickerExam[] = [];
     const week: PickerExam[] = [];
     const older: PickerExam[] = [];

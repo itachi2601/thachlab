@@ -137,7 +137,6 @@ function LessonEditor({ lesson, onSaved, onBack }: { lesson: CncLesson; onSaved:
 
   useEffect(() => {
     let cancelled = false;
-    setFilesLoading(true);
     fetchCncLessonFiles(lesson.id)
       .then((f) => {
         if (!cancelled) {
@@ -299,6 +298,7 @@ export default function CncLessonsAdmin() {
   if (openLesson) {
     return (
       <LessonEditor
+        key={openLesson.id}
         lesson={openLesson}
         onBack={() => {
           setOpenLesson(null);

@@ -314,9 +314,15 @@ function ExamTagger({
       .then(({ data }) => setExams((data as { id: number; title: string }[]) ?? []));
   }, []);
 
+  // Đổi đề thì bỏ trạng thái "chưa lưu" — reset ngay khi render thay vì trong effect.
+  const [prevExamId, setPrevExamId] = useState(examId);
+  if (prevExamId !== examId) {
+    setPrevExamId(examId);
+    setDirty(false);
+  }
+
   useEffect(() => {
     if (!examId) return;
-    setDirty(false);
     getSupabase()
       .from("exams")
       .select("questions")

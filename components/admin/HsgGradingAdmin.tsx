@@ -82,20 +82,32 @@ export default function HsgGradingAdmin() {
   const others = qs.filter((q) => q.type !== "mcq");
   const maxTotal = round2(qs.reduce((s, q) => s + q.pts, 0));
 
-  const loadTests = useCallback(async () => {
+  const fetchTests = useCallback(async (): Promise<Test[]> => {
     const { data } = await getSupabase()
       .from("hsg_grade_tests")
       .select("id, title, kind, config")
       .eq("archived", false)
       .order("id");
-    const list = (data as unknown as Test[]) ?? [];
-    setTests(list);
-    setTestId((cur) => cur ?? list[0]?.id ?? null);
+    return (data as unknown as Test[]) ?? [];
   }, []);
 
+  const loadTests = useCallback(async () => {
+    const list = await fetchTests();
+    setTests(list);
+    setTestId((cur) => cur ?? list[0]?.id ?? null);
+  }, [fetchTests]);
+
   useEffect(() => {
-    loadTests();
-  }, [loadTests]);
+    let cancelled = false;
+    fetchTests().then((list) => {
+      if (cancelled) return;
+      setTests(list);
+      setTestId((cur) => cur ?? list[0]?.id ?? null);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [fetchTests]);
 
   useEffect(() => {
     if (!testId) return;
