@@ -111,8 +111,8 @@ export default function LessonImporter() {
     return () => clearTimeout(t);
   }, [tex]);
 
-  const selectedClass = classes.find((c) => c.id === classId) ?? null;
-  const grade = selectedClass ? classGrade(selectedClass.name) : null;
+  const selectedClass = useMemo(() => classes.find((c) => c.id === classId) ?? null, [classes, classId]);
+  const grade = useMemo(() => (selectedClass ? classGrade(selectedClass.name) : null), [selectedClass]);
   // Danh mục chủ đề của khối — để soát nhãn của đề trước khi đăng.
   const loadTopics = useCallback(() => {
     if (!grade) return;

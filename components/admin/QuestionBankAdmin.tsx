@@ -214,13 +214,18 @@ export default function QuestionBankAdmin() {
 
   useEffect(() => {
     if (node.kind !== "duplicates") return;
-    scanDuplicates();
+    // scanDuplicates bật cờ busy đồng bộ → đẩy sang tick sau để effect không setState trực tiếp.
+    const t = setTimeout(() => void scanDuplicates(), 0);
+    return () => clearTimeout(t);
     // Chỉ tự quét lại khi đổi khối/chuyển vào mục này — đổi ngưỡng giống nhau thì bấm nút "Quét câu trùng".
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [node.kind, grade]);
 
   const reloadItems = useCallback(() => {
-    if (node.kind === "duplicates") return setItems([]);
+    if (node.kind === "duplicates") {
+      void Promise.resolve().then(() => setItems([]));
+      return;
+    }
     const req = fetchBankQuestions({
       grade: node.kind === "unknown-grade" ? "" : grade,
       topicIds: topicIdsFilter,

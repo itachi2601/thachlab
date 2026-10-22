@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -64,6 +64,14 @@ import millingExercises from "@/data/cnc/phay_bai345.json";
 import { CNC_TOTAL_ASSESSMENTS, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
 import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyPermission } from "@/services/cnc-competencies";
 import { fetchOpenCncLessons } from "@/services/course-lesson-release";
+
+const subscribeStorageNoop = () => () => {};
+function readSavedLiveName() {
+  try { return window.localStorage.getItem("cnc-live-name") ?? ""; } catch { return ""; }
+}
+function readSavedLiveClass() {
+  try { return window.localStorage.getItem("cnc-live-class") ?? ""; } catch { return ""; }
+}
 
 const lessonMeta: Record<string, { theory: number; practice: number; test: number; operation?: boolean; safetyGate?: boolean }> = {
   "lesson-1": { theory: 2, practice: 0, test: 0 },
@@ -685,20 +693,19 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
 function DrawingSubmissionTest({ lessonId, lessonTitle, courseId, onApproved }: { lessonId: string; lessonTitle: string; courseId?: number; onApproved: (lessonId: string) => void }) {
   const { session, profile, loading: authLoading } = useAuth();
   const [submission, setSubmission] = useState<CncDrawingSubmission | null>(null);
-  const [loading, setLoading] = useState(true);
+  // "Đang tải" suy ra lúc render: khoá (bài, khoá học, user) đã tải xong khớp khoá hiện tại thì hết tải.
+  const submissionKey = `${lessonId}|${courseId ?? ""}|${session?.user.id ?? ""}`;
+  const [settledKey, setSettledKey] = useState<string | null>(null);
+  const loading = settledKey !== submissionKey;
   const [uploading, setUploading] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [error, setError] = useState("");
   const isSimulation = lessonId.endsWith("-simulation");
 
   useEffect(() => {
-    if (authLoading) return;
-    if (!session) {
-      setLoading(false);
-      return;
-    }
+    if (authLoading || !session) return;
     let cancelled = false;
-    setLoading(true);
+    const key = submissionKey;
     fetchMyCncDrawingSubmission(lessonId, courseId)
       .then((data) => {
         if (cancelled) return;
@@ -709,10 +716,10 @@ function DrawingSubmissionTest({ lessonId, lessonTitle, courseId, onApproved }: 
         if (!cancelled) setError(cause instanceof Error ? cause.message : "Không tải được hồ sơ bản vẽ.");
       })
       .finally(() => {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) setSettledKey(key);
       });
     return () => { cancelled = true; };
-  }, [authLoading, courseId, lessonId, onApproved, session]);
+  }, [authLoading, courseId, lessonId, onApproved, session, submissionKey]);
 
   function selectFile(file: File | undefined) {
     if (!file) return;
@@ -757,7 +764,7 @@ function DrawingSubmissionTest({ lessonId, lessonTitle, courseId, onApproved }: 
       </div>
       <b>{status === "approved" ? "ĐÃ DUYỆT" : status === "pending" ? "CHỜ DUYỆT" : status === "rejected" ? "NỘP LẠI" : "CHƯA NỘP"}</b>
     </div>
-    {loading || authLoading ? <div className="cnc-file-empty">Đang tải trạng thái hồ sơ…</div> : !session ? (
+    {authLoading || (session && loading) ? <div className="cnc-file-empty">Đang tải trạng thái hồ sơ…</div> : !session ? (
       <div className="cnc-drawing-action"><p>Hãy đăng nhập bằng tài khoản sinh viên để nộp và theo dõi bản vẽ.</p><Link href="/dang-nhap">Đăng nhập</Link></div>
     ) : status !== "pending" && status !== "approved" ? (
       <div className="cnc-drawing-submit-box">
@@ -1206,16 +1213,20 @@ function SafetyGate({ quiz, answers, setAnswers, submitted, setSubmitted, score,
   const [className, setClassName] = useState("");
   const [quizStarted, setQuizStarted] = useState(machine !== "phay");
 
-  useEffect(() => {
-    if (machine !== "phay") return;
-    const savedName = window.localStorage.getItem("cnc-live-name") ?? "";
-    const savedClass = window.localStorage.getItem("cnc-live-class") ?? "";
+  // Tên/lớp lần trước đọc từ localStorage qua useSyncExternalStore (server trả "" nên không lệch hydrate);
+  // đồng bộ vào form ngay lúc render mỗi khi hồ sơ hoặc giá trị đã lưu đổi — thay cho effect + setState.
+  const savedName = useSyncExternalStore(subscribeStorageNoop, readSavedLiveName, () => "");
+  const savedClass = useSyncExternalStore(subscribeStorageNoop, readSavedLiveClass, () => "");
+  const participantKey = machine === "phay" ? `${profile?.full_name ?? ""}|${profile?.class_name ?? ""}|${savedName}|${savedClass}` : null;
+  const [syncedParticipantKey, setSyncedParticipantKey] = useState<string | null>(null);
+  if (participantKey !== null && participantKey !== syncedParticipantKey) {
+    setSyncedParticipantKey(participantKey);
     const nextName = profile?.full_name || savedName;
     const nextClass = profile?.class_name || savedClass;
     setParticipantName(nextName);
     setClassName(nextClass);
     if (nextName) setQuizStarted(true);
-  }, [machine, profile?.class_name, profile?.full_name]);
+  }
 
   useEffect(() => {
     if (machine !== "phay" || !quizStarted || !participantName.trim() || profile?.role === "admin") return;

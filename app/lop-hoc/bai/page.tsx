@@ -915,7 +915,9 @@ function LessonLoader() {
   // Điểm và dấu đã học của chính tài khoản. Truy vấn chạy song song với phần còn lại ngay khi có
   // session (không chờ hồ sơ, giữ tốc độ cũ cho học sinh); chế độ giáo viên chỉ bỏ kết quả, không áp.
   const teacherViewRef = useRef(isTeacherView);
-  teacherViewRef.current = isTeacherView;
+  useEffect(() => {
+    teacherViewRef.current = isTeacherView;
+  }, [isTeacherView]);
   useEffect(() => {
     if (!session || !items) return;
     fetchMyLessonPageProgress(session.user.id, items)
@@ -1269,9 +1271,12 @@ function LessonLoader() {
     };
   }, [visibleSections.length]);
 
-  const activeKind: LessonItemKind | undefined = visibleSections.some((s) => s.kind === activeTab)
-    ? activeTab
-    : visibleSections[0]?.kind;
+  // useMemo để các useCallback/useMemo phía dưới phụ thuộc đúng vào activeKind (React Compiler
+  // mới giữ được memo thủ công — rule preserve-manual-memoization).
+  const activeKind = useMemo<LessonItemKind | undefined>(
+    () => (visibleSections.some((s) => s.kind === activeTab) ? activeTab : visibleSections[0]?.kind),
+    [visibleSections, activeTab],
+  );
   const activeSection = visibleSections.find((s) => s.kind === activeKind);
   // Ghi chú nhanh của giáo viên (nút "Ghi chú"/phím N): chụp mục đang đọc LÚC MỞ hộp, đọc từ DOM của
   // phần thân bài — đề mục h2/h3 (lý thuyết) hoặc dạng bài mẫu (.lesson-worked-row) gần dòng mắt nhất.

@@ -108,3 +108,11 @@ nguyên vị trí đầu, mở rộng phạm vi như 2.2.
   `SessionMachineSetup` đóng băng danh sách máy rỗng ở lần mount đầu. **DeepSeek hết việc**: còn 17 lỗi / 6 file > 900 dòng
   (LessonsAdmin, QuestionBankAdmin, CncCourseWorkspace, LessonImporter, `lop-hoc/bai`, `lop-hoc`) — Claude tự sửa.
   Tổng 4 lượt: 94 → 17 lỗi, DeepSeek sai 5/46 file (~11 %), ~600k token DeepSeek.
+- 2026-10-22 · Lượt 5 (Claude, 17 lỗi / 6 file > 900 dòng, không tách file): `lop-hoc/page` 4 effect → render-phase (so khoá,
+  cờ một lần; `?chapter=` thành giá trị dẫn xuất từ `useSearchParams`; `lastLessonId` khởi tạo lazy — an toàn vì trang trong
+  Suspense + useSearchParams nên không render server); `LessonImporter` 5 lỗi preserve-manual-memoization hết khi `useMemo`
+  cho `selectedClass`/`grade` (nguyên nhân: dep là giá trị dẫn xuất chưa memo → compiler suy ra deps khác); `bai/page` ref
+  cập nhật trong effect + `activeKind` useMemo; `LessonsAdmin` `key={itemId}`; `QuestionBankAdmin` setTimeout(0)/microtask;
+  `CncCourseWorkspace` loading theo khoá đã tải + tên/lớp qua `useSyncExternalStore`. `kiem-code` soát: 6/6 đạt.
+  **Lint toàn repo: 0 lỗi / 20 cảnh báo** → có thể bật CI gate `eslint --max-warnings 20` (P0 #4). Chưa chụp 375px (cloud
+  không có Supabase thật) — thầy mở `/lop-hoc?subject=hsg-vat-ly&chapter=…` trên điện thoại kiểm một lần.

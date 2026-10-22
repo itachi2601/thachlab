@@ -378,7 +378,7 @@ function ItemForm({
         </div>
       )}
       {kind === "luyen_tap" && item && (
-        <PracticeWrongestPanel itemId={item.id} />
+        <PracticeWrongestPanel key={item.id} itemId={item.id} />
       )}
 
       <div className="flex flex-wrap gap-2">
@@ -428,9 +428,8 @@ function PracticeWrongestPanel({ itemId }: { itemId: number }) {
   const [openKey, setOpenKey] = useState<string | null>(null);
   const [questionsByExam, setQuestionsByExam] = useState<Record<number, ExamQuestion[]>>({});
 
+  // Đổi mục → cha remount bằng key={itemId}, nên không cần reset rows/openKey ở đây.
   useEffect(() => {
-    setRows(null);
-    setOpenKey(null);
     fetchLessonPracticeWrongest(itemId)
       .then(setRows)
       .catch(() => setRows([]));

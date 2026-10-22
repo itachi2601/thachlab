@@ -76,6 +76,10 @@ const GRADE_DESCRIPTIONS: Record<string, string> = {
   "9": "Kiến thức nền tảng Khoa học tự nhiên",
 };
 
+function subjectFromParam(param: string | null): string {
+  return ["hoa-hoc", "sinh-hoc", HSG_SUBJECT_CODE].includes(param ?? "") ? param! : "vat-ly";
+}
+
 export default function ClassHubPage({ classSlug }: { classSlug?: string } = {}) {
   return <Suspense fallback={<div className="mx-auto max-w-6xl px-6 pt-28"><SkeletonGrid count={3} /></div>}>
     <ClassHubContent classSlug={classSlug} />
@@ -89,15 +93,32 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const router = useRouter();
   const [classes, setClasses] = useState<SchoolClass[] | null>(null);
   const [activeId, setActiveId] = useState<number | null>(null);
-  const [activeSubjectCode, setActiveSubjectCode] = useState("vat-ly");
-  const [requestedChapterId, setRequestedChapterId] = useState<number | null>(null);
+  // ?subject= đổi được khi bấm menu trên cùng trong cùng trang (KHTN 9 ↔ Luyện thi chuyên & HSG).
+  // Khởi tạo từ URL; đổi URL thì đồng bộ ngay lúc render (mẫu "so khoá trước", thay effect + setState).
+  const subjectParam = searchParams.get("subject");
+  const [activeSubjectCode, setActiveSubjectCode] = useState(() => subjectFromParam(subjectParam));
+  const [seenSubjectParam, setSeenSubjectParam] = useState(subjectParam);
+  // ?chapter= là giá trị dẫn xuất từ URL, không cần state riêng.
+  const chapterParam = Number(searchParams.get("chapter"));
+  const requestedChapterId = chapterParam > 0 ? chapterParam : null;
   const [collapsedChapters, setCollapsedChapters] = useState<Set<number>>(new Set());
   // >= 1024: chương đang chọn (cột giữa chỉ hiện chương này) + chương người dùng tự mở trong cây.
   // Tách khỏi collapsedChapters của accordion điện thoại để hai chế độ không giật nhau.
   const [pickedChapterId, setPickedChapterId] = useState<number | null>(null);
   const [treeOpenIds, setTreeOpenIds] = useState<Set<number>>(new Set());
-  const defaultChapterAppliedRef = useRef(false);
-  const [lastLessonId, setLastLessonId] = useState<number | null>(null);
+  const [defaultChapterApplied, setDefaultChapterApplied] = useState(false);
+  const [handledRequestedChapterKey, setHandledRequestedChapterKey] = useState<string | null>(null);
+  // Bài học cuối cùng đã mở, đọc từ localStorage lúc khởi tạo. Toàn trang nằm trong Suspense + useSearchParams
+  // nên chỉ render ở client (không lệch hydrate với static export).
+  const [lastLessonId, setLastLessonId] = useState<number | null>(() => {
+    if (typeof window === "undefined") return null;
+    try {
+      const saved = Number(window.localStorage.getItem(LAST_LESSON_KEY));
+      return saved > 0 ? saved : null;
+    } catch {
+      return null;
+    }
+  });
   const [chapters, setChapters] = useState<Chapter[] | null>(null);
   const [lessons, setLessons] = useState<LessonWithItemRefs[] | null>(null);
   const [progressMarks, setProgressMarks] = useState<MyProgressMarks | null>(null);
@@ -117,12 +138,11 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const [chapterMastery, setChapterMastery] = useState<Map<number, Map<number, MasteryLevel>>>(new Map());
   const chapterMasteryFetching = useRef<Set<number>>(new Set());
 
-  // ?subject= đổi được khi bấm menu trên cùng trong cùng trang (KHTN 9 ↔ Luyện thi chuyên & HSG)
-  const subjectParam = searchParams.get("subject");
-  useEffect(() => {
-    setActiveSubjectCode(["hoa-hoc", "sinh-hoc", HSG_SUBJECT_CODE].includes(subjectParam ?? "") ? subjectParam! : "vat-ly");
+  if (subjectParam !== seenSubjectParam) {
+    setSeenSubjectParam(subjectParam);
+    setActiveSubjectCode(subjectFromParam(subjectParam));
     setCollapsedChapters(new Set());
-  }, [subjectParam]);
+  }
 
   // link cũ /lop-hoc?tab=cttc → luồng CTTC riêng
   useEffect(() => {
@@ -130,12 +150,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   }, [searchParams, router]);
 
   useEffect(() => {
-    const savedLessonId = Number(window.localStorage.getItem(LAST_LESSON_KEY));
-    if (savedLessonId > 0) setLastLessonId(savedLessonId);
-    const requestedSubject = new URLSearchParams(window.location.search).get("subject");
-    const chapterParam = Number(new URLSearchParams(window.location.search).get("chapter"));
-    if (chapterParam > 0) setRequestedChapterId(chapterParam);
-
     if (!supabaseConfigured) return;
     // Lớp/chương/bài: ưu tiên file tĩnh /data/catalog.json (cùng origin); Supabase đối chiếu
     // ngầm phía sau, có khác thì thay (setter được gọi lần nữa với bản mới).
@@ -321,12 +335,14 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
 
   // Mặc định chỉ mở một chương: chương trên URL, không thì chương của bài đang dở.
   // Điện thoại thu các chương còn lại để danh sách bài bắt đầu sớm. Chỉ áp dụng một lần.
-  useEffect(() => {
-    if (defaultChapterAppliedRef.current) return;
-    if (!classes || !chapters || !lessons) return;
-    if (classChapters.length === 0) return;
-    if (session && !isParent && !isTeacherView && progressMarks === null) return;
-    defaultChapterAppliedRef.current = true;
+  // Chạy đúng một lần ngay lúc render khi đủ dữ liệu (setState có điều kiện trong render, không dùng effect).
+  if (
+    !defaultChapterApplied &&
+    classes && chapters && lessons &&
+    classChapters.length > 0 &&
+    !(session && !isParent && !isTeacherView && progressMarks === null)
+  ) {
+    setDefaultChapterApplied(true);
     let targetId = requestedChapterId;
     if (targetId === null && progressMarks) {
       const regular = lessons.filter(
@@ -346,7 +362,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     const openId = targetId;
     setCollapsedChapters(new Set(classChapters.filter((chapter) => chapter.id !== openId).map((chapter) => chapter.id)));
     if (openId !== null) setPickedChapterId((current) => current ?? openId);
-  }, [classes, chapters, lessons, classChapters, requestedChapterId, session, isParent, isTeacherView, progressMarks, lessonProgress]);
+  }
 
   // Nhãn mastery cho các chương ĐANG MỞ — chạy lại mỗi khi mở thêm chương hoặc session tới sau
   // (ensureChapterMastery tự bỏ qua chương đã tải/đang tải nên gọi lặp không tốn thêm request).
@@ -376,8 +392,11 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     router.push(`${lessonHref(lesson)}&resume=1`);
   }
 
-  useEffect(() => {
-    if (!requestedChapterId || !classes || !chapters) return;
+  // ?chapter= trên URL: mở chương đó (trang lớp) hoặc chuyển sang lớp chứa chương (trang chung) — một lần cho
+  // mỗi (chương, lớp) khi đã có dữ liệu, ngay lúc render.
+  const requestedChapterKey = requestedChapterId && classes && chapters ? `${requestedChapterId}|${classSlug ?? ""}` : null;
+  if (requestedChapterKey !== null && requestedChapterKey !== handledRequestedChapterKey && requestedChapterId && classes && chapters) {
+    setHandledRequestedChapterKey(requestedChapterKey);
     if (classSlug) {
       setCollapsedChapters((prev) => {
         if (!prev.has(requestedChapterId)) return prev;
@@ -385,8 +404,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
         next.delete(requestedChapterId);
         return next;
       });
-      return;
-    }
+    } else {
     const requestedChapter = chapters.find((chapter) => chapter.id === requestedChapterId);
     const targetClassId = requestedChapter?.classIds[0];
     if (targetClassId) {
@@ -398,7 +416,8 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
         : undefined;
       setActiveId(representative?.id ?? targetClassId);
     }
-  }, [chapters, classSlug, classes, requestedChapterId]);
+    }
+  }
 
   useEffect(() => {
     if (!requestedChapterId || !lessons) return;
