@@ -198,6 +198,18 @@ async function main() {
   const tried = loadTried();
 
   console.log(`Model ${MODEL} · ${APPLY ? "GHI THẬT (--apply)" : "dry-run (chỉ ghi đề xuất vào logs)"} · limit ${LIMIT} · max-lines ${MAX_LINES}`);
+  // Cây làm việc tụt sau origin/main → dừng: lượt 2 ngày 22/10 đã làm lại 14 file vừa soát vì quên git pull.
+  try {
+    execFileSync("git", ["fetch", "origin", "main", "-q"], { cwd: ROOT, stdio: "ignore" });
+    const behind = execFileSync("git", ["rev-list", "--count", "HEAD..origin/main"], { cwd: ROOT, encoding: "utf8" }).trim();
+    if (behind !== "0") {
+      console.error(`Cây làm việc tụt sau origin/main ${behind} commit — chạy \`git pull origin main\` trước (tránh sửa lại file đã soát).`);
+      process.exit(1);
+    }
+  } catch {
+    console.warn("Không fetch được origin/main (offline?) — tiếp tục, tự chịu rủi ro sửa lại file đã soát.");
+  }
+
   console.log("Quét ESLint…");
   const report = runEslintJson(FILES.length ? FILES : DIRS);
 

@@ -93,3 +93,7 @@ nguyên vị trí đầu, mở rộng phạm vi như 2.2.
   (`TeacherChecklistPanel` mất reset danh sách khi không chọn phiên) → Claude sửa bằng mẫu state gắn khoá. Hai file rườm rà
   (`CncMillingLiveMonitor`, `HsgGradingAdmin`) giữ nguyên. Chi phí ~160k token DeepSeek cho 14 file.
   → Quy tắc: model rẻ hay "bỏ nhánh reset" để qua lint; prompt lượt sau đã nhấn mạnh giữ mọi nhánh `setState([])`/`null`.
+- 2026-10-22 · Lượt 2 (`--limit 20 --apply`): chạy trên cây chưa `git pull` nên làm lại 14 file đã soát → bỏ, giữ 6 file mới
+  (nhánh `deepseek/lint-2`). Soát: 4 đạt; `PhysicsPostRibbon` cập nhật cache cả khi `setItem` lỗi (lệch với localStorage) →
+  `return` trong catch; `Hsg9WeekCard` tính ngày/giờ trong `useState` làm mất chống lệch hydrate → `useSyncExternalStore` với
+  server snapshot null. Script thêm bước dừng khi cây tụt sau `origin/main`. Lint toàn repo còn 74 lỗi / 32 file.

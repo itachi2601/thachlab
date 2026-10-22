@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import type { Lesson } from "@/features/lessons/types";
 import {
   HSG9_EXAM_DATE,
@@ -22,6 +22,9 @@ import { SessionLessons, TaskList, type LessonProgressMap } from "./Hsg9Parts";
  * Chỉ một việc nổi bật (việc hôm nay, B2/N7); cả tuần và 18 buổi ở trang /lop-hoc/lo-trinh-hsg (N1).
  * Sau 22 giờ không giao việc, nhắc nghỉ (não tuổi 14–15 cần ngủ đủ — docs/QUY-TAC-THIET-KE.md G2).
  */
+const subscribeNoop = () => () => {};
+const isLateHour = () => hourVn() >= 22 || hourVn() < 5;
+
 export default function Hsg9WeekCard({
   userId,
   lessons,
@@ -32,8 +35,9 @@ export default function Hsg9WeekCard({
   progress: LessonProgressMap | null;
 }) {
   const [ticks, setTicks] = useState<Record<string, boolean>>(() => (userId ? loadTicks(userId) : {}));
-  const [today] = useState<string | null>(() => todayVn());
-  const [late] = useState(() => hourVn() >= 22 || hourVn() < 5);
+  // Ngày/giờ chỉ có ở client; server (static export) trả null để không lệch hydrate — thay cho effect + setState bản cũ.
+  const today = useSyncExternalStore(subscribeNoop, todayVn, () => null);
+  const late = useSyncExternalStore(subscribeNoop, isLateHour, () => false);
   const [ticksUserId, setTicksUserId] = useState(userId);
 
   if (userId !== ticksUserId) {

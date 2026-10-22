@@ -68,7 +68,9 @@ function markRibbonPostRead(slug: string) {
   try {
     localStorage.setItem(READ_STORAGE_KEY, serialized);
   } catch {
-    // Bỏ qua lỗi lưu
+    // Không lưu được (chế độ riêng tư) → không cập nhật cache, vì getSnapshot đọc lại localStorage
+    // và sẽ thấy lệch; chấp nhận không đánh dấu "đã đọc" trong phiên này.
+    return;
   }
   cachedRaw = serialized;
   cachedRead = next;
