@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Award, ClipboardList, Send } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import RubricExamForm from "@/components/lessons/RubricExamForm";
@@ -24,10 +24,14 @@ export default function RubricSelfAssessment({ machine, courseId }: { machine: "
   const [error, setError] = useState("");
   const [saved, setSaved] = useState(false);
 
-  const load = useCallback(() => {
-    if (!courseId) { setAttempts([]); return; }
-    fetchMyRubricExamAttempts(courseId, machine)
+  useEffect(() => {
+    let cancelled = false;
+    const attemptsRequest = courseId
+      ? fetchMyRubricExamAttempts(courseId, machine)
+      : Promise.resolve<RubricExamAttempt[]>([]);
+    attemptsRequest
       .then((rows) => {
+        if (cancelled) return;
         setAttempts(rows);
         const self = rows.find((row) => row.role === "self");
         if (self) {
@@ -36,18 +40,24 @@ export default function RubricSelfAssessment({ machine, courseId }: { machine: "
           setNotes(self.notes);
         }
       })
-      .catch((cause) => { setAttempts([]); setError(cause instanceof Error ? cause.message : "Không tải được phiếu tự đánh giá."); });
-    if (session?.user.id) {
+      .catch((cause) => {
+        if (cancelled) return;
+        setAttempts([]);
+        setError(cause instanceof Error ? cause.message : "Không tải được phiếu tự đánh giá.");
+      });
+    const userId = session?.user.id;
+    if (courseId && userId) {
       const lessonId = machine === "tien" ? "lesson-5" : "lesson-6";
-      fetchCncLearningRecords(courseId, session?.user.id)
+      fetchCncLearningRecords(courseId, userId)
         .then((rows) => {
+          if (cancelled) return;
           const record = rows.find((row) => row.lesson_id === lessonId && row.assessment_id === "checklist");
           setChecklistNote(record ? `Điểm checklist chấm chéo gia công: ${record.best_score ?? 0}/10` : "Chưa có điểm checklist chấm chéo gia công.");
         })
-        .catch(() => setChecklistNote(""));
+        .catch(() => { if (!cancelled) setChecklistNote(""); });
     }
+    return () => { cancelled = true; };
   }, [courseId, machine, session?.user.id]);
-  useEffect(() => { load(); }, [load]);
 
   async function submit() {
     if (!courseId || !session?.user.id) return;

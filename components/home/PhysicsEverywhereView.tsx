@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import type { PhysicsAroundPost } from "@/lib/blog";
 import { rotatePhysicsAround, vietnamDayIndex } from "@/lib/physics-around";
+
+// Nguồn ngoài (ngày lịch) chỉ đọc một lần sau khi hydrate, không cần subscribe.
+const subscribeNoop = () => () => {};
 
 
 export default function PhysicsEverywhereView({
@@ -17,11 +20,9 @@ export default function PhysicsEverywhereView({
 }) {
   // HTML tĩnh gắn chỉ số lúc build. Sau khi tải, chỉnh theo ngày lịch Việt Nam
   // để bài xoay tua giữa các lần deploy.
-  const [index, setIndex] = useState(initialIndex);
-  useEffect(() => {
-    const today = vietnamDayIndex() % posts.length;
-    if (today !== initialIndex) setIndex(today);
-  }, [initialIndex, posts.length]);
+  const getSnapshot = useCallback(() => vietnamDayIndex() % posts.length, [posts.length]);
+  const getServerSnapshot = useCallback(() => initialIndex, [initialIndex]);
+  const index = useSyncExternalStore(subscribeNoop, getSnapshot, getServerSnapshot);
 
   const { featured, others } = rotatePhysicsAround(posts, index, 2);
 
