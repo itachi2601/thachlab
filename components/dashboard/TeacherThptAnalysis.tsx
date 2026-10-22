@@ -33,6 +33,17 @@ const KIND_OPTIONS = [
   { value: "thuong_xuyen", label: "KT thường xuyên" },
 ];
 
+// Dữ liệu phân tích gắn với khoá truy vấn (đề + danh sách HS) để tự "reset" khi đổi đề
+// mà không phải setState đồng bộ trong effect.
+type ExamAnalysis = {
+  key: string;
+  overview: ExamOverview | null;
+  wrongest: WrongestQuestion[] | null;
+  matrix: TopicGap[] | null;
+  reviewStats: ReviewQuestionStat[];
+  questions: ExamQuestion[];
+};
+
 function formLabel(form: string) {
   return form === "ly_thuyet" || form === "bai_tap"
     ? QUESTION_FORM_LABELS[form]
@@ -83,12 +94,18 @@ export default function TeacherThptAnalysis({
   const [examId, setExamId] = useState<number | null>(null);
   const [assessments, setAssessments] = useState<ClassAssessment[]>([]);
 
-  const [overview, setOverview] = useState<ExamOverview | null>(null);
-  const [wrongest, setWrongest] = useState<WrongestQuestion[] | null>(null);
-  const [matrix, setMatrix] = useState<TopicGap[] | null>(null);
-  const [questions, setQuestions] = useState<ExamQuestion[]>([]);
-  const [openQ, setOpenQ] = useState<number | null>(null);
-  const [reviewStats, setReviewStats] = useState<ReviewQuestionStat[]>([]);
+  // Khoá truy vấn: đổi đề hoặc đổi danh sách HS là dữ liệu cũ tự bị coi như chưa có.
+  const queryKey = useMemo(() => `${examId ?? 0}:${studentIds.join(",")}`, [examId, studentIds]);
+  const [analysis, setAnalysis] = useState<ExamAnalysis | null>(null);
+  const [openQuestion, setOpenQuestion] = useState<{ key: string; index: number | null } | null>(null);
+
+  const current = analysis && analysis.key === queryKey ? analysis : null;
+  const overview = current?.overview ?? null;
+  const wrongest = current?.wrongest ?? null;
+  const matrix = current?.matrix ?? null;
+  const reviewStats = current?.reviewStats ?? [];
+  const questions = current?.questions ?? [];
+  const openQ = openQuestion && openQuestion.key === queryKey ? openQuestion.index : null;
 
   const loadAssessments = useCallback(() => {
     fetchClassAssessments(classId).then(setAssessments).catch(() => setAssessments([]));
@@ -143,22 +160,31 @@ export default function TeacherThptAnalysis({
 
   useEffect(() => {
     if (!examId) return;
-    setOverview(null);
-    setWrongest(null);
-    setMatrix(null);
-    setOpenQ(null);
-    fetchExamOverview(examId, studentIds).then(setOverview).catch(() => undefined);
-    fetchWrongestQuestions(examId, studentIds).then(setWrongest).catch(() => setWrongest([]));
-    fetchClassTopicMatrix(studentIds, examId).then(setMatrix).catch(() => setMatrix([]));
-    setReviewStats([]);
-    fetchExamReviewData(examId, studentIds).then((d) => setReviewStats(d.stats)).catch(() => setReviewStats([]));
+    let cancelled = false;
+    const apply = (patch: Partial<Omit<ExamAnalysis, "key">>) => {
+      if (cancelled) return;
+      setAnalysis((prev) =>
+        prev && prev.key === queryKey
+          ? { ...prev, ...patch }
+          : { key: queryKey, overview: null, wrongest: null, matrix: null, reviewStats: [], questions: [], ...patch },
+      );
+    };
+    fetchExamOverview(examId, studentIds).then((d) => apply({ overview: d })).catch(() => undefined);
+    fetchWrongestQuestions(examId, studentIds).then((d) => apply({ wrongest: d })).catch(() => apply({ wrongest: [] }));
+    fetchClassTopicMatrix(studentIds, examId).then((d) => apply({ matrix: d })).catch(() => apply({ matrix: [] }));
+    fetchExamReviewData(examId, studentIds)
+      .then((d) => apply({ reviewStats: d.stats }))
+      .catch(() => apply({ reviewStats: [] }));
     getSupabase()
       .from("exams")
       .select("questions")
       .eq("id", examId)
       .single()
-      .then(({ data }) => setQuestions((data?.questions as ExamQuestion[]) ?? []));
-  }, [examId, studentIds]);
+      .then(({ data }) => apply({ questions: (data?.questions as ExamQuestion[]) ?? [] }));
+    return () => {
+      cancelled = true;
+    };
+  }, [examId, studentIds, queryKey]);
 
   const assessment = assessments.find((a) => a.examId === examId) ?? null;
   const assessmentIds = useMemo(() => new Set(assessments.map((a) => a.examId)), [assessments]);
@@ -297,7 +323,10 @@ export default function TeacherThptAnalysis({
                 <button
                   type="button"
                   onClick={() =>
-                    setOpenQ((cur) => (cur === q.questionIndex ? null : q.questionIndex))
+                    setOpenQuestion((cur) => {
+                      const opened = cur && cur.key === queryKey ? cur.index : null;
+                      return { key: queryKey, index: opened === q.questionIndex ? null : q.questionIndex };
+                    })
                   }
                   className="flex w-full items-center gap-3 p-4 text-left"
                 >

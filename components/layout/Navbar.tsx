@@ -58,6 +58,8 @@ export default function Navbar() {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
+  // Lưu pathname trước đó để đóng menu ngay trong render khi đổi trang (không dùng effect).
+  const [prevPathname, setPrevPathname] = useState(pathname);
   const accountMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
@@ -69,6 +71,12 @@ export default function Navbar() {
   // Thanh đáy đã có Lớp học: khi nó hiện thì menu ☰ bỏ hàng "THPT – THCS" (giữ chip vào nhanh từng lớp).
   const tabBarShown = tabBarShownOn(pathname);
   const mobileLinks = [...navLinks.slice(0, 3), ...MORE_LINKS.slice(0, 2), ...navLinks.slice(3), ...MORE_LINKS.slice(2)];
+
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setMobileMenuOpen(false);
+    setAccountMenuOpen(false);
+  }
 
   useEffect(() => {
     if (!accountMenuOpen) return;
@@ -90,11 +98,6 @@ export default function Navbar() {
     document.addEventListener("mousedown", onClickOutside);
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, [mobileMenuOpen]);
-
-  useEffect(() => {
-    setMobileMenuOpen(false);
-    setAccountMenuOpen(false);
-  }, [pathname]);
 
   // Escape đóng mọi menu; với dropdown "Thêm" (mở bằng hover/focus) thì bỏ focus để đóng.
   useEffect(() => {

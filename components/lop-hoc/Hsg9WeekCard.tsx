@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { Lesson } from "@/features/lessons/types";
 import {
   HSG9_EXAM_DATE,
@@ -31,15 +31,15 @@ export default function Hsg9WeekCard({
   lessons: Lesson[] | null;
   progress: LessonProgressMap | null;
 }) {
-  const [ticks, setTicks] = useState<Record<string, boolean>>({});
-  const [today, setToday] = useState<string | null>(null);
-  const [late, setLate] = useState(false);
+  const [ticks, setTicks] = useState<Record<string, boolean>>(() => (userId ? loadTicks(userId) : {}));
+  const [today] = useState<string | null>(() => todayVn());
+  const [late] = useState(() => hourVn() >= 22 || hourVn() < 5);
+  const [ticksUserId, setTicksUserId] = useState(userId);
 
-  useEffect(() => {
-    setToday(todayVn());
-    setLate(hourVn() >= 22 || hourVn() < 5);
-    if (userId) setTicks(loadTicks(userId));
-  }, [userId]);
+  if (userId !== ticksUserId) {
+    setTicksUserId(userId);
+    setTicks(userId ? loadTicks(userId) : {});
+  }
 
   if (!today) return null;
   const session = upcomingSession(today);
@@ -91,4 +91,3 @@ export default function Hsg9WeekCard({
     </section>
   );
 }
-

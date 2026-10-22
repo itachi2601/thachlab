@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { PhysicsCuriosityCard } from "@/components/home/PhysicsCuriosityCard";
 import type { PhysicsCardData } from "@/lib/physics-card";
@@ -9,37 +9,79 @@ export type RibbonPost = PhysicsCardData;
 
 const READ_STORAGE_KEY = "thachlab:read_ribbon_posts";
 
+const EMPTY_READ: ReadonlySet<string> = new Set<string>();
+
+// Bộ nhớ đệm snapshot cho useSyncExternalStore: chỉ đọc localStorage khi giá trị thô thay đổi.
+let cachedRaw: string | null = null;
+let cachedRead: ReadonlySet<string> = EMPTY_READ;
+const readListeners = new Set<() => void>();
+
+function parseReadSlugs(raw: string | null): ReadonlySet<string> {
+  if (!raw) return EMPTY_READ;
+  try {
+    const list: unknown = JSON.parse(raw);
+    if (Array.isArray(list)) {
+      return new Set(list.filter((item): item is string => typeof item === "string"));
+    }
+  } catch {
+    // Bỏ qua dữ liệu hỏng
+  }
+  return EMPTY_READ;
+}
+
+function getReadSnapshot(): ReadonlySet<string> {
+  let raw: string | null = null;
+  try {
+    raw = localStorage.getItem(READ_STORAGE_KEY);
+  } catch {
+    // Bỏ qua lỗi truy cập localStorage (chặn cookie, private browsing)
+    return EMPTY_READ;
+  }
+  if (raw === cachedRaw) return cachedRead;
+  cachedRaw = raw;
+  cachedRead = parseReadSlugs(raw);
+  return cachedRead;
+}
+
+function getServerReadSnapshot(): ReadonlySet<string> {
+  return EMPTY_READ;
+}
+
+function subscribeReadSlugs(onStoreChange: () => void) {
+  const handleStorage = (event: StorageEvent) => {
+    if (event.key === READ_STORAGE_KEY || event.key === null) onStoreChange();
+  };
+  window.addEventListener("storage", handleStorage);
+  readListeners.add(onStoreChange);
+  return () => {
+    window.removeEventListener("storage", handleStorage);
+    readListeners.delete(onStoreChange);
+  };
+}
+
+function markRibbonPostRead(slug: string) {
+  const current = getReadSnapshot();
+  if (current.has(slug)) return;
+  const next = new Set(current);
+  next.add(slug);
+  const serialized = JSON.stringify(Array.from(next));
+  try {
+    localStorage.setItem(READ_STORAGE_KEY, serialized);
+  } catch {
+    // Bỏ qua lỗi lưu
+  }
+  cachedRaw = serialized;
+  cachedRead = next;
+  readListeners.forEach((listener) => listener());
+}
+
 /** Dải bài "Vật lý quanh ta": hàng thẻ (ảnh + hook + câu đố) vuốt ngang (không chạy tự động — chữ trôi thì không đọc, không bấm trúng được trên 375px). */
 export function PhysicsPostRibbon({ posts, label, total }: { posts: RibbonPost[]; label?: string; total?: number }) {
-  const [readSlugs, setReadSlugs] = useState<Set<string>>(() => new Set());
+  const readSlugs = useSyncExternalStore(subscribeReadSlugs, getReadSnapshot, getServerReadSnapshot);
 
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(READ_STORAGE_KEY);
-      if (raw) {
-        const list = JSON.parse(raw);
-        if (Array.isArray(list)) {
-          setReadSlugs(new Set(list));
-        }
-      }
-    } catch {
-      // Bỏ qua lỗi truy cập localStorage (chặn cookie, private browsing)
-    }
+  const handlePostClick = useCallback((slug: string) => {
+    markRibbonPostRead(slug);
   }, []);
-
-  const handlePostClick = (slug: string) => {
-    setReadSlugs((prev) => {
-      if (prev.has(slug)) return prev;
-      const next = new Set(prev);
-      next.add(slug);
-      try {
-        localStorage.setItem(READ_STORAGE_KEY, JSON.stringify(Array.from(next)));
-      } catch {
-        // Bỏ qua lỗi lưu
-      }
-      return next;
-    });
-  };
 
   if (posts.length === 0) return null;
   return (
