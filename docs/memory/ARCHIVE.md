@@ -80,3 +80,17 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [Rà UI HS tìm bài/ôn tập 17/10](project_thachlab_ui_hs_tim_bai_on_tap.md) — 4 đợt đã lên site; treo 2 điểm nhỏ
 - [Gán lớp cho đề](project_thachlab_gan_lop_de.md) — 17/10 gán hết trừ 10 đề AVCN (cố ý trống); RLS giấu đề lớp khác
 - [Tài nguyên bài học + PhET hàng loạt](project_thachlab_tai_nguyen_bai_hoc_skill.md) — 49 bài/55 khối đã đăng 18/10
+
+## Chuyển từ MEMORY.md ngày 22/10/2026
+- [Auto-resume hết hạn mức](feedback_spend_limit_auto_resume.md)
+- [Cache SGK PDF](reference_sgk_pdf_text_cache.md)
+- [Claude API thinking](reference_anthropic_api_thinking_max_tokens.md) — max_tokens ≥16000
+- [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — trạng thái sửa chưa rõ
+- [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục ẩn, chờ gắn đề
+- [Chương trình DT 16/10](project_thachlab_dt_audit.md) — DT-01/03/04/07/12/16
+- [Rà soát giao diện 13/10](project_thachlab_ra_soat_giao_dien.md) — 10 điểm + 2 lỗi; phân công ở
+- [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — deploy 12/10, chưa thử HS thật
+- [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10; treo thử 375px thật
+- [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi; flip-1 lên web; treo duyệt bảng 12 buổi
+- [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — xong 14/10; treo Gemini tìm ảnh, chưa deploy
+- [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10

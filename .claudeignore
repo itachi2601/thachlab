@@ -28,3 +28,14 @@ scripts/logs/
 
 # dữ liệu batch đăng đề (raw, không phải code)
 scripts/data/
+
+# lock file, log, map, bundle rút gọn, coverage — vô ích khi đọc code
+coverage/
+build/
+*.log
+*.lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+*.min.js
+*.map

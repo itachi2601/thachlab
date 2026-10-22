@@ -21,7 +21,6 @@
 - [Đăng đề hàng loạt](feedback_batch_agent_upload_efficiency.md) — 4 lưới lọc máy, file sạch không agent
 - [Skill có 2 bản](feedback_skill_two_copies.md) — diff trước, sửa cả hai
 - [Rà ảnh bằng mắt](feedback_content_images_eyeball.md) — MD5 không bắt hết ảnh trang trí
-- [Auto-resume hết hạn mức](feedback_spend_limit_auto_resume.md)
 - [Giọng văn bài lý thuyết](feedback_giong-van-bai-ly-thuyet.md) — không dùng vai "thầy"
 - [Quy tắc thiết kế](feedback_design_research_rules.md) — UI HS theo docs/QUY-TAC-THIET-KE.md, nêu mã quy
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết: duyệt là đăng, không PR
@@ -33,9 +32,7 @@
 - [Supabase](project_supabase_configured.md) — Singapore; key ở .env.local
 - [Chạy SQL bằng CLI](reference_supabase_db_query_cli.md) — `supabase db query --linked -f`
 - [Hosting](project_thachlab_hosting.md) — DirectAdmin, Thachlab.id.vn
-- [Cache SGK PDF](reference_sgk_pdf_text_cache.md)
 - [Giữ DB không phình](project_thachlab_db_retention.md) — rollup >12 tháng, pg_cron
-- [Claude API thinking](reference_anthropic_api_thinking_max_tokens.md) — max_tokens ≥16000
 - [Model lịch tự động](reference_scheduled_task_model.md) — chọn ở form Edit task trong app, không đổi bằng
 ## Skill & quy trình đăng nội dung
 - [Up đề](project_thachlab_up_de_skill.md) — Azota + Chủ đề/Dạng → /quan-tri/dang-de
@@ -72,13 +69,9 @@
 - [Phụ đạo theo chủ đề](project_thachlab_phu_dao.md) — treo RPC restamp đề cũ
 - [Chữa bài mobile + TA](project_thachlab_chua_bai_mobile_ta.md) — iPhone ngang chiếu tivi; treo thử máy thật
 - [Kiểm tra hiểu bài](project_thachlab_kiem_tra_hieu_bai.md) — chờ thầy cho ví dụ "map sai lý thuyết"
-- [Bug ExamRunner chuyển câu](project_thachlab_examrunner_nav_bug.md) — trạng thái sửa chưa rõ
-- [Kiểm tra định kỳ](project_thachlab_periodic_exam.md) — 11 mục ẩn, chờ gắn đề
 ## Giao diện & sản phẩm
 - [Ôn tập theo chặng](project_thachlab_on_tap_theo_chang.md) — 21/10: 3 màn hình (thầy/TA, tivi, HS) trên đề Kiểm tra nhanh; migration đã chạy, CHƯA DEPLOY
 - [Lịch công tác tuần](project_thachlab_lich_tuan.md) — skill lich-tuan + /tai-khoan; 19/10: tên thầy, ưu tiên công tác, cảnh báo nhờ xem hộ; chờ thầy chọn T6 23/10
-- [Chương trình DT 16/10](project_thachlab_dt_audit.md) — DT-01/03/04/07/12/16
-- [Rà soát giao diện 13/10](project_thachlab_ra_soat_giao_dien.md) — 10 điểm + 2 lỗi; phân công ở
 - [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
@@ -89,13 +82,10 @@
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn xong 12/10, chờ thầy duyệt rồi đăng
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật
 - [Quy chế + bảng việc TA](project_thachlab_ta_policy.md) — `/tro-giang/viec-can-lam` deploy 16/10; đơn giá/hệ số tháng 11 CHƯA chốt, đừng ghi con số
-- [Kiểm tra đầu vào em vào trễ](project_thachlab_kiem_tra_dau_vao.md) — deploy 12/10, chưa thử HS thật
-- [Radar có điểm số](project_thachlab_radar_diem_so.md) — deploy 14/10; treo thử 375px thật
 ## Việc mới 30/9
-- [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi; flip-1 lên web; treo duyệt bảng 12 buổi
-- [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — xong 14/10; treo Gemini tìm ảnh, chưa deploy
 - [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — 19/10: lời giải L9–12 + đúng/sai + TLN ĐÃ ghi DB; 20/10: chuẩn 20.762/22.513; chờ thầy duyệt `viet-lai13/14/15/lech.json` (~850 câu); còn 819 thiếu Sai vì
-- [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10
 - [Cải tiến chương 1 L12 + toàn site](project_thachlab_cai_tien_chuong1_l12.md) — đo 112 bài 18/10
 - [Nạp ngân hàng VL10 (Word)](project_thachlab_nap_ngan_hang_vl10.md) — Ch.II–VI đã nạp 952 câu; còn I, VII + Cơ năng
 - [Bỏ câu mơ hồ, đừng giải lại](feedback_bo_cau_mo_ho_thay_vi_giai_lai.md) — nạp ngân hàng: câu khó/lệch thì xoá, không tốn thêm API
+- [Bảng điều hành + 4 Project claude.ai](project_dieu_hanh_4_project_claude_ai.md) — 21/10/2026; Sheets, chuyển dần từ 16 Project cũ, lưu trữ sau 2 tuần
+- [Phong cách đề Bộ GD](project_thachlab_phong_cach_de_bo_gd.md) — đề TN 2025/2026; quiz cuối bài không ngoài chương trình; Ch.3 L12 đang batch
