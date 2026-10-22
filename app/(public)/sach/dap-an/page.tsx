@@ -57,22 +57,21 @@ function Section({ title, hint, children }: { title: string; hint?: string; chil
 
 function AnswersView({ id }: { id: string }) {
   const [data, setData] = useState<Answers | null>(null);
-  const [failed, setFailed] = useState(false);
+  const [failedId, setFailedId] = useState<string | null>(null);
+  const validId = /^\d+$/.test(id);
+  const failed = !validId || failedId === id;
 
   useEffect(() => {
-    if (!/^\d+$/.test(id)) {
-      setFailed(true);
-      return;
-    }
+    if (!validId) return;
     let alive = true;
     fetch(`/sach-data/dap-an-${id}.json`)
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
       .then((d: Answers) => alive && setData(d))
-      .catch(() => alive && setFailed(true));
+      .catch(() => alive && setFailedId(id));
     return () => {
       alive = false;
     };
-  }, [id]);
+  }, [id, validId]);
 
   if (failed) {
     return (

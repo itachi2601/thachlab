@@ -11,6 +11,10 @@ export interface HomeworkStudent {
   name: string;
 }
 
+/** Mảng rỗng dùng chung để giá trị suy ra giữ nguyên tham chiếu giữa các lần render. */
+const NO_TOPIC_NAMES: string[] = [];
+const NO_EXAMS: ExamOption[] = [];
+
 /** Hạn mặc định: 21h tối ngày thứ 3 sau hôm nay (giờ máy), định dạng ô datetime-local. */
 function defaultDue(): string {
   const d = new Date();
@@ -36,70 +40,88 @@ export default function TaAssignHomework({
   demo: boolean;
 }) {
   const toast = useToast();
-  const [topicNames, setTopicNames] = useState<string[]>([]);
-  const [suggestions, setSuggestions] = useState<ExamOption[]>([]);
+  const [topicData, setTopicData] = useState<{ key: string; names: string[] }>({ key: "", names: [] });
+  const [suggestionData, setSuggestionData] = useState<{ key: string; rows: ExamOption[] }>({ key: "", rows: [] });
   const [query, setQuery] = useState("");
-  const [found, setFound] = useState<ExamOption[]>([]);
+  const [foundData, setFoundData] = useState<{ key: string; rows: ExamOption[] }>({ key: "", rows: [] });
   const [exam, setExam] = useState<ExamOption | null>(null);
-  const [picked, setPicked] = useState<Set<string>>(new Set());
+  const [pickedDraft, setPickedDraft] = useState<{ key: string; ids: Set<string> } | null>(null);
   const [due, setDue] = useState(defaultDue);
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
-  const [sentCount, setSentCount] = useState<number | null>(null);
+  const [sent, setSent] = useState<{ key: string; count: number } | null>(null);
 
   const studentKey = students.map((s) => s.id).join(",");
   // Mặc định giao cho tất cả em đang được chọn trong phiếu; trợ giảng bỏ tick em nào thì không giao em đó.
-  useEffect(() => {
-    setPicked(new Set(students.map((s) => s.id)));
-    setSentCount(null);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [studentKey]);
+  // Danh sách học sinh đổi (studentKey khác) thì bản chọn cũ hết hiệu lực → quay lại chọn tất cả.
+  const picked =
+    pickedDraft !== null && pickedDraft.key === studentKey
+      ? pickedDraft.ids
+      : new Set(students.map((s) => s.id));
+  // Danh sách học sinh đổi thì bỏ kết quả "đã giao" của lần trước.
+  const sentCount = sent !== null && sent.key === studentKey ? sent.count : null;
 
   const topicKey = taughtTopicIds.join(",");
+  const topicLookupKey = demo || topicKey === "" ? "" : topicKey;
+  // Tên chủ đề chỉ có giá trị khi đã nạp đúng bộ chủ đề hiện tại; ngược lại coi như rỗng.
+  const topicNames = topicData.key === topicLookupKey ? topicData.names : NO_TOPIC_NAMES;
+
   useEffect(() => {
-    if (demo || taughtTopicIds.length === 0) {
-      setTopicNames([]);
-      return;
-    }
+    if (demo || topicKey === "") return;
+    const wanted = new Set(topicKey.split(",").map(Number));
     let alive = true;
     fetchQuestionTopics()
       .then((all) => {
         if (!alive) return;
-        const wanted = new Set(taughtTopicIds);
-        setTopicNames(Array.from(new Set(all.filter((t) => wanted.has(t.id)).map((t) => t.name))).slice(0, 6));
+        setTopicData({
+          key: topicKey,
+          names: Array.from(new Set(all.filter((t) => wanted.has(t.id)).map((t) => t.name))).slice(0, 6),
+        });
       })
-      .catch(() => alive && setTopicNames([]));
+      .catch(() => {
+        if (alive) setTopicData({ key: topicKey, names: [] });
+      });
     return () => {
       alive = false;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topicKey, demo]);
 
+  const namesKey = topicNames.join("|");
+  // Gợi ý chỉ có giá trị khi đã tìm xong cho đúng bộ tên chủ đề hiện tại; ngược lại coi như rỗng.
+  const suggestions = suggestionData.key === namesKey ? suggestionData.rows : NO_EXAMS;
+
   useEffect(() => {
-    if (demo || topicNames.length === 0) {
-      setSuggestions([]);
-      return;
-    }
+    if (demo || topicLookupKey === "" || topicData.key !== topicLookupKey || topicData.names.length === 0) return;
     let alive = true;
-    searchExams(topicNames, 5)
-      .then((rows) => alive && setSuggestions(rows))
-      .catch(() => alive && setSuggestions([]));
+    searchExams(topicData.names, 5)
+      .then((rows) => {
+        if (alive) setSuggestionData({ key: namesKey, rows });
+      })
+      .catch(() => {
+        if (alive) setSuggestionData({ key: namesKey, rows: [] });
+      });
     return () => {
       alive = false;
     };
-  }, [topicNames, demo]);
+  }, [topicData, topicLookupKey, namesKey, demo]);
+
+  const trimmedQuery = query.trim();
+  const foundKey = demo || !trimmedQuery ? "" : trimmedQuery;
+  // Kết quả tìm chỉ có giá trị khi đúng từ khoá hiện tại; ngược lại coi như rỗng.
+  const found = foundData.key === foundKey ? foundData.rows : NO_EXAMS;
 
   useEffect(() => {
     const trimmed = query.trim();
-    if (demo || !trimmed) {
-      setFound([]);
-      return;
-    }
+    if (demo || !trimmed) return;
     let alive = true;
     const timer = setTimeout(() => {
       searchExams([trimmed], 8)
-        .then((rows) => alive && setFound(rows))
-        .catch(() => alive && setFound([]));
+        .then((rows) => {
+          if (alive) setFoundData({ key: trimmed, rows });
+        })
+        .catch(() => {
+          if (alive) setFoundData({ key: trimmed, rows: [] });
+        });
     }, 300);
     return () => {
       alive = false;
@@ -111,12 +133,10 @@ export default function TaAssignHomework({
   const canSend = !demo && !busy && classId !== null && exam !== null && targets.length > 0;
 
   function toggle(id: string) {
-    setPicked((current) => {
-      const next = new Set(current);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
+    const next = new Set(picked);
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
+    setPickedDraft({ key: studentKey, ids: next });
   }
 
   async function send() {
@@ -130,7 +150,7 @@ export default function TaAssignHomework({
         dueAt: due ? new Date(due).toISOString() : null,
         note,
       });
-      setSentCount(count);
+      setSent({ key: studentKey, count });
       setExam(null);
       setNote("");
       toast("success", `Đã giao bài cho ${count} em. Các em nhận chuông thông báo.`);

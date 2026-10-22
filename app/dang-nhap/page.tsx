@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
@@ -12,6 +12,25 @@ import { pathAfterLogin, safeNextPath } from "@/lib/after-login";
 
 type UserType = "student" | "teacher";
 
+function subscribeLocationSearch(onStoreChange: () => void) {
+  window.addEventListener("popstate", onStoreChange);
+  return () => window.removeEventListener("popstate", onStoreChange);
+}
+
+function getLocationSearch() {
+  return typeof window === "undefined" ? "" : window.location.search;
+}
+
+function getServerLocationSearch() {
+  return "";
+}
+
+function buildNextQuery(next: string | null | undefined) {
+  if (!next) return "";
+  const lop = /^\/lop-hoc\/([a-z0-9-]+)/.exec(next)?.[1] ?? (/[?&]ma=AVCN-/i.test(next) ? "avcn" : undefined);
+  return `?next=${encodeURIComponent(next)}${lop ? `&lop=${lop}` : ""}`;
+}
+
 export default function LoginPage() {
   const router = useRouter();
   const toast = useToast();
@@ -20,15 +39,9 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [nextQuery, setNextQuery] = useState("");
-  const [nextPath, setNextPath] = useState<string | null>(null);
-  useEffect(() => {
-    const next = safeNextPath(new URLSearchParams(window.location.search).get("next"));
-    setNextPath(next);
-    if (!next) return;
-    const lop = /^\/lop-hoc\/([a-z0-9-]+)/.exec(next)?.[1] ?? (/[?&]ma=AVCN-/i.test(next) ? "avcn" : undefined);
-    setNextQuery(`?next=${encodeURIComponent(next)}${lop ? `&lop=${lop}` : ""}`);
-  }, []);
+  const search = useSyncExternalStore(subscribeLocationSearch, getLocationSearch, getServerLocationSearch);
+  const nextPath = safeNextPath(new URLSearchParams(search).get("next"));
+  const nextQuery = buildNextQuery(nextPath);
   const [busy, setBusy] = useState(false);
 
   // Đã đăng nhập rồi (vd bấm Back, hoặc mở lại tab cũ) -> đưa thẳng vào đúng không gian, không hiện lại form.

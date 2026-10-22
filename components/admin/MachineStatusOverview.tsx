@@ -45,7 +45,7 @@ export default function MachineStatusOverview() {
   const [machines, setMachines] = useState<Machine[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [selected, setSelected] = useState<Machine | null>(null);
+  const [selectedCode, setSelectedCode] = useState<string | null>(null);
   const [selectedTab, setSelectedTab] = useState<"status" | "breakdown" | "usage">("status");
   const [activeWorkshop, setActiveWorkshop] = useState<string | null>(null);
   const [openBreakdowns, setOpenBreakdowns] = useState<EquipmentBreakdownReportWithCourse[]>([]);
@@ -54,24 +54,30 @@ export default function MachineStatusOverview() {
   const [lecturers, setLecturers] = useState<AdminProfile[]>([]);
   const [addingMachine, setAddingMachine] = useState(false);
   useEffect(() => { void fetchAdminProfiles().then(setLecturers).catch(() => undefined); }, []);
-  const load = useCallback(() => {
-    setLoading(true);
+  // Bản fetch thuần: chỉ setState bên trong callback async (an toàn khi gọi từ effect).
+  const fetchOverview = useCallback(() => {
     fetchAllMachines()
       .then(setMachines)
       .catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được danh sách máy."))
       .finally(() => setLoading(false));
-    setOpenBreakdownsLoading(true);
     fetchOpenEquipmentBreakdownReports()
       .then(setOpenBreakdowns)
       .catch((cause) => setOpenBreakdownsError(cause instanceof Error ? cause.message : "Không tải được danh sách máy đang hư."))
       .finally(() => setOpenBreakdownsLoading(false));
   }, []);
-  useEffect(() => { load(); }, [load]);
-  useEffect(() => { if (!selected) return; setSelected((current) => machines.find((m) => m.code === current?.code) ?? null); }, [machines]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Bản dùng ở event handler: bật cờ loading rồi fetch.
+  const load = useCallback(() => {
+    setLoading(true);
+    setOpenBreakdownsLoading(true);
+    fetchOverview();
+  }, [fetchOverview]);
+  useEffect(() => { fetchOverview(); }, [fetchOverview]);
+  // Suy ra máy đang chọn từ danh sách mới nhất (thay cho effect đồng bộ trước đây).
+  const selected = selectedCode ? machines.find((m) => m.code === selectedCode) ?? null : null;
 
   function openMachine(machine: Machine, tab: "status" | "breakdown" | "usage" = "status") {
     setSelectedTab(tab);
-    setSelected(machine);
+    setSelectedCode(machine.code);
   }
 
   const workshops = groupMachinesByWorkshop(machines);
@@ -134,7 +140,7 @@ export default function MachineStatusOverview() {
 
       {currentWorkshop && <WorkshopSection key={currentWorkshop.workshop} workshop={currentWorkshop.workshop} machines={currentWorkshop.machines} onSelect={(m) => openMachine(m)} />}
 
-      {selected && <MachineDetailModal machine={selected} initialTab={selectedTab} onClose={() => setSelected(null)} onChanged={load} lecturers={lecturers} currentUserId={profile?.id ?? null} />}
+      {selected && <MachineDetailModal machine={selected} initialTab={selectedTab} onClose={() => setSelectedCode(null)} onChanged={load} lecturers={lecturers} currentUserId={profile?.id ?? null} />}
     </div>
   );
 }
@@ -303,6 +309,9 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
   const [editNote, setEditNote] = useState("");
   const [editDate, setEditDate] = useState("");
   const [editSaving, setEditSaving] = useState(false);
+  // Ảnh chụp prop trước đó — dùng để reset state trong lúc render (thay cho effect).
+  const [statusSnapshot, setStatusSnapshot] = useState({ status: machine.status, note: machine.note });
+  const [infoSnapshot, setInfoSnapshot] = useState({ label: machine.label, type: machine.machine_type, workshop: machine.workshop, active: machine.is_active });
 
   const [breakdowns, setBreakdowns] = useState<EquipmentBreakdownReportWithCourse[]>([]);
   const [breakdownLoading, setBreakdownLoading] = useState(true);
@@ -311,31 +320,50 @@ function MachineDetailModal({ machine, initialTab = "status", onClose, onChanged
   const [usageLoading, setUsageLoading] = useState(true);
   const [usageError, setUsageError] = useState("");
 
-  const load = useCallback(() => {
-    setLoading(true);
+  // Bản fetch thuần: chỉ setState bên trong callback async.
+  const fetchLog = useCallback(() => {
     fetchMachineStatusLog(machine.code).then(setLog).catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được lịch sử.")).finally(() => setLoading(false));
   }, [machine.code]);
+  // Bản dùng ở event handler: bật cờ loading rồi fetch.
+  const load = useCallback(() => {
+    setLoading(true);
+    fetchLog();
+  }, [fetchLog]);
   const [breakdownRefreshKey, setBreakdownRefreshKey] = useState(0);
-  useEffect(() => { load(); }, [load]);
-  useEffect(() => { setStatus(machine.status); setNote(machine.note); }, [machine.status, machine.note]);
-  useEffect(() => { setInfoLabel(machine.label); setInfoType(machine.machine_type); setInfoWorkshop(machine.workshop); setInfoActive(machine.is_active); }, [machine.label, machine.machine_type, machine.workshop, machine.is_active]);
+  useEffect(() => { fetchLog(); }, [fetchLog]);
+  useEffect(() => {
+    let cancelled = false;
+    fetchEquipmentBreakdownReportsByMachine(machine.code)
+      .then((reports) => { if (!cancelled) setBreakdowns(reports); })
+      .catch((cause) => { if (!cancelled) setBreakdownError(cause instanceof Error ? cause.message : "Không tải được lịch sử báo hỏng."); })
+      .finally(() => { if (!cancelled) setBreakdownLoading(false); });
+    fetchMachineUsageHistory(machine.code)
+      .then((records) => { if (!cancelled) setUsage(records); })
+      .catch((cause) => { if (!cancelled) setUsageError(cause instanceof Error ? cause.message : "Không tải được lịch sử sử dụng."); })
+      .finally(() => { if (!cancelled) setUsageLoading(false); });
+    return () => { cancelled = true; };
+  }, [machine.code, breakdownRefreshKey]);
+  const handleBreakdownChanged = useCallback(() => { setBreakdownLoading(true); setUsageLoading(true); setBreakdownRefreshKey((k) => k + 1); onChanged(); }, [onChanged]);
+
+  if (statusSnapshot.status !== machine.status || statusSnapshot.note !== machine.note) {
+    setStatusSnapshot({ status: machine.status, note: machine.note });
+    setStatus(machine.status);
+    setNote(machine.note);
+  }
+  if (infoSnapshot.label !== machine.label || infoSnapshot.type !== machine.machine_type || infoSnapshot.workshop !== machine.workshop || infoSnapshot.active !== machine.is_active) {
+    setInfoSnapshot({ label: machine.label, type: machine.machine_type, workshop: machine.workshop, active: machine.is_active });
+    setInfoLabel(machine.label);
+    setInfoType(machine.machine_type);
+    setInfoWorkshop(machine.workshop);
+    setInfoActive(machine.is_active);
+  }
+
   async function saveInfo() {
     setInfoSaving(true); setInfoError("");
     try { await updateMachineInfo(machine.code, { label: infoLabel.trim(), machine_type: infoType, workshop: infoWorkshop.trim(), is_active: infoActive }); setEditingInfo(false); onChanged(); }
     catch (cause) { setInfoError(cause instanceof Error ? cause.message : "Không lưu được."); }
     finally { setInfoSaving(false); }
   }
-  useEffect(() => {
-    setBreakdownLoading(true);
-    fetchEquipmentBreakdownReportsByMachine(machine.code).then(setBreakdowns)
-      .catch((cause) => setBreakdownError(cause instanceof Error ? cause.message : "Không tải được lịch sử báo hỏng."))
-      .finally(() => setBreakdownLoading(false));
-    setUsageLoading(true);
-    fetchMachineUsageHistory(machine.code).then(setUsage)
-      .catch((cause) => setUsageError(cause instanceof Error ? cause.message : "Không tải được lịch sử sử dụng."))
-      .finally(() => setUsageLoading(false));
-  }, [machine.code, breakdownRefreshKey]);
-  const handleBreakdownChanged = useCallback(() => { setBreakdownRefreshKey((k) => k + 1); onChanged(); }, [onChanged]);
 
   async function saveNew() {
     setSaving(true); setError("");

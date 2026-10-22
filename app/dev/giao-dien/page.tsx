@@ -62,32 +62,42 @@ function applyTheme(theme: Theme) {
   if (meta) meta.setAttribute("content", theme === "dark" ? "#05070b" : "#f5f7fa");
 }
 
+// Cho phép mở thẳng một tổ hợp: /dev/giao-dien?theme=dark&aud=parent — tiện chụp màn hình
+// và tiện gửi link cho người khác xem đúng cái mình đang nói. Đọc ngay khi khởi tạo state
+// (nguồn ngoài: query string + localStorage) thay vì đồng bộ trong useEffect.
+function readInitialTheme(): Theme {
+  if (typeof window === "undefined") return "light";
+  const qTheme = new URLSearchParams(location.search).get("theme");
+  if (qTheme === "dark" || qTheme === "light") return qTheme;
+  let saved: Theme = "light";
+  try {
+    if (localStorage.getItem(THEME_STORE) === "dark") saved = "dark";
+  } catch {}
+  return saved;
+}
+
+function readInitialAudience(): Audience {
+  if (typeof window === "undefined") return "student";
+  const qAud = new URLSearchParams(location.search).get("aud");
+  return qAud === "student" || qAud === "parent" || qAud === "teacher" ? qAud : "student";
+}
+
 export default function PalettePreviewPage() {
-  const [theme, setTheme] = useState<Theme>("light");
-  const [audience, setAudience] = useState<Audience>("student");
+  const [theme, setTheme] = useState<Theme>(readInitialTheme);
+  const [audience, setAudience] = useState<Audience>(readInitialAudience);
 
   useEffect(() => {
-    // Cho phép mở thẳng một tổ hợp: /dev/giao-dien?theme=dark&aud=parent — tiện chụp màn hình
-    // và tiện gửi link cho người khác xem đúng cái mình đang nói.
-    const q = new URLSearchParams(location.search);
-    const qTheme = q.get("theme");
-    const qAud = q.get("aud");
-    if (qAud === "student" || qAud === "parent" || qAud === "teacher") setAudience(qAud);
-    let saved: Theme = "light";
-    try {
-      if (localStorage.getItem(THEME_STORE) === "dark") saved = "dark";
-    } catch {}
-    const next: Theme = qTheme === "dark" || qTheme === "light" ? qTheme : saved;
-    setTheme(next);
-    applyTheme(next);
+    // Chỉ đồng bộ với hệ thống ngoài: gắn theme lên <html> và ghi nhớ tổ hợp mở bằng query string.
+    applyTheme(theme);
     // Mở bằng ?theme=… thì ghi luôn vào localStorage: nhờ vậy chỉ cần mở một lần là các trang
     // khác trong cùng trình duyệt cũng theo theme đó (tiện chụp màn hình nền tối của trang thật).
+    const qTheme = new URLSearchParams(location.search).get("theme");
     if (qTheme === "dark" || qTheme === "light") {
       try {
-        localStorage.setItem(THEME_STORE, next);
+        localStorage.setItem(THEME_STORE, theme);
       } catch {}
     }
-  }, []);
+  }, [theme]);
 
   const aud = AUDIENCES[audience];
 
