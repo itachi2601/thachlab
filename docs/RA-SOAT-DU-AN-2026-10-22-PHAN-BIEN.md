@@ -102,3 +102,9 @@ nguyên vị trí đầu, mở rộng phạm vi như 2.2.
   lớp cũ khi vừa đổi lớp → gắn kết quả với tham chiếu `students`, dep chỉ `[students]`). Góp ý không chặn: `lo-trinh-hsg` cache
   tick cấp module chỉ nạp lại khi đổi key; `AdminShell` drawer nhớ trạng thái theo path. Lint còn 34 lỗi / 12 file, trong đó
   5 file > 900 dòng (LessonsAdmin, QuestionBankAdmin, CncCourseWorkspace, `lop-hoc/bai`, `lop-hoc`) cần Claude tách trước.
+- 2026-10-22 · Lượt 4 (`--limit 10 --force --apply`, `DEEPSEEK_MAX_TOKENS=32000`, nhánh `deepseek/lint-4`, 18 lỗi/6 file): 5 đạt,
+  1 sửa một dòng (`TeacherAttendancePanel`: danh sách máy chưa so id phiên → hiện máy phiên cũ khi đổi phiên; lỗi có từ bản gốc).
+  Góp ý thấp: `dev/giao-dien` đọc query/localStorage trong `useState` có thể lệch hydrate (trang dev). Bug cũ ghi nhận:
+  `SessionMachineSetup` đóng băng danh sách máy rỗng ở lần mount đầu. **DeepSeek hết việc**: còn 17 lỗi / 6 file > 900 dòng
+  (LessonsAdmin, QuestionBankAdmin, CncCourseWorkspace, LessonImporter, `lop-hoc/bai`, `lop-hoc`) — Claude tự sửa.
+  Tổng 4 lượt: 94 → 17 lỗi, DeepSeek sai 5/46 file (~11 %), ~600k token DeepSeek.

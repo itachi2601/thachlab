@@ -30,7 +30,9 @@ export default function TeacherAttendancePanel({courseId,students,workshop}:{cou
   useEffect(()=>{void fetchAdminProfiles().then(setLecturers).catch(()=>undefined)},[]);
   const now=new Date();const[title,setTitle]=useState("Thực hành CNC");const[startsAt,setStartsAt]=useState(new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,16));
   const selected=sessions.find(item=>item.id===selectedId)??null;
-  const sessionMachineList=sessionMachineState&&selectedId!==null?sessionMachineState.list:[];
+  const EMPTY_MACHINES:Machine[]=[];
+  // Chỉ dùng danh sách máy của đúng phiên đang chọn — đổi phiên thì rỗng ngay, không hiện máy phiên cũ.
+  const sessionMachineList=sessionMachineState?.id===selectedId?sessionMachineState.list:EMPTY_MACHINES;
   const noteDraft=noteDraftState.id===(selected?.id??null)?noteDraftState.text:(selected?.note??"");
   const bonusDrafts=bonusDraftState.id===selectedId?bonusDraftState.value:EMPTY_DRAFTS;
   const recordNoteDrafts=recordNoteDraftState.id===selectedId?recordNoteDraftState.value:EMPTY_DRAFTS;
