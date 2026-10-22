@@ -2,21 +2,16 @@
  "lesson_id": 26,
  "lesson_title": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
  "item_id": 302,
- "generated_at": "2026-10-19",
+ "generated_at": "2026-10-21",
  "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 14,
+ "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 7,
-   "cong_thuc": 11
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "removed": [
-   {
-    "question": "Về biến thiên năng lượng theo thời gian của vật dao động điều hoà:",
-    "reason": "nghi_ngo: Nội dung bốn ý đúng theo bài. Riêng ý 2 có trường lạ \"type\":\"x\" làm sai cấu trúc dữ liệu, cần xoá."
-   }
-  ]
+  "removed": []
  },
  "questions": [
   {
@@ -27,15 +22,135 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Trong dao động điều hoà của con lắc lò xo, mốc thế năng được chọn ở đâu?",
-   "explanation": "Bài nêu mốc thế năng luôn ở vị trí cân bằng.",
+   "question": "Trong các bài tập năng lượng dao động điều hoà, mốc thế năng được chọn ở vị trí nào?",
    "options": [
-    "Vị trí biên",
+    "Vị trí biên dương",
     "Vị trí cân bằng",
-    "Vị trí lò xo dài nhất",
-    "Vị trí lò xo không biến dạng bất kể nằm ngang hay thẳng đứng"
+    "Điểm treo lò xo",
+    "Vị trí biên âm"
    ],
-   "answer": 1
+   "answer": 1,
+   "explanation": "Bài nêu rõ mốc thế năng luôn ở vị trí cân bằng (VTCB). Với con lắc đơn, VTCB chính là đáy quỹ đạo.",
+   "distractorNotes": {
+    "A": "Nhầm mốc thế năng với chỗ thế năng cực đại; ở biên dương thế năng lớn nhất nên không thể bằng 0.",
+    "C": "Lấy điểm treo làm mốc, quên rằng thế năng dao động luôn tính từ vị trí cân bằng mà vật dao động quanh.",
+    "D": "Biên âm cũng là chỗ thế năng cực đại; chọn biên làm mốc là nhầm mốc với vị trí xa VTCB nhất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc lò xo dao động điều hoà, bỏ qua ma sát. Đại lượng nào không đổi theo thời gian?",
+   "options": [
+    "Thế năng",
+    "Động năng",
+    "Cơ năng",
+    "Li độ"
+   ],
+   "answer": 2,
+   "explanation": "Khi bỏ ma sát, cơ năng $W=\\tfrac12 kA^2$ không đổi. Động năng và thế năng chỉ chuyển hoá qua lại cho nhau.",
+   "distractorNotes": {
+    "A": "Quên rằng thế năng $\\tfrac12 kx^2$ phụ thuộc li độ nên thay đổi liên tục khi vật chuyển động.",
+    "B": "Nhầm động năng với cơ năng; động năng cực đại ở VTCB và bằng 0 ở biên nên không thể không đổi.",
+    "D": "Nhầm đại lượng dao động với đại lượng bảo toàn; li độ biến thiên điều hoà theo thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc lò xo có độ cứng $k$, biên độ $A$. Thế năng của vật tại li độ $x$ là",
+   "options": [
+    "$W_t=\\tfrac12 kA^2$",
+    "$W_t=\\tfrac12 kx$",
+    "$W_t=kx^2$",
+    "$W_t=\\tfrac12 kx^2$"
+   ],
+   "answer": 3,
+   "explanation": "Thế năng tại li độ $x$ là $W_t=\\tfrac12 kx^2$, công thức dùng li độ $x$ chứ không dùng $A$.",
+   "distractorNotes": {
+    "A": "Thế biên độ $A$ vào chỗ li độ $x$ nên ra cơ năng, khi đó động năng tại mọi điểm thành 0.",
+    "B": "Quên bình phương li độ; thế năng đàn hồi tỉ lệ với $x^2$, không tỉ lệ thuận với $x$.",
+    "C": "Quên hệ số $\\tfrac12$ trong công thức thế năng đàn hồi của lò xo."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên lò xo và vật nặng, tăng biên độ dao động lên gấp 3 lần. Cơ năng của con lắc",
+   "options": [
+    "tăng 9 lần",
+    "tăng 3 lần",
+    "tăng $\\sqrt3$ lần",
+    "không thay đổi"
+   ],
+   "answer": 0,
+   "explanation": "$W=\\tfrac12 kA^2$ tỉ lệ với bình phương biên độ nên biên độ gấp 3 thì cơ năng gấp $3^2=9$ lần.",
+   "distractorNotes": {
+    "B": "Coi cơ năng tỉ lệ thuận với biên độ, quên rằng $W=\\tfrac12 kA^2$ có bình phương biên độ.",
+    "C": "Lấy căn bậc hai thay cho bình phương khi liên hệ cơ năng với biên độ.",
+    "D": "Nghĩ cùng lò xo và vật thì cơ năng như nhau, quên rằng kéo xa hơn là nạp thêm năng lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc lò xo độ cứng $k$, biên độ $A$. Động năng của vật tại li độ $x$ là",
+   "options": [
+    "$W_{\\text{đ}}=\\tfrac12 k(A-x)^2$",
+    "$W_{\\text{đ}}=\\tfrac12 k(A^2-x^2)$",
+    "$W_{\\text{đ}}=\\tfrac12 k(A^2+x^2)$",
+    "$W_{\\text{đ}}=\\tfrac12 k(x^2-A^2)$"
+   ],
+   "answer": 1,
+   "explanation": "$W_{\\text{đ}}=W-W_t=\\tfrac12 kA^2-\\tfrac12 kx^2=\\tfrac12 k(A^2-x^2)$.",
+   "distractorNotes": {
+    "A": "Lấy hiệu $A-x$ rồi mới bình phương, trong khi phải trừ hai năng lượng $\\tfrac12 kA^2$ và $\\tfrac12 kx^2$.",
+    "C": "Cộng thế năng vào cơ năng, trong khi động năng bằng cơ năng trừ thế năng.",
+    "D": "Trừ ngược chiều $x^2-A^2$, làm động năng ra âm vì $|x|\\le A$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động điều hoà với biên độ $A$. Tại vị trí động năng bằng $n$ lần thế năng, li độ của vật là",
+   "options": [
+    "$x=\\pm\\dfrac{A}{\\sqrt{n}}$",
+    "$x=\\pm\\dfrac{A}{n+1}$",
+    "$x=\\pm\\dfrac{A}{\\sqrt{n+1}}$",
+    "$x=\\pm A\\sqrt{\\dfrac{n}{n+1}}$"
+   ],
+   "answer": 2,
+   "explanation": "$W_{\\text{đ}}=nW_t$ thì $W=(n+1)W_t$, tức $A^2=(n+1)x^2$, nên $x=\\pm\\dfrac{A}{\\sqrt{n+1}}$.",
+   "distractorNotes": {
+    "A": "Chia cho $\\sqrt{n}$, quên cộng thêm 1 phần thế năng để có tổng $n+1$ phần.",
+    "B": "Quên lấy căn, trong khi năng lượng tỉ lệ với $x^2$ chứ không tỉ lệ với $x$.",
+    "D": "Đọc ngược đề: đây là li độ khi thế năng gấp $n$ lần động năng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -45,15 +160,89 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Thế năng của vật dao động điều hoà có chu kì $T/2$ thì li độ có chu kì là:",
-   "explanation": "Năng lượng có chu kì $T/2$ còn li độ có chu kì $T$.",
+   "question": "Vật dao động điều hoà với chu kì $T$. Động năng của vật biến thiên tuần hoàn với chu kì",
    "options": [
-    "$T/2$",
-    "$T/4$",
+    "$2T$",
     "$T$",
-    "$2T$"
+    "$T/4$",
+    "$T/2$"
    ],
-   "answer": 2
+   "answer": 3,
+   "explanation": "Động năng và thế năng có chu kì $T/2$, tần số $2f$, vì mỗi chu kì vật qua biên hai lần ($x=+A$ và $x=-A$).",
+   "distractorNotes": {
+    "A": "Đi ngược chiều, nghĩ năng lượng đổi chậm hơn li độ; thực ra động năng đổi gấp đôi nhịp dao động.",
+    "B": "Lấy chu kì của li độ làm chu kì năng lượng, quên $W_{\\text{đ}}$ và $W_t$ phụ thuộc $x^2$.",
+    "C": "Nhầm với khoảng thời gian giữa hai lần liên tiếp động năng bằng thế năng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động điều hoà với chu kì $T$. Khoảng thời gian giữa hai lần liên tiếp động năng bằng thế năng là",
+   "options": [
+    "$T/4$",
+    "$T/2$",
+    "$T/8$",
+    "$T$"
+   ],
+   "answer": 0,
+   "explanation": "$W_{\\text{đ}}=W_t$ tại $x=\\pm\\dfrac{A}{\\sqrt2}$, xảy ra bốn lần mỗi chu kì, hai lần liền nhau cách đều $T/4$.",
+   "distractorNotes": {
+    "B": "Nhầm với khoảng cách giữa hai đỉnh thế năng (chu kì năng lượng), không phải giữa hai giao điểm.",
+    "C": "Nhầm với thời gian từ biên hoặc VTCB tới giao điểm gần nhất.",
+    "D": "Bỏ qua việc mỗi chu kì có bốn lần động năng bằng thế năng, tại $x=\\pm\\dfrac{A}{\\sqrt2}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên đồ thị năng lượng theo li độ $x$ của vật dao động điều hoà, đường biểu diễn cơ năng $W$ là",
+   "options": [
+    "parabol có đáy ở VTCB",
+    "parabol úp có đỉnh ở VTCB",
+    "đường nằm ngang",
+    "đường thẳng qua gốc"
+   ],
+   "answer": 2,
+   "explanation": "Cơ năng không đổi nên là đường nằm ngang. $W_t$ là parabol đáy ở VTCB, $W_{\\text{đ}}$ là parabol úp.",
+   "distractorNotes": {
+    "A": "Nhầm đường cơ năng với đường thế năng, vốn là parabol có đáy ở VTCB.",
+    "B": "Nhầm đường cơ năng với đường động năng, vốn là parabol úp có đỉnh ở VTCB.",
+    "D": "Nghĩ cơ năng tăng theo li độ, quên rằng cơ năng không đổi khi bỏ ma sát."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc đơn khối lượng $m$, dây dài $l$, biên độ góc $\\alpha_0$, mốc thế năng ở đáy. Cơ năng của con lắc là",
+   "options": [
+    "$W=mgl\\cos\\alpha_0$",
+    "$W=mgl(1-\\cos\\alpha_0)$",
+    "$W=mgl(1+\\cos\\alpha_0)$",
+    "$W=mgl\\sin\\alpha_0$"
+   ],
+   "answer": 1,
+   "explanation": "Ở biên, vật cao hơn đáy $h=l(1-\\cos\\alpha_0)$ nên $W=mgh=mgl(1-\\cos\\alpha_0)$.",
+   "distractorNotes": {
+    "A": "Viết $\\cos\\alpha_0$ thay cho $1-\\cos\\alpha_0$, tức lấy nhầm độ cao so với điểm treo thay vì so với đáy.",
+    "C": "Sai dấu khi tính độ cao: biên cao hơn đáy một đoạn $l-l\\cos\\alpha_0$, không phải $l+l\\cos\\alpha_0$.",
+    "D": "Lấy độ lệch theo phương ngang $l\\sin\\alpha_0$ làm độ cao so với đáy."
+   }
   },
   {
    "type": "multiple_choice",
@@ -62,283 +251,300 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức $W\\approx\\tfrac12 mgl\\alpha_0^2$ của con lắc đơn chỉ dùng khi nào?",
-   "explanation": "Bài nêu công thức góc nhỏ (dưới khoảng $10^\\circ$) với $\\alpha_0$ tính bằng rad.",
+   "theorySection": 2,
+   "question": "Công thức gần đúng $W\\approx\\tfrac12 mgl\\alpha_0^2$ cho con lắc đơn được dùng khi nào?",
    "options": [
-    "Mọi góc, tính bằng độ",
-    "Góc nhỏ, $\\alpha_0$ tính bằng rad",
+    "Mọi góc, $\\alpha_0$ tính bằng độ",
+    "Góc nhỏ, $\\alpha_0$ tính bằng độ",
     "Góc lớn, $\\alpha_0$ tính bằng rad",
-    "Góc nhỏ, $\\alpha_0$ tính bằng độ"
+    "Góc nhỏ, $\\alpha_0$ tính bằng rad"
    ],
-   "answer": 1
+   "answer": 3,
+   "explanation": "Công thức góc nhỏ chỉ dùng khi góc khoảng $10^\\circ$ trở xuống và $\\alpha_0$ phải đổi ra rad.",
+   "distractorNotes": {
+    "A": "Quên đây là công thức xấp xỉ chỉ cho góc nhỏ, và thế góc bằng độ vào $\\alpha_0^2$ là sai đơn vị.",
+    "B": "Đúng điều kiện góc nhỏ nhưng thế số đo bằng độ vào $\\alpha_0^2$, kết quả sai rất xa.",
+    "C": "Áp xấp xỉ cho góc lớn; khi đó phải dùng công thức chính xác có $1-\\cos\\alpha_0$."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Khi bỏ qua ma sát, cơ năng của con lắc lò xo dao động điều hoà:",
-   "explanation": "Cơ năng $W=\\tfrac12 kA^2$ không đổi khi bỏ ma sát, đồ thị là đường nằm ngang.",
-   "options": [
-    "Biến thiên với chu kì $T$",
-    "Biến thiên với chu kì $T/2$",
-    "Không đổi",
-    "Bằng 0 ở VTCB"
-   ],
-   "answer": 2
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Đồ thị thế năng theo li độ $x$ của con lắc lò xo có dạng:",
-   "explanation": "$W_t=\\tfrac12 kx^2$ nên là parabol đáy ở VTCB.",
-   "options": [
-    "Đường thẳng qua gốc",
-    "Parabol đáy ở VTCB",
-    "Đường nằm ngang",
-    "Hình sin theo $x$"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Động năng của con lắc lò xo tại li độ $x$ là:",
-   "explanation": "$W_{\\text{đ}}=W-W_t=\\tfrac12 k(A^2-x^2)$.",
-   "options": [
-    "$\\tfrac12 k(A^2+x^2)$",
-    "$\\tfrac12 kx^2$",
-    "$\\tfrac12 k(A^2-x^2)$",
-    "$\\tfrac12 k(A-x)^2$"
-   ],
-   "answer": 2
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Khi $W_{\\text{đ}}=nW_t$, li độ của vật là:",
-   "explanation": "$W=(n+1)W_t$ nên $x=\\pm A/\\sqrt{n+1}$.",
-   "options": [
-    "$\\pm\\dfrac{A}{n+1}$",
-    "$\\pm\\dfrac{A}{\\sqrt{n}}$",
-    "$\\pm\\dfrac{A}{\\sqrt{n+1}}$",
-    "$\\pm A\\sqrt{\\dfrac{n}{n+1}}$"
-   ],
-   "answer": 2
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Cơ năng con lắc đơn với biên độ góc $\\alpha_0$ (mốc ở đáy) là:",
-   "explanation": "Độ cao biên $h=l(1-\\cos\\alpha_0)$ nên $W=mgl(1-\\cos\\alpha_0)$.",
-   "options": [
-    "$mgl\\cos\\alpha_0$",
-    "$mgl(1-\\cos\\alpha_0)$",
-    "$mgl(1+\\cos\\alpha_0)$",
-    "$mgl\\sin\\alpha_0$"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Biên độ dao động tăng gấp 3 thì cơ năng:",
-   "explanation": "$W\\propto A^2$ nên tăng $3^2=9$ lần.",
-   "options": [
-    "Tăng 3 lần",
-    "Tăng 9 lần",
-    "Tăng $\\sqrt3$ lần",
-    "Không đổi"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về vị trí $W_{\\text{đ}}=W_t$ của vật dao động điều hoà biên độ $A$:",
-   "explanation": "$x=\\pm A/\\sqrt2$, bốn lần mỗi chu kì, cách đều $T/4$.",
-   "statements": [
-    {
-     "text": "Xảy ra tại $x=\\pm A/\\sqrt2$.",
-     "answer": true
-    },
-    {
-     "text": "Xảy ra bốn lần mỗi chu kì.",
-     "answer": true
-    },
-    {
-     "text": "Hai lần liên tiếp cách nhau $T/2$.",
-     "answer": false
-    },
-    {
-     "text": "Hai lần liên tiếp cách nhau $T/4$.",
-     "answer": true
-    }
-   ]
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về cơ năng $W=\\tfrac12 kA^2$ của con lắc lò xo:",
-   "explanation": "Phải đổi cm sang m trước khi bình phương; $W\\propto A^2$.",
-   "statements": [
-    {
-     "text": "Cần đổi $A$ từ cm sang m trước khi bình phương.",
-     "answer": true
-    },
-    {
-     "text": "Cơ năng tỉ lệ thuận với $A$.",
-     "answer": false
-    },
-    {
-     "text": "Cơ năng tỉ lệ với bình phương biên độ.",
-     "answer": true
-    },
-    {
-     "text": "Thế $A$ bằng cm vào công thức vẫn cho kết quả đúng đơn vị J.",
-     "answer": false
-    }
-   ]
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về con lắc đơn có biên độ góc $\\alpha_0$, mốc thế năng ở đáy:",
-   "explanation": "$v=\\sqrt{2gl(\\cos\\alpha-\\cos\\alpha_0)}$; qua đáy $\\alpha=0$ cho $v_{\\max}$.",
-   "statements": [
-    {
-     "text": "$v=\\sqrt{2gl(\\cos\\alpha-\\cos\\alpha_0)}$.",
-     "answer": true
-    },
-    {
-     "text": "$v_{\\max}=\\sqrt{2gl(1-\\cos\\alpha_0)}$.",
-     "answer": true
-    },
-    {
-     "text": "Độ cao so với đáy là $h=l\\cos\\alpha$.",
-     "answer": false
-    },
-    {
-     "text": "Góc nhỏ: $v_{\\max}\\approx\\alpha_0\\sqrt{gl}$ với $\\alpha_0$ tính bằng rad.",
-     "answer": true
-    }
-   ]
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Vật dao động biên độ $8\\ \\text{cm}$ có $W_{\\text{đ}}=15W_t$. Li độ có độ lớn bao nhiêu cm?",
-   "explanation": "$n+1=16$, $x=8/\\sqrt{16}=2$ cm.",
-   "answer": "2"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Vật có biên độ $9\\ \\text{cm}$, $W_{\\text{đ}}=8W_t$. Độ lớn li độ bằng bao nhiêu cm?",
-   "explanation": "$n+1=9$, $x=9/3=3$ cm.",
-   "answer": "3"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Thế năng lặp lại sau mỗi $0{,}25\\ \\text{s}$. Chu kì dao động là bao nhiêu giây (viết số thập phân dùng dấu phẩy)?",
-   "explanation": "$T/2=0{,}25$ s nên $T=0{,}5$ s.",
-   "answer": "0,5"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Li độ dao động có tần số $5\\ \\text{Hz}$. Động năng biến thiên với tần số bao nhiêu Hz?",
-   "explanation": "Năng lượng có tần số $2f=10$ Hz.",
-   "answer": "10"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Lò xo $k=100\\ \\text{N/m}$, biên độ $5\\ \\text{cm}$, tại $x=3\\ \\text{cm}$. Động năng bằng bao nhiêu mJ?",
-   "explanation": "$W=125$ mJ, $W_t=45$ mJ, $W_{\\text{đ}}=80$ mJ.",
-   "answer": "80"
-  },
-  {
-   "type": "short_answer",
    "kind": "don_vi",
    "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Cơ năng $W=0{,}04\\ \\text{J}$ bằng bao nhiêu mJ?",
-   "explanation": "Từ J sang mJ nhân 1000: $0{,}04\\times1000=40$.",
-   "answer": "40"
+   "question": "Khi tính $W=\\tfrac12 kA^2$ ($k$ tính bằng N/m) mà để nguyên $A$ bằng cm rồi ghi kết quả là jun, kết quả",
+   "options": [
+    "lớn gấp $10^4$ lần giá trị đúng",
+    "lớn gấp $100$ lần giá trị đúng",
+    "nhỏ hơn $10^4$ lần giá trị đúng",
+    "vẫn bằng giá trị đúng"
+   ],
+   "answer": 0,
+   "explanation": "$1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$ nên để nguyên cm thì kết quả lớn gấp $10^4$ lần. Phải đổi mét trước rồi mới bình phương.",
+   "distractorNotes": {
+    "B": "Chỉ tính hệ số đổi cm sang m một lần, quên rằng $A$ bị bình phương nên hệ số cũng bình phương.",
+    "C": "Đảo chiều: số đo bằng cm lớn hơn số đo bằng m nên kết quả phải lớn hơn chứ không nhỏ hơn.",
+    "D": "Nghĩ đơn vị không ảnh hưởng, quên rằng công thức chỉ cho jun khi mọi đại lượng ở đơn vị SI."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc đơn dây dài $l$, biên độ góc $\\alpha_0$. Tốc độ của vật khi dây lệch góc $\\alpha$ là",
+   "options": [
+    "$v=\\sqrt{2gl(\\cos\\alpha_0-\\cos\\alpha)}$",
+    "$v=\\sqrt{2gl(1-\\cos\\alpha)}$",
+    "$v=\\sqrt{2gl(\\cos\\alpha-\\cos\\alpha_0)}$",
+    "$v=2gl(\\cos\\alpha-\\cos\\alpha_0)$"
+   ],
+   "answer": 2,
+   "explanation": "Bảo toàn cơ năng giữa biên và vị trí góc $\\alpha$: $\\tfrac12 mv^2=mgl(\\cos\\alpha-\\cos\\alpha_0)$, suy ra $v=\\sqrt{2gl(\\cos\\alpha-\\cos\\alpha_0)}$.",
+   "distractorNotes": {
+    "A": "Trừ ngược chiều; vì $\\cos\\alpha\\gt\\cos\\alpha_0$ nên biểu thức dưới căn bị âm.",
+    "B": "Nhầm với tốc độ qua đáy của vật thả từ góc $\\alpha$, bỏ mất biên độ góc $\\alpha_0$.",
+    "D": "Quên lấy căn; biểu thức này mới là $v^2$ rút ra từ bảo toàn cơ năng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động điều hoà có động năng cực đại khi vật ở vị trí nào?",
+   "options": [
+    "Vị trí cân bằng",
+    "Vị trí biên",
+    "Li độ $x=\\pm\\dfrac{A}{\\sqrt2}$",
+    "Li độ $x=\\pm\\dfrac{A}{2}$"
+   ],
+   "answer": 0,
+   "explanation": "Tại VTCB thế năng bằng 0 nên động năng bằng cơ năng, tốc độ đạt cực đại $v_{\\max}=\\omega A$.",
+   "distractorNotes": {
+    "B": "Nhầm chỗ thế năng cực đại với chỗ động năng cực đại; ở biên vật dừng tức thời, động năng bằng 0.",
+    "C": "Tại đó động năng chỉ bằng thế năng, mỗi loại bằng một nửa cơ năng, chưa cực đại.",
+    "D": "Tại đó vật vẫn còn thế năng nên động năng chưa bằng toàn bộ cơ năng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Một bạn ngồi trên xích đu ở sân trường. Lần đầu được đẩy nhẹ, lần sau được đẩy cho góc lệch lớn nhất gấp đôi (vẫn là góc nhỏ). Bỏ qua ma sát trong một lượt đu.",
+   "statements": [
+    {
+     "text": "Ở vị trí biên, xích đu dừng lại tức thời.",
+     "answer": true
+    },
+    {
+     "text": "Xích đu qua chỗ thấp nhất với tốc độ lớn nhất.",
+     "answer": true
+    },
+    {
+     "text": "Góc lệch lớn nhất gấp đôi thì cơ năng của xích đu cũng gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Cơ năng của xích đu ở hai lần đẩy bằng nhau vì vẫn là xích đu đó.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ở biên $v=0$, qua đáy tốc độ cực đại. Với góc nhỏ $W\\approx\\tfrac12 mgl\\alpha_0^2$ nên góc gấp đôi thì cơ năng gấp 4; đẩy mạnh hơn là nạp thêm năng lượng.",
+   "distractorNotes": {
+    "0": "Ở biên toàn bộ cơ năng là thế năng nên tốc độ bằng 0; coi ý này sai là nhầm biên với đáy.",
+    "1": "Chỗ thấp nhất thế năng nhỏ nhất nên động năng và tốc độ lớn nhất; không thể coi là sai.",
+    "2": "Coi cơ năng tỉ lệ thuận với góc là quên bình phương: $W\\approx\\tfrac12 mgl\\alpha_0^2$ nên góc gấp đôi thì cơ năng gấp 4.",
+    "3": "Cùng xích đu nhưng đẩy cho góc lớn hơn là đã nạp thêm năng lượng, nên cơ năng không thể bằng nhau."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét đồ thị động năng $W_{\\text{đ}}$, thế năng $W_t$ và cơ năng $W$ theo thời gian của một vật dao động điều hoà với chu kì $T$, tần số $f$.",
+   "statements": [
+    {
+     "text": "$W_{\\text{đ}}$ và $W_t$ biến thiên ngược pha nhau.",
+     "answer": true
+    },
+    {
+     "text": "$W_{\\text{đ}}$ và $W_t$ lên xuống quanh giá trị $\\tfrac12 W$.",
+     "answer": true
+    },
+    {
+     "text": "Thế năng biến thiên với chu kì $T$, bằng chu kì của li độ.",
+     "answer": false
+    },
+    {
+     "text": "Động năng biến thiên với tần số $f$, bằng tần số dao động.",
+     "answer": false
+    }
+   ],
+   "explanation": "$W_{\\text{đ}}$ và $W_t$ ngược pha, dao động quanh $\\tfrac12W$, có chu kì $T/2$ và tần số $2f$. Còn $W$ là đường nằm ngang.",
+   "distractorNotes": {
+    "0": "Tổng $W_{\\text{đ}}+W_t$ không đổi nên một đại lượng tăng thì đại lượng kia giảm; không thể coi là sai.",
+    "1": "Cả hai biến thiên từ 0 đến $W$ một cách đối xứng nên dao động quanh $\\tfrac12W$; ý này đúng.",
+    "2": "Coi là đúng là lấy chu kì li độ cho năng lượng; $W_t\\propto x^2$ cực đại ở cả $\\pm A$ nên chu kì là $T/2$.",
+    "3": "Coi là đúng là quên năng lượng biến đổi gấp đôi nhịp dao động, tần số động năng là $2f$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: treo quả nặng vào lò xo thẳng đứng, kéo xuống lần lượt các biên độ $A$ khác nhau (đo bằng thước sai số $\\pm1\\ \\text{mm}$) rồi thả. Quay chậm để đo tốc độ khi vật qua VTCB và tính $\\tfrac12 mv_{\\max}^2$.",
+   "statements": [
+    {
+     "text": "Tỉ số $W/A^2$ gần như không đổi chứng tỏ cơ năng tỉ lệ với bình phương biên độ.",
+     "answer": true
+    },
+    {
+     "text": "Lò xo thẳng đứng vẫn có $W=\\tfrac12 kA^2$ khi mốc ở VTCB và $A$ tính từ VTCB.",
+     "answer": true
+    },
+    {
+     "text": "Hàng đo với biên độ nhỏ nhất là hàng tin cậy nhất.",
+     "answer": false
+    },
+    {
+     "text": "Sai số tương đối của $A^2$ bằng đúng sai số tương đối của $A$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Kết quả đo xác nhận $W\\propto A^2$, kể cả với lò xo thẳng đứng. Biên độ nhỏ thì sai số tương đối của thước lớn, và sai số tương đối của $A^2$ gấp đôi của $A$.",
+   "distractorNotes": {
+    "0": "Tỉ số $W/A^2$ không đổi nghĩa là $W$ tỉ lệ thuận với $A^2$, đúng như $W=\\tfrac12 kA^2$.",
+    "1": "Coi là sai là nghĩ trọng lực làm hỏng công thức; bài khẳng định vẫn đúng khi mốc và $A$ lấy từ VTCB.",
+    "2": "Coi là đúng là bỏ qua sai số tương đối: sai 1 mm trên biên độ nhỏ chiếm tỉ lệ lớn nhất.",
+    "3": "Coi là đúng là quên rằng bình phương làm sai số tương đối của $A^2$ gấp đôi sai số của $A$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động điều hoà với biên độ $A$, tốc độ cực đại $v_{\\max}$. Xét vị trí động năng bằng $n$ lần thế năng ($W_{\\text{đ}}=nW_t$).",
+   "statements": [
+    {
+     "text": "Tại đó cơ năng $W=(n+1)W_t$.",
+     "answer": true
+    },
+    {
+     "text": "Tại đó tốc độ $|v|=v_{\\max}\\sqrt{\\dfrac{n}{n+1}}$.",
+     "answer": true
+    },
+    {
+     "text": "Tại đó li độ $x=\\pm\\dfrac{A}{\\sqrt{n}}$.",
+     "answer": false
+    },
+    {
+     "text": "Nếu đảo lại $W_t=nW_{\\text{đ}}$ thì $|v|=\\dfrac{v_{\\max}}{\\sqrt{n+1}}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "$n$ phần động, 1 phần thế, tổng $n+1$ phần: $x=\\pm\\dfrac{A}{\\sqrt{n+1}}$, $W_{\\text{đ}}=\\dfrac{n}{n+1}W$. Khi đảo lại thì $W_{\\text{đ}}=\\dfrac{W}{n+1}$.",
+   "distractorNotes": {
+    "0": "$W=W_{\\text{đ}}+W_t=nW_t+W_t=(n+1)W_t$, phép cộng trực tiếp nên không thể coi là sai.",
+    "1": "$W_{\\text{đ}}=\\dfrac{n}{n+1}W$ và tốc độ tỉ lệ căn của động năng, nên biểu thức này đúng.",
+    "2": "Coi là đúng là quên cộng 1 phần thế năng; phải chia cho $\\sqrt{n+1}$ chứ không phải $\\sqrt{n}$.",
+    "3": "Khi đảo lại, động năng chỉ chiếm 1 trong $n+1$ phần, lấy căn ra đúng $\\dfrac{v_{\\max}}{\\sqrt{n+1}}$; không thể coi là sai."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc đơn khối lượng $m$, dây dài $l$, biên độ góc $\\alpha_0$, mốc thế năng ở đáy (VTCB). Bỏ qua ma sát.",
+   "statements": [
+    {
+     "text": "Độ cao của vật so với đáy khi dây lệch góc $\\alpha$ là $h=l(1-\\cos\\alpha)$.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ khi qua đáy là $v_{\\max}=\\sqrt{2gl(1-\\cos\\alpha_0)}$.",
+     "answer": true
+    },
+    {
+     "text": "Cơ năng của con lắc là $W=mgl\\cos\\alpha_0$.",
+     "answer": false
+    },
+    {
+     "text": "Với góc nhỏ, $v_{\\max}\\approx\\alpha_0\\sqrt{gl}$ khi thế $\\alpha_0$ bằng độ.",
+     "answer": false
+    }
+   ],
+   "explanation": "$h=l(1-\\cos\\alpha)$, $W=mgl(1-\\cos\\alpha_0)$, $v_{\\max}=\\sqrt{2gl(1-\\cos\\alpha_0)}$. Công thức góc nhỏ đòi hỏi $\\alpha_0$ tính bằng rad.",
+   "distractorNotes": {
+    "0": "Vật thấp hơn điểm treo $l\\cos\\alpha$ nên cao hơn đáy $l-l\\cos\\alpha$; không thể coi là sai.",
+    "1": "Thế năng ở biên chuyển hết thành động năng ở đáy, cho đúng biểu thức này; không thể coi là sai.",
+    "2": "Coi là đúng là bỏ mất phần $1-$, lấy độ cao so với điểm treo thay vì so với đáy.",
+    "3": "Coi là đúng là quên điều kiện đơn vị: công thức góc nhỏ chỉ đúng khi $\\alpha_0$ đã đổi ra rad."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một học sinh tính năng lượng dao động của con lắc lò xo và con lắc đơn. Xét các nhận định về đơn vị và cách nhập số.",
+   "statements": [
+    {
+     "text": "Biên độ cho bằng cm phải đổi ra mét trước, rồi mới bình phương.",
+     "answer": true
+    },
+    {
+     "text": "$1\\ \\text{cm}^2=10^{-2}\\ \\text{m}^2$.",
+     "answer": false
+    },
+    {
+     "text": "Đổi từ J sang mJ thì nhân với 1000.",
+     "answer": true
+    },
+    {
+     "text": "Trong công thức góc nhỏ $W\\approx\\tfrac12 mgl\\alpha_0^2$ được nhập góc bằng độ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đổi mét trước, bình phương sau, vì $1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$. Đổi J sang mJ thì nhân 1000. Công thức góc nhỏ chỉ nhập góc bằng rad.",
+   "distractorNotes": {
+    "0": "Để nguyên cm rồi bình phương thì kết quả lớn gấp $10^4$ lần, nên bắt buộc đổi mét trước.",
+    "1": "Coi là đúng là đổi diện tích mà không bình phương hệ số: $(10^{-2})^2=10^{-4}$.",
+    "2": "1 J bằng 1000 mJ nên đổi J sang mJ là nhân 1000; coi là sai là đảo chiều phép đổi.",
+    "3": "Coi là đúng là lẫn với công thức có $\\cos$; chỉ công thức đó mới nhập độ, công thức góc nhỏ phải dùng rad."
+   }
   }
  ]
 }

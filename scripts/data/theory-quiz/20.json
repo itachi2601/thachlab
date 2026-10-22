@@ -2,23 +2,19 @@
  "lesson_id": 20,
  "lesson_title": "Bài 1. Dao động điều hoà",
  "item_id": 2,
- "generated_at": "2026-10-02",
- "generated_by": "claude-code",
- "quiz_min_correct": 14,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
    "kien_thuc": 10,
-   "cong_thuc": 8
+   "cong_thuc": 9
   },
   "removed": [
    {
-    "question": "Phương trình của dao động điều hoà là:",
-    "reason": "Phương án nhiễu là biểu thức bịa, sai thứ nguyên (A+ωt+φ cộng đại lượng khác loại, Aω cosφ...), không phản ánh lỗi học sinh thực tế."
-   },
-   {
-    "question": "Trong phương trình $x=A\\cos(\\omega t+\\varphi)$, đại lượng $\\varphi$ chính là pha của dao động tại thời điểm nào?",
-    "reason": "Phương án nhiễu vô nghĩa/sai thứ nguyên (t=ω, t=A); thêm nữa phát biểu 'φ là pha tại t=0' chỉ có ở phần tóm tắt, thân bài chỉ ghi 'φ là pha ban đầu'."
+    "question": "Vật dao động điều hoà theo $x = A\\cos(\\omega t + \\varphi)$. Li độ của vật lúc $t = 0$ là",
+    "reason": "nghi_ngo: GHI CHÚ: ghi chú B viết 'lúc t = 0 vật chỉ ở biên khi cosφ = 1' là sai vật lí, vì vật cũng ở biên âm khi cosφ = −1. Đáp án A thì đúng."
    }
   ]
  },
@@ -26,334 +22,511 @@
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Dao động cơ là chuyển động của vật như thế nào?",
-   "options": [
-    "Chuyển động qua lại quanh một vị trí cân bằng",
-    "Chuyển động thẳng đều theo một hướng",
-    "Chuyển động tròn đều quanh một điểm cố định",
-    "Chuyển động rơi tự do xuống mặt đất"
-   ],
-   "answer": 0,
-   "explanation": "Bài định nghĩa: vật chuyển động qua lại quanh một vị trí cân bằng gọi là dao động cơ."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Dao động của một vật là tuần hoàn khi:",
-   "options": [
-    "Sau những khoảng thời gian bằng nhau, vật trở lại vị trí cũ theo hướng cũ",
-    "Vật chỉ chuyển động theo một chiều nhất định",
-    "Vật luôn chuyển động với tốc độ không đổi",
-    "Vật dừng lại sau mỗi lần đi qua vị trí cân bằng"
-   ],
-   "answer": 0,
-   "explanation": "Dao động tuần hoàn: sau những khoảng thời gian bằng nhau, vật trở lại vị trí cũ theo hướng cũ."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Trong các dao động sau, dao động nào là dao động tuần hoàn?",
-   "options": [
-    "Dao động của con lắc đồng hồ",
-    "Dao động của cành cây đu đưa khi gió thổi",
-    "Dao động của lá cây rơi trong gió",
-    "Dao động của mặt nước khi ném viên sỏi xuống"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu con lắc đồng hồ dao động tuần hoàn, còn cành cây đu đưa khi gió thổi là không tuần hoàn."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Xét các phát biểu về dao động cơ và dao động tuần hoàn:",
-   "statements": [
-    {
-     "text": "Dây đàn ghi-ta rung động là một ví dụ về dao động cơ.",
-     "answer": true
-    },
-    {
-     "text": "Dao động cơ của một vật luôn là dao động tuần hoàn.",
-     "answer": false
-    },
-    {
-     "text": "Dao động của cành cây đu đưa khi gió thổi là dao động không tuần hoàn.",
-     "answer": true
-    },
-    {
-     "text": "Dao động tuần hoàn là dao động mà vật không bao giờ quay về vị trí cũ.",
-     "answer": false
-    }
-   ],
-   "explanation": "Dao động cơ có thể tuần hoàn hoặc không tuần hoàn; tuần hoàn thì vật trở lại vị trí cũ theo hướng cũ sau những khoảng thời gian bằng nhau."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Đọc đồ thị li độ – thời gian",
+   "topic": "Bài 1. Dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Đồ thị li độ – thời gian của con lắc lò xo dao động có dạng:",
+   "question": "Dao động cơ là",
    "options": [
-    "Đường cong hình sin",
-    "Đường thẳng đi qua gốc toạ độ",
-    "Đường parabol",
-    "Đường thẳng song song với trục thời gian"
+    "chuyển động thẳng đều trên một đoạn đường dài",
+    "chuyển động qua lại quanh một vị trí cân bằng",
+    "chuyển động có tốc độ không đổi theo thời gian",
+    "chuyển động quay đều theo một đường tròn cố định"
    ],
-   "answer": 0,
-   "explanation": "Theo dõi vị trí quả cầu theo thời gian ta được đường cong có dạng hình sin."
+   "answer": 1,
+   "explanation": "Theo bài, dao động cơ là chuyển động qua lại quanh một vị trí cân bằng, ví dụ dây đàn, pít-tông, cái đu.",
+   "distractorNotes": {
+    "A": "Chuyển động thẳng đều không đi qua lại quanh vị trí cân bằng nào nên không phải dao động.",
+    "C": "Dao động không đòi hỏi tốc độ không đổi; cái đu lúc nhanh lúc chậm vẫn là dao động.",
+    "D": "Quay tròn đều không phải chuyển động qua lại; chỉ hình chiếu của nó mới là dao động."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "topic": "Bài 1. Dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Dao động điều hoà là dao động tuần hoàn:",
-   "options": [
-    "Đơn giản nhất",
-    "Có biên độ thay đổi theo thời gian",
-    "Có chu kì thay đổi theo thời gian",
-    "Phức tạp nhất"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu: dao động tuần hoàn đơn giản nhất là dao động điều hoà."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Đọc đồ thị li độ – thời gian",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Xét đồ thị li độ – thời gian của con lắc lò xo trong bài (gốc toạ độ $x=0$ tại vị trí cân bằng):",
-   "statements": [
-    {
-     "text": "Đồ thị có dạng đường cong hình sin.",
-     "answer": true
-    },
-    {
-     "text": "Gốc toạ độ $x=0$ được chọn tại vị trí cân bằng của quả cầu.",
-     "answer": true
-    },
-    {
-     "text": "Gốc thời gian $t=0$ bắt buộc phải là lúc vật ở vị trí biên.",
-     "answer": false
-    },
-    {
-     "text": "Li độ của vật chỉ nhận giá trị dương.",
-     "answer": false
-    }
+   "question": "Dao động tuần hoàn là dao động mà sau những khoảng thời gian bằng nhau, vật",
+   "options": [
+    "trở lại vị trí cân bằng với tốc độ lớn nhất",
+    "đi được những quãng đường luôn tăng dần",
+    "trở lại vị trí cũ nhưng theo hướng ngược lại",
+    "trở lại vị trí cũ theo hướng cũ"
    ],
-   "explanation": "Gốc thời gian được chọn là lúc bắt đầu quan sát; đồ thị hình sin nên li độ nhận cả giá trị dương và âm."
+   "answer": 3,
+   "explanation": "Bài định nghĩa: dao động tuần hoàn là sau những khoảng thời gian bằng nhau, vật trở lại vị trí cũ theo hướng cũ.",
+   "distractorNotes": {
+    "A": "Định nghĩa không gắn với vị trí cân bằng hay tốc độ lớn nhất, chỉ cần lặp lại trạng thái cũ.",
+    "B": "Quãng đường tăng dần không nói gì về sự lặp lại đều đặn của chuyển động.",
+    "C": "Về chỗ cũ nhưng ngược hướng là chưa lặp lại trạng thái; phải cùng hướng cũ."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "hien_tuong",
-   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "topic": "Bài 1. Dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Điểm M chuyển động tròn đều trên đường tròn tâm O. Hình chiếu Q của M lên một trục Ox nằm trong mặt phẳng quỹ đạo sẽ:",
+   "theorySection": 1,
+   "question": "Chuyển động nào sau đây là dao động tuần hoàn?",
    "options": [
-    "Dao động điều hoà quanh O",
-    "Chuyển động thẳng đều",
-    "Đứng yên tại O",
-    "Chuyển động tròn đều quanh O"
+    "Con lắc đồng hồ đang chạy đều",
+    "Cành cây đu đưa khi có gió thổi",
+    "Cái đu được đẩy mạnh dần rồi yếu dần",
+    "Ô tô chạy thẳng đều trên đường"
    ],
    "answer": 0,
-   "explanation": "Khi M chuyển động tròn đều thì điểm Q dao động điều hoà quanh O."
+   "explanation": "Bài nêu con lắc đồng hồ lặp lại đều đặn nên tuần hoàn; cành cây trong gió và cái đu mạnh dần rồi yếu dần không lặp đều.",
+   "distractorNotes": {
+    "B": "Cành cây trong gió lúc mạnh lúc yếu, không lặp lại sau những khoảng thời gian bằng nhau.",
+    "C": "Chuyển động thay đổi mạnh yếu nên không lặp lại đều đặn, dù vẫn đi qua lại.",
+    "D": "Ô tô chạy thẳng đều không đi qua lại quanh vị trí cân bằng nên không phải dao động."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Điểm M chuyển động tròn đều trên đường tròn tâm O bán kính $OM=A$. Biên độ dao động điều hoà của hình chiếu Q của M bằng:",
-   "options": [
-    "Bán kính $OM$ của đường tròn",
-    "Hai lần bán kính đường tròn",
-    "Một nửa bán kính đường tròn",
-    "Chu vi của đường tròn"
-   ],
-   "answer": 0,
-   "explanation": "Phương trình của Q là $x=OM\\cos(\\omega t+\\varphi)$ nên biên độ bằng $OM$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dieu_kien",
-   "topic": "Viết phương trình dao động điều hoà",
+   "topic": "Bài 1. Dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Trong phương trình $x=A\\cos(\\omega t+\\varphi)$, có bao nhiêu đại lượng ($A$, $\\omega$, $\\varphi$) là hằng số?",
-   "answer": "3",
-   "explanation": "Bài nêu $A$, $\\omega$, $\\varphi$ đều là các hằng số, nên có 3 đại lượng."
+   "theorySection": 1,
+   "question": "Dao động điều hoà là",
+   "options": [
+    "dao động có biên độ giảm dần theo thời gian",
+    "dao động mà li độ luôn có giá trị dương",
+    "dao động tuần hoàn đơn giản nhất, mô tả bằng hàm côsin",
+    "dao động không lặp lại quanh vị trí cân bằng"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu dao động điều hoà là dao động tuần hoàn đơn giản nhất, mô tả bằng phương trình $x = A\\cos(\\omega t + \\varphi)$.",
+   "distractorNotes": {
+    "A": "Biên độ dao động điều hoà không đổi trong quá trình dao động, không giảm dần.",
+    "B": "Li độ đo từ vị trí cân bằng nên có thể âm khi vật ở phía âm.",
+    "D": "Dao động điều hoà là dao động tuần hoàn nên phải lặp lại đều đặn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phương trình của dao động điều hoà là",
+   "options": [
+    "$x = A\\cos(\\omega t + \\varphi)$",
+    "$x = A\\cos(\\omega + \\varphi t)$",
+    "$x = \\omega\\cos(A t + \\varphi)$",
+    "$x = A t\\cos(\\omega t + \\varphi)$"
+   ],
+   "answer": 0,
+   "explanation": "Bài cho phương trình dao động điều hoà $x = A\\cos(\\omega t + \\varphi)$ với $A$ biên độ, $\\omega$ tần số góc, $\\varphi$ pha ban đầu.",
+   "distractorNotes": {
+    "B": "Thời gian phải nhân với tần số góc, không nhân với pha ban đầu.",
+    "C": "Đảo vị trí biên độ và tần số góc; biên độ đứng trước côsin.",
+    "D": "Nhân thêm $t$ ở trước làm li độ lớn dần, mâu thuẫn với biên độ không đổi."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "don_vi",
-   "topic": "Viết phương trình dao động điều hoà",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong phương trình $x = A\\cos(\\omega t + \\varphi)$, đơn vị của tần số góc $\\omega$ là",
+   "options": [
+    "rad",
+    "s",
+    "m/s",
+    "rad/s"
+   ],
+   "answer": 3,
+   "explanation": "Bài ghi tần số góc $\\omega$ có đơn vị rad/s, để $\\omega t$ có đơn vị rad như pha.",
+   "distractorNotes": {
+    "A": "rad là đơn vị của pha và pha ban đầu, không phải tần số góc.",
+    "B": "Giây là đơn vị thời gian, như chu kì, không phải tần số góc.",
+    "C": "m/s là đơn vị tốc độ dài, không dùng cho tần số góc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 1. Dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Trong phương trình $x=A\\cos(\\omega t+\\varphi)$, đại lượng $(\\omega t+\\varphi)$ được gọi là:",
+   "question": "Li độ $x$ của vật dao động điều hoà là",
    "options": [
-    "Pha của dao động ở thời điểm $t$",
-    "Biên độ dao động",
-    "Li độ dao động",
-    "Pha ban đầu"
+    "quãng đường vật đã đi kể từ lúc $t = 0$",
+    "vị trí của vật so với vị trí cân bằng lúc $t$",
+    "khoảng cách lớn nhất từ vật tới vị trí cân bằng",
+    "thời gian để vật lặp lại một dao động"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu li độ là vị trí của vật tại thời điểm $t$, đo từ vị trí cân bằng, có thể âm; không phải quãng đường.",
+   "distractorNotes": {
+    "A": "Bẫy kinh điển: quãng đường luôn dương và tăng dần, còn li độ là vị trí có dấu.",
+    "C": "Khoảng cách lớn nhất đó là biên độ $A$, không phải li độ.",
+    "D": "Thời gian lặp lại một dao động là chu kì $T$, không phải li độ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong phương trình $x = A\\cos(\\omega t + \\varphi)$, đại lượng xác định trạng thái dao động của vật ở thời điểm $t$ là",
+   "options": [
+    "$A$",
+    "$\\omega$",
+    "$\\omega t + \\varphi$",
+    "$\\varphi$"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu pha dao động $(\\omega t + \\varphi)$ xác định trạng thái dao động ở thời điểm $t$.",
+   "distractorNotes": {
+    "A": "Biên độ không đổi nên không phân biệt được trạng thái ở các thời điểm khác nhau.",
+    "B": "Tần số góc đặc trưng cho tốc độ dao động, không cho trạng thái lúc $t$.",
+    "D": "Pha ban đầu chỉ cho trạng thái lúc $t = 0$, không phải mọi thời điểm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Biên độ của dao động $x = -5\\cos(4t)$ cm là",
+   "options": [
+    "$-5$ cm",
+    "$5$ cm",
+    "$10$ cm",
+    "$4$ cm"
+   ],
+   "answer": 1,
+   "explanation": "Biên độ luôn dương; dấu trừ đưa vào pha: $-\\cos\\alpha = \\cos(\\alpha + \\pi)$, nên $A = 5$ cm.",
+   "distractorNotes": {
+    "A": "Biên độ là giá trị lớn nhất của li độ nên luôn dương; dấu trừ thuộc về pha.",
+    "C": "Nhầm biên độ với khoảng cách giữa hai biên $-A$ và $A$.",
+    "D": "Số 4 là tần số góc đứng trong côsin, không phải biên độ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động điều hoà theo $x = A\\cos(\\omega t + \\varphi)$. Nếu giữ nguyên $\\omega$ và $\\varphi$, tăng $A$ lên gấp đôi thì giá trị lớn nhất của li độ",
+   "options": [
+    "giảm đi một nửa",
+    "không thay đổi",
+    "tăng lên gấp bốn",
+    "tăng lên gấp đôi"
+   ],
+   "answer": 3,
+   "explanation": "Giá trị lớn nhất của li độ chính là biên độ $A$, nên $A$ tăng gấp đôi thì li độ lớn nhất tăng gấp đôi.",
+   "distractorNotes": {
+    "A": "Li độ lớn nhất bằng $A$ nên tỉ lệ thuận với $A$, không thể giảm.",
+    "B": "Li độ lớn nhất chính là $A$, thay đổi $A$ thì nó thay đổi theo.",
+    "C": "Thêm bình phương không có cơ sở; li độ lớn nhất bằng $A$, không phải $A^2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đồ thị li độ theo thời gian của một vật dao động điều hoà có dạng",
+   "options": [
+    "đường thẳng đi qua gốc toạ độ",
+    "đường parabol có đỉnh ở gốc",
+    "đường hình sin",
+    "đường tròn bán kính bằng $A$"
+   ],
+   "answer": 2,
+   "explanation": "Thí nghiệm gắn bút lên vật vẽ ra đường lượn sóng đều: đồ thị li độ – thời gian là đường hình sin.",
+   "distractorNotes": {
+    "A": "Đường thẳng ứng với li độ tăng mãi, mâu thuẫn với chuyển động qua lại.",
+    "B": "Parabol không lặp lại theo thời gian, trái với tính tuần hoàn.",
+    "D": "Đường tròn là quỹ đạo của điểm M quay đều, không phải đồ thị li độ – thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điểm M chuyển động tròn đều trên đường tròn bán kính $A$ với tốc độ góc $\\omega$. Hình chiếu của M lên một đường kính dao động điều hoà với",
+   "options": [
+    "biên độ $A$ và tần số góc $\\omega$",
+    "biên độ $2A$ và tần số góc $\\omega$",
+    "biên độ $A$ và tần số góc $2\\omega$",
+    "biên độ $\\dfrac{A}{2}$ và tần số góc $\\omega$"
    ],
    "answer": 0,
-   "explanation": "$(\\omega t+\\varphi)$ là pha của dao động ở thời điểm $t$; $\\varphi$ mới là pha ban đầu."
+   "explanation": "Bài nêu dao động điều hoà là hình chiếu của chuyển động tròn đều với bán kính bằng $A$ và tốc độ góc bằng $\\omega$.",
+   "distractorNotes": {
+    "B": "Nhầm biên độ với đường kính; biên độ bằng bán kính đường tròn.",
+    "C": "Hình chiếu lặp lại cùng nhịp với M nên tần số góc bằng đúng $\\omega$.",
+    "D": "Hình chiếu chạy từ $-A$ đến $A$, nên biên độ bằng cả bán kính."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Điểm M quay đều một vòng hết thời gian $T$. Hình chiếu Q của M lên đường kính đi từ biên này sang biên kia hết thời gian",
+   "options": [
+    "$T$",
+    "$2T$",
+    "$\\dfrac{T}{4}$",
+    "$\\dfrac{T}{2}$"
+   ],
+   "answer": 3,
+   "explanation": "Q đi từ biên này sang biên kia ứng với M quay nửa vòng, nên mất $\\dfrac{T}{2}$.",
+   "distractorNotes": {
+    "A": "Hết $T$ thì M quay đủ vòng, Q đã đi rồi quay về biên cũ.",
+    "B": "$2T$ ứng với hai vòng quay, quá dài cho nửa dao động.",
+    "C": "$\\dfrac{T}{4}$ chỉ đưa Q từ biên tới vị trí cân bằng, chưa sang biên kia."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Một em ngồi trên đu, bạn đẩy nhẹ. Đu đi tới, dừng lại, quay về, sang phía bên kia; cứ 3 giây đu lại về đúng chỗ cũ và đi theo hướng cũ. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Chuyển động của đu là một dao động cơ.",
+     "answer": true
+    },
+    {
+     "text": "Chuyển động của đu là tuần hoàn vì lặp lại sau những khoảng thời gian bằng nhau.",
+     "answer": true
+    },
+    {
+     "text": "Đu chỉ dao động tuần hoàn khi nó đi thật nhanh.",
+     "answer": false
+    },
+    {
+     "text": "Nếu đu được đẩy mạnh dần rồi yếu dần thì chuyển động vẫn là tuần hoàn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đu đi qua lại quanh VTCB nên là dao động cơ; lặp lại sau mỗi 3 s nên tuần hoàn. Tuần hoàn không phụ thuộc nhanh chậm; đẩy mạnh yếu thất thường thì không lặp đều nên không tuần hoàn.",
+   "distractorNotes": {
+    "0": "Đu đi qua lại quanh chỗ đứng yên ban đầu, đúng định nghĩa dao động cơ nên không thể coi là sai.",
+    "1": "Cứ 3 giây đu về chỗ cũ theo hướng cũ, đúng định nghĩa tuần hoàn nên không thể coi là sai.",
+    "2": "Tuần hoàn chỉ cần lặp lại sau những khoảng thời gian bằng nhau; nhanh hay chậm không quan trọng.",
+    "3": "Mạnh dần rồi yếu dần thì chuyển động không lặp lại đều đặn, nên không tuần hoàn."
+   }
   },
   {
    "type": "true_false",
    "kind": "cong_thuc",
-   "topic": "Viết phương trình dao động điều hoà",
+   "topic": "Bài 1. Dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Xét phương trình $x=A\\cos(\\omega t+\\varphi)$ của dao động điều hoà:",
+   "theorySection": 1,
+   "question": "Một vật dao động điều hoà theo phương trình $x = 5\\cos\\left(2\\pi t + \\dfrac{\\pi}{3}\\right)$ cm. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$x$ là li độ của vật tại thời điểm $t$.",
+     "text": "Biên độ dao động là $5$ cm.",
      "answer": true
     },
     {
-     "text": "$A$ là biên độ dao động.",
+     "text": "Tần số góc là $2\\pi$ rad/s.",
      "answer": true
     },
     {
-     "text": "$\\varphi$ là pha của dao động ở thời điểm $t$.",
+     "text": "Pha ban đầu của dao động là $2\\pi t + \\dfrac{\\pi}{3}$.",
      "answer": false
     },
     {
-     "text": "$A$, $\\omega$, $\\varphi$ là các hằng số.",
-     "answer": true
+     "text": "Lúc $t = 0$, vật ở biên dương, li độ bằng $5$ cm.",
+     "answer": false
     }
    ],
-   "explanation": "$\\varphi$ là pha ban đầu; pha ở thời điểm $t$ là $(\\omega t+\\varphi)$."
+   "explanation": "Đối chiếu với $x = A\\cos(\\omega t + \\varphi)$: $A = 5$ cm, $\\omega = 2\\pi$ rad/s, $\\varphi = \\dfrac{\\pi}{3}$. Lúc $t = 0$, $x = 5\\cos\\dfrac{\\pi}{3}$, nhỏ hơn 5 cm.",
+   "distractorNotes": {
+    "0": "Số đứng trước côsin chính là biên độ, và nó dương nên ý này đúng.",
+    "1": "Hệ số nhân với $t$ trong côsin là tần số góc, nên ý này đúng.",
+    "2": "$2\\pi t + \\dfrac{\\pi}{3}$ là pha dao động; pha ban đầu chỉ là $\\dfrac{\\pi}{3}$, pha lúc $t = 0$.",
+    "3": "Lúc $t = 0$, $x = A\\cos\\varphi$ với $\\cos\\dfrac{\\pi}{3}$ khác 1, nên vật chưa ở biên."
+   }
   },
   {
    "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Viết phương trình dao động điều hoà",
+   "kind": "hien_tuong",
+   "topic": "Bài 1. Dao động điều hoà",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Điểm M chuyển động tròn đều với tốc độ góc $\\omega$ trên đường tròn tâm O bán kính $OM=A$; Q là hình chiếu của M lên trục Ox. Xét các phát biểu:",
+   "theorySection": 1,
+   "question": "Thí nghiệm con lắc lò xo: một vật gắn vào lò xo đang đứng yên. Kéo vật lệch ra rồi thả tay, vật đi qua lại hai bên chỗ đứng yên ban đầu O, giữa hai biên $-A$ và $+A$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Q dao động điều hoà quanh O.",
+     "text": "Chỗ vật đứng yên ban đầu O là vị trí cân bằng.",
      "answer": true
     },
     {
-     "text": "Li độ của Q có dạng $x=OM\\cos(\\omega t+\\varphi)$.",
+     "text": "Khi vật ở O, li độ của vật bằng 0.",
      "answer": true
     },
     {
-     "text": "Biên độ dao động của Q bằng $OM$.",
-     "answer": true
+     "text": "Khi vật ở biên phía âm, li độ của vật bằng $A$.",
+     "answer": false
     },
     {
-     "text": "Biên độ dao động của Q bằng $2\\,OM$.",
+     "text": "Li độ của vật cho biết quãng đường vật đã đi được từ lúc thả tay.",
      "answer": false
     }
    ],
-   "explanation": "Q có $x=OM\\cos(\\omega t+\\varphi)$ nên biên độ bằng $OM=A$, không phải $2\\,OM$."
+   "explanation": "O là VTCB, li độ đo từ O nên tại O thì $x = 0$, tại biên âm $x = -A$. Li độ là vị trí có dấu, không phải quãng đường.",
+   "distractorNotes": {
+    "0": "Bài rút ra từ thí nghiệm: chỗ đứng yên ban đầu chính là vị trí cân bằng, nên ý đúng.",
+    "1": "Li độ đo từ vị trí cân bằng, vật ở đúng O thì li độ bằng 0.",
+    "2": "Li độ có dấu; biên phía âm nằm bên âm của O nên $x = -A$, không phải $A$.",
+    "3": "Quãng đường luôn tăng và dương, còn li độ là vị trí so với O, có thể âm."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Viết phương trình dao động điều hoà",
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 1. Dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Điểm M chuyển động tròn đều trên đường tròn bán kính $7$ cm. Hình chiếu Q của M dao động điều hoà với biên độ bao nhiêu cm?",
-   "answer": "7",
-   "explanation": "Biên độ của Q bằng bán kính $OM=7$ cm."
+   "theorySection": 1,
+   "question": "Gắn một cây bút lên vật dao động điều hoà, kéo tờ giấy dài chạy đều ngang qua đầu bút, nét bút vẽ ra đồ thị li độ theo thời gian. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Nét bút vẽ ra một đường hình sin.",
+     "answer": true
+    },
+    {
+     "text": "Độ cao lớn nhất của nét bút so với trục thời gian ứng với biên độ $A$.",
+     "answer": true
+    },
+    {
+     "text": "Khoảng thời gian để đồ thị lặp lại một dao động là chu kì $T$.",
+     "answer": true
+    },
+    {
+     "text": "Đổi pha ban đầu $\\varphi$ thì biên độ của đồ thị thay đổi.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đồ thị li độ – thời gian là đường hình sin, biên độ $A$ là li độ lớn nhất, $T$ là thời gian lặp lại một dao động. Đổi $\\varphi$ chỉ làm đồ thị dịch sang trái hoặc phải.",
+   "distractorNotes": {
+    "0": "Thí nghiệm trong bài cho đường lượn sóng đều, chính là đường hình sin, nên ý đúng.",
+    "1": "Biên độ là giá trị lớn nhất của li độ, đúng là đỉnh cao nhất của đồ thị.",
+    "2": "Bài định nghĩa $T$ là khoảng thời gian để vật lặp lại một dao động, nên ý đúng.",
+    "3": "Pha ban đầu không ảnh hưởng biên độ; đổi $\\varphi$ đồ thị giữ hình dạng, chỉ dịch ngang."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Một vật dao động điều hoà theo phương trình $x=8\\cos(2t+0{,}5)$ (cm). Biên độ dao động bằng bao nhiêu cm?",
-   "answer": "8",
-   "explanation": "So sánh với $x=A\\cos(\\omega t+\\varphi)$ được $A=8$ cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Viết phương trình dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Một vật dao động điều hoà theo phương trình $x=6\\cos(4t)$ (cm). Li độ của vật tại $t=0$ bằng bao nhiêu cm?",
-   "answer": "6",
-   "explanation": "Tại $t=0$: $x=6\\cos 0=6$ cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Viết phương trình dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Vật dao động điều hoà theo phương trình $x=2\\cos(3t+1)$. Pha của dao động tại thời điểm $t=2$ s bằng bao nhiêu rad?",
-   "answer": "7",
-   "explanation": "Pha $=\\omega t+\\varphi=3\\cdot 2+1=7$ rad."
-  },
-  {
-   "type": "short_answer",
+   "type": "true_false",
    "kind": "bien_doi",
-   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "topic": "Bài 1. Dao động điều hoà",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Vật dao động điều hoà theo phương trình $x=4\\cos(5t+2)$. Pha ban đầu $\\varphi$ bằng bao nhiêu rad?",
-   "answer": "2",
-   "explanation": "So sánh với $x=A\\cos(\\omega t+\\varphi)$ được $\\varphi=2$ rad."
+   "question": "Một vật dao động điều hoà theo phương trình $x = -4\\cos(\\pi t)$ cm. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Biên độ dao động là $-4$ cm.",
+     "answer": false
+    },
+    {
+     "text": "Phương trình có thể viết lại thành $x = 4\\cos(\\pi t + \\pi)$ cm.",
+     "answer": true
+    },
+    {
+     "text": "Biên độ của dao động điều hoà luôn là số dương.",
+     "answer": true
+    },
+    {
+     "text": "Sau đúng một chu kì kể từ lúc $t = 0$, li độ của vật luôn bằng 0.",
+     "answer": false
+    }
+   ],
+   "explanation": "Biên độ luôn dương, dấu trừ đưa vào pha: $-\\cos\\alpha = \\cos(\\alpha + \\pi)$, nên $A = 4$ cm. Hết một chu kì vật trở về đúng trạng thái cũ chứ không phải về $x = 0$.",
+   "distractorNotes": {
+    "0": "Biên độ là giá trị lớn nhất của li độ nên không thể âm; dấu trừ nằm ở pha.",
+    "1": "Dùng $-\\cos\\alpha = \\cos(\\alpha + \\pi)$ cho đúng dạng này, nên ý đúng.",
+    "2": "Bài khẳng định $A \\gt 0$, không đổi trong quá trình dao động, nên ý đúng.",
+    "3": "Hết một chu kì vật về trạng thái lúc $t = 0$, tức $x = -4$ cm ở đây, không phải 0."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 1. Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một vật dao động điều hoà theo phương trình $x = 6\\cos\\left(5\\pi t + \\dfrac{\\pi}{2}\\right)$ cm ($t$ tính bằng giây). Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Pha ban đầu của dao động là $\\dfrac{\\pi}{2}$ rad.",
+     "answer": true
+    },
+    {
+     "text": "Lúc $t = 0$, vật đang ở vị trí cân bằng.",
+     "answer": true
+    },
+    {
+     "text": "Lúc $t = 0{,}1$ s, pha dao động bằng $\\pi$ và vật ở biên phía âm.",
+     "answer": true
+    },
+    {
+     "text": "Khi thay số vào phương trình, phải để máy tính ở chế độ độ.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\varphi = \\dfrac{\\pi}{2}$ nên lúc $t = 0$, $x = 6\\cos\\dfrac{\\pi}{2} = 0$. Lúc $t = 0{,}1$ s pha bằng $\\pi$, $x = -6$ cm. Góc $\\omega t + \\varphi$ đo bằng rad nên máy tính để chế độ radian.",
+   "distractorNotes": {
+    "0": "Đối chiếu với $x = A\\cos(\\omega t + \\varphi)$, hằng số cộng vào là $\\dfrac{\\pi}{2}$, nên ý đúng.",
+    "1": "Lúc $t = 0$, $x = A\\cos\\dfrac{\\pi}{2} = 0$, đúng là vị trí cân bằng.",
+    "2": "Pha $5\\pi \\cdot 0{,}1 + \\dfrac{\\pi}{2} = \\pi$, $\\cos\\pi = -1$ nên $x = -A$, ý đúng.",
+    "3": "$\\omega$ và $\\varphi$ đo bằng rad, để chế độ độ sẽ cho côsin sai."
+   }
   }
  ]
 }

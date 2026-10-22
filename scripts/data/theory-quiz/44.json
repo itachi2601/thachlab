@@ -1,386 +1,532 @@
 {
-  "lesson_id": 44,
-  "lesson_title": "Bài 25. Năng lượng điện và công suất điện",
-  "item_id": 213,
-  "generated_at": "2026-10-02",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 44,
+ "lesson_title": "Bài 25. Năng lượng điện và công suất điện",
+ "item_id": 213,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 9
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Năng lượng điện tiêu thụ của một đoạn mạch bằng đại lượng nào sau đây?",
-      "options": [
-        "Công của lực điện thực hiện khi dịch chuyển các điện tích qua đoạn mạch",
-        "Điện trở của đoạn mạch",
-        "Cường độ dòng điện chạy qua đoạn mạch",
-        "Công suất định mức của đoạn mạch"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu: năng lượng điện tiêu thụ bằng công của lực điện khi dịch chuyển các điện tích qua đoạn mạch."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Thiết bị dùng để đo năng lượng điện tiêu thụ là",
-      "options": [
-        "ampe kế",
-        "công tơ điện",
-        "vôn kế",
-        "oát kế định mức"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu năng lượng điện tiêu thụ được đo bằng công tơ điện."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công suất điện của một đoạn mạch là",
-      "options": [
-        "năng lượng điện mà đoạn mạch tiêu thụ trong một đơn vị thời gian",
-        "điện lượng chạy qua đoạn mạch trong một đơn vị thời gian",
-        "hiệu điện thế giữa hai đầu đoạn mạch",
-        "tổng điện trở của đoạn mạch"
-      ],
-      "answer": 0,
-      "explanation": "Theo bài, công suất điện là năng lượng điện đoạn mạch tiêu thụ trong một đơn vị thời gian."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trên nhãn thiết bị ghi 220 V – 100 W. Công suất 100 W là công suất thiết bị tiêu thụ khi",
-      "options": [
-        "hoạt động bình thường, đúng hiệu điện thế định mức 220 V",
-        "mắc vào hiệu điện thế bất kì",
-        "bị đoản mạch",
-        "không có dòng điện chạy qua"
-      ],
-      "answer": 0,
-      "explanation": "Công suất định mức là công suất khi thiết bị hoạt động bình thường, đúng hiệu điện thế định mức."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Hiệu suất nguồn điện, an toàn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Hiệu suất của nguồn điện là tỉ số giữa",
-      "options": [
-        "công có ích (trên mạch ngoài) và công toàn phần của nguồn",
-        "công toàn phần và công có ích của nguồn",
-        "suất điện động và điện trở trong",
-        "điện trở mạch ngoài và điện trở trong"
-      ],
-      "answer": 0,
-      "explanation": "Bài định nghĩa hiệu suất là tỉ số công có ích trên mạch ngoài và công toàn phần của nguồn."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Xét các phát biểu về năng lượng điện và định luật Jun – Len-xơ:",
-      "statements": [
-        {
-          "text": "Năng lượng điện tiêu thụ của đoạn mạch được tính bằng $W = UIt$.",
-          "answer": true
-        },
-        {
-          "text": "Khi đoạn mạch chỉ toả nhiệt, nhiệt lượng toả ra là $Q = I^{2}Rt$.",
-          "answer": true
-        },
-        {
-          "text": "Năng lượng điện tiêu thụ chỉ có thể chuyển hoá thành nhiệt năng.",
-          "answer": false
-        },
-        {
-          "text": "Đơn vị kilôoat giờ (kWh) là đơn vị của công suất.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài: $W=UIt$, $Q=I^2Rt$ khi chỉ toả nhiệt; năng lượng điện còn chuyển thành cơ, hoá, quang…; kWh là đơn vị năng lượng."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét thiết bị có nhãn 220 V – 100 W:",
-      "statements": [
-        {
-          "text": "Hiệu điện thế định mức là 220 V.",
-          "answer": true
-        },
-        {
-          "text": "Công suất định mức là 100 W.",
-          "answer": true
-        },
-        {
-          "text": "Công suất định mức là 220 W.",
-          "answer": false
-        },
-        {
-          "text": "Thiết bị luôn tiêu thụ đúng 100 W dù mắc vào hiệu điện thế nào.",
-          "answer": false
-        }
-      ],
-      "explanation": "Nhãn cho biết $U_{dm}=220$ V và $P_{dm}=100$ W; chỉ khi đúng hiệu điện thế định mức thiết bị mới có công suất định mức."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Hiệu suất nguồn điện, an toàn điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Xét các phát biểu về an toàn điện và nguồn điện:",
-      "statements": [
-        {
-          "text": "Dòng điện quá lớn làm một phần năng lượng tiêu hao dưới dạng nhiệt trên điện trở trong, gây nóng dây dẫn.",
-          "answer": true
-        },
-        {
-          "text": "Khi ngắn mạch ($R_N \\to 0$) có thể gây chập cháy.",
-          "answer": true
-        },
-        {
-          "text": "Cần chọn dây dẫn và cầu chì có dòng định mức phù hợp.",
-          "answer": true
-        },
-        {
-          "text": "Ngắn mạch là trường hợp an toàn nhất vì điện trở mạch ngoài bằng 0.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài nêu ngắn mạch gây chập cháy, cần chọn dây dẫn và cầu chì phù hợp để đảm bảo an toàn."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Thiết bị có nhãn 220 V – 100 W. Hiệu điện thế định mức của thiết bị là bao nhiêu vôn?",
-      "answer": "220",
-      "explanation": "Số đầu tiên trên nhãn là hiệu điện thế định mức: 220 V."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_luat",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Trong công thức $Q = I^{2}Rt$, cường độ dòng điện $I$ có số mũ bằng bao nhiêu?",
-      "answer": "2",
-      "explanation": "Định luật Jun – Len-xơ: $Q=I^2Rt$, số mũ của $I$ là 2."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công suất điện của đoạn mạch có điện trở $R$ đặt vào hiệu điện thế $U$ được tính bằng",
-      "options": [
-        "$\\dfrac{U}{R}$",
-        "$\\dfrac{U^{2}}{R}$",
-        "$\\dfrac{R}{U^{2}}$",
-        "$U^{2}R$"
-      ],
-      "answer": 1,
-      "explanation": "Từ $P=UI$ và $I=U/R$ suy ra $P=U^2/R$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Đổi đơn vị: $1\\ kWh$ bằng",
-      "options": [
-        "$3,6.10^{3}\\ J$",
-        "$3,6.10^{6}\\ J$",
-        "$3,6.10^{9}\\ J$",
-        "$1000\\ J$"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu $1\\ kWh = 3,6.10^6\\ J$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Công suất của nguồn điện có suất điện động $E$ và dòng điện $I$ chạy qua là",
-      "options": [
-        "$\\dfrac{E}{I}$",
-        "$EI$",
-        "$EIt$",
-        "$EI^{2}$"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu $P_{ng}=EI$ ($EIt$ là công của nguồn)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Hiệu suất nguồn điện, an toàn điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Hiệu suất của nguồn điện có điện trở trong $r$, mạch ngoài $R_N$ là",
-      "options": [
-        "$\\dfrac{r}{R_N + r}$",
-        "$\\dfrac{R_N}{R_N + r}$",
-        "$\\dfrac{R_N + r}{R_N}$",
-        "$\\dfrac{R_N}{R_N - r}$"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu $H=U_N/E=R_N/(R_N+r)$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Khi đoạn mạch chỉ toả nhiệt, nhiệt lượng toả ra trong thời gian $t$ có thể viết theo $U$, $R$, $t$ là",
-      "options": [
-        "$\\dfrac{U^{2}t}{R}$",
-        "$\\dfrac{Ut}{R^{2}}$",
-        "$\\dfrac{U^{2}R}{t}$",
-        "$U^{2}Rt$"
-      ],
-      "answer": 0,
-      "explanation": "Thay $I=U/R$ vào $Q=I^2Rt$ được $Q=U^2t/R$, đúng như bài nêu."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét các biểu thức công suất điện của đoạn mạch:",
-      "statements": [
-        {
-          "text": "$P = UI$",
-          "answer": true
-        },
-        {
-          "text": "$P = I^{2}R$",
-          "answer": true
-        },
-        {
-          "text": "$P = \\dfrac{U^{2}}{R}$",
-          "answer": true
-        },
-        {
-          "text": "$P = \\dfrac{I^{2}}{R}$",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài nêu $P=UI=I^2R=U^2/R$; $I^2/R$ không phải công suất."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đoạn mạch có hiệu điện thế $U = 10\\ V$ và cường độ dòng điện $I = 2\\ A$. Công suất điện là bao nhiêu oát?",
-      "answer": "20",
-      "explanation": "$P=UI=10.2=20$ W."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Dòng điện $I = 2\\ A$ chạy qua điện trở $R = 10\\ \\Omega$ trong $t = 5\\ s$. Nhiệt lượng toả ra là bao nhiêu jun?",
-      "answer": "200",
-      "explanation": "$Q=I^2Rt=2^2.10.5=200$ J."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Công và công suất của nguồn điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Nguồn điện có suất điện động $E = 12\\ V$, dòng điện qua nguồn $I = 0,5\\ A$. Công suất của nguồn là bao nhiêu oát?",
-      "answer": "6",
-      "explanation": "$P_{ng}=EI=12.0,5=6$ W."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Hiệu suất nguồn điện, an toàn điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Nguồn có điện trở trong $r = 1\\ \\Omega$ nối với mạch ngoài $R_N = 9\\ \\Omega$. Hiệu suất của nguồn bằng bao nhiêu (viết dạng số thập phân)?",
-      "answer": "0,9",
-      "explanation": "$H=R_N/(R_N+r)=9/10=0,9$."
-    }
+  "removed": [
+   {
+    "question": "Một kilôoat giờ (1 kWh) bằng",
+    "reason": "nghi_ngo: GHI CHÚ / phương án: B ($3{,}6\\cdot10^{3}$ J) và D ($3600$ J) cùng một giá trị nên hai nhiễu trùng nhau; ghi chú B ('nhân 1000 với 3,6, quên 3600 s') cũng không khớp với giá trị của B. Đáp án A thì đúng."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hoá đơn tiền điện ghi \"Điện năng tiêu thụ: 312 kWh\". Đơn vị kWh dùng để đo đại lượng nào?",
+   "options": [
+    "Công suất điện",
+    "Năng lượng điện",
+    "Cường độ dòng điện",
+    "Hiệu điện thế"
+   ],
+   "answer": 1,
+   "explanation": "kWh (\"số điện\") là đơn vị năng lượng điện, bằng công suất (kW) nhân thời gian (h). Công tơ điện đếm số kWh, tức đo năng lượng.",
+   "distractorNotes": {
+    "A": "Nhầm kWh với kW: kW là công suất, còn kWh là công suất đã nhân thêm thời gian.",
+    "C": "Cường độ dòng điện đo bằng ampe, không có mặt trong đơn vị kWh.",
+    "D": "Hiệu điện thế đo bằng vôn; công tơ đếm năng lượng tiêu thụ chứ không đo vôn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Năng lượng điện mà một đoạn mạch tiêu thụ khi có hiệu điện thế $U$, dòng điện $I$ chạy qua trong thời gian $t$ là",
+   "options": [
+    "$A = UI$",
+    "$A = \\dfrac{UI}{t}$",
+    "$A = UIt$",
+    "$A = \\dfrac{Ut}{I}$"
+   ],
+   "answer": 2,
+   "explanation": "Lực điện thực hiện công $A = qU$ với $q = It$, nên $A = UIt$.",
+   "distractorNotes": {
+    "A": "$UI$ là công suất; chưa nhân thời gian thì chưa phải năng lượng.",
+    "B": "Chia cho thời gian là ngược chiều, vì năng lượng tiêu thụ tăng theo thời gian dùng.",
+    "D": "Đặt $I$ xuống mẫu là sai, vì từ $q = It$ năng lượng tỉ lệ thuận với cường độ dòng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi quạt điện hoạt động, điện năng chủ yếu được chuyển hoá thành dạng năng lượng nào?",
+   "options": [
+    "Chủ yếu là hoá năng",
+    "Chủ yếu là quang năng",
+    "Toàn bộ là nhiệt năng",
+    "Chủ yếu là cơ năng"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, điện năng ở quạt điện biến thành cơ năng; hoá năng là ở sạc pin, quang năng ở đèn LED, nhiệt năng ở bàn là.",
+   "distractorNotes": {
+    "A": "Hoá năng là dạng chuyển hoá khi sạc pin, quạt không tích trữ năng lượng hoá học.",
+    "B": "Quang năng là dạng chuyển hoá ở đèn LED, còn quạt không phát sáng.",
+    "C": "Chỉ đoạn mạch thuần toả nhiệt như bàn là mới biến toàn bộ điện năng thành nhiệt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên một bóng đèn ghi \"220 V – 100 W\". Con số 100 W cho biết",
+   "options": [
+    "công suất đèn ở mọi hiệu điện thế",
+    "công suất đèn khi dùng đúng 220 V",
+    "công suất nhỏ nhất để đèn sáng",
+    "điện năng đèn dùng trong mỗi giờ"
+   ],
+   "answer": 1,
+   "explanation": "100 W là công suất định mức, tức công suất của đèn khi được dùng đúng hiệu điện thế định mức 220 V.",
+   "distractorNotes": {
+    "A": "Công suất thực thay đổi theo hiệu điện thế đặt vào và chỉ bằng 100 W khi dùng đúng 220 V.",
+    "C": "Đèn vẫn sáng mờ ở công suất dưới 100 W, nên con số này không phải ngưỡng tối thiểu.",
+    "D": "W là đơn vị công suất, không phải đơn vị năng lượng như Wh hay kWh."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ nhãn ghi $U_{dm}$ và $P_{dm}$ của một dụng cụ chỉ toả nhiệt, điện trở của nó được tính bằng",
+   "options": [
+    "$R = \\dfrac{U_{dm}^{2}}{P_{dm}}$",
+    "$R = \\dfrac{P_{dm}}{U_{dm}^{2}}$",
+    "$R = \\dfrac{U_{dm}}{P_{dm}}$",
+    "$R = \\dfrac{P_{dm}}{U_{dm}}$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $P = \\dfrac{U^2}{R}$ suy ra $R = \\dfrac{U_{dm}^2}{P_{dm}}$ (\"U bình phương chia P ra R\").",
+   "distractorNotes": {
+    "B": "Đảo tử và mẫu khi rút $R$ từ công thức $P = U^2/R$.",
+    "C": "Quên bình phương hiệu điện thế khi biến đổi $P = U^2/R$.",
+    "D": "$P_{dm}/U_{dm}$ là cường độ dòng điện định mức, không phải điện trở."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một bóng đèn có điện trở coi như không đổi. Nếu hiệu điện thế đặt vào đèn giảm còn một nửa thì công suất của đèn",
+   "options": [
+    "giảm đi 2 lần",
+    "giảm đi 4 lần",
+    "không thay đổi",
+    "tăng lên 2 lần"
+   ],
+   "answer": 1,
+   "explanation": "Với $R$ không đổi, $P = \\dfrac{U^2}{R}$ tỉ lệ với $U^2$; $U$ giảm 2 lần thì $P$ giảm $2^2 = 4$ lần.",
+   "distractorNotes": {
+    "A": "Coi $P$ tỉ lệ với $U$, quên rằng $P = U^2/R$ tỉ lệ với $U^2$.",
+    "C": "Lẫn công suất thực với công suất định mức; công suất chỉ giữ nguyên khi giữ nguyên hiệu điện thế.",
+    "D": "Ngược chiều: hiệu điện thế giảm thì công suất toả ra phải giảm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Công và công suất của nguồn điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguồn điện có suất điện động $\\mathcal{E}$, điện trở trong $r$, cho dòng điện $I$ chạy trong mạch kín. Công suất của nguồn điện là",
+   "options": [
+    "$P_{ng} = UI$",
+    "$P_{ng} = I^{2}r$",
+    "$P_{ng} = \\mathcal{E}I + I^{2}r$",
+    "$P_{ng} = \\mathcal{E}I$"
+   ],
+   "answer": 3,
+   "explanation": "Công của nguồn $A_{ng} = \\mathcal{E}It$ nên công suất nguồn $P_{ng} = \\mathcal{E}I$.",
+   "distractorNotes": {
+    "A": "$UI$ chỉ là công suất mạch ngoài nhận được, tức phần có ích của nguồn.",
+    "B": "$I^2r$ chỉ là phần hao phí toả nhiệt bên trong nguồn.",
+    "C": "Cộng thêm $I^2r$ là tính hai lần, vì phần hao phí đã nằm sẵn trong $\\mathcal{E}I$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguồn điện có điện trở trong $r$ nối với mạch ngoài thuần điện trở có điện trở tương đương $R$. Hiệu suất của nguồn là",
+   "options": [
+    "$H = \\dfrac{r}{R + r}$",
+    "$H = \\dfrac{R}{r}$",
+    "$H = \\dfrac{R}{R + r}$",
+    "$H = \\dfrac{r}{R}$"
+   ],
+   "answer": 2,
+   "explanation": "$H = \\dfrac{U}{\\mathcal{E}}$, thay $U = IR$ và $\\mathcal{E} = I(R + r)$ được $H = \\dfrac{R}{R + r}$.",
+   "distractorNotes": {
+    "A": "Đặt $r$ lên tử là tính tỉ lệ phần hao phí, không phải phần có ích.",
+    "B": "Thiếu $r$ ở mẫu nên biểu thức có thể lớn hơn 1, vô lí với hiệu suất.",
+    "D": "Biểu thức đảo ngược và thiếu tổng ở mẫu, không suy ra được từ $H = U/\\mathcal{E}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mạch ngoài của nguồn điện có một động cơ điện (không chỉ gồm điện trở). Biểu thức dùng được để tính hiệu suất của nguồn là",
+   "options": [
+    "$H = \\dfrac{U}{\\mathcal{E}}$",
+    "$H = \\dfrac{R}{R + r}$",
+    "$H = \\dfrac{\\mathcal{E}}{U}$",
+    "$H = \\dfrac{r}{R + r}$"
+   ],
+   "answer": 0,
+   "explanation": "$H = R/(R+r)$ chỉ đúng khi mạch ngoài thuần điện trở; khi có động cơ hay pin đang sạc, chỉ dùng $H = U/\\mathcal{E}$.",
+   "distractorNotes": {
+    "B": "$R/(R+r)$ suy ra từ $U = IR$, chỉ đúng khi mạch ngoài thuần điện trở, không áp dụng cho động cơ.",
+    "C": "Đảo tử và mẫu, cho giá trị lớn hơn 1, vô lí với hiệu suất.",
+    "D": "Đây là tỉ lệ hao phí, lại còn dùng điều kiện mạch ngoài thuần điện trở."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi xảy ra đoản mạch ở một nguồn điện, cường độ dòng điện trở nên rất lớn vì",
+   "options": [
+    "điện trở trong của nguồn tăng vọt",
+    "suất điện động của nguồn tăng vọt",
+    "điện trở mạch ngoài gần bằng không",
+    "hiệu điện thế hai cực tăng vọt"
+   ],
+   "answer": 2,
+   "explanation": "Đoản mạch: hai cực nối thẳng, $R \\to 0$, dòng $I = \\mathcal{E}/r$ rất lớn vì $r$ nhỏ.",
+   "distractorNotes": {
+    "A": "Điện trở trong lớn thì dòng phải nhỏ; dòng đoản mạch lớn chính vì $r$ nhỏ.",
+    "B": "Suất điện động là đặc trưng của nguồn, không tăng lên khi chập mạch.",
+    "D": "Khi $R \\to 0$ thì hiệu điện thế hai cực giảm về gần 0 chứ không tăng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Để bảo vệ một mạch điện, nên chọn cầu chì có dòng định mức",
+   "options": [
+    "nhỏ hơn dòng làm việc của mạch",
+    "lớn hơn rất nhiều dòng làm việc",
+    "bằng dòng đoản mạch của nguồn",
+    "hơi lớn hơn dòng làm việc của mạch"
+   ],
+   "answer": 3,
+   "explanation": "Cầu chì phải chịu được dòng làm việc nhưng đứt trước khi dây kịp nóng, nên chọn dòng định mức hơi lớn hơn dòng làm việc.",
+   "distractorNotes": {
+    "A": "Cầu chì nhỏ hơn dòng làm việc sẽ đứt ngay khi vừa bật thiết bị.",
+    "B": "Cầu chì quá lớn thì dây đã cháy mà cầu chì vẫn chưa đứt.",
+    "C": "Đợi tới dòng đoản mạch mới đứt thì cầu chì mất tác dụng bảo vệ dây dẫn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo định luật Jun – Len-xơ, với điện trở và thời gian không đổi, nhiệt lượng toả ra trên vật dẫn tỉ lệ thuận với",
+   "options": [
+    "bình phương cường độ dòng điện",
+    "cường độ dòng điện chạy qua",
+    "căn bậc hai cường độ dòng điện",
+    "nghịch đảo cường độ dòng điện"
+   ],
+   "answer": 0,
+   "explanation": "Định luật Jun – Len-xơ: $Q = I^2Rt$, nhiệt lượng tỉ lệ với bình phương cường độ dòng điện.",
+   "distractorNotes": {
+    "B": "Quên bình phương: theo $Q = I^2Rt$, nhiệt lượng không tỉ lệ bậc nhất với $I$.",
+    "C": "Trong $Q = I^2Rt$ không có căn bậc hai nào của cường độ dòng điện.",
+    "D": "Ngược chiều: dòng điện lớn hơn thì toả nhiệt nhiều hơn chứ không ít hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai điện trở $R_1 = 2R_2$ mắc nối tiếp vào một nguồn. Tỉ số công suất toả nhiệt $\\dfrac{P_1}{P_2}$ bằng",
+   "options": [
+    "$\\dfrac{1}{2}$",
+    "$2$",
+    "$4$",
+    "$1$"
+   ],
+   "answer": 1,
+   "explanation": "Mắc nối tiếp cùng $I$, dùng $P = I^2R$ nên $P$ tỉ lệ với $R$: $P_1/P_2 = R_1/R_2 = 2$.",
+   "distractorNotes": {
+    "A": "Dùng $P = U^2/R$ như mạch song song, trong khi mạch nối tiếp có chung $I$ chứ không chung $U$.",
+    "C": "Bình phương nhầm tỉ số điện trở; $I$ chung nên $P = I^2R$ chỉ tỉ lệ bậc nhất với $R$.",
+    "D": "Cùng dòng điện nhưng điện trở khác nhau thì $I^2R$ khác nhau."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một bàn là (chỉ toả nhiệt) có điện trở $R$, được mắc vào hiệu điện thế $U$, dòng điện $I$ chạy qua trong thời gian $t$.",
+   "statements": [
+    {
+     "text": "Điện năng bàn là tiêu thụ là $A = UIt$, tính ra jun khi $t$ đo bằng giây.",
+     "answer": true
+    },
+    {
+     "text": "Toàn bộ điện năng tiêu thụ chuyển thành nhiệt lượng $Q = I^{2}Rt$.",
+     "answer": true
+    },
+    {
+     "text": "Dùng bàn là lâu gấp đôi (cùng $U$, $I$) thì điện năng tiêu thụ tăng gấp bốn.",
+     "answer": false
+    },
+    {
+     "text": "Công suất ghi trên bàn là chính là số kWh mà công tơ điện đếm được.",
+     "answer": false
+    }
+   ],
+   "explanation": "$A = UIt$ tỉ lệ bậc nhất với $t$; bàn là chỉ toả nhiệt nên $A = Q = I^2Rt$. Công suất (kW) khác điện năng (kWh) mà công tơ đếm.",
+   "distractorNotes": {
+    "0": "Đây đúng là công thức $A = UIt$; dùng V, A và s thì kết quả ra jun.",
+    "1": "Bàn là chỉ toả nhiệt nên toàn bộ điện năng thành nhiệt theo định luật Jun – Len-xơ.",
+    "2": "Bình phương nhầm thời gian: $A = UIt$ chỉ tỉ lệ bậc nhất với $t$.",
+    "3": "Nhầm kW với kWh: công suất là tốc độ tiêu thụ, còn công tơ đếm tổng năng lượng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Công và công suất của nguồn điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một nguồn điện có suất điện động $\\mathcal{E}$, điện trở trong $r$ nối với mạch ngoài, dòng điện trong mạch là $I$, hiệu điện thế giữa hai cực nguồn là $U$.",
+   "statements": [
+    {
+     "text": "Công suất của nguồn là $\\mathcal{E}I$.",
+     "answer": true
+    },
+    {
+     "text": "Công suất mạch ngoài nhận được cũng bằng $\\mathcal{E}I$.",
+     "answer": false
+    },
+    {
+     "text": "$I^{2}r$ là công suất hao phí toả nhiệt ngay trong nguồn.",
+     "answer": true
+    },
+    {
+     "text": "Công của nguồn trong thời gian $t$ là $A_{ng} = UIt$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\mathcal{E}I = UI + I^2r$: nguồn phát $\\mathcal{E}I$, mạch ngoài nhận $UI$, nguồn tự nóng $I^2r$. Công của nguồn là $\\mathcal{E}It$.",
+   "distractorNotes": {
+    "0": "Công của nguồn là $\\mathcal{E}It$ nên công suất của nguồn đúng là $\\mathcal{E}I$.",
+    "1": "Mạch ngoài chỉ nhận $UI$, nhỏ hơn $\\mathcal{E}I$ đúng phần $I^2r$ hao phí trong nguồn.",
+    "2": "Từ $\\mathcal{E}I = UI + I^2r$, phần $I^2r$ chính là nhiệt toả ra trong nguồn.",
+    "3": "Nhầm $U$ với $\\mathcal{E}$: $UIt$ là năng lượng mạch ngoài nhận, còn công của nguồn là $\\mathcal{E}It$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: hai pin AA nối tiếp (có suất điện động $\\mathcal{E}$ và điện trở trong $r$) nối với hộp điện trở $R$; lần lượt tăng $R$ và đọc $U$, $I$.",
+   "statements": [
+    {
+     "text": "Khi $R$ tăng, $I$ giảm còn $U$ tăng dần về phía $\\mathcal{E}$.",
+     "answer": true
+    },
+    {
+     "text": "Hiệu suất nguồn tăng khi $R$ tăng.",
+     "answer": true
+    },
+    {
+     "text": "Khi $R$ đủ lớn, hiệu suất nguồn đạt đúng $100\\ \\%$.",
+     "answer": false
+    },
+    {
+     "text": "Hiệu suất nguồn giảm khi $R$ tăng vì dòng điện $I$ giảm.",
+     "answer": false
+    }
+   ],
+   "explanation": "$H = U/\\mathcal{E} = R/(R + r)$ tăng theo $R$ và tiến sát $100\\ \\%$ nhưng không chạm vì luôn có $r \\gt 0$.",
+   "distractorNotes": {
+    "0": "Từ $U = \\mathcal{E} - Ir$, khi $I$ giảm thì $U$ tăng dần về $\\mathcal{E}$, khớp bảng đo.",
+    "1": "$H = R/(R+r)$ tăng khi $R$ tăng, đúng như số liệu đo trong bảng.",
+    "2": "Muốn $H = 100\\ \\%$ thì phải có $r = 0$, mà nguồn thật luôn có $r \\gt 0$.",
+    "3": "Hiệu suất đi theo $U$ chứ không theo $I$; $I$ giảm nhưng $U$ tăng nên $H$ tăng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đèn 1 ghi 220 V – 100 W, đèn 2 ghi 220 V – 40 W, coi điện trở các đèn không đổi.",
+   "statements": [
+    {
+     "text": "Đèn 2 có điện trở lớn hơn đèn 1.",
+     "answer": true
+    },
+    {
+     "text": "Mắc song song vào 220 V thì đèn 1 sáng hơn đèn 2.",
+     "answer": true
+    },
+    {
+     "text": "Mắc nối tiếp vào 220 V thì đèn 1 sáng hơn đèn 2.",
+     "answer": false
+    },
+    {
+     "text": "Mắc nối tiếp vào 220 V thì cả hai đèn đều sáng đúng định mức.",
+     "answer": false
+    }
+   ],
+   "explanation": "$R = U_{dm}^2/P_{dm}$ nên đèn 40 W có $R$ lớn hơn. Song song cùng $U$: $R$ nhỏ nhận nhiều hơn; nối tiếp cùng $I$: $R$ lớn nhận nhiều hơn.",
+   "distractorNotes": {
+    "0": "Cùng $U_{dm}$, theo $R = U_{dm}^2/P_{dm}$, đèn có $P_{dm}$ nhỏ hơn thì có điện trở lớn hơn.",
+    "1": "Mắc song song thì mỗi đèn được đúng 220 V, đạt công suất định mức, nên đèn 100 W sáng hơn.",
+    "2": "Mắc nối tiếp thì cùng $I$, theo $P = I^2R$ đèn có $R$ lớn (đèn 40 W) sáng hơn.",
+    "3": "Mắc nối tiếp thì 220 V chia cho hai đèn, không đèn nào được đủ hiệu điện thế định mức."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Hiệu suất nguồn điện, an toàn điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một chiếc chìa khoá kim loại vô tình chạm vào hai cực của ắc quy xe máy, gây đoản mạch.",
+   "statements": [
+    {
+     "text": "Điện trở mạch ngoài gần bằng 0 nên dòng điện xấp xỉ $I = \\mathcal{E}/r$.",
+     "answer": true
+    },
+    {
+     "text": "Vì điện trở trong của ắc quy nhỏ nên dòng điện nhỏ, không nguy hiểm.",
+     "answer": false
+    },
+    {
+     "text": "Nhiệt lượng toả ra trong ắc quy và trong chìa khoá tăng vọt.",
+     "answer": true
+    },
+    {
+     "text": "Trong mạch điện, cầu chì phù hợp sẽ ngắt mạch trước khi dây dẫn kịp nóng.",
+     "answer": true
+    }
+   ],
+   "explanation": "Đoản mạch: $R \\to 0$, $I = \\mathcal{E}/r$ rất lớn vì $r$ nhỏ, nhiệt $I^2r$ và $I^2R_{dây}$ tăng vọt; cầu chì đứt trước để bảo vệ.",
+   "distractorNotes": {
+    "0": "Hai cực nối thẳng qua vật dẫn gần như không có điện trở, nên chỉ còn $r$ hạn chế dòng.",
+    "1": "Ngược chiều: $r$ nằm ở mẫu của $I = \\mathcal{E}/r$, nên $r$ càng nhỏ thì dòng càng lớn.",
+    "2": "Dòng rất lớn làm $I^2r$ trong ắc quy và $I^2R$ trong chìa khoá tăng vọt, gây nóng đỏ.",
+    "3": "Cầu chì phù hợp được chế tạo để tự ngắt khi dòng vượt định mức, trước khi dây kịp cháy."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Năng lượng điện. Công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Nhãn lò nướng ghi \"2,2 kW\", còn hoá đơn tiền điện ghi \"312 kWh\". Xét các đơn vị kW và kWh.",
+   "statements": [
+    {
+     "text": "kW là đơn vị của công suất.",
+     "answer": true
+    },
+    {
+     "text": "kWh là một đơn vị công suất lớn hơn kW.",
+     "answer": false
+    },
+    {
+     "text": "1 kWh là năng lượng của thiết bị 1 kW dùng trong 1 giờ.",
+     "answer": true
+    },
+    {
+     "text": "$1$ kW $= 3{,}6\\cdot10^{6}$ J.",
+     "answer": false
+    }
+   ],
+   "explanation": "kW đo công suất (tốc độ tiêu thụ, $1$ kW $= 1000$ J/s); kWh đo năng lượng (tổng tiêu thụ), $1$ kWh $= 3{,}6\\cdot10^{6}$ J.",
+   "distractorNotes": {
+    "0": "kW ghi trên nhãn thiết bị là công suất, tức năng lượng tiêu thụ mỗi giây.",
+    "1": "kWh là công suất nhân thời gian nên là đơn vị năng lượng, không phải công suất.",
+    "2": "Đúng định nghĩa: $1$ kWh bằng $1000$ W nhân $3600$ s.",
+    "3": "Nhầm kW với kWh: $3{,}6\\cdot10^{6}$ J là giá trị của 1 kWh, còn 1 kW bằng 1000 J/s."
+   }
+  }
+ ]
 }

@@ -1,371 +1,550 @@
 {
-  "lesson_id": 21,
-  "lesson_title": "Bài 2. Mô tả dao động điều hoà",
-  "item_id": 132,
-  "generated_at": "2026-10-02",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 21,
+ "lesson_title": "Bài 2. Mô tả dao động điều hoà",
+ "item_id": 132,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong dao động điều hoà, li độ $x$ của vật là",
+   "options": [
+    "độ dịch chuyển của vật khỏi vị trí cân bằng",
+    "quãng đường vật đi được kể từ lúc $t = 0$",
+    "giá trị cực đại của độ lệch khỏi cân bằng",
+    "thời gian vật thực hiện một dao động toàn phần"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, li độ $x$ là độ dịch chuyển của vật khỏi vị trí cân bằng. Li độ có dấu và nằm trong đoạn $[-A;A]$.",
+   "distractorNotes": {
+    "B": "Nhầm li độ với quãng đường; quãng đường luôn dương và cộng dồn, còn li độ có dấu và nằm trong $[-A;A]$.",
+    "C": "Nhầm li độ với biên độ, vì giá trị cực đại của độ lệch khỏi cân bằng chính là biên độ $A$.",
+    "D": "Nhầm đại lượng vị trí với đại lượng thời gian, vì thời gian một dao động toàn phần là chu kì $T$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Biên độ $A$ của một vật dao động điều hoà phụ thuộc vào",
+   "options": [
+    "cấu tạo của hệ dao động",
+    "cách kích thích dao động",
+    "cách chọn mốc thời gian",
+    "thời điểm quan sát vật"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu biên độ phụ thuộc cách kích thích: kéo vật lệch càng xa thì $A$ càng lớn. Còn $T$, $f$, $\\omega$ mới phụ thuộc cấu tạo hệ.",
+   "distractorNotes": {
+    "A": "Cấu tạo hệ quyết định $T$, $f$, $\\omega$; gán cho biên độ là nhầm nguồn gốc của hai nhóm đại lượng.",
+    "C": "Đổi mốc thời gian chỉ làm đổi pha ban đầu $\\varphi$, còn biên độ của vật giữ nguyên.",
+    "D": "Biên độ là cực đại của cả dao động, không đổi theo lúc nhìn; li độ mới đổi theo thời điểm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chu kì $T$ của dao động điều hoà là",
+   "options": [
+    "số dao động vật thực hiện trong một giây",
+    "thời gian vật đi từ biên này đến biên kia",
+    "thời gian thực hiện một dao động toàn phần",
+    "thời gian vật đi từ cân bằng ra tới biên"
+   ],
+   "answer": 2,
+   "explanation": "Chu kì là thời gian thực hiện một dao động toàn phần, tức vật trở lại vị trí cũ theo chiều cũ, ví dụ $+A \\to -A \\to +A$.",
+   "distractorNotes": {
+    "A": "Số dao động trong một giây là tần số $f = 1/T$, không phải chu kì.",
+    "B": "Đi từ biên này sang biên kia chỉ là nửa dao động, mất $T/2$, vì vật chưa trở lại trạng thái cũ.",
+    "D": "Đi từ vị trí cân bằng ra biên chỉ mất $T/4$, mới là một phần tư dao động toàn phần."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong phương trình $x = A\\cos(\\omega t+\\varphi)$, pha ban đầu $\\varphi$ cho biết",
+   "options": [
+    "độ lớn cực đại mà li độ có thể đạt tới",
+    "số dao động vật thực hiện trong một giây",
+    "tốc độ quay của bán kính trên vòng tròn",
+    "trạng thái dao động tại thời điểm $t = 0$"
+   ],
+   "answer": 3,
+   "explanation": "Pha ban đầu $\\varphi$ là pha lúc $t = 0$, cho biết lúc đó vật ở đâu và sắp đi về phía nào.",
+   "distractorNotes": {
+    "A": "Độ lớn cực đại của li độ là biên độ $A$, không phải pha ban đầu.",
+    "B": "Số dao động trong một giây là tần số $f$, một đại lượng không đổi chứ không phải trạng thái lúc $t = 0$.",
+    "C": "Tốc độ quay của bán kính trên vòng tròn là tần số góc $\\omega$, còn $\\varphi$ là góc lúc $t = 0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai bạn cùng quan sát một con lắc đồng hồ nhưng bắt đầu bấm giờ ở hai thời điểm khác nhau. Đại lượng nào trong phương trình dao động của hai bạn khác nhau?",
+   "options": [
+    "Pha ban đầu",
+    "Biên độ",
+    "Chu kì",
+    "Tần số góc"
+   ],
+   "answer": 0,
+   "explanation": "Đổi lúc bấm giờ thì chỉ pha ban đầu đổi. $A$, $T$, $f$, $\\omega$ là của con lắc, không phụ thuộc lúc bắt đầu nhìn.",
+   "distractorNotes": {
+    "B": "Biên độ do cách kích thích con lắc quyết định, không phụ thuộc lúc người xem bắt đầu bấm giờ.",
+    "C": "Chu kì do cấu tạo con lắc quyết định, nhịp đếm muộn hay sớm của người xem không làm nó đổi.",
+    "D": "Tần số góc do cấu tạo hệ quyết định, đổi mốc thời gian không ảnh hưởng tới $\\omega$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai dao động điều hoà có cùng chu kì. Khi đổi mốc thời gian $t = 0$ thì độ lệch pha giữa hai dao động",
+   "options": [
+    "tăng thêm một lượng $\\omega\\tau$",
+    "vẫn giữ nguyên như cũ",
+    "đổi dấu so với ban đầu",
+    "giảm dần về bằng không"
+   ],
+   "answer": 1,
+   "explanation": "Đổi mốc thì mỗi pha ban đầu cùng cộng thêm $\\omega\\tau$, nên hiệu hai pha giữ nguyên. Độ lệch pha không đổi theo lúc quan sát.",
+   "distractorNotes": {
+    "A": "Chỉ từng pha ban đầu cộng thêm $\\omega\\tau$; khi lấy hiệu hai pha, phần cộng thêm này triệt tiêu.",
+    "C": "Cả hai pha cùng dịch một lượng như nhau nên thứ tự sớm, trễ và dấu của hiệu pha giữ nguyên.",
+    "D": "Cùng chu kì nên hiệu pha không phụ thuộc thời gian, không có cơ chế nào làm nó giảm dần."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Đọc đồ thị li độ – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên đồ thị li độ – thời gian của một dao động điều hoà, khoảng thời gian giữa hai đỉnh dương liên tiếp bằng",
+   "options": [
+    "nửa chu kì $T/2$",
+    "biên độ $A$",
+    "một chu kì $T$",
+    "tần số $f$"
+   ],
+   "answer": 2,
+   "explanation": "Theo bài, hai đỉnh dương liên tiếp cách nhau đúng một chu kì $T$; từ đỉnh dương tới đỉnh âm mới là $T/2$.",
+   "distractorNotes": {
+    "A": "$T/2$ là khoảng từ đỉnh dương tới đỉnh âm; giữa hai đỉnh dương liên tiếp vật đã trở lại trạng thái cũ.",
+    "B": "Biên độ đọc theo trục li độ bằng độ cao của đỉnh, không đọc bằng khoảng cách trên trục thời gian.",
+    "D": "Khoảng đọc trên trục thời gian có đơn vị giây nên là chu kì, còn tần số là nghịch đảo của nó."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai dao động điều hoà cùng tần số có pha ban đầu $\\varphi_1$ và $\\varphi_2$. Hai dao động ngược pha khi",
+   "options": [
+    "$\\varphi_1 = \\varphi_2$",
+    "$\\varphi_1 - \\varphi_2 = \\pi/2$",
+    "$\\varphi_1 = -\\varphi_2$",
+    "$\\varphi_1 = \\varphi_2 \\pm \\pi$"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu: $\\varphi_1 = \\varphi_2 \\pm \\pi$ thì hai dao động ngược pha; khi đó vật 1 ở $+A$ thì vật 2 (cùng biên độ) ở $-A$.",
+   "distractorNotes": {
+    "A": "Hai pha ban đầu bằng nhau là điều kiện đồng pha, khi đó hai vật cùng lên, cùng xuống.",
+    "B": "Hiệu pha $\\pi/2$ chỉ cho biết dao động 1 sớm pha hơn một phần tư chu kì, chưa đạt hiệu $\\pi$ của ngược pha.",
+    "C": "Hai pha đối dấu không bảo đảm hiệu pha bằng $\\pi$, ví dụ $\\pm\\pi/6$ chỉ lệch nhau $\\pi/3$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ thức đúng giữa tần số góc $\\omega$ và chu kì $T$ của dao động điều hoà là",
+   "options": [
+    "$\\omega = \\dfrac{2\\pi}{T}$",
+    "$\\omega = 2\\pi T$",
+    "$\\omega = \\dfrac{T}{2\\pi}$",
+    "$\\omega = \\dfrac{\\pi}{T}$"
+   ],
+   "answer": 0,
+   "explanation": "Bài cho $\\omega = 2\\pi f = \\dfrac{2\\pi}{T}$: một vòng pha $2\\pi$ kéo dài đúng một chu kì $T$.",
+   "distractorNotes": {
+    "B": "Dùng nhầm $T$ thay cho $f$; $\\omega$ tỉ lệ thuận với tần số, còn với chu kì thì tỉ lệ nghịch.",
+    "C": "Đảo tử và mẫu, biểu thức này có đơn vị giây chứ không phải rad/s.",
+    "D": "Thiếu hệ số 2, vì một dao động toàn phần ứng với một vòng pha $2\\pi$, không phải $\\pi$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của tần số góc $\\omega$ là",
+   "options": [
+    "héc (Hz)",
+    "radian trên giây (rad/s)",
+    "radian (rad)",
+    "giây (s)"
+   ],
+   "answer": 1,
+   "explanation": "Bài ghi tần số góc $\\omega$ có đơn vị rad/s. Hz là đơn vị của tần số $f$, rad là đơn vị của pha.",
+   "distractorNotes": {
+    "A": "Hz là đơn vị của tần số $f$, tức số dao động mỗi giây, chưa có radian của góc pha.",
+    "C": "Radian là đơn vị của pha và pha ban đầu, còn thiếu phép chia cho thời gian.",
+    "D": "Giây là đơn vị của chu kì $T$, đại lượng tỉ lệ nghịch với tần số góc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc 2 có chu kì gấp đôi chu kì con lắc 1 ($T_2 = 2T_1$). Tần số $f_2$ của con lắc 2 bằng",
+   "options": [
+    "$2f_1$",
+    "$4f_1$",
+    "$f_1/2$",
+    "$f_1/4$"
+   ],
+   "answer": 2,
+   "explanation": "Vì $f = 1/T$, tần số tỉ lệ nghịch với chu kì: $T$ gấp đôi thì $f$ giảm một nửa.",
+   "distractorNotes": {
+    "A": "Coi $f$ tỉ lệ thuận với $T$, trong khi $f = 1/T$ là tỉ lệ nghịch.",
+    "B": "Vừa coi tỉ lệ thuận vừa thêm bình phương, cả hai đều không có trong hệ thức $f = 1/T$.",
+    "D": "Chọn đúng chiều giảm nhưng thêm bình phương sai, vì $f = 1/T$ chỉ tỉ lệ nghịch bậc nhất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ hệ thức $\\omega = 2\\pi f$, suy ra biểu thức đúng là",
+   "options": [
+    "$T = \\dfrac{\\omega}{2\\pi}$",
+    "$f = 2\\pi\\omega$",
+    "$f = \\dfrac{2\\pi}{\\omega}$",
+    "$f = \\dfrac{\\omega}{2\\pi}$"
+   ],
+   "answer": 3,
+   "explanation": "Chia hai vế cho $2\\pi$ được $f = \\omega/(2\\pi)$. Bài lưu ý: lấy $\\omega/(2\\pi)$ được $f$, chưa phải $T$.",
+   "distractorNotes": {
+    "A": "$\\omega/(2\\pi)$ là tần số; gán nó cho chu kì chính là bẫy bài đã cảnh báo.",
+    "B": "Nhân với $2\\pi$ thay vì chia khi chuyển $2\\pi$ sang vế bên kia.",
+    "C": "Đảo tử và mẫu, vì $2\\pi/\\omega$ là chu kì $T$ chứ không phải tần số."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động theo phương trình $x = A\\cos\\left(\\omega t+\\dfrac{\\pi}{2}\\right)$. Tại $t = 0$ vật",
+   "options": [
+    "ở vị trí cân bằng, sắp sang phía $x$ âm",
+    "ở vị trí cân bằng, sắp sang phía $x$ dương",
+    "ở biên dương, sắp về vị trí cân bằng",
+    "ở biên âm, sắp về vị trí cân bằng"
+   ],
+   "answer": 0,
+   "explanation": "$\\cos(\\pi/2) = 0$ nên vật ở O; tăng $t$ một chút thì pha vượt $\\pi/2$, côsin âm nên $x$ giảm. Bảng ở bài: ở O, sắp sang âm ứng với $\\varphi = \\pi/2$.",
+   "distractorNotes": {
+    "B": "Ở O và sắp sang phía dương ứng với $\\varphi = -\\pi/2$; chọn như vậy là nhầm dấu pha ban đầu.",
+    "C": "Ở biên dương ứng với $\\varphi = 0$, khi đó $x = A$, trong khi $\\cos(\\pi/2) = 0$.",
+    "D": "Ở biên âm ứng với $\\varphi = \\pi$, khi đó $x = -A$, trong khi $\\cos(\\pi/2) = 0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Dao động 1 có phương trình $x = A\\cos(\\omega t+\\varphi)$. Dao động 2 cùng $A$, cùng $\\omega$ và trễ pha $\\pi/2$ so với dao động 1 có pha ban đầu là",
+   "options": [
+    "$\\varphi + \\pi/2$",
+    "$\\varphi - \\pi/2$",
+    "$-\\varphi$",
+    "$\\varphi + \\pi$"
+   ],
+   "answer": 1,
+   "explanation": "Trễ pha thì pha ban đầu nhỏ hơn: $\\varphi' = \\varphi - \\pi/2$. Bài nhắc: dấu cộng là sớm pha, không phải trễ.",
+   "distractorNotes": {
+    "A": "Dấu cộng làm pha ban đầu lớn hơn, tức sớm pha; chọn như vậy là nhầm chiều sớm và trễ.",
+    "C": "Đổi dấu pha ban đầu không tạo ra độ lệch $\\pi/2$ trong mọi trường hợp; với $\\varphi = 0$ còn cho đồng pha.",
+    "D": "Cộng thêm $\\pi$ cho dao động ngược pha, không phải trễ pha $\\pi/2$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật gắn lò xo nằm ngang, đánh dấu vị trí cân bằng O. Kéo vật lệch 4 cm rồi thả, vật dao động điều hoà với chu kì 2 s. Xét các phát biểu sau.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Viết phương trình dao động điều hoà",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Dao động được mô tả bằng phương trình nào sau đây được gọi là dao động điều hoà?",
-      "options": [
-        "$x=A\\cos(\\omega t+\\varphi)$ với $A,\\omega,\\varphi$ là các hằng số",
-        "$x=A t\\cos\\varphi$",
-        "$x=A\\cos(\\omega t^2+\\varphi)$",
-        "$x=A+\\omega t+\\varphi$"
-      ],
-      "answer": 0,
-      "explanation": "Bài định nghĩa dao động điều hoà là dao động có phương trình $x=A\\cos(\\omega t+\\varphi)$."
+     "text": "Li độ của vật luôn nằm trong đoạn từ $-4$ cm đến $4$ cm.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Biên độ $A$ của dao động điều hoà là gì?",
-      "options": [
-        "Giá trị cực đại của li độ, tính từ vị trí cân bằng",
-        "Thời gian thực hiện một dao động toàn phần",
-        "Số dao động thực hiện trong một giây",
-        "Trạng thái dao động tại thời điểm $t=0$"
-      ],
-      "answer": 0,
-      "explanation": "Biên độ là giá trị cực đại của li độ, độ dịch chuyển cực đại từ vị trí cân bằng."
+     "text": "Biên độ dao động bằng 4 cm và do cách kéo vật quyết định.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Pha ban đầu $\\varphi$ của dao động điều hoà xác định điều gì?",
-      "options": [
-        "Trạng thái dao động tại thời điểm $t=0$",
-        "Số dao động trong một giây",
-        "Độ dịch chuyển cực đại của vật",
-        "Thời gian thực hiện một dao động toàn phần"
-      ],
-      "answer": 0,
-      "explanation": "Pha ban đầu xác định trạng thái dao động (vị trí và chiều chuyển động) tại $t=0$."
+     "text": "Hai lần vật qua O trong một chu kì là cùng một trạng thái dao động vì li độ đều bằng 0.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Trong dao động điều hoà, đại lượng nào sau đây thay đổi theo thời gian?",
-      "options": [
-        "Biên độ $A$",
-        "Chu kì $T$",
-        "Li độ $x$",
-        "Tần số góc $\\omega$"
-      ],
-      "answer": 2,
-      "explanation": "Biên độ, chu kì, tần số và tần số góc không đổi; li độ $x$ thay đổi theo thời gian."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Đại lượng nào sau đây phụ thuộc vào cấu tạo của hệ dao động?",
-      "options": [
-        "Biên độ $A$",
-        "Pha ban đầu $\\varphi$",
-        "Tần số góc $\\omega$",
-        "Li độ $x$"
-      ],
-      "answer": 2,
-      "explanation": "Tần số góc luôn dương và phụ thuộc cấu tạo của hệ; $A$ và $\\varphi$ phụ thuộc cách kích thích."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Đọc đồ thị li độ – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai dao động cùng chu kì có $\\varphi_1=\\varphi_2\\pm\\pi$ thì có quan hệ pha như thế nào?",
-      "options": [
-        "Đồng pha",
-        "Ngược pha",
-        "Vuông pha",
-        "Không xác định được"
-      ],
-      "answer": 1,
-      "explanation": "Nếu $\\varphi_1=\\varphi_2\\pm\\pi$ thì hai dao động ngược pha."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Đọc đồ thị li độ – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét độ lệch pha giữa hai dao động điều hoà cùng chu kì. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Nếu $\\varphi_1>\\varphi_2$ thì dao động 1 sớm pha hơn dao động 2.",
-          "answer": true
-        },
-        {
-          "text": "Nếu $\\varphi_1=\\varphi_2$ thì hai dao động đồng pha.",
-          "answer": true
-        },
-        {
-          "text": "Nếu $\\varphi_1<\\varphi_2$ thì dao động 1 sớm pha hơn dao động 2.",
-          "answer": false
-        },
-        {
-          "text": "Độ lệch pha giữa hai dao động không đổi theo thời gian.",
-          "answer": true
-        }
-      ],
-      "explanation": "Nếu $\\varphi_1<\\varphi_2$ thì dao động 1 trễ pha hơn; độ lệch pha là đại lượng không đổi."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Về pha ban đầu $\\varphi$ của dao động điều hoà, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$\\varphi$ xác định trạng thái dao động tại $t=0$.",
-          "answer": true
-        },
-        {
-          "text": "$\\varphi$ có giá trị trong khoảng từ $-\\pi$ rad đến $\\pi$ rad.",
-          "answer": true
-        },
-        {
-          "text": "$\\varphi$ phụ thuộc cách kích thích dao động.",
-          "answer": true
-        },
-        {
-          "text": "$\\varphi$ luôn có giá trị dương.",
-          "answer": false
-        }
-      ],
-      "explanation": "Pha ban đầu nằm trong $[-\\pi,\\pi]$ nên có thể âm."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Về các đại lượng đặc trưng của dao động điều hoà, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Biên độ là giá trị cực đại của li độ.",
-          "answer": true
-        },
-        {
-          "text": "Chu kì là thời gian thực hiện một dao động toàn phần.",
-          "answer": true
-        },
-        {
-          "text": "Tần số là số dao động thực hiện được trong một giây.",
-          "answer": true
-        },
-        {
-          "text": "Biên độ của một dao động điều hoà thay đổi theo thời gian.",
-          "answer": false
-        }
-      ],
-      "explanation": "Biên độ, chu kì, tần số và tần số góc là các đại lượng không đổi."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Một vật dao động điều hoà với biên độ $A=3$ cm. Li độ nhỏ nhất của vật bằng bao nhiêu cm?",
-      "answer": "-3",
-      "explanation": "Li độ thoả $-A\\leq x\\leq A$ nên li độ nhỏ nhất là $-A=-3$ cm."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Công thức liên hệ giữa tần số $f$ và chu kì $T$ là",
-      "options": [
-        "$f=\\dfrac{1}{T}$",
-        "$f=T$",
-        "$f=\\dfrac{2\\pi}{T}$",
-        "$f=\\dfrac{1}{2\\pi T}$"
-      ],
-      "answer": 0,
-      "explanation": "Tần số là nghịch đảo của chu kì: $f=\\dfrac{1}{T}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Tần số góc $\\omega$ liên hệ với chu kì $T$ theo công thức",
-      "options": [
-        "$\\omega=\\dfrac{2\\pi}{T}$",
-        "$\\omega=2\\pi T$",
-        "$\\omega=\\dfrac{T}{2\\pi}$",
-        "$\\omega=\\dfrac{\\pi}{T}$"
-      ],
-      "answer": 0,
-      "explanation": "Bài cho $\\omega=2\\pi f=\\dfrac{2\\pi}{T}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Đơn vị của tần số góc $\\omega$ trong bài là",
-      "options": [
-        "Hz",
-        "rad/s",
-        "s",
-        "rad"
-      ],
-      "answer": 1,
-      "explanation": "Tần số góc có đơn vị rad/s; Hz là đơn vị của tần số."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Từ $\\omega=2\\pi f$, tần số $f$ được tính theo $\\omega$ bằng",
-      "options": [
-        "$f=2\\pi\\omega$",
-        "$f=\\dfrac{\\omega}{2\\pi}$",
-        "$f=\\dfrac{2\\pi}{\\omega}$",
-        "$f=\\dfrac{\\omega}{\\pi}$"
-      ],
-      "answer": 1,
-      "explanation": "Chia hai vế cho $2\\pi$ được $f=\\dfrac{\\omega}{2\\pi}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Viết phương trình dao động điều hoà",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Cho dao động điều hoà $x=A\\cos(\\omega t+\\varphi)$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Với $x=A\\cos(\\omega t)$, tại $t=0$ vật ở vị trí biên $x=A$.",
-          "answer": true
-        },
-        {
-          "text": "Dao động $x=A\\cos\\left(\\omega t-\\dfrac{\\pi}{2}\\right)$ có pha ban đầu $\\varphi=-\\dfrac{\\pi}{2}$ rad.",
-          "answer": true
-        },
-        {
-          "text": "$\\omega=\\dfrac{2\\pi}{T}$.",
-          "answer": true
-        },
-        {
-          "text": "$f=2\\pi\\omega$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Đúng ba ý đầu theo bài; $f=\\dfrac{\\omega}{2\\pi}$ nên ý cuối sai."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Một vật dao động điều hoà có chu kì $T=0{,}5$ s. Tần số dao động là bao nhiêu Hz?",
-      "answer": "2",
-      "explanation": "$f=\\dfrac{1}{T}=\\dfrac{1}{0{,}5}=2$ Hz."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Một vật dao động điều hoà có tần số $f=5$ Hz. Chu kì dao động là bao nhiêu giây?",
-      "answer": "0,2",
-      "explanation": "$T=\\dfrac{1}{f}=\\dfrac{1}{5}=0{,}2$ s."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Một vật dao động điều hoà có chu kì $T=0{,}5$ s. Tần số góc là $\\omega=k\\pi$ rad/s. Tìm $k$.",
-      "answer": "4",
-      "explanation": "$\\omega=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{0{,}5}=4\\pi$ rad/s nên $k=4$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Viết phương trình dao động điều hoà",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Một vật dao động điều hoà với tần số góc $\\omega=10\\pi$ rad/s. Tần số dao động là bao nhiêu Hz?",
-      "answer": "5",
-      "explanation": "$f=\\dfrac{\\omega}{2\\pi}=\\dfrac{10\\pi}{2\\pi}=5$ Hz."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Viết phương trình dao động điều hoà",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Vật dao động điều hoà có phương trình $x=6\\cos\\left(\\pi t+\\dfrac{\\pi}{3}\\right)$ (cm, s). Chu kì dao động là bao nhiêu giây?",
-      "answer": "2",
-      "explanation": "Tần số góc $\\omega=\\pi$ rad/s nên $T=\\dfrac{2\\pi}{\\omega}=2$ s."
+     "text": "Nếu kéo vật lệch 6 cm rồi thả thì biên độ vẫn là 4 cm vì biên độ do cấu tạo hệ.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Vật không ra khỏi đoạn $[-A;A]$ và $A$ phụ thuộc cách kích thích. Hai lần qua O vật đi theo hai chiều ngược nhau nên là hai trạng thái khác nhau; kéo xa hơn thì $A$ lớn hơn.",
+   "distractorNotes": {
+    "0": "Thí nghiệm cho thấy vật không vượt hai đầu, nên li độ không thể ra ngoài đoạn $[-4;4]$ cm.",
+    "1": "Biên độ bằng độ lệch lúc thả và phụ thuộc cách kích thích, nên phát biểu này không thể sai.",
+    "2": "Li độ bằng 0 chỉ cho biết vị trí; hai lần qua O vật đi ngược chiều nhau nên là hai trạng thái khác nhau.",
+    "3": "Biên độ phụ thuộc cách kích thích chứ không phải cấu tạo hệ, nên kéo lệch 6 cm thì biên độ là 6 cm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật dao động điều hoà với biên độ $A$ đi từ biên dương về vị trí cân bằng O rồi tiếp tục tới biên âm. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Khi vật ở O, li độ của vật bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Quãng đường vật đi từ biên dương tới O bằng $A$.",
+     "answer": true
+    },
+    {
+     "text": "Khi vật tới biên âm, quãng đường vật đã đi bằng $-A$.",
+     "answer": false
+    },
+    {
+     "text": "Khi vật ở biên âm, li độ của vật bằng $-A$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Li độ là độ lệch khỏi O, có dấu: tại O bằng 0, tại biên âm bằng $-A$. Quãng đường luôn dương và cộng dồn, từ biên dương tới biên âm là $2A$.",
+   "distractorNotes": {
+    "0": "Li độ là độ lệch khỏi vị trí cân bằng, vật đang ở O thì độ lệch bằng 0.",
+    "1": "Từ biên dương về O vật đi đúng một đoạn dài bằng biên độ $A$.",
+    "2": "Quãng đường luôn dương và cộng dồn, từ biên dương tới biên âm là $2A$; còn $-A$ là li độ.",
+    "3": "Biên âm là vị trí lệch cực đại về phía âm, nên li độ đúng bằng $-A$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Viết phương trình dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một vật dao động điều hoà trên trục Ox theo phương trình $x = 6\\cos\\left(\\pi t+\\dfrac{\\pi}{3}\\right)$ cm, $t$ tính bằng giây. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Biên độ dao động là 6 cm.",
+     "answer": true
+    },
+    {
+     "text": "Tần số góc của dao động là $\\pi$ rad/s.",
+     "answer": true
+    },
+    {
+     "text": "Chu kì của dao động được tính bằng $T = \\dfrac{\\omega}{2\\pi}$.",
+     "answer": false
+    },
+    {
+     "text": "Tại $t = 0$ vật đang đi theo chiều dương của trục Ox.",
+     "answer": false
+    }
+   ],
+   "explanation": "So với $x = A\\cos(\\omega t+\\varphi)$: $A = 6$ cm, $\\omega = \\pi$ rad/s, $\\varphi = \\pi/3$. Chu kì là $T = 2\\pi/\\omega$; pha $\\pi/3$ tăng thì côsin giảm nên vật đi theo chiều âm.",
+   "distractorNotes": {
+    "0": "Hệ số đứng trước hàm côsin trong $x = A\\cos(\\omega t+\\varphi)$ chính là biên độ, ở đây bằng 6 cm.",
+    "1": "Hệ số của $t$ trong pha là tần số góc, ở đây bằng $\\pi$ rad/s.",
+    "2": "$\\omega/(2\\pi)$ cho tần số $f$, còn chu kì phải là $T = 2\\pi/\\omega$.",
+    "3": "Pha $\\pi/3$ tăng thêm thì côsin giảm, $x$ giảm, nên vật đi theo chiều âm về phía O."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai học sinh so sánh chu kì $T$, tần số $f$ và tần số góc $\\omega$ của hai con lắc dao động điều hoà dựa vào các hệ thức $f = 1/T$ và $\\omega = 2\\pi f$. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Con lắc có chu kì bằng một nửa thì tần số lớn gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Tần số lớn gấp 2 lần thì tần số góc lớn gấp 4 lần.",
+     "answer": false
+    },
+    {
+     "text": "Trong cùng một khoảng thời gian, con lắc thực hiện nhiều dao động hơn thì có chu kì nhỏ hơn.",
+     "answer": true
+    },
+    {
+     "text": "Tần số góc tỉ lệ thuận với chu kì.",
+     "answer": false
+    }
+   ],
+   "explanation": "$f = 1/T$ nên $f$ tỉ lệ nghịch với $T$; $\\omega = 2\\pi f$ nên $\\omega$ tỉ lệ thuận bậc nhất với $f$ và tỉ lệ nghịch với $T$. Chu kì bằng thời gian chia số dao động.",
+   "distractorNotes": {
+    "0": "$f = 1/T$ là tỉ lệ nghịch, nên chu kì giảm một nửa thì tần số chắc chắn gấp đôi.",
+    "1": "$\\omega = 2\\pi f$ là tỉ lệ thuận bậc nhất, nên $f$ gấp 2 thì $\\omega$ chỉ gấp 2.",
+    "2": "Chu kì là thời gian một dao động; làm nhiều dao động trong cùng thời gian thì mỗi dao động ngắn hơn.",
+    "3": "$\\omega = 2\\pi/T$ nên tần số góc tỉ lệ nghịch với chu kì, không tỉ lệ thuận."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Li độ, biên độ, chu kì, tần số, pha ban đầu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai vật dao động điều hoà cùng biên độ, cùng chu kì $T$ với phương trình $x_1 = A\\cos(\\omega t)$ và $x_2 = A\\cos\\left(\\omega t-\\dfrac{\\pi}{2}\\right)$. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Dao động 1 sớm pha $\\pi/2$ so với dao động 2.",
+     "answer": true
+    },
+    {
+     "text": "Dao động 1 đạt li độ cực đại sớm hơn dao động 2 một khoảng $\\Delta t = \\dfrac{\\Delta\\varphi}{\\omega} = \\dfrac{T}{4}$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu đổi mốc thời gian thì độ lệch pha giữa hai dao động thay đổi.",
+     "answer": false
+    },
+    {
+     "text": "Hai dao động đồng pha vì có cùng biên độ và cùng chu kì.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\varphi_1 = 0 \\gt \\varphi_2 = -\\pi/2$ nên dao động 1 sớm pha $\\pi/2$, đỉnh đến trước $T/4$. Độ lệch pha không đổi khi đổi mốc thời gian, và cùng biên độ không suy ra đồng pha.",
+   "distractorNotes": {
+    "0": "$\\varphi_1 = 0$ lớn hơn $\\varphi_2 = -\\pi/2$, nên dao động 1 chắc chắn sớm pha $\\pi/2$.",
+    "1": "Thay $\\Delta\\varphi = \\pi/2$ và $\\omega = 2\\pi/T$ vào $\\Delta t = \\Delta\\varphi/\\omega$ cho đúng $T/4$.",
+    "2": "Đổi mốc thì cả hai pha cùng cộng thêm $\\omega\\tau$, nên hiệu pha giữ nguyên.",
+    "3": "Đồng pha đòi hỏi pha ban đầu bằng nhau; cùng biên độ, cùng chu kì nhưng lệch $\\pi/2$ thì không đồng pha."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Đọc đồ thị li độ – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một học sinh vẽ đồ thị li độ – thời gian của vật dao động theo phương trình $x = 5\\cos(2\\pi t)$ cm, $t$ tính bằng giây. Đồ thị có đỉnh dương cao 5 cm và hai đỉnh dương liên tiếp cách nhau 1 s. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Độ cao 5 cm của đỉnh dương là biên độ dao động.",
+     "answer": true
+    },
+    {
+     "text": "Khoảng 1 s giữa hai đỉnh dương liên tiếp là chu kì dao động.",
+     "answer": true
+    },
+    {
+     "text": "Trục hoành của đồ thị biểu diễn quãng đường vật đi được.",
+     "answer": false
+    },
+    {
+     "text": "Tại $t = 0$ đồ thị ở đỉnh dương nên pha ban đầu bằng 0.",
+     "answer": true
+    }
+   ],
+   "explanation": "Đỉnh dương cho $A$, hai đỉnh dương liên tiếp cách $T$. Trục hoành là thời gian, không phải quãng đường; lúc $t = 0$ ở đỉnh dương, sắp xuống thì $\\varphi = 0$.",
+   "distractorNotes": {
+    "0": "Đỉnh dương là li độ cực đại, mà li độ cực đại chính là biên độ.",
+    "1": "Giữa hai đỉnh dương liên tiếp vật trở lại cùng vị trí, cùng chiều, đúng định nghĩa chu kì.",
+    "2": "Đồ thị li độ – thời gian có trục hoành là thời gian $t$, bài nhấn mạnh đó không phải quãng đường.",
+    "3": "Tại $t = 0$ phương trình cho $x = 5$ cm, đúng đỉnh dương và sắp xuống, ứng với $\\varphi = 0$."
+   }
+  }
+ ]
 }

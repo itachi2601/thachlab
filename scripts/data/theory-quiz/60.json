@@ -1,371 +1,532 @@
 {
-  "lesson_id": 60,
-  "lesson_title": "Bài 15. Định luật 2 Newton",
-  "item_id": 114,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 14,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 8,
-      "cong_thuc": 10
-    },
-    "removed": [
-      {
-        "question": "Giữ nguyên khối lượng của xe, lực kéo tăng gấp $3$ lần. Gia tốc của xe tăng gấp mấy lần?",
-        "reason": "Đề chỉ nói \"lực kéo tăng gấp 3 lần\", không nói bỏ qua ma sát hay là hợp lực; có ma sát thì gia tốc không tăng gấp 3 (đúng cái bẫy 1 của bài), đề mơ hồ"
-      },
-      {
-        "question": "Giữ nguyên lực đẩy, đặt thêm một thùng sao cho tổng khối lượng gấp đôi. Gia tốc lúc sau bằ…",
-        "reason": "Gần như trùng ý câu a ∝ 1/m khác (khối lượng gấp 4), và \"giữ nguyên lực đẩy\" thiếu điều kiện bỏ qua ma sát (ma sát đổi khi thêm thùng); topic ghi định luật 1 nhưng nội dung là định luật 2"
-      }
-    ]
+ "lesson_id": 60,
+ "lesson_title": "Bài 15. Định luật 2 Newton",
+ "item_id": 114,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 9
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phát biểu nào đúng với định luật 2 Newton?",
-      "options": [
-        "Gia tốc tỉ lệ thuận với cả hợp lực lẫn khối lượng",
-        "Gia tốc luôn cùng hướng với vận tốc của vật",
-        "Gia tốc cùng hướng với hợp lực, độ lớn tỉ lệ thuận với hợp lực và tỉ lệ nghịch với khối lượng",
-        "Gia tốc tỉ lệ nghịch với hợp lực và tỉ lệ thuận với khối lượng"
-      ],
-      "answer": 2,
-      "explanation": "$\\vec a = \\vec F / m$: $F$ ở tử số nên $a$ tỉ lệ thuận với $F$, $m$ ở mẫu số nên $a$ tỉ lệ nghịch với $m$. Gia tốc cùng hướng với hợp lực chứ không nhất thiết cùng hướng vận tốc."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một niutơn (1 N) là",
-      "options": [
-        "lực truyền cho vật khối lượng $1$ kg gia tốc $1\\ \\text{m/s}^2$",
-        "lực truyền cho vật khối lượng $1$ g gia tốc $1\\ \\text{m/s}^2$",
-        "lực làm vật $1$ kg chuyển động với vận tốc $1$ m/s",
-        "trọng lượng của vật khối lượng $1$ kg"
-      ],
-      "answer": 0,
-      "explanation": "$1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$. Phương án với $1$ g sai đơn vị; vận tốc không phải gia tốc; trọng lượng $1$ kg khoảng $9{,}8$ N chứ không phải $1$ N."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Trong biểu thức $\\vec F = m\\vec a$, $\\vec F$ là",
-      "options": [
-        "lực kéo mà người hay động cơ tác dụng lên vật",
-        "lực có độ lớn lớn nhất trong các lực tác dụng",
-        "lực do vật khác truyền cho vật, không kể ma sát",
-        "hợp lực của mọi lực tác dụng lên vật"
-      ],
-      "answer": 3,
-      "explanation": "Định luật 2 dùng hợp lực. Lấy riêng lực kéo rồi chia cho khối lượng là quên ma sát (bẫy 1 của bài)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Quả bóng đang bay thẳng đứng lên cao, bỏ qua lực cản không khí. Gia tốc của quả bóng hướng",
-      "options": [
-        "thẳng đứng lên trên, cùng chiều vận tốc",
-        "thẳng đứng xuống dưới",
-        "nằm ngang",
-        "không có hướng, vì gia tốc bằng $0$"
-      ],
-      "answer": 1,
-      "explanation": "Bỏ qua cản thì hợp lực chỉ là trọng lực hướng xuống nên gia tốc hướng xuống, dù vận tốc hướng lên (bóng chậm dần). Gia tốc cùng hướng hợp lực chứ không cùng hướng vận tốc."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Định luật 1 Newton và quán tính",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khối lượng của một vật đặc trưng cho",
-      "options": [
-        "độ lớn lực tác dụng lên vật",
-        "trọng lực tác dụng lên vật ở mọi nơi",
-        "vận tốc mà vật đạt được",
-        "mức quán tính của vật"
-      ],
-      "answer": 3,
-      "explanation": "Khối lượng càng lớn thì mức quán tính càng lớn, vận tốc càng khó thay đổi. Trọng lực $P = mg$ đổi theo nơi còn khối lượng thì không đổi."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Định luật 1 Newton và quán tính",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về khối lượng của vật, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Khối lượng là đại lượng vô hướng và luôn dương.",
-          "answer": true
-        },
-        {
-          "text": "Khối lượng của mỗi vật không đổi.",
-          "answer": true
-        },
-        {
-          "text": "Xe $500$ kg chở $300$ kg hàng thì cả hệ có khối lượng $800$ kg.",
-          "answer": true
-        },
-        {
-          "text": "Khối lượng có đơn vị là niutơn.",
-          "answer": false
-        }
-      ],
-      "explanation": "Khối lượng cộng được, đo bằng kg. Niutơn là đơn vị của lực."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe đang chạy về phía trước thì phanh. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Gia tốc của xe luôn cùng hướng với vận tốc.",
-          "answer": false
-        },
-        {
-          "text": "Gia tốc của xe cùng hướng với hợp lực tác dụng lên xe.",
-          "answer": true
-        },
-        {
-          "text": "Trong lúc phanh, vận tốc hướng về phía trước còn gia tốc hướng ra phía sau.",
-          "answer": true
-        },
-        {
-          "text": "Trọng lượng của xe là khối lượng của xe, có đơn vị kg.",
-          "answer": false
-        }
-      ],
-      "explanation": "Phanh thì hợp lực (lực hãm) hướng ra sau nên gia tốc hướng ra sau, còn vận tốc vẫn hướng tới. Trọng lượng là một lực, đo bằng N."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_luat",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Giữ nguyên lực tác dụng, khối lượng của vật tăng gấp $4$ lần. Gia tốc của vật giảm đi bao nhiêu lần?",
-      "answer": "4",
-      "explanation": "$a = F/m$ với $F$ không đổi: $a$ tỉ lệ nghịch với $m$, nên $m$ gấp $4$ thì $a$ giảm $4$ lần."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe đồ chơi $250$ g chịu hợp lực $0{,}5$ N. Gia tốc của xe là",
-      "options": [
-        "$0{,}002\\ \\text{m/s}^2$",
-        "$2\\ \\text{m/s}^2$",
-        "$125\\ \\text{m/s}^2$",
-        "$500\\ \\text{m/s}^2$"
-      ],
-      "answer": 1,
-      "explanation": "Đổi $250$ g $= 0{,}25$ kg; $a = 0{,}5/0{,}25 = 2\\ \\text{m/s}^2$. $0{,}002$ là để nguyên $250$ g; $125$ là nhân $F$ với $250$; $500$ là đảo $m/F$ rồi vẫn dùng gam."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Kéo thùng $15$ kg trên sàn bằng lực nằm ngang $70$ N, lực ma sát là $25$ N. Gia tốc của thùng là",
-      "options": [
-        "$3\\ \\text{m/s}^2$",
-        "$4{,}67\\ \\text{m/s}^2$",
-        "$6{,}33\\ \\text{m/s}^2$",
-        "$1{,}67\\ \\text{m/s}^2$"
-      ],
-      "answer": 0,
-      "explanation": "Hợp lực $70 - 25 = 45$ N nên $a = 45/15 = 3\\ \\text{m/s}^2$. $4{,}67$ là quên ma sát; $6{,}33$ là cộng ma sát vào; $1{,}67$ là lấy ma sát làm hợp lực."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xe $800$ kg tăng tốc đều từ nghỉ lên $12$ m/s trong $6$ s. Hợp lực tác dụng lên xe là",
-      "options": [
-        "$9\\,600$ N",
-        "$4\\,800$ N",
-        "$1\\,600$ N",
-        "$400$ N"
-      ],
-      "answer": 2,
-      "explanation": "$a = 12/6 = 2\\ \\text{m/s}^2$; $F = ma = 800 \\cdot 2 = 1600$ N. $9600$ là nhân $m$ với $v$; $4800$ là nhân $m$ với $t$; $400$ là chia $m$ cho $a$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật $4$ kg đứng yên chịu hợp lực $8$ N. Quãng đường vật đi được sau $3$ s là",
-      "options": [
-        "$18$ m",
-        "$6$ m",
-        "$36$ m",
-        "$9$ m"
-      ],
-      "answer": 3,
-      "explanation": "$a = 8/4 = 2\\ \\text{m/s}^2$; $s = \\tfrac12 a t^2 = \\tfrac12 \\cdot 2 \\cdot 9 = 9$ m. $18$ là quên hệ số $\\tfrac12$; $6$ là lấy $at$; $36$ là $\\tfrac12 F t^2$, quên chia cho khối lượng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Cùng một lực $F$ truyền cho vật $m_1$ gia tốc $6\\ \\text{m/s}^2$ và cho vật $m_2$ gia tốc $3\\ \\text{m/s}^2$. Cũng lực ấy tác dụng lên vật khối lượng $m_1 + m_2$ cho gia tốc",
-      "options": [
-        "$4{,}5\\ \\text{m/s}^2$",
-        "$2\\ \\text{m/s}^2$",
-        "$9\\ \\text{m/s}^2$",
-        "$18\\ \\text{m/s}^2$"
-      ],
-      "answer": 1,
-      "explanation": "$m_1 = F/6$, $m_2 = F/3$ nên $m_1 + m_2 = F/2$ và $a = F/(m_1 + m_2) = 2\\ \\text{m/s}^2$. $4{,}5$ là lấy trung bình, $9$ là cộng gia tốc, $18$ là nhân gia tốc."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xe đẩy $50$ kg đứng yên, được đẩy bằng lực ngang $100$ N, lực ma sát $40$ N. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hợp lực tác dụng lên xe là $60$ N.",
-          "answer": true
-        },
-        {
-          "text": "Gia tốc của xe là $2\\ \\text{m/s}^2$.",
-          "answer": false
-        },
-        {
-          "text": "Sau $5$ s xe đạt vận tốc $6$ m/s.",
-          "answer": true
-        },
-        {
-          "text": "Sau $5$ s xe đi được $15$ m.",
-          "answer": true
-        }
-      ],
-      "explanation": "$F_{hl} = 100 - 40 = 60$ N, $a = 60/50 = 1{,}2\\ \\text{m/s}^2$ (không phải $2$, là $100/50$ quên ma sát). $v = 1{,}2 \\cdot 5 = 6$ m/s và $s = \\tfrac12 \\cdot 1{,}2 \\cdot 25 = 15$ m."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Ô tô $1500$ kg đang chạy $10$ m/s thì phanh, dừng sau khi đi thêm $25$ m. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Gia tốc của xe là $-2\\ \\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Độ lớn lực hãm là $3000$ N.",
-          "answer": true
-        },
-        {
-          "text": "Lực hãm cùng chiều chuyển động của xe.",
-          "answer": false
-        },
-        {
-          "text": "Nếu xe nặng gấp đôi và vẫn dừng sau $25$ m thì lực hãm vẫn là $3000$ N.",
-          "answer": false
-        }
-      ],
-      "explanation": "$a = (0 - 100)/(2 \\cdot 25) = -2\\ \\text{m/s}^2$, $F = 1500 \\cdot 2 = 3000$ N, ngược chiều chuyển động. Cùng quãng dừng thì $a$ như cũ nên khối lượng gấp đôi cho lực hãm gấp đôi, $6000$ N."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật $5$ kg đứng yên chịu hợp lực $20$ N. Sau $2$ s vận tốc của vật bằng bao nhiêu m/s?",
-      "answer": "8",
-      "explanation": "$a = 20/5 = 4\\ \\text{m/s}^2$; $v = at = 4 \\cdot 2 = 8$ m/s."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Vật có trọng lượng $30$ N chịu hợp lực $6$ N (lấy $g = 10\\ \\text{m/s}^2$). Gia tốc của vật bằng bao nhiêu $\\text{m/s}^2$?",
-      "answer": "2",
-      "explanation": "Trước hết $m = P/g = 3$ kg, rồi $a = 6/3 = 2\\ \\text{m/s}^2$. Chia thẳng $6/30$ là thế trọng lượng (N) vào chỗ khối lượng (kg)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật 2 Newton — bài toán động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe $600$ g chịu hợp lực $3$ N. Gia tốc của xe bằng bao nhiêu $\\text{m/s}^2$?",
-      "answer": "5",
-      "explanation": "Đổi $600$ g $= 0{,}6$ kg; $a = 3/0{,}6 = 5\\ \\text{m/s}^2$."
-    }
+  "removed": [
+   {
+    "question": "Vật khối lượng $m$ chịu lực kéo nằm ngang $F_{\\text{k}}$ và lực ma sát $F_{\\text{ms}}$ ngược chiều chuyển động; các lực theo phương đứng triệt tiêu nhau. Độ lớn gia tốc của vật là",
+    "reason": "nghi_ngo: Đề hỏi 'độ lớn gia tốc' nhưng không cho điều kiện F_k > F_ms; nếu vật đang chậm dần (F_k < F_ms) thì biểu thức B ra số âm, không phải độ lớn. Nên thêm 'F_k > F_ms' hoặc hỏi 'gia tốc theo chiều chuyển động'."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo định luật 2 Newton, gia tốc của một vật luôn cùng hướng với",
+   "options": [
+    "vận tốc tức thời của vật",
+    "hợp lực tác dụng lên vật",
+    "độ dời của vật",
+    "lực kéo lớn nhất lên vật"
+   ],
+   "answer": 1,
+   "explanation": "Định luật 2 Newton phát biểu rằng gia tốc của vật cùng hướng với hợp lực tác dụng lên vật.",
+   "distractorNotes": {
+    "A": "Nhầm gia tốc với vận tốc; khi phanh, vận tốc hướng tới còn gia tốc hướng ra sau.",
+    "C": "Độ dời phụ thuộc cả quá trình chuyển động, không nhất thiết cùng hướng hợp lực như gia tốc.",
+    "D": "Chỉ xét một lực riêng lẻ, quên rằng gia tốc do tổng vectơ mọi lực lên vật quyết định."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo định luật 2 Newton, độ lớn gia tốc của vật",
+   "options": [
+    "tỉ lệ thuận với hợp lực, tỉ lệ nghịch với khối lượng",
+    "tỉ lệ nghịch với hợp lực, tỉ lệ thuận với khối lượng",
+    "tỉ lệ thuận với cả hợp lực và khối lượng của vật",
+    "tỉ lệ thuận với hợp lực, không phụ thuộc khối lượng"
+   ],
+   "answer": 0,
+   "explanation": "Từ $a = \\dfrac{F}{m}$: độ lớn gia tốc tỉ lệ thuận với độ lớn hợp lực và tỉ lệ nghịch với khối lượng.",
+   "distractorNotes": {
+    "B": "Đảo ngược cả hai quan hệ; thí nghiệm cho thấy lực tăng thì gia tốc tăng, khối lượng tăng thì gia tốc giảm.",
+    "C": "Quên khối lượng nằm ở mẫu số, nên khối lượng tăng thì gia tốc phải giảm.",
+    "D": "Bỏ qua vai trò khối lượng; cùng lực, vật nặng gấp đôi chỉ có gia tốc bằng một nửa."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Định luật 1 Newton và quán tính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khối lượng của vật là đại lượng đặc trưng cho",
+   "options": [
+    "lực hút của Trái Đất lên vật",
+    "tốc độ chuyển động của vật",
+    "mức quán tính của vật",
+    "phần thể tích vật chiếm chỗ"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu rõ khối lượng đặc trưng cho mức quán tính của vật: khối lượng càng lớn thì càng khó thay đổi vận tốc.",
+   "distractorNotes": {
+    "A": "Nhầm khối lượng với trọng lượng; lực hút Trái Đất là một lực đo bằng N, còn khối lượng đo bằng kg.",
+    "B": "Khối lượng không đổi với mỗi vật, không phụ thuộc vật chạy nhanh hay chậm.",
+    "D": "Nhầm với thể tích; hai vật cùng thể tích vẫn có thể khác khối lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Định luật 1 Newton và quán tính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào sau đây về khối lượng là SAI?",
+   "options": [
+    "Khối lượng là đại lượng vô hướng",
+    "Khối lượng luôn có giá trị dương",
+    "Khối lượng có tính chất cộng được",
+    "Khối lượng thay đổi theo nơi đặt vật"
+   ],
+   "answer": 3,
+   "explanation": "Khối lượng vô hướng, luôn dương, không đổi với mỗi vật và cộng được; thứ thay đổi theo nơi đặt vật là trọng lượng $P = mg$.",
+   "distractorNotes": {
+    "A": "Khối lượng không có hướng nên phát biểu này đúng, không thể là phát biểu sai cần tìm.",
+    "B": "Khối lượng luôn dương là tính chất đúng của khối lượng, nên đây không phải phát biểu sai.",
+    "C": "Xe 500 kg chở 300 kg hàng thì cả hệ 800 kg, nên khối lượng cộng được là phát biểu đúng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một ô tô đang chạy thẳng về phía trước thì tài xế đạp phanh. Trong lúc phanh, gia tốc của ô tô",
+   "options": [
+    "cùng hướng với vận tốc của xe",
+    "bằng không vì xe vẫn đang chạy",
+    "ngược hướng với vận tốc của xe",
+    "hướng thẳng đứng xuống mặt đường"
+   ],
+   "answer": 2,
+   "explanation": "Lực hãm hướng ra sau nên gia tốc cũng hướng ra sau, ngược hướng vận tốc; vận tốc vẫn hướng tới nhưng giảm dần.",
+   "distractorNotes": {
+    "A": "Lẫn hướng gia tốc với hướng vận tốc; gia tốc cùng hướng hợp lực, ở đây là lực hãm hướng ra sau.",
+    "B": "Xe đang chậm dần nên vận tốc thay đổi, do đó gia tốc phải khác không.",
+    "D": "Trọng lực và phản lực theo phương đứng triệt tiêu nhau nên không gây gia tốc theo phương đứng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Định luật 1 Newton và quán tính",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cùng một hợp lực tác dụng lên hai vật có khối lượng khác nhau. Vật có khối lượng lớn hơn thì",
+   "options": [
+    "có gia tốc lớn hơn vật kia",
+    "khó thay đổi vận tốc hơn vật kia",
+    "luôn có vận tốc lớn hơn vật kia",
+    "có gia tốc bằng gia tốc vật kia"
+   ],
+   "answer": 1,
+   "explanation": "Khối lượng lớn thì mức quán tính lớn, gia tốc $a = F/m$ nhỏ hơn, nên vật khó thay đổi vận tốc hơn.",
+   "distractorNotes": {
+    "A": "Tưởng vật nặng có đà lớn nên tăng tốc nhanh; thực ra cùng lực thì vật nặng có gia tốc nhỏ hơn.",
+    "C": "Lực quyết định gia tốc chứ không quyết định vận tốc; vận tốc còn phụ thuộc trạng thái ban đầu.",
+    "D": "Cùng lực chưa đủ cho cùng gia tốc, vì gia tốc còn tỉ lệ nghịch với khối lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong biểu thức định luật 2 Newton $\\vec a = \\dfrac{\\vec F}{m}$, đại lượng $\\vec F$ là",
+   "options": [
+    "lực kéo do người tác dụng lên vật",
+    "lực ma sát tác dụng lên vật",
+    "trọng lực tác dụng lên vật",
+    "hợp lực mọi lực tác dụng lên vật"
+   ],
+   "answer": 3,
+   "explanation": "$\\vec F$ là hợp lực, tức tổng vectơ mọi lực tác dụng lên vật; lấy riêng lực kéo là bẫy thường gặp.",
+   "distractorNotes": {
+    "A": "Lấy riêng lực kéo chia khối lượng là bẫy quen thuộc, quên ma sát và các lực khác cùng tác dụng.",
+    "B": "Ma sát chỉ là một trong các lực tác dụng, không thay được tổng vectơ mọi lực.",
+    "C": "Trọng lực thường bị phản lực triệt tiêu, nó chỉ là một thành phần góp vào hợp lực."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Phát biểu nào sau đây về khối lượng và trọng lượng là đúng?",
+   "options": [
+    "Trọng lượng là một lực, đơn vị niutơn",
+    "Khối lượng là một lực, đơn vị niutơn",
+    "Trọng lượng của vật như nhau ở mọi nơi",
+    "Khối lượng và trọng lượng cùng đơn vị kg"
+   ],
+   "answer": 0,
+   "explanation": "Trọng lượng $P = mg$ là một lực, đo bằng N và đổi theo nơi đặt vật; khối lượng đo bằng kg, như nhau ở mọi nơi.",
+   "distractorNotes": {
+    "B": "Khối lượng đo mức quán tính, đơn vị kg; chỉ trọng lượng mới là lực đo bằng N.",
+    "C": "Trọng lượng $P = mg$ đổi theo nơi đặt vật vì $g$ đổi; thứ như nhau mọi nơi là khối lượng.",
+    "D": "Trọng lượng là lực nên đo bằng N, còn kg chỉ là đơn vị của khối lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, $1\\ \\text{N}$ bằng",
+   "options": [
+    "$1\\ \\text{kg}\\cdot\\text{m/s}$",
+    "$1\\ \\text{kg}\\cdot\\text{m/s}^2$",
+    "$1\\ \\text{kg/(m}\\cdot\\text{s}^2)$",
+    "$1\\ \\text{g}\\cdot\\text{m/s}^2$"
+   ],
+   "answer": 1,
+   "explanation": "Từ $F = ma$: 1 N là lực truyền cho vật 1 kg gia tốc 1 m/s², nên $1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$.",
+   "distractorNotes": {
+    "A": "Thiếu bình phương của giây; m/s là đơn vị vận tốc chứ không phải gia tốc.",
+    "C": "Đặt mét xuống mẫu số là sai, vì từ $F = ma$ đơn vị phải là kg nhân m/s².",
+    "D": "Định nghĩa 1 N dùng vật 1 kg; gam không phải đơn vị khối lượng cơ bản trong SI."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ thức nào sau đây biểu diễn đúng độ lớn gia tốc theo định luật 2 Newton?",
+   "options": [
+    "$F = \\dfrac{a}{m}$",
+    "$a = \\dfrac{m}{F}$",
+    "$a = F\\cdot m$",
+    "$a = \\dfrac{F}{m}$"
+   ],
+   "answer": 3,
+   "explanation": "Định luật 2 Newton: $a = \\dfrac{F}{m}$, tương đương $F = ma$.",
+   "distractorNotes": {
+    "A": "Biến đổi sai từ $F = ma$; lực bằng gia tốc nhân khối lượng chứ không phải chia.",
+    "B": "Đảo tử và mẫu; khối lượng phải nằm ở mẫu số vì gia tốc tỉ lệ nghịch với khối lượng.",
+    "C": "Nhân lực với khối lượng sẽ khiến vật nặng có gia tốc lớn hơn, trái với thí nghiệm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên khối lượng của vật, nếu hợp lực tác dụng lên vật tăng gấp 3 thì gia tốc của vật",
+   "options": [
+    "giảm đi 3 lần",
+    "không thay đổi",
+    "tăng gấp 3 lần",
+    "tăng gấp 9 lần"
+   ],
+   "answer": 2,
+   "explanation": "Với $m$ không đổi, $a = F/m$ tỉ lệ thuận với $F$: lực gấp 3 thì gia tốc gấp 3.",
+   "distractorNotes": {
+    "A": "Làm ngược chiều tỉ lệ; khi khối lượng không đổi, gia tốc tỉ lệ thuận với lực.",
+    "B": "Nghĩ vẫn là vật cũ nên gia tốc giữ nguyên, quên rằng lực đã thay đổi.",
+    "D": "Bình phương nhầm; gia tốc chỉ tỉ lệ thuận bậc một với hợp lực."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên hợp lực tác dụng lên vật, nếu khối lượng vật tăng gấp đôi thì gia tốc của vật",
+   "options": [
+    "giảm còn một nửa",
+    "tăng gấp đôi",
+    "giảm còn một phần tư",
+    "không thay đổi"
+   ],
+   "answer": 0,
+   "explanation": "Với $F$ không đổi, $a = F/m$ tỉ lệ nghịch với $m$: khối lượng gấp đôi thì gia tốc còn một nửa.",
+   "distractorNotes": {
+    "B": "Làm ngược chiều tỉ lệ; khối lượng nằm ở mẫu số nên tăng khối lượng làm gia tốc giảm.",
+    "C": "Bình phương nhầm; gia tốc chỉ tỉ lệ nghịch bậc một với khối lượng.",
+    "D": "Nghĩ cùng lực thì cùng gia tốc, quên rằng khối lượng cũng quyết định gia tốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đề bài cho trọng lượng $P$ của vật và gia tốc rơi tự do $g$. Khối lượng $m$ cần thế vào $F = ma$ là",
+   "options": [
+    "$m = P\\cdot g$",
+    "$m = P$",
+    "$m = \\dfrac{g}{P}$",
+    "$m = \\dfrac{P}{g}$"
+   ],
+   "answer": 3,
+   "explanation": "Từ $P = mg$ suy ra $m = P/g$; phải tìm khối lượng trước rồi mới tính gia tốc.",
+   "distractorNotes": {
+    "A": "Biến đổi sai $P = mg$; muốn tìm khối lượng phải chia trọng lượng cho $g$, không nhân.",
+    "B": "Thế thẳng trọng lượng (N) vào chỗ khối lượng (kg), lẫn hai đại lượng khác loại.",
+    "C": "Đảo tử và mẫu khi rút $m$ từ $P = mg$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: xe khối lượng không đổi đặt trên máng đệm khí (ma sát gần như bằng 0), dây kéo vắt qua ròng rọc treo quả nặng, cảm biến đo lực kéo $F$, hai cổng quang đo thời gian để tính gia tốc $a$. Đổi quả nặng để đo nhiều lần.",
+   "statements": [
+    {
+     "text": "Khi giữ nguyên khối lượng xe, lực kéo càng lớn thì gia tốc của xe càng lớn.",
+     "answer": true
+    },
+    {
+     "text": "Tỉ số $F/a$ ở các lần đo gần như không đổi và xấp xỉ khối lượng xe.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị gia tốc theo lực là một đường cong không đi qua gốc toạ độ.",
+     "answer": false
+    },
+    {
+     "text": "Kết quả thí nghiệm cho thấy gia tốc tỉ lệ nghịch với lực kéo.",
+     "answer": false
+    }
+   ],
+   "explanation": "Các điểm đo nằm sát đường thẳng qua gốc, $F/a \\approx m$: với khối lượng không đổi, gia tốc tỉ lệ thuận với lực.",
+   "distractorNotes": {
+    "0": "Bảng số liệu cho thấy lực tăng thì thời gian ngắn lại, gia tốc tăng, nên không thể coi ý này sai.",
+    "1": "Từ $F = ma$, tỉ số $F/a$ chính là khối lượng xe, mà khối lượng giữ nguyên nên tỉ số gần không đổi.",
+    "2": "Gia tốc tỉ lệ thuận với lực nên các điểm đo nằm sát đường thẳng qua gốc, không phải đường cong.",
+    "3": "Lực tăng kéo theo gia tốc tăng là quan hệ tỉ lệ thuận, coi là tỉ lệ nghịch là đảo chiều tỉ lệ."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một ô tô đang chạy về hướng bắc thì tài xế đạp phanh, lực hãm coi như không đổi. Xét xe trong lúc phanh, trước khi dừng.",
+   "statements": [
+    {
+     "text": "Lực hãm tác dụng lên xe hướng về phía nam.",
+     "answer": true
+    },
+    {
+     "text": "Gia tốc của xe hướng về phía bắc, cùng hướng vận tốc.",
+     "answer": false
+    },
+    {
+     "text": "Vận tốc của xe vẫn hướng về phía bắc nhưng độ lớn giảm dần.",
+     "answer": true
+    },
+    {
+     "text": "Lực hãm quyết định hướng vận tốc tức thời của xe.",
+     "answer": false
+    }
+   ],
+   "explanation": "Gia tốc cùng hướng hợp lực (lực hãm, hướng nam); lực quyết định gia tốc chứ không quyết định vận tốc, nên vận tốc vẫn hướng bắc và giảm dần.",
+   "distractorNotes": {
+    "0": "Lực hãm làm xe chậm lại nên phải ngược chiều chuyển động, tức hướng nam; ý này không thể sai.",
+    "1": "Gia tốc cùng hướng hợp lực là lực hãm hướng nam, nên coi gia tốc hướng bắc là nhầm với vận tốc.",
+    "2": "Vận tốc chỉ đổi dần theo thời gian, xe chưa dừng nên vẫn chạy về bắc với tốc độ giảm.",
+    "3": "Lực quyết định gia tốc chứ không quyết định vận tốc; ở đây vận tốc còn ngược hướng lực hãm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: chỉnh quả treo để lực kéo xe luôn bằng một giá trị không đổi, chất thêm gia trọng lên xe để tăng tổng khối lượng, rồi đo gia tốc của xe ở mỗi lần.",
+   "statements": [
+    {
+     "text": "Tích $m\\cdot a$ ở các lần đo xấp xỉ không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Tổng khối lượng xe càng lớn thì gia tốc của xe càng lớn.",
+     "answer": false
+    },
+    {
+     "text": "Tổng khối lượng tăng gấp 3 thì gia tốc giảm còn một phần ba.",
+     "answer": true
+    },
+    {
+     "text": "Tổng khối lượng tăng gấp đôi thì gia tốc giảm còn một phần tư.",
+     "answer": false
+    }
+   ],
+   "explanation": "Lực giữ nguyên nên $m\\cdot a = F$ không đổi: gia tốc tỉ lệ nghịch bậc một với khối lượng.",
+   "distractorNotes": {
+    "0": "Lực kéo giữ không đổi và $F = ma$ nên tích $m\\cdot a$ luôn bằng lực đó, không thể coi ý này sai.",
+    "1": "Chất thêm gia trọng làm tăng mức quán tính, xe khó đổi vận tốc hơn nên gia tốc giảm.",
+    "2": "Gia tốc tỉ lệ nghịch bậc một với khối lượng nên khối lượng gấp 3 thì gia tốc đúng là còn một phần ba.",
+    "3": "Bình phương nhầm; khối lượng gấp đôi thì gia tốc chỉ còn một nửa."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi dùng biểu thức $F = ma$ để giải bài tập, học sinh cần chú ý đơn vị của các đại lượng.",
+   "statements": [
+    {
+     "text": "Trong hệ SI, $m$ tính bằng kg, $a$ tính bằng m/s² thì $F$ tính bằng N.",
+     "answer": true
+    },
+    {
+     "text": "Vật có khối lượng 250 g phải đổi thành 0,25 kg trước khi thế số.",
+     "answer": true
+    },
+    {
+     "text": "1 N là lực truyền cho vật khối lượng 1 g gia tốc 1 m/s².",
+     "answer": false
+    },
+    {
+     "text": "Đơn vị N/kg tương đương với đơn vị kg·m/s².",
+     "answer": false
+    }
+   ],
+   "explanation": "$1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$ nên N/kg tương đương m/s²; khối lượng phải đổi ra kg trước khi thế.",
+   "distractorNotes": {
+    "0": "Đây chính là bộ đơn vị SI của định luật 2 Newton, $1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$, nên không thể coi là sai.",
+    "1": "Vì $1\\ \\text{g} = 10^{-3}\\ \\text{kg}$, bỏ qua bước đổi 250 g ra 0,25 kg sẽ cho gia tốc sai hàng nghìn lần.",
+    "2": "Định nghĩa 1 N gắn với vật khối lượng 1 kg, thay bằng 1 g là quên quy về đơn vị SI.",
+    "3": "Lấy kg·m/s² chia cho kg được m/s², tức đơn vị gia tốc, không phải đơn vị lực."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giải bài toán động lực học: chọn vật, vẽ mọi lực, chọn chiều dương theo chiều chuyển động, rồi viết $F_{\\text{hl}} = ma$.",
+   "statements": [
+    {
+     "text": "Lực cùng chiều dương mang dấu +, lực ngược chiều dương mang dấu −.",
+     "answer": true
+    },
+    {
+     "text": "Tính ra $a \\lt 0$ nghĩa là gia tốc ngược chiều dương.",
+     "answer": true
+    },
+    {
+     "text": "Từ $F = ma$ suy ra khối lượng $m = \\dfrac{a}{F}$.",
+     "answer": false
+    },
+    {
+     "text": "Lực hãm tính ra mang dấu trừ nghĩa là lực cùng chiều chuyển động.",
+     "answer": false
+    }
+   ],
+   "explanation": "Dấu của lực và gia tốc chỉ chiều so với chiều dương; từ $F = ma$ rút ra $m = F/a$.",
+   "distractorNotes": {
+    "0": "Quy ước dấu theo chiều dương đã chọn chính là bước tính hợp lực trong bài, nên ý này không sai.",
+    "1": "Dấu của gia tốc chỉ chiều so với chiều dương, nên $a \\lt 0$ đúng là gia tốc ngược chiều dương.",
+    "2": "Đảo tử và mẫu khi rút $m$ từ $F = ma$; đúng phải là chia lực cho gia tốc.",
+    "3": "Chiều dương đã chọn là chiều chuyển động, nên dấu trừ nghĩa là lực ngược chiều chuyển động."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Định luật 2 Newton — bài toán động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Xe đẩy trong siêu thị đang đứng yên trên sàn ngang. Người đẩy xe bằng lực nằm ngang $F$; lực ma sát $F_{\\text{ms}}$ ngược chiều; xe còn chịu trọng lực $P$ và phản lực $N$. Chọn chiều dương là chiều đẩy.",
+   "statements": [
+    {
+     "text": "Trọng lực và phản lực theo phương đứng triệt tiêu nhau.",
+     "answer": true
+    },
+    {
+     "text": "Hợp lực tác dụng lên xe có độ lớn $F - F_{\\text{ms}}$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $F \\gt F_{\\text{ms}}$ thì xe chuyển động chậm dần.",
+     "answer": false
+    },
+    {
+     "text": "Với gia tốc $a$ không đổi, vận tốc của xe sau thời gian $t$ là $v = \\dfrac{a}{t}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hợp lực $F - F_{\\text{ms}}$ hướng theo chiều đẩy khi $F \\gt F_{\\text{ms}}$, nên $a \\gt 0$, xe nhanh dần; từ đứng yên $v = at$.",
+   "distractorNotes": {
+    "0": "Xe không chuyển động theo phương đứng nên trọng lực và phản lực phải cân bằng, ý này không thể sai.",
+    "1": "Lực đẩy và ma sát nằm ngang, ngược chiều nhau nên hợp lực bằng hiệu của chúng.",
+    "2": "Lực đẩy lớn hơn ma sát thì hợp lực cùng chiều chuyển động, $a \\gt 0$, xe nhanh dần chứ không chậm dần.",
+    "3": "Từ $v = v_0 + at$ với $v_0 = 0$ thì vận tốc bằng gia tốc nhân thời gian, không phải chia."
+   }
+  }
+ ]
 }

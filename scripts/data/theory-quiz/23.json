@@ -2,7 +2,7 @@
  "lesson_id": 23,
  "lesson_title": "Bài 4. Bài tập về dao động điều hoà",
  "item_id": 300,
- "generated_at": "2026-10-19",
+ "generated_at": "2026-10-21",
  "generated_by": "batch-api claude-opus-5-5",
  "quiz_min_correct": 15,
  "review": {
@@ -22,87 +22,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 0,
-   "question": "Quả lắc đi từ biên trái tới biên phải mất $0{,}8\\ \\text{s}$. Chu kì dao động của nó là:",
+   "question": "Một quả lắc dao động điều hoà, đi từ biên trái tới biên phải. Khoảng thời gian đó bằng",
    "options": [
-    "$0{,}8\\ \\text{s}$",
-    "$0{,}4\\ \\text{s}$",
-    "$1{,}6\\ \\text{s}$",
-    "$3{,}2\\ \\text{s}$"
-   ],
-   "answer": 2,
-   "explanation": "Biên sang biên chỉ là nửa dao động nên $T = 2\\cdot0{,}8 = 1{,}6\\ \\text{s}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dạng chuẩn của phương trình dao động điều hoà trong bài có điều kiện nào?",
-   "options": [
-    "$A \\lt 0$ và $\\varphi \\in (-\\pi;\\pi]$",
-    "$A \\gt 0$ và $\\varphi \\in (-\\pi;\\pi]$",
-    "$A \\gt 0$ và $\\varphi \\in (0;4\\pi]$",
-    "$A$ có dấu tuỳ ý, dùng $\\sin$"
+    "hai chu kì dao động",
+    "nửa chu kì dao động",
+    "một chu kì dao động",
+    "một phần tư chu kì dao động"
    ],
    "answer": 1,
-   "explanation": "Bài viết $x = A\\cos(\\omega t + \\varphi)$ với $A \\gt 0$, $\\varphi \\in (-\\pi;\\pi]$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Trên đồ thị li độ – thời gian, khoảng cách từ đỉnh tới đáy liền kề theo trục $x$ và theo trục $t$ lần lượt là:",
-   "options": [
-    "$A$ và $T$",
-    "$2A$ và $T$",
-    "$2A$ và $T/2$",
-    "$A$ và $T/2$"
-   ],
-   "answer": 2,
-   "explanation": "Đỉnh–đáy cao $2A$ và cách nhau $T/2$ (Hình 2)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Khi $t=0$ vật đi theo chiều dương thì pha ban đầu $\\varphi$:",
-   "options": [
-    "$\\varphi \\lt 0$",
-    "$\\varphi \\gt 0$",
-    "$\\varphi = 0$ luôn",
-    "$\\varphi = \\pi$ luôn"
-   ],
-   "answer": 0,
-   "explanation": "Vì $v_0 = -A\\omega\\sin\\varphi \\gt 0$ nên $\\sin\\varphi \\lt 0$, tức $\\varphi \\lt 0$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Vật đi từ biên $+A$ sang biên $-A$ rồi về O, $A = 4\\ \\text{cm}$. Quãng đường và độ dời là:",
-   "options": [
-    "$4\\ \\text{cm}$; $-4\\ \\text{cm}$",
-    "$12\\ \\text{cm}$; $12\\ \\text{cm}$",
-    "$12\\ \\text{cm}$; $-4\\ \\text{cm}$",
-    "$8\\ \\text{cm}$; $-4\\ \\text{cm}$"
-   ],
-   "answer": 2,
-   "explanation": "Quãng đường cộng từng đoạn $8+4=12$; độ dời bằng cuối trừ đầu $=0-4$."
+   "explanation": "Biên trái sang biên phải mới là nửa dao động. Một chu kì là đi rồi quay về đúng chỗ cũ, theo đúng chiều cũ.",
+   "distractorNotes": {
+    "A": "Nhân đôi khoảng thời gian, trong khi biên–biên chỉ là chiều đi, chưa có chiều về.",
+    "C": "Coi biên–biên là một chu kì, nhưng vật chưa quay về chỗ cũ theo chiều cũ.",
+    "D": "Nhầm biên–biên với đoạn từ vị trí cân bằng ra biên, vốn chỉ mất một phần tư chu kì."
+   }
   },
   {
    "type": "multiple_choice",
@@ -112,51 +45,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Hệ thức độc lập với thời gian giữa $v$ và $x$ là:",
+   "question": "Vật dao động điều hoà với tần số góc $\\omega$. Chu kì dao động là",
    "options": [
-    "$v^2 = \\omega^2(A^2 - x^2)$",
-    "$v^2 = \\omega^2(A^2 + x^2)$",
-    "$v^2 = \\omega(A^2 - x^2)$",
-    "$v^2 = A^2 - \\omega^2 x^2$"
+    "$T=\\frac{2\\pi}{\\omega}$",
+    "$T=\\frac{\\omega}{2\\pi}$",
+    "$T=2\\pi\\omega$",
+    "$T=\\frac{1}{\\omega}$"
    ],
    "answer": 0,
-   "explanation": "Bài cho $v^2 = \\omega^2(A^2 - x^2)$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức đúng về gia tốc trong dao động điều hoà là:",
-   "options": [
-    "$a = \\omega^2 x$",
-    "$a = -\\omega x$",
-    "$a = -\\omega^2 x$",
-    "$a = -x/\\omega^2$"
-   ],
-   "answer": 2,
-   "explanation": "$a = -\\omega^2 x$: $a$ luôn trái dấu $x$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "$A = 5\\ \\text{cm}$, $\\omega = 10\\ \\text{rad/s}$, vật ở $x=-3\\ \\text{cm}$. Tốc độ và gia tốc là:",
-   "options": [
-    "$40\\ \\text{cm/s}$; $-300\\ \\text{cm/s}^2$",
-    "$20\\ \\text{cm/s}$; $+300\\ \\text{cm/s}^2$",
-    "$50\\ \\text{cm/s}$; $0$",
-    "$40\\ \\text{cm/s}$; $+300\\ \\text{cm/s}^2$"
-   ],
-   "answer": 3,
-   "explanation": "$|v|=10\\sqrt{25-9}=40$; $a=-100\\cdot(-3)=+300$."
+   "explanation": "Theo Họ 1: $T=\\frac{2\\pi}{\\omega}$ và $f=\\frac{1}{T}$.",
+   "distractorNotes": {
+    "B": "Đảo tử và mẫu; biểu thức này chính là tần số $f$, không phải chu kì.",
+    "C": "Nhân thay vì chia, khi đó $\\omega$ càng lớn chu kì càng dài là vô lí.",
+    "D": "Bỏ mất hệ số $2\\pi$ ứng với góc quét một vòng trong một chu kì."
+   }
   },
   {
    "type": "multiple_choice",
@@ -166,62 +68,273 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Đổi $x = 5\\sin(4\\pi t)$ về dạng $\\cos$ ta được:",
+   "question": "Khi đưa phương trình có dấu trừ trước côsin về dạng chuẩn, biểu thức $-\\cos\\alpha$ được viết thành",
    "options": [
-    "$5\\cos(4\\pi t + \\pi/2)$",
-    "$5\\cos(4\\pi t - \\pi/2)$",
-    "$5\\cos(4\\pi t + \\pi)$",
-    "$5\\cos(4\\pi t)$"
+    "$\\cos\\left(\\alpha-\\frac{\\pi}{2}\\right)$",
+    "$\\cos(-\\alpha)$",
+    "$\\cos(\\alpha+\\pi)$",
+    "$\\cos\\left(\\alpha+\\frac{\\pi}{2}\\right)$"
    ],
-   "answer": 1,
-   "explanation": "$\\sin\\alpha = \\cos(\\alpha - \\pi/2)$."
+   "answer": 2,
+   "explanation": "Bài nêu: $-\\cos\\alpha=\\cos(\\alpha+\\pi)$, dấu trừ chui vào pha thành $+\\pi$.",
+   "distractorNotes": {
+    "A": "Nhầm với công thức đổi sin sang côsin $\\sin\\alpha=\\cos(\\alpha-\\frac{\\pi}{2})$.",
+    "B": "Côsin là hàm chẵn nên $\\cos(-\\alpha)=\\cos\\alpha$, dấu trừ phía trước vẫn chưa được xử lí.",
+    "D": "Lệch pha $\\frac{\\pi}{2}$ chỉ chuyển giữa sin và côsin, muốn đổi dấu côsin phải cộng $\\pi$."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "tinh_nhanh",
+   "kind": "bien_doi",
    "topic": "Bài 4. Bài tập về dao động điều hoà",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "$T=1{,}2\\ \\text{s}$. Thời gian ngắn nhất đi từ $-A/2$ tới $+A/2$ là:",
+   "question": "Khi đưa phương trình $x=-A_0\\cos(\\omega t)$ (với $A_0\\gt 0$) về dạng chuẩn $x=A\\cos(\\omega t+\\varphi)$, cách làm đúng là",
    "options": [
-    "$0{,}1\\ \\text{s}$",
-    "$0{,}3\\ \\text{s}$",
-    "$0{,}4\\ \\text{s}$",
-    "$0{,}2\\ \\text{s}$"
+    "giữ $A=-A_0$ mang dấu trừ, pha $\\varphi=0$",
+    "giữ dấu trừ ngoài, coi $A=A_0$, $\\varphi=0$",
+    "lấy $A=A_0$, đổi pha thành $\\varphi=-\\frac{\\pi}{2}$",
+    "lấy $A=A_0$, dấu trừ vào pha thành $\\varphi=\\pi$"
    ],
    "answer": 3,
-   "explanation": "Mỗi nửa mất $T/12$, tổng $T/6=0{,}2\\ \\text{s}$."
+   "explanation": "Dạng chuẩn yêu cầu $A\\gt 0$; dùng $-\\cos\\alpha=\\cos(\\alpha+\\pi)$ nên $\\varphi=\\pi$.",
+   "distractorNotes": {
+    "A": "Để biên độ mang dấu trừ, trong khi dạng chuẩn yêu cầu $A\\gt 0$.",
+    "B": "Bỏ mất dấu trừ: thử $t=0$ sẽ ra $x=+A_0$ thay vì $-A_0$.",
+    "C": "Dùng phép đổi dành cho hàm sin, trong khi phương trình đã cho dạng côsin."
+   }
   },
   {
-   "type": "true_false",
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động điều hoà với biên độ $A$, tần số góc $\\omega$. Tốc độ cực đại của vật là",
+   "options": [
+    "$v_{max}=A\\omega^2$",
+    "$v_{max}=A\\omega$",
+    "$v_{max}=\\frac{A}{\\omega}$",
+    "$v_{max}=\\frac{\\omega}{A}$"
+   ],
+   "answer": 1,
+   "explanation": "Từ $v=-A\\omega\\sin(\\omega t+\\varphi)$, tốc độ cực đại $|v|_{max}=A\\omega$ khi vật qua vị trí cân bằng.",
+   "distractorNotes": {
+    "A": "Thừa bình phương của $\\omega$; $A\\omega^2$ là độ lớn gia tốc cực đại.",
+    "C": "Chia thay vì nhân, biểu thức thu được không có đơn vị của tốc độ.",
+    "D": "Đảo tử mẫu, biểu thức thu được không có đơn vị của tốc độ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong dao động điều hoà, gia tốc của vật có độ lớn cực đại khi vật ở",
+   "options": [
+    "vị trí cân bằng",
+    "li độ $x=\\frac{A}{2}$",
+    "hai vị trí biên",
+    "li độ $x=-\\frac{A}{2}$"
+   ],
+   "answer": 2,
+   "explanation": "Vì $a=-\\omega^2x$ nên $|a|$ lớn nhất khi $|x|=A$, tức ở hai biên: $|a|_{max}=\\omega^2A$.",
+   "distractorNotes": {
+    "A": "Nhầm với tốc độ cực đại; tại vị trí cân bằng $x=0$ nên gia tốc bằng 0.",
+    "B": "Tại $\\frac{A}{2}$ thì $|x|$ chưa lớn nhất nên $|a|=\\omega^2|x|$ chưa cực đại.",
+    "D": "Tại $-\\frac{A}{2}$ độ lớn li độ chỉ bằng nửa biên độ, nên gia tốc chưa cực đại."
+   }
+  },
+  {
+   "type": "multiple_choice",
    "kind": "dinh_luat",
    "topic": "Bài 4. Bài tập về dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về quãng đường và quãng thời gian trong dao động điều hoà biên độ $A$, chu kì $T$:",
-   "statements": [
-    {
-     "text": "Trong $T/2$, xuất phát ở đâu vật cũng đi được $2A$.",
-     "answer": true
-    },
-    {
-     "text": "Trong $T$, vật đi được $4A$.",
-     "answer": true
-    },
-    {
-     "text": "Trong $T/4$, vật luôn đi được đúng $A$.",
-     "answer": false
-    },
-    {
-     "text": "Trong $T/4$ đi đúng $A$ nếu xuất phát ở O hoặc ở biên.",
-     "answer": true
-    }
+   "question": "Trong dao động điều hoà, gia tốc của vật",
+   "options": [
+    "luôn trái dấu với li độ",
+    "luôn cùng dấu với li độ",
+    "luôn cùng dấu với vận tốc",
+    "luôn bằng 0 ở hai biên"
    ],
-   "explanation": "Đoạn $T/4$ cho đúng $A$ chỉ khi xuất phát ở O hoặc biên."
+   "answer": 0,
+   "explanation": "Từ $a=-\\omega^2x$: gia tốc luôn trái dấu li độ, tức luôn hướng về vị trí cân bằng.",
+   "distractorNotes": {
+    "B": "Bỏ dấu trừ trong $a=-\\omega^2x$, quên rằng gia tốc luôn hướng về vị trí cân bằng.",
+    "C": "Khi vật đi ra biên, vận tốc hướng ra ngoài còn gia tốc hướng về O nên hai đại lượng ngược dấu.",
+    "D": "Ở biên $|x|=A$ nên gia tốc có độ lớn cực đại; bằng 0 là vận tốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ thức liên hệ vận tốc $v$ và li độ $x$ (không chứa thời gian) của vật dao động điều hoà là",
+   "options": [
+    "$v^2=\\omega^2(x^2-A^2)$",
+    "$v=\\omega(A-x)$",
+    "$v^2=\\omega(A^2-x^2)$",
+    "$v^2=\\omega^2(A^2-x^2)$"
+   ],
+   "answer": 3,
+   "explanation": "Hệ thức độc lập ở Họ 2: $v^2=\\omega^2(A^2-x^2)$ (vê bình, ô-mê-ga bình, A bình trừ x bình).",
+   "distractorNotes": {
+    "A": "Đảo thứ tự hiệu, vế phải âm khi $|x|\\lt A$ là vô lí.",
+    "B": "Quên bình phương rồi khai căn, chỉ trừ thẳng biên độ cho li độ.",
+    "C": "Thiếu bình phương của $\\omega$, hai vế không cùng đơn vị."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Biết lúc $t=0$ vật có li độ $x_0$, vận tốc $v_0$ và tần số góc $\\omega$. Biên độ được tìm theo",
+   "options": [
+    "$A^2=x_0^2+(v_0\\omega)^2$",
+    "$A^2=x_0^2-\\left(\\frac{v_0}{\\omega}\\right)^2$",
+    "$A^2=x_0^2+\\left(\\frac{v_0}{\\omega}\\right)^2$",
+    "$A=x_0+\\frac{v_0}{\\omega}$"
+   ],
+   "answer": 2,
+   "explanation": "Chia hai vế $v^2=\\omega^2(A^2-x^2)$ cho $\\omega^2$ rồi chuyển vế được $A^2=x_0^2+(v_0/\\omega)^2$.",
+   "distractorNotes": {
+    "A": "Nhân với $\\omega$ thay vì chia khi biến đổi hệ thức độc lập.",
+    "B": "Sai dấu khi chuyển vế, trong khi biên độ phải lớn hơn hoặc bằng $|x_0|$.",
+    "D": "Cộng thẳng mà không bình phương, phá vỡ cấu trúc của hệ thức độc lập."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Viết phương trình $x=A\\cos(\\omega t+\\varphi)$ với $\\varphi\\in(-\\pi;\\pi]$. Nếu lúc $t=0$ vật đang đi theo chiều dương thì",
+   "options": [
+    "$\\varphi\\gt 0$",
+    "$\\varphi\\lt 0$",
+    "$\\varphi=0$",
+    "$\\varphi=\\pi$"
+   ],
+   "answer": 1,
+   "explanation": "$v_0=-A\\omega\\sin\\varphi$; muốn $v_0\\gt 0$ thì $\\sin\\varphi\\lt 0$, tức $\\varphi\\lt 0$ (M ở nửa dưới vòng tròn).",
+   "distractorNotes": {
+    "A": "Ngược quy tắc vì quên dấu trừ trong $v_0=-A\\omega\\sin\\varphi$.",
+    "C": "$\\varphi=0$ ứng với vật ở biên dương, lúc đó vận tốc bằng 0.",
+    "D": "$\\varphi=\\pi$ ứng với vật ở biên âm, lúc đó vận tốc bằng 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Lúc $t=0$, vật qua vị trí cân bằng theo chiều âm. Pha ban đầu của dao động là",
+   "options": [
+    "$\\varphi=\\frac{\\pi}{2}$",
+    "$\\varphi=-\\frac{\\pi}{2}$",
+    "$\\varphi=0$",
+    "$\\varphi=\\pi$"
+   ],
+   "answer": 0,
+   "explanation": "Qua O thì $\\cos\\varphi=0$; đi chiều âm cần $\\varphi\\gt 0$ nên $\\varphi=\\frac{\\pi}{2}$.",
+   "distractorNotes": {
+    "B": "Đây là pha khi qua O theo chiều dương; đi theo chiều âm cần $\\sin\\varphi\\gt 0$.",
+    "C": "$\\varphi=0$ cho $x_0=A$, tức vật ở biên dương chứ không ở vị trí cân bằng.",
+    "D": "$\\varphi=\\pi$ cho $x_0=-A$, tức vật ở biên âm chứ không ở vị trí cân bằng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật dao động điều hoà với chu kì $T$. Thời gian ngắn nhất để vật đi từ vị trí cân bằng tới li độ $x=\\frac{A}{2}$ là",
+   "options": [
+    "$\\frac{T}{6}$",
+    "$\\frac{T}{4}$",
+    "$\\frac{T}{8}$",
+    "$\\frac{T}{12}$"
+   ],
+   "answer": 3,
+   "explanation": "Trên vòng tròn pha, từ O tới $\\frac{A}{2}$ điểm M quét $30^\\circ$, ứng với $\\frac{T}{12}$.",
+   "distractorNotes": {
+    "A": "$\\frac{T}{6}$ là thời gian từ $\\frac{A}{2}$ ra biên, đoạn gần biên vật đi chậm hơn.",
+    "B": "$\\frac{T}{4}$ là thời gian đi hết từ O ra biên, không phải tới $\\frac{A}{2}$.",
+    "C": "Chia thời gian theo tỉ lệ quãng đường, quên rằng vật đi nhanh gần O và chậm gần biên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong khoảng thời gian $\\frac{T}{4}$, vật dao động điều hoà đi được quãng đường đúng bằng $A$ khi",
+   "options": [
+    "vật xuất phát từ vị trí bất kì",
+    "vật xuất phát từ li độ $\\frac{A}{2}$",
+    "vật xuất phát ở O hoặc ở biên",
+    "vật xuất phát từ li độ $-\\frac{A}{2}$"
+   ],
+   "answer": 2,
+   "explanation": "Bài nhấn mạnh: $\\frac{T}{4}$ đi được đúng $A$ chỉ khi xuất phát ở O hoặc ở biên, vì tốc độ thay đổi theo vị trí.",
+   "distractorNotes": {
+    "A": "Nhầm với quy tắc nửa chu kì; chỉ trong $\\frac{T}{2}$ vật mới luôn đi $2A$ từ mọi vị trí.",
+    "B": "Xuất phát ở $\\frac{A}{2}$ thì tốc độ hai phía không đối xứng, quãng đường trong $\\frac{T}{4}$ khác $A$.",
+    "D": "Xuất phát giữa O và biên thì quãng đường trong $\\frac{T}{4}$ phụ thuộc chiều đi, không bằng $A$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Phát biểu nào sau đây đúng về tốc độ trung bình và vận tốc trung bình?",
+   "options": [
+    "Tốc độ trung bình bằng độ dời chia thời gian, có dấu",
+    "Tốc độ trung bình bằng quãng đường chia thời gian, luôn dương",
+    "Vận tốc trung bình bằng quãng đường chia thời gian, luôn dương",
+    "Vận tốc trung bình luôn dương giống như tốc độ trung bình"
+   ],
+   "answer": 1,
+   "explanation": "Tốc độ TB $=\\frac{s}{\\Delta t}$, luôn dương; vận tốc TB $=\\frac{x_2-x_1}{\\Delta t}$, có dấu.",
+   "distractorNotes": {
+    "A": "Gán định nghĩa vận tốc trung bình, vốn dùng độ dời có dấu, cho tốc độ trung bình.",
+    "C": "Vận tốc trung bình dùng độ dời cuối trừ đầu, không dùng quãng đường.",
+    "D": "Độ dời có dấu nên vận tốc trung bình có thể âm hoặc bằng 0."
+   }
   },
   {
    "type": "true_false",
@@ -231,55 +344,32 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Về pha ban đầu và vị trí tại $t=0$:",
+   "question": "Gắn bút vào quả nặng treo lò xo, kéo đều tờ giấy dưới đầu bút, bút vẽ ra đồ thị li độ – thời gian dạng côsin. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Ở biên dương: $\\varphi=0$.",
+     "text": "Khoảng cách theo phương li độ giữa đỉnh cao nhất và đáy thấp nhất bằng $2A$.",
      "answer": true
     },
     {
-     "text": "Ở biên âm: $\\varphi=\\pi$.",
+     "text": "Hai đỉnh liền kề trên đồ thị cách nhau một chu kì $T$.",
      "answer": true
     },
     {
-     "text": "Qua O theo chiều dương: $\\varphi=\\pi/2$.",
+     "text": "Một đỉnh và đáy kế tiếp cách nhau về thời gian bằng một chu kì $T$.",
      "answer": false
     },
     {
-     "text": "Qua O theo chiều âm: $\\varphi=\\pi/2$.",
-     "answer": true
-    }
-   ],
-   "explanation": "Qua O chiều dương thì $\\varphi=-\\pi/2$; chiều âm thì $\\varphi=\\pi/2$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Vật đi từ O ra $+A$ rồi về O:",
-   "statements": [
-    {
-     "text": "Quãng đường là $2A$.",
-     "answer": true
-    },
-    {
-     "text": "Độ dời bằng $0$.",
-     "answer": true
-    },
-    {
-     "text": "Vận tốc trung bình bằng $2A/\\Delta t$.",
+     "text": "Biên độ bằng khoảng cách từ đỉnh cao nhất tới đáy thấp nhất.",
      "answer": false
-    },
-    {
-     "text": "Tốc độ trung bình bằng $2A/\\Delta t$.",
-     "answer": true
     }
    ],
-   "explanation": "Vận tốc trung bình lấy độ dời chia thời gian nên bằng $0$."
+   "explanation": "Đồ thị: đỉnh–đáy cao $2A$, cách nhau $\\frac{T}{2}$; hai đỉnh liền kề cách nhau $T$. Biên độ chỉ đo từ trục tới đỉnh.",
+   "distractorNotes": {
+    "0": "Đỉnh ở $+A$, đáy ở $-A$ nên khoảng cách theo phương li độ chắc chắn là $2A$.",
+    "1": "Từ đỉnh tới đỉnh kế tiếp vật về đúng chỗ cũ theo chiều cũ, đó chính là một chu kì.",
+    "2": "Đỉnh tới đáy chỉ là nửa dao động, nên hai điểm cách nhau $\\frac{T}{2}$ chứ không phải $T$.",
+    "3": "Khoảng đỉnh–đáy bằng $2A$; biên độ chỉ đo từ trục thời gian tới đỉnh."
+   }
   },
   {
    "type": "true_false",
@@ -289,98 +379,172 @@
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về công thức $T=\\dfrac{2\\pi}{\\omega}$ và các đại lượng cực đại:",
+   "question": "Một vật dao động điều hoà theo phương trình $x=A\\cos(\\omega t+\\varphi)$. Xét các phát biểu:",
    "statements": [
     {
-     "text": "$f=1/T$.",
+     "text": "Vận tốc của vật là $v=-A\\omega\\sin(\\omega t+\\varphi)$.",
      "answer": true
     },
     {
-     "text": "$|v|_{max}=A\\omega$ khi qua O.",
+     "text": "Độ lớn gia tốc cực đại là $|a|_{max}=\\omega^2A$.",
      "answer": true
     },
     {
-     "text": "$|a|_{max}=\\omega A$ ở hai biên.",
+     "text": "Tốc độ của vật đạt cực đại khi vật ở biên.",
      "answer": false
     },
     {
-     "text": "$|a|_{max}=\\omega^2 A$ ở hai biên.",
-     "answer": true
+     "text": "Giữ nguyên $A$, tăng $\\omega$ gấp đôi thì độ lớn gia tốc cực đại tăng gấp đôi.",
+     "answer": false
     }
    ],
-   "explanation": "Gia tốc cực đại là $\\omega^2 A$, không phải $\\omega A$."
+   "explanation": "Theo Họ 2: $v_{max}=A\\omega$ khi qua O, $|a|_{max}=\\omega^2A$ ở biên. Vì $|a|_{max}$ tỉ lệ $\\omega^2$ nên $\\omega$ gấp đôi thì nó gấp bốn.",
+   "distractorNotes": {
+    "0": "Đạo hàm $x=A\\cos(\\omega t+\\varphi)$ theo thời gian cho đúng $v=-A\\omega\\sin(\\omega t+\\varphi)$.",
+    "1": "Từ $a=-\\omega^2x$ với $|x|_{max}=A$ suy ra đúng $|a|_{max}=\\omega^2A$.",
+    "2": "Ở biên vật dừng lại để đổi chiều; tốc độ cực đại khi vật qua vị trí cân bằng.",
+    "3": "Quên bình phương: $|a|_{max}$ tỉ lệ với $\\omega^2$ nên $\\omega$ gấp đôi thì nó gấp bốn."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "$x=5\\sin(4\\pi t)\\ \\text{cm}$. Chu kì $T$ bằng bao nhiêu giây (viết số thập phân, dùng dấu phẩy)?",
-   "answer": "0,5",
-   "explanation": "$T=2\\pi/(4\\pi)=0{,}5\\ \\text{s}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "$A=5\\ \\text{cm}$, $\\omega=10\\ \\text{rad/s}$, $x=4\\ \\text{cm}$. Tốc độ $|v|$ bằng bao nhiêu cm/s?",
-   "answer": "30",
-   "explanation": "$|v|=10\\sqrt{25-16}=30$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "$A=5\\ \\text{cm}$, $\\omega=10\\ \\text{rad/s}$, $x=4\\ \\text{cm}$. Gia tốc $a$ bằng bao nhiêu cm/s²?",
-   "answer": "-400",
-   "explanation": "$a=-\\omega^2x=-100\\cdot4=-400$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_luat",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Từ O tới $A/2$ mất $T/k$. Tìm $k$.",
-   "answer": "12",
-   "explanation": "Bài cho O → $A/2$ quét $30^\\circ$, mất $T/12$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_luat",
-   "topic": "Bài 4. Bài tập về dao động điều hoà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Từ $A/2$ ra biên mất $T/k$. Tìm $k$.",
-   "answer": "6",
-   "explanation": "$A/2$ → biên quét $60^\\circ$, mất $T/6$."
-  },
-  {
-   "type": "short_answer",
+   "type": "true_false",
    "kind": "tinh_nhanh",
    "topic": "Bài 4. Bài tập về dao động điều hoà",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "$x=8\\cos(2\\pi t-\\pi/3)\\ \\text{cm}$. Quãng đường từ $t=0$ tới lần đầu qua O là bao nhiêu cm?",
-   "answer": "12",
-   "explanation": "Đi $4\\to8$ được $4$, rồi $8\\to0$ được $8$: $s=12\\ \\text{cm}$."
+   "theorySection": 1,
+   "question": "Dùng vòng tròn pha bán kính $A$ để giải bài toán thời gian và quãng đường của vật dao động điều hoà chu kì $T$. Xét các phát biểu:",
+   "statements": [
+    {
+     "text": "Điểm M quét góc $2\\pi$ trong thời gian $T$.",
+     "answer": true
+    },
+    {
+     "text": "Thời gian chuyển động được tính theo $\\Delta t=\\frac{\\Delta\\varphi}{\\omega}$.",
+     "answer": true
+    },
+    {
+     "text": "Thời gian ngắn nhất từ li độ $\\frac{A}{2}$ ra biên là $\\frac{T}{12}$.",
+     "answer": false
+    },
+    {
+     "text": "Trong nửa chu kì, xuất phát ở đâu vật cũng đi được quãng đường $2A$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Góc $2\\pi$ ứng $T$, $\\Delta t=\\Delta\\varphi/\\omega$. Từ $\\frac{A}{2}$ ra biên M quét $60^\\circ$ nên mất $\\frac{T}{6}$. Trong $\\frac{T}{2}$ luôn đi $2A$.",
+   "distractorNotes": {
+    "0": "Một vòng tròn ứng với một dao động toàn phần, nên góc $2\\pi$ chắc chắn ứng với thời gian $T$.",
+    "1": "M quay đều với tốc độ góc $\\omega$, nên thời gian bằng góc quét chia cho $\\omega$.",
+    "2": "$\\frac{T}{12}$ là đoạn từ O tới $\\frac{A}{2}$; gần biên vật chậm, M quét $60^\\circ$ nên mất $\\frac{T}{6}$.",
+    "3": "Trong nửa chu kì M quét nửa vòng, hình chiếu luôn đi hết $2A$ dù xuất phát ở đâu."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Biểu diễn dao động điều hoà bằng điểm M chuyển động trên vòng tròn pha, góc pha $\\omega t+\\varphi$ đo từ bán trục $Ox$ dương. Xét các phát biểu:",
+   "statements": [
+    {
+     "text": "Điểm M quay ngược chiều kim đồng hồ.",
+     "answer": true
+    },
+    {
+     "text": "Hình chiếu của M lên trục $Ox$ cho li độ $x$ của vật.",
+     "answer": true
+    },
+    {
+     "text": "Khi M ở nửa trên vòng tròn thì vận tốc của vật dương.",
+     "answer": false
+    },
+    {
+     "text": "Khi pha bằng $0$ hoặc $\\pi$ thì vật đi qua vị trí cân bằng.",
+     "answer": false
+    }
+   ],
+   "explanation": "M quay ngược chiều kim đồng hồ, hình chiếu là li độ. Nửa trên: $v\\lt 0$; nửa dưới: $v\\gt 0$. Pha $0$, $\\pi$ là ở biên; pha $\\pm\\frac{\\pi}{2}$ mới qua O.",
+   "distractorNotes": {
+    "0": "Bài quy ước pha tăng theo chiều ngược kim đồng hồ, nên đây đúng là chiều quay của M.",
+    "1": "Li độ chính là hình chiếu của M lên $Ox$, đó là cơ sở của phương pháp vòng tròn pha.",
+    "2": "Ở nửa trên, M quay sang trái nên hình chiếu chạy về phía âm, tức $v\\lt 0$.",
+    "3": "Pha $0$ hoặc $\\pi$ cho $x=\\pm A$, tức vật ở biên; vật qua O ứng với pha $\\pm\\frac{\\pi}{2}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật dao động điều hoà biên độ $A$ đi từ vị trí cân bằng O ra biên $+A$ rồi quay về O trong thời gian $\\Delta t$. Xét các phát biểu:",
+   "statements": [
+    {
+     "text": "Quãng đường vật đi được là $2A$.",
+     "answer": true
+    },
+    {
+     "text": "Độ dời của vật bằng $0$.",
+     "answer": true
+    },
+    {
+     "text": "Vận tốc trung bình của vật bằng $\\frac{2A}{\\Delta t}$.",
+     "answer": false
+    },
+    {
+     "text": "Quãng đường luôn dương, còn độ dời có dấu.",
+     "answer": true
+    }
+   ],
+   "explanation": "Quãng đường cộng từng đoạn: $A+A=2A$. Độ dời cuối trừ đầu: $0-0=0$, nên vận tốc trung bình bằng 0; $\\frac{2A}{\\Delta t}$ là tốc độ trung bình.",
+   "distractorNotes": {
+    "0": "Cộng từng đoạn: đi ra $A$ rồi quay về $A$, tổng quãng đường chắc chắn là $2A$.",
+    "1": "Điểm đầu và điểm cuối đều là O nên độ dời bằng 0, không phụ thuộc đường đi.",
+    "2": "$\\frac{2A}{\\Delta t}$ là tốc độ trung bình; vận tốc trung bình dùng độ dời bằng 0 nên bằng 0.",
+    "3": "Quãng đường là tổng độ dài các đoạn nên luôn dương, còn độ dời lấy cuối trừ đầu nên có dấu."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Bài tập về dao động điều hoà",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Viết phương trình $x=A\\cos(\\omega t+\\varphi)$ của một vật khi biết li độ $x_0$ và chiều chuyển động lúc $t=0$, với $\\varphi\\in(-\\pi;\\pi]$. Xét các phát biểu:",
+   "statements": [
+    {
+     "text": "Pha ban đầu thoả mãn $\\cos\\varphi=\\frac{x_0}{A}$.",
+     "answer": true
+    },
+    {
+     "text": "Vận tốc ban đầu là $v_0=-A\\omega\\sin\\varphi$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu lúc $t=0$ vật ở biên âm thì $\\varphi=\\pi$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $v_0\\lt 0$ thì phải chọn $\\varphi\\lt 0$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\cos\\varphi=x_0/A$ cho hai giá trị $\\pm$; dấu chọn theo $v_0=-A\\omega\\sin\\varphi$: $v_0\\lt 0$ thì $\\varphi\\gt 0$. Biên âm: $\\varphi=\\pi$.",
+   "distractorNotes": {
+    "0": "Thay $t=0$ vào $x=A\\cos(\\omega t+\\varphi)$ được ngay $x_0=A\\cos\\varphi$.",
+    "1": "Thay $t=0$ vào $v=-A\\omega\\sin(\\omega t+\\varphi)$ được đúng biểu thức này.",
+    "2": "Biên âm có $x_0=-A$ nên $\\cos\\varphi=-1$; trong khoảng $(-\\pi;\\pi]$ chỉ có $\\varphi=\\pi$.",
+    "3": "Ngược quy tắc: $v_0=-A\\omega\\sin\\varphi\\lt 0$ đòi hỏi $\\sin\\varphi\\gt 0$, tức $\\varphi\\gt 0$."
+   }
   }
  ]
 }

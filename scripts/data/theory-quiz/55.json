@@ -1,379 +1,520 @@
 {
-  "lesson_id": 55,
-  "lesson_title": "Bài 10. Sự rơi tự do",
-  "item_id": 78,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 9,
-      "cong_thuc": 10
-    },
-    "removed": [
-      {
-        "question": "Mặt Trăng hút vật yếu hơn Trái Đất khoảng mấy lần?",
-        "reason": "Đáp số 6 chỉ có trong phần giải thích phương án nhiễu của bài; đề không có dữ kiện để tự tính, phụ thuộc trí nhớ một số liệu ngoài bài toán, chữ 'khoảng' mơ hồ"
-      }
-    ]
+ "lesson_id": 55,
+ "lesson_title": "Bài 10. Sự rơi tự do",
+ "item_id": 78,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 10
   },
-  "questions": [
-    {
-      "kind": "dinh_nghia",
-      "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Sự rơi tự do là sự rơi:",
-      "options": [
-        "Của các vật nặng, không phụ thuộc lực cản của không khí",
-        "Chỉ dưới tác dụng của trọng lực (hoặc lực cản không khí không đáng kể so với trọng lượng)",
-        "Với tốc độ không đổi theo thời gian",
-        "Của mọi vật được thả không vận tốc đầu trong không khí"
-      ],
-      "answer": 1,
-      "explanation": "Bài định nghĩa: rơi chỉ dưới tác dụng của trọng lực; trong không khí mà lực cản không đáng kể so với trọng lượng cũng coi là rơi tự do. Rơi tự do là nhanh dần đều chứ không đều, và thả từ nghỉ trong không khí chưa chắc đã là rơi tự do."
-    },
-    {
-      "kind": "hien_tuong",
-      "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "type": "multiple_choice",
-      "question": "Vo tròn tờ giấy rồi thả cùng lúc với hòn bi thì hai vật gần như chạm sàn cùng lúc. Lí do là:",
-      "options": [
-        "Viên giấy hứng ít không khí hơn nên lực cản giảm mạnh so với trọng lượng",
-        "Khối lượng của giấy tăng lên khi vo tròn",
-        "Trọng lực tác dụng lên viên giấy lớn hơn lúc còn phẳng",
-        "Viên giấy không còn chịu lực cản nào"
-      ],
-      "answer": 0,
-      "explanation": "Khối lượng giấy không đổi, nhưng diện tích hứng gió giảm nên lực cản nhỏ đi so với trọng lượng. Lực cản vẫn còn (không phải bằng $0$); điều quyết định là lực cản so với trọng lượng."
-    },
-    {
-      "kind": "dieu_kien",
-      "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Chuyển động nào sau đây KHÔNG thể coi là rơi tự do?",
-      "options": [
-        "Viên bi thép rời nam châm điện rơi xuống",
-        "Hòn đá nhỏ thả từ mép bàn xuống sàn",
-        "Chiếc lá khô rơi chao lượn từ cành cây",
-        "Quả táo rơi từ cành cao $3\\ \\text{m}$"
-      ],
-      "answer": 2,
-      "explanation": "Chiếc lá nhẹ, hứng nhiều gió nên lực cản lớn so với trọng lượng. Bi thép, đá nhỏ, quả táo rơi quãng ngắn có lực cản không đáng kể, coi là rơi tự do."
-    },
-    {
-      "kind": "dinh_luat",
-      "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Đặc điểm nào sau đây đúng với chuyển động rơi tự do?",
-      "options": [
-        "Phương thẳng đứng, chiều từ trên xuống, chuyển động thẳng đều",
-        "Phương thẳng đứng, chiều từ dưới lên, chuyển động nhanh dần đều",
-        "Gia tốc của vật nặng lớn hơn gia tốc của vật nhẹ",
-        "Phương thẳng đứng, chiều từ trên xuống, chuyển động thẳng nhanh dần đều"
-      ],
-      "answer": 3,
-      "explanation": "Rơi tự do có ba đặc điểm: phương thẳng đứng, chiều từ trên xuống, thẳng nhanh dần đều; tại một nơi mọi vật có cùng gia tốc $g$."
-    },
-    {
-      "kind": "dinh_luat",
-      "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Phát biểu nào về gia tốc rơi tự do $g$ là đúng?",
-      "options": [
-        "Vật nặng có $g$ lớn hơn vật nhẹ ở cùng một nơi",
-        "$g$ có cùng giá trị ở mọi nơi trên Trái Đất",
-        "Càng lên cao thì $g$ càng lớn",
-        "Tại cùng một nơi mọi vật rơi tự do cùng $g$; $g$ phụ thuộc vĩ độ và độ cao"
-      ],
-      "answer": 3,
-      "explanation": "Cùng một nơi, mọi vật rơi tự do cùng $g$, không phụ thuộc khối lượng. $g$ đổi theo vĩ độ (ở địa cực lớn hơn xích đạo) và giảm khi lên cao."
-    },
-    {
-      "kind": "hien_tuong",
-      "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "true_false",
-      "question": "Về việc các vật rơi nhanh, chậm khác nhau trong không khí, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tờ giấy phẳng rơi chậm hơn hòn bi chủ yếu do lực cản của không khí.",
-          "answer": true
-        },
-        {
-          "text": "Vo tròn tờ giấy làm khối lượng của giấy giảm, nên viên giấy rơi nhanh hơn.",
-          "answer": false
-        },
-        {
-          "text": "Đặt tờ giấy nhỏ nằm phẳng trên bìa quyển sách rồi thả, tờ giấy rơi sát theo quyển sách.",
-          "answer": true
-        },
-        {
-          "text": "Khi không còn không khí, vật nặng rơi nhanh hơn vật nhẹ.",
-          "answer": false
-        }
-      ],
-      "explanation": "Vo giấy không đổi khối lượng, chỉ giảm diện tích hứng gió. Khi không còn lực cản (ống Newton hút hết không khí), mọi vật rơi như nhau."
-    },
-    {
-      "kind": "dieu_kien",
-      "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "true_false",
-      "question": "Về gia tốc rơi tự do $g$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tại cùng một nơi, hòn đá và viên bi rơi tự do có cùng gia tốc $g$.",
-          "answer": true
-        },
-        {
-          "text": "Ở hai địa cực $g$ lớn hơn ở xích đạo.",
-          "answer": true
-        },
-        {
-          "text": "Càng lên cao $g$ càng lớn.",
-          "answer": false
-        },
-        {
-          "text": "Gần mặt đất thường lấy $g = 9{,}8\\ \\text{m/s}^2$, bài tập hay làm tròn thành $10\\ \\text{m/s}^2$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Bảng trong bài: xích đạo $\\approx 9{,}78$, địa cực $\\approx 9{,}83\\ \\text{m/s}^2$; lên cao thì $g$ giảm."
-    },
-    {
-      "kind": "dieu_kien",
-      "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Vật rơi tự do từ nghỉ. Các quãng rơi trong những giây liên tiếp tỉ lệ $1 : 3 : 5 : \\dots$. Quãng rơi trong giây thứ $5$ tỉ lệ với số nào?",
-      "answer": "9",
-      "explanation": "Dãy là các số lẻ liên tiếp $1, 3, 5, 7, 9$, nên giây thứ $5$ ứng với $9$ (kiểm: $s_5 - s_4 = \\tfrac12 g(25 - 16) = 9 \\cdot \\tfrac12 g$)."
-    },
-    {
-      "kind": "dinh_luat",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "short_answer",
-      "question": "Thả vật từ độ cao gấp $9$ lần thì thời gian rơi tăng gấp bao nhiêu lần (cùng nơi, bỏ qua lực cản)?",
-      "answer": "3",
-      "explanation": "$t = \\sqrt{2h/g}$ tỉ lệ với $\\sqrt{h}$, nên $h$ gấp $9$ thì $t$ gấp $\\sqrt{9} = 3$ lần."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Hòn đá rơi tự do tại nơi có $g = 9{,}8\\ \\text{m/s}^2$. Quãng đường rơi sau $2\\ \\text{s}$ là:",
-      "options": [
-        "$19{,}6\\ \\text{m}$",
-        "$39{,}2\\ \\text{m}$",
-        "$9{,}8\\ \\text{m}$",
-        "$14{,}7\\ \\text{m}$"
-      ],
-      "answer": 0,
-      "explanation": "$s = \\tfrac12 g t^2 = \\tfrac12 \\cdot 9{,}8 \\cdot 4 = 19{,}6\\ \\text{m}$. Ra $39{,}2$ là quên hệ số $\\tfrac12$; ra $9{,}8$ là quên bình phương ($\\tfrac12 g t$); ra $14{,}7$ là quãng rơi trong giây thứ $2$, không phải $2$ giây đầu."
-    },
-    {
-      "kind": "bien_doi",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Từ hệ thức $v^2 = 2gs$, độ cao thả $h$ của vật chạm đất với vận tốc $v$ là:",
-      "options": [
-        "$h = \\dfrac{v^2}{g}$",
-        "$h = \\dfrac{v}{2g}$",
-        "$h = \\dfrac{v^2}{2g}$",
-        "$h = \\dfrac{2g}{v^2}$"
-      ],
-      "answer": 2,
-      "explanation": "Chia hai vế cho $2g$ được $h = \\dfrac{v^2}{2g}$. Các nhiễu là quên số $2$, quên bình phương $v$, hoặc đảo tử và mẫu."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Thả viên bi từ độ cao $125\\ \\text{m}$ ($g = 10\\ \\text{m/s}^2$, bỏ qua lực cản). Thời gian rơi là:",
-      "options": [
-        "$12{,}5\\ \\text{s}$",
-        "$25\\ \\text{s}$",
-        "$3{,}5\\ \\text{s}$",
-        "$5\\ \\text{s}$"
-      ],
-      "answer": 3,
-      "explanation": "$t = \\sqrt{\\dfrac{2h}{g}} = \\sqrt{25} = 5\\ \\text{s}$. Ra $12{,}5$ là $h/g$; ra $25$ là $2h/g$, quên lấy căn; ra $3{,}5$ là $\\sqrt{h/g}$, quên số $2$."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "multiple_choice",
-      "question": "Vật rơi tự do ($g = 10\\ \\text{m/s}^2$). Quãng đường vật rơi trong giây thứ $3$ là:",
-      "options": [
-        "$45\\ \\text{m}$",
-        "$25\\ \\text{m}$",
-        "$15\\ \\text{m}$",
-        "$20\\ \\text{m}$"
-      ],
-      "answer": 1,
-      "explanation": "Giây thứ $3$: $s_3 - s_2 = 45 - 20 = 25\\ \\text{m}$. Ra $45$ là $3$ giây đầu; ra $20$ là $2$ giây đầu; ra $15$ là $\\tfrac12 \\cdot 10 \\cdot 3$, quên bình phương."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "multiple_choice",
-      "question": "Thả một vật từ độ cao $h$, nó chạm đất với vận tốc $12\\ \\text{m/s}$. Thả vật đó từ độ cao $16h$ tại cùng nơi thì vận tốc chạm đất là:",
-      "options": [
-        "$192\\ \\text{m/s}$",
-        "$96\\ \\text{m/s}$",
-        "$48\\ \\text{m/s}$",
-        "$12\\ \\text{m/s}$"
-      ],
-      "answer": 2,
-      "explanation": "$v = \\sqrt{2gh}$ tỉ lệ với $\\sqrt{h}$, nên $h$ gấp $16$ thì $v$ gấp $4$: $48\\ \\text{m/s}$. Ra $192$ là coi $v$ tỉ lệ thuận với $h$; ra $96$ là nhầm căn thành chia $2$; ra $12$ là cho rằng $v$ không phụ thuộc độ cao."
-    },
-    {
-      "kind": "cong_thuc",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "true_false",
-      "question": "Vật rơi tự do từ nghỉ, lấy $g = 10\\ \\text{m/s}^2$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Sau $1$, $2$, $3\\ \\text{s}$ đầu vật rơi được lần lượt $5\\ \\text{m}$, $20\\ \\text{m}$, $45\\ \\text{m}$.",
-          "answer": true
-        },
-        {
-          "text": "Quãng đường vật rơi trong giây thứ $2$ là $15\\ \\text{m}$.",
-          "answer": true
-        },
-        {
-          "text": "Sau $4\\ \\text{s}$ đầu vật rơi được $80\\ \\text{m}$.",
-          "answer": true
-        },
-        {
-          "text": "Vận tốc của vật sau $3\\ \\text{s}$ là $15\\ \\text{m/s}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$v = gt = 10 \\cdot 3 = 30\\ \\text{m/s}$; $15$ là $\\tfrac12 g t$ hoặc nhầm công thức. Giây thứ $2$: $20 - 5 = 15\\ \\text{m}$."
-    },
-    {
-      "kind": "bien_doi",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "true_false",
-      "question": "Vật được thả rơi tự do từ độ cao $h$ xuống đất. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Thời gian rơi là $t = \\sqrt{\\dfrac{2h}{g}}$.",
-          "answer": true
-        },
-        {
-          "text": "Vận tốc chạm đất $v = \\sqrt{2gh}$, cũng bằng $gt$.",
-          "answer": true
-        },
-        {
-          "text": "Độ cao thả gấp $2$ thì thời gian rơi gấp $\\sqrt{2}$ lần.",
-          "answer": true
-        },
-        {
-          "text": "Bỏ qua lực cản, vật có khối lượng lớn hơn thì chạm đất với vận tốc lớn hơn.",
-          "answer": false
-        }
-      ],
-      "explanation": "Trong $t = \\sqrt{2h/g}$ và $v = \\sqrt{2gh}$ không có khối lượng: tại một nơi mọi vật rơi tự do cùng gia tốc $g$."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Viên bi được thả từ độ cao $7{,}2\\ \\text{m}$, lấy $g = 10\\ \\text{m/s}^2$. Thời gian rơi là bao nhiêu giây (làm tròn 1 chữ số thập phân)?",
-      "answer": "1,2",
-      "explanation": "$t = \\sqrt{\\dfrac{2 \\cdot 7{,}2}{10}} = \\sqrt{1{,}44} = 1{,}2\\ \\text{s}$."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "type": "short_answer",
-      "question": "Vật rơi tự do chạm đất với vận tốc $50\\ \\text{m/s}$, lấy $g = 10\\ \\text{m/s}^2$. Vật được thả từ độ cao bao nhiêu mét?",
-      "answer": "125",
-      "explanation": "$h = \\dfrac{v^2}{2g} = \\dfrac{2500}{20} = 125\\ \\text{m}$."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Em buông thước dựng đứng cho rơi tự do trong $0{,}2\\ \\text{s}$, lấy $g = 9{,}8\\ \\text{m/s}^2$. Thước rơi được bao nhiêu xentimét (làm tròn đến số nguyên)?",
-      "answer": "20",
-      "explanation": "$s = \\tfrac12 \\cdot 9{,}8 \\cdot 0{,}2^2 = 0{,}196\\ \\text{m} = 19{,}6\\ \\text{cm} \\approx 20\\ \\text{cm}$."
-    }
+  "removed": [
+   {
+    "question": "Thả hòn bi rơi sát một dây dọi đặt cạnh thước dựng đứng, quay video chậm và đánh dấu vị trí bi sau mỗi khoảng thời gian bằng nhau.",
+    "reason": "nghi_ngo: GHI CHÚ ý d sai về vật lí: tỉ lệ 1:2:3:4 không phải tỉ lệ quãng đường tổng (quãng đường tổng có tỉ lệ 1:4:9:16), nên lời 'nhầm với tỉ lệ quãng đường tổng' là sai; đáp án Đ-S-Đ-S thì đúng."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Sự rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sự rơi tự do là sự rơi",
+   "options": [
+    "chỉ dưới tác dụng của lực cản không khí",
+    "chỉ dưới tác dụng của trọng lực",
+    "dưới tác dụng của trọng lực và lực cản lớn",
+    "của mọi vật nặng trong không khí"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: rơi tự do là sự rơi chỉ dưới tác dụng của trọng lực. Khi lực cản không đáng kể so với trọng lượng thì sự rơi cũng được coi là rơi tự do.",
+   "distractorNotes": {
+    "A": "Coi lực cản là lực kéo vật rơi, trong khi lực cản chỉ cản trở; trọng lực mới làm vật rơi xuống.",
+    "C": "Bỏ qua điều kiện: chỉ coi là rơi tự do khi lực cản không đáng kể so với trọng lượng, không phải khi lực cản lớn.",
+    "D": "Đồng nhất \"vật nặng\" với rơi tự do, quên rằng vật nặng trong không khí vẫn có thể chịu lực cản đáng kể."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Sự rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong không khí, các vật rơi nhanh, chậm khác nhau là",
+   "options": [
+    "do khối lượng của các vật khác nhau",
+    "do gia tốc rơi tự do của mỗi vật khác nhau",
+    "do lực cản của không khí tác dụng lên vật",
+    "do vật nặng bị Trái Đất hút mạnh hơn"
+   ],
+   "answer": 2,
+   "explanation": "Thí nghiệm tờ giấy vo tròn cho thấy khối lượng giấy không đổi nhưng lực cản giảm thì giấy rơi nhanh như bi. Vậy nhanh hay chậm là do lực cản không khí so với trọng lượng.",
+   "distractorNotes": {
+    "A": "Mắc bẫy \"nặng rơi nhanh\": giấy vo tròn giữ nguyên khối lượng mà vẫn rơi nhanh như bi.",
+    "B": "Nghĩ mỗi vật có gia tốc rơi riêng, trong khi tại cùng một nơi mọi vật rơi tự do với cùng g.",
+    "D": "Gán nhanh chậm cho lực hút, quên rằng khi hút hết không khí, vật nặng nhẹ đều rơi như nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Sự rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chuyển động nào sau đây được coi là rơi tự do?",
+   "options": [
+    "Chiếc lông chim rơi trong phòng học",
+    "Người nhảy dù rơi sau khi đã bung dù",
+    "Tờ giấy phẳng được thả từ ngang vai",
+    "Viên sỏi nhỏ được thả từ ngang vai"
+   ],
+   "answer": 3,
+   "explanation": "Viên sỏi nhỏ, nặng, rơi quãng ngắn nên lực cản không đáng kể so với trọng lượng, được coi là rơi tự do. Các vật còn lại chịu lực cản lớn so với trọng lượng.",
+   "distractorNotes": {
+    "A": "Bỏ qua lực cản rất lớn so với trọng lượng nhỏ của lông chim, nên nó chao lượn chứ không rơi tự do.",
+    "B": "Quên rằng dù bung ra chính để tạo lực cản lớn, nên chuyển động không còn chỉ dưới tác dụng trọng lực.",
+    "C": "Chỉ nhìn độ cao thả ngắn, bỏ qua diện tích hứng gió lớn làm lực cản lên tờ giấy phẳng đáng kể."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chuyển động rơi tự do có phương và chiều là",
+   "options": [
+    "phương thẳng đứng, chiều từ trên xuống",
+    "phương thẳng đứng, chiều từ dưới lên",
+    "phương nằm ngang, chiều từ trái sang",
+    "phương xiên góc, chiều từ trên xuống"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu đặc điểm: phương thẳng đứng (phương dây dọi), chiều từ trên xuống dưới. Thí nghiệm cho thấy bi rơi dọc theo dây dọi.",
+   "distractorNotes": {
+    "B": "Nhầm chiều: trọng lực hướng xuống nên vật thả từ nghỉ chỉ có thể rơi từ trên xuống.",
+    "C": "Bỏ qua thí nghiệm dây dọi: bi rơi dọc theo dây dọi, tức phương thẳng đứng, không đi ngang.",
+    "D": "Đúng chiều nhưng sai phương: rơi tự do theo phương dây dọi, không lệch xiên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chuyển động rơi tự do là chuyển động",
+   "options": [
+    "thẳng đều",
+    "thẳng chậm dần đều",
+    "thẳng nhanh dần đều",
+    "tròn đều"
+   ],
+   "answer": 2,
+   "explanation": "Rơi tự do là chuyển động thẳng nhanh dần đều: vận tốc tăng đều theo thời gian với gia tốc g.",
+   "distractorNotes": {
+    "A": "Bỏ qua việc các khoảng rơi sau mỗi 0,1 s dài dần, chứng tỏ vận tốc tăng chứ không đều.",
+    "B": "Nhầm chiều gia tốc: g cùng chiều chuyển động nên vận tốc tăng, không giảm.",
+    "D": "Nhầm dạng quỹ đạo: vật rơi tự do đi theo đường thẳng đứng, không theo đường tròn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tại cùng một nơi trên Trái Đất, các vật rơi tự do có gia tốc",
+   "options": [
+    "lớn hơn đối với vật nặng hơn",
+    "như nhau đối với mọi vật",
+    "lớn hơn đối với vật nhỏ hơn",
+    "tăng dần theo thời gian rơi"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: tại cùng một nơi trên Trái Đất, mọi vật rơi tự do với cùng một gia tốc g.",
+   "distractorNotes": {
+    "A": "Mắc bẫy \"nặng rơi nhanh\": khi không có lực cản, khối lượng không ảnh hưởng đến gia tốc rơi.",
+    "C": "Kích thước chỉ ảnh hưởng lực cản không khí, còn rơi tự do đã loại bỏ lực cản.",
+    "D": "Nhầm vận tốc với gia tốc: vận tốc tăng dần nhưng gia tốc g không đổi trong chuyển động nhanh dần đều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Gia tốc rơi tự do g phụ thuộc vào",
+   "options": [
+    "khối lượng của vật và độ cao",
+    "hình dạng của vật và vĩ độ",
+    "khối lượng và hình dạng vật",
+    "vĩ độ địa lí và độ cao"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu: g phụ thuộc vĩ độ địa lí và độ cao. Càng gần địa cực g càng lớn, càng lên cao g càng nhỏ.",
+   "distractorNotes": {
+    "A": "Tại cùng nơi mọi vật có cùng g, nên khối lượng của vật không thể là yếu tố ảnh hưởng.",
+    "B": "Hình dạng vật chỉ làm thay đổi lực cản không khí, không làm thay đổi gia tốc rơi tự do g.",
+    "C": "Nhầm g là tính chất của vật, trong khi g chỉ phụ thuộc vị trí: vĩ độ và độ cao."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật rơi tự do từ trạng thái nghỉ. Công thức vận tốc của vật tại thời điểm t là",
+   "options": [
+    "$v = gt$",
+    "$v = \\frac{1}{2}gt$",
+    "$v = gt^2$",
+    "$v = \\frac{g}{t}$"
+   ],
+   "answer": 0,
+   "explanation": "Thay $v_0 = 0$, $a = g$ vào $v = v_0 + at$ được $v = gt$.",
+   "distractorNotes": {
+    "B": "Lấy nhầm hệ số $\\frac{1}{2}$ của công thức quãng đường đưa vào công thức vận tốc.",
+    "C": "Nhầm với dạng quãng đường; vận tốc tăng bậc nhất theo t, không theo $t^2$.",
+    "D": "Đảo t xuống mẫu khiến vận tốc giảm theo thời gian, trái với chuyển động nhanh dần đều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quãng đường vật rơi tự do đi được sau thời gian t kể từ lúc thả là",
+   "options": [
+    "$s = gt^2$",
+    "$s = \\frac{1}{2}gt$",
+    "$s = gt$",
+    "$s = \\frac{1}{2}gt^2$"
+   ],
+   "answer": 3,
+   "explanation": "Thay $v_0 = 0$, $a = g$ vào $d = v_0t + \\frac{1}{2}at^2$ được $s = \\frac{1}{2}gt^2$.",
+   "distractorNotes": {
+    "A": "Quên hệ số $\\frac{1}{2}$ khi thay $a = g$ vào $d = v_0t + \\frac{1}{2}at^2$.",
+    "B": "Quên bình phương t, nên quãng đường không tăng theo $t^2$ như tỉ lệ 1 : 3 : 5.",
+    "C": "Nhầm công thức vận tốc với công thức quãng đường."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thả một vật rơi tự do từ độ cao h. Thời gian vật rơi tới mặt đất là",
+   "options": [
+    "$t = \\sqrt{\\frac{g}{2h}}$",
+    "$t = \\sqrt{\\frac{2h}{g}}$",
+    "$t = \\frac{2h}{g}$",
+    "$t = \\sqrt{2gh}$"
+   ],
+   "answer": 1,
+   "explanation": "Từ $h = \\frac{1}{2}gt^2$ rút ra $t = \\sqrt{\\frac{2h}{g}}$.",
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu khi rút t, khiến độ cao lớn hơn lại cho thời gian rơi ngắn hơn.",
+    "C": "Quên lấy căn bậc hai: biểu thức này là $t^2$ chứ chưa phải t.",
+    "D": "Nhầm thời gian rơi với vận tốc chạm đất $v = \\sqrt{2gh}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Tại cùng một nơi, nếu độ cao thả vật rơi tự do tăng lên 9 lần thì thời gian rơi tới đất",
+   "options": [
+    "tăng 9 lần",
+    "tăng 81 lần",
+    "tăng 3 lần",
+    "tăng 4,5 lần"
+   ],
+   "answer": 2,
+   "explanation": "$t = \\sqrt{\\frac{2h}{g}}$ nên t tỉ lệ với $\\sqrt{h}$; h tăng 9 lần thì t tăng $\\sqrt{9} = 3$ lần (Bẫy 3).",
+   "distractorNotes": {
+    "A": "Coi thời gian tỉ lệ thuận với độ cao, quên rằng t tỉ lệ với $\\sqrt{h}$.",
+    "B": "Bình phương hệ số 9 thay vì lấy căn bậc hai, đảo ngược quan hệ giữa t và h.",
+    "D": "Chia hệ số cho 2 do lẫn với số 2 trong công thức, thay vì lấy căn bậc hai."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một vật rơi tự do chạm đất với vận tốc v. Từ hệ thức $v^2 = 2gh$, độ cao thả vật là",
+   "options": [
+    "$h = \\frac{v^2}{2g}$",
+    "$h = \\frac{v^2}{g}$",
+    "$h = \\frac{v}{2g}$",
+    "$h = \\frac{2g}{v^2}$"
+   ],
+   "answer": 0,
+   "explanation": "Chia hai vế $v^2 = 2gh$ cho $2g$ được $h = \\frac{v^2}{2g}$; bài lưu ý đừng quên số 2 ở mẫu.",
+   "distractorNotes": {
+    "B": "Quên số 2 ở mẫu khi chia hai vế cho $2g$, lỗi bài đã cảnh báo.",
+    "C": "Quên bình phương v khi rút h từ $v^2 = 2gh$.",
+    "D": "Đảo tử và mẫu, khiến vận tốc chạm đất lớn lại ứng với độ cao nhỏ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Đặc điểm của rơi tự do và gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của gia tốc rơi tự do g là",
+   "options": [
+    "$\\text{m/s}$",
+    "$\\text{m/s}^2$",
+    "$\\text{m}^2\\text{/s}$",
+    "$\\text{m.s}$"
+   ],
+   "answer": 1,
+   "explanation": "g là gia tốc nên có đơn vị $\\text{m/s}^2$, giá trị thường lấy $9{,}8\\ \\text{m/s}^2$.",
+   "distractorNotes": {
+    "A": "Nhầm đơn vị vận tốc với đơn vị gia tốc; g là độ tăng vận tốc mỗi giây.",
+    "C": "Đặt bình phương nhầm vào mét; gia tốc là m/s chia cho s nên giây mới bình phương.",
+    "D": "Nhân mét với giây thay vì chia cho giây bình phương, không ra thứ nguyên gia tốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật rơi tự do từ trạng thái nghỉ. Nếu thời gian rơi tăng 3 lần thì quãng đường vật rơi được",
+   "options": [
+    "tăng 3 lần",
+    "tăng 6 lần",
+    "tăng $\\sqrt{3}$ lần",
+    "tăng 9 lần"
+   ],
+   "answer": 3,
+   "explanation": "$s = \\frac{1}{2}gt^2$ nên s tỉ lệ với $t^2$; t tăng 3 lần thì s tăng 9 lần.",
+   "distractorNotes": {
+    "A": "Coi quãng đường tỉ lệ thuận với thời gian, quên s tỉ lệ với $t^2$.",
+    "B": "Nhân đôi hệ số thay vì bình phương, lẫn với số 2 trong công thức.",
+    "C": "Áp nhầm quan hệ căn bậc hai của t theo h sang quan hệ của s theo t."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Sự rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thả cùng lúc một lông chim và một hòn bi trong hai ống Newton: một ống còn không khí, một ống đã hút hết không khí.",
+   "statements": [
+    {
+     "text": "Trong ống còn không khí, lông chim rơi chậm hơn hòn bi.",
+     "answer": true
+    },
+    {
+     "text": "Trong ống đã hút hết không khí, hòn bi vẫn rơi nhanh hơn vì nặng hơn.",
+     "answer": false
+    },
+    {
+     "text": "Trong ống đã hút hết không khí, cả hai vật đều rơi tự do.",
+     "answer": true
+    },
+    {
+     "text": "Trong ống còn không khí, lông chim rơi chậm vì khối lượng của nó nhỏ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Còn không khí thì lông chim bị cản nhiều so với trọng lượng nên rơi chậm hơn. Hút hết không khí thì chỉ còn trọng lực, hai vật rơi như nhau.",
+   "distractorNotes": {
+    "0": "Lực cản không khí lên lông chim lớn so với trọng lượng của nó, nên nó chắc chắn rơi chậm hơn bi như Hình 1.",
+    "1": "Mắc bẫy \"nặng rơi nhanh\": hết không khí thì không còn lực cản, mọi vật cùng gia tốc g.",
+    "2": "Hút hết không khí thì hai vật chỉ còn chịu trọng lực, đúng định nghĩa rơi tự do.",
+    "3": "Gán nhầm nguyên nhân cho khối lượng; lông chim chậm vì lực cản lớn so với trọng lượng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Sự rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một học sinh làm thí nghiệm với tờ giấy A4 và hòn bi: thả tờ giấy phẳng cùng hòn bi, rồi vo tròn tờ giấy và thả lại cùng hòn bi; sau đó đặt tờ giấy phẳng nằm trên quyển sách rồi thả.",
+   "statements": [
+    {
+     "text": "Vo tròn tờ giấy làm khối lượng của tờ giấy giảm đi.",
+     "answer": false
+    },
+    {
+     "text": "Vo tròn tờ giấy làm lực cản không khí giảm so với trọng lượng của nó.",
+     "answer": true
+    },
+    {
+     "text": "Tờ giấy đặt nằm trên quyển sách rơi sát theo sách, không tách ra.",
+     "answer": true
+    },
+    {
+     "text": "Các lần thả chứng tỏ vật nặng luôn rơi nhanh hơn vật nhẹ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Vo tròn giữ nguyên khối lượng nhưng giảm diện tích hứng gió, nên lực cản giảm và giấy rơi gần như bi. Tờ giấy trên sách được che gió nên rơi nhanh như sách: nhanh chậm do lực cản, không do nặng nhẹ.",
+   "distractorNotes": {
+    "0": "Nhầm đổi hình dạng với đổi lượng chất: vo giấy không bớt giấy nên khối lượng giữ nguyên.",
+    "1": "Viên giấy vo tròn hứng ít không khí hơn tờ phẳng, nên lực cản so với trọng lượng chắc chắn giảm.",
+    "2": "Quyển sách che gió nên tờ giấy không bị không khí cản, rơi sát theo sách đúng như quan sát.",
+    "3": "Viên giấy nhẹ rơi gần như hòn bi, nên chính thí nghiệm này bác bỏ ý \"nặng rơi nhanh\"."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật được thả rơi tự do từ độ cao h. Chọn gốc toạ độ tại điểm thả, chiều dương hướng xuống, gốc thời gian lúc thả.",
+   "statements": [
+    {
+     "text": "Vận tốc của vật tại thời điểm t là $v = gt$.",
+     "answer": true
+    },
+    {
+     "text": "Quãng đường vật rơi được sau thời gian t là $s = gt^2$.",
+     "answer": false
+    },
+    {
+     "text": "Hệ thức không chứa thời gian là $v^2 = 2gs$.",
+     "answer": true
+    },
+    {
+     "text": "Vận tốc khi chạm đất là $v = 2gh$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Với $v_0 = 0$, $a = g$: $v = gt$, $s = \\frac{1}{2}gt^2$, $v^2 = 2gs$; khi chạm đất $v = \\sqrt{2gh}$.",
+   "distractorNotes": {
+    "0": "Thay $v_0 = 0$, $a = g$ vào $v = v_0 + at$ cho đúng $v = gt$, không có gì sai.",
+    "1": "Thiếu hệ số $\\frac{1}{2}$; đúng phải là $s = \\frac{1}{2}gt^2$.",
+    "2": "Thay $v_0 = 0$, $a = g$ vào $v^2 - v_0^2 = 2ad$ cho đúng hệ thức này.",
+    "3": "Quên lấy căn bậc hai: $2gh$ là $v^2$, còn vận tốc chạm đất là $\\sqrt{2gh}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Tại cùng một nơi, lần lượt thả rơi tự do một viên bi từ các độ cao khác nhau và so sánh thời gian rơi, vận tốc chạm đất.",
+   "statements": [
+    {
+     "text": "Độ cao gấp 4 lần thì thời gian rơi gấp 2 lần.",
+     "answer": true
+    },
+    {
+     "text": "Độ cao gấp 2 lần thì thời gian rơi gấp 2 lần.",
+     "answer": false
+    },
+    {
+     "text": "Độ cao gấp 4 lần thì vận tốc chạm đất gấp 4 lần.",
+     "answer": false
+    },
+    {
+     "text": "Thời gian rơi gấp 2 lần thì vận tốc chạm đất gấp 2 lần.",
+     "answer": true
+    }
+   ],
+   "explanation": "$t = \\sqrt{2h/g}$ và $v = \\sqrt{2gh}$ đều tỉ lệ với $\\sqrt{h}$; còn $v = gt$ tỉ lệ thuận với t (Bẫy 3).",
+   "distractorNotes": {
+    "0": "Vì t tỉ lệ với $\\sqrt{h}$, độ cao gấp 4 thì thời gian gấp đúng $\\sqrt{4} = 2$.",
+    "1": "Coi t tỉ lệ thuận với h; độ cao gấp 2 thì t chỉ gấp $\\sqrt{2} \\approx 1{,}41$.",
+    "2": "Coi v tỉ lệ thuận với h; thực ra $v = \\sqrt{2gh}$ nên chỉ gấp 2.",
+    "3": "Từ $v = gt$, vận tốc tỉ lệ thuận với thời gian rơi nên t gấp 2 thì v gấp 2."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tính thời gian, quãng đường, vận tốc khi rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật được thả rơi tự do từ trạng thái nghỉ. Xét quãng đường vật rơi \"trong n giây đầu\" và \"trong giây thứ n\".",
+   "statements": [
+    {
+     "text": "Quãng đường rơi trong n giây đầu là $s_n = \\frac{1}{2}gn^2$.",
+     "answer": true
+    },
+    {
+     "text": "Quãng đường rơi trong giây thứ n cũng bằng $\\frac{1}{2}gn^2$.",
+     "answer": false
+    },
+    {
+     "text": "Giây thứ n là khoảng thời gian từ $t = n - 1$ đến $t = n$.",
+     "answer": true
+    },
+    {
+     "text": "Quãng đường rơi trong các giây liên tiếp bằng nhau.",
+     "answer": false
+    }
+   ],
+   "explanation": "n giây đầu tính từ $t = 0$ nên $s_n = \\frac{1}{2}gn^2$; giây thứ n từ $t = n - 1$ đến $t = n$ nên $\\Delta s = s_n - s_{n-1}$, các giây sau rơi được xa hơn.",
+   "distractorNotes": {
+    "0": "n giây đầu tính từ lúc thả $t = 0$, nên áp dụng thẳng $s = \\frac{1}{2}gt^2$ với $t = n$.",
+    "1": "Nhầm \"giây thứ n\" với \"n giây đầu\"; phải lấy $s_n - s_{n-1}$.",
+    "2": "Giây thứ n là một giây cuối của n giây đầu, tức đúng từ $t = n - 1$ đến $t = n$.",
+    "3": "Quên rằng rơi tự do nhanh dần đều; quãng đường các giây liên tiếp tăng theo tỉ lệ 1 : 3 : 5."
+   }
+  }
+ ]
 }

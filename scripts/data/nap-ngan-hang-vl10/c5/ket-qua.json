@@ -1,0 +1,422 @@
+[
+ {
+  "key": "c5-1-mc-005",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-mc-007",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-mc-008",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "A",
+  "trangThai": "LECH",
+  "ghi_chu": "Đề lỗi ký tự: các vectơ mất dấu mũi tên. Phương án D cũng gần đúng nếu hiểu là vectơ, nhưng chọn A theo biểu thức định nghĩa trong SGK.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của một vật: $\\vec{p}_i = m_i\\vec{v}_i$ (đại lượng vectơ).</p><p class=\"text-base leading-relaxed my-2\">Động lượng toàn phần của hệ bằng tổng vectơ động lượng của các vật trong hệ: $\\vec{p}=\\vec{p}_1+\\vec{p}_2+\\ldots$</p><p class=\"text-base leading-relaxed my-2\">Phương án B, C sai vì công thức không có nghĩa (gộp khối lượng nhân một vận tốc chung).</p><p class=\"text-base leading-relaxed my-2\">Phương án D về bản chất cũng là tổng $m_1\\vec{v}_1+m_2\\vec{v}_2+\\ldots$ nhưng khi viết dạng này phải là tổng vectơ; phương án A là biểu thức tổng quát đúng theo định nghĩa trong sách giáo khoa.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn A.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-mc-009",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-mc-011",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-mc-021",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-mc-023",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-tf-053",
+  "type": "true_false",
+  "nguon": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "giai": [
+   false,
+   false,
+   false,
+   true
+  ],
+  "trangThai": "LECH",
+  "ghi_chu": "Ý a có chữ 'sai' thừa (lỗi đánh máy, có thể là 'sau'); đã hiểu là 'sau khi đi được 50 m'.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Ô tô chuyển động thẳng nhanh dần đều từ nghỉ: $m=1000$ kg, $v_0=0$, $a=1$ m/s$^2$, $s=50$ m.</p><p class=\"text-base leading-relaxed my-2\">a) $v^2=2as=2\\cdot1\\cdot50=100$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=10$ m/s, không phải 20 m/s. Ý a <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) $p=mv=1000\\cdot10=10000$ kg.m/s, khác $20000\\sqrt5$ kg.m/s. Ý b <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) $v=30$ m/s: $p=mv=1000\\cdot30=30000$ kg.m/s, khác 32000. Ý c <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) $p=mv$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=\\dfrac{p}{m}=\\dfrac{25000}{1000}=25$ m/s. Ý d <b>Đúng</b>.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-tf-054",
+  "type": "true_false",
+  "nguon": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-tf-060",
+  "type": "true_false",
+  "nguon": [
+   false,
+   true,
+   true,
+   true
+  ],
+  "giai": [
+   false,
+   true,
+   false,
+   false
+  ],
+  "trangThai": "LECH",
+  "ghi_chu": "Sửa '0,l s' thành 0,1 s. Ý a) phụ thuộc cách chọn chiều dương; chọn theo ý b) (−64 N) thì Δp = −6,4 nên a) sai. Ý c), d) hiểu góc 60° là góc giữa phương bay và mặt tường.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Đổi $m=0{,}4$ kg, $\\Delta t=0{,}1$ s. Chọn chiều dương là chiều chuyển động của bóng lúc đến tường: $v_1=+8$ m/s, $v_2=-8$ m/s.</p><p class=\"text-base leading-relaxed my-2\">$\\Delta p=m(v_2-v_1)=0{,}4\\cdot(-8-8)=-6{,}4$ kg·m/s.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F=\\dfrac{\\Delta p}{\\Delta t}=\\dfrac{-6{,}4}{0{,}1}=-64$ N.</p><p class=\"text-base leading-relaxed my-2\">a) Sai: theo chiều dương đã chọn, $\\Delta p=-6{,}4$ kg·m/s (độ lớn 6,4), không phải +6,4.</p><p class=\"text-base leading-relaxed my-2\">b) Đúng: $F=-64$ N.</p><p class=\"text-base leading-relaxed my-2\">c) Sai: khi bóng hợp với tường góc $60^\\circ$, chỉ thành phần vuông góc với tường đổi chiều: $\\Delta p=-2mv\\sin60^\\circ=-2\\cdot0{,}4\\cdot8\\cdot\\dfrac{\\sqrt3}{2}\\approx-5{,}54$ kg·m/s, khác $-3{,}2$.</p><p class=\"text-base leading-relaxed my-2\">d) Sai: $F=\\dfrac{-5{,}54}{0{,}1}\\approx-55{,}4$ N, khác $-32$ N.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-001",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-002",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-003",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-004",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "Phương án A và D giống nhau về nội dung (có thể mất kí hiệu vectơ khi chuyển từ Word); chọn D theo đáp án thường gặp, cần đối chiếu đáp án gốc.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: trong hệ kín (cô lập), tổng động lượng của hệ trước và sau tương tác được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">$\\vec{p}_{1}+\\vec{p}_{2}=\\vec{p}_{1}'+\\vec{p}_{2}'$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m_{1}\\vec{v}_{1}+m_{2}\\vec{v}_{2}=m_{1}\\vec{v}_{1}'+m_{2}\\vec{v}_{2}'$</p><p class=\"text-base leading-relaxed my-2\">Phương án B sai vì viết sai cấu trúc (tổng khối lượng cộng tổng vận tốc). Phương án C sai vì đổi chéo khối lượng và vận tốc. Phương án A và D có cùng nội dung, nhưng trong dạng vectơ đúng của định luật các đại lượng vận tốc phải là vectơ; đề gốc có thể đã mất kí hiệu vectơ khi chuyển từ Word.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-005",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-006",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-007",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-008",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-010",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-011",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-012",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-013",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-014",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-015",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-016",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-017",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "giai": "A",
+  "trangThai": "LECH",
+  "ghi_chu": "Phương án C (xe xả khói) cũng gây tranh cãi; chọn A theo đáp án thường gặp của đề gốc.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng áp dụng cho hệ kín (hoặc ngoại lực cân bằng, hoặc tương tác rất ngắn).</p><p class=\"text-base leading-relaxed my-2\">B: người và thuyền tạo thành hệ gần kín, người nhảy đi thì thuyền chuyển động ngược lại</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ có liên quan đến bảo toàn động lượng.</p><p class=\"text-base leading-relaxed my-2\">A: vận động viên dậm đà để nhảy nhờ phản lực của mặt đất (ngoại lực) tác dụng lên người</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ hệ không kín, không phải ví dụ của bảo toàn động lượng.</p><p class=\"text-base leading-relaxed my-2\">Vậy hiện tượng không liên quan là A.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-019",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-020",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-021",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-022",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-023",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-024",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-025",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-026",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-027",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-028",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-029",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-036",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-039",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "trangThai": "chua-co-ket-qua",
+  "ghi_chu": "",
+  "explanation": "",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ }
+]

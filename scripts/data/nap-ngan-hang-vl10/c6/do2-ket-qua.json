@@ -1,0 +1,700 @@
+[
+ {
+  "key": "c6-1-mc-001",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trong chuyển động tròn đều, các đại lượng liên hệ với nhau theo: $\\omega = \\dfrac{2\\pi}{T} = 2\\pi f$ và $T = \\dfrac{1}{f}$.</p><p class=\"text-base leading-relaxed my-2\">Phương án A: $\\omega = \\dfrac{2\\pi}{T}$ đúng.</p><p class=\"text-base leading-relaxed my-2\">Phương án B: $\\omega = \\dfrac{2\\pi}{f}$ sai, vì $\\omega = 2\\pi f$.</p><p class=\"text-base leading-relaxed my-2\">Phương án C: $T = \\omega f$ sai, vì $T = \\dfrac{2\\pi}{\\omega} = \\dfrac{1}{f}$.</p><p class=\"text-base leading-relaxed my-2\">Phương án D: $T = \\dfrac{1}{f^2}$ sai, vì $T = \\dfrac{1}{f}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-002",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Các công thức liên hệ giữa chu kì $T$, tần số $f$ và tần số góc $\\omega$: $\\omega = \\dfrac{2\\pi}{T} = 2\\pi f$ và $T = \\dfrac{1}{f}$.</p><p class=\"text-base leading-relaxed my-2\">A: $\\dfrac{T}{f} = T^2 \\neq 2\\pi$ nên sai.</p><p class=\"text-base leading-relaxed my-2\">B: $\\omega = \\dfrac{2\\pi}{T}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega T = 2\\pi$, tức $T\\omega = 2\\pi$, còn $\\dfrac{T}{\\omega} = \\dfrac{T^2}{2\\pi} \\neq 2\\pi$ nên sai.</p><p class=\"text-base leading-relaxed my-2\">C: $\\omega = 2\\pi f$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{\\omega}{f} = 2\\pi$ nên đúng.</p><p class=\"text-base leading-relaxed my-2\">D: $f = \\dfrac{1}{T}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{f}{T} = f^2 \\neq 1$ (đúng phải là $fT = 1$) nên sai.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-003",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chuyển động tròn đều: trong một chu kì $T$ vật đi được một vòng, quãng đường bằng chu vi đường tròn $2\\pi r$.</p><p class=\"text-base leading-relaxed my-2\">Vận tốc dài: $v = \\dfrac{s}{t} = \\dfrac{2\\pi r}{T}$.</p><p class=\"text-base leading-relaxed my-2\">Tần số $f = \\dfrac{1}{T}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$v = 2\\pi r f$.</p><p class=\"text-base leading-relaxed my-2\">Vậy $v = \\dfrac{2\\pi r}{T} = 2\\pi r f$, phù hợp phương án C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-004",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trong chuyển động tròn đều, vật quay được một vòng (góc $2\\pi$) trong một chu kì $T$.</p><p class=\"text-base leading-relaxed my-2\">Vận tốc góc: $\\omega = \\dfrac{\\Delta\\varphi}{\\Delta t} = \\dfrac{2\\pi}{T}$.</p><p class=\"text-base leading-relaxed my-2\">Tần số $f = \\dfrac{1}{T}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = \\dfrac{2\\pi}{T} = 2\\pi f$.</p><p class=\"text-base leading-relaxed my-2\">Vậy phương án đúng là A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-008",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chu kì $T$ là thời gian đi hết một vòng; tần số $f$ là số vòng đi được trong 1 s, và $f=\\dfrac{1}{T}$.</p><p class=\"text-base leading-relaxed my-2\">A đúng: theo định nghĩa, đi một vòng hết $T$ giây.</p><p class=\"text-base leading-relaxed my-2\">B đúng: mỗi giây đi được $f$ vòng, mỗi vòng dài $2\\pi r$ nên quãng đường là $s=f\\cdot 2\\pi r=2\\pi f r$.</p><p class=\"text-base leading-relaxed my-2\">C sai: trong $T$ giây chất điểm đi được đúng 1 vòng, không phải $f$ vòng. Số vòng trong $T$ giây là $fT=1$.</p><p class=\"text-base leading-relaxed my-2\">D đúng: $f=\\dfrac{1}{T}$ nên $T$ tăng 2 lần thì $f$ giảm 2 lần.</p><p class=\"text-base leading-relaxed my-2\">Vậy câu sai là C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-009",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Các công thức của chuyển động tròn đều: $\\omega=\\dfrac{2\\pi}{T}=2\\pi f$; $v=\\omega r=2\\pi f r$; $T=\\dfrac{1}{f}$.</p><p class=\"text-base leading-relaxed my-2\">A: $\\omega=\\dfrac{2\\pi}{T}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ T lớn thì $\\omega$ nhỏ. Đúng.</p><p class=\"text-base leading-relaxed my-2\">B: cùng r, $v=2\\pi f r$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ f nhỏ thì v nhỏ. Đúng.</p><p class=\"text-base leading-relaxed my-2\">C: cùng T thì $\\omega=\\dfrac{2\\pi}{T}$ bằng nhau, không phụ thuộc r. Sai.</p><p class=\"text-base leading-relaxed my-2\">D: $T=\\dfrac1f$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ f nhỏ thì T lớn. Đúng.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: A, B, D đều đúng; chọn A (phát biểu đúng đầu tiên).</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "A",
+  "kq": "LECH",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-011",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trong chuyển động tròn đều, tốc độ dài liên hệ với tốc độ góc và bán kính: $v = \\omega r$.</p><p class=\\\"text-base leading-relaxed my-2\\\">A sai: $v$ phụ thuộc $r$ theo công thức trên.</p><p class=\"text-base leading-relaxed my-2\">B sai: khi $\\omega$ thay đổi thì $v = \\omega r$ thay đổi theo (với $r$ không đổi).</p><p class=\"text-base leading-relaxed my-2\">C sai: $v$ bằng tích $\\omega r$, không phải thương $\\dfrac{r}{\\omega}$.</p><p class=\"text-base leading-relaxed my-2\">D đúng: với $\\omega$ không đổi thì $v$ tỉ lệ thuận với $r$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-012",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Với chuyển động tròn đều có chu kì $T$ không đổi: tốc độ góc $\\omega = \\dfrac{2\\pi}{T}$ không đổi, không phụ thuộc bán kính $r$.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ dài: $v = \\omega r = \\dfrac{2\\pi r}{T}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$v$ tỉ lệ thuận với $r$.</p><p class=\"text-base leading-relaxed my-2\">Gia tốc hướng tâm: $a_{ht} = \\omega^2 r = \\dfrac{4\\pi^2 r}{T^2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$a_{ht}$ tỉ lệ thuận với $r$.</p><p class=\"text-base leading-relaxed my-2\">A: $r$ giảm thì $v$ giảm</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Đúng.</p><p class=\"text-base leading-relaxed my-2\">B: $r$ thay đổi thì $\\omega$ không đổi</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Đúng.</p><p class=\"text-base leading-relaxed my-2\">C: $r$ tăng thì $a_{ht}$ tăng</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Đúng.</p><p class=\"text-base leading-relaxed my-2\">D: $r$ tăng thì $\\omega$ vẫn không đổi, không tăng</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Sai.</p><p class=\"text-base leading-relaxed my-2\">Vậy phát biểu sai là D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-017",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trong chuyển động tròn đều: $v=\\omega r$, $a_{ht}=\\dfrac{v^2}{r}=\\omega^2 r=v\\omega$.</p><p class=\"text-base leading-relaxed my-2\">A: Với cùng tốc độ góc $\\omega$, $v=\\omega r$ tỉ lệ với bán kính $r$ nên tốc độ dài phụ thuộc vào bán kính quỹ đạo. Phát biểu này được chọn.</p><p class=\"text-base leading-relaxed my-2\">B: Với $v$ và $\\omega$ cho trước, $a_{ht}=v\\omega$ là một giá trị xác định, và bán kính cũng được xác định theo $r=\\dfrac{v}{\\omega}$. Vì vậy không thể nói gia tốc phụ thuộc vào bán kính một cách độc lập. Phát biểu này sai.</p><p class=\"text-base leading-relaxed my-2\">C: Tốc độ góc $\\omega=\\dfrac{2\\pi}{T}$ chỉ phụ thuộc chu kì, không phụ thuộc bán kính. Phát biểu này sai.</p><p class=\"text-base leading-relaxed my-2\">D: Sai vì $v$ phụ thuộc vào $r$ (khi $\\omega$ không đổi).</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>A</b>.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "ai"
+ },
+ {
+  "key": "c6-1-mc-019",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trong chuyển động tròn đều, gia tốc hướng tâm có độ lớn: $a_{ht}=\\dfrac{v^2}{R}$.</p><p class=\"text-base leading-relaxed my-2\">Với $R$ là hằng số: $a_{ht}=\\dfrac{1}{R}\\cdot v^2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$a_{ht}$ tỉ lệ thuận với bình phương tốc độ $v^2$.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-028",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Cánh quạt quay đều quanh một trục nên mọi điểm trên cánh quạt có cùng tốc độ góc $\\omega$.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ dài của một điểm cách trục quay một khoảng $R$ là $v=\\omega R$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{v_1}{v_2}=\\dfrac{R_1}{R_2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{v_1}{v_2}=2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v_1=2v_2$. Chọn A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-029",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Hai điểm nằm trên cùng một cánh quạt (vật rắn) quay đều quanh một trục cố định nên trong cùng một khoảng thời gian chúng quay được cùng một góc.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Tốc độ góc của hai điểm bằng nhau: $\\omega_1=\\omega_2$.</p><p class=\"text-base leading-relaxed my-2\">Chu kì quay liên hệ với tốc độ góc: $T=\\dfrac{2\\pi}{\\omega}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$T_1=T_2$, không phụ thuộc bán kính ($R_1=4R_2$ chỉ ảnh hưởng đến tốc độ dài $v=\\omega R$).</p><p class=\"text-base leading-relaxed my-2\">Kết luận: chọn <b>C</b>.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-030",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chu kì của một chuyển động tròn đều là thời gian vật quay hết một vòng.</p><p class=\"text-base leading-relaxed my-2\">Kim phút quay hết một vòng mặt đồng hồ thì ứng với 1 giờ.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T = 1\\ \\text{h} = 60\\ \\text{phút} = 3600\\ \\text{s}$</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn đáp án C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-033",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Mỗi vòng ứng với góc quay $2\\pi$ rad và 1 phút bằng 60 s.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ góc: $\\omega = \\dfrac{n\\cdot 2\\pi}{60}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = \\dfrac{\\pi n}{30}$ (rad/s).</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-034",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Proton chuyển động tròn đều với bán kính $R$ và tốc độ $v$ nên trong một chu kì nó đi hết một vòng tròn, quãng đường là $2\\pi R$.</p><p class=\"text-base leading-relaxed my-2\">$T=\\dfrac{2\\pi R}{v}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Có thể kiểm tra bằng lực từ: $qvB=\\dfrac{mv^2}{R}$ nên $R=\\dfrac{mv}{qB}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T=\\dfrac{2\\pi R}{v}=\\dfrac{2\\pi m}{qB}$, không phụ thuộc $v$, phù hợp với nguyên lí hoạt động của Cyclotron.</p><p class=\"text-base leading-relaxed my-2\">Chọn đáp án A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-035",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Khi ô tô chạy không trượt, tốc độ dài của điểm trên vành bánh xe (đối với tâm bánh xe) bằng tốc độ của xe: $v = 36\\ \\text{km/h} = 10\\ \\text{m/s}$.</p><p class=\"text-base leading-relaxed my-2\">Bán kính bánh xe: $r = 25\\ \\text{cm} = 0{,}25\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">Công thức liên hệ: $v = \\omega r$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = \\dfrac{v}{r}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = \\dfrac{10}{0{,}25} = 40\\ \\text{rad/s}$.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-037",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chu kì quay là thời gian để bánh xe quay được một vòng: $T=\\dfrac{t}{N}$.</p><p class=\"text-base leading-relaxed my-2\">Thay số: $T=\\dfrac{2}{100}=0{,}02\\ \\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chu kì quay của bánh xe là $0{,}02$ s. Chọn A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-038",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chu kì quay là thời gian để bánh xe quay được một vòng: $T=\\dfrac{t}{N}$.</p><p class=\"text-base leading-relaxed my-2\">Thay số: $T=\\dfrac{4}{100}=0{,}04\\ \\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chu kì quay của bánh xe là $0{,}04$ s, chọn A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-039",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chất điểm chuyển động tròn đều nên tốc độ góc không đổi: $\\omega=\\dfrac{\\Delta\\alpha}{\\Delta t}$.</p><p class=\"text-base leading-relaxed my-2\">Trong $\\Delta t = 1$ phút $= 60$ s, chất điểm đi được 300 vòng nên góc quét là $\\Delta\\alpha = 300\\cdot 2\\pi$ rad.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega=\\dfrac{300\\cdot 2\\pi}{60}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = 10\\pi$ rad/s.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn đáp án C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [
+   "dau-vet-markup",
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-040",
+  "type": "multiple_choice",
+  "final": "B",
+  "kq": "khong-co-ket-qua",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-042",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Mặt Trăng chuyển động tròn đều quanh Trái Đất, chu kì $T = 27$ ngày – đêm.</p><p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $T = 27\\cdot 24\\cdot 3600 = 2\\,332\\,800\\ \\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ góc: $\\omega = \\dfrac{2\\pi}{T}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = \\dfrac{2\\pi}{2\\,332\\,800} \\approx 2{,}7\\cdot 10^{-6}\\ \\text{rad/s}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn đáp án D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-043",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vệ tinh chuyển động tròn đều quanh Trái Đất nên bán kính quỹ đạo: $r = R + h = 6400\\,\\text{km} + 0{,}3\\,\\text{km} = 6400{,}3\\,\\text{km}$.</p><p class=\"text-base leading-relaxed my-2\">Liên hệ tốc độ dài và tốc độ góc: $v = \\omega r$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = \\dfrac{v}{r} = \\dfrac{7}{6400{,}3}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega \\approx 1{,}09.10^{-3}\\,\\text{rad/s}$.</p><p class=\"text-base leading-relaxed my-2\">Chọn đáp án B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-044",
+  "type": "multiple_choice",
+  "final": "D",
+  "kq": "khong-co-ket-qua",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-045",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Bánh xe quay đều nên điểm trên vành có tốc độ góc không đổi. Góc quét $90^0=\\dfrac{\\pi}{2}$ rad trong $\\Delta t=0,05$ s.</p><p class=\"text-base leading-relaxed my-2\">$\\omega=\\dfrac{\\Delta\\varphi}{\\Delta t}=\\dfrac{\\pi/2}{0,05}=10\\pi$ rad/s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T=\\dfrac{2\\pi}{\\omega}=0,2$ s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Số vòng quay trong $t=10$ s: $N=\\dfrac{t}{T}=\\dfrac{10}{0,2}=50$ vòng.</p><p class=\"text-base leading-relaxed my-2\">Vận tốc xe $36$ km/h không cần dùng để tính số vòng. Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-048",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chất điểm chuyển động tròn nên gia tốc hướng tâm là $a_{ht}=\\dfrac{v^2}{R}$.</p><p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $v = 54\\ \\text{km/h} = \\dfrac{54}{3,6}=15\\ \\text{m/s}$.</p><p class=\"text-base leading-relaxed my-2\">$a_{ht}=\\dfrac{15^2}{15}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a_{ht}=15\\ \\text{m/s}^2$.</p><p class=\"text-base leading-relaxed my-2\">Chọn đáp án B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong",
+   "katex-loi:1"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-049",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Kim giờ quay một vòng (một chu kì) hết 12 giờ: $T = 12\\cdot 3600 = 43200$ s.</p><p class=\"text-base leading-relaxed my-2\">Tần số quay: $f_g = \\dfrac{1}{T} = \\dfrac{1}{43200}$</p><p class=\\\"text-base leading-relaxed my-2\\\">$\\Rightarrow f_g \\approx 2{,}31\\cdot10^{-5}$ Hz.</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-050",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Tần số quay: $f = \\frac{180}{30} = 6$ vòng/s.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Tốc độ góc: $\\omega = 2\\pi f = 12\\pi$ rad/s.</p><p class=\"text-base leading-relaxed my-2\">Điểm ở đầu cánh quạt chuyển động tròn đều với bán kính $r = 0{,}4$ m nên $v = \\omega r$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v = 12\\pi \\cdot 0{,}4 = 4{,}8\\pi$ m/s.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>C</b>.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-051",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Kim phút quay một vòng hết $T_p = 3600$ s, kim giờ quay một vòng hết $T_g = 12$ h $= 43200$ s. Tốc độ góc $\\omega = \\dfrac{2\\pi}{T}$, tốc độ dài $v = \\omega r$.</p><p class=\"text-base leading-relaxed my-2\">Kim phút ($r_p = 1{,}2$ m): $\\omega_p = \\dfrac{2\\pi}{3600} \\approx 1{,}745.10^{-3}$ rad/s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v_p = \\omega_p r_p \\approx 1{,}745.10^{-3}\\cdot 1{,}2 \\approx 2{,}09.10^{-3}$ m/s</p><p class=\"text-base leading-relaxed my-2\">Kim giờ ($r_g = 0{,}9$ m): $\\omega_g = \\dfrac{2\\pi}{43200} \\approx 1{,}454.10^{-4}$ rad/s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v_g = \\omega_g r_g \\approx 1{,}454.10^{-4}\\cdot 0{,}9 \\approx 1{,}31.10^{-4}$ m/s</p><p class=\"text-base leading-relaxed my-2\">Kết luận: $v_p \\approx 2{,}09.10^{-3}$ m/s và $v_g \\approx 1{,}31.10^{-4}$ m/s, ứng với phương án B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-052",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chuyển động tròn đều: chu kì $T = 0{,}2$ s, bán kính $r = 10\\ \\text{cm} = 0{,}1$ m.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ góc: $\\omega = \\dfrac{2\\pi}{T} = \\dfrac{2\\pi}{0{,}2} = 10\\pi\\ \\text{rad/s}$.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ dài: $v = \\omega r$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v = 10\\pi \\cdot 0{,}1 = \\pi \\approx 3{,}14\\ \\text{m/s}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy chọn <b>D</b>.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-053",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vệ tinh chuyển động tròn đều quanh Trái Đất với bán kính quỹ đạo $r = R + h = 6400 + 300 = 6700\\ \\text{km} = 6{,}7.10^6\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ góc: $\\omega = \\dfrac{v}{r} = \\dfrac{7900}{6{,}7.10^6}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega \\approx 1{,}18.10^{-3}\\ \\text{rad/s} \\approx 1{,}2.10^{-3}\\ \\text{rad/s}$</p><p class=\"text-base leading-relaxed my-2\">Chu kì: $T = \\dfrac{2\\pi r}{v} = \\dfrac{2\\pi \\cdot 6{,}7.10^6}{7900}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T \\approx 5{,}33.10^3\\ \\text{s}$, gần nhất với phương án B ($5{,}32.10^3$ s).</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-054",
+  "type": "multiple_choice",
+  "final": "D",
+  "kq": "khong-co-ket-qua",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-055",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Tốc độ góc: kim giờ $\\omega_h=\\dfrac{2\\pi}{12}$ rad/giờ, kim phút $\\omega_m=2\\pi$ rad/giờ.</p><p class=\"text-base leading-relaxed my-2\">Lúc 5 giờ đúng, kim phút ở số 12, kim giờ ở số 5, kim phút đứng sau kim giờ góc $\\dfrac{5}{12}\\cdot 2\\pi$.</p><p class=\"text-base leading-relaxed my-2\">Hai kim trùng nhau khi kim phút đuổi kịp kim giờ: $(\\omega_m-\\omega_h)\\Delta t=\\dfrac{5}{12}\\cdot 2\\pi$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\left(2\\pi-\\dfrac{2\\pi}{12}\\right)\\Delta t=\\dfrac{5}{12}\\cdot 2\\pi$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{11}{12}\\Delta t=\\dfrac{5}{12}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta t=\\dfrac{5}{11}$ giờ. Chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-mc-057",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Tốc độ góc của kim phút gấp 12 lần kim giờ: $\\omega_p = 12\\omega_g$. Hai kim trùng nhau khi kim phút hơn kim giờ đúng một vòng $2\\pi$.</p><p class=\"text-base leading-relaxed my-2\">Khoảng thời gian giữa hai lần trùng liên tiếp: $T=\\dfrac{2\\pi}{\\omega_p-\\omega_g}=\\dfrac{2\\pi}{11\\omega_g}=\\dfrac{12}{11}$ giờ (vì $\\omega_g=\\dfrac{2\\pi}{12\\text{ giờ}}$).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Số lần trùng trong 24 giờ: $N=\\dfrac{24}{12/11}=22$ lần.</p><p class=\"text-base leading-relaxed my-2\">Vì lúc đầu hai kim không trùng nhau và khoảng thời gian đúng 24 giờ (hai chu kỳ 12 giờ), mỗi chu kỳ có đúng 11 lần trùng nên kết quả là 22 lần. Chọn D.</p>",
+  "type": "multiple_choice",
+  "final": "D",
+  "ai": "D",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-tf-058",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">a) Chu kì $T$ là thời gian vật đi hết một vòng trên quỹ đạo tròn. Phát biểu <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Tốc độ góc $\\omega=\\dfrac{2\\pi}{T}$. Trong chuyển động tròn đều $T$ không đổi nên $\\omega$ không đổi, và công thức không chứa bán kính $r$ nên $\\omega$ không phụ thuộc $r$. Phát biểu <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Gia tốc hướng tâm $a_{ht}=\\omega^2 r=\\left(\\dfrac{2\\pi}{T}\\right)^2 r$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Với $T$ không đổi thì $a_{ht}$ tỉ lệ thuận với $r$, nên $r$ càng lớn thì $a_{ht}$ càng lớn (không phải càng nhỏ). Phát biểu <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Tốc độ dài $v=\\omega r=\\dfrac{2\\pi}{T}r$. Với $T$ không đổi thì $v$ tỉ lệ thuận với $r$, nên $r$ càng lớn thì $v$ càng lớn. Phát biểu <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   true,
+   false,
+   true
+  ],
+  "ai": [
+   true,
+   true,
+   false,
+   true
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-tf-059",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">a) Kim phút quay một vòng trong 1 giờ nên $T_p = 3600$ s. Phát biểu a) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Tốc độ dài của đầu mút kim phút: $v_p = \\dfrac{2\\pi r_p}{T_p}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v_p = \\dfrac{2\\pi\\cdot 1{,}2}{3600} \\approx 2{,}09\\cdot10^{-3}$ m/s.</p><p class=\"text-base leading-relaxed my-2\">Đề ghi $20{,}9\\cdot10^{-3}$ m/s, lớn gấp 10 lần kết quả tính được. Phát biểu b) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Tốc độ dài của đầu mút kim giờ: $v_h = \\dfrac{2\\pi r_h}{T_h}$ với $T_h = 43200$ s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v_h = \\dfrac{2\\pi\\cdot 0{,}9}{43200} \\approx 1{,}31\\cdot10^{-4}$ m/s. Phát biểu c) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Tỉ số hai tốc độ: $\\dfrac{v_p}{v_h} = \\dfrac{r_p}{r_h}\\cdot\\dfrac{T_h}{T_p} = \\dfrac{1{,}2}{0{,}9}\\cdot 12 = 16$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Giá trị $\\dfrac{131}{2090} \\approx 0{,}0627 \\neq 16$. Phát biểu d) <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "ai": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-tf-064",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $r = 50\\ \\text{cm} = 0{,}5\\ \\text{m}$; $s = 6\\ \\text{cm} = 0{,}06\\ \\text{m}$; $t = 2\\ \\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">a) Góc ở tâm quét được: $\\Delta\\varphi = \\dfrac{s}{r} = \\dfrac{0{,}06}{0{,}5}$</p><p class=\\\"text-base leading-relaxed my-2\\\">$\\Rightarrow \\Delta\\varphi = 0{,}12\\ \\text{rad}$, không phải $0{,}12$ độ. Ý a) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Tốc độ góc: $\\omega = \\dfrac{\\Delta\\varphi}{t} = \\dfrac{0{,}12}{2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = 0{,}06\\ \\text{rad/s}$. Ý b) <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Tốc độ dài: $v = \\dfrac{s}{t} = \\dfrac{0{,}06}{2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v = 0{,}03\\ \\text{m/s}$, không phải $0{,}3\\ \\text{m/s}$. Ý c) <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Chu kỳ: $T = \\dfrac{2\\pi}{\\omega} = \\dfrac{2\\cdot 3{,}14}{0{,}06}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T \\approx 104{,}67\\ \\text{s}$. Ý d) <b>Đúng</b>.</p>",
+  "type": "true_false",
+  "final": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "ai": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-tf-066",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Vòng quay quay đều, mỗi vòng mất $T = 15\\ \\text{phút} = 900\\ \\text{s}$, bán kính $R = \\dfrac{105}{2} = 52{,}5\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">a) Một vòng ứng với góc quay $\\theta = 2\\pi$ rad. <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">b) Quãng đường của một điểm treo cabin trong một vòng là chu vi đường tròn: $s = 2\\pi R = \\pi d = \\pi \\cdot 105$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow s \\approx 329{,}87\\ \\text{m}$, không phải 32,97 m. <b>Sai</b>.</p><p class=\"text-base leading-relaxed my-2\">c) Tốc độ góc: $\\omega = \\dfrac{2\\pi}{T} = \\dfrac{2\\pi}{900}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega = \\dfrac{\\pi}{450}\\ \\text{rad/s}$. <b>Đúng</b>.</p><p class=\"text-base leading-relaxed my-2\">d) Tần số: $f = \\dfrac{1}{T} = \\dfrac{1}{900}\\ \\text{Hz} \\approx 1{,}11\\cdot 10^{-3}\\ \\text{Hz}$, không phải 900 Hz (900 là chu kì tính bằng giây). <b>Sai</b>.</p>",
+  "type": "true_false",
+  "final": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "ai": [
+   true,
+   false,
+   true,
+   false
+  ],
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-070",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Tốc độ dài của đầu mút kim quay đều: $v = \\omega r = \\dfrac{2\\pi}{T} r$.</p><p class=\"text-base leading-relaxed my-2\">Chu kì kim phút $T_p = 1$ h, kim giờ $T_g = 12$ h</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{\\omega_p}{\\omega_g} = \\dfrac{T_g}{T_p} = 12$.</p><p class=\"text-base leading-relaxed my-2\">Độ dài kim: $r_g = \\dfrac{3}{4} r_p$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{r_p}{r_g} = \\dfrac{4}{3}$.</p><p class=\"text-base leading-relaxed my-2\">$\\dfrac{v_p}{v_g} = \\dfrac{\\omega_p}{\\omega_g}\\cdot\\dfrac{r_p}{r_g}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{v_p}{v_g} = 12\\cdot\\dfrac{4}{3} = 16$.</p><p class=\"text-base leading-relaxed my-2\">Vậy tỉ số tốc độ dài của đầu mút kim phút và kim giờ là $16$.</p>",
+  "type": "short_answer",
+  "final": "16",
+  "ai": "16",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-071",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Hai điểm nằm trên cùng một bán kính nên có cùng vận tốc góc $\\omega$; vận tốc dài $v=\\omega r$.</p><p class=\"text-base leading-relaxed my-2\">A ở phía ngoài nên $r_A-r_B=0{,}2$ m.</p><p class=\"text-base leading-relaxed my-2\">$v_A-v_B=\\omega(r_A-r_B)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega=\\dfrac{v_A-v_B}{r_A-r_B}=\\dfrac{0{,}6-0{,}2}{0{,}2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega=2$ rad/s.</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra: $r_B=0{,}1$ m, $r_A=0{,}3$ m, hiệu bằng 0,2 m (đúng).</p>",
+  "type": "short_answer",
+  "final": "2",
+  "ai": "2",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-072",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Bánh xe lăn không trượt, xe chuyển động thẳng đều nên đối với tâm bánh xe, đầu van chuyển động tròn đều với tốc độ dài bằng tốc độ xe: $v = 72$ km/h $= 20$ m/s; bán kính $r = 0{,}4$ m.</p><p class=\"text-base leading-relaxed my-2\">Chu kì: $T = \\dfrac{2\\pi r}{v}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T = \\dfrac{2\\pi \\cdot 0{,}4}{20} \\approx 0{,}1257$ s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T \\approx 0{,}13$ s</p>",
+  "type": "short_answer",
+  "final": "0,13",
+  "ai": "0,13",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "ai"
+ },
+ {
+  "key": "c6-1-sa-073",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Tốc độ góc của chuyển động tròn đều: $\\omega = \\dfrac{2\\pi}{T}$, không phụ thuộc chiều dài kim.</p><p class=\"text-base leading-relaxed my-2\">Chu kì kim phút: $T_p = 1\\ \\text{h}$; chu kì kim giờ: $T_g = 12\\ \\text{h}$.</p><p class=\"text-base leading-relaxed my-2\">$\\dfrac{\\omega_p}{\\omega_g} = \\dfrac{T_g}{T_p}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{\\omega_p}{\\omega_g} = \\dfrac{12}{1} = 12$</p><p class=\"text-base leading-relaxed my-2\">Kết luận: tốc độ góc của kim phút gấp 12 lần tốc độ góc của kim giờ.</p>",
+  "type": "short_answer",
+  "final": "12",
+  "ai": "12",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-075",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chuyển động tròn đều với bán kính quỹ đạo: $r = R + h = 6400 + 400 = 6800\\ \\text{km}$.</p><p class=\"text-base leading-relaxed my-2\">Chu kì: $T = \\dfrac{2\\pi r}{v}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T = \\dfrac{2\\pi \\cdot 6800}{7{,}82} \\approx 5463{,}6\\ \\text{s}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T \\approx 5464\\ \\text{s}$.</p>",
+  "type": "short_answer",
+  "final": "5464",
+  "ai": "5464",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-076",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Lúc 15h: kim giờ chỉ số 3 (góc $90^\\circ$ so với số 12), kim phút chỉ số 12 (góc $0^\\circ$). Kim phút chậm hơn kim giờ $90^\\circ$.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ góc: kim phút $\\omega_p = 6^\\circ$/phút; kim giờ $\\omega_g = 0{,}5^\\circ$/phút.</p><p class=\"text-base leading-relaxed my-2\">Hai kim trùng nhau khi: $\\omega_p t = 90^\\circ + \\omega_g t$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow (6 - 0{,}5)t = 90$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t = \\dfrac{90}{5{,}5} = \\dfrac{180}{11} \\approx 16{,}4$ phút.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: thời gian ngắn nhất là $\\approx 16{,}4$ phút.</p>",
+  "type": "short_answer",
+  "final": "16,4",
+  "ai": "16,4",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-077",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chu kì kim phút $T_p = 3600$ s, kim giờ $T_h = 43200$ s, nên $\\omega_p = \\dfrac{2\\pi}{3600}$ rad/s và $\\omega_h = \\dfrac{2\\pi}{43200}$ rad/s.</p><p class=\"text-base leading-relaxed my-2\">Hai kim trùng nhau lần tiếp theo khi kim phút quay hơn kim giờ đúng một vòng: $(\\omega_p-\\omega_h)t = 2\\pi$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t = \\dfrac{1}{\\frac{1}{3600}-\\frac{1}{43200}} = \\dfrac{43200}{11}$ s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t \\approx 3927{,}27$ s $\\approx 3927$ s.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: sau khoảng $3927$ s hai kim lại trùng nhau.</p>",
+  "type": "short_answer",
+  "final": "3927",
+  "ai": "3927",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-079",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trái Đất chuyển động tròn đều quanh Mặt Trời với bán kính quỹ đạo $R = 150\\cdot 10^{9}\\ \\text{m} = 1{,}5\\cdot 10^{11}\\ \\text{m}$ và chu kì $T$ bằng 1 năm.</p><p class=\"text-base leading-relaxed my-2\">$T = 365{,}25 \\times 86400 = 3{,}15576\\cdot 10^{7}\\ \\text{s}$</p><p class=\"text-base leading-relaxed my-2\">Tốc độ của chuyển động tròn đều: $v = \\dfrac{2\\pi R}{T}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v = \\dfrac{2\\pi \\cdot 1{,}5\\cdot 10^{11}}{3{,}15576\\cdot 10^{7}} \\approx 2{,}986\\cdot 10^{4}\\ \\text{m/s}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v \\approx 29{,}9\\ \\text{km/s}$</p>",
+  "type": "short_answer",
+  "final": "29,9",
+  "ai": "29,9",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-080",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Chu kì kim phút $T_p = 1$ h, chu kì kim giờ $T_g = 12$ h.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ góc $\\omega = \\dfrac{2\\pi}{T}$ nên $n_1 = \\dfrac{\\omega_p}{\\omega_g} = \\dfrac{T_g}{T_p} = 12$.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ dài $v = \\omega r$ nên $n_2 = \\dfrac{v_p}{v_g} = \\dfrac{\\omega_p r_p}{\\omega_g r_g} = n_1\\cdot\\dfrac{r_p}{r_g}$.</p><p class=\"text-base leading-relaxed my-2\">Với $r_g = 0{,}75\\,r_p$ thì $\\dfrac{r_p}{r_g} = \\dfrac{4}{3}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow n_2 = 12\\cdot\\dfrac{4}{3} = 16$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow n_1 + n_2 = 12 + 16 = 28$.</p>",
+  "type": "short_answer",
+  "final": "28",
+  "ai": "28",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-081",
+  "type": "short_answer",
+  "final": "531",
+  "kq": "khong-co-ket-qua",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-082",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Mọi điểm trên Trái Đất quay cùng tốc độ góc: $\\omega=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{86400}\\approx 7{,}27\\cdot10^{-5}$ rad/s.</p><p class=\"text-base leading-relaxed my-2\">Điểm A ở xích đạo có bán kính quỹ đạo $R=6400$ km, nên $v_A=\\omega R\\approx 465{,}42$ m/s.</p><p class=\"text-base leading-relaxed my-2\">Điểm B ở vĩ tuyến 30° có bán kính quỹ đạo $r=R\\cos30^\\circ$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v_B=\\omega R\\cos30^\\circ\\approx 465{,}42\\times0{,}866\\approx 403{,}06$ m/s.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v_A+v_B\\approx 868{,}48$ m/s, làm tròn là 868 m/s.</p>",
+  "type": "short_answer",
+  "final": "868",
+  "ai": "868",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-1-sa-083",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Núm bình điện tì vào lốp và không trượt nên tốc độ dài của mép núm bằng tốc độ xe: $v = 18\\ \\text{km/h} = 5\\ \\text{m/s}$.</p><p class=\"text-base leading-relaxed my-2\">Bán kính núm: $r = 0{,}5\\ \\text{cm} = 0{,}005\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">$\\omega = \\dfrac{v}{r} = \\dfrac{5}{0{,}005} = 1000\\ \\text{rad/s}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow f = \\dfrac{\\omega}{2\\pi} = \\dfrac{1000}{2\\pi} \\approx 159{,}15\\ \\text{vòng/s}$</p><p class=\"text-base leading-relaxed my-2\">Kết luận: núm quay khoảng $159$ vòng/s.</p>",
+  "type": "short_answer",
+  "final": "159",
+  "ai": "159",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-mc-005",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Trong chuyển động tròn đều, tốc độ không đổi nên độ lớn vận tốc không đổi; vectơ vận tốc chỉ đổi hướng. Gia tốc là gia tốc hướng tâm.</p><p class=\"text-base leading-relaxed my-2\">A đúng: vectơ gia tốc luôn hướng vào tâm quỹ đạo.</p><p class=\"text-base leading-relaxed my-2\">B đúng: độ lớn gia tốc hướng tâm $a=\\dfrac{v^2}{R}$.</p><p class=\"text-base leading-relaxed my-2\">C sai: gia tốc hướng tâm đặc trưng cho sự biến thiên về hướng của vận tốc, không phải về độ lớn (độ lớn vận tốc không đổi).</p><p class=\"text-base leading-relaxed my-2\">D đúng: vận tốc hướng theo tiếp tuyến, gia tốc hướng theo bán kính nên hai vectơ luôn vuông góc.</p><p class=\"text-base leading-relaxed my-2\">Vậy phát biểu sai là C.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "C",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-mc-025",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đề bị thiếu dữ kiện, nên lời giải dưới đây dựa trên giả định về đề gốc: vệ tinh khối lượng $m = 100$ kg chuyển động tròn đều quanh Trái Đất ở độ cao $h \\approx 200$ km.</p><p class=\"text-base leading-relaxed my-2\">Lực hướng tâm tác dụng lên vệ tinh chính là lực hấp dẫn của Trái Đất: $F_{ht}=F_{hd}=\\dfrac{GMm}{(R+h)^2}=mg_0\\dfrac{R^2}{(R+h)^2}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ht}=100\\cdot 9{,}8\\cdot\\dfrac{6400^2}{6600^2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{ht}\\approx 920$ N.</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "type": "multiple_choice",
+  "final": "B",
+  "ai": "B",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-mc-027",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Tại điểm cao nhất, trọng lực $\\vec P$ và lực căng $\\vec T$ đều hướng xuống tâm quỹ đạo. Chọn chiều dương hướng vào tâm, định luật II Newton cho chuyển động tròn:</p><p class=\"text-base leading-relaxed my-2\">$T + mg = \\dfrac{mv^2}{r}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T = m\\left(\\dfrac{v^2}{r} - g\\right)$</p><p class=\"text-base leading-relaxed my-2\">Thay số liệu của đề gốc thì được $T \\approx 13{,}55$ N.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: chọn B (13,55 N).</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "B",
+  "kq": "LECH",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-mc-041",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Bán kính quỹ đạo: $r=R+h=R+\\frac{7}{9}R=\\frac{16}{9}R$.</p><p class=\"text-base leading-relaxed my-2\">Lực hấp dẫn đóng vai trò lực hướng tâm: $\\frac{GMm}{r^2}=\\frac{mv^2}{r}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=\\sqrt{\\frac{GM}{r}}$</p><p class=\"text-base leading-relaxed my-2\">Ở mặt đất: $g=\\frac{GM}{R^2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow GM=gR^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=\\sqrt{\\frac{gR^2}{r}}=\\sqrt{\\frac{9gR}{16}}=\\frac{3}{4}\\sqrt{gR}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=\\frac{3}{4}\\sqrt{10\\cdot 6{,}4\\cdot 10^{6}}=\\frac{3}{4}\\cdot 8000=6000$ m/s.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-sa-048",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đề bị thiếu dữ kiện nên không thể suy ra số liệu gốc. Đáp án đã cho là $x = 6{,}28$, tức $\\omega = 6{,}28\\cdot10^{7}$ rad/s. Giá trị này trùng với $2\\pi\\cdot10^{7}$ rad/s.</p><p class=\"text-base leading-relaxed my-2\">Với electron chuyển động tròn đều, tốc độ góc liên hệ với chu kì và tần số: $\\omega=\\dfrac{2\\pi}{T}=2\\pi f$.</p><p class=\"text-base leading-relaxed my-2\">Với $T=10^{-7}$ s (hay $f=10^{7}$ Hz):</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\omega=\\dfrac{2\\pi}{10^{-7}}=2\\pi\\cdot10^{7}\\approx 6{,}28\\cdot10^{7}$ rad/s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow x\\approx 6{,}28$.</p>",
+  "type": "short_answer",
+  "final": "6,28",
+  "ai": "6,28",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-sa-049",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Electron chuyển động tròn đều nên tốc độ dài: $v=\\omega r=\\dfrac{2\\pi r}{T}$.</p><p class=\"text-base leading-relaxed my-2\">Theo đáp án của đề, $v = 2\\pi\\cdot 10^{7}$ m/s, tức là $\\dfrac{r}{T}=10^{7}$ m/s (đơn vị SI).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v=2\\pi\\cdot10^{7}\\approx 6{,}28\\cdot10^{7}$ m/s</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow x\\approx 6{,}28$.</p>",
+  "type": "short_answer",
+  "final": "6,28",
+  "ai": "6,28",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-sa-050",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đề bài thiếu dữ kiện (không nêu quỹ đạo, vận tốc hay từ trường của electron), nên không thể tái lập phép tính từ đề.</p><p class=\"text-base leading-relaxed my-2\">Gia tốc hướng tâm có dạng $a_{ht}=\\dfrac{v^2}{r}$, hoặc $a_{ht}=\\dfrac{F}{m}$ với $F$ là lực đóng vai trò lực hướng tâm.</p><p class=\"text-base leading-relaxed my-2\">Theo đáp án của đề: $a_{ht}=3{,}95\\cdot10^{15}$ m/s².</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow x=3{,}95$.</p>",
+  "type": "short_answer",
+  "final": "3,95",
+  "ai": "3,95",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-sa-051",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đề bài bị cắt mất phần dữ kiện (không có bán kính quỹ đạo, vận tốc hay cảm ứng từ), nên không thể tính lại giá trị của $x$ từ đề đã cho.</p><p class=\"text-base leading-relaxed my-2\">Lực hướng tâm của electron là hợp lực hướng vào tâm quỹ đạo, có độ lớn $F_{ht}=\\dfrac{m v^2}{r}$. Tùy bối cảnh, lực này là lực Coulomb $\\dfrac{k e^2}{r^2}$ hoặc lực Lorentz $e v B$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Theo đáp án của đề: $F_{ht}=35{,}9\\cdot10^{-16}$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$x=35{,}9$.</p>",
+  "type": "short_answer",
+  "final": "35,9",
+  "ai": "35,9",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-mc-057",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đề bài chỉ còn câu hỏi, không có dữ kiện (bán kính quỹ đạo, tốc độ dài hoặc tốc độ góc, chu kì…), nên không thể tính được gia tốc hướng tâm.</p><p class=\"text-base leading-relaxed my-2\">Công thức cần dùng: $a_{ht}=\\dfrac{v^2}{r}=\\omega^2 r$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Không có số liệu để thay vào, nên đáp án A (150 m/s$^{2}$) chỉ là phỏng đoán, chưa được kiểm chứng.</p>",
+  "type": "multiple_choice",
+  "final": "C",
+  "ai": "A",
+  "kq": "LECH",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-mc-059",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Xe chuyển động tròn đều (về độ lớn vận tốc) trên đoạn đường cong nghiêng: chịu trọng lực $\\vec P$, phản lực $\\vec N$ vuông góc mặt đường và lực ma sát nghỉ $\\vec F_{ms}$ của mặt đường.</p><p class=\"text-base leading-relaxed my-2\">Theo định luật II Newton: $\\vec P+\\vec N+\\vec F_{ms}=m\\vec a_{ht}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ hợp lực của ba lực này hướng vào tâm quỹ đạo, đóng vai trò lực hướng tâm.</p><p class=\"text-base leading-relaxed my-2\">B, C sai vì chỉ có một lực riêng lẻ; D sai vì thiếu trọng lực và ma sát ở đây là ma sát nghỉ, không phải ma sát trượt.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "type": "multiple_choice",
+  "final": "A",
+  "ai": "A",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-sa-068",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Đề gốc không có dữ kiện khối lượng ô tô. Theo đáp án đã cho, giả thiết bài gốc là ô tô có $m = 2{,}5$ tấn $= 2500$ kg, lấy $g = 9{,}8\\ \\text{m/s}^2$ (cầu nằm ngang).</p><p class=\"text-base leading-relaxed my-2\">Khi qua điểm giữa cầu nằm ngang, ô tô chuyển động thẳng đều (hoặc không có gia tốc hướng tâm), nên hợp lực theo phương thẳng đứng bằng 0: $N - P = 0$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow N = P = mg$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow N = 2500 \\cdot 9{,}8 = 24500\\ \\text{N} = 24{,}5\\cdot 10^{3}\\ \\text{N}$</p><p class=\"text-base leading-relaxed my-2\">Theo định luật III Newton, áp lực của ô tô lên cầu có độ lớn bằng $N$, nên $x = 24{,}5$.</p>",
+  "type": "short_answer",
+  "final": "24,5",
+  "ai": "24,5",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-sa-069",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Ô tô qua điểm cao nhất của cầu vòng lên, chuyển động tròn: hợp lực hướng tâm (hướng xuống) gồm trọng lực và phản lực.</p><p class=\"text-base leading-relaxed my-2\">Chọn chiều dương hướng xuống tâm cầu: $P - N = m\\dfrac{v^2}{R}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow N = m\\left(g - \\dfrac{v^2}{R}\\right)$</p><p class=\"text-base leading-relaxed my-2\">Theo định luật III Niu-tơn, áp lực của ô tô lên cầu có độ lớn bằng $N$.</p><p class=\"text-base leading-relaxed my-2\">Thay số theo dữ kiện gốc của bài (đề thiếu khối lượng và vận tốc) ta được $N \\approx 13,3\\cdot 10^3$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow x = 13,3$.</p>",
+  "type": "short_answer",
+  "final": "13,3",
+  "ai": "13,3",
+  "kq": "khop",
+  "flags": [
+   "cong-thuc-rong"
+  ],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-sa-073",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Tại điểm cao nhất của vòng tròn thẳng đứng, xe và người không rơi khi hợp lực hướng tâm không nhỏ hơn trọng lực; tốc độ tối thiểu ứng với lúc phản lực của vòng bằng 0, chỉ còn trọng lực làm lực hướng tâm.</p><p class=\"text-base leading-relaxed my-2\">$mg=\\dfrac{mv^2}{R}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v_{min}=\\sqrt{gR}$</p><p class=\"text-base leading-relaxed my-2\">Với $g=10\\ \\text{m/s}^2$ và bán kính vòng xiếc $R=6{,}4$ m (suy từ đáp án) thì $v_{min}=\\sqrt{10\\cdot 6{,}4}=8$ m/s.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: $v_{min}=8$ m/s.</p>",
+  "type": "short_answer",
+  "final": "8",
+  "ai": "8",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ },
+ {
+  "key": "c6-2-sa-074",
+  "expl": "<p class=\"text-base leading-relaxed my-2\">Tại điểm cao nhất của vòng xiếc, xe chuyển động tròn; hợp lực hướng tâm (hướng xuống) gồm trọng lực và phản lực của vòng: $P+N=\\dfrac{mv^2}{R}$.</p><p class=\\\"text-base leading-relaxed my-2\\\">$\\Rightarrow N=\\dfrac{mv^2}{R}-mg$</p><p class=\\\"text-base leading-relaxed my-2\\\">$\\Rightarrow N=\\dfrac{45\\cdot 10^2}{5}-45\\cdot 10=900-450=450\\ \\text{N}$ (với $m=45$ kg, $R=5$ m, $g=10$ m/s²).</p><p class=\\\"text-base leading-relaxed my-2\\\">Theo định luật III Niu-tơn, lực nén của xe lên vòng xiếc có độ lớn bằng $N$, tức là $450$ N.</p>",
+  "type": "short_answer",
+  "final": "450",
+  "ai": "450",
+  "kq": "khop",
+  "flags": [],
+  "duyet": "khop-2-nguon"
+ }
+]

@@ -1,386 +1,550 @@
 {
-  "lesson_id": 58,
-  "lesson_title": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
-  "item_id": 108,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 58,
+ "lesson_title": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+ "item_id": 108,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Tổng hợp và phân tích lực. Cân bằng lực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tổng hợp lực là",
+   "options": [
+    "cộng độ lớn các lực tác dụng lên vật thành một số",
+    "thay các lực tác dụng đồng thời bằng một lực có tác dụng giống hệt",
+    "thay một lực bằng các lực thành phần có tác dụng giống hệt",
+    "tìm một lực cân bằng với các lực tác dụng lên vật"
+   ],
+   "answer": 1,
+   "explanation": "Bài định nghĩa tổng hợp lực là thay các lực tác dụng đồng thời lên một vật bằng một lực có tác dụng giống hệt. Lực thay thế gọi là hợp lực.",
+   "distractorNotes": {
+    "A": "Lực là vectơ, có cả hướng, nên tổng hợp lực là cộng vectơ chứ không cộng số độ lớn.",
+    "C": "Thay một lực bằng các lực thành phần là phân tích lực, việc ngược lại với tổng hợp lực.",
+    "D": "Lực cân bằng ngược chiều hợp lực nên không có tác dụng giống hệt các lực ban đầu."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Phân tích lực theo hai phương vuông góc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phân tích lực là",
+   "options": [
+    "thay các lực tác dụng đồng thời bằng một lực giống hệt",
+    "cộng vectơ các lực cùng tác dụng lên một vật",
+    "tìm lực cùng độ lớn, ngược chiều với lực đã cho",
+    "thay một lực bằng các lực thành phần có tác dụng giống hệt"
+   ],
+   "answer": 3,
+   "explanation": "Phân tích lực là việc ngược với tổng hợp lực: thay một lực bằng các lực thành phần có tác dụng giống hệt, thường theo hai phương vuông góc.",
+   "distractorNotes": {
+    "A": "Thay nhiều lực bằng một lực là tổng hợp lực, ngược với phân tích lực.",
+    "B": "Cộng vectơ các lực là tìm hợp lực, tức là tổng hợp lực chứ không phải phân tích.",
+    "C": "Lực cùng độ lớn, ngược chiều là lực cân bằng với lực đã cho, không thay thế được nó."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Điều kiện cân bằng của chất điểm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chất điểm ở trạng thái cân bằng khi",
+   "options": [
+    "tổng vectơ các lực tác dụng lên nó bằng $\\vec 0$",
+    "tổng độ lớn các lực tác dụng lên nó bằng 0",
+    "các lực tác dụng lên nó có cùng độ lớn",
+    "chỉ có đúng một lực tác dụng lên nó"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, chất điểm cân bằng khi $\\vec F_1 + \\vec F_2 + \\dots = \\vec 0$, tức là tổng vectơ các lực bằng vectơ không.",
+   "distractorNotes": {
+    "B": "Cộng số độ lớn bỏ qua hướng của lực, mà các độ lớn đều dương nên tổng không thể bằng 0.",
+    "C": "Các lực cùng độ lớn nhưng hướng không thích hợp thì hợp lực vẫn khác $\\vec 0$.",
+    "D": "Chỉ một lực khác không thì hợp lực chính là lực đó, khác $\\vec 0$, nên vật không cân bằng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai lực được gọi là đồng quy khi",
+   "options": [
+    "hai lực có cùng độ lớn và cùng chiều",
+    "hai lực cùng đặt lên hai vật khác nhau",
+    "giá của hai lực cắt nhau tại một điểm",
+    "giá của hai lực song song với nhau"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu hai lực đồng quy có giá (đường thẳng chứa vectơ lực) cắt nhau tại một điểm.",
+   "distractorNotes": {
+    "A": "Đồng quy chỉ nói về giá của hai lực cắt nhau, không đòi hỏi cùng độ lớn hay cùng chiều.",
+    "B": "Đặt lên hai vật khác nhau là đặc điểm của cặp lực – phản lực, không phải định nghĩa lực đồng quy.",
+    "D": "Hai giá song song thì không cắt nhau, đó là hai lực song song chứ không đồng quy."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Điều kiện cân bằng của chất điểm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Quyển sách nằm yên trên bàn. Trọng lực $\\vec P$ và lực đỡ $\\vec N$ của bàn tác dụng lên sách là",
+   "options": [
+    "cặp lực – phản lực vì đặt lên hai vật khác nhau",
+    "cặp lực – phản lực vì cùng độ lớn, ngược chiều",
+    "hai lực không cân bằng vì khác bản chất nhau",
+    "hai lực cân bằng vì cùng đặt lên quyển sách"
+   ],
+   "answer": 3,
+   "explanation": "$\\vec P$ và $\\vec N$ cùng đặt lên sách, cùng độ lớn, ngược chiều nên là hai lực cân bằng. Cặp lực – phản lực phải đặt lên hai vật khác nhau.",
+   "distractorNotes": {
+    "A": "Cả trọng lực và lực đỡ đều đặt lên quyển sách, không đặt lên hai vật khác nhau.",
+    "B": "Cùng độ lớn, ngược chiều chưa đủ; lực – phản lực phải là cặp \"A lên B\" và \"B lên A\".",
+    "C": "Hai lực cân bằng có thể khác bản chất, như lực hút của Trái Đất và lực đỡ của bàn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo quy tắc hình bình hành, hợp lực của hai lực đồng quy được biểu diễn bằng",
+   "options": [
+    "một cạnh còn lại của hình bình hành",
+    "đường chéo xuất phát từ gốc chung hai lực",
+    "đường chéo nối ngọn của hai vectơ lực",
+    "nửa đường chéo xuất phát từ gốc chung"
+   ],
+   "answer": 1,
+   "explanation": "Dựng hình bình hành nhận $\\vec F_1$, $\\vec F_2$ chung gốc làm hai cạnh thì đường chéo xuất phát từ gốc chính là hợp lực $\\vec F$.",
+   "distractorNotes": {
+    "A": "Các cạnh hình bình hành chính là hai lực thành phần, không biểu diễn hợp lực.",
+    "C": "Đường chéo nối hai ngọn vectơ biểu diễn hiệu hai vectơ, không phải tổng của chúng.",
+    "D": "Hợp lực là cả đường chéo từ gốc; nửa đường chéo chỉ là bước trung gian khi suy công thức hình thoi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai lực đồng quy $F_1$, $F_2$ hợp nhau góc $\\alpha$. Độ lớn hợp lực $F$ thoả mãn",
+   "options": [
+    "$F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$",
+    "$F^2 = F_1^2 + F_2^2 - 2F_1F_2\\cos\\alpha$",
+    "$F = F_1 + F_2 + 2F_1F_2\\cos\\alpha$",
+    "$F^2 = F_1^2 + F_2^2 + 2F_1F_2\\sin\\alpha$"
+   ],
+   "answer": 0,
+   "explanation": "Công thức trong bài: $F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$. Dấu cộng xuất hiện vì góc trong tam giác lực là $180^\\circ - \\alpha$.",
+   "distractorNotes": {
+    "B": "Chép nguyên định lí cosin mà quên góc trong tam giác lực là $180^\\circ - \\alpha$ nên sai dấu.",
+    "C": "Thiếu bình phương nên sai thứ nguyên và không khớp trường hợp $\\alpha = 90^\\circ$.",
+    "D": "Nhầm cos thành sin; khi $\\alpha = 0^\\circ$ công thức này không cho $F = F_1 + F_2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai lực đồng quy có cùng độ lớn $F_1 = F_2$, hợp nhau góc $\\alpha$. Độ lớn hợp lực là",
+   "options": [
+    "$F = 2F_1\\cos\\alpha$",
+    "$F = 2F_1\\sin\\dfrac{\\alpha}{2}$",
+    "$F = 2F_1\\cos\\dfrac{\\alpha}{2}$",
+    "$F = F_1\\cos\\dfrac{\\alpha}{2}$"
+   ],
+   "answer": 2,
+   "explanation": "Khi $F_1 = F_2$, hình bình hành là hình thoi, đường chéo chia đôi góc $\\alpha$ nên $F = 2F_1\\cos\\dfrac{\\alpha}{2}$.",
+   "distractorNotes": {
+    "A": "Quên rằng đường chéo hình thoi chia đôi góc $\\alpha$ nên phải dùng góc $\\dfrac{\\alpha}{2}$.",
+    "B": "Nửa đường chéo là cạnh kề góc $\\dfrac{\\alpha}{2}$ trong tam giác vuông nên dùng cos, không dùng sin.",
+    "D": "Biểu thức này chỉ là nửa đường chéo; hợp lực là cả đường chéo nên phải nhân 2."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Phân tích lực theo hai phương vuông góc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phân tích lực $\\vec F$ theo hai trục vuông góc $Ox$, $Oy$; $\\alpha$ là góc giữa $\\vec F$ và $Ox$. Thành phần theo $Ox$ là",
+   "options": [
+    "$F_x = F\\sin\\alpha$",
+    "$F_x = F\\cos\\alpha$",
+    "$F_x = \\dfrac{F}{\\cos\\alpha}$",
+    "$F_x = F\\tan\\alpha$"
+   ],
+   "answer": 1,
+   "explanation": "Thành phần theo $Ox$ là cạnh kề góc $\\alpha$ nên $F_x = F\\cos\\alpha$, còn $F_y = F\\sin\\alpha$.",
+   "distractorNotes": {
+    "A": "$F\\sin\\alpha$ là cạnh đối góc $\\alpha$, tức thành phần theo trục $Oy$.",
+    "C": "Chia cho cos làm thành phần lớn hơn cả $F$, trái với việc cạnh góc vuông nhỏ hơn cạnh huyền.",
+    "D": "Phép chiếu lực chỉ nhân $F$ với cos hoặc sin của góc, không dùng tan."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Phân tích lực theo hai phương vuông góc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Vật đặt trên mặt phẳng nghiêng góc $\\alpha$ so với phương ngang. Thành phần trọng lực song song với mặt dốc là",
+   "options": [
+    "$P_x = P\\sin\\alpha$",
+    "$P_x = P\\cos\\alpha$",
+    "$P_x = P\\tan\\alpha$",
+    "$P_x = \\dfrac{P}{\\sin\\alpha}$"
+   ],
+   "answer": 0,
+   "explanation": "Góc giữa $\\vec P$ và phương vuông góc dốc bằng $\\alpha$, thành phần dọc dốc đối diện góc ấy nên bằng $P\\sin\\alpha$. Dốc thoải ($\\alpha \\to 0$) thì thành phần này $\\to 0$.",
+   "distractorNotes": {
+    "B": "$P\\cos\\alpha$ là thành phần ép vuông góc vào dốc; nhầm vì tưởng góc nghiêng luôn kề thành phần dọc dốc.",
+    "C": "Tan không phải phép chiếu; dốc gần dựng đứng thì giá trị này tiến tới vô cùng, vô lí.",
+    "D": "Chia cho sin làm thành phần lớn hơn cả trọng lực, trái với tính chất của thành phần lực."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai lực đồng quy có độ lớn không đổi. Khi góc $\\alpha$ giữa chúng tăng dần từ $0^\\circ$ đến $180^\\circ$ thì độ lớn hợp lực",
+   "options": [
+    "tăng dần, lớn nhất khi $\\alpha = 180^\\circ$",
+    "không đổi vì độ lớn hai lực không đổi",
+    "lớn nhất khi hai lực vuông góc nhau",
+    "giảm dần, nhỏ nhất khi $\\alpha = 180^\\circ$"
+   ],
+   "answer": 3,
+   "explanation": "Góc càng mở thì $\\cos\\alpha$ càng nhỏ nên hợp lực càng nhỏ: lớn nhất $F_1 + F_2$ khi $\\alpha = 0^\\circ$, nhỏ nhất $\\lvert F_1 - F_2 \\rvert$ khi $\\alpha = 180^\\circ$.",
+   "distractorNotes": {
+    "A": "Ở $180^\\circ$ hai lực ngược chiều bù trừ nhau nên hợp lực nhỏ nhất, không phải lớn nhất.",
+    "B": "Hợp lực là tổng vectơ nên phụ thuộc cả góc giữa hai lực, không chỉ độ lớn của chúng.",
+    "C": "Khi vuông góc $\\cos\\alpha = 0$, nhỏ hơn $\\cos 0^\\circ = 1$, nên hợp lực chưa đạt lớn nhất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tổng hợp và phân tích lực. Cân bằng lực",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai lực song song cùng chiều có $F_1 = 2F_2$. Giá của hợp lực cách giá $\\vec F_1$ một đoạn $d_1$, cách giá $\\vec F_2$ một đoạn $d_2$. Hệ thức đúng là",
+   "options": [
+    "$d_1 = 2d_2$",
+    "$d_1 = d_2$",
+    "$d_2 = 2d_1$",
+    "$d_2 = 4d_1$"
+   ],
+   "answer": 2,
+   "explanation": "Giá hợp lực chia khoảng cách theo tỉ lệ nghịch: $\\dfrac{F_1}{F_2} = \\dfrac{d_2}{d_1} = 2$ nên $d_2 = 2d_1$, giá hợp lực gần lực lớn hơn.",
+   "distractorNotes": {
+    "A": "Dùng tỉ lệ thuận, đặt giá hợp lực xa lực lớn hơn, ngược với quy tắc chia tỉ lệ nghịch.",
+    "B": "Giá hợp lực nằm chính giữa chỉ khi hai lực bằng nhau, ở đây $F_1 = 2F_2$.",
+    "D": "Tỉ số khoảng cách bằng đúng tỉ số lực (đảo ngược), không lấy bình phương."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai lực đồng quy $F_1$, $F_2$ vuông góc với nhau. Độ lớn hợp lực là",
+   "options": [
+    "$F = F_1 + F_2$",
+    "$F = \\sqrt{F_1^2 + F_2^2}$",
+    "$F = \\lvert F_1 - F_2 \\rvert$",
+    "$F = F_1^2 + F_2^2$"
+   ],
+   "answer": 1,
+   "explanation": "Với $\\alpha = 90^\\circ$, $\\cos\\alpha = 0$ nên $F^2 = F_1^2 + F_2^2$, tức $F = \\sqrt{F_1^2 + F_2^2}$.",
+   "distractorNotes": {
+    "A": "Cộng số độ lớn chỉ đúng khi hai lực cùng phương, cùng chiều.",
+    "C": "Lấy hiệu độ lớn chỉ đúng khi hai lực cùng phương, ngược chiều.",
+    "D": "Quên lấy căn bậc hai nên kết quả là $F^2$, đơn vị không phải niutơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Điều kiện cân bằng của chất điểm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Đèn trọng lượng $P$ treo đứng yên bằng hai dây đối xứng, hai dây hợp nhau góc $\\alpha$. Lực căng mỗi dây là",
+   "options": [
+    "$T = \\dfrac{P}{2\\cos(\\alpha/2)}$",
+    "$T = \\dfrac{P}{2}$",
+    "$T = 2P\\cos\\dfrac{\\alpha}{2}$",
+    "$T = \\dfrac{P}{2\\sin(\\alpha/2)}$"
+   ],
+   "answer": 0,
+   "explanation": "Đèn cân bằng nên hợp lực hai lực căng bằng $P$: $2T\\cos\\dfrac{\\alpha}{2} = P$, suy ra $T = \\dfrac{P}{2\\cos(\\alpha/2)}$.",
+   "distractorNotes": {
+    "B": "Chia đôi trọng lượng chỉ đúng khi hai dây thẳng đứng; dây nghiêng phải chịu lực căng lớn hơn.",
+    "C": "Đảo vai trò: biểu thức đó là hợp lực theo $T$, đáng lẽ phải chia $P$ cho $2\\cos\\dfrac{\\alpha}{2}$.",
+    "D": "Mỗi dây lệch $\\dfrac{\\alpha}{2}$ so với phương thẳng đứng nên thành phần đỡ đèn là cạnh kề, dùng cos."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Điều kiện cân bằng của chất điểm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: buộc ba dây vào một vòng nhẫn, mỗi dây móc một lực kế. Kéo ba lực kế sao cho vòng nằm yên. Xét các phát biểu sau.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tổng hợp lực là việc",
-      "options": [
-        "thay một lực bằng hai lực vuông góc có tác dụng giống hệt",
-        "cộng độ lớn của các lực lại với nhau, không để ý đến hướng",
-        "thay các lực tác dụng đồng thời lên vật bằng một lực có tác dụng giống hệt",
-        "tìm lực làm cho vật đứng yên"
-      ],
-      "answer": 2,
-      "explanation": "Tổng hợp lực là thay nhiều lực bằng một hợp lực có tác dụng y hệt, bằng cách cộng vectơ. Phương án đầu tiên là phân tích lực (việc ngược lại); phương án cộng độ lớn quên rằng lực là vectơ."
+     "text": "Hợp lực của hai lực kế 1 và 2 có cùng độ lớn và ngược chiều với lực của lực kế 3.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hai lực đồng quy có độ lớn $F_1$ và $F_2$. Độ lớn hợp lực $F$ của chúng nằm trong khoảng",
-      "options": [
-        "$\\lvert F_1 - F_2 \\rvert \\le F \\le F_1 + F_2$",
-        "$0 \\le F \\le F_1 + F_2$ với mọi giá trị $F_1$, $F_2$",
-        "$F \\ge F_1 + F_2$",
-        "$F = F_1 + F_2$ với mọi góc giữa hai lực"
-      ],
-      "answer": 0,
-      "explanation": "Hợp lực nhỏ nhất khi hai lực ngược chiều ($\\lvert F_1 - F_2 \\rvert$), lớn nhất khi cùng chiều ($F_1 + F_2$). Cận dưới bằng 0 chỉ khi $F_1 = F_2$; còn cộng số với mọi góc là cái bẫy 1 của bài."
+     "text": "Ba lực tác dụng lên vòng là ba lực đồng quy, đồng phẳng.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Điều kiện cân bằng của chất điểm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Điểm khác nhau cốt lõi giữa hai lực cân bằng và cặp lực – phản lực là",
-      "options": [
-        "hai lực cân bằng có độ lớn khác nhau, còn lực – phản lực có độ lớn bằng nhau",
-        "hai lực cân bằng cùng chiều, còn lực – phản lực ngược chiều",
-        "lực – phản lực cùng đặt lên một vật nên triệt tiêu nhau",
-        "hai lực cân bằng cùng đặt lên một vật, còn lực – phản lực đặt lên hai vật khác nhau"
-      ],
-      "answer": 3,
-      "explanation": "Cùng một vật thì các lực mới triệt tiêu và gọi là cân bằng; lực – phản lực đặt lên hai vật khác nhau nên không triệt tiêu. Hai lực cân bằng vẫn cùng độ lớn và ngược chiều, nên hai phương án đầu sai."
+     "text": "Một chất điểm chỉ được coi là cân bằng khi nó đứng yên.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Điều kiện cân bằng của chất điểm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một chất điểm ở trạng thái cân bằng khi",
-      "options": [
-        "nó chỉ chịu tác dụng của đúng một lực",
-        "tổng các lực tác dụng lên nó bằng vectơ không",
-        "mọi lực tác dụng lên nó có cùng độ lớn",
-        "các lực tác dụng lên nó cùng chiều với nhau"
-      ],
-      "answer": 1,
-      "explanation": "Điều kiện cân bằng là $\\vec F_1 + \\vec F_2 + \\dots = \\vec 0$; khi đó chất điểm đứng yên hoặc chuyển động thẳng đều. Các lực cùng chiều chỉ cộng thêm vào nhau, không thể triệt tiêu."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Phân tích lực theo hai phương vuông góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kéo một chiếc xe bằng sợi dây chếch lên phía trước. Thành phần lực thẳng đứng $F_y$ của lực kéo có tác dụng",
-      "options": [
-        "làm xe chạy nhanh hơn",
-        "ép xe xuống mặt đường mạnh hơn",
-        "nhấc bớt xe lên, làm giảm áp lực của xe lên mặt đường",
-        "không có tác dụng gì vì xe chuyển động nằm ngang"
-      ],
-      "answer": 2,
-      "explanation": "Dây chếch lên nên $F_y$ hướng lên: nó đỡ bớt một phần trọng lượng xe, còn $F_x$ mới làm xe chạy. Thành phần này vẫn có tác dụng, chỉ là không làm xe chạy."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về hợp lực của hai lực đồng quy, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hợp lực luôn lớn hơn từng lực thành phần.",
-          "answer": false
-        },
-        {
-          "text": "Hai lực cùng phương, ngược chiều có hợp lực cùng chiều với lực lớn hơn, độ lớn $\\lvert F_1 - F_2 \\rvert$.",
-          "answer": true
-        },
-        {
-          "text": "Góc giữa hai lực càng mở (từ $0^\\circ$ tới $180^\\circ$) thì độ lớn hợp lực càng nhỏ.",
-          "answer": true
-        },
-        {
-          "text": "Hợp lực lớn nhất khi hai lực ngược chiều.",
-          "answer": false
-        }
-      ],
-      "explanation": "Hợp lực có thể nhỏ hơn cả hai lực thành phần. Lớn nhất là $F_1 + F_2$ khi cùng chiều ($0^\\circ$), nhỏ nhất là $\\lvert F_1 - F_2 \\rvert$ khi ngược chiều ($180^\\circ$)."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Điều kiện cân bằng của chất điểm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Quyển sách nằm yên trên mặt bàn. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Trọng lực $\\vec P$ và phản lực $\\vec N$ của bàn cùng đặt lên sách và là hai lực cân bằng.",
-          "answer": true
-        },
-        {
-          "text": "$\\vec P$ và $\\vec N$ là một cặp lực – phản lực.",
-          "answer": false
-        },
-        {
-          "text": "Phản lực của $\\vec P$ (Trái Đất hút sách) là lực sách hút Trái Đất, đặt lên Trái Đất.",
-          "answer": true
-        },
-        {
-          "text": "Hai lực cân bằng bắt buộc phải cùng bản chất, ví dụ cùng là lực hấp dẫn.",
-          "answer": false
-        }
-      ],
-      "explanation": "$\\vec P$ và $\\vec N$ cùng đặt lên sách nên cân bằng, và khác bản chất (hấp dẫn và đàn hồi) vẫn cân bằng được. Cặp lực – phản lực mới phải cùng loại và đặt lên hai vật khác nhau."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đội trái kéo dây $800$ N, đội phải kéo $750$ N về phía ngược lại. Hợp lực tác dụng lên dây có độ lớn bao nhiêu niutơn?",
-      "answer": "50",
-      "explanation": "Hai lực cùng phương, ngược chiều nên $F = 800 - 750 = 50$ N, hướng về đội trái."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Điều kiện cân bằng của chất điểm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ba lực kế nối vào một vòng nhẫn nằm yên. Lực kế 3 chỉ $5$ N. Hợp lực của hai lực kế còn lại có độ lớn bao nhiêu niutơn?",
-      "answer": "5",
-      "explanation": "Vòng cân bằng nên hợp của hai lực còn lại cùng độ lớn, ngược chiều lực thứ ba: $5$ N."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Hai bạn đứng đối diện, kéo một chiếc xe về hai phía ngược nhau, mỗi bạn kéo $50$ N (hai dây hợp góc $180^\\circ$). Hợp lực tác dụng lên xe bằng bao nhiêu niutơn?",
-      "answer": "0",
-      "explanation": "Với $\\alpha = 180^\\circ$, $F = \\lvert F_1 - F_2 \\rvert = 0$: xe không nhúc nhích."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai lực đồng quy $\\vec F_1$, $\\vec F_2$ hợp nhau góc $\\alpha$. Công thức đúng cho độ lớn hợp lực là",
-      "options": [
-        "$F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$",
-        "$F^2 = F_1^2 + F_2^2 - 2F_1F_2\\cos\\alpha$",
-        "$F = F_1 + F_2$ với mọi góc $\\alpha$",
-        "$F^2 = F_1^2 + F_2^2 + 2F_1F_2\\sin\\alpha$"
-      ],
-      "answer": 0,
-      "explanation": "Đây là công thức quy tắc hình bình hành. Dấu trừ là của định lí cosin cho tam giác với góc đối khác; $F = F_1 + F_2$ chỉ đúng khi $\\alpha = 0^\\circ$; $\\sin$ là nhầm hàm lượng giác."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Phân tích lực theo hai phương vuông góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực $F = 20$ N hợp với phương ngang góc $\\alpha = 60^\\circ$. Thành phần của lực theo phương ngang là",
-      "options": [
-        "$17{,}3$ N",
-        "$10$ N",
-        "$20$ N",
-        "$34{,}6$ N"
-      ],
-      "answer": 1,
-      "explanation": "$F_x = F\\cos\\alpha = 20 \\cdot 0{,}5 = 10$ N. $17{,}3$ N là $F\\sin 60^\\circ$ (nhầm sin với cos); $20$ N là lấy cả lực; $34{,}6$ N là $F\\tan 60^\\circ$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai lực vuông góc có độ lớn $9$ N và $12$ N. Độ lớn hợp lực là",
-      "options": [
-        "$21$ N",
-        "$3$ N",
-        "$225$ N",
-        "$15$ N"
-      ],
-      "answer": 3,
-      "explanation": "$F = \\sqrt{9^2 + 12^2} = \\sqrt{225} = 15$ N. $21$ N là cộng số, $3$ N là trừ số (chỉ đúng khi cùng phương); $225$ là $F^2$, quên khai căn."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai lực có cùng độ lớn $10$ N hợp nhau góc $60^\\circ$. Độ lớn hợp lực là",
-      "options": [
-        "$10$ N",
-        "$20$ N",
-        "$17{,}3$ N",
-        "$14{,}1$ N"
-      ],
-      "answer": 2,
-      "explanation": "$F = 2F_1\\cos\\dfrac{\\alpha}{2} = 2 \\cdot 10 \\cdot \\cos 30^\\circ \\approx 17{,}3$ N. $10$ N là dùng $\\alpha = 120^\\circ$; $20$ N là cộng số; $14{,}1$ N là dùng $\\alpha = 90^\\circ$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Điều kiện cân bằng của chất điểm",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Chất điểm đứng yên chịu ba lực. Hai lực $F_1 = 5$ N và $F_2 = 12$ N vuông góc nhau. Lực thứ ba $\\vec F_3$ có",
-      "options": [
-        "độ lớn $17$ N, ngược hướng với hợp lực của $\\vec F_1$, $\\vec F_2$",
-        "độ lớn $7$ N, ngược hướng với $\\vec F_2$",
-        "độ lớn $13$ N, cùng hướng với hợp lực của $\\vec F_1$, $\\vec F_2$",
-        "độ lớn $13$ N, ngược hướng với hợp lực của $\\vec F_1$, $\\vec F_2$"
-      ],
-      "answer": 3,
-      "explanation": "Hợp lực của hai lực vuông góc là $\\sqrt{5^2 + 12^2} = 13$ N; để cân bằng, $\\vec F_3$ cùng độ lớn và ngược hướng. $17$ N và $7$ N là cộng/trừ số; cùng hướng thì ba lực cộng thành $26$ N chứ không triệt tiêu."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét hai lực $F_1 = 3$ N và $F_2 = 4$ N. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Khi hai lực cùng chiều, hợp lực bằng $7$ N.",
-          "answer": true
-        },
-        {
-          "text": "Khi hai lực ngược chiều, hợp lực bằng $1$ N.",
-          "answer": true
-        },
-        {
-          "text": "Khi hai lực vuông góc, hợp lực bằng $7$ N.",
-          "answer": false
-        },
-        {
-          "text": "Với mọi góc giữa hai lực, độ lớn hợp lực luôn nằm trong khoảng từ $1$ N đến $7$ N.",
-          "answer": true
-        }
-      ],
-      "explanation": "Vuông góc thì $F = \\sqrt{3^2 + 4^2} = 5$ N, không phải $7$ N. Mọi góc đều cho $\\lvert 4 - 3 \\rvert \\le F \\le 4 + 3$, tức $1$ N đến $7$ N."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Tổng hợp hai lực đồng quy",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai lực có cùng độ lớn $20$ N hợp nhau góc $\\alpha$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Với $\\alpha = 0^\\circ$, hợp lực bằng $40$ N.",
-          "answer": true
-        },
-        {
-          "text": "Với $\\alpha = 120^\\circ$, hợp lực bằng $20$ N.",
-          "answer": true
-        },
-        {
-          "text": "Với $\\alpha = 90^\\circ$, hợp lực bằng $20\\sqrt{2} \\approx 28{,}3$ N.",
-          "answer": true
-        },
-        {
-          "text": "Khi $\\alpha$ tăng từ $0^\\circ$ đến $180^\\circ$, hợp lực tăng dần.",
-          "answer": false
-        }
-      ],
-      "explanation": "$F = 2F_1\\cos\\dfrac{\\alpha}{2}$: $\\alpha = 0^\\circ$ cho $40$ N, $120^\\circ$ cho $2 \\cdot 20 \\cdot 0{,}5 = 20$ N, $90^\\circ$ cho $20\\sqrt 2$. $\\alpha$ càng lớn thì $\\cos\\dfrac{\\alpha}{2}$ càng nhỏ nên hợp lực giảm dần."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Phân tích lực theo hai phương vuông góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực kéo $F = 50$ N hợp với phương ngang góc $37^\\circ$ (cho $\\sin 37^\\circ = 0{,}6$; $\\cos 37^\\circ = 0{,}8$). Thành phần thẳng đứng của lực bằng bao nhiêu niutơn?",
-      "answer": "30",
-      "explanation": "$F_y = F\\sin\\alpha = 50 \\cdot 0{,}6 = 30$ N (nếu dùng $\\cos$ sẽ ra $40$ N, là thành phần nằm ngang)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Phân tích lực theo hai phương vuông góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Thùng $4$ kg đặt trên dốc nghiêng $30^\\circ$ (lấy $g = 10$ m/s²). Thành phần trọng lực kéo thùng dọc theo dốc bằng bao nhiêu niutơn?",
-      "answer": "20",
-      "explanation": "$P = mg = 40$ N; $P_x = P\\sin 30^\\circ = 40 \\cdot 0{,}5 = 20$ N. Trên dốc, thành phần song song dốc dùng $\\sin$ (thành phần ép vuông góc dốc mới dùng $\\cos$)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Điều kiện cân bằng của chất điểm",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Đèn khối lượng $4$ kg treo bằng hai dây đối xứng hợp nhau góc $120^\\circ$ (lấy $g = 10$ m/s²). Lực căng của mỗi dây bằng bao nhiêu niutơn?",
-      "answer": "40",
-      "explanation": "$P = 40$ N cân bằng với hợp lực của hai lực căng: $2T\\cos 60^\\circ = 40$, suy ra $T = 40$ N (hợp của hai lực bằng nhau hợp góc $120^\\circ$ bằng đúng mỗi lực)."
+     "text": "Đặt ba vectơ lực nối đuôi nhau thì chúng tạo thành một đường gấp khúc không khép kín.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Vòng cân bằng nên tổng ba lực bằng $\\vec 0$: hợp của hai lực bằng và ngược chiều lực thứ ba, ba lực đồng quy, đồng phẳng và nối đuôi thành tam giác khép kín. Chất điểm cân bằng khi đứng yên hoặc chuyển động thẳng đều.",
+   "distractorNotes": {
+    "0": "Nếu hợp lực hai lực không bằng và ngược chiều lực thứ ba thì tổng ba lực khác $\\vec 0$, vòng không thể nằm yên.",
+    "1": "Ba lực cân bằng tác dụng lên một chất điểm phải đồng quy, đồng phẳng thì tổng mới bằng $\\vec 0$.",
+    "2": "Chuyển động thẳng đều cũng là cân bằng vì tổng các lực vẫn bằng $\\vec 0$.",
+    "3": "Tổng ba lực bằng $\\vec 0$ nên khi nối đuôi, ngọn vectơ cuối trùng gốc vectơ đầu, tạo tam giác khép kín."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Điều kiện cân bằng của chất điểm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Quyển sách nằm yên trên mặt bàn. Trái Đất hút sách bằng trọng lực $\\vec P$, bàn đỡ sách bằng lực $\\vec N$. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Phản lực của $\\vec P$ là lực sách hút Trái Đất, đặt lên Trái Đất.",
+     "answer": true
+    },
+    {
+     "text": "Lực sách ép xuống mặt bàn là phản lực của lực đỡ $\\vec N$.",
+     "answer": true
+    },
+    {
+     "text": "Lực và phản lực luôn cùng đặt lên một vật.",
+     "answer": false
+    },
+    {
+     "text": "Lực và phản lực triệt tiêu nhau nên sách nằm yên.",
+     "answer": false
+    }
+   ],
+   "explanation": "Lực – phản lực là cặp A lên B và B lên A, đặt lên hai vật khác nhau nên không triệt tiêu. Sách nằm yên vì $\\vec P$ và $\\vec N$ là hai lực cân bằng cùng đặt lên sách.",
+   "distractorNotes": {
+    "0": "Trái Đất hút sách thì sách hút lại Trái Đất, đúng cặp \"A lên B\", \"B lên A\" nên là phản lực.",
+    "1": "Bàn đỡ sách thì sách ép lại bàn; hai lực đặt lên hai vật của cùng cặp sách – bàn nên là lực – phản lực.",
+    "2": "Hai lực cùng đặt lên một vật, cùng độ lớn, ngược chiều là hai lực cân bằng chứ không phải lực – phản lực.",
+    "3": "Lực và phản lực đặt lên hai vật khác nhau nên không thể triệt tiêu; sách yên là nhờ $\\vec P$ và $\\vec N$ cân bằng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai bạn cùng kéo một chiếc xe trên sân băng bằng hai dây, mỗi bạn kéo $100$ N; góc giữa hai dây có thể thay đổi. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Hợp lực lớn nhất bằng $200$ N khi hai dây song song, cùng chiều.",
+     "answer": true
+    },
+    {
+     "text": "Khi hai bạn kéo ngược chiều nhau trên cùng một phương thì hợp lực bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Hợp lực của hai lực kéo luôn lớn hơn mỗi lực kéo thành phần.",
+     "answer": false
+    },
+    {
+     "text": "Hợp lực luôn bằng $200$ N, bất kể góc giữa hai dây.",
+     "answer": false
+    }
+   ],
+   "explanation": "Lực là vectơ nên hợp lực phụ thuộc góc: $\\lvert F_1 - F_2 \\rvert \\le F \\le F_1 + F_2$, tức từ $0$ đến $200$ N. Hợp lực có thể nhỏ hơn cả hai lực thành phần.",
+   "distractorNotes": {
+    "0": "Khi $\\alpha = 0^\\circ$ hợp lực đạt cực đại $F_1 + F_2 = 200$ N, đúng như mô phỏng.",
+    "1": "Hai lực bằng nhau, ngược chiều thì $F = \\lvert F_1 - F_2 \\rvert = 0$.",
+    "2": "Góc mở rộng thì hợp lực có thể nhỏ hơn từng lực, ví dụ $120^\\circ$ cho đúng $100$ N, $180^\\circ$ cho $0$.",
+    "3": "Cộng số độ lớn chỉ đúng khi hai dây song song cùng chiều; hợp lực thay đổi theo góc giữa hai dây."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Phân tích lực theo hai phương vuông góc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: quả nặng trọng lượng $P$ đặt trên ván trơn nghiêng góc $\\alpha$, một lực kế song song với ván giữ vật đứng yên. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Số chỉ của lực kế luôn nhỏ hơn trọng lượng $P$ khi $\\alpha$ nhỏ hơn $90^\\circ$.",
+     "answer": true
+    },
+    {
+     "text": "Lực kế cân bằng với thành phần trọng lực dọc ván, có độ lớn $P\\sin\\alpha$.",
+     "answer": true
+    },
+    {
+     "text": "Thành phần trọng lực ép vuông góc vào ván có độ lớn $P\\sin\\alpha$.",
+     "answer": false
+    },
+    {
+     "text": "Tăng góc nghiêng của ván thì số chỉ lực kế giảm.",
+     "answer": false
+    }
+   ],
+   "explanation": "Trọng lực phân tích thành $P_x = P\\sin\\alpha$ dọc ván (lực kế giữ) và $P_y = P\\cos\\alpha$ ép vào ván. Góc tăng thì $\\sin\\alpha$ tăng nên số chỉ lực kế tăng.",
+   "distractorNotes": {
+    "0": "Lực kế chỉ $P\\sin\\alpha$ mà $\\sin\\alpha \\lt 1$ khi $\\alpha \\lt 90^\\circ$, nên số chỉ luôn nhỏ hơn $P$.",
+    "1": "Vật đứng yên nên lực kế cân bằng thành phần dọc ván, thành phần này đối diện góc $\\alpha$ nên dùng sin.",
+    "2": "Thành phần ép vuông góc ván là cạnh kề góc $\\alpha$ nên bằng $P\\cos\\alpha$; gán sin là nhầm sin với cos.",
+    "3": "Góc tăng thì $\\sin\\alpha$ tăng, thành phần dọc ván tăng nên số chỉ lực kế tăng chứ không giảm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tổng hợp hai lực đồng quy",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai lực đồng quy $\\vec F_1$, $\\vec F_2$ hợp nhau góc $\\alpha$. Xét các phát biểu về công thức tính độ lớn hợp lực $F$.",
+   "statements": [
+    {
+     "text": "Công thức tổng quát là $F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$.",
+     "answer": true
+    },
+    {
+     "text": "Khi $\\alpha = 90^\\circ$, công thức trở thành $F = \\sqrt{F_1^2 + F_2^2}$.",
+     "answer": true
+    },
+    {
+     "text": "Khi $\\alpha = 0^\\circ$, công thức cho $F = \\lvert F_1 - F_2 \\rvert$.",
+     "answer": false
+    },
+    {
+     "text": "Khi $F_1 = F_2$, độ lớn hợp lực là $F = 2F_1\\cos\\alpha$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Từ $F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$: $\\alpha = 0^\\circ$ cho $F = F_1 + F_2$, $\\alpha = 90^\\circ$ cho $F = \\sqrt{F_1^2 + F_2^2}$, còn $F_1 = F_2$ cho $F = 2F_1\\cos\\dfrac{\\alpha}{2}$.",
+   "distractorNotes": {
+    "0": "Đây đúng là công thức của bài; dấu cộng xuất hiện vì góc trong tam giác lực là $180^\\circ - \\alpha$.",
+    "1": "Với $\\alpha = 90^\\circ$ thì $\\cos\\alpha = 0$, số hạng cuối mất, còn lại căn của tổng bình phương.",
+    "2": "$\\alpha = 0^\\circ$ cho $\\cos\\alpha = 1$ nên $F = F_1 + F_2$; hiệu độ lớn chỉ ứng với $\\alpha = 180^\\circ$.",
+    "3": "Đường chéo hình thoi chia đôi góc nên phải dùng $\\cos\\dfrac{\\alpha}{2}$, không phải $\\cos\\alpha$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tổng hợp và phân tích lực. Cân bằng lực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một người gánh hai thùng nặng $F_1$ và $F_2$ ($F_1 \\gt F_2$) treo ở hai đầu đòn gánh; hai trọng lực là hai lực song song cùng chiều. Xét các phát biểu về hợp lực của chúng.",
+   "statements": [
+    {
+     "text": "Hợp lực song song, cùng chiều với hai lực và có độ lớn $F = F_1 + F_2$.",
+     "answer": true
+    },
+    {
+     "text": "Giá của hợp lực (chỗ đặt vai) nằm gần thùng nặng hơn.",
+     "answer": true
+    },
+    {
+     "text": "Vị trí giá hợp lực thoả mãn $\\dfrac{F_1}{F_2} = \\dfrac{d_1}{d_2}$.",
+     "answer": false
+    },
+    {
+     "text": "Giá của hợp lực nằm ngoài khoảng giữa hai giá của hai lực.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hợp lực hai lực song song cùng chiều có $F = F_1 + F_2$, giá nằm giữa hai giá và chia khoảng cách theo tỉ lệ nghịch $\\dfrac{F_1}{F_2} = \\dfrac{d_2}{d_1}$, nên gần lực lớn hơn.",
+   "distractorNotes": {
+    "0": "Hai lực song song cùng chiều thì hợp lực cùng chiều và có độ lớn bằng tổng hai độ lớn.",
+    "1": "Giá chia khoảng cách tỉ lệ nghịch với lực nên lực lớn hơn ứng với khoảng cách nhỏ hơn, vai gần thùng nặng.",
+    "2": "Hệ thức này là tỉ lệ thuận, đảo $d_1$ và $d_2$; quy tắc đúng là $\\dfrac{F_1}{F_2} = \\dfrac{d_2}{d_1}$.",
+    "3": "Với hai lực song song cùng chiều, giá hợp lực luôn nằm giữa hai giá, như vai nằm giữa hai thùng."
+   }
+  }
+ ]
 }

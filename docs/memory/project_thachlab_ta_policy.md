@@ -70,3 +70,10 @@ cùng ngày ghi buổi, không chỉ tick tay prepared/recalled/asked_each như 
 01/10/2026 không đổi). Đã commit + push (`b85d82a7`), `scripts/tests/ta-policy.mjs` đã thêm
 ca kiểm thử cho công thức mới, 13/13 pass. Chi tiết ở [[project_thachlab_tutoring_exit_quiz]].
 Chưa test UI thật qua tài khoản trợ giảng/học sinh.
+
+**Cập nhật 2026-10-16 (bảng việc TA mới, đã deploy):**
+- Trang công khai `/tro-giang/viec-can-lam` (`app/tro-giang/viec-can-lam/page.tsx`, commit `77bb30787`) liệt kê việc TA: trên lớp cùng thầy, trên web (mỗi việc link đúng trang), mục "Em thầy giao + phiếu xuất phát", phân biệt 2 bài kiểm tra, bảng điểm tháng. Link từ `TroGiangDashboard.tsx` và cuối `quy-che/page.tsx`. Artifact riêng tư bản đọc: claude.ai/artifact/7KzXGUMZo4BPYTdhWAjK83 (chưa chia sẻ cho TA).
+- `quy-che/page.tsx` (commit `82c0d3179`): thêm mục "Em mới vào và em thầy giao"; làm rõ **bài cuối buổi = 10 câu, đạt ≥7/10 (70%), do TA mở 20 phút, TÍNH điểm phụ đạo** ≠ **bài tự kiểm tra 20 câu ≥80% do em tự làm, KHÔNG tính**.
+- **Chưa chốt (thầy 2026-10-16):** đơn giá, hệ số ×1,0/0,9/1,2/1,4/1,6 và Phần B (bậc) áp từ tháng 11 nhưng chưa có con số; xem vài tháng đầu rồi chỉnh theo ngân sách. Vì vậy trang/artifact cố ý KHÔNG ghi con số tiền hay hệ số.
+- Đơn giá hệ cũ (B1/B2/B3 = 40.000/50.000/60.000 đ/giờ, thưởng +4.000 nếu ≥85 điểm, +2.000 nếu ≥70, chấm bài 1.500 đ/bài) là giá gieo trong `docs/supabase-migration-tro-giang.sql`; chưa đối chiếu DB thật (`ta_rates`, `ta_assistants.retained_rate`).
+- Còn treo: chưa xem 2 trang quy chế/việc-cần-làm ở 375px; chưa thử `/tro-giang/phong-van` và nút Giao trợ giảng bằng tài khoản TA thật; chưa rõ chỗ TA mở "Phiếu xuất phát" ngoài thẻ em ở Cần phụ đạo.

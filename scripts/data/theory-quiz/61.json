@@ -1,371 +1,520 @@
 {
-  "lesson_id": 61,
-  "lesson_title": "Bài 16. Định luật 3 Newton",
-  "item_id": 117,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 14,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 8
-    },
-    "removed": [
-      {
-        "question": "Cặp lực – phản lực có mấy đặc điểm (cùng lúc, cùng loại, bằng nhau ngược chiều, khác vật)?",
-        "reason": "Đáp án 4 chỉ là số mục liệt kê ngay trong đề (đếm lại danh sách), không kiểm tra kiến thức"
-      },
-      {
-        "question": "Hai lực kế móc vào nhau và đang kéo ổn định. Lực kế 1 chỉ $3{,}0$ N (bỏ qua sai số đọc). L…",
-        "reason": "Trùng ý câu 45 N (lực phản lực bằng nhau, chép lại số cho sẵn), kèm yêu cầu làm tròn thừa với số $3{,}0$"
-      }
-    ]
+ "lesson_id": 61,
+ "lesson_title": "Bài 16. Định luật 3 Newton",
+ "item_id": 117,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 9
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phát biểu nào đúng với định luật 3 Newton?",
-      "options": [
-        "Khi A tác dụng lên B một lực thì B tác dụng lại A một lực cùng phương, ngược chiều, cùng độ lớn",
-        "Khi A tác dụng lên B một lực thì B tác dụng lại A một lực ngược chiều nhưng độ lớn tỉ lệ với khối lượng của B",
-        "Khi A tác dụng lên B một lực thì B tác dụng lại A một lực cùng chiều, cùng độ lớn",
-        "Chỉ vật cứng mới tác dụng trở lại vật khác bằng một lực cùng độ lớn"
-      ],
-      "answer": 0,
-      "explanation": "Định luật 3: $\\vec F_{AB} = -\\vec F_{BA}$, độ lớn luôn bằng nhau bất kể khối lượng. Phản lực ngược chiều chứ không cùng chiều, và định luật đúng với mọi vật."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đi giày trượt đẩy mạnh vào thành sân gắn chặt với đất, em bị trượt lùi ra sau vì",
-      "options": [
-        "lực em đẩy bị thành sân dội ngược lại cùng một lực",
-        "thành sân đứng yên nên không tác dụng lực nào lên em",
-        "thành sân đẩy lại em một lực cùng độ lớn, ngược chiều với lực em đẩy",
-        "quán tính kéo em về phía sau"
-      ],
-      "answer": 2,
-      "explanation": "Em đẩy thành thì thành đẩy lại em; hai lực đặt lên hai vật khác nhau nên không triệt tiêu, và giày trượt ma sát nhỏ nên em lùi. Không thể coi một lực \"dội ngược\": đó là hai lực khác nhau đặt lên hai vật."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Cặp lực – phản lực luôn",
-      "options": [
-        "đặt lên cùng một vật nên triệt tiêu nhau",
-        "khác bản chất, ví dụ một lực hấp dẫn và một lực đàn hồi",
-        "xuất hiện lần lượt, lực xuất hiện trước phản lực",
-        "cùng loại và xuất hiện, mất đi đồng thời"
-      ],
-      "answer": 3,
-      "explanation": "Lực và phản lực cùng loại (cùng là hấp dẫn, cùng là đàn hồi hay cùng là ma sát) và xuất hiện cùng lúc. Chúng đặt lên hai vật khác nhau nên không triệt tiêu."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Quyển sách nằm yên trên bàn. Phản lực của lực $\\vec N$ mà bàn đỡ sách là",
-      "options": [
-        "trọng lực $\\vec P$ tác dụng lên sách",
-        "lực sách ép xuống mặt bàn",
-        "lực Trái Đất hút bàn",
-        "lực hút của sách tác dụng lên Trái Đất"
-      ],
-      "answer": 1,
-      "explanation": "Phản lực của \"bàn tác dụng lên sách\" là \"sách tác dụng lên bàn\". $\\vec P$ chỉ cân bằng với $\\vec N$ (cùng đặt lên sách); lực sách hút Trái Đất là phản lực của $\\vec P$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Cầu thủ đá quả bóng. So sánh lực của chân lên bóng với lực của bóng lên chân:",
-      "options": [
-        "hai lực bằng nhau về độ lớn, ngược chiều",
-        "lực của chân lớn hơn vì chân nặng hơn bóng",
-        "lực của bóng lớn hơn vì bóng bay nhanh",
-        "bóng không tác dụng lực lên chân"
-      ],
-      "answer": 0,
-      "explanation": "Độ lớn lực tương tác không phụ thuộc khối lượng hay vận tốc: hai lực luôn bằng nhau. Bóng bay đi còn chân hầu như không đổi vì gia tốc $a = F/m$ khác nhau."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Tên lửa tăng tốc trong chân không nhờ",
-      "options": [
-        "tên lửa đẩy vào không khí xung quanh",
-        "tên lửa đẩy vào mặt đất nơi phóng",
-        "khí cháy phụt ra phía sau, khí đó đẩy lại tên lửa về phía trước",
-        "một lực quán tính đẩy tên lửa tiến lên"
-      ],
-      "answer": 2,
-      "explanation": "Tên lửa đẩy khí ra sau thì khí đẩy lại tên lửa ra trước (định luật 3), nên trong chân không vẫn chạy được. Không cần không khí để \"tựa\"."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về cặp lực – phản lực, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lực và phản lực xuất hiện và mất đi đồng thời.",
-          "answer": true
-        },
-        {
-          "text": "Lực và phản lực luôn cùng loại.",
-          "answer": true
-        },
-        {
-          "text": "Lực và phản lực đặt lên cùng một vật nên triệt tiêu nhau.",
-          "answer": false
-        },
-        {
-          "text": "Hai vật nặng nhẹ khác nhau thì lực tác dụng lên vật nhẹ hơn lớn hơn.",
-          "answer": false
-        }
-      ],
-      "explanation": "Hai lực đặt lên hai vật khác nhau nên không triệt tiêu. Độ lớn hai lực luôn bằng nhau; vật nhẹ hơn chỉ có gia tốc lớn hơn."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe tải đâm vào xe con. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lực của hai xe lên nhau bằng nhau về độ lớn.",
-          "answer": true
-        },
-        {
-          "text": "Xe con hỏng nặng hơn vì gia tốc của nó lớn hơn.",
-          "answer": true
-        },
-        {
-          "text": "Xe tải tác dụng lên xe con một lực lớn hơn lực xe con tác dụng lên xe tải.",
-          "answer": false
-        },
-        {
-          "text": "Hai xe thoả mãn $m_A a_A = m_B a_B$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Định luật 3 cho $F_{AB} = F_{BA}$. Định luật 2 cho mỗi lực bằng $ma$ của vật nhận lực, nên $m_A a_A = m_B a_B$: xe nhẹ hơn có gia tốc lớn hơn."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai lực kế lò xo móc vào nhau, một bạn giữ đầu lực kế 1, bạn kia kéo đầu lực kế 2. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Chênh lệch $0{,}1$ N giữa hai số chỉ, lúc bên này lúc bên kia, là do sai số đọc.",
-          "answer": true
-        },
-        {
-          "text": "Khi kéo giật, hai số chỉ khác nhau rõ rệt.",
-          "answer": false
-        },
-        {
-          "text": "Mỗi lực kế chỉ lực đặt lên chính nó.",
-          "answer": true
-        },
-        {
-          "text": "Kéo càng mạnh thì phản lực đến càng chậm.",
-          "answer": false
-        }
-      ],
-      "explanation": "Lực và phản lực xuất hiện cùng lúc và bằng nhau ở mọi cách kéo; chênh lệch nhỏ đổi chiều giữa các lần đo là sai số đọc."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_luat",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Bạn A đẩy bạn B bằng lực $45$ N. Độ lớn lực bạn B đẩy lại bạn A là bao nhiêu niutơn?",
-      "answer": "45",
-      "explanation": "Định luật 3: hai lực cùng độ lớn, nên lực B đẩy A cũng là $45$ N, ngược chiều."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Bạn A ($45$ kg) và bạn B ($60$ kg) đứng trên giày trượt. A đẩy B bằng lực $90$ N, bỏ qua ma sát. Gia tốc của bạn A là",
-      "options": [
-        "$2\\ \\text{m/s}^2$",
-        "$1{,}5\\ \\text{m/s}^2$",
-        "$0{,}5\\ \\text{m/s}^2$",
-        "$0\\ \\text{m/s}^2$"
-      ],
-      "answer": 0,
-      "explanation": "B đẩy lại A một lực $90$ N (định luật 3) nên $a_A = 90/45 = 2\\ \\text{m/s}^2$. $1{,}5$ là chia cho khối lượng của B; $0{,}5$ là đảo $m/F$; $0$ là cho rằng hai lực bằng nhau ngược chiều triệt tiêu."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Hai xe đẩy trên bàn nhẵn, ép lò xo giữa chúng rồi thả ra. Xe $1{,}5$ kg có gia tốc $6\\ \\text{m/s}^2$. Xe $3$ kg có gia tốc",
-      "options": [
-        "$6\\ \\text{m/s}^2$",
-        "$12\\ \\text{m/s}^2$",
-        "$1{,}5\\ \\text{m/s}^2$",
-        "$3\\ \\text{m/s}^2$"
-      ],
-      "answer": 3,
-      "explanation": "Lực lò xo lên hai xe bằng nhau nên $m_1 a_1 = m_2 a_2$, suy ra $a_2 = 1{,}5 \\cdot 6 / 3 = 3\\ \\text{m/s}^2$. $6$ là quên khối lượng; $12$ là nhân thay vì chia; $1{,}5$ là lấy khối lượng làm gia tốc."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Hai bạn $30$ kg và $45$ kg đứng trên giày trượt, đẩy nhau. Bạn $30$ kg có gia tốc $1{,}5\\ \\text{m/s}^2$. Gia tốc của bạn $45$ kg là",
-      "options": [
-        "$1{,}5\\ \\text{m/s}^2$",
-        "$1\\ \\text{m/s}^2$",
-        "$2{,}25\\ \\text{m/s}^2$",
-        "$0{,}67\\ \\text{m/s}^2$"
-      ],
-      "answer": 1,
-      "explanation": "$m_A a_A = m_B a_B$ nên $a_B = 30 \\cdot 1{,}5 / 45 = 1\\ \\text{m/s}^2$. $1{,}5$ là cho rằng gia tốc bằng nhau; $2{,}25$ và $0{,}67$ là đảo tỉ số khối lượng hoặc lấy $30/45$ thay vì nhân đúng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe tải $6000$ kg và xe con $1000$ kg va chạm. Xe tải có gia tốc $4\\ \\text{m/s}^2$ trong lúc va chạm. Xe con có gia tốc",
-      "options": [
-        "$4\\ \\text{m/s}^2$",
-        "$0{,}67\\ \\text{m/s}^2$",
-        "$6\\ \\text{m/s}^2$",
-        "$24\\ \\text{m/s}^2$"
-      ],
-      "answer": 3,
-      "explanation": "Lực bằng nhau: $F = 6000 \\cdot 4 = 24\\,000$ N nên $a = 24\\,000/1000 = 24\\ \\text{m/s}^2$. $4$ là cho rằng gia tốc bằng nhau; $0{,}67$ là đảo tỉ số; $6$ chỉ là tỉ số khối lượng."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Ngựa $300$ kg kéo xe $100$ kg bằng dây. Đất đẩy chân ngựa về phía trước $700$ N, ma sát cản xe $100$ N, ngựa và xe có cùng gia tốc. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Gia tốc chung của hệ là $1{,}5\\ \\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Lực căng dây là $250$ N.",
-          "answer": true
-        },
-        {
-          "text": "Lực căng dây là $700$ N.",
-          "answer": false
-        },
-        {
-          "text": "Lực dây kéo ngựa về phía sau có cùng độ lớn với lực dây kéo xe về phía trước.",
-          "answer": true
-        }
-      ],
-      "explanation": "Cả hệ: $a = (700 - 100)/(300 + 100) = 1{,}5\\ \\text{m/s}^2$. Xe: $T - 100 = 100 \\cdot 1{,}5$ nên $T = 250$ N. Hai lực của dây lên ngựa và lên xe cùng độ lớn $T$ (dây nhẹ)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Hai bạn $50$ kg và $75$ kg đứng trên giày trượt, đẩy nhau bằng lực $150$ N, bỏ qua ma sát. Gia tốc của bạn nhẹ hơn bằng bao nhiêu $\\text{m/s}^2$?",
-      "answer": "3",
-      "explanation": "Lực lên bạn $50$ kg là $150$ N nên $a = 150/50 = 3\\ \\text{m/s}^2$ (bạn $75$ kg có $a = 2\\ \\text{m/s}^2$)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Hai bạn đứng trên giày trượt đẩy nhau: bạn $60$ kg có gia tốc $2\\ \\text{m/s}^2$ và bạn $40$ kg có gia tốc $3\\ \\text{m/s}^2$ (số liệu đo được). Lực mà mỗi bạn chịu có độ lớn bao nhiêu niutơn?",
-      "answer": "120",
-      "explanation": "$F = 60 \\cdot 2 = 120$ N và $F = 40 \\cdot 3 = 120$ N: khớp nhau đúng như định luật 3."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Bài 16. Định luật 3 Newton",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Hai xe đẩy đẩy nhau bằng lò xo: xe 1 nặng $5$ kg có gia tốc $3\\ \\text{m/s}^2$, xe 2 có gia tốc $5\\ \\text{m/s}^2$. Khối lượng xe 2 bằng bao nhiêu kg?",
-      "answer": "3",
-      "explanation": "$m_1 a_1 = m_2 a_2$ nên $m_2 = 5 \\cdot 3 / 5 = 3$ kg."
-    }
+  "removed": [
+   {
+    "question": "Hai xe đẩy trên bàn nhẵn, ép một lò xo giữa chúng rồi thả ra. Xe 1 có khối lượng $m_1$, gia tốc $a_1$; xe 2 nặng hơn có khối lượng $m_2$, gia tốc $a_2$.",
+    "reason": "nghi_ngo: GHI CHÚ: ghi chú ý a nói hai lực lò xo lên hai xe bằng nhau 'như cặp lực tương tác', dễ khiến học sinh coi hai lực này là lực – phản lực; thực ra mỗi lực là phản lực của lực xe tác dụng lên lò xo, và chúng bằng nhau vì lò xo nhẹ. Đáp án các ý vẫn khớp bài."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi vật A tác dụng lên vật B một lực thì vật B tác dụng trở lại vật A một lực. Hai lực này",
+   "options": [
+    "cùng phương, cùng chiều, cùng độ lớn",
+    "cùng phương, ngược chiều, cùng độ lớn",
+    "vuông góc nhau, có cùng độ lớn",
+    "cùng phương, ngược chiều, khác độ lớn"
+   ],
+   "answer": 1,
+   "explanation": "Định luật III Newton: lực và phản lực cùng phương, ngược chiều, cùng độ lớn.",
+   "distractorNotes": {
+    "A": "Bỏ qua dấu trừ trong $\\vec F_{AB}=-\\vec F_{BA}$, trong khi dấu trừ cho biết phản lực luôn ngược chiều lực.",
+    "C": "Nhầm 'ngược chiều' với 'vuông góc'; lực và phản lực nằm trên cùng một đường thẳng.",
+    "D": "Nghĩ vật nặng tác dụng lực mạnh hơn; lực và phản lực luôn cùng độ lớn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trái Đất hút quả táo bằng lực hấp dẫn. Phản lực của lực này là",
+   "options": [
+    "lực cành cây giữ quả táo lại",
+    "lực đàn hồi của mặt đất lên quả táo",
+    "lực hấp dẫn quả táo hút Trái Đất",
+    "lực cản không khí lên quả táo"
+   ],
+   "answer": 2,
+   "explanation": "Lực và phản lực cùng loại, giữa cùng hai vật: Trái Đất hút táo thì táo hút Trái Đất, đều là lực hấp dẫn.",
+   "distractorNotes": {
+    "A": "Lực cành giữ táo là tương tác cành–táo, không cùng cặp vật Trái Đất–táo.",
+    "B": "Phản lực phải cùng loại với lực; lực đàn hồi khác bản chất lực hấp dẫn.",
+    "D": "Lực cản là tương tác không khí–táo, không cùng cặp vật với lực hút của Trái Đất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Điểm khác nhau cơ bản giữa hai lực cân bằng và cặp lực – phản lực là",
+   "options": [
+    "hai lực cân bằng luôn có độ lớn khác nhau",
+    "cặp lực – phản lực luôn cùng chiều nhau",
+    "hai lực cân bằng luôn cùng loại với nhau",
+    "hai lực cân bằng đặt vào cùng một vật"
+   ],
+   "answer": 3,
+   "explanation": "Hai lực cân bằng đặt vào cùng một vật và triệt tiêu; lực – phản lực đặt vào hai vật khác nhau nên không triệt tiêu.",
+   "distractorNotes": {
+    "A": "Hai lực cân bằng cũng bằng nhau về độ lớn, nên độ lớn không phải điểm khác biệt.",
+    "B": "Lực và phản lực luôn ngược chiều, không bao giờ cùng chiều.",
+    "C": "Đảo đặc điểm: lực – phản lực mới luôn cùng loại, còn hai lực cân bằng có thể khác loại."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Người đi giày trượt đẩy mạnh vào thành sân thì trượt lùi ra xa vì",
+   "options": [
+    "thành sân đẩy lại người một lực ngược chiều",
+    "người tự tạo ra lực đẩy chính mình ra sau",
+    "lực người đẩy thành tác dụng lên chính người",
+    "mặt băng đẩy người ra xa thành sân"
+   ],
+   "answer": 0,
+   "explanation": "Người đẩy thành thì thành tác dụng lại người một phản lực cùng độ lớn, ngược chiều; ma sát nhỏ nên người lùi ra.",
+   "distractorNotes": {
+    "B": "Một vật không tự tác dụng lực lên chính nó; lực luôn là tương tác giữa hai vật.",
+    "C": "Nhầm điểm đặt: lực người đẩy đặt lên thành sân, không đặt lên người.",
+    "D": "Mặt băng gần như không ma sát theo phương ngang nên không thể đẩy người lùi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Quyển sách nằm yên trên mặt bàn. Cặp lực – phản lực là",
+   "options": [
+    "trọng lực lên sách và lực bàn đỡ sách",
+    "lực bàn đỡ sách và lực sách ép lên bàn",
+    "trọng lực lên sách và lực sách ép lên bàn",
+    "trọng lực lên sách và trọng lực lên bàn"
+   ],
+   "answer": 1,
+   "explanation": "Lực bàn đỡ sách $N$ (đặt lên sách) và lực sách ép bàn $N'$ (đặt lên bàn) là lực – phản lực; $P$ và $N$ là hai lực cân bằng.",
+   "distractorNotes": {
+    "A": "Hai lực này cùng đặt lên sách nên là hai lực cân bằng, không phải lực – phản lực.",
+    "C": "Trọng lực là tương tác Trái Đất–sách, khác cặp vật với lực sách ép bàn.",
+    "D": "Hai trọng lực là tương tác của Trái Đất với hai vật khác nhau, không phải một cặp."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Tên lửa vẫn tăng tốc được trong chân không vì",
+   "options": [
+    "tên lửa đẩy vào lớp không khí phía sau",
+    "trong chân không không có lực cản nào",
+    "khí cháy bị đẩy ra sau đẩy lại tên lửa",
+    "lực hút Trái Đất kéo tên lửa đi lên"
+   ],
+   "answer": 2,
+   "explanation": "Tên lửa đẩy khí cháy ra sau, khí cháy tác dụng phản lực đẩy tên lửa về trước, không cần không khí.",
+   "distractorNotes": {
+    "A": "Chân không không có không khí để tựa vào; tên lửa đẩy khí cháy chứ không đẩy không khí.",
+    "B": "Không có lực cản không tự sinh ra lực đẩy; tên lửa tăng tốc nhờ phản lực của khí cháy.",
+    "D": "Lực hút Trái Đất hướng xuống, không thể kéo tên lửa tăng tốc đi lên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Xe tải đâm vào xe con, xe con hỏng nặng hơn. Phát biểu đúng là",
+   "options": [
+    "xe tải tác dụng lên xe con lực lớn hơn",
+    "xe con tác dụng lên xe tải lực lớn hơn",
+    "hai lực bằng nhau, hai gia tốc bằng nhau",
+    "hai lực bằng nhau, xe con gia tốc lớn hơn"
+   ],
+   "answer": 3,
+   "explanation": "Theo định luật III hai lực bằng nhau; xe con nhẹ hơn nên theo $a=F/m$ có gia tốc lớn hơn và hỏng nặng hơn.",
+   "distractorNotes": {
+    "A": "Nghĩ vật nặng tác dụng lực lớn hơn; độ lớn lực tương tác không phụ thuộc khối lượng.",
+    "B": "Lực và phản lực luôn bằng độ lớn, không bên nào lớn hơn bên nào.",
+    "C": "Lực bằng nhau nhưng khối lượng khác nhau nên theo $a=F/m$ gia tốc phải khác nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Biểu thức của định luật III Newton là",
+   "options": [
+    "$\\vec F_{AB}=-\\vec F_{BA}$",
+    "$\\vec F_{AB}=\\vec F_{BA}$",
+    "$F_{AB}=-F_{BA}$ (độ lớn)",
+    "$F_{AB}=\\dfrac{m_A}{m_B}F_{BA}$"
+   ],
+   "answer": 0,
+   "explanation": "Định luật III: $\\vec F_{AB}=-\\vec F_{BA}$, hai vectơ đối nhau.",
+   "distractorNotes": {
+    "B": "Bỏ dấu trừ làm hai lực cùng chiều, trái với định luật III.",
+    "C": "Độ lớn không mang dấu âm; về độ lớn phải là $F_{AB}=F_{BA}$.",
+    "D": "Cho lực phụ thuộc tỉ số khối lượng, trong khi lực và phản lực luôn bằng nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai vật A, B chỉ chịu lực tương tác với nhau. Hệ thức đúng về độ lớn gia tốc là",
+   "options": [
+    "$\\dfrac{a_A}{m_A}=\\dfrac{a_B}{m_B}$",
+    "$m_A a_A=m_B a_B$",
+    "$\\dfrac{m_A}{a_A}=\\dfrac{m_B}{a_B}$",
+    "$a_A=a_B$"
+   ],
+   "answer": 1,
+   "explanation": "Lực lên mỗi vật bằng nhau và bằng $ma$ của vật đó, nên $m_A a_A=m_B a_B$.",
+   "distractorNotes": {
+    "A": "Chia gia tốc cho khối lượng thay vì nhân; lực lên mỗi vật bằng tích $ma$.",
+    "C": "Đảo tỉ lệ, ngầm cho gia tốc tỉ lệ thuận với khối lượng.",
+    "D": "Nghĩ lực bằng nhau thì gia tốc bằng nhau, quên khối lượng hai vật khác nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Từ hệ thức $m_A a_A=m_B a_B$, độ lớn gia tốc của vật B là",
+   "options": [
+    "$a_B=\\dfrac{m_B a_A}{m_A}$",
+    "$a_B=\\dfrac{m_A m_B}{a_A}$",
+    "$a_B=\\dfrac{m_A a_A}{m_B}$",
+    "$a_B=m_A a_A m_B$"
+   ],
+   "answer": 2,
+   "explanation": "Chia hai vế của $m_A a_A=m_B a_B$ cho $m_B$ được $a_B=\\dfrac{m_A a_A}{m_B}$.",
+   "distractorNotes": {
+    "A": "Đảo vị trí hai khối lượng khi chuyển vế, làm $a_B$ tỉ lệ thuận với $m_B$.",
+    "B": "Biến đổi sai: đưa $a_A$ xuống mẫu thay vì giữ ở tử số.",
+    "D": "Nhân với $m_B$ thay vì chia cho $m_B$ khi chuyển vế."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Hai bạn trên giày trượt đẩy nhau, bỏ qua ma sát. Bạn A có khối lượng gấp đôi bạn B. Gia tốc của A so với của B",
+   "options": [
+    "gấp đôi",
+    "bằng nhau",
+    "gấp bốn",
+    "bằng một nửa"
+   ],
+   "answer": 3,
+   "explanation": "Lực bằng nhau nên $m_A a_A=m_B a_B$; $m_A=2m_B$ thì $a_A=\\dfrac{a_B}{2}$.",
+   "distractorNotes": {
+    "A": "Cho gia tốc tỉ lệ thuận với khối lượng, trong khi $a=F/m$ là tỉ lệ nghịch.",
+    "B": "Nghĩ lực bằng nhau thì gia tốc bằng nhau, quên khối lượng khác nhau.",
+    "C": "Tự thêm bình phương; gia tốc chỉ tỉ lệ nghịch bậc nhất với khối lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực A đẩy B tăng lên gấp đôi thì lực B đẩy lại A",
+   "options": [
+    "cũng tăng gấp đôi",
+    "không thay đổi",
+    "giảm một nửa",
+    "tăng gấp bốn"
+   ],
+   "answer": 0,
+   "explanation": "Luôn có $F_{AB}=F_{BA}$, nên lực này tăng gấp đôi thì phản lực cũng tăng gấp đôi.",
+   "distractorNotes": {
+    "B": "Nghĩ phản lực là giá trị cố định; phản lực luôn bằng độ lớn lực tác dụng.",
+    "C": "Nghĩ hai lực bù trừ cho nhau; định luật III cho $F_{AB}=F_{BA}$ ở mọi lúc.",
+    "D": "Tự thêm bình phương; quan hệ giữa lực và phản lực là bằng nhau, không có lũy thừa."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Hệ thức $m_A a_A=m_B a_B$ chỉ áp dụng được khi",
+   "options": [
+    "hai vật có khối lượng bằng nhau",
+    "lực tương tác là hợp lực lên mỗi vật",
+    "hai vật chuyển động cùng chiều nhau",
+    "mỗi vật còn chịu thêm lực ma sát"
+   ],
+   "answer": 1,
+   "explanation": "Hệ thức dùng khi lực tương tác là hợp lực lên mỗi vật; nếu mỗi vật còn chịu lực khác (như ngựa kéo xe) thì không dùng được.",
+   "distractorNotes": {
+    "A": "Hệ thức vẫn đúng khi khối lượng khác nhau; đó chính là lúc gia tốc khác nhau.",
+    "C": "Hai vật đẩy nhau chuyển động ngược chiều mà hệ thức độ lớn vẫn đúng.",
+    "D": "Có thêm ma sát thì hợp lực khác lực tương tác, hệ thức không còn áp dụng được."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Hai bạn đứng yên trên giày trượt, đẩy nhau rồi buông tay, bỏ qua ma sát. Bạn A nhẹ bằng một nửa bạn B. Tốc độ của A ngay khi buông tay so với B",
+   "options": [
+    "bằng một nửa",
+    "bằng nhau",
+    "gấp đôi",
+    "gấp bốn"
+   ],
+   "answer": 2,
+   "explanation": "Lực bằng nhau, tác dụng cùng thời gian $t$; $a_A=2a_B$ nên $v=at$ của A gấp đôi B.",
+   "distractorNotes": {
+    "A": "Cho tốc độ tỉ lệ thuận với khối lượng; vật nhẹ có gia tốc nên tốc độ lớn hơn.",
+    "B": "Nghĩ lực bằng nhau thì tốc độ bằng nhau, quên gia tốc phụ thuộc khối lượng.",
+    "D": "Tự thêm bình phương; cùng thời gian $t$ nên $v=at$ tỉ lệ nghịch bậc nhất với khối lượng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Móc hai lực kế lò xo vào nhau, một bạn giữ lực kế 1, bạn kia kéo lực kế 2, tăng dần lực và đọc hai số chỉ (lực kế đọc được tới $\\pm 0{,}1$ N).",
+   "statements": [
+    {
+     "text": "Kéo nhẹ hay mạnh, hai lực kế luôn chỉ cùng một giá trị (trong sai số đọc).",
+     "answer": true
+    },
+    {
+     "text": "Lực kế 2 ở phía người kéo luôn chỉ lớn hơn lực kế 1.",
+     "answer": false
+    },
+    {
+     "text": "Một lần hai số chỉ chênh $0{,}1$ N, lần khác chênh ngược lại, là do sai số đọc.",
+     "answer": true
+    },
+    {
+     "text": "Khi kéo giật, phản lực xuất hiện chậm hơn lực kéo nên hai kim lệch nhau.",
+     "answer": false
+    }
+   ],
+   "explanation": "Lực và phản lực bằng nhau, xuất hiện đồng thời; chênh $0{,}1$ N đổi chiều giữa các lần nằm trong sai số đọc.",
+   "distractorNotes": {
+    "0": "Mọi lần đo, hai số chỉ khớp nhau trong sai số đọc, đúng với định luật III nên không thể coi là sai.",
+    "1": "Đứng phía người kéo không làm lực lớn hơn; bảng số có lần lực kế 1 chỉ lớn hơn.",
+    "2": "Chênh lệch không vượt $\\pm 0{,}1$ N và đổi chiều giữa các lần nên đúng là sai số đọc.",
+    "3": "Lực và phản lực xuất hiện đồng thời; khi kéo giật hai kim vẫn đi cùng nhau."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một chiếc đèn treo vào trần nhà bằng một sợi dây và đang đứng yên.",
+   "statements": [
+    {
+     "text": "Trọng lực lên đèn và lực dây kéo đèn là hai lực cân bằng.",
+     "answer": true
+    },
+    {
+     "text": "Trọng lực lên đèn và lực dây kéo đèn là cặp lực – phản lực.",
+     "answer": false
+    },
+    {
+     "text": "Lực dây kéo đèn và lực đèn kéo dây là cặp lực – phản lực.",
+     "answer": true
+    },
+    {
+     "text": "Lực dây kéo đèn và lực đèn kéo dây triệt tiêu nhau vì bằng nhau, ngược chiều.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hai lực cùng đặt lên đèn là cân bằng; lực dây–đèn và đèn–dây đặt lên hai vật khác nhau là lực – phản lực, không triệt tiêu.",
+   "distractorNotes": {
+    "0": "Hai lực cùng đặt lên đèn, bằng nhau, ngược chiều, đèn đứng yên nên đúng là cân bằng.",
+    "1": "Hai lực cùng đặt lên đèn và khác loại nên không thể là lực – phản lực.",
+    "2": "Cùng cặp vật dây–đèn, cùng là lực đàn hồi, đặt lên hai vật khác nhau nên ý này đúng.",
+    "3": "Lực và phản lực đặt lên hai vật khác nhau nên không được cộng để triệt tiêu."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Định luật III Newton giải thích nhiều hiện tượng đời sống như đi bộ, bơi, súng giật.",
+   "statements": [
+    {
+     "text": "Khi đi bộ, chân đẩy đất ra sau và đất đẩy người về phía trước.",
+     "answer": true
+    },
+    {
+     "text": "Lực đất đẩy chân người đi bộ về phía trước là lực ma sát nghỉ.",
+     "answer": true
+    },
+    {
+     "text": "Súng giật lùi vì lực đạn tác dụng lên súng lớn hơn lực súng tác dụng lên đạn.",
+     "answer": false
+    },
+    {
+     "text": "Khi bơi, tay đẩy nước về phía trước thì người tiến lên phía trước.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đi bộ, bơi, súng giật đều do phản lực ngược chiều, cùng độ lớn; bơi phải đẩy nước ra sau, ma sát ở chân là ma sát nghỉ.",
+   "distractorNotes": {
+    "0": "Đất tác dụng phản lực ngược chiều lực chân đẩy, nên người tiến lên là đúng.",
+    "1": "Bàn chân không trượt trên đất nên lực đất đẩy chân đúng là ma sát nghỉ.",
+    "2": "Lực và phản lực luôn bằng nhau; súng lùi chậm hơn đạn chỉ vì khối lượng lớn hơn.",
+    "3": "Phản lực ngược chiều lực đẩy; đẩy nước về trước thì nước đẩy người lùi về sau."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Hai bạn A (nhẹ hơn) và B (nặng hơn) đứng đối diện trên giày trượt, A đẩy B. Bỏ qua ma sát.",
+   "statements": [
+    {
+     "text": "Lực B tác dụng lên A có độ lớn bằng lực A tác dụng lên B.",
+     "answer": true
+    },
+    {
+     "text": "Gia tốc của A lớn hơn gia tốc của B.",
+     "answer": true
+    },
+    {
+     "text": "Tỉ số độ lớn gia tốc $\\dfrac{a_A}{a_B}=\\dfrac{m_A}{m_B}$.",
+     "answer": false
+    },
+    {
+     "text": "Hai bạn chuyển động cùng chiều với nhau.",
+     "answer": false
+    }
+   ],
+   "explanation": "Lực bằng nhau nên $m_A a_A=m_B a_B$, suy ra $\\dfrac{a_A}{a_B}=\\dfrac{m_B}{m_A}$; hai lực ngược chiều nên hai bạn trượt ngược chiều.",
+   "distractorNotes": {
+    "0": "Theo định luật III, lực và phản lực luôn bằng độ lớn dù ai là người chủ động đẩy.",
+    "1": "Cùng độ lớn lực mà A nhẹ hơn nên $a=F/m$ của A lớn hơn, ý này đúng.",
+    "2": "Đảo tỉ lệ; gia tốc tỉ lệ nghịch với khối lượng nên $\\dfrac{a_A}{a_B}=\\dfrac{m_B}{m_A}$.",
+    "3": "Lực lên hai bạn ngược chiều nhau nên hai bạn trượt ra hai phía ngược nhau."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 16. Định luật 3 Newton",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét biểu thức định luật III Newton $\\vec F_{AB}=-\\vec F_{BA}$.",
+   "statements": [
+    {
+     "text": "Dấu trừ cho biết hai lực ngược chiều nhau.",
+     "answer": true
+    },
+    {
+     "text": "Về độ lớn, $F_{AB}=F_{BA}$.",
+     "answer": true
+    },
+    {
+     "text": "Vì $\\vec F_{AB}+\\vec F_{BA}=\\vec 0$ nên hai vật luôn đứng yên.",
+     "answer": false
+    },
+    {
+     "text": "$\\vec F_{BA}$ là lực do vật A tác dụng lên vật B.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\vec F_{AB}$ là lực A lên B, $\\vec F_{BA}$ là lực B lên A; hai lực đặt lên hai vật khác nhau nên không được cộng để kết luận vật đứng yên.",
+   "distractorNotes": {
+    "0": "Vectơ đối có cùng độ lớn và ngược chiều; dấu trừ thể hiện đúng sự ngược chiều đó.",
+    "1": "Hai vectơ đối nhau luôn có cùng độ lớn, nên đẳng thức $F_{AB}=F_{BA}$ đúng.",
+    "2": "Chỉ được cộng các lực cùng đặt lên một vật; lực và phản lực đặt lên hai vật khác nhau.",
+    "3": "Nhầm thứ tự chỉ số: $\\vec F_{BA}$ là lực do B tác dụng lên A."
+   }
+  }
+ ]
 }

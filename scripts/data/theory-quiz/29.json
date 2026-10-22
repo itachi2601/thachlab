@@ -2,7 +2,7 @@
  "lesson_id": 29,
  "lesson_title": "Bài 10. Thực hành: Đo tần số của sóng âm",
  "item_id": 304,
- "generated_at": "2026-10-19",
+ "generated_at": "2026-10-21",
  "generated_by": "batch-api claude-opus-5-5",
  "quiz_min_correct": 15,
  "review": {
@@ -22,105 +22,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Tần số của một âm là:",
+   "question": "Tần số của một âm đơn là",
    "options": [
-    "Số dao động toàn phần trong 1 s",
-    "Thời gian một dao động toàn phần",
-    "Độ lệch lớn nhất so với vị trí cân bằng",
-    "Quãng đường sóng truyền trong 1 s"
+    "số dao động toàn phần mà nguồn âm thực hiện trong một giây",
+    "thời gian để nguồn âm thực hiện một dao động toàn phần",
+    "độ lệch lớn nhất của màng micro khỏi vị trí cân bằng",
+    "quãng đường mà âm truyền đi được trong một chu kì"
    ],
    "answer": 0,
-   "explanation": "Bài định nghĩa tần số $f$ là số dao động toàn phần trong $1\\ \\text{s}$, đơn vị Hz."
+   "explanation": "Bài định nghĩa tần số $f$ (Hz) là số dao động toàn phần trong $1\\ \\text{s}$. Thời gian một dao động toàn phần là chu kì $T$.",
+   "distractorNotes": {
+    "B": "Nhầm tần số với chu kì $T$. Chu kì mới là thời gian một dao động toàn phần.",
+    "C": "Nhầm với biên độ. Biên độ quyết định độ to, không phải số dao động mỗi giây.",
+    "D": "Nhầm với bước sóng, tức quãng đường âm truyền được trong một chu kì."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
+   "kind": "don_vi",
    "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Trên màn dao động kí, núm nào dùng để tính chu kì và tần số của âm?",
+   "question": "Trong hệ SI, đơn vị của tần số là",
    "options": [
-    "VOLT/DIV",
-    "TIME/DIV",
-    "TRIGGER",
-    "CH1"
+    "giây (s)",
+    "mét (m)",
+    "héc (Hz)",
+    "vôn (V)"
    ],
-   "answer": 1,
-   "explanation": "TIME/DIV là độ chia ngang (thời gian) dùng tính $T$ và $f$; VOLT/DIV chỉ đọc biên độ."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Hai âm đơn cùng biên độ, âm B có tần số lớn hơn âm A. Nhận xét đúng là:",
-   "options": [
-    "B to hơn A",
-    "B cao hơn A",
-    "B trầm hơn A",
-    "Hai âm cùng độ cao"
-   ],
-   "answer": 1,
-   "explanation": "Tần số quyết định cao hay trầm; biên độ quyết định to hay nhỏ."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Vai trò của micro trong phương án dùng dao động kí là:",
-   "options": [
-    "Phát ra âm đơn",
-    "Đổi dao động của âm thành hiệu điện thế biến thiên",
-    "Giữ hình sóng đứng yên",
-    "Đo bước sóng của âm"
-   ],
-   "answer": 1,
-   "explanation": "Micro đổi dao động âm thành hiệu điện thế biến thiên nối vào CH1."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Vì sao nên đo nhiều chu kì liên tiếp thay vì một chu kì?",
-   "options": [
-    "Để sóng có biên độ lớn hơn",
-    "Để độ lệch đọc cỡ 0,1 ô chiếm tỉ lệ nhỏ hơn",
-    "Để núm VOLT/DIV chính xác hơn",
-    "Để không cần đổi ms ra s"
-   ],
-   "answer": 1,
-   "explanation": "Độ lệch đọc không đổi theo $L$, nên $L$ dài thì sai số tỉ đối nhỏ."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Sai số hệ thống có đặc điểm:",
-   "options": [
-    "Lúc thừa lúc thiếu, giảm khi lấy trung bình",
-    "Mọi lần đo lệch cùng một chiều, lấy trung bình không sửa được",
-    "Chỉ do đọc số ô",
-    "Luôn bằng không"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu sai số hệ thống lệch cùng chiều, phải kiểm tra dụng cụ."
+   "answer": 2,
+   "explanation": "Tần số $f$ đo bằng héc (Hz), tức số dao động mỗi giây. Giây là đơn vị của chu kì $T$.",
+   "distractorNotes": {
+    "A": "Nhầm với đơn vị của chu kì $T$. Tần số là số dao động mỗi giây.",
+    "B": "Mét đo độ dài như bước sóng, không đo số dao động mỗi giây.",
+    "D": "Vôn là đơn vị điện áp ở trục dọc dao động kí, không liên quan đến tần số."
+   }
   },
   {
    "type": "multiple_choice",
@@ -130,127 +68,273 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Công thức tính chu kì từ màn dao động kí ($N$ chu kì chiếm $L$ ô, độ chia $k$ ms/ô) là:",
+   "question": "Đếm được $N$ dao động toàn phần trong khoảng thời gian $t$. Tần số của âm được tính bằng công thức",
    "options": [
-    "$T=\\dfrac{N}{L\\,k}$",
-    "$T=\\dfrac{L\\,k}{N}$",
-    "$T=L\\,k\\,N$",
-    "$T=\\dfrac{L}{N\\,k}$"
+    "$f = \\dfrac{t}{N}$",
+    "$f = \\dfrac{N}{t}$",
+    "$f = N\\,t$",
+    "$f = \\dfrac{1}{N\\,t}$"
    ],
    "answer": 1,
-   "explanation": "Bài cho $T=\\dfrac{L\\,k}{N}$ (ms), rồi $f=1/T$."
+   "explanation": "Tần số là số dao động trong một giây nên $f = \\dfrac{N}{t}$. Biểu thức $\\dfrac{t}{N}$ là chu kì $T$.",
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu: $t/N$ là thời gian của một dao động, tức chu kì $T$.",
+    "C": "Nhân $N$ với $t$ là sai bản chất. Tần số là số dao động chia cho thời gian.",
+    "D": "Đưa $N$ xuống mẫu khiến tần số giảm khi đếm được nhiều dao động hơn, điều này vô lý."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "tinh_nhanh",
+   "kind": "cong_thuc",
    "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Một âm đơn có $T=5\\ \\text{ms}$. Tần số là:",
+   "question": "Trên màn dao động kí, $N$ chu kì liên tiếp chiếm $L$ ô, độ chia thời gian là $k$ (ms/ô). Chu kì của âm là",
    "options": [
-    "$0{,}2\\ \\text{Hz}$",
-    "$200\\ \\text{Hz}$",
-    "$5\\,000\\ \\text{Hz}$",
-    "$0{,}005\\ \\text{Hz}$"
-   ],
-   "answer": 1,
-   "explanation": "$f=1/0{,}005=200\\ \\text{Hz}$; nhớ đổi ms ra s."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "TIME/DIV $=1\\ \\text{ms/ô}$, ba chu kì chiếm $6{,}0$ ô. Tần số là:",
-   "options": [
-    "$167\\ \\text{Hz}$",
-    "$0{,}5\\ \\text{Hz}$",
-    "$56\\ \\text{Hz}$",
-    "$500\\ \\text{Hz}$"
+    "$T = \\dfrac{N}{L\\,k}$",
+    "$T = \\dfrac{L\\,N}{k}$",
+    "$T = \\dfrac{N\\,k}{L}$",
+    "$T = \\dfrac{L\\,k}{N}$"
    ],
    "answer": 3,
-   "explanation": "$T=6/3=2\\ \\text{ms}$, $f=1/(2\\cdot10^{-3})=500\\ \\text{Hz}$."
+   "explanation": "Thời gian của $N$ chu kì là $L\\,k$, chia cho $N$ được $T = \\dfrac{L\\,k}{N}$. Đó là bước \"nhân – chia\" trong mẹo của bài.",
+   "distractorNotes": {
+    "A": "Đây là biểu thức của tần số $f$, đã lật ngược công thức chu kì.",
+    "B": "Chia cho độ chia $k$ thay vì nhân. Thời gian của $N$ chu kì là $L\\,k$.",
+    "C": "Đảo vai $N$ và $L$. Phải lấy tổng thời gian $L\\,k$ chia cho số chu kì $N$."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Từ $T=\\dfrac{L\\,k}{N}$, số ô $L$ được tính bằng:",
-   "options": [
-    "$L=\\dfrac{T\\,k}{N}$",
-    "$L=\\dfrac{N\\,T}{k}$",
-    "$L=\\dfrac{N\\,k}{T}$",
-    "$L=N\\,T\\,k$"
-   ],
-   "answer": 1,
-   "explanation": "Biến đổi một bước: $L=\\dfrac{N\\,T}{k}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về cách đo tần số bằng dao động kí:",
-   "statements": [
-    {
-     "text": "$n$ đỉnh sóng liên tiếp ứng với $n-1$ chu kì.",
-     "answer": true
-    },
-    {
-     "text": "Hai điểm cùng pha liên tiếp cách nhau đúng một chu kì.",
-     "answer": true
-    },
-    {
-     "text": "Sóng càng cao trên màn thì âm càng cao.",
-     "answer": false
-    },
-    {
-     "text": "Chu kì được đọc trên trục ngang của màn.",
-     "answer": true
-    }
-   ],
-   "explanation": "Độ cao của âm do tần số (trục ngang), còn chiều cao sóng là biên độ."
-  },
-  {
-   "type": "true_false",
    "kind": "dinh_nghia",
    "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về tần số và chu kì:",
-   "statements": [
-    {
-     "text": "$f=\\dfrac{1}{T}$.",
-     "answer": true
-    },
-    {
-     "text": "$f=\\dfrac{N}{t}$ khi đếm $N$ dao động trong thời gian $t$.",
-     "answer": true
-    },
-    {
-     "text": "Đơn vị của chu kì là Hz.",
-     "answer": false
-    },
-    {
-     "text": "Âm đơn có đồ thị theo thời gian là hình sin.",
-     "answer": true
-    }
+   "question": "Trong phương án đo tần số bằng dao động kí, micro có vai trò",
+   "options": [
+    "phát ra âm đơn có tần số xác định để đo",
+    "đổi dao động âm thành hiệu điện thế biến thiên",
+    "giữ cho hình sóng đứng yên trên màn hình",
+    "đặt độ chia thời gian cho trục ngang màn"
    ],
-   "explanation": "Chu kì có đơn vị giây, tần số có đơn vị Hz."
+   "answer": 1,
+   "explanation": "Micro đổi dao động của âm thành hiệu điện thế biến thiên rồi đưa vào kênh CH1 của dao động kí.",
+   "distractorNotes": {
+    "A": "Nhầm micro với nguồn âm. Âm đơn do âm thoa hoặc loa nối máy phát tạo ra.",
+    "C": "Giữ hình sóng đứng yên là chức năng của núm TRIGGER trên dao động kí.",
+    "D": "Độ chia trục ngang do núm TIME/DIV đặt. Micro chỉ nhận âm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên dao động kí, núm TRIGGER (đồng bộ) dùng để",
+   "options": [
+    "chỉnh độ chia thời gian của trục ngang",
+    "chỉnh độ chia điện áp của trục dọc",
+    "giữ cho hình sóng đứng yên trên màn",
+    "chọn kênh vào để nối dây tín hiệu"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu núm TRIGGER giữ cho hình sóng đứng yên. Độ chia ngang là TIME/DIV, độ chia dọc là VOLT/DIV.",
+   "distractorNotes": {
+    "A": "Nhầm với núm TIME/DIV, là núm chỉnh độ chia thời gian của trục ngang.",
+    "B": "Nhầm với núm VOLT/DIV, là núm chỉnh độ chia điện áp của trục dọc.",
+    "D": "CH1 là ổ cắm nhận tín hiệu vào, không phải chức năng của núm đồng bộ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Để tính tần số từ màn dao động kí, học sinh phải đọc số ô",
+   "options": [
+    "trên trục ngang, dùng độ chia của TIME/DIV",
+    "trên trục dọc, dùng độ chia của VOLT/DIV",
+    "từ đỉnh dương tới đỉnh âm của hình sóng",
+    "mà biên độ sóng chiếm theo chiều thẳng đứng"
+   ],
+   "answer": 0,
+   "explanation": "Trục ngang là thời gian, nên chu kì và tần số đọc theo trục ngang với độ chia TIME/DIV. VOLT/DIV chỉ dùng đọc biên độ.",
+   "distractorNotes": {
+    "B": "Trục dọc biểu diễn điện áp. VOLT/DIV chỉ dùng đọc biên độ, không tính được tần số.",
+    "C": "Khoảng từ đỉnh dương tới đỉnh âm đo theo chiều dọc, phản ánh biên độ chứ không phải thời gian.",
+    "D": "Nhầm biên độ với tần số. Chiều cao sóng chỉ cho biết âm to hay nhỏ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai âm đơn X và Y hiện trên màn cùng độ chia. Trong cùng số ô, hai sóng có cùng số chu kì nhưng sóng X nhô lên cao hơn. Kết luận đúng là",
+   "options": [
+    "X cao hơn Y vì sóng X nhô lên nhiều hơn",
+    "X có tần số lớn hơn Y vì sóng X cao hơn",
+    "X trầm hơn Y vì chu kì của X dài hơn",
+    "X to hơn Y, hai âm có cùng một tần số"
+   ],
+   "answer": 3,
+   "explanation": "Cùng số chu kì trong cùng số ô nên cùng tần số. Sóng nhô cao hơn là biên độ lớn hơn, tức âm to hơn.",
+   "distractorNotes": {
+    "A": "Nhầm \"sóng cao\" trên màn với \"âm cao\". Chiều cao sóng là biên độ, quyết định độ to.",
+    "B": "Tần số đọc theo độ dày sóng trên trục ngang, mà hai sóng có cùng số chu kì.",
+    "C": "Cùng số chu kì trong cùng số ô nên hai chu kì bằng nhau, không âm nào trầm hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên màn dao động kí, học sinh đếm được $n$ đỉnh dương liên tiếp, đỉnh đầu và đỉnh cuối cách nhau $L$ ô, độ chia thời gian $k$. Chu kì của âm là",
+   "options": [
+    "$T = \\dfrac{L\\,k}{n}$",
+    "$T = \\dfrac{L\\,k}{n - 1}$",
+    "$T = \\dfrac{L\\,k}{n + 1}$",
+    "$T = \\dfrac{n - 1}{L\\,k}$"
+   ],
+   "answer": 1,
+   "explanation": "Giữa hai đỉnh liên tiếp là một chu kì nên $n$ đỉnh cho $n - 1$ chu kì; thay $N = n - 1$ vào $T = \\dfrac{L\\,k}{N}$.",
+   "distractorNotes": {
+    "A": "Đếm đỉnh thành chu kì: $n$ đỉnh liên tiếp chỉ tạo ra $n-1$ khoảng, tức $n-1$ chu kì.",
+    "C": "Hiệu chỉnh sai chiều: số chu kì ít hơn số đỉnh một đơn vị, không nhiều hơn.",
+    "D": "Đã lật ngược thành biểu thức của tần số chứ không phải chu kì."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Núm TIME/DIV đặt ở $200\\ \\mu\\text{s/ô}$. Độ chia này bằng",
+   "options": [
+    "$0{,}2\\ \\text{ms/ô}$",
+    "$2\\ \\text{ms/ô}$",
+    "$20\\ \\text{ms/ô}$",
+    "$0{,}02\\ \\text{ms/ô}$"
+   ],
+   "answer": 0,
+   "explanation": "$1\\ \\text{ms} = 1\\,000\\ \\mu\\text{s}$ nên $200\\ \\mu\\text{s/ô} = 0{,}2\\ \\text{ms/ô}$, đúng như bảng ở bẫy 2.",
+   "distractorNotes": {
+    "B": "Dùng sai hệ số đổi. ms và μs lệch nhau $1\\,000$ lần, không phải $100$ lần.",
+    "C": "Chỉ chia cho $10$. Khi đổi μs sang ms phải chia cho $1\\,000$.",
+    "D": "Chia thừa thành $10\\,000$. Hệ số đổi giữa μs và ms chỉ là $1\\,000$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nếu tần số của một âm đơn tăng gấp đôi thì chu kì của âm đó",
+   "options": [
+    "tăng gấp đôi",
+    "không thay đổi",
+    "giảm một nửa",
+    "giảm bốn lần"
+   ],
+   "answer": 2,
+   "explanation": "Vì $T = \\dfrac{1}{f}$, chu kì tỉ lệ nghịch với tần số nên $f$ gấp đôi thì $T$ giảm một nửa.",
+   "distractorNotes": {
+    "A": "Coi $T$ tỉ lệ thuận với $f$, trong khi $T = 1/f$ là quan hệ tỉ lệ nghịch.",
+    "B": "Bỏ qua liên hệ $T = 1/f$. Tần số thay đổi thì chu kì buộc phải thay đổi.",
+    "D": "Thêm bình phương vô căn cứ. $T$ chỉ tỉ lệ nghịch bậc nhất với $f$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên âm đang đo, vặn TIME/DIV để độ chia $k$ giảm đi một nửa. Một chu kì trên màn sẽ chiếm số ô",
+   "options": [
+    "giảm một nửa",
+    "không thay đổi",
+    "tăng gấp bốn",
+    "tăng gấp đôi"
+   ],
+   "answer": 3,
+   "explanation": "Từ $T = \\dfrac{L\\,k}{N}$ suy ra $L = \\dfrac{N\\,T}{k}$; $T$ không đổi, $k$ giảm một nửa thì $L$ tăng gấp đôi.",
+   "distractorNotes": {
+    "A": "Coi số ô tỉ lệ thuận với độ chia, nhưng $L = N\\,T/k$ tỉ lệ nghịch với $k$.",
+    "B": "Chu kì không đổi, nhưng số ô còn phụ thuộc độ chia $k$ của trục ngang.",
+    "C": "Thêm bình phương là sai. $L$ chỉ tỉ lệ nghịch bậc nhất với $k$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sai số hệ thống trong phép đo tần số là sai số",
+   "options": [
+    "làm kết quả lệch lúc thừa lúc thiếu quanh giá trị đúng",
+    "làm mọi lần đo lệch cùng một chiều so với giá trị đúng",
+    "giảm được nhờ lặp lại phép đo rồi lấy giá trị trung bình",
+    "chỉ xuất hiện khi người đo đọc nhầm số ô trên màn hình"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu sai số hệ thống làm mọi lần lệch cùng một chiều, lấy trung bình không sửa được, phải kiểm tra dụng cụ.",
+   "distractorNotes": {
+    "A": "Lệch lúc thừa lúc thiếu là đặc điểm của sai số ngẫu nhiên, không phải sai số hệ thống.",
+    "C": "Lấy trung bình chỉ giảm được sai số ngẫu nhiên. Sai số hệ thống lệch cùng chiều nên vẫn còn nguyên.",
+    "D": "Đọc ô lệch thừa thiếu là sai số ngẫu nhiên. Sai số hệ thống đến từ dụng cụ, như núm chưa về CAL."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mỗi lần đọc trên màn có thể lệch cỡ $0{,}1$ ô. Để giảm sai số tỉ đối của tần số đo được, nên",
+   "options": [
+    "đo nhiều chu kì liên tiếp để bề rộng $L$ gần kín màn",
+    "vặn VOLT/DIV để hình sóng cao hơn theo chiều dọc",
+    "vặn to nguồn âm để sóng có biên độ lớn hơn",
+    "đo một chu kì nhưng đếm đỉnh sóng cho nhanh"
+   ],
+   "answer": 0,
+   "explanation": "Độ lệch $0{,}1$ ô không đổi nên $L$ càng dài thì $\\dfrac{\\Delta L}{L}$ càng nhỏ; vì vậy đo nhiều chu kì liên tiếp, miễn vừa màn.",
+   "distractorNotes": {
+    "B": "VOLT/DIV chỉ phóng chiều dọc. Sai số đọc nằm ở bề rộng $L$ nên không giảm.",
+    "C": "Biên độ lớn hơn không làm $L$ dài ra, nên tỉ lệ $\\Delta L/L$ giữ nguyên.",
+    "D": "Đo một chu kì cho $L$ ngắn nên $\\Delta L/L$ lớn. Đếm đỉnh còn dễ đếm thừa một chu kì."
+   }
   },
   {
    "type": "true_false",
@@ -260,26 +344,102 @@
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về xử lý số liệu 5 lần đo:",
+   "question": "Một học sinh đo tần số của âm thoa bằng micro và dao động kí, đọc được $N$ chu kì liên tiếp chiếm $L$ ô với độ chia $k$ (ms/ô), rồi tính $T$ và $f$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$\\bar f=\\dfrac{\\sum f_i}{5}$.",
+     "text": "Hai đỉnh dương liên tiếp trên màn cách nhau đúng một chu kì.",
      "answer": true
     },
     {
-     "text": "$\\Delta f_i=|f_i-\\bar f|$.",
+     "text": "Với $k$ tính bằng ms/ô, công thức $T = \\dfrac{L\\,k}{N}$ cho $T$ tính bằng ms.",
      "answer": true
     },
     {
-     "text": "$\\Delta f=\\Delta\\bar f+\\Delta f_{dc}$.",
-     "answer": true
+     "text": "Có thể lấy nghịch đảo ngay giá trị $T$ tính bằng ms để được $f$ tính bằng Hz.",
+     "answer": false
     },
     {
-     "text": "Lấy trung bình nhiều lần sửa được sai số hệ thống.",
+     "text": "Khi $N$ và $k$ không đổi, tần số $f$ tỉ lệ thuận với bề rộng $L$.",
      "answer": false
     }
    ],
-   "explanation": "Lấy trung bình chỉ giảm sai số ngẫu nhiên."
+   "explanation": "Hai điểm cùng pha liên tiếp cách nhau một chu kì; $T = \\dfrac{L\\,k}{N}$ ra ms, phải đổi ra s rồi mới lật ngược. Vì $f = \\dfrac{N}{L\\,k}$ nên $f$ tỉ lệ nghịch với $L$.",
+   "distractorNotes": {
+    "0": "Hai đỉnh liên tiếp là hai điểm cùng pha liên tiếp, nên chắc chắn cách nhau một chu kì.",
+    "1": "Tích $L\\,k$ có đơn vị ô nhân ms/ô, tức ms. Chia cho $N$ thì vẫn là ms.",
+    "2": "Lật ngược số đo bằng ms cho kết quả nhỏ hơn $1\\,000$ lần. Phải đổi ms ra s trước.",
+    "3": "Trong $f = N/(L\\,k)$, $L$ nằm ở mẫu, nên $L$ lớn hơn thì $f$ nhỏ hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm, học sinh gõ âm thoa ghi $440\\ \\text{Hz}$ sát micro nối với dao động kí, chỉnh các núm cho hình sóng rõ và đứng yên, rồi đo 5 lần. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Micro được nối vào kênh vào CH1 của dao động kí.",
+     "answer": true
+    },
+    {
+     "text": "Sóng nhỏ dần sau mỗi lần gõ chứng tỏ tần số của âm thoa giảm dần.",
+     "answer": false
+    },
+    {
+     "text": "Số $440\\ \\text{Hz}$ ghi trên âm thoa là giá trị đối chiếu, không phải kết quả đo.",
+     "answer": true
+    },
+    {
+     "text": "Vặn núm VOLT/DIV làm thay đổi chu kì đọc được trên màn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Sóng nhỏ dần là biên độ giảm do âm thoa tắt dần, tần số không đổi. VOLT/DIV chỉ đổi độ chia dọc nên không ảnh hưởng chu kì; kết quả đo là số tính từ màn.",
+   "distractorNotes": {
+    "0": "Sơ đồ nối của bài đưa dây tín hiệu từ micro vào kênh CH1, nên phát biểu này đúng.",
+    "1": "Sóng nhỏ dần là biên độ giảm do âm thoa tắt dần. Tần số đọc theo trục ngang vẫn giữ nguyên.",
+    "2": "Kết quả đo phải tính từ màn dao động kí. Số ghi trên nguồn âm chỉ dùng để kiểm tra.",
+    "3": "VOLT/DIV là độ chia trục dọc, còn chu kì đọc trên trục ngang theo TIME/DIV."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sau 5 lần đo tần số $f_1, f_2, \\ldots, f_5$ bằng dao động kí, học sinh xử lý số liệu và viết kết quả. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Giá trị $\\bar f$ là trung bình cộng của 5 giá trị đo được.",
+     "answer": true
+    },
+    {
+     "text": "Sai số tổng được tính bằng $\\Delta f = \\Delta\\bar f + \\Delta f_{dc}$.",
+     "answer": true
+    },
+    {
+     "text": "Kết quả được ghi là $f = \\bar f \\pm \\Delta\\bar f$, chỉ dùng sai số ngẫu nhiên.",
+     "answer": false
+    },
+    {
+     "text": "Vì $f$ tỉ lệ nghịch với $L$ nên sai số dụng cụ thoả mãn $\\dfrac{\\Delta f}{f} = \\dfrac{\\Delta L}{L}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Bài ghi $f = \\bar f \\pm \\Delta f$ với $\\Delta f = \\Delta\\bar f + \\Delta f_{dc}$ là sai số tổng, không phải $\\Delta\\bar f$. Sai số dụng cụ suy từ $\\dfrac{\\Delta f}{f} = \\dfrac{\\Delta L}{L}$.",
+   "distractorNotes": {
+    "0": "Giá trị trung bình $\\bar f = \\sum f_i / 5$ đúng như cách xử lý số liệu trong bài.",
+    "1": "Sai số tổng gồm cả phần ngẫu nhiên và phần dụng cụ, nên phải cộng hai phần lại.",
+    "2": "Bỏ sai số dụng cụ làm khoảng sai số quá hẹp. Phải ghi kết quả với sai số tổng $\\Delta f$.",
+    "3": "Hai đại lượng tỉ lệ nghịch có sai số tỉ đối bằng nhau, đúng như bài đã suy ra."
+   }
   },
   {
    "type": "true_false",
@@ -289,98 +449,102 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về phương án không dùng dao động kí:",
+   "question": "Một nhóm học sinh không có dao động kí, chỉ có điện thoại, bộ cảm biến âm và máy tính để đo tần số của âm thoa. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Ứng dụng phân tích phổ đọc tần số ở đỉnh cao nhất của phổ.",
+     "text": "Với ứng dụng phân tích phổ, tần số được đọc ở đỉnh cao nhất của phổ.",
      "answer": true
     },
     {
-     "text": "Có thể ghi âm rồi đếm $N$ chu kì trong thời gian $t$.",
-     "answer": true
-    },
-    {
-     "text": "Phổ là dạng sóng theo thời gian.",
+     "text": "Phổ trên ứng dụng là đồ thị dạng sóng của âm theo thời gian.",
      "answer": false
     },
     {
-     "text": "Có thể dùng cảm biến âm và máy tính.",
+     "text": "Ghi âm rồi đếm $N$ chu kì trong thời gian $t$ thì tính được $f = \\dfrac{N}{t}$.",
      "answer": true
+    },
+    {
+     "text": "Không có dao động kí thì không thể đo được tần số của âm.",
+     "answer": false
     }
    ],
-   "explanation": "Phổ là đồ thị độ mạnh theo tần số, không phải dạng sóng."
+   "explanation": "Phổ là đồ thị độ mạnh của âm theo tần số, không phải dạng sóng. Bài nêu phương án 2 dùng điện thoại hoặc cảm biến nên vẫn đo được tần số.",
+   "distractorNotes": {
+    "0": "Với nguồn âm đơn, đỉnh cao nhất của phổ ứng với tần số của âm.",
+    "1": "Phổ biểu diễn độ mạnh của âm theo tần số. Dạng sóng mới là đồ thị theo thời gian.",
+    "2": "Tần số là số dao động mỗi giây, nên $N$ chu kì trong thời gian $t$ cho $f = N/t$.",
+    "3": "Phương án 2 dùng điện thoại hoặc cảm biến âm và máy tính vẫn đo được tần số."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "TIME/DIV $=0{,}2\\ \\text{ms/ô}$, bốn chu kì chiếm $8{,}0$ ô. Tần số bằng bao nhiêu Hz?",
-   "answer": "2500",
-   "explanation": "$T=8\\cdot0{,}2/4=0{,}4\\ \\text{ms}$ nên $f=2500\\ \\text{Hz}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Âm đơn $1000\\ \\text{Hz}$ có chu kì bao nhiêu ms?",
-   "answer": "1",
-   "explanation": "$T=1/1000\\ \\text{s}=1\\ \\text{ms}$."
-  },
-  {
-   "type": "short_answer",
+   "type": "true_false",
    "kind": "tinh_nhanh",
    "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Em đếm 6 đỉnh dương liên tiếp. Số chu kì $N$ dùng trong công thức là bao nhiêu?",
-   "answer": "5",
-   "explanation": "$n$ đỉnh cho $n-1$ chu kì, nên $N=5$."
+   "question": "Hai âm đơn có tần số $440\\ \\text{Hz}$ và $880\\ \\text{Hz}$, cùng biên độ, được vẽ trên cùng một thang thời gian. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Trong cùng một khoảng thời gian, âm $880\\ \\text{Hz}$ có số chu kì gấp đôi âm $440\\ \\text{Hz}$.",
+     "answer": true
+    },
+    {
+     "text": "Âm $880\\ \\text{Hz}$ to hơn vì sóng của nó dày hơn.",
+     "answer": false
+    },
+    {
+     "text": "Chu kì của âm $880\\ \\text{Hz}$ bằng một nửa chu kì của âm $440\\ \\text{Hz}$.",
+     "answer": true
+    },
+    {
+     "text": "Hai sóng cao như nhau nên hai âm có cùng độ cao.",
+     "answer": false
+    }
+   ],
+   "explanation": "Tần số gấp đôi thì số chu kì trong cùng thời gian gấp đôi và $T = 1/f$ giảm một nửa. Độ to do biên độ, độ cao do tần số, nên hai âm cùng độ to nhưng âm $880\\ \\text{Hz}$ cao hơn.",
+   "distractorNotes": {
+    "0": "Từ $f = N/t$: cùng thời gian $t$ thì $N$ tỉ lệ với $f$, nên số chu kì gấp đôi.",
+    "1": "Sóng dày hơn là tần số lớn hơn, tức âm cao hơn. Độ to do biên độ quyết định, mà biên độ bằng nhau.",
+    "2": "$T = 1/f$ tỉ lệ nghịch với tần số, nên tần số gấp đôi thì chu kì giảm một nửa.",
+    "3": "Sóng cao như nhau chỉ cho biết cùng biên độ, tức cùng độ to, không phải cùng độ cao."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "true_false",
    "kind": "dinh_nghia",
    "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Điện lưới có chu kì $20\\ \\text{ms}$. Tần số bằng bao nhiêu Hz?",
-   "answer": "50",
-   "explanation": "Bài nêu $T=20\\ \\text{ms}$ tương ứng $50\\ \\text{Hz}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Đổi $1\\ \\text{ms}=10^{-x}\\ \\text{s}$. Tìm $x$.",
-   "answer": "3",
-   "explanation": "Bài ghi $1\\ \\text{ms}=10^{-3}\\ \\text{s}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Thực hành: Đo tần số của sóng âm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "TIME/DIV $=1\\ \\text{ms/ô}$, hai chu kì chiếm $4$ ô. Tần số bằng bao nhiêu Hz?",
-   "answer": "500",
-   "explanation": "$T=4\\cdot1/2=2\\ \\text{ms}$ nên $f=500\\ \\text{Hz}$."
+   "question": "Khi đo tần số bằng dao động kí, học sinh gặp hai nguồn sai số: núm biến thiên của TIME/DIV chưa về vị trí chuẩn (CAL), và mỗi lần đọc số ô lúc thừa lúc thiếu. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Núm biến thiên của TIME/DIV chưa về CAL gây ra sai số hệ thống.",
+     "answer": true
+    },
+    {
+     "text": "Lặp lại nhiều lần rồi lấy trung bình sẽ sửa được sai số do núm chưa về CAL.",
+     "answer": false
+    },
+    {
+     "text": "Việc mỗi lần đọc số ô lúc thừa lúc thiếu là sai số ngẫu nhiên.",
+     "answer": true
+    },
+    {
+     "text": "Kiểm tra dao động kí bằng một nguồn đã biết trước tần số giúp phát hiện sai số hệ thống.",
+     "answer": true
+    }
+   ],
+   "explanation": "Núm chưa về CAL làm mọi $k$ sai cùng chiều nên là sai số hệ thống, lấy trung bình không sửa được, phải kiểm tra bằng nguồn đã biết. Đọc ô lệch thừa thiếu là ngẫu nhiên.",
+   "distractorNotes": {
+    "0": "Núm chưa về CAL làm mọi giá trị $k$ sai cùng một chiều, đúng đặc điểm của sai số hệ thống.",
+    "1": "Sai số hệ thống lệch cùng chiều ở mọi lần đo, nên giá trị trung bình vẫn lệch như cũ.",
+    "2": "Lệch lúc thừa lúc thiếu quanh giá trị đúng chính là đặc điểm của sai số ngẫu nhiên.",
+    "3": "So sánh với nguồn đã biết tần số làm lộ ra độ lệch cùng chiều, nên phát hiện được sai số hệ thống."
+   }
   }
  ]
 }

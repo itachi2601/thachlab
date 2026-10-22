@@ -1,0 +1,1991 @@
+[
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 4,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây về khối lượng riêng là đúng?",
+  "options": [
+   [
+    "A",
+    "Khối lượng riêng của một chất là khối lượng của một đơn vị thể tích chất đó.",
+    true
+   ],
+   [
+    "B",
+    "Nói khối lượng riêng của sắt là 7800 kg/m^3^ có nghĩa là 1 cm^3^ sắt có khối lượng 7800 kg.",
+    false
+   ],
+   [
+    "C",
+    "Công thức tính khối lượng riêng là ρ = m.V.",
+    false
+   ],
+   [
+    "D",
+    "Khối lượng riêng bằng trọng lượng riêng.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Khối lượng riêng của một chất là khối lượng của một đơn vị thể tích chất đó",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 5,
+  "flags": [],
+  "stem": "Muốn đo khối lượng riêng của quả cầu bằng sắt người ta dùng những dụng cụ gì?",
+  "options": [
+   [
+    "A",
+    "Chỉ cần dùng một cái cân.",
+    false
+   ],
+   [
+    "B",
+    "Chỉ cần dùng một lực kế.",
+    false
+   ],
+   [
+    "C",
+    "Cần dùng một cái cân và bình chia độ.",
+    true
+   ],
+   [
+    "D",
+    "Chỉ cần dùng một bình chia độ.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Khối lượng riêng là một thuộc tính của các chất, có thể đo được qua phép đo khối lượng và thể tích. Vì vậy, cần sử dụng cân và bình chia độ.\n\nĐổ nước vào bình chia độ, xác định thể tích của lượng nước đổ vào, sau đó thả quả cầu sắt vào (bi chìm hoàn toàn trong nước). Đo thể tích lượng nước dâng lên đó chính là thể tích của quả cầu sắt.\n\nDùng cân để đo khối lượng quả cầu sắt.\n\nSử dụng công thức ρ=mV để tính.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 6,
+  "flags": [],
+  "stem": "Công thức nào sau đây là công thức tính áp suất? Gọi F là áp lực, S là diện tích chịu tác dụng của áp lực",
+  "options": [
+   [
+    "A",
+    "$p=\\frac{F}{s}.$",
+    true
+   ],
+   [
+    "B",
+    "p = F.S.",
+    false
+   ],
+   [
+    "C",
+    "$p=\\frac{d}{s}.$",
+    false
+   ],
+   [
+    "D",
+    "p = d.V.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "$p=\\frac{F}{s}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 7,
+  "flags": [],
+  "stem": "Trong các trường hợp sau đây, trường hợp nào áp lực nhỏ nhất?",
+  "options": [
+   [
+    "A",
+    "Khi bạn Thanh xách cặp đứng bằng hai chân.",
+    false
+   ],
+   [
+    "B",
+    "Khi bạn Thanh xách cặp đứng co một chân.",
+    false
+   ],
+   [
+    "C",
+    "Khi bạn Thanh xách cặp đứng co một chân và nhón chân còn lại.",
+    false
+   ],
+   [
+    "D",
+    "Khi bạn Thanh không xách cặp đứng co một chân và nhón chân còn lại.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Khi bạn Thanh không xách cặp đứng co một chân và nhón chân còn lại thì áp lực nhỏ nhất.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 8,
+  "flags": [],
+  "stem": "Áp suất chất lỏng tại một điểm bất kì trong lòng chất lỏng phụ thuộc vào",
+  "options": [
+   [
+    "A",
+    "khối lượng chất lỏng.",
+    false
+   ],
+   [
+    "B",
+    "trọng lượng của chất lỏng.",
+    false
+   ],
+   [
+    "C",
+    "thể tích của chất lỏng.",
+    false
+   ],
+   [
+    "D",
+    "độ sâu của điểm đang xét (so với mặt thoáng chất lỏng).",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Áp suất chất lỏng tại một điểm bất kì trong lòng chất lỏng phụ thuộc vào độ sâu của điểm đang xét (so với mặt thoáng chất lỏng).",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 9,
+  "flags": [],
+  "stem": "Đơn vị nào sau đây không phải đơn vị đo của áp suất?",
+  "options": [
+   [
+    "A",
+    "Pa",
+    false
+   ],
+   [
+    "B",
+    "mmHg.",
+    false
+   ],
+   [
+    "C",
+    "kg/m^3^.",
+    true
+   ],
+   [
+    "D",
+    "atm.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Đơn vị đo áp suất là Pa, mmHg, atm, at, N/m^2^,..",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 10,
+  "flags": [],
+  "stem": "Nhúng một khối lập phương vào nước, mặt nào của khối lập phương sẽ chịu áp lực lớn nhất của nước?",
+  "options": [
+   [
+    "A",
+    "Mặt dưới.",
+    true
+   ],
+   [
+    "B",
+    "Áp lực như nhau ở cả 6 mặt.",
+    false
+   ],
+   [
+    "C",
+    "Mặt trên.",
+    false
+   ],
+   [
+    "D",
+    "Các mặt bên.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Tại một điểm đang xét trong lòng chất lỏng, các mặt bên chịu áp lực như nhau. Mặt dưới do chịu thêm tác dụng của khối chất lỏng từ điểm đang xét tới mặt dưới nên áp lực lớn hơn.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 11,
+  "flags": [],
+  "stem": "Muốn tăng áp suất cần thực hiện",
+  "options": [
+   [
+    "A",
+    "tăng diện tích của mặt bị ép và giảm áp lực.",
+    false
+   ],
+   [
+    "B",
+    "giảm diện tích của mặt bị ép và giảm áp lực theo cùng tỉ lệ.",
+    false
+   ],
+   [
+    "C",
+    "tăng diện tích của mặt bị ép và tăng áp lực theo cùng tỉ lệ.",
+    false
+   ],
+   [
+    "D",
+    "giảm diện tích của mặt ép và tăng áp lực.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Muốn tăng áp suất, ta phải tăng lực ép hoặc giảm diện tích bị ép",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 12,
+  "flags": [],
+  "stem": "Câu nào sau đây đúng về áp suất chất lỏng ?",
+  "options": [
+   [
+    "A",
+    "Chất lỏng gây ra áp suất lên cả đáy bình, thành bình và các vật ở trong chất lỏng.",
+    true
+   ],
+   [
+    "B",
+    "Chất lỏng chỉ gây ra áp suất lên đáy bình.",
+    false
+   ],
+   [
+    "C",
+    "Chất lỏng chỉ gây ra áp suất lên đáy bình và thành bình.",
+    false
+   ],
+   [
+    "D",
+    "Chất lỏng chỉ gây ra áp suất lên các vật nhúng trong nó.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Chất lỏng gây ra áp suất lên mọi phương lên đáy bình, thành bình và các vật ở trong chất lỏng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 13,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Tác dụng áp lực lên mặt bị ép càng lớn khi nào?",
+  "options": [
+   [
+    "A",
+    "cường độ áp lực càng nhỏ và diện tích mặt bị ép càng lớn.",
+    false
+   ],
+   [
+    "B",
+    "diện tích mặt bị ép càng nhỏ.",
+    false
+   ],
+   [
+    "C",
+    "cường độ áp lực càng lớn.",
+    false
+   ],
+   [
+    "D",
+    "cường độ áp lực càng lớn và diện tích mặt bị ép càng nhỏ.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Tác dụng áp lực lên mặt bị ép càng lớn khi cường độ áp lực càng lớn và diện tích mặt bị ép càng nhỏ.\n\n**Câu 14.** Một bình đựng chất lỏng như hình dưới. Áp suất tại điểm nào nhỏ nhất?\n![](scripts/data/nap-ngan-hang-vl10/c7/media/media/image62.png){width=\"1.6979166666666667in\" height=\"1.6979166666666667in\"}\n[**[A. **Tại M.**                     B. ** Tại N.**                       C. ** Tại P. **D. ** Tại Q.\n\n**Hướng dẫn giải**\n\nM gần mặt thoáng nhất nên h~M~ là nhỏ nhất🡪 áp suất nhỏ nhất.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 15,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Bốn bình 1, 2, 3, 4 cùng đựng nước như dưới. Áp suất của nước lên đáy bình nào lớn nhất? \n![](scripts/data/nap-ngan-hang-vl10/c7/media/media/image63.png){width=\"4.447916666666667in\" height=\"1.0414020122484688in\"}",
+  "options": [
+   [
+    "A",
+    "Bình 1.",
+    true
+   ],
+   [
+    "B",
+    "Bình 2.",
+    false
+   ],
+   [
+    "C",
+    "Bình 3.",
+    false
+   ],
+   [
+    "D",
+    "Bình 4.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Bình 1 có độ cao cột chất lỏng lớn nhất 🡪 áp suất bình 1 lớn nhất.\n\n**Mức độ HIỂU**\n\n**Câu 1.** Một thùng cao 2 m đựng một lượng nước cao 1,2 m. Áp suất của nước tác dụng lên đáy thùng là\n[[A. 12000 Pa.      B. 1200 Pa. C. 120 Pa.      D. 20000 Pa.\n\n**Hướng dẫn giải**\n\np = d.h = 10000.1,2 = 12000N/m^2^ = 12000 Pa.",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl10/c7/media/media/image63.png"
+  ]
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 2,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Cho ba bình giống hệt nhau đựng 3 chất lỏng: rượu, nước và thủy ngân với cùng một thể tích như nhau. Biết khối lượng riêng của thủy ngân là ρ~Hg~ = 13600 kg/m^3^, của nước là ρ~nước~ = 1000 kg/m^3^, của rượu là ρ~rượu~ = 800 kg/m^3^. Hãy so sánh áp suất của chất lỏng lên đáy của các bình:",
+  "options": [
+   [
+    "A",
+    "p~Hg~ \\< p~nước~ \\< p~rượu~.",
+    false
+   ],
+   [
+    "B",
+    "p~Hg~ \\> p~rượu~ \\> p~nước~.",
+    false
+   ],
+   [
+    "C",
+    "p~Hg~ \\> p~nước~ \\> p~rượu~.",
+    true
+   ],
+   [
+    "D",
+    "p~nước~ \\> p~Hg~ \\> p~rượu~.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Ba bình có giống hệt nhau, thể tích chất lỏng như nhau nên chiều cao cột chất lỏng trong các bình giống nhau.\n\nÁp suất chất lỏng lên đáy bình có biểu thức p = ρ.g.h. Với các bình giống nhau, chất nào có khối lượng riêng lớn thì áp suất chất lỏng lên đáy bình sẽ lớn.\n\nDo ρ~Hg~ \\> ρ~nước~ \\> ρ~rượu~ ⇒ p~Hg~ \\> p~nước~ \\> p~rượu~.\n\n**Câu 3.** Một tàu ngầm đang di chuyển dưới biển. Áp kế đặt ở ngoài vỏ tàu chỉ 875000 N/m^2^, một lúc sau áp kế chỉ 1165000 N/m^2^. Nhận xét nào sau đây là đúng?\n[[A. Tàu đang lặn xuống.\nB. Tàu đang chuyển động về phía trước theo phương ngang.\nC. Tàu đang từ từ nổi lên.\nD. Tàu đang chuyển động lùi về phía sau theo phương ngang.\n\n**Hướng dẫn giải**\n\nTa có: áp suất lúc sau lớn hơn áp suất đầu 🡪 độ sâu của tàu so với mặt nước biển lúc sau lớn hơn lúc đầu 🡪 Tàu đang lặn xuống.\n**Câu 4.** Cho hình vẽ bên. Kết luận nào sau đây đúng khi so sánh áp suất tại các điểm A, B, C, D.\n\n![](scripts/data/nap-ngan-hang-vl10/c7/media/media/image64.png){width=\"1.59375in\" height=\"0.9260323709536308in\"}\n\nA. p~A~\\>p~B~\\>p~C~\\>p~D~. [[B. p~A~\\>p~B~\\>p~C~=p~D~. C. p~A~\\<p~B~\\<p~C~=p~D~. D. p~A~\\<p~B~\\<p~C~\\<p~D~.\n\n**Hướng dẫn giải**\n\nTa thấy: h~A~\\>h~B~\\>h~C~=h~D~ 🡪 p~A~\\>p~B~\\>p~C~=p~D~.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 5,
+  "flags": [],
+  "stem": "Hiện tượng nào sau đây xảy ra đối với khối lượng riêng của nước khi đun nước trong một bình thủy tinh?",
+  "options": [
+   [
+    "A",
+    "Khối lượng riêng của nước tăng.",
+    false
+   ],
+   [
+    "B",
+    "Khối lượng riêng của nước giảm.",
+    true
+   ],
+   [
+    "C",
+    "Khối lượng riêng của nước không thay đổi.",
+    false
+   ],
+   [
+    "D",
+    "Khối lượng riêng của nước lúc đầu giảm sau đó mới tăng.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Khi đun nước sôi, thể tích nước tăng dần 🡪khối lượng riêng giảm",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 6,
+  "flags": [],
+  "stem": "Một người tập yoga. Tư thế nhất là đứng hai chân trên sàn, tư thế thứ hai là đứng một chân trên sàn, tư thế thứ ba là nằm trên sàn. Sự so sánh nào sau đây về áp lực vá áp suất của người đó trong ba tư thế trên là đúng? Biết F~1~, F~2~,F~3~ và p~1~, p~2,~ p~3~ là lần lượt là áp lực và áp suất của người tác dụng lên sàn ở tư thế 1,2,3",
+  "options": [
+   [
+    "A",
+    "F~1~ = F~2~ = F~3~ và p~1~=p~2~=p~3~.",
+    false
+   ],
+   [
+    "B",
+    "F~1~ = F~2~ = F~3~ và p~2~\\>p~1~\\>p~3~.",
+    true
+   ],
+   [
+    "C",
+    "F~1~ = F~2~ = F~3~ và p~1~\\>p~2~\\>p~3~.",
+    false
+   ],
+   [
+    "D",
+    "F~2~ \\> F~1~ \\> F~3~ và p~2~\\>p~1~\\>p~3~.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "F~1~ = F~2~ = F~3~ ( bằng trọng lượng của cơ thể người)\n\nDiện tích tiếp xúc của người lên mặt sàn: S~2~\\<S~1~\\<S~3~ 🡪 p~2~\\>p~1~\\>p~3~",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 7,
+  "flags": [
+   "khong-du-A-D",
+   "khong-gach-chan"
+  ],
+  "stem": "Người ta dùng một lực 1000 N để nâng một vật nặng 50000 N bằng một máy thủy lực. Hỏi diện tích pit tông lớn S và nhỏ s của máy thủy lực này thỏa mãn điều kiện nào sau đây? \n**A.**S = 5 s. **B.** S = 0,2 s. [**[C.** S = 50 s. **D.** S = 5100 s.",
+  "options": [],
+  "answer": null,
+  "solution": "Để nâng được vật nặng F = 50000 N bằng một lực f = 1000N thì diện tích S của pit-tông lớn và diện tích s của pit-tông nhỏ của máy thủy lực phải thỏa mãn điều kiện:\n$\\frac{F}{f}=\\frac{S}{s}\\Rightarrow\\frac{S}{s}=\\frac{50000}{1000}=50\\Rightarrow S=50s$\nVậy diện tích pit-tông lớn bằng 50 lần diện tích pit-tông nhỏ.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 8,
+  "flags": [],
+  "stem": "Dụng cụ dùng để đo khối lượng riêng của chất lỏng là",
+  "options": [
+   [
+    "A",
+    "Bình chia độ.",
+    false
+   ],
+   [
+    "B",
+    "Cân.",
+    false
+   ],
+   [
+    "C",
+    "Lực kế.",
+    false
+   ],
+   [
+    "D",
+    "Bình chia độ và cân.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Dụng cụ dùng để đo khối lượng riêng của chất lỏng là bình chia độ và cân.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 9,
+  "flags": [],
+  "stem": "Chọn câu **sai**?",
+  "options": [
+   [
+    "A",
+    "Khi xuống càng sâu trong nước thì ta chịu một áp suất càng lớn.",
+    false
+   ],
+   [
+    "B",
+    "Áp suất của chất lỏng không phụ thuộc khối lượng riêng chất lỏng.",
+    true
+   ],
+   [
+    "C",
+    "Độ chênh lệch áp suất tại hai vị trí khác nhau trong chất lỏng không phụ thuộc áp suất khí quyển ở mặt thoáng.",
+    false
+   ],
+   [
+    "D",
+    "Độ tăng áp suất lên một bình kín được truyền đi nguyên vẹn khắp bình.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Áp suất của chất lỏng phụ thuộc khối lượng riêng chất lỏng",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 10,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Ta biết công thức tính lực đẩy Acsimét là F~A~= d.V. Ở hình vẽ bên thì V là thể tích nào? \n![](scripts/data/nap-ngan-hang-vl10/c7/media/media/image66.png){width=\"2.0in\" height=\"0.8541666666666666in\"}",
+  "options": [
+   [
+    "A",
+    "Thể tích toàn bộ vật.",
+    false
+   ],
+   [
+    "B",
+    "Thể tích chất lỏng.",
+    false
+   ],
+   [
+    "C",
+    "Thể tích phần chìm của vật.",
+    true
+   ],
+   [
+    "D",
+    "Thể tích phần nổi của vật.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "V là thể tích của phần chất lỏng bị vật chiếm chỗ. Trong trường hợp này thì V là thể tích của phần bị chìm dưới mực chất lỏng của vật.",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl10/c7/media/media/image66.png"
+  ]
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 11,
+  "flags": [],
+  "stem": "Cho biết 1 kg nước có thể tích 1 lít còn 1 kg dầu hỏa có thể tích 5/4 lít. Phát biểu nào sau đây là đúng?",
+  "options": [
+   [
+    "A",
+    "1 lít dầu hỏa có khối lượng lớn hơn 1 lít nước.",
+    false
+   ],
+   [
+    "B",
+    "1 lít nước có thể tích lớn hơn 1 lít dầu hỏa.",
+    false
+   ],
+   [
+    "C",
+    "Khối lượng riêng của nước bằng 5/4 khối lượng riêng của dầu hỏa.",
+    true
+   ],
+   [
+    "D",
+    "Khối lượng riêng của dầu hỏa bằng 5/4 khối lượng riêng của nước.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "$\\frac{\\rho_{nuoc}}{\\rho_{dau}}=\\frac{V_{dau}}{V_{nuoc}}=\\frac{1}{\\frac{4}{5}}=\\frac{5}{4}$ 🡪 chọn C",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 12,
+  "flags": [],
+  "stem": "Áp suất khí quyển thay đổi như thế nào khi độ cao tăng?",
+  "options": [
+   [
+    "A",
+    "Càng tăng.",
+    false
+   ],
+   [
+    "B",
+    "Càng giảm.",
+    true
+   ],
+   [
+    "C",
+    "Không thay đổi.",
+    false
+   ],
+   [
+    "D",
+    "vừa tăng, vừa giảm.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "khi độ cao tăng áp suất khí quyển càng giảm.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 13,
+  "flags": [],
+  "stem": "Khối lượng riêng của dầu ăn vào khoảng 800 kg/ m^3^. Do đó, 2 lít dầu ăn sẽ có trọng lượng khoảng (cho g= 10 m/s^2^)",
+  "options": [
+   [
+    "A",
+    "1,6 N.",
+    false
+   ],
+   [
+    "B",
+    "16 N.",
+    true
+   ],
+   [
+    "C",
+    "160 N.",
+    false
+   ],
+   [
+    "D",
+    "1600 N.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$m=V.\\rho$= 2.10^-3^.800=1,6N.\n\nP=m.g=1,6.10=16N",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 14,
+  "flags": [],
+  "stem": "Khối lượng riêng của sắt là 7800 kg/ m^3^. Vậy 1 kg sắt sẽ có thể tích là (cho g= 10 m/s^2^)",
+  "options": [
+   [
+    "A",
+    "12,8 cm^3^.",
+    false
+   ],
+   [
+    "B",
+    "128 cm^3^.",
+    true
+   ],
+   [
+    "C",
+    "1280 cm^3^.",
+    false
+   ],
+   [
+    "D",
+    "12800 cm^3^.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$V=\\frac{m}{\\rho}=\\frac{1}{7800}\\approx128.10^{-6}(m^{3})=128(cm^{3})$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 15,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Biết thề tích các chất chứa trong bốn bình bằng nhau, S~1~ = S~2~ = S~3~ = 4S~4~; $\\rho_{cat} = 3,6\\rho_{nuocmuoi} = 4\\rho_{nuoc}$. Sự so sánh nào sau đây về áp lực của các chất trong bình tác dụng lên đáy bình là đúng? \n![](scripts/data/nap-ngan-hang-vl10/c7/media/media/image72.png)",
+  "options": [
+   [
+    "A",
+    "F~1~ = F~2~ = F~3~ = F~4~.",
+    false
+   ],
+   [
+    "B",
+    "F~1~ \\> F~4~ \\> F~2~ \\> F~3~.",
+    false
+   ],
+   [
+    "C",
+    "F~1~ \\> F~4~ \\> F~2~ = F~3~.",
+    true
+   ],
+   [
+    "D",
+    "F~4~ \\> F~3~ \\> F~2~ = F~1~.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Do thể tích của chất lỏng ở các bình như nhau, mà $\\rho_{cat} = 3,6\\rho_{nuocmuoi} = 4\\rho_{nuoc}$\n\n🡪 $p_{cat} = 3,6p_{nuocmuoi} = 4p_{nuoc}$\n\n🡪$F_{cat} = 3,6F_{nuocmuoi} = 4F_{nuoc}$\n\n🡪 $F1 = 3,6F_{4} = 4F_{2} = 4F_{3} \\rightarrow F_{1} > F_{4} > F_{2} = F_{3}.$\n\n**Mức độ VẬN DỤNG – VẬN DỤNG CAO**\n\n**Câu 1:** Một bể hình hộp chữ nhật có chiều cao 1,5 m. Người ta đổ đầy nước vào bể. Áp suất của nước tại điểm cách đáy 0,7 m là\nA. 15000 Pa.      B. 7000 Pa. [[C. 8000 Pa.      D. 23000 Pa.\n\n**Hướng dẫn giải**\n\nÁp suất của nước lên điểm cách đáy thùng 0,7m là:\np = d.h = 10000.(1,5 – 0,7) = 8000N/m^2^ = 8000 Pa.\n**Câu 2.** Hai bình có tiết diện bằng nhau. Bình thứ nhất chứa chất lỏng có trọng lượng riêng d~1~, chiều cao h~1~; bình thứ hai chứa chất lỏng có trọng lượng riêng d~2~ = 1,5d~1~, chiều cao h~2~ = 0,6h~1~. Nếu gọi áp suất tác dụng lên đáy bình thứ nhất là p~1~, lên đáy bình thứ 2 là p~2~ là\nA. p~2~ = 3p~1~.     [[B. p~2~ = 0,9p~1~ C. p~2~ = 9p~1~      D. p~2~ = 0,4p~1~\n\n**Hướng dẫn giải**\n\n\\- Áp suất của nước ở đáy bình thứ nhất là:\n   p~1 ~= d~1~.h~1~\n\\- Áp suất của nước ở đáy bình thứ hai là:\n   p~2~ = d~2~.h~2~\n\\- Suy ra:\n   p~2~= 1,5d~1~.0,6.h~1~ = 0,9d~1~.h~1~ = 0,9p~1~",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl10/c7/media/media/image72.png"
+  ]
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 3,
+  "flags": [],
+  "stem": "Đặt một khối sắt có thể tích V~1~ = 1 dm^3^ trên đĩa trái của cân Robecvan. Hỏi phải dùng bao nhiêu lít nước (đựng trong bình chứa có khối lượng không đáng kể) đặt lên đĩa phải để cân nằm thăng bằng? Cho khối lượng riêng của sắt là ρ~1~ = 7800 kg/m^3^, của nước là ρ~2~ = 1000 kg/m^3^.",
+  "options": [
+   [
+    "A",
+    "2 lít.",
+    false
+   ],
+   [
+    "B",
+    "3 lít.",
+    false
+   ],
+   [
+    "C",
+    "3,9 lít.",
+    false
+   ],
+   [
+    "D",
+    "7,8 lít.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Cân thăng bằng khi khối lượng sắt bằng khối lượng nước.\n\nGọi V~2~ là thể tích nước đặt vào\n\nTa có: m=ρ~1~V~1~=ρ~2~V~2~\n\n⇒$V_{2}=\\frac{\\rho_{1}V_{1}}{\\rho_{2}}=\\frac{7800.1}{1000}=7,8dm^{3}=7,8(l)$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 4,
+  "flags": [],
+  "stem": "Một thùng đựng đầy nước cao 80 cm. Áp suất tại điểm A cách đáy 20 cm là bao nhiêu? Biết khối lượng riêng của nước là 1000 kg/m^3^.",
+  "options": [
+   [
+    "A",
+    "8000 N/m^2^.",
+    false
+   ],
+   [
+    "B",
+    "2000 N/m^2^.",
+    false
+   ],
+   [
+    "C",
+    "6000 N/m^2^.",
+    true
+   ],
+   [
+    "D",
+    "60000 N/m^2^.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Áp suất chất lỏng tại A là: p = ρ.g.h = 1000.10.(80 – 20).10^-2^ = 6000 N/m^2^.\n\n**Câu 5.** Một chiếc tàu bị thủng một lỗ nhỏ ở đáy. Lỗ này nằm cách mặt nước 2,2 m. Người ta đặt một miếng vá áp vào lỗ thủng từ phía trong. Hỏi cần một lực tối thiểu bằng bao nhiêu để giữ miếng vá nếu lỗ thủng rộng 150 cm^2^ và trọng lượng riêng của nước là 10 000 N/m^2^?\nA. 308 N.      [[B. 330 N. C. 450 N.      D. 485 N.\n\n**Hướng dẫn giải**\n\n\\- Áp suất do nước gây ra tạo chỗ thủng là:\n  p = d.h = 10 000 . 2,2 = 22000 (N/m^2^)\n\\- Lực tối thiểu để giữ miếng ván là\n   F = p.s = 22000 . 0,015 = 330 (N)",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 6,
+  "flags": [],
+  "stem": "Một vật có dạng hình hộp chữ nhật có kích thước 20 x 10 x 5 cm đặt trên mặt bàn nằm ngang. Biết khối lượng riêng của chất làm vật ρ = 1840 kg/m^3^. Áp suất lớn nhất và nhỏ nhất khi vật đó tác dụng lên mặt bàn là",
+  "options": [
+   [
+    "A",
+    "1840 Pa và 368 Pa.",
+    false
+   ],
+   [
+    "B",
+    "1840 Pa và 920 Pa.",
+    false
+   ],
+   [
+    "C",
+    "3680 Pa và 1840 Pa.",
+    false
+   ],
+   [
+    "D",
+    "3680 Pa và 920 Pa.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Thể tích của vật: V = 20  x 10  x 5 = 1000 cm^3^ = 10^-3^ m^3^\n\nTrọng lượng của vật: P = m.g = ρ.V.g = 1840.10^-3^.10 = 18,4 (N)\n\nMặt bàn nằm ngang nên áp lực đúng bằng trọng lượng của vật: F = P = 18,4 N\n\nDiện tích mặt tiếp xúc lớn nhất giữa vật với mặt bàn:\n\nS~1~ = 20 cm x 10 cm = 200 cm^2^ = 2.10^-2^ m^2^\n\nÁp suất nhỏ nhất tác dụng lên mặt bàn: p~1~=FS~1~=18,4.2.10^−2^=920 Pa\n\nDiện tích mặt tiếp xúc nhỏ nhất giữa vật với mặt bàn:\n\nS~1~ = 10 cm x 5 cm = 50 cm^2^ = 5.10^-3^ m^2^\n\nÁp suất lớn nhất tác dụng lên mặt bàn: p~2~=FS~2~=18,4.5.10^−3^=3680 Pa",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 7,
+  "flags": [],
+  "stem": "Có một vật làm bằng kim loại, khi treo vật đó vào một lực kế và nhúng chìm trong một bình tràn đựng nước thì lực kế chỉ 8,5 N đồng thời lượng nước tràn ra có thể tích 0,5 lít. Cho khối lượng riêng của nước là 1000 kg/m^3^; g = 10 m/s^2^. Khối lượng và chất liệu là vật lần lượt là",
+  "options": [
+   [
+    "A",
+    "13,5 kg – Nhôm.",
+    false
+   ],
+   [
+    "B",
+    "13,5 kg – Đá hoa cương.",
+    false
+   ],
+   [
+    "C",
+    "1,35 kg – Nhôm.",
+    true
+   ],
+   [
+    "D",
+    "1,35 kg – Đá hoa cương.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Thể tích nước tràn ra ngoài đúng bằng thể tích của vật chiếm chỗ:\n\nV = 0,5 lít = 0,5 dm^3^ = 5.10^-4^ m^3^.\n\nKhi thả vật vào trong chất lỏng, vật chịu tác dụng của 2 lực là trọng lực và lực đẩy Archimedes. Hai lực này cùng phương, ngược chiều. Số chỉ của lực kế là độ lớn F của hợp lực giữa $\\overrightarrow{F_{A}}$ và $\\overrightarrow{P}$\n\nLực đẩy Ác-si-mét: F~A~ = ρ~n~.V.g = 1000.5.10^-4^.10 = 5 N.\n\nTrọng lượng của vật: P = F + F~A~ = 8,5 + 5 = 13,5 N.\n\nVậy khối lượng của vật là: m=P/g=1,35kg\n\nKhối lượng riêng của vật ρ=mV=1,35.5.10^−4^=2700 kg/m^3^.\n\nVậy đó là nhôm.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 8,
+  "flags": [],
+  "stem": "Khối lượng của một khối đá hoa cương dạng hình hộp chữ nhật có kích thước 2,0 m x 3,0 m x 1,5 m bao nhiêu?. Biết khối lượng riêng của đá hoa cương là ρ = 2750 kg/m^3^.",
+  "options": [
+   [
+    "A",
+    "2475 kg.",
+    false
+   ],
+   [
+    "B",
+    "24750 kg.",
+    true
+   ],
+   [
+    "C",
+    "275 kg.",
+    false
+   ],
+   [
+    "D",
+    "2750 kg.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Biểu thức tính khối lượng riêng của một chất: ρ=mV\n\nThể tích hình hộp chữ nhật: V = 2.3.1,5 = 9 m^3^\n\nKhối lượng riêng của viên đá hoa cương: ρ = 2750 (kg/m^3^)\n\nKhối lượng của khối đá hoa cương đó là: m = ρ.V = 2750. 9 = 24750 kg.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 9,
+  "flags": [],
+  "stem": "Một bình hình trụ cao 2,5 m đựng đầy nước. Biết khối lượng riêng của nước là 1000 kg/m^3^. Áp suất của nước tác dụng lên đáy bình là",
+  "options": [
+   [
+    "A",
+    "25000 Pa.",
+    true
+   ],
+   [
+    "B",
+    "2500 Pa.",
+    false
+   ],
+   [
+    "C",
+    "400 Pa.",
+    false
+   ],
+   [
+    "D",
+    "250 Pa.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "d = ρ.g =10000 N/m^3^\n\np=dh=10000.2,5=25000 Pa",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 10,
+  "flags": [],
+  "stem": "Một bình hình trụ cao 1,8 m đựng đầy rượu. Biết khối lượng riêng của rượu là 800 kg/m^3^. Áp suất của rượu tác dụng lên điểm M cách đáy bình 20 cm là",
+  "options": [
+   [
+    "A",
+    "1440 Pa.",
+    false
+   ],
+   [
+    "B",
+    "1280 Pa.",
+    false
+   ],
+   [
+    "C",
+    "12800 Pa.",
+    true
+   ],
+   [
+    "D",
+    "1600 Pa.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "d = ρ.g =8000 N/m^3^.\n\np=dh=8000(1,8-0,2)=12800 Pa.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Một thùng đựng đầy nước cao 1,4 m. Biết khối lượng riêng của nước là 1000 kg/m^3^; lấy g = 10m/s^2^.",
+  "statements": [],
+  "solution": "**a.** Trọng lượng riêng của nước là 10000 N/m^3^.\n\n$d=\\rho g=1000.10=10000(N/m^{3})$\n\n**b.** Áp suất do nước gây ra lên đáy thùng là 14000 N/m^2^\n\n$p=d.h=10000.1,4=14000(N/m^{2})$\n\n**c.** Áp suất do nước gây ra tại điểm M cách đáy thùng 1 khoảng 25 cm là 12000 N/m^2^.\n\n$p=d.h=10000.(1,4-0,25)=11500(N/m^{2})$\n\n**d.** Áp suất do nước gây ra tại điểm cách mặt thoáng 60 cm là 8000 Pa.\n\n$p=d.h=10000.0,6=6000(Pa)$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Một người nặng 50 kg đứng trên mặt đất nằm ngang. Biết diện tích tiếp xúc của bàn chân với đất là 0,016 $m^{2}$. Lấy g = 10m/s^2^.",
+  "statements": [],
+  "solution": "**a.** Trọng lượng của người là 500 N.\n\nP=mg=50.10=500 N\n\n**b.** Diện tích tiếp xúc của hai bàn chân với đất là 0,03 m^3^.\n\n$S=2.0,016=0,032(m^{2})$\n\n**c.** Áp suất của người đó lên mặt đất khi đứng 1 chân là 31250 Pa\n\n$p=\\frac{P}{S}=\\frac{500}{0,016}=31250(Pa)$\n\n**d.** Khi đứng cả hai chân thì áp suất người đó tác dụng lên mặt đất là 15625 Pa.\n\n$p'=\\frac{P}{2.S}=\\frac{500}{2.0,016}=156250(Pa)$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Thả một vật không thấm nước vào nước thì $\\frac{3}{5}$ thể tích của nó bị chìm. Biết vật đó có dạng hình lập phương chiều cao mỗi cạnh là 20 cm; khối lượng riêng của nước 1000 kg/m^3^ và của dầu 800 $ kg/m^{3}$",
+  "statements": [],
+  "solution": "**a**. Thể tích của khối lập phương là 8.10^-3^ m^3^.\n\nV=(0,2)^3^=8.10^-3^(m^3^)\n\n**b.** Khối lượng riêng của nước lớn hơn khối lượng riêng của dầu\n\n$\\rho_{n}>\\rho_{d}$\n\n**c.**\n\nVật lơ lửng trên mặt nước ⇔F~A~=P\n\n⇔Vc.dn=dv.V ⇔ 3/5V.dn=dv.V ⇔3/5.10000=dv\n\n⇔*dv*​=6000(*N*/*m*^3^)\n\nKhi vật thả vào trong dầu:\n\nVật lơ lửng trên mặt dầu ⇔F~A~=P\n\n⇔d~d~.Vc=dv.V\n\n⇔800.0,2.0,2.h~c~=6000.(0,2)^3^\n\n⇔h~c~=0,15(m)\n\nVc=a.a.h~c~=0,2.0,2.0,15=0,006(m^3^)\n\n$\\Rightarrow\\frac{V_{c}}{V}=\\frac{0,006}{8.10^{-3}}=\\frac{3}{4}\\rightarrow Vc=\\frac{3}{4}V$\n\n**d.** Trọng lượng của vật là 48 N\n\nP=d~v~.V=6000.8.10^-3^=48 N",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Một bình hình trụ cao 1,5 m chứa đầy nước. Trọng lượng riêng nước là 10000 N/m^3^.",
+  "statements": [],
+  "solution": "**a**. Áp suất nước tác dụng lên đáy bình là 15000 Pa.\n\n$p=dh=10000.1,5=15000Pa$\n\n**b.** Áp suất nước tác dụng lên đáy bình cách đáy 0,2 m là 13000 Pa.\n\n$p_{1}=dh_{1}=10000.(1,5-0,2)=13000Pa$\n\n**c.** Thay nước bằng dầu thì áp suất tác dụng lên đáy bình là 12000 Pa, trọng lượng riêng của dầu tính được là 8000 N/m.\n\n$p_{2}=d_{d}h=8000.1,5=12000Pa$\n\n**d.** Nếu thay nước bằng dầu có trọng lượng riêng là 8000 N/m, để có áp suất tác dụng lên đáy bình là 20000 Pa thì độ cao cột chất lỏng trong bình cần có là 2,5 m.\n\n$p''=d_{d}h'\\Leftrightarrow20000=8000.h'\\Rightarrow h'=2,5(m)$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Mỗi hòn gạch hai lỗ có khối lượng 1,6 kg. Hòn gạch có thể tích 1.200$cm^{3}$. Mỗi lỗ có thể tích 192 $ cm^{3}$, lấy g = 10 m/s^2^.",
+  "statements": [],
+  "solution": "**a.** Thể tích của hòn gạch là 1200 cm^3^=1200.10^-6^m^3^=1,2 cm^3^.\n\n**b.** Thể tích thực của hòn gạch là 81,6 dm^3^.\n\nV=12000 - (192x2) = 816 cm^3^= 8,16.10^-4^ m^3^.\n\n**c.** Khối lượng riêng của gạch là 1960,8 kg/m^3^.\n\n$\\rho=\\frac{m}{V}=\\frac{1,6}{8,16.10^{-4}}\\approx1960,8(kg/m^{3})$\n\n**d.** Trọng lượng riêng của gạch là 19608 N/m^3^.\n\n$d=\\rho.g=1960,8.10=19608N/m^{3}$\n\n**Câu 6.** Khi treo một vật rắn hình trụ ở ngoài không khí vào lực kế thì lực kế chỉ 150 N. Khi thả vật chìm hoàn toàn trong nước thì lực kế chỉ 90 N. Lấy g = 10 m/s^2^; khối lượng riêng của nước ρ=1000 kg/m^3^.\n\n|       | **Phát biểu**                                                                           | **Đúng** | **Sai** |\n|:------|:----------------------------------------------------------------------------------------|:---------|:-------:|\n| **a** | Trọng lượng của vật là 15 N.                                                            |          |  **S**  |\n| **b** | Khi vật chìm hoàn toàn trong nước thì vật chịu tác dụng của lực đẩy của nước bằng 90 N. |          |  **S**  |\n| **c** | Thể tích của vật là 6 dm^3^.                                                            | **Đ**    |         |\n| **d** | Thay nước bằng chất lỏng có khối lượng riêng là 750 kg/m^3^ thì lực kế chỉ 105 N.       | **Đ**    |         |\n\n**Hướng dẫn giải**\n\n**a.** Trọng lượng của vật là 150 N.\n\nF=P=150N\n\n**b.** Khi vật chìm hoàn toàn trong nước thì vật chịu tác dụng của hợp lực bằng 90 N.\n\nc. Thể tích của vật là 6 dm^3^.\n\n$F=P-\\rho gV\\Rightarrow V=\\frac{P-F}{g\\rho}=\\frac{150-90}{10.1000}=6.10^{-3}(m^{3})$\n\nd. Thay nước bằng chất lỏng có khối lượng riêng là 750 kg/m^3^ thì lực kế chỉ 105 N.\n\n$F'=P-\\rho'gV=150-750.10.6.10^{-3}=105(N)$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 1,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "thể tích hình hộp chữ nhật bằng bao nhiêu ? (tính theo m^3^)\n\n| **Đáp án:** | **9** |     |     |     |\n|-------------|-------|-----|-----|-----|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 2,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Khối lượng của khối đá hoa cương bằng bao nhiêu ? (tính theo 10^4^ gam)\n\n| **Đáp án:** | **2** | **4** | **7** | **5** |\n|-------------|-------|-------|-------|-------|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 1,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Thể tích của hinh hộp chữ nhật là 9 m^3^.\n\nV=2.3.1,5=9 m^3^.",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 2,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Khối lượng của khối đá hoa cương là 2475.10^4^(g)\n\n$m=V.\\rho=9.2750=24750(kg)=2475.10^{4}(g)$\n\n**Dữ liệu Câu 3 - 4:** Một chiếc can nhựa có khối lượng 1,5 kg đựng 20 lít xăng. Biết khối lượng riêng của xăng là 700 kg/m^3^; g = 10 m/s^2^.",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 3,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Trọng lượng riêng của xăng là bao nhiêu? (tính theo 10^3^ N/m^3^)\n\n| **Đáp án:** | **7** |     |     |     |\n|-------------|-------|-----|-----|-----|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 4,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Xác định trọng lượng của can nhựa và xăng bằng bao nhiêu ? (tính theo N)\n\n| **Đáp án:** | **1** | **5** | **5** |     |\n|-------------|-------|-------|-------|-----|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 3,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "$d=\\rho g=700.10=7000N/m^{3}.$",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 4,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "$P=(m_{1}+m_{2})=(1,5+20.10^{-3}.700)10=155(N)$\n\n**Dữ liệu Câu 5 - 6** Một chiếc tàu bị thủng lỗ ở độ sâu 2,8 m. Người ta đặt một miếng vá áp vào lỗ thủng từ phía trong. Biết lỗ thủng rộng 150 $cm^{2}$ và trọng lượng riêng của nước là 10000 $N/m^{3}$",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 5,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Áp suất của nước lên miếng vá là bao nhiêu? (tính theo 10^3^ Pa)\n\n| **Đáp án:** | **2** | **8** |     |     |\n|-------------|-------|-------|-----|-----|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 6,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Lực tối thiểu để giữ miếng vá bằng bao nhiêu (tính theo N) ?\n\n| **Đáp án:** | **4** | **2** | **0** |     |\n|-------------|-------|-------|-------|-----|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 5,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Áp suất của nước lên miếng vá là 28000 Pa\n\n$p=dh=10000.2,8=28000(Pa)$",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 6,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Lực tối thiểu để giữ miếng vá là :\n\n$F=p.S=28000.150.10^{-4}=420N$\n\n**III – BÀI TẬP LUYỆN TẬP**\n\n**MÔN: VẬT LÍ 10**\n\n*Thời gian làm bài: 50 phút, không kể thời gian phát đề.*\n\n**Họ, tên thí sinh: …………………………………………………..…….**\n\n**Lớp: ……………………………………………………………………..**",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 1,
+  "flags": [],
+  "stem": "Áp lực là lực ép có phương",
+  "options": [
+   [
+    "A",
+    "trùng với mặt bị ép.",
+    false
+   ],
+   [
+    "B",
+    "tạo với mặt bị ép một góc bất kì.",
+    false
+   ],
+   [
+    "C",
+    "song song với nặt bị ép.",
+    false
+   ],
+   [
+    "D",
+    "vuông góc với mặt bị ép.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Áp lực là lực ép có phương vuông góc với mặt bị ép.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 2,
+  "flags": [],
+  "stem": "Trong các kết luận sau, kết luận nào không đúng đối với bình thông nhau?",
+  "options": [
+   [
+    "A",
+    "Bình thông nhau là bình có 2 hoặc nhiều nhánh thông nhau.",
+    false
+   ],
+   [
+    "B",
+    "Tiết diện của các nhánh bình thông nhau phải bằng nhau.",
+    true
+   ],
+   [
+    "C",
+    "Trong bình thông nhau có thể chứa 1 hoặc nhiều chất lỏng khác nhau.",
+    false
+   ],
+   [
+    "D",
+    "Trong bình thông nhau chứa cùng 1 chất lỏng đứng yên, các mực chất lỏng ở các nhánh luôn ở cùng 1 độ cao.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Tiết diện các bình thông nhau có thể bằng hoặc khác nhau.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 3,
+  "flags": [],
+  "stem": "Trong một bình chứa chất lỏng (hình vẽ), áp suất tại điểm nào lớn nhất? Áp suất tại điểm nào nhỏ nhất?",
+  "options": [
+   [
+    "A",
+    "Áp suất tại H lớn nhất, áp suất tại R nhỏ nhất.",
+    false
+   ],
+   [
+    "B",
+    "Áp suất tại K lớn nhất, áp suất tại H nhỏ nhất.",
+    false
+   ],
+   [
+    "C",
+    "Áp suất tại R lớn nhất, áp suất tại H nhỏ nhất.",
+    true
+   ],
+   [
+    "D",
+    "Áp suất tại R lớn nhất, áp suất tại I nhỏ nhất.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "R xa mặt thoáng nhất nên h~R~ lớn nhất 🡪 áp suất tại R lớn nhất\n\nH gần mặt thoáng nhất nên h~H~ nhỏ nhất 🡪 áp suất tại H nhỏ nhất.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 4,
+  "flags": [],
+  "stem": "Chỉ ra kết luận sai trong các kết luận sau",
+  "options": [
+   [
+    "A",
+    "Áp lực là lực ép có phương vuông góc với mặt bị ép.",
+    false
+   ],
+   [
+    "B",
+    "Đơn vị của áp suất là N/m^2^.",
+    false
+   ],
+   [
+    "C",
+    "Áp suất là độ lớn của áp lực trên một diện tích bị ép.",
+    true
+   ],
+   [
+    "D",
+    "Đơn vị của áp lực là đơn vị của lực.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Áp suất là đại lượng đặc trưng cho tác dụng của áp lực lên diện tích bị ép",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 5,
+  "flags": [],
+  "stem": "Chọn câu sai.",
+  "options": [
+   [
+    "A",
+    "Khi xuống càng sâu trong nước thì ta chịu một áp suất càng lớn.",
+    false
+   ],
+   [
+    "B",
+    "Áp suất của chất lỏng không phụ thuộc khối lượng riêng của chất lỏng.",
+    true
+   ],
+   [
+    "C",
+    "Độ chênh lệch áp suất tại hai vị trí khác nhau trong chất lỏng không phụ thuộc áp suất khí quyển ở mặt thoáng.",
+    false
+   ],
+   [
+    "D",
+    "Độ tăng áp suất lên một bình kín được truyền đi nguyên vẹn khắp nơi.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$p=p_{a}+\\rho gh$ 🡪 áp suất của chất lỏng phụ thuộc vào khối lượng riêng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 6,
+  "flags": [],
+  "stem": "Một cục nước đá đang nổi trong bình nước. Mực nước trong bình thay đổi thế nào nếu cục nước đá tan hết",
+  "options": [
+   [
+    "A",
+    "Tăng.",
+    false
+   ],
+   [
+    "B",
+    "Giảm.",
+    false
+   ],
+   [
+    "C",
+    "Không thay đổi.",
+    true
+   ],
+   [
+    "D",
+    "Không xác định được.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Mực nước trong bình không đổi khi cục nước đá tan hết.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 7,
+  "flags": [],
+  "stem": "Một bình chất lỏng như hình. Áp suất tại điểm nào là nhỏ nhất ?",
+  "options": [
+   [
+    "A",
+    "Tại A.",
+    false
+   ],
+   [
+    "B",
+    "Tại B.",
+    false
+   ],
+   [
+    "C",
+    "Tại D.",
+    true
+   ],
+   [
+    "D",
+    "Tại C.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "D gần mặt thoáng nhất nên h~D~ nhỏ nhất 🡪 áp suất tại D nhỏ nhất.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 8,
+  "flags": [],
+  "stem": "Ở thể lỏng dưới áp suất thường, khối lượng riêng của nước có giá trị lớn nhất ở nhiệt độ",
+  "options": [
+   [
+    "A",
+    "0^0^C.",
+    false
+   ],
+   [
+    "B",
+    "100^0^C.",
+    false
+   ],
+   [
+    "C",
+    "4^0^C.",
+    true
+   ],
+   [
+    "D",
+    "20^0^C.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Khi tăng nhiệt độ từ 0^0^C đến 4^0^C thì nước co lại chứ không nở ra (V giảm). Chỉ khi nhiệt độ tăng từ 4^0^C trở lên nước mới nở ra (V tăng). Vì vậy, ở 4^0^C nước có khối lượng riêng lớn nhất và ở thể lỏng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 9,
+  "flags": [],
+  "stem": "Độ lớn của áp lực của một vật rắn phụ thuộc vào",
+  "options": [
+   [
+    "A",
+    "khối lượng của vật và thể tích của vật.",
+    false
+   ],
+   [
+    "B",
+    "diện tích bề mặt tiếp xúc, nhiệt độ của vật.",
+    false
+   ],
+   [
+    "C",
+    "thể tích của vật, diện tích bề mặt tiếp xúc.",
+    false
+   ],
+   [
+    "D",
+    "khối lượng của vật và diện tích bề mặt tiếp xúc.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Độ lớn của áp lực của một vật rắn phụ thuộc vào khối lượng của vật và diện tích bề mặt tiếp xúc.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 10,
+  "flags": [],
+  "stem": "Gọi d và $\\rho$ lần lượt là trọng lượng riêng và khối lượng riêng. Mối liên hệ giữa d và ρ là:",
+  "options": [
+   [
+    "A",
+    "$\\rho$ = g.d.",
+    false
+   ],
+   [
+    "B",
+    "d = g.ρ.",
+    true
+   ],
+   [
+    "C",
+    "$\\rho$ =$\\frac{g}{d}$",
+    false
+   ],
+   [
+    "D",
+    "$\\rho$ + d = g.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "d = g.ρ",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 11,
+  "flags": [],
+  "stem": "Biết rằng trọng lượng của vật càng giảm khi đưa vật lên càng cao so với mặt đất. Khi đưa một vật lên cao dần, kết luận nào sau đây là đúng? Coi trong suốt quá trình đó vật không bị biến dạng.",
+  "options": [
+   [
+    "A",
+    "Khối lượng riêng của vật càng tăng.",
+    false
+   ],
+   [
+    "B",
+    "Trọng lượng riêng của vật giảm dần.",
+    true
+   ],
+   [
+    "C",
+    "Trọng lượng riêng của vật càng tăng.",
+    false
+   ],
+   [
+    "D",
+    "Khối lượng riêng của vật càng giảm.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "d phụ thuộc vào P và ρ không phụ thuộc vào P\n\n🡪Càng lên cao thì P càng giảm nên trọng lượng riêng d cũng giảm theo",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 12,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Cho hình vẽ bên, trường hợp nào áp suất tác dụng lên sàn lớn nhất? Các trường hợp được tính từ trái qua phải. \n![](scripts/data/nap-ngan-hang-vl10/c7/media/media/image113.png){width=\"3.6979166666666665in\" height=\"1.65625in\"}",
+  "options": [
+   [
+    "A",
+    "Trường hợp 1.",
+    false
+   ],
+   [
+    "B",
+    "Trường hợp 2.",
+    false
+   ],
+   [
+    "C",
+    "Trường hợp 3.",
+    false
+   ],
+   [
+    "D",
+    "Trường hợp 4.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "$p=\\frac{F}{S}$\n\n🡪 Trường hợp 4, áp suất tác dụng lên sàn lớn nhất vì diện tích mặt bị ép nhỏ nhất và áp lực lớn nhất.",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl10/c7/media/media/image113.png"
+  ]
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 13,
+  "flags": [],
+  "stem": "Cho hai khối kim loại chì và sắt. Sắt có khối lượng gấp đôi chì. Biết khối lượng riêng của sắt và chì lần lượt là $\\rho_{1}$= 7800 kg/m^3^ ; $\\rho_{2}$ = 11300 kg/m^3^. Tỉ lệ thể tích giữa sắt và chì gần nhất với giá trị nào sau đây?",
+  "options": [
+   [
+    "A",
+    "0,69.",
+    false
+   ],
+   [
+    "B",
+    "2,9.",
+    true
+   ],
+   [
+    "C",
+    "1,38.",
+    false
+   ],
+   [
+    "D",
+    "3,2.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$\\left\\{ \\begin{array}{r}\n\\mathit{m}_{1}\\mathbf{=}\\mathit{V}_{1}\\mathit{.}\\rho_{1} \\\\\n \\\\\n\\mathit{m}_{2}\\mathbf{=}\\mathit{V}_{2}\\mathit{.}\\rho_{2}\n\\end{array} \\right.\\ \\mathbf{\\Rightarrow}\\frac{\\mathit{V}_{1}}{\\mathit{V}_{2}}\\mathbf{=}\\frac{\\mathit{m}_{1}\\rho_{2}}{\\mathit{m}_{2}\\rho_{1}}\\mathbf{=}\\frac{2\\rho_{2}}{\\rho_{1}}\\mathbf{\\approx}2\\mathit{,}9$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 14,
+  "flags": [],
+  "stem": "Nếu sữa trong một hộp sữa có khối lượng tịnh 387 g và thể tích 0,314 lít thì trọng lượng riêng của sữa gần nhất với giá trị nào sau đây?",
+  "options": [
+   [
+    "A",
+    "1,264 $N/m^{3}$.",
+    false
+   ],
+   [
+    "B",
+    "0,791 $N/m^{3}$.",
+    false
+   ],
+   [
+    "C",
+    "12643 $N/m^{3}$.",
+    true
+   ],
+   [
+    "D",
+    "1264 $N/m^{3}$.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "$d=\\frac{P}{V}=\\frac{m.g}{V}=\\frac{0,397.10}{0,314.10^{-3}}=12643N/m^{3}.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 15,
+  "flags": [],
+  "stem": "Một chiếc tàu bị thủng một lỗ nhỏ ở đáy. Lỗ này nằm cách mặt nước 2,2m. Người ta đặt một miếng vá áp vào lỗ thủng từ phía trong. Hỏi cần một lực tối thiểu bằng bao nhiêu để giữ miếng vá nếu lỗ thủng rộng 150 $cm^{2}$ và trọng lượng riêng của nước là 10 000 $ N/m^{3}$ ?",
+  "options": [
+   [
+    "A",
+    "308 N.",
+    false
+   ],
+   [
+    "B",
+    "330 N.",
+    true
+   ],
+   [
+    "C",
+    "450 N.",
+    false
+   ],
+   [
+    "D",
+    "485 N.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "$\\begin{array}{r}\n\\mathit{p}\\mathbf{=}\\mathit{d.h}\\mathbf{=}10000\\mathit{.}2\\mathit{,}2\\mathbf{=}22000\\mathit{N/}\\mathit{m}^{2}\\mathit{.} \\\\\n\\mathit{F}\\mathbf{=}\\mathit{p.s}\\mathbf{=}22000\\mathit{.}0\\mathit{,}015\\mathbf{=}330\\mathit{N}\n\\end{array}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 16,
+  "flags": [],
+  "stem": "Đơn vị của khối lượng riêng là",
+  "options": [
+   [
+    "A",
+    "N/m^3^.",
+    false
+   ],
+   [
+    "B",
+    "kg/m^3^.",
+    true
+   ],
+   [
+    "C",
+    "g/m^2^.",
+    false
+   ],
+   [
+    "D",
+    "N.m^3^.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Đơn vị của khối lượng riêng là kg/m^3^.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 17,
+  "flags": [],
+  "stem": "Một khối gỗ hình hộp chữ nhật tiết diện S = 40 $cm^{2}$ cao h = 10 cm có khối lượng m = 160 g. Bây giờ khối gỗ được khoét một lỗ hình trụ ở giữa có tiết diện$\\Delta$ S = 4 $cm^{2}$, sâu$\\Delta$ h và lấp đầy chì có khối lượng riêng $\\rho_{2}=11300kg/m^{3}$. Khi thả vào nước người ta thấy mực chất lỏng ngang bằng với mặt trên của khối gỗ. Cho khối lượng riêng của nước là $\\rho_{0}=1000kg/m^{3}$. Độ sâu $\\Delta$ h của khối gỗ là",
+  "options": [
+   [
+    "A",
+    "5,5 cm.",
+    true
+   ],
+   [
+    "B",
+    "6 cm.",
+    false
+   ],
+   [
+    "C",
+    "10 cm.",
+    false
+   ],
+   [
+    "D",
+    "2,5 cm.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "$\\begin{array}{r}\n\\mathit{m}_{1}\\mathbf{=}\\rho_{1}\\mathit{(S.h}\\mathbf{+}\\Delta\\mathit{s.}\\Delta\\mathit{h)}\\mathbf{=}\\mathit{m(}1\\mathbf{-}\\frac{\\Delta\\mathit{s.}\\Delta\\mathit{h}}{\\mathit{s.h}}\\mathit{)} \\\\\n\\mathit{m}_{2}\\mathbf{=}\\rho_{2}\\mathit{.}\\Delta\\mathit{s.}\\Delta\\mathit{h} \\\\\n\\mathit{M}\\mathbf{=}\\mathit{m}_{1}\\mathbf{+}\\mathit{m}_{2}\n\\end{array}$\n\nMặt khác:\n\n$\\begin{array}{r}\n\\mathit{F}\\mathbf{=}\\mathit{P}\\mathbf{\\Leftrightarrow}\\mathit{g.}\\rho_{0}\\mathit{.S.h}\\mathbf{=}\\mathit{g.M} \\\\\n\\mathbf{\\Leftrightarrow}\\Delta\\mathit{h}\\mathbf{=}5\\mathit{,}5\\mathit{cm}\n\\end{array}$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "mc",
+  "num": 18,
+  "flags": [],
+  "stem": "Một thùng hình trụ cao 1,5 m đựng đầy nước. Biết trọng lượng riêng của nước là 10000 $N/m^{3}$. Lấy g = 10 m/s^2^. Áp suất tại các điểm ở đáy thùng là",
+  "options": [
+   [
+    "A",
+    "15000 Pa.",
+    true
+   ],
+   [
+    "B",
+    "1500 Pa.",
+    false
+   ],
+   [
+    "C",
+    "1500000 Pa.",
+    false
+   ],
+   [
+    "D",
+    "150000 Pa.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "$p=d.h=10000.1,5=15000Pa$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Một khối hình lập phương có cạnh 0,30 m, chìm 3/4 trong nước. Biết khối lượng riêng của nước là 1 000 kg/$m^{3}$; g = 10 m/s^2^.",
+  "statements": [],
+  "solution": "**a.** Thể tích của khối lập phương: V=(0,3)^3^=0,027(m^3^)\n\nDo khối lập phương chìm 3/4 trong nước nên h = 0,3.3/4= 0,225 m\n\nÁp suất của nước tác dụng lên mặt dưới của khối lập phương là:\n\np = ρ.g.h = 1 000.10.0,225 = 2250 (Pa)\n\n**b.** Lực gây ra bởi áp suất này lực đẩy Ác-si-mét có phương thẳng đứng,chiều: từ dưới lên trên, độ lớn:\n\nF~A ~= ρ.g.V\n\nThể tích khối lập phương bị nước chiếm chỗ là:\n\nV = chiều dài.chiều rộng.chiều cao = 0,3.0,3.0,225= 0,02025 ($m^{3}$^ ^)\n\n**c.** Trọng lượng riêng của nước: d=10.1000=10000(N/m^3^)\n\n**d.** $F_{A}=\\rho.g.V$= 1000.10.0,02025 = 202,5 (N)",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Một hình trụ cao 1,2 m chứa đầy nước. Cho trọng lượng riêng của nước là 10000 N/m^3^.",
+  "statements": [],
+  "solution": "**a.** Áp suất của nước tác dụng lên đáy bình là 12000 Pa.\n\n$p=dh=10000.1,2=12000Pa$\n\nb. Áp suất của nước tác dụng lên cách đáy 0,3 m là 9000 Pa.\n\n$p_{1}=dh_{1}=10000.(1,2-0,3)=9000Pa$\n\nc. Sự chênh lệch áp suất giữa hai điểm cách đáy 0,3 m và cách đáy bình là 3000 Pa.\n\n$\\Delta p=12000-9000=3000Pa$\n\n**d.** Thay nước bằng chất lỏng khác có trọng lượng riêng là 8000 N/m^3^, để có áp suất tác dụng lên đáy bình là 12000 Pa thì độ cao cột chất lỏng trong bình là 1,5 m.\n\n$p_{2}=d'h_{2}\\Leftrightarrow12000=8000.h_{2}\\Rightarrow h_{2}=1,5m$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Một thùng hình trụ cao 1,7 m chứa nước biển có trọng lượng riêng là 10300 N/m^3^.",
+  "statements": [],
+  "solution": "**a.** Áp suất do nước biển gây ra tại điểm A ở đáy thùng là 17510 Pa.\n\n$p=d.h=10300.1,7=17510Pa.$\n\n**b.** Áp suất do nước biển gây ra tại điểm B cách đáy thùng 45 cm là 12875 Pa.\n\n$p_{B}=d.h_{C}=10300.(1,7-0,45)=12875Pa.$\n\n**c.** Áp suất do nước biển gây ra tại điểm C cách đáy thùng một khoảng 70 cm là 10000 Pa.\n\n$p_{C}=d.h_{C}=10300.(1,7-0,7)=10300Pa.$\n\n**d.** Áp suất do nước biển gây ra tại điểm C cách đáy thùng một khoảng 70 cm là 10000 Pa.\n\n$\\Delta p=p_{B}-p_{C}=12875-10300=2575Pa.$",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "bang-dung-sai-khong-du-4-y"
+  ],
+  "stem": "Một vật rắn khối lượng 500 g khi thả vào bình đầy nước thì có 50 ml nước tràn ra ngoài. Biết khối lượng riêng của nước là 1000 kg/m^3^; g = 10 m/s^2^.",
+  "statements": [],
+  "solution": "**a.** Vật rắn có trọng lượng là 5 N.\n\n$P=m.g=0,5.10=5N.$\n\n**b.** Trọng lượng riêng cùa vật rắn là 10000 N/m^3^.\n\n$d=\\frac{P}{V}=\\frac{m.}{V}g=\\rho g=1000.10=10000(N/m^{3}).$\n\n**c**. Lực đẩy của nước có độ lớn 5 N.\n\n$F=dV=10000.50.10^{-6}=0,5N$\\\n**d.** Vật rắn chìm trong nước vì trọng lực của vật lớn hơn lực đẩy của nước ( P\\>F)",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 1,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Áp suất của nước lên đáy cốc bằng bao nhiêu ? (tính theo Pa)\n\n| **Đáp án:** | **1** | **2** | **0** | **0** |\n|-------------|-------|-------|-------|-------|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 2,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Áp suất của nước lên điểm A cách đáy cốc 4 cm là bao nhiêu Pa ?\n\n| **Đáp án:** | **8** | **0** | **0** |     |\n|-------------|-------|-------|-------|-----|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 1,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "$p=d.h=10000.0,12=1200Pa$",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 2,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "$p=d.h=10000.(0,12-0,04)=800Pa$\n\n**Dữ liệu cho Câu 3 - 4: ** Một tàu ngầm đang di chuyển ở dưới biển, áp kế đặt ngoài vỏ tàu chỉ áp suất 2020000 N/m^2^, một lúc sau áp kế chỉ 860 000 N/m^2^. Biết trọng lượng riêng của nước biển 10300 N/m^3^.",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 3,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Tìm độ cao của tàu ngầm trước khi nổi lên.(Tính theo m và làm tròn đến hàng đơn vị)\n\n| **Đáp án:** | **1** | **9** | **6** |     |\n|-------------|-------|-------|-------|-----|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 4,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Tìm độ sâu của tàu ngầm sau khi nổi lên. (Tính theo m và làm tròn đến một chữ số thập phân)\n\n| **Đáp án:** | **8** | **3** | **,** | **5** |\n|-------------|-------|-------|-------|-------|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 3,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "$h_{1}=\\frac{p_{1}}{d}=\\frac{2020000}{10300}\\approx196(m)$",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 4,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "$h_{2}=\\frac{p_{2}}{d}=\\frac{860000}{10300}\\approx83,5(m)$\n\n**Dữ liệu cho Câu 5- 6.** Có hai bình A và B; bình A chứa nước, bình B chứa xăng. Biết trọng lượng riêng của nước là 10 000 N/m^3^ và của xăng là 7 000 N/m^3^, cột nước trong bình A có độ cao 70 cm.\n**Câu 5.** Áp suất của cột nước gây lên đáy bình A ( tính theo 10^5^Pa) bằng bao nhiêu ?\n\n| **Đáp án:** | **1** |     |     |     |\n|-------------|-------|-----|-----|-----|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 6,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Để áp suất ở đáy bình B bằng áp suất của cột nước gây lên đáy bình A thì cột xăng trong bình B phải có độ cao bao nhiêu? (tính theo cm)\n\n| **Đáp án:** | **1** | **0** | **0** |     |\n|-------------|-------|-------|-------|-----|\n\n: n130 fb + zalo Thu Minhn130 fb + zalo Thu Minh",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 5,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "$p=d.h=10000.0,7=7000(Pa)$",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "sa",
+  "num": 6,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "$p_{A}=p_{B}=d_{B}.h_{B}\\Leftrightarrow7000=7000.h_{B}\\Rightarrow h_{B}=1(m)=100cm$",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c7-2",
+  "part": "tl",
+  "num": 3,
+  "flags": [],
+  "stem": "Tại sao xe tặng năng hơn ô tô nhiều lần lại có thể chạy trên đất bùn còn ô tô thì bị lún bánh và sa lầy trên chính quãng đường này.",
+  "solution": "Diện tích tiếp xúc giữa bánh xích với mặt đất rộng hơn rất nhiều so với diện tích tiếp đất của bánh ô tô 🡪 áp lực của bánh xích lên mặt đất không lớn, thấp hơn áp lực lên mặt đất của xe ô tô thông thường 🡪 xe tăng chạy bình thường trên đất bùn còn ô tô thì bị lún bánh.\n**Bài 4.** Một chiếc ghế trọng lượng 80 N có bốn chân, diện tích mỗi chân 10 cm^2^. Tính áp suất do ghế tác dụng lên sàn.\n\n**Hướng dẫn giải**\n\nDiện tích bị ép của mặt sàn\nS = 4. 10.10^-4^=4.10^-3^(m^2^)\nÁp suất do ghế tác dụng lên sàn:\n$p=\\frac{F}{S}=\\frac{80}{4.10^{-3}}2.10^{4}(Pa)$",
+  "hasImg": false,
+  "imgs": []
+ }
+]

@@ -1,386 +1,520 @@
 {
-  "lesson_id": 52,
-  "lesson_title": "Bài 7. Đồ thị độ dịch chuyển - thời gian",
-  "item_id": 96,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 52,
+ "lesson_title": "Bài 7. Đồ thị độ dịch chuyển - thời gian",
+ "item_id": 96,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 9
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Chuyển động thẳng đều là chuyển động có",
-      "options": [
-        "quỹ đạo thẳng, đi một chiều, tốc độ không đổi",
-        "quỹ đạo thẳng, được phép quay đầu, miễn là tốc độ không đổi",
-        "quỹ đạo cong nhưng tốc độ không đổi",
-        "quỹ đạo thẳng và mỗi giây tốc độ tăng thêm cùng một lượng"
-      ],
-      "answer": 0,
-      "explanation": "Chuyển động thẳng đều: quỹ đạo thẳng, đi một chiều và vận tốc (tốc độ) không đổi. Quay đầu làm vận tốc đổi dấu, đường cong làm hướng đổi, còn tốc độ tăng đều là chuyển động khác."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Tính vận tốc từ độ dốc đồ thị",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đồ thị độ dịch chuyển – thời gian của chuyển động thẳng đều là",
-      "options": [
-        "một đường cong parabol",
-        "một đường gấp khúc có nhiều đoạn gãy",
-        "một đường thẳng, có hệ số góc bằng vận tốc",
-        "một đường thẳng đứng, song song với trục thời gian"
-      ],
-      "answer": 2,
-      "explanation": "Vì $d = vt$ có dạng $y = ax$ nên đồ thị là đường thẳng và hệ số góc chính là vận tốc $v$. Đường cong hay gấp khúc ứng với vận tốc thay đổi."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đồ thị $d$–$t$ của một vật là đường thẳng đi xuống. Điều đó cho biết vật",
-      "options": [
-        "đang đi xuống dốc",
-        "chuyển động ngược chiều dương với vận tốc $v \\lt 0$",
-        "đang đứng yên",
-        "đang chuyển động chậm dần"
-      ],
-      "answer": 1,
-      "explanation": "Đồ thị đi xuống nghĩa là $d$ giảm theo thời gian, tức độ dốc âm và vật đi ngược chiều dương. Đồ thị không phải con đường nên \"xuống dốc\" là sai; đứng yên ứng với đường nằm ngang."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Đồ thị $d$–$t$ của hai xe cắt nhau tại một điểm. Điều này cho biết",
-      "options": [
-        "hai xe có cùng vận tốc",
-        "hai xe chuyển động cùng chiều",
-        "hai xe đã đi được cùng quãng đường",
-        "hai xe ở cùng vị trí tại thời điểm đó"
-      ],
-      "answer": 3,
-      "explanation": "Giao điểm có cùng $t$ và cùng $d$ nên hai xe gặp nhau. Cùng vận tốc ứng với hai đường song song; cùng quãng đường là điều khác vì xe có thể quay đầu."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Vật có quay đầu. Muốn tính quãng đường $s$ từ đồ thị $d$–$t$, ta",
-      "options": [
-        "đọc giá trị $d$ tại điểm cuối của đồ thị",
-        "lấy giá trị $d$ lớn nhất trên đồ thị",
-        "cộng độ lớn độ dịch chuyển $|\\Delta d|$ của từng đoạn",
-        "lấy độ dốc lớn nhất của đồ thị"
-      ],
-      "answer": 2,
-      "explanation": "Điểm cuối của đồ thị chỉ cho độ dịch chuyển. Quãng đường phải cộng độ lớn từng đoạn, vì đoạn quay đầu vẫn làm quãng đường tăng thêm."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về phương trình chuyển động thẳng đều $x = x_0 + vt$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$x_0$ là toạ độ của vật lúc $t_0 = 0$.",
-          "answer": true
-        },
-        {
-          "text": "$v \\lt 0$ cho biết vật chuyển động ngược chiều dương.",
-          "answer": true
-        },
-        {
-          "text": "Đồ thị độ dịch chuyển – thời gian của chuyển động thẳng đều là một đường cong.",
-          "answer": false
-        },
-        {
-          "text": "Đặt gốc toạ độ tại chỗ xuất phát ($x_0 = 0$) thì $x = d = vt$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Chuyển động thẳng đều có $d = vt$ dạng $y = ax$ nên đồ thị là đường thẳng, không phải đường cong."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Tính vận tốc từ độ dốc đồ thị",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khi đọc đồ thị $d$–$t$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Đoạn nằm ngang cho biết vật đứng yên.",
-          "answer": true
-        },
-        {
-          "text": "Đoạn dốc nhiều hơn thì độ lớn vận tốc lớn hơn.",
-          "answer": true
-        },
-        {
-          "text": "Đường nằm cao hơn trên đồ thị thì vật chuyển động nhanh hơn.",
-          "answer": false
-        },
-        {
-          "text": "Đồ thị đang đi lên chuyển sang đi xuống thì vật đổi chiều.",
-          "answer": true
-        }
-      ],
-      "explanation": "Độ cao của điểm chỉ cho biết vật đang ở đâu; nhanh hay chậm phải xét độ dốc của đường."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật chuyển động thẳng đều có phương trình $x = 5 - 2t$ ($x$ tính bằng m, $t$ bằng s). Vận tốc của vật là bao nhiêu $\\text{m/s}$?",
-      "answer": "-2",
-      "explanation": "So với $x = x_0 + vt$ thì $v = -2\\ \\text{m/s}$; dấu trừ cho biết vật đi ngược chiều dương."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một bạn trượt thẳng $20\\ \\text{m}$ theo chiều dương rồi quay lại $5\\ \\text{m}$ trên cùng đường. Quãng đường đi được là bao nhiêu mét?",
-      "answer": "25",
-      "explanation": "Quãng đường cộng mọi đoạn: $20 + 5 = 25\\ \\text{m}$ (độ dịch chuyển chỉ là $15\\ \\text{m}$)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Tính vận tốc từ độ dốc đồ thị",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đồ thị $d$–$t$ của một xe là đường nằm ngang tại $d = 12\\ \\text{m}$. Vận tốc của xe là bao nhiêu $\\text{m/s}$?",
-      "answer": "0",
-      "explanation": "Đường nằm ngang có độ dốc bằng $0$ nên $v = 0$: xe đứng yên ở $d = 12\\ \\text{m}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Tính vận tốc từ độ dốc đồ thị",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vận tốc tính từ hai điểm $(t_1;\\, d_1)$ và $(t_2;\\, d_2)$ trên đồ thị $d$–$t$ là",
-      "options": [
-        "$v = \\dfrac{d_2 + d_1}{t_2 + t_1}$",
-        "$v = \\dfrac{t_2 - t_1}{d_2 - d_1}$",
-        "$v = (d_2 - d_1)(t_2 - t_1)$",
-        "$v = \\dfrac{d_2 - d_1}{t_2 - t_1}$"
-      ],
-      "answer": 3,
-      "explanation": "Độ dốc là hiệu $d$ chia hiệu $t$. Cộng thay vì trừ, chia ngược, hay nhân đều là lỗi hay gặp; chia ngược còn làm sai thứ nguyên (s/m thay vì m/s)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tính vận tốc từ độ dốc đồ thị",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đồ thị $d$–$t$ là đoạn thẳng đi qua $(2\\ \\text{s};\\ 10\\ \\text{m})$ và $(6\\ \\text{s};\\ 4\\ \\text{m})$. Vận tốc là",
-      "options": [
-        "$1{,}5\\ \\text{m/s}$",
-        "$-1{,}5\\ \\text{m/s}$",
-        "$0{,}67\\ \\text{m/s}$",
-        "$5\\ \\text{m/s}$"
-      ],
-      "answer": 1,
-      "explanation": "$v = \\dfrac{4 - 10}{6 - 2} = -1{,}5\\ \\text{m/s}$. $1{,}5$ quên dấu; $0{,}67$ là chia ngược $4 : 6$; $5$ là lấy $d_1/t_1 = 10/2$ thay vì hiệu hai điểm."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe chuyển động thẳng đều có phương trình $x = 4 + 3t$ ($x$ tính bằng m, $t$ bằng s). Lúc $t = 5\\ \\text{s}$, xe ở toạ độ",
-      "options": [
-        "$19\\ \\text{m}$",
-        "$15\\ \\text{m}$",
-        "$35\\ \\text{m}$",
-        "$7\\ \\text{m}$"
-      ],
-      "answer": 0,
-      "explanation": "$x = 4 + 3 \\cdot 5 = 19\\ \\text{m}$. $15$ là quên toạ độ ban đầu $4$; $35 = (4 + 3) \\cdot 5$ là nhân cả $x_0$ với $t$; $7 = 4 + 3$ là quên nhân với $t$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tính vận tốc từ độ dốc đồ thị",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hai xe chạy trên cùng đường thẳng: $x_1 = 2t$ và $x_2 = 12 - 4t$ ($x$ tính bằng m, $t$ bằng s). Hai xe gặp nhau lúc",
-      "options": [
-        "$t = 3\\ \\text{s}$",
-        "$t = 6\\ \\text{s}$",
-        "$t = 2\\ \\text{s}$",
-        "$t = 4\\ \\text{s}$"
-      ],
-      "answer": 2,
-      "explanation": "Gặp nhau khi $x_1 = x_2$: $2t = 12 - 4t$ nên $t = 2\\ \\text{s}$ (khi đó $x = 4\\ \\text{m}$). $3\\ \\text{s}$ là chia $12$ cho $4$ (xe thứ hai về gốc); $6\\ \\text{s}$ là chia $12$ cho $2$; $4$ là toạ độ chứ không phải thời điểm."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe đồ chơi đang cách vạch mốc $6\\ \\text{m}$, chạy về phía vạch mốc với tốc độ $1{,}5\\ \\text{m/s}$. Chiều dương từ vạch mốc ra xa, gốc tại vạch mốc. Phương trình chuyển động là",
-      "options": [
-        "$x = 6 + 1{,}5t$",
-        "$x = 6 - 1{,}5t$",
-        "$x = -6 + 1{,}5t$",
-        "$x = 1{,}5 - 6t$"
-      ],
-      "answer": 1,
-      "explanation": "Lúc đầu $x_0 = +6\\ \\text{m}$; chạy về vạch mốc là ngược chiều dương nên $v = -1{,}5\\ \\text{m/s}$. Các phương án nhiễu quên dấu của $v$, đổi dấu $x_0$ hoặc đảo vai trò hai số."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Tính vận tốc từ độ dốc đồ thị",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Đồ thị $d$–$t$ của xe: đoạn $OA$ từ $(0;\\ 0)$ tới $(5\\ \\text{s};\\ 10\\ \\text{m})$; đoạn $AB$ nằm ngang tới $8\\ \\text{s}$; đoạn $BC$ về tới $d = 0$ lúc $12\\ \\text{s}$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Vận tốc đoạn $OA$ là $2\\ \\text{m/s}$.",
-          "answer": true
-        },
-        {
-          "text": "Vận tốc đoạn $BC$ là $-2{,}5\\ \\text{m/s}$.",
-          "answer": true
-        },
-        {
-          "text": "Quãng đường xe đi được trong $12\\ \\text{s}$ là $20\\ \\text{m}$.",
-          "answer": true
-        },
-        {
-          "text": "Vận tốc trung bình trong $12\\ \\text{s}$ là $20/12 \\approx 1{,}7\\ \\text{m/s}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$v_{OA} = 10/5 = 2$; $v_{BC} = (0 - 10)/(12 - 8) = -2{,}5$; $s = 10 + 10 = 20\\ \\text{m}$. Xe về đúng gốc nên $d = 0$ và vận tốc trung bình bằng $0$; $20/12$ là tốc độ trung bình."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe chuyển động thẳng đều có phương trình $x = 20 - 4t$ ($x$ tính bằng m, $t$ bằng s). Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Xe chuyển động ngược chiều dương.",
-          "answer": true
-        },
-        {
-          "text": "Lúc $t = 3\\ \\text{s}$ xe ở toạ độ $8\\ \\text{m}$.",
-          "answer": true
-        },
-        {
-          "text": "Xe đi qua gốc toạ độ lúc $t = 5\\ \\text{s}$.",
-          "answer": true
-        },
-        {
-          "text": "Từ $t = 0$ đến $t = 2\\ \\text{s}$, độ dịch chuyển của xe là $+8\\ \\text{m}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$x(0) = 20$, $x(2) = 12$ nên $d = 12 - 20 = -8\\ \\text{m}$ (dấu âm vì ngược chiều dương). $x(3) = 8$; $x = 0$ khi $t = 5\\ \\text{s}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính vận tốc từ độ dốc đồ thị",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đồ thị $d$–$t$ là đường thẳng đi qua $(0;\\ 0)$ và $(5\\ \\text{s};\\ 40\\ \\text{m})$. Vận tốc là bao nhiêu $\\text{m/s}$?",
-      "answer": "8",
-      "explanation": "$v = \\dfrac{40 - 0}{5 - 0} = 8\\ \\text{m/s}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính vận tốc từ độ dốc đồ thị",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đoạn đồ thị $d$–$t$ đi từ $(1\\ \\text{s};\\ 14\\ \\text{m})$ tới $(6\\ \\text{s};\\ 4\\ \\text{m})$. Vận tốc là bao nhiêu $\\text{m/s}$?",
-      "answer": "-2",
-      "explanation": "$v = \\dfrac{4 - 14}{6 - 1} = -2\\ \\text{m/s}$; độ dốc âm nên xe đi ngược chiều dương."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe chạy ra xa $90\\ \\text{cm}$ rồi quay về $30\\ \\text{cm}$ trên cùng đường thẳng. Độ dịch chuyển (theo chiều ra xa) là bao nhiêu cm?",
-      "answer": "60",
-      "explanation": "$d = 90 - 30 = 60\\ \\text{cm}$, còn quãng đường là $90 + 30 = 120\\ \\text{cm}$."
-    }
+  "removed": [
+   {
+    "question": "Giữ nguyên chuyển động thẳng của một vật và giữ nguyên gốc toạ độ, nhưng đổi chiều dương ngược lại. Xét đồ thị độ dịch chuyển – thời gian mới so với đồ thị cũ.",
+    "reason": "nghi_ngo: Ý a khẳng định vận tốc trên 'mỗi đoạn đều đổi dấu', trong khi ý d giả định có đoạn nằm ngang với v = 0 (không có dấu để đổi); đáp án 'đúng' của ý a vì vậy không dứt khoát."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quỹ đạo của một vật là",
+   "options": [
+    "đường mà vật vạch ra trong không gian khi chuyển động",
+    "khoảng cách thẳng từ điểm đầu đến điểm cuối của vật",
+    "đường biểu diễn vị trí của vật theo thời gian trên hai trục",
+    "tổng độ dài các đoạn đường mà vật đã đi được"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: quỹ đạo là đường vật vạch ra khi chuyển động. Đồ thị $d$–$t$ khác quỹ đạo vì nó vẽ vị trí theo thời gian.",
+   "distractorNotes": {
+    "B": "Khoảng cách thẳng từ điểm đầu đến điểm cuối gắn với độ dịch chuyển, không phải đường vật vạch ra trong không gian.",
+    "C": "Đường biểu diễn vị trí theo thời gian là đồ thị $d$–$t$; nhầm đồ thị với quỹ đạo là coi đồ thị là con đường.",
+    "D": "Tổng độ dài các đoạn đã đi là quãng đường, một con số, không phải đường vật vạch ra."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chuyển động thẳng đều là chuyển động có",
+   "options": [
+    "quỹ đạo thẳng, tốc độ tăng đều theo thời gian",
+    "quỹ đạo cong, tốc độ không đổi theo thời gian",
+    "quỹ đạo thẳng, đi một chiều, tốc độ không đổi",
+    "quỹ đạo thẳng, có quay đầu, tốc độ không đổi"
+   ],
+   "answer": 2,
+   "explanation": "Theo bài, chuyển động thẳng đều có quỹ đạo thẳng, đi một chiều, tốc độ không đổi, tức vận tốc không đổi.",
+   "distractorNotes": {
+    "A": "Tốc độ tăng đều là chuyển động nhanh dần; chuyển động đều đòi hỏi tốc độ không đổi.",
+    "B": "Quỹ đạo cong thì không còn là chuyển động thẳng, dù tốc độ giữ không đổi.",
+    "D": "Quay đầu làm vận tốc đổi dấu, nên vận tốc không còn không đổi như chuyển động thẳng đều yêu cầu."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Độ lớn độ dịch chuyển của vật bằng quãng đường vật đi được khi",
+   "options": [
+    "vật chuyển động thẳng và quay đầu một lần",
+    "vật chuyển động thẳng theo một chiều không đổi",
+    "vật đi trên quỹ đạo bất kì với tốc độ không đổi",
+    "vật xuất phát từ gốc toạ độ rồi quay về gốc"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: đi một chiều không đổi thì $\\lvert d\\rvert = s$; quay đầu thì $\\lvert d\\rvert \\ne s$.",
+   "distractorNotes": {
+    "A": "Khi quay đầu, quãng đường vẫn cộng thêm còn độ dịch chuyển giảm, nên $\\lvert d\\rvert \\ne s$.",
+    "C": "Tốc độ không đổi chưa bảo đảm đi thẳng một chiều; điều kiện để $\\lvert d\\rvert = s$ là không đổi chiều.",
+    "D": "Quay về gốc thì $d = 0$ trong khi quãng đường dương, hai đại lượng khác hẳn nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên đồ thị độ dịch chuyển – thời gian, một đoạn nằm ngang (song song trục $t$) cho biết trong khoảng thời gian đó vật",
+   "options": [
+    "đi trên một đoạn đường bằng phẳng",
+    "chuyển động đều với tốc độ rất lớn",
+    "chuyển động theo chiều ngược chiều dương",
+    "đứng yên, vận tốc bằng không"
+   ],
+   "answer": 3,
+   "explanation": "Đoạn nằm ngang có độ dốc bằng không: thời gian trôi mà $d$ không đổi, nên vật đứng yên, $v = 0$.",
+   "distractorNotes": {
+    "A": "Đọc đồ thị như hình dạng con đường, trong khi trục đứng là vị trí, không phải độ cao.",
+    "B": "Chuyển động đều thì $d$ vẫn tăng đều theo thời gian, đồ thị phải xiên chứ không nằm ngang.",
+    "C": "Đi ngược chiều dương thì $d$ giảm dần, đồ thị phải đi xuống chứ không nằm ngang."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một xe chạy trên đường thẳng nằm ngang. Đồ thị độ dịch chuyển – thời gian của xe là một đường thẳng xiên lên. Phát biểu nào sau đây đúng?",
+   "options": [
+    "Xe đi theo chiều dương với vận tốc không đổi",
+    "Xe đang leo lên một đoạn dốc nghiêng đều",
+    "Xe đang tăng tốc vì độ dịch chuyển tăng",
+    "Xe đang chuyển động ngược chiều dương"
+   ],
+   "answer": 0,
+   "explanation": "Đường thẳng có độ dốc không đổi nên vận tốc không đổi; đồ thị đi lên nghĩa là $d$ tăng, xe đi theo chiều dương.",
+   "distractorNotes": {
+    "B": "Coi đồ thị là con đường; trục đứng là vị trí tính từ gốc, không phải độ cao của xe.",
+    "C": "Nhầm $d$ tăng với $v$ tăng; $d$ tăng đều cho vận tốc không đổi, tăng tốc mới cho đường cong.",
+    "D": "Đồ thị đi lên nghĩa là $d$ tăng, tức xe đi theo chiều dương, không phải ngược chiều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên cùng một hệ trục độ dịch chuyển – thời gian, đồ thị của hai xe cắt nhau tại một điểm. Tại thời điểm ứng với điểm đó, hai xe",
+   "options": [
+    "có cùng vận tốc",
+    "ở cùng một vị trí",
+    "cùng đang đứng yên",
+    "có cùng quãng đường"
+   ],
+   "answer": 1,
+   "explanation": "Giao điểm cho cùng giá trị $d$ tại cùng thời điểm, nghĩa là hai xe gặp nhau; cùng vận tốc ứng với hai đường song song.",
+   "distractorNotes": {
+    "A": "Nhầm giao điểm với cùng độ dốc; cùng vận tốc ứng với hai đường song song.",
+    "C": "Hai đường nghiêng vẫn cắt nhau được; chỉ đường nằm ngang mới ứng với đứng yên.",
+    "D": "Giao điểm cho cùng vị trí; quãng đường mỗi xe đã đi còn tuỳ điểm xuất phát và chiều đi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên cùng một hệ trục độ dịch chuyển – thời gian của hai xe chuyển động thẳng đều, muốn biết xe nào chạy nhanh hơn ta so sánh",
+   "options": [
+    "đường nào nằm cao hơn trên hình",
+    "giá trị $d$ ở điểm cuối mỗi đường",
+    "độ lớn độ dốc của mỗi đường",
+    "đường nào bắt đầu xa trục $t$ hơn"
+   ],
+   "answer": 2,
+   "explanation": "Theo Bẫy 2: độ cao của điểm cho biết vật ở đâu, độ nghiêng (độ dốc) mới cho biết nhanh cỡ nào; so độ lớn, bỏ dấu.",
+   "distractorNotes": {
+    "A": "Đường nằm cao chỉ cho biết vật đang ở xa gốc hơn; độ nghiêng mới cho biết nhanh hay chậm.",
+    "B": "Giá trị $d$ ở điểm cuối là vị trí cuối, phụ thuộc cả điểm xuất phát, không phản ánh tốc độ.",
+    "D": "Bắt đầu xa trục $t$ chỉ là xuất phát ở xa gốc hơn, không liên quan nhanh chậm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm bọt khí chuyển động trong ống nước, các điểm $(t, d)$ đo được lệch nhẹ do sai số. Cách vẽ đồ thị đúng là",
+   "options": [
+    "nối các điểm đo thành một đường gấp khúc",
+    "bỏ các điểm lệch, chỉ nối hai điểm đầu",
+    "vẽ một đường cong đi qua đúng mọi điểm",
+    "kẻ một đường thẳng đi gần mọi điểm đo"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu: điểm đo lệch nhẹ do sai số thì kẻ một đường thẳng đi gần mọi điểm, không nối gấp khúc.",
+   "distractorNotes": {
+    "A": "Nối gấp khúc biến sai số đo thành những lần đổi vận tốc giả, trái với chuyển động đều của bọt khí.",
+    "B": "Chỉ dùng hai điểm đầu bỏ phí số liệu, mà điểm đầu lại có sai số tương đối lớn nhất.",
+    "C": "Đường cong ứng với vận tốc thay đổi, trong khi bọt khí chuyển động thẳng đều cho đường thẳng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phương trình chuyển động thẳng đều của một vật (chọn $t_0 = 0$, $x_0$ là toạ độ ban đầu, $v$ là vận tốc) là",
+   "options": [
+    "$x = x_0 + \\frac{v}{t}$",
+    "$x = x_0 t + v$",
+    "$x = x_0 + vt$",
+    "$x = vt - x_0$"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu phương trình chuyển động thẳng đều $x = x_0 + vt$ với $t_0 = 0$.",
+   "distractorNotes": {
+    "A": "Chia $v$ cho $t$ là sai phép tính; phần dịch chuyển thêm bằng vận tốc nhân thời gian.",
+    "B": "Đảo vai $x_0$ và $v$; chính vận tốc mới nhân với thời gian, còn $x_0$ là hằng số cộng thêm.",
+    "D": "Sai dấu toạ độ ban đầu; phải cộng $x_0$ để lúc $t = 0$ thì $x = x_0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính vận tốc từ độ dốc đồ thị",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lấy hai điểm $(t_1; d_1)$ và $(t_2; d_2)$ trên đồ thị độ dịch chuyển – thời gian của chuyển động thẳng đều. Vận tốc của vật là",
+   "options": [
+    "$v = \\frac{t_2 - t_1}{d_2 - d_1}$",
+    "$v = \\frac{d_2}{t_2 - t_1}$",
+    "$v = \\frac{d_2 - d_1}{t_2}$",
+    "$v = \\frac{d_2 - d_1}{t_2 - t_1}$"
+   ],
+   "answer": 3,
+   "explanation": "Độ dốc (hệ số góc) của đồ thị là $v = \\frac{\\Delta d}{\\Delta t} = \\frac{d_2 - d_1}{t_2 - t_1}$.",
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu; độ dốc lấy độ biến thiên trục đứng chia độ biến thiên trục ngang.",
+    "B": "Tử số lấy một giá trị $d$ thay vì hiệu; độ dốc phải là hiệu $\\Delta d$ chia hiệu $\\Delta t$.",
+    "C": "Mẫu số lấy một giá trị $t$ thay vì hiệu; phải chia cho $\\Delta t = t_2 - t_1$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Gọi $s$ là quãng đường, $d$ là độ dịch chuyển của vật trong thời gian $t$. Công thức nào sau đây đúng?",
+   "options": [
+    "tốc độ trung bình $= \\frac{d}{t}$; vận tốc trung bình $= \\frac{s}{t}$",
+    "tốc độ trung bình $= \\frac{s}{t}$; vận tốc trung bình $= \\frac{d}{t}$",
+    "tốc độ trung bình $= \\frac{s}{t}$; vận tốc trung bình $= \\frac{s}{t}$",
+    "tốc độ trung bình $= \\frac{d}{t}$; vận tốc trung bình $= \\frac{d}{t}$"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: tốc độ trung bình $= \\frac{s}{t}$ (không âm), vận tốc trung bình $= \\frac{d}{t}$ (có dấu).",
+   "distractorNotes": {
+    "A": "Đảo vai hai đại lượng; vận tốc có hướng nên gắn với độ dịch chuyển, tốc độ gắn với quãng đường.",
+    "C": "Coi vận tốc như tốc độ; vận tốc trung bình có dấu nên phải dùng độ dịch chuyển $d$.",
+    "D": "Tốc độ trung bình không âm nên phải dùng quãng đường $s$, không dùng độ dịch chuyển có dấu."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ phương trình $x = x_0 + vt$, vận tốc của vật được tính bằng",
+   "options": [
+    "$v = \\frac{x - x_0}{t}$",
+    "$v = \\frac{x + x_0}{t}$",
+    "$v = \\frac{t}{x - x_0}$",
+    "$v = (x - x_0)t$"
+   ],
+   "answer": 0,
+   "explanation": "Chuyển $x_0$ sang vế trái rồi chia cho $t$: $v = \\frac{x - x_0}{t}$, đúng như công thức vận tốc trong bài.",
+   "distractorNotes": {
+    "B": "Sai dấu khi chuyển vế; đưa $x_0$ sang vế kia phải đổi thành $-x_0$.",
+    "C": "Đảo tử và mẫu khi chia; vận tốc là độ dịch chuyển chia thời gian.",
+    "D": "Nhân với $t$ thay vì chia khi tách $v$ ra khỏi tích $vt$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Tính vận tốc từ độ dốc đồ thị",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đồ thị độ dịch chuyển – thời gian có trục đứng ghi $d$ (m), trục ngang ghi $t$ (s). Độ dốc của đồ thị có đơn vị là",
+   "options": [
+    "m·s",
+    "s/m",
+    "m",
+    "m/s"
+   ],
+   "answer": 3,
+   "explanation": "Độ dốc $\\frac{\\Delta d}{\\Delta t}$ có đơn vị m chia s, tức m/s, đúng là đơn vị vận tốc.",
+   "distractorNotes": {
+    "A": "Nhân đơn vị hai trục thay vì chia; độ dốc là tỉ số $\\Delta d$ trên $\\Delta t$.",
+    "B": "Đảo tử và mẫu; độ dốc lấy đơn vị trục đứng chia đơn vị trục ngang.",
+    "C": "Chỉ giữ đơn vị trục đứng, quên chia cho đơn vị thời gian của trục ngang."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính vận tốc từ độ dốc đồ thị",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai xe chuyển động thẳng đều theo chiều dương. Trên cùng hệ trục độ dịch chuyển – thời gian, đường của xe P có độ dốc gấp đôi độ dốc đường của xe Q. Kết luận đúng là",
+   "options": [
+    "xe P luôn ở xa gốc gấp đôi xe Q",
+    "vận tốc xe P gấp đôi vận tốc xe Q",
+    "vận tốc xe P bằng một nửa xe Q",
+    "hai xe có cùng vận tốc vì cùng chiều"
+   ],
+   "answer": 1,
+   "explanation": "Độ dốc của đồ thị $d$–$t$ bằng vận tốc, nên độ dốc gấp đôi thì vận tốc gấp đôi.",
+   "distractorNotes": {
+    "A": "Nhầm độ dốc với vị trí; vị trí mỗi xe còn phụ thuộc điểm xuất phát.",
+    "C": "Đảo tỉ lệ: độ dốc lớn hơn ứng với vận tốc lớn hơn, không phải nhỏ hơn.",
+    "D": "Cùng chiều chỉ cho cùng dấu vận tốc; độ lớn vận tốc vẫn do độ dốc quyết định."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm đi bộ \"vẽ\" đồ thị: một bạn đi chậm từ vạch $0$ ra xa tới vạch $5\\ \\text{m}$ trên thước dây đặt dọc hành lang, đứng lại $3\\ \\text{s}$, rồi bước nhanh về vạch $0$. Chiều dương từ vạch $0$ ra xa. Xét đồ thị độ dịch chuyển – thời gian của bạn đó.",
+   "statements": [
+    {
+     "text": "Đoạn đầu của đồ thị xiên lên với độ dốc nhỏ.",
+     "answer": true
+    },
+    {
+     "text": "Khoảng thời gian bạn đứng lại ứng với một đoạn nằm ngang.",
+     "answer": true
+    },
+    {
+     "text": "Đoạn quay về xiên xuống và thoải hơn đoạn đầu.",
+     "answer": false
+    },
+    {
+     "text": "Quãng đường của cả lượt đọc ngay ở điểm cuối đồ thị nên bằng không.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đi chậm ra xa: dốc dương, ít; đứng: nằm ngang; về nhanh: dốc âm, nhiều. Quãng đường phải cộng từng đoạn: $5 + 5 = 10\\ \\text{m}$, chỉ độ dịch chuyển bằng không.",
+   "distractorNotes": {
+    "0": "Đi ra xa làm $d$ tăng nên đồ thị đi lên, đi chậm nên độ dốc nhỏ; không thể coi là sai.",
+    "1": "Đứng lại thì $d$ không đổi theo thời gian, đồ thị chắc chắn là đoạn nằm ngang.",
+    "2": "Bước nhanh nghĩa là độ lớn độ dốc lớn hơn, nên đoạn về phải dốc hơn, không thể thoải hơn.",
+    "3": "Điểm cuối chỉ cho độ dịch chuyển; quãng đường cộng độ lớn từng đoạn nên bằng $10\\ \\text{m}$, không bằng không."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một xe chạy trên một con đường thẳng, nằm ngang. Xét quỹ đạo và đồ thị độ dịch chuyển – thời gian của xe.",
+   "statements": [
+    {
+     "text": "Quỹ đạo của xe là một đường thẳng.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị độ dịch chuyển – thời gian của xe luôn là một đường thẳng giống quỹ đạo.",
+     "answer": false
+    },
+    {
+     "text": "Trục đứng của đồ thị cho biết độ cao của xe so với mặt đất.",
+     "answer": false
+    },
+    {
+     "text": "Nếu xe chuyển động thẳng đều thì đồ thị độ dịch chuyển – thời gian là một đường thẳng.",
+     "answer": true
+    }
+   ],
+   "explanation": "Chuyển động thẳng có quỹ đạo thẳng, nhưng đồ thị $d$–$t$ có thể gãy khúc, nằm ngang, đi xuống. Trục đứng là vị trí, không phải độ cao. Thẳng đều thì $d = vt$ nên đồ thị là đường thẳng.",
+   "distractorNotes": {
+    "0": "Xe chạy trên con đường thẳng nên đường xe vạch ra trong không gian chắc chắn là đường thẳng.",
+    "1": "Quỹ đạo thẳng nhưng xe có thể dừng hay quay đầu, làm đồ thị $d$–$t$ gãy khúc hoặc nằm ngang.",
+    "2": "Trục đứng là độ dịch chuyển tính từ gốc, tức vị trí trên đường, không phải độ cao.",
+    "3": "Thẳng đều có $d = vt$ dạng $y = ax$, nên đồ thị chắc chắn là đường thẳng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật chuyển động thẳng đều có phương trình $x = x_0 + vt$ (chọn $t_0 = 0$).",
+   "statements": [
+    {
+     "text": "$x_0$ là toạ độ của vật tại thời điểm $t_0 = 0$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $v \\lt 0$ thì vật chuyển động theo chiều dương.",
+     "answer": false
+    },
+    {
+     "text": "Đặt gốc toạ độ ở chỗ xuất phát thì $x = d = vt$.",
+     "answer": true
+    },
+    {
+     "text": "Hệ số góc của đồ thị $x$ theo $t$ bằng $x_0$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$x_0$ là toạ độ ban đầu; $v \\lt 0$ là đi ngược chiều dương; gốc ở chỗ xuất phát thì $x_0 = 0$, $x = d = vt$; hệ số góc của đồ thị là $v$.",
+   "distractorNotes": {
+    "0": "Thay $t = 0$ vào phương trình được $x = x_0$, nên $x_0$ đúng là toạ độ ban đầu.",
+    "1": "Dấu của $v$ cho chiều đi: $v \\lt 0$ là đi ngược chiều dương, không thể theo chiều dương.",
+    "2": "Gốc ở chỗ xuất phát thì $x_0 = 0$, khi đó toạ độ trùng độ dịch chuyển và bằng $vt$.",
+    "3": "$x_0$ chỉ là điểm cắt trục đứng lúc $t = 0$; hệ số góc của đồ thị là vận tốc $v$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Tính vận tốc từ độ dốc đồ thị",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Đồ thị độ dịch chuyển – thời gian của một xe đồ chơi chạy trên đường thẳng gồm ba đoạn: $OA$ đi lên từ $d = 0$; $AB$ nằm ngang; $BC$ đi xuống về đúng $d = 0$ ở điểm cuối.",
+   "statements": [
+    {
+     "text": "Trên đoạn $AB$, vận tốc của xe bằng không.",
+     "answer": true
+    },
+    {
+     "text": "Vận tốc của xe trên đoạn $BC$ mang dấu âm.",
+     "answer": true
+    },
+    {
+     "text": "Độ dịch chuyển của cả chuyến bằng tổng quãng đường đi trên $OA$ và $BC$.",
+     "answer": false
+    },
+    {
+     "text": "Vận tốc trung bình của cả chuyến bằng không.",
+     "answer": true
+    }
+   ],
+   "explanation": "$AB$ nằm ngang: $v = 0$; $BC$ đi xuống: $v \\lt 0$. Xe về đúng $d = 0$ nên độ dịch chuyển bằng không, vận tốc trung bình $\\frac{d}{t} = 0$; tổng hai đoạn là quãng đường.",
+   "distractorNotes": {
+    "0": "Đoạn nằm ngang có $\\Delta d = 0$ nên độ dốc, tức vận tốc, chắc chắn bằng không.",
+    "1": "Đoạn đi xuống có $\\Delta d \\lt 0$ nên độ dốc âm, vận tốc mang dấu âm.",
+    "2": "Cộng hai đoạn là quãng đường; độ dịch chuyển là cuối trừ đầu, ở đây bằng không.",
+    "3": "Xe về đúng $d = 0$ nên độ dịch chuyển bằng không, vận tốc trung bình $\\frac{d}{t}$ cũng bằng không."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Đọc đồ thị độ dịch chuyển – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật chuyển động trên đường thẳng, có lúc quay đầu. Từ đồ thị độ dịch chuyển – thời gian, xét cách xác định độ dịch chuyển $d$ và quãng đường $s$.",
+   "statements": [
+    {
+     "text": "Độ dịch chuyển bằng $d$ ở điểm cuối trừ $d$ ở điểm đầu.",
+     "answer": true
+    },
+    {
+     "text": "Quãng đường bằng tổng độ lớn $\\lvert\\Delta d\\rvert$ của từng đoạn.",
+     "answer": true
+    },
+    {
+     "text": "Vận tốc trung bình $\\frac{d}{t}$ luôn không âm.",
+     "answer": false
+    },
+    {
+     "text": "Khi vật quay đầu, quãng đường đi được giảm dần.",
+     "answer": false
+    }
+   ],
+   "explanation": "Theo Bẫy 3: cuối trừ đầu cho $d$, cộng từng đoạn cho $s$. $d$ có thể âm nên vận tốc trung bình có dấu; quãng đường không âm và chỉ tăng.",
+   "distractorNotes": {
+    "0": "Độ dịch chuyển chỉ so điểm cuối với điểm đầu, đúng quy tắc cuối trừ đầu của bài.",
+    "1": "Quãng đường gồm mọi đoạn đã đi, mỗi đoạn lấy độ lớn, nên phải cộng $\\lvert\\Delta d\\rvert$ từng đoạn.",
+    "2": "Không âm là tính chất của tốc độ trung bình; $d$ có thể âm nên vận tốc trung bình có thể âm.",
+    "3": "Đoạn quay về vẫn là đoạn đã đi nên quãng đường cộng thêm; chỉ độ dịch chuyển mới giảm."
+   }
+  }
+ ]
 }

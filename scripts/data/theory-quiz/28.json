@@ -1,371 +1,550 @@
 {
-  "lesson_id": 28,
-  "lesson_title": "Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ",
-  "item_id": 77,
-  "generated_at": "2026-10-02",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 9,
-      "cong_thuc": 11
-    },
-    "removed": []
+ "lesson_id": 28,
+ "lesson_title": "Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ",
+ "item_id": 77,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Phân biệt sóng ngang và sóng dọc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sóng ngang là sóng mà phần tử môi trường dao động theo phương",
+   "options": [
+    "vuông góc với phương truyền sóng",
+    "trùng với phương truyền sóng",
+    "nằm ngang so với mặt đất",
+    "thẳng đứng so với mặt đất"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, sóng ngang có phần tử môi trường dao động vuông góc với phương truyền sóng.",
+   "distractorNotes": {
+    "B": "Dao động trùng phương truyền là dấu hiệu của sóng dọc; chọn ý này là đảo hai định nghĩa.",
+    "C": "Tên gọi \"ngang\" so phương dao động với phương truyền sóng, không lấy mặt đất làm mốc.",
+    "D": "Phương thẳng đứng chỉ trùng với vài ví dụ quen thuộc; định nghĩa so với phương truyền, không so với mặt đất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Phân biệt sóng ngang và sóng dọc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sóng dọc là sóng mà phần tử môi trường",
+   "options": [
+    "dao động vuông góc với phương truyền sóng",
+    "di chuyển theo sóng từ nguồn ra xa dần",
+    "dao động theo phương trùng phương truyền sóng",
+    "dao động theo phương thẳng đứng với mặt đất"
+   ],
+   "answer": 2,
+   "explanation": "Bài định nghĩa sóng dọc là sóng có phần tử dao động theo phương trùng với phương truyền sóng.",
+   "distractorNotes": {
+    "A": "Dao động vuông góc phương truyền là sóng ngang; chọn ý này là lẫn hai loại sóng.",
+    "B": "Nghĩ phần tử đi theo sóng, trong khi phần tử chỉ dao động quanh vị trí cân bằng.",
+    "D": "Lấy mặt đất làm mốc, trong khi tên gọi \"dọc\" chỉ so phương dao động với phương truyền sóng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Phân biệt sóng ngang và sóng dọc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sóng cơ ngang truyền được trong môi trường nào sau đây?",
+   "options": [
+    "Chất rắn, chất lỏng và chất khí",
+    "Chất rắn và bề mặt chất lỏng",
+    "Chất lỏng, chất khí và chân không",
+    "Chất khí và chân không"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu sóng ngang chỉ truyền trong chất rắn và trên bề mặt chất lỏng.",
+   "distractorNotes": {
+    "A": "Gán cho sóng ngang môi trường truyền của sóng dọc; trong lòng chất lỏng và chất khí không có sóng ngang.",
+    "C": "Quên rằng lòng chất lỏng, chất khí không có sóng ngang và sóng cơ không truyền qua chân không.",
+    "D": "Nhầm sóng cơ với sóng điện từ; sóng cơ cần môi trường vật chất, và chất khí không truyền sóng ngang."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Sóng ngang, sóng dọc. Truyền năng lượng của sóng cơ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào sau đây về sóng cơ là đúng?",
+   "options": [
+    "Sóng cơ truyền được trong chân không",
+    "Sóng âm trong không khí là sóng ngang",
+    "Sóng cơ ngang truyền được trong chất khí",
+    "Sóng cơ không truyền được trong chân không"
+   ],
+   "answer": 3,
+   "explanation": "Sóng cơ cần phần tử môi trường và lực liên kết giữa chúng, nên không truyền qua chân không.",
+   "distractorNotes": {
+    "A": "Nhầm sóng cơ với sóng điện từ; chỉ sóng điện từ mới truyền được qua chân không.",
+    "B": "Không khí chỉ truyền được sóng dọc, nên sóng âm trong không khí không thể là sóng ngang.",
+    "C": "Các lớp khí trượt lên nhau dễ dàng, không kéo lớp bên cạnh lệch theo, nên chất khí không truyền sóng ngang."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Phân biệt sóng ngang và sóng dọc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một sợi dây dài treo thẳng đứng từ trần. Lắc đầu dưới qua lại theo phương nằm ngang thì sóng chạy dọc dây lên trần. Sóng trên dây là",
+   "options": [
+    "sóng dọc, vì sóng truyền theo phương thẳng đứng",
+    "sóng ngang, vì dao động vuông góc phương truyền",
+    "sóng dọc, vì sợi dây được treo theo phương đứng",
+    "không phải sóng, vì dây không được căng nằm ngang"
+   ],
+   "answer": 1,
+   "explanation": "Sóng truyền thẳng đứng, phần tử dao động nằm ngang. Hai phương vuông góc nên đây là sóng ngang.",
+   "distractorNotes": {
+    "A": "Gọi tên theo hướng truyền so với mặt đất thay vì so phương dao động với phương truyền.",
+    "C": "Lấy hướng treo của sợi dây làm căn cứ, trong khi loại sóng chỉ do hai phương dao động và truyền quyết định.",
+    "D": "Nghĩ sóng chỉ có trên dây nằm ngang, trong khi mọi sợi dây căng đều truyền được sóng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Sóng trên mặt hồ lan tới làm chiếc phao nhấp nhô. Quá trình truyền sóng đã truyền đi",
+   "options": [
+    "năng lượng và trạng thái dao động",
+    "các phần tử nước cùng với chiếc phao",
+    "vị trí cân bằng của các phần tử nước",
+    "khối lượng nước từ chỗ có nguồn sóng"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, năng lượng và pha truyền đi theo sóng. Phần tử môi trường và vị trí cân bằng của chúng ở lại tại chỗ.",
+   "distractorNotes": {
+    "B": "Nghĩ sóng chở phần tử đi, trong khi nước và phao chỉ nhấp nhô quanh chỗ cũ.",
+    "C": "Vị trí cân bằng của phần tử ở lại tại chỗ; chỉ năng lượng và pha được truyền đi.",
+    "D": "Tưởng nước chảy từ nguồn ra; nếu vậy phao phải trôi theo chứ không chỉ nhấp nhô."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Phân biệt sóng ngang và sóng dọc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đồ thị $u$–$x$ của sóng dọc trên lò xo tại một thời điểm là hình sin, với $u \\gt 0$ là lệch theo chiều dương trục $x$. Vùng nén nằm ở",
+   "options": [
+    "đỉnh đồ thị, nơi $u = +A$",
+    "đáy đồ thị, nơi $u = -A$",
+    "mọi điểm có $u \\gt 0$",
+    "điểm $u = 0$ mà đồ thị đi xuống"
+   ],
+   "answer": 3,
+   "explanation": "Tại điểm $u = 0$ mà đồ thị đi xuống, phần tử hai bên cùng lệch về phía điểm đó nên tạo thành vùng nén.",
+   "distractorNotes": {
+    "A": "Tưởng li độ lớn nhất là nén, nhưng ở đỉnh các vòng lân cận lệch gần bằng nhau nên khoảng cách gần như không đổi.",
+    "B": "Tưởng li độ cực tiểu là nén, nhưng ở đáy các vòng lân cận lệch gần như nhau nên không bị dồn sít.",
+    "C": "Đoạn có $u \\gt 0$ dài nửa bước sóng nên không thể bị nén suốt cả đoạn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Phân biệt sóng ngang và sóng dọc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai bạn kéo dài lò xo slinky trên sàn và dán băng màu vào một vòng ở giữa. Một bạn đẩy – kéo đầu lò xo dọc trục, đều tay.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Phân biệt sóng ngang và sóng dọc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Sóng ngang là sóng trong đó các phần tử của môi trường dao động theo phương nào?",
-      "options": [
-        "Trùng với phương truyền sóng",
-        "Vuông góc với phương truyền sóng",
-        "Hợp với phương truyền sóng một góc $45^\\circ$",
-        "Song song với mặt phẳng pha ban đầu"
-      ],
-      "answer": 1,
-      "explanation": "Bài định nghĩa sóng ngang: phần tử dao động vuông góc với phương truyền sóng."
+     "text": "Sóng tạo ra trên lò xo là sóng dọc.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Phân biệt sóng ngang và sóng dọc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Sóng dọc là sóng trong đó các phần tử của môi trường dao động như thế nào?",
-      "options": [
-        "Vuông góc với phương truyền sóng",
-        "Theo phương trùng với phương truyền sóng",
-        "Chỉ theo phương thẳng đứng",
-        "Không dao động mà chuyển động theo sóng"
-      ],
-      "answer": 1,
-      "explanation": "Bài định nghĩa sóng dọc: phần tử dao động theo phương trùng với phương truyền sóng."
+     "text": "Vòng có băng màu chạy theo vùng nén tới đầu kia của lò xo.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Quá trình truyền sóng cơ là quá trình truyền gì?",
-      "options": [
-        "Truyền khối lượng của các phần tử môi trường",
-        "Truyền năng lượng",
-        "Truyền điện tích",
-        "Truyền nhiệt độ của môi trường"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu: quá trình truyền sóng là quá trình truyền năng lượng."
+     "text": "Chỗ các vòng sít nhau là vùng nén, chỗ các vòng thưa ra là vùng dãn.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Khi sóng cơ truyền qua một môi trường, các phần tử môi trường",
-      "options": [
-        "chuyển động theo sóng với tốc độ bằng tốc độ truyền sóng",
-        "chỉ dao động quanh vị trí cân bằng, không di chuyển theo sóng",
-        "đứng yên hoàn toàn",
-        "bị cuốn đi xa nguồn cùng với sóng"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu các phần tử môi trường không di chuyển theo sóng, chỉ dao động quanh vị trí cân bằng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Phân biệt sóng ngang và sóng dọc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Loại sóng nào sau đây truyền được trong chất khí?",
-      "options": [
-        "Sóng ngang",
-        "Sóng dọc",
-        "Cả sóng ngang và sóng dọc",
-        "Không loại nào truyền được"
-      ],
-      "answer": 1,
-      "explanation": "Sóng ngang chỉ truyền trong chất rắn và bề mặt chất lỏng; sóng dọc truyền được trong chất rắn, lỏng, khí."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Phân biệt sóng ngang và sóng dọc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Xét sóng ngang và sóng dọc. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Sóng ngang có phần tử môi trường dao động vuông góc với phương truyền sóng.",
-          "answer": true
-        },
-        {
-          "text": "Sóng dọc truyền được trong chất rắn, chất lỏng và chất khí.",
-          "answer": true
-        },
-        {
-          "text": "Sóng ngang truyền được trong chất khí.",
-          "answer": false
-        },
-        {
-          "text": "Sóng dọc truyền được trong chân không.",
-          "answer": false
-        }
-      ],
-      "explanation": "Sóng ngang chỉ truyền trong chất rắn và bề mặt chất lỏng; sóng cơ nói chung không truyền được trong chân không."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Xét sóng âm. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Sóng âm truyền trong không khí là sóng dọc.",
-          "answer": true
-        },
-        {
-          "text": "Biên độ sóng âm càng lớn thì âm nghe càng to.",
-          "answer": true
-        },
-        {
-          "text": "Sóng âm truyền được trong chân không.",
-          "answer": false
-        },
-        {
-          "text": "Sóng có tần số trên 20 000 Hz là hạ âm.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài nêu sóng âm trong không khí là sóng dọc; tần số trên 20 000 Hz là siêu âm; cả hạ âm và siêu âm không truyền được trong chân không."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Sóng âm nghe được có tần số từ 16 Hz đến 20 000 Hz. Tần số nhỏ nhất (đơn vị Hz) là bao nhiêu?",
-      "answer": "16",
-      "explanation": "Bài nêu khoảng tần số nghe được từ 16 Hz đến 20 000 Hz."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Phân biệt sóng ngang và sóng dọc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Trong hai loại sóng: sóng ngang và sóng dọc, có bao nhiêu loại truyền được trong chất khí?",
-      "answer": "1",
-      "explanation": "Chất khí chỉ truyền được sóng dọc; sóng ngang chỉ truyền trong chất rắn và bề mặt chất lỏng."
-    },
-    {
-      "type": "short_answer",
-      "kind": "don_vi",
-      "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Cường độ âm có đơn vị W/m$^n$. Tìm $n$.",
-      "answer": "2",
-      "explanation": "Cường độ âm là năng lượng truyền qua một đơn vị diện tích trong một đơn vị thời gian, đơn vị W/m$^2$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Phương trình sóng và đồ thị sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Phương trình sóng tại điểm M cách nguồn O một khoảng $x$ (sóng truyền từ O đến M, $u_O=A\\cos(\\omega t+\\varphi)$) là",
-      "options": [
-        "$u_M=A\\cos\\left(\\omega t+\\varphi-\\dfrac{2\\pi x}{\\lambda}\\right)$",
-        "$u_M=A\\cos\\left(\\omega t+\\varphi+\\dfrac{2\\pi x}{\\lambda}\\right)$",
-        "$u_M=A\\cos\\left(\\omega t+\\varphi-\\dfrac{\\pi x}{\\lambda}\\right)$",
-        "$u_M=A\\cos\\left(\\omega t+\\varphi-\\dfrac{\\lambda}{2\\pi x}\\right)$"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu $u_M=A\\cos(\\omega t+\\varphi-2\\pi x/\\lambda)$ với dấu trừ khi sóng truyền từ O tới M."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Công thức nào sau đây liên hệ đúng tốc độ truyền sóng $v$, bước sóng $\\lambda$, tần số $f$ và chu kì $T$?",
-      "options": [
-        "$v=\\lambda f=\\dfrac{\\lambda}{T}$",
-        "$v=\\dfrac{f}{\\lambda}=\\lambda T$",
-        "$v=\\dfrac{\\lambda}{f}$",
-        "$v=\\lambda T=\\dfrac{T}{f}$"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu $v=\\lambda f=\\lambda/T$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Phương trình sóng và đồ thị sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Độ lệch pha dao động giữa hai điểm cách nhau $d$ trên cùng phương truyền sóng là",
-      "options": [
-        "$\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$",
-        "$\\Delta\\varphi=\\dfrac{\\pi d}{\\lambda}$",
-        "$\\Delta\\varphi=\\dfrac{2\\pi\\lambda}{d}$",
-        "$\\Delta\\varphi=2\\pi d\\lambda$"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu $\\Delta\\varphi=2\\pi d/\\lambda$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Phương trình sóng và đồ thị sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Hai điểm trên phương truyền sóng dao động cùng pha khi khoảng cách $d$ giữa chúng thoả mãn (với $k$ nguyên)",
-      "options": [
-        "$d=k\\lambda$",
-        "$d=(k+0{,}5)\\lambda$",
-        "$d=(2k+1)\\dfrac{\\lambda}{4}$",
-        "$d=k\\dfrac{\\lambda}{2}$"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu cùng pha: $\\Delta\\varphi=k2\\pi\\Leftrightarrow d=k\\lambda$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Phương trình sóng và đồ thị sóng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Khoảng cách gần nhất giữa hai điểm trên phương truyền sóng dao động ngược pha bằng",
-      "options": [
-        "$\\lambda$",
-        "$\\dfrac{\\lambda}{2}$",
-        "$\\dfrac{\\lambda}{4}$",
-        "$2\\lambda$"
-      ],
-      "answer": 1,
-      "explanation": "Ngược pha: $d=(k+0{,}5)\\lambda$, gần nhất là $\\lambda/2$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Phương trình sóng và đồ thị sóng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Xét độ lệch pha giữa hai điểm M, N cách nhau $d$ trên cùng phương truyền sóng. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Cùng pha: khoảng cách gần nhất $MN=\\lambda$.",
-          "answer": true
-        },
-        {
-          "text": "Ngược pha: $\\Delta\\varphi=(2k+1)\\pi$.",
-          "answer": true
-        },
-        {
-          "text": "Vuông pha: khoảng cách gần nhất $MN=\\lambda/2$.",
-          "answer": false
-        },
-        {
-          "text": "Cùng pha: $d=(k+0{,}5)\\lambda$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài nêu: cùng pha $d=k\\lambda$ (gần nhất $\\lambda$); ngược pha $\\Delta\\varphi=(2k+1)\\pi$; vuông pha gần nhất $\\lambda/4$."
-    },
-    {
-      "type": "true_false",
-      "kind": "bien_doi",
-      "topic": "Phương trình sóng và đồ thị sóng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Từ phương trình sóng $u=A\\cos(\\omega t-kx)$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$\\omega=\\dfrac{2\\pi}{T}$.",
-          "answer": true
-        },
-        {
-          "text": "$k=\\dfrac{2\\pi}{\\lambda}$ là hệ số đứng trước $x$.",
-          "answer": true
-        },
-        {
-          "text": "Tốc độ truyền sóng tính bằng $v=\\lambda/T$.",
-          "answer": true
-        },
-        {
-          "text": "Tốc độ truyền sóng bằng tốc độ dao động của từng phần tử.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài nêu $\\omega=2\\pi/T$, $k=2\\pi/\\lambda$, $v=\\lambda/T$; tốc độ truyền sóng khác tốc độ dao động của phần tử."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Phương trình sóng và đồ thị sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Bước sóng $\\lambda=4$ m. Hai điểm cùng phương truyền sóng cách nhau $d=2$ m có độ lệch pha $\\Delta\\varphi=a\\pi$ rad. Tìm $a$.",
-      "answer": "1",
-      "explanation": "$\\Delta\\varphi=2\\pi d/\\lambda=2\\pi\\cdot2/4=\\pi$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Sóng có bước sóng $\\lambda=2$ m và tần số $f=5$ Hz. Tốc độ truyền sóng (m/s) là bao nhiêu?",
-      "answer": "10",
-      "explanation": "$v=\\lambda f=2\\cdot5=10$ m/s."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Phương trình sóng và đồ thị sóng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Sóng có bước sóng $\\lambda=8$ cm. Khoảng cách gần nhất (cm) giữa hai điểm dao động ngược pha là bao nhiêu?",
-      "answer": "4",
-      "explanation": "Ngược pha gần nhất $d=\\lambda/2=4$ cm."
+     "text": "Treo lò xo thẳng đứng rồi đẩy – kéo đầu dưới lên xuống thì sóng trở thành sóng ngang.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Các vòng dao động dọc phương truyền nên đây là sóng dọc, gồm vùng nén và vùng dãn. Vòng chỉ tiến – lùi quanh chỗ cũ. Loại sóng không phụ thuộc hướng đặt lò xo so với mặt đất.",
+   "distractorNotes": {
+    "0": "Vòng lò xo dao động trùng phương truyền sóng nên không thể gọi là sóng ngang.",
+    "1": "Vòng băng màu chỉ tiến – lùi quanh chỗ cũ; năng lượng truyền đi còn phần tử ở lại.",
+    "2": "Đây chính là định nghĩa vùng nén (vòng sít lại) và vùng dãn (vòng thưa ra) của sóng dọc.",
+    "3": "Treo thẳng đứng thì dao động vẫn trùng phương truyền, nên vẫn là sóng dọc chứ không thành sóng ngang."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Phân biệt sóng ngang và sóng dọc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một đầu dây nhảy buộc vào cột, dây kéo căng ngang, giữa dây buộc một dải băng màu. Vẩy đầu dây lên xuống một cái thật nhanh thì một \"cái bướu\" chạy dọc dây tới cột.",
+   "statements": [
+    {
+     "text": "Dải băng dao động vuông góc với phương truyền nên sóng trên dây là sóng ngang.",
+     "answer": true
+    },
+    {
+     "text": "Dải băng chạy theo cái bướu tới tận cột.",
+     "answer": false
+    },
+    {
+     "text": "Sóng trên dây đàn cũng là sóng ngang.",
+     "answer": true
+    },
+    {
+     "text": "Sóng điện từ là sóng ngang nên cũng là sóng cơ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Dải băng chỉ nhảy lên rồi rơi về chỗ cũ, theo phương vuông góc phương truyền, nên đây là sóng ngang. Sóng điện từ cũng là sóng ngang nhưng không phải sóng cơ.",
+   "distractorNotes": {
+    "0": "Băng dao động thẳng đứng còn sóng truyền nằm ngang, hai phương vuông góc nên đúng là sóng ngang.",
+    "1": "Dải băng chỉ nhảy lên rồi rơi về chỗ cũ; chỉ năng lượng chạy theo cái bướu.",
+    "2": "Bài lấy sóng trên dây đàn làm ví dụ điển hình của sóng ngang.",
+    "3": "Cùng là sóng ngang không có nghĩa cùng bản chất; sóng điện từ không cần môi trường nên không phải sóng cơ."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Sóng ngang, sóng dọc. Truyền năng lượng của sóng cơ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một điện thoại đang đổ chuông, màn hình sáng, được đặt vào bình kín. Người ta hút dần không khí ra khỏi bình.",
+   "statements": [
+    {
+     "text": "Tiếng chuông nhỏ dần vì càng ít phần tử khí để truyền sóng âm.",
+     "answer": true
+    },
+    {
+     "text": "Vẫn thấy màn hình sáng vì ánh sáng không phải sóng cơ.",
+     "answer": true
+    },
+    {
+     "text": "Sóng âm trong không khí là sóng ngang.",
+     "answer": false
+    },
+    {
+     "text": "Âm có tần số $30\\,000\\ \\text{Hz}$ là hạ âm.",
+     "answer": false
+    }
+   ],
+   "explanation": "Sóng cơ cần môi trường, còn ánh sáng là sóng điện từ nên vẫn truyền qua. Sóng âm trong không khí là sóng dọc. Âm trên $20\\,000\\ \\text{Hz}$ là siêu âm.",
+   "distractorNotes": {
+    "0": "Không khí chính là môi trường truyền âm; bớt phần tử khí thì âm truyền kém đi.",
+    "1": "Ánh sáng là sóng điện từ, truyền được cả trong chân không nên màn hình vẫn nhìn thấy.",
+    "2": "Chất khí chỉ truyền được sóng dọc, nên sóng âm trong không khí không thể là sóng ngang.",
+    "3": "Nhầm hạ âm với siêu âm: hạ âm dưới $16\\ \\text{Hz}$, còn trên $20\\,000\\ \\text{Hz}$ là siêu âm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Sóng ngang, sóng dọc. Truyền năng lượng của sóng cơ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sóng có tốc độ truyền $v$, tần số $f$, chu kì $T$. Bước sóng $\\lambda$ được xác định bằng công thức",
+   "options": [
+    "$\\lambda = vf$",
+    "$\\lambda = \\dfrac{f}{v}$",
+    "$\\lambda = \\dfrac{v}{f}$",
+    "$\\lambda = \\dfrac{v}{T}$"
+   ],
+   "answer": 2,
+   "explanation": "Từ $v = \\lambda f = \\dfrac{\\lambda}{T}$ suy ra $\\lambda = \\dfrac{v}{f} = vT$.",
+   "distractorNotes": {
+    "A": "Từ $v = \\lambda f$ phải chia cho $f$ để rút $\\lambda$, không phải nhân với $f$.",
+    "B": "Đảo tử và mẫu khi rút $\\lambda$ từ $v = \\lambda f$.",
+    "D": "Nhầm vai trò của $T$ và $f$: từ $v = \\dfrac{\\lambda}{T}$ phải suy ra $\\lambda = vT$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Phân biệt sóng ngang và sóng dọc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Sóng dọc có bước sóng $\\lambda$. Khoảng cách giữa hai vùng nén liên tiếp là",
+   "options": [
+    "$\\lambda$",
+    "$\\dfrac{\\lambda}{2}$",
+    "$\\dfrac{\\lambda}{4}$",
+    "$2\\lambda$"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, hai vùng nén liên tiếp cách nhau đúng một bước sóng $\\lambda$.",
+   "distractorNotes": {
+    "B": "Nhầm với khoảng cách giữa vùng nén và vùng dãn gần nhất, vốn chỉ bằng nửa bước sóng.",
+    "C": "Nhầm với khoảng cách gần nhất của hai điểm vuông pha, không phải giữa hai vùng nén.",
+    "D": "Gấp đôi khoảng cách thật, trong khi hai vùng nén liên tiếp chỉ cách nhau một bước sóng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Phân biệt sóng ngang và sóng dọc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một sóng âm trong không khí có vùng nén cách vùng dãn gần nhất một đoạn $d$. Bước sóng của sóng âm là",
+   "options": [
+    "$d$",
+    "$2d$",
+    "$4d$",
+    "$\\dfrac{d}{2}$"
+   ],
+   "answer": 1,
+   "explanation": "Vùng nén và vùng dãn gần nhất cách nhau $\\dfrac{\\lambda}{2}$, nên $\\lambda = 2d$.",
+   "distractorNotes": {
+    "A": "Coi khoảng nén – dãn gần nhất là cả bước sóng, trong khi nó chỉ bằng nửa bước sóng.",
+    "C": "Coi khoảng nén – dãn gần nhất bằng $\\dfrac{\\lambda}{4}$ nên nhân 4, lẫn với khoảng cách vuông pha.",
+    "D": "Biến đổi ngược chiều: từ $d = \\dfrac{\\lambda}{2}$ phải nhân đôi $d$, không chia đôi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong cùng một môi trường và với cùng tần số, biên độ sóng tăng gấp đôi thì năng lượng sóng",
+   "options": [
+    "tăng 2 lần",
+    "không đổi",
+    "tăng $\\sqrt{2}$ lần",
+    "tăng 4 lần"
+   ],
+   "answer": 3,
+   "explanation": "Năng lượng sóng tỉ lệ với $A^2$, nên $A$ gấp đôi thì năng lượng gấp $2^2 = 4$ lần.",
+   "distractorNotes": {
+    "A": "Quên bình phương, coi năng lượng tỉ lệ bậc nhất với biên độ $A$.",
+    "B": "Nghĩ năng lượng chỉ phụ thuộc tần số, bỏ mất sự phụ thuộc vào $A^2$.",
+    "C": "Lấy căn bậc hai của hệ số tăng biên độ thay vì bình phương nó."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong cùng một môi trường, giữ nguyên biên độ và tăng tần số sóng lên gấp ba thì năng lượng sóng",
+   "options": [
+    "tăng 3 lần",
+    "tăng $\\sqrt{3}$ lần",
+    "tăng 9 lần",
+    "tăng 6 lần"
+   ],
+   "answer": 2,
+   "explanation": "Năng lượng sóng tỉ lệ với $f^2$, nên $f$ gấp ba thì năng lượng gấp $3^2 = 9$ lần.",
+   "distractorNotes": {
+    "A": "Quên bình phương, coi năng lượng tỉ lệ bậc nhất với tần số $f$.",
+    "B": "Lấy căn bậc hai của hệ số tăng tần số thay vì bình phương nó.",
+    "D": "Nhân hệ số tăng tần số với 2 thay vì bình phương, nhầm $3 \\times 2$ với $3^2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một nguồn âm nhỏ phát đều theo mọi hướng. Khi khoảng cách tới nguồn tăng gấp đôi thì cường độ âm",
+   "options": [
+    "giảm còn một nửa",
+    "giảm còn một phần tư",
+    "giảm còn một phần tám",
+    "giữ nguyên không đổi"
+   ],
+   "answer": 1,
+   "explanation": "Từ $I = \\dfrac{P}{4\\pi r^2}$, $r$ gấp đôi thì $I$ còn $\\dfrac{1}{4}$.",
+   "distractorNotes": {
+    "A": "Coi $I$ tỉ lệ nghịch với $r$, quên bình phương trong diện tích mặt cầu $4\\pi r^2$.",
+    "C": "Coi năng lượng trải theo thể tích $r^3$, trong khi nó trải trên mặt cầu tỉ lệ $r^2$.",
+    "D": "Quên rằng công suất không đổi nhưng trải trên diện tích lớn hơn nên cường độ phải giảm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị của cường độ sóng trong hệ SI là",
+   "options": [
+    "$\\text{W/m}^2$",
+    "$\\text{W}\\cdot\\text{m}^2$",
+    "$\\text{J/m}$",
+    "$\\text{W}$"
+   ],
+   "answer": 0,
+   "explanation": "Cường độ sóng $I = \\dfrac{P}{S}$ là công suất chia cho diện tích, nên có đơn vị $\\text{W/m}^2$.",
+   "distractorNotes": {
+    "B": "Nhân công suất với diện tích thay vì chia, làm sai công thức $I = \\dfrac{P}{S}$.",
+    "C": "Chia năng lượng cho độ dài, bỏ qua yếu tố thời gian và diện tích vuông góc phương truyền.",
+    "D": "Lẫn cường độ với công suất sóng $P$, chưa chia cho diện tích $S$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Sóng ngang, sóng dọc. Truyền năng lượng của sóng cơ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Loa phát âm tần số $680\\ \\text{Hz}$ truyền trong không khí với tốc độ $340\\ \\text{m/s}$. Âm này truyền vào nước bể bơi, tốc độ trong nước là $1500\\ \\text{m/s}$.",
+   "statements": [
+    {
+     "text": "Tần số của âm trong nước vẫn bằng tần số của nguồn.",
+     "answer": true
+    },
+    {
+     "text": "Vì tốc độ tăng nên bước sóng trong nước lớn hơn bước sóng trong không khí.",
+     "answer": true
+    },
+    {
+     "text": "Bước sóng không đổi khi sang nước vì bước sóng do nguồn quyết định.",
+     "answer": false
+    },
+    {
+     "text": "Bước sóng trong nước tính bằng $\\lambda' = v' f$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Khi sóng sang môi trường khác, $f$ giữ nguyên theo nguồn còn $v$ đổi, nên $\\lambda = \\dfrac{v}{f}$ đổi theo. Trong nước $v$ lớn hơn nên $\\lambda$ lớn hơn.",
+   "distractorNotes": {
+    "0": "Tần số do nguồn quyết định nên giữ nguyên khi sóng chuyển sang môi trường khác.",
+    "1": "Với $f$ giữ nguyên, $\\lambda = \\dfrac{v}{f}$ tăng theo $v$, nên bước sóng trong nước lớn hơn.",
+    "2": "Nguồn quyết định tần số chứ không quyết định bước sóng; $\\lambda$ thay đổi theo tốc độ $v$.",
+    "3": "Rút sai từ $v = \\lambda f$: phải chia cho tần số, $\\lambda' = \\dfrac{v'}{f}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Sóng truyền năng lượng, không truyền phần tử môi trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một loa thùng đặt sát cửa kính, tiếng bass làm kính rung lạch cạch. Xét năng lượng mà sóng âm truyền tới kính.",
+   "statements": [
+    {
+     "text": "Cường độ sóng $I = \\dfrac{P}{S}$, với $S$ là diện tích vuông góc với phương truyền.",
+     "answer": true
+    },
+    {
+     "text": "Với nguồn nhỏ phát đều mọi hướng, $I = \\dfrac{P}{4\\pi r^2}$.",
+     "answer": true
+    },
+    {
+     "text": "Với nguồn nhỏ, cường độ âm tỉ lệ nghịch với khoảng cách $r$.",
+     "answer": false
+    },
+    {
+     "text": "Trong cùng môi trường, năng lượng sóng tỉ lệ với $A$ và không phụ thuộc $f$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Cường độ sóng là năng lượng qua một đơn vị diện tích vuông góc phương truyền trong một đơn vị thời gian. Với nguồn nhỏ, $I$ tỉ lệ nghịch với $r^2$. Năng lượng sóng tỉ lệ với $A^2$ và $f^2$.",
+   "distractorNotes": {
+    "0": "Đây đúng là định nghĩa cường độ sóng: công suất qua diện tích vuông góc với phương truyền.",
+    "1": "Năng lượng của nguồn nhỏ trải đều trên mặt cầu diện tích $4\\pi r^2$, nên công thức này đúng.",
+    "2": "Quên bình phương: $I = \\dfrac{P}{4\\pi r^2}$ tỉ lệ nghịch với $r^2$, không phải với $r$.",
+    "3": "Năng lượng tỉ lệ $A^2$ chứ không tỉ lệ $A$, và còn tỉ lệ với $f^2$ nên phụ thuộc tần số."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Sóng ngang, sóng dọc. Truyền năng lượng của sóng cơ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điểm M và N cách nhau một đoạn $d$, nằm trên cùng một phương truyền sóng có bước sóng $\\lambda$.",
+   "statements": [
+    {
+     "text": "Độ lệch pha giữa M và N là $\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda}$.",
+     "answer": true
+    },
+    {
+     "text": "M và N dao động cùng pha khi $d = k\\lambda$ với $k$ nguyên; khoảng cách gần nhất là $\\lambda$.",
+     "answer": true
+    },
+    {
+     "text": "Hai điểm dao động ngược pha gần nhau nhất cách nhau $\\dfrac{\\lambda}{4}$.",
+     "answer": false
+    },
+    {
+     "text": "Sóng truyền từ điểm dao động trễ pha hơn sang điểm dao động sớm pha hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Theo bài, $\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda}$. Cùng pha khi $d = k\\lambda$; ngược pha gần nhất cách $\\dfrac{\\lambda}{2}$. Sóng truyền từ điểm sớm pha sang điểm trễ pha.",
+   "distractorNotes": {
+    "0": "Đây đúng là công thức độ lệch pha giữa hai điểm cách nhau $d$ trên cùng phương truyền.",
+    "1": "$\\Delta\\varphi = k2\\pi$ tương ứng $d = k\\lambda$, gần nhất khi $k = 1$ nên ý này đúng.",
+    "2": "$\\dfrac{\\lambda}{4}$ là khoảng cách gần nhất của hai điểm vuông pha; hai điểm ngược pha gần nhất cách $\\dfrac{\\lambda}{2}$.",
+    "3": "Đảo chiều truyền: sóng tới điểm nào trước thì điểm đó sớm pha, nên sóng đi từ sớm pha sang trễ pha."
+   }
+  }
+ ]
 }

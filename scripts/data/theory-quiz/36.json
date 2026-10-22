@@ -2,8 +2,8 @@
  "lesson_id": 36,
  "lesson_title": "Bài 17. Khái niệm điện trường",
  "item_id": 189,
- "generated_at": "2026-10-02",
- "generated_by": "claude-code",
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
@@ -17,36 +17,186 @@
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Cường độ điện trường của điện tích điểm",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "question": "Điện trường là gì?",
-   "explanation": "Bài nêu: điện trường là dạng vật chất tồn tại xung quanh điện tích, truyền tương tác giữa các điện tích.",
+   "theorySection": 1,
+   "question": "Điện trường là",
    "options": [
-    "Dạng vật chất tồn tại xung quanh điện tích và truyền tương tác giữa các điện tích",
-    "Một đường tưởng tượng nối các điện tích với nhau",
-    "Lực tác dụng giữa hai điện tích đứng yên",
-    "Dòng các hạt mang điện chuyển động có hướng"
+    "dạng vật chất tồn tại quanh điện tích và truyền tương tác điện",
+    "lớp không khí bao quanh vật nhiễm điện và truyền tương tác điện",
+    "dạng vật chất chỉ tồn tại quanh các điện tích đang chuyển động",
+    "khoảng chân không giữa hai điện tích, không chứa vật chất nào"
    ],
-   "answer": 0
+   "answer": 0,
+   "explanation": "Bài nêu: điện trường là dạng vật chất tồn tại quanh điện tích, do điện tích tạo ra và truyền tương tác giữa các điện tích.",
+   "distractorNotes": {
+    "B": "Nhầm điện trường với lớp không khí quanh vật, trong khi điện trường vẫn tồn tại và truyền lực cả trong chân không.",
+    "C": "Nghĩ chỉ điện tích chuyển động mới tạo điện trường, quên rằng điện tích đứng yên tạo ra điện trường tĩnh.",
+    "D": "Cho rằng không nhìn thấy thì không có vật chất, trong khi điện trường là dạng vật chất thật và mang năng lượng."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "hien_tuong",
+   "kind": "dinh_nghia",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tính chất cơ bản của điện trường là",
+   "options": [
+    "tác dụng lực từ lên nam châm đặt trong nó",
+    "tác dụng lực điện lên điện tích đặt trong nó",
+    "tác dụng lực hấp dẫn lên vật đặt trong nó",
+    "làm nóng các vật dẫn điện đặt trong nó"
+   ],
+   "answer": 1,
+   "explanation": "Tính chất cơ bản của điện trường là tác dụng lực điện lên điện tích khác đặt trong nó.",
+   "distractorNotes": {
+    "A": "Nhầm điện trường với từ trường; lực tác dụng lên nam châm là lực từ.",
+    "C": "Nhầm lực điện với lực hấp dẫn, vốn do khối lượng gây ra chứ không do điện tích.",
+    "D": "Lấy tác dụng nhiệt làm tính chất cơ bản, trong khi điện trường được nhận biết qua lực điện lên điện tích."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị của cường độ điện trường trong hệ SI là",
+   "options": [
+    "N/m",
+    "C/N",
+    "V/m",
+    "V·m"
+   ],
+   "answer": 2,
+   "explanation": "Từ $E=F/q$, đơn vị là N/C, bằng V/m.",
+   "distractorNotes": {
+    "A": "Nhầm mẫu số: $E=F/q$ chia lực cho điện tích (C), không chia cho chiều dài (m).",
+    "B": "Đảo tử và mẫu của N/C khi suy đơn vị từ $E=F/q$.",
+    "D": "Nhớ có vôn và mét nhưng lấy tích thay vì thương của hai đơn vị."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
    "topic": "Cường độ điện trường của điện tích điểm",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "question": "Tính chất cơ bản của điện trường là gì?",
-   "explanation": "Tính chất cơ bản của điện trường là tác dụng lực điện lên các điện tích đặt trong nó.",
+   "theorySection": 1,
+   "question": "Độ lớn cường độ điện trường do điện tích điểm $Q$ gây ra tại điểm cách nó một khoảng $r$, trong môi trường có hằng số điện môi $\\varepsilon$, là",
    "options": [
-    "Làm nóng các vật đặt trong nó",
-    "Tác dụng lực điện lên các điện tích khác đặt trong nó",
-    "Làm các điện tích đứng yên mất điện",
-    "Làm các vật trung hoà bị phân rã"
+    "$E=k\\dfrac{|Q|}{\\varepsilon r}$",
+    "$E=k\\dfrac{\\varepsilon|Q|}{r^2}$",
+    "$E=k\\dfrac{|Q|\\,r^2}{\\varepsilon}$",
+    "$E=k\\dfrac{|Q|}{\\varepsilon r^2}$"
    ],
-   "answer": 1
+   "answer": 3,
+   "explanation": "Bài cho $E=k\\dfrac{|Q|}{\\varepsilon r^2}$: $E$ giảm theo bình phương khoảng cách và giảm $\\varepsilon$ lần trong điện môi.",
+   "distractorNotes": {
+    "A": "Quên bình phương khoảng cách, coi $E$ chỉ tỉ lệ nghịch bậc nhất với $r$.",
+    "B": "Đặt $\\varepsilon$ lên tử số, trái với thực tế là điện môi làm điện trường yếu đi $\\varepsilon$ lần.",
+    "C": "Đặt $r^2$ lên tử số, khiến điện trường mạnh lên khi ra xa điện tích, trái với thực tế."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Cường độ điện trường của điện tích điểm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên điện tích điểm $Q$ và môi trường. Khoảng cách từ điểm M tới $Q$ tăng gấp đôi thì cường độ điện trường tại M",
+   "options": [
+    "giảm 4 lần",
+    "giảm 2 lần",
+    "tăng 4 lần",
+    "tăng 2 lần"
+   ],
+   "answer": 0,
+   "explanation": "$E$ tỉ lệ nghịch với $r^2$, nên $r$ gấp đôi thì $E$ còn một phần tư.",
+   "distractorNotes": {
+    "B": "Quên bình phương, coi $E$ tỉ lệ nghịch bậc nhất với $r$.",
+    "C": "Coi $E$ tỉ lệ thuận với $r^2$, quên rằng càng xa điện tích thì điện trường càng yếu.",
+    "D": "Vừa quên bình phương $r$, vừa đảo chiều biến thiên, trong khi ra xa hơn thì $E$ phải giảm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tại điểm M, vectơ cường độ điện trường hướng thẳng đứng lên trên. Đặt tại M một điện tích âm thì lực điện tác dụng lên nó",
+   "options": [
+    "hướng thẳng đứng lên trên",
+    "hướng thẳng đứng xuống dưới",
+    "nằm ngang, vuông góc với $\\vec E$",
+    "bằng 0 vì điện tích mang dấu âm"
+   ],
+   "answer": 1,
+   "explanation": "$\\vec F=q\\vec E$ với $q\\lt 0$ nên $\\vec F$ cùng phương và ngược chiều $\\vec E$, tức hướng xuống.",
+   "distractorNotes": {
+    "A": "Quên dấu của điện tích: lực cùng chiều $\\vec E$ chỉ đúng khi điện tích dương.",
+    "C": "Đổi cả phương của lực, trong khi $\\vec F=q\\vec E$ luôn cùng phương với $\\vec E$.",
+    "D": "Hiểu dấu âm làm triệt tiêu lực, trong khi dấu chỉ quyết định chiều và độ lớn $F=|q|E$ khác 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Tại điểm M, điện tích thử $q$ chịu lực điện $F$. Thay bằng điện tích thử cùng dấu, độ lớn bằng một nửa, đặt đúng tại M. Kết luận nào đúng?",
+   "options": [
+    "Lực không đổi, cường độ điện trường tăng gấp đôi",
+    "Lực giảm một nửa, cường độ điện trường giảm một nửa",
+    "Lực giảm một nửa, cường độ điện trường không đổi",
+    "Lực giảm 4 lần, cường độ điện trường không đổi"
+   ],
+   "answer": 2,
+   "explanation": "$E$ tại M do điện tích nguồn quyết định nên không đổi. $F=|q|E$ tỉ lệ với $q$ nên giảm một nửa.",
+   "distractorNotes": {
+    "A": "Đọc $E=F/q$ như quan hệ nhân quả, nghĩ $q$ giảm thì $E$ tăng; thực ra $E$ do điện tích nguồn quyết định.",
+    "B": "Cho rằng điện tích thử làm thay đổi điện trường tại chính nơi nó được đặt.",
+    "D": "Lẫn với quy luật bình phương khoảng cách, trong khi $r$ giữ nguyên và $F$ tỉ lệ bậc nhất với $q$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Cường độ điện trường tại một điểm do một điện tích nguồn gây ra",
+   "options": [
+    "tỉ lệ nghịch với độ lớn điện tích thử đặt tại đó",
+    "chỉ xuất hiện khi có điện tích thử đặt tại đó",
+    "đổi chiều khi đổi dấu điện tích thử đặt tại đó",
+    "không phụ thuộc vào điện tích thử đặt tại đó"
+   ],
+   "answer": 3,
+   "explanation": "$E$ do điện tích nguồn và vị trí điểm xét quyết định, có sẵn kể cả khi chưa đặt $q$, và không phụ thuộc điện tích thử.",
+   "distractorNotes": {
+    "A": "Đọc $E=F/q$ như thể $E$ bị chia cho $q$, quên rằng $F$ cũng tỉ lệ với $q$.",
+    "B": "Nhầm điện trường với lực điện: chỉ lực mới cần điện tích thử, còn điện trường có sẵn quanh điện tích nguồn.",
+    "C": "Đổi dấu điện tích thử chỉ làm lực đổi chiều; $\\vec E$ do điện tích nguồn quyết định nên giữ nguyên."
+   }
   },
   {
    "type": "multiple_choice",
@@ -55,69 +205,241 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "question": "Điện trường tĩnh là điện trường do",
-   "explanation": "Điện trường tĩnh là điện trường do các điện tích đứng yên gây ra.",
+   "theorySection": 1,
+   "question": "Vectơ cường độ điện trường do điện tích điểm $Q\\lt 0$ gây ra tại điểm M có",
    "options": [
-    "các điện tích chuyển động đều gây ra",
-    "các điện tích đứng yên gây ra",
-    "dòng điện không đổi gây ra",
-    "các vật trung hoà về điện gây ra"
+    "phương là đường nối $Q$ với M, chiều hướng về phía $Q$",
+    "phương là đường nối $Q$ với M, chiều hướng ra xa $Q$",
+    "phương vuông góc đường nối $Q$ với M, chiều tuỳ ý",
+    "phương là đường nối $Q$ với M, chiều tuỳ điện tích thử"
    ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Cường độ điện trường của điện tích điểm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Đặt điện tích thử $q<0$ trong điện trường có vector cường độ $\\vec{E}$. Lực điện $\\vec{F}$ tác dụng lên $q$ có hướng thế nào so với $\\vec{E}$?",
-   "explanation": "Bài nêu: nếu $q<0$ thì $\\vec{F}\\uparrow \\downarrow \\vec{E}$.",
-   "options": [
-    "Cùng phương, cùng chiều với $\\vec{E}$",
-    "Cùng phương, ngược chiều với $\\vec{E}$",
-    "Vuông góc với $\\vec{E}$",
-    "Hợp với $\\vec{E}$ một góc bất kì"
-   ],
-   "answer": 1
+   "answer": 0,
+   "explanation": "Phương của $\\vec E$ là đường nối $Q$ với điểm xét. $Q\\gt 0$ thì $\\vec E$ hướng ra xa, $Q\\lt 0$ thì hướng về phía $Q$.",
+   "distractorNotes": {
+    "B": "Áp quy tắc của điện tích dương cho $Q\\lt 0$, trong khi điện tích âm tạo $\\vec E$ hướng về phía nó.",
+    "C": "Đặt sai phương: $\\vec E$ của điện tích điểm luôn nằm trên đường nối điện tích với điểm xét.",
+    "D": "Gắn chiều $\\vec E$ với điện tích thử, trong khi chỉ dấu của điện tích nguồn quyết định chiều."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Cường độ điện trường của điện tích điểm",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Đường sức điện là đường mà",
-   "explanation": "Đường sức điện có tiếp tuyến tại mỗi điểm là giá của $\\vec{E}$ tại điểm đó.",
+   "theorySection": 1,
+   "question": "Phát biểu nào sau đây về đường sức điện của điện trường tĩnh là đúng?",
    "options": [
-    "tiếp tuyến tại mỗi điểm của nó là giá của vector cường độ điện trường tại điểm đó",
-    "điện tích thử luôn chuyển động dọc theo nó với vận tốc không đổi",
-    "có hình tròn bao quanh điện tích",
-    "nối hai điện tích cùng dấu với nhau"
+    "Các đường sức có thể cắt nhau tại nơi điện trường mạnh",
+    "Chỗ đường sức mau thì cường độ điện trường lớn",
+    "Các đường sức là những đường cong khép kín",
+    "Đường sức đi vào điện tích dương, ra từ điện tích âm"
    ],
-   "answer": 0
+   "answer": 1,
+   "explanation": "Chỗ $E$ lớn thì đường sức mau, chỗ $E$ nhỏ thì đường sức thưa. Các đường sức không cắt nhau, không khép kín và đi ra từ điện tích dương.",
+   "distractorNotes": {
+    "A": "Nghĩ đường sức có thể cắt nhau chỗ dày, nhưng khi đó tại giao điểm $\\vec E$ có hai hướng, điều này vô lí.",
+    "C": "Nhầm với đường khép kín, trong khi đường sức điện tĩnh có điểm đầu ở điện tích dương và điểm cuối ở điện tích âm.",
+    "D": "Đảo chiều đường sức: đường sức đi ra từ điện tích dương và đi vào điện tích âm."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Cường độ điện trường của điện tích điểm",
+   "kind": "cong_thuc",
+   "topic": "Nguyên lí chồng chất điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tại điểm M, hai điện tích gây ra hai vectơ cường độ điện trường $\\vec E_1$ và $\\vec E_2$ vuông góc với nhau. Độ lớn cường độ điện trường tổng hợp tại M là",
+   "options": [
+    "$E=E_1+E_2$",
+    "$E=|E_1-E_2|$",
+    "$E=\\sqrt{E_1^2+E_2^2}$",
+    "$E=E_1^2+E_2^2$"
+   ],
+   "answer": 2,
+   "explanation": "Theo quy tắc hình bình hành, hai vectơ vuông góc cho $E=\\sqrt{E_1^2+E_2^2}$.",
+   "distractorNotes": {
+    "A": "Cộng số hai độ lớn trong mọi trường hợp, cách này chỉ đúng khi hai vectơ cùng chiều.",
+    "B": "Dùng công thức của trường hợp ngược chiều cho hai vectơ vuông góc.",
+    "D": "Quên lấy căn bậc hai khi áp quy tắc hình bình hành, kết quả sai cả đơn vị."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Nguyên lí chồng chất điện trường",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Đường sức của điện trường tĩnh có đặc điểm nào sau đây?",
-   "explanation": "Đường sức điện tĩnh không khép kín, đi ra từ điện tích dương và kết thúc ở điện tích âm; các đường sức không cắt nhau.",
+   "question": "Tại điểm M có hai vectơ cường độ điện trường cùng độ lớn $E_1$, hợp với nhau góc $\\alpha$. Độ lớn cường độ điện trường tổng hợp là",
    "options": [
-    "Là đường khép kín",
-    "Đi ra từ điện tích âm và kết thúc ở điện tích dương",
-    "Đi ra từ điện tích dương và kết thúc ở điện tích âm",
-    "Có thể cắt nhau tại điểm có điện trường mạnh"
+    "$E=2E_1\\cos\\alpha$",
+    "$E=2E_1\\sin\\dfrac{\\alpha}{2}$",
+    "$E=E_1\\cos\\dfrac{\\alpha}{2}$",
+    "$E=2E_1\\cos\\dfrac{\\alpha}{2}$"
    ],
-   "answer": 2
+   "answer": 3,
+   "explanation": "Bảng tổng hợp trong bài cho trường hợp $E_1=E_2$: $E=2E_1\\cos\\dfrac{\\alpha}{2}$.",
+   "distractorNotes": {
+    "A": "Quên chia đôi góc: với $\\alpha=90^\\circ$ công thức cho $E=0$ thay vì $\\sqrt{2}E_1$.",
+    "B": "Dùng sin thay cos: với $\\alpha=0$ hai vectơ cùng chiều mà công thức lại cho $E=0$.",
+    "C": "Thiếu hệ số 2: với $\\alpha=0$ công thức không cho $2E_1$ như khi cộng hai vectơ cùng chiều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Nguyên lí chồng chất điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đặt hai điện tích $+Q$ bằng nhau tại A và B. M là trung điểm AB, mỗi điện tích gây ra tại M điện trường có độ lớn $E_1$. Cường độ điện trường tổng hợp tại M",
+   "options": [
+    "bằng $0$",
+    "bằng $2E_1$",
+    "bằng $\\sqrt{2}E_1$",
+    "bằng $E_1$"
+   ],
+   "answer": 0,
+   "explanation": "$\\vec E_1$ hướng ra xa A và $\\vec E_2$ hướng ra xa B, nên tại M hai vectơ ngược chiều và cùng độ lớn, triệt tiêu nhau.",
+   "distractorNotes": {
+    "B": "Cộng độ lớn mà không vẽ chiều, trong khi hai điện tích dương gây tại M hai vectơ ngược hướng nhau.",
+    "C": "Áp công thức vuông góc theo thói quen, trong khi tại trung điểm hai vectơ cùng phương.",
+    "D": "Hai vectơ cùng phương, cùng độ lớn chỉ cộng ra $0$ hoặc $2E_1$, không thể ra $E_1$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Cường độ điện trường của điện tích điểm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên điện tích điểm $Q$ và khoảng cách $r$, chuyển từ không khí sang dầu có hằng số điện môi $\\varepsilon=2$. Cường độ điện trường tại điểm xét",
+   "options": [
+    "tăng 2 lần",
+    "giảm 2 lần",
+    "giảm 4 lần",
+    "không đổi"
+   ],
+   "answer": 1,
+   "explanation": "$E=k\\dfrac{|Q|}{\\varepsilon r^2}$, nên trong điện môi $E$ nhỏ hơn trong không khí $\\varepsilon$ lần, tức giảm 2 lần.",
+   "distractorNotes": {
+    "A": "Đặt $\\varepsilon$ lên tử số, quên rằng điện môi làm điện trường yếu đi.",
+    "C": "Bình phương nhầm $\\varepsilon$, trong khi trong mẫu số chỉ có $r$ được bình phương.",
+    "D": "Bỏ qua ảnh hưởng của môi trường, coi $\\varepsilon$ luôn bằng 1."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Cọ thước nhựa vào tóc rồi đưa lại gần mẩu giấy vụn. Thước chưa chạm vào, giấy đã bật lên dính vào thước. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Lực tác dụng lên giấy được truyền qua điện trường quanh thước.",
+     "answer": true
+    },
+    {
+     "text": "Điện trường quanh thước chỉ xuất hiện khi có mẩu giấy ở gần.",
+     "answer": false
+    },
+    {
+     "text": "Điện trường do các điện tích đứng yên gây ra gọi là điện trường tĩnh.",
+     "answer": true
+    },
+    {
+     "text": "Giấy bị hút chủ yếu do lực hấp dẫn giữa thước và giấy tăng lên khi cọ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Điện tích trên thước tạo ra điện trường, và điện trường này tác dụng lực lên giấy. Điện trường có sẵn quanh thước. Lực hấp dẫn giữa hai vật nhẹ nhỏ không đáng kể và không tăng khi cọ.",
+   "distractorNotes": {
+    "0": "Giấy bật lên khi chưa chạm thước, nên lực phải truyền qua thứ gì đó quanh thước, chính là điện trường.",
+    "1": "Điện trường do điện tích trên thước tạo ra và gắn liền với điện tích đó, nên có sẵn dù không có giấy.",
+    "2": "Phát biểu này đúng với định nghĩa trong bài: điện trường tĩnh do các điện tích đứng yên gây ra.",
+    "3": "Cọ xát làm thước nhiễm điện chứ không đổi khối lượng; lực hấp dẫn giữa hai vật nhẹ nhỏ hơn hàng tỉ lần lực quan sát được."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Rắc bột hạt cách điện vào khay dầu, cắm hai điện cực trái dấu nối với máy phát tĩnh điện. Các hạt xếp thành chuỗi nối hai điện cực. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hình ảnh các chuỗi hạt (điện phổ) cho thấy dạng đường sức điện.",
+     "answer": true
+    },
+    {
+     "text": "Gần điện cực các chuỗi hạt mau hơn vì ở đó điện trường mạnh hơn.",
+     "answer": true
+    },
+    {
+     "text": "Hai đường sức có thể cắt nhau tại một điểm nằm giữa hai điện cực.",
+     "answer": false
+    },
+    {
+     "text": "Đường sức điện chính là quỹ đạo mà mọi điện tích luôn chuyển động theo.",
+     "answer": false
+    }
+   ],
+   "explanation": "Điện phổ cho thấy dạng đường sức, và chỗ đường sức mau thì điện trường mạnh. Các đường sức không cắt nhau. Đường sức chỉ cho biết hướng lực, không phải quỹ đạo của điện tích.",
+   "distractorNotes": {
+    "0": "Bài khẳng định điện phổ chính là hình ảnh cho thấy dạng đường sức điện.",
+    "1": "Theo quy ước, chỗ đường sức mau ứng với điện trường mạnh, và gần điện cực thì $E$ lớn.",
+    "2": "Tại một điểm $\\vec E$ chỉ có một hướng, nên qua mỗi điểm chỉ có một đường sức.",
+    "3": "Đường sức chỉ cho biết hướng lực; quỹ đạo còn phụ thuộc vận tốc ban đầu nên thường lệch khỏi đường sức."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Khái niệm điện trường. Cường độ điện trường",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dùng cân điện tử đo lực điện do quả cầu tích điện $Q$ tác dụng lên quả cầu nhỏ mang điện tích thử $q$ đặt cách nó một khoảng cố định, rồi tính $E=F/q$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Giảm điện tích thử $q$ còn một nửa thì lực điện đo được giảm một nửa.",
+     "answer": true
+    },
+    {
+     "text": "Giảm điện tích thử $q$ còn một nửa thì cường độ điện trường tính được tăng gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Điện tích thử cần đủ nhỏ để không làm thay đổi điện trường cần đo.",
+     "answer": true
+    },
+    {
+     "text": "Bỏ điện tích thử đi thì tại điểm đó không còn điện trường.",
+     "answer": false
+    }
+   ],
+   "explanation": "$F=|q|E$ nên $F$ tỉ lệ với $q$, còn $E$ do $Q$ và vị trí quyết định. Điện trường có sẵn kể cả khi chưa đặt $q$. Điện tích thử phải đủ nhỏ để không làm đổi điện trường cần đo.",
+   "distractorNotes": {
+    "0": "$E$ tại điểm đó không đổi, nên $F=|q|E$ tỉ lệ thuận với $q$ và phải giảm một nửa.",
+    "1": "Đọc $E=F/q$ như quan hệ nhân quả; thực tế $F$ giảm cùng tỉ lệ với $q$ nên $E$ giữ nguyên.",
+    "2": "Điện tích thử lớn sẽ làm thay đổi điện trường cần đo, nên nó phải đủ nhỏ.",
+    "3": "Nhầm điện trường với lực điện; điện trường do $Q$ tạo ra vẫn tồn tại khi không có $q$."
+   }
   },
   {
    "type": "true_false",
@@ -127,178 +449,67 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Xét các phát biểu về đường sức điện:",
-   "explanation": "Đường sức không cắt nhau, mau thì E lớn, thưa thì E nhỏ; đường sức điện tĩnh không khép kín.",
+   "question": "Một điện tích điểm $Q\\gt 0$ đặt trong không khí. Xét điểm M cách $Q$ một khoảng $r$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Các đường sức điện không cắt nhau.",
+     "text": "Vectơ cường độ điện trường tại M hướng ra xa $Q$.",
      "answer": true
     },
     {
-     "text": "Nơi đường sức mau (dày) thì cường độ điện trường lớn.",
-     "answer": true
-    },
-    {
-     "text": "Đường sức điện của điện trường tĩnh là đường khép kín.",
+     "text": "Đặt một electron tại M thì lực điện lên nó hướng ra xa $Q$.",
      "answer": false
     },
     {
-     "text": "Nơi đường sức thưa thì cường độ điện trường nhỏ.",
-     "answer": true
-    }
-   ]
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Cường độ điện trường của điện tích điểm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Xét vector cường độ điện trường do điện tích điểm $Q$ gây ra tại điểm $M$:",
-   "explanation": "Bài nêu: điểm đặt tại điểm xét, phương là đường nối $Q$ và $M$, chiều ra xa $Q$ nếu $Q>0$ và hướng về $Q$ nếu $Q<0$.",
-   "statements": [
-    {
-     "text": "Phương của $\\vec{E}$ là đường thẳng nối $Q$ và $M$.",
+     "text": "Mọi điểm cách đều $Q$ một khoảng $r$ có cường độ điện trường bằng nhau về độ lớn.",
      "answer": true
     },
     {
-     "text": "Nếu $Q>0$ thì $\\vec{E}$ hướng ra xa $Q$.",
-     "answer": true
-    },
-    {
-     "text": "Nếu $Q<0$ thì $\\vec{E}$ hướng ra xa $Q$.",
+     "text": "Vectơ cường độ điện trường tại M vuông góc với đường nối $Q$ và M.",
      "answer": false
-    },
-    {
-     "text": "Điểm đặt của $\\vec{E}$ là tại điểm $M$ đang xét.",
-     "answer": true
     }
-   ]
-  },
-  {
-   "type": "short_answer",
-   "kind": "hien_tuong",
-   "topic": "Cường độ điện trường của điện tích điểm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Tại mỗi điểm trong điện trường vẽ được bao nhiêu đường sức điện đi qua? (nhập một số)",
-   "explanation": "Bài nêu: tại mỗi điểm chỉ vẽ được một và chỉ một đường sức đi qua.",
-   "answer": "1"
-  },
-  {
-   "type": "short_answer",
-   "kind": "dieu_kien",
-   "topic": "Cường độ điện trường của điện tích điểm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Hằng số điện môi $\\varepsilon$ của chân không (và không khí) xấp xỉ bằng bao nhiêu?",
-   "explanation": "Bài nêu: với chân không và không khí $\\varepsilon \\approx 1$.",
-   "answer": "1"
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Cường độ điện trường của điện tích điểm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Độ lớn cường độ điện trường do điện tích điểm $Q$ gây ra tại điểm cách nó khoảng $r$ trong môi trường có hằng số điện môi $\\varepsilon$ là",
-   "explanation": "Công thức trong bài: $E=k\\dfrac{\\left| Q \\right|}{\\varepsilon r^{2}}$.",
-   "options": [
-    "$E=k\\dfrac{\\left| Q \\right|}{\\varepsilon r^{2}}$",
-    "$E=k\\dfrac{\\left| Q \\right|}{\\varepsilon r}$",
-    "$E=k\\dfrac{\\varepsilon r^{2}}{\\left| Q \\right|}$",
-    "$E=k\\dfrac{\\left| Q \\right|r^{2}}{\\varepsilon}$"
    ],
-   "answer": 0
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "don_vi",
-   "topic": "Cường độ điện trường của điện tích điểm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Đơn vị nào sau đây là đơn vị của cường độ điện trường?",
-   "explanation": "Cường độ điện trường có đơn vị V/m hay N/C.",
-   "options": [
-    "N.C",
-    "N/C",
-    "C/N",
-    "N.m²/C²"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Cường độ điện trường của điện tích điểm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Biết cường độ điện trường tại một điểm là $E$. Độ lớn lực điện tác dụng lên điện tích thử $q$ đặt tại điểm đó là",
-   "explanation": "Từ $\\vec{E}=\\dfrac{\\vec{F}}{q}$ suy ra $F=\\left| q \\right|E$.",
-   "options": [
-    "$F=\\dfrac{E}{\\left| q \\right|}$",
-    "$F=\\left| q \\right|E$",
-    "$F=\\dfrac{\\left| q \\right|}{E}$",
-    "$F=\\left| q \\right|E^{2}$"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Nguyên lí chồng chất điện trường",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hai điện trường thành phần có cùng độ lớn $E_{1}$, vector hợp với nhau góc $\\alpha$. Độ lớn điện trường tổng hợp là",
-   "explanation": "Bài nêu: khi $E_{1}=E_{2}$ thì $E=2E_{1}\\cos\\left( \\dfrac{\\alpha }{2} \\right)$.",
-   "options": [
-    "$E=2E_{1}\\cos\\left( \\dfrac{\\alpha }{2} \\right)$",
-    "$E=2E_{1}\\sin\\left( \\dfrac{\\alpha }{2} \\right)$",
-    "$E=2E_{1}\\cos\\alpha$",
-    "$E=E_{1}\\cos\\left( \\dfrac{\\alpha }{2} \\right)$"
-   ],
-   "answer": 0
+   "explanation": "$Q\\gt 0$ nên $\\vec E$ hướng ra xa $Q$ dọc theo đường nối $Q$ với M. Electron mang điện âm nên chịu lực ngược chiều $\\vec E$, tức hướng về phía $Q$. Độ lớn $E$ chỉ phụ thuộc $r$.",
+   "distractorNotes": {
+    "0": "Điện tích nguồn dương luôn gây ra $\\vec E$ hướng ra xa nó.",
+    "1": "Electron mang điện âm nên lực lên nó ngược chiều $\\vec E$, tức hướng về phía $Q$.",
+    "2": "$E=k\\dfrac{|Q|}{r^2}$ chỉ phụ thuộc $r$, nên mọi điểm cùng khoảng cách có cùng độ lớn $E$.",
+    "3": "Phương của $\\vec E$ trùng với đường nối điện tích và điểm xét, không vuông góc với đường đó."
+   }
   },
   {
    "type": "true_false",
    "kind": "cong_thuc",
    "topic": "Nguyên lí chồng chất điện trường",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Tổng hợp hai vector cường độ điện trường $\\vec{E}_{1}$ và $\\vec{E}_{2}$:",
-   "explanation": "Vuông góc thì $E=\\sqrt{E_{1}^{2}+E_{2}^{2}}$; các ý còn lại đúng theo bảng tổng hợp.",
+   "theorySection": 4,
+   "question": "Trong không khí, đặt $q_1\\gt 0$ tại A và $q_2\\lt 0$ tại B, với $AB=5$ cm. Điểm M cách A 3 cm, cách B 4 cm. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Cùng phương, cùng chiều thì $E=E_{1}+E_{2}$.",
+     "text": "Tam giác AMB vuông tại M nên $\\vec E_1$ vuông góc với $\\vec E_2$.",
      "answer": true
     },
     {
-     "text": "Cùng phương, ngược chiều thì $E=\\left| E_{1}-E_{2} \\right|$.",
-     "answer": true
-    },
-    {
-     "text": "Vuông góc nhau thì $E=E_{1}+E_{2}$.",
+     "text": "Độ lớn điện trường tổng hợp tại M là $E=E_1+E_2$.",
      "answer": false
     },
     {
-     "text": "Hợp góc $\\alpha$ thì $E^{2}=E_{1}^{2}+E_{2}^{2}+2E_{1}E_{2}\\cos\\alpha$.",
+     "text": "$\\vec E_1$ hướng ra xa A, còn $\\vec E_2$ hướng về phía B.",
      "answer": true
+    },
+    {
+     "text": "Đổi $q_2$ thành điện tích dương cùng độ lớn thì độ lớn $E$ tổng hợp tại M thay đổi.",
+     "answer": false
     }
-   ]
+   ],
+   "explanation": "Vì $3^2+4^2=5^2$ nên tam giác vuông tại M, hai vectơ vuông góc và $E=\\sqrt{E_1^2+E_2^2}$. Đổi dấu $q_2$ chỉ làm $\\vec E_2$ đổi chiều nhưng vẫn vuông góc với $\\vec E_1$, nên độ lớn $E$ không đổi.",
+   "distractorNotes": {
+    "0": "Vì $3^2+4^2=5^2$ nên góc vuông nằm tại M; $\\vec E_1$ nằm trên AM, $\\vec E_2$ nằm trên MB.",
+    "1": "Cộng thẳng độ lớn chỉ đúng khi hai vectơ cùng chiều; hai vectơ vuông góc phải dùng $\\sqrt{E_1^2+E_2^2}$.",
+    "2": "Điện tích dương tạo $\\vec E$ hướng ra xa nó, điện tích âm tạo $\\vec E$ hướng về phía nó.",
+    "3": "Đổi dấu chỉ đổi chiều $\\vec E_2$; vectơ này vẫn nằm trên MB, góc vẫn là $90^\\circ$ nên độ lớn $E$ giữ nguyên."
+   }
   },
   {
    "type": "true_false",
@@ -307,74 +518,33 @@
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Xét $E=k\\dfrac{\\left| Q \\right|}{\\varepsilon r^{2}}$ của điện tích điểm:",
-   "explanation": "E tỉ lệ với $|Q|$, tỉ lệ nghịch với $\\varepsilon$ và $r^{2}$; không phụ thuộc điện tích thử.",
+   "theorySection": 1,
+   "question": "Xét công thức độ lớn cường độ điện trường của điện tích điểm $E=k\\dfrac{|Q|}{\\varepsilon r^2}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khoảng cách $r$ tăng gấp đôi thì $E$ giảm 4 lần.",
+     "text": "Ở cùng một môi trường, $E$ tỉ lệ nghịch với bình phương khoảng cách $r$.",
      "answer": true
     },
     {
-     "text": "$|Q|$ tăng gấp đôi thì $E$ tăng gấp đôi.",
+     "text": "Ở cùng vị trí và môi trường, $E$ tỉ lệ thuận với độ lớn điện tích $Q$.",
      "answer": true
     },
     {
-     "text": "$E$ phụ thuộc vào độ lớn điện tích thử đặt tại điểm xét.",
+     "text": "Khi $Q\\lt 0$ thì $E$ mang giá trị âm, phải giữ dấu này khi cộng các điện trường.",
      "answer": false
     },
     {
-     "text": "$\\varepsilon$ tăng thì $E$ giảm.",
-     "answer": true
+     "text": "Trong môi trường có $\\varepsilon\\gt 1$, $E$ lớn hơn trong chân không $\\varepsilon$ lần.",
+     "answer": false
     }
-   ]
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Nguyên lí chồng chất điện trường",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hai vector $\\vec{E}_{1}$ và $\\vec{E}_{2}$ vuông góc nhau, $E_{1}=3$ V/m, $E_{2}=4$ V/m. Tính $E$ tổng hợp (V/m).",
-   "explanation": "$E=\\sqrt{E_{1}^{2}+E_{2}^{2}}=\\sqrt{9+16}=5$ V/m.",
-   "answer": "5"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Nguyên lí chồng chất điện trường",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hai vector $\\vec{E}_{1}$ và $\\vec{E}_{2}$ cùng phương, ngược chiều, $E_{1}=5$ V/m, $E_{2}=3$ V/m. Tính $E$ tổng hợp (V/m).",
-   "explanation": "$E=\\left| E_{1}-E_{2} \\right|=2$ V/m.",
-   "answer": "2"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Cường độ điện trường của điện tích điểm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Điện tích thử $q=2$ C đặt tại điểm có cường độ điện trường $E=3$ N/C. Tính độ lớn lực điện $F$ (N).",
-   "explanation": "$F=\\left| q \\right|E=2.3=6$ N.",
-   "answer": "6"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Cường độ điện trường của điện tích điểm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Khoảng cách $r$ từ điện tích điểm đến điểm xét tăng gấp 3 lần (các yếu tố khác không đổi). Cường độ điện trường giảm bao nhiêu lần?",
-   "explanation": "$E\\sim\\dfrac{1}{r^{2}}$ nên $r$ tăng 3 lần thì $E$ giảm $3^{2}=9$ lần.",
-   "answer": "9"
+   ],
+   "explanation": "$E$ tỉ lệ với $|Q|$ và tỉ lệ nghịch với $\\varepsilon r^2$. Dấu của $Q$ chỉ dùng để xác định chiều của $\\vec E$, còn khi cộng phải cộng vectơ.",
+   "distractorNotes": {
+    "0": "$r^2$ nằm ở mẫu số, nên khi $Q$ và $\\varepsilon$ cố định thì $E$ tỉ lệ nghịch với $r^2$.",
+    "1": "$|Q|$ nằm ở tử số, nên $|Q|$ tăng bao nhiêu lần thì $E$ tăng bấy nhiêu lần.",
+    "2": "Công thức dùng $|Q|$ nên $E$ luôn dương; dấu của $Q$ chỉ xác định chiều, còn khi cộng phải cộng vectơ.",
+    "3": "$\\varepsilon$ nằm ở mẫu số, nên trong điện môi $E$ nhỏ hơn trong chân không $\\varepsilon$ lần."
+   }
   }
  ]
 }

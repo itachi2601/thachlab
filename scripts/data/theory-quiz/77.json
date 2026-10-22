@@ -1,386 +1,556 @@
 {
-  "lesson_id": 77,
-  "lesson_title": "Bài 32. Lực hướng tâm và gia tốc hướng tâm",
-  "item_id": 257,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 77,
+ "lesson_title": "Bài 32. Lực hướng tâm và gia tốc hướng tâm",
+ "item_id": 257,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lực hướng tâm và gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Gia tốc hướng tâm của vật chuyển động tròn đều đặc trưng cho",
+   "options": [
+    "sự thay đổi về độ lớn của vận tốc",
+    "sự thay đổi về hướng của vận tốc",
+    "sự thay đổi của bán kính quỹ đạo",
+    "sự thay đổi của tốc độ góc"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, gia tốc hướng tâm đặc trưng cho sự thay đổi về hướng của vận tốc. Trong chuyển động tròn đều, độ lớn vận tốc giữ nguyên.",
+   "distractorNotes": {
+    "A": "Tròn đều có tốc độ không đổi nên độ lớn vận tốc không biến đổi; gia tốc ở đây chỉ phản ánh sự đổi hướng.",
+    "C": "Nhầm đại lượng: bán kính quỹ đạo tròn cố định, gia tốc đo sự biến đổi của vectơ vận tốc chứ không phải của $r$.",
+    "D": "Tròn đều có $\\omega$ không đổi, nên gia tốc hướng tâm không thể đặc trưng cho sự thay đổi tốc độ góc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lực hướng tâm và gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chiều của gia tốc hướng tâm trong chuyển động tròn đều là",
+   "options": [
+    "cùng chiều với vận tốc của vật",
+    "hướng ra xa tâm quỹ đạo",
+    "ngược chiều với vận tốc của vật",
+    "luôn hướng vào tâm quỹ đạo"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu: gia tốc hướng tâm có phương trùng bán kính và chiều luôn hướng vào tâm. Nó vuông góc với vận tốc.",
+   "distractorNotes": {
+    "A": "Gia tốc cùng chiều vận tốc làm vật nhanh dần, trái với tốc độ không đổi của chuyển động tròn đều.",
+    "B": "Đây là cảm giác bị văng ra do quán tính của người, không phải chiều của gia tốc.",
+    "C": "Gia tốc ngược chiều vận tốc làm vật chậm dần, trong khi tròn đều có tốc độ không đổi và gia tốc vuông góc vận tốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực hướng tâm và gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Ô tô qua khúc cua tròn, kim đồng hồ tốc độ đứng yên. Phát biểu nào sau đây đúng?",
+   "options": [
+    "Xe có gia tốc vì hướng vận tốc luôn thay đổi",
+    "Xe không có gia tốc vì tốc độ không thay đổi",
+    "Xe có gia tốc cùng hướng với vận tốc của xe",
+    "Xe có gia tốc hướng ra phía ngoài khúc cua"
+   ],
+   "answer": 0,
+   "explanation": "Vận tốc là vectơ. Khi qua cua, độ lớn không đổi nhưng hướng đổi liên tục, nên xe có gia tốc hướng vào tâm khúc cua.",
+   "distractorNotes": {
+    "B": "Chỉ nhìn độ lớn trên đồng hồ mà quên vận tốc là vectơ, hướng đổi liên tục thì vẫn có gia tốc.",
+    "C": "Nhầm với xe tăng tốc trên đường thẳng, trong khi kim tốc độ đứng yên nghĩa là tốc độ không tăng.",
+    "D": "Lấy cảm giác bị xô ra do quán tính của hành khách làm hướng gia tốc của xe, trong khi gia tốc hướng vào tâm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lực hướng tâm và gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào sau đây về lực hướng tâm là đúng?",
+   "options": [
+    "Là một loại lực mới chỉ xuất hiện khi vật quay",
+    "Là lực hoặc hợp lực đã học, hướng vào tâm quỹ đạo",
+    "Là lực hướng ra xa tâm, giữ vật ở trên quỹ đạo",
+    "Là lực luôn cùng hướng với vận tốc của vật quay"
+   ],
+   "answer": 1,
+   "explanation": "Bài khẳng định lực hướng tâm không phải loại lực mới. Đó là một lực đã học hoặc hợp lực của chúng, hướng vào tâm quỹ đạo.",
+   "distractorNotes": {
+    "A": "Lực hướng tâm chỉ là tên vai của một lực đã học hoặc hợp lực của chúng, không phải loại lực mới.",
+    "C": "Không có lực nào đẩy vật ra ngoài; lực giữ vật đi vòng phải hướng vào tâm quỹ đạo.",
+    "D": "Lực cùng hướng vận tốc chỉ làm vật nhanh dần, không làm vận tốc đổi hướng để đi vòng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực hướng tâm trong các tình huống thực tế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ô tô chạy đều qua khúc cua tròn trên đường nằm ngang. Lực đóng vai lực hướng tâm của xe là",
+   "options": [
+    "phản lực của mặt đường lên xe",
+    "trọng lực tác dụng lên chiếc xe",
+    "lực kéo của động cơ lên chiếc xe",
+    "ma sát nghỉ giữa lốp và mặt đường"
+   ],
+   "answer": 3,
+   "explanation": "Trên đường phẳng, trọng lực và phản lực triệt tiêu nhau. Ma sát nghỉ hướng vào tâm cua chính là lực hướng tâm.",
+   "distractorNotes": {
+    "A": "Trên đường nằm ngang, phản lực thẳng đứng và triệt tiêu trọng lực, nên không có thành phần hướng vào tâm cua.",
+    "B": "Trọng lực thẳng đứng, bị phản lực cân bằng, không thể kéo xe về phía tâm cua nằm ngang.",
+    "C": "Lực kéo động cơ hướng theo chiều chuyển động, tức tiếp tuyến, không hướng vào tâm khúc cua."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực hướng tâm trong các tình huống thực tế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật buộc vào dây đang quay tròn đều. Đột nhiên dây đứt. Ngay sau đó vật chuyển động",
+   "options": [
+    "theo tiếp tuyến với quỹ đạo tại điểm đó",
+    "theo bán kính, ra xa tâm quỹ đạo",
+    "theo bán kính, hướng vào tâm quỹ đạo",
+    "vẫn tiếp tục quay tròn quanh tâm cũ"
+   ],
+   "answer": 0,
+   "explanation": "Mất lực hướng tâm, vật giữ hướng vận tốc cũ do quán tính. Vận tốc lúc đó là tiếp tuyến với quỹ đạo.",
+   "distractorNotes": {
+    "B": "Tưởng có lực li tâm đẩy vật ra, nhưng không vật nào gây ra lực đó; vật chỉ giữ vận tốc cũ.",
+    "C": "Dây đứt thì không còn lực kéo vật vào tâm, nên vật không thể chuyển động về phía tâm.",
+    "D": "Muốn đi vòng cần lực hướng tâm, mà lực căng dây đóng vai đó đã mất khi dây đứt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực hướng tâm trong các tình huống thực tế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Khi xe rẽ gấp, hành khách cảm thấy bị xô ra phía ngoài khúc cua. Giải thích đúng là",
+   "options": [
+    "lực li tâm đẩy người ra phía ngoài",
+    "lực hướng tâm của xe hướng ra ngoài",
+    "người giữ hướng đi cũ do quán tính",
+    "ghế xe kéo người ra phía ngoài cua"
+   ],
+   "answer": 2,
+   "explanation": "Người có xu hướng giữ hướng đi thẳng cũ do quán tính, còn xe thì rẽ. Không có lực nào đẩy người ra ngoài.",
+   "distractorNotes": {
+    "A": "Lực li tâm không do vật nào gây ra, nên xét so với mặt đất không có lực nào đẩy người ra ngoài.",
+    "B": "Lực hướng tâm theo định nghĩa luôn hướng vào tâm quỹ đạo, không thể hướng ra ngoài.",
+    "D": "Đảo chiều lực: ghế và cửa xe đẩy người vào phía trong để người rẽ theo xe."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Lực hướng tâm trong các tình huống thực tế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Cục tẩy nằm yên trên đĩa bàn xoay và quay đều cùng đĩa. Các lực tác dụng lên cục tẩy gồm",
+   "options": [
+    "trọng lực, phản lực, ma sát và lực hướng tâm",
+    "trọng lực, phản lực và lực li tâm hướng ra",
+    "trọng lực, phản lực, ma sát theo chiều quay",
+    "trọng lực, phản lực, ma sát nghỉ vào tâm"
+   ],
+   "answer": 3,
+   "explanation": "Trọng lực và phản lực triệt tiêu. Ma sát nghỉ hướng vào tâm là lực duy nhất còn lại và chính nó đóng vai lực hướng tâm.",
+   "distractorNotes": {
+    "A": "Ma sát nghỉ đã chính là lực hướng tâm, vẽ thêm lực hướng tâm là đếm một lực hai lần.",
+    "B": "Thiếu lực hướng vào tâm thì tẩy không đi vòng được, và lực li tâm không có vật nào gây ra.",
+    "C": "Ma sát nghỉ theo chiều quay sẽ làm tẩy quay nhanh dần, trái với việc tẩy quay đều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật chuyển động tròn đều với tốc độ $v$, tốc độ góc $\\omega$, bán kính $r$. Công thức gia tốc hướng tâm là",
+   "options": [
+    "$a_{ht} = \\frac{v}{r}$",
+    "$a_{ht} = \\frac{r}{v^2}$",
+    "$a_{ht} = \\omega^2 r$",
+    "$a_{ht} = \\omega r^2$"
+   ],
+   "answer": 2,
+   "explanation": "Theo bài, $a_{ht} = \\frac{v^2}{r} = \\omega^2 r$.",
+   "distractorNotes": {
+    "A": "Quên bình phương của $v$; theo bài, $a_{ht} = \\frac{v^2}{r}$.",
+    "B": "Đảo tử và mẫu của $\\frac{v^2}{r}$, khiến gia tốc tăng theo $r$ và giảm theo $v$.",
+    "D": "Đặt bình phương nhầm vào $r$; thay $v = \\omega r$ vào $\\frac{v^2}{r}$ được $\\omega^2 r$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Lực hướng tâm và gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật khối lượng $m$ chuyển động tròn đều với tốc độ góc $\\omega$, bán kính $r$, tốc độ $v$. Độ lớn lực hướng tâm là",
+   "options": [
+    "$F_{ht} = m\\omega^2 r$",
+    "$F_{ht} = \\frac{mv}{r}$",
+    "$F_{ht} = \\frac{mr}{v^2}$",
+    "$F_{ht} = \\frac{\\omega^2 r}{m}$"
+   ],
+   "answer": 0,
+   "explanation": "Bài cho $F_{ht} = ma_{ht} = m\\frac{v^2}{r} = m\\omega^2 r$.",
+   "distractorNotes": {
+    "B": "Quên bình phương tốc độ; lực hướng tâm là $m\\frac{v^2}{r}$.",
+    "C": "Đảo tử và mẫu của $\\frac{v^2}{r}$ khi nhân với khối lượng.",
+    "D": "Chia cho khối lượng thay vì nhân, sai với $F_{ht} = ma_{ht}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Tính gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của gia tốc hướng tâm là",
+   "options": [
+    "m/s",
+    "rad/s",
+    "m/s²",
+    "N"
+   ],
+   "answer": 2,
+   "explanation": "Gia tốc hướng tâm là một gia tốc nên có đơn vị m/s², như bài đã nêu.",
+   "distractorNotes": {
+    "A": "Nhầm đại lượng: m/s là đơn vị của tốc độ, không phải gia tốc.",
+    "B": "Nhầm đại lượng: rad/s là đơn vị của tốc độ góc $\\omega$.",
+    "D": "Nhầm đại lượng: N là đơn vị của lực hướng tâm, không phải gia tốc hướng tâm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xe chạy đều qua cùng một khúc cua tròn. Nếu tốc độ của xe tăng gấp ba thì gia tốc hướng tâm của xe",
+   "options": [
+    "tăng gấp ba",
+    "tăng gấp chín",
+    "giảm ba lần",
+    "không thay đổi"
+   ],
+   "answer": 1,
+   "explanation": "$a_{ht} = \\frac{v^2}{r}$ với $r$ giữ nguyên: $v$ gấp 3 thì $v^2$ gấp 9.",
+   "distractorNotes": {
+    "A": "Quên bình phương của $v$ trong $a_{ht} = \\frac{v^2}{r}$, nên coi gia tốc tỉ lệ bậc nhất với tốc độ.",
+    "C": "Đảo ngược tỉ lệ, coi $a_{ht}$ tỉ lệ nghịch với $v$ trong khi $v$ nằm trên tử số.",
+    "D": "Cho rằng cùng khúc cua thì gia tốc không đổi, quên $a_{ht}$ còn phụ thuộc tốc độ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một đĩa tròn quay đều quanh trục. Điểm A trên đĩa cách tâm xa gấp 3 lần điểm B. Quan hệ giữa gia tốc hướng tâm của A và B là",
+   "options": [
+    "$a_A = 3a_B$",
+    "$a_A = 9a_B$",
+    "$a_A = \\frac{a_B}{3}$",
+    "$a_A = a_B$"
+   ],
+   "answer": 0,
+   "explanation": "Mọi điểm trên cùng vật quay có chung $\\omega$; $a = \\omega^2 r$ tỉ lệ thuận với $r$ nên $a_A = 3a_B$.",
+   "distractorNotes": {
+    "B": "Bình phương nhầm $r$; với chung $\\omega$, $a = \\omega^2 r$ chỉ tỉ lệ bậc nhất với $r$.",
+    "C": "Dùng $\\frac{v^2}{r}$ như thể hai điểm cùng $v$, trong khi điểm xa tâm có $v = \\omega r$ lớn hơn.",
+    "D": "Nghĩ chung $\\omega$ thì chung gia tốc, quên $a = \\omega^2 r$ còn phụ thuộc khoảng cách tới tâm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Lực hướng tâm trong các tình huống thực tế",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Xe khối lượng $m$ qua cua phẳng bán kính $r$, ma sát nghỉ lớn nhất là $F_{max}$. Từ $m\\frac{v_{max}^2}{r} = F_{max}$, tốc độ lớn nhất để không trượt là",
+   "options": [
+    "$v_{max} = \\sqrt{\\frac{F_{max}\\, m}{r}}$",
+    "$v_{max} = \\frac{F_{max}\\, r}{m}$",
+    "$v_{max} = \\sqrt{\\frac{m\\, r}{F_{max}}}$",
+    "$v_{max} = \\sqrt{\\frac{F_{max}\\, r}{m}}$"
+   ],
+   "answer": 3,
+   "explanation": "Nhân hai vế với $\\frac{r}{m}$: $v_{max}^2 = \\frac{F_{max} r}{m}$, rồi lấy căn bậc hai.",
+   "distractorNotes": {
+    "A": "Đảo vị trí $m$ và $r$ khi chuyển vế; nhân hai vế với $\\frac{r}{m}$ mới đúng.",
+    "B": "Biến đổi được $v_{max}^2$ nhưng quên lấy căn bậc hai.",
+    "C": "Lật ngược cả biểu thức khi chuyển vế, khiến $v_{max}$ giảm khi ma sát lớn hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Lực hướng tâm và gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật nhỏ chuyển động tròn đều trên quỹ đạo tâm O. Xét các phát biểu sau:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Gia tốc hướng tâm đặc trưng cho sự thay đổi của đại lượng nào trong chuyển động tròn đều?",
-      "options": [
-        "Độ lớn của vận tốc",
-        "Cả hướng và độ lớn của vận tốc",
-        "Hướng của vận tốc",
-        "Tốc độ góc của vật"
-      ],
-      "answer": 2,
-      "explanation": "Chuyển động tròn đều giữ nguyên độ lớn vận tốc và tốc độ góc, chỉ có hướng của vận tốc đổi liên tục nên mới có gia tốc hướng tâm."
+     "text": "Gia tốc hướng tâm có gốc tại vật và phương trùng với bán kính quỹ đạo.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Gia tốc hướng tâm của vật chuyển động tròn đều có phương và chiều như thế nào?",
-      "options": [
-        "Phương trùng bán kính, chiều hướng vào tâm quỹ đạo",
-        "Phương tiếp tuyến, chiều theo chiều chuyển động",
-        "Phương trùng bán kính, chiều hướng ra xa tâm",
-        "Phương tiếp tuyến, chiều hướng vào tâm"
-      ],
-      "answer": 0,
-      "explanation": "Gia tốc hướng tâm vuông góc với vận tốc (tiếp tuyến) nên nằm dọc bán kính, và luôn hướng vào tâm O."
+     "text": "Gia tốc hướng tâm có cùng phương với vận tốc của vật.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Lực hướng tâm trong các tình huống thực tế",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Vật buộc vào dây quay đều trên mặt bàn ngang nhẵn thì dây đột ngột đứt. Ngay sau đó vật",
-      "options": [
-        "bay ra theo phương bán kính, ra xa tâm",
-        "tiếp tục chuyển động tròn thêm một lúc",
-        "dừng lại ngay",
-        "chuyển động thẳng theo phương tiếp tuyến với quỹ đạo"
-      ],
-      "answer": 3,
-      "explanation": "Mất lực hướng tâm, vật giữ vận tốc ở chỗ đứt (quán tính) nên đi thẳng theo tiếp tuyến. Không có \"lực li tâm\" đẩy vật ra theo bán kính."
+     "text": "Độ lớn vận tốc không đổi nhưng hướng của vận tốc thay đổi liên tục.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Lực hướng tâm trong các tình huống thực tế",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe đạp đi đều qua khúc cua tròn trên mặt đường phẳng nằm ngang. Lực đóng vai trò lực hướng tâm là",
-      "options": [
-        "trọng lực của xe",
-        "lực ma sát nghỉ giữa lốp xe và mặt đường",
-        "phản lực vuông góc của mặt đường",
-        "lực li tâm hướng ra ngoài khúc cua"
-      ],
-      "answer": 1,
-      "explanation": "Trọng lực và phản lực triệt tiêu theo phương đứng; lực duy nhất hướng vào tâm là ma sát nghỉ. Lực hướng tâm chỉ là tên vai, không vẽ thêm."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Lực hướng tâm trong các tình huống thực tế",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe rẽ gấp, hành khách bị ép về phía cửa bên ngoài khúc cua. Giải thích đúng là",
-      "options": [
-        "lực li tâm tác dụng lên người đẩy người ra ngoài",
-        "xe tác dụng lên người một lực hướng ra ngoài khúc cua",
-        "người có quán tính, muốn giữ hướng chuyển động thẳng cũ trong khi xe đổi hướng",
-        "lực hướng tâm của xe có chiều hướng ra ngoài"
-      ],
-      "answer": 2,
-      "explanation": "Không vật nào gây ra lực đẩy người ra ngoài; chính cửa xe đẩy người vào trong để người rẽ theo xe. Lực hướng tâm luôn hướng vào tâm."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Gia tốc hướng tâm của vật chuyển động tròn đều với tốc độ $v$ trên đường tròn bán kính $r$ là",
-      "options": [
-        "$a_{\\text{ht}}=\\dfrac{v^2}{r}$",
-        "$a_{\\text{ht}}=\\dfrac{v}{r}$",
-        "$a_{\\text{ht}}=\\dfrac{r}{v^2}$",
-        "$a_{\\text{ht}}=v^2r$"
-      ],
-      "answer": 0,
-      "explanation": "$a_{\\text{ht}}=v^2/r$. Thiếu bình phương, đảo tử mẫu hoặc nhân $r$ đều sai thứ nguyên: $a$ phải có đơn vị $\\text{m/s}^2$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Viết theo tốc độ góc $\\omega$, gia tốc hướng tâm là",
-      "options": [
-        "$a_{\\text{ht}}=\\omega r$",
-        "$a_{\\text{ht}}=\\omega r^2$",
-        "$a_{\\text{ht}}=\\dfrac{\\omega^2}{r}$",
-        "$a_{\\text{ht}}=\\omega^2 r$"
-      ],
-      "answer": 3,
-      "explanation": "Thay $v=\\omega r$ vào $v^2/r$ được $\\omega^2 r$. $\\omega r$ chính là tốc độ $v$; hai phương án còn lại đặt sai số mũ hoặc vị trí của $r$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Ô tô chạy đều $54\\ \\text{km/h}$ qua khúc cua tròn bán kính $75\\ \\text{m}$. Gia tốc hướng tâm của xe là",
-      "options": [
-        "$38{,}9\\ \\text{m/s}^2$",
-        "$3{,}0\\ \\text{m/s}^2$",
-        "$0{,}20\\ \\text{m/s}^2$",
-        "$225\\ \\text{m/s}^2$"
-      ],
-      "answer": 1,
-      "explanation": "$54\\ \\text{km/h}=15\\ \\text{m/s}$, $a=15^2/75=3{,}0$. $38{,}9$ là thế $54$ chưa đổi đơn vị; $0{,}20$ là $v/r$; $225$ là $v^2$, quên chia $r$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Lực hướng tâm trong các tình huống thực tế",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật $0{,}4\\ \\text{kg}$ chuyển động tròn đều với tốc độ $3\\ \\text{m/s}$ trên đường tròn bán kính $0{,}5\\ \\text{m}$. Lực hướng tâm tác dụng lên vật là",
-      "options": [
-        "$7{,}2\\ \\text{N}$",
-        "$2{,}4\\ \\text{N}$",
-        "$1{,}8\\ \\text{N}$",
-        "$18\\ \\text{N}$"
-      ],
-      "answer": 0,
-      "explanation": "$F=m v^2/r=0{,}4\\cdot9/0{,}5=7{,}2$. $2{,}4$ là quên bình phương $v$; $1{,}8$ là nhân $r$ thay vì chia; $18$ là $v^2/r$, quên nhân $m$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hai xe chạy cùng tốc độ qua hai khúc cua, khúc cua thứ hai có bán kính gấp đôi khúc thứ nhất. So với xe thứ nhất, gia tốc hướng tâm của xe thứ hai",
-      "options": [
-        "gấp đôi",
-        "gấp bốn",
-        "không đổi",
-        "giảm còn một nửa"
-      ],
-      "answer": 3,
-      "explanation": "Cùng $v$ thì $a=v^2/r$ tỉ lệ nghịch với $r$: $r$ gấp đôi thì $a$ giảm một nửa. Cua gắt ($r$ nhỏ) đòi hỏi $a$ lớn hơn."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về gia tốc hướng tâm, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Vận tốc là vector nên vật chuyển động tròn đều với tốc độ không đổi vẫn có gia tốc.",
-          "answer": true
-        },
-        {
-          "text": "Đơn vị của gia tốc hướng tâm là $\\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Gia tốc hướng tâm cùng chiều với vận tốc của vật.",
-          "answer": false
-        },
-        {
-          "text": "Gia tốc hướng tâm làm tăng tốc độ của vật chuyển động tròn đều.",
-          "answer": false
-        }
-      ],
-      "explanation": "Gia tốc hướng tâm vuông góc với vận tốc nên chỉ đổi hướng, không đổi độ lớn vận tốc."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Lực hướng tâm trong các tình huống thực tế",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về lực hướng tâm, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lực hướng tâm không phải loại lực mới mà là tên gọi vai của một lực hoặc hợp lực đã biết.",
-          "answer": true
-        },
-        {
-          "text": "Khi vẽ các lực lên vật chuyển động tròn đều, phải vẽ thêm lực hướng tâm bên cạnh các lực còn lại.",
-          "answer": false
-        },
-        {
-          "text": "Không có vật nào gây ra \"lực li tâm\" đẩy vật ra ngoài trong hệ quy chiếu gắn với mặt đất.",
-          "answer": true
-        },
-        {
-          "text": "Mất lực hướng tâm, vật bay ra theo phương bán kính.",
-          "answer": false
-        }
-      ],
-      "explanation": "Vẽ thêm lực hướng tâm là đếm một lực hai lần. Mất lực hướng tâm vật đi thẳng theo tiếp tuyến, không theo bán kính."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về sự phụ thuộc của gia tốc hướng tâm vào bán kính và tốc độ, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Cùng tốc độ, khúc cua gắt hơn (bán kính nhỏ hơn) có gia tốc hướng tâm lớn hơn.",
-          "answer": true
-        },
-        {
-          "text": "Hai điểm trên cùng một đĩa quay, điểm xa trục hơn có gia tốc hướng tâm lớn hơn.",
-          "answer": true
-        },
-        {
-          "text": "Cùng tốc độ, bán kính lớn hơn thì gia tốc hướng tâm lớn hơn.",
-          "answer": false
-        },
-        {
-          "text": "Gia tốc hướng tâm tỉ lệ thuận với tốc độ $v$ (không có bình phương).",
-          "answer": false
-        }
-      ],
-      "explanation": "Cùng $v$: $a=v^2/r$ giảm khi $r$ tăng. Cùng $\\omega$: $a=\\omega^2 r$ tăng theo $r$. Tốc độ xuất hiện dưới dạng bình phương."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Lực hướng tâm trong các tình huống thực tế",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Ô tô $1000\\ \\text{kg}$ chạy đều $72\\ \\text{km/h}$ qua khúc cua phẳng bán kính $100\\ \\text{m}$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Gia tốc hướng tâm của xe là $4\\ \\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Lực hướng tâm cần có là $4000\\ \\text{N}$.",
-          "answer": true
-        },
-        {
-          "text": "Nếu tốc độ tăng gấp đôi thì lực hướng tâm cần có tăng gấp đôi.",
-          "answer": false
-        },
-        {
-          "text": "Lực hướng tâm cần có là $400\\ \\text{N}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$v=20\\ \\text{m/s}$, $a=400/100=4$, $F=1000\\cdot4=4000\\ \\text{N}$. Tốc độ gấp đôi thì $F\\sim v^2$ tăng gấp bốn. $400$ là chưa nhân đủ khối lượng."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe qua một khúc cua tròn. Nếu tốc độ xe tăng gấp $3$ lần (bán kính không đổi) thì gia tốc hướng tâm tăng bao nhiêu lần?",
-      "answer": "9",
-      "explanation": "$a=v^2/r$ nên $v$ gấp $3$ thì $a$ gấp $3^2=9$ lần."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Lực hướng tâm trong các tình huống thực tế",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Cục tẩy nằm yên trên đĩa đang quay đều và không trượt. Có bao nhiêu lực tác dụng lên cục tẩy (không đếm riêng lực hướng tâm vì nó chỉ là tên vai)?",
-      "answer": "3",
-      "explanation": "Trọng lực, phản lực vuông góc và ma sát nghỉ: ma sát nghỉ chính là lực hướng tâm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xe chạy đều $36\\ \\text{km/h}$ qua khúc cua tròn bán kính $25\\ \\text{m}$. Gia tốc hướng tâm là bao nhiêu $\\text{m/s}^2$?",
-      "answer": "4",
-      "explanation": "$36\\ \\text{km/h}=10\\ \\text{m/s}$, $a=10^2/25=4\\ \\text{m/s}^2$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính gia tốc hướng tâm",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điểm trên vành đĩa cách trục $0{,}5\\ \\text{m}$ quay đều với tốc độ góc $3\\ \\text{rad/s}$. Gia tốc hướng tâm là bao nhiêu $\\text{m/s}^2$ (viết dạng số thập phân)?",
-      "answer": "4,5",
-      "explanation": "$a=\\omega^2 r=3^2\\cdot0{,}5=4{,}5\\ \\text{m/s}^2$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Lực hướng tâm trong các tình huống thực tế",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật $0{,}2\\ \\text{kg}$ chuyển động tròn đều với tốc độ $5\\ \\text{m/s}$ trên đường tròn bán kính $0{,}5\\ \\text{m}$. Lực hướng tâm là bao nhiêu N?",
-      "answer": "10",
-      "explanation": "$F=\\dfrac{mv^2}{r}=\\dfrac{0{,}2\\cdot25}{0{,}5}=10\\ \\text{N}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Lực hướng tâm trong các tình huống thực tế",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật $0{,}25\\ \\text{kg}$ buộc vào dây quay trên mặt bàn ngang nhẵn với $r=0{,}5\\ \\text{m}$. Dây chịu lực căng tối đa $32\\ \\text{N}$. Tốc độ lớn nhất của vật là bao nhiêu m/s?",
-      "answer": "8",
-      "explanation": "Lực căng là lực hướng tâm: $v_{\\max}=\\sqrt{\\dfrac{Fr}{m}}=\\sqrt{\\dfrac{32\\cdot0{,}5}{0{,}25}}=\\sqrt{64}=8\\ \\text{m/s}$."
+     "text": "Vì tốc độ không đổi nên hợp lực tác dụng lên vật bằng 0.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Gia tốc hướng tâm có gốc tại vật, phương bán kính, vuông góc với vận tốc. Vật có gia tốc nên hợp lực khác 0 và hướng vào tâm.",
+   "distractorNotes": {
+    "0": "Bài nêu rõ gia tốc hướng tâm có gốc tại vật, phương trùng bán kính, nên không thể coi phát biểu là sai.",
+    "1": "Vận tốc tiếp tuyến quỹ đạo, gia tốc theo bán kính, hai phương vuông góc nên không thể coi là cùng phương.",
+    "2": "Tròn đều đúng là tốc độ giữ nguyên, hướng vận tốc đổi liên tục, nên không thể coi phát biểu là sai.",
+    "3": "Hướng vận tốc đổi nên vật có gia tốc, theo $F = ma$ hợp lực khác 0 và hướng vào tâm."
+   },
+   "answer": null
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Lực hướng tâm trong các tình huống thực tế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đặt một vòng nhựa có thành, bị cắt bỏ một đoạn thành, lên bàn. Búng viên bi chạy vòng sát thành vòng. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Khi bi chạy sát thành, lực của thành đẩy bi hướng vào tâm và đóng vai lực hướng tâm.",
+     "answer": true
+    },
+    {
+     "text": "Tới chỗ hở, bi bật ra theo phương bán kính do lực li tâm.",
+     "answer": false
+    },
+    {
+     "text": "Tới chỗ hở, bi đi thẳng theo phương tiếp tuyến do quán tính.",
+     "answer": true
+    },
+    {
+     "text": "Khi bi chạy sát thành, phải vẽ thêm lực hướng tâm bên cạnh lực của thành.",
+     "answer": false
+    }
+   ],
+   "explanation": "Thành vòng đẩy bi vào tâm, đó là lực hướng tâm. Mất lực đó, bi đi thẳng theo tiếp tuyến. Không có lực li tâm, và không vẽ thêm lực hướng tâm riêng.",
+   "distractorNotes": {
+    "0": "Lực của thành là lực duy nhất hướng vào tâm giữ bi đi vòng, nên chính nó đóng vai lực hướng tâm.",
+    "1": "Không vật nào gây ra lực li tâm; thí nghiệm cho thấy bi đi theo tiếp tuyến chứ không bật ra theo bán kính.",
+    "2": "Mất lực của thành, bi giữ vận tốc tiếp tuyến lúc đó theo quán tính, đúng như quan sát.",
+    "3": "Lực hướng tâm chỉ là tên vai của lực của thành, vẽ thêm là đếm một lực hai lần."
+   },
+   "answer": null
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Tính gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một học sinh so sánh gia tốc hướng tâm bằng hai công thức $a = \\frac{v^2}{r}$ và $a = \\omega^2 r$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hai xe cùng tốc độ $v$, xe qua cua có bán kính nhỏ hơn thì có gia tốc hướng tâm lớn hơn.",
+     "answer": true
+    },
+    {
+     "text": "Trên cùng một cánh quạt quay đều, điểm càng xa trục thì gia tốc hướng tâm càng nhỏ.",
+     "answer": false
+    },
+    {
+     "text": "Thay $v = \\omega r$ vào $\\frac{v^2}{r}$ thì được $\\omega^2 r$.",
+     "answer": true
+    },
+    {
+     "text": "Mọi điểm trên cùng một vật quay đều có cùng tốc độ $v$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Cùng $v$ thì $a \\sim \\frac{1}{r}$; cùng $\\omega$ thì $a \\sim r$. Mọi điểm trên cùng vật quay có chung $\\omega$, không chung $v$.",
+   "distractorNotes": {
+    "0": "Khi $v$ giữ nguyên, $a = \\frac{v^2}{r}$ tỉ lệ nghịch với $r$, nên cua bán kính nhỏ cho gia tốc lớn hơn.",
+    "1": "Các điểm trên cánh quạt có chung $\\omega$, nên $a = \\omega^2 r$ tăng chứ không giảm khi xa trục.",
+    "2": "Thay đúng: $\\frac{(\\omega r)^2}{r} = \\omega^2 r$, nên không thể coi phát biểu là sai.",
+    "3": "Các điểm trên vật quay chung $\\omega$, còn $v = \\omega r$ lớn hơn ở điểm xa trục, nên không cùng $v$."
+   },
+   "answer": null
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Lực hướng tâm trong các tình huống thực tế",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Ô tô khối lượng $m$ chạy đều với tốc độ $v$ qua khúc cua tròn bán kính $r$ trên đường nằm ngang. Ma sát nghỉ lớn nhất bằng $0{,}5$ lần trọng lượng xe. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Lực hướng tâm cần có để xe đi đúng đường cong là $F_{ht} = m\\frac{v^2}{r}$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $m\\frac{v^2}{r}$ lớn hơn ma sát nghỉ lớn nhất thì xe bị trượt khỏi đường cong.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ lớn nhất để qua cua an toàn phụ thuộc vào khối lượng của xe.",
+     "answer": false
+    },
+    {
+     "text": "Khi thay số, có thể giữ nguyên tốc độ theo km/h trong công thức $\\frac{v^2}{r}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ma sát nghỉ đóng vai lực hướng tâm. Từ $m\\frac{v_{max}^2}{r} = 0{,}5mg$ được $v_{max} = \\sqrt{0{,}5gr}$, $m$ bị triệt tiêu. Tốc độ phải đổi ra m/s.",
+   "distractorNotes": {
+    "0": "Đây đúng là $F_{ht} = ma_{ht}$ với $a_{ht} = \\frac{v^2}{r}$, nên không thể coi là sai.",
+    "1": "Ma sát nghỉ lớn nhất không đủ cung cấp lực hướng tâm cần có thì xe không giữ được đường cong, nên phát biểu đúng.",
+    "2": "Khối lượng có ở cả hai vế nên triệt tiêu, $v_{max} = \\sqrt{0{,}5gr}$ không phụ thuộc $m$.",
+    "3": "Công thức dùng đơn vị SI; giữ km/h cho kết quả sai, phải chia cho 3,6 để ra m/s."
+   },
+   "answer": null
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Lực hướng tâm trong các tình huống thực tế",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một đồng xu khối lượng $m$ đặt trên đĩa bàn xoay, cách tâm khoảng $r$. Đĩa quay đều với tốc độ góc $\\omega$ và xu không trượt. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Lực hướng tâm cần có để giữ xu đi vòng là $m\\omega^2 r$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $\\omega$ tăng gấp đôi thì lực hướng tâm cần có cũng chỉ tăng gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Với cùng $\\omega$, đặt xu xa tâm hơn thì lực hướng tâm cần có lớn hơn.",
+     "answer": true
+    },
+    {
+     "text": "Xu bắt đầu trượt khi $m\\omega^2 r$ nhỏ hơn ma sát nghỉ lớn nhất.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ma sát nghỉ đóng vai lực hướng tâm $m\\omega^2 r$, tỉ lệ với $\\omega^2$ và với $r$. Xu trượt khi lực cần có vượt ma sát nghỉ lớn nhất.",
+   "distractorNotes": {
+    "0": "Đây chính là $F_{ht} = m\\omega^2 r$ của bài, do ma sát nghỉ cung cấp, nên không thể coi là sai.",
+    "1": "Lực cần có tỉ lệ với $\\omega^2$, nên $\\omega$ gấp đôi thì lực gấp bốn chứ không chỉ gấp đôi.",
+    "2": "Với $\\omega$ giữ nguyên, $m\\omega^2 r$ tỉ lệ thuận với $r$, nên đặt xa tâm cần lực lớn hơn.",
+    "3": "Đảo điều kiện: xu chỉ trượt khi lực cần có vượt ma sát nghỉ lớn nhất, còn nhỏ hơn thì xu vẫn đi vòng."
+   },
+   "answer": null
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Lực hướng tâm và gia tốc hướng tâm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: nút cao su khối lượng $m$ buộc đầu dây, dây luồn qua ống nhựa, đầu dưới treo quả nặng $M$. Quay nút thành vòng tròn nằm ngang bán kính $r$ với chu kì $T$, quả nặng đứng yên. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Lực căng dây bằng $Mg$ vì quả nặng đứng yên, và lực căng ấy đóng vai lực hướng tâm.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ của nút được tính bằng $v = \\frac{2\\pi r}{T}$.",
+     "answer": true
+    },
+    {
+     "text": "Với $r$ không đổi, lực hướng tâm $m\\frac{v^2}{r}$ tỉ lệ thuận với chu kì $T$.",
+     "answer": false
+    },
+    {
+     "text": "Dùng quả nặng lớn hơn mà giữ nguyên $r$ thì phải quay nút nhanh hơn.",
+     "answer": true
+    }
+   ],
+   "explanation": "Lực căng $Mg$ là lực hướng tâm. Thay $v = \\frac{2\\pi r}{T}$ thì $F \\sim \\frac{1}{T^2}$; $M$ lớn hơn cần $F$ lớn hơn nên $T$ nhỏ hơn, tức quay nhanh hơn.",
+   "distractorNotes": {
+    "0": "Quả nặng đứng yên nên lực căng cân bằng $Mg$, và chính lực căng kéo nút về tâm, nên phát biểu đúng.",
+    "1": "Mỗi vòng nút đi quãng đường $2\\pi r$ trong thời gian $T$, nên $v = \\frac{2\\pi r}{T}$ là đúng.",
+    "2": "Thay $v = \\frac{2\\pi r}{T}$ thì lực tỉ lệ với $\\frac{1}{T^2}$, tức giảm khi $T$ tăng, không tỉ lệ thuận.",
+    "3": "$Mg$ lớn hơn đòi hỏi $m\\frac{v^2}{r}$ lớn hơn với $r$ cố định, nên $v$ phải tăng, đúng như quan sát."
+   },
+   "answer": null
+  }
+ ]
 }

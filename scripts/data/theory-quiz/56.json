@@ -1,371 +1,550 @@
 {
-  "lesson_id": 56,
-  "lesson_title": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-  "item_id": 288,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 14,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 8,
-      "cong_thuc": 10
-    },
-    "removed": [
-      {
-        "question": "Hệ số k trong δ = Δs/s + k·Δt/t̄ bằng bao nhiêu?",
-        "reason": "Trùng ý với câu 11 (cùng hỏi hệ số 2) và câu 18"
-      },
-      {
-        "question": "Mỗi độ cao thả bi bao nhiêu lần để lấy t̄ (đáp số 5)?",
-        "reason": "Số lần thả là lựa chọn tuỳ ý của thí nghiệm trong bài, đề cho phép nhiều đáp số (3, 5…), không suy ra được"
-      }
-    ]
+ "lesson_id": 56,
+ "lesson_title": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+ "item_id": 288,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm, công thức $g = \\dfrac{2s}{t^2}$ dùng được khi",
+   "options": [
+    "viên bi được thả từ nghỉ và bỏ qua sức cản không khí",
+    "viên bi được ném xuống với vận tốc đầu khác không",
+    "viên bi rơi với vận tốc không đổi suốt quãng đường",
+    "viên bi chịu lực cản lớn hơn trọng lực của chính nó"
+   ],
+   "answer": 0,
+   "explanation": "Bi thả từ nghỉ ($v_0 = 0$), bỏ qua sức cản thì rơi tự do với $a = g$, nên $s = \\dfrac{1}{2}gt^2$ và suy ra $g = \\dfrac{2s}{t^2}$.",
+   "distractorNotes": {
+    "B": "Có vận tốc đầu thì quãng đường còn thêm số hạng $v_0t$, nên $s = \\dfrac{1}{2}gt^2$ không còn đúng.",
+    "C": "Vận tốc không đổi là chuyển động đều, gia tốc bằng không nên không thể suy ra $g$.",
+    "D": "Lực cản lớn thì bi không còn rơi tự do, gia tốc không bằng $g$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm đo gia tốc rơi tự do bằng nam châm điện và cổng quang, quãng đường $s$ phải đo từ",
+   "options": [
+    "mặt dưới nam châm điện tới tia sáng của cổng quang",
+    "mép dưới bi lúc còn ở nam châm tới tia sáng cổng quang",
+    "tâm bi lúc còn ở nam châm tới mặt đế của giá đỡ",
+    "mép trên bi lúc còn ở nam châm tới mặt trên cổng quang"
+   ],
+   "answer": 1,
+   "explanation": "$s$ là đoạn bi thật sự rơi tới lúc mép dưới bi che tia sáng, nên đo từ mép dưới bi (lúc còn ở nam châm) tới tia sáng.",
+   "distractorNotes": {
+    "A": "Đo từ mặt nam châm làm $s$ dài hơn đoạn bi thật sự rơi đúng một đường kính bi.",
+    "C": "Đồng hồ dừng khi bi che tia sáng, không phải khi bi chạm đế, nên chọn ngọn đo sai.",
+    "D": "Gốc ở mép trên bi và ngọn ở mặt cổng quang đều không ứng với đoạn bi rơi đến lúc che tia sáng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Vì sao khi đo thời gian bi rơi khoảng $0{,}5\\ \\text{m}$, phòng thí nghiệm dùng cổng quang nối đồng hồ hiện số thay cho bấm giây bằng tay?",
+   "options": [
+    "Cổng quang làm viên bi rơi nhanh hơn nên dễ đo hơn",
+    "Đồng hồ hiện số có nhiều chữ số nên không còn sai số",
+    "Độ trễ của tay cỡ $0{,}1\\ \\text{s}$ đáng kể so với thời gian rơi cỡ $0{,}3\\ \\text{s}$",
+    "Bấm tay chính xác hơn nhưng cổng quang thao tác nhanh hơn"
+   ],
+   "answer": 2,
+   "explanation": "Thời gian rơi chỉ khoảng $0{,}3\\ \\text{s}$ nên độ trễ tay cỡ $0{,}1\\ \\text{s}$ chiếm cỡ một phần ba; cổng quang ghi đúng lúc bi che tia sáng.",
+   "distractorNotes": {
+    "A": "Cổng quang chỉ ghi thời điểm bi che tia sáng, không tác động gì lên chuyển động của bi.",
+    "B": "Nhiều chữ số không có nghĩa là hết sai số, đồng hồ vẫn có sai số dụng cụ.",
+    "D": "Tay người mới là khâu chậm, độ trễ cỡ $0{,}1\\ \\text{s}$ khiến bấm tay kém chính xác hơn nhiều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm, đồng hồ hiện số dừng đếm thời gian khi",
+   "options": [
+    "công tắc nam châm điện được đóng lại",
+    "viên bi bắt đầu rời khỏi nam châm điện",
+    "viên bi chạm vào mặt đế của giá đỡ",
+    "viên bi che tia sáng của cổng quang"
+   ],
+   "answer": 3,
+   "explanation": "Ngắt công tắc thì bi rơi và đồng hồ bắt đầu đếm; mép dưới bi che tia sáng cổng quang thì đồng hồ dừng, cho thời gian $t$.",
+   "distractorNotes": {
+    "A": "Đóng công tắc chỉ cấp điện để nam châm giữ bi, không phải tín hiệu dừng đồng hồ.",
+    "B": "Lúc bi rời nam châm là lúc đồng hồ bắt đầu đếm chứ không phải lúc dừng.",
+    "C": "Tín hiệu dừng đến từ cổng quang khi bi che tia sáng, không phải từ đế giá đỡ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Sai số hệ thống trong phép đo có đặc điểm nào sau đây?",
+   "options": [
+    "Lệch cùng một phía ở mọi lần đo, lấy trung bình không giảm",
+    "Lệch lên xuống thất thường, lấy trung bình thì giảm",
+    "Chỉ xuất hiện khi đo một lần, đo nhiều lần thì hết",
+    "Luôn bằng đúng một độ chia nhỏ nhất của dụng cụ"
+   ],
+   "answer": 0,
+   "explanation": "Sai số hệ thống lệch cùng một phía mọi lần nên lấy trung bình không giảm, phải tìm nguyên nhân để khắc phục.",
+   "distractorNotes": {
+    "B": "Lệch lên xuống thất thường và giảm khi lấy trung bình là đặc điểm của sai số ngẫu nhiên.",
+    "C": "Sai số hệ thống lặp lại cùng phía ở mọi lần đo nên đo nhiều lần không làm mất nó.",
+    "D": "Lấy bằng một độ chia là cách ước lượng sai số dụng cụ, không phải đặc điểm của sai số hệ thống."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Ngắt điện rồi nhưng nam châm vẫn còn từ dư hút yếu viên bi, khiến bi rời muộn ở mọi lần thả. Sai số này là",
+   "options": [
+    "sai số ngẫu nhiên, giảm được bằng cách đo nhiều lần",
+    "sai số hệ thống, phải tìm nguyên nhân để khắc phục",
+    "sai số ngẫu nhiên, tự triệt tiêu khi lấy trung bình",
+    "không phải sai số vì không làm thay đổi thời gian đo"
+   ],
+   "answer": 1,
+   "explanation": "Từ dư làm bi rời muộn cùng một phía ở mọi lần, là sai số hệ thống; lấy trung bình không trị được.",
+   "distractorNotes": {
+    "A": "Độ trễ lặp lại cùng phía ở mọi lần, không lên xuống nên đo nhiều lần không giảm được.",
+    "C": "Bù trừ khi lấy trung bình chỉ xảy ra với sai số ngẫu nhiên, ở đây lần nào bi cũng rời muộn.",
+    "D": "Bi rời muộn trong khi đồng hồ đã đếm nên thời gian đọc được lớn hơn thời gian rơi thật."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Kết quả $g = \\bar g \\pm \\Delta g$ được coi là phù hợp với giá trị tham khảo $9{,}8\\ \\text{m/s}^2$ khi",
+   "options": [
+    "giá trị $\\bar g$ trùng khít đúng bằng $9{,}8\\ \\text{m/s}^2$",
+    "sai số $\\Delta g$ nhỏ hơn sai số của mọi nhóm khác",
+    "khoảng từ $\\bar g - \\Delta g$ đến $\\bar g + \\Delta g$ chứa $9{,}8$",
+    "giá trị $\\bar g$ lớn hơn $9{,}8\\ \\text{m/s}^2$ một chút"
+   ],
+   "answer": 2,
+   "explanation": "Phải xét cả khoảng $\\bar g \\pm \\Delta g$: khoảng chứa $9{,}8$ thì phù hợp, không xét riêng $\\bar g$.",
+   "distractorNotes": {
+    "A": "Không cần trùng khít, chỉ cần khoảng $\\bar g \\pm \\Delta g$ chứa giá trị tham khảo.",
+    "B": "Sai số nhỏ mà khoảng không chứa $9{,}8$ thì kết quả chụm nhưng lệch, có thể còn sai số hệ thống.",
+    "D": "Xét riêng $\\bar g$ lớn hay nhỏ là sai, phải xét cả khoảng có chứa $9{,}8$ hay không."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Để kiểm tra giá đỡ của bộ thí nghiệm đã đặt thẳng đứng, người ta dùng",
+   "options": [
+    "thước đo chia tới milimét",
+    "đồng hồ đo thời gian hiện số",
+    "cổng quang điện đặt ở chân giá",
+    "dây dọi treo dọc theo giá đỡ"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu giá đỡ thẳng đứng được kiểm bằng dây dọi.",
+   "distractorNotes": {
+    "A": "Thước dùng để đo độ cao $s$, không chỉ ra được phương thẳng đứng.",
+    "B": "Đồng hồ hiện số chỉ dùng để đo thời gian rơi $t$.",
+    "C": "Cổng quang dùng phát hiện lúc bi đi qua để dừng đồng hồ, không kiểm phương thẳng đứng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bi thả từ nghỉ rơi quãng đường $s$ trong thời gian $t$. Gia tốc rơi tự do được tính bằng công thức",
+   "options": [
+    "$g = \\dfrac{2s}{t}$",
+    "$g = \\dfrac{s}{t^2}$",
+    "$g = \\dfrac{2s}{t^2}$",
+    "$g = 2st^2$"
+   ],
+   "answer": 2,
+   "explanation": "Từ $s = \\dfrac{1}{2}gt^2$ suy ra $g = \\dfrac{2s}{t^2}$.",
+   "distractorNotes": {
+    "A": "Chia cho $t$ thay vì $t^2$ là quên rằng quãng đường tỉ lệ với bình phương thời gian.",
+    "B": "Quên nhân $2$ khi chuyển hệ số $\\dfrac{1}{2}$ từ $s = \\dfrac{1}{2}gt^2$ sang vế kia.",
+    "D": "Nhân với $t^2$ thay vì chia là biến đổi ngược, đơn vị cũng không còn là $\\text{m/s}^2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Với $g = \\dfrac{2s}{t^2}$, sai số tương đối $\\delta = \\dfrac{\\Delta g}{\\bar g}$ được tính bằng",
+   "options": [
+    "$\\dfrac{\\Delta s}{s} + \\dfrac{\\Delta t}{\\bar t}$",
+    "$\\dfrac{\\Delta s}{s} + 2\\dfrac{\\Delta t}{\\bar t}$",
+    "$\\dfrac{\\Delta s}{s} - 2\\dfrac{\\Delta t}{\\bar t}$",
+    "$2\\dfrac{\\Delta s}{s} + \\dfrac{\\Delta t}{\\bar t}$"
+   ],
+   "answer": 1,
+   "explanation": "Tích, thương thì cộng sai số tương đối; $t^2 = t \\cdot t$ nên phần của $t$ tính hai lần: $\\delta = \\dfrac{\\Delta s}{s} + 2\\dfrac{\\Delta t}{\\bar t}$.",
+   "distractorNotes": {
+    "A": "Bỏ quên hệ số $2$ sinh ra do $t$ xuất hiện dưới dạng bình phương.",
+    "C": "Sai số tương đối luôn được cộng, kể cả khi đại lượng nằm ở mẫu số.",
+    "D": "Đặt nhầm hệ số $2$ cho $s$, trong khi $s$ chỉ mũ một còn $t$ mới mũ hai."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sai số tuyệt đối $\\Delta t$ của thời gian rơi được tính bằng công thức nào? ($\\overline{\\Delta t}$ là trung bình các $\\Delta t_i$, $\\Delta t_{\\text{dc}}$ là sai số dụng cụ)",
+   "options": [
+    "$\\Delta t = \\overline{\\Delta t} + \\Delta t_{\\text{dc}}$",
+    "$\\Delta t = \\overline{\\Delta t} - \\Delta t_{\\text{dc}}$",
+    "$\\Delta t = \\overline{\\Delta t}$",
+    "$\\Delta t = \\Delta t_{\\text{dc}}$"
+   ],
+   "answer": 0,
+   "explanation": "Sai số của $t$ là độ phân tán giữa các lần cộng giới hạn của đồng hồ: $\\Delta t = \\overline{\\Delta t} + \\Delta t_{\\text{dc}}$.",
+   "distractorNotes": {
+    "B": "Sai số dụng cụ phải cộng thêm vào độ phân tán chứ không trừ đi.",
+    "C": "Bỏ mất sai số dụng cụ, trong khi lấy trung bình không xoá được $\\Delta t_{\\text{dc}}$.",
+    "D": "Bỏ mất phần phân tán giữa các lần đo, chỉ giữ giới hạn của đồng hồ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Thả bi từ nghỉ, bỏ qua sức cản. Nếu tăng độ cao thả $s$ lên gấp $4$ lần thì thời gian rơi $t$",
+   "options": [
+    "tăng gấp $4$ lần",
+    "tăng gấp $16$ lần",
+    "tăng gấp $2$ lần",
+    "không thay đổi"
+   ],
+   "answer": 2,
+   "explanation": "$t = \\sqrt{\\dfrac{2s}{g}}$ nên $t$ tỉ lệ với $\\sqrt{s}$: $s$ gấp $4$ thì $t$ gấp $2$.",
+   "distractorNotes": {
+    "A": "Coi $t$ tỉ lệ thuận với $s$, trong khi thực ra $s$ tỉ lệ với $t^2$.",
+    "B": "Bình phương thay vì lấy căn, đảo ngược quan hệ $s$ tỉ lệ với $t^2$.",
+    "D": "Cùng gia tốc mà rơi quãng đường dài hơn thì phải mất nhiều thời gian hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vẽ đồ thị $s$ theo $t^2$ được đường thẳng qua gốc có độ dốc $k$. Gia tốc rơi tự do bằng",
+   "options": [
+    "$g = \\dfrac{k}{2}$",
+    "$g = k$",
+    "$g = k^2$",
+    "$g = 2k$"
+   ],
+   "answer": 3,
+   "explanation": "Từ $s = \\dfrac{g}{2}t^2$, độ dốc $k = \\dfrac{g}{2}$ nên $g = 2k$.",
+   "distractorNotes": {
+    "A": "Đảo quan hệ: độ dốc mới bằng $\\dfrac{g}{2}$, nên $g$ phải gấp đôi độ dốc.",
+    "B": "Quên hệ số $\\dfrac{1}{2}$ trong $s = \\dfrac{1}{2}gt^2$ nên coi độ dốc bằng $g$.",
+    "C": "Bình phương độ dốc không có cơ sở từ $s = \\dfrac{g}{2}t^2$ và sai cả đơn vị."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên đồ thị $s$ (m) theo $t^2$ (s²), độ dốc $\\dfrac{\\Delta s}{\\Delta (t^2)}$ có đơn vị là",
+   "options": [
+    "$\\text{m/s}$",
+    "$\\text{m/s}^2$",
+    "$\\text{s}^2/\\text{m}$",
+    "$\\text{m} \\cdot \\text{s}^2$"
+   ],
+   "answer": 1,
+   "explanation": "Độ dốc là mét chia giây bình phương, tức $\\text{m/s}^2$, cùng đơn vị với $\\dfrac{g}{2}$.",
+   "distractorNotes": {
+    "A": "Trục hoành là $t^2$ chứ không phải $t$, nên mẫu số phải là giây bình phương.",
+    "C": "Đảo tử và mẫu, trong khi độ dốc là $\\Delta s$ chia cho $\\Delta (t^2)$.",
+    "D": "Độ dốc là thương của hai đại lượng, không phải tích của chúng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một nhóm thả bi 5 lần từ cùng độ cao $0{,}500\\ \\text{m}$, đồng hồ hiện số chia tới $0{,}001\\ \\text{s}$ ghi được 5 giá trị $t$ hơi khác nhau, lệch nhau vài phần nghìn giây.",
+   "statements": [
     {
-      "kind": "dieu_kien",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "type": "multiple_choice",
-      "question": "Vì sao phòng thí nghiệm dùng cổng quang nối đồng hồ hiện số để đo thời gian rơi của bi, thay vì bấm đồng hồ bằng tay?",
-      "options": [
-        "Cổng quang làm cho bi rơi nhanh hơn nên thời gian ngắn hơn",
-        "Đồng hồ hiện số hiện nhiều chữ số nên chắc chắn không có sai số",
-        "Tay bấm trễ cỡ $0{,}1\\ \\text{s}$, so với thời gian rơi chỉ cỡ $0{,}3\\ \\text{s}$ thì sai số rất lớn",
-        "Bấm tay luôn cho thời gian nhỏ hơn thời gian thật"
-      ],
-      "answer": 2,
-      "explanation": "Độ trễ $0{,}1\\ \\text{s}$ chiếm cỡ $30\\ \\%$ của $0{,}32\\ \\text{s}$. Cổng quang chỉ ghi thời điểm, không tác động lên bi; đồng hồ hiện số vẫn còn sai số dụng cụ ($0{,}001\\ \\text{s}$)."
+     "text": "Các giá trị $t$ lên xuống thất thường giữa các lần là biểu hiện của sai số ngẫu nhiên.",
+     "answer": true
     },
     {
-      "kind": "dinh_nghia",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Nguyên lí của phép đo gia tốc rơi tự do trong bài là:",
-      "options": [
-        "Thả bi từ nghỉ, đo quãng đường $s$ và thời gian rơi $t$, rồi dùng $s = \\tfrac12 g t^2$",
-        "Ném bi thẳng đứng lên, đo thời gian lên tới điểm cao nhất",
-        "Đo khối lượng của bi, vì $g$ phụ thuộc vào khối lượng",
-        "Đo vận tốc lúc chạm đất rồi chia cho quãng đường rơi"
-      ],
-      "answer": 0,
-      "explanation": "Bi thả từ nghỉ, bỏ qua lực cản là rơi tự do nên $s = \\tfrac12 g t^2$, suy ra $g = 2s/t^2$. $g$ không phụ thuộc khối lượng bi."
+     "text": "Lấy trung bình 5 lần đo làm giảm ảnh hưởng của sai số ngẫu nhiên.",
+     "answer": true
     },
     {
-      "kind": "hien_tuong",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Trong phương án có nam châm điện và cổng quang, đồng hồ hiện số bắt đầu đếm và dừng đếm vào lúc nào?",
-      "options": [
-        "Bắt đầu khi bi che tia sáng; dừng khi ngắt điện nam châm",
-        "Bắt đầu khi bật nam châm điện; dừng khi bi chạm đáy giá đỡ",
-        "Bắt đầu khi bi che tia sáng; dừng khi bi chạm sàn",
-        "Bắt đầu khi ngắt điện nam châm cho bi rơi; dừng khi bi che tia sáng của cổng quang"
-      ],
-      "answer": 3,
-      "explanation": "Ngắt công tắc thì bi rời nam châm và đồng hồ đếm; mép dưới bi che tia sáng thì đồng hồ dừng, cho thời gian rơi $t$ của đoạn $s$ giữa mép dưới bi và tia sáng."
+     "text": "Lấy trung bình đủ nhiều lần sẽ xoá được sai số dụng cụ $\\Delta t_{\\text{dc}}$ của đồng hồ.",
+     "answer": false
     },
     {
-      "kind": "dinh_nghia",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Trong bài, sai số dụng cụ của một phép đo được lấy bằng:",
-      "options": [
-        "Hai độ chia nhỏ nhất của dụng cụ",
-        "Một độ chia nhỏ nhất của dụng cụ",
-        "Bằng $0$ nếu dụng cụ có màn hình hiện số",
-        "Sai số tuyệt đối trung bình của các lần đo"
-      ],
-      "answer": 1,
-      "explanation": "Bài lấy sai số dụng cụ bằng một độ chia: thước $1\\ \\text{mm}$ cho $\\Delta s = 0{,}001\\ \\text{m}$; đồng hồ hiện số cho $\\Delta t_{\\text{dc}} = 0{,}001\\ \\text{s}$. Màn hình hiện số vẫn có độ chia nên vẫn có sai số."
-    },
-    {
-      "kind": "hien_tuong",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Phương án thứ hai vẽ đồ thị $s$ theo $t^2$. Đồ thị này có dạng và độ dốc như thế nào?",
-      "options": [
-        "Đường parabol đi qua gốc toạ độ, độ dốc bằng $g$",
-        "Đường thẳng đi qua gốc toạ độ, độ dốc bằng $g$",
-        "Đường thẳng không qua gốc toạ độ, độ dốc bằng $2g$",
-        "Đường thẳng đi qua gốc toạ độ, độ dốc bằng $\\dfrac{g}{2}$"
-      ],
-      "answer": 3,
-      "explanation": "Từ $s = \\dfrac{g}{2}t^2$, $s$ là hàm bậc nhất của $t^2$ nên đồ thị là đường thẳng qua gốc với độ dốc $g/2$, do đó $g = 2 \\cdot$ độ dốc. Nhiễu quên chia $2$, hoặc nhầm đồ thị theo $t$ (khi đó mới là parabol)."
-    },
-    {
-      "kind": "dieu_kien",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "true_false",
-      "question": "Về sai số ngẫu nhiên và sai số hệ thống trong thí nghiệm này, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lấy trung bình nhiều lần đo làm giảm sai số ngẫu nhiên.",
-          "answer": true
-        },
-        {
-          "text": "Nam châm còn từ dư làm bi luôn rời muộn ở mọi lần thả là một sai số hệ thống.",
-          "answer": true
-        },
-        {
-          "text": "Sai số hệ thống sẽ tự triệt tiêu nếu đo đủ nhiều lần rồi lấy trung bình.",
-          "answer": false
-        },
-        {
-          "text": "Đo $s$ từ mặt nam châm thay vì từ mép dưới bi làm $s$ lệch cùng một phía ở mọi lần.",
-          "answer": true
-        }
-      ],
-      "explanation": "Sai số hệ thống lệch cùng một phía nên lấy trung bình không bù được; phải tìm nguyên nhân và khắc phục (hiệu chỉnh gốc $s$, khử từ dư)."
-    },
-    {
-      "kind": "dieu_kien",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "true_false",
-      "question": "Khi đánh giá kết quả $g = \\bar g \\pm \\Delta g$ so với giá trị tham khảo $9{,}8\\ \\text{m/s}^2$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Kết quả phù hợp với $9{,}8$ khi khoảng $\\bar g \\pm \\Delta g$ chứa $9{,}8$.",
-          "answer": true
-        },
-        {
-          "text": "Nếu $\\bar g$ khác $9{,}8$ thì chắc chắn thí nghiệm đã hỏng.",
-          "answer": false
-        },
-        {
-          "text": "Khoảng không chứa $9{,}8$ có thể do sai số hệ thống hoặc do ước lượng sai số quá nhỏ.",
-          "answer": true
-        },
-        {
-          "text": "Sai số $\\Delta g$ càng nhỏ thì kết quả càng chắc chắn phù hợp với $9{,}8$, kể cả khi khoảng không chứa $9{,}8$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Phải xét cả khoảng, không chỉ xét riêng $\\bar g$. Khoảng nhỏ nhưng lệch khỏi $9{,}8$ lại là dấu hiệu của sai số hệ thống."
-    },
-    {
-      "kind": "dieu_kien",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "type": "short_answer",
-      "question": "Cùng nơi, thả bi từ độ cao gấp $16$ lần thì thời gian rơi gấp bao nhiêu lần?",
-      "answer": "4",
-      "explanation": "$t = \\sqrt{2s/g}$ tỉ lệ với $\\sqrt{s}$ (vì $s$ tỉ lệ với $t^2$), nên $s$ gấp $16$ thì $t$ gấp $\\sqrt{16} = 4$ lần."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Thả bi từ độ cao $s = 0{,}600\\ \\text{m}$, đồng hồ ghi $t = 0{,}350\\ \\text{s}$. Gia tốc rơi tự do tính được là:",
-      "options": [
-        "$3{,}43\\ \\text{m/s}^2$",
-        "$9{,}80\\ \\text{m/s}^2$",
-        "$4{,}90\\ \\text{m/s}^2$",
-        "$0{,}147\\ \\text{m/s}^2$"
-      ],
-      "answer": 1,
-      "explanation": "$g = \\dfrac{2s}{t^2} = \\dfrac{1{,}2}{0{,}1225} \\approx 9{,}80$. Ra $3{,}43$ là $2s/t$; ra $4{,}90$ là $s/t^2$, quên số $2$; ra $0{,}147$ là $2st^2$, nhân thay vì chia."
-    },
-    {
-      "kind": "cong_thuc",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Sai số tương đối của phép đo $g = \\dfrac{2s}{t^2}$ được tính bằng công thức nào?",
-      "options": [
-        "$\\delta = \\dfrac{\\Delta s}{s} + 2\\dfrac{\\Delta t}{\\bar t}$",
-        "$\\delta = \\dfrac{\\Delta s}{s} + \\dfrac{\\Delta t}{\\bar t}$",
-        "$\\delta = \\dfrac{\\Delta s}{s} - 2\\dfrac{\\Delta t}{\\bar t}$",
-        "$\\delta = \\dfrac{\\Delta s}{s} \\cdot 2\\dfrac{\\Delta t}{\\bar t}$"
-      ],
-      "answer": 0,
-      "explanation": "Tích, thương thì cộng các sai số tương đối, và $t$ xuất hiện ở bình phương nên có hệ số $2$. Nhiễu là quên hệ số $2$, lấy hiệu (sai số luôn cộng dồn) hoặc nhân."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Năm lần đo thời gian rơi: $0{,}452;\\ 0{,}454;\\ 0{,}453;\\ 0{,}455;\\ 0{,}451\\ \\text{s}$ (đồng hồ chia tới $0{,}001\\ \\text{s}$). Sai số $\\Delta t = \\overline{\\Delta t} + \\Delta t_{\\text{dc}}$ là:",
-      "options": [
-        "$0{,}0012\\ \\text{s}$",
-        "$0{,}0060\\ \\text{s}$",
-        "$0{,}0022\\ \\text{s}$",
-        "$0{,}0010\\ \\text{s}$"
-      ],
-      "answer": 2,
-      "explanation": "$\\bar t = 0{,}453$; các $\\Delta t_i$ là $0{,}001;\\ 0{,}001;\\ 0;\\ 0{,}002;\\ 0{,}002$, trung bình $0{,}0012$; cộng $\\Delta t_{\\text{dc}} = 0{,}001$ được $0{,}0022\\ \\text{s}$. Ra $0{,}0012$ là quên sai số dụng cụ; ra $0{,}0060$ là cộng các $\\Delta t_i$ mà không chia $5$; ra $0{,}0010$ là chỉ có sai số dụng cụ."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Trên đường thẳng của đồ thị $s$–$t^2$ lấy hai điểm $(t^2;\\ s) = (0{,}0500;\\ 0{,}245)$ và $(0{,}1000;\\ 0{,}490)$ ($t^2$ tính bằng $\\text{s}^2$, $s$ bằng $\\text{m}$). Gia tốc rơi tự do là:",
-      "options": [
-        "$4{,}9\\ \\text{m/s}^2$",
-        "$19{,}6\\ \\text{m/s}^2$",
-        "$0{,}41\\ \\text{m/s}^2$",
-        "$9{,}8\\ \\text{m/s}^2$"
-      ],
-      "answer": 3,
-      "explanation": "Độ dốc $k = \\dfrac{0{,}490 - 0{,}245}{0{,}1000 - 0{,}0500} = 4{,}9$ nên $g = 2k = 9{,}8$. Ra $4{,}9$ là quên nhân $2$; ra $19{,}6$ là nhân $4$; ra $0{,}41$ là đảo tử và mẫu của độ dốc rồi nhân $2$."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "multiple_choice",
-      "question": "Bi thật sự rơi $0{,}400\\ \\text{m}$ nhưng nhóm đo $s$ từ mặt nam châm nên ghi $0{,}410\\ \\text{m}$ (thời gian $t$ đo đúng). Gia tốc nhóm tính ra:",
-      "options": [
-        "Lớn hơn giá trị thật khoảng $5\\ \\%$",
-        "Nhỏ hơn giá trị thật khoảng $2{,}5\\ \\%$",
-        "Lớn hơn giá trị thật khoảng $2{,}5\\ \\%$",
-        "Bằng giá trị thật, vì $g$ chỉ phụ thuộc thời gian"
-      ],
-      "answer": 2,
-      "explanation": "$g = 2s/t^2$ tỉ lệ thuận với $s$, nên $s$ lớn hơn $0{,}010/0{,}400 = 2{,}5\\ \\%$ thì $g$ lớn hơn $2{,}5\\ \\%$. Ra $5\\ \\%$ là nhân thêm hệ số $2$ (hệ số $2$ chỉ nằm ở phần của $t$); ra nhỏ hơn là cho rằng $s$ dài thì bi rơi chậm; ra bằng là quên $s$ ở tử số."
-    },
-    {
-      "kind": "cong_thuc",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "true_false",
-      "question": "Một nhóm có $s = 0{,}500\\ \\text{m}$, $\\Delta s = 0{,}001\\ \\text{m}$, $\\bar t = 0{,}320\\ \\text{s}$, $\\Delta t = 0{,}002\\ \\text{s}$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$\\bar g \\approx 9{,}77\\ \\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Sai số tương đối $\\delta \\approx 0{,}0145$.",
-          "answer": true
-        },
-        {
-          "text": "Sai số tuyệt đối $\\Delta g \\approx 0{,}14\\ \\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Khoảng $9{,}77 \\pm 0{,}14$ không chứa $9{,}8$, nên kết quả không phù hợp với $9{,}8$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$\\bar g = 1{,}000/0{,}1024 \\approx 9{,}77$; $\\delta = 0{,}002 + 0{,}004/0{,}32 \\approx 0{,}0145$; $\\Delta g \\approx 0{,}14$. Khoảng từ $9{,}63$ đến $9{,}91$ chứa $9{,}8$ nên phù hợp."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "true_false",
-      "question": "Dùng điện thoại quay chậm $240$ khung/s để đo thời gian rơi bằng cách đếm số khung. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$120$ khung ứng với $0{,}5\\ \\text{s}$.",
-          "answer": true
-        },
-        {
-          "text": "Sai lệch $1$ khung ứng với khoảng $0{,}0042\\ \\text{s}$.",
-          "answer": true
-        },
-        {
-          "text": "Sai lệch $1$ khung nhỏ hơn độ chia $0{,}001\\ \\text{s}$ của đồng hồ hiện số.",
-          "answer": false
-        },
-        {
-          "text": "Dụng cụ kém hơn thì $\\Delta t_{\\text{dc}}$ lớn hơn, nên sai số của $g$ lớn hơn.",
-          "answer": true
-        }
-      ],
-      "explanation": "$1/240 \\approx 0{,}0042\\ \\text{s}$, lớn hơn $0{,}001\\ \\text{s}$ khoảng $4$ lần, nên phương án điện thoại cho sai số lớn hơn cổng quang."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Bi rơi $s = 1{,}225\\ \\text{m}$ hết $t = 0{,}500\\ \\text{s}$. Gia tốc rơi tự do là bao nhiêu $\\text{m/s}^2$ (làm tròn 1 chữ số thập phân)?",
-      "answer": "9,8",
-      "explanation": "$g = \\dfrac{2 \\cdot 1{,}225}{0{,}500^2} = \\dfrac{2{,}45}{0{,}25} = 9{,}8\\ \\text{m/s}^2$."
-    },
-    {
-      "kind": "cong_thuc",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Một phép đo có $\\dfrac{\\Delta s}{s} = 0{,}5\\ \\%$ và $\\dfrac{\\Delta t}{\\bar t} = 0{,}6\\ \\%$. Sai số tương đối $\\delta$ của $g$ là bao nhiêu phần trăm?",
-      "answer": "1,7",
-      "explanation": "$\\delta = 0{,}5 + 2 \\cdot 0{,}6 = 1{,}7\\ \\%$."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Một phép đo có $\\bar g = 9{,}70\\ \\text{m/s}^2$ và sai số tương đối $\\delta = 0{,}02$. Sai số tuyệt đối $\\Delta g$ là bao nhiêu $\\text{m/s}^2$ (làm tròn 2 chữ số thập phân)?",
-      "answer": "0,19",
-      "explanation": "$\\Delta g = \\delta \\cdot \\bar g = 0{,}02 \\cdot 9{,}70 = 0{,}194 \\approx 0{,}19\\ \\text{m/s}^2$."
+     "text": "Nếu nhóm đo $s$ sai gốc thì lấy trung bình nhiều lần sẽ bù lại được.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Lệch thất thường là sai số ngẫu nhiên, trung bình làm giảm; nhưng trung bình không xoá được $\\Delta t_{\\text{dc}}$, và đo $s$ sai gốc là sai số hệ thống, lệch cùng phía mọi lần.",
+   "distractorNotes": {
+    "0": "Giá trị lên xuống không theo một phía cố định chính là dấu hiệu của sai số ngẫu nhiên.",
+    "1": "Các lần lệch lên và lệch xuống bù nhau một phần nên trung bình gần giá trị thật hơn.",
+    "2": "Sai số dụng cụ là giới hạn của đồng hồ, có mặt ở mọi lần đo nên trung bình không loại bỏ được.",
+    "3": "Sai gốc $s$ làm lệch cùng một chiều ở mọi lần, là sai số hệ thống nên trung bình không bù được."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bộ thí nghiệm gồm giá đỡ thẳng đứng, nam châm điện giữ viên bi thép, cổng quang ở phía dưới nối với đồng hồ hiện số chia tới $0{,}001\\ \\text{s}$; độ cao đo bằng thước chia tới $1\\ \\text{mm}$.",
+   "statements": [
+    {
+     "text": "Ngắt công tắc nam châm điện thì bi bắt đầu rơi và đồng hồ bắt đầu đếm.",
+     "answer": true
+    },
+    {
+     "text": "Cổng quang tác động lên viên bi làm bi rơi nhanh hơn.",
+     "answer": false
+    },
+    {
+     "text": "Sai số dụng cụ của thước được lấy bằng $0{,}001\\ \\text{m}$.",
+     "answer": true
+    },
+    {
+     "text": "Vì đồng hồ chia tới $0{,}001\\ \\text{s}$ nên phép đo thời gian không còn sai số.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ngắt điện thì bi rơi, đồng hồ đếm; cổng quang chỉ ghi thời điểm. Sai số dụng cụ lấy bằng một độ chia ($1\\ \\text{mm}$), và đồng hồ vẫn có sai số $0{,}001\\ \\text{s}$.",
+   "distractorNotes": {
+    "0": "Thao tác đúng như bài mô tả: ngắt công tắc thì bi rời nam châm và đồng hồ bắt đầu đếm.",
+    "1": "Cổng quang chỉ phát hiện lúc bi che tia sáng, không tác dụng lực lên bi.",
+    "2": "Sai số dụng cụ lấy bằng một độ chia, mà $1\\ \\text{mm} = 0{,}001\\ \\text{m}$.",
+    "3": "Đồng hồ nhiều chữ số vẫn có sai số dụng cụ bằng một độ chia $0{,}001\\ \\text{s}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một nhóm đo $s$ từ mặt nam châm nên giá trị ghi được dài hơn đoạn bi thật sự rơi; thời gian $t$ vẫn đo đúng. Nhóm tính $g = \\dfrac{2s}{t^2}$.",
+   "statements": [
+    {
+     "text": "Thời gian $t$ đo được vẫn đúng vì ghi sai $s$ không làm bi rơi khác đi.",
+     "answer": true
+    },
+    {
+     "text": "Gia tốc $g$ nhóm tính ra nhỏ hơn giá trị đúng.",
+     "answer": false
+    },
+    {
+     "text": "Nếu $s$ ghi lớn hơn thật $2\\,\\%$ thì $g$ tính ra lớn hơn khoảng $2\\,\\%$.",
+     "answer": true
+    },
+    {
+     "text": "Sai lệch này là sai số ngẫu nhiên.",
+     "answer": false
+    }
+   ],
+   "explanation": "$g$ tỉ lệ với $s$ ở tử số nên $s$ ghi lớn thì $g$ lớn theo cùng tỉ lệ; lệch cùng một chiều mọi lần nên là sai số hệ thống.",
+   "distractorNotes": {
+    "0": "Ghi sai số đo $s$ không ảnh hưởng đến chuyển động thật của bi nên $t$ vẫn đúng.",
+    "1": "$s$ nằm ở tử số của $g = \\dfrac{2s}{t^2}$, nên $s$ ghi lớn hơn thì $g$ lớn hơn chứ không nhỏ hơn.",
+    "2": "Khi $t$ không đổi, $g$ tỉ lệ thuận với $s$ nên lệch cùng tỉ lệ $2\\,\\%$.",
+    "3": "Sai gốc làm lệch cùng một phía ở mọi lần đo, đó là sai số hệ thống chứ không ngẫu nhiên."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một nhóm dời cổng quang để thả bi từ nhiều độ cao khác nhau, mỗi độ cao lấy $\\bar t$, rồi vẽ đồ thị $s$ theo $t^2$.",
+   "statements": [
+    {
+     "text": "Đồ thị $s$ theo $t^2$ là đường thẳng đi qua gốc toạ độ.",
+     "answer": true
+    },
+    {
+     "text": "Độ dốc của đồ thị bằng $g$.",
+     "answer": false
+    },
+    {
+     "text": "Đồ thị $s$ theo $t$ (không bình phương) cũng là đường thẳng qua gốc.",
+     "answer": false
+    },
+    {
+     "text": "Ưu điểm của cách này là dùng nhiều điểm đo và điểm lệch thấy ngay.",
+     "answer": true
+    }
+   ],
+   "explanation": "Từ $s = \\dfrac{g}{2}t^2$: $s$ theo $t^2$ thẳng qua gốc, độ dốc $\\dfrac{g}{2}$; $s$ theo $t$ không phải đường thẳng vì $s$ tỉ lệ với $t^2$.",
+   "distractorNotes": {
+    "0": "$s = \\dfrac{g}{2}t^2$ có dạng $y = kx$ với $x = t^2$ nên đồ thị là đường thẳng qua gốc.",
+    "1": "Độ dốc là hệ số $\\dfrac{g}{2}$, phải nhân đôi mới ra $g$.",
+    "2": "$s$ tỉ lệ với $t^2$ chứ không tỉ lệ với $t$, nên $s$ theo $t$ là đường cong.",
+    "3": "Đường thẳng dùng cả các điểm đo nên không phụ thuộc một lần đo riêng lẻ và điểm lệch dễ nhận ra."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi xử lí số liệu đo $g = \\dfrac{2s}{t^2}$, học sinh dùng sai số tương đối $\\delta = \\dfrac{\\Delta s}{s} + 2\\dfrac{\\Delta t}{\\bar t}$ để viết kết quả $g = \\bar g \\pm \\Delta g$.",
+   "statements": [
+    {
+     "text": "Hệ số $2$ trước $\\dfrac{\\Delta t}{\\bar t}$ xuất hiện vì $g$ chứa $t^2 = t \\cdot t$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $t$ lệch $1\\,\\%$ thì $t^2$ lệch khoảng $2\\,\\%$.",
+     "answer": true
+    },
+    {
+     "text": "Sai số tuyệt đối được tính bằng $\\Delta g = \\dfrac{\\delta}{\\bar g}$.",
+     "answer": false
+    },
+    {
+     "text": "Với tích, thương của các đại lượng, ta cộng sai số tuyệt đối của chúng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Tích, thương thì cộng sai số tương đối, $t^2$ khiến phần của $t$ tính hai lần; sau đó $\\Delta g = \\delta \\cdot \\bar g$.",
+   "distractorNotes": {
+    "0": "$t$ xuất hiện hai lần trong tích $t \\cdot t$ nên sai số tương đối của nó được cộng hai lần.",
+    "1": "Sai số tương đối của $t^2$ bằng hai lần của $t$, nên $1\\,\\%$ thành khoảng $2\\,\\%$.",
+    "2": "Từ $\\delta = \\dfrac{\\Delta g}{\\bar g}$ suy ra $\\Delta g = \\delta \\cdot \\bar g$, phải nhân chứ không chia.",
+    "3": "Với tích, thương ta cộng sai số tương đối, không phải cộng sai số tuyệt đối."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 11. Thực hành: Đo gia tốc rơi tự do",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một nhóm tăng độ cao thả bi từ $0{,}200\\ \\text{m}$ lên $0{,}800\\ \\text{m}$ (bỏ qua sai số hệ thống), giữ nguyên sai số $\\Delta t$ của thời gian.",
+   "statements": [
+    {
+     "text": "Thời gian rơi $t$ tăng gấp $4$ lần.",
+     "answer": false
+    },
+    {
+     "text": "Thời gian rơi $t$ tăng gấp $2$ lần.",
+     "answer": true
+    },
+    {
+     "text": "Tỉ số $\\dfrac{2\\Delta t}{\\bar t}$ giảm còn một nửa.",
+     "answer": true
+    },
+    {
+     "text": "Thả từ độ cao lớn hơn làm phép đo $g$ kém chính xác hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "$t$ tỉ lệ với $\\sqrt{s}$: $s$ gấp $4$ thì $t$ gấp $2$; $\\Delta t$ không đổi nên $\\dfrac{2\\Delta t}{\\bar t}$ giảm một nửa, phép đo chính xác hơn.",
+   "distractorNotes": {
+    "0": "Coi $t$ tỉ lệ với $s$ là sai, vì $s$ tỉ lệ với $t^2$ nên $t$ chỉ gấp $\\sqrt{4} = 2$.",
+    "1": "Từ $t = \\sqrt{\\dfrac{2s}{g}}$, khi $s$ gấp $4$ thì $t$ gấp đúng $2$.",
+    "2": "$\\Delta t$ giữ nguyên còn $\\bar t$ gấp đôi nên tỉ số giảm còn một nửa.",
+    "3": "Thả cao hơn làm sai số tương đối của $t$ giảm nên kết quả chính xác hơn chứ không kém đi."
+   }
+  }
+ ]
 }

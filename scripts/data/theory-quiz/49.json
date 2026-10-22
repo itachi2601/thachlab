@@ -1,386 +1,532 @@
 {
-  "lesson_id": 49,
-  "lesson_title": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-  "item_id": 90,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 49,
+ "lesson_title": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+ "item_id": 90,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 10
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Chuyển động cơ là",
-      "options": [
-        "sự thay đổi vị trí của vật so với mặt đất, không cần xét vật nào khác",
-        "sự thay đổi vị trí của vật so với vật khác theo thời gian",
-        "sự thay đổi kích thước của vật theo thời gian",
-        "sự thay đổi khối lượng của vật khi có lực tác dụng"
-      ],
-      "answer": 1,
-      "explanation": "Chuyển động cơ luôn nói về vị trí đổi so với một vật khác (vật mốc). Phương án nhiễu thứ nhất bỏ qua tính tương đối: vật mốc có thể là bất kì vật nào, không chỉ mặt đất."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hành khách ngồi yên trên ghế xe buýt đang chạy trên đường. Phát biểu đúng là:",
-      "options": [
-        "Hành khách đứng yên so với mọi vật vì không tự di chuyển",
-        "Hành khách chuyển động so với ghế nhưng đứng yên so với cột đèn",
-        "Hành khách chuyển động so với mọi vật vì xe đang chạy",
-        "Hành khách đứng yên so với ghế nhưng chuyển động so với cột đèn bên đường"
-      ],
-      "answer": 3,
-      "explanation": "Chuyển động có tính tương đối: tuỳ chọn vật mốc là ghế hay cột đèn mà hành khách đứng yên hoặc chuyển động. Các phương án nhiễu hoặc coi chuyển động là tuyệt đối, hoặc đảo vật mốc."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một vật được coi là chất điểm khi",
-      "options": [
-        "kích thước của vật rất nhỏ so với độ dài đường đi (khoảng cách đang xét)",
-        "khối lượng của vật rất nhỏ",
-        "vật đang đứng yên so với vật mốc",
-        "vật có dạng hình cầu"
-      ],
-      "answer": 0,
-      "explanation": "Điều kiện chất điểm là kích thước nhỏ so với khoảng cách đang xét, không phụ thuộc khối lượng, trạng thái hay hình dạng. Chất điểm vẫn giữ khối lượng của vật."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hệ quy chiếu gồm",
-      "options": [
-        "chỉ vật mốc và trục toạ độ",
-        "chỉ đồng hồ và gốc thời gian",
-        "hệ toạ độ gắn với vật mốc, cùng gốc thời gian và đồng hồ",
-        "quỹ đạo và quãng đường đi được"
-      ],
-      "answer": 2,
-      "explanation": "Hệ quy chiếu = hệ toạ độ gắn với vật mốc + gốc thời gian và đồng hồ. Thiếu phần toạ độ hoặc phần thời gian thì chưa xác định được vị trí tại từng thời điểm."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Độ lớn độ dịch chuyển bằng quãng đường đi được khi vật",
-      "options": [
-        "chuyển động theo một đường cong bất kì",
-        "chuyển động thẳng nhưng có đổi chiều",
-        "quay về đúng điểm xuất phát",
-        "chuyển động thẳng và không đổi chiều"
-      ],
-      "answer": 3,
-      "explanation": "Chỉ khi thẳng và không đổi chiều thì độ lớn $d = s$. Đường cong hoặc đổi chiều làm $|d| \\lt s$; quay về chỗ cũ thì $d = 0$ còn $s$ lớn hơn 0."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về vị trí và toạ độ của chất điểm trên đường thẳng, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Toạ độ $x = \\overline{OM}$ là độ dài đại số, có thể nhận giá trị âm.",
-          "answer": true
-        },
-        {
-          "text": "Vật nằm ở phía âm của gốc $O$ thì $x = -OM$.",
-          "answer": true
-        },
-        {
-          "text": "Đổi gốc thời gian thì khoảng thời gian giữa hai thời điểm cũng đổi theo.",
-          "answer": false
-        },
-        {
-          "text": "Quỹ đạo là đường mà chất điểm vạch ra trong không gian khi chuyển động.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ý sai: đổi gốc thời gian chỉ làm đổi số ghi thời điểm, còn khoảng thời gian (hiệu hai thời điểm) giữ nguyên."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về độ dịch chuyển và quãng đường, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Độ dịch chuyển là đại lượng vectơ, quãng đường là đại lượng vô hướng.",
-          "answer": true
-        },
-        {
-          "text": "Quãng đường có thể nhận giá trị âm khi vật đi ngược chiều dương.",
-          "answer": false
-        },
-        {
-          "text": "Độ dịch chuyển chỉ phụ thuộc vị trí đầu và vị trí cuối.",
-          "answer": true
-        },
-        {
-          "text": "Vật quay về đúng điểm xuất phát thì quãng đường đi được bằng $0$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Quãng đường là độ dài đi được nên luôn không âm; dấu âm chỉ có ở độ dịch chuyển. Quay về chỗ cũ thì độ dịch chuyển bằng $0$ chứ quãng đường vẫn cộng dồn."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Một người chạy đúng một vòng sân rồi dừng lại ở chính điểm xuất phát. Độ dịch chuyển của người đó bằng bao nhiêu mét?",
-      "answer": "0",
-      "explanation": "Điểm đầu trùng điểm cuối nên độ dịch chuyển bằng $0$, dù quãng đường là cả chu vi vòng sân."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Một vật đi thẳng $6\\ \\text{m}$ theo chiều dương, rồi quay lại $2\\ \\text{m}$ trên cùng đường. Quãng đường vật đi được là bao nhiêu mét?",
-      "answer": "8",
-      "explanation": "Quãng đường cộng dồn mọi đoạn đã đi: $6 + 2 = 8\\ \\text{m}$ (độ dịch chuyển chỉ là $6 - 2 = 4\\ \\text{m}$)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Một vật chuyển động thẳng, không đổi chiều, đi được quãng đường $12\\ \\text{m}$. Độ lớn độ dịch chuyển của vật là bao nhiêu mét?",
-      "answer": "12",
-      "explanation": "Thẳng và không đổi chiều nên $|d| = s = 12\\ \\text{m}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trên trục $Ox$, độ dịch chuyển của vật từ vị trí $x_1$ đến vị trí $x_2$ được tính bằng",
-      "options": [
-        "$d = x_1 - x_2$",
-        "$d = x_2 - x_1$",
-        "$d = x_2 + x_1$",
-        "$d = |x_2 - x_1|$"
-      ],
-      "answer": 1,
-      "explanation": "Độ dịch chuyển lấy vị trí cuối trừ vị trí đầu, giữ dấu để chỉ hướng. $x_1 - x_2$ bị ngược dấu, $x_2 + x_1$ là cộng sai, còn $|x_2 - x_1|$ làm mất thông tin hướng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe chạy dọc trục $Ox$ từ $x_1 = 60\\ \\text{cm}$ tới $90\\ \\text{cm}$ rồi lùi về $x_2 = 25\\ \\text{cm}$. Độ dịch chuyển của xe là",
-      "options": [
-        "$35\\ \\text{cm}$",
-        "$95\\ \\text{cm}$",
-        "$-65\\ \\text{cm}$",
-        "$-35\\ \\text{cm}$"
-      ],
-      "answer": 3,
-      "explanation": "$d = x_2 - x_1 = 25 - 60 = -35\\ \\text{cm}$. $35\\ \\text{cm}$ quên dấu; $95\\ \\text{cm}$ là quãng đường $30 + 65$; $-65\\ \\text{cm}$ chỉ tính đoạn lùi cuối ($25 - 90$)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Robot đi thẳng $9\\ \\text{m}$ về phía Bắc, rồi rẽ đi thẳng $12\\ \\text{m}$ về phía Đông. Độ lớn độ dịch chuyển của robot là",
-      "options": [
-        "$15\\ \\text{m}$",
-        "$21\\ \\text{m}$",
-        "$3\\ \\text{m}$",
-        "$108\\ \\text{m}$"
-      ],
-      "answer": 0,
-      "explanation": "Hai đoạn vuông góc: $d = \\sqrt{9^2 + 12^2} = 15\\ \\text{m}$. $21\\ \\text{m}$ là cộng hai độ dài (quãng đường); $3\\ \\text{m}$ là trừ; $108$ là nhân hai độ dài."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe đi thẳng $2{,}0\\ \\text{km}$ về phía Đông, rồi quay lại $0{,}8\\ \\text{km}$ về phía Tây trên cùng con đường. Độ lớn độ dịch chuyển là",
-      "options": [
-        "$2{,}8\\ \\text{km}$",
-        "$2{,}15\\ \\text{km}$",
-        "$1{,}2\\ \\text{km}$",
-        "$0{,}8\\ \\text{km}$"
-      ],
-      "answer": 2,
-      "explanation": "Hai đoạn cùng phương, ngược chiều: $d = |2{,}0 - 0{,}8| = 1{,}2\\ \\text{km}$. $2{,}8\\ \\text{km}$ là quãng đường; $2{,}15\\ \\text{km}$ là dùng Pi-ta-go cho hai đoạn không vuông góc; $0{,}8\\ \\text{km}$ chỉ lấy đoạn quay lại."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vận động viên chạy đúng một vòng $400\\ \\text{m}$ hết $80\\ \\text{s}$ và về đúng điểm xuất phát. Tốc độ trung bình là",
-      "options": [
-        "$0$",
-        "$5\\ \\text{m/s}$",
-        "$0{,}2\\ \\text{m/s}$",
-        "$18\\ \\text{m/s}$"
-      ],
-      "answer": 1,
-      "explanation": "$v_{tb} = s/t = 400/80 = 5\\ \\text{m/s}$. Đáp án $0$ là dùng độ dịch chuyển thay quãng đường; $0{,}2$ là chia ngược $t/s$; $18$ là nhân thêm $3{,}6$ dù đã ở $\\text{m/s}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Robot đi $3\\ \\text{m}$ về phía Bắc rồi $4\\ \\text{m}$ về phía Đông, tổng thời gian $5\\ \\text{s}$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Quãng đường robot đi được là $7\\ \\text{m}$.",
-          "answer": true
-        },
-        {
-          "text": "Độ lớn độ dịch chuyển của robot là $7\\ \\text{m}$.",
-          "answer": false
-        },
-        {
-          "text": "Độ lớn độ dịch chuyển của robot là $5\\ \\text{m}$.",
-          "answer": true
-        },
-        {
-          "text": "Tốc độ trung bình là $1\\ \\text{m/s}$, vì lấy độ dịch chuyển chia thời gian.",
-          "answer": false
-        }
-      ],
-      "explanation": "$s = 3 + 4 = 7\\ \\text{m}$, $d = \\sqrt{3^2 + 4^2} = 5\\ \\text{m}$. Tốc độ trung bình dùng quãng đường: $7/5 = 1{,}4\\ \\text{m/s}$, không phải $1\\ \\text{m/s}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "don_vi",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về đổi đơn vị và thời gian khi tính tốc độ, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$36\\ \\text{km/h} = 10\\ \\text{m/s}$.",
-          "answer": true
-        },
-        {
-          "text": "$5\\ \\text{m/s} = 18\\ \\text{km/h}$.",
-          "answer": true
-        },
-        {
-          "text": "$6$ phút bằng $0{,}6$ giờ.",
-          "answer": false
-        },
-        {
-          "text": "Muốn đổi từ $\\text{km/h}$ sang $\\text{m/s}$ thì nhân với $3{,}6$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$6$ phút $= 6/60 = 0{,}1$ giờ. Đổi $\\text{km/h}$ sang $\\text{m/s}$ phải chia cho $3{,}6$ (nhân $3{,}6$ là đổi chiều ngược lại)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe đi quãng đường $54\\ \\text{km}$ hết $1{,}5\\ \\text{h}$. Tốc độ trung bình là bao nhiêu $\\text{km/h}$?",
-      "answer": "36",
-      "explanation": "$v_{tb} = 54/1{,}5 = 36\\ \\text{km/h}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đổi $90\\ \\text{km/h}$ sang $\\text{m/s}$. Kết quả là bao nhiêu $\\text{m/s}$?",
-      "answer": "25",
-      "explanation": "Chia cho $3{,}6$: $90/3{,}6 = 25\\ \\text{m/s}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật chuyển động thẳng trên trục $Ox$ từ $x_1 = 10\\ \\text{m}$ đến $x_2 = 4\\ \\text{m}$, không đổi chiều. Độ dịch chuyển $d$ là bao nhiêu mét?",
-      "answer": "-6",
-      "explanation": "$d = x_2 - x_1 = 4 - 10 = -6\\ \\text{m}$; dấu trừ cho biết vật đi ngược chiều dương."
-    }
+  "removed": [
+   {
+    "question": "Chuyển động cơ là",
+    "reason": "nghi_ngo: GHI CHÚ: Đáp án A đúng theo bài, nhưng ghi chú B khẳng định 'Kích thước vật không đổi khi chuyển động'. Khẳng định này sai về vật lí vì vật có thể vừa chuyển động vừa co giãn; nên nói định nghĩa chỉ xét vị trí."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật được coi là chất điểm khi",
+   "options": [
+    "khối lượng của vật rất nhỏ so với khối lượng vật mốc",
+    "kích thước của vật rất nhỏ so với độ dài đường đi",
+    "kích thước của vật nhỏ hơn một mét trong mọi trường hợp",
+    "vật chuyển động thẳng và không đổi chiều chuyển động"
+   ],
+   "answer": 1,
+   "explanation": "Chất điểm là vật có kích thước rất nhỏ so với độ dài đường đi hoặc khoảng cách đang xét.",
+   "distractorNotes": {
+    "A": "Nhầm điều kiện về khối lượng với điều kiện về kích thước; chất điểm vẫn giữ nguyên khối lượng của vật.",
+    "C": "Coi chất điểm theo kích thước tuyệt đối, trong khi điều kiện là kích thước rất nhỏ so với khoảng cách đang xét.",
+    "D": "Nhầm điều kiện chất điểm với điều kiện $|d| = s$; dạng quỹ đạo không quyết định việc coi là chất điểm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ quy chiếu gồm",
+   "options": [
+    "vật mốc, gốc thời gian và thước đo độ dài",
+    "hệ toạ độ gắn với vật mốc và quỹ đạo của vật",
+    "hệ toạ độ gắn với vật mốc, gốc thời gian và đồng hồ",
+    "chất điểm, quỹ đạo và đồng hồ đo thời gian"
+   ],
+   "answer": 2,
+   "explanation": "Theo bài, hệ quy chiếu gồm hệ toạ độ gắn với vật mốc, cùng với gốc thời gian và đồng hồ.",
+   "distractorNotes": {
+    "A": "Thay hệ toạ độ bằng thước đo độ dài và quên đồng hồ, nên không đủ thành phần để xác định vị trí và thời điểm.",
+    "B": "Gộp quỹ đạo của vật vào hệ quy chiếu, đồng thời bỏ sót gốc thời gian và đồng hồ.",
+    "D": "Nhầm các khái niệm gắn với vật chuyển động là chất điểm và quỹ đạo với thành phần của hệ quy chiếu."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Độ dịch chuyển là đại lượng",
+   "options": [
+    "vô hướng, không âm, cộng dồn độ dài cả đường đi",
+    "vectơ, cho biết độ dài và hướng của sự thay đổi vị trí",
+    "vô hướng, cho biết vật đi nhanh hay chậm theo thời gian",
+    "vectơ, luôn cùng hướng với chiều dương của trục toạ độ"
+   ],
+   "answer": 1,
+   "explanation": "Độ dịch chuyển là vectơ $\\vec d$, cho biết độ dài và hướng của sự thay đổi vị trí.",
+   "distractorNotes": {
+    "A": "Nhầm độ dịch chuyển với quãng đường, vốn mới là đại lượng vô hướng cộng dồn cả đường đi.",
+    "C": "Nhầm độ dịch chuyển với tốc độ, là đại lượng cho biết vật đi nhanh hay chậm.",
+    "D": "Quên rằng độ dịch chuyển có thể ngược chiều dương; khi đó $d$ mang dấu âm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên trục $Ox$, một vật đi từ vị trí có toạ độ $x_1$ đến vị trí có toạ độ $x_2$. Độ dịch chuyển của vật là",
+   "options": [
+    "$d = x_1 - x_2$",
+    "$d = x_1 + x_2$",
+    "$d = |x_2 - x_1|$",
+    "$d = x_2 - x_1$"
+   ],
+   "answer": 3,
+   "explanation": "Trên đường thẳng, $d = \\Delta x = x_2 - x_1$. Giá trị này có dấu, và dấu cho biết hướng.",
+   "distractorNotes": {
+    "A": "Lấy toạ độ đầu trừ toạ độ cuối nên dấu bị đảo, kéo theo hướng dịch chuyển bị đảo.",
+    "B": "Cộng hai toạ độ thay vì lấy hiệu, trong khi độ dịch chuyển là độ biến thiên toạ độ $\\Delta x$.",
+    "C": "Lấy trị tuyệt đối làm mất dấu của $d$, tức là mất thông tin về hướng dịch chuyển."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quãng đường đi được $s$ là đại lượng",
+   "options": [
+    "vô hướng, không âm, cộng dồn độ dài cả đường đi",
+    "vectơ, nối từ vị trí đầu tới vị trí cuối của vật",
+    "vô hướng, có thể âm khi vật đi ngược chiều dương",
+    "vectơ, chỉ phụ thuộc vào điểm đầu và điểm cuối"
+   ],
+   "answer": 0,
+   "explanation": "Quãng đường là độ dài vật đi được trong suốt quá trình. Đây là đại lượng vô hướng và không âm.",
+   "distractorNotes": {
+    "B": "Nhầm quãng đường với độ dịch chuyển, là mũi tên nối vị trí đầu với vị trí cuối.",
+    "C": "Gán dấu cho quãng đường như độ dịch chuyển, quên rằng độ dài đi được không bao giờ âm.",
+    "D": "Cho rằng quãng đường chỉ phụ thuộc hai điểm đầu cuối, trong khi nó phải cộng dồn toàn bộ đường đi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Độ lớn độ dịch chuyển bằng quãng đường đi được khi vật",
+   "options": [
+    "chuyển động trên một đường cong bất kì",
+    "chuyển động thẳng rồi quay về chỗ cũ",
+    "chuyển động thẳng và không đổi chiều",
+    "chuyển động tròn được đúng một vòng"
+   ],
+   "answer": 2,
+   "explanation": "Theo bài, $|d| = s$ chỉ khi vật chuyển động thẳng và không đổi chiều.",
+   "distractorNotes": {
+    "A": "Trên đường cong, đoạn thẳng nối đầu cuối luôn ngắn hơn đường đi, nên $|d| \\lt s$.",
+    "B": "Quay về chỗ cũ làm $d = 0$ trong khi $s$ vẫn khác 0, nên hai đại lượng không thể bằng nhau.",
+    "D": "Đi trọn một vòng thì điểm đầu trùng điểm cuối nên $d = 0$, còn $s$ bằng chu vi vòng tròn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Một bạn trượt đúng một vòng sát rào sân băng rồi dừng lại ngay chỗ xuất phát. Phát biểu nào sau đây đúng?",
+   "options": [
+    "Độ dịch chuyển bằng 0, quãng đường khác 0",
+    "Quãng đường bằng 0, độ dịch chuyển khác 0",
+    "Cả độ dịch chuyển và quãng đường bằng 0",
+    "Độ dịch chuyển bằng quãng đường đã trượt"
+   ],
+   "answer": 0,
+   "explanation": "Điểm đầu trùng điểm cuối nên $d = 0$. Quãng đường thì cộng dồn mọi mét đã trượt nên khác 0.",
+   "distractorNotes": {
+    "B": "Đảo vai trò hai đại lượng: chính quãng đường mới cộng dồn mọi mét đã trượt nên khác 0.",
+    "C": "Thấy về chỗ cũ liền cho cả quãng đường bằng 0, quên rằng bạn đã trượt thật một vòng.",
+    "D": "Áp $|d| = s$ ngoài điều kiện thẳng và không đổi chiều, trong khi bạn đi vòng rồi quay về chỗ cũ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật đi được quãng đường $s$ trong thời gian $t$. Tốc độ trung bình của vật là",
+   "options": [
+    "$v_{tb} = \\dfrac{d}{t}$",
+    "$v_{tb} = \\dfrac{s}{t}$",
+    "$v_{tb} = \\dfrac{t}{s}$",
+    "$v_{tb} = s\\cdot t$"
+   ],
+   "answer": 1,
+   "explanation": "Tốc độ trung bình được tính bằng $v_{tb} = s/t$, tức là dùng quãng đường chứ không dùng độ dịch chuyển.",
+   "distractorNotes": {
+    "A": "Dùng độ dịch chuyển thay cho quãng đường, nên tính ra vận tốc chứ không phải tốc độ trung bình.",
+    "C": "Đảo tử và mẫu, trong khi tốc độ phải là quãng đường đi được trong một đơn vị thời gian.",
+    "D": "Nhân quãng đường với thời gian, trong khi tốc độ phải là thương $s/t$ mới mô tả độ nhanh chậm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đổi đơn vị tốc độ: $1\\ \\text{m/s}$ bằng",
+   "options": [
+    "$3{,}6\\ \\text{km/h}$",
+    "$36\\ \\text{km/h}$",
+    "$0{,}36\\ \\text{km/h}$",
+    "$360\\ \\text{km/h}$"
+   ],
+   "answer": 0,
+   "explanation": "Ta có $1\\ \\text{h} = 3600\\ \\text{s}$, nên $1\\ \\text{m/s} = \\dfrac{3{,}6\\ \\text{km}}{1\\ \\text{h}} = 3{,}6\\ \\text{km/h}$.",
+   "distractorNotes": {
+    "B": "Đặt sai dấu phẩy nên kết quả lớn gấp 10 lần khi đổi $\\text{m}$ sang $\\text{km}$ và $\\text{s}$ sang $\\text{h}$.",
+    "C": "Đặt sai dấu phẩy nên kết quả nhỏ đi 10 lần so với giá trị đổi đúng.",
+    "D": "Nhầm bậc lũy thừa của 10 khi gộp $1\\ \\text{km} = 1000\\ \\text{m}$ và $1\\ \\text{h} = 3600\\ \\text{s}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật đi cùng một quãng đường $s$ nhưng thời gian đi giảm còn một nửa. Tốc độ trung bình của vật",
+   "options": [
+    "giảm còn một nửa",
+    "tăng lên gấp bốn",
+    "tăng lên gấp đôi",
+    "không thay đổi"
+   ],
+   "answer": 2,
+   "explanation": "Vì $v_{tb} = s/t$, giữ nguyên $s$ và giảm $t$ còn một nửa thì $v_{tb}$ tăng gấp đôi.",
+   "distractorNotes": {
+    "A": "Coi $v_{tb}$ tỉ lệ thuận với $t$, trong khi $t$ nằm ở mẫu số của $v_{tb} = s/t$.",
+    "B": "Tự thêm bình phương, trong khi công thức $v_{tb} = s/t$ chỉ chứa $t$ ở bậc nhất.",
+    "D": "Chỉ để ý quãng đường không đổi mà bỏ qua việc thời gian thay đổi làm $s/t$ thay đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ công thức $v_{tb} = \\dfrac{s}{t}$, thời gian đi của vật được tính bằng",
+   "options": [
+    "$t = s\\cdot v_{tb}$",
+    "$t = \\dfrac{v_{tb}}{s}$",
+    "$t = \\dfrac{d}{v_{tb}}$",
+    "$t = \\dfrac{s}{v_{tb}}$"
+   ],
+   "answer": 3,
+   "explanation": "Nhân hai vế với $t$ rồi chia cho $v_{tb}$, ta được $t = s/v_{tb}$.",
+   "distractorNotes": {
+    "A": "Biến đổi sai: chuyển $v_{tb}$ sang vế kia phải chia cho nó chứ không nhân với nó.",
+    "B": "Đảo tử và mẫu khi rút $t$ ra khỏi công thức $v_{tb} = s/t$.",
+    "C": "Thay quãng đường bằng độ dịch chuyển, trong khi tốc độ trung bình được định nghĩa theo $s$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật đi thẳng một đoạn có độ lớn $d_1$, rồi rẽ vuông góc đi thẳng thêm một đoạn có độ lớn $d_2$. Độ lớn độ dịch chuyển tổng là",
+   "options": [
+    "$d = d_1 + d_2$",
+    "$d = |d_1 - d_2|$",
+    "$d = d_1^2 + d_2^2$",
+    "$d = \\sqrt{d_1^2 + d_2^2}$"
+   ],
+   "answer": 3,
+   "explanation": "Hai mũi tên vuông góc nối đuôi nhau, nên độ dịch chuyển tổng là cạnh huyền: $d = \\sqrt{d_1^2 + d_2^2}$.",
+   "distractorNotes": {
+    "A": "Cộng hai độ lớn như cộng số, kết quả là quãng đường chứ không phải độ dịch chuyển của hai đoạn vuông góc.",
+    "B": "Lấy hiệu hai độ lớn, cách này chỉ đúng khi hai đoạn cùng phương và ngược chiều.",
+    "C": "Quên lấy căn bậc hai khi áp dụng định lí Pi-ta-go cho cạnh huyền."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật đi thẳng một đoạn có độ lớn $d_1$, rồi quay ngược lại trên cùng đường thẳng một đoạn có độ lớn $d_2$. Độ lớn độ dịch chuyển tổng là",
+   "options": [
+    "$d = \\sqrt{d_1^2 + d_2^2}$",
+    "$d = d_1 + d_2$",
+    "$d = |d_1 - d_2|$",
+    "$d = -(d_1 + d_2)$"
+   ],
+   "answer": 2,
+   "explanation": "Hai đoạn cùng phương, ngược chiều, nên độ lớn độ dịch chuyển là $|d_1 - d_2|$.",
+   "distractorNotes": {
+    "A": "Áp định lí Pi-ta-go cho hai đoạn cùng phương, trong khi công thức này chỉ dùng khi hai đoạn vuông góc.",
+    "B": "Cộng hai đoạn ngược chiều như cùng chiều, tức là tính quãng đường mà bỏ qua việc quay đầu.",
+    "D": "Gán dấu âm cho một độ lớn và cộng hai đoạn ngược chiều như thể chúng cùng chiều."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một bạn ngồi yên trên ghế của xe buýt đang chạy trên tuyến đường dài hàng chục kilômét. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "a) So với ghế xe, bạn đó đang đứng yên.",
+     "answer": true
+    },
+    {
+     "text": "b) So với cột đèn bên đường, bạn đó đang chuyển động.",
+     "answer": true
+    },
+    {
+     "text": "c) Một vật luôn đứng yên hoặc luôn chuyển động, không phụ thuộc việc chọn vật mốc.",
+     "answer": false
+    },
+    {
+     "text": "d) Khi xét chuyển động của xe buýt trên cả tuyến đường đó, có thể coi xe là chất điểm.",
+     "answer": true
+    }
+   ],
+   "explanation": "Chuyển động có tính tương đối, tuỳ vào vật mốc được chọn. Xe buýt có kích thước rất nhỏ so với tuyến dài nên coi được là chất điểm.",
+   "distractorNotes": {
+    "0": "Vị trí của bạn so với ghế không đổi theo thời gian, nên không thể coi là đang chuyển động so với ghế.",
+    "1": "Vị trí của bạn so với cột đèn thay đổi theo thời gian, nên không thể coi là đứng yên so với cột đèn.",
+    "2": "Chuyển động có tính tương đối, đổi vật mốc thì cùng một vật có thể đứng yên hoặc chuyển động.",
+    "3": "Thân xe rất nhỏ so với hàng chục kilômét đường đi, nên đã thoả mãn điều kiện chất điểm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Để mô tả chuyển động của một xe điều khiển từ xa chạy dọc cây thước, ta chọn gốc toạ độ ở đầu thước và chọn một gốc thời gian. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "a) Thời điểm là một mốc trên trục thời gian.",
+     "answer": true
+    },
+    {
+     "text": "b) Khoảng thời gian là hiệu của hai thời điểm.",
+     "answer": true
+    },
+    {
+     "text": "c) Đổi gốc thời gian thì khoảng thời gian giữa hai thời điểm đã cho cũng thay đổi.",
+     "answer": false
+    },
+    {
+     "text": "d) Quỹ đạo là đường mà chất điểm vạch ra khi chuyển động.",
+     "answer": true
+    }
+   ],
+   "explanation": "Đổi gốc thời gian chỉ làm thay đổi số ghi của từng thời điểm, còn khoảng thời gian giữa hai thời điểm giữ nguyên. Quỹ đạo là đường chất điểm vạch ra.",
+   "distractorNotes": {
+    "0": "Thời điểm chỉ một lúc cụ thể như lúc 7 giờ, chứ không phải một quãng kéo dài.",
+    "1": "Khoảng thời gian bằng thời điểm sau trừ thời điểm trước, đúng là hiệu của hai thời điểm.",
+    "2": "Đổi gốc làm hai thời điểm cùng dịch một lượng như nhau, nên hiệu của chúng giữ nguyên.",
+    "3": "Phát biểu trùng với định nghĩa quỹ đạo trong bài: đường mà chất điểm vạch ra khi chuyển động."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: cho xe đồ chơi chạy trên ray nhựa uốn thành các hình thẳng, nửa vòng tròn, chữ L và trọn vòng tròn. Quãng đường $s$ được đo bằng sợi chỉ đặt dọc ray, độ dịch chuyển $d$ được đo bằng thước nối thẳng điểm đầu với điểm dừng. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "a) Với ray thẳng, độ lớn $d$ và $s$ bằng nhau về lí thuyết.",
+     "answer": true
+    },
+    {
+     "text": "b) Với ray trọn vòng tròn, $d = 0$ dù quãng đường xe chạy khác 0.",
+     "answer": true
+    },
+    {
+     "text": "c) Với ray nửa vòng tròn, độ lớn $d$ lớn hơn $s$.",
+     "answer": false
+    },
+    {
+     "text": "d) Có thể uốn ray thành một hình nào đó để độ lớn $d$ lớn hơn $s$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đoạn thẳng là đường ngắn nhất nối hai điểm, nên luôn có $|d| \\leq s$. Dấu bằng xảy ra khi xe chạy thẳng, không đổi chiều. Với vòng kín thì $d = 0$.",
+   "distractorNotes": {
+    "0": "Ray thẳng và xe không đổi chiều đúng là trường hợp $|d| = s$, lệch đo được chỉ do sai số.",
+    "1": "Xe dừng đúng điểm xuất phát nên $d = 0$, dù quãng đường đã chạy hết cả vòng.",
+    "2": "Đường kính nối hai đầu nửa vòng tròn ngắn hơn cung tròn, nên $d \\lt s$ chứ không lớn hơn.",
+    "3": "Đoạn thẳng nối hai điểm luôn là đường ngắn nhất, nên mọi hình ray đều cho $|d| \\leq s$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Chọn trục $Ox$ có chiều dương hướng từ Tây sang Đông. Một xe đi thẳng về phía Tây, không đổi chiều, từ vị trí $x_1$ đến vị trí $x_2$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "a) Vì $x_2 \\lt x_1$ nên độ dịch chuyển $d \\lt 0$.",
+     "answer": true
+    },
+    {
+     "text": "b) Dấu âm của $d$ cho biết xe dịch chuyển ngược chiều dương đã chọn.",
+     "answer": true
+    },
+    {
+     "text": "c) Quãng đường xe đi được là $s = d$.",
+     "answer": false
+    },
+    {
+     "text": "d) Có thể bỏ dấu của $d$ mà không mất thông tin nào về chuyển động.",
+     "answer": false
+    }
+   ],
+   "explanation": "Khi đi ngược chiều dương và không đổi chiều, ta có $d \\lt 0$ và $s = -d = |d|$. Dấu của $d$ cho biết hướng dịch chuyển nên không được bỏ.",
+   "distractorNotes": {
+    "0": "Đi về phía Tây là ngược chiều dương nên toạ độ giảm, do đó $d = x_2 - x_1$ phải âm.",
+    "1": "Dấu âm của $d$ không phải lỗi tính toán, mà chính là thông tin về hướng ngược chiều dương.",
+    "2": "Gán dấu âm cho quãng đường, quên rằng $s$ không âm nên phải có $s = -d = |d|$.",
+    "3": "Bỏ dấu của $d$ làm mất thông tin xe đi về phía Tây, tức là mất hướng dịch chuyển."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một robot hút bụi đi thẳng một đoạn có độ lớn $d_1$ về phía Bắc, rồi rẽ đi thẳng một đoạn có độ lớn $d_2$ về phía Đông. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "a) Quãng đường robot đi được là $s = d_1 + d_2$.",
+     "answer": true
+    },
+    {
+     "text": "b) Độ lớn độ dịch chuyển của robot là $d = d_1 + d_2$.",
+     "answer": false
+    },
+    {
+     "text": "c) Hướng dịch chuyển lệch khỏi hướng Bắc một góc $\\alpha$ với $\\tan\\alpha = \\dfrac{d_2}{d_1}$.",
+     "answer": true
+    },
+    {
+     "text": "d) Nếu $d_1$ và $d_2$ cùng tăng gấp đôi thì độ lớn độ dịch chuyển tăng gấp bốn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Quãng đường bằng tổng hai đoạn. Độ dịch chuyển là cạnh huyền $\\sqrt{d_1^2 + d_2^2}$, có hướng xác định bởi $\\tan\\alpha = d_2/d_1$. Khi cả hai cạnh cùng gấp đôi thì cạnh huyền cũng chỉ gấp đôi.",
+   "distractorNotes": {
+    "0": "Quãng đường cộng dồn mọi đoạn đã đi, nên robot có rẽ hay không thì $s$ vẫn bằng $d_1 + d_2$.",
+    "1": "Cộng độ dịch chuyển như cộng số, trong khi hai đoạn vuông góc phải dùng định lí Pi-ta-go.",
+    "2": "Góc lệch so với đoạn thứ nhất thoả mãn $\\tan\\alpha = d_2/d_1$, đúng như bảng ở Bẫy 3.",
+    "3": "Nhầm bình phương trong căn là bình phương của kết quả, trong khi $\\sqrt{(2d_1)^2 + (2d_2)^2}$ chỉ gấp đôi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 4. Độ dịch chuyển và quãng đường đi được",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một bạn trượt trọn một vòng kín quanh sân băng hết thời gian $t$, rồi dừng đúng chỗ xuất phát. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "a) Tốc độ trung bình $v_{tb} = \\dfrac{s}{t}$ khác 0, dù độ dịch chuyển bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "b) Tốc độ trung bình cho biết hướng chuyển động của bạn đó.",
+     "answer": false
+    },
+    {
+     "text": "c) Nếu trượt hai vòng trong thời gian gấp đôi thì tốc độ trung bình không đổi.",
+     "answer": true
+    },
+    {
+     "text": "d) Tốc độ trung bình có thể âm khi bạn trượt ngược chiều dương đã chọn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Tốc độ trung bình dùng quãng đường nên luôn không âm, và chỉ cho biết đi nhanh hay chậm. Khi quãng đường và thời gian cùng gấp đôi thì tỉ số $s/t$ không đổi.",
+   "distractorNotes": {
+    "0": "Tốc độ trung bình tính theo quãng đường, mà quãng đường khác 0, nên $v_{tb}$ không thể bằng 0.",
+    "1": "Nhầm tốc độ trung bình với vận tốc; tốc độ là đại lượng vô hướng nên không cho biết hướng.",
+    "2": "Quãng đường và thời gian cùng tăng gấp đôi nên tỉ số $s/t$ giữ nguyên.",
+    "3": "Gán dấu theo chiều dương cho tốc độ, trong khi $s$ và $t$ đều không âm nên $s/t$ không âm."
+   }
+  }
+ ]
 }

@@ -2,14 +2,14 @@
  "lesson_id": 27,
  "lesson_title": "Bài 8. Mô tả sóng",
  "item_id": 45,
- "generated_at": "2026-10-19",
+ "generated_at": "2026-10-21",
  "generated_by": "batch-api claude-opus-5-5",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 9,
-   "cong_thuc": 11
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
   "removed": []
  },
@@ -22,15 +22,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Sóng cơ là gì?",
+   "question": "Sóng cơ là",
    "options": [
-    "Dao động cơ lan truyền trong một môi trường",
-    "Sự dịch chuyển của các phần tử môi trường từ nguồn ra xa",
-    "Dao động chỉ xảy ra trong chân không",
-    "Sự chuyển động của vật chất theo một dòng"
+    "dao động cơ lan truyền trong một môi trường",
+    "sự dịch chuyển của phần tử môi trường theo phương truyền",
+    "dao động cơ lan truyền được cả trong chân không",
+    "sự lan truyền vật chất của môi trường ra xa nguồn"
    ],
    "answer": 0,
-   "explanation": "Theo bài, sóng cơ là dao động cơ lan truyền trong một môi trường."
+   "distractorNotes": {
+    "B": "Nghĩ phần tử bị đẩy đi theo sóng, trong khi phần tử chỉ dao động quanh vị trí cân bằng cố định.",
+    "C": "Quên điều kiện cần lực liên kết giữa các phần tử; chân không không có phần tử nên sóng cơ không truyền được.",
+    "D": "Lẫn truyền pha, năng lượng với truyền vật chất; vật chất môi trường không bị mang ra xa nguồn."
+   },
+   "explanation": "Bài định nghĩa sóng cơ là dao động cơ lan truyền trong một môi trường. Phần tử chỉ dao động tại chỗ, thứ lan đi là pha và năng lượng."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Mô tả sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Sóng cơ không truyền được trong chân không vì",
+   "options": [
+    "chân không có nhiệt độ quá thấp để phần tử dao động",
+    "chân không không có phần tử môi trường để liên kết",
+    "trong chân không, nguồn sóng không thể dao động được",
+    "trong chân không, sóng truyền nhanh đến mức không đo được"
+   ],
+   "answer": 1,
+   "distractorNotes": {
+    "A": "Gán nguyên nhân cho nhiệt độ, trong khi lí do thật là chân không hoàn toàn không có phần tử môi trường.",
+    "C": "Lẫn nguồn với môi trường; nguồn vẫn dao động được nhưng không có phần tử nào để dao động lan ra.",
+    "D": "Hiểu sai thành truyền rất nhanh, trong khi sóng cơ hoàn toàn không lan truyền được trong chân không."
+   },
+   "explanation": "Muốn có sóng cơ cần nguồn dao động và lực liên kết giữa các phần tử môi trường. Chân không không có phần tử nên không có lực liên kết."
   },
   {
    "type": "multiple_choice",
@@ -40,33 +68,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Khi sóng truyền qua mặt nước, miếng xốp nổi trên mặt nước sẽ:",
+   "question": "Thả một miếng xốp nhỏ lên mặt nước trong khay rồi chấm đều tay một vật nhọn xuống nước để tạo sóng. Khi gợn sóng lan qua, miếng xốp",
    "options": [
-    "Trôi ra xa theo chiều truyền sóng",
-    "Nhấp nhô tại chỗ quanh vị trí cân bằng",
-    "Chìm xuống đáy",
-    "Đứng yên tuyệt đối"
+    "trôi ra xa theo chiều lan truyền của gợn sóng",
+    "bị gợn sóng đẩy dần về phía thành khay",
+    "chỉ nhấp nhô tại chỗ, không trôi ra xa",
+    "đứng yên hoàn toàn vì miếng xốp rất nhẹ"
    ],
-   "answer": 1,
-   "explanation": "Thí nghiệm khay nước: miếng xốp chỉ nhấp nhô tại chỗ, không trôi ra xa."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Mô tả sóng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Vì sao sóng cơ không truyền được trong chân không?",
-   "options": [
-    "Vì chân không quá lạnh",
-    "Vì chân không không có phần tử môi trường để liên kết",
-    "Vì chân không có tốc độ truyền bằng 0 ở mọi nguồn",
-    "Vì nguồn dao động không hoạt động trong chân không"
-   ],
-   "answer": 1,
-   "explanation": "Chân không không có phần tử nên không có lực liên kết."
+   "answer": 2,
+   "distractorNotes": {
+    "A": "Mắc bẫy sóng kéo vật trôi theo; sóng chỉ truyền pha dao động, không mang nước hay miếng xốp đi.",
+    "B": "Tưởng sóng đẩy phần tử dịch chuyển dần, trong khi phần tử chỉ dao động quanh vị trí cân bằng.",
+    "D": "Cho rằng vật nhẹ thì không chịu tác dụng, nhưng sóng tới đâu phần tử ở đó đều nhấp nhô."
+   },
+   "explanation": "Thí nghiệm khay nước cho thấy miếng xốp chỉ nhấp nhô tại chỗ. Thứ lan ra xa là pha dao động, không phải nước."
   },
   {
    "type": "multiple_choice",
@@ -76,15 +91,66 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Bước sóng là:",
+   "question": "Trên cùng một phương truyền sóng, bước sóng là",
    "options": [
-    "Quãng đường sóng truyền trong một chu kì",
-    "Quãng đường sóng truyền trong một giây",
-    "Thời gian một phần tử dao động toàn phần",
-    "Độ lệch lớn nhất của phần tử khỏi vị trí cân bằng"
+    "quãng đường sóng truyền được trong một giây",
+    "khoảng cách hai điểm gần nhau nhất dao động ngược pha",
+    "khoảng cách giữa hai điểm bất kì dao động cùng pha",
+    "khoảng cách hai điểm gần nhau nhất dao động cùng pha"
+   ],
+   "answer": 3,
+   "distractorNotes": {
+    "A": "Lẫn với tốc độ truyền sóng; bước sóng là quãng đường truyền trong một chu kì, không phải một giây.",
+    "B": "Lẫn điều kiện pha; hai điểm gần nhất ngược pha chỉ cách nhau nửa bước sóng.",
+    "C": "Bỏ sót chữ gần nhất; hai điểm cùng pha bất kì có thể cách nhau nhiều lần bước sóng."
+   },
+   "explanation": "Bước sóng là quãng đường sóng truyền trong một chu kì, cũng là khoảng cách hai điểm gần nhau nhất trên cùng phương truyền dao động cùng pha."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Áp tai vào đường ray, ta nghe tiếng tàu tới sớm hơn so với nghe qua không khí. Nguyên nhân là",
+   "options": [
+    "tốc độ truyền âm trong chất rắn lớn hơn trong không khí",
+    "tần số âm truyền trong đường ray lớn hơn trong không khí",
+    "biên độ âm truyền trong đường ray lớn hơn trong không khí",
+    "bước sóng âm trong đường ray nhỏ hơn trong không khí"
    ],
    "answer": 0,
-   "explanation": "Bước sóng là quãng đường sóng truyền trong một chu kì."
+   "distractorNotes": {
+    "B": "Quên rằng tần số do nguồn quyết định nên giữ nguyên khi sóng đổi môi trường.",
+    "C": "Lẫn độ mạnh yếu của âm với độ nhanh chậm; thời gian âm tới do tốc độ truyền quyết định.",
+    "D": "Sai cả chiều: tốc độ trong rắn lớn hơn nên $\\lambda = \\dfrac{v}{f}$ lớn hơn, và bước sóng không quyết định thời gian tới."
+   },
+   "explanation": "Tốc độ truyền sóng do môi trường quyết định: chất rắn nhanh nhất, chất khí chậm nhất. Vì vậy âm qua đường ray tới sớm hơn."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Sóng truyền trên dây từ trái sang phải. Tại một thời điểm, điểm P nằm ở sườn bên phải của một đỉnh sóng (phía trước theo chiều truyền). Ngay sau đó P sẽ",
+   "options": [
+    "đi lên",
+    "đi xuống",
+    "đứng yên tại chỗ",
+    "chạy sang phải cùng đỉnh sóng"
+   ],
+   "answer": 0,
+   "distractorNotes": {
+    "B": "Đảo quy tắc sườn: sóng sang phải thì sườn sau mới đi xuống, sườn trước bị đỉnh dịch tới nâng lên.",
+    "C": "Đoán theo hình dạng dốc, quên rằng mọi điểm trên đoạn dây có sóng đều đang dao động.",
+    "D": "Lẫn sự lan truyền của đỉnh sóng (pha) với chuyển động của phần tử vốn chỉ dao động tại chỗ."
+   },
+   "explanation": "Hình dung đỉnh sóng dịch sang phải một chút: điểm nằm trước đỉnh bị nâng lên. Quy tắc: sóng truyền sang phải thì sườn trước đi lên, sườn sau đi xuống."
   },
   {
    "type": "multiple_choice",
@@ -94,15 +160,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Công thức đúng liên hệ bước sóng, tốc độ và tần số là:",
+   "question": "Một sóng có tốc độ truyền $v$ và tần số $f$. Bước sóng $\\lambda$ được tính bằng công thức",
    "options": [
-    "$\\lambda = vf$",
     "$\\lambda = \\dfrac{f}{v}$",
     "$\\lambda = \\dfrac{v}{f}$",
-    "$\\lambda = \\dfrac{T}{v}$"
+    "$\\lambda = vf$",
+    "$\\lambda = \\dfrac{v}{T}$"
+   ],
+   "answer": 1,
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu; (Hz) chia (m/s) không ra đơn vị độ dài.",
+    "C": "Nhân thay vì chia; tích $vf$ có đơn vị m/s², không phải mét.",
+    "D": "Lẫn vai trò của $T$ và $f$; chia $v$ cho $T$ không ra đơn vị độ dài."
+   },
+   "explanation": "Bài cho chuỗi công thức $\\lambda = vT = \\dfrac{v}{f}$. Kiểm đơn vị: (m/s) chia (Hz) ra mét."
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của bước sóng và của tần số sóng lần lượt là",
+   "options": [
+    "m/s và Hz",
+    "m và s",
+    "m và Hz",
+    "Hz và m"
    ],
    "answer": 2,
-   "explanation": "Bài có $\\lambda = vT = \\dfrac{v}{f}$."
+   "distractorNotes": {
+    "A": "Lẫn bước sóng với tốc độ truyền sóng; bước sóng là một độ dài nên đo bằng mét.",
+    "B": "Lẫn tần số với chu kì; giây là đơn vị chu kì, tần số đo bằng héc.",
+    "D": "Đảo thứ tự hai đại lượng: bước sóng là độ dài, tần số mới đo bằng Hz."
+   },
+   "explanation": "Bảng đại lượng đặc trưng ghi bước sóng $\\lambda$ đo bằng m (cm), tần số $f$ đo bằng Hz."
   },
   {
    "type": "multiple_choice",
@@ -112,51 +206,66 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Sóng có $T = 0{,}4$ s, $v = 2{,}5$ m/s. Bước sóng là:",
+   "question": "Trong cùng một môi trường đồng chất (tốc độ truyền sóng không đổi), nếu tần số của nguồn tăng gấp đôi thì bước sóng",
    "options": [
-    "$0{,}16$ m",
-    "$6{,}25$ m",
-    "$0{,}4$ m",
-    "$1$ m"
+    "tăng gấp đôi",
+    "tăng gấp bốn",
+    "không thay đổi",
+    "giảm một nửa"
    ],
    "answer": 3,
-   "explanation": "$\\lambda = vT = 2{,}5 \\times 0{,}4 = 1$ m."
+   "distractorNotes": {
+    "A": "Hiểu nhầm $\\lambda$ tỉ lệ thuận với $f$, trong khi $\\lambda = \\dfrac{v}{f}$ tỉ lệ nghịch với $f$.",
+    "B": "Tự thêm bình phương không có trong $\\lambda = \\dfrac{v}{f}$, lại sai cả chiều biến đổi.",
+    "C": "Áp nhầm ý bước sóng do môi trường quyết định, quên $\\lambda = \\dfrac{v}{f}$ còn phụ thuộc tần số."
+   },
+   "explanation": "Với $v$ không đổi, $\\lambda = \\dfrac{v}{f}$ tỉ lệ nghịch với $f$. Tần số tăng gấp đôi thì bước sóng giảm một nửa."
   },
   {
    "type": "multiple_choice",
    "kind": "cong_thuc",
    "topic": "Phương trình sóng và đồ thị sóng",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Nguồn $u_O = A\\cos(\\omega t)$, sóng truyền theo chiều dương. Phương trình tại M cách O đoạn $d$ là:",
+   "question": "Nguồn O dao động theo phương trình $u_O = A\\cos(\\omega t)$, sóng truyền theo chiều dương với bước sóng $\\lambda$. Phương trình dao động tại điểm M cách O đoạn $d$ là",
    "options": [
     "$u_M = A\\cos\\left(\\omega t + \\dfrac{2\\pi d}{\\lambda}\\right)$",
     "$u_M = A\\cos\\left(\\omega t - \\dfrac{2\\pi d}{\\lambda}\\right)$",
-    "$u_M = A\\cos\\left(\\omega t - \\dfrac{2\\pi\\lambda}{d}\\right)$",
+    "$u_M = A\\cos\\left(\\omega t - \\dfrac{2\\pi \\lambda}{d}\\right)$",
     "$u_M = A\\cos\\left(\\omega t - \\dfrac{\\pi d}{\\lambda}\\right)$"
    ],
    "answer": 1,
-   "explanation": "M nhận sóng sau O nên trễ pha $\\dfrac{2\\pi d}{\\lambda}$, trừ pha."
+   "distractorNotes": {
+    "A": "Sai dấu pha: M nhận sóng sau O nên phải trễ pha, tức trừ pha.",
+    "C": "Đảo $d$ và $\\lambda$; độ trễ pha phải tăng khi M càng xa nguồn.",
+    "D": "Thiếu hệ số 2; đi thêm một bước sóng thì pha phải trễ thêm $2\\pi$."
+   },
+   "explanation": "Sóng mất thời gian $\\dfrac{d}{v}$ mới tới M nên M trễ pha $\\dfrac{2\\pi d}{\\lambda}$: $u_M = A\\cos\\left(\\omega t - \\dfrac{2\\pi d}{\\lambda}\\right)$."
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_luat",
+   "kind": "tinh_nhanh",
    "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Khi sóng truyền từ môi trường này sang môi trường khác, đại lượng không đổi là:",
+   "question": "Trên cùng một phương truyền sóng, hai điểm gần nhau nhất dao động ngược pha cách nhau",
    "options": [
-    "Tốc độ truyền sóng",
-    "Bước sóng",
-    "Tần số",
-    "Tốc độ và bước sóng"
+    "$\\lambda$",
+    "$\\dfrac{\\lambda}{4}$",
+    "$\\dfrac{\\lambda}{2}$",
+    "$2\\lambda$"
    ],
    "answer": 2,
-   "explanation": "$f$ và $T$ do nguồn quyết định nên không đổi; $v$ và $\\lambda$ đổi."
+   "distractorNotes": {
+    "A": "Lẫn với cùng pha; hai điểm cách nhau $\\lambda$ lệch pha $2\\pi$ nên trùng pha.",
+    "B": "Lẫn với vuông pha; khoảng $\\dfrac{\\lambda}{4}$ chỉ cho lệch pha $\\dfrac{\\pi}{2}$.",
+    "D": "Khoảng $2\\lambda$ cho lệch pha $4\\pi$, hai điểm cùng pha chứ không ngược pha."
+   },
+   "explanation": "Đi thêm $\\dfrac{\\lambda}{2}$ thì trễ pha $\\pi$, hai điểm ngược pha. Đây là khoảng cách gần nhất cho ngược pha."
   },
   {
    "type": "multiple_choice",
@@ -166,15 +275,20 @@
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Hai điểm trên cùng phương truyền cách nhau $d = \\dfrac{\\lambda}{2}$ thì độ lệch pha là:",
+   "question": "Từ $u_M = A\\cos\\left[\\omega\\left(t - \\dfrac{d}{v}\\right)\\right]$, thay $\\omega = \\dfrac{2\\pi}{T}$ và $v = \\dfrac{\\lambda}{T}$ thì độ trễ pha $\\omega\\dfrac{d}{v}$ bằng",
    "options": [
-    "$\\pi$",
-    "$2\\pi$",
-    "$\\dfrac{\\pi}{2}$",
-    "$0$"
+    "$\\dfrac{2\\pi \\lambda}{d}$",
+    "$\\dfrac{\\pi d}{\\lambda}$",
+    "$\\dfrac{d}{\\lambda}$",
+    "$\\dfrac{2\\pi d}{\\lambda}$"
    ],
-   "answer": 0,
-   "explanation": "$\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda} = \\pi$, tức ngược pha."
+   "answer": 3,
+   "distractorNotes": {
+    "A": "Lật ngược phân số khi thay $v = \\dfrac{\\lambda}{T}$; đúng là $\\dfrac{d}{v} = \\dfrac{dT}{\\lambda}$.",
+    "B": "Đánh rơi hệ số 2 của $\\omega = \\dfrac{2\\pi}{T}$ khi biến đổi.",
+    "C": "Mới tính số bước sóng $\\dfrac{d}{\\lambda}$, quên nhân $2\\pi$ để đổi ra độ lệch pha."
+   },
+   "explanation": "$\\omega\\dfrac{d}{v} = \\dfrac{2\\pi}{T}\\cdot\\dfrac{dT}{\\lambda} = \\dfrac{2\\pi d}{\\lambda}$, đúng như bài đã biến đổi."
   },
   {
    "type": "multiple_choice",
@@ -183,74 +297,219 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Trên đồ thị $u - x$ (tại một lúc), khoảng cách giữa hai đỉnh liên tiếp bằng:",
+   "theorySection": 2,
+   "question": "Trên đồ thị li độ theo thời gian ($u - t$) của một phần tử môi trường có sóng truyền qua, khoảng cách giữa hai đỉnh liên tiếp bằng",
    "options": [
-    "Chu kì $T$",
-    "Biên độ $A$",
-    "Tần số $f$",
-    "Bước sóng $\\lambda$"
+    "một chu kì $T$",
+    "một bước sóng $\\lambda$",
+    "nửa chu kì $\\dfrac{T}{2}$",
+    "nửa bước sóng $\\dfrac{\\lambda}{2}$"
    ],
-   "answer": 3,
-   "explanation": "Đồ thị $u-x$: một bước bằng $\\lambda$; $u-t$: một bước bằng $T$."
+   "answer": 0,
+   "distractorNotes": {
+    "B": "Không đọc nhãn trục hoành; bước sóng chỉ đọc được trên đồ thị $u - x$.",
+    "C": "Nghĩ hai đỉnh liên tiếp là nửa dao động, trong khi giữa chúng là một dao động toàn phần.",
+    "D": "Vừa lẫn loại đồ thị vừa lấy nửa; trục thời gian không cho ra một độ dài."
+   },
+   "explanation": "Đồ thị $u - t$ mô tả một điểm theo thời gian, hai đỉnh liên tiếp cách nhau một chu kì $T$. Luôn đọc nhãn trục hoành trước."
   },
   {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Mô tả sóng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về sự truyền sóng cơ, xét các phát biểu sau:",
-   "statements": [
-    {
-     "text": "Sóng truyền pha dao động và năng lượng.",
-     "answer": true
-    },
-    {
-     "text": "Phần tử môi trường chuyển dời theo sóng ra xa nguồn.",
-     "answer": false
-    },
-    {
-     "text": "Cần có nguồn dao động và lực liên kết giữa các phần tử.",
-     "answer": true
-    },
-    {
-     "text": "Sóng cơ truyền được trong chân không.",
-     "answer": false
-    }
-   ],
-   "explanation": "Sóng truyền pha và năng lượng, không truyền vật chất; cần nguồn và lực liên kết."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
    "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Sóng truyền từ nước ra không khí:",
+   "question": "Hệ thức đúng giữa chu kì $T$ và tần số $f$ của sóng là",
+   "options": [
+    "$T = 2\\pi f$",
+    "$T = \\dfrac{1}{f}$",
+    "$T = f$",
+    "$T = \\dfrac{2\\pi}{f}$"
+   ],
+   "answer": 1,
+   "distractorNotes": {
+    "A": "Lẫn với công thức tần số góc $\\omega = 2\\pi f$.",
+    "C": "Quên chu kì và tần số là nghịch đảo nhau, đơn vị s và Hz khác hẳn nhau.",
+    "D": "Lẫn với $T = \\dfrac{2\\pi}{\\omega}$, đặt nhầm $f$ vào chỗ của $\\omega$."
+   },
+   "explanation": "Bài ghi $T = \\dfrac{1}{f}$; chu kì và tần số sóng bằng chu kì và tần số dao động của phần tử."
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Mô tả sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đổ nước vào khay, thả miếng xốp nhỏ C lên mặt nước, chấm đầu vật nhọn O xuống nước theo nhịp đều tay. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tần số không đổi.",
+     "text": "Thứ lan ra xa từ O là pha dao động.",
      "answer": true
     },
     {
-     "text": "Chu kì không đổi.",
-     "answer": true
-    },
-    {
-     "text": "Tốc độ truyền sóng không đổi.",
+     "text": "Miếng xốp C trôi dần ra xa theo gợn sóng.",
      "answer": false
     },
     {
-     "text": "Bước sóng không đổi.",
+     "text": "Ngừng chấm thì mọi gợn sóng trên mặt nước biến mất ngay lập tức.",
+     "answer": false
+    },
+    {
+     "text": "Sóng mang năng lượng từ O lan ra xa.",
+     "answer": true
+    }
+   ],
+   "distractorNotes": {
+    "0": "Nước tại chỗ miếng xốp không chảy đi mà gợn vẫn lan, nên thứ lan ra xa phải là pha dao động.",
+    "1": "Sóng không truyền vật chất; miếng xốp chỉ nhấp nhô quanh vị trí cân bằng chứ không trôi đi.",
+    "2": "Thí nghiệm cho thấy ngừng chấm thì gợn vẫn lan tiếp rồi yếu dần, không biến mất ngay.",
+    "3": "Sóng truyền pha và năng lượng, nên năng lượng chắc chắn được mang từ O ra xa."
+   },
+   "explanation": "Thí nghiệm cho thấy C chỉ nhấp nhô tại chỗ, sóng truyền pha và năng lượng chứ không truyền nước. Ngừng chấm, gợn vẫn lan tiếp rồi yếu dần."
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một sóng âm truyền từ nước ra không khí, nguồn vẫn dao động đúng nhịp cũ. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Tần số sóng không thay đổi.",
+     "answer": true
+    },
+    {
+     "text": "Chu kì sóng giảm khi sang không khí.",
+     "answer": false
+    },
+    {
+     "text": "Tốc độ truyền sóng thay đổi.",
+     "answer": true
+    },
+    {
+     "text": "Bước sóng giữ nguyên như khi truyền trong nước.",
      "answer": false
     }
    ],
-   "explanation": "$f$, $T$ khóa theo nguồn; $v$ đổi nên $\\lambda = \\dfrac{v}{f}$ đổi."
+   "distractorNotes": {
+    "0": "Tần số do nguồn quyết định; nguồn giữ nhịp cũ thì tần số không thể thay đổi.",
+    "1": "Chu kì $T = \\dfrac{1}{f}$ bị khoá theo nguồn giống tần số, nên không đổi khi đổi môi trường.",
+    "2": "Tốc độ truyền do môi trường quyết định, đổi môi trường thì tốc độ phải đổi.",
+    "3": "$v$ đổi còn $f$ giữ nguyên nên $\\lambda = \\dfrac{v}{f}$ bắt buộc đổi theo."
+   },
+   "explanation": "Khi đổi môi trường, $f$ và $T$ bị khoá theo nguồn; $v$ đổi theo môi trường nên $\\lambda = \\dfrac{v}{f}$ cũng đổi."
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một sóng cơ do nguồn có biên độ $A$, tần số góc $\\omega$ tạo ra, truyền trong môi trường với tốc độ $v$. Xét các phát biểu về tốc độ truyền sóng và tốc độ dao động của phần tử:",
+   "statements": [
+    {
+     "text": "Tốc độ truyền sóng $v$ do môi trường quyết định.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ dao động cực đại của phần tử là $v_{max} = \\omega A$.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ dao động cực đại của phần tử luôn nhỏ hơn tốc độ truyền sóng.",
+     "answer": false
+    },
+    {
+     "text": "Tăng biên độ của nguồn thì tốc độ truyền sóng tăng theo.",
+     "answer": false
+    }
+   ],
+   "distractorNotes": {
+    "0": "Mỗi môi trường cho $v$ một giá trị xác định, nên không thể coi tốc độ truyền do nguồn quyết định.",
+    "1": "Tốc độ lớn nhất của phần tử khi qua vị trí cân bằng đúng là $\\omega A$, phụ thuộc biên độ và tần số.",
+    "2": "Hai đại lượng đo hai chuyện khác nhau, không có quy luật cái nào luôn nhỏ hơn.",
+    "3": "Lẫn hai chữ $v$; biên độ chỉ làm tăng $v_{max}$, còn tốc độ truyền do môi trường quyết định."
+   },
+   "explanation": "Tốc độ truyền sóng $v$ theo môi trường, còn $v_{max} = \\omega A$ theo nguồn. Đây là hai đại lượng khác nhau, chỉ tình cờ cùng ký hiệu $v$."
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Phương trình sóng và đồ thị sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguồn O dao động $u_O = A\\cos(\\omega t)$ bắt đầu từ $t = 0$, sóng truyền theo chiều dương với tốc độ $v$, bước sóng $\\lambda$. Điểm M cách O đoạn $d$ trên phương truyền. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Nếu $d = \\lambda$ thì M dao động cùng pha với O.",
+     "answer": true
+    },
+    {
+     "text": "Độ trễ pha của M so với O tỉ lệ nghịch với $d$.",
+     "answer": false
+    },
+    {
+     "text": "Nếu $d = \\dfrac{\\lambda}{4}$ thì M dao động vuông pha với O.",
+     "answer": true
+    },
+    {
+     "text": "M bắt đầu dao động ngay tại thời điểm $t = 0$ cùng với O.",
+     "answer": false
+    }
+   ],
+   "distractorNotes": {
+    "0": "Cách nhau một bước sóng thì trễ pha đúng $2\\pi$, trùng một vòng pha nên cùng pha.",
+    "1": "Đảo tỉ lệ; $\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda}$ tăng theo $d$, càng xa nguồn càng trễ pha.",
+    "2": "Thay $d = \\dfrac{\\lambda}{4}$ được $\\Delta\\varphi = \\dfrac{\\pi}{2}$, đúng điều kiện vuông pha.",
+    "3": "Quên sóng cần thời gian $\\dfrac{d}{v}$ mới tới M; trước lúc đó M còn đứng yên."
+   },
+   "explanation": "Độ trễ pha $\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda}$ tăng theo $d$. Sóng cần thời gian $\\dfrac{d}{v}$ mới tới M."
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét một sóng cơ với các hệ thức $\\lambda = vT = \\dfrac{v}{f}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Giữ nguyên tần số, nếu tốc độ truyền tăng gấp đôi thì bước sóng tăng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Giữ nguyên tốc độ truyền, nếu chu kì tăng gấp đôi thì bước sóng giảm một nửa.",
+     "answer": false
+    },
+    {
+     "text": "Trong một chu kì, sóng truyền được quãng đường bằng một bước sóng.",
+     "answer": true
+    },
+    {
+     "text": "Từ $v = \\lambda f$ suy ra tần số $f = v\\lambda$.",
+     "answer": false
+    }
+   ],
+   "distractorNotes": {
+    "0": "Khi $f$ cố định, $\\lambda = \\dfrac{v}{f}$ tỉ lệ thuận với $v$, nên $v$ gấp đôi thì $\\lambda$ gấp đôi.",
+    "1": "Đảo tỉ lệ; $\\lambda = vT$ tỉ lệ thuận với $T$, chu kì gấp đôi thì bước sóng gấp đôi.",
+    "2": "Đây chính là định nghĩa thứ nhất của bước sóng: một chu kì, một bước sóng.",
+    "3": "Biến đổi sai khi chuyển vế; chia hai vế cho $\\lambda$ phải được $f = \\dfrac{v}{\\lambda}$."
+   },
+   "explanation": "Từ $\\lambda = vT$: $\\lambda$ tỉ lệ thuận với $v$ và với $T$. Từ $v = \\lambda f$ suy ra $f = \\dfrac{v}{\\lambda}$."
   },
   {
    "type": "true_false",
@@ -260,127 +519,32 @@
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về các công thức của sóng:",
+   "question": "Thí nghiệm đo bước sóng trên lò xo: căng lò xo mềm trên sàn, giữ chặt một đầu, gảy đầu kia theo nhịp đều tay và quay chậm để đo bước sóng và chu kì. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$v = \\lambda f$",
+     "text": "Bước sóng được đo bằng khoảng cách giữa hai đỉnh sóng liên tiếp.",
      "answer": true
     },
     {
-     "text": "$v = \\dfrac{\\lambda}{T}$",
-     "answer": true
-    },
-    {
-     "text": "$T = f$",
+     "text": "Tốc độ truyền sóng tính bằng $v = \\lambda T$.",
      "answer": false
     },
     {
-     "text": "$\\lambda = \\dfrac{T}{v}$",
+     "text": "Kéo căng lò xo hơn thì $v$ tăng, $T$ gần như không đổi nên $\\lambda$ tăng.",
+     "answer": true
+    },
+    {
+     "text": "Kéo căng lò xo hơn thì chu kì sóng tăng theo.",
      "answer": false
     }
    ],
-   "explanation": "Đúng: $\\lambda = vT = \\dfrac{v}{f}$, $v = \\lambda f = \\dfrac{\\lambda}{T}$, $T = \\dfrac{1}{f}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Phương trình sóng và đồ thị sóng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về độ lệch pha giữa hai điểm cách nhau $d$ trên phương truyền:",
-   "statements": [
-    {
-     "text": "$d = n\\lambda$ thì hai điểm cùng pha.",
-     "answer": true
-    },
-    {
-     "text": "$d = \\dfrac{\\lambda}{2}$ thì hai điểm ngược pha.",
-     "answer": true
-    },
-    {
-     "text": "$d = \\dfrac{\\lambda}{4}$ thì hai điểm vuông pha.",
-     "answer": true
-    },
-    {
-     "text": "Độ lệch pha phụ thuộc vào biên độ sóng.",
-     "answer": false
-    }
-   ],
-   "explanation": "Độ lệch pha $\\dfrac{2\\pi d}{\\lambda}$ chỉ phụ thuộc $d$ và $\\lambda$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Sóng có $T = 0{,}4$ s và $\\lambda = 2$ m. Tính tốc độ truyền sóng (m/s).",
-   "answer": "5",
-   "explanation": "$v = \\dfrac{\\lambda}{T} = \\dfrac{2}{0{,}4} = 5$ m/s."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Sóng có $v = 60$ cm/s, $f = 20$ Hz. Tính bước sóng (cm).",
-   "answer": "3",
-   "explanation": "$\\lambda = \\dfrac{v}{f} = 3$ cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Nguồn có $\\omega = 40\\pi$ rad/s. Tính tần số $f$ (Hz).",
-   "answer": "20",
-   "explanation": "$f = \\dfrac{\\omega}{2\\pi} = 20$ Hz."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Phương trình sóng và đồ thị sóng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Với $\\lambda = 3$ cm, điểm M cách nguồn $d = 9$ cm. Tỉ số $\\dfrac{d}{\\lambda}$ bằng bao nhiêu?",
-   "answer": "3",
-   "explanation": "$\\dfrac{9}{3} = 3$, nên M cùng pha với nguồn."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Sóng biển đập vào bờ cách nhau 5 s, hai đỉnh liên tiếp cách nhau 10 m. Tính tốc độ truyền sóng (m/s).",
-   "answer": "2",
-   "explanation": "$v = \\dfrac{\\lambda}{T} = \\dfrac{10}{5} = 2$ m/s."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Một phần tử dao động có $T = 0{,}25$ s. Tính tần số sóng $f$ (Hz).",
-   "answer": "4",
-   "explanation": "$f = \\dfrac{1}{T} = 4$ Hz."
+   "distractorNotes": {
+    "0": "Hai đỉnh liên tiếp là hai điểm gần nhất cùng pha, nên khoảng cách giữa chúng đúng bằng bước sóng.",
+    "1": "Nhân thay vì chia; tích $\\lambda T$ không có đơn vị tốc độ, đúng là $v = \\dfrac{\\lambda}{T}$.",
+    "2": "Sức căng làm $v$ tăng, nhịp tay giữ $T$ gần như không đổi, nên $\\lambda = vT$ phải tăng.",
+    "3": "Lẫn vai trò môi trường và nguồn; chu kì do nhịp gảy tay quyết định, không do sức căng."
+   },
+   "explanation": "Thí nghiệm rút ra $v = \\dfrac{\\lambda}{T}$; sức căng đổi làm $v$ và $\\lambda$ đổi, còn $T$ do nhịp tay nên gần như không đổi."
   }
  ]
 }

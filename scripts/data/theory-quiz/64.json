@@ -1,386 +1,532 @@
 {
-  "lesson_id": 64,
-  "lesson_title": "Bài 19. Lực cản và lực nâng",
-  "item_id": 126,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 64,
+ "lesson_title": "Bài 19. Lực cản và lực nâng",
+ "item_id": 126,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 10
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực cản của chất lưu tác dụng lên một vật đang chuyển động có đặc điểm nào sau đây?",
-      "options": [
-        "Cùng phương, cùng chiều chuyển động của vật",
-        "Luôn hướng thẳng đứng từ dưới lên",
-        "Cùng phương, ngược chiều chuyển động của vật; phụ thuộc hình dạng và tốc độ của vật",
-        "Chỉ phụ thuộc khối lượng của vật, không phụ thuộc hình dạng"
-      ],
-      "answer": 2,
-      "explanation": "Bài nêu lực cản vẽ tại trọng tâm vật, cùng phương và ngược chiều chuyển động, độ lớn phụ thuộc hình dạng và tốc độ của vật."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một vật rơi trong không khí. Ở giai đoạn thứ hai, chuyển động của vật là",
-      "options": [
-        "Nhanh dần nhưng gia tốc giảm dần vì lực cản tăng dần",
-        "Nhanh dần đều với $a = g$",
-        "Chuyển động đều với tốc độ giới hạn",
-        "Chậm dần vì lực cản lớn hơn trọng lượng"
-      ],
-      "answer": 0,
-      "explanation": "Giai đoạn 2: tốc độ tăng nên lực cản tăng, hợp lực giảm, vật nhanh dần không đều. Nhanh dần đều gần $a \\approx g$ là giai đoạn 1; rơi đều là giai đoạn 3."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Vật rơi trong không khí đạt tốc độ giới hạn khi nào?",
-      "options": [
-        "Lực cản của không khí bằng 0",
-        "Lực cản của không khí lớn hơn trọng lượng của vật",
-        "Vật không còn chịu tác dụng của trọng lực",
-        "Lực cản của không khí bằng trọng lượng của vật, hợp lực bằng 0"
-      ],
-      "answer": 3,
-      "explanation": "Rơi đều nghĩa là gia tốc bằng 0 nên hợp lực bằng 0: trọng lực vẫn còn, lực cản đúng bằng trọng lượng. Lực cản lớn hơn trọng lượng thì vật phải chậm dần."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực đẩy Archimedes tác dụng lên vật nhúng trong chất lỏng có",
-      "options": [
-        "Phương thẳng đứng, chiều từ trên xuống, điểm đặt ở trọng tâm của vật",
-        "Phương thẳng đứng, chiều từ dưới lên, điểm đặt ở trọng tâm phần chất lỏng bị vật chiếm chỗ",
-        "Phương ngang, ngược chiều chuyển động của vật",
-        "Phương thẳng đứng, chiều từ dưới lên, điểm đặt ở đáy bình"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu: điểm đặt tại trọng tâm phần chất lỏng bị chiếm chỗ, phương thẳng đứng, chiều từ dưới lên."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Quả nặng đã chìm hẳn trong nước được hạ sâu thêm (chưa chạm đáy). Lực đẩy Archimedes lên nó",
-      "options": [
-        "Tăng lên vì áp suất tăng theo độ sâu",
-        "Không đổi",
-        "Giảm đi vì nước phía trên đè nặng hơn",
-        "Tăng thêm một lượng bằng áp suất khí quyển"
-      ],
-      "answer": 1,
-      "explanation": "Hai mặt trên và dưới cùng chịu thêm áp suất khi hạ sâu, chênh lệch $\\rho g \\Delta h$ không đổi; $F_A = \\rho g V$ không chứa độ sâu $h$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tàu thép nặng vẫn nổi trên mặt nước. Khi tàu nổi yên, điều nào sau đây đúng?",
-      "options": [
-        "Lực đẩy Archimedes lớn hơn trọng lượng tàu",
-        "Thép làm tàu có khối lượng riêng nhỏ hơn nước",
-        "Phần lớn trọng lượng tàu được không khí nâng đỡ",
-        "Thân tàu rỗng chiếm chỗ nhiều nước và lực đẩy Archimedes bằng trọng lượng tàu"
-      ],
-      "answer": 3,
-      "explanation": "$F_A$ tính theo thể tích nước bị chiếm chỗ, không theo thể tích thép. Vật đứng yên thì hợp lực bằng 0, nên $F_A = P$; nếu $F_A > P$ tàu còn đang nổi lên."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về người nhảy dù rơi trong không khí, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lúc vừa nhảy, lực cản còn nhỏ nên gia tốc gần bằng $g$.",
-          "answer": true
-        },
-        {
-          "text": "Khi rơi đều, lực cản bằng trọng lượng.",
-          "answer": true
-        },
-        {
-          "text": "Khi rơi đều, người không còn chịu lực nào tác dụng.",
-          "answer": false
-        },
-        {
-          "text": "Mở dù làm tốc độ giới hạn nhỏ hơn so với khi chưa mở dù.",
-          "answer": true
-        }
-      ],
-      "explanation": "Rơi đều không có nghĩa hết lực: trọng lực vẫn còn và bị lực cản cân bằng, hợp lực bằng 0. Dù rộng làm lực cản lớn nên tốc độ giới hạn nhỏ."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về nguồn gốc của lực đẩy Archimedes (chênh lệch áp suất), các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Mặt dưới của vật nằm sâu hơn nên áp lực lên mặt dưới lớn hơn mặt trên.",
-          "answer": true
-        },
-        {
-          "text": "Áp lực lên các mặt bên của khối hộp chìm cân bằng nhau.",
-          "answer": true
-        },
-        {
-          "text": "Áp suất khí quyển $p_0$ làm lực đẩy Archimedes tăng thêm.",
-          "answer": false
-        },
-        {
-          "text": "Hiệu hai áp suất ở hai độ sâu cách nhau $\\Delta h$ là $\\Delta p = \\rho g \\Delta h$.",
-          "answer": true
-        }
-      ],
-      "explanation": "$p_0$ ép lên cả mặt trên lẫn mặt dưới như nhau nên triệt tiêu trong $\\Delta p$; lực đẩy chỉ phụ thuộc $\\rho$ và $V$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Theo bài, vật rơi trong không khí trải qua mấy giai đoạn chuyển động?",
-      "answer": "3",
-      "explanation": "Bài mô tả ba giai đoạn: gần nhanh dần đều, nhanh dần không đều, rồi rơi đều với tốc độ giới hạn."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Quả nặng chìm hẳn trong bể được hạ từ độ sâu $20$ cm xuống $60$ cm (chưa chạm đáy). Lực đẩy Archimedes lên nó tăng gấp bao nhiêu lần?",
-      "answer": "1",
-      "explanation": "$F_A = \\rho g V$ không phụ thuộc độ sâu nên lực đẩy không đổi, tức gấp $1$ lần."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Khối gỗ nổi một phần trên nước. Công thức đúng cho độ lớn lực đẩy Archimedes là",
-      "options": [
-        "$F_A = \\rho_{\\text{nước}}\\, g\\, V_{\\text{chìm}}$",
-        "$F_A = \\rho_{\\text{gỗ}}\\, g\\, V_{\\text{chìm}}$",
-        "$F_A = \\rho_{\\text{nước}}\\, g\\, V_{\\text{cả khối}}$",
-        "$F_A = \\rho_{\\text{nước}}\\, g\\, h$"
-      ],
-      "answer": 0,
-      "explanation": "Phải lấy $\\rho$ của chất lỏng và $V$ của phần chìm. Dùng $\\rho$ của vật, hay thể tích cả khối khi vật chưa chìm hẳn, đều sai; $\\rho g h$ là áp suất, không phải lực."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Thể tích $200\\ \\text{cm}^3$ bằng bao nhiêu mét khối?",
-      "options": [
-        "$2\\cdot 10^{-2}\\ \\text{m}^3$",
-        "$2\\cdot 10^{-3}\\ \\text{m}^3$",
-        "$2\\cdot 10^{-4}\\ \\text{m}^3$",
-        "$2\\cdot 10^{-6}\\ \\text{m}^3$"
-      ],
-      "answer": 2,
-      "explanation": "$1\\ \\text{cm}^3 = 10^{-6}\\ \\text{m}^3$ nên $200\\ \\text{cm}^3 = 2\\cdot 10^{-4}\\ \\text{m}^3$. $10^{-2}$ là đổi như độ dài, quên lập phương; $10^{-3}$ là nhầm với lít hoặc $\\text{dm}^3$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật chìm hẳn trong nước, thể tích $2$ lít. Lấy $\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Lực đẩy Archimedes là",
-      "options": [
-        "$2$ N",
-        "$20$ N",
-        "$20\\,000$ N",
-        "$200$ N"
-      ],
-      "answer": 1,
-      "explanation": "$V = 2\\ \\text{lít} = 2\\cdot 10^{-3}\\ \\text{m}^3$; $F_A = 1000\\cdot 10\\cdot 2\\cdot 10^{-3} = 20$ N. $2$ N là quên nhân $g$; $20\\,000$ N là quên đổi lít ra $\\text{m}^3$; $200$ N là đổi lít bằng $10^{-2}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Khối gỗ thể tích $4{,}0\\ \\text{dm}^3$ nổi trên nước, phần chìm $2{,}5\\ \\text{dm}^3$. Lấy $\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Lực đẩy Archimedes là",
-      "options": [
-        "$40$ N",
-        "$15$ N",
-        "$25\\,000$ N",
-        "$25$ N"
-      ],
-      "answer": 3,
-      "explanation": "Chỉ phần chìm chiếm chỗ nước: $F_A = 1000\\cdot 10\\cdot 2{,}5\\cdot 10^{-3} = 25$ N. $40$ N là lấy cả khối; $15$ N là lấy phần nổi; $25\\,000$ N là quên đổi $\\text{dm}^3$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về $\\Delta p = \\rho g \\Delta h$ và $p = p_0 + \\rho g h$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Chênh lệch áp suất giữa hai điểm không phụ thuộc áp suất khí quyển $p_0$.",
-          "answer": true
-        },
-        {
-          "text": "Với cùng chất lỏng, $\\Delta p$ tỉ lệ thuận với $\\Delta h$.",
-          "answer": true
-        },
-        {
-          "text": "Áp suất ở độ sâu $h$ trong chất lỏng là $p = p_0 + \\rho g h$.",
-          "answer": true
-        },
-        {
-          "text": "Chênh lệch áp suất giữa hai điểm phụ thuộc vào $p_0$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$p_0$ có mặt trong cả hai áp suất nên khi lấy hiệu thì triệt tiêu: $\\Delta p = \\rho g \\Delta h$ chỉ phụ thuộc $\\rho$ và $\\Delta h$."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Khối gỗ có $\\rho_{\\text{gỗ}} = 800\\ \\text{kg/m}^3$, thể tích $5\\ \\text{dm}^3$, nổi yên trên nước ($\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$). Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lực đẩy Archimedes bằng trọng lượng khối gỗ.",
-          "answer": true
-        },
-        {
-          "text": "Phần chìm chiếm $80\\,\\%$ thể tích khối gỗ.",
-          "answer": true
-        },
-        {
-          "text": "Thể tích phần chìm là $4\\ \\text{dm}^3$.",
-          "answer": true
-        },
-        {
-          "text": "Lực đẩy Archimedes lớn hơn trọng lượng khối gỗ, nên gỗ nổi.",
-          "answer": false
-        }
-      ],
-      "explanation": "Nổi yên thì $F_A = P$: $\\rho_{\\text{nước}} V_c = \\rho_{\\text{gỗ}} V$ nên $V_c = 0{,}8V = 4\\ \\text{dm}^3$. Nếu $F_A > P$ thì khối gỗ còn đang đi lên chứ chưa nổi yên."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Người và dù có tổng khối lượng $60$ kg đang rơi đều; lấy $g = 10\\ \\text{m/s}^2$, bỏ qua lực đẩy Archimedes của không khí. Lực cản của không khí bằng bao nhiêu niutơn?",
-      "answer": "600",
-      "explanation": "Rơi đều nên lực cản bằng trọng lượng: $F_c = mg = 60\\cdot 10 = 600$ N."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật chìm hẳn trong nước có thể tích $0{,}5$ lít; lấy $\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Lực đẩy Archimedes bằng bao nhiêu niutơn?",
-      "answer": "5",
-      "explanation": "$V = 0{,}5\\ \\text{lít} = 5\\cdot 10^{-4}\\ \\text{m}^3$; $F_A = 1000\\cdot 10\\cdot 5\\cdot 10^{-4} = 5$ N."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai điểm trong nước cách nhau $0{,}5$ m theo phương thẳng đứng; lấy $\\rho = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Độ chênh áp suất giữa hai điểm là bao nhiêu pascal?",
-      "answer": "5000",
-      "explanation": "$\\Delta p = \\rho g \\Delta h = 1000\\cdot 10\\cdot 0{,}5 = 5000$ Pa, không phụ thuộc áp suất khí quyển."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Bài 19. Lực cản và lực nâng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật treo vào lực kế, ngoài không khí chỉ $7{,}5$ N. Nhúng chìm hẳn vào nước, thể tích vật $300\\ \\text{cm}^3$; lấy $\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Lực kế chỉ bao nhiêu niutơn? (viết dạng số thập phân)",
-      "answer": "4,5",
-      "explanation": "$V = 3\\cdot 10^{-4}\\ \\text{m}^3$ nên $F_A = 1000\\cdot 10\\cdot 3\\cdot 10^{-4} = 3$ N. Vật đứng yên: $T + F_A = P$, nên $T = 7{,}5 - 3 = 4{,}5$ N."
-    }
+  "removed": [
+   {
+    "question": "Ở giai đoạn thứ hai của sự rơi trong không khí, vật chuyển động",
+    "reason": "nghi_ngo: GHI CHÚ: đáp án B đúng, nhưng ghi chú D dùng sai thuật ngữ 'rơi tự do' (rơi tự do là không có lực cản) và nói lực cản không vượt trọng lượng, trái với ví dụ mở dù trong bài."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chất lưu là tên gọi chung của",
+   "options": [
+    "chất rắn và chất lỏng",
+    "chất lỏng và chất khí",
+    "chất khí và chất rắn",
+    "riêng các chất khí"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, chất lưu gồm chất lỏng và chất khí, tức là những chất chảy được như nước, dầu, không khí.",
+   "distractorNotes": {
+    "A": "Gộp chất rắn vào chất lưu là sai, vì chất rắn không chảy được.",
+    "C": "Chất rắn không chảy được; chất lưu chỉ gồm những chất chảy được là chất lỏng và chất khí.",
+    "D": "Chất lỏng như nước, dầu cũng chảy được nên cũng là chất lưu, không chỉ riêng chất khí."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực cản của chất lưu tác dụng lên vật chuyển động trong nó có",
+   "options": [
+    "phương thẳng đứng, chiều từ dưới lên",
+    "cùng phương, cùng chiều chuyển động",
+    "cùng phương, ngược chiều chuyển động",
+    "phương vuông góc với chuyển động"
+   ],
+   "answer": 2,
+   "explanation": "Lực cản của chất lưu cùng phương, ngược chiều chuyển động của vật và được vẽ tại trọng tâm vật.",
+   "distractorNotes": {
+    "A": "Đây là phương chiều của lực đẩy Archimedes; lực cản lại dọc theo phương chuyển động.",
+    "B": "Lực cản chống lại chuyển động nên phải ngược chiều, không thể cùng chiều chuyển động.",
+    "D": "Lực cản nằm dọc theo phương chuyển động, không vuông góc với nó."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Độ lớn lực cản của chất lưu lên vật phụ thuộc vào",
+   "options": [
+    "hình dạng và tốc độ của vật",
+    "trọng lượng và khối lượng của vật",
+    "thể tích phần chìm của vật",
+    "độ cao lúc thả của vật"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu độ lớn lực cản phụ thuộc hình dạng và tốc độ của vật, như ví dụ xoè tay chắn gió và hai tờ giấy.",
+   "distractorNotes": {
+    "B": "Hai tờ giấy cùng trọng lượng mà lực cản khác hẳn nhau, nên trọng lượng không quyết định độ lớn lực cản.",
+    "C": "Thể tích phần chìm quyết định lực đẩy Archimedes, nhầm sang lực cản.",
+    "D": "Độ cao thả không phải yếu tố của lực cản; lực cản tuỳ hình dạng và tốc độ tức thời."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ngay sau khi thả, trong khoảng thời gian rất ngắn đầu tiên, vật rơi trong không khí chuyển động",
+   "options": [
+    "đều với tốc độ giới hạn",
+    "chậm dần vì lực cản lớn",
+    "nhanh dần với gia tốc tăng",
+    "gần như nhanh dần đều, $a \\approx g$"
+   ],
+   "answer": 3,
+   "explanation": "Lúc vừa thả, tốc độ còn nhỏ nên lực cản gần bằng 0. Vật gần như rơi nhanh dần đều với $a \\approx g$.",
+   "distractorNotes": {
+    "A": "Vật chỉ rơi đều ở giai đoạn cuối, khi lực cản đã tăng tới bằng trọng lượng.",
+    "B": "Lúc vừa thả tốc độ còn nhỏ nên lực cản gần bằng 0, không thể lớn hơn trọng lượng.",
+    "C": "Lực cản tăng dần làm hợp lực giảm, nên gia tốc giảm chứ không tăng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Người nhảy dù đang rơi đều với tốc độ giới hạn (bỏ qua lực đẩy Archimedes của không khí). Phát biểu nào sau đây đúng?",
+   "options": [
+    "Lực cản bằng trọng lượng, hợp lực bằng 0",
+    "Không còn lực nào tác dụng lên người",
+    "Lực cản lớn hơn trọng lượng của người",
+    "Lực cản nhỏ hơn trọng lượng của người"
+   ],
+   "answer": 0,
+   "explanation": "Vận tốc không đổi thì gia tốc bằng 0, nên hợp lực bằng 0 và lực cản đúng bằng trọng lượng.",
+   "distractorNotes": {
+    "B": "Nhầm hợp lực bằng 0 với không có lực; trọng lực vẫn luôn tác dụng.",
+    "C": "Lực cản lớn hơn trọng lượng thì hợp lực hướng lên, người phải chậm dần chứ không rơi đều.",
+    "D": "Đi xuống đều không cần hợp lực hướng xuống; lực cản nhỏ hơn thì người còn nhanh dần."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điểm đặt của lực đẩy Archimedes tác dụng lên vật nhúng trong chất lỏng là",
+   "options": [
+    "trọng tâm của toàn bộ vật",
+    "điểm chính giữa mặt dưới của vật",
+    "trọng tâm phần chất lỏng bị chiếm chỗ",
+    "một điểm trên mặt thoáng chất lỏng"
+   ],
+   "answer": 2,
+   "explanation": "Lực đẩy Archimedes đặt tại trọng tâm phần chất lỏng bị vật chiếm chỗ, có phương thẳng đứng và chiều từ dưới lên.",
+   "distractorNotes": {
+    "A": "Nhầm điểm đặt lực đẩy với điểm đặt trọng lực hay lực cản, vốn ở trọng tâm vật.",
+    "B": "Lực đẩy là hợp áp lực lên mọi mặt vật, không đặt riêng tại mặt dưới.",
+    "D": "Mặt thoáng không thuộc phần chất lỏng bị vật chiếm chỗ nên không thể là điểm đặt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính độ lớn lực đẩy Archimedes là",
+   "options": [
+    "$F_A = \\dfrac{\\rho V}{g}$",
+    "$F_A = \\rho g h$",
+    "$F_A = \\dfrac{g V}{\\rho}$",
+    "$F_A = \\rho g V$"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, $F_A = \\rho g V = dV$, với $\\rho$ là khối lượng riêng chất lỏng và $V$ là thể tích phần chất lỏng bị chiếm chỗ.",
+   "distractorNotes": {
+    "A": "Lực đẩy tỉ lệ thuận với $g$, đặt $g$ ở mẫu số là sai.",
+    "B": "$\\rho g h$ là áp suất do chất lỏng gây ra, nhầm áp suất với lực đẩy.",
+    "C": "Chất lỏng càng nặng đẩy càng mạnh, nên $\\rho$ không thể nằm ở mẫu số."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một khối gỗ nổi yên trên mặt nước. Khi tính lực đẩy Archimedes bằng $F_A = \\rho g V$, phải lấy",
+   "options": [
+    "$\\rho$ của nước, $V$ của phần gỗ chìm",
+    "$\\rho$ của gỗ, $V$ của cả khối gỗ",
+    "$\\rho$ của nước, $V$ của cả khối gỗ",
+    "$\\rho$ của gỗ, $V$ của phần gỗ chìm"
+   ],
+   "answer": 0,
+   "explanation": "Trong $F_A = \\rho g V$, $\\rho$ là khối lượng riêng của chất lỏng và $V$ là thể tích phần chìm, tức phần nước bị chiếm chỗ.",
+   "distractorNotes": {
+    "B": "Nhầm cả hai đại lượng: lấy khối lượng riêng của vật và thể tích cả vật khi vật đang nổi.",
+    "C": "Vật nổi chỉ chiếm chỗ nước bằng phần chìm, lấy thể tích cả khối là thừa.",
+    "D": "Khối lượng riêng trong công thức là của chất lỏng, không phải của vật."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên chất lỏng, nếu thể tích phần chất lỏng bị vật chiếm chỗ tăng gấp đôi thì lực đẩy Archimedes",
+   "options": [
+    "giảm còn một nửa",
+    "tăng gấp đôi",
+    "tăng gấp bốn",
+    "không thay đổi"
+   ],
+   "answer": 1,
+   "explanation": "Từ $F_A = \\rho g V$, $F_A$ tỉ lệ thuận với $V$. Vì vậy $V$ gấp đôi thì $F_A$ gấp đôi.",
+   "distractorNotes": {
+    "A": "Đảo tỉ lệ: $F_A = \\rho g V$ tỉ lệ thuận với $V$, không tỉ lệ nghịch.",
+    "C": "$V$ trong công thức có bậc một, không có bình phương nên không thể gấp bốn.",
+    "D": "Lực đẩy chỉ không đổi theo độ sâu; thể tích chiếm chỗ đổi thì lực đẩy phải đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một quả nặng đã chìm hẳn trong nước được hạ từ độ sâu $h$ xuống độ sâu $3h$ (chưa chạm đáy). Lực đẩy Archimedes lên quả nặng",
+   "options": [
+    "tăng gấp ba lần",
+    "giảm còn một phần ba",
+    "không thay đổi",
+    "tăng gấp chín lần"
+   ],
+   "answer": 2,
+   "explanation": "Công thức $F_A = \\rho g V$ không chứa độ sâu $h$. Khi đã chìm hẳn, $V$ không đổi nên $F_A$ không đổi.",
+   "distractorNotes": {
+    "A": "Nhầm lực đẩy với áp suất; chỉ áp suất tăng theo độ sâu, $F_A = \\rho g V$ không chứa $h$.",
+    "B": "Nước phía trên ép mạnh hơn nhưng nước phía dưới cũng ép mạnh hơn đúng bằng ấy.",
+    "D": "Lực đẩy không phụ thuộc độ sâu, càng không phụ thuộc bình phương độ sâu."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mặt thoáng chất lỏng chịu áp suất khí quyển $p_0$. Áp suất tại độ sâu $h$ trong chất lỏng là",
+   "options": [
+    "$p = p_0 - \\rho g h$",
+    "$p = \\rho g h - p_0$",
+    "$p = \\rho g h$",
+    "$p = p_0 + \\rho g h$"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, áp suất tại độ sâu $h$ là $p = p_0 + \\rho g h$: càng xuống sâu áp suất càng lớn.",
+   "distractorNotes": {
+    "A": "Sai dấu: càng xuống sâu áp suất càng tăng nên phải cộng $\\rho g h$.",
+    "B": "Áp suất khí quyển ép thêm lên mặt thoáng nên phải cộng vào, không trừ đi.",
+    "C": "Chỉ là phần áp suất do chất lỏng gây ra, đã bỏ quên áp suất khí quyển $p_0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong công thức $F_A = dV$, trọng lượng riêng $d$ của chất lỏng có đơn vị là",
+   "options": [
+    "$\\text{kg/m}^3$",
+    "$\\text{N/m}^3$",
+    "$\\text{N/m}^2$",
+    "$\\text{N} \\cdot \\text{m}^3$"
+   ],
+   "answer": 1,
+   "explanation": "Có $d = \\rho g$ và $F_A = dV$, nên đơn vị của $d$ là $\\text{N}$ chia $\\text{m}^3$, tức $\\text{N/m}^3$.",
+   "distractorNotes": {
+    "A": "Nhầm trọng lượng riêng $d$ với khối lượng riêng $\\rho$.",
+    "C": "Đây là đơn vị áp suất, nhầm trọng lượng riêng với áp suất.",
+    "D": "Nhân thay vì chia: $d = F_A/V$ nên đơn vị là niutơn chia mét khối."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Biết lực đẩy Archimedes $F_A$ lên một vật chìm hẳn trong chất lỏng có khối lượng riêng $\\rho$. Thể tích của vật là",
+   "options": [
+    "$V = \\dfrac{F_A}{\\rho g}$",
+    "$V = F_A \\rho g$",
+    "$V = \\dfrac{\\rho g}{F_A}$",
+    "$V = \\dfrac{F_A \\rho}{g}$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $F_A = \\rho g V$, chia hai vế cho $\\rho g$ được $V = \\dfrac{F_A}{\\rho g}$. Vật chìm hẳn nên $V$ cũng là thể tích vật.",
+   "distractorNotes": {
+    "B": "Nhân thay vì chia khi chuyển $\\rho g$ sang vế bên kia.",
+    "C": "Đảo ngược tử và mẫu khi biến đổi công thức $F_A = \\rho g V$.",
+    "D": "Chỉ chia cho $g$ mà quên chia cho $\\rho$, lại còn nhân thêm $\\rho$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thả lần lượt chồng 1, 2, 3, 4 phễu giấy lồng khít (trọng lượng gấp 1, 2, 3, 4 lần) từ cùng một độ cao. Ở đoạn cuối quãng rơi, các phễu đều đã rơi đều. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Khi phễu rơi đều, lực cản của không khí bằng trọng lượng chồng phễu.",
+     "answer": true
+    },
+    {
+     "text": "Chồng phễu nặng hơn thì rơi đều với tốc độ nhỏ hơn.",
+     "answer": false
+    },
+    {
+     "text": "Kết quả cho thấy lực cản của không khí tăng theo tốc độ của vật.",
+     "answer": true
+    },
+    {
+     "text": "Khi phễu đã rơi đều, trọng lực không còn tác dụng lên phễu.",
+     "answer": false
+    }
+   ],
+   "explanation": "Rơi đều thì hợp lực bằng 0, nên lực cản bằng trọng lượng. Chồng càng nặng rơi đều càng nhanh, chứng tỏ lực cản tăng theo tốc độ; trọng lực vẫn luôn tác dụng.",
+   "distractorNotes": {
+    "0": "Rơi đều thì gia tốc bằng 0, hợp lực bằng 0, nên lực cản phải đúng bằng trọng lượng.",
+    "1": "Số liệu cho thấy chồng càng nhiều phễu thì $t$ càng ngắn, tức rơi đều càng nhanh.",
+    "2": "Trọng lượng lớn hơn cần tốc độ lớn hơn mới có lực cản cân bằng, chứng tỏ lực cản tăng theo tốc độ.",
+    "3": "Nhầm hợp lực bằng 0 với hết lực; Trái Đất vẫn hút phễu suốt quá trình rơi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một người nhảy khỏi máy bay, nằm sấp, chưa mở dù; sau một thời gian người đạt tốc độ giới hạn. Sau đó người mở dù. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Trước khi đạt tốc độ giới hạn, lực cản lên người tăng dần theo tốc độ.",
+     "answer": true
+    },
+    {
+     "text": "Ngay sau khi dù bung, lực cản lớn hơn trọng lượng nên người chuyển động chậm dần.",
+     "answer": true
+    },
+    {
+     "text": "Khi đã rơi đều trở lại sau khi mở dù, tốc độ giới hạn lớn hơn lúc chưa mở dù.",
+     "answer": false
+    },
+    {
+     "text": "Mở dù làm lực cản tăng chủ yếu vì dù làm tăng khối lượng của hệ người và dù.",
+     "answer": false
+    }
+   ],
+   "explanation": "Lực cản tăng theo tốc độ và phụ thuộc hình dạng. Dù rộng làm lực cản tăng vọt, vượt trọng lượng nên người chậm dần, đến khi cân bằng lại thì rơi đều với tốc độ giới hạn nhỏ hơn.",
+   "distractorNotes": {
+    "0": "Tốc độ tăng làm lực cản tăng, chính điều đó khiến gia tốc giảm dần đến khi rơi đều.",
+    "1": "Dù bung làm lực cản vượt trọng lượng, hợp lực hướng lên nên người phải chậm dần.",
+    "2": "Dù rộng làm lực cản cân bằng trọng lượng ở tốc độ thấp hơn, nên tốc độ giới hạn nhỏ đi.",
+    "3": "Lực cản tăng do hình dạng hứng gió rộng hơn, không phải do khối lượng; khối lượng hệ gần như không đổi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Treo một khối kim loại vào lực kế rồi nhúng dần vào bình tràn đầy nước, hứng nước tràn ra vào cốc. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Số chỉ lực kế giảm dần khi phần thể tích chìm trong nước tăng.",
+     "answer": true
+    },
+    {
+     "text": "Độ giảm số chỉ lực kế bằng trọng lượng phần nước tràn ra.",
+     "answer": true
+    },
+    {
+     "text": "Khi khối kim loại đã chìm hẳn, hạ sâu thêm thì số chỉ lực kế tiếp tục giảm.",
+     "answer": false
+    },
+    {
+     "text": "Trong công thức $F_A = \\rho g V$ áp dụng cho thí nghiệm này, $\\rho$ là khối lượng riêng của kim loại.",
+     "answer": false
+    }
+   ],
+   "explanation": "Lực đẩy bằng trọng lượng nước bị chiếm chỗ và tăng theo phần chìm, không tăng theo độ sâu. Trong công thức, $\\rho$ là khối lượng riêng của nước.",
+   "distractorNotes": {
+    "0": "Phần chìm tăng thì thể tích nước bị chiếm chỗ tăng, lực đẩy lớn hơn nên lực kế chỉ ít đi.",
+    "1": "Lực đẩy bằng trọng lượng chất lỏng bị chiếm chỗ, chính là trọng lượng nước tràn ra.",
+    "2": "Đã chìm hẳn thì thể tích chiếm chỗ không đổi, lực đẩy không tăng theo độ sâu nên số chỉ giữ nguyên.",
+    "3": "Nhầm khối lượng riêng của vật với khối lượng riêng của chất lỏng trong công thức."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một khối hộp có đáy diện tích $S$, chiều cao $\\Delta h$, chìm hẳn trong chất lỏng có khối lượng riêng $\\rho$. Nước ép lên mặt trên một áp lực $F_1$ và lên mặt dưới một áp lực $F_2$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "$F_2 \\gt F_1$ vì mặt dưới nằm sâu hơn mặt trên.",
+     "answer": true
+    },
+    {
+     "text": "Độ chênh áp suất giữa mặt dưới và mặt trên là $\\Delta p = \\rho g \\Delta h$.",
+     "answer": true
+    },
+    {
+     "text": "Độ chênh áp suất giữa hai mặt tăng khi áp suất khí quyển $p_0$ tăng.",
+     "answer": false
+    },
+    {
+     "text": "Hiệu $F_2 - F_1$ tăng khi đưa khối hộp xuống sâu hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\Delta p = \\rho g \\Delta h$ chỉ phụ thuộc $\\rho$ và $\\Delta h$, không phụ thuộc $p_0$. Do đó $F_2 - F_1 = \\rho g S \\Delta h = \\rho g V$ không đổi theo độ sâu.",
+   "distractorNotes": {
+    "0": "Áp suất tăng theo độ sâu nên mặt dưới bị ép mạnh hơn mặt trên cùng diện tích.",
+    "1": "Lấy hiệu $p_0 + \\rho g h$ ở hai mặt, $p_0$ triệt tiêu và còn đúng $\\rho g \\Delta h$.",
+    "2": "$p_0$ ép lên cả hai mặt như nhau nên triệt tiêu, độ chênh áp suất không phụ thuộc $p_0$.",
+    "3": "Nhầm $\\Delta h$ với quãng hạ thêm; $\\Delta h$ là chiều cao hộp nên hiệu áp lực không đổi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật được nhúng chìm hẳn trong chất lỏng rồi thả ra. Gọi $P$ là trọng lượng của vật, $F_A$ là lực đẩy Archimedes khi vật chìm hẳn. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Nếu $P \\gt F_A$ thì vật chìm xuống đáy.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $P = F_A$ thì vật lơ lửng trong chất lỏng.",
+     "answer": true
+    },
+    {
+     "text": "Khi vật đã nổi yên trên mặt chất lỏng thì lực đẩy Archimedes lớn hơn trọng lượng của vật.",
+     "answer": false
+    },
+    {
+     "text": "Tàu thép nổi được vì thép đóng tàu có khối lượng riêng nhỏ hơn nước.",
+     "answer": false
+    }
+   ],
+   "explanation": "So $P$ với $F_A$ khi chìm hẳn sẽ biết vật chìm, lơ lửng hay nổi lên. Khi nổi yên, $F_A$ của phần chìm bằng $P$. Tàu thép nổi nhờ thân rỗng chiếm chỗ nhiều nước.",
+   "distractorNotes": {
+    "0": "Trọng lượng lớn hơn lực đẩy thì hợp lực hướng xuống, vật không thể nổi hay đứng yên.",
+    "1": "Hai lực bằng nhau thì hợp lực bằng 0, vật đứng yên lơ lửng trong lòng chất lỏng.",
+    "2": "Nếu $F_A \\gt P$ thì vật còn đang nổi lên; nổi yên thì lực đẩy phần chìm bằng trọng lượng.",
+    "3": "Thép nào cũng nặng hơn nước; tàu nổi nhờ thân rỗng chiếm chỗ rất nhiều nước."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Bài 19. Lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một vật đặc treo dưới lực kế: ngoài không khí lực kế chỉ $P$. Nhúng vật chìm hoàn toàn trong một chất lỏng, vật đứng yên và lực kế chỉ $T$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Vì vật đứng yên nên $T + F_A = P$.",
+     "answer": true
+    },
+    {
+     "text": "Số chỉ lực kế khi nhúng vật nhỏ hơn $P$.",
+     "answer": true
+    },
+    {
+     "text": "Nhúng vật chìm hẳn trong chất lỏng có khối lượng riêng nhỏ hơn thì $T$ nhỏ hơn.",
+     "answer": false
+    },
+    {
+     "text": "Nếu chỉ nhúng một nửa thể tích vật thì $T = P - F_A$, với $F_A$ tính theo thể tích cả vật.",
+     "answer": false
+    }
+   ],
+   "explanation": "$T$ và $F_A$ hướng lên, $P$ hướng xuống, vật đứng yên nên $T = P - F_A$. Chất lỏng nhẹ hơn đẩy yếu hơn nên $T$ lớn hơn. Khi chỉ nhúng một phần, $F_A$ tính theo phần chìm.",
+   "distractorNotes": {
+    "0": "Vật đứng yên nên hợp lực bằng 0: tổng hai lực hướng lên bằng trọng lực hướng xuống.",
+    "1": "Lực đẩy hướng lên gánh bớt trọng lượng nên lực kế phải chỉ ít hơn $P$.",
+    "2": "Chất lỏng có $\\rho$ nhỏ hơn cho $F_A$ nhỏ hơn, nên $T = P - F_A$ lớn hơn chứ không nhỏ hơn.",
+    "3": "Lấy nhầm thể tích cả vật; lực đẩy chỉ tính theo phần chìm, ở đây là một nửa thể tích."
+   }
+  }
+ ]
 }

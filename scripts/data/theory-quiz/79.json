@@ -1,386 +1,550 @@
 {
-  "lesson_id": 79,
-  "lesson_title": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
-  "item_id": 262,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 79,
+ "lesson_title": "Bài 34. Khối lượng riêng. Áp suất chất lỏng",
+ "item_id": 262,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khối lượng riêng. Áp suất chất lỏng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khối lượng riêng của một chất là",
+   "options": [
+    "khối lượng của một đơn vị thể tích chất đó",
+    "trọng lượng của một đơn vị thể tích chất đó",
+    "thể tích của một đơn vị khối lượng chất đó",
+    "khối lượng của toàn bộ vật làm bằng chất đó"
+   ],
+   "answer": 0,
+   "explanation": "Mục II.1: khối lượng riêng là khối lượng của một đơn vị thể tích chất đó, $\\rho = \\dfrac{m}{V}$.",
+   "distractorNotes": {
+    "B": "Trọng lượng của một đơn vị thể tích là trọng lượng riêng $d = \\rho g$, không phải khối lượng riêng.",
+    "C": "Đây là nghịch đảo của $\\rho$, đã đảo tử và mẫu trong $m/V$.",
+    "D": "Khối lượng toàn vật phụ thuộc kích thước vật, còn khối lượng riêng là đặc trưng của chất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khối lượng riêng. Áp suất chất lỏng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Áp lực là",
+   "options": [
+    "lực ép có phương song song với mặt bị ép",
+    "lực ép tính trên một đơn vị diện tích bị ép",
+    "lực ép có phương vuông góc với mặt bị ép",
+    "lực ép luôn bằng trọng lượng của vật ép"
+   ],
+   "answer": 2,
+   "explanation": "Mục II.3: áp lực là lực ép có phương vuông góc với mặt bị ép.",
+   "distractorNotes": {
+    "A": "Lực song song với mặt không ép vào mặt, nên không phải áp lực.",
+    "B": "Lực ép trên một đơn vị diện tích là áp suất, đã nhầm hai đại lượng.",
+    "D": "Trọng lượng chỉ là áp lực trong trường hợp riêng, như vật đặt trên mặt nằm ngang."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Khối lượng riêng. Áp suất chất lỏng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cưa một khối sắt đặc thành hai nửa bằng nhau. So với cả khối, khối lượng riêng của mỗi nửa",
+   "options": [
+    "giảm còn một nửa",
+    "giữ nguyên như cũ",
+    "tăng lên gấp đôi",
+    "giảm còn một phần tư"
+   ],
+   "answer": 1,
+   "explanation": "$m$ và $V$ cùng giảm một nửa nên $\\rho = m/V$ không đổi; khối lượng riêng là đặc trưng của chất.",
+   "distractorNotes": {
+    "A": "Chỉ thấy khối lượng giảm mà quên thể tích ở mẫu số cũng giảm một nửa.",
+    "C": "Chỉ thấy thể tích ở mẫu số giảm mà quên khối lượng ở tử số cũng giảm.",
+    "D": "Cho cả tử và mẫu cùng làm giảm $\\rho$, trong khi chúng giảm cùng tỉ lệ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một chai nhựa đục ba lỗ ở ba độ cao khác nhau rồi đổ đầy nước. Phát biểu nào sau đây đúng?",
+   "options": [
+    "Lỗ cao nhất phun mạnh nhất vì nước dưới đẩy lên",
+    "Ba lỗ phun mạnh như nhau vì cùng một chai nước",
+    "Lỗ thấp nhất phun yếu nhất vì bị nước đè nén",
+    "Lỗ thấp nhất phun mạnh nhất vì nằm sâu nhất"
+   ],
+   "answer": 3,
+   "explanation": "Thí nghiệm chai đục lỗ: lỗ thấp nhất phun mạnh nhất, chứng tỏ áp suất chất lỏng tăng theo độ sâu.",
+   "distractorNotes": {
+    "A": "Lỗ cao nhất gần mặt thoáng nên độ sâu nhỏ nhất, áp suất nhỏ nhất.",
+    "B": "Cùng chai nhưng ba lỗ ở ba độ sâu khác nhau nên áp suất khác nhau.",
+    "C": "Bị nước đè nhiều hơn nghĩa là áp suất lớn hơn, nên tia phải mạnh hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bình thông nhau chứa một chất lỏng đứng yên thì mực chất lỏng ở các nhánh",
+   "options": [
+    "luôn ngang nhau",
+    "nhánh to cao hơn",
+    "nhánh nhỏ cao hơn",
+    "tuỳ lượng chất lỏng"
+   ],
+   "answer": 0,
+   "explanation": "Mục II.5: bình thông nhau chứa một chất lỏng đứng yên thì mực ở các nhánh ngang nhau, như vòi ấm và thân ấm.",
+   "distractorNotes": {
+    "B": "Áp suất không phụ thuộc tiết diện nhánh nên nhánh to không có mực cao hơn.",
+    "C": "Tiết diện nhỏ không làm áp suất ở cùng mức ngang thay đổi.",
+    "D": "Ở cùng mức ngang áp suất phải bằng nhau, nên mực luôn ngang nhau bất kể lượng chất lỏng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Ba bình cùng diện tích đáy: thành thẳng, loe miệng và thắt miệng, chứa nước cùng mực. Áp suất do nước gây ra ở đáy",
+   "options": [
+    "lớn nhất ở bình loe miệng vì chứa nhiều nước nhất",
+    "nhỏ nhất ở bình loe miệng vì nước tựa lên thành",
+    "như nhau ở ba bình vì cùng độ sâu của nước",
+    "lớn nhất ở bình thắt miệng vì thành ép xuống"
+   ],
+   "answer": 2,
+   "explanation": "Bẫy 1: áp suất ở đáy là $\\rho g h$, chỉ phụ thuộc độ sâu, không phụ thuộc lượng nước hay hình dạng bình.",
+   "distractorNotes": {
+    "A": "Lượng nước không có mặt trong công thức $\\rho g h$.",
+    "B": "Nước tựa lên thành làm áp lực lên đáy nhỏ hơn trọng lượng nước, còn áp suất đáy vẫn chỉ theo độ sâu.",
+    "D": "Thành ép xuống làm áp lực lên đáy lớn hơn trọng lượng nước, nhưng áp suất đáy vẫn bằng $\\rho g h$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật đặc thả vào chất lỏng sẽ nổi lên khi",
+   "options": [
+    "khối lượng của vật nhỏ hơn của chất lỏng",
+    "khối lượng riêng của vật nhỏ hơn của chất lỏng",
+    "khối lượng riêng của vật lớn hơn của chất lỏng",
+    "khối lượng riêng của vật bằng của chất lỏng"
+   ],
+   "answer": 1,
+   "explanation": "Mục II.6: vật đặc có $\\rho_{\\text{vật}} \\lt \\rho_{\\ell}$ thì nổi, lớn hơn thì chìm, bằng nhau thì lơ lửng.",
+   "distractorNotes": {
+    "A": "Điều kiện nổi so sánh khối lượng riêng, không so khối lượng của vật với khối lượng chất lỏng.",
+    "C": "Khối lượng riêng của vật lớn hơn của chất lỏng thì vật chìm.",
+    "D": "Khối lượng riêng bằng nhau thì vật lơ lửng, không nổi lên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Áp suất tại một điểm ở độ sâu $h$ trong chất lỏng đứng yên có khối lượng riêng $\\rho$, mặt thoáng chịu áp suất khí quyển $p_a$, là",
+   "options": [
+    "$p = p_a - \\rho g h$",
+    "$p = \\rho g h$",
+    "$p = p_a + \\rho h$",
+    "$p = p_a + \\rho g h$"
+   ],
+   "answer": 3,
+   "explanation": "Mục II.4: $p = p_a + \\rho g h$, gồm áp suất khí quyển và phần do cột chất lỏng gây ra.",
+   "distractorNotes": {
+    "A": "Sai dấu: càng xuống sâu áp suất càng tăng chứ không giảm.",
+    "B": "Đây chỉ là phần do chất lỏng gây ra, quên cộng áp suất khí quyển $p_a$.",
+    "C": "Quên nhân gia tốc $g$ nên $\\rho h$ không có đơn vị áp suất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Khối lượng riêng. Áp suất chất lỏng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dầu ăn có khối lượng riêng $0{,}92\\ \\text{g/cm}^3$. Đổi ra đơn vị SI, giá trị này bằng",
+   "options": [
+    "$0{,}92\\ \\text{kg/m}^3$",
+    "$920\\ \\text{kg/m}^3$",
+    "$92\\ \\text{kg/m}^3$",
+    "$9200\\ \\text{kg/m}^3$"
+   ],
+   "answer": 1,
+   "explanation": "$1\\ \\text{g/cm}^3 = 1000\\ \\text{kg/m}^3$ nên $0{,}92\\ \\text{g/cm}^3 = 920\\ \\text{kg/m}^3$.",
+   "distractorNotes": {
+    "A": "Giữ nguyên con số khi đổi đơn vị, bỏ qua hệ số $1000$.",
+    "C": "Nhân với $100$ thay vì $1000$, đổi sai hệ số giữa cm³ và m³.",
+    "D": "Nhân với $10\\,000$, dư một bậc so với hệ số đúng $1000$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Khối lượng riêng. Áp suất chất lỏng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị áp suất trong hệ SI là pascal, với $1\\ \\text{Pa}$ bằng",
+   "options": [
+    "$1\\ \\text{N/m}^2$",
+    "$1\\ \\text{N}\\cdot\\text{m}^2$",
+    "$1\\ \\text{N/cm}^2$",
+    "$1\\ \\text{kg/m}^2$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $p = F/S$ với $F$ tính bằng N, $S$ tính bằng m²: $1\\ \\text{Pa} = 1\\ \\text{N/m}^2$.",
+   "distractorNotes": {
+    "B": "Áp suất là lực chia cho diện tích, không phải lực nhân diện tích.",
+    "C": "Đơn vị SI của diện tích là m², không phải cm².",
+    "D": "Áp lực đo bằng newton, không phải kilôgam."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Khối lượng riêng. Áp suất chất lỏng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên áp lực, giảm diện tích bị ép đi một nửa thì áp suất",
+   "options": [
+    "giảm đi một nửa",
+    "giữ nguyên như cũ",
+    "tăng lên gấp đôi",
+    "tăng lên gấp bốn"
+   ],
+   "answer": 2,
+   "explanation": "$p = F/S$: $F$ không đổi, $S$ giảm một nửa thì $p$ tăng gấp đôi, như mũi kim, lưỡi dao sắc.",
+   "distractorNotes": {
+    "A": "Coi $p$ tỉ lệ thuận với $S$, trong khi $S$ nằm ở mẫu số.",
+    "B": "Nghĩ áp lực không đổi thì áp suất không đổi, quên vai trò của diện tích.",
+    "D": "Tự thêm bình phương cho $S$, trong khi $p$ tỉ lệ nghịch bậc nhất với $S$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong cùng một chất lỏng đứng yên, điểm N có độ sâu gấp đôi điểm M. Áp suất do chất lỏng gây ra tại N so với tại M",
+   "options": [
+    "bằng nhau",
+    "bằng một nửa",
+    "gấp bốn lần",
+    "gấp đôi"
+   ],
+   "answer": 3,
+   "explanation": "Phần áp suất do chất lỏng là $\\rho g h$, tỉ lệ thuận với độ sâu $h$, nên gấp đôi.",
+   "distractorNotes": {
+    "A": "Cùng chất lỏng chỉ cho cùng áp suất khi cùng độ sâu.",
+    "B": "Đảo chiều quan hệ: áp suất tăng chứ không giảm theo độ sâu.",
+    "C": "Tự thêm bình phương cho $h$, trong khi $\\rho g h$ tỉ lệ bậc nhất với $h$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật nổi một phần trên mặt chất lỏng. Gọi $\\rho_{\\ell}$ là khối lượng riêng chất lỏng, $\\rho_v$ là khối lượng riêng của vật, $V$ là thể tích cả vật, $V_{\\text{chìm}}$ là thể tích phần chìm. Lực đẩy Archimedes có độ lớn",
+   "options": [
+    "$F_A = \\rho_{\\ell}\\, g\\, V_{\\text{chìm}}$",
+    "$F_A = \\rho_{v}\\, g\\, V_{\\text{chìm}}$",
+    "$F_A = \\rho_{\\ell}\\, g\\, V$",
+    "$F_A = \\rho_{\\ell}\\, V_{\\text{chìm}}$"
+   ],
+   "answer": 0,
+   "explanation": "Mục II.6: $F_A = \\rho_{\\ell} g V_{\\text{chìm}}$, dùng khối lượng riêng chất lỏng và thể tích phần chìm.",
+   "distractorNotes": {
+    "B": "Lực đẩy do chất lỏng gây ra nên phải dùng khối lượng riêng của chất lỏng, không phải của vật.",
+    "C": "Vật nổi chỉ chìm một phần, phải dùng thể tích phần chìm chứ không phải cả vật.",
+    "D": "Quên nhân $g$ nên biểu thức là khối lượng, không phải lực."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Áp kế ở đáy một thùng nước (khối lượng riêng $\\rho$) chỉ áp suất dư $p_d$. Độ sâu của nước trong thùng là",
+   "options": [
+    "$h = p_d\\, \\rho g$",
+    "$h = \\dfrac{p_d}{\\rho g}$",
+    "$h = \\dfrac{\\rho g}{p_d}$",
+    "$h = \\dfrac{p_d + p_a}{\\rho g}$"
+   ],
+   "answer": 1,
+   "explanation": "Áp suất dư là phần do nước: $p_d = \\rho g h$, suy ra $h = \\dfrac{p_d}{\\rho g}$.",
+   "distractorNotes": {
+    "A": "Chuyển $\\rho g$ sang vế kia mà nhân thay vì chia.",
+    "C": "Đảo tử và mẫu khi rút $h$ từ $p_d = \\rho g h$.",
+    "D": "Áp suất dư đã không chứa $p_a$, cộng thêm $p_a$ là nhầm sang áp suất tuyệt đối."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Khối lượng riêng. Áp suất chất lỏng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kẹp một bút chì đã gọt giữa ngón cái (chạm đầu bằng) và ngón trỏ (chạm đầu nhọn), giữ bút nằm yên và ép nhẹ.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khối lượng riêng của một chất là",
-      "options": [
-        "khối lượng của vật làm bằng chất đó",
-        "khối lượng của một đơn vị thể tích chất đó",
-        "thể tích của một đơn vị khối lượng chất đó",
-        "lực hút của Trái Đất lên một đơn vị thể tích chất đó"
-      ],
-      "answer": 1,
-      "explanation": "$\\rho = m/V$. Nhiễu thứ ba là trọng lượng riêng $d = \\rho g$; nhiễu thứ hai là đảo $m$ và $V$."
+     "text": "Ngón chạm đầu nhọn cảm thấy đau hơn ngón chạm đầu bằng.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Rót bớt một nửa chai dầu ăn ra khỏi chai. Khối lượng riêng của dầu còn lại trong chai",
-      "options": [
-        "giảm đi một nửa",
-        "tăng gấp đôi vì thể tích giảm",
-        "giảm vì mực dầu thấp đi",
-        "không đổi, vì là đặc trưng của chất"
-      ],
-      "answer": 3,
-      "explanation": "Khối lượng và thể tích cùng giảm một nửa nên $m/V$ giữ nguyên. Khối lượng riêng chỉ phụ thuộc chất, không phụ thuộc lượng chất."
+     "text": "Ngón chạm đầu nhọn chịu áp lực lớn hơn ngón chạm đầu bằng.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Áp lực là",
-      "options": [
-        "lực ép có phương vuông góc với mặt bị ép",
-        "lực ép theo mọi phương lên mặt bị ép",
-        "áp suất tính trên một đơn vị diện tích",
-        "trọng lượng của vật, trong mọi trường hợp"
-      ],
-      "answer": 0,
-      "explanation": "Áp lực là lực vuông góc mặt bị ép (đơn vị N); áp suất mới là áp lực trên một đơn vị diện tích. Áp lực chỉ bằng trọng lượng khi mặt ép nằm ngang và không có lực nào khác."
+     "text": "Đầu nhọn có diện tích tiếp xúc nhỏ nên gây áp suất lớn hơn.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ba lô quai bản rộng đỡ đau vai hơn ba lô quai mảnh vì",
-      "options": [
-        "quai rộng làm áp lực lên vai nhỏ đi vì ba lô nhẹ hơn",
-        "quai rộng làm áp suất lớn hơn nên ba lô bám chặt hơn",
-        "cùng áp lực nhưng diện tích ép lớn hơn nên áp suất nhỏ hơn",
-        "áp suất không phụ thuộc diện tích ép"
-      ],
-      "answer": 2,
-      "explanation": "$p = F/S$: $F$ như nhau mà $S$ lớn thì $p$ nhỏ. Quai rộng không làm ba lô nhẹ đi."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Áp suất do chất lỏng đứng yên gây ra tại một điểm trong lòng nó phụ thuộc vào",
-      "options": [
-        "khối lượng riêng chất lỏng và độ sâu của điểm đó",
-        "lượng chất lỏng chứa trong bình và diện tích đáy",
-        "hình dạng bình và thể tích chất lỏng",
-        "độ rộng của mặt thoáng"
-      ],
-      "answer": 0,
-      "explanation": "Phần do chất lỏng là $\\rho g h$, chỉ có $\\rho$ và độ sâu $h$. Lượng chất lỏng, hình dạng bình, diện tích đáy đều không có mặt trong công thức."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai nhánh của bình thông nhau cùng chứa một chất lỏng đứng yên. Mực chất lỏng ở hai nhánh",
-      "options": [
-        "nhánh hẹp hơn thì cao hơn",
-        "nhánh rộng hơn thì cao hơn vì chứa nhiều chất lỏng hơn",
-        "nhánh dốc hơn thì thấp hơn",
-        "ở cùng mức ngang với nhau"
-      ],
-      "answer": 3,
-      "explanation": "Cùng chất lỏng, cùng mức ngang thì cùng áp suất, nên hai mặt thoáng ngang nhau dù nhánh to hay nhỏ, thẳng hay nghiêng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Lực đẩy Archimedes và điều kiện nổi",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật đặc thả vào chất lỏng sẽ nổi lên khi",
-      "options": [
-        "khối lượng của vật nhỏ",
-        "thể tích của vật nhỏ",
-        "khối lượng riêng của vật nhỏ hơn khối lượng riêng của chất lỏng",
-        "khối lượng riêng của vật lớn hơn của chất lỏng"
-      ],
-      "answer": 2,
-      "explanation": "Điều kiện nổi so sánh khối lượng riêng, không so sánh khối lượng hay thể tích. Khối lượng riêng vật lớn hơn thì vật chìm."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về áp suất chất lỏng, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Chất lỏng ép lên đáy, thành bình và mọi vật trong lòng nó theo mọi phương.",
-          "answer": true
-        },
-        {
-          "text": "Ở cùng độ sâu trong một chất lỏng đứng yên, áp suất bằng nhau.",
-          "answer": true
-        },
-        {
-          "text": "Bình chứa nhiều chất lỏng hơn thì áp suất ở đáy bình luôn lớn hơn.",
-          "answer": false
-        },
-        {
-          "text": "Độ sâu $h$ trong công thức $\\rho g h$ được đo từ đáy bình lên điểm đang xét.",
-          "answer": false
-        }
-      ],
-      "explanation": "Áp suất ở đáy chỉ phụ thuộc $\\rho$ và độ sâu, không phụ thuộc lượng chất lỏng. $h$ đo từ mặt thoáng xuống điểm đang xét."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về áp suất tuyệt đối và áp suất dư của chất lỏng, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tại mặt thoáng, áp suất tuyệt đối bằng áp suất khí quyển $p_a$.",
-          "answer": true
-        },
-        {
-          "text": "Tại mặt thoáng, áp suất dư bằng $0$.",
-          "answer": true
-        },
-        {
-          "text": "Đề hỏi \"áp suất tại điểm\" thì chỉ tính $\\rho g h$, không cộng $p_a$.",
-          "answer": false
-        },
-        {
-          "text": "Ở cùng một điểm, áp suất tuyệt đối lớn hơn áp suất dư một lượng bằng $p_a$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Áp suất tuyệt đối $p = p_a + \\rho g h$, áp suất dư $p - p_a = \\rho g h$. Hỏi \"áp suất tại điểm\" phải cộng $p_a$."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Lực đẩy Archimedes và điều kiện nổi",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về lực đẩy Archimedes và điều kiện nổi, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Mặt dưới của vật nằm sâu hơn mặt trên nên bị ép mạnh hơn, vì vậy chất lỏng đẩy vật lên.",
-          "answer": true
-        },
-        {
-          "text": "Trong $F_A = \\rho_{\\ell} g V$, $V$ là thể tích toàn bộ vật dù vật chỉ chìm một phần.",
-          "answer": false
-        },
-        {
-          "text": "Vật đặc có khối lượng riêng lớn hơn chất lỏng thì chìm.",
-          "answer": true
-        },
-        {
-          "text": "Sắt chìm trong nước nên cũng chìm trong thuỷ ngân.",
-          "answer": false
-        }
-      ],
-      "explanation": "$V$ là thể tích phần chìm. Sắt ($7800\\ \\text{kg/m}^3$) nhẹ hơn thuỷ ngân ($13\\,600\\ \\text{kg/m}^3$) nên nổi trên thuỷ ngân."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Áp suất tuyệt đối tại điểm ở độ sâu $h$ trong chất lỏng khối lượng riêng $\\rho$, áp suất khí quyển $p_a$, được tính bằng",
-      "options": [
-        "$p = \\rho g h$",
-        "$p = p_a + \\rho g h$",
-        "$p = p_a + \\dfrac{\\rho g}{h}$",
-        "$p = p_a + \\rho h$"
-      ],
-      "answer": 1,
-      "explanation": "$\\rho g h$ chỉ là phần do chất lỏng (quên $p_a$); nhiễu thứ ba quên $g$; nhiễu thứ hai đặt $h$ ở mẫu."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Đổi $0{,}8\\ \\text{g/cm}^3$ sang kg/m$^3$ được",
-      "options": [
-        "$0{,}8\\ \\text{kg/m}^3$",
-        "$8\\cdot 10^{5}\\ \\text{kg/m}^3$",
-        "$0{,}0008\\ \\text{kg/m}^3$",
-        "$800\\ \\text{kg/m}^3$"
-      ],
-      "answer": 3,
-      "explanation": "$1\\ \\text{g/cm}^3 = 1000\\ \\text{kg/m}^3$ nên $0{,}8 \\to 800$. Giữ nguyên số là quên đổi; $8\\cdot 10^5$ là đổi cm$^3$ ra m$^3$ mà quên đổi g ra kg; $0{,}0008$ là nhân thay vì chia."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Người nặng $50\\ \\text{kg}$ đứng thẳng bằng hai bàn chân, tổng diện tích tiếp xúc $400\\ \\text{cm}^2$. Lấy $g = 10\\ \\text{m/s}^2$. Áp suất người đó gây ra trên sàn là",
-      "options": [
-        "$1250\\ \\text{Pa}$",
-        "$1{,}25\\ \\text{Pa}$",
-        "$12\\,500\\ \\text{Pa}$",
-        "$125\\ \\text{Pa}$"
-      ],
-      "answer": 2,
-      "explanation": "$F = mg = 500\\ \\text{N}$; $S = 400\\ \\text{cm}^2 = 0{,}04\\ \\text{m}^2$; $p = 500/0{,}04 = 12\\,500\\ \\text{Pa}$. $1250$ là quên nhân $g$; $1{,}25$ là chưa đổi cm$^2$; $125$ là đổi nhầm $1\\ \\text{cm}^2 = 10^{-2}\\ \\text{m}^2$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ống chữ U chứa nước. Rót dầu hoả ($\\rho = 800\\ \\text{kg/m}^3$) vào nhánh trái tạo cột dầu cao $20\\ \\text{cm}$ tính từ mặt phân cách A tới mặt thoáng. Điểm B ở nhánh phải, cùng mức ngang với A. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Áp suất tại A và tại B bằng nhau.",
-          "answer": true
-        },
-        {
-          "text": "Cột nước từ B tới mặt thoáng nhánh phải cao $16\\ \\text{cm}$.",
-          "answer": true
-        },
-        {
-          "text": "Mặt dầu ở nhánh trái thấp hơn mặt nước ở nhánh phải $4\\ \\text{cm}$.",
-          "answer": false
-        },
-        {
-          "text": "Thay dầu hoả bằng chất lỏng nhẹ hơn dầu hoả nhưng vẫn cột $20\\ \\text{cm}$ thì cột nước cân bằng cao hơn $16\\ \\text{cm}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "A và B cùng mức trong nước nên $p_A = p_B$, suy ra $800 \\cdot 20 = 1000 \\cdot h$, $h = 16\\ \\text{cm}$. Mặt dầu cao hơn mặt nước $20 - 16 = 4\\ \\text{cm}$. Chất lỏng nhẹ hơn thì cột nước cân bằng thấp hơn $16\\ \\text{cm}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một khối kim loại đặc có khối lượng $156\\ \\text{g}$ và thể tích $20\\ \\text{cm}^3$. Khối lượng riêng của nó là bao nhiêu kg/m$^3$?",
-      "answer": "7800",
-      "explanation": "$\\rho = 156/20 = 7{,}8\\ \\text{g/cm}^3 = 7800\\ \\text{kg/m}^3$ (giống sắt trong bảng)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Áp lực $600\\ \\text{N}$ ép vuông góc lên mặt có diện tích $1500\\ \\text{cm}^2$. Áp suất là bao nhiêu Pa?",
-      "answer": "4000",
-      "explanation": "$S = 1500\\ \\text{cm}^2 = 0{,}15\\ \\text{m}^2$; $p = 600/0{,}15 = 4000\\ \\text{Pa}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Áp suất do nước gây ra ở độ sâu $6\\ \\text{m}$ là bao nhiêu kPa? Lấy $\\rho = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$.",
-      "answer": "60",
-      "explanation": "$\\rho g h = 1000 \\cdot 10 \\cdot 6 = 60\\,000\\ \\text{Pa} = 60\\ \\text{kPa}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Thợ lặn ở độ sâu $20\\ \\text{m}$ trong hồ nước ngọt. Lấy $p_a = 1{,}0\\cdot 10^5\\ \\text{Pa}$, $g = 10\\ \\text{m/s}^2$. Áp suất tuyệt đối tại đó bằng bao nhiêu lần $10^5\\ \\text{Pa}$?",
-      "answer": "3",
-      "explanation": "$p = 1{,}0\\cdot 10^5 + 1000 \\cdot 10 \\cdot 20 = 3{,}0\\cdot 10^5\\ \\text{Pa}$, tức $3$ lần $10^5\\ \\text{Pa}$ (nhớ cộng $p_a$)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ống chữ U chứa nước. Rót dầu có $\\rho = 900\\ \\text{kg/m}^3$ vào một nhánh, cột dầu cao $30\\ \\text{cm}$ tính từ mặt phân cách. Cột nước ở nhánh kia, tính từ mức ngang với mặt phân cách, cao bao nhiêu cm?",
-      "answer": "27",
-      "explanation": "Cùng mức ngang trong nước nên $\\rho_d h_d = \\rho_n h_n$: $900 \\cdot 30 = 1000 \\cdot h_n$, $h_n = 27\\ \\text{cm}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Lực đẩy Archimedes và điều kiện nổi",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khúc gỗ có thể tích $500\\ \\text{cm}^3$ nổi trên nước, phần chìm có thể tích $300\\ \\text{cm}^3$. Lấy $\\rho_{\\text{nước}} = 1000\\ \\text{kg/m}^3$, $g = 10\\ \\text{m/s}^2$. Lực đẩy Archimedes tác dụng lên khúc gỗ là bao nhiêu N?",
-      "answer": "3",
-      "explanation": "Chỉ tính phần chìm: $V = 300\\ \\text{cm}^3 = 3\\cdot 10^{-4}\\ \\text{m}^3$; $F_A = 1000 \\cdot 10 \\cdot 3\\cdot 10^{-4} = 3\\ \\text{N}$. Dùng $500\\ \\text{cm}^3$ sẽ ra $5\\ \\text{N}$, sai."
+     "text": "Bút đứng yên nên áp suất ở hai đầu bút bằng nhau.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Bút đứng yên nên hai ngón chịu áp lực bằng nhau; đầu nhọn có $S$ nhỏ nên $p = F/S$ lớn hơn, ngón đó đau hơn.",
+   "distractorNotes": {
+    "0": "Đây là quan sát trực tiếp của thí nghiệm, do áp suất ở đầu nhọn lớn hơn.",
+    "1": "Bút đứng yên nên hai lực ép từ hai ngón cân bằng, áp lực bằng nhau.",
+    "2": "Cùng áp lực, diện tích nhỏ hơn thì $p = F/S$ lớn hơn, nên ý này đúng.",
+    "3": "Đứng yên chỉ cho áp lực bằng nhau; diện tích hai đầu khác nhau nên áp suất khác nhau."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Một bạn lặn xuống độ sâu 2 m ở một bể bơi hẹp, rồi lặn xuống độ sâu 2 m ở một hồ rộng. Nước ở hai nơi đều đứng yên.",
+   "statements": [
+    {
+     "text": "Ở hồ rộng, tai bị ép mạnh hơn vì phía trên có nhiều nước hơn.",
+     "answer": false
+    },
+    {
+     "text": "Áp suất tại hai điểm như nhau vì cùng độ sâu và cùng là nước.",
+     "answer": true
+    },
+    {
+     "text": "Tại mỗi điểm, nước ép lên tai theo mọi phương.",
+     "answer": true
+    },
+    {
+     "text": "Lặn sâu thêm trong hồ, áp suất tại tai không đổi vì lượng nước trong hồ không đổi.",
+     "answer": false
+    }
+   ],
+   "explanation": "Áp suất chất lỏng $p = p_a + \\rho g h$ chỉ phụ thuộc độ sâu và loại chất lỏng, tác dụng theo mọi phương, không phụ thuộc lượng nước.",
+   "distractorNotes": {
+    "0": "Nước ở xa hai bên không đè lên tai; lượng nước không có trong công thức áp suất.",
+    "1": "Cùng chất lỏng, cùng độ sâu thì $\\rho g h$ bằng nhau, nên ý này đúng.",
+    "2": "Chất lỏng truyền áp suất theo mọi phương, như bốn tia nước mạnh như nhau ở chai đục lỗ quanh thân.",
+    "3": "Áp suất tăng theo độ sâu $h$, không phụ thuộc lượng nước trong hồ."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một thợ lặn ở độ sâu $h$ trong hồ nước có khối lượng riêng $\\rho$; mặt hồ chịu áp suất khí quyển $p_a$. Đồng hồ áp suất loại dùng để bơm lốp chỉ áp suất dư.",
+   "statements": [
+    {
+     "text": "Áp suất tuyệt đối tại chỗ thợ lặn là $p_a + \\rho g h$.",
+     "answer": true
+    },
+    {
+     "text": "Áp suất dư tại chỗ thợ lặn là $\\rho g h$.",
+     "answer": true
+    },
+    {
+     "text": "Ở mặt thoáng, áp suất dư bằng $p_a$.",
+     "answer": false
+    },
+    {
+     "text": "Áp suất tuyệt đối tại chỗ thợ lặn chỉ gồm phần do nước gây ra.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bẫy 2: áp suất tuyệt đối $p = p_a + \\rho g h$; áp suất dư $p - p_a = \\rho g h$, ở mặt thoáng bằng $0$.",
+   "distractorNotes": {
+    "0": "Áp suất thật tại điểm gồm cả khí quyển ép lên mặt hồ lẫn cột nước.",
+    "1": "Áp suất dư là phần vượt trên khí quyển, đúng bằng phần do nước $\\rho g h$.",
+    "2": "Ở mặt thoáng áp suất tuyệt đối bằng $p_a$ nên phần vượt trên khí quyển bằng $0$.",
+    "3": "Không khí phía trên mặt hồ cũng ép xuống, phải cộng $p_a$ vào áp suất tuyệt đối."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ống chữ U chứa nước; rót dầu hoả vào nhánh trái, dầu nổi trên nước. Điểm A ở mặt phân cách dầu–nước nhánh trái, điểm B ở nhánh phải ngang mức A. Gọi $h_1$ là chiều cao cột dầu trên A, $h_2$ là chiều cao cột nước trên B.",
+   "statements": [
+    {
+     "text": "$p_A = p_B$ vì A, B cùng mức ngang trong cùng một khối nước liên thông, đứng yên.",
+     "answer": true
+    },
+    {
+     "text": "$\\rho_{\\text{dầu}}\\, h_1 = \\rho_{\\text{nước}}\\, h_2$.",
+     "answer": true
+    },
+    {
+     "text": "Vì dầu nhẹ hơn nước nên $h_1 \\lt h_2$.",
+     "answer": false
+    },
+    {
+     "text": "Hai điểm ngang mức nhau phía trên A, một điểm trong dầu và một điểm trong nước, có áp suất bằng nhau.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục II.5: $p_a + \\rho_1 g h_1 = p_a + \\rho_2 g h_2$ nên $\\rho_1 h_1 = \\rho_2 h_2$; dầu có $\\rho$ nhỏ hơn nên cột dầu cao hơn. Phía trên mức A, hai điểm ngang mức ở hai chất lỏng khác nhau có áp suất khác nhau.",
+   "distractorNotes": {
+    "0": "A và B cùng nằm trong nước liên thông, đứng yên, cùng mức ngang nên áp suất bằng nhau.",
+    "1": "Viết $p_A = p_B$ rồi giản ước $p_a$ và $g$ là ra đúng hệ thức này.",
+    "2": "Từ $\\rho_1 h_1 = \\rho_2 h_2$, chất lỏng nhẹ hơn phải có cột cao hơn mới cân bằng.",
+    "3": "Quy tắc cùng mức ngang cùng áp suất chỉ áp dụng khi hai điểm nằm trong cùng một chất lỏng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Khối lượng riêng và áp suất chất lỏng theo độ sâu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một bể cá thành thẳng đứng, diện tích đáy $S$, chứa nước có khối lượng riêng $\\rho$ cao $h$; mặt nước chịu áp suất khí quyển $p_a$.",
+   "statements": [
+    {
+     "text": "Áp suất do nước gây ra ở đáy bể là $\\rho g h$.",
+     "answer": true
+    },
+    {
+     "text": "Áp lực của nước lên đáy bể là $F = \\rho g h S$.",
+     "answer": true
+    },
+    {
+     "text": "Điểm M cách đáy một đoạn $x$ chịu áp suất do nước là $\\rho g x$.",
+     "answer": false
+    },
+    {
+     "text": "Áp lực của nước lên đáy lớn hơn trọng lượng nước trong bể.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài toán mẫu: áp suất do nước ở đáy $\\rho g h$, áp lực $F = pS$; độ sâu đo từ mặt thoáng nên M sâu $h - x$; bể thành thẳng đứng thì áp lực lên đáy bằng trọng lượng nước.",
+   "distractorNotes": {
+    "0": "Đáy nằm ở độ sâu $h$ dưới mặt thoáng nên phần áp suất do nước đúng là $\\rho g h$.",
+    "1": "Áp lực bằng áp suất nhân diện tích, $F = pS$, nên ý này đúng.",
+    "2": "Độ sâu đo từ mặt thoáng xuống, nên M sâu $h - x$ chứ không phải $x$.",
+    "3": "Với bể thành thẳng đứng, $\\rho g h S = \\rho V g$ đúng bằng trọng lượng nước, không lớn hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Khối lượng riêng. Áp suất chất lỏng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một chai chứa nước có thể tích $V$, khối lượng riêng của nước là $\\rho$, gia tốc rơi tự do là $g$.",
+   "statements": [
+    {
+     "text": "Khối lượng nước trong chai là $m = \\rho V$.",
+     "answer": true
+    },
+    {
+     "text": "Trọng lượng nước trong chai là $P = \\rho V g$.",
+     "answer": true
+    },
+    {
+     "text": "Trọng lượng riêng của nước là $d = \\dfrac{\\rho}{g}$.",
+     "answer": false
+    },
+    {
+     "text": "Chai $1{,}5$ lít có thể tích $1{,}5\\cdot 10^{-2}\\ \\text{m}^3$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục II.1: $m = \\rho V$, $d = \\rho g$, $P = \\rho V g$; 1 lít $= 10^{-3}\\ \\text{m}^3$ nên $1{,}5$ lít $= 1{,}5\\cdot 10^{-3}\\ \\text{m}^3$.",
+   "distractorNotes": {
+    "0": "Từ $\\rho = m/V$ nhân hai vế với $V$ được đúng $m = \\rho V$.",
+    "1": "Trọng lượng $P = mg$ với $m = \\rho V$, nên $P = \\rho V g$ là đúng.",
+    "2": "Trọng lượng riêng là $\\rho$ nhân $g$, chia cho $g$ là đảo phép tính.",
+    "3": "1 lít $= 10^{-3}\\ \\text{m}^3$, viết $10^{-2}$ là sai một bậc."
+   }
+  }
+ ]
 }

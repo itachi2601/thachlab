@@ -1,386 +1,550 @@
 {
-  "lesson_id": 72,
-  "lesson_title": "Bài 27. Hiệu suất",
-  "item_id": 243,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 72,
+ "lesson_title": "Bài 27. Hiệu suất",
+ "item_id": 243,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Hiệu suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hiệu suất của một máy là tỉ số giữa",
+   "options": [
+    "năng lượng hao phí và năng lượng toàn phần",
+    "năng lượng có ích và năng lượng toàn phần",
+    "năng lượng toàn phần và năng lượng có ích",
+    "năng lượng có ích và năng lượng hao phí"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, hiệu suất là tỉ lệ giữa năng lượng có ích và năng lượng toàn phần máy nhận vào: $H=\\dfrac{W_{ci}}{W_{tp}}\\cdot 100\\,\\%$.",
+   "distractorNotes": {
+    "A": "Đặt hao phí lên tử số là nhầm đại lượng; tỉ số đó chỉ cho biết phần năng lượng bị bỏ đi.",
+    "C": "Đảo tử và mẫu nên tỉ số luôn lớn hơn 1, tức trên 100 %, vô lí với máy thật.",
+    "D": "Mẫu số phải là năng lượng toàn phần máy nhận vào, không phải phần hao phí."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Hiệu suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính hiệu suất theo công suất là",
+   "options": [
+    "$H=\\dfrac{P_{tp}}{P_{ci}}\\cdot 100\\,\\%$",
+    "$H=\\dfrac{P_{hp}}{P_{tp}}\\cdot 100\\,\\%$",
+    "$H=\\dfrac{P_{ci}}{P_{hp}}\\cdot 100\\,\\%$",
+    "$H=\\dfrac{P_{ci}}{P_{tp}}\\cdot 100\\,\\%$"
+   ],
+   "answer": 3,
+   "explanation": "Chia tử và mẫu của $H=W_{ci}/W_{tp}$ cho cùng thời gian $t$ được $H=\\dfrac{P_{ci}}{P_{tp}}\\cdot 100\\,\\%$.",
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu, kết quả vượt 100 %, như thể máy tự tạo năng lượng.",
+    "B": "Đặt công suất hao phí lên tử số chỉ cho tỉ lệ hao phí, không phải hiệu suất.",
+    "C": "Mẫu số phải là công suất toàn phần máy nhận vào, không phải công suất hao phí."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Hao phí năng lượng và cách giảm hao phí",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ thức liên hệ giữa năng lượng toàn phần $W_{tp}$, năng lượng có ích $W_{ci}$ và năng lượng hao phí $W_{hp}$ của một máy là",
+   "options": [
+    "$W_{tp}=W_{ci}+W_{hp}$",
+    "$W_{ci}=W_{tp}+W_{hp}$",
+    "$W_{hp}=W_{tp}+W_{ci}$",
+    "$W_{tp}=W_{ci}-W_{hp}$"
+   ],
+   "answer": 0,
+   "explanation": "Năng lượng máy nhận vào chia thành phần có ích và phần hao phí, năng lượng được bảo toàn: $W_{tp}=W_{ci}+W_{hp}$.",
+   "distractorNotes": {
+    "B": "Coi có ích bằng toàn phần cộng hao phí tức là lấy ra nhiều hơn nhận vào, trái bảo toàn năng lượng.",
+    "C": "Hao phí chỉ là một phần của năng lượng nhận vào, không thể lớn hơn toàn phần.",
+    "D": "Đặt nhầm dấu trừ khiến toàn phần nhỏ hơn phần có ích, trái bảo toàn năng lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Hiệu suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hiệu suất của một máy có đơn vị là",
+   "options": [
+    "đơn vị jun, kí hiệu J",
+    "đơn vị oát, kí hiệu W",
+    "không có đơn vị, viết bằng %",
+    "đơn vị jun trên giây, J/s"
+   ],
+   "answer": 2,
+   "explanation": "Hiệu suất là tỉ số của hai đại lượng cùng đơn vị nên không có đơn vị, thường viết dưới dạng phần trăm.",
+   "distractorNotes": {
+    "A": "Jun là đơn vị năng lượng; tỉ số hai năng lượng cùng đơn vị thì đơn vị triệt tiêu.",
+    "B": "Oát là đơn vị công suất; tỉ số hai công suất không còn đơn vị W.",
+    "D": "J/s chính là oát, tức đơn vị công suất, không phải đơn vị của một tỉ số."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Hao phí năng lượng và cách giảm hao phí",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Một bóng sợi đốt và một bóng LED sáng ngang nhau, nhưng sau một lúc bóng sợi đốt nóng hơn hẳn. Phát biểu nào sau đây đúng?",
+   "options": [
+    "Bóng sợi đốt có hiệu suất cao hơn bóng LED",
+    "Phần lớn điện năng của bóng sợi đốt thành nhiệt",
+    "Phần điện năng không thành ánh sáng đã biến mất",
+    "Bóng LED tự tạo thêm năng lượng thành ánh sáng"
+   ],
+   "answer": 1,
+   "explanation": "Năng lượng không tự mất đi; với bóng sợi đốt, phần lớn điện năng chuyển thành nhiệt nên bóng nóng và hiệu suất thấp.",
+   "distractorNotes": {
+    "A": "Cùng độ sáng mà tiêu thụ điện nhiều hơn thì tỉ lệ có ích nhỏ hơn, nên hiệu suất thấp hơn.",
+    "C": "Năng lượng không tự biến mất; phần không thành ánh sáng đã chuyển thành nhiệt làm bóng nóng.",
+    "D": "Không thiết bị nào tự sinh năng lượng; LED chỉ hao phí nhiệt ít hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Hiệu suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hiệu suất của máy thật luôn nhỏ hơn 100 % vì",
+   "options": [
+    "năng lượng có ích luôn lớn hơn năng lượng toàn phần",
+    "một phần năng lượng bị mất đi, không còn tồn tại",
+    "công suất của máy luôn nhỏ hơn công suất định mức",
+    "luôn có hao phí do ma sát, toả nhiệt, âm và rung"
+   ],
+   "answer": 3,
+   "explanation": "Ma sát, dây dẫn nóng lên, máy rung và kêu luôn tồn tại nên $W_{hp} \\gt 0$, suy ra $H \\lt 100\\,\\%$.",
+   "distractorNotes": {
+    "A": "Có ích lớn hơn toàn phần sẽ làm hiệu suất vượt 100 %, ngược với điều cần giải thích.",
+    "B": "Hao phí không mất đi mà chuyển sang nhiệt, âm, rung; năng lượng vẫn bảo toàn.",
+    "C": "Hiệu suất so có ích với toàn phần, không liên quan đến công suất định mức của máy."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Hao phí năng lượng và cách giảm hao phí",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi một quạt bàn hoạt động, năng lượng hao phí là",
+   "options": [
+    "cơ năng làm cho cánh quạt quay",
+    "điện năng quạt nhận từ lưới điện",
+    "nhiệt làm nóng vỏ động cơ và tiếng ù",
+    "toàn bộ điện năng mà quạt tiêu thụ"
+   ],
+   "answer": 2,
+   "explanation": "Thí nghiệm sờ vỏ quạt cho thấy vỏ động cơ ấm và có tiếng ù: đó là phần điện năng thành nhiệt và âm, tức $W_{hp}$.",
+   "distractorNotes": {
+    "A": "Cánh quạt quay tạo gió là điều ta cần, nên cơ năng đó là năng lượng có ích.",
+    "B": "Điện năng quạt nhận từ lưới là năng lượng toàn phần, không phải phần hao phí.",
+    "D": "Toàn bộ điện năng tiêu thụ là toàn phần, gồm cả phần có ích làm quay cánh quạt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Phát biểu nào sau đây đúng khi so sánh hiệu suất và công suất của máy?",
+   "options": [
+    "Máy có hiệu suất cao hơn luôn có công suất có ích lớn hơn",
+    "Hiệu suất cho biết máy làm việc nhanh hay làm việc chậm",
+    "Công suất được đo bằng %, còn hiệu suất được đo bằng W",
+    "Máy có $H$ cao chưa chắc có $P_{ci}$ lớn, còn tuỳ $P_{tp}$"
+   ],
+   "answer": 3,
+   "explanation": "Theo bẫy 1: $P_{ci}=H\\cdot P_{tp}$, nên máy hiệu suất cao mà nhận ít năng lượng vẫn có thể cho công suất có ích nhỏ.",
+   "distractorNotes": {
+    "A": "Hiệu suất chỉ là tỉ lệ; công suất có ích $P_{ci}=H\\cdot P_{tp}$ còn phụ thuộc công suất toàn phần.",
+    "B": "Gán cho hiệu suất ý nghĩa nhanh hay chậm là nhầm với công suất.",
+    "C": "Đảo đơn vị: công suất đo bằng W, còn hiệu suất không đơn vị, viết bằng %."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai máy nhận cùng một năng lượng toàn phần. Máy thứ hai cho năng lượng có ích gấp đôi máy thứ nhất. So với máy thứ nhất, hiệu suất máy thứ hai",
+   "options": [
+    "nhỏ bằng một nửa",
+    "lớn gấp hai lần",
+    "bằng đúng như nhau",
+    "lớn gấp bốn lần"
+   ],
+   "answer": 1,
+   "explanation": "Từ $H=W_{ci}/W_{tp}$, cùng $W_{tp}$ thì $H$ tỉ lệ thuận với $W_{ci}$, nên $W_{ci}$ gấp đôi thì $H$ gấp đôi.",
+   "distractorNotes": {
+    "A": "Coi hiệu suất tỉ lệ nghịch với năng lượng có ích là đảo tử và mẫu trong $H=W_{ci}/W_{tp}$.",
+    "C": "Cùng toàn phần mà phần có ích thay đổi thì tỉ số $W_{ci}/W_{tp}$ phải thay đổi.",
+    "D": "$W_{ci}$ trong công thức không có bình phương nên $H$ chỉ tăng cùng tỉ lệ với nó."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một thang máy có hiệu suất không đổi nâng cùng một tải lên cùng độ cao, nhưng thời gian nâng giảm còn một nửa. Công suất điện toàn phần thang máy tiêu thụ",
+   "options": [
+    "tăng lên gấp đôi",
+    "giảm đi một nửa",
+    "vẫn giữ không đổi",
+    "tăng lên gấp bốn"
+   ],
+   "answer": 0,
+   "explanation": "Công có ích không đổi, thời gian giảm một nửa nên $P_{ci}=W_{ci}/t$ gấp đôi; $P_{tp}=P_{ci}/H$ cũng gấp đôi.",
+   "distractorNotes": {
+    "B": "Công suất tỉ lệ nghịch với thời gian, nên làm cùng công trong thời gian ngắn hơn thì công suất tăng.",
+    "C": "Coi công suất điện là số cố định của máy; cùng công mà làm nhanh hơn thì $P_{tp}$ lớn hơn.",
+    "D": "Trong $P=W/t$ thời gian không có bình phương, nên thời gian giảm một nửa thì công suất chỉ gấp đôi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai máy có hiệu suất $H_1$ và $H_2$ ghép nối tiếp, máy sau nhận năng lượng ra của máy trước. Hiệu suất cả hệ là",
+   "options": [
+    "$H=H_1+H_2$",
+    "$H=\\dfrac{H_1+H_2}{2}$",
+    "$H=H_1\\cdot H_2$",
+    "$H=\\dfrac{H_1}{H_2}$"
+   ],
+   "answer": 2,
+   "explanation": "Máy 1 cho ra $H_1P_0$, máy 2 cho ra $H_2H_1P_0$, nên hiệu suất cả hệ là $H_1H_2$.",
+   "distractorNotes": {
+    "A": "Cộng hiệu suất bỏ qua hao phí ở khâu sau và có thể cho kết quả vượt 100 %.",
+    "B": "Lấy trung bình bỏ qua việc mỗi khâu nối tiếp lấy đi thêm một phần năng lượng.",
+    "D": "Chia hai hiệu suất không mô tả năng lượng ra của khâu trước làm đầu vào cho khâu sau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Biết công suất có ích $P_{ci}$ và hiệu suất $H$ (dạng số thập phân) của một động cơ. Công suất toàn phần được tính bằng",
+   "options": [
+    "$P_{tp}=H\\cdot P_{ci}$",
+    "$P_{tp}=\\dfrac{P_{ci}}{H}$",
+    "$P_{tp}=P_{ci}-H$",
+    "$P_{tp}=\\dfrac{H}{P_{ci}}$"
+   ],
+   "answer": 1,
+   "explanation": "Từ $H=P_{ci}/P_{tp}$ suy ra $P_{tp}=P_{ci}/H$, luôn lớn hơn $P_{ci}$ vì $H \\lt 1$.",
+   "distractorNotes": {
+    "A": "Nhân với $H \\lt 1$ cho kết quả nhỏ hơn có ích, vô lí vì toàn phần phải lớn hơn có ích.",
+    "C": "Trừ một số không đơn vị khỏi một công suất là phép tính vô nghĩa về đơn vị.",
+    "D": "Đảo tử và mẫu khi biến đổi, kết quả không còn có đơn vị công suất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đề bài cho năng lượng toàn phần $W_{tp}$ và năng lượng hao phí $W_{hp}$ của một máy. Hiệu suất của máy là",
+   "options": [
+    "$H=\\dfrac{W_{tp}-W_{hp}}{W_{tp}}\\cdot 100\\,\\%$",
+    "$H=\\dfrac{W_{tp}}{W_{tp}-W_{hp}}\\cdot 100\\,\\%$",
+    "$H=\\dfrac{W_{hp}}{W_{tp}}\\cdot 100\\,\\%$",
+    "$H=\\dfrac{W_{tp}-W_{hp}}{W_{hp}}\\cdot 100\\,\\%$"
+   ],
+   "answer": 0,
+   "explanation": "Đề cho hao phí thì trừ ra $W_{ci}=W_{tp}-W_{hp}$ trước, rồi chia cho $W_{tp}$.",
+   "distractorNotes": {
+    "B": "Đảo tử và mẫu, tỉ số luôn lớn hơn 1 nên hiệu suất vượt 100 %, vô lí.",
+    "C": "Đưa thẳng hao phí lên tử số là quên trừ ra phần có ích trước khi chia.",
+    "D": "Mẫu số phải là năng lượng toàn phần máy nhận vào, không phải năng lượng hao phí."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Hao phí năng lượng và cách giảm hao phí",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Biện pháp nào sau đây giúp giảm năng lượng hao phí của máy?",
+   "options": [
+    "Bôi trơn và bảo dưỡng ổ trục định kì",
+    "Lắp thêm nhiều khâu truyền chuyển động",
+    "Bỏ dầu bôi trơn cho máy chạy nhẹ hơn",
+    "Thay bóng LED bằng bóng đèn sợi đốt"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu cách giảm hao phí: bôi trơn, bảo dưỡng, cách nhiệt, bớt khâu truyền, dùng thiết bị hiệu suất cao.",
+   "distractorNotes": {
+    "B": "Ghép thêm khâu nối tiếp nhân thêm một hiệu suất nhỏ hơn 1, nên hao phí tăng chứ không giảm.",
+    "C": "Bỏ dầu bôi trơn làm ma sát tăng, nhiều cơ năng hơn bị biến thành nhiệt.",
+    "D": "Bóng sợi đốt biến phần lớn điện năng thành nhiệt nên hao phí nhiều hơn LED."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: dùng lực kế kéo đều một xe gỗ lên ván nghiêng để nâng xe lên cao $h$. Lặp lại với các góc nghiêng $15^\\circ$, $25^\\circ$, $35^\\circ$, $45^\\circ$; hiệu suất đo được tăng dần theo góc nghiêng. Xét các phát biểu sau:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hiệu suất của một máy là",
-      "options": [
-        "tỉ lệ giữa năng lượng có ích tạo ra và tổng năng lượng toàn phần máy nhận vào",
-        "tỉ lệ giữa năng lượng hao phí và năng lượng có ích",
-        "công mà máy sinh ra trong một đơn vị thời gian",
-        "tổng của năng lượng có ích và năng lượng hao phí"
-      ],
-      "answer": 0,
-      "explanation": "Hiệu suất cho biết bao nhiêu phần trăm năng lượng nhận vào thành có ích: $H = W_{ci}/W_{tp}\\cdot 100\\,\\%$. Công sinh ra mỗi giây là công suất."
+     "text": "Công có ích là công nâng xe lên độ cao $h$, tức $W_{ci}=mgh$.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Hao phí năng lượng và cách giảm hao phí",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Bóng đèn sợi đốt nhận điện năng, phần lớn điện năng đó chuyển thành",
-      "options": [
-        "ánh sáng, nên bóng vẫn nguội",
-        "nhiệt, tức phần hao phí, nên bóng nóng lên",
-        "ánh sáng, còn nhiệt chỉ là phần rất nhỏ",
-        "hoá năng được dự trữ lại trong dây tóc"
-      ],
-      "answer": 1,
-      "explanation": "Bóng sợi đốt chỉ khoảng $6\\,\\%$ thành ánh sáng, phần còn lại thành nhiệt. Bóng nóng hơn hẳn bóng LED là vì vậy."
+     "text": "Công toàn phần là $W_{tp}=F\\cdot s$, gồm cả phần dùng để thắng ma sát.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Hao phí năng lượng và cách giảm hao phí",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Năng lượng hao phí của một máy",
-      "options": [
-        "biến mất khỏi hệ vì máy không dùng tới",
-        "tự biến thành năng lượng có ích sau một thời gian",
-        "chuyển sang dạng ta không dùng được như nhiệt, âm, rung; năng lượng vẫn bảo toàn",
-        "chỉ xuất hiện khi máy chạy rất nhanh"
-      ],
-      "answer": 2,
-      "explanation": "Hao phí không mất đi mà chỉ đi sang dạng không dùng được, nên $W_{tp} = W_{ci} + W_{hp}$ vẫn thoả định luật bảo toàn năng lượng."
+     "text": "Ván càng thoải thì quãng đường trượt càng dài nên hao phí do ma sát càng nhỏ.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Hao phí năng lượng và cách giảm hao phí",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vì sao hiệu suất của máy thật luôn nhỏ hơn $100\\,\\%$?",
-      "options": [
-        "Vì máy phải nhận vào ít năng lượng hơn năng lượng nó cần",
-        "Vì định nghĩa quy ước hiệu suất không được vượt $100\\,\\%$",
-        "Vì máy càng mạnh thì càng hao phí ít",
-        "Luôn có ma sát, toả nhiệt, âm nên có phần năng lượng hao phí"
-      ],
-      "answer": 3,
-      "explanation": "Hao phí $W_{hp} \\gt 0$ nên $W_{ci} \\lt W_{tp}$ và $H \\lt 100\\,\\%$. Hiệu suất trên $100\\,\\%$ nghĩa là máy tạo năng lượng từ không, vô lí."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Hao phí năng lượng và cách giảm hao phí",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Biện pháp nào giúp giảm hao phí năng lượng của máy?",
-      "options": [
-        "Bôi trơn ổ trục và bảo dưỡng định kì để giảm ma sát",
-        "Tăng số khâu truyền động giữa động cơ và vật",
-        "Để máy chạy liên tục dù không cần",
-        "Bỏ lớp cách nhiệt ở vỏ động cơ"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu các cách giảm hao phí: bôi trơn, bảo dưỡng, cách nhiệt, bớt khâu truyền, dùng thiết bị hiệu suất cao."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ghép hai máy nối tiếp, mỗi máy có hiệu suất nhỏ hơn $100\\,\\%$. So với từng máy riêng, hiệu suất của cả hệ",
-      "options": [
-        "bằng trung bình cộng hai hiệu suất",
-        "lớn hơn hiệu suất của mỗi máy thành phần",
-        "nhỏ hơn hiệu suất của mỗi máy thành phần",
-        "bằng hiệu suất của máy có hiệu suất lớn hơn"
-      ],
-      "answer": 2,
-      "explanation": "Mỗi khâu lấy đi thêm một phần hao phí nên $H = H_1 H_2 \\lt \\min(H_1, H_2)$."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Hao phí năng lượng và cách giảm hao phí",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về năng lượng có ích và hao phí, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Máy bơm nước: vỏ máy nóng lên và rung là phần năng lượng bỏ đi.",
-          "answer": true
-        },
-        {
-          "text": "Năng lượng hao phí biến mất khỏi vũ trụ nên tổng năng lượng không còn bảo toàn.",
-          "answer": false
-        },
-        {
-          "text": "Tủ lạnh: nhiệt ở lốc máy và tiếng ồn là hao phí.",
-          "answer": true
-        },
-        {
-          "text": "Ròng rọc, mặt phẳng nghiêng chỉ đổi lực kéo, vẫn có ma sát nên hiệu suất nhỏ hơn $100\\,\\%$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ý 2 sai: hao phí chỉ chuyển sang dạng không dùng được (nhiệt, âm, rung), tổng năng lượng vẫn bảo toàn."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về hiệu suất và công suất, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hiệu suất không có đơn vị, thường viết bằng phần trăm.",
-          "answer": true
-        },
-        {
-          "text": "Máy có công suất có ích lớn thì chắc chắn có hiệu suất cao.",
-          "answer": false
-        },
-        {
-          "text": "Máy hiệu suất cao chưa chắc cho công suất có ích lớn.",
-          "answer": true
-        },
-        {
-          "text": "Máy thật luôn có hiệu suất nhỏ hơn $100\\,\\%$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ý 2 sai: hiệu suất chỉ là tỉ lệ. Máy $10\\ \\text{kW}$ với $H = 60\\,\\%$ cho $6\\ \\text{kW}$ có ích, lớn hơn máy $4\\ \\text{kW}$ với $H = 80\\,\\%$ cho $3{,}2\\ \\text{kW}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Bóng đèn sợi đốt $60\\ \\text{W}$ cho $3{,}6\\ \\text{W}$ ánh sáng. Hiệu suất của bóng bằng bao nhiêu phần trăm?",
-      "answer": "6",
-      "explanation": "$H = 3{,}6/60 = 0{,}06 = 6\\,\\%$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trong thí nghiệm ván nghiêng của bài, ván nghiêng góc bao nhiêu độ (trong bốn góc $15^\\circ$; $25^\\circ$; $35^\\circ$; $45^\\circ$) cho hiệu suất cao nhất?",
-      "answer": "45",
-      "explanation": "Ván dốc hơn thì quãng trượt ngắn, công của ma sát nhỏ nên hao phí ít; bảng số liệu cho $H = 80{,}0\\,\\%$ ở $45^\\circ$, cao nhất."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công thức tính hiệu suất theo năng lượng là",
-      "options": [
-        "$H = \\dfrac{W_{tp}}{W_{ci}}\\cdot 100\\,\\%$",
-        "$H = \\dfrac{W_{ci}}{W_{tp}}\\cdot 100\\,\\%$",
-        "$H = \\dfrac{W_{hp}}{W_{tp}}\\cdot 100\\,\\%$",
-        "$H = W_{ci}\\cdot W_{tp}$"
-      ],
-      "answer": 1,
-      "explanation": "Tử là có ích, mẫu là toàn phần. Đảo tử mẫu cho kết quả trên $100\\,\\%$; lấy hao phí làm tử cho tỉ lệ hao phí."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Hao phí năng lượng và cách giảm hao phí",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hệ thức đúng giữa năng lượng toàn phần, có ích và hao phí là",
-      "options": [
-        "$W_{ci} = W_{tp} + W_{hp}$",
-        "$W_{hp} = W_{tp} + W_{ci}$",
-        "$W_{tp} = W_{ci} - W_{hp}$",
-        "$W_{tp} = W_{ci} + W_{hp}$"
-      ],
-      "answer": 3,
-      "explanation": "Toàn phần chia thành phần có ích và phần hao phí. Năng lượng có ích không thể lớn hơn toàn phần."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một máy nhận $600\\ \\text{kJ}$, toả ra $150\\ \\text{kJ}$ nhiệt hao phí, phần còn lại là cơ năng có ích. Hiệu suất của máy là",
-      "options": [
-        "$25\\,\\%$",
-        "$133\\,\\%$",
-        "$75\\,\\%$",
-        "$450\\ \\text{kJ}$"
-      ],
-      "answer": 2,
-      "explanation": "$W_{ci} = 600 - 150 = 450\\ \\text{kJ}$, $H = 450/600 = 75\\,\\%$. $25\\,\\%$ là lấy hao phí làm tử; $133\\,\\%$ là đảo tử mẫu; $450\\ \\text{kJ}$ là phần có ích, không phải hiệu suất."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Động cơ điện có $H_1 = 80\\,\\%$ nối tiếp hộp giảm tốc có $H_2 = 75\\,\\%$. Hiệu suất cả hệ là",
-      "options": [
-        "$77{,}5\\,\\%$",
-        "$60\\,\\%$",
-        "$155\\,\\%$",
-        "$75\\,\\%$"
-      ],
-      "answer": 1,
-      "explanation": "$H = 0{,}80\\cdot 0{,}75 = 0{,}60$. $77{,}5\\,\\%$ là trung bình cộng; $155\\,\\%$ là cộng hai hiệu suất; $75\\,\\%$ là chỉ lấy khâu kém hơn."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét các công thức hiệu suất, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$H = \\dfrac{P_{ci}}{P_{tp}}\\cdot 100\\,\\%$ với $P_{ci}$ là công suất có ích, $P_{tp}$ là công suất toàn phần.",
-          "answer": true
-        },
-        {
-          "text": "Biết $P_{ci}$ và $H$ thì tìm được công suất toàn phần $P_{tp} = P_{ci}/H$ (với $H$ ở dạng số thập phân).",
-          "answer": true
-        },
-        {
-          "text": "Hiệu suất còn bằng tỉ số $\\dfrac{W_{hp}}{W_{tp}}$.",
-          "answer": false
-        },
-        {
-          "text": "Trong cùng khoảng thời gian, $\\dfrac{W_{ci}}{W_{tp}} = \\dfrac{P_{ci}}{P_{tp}}$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ý 3 sai: $W_{hp}/W_{tp}$ là tỉ lệ hao phí, bằng $1 - H$. Hai công thức theo năng lượng và theo công suất cho cùng giá trị vì $t$ triệt tiêu."
-    },
-    {
-      "type": "true_false",
-      "kind": "bien_doi",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về hiệu suất khi ghép nhiều máy nối tiếp, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hiệu suất cả hệ là tích các hiệu suất thành phần: $H = H_1 H_2\\cdots$.",
-          "answer": true
-        },
-        {
-          "text": "Phải đổi mỗi hiệu suất ra số thập phân rồi mới nhân.",
-          "answer": true
-        },
-        {
-          "text": "Hai khâu $90\\,\\%$ và $80\\,\\%$ nối tiếp cho hiệu suất cả hệ là $85\\,\\%$.",
-          "answer": false
-        },
-        {
-          "text": "Hiệu suất cả hệ nhỏ hơn hiệu suất của từng khâu.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ý 3 sai: $0{,}90\\cdot 0{,}80 = 0{,}72 = 72\\,\\%$. $85\\,\\%$ là trung bình cộng, không đúng cho ghép nối tiếp."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Máy có công suất có ích $720\\ \\text{W}$ và hiệu suất $60\\,\\%$. Công suất toàn phần của máy bằng bao nhiêu oát?",
-      "answer": "1200",
-      "explanation": "$P_{tp} = P_{ci}/H = 720/0{,}60 = 1200\\ \\text{W}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Động cơ nhận $5{,}0\\ \\text{kW}$ điện và cho ra $3{,}5\\ \\text{kW}$ công suất cơ. Hiệu suất của động cơ bằng bao nhiêu phần trăm?",
-      "answer": "70",
-      "explanation": "$H = P_{ci}/P_{tp} = 3{,}5/5{,}0 = 0{,}70 = 70\\,\\%$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính hiệu suất của máy và động cơ",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ba máy nối tiếp có hiệu suất $90\\,\\%$, $80\\,\\%$ và $50\\,\\%$. Hiệu suất của cả hệ bằng bao nhiêu phần trăm?",
-      "answer": "36",
-      "explanation": "$H = 0{,}90\\cdot 0{,}80\\cdot 0{,}50 = 0{,}36 = 36\\,\\%$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Hao phí năng lượng và cách giảm hao phí",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Động cơ có hiệu suất $75\\,\\%$ nhận $8\\ \\text{kJ}$ điện năng. Năng lượng hao phí là bao nhiêu kJ?",
-      "answer": "2",
-      "explanation": "$W_{ci} = 0{,}75\\cdot 8 = 6\\ \\text{kJ}$ nên $W_{hp} = W_{tp} - W_{ci} = 8 - 6 = 2\\ \\text{kJ}$."
+     "text": "Dùng ván nghiêng giúp ta được lợi về công so với nâng thẳng vật lên.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Việc cần là nâng xe lên cao $h$ nên $W_{ci}=mgh$; ván thoải làm quãng đường dài, công ma sát lớn, hao phí tăng; mặt phẳng nghiêng giảm lực nhưng không lợi về công.",
+   "distractorNotes": {
+    "0": "Việc cần làm là nâng xe lên cao $h$, nên công có ích đúng là $mgh$, không thể coi là sai.",
+    "1": "Lực kéo vừa nâng xe vừa thắng ma sát, nên $F\\cdot s$ đúng là toàn phần gồm cả phần hao phí.",
+    "2": "Công ma sát tăng theo quãng đường trượt, nên ván thoải hao phí nhiều hơn chứ không ít hơn.",
+    "3": "Ván nghiêng giảm lực nhưng phải kéo quãng đường dài hơn, thêm ma sát nên $W_{tp} \\gt W_{ci}$, không lợi về công."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Hao phí năng lượng và cách giảm hao phí",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: bật quạt bàn chạy 10 phút rồi áp mu bàn tay lên vỏ động cơ, thấy vỏ ấm hơn chân đế rõ rệt và nghe tiếng ù nhẹ. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Vỏ động cơ ấm lên chứng tỏ một phần điện năng đã chuyển thành nhiệt.",
+     "answer": true
+    },
+    {
+     "text": "Phần năng lượng hao phí đã biến mất, không còn tồn tại ở dạng nào.",
+     "answer": false
+    },
+    {
+     "text": "Cơ năng của cánh quạt cộng với nhiệt và âm toả ra bằng điện năng quạt nhận vào.",
+     "answer": true
+    },
+    {
+     "text": "Nếu bôi trơn thật tốt thì xoá hết được hao phí và hiệu suất đạt $100\\,\\%$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Năng lượng bảo toàn: $W_{tp}=W_{ci}+W_{hp}$; hao phí chỉ chuyển sang nhiệt, âm, rung. Bôi trơn giảm được hao phí nhưng không xoá hết.",
+   "distractorNotes": {
+    "0": "Vỏ nóng lên phải nhận năng lượng từ điện năng của quạt, nên phát biểu không thể coi là sai.",
+    "1": "Năng lượng không tự mất đi; hao phí chỉ chuyển sang nhiệt và âm mà ta không dùng được.",
+    "2": "Phát biểu chính là $W_{tp}=W_{ci}+W_{hp}$ theo bảo toàn năng lượng, nên không thể sai.",
+    "3": "Bôi trơn chỉ giảm được ma sát chứ không xoá hết hao phí, nên máy thật luôn có $H \\lt 100\\,\\%$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ở một xe máy, năng lượng từ xăng qua động cơ có hiệu suất $H_1$, rồi qua bộ truyền động có hiệu suất $H_2$ mới tới bánh xe. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hiệu suất cả hệ là $H=H_1\\cdot H_2$, sau khi đổi mỗi hiệu suất ra số thập phân.",
+     "answer": true
+    },
+    {
+     "text": "Hiệu suất cả hệ lớn hơn hiệu suất của khâu tốt nhất trong hai khâu.",
+     "answer": false
+    },
+    {
+     "text": "Cộng $H_1+H_2$ có thể cho kết quả vượt $100\\,\\%$ nên cách cộng là vô lí.",
+     "answer": true
+    },
+    {
+     "text": "Năng lượng ra của động cơ chính là năng lượng toàn phần của bộ truyền động.",
+     "answer": true
+    }
+   ],
+   "explanation": "Ghép nối tiếp: máy sau nhận năng lượng ra của máy trước nên $H=H_1H_2$, nhỏ hơn từng khâu thành phần.",
+   "distractorNotes": {
+    "0": "Khâu sau nhận năng lượng ra của khâu trước nên các hiệu suất nhân với nhau, phát biểu đúng.",
+    "1": "Tích hai số nhỏ hơn 1 luôn nhỏ hơn từng thừa số, nên cả hệ kém hơn mỗi khâu.",
+    "2": "Hai hiệu suất cỡ 90 % cộng lại đã vượt 100 %, tức máy tạo năng lượng từ không, nên cộng là vô lí.",
+    "3": "Ghép nối tiếp nghĩa là năng lượng ra của động cơ được đưa vào bộ truyền động, nên phát biểu đúng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Hiệu suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một học sinh so sánh hai đại lượng công suất $P$ và hiệu suất $H$ của các máy điện trong gia đình. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Công suất cho biết máy làm việc nhanh hay chậm, đo bằng oát (W).",
+     "answer": true
+    },
+    {
+     "text": "Hiệu suất cho biết bao nhiêu phần năng lượng nhận vào chuyển thành có ích.",
+     "answer": true
+    },
+    {
+     "text": "Máy mạnh hơn, tức có công suất có ích lớn hơn, thì chắc chắn có hiệu suất cao hơn.",
+     "answer": false
+    },
+    {
+     "text": "Hiệu suất là một số cố định của máy, không thay đổi theo tải và tốc độ làm việc.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hiệu suất khác công suất: $P$ đo nhanh chậm (W), $H$ là tỉ lệ có ích (không đơn vị). Cùng một thang máy, tải và tốc độ khác thì $H$ có thể khác.",
+   "distractorNotes": {
+    "0": "Đây đúng là ý nghĩa và đơn vị của công suất trong bài, nên không thể coi là sai.",
+    "1": "Đây đúng là định nghĩa hiệu suất: phần có ích so với toàn phần nhận vào.",
+    "2": "Công suất có ích lớn có thể do công suất toàn phần lớn, nên máy mạnh chưa chắc hiệu suất cao.",
+    "3": "Ví dụ thang máy cho thấy cùng một máy, tải và tốc độ khác thì $H$ khác, nên $H$ không cố định."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Tính hiệu suất của máy và động cơ",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một thang máy nâng đều cabin khối lượng $m$ lên độ cao $h$ trong thời gian $t$; công suất điện động cơ tiêu thụ là $P_{tp}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Công có ích là $W_{ci}=mgh$ vì nâng đều nên động năng không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Công suất có ích của thang máy là $P_{ci}=\\dfrac{mgh}{t}$.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt hao phí toả ra trong thời gian $t$ là $W_{hp}=P_{tp}\\,t+mgh$.",
+     "answer": false
+    },
+    {
+     "text": "Hiệu suất của thang máy là $H=\\dfrac{mgh}{P_{tp}\\,t}\\cdot 100\\,\\%$.",
+     "answer": true
+    }
+   ],
+   "explanation": "$W_{ci}=mgh$, $P_{ci}=W_{ci}/t$, $W_{tp}=P_{tp}t$; hao phí là $W_{tp}-W_{ci}$ và $H=W_{ci}/W_{tp}$.",
+   "distractorNotes": {
+    "0": "Nâng đều nên động năng không đổi, phần năng lượng ta cần chỉ là thế năng tăng thêm $mgh$.",
+    "1": "Chia công có ích cho thời gian theo $P=W/t$ đúng là công suất có ích.",
+    "2": "Hao phí phải lấy toàn phần trừ có ích; cộng hai đại lượng là nhầm phép tính.",
+    "3": "Lấy có ích $mgh$ chia toàn phần $P_{tp}t$ đúng là định nghĩa hiệu suất theo năng lượng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Hao phí năng lượng và cách giảm hao phí",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Một gia đình muốn giảm năng lượng hao phí khi dùng các thiết bị và máy móc trong nhà. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Thay bóng sợi đốt bằng bóng LED cùng độ sáng giúp giảm điện năng tiêu thụ.",
+     "answer": true
+    },
+    {
+     "text": "Bôi trơn ổ trục của quạt, máy giặt giúp giảm hao phí do ma sát.",
+     "answer": true
+    },
+    {
+     "text": "Dùng ròng rọc giảm được lực kéo nên được lợi về công khi nâng vật.",
+     "answer": false
+    },
+    {
+     "text": "Ghép thêm nhiều khâu truyền động nối tiếp làm hiệu suất cả hệ tăng lên.",
+     "answer": false
+    }
+   ],
+   "explanation": "Giảm hao phí: bôi trơn, bảo dưỡng, bớt khâu truyền, dùng thiết bị hiệu suất cao như LED. Ròng rọc không lợi về công; thêm khâu nối tiếp làm $H$ giảm.",
+   "distractorNotes": {
+    "0": "LED có hiệu suất cao hơn nên cùng độ sáng thì tiêu thụ ít điện năng hơn, phát biểu đúng.",
+    "1": "Bôi trơn làm giảm ma sát, nên giảm phần cơ năng bị biến thành nhiệt, phát biểu đúng.",
+    "2": "Ròng rọc giảm lực nhưng phải kéo quãng đường dài hơn và còn ma sát, nên không lợi về công.",
+    "3": "Hiệu suất nối tiếp là tích các hiệu suất nhỏ hơn 1, nên thêm khâu làm hiệu suất cả hệ giảm."
+   }
+  }
+ ]
 }

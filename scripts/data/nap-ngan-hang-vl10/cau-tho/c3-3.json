@@ -1,0 +1,1847 @@
+[
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 1,
+  "flags": [],
+  "stem": "Nếu một vật không chịu tác dụng của lực nào hoặc chịu tác dụng của các lực có hợp lực bằng 0 thì vật đó",
+  "options": [
+   [
+    "A",
+    "sẽ giữ nguyên trạng thái đứng yên hoặc chuyển động thẳng đều.",
+    true
+   ],
+   [
+    "B",
+    "luôn đứng yên.",
+    false
+   ],
+   [
+    "C",
+    "đang rơi tự do.",
+    false
+   ],
+   [
+    "D",
+    "có thể chuyển động chậm dần đều.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Nếu một vật không chịu tác dụng của lực nào hoặc chịu tác dụng của các lực có họp lực bằng 0 thì vật đó sẽ giữ nguyên trạng thái đứng yên hoặc chuyển động thẳng đều.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 2,
+  "flags": [],
+  "stem": "Hợp lực tác dụng vào một vật đang chuyển động thẳng đều bằng hợp lực tác dụng vào vật",
+  "options": [
+   [
+    "A",
+    "chuyển động tròn đều.",
+    false
+   ],
+   [
+    "B",
+    "rơi tự do.",
+    false
+   ],
+   [
+    "C",
+    "chuyển động chuyển động nhanh dần đều.",
+    false
+   ],
+   [
+    "D",
+    "đứng yên.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Hợp lực tác dụng vào một vật đang chuyển động thẳng đều bằng hợp lực tác dụng vào vật đứng yên.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 3,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Khi không có lực tác dụng thì các vật sẽ đứng yên.",
+    false
+   ],
+   [
+    "B",
+    "Vật chịu tác dụng của một lực có độ lớn tăng dần thì chuyển động chậm dần.",
+    false
+   ],
+   [
+    "C",
+    "Một vật có thể chịu tác dụng đồng thời của nhiều lực mà vẫn chuyển động thẳng đều.",
+    true
+   ],
+   [
+    "D",
+    "Vật không thể chuyển động ngược chiều với lực tác dụng lên nó.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Một vật có thế chịu tác dụng đồng thời của nhiều lực mà vẫn chuyển động thẳng đều.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 4,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Cho các phát biểu sau \nĐịnh luật I Niu− tơn còn được gọi là định luật quán tính. \nMọi vật đều có xu hướng bảo toàn vận tốc của mình. \nChuyển động thẳng đều được gọi là chuyển động theo quán tính. \nQuán tính là tính chất của mọi vật có xu hướng bảo toàn vận tốc cả về hướng và độ lớn. \nSố phát biểu **đúng** là",
+  "options": [
+   [
+    "A",
+    "1.",
+    false
+   ],
+   [
+    "B",
+    "4.",
+    true
+   ],
+   [
+    "C",
+    "3.",
+    false
+   ],
+   [
+    "D",
+    "2.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 5,
+  "flags": [],
+  "stem": "Một xe khách tăng tốc độ đột ngột thì các hành khách ngồi trên xe sẽ",
+  "options": [
+   [
+    "A",
+    "ngả người sang bên trái.",
+    false
+   ],
+   [
+    "B",
+    "ngả người về phía sau.",
+    true
+   ],
+   [
+    "C",
+    "đỗ người về phía trước.",
+    false
+   ],
+   [
+    "D",
+    "ngả người sang bên phải.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Một xe khách tăng tốc độ đột ngột thì các hành khách ngồi trên xe sẽ ngả người về phía sau do quán tính.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 6,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Trường hợp nào sau đây vật chuyển động theo quán tính?",
+  "options": [
+   [
+    "A",
+    "Vật chuyển động tròn đều.",
+    false
+   ],
+   [
+    "B",
+    "Vật chuyển động trên một đường thẳng.",
+    false
+   ],
+   [
+    "C",
+    "Vật rơi tự do từ trên cao xuống không ma sát.",
+    false
+   ],
+   [
+    "D",
+    "Vật chuyển động khi tất cả các lực tác dụng lên vật mất đi.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 7,
+  "flags": [],
+  "stem": "Khối lượng được định nghĩa là đại lượng",
+  "options": [
+   [
+    "A",
+    "đặc trưng cho sự biến thiên nhanh hay chậm của vận tốc.",
+    false
+   ],
+   [
+    "B",
+    "đặc trưng cho mức quán tính cửa vật.",
+    true
+   ],
+   [
+    "C",
+    "đặc trưng cho sự nặng hay nhẹ của vật.",
+    false
+   ],
+   [
+    "D",
+    "tùy thuộc vào lượng vật chất chứa trong vật.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Khối lượng được định nghĩa là đại lượng đặc trưng cho mức quán tính của vật.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 8,
+  "flags": [],
+  "stem": "Quán tính của một vật phụ thuộc vào",
+  "options": [
+   [
+    "A",
+    "lực tác dụng lên vật.",
+    false
+   ],
+   [
+    "B",
+    "thể tích của vật.",
+    false
+   ],
+   [
+    "C",
+    "mật độ khối lượng vật.",
+    false
+   ],
+   [
+    "D",
+    "khối lượng vật.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Quán tính của một vật phụ thuộc vào khối lượng vật.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 9,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Phát biểu nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Nếu không có lực tác dụng vào vật thì vật không chuyển động được**.**",
+    false
+   ],
+   [
+    "B",
+    "Nếu thôi tác dụng lực vào vật thì vật dừng lại.",
+    false
+   ],
+   [
+    "C",
+    "Vật luôn chuyển động theo hướng tác dụng của lực**.**",
+    false
+   ],
+   [
+    "D",
+    "Vận tốc của vật chỉ thay đổi khi có lực tác dụng vào vật.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 10,
+  "flags": [],
+  "stem": "Trong chuyển động thẳng chậm dần đều thì hợp lực tác dụng vào vật",
+  "options": [
+   [
+    "A",
+    "cùng chiều với chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "cùng chiều với chuyển động và có độ lớn không đổi.",
+    false
+   ],
+   [
+    "C",
+    "ngược chiều với chuyển động và có độ lớn nhỏ dần.",
+    false
+   ],
+   [
+    "D",
+    "ngược chiều với chuyển động và có độ lớn không đổi.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Trong chuyển động thẳng chậm dần đều thì hợp lực tác dụng vào vật ngược chiều với chuyển động và có độ lớn không đổi.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 11,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Đại lượng đặc trưng cho mức quán tính của một vật là",
+  "options": [
+   [
+    "A",
+    "trọng lượng.",
+    false
+   ],
+   [
+    "B",
+    "khối lượng.",
+    true
+   ],
+   [
+    "C",
+    "vận tốc.",
+    false
+   ],
+   [
+    "D",
+    "lực**.**",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 12,
+  "flags": [],
+  "stem": "Một vật sẽ đứng yên hay chuyển động thẳng đều khi",
+  "options": [
+   [
+    "A",
+    "chỉ chịu tác dụng của một lực.",
+    false
+   ],
+   [
+    "B",
+    "các lực tác dụng vào vật cân bằng nhau.",
+    true
+   ],
+   [
+    "C",
+    "các lực tác dụng vào vật có độ lớn không đổi.",
+    false
+   ],
+   [
+    "D",
+    "chịu tác dụng của hai lực bằng nhau về độ lớn.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Một vật sẽ đứng yên hay chuyển động thẳng đều khi các lực tác dụng vào vật cân bằng nhau.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 13,
+  "flags": [],
+  "stem": "Một vật nằm yên trên mặt bàn là do",
+  "options": [
+   [
+    "A",
+    "vật chỉ chịu tác dụng của lực hút Trái Đất.",
+    false
+   ],
+   [
+    "B",
+    "không có lực tác dụng lên vật.",
+    false
+   ],
+   [
+    "C",
+    "các lực tác dụng lên vật có cường độ quá nhỏ.",
+    false
+   ],
+   [
+    "D",
+    "lực hút của Trái Đất lên vật cân bằng với phản lực của bàn.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Một vật nằm yên trên mặt bàn là do lực hút của Trái Đất lên vật cân bằng với phản lực của bàn.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 14,
+  "flags": [],
+  "stem": "Nếu một vật đang chuyển động mà tất cả các lực tác dụng vào nó bỗng nhiên ngừng tác dụng thì",
+  "options": [
+   [
+    "A",
+    "vật lập tức dừng lại.",
+    false
+   ],
+   [
+    "B",
+    "vật chuyển động chậm dần rồi dừng lại.",
+    false
+   ],
+   [
+    "C",
+    "vật chuyển động chậm dần trong một thời gian, sau đó sẽ chuyển động thẳng đều.",
+    false
+   ],
+   [
+    "D",
+    "vật chuyển động thẳng đều.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "A sai vì mọi vật đều có quá tính nên không vật nào có thể lập tức dừng lại được.\nB,C sai vì nếu một vật đang chuyển động mà tất cả các vật khác đang tác dụng vào vật đó đều ngừng tác dụng thì theo định luật I Niuton, vật sẽ chuyển động thẳng đều.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 15,
+  "flags": [],
+  "stem": "Khi đang đi xe đạp trên đường nằm ngang, nếu ta ngừng đạp, xe vẫn đi tiếp chứ chưa dừng ngay. Đó là nhờ",
+  "options": [
+   [
+    "A",
+    "trọng lượng của xe.",
+    false
+   ],
+   [
+    "B",
+    "lực ma sát.",
+    false
+   ],
+   [
+    "C",
+    "quán tính của xe.",
+    true
+   ],
+   [
+    "D",
+    "phản lực của mặt đường.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Theo quán tính mọi vật bảo toàn trạng thái đứng yên, chuyển động của vật.\nNên xe đạp nếu đang đạp mà dừng thì theo quán tính sẽ đi tiếp một đoạn rồi mới dừng lại.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 16,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây **đúng**?",
+  "options": [
+   [
+    "A",
+    "Nếu không có lực tác dụng vào vật thì vật không chuyển động được.",
+    false
+   ],
+   [
+    "B",
+    "Nếu thôi không tác dụng lực vào vật thì vật đang chuyển động sẽ dừng lại.",
+    false
+   ],
+   [
+    "C",
+    "Vật nhất thiết phải chuyển động theo hướng của lực tác dụng.",
+    false
+   ],
+   [
+    "D",
+    "Nếu có lực tác dụng lên vật thì vận tốc của vật bị thay đổi.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Vì lực không phải yếu tố cần thiết để duy trì chuyển động của vật nên A, B, C sai.\nKhi có lực tác dụng lên vật thì vận tốc của vật thay đổi nên D đúng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 17,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Theo định luật 1 Newton thì",
+  "options": [
+   [
+    "A",
+    "lực là nguyên nhân duy trì chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "một vật sẽ giữ nguyên trạng thái đứng yên hoặc chuyển động thẳng đều nếu nó không chịu tác dụng của lực nào.",
+    true
+   ],
+   [
+    "C",
+    "một vật không thể chuyển động được nếu hợp lực tác dụng lên nó bằng 0.",
+    false
+   ],
+   [
+    "D",
+    "mọi vật đang chuyển động đều có xu hướng dừng lại do quán tính.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 18,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Khi một ô tô đột ngột phanh gấp thì người ngồi trong xe \n![A red bus with people in the windows Description automatically generated](media/image4.jpeg){width=\"2.7729166666666667in\" height=\"1.5152777777777777in\"}",
+  "options": [
+   [
+    "A",
+    "ngả người về sau.",
+    false
+   ],
+   [
+    "B",
+    "chúi người về phía trước.",
+    true
+   ],
+   [
+    "C",
+    "ngả người sang bên cạnh.",
+    false
+   ],
+   [
+    "D",
+    "dừng lại ngay.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Theo quán tính khi xe đột ngột dừng lại thì người có xu hướng bảo toàn vận tốc ban đầu do vậy bị chúi về phía trước.",
+  "hasImg": true,
+  "imgs": [
+   "media/image4.jpeg"
+  ]
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 19,
+  "flags": [],
+  "stem": "Vật nào sau đây chuyển động theo quán tính?",
+  "options": [
+   [
+    "A",
+    "Vật chuyển động tròn đều.",
+    false
+   ],
+   [
+    "B",
+    "Vật chuyển động trên quỹ đạo thẳng.",
+    false
+   ],
+   [
+    "C",
+    "Vật chuyển động thẳng đều.",
+    true
+   ],
+   [
+    "D",
+    "Vật chuyển động rơi tự do.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Theo định luật I Newton khi vật không chịu tác dụng của lực nào hoặc của các lực có hợp lực bằng không, thì vật đang đứng yên sẽ tiếp tục đứng yên đang chuyển động sẽ chuyển động thẳng đều do vậy C đúng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 20,
+  "flags": [],
+  "stem": "Một xe ô tô đang chuyển động thẳng với vận tốc không đổi là 20 m/s. Hợp lực tác dụng lên ô tô có độ lớn bằng",
+  "options": [
+   [
+    "A",
+    "20 N.",
+    false
+   ],
+   [
+    "B",
+    "0N.",
+    true
+   ],
+   [
+    "C",
+    "10 N.",
+    false
+   ],
+   [
+    "D",
+    "- 20 N.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Vì ô tô chuyển động thẳng đều nên theo định luật I Newton ô tô chịu tác dụng của hợp lực bằng 0.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 21,
+  "flags": [],
+  "stem": "Một vật đang chuyển động với vận tốc 3 m/s. Nếu bỗng nhiên các lực tác dụng lên nó mất đi thì",
+  "options": [
+   [
+    "A",
+    "vật dừng lại ngay.",
+    false
+   ],
+   [
+    "B",
+    "vật tiếp tục chuyển động theo hướng cũ với vận tốc 3 m/s.",
+    true
+   ],
+   [
+    "C",
+    "vật đổi hướng chuyển động.",
+    false
+   ],
+   [
+    "D",
+    "vật chuyển động chậm dần rồi dừng lại.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Theo định luật I Newton nếu như vật đang chuyển động với vận tốc 3 m/s thì khi lực mất đi nó sẽ tiếp tục chuyển động thẳng đều theo hướng cũ với vận tốc 3 m/s.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 22,
+  "flags": [],
+  "stem": "Khi nói về tác dụng của lực đối với chuyển động, điều nào dưới đây **đúng**?",
+  "options": [
+   [
+    "A",
+    "Nếu không có lực tác dụng vào vật thì vật không thể chuyển động.",
+    false
+   ],
+   [
+    "B",
+    "Một vật bất kì chịu tác dụng của một lực có độ lớn tăng dần thì chuyển động nhanh dần.",
+    false
+   ],
+   [
+    "C",
+    "Một vật có thể chịu tác dụng đồng thời của nhiều lực mà vẫn chuyển động thẳng đều.",
+    true
+   ],
+   [
+    "D",
+    "Không vật nào có thể chuyển động ngược chiều với lực tác dụng lên nó.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Theo định luật I Newton nếu vật chịu tác dụng của các lực có hợp lực bằng không thì vật có thể đứng yên hoặc chuyển động thẳng đều nên C đúng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 23,
+  "flags": [],
+  "stem": "Lực không phải là nguyên nhân làm cho",
+  "options": [
+   [
+    "A",
+    "vật chuyển động.",
+    true
+   ],
+   [
+    "B",
+    "hình dạng của vật thay đổi.",
+    false
+   ],
+   [
+    "C",
+    "độ lớn vận tốc của vật thay đổi.",
+    false
+   ],
+   [
+    "D",
+    "hướng chuyển động của vật thay đổi.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Lực không phải là nguyên nhân làm cho vật chuyển động.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 24,
+  "flags": [],
+  "stem": "Vật nào sau đây chuyển động theo quán tính?",
+  "options": [
+   [
+    "A",
+    "Vật chuyển động tròn đều.",
+    false
+   ],
+   [
+    "B",
+    "Vật chuyển động trên một đường thẳng.",
+    false
+   ],
+   [
+    "C",
+    "Vật rơi tự do từ trên cao xuống không ma sát.",
+    false
+   ],
+   [
+    "D",
+    "Vật chuyển động khi tất cả các lực tác dụng lên vật mất đi.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Theo định luật I Newton vật chuyển động theo quán tính khi tất cả các lực tác dụng lên vật bị mất đi.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 25,
+  "flags": [],
+  "stem": "Khi đang đi ô tô trên đường nằm ngang, nếu ta phanh gấp, xe vẫn tự di chuyển. Đó là nhờ",
+  "options": [
+   [
+    "A",
+    "trọng lượng của xe.",
+    false
+   ],
+   [
+    "B",
+    "lực ma sát nhỏ.",
+    false
+   ],
+   [
+    "C",
+    "quán tính của xe.",
+    true
+   ],
+   [
+    "D",
+    "phản lực của mặt đường.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Quán tính là tính chất bảo toàn trạng thái đứng yên hoặc chuyển động của vật. do vậy khi xe đang đi mà phanh gấp thì xe vẫn dịch lên một đoạn trước khi dừng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 26,
+  "flags": [],
+  "stem": "Đại lượng đặc trưng cho mức quán tính của một vật là",
+  "options": [
+   [
+    "A",
+    "trọng lượng.",
+    false
+   ],
+   [
+    "B",
+    "khối lượng.",
+    true
+   ],
+   [
+    "C",
+    "vận tốc.",
+    false
+   ],
+   [
+    "D",
+    "lực.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Đại lượng đặc trưng cho mức quán tính của vật là khối lượng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 27,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Nếu không chịu lực nào tác dụng thì vật phải đứng yên.",
+    false
+   ],
+   [
+    "B",
+    "Vật chuyển động được là nhờ có lực tác dụng lên nó.",
+    false
+   ],
+   [
+    "C",
+    "Khi vận tốc của vật thay đổi thì chắc chắn đã có lực tác dụng lên vật.",
+    true
+   ],
+   [
+    "D",
+    "Khi không chịu lực nào tác dụng lên vật nữa thì vật đang chuyển động sẽ lập tức dừng lại.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Theo định luật I Newton A, B, D sai, C đúng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 28,
+  "flags": [],
+  "stem": "Hành khách ngồi trên xe ôtô đang chuyển động, xe bất ngờ rẽ sang phải. Theo quán tính hành khách sẽ",
+  "options": [
+   [
+    "A",
+    "nghiêng sang phải.",
+    false
+   ],
+   [
+    "B",
+    "nghiêng sang trái.",
+    true
+   ],
+   [
+    "C",
+    "ngả người về phía sau.",
+    false
+   ],
+   [
+    "D",
+    "chúi người về phía trước.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Theo quán tính vật bảo toàn trạng thái đứng yên hoặc chuyển động của vật do vậy khi xe rẽ phải thì người ngồi trên xe sẽ nghiêng sang trái.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 29,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Khi nói về tác dụng của lực lên vật, phát biểu nào dưới đây **đúng**?",
+  "options": [
+   [
+    "A",
+    "Khi vật thay đổi vận tốc thì bắt buộc phải có lực tác dụng vào vật.",
+    true
+   ],
+   [
+    "B",
+    "Vật bắt buộc phải chuyển động theo hướng của lực tác dụng vào nó.",
+    false
+   ],
+   [
+    "C",
+    "Nếu không còn lực nào tác dụng vào vật đang chuyển động thì vật phải lập tức dừng lại.",
+    false
+   ],
+   [
+    "D",
+    "Một vật không thể liên tục chuyển động mãi mãi nếu không có lực nào tác dụng vào nó.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 30,
+  "flags": [],
+  "stem": "Khối lượng là đại lượng đặc trưng cho",
+  "options": [
+   [
+    "A",
+    "trọng lượng của vật.",
+    false
+   ],
+   [
+    "B",
+    "tác dụng làm quay của lực quanh một trục",
+    false
+   ],
+   [
+    "C",
+    "thể tích của vật.",
+    false
+   ],
+   [
+    "D",
+    "mức quán tính của vật.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Khối lượng đặc trưng cho mức quán tính của vật.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 31,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Phát biểu nào sau đây là **đúng**?",
+  "options": [
+   [
+    "A",
+    "Khi một vật bị biến dạng hoặc vận tốc của vật thay đổi thì chắc chắn đã có lực tác dụng lên vật.",
+    true
+   ],
+   [
+    "B",
+    "Khi một vật đang chuyển động mà đột nhiên không còn lực nào tác dụng lên vật nữa thì vật sẽ dừng lại ngay lập tức.",
+    false
+   ],
+   [
+    "C",
+    "Lực là nguyên nhân gây ra chuyển động vì khi ta tác dụng lực lên một vật đang đứng yên thì khi đó vật bắt đầu chuyển động.",
+    false
+   ],
+   [
+    "D",
+    "Theo định luật ![](media/image5.wmf){width=\"0.10833333333333334in\" height=\"0.18888888888888888in\"} Newton, nếu một vật không chịu tác dụng của lực nào thì vật phải đứng yên.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/image5.wmf"
+  ]
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 32,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một chiếc thuyền đang chuyển động trên sông như hình. \n![Ảnh có chứa nước, ngoài trời, thuyền, bầu trời Mô tả được tạo tự động](media/image6.png){width=\"1.9188637357830272in\" height=\"1.3681321084864393in\"} \nXét một khoảng thời gian nào đó, thuyền đang chuyển động thẳng đều và giả sử rằng trên phương nằm ngang thuyền chỉ chịu tác dụng bởi lực đẩy của động cơ lực cản của nước. Lực đẩy của động cơ và lực cản của nước",
+  "options": [
+   [
+    "A",
+    "có độ lớn không bằng nhau.",
+    false
+   ],
+   [
+    "B",
+    "có cùng phương và cùng chiều.",
+    false
+   ],
+   [
+    "C",
+    "có độ lớn bằng nhau.",
+    true
+   ],
+   [
+    "D",
+    "nước là hai lực trực đối.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Vì thuyền chuyển động thẳng đều nên theo định luật I Newton các lực tác dụng lên vậy phải có hợp lực bằng không, do vậy lực đẩy của động cơ và lực cản của nước cân bằng nhau.",
+  "hasImg": true,
+  "imgs": [
+   "media/image6.png"
+  ]
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 33,
+  "flags": [
+   "khong-gach-chan"
+  ],
+  "stem": "Một vật sẽ đứng yên hoặc chuyển động thẳng đều khi các lực tác dụng vào vật",
+  "options": [
+   [
+    "A",
+    "cân bằng nhau.",
+    false
+   ],
+   [
+    "B",
+    "cùng chiều với nhau.",
+    false
+   ],
+   [
+    "C",
+    "ngược chiều nhau, độ lớn khác nhau.",
+    false
+   ],
+   [
+    "D",
+    "vật vuông góc với nhau",
+    false
+   ]
+  ],
+  "answer": null,
+  "solution": "Theo định luật I Newton thì một vật sẽ đứng yên hoặc chuyển động thẳng đều khi các lực tác dụng vào vật cân bằng nhau",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 34,
+  "flags": [],
+  "stem": "Khi một xe bus tăng tốc đột ngột thì các hành khách",
+  "options": [
+   [
+    "A",
+    "dừng lại ngay.",
+    false
+   ],
+   [
+    "B",
+    "ngả người về phía sau.",
+    true
+   ],
+   [
+    "C",
+    "chúi người về phía trước.",
+    false
+   ],
+   [
+    "D",
+    "ngả người sang bên cạnh",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Theo quán tính nên xe bus mà tăng tốc đột ngột thì các hành khách sẽ ngả người về phía sau để bảo toàn trạng thái của mình.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 35,
+  "flags": [],
+  "stem": "Phát biểu nào sau đây **đúng**?",
+  "options": [
+   [
+    "A",
+    "Nếu không có lực tác dụng vào vật thì vật không thể chuyển động được.",
+    false
+   ],
+   [
+    "B",
+    "Không cần có lực tác dụng vào vật thì vật vẫn chuyển động tròn đều được.",
+    false
+   ],
+   [
+    "C",
+    "Lực là nguyên nhân duy trì chuyển động của một vật.",
+    false
+   ],
+   [
+    "D",
+    "Lực là nguyên nhân làm biến đổi chuyển động của vật.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Lực là nguyên nhân làm biến đổi chuyển động của vật.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 37,
+  "flags": [],
+  "stem": "Điều gì sẽ có thể xảy ra với người lái xe máy chạy ngay sau một xe tải nếu xe tải dừng đột ngột?",
+  "options": [
+   [
+    "A",
+    "Không có vấn đề gì.",
+    false
+   ],
+   [
+    "B",
+    "Xe máy sẽ bị văng về phía sau.",
+    false
+   ],
+   [
+    "C",
+    "Xe máy sẽ bị đổ sang phải.",
+    false
+   ],
+   [
+    "D",
+    "Xe máy sẽ bị đâm vào xe tải.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "**D**o phản xạ của người lái xe máy là không tức thời mà cần có một khoảng thời gian dù rất ngắn để nhận ra xe tải đã dừng và ấn chân vào phanh.\n**D**o xe có quán tính nên dù đã hãm cũng không thể dừng lại ngay mà cần có thời gian để dừng hẳn.\nTrong hai khoảng thời gian trên nếu xe máy đi hết khoảng cách giữa hai xe và có thể đâm vào xe tải.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 38,
+  "flags": [],
+  "stem": "Khi đang đi xe máy trên đường nằm ngang, nếu ta phanh xe, xe vẫn tự di chuyển. Đó là nhờ",
+  "options": [
+   [
+    "A",
+    "trọng lượng của xe.",
+    false
+   ],
+   [
+    "B",
+    "lực ma sát nhỏ.",
+    false
+   ],
+   [
+    "C",
+    "quán tính của xe.",
+    true
+   ],
+   [
+    "D",
+    "phản lực của mặt đường.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Do quán tính xe vẫn đi tiếp một đoạn trước khi dừng.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 39,
+  "flags": [],
+  "stem": "Hợp lực tác dụng vào một vật đang chuyển động thẳng đều bằng hợp lực tác dụng vào vật",
+  "options": [
+   [
+    "A",
+    "chuyển động tròn đều.",
+    false
+   ],
+   [
+    "B",
+    "tự do.",
+    false
+   ],
+   [
+    "C",
+    "chuyển động nhanh dần đều.",
+    false
+   ],
+   [
+    "D",
+    "đứng yên.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Hợp lực tác dụng vào một vật đang chuyển động thẳng đều bằng hợp lực tác dụng vào vật đứng yên.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 40,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Cho các phát biểu sau \n(1). Định luật I Niu-tơn còn được gọi là định luật quán tính. \n(2). Mọi vật đều có xu hướng bảo toàn vận tốc của mình. \n(3). Chuyển động thẳng đều được gọi là chuyển động theo quán tính. \n(4). Quán tính là tính chất của mọi vật có xu hướng bảo toàn vận tốc cả về hướng và đố lớn. \nSố phát biểu **đúng** là",
+  "options": [
+   [
+    "A",
+    "1.",
+    false
+   ],
+   [
+    "B",
+    "4.",
+    true
+   ],
+   [
+    "C",
+    "3.",
+    false
+   ],
+   [
+    "D",
+    "2.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 41,
+  "flags": [],
+  "stem": "Một vật nằm yên trên mặt bàn là do",
+  "options": [
+   [
+    "A",
+    "vật chỉ chịu tác dụng của lực hút Trái Đất.",
+    false
+   ],
+   [
+    "B",
+    "không có lực tác dụng lên vật.",
+    false
+   ],
+   [
+    "C",
+    "các lực tác dụng lên vật có cường độ quá nhỏ.",
+    false
+   ],
+   [
+    "D",
+    "lực hút của Trái Đất lên vật cân bằng với phản lực của bàn.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Vật nằm yên trên mặt bàn là do lực hút của Trái đất lên vật cân bằng với phản lực của bàn.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 42,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Có hai nhận định sau đây \n(1) Do có quán tính, máy bay không thể tức thời đạt tới tốc độ đủ lớn để cất cánh. Nó phải tăng tốc dần trên đường băng mới cất cánh được. Khi hạ cánh, nó đang có tốc độ lớn nên phải hãm dần trên đường băng mới dừng lại được. \n(2) Khi xe đang chạy nhanh mà dừng đột ngột, người ngồi trên xe sẽ bị xô về phía trước, có thể bị lao khỏi ghế hoặc bị chấn thương do va chạm mạnh vào bộ phận của xe phía trước chỗ ngồi của mình. Dây an toàn có tác dụng giữ cho người khỏi xô về phía trước khi xe dừng đột ngột. Chọn phương án đúng.",
+  "options": [
+   [
+    "A",
+    "(1) đúng, (2) sai.",
+    false
+   ],
+   [
+    "B",
+    "(1) đúng, (2) đúng.",
+    true
+   ],
+   [
+    "C",
+    "(1) sai, (2) sai.",
+    false
+   ],
+   [
+    "D",
+    "(1) sai, (2) đúng.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 43,
+  "flags": [],
+  "stem": "Có hai nhận định sau đây \n(1) Một vật đang đứng yên. Ta có thể kết luận, vật không chịu tác dụng của lực nào. \n(2) Một hành khác ngồi ở cuối xa. Nếu lái xe phanh gấp thì một túi sách ở phía trước bay về phía anh ta. \nChọn phương án đúng",
+  "options": [
+   [
+    "A",
+    "(1) đúng, (2) sai.",
+    false
+   ],
+   [
+    "B",
+    "(1) đúng, (2) đúng.",
+    false
+   ],
+   [
+    "C",
+    "(1) sai, (2) sai.",
+    true
+   ],
+   [
+    "D",
+    "(1) sai, (2) đúng.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "(1) sai vì theo định luật I Newton vật đang đứng yên có thể do các lực tác dụng có hợp lực bằng không.\n(2) sai vì theo quán tính túi sách phải bay về phía trước.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 44,
+  "flags": [],
+  "stem": "Chỉ ra kết luận **sai** trong các kết luận sau?",
+  "options": [
+   [
+    "A",
+    "Lực là đại lượng vetor.",
+    false
+   ],
+   [
+    "B",
+    "Có thể tổng hợp các lực đồng quy theo quy tắc hình bình hành.",
+    false
+   ],
+   [
+    "C",
+    "Lực là yếu tố cần thiết để duy trì chuyển động của vật.",
+    true
+   ],
+   [
+    "D",
+    "Lực là tác dụng lên vật gây ra gia tốc cho vật.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "C sai vì lực không phải là yếu tố duy trì chuyển động của vật.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 45,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Trường hợp nào sau đây nhất định có liên quan tới quán tính",
+  "options": [
+   [
+    "A",
+    "Chiếc bè trôi trên sông.",
+    false
+   ],
+   [
+    "B",
+    "Vật rơi trong không khí.",
+    false
+   ],
+   [
+    "C",
+    "Dũ quần áo cho sạch bụi.",
+    true
+   ],
+   [
+    "D",
+    "Vật rơi tự do.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 46,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Định luật I Niuton còn được gọi là",
+  "options": [
+   [
+    "A",
+    "định luật quán tính.",
+    true
+   ],
+   [
+    "B",
+    "định luật ly tâm.",
+    false
+   ],
+   [
+    "C",
+    "định luật phi quán tính.",
+    false
+   ],
+   [
+    "D",
+    "định luật hướng tâm.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 47,
+  "flags": [],
+  "stem": "Một vật đang chuyển động với vận tốc 1 m/s. Nếu bỗng nhiên các lực tác dụng lên nó mất đi thì",
+  "options": [
+   [
+    "A",
+    "vật sẽ dừng lại ngay tức thì.",
+    false
+   ],
+   [
+    "B",
+    "vật chuyển động chậm dần rồi dừng lại.",
+    false
+   ],
+   [
+    "C",
+    "vật tiếp tục chuyển động theo hướng cũ với vận tốc nhỏ hơn 1 m/s.",
+    false
+   ],
+   [
+    "D",
+    "vật tiếp tục chuyển động theo hướng cũ với vận tốc 1 m/s.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "Theo định luật I Newton khi các lực mất đi thì vật đang chuyển động sẽ tiếp tục chuyển động theo hướng cũ với vận tốc ban đầu.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 48,
+  "flags": [],
+  "stem": "Kết luận nào sau đây **chính xác** nhất?",
+  "options": [
+   [
+    "A",
+    "Vật có khối lượng càng lớn thì rơi càng nhanh.",
+    false
+   ],
+   [
+    "B",
+    "Khối lượng riêng của một vật tuỳ thuộc vào khối lượng vật đó.",
+    false
+   ],
+   [
+    "C",
+    "Vật có khối lượng càng lớn càng khó thay đổi vận tốc.",
+    true
+   ],
+   [
+    "D",
+    "Để đo khối lượng người ta dùng lực kế.",
+    false
+   ]
+  ],
+  "answer": "C",
+  "solution": "Khối lượng liên quan tới quán tính, khối lượng càng lớn thì quán tính càng lớn càng khó thay đổi vận tốc ban đầu.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 49,
+  "flags": [],
+  "stem": "Quán tính là tính chất mọi vật có xu hướng bảo toàn",
+  "options": [
+   [
+    "A",
+    "tốc độ của mình.",
+    false
+   ],
+   [
+    "B",
+    "vận tốc của mình.",
+    true
+   ],
+   [
+    "C",
+    "gia tốc của mình.",
+    false
+   ],
+   [
+    "D",
+    "khối lượng của mình.",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "**D**o có quán tính mà mọi vật có xu hướng bảo toàn vận tốc cả về hướng và độ lớn.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 50,
+  "flags": [
+   "khong-co-loi-giai"
+  ],
+  "stem": "Hợp lực tác dụng vào một vật đang đứng yên bằng hợp lực tác dụng vào vật",
+  "options": [
+   [
+    "A",
+    "chuyển động tròn đều.",
+    false
+   ],
+   [
+    "B",
+    "rơi tự do.",
+    false
+   ],
+   [
+    "C",
+    "chuyển động chuyển động nhanh dần đều.",
+    false
+   ],
+   [
+    "D",
+    "chuyển động thẳng đều.",
+    true
+   ]
+  ],
+  "answer": "D",
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 51,
+  "flags": [],
+  "stem": "Lúc chạy để tránh con chó sói đuổi bắt, con cáo thường thoát thân bằng cách bất thình lình rẽ ngoặt sang hướng khác, đúng vào lúc con chó sói định ngoạm cắn nó. Cáo làm vậy là vì",
+  "options": [
+   [
+    "A",
+    "theo quán tính, chó sói sẽ chạy theo hướng cũ một đoạn nữa nên cáo thoát được.",
+    true
+   ],
+   [
+    "B",
+    "theo quán tính, cả sói và cáo đều chạy theo hướng cũ một đoạn nữa.",
+    false
+   ],
+   [
+    "C",
+    "cáo phản xạ theo tự nhiên để đánh lạc hướng sói.",
+    false
+   ],
+   [
+    "D",
+    "cáo theo quán tính làm lạc hướng sói.",
+    false
+   ]
+  ],
+  "answer": "A",
+  "solution": "Theo quán tính, chó sói sẽ chạy theo hướng cũ một đoạn nữa nên cáo thoát được.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "mc",
+  "num": 52,
+  "flags": [],
+  "stem": "Hiện tượng nào sau đây **không thể** hiện tính quán tính?",
+  "options": [
+   [
+    "A",
+    "Khi bút máy bị tắc mực người ta vẫy mực để mực văng ra.",
+    false
+   ],
+   [
+    "B",
+    "Viên bi có khối lượng lớn lăn xuống máng nghiêng nhanh hơn viên bi có khối lượng nhỏ",
+    true
+   ],
+   [
+    "C",
+    "Ôtô đang chuyển động thì tắt máy nó vẫn chạy thêm 1 đoạn nữa rồi mới dừng lại",
+    false
+   ],
+   [
+    "D",
+    "Một người đứng trên xe buýt, xe hãm phanh đột ngột, người có xu hướng ngã về phía trước",
+    false
+   ]
+  ],
+  "answer": "B",
+  "solution": "Ta thấy viên bi có khối lượng lớn lăn xuống máng nghiêng nhanh hơn viên bi có khối lượng nhỏ không thể hiện tính quán tính.\n\n****",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 1,
+  "flags": [],
+  "stem": "Mô tả và giải thích điều gì xảy ra đối với một học sinh ngồi trong xe bus ở trong các tình huống sau:\n\na. Xe đột ngột tăng tốc.\n\nb. Xe phanh gấp.\n\nc. Xe rẽ nhanh sang phải.",
+  "solution": "a. Khi xe đột ngột tăng tốc thì nửa trên của người ngồi trên xe không gắn với sàn xe sẽ bảo toàn vận tốc đang có, nên kết quả là bị đổ về phía sau.\n\nb. Khi xe phanh gấp thì nửa trên của người ngồi trên xe không gắn với sàn xe sẽ bảo toàn vận tốc đang có, nên kết quả là bị đổ về phía trước.\n\nc. Khi xe rẽ nhanh sang phải, theo quán tính để bảo toàn vận tốc đang có nên kết quả là người rẽ sang bên trái.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 2,
+  "flags": [],
+  "stem": "a. Giải thích tác dụng của các đường băng trên sân bay đối với việc cất cánh của máy bay?\n\nb. Giải thích tác dụng của các đường băng trên sân bay đối với việc hạ cánh của máy bay?",
+  "solution": "a. Do quán tính, máy bay không thể tức thời đạt tới vận tốc đủ lớn để cất cánh. Nó phải tăng tốc dần trên đường băng mới cất cánh được.\n\nb. Khi hạ cánh, máy bay đang có vận tốc lớn nên phải hãm dần trên đường băng mới dừng lại được.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 3,
+  "flags": [],
+  "stem": "Tại sao một vận động viên nhảy xa muốn đạt thành tích cao thì lại phải luyện tập chạy nhanh?",
+  "solution": "\\+ Để nhảy được xa, vận động viên cần đạt được một vận tốc lớn khi dậm nhảy. Nhưng cơ thể vận động viên có quán tính, nên không thể tức thời đạt được vận tốc lớn, mà cần có một giai đoạn lấy đà. Vận động viên phải luyện tập chạy nhanh để đạt được một vận tốc lớn khi dậm nhảy.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 4,
+  "flags": [],
+  "stem": "Bút máy bị tắc mực, ta có thể làm thế nào cho mực ra được mà không phải tháo thân bút?",
+  "solution": "\\+ Nguyên nhân tắc mực thường là mực không xuống được ngòi bút.\n\n\\+ Vì vậy chúng ta chỉ cần vẩy mạnh đầu bút xuống đất. Vì khi đó, bút và mực cùng đạt vận tốc và trạng thái là hướng xuống dưới nên khi tay ta dừng lại, theo quán tính thì mực trong bút vẫn giữ nguyên trạng thái là đi tiếp xuống phía dưới đầu bút, nên sẽ hết tắc mực.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 5,
+  "flags": [
+   "khong-co-loi-giai",
+   "co-hinh"
+  ],
+  "stem": "Để tra đầu búa vào cán, nên chọn cách nào dưới đây? Giải thích tại sao.\n\n![A hands holding a hammer Description automatically generated](media/image7.png){width=\"2.033902012248469in\" height=\"1.542136920384952in\"}\n\n\\+ Để tra búa vào cán nên chọn cách a, vì khi gõ mạnh xuống đất cán búa bị giữ lại còn đầu búa chuyển động theo quán tính sẽ ngập sâu vào cán búa",
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/image7.png"
+  ]
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 6,
+  "flags": [],
+  "stem": "Khi đang chạy, nếu vấp ngã người chạy sẽ có xu hướng ngã về phía trước, tại sao?",
+  "solution": "\\+ Khi vấp ngã, chân bị dừng lại đột ngột trong khi người phía trên có xu hướng bảo toàn vận tốc ban đầu do vậy người bị ngã về phía trước.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 7,
+  "flags": [],
+  "stem": "Khi đang đi mà bị trượt chân, người đi sẽ có xu hướng ngã về phía sau, vì sao?",
+  "solution": "\\+ Khi trượt chân, vận tốc của chân tăng đột ngột trong khi người phía trên có xu hướng bảo toàn vận tốc ban đầu do vậy người bị ngã về phía sau.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 8,
+  "flags": [],
+  "stem": "Để giảm tai nạn giữa tàu hoả và các phương tiện giao thông đường bộ khác, tại các vị trí giao nhau của đường sắt và đường bộ, người ta thường có lắp đặt các thanh chắn (barrier). Khi đèn báo hiệu có tàu đến, barrier sẽ được kéo xuống và tất cả các phương tiện tham gia giao thông không được đi qua đường ray. Dựa vào kiến thức đã học, em hãy giải thích tại sao barrier lại cần được kéo xuống sớm vài phút trước khi tàu đến.",
+  "solution": "\\+ Tàu hoả có khối lượng rất lớn nên mức quán tính của tàu lớn, tàu phải mất nhiều thời gian để giảm tốc độ nếu có sự xuất hiện của vật cản. Nếu các barrier được kéo xuống trễ và có phương tiện giao thông đi qua, tàu sẽ không kịp dừng lại, dẫn đến xảy ra tai nạn. Do đó, để đảm bảo an toàn, barrier cần được kéo xuống sớm vài phút trước khi tàu đến.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 8,
+  "flags": [],
+  "stem": "Hãy xếp mức quán tính của các vật sau theo thứ tự tăng dần: con chuột không dây nặng 100 gam, cặp sách nặng 2400 gam, xe đạp nặng 40 kg, laptop nặng 2,2 kg, xe bus nặng 1,4 tấn. Giải thích cách sắp xếp của em.",
+  "solution": "\\+ Vì khối lượng là đại lượng đặc trưng cho mức quán tính nên ta có cách sắp xếp sau chuột không dây → laptop → cặp sách → xe máy → ô tô.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 9,
+  "flags": [],
+  "stem": "Giải thích tác dụng của dây an toàn trên xe ô tô.",
+  "solution": "**+** Khi xe đang chạy nhanh mà dừng đột ngột, người ngồi trên xe sẽ bị xô về phía trước (do quán tính), có thể bị lao khỏi ghế hoặc bị chấn thương do va chạm mạnh vào các bộ phận của xe ở phía trước chỗ ngồi của mình. Dây an toàn có tác dụng giữ cho người khỏi xô về phía trước khi xe dừng đột ngột.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 10,
+  "flags": [],
+  "stem": "Dựa vào nội dung định luật 1 Newton em hãy trình bày phương án thí nghiệm để phân biệt 2 quả trứng trong đó có 1 quả trứng sống và 1 quả trứng chín mà không đập vỡ chúng. Giả sử hình dạng, màu sắc và khối lượng của 2 quả trứng là như nhau.",
+  "solution": "\\+ Ta có thể tiến hành các bước sau đây:\n\n\\+ Bước 1**: Đặt trứng lên bề mặt phẳng.**\n\n\\+ Bước 2: **Xoay trứng**: Giữ trứng bằng các ngón tay. Dùng lực dứt khoát xoay trứng như xoay con quay. Lực xoay sẽ giống như khi bạn búng tay. Trứng lúc này sẽ xoay đều, ở tốc độ vừa phải.\n\n\\+ Bước 3: **Cho trứng dừng xoay**. Đưa ngón trỏ ra như khi bạn đang chỉ vào thứ gì đó. Nhanh chóng đặt ngón tay vào tâm giữa quả trứng đang xoay để trứng dừng lại. Rút tay lại ngay lập tức khi trứng dừng xoay. Ấn tay vào trứng với lực đủ mạnh để trứng nhanh chóng dừng xoay. Bạn sẽ thấy trứng đang xoay và dừng lại ngay trong khoảng 1 giây.\n\n\\+ Bước 4: **Quan sát quả trứng**. Bạn sẽ nhận thấy sự khác biệt tại thời điểm này tùy theo trứng còn sống hay đã chín. Nhận diện như sau:\n\n\\- Nếu trứng đứng yên thì trứng đã chín.\n\n\\- Nếu trứng tiếp tục xoay chậm hoặc lắc lư thì trứng còn sống.\n\n\\+ Điều này được lý giải vì chất lỏng trong lòng trắng và lòng đỏ do chịu tác động của quán tính nên có xu thế tiếp tục dịch chuyển bên trong vỏ trứng khi tay ta đột ngột muốn quả trứng đứng lại. Trọng tâm của trứng không đứng yên vì chất lỏng bên trong lắc lư khiến cho trứng tiếp tục chuyển động.",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-3",
+  "part": "tl",
+  "num": 11,
+  "flags": [],
+  "stem": "Ghép nội dung ở cột bên trái với nội dung tương ứng ở cột bên phải để thành một câu có nội dung **đúng**.\n\n| 1. Quán tính là                                                                                    | a. Các lực cân bằng                                                |\n|:----------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|\n| 2. Lực làm cho mọi vật chuyển động chậm dần rồi dừng lại gọi là                                    | b. lực ma sát                                                      |\n| 3. Các lực tác dụng vào một vật mà vật đó vẫn đứng yên hay chuyển động thẳng đều thì các lực đó là | c. các lực không cân bằng                                          |\n| 4. Các lực tác dụng vào một vật đang chuyển động có gia tốc là                                     | d. tính chất của mọi vật có xu hướng chống lại sự thay đổi vận tốc |",
+  "solution": "1-d, 2- b, 3-a, 4-c",
+  "hasImg": false,
+  "imgs": []
+ }
+]

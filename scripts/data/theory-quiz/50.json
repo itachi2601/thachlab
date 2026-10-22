@@ -1,386 +1,550 @@
 {
-  "lesson_id": 50,
-  "lesson_title": "Bài 5. Tốc độ và vận tốc",
-  "item_id": 93,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 50,
+ "lesson_title": "Bài 5. Tốc độ và vận tốc",
+ "item_id": 93,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Độ dịch chuyển, quãng đường, tốc độ, vận tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tốc độ là đại lượng",
+   "options": [
+    "vô hướng, cho biết chuyển động nhanh hay chậm",
+    "vectơ, cho biết nhanh hay chậm và hướng đi",
+    "vô hướng, luôn bằng độ lớn vận tốc trung bình",
+    "vectơ, có gốc đặt ở vị trí đầu của vật"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, tốc độ cho biết chuyển động nhanh hay chậm và là đại lượng vô hướng: chỉ có độ lớn, không có hướng.",
+   "distractorNotes": {
+    "B": "Gán hướng cho tốc độ là nhầm sang vận tốc, vì tốc độ chỉ có độ lớn, không có hướng.",
+    "C": "Áp quy tắc ngoài điều kiện: hai đại lượng chỉ bằng nhau khi vật đi thẳng và không đổi chiều.",
+    "D": "Nhầm với đặc điểm của vectơ vận tốc trung bình, vì tốc độ vô hướng nên không có gốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tốc độ trung bình và vận tốc trung bình",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính tốc độ trung bình là",
+   "options": [
+    "$v_{tb}=\\frac{d}{t}$, với $d$ là độ dịch chuyển",
+    "$v_{tb}=\\frac{s}{t}$, với $s$ là quãng đường đi được",
+    "$v_{tb}=\\frac{t}{s}$, với $s$ là quãng đường đi được",
+    "$v_{tb}=s\\cdot t$, với $s$ là quãng đường đi được"
+   ],
+   "answer": 1,
+   "explanation": "Tốc độ trung bình bằng quãng đường đi được chia cho thời gian đi hết quãng đường đó: $v_{tb}=\\frac{s}{t}$.",
+   "distractorNotes": {
+    "A": "Dùng độ dịch chuyển là công thức vận tốc trung bình, còn tốc độ trung bình phải dùng quãng đường.",
+    "C": "Đảo tử và mẫu, đem thời gian chia quãng đường nên không ra đại lượng đo độ nhanh chậm.",
+    "D": "Nhân quãng đường với thời gian là sai bản chất, vì tốc độ là quãng đường đi trong một đơn vị thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Độ dịch chuyển, quãng đường, tốc độ, vận tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Muốn đổi một tốc độ từ km/h sang m/s, ta lấy số đo theo km/h",
+   "options": [
+    "nhân với $3{,}6$",
+    "chia cho $60$",
+    "chia cho $3{,}6$",
+    "nhân với $1000$"
+   ],
+   "answer": 2,
+   "explanation": "Vì $1\\ \\text{km/h}=\\frac{1000\\ \\text{m}}{3600\\ \\text{s}}$, đổi km/h sang m/s ta chia cho $3{,}6$.",
+   "distractorNotes": {
+    "A": "Nhầm chiều đổi, vì nhân với $3{,}6$ là đổi từ m/s sang km/h.",
+    "B": "Chia cho $60$ chỉ đổi giờ ra phút, còn bỏ quên đổi km sang m và phút sang giây.",
+    "D": "Nhân với $1000$ mới đổi km ra m, còn quên chia cho $3600\\ \\text{s}$ của một giờ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Độ dịch chuyển, quãng đường, tốc độ, vận tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Số chỉ trên tốc kế của xe máy cho biết",
+   "options": [
+    "tốc độ trung bình của cả chuyến đi",
+    "độ lớn vận tốc trung bình của xe",
+    "quãng đường xe đi được trong một giờ",
+    "tốc độ tức thời của xe"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, số trên tốc kế xe máy, ô tô là tốc độ tức thời, tức tốc độ tại một thời điểm.",
+   "distractorNotes": {
+    "A": "Tốc độ trung bình là một số cho cả chuyến, còn số trên tốc kế thay đổi theo từng thời điểm.",
+    "B": "Vận tốc trung bình phụ thuộc điểm đầu và điểm cuối cả chuyến, còn tốc kế chỉ đo độ lớn tại một lúc.",
+    "C": "Số trên tốc kế chỉ bằng quãng đường đi trong một giờ nếu xe chạy đều suốt giờ đó."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Độ dịch chuyển, quãng đường, tốc độ, vận tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một chuyển động được gọi là chuyển động đều khi",
+   "options": [
+    "tốc kế của xe luôn chỉ một số khác không",
+    "tốc độ tức thời không đổi theo thời gian",
+    "tốc độ trung bình của vật khác không",
+    "vật luôn chuyển động theo đường thẳng"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: tốc độ tức thời không đổi thì đó là chuyển động đều.",
+   "distractorNotes": {
+    "A": "Nhầm \"có số\" với \"số không đổi\", trong khi chuyển động đều cần tốc độ tức thời giữ nguyên.",
+    "C": "Tốc độ trung bình khác không chỉ cho biết vật có chuyển động, không cho biết tốc độ có thay đổi hay không.",
+    "D": "Chuyển động đều xét tốc độ tức thời không đổi, không xét quỹ đạo thẳng, vì đi thẳng vẫn có thể nhanh dần."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Độ dịch chuyển, quãng đường, tốc độ, vận tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật chuyển động trên quỹ đạo cong. Vectơ vận tốc tức thời của vật tại một điểm có hướng",
+   "options": [
+    "tiếp tuyến với quỹ đạo, theo chiều vật đang đi",
+    "theo bán kính, hướng vào tâm của đường cong",
+    "từ điểm đầu tới điểm cuối của cả quãng đi",
+    "theo bán kính, hướng ra xa tâm của đường cong"
+   ],
+   "answer": 0,
+   "explanation": "Vận tốc tức thời hướng theo chiều vật đang đi. Trên quỹ đạo cong, hướng đó là tiếp tuyến với quỹ đạo tại điểm đang xét.",
+   "distractorNotes": {
+    "B": "Phương bán kính vuông góc với hướng vật đang đi dọc cung, nên không phải hướng của vận tốc tức thời.",
+    "C": "Trộn vận tốc trung bình cả quãng (hướng từ điểm đầu tới điểm cuối) với vận tốc tức thời tại một điểm.",
+    "D": "Vật đi dọc theo quỹ đạo chứ không chạy theo bán kính ra xa tâm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tốc độ trung bình và vận tốc trung bình",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức xác định vận tốc trung bình là",
+   "options": [
+    "$\\vec v_{tb}=\\vec d\\cdot t$, với $\\vec d$ là độ dịch chuyển",
+    "$v_{tb}=\\frac{s}{t}$, với $s$ là quãng đường đi được",
+    "$\\vec v_{tb}=\\frac{\\vec d}{t}$, với $\\vec d$ là độ dịch chuyển",
+    "$v_{tb}=\\frac{v_1+v_2}{2}$, với $v_1,v_2$ là hai tốc độ"
+   ],
+   "answer": 2,
+   "explanation": "Vận tốc trung bình bằng độ dịch chuyển chia cho thời gian: $\\vec v_{tb}=\\frac{\\vec d}{t}$. Đây là một đại lượng vectơ.",
+   "distractorNotes": {
+    "A": "Nhân độ dịch chuyển với thời gian là sai, vì vận tốc là độ dịch chuyển chia cho thời gian.",
+    "B": "Quãng đường chia thời gian là tốc độ trung bình vô hướng, không phải vận tốc trung bình.",
+    "D": "Trung bình cộng các tốc độ vẫn chỉ là tốc độ, không phải định nghĩa vận tốc trung bình theo độ dịch chuyển."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Tốc độ trung bình và vận tốc trung bình",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Độ lớn vận tốc trung bình bằng tốc độ trung bình khi vật",
+   "options": [
+    "chuyển động theo một đường cong bất kì",
+    "chuyển động đều trên một đường tròn",
+    "đi một đoạn rồi quay về chỗ xuất phát",
+    "đi trên đường thẳng, không đổi chiều"
+   ],
+   "answer": 3,
+   "explanation": "Chỉ khi vật đi thẳng và không quay đầu thì $d=s$. Khi đó độ lớn vận tốc trung bình bằng tốc độ trung bình.",
+   "distractorNotes": {
+    "A": "Trên đường cong, độ dịch chuyển ngắn hơn quãng đường ($d \\lt s$), nên hai đại lượng khác nhau.",
+    "B": "Đi đều chỉ làm tốc độ không đổi, còn trên đường tròn vẫn có $d \\lt s$.",
+    "C": "Quay về chỗ cũ thì $d = 0$ trong khi $s \\gt 0$, nên hai đại lượng không thể bằng nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Phân biệt quãng đường và độ dịch chuyển",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Một vận động viên trượt đúng một vòng đường đua rồi dừng lại đúng ở vạch xuất phát. Xét cả vòng đó, phát biểu nào sau đây đúng?",
+   "options": [
+    "Tốc độ trung bình bằng vận tốc trung bình và khác $0$",
+    "Tốc độ trung bình lớn hơn $0$, vận tốc trung bình bằng $0$",
+    "Tốc độ trung bình bằng $0$, vận tốc trung bình lớn hơn $0$",
+    "Tốc độ trung bình và vận tốc trung bình đều bằng $0$"
+   ],
+   "answer": 1,
+   "explanation": "Về đúng vạch cũ nên độ dịch chuyển bằng $0$, do đó vận tốc trung bình bằng $0$. Quãng đường bằng một vòng nên tốc độ trung bình lớn hơn $0$.",
+   "distractorNotes": {
+    "A": "Coi vận tốc trung bình cũng tính bằng quãng đường, trong khi độ dịch chuyển cả vòng bằng $0$.",
+    "C": "Đảo hai khái niệm: quãng đường đã trượt khác $0$, chỉ độ dịch chuyển mới bằng $0$.",
+    "D": "Quên rằng quãng đường một vòng khác $0$, nên tốc độ trung bình phải dương."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tốc độ trung bình và vận tốc trung bình",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một xe đi đoạn thứ nhất dài $s_1$ trong thời gian $t_1$ với tốc độ $v_1$, rồi đi đoạn thứ hai dài $s_2$ trong thời gian $t_2$ với tốc độ $v_2$. Công thức luôn đúng để tính tốc độ trung bình trên cả quãng là",
+   "options": [
+    "$v_{tb}=\\frac{s_1+s_2}{t_1+t_2}$",
+    "$v_{tb}=\\frac{v_1+v_2}{2}$",
+    "$v_{tb}=v_1+v_2$",
+    "$v_{tb}=\\frac{t_1+t_2}{s_1+s_2}$"
+   ],
+   "answer": 0,
+   "explanation": "Tốc độ trung bình phải bằng tổng quãng đường chia tổng thời gian. Bài ghi rõ cách này luôn đúng.",
+   "distractorNotes": {
+    "B": "Trung bình cộng hai tốc độ chỉ đúng khi hai đoạn đi cùng thời gian, nên không phải luôn đúng.",
+    "C": "Cộng thẳng hai tốc độ như cộng hai con số, cho kết quả lớn hơn cả tốc độ của đoạn nhanh.",
+    "D": "Đảo tử và mẫu, đem tổng thời gian chia cho tổng quãng đường."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Tốc độ trung bình và vận tốc trung bình",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một xe đi hai đoạn với tốc độ $v_1$ và $v_2$. Tốc độ trung bình cả quãng bằng $\\frac{v_1+v_2}{2}$ chỉ khi",
+   "options": [
+    "hai đoạn có độ dài quãng đường bằng nhau",
+    "xe đi thẳng và không đổi chiều chuyển động",
+    "xe đi hai đoạn trong khoảng thời gian bằng nhau",
+    "tốc độ đoạn sau lớn hơn tốc độ đoạn đầu"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu: trung bình cộng $\\frac{v_1+v_2}{2}$ chỉ đúng khi hai đoạn đi cùng thời gian. Mọi trường hợp khác phải lấy tổng $s$ chia tổng $t$.",
+   "distractorNotes": {
+    "A": "Cùng quãng đường thì đoạn chậm tốn nhiều thời gian hơn, kéo tốc độ trung bình xuống dưới trung bình cộng.",
+    "B": "Đi thẳng, không đổi chiều là điều kiện để $d = s$, không liên quan đến cách lấy trung bình tốc độ.",
+    "D": "Thứ tự nhanh chậm của hai đoạn không quyết định, điều kiện cần là thời gian đi hai đoạn bằng nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong công thức cộng vận tốc, vận tốc kéo theo $\\vec v_{23}$ là vận tốc của",
+   "options": [
+    "vật so với hệ quy chiếu đứng yên",
+    "vật so với hệ quy chiếu chuyển động",
+    "hệ quy chiếu đứng yên so với vật",
+    "hệ chuyển động so với hệ đứng yên"
+   ],
+   "answer": 3,
+   "explanation": "Vận tốc kéo theo $\\vec v_{23}$ là vận tốc của hệ chuyển động (2) so với hệ đứng yên (3).",
+   "distractorNotes": {
+    "A": "Vận tốc của vật so với hệ đứng yên là vận tốc tuyệt đối $\\vec v_{13}$, không phải vận tốc kéo theo.",
+    "B": "Vận tốc của vật so với hệ chuyển động là vận tốc tương đối $\\vec v_{12}$, không phải vận tốc kéo theo.",
+    "C": "Đảo vai trò khi lấy hệ đứng yên so với vật, trong khi kéo theo là hệ chuyển động so với hệ đứng yên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Gọi (1) là vật, (2) là hệ quy chiếu chuyển động, (3) là hệ quy chiếu đứng yên. Công thức cộng vận tốc là",
+   "options": [
+    "$\\vec v_{12}=\\vec v_{13}+\\vec v_{23}$",
+    "$\\vec v_{13}=\\vec v_{12}+\\vec v_{23}$",
+    "$\\vec v_{13}=\\vec v_{12}-\\vec v_{23}$",
+    "$\\vec v_{23}=\\vec v_{12}+\\vec v_{13}$"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, $\\vec v_{13}=\\vec v_{12}+\\vec v_{23}$. Mẹo \"khử số 2\": nối 1→2 với 2→3 thì được 1→3.",
+   "distractorNotes": {
+    "A": "Đặt sai vai trò khi coi vận tốc tương đối là tổng, trái với mẹo khử số 2 (nối 1→2 với 2→3).",
+    "C": "Sai dấu, vì công thức là tổng vectơ; phép trừ độ lớn chỉ xuất hiện khi hai vectơ ngược chiều.",
+    "D": "Nối 1→2 với 1→3 không khử được chỉ số chung, nên không thể ra 2→3."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một người bơi ngược dòng với vận tốc $v_{12}$ so với nước, nước chảy với vận tốc $v_{23}$ so với bờ, biết $v_{12}\\lt v_{23}$. So với bờ, người đó",
+   "options": [
+    "tiến ngược dòng với tốc độ $v_{12}+v_{23}$",
+    "tiến ngược dòng với tốc độ $v_{23}-v_{12}$",
+    "trôi theo dòng nước với tốc độ $v_{23}-v_{12}$",
+    "đứng yên, vì người vẫn đang bơi ngược dòng"
+   ],
+   "answer": 2,
+   "explanation": "Hai vectơ ngược chiều nên $v_{13}=|v_{12}-v_{23}|$, chiều theo vận tốc lớn hơn là của dòng nước. Người bị trôi theo dòng.",
+   "distractorNotes": {
+    "A": "Cộng hai độ lớn như hai con số, trong khi hai vectơ ngược chiều thì độ lớn phải trừ nhau.",
+    "B": "Tính đúng độ lớn nhưng quên chiều của vận tốc tổng theo vận tốc lớn hơn, tức của dòng nước.",
+    "D": "Người chỉ đứng yên so với bờ khi hai vận tốc bằng nhau, còn ở đây $v_{12} \\lt v_{23}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bạn A kéo đều một dải giấy dọc mép bàn. Bạn B đưa đều bút dạ dọc theo một thước đặt vuông góc với mép bàn, ngòi bút vạch lên dải giấy. Gọi (1) là ngòi bút, (2) là dải giấy, (3) là mặt bàn.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tốc độ tức thời là",
-      "options": [
-        "tốc độ trung bình trên cả quãng đường đã đi",
-        "trung bình cộng của mọi tốc độ đo được",
-        "tốc độ tại một thời điểm xác định, tức tốc độ trung bình trong khoảng thời gian rất nhỏ",
-        "tốc độ lớn nhất của vật trong suốt chuyển động"
-      ],
-      "answer": 2,
-      "explanation": "Tốc độ tức thời là tốc độ tại một lúc, như số chỉ của tốc kế. Nó không phải trung bình cả đường, không phải trung bình cộng và không phải giá trị lớn nhất."
+     "text": "So với mặt bàn, ngòi bút chuyển động thẳng dọc theo thước.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phát biểu đúng về vận tốc trung bình là:",
-      "options": [
-        "đại lượng vô hướng, bằng quãng đường chia cho thời gian",
-        "đại lượng vectơ, bằng quãng đường chia cho thời gian",
-        "đại lượng luôn có độ lớn bằng tốc độ trung bình",
-        "đại lượng vectơ, bằng độ dịch chuyển chia cho thời gian"
-      ],
-      "answer": 3,
-      "explanation": "$\\vec v_{tb} = \\vec d / t$ là vectơ, dùng độ dịch chuyển. Phương án nhiễu hoặc dùng quãng đường (đó là tốc độ), hoặc coi hai đại lượng luôn bằng nhau, trong khi chỉ bằng nhau khi thẳng và không đổi chiều."
+     "text": "Vệt mực để lại trên dải giấy là một đường xiên so với mép bàn.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Độ lớn vận tốc trung bình bằng tốc độ trung bình khi vật",
-      "options": [
-        "chuyển động thẳng và không đổi chiều",
-        "đi theo quỹ đạo tròn",
-        "quay về đúng điểm xuất phát",
-        "chuyển động với tốc độ thay đổi"
-      ],
-      "answer": 0,
-      "explanation": "Chỉ khi thẳng, không đổi chiều thì $d = s$ nên $d/t = s/t$. Đi tròn hoặc quay về chỗ cũ thì $d \\lt s$ (có khi $d = 0$); tốc độ thay đổi không phải điều kiện quyết định."
+     "text": "Quỹ đạo của ngòi bút là như nhau dù xét so với giấy hay so với bàn.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trong công thức $\\vec v_{13} = \\vec v_{12} + \\vec v_{23}$, vận tốc kéo theo $\\vec v_{23}$ là vận tốc của",
-      "options": [
-        "vật so với hệ quy chiếu chuyển động",
-        "hệ quy chiếu chuyển động so với hệ quy chiếu đứng yên",
-        "vật so với hệ quy chiếu đứng yên",
-        "vật có độ lớn lớn nhất trong ba vận tốc"
-      ],
-      "answer": 1,
-      "explanation": "Đánh số (1) vật, (2) hệ chuyển động, (3) hệ đứng yên: $\\vec v_{12}$ là tương đối, $\\vec v_{13}$ là tuyệt đối, còn $\\vec v_{23}$ (hệ chuyển động so với hệ đứng yên) là vận tốc kéo theo."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Cùng một vật nhưng quan sát từ hai hệ quy chiếu khác nhau lại thấy hai quỹ đạo khác nhau. Điều này thể hiện",
-      "options": [
-        "quãng đường luôn lớn hơn độ dịch chuyển",
-        "tốc độ của vật không phụ thuộc hệ quy chiếu",
-        "vận tốc là đại lượng vô hướng",
-        "chuyển động có tính tương đối"
-      ],
-      "answer": 3,
-      "explanation": "Quỹ đạo và vận tốc phụ thuộc hệ quy chiếu nên chuyển động có tính tương đối, như vệt mực trên tờ giấy đang bị kéo. Các phương án còn lại không liên quan hoặc sai."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về tốc độ và vận tốc, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tốc độ là đại lượng vô hướng, vận tốc là đại lượng vectơ.",
-          "answer": true
-        },
-        {
-          "text": "Tốc độ tức thời không đổi thì chuyển động là chuyển động đều.",
-          "answer": true
-        },
-        {
-          "text": "Số chỉ của tốc kế xe máy là tốc độ trung bình của cả chuyến đi.",
-          "answer": false
-        },
-        {
-          "text": "Độ lớn của vận tốc tức thời luôn bằng tốc độ tức thời.",
-          "answer": true
-        }
-      ],
-      "explanation": "Tốc kế chỉ tốc độ tại thời điểm đang xét (tốc độ tức thời), còn tốc độ trung bình phải lấy tổng quãng đường chia tổng thời gian."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về công thức cộng vận tốc $\\vec v_{13} = \\vec v_{12} + \\vec v_{23}$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hai vận tốc cùng phương, cùng chiều thì $v_{13} = v_{12} + v_{23}$.",
-          "answer": true
-        },
-        {
-          "text": "Hai vận tốc ngược chiều thì độ lớn $v_{13}$ vẫn bằng tổng $v_{12} + v_{23}$.",
-          "answer": false
-        },
-        {
-          "text": "Hai vận tốc vuông góc thì $v_{13} = \\sqrt{v_{12}^2 + v_{23}^2}$.",
-          "answer": true
-        },
-        {
-          "text": "Mẹo \"khử số 2\": nối $1 \\to 2$ với $2 \\to 3$ thì được $1 \\to 3$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ngược chiều thì phải trừ: độ lớn $v_{13} = |v_{12} - v_{23}|$. Cộng thẳng hai số chỉ đúng khi cùng chiều."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một người đi bộ quanh hồ rồi về đúng chỗ xuất phát. Độ lớn vận tốc trung bình của người đó là bao nhiêu $\\text{m/s}$?",
-      "answer": "0",
-      "explanation": "Về chỗ cũ thì độ dịch chuyển bằng $0$ nên vận tốc trung bình bằng $0$, dù tốc độ trung bình khác $0$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tàu chạy $10\\ \\text{m/s}$ so với đường ray; người đi ngược chiều tàu trên toa với $1\\ \\text{m/s}$ so với toa. Vận tốc kéo theo bằng bao nhiêu $\\text{m/s}$?",
-      "answer": "10",
-      "explanation": "Vận tốc kéo theo là vận tốc của hệ chuyển động (toa tàu) so với hệ đứng yên (đường ray): $10\\ \\text{m/s}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe chuyển động đều trên đoạn thẳng, tốc độ trung bình $15\\ \\text{m/s}$. Tốc độ tức thời tại một thời điểm bất kì trong đoạn đó là bao nhiêu $\\text{m/s}$?",
-      "answer": "15",
-      "explanation": "Chuyển động đều thì tốc độ tức thời không đổi nên luôn bằng tốc độ trung bình, $15\\ \\text{m/s}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Độ lớn vận tốc trung bình của vật được tính bằng công thức nào (với $d$ là độ dịch chuyển, $s$ là quãng đường, $t$ là thời gian)?",
-      "options": [
-        "$\\dfrac{d}{t}$",
-        "$\\dfrac{s}{t}$",
-        "$\\dfrac{v_1 + v_2}{2}$",
-        "$d \\cdot t$"
-      ],
-      "answer": 0,
-      "explanation": "Vận tốc trung bình dùng độ dịch chuyển: $\\vec v_{tb} = \\vec d / t$. $s/t$ là tốc độ trung bình; $(v_1 + v_2)/2$ là trung bình cộng, chỉ hợp lệ trong vài trường hợp đặc biệt; $d \\cdot t$ sai thứ nguyên."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe đi nửa đầu quãng đường với $30\\ \\text{km/h}$, nửa sau với $60\\ \\text{km/h}$. Tốc độ trung bình cả quãng là",
-      "options": [
-        "$45\\ \\text{km/h}$",
-        "$90\\ \\text{km/h}$",
-        "$40\\ \\text{km/h}$",
-        "$30\\ \\text{km/h}$"
-      ],
-      "answer": 2,
-      "explanation": "Lấy cả quãng $120\\ \\text{km}$: $t_1 = 60/30 = 2\\ \\text{h}$, $t_2 = 60/60 = 1\\ \\text{h}$, $v_{tb} = 120/3 = 40\\ \\text{km/h}$. $45$ là trung bình cộng; $90$ là cộng thẳng hai tốc độ; $30$ là lấy hiệu."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Em bước trên thang cuốn cùng chiều thang với $0{,}5\\ \\text{m/s}$ so với thang; thang chạy $0{,}8\\ \\text{m/s}$ so với sàn. Tốc độ của em so với sàn là",
-      "options": [
-        "$0{,}3\\ \\text{m/s}$",
-        "$1{,}3\\ \\text{m/s}$",
-        "$0{,}94\\ \\text{m/s}$",
-        "$0{,}4\\ \\text{m/s}$"
-      ],
-      "answer": 1,
-      "explanation": "Cùng chiều thì cộng: $0{,}5 + 0{,}8 = 1{,}3\\ \\text{m/s}$. $0{,}3$ là trừ; $0{,}94$ là dùng Pi-ta-go dù hai vận tốc cùng phương; $0{,}4$ là nhân hai số."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ca nô chạy $5\\ \\text{m/s}$ so với nước, mũi vuông góc bờ; nước chảy dọc bờ $12\\ \\text{m/s}$ so với bờ. Tốc độ của ca nô so với bờ là",
-      "options": [
-        "$17\\ \\text{m/s}$",
-        "$7\\ \\text{m/s}$",
-        "$169\\ \\text{m/s}$",
-        "$13\\ \\text{m/s}$"
-      ],
-      "answer": 3,
-      "explanation": "Hai vận tốc vuông góc: $v_{13} = \\sqrt{5^2 + 12^2} = 13\\ \\text{m/s}$. $17$ là cộng thẳng; $7$ là trừ; $169$ là quên lấy căn bậc hai."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Thuyền chạy ngược dòng với $5\\ \\text{m/s}$ so với nước; nước chảy $2\\ \\text{m/s}$ so với bờ. So với bờ, thuyền có vận tốc",
-      "options": [
-        "$7\\ \\text{m/s}$, theo hướng ngược dòng",
-        "$3\\ \\text{m/s}$, theo hướng xuôi dòng",
-        "$3\\ \\text{m/s}$, theo hướng ngược dòng",
-        "$5{,}4\\ \\text{m/s}$, theo hướng ngược dòng"
-      ],
-      "answer": 2,
-      "explanation": "Hai vectơ ngược chiều: $v_{13} = |5 - 2| = 3\\ \\text{m/s}$, chiều theo vận tốc lớn hơn là của thuyền (ngược dòng). $7$ là cộng sai; hướng xuôi dòng nhầm chiều của vận tốc lớn hơn; $5{,}4 \\approx \\sqrt{5^2 + 2^2}$ là dùng Pi-ta-go sai."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe đồ chơi chạy dọc nửa đường tròn bán kính $R = 10\\ \\text{cm}$ từ $A$ tới $B$ trong $2\\ \\text{s}$ (lấy $\\pi = 3{,}14$). Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Quãng đường xe đi được là $31{,}4\\ \\text{cm}$.",
-          "answer": true
-        },
-        {
-          "text": "Độ lớn độ dịch chuyển của xe là $20\\ \\text{cm}$.",
-          "answer": true
-        },
-        {
-          "text": "Tốc độ trung bình của xe là $15{,}7\\ \\text{cm/s}$.",
-          "answer": true
-        },
-        {
-          "text": "Độ lớn vận tốc trung bình của xe cũng là $15{,}7\\ \\text{cm/s}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$s = \\pi R = 31{,}4\\ \\text{cm}$, $d = 2R = 20\\ \\text{cm}$. Tốc độ trung bình $31{,}4/2 = 15{,}7\\ \\text{cm/s}$; độ lớn vận tốc trung bình $20/2 = 10\\ \\text{cm/s}$, nhỏ hơn vì đường cong."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Ca nô chạy $6\\ \\text{m/s}$ so với nước, mũi luôn vuông góc bờ; nước chảy đều $8\\ \\text{m/s}$ so với bờ; sông rộng $90\\ \\text{m}$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tốc độ của ca nô so với bờ là $10\\ \\text{m/s}$.",
-          "answer": true
-        },
-        {
-          "text": "Thời gian sang sông là $15\\ \\text{s}$.",
-          "answer": true
-        },
-        {
-          "text": "Ca nô cập bến cách điểm đối diện chỗ xuất phát $120\\ \\text{m}$.",
-          "answer": true
-        },
-        {
-          "text": "Thời gian sang sông là $9\\ \\text{s}$, tính bằng $90/10$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Chỉ $v_{12}$ vuông góc bờ đưa ca nô sang sông: $t = 90/6 = 15\\ \\text{s}$, trôi $8 \\cdot 15 = 120\\ \\text{m}$, $v_{13} = \\sqrt{6^2 + 8^2} = 10\\ \\text{m/s}$. Chia cho $v_{13}$ là sai vì $v_{13}$ đi xiên."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đổi $108\\ \\text{km/h}$ sang $\\text{m/s}$. Kết quả là bao nhiêu $\\text{m/s}$?",
-      "answer": "30",
-      "explanation": "Chia cho $3{,}6$: $108/3{,}6 = 30\\ \\text{m/s}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tốc độ trung bình và vận tốc trung bình",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một bạn đi bộ $3\\ \\text{km}$ hết $20$ phút. Tốc độ trung bình là bao nhiêu $\\text{km/h}$?",
-      "answer": "9",
-      "explanation": "$20$ phút $= 1/3\\ \\text{h}$ nên $v_{tb} = 3 : (1/3) = 9\\ \\text{km/h}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Ca nô chạy $8\\ \\text{m/s}$ so với nước, mũi vuông góc bờ, nước chảy dọc bờ $3\\ \\text{m/s}$. Sông rộng $160\\ \\text{m}$. Thời gian sang sông là bao nhiêu giây?",
-      "answer": "20",
-      "explanation": "Chỉ vận tốc so với nước (vuông góc bờ) đưa ca nô sang sông: $t = 160/8 = 20\\ \\text{s}$; dòng nước không đổi thời gian này."
+     "text": "Vận tốc của ngòi bút so với dải giấy là vận tốc tuyệt đối.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "So với bàn, ngòi bút đi thẳng dọc thước; vệt mực trên giấy lại xiên. Hai hệ quy chiếu cho hai quỹ đạo khác nhau, đó là tính tương đối. Vận tốc của bút so với giấy (hệ chuyển động) là $\\vec v_{12}$, tức vận tốc tương đối.",
+   "distractorNotes": {
+    "0": "Bút được đưa đều dọc thước cố định trên bàn, nên so với bàn bút đi thẳng; không thể coi ý này sai.",
+    "1": "Giấy bị kéo ngang trong lúc bút đi dọc thước nên vết mực lệch xiên; cho là sai là bỏ qua chuyển động của giấy.",
+    "2": "Quỹ đạo phụ thuộc hệ quy chiếu: so với bàn là đường dọc thước, so với giấy là đường xiên.",
+    "3": "Giấy là hệ chuyển động (2), nên vận tốc của bút so với giấy là vận tốc tương đối $\\vec v_{12}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Phân biệt quãng đường và độ dịch chuyển",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một xe đồ chơi chạy dọc nửa đường tròn tâm $O$, bán kính $R$, từ điểm $A$ tới điểm $B$ ở hai đầu một đường kính.",
+   "statements": [
+    {
+     "text": "Quãng đường xe đi được bằng $\\pi R$.",
+     "answer": true
+    },
+    {
+     "text": "Độ dịch chuyển của xe hướng từ $A$ đến $B$ và có độ lớn $2R$.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ trung bình của xe bằng độ lớn vận tốc trung bình của xe.",
+     "answer": false
+    },
+    {
+     "text": "Vectơ vận tốc trung bình của xe có gốc đặt tại tâm $O$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Quãng đường là độ dài cung, bằng $\\pi R$. Độ dịch chuyển là đoạn thẳng nối $A$ tới $B$, bằng $2R$. Vì $d\\lt s$ nên tốc độ trung bình lớn hơn độ lớn vận tốc trung bình. Vectơ vận tốc trung bình có gốc ở vị trí đầu $A$.",
+   "distractorNotes": {
+    "0": "Quãng đường là độ dài đường đi thật, ở đây là nửa chu vi đường tròn, bằng $\\pi R$; không thể coi là sai.",
+    "1": "Độ dịch chuyển là mũi tên nối thẳng điểm đầu $A$ tới điểm cuối $B$, đúng bằng đường kính $2R$.",
+    "2": "Trên cung tròn có $s = \\pi R \\gt d = 2R$, nên tốc độ trung bình lớn hơn độ lớn vận tốc trung bình.",
+    "3": "Gốc vectơ vận tốc trung bình đặt ở vị trí đầu của vật, tức điểm $A$, không phải tâm $O$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một ca nô sang sông, mũi luôn hướng vuông góc với bờ. Vận tốc của ca nô so với nước là $v_{12}$, vận tốc của nước so với bờ là $v_{23}$, bề rộng sông là $AB$.",
+   "statements": [
+    {
+     "text": "Độ lớn vận tốc của ca nô so với bờ là $v_{13}=\\sqrt{v_{12}^2+v_{23}^2}$.",
+     "answer": true
+    },
+    {
+     "text": "Độ lớn vận tốc của ca nô so với bờ là $v_{13}=v_{12}+v_{23}$.",
+     "answer": false
+    },
+    {
+     "text": "Thời gian ca nô sang sông là $t=\\frac{AB}{v_{12}}$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu nước chảy nhanh hơn thì thời gian sang sông dài hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hai vectơ $\\vec v_{12}$ và $\\vec v_{23}$ vuông góc nên dùng Pythagore. Chỉ $\\vec v_{12}$ (vuông góc bờ) đưa ca nô sang bờ kia, nên $t=\\frac{AB}{v_{12}}$. Nước chảy mạnh hơn chỉ làm ca nô cập bến xa hơn, không làm thời gian sang sông thay đổi.",
+   "distractorNotes": {
+    "0": "Hai vectơ vuông góc nên độ lớn vectơ tổng là cạnh huyền tính theo Pythagore; cho là sai là quên cộng vectơ.",
+    "1": "Cộng thẳng hai độ lớn chỉ đúng khi hai vectơ cùng chiều, còn ở đây chúng vuông góc.",
+    "2": "Nước chảy dọc bờ không đưa ca nô lại gần bờ kia, chỉ $v_{12}$ quyết định thời gian sang sông.",
+    "3": "Nhầm \"trôi xa hơn\" với \"lâu hơn\": nước mạnh chỉ làm ca nô cập bến xa hơn, còn $t = \\frac{AB}{v_{12}}$ không đổi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Tốc độ trung bình và vận tốc trung bình",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét công thức tốc độ trung bình $v_{tb}=\\frac{s}{t}$, với $s$ là quãng đường đi được trong thời gian $t$.",
+   "statements": [
+    {
+     "text": "Cùng thời gian $t$, quãng đường đi được gấp đôi thì tốc độ trung bình gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Cùng quãng đường $s$, thời gian đi gấp đôi thì tốc độ trung bình gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Từ công thức trên suy ra thời gian đi là $t=\\frac{s}{v_{tb}}$.",
+     "answer": true
+    },
+    {
+     "text": "Từ công thức trên suy ra quãng đường là $s=\\frac{v_{tb}}{t}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$v_{tb}$ tỉ lệ thuận với $s$ và tỉ lệ nghịch với $t$. Biến đổi đúng: $t=\\frac{s}{v_{tb}}$ và $s=v_{tb}\\cdot t$.",
+   "distractorNotes": {
+    "0": "Giữ nguyên $t$ thì $v_{tb}$ tỉ lệ thuận với $s$, nên quãng đường gấp đôi thì tốc độ gấp đôi.",
+    "1": "$t$ nằm ở mẫu số nên tỉ lệ nghịch: thời gian gấp đôi thì tốc độ trung bình giảm một nửa.",
+    "2": "Nhân hai vế của $v_{tb} = \\frac{s}{t}$ với $t$ rồi chia cho $v_{tb}$ thì được đúng $t = \\frac{s}{v_{tb}}$.",
+    "3": "Biến đổi sai, vì từ $v_{tb} = \\frac{s}{t}$ phải suy ra $s = v_{tb} \\cdot t$, không phải chia cho $t$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một người đi trên toa tàu đang chạy thẳng đều. Gọi (1) là người, (2) là toa tàu, (3) là đường ray. Vận tốc của người so với toa có độ lớn $v_{12}$, vận tốc của tàu so với đường ray có độ lớn $v_{23}$, với $v_{12}\\lt v_{23}$.",
+   "statements": [
+    {
+     "text": "Người đi về phía đầu tàu (cùng chiều tàu chạy) thì $v_{13}=v_{12}+v_{23}$.",
+     "answer": true
+    },
+    {
+     "text": "Người đi về phía cuối tàu (ngược chiều tàu chạy) thì $v_{13}=|v_{12}-v_{23}|$.",
+     "answer": true
+    },
+    {
+     "text": "Người đi về phía cuối tàu thì so với đường ray, người chuyển động về phía cuối tàu.",
+     "answer": false
+    },
+    {
+     "text": "Vận tốc tuyệt đối luôn lớn hơn vận tốc tương đối.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hai vectơ cùng chiều thì cộng độ lớn, ngược chiều thì lấy trị tuyệt đối của hiệu, chiều theo vận tốc lớn hơn. Khi người đi ngược chiều tàu với $v_{12}\\lt v_{23}$, người vẫn chuyển động theo chiều tàu so với đường ray. Lúc đó $v_{13}$ có thể nhỏ hơn $v_{12}$.",
+   "distractorNotes": {
+    "0": "Đi về đầu tàu thì hai vectơ cùng chiều, độ lớn vectơ tổng bằng tổng hai độ lớn; ý này không thể sai.",
+    "1": "Đi về cuối tàu thì hai vectơ ngược chiều, độ lớn vectơ tổng là trị tuyệt đối của hiệu.",
+    "2": "Khi ngược chiều, $\\vec v_{13}$ theo vận tốc lớn hơn là $\\vec v_{23}$, nên người vẫn đi theo chiều tàu chạy.",
+    "3": "Khi hai vận tốc ngược chiều, $v_{13} = |v_{12} - v_{23}|$ có thể nhỏ hơn $v_{12}$, nên không phải luôn lớn hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Tốc độ trung bình và vận tốc trung bình",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một bạn chạy đúng 2 vòng quanh sân rồi dừng lại đúng ở chỗ xuất phát.",
+   "statements": [
+    {
+     "text": "Tốc độ trung bình bằng tổng quãng đường 2 vòng chia cho thời gian chạy.",
+     "answer": true
+    },
+    {
+     "text": "Vận tốc trung bình bằng $0$ vì độ dịch chuyển bằng $0$.",
+     "answer": true
+    },
+    {
+     "text": "Đơn vị của tốc độ trong hệ SI là km/h.",
+     "answer": false
+    },
+    {
+     "text": "Tốc độ trung bình có thể nhận giá trị âm khi vật quay về chỗ cũ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Tốc độ trung bình bằng $s/t$, vô hướng và không âm. Vận tốc trung bình bằng $\\vec d/t$, ở đây bằng $0$ vì bạn về đúng chỗ cũ. Đơn vị SI của tốc độ là m/s.",
+   "distractorNotes": {
+    "0": "Tốc độ trung bình dùng toàn bộ quãng đường đã chạy, tức cả 2 vòng, chia cho thời gian; ý này đúng.",
+    "1": "Điểm đầu trùng điểm cuối nên độ dịch chuyển bằng $0$, kéo theo vận tốc trung bình bằng $0$.",
+    "2": "Nhầm đơn vị thông dụng trong đời sống với đơn vị SI, trong khi đơn vị SI của tốc độ là m/s.",
+    "3": "Tốc độ là đại lượng vô hướng, không âm; về chỗ cũ chỉ làm vận tốc trung bình bằng $0$."
+   }
+  }
+ ]
 }

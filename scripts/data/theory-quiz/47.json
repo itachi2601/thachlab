@@ -1,379 +1,550 @@
 {
-  "lesson_id": 47,
-  "lesson_title": "Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí",
-  "item_id": 84,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 19,
-      "cong_thuc": 0
-    },
-    "removed": [
-      {
-        "question": "Theo bảng đo bộ nguồn trong bài (số liệu minh hoạ), núm vạch 9 V thì vôn kế chỉ bao nhiêu vôn? (9,3)",
-        "reason": "đáp án chỉ tra lại số liệu minh hoạ của bảng trong bài, đề không cho dữ kiện, không suy ra được; kiểm trí nhớ số bịa chứ không kiểm kiến thức"
-      }
-    ]
+ "lesson_id": 47,
+ "lesson_title": "Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí",
+ "item_id": 84,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 17,
+   "cong_thuc": 3
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kí hiệu DC ghi trên thiết bị điện cho biết điều gì?",
+   "options": [
+    "Thiết bị dùng dòng điện xoay chiều",
+    "Thiết bị dùng dòng điện một chiều",
+    "Đây là đầu vào của thiết bị",
+    "Đây là cực dương của nguồn"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, DC (hoặc dấu —) là dòng điện một chiều, ví dụ pin hay đầu ra của bộ nguồn học đường.",
+   "distractorNotes": {
+    "A": "Nhầm DC với AC; dòng xoay chiều mới được kí hiệu bằng AC hoặc dấu ~.",
+    "C": "Nhầm kí hiệu loại dòng điện với kí hiệu vị trí; đầu vào được ghi là Input hoặc IN.",
+    "D": "Nhầm kí hiệu loại dòng điện với dấu cực; cực dương được ghi dấu + hoặc tô màu đỏ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên bộ nguồn, cực âm thường được đánh dấu bằng",
+   "options": [
+    "dấu \"+\" hoặc màu đỏ",
+    "dấu \"~\" hoặc chữ AC",
+    "dấu \"−\" hoặc màu xanh",
+    "chữ OUT hoặc Output"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu: cực dương ghi \"+\" hoặc màu đỏ, cực âm ghi \"−\" hoặc màu xanh.",
+   "distractorNotes": {
+    "A": "Đảo hai cực; dấu + và màu đỏ là quy ước của cực dương.",
+    "B": "Nhầm dấu cực với kí hiệu loại dòng; dấu ~ và chữ AC chỉ dòng điện xoay chiều.",
+    "D": "Nhầm dấu cực với kí hiệu vị trí; Output chỉ đầu ra cấp điện cho mạch."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chữ Output (OUT) trên bộ nguồn chỉ",
+   "options": [
+    "nơi bộ nguồn cấp điện cho mạch",
+    "nơi bộ nguồn nhận điện ổ cắm",
+    "loại dòng điện xoay chiều",
+    "cực âm của bộ nguồn"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, Output là đầu ra, nơi thiết bị cấp điện cho mạch; Input là nơi điện đi vào thiết bị.",
+   "distractorNotes": {
+    "B": "Đảo Input với Output; chỗ bộ nguồn nhận điện từ ổ cắm là Input.",
+    "C": "Nhầm kí hiệu vị trí với kí hiệu loại dòng; dòng xoay chiều được ghi AC hoặc ~.",
+    "D": "Nhầm kí hiệu vị trí với dấu cực; cực âm được ghi dấu − hoặc tô màu xanh."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện ở ổ cắm trong nhà là dòng điện loại nào và được kí hiệu ra sao?",
+   "options": [
+    "Một chiều, kí hiệu là DC",
+    "Một chiều, kí hiệu là ~",
+    "Xoay chiều, kí hiệu là DC",
+    "Xoay chiều, kí hiệu AC hoặc ~"
+   ],
+   "answer": 3,
+   "explanation": "Bài lấy điện ổ cắm trong nhà làm ví dụ cho dòng điện xoay chiều, kí hiệu AC hoặc dấu ~ (như Input 220 V ~).",
+   "distractorNotes": {
+    "A": "Nhầm điện ổ cắm với điện của pin; pin mới là nguồn một chiều.",
+    "B": "Ghép sai kí hiệu: dấu ~ chỉ dòng xoay chiều, không dùng cho dòng một chiều.",
+    "C": "Đúng loại dòng nhưng sai kí hiệu; DC là kí hiệu của dòng một chiều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kí hiệu an toàn có dạng hình tam giác thuộc nhóm nào?",
+   "options": [
+    "Nhóm cấm làm một việc",
+    "Nhóm cảnh báo nguy hiểm",
+    "Nhóm bắt buộc phải làm",
+    "Nhóm bảo quản dụng cụ"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: tam giác là cảnh báo (cẩn thận), tròn đỏ gạch chéo là cấm, tròn xanh là bắt buộc.",
+   "distractorNotes": {
+    "A": "Nhầm hình dạng; kí hiệu cấm là hình tròn viền đỏ có gạch chéo.",
+    "C": "Nhầm hình dạng; kí hiệu bắt buộc là hình tròn màu xanh.",
+    "D": "Kí hiệu bảo quản thường không có khung riêng, chỉ nhận ra qua hình bên trong."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kí hiệu \"cần đeo mặt nạ phòng độc\" thuộc nhóm nào và có dạng gì?",
+   "options": [
+    "Nhóm cấm, tròn đỏ gạch chéo",
+    "Nhóm cảnh báo, hình tam giác",
+    "Nhóm bảo quản, không có khung",
+    "Nhóm bắt buộc, hình tròn xanh"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, \"cần đeo mặt nạ phòng độc\" là kí hiệu bắt buộc, có dạng hình tròn màu xanh.",
+   "distractorNotes": {
+    "A": "Nhầm việc phải làm với việc bị cấm; kí hiệu cấm mới có vòng đỏ gạch chéo.",
+    "B": "Tam giác chỉ cảnh báo nguy hiểm, không yêu cầu một hành động bắt buộc.",
+    "C": "Nhóm bảo quản gồm đặt đứng, tránh nắng, dễ vỡ; không có yêu cầu đeo mặt nạ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lọ cồn có kí hiệu chất dễ cháy. Trên bàn đang đốt đèn cồn và có bộ nguồn. Nên đặt lọ cồn",
+   "options": [
+    "sát đèn cồn để rót thêm cho tiện",
+    "cạnh ổ cắm để dễ lấy khi cần dùng",
+    "đậy kín, xa đèn cồn và thiết bị điện",
+    "trên nắp bộ nguồn cho đỡ chật bàn"
+   ],
+   "answer": 2,
+   "explanation": "Chất dễ cháy phải xa lửa và xa thiết bị điện; tia lửa điện ở ổ cắm, bộ nguồn cũng là lửa.",
+   "distractorNotes": {
+    "A": "Ưu tiên sự tiện lợi, đặt chất dễ cháy sát ngọn lửa đang cháy, vi phạm trực tiếp kí hiệu cấm lửa.",
+    "B": "Quên rằng tia lửa điện ở ổ cắm cũng là lửa, có thể làm cồn bắt cháy.",
+    "D": "Coi bộ nguồn như mặt bàn trơ, quên rằng nó là thiết bị điện có thể sinh tia lửa."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Mạch đã lắp gần xong, bộ nguồn đang bật, còn một đầu dây chưa nối. Việc đầu tiên cần làm trước khi cầm đầu dây là",
+   "options": [
+    "đeo găng cao su rồi nối luôn",
+    "tắt công tắc nguồn rồi mới nối",
+    "nối bằng một tay cho an toàn",
+    "chỉ cầm vào phần vỏ nhựa dây"
+   ],
+   "answer": 1,
+   "explanation": "Quy tắc với điện: tắt công tắc nguồn trước khi cầm hoặc tháo thiết bị, để dây hết điện trước khi chạm.",
+   "distractorNotes": {
+    "A": "Tin găng thay được việc ngắt nguồn; găng mỏng, ẩm hay thủng là mất tác dụng.",
+    "C": "Nối bằng một tay chỉ giảm rủi ro, không loại bỏ rủi ro khi dây vẫn còn điện.",
+    "D": "Vỏ nhựa chỉ bọc thân dây, còn đầu kim loại ở cực vẫn có điện."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Điều kiện để được cắm một dụng cụ điện vào nguồn là",
+   "options": [
+    "phích cắm vừa khít với ổ cắm",
+    "dụng cụ còn mới, chưa dùng lần nào",
+    "chỉ cắm trong thời gian thật ngắn",
+    "hiệu điện thế nguồn khớp dụng cụ"
+   ],
+   "answer": 3,
+   "explanation": "Bài nhấn mạnh \"vừa chân ≠ vừa vôn\": chỉ cắm khi hiệu điện thế nguồn tương ứng với hiệu điện thế của dụng cụ.",
+   "distractorNotes": {
+    "A": "Lẫn vừa chân với vừa vôn; hình dạng phích chỉ cho biết cắm được, chưa cho biết dùng được.",
+    "B": "Dụng cụ mới vẫn cháy hỏng nếu hiệu điện thế nguồn lớn hơn định mức.",
+    "C": "Tưởng quá áp chỉ hỏng từ từ; thực tế có thể cháy, chập ngay lần bật đầu."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đèn cồn đã tắt được một phút, cốc nước vừa đun sôi không còn bốc khói. Muốn nhấc cốc ra, em nên",
+   "options": [
+    "cầm bình thường vì đã hết lửa",
+    "chạm nhanh ngón tay để thử nóng",
+    "dùng kẹp hoặc găng chịu nhiệt",
+    "dội nước lạnh cho cốc nguội nhanh"
+   ],
+   "answer": 2,
+   "explanation": "Hết lửa không có nghĩa là hết nóng; cốc nguội chậm, phải dùng dụng cụ hỗ trợ: \"dụng cụ trước, tay sau\".",
+   "distractorNotes": {
+    "A": "Tin rằng hết lửa, hết khói là đã nguội; cốc nguội chậm và mắt không đo được nhiệt độ.",
+    "B": "Dùng tay để thử nhiệt, trong khi chỉ cần chạm vào là đã có thể bị bỏng.",
+    "D": "Quên rằng cốc thuỷ tinh đang nóng gặp nước lạnh đột ngột dễ nứt vỡ, nước nóng văng ra."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Nhóm đã lắp xong mạch, đọc kĩ hướng dẫn và kiểm tra đủ dụng cụ. Nhóm được bật nguồn khi",
+   "options": [
+    "giáo viên đã kiểm tra và cho phép",
+    "nhóm bên cạnh đã nhìn hộ mạch điện",
+    "cả nhóm cùng đồng ý là mạch đúng",
+    "chỉ bật thử trong một giây là đủ"
+   ],
+   "answer": 0,
+   "explanation": "Chỉ tiến hành thí nghiệm khi giáo viên cho phép; đọc hướng dẫn và kiểm tra dụng cụ là cần nhưng chưa đủ.",
+   "distractorNotes": {
+    "B": "Coi lời của nhóm bạn như sự cho phép, trong khi chỉ giáo viên mới có quyền cho phép.",
+    "C": "Tưởng cả nhóm đồng ý là đủ; phải có giáo viên kiểm tra mới được bật.",
+    "D": "Bật một giây vẫn là bật nguồn khi chưa ai kiểm tra; nếu mạch sai thì hỏng ngay."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Khi có sự cố bất ngờ ở bàn thực hành (cháy, chập điện, đổ vỡ), việc làm đầu tiên là",
+   "options": [
+    "dừng thí nghiệm và lùi ra xa",
+    "cố mang thiết bị ra chỗ an toàn",
+    "tạt nước ngay lên chỗ xảy ra",
+    "làm tiếp cho xong rồi mới báo"
+   ],
+   "answer": 0,
+   "explanation": "Bốn bước khi có sự cố: dừng thí nghiệm, lùi ra → tắt nguồn nếu an toàn → báo giáo viên → làm theo hướng dẫn.",
+   "distractorNotes": {
+    "B": "Đặt thiết bị lên trước an toàn của người; bài nhấn mạnh không cố cứu thiết bị.",
+    "C": "Tạt nước vội làm cồn loang theo, cháy lan rộng, lại có thể nguy hiểm về điện.",
+    "D": "Làm tiếp khi đang có sự cố khiến nguy hiểm tăng; phải dừng ngay và báo giáo viên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nhãn một bóng đèn ghi \"6 V, DC\". Con số 6 V cho biết",
+   "options": [
+    "hiệu điện thế định mức của bóng",
+    "hiệu điện thế ở ổ cắm trong nhà",
+    "loại dòng điện mà bóng cần dùng",
+    "mức tối thiểu, càng cao càng sáng"
+   ],
+   "answer": 0,
+   "explanation": "Định mức là số vôn ghi trên nhãn dụng cụ, mức dụng cụ được thiết kế để hoạt động bình thường; loại dòng là chữ DC.",
+   "distractorNotes": {
+    "B": "Nhầm số vôn trên nhãn dụng cụ với hiệu điện thế của nguồn điện trong nhà.",
+    "C": "Loại dòng điện được ghi bằng chữ DC, không phải bằng con số 6 V.",
+    "D": "Hiểu định mức là mức tối thiểu; thực tế vượt định mức gây quá áp, có thể làm cháy bóng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Bóng đèn ghi \"3 V, DC\" được nối vào Output DC của bộ nguồn, núm đang ở vạch 6 V. Nhận định đúng là",
+   "options": [
+    "bóng nhận đúng hiệu điện thế định mức",
+    "bóng nhận gấp đôi định mức, dễ cháy",
+    "bóng nhận một nửa định mức, sáng yếu",
+    "bóng nối sai loại dòng nên không sáng"
+   ],
+   "answer": 1,
+   "explanation": "Vạch 6 V gấp đôi định mức 3 V của bóng, gây quá áp; phải xoay núm về vạch 3 V.",
+   "distractorNotes": {
+    "A": "Không so số vôn ở núm với số vôn ghi trên nhãn bóng.",
+    "C": "Đảo tỉ lệ: 6 V lớn hơn 3 V nên bóng nhận gấp đôi định mức, không phải một nửa.",
+    "D": "Bóng ghi DC và được nối vào Output DC nên loại dòng đã khớp."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nhãn một bộ nguồn trong phòng thực hành ghi: Input 220 V ~; Output 3–12 V DC, có hai cực ra màu đỏ và màu xanh. Xét các phát biểu sau:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kí hiệu DC (hoặc dấu —) trên thiết bị cho biết điều gì?",
-      "options": [
-        "Dòng điện xoay chiều",
-        "Cực dương của thiết bị",
-        "Đầu ra của thiết bị",
-        "Dòng điện một chiều"
-      ],
-      "answer": 3,
-      "explanation": "DC là dòng điện một chiều, như pin hay đầu ra của bộ nguồn học đường. Dòng xoay chiều ghi AC (hoặc dấu ~)."
+     "text": "Input là chỗ bộ nguồn nhận điện từ ổ cắm.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Cực dương trên thiết bị được nhận biết bằng dấu hoặc màu nào?",
-      "options": [
-        "Dấu \"−\" hoặc màu xanh",
-        "Dấu \"+\" hoặc màu đỏ",
-        "Chữ AC hoặc dấu ~",
-        "Chữ Input (IN)"
-      ],
-      "answer": 1,
-      "explanation": "Cực dương là \"+\" hoặc màu đỏ; cực âm là \"−\" hoặc màu xanh. AC và Input không chỉ cực."
+     "text": "Output của bộ nguồn này cấp dòng điện xoay chiều cho mạch.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Output (OUT) của bộ nguồn học đường là gì?",
-      "options": [
-        "Đầu ra, nơi thiết bị cấp điện cho mạch",
-        "Đầu vào, nơi nhận điện $220\\ \\text{V}$ từ ổ cắm",
-        "Núm xoay để chọn vạch số vôn",
-        "Công tắc tắt mở nguồn"
-      ],
-      "answer": 0,
-      "explanation": "Input là đầu vào nhận điện từ ổ cắm, Output là đầu ra cấp điện cho mạch. Núm và công tắc là bộ phận khác."
+     "text": "Có thể nối dụng cụ 6 V vào chỗ Input vì đó là chỗ có điện.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Bóng đèn ghi $9\\ \\text{V}$, DC. Bộ nguồn có Input $220\\ \\text{V}$ ~ và Output DC với núm vạch $3;\\ 6;\\ 9;\\ 12\\ \\text{V}$. Nối bóng thế nào là đúng?",
-      "options": [
-        "Nối vào Input $220\\ \\text{V}$ ~ vì đó là chỗ có điện",
-        "Nối vào Output DC, núm ở vạch $12\\ \\text{V}$ cho bóng sáng hơn",
-        "Nối vào Output DC, núm ở vạch $9\\ \\text{V}$",
-        "Nối vào đầu ra xoay chiều, núm ở vạch $9\\ \\text{V}$"
-      ],
-      "answer": 2,
-      "explanation": "Cần đúng loại dòng (DC), đúng chỗ (Output), đúng số vôn ($9\\ \\text{V}$). Vạch $12\\ \\text{V}$ vượt định mức, Input là chỗ nhận điện từ ổ cắm, xoay chiều sai loại dòng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kí hiệu hình tròn viền đỏ gạch chéo (ví dụ \"cấm lửa\") thuộc nhóm nào và có ý nghĩa gì?",
-      "options": [
-        "Nhóm cảnh báo nguy hiểm: cần cẩn thận",
-        "Nhóm cấm: không được làm điều trong hình",
-        "Nhóm bắt buộc: phải làm điều trong hình",
-        "Nhóm bảo quản dụng cụ"
-      ],
-      "answer": 1,
-      "explanation": "Tròn đỏ gạch chéo là nhóm cấm. Tam giác là cảnh báo, tròn xanh là bắt buộc."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kí hiệu hình tròn nền xanh, ví dụ \"cần đeo mặt nạ phòng độc\", thuộc nhóm nào?",
-      "options": [
-        "Nhóm cấm",
-        "Nhóm cảnh báo",
-        "Nhóm bảo quản",
-        "Nhóm bắt buộc: phải làm"
-      ],
-      "answer": 3,
-      "explanation": "Hình tròn xanh là nhóm bắt buộc: đọc hình dạng và màu trước, rồi mới đọc hình bên trong."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sau khi làm xong thí nghiệm, quy tắc nào được nêu trong bài?",
-      "options": [
-        "Vệ sinh, sắp gọn thiết bị và bỏ chất thải vào đúng nơi quy định",
-        "Để nguyên thiết bị trên bàn cho buổi sau dùng tiếp",
-        "Bỏ mọi chất thải vào thùng rác chung",
-        "Chỉ cần tắt nguồn rồi rời đi"
-      ],
-      "answer": 0,
-      "explanation": "Nhóm quy tắc \"sau khi làm\" gồm vệ sinh, sắp gọn thiết bị và bỏ chất thải đúng nơi quy định."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ba việc cần làm trước khi bắt đầu thí nghiệm là gì?",
-      "options": [
-        "Bật nguồn thử một giây; hỏi bạn cùng nhóm; bắt đầu làm",
-        "Đọc hướng dẫn; bật nguồn thử; chờ bạn cùng nhóm xác nhận",
-        "Đọc kĩ hướng dẫn và kí hiệu; kiểm tra thiết bị, dụng cụ; được giáo viên cho phép",
-        "Kiểm tra thiết bị; nhờ nhóm khác xem hộ; bắt đầu khi cả nhóm sẵn sàng"
-      ],
-      "answer": 2,
-      "explanation": "Nhóm \"trước khi làm\" gồm đọc, kiểm, xin phép. Sự cho phép phải đến từ giáo viên, không phải bạn bè."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Với thí nghiệm có nung nóng hoặc có tia laser, quy tắc nào được nêu trong bài?",
-      "options": [
-        "Đứng sát để quan sát cho rõ",
-        "Nhìn thẳng vào tia từ xa để canh cho chính xác",
-        "Chỉ cần đeo găng là đủ",
-        "Giữ khoảng cách an toàn"
-      ],
-      "answer": 3,
-      "explanation": "Quy tắc là giữ khoảng cách an toàn khi nung nóng, có vật bắn ra hoặc có tia laser. Găng không thay được khoảng cách và không nhìn vào tia."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Cốc vừa đun xong, đèn cồn đã tắt, không còn khói. Cách xử lí đúng là gì?",
-      "options": [
-        "Chạm nhanh đầu ngón tay để thử độ nóng",
-        "Dùng kẹp hoặc găng chịu nhiệt để nhấc, vì cốc vẫn rất nóng",
-        "Cầm bình thường vì không còn lửa",
-        "Dội ngay nước lạnh cho cốc nguội"
-      ],
-      "answer": 1,
-      "explanation": "Không còn lửa hay khói không có nghĩa là hết nóng. Thử bằng tay là đã bỏng, còn nước lạnh đột ngột làm cốc thuỷ tinh nứt vỡ."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về an toàn khi dùng điện, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tắt công tắc nguồn trước khi cầm hoặc tháo thiết bị điện.",
-          "answer": true
-        },
-        {
-          "text": "Phích cắm vừa ổ cắm thì chắc chắn dùng được, không cần xem số vôn.",
-          "answer": false
-        },
-        {
-          "text": "Không để nước hay dung dịch dẫn điện gần thiết bị điện.",
-          "answer": true
-        },
-        {
-          "text": "Dây điện có thể vắt ngang lối đi miễn là dây còn vỏ nhựa.",
-          "answer": false
-        }
-      ],
-      "explanation": "Hình dạng phích chỉ nói cắm được, số vôn trên nhãn mới nói dùng được. Dây điện phải gọn, không vướng khi đi lại."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về các nhóm kí hiệu trên thiết bị, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hình tam giác là nhóm cảnh báo.",
-          "answer": true
-        },
-        {
-          "text": "Hình tròn xanh là nhóm cấm.",
-          "answer": false
-        },
-        {
-          "text": "Gặp kí hiệu lạ nên nhìn hình dạng và màu trước, rồi mới nhìn hình bên trong.",
-          "answer": true
-        },
-        {
-          "text": "Kí hiệu từ trường và chất phóng xạ thuộc nhóm bắt buộc.",
-          "answer": false
-        }
-      ],
-      "explanation": "Tròn xanh là bắt buộc, tròn đỏ gạch chéo mới là cấm. Từ trường và chất phóng xạ là kí hiệu cảnh báo (tam giác)."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về nhãn trên thiết bị và bộ nguồn, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "AC (hoặc dấu ~) là dòng điện xoay chiều.",
-          "answer": true
-        },
-        {
-          "text": "Màu xanh thường là cực dương.",
-          "answer": false
-        },
-        {
-          "text": "Input là đầu vào, nơi điện đi vào thiết bị.",
-          "answer": true
-        },
-        {
-          "text": "Núm chỉ vạch nào thì hiệu điện thế ở Output đúng bằng vạch đó.",
-          "answer": false
-        }
-      ],
-      "explanation": "Cực dương là \"+\" hoặc đỏ. Vạch chỉ chỉ là giá trị gần đúng: bảng đo cho thấy vôn kế chỉ cao hơn vạch một chút."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về các cái bẫy khi thực hành, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tắt đèn cồn rồi mà cốc vẫn có thể gây bỏng vì cốc nguội chậm.",
-          "answer": true
-        },
-        {
-          "text": "Không có khói, không đỏ rực thì chắc chắn vật đã nguội.",
-          "answer": false
-        },
-        {
-          "text": "Dù đã kiểm tra đủ dụng cụ, vẫn phải chờ giáo viên cho phép mới bật nguồn.",
-          "answer": true
-        },
-        {
-          "text": "Bạn cùng nhóm bảo ổn thì có thể bật nguồn.",
-          "answer": false
-        }
-      ],
-      "explanation": "Mắt không đo được nhiệt độ. Chỉ giáo viên kiểm tra và cho phép mới tính là đèn xanh."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Bài nêu bao nhiêu quy tắc an toàn khi thực hành thí nghiệm Vật lí?",
-      "answer": "10",
-      "explanation": "Bài chia 10 quy tắc thành 4 nhóm: trước khi làm, với điện, với nhiệt và tia, sau khi làm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Mười quy tắc được chia thành mấy nhóm?",
-      "answer": "4",
-      "explanation": "Bốn nhóm: trước khi làm, với điện, với nhiệt và tia, sau khi làm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Có mấy việc phải làm trước khi bắt đầu thí nghiệm (đọc hướng dẫn, kiểm tra thiết bị, ...)?",
-      "answer": "3",
-      "explanation": "Ba việc: đọc kĩ hướng dẫn và kí hiệu, kiểm tra thiết bị dụng cụ, chỉ làm khi giáo viên cho phép."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nhiệt kế đặt cách ngọn đèn cồn $2\\ \\text{cm}$ chỉ $125\\ ^\\circ\\text{C}$, nhiệt độ phòng $25\\ ^\\circ\\text{C}$. Phần nóng hơn nhiệt độ phòng là bao nhiêu độ C?",
-      "answer": "100",
-      "explanation": "Phần nóng hơn phòng là $125 - 25 = 100\\ ^\\circ\\text{C}$. Càng ra xa, phần này giảm rất nhanh, nên phải giữ khoảng cách."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Quy tắc an toàn trong phòng thực hành",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Bóng ghi $6\\ \\text{V}$, nhưng núm bị đặt nhầm vạch $12\\ \\text{V}$ (vôn kế chỉ $12{,}4\\ \\text{V}$). Bóng nhận hiệu điện thế gấp khoảng mấy lần định mức? (làm tròn đến số nguyên)",
-      "answer": "2",
-      "explanation": "$12{,}4 : 6 \\approx 2{,}07$, làm tròn là $2$: bóng nhận gấp đôi định mức nên có thể cháy."
+     "text": "Cực ra màu đỏ là cực dương của bộ nguồn.",
+     "answer": true
     }
-  ]
+   ],
+   "explanation": "Input nhận 220 V ~ từ ổ cắm; Output ghi DC nên cấp dòng một chiều; nối dụng cụ vào Input là sai chỗ; đỏ là cực dương, xanh là cực âm.",
+   "distractorNotes": {
+    "0": "Input nghĩa là đầu vào, nơi điện từ ổ cắm đi vào bộ nguồn, nên không thể coi là sai.",
+    "1": "Output ghi DC, tức dòng một chiều; dấu ~ chỉ xuất hiện ở phía Input.",
+    "2": "Input là chỗ bộ nguồn nhận 220 V, nối dụng cụ 6 V vào đó là sai chỗ và nguy hiểm.",
+    "3": "Theo quy ước màu, đỏ ứng với cực dương nên không thể coi phát biểu này là sai."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một nhóm học sinh đi rà phòng thực hành, tìm các kí hiệu an toàn và xếp chúng vào nhóm cảnh báo, cấm, bắt buộc hay bảo quản. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Kí hiệu chất phóng xạ thuộc nhóm cảnh báo, có dạng tam giác.",
+     "answer": true
+    },
+    {
+     "text": "Kí hiệu cấm lửa thuộc nhóm bắt buộc, có dạng tròn xanh.",
+     "answer": false
+    },
+    {
+     "text": "Gặp kí hiệu lạ, nên nhìn hình dạng và màu trước rồi mới nhìn hình bên trong.",
+     "answer": true
+    },
+    {
+     "text": "Kí hiệu dụng cụ dễ vỡ thuộc nhóm cấm, có dạng tròn đỏ gạch chéo.",
+     "answer": false
+    }
+   ],
+   "explanation": "Chất phóng xạ là kí hiệu cảnh báo (tam giác); cấm lửa là tròn đỏ gạch chéo; dụng cụ dễ vỡ thuộc nhóm bảo quản, thường không có khung riêng.",
+   "distractorNotes": {
+    "0": "Chất phóng xạ nằm trong danh sách kí hiệu cảnh báo hình tam giác, nên không thể coi là sai.",
+    "1": "Cấm lửa là việc bị cấm nên có dạng tròn đỏ gạch chéo; tròn xanh dành cho việc bắt buộc.",
+    "2": "Bài hướng dẫn rõ: nhìn hình dạng và màu trước để biết nhóm, sau đó mới đọc hình bên trong.",
+    "3": "Dụng cụ dễ vỡ chỉ cần xử lí cẩn thận, thuộc nhóm bảo quản chứ không thuộc nhóm cấm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong một tiết thực hành có thí nghiệm dùng tia laser và thí nghiệm nung nóng bằng đèn cồn. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Nên hướng tia laser vào màn chắn thấp hơn tầm mắt và không nhìn vào tia.",
+     "answer": true
+    },
+    {
+     "text": "Tia laser sau khi phản xạ qua gương thì không còn hại mắt.",
+     "answer": false
+    },
+    {
+     "text": "Khi nung nóng hoặc có vật có thể bắn ra, cần giữ khoảng cách an toàn.",
+     "answer": true
+    },
+    {
+     "text": "Nếu chưa có dụng cụ hỗ trợ, có thể chạm thật nhanh vào vật nóng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Tia laser rất tập trung, tia phản xạ vẫn hại mắt như tia thẳng; càng xa nguồn nhiệt càng bớt nóng nên phải giữ khoảng cách; không chạm vật nóng khi chưa có dụng cụ hỗ trợ.",
+   "distractorNotes": {
+    "0": "Cho tia dừng ở màn chắn thấp hơn tầm mắt thì tia không vào mắt ai, nên đây là cách làm đúng.",
+    "1": "Tưởng phản xạ làm tia yếu đi; thực tế tia phản xạ qua gương vẫn hại mắt như tia thẳng.",
+    "2": "Quy tắc yêu cầu giữ khoảng cách an toàn khi nung nóng hoặc có vật bắn ra, nên không thể coi là sai.",
+    "3": "Chạm nhanh vẫn gây bỏng; quy tắc là không chạm vật nóng khi chưa có dụng cụ hỗ trợ."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Nhóm thực hành mắc bóng đèn ghi 6 V, DC vào Output DC của bộ nguồn, núm đang ở vạch 12 V. Một cốc nước đặt sát ổ cắm, dây nguồn vắt ngang lối đi, bạn Nam định tháo bóng khi nguồn còn bật, giáo viên chưa cho phép bắt đầu. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Để núm ở vạch 12 V cho bóng 6 V là lỗi về hiệu điện thế.",
+     "answer": true
+    },
+    {
+     "text": "Cốc nước đặt sát ổ cắm vi phạm quy tắc an toàn điện.",
+     "answer": true
+    },
+    {
+     "text": "Nam có thể tháo bóng khi nguồn còn bật nếu thao tác thật nhanh.",
+     "answer": false
+    },
+    {
+     "text": "Sửa xong các lỗi, nhóm có thể tự bật nguồn mà không cần giáo viên.",
+     "answer": false
+    }
+   ],
+   "explanation": "Vạch 12 V gấp đôi định mức 6 V; nước phải để xa thiết bị điện; phải tắt nguồn trước khi tháo; chỉ bật nguồn khi giáo viên kiểm tra và cho phép.",
+   "distractorNotes": {
+    "0": "12 V gấp đôi định mức 6 V ghi trên nhãn bóng, đây chắc chắn là lỗi quá áp.",
+    "1": "Quy tắc cấm để nước hay dung dịch dẫn điện gần thiết bị điện, nên đây đúng là vi phạm.",
+    "2": "Thao tác nhanh không làm dây hết điện; phải tắt công tắc nguồn trước khi cầm hoặc tháo.",
+    "3": "Sửa lỗi là cần nhưng chưa đủ; chỉ được bật nguồn khi giáo viên kiểm tra và cho phép."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Được giáo viên cho phép, học sinh đặt núm bộ nguồn lần lượt ở các vạch 3; 6; 9; 12 V và mắc vôn kế một chiều vào hai cực Output. Số chỉ vôn kế luôn cao hơn vạch một chút. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Giá trị ghi ở vạch núm bộ nguồn chỉ là giá trị gần đúng.",
+     "answer": true
+    },
+    {
+     "text": "Số chỉ cao hơn vạch chứng tỏ học sinh đã thao tác đo sai.",
+     "answer": false
+    },
+    {
+     "text": "Khi mắc vôn kế, cực đỏ của vôn kế được nối với cực + của nguồn.",
+     "answer": true
+    },
+    {
+     "text": "Bóng 6 V mắc vào nguồn ở vạch 12 V nhận hiệu điện thế khoảng gấp đôi định mức.",
+     "answer": true
+    }
+   ],
+   "explanation": "Độ lệch đều theo vạch là sai số của chính bộ nguồn, nên vạch chỉ là gần đúng; vôn kế nối cực đỏ vào cực +; vạch 12 V gấp đôi định mức 6 V.",
+   "distractorNotes": {
+    "0": "Số đo luôn lệch khỏi vạch ở mọi mức, chứng tỏ vạch chỉ là giá trị gần đúng.",
+    "1": "Độ lệch tăng đều theo vạch, khoảng 3 %, là sai số của chính bộ nguồn chứ không phải lỗi thao tác.",
+    "2": "Màu đỏ là cực dương, nên cực đỏ của vôn kế phải nối với cực + của nguồn; không thể coi là sai.",
+    "3": "Nguồn ở vạch 12 V cho khoảng 12,4 V, gấp đôi định mức 6 V của bóng, nên không thể coi là sai."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Trong lúc thực hành, đèn cồn bị đổ, cồn cháy lan trên mặt bàn gần bộ nguồn. Xét các phát biểu sau về cách xử lí và các quy tắc liên quan:",
+   "statements": [
+    {
+     "text": "Cần báo ngay cho giáo viên và làm theo hướng dẫn của giáo viên.",
+     "answer": true
+    },
+    {
+     "text": "Phải tắt nguồn điện ngay, kể cả khi phải đi qua chỗ đang cháy.",
+     "answer": false
+    },
+    {
+     "text": "Nên tạt nước ngay vì nước luôn dập tắt được cồn đang cháy.",
+     "answer": false
+    },
+    {
+     "text": "Sau mỗi thí nghiệm phải vệ sinh, sắp gọn thiết bị và bỏ chất thải đúng nơi.",
+     "answer": true
+    }
+   ],
+   "explanation": "Khi có sự cố: dừng, lùi ra → tắt nguồn nếu an toàn → báo giáo viên → làm theo hướng dẫn; không tạt nước vội vì cồn tan trong nước, loang theo và cháy lan; làm xong phải dọn sạch.",
+   "distractorNotes": {
+    "0": "Báo giáo viên và làm theo hướng dẫn là hai bước bắt buộc khi có sự cố, nên không thể coi là sai.",
+    "1": "Chỉ tắt nguồn khi việc đó an toàn; không được đi qua chỗ cồn đổ hay chỗ đang cháy.",
+    "2": "Tin nước luôn dập được lửa; thực tế cồn tan trong nước, loang theo và làm cháy lan rộng hơn.",
+    "3": "Đây là quy tắc của nhóm sau khi làm: vệ sinh, sắp gọn, bỏ chất thải đúng nơi."
+   }
+  }
+ ]
 }

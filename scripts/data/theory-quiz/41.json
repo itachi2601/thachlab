@@ -2,8 +2,8 @@
  "lesson_id": 41,
  "lesson_title": "Bài 22. Cường độ dòng điện",
  "item_id": 204,
- "generated_at": "2026-10-02",
- "generated_by": "claude-code",
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
@@ -21,66 +21,44 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "question": "Cường độ dòng điện là đại lượng đặc trưng cho điều gì?",
+   "theorySection": 1,
+   "question": "Cường độ dòng điện là đại lượng đặc trưng cho",
    "options": [
-    "Tác dụng mạnh, yếu của dòng điện",
-    "Khả năng tích điện của vật dẫn",
-    "Độ lớn của hiệu điện thế giữa hai đầu vật dẫn",
-    "Mức độ nóng lên của vật dẫn"
+    "tác dụng mạnh, yếu của dòng điện",
+    "khả năng tích điện của nguồn điện",
+    "tốc độ lan truyền của điện trường",
+    "mức cản trở dòng điện của dây dẫn"
    ],
    "answer": 0,
-   "explanation": "Bài nêu cường độ dòng điện đặc trưng cho tác dụng mạnh, yếu của dòng điện."
+   "explanation": "Theo bài, cường độ dòng điện $I$ đặc trưng cho tác dụng mạnh, yếu của dòng điện. Nó được đo bằng điện lượng qua tiết diện dây trong một đơn vị thời gian.",
+   "distractorNotes": {
+    "B": "Gán nhầm cho dòng điện một đặc tính của nguồ​n; cường độ dòng điện mô tả dòng chạy trong mạch.",
+    "C": "Nhầm với tốc độ lan truyền điện trường dọc dây, gần tốc độ ánh sáng, vốn là đại lượng khác hẳn.",
+    "D": "Mức cản trở dòng điện là đặc tính của dây dẫn, không phải điều cường độ dòng điện đặc trưng."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
+   "topic": "Cường độ dòng điện",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "question": "Để đo cường độ dòng điện chạy qua một đoạn mạch, ta mắc ampe kế như thế nào?",
+   "theorySection": 1,
+   "question": "Chiều dòng điện được quy ước là",
    "options": [
-    "Song song với đoạn mạch",
-    "Nối tiếp với đoạn mạch",
-    "Song song với nguồn điện",
-    "Mắc tuỳ ý vào đoạn mạch"
+    "chiều chuyển động của các electron tự do",
+    "chiều chuyển động của các hạt mang điện dương",
+    "chiều chuyển động của các ion mang điện âm",
+    "chiều từ cực âm qua mạch ngoài về cực dương"
    ],
    "answer": 1,
-   "explanation": "Ampe kế được mắc nối tiếp với đoạn mạch cần đo."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Chiều dòng điện được quy ước là chiều chuyển động của các hạt mang",
-   "options": [
-    "điện tích âm",
-    "electron tự do",
-    "điện tích dương",
-    "ion âm và electron"
-   ],
-   "answer": 2,
-   "explanation": "Bài quy ước chiều dòng điện là chiều chuyển động của các hạt mang điện tích dương."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Dòng điện không đổi là dòng điện có",
-   "options": [
-    "chỉ chiều không đổi theo thời gian",
-    "chỉ cường độ không đổi theo thời gian",
-    "chiều và cường độ không đổi theo thời gian",
-    "chiều không đổi, cường độ biến thiên tuần hoàn"
-   ],
-   "answer": 2,
-   "explanation": "Dòng điện không đổi có cả chiều và cường độ không đổi theo thời gian."
+   "explanation": "Chiều dòng điện quy ước là chiều chuyển động của hạt mang điện dương. Trong mạch, dòng điện đi từ cực + của nguồn qua mạch ngoài về cực −.",
+   "distractorNotes": {
+    "A": "Electron mang điện âm nên trôi ngược chiều dòng điện quy ước, không thể lấy làm chiều dòng.",
+    "C": "Hạt mang điện âm chuyển động ngược chiều quy ước; quy ước dựa trên hạt mang điện dương.",
+    "D": "Đảo chiều: ở mạch ngoài dòng điện đi từ cực dương qua mạch về cực âm."
+   }
   },
   {
    "type": "multiple_choice",
@@ -89,80 +67,183 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Trong dây dẫn kim loại, hạt mang điện chuyển động có hướng tạo thành dòng điện là",
+   "theorySection": 1,
+   "question": "Khi trong dây kim loại có dòng điện, phát biểu nào sau đây đúng?",
    "options": [
-    "ion dương",
-    "ion âm",
-    "proton",
-    "electron tự do"
+    "Ion dương trôi dọc dây cùng chiều dòng điện",
+    "Electron tự do trôi cùng chiều điện trường",
+    "Electron tự do trôi ngược chiều dòng điện",
+    "Electron đứng yên, chỉ điện trường lan đi"
+   ],
+   "answer": 2,
+   "explanation": "Trong kim loại, ion dương chỉ dao động quanh nút mạng. Lực điện kéo electron tự do trôi ngược chiều điện trường, tức là ngược chiều dòng điện.",
+   "distractorNotes": {
+    "A": "Ion dương trong kim loại chỉ dao động quanh nút mạng, không trôi dọc dây.",
+    "B": "Electron mang điện âm nên lực điện ngược chiều điện trường, electron trôi ngược chiều điện trường.",
+    "D": "Dòng điện chính là sự dịch chuyển có hướng của electron, nên electron không thể đứng yên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Cường độ dòng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dòng điện không đổi là dòng điện có",
+   "options": [
+    "chiều không đổi, cường độ có thể thay đổi",
+    "cường độ không đổi, chiều đổi tuần hoàn",
+    "cường độ không đổi, chiều không cần xét",
+    "chiều và cường độ không đổi theo thời gian"
    ],
    "answer": 3,
-   "explanation": "Trong kim loại có các electron tự do chuyển động có hướng dưới tác dụng của lực điện, tạo thành dòng điện."
+   "explanation": "Dòng điện không đổi đòi hỏi cả chiều lẫn cường độ đều không đổi theo thời gian. Nếu chỉ chiều không đổi thì đó là dòng một chiều.",
+   "distractorNotes": {
+    "A": "Đây mới là dòng một chiều; dòng không đổi còn đòi cường độ cũng giữ nguyên theo thời gian.",
+    "B": "Chiều đổi tuần hoàn là dòng xoay chiều, trái với điều kiện chiều không đổi.",
+    "C": "Bỏ sót điều kiện về chiều; dòng không đổi đòi cả chiều lẫn cường độ đều không đổi."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dieu_kien",
-   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+   "topic": "Cường độ dòng điện",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Khi đặt vào hai đầu dây dẫn kim loại một hiệu điện thế thì các electron tự do chuyển động có hướng vì",
+   "theorySection": 2,
+   "question": "Để đo cường độ dòng điện chạy qua một bóng đèn, ampe kế phải được",
    "options": [
-    "chúng bị ion dương hút",
-    "điện trường tác dụng lực điện lên chúng",
-    "dây dẫn bị nóng lên",
-    "chúng tự sinh ra điện trường"
+    "mắc nối tiếp với bóng đèn",
+    "mắc song song với bóng đèn",
+    "nối thẳng vào hai cực nguồn",
+    "mắc song song với nguồn điện"
    ],
-   "answer": 1,
-   "explanation": "Hiệu điện thế tạo ra điện trường, điện trường tác dụng lực điện lên các electron tự do làm chúng chuyển động có hướng."
+   "answer": 0,
+   "explanation": "Ampe kế mắc nối tiếp để dòng điện cần đo phải chạy qua nó. Ampe kế gần như không cản dòng nên không được nối thẳng vào hai cực nguồn.",
+   "distractorNotes": {
+    "B": "Mắc song song thì dòng qua đèn không chui qua ampe kế, nên số chỉ không phải dòng qua đèn.",
+    "C": "Ampe kế gần như không cản dòng, nối thẳng vào hai cực nguồn gây dòng rất lớn, hỏng pin và đồng hồ.",
+    "D": "Song song với nguồn thực chất là nối ampe kế thẳng vào hai cực, gây dòng rất lớn làm hỏng thiết bị."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
+   "kind": "hien_tuong",
    "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Dòng điện là",
+   "theorySection": 2,
+   "question": "Electron trong dây đồng trôi rất chậm nhưng bật công tắc thì đèn sáng gần như tức thì, vì",
    "options": [
-    "dòng chuyển dời có hướng của các điện tích",
-    "dòng chuyển động hỗn loạn của các electron",
-    "dòng chuyển động của các ion dương cố định",
-    "sự tăng nhiệt độ của vật dẫn"
+    "electron chạy từ công tắc tới đèn gần tốc độ ánh sáng",
+    "dây đã đầy electron, điện trường lan dọc dây rất nhanh",
+    "chuyển động nhiệt rất nhanh của electron tạo ra dòng điện",
+    "ion dương ở nút mạng dịch chuyển nhanh tới bóng đèn"
    ],
-   "answer": 0,
-   "explanation": "Bài định nghĩa dòng điện là dòng chuyển dời có hướng của các điện tích."
+   "answer": 1,
+   "explanation": "Điện trường lan dọc dây gần tốc độ ánh sáng làm mọi electron tự do có sẵn trong dây cùng bắt đầu trôi. Electron sát đèn đã có sẵn, không phải chạy từ công tắc tới.",
+   "distractorNotes": {
+    "A": "Nhầm tốc độ lan truyền điện trường với tốc độ trôi của từng electron, vốn chỉ dưới 1 mm/s.",
+    "C": "Chuyển động nhiệt hỗn loạn không có hướng nên không tạo ra dòng điện.",
+    "D": "Ion dương trong kim loại chỉ dao động quanh nút mạng, không dịch chuyển dọc dây tới đèn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Cường độ dòng điện trong cùng một dây đồng tăng từ $1$ A lên $2$ A. Điều gì đã thay đổi?",
+   "options": [
+    "Mật độ electron tự do $n$ tăng gấp đôi",
+    "Điện tích của mỗi electron tăng gấp đôi",
+    "Tốc độ trôi $v$ tăng gấp đôi, $n$ giữ nguyên",
+    "Tiết diện $S$ của dây tăng lên gấp đôi"
+   ],
+   "answer": 2,
+   "explanation": "Trong $I = Snve$, với dây đã cố định thì $S$, $n$ (do vật liệu) và $e$ đều không đổi. Vì vậy $I$ gấp đôi chỉ có thể do tốc độ trôi $v$ gấp đôi.",
+   "distractorNotes": {
+    "A": "$n$ là hằng số do vật liệu quyết định, electron tự do không sinh thêm khi dòng tăng.",
+    "B": "Điện tích electron là hằng số tự nhiên, không thay đổi theo cường độ dòng điện.",
+    "D": "Trong cùng một dây, tiết diện cố định, không thay đổi khi dòng điện tăng."
+   }
   },
   {
    "type": "true_false",
    "kind": "dinh_nghia",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
+   "topic": "Cường độ dòng điện",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "question": "Xét dòng điện không đổi và dòng điện một chiều. Các phát biểu sau đúng hay sai?",
+   "theorySection": 2,
+   "question": "Dòng điện qua đèn LED sau bộ chỉnh lưu có chiều không đổi, còn cường độ nhấp nhô từ $0$ lên $20$ mA rồi về $0$, lặp lại 100 lần mỗi giây. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Dòng điện không đổi có chiều không đổi theo thời gian.",
+     "text": "Dòng điện này là dòng điện một chiều.",
      "answer": true
     },
     {
-     "text": "Dòng điện không đổi có cường độ không đổi theo thời gian.",
-     "answer": true
-    },
-    {
-     "text": "Dòng điện một chiều luôn có cường độ không đổi theo thời gian.",
+     "text": "Dòng điện này là dòng điện không đổi vì chiều của nó không đổi.",
      "answer": false
     },
     {
-     "text": "Dòng điện một chiều có chiều không đổi, cường độ có thể thay đổi theo thời gian.",
+     "text": "Dòng điện này là dòng xoay chiều vì cường độ thay đổi theo thời gian.",
+     "answer": false
+    },
+    {
+     "text": "Mọi dòng điện không đổi đều là dòng điện một chiều.",
      "answer": true
     }
    ],
-   "explanation": "Dòng điện một chiều chỉ có chiều không đổi, còn cường độ có thể thay đổi; dòng điện không đổi thì cả hai đều không đổi."
+   "explanation": "Chiều giữ nguyên nên đây là dòng một chiều. Cường độ thay đổi nên không phải dòng không đổi. Xoay chiều là chiều đổi qua lại. Dòng không đổi là trường hợp riêng của dòng một chiều.",
+   "distractorNotes": {
+    "0": "Dòng một chiều chỉ cần chiều không đổi, mà ở đây chiều giữ nguyên nên không thể coi là sai.",
+    "1": "Dòng không đổi đòi cả cường độ không đổi, trong khi cường độ ở đây nhấp nhô từ 0 đến 20 mA.",
+    "2": "Xoay chiều là chiều đổi qua lại; cường độ thay đổi mà chiều giữ nguyên vẫn là dòng một chiều.",
+    "3": "Dòng không đổi có chiều không đổi nên luôn thỏa điều kiện của dòng một chiều, không thể coi là sai."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Cường độ dòng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mắc pin, bóng đèn nhỏ và ampe kế thành mạch kín nối tiếp. Đặt ampe kế lần lượt ở trước đèn, sau đèn, sát cực âm pin, rồi đảo hai cực pin. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Số chỉ ampe kế ở ba vị trí trong mạch nối tiếp bằng nhau.",
+     "answer": true
+    },
+    {
+     "text": "Dòng điện bị đèn tiêu hao nên sau đèn ampe kế chỉ giá trị nhỏ hơn trước đèn.",
+     "answer": false
+    },
+    {
+     "text": "Khi đảo hai cực pin, độ lớn cường độ dòng điện giữ nguyên, chỉ chiều dòng điện đảo lại.",
+     "answer": true
+    },
+    {
+     "text": "Ở mạch ngoài, dòng điện đi từ cực âm của pin qua đèn về cực dương.",
+     "answer": false
+    }
+   ],
+   "explanation": "Trong mạch nối tiếp, $I$ như nhau tại mọi tiết diện vì điện tích không tích lại ở đâu. Đảo pin chỉ đảo chiều, độ lớn không đổi. Ở mạch ngoài dòng đi từ cực + về cực −.",
+   "distractorNotes": {
+    "0": "Điện tích không tích lại ở đâu trong mạch nối tiếp nên $I$ như nhau tại mọi tiết diện.",
+    "1": "Đèn không làm mất điện tích; điện lượng qua mọi tiết diện mạch nối tiếp trong cùng thời gian là như nhau.",
+    "2": "Đảo pin chỉ đổi chiều dòng, dấu trừ trên đồng hồ báo chiều, độ lớn vẫn như cũ nên không thể coi là sai.",
+    "3": "Đảo chiều quy ước: ở mạch ngoài dòng điện đi từ cực dương qua đèn về cực âm."
+   }
   },
   {
    "type": "true_false",
@@ -171,38 +252,33 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Về dòng điện trong dây dẫn kim loại, các phát biểu sau đúng hay sai?",
+   "theorySection": 2,
+   "question": "Bật công tắc, bóng đèn cách công tắc 5 m sáng gần như tức thì. Xét các phát biểu về chuyển động của electron trong dây đồng:",
    "statements": [
     {
-     "text": "Các electron tự do chuyển động có hướng ngược chiều điện trường.",
+     "text": "Tốc độ trôi có hướng của electron trong dây điện nhà rất nhỏ, dưới 1 mm/s.",
      "answer": true
     },
     {
-     "text": "Chiều dịch chuyển có hướng của electron cùng chiều với chiều quy ước của dòng điện.",
+     "text": "Mỗi electron đi từ công tắc tới đèn với tốc độ gần tốc độ ánh sáng.",
      "answer": false
     },
     {
-     "text": "Các ion dương nằm cố định trong mạng tinh thể.",
+     "text": "Điện trường lan truyền dọc dây với tốc độ gần $3\\cdot10^{8}$ m/s.",
      "answer": true
     },
     {
-     "text": "Chiều quy ước của dòng điện là chiều từ cực dương qua dây dẫn đến cực âm của nguồn.",
-     "answer": true
+     "text": "Chuyển động nhiệt hỗn loạn rất nhanh của electron là nguyên nhân tạo ra dòng điện.",
+     "answer": false
     }
    ],
-   "explanation": "Electron dịch chuyển ngược chiều điện trường, tức ngược với chiều quy ước của dòng điện; ion dương cố định trong mạng tinh thể."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_nghia",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Điện lượng dịch chuyển qua tiết diện thẳng của dây dẫn trong 1 s khi có dòng điện không đổi 1 A chạy qua là bao nhiêu culông?",
-   "answer": "1",
-   "explanation": "Bài nêu 1 C = 1 A·1 s, tức là điện lượng chuyển qua trong 1 s với dòng 1 A."
+   "explanation": "Electron chỉ trôi có hướng cỡ phần mười mm/s, còn điện trường lan dọc dây gần tốc độ ánh sáng. Chuyển động nhiệt hỗn loạn không có hướng nên không tạo dòng điện.",
+   "distractorNotes": {
+    "0": "Tính $v = I/(Sne)$ cho dây điện nhà ra cỡ phần mười mm/s, nên phát biểu không thể coi là sai.",
+    "1": "Nhầm tốc độ lan truyền điện trường với tốc độ trôi của từng electron, vốn rất nhỏ.",
+    "2": "Tín hiệu điện là điện trường lan dọc dây với tốc độ gần tốc độ ánh sáng, nên phát biểu đúng.",
+    "3": "Chuyển động nhiệt không có hướng nên không mang điện lượng có hướng qua tiết diện, không tạo dòng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -211,164 +287,264 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "question": "Công thức xác định cường độ dòng điện theo điện lượng $\\Delta q$ và thời gian $\\Delta t$ là",
+   "theorySection": 1,
+   "question": "Điện lượng $\\Delta q$ chuyển qua tiết diện thẳng của dây trong thời gian $\\Delta t$. Cường độ dòng điện được xác định bởi",
    "options": [
-    "$I=\\Delta q\\cdot\\Delta t$",
-    "$I=\\dfrac{\\Delta t}{\\Delta q}$",
-    "$I=\\dfrac{\\Delta q}{\\Delta t}$",
-    "$I=\\dfrac{\\Delta q}{\\Delta t^2}$"
+    "$I = \\Delta q\\cdot\\Delta t$",
+    "$I = \\dfrac{\\Delta t}{\\Delta q}$",
+    "$I = \\dfrac{\\Delta q}{\\Delta t^{2}}$",
+    "$I = \\dfrac{\\Delta q}{\\Delta t}$"
    ],
-   "answer": 2,
-   "explanation": "Bài định nghĩa $I=\\dfrac{\\Delta q}{\\Delta t}$, là thương số giữa điện lượng và thời gian."
+   "answer": 3,
+   "explanation": "Theo định nghĩa, cường độ dòng điện bằng điện lượng qua tiết diện chia cho thời gian: $I = \\dfrac{\\Delta q}{\\Delta t}$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia; tích $I\\,\\Delta t$ mới là điện lượng, không phải cường độ.",
+    "B": "Đảo tử và mẫu; cường độ là điện lượng chia cho thời gian.",
+    "C": "Thêm bình phương thời gian vô căn cứ, khi đó đơn vị không còn là ampe."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+   "kind": "don_vi",
+   "topic": "Cường độ dòng điện",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Biểu thức liên hệ giữa cường độ dòng điện với mật độ và tốc độ hạt mang điện trong dây dẫn là",
+   "question": "Đơn vị ampe (A) của cường độ dòng điện bằng",
    "options": [
-    "$I=\\dfrac{Sne}{v}$",
-    "$I=Snve$",
-    "$I=Sn^2ve$",
-    "$I=\\dfrac{nve}{S}$"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu $I=Snve$ với $S$ là tiết diện, $n$ mật độ electron, $v$ tốc độ trung bình, $e$ độ lớn điện tích electron."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Từ $I=Snve$, tốc độ trung bình của chuyển động có hướng của electron được tính bằng",
-   "options": [
-    "$v=\\dfrac{I}{Sne}$",
-    "$v=\\dfrac{Sne}{I}$",
-    "$v=I\\,Sne$",
-    "$v=\\dfrac{IS}{ne}$"
+    "$1$ C/s",
+    "$1$ C·s",
+    "$1$ s/C",
+    "$1$ J/s"
    ],
    "answer": 0,
-   "explanation": "Chia hai vế của $I=Snve$ cho $Sne$ được $v=\\dfrac{I}{Sne}$."
+   "explanation": "Từ $I = \\Delta q/\\Delta t$, đơn vị ampe là cu-lông trên giây: $1$ A $= 1$ C/s, nên $1$ C $= 1$ A·s.",
+   "distractorNotes": {
+    "B": "Nhầm với đơn vị điện lượng: cu-lông bằng A·s, còn ampe là cu-lông chia giây.",
+    "C": "Đảo tử và mẫu của công thức định nghĩa $I = \\Delta q/\\Delta t$.",
+    "D": "J/s là đơn vị công suất, không phải đơn vị cường độ dòng điện."
+   }
   },
   {
-   "type": "true_false",
-   "kind": "don_vi",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Xét công thức $I=\\dfrac{\\Delta q}{\\Delta t}$. Các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Đơn vị của cường độ dòng điện là ampe (A).",
-     "answer": true
-    },
-    {
-     "text": "1 A = 1 C/s.",
-     "answer": true
-    },
-    {
-     "text": "1 C = 1 A·s.",
-     "answer": true
-    },
-    {
-     "text": "Đơn vị của điện lượng $\\Delta q$ là ampe (A).",
-     "answer": false
-    }
-   ],
-   "explanation": "Từ $I=\\dfrac{\\Delta q}{\\Delta t}$ với $\\Delta q=1\\,C$, $\\Delta t=1\\,s$ thì $I=1\\,A$, suy ra 1 A = 1 C/s và 1 C = 1 A·s; $\\Delta q$ tính bằng culông."
-  },
-  {
-   "type": "true_false",
-   "kind": "don_vi",
-   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Xét công thức $I=Snve$ trong dây dẫn kim loại. Các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "$S$ là diện tích tiết diện thẳng, đơn vị m$^2$.",
-     "answer": true
-    },
-    {
-     "text": "$n$ là mật độ electron tự do, đơn vị m$^{-3}$.",
-     "answer": true
-    },
-    {
-     "text": "$v$ là tốc độ trung bình của chuyển động có hướng, đơn vị m/s.",
-     "answer": true
-    },
-    {
-     "text": "Nếu giảm tốc độ $v$ đi một nửa và giữ nguyên các đại lượng khác thì $I$ tăng gấp đôi.",
-     "answer": false
-    }
-   ],
-   "explanation": "$I$ tỉ lệ thuận với $v$ nên giảm $v$ một nửa thì $I$ giảm một nửa, không phải tăng gấp đôi."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Điện lượng 6 C chuyển qua tiết diện thẳng của dây dẫn trong 3 s. Cường độ dòng điện là bao nhiêu ampe?",
-   "answer": "2",
-   "explanation": "$I=\\dfrac{\\Delta q}{\\Delta t}=\\dfrac{6}{3}=2$ A."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Dòng điện không đổi có cường độ 0,5 A chạy qua dây dẫn trong 10 s. Điện lượng chuyển qua tiết diện thẳng là bao nhiêu culông?",
-   "answer": "5",
-   "explanation": "$\\Delta q=I\\Delta t=0{,}5\\times 10=5$ C."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "question": "Dòng điện không đổi 2 A chạy qua dây dẫn. Trong 30 s, điện lượng chuyển qua tiết diện thẳng là bao nhiêu culông?",
-   "answer": "60",
-   "explanation": "$\\Delta q=I\\Delta t=2\\times 30=60$ C."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "question": "Điện lượng 300 C chuyển qua tiết diện thẳng của dây dẫn trong 2 phút. Cường độ dòng điện là bao nhiêu ampe?",
-   "answer": "2,5",
-   "explanation": "Đổi 2 phút = 120 s; $I=\\dfrac{\\Delta q}{\\Delta t}=\\dfrac{300}{120}=2{,}5$ A."
-  },
-  {
-   "type": "short_answer",
+   "type": "multiple_choice",
    "kind": "bien_doi",
    "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Dòng điện không đổi cường độ $I$ chạy qua dây dẫn trong thời gian $\\Delta t$. Gọi $e$ là độ lớn điện tích electron. Số electron $N$ qua tiết diện dây trong thời gian đó là",
+   "options": [
+    "$N = I\\,\\Delta t\\,e$",
+    "$N = \\dfrac{I\\,\\Delta t}{e}$",
+    "$N = \\dfrac{I\\,e}{\\Delta t}$",
+    "$N = \\dfrac{I}{e\\,\\Delta t}$"
+   ],
+   "answer": 1,
+   "explanation": "Điện lượng $\\Delta q = I\\,\\Delta t$ và $\\Delta q = Ne$, nên $N = \\dfrac{I\\,\\Delta t}{e}$.",
+   "distractorNotes": {
+    "A": "Nhân thêm $e$ thay vì chia; điện lượng bằng số hạt nhân $e$ nên số hạt là điện lượng chia $e$.",
+    "C": "Chia cho thời gian thay vì nhân; điện lượng qua tiết diện là $I\\,\\Delta t$.",
+    "D": "Chia nhầm cho thời gian; phải lấy điện lượng $I\\,\\Delta t$ rồi mới chia cho $e$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Trong $I=Snve$, nếu tiết diện $S$ tăng 2 lần và tốc độ $v$ tăng 3 lần (các đại lượng $n$, $e$ không đổi) thì cường độ dòng điện tăng bao nhiêu lần?",
-   "answer": "6",
-   "explanation": "$I$ tỉ lệ thuận với $S$ và $v$ nên $I$ tăng $2\\times 3=6$ lần."
+   "question": "Dây dẫn tiết diện $S$, mật độ hạt tải $n$, mỗi hạt có điện tích độ lớn $e$, trôi với tốc độ $v$. Cường độ dòng điện trong dây là",
+   "options": [
+    "$I = \\dfrac{Sv}{ne}$",
+    "$I = \\dfrac{nve}{S}$",
+    "$I = Snve$",
+    "$I = \\dfrac{ne}{Sv}$"
+   ],
+   "answer": 2,
+   "explanation": "Số hạt qua $S$ trong $\\Delta t$ là $N = nSv\\Delta t$, điện lượng $\\Delta q = Ne$; chia cho $\\Delta t$ được $I = Snve$.",
+   "distractorNotes": {
+    "A": "Đặt $n$ và $e$ xuống mẫu sai; nhiều hạt hơn, điện tích lớn hơn thì dòng phải lớn hơn.",
+    "B": "Nhầm với mật độ dòng $j = nve = I/S$, nên cường độ phải nhân thêm $S$ chứ không chia.",
+    "D": "Đảo ngược quan hệ; dây to hơn, hạt trôi nhanh hơn thì dòng phải lớn hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ công thức $I = Snve$, tốc độ trôi của hạt tải điện được tính bằng",
+   "options": [
+    "$v = ISne$",
+    "$v = \\dfrac{Sne}{I}$",
+    "$v = \\dfrac{IS}{ne}$",
+    "$v = \\dfrac{I}{Sne}$"
+   ],
+   "answer": 3,
+   "explanation": "Chia hai vế của $I = Snve$ cho tích $Sne$ được $v = \\dfrac{I}{Sne}$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia khi chuyển $S$, $n$, $e$ sang vế kia.",
+    "B": "Đảo tử và mẫu; tốc độ trôi phải tỉ lệ thuận với $I$.",
+    "C": "$S$ là thừa số cùng vế với $v$ nên khi rút $v$ phải chuyển xuống mẫu, không lên tử."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai dây đồng cùng mang dòng điện cường độ $I$; dây 2 có tiết diện gấp đôi dây 1. So với dây 1, tốc độ trôi của electron trong dây 2",
+   "options": [
+    "giảm một nửa",
+    "tăng gấp đôi",
+    "giữ nguyên",
+    "giảm bốn lần"
+   ],
+   "answer": 0,
+   "explanation": "Từ $v = \\dfrac{I}{Sne}$, cùng $I$, cùng $n$ và $e$, $S$ gấp đôi thì $v$ giảm một nửa.",
+   "distractorNotes": {
+    "B": "Coi $v$ tỉ lệ thuận với $S$, trong khi $S$ nằm ở mẫu của $v = I/(Sne)$.",
+    "C": "Cùng $I$ chưa chắc cùng $v$; tiết diện khác thì tốc độ trôi phải khác.",
+    "D": "$v$ tỉ lệ nghịch bậc nhất với $S$, không có bình phương nên chỉ giảm hai lần."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của mật độ dòng điện $j$ là",
+   "options": [
+    "m$^{-3}$",
+    "A/m$^{2}$",
+    "A·m$^{2}$",
+    "C/m"
+   ],
+   "answer": 1,
+   "explanation": "Mật độ dòng điện $j = \\dfrac{I}{S}$, nên đơn vị là ampe trên mét vuông (A/m²).",
+   "distractorNotes": {
+    "A": "m$^{-3}$ là đơn vị của mật độ hạt tải $n$, khác mật độ dòng điện $j$.",
+    "C": "Nhân thay vì chia; mật độ dòng là cường độ dòng chia cho tiết diện $S$.",
+    "D": "C/m là đơn vị của tích $Sne$, không phải đơn vị của mật độ dòng điện."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Liên hệ cường độ dòng điện với chuyển động hạt tải điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét đoạn dây kim loại có dòng điện, với công thức $I = Snve$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "$S$ là diện tích tiết diện của dây, đo bằng m².",
+     "answer": true
+    },
+    {
+     "text": "$n$ là số electron chạy qua tiết diện dây trong mỗi giây.",
+     "answer": false
+    },
+    {
+     "text": "$v$ là tốc độ trôi trung bình có hướng của hạt tải điện.",
+     "answer": true
+    },
+    {
+     "text": "Vì electron mang điện âm nên $e$ trong công thức phải lấy giá trị âm.",
+     "answer": false
+    }
+   ],
+   "explanation": "$S$ là tiết diện (m²), $n$ là mật độ hạt tải (số hạt trong mỗi m³), $v$ là tốc độ trôi trung bình, $e$ là độ lớn điện tích $1{,}6\\cdot10^{-19}$ C; công thức dùng độ lớn.",
+   "distractorNotes": {
+    "0": "Bài nêu rõ $S$ là diện tích tiết diện dây, đơn vị m², nên phát biểu không thể coi là sai.",
+    "1": "$n$ là mật độ hạt tải, số hạt trong mỗi mét khối, không phải số hạt qua tiết diện mỗi giây.",
+    "2": "$v$ trong công thức đúng là tốc độ trôi trung bình có hướng, không phải tốc độ chuyển động nhiệt.",
+    "3": "Công thức dùng độ lớn điện tích; electron trôi ngược chiều $I$ nhưng $e$ vẫn lấy giá trị dương."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sạc điện thoại bằng dòng điện không đổi $I = 1{,}50$ A, đồng hồ USB ghi điện lượng sạc vào theo thời gian, cứ mỗi 10 phút thêm 250 mAh. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Điện lượng sạc vào tỉ lệ thuận với thời gian sạc.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị $\\Delta q$ theo $\\Delta t$ là đường thẳng qua gốc tọa độ, độ dốc bằng $I$.",
+     "answer": true
+    },
+    {
+     "text": "Thời gian sạc tăng gấp đôi thì điện lượng sạc vào tăng gấp bốn.",
+     "answer": false
+    },
+    {
+     "text": "mAh là đơn vị đo cường độ dòng điện.",
+     "answer": false
+    }
+   ],
+   "explanation": "Với dòng không đổi, $\\Delta q = I\\,\\Delta t$ nên $\\Delta q$ tỉ lệ thuận với $\\Delta t$, đồ thị là đường thẳng qua gốc có độ dốc $I$. mAh là đơn vị điện lượng, $1$ mAh $= 3{,}6$ C.",
+   "distractorNotes": {
+    "0": "$I$ không đổi nên $\\Delta q = I\\,\\Delta t$ tỉ lệ bậc nhất với thời gian, không thể coi là sai.",
+    "1": "Hàm $\\Delta q = I\\,\\Delta t$ là đường thẳng qua gốc với hệ số góc chính là $I$, phát biểu đúng.",
+    "2": "$\\Delta q$ tỉ lệ bậc nhất với $\\Delta t$, không có bình phương, nên thời gian gấp đôi thì chỉ gấp đôi.",
+    "3": "mAh là tích cường độ với thời gian, tức đơn vị điện lượng, không phải đơn vị cường độ."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Định nghĩa cường độ dòng điện và mật độ dòng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mật độ dòng điện trong dây dẫn được định nghĩa $j = \\dfrac{I}{S}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Từ $I = Snve$ suy ra $j = nve$.",
+     "answer": true
+    },
+    {
+     "text": "Mật độ dòng điện $j$ và mật độ hạt tải $n$ là cùng một đại lượng.",
+     "answer": false
+    },
+    {
+     "text": "Cùng cường độ $I$, dây có tiết diện nhỏ hơn thì mật độ dòng điện lớn hơn.",
+     "answer": true
+    },
+    {
+     "text": "Cùng cường độ $I$, tiết diện dây tăng gấp đôi thì mật độ dòng điện tăng gấp đôi.",
+     "answer": false
+    }
+   ],
+   "explanation": "Chia $I = Snve$ cho $S$ được $j = nve$ (A/m²), khác $n$ (m⁻³). Cùng $I$ thì $j$ tỉ lệ nghịch với $S$: dây nhỏ có $j$ lớn, $S$ gấp đôi thì $j$ giảm một nửa.",
+   "distractorNotes": {
+    "0": "Chia hai vế $I = Snve$ cho $S$ cho ngay $j = nve$, nên phát biểu không thể coi là sai.",
+    "1": "$j$ đo bằng A/m² còn $n$ đo bằng m$^{-3}$, đây là hai đại lượng khác nhau.",
+    "2": "$S$ nằm ở mẫu của $j = I/S$, nên cùng $I$ thì dây nhỏ có $j$ lớn hơn.",
+    "3": "$S$ ở mẫu của $j = I/S$ nên tăng tiết diện làm $j$ giảm, không tăng."
+   }
   }
  ]
 }

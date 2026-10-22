@@ -1,0 +1,2539 @@
+[
+ {
+  "key": "c5-1-mc-001",
+  "src": "c5-1",
+  "num": 1,
+  "gocLoiGiai": "Ta có $p=mv,$ trong hệ SI khối lượng có đơn vị kg, vận tốc có đơn vị m/s nên động lượng có đơn vị kg.m/s.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Đơn vị của động lượng trong hệ SI là</p>",
+  "options": [
+   "kg.m.s$^{2}$.",
+   "Kg.m.s.",
+   "Kg.m/s.",
+   "Kg/m.s."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-002",
+  "src": "c5-1",
+  "num": 2,
+  "gocLoiGiai": "$v_{1}$ Vận tốc của quả bóng đập vào tường.\n$v_{2}$ Vận tốc của quả bóng bật trở lại.\n$\\Delta p=p_{2}-p_{1}=mv_{2}-mv_{1}$(*)\nChiếu (*) theo chiều dương cùng chiều chuyển động ban đầu của vật\n$\\Rightarrow\\Delta p=m\\left( -v_{2} \\right)-mv_{1}= -2mv_{1}= -2mv$$\\left( v_{1} \\right)=v_{2}=v.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một quả bóng khối lượng m đang bay ngang với vận tốc v thì đập vào bức tường và bật trở lại với cùng một vận tốc. Nếu chiều dương là chiều bay vào tường của quả bóng thì độ biến thiên động lượng của quả bóng là</p>",
+  "options": [
+   "mv.",
+   "- mv.",
+   "2mv.",
+   "- 2mv."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-003",
+  "src": "c5-1",
+  "num": 3,
+  "gocLoiGiai": "Do$\\Delta\\overset{\\rightarrow}{p}=\\overset{\\rightarrow}{F}\\Delta t$ nên ngoài đơn vị kg.m/s động lượng còn có đơn vị theo xung lượng của lực là N.s.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Động lượng còn được tính bằng đơn vị nào sau đây?</p>",
+  "options": [
+   "N/s.",
+   "N.s.",
+   "N.m.",
+   "N.m/s."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-004",
+  "src": "c5-1",
+  "num": 4,
+  "gocLoiGiai": "Ta có $p=mv$ do $m>0$ nên $p\\uparrow \\uparrow v$ hay động lượng là một vecto cùng hướng với vận tốc",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Khi nói về động lượng của một vật, phát biểu nào sau đây <strong>sai</strong>?</p>",
+  "options": [
+   "Động lượng là một đại lượng véctơ.",
+   "Động lượng được tính bằng tích khối lượng m và vận tốc $v$ của vật.",
+   "Động lượng luôn cùng hướng với vận tốc vì vận tốc luôn luôn dương.",
+   "Động lượng luôn cùng hướng với vận tốc vì khối lượng $m$ luôn luôn dương."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-005",
+  "src": "c5-1",
+  "num": 5,
+  "gocLoiGiai": "Biểu thức định luật II Newton $\\overset{\\rightarrow}{F}=ma=m\\frac{\\Delta v}{\\Delta t}.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Biểu thức của định luật II Newton còn được viết dưới dạng nào sau đây?</p>",
+  "options": [
+   "$\\overset{\\rightarrow}{F}=m\\overset{\\rightarrow}{\\frac{\\Delta\\overset{\\rightarrow}{v}}{\\Delta t}}.$",
+   "$\\overset{\\rightarrow}{F}=m\\frac{\\Delta v}{\\Delta t}.$",
+   "$\\overset{\\rightarrow}{F}=\\overset{\\rightarrow}{\\frac{\\Delta\\overset{\\rightarrow}{v}}{\\Delta t}}.$",
+   "$\\overset{\\rightarrow}{F}=m\\frac{\\Delta\\overset{\\rightarrow}{v}}{\\Delta t}.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-006",
+  "src": "c5-1",
+  "num": 6,
+  "gocLoiGiai": "![](c5/media/media/image137.png){width=\"2.555533683289589in\" height=\"1.5307688101487313in\"}\nGia tốc chuyển động trượt không ma sát mặt phẳng nghiêng\n$sin\\alpha = \\frac{F_{t}}{P}\\Leftrightarrowma = mgsin\\alpha\\Rightarrow a = gsin\\alpha.$\nVới $v_{0} = 0$ ta có $ p = mv = m\\left( v_{0} \\right)+at = mgtsin\\alpha.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một chất điểm m bắt đầu trượt không ma sát từ trên mặt phẳng nghiêng xuống. Gọi $\\alpha$ là góc của mặt phẳng nghiêng so với mặt phẳng nằm ngang. Động lượng chất điểm ở thời điểm t là</p>",
+  "options": [
+   "$p = mgtsin\\alpha.$",
+   "$p = mgt.$",
+   "$p = mgtcos\\alpha.$",
+   "$p = gtsin\\alpha.$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-007",
+  "src": "c5-1",
+  "num": 7,
+  "gocLoiGiai": "Theo định luật II Newton $ma = F\\Leftrightarrowm\\left( \\frac{v}{-}v_{0} \\right)\\Delta t=F$\nMà $v_{0} = 0\\Rightarrow mv=p = F\\Delta t.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho chất điểm m chuyển động không vận tốc đầu chỉ dưới tác dụng của lực $\\overset{\\rightarrow}{F}$ không đổi. Động lượng chất điểm ở thời điểm t là</p>",
+  "options": [
+   "$p = \\overset{\\rightarrow}{F}m\\Delta t.$",
+   "$p = \\overset{\\rightarrow}{F}\\Delta t.$",
+   "$p = \\frac{F}{\\Delta}tm.$",
+   "$p = \\overset{\\rightarrow}{F}m.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-008",
+  "src": "c5-1",
+  "num": 8,
+  "gocLoiGiai": "Động lượng toàn phần của hệ$p=p_{1}+p_{2}+p_{3}+....\\Leftrightarrowp=m_{1}v_{1}+m_{2}v_{2}+...$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Động lượng toàn phần của hệ được tính bằng biểu thức</p>",
+  "options": [
+   "$p=p_{1}+p_{2}+....$",
+   "$p=\\left( m_{1} \\right)+m_{2}+..v.$",
+   "$p=\\left( m_{1} \\right)+m_{2}+ \\ldotsv.$",
+   "$p=m_{1}v_{1}+m_{2}v_{2}+ \\ldots.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-009",
+  "src": "c5-1",
+  "num": 9,
+  "gocLoiGiai": "Ta có động lượng của hệ là $p = p_{1} + p_{2}$, nên độ lớn động lượng của hệ là $ p=\\sqrt{p_{1}^{2}}+p_{2}^{2}+2p_{1}p_{2}cos\\alpha$ với $\\alpha=\\left( p \\right)_{1};p_{2}.$ Khi $ v_{1}\\botv_{2}$thì $ p_{1}\\botp_{2}$ nên $ cos\\alpha=0$và $ p=\\sqrt{p_{1}^{2}}+p_{2}^{2}$.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Biểu thức $p = \\sqrt{p_{1}^{2}} + p_{2}^{2}$ là biểu thức tính độ lớn tổng động lượng của hệ trong trường hợp hai véctơ vận tốc</p>",
+  "options": [
+   "cùng hướng.",
+   "cùng phương ngược chiều.",
+   "vuông góc với nhau.",
+   "hợp với nhau một góc 60$^{0}$."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-010",
+  "src": "c5-1",
+  "num": 10,
+  "gocLoiGiai": "Hai viên bi chuyển động trên mặt phẳng nằm ngang, có thể còn chịu tác dụng của ngoại lực như ma sát.\nHai viên bi chuyển động trên mặt phẳng nghiêng, trọng lực và phản lực của mặt nghiêng không triệt tiêu.\nHai viên bi rơi thẳng đứng trong không khí, chịu tác dụng của trọng lực.\nHai viên bi chuyển động không ma sát trên mặt phẳng nằm ngang, trọng lực và phản lực của mặt ngang triệt tiêu, không ma sát. Vậy ngoại lực triệt tiêu, hệ hai viên bi chuyển động không ma sát trên mặt phẳng nằm ngang là hệ kín.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trường hợp nào sau đây là hệ kín (hệ cô lập)?</p>",
+  "options": [
+   "Hai viên bi chuyển động trên mặt phẳng nằm ngang",
+   "Hai viên bi chuyển động trên mặt phẳng nghiêng",
+   "Hai viên bi rơi thẳng đứng trong không khí",
+   "Hai viên bi chuyển động không ma sát trên mặt phẳng nằm ngang"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-011",
+  "src": "c5-1",
+  "num": 11,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một ô tô A có khối lượng m đang chuyển động với vận tốc $v_{1}$ đuổi theo một ô tô B có khối lượng $m_{2}$ chuyển động với vận tốc $ v_{2}$. Động lượng của xe A đối với hệ quy chiếu gắn với xe B là</p>",
+  "options": [
+   "${\\overset{\\rightarrow}{p}}_{AB}=m\\left( v \\right)_{1}-v_{2}.$",
+   "${\\overset{\\rightarrow}{p}}_{AB}= -m\\left( v \\right)_{1}-v_{2}.$",
+   "${\\overset{\\rightarrow}{p}}_{AB}=m\\left( v \\right)_{1}+v_{2}.$",
+   "${\\overset{\\rightarrow}{p}}_{AB}= -m\\left( v \\right)_{1}+v_{2}.$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-013",
+  "src": "c5-1",
+  "num": 13,
+  "gocLoiGiai": "Động lượng của một hệ kín (hệ cô lập) được bảo toàn.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Khi nói về động lượng, phát biểu nào sau đây <strong>sai</strong>?</p>",
+  "options": [
+   "Động lượng của mỗi vật trong hệ kín có thể thay đổi.",
+   "Động lượng của vật là đại lượng véctơ.",
+   "Động lượng của một vật có độ lớn bằng tích khối lượng và vận tốc của vật.",
+   "Động lượng của một hệ kín luôn luôn thay đổi."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-014",
+  "src": "c5-1",
+  "num": 14,
+  "gocLoiGiai": "Hệ cân bằng khi đứng yên hoặc chuyển động thẳng đều.\nKhi đứng yên $v=0\\Rightarrow p=0.$\nKhi chuyển động thẳng đều thì $v$ không đổi và $ v\\neq0.$ Do đó có thể tồn tại $ p=mv\\neq0.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây<strong>sai</strong> khi nói về động lượng?</p>",
+  "options": [
+   "Động lượng của vật là đại lượng véctơ.",
+   "Độ biến thiên động lượng của vật trong một khoảng thời gian ngắn bằng xung của lực tác dụng lên vật trong khoảng thời gian đó.",
+   "Khi vật ở trạng thái cân bằng thì động lượng của vật luôn bằng không.",
+   "Véctơ động lượng cùng hướng với véctơ vận tốc."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-016",
+  "src": "c5-1",
+  "num": 16,
+  "gocLoiGiai": "Ta có $\\overset{\\rightarrow}{p}=m\\overset{\\rightarrow}{v}$ trong chuyển động thẳng đều vận tốc không đổi về cả hướng và độ lớn nên động lượng không đổi về cả hướng và độ lớn.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Độlớn động lượng của vật <strong>không</strong> thay đổi là chuyển động</p>",
+  "options": [
+   "đều.",
+   "tròn.",
+   "thẳng biến đổi đều.",
+   "rơi tự do."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-017",
+  "src": "c5-1",
+  "num": 17,
+  "gocLoiGiai": "Động lượng là một vectơ cùng hướng với vectơvận tốc của vật.Trong chuyển động tròn đều vectơ$\\overset{\\rightarrow}{v}$ thay đổi hướng liên tục mà không thay đổi về độ lớn $\\rightarrow$ động lượng trong chuyển động tròn đều thay đổi về hướng nhưng khôngthay đổi về độ lớn.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Chuyển động của chất điểm mà hướng của vectơ động lượng thay đổi nhưng độ lớn không thay đổi là</p>",
+  "options": [
+   "chuyển động thẳng đều.",
+   "chuyển động tròn đều.",
+   "chuyển động tịnh tiến.",
+   "chuyển động rơi tự do."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-021",
+  "src": "c5-1",
+  "num": 21,
+  "gocLoiGiai": "Động lượng của hệ $p_{1} + p_{2} = m_{1}v_{1}+m_{2}v_{2}$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hai vật có khối lượng $m_{1},$$m_{2}$ chuyển động với vận tốc ${\\overset{\\rightarrow}{v}}_{1}$ và ${\\overset{\\rightarrow}{v}}_{2}.$ Động lượng của hệ có giá trị</p>",
+  "options": [
+   "$m\\overset{\\rightarrow}{v}.$",
+   "$m_{1}v_{1}+m_{2}v_{2}.$",
+   "0.",
+   "$m_{1}v_{1}+m_{2}v_{2}.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-022",
+  "src": "c5-1",
+  "num": 22,
+  "gocLoiGiai": "Ta có $p' = m'v' = 2m.2v = 4mv = 4p.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Khi khối lượng và vận tốc của vật tăng gấp đôi thìđộng lượng của vật</p>",
+  "options": [
+   "tăng gấp bốn lần.",
+   "tăng gấp đôi.",
+   "không thay đổi.",
+   "giảm đi hai lần."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-023",
+  "src": "c5-1",
+  "num": 23,
+  "gocLoiGiai": "Tổng động lượng của hệ $\\overset{\\rightarrow}{p}={\\overset{\\rightarrow}{p}}_{1}+{\\overset{\\rightarrow}{p}}_{2}=m{\\overset{\\rightarrow}{v}}_{1}+m{\\overset{\\rightarrow}{v}}_{2}=m({\\overset{\\rightarrow}{v}}_{1}+{\\overset{\\rightarrow}{v}}_{2})$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hai vật có cùng khối lượng m, chuyển động với vận tốc có độ lớn bằng nhau. Hệ thức tính động lượng của hệ hai vật là</p>",
+  "options": [
+   "$\\overset{\\rightarrow}{p}=2m{\\overset{\\rightarrow}{v}}_{1}.$",
+   "$\\overset{\\rightarrow}{p}=2m{\\overset{\\rightarrow}{v}}_{2}.$",
+   "$\\overset{\\rightarrow}{p}=m\\left( {\\overset{\\rightarrow}{v}}_{1} \\right)+{\\overset{\\rightarrow}{v}}_{2}.$",
+   "$p=m\\left( v_{1} \\right)+v_{2}.$"
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-024",
+  "src": "c5-1",
+  "num": 24,
+  "gocLoiGiai": "Khi vật chuyển động thẳng đều thì vận tốc của vật không thay đổi $v=const,$$\\overset{\\rightarrow}{p}=m\\overset{\\rightarrow}{v}\\Rightarrow\\overset{\\rightarrow}{p}$ không đổi.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Khi nói về chuyển động thẳng đều, phát biểu nào sau đây là <strong>sai</strong>?</p>",
+  "options": [
+   "Động lượng của vật không thay đổi.",
+   "Xung của lực bằng không.",
+   "Độ biến thiên động lượng bằng không.",
+   "Động lượng của vật luôn thay đổi."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-025",
+  "src": "c5-1",
+  "num": 25,
+  "gocLoiGiai": "$v=7,2\\frac{km}{h}=2\\frac{m}{s}$\nĐộng lượng của vật $p=m.v=2 \\frac{kg.m}{s}.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật có $m=1 kg$ đang chuyển động với vận tốc $v=7,2 \\frac{km}{h}$ thì độ lớn động lượng là</p>",
+  "options": [
+   "$2\\frac{kg.m}{s}.$",
+   "$7,2\\frac{kg.m}{s}.$",
+   "$4\\frac{kg.m}{s}.$",
+   "$\\frac{14,4 kg.m}{s}.$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-026",
+  "src": "c5-1",
+  "num": 26,
+  "gocLoiGiai": "$m=160$ tấn =$160.10^{3}kg$, $ v=870\\frac{km}{h}=\\frac{725}{3} \\frac{m}{s}$.\nĐộng lượng của vật $p=m.v=38,7.10^{6}\\frac{kg.m}{s}.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một máy bay có khối lượng $160$ tấn, bay với vận tốc$870\\frac{km}{h}.$ Độ lớn động lượng của máy bay có giá trị gần <strong>đúng</strong> bằng</p>",
+  "options": [
+   "$1,4.10^{5}\\frac{kg.m}{s}.$",
+   "$5,3.10^{6}\\frac{kg.m}{s}.$",
+   "$45,5.10^{7}\\frac{kg.m}{s}.$",
+   "$38,7.10^{6}\\frac{kg.m}{s}.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-027",
+  "src": "c5-1",
+  "num": 27,
+  "gocLoiGiai": "Ta có $p=mv\\Rightarrow v=\\frac{p}{m}=\\frac{6}{2}=3 \\frac{m}{s}.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng $m =2 kg,$ có động lượng $6 kgm/s,$ vật đang chuyển động với vận tốc có độ lớn bằng</p>",
+  "options": [
+   "$3 \\frac{m}{s}.$",
+   "$12 \\frac{m}{s}.$",
+   "$8 \\frac{m}{s}.$",
+   "$4 \\frac{m}{s}.$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-028",
+  "src": "c5-1",
+  "num": 28,
+  "gocLoiGiai": "Ta có $\\frac{p}{P}=\\frac{mv}{mg}=\\frac{v}{g}\\Rightarrow v=\\frac{p}{P}g=\\frac{1}{1}.10=10 \\frac{m}{s}.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật trọng lượng $1 N$ có động lượng $1 kgm/s.$ Lấy $ g = 10 \\frac{m}{s^{2}},$khi đó vận tốc của vật có độ lớn bằng</p>",
+  "options": [
+   "$1 \\frac{m}{s}.$",
+   "$10 \\frac{m}{s}.$",
+   "$5 \\frac{m}{s}.$",
+   "$15 \\frac{m}{s}.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-029",
+  "src": "c5-1",
+  "num": 29,
+  "gocLoiGiai": "Xung lượng của lực là$F.\\Delta t = 20.0,015 = 0,3 kg.m/s$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một lực $20 N$ tác dụng vào một vật có khối lượng $ m = 400 gram$ đang nằm yên, thời gian tác dụng $0,015 s.$ Xung lượng tác dụng trong khoảng thời gian đó là</p>",
+  "options": [
+   "$0,3 kg.m/s.$",
+   "$1,2 kg.m/s.$",
+   "$120 kg.m/s.$",
+   "$0,75 kg.m/s.$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-030",
+  "src": "c5-1",
+  "num": 30,
+  "gocLoiGiai": "Độ biến thiên động lượng của vậtlà$\\Delta p = F.\\Delta t = P.\\Delta t\\$$\\Rightarrow \\Delta p=m.g.\\Delta t=0,2.10.4=8kg.m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật nhỏ có khối lượng $m = 200 gram$ đang rơi tự do. Lấy $ g = 10 \\frac{m}{s^{2}},$độ biến thiên động lượng của vật từ giây thứ hai đến giây thứ sáu kể từ lúc bắt đầu rơi là</p>",
+  "options": [
+   "$0,8 kg.m/s.$",
+   "$8 kg.m/s.$",
+   "$80 kg.m/s.$",
+   "$800 kg.m/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-031",
+  "src": "c5-1",
+  "num": 31,
+  "gocLoiGiai": "Gia tốc của vật $a=\\frac{\\Delta v}{\\Delta t}=\\frac{v_{2}}{-}v_{1}\\Delta t_{1}=\\frac{7-3}{4}=1 m/s^{2}.$\nVận tốc sau 3 giây $v_{3}=v_{2}+a\\Delta t_{2}=7+1.3=10 m/s.$\nĐộng lượng của vật lúc sau $p=mv_{3}=2.10=20 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật nhỏ khối lượng $m=2 kg$ trượt xuống một đường dốc thẳng nhẵn tại một thời điểm xác định có vận tốc $3 m/s,$ sau đócó vận tốc $7 \\frac{m}{s},$ tiếp ngay sau đó $3 s$ vật có độ lớn động lượng(tính bằng đơn vị $ kg.m/s)$bằng</p>",
+  "options": [
+   "$6.$",
+   "$10.$",
+   "$20.$",
+   "$28.$"
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-032",
+  "src": "c5-1",
+  "num": 32,
+  "gocLoiGiai": "Xung lượng của lực bằng độ biến thiên động lượng của viên đạn\n$F.\\Delta t=\\Delta p\\Rightarrow F=\\frac{\\Delta p}{\\Delta t}=\\frac{mv-m.v_{0}}{\\Delta t}=\\frac{25.10^{-3}}{.}8002,5.10^{-3}=8000 N.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một khẩu súng có viên đạn khối lượng $m=25 gram,$ nằm yên trong súng. Khi bóp cò, đạn chuyển động trong nòng súng hết $2,5.10^{-3}s$ và đạt được vận tốc khi tới đầu nòng súng là $800 m/s.$ Lực đẩy trung bình của hơi thuốc súng là</p>",
+  "options": [
+   "$8 N.$",
+   "$80 N.$",
+   "$800 N.$",
+   "$8000 N.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-033",
+  "src": "c5-1",
+  "num": 33,
+  "gocLoiGiai": "Do $v_{1}\\uparrow \\downarrow v_{2}$ nên độ lớn động lượng của hệ $p=\\left| p_{1} \\right|-p_{2}=\\left| m_{2} \\right|v_{2}-m_{1}v_{1} = \\left| 0,3.2-0,2.3 \\right| = 0 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một hệ gồm hai vật có khối lượng $m_{1}=200 gram,$$m_{2}=300 gram$ có vận tốc $ v_{1} = 3 m/s,$$v_{2}=2 m/s,$. Biết vận tốc của chúng cùng phương, ngược chiều. Độ lớn động lượng của hệ là</p>",
+  "options": [
+   "$1,2 kg.m/s.$",
+   "$0.$",
+   "$120 kg.m/s.$",
+   "$60\\sqrt{2} kg.m/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-034",
+  "src": "c5-1",
+  "num": 34,
+  "gocLoiGiai": "Do $v_{1}\\botv_{2}$ nên độ lớn động lượng của hệ\n\n$p=\\sqrt{p_{1}^{2}}+p_{2}^{2}={\\sqrt{\\left( m_{1} \\right)v_{1}}}^{2} + \\left( m_{2} \\right){v_{2}}^{2} = {\\sqrt{(1.3)}}^{2} + (4.1)^{2} = 5 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một hệ gồm hai vật có khối lượng $m_{1}=1 kg,$ $ m_{2}=4 kg$ có vận tốc $ v_{1}=3 m/s,$$v_{2} = 1 m/s.$. Biết vận tốc của chúng vuông góc với nhau. Độ lớn động lượng của hệ là</p>",
+  "options": [
+   "$1 kg.m/s.$",
+   "$5 kg.m/s.$",
+   "$7 kg.m/s.$",
+   "$4 kg.m/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-035",
+  "src": "c5-1",
+  "num": 35,
+  "gocLoiGiai": "Động lượng chất điểm ở thời điểm $t=3 s$ kể từ lúc bắt đầu chuyển động là\n$\\Delta p=F.t \\Leftrightarrow p-p_{o}=F.t \\Rightarrow p=F.t=300 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một chất điểm chuyển động không vận tốc đầu dưới tác dụng của lực $F=10^{2}N.$ Động lượng chất điểm ở thời điểm $t=3 s$ kể từ lúc bắt đầu chuyển động là</p>",
+  "options": [
+   "400 kg.m/s.",
+   "200 kg.m/s.",
+   "100 kg.m/s.",
+   "300 kg.m/s."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-036",
+  "src": "c5-1",
+  "num": 36,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của toa xe.\nTa có $F.\\Delta t= \\Delta p=p_{2}-p_{1}=m\\left( v \\right)_{2}-v_{1}$(*)\nDo xe dừng lại nên $v_{2}=0$\nChiếu phương trình (*) lên chiều dương thì ta có $F.\\Delta t= -m.v_{1}\\Rightarrow F= -1500 N.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một toa xe có khối lượng 10 tấn đang chuyển động trên đường ray nằm ngang với tốc độ $54 km/h.$ Người ta tác dụng lên toa xe một lực hãm theo phương ngang. Nếu toa xe dừng lại sau 1 phút 40 giây thì độ lớn trung bình của lực hãm là</p>",
+  "options": [
+   "1200 N.",
+   "1800 N.",
+   "1600 N.",
+   "1500 N."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-1-mc-037",
+  "src": "c5-1",
+  "num": 37,
+  "gocLoiGiai": "Độ biến thiên động lượng ta có $\\Delta p = m.\\left( v-v_{0} \\right)=46.10^{-3}.\\left( 70-0 \\right)=3,22 kg.m/s.$\nÁp dụng công thức xung lượng của lực $F.\\Delta t = \\Delta p \\Rightarrow F = \\frac{\\Delta p}{\\Delta t}=\\frac{3,22}{0,5.10^{-3}}=6440 N.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một quả bóng gôn có khối lượng $46 gram$ đang nằm yên. Sau một cú đánh, quả bóng bay lên với độ lớn vận tốc $70 m/s.$ Biết thời gian tác dụng là $0,5.10^{- 3} s.$ Độ lớn xung lượng của lực tác dụng và độ lớn trung bình của lực tác dụng lần lượt là</p>",
+  "options": [
+   "$2,6 kg.m/s$ và $6300 N.$",
+   "$6 kg.m/s$ và $- 600 N.$",
+   "$3,22 kg.m/s$ và $6440 N.$",
+   "$3,8 kg.m/s$ và $- 800 N.$"
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-038",
+  "src": "c5-1",
+  "num": 38,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của quả bóng trước khi chạm vào tường\nĐộ biến thiên động lượng $\\Delta p=p_{2}-p_{1}$ chiếu lên chiều dương ta được\n$\\Delta p= -mv_{2}-mv_{1}= -3 kg.m/s.$\nMặt khác $\\left| \\Delta p \\right|=\\left| F \\right|.\\Delta t$ suy ra $ F=60 N.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một quả bóng có khối lượng $0,1 kg$ bay với tốc độ $20 m/s$ đến đập vuông góc với một bức tường rồi bị bật trở lại theo phương cũ với tốc độ $10 m/s.$ Khoảng thời gian va chạm bằng $0,05 s.$ Coi lực này là không đổi trong suốt thời gian tác dụng. Độ lớn lực của tường tác dụng lên quá bóng là</p>",
+  "options": [
+   "$80 N.$",
+   "$200 N.$",
+   "$60 N.$",
+   "$90 N.$"
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-039",
+  "src": "c5-1",
+  "num": 39,
+  "gocLoiGiai": "Vận tốc của vật lúc bắt đầu rơi là $v_{1}= 0$ nên động lượng $ p_{1}= mv_{1}= 0.$\nVận tốc của vật sau khi rơi được 0,5 s là $v_{1}= g.t=10.0,5=5 m/s.$\nNên động lượng lúc đó là $p_{2}= mv_{2}= 1.5=5 kgm/s.$\nDo đó độ biến thiên động lượng là $\\Delta p=p_{2}- p_{1}= 5-0=5 kgm/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng $1 kg$ rơi tự do xuống đất trong khoảng thời gian $0,5 s.$ Lấy $ g=10 m/s^{2}.$Độ biến thiên động lượng của vật trong khoảng thời gian đó bằng</p>",
+  "options": [
+   "$6 kg.\\frac{m}{s.}$",
+   "$5 kg.\\frac{m}{s.}$",
+   "$4 kg.\\frac{m}{s.}$",
+   "$3 kg.\\frac{m}{s.}$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-040",
+  "src": "c5-1",
+  "num": 40,
+  "gocLoiGiai": "Đổi $m=300 gram =0,3 kg.$\nGọi vận tốc của bóng trước khi chạm tường là.\nTa có\n$v_{1}= 5 m/s\\Rightarrow p_{1}=mv_{1}=0,3.5=1,5 kg.\\frac{m}{s.}$\nDo bóng bật ngược lại với cùng tốc độ nên có vận tốc $v_{2}= -v_{1}\\Rightarrow v_{2}= -v_{1}= -5 m/s$\nĐộng lượng của vật khi bật lại là $p_{2}= mv_{2}= 0,3.\\left( -5 \\right)= -1,5 kg.\\frac{m}{s.}$\nĐộ biến thiên động lượng của bóng $\\Delta p=p_{2}-p_{1}= -1,5-1,5= -3 kg.\\frac{m}{s.}$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một quả bóng có khối lượng $m=300 gram$ va chạm vào tường và nảy trở lại với cùng tốc độ. Vận tốc bóng trước va chạm là $5 \\frac{m}{s.}$ Chọn chiều dương là chiều của quả bóng bay vào tường. Độ biến thiên động lượng của bóng bằng</p>",
+  "options": [
+   "$3 kg.\\frac{m}{s.}$",
+   "$-3 kg.\\frac{m}{s.}$",
+   "$1,5 kg.\\frac{m}{s.}$",
+   "$-1,5 kg.\\frac{m}{s.}$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-041",
+  "src": "c5-1",
+  "num": 41,
+  "gocLoiGiai": "Động lượng của vật $\\mathit{p}\\mathbf{=}\\mathit{mv}\\mathbf{\\Rightarrow}\\left\\{ \\begin{array}{r}\n\\mathit{p}_{1} \\\\\n\\mathbf{=}\\mathit{m}_{1} \\\\\n\\mathit{v}_{1}\n\\end{array} \\right\\}\\mathit{p}_{2}\\mathbf{=}\\mathit{m}_{2}\\mathit{v}_{2}\\mathbf{\\Rightarrow}\\frac{\\mathit{p}_{1}}{\\mathit{p}_{2}}\\mathbf{=}\\frac{\\mathit{m}_{1}}{\\mathit{v}}_{1}\\mathit{m}_{2}\\mathit{v}_{2}\\mathbf{=}\\frac{2\\mathit{m}_{2}}{.}\\frac{\\mathit{v}_{2}}{2}\\mathit{m}_{2}\\mathit{v}_{2}\\mathbf{=}1$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Xethứ nhất có khối lượng $m_{1}$ chuyển động với vận tốc$ v_{1}$ thì động lượng thu được là $ p_{1},$ xe thứ hai có khối lượng $\\frac{m_{1}}{2}$ chuyển động với vận tốc$2v_{1}$ thì động lượng thu được là $ p_{2}.$ Mối quan hệ giữa $ p_{1}$ và $ p_{2}$ là</p>",
+  "options": [
+   "$\\frac{p_{1}}{p_{2}}$= 1.",
+   "$\\frac{p_{1}}{p_{2}}$= 2.",
+   "$\\frac{p_{1}}{p_{2}}$= 4.",
+   "$\\frac{p_{1}}{p_{2}}$= $\\frac{1}{2}.$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-042",
+  "src": "c5-1",
+  "num": 42,
+  "gocLoiGiai": "Lực gây ra biến thiên động lượng là $F$, độ biến thiên động lượng\n$\\Delta p=F.\\Delta t=80.2=160 kg.m/s.$\nMặt khác $\\Delta p=m.\\Delta v\\Rightarrow\\Delta v=\\frac{\\Delta p}{m}=\\frac{160}{10}=16 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một chiếc xe khối lượng 10 kg đang đỗ trên mặt sàn phẳng nhẵn nằm ngang. Tác dụng lên xe một lực đẩy 80 N theo phương ngang để xe chuyển động về phía trước trong khoảng thời gian 2 s, thì độ biến thiên vận tốc của xe trong khoảng thời gian này có độ lớn bằng</p>",
+  "options": [
+   "1,6 m/s.",
+   "0,16 m/s.",
+   "16 m/s.",
+   "160 m/s."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-043",
+  "src": "c5-1",
+  "num": 43,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của vật\nTa có độ biến thiên động lượng $p_{2}-p_{1}=F.\\Delta t\\Rightarrow mv_{2}-mv_{1}=F.\\Delta t$\n$\\Rightarrow mv_{2}-mv_{1}=F.\\Delta t$\n$\\Rightarrow0,1.v_{2}-0,1.0=50.0,01\\Rightarrow v_{2} = 5 m/s$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một lực 50 N tác dụng vào vật khối lượng 0,1 kg ban đầu nằm yên, thời gian tác dụng là 0,01 s. Tốc độ của vật bằng</p>",
+  "options": [
+   "5 m/s.",
+   "4 m/s.",
+   "50 m/s.",
+   "40 m/s."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-044",
+  "src": "c5-1",
+  "num": 44,
+  "gocLoiGiai": "Xung lượng của lực tác dụng lên vật bằng độ biến thiên động lượng của vật\n$F.\\Delta t=p_{2}-p_{1}=20.2000-10.2000=20.000 N.s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong khoảng thời gian 30 s, ôtô có khối lượng 2 tấn tăng tốc từ 36 km/h lên 72 km/h. Xung lượng của hợp lực của tất cả các lực tác dụng lên ôtô trong khoảng thời gian này là</p>",
+  "options": [
+   "20.000 N.s.",
+   "20 N.s.",
+   "72 N.s.",
+   "72.000N.s."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-mc-045",
+  "src": "c5-1",
+  "num": 45,
+  "gocLoiGiai": "Phương trình tổng quát của chuyển động thẳng biến đổi đều$x = \\frac{1}{2}at^{2} + v_{0}t + x_{0}\\$\nĐồng nhất hệ số với phương trình $x = 2t^{2} + 2t – 5 (m, s)$ ta có$ a = 4 m/s^{2},$$v_{0} = 2 m/s.$\n$\\Rightarrow v = v_{0} + at = 2 + 4t$\n$t=1 s\\Rightarrow v=2+4.1=6 m/s.$\nĐộng lượng của vật lúc đó $p = mv = 1.6 =6 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng $m = 1 kg$ chuyển động thẳng với phương trình $x = 2t^{2} + 2t – 5$ với x tính bằng mét, t tính bằng giây. Chiều dương là chiều chuyển động. Động lượng của vật tại thời điểm $ t = 1 s$bằng</p>",
+  "options": [
+   "$12 kg.m/s.$",
+   "$6 kg.m/s.$",
+   "$8 kg.m/s.$",
+   "$4 kg.m/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-1-mc-046",
+  "src": "c5-1",
+  "num": 46,
+  "gocLoiGiai": "Phương trình tổng quát của chuyển động thẳng biến đổi đều$x = \\frac{1}{2}at^{2} + v_{0}t + x_{0}\\$\nĐồng nhất hệ số với phương trình$x = t^{2}– 4t + 3(m, s)$, ta có $ a = 2 m/s^{2}, v_{0} = -4 m/s.$\nĐộ biến thiên động lượng của vật $\\Delta p = F\\Delta t = ma\\Delta t = 3.2.(4 - 2) = 12 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng 3 kg chuyển động thẳng với phương trình $x = t^{2}– 4t + 3\\$ với x tính bằng mét, t tính bằng giây. Chiều dương là chiều chuyển động, độ biến thiên động lượng của vật từ thời điểm $t_{1} = 2 s$ đến thời điểm $t_{2} = 4 s$ là</p>",
+  "options": [
+   "0.",
+   "8 kg.m/s.",
+   "12 kg.m/s.",
+   "20 kg.m/s."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-1-mc-047",
+  "src": "c5-1",
+  "num": 47,
+  "gocLoiGiai": "Độ biến thiên động lượng của viên đạn $\\Delta p=p_{2}-p_{1}=m\\left( v \\right)_{2}-v_{2}$\nChiếu lên chiều dương đã chọn\n$\\Delta p=p_{2}–p_{1}=mv_{2}–mv_{1}=10.10^{-3}(400–1000)= -6 kg.m/s.$\nTừ công thức $F.\\Delta t= \\Delta p=p_{2}-p_{1}=m\\left( v \\right)_{2}-v_{2}$\nChiếu lên chiều chuyển động của đạn ta có $F=\\frac{m\\left( v_{2} \\right)-v_{1}}{}\\Delta t$$= -600 N.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một viên đạn có khối lượng $m=10 gram$ đang bay với tốc độ $v_{1}=1000 m/s$ thì gặp bức tường. Sau khi xuyên qua bức tường thì tốc độ viên đạn là $v_{2}=400 m/s.$ Biết quỹ đạo của viên đạn là thẳng và thời gian xuyên thủng tường là $0,01 s.$ Chọn chiều dương là chiều chuyển động của viên đạn. Độ biến thiên động lượng và lực cản trung bình của bức tường lên viên đạn lần lượt là</p>",
+  "options": [
+   "$-6 kg.m/s$ và $-600 N.$",
+   "$6 kgm/s$ và $600 N.$",
+   "$8 kg.m/s$ và $800 N.$",
+   "$-8 kgm/s$ và $-800 N.$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-1-tf-048",
+  "src": "c5-1",
+  "num": 1,
+  "gocLoiGiai": "a. Động lượng của vật 1 là $p_{1}=m_{1}v_{1}=1.3=3 kg.m/s.$\nb. Động lượng của vật 2 là $p_{2}=m_{2}v_{2}=2.2=4 kg.m/s.$\nc. Do động lượng của vật 1 nhỏ hơn động lượng của vật 2 nên vật 2 khó dừng lại hơn vật 1.\nd. Tỉ số động lượng vật thứ nhất so với vật thứ hai là $\\frac{p_{1}}{p_{2}}=\\frac{3}{4}.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hai vật có khối lượng lần lượt là $m_{1}$ = 1 kg và $m_{2}$ = 2 kg, chuyển động với vận tốc có độ lớn lần lượt là $v_{1}$ = 3 m/s và $v_{2}$ = 2 m/s.</p>",
+  "statements": [
+   {
+    "text": "Động lượng của vật 1 là 3 kg.m/s.",
+    "answer": true
+   },
+   {
+    "text": "Động lượng của vật 2 là 8 kg.m/s.",
+    "answer": false
+   },
+   {
+    "text": "Vật thứ hai khó dừng lại hơn vật thứ nhất do động lượng của vật thứ hai lớn hơn động lượng của vật thứ nhất.",
+    "answer": true
+   },
+   {
+    "text": "Tỉ số động lượng vật thứ nhất so với vật thứ hai là $\\frac{4}{3}.$",
+    "answer": false
+   }
+  ]
+ },
+ {
+  "key": "c5-1-tf-049",
+  "src": "c5-1",
+  "num": 2,
+  "gocLoiGiai": "Đổi 36 km/h = 10 m/s, 54 km/h = 15 m/s, 1,5 tấn = 1500 kg.\nGọi $m_{1}, {\\overset{\\rightarrow}{v}}_{1}, m_{2}, {\\overset{\\rightarrow}{v}}_{2}$ lần lượt là khối lượng và vận tốc của xe tải và ô tô.\nĐộng lượng của xe tải và ô tô lần lượt là $\\left\\{ \\begin{array}{r}\n{\\overset{\\rightarrow}{\\mathit{p}}}_{1} \\\\\n\\mathbf{=}\\mathit{m}_{1} \\\\\n{\\overset{\\rightarrow}{\\mathit{v}}}_{1}\n\\end{array} \\right\\}{\\overset{\\rightarrow}{\\mathit{p}}}_{2}\\mathbf{=}\\mathit{m}_{2}{\\overset{\\rightarrow}{\\mathit{v}}}_{2}$\na. Động lượng của xe tải có giá trị là $p_{1}=m_{1}v_{1}=1500.10=15000 kg.m/s.$\nb. Động lượng của xe ô tô có giá trị là $p_{2}=m_{2}v_{2}=750.\\left( -15 \\right)= -11250 kg.m/s.$\n\nc. Xe tải có độ lớn động lương lớn hơn xe ô tô, động lượng của hai xe cùng phương nhưng ngược chiều nhau.\n\nd. Tỉ số độ lớn động lượng của xe tải và xe ô tô là $\\frac{4}{3}.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một xe tải có khối lượng 1,5 tấn chuyển động với vận tốc 36 km/h và một ô tô có khối lượng 750 kg chuyển động ngược chiều với vận tốc 54 km/h. Chọn chiều dương là chiều chuyển động của xe tải.</p>",
+  "statements": [
+   {
+    "text": "Động lượng của xe tải có giá trị là 15000 k g . m / s .",
+    "answer": true
+   },
+   {
+    "text": "Động lượng của xe ô tô có giá trị là 11250 k g . m / s .",
+    "answer": false
+   },
+   {
+    "text": "Xe tải có độ lớn động lương lớn hơn xe ô tô, động lượng của hai xe cùng phương nhưng ngược chiều nhau.",
+    "answer": true
+   },
+   {
+    "text": "Tỉ số độ lớn động lượng của xe tải và xe ô tô là $\\frac{3}{4}.$",
+    "answer": false
+   }
+  ]
+ },
+ {
+  "key": "c5-1-tf-050",
+  "src": "c5-1",
+  "num": 3,
+  "gocLoiGiai": "a. Gia tốc chuyển động$a = \\frac{v - v_{0}}{t} = \\frac{7 - 3}{4} = 1 m/s^{2}.$\nb. Vận tốc vật tại thời điểm t = 3 s là $v' = v + at = 7 + 1.3 = 10 m/s.$\nc. Động lượng của vật p = mv = 1,5.10 = 15 kg.m/s.\nd. Ta có$v' = \\frac{p}{m}=\\frac{21}{1,5}=14 m/s$$\\Leftrightarrowv' = v+at\\Rightarrow t=\\frac{v'-v}{a}=\\frac{14-7}{1}=7s$\nVậy sau 7 giây thì động lượng của vật là 21 kg.m/s.",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật nhỏ có khối lượng $1,5 kg$ trượt nhanh dần đều xuống một đường dốc thẳng, nhẵn. Tại một thời điểm xác định vật có vận tốc $3 m/s,$ sau đó $4 s$ có vận tốc $7 m/s,$ tiếp ngay sau đó $3 s$ vật có động lượng là bao nhiêu?</p>",
+  "statements": [
+   {
+    "text": "Gia tốc chuyển động của vật là 1 m / s 2 .",
+    "answer": true
+   },
+   {
+    "text": "Vận tốc của vật lúc sau 3 s là 15 m / s .",
+    "answer": false
+   },
+   {
+    "text": "Động lượng của vật khi đó là 10 kg.m/s.",
+    "answer": false
+   },
+   {
+    "text": "Để động lượng của vật là 21 kg.m/s thì vật đi sau 7 s.",
+    "answer": true
+   }
+  ]
+ },
+ {
+  "key": "c5-1-tf-051",
+  "src": "c5-1",
+  "num": 4,
+  "gocLoiGiai": "a. Theo phương thẳng đứng Oy là chuyển động rơi tự do $v_{y} = gt = 10.1 = 10 m/s.$\nb. Theo phương ngang Ox là chuyển động thẳng đều $v_{x}=v_{0}=10\\sqrt{3} m/s.$\nVận tốc của vật có độ lớn $v_{t}=\\sqrt{v_{0}^{2}}+\\left( gt \\right)^{2}={\\sqrt{\\left( 10\\sqrt{3} \\right)}}^{2}+10^{2}=20 m/s.$\nc. Vậy động lượng của vật có độ lớn $p = m.v = 0,2.20 = 4$ kg.m/s.\nd.\n![](c5/media/media/image448.png){width=\"1.84375in\" height=\"1.3118985126859142in\"}\n\nPhương chiều hướng xuống phía dưới tạo với phương ngang một góc $\\beta$ tính bởi$ tan\\beta=\\frac{v_{y}}{v_{x}}=\\frac{10}{10\\sqrt{3}}=\\frac{1}{\\sqrt{3}}\\Rightarrow\\beta=30^{{^\\circ}}$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Từ độ cao h = 80 m so với mặt đất, ở thời điểm $t_{0} = 0$ một vật m = 200 gam được ném ngang với vận tốc ban đầu $ v_{0} = 10\\sqrt{3} m/s.$ Biết gia tốc trọng trường $ g = 10 m/s^{2}.$ Xét vật ở thời điểm t = 1 s.</p>",
+  "statements": [
+   {
+    "text": "Vận tốc của vật khi rơi tự do là 10 m/s.",
+    "answer": true
+   },
+   {
+    "text": "Vận tốc của vật ở thời điểm 1 s là 5 m/s.",
+    "answer": false
+   },
+   {
+    "text": "Động lượng của vật có độ lớn 4 kg.m/s.",
+    "answer": true
+   },
+   {
+    "text": "Vecto động lượng có phương chiều hướng xuống phía dưới tạo với phương ngang một góc β = 30°.",
+    "answer": true
+   }
+  ]
+ },
+ {
+  "key": "c5-1-tf-052",
+  "src": "c5-1",
+  "num": 5,
+  "gocLoiGiai": "Đổi 1 tấn = 1000 kg, 2 tấn = 2000 kg, $54 km/h = 15 m/s$\na. Động lượng của ô tô 1 $p_{1} = m_{1}v_{1} = 1000.15 = 15000 kg.m/s$\nb. Động lượng của ô tô 2 $p_{2} = m_{2}v_{2} = 2000.10 = 20000 kg.m/s$\nd. Tỉ số độ lớn động lượng của hai xe $\\frac{p_{1}}{p_{2}}=\\frac{m_{1}}{v}_{1}m_{2}v_{2}=\\frac{15000}{20000}=\\frac{3}{4}$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một ô tô khối lượng 1 tấn đang chuyển động với tốc độ 54 km/h và một xe tải có khối lượng 2 tấn đang chuyển động với tốc độ 10 m/s.</p>",
+  "statements": [
+   {
+    "text": "Động lượng của ô tô 1 là 60000 kg.m/s.",
+    "answer": false
+   },
+   {
+    "text": "Động lượng của ô tô 2 là 20000 kg.m/s.",
+    "answer": true
+   },
+   {
+    "text": "Động lượng của ô tô 1 lớn hơn động lượng của ô tô 2.",
+    "answer": false
+   },
+   {
+    "text": "Tỉ số độ lớn của ô tô 1 và ô tô 2 là $\\frac{5}{6}.$",
+    "answer": false
+   }
+  ]
+ },
+ {
+  "key": "c5-1-tf-053",
+  "src": "c5-1",
+  "num": 6,
+  "gocLoiGiai": "a. Vận tốc của ô tô sau khi đi được quãng đường 50 m là\n$v^{2}-v_{0}^{2}=2as\\Rightarrow v=\\sqrt{2as}=\\sqrt{2.1.1000}=20\\sqrt{5} m/s.$\nb. Động lượng của ô tô $p=mv=1000.20\\sqrt{5}=20000\\sqrt{5} kg.m/s.$\nc. Khi ô tô đạt vận tốc 30 m/s $p=mv=1000.30=30000 kg.m/s.$\nd. Vận tốc của ô tô $v=\\frac{p}{m}=\\frac{25000}{1000}=25 m/s.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một ô tô khối lượng 1 tấn khởi hành từ trạng thái nghỉ có gia tốc không đổi là 1 m/s$^{2}$. Biết ô tô đi được quãng đường 50 m.</p>",
+  "statements": [
+   {
+    "text": "Vận tốc của ô tô sai khi đi được 50 m là 20 m/s.",
+    "answer": false
+   },
+   {
+    "text": "Động lượng của ô tô là $20000\\sqrt{5} kg.m/s$",
+    "answer": true
+   },
+   {
+    "text": "Khi ô tô đạt vận tốc 30 m/s thì động lượng của ô tô là 32000 k g . m / s",
+    "answer": false
+   },
+   {
+    "text": "Để động lượng của ô tô là 25000 k g . m / s thì vận tốc của ô tô là 25 m/s.",
+    "answer": true
+   }
+  ]
+ },
+ {
+  "key": "c5-1-tf-054",
+  "src": "c5-1",
+  "num": 7,
+  "gocLoiGiai": "Động lượng của vật 1 là $p_{1} = m_{1}v_{1} = 2.4 = 8 kg.m/s.$\nĐộng lượng của vật 2 là $p_{2} = m_{2}v_{2} = 3.2 = 6 kg.m/s.$\nTa có $\\overset{\\rightarrow}{p}={\\overset{\\rightarrow}{p}}_{1}+{\\overset{\\rightarrow}{p}}_{2}$\na. Vì $v\\rightarrow_{2}$ cùng hướng với $ v_{1}\\rightarrow$ $\\Rightarrow p_{1}, p_{2}$ cùng phương, cùng chiều.\n$\\Rightarrow p=p_{1}+p_{2}=8+6=14 kg.m/s$\nb. Vì $v\\rightarrow_{2}$ ngược hướng với $ v_{1}\\rightarrow$ $\\Rightarrow p_{1}, p_{2}$ cùng phương, ngược chiều\n$\\Rightarrow p=p_{1}-p_{2}=8-6=2 kg.m/s$\nc. Vì $v\\rightarrow_{2}$ hướng chếch lên trên, hợp với $ v_{1}\\rightarrow$ góc 90^0^ $\\Rightarrow p_{1}, p_{2}$ vuông góc\n$\\Rightarrow p=\\sqrt{p_{1}^{2}}+p_{2}^{2}=\\sqrt{8^{2}}+6^{2}=10 kg.m/s$\nd. Vì $v\\rightarrow_{2}$ hướng chếch lên trên, hợp với $ v_{1}\\rightarrow$ góc 60^0^ $\\Rightarrow p_{1}, p_{2}$ tạo với nhau một góc$60^{0}$\n$\\Rightarrow p^{2}=p_{1}^{2}+p_{2}^{2}+2p_{1}p_{2}cos\\alpha$\n$\\Rightarrow p=\\sqrt{8^{2}}+6^{2}+2.8.6cos60^{0}=2\\sqrt{37} kg.m/s$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho một hệ gồm 2 vật chuyển động. Vật 1 có khối lượng 2 kg có vận tốc có độ lớn 4 m/s. Vật 2 có khối lượng 3 kg có vận tốc độ lớn là 2 m/s.</p>",
+  "statements": [
+   {
+    "text": "Động lượng của hai vật khi v → 2 cùng hướng với v 1 → là 14 k g . m / s",
+    "answer": true
+   },
+   {
+    "text": "Động lượng của hai vật khi v → 2 ngược hướng với v 1 → 6 k g . m / s",
+    "answer": false
+   },
+   {
+    "text": "Động lượng của hai vật khi v → 2 hướng chếch lên trên, hợp với v 1 → góc 90 0 là 2 k g . m / s",
+    "answer": false
+   },
+   {
+    "text": "Động lượng của hai vật khi v → 2 hướng chếch lên trên, hợp với v 1 → góc 60 0 là $2\\sqrt{37} kg.m/s$",
+    "answer": true
+   }
+  ]
+ },
+ {
+  "key": "c5-1-tf-057",
+  "src": "c5-1",
+  "num": 11,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của đạn.\na. Động lượng viên đạn gần chạm vào tấm gỗ $p_{1}=mv_{1}=20.10^{-3}.600=3 kg.m/s.$\nb. Động lượng viên đạn sau khi xuyên thủng tấm gỗ $p_{2}=mv_{2}=20.10^{-3}.200=1 kg.m/s.$\nc. Độ biến thiên động lượng của viên đạn $\\Delta p=p_{2}-p_{1}=F\\Delta t.$\nMà $p_{2}\\uparrow \\uparrow p_{1}\\Rightarrow\\Delta p =p_{2}-p_{1}=4-12 = - 2 kg.m/s.$\nd. Lực cản trung bình mà tường tác dụng lên viên đạn $\\Delta p = F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{t}=\\frac{-2}{2}= - 1 N.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một viên đạn khối lượng m = 10 gam bay ngang với vận tốc $v_{1}$ = 300 m/s xuyên vào tấm gỗ. Sau khi xuyên qua tấm gỗ, đạn có vận tốc $v_{2}$ = 100 m/s. Biết đạn đi qua tấm gỗ trong 2 s.</p>",
+  "statements": [
+   {
+    "text": "Động lượng của viên đạn gần chạm vào tấm gỗ là 3 k g . m / s .",
+    "answer": true
+   },
+   {
+    "text": "Động lượng cảu viên đạn khi xuyên qua tấm gỗ là 2 k g . m / s .",
+    "answer": false
+   },
+   {
+    "text": "Đô biến thiên động lượng của viên đạn là 2 k g . m / s .",
+    "answer": false
+   },
+   {
+    "text": "Lực cản trung bình mà tường tác dụng lên viên đạn là − 1 N .",
+    "answer": true
+   }
+  ]
+ },
+ {
+  "key": "c5-1-tf-058",
+  "src": "c5-1",
+  "num": 12,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của vật.\na. Động lượng tại thời điểm thả rơi $p_{1}= mv_{1}= 0.$\nVận tốc của vật sau khi chạm đất $v = gt = 10.2 = 20 m/s.$\nĐộng lượng của vật khi chạm đất $p_{2}= mv_{2}= 1.20 = 20 kg.m/s.$\nb. Độ biến thiên động lượng $\\Delta p =p_{2}-p_{1}= 20 kg.m/s.$\nc. Vận tốc của vật sau khi rơi $0,5 s$ là $v_{1}= g.0,5 = 10.0,5 = 5 m/s.$\nĐộng lượng tại thời điểm thả rơi $0,5 s$ là $p_{1}= mv_{1}= 1.5 =5 kg.m/s.$\nd. Động lượng của vật khi chạm đất: $p_{2}= mv_{2}= 1.20 = 20 kg.m/s.$\n$\\Rightarrow$ Độ biến thiên động lượng: $\\Delta p =p_{2}-p_{1}= 15 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một hòn bi khối lượng $1 kg$ rơi tự do trong thời gian $2 s.$</p>",
+  "statements": [
+   {
+    "text": "Động lượng của vật từ khi thả rơi đến khi chạm đất là 20 k g . m / s .",
+    "answer": true
+   },
+   {
+    "text": "Độ biến thiên động lượng từ khi thả rơi đến khi chạm đất là 10 k g . m / s .",
+    "answer": false
+   },
+   {
+    "text": "Động lượng của vật khi vật sau khi rơi 0,5 s là 5 k g . m / s .",
+    "answer": true
+   },
+   {
+    "text": "Độ biến thiên động lượng của vật sau khi rơi 0,5 s đến khi chạm đất là 20 k g . m / s .",
+    "answer": false
+   }
+  ]
+ },
+ {
+  "key": "c5-1-tf-060",
+  "src": "c5-1",
+  "num": 14,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động bóng trước lúc va chạm với tường và có v~1~ = v~2~ = v = 8 m/s.\n\nĐộ biến thiên động lượng$\\Delta p=p_{2}-p_{1}=mv_{2}-mv_{1}$\nChiếu lên chiều dương\n![](c5/media/media/image598.png){width=\"1.899699256342957in\" height=\"1.5104166666666667in\"}\na. Ta có$\\Delta p= -mv_{2}-mv_{1}= -2mv= -2.0,4.8= -6,4 kg.m/s.$\nb. Lực trung bình do tường tác dụng lên bóng $\\Delta p=F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{\\Delta t}=\\frac{-6,4}{0,1}= -64 N.$\n\nc. Nếu học sinh đó đá quả bóng theo phương hợp với tường một góc 60° thì quả bóng bật ra với góc tương tự thì chọn chiều dương như hình vẽ\n\nĐộ biến thiên động lượng: $\\Delta p=p_{2}-p_{1}=mv_{2}-mv_{1}$\nChiếu lên chiều dương ta được $\\Delta p= -mv_{2}sin\\alpha-mv_{1}sin\\alpha= -2mvsin\\alpha$\n$\\Rightarrow\\Delta p= -2.0,4.8.sin60{^\\circ} = -3,2 kg.m/s.$\nLực trung bình do tường tác dụng lên bóng là $\\Delta p=F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{\\Delta t}=\\frac{-3,2}{0,1}= -32 N.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thầy Nhân đá một quả bóng có khối lượng 400 gam bay với vận tốc 8 m/s đập vuông góc với tường thì quả bóng bật trở lại với vận tốc tương tự. Biết thời gian va chạm là 0,l s.</p>",
+  "statements": [
+   {
+    "text": "Độ biến thiên động lượng của tường lên quả bóng là 6, 4 k g . m / s",
+    "answer": false
+   },
+   {
+    "text": "Lực trung bình do tường tác dụng lên bóng là – 64 N.",
+    "answer": true
+   },
+   {
+    "text": "Nếu đá quả bóng theo phương hợp với tường một góc 60° thì độ biến thiên động lượng là − 3, 2 k g . m / s",
+    "answer": true
+   },
+   {
+    "text": "Lực trung bình do tường tác dụng lên bóng là − 32 N .",
+    "answer": true
+   }
+  ]
+ },
+ {
+  "key": "c5-1-sa-061",
+  "src": "c5-1",
+  "num": 1,
+  "gocLoiGiai": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{p}_{1} \\\\\n\\mathbf{=}\\mathit{m}_{1} \\\\\n\\mathit{v}_{1} \\\\\n\\mathbf{=}2.4\\mathbf{=}8\\ kg.m/s. \\\\\n\\mathit{p}_{2}\\mathbf{=}\\mathit{m}_{2} \\\\\n\\mathit{v}_{2} \\\\\n\\mathbf{=}3.2\\mathbf{=}6\\ kg.m/s.\n\\end{array} \\right\\}$\nVì $v_{2}$ cùng hướng với $ v_{1}$ nên $ p_{1};p_{2}$ cùng phương, cùng chiều\n![](c5/media/media/image611.png){width=\"2.0892858705161856in\" height=\"0.5416666666666666in\"}\n$\\Rightarrow p=p_{1}+p_{2}=8+6=14 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho một hệ gồm 2 vật chuyển động. Vật 1 có khối lượng 2 kg có vận tốc có độ lớn 4 m/s. Vật 2 có khối lượng 3 kg có vận tốc độ lớn là 2 m/s. Tổng động lượng của hệ khi $v_{2}$ cùng hướng với $ v_{1}$ là bao nhiêu kg.m/s?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-062",
+  "src": "c5-1",
+  "num": 2,
+  "gocLoiGiai": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{p}_{1} \\\\\n\\mathbf{=}\\mathit{m}_{1} \\\\\n\\mathit{v}_{1} \\\\\n\\mathbf{=}2.4\\mathbf{=}8\\ kg.m/s. \\\\\n\\mathit{p}_{2}\\mathbf{=}\\mathit{m}_{2} \\\\\n\\mathit{v}_{2} \\\\\n\\mathbf{=}3.2\\mathbf{=}6\\ kg.m/s.\n\\end{array} \\right\\}$\nVì $v_{2}$ ngược hướng với $ v_{1}$ nên $ p_{1};p_{2}$ cùng phương, ngược chiều\n![](c5/media/media/image619.png){width=\"1.9321237970253717in\" height=\"0.5208333333333334in\"}\n$\\Rightarrow p=p_{1}-p_{2}=8-6=2 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho một hệ gồm 2 vật chuyển động. Vật 1 có khối lượng 2 kg có vận tốc có độ lớn 4 m/s. Vật 2 có khối lượng 3 kg có vận tốc độ lớn là 2 m/s. Tổng động lượng của hệ khi $v_{2}$ ngược hướng với $ v_{1}$ là bao nhiêu kg.m/s?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-063",
+  "src": "c5-1",
+  "num": 3,
+  "gocLoiGiai": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{p}_{1} \\\\\n\\mathbf{=}\\mathit{m}_{1} \\\\\n\\mathit{v}_{1} \\\\\n\\mathbf{=}2.4\\mathbf{=}8\\ kg.m/s. \\\\\n\\mathit{p}_{2}\\mathbf{=}\\mathit{m}_{2} \\\\\n\\mathit{v}_{2} \\\\\n\\mathbf{=}3.2\\mathbf{=}6\\ kg.m/s.\n\\end{array} \\right\\}$\nVì $v_{2}$ hướng chếch lên trên hợp với $ v_{1}$ góc 90^0^ nên $ p_{1},p_{2}$ vuông góc\n![](c5/media/media/image627.png){width=\"1.8546194225721784in\" height=\"1.3541666666666667in\"}\n$\\Rightarrow p=\\sqrt{p_{1}^{2}}+p_{2}^{2}=\\sqrt{8^{2}}+6^{2}=10 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho một hệ gồm 2 vật chuyển động. Vật 1 có khối lượng 2 kg có vận tốc có độ lớn 4 m/s. Vật 2 có khối lượng 3 kg có vận tốc độ lớn là 2 m/s. Tổng động lượng của hệ khi $v_{2}$ hướng chếch lên trên hợp với $ v_{1}$ góc 90$^{0}$ là bao nhiêu kg.m/s?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-064",
+  "src": "c5-1",
+  "num": 4,
+  "gocLoiGiai": "Ta có $\\left\\{ \\begin{array}{r}\n\\mathit{p}_{1} \\\\\n\\mathbf{=}\\mathit{m}_{1} \\\\\n\\mathit{v}_{1} \\\\\n\\mathbf{=}2.4\\mathbf{=}8\\ kg.m/s. \\\\\n\\mathit{p}_{2}\\mathbf{=}\\mathit{m}_{2} \\\\\n\\mathit{v}_{2} \\\\\n\\mathbf{=}3.2\\mathbf{=}6\\ kg.m/s.\n\\end{array} \\right\\}$\nVì $v_{2}$ hướng chếch lên trên hợp với $ v_{1}$ góc 60^0^ nên $ p_{1};p_{2}$ tạo với nhau một góc 60^0^\n![](c5/media/media/image635.png){width=\"2.136396544181977in\" height=\"1.21875in\"}\n$\\Rightarrow p^{2}=p_{1}^{2}+p_{2}^{2}+2p_{1}p_{2}cos\\alpha\\Rightarrow p=\\sqrt{8^{2}}+6^{2}+2.8.6cos60^{0}=2\\sqrt{37} kg.m/s.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho một hệ gồm 2 vật chuyển động. Vật 1 có khối lượng 2 kg có vận tốc có độ lớn 4 m/s. Vật 2 có khối lượng 3 kg có vận tốc độ lớn là 2 m/s. Tổng động lượng của hệ khi $v_{2}$ hướng chếch lên trên hợp với $ v_{1}$ góc 60$^{0}$ là bao nhiêu kg.m/s?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-065",
+  "src": "c5-1",
+  "num": 5,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của đạn.\n\nĐộng lượng viên đạn gần chạm vào tường $p_{1}=mv_{1}=20.10^{-3}.600=12 kg.m/s.$\n\nĐộng lượng viên đạn sau khi xuyên thủng bức tường $p_{2}=mv_{2}=20.10^{-3}.200=4 kg.m/s.$\n\nĐộ biến thiên động lượng của viên đạn $\\Delta p=p_{2}-p_{1}=F\\Delta t.$\n\nMà $p_{2}\\uparrow \\uparrow p_{1}\\Rightarrow\\Delta p =p_{2}-p_{1}=4-12 = - 8 kg.m/s.$\n\nLực cản trung bình tường tác dụng lên viên đạn $\\Delta p = F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{t}=\\frac{-8}{10^{-3}}=-8000 N = -8 kN.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một xạ thủ bắn tia từ xa với viên đạn có khối lượng 20 gam, khi viên đạn bay gần chạm tường thì có vận tốc 600 m/s, sau khi xuyên thủng bức tường vận tốc của viên đạn chỉ còn 200 m/s. Thời gian đạn xuyên qua tường 10$^{−3}$ s. Lực cản trung bình mà tường tác dụng lên viên đạn là bao nhiêu kN?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-066",
+  "src": "c5-1",
+  "num": 6,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của người.\n\nVận tốc của người trước khi chạm nước $v=\\sqrt{2gs}=\\sqrt{2.10.4,5}=3\\sqrt{10} m/s.$\n\nĐộng lượng của người trước khi chạm nước $p_{1}=mv=60.3\\sqrt{10}=180\\sqrt{10} kg.m/s.$\n\nĐộng lượng của người sau khi chạm nước $p_{2}=0$\n\nĐộ biến thiên động lượng của người $\\Delta p=p_{2}-p_{1}=F\\Delta t$\n\nVì $p_{2}\\uparrow \\uparrow p_{1}\\Rightarrow\\Delta p =p_{2}-p_{1}=0-180\\sqrt{10}= - 180\\sqrt{10} kg.m/s.$\n\nLực cản mà nước tác dụng lên người $\\Delta p = F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{t}=\\frac{-180\\sqrt{10}}{0,5}= - 360\\sqrt{10} N\\approx -1138 N.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một người khối lượng 60 kg thả mình rơi tự do từ 1 cầu nhảy ở độ cao 4,5 m xuống nước và sau khi chạm mặt nước được 0,5s thì dừng chuyển động. Lấy g = 10 m/s$^{2}$. Lực cản mà nước tác dụng lên người có giá trị là bao nhiêu N? (kết quả làm tròn đến phần nguyên).</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-067",
+  "src": "c5-1",
+  "num": 7,
+  "gocLoiGiai": "Áp dụng công thức$\\Delta p=F.\\Delta t$\nTa có độ lớn $\\Delta p=F.\\Delta t=mg.\\Delta t=1,5.10.0,5=7,5 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng l,5 kg được thả rơi tự do xuống đất trong thời gian 0,5 s. Lấy g = 10 m/s$^{2}$. Độ biến thiên động lượng của vật trong khoảng thời gian đó là bao nhiêu kg.m/s?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-068",
+  "src": "c5-1",
+  "num": 8,
+  "gocLoiGiai": "Vận tốc của quả bóng lúc vừa chạm sàn là $v = \\sqrt{2gh} = \\sqrt{2.10.0,8} = 4 m/s.$\n\nĐộ biến thiên động lượng $\\Delta\\overset{\\rightarrow}{p} = \\overset{\\rightarrow}{p}'-\\overset{\\rightarrow}{p}= m\\left( \\overset{\\rightarrow}{v}' - \\overset{\\rightarrow}{v} \\right)$\n\nChọn chiều dương là chiều thẳng đứng hướng xuống.\n\nVa chạm giữa quả bóng và sàn là va chạm đàn hồi nên quả bóng sẽ nảy lên với tốc độ cũ $\\Rightarrow v = v'$\n\nĐộ biến thiên động lượng$\\Delta p = m( - v' - v) = 0,005.( - 4 - 4) = - 0,04 kgm/s.$\n\nĐộ lớn lực tương tác trung bình giữa quả bóng và sàn là$\\Delta p = F.\\Delta t \\Rightarrow F = \\left| \\frac{\\Delta p}{\\Delta t} \\right| = \\frac{0,04}{0,01} = 4 N.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một quả bóng khối lượng $m = 5 gam$ rơi xuống mặt sàn từ độ cao $ h = 0,8 m,$ sau đó nảy lên. Thời gian va chạm là $0,01 s.$ Biết va chạm nói trên là va chạm đàn hồi. Độ lớn trung bình của lực tác dụng của sàn lên quả bóng là bao nhiêu Newton?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-069",
+  "src": "c5-1",
+  "num": 9,
+  "gocLoiGiai": "Ta có khi tàu dừng lại $\\left\\{ \\begin{array}{r}\nv_{2} \\\\\n = \\ 0\\ m/s \\\\\nv_{1} = \\ 54\\ km/s\\  = \\ 15\\ m/s\n\\end{array} \\right\\}$\nĐộ biến thiên động lượng $\\Delta p=p_{2}-p_{1}= -mv_{1}= -10.000.15= -150000 N.$\nLực hãm để tàu dừng lại sau 10 s là $\\Delta p=F.\\Delta t\\Rightarrow F=\\frac{-150000}{10}= -15000 N = -15 kN.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một đoàn tầu có khối lượng 10 tấn đang chuyển động trên đường ray nằm ngang với vận tốc 54 km/h, người lái tầu nhìn tò xa thấy một chướng ngại vật, liền hãm phanh. Độ lớn lực hãm để tàu dừng lại sau 10 giây có giá trị là bao nhiêu kN?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-070",
+  "src": "c5-1",
+  "num": 10,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động bóng trước lúc va chạm với tường theo bài ra v~1~ = v~2~ = v = 8 m/s\n\nĐộ biến thiên động lượng $\\Delta p=p_{2}-p_{1}=mv_{2}-mv_{1}$\nChọn chiều dương là chiều bóng đập vào tường\nChiếu lên chiều dương $\\Delta p= -mv_{2}-mv_{1}= -2mv= -2.0,4.8= -6,4 kg.m/s.$\nLực trung bình do tường tác dụng lên bóng$\\Delta p=F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{\\Delta t}=\\frac{-6,4}{0,1}= -64 N$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một học sinh của trung tâm luyện thi Cao Trí đá một quả bóng có khối lượng 400 gam bay vói vận tốc 8 m/s đập vuông góc với tường thì quả bóng bật trở lại với vận tốc tương tự. Lực tác dụng của tường lên quả bóng với thời gian va chạm là 0,l s là bao nhiêu Newton?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-071",
+  "src": "c5-1",
+  "num": 11,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động bóng trước lúc va chạm với tường theo bài ra v~1~ = v~2~ = v = 8 m/s\n\nĐộ biến thiên động lượng $\\Delta p=p_{2}-p_{1}=mv_{2}-mv_{1}$\nChiếu lên chiều dương $\\Delta p= -mv_{2}-mv_{1}= -2mv= -2.0,4.8= -6,4 kg.m/s.$\nLực trung bình do tường tác dụng lên bóng$\\Delta p=F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{\\Delta t}=\\frac{-6,4}{0,1}= -64 N$\n\nNếu học sinh đó đá quả bóng theo phương hợp với tường một góc 60° thì quả bóng bật ra với góc tương tự thì Chọn chiều dương như hình vẽ\n\n![](c5/media/media/image667.png){width=\"2.1490693350831145in\" height=\"1.7708333333333333in\"}\n\nĐộ biến thiên động lượng $\\Delta p=p_{2}-p_{1}=mv_{2}-mv_{1}$\nChiếu lên chiều dương $\\Delta p= -mv_{2}sin\\alpha-mv_{1}sin\\alpha= -2mvsin\\alpha$\n$\\Rightarrow\\Delta p$ = −2.0,4.8.sin 60° = −3,2 kg.m/s.\nLực trung bình do sàn tác dụng lên bóng $\\Delta p=F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{\\Delta t}=\\frac{-3,2}{0,1}= -32 N.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một học sinh của trung tâm luyện thi Cao Trí đá một quả bóng có khối lượng 400 gam bay vói vận tốc 8 m/s đập vuông góc với tường thì quả bóng bật trở lại với vận tốc tương tự. Biết thời gian va chạm là 0,l s. Nếu học sinh đó đá quả bóng theo phương hợp với tường một góc 60° thì quả bóng bật ra với góc tương tự thì lực tác dụng lúc này có giá trị là bao nhiêu Newton?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-072",
+  "src": "c5-1",
+  "num": 12,
+  "gocLoiGiai": "![A diagram of a line with arrows pointing to the center AI-generated content may be incorrect.](c5/media/media/image667.png){width=\"2.1490693350831145in\" height=\"1.7708333333333333in\"}\n\nChọn chiều dương như hình vẽ theo bài ra $v_{1}=v_{2}=v=10 m/s.$\nĐộ biến thiên động lượng $\\Delta p=p_{2}-p_{1}=mv_{2}-mv_{1}$\nChiếu lên chiều dương $\\Rightarrow\\Delta p= -mv_{2}sin\\alpha-mv_{1}sin\\alpha= -2mvsin\\alpha$\nLực trung bình do sàn tác dụng lên bóng $\\Delta p=F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{\\Delta t}$\nTa có$\\Delta p= -2mvsin\\alpha= -2.0,5.10.sin30^{0}= -5 kg.m/s.$\nLực trung bình do sàn tác dụng lên bóng $F=\\frac{\\Delta p}{\\Delta t}=\\frac{-5}{0,1}= -50N$.",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một quả bóng có khối lượng 500 gam đang bay với vận tốc 10 m/s thì va vào một mặt sàn nằm ngang theo hướng nghiêng góc α so với mặt sàn một góc 30$^{0}$, khi đó quả bóng nảy lên với vận tốc 10 m/s theo hướng nghiêng với mặt sàn góc α. Biết thời gian va chạm là 0,l s. Giá trị lực trung bình do sàn tác dụng lên bóng là bao nhiêu Newton?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-073",
+  "src": "c5-1",
+  "num": 13,
+  "gocLoiGiai": "Chọn chiều dương như hình vẽ theo bài ra $v_{1}=v_{2}=v=10 m/s.$\n\n![A diagram of a line with arrows pointing to the center AI-generated content may be incorrect.](c5/media/media/image667.png){width=\"2.1490693350831145in\" height=\"1.7708333333333333in\"}\n\nĐộ biến thiên động lượng $\\Delta p=p_{2}-p_{1}=mv_{2}-mv_{1}$\n\nChiếu lên chiều dương $\\Rightarrow\\Delta p= -mv_{2}sin\\alpha-mv_{1}sin\\alpha= -2mvsin\\alpha$\nLực trung bình do sàn tác dụng lên bóng $\\Delta p=F.\\Delta t\\Rightarrow F=\\frac{\\Delta p}{\\Delta t}$\n$\\Delta p= -2mvsin\\alpha= -2.0,5.10.sin90^{0}= -10 kg.m/s.$\nLực trung bình do sàn tác dụng lên bóng $F=\\frac{\\Delta p}{\\Delta t}=\\frac{-10}{0,1}= -100 N.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một quả bóng có khối lượng 500 gam đang bay với vận tốc 10 m/s thì va vào một mặt sàn nằm ngang theo hướng nghiêng góc α so với mặt sàn một góc 90$^{0}$, khi đó quả bóng nảy lên với vận tốc 10 m/s theo hướng nghiêng với mặt sàn góc α. Biết thời gian va chạm là 0,l s. Giá trị lực trung bình do sàn tác dụng lên bóng là bao nhiêu Newton?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-1-sa-074",
+  "src": "c5-1",
+  "num": 14,
+  "gocLoiGiai": "Đổi $46 gam=0,046 kg$\n\nXung lượng của lực bằng độ biến thiên động lượng $\\Delta p=mv_{2}-mv_{1}=0-0,046.70=3,22 Ns.$\n\nĐộ lớn trung bình của lực tác dụng vào quả bóng trong thời gian $0,5.10^{-3}s$\n\n$F\\Delta t=\\Delta p\\Rightarrow F=\\frac{\\Delta p}{\\Delta t}=\\frac{3,22}{0,5.10^{-3}}=6440 N.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một quả bóng golf có khối lượng 0,046 kg. Vận tốc của quả bóng ngay sau khi rời khỏi gậy golf là 50 m/s. Gậy đánh golf tiếp xúc với bóng trong thời gian 1,3 ms. Lực trung bình do gậy đánh gofl tác dụng lên quả bóng là bao nhiêu N?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-2-mc-001",
+  "src": "c5-2",
+  "num": 1,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây là <strong>sai</strong> khi nói về động lượng?</p>",
+  "options": [
+   "Động lượng của mỗi vật trong hệ kín có thể thay đổi.",
+   "Động lượng của vật là đại lượng vectơ.",
+   "Động lượng của một vật có độ lớn bằng tích khối lượng và vận tốc của vật.",
+   "Động lượng của một hệ kín luôn luôn thay đổi."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-002",
+  "src": "c5-2",
+  "num": 2,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây là <strong>sai</strong> khi nói về động lượng?</p>",
+  "options": [
+   "Động lượng của một vật có độ lớn bằng tích khối lượng và tốc độ của vật.",
+   "Trong hệ kín, động lượng của hệ được bảo toàn.",
+   "Động lượng của một vật có độ lớn bằng tích khối lượng và bình phương vận tốc.",
+   "Động lượng của một vật là một đại lượng véc tơ."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-003",
+  "src": "c5-2",
+  "num": 3,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây là <strong>đúng</strong> khi nói về động lượng?</p>",
+  "options": [
+   "Véc tơ động lượng của hệ được bảo toàn.",
+   "Véc tơ động lượng toàn phần của hệ được bảo toàn.",
+   "Véc tơ động lượng toàn phần của hệ kín được bảo toàn.",
+   "Động lượng của hệ kín được bảo toàn."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-004",
+  "src": "c5-2",
+  "num": 4,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Phương trình của định luật bảo toàn động lượng là</p>",
+  "options": [
+   "$m_{1}v_{1} + m_{2}v_{2} = m_{1}v_{1}' + m_{2}v_{2}'.$",
+   "$\\left( m_{1} \\right)+m_{2}\\left( v_{1} \\right)+v_{2}=m_{1}v_{1}'+m_{2}v_{2}'.$",
+   "$m_{1}v_{2}+m_{2}v_{1}=m_{1}v_{2}'+m_{2}v_{1}'.$",
+   "$m_{1}v_{1}+m_{2}v_{2}=m_{1}v_{1}'+m_{2}v_{2}'.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-005",
+  "src": "c5-2",
+  "num": 5,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng chỉ <strong>đúng</strong> trong trường hợp</p>",
+  "options": [
+   "hệ có ma sát.",
+   "hệ không có ma sát.",
+   "hệ kín có ma sát.",
+   "hệ cô lập."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-006",
+  "src": "c5-2",
+  "num": 6,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng tương đương với định luật</p>",
+  "options": [
+   "I Newton.",
+   "II Newton.",
+   "III Newton.",
+   "I và III Newton."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-007",
+  "src": "c5-2",
+  "num": 7,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Chuyển động bằng phản lực tuân theo</p>",
+  "options": [
+   "định luật bảo toàn công.",
+   "Định luật II Niu-tơn.",
+   "định luật bảo toàn động lượng.",
+   "định luật III Niu-tơn."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-008",
+  "src": "c5-2",
+  "num": 8,
+  "gocLoiGiai": "Hệ vật lý kín hay còn gọi là hệ kín, hệ cô lập, đó là hệ mà trong đó chỉ có [nội lực](https://vi.wikipedia.org/w/index.php?title=N%E1%BB%99i_l%E1%BB%B1c&action=edit&redlink=1) của các vật của hệ tác dụng lẫn nhau. Có nghĩa là một hệ không chịu tác dụng của [ngoại lực](https://vi.wikipedia.org/w/index.php?title=Ngo%E1%BA%A1i_l%E1%BB%B1c&action=edit&redlink=1) hoặc ngoại lực triệt tiêu lẫn nhau.\nHay có định nghĩa khác Hệ kín là hệ vật mà trong đó chỉ có các vật trong hệ tương tác lực với nhau, nếu có ngoại lực thì hợp của ngoại lực bằng $0.$\nTrong thực tế thì không bao giờ có hệ kín mà có thể xem là hệ kín nếu\n\\- Nội lực rất lớn so với ngoại lực (ví dụ đạn nổ, nổ hạt nhân.)\n\\- Thời gian tương tác nhanh\n\\- Hệ kín theo một phương nào đó.\n\n![Káº¿t quáº£ hÃ¬nh áº£nh cho sÃºng trÆ°á»ng Äáº·t trÃªn vai cá»§a chiáº¿n sÄ© Viá»t Nam](c5/media/media/image384.jpeg){width=\"1.2847222222222223in\" height=\"0.8611111111111112in\"}**Câu 9:** Sở dĩ khi bắn súng trường (quan sát hình ảnh) các chiến sĩ phải tì vai vào báng súng vì hiện tượng giật lùi của súng **có thể** gây chấn thương cho vai. Hiện tượng súng giật lùi trên trên liên quan đến\n\n**A.** chuyển động theo quán tính.\n**B.** chuyển động do va chạm.\n**C.** chuyển động ném ngang.\n**[D.** chuyển động bằng phản lực.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một hệ vật gọi là hệ kín nếu</p>",
+  "options": [
+   "chỉ có những lực của các vật trong hệ tác dụng lẫn nhau.",
+   "không có tác dụng của những lực từ bên ngoài hệ.",
+   "các nội lực từng đôi trực đối nhau theo định luật III Niu tơn.",
+   "cả A, B, C đều đúng."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-009",
+  "src": "c5-2",
+  "num": 10,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong các hiện tượng sau đây, hiện tượng nào không liên quan đến định luật bảo toàn động lượng?</p>",
+  "options": [
+   "Vận động viên dậm đà để nhảy.",
+   "Người nhảy từ thuyền lên bờ làm cho thuyền chuyển động ngược lại.",
+   "Xe ôtô xả khói ở ống thải khi chuyển động.",
+   "Chuyển động của tên lửa."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-010",
+  "src": "c5-2",
+  "num": 11,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Chuyển động không theo nguyên tắc chuyển động bằng phản lực là chuyển động</p>",
+  "options": [
+   "giật lùi của súng khi bắn.",
+   "của máy bay trực thăng.",
+   "của tên lửa.",
+   "của con sứa biển."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-011",
+  "src": "c5-2",
+  "num": 12,
+  "gocLoiGiai": "Vì theo định nghĩa chuyển động bằng phản lực là Một phần của vật chuyển động theo một hướng thì phần còn lại phải chuyển động theo hướng ngược lại.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong chuyển động bằng phản lực nếu có một phần chuyển động theo một hướng thì phần còn lại phải</p>",
+  "options": [
+   "đứng yên.",
+   "chuyển động cùng hướng.",
+   "chuyển động theo hướng ngược lại.",
+   "chuyển động theo hướng vuông góc."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-012",
+  "src": "c5-2",
+  "num": 13,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Va chạm nào sau đây là va chạm mềm?</p>",
+  "options": [
+   "Quả bóng đang bay đập vào tường và nảy ra.",
+   "Viên đạn đang bay xuyên vào và nằm gọn trong bao cát.",
+   "Viên đạn xuyên qua một tấm bia trên đường bay của nó.",
+   "Quả bóng tennis đập xuống sân thi đấu."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-013",
+  "src": "c5-2",
+  "num": 14,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trường hợp nào sau đây <strong>có thể</strong> xem là hệ kín?</p>",
+  "options": [
+   "Hai viên bi chuyển động trên mặt phẳng nằm ngang.",
+   "Hai viên bi chuyển động trên mặt phẳng nghiêng.",
+   "Hai viên bi rơi thẳng đứng trong không khí.",
+   "Hai viên bi chuyển động không ma sát trên mặt phẳng nằm ngang."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-014",
+  "src": "c5-2",
+  "num": 15,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Động lượng của vật bảo toàn trong trường hợp nào sau đây?</p>",
+  "options": [
+   "Vật đang chuyển động thẳng đều trên mặt phẳng nằm ngang.",
+   "Vật đang chuyển động tròn đều.",
+   "Vật đang chuyển động nhanh dần đều trên mặt phẳng nằm ngang không ma sát.",
+   "Vật đang chuyển động chậm dần đều trên mặt phẳng nằm ngang không ma sát."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-015",
+  "src": "c5-2",
+  "num": 16,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Chuyển động bằng phản lực tuân theo định luật</p>",
+  "options": [
+   "bảo toàn công.",
+   "II Newton.",
+   "bảo toàn động lượng.",
+   "III Newton."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-016",
+  "src": "c5-2",
+  "num": 17,
+  "gocLoiGiai": "Định luật bảo toàn động lượng Trong một hệ kín, vec tơ động lượng của hệ được bảo toàn. Nên phương án A **sai** $\\rightarrow$ phương án D **sai**, phương án C **sai** ở chỗ “ nguyên tắc chế tạo” phải là nguyên tắc hoạt động.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây là <strong>đúng</strong>?</p>",
+  "options": [
+   "Trong một hệ kín, động lượng của hệ được bảo toàn.",
+   "Trong một hệ kín, tổng động lượng của hệ là một véctơ không đổi cả về hướng và độ lớn.",
+   "Định luật bảo toàn động lượng là cơ sở của nguyên tắc chế tạo tên lửa vũ trụ.",
+   "Trong một hệ kín, động lượng của hệ trước và sau tương tác không đổi."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-017",
+  "src": "c5-2",
+  "num": 18,
+  "gocLoiGiai": "Phương án B tuân theo nguyên tắc chuyển động bằng phản lực.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hiện tượng nào không liên quan đến định luật bảo toàn động lượng là</p>",
+  "options": [
+   "vận động viên dậm đà để nhảy.",
+   "người nhảy từ thuyền lên bờ làm cho thuyền chuyển động ngược lại.",
+   "xe ôtô xả khói ở ống thải khi chuyển động.",
+   "các hiện tượng nêu trên đều không liên quan đến định luật bảo toàn động lượng."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-018",
+  "src": "c5-2",
+  "num": 19,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trường hợp nào sau đây là hệ kín (hệ cô lập)?</p>",
+  "options": [
+   "Hai viên bi chuyển động trên mặt phẳng nằm ngang.",
+   "Hai viên bi chuyển động trên mặt phẳng nghiêng.",
+   "Hai viên bi rơi thẳng đứng trong không khí.",
+   "Hai viên bi chuyển động không ma sát trên mặt phẳng nằm ngang."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-019",
+  "src": "c5-2",
+  "num": 20,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Chọn câu phát biểu <strong>sai</strong>. Một hệ vật được gọi là hệ kín (hệ cô lập) nếu</p>",
+  "options": [
+   "các vật trong hệ chỉ tương tác với nhau mà không tương tác với các vật khác ngoài hệ.",
+   "lực tác dụng lên các vật trong hệ là nội lực.",
+   "tổng các ngoại lực tác dụng lên vật trong hệ bù trừ nhau.",
+   "tổng hợp lực tác dụng lên hệ không đổi."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-020",
+  "src": "c5-2",
+  "num": 21,
+  "gocLoiGiai": "Trong thực tế thì không bao giờ có hệ kín mà **có thể** xem là hệ kín nếu\n\\- Nội lực rất lớn so với ngoại lực (ví dụ đạn nổ,nổ hạt nhân.)\n\\- Thời gian tương tác nhanh\n\\- Hệ kín theo một phương nào đó.\nHệ vật - Trái Đất chỉ gần **đúng** là hệ kín vì luôn tồn tại các lực từ các thiên thể trong vũ trụ tác dụng lên vật.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây là <strong>sai</strong>?</p>",
+  "options": [
+   "Hệ vật – Trái Đất luôn được coi là hệ kín.",
+   "Hệ vật – Trái Đất chỉ gần đúng là hệ kín.",
+   "Trong các vụ nổ, hệ vật có thể coi như gần đúng là hệ kín trong thời gian ngắn xảy ra hiện tượng.",
+   "Trong va chạm, hệ vật có thể coi gần đúng là hệ kín trong thời gian ngắn xảy ra hiện tượng."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-021",
+  "src": "c5-2",
+  "num": 22,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hệ vật - Trái Đất chỉ gần <strong>đúng</strong> là hệ kín vì</p>",
+  "options": [
+   "Trái Đất luôn chuyển động.",
+   "Trái Đất luôn luôn hút vật.",
+   "vật luôn chịu tác dụng của trọng lực.",
+   "luôn tồn tại các lực hấp dẫn từ các thiên thể trong vũ trụ tác dụng lên vật."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-022",
+  "src": "c5-2",
+  "num": 23,
+  "gocLoiGiai": "Hệ kín khi ngoại lực tác dụng lên vật cân bằng nhau hoặc ngoại lực không đáng kể so với nội lực.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây là <strong>sai</strong>?</p>",
+  "options": [
+   "Vật rơi tự do không phải là hệ kín vì trọng lực tác dụng lên vật là ngoại lực.",
+   "Một hệ gọi là hệ kín khi ngoại lực tác dụng lên hệ không đổi.",
+   "Hệ gồm vật rơi tự do và Trái Đất, được xem là hệ kín khi bỏ qua lực tương tác giữa hệ vật với các vật khác.",
+   "Khi không có ngoại lực tác dụng lên hệ thì động lượng của hệ được bảo toàn."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-023",
+  "src": "c5-2",
+  "num": 24,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Phát biểu nào sau đây là <strong>sai</strong>?</p>",
+  "options": [
+   "Khi không có ngoại lực tác dụng lên hệ thì động lượng của hệ được bảo toàn.",
+   "Vật rơi tự do không phải là hệ kín vì trọng lực tác dụng lên vật là ngoại lực.",
+   "Hệ gồm \"Vật rơi tự do và Trái Đất\" được xem là hệ kín khi bỏ qua lực tương tác giữa hệ vật với các vật khác (Mặt Trời, các hành tinh.).",
+   "Một hệ gọi là hệ kín khi ngoại lực tác dụng lên hệ không đổi."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-024",
+  "src": "c5-2",
+  "num": 25,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trường hợp nào, hệ vật <strong>không</strong> được coi là hệ kín?</p>",
+  "options": [
+   "Hệ không chịu tác dụng của lực nào.",
+   "Hệ chỉ chịu tác dụng của lực cản, ma sát.",
+   "Hệ không có ngoại lực tác dụng.",
+   "Hệ chỉ có nội lực giữa các vật trong hệ."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-025",
+  "src": "c5-2",
+  "num": 26,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Động lượng của hệ vật bảo toàn trong trường hợp nào?</p>",
+  "options": [
+   "Hệ chịu tác dụng của các ngoại lực.",
+   "Hệ không chịu tác dụng của lực cản.",
+   "Hệ chịu tác dụng các ngoại lực cân bằng.",
+   "Hệ không có nội lực tương tác giữa các vật."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-026",
+  "src": "c5-2",
+  "num": 27,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hệ hai viên bi được coi là hệ kín (cô lập) trong trường hợp chúng chuyển động</p>",
+  "options": [
+   "rơi tự do.",
+   "trên mặt nghiêng.",
+   "trên mặt sàn ngang.",
+   "không ma sát trên mặt ngang."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-027",
+  "src": "c5-2",
+  "num": 28,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Xét một hệ cô lập gồm hai vật có khối lượng $m_{1}$, $m_{2}$. Hai vật va chạm nhau, vận tốc trước và sau va chạm của mỗi vật theo thứ tự ${\\overset{\\rightarrow}{v}}_{1},$ ${\\overset{\\rightarrow}{v}}_{1}'$ và ${\\overset{\\rightarrow}{v}}_{2},$ ${\\overset{\\rightarrow}{v}}_{2}'.$ Hệ thức định luật bảo toàn động lượng của hệ là</p>",
+  "options": [
+   "$m_{1}v_{1}+m_{2}v_{2}+m_{1}v_{1}'+m_{2}v_{2}'=0.$",
+   "$m_{1}{\\overset{\\rightarrow}{v}}_{1}+m_{2}{\\overset{\\rightarrow}{v}}_{2}+m_{1}{\\overset{\\rightarrow}{v}}_{1}'+m_{2}{\\overset{\\rightarrow}{v}}_{2}'=\\overset{\\rightarrow}{0}.$",
+   "$m_{1}v_{1}+m_{2}v_{2}=m_{1}v_{1}'+m_{2}v_{2}'.$",
+   "$m_{1}{\\overset{\\rightarrow}{v}}_{1}+m_{2}{\\overset{\\rightarrow}{v}}_{2}=m_{1}{\\overset{\\rightarrow}{v}}_{1}'+m_{2}{\\overset{\\rightarrow}{v}}_{2}'.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-028",
+  "src": "c5-2",
+  "num": 29,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Xét một hệ vật chịu tác dụng của các ngoại lực cân bằng. Cho các vật bên trong hệ tương tác lẫn nhau thì động lượng của hệ sau tương tác</p>",
+  "options": [
+   "lớn hơn so với động lượng của hệ trước tương tác.",
+   "nhỏ hơn so với động lượng của hệ trước tương tác.",
+   "bằng với động lượng của hệ trước tương tác.",
+   "không bằng động lượng của hệ trước tương tác."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-029",
+  "src": "c5-2",
+  "num": 30,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho các vật bên trong một hệ kín tương tác lẫn nhau thì độ biến thiên động lượng của hệ có giá trị</p>",
+  "options": [
+   "bằng không.",
+   "khác không.",
+   "âm.",
+   "dương."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-030",
+  "src": "c5-2",
+  "num": 31,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong va chạm mềm, đại lượng nào của hệ bảo toàn?</p>",
+  "options": [
+   "Động lượng.",
+   "Động năng.",
+   "Cơ năng.",
+   "Nhiệt năng."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-031",
+  "src": "c5-2",
+  "num": 32,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Ngay sau va chạm đàn hồi trực diện của hai vật, điều nào <strong>đúng</strong>?</p>",
+  "options": [
+   "Hai vật chuyển động tách rời nhau.",
+   "Hai vật chuyển động cùng vận tốc.",
+   "Động lượng của hệ không bảo toàn.",
+   "Động năng của hệ không bảo toàn."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-032",
+  "src": "c5-2",
+  "num": 33,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">các hiện tượng sau đây, hiện tượng nào <strong>không</strong> áp dụng được định luật bảo toàn động lượng?</p>",
+  "options": [
+   "Va chạm giữa các viên bi da.",
+   "Các vật trượt nhanh dần trên mặt nghiêng.",
+   "Súng giật lùi khi bắn.",
+   "Viên đạn nổ thành nhiều mảnh."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-033",
+  "src": "c5-2",
+  "num": 34,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật đang đứng yên thì bị tách thành hai phần, phần thứ nhất khối lượng $m_{1}$ có vận tốc $ v_{1},$ phần thứ hai khối lượng $m_{2}$ có vận tốc $ v_{2}.$ Hệ thức nào sau đây <strong>đúng</strong>?</p>",
+  "options": [
+   "$v_{2}= -\\frac{m_{2}}{m_{1}}v_{1}.$",
+   "$v_{2}=\\frac{m_{2}}{m_{1}}v_{1}.$",
+   "$v_{2}=\\frac{m_{1}}{m_{2}}v_{1}.$",
+   "$v_{2}= -\\frac{m_{1}}{m_{2}}v_{1}.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-034",
+  "src": "c5-2",
+  "num": 35,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Xét một hệ kín đứng yên, nếu một phần của hệ chuyển động theo một hướng thì phần còn lại của hệ</p>",
+  "options": [
+   "đứng yên tại vị trí ban đầu.",
+   "chuyển động không cùng phương.",
+   "chuyển động theo hướng ngược lại.",
+   "chuyển động theo cùng hướng."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-035",
+  "src": "c5-2",
+  "num": 36,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật khối lượng $m_{1}$ có vận tốc $v_{1}$ và chạm mềm với một vật khác khối lượng $ m_{2}$ có vận tốc $ v_{2}.$ Ngay sau va chạm, hai vật có vận tốc</p>",
+  "options": [
+   "$\\frac{v_{1}}{}v_{2}2.$",
+   "$\\frac{m_{1}}{}v_{1}+m_{2}v_{2}m_{1}+m_{2}.$",
+   "$\\frac{m_{1}}{}v_{1}+m_{2}v_{2}2(m_{1}+m_{2}).$",
+   "$\\frac{v_{1}}{}+v_{2}2.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-036",
+  "src": "c5-2",
+  "num": 37,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật đang đứng yên thì bị tách thành hai phần, phần thứ nhất $(1)$ có khối lượng $m_{1}$ với vận tốc $v_{1},$,= phần thứ hai $(2)$ có khối lượng $ m_{2} = 2m_{1}$với vận tốc $ v_{2}.$ Kết luận nào sau đây <strong>đúng</strong>?</p>",
+  "options": [
+   "Phần $1$ và phần $2$ có độ lớn động lượng bằng nhau.",
+   "Phần $1$ có độ lớn động lượng lớn hơn phần $2.$",
+   "Phần $1$ có độ lớn động lượng nhỏ hơn phần $2.$",
+   "Phần $1$ và phần $2$ có động lượng luôn bằng nhau."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-037",
+  "src": "c5-2",
+  "num": 38,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật đang đứng yên thì bị tách thành hai phần, phần thứ nhất có khối lượng $m_{1}$ với vận tốc $ v_{1},$ phần thứ hai có khối lượng $ m_{2} = 2m_{1}$với vận tốc $ v_{2}.$ Kết luận nào sau đây <strong>sai</strong>?</p>",
+  "options": [
+   "Hai phần có độ lớn động lượng bằng nhau.",
+   "Vận tốc $v_{1}$ và $ v_{2}$ ngược hướng nhau.",
+   "Độ lớn của vận tốc $\\left| v_{2} \\right|=2\\left| v_{1} \\right|.$",
+   "Hai phần có động năng bằng nhau."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-038",
+  "src": "c5-2",
+  "num": 39,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật đang đứng yên thì bị tách thành hai phần, phần thứ nhất có khối lượng $m_{1}$ với vận tốc $ v_{1},$ phần thứ hai có khối lượng $ m_{2} = 3m_{1}$ với vận tốc $ v_{2}.$ Tỉ số động năng của phần thứ nhất và động năng của phần thứ hai bằng</p>",
+  "options": [
+   "$9.$",
+   "$3.$",
+   "$\\sqrt{3}.$",
+   "$6.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-039",
+  "src": "c5-2",
+  "num": 40,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hai viên bi A và B có cùng khối lượng. Bi B đứng yên, bi A chuyển động với vận tốc là $\\overset{\\rightarrow}{v}$ trên mặt phẳng ngang va chạm vào bi B. Sau va chạm hai viên bi dính vào nhau và chuyển động cùng vận tốc $\\overset{\\rightarrow}{v}'$. Điều nào sau đây <strong>sai</strong>?</p>",
+  "options": [
+   "$v'=2v.$",
+   "$v'=0,5v.$",
+   "Va chạm trên gọi là va chạm mềm.",
+   "$\\overset{\\rightarrow}{v}'$ cùng phương và cùng chiều $\\overset{\\rightarrow}{v}.$ \n<strong>[TRẮC NGHIỆM ĐỊNH LƯỢNG</strong>"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-040",
+  "src": "c5-2",
+  "num": 1,
+  "gocLoiGiai": "Động lượng của hệ trước va chạm $m_{1}v_{1}+m_{2}v_{2}$\nĐộng lượng của hệ sau va chạm $\\left( m_{1} \\right)+m_{2}v$\nTheo định luật bảo toàn động lượng ta có\n$m_{1}v_{1}+m_{2}v_{2}=\\left( m_{1} \\right)+m_{2}v\\Rightarrow m_{1}v_{1}+0=\\left( m_{1} \\right)+m_{2}v\\Rightarrow v=\\frac{m_{1}}{v}_{1}m_{1}+m_{2}=\\frac{2.3}{2+4}=1 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một hòn bi khối lượng $2 kg$ đang chuyển động với vận tốc $3 m/s$ đến va chạm vào hòn bi có khối lượng $4 kg$ đang nằm yên, sau va chạm hai viên bi gắn vào nhau và chuyển động cùng vận tốc. Vận tốc của hai viên bi sau va chạm có độ lớn là</p>",
+  "options": [
+   "$10 m/s.$",
+   "$15 m/s.$",
+   "$1 m/s.$",
+   "$5 m/s$"
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-042",
+  "src": "c5-2",
+  "num": 3,
+  "gocLoiGiai": "Định luật bảo toàn động lượng $m_{1}v_{1}=\\left( m_{1} \\right)+m_{2}v\\Rightarrow1.6=\\left( 1+3 \\right)v\\Rightarrow v = 1,5 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Vật $m_{1} = 1 kg$ chuyển động với vận tốc $ v_{1} = 6m/s$ đến va chạm hoàn toàn mềm vào vật $ m_{2} = 3 kg$ đang nằm yên. Ngay sau va chạm vận tốc vật $m_{2}$ là</p>",
+  "options": [
+   "$0,67 m/s.$",
+   "$1,5 m/s.$",
+   "$4 m/s.$",
+   "$6 m/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-043",
+  "src": "c5-2",
+  "num": 4,
+  "gocLoiGiai": "Định luật bảo toàn động lượng $m_{1}v_{1}=\\left( m_{1} \\right)+m_{2}v\\Rightarrow$ $1.v_{1}=\\left( 1+2 \\right)2\\Rightarrow v_{1}=6 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Vật $m_{1} = 1 kg$ chuyển động với vận tốc $v_{1}$ đến va chạm mềm vào vật $ m_{2} = 2 kg$ đang nằm yên. Ngay sau va chạm vận tốc vật $ m_{2}$ là $ v_{2} = 2 m/s.$Vận tốc của vật $m_{1}$ có giá trị là</p>",
+  "options": [
+   "$6 m/s.$",
+   "$1,2 m/s.$",
+   "$5 m/s.$",
+   "$4 m/s.$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-044",
+  "src": "c5-2",
+  "num": 5,
+  "gocLoiGiai": "Vận tốc của búa trước khi va chạm vào cọc $v_{1}^{2}=2gh\\Rightarrow v_{1}=\\sqrt{2gh}=8 m/s.$\nGọi v~2~ là vận tốc của búa và cọc ngay sau khi va chạm.\nTheo định luật bảo toàn động lượng $m_{1}v_{1}=\\left( m_{1} \\right) + m_{2}v_{2}\\Rightarrow v_{2}=\\frac{m_{1}}{m_{1}}+m_{2}v_{1}=\\frac{1000}{1000+100}.8=7,3 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một búa máy có khối lượng $m_{1} = 1000kg$ rơi từ độ cao $3,2 m$ vào một cái cọc có khối lượng $ m_{2} = 100kg$ đang đứng yên. Va chạm này là mềm. Lấy $ g = 10 m/s^{2}.$Tính vận tốc của búa và cọc sau va chạm.</p>",
+  "options": [
+   "$4 m/s.$",
+   "$7,3 m/s.$",
+   "$6 m/s.$",
+   "$3 m/s$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-045",
+  "src": "c5-2",
+  "num": 6,
+  "gocLoiGiai": "Chọn chiều dưong là chiều chuyển động của viên bi một trước lúc va chạm\nTheo định luật bảo toàn động lượng $m_{1}v_{1}+m_{2}v_{2}=\\left( m_{1} \\right)+m_{2}v$\nChiếu lên chiều dương ta có $m_{1}v_{1}-m_{2}v_{2}=\\left( m_{1} \\right)+m_{2}v\\Rightarrow v=\\frac{m_{1}}{v}_{1}-m_{2}v_{2}m_{1}+m_{2}=\\frac{1.2-2.2,5}{1+2}= -1 m/s.$\nVậy sau va chạm hai vật chuyển động với vận tốc 1 m/s và chuyển động ngược chiều so với vận tốc ban đầu của vật một.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hai hòn bi có khối lượng lần lượt là $l kg và 2 kg$ chuyển động trên mặt phẳng nằm ngang ngược chiều nhau với các vận tốc $2 m/s và 2,5 m/s.$ Sau va chạm, hai xe dính vào nhau và chuyển động với cùng vận tốc. Bỏ qua mọi lực cản, độ lớn vận tốc sau va chạm là</p>",
+  "options": [
+   "$- 1 m/s.$",
+   "$3 m/s.$",
+   "$6 m/s.$",
+   "$- 3 m/s$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-046",
+  "src": "c5-2",
+  "num": 7,
+  "gocLoiGiai": "Vận tốc của búa trước lúc va chạm với cọc $v_{1}=\\sqrt{2gh}=\\sqrt{2.10.31,25}=25 m/s.$\nChọn chiều dương là chiều chuyển động của búa trước lúc va chạm\nTheo định luật bảo toàn động lượng $m_{1}v_{1}+m_{2}v_{2}=\\left( m_{1} \\right)+m_{2}v$\nChiếu lên chiều dương ta có $m_{1}v_{1}=\\left( m_{1} \\right)+m_{2}v\\Rightarrow v=\\frac{m_{1`}}{v}_{1}m_{1}+m_{2}=\\frac{300.25}{300+100}=18,75 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một búa máy có khối lượng $300 kg$ rơi tự do từ độ cao $31,25 m$ vào một cái cọc có khối lượng $100 kg,$ va chạm giữa búa và cọc là va chạm mềm. Bỏ qua sức cản của không khí lấy $ g = 10 m/s^{2}.$Tính vận tốc búa và cọc sau va chạm.</p>",
+  "options": [
+   "$15,75 m/s.$",
+   "$14,75 m/s.$",
+   "$13,75 m/s.$",
+   "$18,75 m/s$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-047",
+  "src": "c5-2",
+  "num": 8,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của viên bi một trước lúc va chạm\nTheo định luật bảo toàn động lượng $m_{1}v_{1}+m_{2}v_{2}=m_{1}v_{1}^{/}+m_{2}v_{2}^{/}$\nChiếu lên chiều dương ta có $m_{1}v_{1}+m_{2}0=m_{1}v_{1}^{/}+m_{2}v_{2}^{/}$\n$\\Rightarrow v_{1}^{/}=\\frac{m_{1}}{v}_{1}-m_{2}v_{2}m_{1}=\\frac{0,2.5-0,4.3}{0,2}= -1 m/s.$\nVậy viên bi một sau va chạm chuyển động với vận tốc là 3 m/s và chuyển động ngược chiều với chiều chuyển động ban đầu.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho viên bi một có khối lượng $200 gam$ đang chuyển động trên mặt phẳng nằm ngang vói vận tốc 5m/s tói va chạm vào viên bi thứ hai có khối lượng $400 gam$ đang đứng yên, biết rằng sau va chạm viên bi thứ hai chuyển động với vận tốc $3 m/s,$ chuyển động của hai bi trên cùng một đường thẳng. Độ lớn vận tốc và chiều chuyển động của viên bi một sau va chạm là</p>",
+  "options": [
+   "$4 m/s.$",
+   "$1 m/s.$",
+   "$6 m/s.$",
+   "$5 m/s$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-048",
+  "src": "c5-2",
+  "num": 9,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của viên bi một trước lúc va chạm.\nTheo định luật bảo toàn động lượng $m_{1}v_{1}+m_{2}v_{2}=m_{1}v_{1}^{/}+m_{2}v_{2}^{/}$\nSau va chạm hai viên bị đứng yên nên $v_{1}^{/}=v_{2}^{/}=0 m/s.$\nChiếu lên chiều dương ta có $m_{1}v_{1}-m_{2}v_{2}=0\\Rightarrow v_{2}=\\frac{m_{1}}{v}_{1}m_{2}=\\frac{4.4}{8}=2 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho hai viên bi chuyển động ngược chiều nhau trên cùng một đường thẳng quỹ đạo và va chạm vào nhau. Viên bi một có khối lượng $4 kg$ đang chuyển động với vận tốc $4 m/s$ và viên bi hai có khối lượng $8 kg$ đang chuyển động với vận tốc $ v_{2}.$ Bỏ qua ma sát giữa các viên bi và mặt phẳng tiếp xúc. Sau va chạm, cả hai viên bi đều đứng yên. Vận tốc viên bi hai trước va chạm là</p>",
+  "options": [
+   "$4 m/s.$",
+   "$2 m/s.$",
+   "$6 m/s.$",
+   "$5 m/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-049",
+  "src": "c5-2",
+  "num": 10,
+  "gocLoiGiai": "Theo bài ra ta có $\\left\\{ \\begin{array}{r}\n\\mathit{m}_{1} \\\\\n\\mathbf{=}5\\mathit{m}_{2}\n\\end{array} \\right\\}\\mathit{v}_{2}^{/}\\mathbf{=}5\\mathit{v}_{1}^{/}$\nChọn chiều dương là chiều chuyển động của viên bi một trước lúc va chạm\nTheo định luật bảo toàn động lượng $m_{1}v_{1}+m_{2}v_{2}=m_{1}v_{1}^{/}+m_{2}v_{2}^{/}$\nChiếu lên chiều dương ta có $m_{1}v_{1}-m_{2}v_{2}=m_{1}v_{1}^{/}+m_{2}v_{2}^{/}$\n$\\Rightarrow5m_{2}.4-m_{2}.1=5m_{2}v_{1}^{/}+m_{2}.5v_{1}^{/}\\Rightarrow19=10v_{1}^{/}\\Rightarrow v_{1}^{/}=1,9 m/s\\Rightarrow v_{2}^{/}=5.1,9=9,5 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Bắn một hòn bi thép với vận tốc $4 m/s$ vào một hòn bi ve đang chuyển động ngược chiều với vận tốc $1 m/s$ biết khối lượng bi thép gấp $5$ lần bi ve. Sau khi va chạm, hai hòn bi cùng chuyển động về phía trước, nhưng bi ve có vận tốc gấp $5$ lần bi thép. Vận tốc của vi thép và bi ve sau va chạm lần lượt là</p>",
+  "options": [
+   "$3,9 m/s, 7,5 m/s.$",
+   "$1,9 m/s, 9,5 m/s.$",
+   "$3,9 m/s, 6,5 m/s.$",
+   "$7,9 m/s, 4,5 m/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-050",
+  "src": "c5-2",
+  "num": 11,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của viên bi một trước lúc va chạm.\nTheo định luật bảo toàn động lượng $m_{1}v_{1}+m_{2}v_{2}=m_{1}v_{1}^{/}+m_{2}v_{2}^{/}$\nSau va chạm viên bi hai đứng yên viên bi một chuyển động ngược chiều với vận tốc 3 m/s.\nChiếu lên chiều dương $m_{1}v_{1}-m_{2}v_{2}= -m_{1}v_{1}^{/}+0\\Rightarrow v_{2}=\\frac{m_{1}}{v}_{1}+m_{1}v_{1}^{/}m_{2}\\Rightarrow v_{2}=\\frac{4.4+4.3}{8}=3,5 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho hai viên bi chuyển động ngược chiều nhau trên cùng một đường thẳng quỹ đạo và va chạm vào nhau. Viên bi một có khối lượng $4 kg$ đang chuyển động với vận tốc $4 m/s$ và viên bi hai có khối lượng $8 kg$ đang chuyển động với vận tốc $ v_{2}.$ Bỏ qua ma sát giữa các viên bi và mặt phẳng tiếp xúc. Giả sử sau va chạm, viên bi $2$ đứng yên còn viên bi $1$ chuyển động ngược lại với vận tốc $ v_{1}^{/} = 3 m/s.$ Vận tốc viên bi 2 trước va chạm là</p>",
+  "options": [
+   "$4 m/s.$",
+   "$2 m/s.$",
+   "$6 m/s.$",
+   "$3,5 m/s.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-051",
+  "src": "c5-2",
+  "num": 12,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của viên bi một trước lúc va chạm.\nTheo định luật bảo toàn động lượng $m_{1}v_{1}+m_{2}v_{2}=m_{1}v_{1}^{/}+m_{2}v_{2}^{/}$\nChiếu lên chiều dương $m_{1}v_{1}+m_{2}0=m_{1}v_{1}^{/}+m_{2}v_{2}^{/}\\Rightarrow v_{1}^{/}=\\frac{m_{1}}{v}_{1}-m_{2}v_{2}m_{1}=\\frac{0,2.5-0,4.3}{0,2}= -1 m/s.$\nVậy viên bi một sau va chạm chuyển động với vận tốc là 1 m/s và chuyển động ngược chiều với chiều chuyển động ban đầu.\nKhi thay số ta chọn chiều vận tốc $v_{1}$ làm chiều $( + )$ thì $v_{2}$ phải lấy $( - )$ và $ v_{2} = - 15 cm/s,$ vận tốc của $ m_{1}$ sau va chạm là $ v_{1} = - 31,5 cm/s.$Vậy $ m_{1}$ chuyển động sang trái, còn $ m_{2}$ chuyển động sang phải.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho viên bi một có khối lượng $200 gam$ đang chuyển động trên mặt phẳng nằm ngang vói vận tốc $5 m/s$ tới va chạm vào viên bi thứ hai có khối lượng $400 gam$ đang đứng yên, biết rằng sau va chạm viên bi thứ hai chuyển động với vận tốc $3 m/s,$ chuyển động của hai bi trên cùng một đường thẳng. Độ lớn vận tốc và chiều chuyển động của viên bi một sau va chạm là</p>",
+  "options": [
+   "$1 m/s.$",
+   "$2 m/s.$",
+   "$6 m/s.$",
+   "$- 1 m/s.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-052",
+  "src": "c5-2",
+  "num": 13,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động của viên bi một trước lúc va chạm.\nTheo định luật bảo toàn động lượng $m_{1}v_{1}+m_{2}v_{2}=m_{1}v_{1}^{/}+m_{2}v_{2}^{/}$\nSau va chạm hai viên bị đứng yên nên $v_{1}^{/}=v_{2}^{/}=0 m/s.$\nChiếu lên chiều dương ta có $m_{1}v_{1}-m_{2}v_{2}=0\\Rightarrow v_{2}=\\frac{m_{1}}{v}_{1}m_{2}=\\frac{4.4}{8}=2 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Cho hai viên bi chuyển động ngược chiều nhau trên cùng một đường thẳng quỹ đạo và va chạm vào nhau. Viên bi một có khối lượng $4 kg$ đang chuyển động với vận tốc $4 m/s$ và viên bi hai có khối lượng $8 kg$ đang chuyển động với vận tốc $ v_{2}.$ Bỏ qua ma sát giữa các viên bi và mặt phẳng tiếp xúc. Sau va chạm, cả hai viên bi đều đứng yên. Vận tốc viên bi hai trước va chạm là</p>",
+  "options": [
+   "$4 m/s.$",
+   "$2 m/s.$",
+   "$6 m/s.$",
+   "$3,5 m/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-056",
+  "src": "c5-2",
+  "num": 17,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một đầu đạn khối lượng $10 gam$ được bắn ra khỏi nòng của một khẩu súng khối lượng $5 kg$ với vận tốc $600 m/s.$ Nếu bỏ qua khối lượng của vỏ đạn thì vận tốc giật của súng là</p>",
+  "options": [
+   "$12 cm/s.$",
+   "$1,2 m/s.$",
+   "$12 m/s.$",
+   "$1,2 cm/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-058",
+  "src": "c5-2",
+  "num": 19,
+  "gocLoiGiai": "Hệ súng và đạn trước và sau khi bắn là hệ kín.\nVận tốc giật lùi của súng có độ lớn là\nTheo định luật bảo toàn động lượng ta có $mv+MV=0\\Rightarrow V= -\\frac{m}{M}v$\nChọn chiều dương theo chiều chuyển động của súng $\\Rightarrow V= -\\frac{m}{M}.v= -3 m/s.$\nVậy súng giật lùi với vận tốc $3 m/s$ ngược chiều với hướng viên đạn.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một khẩu súng có khối lượng $4 kg$ bắn ra viên đạn có khối lượng $20 gam.$ Khi viên đạn ra khỏi nòng súng thì có vận tốc là $600 m/s.$ Khi đó súng bị giật lùi với vận tốc $v$ có độ lớn là</p>",
+  "options": [
+   "$4 m/s.$",
+   "$2 m/s.$",
+   "$6 m/s.$",
+   "$3 m/s.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-059",
+  "src": "c5-2",
+  "num": 20,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Khối lượng súng là $4 kg$ và của đạn là $50 gam.$ Lúc thoát khỏi nòng súng, đạn có vận tốc $800 m/s.$ Vận tốc giật lùi của súng là</p>",
+  "options": [
+   "$6 m/s.$",
+   "$7 m/s.$",
+   "$10 m/s.$",
+   "$12 m/s.$"
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-2-mc-060",
+  "src": "c5-2",
+  "num": 21,
+  "gocLoiGiai": "Động lượng của súng khi chưa bắn là bằng $0.$\nÁp dụng điịnh luật bảo toàn động lượng $m_{S}{\\overset{\\rightarrow}{v}}_{S} + m_{đ}{\\overset{\\rightarrow}{v}}_{đ}=0$\nVận tốc của súng là $v= -\\frac{m_{đ.}}{v_{}}đm_{S}=1,5 m/s.$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một khẩu súng đại bác nằm ngang khối lượng $m_{s} = 1000 kg,$ bắn một viên đoạn khối lượng $ m_{đ} = 2,5 kg.$Vận tốc viên đoạn ra khỏi nòng súng là $600 m/s.$ Vận tốc của súng sau khi bắn là</p>",
+  "options": [
+   "$4 m/s.$",
+   "$2 m/s.$",
+   "$6 m/s.$",
+   "$1,5 m/s.$"
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-2-mc-063",
+  "src": "c5-2",
+  "num": 24,
+  "gocLoiGiai": "Theo định luật bảo toàn động lượng $-\\left( m_{1} \\right)+m_{2}+m_{3}v_{1}=\\left( m_{1} \\right)+m_{2}v^{/}+m_{3}\\left( v_{0} \\right)-v_{1}$\n$\\Rightarrow v^{/}=\\frac{-\\left( m_{1} \\right)+m_{2}}{+}m_{3}v_{1}-m_{3}\\left( v_{0} \\right)-v_{1}m_{1}+m_{2}=\\frac{-\\left( 130+20+1 \\right)}{.}5-1\\left( 400-5 \\right)130+20\\approx -7,67 m/s.$\nVận tốc của toa vẫn theo chiều cũ và tăng tốc.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một khẩu pháo có khối lượng $m_{1} = 130 kg$ được đặt trên một toa xe nằm trên đường ray biết toa xe có khối lượng $ m_{2} = 20 kg$ khi chưa nạp đạn. Viên đạn được bắn ra theo phương nằm ngang dọc theo đường ray biết viên đạn có khối lượng $ m_{3} = l kg.$ Vận tốc của đạn khi bắn ra khỏi nòng súng thì có vận tốc $ v_{0} = 400 m/s$ so với súng. Hãy xác định vận tốc của toa xe sau khi bắn khi toa xe đang chuyển động với vận tốc $ v_{1} = 18 km/h$ theo chiều ngược với đạn là</p>",
+  "options": [
+   "$– 3,67 m/s.$",
+   "$– 7,67 m/s.$",
+   "$– 8,76 m/s.$",
+   "$– 2,67 m/s.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-mc-064",
+  "src": "c5-2",
+  "num": 25,
+  "gocLoiGiai": "Theo định luật bảo toàn động lượng ta có $m_{0}v_{0}=\\left( m_{0} \\right)-mv^{/}+m\\left( v_{0} \\right)-v$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một tên lửa khối lượng $70$ tấn đang bay với vận tốc $200 m/s$ đối với Trái Đất thì tức thời phụt ra lượng khí có khối lượng $5$ tấn với vận tốc $450m/s$ đối với tên lửa. Vận tốc tên lửa sau khi phụt khí ra đối với Trái Đất là</p>",
+  "options": [
+   "$234,6 m/s.$",
+   "$134,6 m/s.$",
+   "$334,6 m/s.$",
+   "$434,6 m/s.$"
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-2-mc-068",
+  "src": "c5-2",
+  "num": 29,
+  "gocLoiGiai": "Khi đạn nổ bỏ qua sức cản của không khí nên được coi như là một hệ kín.\nVận tốc của mảnh nhỏ trước khi nổ là $v_{1}^{/}-v_{1}^{2}=2gh\\Rightarrow v_{1}=\\sqrt{v_{1}^{/2}}-2gh$\nTheo định luật bảo toàn động lượng $p=p_{1}+p_{2}$\nVới $\\left\\{ \\begin{array}{r}\n\\mathit{p}\\mathbf{=}\\mathit{m}\\mathit{v}\\mathbf{=}\\left( 0,5\\mathbf{+}0,3 \\right) \\\\\n.12,5\\mathbf{=}10\\ kg.m/s. \\\\\n\\mathit{p}_{1}\\mathbf{=}\\mathit{m}_{1} \\\\\n\\mathit{v}_{1} \\\\\n\\mathbf{=}0,5.20\\sqrt{3} \\\\\n\\mathbf{=}10\\sqrt{3} \\\\\n\\ kg.m/s. \\\\\n\\mathit{p}_{2}\\mathbf{=}\\mathit{m}_{2} \\\\\n\\mathit{v}_{2} \\\\\n\\mathbf{=}0,3\\mathit{v}_{2} \\\\\n\\ kg.m/s.\n\\end{array} \\right\\}$\n![](c5/media/media/image769.emf)\nVì $v_{1}\\botv_{2}\\Rightarrow p_{1}\\botp$ theo pitago\n$\\Rightarrow p_{2}^{2}=p_{1}^{2}+p^{2}\\Rightarrow p_{2}=\\sqrt{p_{1}^{2}}+p^{2}={\\sqrt{\\left( 10\\sqrt{3} \\right)}}^{2}+10^{2}=20 kg.m/s.$\n$\\Rightarrow v_{2}=\\frac{p_{2}}{0,3}=\\frac{20}{0,3}\\approx66,7 m/s.$\nMà $sin\\alpha=\\frac{p_{1}}{p_{2}}=\\frac{10\\sqrt{3}}{20}\\Rightarrow\\alpha=60^{0}$\nVậy mảnh hai chuyển động theo phương hợp với phương thẳng đứng một góc 60° với vận tốc $66,67$ m/s.",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một viên đạn được bắn ra khỏi nòng súng ở độ cao $20m$ đang bay ngang với vận tốc $12,5 m/s$ thì vỡ thành hai mảnh. Với khối lượng lần lượt là $0,5kg và 0,3kg.$ Mảnh to rơi theo phương thẳng đứng xuống dưới và có vận tốc khi chạm đất là $40 m/s.$ Khi đó mảnh hai bay theo phương nào với vận tốc bao nhiêu. Lấy $ g = 10m/s^{2}.$</p>",
+  "options": [
+   "$55,67 m/s, 40^{0}.$",
+   "$66,67 m/s, 60^{0}.$",
+   "$26,67 m/s, 30^{0}.$",
+   "$36,67 m/s, 50^{0}.$"
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-2-tf-070",
+  "src": "c5-2",
+  "num": 1,
+  "gocLoiGiai": "a. Động lượng của vật là đại lượng có hướng.\nb. Đơn vị của động lượng là $kg.m/s.$\nc. Động lượng của chim bồ câu trước khi bị bắt là $p_{t}=mv=0,65.7=4,55 N.s.$\n\nd. Sau khi bắt được bồ câu, tốc độ của chim đại bàng. Áp dụng định luật bảo toàn động lượng ta có $m_{1}v_{1}+m_{2}v_{2}=\\left( m_{1} \\right)+m_{2}v$\n\n$\\Leftrightarrow1,8.18+0,65.7=\\left( 1,8+0,65 \\right)v\\Rightarrow v=25,08 m/s.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong không trung, một con chim đại bàng nặng $1,8 kg$ bay đến bắt một con chim bồ câu nặng 0,65 kg đang bay cùng chiều với tốc độ $7 m/s.$ Biết tốc độ của chim đại bàng ngay trước khi bắt được bồ câu là 18 m/s.</p>",
+  "statements": [
+   {
+    "text": "Động lượng của vật là đại lượng vô hướng.",
+    "answer": false
+   },
+   {
+    "text": "Đơn vị của động lượng là k g . m / s .",
+    "answer": true
+   },
+   {
+    "text": "Động lượng của chim bồ câu trước khi bị bắt bằng 4, 0 N . s .",
+    "answer": false
+   },
+   {
+    "text": "Ngay sau khi chim đại bàng bắt được bồ câu tốc độ của chúng bằng 15 m / s .",
+    "answer": true
+   }
+  ]
+ },
+ {
+  "key": "c5-2-tf-071",
+  "src": "c5-2",
+  "num": 2,
+  "gocLoiGiai": "a. Động lượng của hệ được bảo toàn của hệ $2$ vật va chạm trong hệ kín.\nb. Sau va chạm do hai vật dính vào nhau nên chuyển động cùng vận tốc.\nc. Biểu thức định luật bảo toàn động lượng $m_{1}{\\overset{\\rightarrow}{v}}_{1}+m_{2}{\\overset{\\rightarrow}{v}}_{2}=\\left( m_{1} \\right)+m_{2}\\overset{\\rightarrow}{v}$\nd. Ta có $v=\\frac{m_{1}}{||}v_{1}-m_{2}\\left| v_{2} \\right|m_{1}+m_{2}=\\frac{1}{3} m/s.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hai xe A và B có khối lượng lần lượt $m_{1} = 2 kg và m_{2} = 4 kg$ đang chuyển động với độ lớn vận tốc tương ứng $3 m/s và 1 m/s$ trên một giá đỡ nhẵn nằm ngang theo chiều ngược nhau đến va chạm vào nhau, sau va chạm hai xe dính chặt vào nhau. Bỏ qua mọi lực cản</p>",
+  "statements": [
+   {
+    "text": "Động lượng của hệ được bảo toàn.",
+    "answer": true
+   },
+   {
+    "text": "Sau va chạm hai vật chuyển động không cùng vận tốc.",
+    "answer": false
+   },
+   {
+    "text": "Biểu thức định luật bảo toàn động lượng $m_{1}{\\overset{\\rightarrow}{v}}_{1}+m_{2}{\\overset{\\rightarrow}{v}}_{2}=\\left( m_{1} \\right)-m_{2}\\overset{\\rightarrow}{v}.$",
+    "answer": true
+   },
+   {
+    "text": "Vận tốc của hai xe sau khi chúng va chạm vào nhau là $\\frac{5}{3} m/s.$",
+    "answer": false
+   }
+  ]
+ },
+ {
+  "key": "c5-2-tf-072",
+  "src": "c5-2",
+  "num": 3,
+  "gocLoiGiai": "a. Tổng đổng lượng của hệ $2$ viên bi trước va chạm là $ p_{truoc}=m_{1}v_{1}+m_{2}v_{2}=2.3+4.0=6 kg.m/s.$\nb. Bi $2$ trước va chạm động lượng bằng không do bi $2$ đứng yên.\nc. Áp dụng định luật bảo toàn động lượng $p_{truoc}=p_{sau}\\Leftrightarrowm_{1}v_{1}+m_{2}v_{2}=\\left( m_{1} \\right)+m_{2}v$\n$\\Leftrightarrow2.3+4.0=\\left( 2+4 \\right)v\\Rightarrow v=1 m/s.$\nd. Sau va chạm hệ chuyển động cùng chiều với hòn bi $1.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hòn bi $1$ khối lượng $2 kg$ đang chuyển động với vận tốc $3 m/s$ đến va chạm vào hòn bi 2 có khối lượng $4 kg$ đang nằm yên, sau va chạm hai viên bi gắn vào nhau và chuyến động cùng vận tốc.</p>",
+  "statements": [
+   {
+    "text": "Tổng động lượng của hệ $2$ viên bi trước va chạm là $6 kg.m/s.$",
+    "answer": true
+   },
+   {
+    "text": "Động lượng của bi $2$ trước va chạm bằng $4 kg.m/s.$",
+    "answer": false
+   },
+   {
+    "text": "Vận tốc của hệ sau va chạm là $1 m/s.$",
+    "answer": true
+   },
+   {
+    "text": "Sau va chạm hệ đổi chiều chuyển động.",
+    "answer": false
+   }
+  ]
+ },
+ {
+  "key": "c5-2-tf-073",
+  "src": "c5-2",
+  "num": 4,
+  "gocLoiGiai": "b. Định luật bảo toàn động lượng $m_{1}v_{1}'+m_{2}v_{2}'=m_{1}v_{1}+m_{2}v_{2}$\nDo va chạm mềm nên vận tốc các vật sau va chạm $v_{1}'=v_{2}'=v'\\Rightarrow\\left( m_{1} \\right)+m_{2}v'=m_{1}v_{1}+m_{2}v_{2}$\nVì các vận tốc cùng phương nên $\\left( m_{1} \\right)+m_{2}v'=m_{1}v_{1}+m_{2}v_{2}(1)$\nChọn chiều dương là chiều chuyển động ban đầu của xe $1,$ ta có $\\left\\{ \\begin{array}{r}\n\\mathit{v}_{1} \\\\\n\\mathbf{=}\\mathbf{+}0,2\\ m/s \\\\\n\\mathit{v}_{2}\\mathbf{=}\\mathbf{-}0,8\\ m/s\n\\end{array} \\right\\}(2)$\nThay $m_{1} = 0,3 kg, m_{2} = 0,2 kg$ và $(2)$ vào $(1),$ tìm được $v'=\\frac{m_{1}}{v_{}}1+m_{2}v_{2}m_{1}+m_{2}= -0,2 m/s.$\nc. Động năng của hệ trước va chạm $W_{d-truoc}=\\frac{1}{2}m_{1}{v_{1}}^{2}+\\frac{1}{2}m_{2}{v_{2}}^{2}=0,07J$.\nĐộng năng của hệ sau va chạm $W_{d-sau}=\\frac{1}{2}\\left( m_{1} \\right)+m_{2}v'^{2}=0,01J$.\nd. Phần năng lượng bị tiêu hao trong va chạm $\\Delta W_{d}=W_{d-truoc}-W_{d-sau}=0,06J.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Hai xe lăn nhỏ có khối lượng lần lượt $m_{1} = 300 gam, m_{2} = 200 gam$ chuyển động ngược chiều hướng vào nhau trên một đường thẳng nằm ngang với các tốc độ tương ứng $ v_{1} = 0,2 m/s, v_{2} = 0,8 m/s.$ Sau va chạm, hai xe dính vào nhau.</p>",
+  "statements": [
+   {
+    "text": "Sau va chạm, hai xe dính vào nhau nên hai xe chuyển động cùng một vận tốc.",
+    "answer": true
+   },
+   {
+    "text": "Vận tốc của hai xe sau va chạm có giá trị là 0, 2 m / s .",
+    "answer": false
+   },
+   {
+    "text": "Động năng của hệ trước va chạm và sau khi va chạm có giá trị lần lượt là 0, 07 J và 0, 01 J .",
+    "answer": true
+   },
+   {
+    "text": "Phần năng lượng bị tiêu hao trong quá trình va chạm là 0, 08 J .",
+    "answer": false
+   }
+  ]
+ },
+ {
+  "key": "c5-2-tf-074",
+  "src": "c5-2",
+  "num": 5,
+  "gocLoiGiai": "a. Năng lượng của ô tô có được là động năng do ô tô di chuyển.\nb. Đây là va chạm mềm do sau va chạm, chiếc xe kéo theo cả vật cản trở (dính vào nhau).\nb. Độ lớn động lượng của ô tô trước va chạm $p_{1} = m_{1}v_{1} = 1500.15 = 225000 kgm/s.$\nd. Chọn chiều dương của trục toạ độ cùng chiều xe chạy. Do vậy nên các vận tốc đều dương.\nĐộng lượng trước va chạm có độ lớn là$p_{1} = m_{1}v_{1}$\nĐộng lượng sau va chạm có độ lớn $p' = \\left( m_{1} \\right) + m_{2}v'$\nNgay sau va chạm, xe có tốc độ là $v' = \\frac{m_{1}}{v_{}}1\\left( m_{1} \\right) + m_{2} = 14,5 m/s.$",
+  "form": "bai_tap",
+  "type": "true_false",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một ô tô trọng tải $1,5$ tấn đang di chuyển với tốc độ $54 km/h$ trên đường thì bất ngờ va chạm với một chướng ngại vật nặng $50 kg$ trên đường. Sau va chạm, chiếc xe kéo theo cả vật cản trở khoảng $2 m$ thì dừng lại. (Rất may là không xảy ra thương tích do người lái xe xử lí kịp thời)</p>",
+  "statements": [
+   {
+    "text": "Năng lượng của ô tô có được là động năng.",
+    "answer": true
+   },
+   {
+    "text": "Va chạm của xe với vật cản là va chạm đàn hồi.",
+    "answer": false
+   },
+   {
+    "text": "Độ lớn động lượng của ô tô trước va chạm bằng 225000 k g m / s .",
+    "answer": true
+   },
+   {
+    "text": "Ngay sau va chạm, tốc độ của xe bằng 14, 1 m / s .",
+    "answer": false
+   }
+  ]
+ },
+ {
+  "key": "c5-2-sa-076",
+  "src": "c5-2",
+  "num": 1,
+  "gocLoiGiai": "Động lượng của vật $p=mv=0,4.60=24 kg.\\frac{m}{s}.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Vật khối lượng $0,4 kg$ đang chuyển động với vận tốc $60 m/s$ thì động lượng vật có giá trị là bao nhiêu $ kg.\\frac{m}{s}?$</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-2-sa-077",
+  "src": "c5-2",
+  "num": 2,
+  "gocLoiGiai": "Vận tốc giật lùi của súng $V= -\\frac{mv}{M}= -\\frac{0,4.50}{400}= -0,05 m/s = -5 cm/s.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một súng có khối lượng $M=400 kg$ được đặt trên mặt đất nằm ngang. Bắn một viên đạn khối lượng $ m=400 gam$ theo phương nằm ngang. Vận tốc của đạn là $ v=50 m/s.$ Vận tốc giật lùi của súng là bao nhiêu cm/s?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-2-sa-078",
+  "src": "c5-2",
+  "num": 3,
+  "gocLoiGiai": "Từ công thức liên hệ giữa động năng và động lượng ta có\n$p^{2} = 2mW_{đ}\\Rightarrow p = \\sqrt{2mW_{đ}} = \\sqrt{2.0,1.20}=2 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng $100 gam,$ có động năng là $20 J.$ Động lượng của vật ấy có giá trị là bao nhiêu $ kg.\\frac{m}{s}?$</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-2-sa-079",
+  "src": "c5-2",
+  "num": 4,
+  "gocLoiGiai": "Tỉ số động lượng của $2$ xe $\\frac{p_{oto}}{p_{xetai}}=\\frac{m_{oto}}{v}_{oto}m_{xetai}v_{xetai}=\\frac{1000.15}{2000.10}=0,75.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một ô tô có khối lượng $1$ tấn đang chuyển động với tốc độ $54 km/h$ và một xe tải có khối lượng $2$ tấn đang chuyển động với tốc độ $10 m/s.$ Tỉ số độ lớn động lượng của xe ô tô và xe tải bằng bao nhiêu?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-2-sa-080",
+  "src": "c5-2",
+  "num": 5,
+  "gocLoiGiai": "Áp dụng định luật bảo toàn động lượng ta có $m1\\overset{\\rightarrow}{v}1+m_{2}{\\overset{\\rightarrow}{v}}_{2}=\\left( m_{1} \\right)+m_{2}\\overset{\\rightarrow}{v}$\n\nChiếu lên chiều $( + )$ là chiều chuyển động của vật 1 $ m_{1}v_{1}=\\left( m_{1} \\right)+m_{2}v\\Rightarrow v=\\frac{m_{1}}{v}_{1}\\left( m_{1} \\right)+m_{2}=8 m/s,$ với $ v_{2}=0.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Quả cầu $1$ có khối lượng $800 gram$ chuyển động với vận tốc $10 m/s$ đến đập vào quả cầu $2$ có khối lượng $200 gram$ đang nằm yên trên sàn. Sau va chạm, hai quả cầu nhập làm một di chuyển cùng vận tốc. Bỏ qua mọi ma sát. Vận tốc của hai quả cầu ngay sau khi va chạm là bao nhiêu m/s?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-2-sa-081",
+  "src": "c5-2",
+  "num": 6,
+  "gocLoiGiai": "Chọn chiều dương là chiều chuyển động.\nGọi v là vận tốc của hai vật dính vào nhau sau khi va chạm mềm.\nÁp dụng định luật bảo toàn động lượng $p_{truoc}=p_{sau}\\Leftrightarrowm_{1}v_{1}+m_{2}v_{2}=\\left( m_{1} \\right)+m_{2}v$\n$\\Rightarrow v=\\frac{m_{1}}{v_{}}1+m_{2}v_{2}m_{1}+m_{2}=\\frac{m.3+0,5m.0}{m+0,5m}=2 m/s.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng m chuyển động với vận tốc $3 m/s$ đến va chạm với một vật có khối lượng $0,5 m$ đang đứng yên. Sau va chạm, hai vật dính vào nhau và chuyển động với cùng vận tốc. ốc độ của hai vật ngay sau va chạm là bao nhiêu m/s?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-2-sa-082",
+  "src": "c5-2",
+  "num": 7,
+  "gocLoiGiai": "Áp dụng định luật bảo toàn động lượng $p_{t}=p_{s}\\Rightarrow mv=\\left( m+M \\right)v'$ với $ v'$ là vận tốc của hệ sau va chạm $\\Rightarrow\\frac{v}{v'}=\\frac{\\left( m+M \\right)}{m}=10.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một vật có khối lượng $m$ có vận tốc $ v,$ va chạm vào một vật khối lượng $ M$ đứng yên. Biết $ M=9m$ và sau va chạm hai vật dính vào nhau. Tỉ số vận tốc trước và sau va chạm của vật m là bao nhiêu?</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-2-sa-083",
+  "src": "c5-2",
+  "num": 8,
+  "gocLoiGiai": "![](c5/media/media/image906.png){width=\"2.4270833333333335in\" height=\"2.4270833333333335in\"}\n\nĐộ biến thiên động lượng quả bóng do va chạm $\\Delta\\overset{\\rightarrow}{p}=\\overset{\\rightarrow}{p}'-\\overset{\\rightarrow}{p}=\\overset{\\rightarrow}{p}'+\\left( -\\overset{\\rightarrow}{p} \\right)$\n\nTừ hình vẽ, ta thấy tam giác tạo với $3$ cạnh này là tam giác cân có 1 góc 60^0^ là tam đều.\nĐộ lớn $\\Delta p=p'=p=mv=0,2.25=5 kg.m/s.$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Một quả bóng $m = 200 gram$ bay đến đập vào mặt phẳng ngang với tốc độ $25 m/s$ theo góc $\\alpha=60^{0}.$ Bóng bật trở lại với cùng tốc độ v theo góc phản xạ $\\alpha=\\alpha'$ như hình bên. Độ biến thiên động lượng của quả bóng do va chạm có độ lớn bằng bao nhiêu $ kg.m/s?$</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-3-mc-001",
+  "src": "c5-3",
+  "num": 3,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong bộ thí nghiệm xác định động lượng của vật trước và sau va chạm, dụng cụ nào sau đây <strong>không</strong> sử dụng?</p>",
+  "options": [
+   "Cân điện tử.",
+   "Dây nối.",
+   "Đồng hồ đo điện đa năng.",
+   "Cổng quang điện."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-3-mc-002",
+  "src": "c5-3",
+  "num": 4,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Dụng cụ thí nghiệm nào sau đây <strong>không</strong> sử dụng để xác định động lượng của vật trước và sau va chạm?</p>",
+  "options": [
+   "Cân điện tử.",
+   "Đồng hồ đo thời gian hiện số.",
+   "Cổng quang điện.",
+   "Lực kế."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-3-mc-003",
+  "src": "c5-3",
+  "num": 5,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Nguyên nhân nào gây ra sai số khi thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm?</p>",
+  "options": [
+   "Lựa chọn thang đo trên đồng hồ chưa phù hợp.",
+   "Băng đệm khí chưa song song với mặt bàn.",
+   "Ma sát giữa xe trượt và băng đệm khí.",
+   "Cả ba nguyên nhân trên đều đúng."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-3-mc-004",
+  "src": "c5-3",
+  "num": 6,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong thí nghiệm xác định động lượng của vật trước và sau va chạm để đo động lượng của hai xe trước và sau va chạm ta làm cách nào sau đây?</p>",
+  "options": [
+   "Đo thời gian, sau đó tính gián tiếp tốc độ của vật và động lượng của vật trước và sau va chạm.",
+   "Đo trực tiếp tốc độ, sau đó tính gián tiếp động lượng của vật trước và sau va chạm.",
+   "Đo trực tiếp động lượng của vật trước và sau va chạm.",
+   "Chỉ cần đo thời gian là kết luận được động lượng của vật."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-3-mc-006",
+  "src": "c5-3",
+  "num": 8,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong thí nghiệm xác định động lượng của vật trước và sau va chạm để hạn chế sai số khi đo thời gian mà vật cản quang chắn ngang cổng quang điện ta cần lưu ý</p>",
+  "options": [
+   "thực hiện đo liên tục các lần thí nghiệm mà không cần Reset lại đồng hồ.",
+   "sử dụng đồng hồ bấm giờ bằng tay.",
+   "chỉ thực hiện đo một lần duy nhất để tránh sai số.",
+   "ấn nút Reset trên mặt đồng hồ để đưa số chỉ của đồng hồ về 0.000."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-3-mc-007",
+  "src": "c5-3",
+  "num": 9,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong thí nghiệm xác định động lượng của vật trước và sau va chạm mềm, sau khi va chạm thì vận tốc của xe 1 và xe 2 có giá trị</p>",
+  "options": [
+   "v’$_{1}$ = v’$_{2}$.",
+   "v’$_{1}$ = - v’$_{2}$.",
+   "v’$_{1}$ = 2.v’$_{2}$.",
+   "v’$_{1}$ = 0,5.v’$_{2}$."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-3-mc-008",
+  "src": "c5-3",
+  "num": 10,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong thí nghiệm xác định động lượng của vật trước và sau va chạm mềm, sau va chạm xe 1 và xe 2 chuyển động với tốc độ lần lượt là $v_{1}$’; $v_{2}$’. Độ lớn động lượng của hệ sau khi va chạm là</p>",
+  "options": [
+   "p = $m_{1}$.$v_{1}$’.",
+   "p = ($m_{1}$ + $m_{2}$).$v_{1}$’.",
+   "p = $m_{2}$.$v_{2}$’.",
+   "p = ($m_{1}$ - $m_{2}$).$v_{2}$’."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-3-mc-009",
+  "src": "c5-3",
+  "num": 11,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong thí nghiệm xác định động lượng của vật trước và sau va chạm đàn hồi, sau khi va chạm thì 2 xe sẽ chuyển động như thế nào?</p>",
+  "options": [
+   "Cùng phương, cùng chiều.",
+   "Cùng phương, ngược chiều.",
+   "Xe 1 đứng yên, xe 2 chuyển động.",
+   "Xe 2 đứng yên, xe 1 chuyển động."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-3-mc-010",
+  "src": "c5-3",
+  "num": 12,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong thí nghiệm xác định động lượng của vật trước và sau va chạm đàn hồi, sau va chạm xe 1 và xe 2 chuyển động với tốc độ lần lượt là $v_{1}$’; $v_{2}$’. Chọn chiều dương theo chiều chuyển động của xe 1. Độ lớn động lượng của hệ sau khi va chạm là</p>",
+  "options": [
+   "p = $m_{1}$.$v_{1}$’+ $m_{2}$.$v_{2}$’.",
+   "p = $m_{1}$.$v_{1}$’- $m_{2}$.$v_{2}$’.",
+   "p = ($m_{1}$ + $m_{2}$).$v_{2}$’.",
+   "p = ($m_{1}$ + $m_{2}$).$v_{1}$’."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-3-mc-011",
+  "src": "c5-3",
+  "num": 13,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong thí nghiệm xác định động lượng của vật trước và sau va chạm, băng đệm khí và bơm nén khí có công dụng</p>",
+  "options": [
+   "cung cấp vận tốc ban đầu cho xe trượt.",
+   "giữ cho xe trượt chuyển động trên một quỹ đạo thẳng.",
+   "đảm bảo cho xe trượt chuyển động đều.",
+   "giảm ma sát giữa xe trượt và băng trượt."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-3-mc-012",
+  "src": "c5-3",
+  "num": 14,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Trong thí nghiệm xác định động lượng của vật trước và sau va chạm, cổng quang điện có công dụng</p>",
+  "options": [
+   "điều khiển mở đóng đồng hồ đo thời gian hiện số.",
+   "đo trực tiếp vận tốc của vật.",
+   "thu tia tử ngoại.",
+   "giảm ma sát giữa xe và băng trượt."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-3-mc-016",
+  "src": "c5-3",
+  "num": 18,
+  "gocLoiGiai": "",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Để tránh sai số trong quá trình thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm. Ta cần lưu ý</p>",
+  "options": [
+   "điều chỉnh cho băng đệm khí nằm ngang, song song với mặt bàn.",
+   "điều chỉnh tốc độ của bơm nén khí càng lớn càng tốt.",
+   "tấm cản quang phải vuông góc với băng đệm khí.",
+   "không nên ấn nút reset khi thực hiện lượt thí nghiệm mới."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-3-mc-019",
+  "src": "c5-3",
+  "num": 21,
+  "gocLoiGiai": "$$\\overrightarrow{p} = \\overrightarrow{p_{1}} + \\overrightarrow{p_{2}} \\Longrightarrow p = p_{1} + p_{2} = m_{1}.v_{1} = 0,31 \\times 0,767 = 0,238 kg.m/s.$$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm mềm, học sinh thu được bảng số liệu của hệ trước va chạm như bên dưới.  <table style=\"width:47%;\">  <colgroup>  <col style=\"width: 6%\" />  <col style=\"width: 6%\" />  <col style=\"width: 7%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  </colgroup>  <thead>  <tr>  <th colspan=\"3\" style=\"text-align: center;\"><strong>Độ dài tấm cản quang</strong> s = 0,1 m</th>  <th colspan=\"3\" style=\"text-align: center;\"><strong>Trước va chạm</strong></th>  </tr>  </thead>  <tbody>  <tr>  <td style=\"text-align: center;\"><strong>Lần</strong></td>  <td style=\"text-align: center;\"><p><strong>m<sub>1</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>m<sub>2</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>t<sub>1</sub></strong></p>  <p><em>s</em></p></td>  <td style=\"text-align: center;\"><p><strong>v<sub>1</sub></strong></p>  <p><em>m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>p</strong></p>  <p><em>kg.m/s</em></p></td>  </tr>  <tr>  <td style=\"text-align: center;\">1</td>  <td style=\"text-align: center;\">0,31</td>  <td style=\"text-align: center;\">0,41</td>  <td style=\"text-align: center;\">0,130</td>  <td style=\"text-align: center;\">0,767</td>  <td style=\"text-align: center;\">?</td>  </tr>  </tbody>  </table>  Biết trước va chạm, xe 2 đứng yên. Động lượng của hệ trước va chạm có độ lớn là</p>",
+  "options": [
+   "0,238 kg.m/s.",
+   "0,314 kg.m/s.",
+   "0,552 kg.m/s.",
+   "0,077 kg.m/s."
+  ],
+  "answer": 0
+ },
+ {
+  "key": "c5-3-mc-020",
+  "src": "c5-3",
+  "num": 22,
+  "gocLoiGiai": "$$v_{1} = \\frac{s}{t_{1}} = \\frac{0,1}{0,236} = 0,424 m/s.$$\n\n$$\\overrightarrow{p} = \\overrightarrow{p_{1}} + \\overrightarrow{p_{2}} \\Longrightarrow p = p_{1} + p_{2} = m_{1}.v_{1} = 0,25 \\times 0,424 = 0,106 kg.m/s.$$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm mềm, học sinh thu được bảng số liệu của hệ trước va chạm như bên dưới.  <table style=\"width:47%;\">  <colgroup>  <col style=\"width: 6%\" />  <col style=\"width: 6%\" />  <col style=\"width: 7%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  </colgroup>  <thead>  <tr>  <th colspan=\"3\" style=\"text-align: center;\"><strong>Độ dài tấm cản quang</strong> s = 0,1 m</th>  <th colspan=\"3\" style=\"text-align: center;\"><strong>Trước va chạm</strong></th>  </tr>  </thead>  <tbody>  <tr>  <td style=\"text-align: center;\"><strong>Lần</strong></td>  <td style=\"text-align: center;\"><p><strong>m<sub>1</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>m<sub>2</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>t<sub>1</sub></strong></p>  <p><em>s</em></p></td>  <td style=\"text-align: center;\"><p><strong>v<sub>1</sub></strong></p>  <p><em>m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>p</strong></p>  <p><em>kg.m/s</em></p></td>  </tr>  <tr>  <td style=\"text-align: center;\">1</td>  <td style=\"text-align: center;\">0,25</td>  <td style=\"text-align: center;\">0,50</td>  <td style=\"text-align: center;\">0,236</td>  <td style=\"text-align: center;\">?</td>  <td style=\"text-align: center;\">?</td>  </tr>  </tbody>  </table>  Biết trước va chạm, xe 2 đứng yên. Tốc độ của xe 1 và độ lớn động lượng của hệ trước va chạm là</p>",
+  "options": [
+   "0,424 m/s; 0,212 kg.m/s.",
+   "0,236 m/s; 0,212 kg.m/s.",
+   "0,424 m/s; 0,106 kg.m/s.",
+   "0,424 m/s; 0,318 kg.m/s."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-3-mc-021",
+  "src": "c5-3",
+  "num": 23,
+  "gocLoiGiai": "$$v_{1}' = v_{2}' = \\frac{s}{t_{1}'} = \\frac{0,1}{0,202} = 0,495 m/s.$$\n\n$$\\overrightarrow{p} = \\overrightarrow{p_{1}} + \\overrightarrow{p_{2}} \\Longrightarrow p = p_{1} + p_{2} = \\left( m_{1} + m_{2} \\right).v_{1}' = (0,15 + 0,25) \\times 0,495 = 0,198 kg.m/s.$$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm mềm, học sinh thu được bảng số liệu của hệ sau va chạm như bên dưới.  <table style=\"width:50%;\">  <colgroup>  <col style=\"width: 6%\" />  <col style=\"width: 6%\" />  <col style=\"width: 7%\" />  <col style=\"width: 8%\" />  <col style=\"width: 10%\" />  <col style=\"width: 10%\" />  </colgroup>  <thead>  <tr>  <th colspan=\"3\" style=\"text-align: center;\"><strong>Độ dài tấm cản quang</strong> s = 0,1 m</th>  <th colspan=\"3\" style=\"text-align: center;\"><strong>Sau va chạm</strong></th>  </tr>  </thead>  <tbody>  <tr>  <td style=\"text-align: center;\"><strong>Lần</strong></td>  <td style=\"text-align: center;\"><p><strong>m<sub>1</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>m<sub>2</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>t’<sub>1</sub></strong></p>  <p><em>s</em></p></td>  <td style=\"text-align: center;\"><p><strong>v’<sub>1</sub>= v’<sub>2</sub></strong></p>  <p><em>m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>p'</strong></p>  <p><em>kg.m/s</em></p></td>  </tr>  <tr>  <td style=\"text-align: center;\">1</td>  <td style=\"text-align: center;\">0,15</td>  <td style=\"text-align: center;\">0,25</td>  <td style=\"text-align: center;\">0,202</td>  <td style=\"text-align: center;\">?</td>  <td style=\"text-align: center;\">?</td>  </tr>  </tbody>  </table>  Tốc độ của 2 xe và độ lớn động lượng của hệ trước va chạm là</p>",
+  "options": [
+   "0,495 m/s; 0,050 kg.m/s.",
+   "0,202 m/s; 0,198 kg.m/s.",
+   "0,202 m/s; 0,050 kg.m/s.",
+   "0,495 m/s; 0,198 kg.m/s."
+  ],
+  "answer": 3
+ },
+ {
+  "key": "c5-3-mc-022",
+  "src": "c5-3",
+  "num": 24,
+  "gocLoiGiai": "$$p_{1}' = m_{1}v_{1}' = 0,3 \\times 0,357 = 0,107 kg.m/s.$$\n\n$$p_{2}' = m_{2}\\left( - v_{2}' \\right) = 0,5 \\times ( - 0,201) = - 0,101 kg.m/s.$$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm đàn hồi, học sinh thu được bảng số liệu của hệ sau va chạm như bên dưới. Chọn chiều dương theo chiều chuyển động của xe 1.  <table style=\"width:86%;\">  <colgroup>  <col style=\"width: 6%\" />  <col style=\"width: 6%\" />  <col style=\"width: 6%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  </colgroup>  <thead>  <tr>  <th colspan=\"3\" style=\"text-align: center;\"><strong>Độ dài tấm cản quang</strong> s = 0,1 m</th>  <th colspan=\"2\" style=\"text-align: center;\"><strong>Trước va chạm</strong></th>  <th colspan=\"6\" style=\"text-align: center;\"><strong>Sau va chạm</strong></th>  </tr>  </thead>  <tbody>  <tr>  <td style=\"text-align: center;\"><strong>Lần</strong></td>  <td style=\"text-align: center;\"><p><strong>m<sub>1</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>m<sub>2</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>p<sub>1</sub></strong></p>  <p><em>kg.m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>p<sub>2</sub></strong></p>  <p><em>kg.m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>t’<sub>1</sub></strong></p>  <p><em>s</em></p></td>  <td style=\"text-align: center;\"><p><strong>t’<sub>2</sub></strong></p>  <p><em>s</em></p></td>  <td style=\"text-align: center;\"><p><strong>v’<sub>1</sub></strong></p>  <p><em>m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>v’<sub>2</sub></strong></p>  <p><em>m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>p'<sub>1</sub></strong></p>  <p><em>kg.m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>p'<sub>2</sub></strong></p>  <p><em>kg.m/s</em></p></td>  </tr>  <tr>  <td style=\"text-align: center;\">1</td>  <td style=\"text-align: center;\">0,30</td>  <td style=\"text-align: center;\">0,50</td>  <td style=\"text-align: center;\">0</td>  <td style=\"text-align: center;\">0</td>  <td style=\"text-align: center;\">0,280</td>  <td style=\"text-align: center;\">0,498</td>  <td style=\"text-align: center;\">0,357</td>  <td style=\"text-align: center;\">0,201</td>  <td style=\"text-align: center;\">?</td>  <td style=\"text-align: center;\">?</td>  </tr>  </tbody>  </table>  Động lượng của xe 1 và xe 2 sau va chạm là</p>",
+  "options": [
+   "0,107 kg.m/s; 0,101 kg.m/s.",
+   "0,107 kg.m/s; - 0,101 kg.m/s.",
+   "- 0,107 kg.m/s; 0,101 kg.m/s.",
+   "- 0,107 kg.m/s; - 0,101 kg.m/s."
+  ],
+  "answer": 1
+ },
+ {
+  "key": "c5-3-mc-023",
+  "src": "c5-3",
+  "num": 25,
+  "gocLoiGiai": "*Tốc độ của mỗi xe sau va chạm:*\n\n$$v_{1} = \\frac{\\left| p_{1}' \\right|}{m_{1}} = \\frac{|0,054|}{0,2} = 0,270 m/s.$$\n\n$$v_{2} = \\frac{\\left| p_{2}' \\right|}{m_{2}} = \\frac{| - 0,053|}{0,3} = 0,177 m/s.$$\n\n*Thời gian tấm cản quang của mỗi xe lướt qua cổng quang điện:*\n\n$$t_{1}' = \\frac{s}{v_{1}'} = \\frac{0,1}{0,270} = 0,370 s.$$\n\n$$t_{2}' = \\frac{s}{v_{2}'} = \\frac{0,1}{0,177} = 0,565 s.$$",
+  "form": "bai_tap",
+  "type": "multiple_choice",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm đàn hồi, học sinh thu được bảng số liệu của hệ sau va chạm như bên dưới. Chọn chiều dương theo chiều chuyển động của xe 1.  <table style=\"width:71%;\">  <colgroup>  <col style=\"width: 6%\" />  <col style=\"width: 6%\" />  <col style=\"width: 6%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  <col style=\"width: 8%\" />  </colgroup>  <thead>  <tr>  <th colspan=\"3\" style=\"text-align: center;\"><strong>Độ dài tấm cản quang</strong> s = 0,1 m</th>  <th colspan=\"2\" style=\"text-align: center;\"><strong>Trước va chạm</strong></th>  <th colspan=\"4\" style=\"text-align: center;\"><strong>Sau va chạm</strong></th>  </tr>  </thead>  <tbody>  <tr>  <td style=\"text-align: center;\"><strong>Lần</strong></td>  <td style=\"text-align: center;\"><p><strong>m<sub>1</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>m<sub>2</sub></strong></p>  <p><em>kg</em></p></td>  <td style=\"text-align: center;\"><p><strong>p<sub>1</sub></strong></p>  <p><em>kg.m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>p<sub>2</sub></strong></p>  <p><em>kg.m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>t’<sub>1</sub></strong></p>  <p><em>s</em></p></td>  <td style=\"text-align: center;\"><p><strong>t’<sub>2</sub></strong></p>  <p><em>s</em></p></td>  <td style=\"text-align: center;\"><p><strong>p'<sub>1</sub></strong></p>  <p><em>kg.m/s</em></p></td>  <td style=\"text-align: center;\"><p><strong>p'<sub>2</sub></strong></p>  <p><em>kg.m/s</em></p></td>  </tr>  <tr>  <td style=\"text-align: center;\">1</td>  <td style=\"text-align: center;\">0,20</td>  <td style=\"text-align: center;\">0,30</td>  <td style=\"text-align: center;\">0</td>  <td style=\"text-align: center;\">0</td>  <td style=\"text-align: center;\">?</td>  <td style=\"text-align: center;\">?</td>  <td style=\"text-align: center;\">0,054</td>  <td style=\"text-align: center;\">- 0,053</td>  </tr>  </tbody>  </table>  Thời gian mà tấm cản quang của mỗi xe lướt qua cổng quang điện là</p>",
+  "options": [
+   "$t_{1}$’ = 0,370 s; $t_{2}$’ = 0,283 s.",
+   "$t_{1}$’ = 0,185 s; $t_{2}$’ = 0,283 s.",
+   "$t_{1}$’ = 0,370 s; $t_{2}$’ = 0,565 s.",
+   "$t_{1}$’ = 0,185 s; $t_{2}$’ = 0,565 s."
+  ],
+  "answer": 2
+ },
+ {
+  "key": "c5-3-sa-030",
+  "src": "c5-3",
+  "num": 1,
+  "gocLoiGiai": "$$v_{1} = \\frac{s}{t_{1}} = \\frac{0,1}{0,22} = 0,45 m/s.$$\n\n$$\\overrightarrow{p} = \\overrightarrow{p_{1}} + \\overrightarrow{p_{2}} \\Longrightarrow p = p_{1} + p_{2} = m_{1}.v_{1} = 0,25 \\times 0,45 = 0,11 kg.m/s.$$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm mềm, học sinh thu được bảng số liệu của hệ trước va chạm như bên dưới.</p><p class=\"text-base leading-relaxed my-2\"><table style=\"width:38%;\"> <colgroup> <col style=\"width: 6%\" /> <col style=\"width: 6%\" /> <col style=\"width: 7%\" /> <col style=\"width: 8%\" /> <col style=\"width: 8%\" /> </colgroup> <thead> <tr> <th colspan=\"3\" style=\"text-align: center;\"><strong>Độ dài tấm cản quang</strong> s = 0,1 m</th> <th colspan=\"2\" style=\"text-align: center;\"><strong>Trước va chạm</strong></th> </tr> </thead> <tbody> <tr> <td style=\"text-align: center;\"><strong>Lần</strong></td> <td style=\"text-align: center;\"><p><strong>m<sub>1</sub></strong></p> <p><em>kg</em></p></td> <td style=\"text-align: center;\"><p><strong>m<sub>2</sub></strong></p> <p><em>kg</em></p></td> <td style=\"text-align: center;\"><p><strong>t<sub>1</sub></strong></p> <p><em>s</em></p></td> <td style=\"text-align: center;\"><p><strong>p</strong></p> <p><em>kg.m/s</em></p></td> </tr> <tr> <td style=\"text-align: center;\">1</td> <td style=\"text-align: center;\">0,25</td> <td style=\"text-align: center;\">0,30</td> <td style=\"text-align: center;\">0,22</td> <td style=\"text-align: center;\">?</td> </tr> </tbody> </table></p><p class=\"text-base leading-relaxed my-2\">Biết trước va chạm, xe 2 đứng yên. Động lượng của hệ trước va chạm có độ lớn bao nhiêu kg.m/s? Làm tròn đến chữ số thập phân thứ hai.</p><p class=\"text-base leading-relaxed my-2\">| <strong>Đáp án:</strong> | <strong>0</strong> | <strong>,</strong> | <strong>1</strong> | <strong>1</strong> | |-------------|-------|-------|-------|-------|</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-3-sa-031",
+  "src": "c5-3",
+  "num": 2,
+  "gocLoiGiai": "$$v_{1}' = \\frac{p'}{m_{1} + m_{2}} = \\frac{0,488}{0,35 + 0,45} = 0,61 m/s.$$\n\n$$s = v_{1}'.t_{1}' = 0,61 \\times 0,327 = 0,20 m.$$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm mềm, học sinh thu được bảng số liệu của hệ trước va chạm như bên dưới.</p><p class=\"text-base leading-relaxed my-2\"><table style=\"width:50%;\"> <colgroup> <col style=\"width: 6%\" /> <col style=\"width: 6%\" /> <col style=\"width: 7%\" /> <col style=\"width: 8%\" /> <col style=\"width: 10%\" /> <col style=\"width: 10%\" /> </colgroup> <thead> <tr> <th colspan=\"3\" style=\"text-align: center;\"><strong>Độ dài tấm cản quang</strong> s = ? m</th> <th colspan=\"3\" style=\"text-align: center;\"><strong>Sau va chạm</strong></th> </tr> </thead> <tbody> <tr> <td style=\"text-align: center;\"><strong>Lần</strong></td> <td style=\"text-align: center;\"><p><strong>m<sub>1</sub></strong></p> <p><em>kg</em></p></td> <td style=\"text-align: center;\"><p><strong>m<sub>2</sub></strong></p> <p><em>kg</em></p></td> <td style=\"text-align: center;\"><p><strong>t’<sub>1</sub></strong></p> <p><em>s</em></p></td> <td style=\"text-align: center;\"><p><strong>v’<sub>1</sub></strong></p> <p><em>m/s</em></p></td> <td style=\"text-align: center;\"><p><strong>p'</strong></p> <p><em>kg.m/s</em></p></td> </tr> <tr> <td style=\"text-align: center;\">1</td> <td style=\"text-align: center;\">0,35</td> <td style=\"text-align: center;\">0,45</td> <td style=\"text-align: center;\">0,327</td> <td style=\"text-align: center;\">?</td> <td style=\"text-align: center;\">0,488</td> </tr> </tbody> </table></p><p class=\"text-base leading-relaxed my-2\">Độ dài của tấm cản quang bằng bao nhiêu mét? Làm tròn đến chữ số thập phân thứ hai.</p><p class=\"text-base leading-relaxed my-2\">| <strong>Đáp án:</strong> | <strong>0</strong> | <strong>,</strong> | <strong>2</strong> | <strong>0</strong> | |-------------|-------|-------|-------|-------|</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-3-sa-032",
+  "src": "c5-3",
+  "num": 3,
+  "gocLoiGiai": "$$\\mathrm{\\Delta}p_{1} = p_{1}' - p_{1} = m_{1}.v_{1}' - 0 = 0,3 \\times 0,357 - 0 = 0,107 kg.m/s.$$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm đàn hồi, học sinh thu được bảng số liệu của hệ sau va chạm như bên dưới. Chọn chiều dương theo chiều chuyển động của xe 1.</p><p class=\"text-base leading-relaxed my-2\"><table style=\"width:59%;\"> <colgroup> <col style=\"width: 6%\" /> <col style=\"width: 6%\" /> <col style=\"width: 5%\" /> <col style=\"width: 13%\" /> <col style=\"width: 8%\" /> <col style=\"width: 8%\" /> <col style=\"width: 8%\" /> </colgroup> <thead> <tr> <th colspan=\"3\" style=\"text-align: center;\"><strong>Độ dài tấm cản quang</strong> s = 0,1 m</th> <th style=\"text-align: center;\"><strong>Trước va chạm</strong></th> <th colspan=\"3\" style=\"text-align: center;\"><strong>Sau va chạm</strong></th> </tr> </thead> <tbody> <tr> <td style=\"text-align: center;\"><strong>Lần</strong></td> <td style=\"text-align: center;\"><p><strong>m<sub>1</sub></strong></p> <p><em>kg</em></p></td> <td style=\"text-align: center;\"><p><strong>m<sub>2</sub></strong></p> <p><em>kg</em></p></td> <td style=\"text-align: center;\"><p><strong>p<sub>1</sub></strong></p> <p><em>kg.m/s</em></p></td> <td style=\"text-align: center;\"><p><strong>t’<sub>1</sub></strong></p> <p><em>s</em></p></td> <td style=\"text-align: center;\"><p><strong>v’<sub>1</sub></strong></p> <p><em>m/s</em></p></td> <td style=\"text-align: center;\"><p><strong>p'<sub>1</sub></strong></p> <p><em>kg.m/s</em></p></td> </tr> <tr> <td style=\"text-align: center;\">1</td> <td style=\"text-align: center;\">0,30</td> <td style=\"text-align: center;\">0,50</td> <td style=\"text-align: center;\">0</td> <td style=\"text-align: center;\">0,280</td> <td style=\"text-align: center;\">0,357</td> <td style=\"text-align: center;\">?</td> </tr> </tbody> </table></p><p class=\"text-base leading-relaxed my-2\">Xem hệ vật là một hệ kín. Độ biến thiên động lượng của xe 1 trước và sau va chạm là bao nhiêu kg.m/s? Làm tròn đến chữ số thập phân thứ hai.</p><p class=\"text-base leading-relaxed my-2\">| <strong>Đáp án:</strong> | <strong>0</strong> | <strong>,</strong> | <strong>2</strong> | <strong>0</strong> | |-------------|-------|-------|-------|-------|</p>",
+  "answer": null
+ },
+ {
+  "key": "c5-3-sa-033",
+  "src": "c5-3",
+  "num": 4,
+  "gocLoiGiai": "Vận tốc của mỗi xe sau va chạm:\n\n$$v_{1}' = \\frac{p_{1}'}{m_{1}} = \\frac{0,107}{0,30} = 0,36 m/s.$$\n\n$$v_{2}' = \\frac{p_{2}'}{m_{2}} = \\frac{- 0,101}{0,50} = - 0,20 m/s.$$\n\n$$\\overrightarrow{v_{1/2}} = \\overrightarrow{v_{1/đ}} + \\overrightarrow{v_{đ/2}} = \\overrightarrow{v_{1/đ}} - \\overrightarrow{v_{\\frac{2}{đ}}} \\Longrightarrow v_{\\frac{1}{2}} = v_{\\frac{1}{đ}} - v_{\\frac{2}{đ}} = 0,36 - ( - 0,20) = 0,56 m/s.$$",
+  "form": "bai_tap",
+  "type": "short_answer",
+  "question": "<p class=\"text-base leading-relaxed my-2\">Thực hiện thí nghiệm xác định động lượng của vật trước và sau va chạm đàn hồi, học sinh thu được bảng số liệu của hệ sau va chạm như bên dưới. Chọn chiều dương theo chiều chuyển động của xe 1.</p><p class=\"text-base leading-relaxed my-2\"><table style=\"width:69%;\"> <colgroup> <col style=\"width: 6%\" /> <col style=\"width: 6%\" /> <col style=\"width: 6%\" /> <col style=\"width: 8%\" /> <col style=\"width: 8%\" /> <col style=\"width: 8%\" /> <col style=\"width: 8%\" /> <col style=\"width: 8%\" /> <col style=\"width: 8%\" /> </colgroup> <thead> <tr> <th colspan=\"3\" style=\"text-align: center;\"><strong>Độ dài tấm cản quang</strong> s = 0,1 m</th> <th colspan=\"2\" style=\"text-align: center;\"><strong>Trước va chạm</strong></th> <th colspan=\"4\" style=\"text-align: center;\"><strong>Sau va chạm</strong></th> </tr> </thead> <tbody> <tr> <td style=\"text-align: center;\"><strong>Lần</strong></td> <td style=\"text-align: center;\"><p><strong>m<sub>1</sub></strong></p> <p><em>kg</em></p></td> <td style=\"text-align: center;\"><p><strong>m<sub>2</sub></strong></p> <p><em>kg</em></p></td> <td style=\"text-align: center;\"><p><strong>p<sub>1</sub></strong></p> <p><em>kg.m/s</em></p></td> <td style=\"text-align: center;\"><p><strong>p<sub>2</sub></strong></p> <p><em>kg.m/s</em></p></td> <td style=\"text-align: center;\"><p><strong>v’<sub>1</sub></strong></p> <p><em>m/s</em></p></td> <td style=\"text-align: center;\"><p><strong>v’<sub>2</sub></strong></p> <p><em>m/s</em></p></td> <td style=\"text-align: center;\"><p><strong>p'<sub>1</sub></strong></p> <p><em>kg.m/s</em></p></td> <td style=\"text-align: center;\"><p><strong>p'<sub>2</sub></strong></p> <p><em>kg.m/s</em></p></td> </tr> <tr> <td style=\"text-align: center;\">1</td> <td style=\"text-align: center;\">0,30</td> <td style=\"text-align: center;\">0,50</td> <td style=\"text-align: center;\">0</td> <td style=\"text-align: center;\">0</td> <td style=\"text-align: center;\">?</td> <td style=\"text-align: center;\">?</td> <td style=\"text-align: center;\">0,107</td> <td style=\"text-align: center;\">-0,101</td> </tr> </tbody> </table></p><p class=\"text-base leading-relaxed my-2\">Vận tốc của xe 1 sau va chạm trong hệ quy chiếu gắn với xe hai là bao nhiêu m/s? Làm tròn đến số thập phân thứ hai.</p><p class=\"text-base leading-relaxed my-2\">| <strong>Đáp án:</strong> | <strong>0</strong> | <strong>,</strong> | <strong>5</strong> | <strong>6</strong> | |-------------|-------|-------|-------|-------|</p>",
+  "answer": null
+ }
+]

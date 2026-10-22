@@ -1,381 +1,550 @@
 {
-  "lesson_id": 38,
-  "lesson_title": "Bài 19. Thế năng điện",
-  "item_id": 195,
-  "generated_at": "2026-10-02",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 38,
+ "lesson_title": "Bài 19. Thế năng điện",
+ "item_id": 195,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thế năng điện của điện tích $q$ tại điểm M trong điện trường đặc trưng cho",
+   "options": [
+    "độ mạnh yếu của điện trường tại điểm M",
+    "khả năng sinh công của điện trường khi đặt q tại M",
+    "tốc độ chuyển động của điện tích q tại điểm M",
+    "lực điện tác dụng lên điện tích q tại điểm M"
+   ],
+   "answer": 1,
+   "explanation": "Theo mục II.3, thế năng điện của $q$ tại M đặc trưng cho khả năng sinh công của điện trường khi đặt $q$ tại M.",
+   "distractorNotes": {
+    "A": "Nhầm thế năng điện với cường độ điện trường $E$, đại lượng chỉ đặc trưng cho điện trường, không phụ thuộc điện tích đặt vào.",
+    "C": "Nhầm thế năng với động năng, trong khi điện tích đứng yên tại M vẫn có thế năng điện.",
+    "D": "Nhầm thế năng, một dạng năng lượng đo bằng J, với lực điện $F = qE$ đo bằng N."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công của lực điện làm điện tích di chuyển từ điểm M đến điểm N trong điện trường",
+   "options": [
+    "phụ thuộc vào hình dạng đường đi từ M đến N",
+    "tỉ lệ thuận với độ dài quãng đường đã đi được",
+    "chỉ phụ thuộc vị trí điểm đầu M và điểm cuối N",
+    "luôn bằng không khi đường đi là một đường cong"
+   ],
+   "answer": 2,
+   "explanation": "Mục II.2: công của lực điện không phụ thuộc hình dạng đường đi, chỉ phụ thuộc vị trí điểm đầu và điểm cuối.",
+   "distractorNotes": {
+    "A": "Gán cho lực điện tính chất của lực ma sát, trong khi lực điện là lực thế nên công không phụ thuộc hình dạng đường đi.",
+    "B": "Lấy quãng đường làm thước đo công, trong khi công chỉ phụ thuộc hình chiếu tổng cộng của MN lên đường sức.",
+    "D": "Đường cong vẫn có hình chiếu lên đường sức, nên công vẫn bằng $qEd$ chứ không bằng 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực nào sau đây không phải là lực thế?",
+   "options": [
+    "Lực ma sát",
+    "Trọng lực",
+    "Lực đàn hồi",
+    "Lực điện"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu trọng lực, lực đàn hồi, lực điện là lực thế. Lực ma sát không phải lực thế vì công của nó phụ thuộc quãng đường.",
+   "distractorNotes": {
+    "B": "Công của trọng lực chỉ phụ thuộc độ cao điểm đầu và điểm cuối, nên trọng lực là lực thế.",
+    "C": "Công của lực đàn hồi chỉ phụ thuộc vị trí đầu và cuối, nên lực đàn hồi là lực thế.",
+    "D": "Công của lực điện không phụ thuộc đường đi, đây chính là lực thế mà bài đang học."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một điện tích di chuyển hết một vòng kín rồi trở về vị trí ban đầu trong điện trường tĩnh. Công của lực điện",
+   "options": [
+    "bằng tích của qE với chu vi vòng kín",
+    "dương nếu điện tích di chuyển là dương",
+    "phụ thuộc vào hình dạng của vòng kín",
+    "bằng không với mọi hình dạng vòng kín"
+   ],
+   "answer": 3,
+   "explanation": "Điểm đầu trùng điểm cuối nên hình chiếu tổng cộng bằng 0. Theo tính chất lực thế, công trên đường cong kín bằng 0.",
+   "distractorNotes": {
+    "A": "Dùng độ dài đường đi thay cho hình chiếu, trong khi vòng kín có hình chiếu tổng cộng lên đường sức bằng 0.",
+    "B": "Gán dấu của công theo dấu điện tích, nhưng với $d = 0$ thì $A = qEd = 0$ dù $q$ dương hay âm.",
+    "C": "Lực điện là lực thế nên công không phụ thuộc hình dạng đường đi, kể cả khi đường đi là vòng kín."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong điện trường đều, điện tích di chuyển trên một đoạn thẳng mà lực điện không sinh công khi đoạn đó",
+   "options": [
+    "có chiều cùng chiều với đường sức điện",
+    "vuông góc với đường sức điện",
+    "có chiều ngược chiều với đường sức điện",
+    "xiên một góc nhọn với đường sức điện"
+   ],
+   "answer": 1,
+   "explanation": "Khi MN vuông góc với đường sức thì hình chiếu $d = 0$, nên $A = qEd = 0$.",
+   "distractorNotes": {
+    "A": "Đi cùng chiều đường sức thì hình chiếu $d \\gt 0$, nên lực điện vẫn sinh công khác 0.",
+    "C": "Nhầm \"ngược chiều\" với \"vuông góc\": đi ngược chiều thì $d \\lt 0$, công vẫn khác 0.",
+    "D": "Đi xiên vẫn có hình chiếu $s\\cos\\alpha \\neq 0$ lên đường sức, nên lực điện vẫn sinh công."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong công thức tính công của lực điện trong điện trường đều $A_{MN} = qEd$, đại lượng $d$ là",
+   "options": [
+    "độ dài quãng đường điện tích đi từ M tới N",
+    "khoảng cách theo đường thẳng giữa M và N",
+    "độ dài đại số hình chiếu của MN lên đường sức",
+    "khoảng cách từ điểm M đến bản cực âm"
+   ],
+   "answer": 2,
+   "explanation": "Mục II.1: $d$ là độ dài đại số hình chiếu của MN lên một đường sức, có dấu theo chiều đường sức.",
+   "distractorNotes": {
+    "A": "Lấy độ dài đường đi làm $d$, đúng bẫy 1 của bài, trong khi công không phụ thuộc đường đi.",
+    "B": "Đoạn thẳng MN có thể xiên với đường sức, mà chỉ phần hình chiếu lên đường sức mới được tính.",
+    "D": "Nhầm với $d$ trong công thức thế năng $W_M = qEd$ khi chọn mốc ở bản âm, không phải $d$ trong công thức công."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một proton đi từ M đến N trong điện trường đều. Giữ nguyên M và N, nếu cường độ điện trường tăng gấp đôi thì công của lực điện",
+   "options": [
+    "tăng lên gấp đôi",
+    "giảm còn một nửa",
+    "tăng lên gấp bốn",
+    "giữ nguyên không đổi"
+   ],
+   "answer": 0,
+   "explanation": "Theo $A = qEd$, với $q$ và $d$ không đổi thì $A$ tỉ lệ thuận với $E$, nên $A$ tăng gấp đôi.",
+   "distractorNotes": {
+    "B": "Đảo thành tỉ lệ nghịch, trong khi $E$ nằm ở tử số của $A = qEd$.",
+    "C": "Tự thêm bình phương cho $E$, trong khi công tỉ lệ bậc nhất với $E$.",
+    "D": "Nhầm \"không phụ thuộc đường đi\" thành \"không phụ thuộc cường độ điện trường\"."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong điện trường đều, đoạn MN dài $s$ hợp với chiều đường sức một góc $\\alpha$. Đại lượng $d$ dùng trong công thức $A_{MN} = qEd$ bằng",
+   "options": [
+    "$s$",
+    "$s\\sin\\alpha$",
+    "$s\\tan\\alpha$",
+    "$s\\cos\\alpha$"
+   ],
+   "answer": 3,
+   "explanation": "Bẫy 1: hình chiếu của MN lên đường sức là $d = s\\cos\\alpha$.",
+   "distractorNotes": {
+    "A": "Lấy cả độ dài MN làm $d$, quên rằng chỉ hình chiếu của MN lên đường sức mới được tính.",
+    "B": "Chiếu nhầm bằng sin, mà $s\\sin\\alpha$ là hình chiếu lên phương vuông góc với đường sức.",
+    "C": "Dùng tan là sai, vì hình chiếu của một đoạn thẳng lên một phương được tính bằng cos của góc giữa chúng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công của lực điện khi điện tích đi từ M đến N liên hệ với thế năng điện tại M và N theo hệ thức",
+   "options": [
+    "$A_{MN} = W_N - W_M$",
+    "$A_{MN} = W_M - W_N$",
+    "$A_{MN} = W_M + W_N$",
+    "$A_{MN} = W_M$"
+   ],
+   "answer": 1,
+   "explanation": "Mục II.5: công của lực điện bằng độ giảm thế năng, $A_{MN} = W_M - W_N = -\\Delta W$.",
+   "distractorNotes": {
+    "A": "Lật dấu: $W_N - W_M$ là độ tăng thế năng $\\Delta W$, bằng $-A_{MN}$.",
+    "C": "Cộng hai thế năng là sai, vì công bằng thế năng đầu trừ thế năng cuối.",
+    "D": "Hệ thức này chỉ đúng khi N trùng mốc thế năng; trường hợp tổng quát phải trừ $W_N$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chọn mốc thế năng ở vô cực. Thế năng điện của điện tích $q$ tại điểm M có điện thế $V_M$ là",
+   "options": [
+    "$W_M = V_M q$",
+    "$W_M = \\dfrac{V_M}{q}$",
+    "$W_M = \\dfrac{q}{V_M}$",
+    "$W_M = V_M q^2$"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu: trong điện trường bất kì, mốc ở vô cực, $W_M = A_{M\\infty} = V_M q$.",
+   "distractorNotes": {
+    "B": "Nhầm với công thức điện thế $V_M = W_M/q$ nên đem chia thay vì nhân.",
+    "C": "Đảo tử và mẫu, sai cả thứ nguyên vì kết quả không còn đơn vị jun.",
+    "D": "Tự thêm bình phương cho $q$, trong khi thế năng tỉ lệ bậc nhất với $q$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện thế tại điểm M, $V_M = \\dfrac{W_M}{q}$, có đơn vị là",
+   "options": [
+    "jun (J)",
+    "vôn trên mét (V/m)",
+    "vôn (V)",
+    "culông (C)"
+   ],
+   "answer": 2,
+   "explanation": "Mục II.6 ghi $V_M = \\dfrac{W_M}{q}$ (V); jun chia culông là vôn.",
+   "distractorNotes": {
+    "A": "Jun là đơn vị của thế năng $W_M$ khi chưa chia cho $q$.",
+    "B": "V/m là đơn vị của cường độ điện trường $E$, không phải của điện thế.",
+    "D": "Culông là đơn vị của điện tích $q$, đại lượng nằm ở mẫu số công thức."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ $U_{MN} = \\dfrac{A_{MN}}{q}$, công của lực điện khi điện tích $q$ đi từ M đến N là",
+   "options": [
+    "$A_{MN} = \\dfrac{U_{MN}}{q}$",
+    "$A_{MN} = \\dfrac{q}{U_{MN}}$",
+    "$A_{MN} = qU_{NM}$",
+    "$A_{MN} = qU_{MN}$"
+   ],
+   "answer": 3,
+   "explanation": "Nhân hai vế với $q$: $A_{MN} = qU_{MN}$, đúng như bài ghi.",
+   "distractorNotes": {
+    "A": "Biến đổi sai: chuyển $q$ từ mẫu sang vế kia phải nhân với $q$, không phải chia.",
+    "B": "Đảo tử và mẫu khi biến đổi, nên kết quả không còn đơn vị jun.",
+    "C": "Đảo thứ tự chỉ số, mà $U_{NM} = -U_{MN}$ nên công bị sai dấu."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một học sinh đổi mốc thế năng từ bản âm sang bản dương rồi tính lại cho điện tích đi từ M đến N trong điện trường đều. Đại lượng nào không đổi?",
+   "options": [
+    "Hiệu thế năng $W_M - W_N$",
+    "Thế năng của điện tích tại M",
+    "Thế năng của điện tích tại N",
+    "Dấu của thế năng tại mỗi điểm"
+   ],
+   "answer": 0,
+   "explanation": "Bẫy 3: đổi mốc thì mọi $W$ cùng cộng thêm một hằng số, nên từng $W$ đổi nhưng hiệu $W_M - W_N = A_{MN}$ giữ nguyên.",
+   "distractorNotes": {
+    "B": "Coi thế năng tại M là giá trị tuyệt đối, trong khi nó là công từ M tới mốc nên đổi theo mốc.",
+    "C": "Coi thế năng tại N là cố định, trong khi $W_N$ tính tới mốc mới nên thay đổi.",
+    "D": "Cộng thêm một hằng số có thể đổi dấu thế năng, ví dụ electron tại M đổi từ âm sang dương."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đi dọc một đường sức điện theo chiều của đường sức thì điện thế",
+   "options": [
+    "tăng dần theo chiều đường sức",
+    "không đổi dọc theo đường sức",
+    "giảm dần theo chiều đường sức",
+    "bằng không tại mọi điểm trên đó"
+   ],
+   "answer": 2,
+   "explanation": "Mục II.6: $\\vec E$ hướng từ M đến N thì $U_{MN} \\gt 0$, tức điện thế giảm theo chiều đường sức.",
+   "distractorNotes": {
+    "A": "Đảo chiều: đường sức đi từ nơi điện thế cao (bản dương) sang nơi điện thế thấp (bản âm).",
+    "B": "Điện thế chỉ không đổi khi đi vuông góc đường sức, còn dọc đường sức thì điện thế thay đổi.",
+    "D": "Điện thế chỉ bằng 0 tại điểm được chọn làm mốc, không phải tại mọi điểm trên đường sức."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Trong máy lọc không khí, hai hạt bụi giống hệt nhau, cùng mang điện âm, cùng rời đầu kim và cùng bám vào điểm N trên tấm thu: một hạt bay thẳng, một hạt lượn cong theo đường dài hơn. Chỉ xét lực điện.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Lực nào sau đây KHÔNG phải là lực thế?",
-      "options": [
-        "Trọng lực",
-        "Lực điện",
-        "Lực ma sát",
-        "Lực đàn hồi"
-      ],
-      "answer": 2,
-      "explanation": "Công của lực ma sát phụ thuộc quãng đường đi nên lực ma sát không phải lực thế; trọng lực, lực đàn hồi, lực điện đều là lực thế."
+     "text": "Công của lực điện lên hạt bay theo đường cong lớn hơn vì nó đi quãng đường dài hơn.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Công của lực điện khi điện tích $q$ dịch chuyển từ $M$ đến $N$ trong điện trường phụ thuộc vào yếu tố nào?",
-      "options": [
-        "Chỉ phụ thuộc vị trí điểm đầu và điểm cuối",
-        "Hình dạng đường đi từ $M$ đến $N$",
-        "Chiều dài quãng đường đã đi",
-        "Thời gian dịch chuyển"
-      ],
-      "answer": 0,
-      "explanation": "Công của lực điện không phụ thuộc hình dạng đường đi mà chỉ phụ thuộc vị trí điểm đầu $M$ và điểm cuối $N$."
+     "text": "Công của lực điện lên hai hạt bụi bằng nhau.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Trong điện trường đều, thế năng của điện tích $q$ tại $M$ là $W_M=qEd$. Khi chọn mốc thế năng tại bản âm thì $d$ là gì?",
-      "options": [
-        "Khoảng cách giữa hai bản",
-        "Khoảng cách từ $M$ đến bản cực dương",
-        "Khoảng cách từ $M$ đến bản cực âm",
-        "Quãng đường điện tích đã đi"
-      ],
-      "answer": 2,
-      "explanation": "Bài nêu $d$ là khoảng cách từ $M$ đến bản cực âm (mốc thế năng tại bản âm)."
+     "text": "Trên một đoạn nhỏ mà hạt đi vuông góc với đường sức, lực điện không sinh công.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một điện tích $q$ chuyển động trong điện trường theo một đường cong kín. Công của lực điện trong chuyển động đó là",
-      "options": [
-        "Luôn dương",
-        "Luôn âm",
-        "Bằng $qE$ nhân chiều dài đường cong",
-        "Bằng 0"
-      ],
-      "answer": 3,
-      "explanation": "Điểm đầu trùng điểm cuối nên công của lực điện (lực thế) bằng 0."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điện thế tại điểm $M$ trong điện trường đặc trưng cho điều gì?",
-      "options": [
-        "Khả năng sinh công của điện trường tại điểm đó, không phụ thuộc điện tích thử $q$",
-        "Độ lớn của điện tích thử đặt tại $M$",
-        "Quãng đường điện tích đi được",
-        "Khối lượng của điện tích thử"
-      ],
-      "answer": 0,
-      "explanation": "Điện thế là đại lượng đặc trưng riêng cho điện trường về khả năng sinh công tại một điểm, không phụ thuộc điện tích thử $q$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hệ thức $U=Ed$ chỉ dùng đúng trong trường hợp nào?",
-      "options": [
-        "Điện trường của điện tích điểm",
-        "Điện trường bất kì",
-        "Điện trường đều",
-        "Mọi điện trường, miễn $d>0$"
-      ],
-      "answer": 2,
-      "explanation": "Bài nêu hệ thức này chỉ đúng cho điện trường đều (giữa hai bản phẳng song song)."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điện tích $q$ dịch chuyển từ $M$ đến $N$ trong điện trường. Xét các phát biểu về công của lực điện $A_{MN}$ và thế năng:",
-      "statements": [
-        {
-          "text": "Công của lực điện bằng độ giảm thế năng của điện tích: $A_{MN}=W_M-W_N$.",
-          "answer": true
-        },
-        {
-          "text": "Lực điện sinh công dương khi thế năng của điện tích giảm.",
-          "answer": true
-        },
-        {
-          "text": "Lực điện sinh công âm khi thế năng của điện tích tăng.",
-          "answer": true
-        },
-        {
-          "text": "Công của lực điện bằng độ tăng thế năng: $A_{MN}=W_N-W_M$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Công của lực điện bằng độ giảm thế năng: $A_{MN}=W_M-W_N$; thế năng giảm thì công dương, thế năng tăng thì công âm."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét điện thế trong điện trường. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Điện thế giảm dần theo chiều đường sức điện.",
-          "answer": true
-        },
-        {
-          "text": "Điện thế $V_M$ không phụ thuộc điện tích thử $q$ mà chỉ phụ thuộc vị trí điểm $M$.",
-          "answer": true
-        },
-        {
-          "text": "Điện thế tăng dần theo chiều đường sức điện.",
-          "answer": false
-        },
-        {
-          "text": "Điện thế tại $M$ tỉ lệ thuận với độ lớn điện tích thử $q$ đặt tại $M$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Điện thế giảm dần theo chiều đường sức điện và chỉ phụ thuộc vị trí điểm xét, không phụ thuộc điện tích thử $q$."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Về lực thế, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Trọng lực là lực thế.",
-          "answer": true
-        },
-        {
-          "text": "Lực điện là lực thế.",
-          "answer": true
-        },
-        {
-          "text": "Lực ma sát không phải là lực thế.",
-          "answer": true
-        },
-        {
-          "text": "Công của lực ma sát không phụ thuộc quãng đường đi.",
-          "answer": false
-        }
-      ],
-      "explanation": "Trọng lực, lực điện là lực thế; lực ma sát không phải lực thế vì công của nó phụ thuộc quãng đường đi."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công của lực điện khi điện tích dịch chuyển giữa hai điểm khác 0 khi nào?",
-      "options": [
-        "Khi đoạn dịch chuyển cắt các đường sức (hình chiếu lên đường sức khác 0)",
-        "Chỉ khi điện tích dịch chuyển theo đường thẳng",
-        "Chỉ khi điện tích đứng yên",
-        "Chỉ khi đường đi là đường cong kín"
-      ],
-      "answer": 0,
-      "explanation": "Công khác 0 khi đoạn dịch chuyển cắt các đường sức, tức có hình chiếu khác 0 lên đường sức."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Công của lực điện khi điện tích $q$ dịch chuyển từ $M$ đến $N$ trong điện trường đều là",
-      "options": [
-        "$A_{MN}=\\dfrac{qE}{d}$",
-        "$A_{MN}=qEd$",
-        "$A_{MN}=\\dfrac{Ed}{q}$",
-        "$A_{MN}=\\dfrac{qd}{E}$"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu công thức $A_{MN}=qEd$ với $d$ là độ dài đại số hình chiếu lên đường sức."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khi chọn mốc thế năng ở vô cực, thế năng của điện tích $q$ tại điểm $M$ có điện thế $V_M$ là",
-      "options": [
-        "$W_M=\\dfrac{V_M}{q}$",
-        "$W_M=\\dfrac{q}{V_M}$",
-        "$W_M=V_M^{2}q$",
-        "$W_M=V_Mq$"
-      ],
-      "answer": 3,
-      "explanation": "Bài nêu $W_M=A_{M\\infty}=V_Mq$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hiệu điện thế giữa hai điểm $M,N$ được tính bằng",
-      "options": [
-        "$U_{MN}=V_N-V_M$",
-        "$U_{MN}=V_M-V_N$",
-        "$U_{MN}=A_{MN}q$",
-        "$U_{MN}=\\dfrac{q}{A_{MN}}$"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu $U_{MN}=V_M-V_N=\\dfrac{A_{MN}}{q}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về các công thức trong bài, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$U=Ed$ chỉ dùng đúng cho điện trường đều.",
-          "answer": true
-        },
-        {
-          "text": "$A_{MN}=U_{MN}.q$.",
-          "answer": true
-        },
-        {
-          "text": "$V_M=W_M\\,q$.",
-          "answer": false
-        },
-        {
-          "text": "Thế năng của $q$ cách điện tích điểm $Q$ một khoảng $r$ (mốc ở vô cực) là $W=k\\dfrac{qQ}{r}$.",
-          "answer": true
-        }
-      ],
-      "explanation": "$U=Ed$ chỉ đúng với điện trường đều; $A_{MN}=U_{MN}q$; $V_M=\\dfrac{W_M}{q}$ (không phải $W_Mq$); $W=k\\dfrac{qQ}{r}$ với mốc ở vô cực."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điện trường đều có $E=300$ V/m. Hai điểm nằm dọc theo một đường sức cách nhau $d=0{,}04$ m. Hiệu điện thế giữa hai điểm đó là bao nhiêu vôn?",
-      "answer": "12",
-      "explanation": "$U=Ed=300\\cdot0{,}04=12$ V."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hiệu điện thế $U_{MN}=20$ V. Điện tích $q=0{,}5$ C dịch chuyển từ $M$ đến $N$. Công của lực điện là bao nhiêu jun?",
-      "answer": "10",
-      "explanation": "$A_{MN}=U_{MN}q=20\\cdot0{,}5=10$ J."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một điện tích có thế năng $W_M=8$ J tại $M$ và $W_N=3$ J tại $N$. Công của lực điện khi điện tích dịch chuyển từ $M$ đến $N$ là bao nhiêu jun?",
-      "answer": "5",
-      "explanation": "$A_{MN}=W_M-W_N=8-3=5$ J."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điện tích $q=3$ C đặt tại $M$ có thế năng $W_M=12$ J (mốc ở vô cực). Điện thế tại $M$ là bao nhiêu vôn?",
-      "answer": "4",
-      "explanation": "$V_M=\\dfrac{W_M}{q}=\\dfrac{12}{3}=4$ V."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điện thế tại $M$ là $V_M=15$ V, tại $N$ là $V_N=-5$ V. Hiệu điện thế $U_{MN}$ là bao nhiêu vôn?",
-      "answer": "20",
-      "explanation": "$U_{MN}=V_M-V_N=15-(-5)=20$ V."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Công của lực điện và thế năng điện",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "question": "Trong điện trường đều $E=50$ V/m, điện tích $q=-2$ C dịch chuyển từ $M$ đến $N$ có hình chiếu cùng chiều đường sức, độ dài $d=0{,}1$ m. Công của lực điện là bao nhiêu jun?",
-      "answer": "-10",
-      "explanation": "$A_{MN}=qEd=(-2)\\cdot50\\cdot0{,}1=-10$ J."
+     "text": "Kết luận về công của hai hạt chỉ đúng khi điện trường trong máy là điện trường đều.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Công của lực điện chỉ phụ thuộc điểm đầu và điểm cuối, đúng cho mọi điện trường tĩnh. Đoạn đi vuông góc đường sức có $d = 0$ nên công bằng 0.",
+   "distractorNotes": {
+    "0": "Lấy quãng đường làm thước đo công như lực ma sát, trong khi lực điện là lực thế nên quãng đường dài hơn không làm công lớn hơn.",
+    "1": "Hai hạt cùng điện tích, cùng điểm đầu và cùng điểm cuối, nên công của lực điện không thể khác nhau.",
+    "2": "Đoạn đi vuông góc đường sức có hình chiếu $d = 0$, nên không thể cho rằng lực điện sinh công trên đoạn đó.",
+    "3": "Tính chất công không phụ thuộc đường đi đúng cho mọi điện trường tĩnh, không riêng điện trường đều."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong một điện trường đều, một proton và một electron cùng di chuyển một đoạn xuôi theo chiều đường sức điện.",
+   "statements": [
+    {
+     "text": "Lực điện tác dụng lên proton cùng chiều với $\\vec E$.",
+     "answer": true
+    },
+    {
+     "text": "Công của lực điện tác dụng lên electron là dương.",
+     "answer": false
+    },
+    {
+     "text": "Thế năng điện của electron tăng.",
+     "answer": true
+    },
+    {
+     "text": "Thế năng điện của proton tăng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bẫy 2: proton chịu lực cùng chiều $\\vec E$ nên đi xuôi có $A \\gt 0$, thế năng giảm; electron chịu lực ngược $\\vec E$ nên $A \\lt 0$, thế năng tăng.",
+   "distractorNotes": {
+    "0": "Proton mang điện dương nên $\\vec F = q\\vec E$ cùng chiều $\\vec E$, không thể ngược chiều.",
+    "1": "Coi công là dương là bỏ dấu điện tích: $q \\lt 0$ và $d \\gt 0$ nên $A = qEd \\lt 0$.",
+    "2": "Công lên electron âm nên $W_M - W_N \\lt 0$, do đó thế năng phải tăng chứ không giảm.",
+    "3": "Công lên proton dương nên thế năng giảm; cho rằng thế năng tăng là lật dấu hệ thức $A = W_M - W_N$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một electron được đặt đứng yên tại điểm M nằm giữa hai bản phẳng tích điện trái dấu tạo ra điện trường đều. Chọn mốc thế năng ở bản âm.",
+   "statements": [
+    {
+     "text": "Thế năng điện của electron tại M là âm.",
+     "answer": true
+    },
+    {
+     "text": "Electron đang đứng yên nên thế năng điện của nó bằng 0.",
+     "answer": false
+    },
+    {
+     "text": "Giá trị thế năng điện tại M phụ thuộc vào việc chọn mốc thế năng.",
+     "answer": true
+    },
+    {
+     "text": "Thế năng tại M có giá trị khác nhau tuỳ theo đường đi từ M về mốc.",
+     "answer": false
+    }
+   ],
+   "explanation": "$W_M = qEd$ với $q \\lt 0$, $d \\gt 0$ nên $W_M \\lt 0$; thế năng đo bằng công từ M tới mốc nên phụ thuộc mốc nhưng không phụ thuộc đường đi.",
+   "distractorNotes": {
+    "0": "Với $q \\lt 0$, $E \\gt 0$ và $d \\gt 0$ thì tích $qEd$ âm, nên thế năng không thể dương hay bằng 0.",
+    "1": "Nhầm thế năng với động năng, trong khi điện tích đứng yên vẫn có thế năng điện.",
+    "2": "Thế năng là công từ M tới mốc, nên đổi mốc thì giá trị $W_M$ thay đổi theo.",
+    "3": "Công của lực điện không phụ thuộc đường đi, nên với mốc đã chọn thì thế năng tại M có một giá trị duy nhất."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét công thức tính công của lực điện khi điện tích $q$ đi từ M đến N trong điện trường đều: $A_{MN} = qEd$.",
+   "statements": [
+    {
+     "text": "Điện tích $q$ phải được thay vào công thức kèm cả dấu.",
+     "answer": true
+    },
+    {
+     "text": "Công $A_{MN}$ tính bằng vôn (V).",
+     "answer": false
+    },
+    {
+     "text": "Nếu hình chiếu của MN lên đường sức ngược chiều đường sức thì $d \\lt 0$.",
+     "answer": true
+    },
+    {
+     "text": "Cường độ điện trường $E$ trong công thức có đơn vị là culông (C).",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài ghi: $q$ (C) lấy cả dấu, $E$ (V/m), $A$ (J), $d$ là độ dài đại số hình chiếu, âm khi ngược chiều đường sức.",
+   "distractorNotes": {
+    "0": "Bỏ dấu của $q$ chính là bẫy 2, vì với electron sẽ tính ra công sai dấu.",
+    "1": "Vôn là đơn vị điện thế, còn công là năng lượng nên đo bằng jun.",
+    "2": "$d$ là độ dài đại số, nên hình chiếu ngược chiều đường sức phải mang dấu âm.",
+    "3": "Culông là đơn vị điện tích, còn $E$ đo bằng V/m."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một điện tích có khối lượng $m$ được thả không vận tốc đầu trong điện trường đều, chỉ chịu tác dụng của lực điện. Sau một đoạn, lực điện sinh công $A$ và tốc độ của nó là $v = \\sqrt{\\dfrac{2A}{m}}$.",
+   "statements": [
+    {
+     "text": "Thế năng điện giảm bao nhiêu thì động năng của điện tích tăng bấy nhiêu.",
+     "answer": true
+    },
+    {
+     "text": "Nếu công $A$ tăng gấp 4 lần thì tốc độ $v$ cũng tăng gấp 4 lần.",
+     "answer": false
+    },
+    {
+     "text": "Nếu điện tích là electron thì nó tự di chuyển ngược chiều đường sức.",
+     "answer": true
+    },
+    {
+     "text": "Công $A$ của lực điện trong trường hợp này là âm.",
+     "answer": false
+    }
+   ],
+   "explanation": "Chỉ có lực điện thì độ giảm thế năng bằng độ tăng động năng; từ nghỉ điện tích đi theo hướng lực nên $A \\gt 0$, và $v$ tỉ lệ với $\\sqrt{A}$.",
+   "distractorNotes": {
+    "0": "Khi chỉ có lực điện thì $W_M - W_N = A = \\tfrac12 mv^2$, nên phần thế năng giảm chuyển hết thành động năng.",
+    "1": "Quên căn bậc hai: $v$ tỉ lệ với $\\sqrt{A}$, nên công tăng gấp 4 lần thì tốc độ chỉ tăng gấp 2 lần.",
+    "2": "Lực điện lên electron ngược chiều $\\vec E$, nên khi thả từ nghỉ nó phải đi ngược đường sức.",
+    "3": "Từ trạng thái nghỉ, điện tích đi theo hướng lực điện nên lực sinh công dương, không thể âm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 19. Thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích $q$ đặt cách điện tích điểm $Q$ một khoảng $r$. Chọn mốc thế năng ở vô cực, thế năng điện của $q$ là $W = k\\dfrac{qQ}{r}$.",
+   "statements": [
+    {
+     "text": "Khi thay số, phải lấy cả dấu của $q$ và của $Q$.",
+     "answer": true
+    },
+    {
+     "text": "Khi $r$ tăng gấp đôi thì độ lớn của $W$ giảm còn một nửa.",
+     "answer": true
+    },
+    {
+     "text": "Điện thế tại vị trí đặt $q$, tính bằng $V = \\dfrac{W}{q}$, phụ thuộc vào giá trị của $q$.",
+     "answer": false
+    },
+    {
+     "text": "Khi $q$ và $Q$ cùng dấu thì thế năng $W$ là âm.",
+     "answer": false
+    }
+   ],
+   "explanation": "$W$ tỉ lệ nghịch với $r$ và mang dấu của tích $qQ$; điện thế $V = W/q$ chỉ phụ thuộc vị trí, không phụ thuộc $q$.",
+   "distractorNotes": {
+    "0": "Công thức yêu cầu lấy cả dấu của $q$ và $Q$; bỏ dấu sẽ làm sai dấu của thế năng.",
+    "1": "$r$ nằm ở mẫu với bậc nhất nên $W$ tỉ lệ nghịch với $r$; $r$ gấp đôi thì độ lớn $W$ giảm một nửa.",
+    "2": "Chia $W$ cho $q$ thì $q$ bị triệt tiêu, nên điện thế chỉ phụ thuộc vị trí chứ không phụ thuộc $q$.",
+    "3": "Khi $q$ và $Q$ cùng dấu thì $qQ \\gt 0$, lại có $k \\gt 0$ và $r \\gt 0$, nên $W$ dương chứ không âm."
+   }
+  }
+ ]
 }

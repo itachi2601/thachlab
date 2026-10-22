@@ -1,386 +1,550 @@
 {
-  "lesson_id": 54,
-  "lesson_title": "Bài 9. Chuyển động thẳng biến đổi đều",
-  "item_id": 102,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 54,
+ "lesson_title": "Bài 9. Chuyển động thẳng biến đổi đều",
+ "item_id": 102,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyển động thẳng biến đổi đều. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chuyển động thẳng biến đổi đều là chuyển động có",
+   "options": [
+    "quỹ đạo thẳng và vận tốc không đổi theo thời gian",
+    "quỹ đạo thẳng và gia tốc không đổi cả độ lớn lẫn hướng",
+    "quỹ đạo thẳng và độ dịch chuyển tăng đều theo thời gian",
+    "quỹ đạo bất kì và độ lớn gia tốc không đổi theo thời gian"
+   ],
+   "answer": 1,
+   "explanation": "Theo mục II.1, chuyển động thẳng biến đổi đều có quỹ đạo thẳng và gia tốc không đổi cả độ lớn lẫn hướng.",
+   "distractorNotes": {
+    "A": "Nhầm biến đổi đều với thẳng đều: vận tốc không đổi thì gia tốc bằng không.",
+    "C": "Độ dịch chuyển tăng đều theo thời gian là dấu hiệu của chuyển động thẳng đều, không phải biến đổi đều.",
+    "D": "Bỏ qua điều kiện quỹ đạo thẳng và quên rằng hướng của gia tốc cũng phải không đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyển động thẳng biến đổi đều. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chuyển động thẳng biến đổi đều là nhanh dần đều khi",
+   "options": [
+    "gia tốc và vận tốc cùng dấu",
+    "gia tốc và vận tốc trái dấu",
+    "gia tốc dương, bất kể dấu vận tốc",
+    "vận tốc dương, bất kể dấu gia tốc"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, nhanh dần đều khi $a \\cdot v \\gt 0$, tức gia tốc cùng dấu với vận tốc.",
+   "distractorNotes": {
+    "B": "Đảo điều kiện: gia tốc trái dấu vận tốc ($a \\cdot v \\lt 0$) là chậm dần đều.",
+    "C": "Rơi vào bẫy chỉ nhìn dấu $a$, trong khi dấu $a$ đổi theo chiều dương đã chọn.",
+    "D": "Dấu của $v$ chỉ cho biết chiều chuyển động, phải so với dấu $a$ mới biết nhanh hay chậm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyển động thẳng biến đổi đều. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật chuyển động thẳng biến đổi đều, theo chiều dương đã chọn thì có $v \\lt 0$ và $a \\lt 0$. Vật đang chuyển động",
+   "options": [
+    "chậm dần đều, vì gia tốc âm",
+    "chậm dần đều, vì đi ngược chiều dương",
+    "nhanh dần đều, vì $a$ cùng dấu $v$",
+    "thẳng đều, vì gia tốc không đổi"
+   ],
+   "answer": 2,
+   "explanation": "Ở Bẫy 1, $a \\cdot v \\gt 0$ nên vật nhanh dần đều. Dấu âm của $a$ chỉ cho biết $\\vec a$ ngược chiều dương.",
+   "distractorNotes": {
+    "A": "Chỉ nhìn dấu $a$: gia tốc âm chỉ nói $\\vec a$ ngược chiều dương, chưa nói nhanh hay chậm.",
+    "B": "Nhầm chiều chuyển động với tính nhanh chậm, phải xét dấu tích $a \\cdot v$.",
+    "D": "Nhầm \"gia tốc không đổi\" với \"vận tốc không đổi\", chỉ khi $a = 0$ mới là thẳng đều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên đồ thị vận tốc – thời gian của chuyển động thẳng biến đổi đều, độ dốc của đường biểu diễn cho biết",
+   "options": [
+    "độ dịch chuyển của vật",
+    "vận tốc ban đầu của vật",
+    "quãng đường vật đã đi",
+    "gia tốc của vật"
+   ],
+   "answer": 3,
+   "explanation": "Mục II.2 nêu độ dốc của đồ thị là $\\dfrac{\\Delta v}{\\Delta t} = a$.",
+   "distractorNotes": {
+    "A": "Nhầm độ dốc với diện tích dưới đồ thị, diện tích mới là độ dịch chuyển.",
+    "B": "Nhầm độ dốc với độ cao tại điểm cắt trục $v$, đó mới là $v_0$.",
+    "C": "Quãng đường gắn với diện tích dưới đồ thị, không gắn với độ dốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Diện tích giới hạn bởi đồ thị vận tốc – thời gian và trục thời gian trong khoảng thời gian $t$ bằng",
+   "options": [
+    "độ dịch chuyển của vật",
+    "gia tốc trung bình của vật",
+    "độ biến thiên vận tốc",
+    "vận tốc trung bình của vật"
+   ],
+   "answer": 0,
+   "explanation": "Theo mục II.3, độ dịch chuyển bằng diện tích giữa đồ thị $v$–$t$ và trục $t$.",
+   "distractorNotes": {
+    "B": "Nhầm diện tích với độ dốc, gia tốc đọc từ độ dốc của đồ thị.",
+    "C": "Độ biến thiên vận tốc là hiệu hai độ cao trên trục $v$, không phải diện tích.",
+    "D": "Quên chia cho thời gian: diện tích chia cho $t$ mới ra vận tốc trung bình."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai xe chuyển động thẳng trên cùng một đường. Đồ thị vận tốc – thời gian của hai xe cắt nhau tại thời điểm $t_1$. Tại $t_1$, hai xe",
+   "options": [
+    "chắc chắn gặp nhau",
+    "có cùng vận tốc",
+    "có cùng gia tốc",
+    "cùng dừng lại"
+   ],
+   "answer": 1,
+   "explanation": "Bẫy 3: đồ thị $v$–$t$ cho biết vận tốc, không cho biết vị trí. Hai đường cắt nhau nghĩa là cùng vận tốc.",
+   "distractorNotes": {
+    "A": "Nhầm vận tốc với vị trí: đồ thị $v$–$t$ không cho biết tọa độ, muốn biết gặp nhau phải so $x$.",
+    "C": "Nhầm độ cao với độ dốc, gia tốc là độ dốc và hai đường cắt nhau thường dốc khác nhau.",
+    "D": "Xe chỉ dừng khi đường biểu diễn chạm trục $t$ ($v = 0$), điểm cắt nhau chưa chắc có $v = 0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Ô tô phanh, chậm dần đều tới khi dừng hẳn tại thời điểm $t_d$. Ở thời điểm $t \\gt t_d$ kể từ lúc phanh, phát biểu đúng là",
+   "options": [
+    "xe chạy lùi nhanh dần với cùng gia tốc",
+    "độ dịch chuyển vẫn tính bằng $v_0t + \\frac{1}{2}at^2$",
+    "xe đứng yên, quãng đường bằng quãng phanh",
+    "xe tiếp tục chậm dần, vận tốc chuyển sang âm"
+   ],
+   "answer": 2,
+   "explanation": "Bẫy 2: xe phanh tới dừng thì đứng yên. Công thức $d = v_0t + \\frac12at^2$ chỉ đúng khi gia tốc giữ nguyên suốt thời gian $t$.",
+   "distractorNotes": {
+    "A": "Áp gia tốc phanh cả sau lúc dừng, trong khi xe phanh tới dừng thì đứng yên chứ không chạy lùi.",
+    "B": "Áp công thức ngoài điều kiện: nó chỉ đúng khi gia tốc giữ nguyên suốt thời gian $t$.",
+    "D": "Vận tốc chuyển sang âm nghĩa là xe chạy lùi, điều không xảy ra khi phanh tới dừng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyển động thẳng biến đổi đều. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Gọi $v_0$, $v$ là vận tốc của vật tại thời điểm $t_0$ và $t$. Gia tốc của chuyển động thẳng biến đổi đều được xác định bằng",
+   "options": [
+    "$a = \\dfrac{t - t_0}{v - v_0}$",
+    "$a = \\dfrac{v + v_0}{t - t_0}$",
+    "$a = (v - v_0)(t - t_0)$",
+    "$a = \\dfrac{v - v_0}{t - t_0}$"
+   ],
+   "answer": 3,
+   "explanation": "Theo mục II.1: $a = \\dfrac{\\Delta v}{\\Delta t} = \\dfrac{v - v_0}{t - t_0}$.",
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu: gia tốc là độ biến thiên vận tốc chia cho khoảng thời gian.",
+    "B": "Dùng tổng hai vận tốc thay vì hiệu $\\Delta v = v - v_0$.",
+    "C": "Nhân với khoảng thời gian thay vì chia $\\Delta v$ cho $\\Delta t$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Chuyển động thẳng biến đổi đều. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của gia tốc là",
+   "options": [
+    "$\\text{m/s}$",
+    "$\\text{m/s}^2$",
+    "$\\text{m}^2\\text{/s}$",
+    "$\\text{m} \\cdot \\text{s}$"
+   ],
+   "answer": 1,
+   "explanation": "Gia tốc là $\\Delta v / \\Delta t$, nên đơn vị là $(\\text{m/s})/\\text{s} = \\text{m/s}^2$, như bài đã nêu.",
+   "distractorNotes": {
+    "A": "Nhầm với đơn vị vận tốc, quên rằng gia tốc còn chia thêm cho thời gian.",
+    "C": "Đặt bình phương nhầm vào mét, trong khi giây mới là đại lượng xuất hiện hai lần ở mẫu.",
+    "D": "Nhân với thời gian thay vì chia, gia tốc có thời gian ở mẫu số."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức độ dịch chuyển của chuyển động thẳng biến đổi đều (gốc thời gian lúc bắt đầu xét) là",
+   "options": [
+    "$d = v_0t + \\frac{1}{2}at^2$",
+    "$d = v_0t + at^2$",
+    "$d = v_0t + \\frac{1}{2}at$",
+    "$d = \\frac{1}{2}v_0t^2 + at$"
+   ],
+   "answer": 0,
+   "explanation": "Mục II.3: thay $v = v_0 + at$ vào $d = \\dfrac{v_0 + v}{2}t$ được $d = v_0t + \\frac12at^2$.",
+   "distractorNotes": {
+    "B": "Quên hệ số $\\frac12$, phần do gia tốc là diện tích tam giác nên phải chia đôi.",
+    "C": "Quên bình phương của $t$, phần do gia tốc tỉ lệ với $t^2$.",
+    "D": "Gán nhầm bình phương và hệ số $\\frac12$ cho số hạng $v_0$ thay vì số hạng chứa $a$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cùng một xe, cùng gia tốc phanh. Nếu tốc độ lúc bắt đầu phanh tăng gấp đôi thì quãng đường phanh tới khi dừng",
+   "options": [
+    "tăng gấp đôi",
+    "không thay đổi",
+    "tăng gấp bốn",
+    "tăng gấp $\\sqrt{2}$ lần"
+   ],
+   "answer": 2,
+   "explanation": "Phanh tới dừng thì $d = \\dfrac{v_0^2}{2|a|}$, quãng phanh tỉ lệ với $v_0^2$, nên tăng gấp bốn.",
+   "distractorNotes": {
+    "A": "Coi quãng phanh tỉ lệ thuận với tốc độ, quên rằng thời gian phanh và tốc độ trung bình đều gấp đôi.",
+    "B": "Nhầm cùng gia tốc là cùng quãng phanh, trong khi quãng phanh phụ thuộc $v_0^2$.",
+    "D": "Đảo quan hệ tỉ lệ: $d$ tỉ lệ với $v_0^2$ chứ không tỉ lệ với $\\sqrt{v_0}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xe đang chạy với vận tốc $v_0$ thì phanh, chậm dần đều với gia tốc có độ lớn $|a|$ tới khi dừng. Từ $v^2 - v_0^2 = 2ad$, quãng phanh là",
+   "options": [
+    "$d = \\dfrac{v_0}{2|a|}$",
+    "$d = \\dfrac{v_0^2}{2|a|}$",
+    "$d = \\dfrac{2|a|}{v_0^2}$",
+    "$d = \\dfrac{v_0^2}{|a|}$"
+   ],
+   "answer": 1,
+   "explanation": "Thay $v = 0$ vào $v^2 - v_0^2 = 2ad$ với $a \\lt 0$ được $d = \\dfrac{v_0^2}{2|a|}$, như mục II.4.",
+   "distractorNotes": {
+    "A": "Quên bình phương của $v_0$, công thức độc lập thời gian chứa $v_0^2$.",
+    "C": "Đảo tử và mẫu khi chuyển vế để tìm $d$.",
+    "D": "Bỏ sót hệ số 2 ở vế phải của $v^2 - v_0^2 = 2ad$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Xe đang chạy với vận tốc $v_0$ thì phanh, chậm dần đều với gia tốc có độ lớn $|a|$. Thời gian từ lúc phanh tới khi xe dừng là",
+   "options": [
+    "$t_d = \\dfrac{v_0}{|a|}$",
+    "$t_d = \\dfrac{|a|}{v_0}$",
+    "$t_d = v_0 \\cdot |a|$",
+    "$t_d = \\dfrac{v_0^2}{|a|}$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $v = v_0 + at$ với $v = 0$, $a = -|a|$ được $t_d = \\dfrac{v_0}{|a|}$, như Bẫy 2.",
+   "distractorNotes": {
+    "B": "Đảo tử và mẫu khi giải phương trình $0 = v_0 - |a|t$.",
+    "C": "Nhân thay vì chia: thời gian bằng vận tốc cần mất chia cho mức giảm mỗi giây.",
+    "D": "Lẫn với công thức quãng phanh, công thức vận tốc chỉ bậc nhất theo $v_0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật chuyển động thẳng biến đổi đều, lúc $t = 0$ ở tọa độ $x_0$ và có vận tốc $v_0$. Phương trình chuyển động của vật là",
+   "options": [
+    "$x = x_0 + v_0t + at^2$",
+    "$x = v_0t + \\frac{1}{2}at^2$",
+    "$x = x_0 + v_0 + \\frac{1}{2}at^2$",
+    "$x = x_0 + v_0t + \\frac{1}{2}at^2$"
+   ],
+   "answer": 3,
+   "explanation": "Vì $d = x - x_0$ và $d = v_0t + \\frac12at^2$ nên $x = x_0 + v_0t + \\frac12at^2$.",
+   "distractorNotes": {
+    "A": "Quên hệ số $\\frac12$ ở số hạng chứa gia tốc.",
+    "B": "Quên tọa độ ban đầu $x_0$, lẫn tọa độ với độ dịch chuyển.",
+    "C": "Quên nhân $v_0$ với $t$, cộng vận tốc vào tọa độ là sai đơn vị."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Chuyển động thẳng biến đổi đều. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vận động viên trượt băng thả trôi theo đường thẳng, cứ mỗi giây tốc độ giảm đi một lượng như nhau. Ban đầu chọn chiều dương theo chiều trượt. Xét các phát biểu sau:",
+   "statements": [
     {
-      "kind": "dinh_nghia",
-      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Chuyển động thẳng biến đổi đều có đặc điểm nào sau đây?",
-      "options": [
-        "Quỹ đạo thẳng, gia tốc không đổi cả về độ lớn lẫn hướng",
-        "Quỹ đạo thẳng, vận tốc không đổi theo thời gian",
-        "Quỹ đạo thẳng, quãng đường đi được trong mọi giây đều bằng nhau",
-        "Quỹ đạo bất kì, độ lớn vận tốc tăng đều"
-      ],
-      "answer": 0,
-      "explanation": "Bài định nghĩa: quỹ đạo thẳng và gia tốc không đổi. Vận tốc không đổi hoặc quãng đường mỗi giây bằng nhau là chuyển động thẳng đều."
+     "text": "Với chiều dương đã chọn, $v \\gt 0$ và $a \\lt 0$ nên người đó chuyển động chậm dần đều.",
+     "answer": true
     },
     {
-      "kind": "dieu_kien",
-      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Chọn chiều dương theo chiều chuyển động của xe. Xe có $v = +5\\ \\text{m/s}$ và $a = -2\\ \\text{m/s}^2$. Xe đang:",
-      "options": [
-        "Chuyển động nhanh dần đều, vì độ lớn $a$ không đổi",
-        "Chuyển động chậm dần đều, vì $a$ ngược dấu $v$",
-        "Chuyển động nhanh dần đều, vì $v$ dương",
-        "Chuyển động thẳng đều, vì $a$ không đổi"
-      ],
-      "answer": 1,
-      "explanation": "Nhanh hay chậm dần do tích $a \\cdot v$: $(-2)(+5) \\lt 0$ nên chậm dần. Độ lớn $a$ không đổi hay $v$ dương không quyết định điều đó; $a$ không đổi cũng không có nghĩa $v$ không đổi."
+     "text": "Nếu chọn lại chiều dương ngược chiều trượt thì $a \\gt 0$, nên chuyển động trở thành nhanh dần đều.",
+     "answer": false
     },
     {
-      "kind": "hien_tuong",
-      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Đồ thị vận tốc theo thời gian của chuyển động thẳng biến đổi đều có dạng nào, và độ dốc của nó cho biết đại lượng nào?",
-      "options": [
-        "Đoạn thẳng; độ dốc là vận tốc ban đầu $v_0$",
-        "Đường parabol có đỉnh tại $v_0$; độ dốc là $a$",
-        "Đoạn thẳng; độ dốc là gia tốc $a$",
-        "Đường nằm ngang, vì $a$ không đổi"
-      ],
-      "answer": 2,
-      "explanation": "Từ $v = v_0 + at$, $v$ là hàm bậc nhất của $t$ nên đồ thị là đoạn thẳng, độ dốc $\\Delta v / \\Delta t = a$. Còn $v_0$ là chỗ đồ thị cắt trục $v$. Chỉ chuyển động thẳng đều mới có đường nằm ngang."
+     "text": "Khi đổi chiều dương, dấu của $a$ đổi nhưng dấu của tích $a \\cdot v$ không đổi.",
+     "answer": true
     },
     {
-      "kind": "dinh_nghia",
-      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Diện tích giữa đồ thị $v$–$t$ và trục thời gian (trong một khoảng thời gian) cho biết đại lượng nào?",
-      "options": [
-        "Gia tốc của vật",
-        "Vận tốc ban đầu của vật",
-        "Toạ độ ban đầu của vật",
-        "Độ dịch chuyển trong khoảng thời gian đó"
-      ],
-      "answer": 3,
-      "explanation": "Hình thang giữa đồ thị và trục $t$ có diện tích $\\dfrac{v_0 + v}{2}\\,t$, tức vận tốc trung bình nhân thời gian, bằng độ dịch chuyển $d$. Gia tốc là độ dốc, $v_0$ là độ cao tại $t=0$."
-    },
-    {
-      "kind": "dieu_kien",
-      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "multiple_choice",
-      "question": "Trên đồ thị $v$–$t$, đường của hai xe cắt nhau tại thời điểm $t_1$. Điều này cho biết:",
-      "options": [
-        "Tại $t_1$ hai xe gặp nhau",
-        "Tại $t_1$ hai xe có cùng gia tốc",
-        "Tại $t_1$ hai xe có cùng vận tốc, chưa chắc đã gặp nhau",
-        "Từ $0$ đến $t_1$ hai xe đi được quãng đường bằng nhau"
-      ],
-      "answer": 2,
-      "explanation": "Độ cao của điểm trên đồ thị $v$–$t$ là vận tốc, nên giao điểm nghĩa là cùng $v$. Gặp nhau đòi hỏi cùng toạ độ $x$, mà đồ thị này không cho vị trí. Quãng đường bằng nhau chỉ khi hai diện tích dưới đồ thị bằng nhau."
-    },
-    {
-      "kind": "dieu_kien",
-      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "true_false",
-      "question": "Về dấu của gia tốc và việc xe nhanh dần hay chậm dần, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Dấu của $a$ cho biết $\\vec a$ cùng hay ngược chiều dương đã chọn.",
-          "answer": true
-        },
-        {
-          "text": "Chuyển động có $a \\lt 0$ luôn là chuyển động chậm dần đều.",
-          "answer": false
-        },
-        {
-          "text": "Nhanh dần hay chậm dần được quyết định bởi dấu của tích $a \\cdot v$.",
-          "answer": true
-        },
-        {
-          "text": "Đổi chiều dương thì tích $a \\cdot v$ đổi dấu, nên xe nhanh dần trở thành chậm dần.",
-          "answer": false
-        }
-      ],
-      "explanation": "Đổi chiều dương thì cả $a$ lẫn $v$ cùng đổi dấu nên tích $a\\cdot v$ không đổi: tính chất nhanh/chậm dần là của chuyển động, không phụ thuộc cách chọn trục. $a \\lt 0$ chỉ chậm dần khi $v \\gt 0$."
-    },
-    {
-      "kind": "hien_tuong",
-      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "true_false",
-      "question": "Xét đồ thị $v$–$t$ của chuyển động thẳng biến đổi đều. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Đường dốc lên tương ứng với gia tốc $a \\gt 0$.",
-          "answer": true
-        },
-        {
-          "text": "Đường nằm ngang tương ứng với $a = 0$ (chuyển động thẳng đều).",
-          "answer": true
-        },
-        {
-          "text": "Độ dốc của đường cho biết vận tốc ban đầu $v_0$.",
-          "answer": false
-        },
-        {
-          "text": "Đoạn thẳng cắt trục $v$ tại điểm có tung độ bằng $v_0$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Độ dốc là $\\Delta v/\\Delta t = a$, còn $v_0$ là tung độ tại $t = 0$ (chỗ cắt trục $v$)."
-    },
-    {
-      "kind": "hien_tuong",
-      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Với cùng gia tốc phanh, tốc độ ban đầu của xe tăng gấp $3$ lần thì quãng đường phanh tăng gấp bao nhiêu lần?",
-      "answer": "9",
-      "explanation": "Quãng phanh $d = \\dfrac{v_0^2}{2|a|}$ tỉ lệ với $v_0^2$, nên gấp $3^2 = 9$ lần."
-    },
-    {
-      "kind": "dinh_nghia",
-      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Đơn vị của gia tốc là $\\text{m/s}^n$. Số $n$ bằng bao nhiêu?",
-      "answer": "2",
-      "explanation": "$a = \\Delta v/\\Delta t$ có đơn vị $\\text{m/s} : \\text{s} = \\text{m/s}^2$, nên $n = 2$."
-    },
-    {
-      "kind": "dinh_nghia",
-      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "type": "short_answer",
-      "question": "Để viết phương trình chuyển động của hai xe gặp nhau, cần chọn chung cho cả hai xe mấy thứ: gốc toạ độ, chiều dương và gốc thời gian?",
-      "answer": "3",
-      "explanation": "Cần chọn cả ba (gốc toạ độ, chiều dương, gốc thời gian) và dùng chung cho hai xe; gặp nhau khi $x_1 = x_2$."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Xe tăng tốc đều từ $4\\ \\text{m/s}$ lên $16\\ \\text{m/s}$ trong $6\\ \\text{s}$. Gia tốc của xe là:",
-      "options": [
-        "$12\\ \\text{m/s}^2$",
-        "$3{,}3\\ \\text{m/s}^2$",
-        "$0{,}5\\ \\text{m/s}^2$",
-        "$2\\ \\text{m/s}^2$"
-      ],
-      "answer": 3,
-      "explanation": "$a = \\dfrac{16-4}{6} = 2\\ \\text{m/s}^2$. Ra $12$ là quên chia cho $\\Delta t$; ra $3{,}3$ là cộng ($20/6$) thay vì trừ $v - v_0$; ra $0{,}5$ là đảo tử và mẫu ($6/12$)."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Xe khởi hành từ nghỉ với gia tốc $1{,}5\\ \\text{m/s}^2$. Quãng đường xe đi được sau $6\\ \\text{s}$ là:",
-      "options": [
-        "$54\\ \\text{m}$",
-        "$27\\ \\text{m}$",
-        "$9\\ \\text{m}$",
-        "$4{,}5\\ \\text{m}$"
-      ],
-      "answer": 1,
-      "explanation": "$d = \\tfrac12 a t^2 = \\tfrac12 \\cdot 1{,}5 \\cdot 36 = 27\\ \\text{m}$. Ra $54$ là quên hệ số $\\tfrac12$; ra $9$ là $at$ (vận tốc, không phải quãng đường); ra $4{,}5$ là quên bình phương $t$ ($\\tfrac12 at$)."
-    },
-    {
-      "kind": "cong_thuc",
-      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Ô tô tăng tốc đều từ $5\\ \\text{m/s}$ lên $15\\ \\text{m/s}$ trên đoạn đường $100\\ \\text{m}$. Gia tốc của ô tô là:",
-      "options": [
-        "$1\\ \\text{m/s}^2$",
-        "$2\\ \\text{m/s}^2$",
-        "$0{,}5\\ \\text{m/s}^2$",
-        "$0{,}1\\ \\text{m/s}^2$"
-      ],
-      "answer": 0,
-      "explanation": "Từ $v^2 - v_0^2 = 2ad$: $a = \\dfrac{225 - 25}{2 \\cdot 100} = 1\\ \\text{m/s}^2$. Ra $2$ là quên số $2$ ở mẫu; ra $0{,}5$ là bình phương hiệu $(15-5)^2$ thay vì hiệu hai bình phương; ra $0{,}1$ là dùng $(v - v_0)/d$."
-    },
-    {
-      "kind": "bien_doi",
-      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "multiple_choice",
-      "question": "Xe phanh tới dừng với gia tốc có độ lớn $|a|$, vận tốc ban đầu $v_0$. Quãng đường phanh là:",
-      "options": [
-        "$d = \\dfrac{v_0}{2|a|}$",
-        "$d = \\dfrac{v_0^2}{|a|}$",
-        "$d = \\dfrac{v_0^2}{2|a|}$",
-        "$d = \\dfrac{|a|}{2v_0^2}$"
-      ],
-      "answer": 2,
-      "explanation": "Đặt $v = 0$ trong $v^2 - v_0^2 = 2ad$ được $d = \\dfrac{v_0^2}{2|a|}$. Các nhiễu là quên bình phương $v_0$, quên số $2$, hoặc đảo tử và mẫu."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "type": "multiple_choice",
-      "question": "Ô tô chạy $20\\ \\text{m/s}$ thì phanh, chậm dần đều với $|a| = 4\\ \\text{m/s}^2$. Quãng đường xe đi được trong $8\\ \\text{s}$ kể từ lúc phanh là:",
-      "options": [
-        "$32\\ \\text{m}$",
-        "$50\\ \\text{m}$",
-        "$160\\ \\text{m}$",
-        "$100\\ \\text{m}$"
-      ],
-      "answer": 1,
-      "explanation": "Xe dừng sau $20/4 = 5\\ \\text{s}$, nên $d = \\dfrac{20^2}{2\\cdot 4} = 50\\ \\text{m}$. Ra $32$ là thay thẳng $t = 8$ ($160 - 128$), như thể xe chạy lùi; ra $160$ là quên phanh; ra $100$ là quên số $2$ ở mẫu."
-    },
-    {
-      "kind": "cong_thuc",
-      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "true_false",
-      "question": "Về độ dịch chuyển và phương trình chuyển động của chuyển động thẳng biến đổi đều, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Độ dịch chuyển bằng vận tốc trung bình nhân thời gian: $d = \\dfrac{v_0 + v}{2}\\,t$.",
-          "answer": true
-        },
-        {
-          "text": "Khi xuất phát từ nghỉ ($v_0 = 0$) thì $d = \\tfrac12 a t^2$.",
-          "answer": true
-        },
-        {
-          "text": "Xe phanh tới dừng thì sau khi dừng vẫn dùng $d = v_0 t + \\tfrac12 a t^2$ với mọi giá trị $t$.",
-          "answer": false
-        },
-        {
-          "text": "Quãng đường $s$ bằng độ dịch chuyển $d$ khi vật không đổi chiều chuyển động.",
-          "answer": true
-        }
-      ],
-      "explanation": "Công thức chỉ đúng khi gia tốc giữ nguyên suốt thời gian $t$. Xe phanh dừng rồi đứng yên, nên với $t$ lớn hơn thời gian dừng phải lấy $d = v_0^2/(2|a|)$."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "true_false",
-      "question": "Xe có $v_0 = 12\\ \\text{m/s}$ chuyển động thẳng chậm dần đều với $|a| = 3\\ \\text{m/s}^2$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Sau $2\\ \\text{s}$ vận tốc của xe là $6\\ \\text{m/s}$.",
-          "answer": true
-        },
-        {
-          "text": "Xe dừng hẳn sau $4\\ \\text{s}$.",
-          "answer": true
-        },
-        {
-          "text": "Sau $6\\ \\text{s}$ vận tốc của xe là $-6\\ \\text{m/s}$, tức xe đã chạy lùi.",
-          "answer": false
-        },
-        {
-          "text": "Quãng đường xe đi được cho tới lúc dừng là $24\\ \\text{m}$.",
-          "answer": true
-        }
-      ],
-      "explanation": "$v = 12 - 3\\cdot 2 = 6$; dừng khi $12/3 = 4\\ \\text{s}$; $d = 12^2/(2\\cdot3) = 24\\ \\text{m}$. Sau $4\\ \\text{s}$ xe đứng yên, không chạy lùi, nên $v = -6$ (thay máy móc $t=6$) là sai."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Ô tô chạy $30\\ \\text{m/s}$ thì phanh, chậm dần đều với $|a| = 6\\ \\text{m/s}^2$. Quãng đường phanh là bao nhiêu mét?",
-      "answer": "75",
-      "explanation": "$d = \\dfrac{v_0^2}{2|a|} = \\dfrac{900}{12} = 75\\ \\text{m}$."
-    },
-    {
-      "kind": "tinh_nhanh",
-      "topic": "Các công thức của chuyển động thẳng biến đổi đều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "type": "short_answer",
-      "question": "Xe tăng tốc đều từ $3\\ \\text{m/s}$ lên $11\\ \\text{m/s}$ trong $5\\ \\text{s}$. Quãng đường xe đi được là bao nhiêu mét?",
-      "answer": "35",
-      "explanation": "Vận tốc trung bình $\\dfrac{3 + 11}{2} = 7\\ \\text{m/s}$, nhân $5\\ \\text{s}$ được $35\\ \\text{m}$."
-    },
-    {
-      "kind": "don_vi",
-      "topic": "Bài toán hai xe gặp nhau, phanh gấp",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "type": "short_answer",
-      "question": "Đổi $108\\ \\text{km/h}$ ra $\\text{m/s}$ (chia cho $3{,}6$). Đáp số là bao nhiêu?",
-      "answer": "30",
-      "explanation": "$108 : 3{,}6 = 30\\ \\text{m/s}$. Bài nhắc luôn đổi km/h ra m/s trước khi dùng các công thức."
+     "text": "Gia tốc âm luôn có nghĩa là vật đang chuyển động chậm dần.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Bẫy 1: dấu của $a$ chỉ cho biết $\\vec a$ cùng hay ngược chiều dương; nhanh hay chậm xét dấu $a \\cdot v$, mà tích này không đổi khi đổi chiều dương.",
+   "distractorNotes": {
+    "0": "$v \\gt 0$, $a \\lt 0$ nên $a \\cdot v \\lt 0$, đúng điều kiện chậm dần đều, không thể coi là sai.",
+    "1": "Đổi chiều dương thì $v$ cũng đổi dấu, $a \\cdot v$ vẫn âm nên vẫn chậm dần đều.",
+    "2": "Cả $a$ và $v$ cùng đổi dấu nên tích giữ nguyên, phát biểu này không sai.",
+    "3": "Gia tốc âm mà vận tốc cũng âm thì $a \\cdot v \\gt 0$, vật nhanh dần, nên không thể nói luôn chậm dần."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Khái niệm gia tốc và đồ thị vận tốc – thời gian",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: thả xe lăn từ nghỉ trên máng nghiêng, đo thời gian $t$ từ lúc thả và thời gian $\\tau$ tấm chắn rộng $b$ đi qua cổng quang điện, tính $v = b/\\tau$. Kết quả cho tỉ số $v/t$ gần như không đổi. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Vì $v/t$ gần như không đổi nên xe chuyển động nhanh dần đều.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị $v$–$t$ của xe là đường thẳng đi qua gốc tọa độ vì xe được thả từ nghỉ.",
+     "answer": true
+    },
+    {
+     "text": "Giá trị $v = b/\\tau$ chính là vận tốc tức thời chính xác của xe tại cổng quang điện.",
+     "answer": false
+    },
+    {
+     "text": "Xe đi qua cổng càng nhanh thì $\\tau$ càng dài nên sai số tương đối của $v$ càng nhỏ.",
+     "answer": false
+    }
+   ],
+   "explanation": "$v/t$ không đổi nên $v = at$, đồ thị là đường thẳng qua gốc. $b/\\tau$ thực ra là vận tốc trung bình khi qua cổng; xe càng nhanh thì $\\tau$ càng ngắn, sai số tương đối càng lớn.",
+   "distractorNotes": {
+    "0": "$v/t$ không đổi nghĩa là gia tốc không đổi và vận tốc tăng, đúng là nhanh dần đều.",
+    "1": "Thả từ nghỉ nên $v_0 = 0$, $v = at$, đồ thị đi qua gốc, phát biểu này không sai.",
+    "2": "$b/\\tau$ là vận tốc trung bình trong lúc tấm chắn đi qua cổng, không phải vận tốc tức thời chính xác.",
+    "3": "Đảo quan hệ: xe nhanh thì $\\tau = b/v$ ngắn đi, sai một vạch đồng hồ chiếm tỉ lệ lớn hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài toán hai xe gặp nhau, phanh gấp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Ô tô đang dừng ở vạch đèn đỏ, đèn xanh thì khởi hành nhanh dần đều. Đúng lúc đó một xe máy chạy thẳng đều đi qua vạch dừng, cùng chiều với ô tô. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Để lập phương trình, phải dùng chung một gốc tọa độ, một chiều dương và một gốc thời gian cho cả hai xe.",
+     "answer": true
+    },
+    {
+     "text": "Ô tô đuổi kịp xe máy khi tọa độ hai xe bằng nhau, $x_1 = x_2$.",
+     "answer": true
+    },
+    {
+     "text": "Ô tô đuổi kịp xe máy đúng lúc hai xe có cùng vận tốc.",
+     "answer": false
+    },
+    {
+     "text": "Trước khi ô tô đuổi kịp, khoảng cách giữa hai xe luôn tăng dần.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài toán mẫu: dùng chung hệ quy chiếu, gặp nhau khi $x_1 = x_2$. Lúc cùng vận tốc thì khoảng cách lớn nhất; sau đó ô tô nhanh hơn nên khoảng cách giảm dần tới 0.",
+   "distractorNotes": {
+    "0": "Mỗi xe một hệ quy chiếu riêng thì tọa độ không so sánh được, nên phải dùng chung, phát biểu đúng.",
+    "1": "Gặp nhau là cùng vị trí trên đường, tức tọa độ bằng nhau, phát biểu này không sai.",
+    "2": "Nhầm vận tốc với vị trí: lúc cùng vận tốc là lúc khoảng cách lớn nhất, chưa phải lúc gặp.",
+    "3": "Ô tô nhanh dần nên đến lúc nhanh hơn xe máy, khi đó khoảng cách bắt đầu giảm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét công thức vận tốc của chuyển động thẳng biến đổi đều $v = v_0 + at$ (gốc thời gian lúc bắt đầu xét). Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Đồ thị $v$ theo $t$ là đoạn thẳng cắt trục $v$ tại $v_0$.",
+     "answer": true
+    },
+    {
+     "text": "Vật bắt đầu chuyển động từ nghỉ thì công thức trở thành $v = at$.",
+     "answer": true
+    },
+    {
+     "text": "Khi $a = 0$, đồ thị $v$–$t$ là đường dốc lên.",
+     "answer": false
+    },
+    {
+     "text": "Công thức này chỉ dùng được cho chuyển động nhanh dần đều.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục II.2: đồ thị là đoạn thẳng cắt trục $v$ tại $v_0$, nằm ngang khi $a = 0$. Từ nghỉ thì $v = at$. Công thức đúng cho cả nhanh dần và chậm dần, chỉ khác dấu của $a$.",
+   "distractorNotes": {
+    "0": "$v$ là hàm bậc nhất của $t$ và bằng $v_0$ khi $t = 0$, nên phát biểu này đúng.",
+    "1": "Từ nghỉ thì $v_0 = 0$, thay vào được $v = at$, phát biểu này không sai.",
+    "2": "Nhầm $a = 0$ với $a \\gt 0$: khi $a = 0$ vận tốc không đổi nên đồ thị nằm ngang.",
+    "3": "Chậm dần đều vẫn dùng công thức này, chỉ cần $a$ ngược dấu với $v$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật bắt đầu chuyển động từ nghỉ, nhanh dần đều với gia tốc $a$ không đổi, khi đó $v = at$, $d = \\frac12at^2$ và $v^2 = 2ad$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Thời gian chuyển động tăng gấp đôi thì vận tốc đạt được tăng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Thời gian chuyển động tăng gấp đôi thì độ dịch chuyển tăng gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Với cùng thời gian, gia tốc tăng gấp đôi thì độ dịch chuyển tăng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Với cùng gia tốc, muốn đạt vận tốc gấp đôi thì quãng đường cần đi chỉ gấp đôi.",
+     "answer": false
+    }
+   ],
+   "explanation": "$v = at$ tỉ lệ thuận với $t$; $d = \\frac12at^2$ tỉ lệ với $t^2$ và với $a$; $v^2 = 2ad$ nên $d$ tỉ lệ với $v^2$.",
+   "distractorNotes": {
+    "0": "$v = at$ tỉ lệ thuận với $t$, nên $t$ gấp đôi thì $v$ gấp đôi, phát biểu đúng.",
+    "1": "Coi $d$ tỉ lệ thuận với $t$, trong khi $d = \\frac12at^2$ nên $t$ gấp đôi thì $d$ gấp bốn.",
+    "2": "Cùng $t$ thì $d = \\frac12at^2$ tỉ lệ thuận với $a$, phát biểu này không sai.",
+    "3": "Quên bình phương: theo $v^2 = 2ad$, vận tốc gấp đôi thì quãng đường gấp bốn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Các công thức của chuyển động thẳng biến đổi đều",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ hai công thức $v = v_0 + at$ và $d = \\dfrac{v_0 + v}{2}\\, t$ của chuyển động thẳng biến đổi đều, xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Công thức $d = \\dfrac{v_0 + v}{2}\\, t$ cho biết độ dịch chuyển bằng vận tốc trung bình nhân với thời gian.",
+     "answer": true
+    },
+    {
+     "text": "Khử $t$ giữa hai công thức được $v^2 - v_0^2 = 2ad$.",
+     "answer": true
+    },
+    {
+     "text": "Công thức $v^2 - v_0^2 = 2ad$ thuận tiện khi đề không cho và không hỏi thời gian.",
+     "answer": true
+    },
+    {
+     "text": "Từ $v^2 - v_0^2 = 2ad$ suy ra $d = \\dfrac{v^2 + v_0^2}{2a}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Mục II.3–II.4: $d$ là diện tích hình thang, bằng vận tốc trung bình nhân thời gian. Thay $t = \\dfrac{v - v_0}{a}$ được $v^2 - v_0^2 = 2ad$, nên $d = \\dfrac{v^2 - v_0^2}{2a}$, dùng khi không có $t$.",
+   "distractorNotes": {
+    "0": "Trong biến đổi đều, $\\dfrac{v_0 + v}{2}$ đúng là vận tốc trung bình, nên phát biểu này đúng.",
+    "1": "Thay $t = \\dfrac{v - v_0}{a}$ vào công thức $d$ cho đúng $v^2 - v_0^2 = 2ad$, không sai.",
+    "2": "Công thức không chứa $t$ nên đúng là thuận tiện khi đề không cho và không hỏi thời gian.",
+    "3": "Sai dấu khi chuyển vế: tử số giữ nguyên hiệu $v^2 - v_0^2$, không thành tổng."
+   }
+  }
+ ]
 }

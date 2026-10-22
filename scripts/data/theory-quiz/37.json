@@ -1,380 +1,520 @@
 {
-  "lesson_id": 37,
-  "lesson_title": "Bài 18. Điện trường đều",
-  "item_id": 192,
-  "generated_at": "2026-10-02",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 37,
+ "lesson_title": "Bài 18. Điện trường đều",
+ "item_id": 192,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 9,
+   "cong_thuc": 10
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Điện trường đều là điện trường mà vectơ cường độ điện trường:",
-      "options": [
-        "có độ lớn giảm dần theo khoảng cách",
-        "tại mọi điểm đều bằng nhau (cùng phương, chiều, độ lớn)",
-        "chỉ có cùng phương tại mọi điểm",
-        "chỉ có cùng độ lớn tại mọi điểm"
-      ],
-      "answer": 1,
-      "explanation": "Điện trường đều có vectơ cường độ điện trường tại mọi điểm cùng phương, cùng chiều và cùng độ lớn."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Các đường sức điện trong vùng giữa hai bản kim loại phẳng song song tích điện trái dấu là:",
-      "options": [
-        "những đường cong khép kín",
-        "những đường thẳng song song, cách đều nhau",
-        "những đường tròn đồng tâm",
-        "những đường thẳng đồng quy tại một điểm"
-      ],
-      "answer": 1,
-      "explanation": "Giữa hai bản phẳng tích điện trái dấu, đường sức là những đường thẳng song song, cách đều nhau."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Giữa hai bản kim loại phẳng song song tích điện trái dấu, đường sức điện có chiều:",
-      "options": [
-        "từ bản âm sang bản dương",
-        "từ bản dương sang bản âm",
-        "song song với hai bản",
-        "tuỳ vị trí điểm xét"
-      ],
-      "answer": 1,
-      "explanation": "Đường sức vuông góc với hai bản, chiều đi từ bản tích điện dương sang bản tích điện âm."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Chuyển động của điện tích trong điện trường đều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Một electron bay vào điện trường đều giữa hai bản theo phương vuông góc với đường sức. Electron lệch dần về phía:",
-      "options": [
-        "bản tích điện âm",
-        "bản tích điện dương",
-        "không bị lệch",
-        "phía có đường sức mau hơn"
-      ],
-      "answer": 1,
-      "explanation": "Bề lõm parabol hướng vào bản trái dấu với điện tích: electron (điện tích âm) lệch về bản dương."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Chuyển động của điện tích trong điện trường đều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Quỹ đạo của điện tích bay vào điện trường đều theo phương vuông góc với đường sức (bỏ qua trọng lực) là:",
-      "options": [
-        "đường thẳng",
-        "đường tròn",
-        "một nhánh parabol",
-        "đường elip"
-      ],
-      "answer": 2,
-      "explanation": "Bài nêu quỹ đạo là một nhánh parabol, có bề lõm hướng vào bản trái dấu với điện tích."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Chuyển động của điện tích trong điện trường đều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Hiện tượng lệch quỹ đạo của hạt mang điện trong điện trường đều được ứng dụng trong:",
-      "options": [
-        "ống phóng điện tử (dao động kí)",
-        "nam châm điện",
-        "máy biến áp",
-        "ắc quy"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu ứng dụng điều khiển tia electron trong ống phóng điện tử (dao động kí) và lọc bụi mịn tĩnh điện."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Nhận định nào sau đây về đường sức điện giữa hai bản kim loại phẳng song song tích điện trái dấu là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Đường sức là những đường thẳng song song, cách đều nhau.",
-          "answer": true
-        },
-        {
-          "text": "Đường sức có phương vuông góc với hai bản.",
-          "answer": true
-        },
-        {
-          "text": "Đường sức có chiều từ bản tích điện âm sang bản tích điện dương.",
-          "answer": false
-        },
-        {
-          "text": "Vectơ cường độ điện trường tại mọi điểm giữa hai bản bằng nhau.",
-          "answer": true
-        }
-      ],
-      "explanation": "Đường sức hướng từ bản dương sang bản âm, không phải từ bản âm sang bản dương."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Chuyển động của điện tích trong điện trường đều",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Một điện tích q bay vào điện trường đều với vận tốc $v_0$ vuông góc với đường sức, bỏ qua trọng lực. Nhận định nào sau đây là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Theo phương $Ox$ (dọc $v_0$), điện tích chuyển động thẳng đều.",
-          "answer": true
-        },
-        {
-          "text": "Theo phương $Oy$ (dọc lực điện), điện tích chuyển động nhanh dần đều.",
-          "answer": true
-        },
-        {
-          "text": "Quỹ đạo của điện tích là một đường tròn.",
-          "answer": false
-        },
-        {
-          "text": "Lực điện tác dụng lên điện tích có phương không đổi, vuông góc với $v_0$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Chuyển động gồm thành phần thẳng đều theo Ox và nhanh dần đều theo Oy nên quỹ đạo là nhánh parabol, không phải đường tròn."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Để tạo ra điện trường đều, cần đặt bao nhiêu bản kim loại phẳng song song, tích điện trái dấu? (nhập số)",
-      "answer": "2",
-      "explanation": "Điện trường đều được tạo bằng hai bản kim loại phẳng song song tích điện trái dấu."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "question": "Đường sức điện giữa hai bản kim loại phẳng song song hợp với mỗi bản một góc bao nhiêu độ? (nhập số)",
-      "answer": "90",
-      "explanation": "Đường sức có phương vuông góc với hai bản."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Cường độ điện trường giữa hai bản phẳng nhiễm điện trái dấu, cách nhau $d$, hiệu điện thế $U$ được tính bằng:",
-      "options": [
-        "$E = Ud$",
-        "$E = \\dfrac{d}{U}$",
-        "$E = \\dfrac{U}{d}$",
-        "$E = \\dfrac{U}{d^{2}}$"
-      ],
-      "answer": 2,
-      "explanation": "Công thức của bài: $E = \\dfrac{U}{d}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Đơn vị nào sau đây tương đương với V/m?",
-      "options": [
-        "N/C",
-        "J/C",
-        "N.m",
-        "C/N"
-      ],
-      "answer": 0,
-      "explanation": "Vì $1\\,\\text{V} = 1\\,\\text{J/C} = 1\\,\\text{N.m/C}$ nên $1\\,\\text{V/m} = 1\\,\\text{N/C}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Từ công thức $E = \\dfrac{U}{d}$, khoảng cách giữa hai bản được tính bằng:",
-      "options": [
-        "$d = EU$",
-        "$d = \\dfrac{E}{U}$",
-        "$d = \\dfrac{U}{E}$",
-        "$d = U - E$"
-      ],
-      "answer": 2,
-      "explanation": "Từ $E = \\dfrac{U}{d}$ suy ra $d = \\dfrac{U}{E}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Chuyển động của điện tích trong điện trường đều",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Độ lớn lực điện tác dụng lên điện tích $q$ đặt giữa hai bản phẳng (hiệu điện thế $U$, cách nhau $d$) là:",
-      "options": [
-        "$F = |q|\\dfrac{U}{d}$",
-        "$F = |q|Ud$",
-        "$F = \\dfrac{|q|d}{U}$",
-        "$F = \\dfrac{U}{|q|d}$"
-      ],
-      "answer": 0,
-      "explanation": "Lực điện có độ lớn $F = |q|E = |q|\\dfrac{U}{d}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Chuyển động của điện tích trong điện trường đều",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Phương trình quỹ đạo $y = \\pm \\dfrac{1}{2}\\dfrac{qU}{m d v_0^{2}}x^{2}$ cho thấy (các đại lượng khác không đổi) nhận định nào sau đây là đúng hay sai?",
-      "statements": [
-        {
-          "text": "$y$ tỉ lệ với $x^{2}$.",
-          "answer": true
-        },
-        {
-          "text": "$y$ tỉ lệ thuận với hiệu điện thế $U$.",
-          "answer": true
-        },
-        {
-          "text": "$y$ tỉ lệ nghịch với $v_0^{2}$.",
-          "answer": true
-        },
-        {
-          "text": "$y$ tỉ lệ thuận với khoảng cách $d$ giữa hai bản.",
-          "answer": false
-        }
-      ],
-      "explanation": "$d$ nằm ở mẫu số nên $y$ tỉ lệ nghịch với $d$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Với $E = \\dfrac{U}{d}$ giữa hai bản phẳng, nhận định nào sau đây là đúng hay sai?",
-      "statements": [
-        {
-          "text": "Giữ nguyên $d$, tăng $U$ thì $E$ tăng.",
-          "answer": true
-        },
-        {
-          "text": "Giữ nguyên $U$, tăng $d$ thì $E$ tăng.",
-          "answer": false
-        },
-        {
-          "text": "$1\\,\\text{V/m} = 1\\,\\text{N/C}$.",
-          "answer": true
-        },
-        {
-          "text": "Cường độ điện trường có đơn vị là V.m.",
-          "answer": false
-        }
-      ],
-      "explanation": "$E$ tỉ lệ thuận với $U$, tỉ lệ nghịch với $d$; đơn vị là V/m (hay N/C), không phải V.m."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Hai bản phẳng song song cách nhau $d = 0{,}05$ m, hiệu điện thế giữa hai bản $U = 100$ V. Cường độ điện trường giữa hai bản là bao nhiêu V/m? (nhập số)",
-      "answer": "2000",
-      "explanation": "$E = \\dfrac{U}{d} = \\dfrac{100}{0{,}05} = 2000$ V/m."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Hai bản phẳng song song cách nhau $d = 0{,}04$ m, hiệu điện thế $U = 12$ V. Cường độ điện trường giữa hai bản là bao nhiêu V/m? (nhập số)",
-      "answer": "300",
-      "explanation": "$E = \\dfrac{12}{0{,}04} = 300$ V/m."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Đặc điểm điện trường đều giữa hai bản song song",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Điện trường đều giữa hai bản có $E = 500$ V/m, hai bản cách nhau $d = 0{,}02$ m. Hiệu điện thế giữa hai bản là bao nhiêu V? (nhập số)",
-      "answer": "10",
-      "explanation": "$U = Ed = 500 \\times 0{,}02 = 10$ V."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Chuyển động của điện tích trong điện trường đều",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Điện tích $q = 5\\,\\mu\\text{C}$ đặt trong điện trường đều $E = 2000$ V/m. Độ lớn lực điện tác dụng lên điện tích là bao nhiêu mN? (nhập số)",
-      "answer": "10",
-      "explanation": "$F = |q|E = 5\\times10^{-6}\\times 2000 = 10^{-2}$ N $= 10$ mN."
-    }
+  "removed": [
+   {
+    "question": "Đổ dầu ăn vào khay, rắc đều bột semolina, nhúng hai lá đồng phẳng song song rồi nối với máy phát tĩnh điện. Xét các phát biểu sau.",
+    "reason": "nghi_ngo: Ý d) 'điểm sát một lá đồng' không ghi điều kiện 'xa mép', trong khi ý c) đang nói về vùng mép, nên ý d) có thể hiểu theo hai cách. Các ý còn lại đúng theo thí nghiệm trong bài."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện trường đều là điện trường mà vectơ cường độ điện trường tại mọi điểm",
+   "options": [
+    "có cùng phương, cùng chiều và cùng độ lớn",
+    "có cùng độ lớn nhưng chiều có thể khác nhau",
+    "có cùng phương nhưng độ lớn giảm theo khoảng cách",
+    "đều hướng ra xa một điện tích điểm dương"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, điện trường đều có vectơ $\\vec E$ tại mọi điểm bằng nhau: cùng phương, cùng chiều, cùng độ lớn.",
+   "distractorNotes": {
+    "B": "Chỉ cùng độ lớn chưa đủ: hai vectơ bằng nhau phải trùng cả phương và chiều.",
+    "C": "Độ lớn giảm theo khoảng cách là đặc điểm trường điện tích điểm, trái với trường đều có $E$ như nhau mọi điểm.",
+    "D": "Đường sức tỏa ra từ điện tích điểm không song song, nên vectơ $\\vec E$ khác nhau tại các điểm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Đặc điểm điện trường đều giữa hai bản song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữa hai bản kim loại phẳng song song tích điện trái dấu (xa mép), các đường sức điện là",
+   "options": [
+    "những đường cong khép kín bao quanh hai bản",
+    "những đường thẳng song song, cách đều nhau",
+    "những đường thẳng tỏa ra từ tâm mỗi bản",
+    "những đường thẳng song song, gần bản thì dày hơn"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: đường sức của điện trường đều giữa hai bản là những đường thẳng, song song, cách đều nhau.",
+   "distractorNotes": {
+    "A": "Đường sức điện đi từ bản dương sang bản âm, không khép kín bao quanh hai bản.",
+    "C": "Tỏa ra từ một tâm là hình ảnh điện tích điểm, không phải hai bản rộng song song.",
+    "D": "Đường sức dày hơn nghĩa là $E$ lớn hơn, trái với tính chất đường sức cách đều của trường đều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Đặc điểm điện trường đều giữa hai bản song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đường sức điện giữa hai bản phẳng song song tích điện trái dấu có phương và chiều nào?",
+   "options": [
+    "Song song với hai bản, hướng từ trái sang phải",
+    "Vuông góc với hai bản, từ bản âm sang bản dương",
+    "Vuông góc với hai bản, từ bản dương sang bản âm",
+    "Xiên góc với hai bản, từ bản dương sang bản âm"
+   ],
+   "answer": 2,
+   "explanation": "Theo bài, đường sức vuông góc với hai bản và có chiều từ bản dương sang bản âm.",
+   "distractorNotes": {
+    "A": "Đường sức nối từ bản này sang bản kia, nên vuông góc với hai bản chứ không song song.",
+    "B": "Đảo chiều: đường sức đi ra từ bản dương và đi vào bản âm.",
+    "D": "Giữa hai bản, xa mép, đường sức vuông góc với bản; chỉ gần mép mới cong lệch."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Đặc điểm điện trường đều giữa hai bản song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ở vùng nào giữa hai bản phẳng tích điện trái dấu thì điện trường không còn được coi là đều?",
+   "options": [
+    "Vùng sát bản tích điện dương",
+    "Vùng chính giữa của hai bản",
+    "Vùng sát bản tích điện âm",
+    "Vùng gần mép của hai bản"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu: gần mép bản, đường sức cong ra nên ở đó điện trường không còn đều.",
+   "distractorNotes": {
+    "A": "Nghĩ theo điện tích điểm \"càng gần càng mạnh\"; với hai bản rộng, sát bản xa mép vẫn là trường đều.",
+    "B": "Vùng chính giữa, xa mép, là nơi đường sức thẳng, song song, cách đều nhất.",
+    "C": "Sát bản âm nhưng xa mép, đường sức vẫn thẳng, song song, cách đều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một electron bay vào khoảng giữa hai bản theo phương vuông góc với đường sức, bỏ qua trọng lực. Electron sẽ",
+   "options": [
+    "cong dần về bản dương theo một nhánh parabol",
+    "cong dần về bản âm theo một nhánh parabol",
+    "lệch về bản dương theo một đường thẳng xiên",
+    "đi thẳng, không lệch vì bay vuông góc đường sức"
+   ],
+   "answer": 0,
+   "explanation": "Electron mang điện âm nên chịu lực ngược chiều $\\vec E$, hướng về bản dương; lực không đổi vuông góc $\\vec v_0$ nên quỹ đạo là nhánh parabol.",
+   "distractorNotes": {
+    "B": "Lệch về bản âm chỉ đúng với điện tích dương; electron mang điện âm bị bản âm đẩy ra.",
+    "C": "Lực không đổi làm vận tốc dọc tăng dần theo thời gian, nên đường đi phải cong chứ không thẳng.",
+    "D": "Lực điện $|q|E$ không phụ thuộc hướng bay, nên bay vuông góc đường sức vẫn chịu lực."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Electron vừa ra khỏi vùng giữa hai bản, bên ngoài không có điện trường. Sau đó electron chuyển động như thế nào?",
+   "options": [
+    "Tiếp tục cong theo nhánh parabol như trong khe",
+    "Đi thẳng theo hướng vận tốc lúc ra khỏi bản",
+    "Quay lại đường bay ban đầu vì hết lực lệch",
+    "Dừng lại ngay vì không còn lực điện tác dụng"
+   ],
+   "answer": 1,
+   "explanation": "Ra khỏi hai bản thì lực điện bằng 0, electron chuyển động thẳng đều theo hướng vận tốc lúc ra (bẫy 2 trong bài).",
+   "distractorNotes": {
+    "A": "Quỹ đạo cong là do có lực; ra ngoài hết điện trường thì hết lực, không còn cong.",
+    "C": "Muốn quay về đường bay cũ phải có lực kéo ngược lại, mà bên ngoài không có lực nào.",
+    "D": "Không có lực thì vật giữ nguyên vận tốc theo quán tính, không tự dừng lại."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi xét điện tích bay qua điện trường đều giữa hai bản, được phép bỏ qua trọng lực khi",
+   "options": [
+    "điện tích bay vào song song với hai bản",
+    "hai bản kim loại được đặt thẳng đứng",
+    "$mg$ rất nhỏ so với độ lớn lực điện $|q|E$",
+    "hiệu điện thế giữa hai bản rất nhỏ"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu: bỏ qua trọng lực khi $mg$ rất nhỏ so với $|q|E$, như với electron, proton, ion.",
+   "distractorNotes": {
+    "A": "Hướng bay không làm trọng lực mất đi; điều kiện bỏ qua là so sánh độ lớn $mg$ với $|q|E$.",
+    "B": "Cách đặt bản không làm trọng lực nhỏ đi so với lực điện.",
+    "D": "$U$ nhỏ làm lực điện $|q|U/d$ nhỏ, khi đó trọng lực càng khó bỏ qua."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích bay vào điện trường đều với $\\vec v_0$ vuông góc đường sức. Chuyển động thành phần theo phương của $\\vec v_0$ (trục $Ox$) là chuyển động",
+   "options": [
+    "nhanh dần đều",
+    "chậm dần đều",
+    "nhanh dần rồi chậm dần",
+    "thẳng đều"
+   ],
+   "answer": 3,
+   "explanation": "Lực điện vuông góc $\\vec v_0$ nên theo $Ox$ không có lực, hạt chuyển động thẳng đều $x = v_0 t$.",
+   "distractorNotes": {
+    "A": "Nhanh dần đều là chuyển động dọc theo phương lực ($Oy$), không phải theo phương $\\vec v_0$.",
+    "B": "Lực điện vuông góc $\\vec v_0$, theo $Ox$ không có lực cản nên vận tốc ngang không giảm.",
+    "C": "Theo $Ox$ không có lực nào, nên vận tốc ngang giữ nguyên $v_0$ suốt quá trình."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Đặc điểm điện trường đều giữa hai bản song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai bản phẳng song song cách nhau $d$, hiệu điện thế giữa hai bản là $U$. Cường độ điện trường giữa hai bản là",
+   "options": [
+    "$E = \\dfrac{U}{d}$",
+    "$E = U d$",
+    "$E = \\dfrac{d}{U}$",
+    "$E = \\dfrac{U}{d^{2}}$"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu $E = U/d$, đọc từ tên đơn vị \"vôn trên mét\".",
+   "distractorNotes": {
+    "B": "Nhân thay vì chia, cho đơn vị V·m chứ không phải V/m.",
+    "C": "Đảo tử và mẫu, cho đơn vị m/V, trái với \"vôn trên mét\".",
+    "D": "Thêm bình phương do nhầm với điện trường của điện tích điểm; trường đều chỉ chia cho $d$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Đặc điểm điện trường đều giữa hai bản song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị V/m của cường độ điện trường tương đương với đơn vị nào sau đây?",
+   "options": [
+    "J/m",
+    "N/C",
+    "C/N",
+    "N·m"
+   ],
+   "answer": 1,
+   "explanation": "Vì $1\\ \\text{V} = 1\\ \\text{J/C} = 1\\ \\text{N·m/C}$ nên $1\\ \\text{V/m} = 1\\ \\text{N/C}$.",
+   "distractorNotes": {
+    "A": "Quên rằng $1\\ \\text{V} = 1\\ \\text{J/C}$, đánh rơi đơn vị coulomb ở mẫu số.",
+    "C": "Đảo ngược: cường độ điện trường là lực trên một đơn vị điện tích, tức N chia cho C.",
+    "D": "N·m là đơn vị của công, không phải lực trên một đơn vị điện tích."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Đặc điểm điện trường đều giữa hai bản song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên khoảng cách giữa hai bản, tăng hiệu điện thế giữa hai bản lên gấp đôi thì cường độ điện trường giữa hai bản",
+   "options": [
+    "giảm còn một nửa",
+    "tăng lên gấp bốn",
+    "tăng lên gấp đôi",
+    "không thay đổi"
+   ],
+   "answer": 2,
+   "explanation": "Từ $E = U/d$, với $d$ không đổi thì $E$ tỉ lệ thuận với $U$, nên $E$ tăng gấp đôi.",
+   "distractorNotes": {
+    "A": "Coi $E$ tỉ lệ nghịch với $U$, tức đảo tử và mẫu của $E = U/d$.",
+    "B": "Gán bình phương cho $U$, trong khi $E = U/d$ chỉ tỉ lệ bậc nhất với $U$.",
+    "D": "Nhầm \"đều\" là $E$ không đổi khi thay $U$; \"đều\" chỉ nghĩa là như nhau tại mọi điểm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích $q$, khối lượng $m$ chuyển động giữa hai bản cách nhau $d$ có hiệu điện thế $U$. Độ lớn gia tốc của điện tích là",
+   "options": [
+    "$a = \\dfrac{|q|Ud}{m}$",
+    "$a = \\dfrac{md}{|q|U}$",
+    "$a = \\dfrac{|q|U}{m}$",
+    "$a = \\dfrac{|q|U}{md}$"
+   ],
+   "answer": 3,
+   "explanation": "$a = \\dfrac{F}{m} = \\dfrac{|q|E}{m}$ với $E = U/d$, nên $a = \\dfrac{|q|U}{md}$.",
+   "distractorNotes": {
+    "A": "Thay $E$ bằng $Ud$ thay vì $U/d$, nhân nhầm với khoảng cách.",
+    "B": "Đảo ngược cả biểu thức $F/m$, lấy $md$ chia cho $|q|U$.",
+    "C": "Dùng $U$ thay cho $E$ trong $a = |q|E/m$, quên chia cho $d$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích bay vào điện trường đều giữa hai bản với $\\vec v_0$ vuông góc đường sức, gốc O tại điểm vào trường. Phương trình quỹ đạo là",
+   "options": [
+    "$y = \\dfrac{|q|U}{2mdv_0^{2}}x^{2}$",
+    "$y = \\dfrac{|q|U}{2mdv_0}x^{2}$",
+    "$y = \\dfrac{|q|U}{2mdv_0^{2}}x$",
+    "$y = \\dfrac{2mdv_0^{2}}{|q|U}x^{2}$"
+   ],
+   "answer": 0,
+   "explanation": "Thay $t = x/v_0$ vào $y = \\tfrac12 at^2$ với $a = \\dfrac{|q|U}{md}$ được $y = \\dfrac{|q|U}{2mdv_0^2}x^2$, một nhánh parabol.",
+   "distractorNotes": {
+    "B": "Quên bình phương của $v_0$: thay $t = x/v_0$ thì $t^2 = x^2/v_0^2$.",
+    "C": "Mất bình phương của $x$, cho quỹ đạo thẳng thay vì parabol.",
+    "D": "Đảo tử và mẫu của hệ số $a/(2v_0^2)$ khi thay vào biểu thức của $y$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Electron bay vào giữa hai bản vuông góc đường sức. Giữ nguyên $U$, $d$, chiều dài bản, tăng tốc độ ban đầu $v_0$ lên gấp đôi thì độ lệch khi ra khỏi bản",
+   "options": [
+    "giảm 2 lần",
+    "giảm 4 lần",
+    "tăng 2 lần",
+    "không đổi"
+   ],
+   "answer": 1,
+   "explanation": "$a$ không đổi, thời gian bay $t = L/v_0$ giảm một nửa, mà $y = \\tfrac12 at^2$ nên $y$ giảm 4 lần.",
+   "distractorNotes": {
+    "A": "Thời gian bay giảm một nửa nhưng quên rằng độ lệch tỉ lệ với $t^2$.",
+    "C": "Bay nhanh hơn thì thời gian trong trường ngắn hơn, nên lệch ít đi chứ không nhiều lên.",
+    "D": "Gia tốc không đổi nhưng thời gian bay $t = L/v_0$ đã giảm, nên độ lệch phải đổi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Trong máy in phun liên tục, một giọt mực tích điện âm bay ngang vào khe giữa hai bản nằm ngang: bản trên tích điện dương, bản dưới tích điện âm. Bỏ qua trọng lực. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Đường sức điện giữa hai bản hướng từ bản trên xuống bản dưới.",
+     "answer": true
+    },
+    {
+     "text": "Lực điện tác dụng lên giọt mực cùng chiều với đường sức.",
+     "answer": false
+    },
+    {
+     "text": "Giọt mực lệch dần về phía bản trên.",
+     "answer": true
+    },
+    {
+     "text": "Giọt mực bay vuông góc với đường sức nên không chịu lực điện.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đường sức đi từ bản dương (trên) sang bản âm (dưới); giọt mực âm chịu lực ngược chiều $\\vec E$, hướng lên, nên lệch về bản dương.",
+   "distractorNotes": {
+    "0": "Đường sức luôn đi từ bản dương sang bản âm, ở đây là từ bản trên xuống bản dưới.",
+    "1": "Lực cùng chiều đường sức chỉ đúng với điện tích dương; giọt mực âm chịu lực ngược chiều $\\vec E$.",
+    "2": "Giọt âm bị bản dương hút, bản âm đẩy, nên lực hướng lên và giọt lệch về bản trên.",
+    "3": "Lực điện $|q|E$ không phụ thuộc hướng bay, bay vuông góc đường sức vẫn chịu lực."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Đặc điểm điện trường đều giữa hai bản song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cường độ điện trường giữa hai bản phẳng song song tích điện trái dấu được tính bằng $E = \\dfrac{U}{d}$. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "$U$ là hiệu điện thế giữa hai bản, $d$ là khoảng cách giữa hai bản.",
+     "answer": true
+    },
+    {
+     "text": "Khi thay số, $d$ phải đổi ra mét thì $E$ mới có đơn vị V/m.",
+     "answer": true
+    },
+    {
+     "text": "Công thức này dùng được để tính điện trường của một điện tích điểm.",
+     "answer": false
+    },
+    {
+     "text": "Giữ nguyên $U$, tăng $d$ lên gấp đôi thì $E$ tăng gấp đôi.",
+     "answer": false
+    }
+   ],
+   "explanation": "$E = U/d$ chỉ dùng cho điện trường đều xa mép bản, với $d$ tính bằng mét; $E$ tỉ lệ nghịch với $d$ khi $U$ không đổi.",
+   "distractorNotes": {
+    "0": "Trong $E = U/d$, $U$ là hiệu điện thế và $d$ là khoảng cách giữa hai bản, đúng như bài định nghĩa.",
+    "1": "Để nguyên cm hay mm sẽ sai hàng chục, hàng nghìn lần; muốn ra V/m thì $d$ phải tính bằng mét.",
+    "2": "Điện trường điện tích điểm không đều, mà $E = U/d$ chỉ áp dụng cho trường đều xa mép bản.",
+    "3": "$d$ nằm ở mẫu số nên khi $U$ không đổi, tăng $d$ gấp đôi thì $E$ giảm một nửa."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm ống lệch tia điện tử, tia electron bay ngang qua giữa hai bản, có thể thay đổi hiệu điện thế $U$ giữa hai bản. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Khi $U = 0$, tia electron đi thẳng.",
+     "answer": true
+    },
+    {
+     "text": "Khi $U$ tăng gấp đôi, độ lệch của tia tăng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Khi đảo cực hai bản, tia vẫn cong về phía cũ.",
+     "answer": false
+    },
+    {
+     "text": "Khi tăng tốc độ ban đầu $v_0$ của electron, độ lệch của tia tăng lên.",
+     "answer": false
+    }
+   ],
+   "explanation": "Độ lệch $y = \\dfrac{|q|U}{2mdv_0^2}x^2$ tỉ lệ thuận với $U$, tỉ lệ nghịch với $v_0^2$; đảo cực làm đổi chiều $\\vec E$ nên tia cong sang phía kia.",
+   "distractorNotes": {
+    "0": "$U = 0$ thì không có điện trường, không có lực điện nên tia không lệch.",
+    "1": "Độ lệch tỉ lệ thuận với $U$ theo phương trình quỹ đạo, khớp với quan sát thí nghiệm.",
+    "2": "Đảo cực làm $\\vec E$ đổi chiều, lực lên electron đổi chiều nên tia cong sang phía kia.",
+    "3": "$v_0^2$ nằm ở mẫu số phương trình quỹ đạo, nên bay nhanh hơn thì độ lệch giảm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Chuyển động của điện tích trong điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích $q$, khối lượng $m$ bay vào điện trường đều $E$ với $\\vec v_0$ vuông góc đường sức, bỏ qua trọng lực. Chọn gốc O tại điểm vào trường, $Ox$ theo $\\vec v_0$, $Oy$ cùng chiều lực điện. Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Theo trục $Ox$: $x = v_0 t$.",
+     "answer": true
+    },
+    {
+     "text": "Theo trục $Oy$: $y = \\tfrac12 at^2$ với $a = \\dfrac{|q|E}{m}$.",
+     "answer": true
+    },
+    {
+     "text": "Thay $t = x/v_0$ vào biểu thức của $y$ thì $y$ tỉ lệ bậc nhất với $x$.",
+     "answer": false
+    },
+    {
+     "text": "Độ lớn lực điện $F = |q|E$ thay đổi theo vị trí của hạt giữa hai bản.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ngang thẳng đều, dọc nhanh dần đều với $a = |q|E/m$; thay $t = x/v_0$ được $y \\propto x^2$ (parabol); trong trường đều lực không đổi.",
+   "distractorNotes": {
+    "0": "Theo $Ox$ không có lực, hạt chuyển động thẳng đều nên đúng là $x = v_0 t$.",
+    "1": "Theo $Oy$ lực $|q|E$ không đổi gây gia tốc không đổi $a = |q|E/m$, giống ném ngang thay $g$ bằng $a$.",
+    "2": "Thay $t = x/v_0$ được $t^2 = x^2/v_0^2$, nên $y$ tỉ lệ với $x^2$ và quỹ đạo là parabol.",
+    "3": "Trong trường đều $E$ như nhau mọi điểm, nên $F = |q|E$ không đổi theo vị trí."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Điện trường đều",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dán hai thanh đồng song song cách nhau $d$ lên giấy dẫn điện, nối với nguồn có hiệu điện thế $U$. Dùng vôn kế đo hiệu điện thế $V$ giữa thanh âm và điểm cách thanh âm một đoạn $x$ (ở giữa tờ giấy). Xét các phát biểu sau.",
+   "statements": [
+    {
+     "text": "Số đọc $V$ tăng đều theo $x$.",
+     "answer": true
+    },
+    {
+     "text": "Tỉ số $V/x$ (với $x$ đổi ra mét) bằng $U/d$.",
+     "answer": true
+    },
+    {
+     "text": "Tỉ số $V/x$ lớn dần khi điểm đo tiến gần thanh dương.",
+     "answer": false
+    },
+    {
+     "text": "Đơn vị của $V/x$ là V/m, tương đương với N·C.",
+     "answer": false
+    }
+   ],
+   "explanation": "Thí nghiệm cho thấy mọi đoạn đều cho cùng $E = U/d$, chứng tỏ điện trường đều; đơn vị V/m tương đương N/C.",
+   "distractorNotes": {
+    "0": "Bảng số liệu cho $V$ tăng thêm $1{,}5$ V sau mỗi cm, tức tăng đều theo $x$.",
+    "1": "Mọi hàng đều cho $V/x = 150$ V/m, khớp với $U/d = 9{,}0/0{,}060$.",
+    "2": "Trường đều nên $V/x$ như nhau ở mọi vị trí, không lớn dần khi tới gần thanh dương.",
+    "3": "V/m tương đương N/C, tức lực chia cho điện tích, không phải N nhân C."
+   }
+  }
+ ]
 }

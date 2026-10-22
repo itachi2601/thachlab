@@ -2,8 +2,8 @@
  "lesson_id": 39,
  "lesson_title": "Bài 20. Điện thế",
  "item_id": 198,
- "generated_at": "2026-10-02",
- "generated_by": "claude-code",
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
@@ -17,56 +17,71 @@
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "topic": "Thế năng điện. Điện thế",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Điện thế tại điểm M trong điện trường được xác định bằng đại lượng nào?",
+   "theorySection": 1,
+   "question": "Điện thế tại một điểm M trong điện trường đặc trưng cho điện trường tại M về phương diện nào?",
    "options": [
-    "Thương số của công của lực điện khi điện tích $q$ di chuyển từ M ra vô cực và độ lớn của $q$",
-    "Tích của công của lực điện khi $q$ di chuyển từ M ra vô cực và độ lớn của $q$",
-    "Thương số của độ lớn $q$ và công của lực điện khi $q$ di chuyển từ M ra vô cực",
-    "Công của lực điện khi $q$ di chuyển giữa hai bản của tụ điện"
+    "Tạo ra thế năng khi đặt điện tích tại M",
+    "Tác dụng lực khi đặt điện tích tại M",
+    "Sinh công khi điện tích đi từ M đến N",
+    "Tích trữ điện tích khi đặt vật tại M"
    ],
    "answer": 0,
-   "explanation": "Bài định nghĩa điện thế là thương số của công của lực điện khi di chuyển $q$ từ M ra vô cực và độ lớn của $q$."
+   "explanation": "Theo bài, điện thế tại M đặc trưng cho điện trường tại M về phương diện tạo ra thế năng khi đặt điện tích q tại đó: $V_M=\\dfrac{W_M}{q}$.",
+   "distractorNotes": {
+    "B": "Nhầm điện thế với cường độ điện trường: khả năng tác dụng lực lên điện tích đặt tại một điểm là ý nghĩa của E.",
+    "C": "Nhầm với hiệu điện thế, đại lượng gắn với hai điểm và đặc trưng cho khả năng sinh công khi điện tích đi từ M đến N.",
+    "D": "Điện thế không liên quan tới tích trữ điện tích mà gắn với thế năng của điện tích q đặt tại M."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "kind": "don_vi",
+   "topic": "Thế năng điện. Điện thế",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Đơn vị của điện thế trong hệ SI là gì?",
+   "theorySection": 1,
+   "question": "Đơn vị vôn (V) của điện thế tương đương với đơn vị nào sau đây?",
    "options": [
-    "Vôn (V)",
-    "Jun (J)",
-    "Culông (C)",
-    "Vôn trên mét (V/m)"
+    "N/C",
+    "J/C",
+    "C/J",
+    "J·C"
    ],
-   "answer": 0,
-   "explanation": "Đơn vị của điện thế là vôn, kí hiệu V."
+   "answer": 1,
+   "explanation": "Từ $V_M=\\dfrac{W_M}{q}$: năng lượng (J) chia điện tích (C), nên $1\\ \\text{V}=1\\ \\text{J/C}$.",
+   "distractorNotes": {
+    "A": "N/C là đơn vị của cường độ điện trường E (bằng V/m), không phải của điện thế.",
+    "C": "Đảo tử và mẫu: điện thế là thế năng chia điện tích, $V=W/q$, nên đơn vị là J chia C.",
+    "D": "Điện thế là thương $W/q$ chứ không phải tích, nên đơn vị không thể là J nhân C."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dieu_kien",
+   "kind": "cong_thuc",
    "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Theo bài, điểm nào sau đây thường được chọn làm mốc có điện thế bằng 0?",
+   "theorySection": 1,
+   "question": "Hiệu điện thế giữa hai điểm M và N được xác định bởi công thức nào?",
    "options": [
-    "Trái Đất và điểm ở vô cực",
-    "Điểm đặt điện tích dương",
-    "Bản âm của tụ điện",
-    "Mọi điểm nằm trên đường sức"
+    "$U_{MN}=V_N-V_M$",
+    "$U_{MN}=qA_{MN}$",
+    "$U_{MN}=V_M-V_N$",
+    "$U_{MN}=\\dfrac{q}{A_{MN}}$"
    ],
-   "answer": 0,
-   "explanation": "Bài nêu điện thế của Trái Đất và của một điểm ở vô cực thường được chọn làm mốc (bằng 0)."
+   "answer": 2,
+   "explanation": "Bài nêu $U_{MN}=V_M-V_N=\\dfrac{A_{MN}}{q}$: lấy điện thế điểm đầu trừ điện thế điểm cuối.",
+   "distractorNotes": {
+    "A": "Đảo thứ tự hai điểm: biểu thức này là $U_{NM}$, trái dấu với $U_{MN}$.",
+    "B": "Biến đổi sai: hiệu điện thế bằng công chia cho điện tích, $U=A/q$, không phải công nhân điện tích.",
+    "D": "Đảo tử và mẫu: phải lấy công chia điện tích, không phải điện tích chia công."
+   }
   },
   {
    "type": "multiple_choice",
@@ -76,234 +91,425 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Dọc theo chiều của đường sức điện trường, điện thế thay đổi như thế nào?",
+   "question": "Dọc theo một đường sức điện, điện thế thay đổi như thế nào?",
    "options": [
-    "Giảm dần",
-    "Tăng dần",
-    "Không đổi",
-    "Lúc tăng lúc giảm"
+    "Tăng dần theo chiều đường sức",
+    "Không đổi dọc theo đường sức",
+    "Tăng hay giảm tuỳ dấu điện tích thử",
+    "Giảm dần theo chiều đường sức"
    ],
-   "answer": 0,
-   "explanation": "Bài kết luận điện thế giảm dần theo chiều của đường sức điện trường."
+   "answer": 3,
+   "explanation": "Điện tích dương đi cùng chiều $\\vec E$ thì $A_{MN}\\gt0$ nên $U_{MN}\\gt0$, tức $V_M\\gt V_N$: điện thế giảm dần theo chiều đường sức.",
+   "distractorNotes": {
+    "A": "Nhầm chiều: điện tích dương đi cùng chiều đường sức thì lực điện sinh công dương nên $V_M>V_N$, tức điện thế giảm.",
+    "B": "Nhầm đường sức với đường đẳng thế: điện thế chỉ không đổi trên đường vuông góc với đường sức.",
+    "C": "Điện thế là của điểm, do điện trường quyết định, không phụ thuộc dấu điện tích thử đặt vào."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "topic": "Thế năng điện. Điện thế",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hiệu điện thế $U_{MN}$ giữa hai điểm M, N được xác định bằng thương số nào?",
+   "theorySection": 2,
+   "question": "Tại điểm M đang đặt một điện tích dương. Thay nó bằng một electron đặt đúng tại M thì điện thế tại M",
    "options": [
-    "Công của lực điện khi $q$ di chuyển từ M đến N chia cho độ lớn $q$",
-    "Công của lực điện khi $q$ di chuyển từ M ra vô cực chia cho độ lớn $q$",
-    "Độ lớn $q$ chia cho công của lực điện khi $q$ di chuyển từ M đến N",
-    "Cường độ điện trường chia cho khoảng cách MN"
+    "không thay đổi",
+    "đổi thành âm",
+    "trở thành bằng 0",
+    "tăng theo độ lớn điện tích"
    ],
    "answer": 0,
-   "explanation": "Theo bài, $U_{MN}=V_M-V_N=\\frac{A_{MN}}{q}$, tức công của lực điện từ M đến N chia cho $q$."
+   "explanation": "Điện thế là của điểm, do điện trường và mốc quyết định; đổi dấu q thì W cũng đổi dấu nên $V=W/q$ không đổi.",
+   "distractorNotes": {
+    "B": "Quên rằng q đổi dấu thì thế năng W cũng đổi dấu theo, nên tỉ số $W/q$ giữ nguyên.",
+    "C": "Điện thế chỉ bằng 0 tại mốc đã chọn, không phụ thuộc loại điện tích đặt vào điểm đó.",
+    "D": "Nhầm điện thế với thế năng: chỉ $W=qV$ thay đổi theo q, còn V của điểm M giữ nguyên."
+   }
   },
   {
-   "type": "true_false",
-   "kind": "dinh_luat",
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Thế năng điện. Điện thế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tại điểm M có điện thế $V_M$ khác 0, thay điện tích q bằng điện tích 2q. Thế năng điện của điện tích tại M",
+   "options": [
+    "không thay đổi",
+    "tăng gấp đôi",
+    "giảm một nửa",
+    "tăng gấp bốn"
+   ],
+   "answer": 1,
+   "explanation": "$V_M$ không đổi, $W_M=qV_M$ tỉ lệ thuận với q nên q tăng gấp đôi thì thế năng tăng gấp đôi.",
+   "distractorNotes": {
+    "A": "Nhầm thế năng với điện thế: $V_M$ không đổi nhưng thế năng $W=qV_M$ thay đổi theo q.",
+    "C": "Đảo tỉ lệ: thế năng tỉ lệ thuận với q chứ không tỉ lệ nghịch.",
+    "D": "Thế năng tỉ lệ bậc nhất với q trong $W=qV$, không có bình phương."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Công của lực điện và thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công của lực điện khi điện tích q di chuyển từ M đến N được tính bằng",
+   "options": [
+    "$A_{MN}=\\dfrac{U_{MN}}{q}$",
+    "$A_{MN}=\\dfrac{q}{U_{MN}}$",
+    "$A_{MN}=qU_{MN}$",
+    "$A_{MN}=qV_M$"
+   ],
+   "answer": 2,
+   "explanation": "Từ $U_{MN}=\\dfrac{A_{MN}}{q}$ suy ra $A_{MN}=qU_{MN}$.",
+   "distractorNotes": {
+    "A": "Biến đổi sai: từ $U=A/q$ phải nhân hai vế với q để được công, không phải chia.",
+    "B": "Đảo tử mẫu khi biến đổi; biểu thức $q/U$ không có đơn vị năng lượng.",
+    "D": "$qV_M$ là thế năng tại M; công phụ thuộc hiệu điện thế giữa điểm đầu và điểm cuối."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
    "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Trong điện trường đều, vectơ $\\vec E$ hướng từ M đến N. Các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "$V_M>V_N$.",
-     "answer": true
-    },
-    {
-     "text": "Điện tích dương dịch chuyển từ M đến N thì lực điện sinh công dương.",
-     "answer": true
-    },
-    {
-     "text": "Điện thế tăng dần theo chiều của $\\vec E$.",
-     "answer": false
-    },
-    {
-     "text": "$U_{MN}<0$.",
-     "answer": false
-    }
+   "question": "Hệ thức $U=Ed$ giữa hiệu điện thế và cường độ điện trường áp dụng được trong trường hợp nào?",
+   "options": [
+    "Trong mọi điện trường bất kì",
+    "Trong điện trường của điện tích điểm",
+    "Chỉ khi điện tích di chuyển dương",
+    "Trong điện trường đều"
    ],
-   "explanation": "$\\vec E$ hướng từ M đến N nên $A_{MN}>0$, $U_{MN}>0$, $V_M>V_N$; điện thế giảm dần theo chiều đường sức."
+   "answer": 3,
+   "explanation": "Bài nêu rõ $U=Ed$ chỉ dùng trong điện trường đều, với d là hình chiếu dọc đường sức.",
+   "distractorNotes": {
+    "A": "Áp dụng sai điều kiện: trong điện trường không đều E thay đổi theo vị trí nên không dùng được $U=Ed$.",
+    "B": "Điện trường của điện tích điểm là điện trường không đều nên không áp dụng được $U=Ed$.",
+    "C": "Hệ thức không phụ thuộc dấu điện tích di chuyển; điều kiện duy nhất là điện trường phải đều."
+   }
   },
   {
-   "type": "true_false",
-   "kind": "dieu_kien",
+   "type": "multiple_choice",
+   "kind": "bien_doi",
    "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Xét hệ thức $E=\\frac{U}{d}$ trong điện trường đều. Các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "$d$ là khoảng cách giữa hai điểm đo dọc theo đường sức.",
-     "answer": true
-    },
-    {
-     "text": "$d$ là hình chiếu của MN lên phương của $\\vec E$.",
-     "answer": true
-    },
-    {
-     "text": "Cường độ điện trường tại M và N bằng nhau.",
-     "answer": true
-    },
-    {
-     "text": "$d$ luôn bằng độ dài đoạn MN dù MN nghiêng bất kì so với đường sức.",
-     "answer": false
-    }
+   "question": "Trong điện trường đều cường độ E, đoạn MN dài $\\ell$ hợp với đường sức góc $\\alpha$, N lệch về phía chiều đường sức so với M. Hiệu điện thế $U_{MN}$ bằng",
+   "options": [
+    "$E\\ell\\cos\\alpha$",
+    "$E\\ell\\sin\\alpha$",
+    "$E\\ell$",
+    "$\\dfrac{E\\ell}{\\cos\\alpha}$"
    ],
-   "explanation": "Bài nêu $d$ đo dọc theo đường sức (hình chiếu của MN lên phương $\\vec E$) và $E_M=E_N=E$ trong điện trường đều."
+   "answer": 0,
+   "explanation": "d là hình chiếu của MN lên đường sức: $d=\\ell\\cos\\alpha$, nên $U_{MN}=E\\ell\\cos\\alpha$.",
+   "distractorNotes": {
+    "B": "Chiếu nhầm bằng sin: đó là thành phần vuông góc đường sức, không góp vào hiệu điện thế.",
+    "C": "Nhân thẳng độ dài MN chỉ đúng khi MN nằm dọc đường sức; MN xiên thì phải lấy hình chiếu.",
+    "D": "Chia cho cos làm d dài hơn MN, trong khi hình chiếu luôn ngắn hơn hoặc bằng độ dài đoạn MN."
+   }
   },
   {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Xét điện thế tại một điểm trong điện trường. Các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Điện thế có đơn vị là vôn.",
-     "answer": true
-    },
-    {
-     "text": "Điện thế của Trái Đất thường được chọn làm mốc bằng 0.",
-     "answer": true
-    },
-    {
-     "text": "Điện thế tại một điểm đặc trưng cho điện trường tại điểm đó về mặt thế năng của điện tích đặt ở đó.",
-     "answer": true
-    },
-    {
-     "text": "Điện thế tại M bằng tích của công $A_{M\\infty}$ và điện tích $q$.",
-     "answer": false
-    }
-   ],
-   "explanation": "Điện thế là thương số $V_M=\\frac{A_{M\\infty}}{q}$, không phải tích; các ý còn lại đúng theo bài."
-  },
-  {
-   "type": "short_answer",
+   "type": "multiple_choice",
    "kind": "hien_tuong",
    "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 0,
-   "question": "Khi chọn mốc ở vô cực thì điện thế tại điểm ở vô cực bằng bao nhiêu vôn?",
-   "answer": "0",
-   "explanation": "Bài chọn điện thế tại điểm ở vô cực làm mốc, bằng 0."
+   "question": "Chim đậu hai chân trên cùng một dây điện cao thế mà không bị điện giật, chủ yếu là vì",
+   "options": [
+    "lông và chân chim cách điện hoàn toàn",
+    "hiệu điện thế giữa hai chân gần bằng 0",
+    "điện thế của dây cao thế gần bằng 0",
+    "điện chỉ chạy trong lõi, không ra mặt dây"
+   ],
+   "answer": 1,
+   "explanation": "Hai chân cùng trên một dây nên $V_A\\approx V_B$, $U_{AB}\\approx0$; điều gây nguy hiểm là hiệu điện thế giữa hai chỗ chạm, không phải điện thế cao.",
+   "distractorNotes": {
+    "A": "Chân chim vẫn dẫn điện: nếu chạm cùng lúc dây và cột nối đất thì chim bị giật ngay.",
+    "C": "Dây cao thế có điện thế rất lớn so với đất; điều quyết định là hiệu điện thế giữa hai chỗ chạm.",
+    "D": "Dây truyền tải là dây trần, mặt ngoài vẫn có điện; lý do thật là hai chân gần như cùng điện thế."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "dinh_luat",
+   "type": "multiple_choice",
+   "kind": "don_vi",
    "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Điện tích dương $q$ dịch chuyển cùng chiều $\\vec E$ từ M đến N. Nhập 1 nếu $U_{MN}>0$, nhập 0 nếu $U_{MN}<0$.",
-   "answer": "1",
-   "explanation": "Dịch chuyển cùng chiều $\\vec E$ nên $A_{MN}>0$, suy ra $U_{MN}>0$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Công thức nào sau đây tính điện thế $V_M$ tại M?",
+   "question": "Đơn vị năng lượng electron-vôn (eV) có giá trị bằng",
    "options": [
-    "$V_M=\\frac{A_{M\\infty}}{q}$",
-    "$V_M=\\frac{q}{A_{M\\infty}}$",
-    "$V_M=A_{M\\infty}\\cdot q$",
-    "$V_M=-\\frac{A_{M\\infty}}{q}$"
+    "$1{,}6\\cdot10^{-19}$ V",
+    "$1{,}6\\cdot10^{-19}$ C",
+    "$1{,}6\\cdot10^{-19}$ J",
+    "$1{,}6\\cdot10^{19}$ J"
    ],
-   "answer": 0,
-   "explanation": "Bài cho $V_M=\\frac{W_M}{q}=\\frac{A_{M\\infty}}{q}$."
+   "answer": 2,
+   "explanation": "1 eV là năng lượng electron thu được khi đi qua hiệu điện thế 1 V: $1\\ \\text{eV}=1{,}6\\cdot10^{-19}$ J.",
+   "distractorNotes": {
+    "A": "eV là đơn vị năng lượng, dù tên có chữ vôn, nên phải tính bằng jun chứ không bằng vôn.",
+    "B": "Nhầm với điện tích nguyên tố e; eV là năng lượng electron thu được khi qua 1 V, tính bằng J.",
+    "D": "Sai dấu số mũ: năng lượng của một electron đi qua hiệu điện thế 1 V là cực nhỏ."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Công của lực điện và thế năng điện",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công của lực điện khi điện tích $q$ di chuyển từ M đến N được tính bằng công thức nào?",
-   "options": [
-    "$A_{MN}=q\\cdot U_{MN}$",
-    "$A_{MN}=\\frac{U_{MN}}{q}$",
-    "$A_{MN}=\\frac{q}{U_{MN}}$",
-    "$A_{MN}=q\\,(V_N-V_M)$"
-   ],
-   "answer": 0,
-   "explanation": "Từ $U_{MN}=\\frac{A_{MN}}{q}$ suy ra $A_{MN}=q\\cdot U_{MN}=q(V_M-V_N)$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
+   "kind": "dinh_nghia",
    "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Biết điện thế $V$ tại một điểm và công $A$ để dịch chuyển điện tích $q$ từ vô cực về điểm đó. Độ lớn điện tích $q$ được tính bằng?",
+   "theorySection": 1,
+   "question": "Khi chọn lại mốc điện thế ở một vị trí khác, nhận xét nào sau đây đúng?",
    "options": [
-    "$q=\\frac{A}{V}$",
-    "$q=\\frac{V}{A}$",
-    "$q=A\\cdot V$",
-    "$q=-\\frac{A}{V}$"
+    "Điện thế các điểm không đổi, hiệu điện thế thay đổi",
+    "Điện thế các điểm và hiệu điện thế đều thay đổi",
+    "Điện thế các điểm và hiệu điện thế đều không đổi",
+    "Điện thế các điểm thay đổi, hiệu điện thế không đổi"
    ],
-   "answer": 0,
-   "explanation": "Từ $V=\\frac{A}{q}$ suy ra $q=\\frac{A}{V}$."
+   "answer": 3,
+   "explanation": "Bài nêu: đổi mốc thì mọi V đổi, còn U giữ nguyên vì U là hiệu hai điện thế.",
+   "distractorNotes": {
+    "A": "Đảo vai trò: điện thế phụ thuộc mốc, còn hiệu hai điện thế thì không phụ thuộc mốc.",
+    "B": "Đổi mốc làm mọi điện thế dịch cùng một lượng nên hiệu của chúng vẫn giữ nguyên.",
+    "C": "Điện thế một điểm được đo so với mốc, nên đổi mốc thì điện thế từng điểm phải thay đổi."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "cong_thuc",
+   "kind": "dinh_nghia",
    "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Trong điện trường đều, liên hệ giữa cường độ điện trường $E$ và hiệu điện thế $U$ giữa hai điểm cách nhau $d$ dọc theo đường sức là?",
+   "question": "Phát biểu nào sau đây đúng khi so sánh hiệu điện thế U và cường độ điện trường E?",
    "options": [
-    "$E=\\frac{U}{d}$",
-    "$E=U\\cdot d$",
-    "$E=\\frac{d}{U}$",
-    "$E=\\frac{U}{d^2}$"
+    "U gắn với hai điểm, E gắn với một điểm",
+    "U là đại lượng vectơ, E là số có dấu",
+    "U đo bằng V/m, E đo bằng vôn (V)",
+    "U và E cùng gắn với một điểm duy nhất"
    ],
    "answer": 0,
-   "explanation": "Bài cho $E=\\frac{U}{d}=\\frac{V_M-V_N}{MN}$."
+   "explanation": "Bảng so sánh trong bài: U gắn với hai điểm, là số có dấu, đơn vị V; E gắn với một điểm, là vectơ, đơn vị V/m.",
+   "distractorNotes": {
+    "B": "Đảo loại đại lượng: cường độ điện trường mới là vectơ, còn hiệu điện thế là số có dấu.",
+    "C": "Đảo đơn vị: hiệu điện thế đo bằng V, cường độ điện trường đo bằng V/m.",
+    "D": "Hiệu điện thế luôn xét giữa hai điểm nên không thể gắn với một điểm duy nhất."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "cong_thuc",
+   "kind": "tinh_nhanh",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai bản kim loại phẳng song song nối với nguồn có hiệu điện thế không đổi. Tăng khoảng cách giữa hai bản lên gấp đôi thì cường độ điện trường giữa hai bản",
+   "options": [
+    "tăng gấp đôi",
+    "giảm một nửa",
+    "không thay đổi",
+    "giảm bốn lần"
+   ],
+   "answer": 1,
+   "explanation": "$E=\\dfrac{U}{d}$ với U không đổi, nên d tăng gấp đôi thì E giảm một nửa.",
+   "distractorNotes": {
+    "A": "Đảo tỉ lệ: khi U giữ không đổi thì $E=U/d$ tỉ lệ nghịch với d.",
+    "C": "U không đổi nhưng d thay đổi, nên $E=U/d$ bắt buộc phải thay đổi theo.",
+    "D": "E tỉ lệ nghịch bậc nhất với d, không tỉ lệ nghịch với bình phương khoảng cách."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
    "topic": "Công của lực điện và thế năng điện",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Thế năng điện của điện tích $q$ tại điểm M có điện thế $V_M$ là?",
-   "options": [
-    "$W_M=V_M\\cdot q$",
-    "$W_M=\\frac{V_M}{q}$",
-    "$W_M=\\frac{q}{V_M}$",
-    "$W_M=-V_M\\cdot q$"
+   "question": "Một điện tích q di chuyển từ M đến N trong điện trường đều giữa hai bản kim loại, lần lượt theo đường thẳng MN và theo một đường cong nối M với N. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Công của lực điện không phụ thuộc hình dạng đường đi.",
+     "answer": true
+    },
+    {
+     "text": "Công của lực điện chỉ phụ thuộc vị trí điểm đầu và điểm cuối.",
+     "answer": true
+    },
+    {
+     "text": "Theo đường cong dài hơn thì lực điện sinh công lớn hơn.",
+     "answer": false
+    },
+    {
+     "text": "Công của lực điện bằng độ tăng thế năng $W_N-W_M$.",
+     "answer": false
+    }
    ],
-   "answer": 0,
-   "explanation": "Bài nêu thế năng điện và điện thế liên hệ bởi $W_M=V_M\\cdot q$."
+   "explanation": "Công lực điện không phụ thuộc đường đi, chỉ phụ thuộc điểm đầu, điểm cuối và bằng độ giảm thế năng $A_{MN}=W_M-W_N$.",
+   "distractorNotes": {
+    "0": "Lực điện giống trọng lực khi trượt dốc: đi thẳng hay lượn vòng thì công vẫn như nhau, nên ý này không sai.",
+    "1": "Công chỉ tính qua hình chiếu d của MN lên đường sức, do vị trí M và N quyết định.",
+    "2": "Đường đi dài hơn không làm công lớn hơn, vì công lực điện không phụ thuộc hình dạng đường đi.",
+    "3": "Công bằng độ giảm thế năng $W_M-W_N$; viết thành độ tăng $W_N-W_M$ là sai dấu."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dùng vôn kế số đo một pin 1,5 V: lần 1 que đỏ chạm cực (+), que đen chạm cực (−); lần 2 đổi hai que; lần 3 chạm hai que vào hai điểm trên cùng một dây đồng nối với cực (+). Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Vôn kế số hiện giá trị $V_{\\text{đỏ}}-V_{\\text{đen}}$.",
+     "answer": true
+    },
+    {
+     "text": "Đổi hai que đo thì số chỉ đổi dấu.",
+     "answer": true
+    },
+    {
+     "text": "Vôn kế đo được điện thế của một điểm mà không cần mốc.",
+     "answer": false
+    },
+    {
+     "text": "Ở lần 3, vôn kế chỉ khoảng 1,5 V vì dây nối với cực (+).",
+     "answer": false
+    }
+   ],
+   "explanation": "Vôn kế đo hiệu điện thế giữa hai điểm chạm que; đổi que thì $U_{NM}=-U_{MN}$; hai điểm cùng một dây dẫn có $U\\approx0$.",
+   "distractorNotes": {
+    "0": "Lần 1 máy chỉ dương, lần 2 chỉ âm, chứng tỏ máy hiện hiệu điện thế giữa que đỏ và que đen.",
+    "1": "Đổi thứ tự hai điểm thì hiệu điện thế đổi dấu, đúng như lần 2 máy chỉ −1,5 V.",
+    "2": "Vôn kế chỉ đo hiệu điện thế giữa hai điểm chạm que; điện thế một điểm luôn cần chọn mốc.",
+    "3": "Hai điểm trên cùng một dây dẫn gần như cùng điện thế nên $U\\approx0$, giống trường hợp con chim."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong khay nước muối loãng đặt hai lá đồng phẳng song song nối với nguồn điện. Que đen vôn kế chạm lá âm, que đỏ nhúng vào nước ở các vị trí khác nhau. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Số chỉ vôn kế tăng đều theo khoảng cách từ que đỏ tới lá âm.",
+     "answer": true
+    },
+    {
+     "text": "Di que đỏ song song với lá đồng thì số chỉ thay đổi mạnh.",
+     "answer": false
+    },
+    {
+     "text": "Các đường song song với bản cực là đường đẳng thế.",
+     "answer": true
+    },
+    {
+     "text": "Sát mép lá đồng, điện trường vẫn đều như ở giữa khay.",
+     "answer": false
+    }
+   ],
+   "explanation": "Giữa hai lá điện trường gần như đều nên V tăng tuyến tính theo x; đường song song bản cực là đường đẳng thế; sát mép đường sức cong nên chỉ đo ở giữa khay.",
+   "distractorNotes": {
+    "0": "Điện trường giữa hai lá gần như đều nên $V=Ex$ tăng tuyến tính theo x, ý này không sai.",
+    "1": "Di que song song với lá đồng là đi trên đường đẳng thế, nên số chỉ gần như không đổi.",
+    "2": "Số chỉ không đổi khi di que song song bản cực, chứng tỏ các đường đó là đường đẳng thế.",
+    "3": "Sát mép lá đồng đường sức bị cong, điện trường không đều, nên chỉ đo ở giữa khay."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Thế năng điện. Điện thế",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đặt điện tích q tại điểm M của một điện trường, thế năng của nó là $W_M$, điện thế tại M là $V_M$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Thế năng của điện tích tại M là $W_M=qV_M$.",
+     "answer": true
+    },
+    {
+     "text": "Điện thế tại M được tính bằng $V_M=\\dfrac{A_{M\\infty}}{q}$.",
+     "answer": true
+    },
+    {
+     "text": "Điện thế tại M được tính bằng $V_M=qW_M$.",
+     "answer": false
+    },
+    {
+     "text": "Thế năng điện $W_M$ có đơn vị là vôn (V).",
+     "answer": false
+    }
+   ],
+   "explanation": "$V_M=\\dfrac{W_M}{q}=\\dfrac{A_{M\\infty}}{q}$, suy ra $W_M=qV_M$; điện thế đo bằng V, thế năng đo bằng J hoặc eV.",
+   "distractorNotes": {
+    "0": "Từ $V_M=W_M/q$, nhân hai vế với q được ngay $W_M=qV_M$, nên ý này không sai.",
+    "1": "Bài định nghĩa điện thế tại M là công đưa q từ M ra vô cực chia cho q.",
+    "2": "Điện thế là thế năng chia điện tích; lấy q nhân với W là biến đổi sai.",
+    "3": "Vôn là đơn vị của điện thế; thế năng là năng lượng nên đo bằng J hoặc eV."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Công của lực điện và thế năng điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một electron (điện tích $q=-e$) di chuyển từ điểm M đến điểm N trong điện trường, biết điện thế $V_N\\gt V_M$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hiệu điện thế $U_{MN}$ có giá trị âm.",
+     "answer": true
+    },
+    {
+     "text": "Công của lực điện là $A_{MN}=-eU_{MN}$.",
+     "answer": true
+    },
+    {
+     "text": "Lực điện sinh công âm trên electron.",
+     "answer": false
+    },
+    {
+     "text": "Hiệu điện thế $U_{NM}$ bằng $U_{MN}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$U_{MN}=V_M-V_N\\lt0$; $A_{MN}=qU_{MN}=(-e)U_{MN}\\gt0$: electron chạy về chỗ điện thế cao, lực điện sinh công dương; $U_{NM}=-U_{MN}$.",
+   "distractorNotes": {
+    "0": "$U_{MN}=V_M-V_N$ mà $V_M<V_N$ nên hiệu này chắc chắn âm.",
+    "1": "Thay $q=-e$ vào công thức $A_{MN}=qU_{MN}$ được đúng biểu thức này.",
+    "2": "Cả $-e$ và $U_{MN}$ đều âm nên công dương; quên một dấu âm mới ra công âm.",
+    "3": "Đổi thứ tự hai điểm thì hiệu điện thế đổi dấu, $U_{NM}=-U_{MN}$, nên hai giá trị không bằng nhau."
+   }
   },
   {
    "type": "true_false",
@@ -313,74 +519,32 @@
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Xét hiệu điện thế giữa hai điểm M, N. Các phát biểu sau đúng hay sai?",
+   "question": "Trong điện trường đều cường độ E, xét hai điểm M, N với hiệu điện thế liên hệ theo $U_{MN}=Ed$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$U_{MN}=V_M-V_N$.",
+     "text": "Cường độ điện trường E có đơn vị là V/m.",
      "answer": true
     },
     {
-     "text": "$A_{MN}=q\\cdot U_{MN}$.",
+     "text": "d là độ dài đoạn MN, dù MN có phương bất kì.",
+     "answer": false
+    },
+    {
+     "text": "Nếu MN vuông góc với đường sức thì $U_{MN}=0$.",
      "answer": true
     },
     {
-     "text": "$U_{MN}=\\frac{A_{MN}}{q}$.",
-     "answer": true
-    },
-    {
-     "text": "$U_{MN}=V_N-V_M$.",
+     "text": "d dương khi hình chiếu của $\\overrightarrow{MN}$ ngược chiều đường sức.",
      "answer": false
     }
    ],
-   "explanation": "Bài định nghĩa $U_{MN}=V_M-V_N=\\frac{A_{MN}}{q}$ và $A_{MN}=q\\cdot U_{MN}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Công của lực điện và thế năng điện",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Điện tích $q=0{,}5$ C dịch chuyển từ M đến N có $U_{MN}=8$ V. Tính công $A_{MN}$ của lực điện (đơn vị J).",
-   "answer": "4",
-   "explanation": "$A_{MN}=q\\cdot U_{MN}=0{,}5\\cdot 8=4$ J."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Công của lực điện khi dịch chuyển điện tích $q=3$ C từ M ra vô cực là $A_{M\\infty}=12$ J. Tính điện thế $V_M$ (đơn vị V).",
-   "answer": "4",
-   "explanation": "$V_M=\\frac{A_{M\\infty}}{q}=\\frac{12}{3}=4$ V."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Trong điện trường đều, hai điểm trên cùng một đường sức cách nhau $d=0{,}2$ m có hiệu điện thế $U=60$ V. Tính $E$ (đơn vị V/m).",
-   "answer": "300",
-   "explanation": "$E=\\frac{U}{d}=\\frac{60}{0{,}2}=300$ V/m."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Điện thế, hiệu điện thế và liên hệ U = Ed",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Điện trường đều có $E=500$ V/m. Hai điểm trên cùng đường sức cách nhau $d=0{,}04$ m. Tính hiệu điện thế $U$ giữa chúng (đơn vị V).",
-   "answer": "20",
-   "explanation": "$U=E\\cdot d=500\\cdot 0{,}04=20$ V."
+   "explanation": "Từ $E=U/d$, E đo bằng V/m; d là hình chiếu có dấu của MN lên đường sức, dương khi cùng chiều đường sức; MN vuông góc đường sức thì d = 0, U = 0.",
+   "distractorNotes": {
+    "0": "Từ $E=U/d$ suy ra đơn vị là vôn chia mét, tức V/m, nên ý này không sai.",
+    "1": "d là hình chiếu của MN lên đường sức; chỉ bằng độ dài MN khi MN nằm dọc đường sức.",
+    "2": "MN vuông góc đường sức thì hình chiếu d bằng 0, M và N nằm trên cùng một đường đẳng thế.",
+    "3": "Đảo dấu: d dương khi hình chiếu của $\\overrightarrow{MN}$ cùng chiều đường sức, vì điện thế giảm theo chiều đó."
+   }
   }
  ]
 }

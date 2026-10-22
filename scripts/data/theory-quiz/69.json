@@ -1,373 +1,550 @@
 {
-  "lesson_id": 69,
-  "lesson_title": "Bài 24. Công suất",
-  "item_id": 235,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 9,
-      "cong_thuc": 10
-    },
-    "removed": [
-      {
-        "question": "Công thức P = F v dùng được khi (lực cùng hướng chuyển động...)",
-        "reason": "phương án nhiễu 'vật đứng yên' không hẳn sai (v=0 thì P=Fv=0 vẫn đúng); đáp án đúng lộ vì dài gấp ~2,3 lần nhiễu"
-      }
-    ]
+ "lesson_id": 69,
+ "lesson_title": "Bài 24. Công suất",
+ "item_id": 235,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công suất là đại lượng đặc trưng cho",
+   "options": [
+    "tốc độ sinh công của lực hoặc máy",
+    "tổng công mà lực hoặc máy đã sinh ra",
+    "độ lớn lực mà máy tác dụng lên vật",
+    "năng lượng mà máy dự trữ được bên trong"
+   ],
+   "answer": 0,
+   "explanation": "Theo bài, công suất đặc trưng cho tốc độ sinh công, bằng công sinh ra trong một đơn vị thời gian: $P = \\dfrac{A}{t}$.",
+   "distractorNotes": {
+    "B": "Nhầm công suất với công: tổng việc đã làm là công $A$, còn công suất cho biết sinh công nhanh hay chậm.",
+    "C": "Nhầm công suất với lực: lực đo bằng niutơn và không cho biết công được sinh ra nhanh hay chậm.",
+    "D": "Công suất không phải năng lượng chứa sẵn mà là năng lượng phát ra hoặc tiêu thụ trong mỗi giây."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính công suất trung bình và công suất tức thời",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một lực sinh công $A$ trong thời gian $t$. Công suất trung bình của lực là",
+   "options": [
+    "$P = A\\cdot t$",
+    "$P = \\dfrac{A}{t}$",
+    "$P = \\dfrac{t}{A}$",
+    "$P = F\\cdot d$"
+   ],
+   "answer": 1,
+   "explanation": "Công suất trung bình bằng công chia thời gian thực hiện công: $P = \\dfrac{A}{t}$.",
+   "distractorNotes": {
+    "A": "Nhân công với thời gian là sai, vì công suất là công chia thời gian, còn $A = P t$.",
+    "C": "Đảo tử và mẫu khiến thời gian dài hơn lại cho công suất lớn hơn, trái với định nghĩa.",
+    "D": "Tích $F d$ là công của lực cùng hướng dịch chuyển, chưa chia cho thời gian nên chưa phải công suất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, $1$ oát (W) bằng",
+   "options": [
+    "$1\\ \\text{J}\\cdot\\text{s}$",
+    "$1\\ \\text{N}\\cdot\\text{m}$",
+    "$1\\ \\text{J/s}$",
+    "$1\\ \\text{N/s}$"
+   ],
+   "answer": 2,
+   "explanation": "Từ $P = \\dfrac{A}{t}$, đơn vị công suất là jun trên giây: $1\\ \\text{W} = 1\\ \\text{J/s}$.",
+   "distractorNotes": {
+    "A": "Nhân jun với giây là dùng nhầm $P = A t$, trong khi công suất là công chia thời gian.",
+    "B": "Niutơn nhân mét chính là jun, tức đơn vị của công, không phải đơn vị của công suất.",
+    "D": "Công suất là công trên thời gian chứ không phải lực trên thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên hoá đơn tiền điện, điện năng tiêu thụ được tính theo kilôoát giờ (kWh). kWh là đơn vị của đại lượng nào?",
+   "options": [
+    "Công suất của dụng cụ điện",
+    "Độ lớn của lực kéo động cơ",
+    "Thời gian sử dụng dụng cụ điện",
+    "Công, tức điện năng tiêu thụ"
+   ],
+   "answer": 3,
+   "explanation": "kWh là kW nhân giờ, tức công suất nhân thời gian, nên là đơn vị của công (điện năng): $1\\ \\text{kWh} = 3{,}6\\cdot 10^{6}\\ \\text{J}$.",
+   "distractorNotes": {
+    "A": "Thấy chữ kW nên tưởng là công suất, nhưng kW nhân giờ là công suất nhân thời gian, tức là công.",
+    "B": "Lực đo bằng niutơn, còn kWh là tích công suất với thời gian nên không phải đơn vị lực.",
+    "C": "Chữ h chỉ là một thừa số thời gian; tích kW với h là năng lượng chứ không phải thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một kilôoát giờ ($1\\ \\text{kWh}$) bằng",
+   "options": [
+    "$1\\,000\\ \\text{J}$",
+    "$3{,}6\\cdot 10^{6}\\ \\text{J}$",
+    "$3{,}6\\cdot 10^{5}\\ \\text{J}$",
+    "$3{,}6\\cdot 10^{3}\\ \\text{W}$"
+   ],
+   "answer": 1,
+   "explanation": "$1\\ \\text{kWh} = 1\\,000\\ \\text{W}\\cdot 3\\,600\\ \\text{s} = 3\\,600\\,000\\ \\text{J} = 3{,}6\\cdot 10^{6}\\ \\text{J}$.",
+   "distractorNotes": {
+    "A": "Chỉ đổi kilô thành $1\\,000$ mà quên nhân thêm $3\\,600$ s của một giờ.",
+    "C": "Lệch một bậc mười khi nhân $1\\,000$ với $3\\,600$.",
+    "D": "kWh là đơn vị công nên phải quy ra jun; oát là đơn vị công suất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính công suất trung bình và công suất tức thời",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực $F$ không đổi, cùng hướng với độ dịch chuyển, làm vật chuyển động với vận tốc trung bình $v_{tb}$. Công suất trung bình của lực là",
+   "options": [
+    "$P = \\dfrac{F}{v_{tb}}$",
+    "$P = \\dfrac{v_{tb}}{F}$",
+    "$P = F\\,v_{tb}$",
+    "$P = F\\,v_{tb}\\,t$"
+   ],
+   "answer": 2,
+   "explanation": "$A = F d = F v_{tb} t$, chia cho $t$ được $P = F v_{tb}$.",
+   "distractorNotes": {
+    "A": "Chia lực cho vận tốc là đảo phép tính, vì ở cùng lực thì vận tốc lớn hơn phải cho công suất lớn hơn.",
+    "B": "Đảo ngược công thức, vì ở cùng vận tốc thì lực lớn hơn phải cho công suất lớn hơn.",
+    "D": "Tích $F v_{tb} t$ chính là công $A$, chưa chia cho thời gian nên chưa phải công suất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai thang máy nâng đều cùng một thùng hàng lên cùng độ cao. Thang A mất thời gian bằng một nửa thang B. Nhận xét nào đúng?",
+   "options": [
+    "Công bằng nhau, công suất thang A gấp đôi thang B",
+    "Công bằng nhau, công suất thang A bằng nửa thang B",
+    "Công thang A gấp đôi, công suất hai thang bằng nhau",
+    "Công và công suất của hai thang đều bằng nhau"
+   ],
+   "answer": 0,
+   "explanation": "Cùng vật, cùng độ cao nên $A = mgh$ như nhau; $P = \\dfrac{A}{t}$ nên thang có $t$ bằng nửa thì công suất gấp đôi.",
+   "distractorNotes": {
+    "B": "Coi công suất tỉ lệ thuận với thời gian, trong khi cùng công mà làm xong sớm hơn thì công suất lớn hơn.",
+    "C": "Gắn công với tốc độ nâng, trong khi cùng vật và cùng độ cao thì $A = mgh$ như nhau.",
+    "D": "Bỏ qua việc thang A làm xong sớm hơn, nên công trong mỗi giây của hai thang phải khác nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Tính công suất trung bình và công suất tức thời",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức công suất tức thời $P = F v$ (với $v$ là vận tốc tức thời) được dùng khi",
+   "options": [
+    "lực $F$ vuông góc với vận tốc của vật",
+    "lực $F$ giữ nguyên độ lớn trong suốt quá trình",
+    "vật bắt buộc phải chuyển động thẳng đều",
+    "lực $F$ cùng hướng với vận tốc của vật"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu $P = F v$ tại đúng một thời điểm, đúng cả khi $F$ thay đổi, miễn là lực cùng hướng với vận tốc.",
+   "distractorNotes": {
+    "A": "Lực vuông góc với vận tốc không sinh công, nên công suất của nó bằng không chứ không bằng $F v$.",
+    "B": "Điều kiện lực không đổi chỉ cần cho công suất trung bình; công suất tức thời vẫn đúng khi $F$ thay đổi.",
+    "C": "Công suất tức thời dùng vận tốc tại từng lúc, nên không đòi hỏi vật chuyển động thẳng đều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Công suất của động cơ, máy kéo",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Xe máy đang chạy hết công suất trên đường bằng thì gặp dốc dài. Người lái giữ ga hết cỡ và giảm số, xe chạy chậm lại. Giải thích đúng là",
+   "options": [
+    "lên dốc động cơ yếu đi nên công suất tối đa giảm",
+    "giảm số làm công suất vượt mức tối đa của động cơ",
+    "công suất có hạn, cần lực kéo lớn nên vận tốc nhỏ",
+    "đi chậm thì trọng lực kéo xe xuống dốc yếu đi"
+   ],
+   "answer": 2,
+   "explanation": "Công suất tối đa gần như cố định; lên dốc cần $F$ lớn hơn nên $v = \\dfrac{P}{F}$ phải nhỏ lại. Giảm số đổi vận tốc lấy lực kéo.",
+   "distractorNotes": {
+    "A": "Động cơ vẫn chạy ở công suất tối đa như trước; xe chậm lại vì cần lực kéo lớn hơn chứ không phải động cơ yếu đi.",
+    "B": "Hộp số không tạo thêm công suất: lực kéo tăng thì vận tốc phải giảm để $F v$ không vượt mức tối đa.",
+    "D": "Thành phần trọng lực dọc mặt dốc không phụ thuộc vào vận tốc của xe."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Máy X có công suất lớn hơn máy Y. Khẳng định nào chắc chắn đúng?",
+   "options": [
+    "Trong cùng thời gian, máy X sinh công lớn hơn máy Y",
+    "Máy X luôn sinh công lớn hơn máy Y dù chạy bao lâu",
+    "Máy X luôn phải chạy lâu hơn máy Y khi làm việc",
+    "Máy X luôn tác dụng lực lớn hơn máy Y lên vật"
+   ],
+   "answer": 0,
+   "explanation": "Công $A = P t$; chỉ khi cùng thời gian $t$ thì máy công suất lớn hơn mới chắc chắn sinh công lớn hơn.",
+   "distractorNotes": {
+    "B": "Nhầm công suất lớn với công lớn, vì $A = P t$ nên máy Y chạy đủ lâu vẫn có thể sinh công nhiều hơn.",
+    "C": "Thời gian chạy máy do người dùng chọn, công suất không quyết định máy phải chạy lâu hay ngắn.",
+    "D": "Vì $P = F v$, công suất lớn có thể do vận tốc lớn chứ không nhất thiết do lực lớn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Công suất của động cơ, máy kéo",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Động cơ có công suất $P$ cần thực hiện công $A$. Thời gian thực hiện công là",
+   "options": [
+    "$t = \\dfrac{P}{A}$",
+    "$t = \\dfrac{A}{P}$",
+    "$t = A\\cdot P$",
+    "$t = \\dfrac{d}{P}$"
+   ],
+   "answer": 1,
+   "explanation": "Đổi vế từ $P = \\dfrac{A}{t}$ được $t = \\dfrac{A}{P}$.",
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu khi chuyển vế, vì công suất lớn hơn phải cho thời gian ngắn hơn.",
+    "C": "Nhân công với công suất không ra đơn vị giây, nên đây là phép chuyển vế sai.",
+    "D": "Lấy quãng đường thay cho công, trong khi phải chia công $A$ cho công suất mới ra thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Công suất của động cơ, máy kéo",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Động cơ xe chạy với công suất không đổi. Nếu vận tốc của xe tăng gấp đôi thì lực kéo của động cơ",
+   "options": [
+    "tăng gấp đôi",
+    "tăng gấp bốn",
+    "không thay đổi",
+    "giảm một nửa"
+   ],
+   "answer": 3,
+   "explanation": "Từ $P = F v$, giữ $P$ không đổi thì $F$ tỉ lệ nghịch với $v$: $v$ gấp đôi thì $F$ giảm một nửa.",
+   "distractorNotes": {
+    "A": "Coi lực tỉ lệ thuận với vận tốc, trong khi giữ $P = F v$ cố định thì $F$ tỉ lệ nghịch với $v$.",
+    "B": "Thêm bình phương không có trong $P = F v$, vì quan hệ giữa $F$ và $v$ ở đây là bậc nhất và nghịch.",
+    "C": "Quên rằng tích $F v$ phải luôn bằng $P$, nên khi $v$ thay đổi thì $F$ cũng phải đổi theo."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một mã lực Pháp (1 CV) xấp xỉ bằng",
+   "options": [
+    "$736\\ \\text{W}$",
+    "$746\\ \\text{W}$",
+    "$1\\,000\\ \\text{W}$",
+    "$736\\ \\text{J}$"
+   ],
+   "answer": 0,
+   "explanation": "Bài ghi $1\\ \\text{CV} = 736\\ \\text{W}$ (Pháp), còn $1\\ \\text{HP} = 746\\ \\text{W}$ (Anh).",
+   "distractorNotes": {
+    "B": "Nhầm mã lực Pháp (CV) với mã lực Anh (HP).",
+    "C": "Coi một mã lực bằng một kilôoát, trong khi 1 CV nhỏ hơn 1 kW.",
+    "D": "Mã lực là đơn vị công suất nên phải quy ra oát chứ không quy ra jun."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một học sinh leo cùng một cầu thang nhiều lần, mỗi lần leo nhanh hơn lần trước. Nhận xét nào đúng về công nâng người và công suất?",
+   "options": [
+    "Công tăng dần, công suất không đổi",
+    "Công tăng dần, công suất tăng dần",
+    "Công không đổi, công suất tăng dần",
+    "Công giảm dần, công suất tăng dần"
+   ],
+   "answer": 2,
+   "explanation": "Cùng người, cùng độ cao nên $A = mgh$ không đổi; thời gian giảm nên $P = \\dfrac{A}{t}$ tăng.",
+   "distractorNotes": {
+    "A": "Leo nhanh thấy mệt hơn nên tưởng công tăng, nhưng công chỉ phụ thuộc trọng lượng và độ cao.",
+    "B": "Gắn công với tốc độ leo, trong khi $A = mgh$ không phụ thuộc vào leo nhanh hay chậm.",
+    "D": "Leo nhanh không làm giảm trọng lượng hay độ cao, nên công không thể giảm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai thang máy A và B nâng đều cùng một thùng hàng từ mặt đất lên cùng một sàn cao. Thang A mất ít thời gian hơn thang B.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công suất là đại lượng đặc trưng cho",
-      "options": [
-        "tốc độ sinh công, tức công sinh ra trong một đơn vị thời gian",
-        "độ lớn của công mà máy sinh ra trong cả quá trình",
-        "tỉ lệ giữa năng lượng có ích và toàn phần",
-        "độ lớn của lực mà máy tác dụng lên vật"
-      ],
-      "answer": 0,
-      "explanation": "Bài định nghĩa công suất là công trong một đơn vị thời gian, $P = A/t$. Tỉ lệ có ích trên toàn phần là hiệu suất."
+     "text": "Công của lực nâng ở hai thang bằng nhau.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Hai thang máy cùng nâng thùng hàng $500$ kg lên cao $20$ m, thang A mất $10$ s, thang B mất $20$ s. So sánh nào đúng?",
-      "options": [
-        "Công của thang A lớn hơn vì nó nâng nhanh hơn",
-        "Công của hai thang bằng nhau, thang A có công suất lớn hơn",
-        "Công của thang B lớn hơn vì nó làm việc lâu hơn",
-        "Hai thang giống hệt nhau về mọi đại lượng"
-      ],
-      "answer": 1,
-      "explanation": "Cùng lực nâng và cùng độ cao nên công bằng nhau, $A = mgh$. Thang A xong sớm gấp đôi nên công suất gấp đôi."
+     "text": "Thang A có công suất lớn hơn thang B.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kilôoát giờ (kWh) là đơn vị của",
-      "options": [
-        "công suất, $1\\ \\text{kWh} = 1000\\ \\text{W}$",
-        "công suất, $1\\ \\text{kWh} = 3600\\ \\text{W}$",
-        "công (năng lượng), $1\\ \\text{kWh} = 3{,}6\\cdot 10^{6}\\ \\text{J}$",
-        "lực, $1\\ \\text{kWh} = 1000\\ \\text{N}$"
-      ],
-      "answer": 2,
-      "explanation": "kWh là công suất nhân thời gian, tức đơn vị của công; hoá đơn tiền điện tính theo đơn vị này."
+     "text": "Thang B làm việc lâu hơn nên sinh công lớn hơn thang A.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Công suất của động cơ, máy kéo",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe máy lên dốc dài phải giảm số và chạy chậm lại vì",
-      "options": [
-        "công suất tối đa gần như cố định, lên dốc cần lực kéo lớn hơn nên vận tốc phải nhỏ",
-        "lên dốc làm động cơ yếu đi nên công suất giảm",
-        "giảm số tạo thêm công suất cho động cơ",
-        "chạy chậm thì thành phần trọng lực kéo xe xuống yếu đi"
-      ],
-      "answer": 0,
-      "explanation": "Từ $P = F v$ với $P$ gần như cố định, $F$ tăng thì $v$ giảm. Giảm số đổi vận tốc lấy lực kéo, không tạo thêm công suất."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công suất tức thời khác công suất trung bình ở chỗ",
-      "options": [
-        "công suất tức thời luôn lớn hơn công suất trung bình",
-        "công suất tức thời tính bằng $A/t$ trên cả hành trình",
-        "công suất tức thời xét đúng một thời điểm, tính bằng $F v$ với $v$ là vận tốc tức thời",
-        "công suất tức thời không phụ thuộc vận tốc"
-      ],
-      "answer": 2,
-      "explanation": "Công suất trung bình xét cả khoảng thời gian, $P = A/t$; công suất tức thời lấy khoảng thời gian rất nhỏ nên là $P = F v$ tại đúng lúc đó."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về công, công suất và đơn vị, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Máy có công suất lớn hơn thì chắc chắn sinh công lớn hơn.",
-          "answer": false
-        },
-        {
-          "text": "Công bằng công suất nhân thời gian: $A = P t$.",
-          "answer": true
-        },
-        {
-          "text": "$1\\ \\text{W} = 1\\ \\text{J/s}$.",
-          "answer": true
-        },
-        {
-          "text": "kWh là đơn vị của công (điện năng tiêu thụ).",
-          "answer": true
-        }
-      ],
-      "explanation": "Ý 1 sai: $A = P t$ còn phụ thuộc thời gian. Máy $1\\ \\text{kW}$ chạy $100$ s sinh công nhiều hơn máy $5\\ \\text{kW}$ chạy $10$ s."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Công suất của động cơ, máy kéo",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về xe chạy lên dốc, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Công suất tối đa của động cơ gần như cố định.",
-          "answer": true
-        },
-        {
-          "text": "Lên dốc cần lực kéo lớn hơn vì phải thắng thêm thành phần trọng lực dọc mặt dốc.",
-          "answer": true
-        },
-        {
-          "text": "Giảm số làm công suất tối đa của động cơ tăng thêm.",
-          "answer": false
-        },
-        {
-          "text": "Giảm số đổi vận tốc lấy lực kéo.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ý 3 sai: không hộp số nào tạo thêm công suất; giảm số chỉ đổi giữa lực kéo và vận tốc."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một bóng đèn ghi $10\\ \\text{W}$ tiêu thụ bao nhiêu jun điện năng mỗi giây?",
-      "answer": "10",
-      "explanation": "$1\\ \\text{W} = 1\\ \\text{J/s}$, nên đèn $10\\ \\text{W}$ tiêu thụ $10$ J điện mỗi giây."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Theo bài, $1$ mã lực Pháp (CV) bằng bao nhiêu oát?",
-      "answer": "736",
-      "explanation": "Bài nêu $1\\ \\text{CV} = 736\\ \\text{W}$ (mã lực Anh $1\\ \\text{HP} = 746\\ \\text{W}$)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công thức tính công suất trung bình là",
-      "options": [
-        "$P = A\\,t$",
-        "$P = \\dfrac{A}{t}$",
-        "$P = \\dfrac{t}{A}$",
-        "$P = \\dfrac{A}{t^{2}}$"
-      ],
-      "answer": 1,
-      "explanation": "Công suất bằng công chia thời gian. Nhân $A$ với $t$ ra đại lượng khác (không còn là công trong một giây)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Công suất của động cơ, máy kéo",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công suất tức thời của lực không đổi cùng hướng chuyển động với vận tốc $v$ là",
-      "options": [
-        "$P = \\dfrac{F}{v}$",
-        "$P = \\dfrac{v}{F}$",
-        "$P = F v^{2}$",
-        "$P = F v$"
-      ],
-      "answer": 3,
-      "explanation": "$P = A/t = F d/t = F v$. Đảo thành $F/v$ hay $v/F$ là lỗi hay gặp khi nhớ nhầm công thức."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nâng đều vật $100$ kg lên cao $12$ m trong $8$ s ($g = 10\\ \\text{m/s}^2$). Công suất trung bình của lực nâng là",
-      "options": [
-        "$12\\,000\\ \\text{W}$",
-        "$150\\ \\text{W}$",
-        "$1\\,500\\ \\text{W}$",
-        "$96\\,000\\ \\text{W}$"
-      ],
-      "answer": 2,
-      "explanation": "$F = mg = 1000\\ \\text{N}$; $A = 12\\,000\\ \\text{J}$; $P = 12\\,000/8 = 1\\,500\\ \\text{W}$. $12\\,000$ là công chưa chia $t$; $150$ quên $g$; $96\\,000$ nhân với $t$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ô tô chạy đều $54\\ \\text{km/h}$, lực kéo của động cơ $2\\,000\\ \\text{N}$. Công suất tức thời của động cơ là",
-      "options": [
-        "$108\\ \\text{kW}$",
-        "$30\\ \\text{kW}$",
-        "$133\\ \\text{W}$",
-        "$30\\ \\text{W}$"
-      ],
-      "answer": 1,
-      "explanation": "$54\\ \\text{km/h} = 15\\ \\text{m/s}$; $P = 2000\\cdot 15 = 30\\,000\\ \\text{W} = 30\\ \\text{kW}$. $108\\ \\text{kW}$ chưa đổi km/h sang m/s; $133\\ \\text{W}$ là $F/v$; $30\\ \\text{W}$ sai bội."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về các đơn vị công suất và công, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$1\\ \\text{kW} = 10^{3}\\ \\text{W}$.",
-          "answer": true
-        },
-        {
-          "text": "$1\\ \\text{MW} = 10^{6}\\ \\text{W}$.",
-          "answer": true
-        },
-        {
-          "text": "$1\\ \\text{kWh} = 3{,}6\\cdot 10^{6}\\ \\text{J}$.",
-          "answer": true
-        },
-        {
-          "text": "$1\\ \\text{kWh} = 1000\\ \\text{W}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Ý 4 sai: kWh là đơn vị của công, $1\\ \\text{kWh} = 3\\,600\\,000\\ \\text{J}$; $1000\\ \\text{W}$ là $1\\ \\text{kW}$, đơn vị công suất."
-    },
-    {
-      "type": "true_false",
-      "kind": "bien_doi",
-      "topic": "Công suất của động cơ, máy kéo",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét $P = F v$ với công suất cố định, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Tăng gấp đôi vận tốc thì lực kéo giảm còn một nửa.",
-          "answer": true
-        },
-        {
-          "text": "Lực hợp với vận tốc góc $\\alpha$ thì $P = F v\\cos\\alpha$.",
-          "answer": true
-        },
-        {
-          "text": "Lực vuông góc với vận tốc thì $P = 0$.",
-          "answer": true
-        },
-        {
-          "text": "Công thức $P = F v$ dùng được mà không cần điều kiện gì về hướng của lực.",
-          "answer": false
-        }
-      ],
-      "explanation": "Ý 4 sai: $P = F v$ chỉ đúng khi lực cùng hướng chuyển động; khác hướng phải nhân thêm $\\cos\\alpha$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Máy bơm nâng đều $600$ kg nước lên cao $10$ m trong $20$ s ($g = 10\\ \\text{m/s}^2$). Công suất trung bình của máy bơm bằng bao nhiêu oát?",
-      "answer": "3000",
-      "explanation": "$A = mgh = 600\\cdot 10\\cdot 10 = 60\\,000\\ \\text{J}$; $P = 60\\,000/20 = 3\\,000\\ \\text{W}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Động cơ ghi $3$ mã lực Pháp ($1\\ \\text{CV} = 736\\ \\text{W}$). Công suất của nó bằng bao nhiêu oát?",
-      "answer": "2208",
-      "explanation": "$3\\cdot 736 = 2\\,208\\ \\text{W}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Tính công suất trung bình và công suất tức thời",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Bóng đèn $40\\ \\text{W}$ bật liên tục $5$ giờ. Điện năng tiêu thụ bằng bao nhiêu kWh?",
-      "answer": "0,2",
-      "explanation": "$40\\ \\text{W}\\cdot 5\\ \\text{h} = 200\\ \\text{Wh} = 0{,}2\\ \\text{kWh}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Công suất của động cơ, máy kéo",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Động cơ có công suất $6\\ \\text{kW}$ kéo vật đều với lực $2\\,000\\ \\text{N}$ cùng hướng chuyển động. Vận tốc của vật bằng bao nhiêu m/s?",
-      "answer": "3",
-      "explanation": "$v = P/F = 6000/2000 = 3\\ \\text{m/s}$."
+     "text": "Công suất của mỗi thang được đo bằng đơn vị jun (J).",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Cùng vật, cùng độ cao nên công như nhau; thang A xong sớm hơn nên $P = \\dfrac{A}{t}$ lớn hơn. Công suất đo bằng oát, jun là đơn vị công.",
+   "distractorNotes": {
+    "0": "Lực nâng và độ cao như nhau thì công như nhau, thời gian nâng không làm thay đổi công.",
+    "1": "Cùng công mà thời gian ngắn hơn thì $A/t$ lớn hơn, nên không thể coi ý này là sai.",
+    "2": "Làm việc lâu hơn không làm công tăng, vì công chỉ phụ thuộc lực nâng và độ cao.",
+    "3": "Jun là đơn vị công; công suất đo bằng jun trên giây, tức oát."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Tính công suất trung bình và công suất tức thời",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét công thức công suất trung bình $P = \\dfrac{A}{t}$ của một máy.",
+   "statements": [
+    {
+     "text": "Với cùng một công, thời gian thực hiện tăng gấp đôi thì công suất giảm một nửa.",
+     "answer": true
+    },
+    {
+     "text": "Trong cùng thời gian, công tăng gấp ba thì công suất tăng gấp ba.",
+     "answer": true
+    },
+    {
+     "text": "Công suất tỉ lệ thuận với thời gian thực hiện công.",
+     "answer": false
+    },
+    {
+     "text": "Từ công thức suy ra công bằng công suất nhân thời gian, $A = P t$.",
+     "answer": true
+    }
+   ],
+   "explanation": "$P$ tỉ lệ thuận với $A$ và tỉ lệ nghịch với $t$; đổi vế được $A = P t$.",
+   "distractorNotes": {
+    "0": "$t$ nằm ở mẫu số nên $t$ gấp đôi thì $P$ giảm một nửa, không thể coi ý này là sai.",
+    "1": "$A$ ở tử số và $t$ cố định nên $P$ tăng đúng theo tỉ lệ của $A$.",
+    "2": "$t$ ở mẫu số nên công suất tỉ lệ nghịch chứ không tỉ lệ thuận với thời gian.",
+    "3": "Nhân hai vế của $P = A/t$ với $t$ được ngay $A = P t$, đây là phép biến đổi đúng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một bóng đèn ghi $100$ W được bật trong nhiều giờ, điện năng tiêu thụ ghi trên hoá đơn tính theo kWh.",
+   "statements": [
+    {
+     "text": "Con số $100$ W ghi trên đèn là công suất của đèn.",
+     "answer": true
+    },
+    {
+     "text": "kWh là đơn vị của công suất, giống như kW.",
+     "answer": false
+    },
+    {
+     "text": "$1\\ \\text{kWh} = 3{,}6\\cdot 10^{6}\\ \\text{J}$.",
+     "answer": true
+    },
+    {
+     "text": "Điện năng đèn tiêu thụ bằng công suất nhân thời gian bật đèn.",
+     "answer": true
+    }
+   ],
+   "explanation": "Nhãn đèn ghi công suất (W); kWh là đơn vị công, $1\\ \\text{kWh} = 3{,}6\\cdot 10^{6}$ J; điện năng $A = P t$.",
+   "distractorNotes": {
+    "0": "Oát là đơn vị công suất, nên số ghi bằng W trên nhãn đèn chính là công suất của đèn.",
+    "1": "Nhân kW với giờ được công suất nhân thời gian, tức là công chứ không còn là công suất.",
+    "2": "$1\\,000$ W nhân $3\\,600$ s bằng $3{,}6\\cdot 10^{6}$ J, nên đẳng thức này đúng.",
+    "3": "Điện năng là công của dòng điện và $A = P t$, nên không thể coi ý này là sai."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Công suất của động cơ, máy kéo",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một xe máy chạy với công suất tối đa không đổi, lực kéo cùng hướng chuyển động. Người lái lần lượt chạy trên đường bằng rồi lên dốc.",
+   "statements": [
+    {
+     "text": "Công suất của động cơ liên hệ với lực kéo và vận tốc theo $P = F v$.",
+     "answer": true
+    },
+    {
+     "text": "Giữ nguyên công suất, vận tốc càng nhỏ thì lực kéo lớn nhất càng lớn.",
+     "answer": true
+    },
+    {
+     "text": "Giữ nguyên công suất, lực kéo lớn nhất tỉ lệ thuận với vận tốc.",
+     "answer": false
+    },
+    {
+     "text": "Chuyển sang số nhẹ làm tăng công suất tối đa của động cơ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Với $P$ cố định, $F = \\dfrac{P}{v}$ nên $F$ tỉ lệ nghịch với $v$. Giảm số chỉ đổi vận tốc lấy lực kéo, không tạo thêm công suất.",
+   "distractorNotes": {
+    "0": "Khi lực cùng hướng chuyển động, công suất tức thời đúng bằng $F v$ như công thức trong bài.",
+    "1": "Từ $F = P/v$ với $P$ cố định, $v$ giảm thì $F$ tăng, nên không thể coi ý này là sai.",
+    "2": "$v$ nằm ở mẫu số của $F = P/v$, nên lực kéo tỉ lệ nghịch chứ không tỉ lệ thuận với vận tốc.",
+    "3": "Công suất tối đa do động cơ quyết định; chuyển số chỉ đổi vận tốc lấy lực kéo."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Công suất của động cơ, máy kéo",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Thang máy chở cabin cùng người nâng đều lên một độ cao xác định, bỏ qua ma sát và đối trọng.",
+   "statements": [
+    {
+     "text": "Vì nâng đều nên lực kéo bằng trọng lượng của cabin cùng người, $F = mg$.",
+     "answer": true
+    },
+    {
+     "text": "Công suất trung bình có thể kiểm lại bằng $F v$ với $v = d/t$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu thang chạy chậm hơn thì công của lực kéo nhỏ hơn.",
+     "answer": false
+    },
+    {
+     "text": "Nếu thang chạy chậm hơn thì công suất của lực kéo nhỏ hơn.",
+     "answer": true
+    }
+   ],
+   "explanation": "Nâng đều nên $a = 0$, $F = mg$; công $A = F d$ không đổi theo thời gian, còn $P = \\dfrac{A}{t}$ giảm khi $t$ tăng.",
+   "distractorNotes": {
+    "0": "Nâng đều nghĩa là gia tốc bằng không nên lực kéo cân bằng trọng lực, không thể khác $mg$.",
+    "1": "Lực không đổi và cùng hướng dịch chuyển nên $P = F v_{tb}$ với $v_{tb} = d/t$, cách kiểm này hợp lệ.",
+    "2": "Cùng lực kéo và cùng độ cao thì $A = F d$ không đổi, nên chạy chậm không làm giảm công.",
+    "3": "Công không đổi mà thời gian dài hơn thì $A/t$ nhỏ hơn, nên công suất chắc chắn giảm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Tính công suất trung bình và công suất tức thời",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Một ô tô chạy trên đường, lực kéo của động cơ luôn cùng hướng chuyển động nhưng vận tốc thay đổi theo thời gian.",
+   "statements": [
+    {
+     "text": "Công suất trung bình được tính cho cả khoảng thời gian bằng $\\dfrac{A}{t}$.",
+     "answer": true
+    },
+    {
+     "text": "Công suất tức thời tại một lúc bằng $F v$ với $v$ là vận tốc tức thời lúc đó.",
+     "answer": true
+    },
+    {
+     "text": "Công suất tức thời chỉ tính được khi lực kéo không đổi.",
+     "answer": false
+    },
+    {
+     "text": "Công suất tức thời tại mọi lúc luôn bằng công suất trung bình của cả quá trình.",
+     "answer": false
+    }
+   ],
+   "explanation": "Trung bình tính cho cả khoảng thời gian, tức thời tính tại đúng một lúc bằng $F v$, đúng cả khi $F$ thay đổi miễn cùng hướng $v$; vận tốc thay đổi nên hai giá trị nói chung khác nhau.",
+   "distractorNotes": {
+    "0": "Công suất trung bình được định nghĩa bằng tổng công chia tổng thời gian, nên ý này đúng.",
+    "1": "Khi lấy khoảng thời gian rất nhỏ, $v_{tb}$ trở thành vận tốc tức thời và cho $P = F v$ tại lúc đó.",
+    "2": "Điều kiện lực không đổi chỉ cần cho $P = F v_{tb}$; công suất tức thời vẫn đúng khi $F$ thay đổi.",
+    "3": "Vận tốc thay đổi nên $F v$ thay đổi theo từng lúc, không thể lúc nào cũng bằng giá trị trung bình."
+   }
+  }
+ ]
 }

@@ -1,379 +1,550 @@
 {
-  "lesson_id": 43,
-  "lesson_title": "Bài 24. Nguồn điện",
-  "item_id": 210,
-  "generated_at": "2026-10-02",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 9,
-      "cong_thuc": 10
-    },
-    "removed": [
-      {
-        "question": "Bài này xét bao nhiêu cách ghép nguồn điện (nối tiếp, song song, xung đối, hỗn hợp đối xứng)?",
-        "reason": "Nghi ngờ: đáp án 4 phải đếm từ các mục a–d (đoạn 2–5), theorySection 5 không chứa đáp án; câu đếm mục lục, không kiểm kiến thức"
-      }
-    ]
+ "lesson_id": 43,
+ "lesson_title": "Bài 24. Nguồn điện",
+ "item_id": 210,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Nguồn điện. Suất điện động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguồn điện là thiết bị",
+   "options": [
+    "tích sẵn điện tích rồi phóng ra mạch ngoài đến khi hết",
+    "tạo ra và duy trì hiệu điện thế giữa hai cực của nó",
+    "tạo ra điện tích mới rồi đưa chúng vào mạch ngoài",
+    "biến điện năng thành nhiệt năng ở dụng cụ mạch ngoài"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, nguồn điện là thiết bị tạo ra và duy trì hiệu điện thế giữa hai cực (+) và (−). Nhờ đó dòng điện được duy trì trong mạch kín.",
+   "distractorNotes": {
+    "A": "Tích sẵn điện tích rồi xả dần đến hết là cách tụ điện hoạt động; nó không duy trì được hiệu điện thế.",
+    "C": "Nguồn không sinh ra điện tích mới, chỉ làm các điện tích có sẵn dịch chuyển thành dòng.",
+    "D": "Biến điện năng thành nhiệt là việc của dụng cụ tiêu thụ ở mạch ngoài, không phải chức năng của nguồn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Nguồn điện. Suất điện động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quả cầu A tích điện $+q$, quả cầu B tích điện $-q$ được nối với nhau bằng dây kim loại. Dòng điện chỉ chạy trong một lát rồi tắt vì",
+   "options": [
+    "dây dẫn có điện trở nên chặn dần dòng điện",
+    "electron trong dây bị tiêu hao hết sau một lát",
+    "lực điện đổi chiều, đẩy electron ngược về quả cầu B",
+    "hai quả cầu trung hoà, hiệu điện thế giữa chúng bằng 0"
+   ],
+   "answer": 3,
+   "explanation": "Electron chạy từ B sang A cho đến khi hai quả cầu trung hoà, lúc đó $V_A = V_B$ nên dòng ngừng. Muốn dòng chạy mãi phải duy trì $U_{AB} \\ne 0$, đó là việc của nguồn điện.",
+   "distractorNotes": {
+    "A": "Điện trở dây chỉ làm dòng nhỏ đi; dòng tắt hẳn là vì hiệu điện thế giữa hai quả cầu đã mất.",
+    "B": "Electron không bị tiêu hao; chúng chuyển từ B sang A đến khi hai quả cầu trung hoà.",
+    "C": "Lực điện không đổi chiều; khi hai quả cầu trung hoà thì lực điện mất đi và dòng ngừng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Nguồn điện. Suất điện động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bên trong pin, lực đưa điện tích dương từ cực âm sang cực dương là",
+   "options": [
+    "lực lạ có bản chất hoá học, khác lực điện",
+    "lực điện do điện trường giữa hai cực gây ra",
+    "lực từ do dòng điện chạy trong pin gây ra",
+    "lực đẩy của các electron ở cực âm của pin"
+   ],
+   "answer": 0,
+   "explanation": "Trong nguồn, điện tích dương phải đi ngược chiều điện trường nên lực điện không làm được. Việc này do lực lạ đảm nhận, trong pin đó là lực hoá học.",
+   "distractorNotes": {
+    "B": "Lực điện trong nguồn hướng từ (+) sang (−), không thể đẩy điện tích dương đi ngược chiều điện trường.",
+    "C": "Lực lạ dạng điện từ có trong máy phát điện; trong pin lực lạ có bản chất hoá học.",
+    "D": "Lực giữa các điện tích vẫn là lực điện, mà lực điện không đưa được điện tích dương ngược điện trường."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Nguồn điện. Suất điện động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một nguồn điện được nối với một bóng đèn thành mạch kín, đèn sáng. Xét các phát biểu sau về dòng điện và các lực tác dụng lên điện tích trong mạch.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Nguồn điện là thiết bị",
-      "options": [
-        "tạo ra và duy trì sự chênh lệch điện thế để duy trì dòng điện trong mạch kín",
-        "chỉ tiêu thụ điện năng của mạch ngoài",
-        "làm cho các điện tích tự biến mất khỏi mạch",
-        "chỉ cho phép dòng điện chạy một lần rồi dừng"
-      ],
-      "answer": 0,
-      "explanation": "Bài định nghĩa nguồn điện là thiết bị tạo ra và duy trì sự chênh lệch điện thế, nhằm duy trì dòng điện trong mạch kín."
+     "text": "Ở mạch ngoài, dòng điện đi từ cực (+) qua đèn về cực (−).",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Suất điện động của nguồn điện là đại lượng đặc trưng cho",
-      "options": [
-        "khả năng thực hiện công của nguồn điện",
-        "khả năng cản trở dòng điện của mạch ngoài",
-        "số electron có trong nguồn điện",
-        "nhiệt lượng tỏa ra ở điện trở ngoài"
-      ],
-      "answer": 0,
-      "explanation": "Suất điện động đặc trưng cho khả năng thực hiện công của nguồn điện (công của lực lạ)."
+     "text": "Bên trong nguồn, dòng điện cũng đi từ cực (+) sang cực (−).",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Hai quả cầu kim loại tích điện trái dấu được nối bằng dây dẫn thì sau một thời gian dòng điện ngừng chảy vì",
-      "options": [
-        "hai quả cầu trung hòa về điện nên $V_A=V_B$",
-        "dây dẫn bị đứt",
-        "các electron tự do biến mất",
-        "điện trở của dây dẫn tăng vô hạn"
-      ],
-      "answer": 0,
-      "explanation": "Sau một khoảng thời gian hai quả cầu trung hòa ($V_A=V_B$) nên không còn chênh lệch điện thế để duy trì dòng điện."
+     "text": "Bên trong nguồn, lực lạ đưa điện tích dương đi ngược chiều điện trường.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điện trở trong $r$ của nguồn điện là đại lượng đặc trưng cho",
-      "options": [
-        "sự cản trở dịch chuyển của các điện tích bên trong nguồn",
-        "sự cản trở dòng điện ở mạch ngoài",
-        "công của lực điện ở mạch ngoài",
-        "số cực của nguồn điện"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu điện trở trong là đại lượng đặc trưng cho sự cản trở dịch chuyển điện tích bên trong nguồn."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Bên trong nguồn điện, các hạt tải điện dương dịch chuyển từ cực âm sang cực dương dưới tác dụng của",
-      "options": [
-        "lực lạ",
-        "lực điện trường tĩnh",
-        "lực hấp dẫn",
-        "lực ma sát nghỉ"
-      ],
-      "answer": 0,
-      "explanation": "Bên trong nguồn, hạt tải điện dương chịu tác dụng của lực lạ, dịch chuyển ngược chiều điện trường từ cực âm sang cực dương."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Ohm cho toàn mạch",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khi đo hiệu điện thế giữa hai cực của nguồn trong mạch kín, ta luôn thu được giá trị nhỏ hơn suất điện động vì",
-      "options": [
-        "nguồn có điện trở trong",
-        "dây nối không có điện trở",
-        "suất điện động thay đổi theo thời gian",
-        "lực lạ bên trong nguồn bằng 0"
-      ],
-      "answer": 0,
-      "explanation": "Do nguồn có điện trở trong nên $U=\\xi-Ir<\\xi$ khi có dòng điện."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét suất điện động và hiệu điện thế. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Suất điện động đặc trưng cho khả năng thực hiện công của lực lạ trong nguồn.",
-          "answer": true
-        },
-        {
-          "text": "Hiệu điện thế đặc trưng cho khả năng thực hiện công của điện trường tạo ra bởi nguồn điện.",
-          "answer": true
-        },
-        {
-          "text": "Hiệu điện thế đặc trưng cho công của lực lạ trong nguồn.",
-          "answer": false
-        },
-        {
-          "text": "Suất điện động và hiệu điện thế hoàn toàn không liên quan đến việc thực hiện công.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bảng so sánh trong bài: suất điện động liên quan đến công của lực lạ, hiệu điện thế liên quan đến công của lực điện; cả hai đều đặc trưng cho khả năng thực hiện công."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Về cách ghép nguồn điện, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Ghép nối tiếp: cực âm của nguồn trước nối với cực dương của nguồn sau.",
-          "answer": true
-        },
-        {
-          "text": "Ghép xung đối: các cực cùng dấu của hai nguồn được nối với nhau.",
-          "answer": true
-        },
-        {
-          "text": "Công thức $\\xi_b=\\xi_1-\\xi_2$ của ghép xung đối áp dụng với $\\xi_1>\\xi_2$.",
-          "answer": true
-        },
-        {
-          "text": "Ghép xung đối là ghép các cực trái dấu nối với nhau.",
-          "answer": false
-        }
-      ],
-      "explanation": "Theo bài, ghép xung đối nối các cực cùng dấu và $\\xi_b=\\xi_1-\\xi_2$ với $\\xi_1>\\xi_2$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Hai quả cầu A, B sau khi trung hòa về điện có $V_A=V_B$. Hiệu điện thế $U_{AB}$ khi đó bằng bao nhiêu volt?",
-      "answer": "0",
-      "explanation": "Khi $V_A=V_B$ thì $U_{AB}=V_A-V_B=0$, dòng điện ngừng chảy."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Định luật Ohm cho toàn mạch",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Biểu thức hiệu điện thế mạch ngoài $U$ theo suất điện động $\\xi$, cường độ dòng điện $I$ và điện trở trong $r$ là",
-      "options": [
-        "$U=\\xi-Ir$",
-        "$U=\\xi+Ir$",
-        "$U=Ir-\\xi$",
-        "$U=\\xi-I^2r$"
-      ],
-      "answer": 0,
-      "explanation": "Từ bảo toàn năng lượng $\\xi=I(R+r)$ suy ra $U=IR=\\xi-Ir$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Ghép $n$ nguồn giống nhau (suất điện động $\\xi$, điện trở trong $r$) song song thì điện trở trong của bộ nguồn là",
-      "options": [
-        "$r_b=\\dfrac{r}{n}$",
-        "$r_b=nr$",
-        "$r_b=\\dfrac{r}{n^2}$",
-        "$r_b=\\dfrac{n}{r}$"
-      ],
-      "answer": 0,
-      "explanation": "Với ghép song song, $\\dfrac{1}{r_b}=\\dfrac{n}{r}$ nên $r_b=\\dfrac{r}{n}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Ghép hỗn hợp đối xứng $n$ dãy song song, mỗi dãy có $m$ nguồn giống nhau $(\\xi; r)$ nối tiếp thì điện trở trong của bộ nguồn là",
-      "options": [
-        "$r_b=\\dfrac{mr}{n}$",
-        "$r_b=\\dfrac{nr}{m}$",
-        "$r_b=mnr$",
-        "$r_b=\\dfrac{r}{mn}$"
-      ],
-      "answer": 0,
-      "explanation": "Bài cho $\\xi_b=m\\xi$ và $r_b=\\dfrac{mr}{n}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Suất điện động $\\xi=\\dfrac{A}{q}$ có đơn vị là",
-      "options": [
-        "V",
-        "A",
-        "$\\Omega$",
-        "C"
-      ],
-      "answer": 0,
-      "explanation": "Bài ghi suất điện động có đơn vị volt (V), với $A$ đo bằng J và $q$ đo bằng C."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về ghép nối tiếp $n$ nguồn điện, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$\\xi_b=\\xi_1+\\xi_2+...+\\xi_n$.",
-          "answer": true
-        },
-        {
-          "text": "$r_b=r_1+r_2+...+r_n$.",
-          "answer": true
-        },
-        {
-          "text": "$r_b=\\dfrac{r}{n}$ với $n$ nguồn giống nhau ghép nối tiếp.",
-          "answer": false
-        },
-        {
-          "text": "$\\xi_b=\\xi_1-\\xi_2$ khi ghép nối tiếp.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài nêu ghép nối tiếp: suất điện động và điện trở trong của bộ nguồn đều bằng tổng; $r/n$ dành cho ghép song song."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về biểu thức $\\xi=\\dfrac{A}{q}$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$A$ là công của lực lạ (J).",
-          "answer": true
-        },
-        {
-          "text": "$q$ là điện tích dương dịch chuyển (C).",
-          "answer": true
-        },
-        {
-          "text": "$A$ là công của lực điện ở mạch ngoài.",
-          "answer": false
-        },
-        {
-          "text": "$\\xi$ có đơn vị là ampe.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bài nêu $A$ là công của lực lạ (J), $q$ là điện tích dương dịch chuyển (C) và $\\xi$ đo bằng V."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực lạ thực hiện công $A=12$ J để dịch chuyển điện tích $q=4$ C trong nguồn. Suất điện động của nguồn bằng bao nhiêu volt?",
-      "answer": "3",
-      "explanation": "$\\xi=\\dfrac{A}{q}=\\dfrac{12}{4}=3$ V."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Ohm cho toàn mạch",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Nguồn có $\\xi=12$ V, $r=1\\ \\Omega$, dòng điện $I=2$ A. Hiệu điện thế mạch ngoài bằng bao nhiêu volt?",
-      "answer": "10",
-      "explanation": "$U=\\xi-Ir=12-2\\cdot1=10$ V."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Ghép song song 4 nguồn giống nhau, mỗi nguồn có $r=2\\ \\Omega$. Điện trở trong của bộ nguồn bằng bao nhiêu ôm?",
-      "answer": "0,5",
-      "explanation": "$r_b=\\dfrac{r}{n}=\\dfrac{2}{4}=0{,}5\\ \\Omega$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Suất điện động và điện trở trong của nguồn",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Hai nguồn ghép xung đối có $\\xi_1=9$ V, $\\xi_2=5$ V. Suất điện động của bộ nguồn bằng bao nhiêu volt?",
-      "answer": "4",
-      "explanation": "$\\xi_b=\\xi_1-\\xi_2=9-5=4$ V."
+     "text": "Bên trong nguồn, công của lực lạ nhỏ hơn độ lớn công cản của lực điện.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Dòng điện chạy thành vòng: ở mạch ngoài từ (+) về (−), trong nguồn từ (−) lên (+) nhờ lực lạ đi ngược điện trường. Theo bài, trong nguồn $A_{\\text{l}} \\gt A_{\\text{đ}}$.",
+   "distractorNotes": {
+    "0": "Ở mạch ngoài, lực điện đưa điện tích dương xuôi điện trường từ cực (+) qua đèn về cực (−).",
+    "1": "Nếu trong nguồn dòng cũng đi từ (+) sang (−) thì dòng không khép thành vòng và hai cực sẽ trung hoà.",
+    "2": "Lực điện trong nguồn cản điện tích dương, nên phải có lực lạ đẩy chúng ngược chiều điện trường.",
+    "3": "Nếu công lực lạ nhỏ hơn công cản của lực điện thì điện tích dương không lên được cực (+)."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện trở trong $r$ của nguồn điện là đại lượng đặc trưng cho",
+   "options": [
+    "khả năng thực hiện công của lực lạ trong nguồn",
+    "sự cản trở dòng điện của các dụng cụ ở mạch ngoài",
+    "sự cản trở dịch chuyển điện tích bên trong nguồn",
+    "lượng điện tích nguồn đưa qua mạch trong một giây"
+   ],
+   "answer": 2,
+   "explanation": "Điện tích đi trong nguồn bị cản do va chạm với vật chất của nguồn; đại lượng đặc trưng cho sự cản trở đó là điện trở trong $r$, đo bằng $\\Omega$.",
+   "distractorNotes": {
+    "A": "Khả năng thực hiện công của lực lạ là ý nghĩa của suất điện động, không phải của điện trở trong.",
+    "B": "Sự cản trở của các dụng cụ mạch ngoài là điện trở ngoài $R$, nằm ngoài nguồn.",
+    "D": "Lượng điện tích qua mạch trong một giây là cường độ dòng điện, không phải điện trở."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hiệu điện thế giữa hai cực của một nguồn điện bằng suất điện động của nguồn khi",
+   "options": [
+    "điện trở mạch ngoài có giá trị rất nhỏ",
+    "mạch hở, không có dòng điện qua nguồn",
+    "dòng điện qua nguồn đạt giá trị lớn nhất",
+    "nguồn nuôi một bóng đèn sáng bình thường"
+   ],
+   "answer": 1,
+   "explanation": "Từ $U = \\mathcal{E} - Ir$: khi hở mạch $I = 0$ nên $U = \\mathcal{E}$. Trong mạch kín luôn có $U \\lt \\mathcal{E}$.",
+   "distractorNotes": {
+    "A": "Điện trở ngoài rất nhỏ làm dòng lớn, độ giảm thế $Ir$ lớn nên $U$ càng nhỏ hơn $\\mathcal{E}$.",
+    "C": "Dòng lớn nhất ứng với đoản mạch, khi đó $U$ gần bằng 0 chứ không bằng $\\mathcal{E}$.",
+    "D": "Đèn sáng nghĩa là mạch kín có dòng, hai cực mất phần $Ir$ nên $U \\lt \\mathcal{E}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Đèn pha xe máy được nối với hai cực ắc quy. Khi bấm nút đề, mô tơ đề lấy một dòng rất lớn từ ắc quy và đèn tối hẳn đi. Nguyên nhân là",
+   "options": [
+    "độ giảm thế $Ir$ trong ắc quy tăng, hiệu điện thế hai cực giảm",
+    "suất điện động của ắc quy giảm mạnh trong thời gian bấm đề",
+    "nút đề cắt bớt dòng điện của đèn để dồn sang cho mô tơ",
+    "điện trở các dây nối tăng mạnh ngay khi vừa bấm nút đề"
+   ],
+   "answer": 0,
+   "explanation": "Ắc quy có điện trở trong $r$; dòng đề rất lớn làm $Ir$ lớn nên $U = \\mathcal{E} - Ir$ ở hai cực tụt, đèn nhận hiệu điện thế nhỏ hơn và tối đi.",
+   "distractorNotes": {
+    "B": "Suất điện động là hằng số của nguồn, không đổi theo dòng; đại lượng thay đổi là hiệu điện thế hai cực.",
+    "C": "Đèn vẫn nối trực tiếp hai cực ắc quy, không có mạch nào dồn điện; chỉ $U$ hai cực thay đổi.",
+    "D": "Dây đồng chưa kịp nóng trong tích tắc, trong khi đèn tối ngay lúc vừa bấm đề."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào sau đây đúng về hiện tượng đoản mạch nguồn điện?",
+   "options": [
+    "Xảy ra khi điện trở mạch ngoài rất lớn, dòng gần bằng 0.",
+    "Khi đoản mạch, hiệu điện thế hai cực nguồn bằng suất điện động.",
+    "Nguồn có điện trở trong càng lớn thì đoản mạch càng nguy hiểm.",
+    "Xảy ra khi $R$ gần bằng 0, chỉ còn $r$ hạn chế dòng điện."
+   ],
+   "answer": 3,
+   "explanation": "Đoản mạch là khi $R \\to 0$, dòng chỉ còn bị $r$ hạn chế: $I = \\mathcal{E}/r$, rất lớn. Vì vậy $r$ càng nhỏ, đoản mạch càng nguy hiểm.",
+   "distractorNotes": {
+    "A": "Điện trở ngoài rất lớn, dòng gần 0 là trạng thái gần hở mạch, ngược hẳn với đoản mạch.",
+    "B": "Khi đoản mạch toàn bộ $\\mathcal{E}$ rơi trên $r$, nên hiệu điện thế hai cực gần bằng 0.",
+    "C": "Dòng đoản mạch là $\\mathcal{E}/r$, nên $r$ lớn thì dòng nhỏ hơn và bớt nguy hiểm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Nguồn điện. Suất điện động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một siêu tụ điện được nạp tới $2{,}7$ V rồi cho xả qua điện trở $100\\ \\Omega$. Bên cạnh, hai pin tiểu nối tiếp ($3{,}0$ V) nuôi một điện trở $100\\ \\Omega$ giống hệt. Vôn kế đo hiệu điện thế hai đầu mỗi điện trở trong vài phút.",
+   "statements": [
+    {
+     "text": "Số chỉ vôn kế bên tụ điện giảm dần theo thời gian rồi gần về 0.",
+     "answer": true
+    },
+    {
+     "text": "Tụ điện trong thí nghiệm là một nguồn điện vì nó tạo được dòng điện qua điện trở.",
+     "answer": false
+    },
+    {
+     "text": "Số chỉ vôn kế bên pin gần như không đổi, chứng tỏ pin duy trì được hiệu điện thế.",
+     "answer": true
+    },
+    {
+     "text": "Vôn kế bên pin chỉ hơi nhỏ hơn $3{,}0$ V hoàn toàn do sai số dụng cụ, không liên quan đến pin.",
+     "answer": false
+    }
+   ],
+   "explanation": "Tụ chỉ chứa sẵn điện tích nên xả dần là hết; pin duy trì được hiệu điện thế nên mới là nguồn. Số chỉ hụt chút ít so với $3{,}0$ V là do điện trở trong của pin ($U = \\mathcal{E} - Ir$).",
+   "distractorNotes": {
+    "0": "Tụ chỉ có lượng điện tích nạp sẵn, xả qua điện trở thì hiệu điện thế phải giảm dần về 0.",
+    "1": "Có dòng trong chốc lát chưa đủ; nguồn phải duy trì hiệu điện thế, còn tụ xả là hết.",
+    "2": "Pin có lực lạ liên tục đưa điện tích về cực (+) nên giữ được hiệu điện thế gần như không đổi.",
+    "3": "Khi có dòng, pin mất phần $Ir$ trên điện trở trong nên hiệu điện thế hai cực nhỏ hơn suất điện động."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai pin cùng loại, cùng ghi $1{,}5$ V: một pin mới có điện trở trong nhỏ, một pin gần hết có điện trở trong lớn hơn nhiều. Lần lượt dùng vôn kế lí tưởng đo hai cực mỗi pin khi hở mạch, rồi khi nối mỗi pin với cùng một điện trở $R$.",
+   "statements": [
+    {
+     "text": "Khi hở mạch, số chỉ vôn kế của hai pin gần như bằng nhau.",
+     "answer": true
+    },
+    {
+     "text": "Vôn kế chỉ $1{,}5$ V khi hở mạch chứng tỏ pin đó còn tốt.",
+     "answer": false
+    },
+    {
+     "text": "Khi nối cùng $R$, hiệu điện thế hai cực pin gần hết nhỏ hơn của pin mới.",
+     "answer": true
+    },
+    {
+     "text": "Khi nối cùng $R$, dòng điện qua pin gần hết lớn hơn dòng qua pin mới.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hở mạch $I = 0$ nên $U = \\mathcal{E}$ với cả hai pin, không phân biệt được. Có tải thì $I = \\mathcal{E}/(R + r)$ nhỏ hơn và $U = \\mathcal{E} - Ir$ thấp hơn ở pin có $r$ lớn.",
+   "distractorNotes": {
+    "0": "Hở mạch không có dòng nên không có độ giảm thế trong, cả hai pin đều chỉ bằng suất điện động.",
+    "1": "Hở mạch chỉ đo được $\\mathcal{E}$, không lộ ra $r$; pin gần hết vẫn chỉ $1{,}5$ V.",
+    "2": "Pin có $r$ lớn mất phần $Ir$ lớn hơn bên trong, nên phần còn lại ở hai cực nhỏ hơn.",
+    "3": "$r$ lớn làm tổng điện trở $R + r$ lớn hơn, nên dòng qua pin gần hết nhỏ hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Nguồn điện. Suất điện động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Gọi $A$ là công của lực lạ khi dịch chuyển điện tích dương $q$ từ cực âm sang cực dương bên trong nguồn trong thời gian $t$. Suất điện động của nguồn là",
+   "options": [
+    "$\\mathcal{E} = Aq$",
+    "$\\mathcal{E} = \\dfrac{q}{A}$",
+    "$\\mathcal{E} = \\dfrac{A}{q}$",
+    "$\\mathcal{E} = \\dfrac{A}{t}$"
+   ],
+   "answer": 2,
+   "explanation": "Suất điện động bằng công của lực lạ trên mỗi đơn vị điện tích dương dịch chuyển trong nguồn: $\\mathcal{E} = A/q$.",
+   "distractorNotes": {
+    "A": "Nhân $A$ với $q$ cho đơn vị J·C, không phải vôn; suất điện động là công trên mỗi coulomb.",
+    "B": "Đảo tử và mẫu; suất điện động là công chia cho điện tích, không phải điện tích chia công.",
+    "D": "Công chia thời gian là công suất (W), không phải suất điện động."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Nguồn điện. Suất điện động",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của suất điện động là",
+   "options": [
+    "vôn (V), bằng jun trên coulomb",
+    "ampe (A), bằng coulomb trên giây",
+    "oát (W), bằng jun trên giây",
+    "ôm ($\\Omega$), bằng vôn trên ampe"
+   ],
+   "answer": 0,
+   "explanation": "Từ $\\mathcal{E} = A/q$ với $A$ đo bằng J, $q$ đo bằng C nên $\\mathcal{E}$ đo bằng J/C = V.",
+   "distractorNotes": {
+    "B": "Coulomb trên giây là đơn vị cường độ dòng điện, nhầm suất điện động với dòng điện.",
+    "C": "Jun trên giây là đơn vị công suất; suất điện động là công chia điện tích, không chia thời gian.",
+    "D": "Vôn trên ampe là đơn vị điện trở như $r$, không phải đơn vị suất điện động."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguồn điện có suất điện động $\\mathcal{E}$, điện trở trong $r$, đang phát dòng điện $I$ ra mạch ngoài có điện trở $R$. Hiệu điện thế giữa hai cực nguồn là",
+   "options": [
+    "$U = \\mathcal{E} + Ir$",
+    "$U = \\mathcal{E} - Ir$",
+    "$U = Ir - \\mathcal{E}$",
+    "$U = I(R + r)$"
+   ],
+   "answer": 1,
+   "explanation": "Phần $Ir$ là độ giảm thế trên điện trở trong, mạch ngoài không nhận được, nên $U = \\mathcal{E} - Ir$ và $U \\lt \\mathcal{E}$.",
+   "distractorNotes": {
+    "A": "Sai dấu: điện trở trong làm hiệu điện thế hai cực nhỏ hơn suất điện động, không lớn hơn.",
+    "C": "Đảo dấu cả biểu thức; $Ir$ là phần bị mất, nhỏ hơn $\\mathcal{E}$, nên kết quả ra âm.",
+    "D": "$I(R + r)$ bằng chính suất điện động, còn hiệu điện thế hai cực chỉ là $IR$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mạch kín gồm nguồn có suất điện động $\\mathcal{E}$, điện trở trong $r$ và điện trở mạch ngoài $R$. Cường độ dòng điện trong mạch là",
+   "options": [
+    "$I = \\dfrac{\\mathcal{E}}{R}$",
+    "$I = \\dfrac{\\mathcal{E}}{r}$",
+    "$I = \\dfrac{\\mathcal{E}}{R - r}$",
+    "$I = \\dfrac{\\mathcal{E}}{R + r}$"
+   ],
+   "answer": 3,
+   "explanation": "Định luật Ohm cho toàn mạch: $I = \\mathcal{E}/(R + r)$, vì dòng chạy qua cả $R$ lẫn $r$ mắc nối tiếp.",
+   "distractorNotes": {
+    "A": "Quên cộng điện trở trong vào mẫu, trong khi dòng cũng chạy qua $r$ bên trong nguồn.",
+    "B": "Biểu thức này là dòng đoản mạch, chỉ đúng khi điện trở ngoài $R = 0$.",
+    "C": "$r$ nối tiếp với $R$ nên điện trở phải cộng, lấy hiệu $R - r$ là sai dấu."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nối tắt hai cực một nguồn điện có suất điện động $\\mathcal{E}$, điện trở trong $r$ bằng dây có điện trở không đáng kể. Cường độ dòng đoản mạch là",
+   "options": [
+    "$I = \\mathcal{E}r$",
+    "$I = \\dfrac{r}{\\mathcal{E}}$",
+    "$I = \\dfrac{\\mathcal{E}}{r}$",
+    "$I = 0$"
+   ],
+   "answer": 2,
+   "explanation": "Khi $R \\to 0$, định luật Ohm cho toàn mạch cho $I_{\\text{đm}} = \\mathcal{E}/r$, là dòng lớn nhất nguồn có thể phát.",
+   "distractorNotes": {
+    "A": "Tích $\\mathcal{E}r$ không có đơn vị ampe; dòng điện là suất điện động chia cho điện trở.",
+    "B": "Đảo tử và mẫu của định luật Ohm; dòng tỉ lệ thuận với $\\mathcal{E}$, không tỉ lệ nghịch.",
+    "D": "Mạch ngoài không có điện trở thì dòng không bằng 0 mà rất lớn, chỉ còn $r$ hạn chế."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ghép song song $n$ nguồn giống nhau, mỗi nguồn có suất điện động $\\mathcal{E}$ và điện trở trong $r$. Bộ nguồn có",
+   "options": [
+    "$\\mathcal{E}_b = \\mathcal{E}$ và $r_b = \\dfrac{r}{n}$",
+    "$\\mathcal{E}_b = n\\mathcal{E}$ và $r_b = nr$",
+    "$\\mathcal{E}_b = n\\mathcal{E}$ và $r_b = \\dfrac{r}{n}$",
+    "$\\mathcal{E}_b = \\dfrac{\\mathcal{E}}{n}$ và $r_b = \\dfrac{r}{n}$"
+   ],
+   "answer": 0,
+   "explanation": "Song song $n$ nguồn giống nhau giữ nguyên suất điện động và chia điện trở trong: $\\mathcal{E}_b = \\mathcal{E}$, $r_b = r/n$.",
+   "distractorNotes": {
+    "B": "Đây là kết quả của ghép nối tiếp, nhầm cách ghép song song với nối tiếp.",
+    "C": "Ghép song song không cộng suất điện động; chỉ ghép nối tiếp mới làm $\\mathcal{E}_b$ tăng.",
+    "D": "Ghép song song các nguồn giống nhau giữ nguyên suất điện động, chỉ điện trở trong bị chia."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đo được suất điện động $\\mathcal{E}$ của pin khi hở mạch, rồi đo hiệu điện thế hai cực $U$ và dòng điện $I$ khi pin nối với điện trở ngoài. Từ $U = \\mathcal{E} - Ir$, điện trở trong của pin là",
+   "options": [
+    "$r = \\dfrac{U}{I}$",
+    "$r = \\dfrac{\\mathcal{E} - U}{I}$",
+    "$r = \\dfrac{\\mathcal{E} + U}{I}$",
+    "$r = \\dfrac{I}{\\mathcal{E} - U}$"
+   ],
+   "answer": 1,
+   "explanation": "Chuyển vế: $Ir = \\mathcal{E} - U$, nên $r = (\\mathcal{E} - U)/I$. Điện trở trong nằm ở phần hiệu điện thế bị mất trong nguồn.",
+   "distractorNotes": {
+    "A": "$U/I$ là điện trở mạch ngoài $R$, không phải điện trở trong của pin.",
+    "C": "Sai dấu khi chuyển vế; phần rơi trên $r$ là hiệu $\\mathcal{E} - U$, không phải tổng.",
+    "D": "Đảo tử và mẫu, kết quả có đơn vị A/V chứ không phải ôm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Có hai pin giống nhau, mỗi pin có suất điện động $\\mathcal{E}$ và điện trở trong $r$. Xét các cách ghép hai pin thành bộ nguồn.",
+   "statements": [
+    {
+     "text": "Ghép hai pin nối tiếp (cực âm pin này nối cực dương pin kia), suất điện động của bộ gấp đôi của một pin.",
+     "answer": true
+    },
+    {
+     "text": "Ghép hai pin nối tiếp, điện trở trong của bộ bằng một nửa điện trở trong của một pin.",
+     "answer": false
+    },
+    {
+     "text": "Ghép hai pin song song, điện trở trong của bộ giảm một nửa so với một pin.",
+     "answer": true
+    },
+    {
+     "text": "Lắp ngược một pin để hai cực cùng dấu nối nhau (xung đối), suất điện động của bộ vẫn gấp đôi của một pin.",
+     "answer": false
+    }
+   ],
+   "explanation": "Nối tiếp cộng cả $\\mathcal{E}$ lẫn $r$: $\\mathcal{E}_b = 2\\mathcal{E}$, $r_b = 2r$; song song giữ $\\mathcal{E}$, $r_b = r/2$. Xung đối $\\mathcal{E}_b = \\mathcal{E}_1 - \\mathcal{E}_2 = 0$.",
+   "distractorNotes": {
+    "0": "Ghép nối tiếp thì các suất điện động cộng lại, hai pin giống nhau cho đúng $2\\mathcal{E}$.",
+    "1": "Nối tiếp thì điện trở trong cũng cộng lại thành $2r$; chia đôi $r$ là đặc điểm của ghép song song.",
+    "2": "Hai nguồn giống nhau song song chia nhau dòng, bộ ứng xử như nguồn có $r_b = r/2$.",
+    "3": "Ghép xung đối thì hai suất điện động trừ nhau, hai pin giống nhau cho $\\mathcal{E}_b = 0$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguồn điện có suất điện động $\\mathcal{E}$, điện trở trong $r$ nối với điện trở ngoài $R$ thành mạch kín, dòng điện trong mạch là $I$. Định luật Ohm cho toàn mạch được suy ra từ bảo toàn năng lượng.",
+   "statements": [
+    {
+     "text": "Công của nguồn trong thời gian $t$ là $A = \\mathcal{E}It$.",
+     "answer": true
+    },
+    {
+     "text": "Toàn bộ năng lượng nguồn cung cấp chỉ toả nhiệt ở điện trở ngoài $R$.",
+     "answer": false
+    },
+    {
+     "text": "Giữ nguyên nguồn, giảm $R$ thì dòng điện tăng và hiệu điện thế hai cực nguồn giảm.",
+     "answer": true
+    },
+    {
+     "text": "Giữ nguyên $\\mathcal{E}$ và $R$, nguồn có $r$ lớn hơn thì dòng điện trong mạch lớn hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "$A = \\mathcal{E}q = \\mathcal{E}It$ bằng nhiệt toả ở cả $R$ và $r$: $RI^2t + rI^2t$, suy ra $I = \\mathcal{E}/(R + r)$. Giảm $R$ thì $I$ tăng, $U = \\mathcal{E} - Ir$ giảm; tăng $r$ thì $I$ giảm.",
+   "distractorNotes": {
+    "0": "Vì $q = It$ nên công của nguồn $A = \\mathcal{E}q$ viết được thành $\\mathcal{E}It$.",
+    "1": "Dòng cũng chạy qua điện trở trong, nên một phần năng lượng toả nhiệt $rI^2t$ ngay trong nguồn.",
+    "2": "Giảm $R$ làm tổng $R + r$ nhỏ đi nên $I$ tăng, kéo theo $Ir$ tăng và $U$ tụt.",
+    "3": "$r$ nằm ở mẫu của $I = \\mathcal{E}/(R + r)$, nên $r$ lớn hơn làm dòng nhỏ hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một pin được nối với hộp điện trở $R$, ampe kế đo dòng $I$, vôn kế đo hiệu điện thế hai cực $U$. Thay đổi $R$, ghi các cặp $(I, U)$ rồi vẽ đồ thị $U$ theo $I$, được một đường thẳng dốc xuống $U = \\mathcal{E} - rI$.",
+   "statements": [
+    {
+     "text": "Giao điểm của đồ thị với trục $U$ (ứng với $I = 0$) cho biết suất điện động của pin.",
+     "answer": true
+    },
+    {
+     "text": "Độ dốc của đường thẳng bằng $-r$, nên $r = -\\Delta U/\\Delta I$.",
+     "answer": true
+    },
+    {
+     "text": "Tỉ số $U/I$ tại mỗi điểm đo bằng điện trở trong $r$ của pin.",
+     "answer": false
+    },
+    {
+     "text": "Giao điểm của đồ thị với trục $I$ (ứng với $U = 0$) là dòng điện khi mạch hở.",
+     "answer": false
+    }
+   ],
+   "explanation": "Với $U = \\mathcal{E} - rI$: tại $I = 0$ có $U = \\mathcal{E}$, hệ số góc là $-r$. Tỉ số $U/I$ là điện trở ngoài $R$; còn $U = 0$ ứng với đoản mạch, $I = \\mathcal{E}/r$.",
+   "distractorNotes": {
+    "0": "$I = 0$ là hở mạch, khi đó $U = \\mathcal{E}$, nên giao điểm với trục $U$ chính là suất điện động.",
+    "1": "Trong $U = \\mathcal{E} - rI$, hệ số của $I$ là $-r$, đó chính là độ dốc của đường thẳng.",
+    "2": "$U/I$ là điện trở mạch ngoài $R$ tại điểm đo; $r$ ứng với phần bị mất $(\\mathcal{E} - U)/I$.",
+    "3": "$U = 0$ xảy ra khi $R = 0$, tức đoản mạch với dòng lớn nhất; mạch hở thì $I = 0$."
+   }
+  }
+ ]
 }

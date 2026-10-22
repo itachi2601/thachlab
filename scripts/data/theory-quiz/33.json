@@ -2,8 +2,8 @@
  "lesson_id": 33,
  "lesson_title": "Bài 14. Bài tập về sóng",
  "item_id": 165,
- "generated_at": "2026-10-02",
- "generated_by": "claude-code",
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
@@ -17,370 +17,534 @@
   {
    "type": "multiple_choice",
    "kind": "dinh_nghia",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Quan sát $n$ ngọn sóng liên tiếp thì khoảng cách giữa ngọn đầu và ngọn cuối bằng bao nhiêu bước sóng?",
+   "theorySection": 2,
+   "question": "Mỗi khoảng giữa hai ngọn sóng liên tiếp bằng một bước sóng. Giữa $n$ ngọn sóng liên tiếp có bao nhiêu bước sóng?",
    "options": [
-    "$n$",
-    "$n-1$",
-    "$n+1$",
-    "$\\dfrac{n}{2}$"
+    "$n$ bước sóng",
+    "$(n-1)$ bước sóng",
+    "$(n+1)$ bước sóng",
+    "$2n$ bước sóng"
    ],
    "answer": 1,
-   "explanation": "Quan sát $n$ ngọn sóng liên tiếp thì có $(n-1)$ bước sóng (Dạng 1)."
+   "explanation": "$n$ mốc liên tiếp chỉ tạo ra $n-1$ khoảng, nên khoảng cách $n$ ngọn liên tiếp là $(n-1)\\lambda$ (Bẫy 1).",
+   "distractorNotes": {
+    "A": "Đếm số ngọn sóng thay vì đếm số khoảng giữa các ngọn liên tiếp.",
+    "C": "Cộng thêm một khoảng nằm ngoài hai ngọn đầu và cuối, không thuộc đoạn đang xét.",
+    "D": "Coi mỗi ngọn ứng với hai khoảng, nhầm sang cách đếm theo nửa bước sóng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm khe Young, khoảng vân $i$ là",
+   "options": [
+    "khoảng cách giữa hai vân sáng liền kề",
+    "khoảng cách từ vân trung tâm tới vân tối",
+    "khoảng cách giữa hai khe sáng hẹp",
+    "khoảng cách từ hai khe tới màn quan sát"
+   ],
+   "answer": 0,
+   "explanation": "Theo phần ký hiệu khe Young, $i$ là khoảng cách hai vân sáng (hoặc hai vân tối) liền kề.",
+   "distractorNotes": {
+    "B": "Từ vân trung tâm tới vân tối gần nhất chỉ bằng nửa khoảng vân.",
+    "C": "Khoảng cách giữa hai khe là $a$, không phải khoảng vân $i$.",
+    "D": "Khoảng cách từ hai khe tới màn là $D$, không phải khoảng vân $i$."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dieu_kien",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Hai điểm trên phương truyền sóng dao động cùng pha khi khoảng cách $d$ giữa chúng thỏa mãn:",
+   "theorySection": 2,
+   "question": "Hai nguồn sóng cơ dao động ngược pha. Điểm M dao động với biên độ cực đại khi hiệu đường đi $d_2-d_1$ bằng",
    "options": [
-    "$d=k\\lambda$",
-    "$d=(k+\\tfrac12)\\lambda$",
-    "$d=(2k+1)\\dfrac{\\lambda}{4}$",
-    "$d=k\\dfrac{\\lambda}{4}$"
-   ],
-   "answer": 0,
-   "explanation": "Cùng pha: $d=k\\lambda$ (Dạng 3)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Trong giao thoa sóng cơ với hai nguồn cùng pha, điểm cực đại thỏa mãn điều kiện nào?",
-   "options": [
-    "$d_2-d_1=k\\lambda$",
-    "$d_2-d_1=(k+\\tfrac12)\\lambda$",
-    "$d_2-d_1=(2k+1)\\dfrac{\\lambda}{4}$",
-    "$d_2+d_1=k\\lambda$"
-   ],
-   "answer": 0,
-   "explanation": "Hai nguồn cùng pha: cực đại khi $d_2-d_1=k\\lambda$, cực tiểu khi $d_2-d_1=(k+\\tfrac12)\\lambda$ (Dạng 6)."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Nhận định nào sau đây về độ lệch pha giữa hai điểm trên phương truyền sóng là đúng hay sai?",
-   "statements": [
-    {
-     "text": "Hai điểm cùng pha khi $d=k\\lambda$.",
-     "answer": true
-    },
-    {
-     "text": "Hai điểm ngược pha khi $d=k\\lambda$.",
-     "answer": false
-    },
-    {
-     "text": "Hai điểm vuông pha khi $d=(2k+1)\\dfrac{\\lambda}{4}$.",
-     "answer": true
-    },
-    {
-     "text": "Độ lệch pha giữa hai điểm cách nhau $d$ là $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$.",
-     "answer": true
-    }
-   ],
-   "explanation": "Ngược pha khi $d=(k+\\tfrac12)\\lambda$, không phải $k\\lambda$ (Dạng 3)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Sóng dừng trên dây hai đầu cố định có 5 bụng thì có bao nhiêu nút?",
-   "options": [
-    "4",
-    "5",
-    "6",
-    "7"
+    "$k\\lambda$",
+    "$\\dfrac{k\\lambda}{2}$",
+    "$(k+\\tfrac12)\\lambda$",
+    "$(2k+1)\\dfrac{\\lambda}{4}$"
    ],
    "answer": 2,
-   "explanation": "Hai đầu cố định: $n$ bụng thì có $n+1$ nút, nên 5 bụng có 6 nút (Dạng 13)."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Nhận định nào sau đây về sóng dừng trên dây một đầu cố định, một đầu tự do là đúng hay sai?",
-   "statements": [
-    {
-     "text": "Chiều dài dây thỏa mãn $L=(2n+1)\\dfrac{\\lambda}{4}$.",
-     "answer": true
-    },
-    {
-     "text": "Số bụng là $n+1$.",
-     "answer": true
-    },
-    {
-     "text": "Số nút là $n+1$.",
-     "answer": true
-    },
-    {
-     "text": "Chiều dài dây thỏa mãn $L=n\\dfrac{\\lambda}{2}$.",
-     "answer": false
-    }
-   ],
-   "explanation": "Một đầu cố định một đầu tự do: $L=(2n+1)\\dfrac{\\lambda}{4}$, có $n+1$ bụng và $n+1$ nút (Dạng 13)."
+   "explanation": "Theo Bẫy 2, với nguồn ngược pha thì cực đại và cực tiểu đổi chỗ: cực đại khi $d_2-d_1=(k+\\tfrac12)\\lambda$.",
+   "distractorNotes": {
+    "A": "Áp điều kiện cực đại của hai nguồn cùng pha cho hai nguồn ngược pha.",
+    "B": "Nhầm điều kiện cực đại với khoảng cách $\\dfrac{\\lambda}{2}$ giữa hai cực đại liền kề.",
+    "D": "Lấy nhầm điều kiện vuông pha của hai điểm trên một phương truyền sóng."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "kind": "hien_tuong",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Giới hạn bước sóng của ánh sáng trắng (ánh sáng nhìn thấy) là:",
+   "theorySection": 2,
+   "question": "Hai nguồn A, B dao động ngược pha, cùng biên độ $A$. Trung điểm của đoạn AB",
    "options": [
-    "$0,38\\ \\mu m \\le \\lambda \\le 0,76\\ \\mu m$",
-    "$0,76\\ \\mu m \\le \\lambda \\le 1,52\\ \\mu m$",
-    "$0,19\\ \\mu m \\le \\lambda \\le 0,38\\ \\mu m$",
-    "$0,38\\ mm \\le \\lambda \\le 0,76\\ mm$"
+    "là cực đại, biên độ bằng $2A$",
+    "dao động với biên độ bằng $A$",
+    "dao động với biên độ $A\\sqrt2$",
+    "là cực tiểu, biên độ bằng 0"
    ],
-   "answer": 0,
-   "explanation": "Ánh sáng trắng: $0,38\\ \\mu m \\le \\lambda \\le 0,76\\ \\mu m$ (Dạng 12)."
+   "answer": 3,
+   "explanation": "Hai sóng đến trung điểm cùng lúc nhưng hai nguồn lệch nhau nửa chu kỳ nên triệt tiêu: trung điểm là cực tiểu.",
+   "distractorNotes": {
+    "A": "Áp kết quả của hai nguồn cùng pha, trong khi nguồn ngược pha làm cực đại và cực tiểu đổi chỗ.",
+    "B": "Chỉ tính sóng từ một nguồn, bỏ qua sự chồng chất của hai sóng tới.",
+    "C": "Coi hai sóng tới trung điểm vuông pha, trong khi chúng lệch nhau nửa chu kỳ nên ngược pha."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dieu_kien",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Hai bức xạ $\\lambda_1,\\lambda_2$ cho vân sáng trùng nhau tại một vị trí khi:",
+   "theorySection": 2,
+   "question": "Khi có sóng dừng trên một sợi dây, đầu tự do của dây",
    "options": [
-    "$k_1\\lambda_1=k_2\\lambda_2$",
-    "$k_1\\lambda_2=k_2\\lambda_1$",
-    "$\\lambda_1+\\lambda_2=k$",
-    "$k_1+\\lambda_1=k_2+\\lambda_2$"
+    "luôn là một nút sóng",
+    "luôn là một bụng sóng",
+    "là nút hay bụng tuỳ tần số",
+    "nằm giữa một nút và một bụng"
    ],
-   "answer": 0,
-   "explanation": "Trùng vân sáng: $k_1\\lambda_1=k_2\\lambda_2$ (Dạng 11)."
+   "answer": 1,
+   "explanation": "Đầu cố định là nút, đầu tự do là bụng (Bẫy 3 và ghi chú họ D).",
+   "distractorNotes": {
+    "A": "Nhầm đầu tự do với đầu cố định, đúng lỗi được nêu ở Bẫy 3.",
+    "C": "Nút hay bụng ở đầu dây do điều kiện biên quyết định, không phụ thuộc tần số.",
+    "D": "Đầu dây phải là nút hoặc bụng, không thể nằm ở vị trí trung gian."
+   }
   },
   {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Nhận định nào sau đây về giao thoa ánh sáng qua khe Young là đúng hay sai?",
-   "statements": [
-    {
-     "text": "Vị trí vân sáng là $x_s=ki$.",
-     "answer": true
-    },
-    {
-     "text": "Vị trí vân tối là $x_t=ki$.",
-     "answer": false
-    },
-    {
-     "text": "Khoảng vân là $i=\\dfrac{\\lambda D}{a}$.",
-     "answer": true
-    },
-    {
-     "text": "Vị trí vân tối là $x_t=(k+\\tfrac12)i$.",
-     "answer": true
-    }
-   ],
-   "explanation": "Vân sáng $x_s=ki$, vân tối $x_t=(k+\\tfrac12)i$, khoảng vân $i=\\dfrac{\\lambda D}{a}$ (Dạng 9)."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Nhận định nào sau đây về sóng điện từ là đúng hay sai?",
-   "statements": [
-    {
-     "text": "Tần số và bước sóng liên hệ bằng $f=\\dfrac{c}{\\lambda}$.",
-     "answer": true
-    },
-    {
-     "text": "Trong chân không, tần số tăng thì bước sóng giảm.",
-     "answer": true
-    },
-    {
-     "text": "Tốc độ $c=3.10^{8}$ m/s.",
-     "answer": true
-    },
-    {
-     "text": "Tốc độ $c=3.10^{6}$ m/s.",
-     "answer": false
-    }
+   "theorySection": 1,
+   "question": "Điều kiện để có sóng dừng trên dây dài $L$ có hai đầu cố định là",
+   "options": [
+    "$L=n\\lambda$",
+    "$L=n\\dfrac{\\lambda}{4}$",
+    "$L=(2n+1)\\dfrac{\\lambda}{4}$",
+    "$L=n\\dfrac{\\lambda}{2}$"
    ],
-   "explanation": "Sóng điện từ có $f=\\dfrac{c}{\\lambda}$ với $c=3.10^{8}$ m/s (Dạng 5)."
+   "answer": 3,
+   "explanation": "Hai đầu cố định đều là nút nên $L$ bằng số nguyên lần $\\dfrac{\\lambda}{2}$.",
+   "distractorNotes": {
+    "A": "Lấy một bước sóng làm khoảng cách giữa hai nút liền kề, trong khi khoảng đó chỉ là $\\dfrac{\\lambda}{2}$.",
+    "B": "Một phần tư bước sóng là khoảng từ nút tới bụng, không phải khoảng giữa hai nút.",
+    "C": "Áp điều kiện của dây một đầu cố định, một đầu tự do cho dây hai đầu cố định."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "cong_thuc",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Công thức liên hệ bước sóng với tốc độ truyền sóng $v$ và tần số $f$ là:",
-   "options": [
-    "$\\lambda=\\dfrac{v}{f}$",
-    "$\\lambda=vf$",
-    "$\\lambda=\\dfrac{f}{v}$",
-    "$\\lambda=\\dfrac{T}{v}$"
-   ],
-   "answer": 0,
-   "explanation": "$\\lambda=vT=\\dfrac{v}{f}$ (Dạng 1)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Sóng cơ truyền với tốc độ $v=20$ m/s, tần số $f=5$ Hz. Bước sóng là bao nhiêu mét?",
-   "answer": "4",
-   "explanation": "$\\lambda=\\dfrac{v}{f}=\\dfrac{20}{5}=4$ m (Dạng 1)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Cường độ sóng cầu tại điểm cách nguồn điểm công suất $P$ một khoảng $R$ là:",
-   "options": [
-    "$I=\\dfrac{P}{4\\pi R^{2}}$",
-    "$I=\\dfrac{P}{2\\pi R^{2}}$",
-    "$I=\\dfrac{P}{4\\pi R}$",
-    "$I=4\\pi R^{2}P$"
-   ],
-   "answer": 0,
-   "explanation": "$I=\\dfrac{P}{S}$ với sóng cầu $S=4\\pi R^{2}$ (Dạng 2)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Hai điểm trên phương truyền sóng cách nhau $d=\\dfrac{\\lambda}{4}$ thì độ lệch pha là:",
-   "options": [
-    "$\\dfrac{\\pi}{2}$",
-    "$\\pi$",
-    "$\\dfrac{\\pi}{4}$",
-    "$2\\pi$"
-   ],
-   "answer": 0,
-   "explanation": "$\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}=\\dfrac{2\\pi}{4}=\\dfrac{\\pi}{2}$ (Dạng 3)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Sóng điện từ có bước sóng $100$ m trong chân không ($c=3.10^{8}$ m/s). Tần số là bao nhiêu MHz?",
-   "answer": "3",
-   "explanation": "$f=\\dfrac{c}{\\lambda}=\\dfrac{3.10^{8}}{100}=3.10^{6}$ Hz $=3$ MHz (Dạng 5)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Khoảng vân trong thí nghiệm Young (khoảng cách hai khe $a$, màn cách khe $D$) là:",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm khe Young, khoảng vân được tính bằng công thức",
    "options": [
     "$i=\\dfrac{\\lambda D}{a}$",
     "$i=\\dfrac{\\lambda a}{D}$",
     "$i=\\dfrac{aD}{\\lambda}$",
-    "$i=\\dfrac{\\lambda}{aD}$"
+    "$i=\\dfrac{D}{\\lambda a}$"
    ],
    "answer": 0,
-   "explanation": "$i=\\dfrac{\\lambda D}{a}$ (Dạng 9)."
+   "explanation": "Dạng 9: $i=\\dfrac{\\lambda D}{a}$, khoảng vân tăng theo $\\lambda$ và $D$, giảm theo $a$.",
+   "distractorNotes": {
+    "B": "Đảo vị trí $a$ và $D$, trong khi màn càng xa thì vân càng rộng.",
+    "C": "Đưa $\\lambda$ xuống mẫu, khiến bước sóng lớn lại cho vân hẹp hơn.",
+    "D": "Đưa cả $\\lambda$ và $a$ xuống mẫu, sai chiều phụ thuộc của khoảng vân vào bước sóng."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "multiple_choice",
    "kind": "tinh_nhanh",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Thí nghiệm Young: $\\lambda=0,5\\ \\mu m$, $a=1$ mm, $D=2$ m. Khoảng vân là bao nhiêu mm?",
-   "answer": "1",
-   "explanation": "$i=\\dfrac{\\lambda D}{a}=\\dfrac{0,5.10^{-6}.2}{10^{-3}}=10^{-3}$ m $=1$ mm (Dạng 9)."
+   "theorySection": 1,
+   "question": "Một nguồn phát sóng cầu có công suất không đổi. Khi khoảng cách từ điểm đang xét tới nguồn tăng gấp đôi thì cường độ sóng",
+   "options": [
+    "giảm 2 lần",
+    "tăng 4 lần",
+    "giảm 4 lần",
+    "không thay đổi"
+   ],
+   "answer": 2,
+   "explanation": "$I=\\dfrac{P}{4\\pi R^2}$ nên $I\\sim\\dfrac{1}{R^2}$; $R$ gấp đôi thì $I$ giảm 4 lần.",
+   "distractorNotes": {
+    "A": "Quên bình phương của $R$ trong diện tích mặt cầu $4\\pi R^2$.",
+    "B": "Coi $R^2$ nằm ở tử số, trong khi diện tích mặt cầu nằm ở mẫu số.",
+    "D": "Nhầm công suất nguồn không đổi với cường độ sóng không đổi."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "multiple_choice",
    "kind": "tinh_nhanh",
-   "topic": "Tính bước sóng, tốc độ truyền sóng từ sóng dừng",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Khoảng vân $i=1$ mm, bề rộng miền giao thoa $L=10$ mm (đối xứng qua vân trung tâm). Dùng $N_s=2\\left[\\dfrac{L}{2i}\\right]+1$, số vân sáng là bao nhiêu?",
-   "answer": "11",
-   "explanation": "$N_s=2\\left[\\dfrac{10}{2.1}\\right]+1=2.5+1=11$ (Dạng 10)."
+   "theorySection": 1,
+   "question": "Một ống có một đầu kín, một đầu hở, tần số âm cơ bản $f_1=\\dfrac{v}{4L}$. Nếu chiều dài ống tăng gấp đôi thì tần số âm cơ bản",
+   "options": [
+    "tăng gấp đôi",
+    "giảm một nửa",
+    "giảm 4 lần",
+    "không thay đổi"
+   ],
+   "answer": 1,
+   "explanation": "$f_1$ tỉ lệ nghịch với $L$, nên $L$ gấp đôi thì $f_1$ giảm còn một nửa, đúng như ống dài hơn cho nốt thấp hơn.",
+   "distractorNotes": {
+    "A": "Coi $f_1$ tỉ lệ thuận với $L$, ngược với thí nghiệm nối dài ống làm nốt thấp xuống.",
+    "C": "Nhầm hệ số 4 ở mẫu thành $L$ bị bình phương.",
+    "D": "Quên rằng $L$ nằm ở mẫu số của công thức tần số cơ bản."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "multiple_choice",
    "kind": "bien_doi",
-   "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Sóng dừng trên dây hai đầu cố định dài $L=60$ cm, có 3 bụng. Bước sóng là bao nhiêu cm?",
-   "answer": "40",
-   "explanation": "$L=n\\dfrac{\\lambda}{2}$ với $n=3$ nên $\\lambda=\\dfrac{2L}{3}=40$ cm (Dạng 13)."
+   "theorySection": 1,
+   "question": "Từ công thức khoảng vân $i=\\dfrac{\\lambda D}{a}$, bước sóng ánh sáng được tính bằng",
+   "options": [
+    "$\\lambda=\\dfrac{iD}{a}$",
+    "$\\lambda=\\dfrac{aD}{i}$",
+    "$\\lambda=\\dfrac{i}{aD}$",
+    "$\\lambda=\\dfrac{ia}{D}$"
+   ],
+   "answer": 3,
+   "explanation": "Nhân hai vế với $a$ rồi chia cho $D$ được $\\lambda=\\dfrac{ia}{D}$, đúng công thức dùng trong thí nghiệm đo laser.",
+   "distractorNotes": {
+    "A": "Giữ nguyên vị trí $a$ và $D$ như công thức gốc, không thực hiện chuyển vế.",
+    "B": "Chuyển $i$ xuống mẫu, làm sai quy tắc chuyển vế.",
+    "C": "Chia cho cả $a$ lẫn $D$, sai quy tắc chuyển vế của phép nhân."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Nút, bụng sóng và điều kiện có sóng dừng",
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điểm trên cùng một phương truyền sóng, cách nhau $d$, dao động lệch pha nhau",
+   "options": [
+    "$\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$",
+    "$\\Delta\\varphi=\\dfrac{2\\pi\\lambda}{d}$",
+    "$\\Delta\\varphi=\\dfrac{\\pi d}{\\lambda}$",
+    "$\\Delta\\varphi=2\\pi d\\lambda$"
+   ],
+   "answer": 0,
+   "explanation": "Dạng 3: $\\Delta\\varphi=\\dfrac{2\\pi d}{\\lambda}$; $d=\\lambda$ ứng với lệch một vòng $2\\pi$.",
+   "distractorNotes": {
+    "B": "Đảo tử và mẫu, khiến hai điểm càng xa nhau lại càng lệch pha ít.",
+    "C": "Thiếu hệ số 2, nhầm với biểu thức trong công thức biên độ giao thoa.",
+    "D": "Nhân với $\\lambda$ thay vì chia, khiến góc pha mang thứ nguyên của diện tích."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên một trường giao thoa đối xứng qua vân trung tâm trong thí nghiệm khe Young, số vân sáng",
+   "options": [
+    "luôn là một số chẵn",
+    "luôn bằng số vân tối",
+    "luôn là một số lẻ",
+    "luôn gấp đôi số vân tối"
+   ],
+   "answer": 2,
+   "explanation": "$N_s=2\\left[\\dfrac{L}{2i}\\right]+1$ luôn lẻ vì có vân trung tâm cộng các cặp đối xứng.",
+   "distractorNotes": {
+    "A": "Gán tính chất số chẵn của vân tối cho vân sáng.",
+    "B": "Vân sáng có số lượng lẻ, vân tối có số lượng chẵn, nên hai số không thể bằng nhau.",
+    "D": "Vân sáng và vân tối xen kẽ nên số lượng gần bằng nhau, không thể gấp đôi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 14. Bài tập về sóng",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Sóng dừng có $A_M=2A\\left|\\sin\\left(\\dfrac{2\\pi x}{\\lambda}\\right)\\right|$ với $A=3$ cm. Điểm M cách nút gần nhất $x=\\dfrac{\\lambda}{4}$ có biên độ bao nhiêu cm?",
-   "answer": "6",
-   "explanation": "$\\sin\\dfrac{\\pi}{2}=1$ nên $A_M=2A=6$ cm (Dạng 15)."
+   "theorySection": 2,
+   "question": "Khi đếm số cực đại trên đoạn nối hai nguồn $S_1S_2$, điều kiện được viết với dấu $\\lt$ thay cho $\\le$ vì",
+   "options": [
+    "hai nguồn không được tính vào số điểm đếm",
+    "số nguyên $k$ chỉ nhận các giá trị dương",
+    "tại hai nguồn biên độ luôn là cực tiểu",
+    "bước sóng luôn lớn hơn khoảng $S_1S_2$"
+   ],
+   "answer": 0,
+   "explanation": "Theo Bẫy 2, hai nguồn S₁, S₂ không tính vào số điểm đếm nên dùng dấu $\\lt$.",
+   "distractorNotes": {
+    "B": "Bỏ qua việc $k$ nhận cả giá trị âm và dương, đối xứng qua trung điểm AB.",
+    "C": "Dấu $\\lt$ xuất phát từ quy ước không đếm hai nguồn, không phải từ biên độ tại nguồn.",
+    "D": "Bước sóng thường nhỏ hơn nhiều so với $S_1S_2$, ví dụ mẫu có $S_1S_2=10\\lambda$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dây đàn dài $L$, hai đầu cố định, tốc độ truyền sóng trên dây là $v$. Tần số cơ bản của dây là",
+   "options": [
+    "$f_1=\\dfrac{v}{4L}$",
+    "$f_1=\\dfrac{v}{2L}$",
+    "$f_1=\\dfrac{2L}{v}$",
+    "$f_1=\\dfrac{L}{2v}$"
+   ],
+   "answer": 1,
+   "explanation": "Dạng 14: hai đầu là nút nên $f_1=\\dfrac{v}{2L}$, các họa âm $f_n=nf_1$.",
+   "distractorNotes": {
+    "A": "Dùng công thức của ống một đầu nút, một đầu bụng cho dây hai đầu cố định.",
+    "C": "Đây là chu kỳ cơ bản $\\dfrac{2L}{v}$, nhầm giữa chu kỳ và tần số.",
+    "D": "Đặt $L$ lên tử và $v$ xuống mẫu, sai chiều phụ thuộc và không ra đơn vị hertz."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thả một nút chai vào chậu nước rộng, gõ nhịp đều một đầu thước xuống mặt nước để tạo sóng. Bấm giờ dao động của nút chai và đo khoảng cách các ngọn sóng liên tiếp. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Bước sóng liên hệ với tốc độ và chu kỳ theo $\\lambda=vT$.",
+     "answer": true
+    },
+    {
+     "text": "Khoảng cách giữa 5 ngọn sóng liên tiếp bằng $5\\lambda$.",
+     "answer": false
+    },
+    {
+     "text": "Nếu gõ nhanh hơn (tần số tăng) mà tốc độ truyền sóng không đổi thì bước sóng giảm.",
+     "answer": true
+    },
+    {
+     "text": "Một điểm M trên mặt nước cách nguồn khoảng $x$ dao động sớm pha hơn nguồn $\\dfrac{2\\pi x}{\\lambda}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\lambda=vT=\\dfrac{v}{f}$; 5 ngọn liên tiếp chỉ có 4 khoảng nên cách nhau $4\\lambda$; M trễ pha (không sớm pha) $\\dfrac{2\\pi x}{\\lambda}$ so với nguồn.",
+   "distractorNotes": {
+    "0": "Bước sóng là quãng đường sóng truyền trong một chu kỳ, nên $\\lambda=vT$ không thể sai.",
+    "1": "Đếm số ngọn thay cho số khoảng, trong khi 5 mốc chỉ tạo ra 4 khoảng, tức $4\\lambda$.",
+    "2": "Từ $\\lambda=\\dfrac{v}{f}$, khi $v$ không đổi mà $f$ tăng thì $\\lambda$ phải giảm.",
+    "3": "Sóng tới M sau khi rời nguồn nên M trễ pha, ứng với dấu trừ trong phương trình $u_M$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chiếu laser đỏ qua hai khe Young cách nhau $a$, màn đặt cách khe $D$. Học sinh đo khoảng cách $\\ell$ của 6 vân sáng liên tiếp rồi suy ra khoảng vân. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Khoảng cách 6 vân sáng liên tiếp bằng $5i$.",
+     "answer": true
+    },
+    {
+     "text": "Dời màn ra xa để $D$ tăng gấp đôi thì khoảng vân tăng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Vân tối nằm tại các vị trí $x=ki$ tính từ vân trung tâm.",
+     "answer": false
+    },
+    {
+     "text": "Đo gộp 5 khoảng vân rồi chia 5 làm giá trị thật của $i$ lớn hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "$i=\\dfrac{\\lambda D}{a}$ tỉ lệ với $D$; vân tối ở $x=(k+\\tfrac12)i$; đo gộp chỉ giảm sai số tương đối, không đổi giá trị $i$.",
+   "distractorNotes": {
+    "0": "6 vân sáng liên tiếp là 6 mốc, tạo ra đúng 5 khoảng vân.",
+    "1": "$i=\\dfrac{\\lambda D}{a}$ tỉ lệ thuận với $D$, nên $D$ gấp đôi thì $i$ gấp đôi.",
+    "2": "$x=ki$ là vị trí vân sáng, còn vân tối nằm tại $x=(k+\\tfrac12)i$.",
+    "3": "Giá trị $i$ do $\\lambda$, $D$, $a$ quyết định; cách đo gộp chỉ làm giảm sai số."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên mặt nước có hai nguồn sóng A, B dao động cùng pha, cùng tần số. Xét các điểm dao động với biên độ cực đại, cực tiểu trên đoạn AB. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Điểm M là cực đại khi hiệu đường đi $d_2-d_1=k\\lambda$.",
+     "answer": true
+    },
+    {
+     "text": "Trung điểm của đoạn AB là một điểm cực tiểu.",
+     "answer": false
+    },
+    {
+     "text": "Hai cực đại liền kề trên đoạn AB cách nhau $\\dfrac{\\lambda}{2}$.",
+     "answer": true
+    },
+    {
+     "text": "Hai nguồn A, B được tính vào số điểm cực đại trên đoạn AB.",
+     "answer": false
+    }
+   ],
+   "explanation": "Nguồn cùng pha: cực đại khi $d_2-d_1=k\\lambda$; trung điểm có hiệu đường bằng 0 nên là cực đại; cực đại liền kề cách $\\dfrac{\\lambda}{2}$; hai nguồn không được đếm.",
+   "distractorNotes": {
+    "0": "Đây chính là điều kiện cực đại của hai nguồn cùng pha ở Dạng 6.",
+    "1": "Trung điểm có $d_2-d_1=0\\cdot\\lambda$ nên là cực đại khi hai nguồn cùng pha.",
+    "2": "Cực đại xen kẽ cực tiểu như Hình 2, nên hai cực đại liền kề cách nhau nửa bước sóng.",
+    "3": "Bài quy ước không tính hai nguồn vào số điểm đếm, vì thế điều kiện dùng dấu $\\lt$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bịt kín một đầu ống nhựa rồi thổi ngang miệng đầu còn lại, ống kêu một nốt ổn định do có sóng dừng trong cột khí. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Đầu kín của ống là nút sóng, miệng hở là bụng sóng.",
+     "answer": true
+    },
+    {
+     "text": "Chiều dài ống thoả mãn $L=(2n+1)\\dfrac{\\lambda}{4}$.",
+     "answer": true
+    },
+    {
+     "text": "Với $n$ trong biểu thức trên, cột khí có $n$ bụng và $n+1$ nút.",
+     "answer": false
+    },
+    {
+     "text": "Các tần số cộng hưởng của ống là bội số nguyên bất kì của $f_1=\\dfrac{v}{4L}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Một đầu nút, một đầu bụng: $L=(2n+1)\\dfrac{\\lambda}{4}$, có $n+1$ bụng và $n+1$ nút; tần số $f_m=mf_1$ với $m$ lẻ.",
+   "distractorNotes": {
+    "0": "Đầu kín tương ứng đầu cố định nên là nút, miệng hở tương ứng đầu tự do nên là bụng.",
+    "1": "Một đầu nút, một đầu bụng thì $L$ bằng số lẻ lần $\\dfrac{\\lambda}{4}$.",
+    "2": "Đếm theo kiểu dây hai đầu cố định, quên rằng miệng hở cũng là bụng nên có $n+1$ bụng.",
+    "3": "Chỉ các bội số lẻ của $f_1$ mới thỏa điều kiện một đầu nút, một đầu bụng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một đài phát thanh FM phát sóng điện từ có tần số $f$ truyền trong không khí. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Bước sóng và tần số liên hệ theo $f=\\dfrac{c}{\\lambda}$.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ $c$ trong công thức lấy bằng $3\\cdot10^8\\ \\text{m/s}$.",
+     "answer": true
+    },
+    {
+     "text": "Theo bước sóng giảm dần, thang sóng là vô tuyến, hồng ngoại, ánh sáng nhìn thấy, tử ngoại.",
+     "answer": true
+    },
+    {
+     "text": "Đài phát tần số càng cao thì bước sóng của sóng càng dài.",
+     "answer": false
+    }
+   ],
+   "explanation": "$f=\\dfrac{c}{\\lambda}$ với $c=3\\cdot10^8$ m/s nên $f$ tăng thì $\\lambda$ giảm; thang sóng theo $\\lambda$ giảm dần như phần ghi chú họ A.",
+   "distractorNotes": {
+    "0": "Đây là công thức Dạng 5 áp dụng cho sóng điện từ.",
+    "1": "Tốc độ sóng điện từ trong không khí lấy đúng bằng $c=3\\cdot10^8$ m/s như bài đã cho.",
+    "2": "Thứ tự này khớp với thang sóng theo bước sóng giảm dần trong ghi chú họ A.",
+    "3": "Từ $\\lambda=\\dfrac{c}{f}$, bước sóng tỉ lệ nghịch với tần số nên tần số cao thì bước sóng ngắn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Bài 14. Bài tập về sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm khe Young, chiếu đồng thời hai bức xạ có bước sóng $\\lambda_1$ và $\\lambda_2$. Trên màn có những vị trí vân sáng của hai bức xạ trùng nhau. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hai vân sáng trùng nhau khi $k_1\\lambda_1=k_2\\lambda_2$.",
+     "answer": true
+    },
+    {
+     "text": "Tại vị trí trùng, tỉ số $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_1}{\\lambda_2}$.",
+     "answer": false
+    },
+    {
+     "text": "Vân trung tâm là vân sáng chung của cả hai bức xạ.",
+     "answer": true
+    },
+    {
+     "text": "Thay đổi khoảng cách hai khe $a$ thì tỉ số $\\dfrac{k_1}{k_2}$ tại vị trí trùng thay đổi.",
+     "answer": false
+    }
+   ],
+   "explanation": "Từ $k_1\\lambda_1=k_2\\lambda_2$ suy ra $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_2}{\\lambda_1}$, chỉ phụ thuộc bước sóng; tại $x=0$ cả hai đều có $k=0$.",
+   "distractorNotes": {
+    "0": "Từ $k_1i_1=k_2i_2$, rút gọn thừa số $\\dfrac{D}{a}$ thu được đúng điều kiện $k_1\\lambda_1=k_2\\lambda_2$.",
+    "1": "Chuyển vế bị đảo tỉ số: bức xạ có bước sóng lớn hơn ứng với bậc vân nhỏ hơn.",
+    "2": "Tại $x=0$, cả hai bức xạ đều cho vân sáng bậc $k=0$ nên chúng trùng nhau.",
+    "3": "Khoảng cách $a$ triệt tiêu khi rút gọn, tỉ số $\\dfrac{k_1}{k_2}$ chỉ phụ thuộc hai bước sóng."
+   }
   }
  ]
 }

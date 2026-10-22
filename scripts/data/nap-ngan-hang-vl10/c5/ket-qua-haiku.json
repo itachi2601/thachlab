@@ -1,0 +1,461 @@
+[
+ {
+  "key": "c5-1-mc-005",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "Phương án A về mặt toán học tương đương D (mũi tên đặt trên cả phân số), nhưng dạng chuẩn trong sách là D nên chọn D.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật II Newton: gia tốc của một vật cùng hướng với lực tác dụng lên vật, có độ lớn tỉ lệ thuận với độ lớn của lực và tỉ lệ nghịch với khối lượng của vật.</p><p class=\"text-base leading-relaxed my-2\">Biểu thức: $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{F}=m\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{a}$, trong đó $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{a}$ là gia tốc.</p><p class=\"text-base leading-relaxed my-2\">Gia tốc là đạo hàm của vận tốc theo thời gian, với độ biến thiên vận tốc trong khoảng thời gian ngắn: $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{a}=\\dfrac{\\Delta\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}}{\\Delta t}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{F}=m\\dfrac{\\Delta\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}}{\\Delta t}$.</p><p class=\"text-base leading-relaxed my-2\">Đáp án D đúng. Phương án C thiếu khối lượng $m$; phương án B dùng độ lớn $\\Delta v$ thay cho độ biến thiên vectơ vận tốc.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 11
+ },
+ {
+  "key": "c5-1-mc-007",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "giai": "B",
+  "trangThai": "khop",
+  "ghi_chu": "Phương án C trong đề bị vỡ công thức (\"F/Δ tm\"); đã hiểu là không đúng với dạng tổng quát nên không ảnh hưởng đến đáp án.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định lí biến thiên động lượng (dạng xung lượng): khi lực $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{F}$ không đổi tác dụng lên chất điểm trong khoảng thời gian $\\Delta t$, độ biến thiên động lượng bằng xung lượng của lực: $\\Delta \\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p} = \\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{F}\\Delta t$.</p><p class=\"text-base leading-relaxed my-2\">Chất điểm bắt đầu chuyển động từ trạng thái nghỉ nên động lượng ban đầu $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p}_0 = \\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{0}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p} - \\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p}_0 = \\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{F}\\Delta t$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p} = \\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{F}\\Delta t$ (với $\\Delta t = t$ là thời gian tính từ lúc bắt đầu chuyển động).</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra các phương án còn lại: A và D có thứ nguyên sai (chứa khối lượng $m$ trong khi động lượng không phụ thuộc trực tiếp như vậy); C bị lỗi công thức và không đúng dạng $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{F}\\Delta t$.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: đáp án đúng là <b>B</b>, $p = F\\Delta t$.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 17
+ },
+ {
+  "key": "c5-1-mc-008",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "A",
+  "trangThai": "LECH",
+  "ghi_chu": "Đề có hai phương án A và D đều đúng về mặt toán học (D là A khi thay p_i = m_i v_i). Chọn A vì đây là định nghĩa trực tiếp trong sách giáo khoa. Phương án B và C bị lỗi công thức từ Word, không đọc được chính xác.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của một vật là $\\vec{p}=m\\vec{v}$, là đại lượng vectơ.</p><p class=\"text-base leading-relaxed my-2\">Động lượng toàn phần của hệ là tổng vectơ động lượng của tất cả các vật trong hệ: $\\vec{p}=\\vec{p}_1+\\vec{p}_2+\\dots$</p><p class=\"text-base leading-relaxed my-2\">Đáp án đúng là A.</p><p class=\"text-base leading-relaxed my-2\">Phương án D cũng đúng khi thay $\\vec{p}_i=m_i\\vec{v}_i$ vào, nhưng biểu thức định nghĩa trực tiếp của động lượng toàn phần là dạng tổng các động lượng thành phần ở A. Phương án B và C bị lỗi ký tự, không phải biểu thức đúng.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-mc-009",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "Đề gốc bị vỡ công thức: '\\sqrt{p_1^2} + p_2^2' được hiểu là $\\sqrt{p_1^2 + p_2^2}$ (dấu căn bao cả tổng), vì đây là công thức chuẩn cho hai động lượng vuông góc.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của hệ hai vật là tổng vectơ: $\\vec{p} = \\vec{p}_1 + \\vec{p}_2$.</p><p class=\"text-base leading-relaxed my-2\">Độ lớn của tổng hai vectơ được tính theo định lí hàm cos: $p^2 = p_1^2 + p_2^2 + 2p_1p_2\\cos\\alpha$, với $\\alpha$ là góc giữa $\\vec{p}_1$ và $\\vec{p}_2$.</p><p class=\"text-base leading-relaxed my-2\">Biểu thức đề cho $p = \\sqrt{p_1^2 + p_2^2}$ tương ứng với $\\cos\\alpha = 0$, tức $\\alpha = 90^{0}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Hai vectơ vận tốc (cùng với hai vectơ động lượng) vuông góc với nhau.</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra các đáp án khác: cùng hướng cho $p = p_1 + p_2$; ngược chiều cho $p = |p_1 - p_2|$; hợp góc $60^{0}$ cho $p^2 = p_1^2 + p_2^2 + p_1p_2$ (không khớp).</p><p class=\"text-base leading-relaxed my-2\">Đáp án đúng: C.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-mc-011",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "giai": "A",
+  "trangThai": "khop",
+  "ghi_chu": "Đề gốc mất ký tự vector và dấu \\overset; hiểu $\\overset{\\rightarrow}{p}_{AB}=m(\\overset{\\rightarrow}{v}_1-\\overset{\\rightarrow}{v}_2)$. Đáp án A khớp với cách hiểu này.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của vật trong một hệ quy chiếu được xác định theo vận tốc của vật đối với hệ quy chiếu đó: $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p}=m\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}$, trong đó $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}$ là vận tốc của vật đối với hệ quy chiếu đang xét.</p><p class=\"text-base leading-relaxed my-2\">Vận tốc của xe A đối với xe B (theo quy tắc cộng vận tốc cổ điển): $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{AB}=\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{1}-\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{2}$, với $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{1}$ là vận tốc của A và $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{2}$ là vận tốc của B đối với đường (hệ quy chiếu đứng yên).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Động lượng của xe A đối với hệ quy chiếu gắn với xe B: $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p}_{AB}=m\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{AB}=m\\left(\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{1}-\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{2}\\right)$.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: đáp án đúng là A.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 18
+ },
+ {
+  "key": "c5-1-mc-021",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "giai": "B",
+  "trangThai": "khop",
+  "ghi_chu": "Đề gốc mất dấu vectơ. Phương án B và D giống hệt nhau, nên có thể đề gốc ghi khác ở D (ví dụ dùng ký hiệu động lượng khác). Đã chọn B vì đây là đáp án đúng về mặt nội dung; nếu đáp án của bạn là D thì cần kiểm tra lại bản gốc.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của một vật là $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p}=m\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}$. Động lượng của hệ hai vật là tổng vectơ động lượng của từng vật (động lượng là đại lượng vectơ nên phải cộng theo quy tắc hình bình hành):</p><p class=\"text-base leading-relaxed my-2\">$\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p}=\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p_1}+\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p_2}=m_1\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_1}+m_2\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_2}$</p><p class=\"text-base leading-relaxed my-2\">Trong các phương án, chỉ có $m_1\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_1}+m_2\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_2}$ đúng. Phương án A chỉ đúng khi hệ có một vận tốc chung, còn phương án C chỉ đúng khi tổng động lượng bằng 0.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: động lượng của hệ là $m_1\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_1}+m_2\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_2}$, chọn <b>B</b>.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 15
+ },
+ {
+  "key": "c5-1-mc-023",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "Đề gốc bị mất dấu ngoặc và mũi tên véc tơ ở phương án C, D. Mình hiểu C là $\\overset{\\rightarrow}{p}=m(\\overset{\\rightarrow}{v_1}+\\overset{\\rightarrow}{v_2})$ và D là dạng vô hướng bị lỗi. Đề không nói rõ hướng của hai vận tốc nên đáp án C là phương án tổng quát nhất.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của hệ hai vật là tổng véc tơ động lượng của từng vật: $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p}=\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p_1}+\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p_2}$.</p><p class=\"text-base leading-relaxed my-2\">Với mỗi vật, động lượng là $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p_i}=m\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_i}$, nên $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p}=m\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_1}+m\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_2}=m\\left(\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_1}+\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v_2}\\right)$.</p><p class=\"text-base leading-relaxed my-2\">Phương án A và B chỉ đúng khi hai véc tơ vận tốc trùng nhau về cả hướng lẫn độ lớn, đề bài không nói điều này nên loại. Phương án D là đại lượng vô hướng, không đúng vì động lượng là đại lượng véc tơ.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: đáp án đúng là C.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 13
+ },
+ {
+  "key": "c5-1-tf-053",
+  "type": "true_false",
+  "nguon": [
+   false,
+   true,
+   false,
+   true
+  ],
+  "giai": [
+   false,
+   false,
+   false,
+   true
+  ],
+  "trangThai": "LECH",
+  "ghi_chu": "Ý a) trong đề có chữ \"sai\" thừa giữa câu (\"Vận tốc của ô tô sai khi đi được 50 m\"); đã hiểu là \"Vận tốc của ô tô khi đi được 50 m là 20 m/s\". Đáp án không đổi dù đọc thế nào vì giá trị đúng là 10 m/s.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Đổi khối lượng: $m = 1$ tấn $= 1000$ kg. Chọn chiều dương là chiều chuyển động của ô tô.</p><p class=\"text-base leading-relaxed my-2\">Ô tô chuyển động nhanh dần đều từ trạng thái nghỉ nên áp dụng công thức liên hệ vận tốc, gia tốc và quãng đường: $v^2 - v_0^2 = 2as$.</p><p class=\"text-base leading-relaxed my-2\">Thay $v_0 = 0$, $a = 1$ m/s$^2$, $s = 50$ m: $v^2 = 2 \\cdot 1 \\cdot 50 = 100$ m$^2$/s$^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow v = 10$ m/s.</p><p class=\"text-base leading-relaxed my-2\"><b>a) Sai.</b> Vận tốc khi đi được 50 m là 10 m/s, không phải 20 m/s.</p><p class=\"text-base leading-relaxed my-2\"><b>b) Sai.</b> Động lượng: $p = mv = 1000 \\cdot 10 = 10000$ kg.m/s. Giá trị $20000\\sqrt{5}$ kg.m/s là sai.</p><p class=\"text-base leading-relaxed my-2\"><b>c) Sai.</b> Khi $v = 30$ m/s: $p = mv = 1000 \\cdot 30 = 30000$ kg.m/s, không phải 32000 kg.m/s.</p><p class=\"text-base leading-relaxed my-2\"><b>d) Đúng.</b> Từ $p = mv$ suy ra $v = \\dfrac{p}{m} = \\dfrac{25000}{1000} = 25$ m/s.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-tf-054",
+  "type": "true_false",
+  "nguon": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "giai": [
+   true,
+   false,
+   false,
+   true
+  ],
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của vật: $\\vec{p} = m\\vec{v}$, có độ lớn $p = mv$.</p><p class=\"text-base leading-relaxed my-2\">Động lượng của vật 1: $p_1 = m_1v_1 = 2 \\cdot 4 = 8\\ \\text{kg.m/s}$.</p><p class=\"text-base leading-relaxed my-2\">Động lượng của vật 2: $p_2 = m_2v_2 = 3 \\cdot 2 = 6\\ \\text{kg.m/s}$.</p><p class=\"text-base leading-relaxed my-2\">Động lượng của hệ: $\\vec{p} = \\vec{p_1} + \\vec{p_2}$, với $p^2 = p_1^2 + p_2^2 + 2p_1p_2\\cos\\alpha$, trong đó $\\alpha$ là góc giữa $\\vec{v_1}$ và $\\vec{v_2}$.</p><p class=\"text-base leading-relaxed my-2\">a) Cùng hướng ($\\alpha = 0^\\circ$): $p = p_1 + p_2 = 8 + 6 = 14\\ \\text{kg.m/s}$. Đúng.</p><p class=\"text-base leading-relaxed my-2\">b) Ngược hướng ($\\alpha = 180^\\circ$): $p = |p_1 - p_2| = |8 - 6| = 2\\ \\text{kg.m/s}$, không phải $6\\ \\text{kg.m/s}$. Sai.</p><p class=\"text-base leading-relaxed my-2\">c) Vuông góc ($\\alpha = 90^\\circ$): $p = \\sqrt{p_1^2 + p_2^2} = \\sqrt{8^2 + 6^2} = \\sqrt{100} = 10\\ \\text{kg.m/s}$, không phải $2\\ \\text{kg.m/s}$. Sai.</p><p class=\"text-base leading-relaxed my-2\">d) Góc $60^\\circ$: $p^2 = 8^2 + 6^2 + 2 \\cdot 8 \\cdot 6 \\cdot \\cos 60^\\circ = 64 + 36 + 48 = 148$, suy ra $p = \\sqrt{148} = 2\\sqrt{37}\\ \\text{kg.m/s}$. Đúng.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-1-tf-060",
+  "type": "true_false",
+  "nguon": [
+   false,
+   true,
+   true,
+   true
+  ],
+  "giai": [
+   true,
+   false,
+   false,
+   false
+  ],
+  "trangThai": "LECH",
+  "ghi_chu": "Đề gốc ghi \"0,l s\" được hiểu là 0,1 s; \"6, 4 k g . m / s\" là 6,4 kg.m/s. Ý c) được hiểu theo nghĩa góc 60° đo từ mặt tường. Nếu đề muốn góc 60° đo từ phương pháp tuyến với tường thì thành phần vuông góc là $v\\cos 60^\\circ = 4$ m/s, $\\Delta p = 3{,}2$ kg.m/s và ý c) sẽ đúng về độ lớn. Đáp án trên theo nghĩa \"hợp với tường\" trong đề.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\"><strong>Chọn chiều dương</strong> là chiều bóng bật ra khỏi tường (vuông góc với tường, hướng ra xa tường).</p><p class=\"text-base leading-relaxed my-2\"><strong>Ý a)</strong> Động lượng ban đầu (bóng hướng vào tường): $p_1 = -mv = -0{,}4 \\cdot 8 = -3{,}2$ kg.m/s.</p><p class=\"text-base leading-relaxed my-2\">Động lượng sau khi bật lại: $p_2 = +mv = +0{,}4 \\cdot 8 = +3{,}2$ kg.m/s.</p><p class=\"text-base leading-relaxed my-2\">Độ biến thiên động lượng: $\\Delta p = p_2 - p_1 = 3{,}2 - (-3{,}2) = 6{,}4$ kg.m/s.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Ý a) <strong>Đúng</strong>.</p><p class=\"text-base leading-relaxed my-2\"><strong>Ý b) và d)</strong> Theo định luật II Niu-tơn dạng động lượng, lực trung bình của tường tác dụng lên bóng:</p><p class=\"text-base leading-relaxed my-2\">$F = \\dfrac{\\Delta p}{\\Delta t} = \\dfrac{6{,}4}{0{,}1} = 64$ N.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Lực có chiều dương (cùng chiều với chiều bóng bật ra), độ lớn 64 N. Ý b) ghi $-64$ N nên <strong>Sai</strong>. Ý d) ghi $-32$ N nên <strong>Sai</strong>.</p><p class=\"text-base leading-relaxed my-2\"><strong>Ý c)</strong> Nếu bóng được đá theo phương hợp với tường góc 60°, thành phần vuông góc với tường là $v_\\perp = v\\sin 60^\\circ = 8 \\cdot \\dfrac{\\sqrt{3}}{2} \\approx 6{,}93$ m/s.</p><p class=\"text-base leading-relaxed my-2\">Độ biến thiên động lượng (chỉ thành phần vuông góc tường thay đổi): $\\Delta p = 2mv_\\perp = 2 \\cdot 0{,}4 \\cdot 6{,}93 \\approx 5{,}54$ kg.m/s, không phải $-3{,}2$ kg.m/s.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Ý c) <strong>Sai</strong>.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-001",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của vật là $\\vec{p} = m\\vec{v}$, là đại lượng vectơ có hướng cùng hướng với vận tốc và độ lớn $p = mv$.</p><p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: với hệ kín (không chịu ngoại lực hoặc tổng ngoại lực bằng 0), tổng động lượng $\\vec{p}_1 + \\vec{p}_2 + \\dots$ của hệ được bảo toàn, tức là không đổi theo thời gian.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Đúng. Trong hệ kín, động lượng của từng vật có thể thay đổi do tương tác với các vật khác trong hệ, miễn là tổng động lượng của hệ không đổi.</p><p class=\"text-base leading-relaxed my-2\">B. Đúng. Động lượng có hướng xác định bởi vận tốc nên là đại lượng vectơ.</p><p class=\"text-base leading-relaxed my-2\">C. Đúng. Độ lớn $p = mv$ là tích khối lượng và vận tốc.</p><p class=\"text-base leading-relaxed my-2\">D. Sai. Động lượng của hệ kín được bảo toàn, nên không thay đổi.</p><p class=\"text-base leading-relaxed my-2\"><b>Đáp án: D</b></p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-002",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của một vật được xác định bởi công thức véc tơ $\\vec{p} = m\\vec{v}$, trong đó $m$ là khối lượng và $\\vec{v}$ là vận tốc của vật.</p><p class=\"text-base leading-relaxed my-2\">Độ lớn của động lượng: $p = mv$, tức bằng tích khối lượng và tốc độ của vật. Do đó phương án A đúng.</p><p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: đối với hệ kín (không chịu ngoại lực hoặc tổng ngoại lực bằng không), tổng động lượng của hệ được bảo toàn. Do đó phương án B đúng.</p><p class=\"text-base leading-relaxed my-2\">Động lượng là đại lượng véc tơ, cùng hướng với vận tốc. Do đó phương án D đúng.</p><p class=\"text-base leading-relaxed my-2\">Phương án C nêu độ lớn động lượng bằng $m v^2$, điều này sai vì động lượng tỉ lệ với vận tốc bậc nhất chứ không phải bình phương. Đơn vị $m v^2$ là đơn vị của động năng, không phải động lượng.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: phát biểu sai là phương án C.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-003",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "Đề ghi \"Véc tơ động lượng của hệ\" ở A và \"động lượng của hệ kín\" ở D, không ghi rõ mũi tên véc tơ; đã hiểu theo nội dung chuẩn của định luật bảo toàn động lượng.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: Véc tơ động lượng toàn phần của một hệ kín (không chịu tác dụng của ngoại lực, hoặc tổng ngoại lực bằng 0) được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">$\\vec{p}_{\\text{tr}} = \\vec{p}_{\\text{s}}$ hay $\\sum \\vec{p}_i = \\text{const}$ khi hệ kín.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Sai, thiếu điều kiện \"toàn phần\" và \"hệ kín\". Động lượng của một vật riêng lẻ hoặc của hệ chịu ngoại lực không được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">B. Sai, thiếu điều kiện \"hệ kín\". Nếu hệ có ngoại lực khác không thì động lượng toàn phần không bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">C. Đúng, đây là đúng nội dung định luật bảo toàn động lượng.</p><p class=\"text-base leading-relaxed my-2\">D. Sai, động lượng là đại lượng véc tơ, phát biểu này thiếu tính véc tơ và không nêu rõ \"toàn phần\".</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-004",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "A",
+  "trangThai": "LECH",
+  "ghi_chu": "Phương án A và D giống hệt nhau về nội dung (có thể do lỗi khi chuyển từ Word). Chọn A. Phương án B bị vỡ công thức nên không đọc được chắc chắn; nếu B có ý khác thì cần kiểm tra lại đề gốc.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: với hệ hai vật cô lập (không chịu ngoại lực, hoặc ngoại lực triệt tiêu), tổng động lượng của hệ trước và sau va chạm bằng nhau.</p><p class=\"text-base leading-relaxed my-2\">Động lượng của vật: $\\vec{p} = m\\vec{v}$.</p><p class=\"text-base leading-relaxed my-2\">Trước va chạm, tổng động lượng: $m_{1}\\vec{v_{1}} + m_{2}\\vec{v_{2}}$.</p><p class=\"text-base leading-relaxed my-2\">Sau va chạm, tổng động lượng: $m_{1}\\vec{v_{1}'} + m_{2}\\vec{v_{2}'}$.</p><p class=\"text-base leading-relaxed my-2\">Suy ra: $m_{1}\\vec{v_{1}} + m_{2}\\vec{v_{2}} = m_{1}\\vec{v_{1}'} + m_{2}\\vec{v_{2}'}$.</p><p class=\"text-base leading-relaxed my-2\">Đáp án A (và D có cùng nội dung) đúng. Đáp án B bị lỗi công thức nên sai. Đáp án C sai vì hoán đổi vận tốc giữa hai vật với khối lượng không tương ứng.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-005",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\"><strong>Định luật bảo toàn động lượng:</strong> Động lượng của một hệ kín (hệ cô lập) được bảo toàn, tức là tổng động lượng $\\vec{p}$ của hệ không đổi theo thời gian.</p><p class=\"text-base leading-relaxed my-2\"><strong>Điều kiện áp dụng:</strong> Hệ cô lập, tức là tổng ngoại lực tác dụng lên hệ bằng 0 (hoặc nội lực lớn hơn rất nhiều so với ngoại lực trong khoảng thời gian tương tác rất ngắn).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$\\sum \\vec{F}_{ngoại} = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{\\Delta \\vec{p}}{\\Delta t} = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\vec{p}_{trước} = \\vec{p}_{sau}$.</p><p class=\"text-base leading-relaxed my-2\"><strong>Xét các phương án:</strong></p><p class=\"text-base leading-relaxed my-2\">A, B: Sai vì ma sát có thể là ngoại lực hoặc nội lực, không quyết định việc bảo toàn động lượng; điều kiện đúng là không có ngoại lực tổng hợp.</p><p class=\"text-base leading-relaxed my-2\">C: Sai vì hệ kín có ma sát vẫn có thể có ngoại lực (ví dụ ma sát với mặt sàn) nên động lượng không chắc bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">D: Đúng vì hệ cô lập thỏa mãn đúng điều kiện tổng ngoại lực bằng 0.</p><p class=\"text-base leading-relaxed my-2\"><strong>Kết luận:</strong> Định luật bảo toàn động lượng chỉ đúng trong trường hợp hệ cô lập. Đáp án <strong>D</strong>.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-006",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "Đề hỏi 'tương đương', theo cách trình bày phổ biến trong sách giáo khoa và đề trắc nghiệm, đáp án là định luật III Newton. Thực tế định luật bảo toàn động lượng được suy ra từ định luật II và III, nên nếu đề yêu cầu chính xác hơn thì có thể đáp án là 'II và III'; tuy nhiên trong các phương án đã cho, C là lựa chọn hợp lý nhất.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Xét hệ gồm hai vật tương tác với nhau và không chịu ngoại lực (hệ kín).</p><p class=\"text-base leading-relaxed my-2\">Theo định luật III Newton, lực do vật 1 tác dụng lên vật 2 và lực do vật 2 tác dụng lên vật 1 luôn cùng độ lớn, ngược chiều: $\\vec{F}_{12} = -\\vec{F}_{21}$.</p><p class=\"text-base leading-relaxed my-2\">Theo định luật II Newton dạng động lượng: $\\vec{F}_{12} = \\dfrac{\\Delta \\vec{p}_1}{\\Delta t}$ và $\\vec{F}_{21} = \\dfrac{\\Delta \\vec{p}_2}{\\Delta t}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{\\Delta \\vec{p}_1}{\\Delta t} = -\\dfrac{\\Delta \\vec{p}_2}{\\Delta t}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta \\vec{p}_1 + \\Delta \\vec{p}_2 = 0$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\vec{p}_1 + \\vec{p}_2 = \\text{const}$, tức là tổng động lượng của hệ được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">Ngược lại, nếu tổng động lượng của hệ hai vật được bảo toàn thì $\\Delta \\vec{p}_1 = -\\Delta \\vec{p}_2$, suy ra $\\vec{F}_{12} = -\\vec{F}_{21}$, đúng với định luật III Newton.</p><p class=\"text-base leading-relaxed my-2\">Vậy định luật bảo toàn động lượng tương đương với định luật III Newton (đáp án C).</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-007",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\"><strong>Đáp án: C. định luật bảo toàn động lượng.</strong></p><p class=\"text-base leading-relaxed my-2\">Chuyển động bằng phản lực xảy ra khi một phần của vật (khí, nhiên liệu cháy) được phụt ra phía sau với vận tốc nhất định, khiến vật chuyển động về phía trước.</p><p class=\"text-base leading-relaxed my-2\">Hệ gồm vật và phần khí phụt ra là hệ kín (bỏ qua ngoại lực so với lực đẩy trong thời gian rất ngắn), nên động lượng của hệ được bảo toàn: $\\vec{p}_{\\text{trước}} = \\vec{p}_{\\text{sau}}$.</p><p class=\"text-base leading-relaxed my-2\">Ban đầu hệ đứng yên nên tổng động lượng bằng 0. Sau khi phụt khí: $m_{\\text{khí}}\\vec{v}_{\\text{khí}} + m_{\\text{vật}}\\vec{v}_{\\text{vật}} = \\vec{0}$, tức phần vật chuyển động ngược hướng với khí phụt ra.</p><p class=\"text-base leading-relaxed my-2\">Vậy chuyển động bằng phản lực tuân theo định luật bảo toàn động lượng.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-008",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "Đề gốc có lỗi chính tả \"trực đối\" (đúng là \"trực đối\" = \"trực đối\", tức \"đối nhau\"), được hiểu là \"trực đối\" (cùng giá, ngược chiều).",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hệ kín (hệ cô lập) là hệ vật mà các vật trong hệ chỉ tương tác với nhau, không chịu tác dụng của lực từ các vật ngoài hệ.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">- A: Chỉ có lực của các vật trong hệ tác dụng lẫn nhau. Đây là cách phát biểu của định nghĩa hệ kín, nên đúng.</p><p class=\"text-base leading-relaxed my-2\">- B: Không có tác dụng của lực từ bên ngoài hệ. Đây là cách phát biểu tương đương của định nghĩa, nên đúng.</p><p class=\"text-base leading-relaxed my-2\">- C: Các nội lực từng đôi một trực đối nhau theo định luật III Niu-tơn. Vì hệ kín chỉ có nội lực, và nội lực giữa hai vật luôn là cặp lực-phản lực cùng độ lớn, ngược chiều, cùng giá (định luật III), nên đúng.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: cả A, B, C đều đúng, chọn D.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-010",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "giai": "B",
+  "trangThai": "khop",
+  "ghi_chu": "Đề có thể hiểu theo nghĩa rộng: súng giật (A) cũng được một số tài liệu coi là phản lực. Tuy nhiên theo nghĩa phổ biến trong SGK (phụt một phần khối lượng ra khỏi vật), trực thăng là phương án không thuộc nguyên tắc phản lực.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Chuyển động bằng phản lực là chuyển động có được nhờ một phần của vật được phóng ra với vận tốc nhất định, vật nhận phản lực ngược chiều. Hệ kín được bảo toàn động lượng: $\\vec{p}_{\\text{trước}} = \\vec{p}_{\\text{sau}}$.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Súng giật lùi khi bắn: viên đạn và khí thuốc súng được phóng ra phía trước, súng nhận phản lực ngược lại. Đây là chuyển động bằng phản lực.</p><p class=\"text-base leading-relaxed my-2\">B. Máy bay trực thăng: cánh quạt đẩy không khí xuống dưới, lực phản lực nâng máy bay lên. Đây không phải phóng một phần khối lượng của chính máy bay ra khỏi thân (không có dòng khí/nhiên liệu phụt ra từ động cơ theo nguyên tắc phản lực). Đây là chuyển động không theo nguyên tắc phản lực.</p><p class=\"text-base leading-relaxed my-2\">C. Tên lửa: khí cháy được phụt ra phía sau với vận tốc lớn, tên lửa nhận phản lực về phía trước. Đây là chuyển động bằng phản lực.</p><p class=\"text-base leading-relaxed my-2\">D. Con sứa biển: sứa co bóp, phụt nước ra phía sau để tiến về phía trước. Đây là chuyển động bằng phản lực.</p><p class=\"text-base leading-relaxed my-2\">Vậy đáp án là B.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-011",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Áp dụng định luật bảo toàn động lượng cho hệ kín (hệ vật ban đầu đứng yên): tổng động lượng trước và sau tương tác bằng nhau.</p><p class=\"text-base leading-relaxed my-2\">Ban đầu hệ đứng yên nên tổng động lượng bằng 0: $\\vec{p}_{\\text{tổng}} = 0$.</p><p class=\"text-base leading-relaxed my-2\">Sau khi phần một chuyển động theo một hướng với động lượng $\\vec{p}_1$, phần còn lại có động lượng $\\vec{p}_2$ sao cho $\\vec{p}_1 + \\vec{p}_2 = 0$, suy ra $\\vec{p}_2 = -\\vec{p}_1$.</p><p class=\"text-base leading-relaxed my-2\">Vậy $\\vec{p}_2$ ngược chiều với $\\vec{p}_1$, tức phần còn lại chuyển động theo hướng ngược lại.</p><p class=\"text-base leading-relaxed my-2\">Đáp án đúng: C.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-012",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "giai": "B",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Va chạm mềm là va chạm mà sau va chạm hai vật dính vào nhau và chuyển động cùng vận tốc (động năng không được bảo toàn, một phần chuyển thành nhiệt, biến dạng).</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Quả bóng đập vào tường rồi nảy ra: vật vẫn tách rời và chuyển động sau va chạm, đây là va chạm đàn hồi hoặc gần đàn hồi, không phải va chạm mềm.</p><p class=\"text-base leading-relaxed my-2\">B. Viên đạn xuyên vào và nằm gọn trong bao cát: đạn và bao cát dính vào nhau, cùng chuyển động sau va chạm. Đây là va chạm mềm.</p><p class=\"text-base leading-relaxed my-2\">C. Viên đạn xuyên qua tấm bia: đạn và bia tách rời sau va chạm, không dính nhau, không phải va chạm mềm.</p><p class=\"text-base leading-relaxed my-2\">D. Quả bóng tennis đập xuống sân: bóng nảy lên sau va chạm, tách khỏi sân, không phải va chạm mềm.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: đáp án đúng là B.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-013",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hệ kín là hệ không chịu tác dụng của ngoại lực, hoặc tổng ngoại lực tác dụng lên hệ bằng không.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Hai viên bi chuyển động trên mặt phẳng nằm ngang nhưng có ma sát lăn, ma sát này là ngoại lực làm thay đổi động lượng của hệ. Loại.</p><p class=\"text-base leading-relaxed my-2\">B. Trên mặt phẳng nghiêng, trọng lực có thành phần song song với mặt phẳng nghiêng làm thay đổi động lượng của hệ. Loại.</p><p class=\"text-base leading-relaxed my-2\">C. Hai viên bi rơi trong không khí chịu trọng lực và lực cản của không khí, đều là ngoại lực. Loại.</p><p class=\"text-base leading-relaxed my-2\">D. Mặt phẳng nằm ngang không ma sát: trọng lực và phản lực pháp tuyến cân bằng theo phương thẳng đứng, không có ngoại lực theo phương ngang. Tổng ngoại lực bằng không, nên hệ có thể xem là hệ kín.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>D</b>.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-014",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "giai": "A",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Động lượng của một vật được bảo toàn khi hợp lực tác dụng lên vật bằng 0, tức là $\\vec{F}_{hl}=0$. Khi đó, theo định luật II Newton, $\\vec{F}_{hl}=\\dfrac{\\Delta \\vec{p}}{\\Delta t}=0$ nên $\\Delta \\vec{p}=0$, hay $\\vec{p}$ không đổi.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Vật chuyển động thẳng đều: vận tốc không đổi về độ lớn và hướng, nên $\\vec{p}=m\\vec{v}$ không đổi. Hợp lực bằng 0 nên động lượng được bảo toàn. <b>Đúng.</b></p><p class=\"text-base leading-relaxed my-2\">B. Chuyển động tròn đều: độ lớn vận tốc không đổi nhưng hướng thay đổi liên tục, nên $\\vec{p}$ thay đổi. Hợp lực là lực hướng tâm khác 0. <b>Loại.</b></p><p class=\"text-base leading-relaxed my-2\">C. Nhanh dần đều: vận tốc tăng, có gia tốc, hợp lực khác 0, nên $\\vec{p}$ thay đổi. <b>Loại.</b></p><p class=\"text-base leading-relaxed my-2\">D. Chậm dần đều: vận tốc giảm, có gia tốc, hợp lực khác 0, nên $\\vec{p}$ thay đổi. <b>Loại.</b></p><p class=\"text-base leading-relaxed my-2\">Kết luận: động lượng của vật được bảo toàn khi vật chuyển động thẳng đều trên mặt phẳng nằm ngang, đáp án <b>A</b>.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-015",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Chuyển động bằng phản lực là chuyển động của vật được tạo ra nhờ phần khối lượng được phụt ra khỏi vật với một vận tốc nhất định, ví dụ tên lửa hay động cơ phản lực.</p><p class=\"text-base leading-relaxed my-2\">Hệ gồm vật và phần khối lượng phụt ra được xem là hệ kín (bỏ qua ngoại lực so với lực đẩy trong thời gian rất ngắn), nên động lượng của hệ được bảo toàn: $\\vec{p}_{\\text{trước}} = \\vec{p}_{\\text{sau}}$.</p><p class=\"text-base leading-relaxed my-2\">Vật thu được động lượng ngược chiều với phần khối lượng phụt ra, từ đó tạo ra chuyển động.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: chuyển động bằng phản lực tuân theo định luật bảo toàn động lượng.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-016",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "giai": "B",
+  "trangThai": "khop",
+  "ghi_chu": "Đề có thể gây nhầm lẫn vì A, C, D cũng gần đúng về nội dung. Đáp án B được chọn vì đây là phát biểu chính xác và đầy đủ nhất của định luật (có điều kiện hệ kín và tính véctơ). Nếu đề gốc có đáp án khác thì cần đối chiếu lại.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: trong hệ kín (không chịu ngoại lực, hoặc tổng ngoại lực bằng 0), tổng động lượng $\\vec{p} = \\sum m_i \\vec{v}_i$ của hệ được bảo toàn, tức là là một véctơ không đổi cả về hướng lẫn độ lớn.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Đúng về nội dung nhưng chưa nêu rõ tính chất véctơ của động lượng hệ. Đây là cách diễn đạt rút gọn của định luật.</p><p class=\"text-base leading-relaxed my-2\">B. Đúng. Tổng động lượng của hệ kín là một véctơ không đổi, nghĩa là giữ nguyên cả hướng và độ lớn. Đây là phát biểu chính xác nhất của định luật.</p><p class=\"text-base leading-relaxed my-2\">C. Đúng về mặt ứng dụng: tên lửa chuyển động nhờ phản lực, dựa trên bảo toàn động lượng của hệ tên lửa và khí phụt ra.</p><p class=\"text-base leading-relaxed my-2\">D. Về bản chất cũng đúng (động lượng hệ trước và sau tương tác bằng nhau), nhưng phát biểu chưa nêu điều kiện hệ kín và tính véctơ.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: phương án B là đáp án phát biểu đầy đủ và chính xác nhất.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-017",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "giai": "D",
+  "trangThai": "LECH",
+  "ghi_chu": "Đề gốc có thể bị lỗi: theo vật lí, cả A, B, C đều liên quan đến định luật bảo toàn động lượng, nên câu D (\"đều không liên quan\") về mặt nội dung cũng sai. Có khả năng phương án D gốc là \"đều liên quan\" và đáp án đúng phải là D. Nên kiểm tra lại đề gốc.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: nếu hệ kín (tổng ngoại lực bằng 0 hoặc không đáng kể) thì tổng động lượng của hệ được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">A. Vận động viên dậm đất để nhảy: chân đẩy đất về phía sau, đất đẩy người lên phía trước. Hệ người và Trái Đất có tổng động lượng không đổi nên có liên quan.</p><p class=\"text-base leading-relaxed my-2\">B. Người nhảy từ thuyền lên bờ: người nhận động lượng hướng về bờ, thuyền nhận động lượng ngược lại nên chuyển động lùi. Hệ người và thuyền có liên quan đến định luật.</p><p class=\"text-base leading-relaxed my-2\">C. Ô tô xả khí thải: khí được phụt ra phía sau với động lượng nhất định, ô tô nhận động lượng ngược chiều và chuyển động về phía trước. Đây là chuyển động bằng phản lực, có liên quan đến định luật.</p><p class=\"text-base leading-relaxed my-2\">Cả ba hiện tượng A, B, C đều được giải thích bằng bảo toàn động lượng nên không có phương án nào trong A, B, C là đáp án. Phương án D là đáp án được chọn theo đề bài đã cho.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-019",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "Đề có thể hiểu theo nhiều cách ở phương án D (“tổng hợp lực” có thể là ngoại lực hoặc tổng tất cả lực). Đáp án chọn D vì đây là phương án thiếu điều kiện đặc trưng (tổng ngoại lực bằng 0), trong khi A, B, C đều đúng theo định nghĩa hệ kín.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hệ kín (hệ cô lập) là hệ mà các vật chỉ tương tác với nhau, không chịu tác dụng của vật ngoài hệ. Khi đó, mọi lực tương tác trong hệ đều là nội lực, và tổng các ngoại lực bằng không.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Đúng, vì đây chính là định nghĩa hệ kín.</p><p class=\"text-base leading-relaxed my-2\">B. Đúng, vì hệ kín không có vật ngoài tác dụng, nên lực giữa các vật trong hệ là nội lực.</p><p class=\"text-base leading-relaxed my-2\">C. Đúng, vì hệ không chịu ngoại lực nào (hoặc các ngoại lực triệt tiêu nhau), tức là $\\sum \\vec{F}_{ngoại} = \\vec{0}$.</p><p class=\"text-base leading-relaxed my-2\">D. Sai. Phát biểu này không đúng với điều kiện của hệ kín. Điều đặc trưng của hệ kín là tổng <i>ngoại lực</i> bằng $\\vec{0}$, còn “tổng hợp lực tác dụng lên hệ” không xác định rõ là ngoại lực hay nội lực, nên không thể dùng để nhận biết hệ kín.</p><p class=\"text-base leading-relaxed my-2\">Vậy phương án sai là <b>D</b>.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-020",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "giai": "A",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\"><strong>Định nghĩa hệ kín:</strong> Hệ kín (hệ cô lập) là hệ không có ngoại lực tác dụng lên hệ, hoặc tổng ngoại lực bằng 0. Khi đó động lượng của hệ được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\"><strong>Xét phương án A:</strong> Hệ vật – Trái Đất không phải lúc nào cũng là hệ kín, vì vật có thể chịu tác dụng của các lực từ bên ngoài như lực đẩy, lực ma sát với môi trường, lực do vật khác tác dụng. Do đó phát biểu \"luôn được coi là hệ kín\" là <strong>sai</strong>.</p><p class=\"text-base leading-relaxed my-2\"><strong>Xét phương án B:</strong> Hệ vật – Trái Đất chỉ gần đúng là hệ kín khi ngoại lực không đáng kể so với nội lực. Phát biểu này <strong>đúng</strong>.</p><p class=\"text-base leading-relaxed my-2\"><strong>Xét phương án C:</strong> Trong vụ nổ, nội lực (lực tương tác giữa các mảnh) rất lớn và rất ngắn, ngoại lực không đáng kể trong thời gian xảy ra nổ nên hệ được coi gần đúng là kín. Phát biểu này <strong>đúng</strong>.</p><p class=\"text-base leading-relaxed my-2\"><strong>Xét phương án D:</strong> Trong va chạm, lực tương tác giữa các vật rất lớn, ngoại lực không đáng kể trong thời gian va chạm rất ngắn nên hệ được coi gần đúng là kín. Phát biểu này <strong>đúng</strong>.</p><p class=\"text-base leading-relaxed my-2\"><strong>Kết luận:</strong> Phát biểu sai là phương án A.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-021",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hệ kín là hệ không chịu tác dụng của ngoại lực (hoặc ngoại lực triệt tiêu nhau).</p><p class=\"text-base leading-relaxed my-2\">Hệ vật - Trái Đất chịu tác dụng của lực hấp dẫn từ các thiên thể khác trong vũ trụ (Mặt Trời, Mặt Trăng, ...). Các lực này luôn tồn tại nhưng rất nhỏ so với nội lực giữa vật và Trái Đất, nên có thể bỏ qua.</p><p class=\"text-base leading-relaxed my-2\">Vì vẫn tồn tại ngoại lực, hệ chỉ <em>gần đúng</em> là hệ kín.</p><p class=\"text-base leading-relaxed my-2\">Đáp án đúng: D.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-022",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "giai": "B",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\"><strong>Kiến thức:</strong> Hệ kín (hệ cô lập) là hệ không chịu ngoại lực, hoặc tổng ngoại lực tác dụng lên hệ bằng không. Khi đó động lượng của hệ được bảo toàn: $\\vec{p}=\\text{const}$.</p><p class=\"text-base leading-relaxed my-2\"><strong>Xét từng phương án:</strong></p><p class=\"text-base leading-relaxed my-2\">A. Đúng. Vật rơi tự do chịu tác dụng của trọng lực, là ngoại lực đối với vật, nên vật không phải hệ kín.</p><p class=\"text-base leading-relaxed my-2\">B. Sai. Hệ kín được định nghĩa bởi việc ngoại lực bằng không (hoặc triệt tiêu), không phải bởi việc ngoại lực \"không đổi\". Một ngoại lực không đổi khác không vẫn có thể làm thay đổi động lượng.</p><p class=\"text-base leading-relaxed my-2\">C. Đúng. Hệ gồm vật và Trái Đất, khi bỏ qua tương tác với các vật khác, thì lực tác dụng lên hệ chỉ là nội lực, nên hệ được coi là kín.</p><p class=\"text-base leading-relaxed my-2\">D. Đúng. Khi không có ngoại lực, tổng ngoại lực bằng không nên động lượng của hệ được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\"><strong>Kết luận:</strong> Phát biểu sai là phương án B.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-023",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\"><strong>Kiến thức:</strong> Hệ kín (hệ cô lập) là hệ không có ngoại lực tác dụng, hoặc các ngoại lực tác dụng lên hệ triệt tiêu nhau (tổng hợp lực bằng 0). Khi đó động lượng của hệ được bảo toàn: $\\vec{p}_{\\text{hệ}} = \\text{const}$.</p><p class=\"text-base leading-relaxed my-2\"><strong>Xét từng phương án:</strong></p><p class=\"text-base leading-relaxed my-2\">A. Đúng. Đây là nội dung định luật bảo toàn động lượng: hệ không chịu ngoại lực thì động lượng của hệ bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">B. Đúng. Vật rơi tự do chịu tác dụng của trọng lực $\\vec{P}$ là ngoại lực nên vật không phải hệ kín.</p><p class=\"text-base leading-relaxed my-2\">C. Đúng. Hệ gồm vật và Trái Đất, nếu bỏ qua tương tác với các vật khác (Mặt Trời, các hành tinh…) thì hệ coi như kín.</p><p class=\"text-base leading-relaxed my-2\">D. Sai. Hệ kín không phụ thuộc vào việc ngoại lực có đổi hay không; điều kiện là ngoại lực bằng không (hoặc triệt tiêu). Một ngoại lực không đổi khác 0 vẫn làm hệ không kín.</p><p class=\"text-base leading-relaxed my-2\"><strong>Kết luận:</strong> Phát biểu sai là D.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-024",
+  "type": "multiple_choice",
+  "nguon": "B",
+  "giai": "B",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hệ kín (hệ cô lập) là hệ không chịu tác dụng của ngoại lực, hoặc tổng các ngoại lực tác dụng lên hệ bằng không. Khi đó động lượng của hệ được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Hệ không chịu tác dụng của lực nào: không có ngoại lực, nên là hệ kín.</p><p class=\"text-base leading-relaxed my-2\">B. Hệ chỉ chịu tác dụng của lực cản, ma sát: lực cản và ma sát từ môi trường bên ngoài là ngoại lực khác không, nên hệ không kín.</p><p class=\"text-base leading-relaxed my-2\">C. Hệ không có ngoại lực tác dụng: đúng định nghĩa hệ kín.</p><p class=\"text-base leading-relaxed my-2\">D. Hệ chỉ có nội lực giữa các vật trong hệ: nội lực không làm thay đổi tổng động lượng của hệ, nên hệ là hệ kín.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: đáp án B.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-025",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: động lượng toàn phần của một hệ kín (hệ cô lập) được bảo toàn, tức là $\\vec{p} = \\sum m_i\\vec{v_i}$ không đổi theo thời gian.</p><p class=\"text-base leading-relaxed my-2\">Điều kiện áp dụng: tổng ngoại lực tác dụng lên hệ bằng không, $\\sum \\vec{F}_{ngoại} = \\vec{0}$. Khi đó $\\dfrac{d\\vec{p}}{dt} = \\sum \\vec{F}_{ngoại} = \\vec{0}$, suy ra $\\vec{p}$ không đổi.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. Sai: hệ chịu ngoại lực nhưng tổng hợp khác không thì động lượng thay đổi.</p><p class=\"text-base leading-relaxed my-2\">B. Sai: không có lực cản chưa đủ, còn cần các ngoại lực khác cân bằng nhau.</p><p class=\"text-base leading-relaxed my-2\">C. Đúng: các ngoại lực cân bằng có hợp lực bằng không nên động lượng bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">D. Sai: nội lực luôn tồn tại khi các vật tương tác, nhưng theo định luật III Newton chúng triệt tiêu nhau trong hệ nên không làm thay đổi tổng động lượng; việc không có nội lực không phải điều kiện bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: động lượng của hệ được bảo toàn khi hệ chịu tác dụng các ngoại lực cân bằng. Đáp án <b>C</b>.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-026",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hệ kín (cô lập) là hệ không chịu tác dụng của ngoại lực, hoặc tổng các ngoại lực bằng không.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">- A. Rơi tự do: các viên bi chịu trọng lực $P$ hướng xuống, ngoại lực khác không, nên không phải hệ kín.</p><p class=\"text-base leading-relaxed my-2\">- B. Trên mặt nghiêng: thành phần trọng lực dọc mặt nghiêng khác không, nên tổng ngoại lực khác không, không phải hệ kín.</p><p class=\"text-base leading-relaxed my-2\">- C. Trên mặt sàn ngang: có lực ma sát của sàn tác dụng lên bi, là ngoại lực, nên không phải hệ kín.</p><p class=\"text-base leading-relaxed my-2\">- D. Không ma sát trên mặt ngang: trọng lực và phản lực của mặt ngang cân bằng nhau theo phương thẳng đứng, không có lực ngang tác dụng, tổng ngoại lực bằng không. Hệ là hệ kín.</p><p class=\"text-base leading-relaxed my-2\">Đáp án đúng: D.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-027",
+  "type": "multiple_choice",
+  "nguon": "D",
+  "giai": "D",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hệ hai vật là hệ cô lập nên tổng động lượng của hệ được bảo toàn trong quá trình va chạm.</p><p class=\"text-base leading-relaxed my-2\">Động lượng của mỗi vật: $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{p}=m\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}$. Động lượng của hệ trước va chạm là $m_{1}\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{1}+m_{2}\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{2}$, sau va chạm là $m_{1}\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{1}'+m_{2}\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{2}'$.</p><p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: tổng động lượng trước va chạm bằng tổng động lượng sau va chạm.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m_{1}\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{1}+m_{2}\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{2}=m_{1}\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{1}'+m_{2}\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}_{2}'$</p><p class=\"text-base leading-relaxed my-2\">Đáp án D. Các phương án A, B, C sai vì hoặc sai dấu/tổng bằng không, hoặc dùng độ lớn vận tốc thay vì vectơ vận tốc.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 14
+ },
+ {
+  "key": "c5-2-mc-028",
+  "type": "multiple_choice",
+  "nguon": "C",
+  "giai": "C",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật bảo toàn động lượng: một hệ vật cô lập (hoặc có tổng ngoại lực bằng không, tức các ngoại lực cân bằng) thì tổng động lượng của hệ được bảo toàn.</p><p class=\"text-base leading-relaxed my-2\">Điều kiện áp dụng: tổng ngoại lực tác dụng lên hệ bằng 0, nên chỉ có nội lực (lực tương tác giữa các vật trong hệ) hoạt động.</p><p class=\"text-base leading-relaxed my-2\">Theo định luật III Newton, nội lực giữa hai vật luôn trực đối: $\\vec{F}_{12}=-\\vec{F}_{21}$. Khi đó tổng động lượng thay đổi: $\\Delta\\vec{p}_1+\\Delta\\vec{p}_2=(\\vec{F}_{12}+\\vec{F}_{21})\\Delta t=\\vec{0}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\vec{p}_{\\text{sau}}=\\vec{p}_{\\text{trước}}$</p><p class=\"text-base leading-relaxed my-2\">Kết luận: động lượng của hệ sau tương tác bằng động lượng của hệ trước tương tác. Đáp án C.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-029",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "giai": "A",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hệ kín là hệ không chịu tác dụng của ngoại lực, hoặc tổng ngoại lực bằng không.</p><p class=\"text-base leading-relaxed my-2\">Theo định luật bảo toàn động lượng, với hệ kín: $\\vec{p}_{\\text{hệ}} = \\vec{p}_1 + \\vec{p}_2 + \\dots = \\text{const}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta \\vec{p}_{\\text{hệ}} = \\vec{p}_{\\text{hệ, sau}} - \\vec{p}_{\\text{hệ, trước}} = 0$.</p><p class=\"text-base leading-relaxed my-2\">Vậy độ biến thiên động lượng của hệ kín bằng không. Đáp án đúng là A.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-036",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "giai": "A",
+  "trangThai": "khop",
+  "ghi_chu": "Đề có lỗi nhỏ \"v_{1},,=\" (dư ký tự), được hiểu là vận tốc v_1 của phần thứ nhất.",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\"><strong>Áp dụng định luật bảo toàn động lượng:</strong> Hệ kín (vật ban đầu đứng yên) nên tổng động lượng trước và sau khi tách bằng nhau. Trước khi tách, $\\vec{p}=\\vec{0}$.</p><p class=\"text-base leading-relaxed my-2\">Sau khi tách: $\\vec{p}_1+\\vec{p}_2=\\vec{0}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$\\vec{p}_1=-\\vec{p}_2$.</p><p class=\"text-base leading-relaxed my-2\">Suy ra: $|\\vec{p}_1|=|\\vec{p}_2|$, tức là hai phần có độ lớn động lượng bằng nhau. Hai vectors ngược chiều nhau nên không phải là bằng nhau về vectơ.</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra: $m_1v_1=m_2v_2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$v_2=\\dfrac{m_1}{m_2}v_1=\\dfrac{v_1}{2}$ (độ lớn), nên động lượng hai phần bằng nhau dù khối lượng và vận tốc khác nhau.</p><p class=\"text-base leading-relaxed my-2\"><strong>Kết luận:</strong> Phương án A đúng. Phương án B, C sai. Phương án D sai vì hai động lượng ngược hướng nên không bằng nhau về vectơ.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 0
+ },
+ {
+  "key": "c5-2-mc-039",
+  "type": "multiple_choice",
+  "nguon": "A",
+  "giai": "A",
+  "trangThai": "khop",
+  "ghi_chu": "",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hệ hai viên bi là hệ kín trong thời gian va chạm (ngoại lực như trọng lực và phản lực của mặt phẳng ngang cân bằng nhau), nên áp dụng định luật bảo toàn động lượng.</p><p class=\"text-base leading-relaxed my-2\">Chọn chiều dương là chiều của $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}$. Động lượng trước va chạm: $p_{\\text{trước}} = m_A v + m_B \\cdot 0 = mv$.</p><p class=\"text-base leading-relaxed my-2\">Sau va chạm hai bi dính vào nhau, chuyển động với vận tốc $v'$, tổng khối lượng $2m$: $p_{\\text{sau}} = (m_A + m_B)v' = 2mv'$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Bảo toàn động lượng: $mv = 2mv'$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$v' = \\dfrac{v}{2} = 0{,}5v$, với $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}'$ cùng phương, cùng chiều $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}$.</p><p class=\"text-base leading-relaxed my-2\">Xét từng phương án:</p><p class=\"text-base leading-relaxed my-2\">A. $v' = 2v$ là sai, vì kết quả đúng là $v' = 0{,}5v$.</p><p class=\"text-base leading-relaxed my-2\">B. $v' = 0{,}5v$ là đúng.</p><p class=\"text-base leading-relaxed my-2\">C. Hai vật dính vào nhau sau va chạm là va chạm mềm, đúng.</p><p class=\"text-base leading-relaxed my-2\">D. Vận tốc $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}'$ cùng phương, cùng chiều $\\overset{$</p><p class=\"text-base leading-relaxed my-2\">$\\rightarrow}{v}$, đúng.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: phương án sai là A.</p>",
+  "mui_ten_con": 0,
+  "katex_loi": 10
+ }
+]

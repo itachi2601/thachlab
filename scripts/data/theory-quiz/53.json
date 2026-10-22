@@ -1,386 +1,550 @@
 {
-  "lesson_id": 53,
-  "lesson_title": "Bài 8. Chuyển động biến đổi. Gia tốc",
-  "item_id": 99,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 53,
+ "lesson_title": "Bài 8. Chuyển động biến đổi. Gia tốc",
+ "item_id": 99,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chuyển động biến đổi là chuyển động có",
+   "options": [
+    "quãng đường không đổi theo thời gian",
+    "vận tốc thay đổi theo thời gian",
+    "gia tốc luôn luôn bằng không",
+    "quỹ đạo luôn là một đường thẳng"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, chuyển động biến đổi là chuyển động có vận tốc thay đổi, kể cả khi chỉ đổi độ lớn hoặc chỉ đổi hướng.",
+   "distractorNotes": {
+    "A": "Nhầm đại lượng: chuyển động biến đổi xét sự thay đổi của vận tốc, còn quãng đường của vật chuyển động thì luôn tăng.",
+    "C": "Hiểu ngược ý nghĩa: gia tốc bằng không là vận tốc không đổi, tức chuyển động đều chứ không phải biến đổi.",
+    "D": "Thêm điều kiện không có trong định nghĩa: vận tốc đổi hướng trên đường cong cũng là biến đổi, như xe vào cua."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chuyển động thẳng biến đổi đều là chuyển động thẳng có",
+   "options": [
+    "độ lớn vận tốc tăng đều hoặc giảm đều theo thời gian",
+    "quãng đường đi được tăng đều theo thời gian",
+    "tốc độ không đổi nhưng hướng vận tốc thay đổi",
+    "gia tốc tăng đều hoặc giảm đều theo thời gian"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa: thẳng biến đổi đều là chuyển động thẳng có độ lớn vận tốc tăng đều hoặc giảm đều, tức mỗi giây thay đổi cùng một lượng.",
+   "distractorNotes": {
+    "B": "Nhầm với chuyển động thẳng đều, nơi quãng đường tăng đều; biến đổi đều xét độ lớn vận tốc tăng hoặc giảm đều.",
+    "C": "Vận tốc đổi hướng là chuyển động cong, mâu thuẫn với điều kiện chuyển động thẳng trong định nghĩa.",
+    "D": "Nhầm đại lượng thay đổi: trong biến đổi đều gia tốc không đổi, chính vận tốc mới tăng hoặc giảm đều."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Gia tốc là đại lượng",
+   "options": [
+    "vô hướng, đặc trưng cho độ nhanh chậm của chuyển động",
+    "vectơ, đặc trưng cho quãng đường đi được trong mỗi giây",
+    "vectơ, đặc trưng cho độ biến thiên vận tốc theo thời gian",
+    "vô hướng, đặc trưng cho độ biến thiên tốc độ theo quãng đường"
+   ],
+   "answer": 2,
+   "explanation": "Gia tốc là vectơ $\\vec a = \\frac{\\Delta \\vec v}{\\Delta t}$, cho biết vận tốc thay đổi nhanh hay chậm theo thời gian.",
+   "distractorNotes": {
+    "A": "Nhầm gia tốc với vận tốc: độ nhanh chậm của chuyển động do vận tốc đặc trưng, còn gia tốc là vectơ.",
+    "B": "Nhầm gia tốc với vận tốc: quãng đường mỗi giây ứng với vận tốc, gia tốc là vận tốc đổi bao nhiêu mỗi giây.",
+    "D": "Gia tốc là vectơ và được chia cho thời gian $\\Delta t$, không chia cho quãng đường."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của gia tốc là",
+   "options": [
+    "$\\text{m/s}$",
+    "$\\text{m}^2/\\text{s}$",
+    "$\\text{m}\\cdot\\text{s}$",
+    "$\\text{m/s}^2$"
+   ],
+   "answer": 3,
+   "explanation": "Gia tốc bằng $\\Delta v$ (m/s) chia $\\Delta t$ (s) nên có đơn vị $\\text{m/s}^2$.",
+   "distractorNotes": {
+    "A": "Nhầm với đơn vị vận tốc, quên rằng gia tốc còn phải chia thêm cho thời gian một lần nữa.",
+    "B": "Đặt bình phương sai chỗ: $\\Delta v$ (m/s) chia $\\Delta t$ (s) cho ra giây bình phương ở mẫu.",
+    "C": "Nhân với thời gian thay vì chia, trái với định nghĩa $a = \\Delta v / \\Delta t$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật chuyển động thẳng, vận tốc đổi từ $v_1$ đến $v_2$ trong khoảng thời gian $\\Delta t$. Gia tốc của vật là",
+   "options": [
+    "$a = \\frac{v_2 - v_1}{\\Delta t}$",
+    "$a = \\frac{\\Delta t}{v_2 - v_1}$",
+    "$a = \\frac{v_2 + v_1}{\\Delta t}$",
+    "$a = (v_2 - v_1)\\Delta t$"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu $a = \\frac{\\Delta v}{\\Delta t} = \\frac{v_2 - v_1}{\\Delta t}$, với $\\Delta v$ là vận tốc sau trừ vận tốc trước.",
+   "distractorNotes": {
+    "B": "Đảo tỉ số: lấy thời gian chia độ biến thiên vận tốc, thay vì độ biến thiên vận tốc chia thời gian.",
+    "C": "Lấy tổng hai vận tốc thay cho hiệu, trong khi gia tốc dựa trên độ biến thiên $v_2 - v_1$.",
+    "D": "Nhân với $\\Delta t$ thay vì chia, kết quả mang đơn vị mét chứ không phải $\\text{m/s}^2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một đoàn tàu rời ga chuyển động nhanh dần đều với gia tốc $0{,}5\\ \\text{m/s}^2$. Phát biểu nào sau đây đúng?",
+   "options": [
+    "Mỗi giây tàu đi được quãng đường $0{,}5\\ \\text{m}$",
+    "Tàu luôn chạy với vận tốc bằng $0{,}5\\ \\text{m/s}$",
+    "Mỗi giây vận tốc của tàu tăng thêm $0{,}5\\ \\text{m/s}$",
+    "Sau mỗi $0{,}5\\ \\text{s}$ vận tốc tàu tăng thêm $1\\ \\text{m/s}$"
+   ],
+   "answer": 2,
+   "explanation": "Theo mẹo đọc đơn vị trong bài, $\\text{m/s}^2$ nghĩa là mỗi giây vận tốc thay đổi bấy nhiêu $\\text{m/s}$.",
+   "distractorNotes": {
+    "A": "Nhầm gia tốc với quãng đường: $\\text{m/s}^2$ là vận tốc đổi bao nhiêu mỗi giây, không phải số mét đi được.",
+    "B": "Nhầm gia tốc với vận tốc: tàu có gia tốc thì vận tốc đang tăng chứ không giữ cố định.",
+    "D": "Hiểu $0{,}5$ là số giây để tăng $1\\ \\text{m/s}$, tức gia tốc $2\\ \\text{m/s}^2$, gấp bốn lần đề cho."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật chuyển động thẳng nhanh dần đều khi",
+   "options": [
+    "vectơ gia tốc ngược chiều vectơ vận tốc",
+    "vectơ gia tốc cùng chiều vectơ vận tốc",
+    "giá trị gia tốc luôn luôn là số dương",
+    "giá trị gia tốc luôn luôn là số âm"
+   ],
+   "answer": 1,
+   "explanation": "Bài kết luận: $\\vec a$ cùng chiều $\\vec v$ ($a \\cdot v \\gt 0$) thì nhanh dần, ngược chiều thì chậm dần.",
+   "distractorNotes": {
+    "A": "Đảo chiều: gia tốc ngược chiều vận tốc làm độ lớn vận tốc giảm, đó là chậm dần.",
+    "C": "Xét riêng dấu $a$ mà dấu này phụ thuộc chiều dương; nhanh dần cần $a \\cdot v \\gt 0$, $a$ dương với $v$ âm vẫn là chậm dần.",
+    "D": "Gán cố định một dấu của $a$ cho kiểu chuyển động; dấu $a$ tuỳ chiều dương, phải xét tích $a \\cdot v$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật chuyển động thẳng biến đổi đều, chỉ biết gia tốc có giá trị $a \\lt 0$. Kết luận nào sau đây đúng?",
+   "options": [
+    "Vật chắc chắn đang chuyển động chậm dần",
+    "Vật chắc chắn đang chuyển động nhanh dần",
+    "Chưa kết luận được khi chưa biết dấu của $v$",
+    "Vật chắc chắn đang đứng yên tại chỗ"
+   ],
+   "answer": 2,
+   "explanation": "Theo Bẫy 2, nhanh hay chậm dần phụ thuộc dấu tích $a \\cdot v$; chỉ biết $a \\lt 0$ thì chưa kết luận được.",
+   "distractorNotes": {
+    "A": "Mắc bẫy \"gia tốc âm là chậm dần\": nếu $v$ cũng âm thì $a \\cdot v \\gt 0$ và vật nhanh dần.",
+    "B": "Chỉ đúng khi $v \\lt 0$; chưa biết dấu $v$ thì chưa xác định được dấu của tích $a \\cdot v$.",
+    "D": "Gia tốc khác không nghĩa là vận tốc đang thay đổi, nên vật không thể đứng yên mãi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một máy bay đang bay thẳng đều với vận tốc $250\\ \\text{m/s}$. Gia tốc của máy bay",
+   "options": [
+    "bằng 0 vì vận tốc không thay đổi",
+    "rất lớn vì máy bay bay rất nhanh",
+    "bằng $250\\ \\text{m/s}^2$ theo chiều bay",
+    "khác 0 vì máy bay đang chuyển động"
+   ],
+   "answer": 0,
+   "explanation": "Bay thẳng đều thì vận tốc không đổi cả độ lớn lẫn hướng nên $a = 0$; vận tốc lớn không có nghĩa là gia tốc lớn.",
+   "distractorNotes": {
+    "B": "Mắc bẫy \"nhanh thì gia tốc lớn\": gia tốc đo vận tốc đổi nhanh hay chậm, không đo vật đi nhanh hay chậm.",
+    "C": "Lấy giá trị vận tốc làm gia tốc, nhầm hai đại lượng khác bản chất và khác đơn vị.",
+    "D": "Nghĩ cứ chuyển động là có gia tốc; thực ra chỉ khi vận tốc thay đổi mới có gia tốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một xe chạy qua khúc cua tròn, đồng hồ tốc độ luôn chỉ $40\\ \\text{km/h}$. Phát biểu nào sau đây đúng?",
+   "options": [
+    "Xe không có gia tốc vì tốc độ không đổi",
+    "Xe có gia tốc hướng theo chiều chuyển động",
+    "Xe không có gia tốc vì quãng đường mỗi giây như nhau",
+    "Xe có gia tốc vì hướng của vận tốc thay đổi"
+   ],
+   "answer": 3,
+   "explanation": "Vận tốc là vectơ; vào cua thì hướng vận tốc đổi nên $\\Delta \\vec v \\neq \\vec 0$, xe có gia tốc hướng vào phía trong cua.",
+   "distractorNotes": {
+    "A": "Chỉ nhìn độ lớn vận tốc (tốc độ) mà quên vận tốc là vectơ, có hướng đang đổi.",
+    "B": "Gia tốc hướng theo chiều chuyển động sẽ làm xe nhanh dần, trái với tốc độ không đổi; thực ra $\\Delta \\vec v$ hướng vào trong cua.",
+    "C": "Quãng đường mỗi giây bằng nhau chỉ chứng tỏ tốc độ không đổi, không chứng tỏ hướng vận tốc không đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên đồ thị vận tốc – thời gian của chuyển động thẳng biến đổi đều, gia tốc được xác định bằng",
+   "options": [
+    "diện tích phần dưới đồ thị",
+    "độ dốc $\\frac{v_2 - v_1}{t_2 - t_1}$ của đồ thị",
+    "tung độ của điểm cuối đồ thị",
+    "tỉ số $\\frac{t_2 - t_1}{v_2 - v_1}$ trên đồ thị"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu độ dốc của đồ thị $v$–$t$ là gia tốc: $a = \\tan\\alpha = \\frac{v_2 - v_1}{t_2 - t_1}$.",
+   "distractorNotes": {
+    "A": "Nhầm hai ý nghĩa của đồ thị: diện tích dưới đồ thị $v$–$t$ là độ dịch chuyển, không phải gia tốc.",
+    "C": "Tung độ chỉ là vận tốc tức thời tại một thời điểm, không cho biết vận tốc đổi nhanh hay chậm.",
+    "D": "Đảo tỉ số độ dốc: lấy $\\Delta t$ chia $\\Delta v$ thay vì $\\Delta v$ chia $\\Delta t$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Với vật chuyển động thẳng, diện tích phần dưới đồ thị vận tốc – thời gian từ $t_1$ đến $t_2$ cho biết",
+   "options": [
+    "gia tốc của vật",
+    "thời gian chuyển động của vật",
+    "vận tốc tức thời của vật",
+    "độ dịch chuyển của vật"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu cả với chuyển động thẳng đều và thẳng biến đổi đều, diện tích dưới đồ thị $v$–$t$ bằng độ dịch chuyển.",
+   "distractorNotes": {
+    "A": "Nhầm diện tích với độ dốc: gia tốc ứng với độ dốc của đồ thị $v$–$t$.",
+    "B": "Thời gian đọc trực tiếp trên trục hoành, còn diện tích là tích của vận tốc với thời gian.",
+    "C": "Vận tốc tức thời là tung độ tại một thời điểm, không phải diện tích của cả một khoảng thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Hai xe cùng tăng vận tốc thêm một lượng $\\Delta v$ như nhau, nhưng thời gian tăng tốc của xe 1 chỉ bằng một nửa thời gian của xe 2. So với gia tốc của xe 2, gia tốc của xe 1",
+   "options": [
+    "lớn gấp đôi",
+    "bằng một nửa",
+    "bằng nhau",
+    "lớn gấp bốn"
+   ],
+   "answer": 0,
+   "explanation": "Từ $a = \\frac{\\Delta v}{\\Delta t}$, cùng $\\Delta v$ mà $\\Delta t$ giảm một nửa thì $a$ tăng gấp đôi, như ví dụ xe máy và ô tô ở mở bài.",
+   "distractorNotes": {
+    "B": "Coi gia tốc tỉ lệ thuận với thời gian, trong khi $\\Delta t$ nằm ở mẫu số.",
+    "C": "Chỉ so $\\Delta v$ mà quên thời gian, giống cách nghĩ hai xe ở phần mở bài tăng tốc như nhau.",
+    "D": "Tự thêm bình phương cho thời gian vì nhìn đơn vị $\\text{m/s}^2$, nhưng công thức chỉ chia cho $\\Delta t$ một lần."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật chuyển động thẳng biến đổi đều với gia tốc $a$, lúc $t = 0$ có vận tốc $v_0$. Từ $a = \\frac{v - v_0}{t}$, vận tốc của vật tại thời điểm $t$ là",
+   "options": [
+    "$v = v_0 - at$",
+    "$v = v_0 + at$",
+    "$v = at - v_0$",
+    "$v = v_0 + \\frac{a}{t}$"
+   ],
+   "answer": 1,
+   "explanation": "Nhân hai vế với $t$ rồi chuyển $v_0$ sang: $v = v_0 + at$, như cách bài suy ra $v = 4 - 2t$ ở thử thách.",
+   "distractorNotes": {
+    "A": "Chuyển vế sai dấu: nhân với $t$ được $at = v - v_0$, nên $v_0$ cộng với $at$ chứ không trừ.",
+    "C": "Chuyển $v_0$ sang vế phải nhưng giữ sai dấu trừ; $v_0$ phải mang dấu cộng.",
+    "D": "Chia cho $t$ thay vì nhân khi khử mẫu, kết quả không có đơn vị vận tốc."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quay video một viên bi lăn trên mặt bàn ngang, rồi lăn xuống máng nghiêng, rồi lăn lên máng nghiêng; cứ $0{,}2\\ \\text{s}$ chấm một vị trí của bi lên giấy.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Gia tốc là đại lượng",
-      "options": [
-        "cho biết quãng đường vật đi được trong mỗi giây",
-        "cho biết độ lớn vận tốc của vật tại một thời điểm",
-        "vô hướng, cho biết vật đi nhanh hay chậm",
-        "vectơ, đặc trưng cho độ biến thiên của vận tốc theo thời gian"
-      ],
-      "answer": 3,
-      "explanation": "Gia tốc $\\vec a = \\Delta \\vec v / \\Delta t$ là vectơ nói vận tốc thay đổi nhanh hay chậm. Nó khác quãng đường mỗi giây, khác vận tốc tức thời và không phải đại lượng vô hướng."
+     "text": "Trên mặt bàn, các chấm gần cách đều nên vận tốc của bi gần như không đổi.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Chuyển động thẳng biến đổi đều là chuyển động thẳng trong đó",
-      "options": [
-        "độ lớn vận tốc tăng đều hoặc giảm đều theo thời gian",
-        "vận tốc không thay đổi theo thời gian",
-        "vận tốc thay đổi theo cách bất kì, lúc nhiều lúc ít",
-        "quãng đường đi được trong mỗi giây luôn bằng nhau"
-      ],
-      "answer": 0,
-      "explanation": "\"Đều\" nghĩa là cứ mỗi giây vận tốc tăng (hoặc giảm) cùng một lượng. Vận tốc không đổi là chuyển động thẳng đều; quãng đường mỗi giây bằng nhau cũng là dấu hiệu của chuyển động đều, không phải biến đổi đều."
+     "text": "Khi xuống dốc, các khoảng cách dài dần: bi chuyển động nhanh dần, $\\vec a$ cùng chiều $\\vec v$.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Chuyển động thẳng chậm dần đều xảy ra khi",
-      "options": [
-        "gia tốc có giá trị âm, với mọi cách chọn chiều dương",
-        "$\\vec a$ ngược chiều $\\vec v$ (tích $a \\cdot v \\lt 0$)",
-        "$\\vec a$ cùng chiều $\\vec v$ (tích $a \\cdot v \\gt 0$)",
-        "gia tốc bằng $0$"
-      ],
-      "answer": 1,
-      "explanation": "Chậm dần đều khi $\\vec a$ ngược chiều $\\vec v$, tức $a \\cdot v \\lt 0$. Dấu của $a$ riêng lẻ phụ thuộc cách chọn chiều dương nên chưa kết luận được; $a \\cdot v \\gt 0$ là nhanh dần, $a = 0$ là thẳng đều."
+     "text": "Khi lên dốc, các khoảng cách ngắn dần nên gia tốc của bi bằng 0.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Một vận động viên trượt băng lướt đều với tốc độ không đổi qua đoạn đường cong. Phát biểu đúng là:",
-      "options": [
-        "Không có gia tốc, vì tốc độ không đổi",
-        "Có gia tốc, vì quãng đường đi được ngày càng tăng",
-        "Có gia tốc, vì hướng của vận tốc thay đổi",
-        "Không có gia tốc, vì chuyển động vẫn gọi là đều"
-      ],
-      "answer": 2,
-      "explanation": "Vận tốc là vectơ nên đổi hướng cũng là đổi vận tốc, $\\Delta \\vec v \\neq \\vec 0$ và có gia tốc. Quãng đường luôn tăng ở mọi chuyển động nên không phải lí do."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trên đồ thị $v$–$t$ của chuyển động thẳng không đổi chiều, diện tích dưới đồ thị từ $t_1$ đến $t_2$ bằng",
-      "options": [
-        "độ dịch chuyển (cũng là quãng đường) trong khoảng thời gian đó",
-        "gia tốc của vật",
-        "vận tốc trung bình của vật",
-        "khoảng thời gian chuyển động"
-      ],
-      "answer": 0,
-      "explanation": "Độ dốc của đồ thị $v$–$t$ là gia tốc, còn diện tích dưới đồ thị là độ dịch chuyển. Vận tốc trung bình phải lấy độ dịch chuyển chia thời gian; thời gian đọc trực tiếp trên trục ngang."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về gia tốc, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Gia tốc là đại lượng vectơ.",
-          "answer": true
-        },
-        {
-          "text": "Đơn vị của gia tốc là $\\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Vật có vận tốc thay đổi (về độ lớn hoặc hướng) thì có gia tốc.",
-          "answer": true
-        },
-        {
-          "text": "Vật chuyển động càng nhanh thì chắc chắn gia tốc càng lớn.",
-          "answer": false
-        }
-      ],
-      "explanation": "Gia tốc nói vận tốc đổi nhanh hay chậm, không nói vật đi nhanh hay chậm: máy bay bay thẳng đều rất nhanh vẫn có $a = 0$."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về đồ thị $v$–$t$ của vật chuyển động thẳng (với $v \\gt 0$), các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Đồ thị nằm ngang là chuyển động thẳng đều, $a = 0$.",
-          "answer": true
-        },
-        {
-          "text": "Đồ thị đi lên là chuyển động nhanh dần, $a \\gt 0$.",
-          "answer": true
-        },
-        {
-          "text": "Độ dốc của đồ thị $v$–$t$ chính là độ dịch chuyển của vật.",
-          "answer": false
-        },
-        {
-          "text": "Đồ thị đi xuống là chuyển động chậm dần, $a \\lt 0$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Độ dốc của đồ thị $v$–$t$ là gia tốc $a = \\Delta v/\\Delta t$; độ dịch chuyển là diện tích dưới đồ thị."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật có gia tốc $a = 3\\ \\text{m/s}^2$. Mỗi giây, vận tốc của vật thay đổi bao nhiêu $\\text{m/s}$?",
-      "answer": "3",
-      "explanation": "$\\text{m/s}^2$ đọc là \"$\\text{m/s}$ mỗi giây\": mỗi giây vận tốc thay đổi $3\\ \\text{m/s}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật chuyển động thẳng đều có gia tốc bao nhiêu $\\text{m/s}^2$?",
-      "answer": "0",
-      "explanation": "Thẳng đều thì vận tốc không đổi, $\\Delta v = 0$ nên $a = 0$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Xe có $v = -4\\ \\text{m/s}$ và $a = +2\\ \\text{m/s}^2$. Tích $a \\cdot v$ bằng bao nhiêu (tính theo các số đã cho)?",
-      "answer": "-8",
-      "explanation": "$a \\cdot v = 2 \\cdot (-4) = -8 \\lt 0$, nên xe chuyển động chậm dần dù $a$ dương."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trong chuyển động thẳng không đổi chiều, độ lớn gia tốc được tính bằng",
-      "options": [
-        "$a = \\dfrac{v_2 + v_1}{\\Delta t}$",
-        "$a = \\dfrac{\\Delta t}{v_2 - v_1}$",
-        "$a = \\dfrac{v_2 - v_1}{\\Delta t}$",
-        "$a = (v_2 - v_1)\\,\\Delta t$"
-      ],
-      "answer": 2,
-      "explanation": "Gia tốc là độ biến thiên vận tốc chia thời gian. Cộng hai vận tốc, chia ngược hay nhân với $\\Delta t$ đều sai (nhân ra thứ nguyên $\\text{m}$, chia ngược ra $\\text{s}^2/\\text{m}$)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ô tô tăng đều vận tốc từ $10\\ \\text{m/s}$ lên $25\\ \\text{m/s}$ trong $6\\ \\text{s}$. Gia tốc của ô tô là",
-      "options": [
-        "$4{,}2\\ \\text{m/s}^2$",
-        "$0{,}4\\ \\text{m/s}^2$",
-        "$15\\ \\text{m/s}^2$",
-        "$2{,}5\\ \\text{m/s}^2$"
-      ],
-      "answer": 3,
-      "explanation": "$a = (25 - 10)/6 = 2{,}5\\ \\text{m/s}^2$. $4{,}2$ là $25/6$, quên trừ vận tốc đầu; $0{,}4$ là chia ngược $6/15$; $15$ là $\\Delta v$ chưa chia cho $\\Delta t$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xe đang chạy $72\\ \\text{km/h}$ thì hãm phanh, dừng lại sau $4\\ \\text{s}$. Chọn chiều dương là chiều chuyển động, gia tốc của xe là",
-      "options": [
-        "$+5\\ \\text{m/s}^2$",
-        "$-5\\ \\text{m/s}^2$",
-        "$-18\\ \\text{m/s}^2$",
-        "$-20\\ \\text{m/s}^2$"
-      ],
-      "answer": 1,
-      "explanation": "$72\\ \\text{km/h} = 20\\ \\text{m/s}$; $a = (0 - 20)/4 = -5\\ \\text{m/s}^2$ (ngược chiều chuyển động). $+5$ quên dấu; $-18$ là $-72/4$ chưa đổi đơn vị; $-20$ là lấy $\\Delta v$ mà quên chia $4\\ \\text{s}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đồ thị $v$–$t$ của xe là đoạn thẳng đi từ $v = 0$ lúc $t = 0$ lên $v = 12\\ \\text{m/s}$ lúc $t = 5\\ \\text{s}$. Độ dịch chuyển của xe trong $5\\ \\text{s}$ là",
-      "options": [
-        "$60\\ \\text{m}$",
-        "$2{,}4\\ \\text{m}$",
-        "$17\\ \\text{m}$",
-        "$30\\ \\text{m}$"
-      ],
-      "answer": 3,
-      "explanation": "Diện tích tam giác: $d = \\tfrac{1}{2} \\cdot 12 \\cdot 5 = 30\\ \\text{m}$. $60$ là quên hệ số $\\tfrac{1}{2}$; $2{,}4$ là độ dốc $12/5$ (gia tốc); $17$ là cộng hai số."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đồ thị $v$–$t$ là đoạn thẳng đi qua $(2\\ \\text{s};\\ 6\\ \\text{m/s})$ và $(8\\ \\text{s};\\ 24\\ \\text{m/s})$. Gia tốc là",
-      "options": [
-        "$4\\ \\text{m/s}^2$",
-        "$3\\ \\text{m/s}^2$",
-        "$0{,}33\\ \\text{m/s}^2$",
-        "$18\\ \\text{m/s}^2$"
-      ],
-      "answer": 1,
-      "explanation": "$a = \\dfrac{24 - 6}{8 - 2} = 3\\ \\text{m/s}^2$. $4$ là $24/6$ (quên trừ vận tốc đầu); $0{,}33$ là chia ngược; $18$ là $\\Delta v$ chưa chia cho $\\Delta t$."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Ô tô chạy $36\\ \\text{km/h}$ thì hãm phanh, chậm dần đều và dừng sau $2\\ \\text{s}$. Chọn chiều dương là chiều chuyển động. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Vận tốc đầu là $10\\ \\text{m/s}$.",
-          "answer": true
-        },
-        {
-          "text": "Gia tốc của ô tô là $-5\\ \\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Quãng đường ô tô đi được khi hãm là $10\\ \\text{m}$.",
-          "answer": true
-        },
-        {
-          "text": "Gia tốc của ô tô là dương, vì xe đang chậm dần.",
-          "answer": false
-        }
-      ],
-      "explanation": "$a = (0 - 10)/2 = -5\\ \\text{m/s}^2$ vì $\\vec a$ ngược chiều chuyển động (chiều dương). Quãng đường bằng diện tích tam giác $\\tfrac{1}{2} \\cdot 10 \\cdot 2 = 10\\ \\text{m}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xe lăn trên máng nghiêng có vận tốc $0{,}4\\ \\text{m/s}$ lúc $t = 0$ và $1{,}2\\ \\text{m/s}$ lúc $t = 2\\ \\text{s}$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Gia tốc của xe là $0{,}4\\ \\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Xe chuyển động nhanh dần.",
-          "answer": true
-        },
-        {
-          "text": "Mỗi giây vận tốc của xe tăng thêm $0{,}4\\ \\text{m/s}$.",
-          "answer": true
-        },
-        {
-          "text": "Gia tốc của xe là $0{,}6\\ \\text{m/s}^2$, vì $1{,}2 : 2 = 0{,}6$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$a = (1{,}2 - 0{,}4)/2 = 0{,}4\\ \\text{m/s}^2$. Lấy $1{,}2/2 = 0{,}6$ là quên trừ vận tốc đầu."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tàu tăng đều vận tốc từ $5\\ \\text{m/s}$ lên $20\\ \\text{m/s}$ trong $15\\ \\text{s}$. Gia tốc là bao nhiêu $\\text{m/s}^2$?",
-      "answer": "1",
-      "explanation": "$a = (20 - 5)/15 = 1\\ \\text{m/s}^2$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xe máy rời vạch dừng, nhanh dần đều, sau $5\\ \\text{s}$ đạt $72\\ \\text{km/h}$. Gia tốc là bao nhiêu $\\text{m/s}^2$?",
-      "answer": "4",
-      "explanation": "$72\\ \\text{km/h} = 20\\ \\text{m/s}$; $a = (20 - 0)/5 = 4\\ \\text{m/s}^2$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xe chuyển động thẳng chậm dần đều từ $6\\ \\text{m/s}$ và dừng lại sau $5\\ \\text{s}$. Quãng đường xe đi được là bao nhiêu mét?",
-      "answer": "15",
-      "explanation": "Đồ thị $v$–$t$ là tam giác: $s = \\tfrac{1}{2} \\cdot 6 \\cdot 5 = 15\\ \\text{m}$."
+     "text": "Khi lên dốc, vectơ gia tốc của bi cùng chiều vectơ vận tốc.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Khoảng cách đều thì vận tốc không đổi; dài dần là nhanh dần ($\\vec a$ cùng chiều $\\vec v$); ngắn dần là chậm dần, có gia tốc ngược chiều $\\vec v$.",
+   "distractorNotes": {
+    "0": "Khoảng đi được mỗi $0{,}2\\ \\text{s}$ như nhau thì vận tốc không đổi, nên không có lí do coi ý này là sai.",
+    "1": "Quãng đi mỗi $0{,}2\\ \\text{s}$ dài dần nghĩa là vận tốc tăng, mà nhanh dần thì $\\vec a$ cùng chiều $\\vec v$.",
+    "2": "Khoảng ngắn dần nghĩa là vận tốc giảm; vận tốc thay đổi thì có gia tốc, nhầm \"chậm dần\" với \"không gia tốc\".",
+    "3": "Lên dốc bi chậm dần, mà chậm dần thì $\\vec a$ ngược chiều $\\vec v$, không thể cùng chiều."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một xe đang chạy thẳng, chậm dần đều. Chọn chiều dương ngược với chiều chuyển động của xe.",
+   "statements": [
+    {
+     "text": "Vận tốc của xe có giá trị $v \\lt 0$.",
+     "answer": true
+    },
+    {
+     "text": "Gia tốc của xe có giá trị $a \\gt 0$.",
+     "answer": true
+    },
+    {
+     "text": "Vì $a \\gt 0$ nên xe đang chuyển động nhanh dần.",
+     "answer": false
+    },
+    {
+     "text": "Tích $a \\cdot v$ của xe có giá trị dương.",
+     "answer": false
+    }
+   ],
+   "explanation": "Xe đi ngược chiều dương nên $v \\lt 0$; chậm dần thì $\\vec a$ ngược $\\vec v$ nên $a \\gt 0$, và $a \\cdot v \\lt 0$. Gia tốc dương mà xe vẫn chậm dần.",
+   "distractorNotes": {
+    "0": "Xe đi ngược chiều dương đã chọn nên giá trị vận tốc mang dấu âm, không thể là dương.",
+    "1": "Chậm dần thì $\\vec a$ ngược $\\vec v$, tức hướng theo chiều dương; cho $a$ âm là gán sai \"âm là chậm dần\".",
+    "2": "Mắc bẫy xét riêng dấu $a$: ở đây $a \\cdot v \\lt 0$ nên xe vẫn chậm dần dù $a \\gt 0$.",
+    "3": "$a$ dương còn $v$ âm nên tích âm; tích dương sẽ ứng với nhanh dần, mâu thuẫn với đề."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "So sánh vận tốc và gia tốc qua các tình huống: máy bay bay thẳng đều, xe máy vừa rời vạch dừng, xe chạy qua khúc cua với tốc độ không đổi.",
+   "statements": [
+    {
+     "text": "Vật có vận tốc càng lớn thì gia tốc của vật càng lớn.",
+     "answer": false
+    },
+    {
+     "text": "Lúc xe máy vừa xuất phát, $v = 0$ nhưng gia tốc vẫn có thể khác 0.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ của vật không đổi thì gia tốc của vật chắc chắn bằng 0.",
+     "answer": false
+    },
+    {
+     "text": "Vận tốc cho biết vật đi nhanh hay chậm, gia tốc cho biết vận tốc thay đổi nhanh hay chậm.",
+     "answer": true
+    }
+   ],
+   "explanation": "Vận tốc và gia tốc trả lời hai câu hỏi khác nhau; máy bay bay đều có $a = 0$, còn xe vào cua với tốc độ không đổi vẫn có gia tốc do hướng vận tốc đổi.",
+   "distractorNotes": {
+    "0": "Mắc bẫy \"nhanh thì gia tốc lớn\": máy bay bay đều $250\\ \\text{m/s}$ vẫn có $a = 0$.",
+    "1": "Vận tốc bằng 0 nhưng đang tăng thì vẫn có gia tốc; coi \"$v = 0$\" là \"$a = 0$\" là nhầm đại lượng.",
+    "2": "Chỉ xét độ lớn: xe vào cua với tốc độ không đổi nhưng hướng vận tốc đổi nên vẫn có gia tốc.",
+    "3": "Đây là phân biệt cốt lõi của bài; phủ nhận nó tức là đồng nhất vận tốc với gia tốc."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đồ thị vận tốc – thời gian của một vật chuyển động thẳng, không đổi chiều, với $v \\gt 0$, là một đoạn thẳng xiên đi lên, không xuất phát từ $v = 0$.",
+   "statements": [
+    {
+     "text": "Vật chuyển động thẳng nhanh dần đều.",
+     "answer": true
+    },
+    {
+     "text": "Gia tốc của vật bằng độ dốc $\\frac{v_2 - v_1}{t_2 - t_1}$ của đồ thị.",
+     "answer": true
+    },
+    {
+     "text": "Diện tích phần dưới đồ thị bằng gia tốc của vật.",
+     "answer": false
+    },
+    {
+     "text": "Vì đồ thị không xuất phát từ $v = 0$, khi tính $\\Delta v$ chỉ cần lấy vận tốc cuối $v_2$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đường xiên lên với $v \\gt 0$ là nhanh dần đều; độ dốc là gia tốc, diện tích là độ dịch chuyển; $\\Delta v = v_2 - v_1$ phải trừ vận tốc đầu.",
+   "distractorNotes": {
+    "0": "Với $v \\gt 0$, đồ thị xiên lên nghĩa là vận tốc tăng đều; phủ nhận nhanh dần đều là đọc sai đồ thị.",
+    "1": "Độ dốc đồ thị $v$–$t$ chính là $\\Delta v / \\Delta t$, tức gia tốc, nên không có lí do bác bỏ.",
+    "2": "Nhầm diện tích với độ dốc: diện tích dưới đồ thị $v$–$t$ là độ dịch chuyển.",
+    "3": "Quên trừ vận tốc đầu: $\\Delta v = v_2 - v_1$ khi đồ thị không xuất phát từ $v = 0$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dùng công thức $a = \\frac{\\Delta v}{\\Delta t}$ để so sánh gia tốc của các xe chuyển động thẳng biến đổi đều.",
+   "statements": [
+    {
+     "text": "Cùng thời gian $\\Delta t$, độ biến thiên vận tốc $\\Delta v$ gấp đôi thì gia tốc gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Cùng $\\Delta v$, thời gian $\\Delta t$ gấp đôi thì gia tốc cũng gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Nếu $\\Delta v$ và $\\Delta t$ cùng tăng gấp ba thì gia tốc không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị $v$–$t$ càng dốc thì gia tốc của xe càng nhỏ.",
+     "answer": false
+    }
+   ],
+   "explanation": "$a$ tỉ lệ thuận với $\\Delta v$ và tỉ lệ nghịch với $\\Delta t$; độ dốc đồ thị $v$–$t$ càng lớn thì gia tốc càng lớn.",
+   "distractorNotes": {
+    "0": "$\\Delta v$ ở tử số nên gia tốc tỉ lệ thuận với $\\Delta v$ khi giữ nguyên $\\Delta t$.",
+    "1": "Đảo tỉ lệ: $\\Delta t$ ở mẫu số nên thời gian gấp đôi thì gia tốc giảm còn một nửa.",
+    "2": "Tử và mẫu cùng nhân 3 thì tỉ số không đổi; nghĩ gia tốc thay đổi là chỉ nhìn một trong hai đại lượng.",
+    "3": "Đảo quan hệ: độ dốc chính là gia tốc, đồ thị càng dốc thì gia tốc càng lớn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Bài 8. Chuyển động biến đổi. Gia tốc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một ô tô đang chạy thẳng với vận tốc $v_1$ (cho bằng km/h) thì hãm phanh, chuyển động chậm dần đều và dừng lại sau thời gian $\\Delta t$. Chọn chiều dương là chiều chuyển động.",
+   "statements": [
+    {
+     "text": "Để đổi vận tốc từ $\\text{km/h}$ sang $\\text{m/s}$, ta chia cho $3{,}6$.",
+     "answer": true
+    },
+    {
+     "text": "Cụm từ \"dừng lại\" cho biết vận tốc cuối $v_2 = 0$.",
+     "answer": true
+    },
+    {
+     "text": "Gia tốc của ô tô có giá trị dương.",
+     "answer": false
+    },
+    {
+     "text": "Quãng đường hãm phanh bằng $v_1 \\cdot \\Delta t$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đổi đơn vị chia $3{,}6$; dừng lại thì $v_2 = 0$; $v \\gt 0$ và chậm dần nên $a \\lt 0$; quãng đường là diện tích tam giác $\\frac{1}{2} v_1 \\Delta t$.",
+   "distractorNotes": {
+    "0": "$1\\ \\text{m/s} = 3{,}6\\ \\text{km/h}$ nên đổi km/h ra m/s phải chia cho $3{,}6$; nhân là đổi ngược chiều.",
+    "1": "\"Dừng lại\" là dữ kiện ngầm $v_2 = 0$; bỏ qua nó thì không tính được $\\Delta v$.",
+    "2": "Chiều dương là chiều chuyển động nên $v \\gt 0$; chậm dần đòi hỏi $a$ trái dấu với $v$, tức $a \\lt 0$.",
+    "3": "Coi vận tốc giữ nguyên $v_1$ suốt lúc hãm; đồ thị là tam giác nên quãng đường bằng $\\frac{1}{2} v_1 \\Delta t$."
+   }
+  }
+ ]
 }

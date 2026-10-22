@@ -1,386 +1,550 @@
 {
-  "lesson_id": 68,
-  "lesson_title": "Bài 23. Năng lượng. Công cơ học",
-  "item_id": 233,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 68,
+ "lesson_title": "Bài 23. Năng lượng. Công cơ học",
+ "item_id": 233,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Phát biểu nào sau đây đúng với định luật bảo toàn năng lượng?",
+   "options": [
+    "Năng lượng không tự sinh ra, không tự mất đi, chỉ chuyển hoá hoặc truyền đi",
+    "Năng lượng tự mất dần đi khi vật dừng chuyển động hoặc nguội dần đi",
+    "Năng lượng có thể tự sinh ra khi vật được đưa lên một vị trí rất cao",
+    "Năng lượng chỉ truyền giữa các vật, không chuyển từ dạng này sang dạng khác"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu năng lượng không tự sinh ra, không tự mất đi, chỉ chuyển hoá từ dạng này sang dạng khác hoặc truyền từ vật này sang vật khác.",
+   "distractorNotes": {
+    "B": "Thấy vật dừng hay nguội rồi tưởng năng lượng mất, thực ra nó chỉ chuyển sang dạng khác như nhiệt năng.",
+    "C": "Thế năng ở chỗ cao không tự sinh ra, nó do lực đưa vật lên thực hiện công truyền vào.",
+    "D": "Bỏ quên sự chuyển hoá giữa các dạng, như thế năng thành động năng khi bóng rơi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Năng lượng. Công cơ học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thế năng là năng lượng",
+   "options": [
+    "của vật do vật đang chuyển động có tốc độ",
+    "dự trữ của vật do vị trí hoặc trạng thái của vật",
+    "do chuyển động hỗn loạn của các phân tử trong vật",
+    "do chuyển động có hướng của các điện tích trong vật"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, thế năng là năng lượng dự trữ của vật do vị trí hoặc trạng thái, ví dụ dây cung kéo căng, người đứng trên đỉnh cầu trượt.",
+   "distractorNotes": {
+    "A": "Nhầm thế năng với động năng, vì năng lượng do chuyển động là động năng.",
+    "C": "Nhầm thế năng với nhiệt năng, vì chuyển động hỗn loạn của phân tử tạo ra nhiệt năng.",
+    "D": "Nhầm thế năng với điện năng, vì chuyển động có hướng của điện tích tạo ra điện năng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Năng lượng. Công cơ học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị jun (J) của công bằng",
+   "options": [
+    "N/m",
+    "N·m/s",
+    "N·m",
+    "kg·m/s"
+   ],
+   "answer": 2,
+   "explanation": "Công bằng lực nhân độ dịch chuyển nên $1\\ \\text{J} = 1\\ \\text{N}\\cdot\\text{m}$.",
+   "distractorNotes": {
+    "A": "Lấy lực chia cho độ dịch chuyển, trong khi công là tích của lực với độ dịch chuyển.",
+    "B": "Thêm thời gian vào đơn vị, trong khi công thức công không chứa thời gian.",
+    "D": "Nhầm sang đơn vị của tích khối lượng với vận tốc, không phải niutơn nhân mét."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực không đổi $\\vec F$ làm vật dịch chuyển $\\vec d$, $\\alpha$ là góc giữa $\\vec F$ và $\\vec d$. Công của lực là",
+   "options": [
+    "$A = Fd\\sin\\alpha$",
+    "$A = \\dfrac{F}{d}\\cos\\alpha$",
+    "$A = Fd$",
+    "$A = Fd\\cos\\alpha$"
+   ],
+   "answer": 3,
+   "explanation": "Bài cho $A = Fd\\cos\\alpha$: chỉ phần lực dọc đường đi $F\\cos\\alpha$ mới sinh công.",
+   "distractorNotes": {
+    "A": "Dùng $\\sin\\alpha$ là lấy phần lực vuông góc đường đi, trong khi chỉ $F\\cos\\alpha$ sinh công.",
+    "B": "Lấy lực chia cho độ dịch chuyển, trong khi công là tích của hai đại lượng này.",
+    "C": "Quên $\\cos\\alpha$, công thức này chỉ đúng khi lực cùng hướng với độ dịch chuyển."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công của một lực là công cản khi góc $\\alpha$ giữa lực và độ dịch chuyển thoả mãn",
+   "options": [
+    "$0^\\circ \\le \\alpha \\lt 90^\\circ$",
+    "$90^\\circ \\lt \\alpha \\le 180^\\circ$",
+    "$\\alpha = 90^\\circ$",
+    "$\\alpha = 0^\\circ$"
+   ],
+   "answer": 1,
+   "explanation": "Góc tù thì $\\cos\\alpha \\lt 0$ nên $A \\lt 0$: công cản, lực lấy bớt năng lượng của vật.",
+   "distractorNotes": {
+    "A": "Góc nhọn cho $\\cos\\alpha \\gt 0$ nên công dương, đó là công phát động.",
+    "C": "Góc vuông cho $\\cos\\alpha = 0$, khi đó lực không sinh công chứ không phải công cản.",
+    "D": "Lực cùng hướng dịch chuyển cho công dương lớn nhất, đó là công phát động."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thả quả bóng tennis xuống sàn gạch, bóng nảy thấp dần rồi nằm yên. Nhận xét nào sau đây đúng?",
+   "options": [
+    "Năng lượng của bóng đã tự mất đi hoàn toàn",
+    "Toàn bộ thế năng ban đầu đã chuyển hết thành động năng",
+    "Năng lượng chuyển dần thành nhiệt năng và âm thanh",
+    "Năng lượng giảm vì bóng nhẹ dần sau mỗi lần nảy"
+   ],
+   "answer": 2,
+   "explanation": "Mỗi lần chạm sàn, một phần năng lượng chuyển thành nhiệt năng và âm thanh; tổng năng lượng không tự mất.",
+   "distractorNotes": {
+    "A": "Thấy bóng nằm yên rồi tưởng năng lượng mất, trái định luật bảo toàn, thực ra nó đã đổi dạng.",
+    "B": "Bóng nằm yên thì không còn động năng, năng lượng đã chuyển dần sang nhiệt và âm thanh.",
+    "D": "Khối lượng bóng không đổi; bóng nảy thấp dần vì năng lượng chuyển sang nhiệt và âm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Năng lượng. Công cơ học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Em xách xô nước đi đều trên sàn nằm ngang, xô giữ ở độ cao không đổi. Công của lực tay lên xô",
+   "options": [
+    "bằng 0 vì lực tay vuông góc với độ dịch chuyển",
+    "dương vì người xách xô cảm thấy mỏi tay",
+    "âm vì lực tay ngược chiều với trọng lực",
+    "bằng 0 vì xô chuyển động thẳng đều"
+   ],
+   "answer": 0,
+   "explanation": "Lực tay hướng thẳng lên, xô đi ngang nên $\\alpha = 90^\\circ$, $\\cos\\alpha = 0$, $A = 0$.",
+   "distractorNotes": {
+    "B": "Đo công bằng cảm giác mỏi, trong khi công cơ học chỉ phụ thuộc lực, độ dịch chuyển và góc giữa chúng.",
+    "C": "So hướng lực tay với trọng lực, trong khi dấu của công phải so lực với độ dịch chuyển.",
+    "D": "Chuyển động đều vẫn có dịch chuyển, công bằng 0 ở đây là do lực vuông góc đường đi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Năng lượng. Công cơ học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật trọng lượng $P$ được đưa lên cao thêm $h$. Công của trọng lực là",
+   "options": [
+    "$A_P = Ph$",
+    "$A_P = 0$",
+    "$A_P = -\\dfrac{P}{h}$",
+    "$A_P = -Ph$"
+   ],
+   "answer": 3,
+   "explanation": "Vật đi lên ngược chiều trọng lực nên $A_P = -Ph$; đi xuống thì $A_P = +Ph$.",
+   "distractorNotes": {
+    "A": "$+Ph$ là công trọng lực khi vật đi xuống; vật đi lên ngược chiều trọng lực nên công âm.",
+    "B": "Công trọng lực chỉ bằng 0 khi vật đi ngang, còn ở đây độ cao đã thay đổi.",
+    "C": "Lấy trọng lượng chia cho độ cao, trong khi công là tích của trọng lượng với độ cao."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một lực có độ lớn và hướng không đổi kéo vật đi thẳng theo một chiều. Nếu quãng đường tăng gấp đôi thì công của lực",
+   "options": [
+    "giảm còn một nửa",
+    "tăng gấp bốn lần",
+    "tăng gấp đôi",
+    "không thay đổi"
+   ],
+   "answer": 2,
+   "explanation": "Theo $A = Fs\\cos\\alpha$, khi $F$ và $\\alpha$ không đổi thì $A$ tỉ lệ thuận với $s$.",
+   "distractorNotes": {
+    "A": "Coi công tỉ lệ nghịch với quãng đường, trong khi $A = Fs\\cos\\alpha$ tỉ lệ thuận với $s$.",
+    "B": "Tưởng quãng đường có bình phương trong công thức, trong khi $s$ chỉ có bậc một.",
+    "D": "Quên rằng công phụ thuộc quãng đường, nên $s$ đổi thì $A$ cũng đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Từ công thức $A = Fs\\cos\\alpha$ (với $\\alpha \\ne 90^\\circ$), độ lớn của lực được tính bằng",
+   "options": [
+    "$F = As\\cos\\alpha$",
+    "$F = \\dfrac{A}{s\\cos\\alpha}$",
+    "$F = \\dfrac{s\\cos\\alpha}{A}$",
+    "$F = \\dfrac{A\\cos\\alpha}{s}$"
+   ],
+   "answer": 1,
+   "explanation": "Chia hai vế của $A = Fs\\cos\\alpha$ cho $s\\cos\\alpha$ được $F = \\dfrac{A}{s\\cos\\alpha}$.",
+   "distractorNotes": {
+    "A": "Biến đổi sai chiều: muốn tách $F$ phải chia cho $s\\cos\\alpha$, không được nhân thêm.",
+    "C": "Đảo tử số với mẫu số, nên biểu thức thu được là nghịch đảo của $F$.",
+    "D": "$\\cos\\alpha$ đang nhân với $F$, khi chuyển vế phải xuống mẫu chứ không ở lại tử."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Năng lượng. Công cơ học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kéo đều xe lăn lên cùng một độ cao bằng mặt nghiêng thay vì kéo thẳng đứng. Dùng mặt nghiêng thì",
+   "options": [
+    "lợi về lực, thiệt về đường đi, lợi về công",
+    "thiệt về lực, lợi về đường đi, không lợi về công",
+    "lợi về lực, lợi về đường đi, lợi về công",
+    "lợi về lực, thiệt về đường đi, không lợi về công"
+   ],
+   "answer": 3,
+   "explanation": "Thí nghiệm cho thấy mặt nghiêng càng dài lực kế chỉ càng nhỏ nhưng tích $Fs$ luôn xấp xỉ $Ph$, không nhỏ hơn.",
+   "distractorNotes": {
+    "A": "Tưởng lực nhỏ thì tốn ít công, trong khi tích $Fs$ không nhỏ hơn $Ph$.",
+    "B": "Đảo ngược kết luận: trên mặt nghiêng lực kế chỉ nhỏ hơn trọng lượng và đường đi dài hơn độ cao.",
+    "C": "Quên rằng mặt nghiêng dài hơn độ cao, nên đường đi bị thiệt và công không được lợi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật trượt thẳng được quãng đường $s$, lực ma sát trượt có độ lớn $F_{ms}$. Công của lực ma sát trượt là",
+   "options": [
+    "$A_{ms} = -F_{ms}s$",
+    "$A_{ms} = F_{ms}s$",
+    "$A_{ms} = 0$",
+    "$A_{ms} = -\\dfrac{F_{ms}}{s}$"
+   ],
+   "answer": 0,
+   "explanation": "Ma sát trượt ngược hướng chuyển động, $\\alpha = 180^\\circ$ nên $A_{ms} = -F_{ms}s$.",
+   "distractorNotes": {
+    "B": "Bỏ dấu trừ, trong khi ma sát trượt ngược hướng chuyển động nên luôn sinh công cản.",
+    "C": "Tưởng ma sát không sinh công, trong khi nó nằm dọc đường đi chứ không vuông góc.",
+    "D": "Lấy lực chia cho quãng đường, trong khi công là tích của lực với quãng đường."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Năng lượng. Công cơ học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đứng trên giày trượt, em đẩy thành sân băng và lùi ra xa một đoạn. Công của lực em đẩy lên thành sân",
+   "options": [
+    "dương vì người đã lùi được một đoạn",
+    "âm vì người đi ngược chiều lực đẩy",
+    "bằng 0 vì thành sân không dịch chuyển",
+    "dương vì người đã dùng lực rất lớn"
+   ],
+   "answer": 2,
+   "explanation": "Phải lấy độ dịch chuyển của vật nhận lực; thành sân đứng yên nên $d = 0$ và $A = 0$.",
+   "distractorNotes": {
+    "A": "Lấy nhầm đoạn lùi của người, trong khi phải dùng độ dịch chuyển của thành sân nhận lực.",
+    "B": "Xét chiều đi của người, trong khi dấu và giá trị công phải theo vật nhận lực là thành sân.",
+    "D": "Lực lớn đến đâu mà vật nhận lực không dịch chuyển thì công vẫn bằng 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Kéo thùng lên dốc nghiêng góc $\\theta$ bằng lực $F$ song song mặt dốc, thùng đi được quãng $s$ dọc dốc. Công của lực kéo là",
+   "options": [
+    "$A = Fs\\cos\\theta$",
+    "$A = Fs$",
+    "$A = Fs\\sin\\theta$",
+    "$A = -Fs$"
+   ],
+   "answer": 1,
+   "explanation": "Lực song song mặt dốc, cùng hướng đường đi nên $\\alpha = 0^\\circ$ và $A = Fs$; góc dốc chỉ dùng khi tính công trọng lực.",
+   "distractorNotes": {
+    "A": "Lấy góc dốc làm $\\alpha$, trong khi $\\alpha$ là góc giữa lực kéo và đường đi, ở đây bằng $0^\\circ$.",
+    "C": "Nhân sin góc dốc là nhầm sang cách tính công trọng lực trên dốc.",
+    "D": "Gán dấu âm cho chuyển động lên dốc, trong khi đó là dấu của công trọng lực, không phải lực kéo."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một quạt điện đang chạy: nhận điện năng, cánh quạt quay làm không khí chuyển động, ổ trục và động cơ nóng lên, quạt phát ra tiếng kêu. Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phát biểu nào đúng với định luật bảo toàn và chuyển hoá năng lượng?",
-      "options": [
-        "Năng lượng của vật luôn giữ nguyên dạng ban đầu, chỉ có độ lớn thay đổi",
-        "Năng lượng không tự sinh ra, không tự mất đi, chỉ chuyển hoá từ dạng này sang dạng khác hoặc truyền từ vật này sang vật khác",
-        "Năng lượng có thể tự mất đi khi vật chuyển động có ma sát",
-        "Năng lượng chỉ được truyền đi chứ không chuyển hoá sang dạng khác"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu năng lượng tồn tại ở nhiều dạng, chuyển hoá hoặc truyền đi, không tự sinh ra cũng không tự mất đi."
+     "text": "Điện năng được chuyển hoá thành động năng của cánh quạt và không khí.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Quả bóng tennis thả xuống sàn nảy thấp dần rồi nằm yên. Phần năng lượng ban đầu của bóng đã",
-      "options": [
-        "mất hẳn vì bóng đã dừng lại",
-        "biến thành động năng của sàn gạch đứng yên",
-        "chuyển thành nhiệt năng và âm thanh, tổng năng lượng vẫn không đổi",
-        "chuyển hết thành thế năng vì bóng nằm trên sàn"
-      ],
-      "answer": 2,
-      "explanation": "Mỗi lần chạm sàn, một phần năng lượng thành nhiệt và âm thanh. Bóng nằm yên nhưng năng lượng không mất, chỉ đổi dạng."
+     "text": "Năng lượng là đại lượng có hướng, hướng theo chiều quay của cánh quạt.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Minh ôm ba lô đứng yên suốt 5 phút và rất mỏi tay. Theo vật lí, công của lực tay lên ba lô",
-      "options": [
-        "bằng 0 vì ba lô không dịch chuyển",
-        "dương vì Minh dùng lực lâu",
-        "âm vì lực tay hướng lên ngược với trọng lực",
-        "lớn hơn cả khi Minh xách ba lô đi ngang"
-      ],
-      "answer": 0,
-      "explanation": "Công cần có lực và độ dịch chuyển. Ba lô đứng yên nên $d = 0$, $A = 0$. Mỏi là chuyện cơ bắp, không phải công cơ học."
+     "text": "Một phần năng lượng chuyển thành nhiệt năng ở ổ trục, động cơ và thành âm thanh.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực không sinh công khi góc $\\alpha$ giữa lực và độ dịch chuyển bằng",
-      "options": [
-        "$0^\\circ$",
-        "$60^\\circ$",
-        "$180^\\circ$",
-        "$90^\\circ$"
-      ],
-      "answer": 3,
-      "explanation": "$A = F d \\cos\\alpha$ bằng 0 khi $\\cos\\alpha = 0$, tức $\\alpha = 90^\\circ$. Với $0^\\circ$ và $60^\\circ$ công dương, với $180^\\circ$ công âm."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công cản là công của lực có góc $\\alpha$ với độ dịch chuyển thoả",
-      "options": [
-        "$0^\\circ \\le \\alpha \\lt 90^\\circ$, công âm, lực cung cấp năng lượng cho vật",
-        "$90^\\circ \\lt \\alpha \\le 180^\\circ$, công âm, lực lấy bớt năng lượng của vật",
-        "$\\alpha = 90^\\circ$, công âm, lực không đổi năng lượng của vật",
-        "$0^\\circ \\le \\alpha \\lt 90^\\circ$, công dương, lực lấy bớt năng lượng của vật"
-      ],
-      "answer": 1,
-      "explanation": "Góc tù cho $\\cos\\alpha \\lt 0$ nên $A \\lt 0$: đó là công cản. Góc nhọn là công phát động."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Theo bài, 1 calo (cal) là",
-      "options": [
-        "năng lượng làm 1 kg nước nóng thêm $1\\ ^\\circ\\text{C}$, bằng $4{,}184\\ \\text{J}$",
-        "năng lượng làm 1 g nước nóng thêm $1\\ ^\\circ\\text{C}$, bằng $4184\\ \\text{J}$",
-        "năng lượng làm 1 g nước nóng thêm $1\\ ^\\circ\\text{C}$, bằng $4{,}184\\ \\text{J}$",
-        "đơn vị công suất, bằng $4{,}184\\ \\text{W}$"
-      ],
-      "answer": 2,
-      "explanation": "Calo là năng lượng làm 1 g nước nóng thêm $1\\ ^\\circ\\text{C}$, $1\\ \\text{cal} = 4{,}184\\ \\text{J}$. Nhầm 1 g với 1 kg làm lệch 1000 lần."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về năng lượng và sự chuyển hoá năng lượng, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Năng lượng là đại lượng vô hướng, đơn vị jun (J).",
-          "answer": true
-        },
-        {
-          "text": "Quạt điện chạy chuyển điện năng thành động năng của cánh quạt, không khí và nhiệt năng ở động cơ.",
-          "answer": true
-        },
-        {
-          "text": "Quả bóng nảy rồi nằm yên nghĩa là năng lượng của nó đã tự mất đi.",
-          "answer": false
-        },
-        {
-          "text": "Nhiệt năng gắn với chuyển động hỗn loạn của các phân tử.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ý 3 sai: năng lượng của bóng thành nhiệt và âm thanh, không tự mất. Các ý còn lại khớp mục năng lượng của bài."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về dấu của công $A = F d\\cos\\alpha$, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Góc nhọn giữa lực và độ dịch chuyển cho công dương (công phát động).",
-          "answer": true
-        },
-        {
-          "text": "Lực vuông góc với độ dịch chuyển thì không sinh công.",
-          "answer": true
-        },
-        {
-          "text": "Vật chuyển động thẳng đều thì mọi lực tác dụng lên nó đều không sinh công.",
-          "answer": false
-        },
-        {
-          "text": "Công là đại lượng vô hướng nên có thể âm, dương hoặc bằng 0.",
-          "answer": true
-        }
-      ],
-      "explanation": "Ý 3 sai: chuyển động đều vẫn có độ dịch chuyển, từng lực vẫn có thể sinh công, ví dụ lực căng cáp thang máy hạ đều có $\\alpha = 180^\\circ$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Em bưng khay nặng $5$ N đi đều $8$ m trên sàn nằm ngang, khay giữ ở độ cao không đổi. Công của lực tay lên khay bằng bao nhiêu jun?",
-      "answer": "0",
-      "explanation": "Lực tay hướng lên, khay đi ngang nên $\\alpha = 90^\\circ$, $\\cos\\alpha = 0$ và $A = 0$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Thang máy hạ cabin thẳng đứng xuống chậm đều. Góc giữa lực căng dây cáp và độ dịch chuyển của cabin bằng bao nhiêu độ?",
-      "answer": "180",
-      "explanation": "Lực căng hướng lên, cabin đi xuống nên $\\alpha = 180^\\circ$ và $A = -T s$ (công cản)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Công của một lực không đổi tác dụng lên vật đi thẳng một chiều được tính bằng",
-      "options": [
-        "$A = F s \\sin\\alpha$, với $\\alpha$ là góc giữa $\\vec F$ và $\\vec d$",
-        "$A = \\dfrac{F}{s}\\cos\\alpha$, với $\\alpha$ là góc giữa $\\vec F$ và $\\vec d$",
-        "$A = F s \\cos\\alpha$, với $\\alpha$ là góc nghiêng của mặt phẳng so với mặt đất",
-        "$A = F s \\cos\\alpha$, với $\\alpha$ là góc giữa $\\vec F$ và $\\vec d$"
-      ],
-      "answer": 3,
-      "explanation": "Chỉ phần lực dọc đường đi, $F\\cos\\alpha$, sinh công, và $\\alpha$ là góc giữa lực và độ dịch chuyển, không phải góc dốc."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đơn vị jun (J) của công tương đương với",
-      "options": [
-        "$\\text{N}\\cdot\\text{m}$",
-        "$\\text{N}/\\text{m}$",
-        "$\\text{kg}\\cdot\\text{m/s}$",
-        "$\\text{N}\\cdot\\text{s}$"
-      ],
-      "answer": 0,
-      "explanation": "$A = F d$ nên $1\\ \\text{J} = 1\\ \\text{N}\\cdot\\text{m}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực $F = 80\\ \\text{N}$ làm vật đi thẳng $5\\ \\text{m}$, lực hợp với hướng đi góc $60^\\circ$. Công của lực là",
-      "options": [
-        "$400\\ \\text{J}$",
-        "$346\\ \\text{J}$",
-        "$200\\ \\text{J}$",
-        "$-200\\ \\text{J}$"
-      ],
-      "answer": 2,
-      "explanation": "$A = 80\\cdot 5\\cdot \\cos 60^\\circ = 200\\ \\text{J}$. $400\\ \\text{J}$ quên $\\cos\\alpha$; $346\\ \\text{J}$ dùng $\\sin 60^\\circ$; $-200\\ \\text{J}$ gán dấu trừ cho góc nhọn."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật $2\\ \\text{kg}$ được nâng lên cao $3\\ \\text{m}$ ($g = 10\\ \\text{m/s}^2$). Công của trọng lực trong quá trình này là",
-      "options": [
-        "$60\\ \\text{J}$",
-        "$-60\\ \\text{J}$",
-        "$0$",
-        "$-6\\ \\text{J}$"
-      ],
-      "answer": 1,
-      "explanation": "Đi lên: $A_P = -Ph = -mgh = -2\\cdot 10\\cdot 3 = -60\\ \\text{J}$. $60\\ \\text{J}$ sai dấu; $0$ là nhầm với đi ngang; $-6\\ \\text{J}$ quên $g$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về công của trọng lực và của lực ma sát trượt, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Vật đi xuống độ cao $h$ thì công của trọng lực là $+Ph$.",
-          "answer": true
-        },
-        {
-          "text": "Vật đi lên dốc cao $h$ thì công của trọng lực là $-Ph$, không phụ thuộc dốc dài hay ngắn.",
-          "answer": true
-        },
-        {
-          "text": "Vật đi ngang trên mặt phẳng nằm ngang thì công của trọng lực bằng 0.",
-          "answer": true
-        },
-        {
-          "text": "Ma sát trượt cùng hướng chuyển động nên công của nó là $+F_{ms}s$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Ý 4 sai: ma sát trượt ngược hướng chuyển động, $\\alpha = 180^\\circ$, $A_{ms} = -F_{ms}s$."
-    },
-    {
-      "type": "true_false",
-      "kind": "bien_doi",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét công $A = F s\\cos\\alpha$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lực cùng hướng độ dịch chuyển thì $A = Fs$.",
-          "answer": true
-        },
-        {
-          "text": "Lực ngược hướng độ dịch chuyển thì $A = -Fs$.",
-          "answer": true
-        },
-        {
-          "text": "Giữ nguyên $F$ và $\\alpha$, quãng đường tăng gấp đôi thì công tăng gấp đôi.",
-          "answer": true
-        },
-        {
-          "text": "$\\alpha$ là góc giữa lực và mặt đất, bất kể hướng đi của vật.",
-          "answer": false
-        }
-      ],
-      "explanation": "Ý 4 sai: $\\alpha$ là góc giữa $\\vec F$ và $\\vec d$ (hướng đường đi), không phải góc với mặt đất hay góc dốc."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kéo thùng lên dốc nghiêng $30^\\circ$ bằng lực $200\\ \\text{N}$ song song mặt dốc, thùng đi $5\\ \\text{m}$ dọc dốc. Công của lực kéo bằng bao nhiêu jun?",
-      "answer": "1000",
-      "explanation": "Lực song song mặt dốc, cùng hướng đường đi nên $\\alpha = 0^\\circ$, $A = 200\\cdot 5 = 1000\\ \\text{J}$. Góc dốc không có mặt trong công của lực kéo."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực ma sát trượt có độ lớn $12\\ \\text{N}$, vật trượt $25\\ \\text{m}$. Công của lực ma sát bằng bao nhiêu jun?",
-      "answer": "-300",
-      "explanation": "Ma sát ngược hướng chuyển động: $A_{ms} = -F_{ms}s = -12\\cdot 25 = -300\\ \\text{J}$ (công cản)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Công của lực và trường hợp lực xiên góc",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực $120\\ \\text{N}$ hợp với hướng đi góc $60^\\circ$, vật đi thẳng $10\\ \\text{m}$. Công của lực bằng bao nhiêu jun?",
-      "answer": "600",
-      "explanation": "$A = 120\\cdot 10\\cdot \\cos 60^\\circ = 600\\ \\text{J}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Định luật bảo toàn và chuyển hoá năng lượng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đổi $5\\ \\text{cal}$ ra jun, biết $1\\ \\text{cal} = 4{,}184\\ \\text{J}$. Làm tròn đến số nguyên.",
-      "answer": "21",
-      "explanation": "$5\\cdot 4{,}184 = 20{,}92\\ \\text{J} \\approx 21\\ \\text{J}$."
+     "text": "Tổng năng lượng các dạng quạt tạo ra lớn hơn điện năng quạt nhận vào.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Bài lấy quạt điện làm ví dụ chuyển hoá: điện năng thành động năng, nhiệt năng và âm thanh. Năng lượng là đại lượng vô hướng và không tự sinh ra nên tổng không thể vượt điện năng nhận vào.",
+   "distractorNotes": {
+    "0": "Cánh quạt và không khí chuyển động có động năng, lấy từ điện năng nhận vào, nên ý này đúng.",
+    "1": "Năng lượng là đại lượng vô hướng, không có hướng theo chiều quay của cánh quạt.",
+    "2": "Ổ trục nóng lên và quạt có tiếng kêu chứng tỏ có nhiệt năng và âm thanh, nên ý này đúng.",
+    "3": "Năng lượng không tự sinh ra, nên tổng các dạng tạo ra không thể vượt điện năng nhận vào."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Năng lượng. Công cơ học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Ở sân băng: Minh đứng yên ôm ba lô suốt 5 phút, mỏi tay. Lan đẩy lưng Hà đang đứng trên giày trượt, Hà lướt đi theo hướng lực đẩy. Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Minh mỏi tay nên lực tay Minh đã sinh công lên ba lô.",
+     "answer": false
+    },
+    {
+     "text": "Ba lô không dịch chuyển nên công của lực tay Minh bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Lực đẩy của Lan sinh công dương lên Hà.",
+     "answer": true
+    },
+    {
+     "text": "Công cơ học được đo bằng mức độ mỏi cơ bắp của người tác dụng lực.",
+     "answer": false
+    }
+   ],
+   "explanation": "Công cần có lực và vật nhận lực dịch chuyển theo hướng có thành phần của lực. Ba lô đứng yên nên $A = 0$; Hà dịch chuyển theo hướng lực đẩy nên công dương.",
+   "distractorNotes": {
+    "0": "Mỏi chỉ là chuyện cơ bắp; ba lô đứng yên nên $d = 0$, lực tay không sinh công.",
+    "1": "Độ dịch chuyển bằng 0 thì $A = Fd\\cos\\alpha = 0$ dù lực lớn, nên ý này đúng.",
+    "2": "Hà dịch chuyển cùng hướng lực đẩy, góc nhọn nên công dương, ý này đúng.",
+    "3": "Công tính bằng lực, độ dịch chuyển và góc giữa chúng, không đo bằng cảm giác mỏi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Năng lượng. Công cơ học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xét các dạng năng lượng nêu trong bài: than nóng đỏ, dòng điện trong dây sạc, dây cung kéo căng, nước được đun nóng. Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Nhiệt năng gắn với chuyển động hỗn loạn của các phân tử, như ở than nóng đỏ.",
+     "answer": true
+    },
+    {
+     "text": "Điện năng gắn với chuyển động có hướng của các điện tích, như dòng điện trong dây sạc.",
+     "answer": true
+    },
+    {
+     "text": "Dây cung kéo căng có động năng vì nó đang bị biến dạng.",
+     "answer": false
+    },
+    {
+     "text": "1 cal là năng lượng làm 1 kg nước nóng thêm 1 °C.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài nêu nhiệt năng do chuyển động hỗn loạn của phân tử, điện năng do chuyển động có hướng của điện tích; dây cung kéo căng có thế năng do trạng thái. 1 cal là năng lượng làm 1 g nước nóng thêm 1 °C.",
+   "distractorNotes": {
+    "0": "Bài định nghĩa nhiệt năng đúng theo chuyển động hỗn loạn của phân tử, than nóng đỏ là ví dụ của bài.",
+    "1": "Bài định nghĩa điện năng đúng theo chuyển động có hướng của điện tích, có ví dụ dây sạc.",
+    "2": "Dây cung căng có năng lượng dự trữ do trạng thái, đó là thế năng; động năng cần vật chuyển động.",
+    "3": "Định nghĩa calo ứng với 1 g nước, đọc thành 1 kg là phóng đại nghìn lần."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kéo vali đi thẳng trên sàn ngang bằng lực $F$, dây kéo hợp với phương ngang góc $60^\\circ$, vali đi được quãng $s$. Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Công của lực kéo là công dương vì góc giữa lực và đường đi là góc nhọn.",
+     "answer": true
+    },
+    {
+     "text": "Công của lực kéo được tính bằng $A = Fs\\sin 60^\\circ$.",
+     "answer": false
+    },
+    {
+     "text": "Nếu dây kéo vuông góc với đường đi thì lực kéo không sinh công.",
+     "answer": true
+    },
+    {
+     "text": "Công là đại lượng vectơ, cùng hướng với lực kéo.",
+     "answer": false
+    }
+   ],
+   "explanation": "Góc giữa lực và đường đi là $60^\\circ$ nên $A = Fs\\cos 60^\\circ \\gt 0$; $\\alpha = 90^\\circ$ thì $A = 0$. Công là đại lượng vô hướng.",
+   "distractorNotes": {
+    "0": "$\\cos 60^\\circ \\gt 0$ nên công dương, là công phát động, vì vậy ý này đúng.",
+    "1": "Dùng sin là lấy phần lực vuông góc đường đi, trong khi phần lực sinh công là $F\\cos\\alpha$.",
+    "2": "$\\cos 90^\\circ = 0$ nên lực vuông góc đường đi không sinh công, ý này đúng.",
+    "3": "Công là đại lượng vô hướng, có thể dương, âm hoặc bằng 0, không có hướng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thang máy hạ cabin trọng lượng $P$ thẳng đứng xuống chậm đều một quãng $s$; lực căng dây cáp $\\vec T$ hướng lên. Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Công của lực căng dây cáp là $A_T = -Ts$.",
+     "answer": true
+    },
+    {
+     "text": "Cabin chuyển động đều nên công của lực căng bằng 0.",
+     "answer": false
+    },
+    {
+     "text": "Công của trọng lực lên cabin là $A_P = Ps$.",
+     "answer": true
+    },
+    {
+     "text": "Công của lực căng dây cáp là công phát động.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\vec T$ hướng lên, $\\vec d$ hướng xuống: $\\alpha = 180^\\circ$, $A_T = -Ts$ là công cản. Trọng lực cùng hướng dịch chuyển nên $A_P = Ps$.",
+   "distractorNotes": {
+    "0": "Lực căng hướng lên ngược hướng dịch chuyển, $\\cos 180^\\circ = -1$ nên $A_T = -Ts$, ý này đúng.",
+    "1": "Chuyển động đều vẫn có dịch chuyển, nên lực căng vẫn sinh công.",
+    "2": "Cabin đi xuống cùng hướng trọng lực, độ cao giảm $s$ nên công trọng lực dương, ý này đúng.",
+    "3": "Lực căng ngược hướng dịch chuyển nên lấy bớt năng lượng của cabin, đó là công cản."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Trên sân băng nằm ngang, Lan kéo ván trượt trọng lượng $P$ bằng dây chếch lên hợp với phương ngang góc $30^\\circ$, lực kéo $F$, ván đi thẳng quãng $s$; hệ số ma sát trượt là $\\mu$. Mỗi phát biểu sau đúng hay sai?",
+   "statements": [
+    {
+     "text": "Công của lực kéo là $A_F = Fs\\cos 30^\\circ$.",
+     "answer": true
+    },
+    {
+     "text": "Trọng lực và phản lực của mặt băng không sinh công lên ván.",
+     "answer": true
+    },
+    {
+     "text": "Phản lực của mặt băng là $N = P + F\\sin 30^\\circ$.",
+     "answer": false
+    },
+    {
+     "text": "So với kéo dây nằm ngang, kéo dây chếch lên làm lực ma sát lớn hơn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Phần lực kéo hướng lên $F\\sin 30^\\circ$ làm giảm áp lực nên $N = P - F\\sin 30^\\circ$, ma sát $\\mu N$ nhỏ hơn khi kéo ngang. $\\vec P$, $\\vec N$ vuông góc đường đi nên không sinh công.",
+   "distractorNotes": {
+    "0": "Góc giữa lực kéo và đường đi nằm ngang đúng bằng $30^\\circ$, nên dùng $\\cos 30^\\circ$ là đúng.",
+    "1": "$\\vec P$ và $\\vec N$ thẳng đứng, vuông góc đường đi ngang nên công bằng 0, ý này đúng.",
+    "2": "Phần lực kéo hướng lên làm giảm áp lực, nên phải trừ $F\\sin 30^\\circ$ chứ không cộng.",
+    "3": "Kéo chếch lên làm $N$ nhỏ hơn $P$, nên ma sát $\\mu N$ nhỏ hơn so với kéo ngang."
+   }
+  }
+ ]
 }

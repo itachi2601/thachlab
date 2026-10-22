@@ -1,386 +1,550 @@
 {
-  "lesson_id": 73,
-  "lesson_title": "Bài 28. Động lượng",
-  "item_id": 245,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 73,
+ "lesson_title": "Bài 28. Động lượng",
+ "item_id": 245,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khái niệm động lượng, xung lượng của lực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Động lượng của một vật chuyển động là đại lượng",
+   "options": [
+    "vô hướng, chỉ phụ thuộc khối lượng vật",
+    "vector, cùng hướng với vận tốc của vật",
+    "vector, cùng hướng với lực tác dụng lên vật",
+    "vector, ngược hướng với vận tốc của vật"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, $\\vec p = m\\vec v$ là vector cùng hướng với vận tốc vì $m \\gt 0$.",
+   "distractorNotes": {
+    "A": "Bỏ qua vận tốc: $\\vec p = m\\vec v$ là vector và phụ thuộc cả khối lượng lẫn vận tốc.",
+    "C": "Nhầm $\\vec p$ với $\\Delta\\vec p$; chỉ độ biến thiên động lượng mới cùng hướng với hợp lực.",
+    "D": "Khối lượng luôn dương nên $m\\vec v$ luôn cùng hướng với $\\vec v$, không thể ngược hướng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khái niệm động lượng, xung lượng của lực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Động lượng là đại lượng đặc trưng cho",
+   "options": [
+    "khả năng truyền chuyển động khi tương tác",
+    "mức quán tính của vật khi tương tác",
+    "độ nhanh hay chậm của chuyển động",
+    "tác dụng gây biến dạng của lực"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu động lượng đặc trưng cho khả năng truyền chuyển động khi tương tác với vật khác; thí nghiệm bi lăn va khúc gỗ minh hoạ điều này.",
+   "distractorNotes": {
+    "B": "Mức quán tính chỉ do khối lượng quyết định, còn động lượng phụ thuộc cả vận tốc.",
+    "C": "Độ nhanh chậm là ý nghĩa của tốc độ, bỏ quên vai trò khối lượng trong $p = mv$.",
+    "D": "Gây biến dạng là tác dụng của lực, không phải ý nghĩa của động lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Động lượng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một hành khách ngồi yên trên toa tàu đang chạy thẳng đều. Động lượng của hành khách",
+   "options": [
+    "bằng nhau đối với toa tàu và sân ga",
+    "bằng 0 đối với cả toa tàu và sân ga",
+    "bằng 0 đối với toa, khác 0 đối với sân ga",
+    "khác 0 đối với toa, bằng 0 đối với sân ga"
+   ],
+   "answer": 2,
+   "explanation": "Vận tốc phụ thuộc hệ quy chiếu nên động lượng cũng vậy: so với toa $v = 0$, so với sân ga $v \\ne 0$.",
+   "distractorNotes": {
+    "A": "Coi động lượng là của riêng vật, quên rằng vận tốc và động lượng phụ thuộc hệ quy chiếu.",
+    "B": "Chỉ xét hệ gắn với toa; so với sân ga, hành khách chuyển động cùng tàu nên $p \\ne 0$.",
+    "D": "Đảo ngược hai hệ: ngồi yên trên tàu nghĩa là $v = 0$ so với toa, còn so với sân ga thì khác 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Khái niệm động lượng, xung lượng của lực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Xung lượng của lực $\\vec F$ tác dụng lên vật trong khoảng thời gian $\\Delta t$ là",
+   "options": [
+    "thương $\\vec F/\\Delta t$",
+    "tích của lực với quãng đường đi được",
+    "tích khối lượng và vận tốc của vật",
+    "tích $\\vec F\\Delta t$"
+   ],
+   "answer": 3,
+   "explanation": "Bài định nghĩa xung lượng của lực $\\vec F$ trong thời gian $\\Delta t$ là tích $\\vec F\\Delta t$, đơn vị $\\text{N}\\cdot\\text{s}$.",
+   "distractorNotes": {
+    "A": "Đặt $\\Delta t$ ở mẫu số, trong khi xung lượng là tích của lực với thời gian tác dụng.",
+    "B": "Nhầm thời gian với quãng đường; tích lực với quãng đường liên quan đến công, không phải xung lượng.",
+    "C": "Nhầm xung lượng với động lượng; $m\\vec v$ là động lượng, còn xung lượng bằng độ biến thiên của nó."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Túi khí trên ô tô giúp giảm chấn thương cho người khi xe đâm vì túi khí",
+   "options": [
+    "làm giảm độ biến thiên động lượng của người",
+    "kéo dài thời gian dừng, làm giảm lực lên người",
+    "làm tăng xung lượng tác dụng lên người",
+    "rút ngắn thời gian dừng, làm giảm lực lên người"
+   ],
+   "answer": 1,
+   "explanation": "Người vẫn dừng hẳn từ cùng tốc độ nên $\\Delta p$ không đổi; túi khí kéo dài $\\Delta t$ nên $F = \\Delta p/\\Delta t$ nhỏ đi.",
+   "distractorNotes": {
+    "A": "Người vẫn dừng hẳn từ cùng tốc độ nên $\\Delta p$ không đổi dù có túi khí.",
+    "C": "Xung lượng bằng $\\Delta p$ nên không đổi; túi khí chỉ làm thay đổi thời gian dừng.",
+    "D": "Đảo tỉ lệ: cùng $\\Delta p$, rút ngắn $\\Delta t$ thì lực $F = \\Delta p/\\Delta t$ tăng chứ không giảm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Khi đóng đinh, người ta dùng búa có mặt cứng vì",
+   "options": [
+    "mặt búa cứng làm $\\Delta t$ dài nên lực lên đinh lớn",
+    "mặt búa cứng làm động lượng của búa tăng lên",
+    "mặt búa cứng làm $\\Delta t$ rất ngắn nên lực lên đinh lớn",
+    "mặt búa cứng làm $\\Delta t$ rất ngắn nên lực lên đinh nhỏ"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu đóng đinh làm ngược với đệm mềm: mặt búa cứng làm $\\Delta t$ rất ngắn, theo $F = \\Delta p/\\Delta t$ lực lên đinh rất lớn.",
+   "distractorNotes": {
+    "A": "Mặt cứng làm va chạm ngắn đi; với cùng $\\Delta p$, nếu $\\Delta t$ dài thì lực lại nhỏ.",
+    "B": "Động lượng của búa do khối lượng và tốc độ vung quyết định, không do độ cứng mặt búa.",
+    "D": "Đảo tỉ lệ: $F = \\Delta p/\\Delta t$ nên $\\Delta t$ rất ngắn thì lực rất lớn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Độ biến thiên động lượng của một vật trong khoảng thời gian $\\Delta t$ bằng",
+   "options": [
+    "động lượng của vật ở cuối khoảng thời gian đó",
+    "tích của hợp lực và quãng đường vật đi được",
+    "xung lượng của trọng lực tác dụng lên vật",
+    "xung lượng của hợp lực tác dụng lên vật"
+   ],
+   "answer": 3,
+   "explanation": "Theo bài, $\\Delta\\vec p = \\vec F\\Delta t$ với $\\vec F$ là hợp lực tác dụng lên vật.",
+   "distractorNotes": {
+    "A": "Độ biến thiên là sau trừ trước; nó chỉ bằng động lượng lúc sau khi vật xuất phát từ nghỉ.",
+    "B": "Nhầm thời gian với quãng đường; độ biến thiên động lượng bằng hợp lực nhân thời gian tác dụng.",
+    "C": "Phải là hợp lực của mọi lực; trọng lực chỉ là một trong các lực tác dụng lên vật."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Khái niệm động lượng, xung lượng của lực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật khối lượng $m$ chuyển động với tốc độ $v$. Độ lớn động lượng của vật là",
+   "options": [
+    "$p = mv$",
+    "$p = \\dfrac{m}{v}$",
+    "$p = mv^2$",
+    "$p = \\dfrac{v}{m}$"
+   ],
+   "answer": 0,
+   "explanation": "Bài cho $\\vec p = m\\vec v$, độ lớn $p = mv$.",
+   "distractorNotes": {
+    "B": "Đặt tốc độ ở mẫu, trong khi động lượng tăng khi tốc độ tăng nên $v$ phải ở tử.",
+    "C": "Thêm bình phương cho tốc độ; động lượng chỉ tỉ lệ bậc nhất với $v$.",
+    "D": "Đảo vị trí khối lượng; vật nặng hơn cùng tốc độ thì có động lượng lớn hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Khái niệm động lượng, xung lượng của lực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đơn vị của động lượng trong hệ SI là",
+   "options": [
+    "$\\text{kg}\\cdot\\text{m/s}^2$",
+    "$\\text{N/s}$",
+    "$\\text{kg}\\cdot\\text{m/s}$",
+    "$\\text{kg}\\cdot\\text{m}^2\\text{/s}$"
+   ],
+   "answer": 2,
+   "explanation": "Từ $p = mv$, đơn vị là kg nhân m/s, tức $\\text{kg}\\cdot\\text{m/s}$.",
+   "distractorNotes": {
+    "A": "Đây là đơn vị của lực (khối lượng nhân gia tốc), không phải động lượng.",
+    "B": "Lấy lực chia thời gian, trong khi xung lượng tương đương động lượng là lực nhân thời gian.",
+    "D": "Thừa một bậc mét, vì vận tốc chỉ có đơn vị m/s."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dạng tổng quát của định luật II Newton viết theo động lượng là",
+   "options": [
+    "$\\vec F = \\Delta\\vec p\\cdot\\Delta t$",
+    "$\\vec F = \\dfrac{\\Delta\\vec p}{\\Delta t}$",
+    "$\\vec F = \\dfrac{\\Delta t}{\\Delta\\vec p}$",
+    "$\\vec F = \\dfrac{\\vec p}{m}$"
+   ],
+   "answer": 1,
+   "explanation": "Chia hai vế của $\\Delta\\vec p = \\vec F\\Delta t$ cho $\\Delta t$ được $\\vec F = \\Delta\\vec p/\\Delta t$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia cho $\\Delta t$ khi biến đổi từ $\\Delta\\vec p = \\vec F\\Delta t$.",
+    "C": "Đảo tử và mẫu, trong khi lực tỉ lệ thuận với độ biến thiên động lượng.",
+    "D": "$\\vec p/m$ là vận tốc chứ không phải lực, đồng thời bỏ mất yếu tố thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Động lượng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nếu khối lượng của vật giảm một nửa còn tốc độ tăng gấp đôi thì độ lớn động lượng của vật",
+   "options": [
+    "tăng gấp đôi",
+    "giảm một nửa",
+    "tăng gấp bốn",
+    "không đổi"
+   ],
+   "answer": 3,
+   "explanation": "$p = mv$: $m$ giảm 2 lần, $v$ tăng 2 lần nên tích $mv$ giữ nguyên (như bạn nhỏ và người lớn ở mở bài).",
+   "distractorNotes": {
+    "A": "Chỉ xét tốc độ tăng gấp đôi, bỏ quên khối lượng giảm một nửa.",
+    "B": "Chỉ xét khối lượng giảm một nửa, bỏ quên tốc độ tăng gấp đôi.",
+    "C": "Nhầm động lượng tỉ lệ với $v^2$, trong khi $p$ chỉ tỉ lệ bậc nhất với $v$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Động lượng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ gồm hai vật có động lượng $\\vec p_1$ và $\\vec p_2$ vuông góc với nhau. Độ lớn động lượng của hệ là",
+   "options": [
+    "$p = \\sqrt{p_1^2 + p_2^2}$",
+    "$p = p_1 + p_2$",
+    "$p = |p_1 - p_2|$",
+    "$p = p_1^2 + p_2^2$"
+   ],
+   "answer": 0,
+   "explanation": "Động lượng hệ cộng theo quy tắc vector; hai vector vuông góc thì dùng Pi-ta-go: $p = \\sqrt{p_1^2 + p_2^2}$.",
+   "distractorNotes": {
+    "B": "Cộng độ lớn như hai vector cùng hướng, bỏ qua góc giữa chúng.",
+    "C": "Trừ độ lớn như hai vector ngược hướng, trong khi vuông góc không phải trường hợp này.",
+    "D": "Quên lấy căn bậc hai; biểu thức này là $p^2$ chứ không phải $p$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Động lượng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ gồm hai vật có động lượng $\\vec p_1$, $\\vec p_2$ hợp với nhau góc $\\alpha$ (góc giữa hai vector chung gốc). Độ lớn động lượng của hệ thoả mãn",
+   "options": [
+    "$p^2 = p_1^2 + p_2^2 - 2p_1p_2\\cos\\alpha$",
+    "$p = p_1 + p_2\\cos\\alpha$",
+    "$p^2 = p_1^2 + p_2^2 + 2p_1p_2\\cos\\alpha$",
+    "$p = p_1^2 + p_2^2 + 2p_1p_2\\cos\\alpha$"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu $p^2 = p_1^2 + p_2^2 + 2p_1p_2\\cos\\alpha$, mang dấu $+$ vì $\\alpha$ là góc giữa hai vector chung gốc.",
+   "distractorNotes": {
+    "A": "Dùng dấu trừ như định lí cosin với góc trong tam giác, trong khi $\\alpha$ ở đây là góc giữa hai vector chung gốc.",
+    "B": "Chỉ chiếu $\\vec p_2$ lên phương $\\vec p_1$, bỏ mất thành phần vuông góc của $\\vec p_2$.",
+    "D": "Quên vế trái là $p^2$; thiếu bình phương làm sai cả thứ nguyên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một vật khối lượng $m$ chuyển động thẳng với tốc độ $v$ tới va vào tường rồi bật ngược lại theo phương cũ với cùng tốc độ $v$. Độ lớn độ biến thiên động lượng của vật là",
+   "options": [
+    "$0$",
+    "$mv$",
+    "$\\sqrt{2}\\,mv$",
+    "$2mv$"
+   ],
+   "answer": 3,
+   "explanation": "Chọn chiều dương là chiều tới: $\\Delta p = m(-v - v) = -2mv$, độ lớn $2mv$ (Bẫy 1).",
+   "distractorNotes": {
+    "A": "Lấy hiệu hai độ lớn, quên rằng vận tốc trước và sau ngược chiều nhau.",
+    "B": "Chỉ tính động lượng lúc trước hoặc lúc sau, chưa lấy hiệu vector sau trừ trước.",
+    "C": "Coi hai vector vuông góc, trong khi bật ngược lại thì hai vận tốc ngược hướng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai lần, cùng một người rơi từ cùng độ cao: lần thứ nhất xuống đệm hơi cứu hộ, lần thứ hai xuống sàn bê tông; cả hai lần người đều dừng hẳn. Xét các phát biểu sau:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Phát biểu nào sau đây về động lượng của một vật là đúng?",
-      "options": [
-        "Là đại lượng vô hướng, bằng tích của khối lượng và tốc độ",
-        "Là vector, cùng hướng với vận tốc, độ lớn bằng tích khối lượng và tốc độ",
-        "Là vector, cùng hướng với lực tác dụng lên vật",
-        "Là vector, có độ lớn bằng tích khối lượng và gia tốc"
-      ],
-      "answer": 1,
-      "explanation": "$\\vec p = m\\vec v$ nên $\\vec p$ là vector cùng hướng $\\vec v$. Hướng của lực hoặc gia tốc không quyết định hướng của $\\vec p$."
+     "text": "Độ biến thiên động lượng của người trong hai lần là như nhau.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vì sao động lượng của một vật phụ thuộc hệ quy chiếu?",
-      "options": [
-        "Vì khối lượng của vật thay đổi theo hệ quy chiếu",
-        "Vì động lượng chỉ xác định được khi vật chuyển động thẳng đều",
-        "Vì đơn vị của động lượng thay đổi theo hệ quy chiếu",
-        "Vì vận tốc của vật phụ thuộc hệ quy chiếu"
-      ],
-      "answer": 3,
-      "explanation": "Khối lượng không đổi, còn $\\vec v$ đổi theo hệ quy chiếu nên $\\vec p = m\\vec v$ cũng đổi. Ví dụ hành khách ngồi yên trên tàu có $p=0$ so với toa nhưng $p\\neq 0$ so với sân ga."
+     "text": "Đệm hơi làm giảm độ biến thiên động lượng của người nên an toàn hơn.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Người nhảy xuống đệm hơi thay vì nền bê tông. Với cùng khối lượng, cùng tốc độ lúc chạm và cùng dừng hẳn, đại lượng nào về cơ bản không đổi giữa hai trường hợp?",
-      "options": [
-        "Độ biến thiên động lượng của người",
-        "Thời gian từ lúc chạm đến lúc dừng",
-        "Lực trung bình tác dụng lên người",
-        "Độ lớn gia tốc trung bình của người khi dừng"
-      ],
-      "answer": 0,
-      "explanation": "Người đi từ cùng tốc độ chạm về $0$ nên $\\Delta p$ như nhau. Đệm làm $\\Delta t$ dài hơn, nên $F=\\Delta p/\\Delta t$ và gia tốc nhỏ hơn."
+     "text": "Thời gian dừng lại trên đệm hơi dài hơn nhiều so với trên sàn bê tông.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Khi tính động lượng của hệ gồm nhiều vật, ta phải",
-      "options": [
-        "cộng độ lớn động lượng của các vật vì động lượng luôn dương",
-        "chỉ lấy động lượng của vật có khối lượng lớn nhất",
-        "cộng động lượng của từng vật theo quy tắc vector",
-        "lấy tổng khối lượng nhân với vận tốc lớn nhất"
-      ],
-      "answer": 2,
-      "explanation": "Động lượng là vector nên $\\vec p_{\\text{hệ}} = \\vec p_1 + \\vec p_2 + \\dots$; hai vật ngược hướng có thể triệt tiêu nhau."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Một xe đồ chơi chạy vào tường rồi bật ngược lại với tốc độ đúng bằng tốc độ lúc tới. Nhận xét nào đúng?",
-      "options": [
-        "$\\Delta p = 0$ vì tốc độ trước và sau bằng nhau",
-        "Độ lớn $\\Delta p$ bằng độ lớn động lượng lúc tới",
-        "Độ lớn $\\Delta p$ gấp đôi độ lớn động lượng lúc tới",
-        "$\\Delta p = 0$ vì động lượng luôn được bảo toàn"
-      ],
-      "answer": 2,
-      "explanation": "Chọn chiều dương là chiều tới: $\\Delta p = m(-v - v) = -2mv$. Lấy hiệu hai độ lớn sẽ ra $0$ (sai); bỏ sót một vế sẽ ra $mv$ (sai)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đơn vị nào sau đây cùng bản chất với đơn vị $\\text{kg}\\cdot\\text{m/s}$ của động lượng?",
-      "options": [
-        "$\\text{N}\\cdot\\text{s}$",
-        "$\\text{N}\\cdot\\text{m}$",
-        "$\\text{N/s}$",
-        "$\\text{W}$"
-      ],
-      "answer": 0,
-      "explanation": "Xung lượng $F\\Delta t$ có đơn vị $\\text{N}\\cdot\\text{s} = \\text{kg}\\cdot\\text{m/s}$, bằng đơn vị động lượng. $\\text{N}\\cdot\\text{m}$ là đơn vị công, $\\text{W}$ là công suất."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Định lý động lượng cho một vật chịu hợp lực $\\vec F$ trong thời gian $\\Delta t$ được viết là",
-      "options": [
-        "$\\Delta\\vec p = \\dfrac{\\vec F}{\\Delta t}$",
-        "$\\vec F = \\Delta\\vec p\\,\\Delta t$",
-        "$\\vec F\\,\\Delta t = \\Delta\\vec v$",
-        "$\\Delta\\vec p = \\vec F\\,\\Delta t$"
-      ],
-      "answer": 3,
-      "explanation": "$\\Delta\\vec p = \\vec F\\Delta t$, hay $\\vec F = \\Delta\\vec p/\\Delta t$. Phương án A và B đảo vị trí $\\Delta t$; phương án C quên khối lượng nên chỉ cho $\\Delta v$ khi $m=1$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xe $800\\ \\text{kg}$ đang chạy $10\\ \\text{m/s}$ thì phanh, dừng hẳn sau $4{,}0\\ \\text{s}$. Độ lớn lực hãm trung bình là",
-      "options": [
-        "$8\\,000\\ \\text{N}$",
-        "$2\\,000\\ \\text{N}$",
-        "$32\\,000\\ \\text{N}$",
-        "$2{,}5\\ \\text{N}$"
-      ],
-      "answer": 1,
-      "explanation": "$|\\Delta p| = 800\\cdot10 = 8\\,000$; $F = 8\\,000/4 = 2\\,000\\ \\text{N}$. $8\\,000$ là quên chia $\\Delta t$; $32\\,000$ là nhân $\\Delta t$; $2{,}5$ là $v/\\Delta t$, thiếu $m$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai vật có động lượng cùng độ lớn $p_1$, hợp với nhau góc $\\alpha$. Độ lớn động lượng của hệ là",
-      "options": [
-        "$2p_1\\cos\\alpha$",
-        "$2p_1\\sin\\dfrac{\\alpha}{2}$",
-        "$p_1\\cos\\dfrac{\\alpha}{2}$",
-        "$2p_1\\cos\\dfrac{\\alpha}{2}$"
-      ],
-      "answer": 3,
-      "explanation": "Từ $p^2 = 2p_1^2(1+\\cos\\alpha)$ suy ra $p = 2p_1\\cos\\frac{\\alpha}{2}$. Kiểm: $\\alpha=0$ phải cho $2p_1$, loại phương án có $\\sin$ (cho $0$) hoặc thiếu hệ số $2$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật khối lượng $m$ đang đứng yên chịu hợp lực $F$ trong thời gian $\\Delta t$. Tốc độ vật ngay sau đó là",
-      "options": [
-        "$F\\,\\Delta t$",
-        "$\\dfrac{F}{m\\,\\Delta t}$",
-        "$\\dfrac{F\\,\\Delta t}{m}$",
-        "$m\\,F\\,\\Delta t$"
-      ],
-      "answer": 2,
-      "explanation": "$mv - 0 = F\\Delta t$ nên $v = F\\Delta t/m$. Thiếu $m$ là nhầm xung lượng với tốc độ; $\\Delta t$ ở mẫu là đảo tử mẫu; nhân $m$ sai thứ nguyên."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về động lượng của một vật, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Động lượng của vật luôn cùng hướng với vận tốc của vật.",
-          "answer": true
-        },
-        {
-          "text": "Vật đứng yên so với ô tô thì động lượng của nó bằng $0$ trong mọi hệ quy chiếu.",
-          "answer": false
-        },
-        {
-          "text": "Vật có tốc độ lớn hơn thì luôn có động lượng lớn hơn.",
-          "answer": false
-        },
-        {
-          "text": "Hai vật khối lượng khác nhau có thể có động lượng cùng độ lớn.",
-          "answer": true
-        }
-      ],
-      "explanation": "$p=mv$ nên $p$ còn phụ thuộc $m$; $v$ phụ thuộc hệ quy chiếu nên $p=0$ chỉ đúng với hệ gắn vật. Ví dụ: vật $30\\ \\text{kg}$ chạy $4\\ \\text{m/s}$ và vật $60\\ \\text{kg}$ chạy $2\\ \\text{m/s}$ cùng có $p=120\\ \\text{kg}\\cdot\\text{m/s}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về định lý động lượng, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Độ biến thiên động lượng của vật bằng xung lượng của hợp lực tác dụng lên nó.",
-          "answer": true
-        },
-        {
-          "text": "Xung lượng của lực có đơn vị là $\\text{N}\\cdot\\text{s}$.",
-          "answer": true
-        },
-        {
-          "text": "Với cùng $\\Delta p$, thời gian tác dụng càng dài thì lực trung bình càng lớn.",
-          "answer": false
-        },
-        {
-          "text": "Hợp lực bằng độ biến thiên động lượng chia cho thời gian tác dụng: $F=\\Delta p/\\Delta t$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Từ $F=\\Delta p/\\Delta t$, $\\Delta p$ cố định thì $\\Delta t$ lớn làm $F$ nhỏ đi (nguyên tắc đệm, túi khí)."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về động lượng và độ biến thiên động lượng trong các tình huống sau, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Xe bật ngược khỏi tường thì $\\Delta\\vec p$ cùng hướng với động lượng ban đầu của xe.",
-          "answer": false
-        },
-        {
-          "text": "Hai xe giống nhau chạy ngược chiều, cùng tốc độ thì động lượng của hệ bằng $0$.",
-          "answer": true
-        },
-        {
-          "text": "Hai vật có động lượng vuông góc nhau thì độ lớn động lượng của hệ bằng tổng hai độ lớn.",
-          "answer": false
-        },
-        {
-          "text": "Gập gối khi tiếp đất làm tăng thời gian dừng nên giảm lực lên chân.",
-          "answer": true
-        }
-      ],
-      "explanation": "Bật ngược: $\\Delta\\vec p$ hướng ra xa tường, ngược $\\vec p$ ban đầu. Vuông góc thì dùng $\\sqrt{p_1^2+p_2^2}$, nhỏ hơn tổng."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai vật có độ lớn động lượng $p_1=3\\ \\text{kg}\\cdot\\text{m/s}$ và $p_2=4\\ \\text{kg}\\cdot\\text{m/s}$. Về động lượng của hệ, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Nếu hai vật cùng hướng thì $p=7\\ \\text{kg}\\cdot\\text{m/s}$.",
-          "answer": true
-        },
-        {
-          "text": "Nếu hai vật ngược hướng thì $p=7\\ \\text{kg}\\cdot\\text{m/s}$.",
-          "answer": false
-        },
-        {
-          "text": "Nếu hai vật chuyển động vuông góc thì $p=5\\ \\text{kg}\\cdot\\text{m/s}$.",
-          "answer": true
-        },
-        {
-          "text": "Nếu hai động lượng hợp góc $60^\\circ$ thì $p=5\\ \\text{kg}\\cdot\\text{m/s}$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Cùng hướng $3+4=7$; ngược hướng $|3-4|=1$; vuông góc $\\sqrt{9+16}=5$; góc $60^\\circ$: $p^2=9+16+2\\cdot3\\cdot4\\cdot0{,}5=37$, $p\\approx6{,}1$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hai vật cùng khối lượng $2\\ \\text{kg}$ chạy ngược chiều nhau trên một đường thẳng, mỗi vật có tốc độ $3\\ \\text{m/s}$. Độ lớn động lượng của hệ là bao nhiêu $\\text{kg}\\cdot\\text{m/s}$?",
-      "answer": "0",
-      "explanation": "Hai động lượng $6$ và $-6$ ngược hướng, cùng độ lớn nên triệt tiêu: $p=0$. Cộng độ lớn ra $12$ là sai."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Cùng độ biến thiên động lượng, kéo dài thời gian tác dụng lên gấp $5$ lần thì lực trung bình giảm đi bao nhiêu lần?",
-      "answer": "5",
-      "explanation": "$F=\\Delta p/\\Delta t$: $\\Delta p$ giữ nguyên, $\\Delta t$ tăng $5$ lần thì $F$ giảm $5$ lần."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật khối lượng $0{,}5\\ \\text{kg}$ chuyển động với tốc độ $12\\ \\text{m/s}$. Động lượng của vật là bao nhiêu $\\text{kg}\\cdot\\text{m/s}$?",
-      "answer": "6",
-      "explanation": "$p=mv=0{,}5\\cdot12=6\\ \\text{kg}\\cdot\\text{m/s}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Khái niệm động lượng, xung lượng của lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai vật có động lượng vuông góc nhau, độ lớn lần lượt $6$ và $8\\ \\text{kg}\\cdot\\text{m/s}$. Độ lớn động lượng của hệ là bao nhiêu $\\text{kg}\\cdot\\text{m/s}$?",
-      "answer": "10",
-      "explanation": "$p=\\sqrt{6^2+8^2}=10\\ \\text{kg}\\cdot\\text{m/s}$ (tam giác vuông $6$–$8$–$10$)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Quả bóng $0{,}2\\ \\text{kg}$ đập vào tường với tốc độ $10\\ \\text{m/s}$ và bật ngược lại với tốc độ $6\\ \\text{m/s}$. Độ lớn độ biến thiên động lượng là bao nhiêu $\\text{kg}\\cdot\\text{m/s}$ (viết dạng số thập phân)?",
-      "answer": "3,2",
-      "explanation": "Chọn chiều tới là dương: $\\Delta p=0{,}2(-6-10)=-3{,}2$, độ lớn $3{,}2$. Lấy hiệu hai độ lớn sẽ ra $0{,}8$ (sai)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Độ biến thiên động lượng của một vật",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật $4\\ \\text{kg}$ đứng yên trên mặt phẳng ngang nhẵn chịu lực ngang $24\\ \\text{N}$ trong $2{,}5\\ \\text{s}$. Tốc độ của vật sau đó là bao nhiêu $\\text{m/s}$?",
-      "answer": "15",
-      "explanation": "$\\Delta p=F\\Delta t=24\\cdot2{,}5=60$; xuất phát từ nghỉ nên $v=60/4=15\\ \\text{m/s}$."
+     "text": "Hợp lực tác dụng lên người khi rơi xuống đệm hơi lớn hơn khi rơi xuống bê tông.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Cùng $m$, cùng tốc độ chạm, cùng dừng hẳn nên $\\Delta p$ như nhau; đệm kéo dài $\\Delta t$ nên hợp lực $F = \\Delta p/\\Delta t$ nhỏ hơn (Bẫy 3).",
+   "distractorNotes": {
+    "0": "Không thể coi là sai: cùng khối lượng, cùng tốc độ chạm và cùng dừng hẳn thì $\\Delta p$ bằng nhau.",
+    "1": "Không thể coi là đúng: đệm không làm thay đổi $\\Delta p$, chỉ kéo dài thời gian dừng.",
+    "2": "Không thể coi là sai: đệm mềm lún dần nên người dừng chậm hơn hẳn so với sàn cứng.",
+    "3": "Không thể coi là đúng: cùng $\\Delta p$ mà $\\Delta t$ dài hơn thì hợp lực phải nhỏ hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Động lượng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai xe giống nhau, mỗi xe khối lượng $m$, chạy ngược chiều nhau trên cùng một đường thẳng với cùng tốc độ $v$ đối với mặt đường. Xét các phát biểu sau (trong hệ quy chiếu gắn với mặt đường):",
+   "statements": [
+    {
+     "text": "Động lượng của hệ hai xe có độ lớn $2mv$.",
+     "answer": false
+    },
+    {
+     "text": "Động lượng của hệ hai xe bằng vector không.",
+     "answer": true
+    },
+    {
+     "text": "Mỗi xe có động lượng độ lớn $mv$.",
+     "answer": true
+    },
+    {
+     "text": "Động lượng của hệ được tính bằng tổng độ lớn động lượng của hai xe.",
+     "answer": false
+    }
+   ],
+   "explanation": "Động lượng hệ là tổng vector: hai vector cùng độ lớn $mv$, ngược hướng nên triệt tiêu, $\\vec p_{\\text{hệ}} = \\vec 0$ (Bẫy 2).",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng: $2mv$ là kết quả khi cộng độ lớn như thể hai vector cùng hướng.",
+    "1": "Không thể coi là sai: hai vector cùng độ lớn, ngược hướng thì tổng vector bằng không.",
+    "2": "Không thể coi là sai: mỗi xe có khối lượng $m$, tốc độ $v$ nên có $p = mv$.",
+    "3": "Không thể coi là đúng: động lượng hệ cộng theo quy tắc vector, không cộng như cộng số."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm, một xe chạy trên ray đệm khí tới va vào đệm lò xo gắn cảm biến lực rồi bật ngược lại. Cổng quang đo vận tốc lúc tới $v_1$ và lúc bật lại $v_2$, chọn chiều dương là chiều xe chạy tới; phần mềm tính xung lượng từ đồ thị $F$–$t$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Vận tốc $v_2$ mang giá trị âm vì xe bật ngược lại.",
+     "answer": true
+    },
+    {
+     "text": "Lực của đệm lò xo tác dụng lên xe cùng chiều với chiều xe chạy tới.",
+     "answer": false
+    },
+    {
+     "text": "Độ lớn độ biến thiên động lượng của xe là $m(|v_1| - |v_2|)$.",
+     "answer": false
+    },
+    {
+     "text": "$|\\Delta p|$ tính từ cổng quang xấp xỉ bằng xung lượng cảm biến đo được, phù hợp với $\\Delta\\vec p = \\vec F\\Delta t$.",
+     "answer": true
+    }
+   ],
+   "explanation": "$v_2 \\lt 0$ nên $|\\Delta p| = m|v_2 - v_1| = m(|v_1| + |v_2|)$; lực đệm đẩy xe ngược chiều tới và kết quả đo khớp $\\Delta\\vec p = \\vec F\\Delta t$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai: xe chuyển động ngược chiều dương đã chọn nên vận tốc mang dấu âm.",
+    "1": "Không thể coi là đúng: lực đệm cùng hướng với $\\Delta\\vec p$, tức ngược chiều xe chạy tới.",
+    "2": "Không thể coi là đúng: hai vận tốc trái dấu nên độ lớn $\\Delta p$ là tổng hai độ lớn, không phải hiệu.",
+    "3": "Không thể coi là sai: số liệu chỉ chênh vài phần trăm, nằm trong phạm vi sai số dụng cụ."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Động lượng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ gồm hai vật có động lượng cùng độ lớn $p_1$, hai vector động lượng hợp với nhau góc $\\alpha$. Khi đó độ lớn động lượng của hệ là $p = 2p_1\\cos\\dfrac{\\alpha}{2}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Khi $\\alpha = 0^\\circ$, động lượng của hệ có độ lớn $2p_1$.",
+     "answer": true
+    },
+    {
+     "text": "Khi $\\alpha = 60^\\circ$, động lượng của hệ có độ lớn $p_1$.",
+     "answer": false
+    },
+    {
+     "text": "Khi $\\alpha = 90^\\circ$, động lượng của hệ có độ lớn $2p_1$.",
+     "answer": false
+    },
+    {
+     "text": "Khi $\\alpha = 120^\\circ$, động lượng của hệ có độ lớn $p_1$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Thay vào $p = 2p_1\\cos(\\alpha/2)$: $\\alpha = 0^\\circ$ cho $2p_1$; $60^\\circ$ cho $\\sqrt3\\,p_1$; $90^\\circ$ cho $\\sqrt2\\,p_1$; $120^\\circ$ cho $p_1$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai: $\\cos 0^\\circ = 1$ nên $p = 2p_1$, đúng là cộng độ lớn khi cùng hướng.",
+    "1": "Không thể coi là đúng: kết quả này do dùng nhầm $\\cos\\alpha$ thay cho $\\cos(\\alpha/2)$; thực tế $p = \\sqrt3\\,p_1$.",
+    "2": "Không thể coi là đúng: cộng độ lớn là bỏ qua góc; hai vector vuông góc cho $p = \\sqrt2\\,p_1$.",
+    "3": "Không thể coi là sai: $\\cos 60^\\circ = 0{,}5$ nên $p = 2p_1 \\cdot 0{,}5 = p_1$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Độ biến thiên động lượng của một vật",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Một quả bóng khối lượng $m$ bay theo phương ngang tới đập vuông góc vào tường với tốc độ $v_1$, rồi bật ngược lại theo phương cũ với tốc độ nhỏ hơn. Thời gian chạm tường là $\\Delta t$. Chọn chiều dương là chiều bóng bay tới tường. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Khi thay vào công thức, vận tốc lúc bật lại $v_2$ phải mang dấu âm.",
+     "answer": true
+    },
+    {
+     "text": "Độ lớn của $\\Delta p = m(v_2 - v_1)$ bằng $m(|v_1| - |v_2|)$.",
+     "answer": false
+    },
+    {
+     "text": "Lực trung bình do tường tác dụng lên bóng (bỏ qua trọng lực) là $F = \\dfrac{\\Delta p}{\\Delta t}$.",
+     "answer": true
+    },
+    {
+     "text": "Vector độ biến thiên động lượng của bóng hướng vào tường.",
+     "answer": false
+    }
+   ],
+   "explanation": "$v_2 \\lt 0$ nên $|\\Delta p| = m(|v_1| + |v_2|)$, $\\Delta p$ âm tức hướng ra xa tường; lực trung bình $F = \\Delta p/\\Delta t$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai: bóng bật lại ngược chiều dương đã chọn nên vận tốc mang dấu âm.",
+    "1": "Không thể coi là đúng: lấy hiệu hai độ lớn là bẫy; hai vận tốc trái dấu nên độ lớn là tổng.",
+    "2": "Không thể coi là sai: bỏ qua trọng lực thì lực của tường là hợp lực, áp dụng được $\\vec F = \\Delta\\vec p/\\Delta t$.",
+    "3": "Không thể coi là đúng: $\\Delta p$ mang dấu âm nên hướng ra xa tường, cùng hướng với lực của tường."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Khái niệm động lượng, xung lượng của lực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một lực $\\vec F$ không đổi tác dụng lên vật trong khoảng thời gian $\\Delta t$. Xét các phát biểu sau về xung lượng của lực:",
+   "statements": [
+    {
+     "text": "Xung lượng của lực trong khoảng thời gian đó là tích $\\vec F\\Delta t$.",
+     "answer": true
+    },
+    {
+     "text": "Đơn vị của xung lượng trong hệ SI là $\\text{N/s}$.",
+     "answer": false
+    },
+    {
+     "text": "$1\\ \\text{N}\\cdot\\text{s}$ tương đương $1\\ \\text{kg}\\cdot\\text{m/s}$.",
+     "answer": true
+    },
+    {
+     "text": "Xung lượng của lực là đại lượng vô hướng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Xung lượng là vector $\\vec F\\Delta t$, đơn vị $\\text{N}\\cdot\\text{s} = \\text{kg}\\cdot\\text{m/s}$, bằng độ biến thiên động lượng.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai: bài định nghĩa xung lượng đúng bằng tích lực với thời gian tác dụng.",
+    "1": "Không thể coi là đúng: xung lượng là lực nhân thời gian nên đơn vị là $\\text{N}\\cdot\\text{s}$, không phải phép chia.",
+    "2": "Không thể coi là sai: $1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$, nhân với giây được $\\text{kg}\\cdot\\text{m/s}$.",
+    "3": "Không thể coi là đúng: $\\vec F\\Delta t$ là vector cùng hướng lực và bằng vector $\\Delta\\vec p$."
+   }
+  }
+ ]
 }

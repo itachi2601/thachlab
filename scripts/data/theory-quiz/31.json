@@ -1,359 +1,520 @@
 {
-  "lesson_id": 31,
-  "lesson_title": "Bài 12. Giao thoa sóng",
-  "item_id": 157,
-  "generated_at": "2026-10-02",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 14,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 9,
-      "cong_thuc": 9
-    },
-    "removed": [
-      {
-        "question": "Hai nguồn kết hợp là hai nguồn dao động như thế nào?",
-        "reason": "Phương án A là câu chữ vô nghĩa (\"Cùng biên độ và cùng biên độ khác tần số\"), nhiễu không hợp lý, câu hỏi diễn đạt lỗi"
-      },
-      {
-        "question": "Hai bức xạ có $\\dfrac{\\lambda_2}{\\lambda_1}=\\dfrac{p}{q}$ (tối giản). Khoảng vân trùng là",
-        "reason": "Khoảng vân trùng i_tr = q·i1 = p·i2 với p/q = λ2/λ1 ngược với suy luận (k1/k2 = λ2/λ1 = p/q nên i_tr = p·i1 = q·i2); đáp án đánh dấu theo bài nguồn bị sai, không giữ lại"
-      }
-    ]
+ "lesson_id": 31,
+ "lesson_title": "Bài 12. Giao thoa sóng",
+ "item_id": 157,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 9
   },
-  "questions": [
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Giao thoa sóng là hiện tượng gì?",
-      "options": [
-        "Hai sóng bất kì gặp nhau thì triệt tiêu hoàn toàn",
-        "Hai sóng kết hợp gặp nhau tạo nên các đường dao động ổn định (vân giao thoa)",
-        "Sóng truyền gặp vật cản thì bị đổi hướng",
-        "Sóng truyền qua khe hẹp thì lan rộng ra phía sau khe"
-      ],
-      "answer": 1,
-      "explanation": "Theo bài, hai sóng kết hợp gặp nhau tạo nên các đường dao động ổn định gọi là giao thoa sóng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Khi giao thoa của hai nguồn kết hợp trên mặt nước, các vân giao thoa quan sát được có dạng đường nào?",
-      "options": [
-        "Đường thẳng song song",
-        "Đường tròn đồng tâm",
-        "Đường cong dạng hypebol",
-        "Đường parabol"
-      ],
-      "answer": 2,
-      "explanation": "Theo bài, các vân giao thoa là những đường cong dạng hypebol."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tại điểm cực đại giao thoa, hai sóng thành phần tới đó có đặc điểm gì?",
-      "options": [
-        "Cùng pha, biên độ dao động tổng hợp lớn nhất",
-        "Ngược pha, biên độ dao động tổng hợp nhỏ nhất",
-        "Vuông pha, biên độ dao động tổng hợp bằng một nửa cực đại",
-        "Khác tần số nên dao động không ổn định"
-      ],
-      "answer": 0,
-      "explanation": "Cực đại giao thoa: hai sóng thành phần tới M cùng pha nên biên độ lớn nhất."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Giao thoa ánh sáng qua khe Young",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hiện tượng giao thoa ánh sáng qua khe Young là bằng chứng thực nghiệm khẳng định điều gì?",
-      "options": [
-        "Ánh sáng là sóng dọc",
-        "Ánh sáng có bản chất sóng",
-        "Ánh sáng truyền theo đường thẳng",
-        "Ánh sáng không mang năng lượng"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu giao thoa ánh sáng là bằng chứng thực nghiệm khẳng định ánh sáng có bản chất sóng."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Xét hai nguồn kết hợp cùng pha. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hai sóng giao thoa được khi hai nguồn cùng phương, cùng tần số và hiệu số pha không đổi.",
-          "answer": true
-        },
-        {
-          "text": "Hai nguồn có tần số khác nhau vẫn cho vân giao thoa ổn định.",
-          "answer": false
-        },
-        {
-          "text": "Tại cực tiểu giao thoa, hai sóng thành phần tới M ngược pha.",
-          "answer": true
-        },
-        {
-          "text": "Tại cực đại giao thoa, hai sóng thành phần tới M ngược pha.",
-          "answer": false
-        }
-      ],
-      "explanation": "Cực đại: hai sóng cùng pha; cực tiểu: ngược pha; giao thoa ổn định cần nguồn kết hợp."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Giao thoa ánh sáng qua khe Young",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Trong thí nghiệm giao thoa ánh sáng qua khe Young, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Trên màn có các vạch sáng, tối xen kẽ gọi là hệ vân giao thoa.",
-          "answer": true
-        },
-        {
-          "text": "Khoảng cách giữa hai vân sáng liên tiếp bằng khoảng cách giữa hai vân tối liên tiếp.",
-          "answer": true
-        },
-        {
-          "text": "Khoảng cách giữa một vân sáng và một vân tối liền kề bằng $i$.",
-          "answer": false
-        },
-        {
-          "text": "Vân trung tâm là vân tối.",
-          "answer": false
-        }
-      ],
-      "explanation": "Hệ vân sáng tối xen kẽ; sáng-tối liền kề cách $i/2$; vân trung tâm ($k=0$) là vân sáng."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_luat",
-      "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai cực đại liên tiếp trên đoạn nối hai nguồn cách nhau bao nhiêu lần bước sóng $\\lambda$? (nhập số thập phân)",
-      "answer": "0,5",
-      "explanation": "Hai cực đại liên tiếp cách nhau $\\lambda/2$, tức 0,5 lần bước sóng."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Giao thoa ánh sáng qua khe Young",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Vân trung tâm trong thí nghiệm Young là vân sáng bậc $k$ bằng bao nhiêu?",
-      "answer": "0",
-      "explanation": "Bài nêu $k=0$ ứng với vân trung tâm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Giao thoa ánh sáng qua khe Young",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Khoảng cách giữa một vân sáng và một vân tối liền kề bằng bao nhiêu lần khoảng vân $i$? (nhập số thập phân)",
-      "answer": "0,5",
-      "explanation": "Khoảng cách vân sáng - vân tối liền kề luôn bằng $i/2$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Giao thoa ánh sáng qua khe Young",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Công thức tính khoảng vân trong thí nghiệm Young là",
-      "options": [
-        "$i=\\dfrac{\\lambda a}{D}$",
-        "$i=\\dfrac{\\lambda D}{a}$",
-        "$i=\\dfrac{aD}{\\lambda}$",
-        "$i=\\dfrac{\\lambda}{aD}$"
-      ],
-      "answer": 1,
-      "explanation": "Khoảng vân $i=\\dfrac{\\lambda D}{a}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điều kiện để điểm M là cực tiểu giao thoa (hai nguồn cùng pha) là",
-      "options": [
-        "$d_2-d_1=k\\lambda$",
-        "$d_2-d_1=(k+0{,}5)\\lambda$",
-        "$d_2-d_1=\\dfrac{k\\lambda}{2}$",
-        "$d_2-d_1=(k+1)\\dfrac{\\lambda}{4}$"
-      ],
-      "answer": 1,
-      "explanation": "Cực tiểu: $d_2-d_1=(k+0,5)\\lambda$; còn $k\\lambda$ là cực đại."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Giao thoa ánh sáng qua khe Young",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Từ $i=\\dfrac{\\lambda D}{a}$, bước sóng ánh sáng được tính bằng",
-      "options": [
-        "$\\lambda=\\dfrac{iD}{a}$",
-        "$\\lambda=\\dfrac{ia}{D}$",
-        "$\\lambda=\\dfrac{aD}{i}$",
-        "$\\lambda=\\dfrac{i}{aD}$"
-      ],
-      "answer": 1,
-      "explanation": "Biến đổi $i=\\dfrac{\\lambda D}{a}$ cho $\\lambda=\\dfrac{ia}{D}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Xác định số điểm cực đại, cực tiểu trên đoạn thẳng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Với hai nguồn cùng pha cách nhau AB, số điểm cực đại trên đoạn AB là số giá trị nguyên $k$ thoả",
-      "options": [
-        "$-\\dfrac{AB}{\\lambda}<k<\\dfrac{AB}{\\lambda}$",
-        "$-\\dfrac{AB}{2\\lambda}<k<\\dfrac{AB}{2\\lambda}$",
-        "$-\\dfrac{AB}{\\lambda}-0{,}5<k<\\dfrac{AB}{\\lambda}-0{,}5$",
-        "$0<k<\\dfrac{AB}{\\lambda}$"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu số cực đại là số $k$ nguyên thoả $-\\dfrac{AB}{\\lambda}<k<\\dfrac{AB}{\\lambda}$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Giao thoa ánh sáng qua khe Young",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về vị trí vân và khoảng vân trong thí nghiệm Young, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Vị trí vân sáng: $x_s=k\\cdot i$.",
-          "answer": true
-        },
-        {
-          "text": "Vị trí vân tối: $x_t=(k+0{,}5)\\cdot i$.",
-          "answer": true
-        },
-        {
-          "text": "Vị trí vân sáng: $x_s=(k+0{,}5)\\cdot i$.",
-          "answer": false
-        },
-        {
-          "text": "Khoảng vân $i$ tăng khi khoảng cách hai khe $a$ tăng.",
-          "answer": false
-        }
-      ],
-      "explanation": "$x_s=ki$, $x_t=(k+0,5)i$, $i=\\lambda D/a$ nên $i$ giảm khi $a$ tăng."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Xác định số điểm cực đại, cực tiểu trên đoạn thẳng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Với hai nguồn cùng pha, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Cực đại giao thoa thoả $d_2-d_1=k\\lambda$.",
-          "answer": true
-        },
-        {
-          "text": "Cực tiểu giao thoa thoả $d_2-d_1=k\\lambda$.",
-          "answer": false
-        },
-        {
-          "text": "Số cực tiểu trên AB là số $k$ nguyên thoả $-\\dfrac{AB}{\\lambda}-0{,}5<k<\\dfrac{AB}{\\lambda}-0{,}5$.",
-          "answer": true
-        },
-        {
-          "text": "Hai cực đại liên tiếp trên đoạn nối hai nguồn cách nhau $\\lambda/4$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Cực đại $k\\lambda$, cực tiểu $(k+0,5)\\lambda$; hai cực đại liên tiếp cách $\\lambda/2$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Giao thoa ánh sáng qua khe Young",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Thí nghiệm Young có $\\lambda=0{,}5\\ \\mu$m, $a=1$ mm, $D=2$ m. Khoảng vân $i$ bằng bao nhiêu mm?",
-      "answer": "1",
-      "explanation": "$i=\\dfrac{\\lambda D}{a}=\\dfrac{0,5\\cdot10^{-6}\\cdot2}{10^{-3}}=10^{-3}$ m $=1$ mm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Giao thoa ánh sáng qua khe Young",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Khoảng vân $i=2$ mm. Vân sáng bậc 3 cách vân trung tâm bao nhiêu mm?",
-      "answer": "6",
-      "explanation": "$x_s=k\\cdot i=3\\cdot2=6$ mm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Xác định số điểm cực đại, cực tiểu trên đoạn thẳng",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai nguồn cùng pha cách nhau $AB=7$ cm, bước sóng $\\lambda=2$ cm. Số điểm cực đại trên đoạn AB là bao nhiêu?",
-      "answer": "7",
-      "explanation": "$AB/\\lambda=3,5$ nên $-3,5<k<3,5$, $k=-3,...,3$: có 7 giá trị."
-    }
+  "removed": [
+   {
+    "question": "Hai nguồn A, B dao động cùng pha, bước sóng $\\lambda$. Xét các điểm trên đoạn AB (không tính hai đầu A, B), $k$ nguyên.",
+    "reason": "nghi_ngo: Ý d 'tăng AB thì số cực đại không đổi' không sai dứt khoát: tăng AB ít (AB/λ từ 4,5 lên 4,6) thì số cực đại vẫn là 9, chính ghi chú cũng viết 'có thể tăng'; nên sửa thành 'tăng AB thêm λ' hoặc 'luôn không đổi'."
+   }
   ]
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Giao thoa sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giao thoa sóng là hiện tượng",
+   "options": [
+    "một sóng gặp vật cản rồi truyền ngược trở lại môi trường cũ",
+    "hai sóng kết hợp gặp nhau tạo các điểm dao động mạnh, yếu cố định",
+    "một sóng truyền qua hai môi trường và đổi phương truyền của nó",
+    "hai sóng bất kì gặp nhau luôn làm mọi điểm dao động mạnh hơn"
+   ],
+   "answer": 1,
+   "explanation": "Theo bài, giao thoa là hiện tượng hai sóng kết hợp gặp nhau, tạo ra các điểm dao động mạnh và yếu cố định, xen kẽ (vân giao thoa).",
+   "distractorNotes": {
+    "A": "Nhầm với phản xạ sóng: chỉ một sóng bị dội lại, không có hai sóng kết hợp chồng lên nhau.",
+    "C": "Nhầm với sự đổi phương truyền khi qua mặt phân cách; chỉ có một sóng nên không tạo vân giao thoa.",
+    "D": "Cho rằng hai sóng gặp nhau luôn mạnh lên, quên chỗ ngược pha thì triệt tiêu và quên điều kiện nguồn kết hợp."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai nguồn kết hợp là hai nguồn dao động",
+   "options": [
+    "cùng biên độ, cùng tần số và luôn có cùng một vị trí",
+    "cùng biên độ, cùng phương và hiệu số pha thay đổi đều",
+    "cùng phương, cùng tần số và hiệu số pha không đổi",
+    "cùng tần số, cùng biên độ và hiệu số pha thay đổi"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu ba điều kiện của hai nguồn kết hợp: cùng phương dao động, cùng tần số, lệch pha không đổi theo thời gian.",
+   "distractorNotes": {
+    "A": "Thêm điều kiện cùng biên độ, cùng vị trí; bài chỉ yêu cầu cùng phương, cùng tần số, lệch pha không đổi.",
+    "B": "Hiệu số pha thay đổi theo thời gian làm vân nhoè đi, nên hai nguồn không còn là nguồn kết hợp.",
+    "D": "Lệch pha phải không đổi; nếu hiệu số pha thay đổi thì các điểm mạnh, yếu không còn cố định."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một điểm nằm trên đường cực tiểu giao thoa đứng yên vì",
+   "options": [
+    "hai sóng đều tới điểm đó nhưng ngược pha nên triệt tiêu",
+    "không có sóng nào của hai nguồn truyền được tới điểm đó",
+    "chỉ có sóng của một nguồn tới được điểm đó mà thôi",
+    "hai sóng tới điểm đó cùng pha nên năng lượng mất hết"
+   ],
+   "answer": 0,
+   "explanation": "Theo phần \"Cái bẫy\", cả hai sóng đều tới điểm cực tiểu nhưng ngược pha nên triệt tiêu nhau.",
+   "distractorNotes": {
+    "B": "Rơi đúng cái bẫy của bài: sóng vẫn tới điểm cực tiểu, chỉ là hai sóng ngược pha triệt tiêu nhau.",
+    "C": "Nếu chỉ một sóng tới thì điểm đó dao động với biên độ của sóng ấy, không thể đứng yên.",
+    "D": "Nhầm cùng pha với ngược pha: hai sóng cùng pha cộng lại cho biên độ $2a$, đó là cực đại."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Điểm M đang là cực tiểu giao thoa (đứng yên). Tắt một trong hai nguồn thì M",
+   "options": [
+    "vẫn đứng yên như trước vì M không nhận được sóng nào",
+    "dao động với biên độ gấp đôi biên độ của mỗi sóng tới",
+    "dao động yếu, biên độ nhỏ hơn biên độ của một sóng",
+    "dao động với biên độ bằng biên độ của một sóng tới"
+   ],
+   "answer": 3,
+   "explanation": "Chỉ còn một sóng tới M, không còn sóng nào triệt tiêu nó, nên M dao động với biên độ $a$ của một sóng.",
+   "distractorNotes": {
+    "A": "Tưởng cực tiểu là chỗ không có sóng tới, trong khi M đứng yên chỉ vì hai sóng ngược pha triệt tiêu.",
+    "B": "Biên độ $2a$ cần hai sóng cùng pha chồng lên nhau, còn sau khi tắt nguồn chỉ còn một sóng tới M.",
+    "C": "Không còn sóng thứ hai để triệt tiêu bớt, nên biên độ tại M không thể nhỏ hơn $a$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Xác định số điểm cực đại, cực tiểu trên đoạn thẳng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai nguồn A, B dao động cùng pha. Trung điểm của đoạn AB là",
+   "options": [
+    "một điểm cực tiểu ứng với $k=0$",
+    "một điểm cực đại ứng với $k=0$",
+    "một điểm cực đại ứng với $k=1$",
+    "một điểm cực tiểu ứng với $k=1$"
+   ],
+   "answer": 1,
+   "explanation": "Trung điểm cách đều hai nguồn nên $d_2-d_1=0=0\\cdot\\lambda$; với hai nguồn cùng pha đó là cực đại $k=0$.",
+   "distractorNotes": {
+    "A": "Hiệu đường đi bằng 0 là $0\\cdot\\lambda$, số nguyên lần bước sóng, nên với nguồn cùng pha là cực đại.",
+    "C": "Trung điểm có $d_2-d_1=0$ nên ứng với $k=0$; bậc $k=1$ cần hiệu đường đi bằng $\\lambda$.",
+    "D": "Vừa nhầm sang cực tiểu vừa nhầm bậc; hiệu đường đi bằng 0 với nguồn cùng pha cho cực đại $k=0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm khe Young cho các vân sáng, tối xen kẽ trên màn. Kết quả này chứng tỏ ánh sáng",
+   "options": [
+    "có tính chất hạt, vì vân sáng là chỗ hạt tập trung",
+    "truyền thẳng qua khe nên không bị hai khe ảnh hưởng",
+    "có tính chất sóng, vì hai chùm sáng giao thoa được",
+    "có tính chất sóng, vì nó luôn phản xạ khi qua hai khe"
+   ],
+   "answer": 2,
+   "explanation": "Bài rút ra: hai chùm sáng giao thoa được nên ánh sáng có tính chất sóng.",
+   "distractorNotes": {
+    "A": "Vân sáng tối xen kẽ do hai chùm sáng giao thoa, đó là dấu hiệu của sóng chứ không phải của hạt.",
+    "B": "Nếu ánh sáng chỉ truyền thẳng qua khe thì trên màn không thể có các vân sáng tối xen kẽ cách đều.",
+    "D": "Kết luận tính sóng đúng nhưng lí do sai: vân hình thành do hai chùm sáng giao thoa, không do phản xạ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm khe Young, khoảng vân $i$ là khoảng cách giữa",
+   "options": [
+    "hai vân sáng liên tiếp trên màn quan sát",
+    "một vân sáng và một vân tối liền kề trên màn",
+    "hai khe hẹp chiếu sáng trong thí nghiệm",
+    "mặt phẳng chứa hai khe và màn quan sát"
+   ],
+   "answer": 0,
+   "explanation": "Khoảng vân là khoảng cách hai vân sáng (hoặc hai vân tối) liên tiếp; vân sáng và vân tối liền kề chỉ cách nhau $i/2$.",
+   "distractorNotes": {
+    "B": "Vân sáng và vân tối liền kề chỉ cách nhau $i/2$, bằng nửa khoảng vân.",
+    "C": "Nhầm khoảng vân $i$ với khoảng cách hai khe $a$ trong công thức $i=\\dfrac{\\lambda D}{a}$.",
+    "D": "Nhầm khoảng vân $i$ với khoảng cách $D$ từ mặt phẳng hai khe đến màn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai nguồn kết hợp cùng pha, bước sóng $\\lambda$. Điểm M là cực đại giao thoa khi ($k=0,\\pm1,\\pm2,\\dots$)",
+   "options": [
+    "$d_2-d_1=(k+\\tfrac12)\\lambda$",
+    "$d_2+d_1=k\\lambda$",
+    "$d_2-d_1=\\dfrac{k\\lambda}{2}$",
+    "$d_2-d_1=k\\lambda$"
+   ],
+   "answer": 3,
+   "explanation": "Hiệu đường đi bằng số nguyên lần bước sóng thì hai sóng tới M cùng pha, M là cực đại: $d_2-d_1=k\\lambda$.",
+   "distractorNotes": {
+    "A": "Hiệu đường đi bằng số nguyên cộng nửa lần bước sóng là điều kiện cực tiểu, hai sóng tới ngược pha.",
+    "B": "Điều kiện giao thoa dựa vào hiệu đường đi $d_2-d_1$, không phải tổng khoảng cách tới hai nguồn.",
+    "C": "Nhầm với khoảng cách $\\lambda/2$ giữa hai cực đại liên tiếp trên AB; $k$ lẻ cho hai sóng ngược pha."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm khe Young, khoảng vân được tính bằng công thức",
+   "options": [
+    "$i=\\dfrac{\\lambda a}{D}$",
+    "$i=\\dfrac{\\lambda D}{a}$",
+    "$i=\\dfrac{aD}{\\lambda}$",
+    "$i=\\dfrac{D}{\\lambda a}$"
+   ],
+   "answer": 1,
+   "explanation": "Bài cho $i=\\dfrac{\\lambda D}{a}$, với $a$ là khoảng cách hai khe và $D$ là khoảng cách từ khe đến màn.",
+   "distractorNotes": {
+    "A": "Đảo vị trí $a$ và $D$; thực tế màn càng xa thì vân càng giãn nên $D$ phải ở tử số.",
+    "C": "Đảo ngược cả biểu thức; khoảng vân tăng khi bước sóng tăng nên $\\lambda$ phải nằm ở tử số.",
+    "D": "Đặt $\\lambda$ xuống mẫu số, trái với việc khoảng vân tỉ lệ thuận với bước sóng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm khe Young, giữ nguyên bước sóng và khoảng cách hai khe, đưa màn ra xa sao cho $D$ tăng gấp đôi. Khoảng vân sẽ",
+   "options": [
+    "giảm còn một nửa",
+    "tăng gấp bốn lần",
+    "tăng gấp đôi",
+    "không thay đổi"
+   ],
+   "answer": 2,
+   "explanation": "Từ $i=\\dfrac{\\lambda D}{a}$, khoảng vân tỉ lệ thuận với $D$ nên $D$ tăng gấp đôi thì $i$ tăng gấp đôi, đúng như việc màn xa hơn thì vân giãn ra.",
+   "distractorNotes": {
+    "A": "Đặt nhầm $D$ ở mẫu số; theo thí nghiệm, màn đặt xa hơn thì các vân giãn ra chứ không co lại.",
+    "B": "Coi khoảng vân tỉ lệ với $D^2$, trong khi $i=\\dfrac{\\lambda D}{a}$ chỉ tỉ lệ bậc nhất với $D$.",
+    "D": "Bỏ qua sự phụ thuộc của khoảng vân vào $D$, dù công thức cho $i$ tỉ lệ thuận với $D$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm khe Young, giữ nguyên $\\lambda$ và $D$, tăng khoảng cách hai khe $a$ lên gấp đôi. Khoảng vân sẽ",
+   "options": [
+    "giảm còn một nửa",
+    "tăng gấp đôi",
+    "giảm còn một phần tư",
+    "không thay đổi"
+   ],
+   "answer": 0,
+   "explanation": "Từ $i=\\dfrac{\\lambda D}{a}$, khoảng vân tỉ lệ nghịch với $a$ nên $a$ tăng gấp đôi thì $i$ giảm một nửa.",
+   "distractorNotes": {
+    "B": "Đặt nhầm $a$ ở tử số; thực ra $a$ nằm ở mẫu nên hai khe xa nhau hơn thì vân sít lại.",
+    "C": "Coi $i$ tỉ lệ nghịch với $a^2$, trong khi công thức chỉ có $a$ bậc nhất ở mẫu số.",
+    "D": "Bỏ qua việc $a$ có mặt trong công thức khoảng vân, nên thay đổi $a$ chắc chắn làm $i$ thay đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Đo được khoảng vân $i$, khoảng cách hai khe $a$ và khoảng cách từ khe đến màn $D$. Bước sóng ánh sáng là",
+   "options": [
+    "$\\lambda=\\dfrac{iD}{a}$",
+    "$\\lambda=\\dfrac{aD}{i}$",
+    "$\\lambda=\\dfrac{D}{ia}$",
+    "$\\lambda=\\dfrac{ia}{D}$"
+   ],
+   "answer": 3,
+   "explanation": "Từ $i=\\dfrac{\\lambda D}{a}$, nhân hai vế với $a$ rồi chia cho $D$ được $\\lambda=\\dfrac{ia}{D}$.",
+   "distractorNotes": {
+    "A": "Rút $\\lambda$ nhưng giữ nguyên vị trí $a$ và $D$; khi chuyển vế, $a$ phải lên tử còn $D$ xuống mẫu.",
+    "B": "Đảo ngược biểu thức, đặt $i$ xuống mẫu, trong khi bước sóng tỉ lệ thuận với khoảng vân đo được.",
+    "C": "Đặt nhầm cả $i$ và $a$ xuống mẫu, ngược với việc nhân hai vế với $a$ rồi chia cho $D$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Xác định số điểm cực đại, cực tiểu trên đoạn thẳng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trên đoạn thẳng nối hai nguồn kết hợp, khoảng cách giữa hai điểm cực đại liên tiếp là",
+   "options": [
+    "$\\lambda$",
+    "$\\dfrac{\\lambda}{2}$",
+    "$\\dfrac{\\lambda}{4}$",
+    "$2\\lambda$"
+   ],
+   "answer": 1,
+   "explanation": "Dịch M dọc AB một đoạn $x$ thì hiệu đường đi đổi $2x$; đổi đủ $\\lambda$ khi $x=\\lambda/2$, nên hai cực đại liên tiếp cách nhau $\\lambda/2$.",
+   "distractorNotes": {
+    "A": "Quên rằng dịch M dọc AB một đoạn $x$ làm hiệu đường đi đổi $2x$, nên chỉ cần dịch $\\lambda/2$.",
+    "C": "Nhầm với khoảng $\\lambda/4$ giữa một cực đại và một cực tiểu liền kề.",
+    "D": "Hiệu đường đi chỉ cần đổi thêm $\\lambda$ để sang cực đại kế tiếp, và nó đổi gấp đôi độ dịch."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong thí nghiệm khe Young, vị trí vân tối tính từ vân sáng trung tâm là",
+   "options": [
+    "$x=k\\,i$",
+    "$x=2k\\,i$",
+    "$x=(k+\\tfrac12)\\,i$",
+    "$x=\\dfrac{k\\,i}{2}$"
+   ],
+   "answer": 2,
+   "explanation": "Vân tối là cực tiểu, nằm giữa hai vân sáng: $x_t=(k+\\tfrac12)\\,i$.",
+   "distractorNotes": {
+    "A": "Đây là vị trí vân sáng, ứng với số nguyên lần khoảng vân tính từ vân trung tâm.",
+    "B": "Các vị trí $2k\\,i$ là số nguyên lần khoảng vân, đều trùng vân sáng chứ không phải vân tối.",
+    "D": "Với $k$ chẵn biểu thức này cho vân sáng, nên không phải công thức riêng của vân tối."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Giao thoa sóng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm khay sóng: gắn hai mũi nhọn vào cùng một cần rung, cho chạm mặt nước rồi bật rung. Sau đó nhấc một mũi lên.",
+   "statements": [
+    {
+     "text": "Khi hai mũi cùng rung, mặt nước xuất hiện các đường cong mạnh, yếu xen kẽ và đứng yên.",
+     "answer": true
+    },
+    {
+     "text": "Khi nhấc một mũi lên, các đường vân giao thoa vẫn còn nguyên trên mặt nước.",
+     "answer": false
+    },
+    {
+     "text": "Hai mũi gắn cùng một cần rung nên là hai nguồn kết hợp.",
+     "answer": true
+    },
+    {
+     "text": "Các đường cực tiểu là những chỗ sóng từ hai mũi không truyền tới được.",
+     "answer": false
+    }
+   ],
+   "explanation": "Vân chỉ có khi hai nguồn kết hợp cùng hoạt động; nhấc một mũi thì chỉ còn sóng tròn. Tại cực tiểu cả hai sóng vẫn tới nhưng ngược pha nên triệt tiêu.",
+   "distractorNotes": {
+    "0": "Đây đúng là quan sát trong bài: hai nguồn kết hợp cùng hoạt động cho các đường mạnh, yếu xen kẽ, đứng yên.",
+    "1": "Nhấc một mũi thì chỉ còn một sóng tròn, không còn hai sóng chồng lên nhau nên vân biến mất.",
+    "2": "Cùng một cần rung nên hai mũi cùng phương, cùng tần số, độ lệch pha không đổi, thỏa điều kiện kết hợp.",
+    "3": "Sóng của cả hai mũi vẫn tới cực tiểu; điểm đó đứng yên vì hai sóng ngược pha triệt tiêu."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Giao thoa sóng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai loa nối cùng một máy phát âm. Một bạn đứng ở chỗ nghe \"nhỏ xíu\", rồi nhờ người khác bịt kín một loa.",
+   "statements": [
+    {
+     "text": "Tại chỗ nghe nhỏ xíu, sóng âm của cả hai loa đều truyền tới.",
+     "answer": true
+    },
+    {
+     "text": "Khi bịt kín một loa, bạn đó nghe tiếng to lên.",
+     "answer": true
+    },
+    {
+     "text": "Tiếng nghe được sau khi bịt loa chắc chắn to bằng tiếng ở chỗ cực đại.",
+     "answer": false
+    },
+    {
+     "text": "Các chỗ nghe to và nghe nhỏ thay đổi vị trí liên tục theo thời gian.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ở chỗ nhỏ, hai sóng tới ngược pha nên triệt tiêu; bịt một loa thì hết triệt tiêu và tiếng to lên, nhưng chỉ còn biên độ một sóng. Các vị trí to, nhỏ là cố định.",
+   "distractorNotes": {
+    "0": "Chỗ nhỏ xíu là do hai sóng ngược pha triệt tiêu, nên phải có cả hai sóng truyền tới đó.",
+    "1": "Bịt một loa thì không còn sóng thứ hai để triệt tiêu, nên tiếng tại đó mạnh lên so với trước.",
+    "2": "Sau khi bịt chỉ còn biên độ một sóng $a$, nhỏ hơn biên độ $2a$ tại chỗ cực đại.",
+    "3": "Hai loa nối cùng máy phát là nguồn kết hợp, nên các vị trí to, nhỏ cố định theo thời gian."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai nguồn A, B dao động cùng pha trên mặt nước, mỗi sóng tới điểm M có biên độ $a$ (coi như bằng nhau).",
+   "statements": [
+    {
+     "text": "Nếu M là cực đại thì hai sóng tới M dao động cùng pha.",
+     "answer": true
+    },
+    {
+     "text": "Nếu M là cực đại thì M dao động với biên độ $2a$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu M là cực tiểu thì M dao động với biên độ $a$.",
+     "answer": false
+    },
+    {
+     "text": "Đường trung trực của AB là một đường cực tiểu.",
+     "answer": false
+    }
+   ],
+   "explanation": "Cực đại: hai sóng cùng pha, biên độ $2a$. Cực tiểu: ngược pha, biên độ 0. Với hai nguồn cùng pha, trung trực AB là cực đại $k=0$.",
+   "distractorNotes": {
+    "0": "Hiệu đường đi $k\\lambda$ làm sóng tới trễ đúng $k$ chu kì, nên hai sóng tới M vẫn cùng pha.",
+    "1": "Hai sóng cùng pha, mỗi sóng biên độ $a$, cộng lại cho biên độ lớn nhất $2a$.",
+    "2": "Hai sóng ngược pha, cùng biên độ $a$ triệt tiêu hoàn toàn, nên biên độ tại cực tiểu bằng 0.",
+    "3": "Mọi điểm trên trung trực có $d_2-d_1=0$, với hai nguồn cùng pha đó là cực đại $k=0$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Điều kiện giao thoa, cực đại và cực tiểu",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Để xét một điểm M là cực đại hay cực tiểu, một học sinh tính tỉ số $\\dfrac{d_2-d_1}{\\lambda}$.",
+   "statements": [
+    {
+     "text": "Hai nguồn cùng pha, tỉ số là số nguyên thì M là cực đại.",
+     "answer": true
+    },
+    {
+     "text": "Hai nguồn cùng pha, tỉ số bằng số nguyên cộng $\\tfrac12$ thì M là cực tiểu.",
+     "answer": true
+    },
+    {
+     "text": "Mẹo này dùng được y hệt khi hai nguồn dao động ngược pha.",
+     "answer": false
+    },
+    {
+     "text": "Chỉ cần hiệu đường đi $d_2-d_1$ (tính bằng cm) là số nguyên thì M là cực đại.",
+     "answer": false
+    }
+   ],
+   "explanation": "Từ $d_2-d_1=k\\lambda$ và $d_2-d_1=(k+\\tfrac12)\\lambda$, chia cho $\\lambda$ ra mẹo nguyên/nguyên cộng ½; bài nói rõ mẹo chỉ dùng khi hai nguồn cùng pha và phải chia cho $\\lambda$ trước.",
+   "distractorNotes": {
+    "0": "Tỉ số nguyên nghĩa là $d_2-d_1=k\\lambda$, đúng điều kiện cực đại với hai nguồn cùng pha.",
+    "1": "Tỉ số bằng $k+\\tfrac12$ nghĩa là $d_2-d_1=(k+\\tfrac12)\\lambda$, đúng điều kiện cực tiểu.",
+    "2": "Áp mẹo ngoài điều kiện: hai nguồn ngược pha đã lệch nửa chu kì từ đầu nên cực đại, cực tiểu đổi chỗ.",
+    "3": "Quên chia cho $\\lambda$: hiệu đường đi là số nguyên cm chưa chắc bằng số nguyên lần bước sóng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Giao thoa ánh sáng qua khe Young",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chiếu laser đỏ qua hai khe hẹp rất gần nhau, khoảng cách hai khe là $a$, màn đặt cách hai khe một khoảng $D$. Trên màn có các vạch sáng, tối xen kẽ, cách đều.",
+   "statements": [
+    {
+     "text": "Khoảng vân được tính bằng $i=\\dfrac{\\lambda D}{a}$.",
+     "answer": true
+    },
+    {
+     "text": "Đặt màn xa hai khe hơn thì các vạch sáng, tối giãn ra.",
+     "answer": true
+    },
+    {
+     "text": "Một vân sáng và một vân tối liền kề cách nhau đúng bằng khoảng vân $i$.",
+     "answer": false
+    },
+    {
+     "text": "Trong công thức khoảng vân, $a$ là biên độ của sóng ánh sáng.",
+     "answer": false
+    }
+   ],
+   "explanation": "$i=\\dfrac{\\lambda D}{a}$ tỉ lệ thuận với $D$ nên màn xa thì vân giãn ra; vân sáng và vân tối liền kề cách nhau $i/2$; $a$ ở đây là khoảng cách hai khe.",
+   "distractorNotes": {
+    "0": "Đây đúng là công thức bài nêu, với $a$ là khoảng cách hai khe, $D$ là khoảng cách từ khe đến màn.",
+    "1": "Khoảng vân tỉ lệ thuận với $D$, nên đưa màn ra xa thì khoảng vân tăng, các vạch giãn ra.",
+    "2": "Khoảng $i$ là giữa hai vân sáng liên tiếp; vân tối nằm chính giữa nên chỉ cách vân sáng $i/2$.",
+    "3": "Nhầm hai kí hiệu $a$: trong khe Young $a$ là khoảng cách hai khe, không phải biên độ sóng."
+   }
+  }
+ ]
 }

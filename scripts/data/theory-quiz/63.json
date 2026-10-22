@@ -1,386 +1,550 @@
 {
-  "lesson_id": 63,
-  "lesson_title": "Bài 18. Lực ma sát",
-  "item_id": 123,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 63,
+ "lesson_title": "Bài 18. Lực ma sát",
+ "item_id": 123,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực ma sát nghỉ xuất hiện khi nào?",
+   "options": [
+    "Vật chịu ngoại lực song song mặt tiếp xúc nhưng vẫn đứng yên",
+    "Vật đang trượt trên bề mặt của một vật khác",
+    "Vật đang lăn trên bề mặt của một vật khác",
+    "Vật đứng yên và không chịu ngoại lực song song mặt tiếp xúc"
+   ],
+   "answer": 0,
+   "explanation": "Ma sát nghỉ xuất hiện khi có ngoại lực kéo/đẩy mà vật vẫn đứng yên trên mặt tiếp xúc.",
+   "distractorNotes": {
+    "B": "Nhầm loại ma sát: vật đang trượt thì chịu ma sát trượt $\\mu N$, không còn là ma sát nghỉ.",
+    "C": "Vật lăn trên bề mặt chịu ma sát lăn, một loại khác hẳn ma sát nghỉ.",
+    "D": "Không có lực gây xu hướng trượt thì ma sát nghỉ chẳng có gì để cân bằng, nên bằng 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi vật còn đứng yên trên mặt tiếp xúc, độ lớn lực ma sát nghỉ",
+   "options": [
+    "luôn bằng $\\mu N$ của hai mặt tiếp xúc",
+    "bằng thành phần ngoại lực song song mặt tiếp xúc",
+    "luôn bằng lực ma sát nghỉ cực đại",
+    "luôn bằng 0 vì vật chưa chuyển động"
+   ],
+   "answer": 1,
+   "explanation": "Vật đứng yên nên hợp lực bằng 0: ma sát nghỉ bằng thành phần ngoại lực song song mặt tiếp xúc, tối đa là $F_{\\text{msn max}}$.",
+   "distractorNotes": {
+    "A": "Áp công thức $\\mu N$ sai điều kiện: công thức này chỉ dùng khi vật đang trượt.",
+    "C": "Nhầm mức trần với giá trị thực: ma sát nghỉ tự điều chỉnh, chỉ đạt cực đại lúc sắp trượt.",
+    "D": "Vật đứng yên dưới ngoại lực là nhờ ma sát nghỉ cân bằng lực đó, nên ma sát khác 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Độ lớn lực ma sát trượt (gần đúng) không phụ thuộc vào yếu tố nào sau đây?",
+   "options": [
+    "Vật liệu của hai mặt tiếp xúc",
+    "Tình trạng khô hay ướt của hai mặt",
+    "Diện tích tiếp xúc giữa hai mặt",
+    "Độ lớn áp lực giữa hai mặt"
+   ],
+   "answer": 2,
+   "explanation": "Ma sát trượt phụ thuộc vật liệu, tình trạng mặt và áp lực; không phụ thuộc diện tích tiếp xúc và tốc độ.",
+   "distractorNotes": {
+    "A": "Vật liệu hai mặt quyết định hệ số $\\mu$, nên ảnh hưởng trực tiếp đến ma sát trượt.",
+    "B": "Mặt khô hay ướt làm thay đổi $\\mu$, nên ma sát trượt thay đổi theo.",
+    "D": "Ma sát trượt tỉ lệ với áp lực theo $F=\\mu N$, nên áp lực có ảnh hưởng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Khi một người bước đi trên đường, lực ma sát do mặt đường tác dụng lên bàn chân đang đạp đất có hướng",
+   "options": [
+    "ra sau, ngược chiều người đi",
+    "thẳng đứng hướng lên trên",
+    "bằng không vì chân không trượt",
+    "tới trước, cùng chiều người đi"
+   ],
+   "answer": 3,
+   "explanation": "Chân có xu hướng trượt ra sau nên ma sát nghỉ hướng tới trước, chính lực này đẩy người đi.",
+   "distractorNotes": {
+    "A": "Lấy chiều đi làm mốc thay cho chiều bàn chân có xu hướng trượt ra sau.",
+    "B": "Lực thẳng đứng hướng lên là phản lực $N$; ma sát luôn song song mặt tiếp xúc.",
+    "C": "Chân không trượt vẫn chịu ma sát nghỉ; thiếu nó thì không bước đi được."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Với cùng một vật và cùng mặt tiếp xúc, cách so sánh nào sau đây là đúng?",
+   "options": [
+    "Nghỉ cực đại $\\geq$ trượt $\\gg$ lăn",
+    "Trượt $\\geq$ nghỉ cực đại $\\gg$ lăn",
+    "Lăn $\\geq$ trượt $\\geq$ nghỉ cực đại",
+    "Nghỉ cực đại $\\gg$ lăn $\\geq$ trượt"
+   ],
+   "answer": 0,
+   "explanation": "Ma sát nghỉ cực đại thường lớn hơn ma sát trượt một chút, còn ma sát lăn nhỏ hơn ma sát trượt rất nhiều.",
+   "distractorNotes": {
+    "B": "Đảo thứ tự: đẩy cho vật bắt đầu trượt khó hơn giữ cho trượt, nên nghỉ cực đại lớn hơn.",
+    "C": "Đảo ngược hoàn toàn: bánh xe, vòng bi dùng để giảm cản, vì ma sát lăn nhỏ nhất.",
+    "D": "Ma sát lăn nhỏ hơn ma sát trượt rất nhiều, không thể xếp lăn lớn hơn trượt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đẩy ngang một thùng mạnh dần, đến lúc thùng bắt đầu trượt thì giữ cho nó trượt tiếp lại nhẹ tay hơn. Nguyên nhân là",
+   "options": [
+    "ma sát trượt thường nhỏ hơn ma sát nghỉ cực đại",
+    "ma sát trượt giảm dần khi tốc độ thùng tăng",
+    "áp lực của thùng lên sàn giảm khi thùng trượt",
+    "ma sát trượt bằng 0 khi thùng đã chuyển động"
+   ],
+   "answer": 0,
+   "explanation": "Ma sát trượt thường nhỏ hơn ma sát nghỉ cực đại, nên khi thùng đã trượt chỉ cần lực nhỏ hơn.",
+   "distractorNotes": {
+    "B": "Ma sát trượt gần đúng không phụ thuộc tốc độ, nên tốc độ tăng không làm nó giảm.",
+    "C": "Đẩy ngang trên sàn ngang thì áp lực vẫn bằng $mg$, không đổi khi thùng trượt.",
+    "D": "Thùng đang trượt trên sàn vẫn chịu ma sát trượt $\\mu N$, không hề bằng 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực ma sát, lực cản và lực nâng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trường hợp nào sau đây lực ma sát có lợi?",
+   "options": [
+    "Lốp xe bị mòn dần sau thời gian dài",
+    "Xích xe đạp bị mòn khi đạp nhiều",
+    "Que diêm cháy khi quẹt vào vỏ bao",
+    "Má phanh bị mòn sau nhiều lần phanh"
+   ],
+   "answer": 2,
+   "explanation": "Quẹt diêm cháy nhờ ma sát là ví dụ ma sát có lợi; mòn lốp, xích, má phanh là tác hại của ma sát.",
+   "distractorNotes": {
+    "A": "Lốp mòn dần là tổn hại do ma sát gây ra, không phải lợi ích.",
+    "B": "Xích mòn làm hỏng xe, đó là tác hại của ma sát.",
+    "D": "Nhầm công dụng phanh với hiện tượng mòn: má phanh bị mòn là thiệt hại của ma sát."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Gọi $\\mu$ là hệ số ma sát trượt, $N$ là độ lớn áp lực. Độ lớn lực ma sát trượt là",
+   "options": [
+    "$F_{\\text{mst}} = \\dfrac{N}{\\mu}$",
+    "$F_{\\text{mst}} = \\mu N$",
+    "$F_{\\text{mst}} = \\dfrac{\\mu}{N}$",
+    "$F_{\\text{mst}} = \\mu N^2$"
+   ],
+   "answer": 1,
+   "explanation": "Lực ma sát trượt tỉ lệ với áp lực: $F_{\\text{mst}} = \\mu N$.",
+   "distractorNotes": {
+    "A": "Đảo vị trí $\\mu$ khiến mặt nhám hơn lại có ma sát nhỏ hơn, trái thực tế.",
+    "C": "Đảo tỉ lệ: ma sát trượt tỉ lệ thuận với áp lực, không tỉ lệ nghịch.",
+    "D": "Ma sát trượt tỉ lệ bậc nhất với áp lực, không có bình phương."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ số ma sát trượt $\\mu$ có đơn vị là",
+   "options": [
+    "niutơn (N)",
+    "niutơn trên kilôgam (N/kg)",
+    "niutơn trên mét vuông (N/m²)",
+    "không có đơn vị"
+   ],
+   "answer": 3,
+   "explanation": "$\\mu = F/N$ là tỉ số của hai lực nên không có đơn vị.",
+   "distractorNotes": {
+    "A": "Nhầm kí hiệu áp lực $N$ in nghiêng với chữ N là đơn vị niutơn.",
+    "B": "$\\mu$ là tỉ số hai lực, không chia lực cho khối lượng.",
+    "C": "Ma sát không phụ thuộc diện tích, nên $\\mu$ không gắn với mét vuông."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật khối lượng $m$ nằm trên mặt phẳng nghiêng góc $\\alpha$ so với phương ngang, không chịu lực kéo. Áp lực $N$ của vật lên mặt nghiêng là",
+   "options": [
+    "$N = mg\\sin\\alpha$",
+    "$N = mg$",
+    "$N = mg\\cos\\alpha$",
+    "$N = mg\\tan\\alpha$"
+   ],
+   "answer": 2,
+   "explanation": "$N$ cân bằng thành phần $P_y = mg\\cos\\alpha$ ép vật vào dốc.",
+   "distractorNotes": {
+    "A": "$mg\\sin\\alpha$ là thành phần dọc dốc kéo vật xuống, không phải phần ép vào dốc.",
+    "B": "$N = mg$ chỉ đúng trên mặt ngang; trên dốc chỉ thành phần vuông góc ép vào mặt.",
+    "D": "Phân tích trọng lực chỉ cho thành phần sin và cos, không xuất hiện $\\tan\\alpha$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kéo vật khối lượng $m$ trên sàn ngang bằng lực $F$ chếch lên trên, hợp với phương ngang góc $\\alpha$. Áp lực của vật lên sàn là",
+   "options": [
+    "$N = mg + F\\sin\\alpha$",
+    "$N = mg - F\\cos\\alpha$",
+    "$N = mg$",
+    "$N = mg - F\\sin\\alpha$"
+   ],
+   "answer": 3,
+   "explanation": "Chiếu lên phương thẳng đứng: $N + F\\sin\\alpha - mg = 0$, nên $N = mg - F\\sin\\alpha$.",
+   "distractorNotes": {
+    "A": "Nhầm chiều: lực kéo chếch lên đỡ bớt vật chứ không ép vật xuống sàn.",
+    "B": "Nhầm sin với cos: $F\\cos\\alpha$ là thành phần nằm ngang, không tác động phương thẳng đứng.",
+    "C": "Quên thành phần thẳng đứng $F\\sin\\alpha$ của lực kéo khi chiếu lên phương vuông góc sàn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một hộp được kéo ngang trượt trên sàn ngang. Đặt thêm gia trọng cho khối lượng hộp tăng gấp đôi, mặt tiếp xúc không đổi. Lực ma sát trượt",
+   "options": [
+    "không đổi",
+    "tăng gấp đôi",
+    "tăng gấp bốn",
+    "giảm một nửa"
+   ],
+   "answer": 1,
+   "explanation": "$F = \\mu N = \\mu mg$; $\\mu$ không đổi, $m$ gấp đôi nên ma sát gấp đôi.",
+   "distractorNotes": {
+    "A": "Quên rằng áp lực $N = mg$ tăng theo khối lượng, nên ma sát trượt cũng tăng.",
+    "C": "Ma sát tỉ lệ bậc nhất với áp lực, không theo bình phương khối lượng.",
+    "D": "Đảo chiều quan hệ: áp lực lớn hơn làm ma sát lớn hơn chứ không nhỏ đi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Vật trượt xuống mặt phẳng nghiêng góc $\\alpha$, hệ số ma sát trượt $\\mu$. Từ phương trình $mg\\sin\\alpha - \\mu mg\\cos\\alpha = ma$, gia tốc của vật là",
+   "options": [
+    "$a = g(\\sin\\alpha + \\mu\\cos\\alpha)$",
+    "$a = g(\\cos\\alpha - \\mu\\sin\\alpha)$",
+    "$a = g(\\sin\\alpha - \\mu\\cos\\alpha)$",
+    "$a = g(\\sin\\alpha - \\mu)$"
+   ],
+   "answer": 2,
+   "explanation": "Chia hai vế cho $m$: $a = g(\\sin\\alpha - \\mu\\cos\\alpha)$, khối lượng triệt tiêu.",
+   "distractorNotes": {
+    "A": "Ma sát hướng lên dốc, ngược chiều trượt nên mang dấu trừ, không cộng.",
+    "B": "Đảo sin và cos: thành phần kéo vật xuống dốc là $mg\\sin\\alpha$.",
+    "D": "Bỏ mất $\\cos\\alpha$: áp lực trên dốc là $mg\\cos\\alpha$ chứ không phải $mg$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nâng dần một đầu tấm ván, hộp gỗ trên ván bắt đầu trượt khi ván nghiêng góc $\\alpha$. Từ $mg\\sin\\alpha = \\mu_n mg\\cos\\alpha$, hệ số ma sát nghỉ là",
+   "options": [
+    "$\\mu_n = \\tan\\alpha$",
+    "$\\mu_n = \\sin\\alpha$",
+    "$\\mu_n = \\cos\\alpha$",
+    "$\\mu_n = \\dfrac{1}{\\tan\\alpha}$"
+   ],
+   "answer": 0,
+   "explanation": "Chia hai vế cho $mg\\cos\\alpha$ được $\\mu_n = \\sin\\alpha/\\cos\\alpha = \\tan\\alpha$.",
+   "distractorNotes": {
+    "B": "Bỏ quên áp lực $mg\\cos\\alpha$ ở vế ma sát khi chia hai vế.",
+    "C": "Nhầm hệ số ma sát với tỉ số giữa áp lực và trọng lực.",
+    "D": "Đảo tử và mẫu khi chia: phải là $\\sin\\alpha/\\cos\\alpha$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một học sinh móc lực kế vào hộp gỗ đặt trên bàn ngang rồi kéo ngang với lực tăng dần. Lúc đầu hộp đứng yên, đến một lúc hộp bật đi và trượt. Xét các phát biểu sau:",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Lực ma sát nghỉ xuất hiện khi nào?",
-      "options": [
-        "Chỉ khi vật đang trượt trên mặt tiếp xúc",
-        "Có ngoại lực kéo hoặc đẩy tác dụng lên vật nhưng vật vẫn đứng yên trên mặt tiếp xúc",
-        "Chỉ khi vật lăn trên mặt tiếp xúc",
-        "Bất cứ lúc nào vật đặt trên mặt phẳng, kể cả khi không có ngoại lực"
-      ],
-      "answer": 1,
-      "explanation": "Bài nêu ma sát nghỉ xuất hiện khi có ngoại lực kéo/đẩy mà vật vẫn đứng yên. Không có ngoại lực thì không có xu hướng trượt, nên không có ma sát nghỉ."
+     "text": "Khi hộp còn đứng yên, lực ma sát nghỉ tăng theo lực kéo.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Khi em bước đi, lực ma sát do mặt đường tác dụng lên bàn chân đang đạp đất có chiều nào?",
-      "options": [
-        "Hướng ra phía sau, vì ma sát luôn cản chuyển động",
-        "Thẳng đứng hướng lên",
-        "Không có lực ma sát vì chân không trượt",
-        "Hướng về phía trước, cùng chiều em đi"
-      ],
-      "answer": 3,
-      "explanation": "Chân có xu hướng trượt ra sau nên ma sát nghỉ hướng về phía trước. Ma sát ngược chiều trượt (xu hướng trượt) tương đối của mặt tiếp xúc, không nhất thiết ngược chiều chuyển động của vật."
+     "text": "Lực ma sát nghỉ có thể lớn tùy ý nên kéo mạnh đến đâu hộp cũng không trượt.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hộp gỗ đang trượt đều trên bàn. Nếu kéo hộp với tốc độ lớn hơn (vẫn trượt) thì lực ma sát trượt thay đổi thế nào?",
-      "options": [
-        "Tăng lên vì hộp chuyển động nhanh hơn",
-        "Giảm đi vì hộp dễ trượt hơn",
-        "Gần như không đổi",
-        "Bằng không vì hộp đã chuyển động"
-      ],
-      "answer": 2,
-      "explanation": "Theo bài, ma sát trượt (gần đúng) không phụ thuộc tốc độ và diện tích tiếp xúc; nó phụ thuộc vật liệu, tình trạng hai mặt và áp lực $N$."
+     "text": "Khi hộp đã trượt, kéo mạnh hơn thì lực ma sát trượt cũng tăng theo.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Tủ nặng đứng yên khi em đẩy ngang bằng lực nhỏ hơn ma sát nghỉ cực đại. Lực ma sát nghỉ lúc đó có độ lớn",
-      "options": [
-        "Bằng đúng lực đẩy ngang của em",
-        "Bằng ma sát nghỉ cực đại",
-        "Bằng $\\mu N$ với $N$ là áp lực lên sàn",
-        "Bằng không, vì tủ chưa chuyển động"
-      ],
-      "answer": 0,
-      "explanation": "Tủ đứng yên nên hợp lực bằng 0: ma sát nghỉ cân bằng với lực đẩy. Ma sát nghỉ cực đại chỉ là mức \"trần\", không phải giá trị lúc nào cũng đạt."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Sắp xếp độ lớn của ba loại ma sát giữa cùng một vật và cùng một mặt (từ lớn đến nhỏ) theo bài là",
-      "options": [
-        "Ma sát lăn $>$ ma sát trượt $>$ ma sát nghỉ cực đại",
-        "Ma sát trượt $>$ ma sát nghỉ cực đại $>$ ma sát lăn",
-        "Ba loại ma sát bằng nhau khi áp lực như nhau",
-        "Ma sát nghỉ cực đại $\\ge$ ma sát trượt $\\gg$ ma sát lăn"
-      ],
-      "answer": 3,
-      "explanation": "Bài tổng kết: nghỉ cực đại $\\ge$ trượt (thường hơn một chút) $\\gg$ lăn. Vì thế bánh xe lăn nhẹ hơn kéo lê, và giữ vật trượt tiếp nhẹ tay hơn lúc mới đẩy cho \"bật\"."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hệ số ma sát trượt $\\mu$ có đặc điểm nào sau đây?",
-      "options": [
-        "Có đơn vị là niutơn (N)",
-        "Không có đơn vị, phụ thuộc vật liệu và tình trạng hai mặt tiếp xúc",
-        "Có đơn vị là N/m",
-        "Chỉ phụ thuộc diện tích mặt tiếp xúc"
-      ],
-      "answer": 1,
-      "explanation": "Từ $F_{\\text{mst}} = \\mu N$, hai vế cùng đơn vị là N nên $\\mu$ không có đơn vị; $\\mu$ phụ thuộc vật liệu và tình trạng hai mặt, không phụ thuộc diện tích."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về lực ma sát nghỉ trong bài, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Ma sát nghỉ có phương song song với mặt tiếp xúc.",
-          "answer": true
-        },
-        {
-          "text": "Chiều ma sát nghỉ ngược với xu hướng chuyển động tương đối của vật.",
-          "answer": true
-        },
-        {
-          "text": "Khi vật đứng yên, độ lớn ma sát nghỉ luôn bằng $\\mu N$.",
-          "answer": false
-        },
-        {
-          "text": "Lực đẩy vượt quá ma sát nghỉ cực đại thì vật bắt đầu trượt.",
-          "answer": true
-        }
-      ],
-      "explanation": "Khi vật đứng yên, ma sát nghỉ bằng lực gây xu hướng trượt (dùng cân bằng lực), có giá trị từ 0 đến $F_{\\text{msn max}}$; $F = \\mu N$ chỉ dùng cho ma sát trượt."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về chiều và vai trò của lực ma sát, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Ma sát ngược chiều trượt tương đối giữa hai mặt tiếp xúc.",
-          "answer": true
-        },
-        {
-          "text": "Ma sát luôn ngược chiều chuyển động của vật, không có ngoại lệ.",
-          "answer": false
-        },
-        {
-          "text": "Không có ma sát nghỉ thì con người không đi bộ được.",
-          "answer": true
-        },
-        {
-          "text": "Ma sát chỉ có hại, cần loại bỏ hoàn toàn.",
-          "answer": false
-        }
-      ],
-      "explanation": "Ma sát nghỉ đẩy bàn chân về phía trước khi đi nên có lợi; quẹt diêm, phanh xe cũng nhờ ma sát. Vì vậy hai ý \"luôn ngược chiều chuyển động\" và \"chỉ có hại\" đều sai."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Tủ cần lực ngang tối thiểu $300$ N mới bắt đầu dịch (ma sát nghỉ cực đại là $300$ N). Em đẩy ngang $250$ N, tủ vẫn đứng yên. Lực ma sát nghỉ lúc đó bằng bao nhiêu niutơn?",
-      "answer": "250",
-      "explanation": "Tủ đứng yên nên ma sát nghỉ cân bằng lực đẩy: $250$ N. Con số $300$ N chỉ là mức tối đa, chưa đạt tới."
-    },
-    {
-      "type": "short_answer",
-      "kind": "hien_tuong",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hộp đang trượt đều. Dựng đứng hộp để diện tích tiếp xúc còn $1/3$, kéo cùng tốc độ. Lực ma sát trượt tăng gấp bao nhiêu lần?",
-      "answer": "1",
-      "explanation": "Theo $F = \\mu N$ không có diện tích: $\\mu$ và $N = mg$ không đổi nên ma sát trượt giữ nguyên, tức gấp $1$ lần."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kéo vật khối lượng $m$ trên sàn ngang bằng lực $F$ chếch lên, hợp với phương ngang góc $\\alpha$. Áp lực của vật lên sàn là",
-      "options": [
-        "$N = mg$",
-        "$N = mg + F\\sin\\alpha$",
-        "$N = mg - F\\sin\\alpha$",
-        "$N = mg - F\\cos\\alpha$"
-      ],
-      "answer": 2,
-      "explanation": "Chiếu lên phương thẳng đứng: $N + F\\sin\\alpha - mg = 0$. Chọn $N = mg$ là quên lực kéo; $mg + F\\sin\\alpha$ là nhầm lực kéo ép xuống; $mg - F\\cos\\alpha$ là nhầm sin với cos."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật $4$ kg nằm trên mặt phẳng nghiêng góc $60^\\circ$ so với phương ngang. Lấy $g = 10\\ \\text{m/s}^2$. Áp lực của vật lên mặt nghiêng là",
-      "options": [
-        "$20$ N",
-        "$40$ N",
-        "$34{,}6$ N",
-        "$80$ N"
-      ],
-      "answer": 0,
-      "explanation": "$N = mg\\cos\\alpha = 4\\cdot 10\\cdot 0{,}5 = 20$ N. $40$ N là dùng $N = mg$; $34{,}6$ N là nhầm $\\sin 60^\\circ$; $80$ N là chia cho $\\cos\\alpha$ thay vì nhân."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật trượt xuống mặt phẳng nghiêng góc $\\alpha$, hệ số ma sát trượt $\\mu$. Biểu thức đúng của gia tốc là",
-      "options": [
-        "$a = g(\\sin\\alpha + \\mu\\cos\\alpha)$",
-        "$a = g(\\sin\\alpha - \\mu\\cos\\alpha)$",
-        "$a = g(\\mu\\sin\\alpha - \\cos\\alpha)$",
-        "$a = g\\sin\\alpha$"
-      ],
-      "answer": 1,
-      "explanation": "Chiếu lên trục dọc dốc: $mg\\sin\\alpha - \\mu mg\\cos\\alpha = ma$, rồi $m$ triệt tiêu. Dấu cộng là nhầm chiều ma sát; hoán đổi sin/cos là nhầm thành phần; $g\\sin\\alpha$ chỉ đúng khi $\\mu = 0$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Thùng $50$ kg đang trượt trên sàn ngang, chịu lực đẩy ngang $200$ N; $\\mu = 0{,}3$; $g = 10\\ \\text{m/s}^2$. Gia tốc của thùng là",
-      "options": [
-        "$4\\ \\text{m/s}^2$",
-        "$7\\ \\text{m/s}^2$",
-        "$3\\ \\text{m/s}^2$",
-        "$1\\ \\text{m/s}^2$"
-      ],
-      "answer": 3,
-      "explanation": "$F_{\\text{ms}} = 0{,}3\\cdot 50\\cdot 10 = 150$ N; $a = (200 - 150)/50 = 1\\ \\text{m/s}^2$. $4$ là quên ma sát; $7$ là cộng lực đẩy với ma sát; $3$ là lấy riêng ma sát chia cho khối lượng."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về áp lực $N$ trong các tình huống của bài, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Mặt ngang, kéo ngang: $N = mg$.",
-          "answer": true
-        },
-        {
-          "text": "Mặt ngang, kéo chếch lên góc $\\alpha$: $N = mg + F\\sin\\alpha$.",
-          "answer": false
-        },
-        {
-          "text": "Mặt nghiêng góc $\\alpha$: $N = mg\\cos\\alpha$.",
-          "answer": true
-        },
-        {
-          "text": "Kéo chếch lên làm áp lực nhỏ hơn $mg$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Lực kéo chếch lên đỡ bớt một phần trọng lượng nên $N = mg - F\\sin\\alpha < mg$. Dấu cộng là nhầm chiều của thành phần thẳng đứng."
-    },
-    {
-      "type": "true_false",
-      "kind": "bien_doi",
-      "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật trượt xuống dốc nghiêng góc $\\alpha$ có ma sát, $a = g(\\sin\\alpha - \\mu\\cos\\alpha)$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Khối lượng $m$ không ảnh hưởng đến gia tốc.",
-          "answer": true
-        },
-        {
-          "text": "Hệ số ma sát $\\mu$ càng lớn thì gia tốc càng nhỏ.",
-          "answer": true
-        },
-        {
-          "text": "Khi $\\mu = 0$ thì $a = g\\sin\\alpha$.",
-          "answer": true
-        },
-        {
-          "text": "Khi $\\mu = 0$ thì $a = g\\cos\\alpha$.",
-          "answer": false
-        }
-      ],
-      "explanation": "$m$ triệt tiêu khi chia hai vế cho $m$. Khi $\\mu = 0$ chỉ còn thành phần dọc dốc $mg\\sin\\alpha$ nên $a = g\\sin\\alpha$, không phải $g\\cos\\alpha$ (đó là thành phần ép vào dốc)."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hộp $8$ kg trượt trên sàn ngang, $\\mu = 0{,}25$, $g = 10\\ \\text{m/s}^2$. Lực ma sát trượt bằng bao nhiêu niutơn?",
-      "answer": "20",
-      "explanation": "$F_{\\text{mst}} = \\mu mg = 0{,}25\\cdot 8\\cdot 10 = 20$ N."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kéo vật $5$ kg trên sàn ngang bằng lực $20$ N chếch lên $30^\\circ$ so với phương ngang; $g = 10\\ \\text{m/s}^2$. Áp lực của vật lên sàn bằng bao nhiêu niutơn?",
-      "answer": "40",
-      "explanation": "$N = mg - F\\sin 30^\\circ = 50 - 20\\cdot 0{,}5 = 40$ N."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Vật trượt xuống dốc nghiêng $30^\\circ$ với $\\mu = 0{,}1$; lấy $g = 10\\ \\text{m/s}^2$. Tính gia tốc của vật (đơn vị $\\text{m/s}^2$), làm tròn đến $1$ chữ số thập phân.",
-      "answer": "4,1",
-      "explanation": "$a = g(\\sin 30^\\circ - \\mu\\cos 30^\\circ) = 10\\,(0{,}5 - 0{,}1\\cdot 0{,}866) \\approx 4{,}13 \\approx 4{,}1\\ \\text{m/s}^2$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Kéo thùng $25$ kg trượt đều trên sàn ngang bằng lực ngang $50$ N; $g = 10\\ \\text{m/s}^2$. Tính hệ số ma sát trượt $\\mu$ (viết dạng số thập phân).",
-      "answer": "0,2",
-      "explanation": "Trượt đều thì hợp lực bằng 0: $F_{\\text{ms}} = 50$ N $= \\mu mg$, nên $\\mu = \\dfrac{50}{25\\cdot 10} = 0{,}2$."
+     "text": "Lực ma sát nghỉ có chiều ngược với xu hướng chuyển động của hộp.",
+     "answer": true
     }
-  ]
+   ],
+   "explanation": "Ma sát nghỉ bằng lực kéo và tăng tới giá trị cực đại; khi trượt, ma sát $\\mu N$ không đổi theo lực kéo nếu $N$ giữ nguyên.",
+   "distractorNotes": {
+    "0": "Hộp đứng yên nên hợp lực bằng 0, ma sát nghỉ phải tăng đúng bằng lực kéo, không thể coi là sai.",
+    "1": "Ma sát nghỉ có giới hạn cực đại, vượt mức đó hộp bắt đầu trượt, nên phát biểu không thể đúng.",
+    "2": "Ma sát trượt bằng $\\mu N$, không đổi theo lực kéo khi áp lực giữ nguyên, nên không thể coi là đúng.",
+    "3": "Ma sát nghỉ luôn chống lại xu hướng trượt tương đối của hộp, nên không thể coi là sai."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kéo đều một hộp gỗ trên bàn khi hộp nằm (mặt rộng), rồi dựng đứng (mặt hẹp), rồi kéo nhanh hơn; cuối cùng kê hộp lên hai bút chì tròn cho lăn. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Khi dựng đứng hộp, lực ma sát trượt giảm vì diện tích tiếp xúc nhỏ hơn.",
+     "answer": false
+    },
+    {
+     "text": "Khi kéo nhanh hơn, lực ma sát trượt gần như không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Khi hộp lăn trên bút chì, lực cản nhỏ hơn nhiều so với lúc trượt.",
+     "answer": true
+    },
+    {
+     "text": "Ma sát lăn lớn hơn ma sát trượt vì vật phải lăn nhiều vòng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ma sát trượt không phụ thuộc diện tích tiếp xúc và tốc độ; ma sát lăn nhỏ hơn ma sát trượt rất nhiều.",
+   "distractorNotes": {
+    "0": "Công thức $F=\\mu N$ không chứa diện tích, dựng đứng hộp không làm ma sát giảm, nên không thể đúng.",
+    "1": "Ma sát trượt gần đúng không phụ thuộc tốc độ, lực kế vẫn chỉ khoảng như cũ, nên không thể sai.",
+    "2": "Thí nghiệm cho thấy khi lăn lực kế chỉ dưới $0{,}1$ N, nhỏ hơn nhiều lúc trượt, nên không thể sai.",
+    "3": "Số vòng lăn không làm tăng ma sát; ma sát lăn nhỏ hơn ma sát trượt rất nhiều, nên không thể đúng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một chiếc tủ đặt trên sàn ngang. Em đẩy tủ theo phương ngang nhưng tủ vẫn đứng yên. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Lực ma sát sàn tác dụng lên tủ lúc này tính được bằng $\\mu N$.",
+     "answer": false
+    },
+    {
+     "text": "Lực ma sát lên tủ có độ lớn bằng lực đẩy và ngược chiều lực đẩy.",
+     "answer": true
+    },
+    {
+     "text": "Tăng lực đẩy nhưng chưa vượt ma sát nghỉ cực đại thì lực ma sát cũng tăng theo.",
+     "answer": true
+    },
+    {
+     "text": "Lực ma sát luôn ngược chiều chuyển động của vật nên ma sát luôn cản chuyển động.",
+     "answer": false
+    }
+   ],
+   "explanation": "Vật đứng yên dùng cân bằng lực, không dùng $\\mu N$; ma sát ngược chiều trượt tương đối, có lúc giúp vật đi như khi bước chân.",
+   "distractorNotes": {
+    "0": "Tủ đứng yên chịu ma sát nghỉ, phải tìm bằng cân bằng lực chứ không dùng $\\mu N$, nên không thể đúng.",
+    "1": "Tủ đứng yên nên hợp lực bằng 0, ma sát phải bằng và ngược chiều lực đẩy, nên không thể sai.",
+    "2": "Ma sát nghỉ tự điều chỉnh theo lực đẩy cho tới mức cực đại, nên không thể coi là sai.",
+    "3": "Ma sát ngược chiều trượt tương đối, có lúc giúp vật đi như khi bước chân, nên không thể đúng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Lực ma sát trượt được tính bằng công thức $F_{\\text{mst}} = \\mu N$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hệ số ma sát trượt $\\mu$ có đơn vị là niutơn.",
+     "answer": false
+    },
+    {
+     "text": "$N$ là độ lớn áp lực, bằng độ lớn phản lực của mặt lên vật.",
+     "answer": true
+    },
+    {
+     "text": "Trên mặt ngang, lực kéo nằm ngang thì $N = mg$.",
+     "answer": true
+    },
+    {
+     "text": "Áp lực $N$ luôn bằng $mg$ trong mọi trường hợp.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\mu$ không có đơn vị; $N$ là áp lực, chỉ bằng $mg$ khi mặt ngang và lực kéo nằm ngang.",
+   "distractorNotes": {
+    "0": "$\\mu$ là tỉ số hai lực nên không có đơn vị; nhầm với chữ N chỉ niutơn, nên không thể đúng.",
+    "1": "Áp lực và phản lực của mặt có cùng độ lớn, nên dùng chung kí hiệu $N$; phát biểu không thể sai.",
+    "2": "Phương thẳng đứng chỉ có $P$ và $N$ cân bằng, nên $N = mg$; phát biểu không thể sai.",
+    "3": "Kéo chếch hay đặt trên dốc thì $N$ bằng $mg - F\\sin\\alpha$ hoặc $mg\\cos\\alpha$, nên không thể đúng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Vật trượt trên mặt phẳng nghiêng có ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật khối lượng $m$ trượt xuống mặt phẳng nghiêng góc $\\alpha$, hệ số ma sát trượt $\\mu$. Phân tích trọng lực thành hai thành phần dọc dốc và vuông góc dốc. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Thành phần $P_x = mg\\sin\\alpha$ kéo vật xuống dốc.",
+     "answer": true
+    },
+    {
+     "text": "Áp lực của vật lên mặt nghiêng là $N = mg\\cos\\alpha$.",
+     "answer": true
+    },
+    {
+     "text": "Lực ma sát trượt tác dụng lên vật hướng xuống dốc.",
+     "answer": false
+    },
+    {
+     "text": "Tăng góc nghiêng (vật vẫn trượt) thì lực ma sát trượt tăng lên.",
+     "answer": false
+    }
+   ],
+   "explanation": "$P_x = mg\\sin\\alpha$, $N = mg\\cos\\alpha$; ma sát $\\mu mg\\cos\\alpha$ hướng lên dốc và giảm khi $\\alpha$ tăng vì $\\cos\\alpha$ giảm.",
+   "distractorNotes": {
+    "0": "Thành phần dọc dốc của trọng lực đúng là $mg\\sin\\alpha$ hướng xuống, nên không thể coi là sai.",
+    "1": "$N$ cân bằng thành phần ép vào dốc $P_y = mg\\cos\\alpha$, nên không thể coi là sai.",
+    "2": "Vật trượt xuống nên ma sát ngược chiều trượt, tức hướng lên dốc; phát biểu không thể đúng.",
+    "3": "Ma sát bằng $\\mu mg\\cos\\alpha$, góc tăng thì $\\cos\\alpha$ giảm nên ma sát giảm; không thể đúng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Lực ma sát nghỉ, ma sát trượt và hệ số ma sát",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kéo một thùng khối lượng $m$ trượt trên sàn ngang bằng dây với lực $F$ chếch lên, hợp với phương ngang góc $\\alpha$ ($\\alpha \\lt 90^\\circ$). Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Thành phần $F\\sin\\alpha$ đỡ bớt thùng nên áp lực nhỏ hơn $mg$.",
+     "answer": true
+    },
+    {
+     "text": "Giữ nguyên độ lớn $F$, tăng góc $\\alpha$ thì áp lực của thùng lên sàn giảm.",
+     "answer": true
+    },
+    {
+     "text": "Áp lực giảm thì lực ma sát trượt tăng lên.",
+     "answer": false
+    },
+    {
+     "text": "Thành phần của lực kéo làm giảm áp lực là $F\\cos\\alpha$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$N = mg - F\\sin\\alpha$; $\\alpha$ tăng thì $\\sin\\alpha$ tăng nên $N$ giảm, và $F_{\\text{mst}} = \\mu N$ giảm theo.",
+   "distractorNotes": {
+    "0": "Lực kéo chếch lên có thành phần thẳng đứng hướng lên làm sàn đỡ ít hơn, nên không thể sai.",
+    "1": "Góc tăng thì $\\sin\\alpha$ tăng, nên $N = mg - F\\sin\\alpha$ giảm; phát biểu không thể sai.",
+    "2": "Đảo tỉ lệ: ma sát trượt tỉ lệ thuận với áp lực, áp lực giảm thì ma sát giảm, nên không thể đúng.",
+    "3": "Nhầm sin với cos: $F\\cos\\alpha$ nằm ngang, thành phần làm giảm áp lực là $F\\sin\\alpha$, nên không thể đúng."
+   }
+  }
+ ]
 }

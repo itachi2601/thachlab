@@ -1,386 +1,550 @@
 {
-  "lesson_id": 65,
-  "lesson_title": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-  "item_id": 296,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 65,
+ "lesson_title": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+ "item_id": 296,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thứ tự đúng của quy trình 4 bước giải một bài toán động lực học là",
+   "options": [
+    "Vẽ hình, chọn trục → kể lực → viết $\\Sigma\\vec F = m\\vec a$ → chiếu, giải và kiểm",
+    "Kể lực → vẽ hình, chọn trục → chiếu → viết $\\Sigma\\vec F = m\\vec a$ rồi giải",
+    "Viết $\\Sigma\\vec F = m\\vec a$ → kể lực → vẽ hình, chọn trục → giải và kiểm",
+    "Vẽ hình, chọn trục → viết $\\Sigma\\vec F = m\\vec a$ → kể lực → chiếu và giải"
+   ],
+   "answer": 0,
+   "explanation": "Quy trình của bài: Vẽ (hình, vật, trục) · Kể lực · Viết $\\Sigma\\vec F = m\\vec a$ rồi chiếu · Giải và kiểm.",
+   "distractorNotes": {
+    "B": "Kể lực trước khi chọn vật và hệ trục thì chưa rõ đang khảo sát vật nào, cũng chưa biết sẽ chiếu lên trục nào.",
+    "C": "Viết $\\Sigma\\vec F = m\\vec a$ khi chưa kể lực thì chưa có các lực để cộng vào vế trái.",
+    "D": "Đặt bước viết định luật II trước bước kể lực, trong khi tổng lực chỉ lập được sau khi đã liệt kê đủ lực."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong bài toán động lực học, đại lượng đóng vai trò cầu nối giữa lực và chuyển động là",
+   "options": [
+    "vận tốc $v$ của vật",
+    "quãng đường $s$ vật đi",
+    "gia tốc $a$ của vật",
+    "khối lượng $m$ của vật"
+   ],
+   "answer": 2,
+   "explanation": "Định luật II nối lực với $a$, các công thức chuyển động nối $a$ với $v$, $s$, $t$; vậy gia tốc là cầu nối.",
+   "distractorNotes": {
+    "A": "Định luật II cho lực quyết định gia tốc chứ không quyết định trực tiếp vận tốc; vận tốc chỉ tìm được sau khi có $a$.",
+    "B": "Quãng đường là kết quả cuối của công thức chuyển động, chỉ tính được khi đã biết gia tốc.",
+    "D": "Khối lượng chỉ là dữ kiện của vật trong $\\Sigma F = ma$, không phải đại lượng trung gian nối lực với $v$, $s$, $t$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bài toán ngược của động lực học là bài toán",
+   "options": [
+    "biết lực, tìm gia tốc rồi tìm chuyển động",
+    "biết chuyển động, tìm gia tốc rồi tìm lực",
+    "biết lực, tìm khối lượng rồi tìm gia tốc",
+    "biết gia tốc, tìm vận tốc rồi tìm quãng đường"
+   ],
+   "answer": 1,
+   "explanation": "Bài toán ngược: biết $v$, $s$, $t$ → tìm $a$ → tìm lực; chiều lực → chuyển động là bài toán thuận.",
+   "distractorNotes": {
+    "A": "Đi từ lực, qua $a$, tới chuyển động là chiều của bài toán thuận, không phải bài toán ngược.",
+    "C": "Đặt khối lượng làm đại lượng trung gian, trong khi chuỗi đúng luôn đi qua gia tốc và kết thúc ở lực.",
+    "D": "Chuỗi này chỉ dùng công thức động học, thiếu hẳn bước dùng định luật II để tìm lực."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Khi kể các lực tác dụng lên vật, mỗi lực được vẽ phải thỏa mãn điều kiện nào?",
+   "options": [
+    "Cùng chiều với chiều chuyển động của vật",
+    "Có độ lớn bằng trọng lượng của vật đó",
+    "Có phương vuông góc với mặt tiếp xúc",
+    "Chỉ ra được vật nào gây ra lực đó"
+   ],
+   "answer": 3,
+   "explanation": "Bước Kể lực: mỗi lực phải chỉ ra được vật nào gây ra; lực không có vật gây ra (như \"lực đà\") là lực thừa.",
+   "distractorNotes": {
+    "A": "Ma sát trượt ngược chiều chuyển động vẫn là lực thật, vẫn phải vẽ; lực không bắt buộc cùng chiều chuyển động.",
+    "B": "Lực căng hay ma sát có độ lớn tuỳ tình huống, không có quy tắc nào bắt mỗi lực bằng trọng lượng.",
+    "C": "Chỉ phản lực mới vuông góc mặt tiếp xúc; ma sát song song mặt, trọng lực thẳng đứng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đẩy hộp trượt lên một con dốc rồi buông tay. Lúc hộp còn đang trượt lên, các lực tác dụng lên hộp là",
+   "options": [
+    "$\\vec P$, $\\vec N$, lực đẩy của tay và ma sát",
+    "$\\vec P$, $\\vec N$, \"lực đà\" lên dốc và ma sát",
+    "$\\vec P$, $\\vec N$ và ma sát hướng xuống dốc",
+    "$\\vec P$, $\\vec N$ và ma sát hướng lên dốc"
+   ],
+   "answer": 2,
+   "explanation": "Tay đã rời hộp nên hết lực đẩy; hộp đi lên nên ma sát trượt hướng xuống dốc, hộp vẫn đi lên nhờ quán tính.",
+   "distractorNotes": {
+    "A": "Vẫn tính lực đẩy của tay dù tay đã rời hộp; không còn tiếp xúc thì không còn lực đẩy.",
+    "B": "Coi quán tính là một lực, nhưng \"lực đà\" không do vật nào gây ra.",
+    "D": "Hộp đang trượt lên mà vẽ ma sát hướng lên, quên rằng ma sát trượt luôn ngược chiều trượt."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Chưa biết vật đã trượt hay chưa, cách làm đúng để xác định lực ma sát là",
+   "options": [
+    "giả sử vật đứng yên, tính ma sát nghỉ cần có rồi so với $\\mu_n N$",
+    "luôn lấy ma sát bằng $\\mu N$ rồi thay vào định luật II tìm $a$",
+    "luôn bỏ qua ma sát rồi tính gia tốc của vật theo định luật II",
+    "giả sử vật trượt, lấy ma sát bằng trọng lượng nhân hệ số $\\mu$"
+   ],
+   "answer": 0,
+   "explanation": "Bài dặn: giả sử đứng yên, tính ma sát nghỉ cần có, so với mức trần $\\mu_n N$; vượt mức trần thì vật trượt.",
+   "distractorNotes": {
+    "B": "Dùng $\\mu N$ khi chưa biết vật có trượt, có thể ra gia tốc âm vô lí lúc vật thật ra đứng yên.",
+    "C": "Bỏ ma sát thì không thể biết vật đứng yên hay chuyển động, nên kết luận về $a$ dễ sai.",
+    "D": "Mặc định vật trượt và coi áp lực bằng trọng lượng, cả hai giả thiết đều chưa được kiểm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai vật nối với nhau bằng một sợi dây vắt qua ròng rọc. Điều kiện để hai vật có cùng độ lớn gia tốc là",
+   "options": [
+    "ròng rọc có khối lượng không đáng kể",
+    "hai vật có khối lượng bằng nhau",
+    "dây có khối lượng không đáng kể",
+    "dây không dãn trong khi chuyển động"
+   ],
+   "answer": 3,
+   "explanation": "Dây không dãn thì hai vật có cùng độ lớn gia tốc; dây và ròng rọc nhẹ là điều kiện để lực căng như nhau ở hai đầu.",
+   "distractorNotes": {
+    "A": "Ròng rọc nhẹ chỉ giúp lực căng như nhau ở hai đầu dây, không quyết định hai vật cùng gia tốc.",
+    "B": "Hai vật khối lượng khác nhau vẫn cùng độ lớn gia tốc nếu dây không dãn, nên khối lượng bằng nhau không phải điều kiện.",
+    "C": "Dây nhẹ là điều kiện để lực căng như nhau ở hai đầu, không phải điều kiện để hai vật cùng gia tốc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Khối $m_1$ trên mặt bàn nối dây qua ròng rọc ở mép bàn với quả nặng $m_2$ treo thẳng đứng. Khi kể lực lên $m_1$, lực do dây tác dụng lên $m_1$ là",
+   "options": [
+    "trọng lực $\\vec P_2$ của quả nặng",
+    "lực căng $\\vec T$ của sợi dây",
+    "tổng trọng lực $\\vec P_1 + \\vec P_2$",
+    "\"lực đà\" truyền từ quả nặng"
+   ],
+   "answer": 1,
+   "explanation": "Chỉ dây chạm $m_1$ nên lực đó là lực căng $\\vec T$; vẽ $\\vec P_2$ lên $m_1$ là vẽ thừa lực.",
+   "distractorNotes": {
+    "A": "Vẽ trọng lực của quả nặng lên $m_1$, trong khi Trái Đất hút quả nặng và chỉ có dây chạm vào $m_1$.",
+    "C": "Gộp trọng lực của cả hai vật lên $m_1$, nhầm lực do Trái Đất gây ra với lực do dây gây ra.",
+    "D": "Bịa ra lực không có vật gây ra; \"lực đà\" không phải là lực."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật trượt xuống mặt phẳng nghiêng góc $\\alpha$, hệ số ma sát trượt $\\mu$. Gia tốc của vật là",
+   "options": [
+    "$a = g(\\sin\\alpha - \\mu\\cos\\alpha)$",
+    "$a = g(\\sin\\alpha + \\mu\\cos\\alpha)$",
+    "$a = g(\\cos\\alpha - \\mu\\sin\\alpha)$",
+    "$a = g(\\sin\\alpha - \\mu)$"
+   ],
+   "answer": 0,
+   "explanation": "Chiếu Ox dọc dốc: $mg\\sin\\alpha - \\mu mg\\cos\\alpha = ma$, suy ra $a = g(\\sin\\alpha - \\mu\\cos\\alpha)$.",
+   "distractorNotes": {
+    "B": "Cộng ma sát, trong khi vật trượt xuống thì ma sát hướng lên dốc và phải trừ.",
+    "C": "Đảo sin và cos: thành phần dọc dốc của trọng lực là $P\\sin\\alpha$, thành phần vuông góc là $P\\cos\\alpha$.",
+    "D": "Coi áp lực bằng $mg$, quên rằng trên dốc áp lực chỉ còn $mg\\cos\\alpha$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức chuyển động biến đổi đều liên hệ vận tốc $v$, vận tốc đầu $v_0$, gia tốc $a$ và quãng đường $s$, hay ghép với định luật II, là",
+   "options": [
+    "$v^2 + v_0^2 = 2as$",
+    "$v - v_0 = 2as$",
+    "$v^2 - v_0^2 = 2as$",
+    "$v^2 - v_0^2 = as$"
+   ],
+   "answer": 2,
+   "explanation": "Bài nêu các công thức hay ghép: $v = v_0 + at$; $s = v_0t + \\tfrac12at^2$; $v^2 - v_0^2 = 2as$.",
+   "distractorNotes": {
+    "A": "Nhầm hiệu bình phương vận tốc thành tổng, nên sai dấu.",
+    "B": "Bỏ bình phương vận tốc khiến hai vế không cùng đơn vị.",
+    "D": "Thiếu hệ số 2 ở vế phải, quên hệ số này sinh ra khi khử thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kéo thùng trên sàn nằm ngang bằng lực $F$ xiên lên góc $\\alpha$ so với sàn. Áp lực $N$ của thùng lên sàn là",
+   "options": [
+    "$N = mg + F\\sin\\alpha$",
+    "$N = mg - F\\sin\\alpha$",
+    "$N = mg - F\\cos\\alpha$",
+    "$N = mg$"
+   ],
+   "answer": 1,
+   "explanation": "Chiếu Oy: $N + F\\sin\\alpha - P = 0$, nên $N = mg - F\\sin\\alpha$; dây nhấc bớt thùng.",
+   "distractorNotes": {
+    "A": "Coi dây đè thùng xuống, trong khi dây xiên lên nhấc bớt thùng nên $F\\sin\\alpha$ phải trừ.",
+    "C": "Lấy nhầm thành phần nằm ngang $F\\cos\\alpha$, trong khi áp lực đọc trên trục Oy thẳng đứng.",
+    "D": "Áp $N = mg$ ngoài điều kiện của nó: công thức này chỉ đúng khi lực kéo nằm ngang."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khối $m_1$ trên bàn nối dây qua ròng rọc với quả nặng $m_2$ treo. Chọn chiều dương đi vòng theo dây: $m_1$ hướng về ròng rọc, $m_2$ hướng xuống. Phương trình đúng cho $m_2$ là",
+   "options": [
+    "$T - P_2 = m_2 a$",
+    "$P_2 = m_2 a$",
+    "$P_2 - T = (m_1 + m_2)\\,a$",
+    "$P_2 - T = m_2 a$"
+   ],
+   "answer": 3,
+   "explanation": "Với $m_2$, chiều dương hướng xuống: $\\vec P_2$ cùng chiều dương, $\\vec T$ ngược chiều, nên $P_2 - T = m_2 a$.",
+   "distractorNotes": {
+    "A": "Ngầm lấy chiều dương của $m_2$ hướng lên mà vẫn dùng chung $a$ với $m_1$, nên sai dấu.",
+    "B": "Quên lực căng dây kéo $m_2$ lên, coi quả nặng như đang rơi tự do.",
+    "C": "Vế trái chỉ chứa lực lên $m_2$ mà vế phải lại ghi khối lượng cả hệ, trộn hai cách xét."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hộp trượt xuống một tấm ván. Nâng ván từ $20^\\circ$ lên $40^\\circ$ (hộp vẫn trượt). Áp lực $N$ và lực ma sát trượt thay đổi thế nào?",
+   "options": [
+    "Cả hai cùng giảm",
+    "Không đổi, vì $N = mg$",
+    "$N$ giảm, ma sát tăng",
+    "Cả hai cùng tăng"
+   ],
+   "answer": 0,
+   "explanation": "$N = mg\\cos\\alpha$: $\\alpha$ tăng thì $\\cos\\alpha$ giảm nên $N$ giảm, và $F_{\\text{ms}} = \\mu N$ giảm theo.",
+   "distractorNotes": {
+    "B": "Coi $N = mg$ ở mọi nơi, trong khi trên dốc $N = mg\\cos\\alpha$ và thay đổi theo góc.",
+    "C": "Ma sát trượt bằng $\\mu N$, tỉ lệ với $N$, nên không thể biến đổi ngược chiều với $N$.",
+    "D": "Nghĩ ván dốc hơn thì hộp đè mạnh hơn; thật ra $\\cos\\alpha$ giảm, ván dựng đứng thì $N = 0$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai vật cùng hệ số ma sát trượt xuống cùng một mặt phẳng nghiêng, vật thứ hai có khối lượng gấp đôi vật thứ nhất. So với vật thứ nhất, gia tốc của vật thứ hai",
+   "options": [
+    "lớn gấp đôi",
+    "nhỏ bằng một nửa",
+    "bằng nhau",
+    "lớn gấp bốn"
+   ],
+   "answer": 2,
+   "explanation": "$a = g(\\sin\\alpha - \\mu\\cos\\alpha)$ không chứa $m$, nên mọi vật cùng hệ số ma sát trượt xuống với cùng gia tốc.",
+   "distractorNotes": {
+    "A": "Chỉ thấy lực kéo xuống dốc gấp đôi, quên rằng vật nặng gấp đôi cũng khó tăng tốc gấp đôi.",
+    "B": "Thấy ma sát lớn hơn nhưng quên rằng ma sát tăng đúng theo tỉ lệ khối lượng, nên bị bù trừ.",
+    "D": "Tưởng gia tốc tỉ lệ với bình phương khối lượng, trong khi $a = g(\\sin\\alpha - \\mu\\cos\\alpha)$ không chứa $m$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Viên đá trượt lên một con dốc phủ băng nghiêng góc $\\alpha$ (bỏ qua ma sát), dừng lại rồi trượt xuống. Chọn chiều dương hướng lên dốc và giữ nguyên suốt bài.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ở bước \"Kể lực\" của quy trình 4 bước, yêu cầu quan trọng nhất là",
-      "options": [
-        "Mỗi lực vẽ ra phải chỉ được vật nào gây ra lực đó",
-        "Chỉ vẽ trọng lực và phản lực, bỏ các lực còn lại",
-        "Vẽ thêm một lực theo chiều chuyển động của vật",
-        "Vẽ các lực từ gốc khác nhau cho dễ nhìn"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu: mỗi lực phải chỉ ra được vật nào gây ra; vẽ chung gốc ở trọng tâm. Nhờ vậy không vẽ thừa \"lực đà\" hay bỏ sót phản lực, ma sát, lực căng."
+     "text": "Lực duy nhất dọc dốc là $P\\sin\\alpha$, luôn hướng xuống dốc.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Trong bài toán động lực học, đại lượng nào đóng vai trò cầu nối giữa lực và chuyển động?",
-      "options": [
-        "Khối lượng $m$",
-        "Quãng đường $s$",
-        "Gia tốc $a$",
-        "Hệ số ma sát $\\mu$"
-      ],
-      "answer": 2,
-      "explanation": "Định luật II Newton nối lực với $a$; các công thức chuyển động nối $a$ với $v$, $s$, $t$. Bài thuận: lực $\\to a \\to$ chuyển động; bài ngược: chuyển động $\\to a \\to$ lực."
+     "text": "Khi viên đá quay đầu đi xuống, phải đổi chiều dương theo chiều chuyển động mới.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai vật nối bằng dây nhẹ không dãn vắt qua ròng rọc nhẹ, không ma sát. Điều nào sau đây đúng?",
-      "options": [
-        "Hai vật có cùng vận tốc nhưng gia tốc khác nhau",
-        "Hai vật có cùng độ lớn gia tốc và lực căng dây như nhau ở hai đầu",
-        "Lực căng dây ở đầu nối vật nặng hơn lớn hơn",
-        "Gia tốc mỗi vật tỉ lệ với khối lượng của nó"
-      ],
-      "answer": 1,
-      "explanation": "Dây không dãn nên hai vật có cùng độ lớn $a$; dây và ròng rọc nhẹ, không ma sát nên lực căng $T$ như nhau ở hai đầu dây."
+     "text": "Ở điểm cao nhất vận tốc bằng 0 nên gia tốc cũng bằng 0.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Hai bạn khối lượng khác nhau (một bạn nặng gấp đôi) ngồi ở đỉnh hai làn cầu trượt giống hệt nhau (quần cùng loại vải, bỏ qua sức cản không khí), cùng buông tay. Kết quả là",
-      "options": [
-        "Bạn nặng hơn xuống nhanh hơn rõ rệt",
-        "Bạn nhẹ hơn xuống nhanh hơn rõ rệt",
-        "Bạn nặng hơn xuống nhanh gấp đôi",
-        "Hai bạn xuống tới chân cầu trượt gần như cùng lúc"
-      ],
-      "answer": 3,
-      "explanation": "Trên dốc có ma sát $a = g(\\sin\\alpha - \\mu\\cos\\alpha)$ không chứa $m$: lực kéo xuống, ma sát và khối lượng cùng tăng gấp đôi nên $a$ không đổi."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Khi vật chưa trượt (đứng yên), cách xác định lực ma sát đúng là",
-      "options": [
-        "Luôn lấy $F_{\\text{ms}} = \\mu N$",
-        "Tìm từ định luật II Newton (cân bằng lực), kết quả không vượt quá $\\mu_n N$",
-        "Luôn lấy bằng $\\mu_n N$",
-        "Lấy bằng không vì vật không chuyển động"
-      ],
-      "answer": 1,
-      "explanation": "Ma sát nghỉ tự \"vừa đủ\" giữ vật: tính từ $a = 0$. Giá trị $\\mu_n N$ chỉ là mức trần; $\\mu N$ chỉ dùng khi vật đang trượt."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hộp đang trượt lên một con dốc sau khi tay đã buông. Các lực tác dụng lên hộp lúc đó là",
-      "options": [
-        "Trọng lực, phản lực, ma sát hướng xuống dốc và lực đẩy của tay",
-        "Trọng lực, phản lực, ma sát hướng lên dốc",
-        "Trọng lực, phản lực của dốc và ma sát hướng xuống dốc",
-        "Trọng lực, phản lực, ma sát hướng xuống dốc và một \"lực đà\" hướng lên dốc"
-      ],
-      "answer": 2,
-      "explanation": "Tay đã rời hộp nên hết lực đẩy. \"Lực đà\" không do vật nào gây ra (đó là quán tính, không phải lực). Hộp đi lên nên ma sát trượt ngược chiều, hướng xuống dốc."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_nghia",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Về việc vẽ lực khi giải bài động lực học, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "\"Lực đà\" khi hộp trượt lên dốc không do vật nào gây ra nên không được vẽ.",
-          "answer": true
-        },
-        {
-          "text": "Sau khi tay đã buông hộp, vẫn phải vẽ lực đẩy của tay lên hộp.",
-          "answer": false
-        },
-        {
-          "text": "Mỗi lực vẽ ra phải chỉ được vật nào gây ra nó.",
-          "answer": true
-        },
-        {
-          "text": "Trọng lực $\\vec P_2$ của vật treo cần được vẽ lên vật $m_1$ nằm trên bàn.",
-          "answer": false
-        }
-      ],
-      "explanation": "Chỉ vật đang chạm vật khảo sát (hoặc Trái Đất) mới gây lực. Tay đã rời hộp thì hết lực; lên $m_1$ chỉ có dây kéo bằng $\\vec T$, không phải $\\vec P_2$."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Viên đá trượt lên rồi trượt xuống một dốc băng nghiêng góc $\\alpha$ (bỏ ma sát). Chọn chiều dương hướng lên dốc và giữ nguyên suốt bài. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lúc đi lên, gia tốc $a = -g\\sin\\alpha$.",
-          "answer": true
-        },
-        {
-          "text": "Lúc đi xuống, gia tốc vẫn là $a = -g\\sin\\alpha$.",
-          "answer": true
-        },
-        {
-          "text": "Ở điểm cao nhất, vận tốc bằng 0 nên gia tốc cũng bằng 0.",
-          "answer": false
-        },
-        {
-          "text": "Lúc đi xuống, vận tốc mang dấu âm.",
-          "answer": true
-        }
-      ],
-      "explanation": "Lực dọc dốc duy nhất là $P\\sin\\alpha$ hướng xuống, nên $a$ không đổi dấu khi vật quay đầu; chỉ $v$ đổi dấu. Ở điểm cao nhất $v = 0$ nhưng lực vẫn còn nên $a \\ne 0$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Quy trình giải bài toán động lực học trong bài gồm mấy bước?",
-      "answer": "4",
-      "explanation": "Bốn bước: Vẽ, Kể lực, Viết $\\Sigma\\vec F = m\\vec a$ rồi chiếu, Giải và kiểm."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hai vật nối bằng dây không dãn, chuyển động cùng nhau. Tỉ số độ lớn gia tốc của vật thứ nhất so với vật thứ hai bằng bao nhiêu?",
-      "answer": "1",
-      "explanation": "Dây không dãn nên hai vật có cùng độ lớn gia tốc, tỉ số bằng $1$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kéo thùng khối lượng $m$ trên sàn ngang bằng lực $F$ xiên lên hợp với sàn góc $\\alpha$, hệ số ma sát trượt $\\mu$. Phương trình chiếu lên phương chuyển động (Ox) là",
-      "options": [
-        "$F\\cos\\alpha - \\mu mg = ma$",
-        "$F\\cos\\alpha - \\mu\\,(mg + F\\sin\\alpha) = ma$",
-        "$F\\sin\\alpha - \\mu\\,(mg - F\\cos\\alpha) = ma$",
-        "$F\\cos\\alpha - \\mu\\,(mg - F\\sin\\alpha) = ma$"
-      ],
-      "answer": 3,
-      "explanation": "Oy cho $N = mg - F\\sin\\alpha$. Chọn $\\mu mg$ là quên dây nhấc bớt thùng; dấu cộng là nhầm chiều thành phần thẳng đứng; hoán đổi sin/cos là nhầm thành phần ngang với thẳng đứng."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kéo thùng $10$ kg bằng lực $40$ N, dây xiên lên $30^\\circ$ so với sàn ngang, $\\mu = 0{,}25$, $g = 10\\ \\text{m/s}^2$. Lực ma sát trượt là",
-      "options": [
-        "$20$ N",
-        "$25$ N",
-        "$30$ N",
-        "$8{,}7$ N"
-      ],
-      "answer": 0,
-      "explanation": "$N = mg - F\\sin 30^\\circ = 100 - 20 = 80$ N; $F_{\\text{ms}} = 0{,}25\\cdot 80 = 20$ N. $25$ N là coi $N = mg$; $30$ N là cộng $F\\sin\\alpha$; $8{,}7$ N là lấy $N = F\\cos\\alpha$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Khối $m_1$ trên bàn ngang (hệ số ma sát trượt $\\mu$) nối dây qua ròng rọc với vật treo $m_2$. Gia tốc của hệ là",
-      "options": [
-        "$a = \\dfrac{m_2 g + \\mu m_1 g}{m_1 + m_2}$",
-        "$a = \\dfrac{m_2 g - \\mu m_1 g}{m_1 + m_2}$",
-        "$a = \\dfrac{m_2 g - \\mu m_2 g}{m_1 + m_2}$",
-        "$a = \\dfrac{m_2 g - \\mu m_1 g}{m_1}$"
-      ],
-      "answer": 1,
-      "explanation": "Cộng $T - \\mu m_1 g = m_1 a$ và $m_2 g - T = m_2 a$ (lực căng triệt tiêu). Dấu cộng là nhầm chiều ma sát; $\\mu m_2 g$ là ma sát nhầm vật; chia cho $m_1$ là quên khối lượng $m_2$ cũng phải tăng tốc."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Ô tô $800$ kg chạy $10\\ \\text{m/s}$ thì phanh, bánh bị khoá và xe trượt $25$ m rồi dừng. Độ lớn lực hãm là",
-      "options": [
-        "$3200$ N",
-        "$160$ N",
-        "$6400$ N",
-        "$1600$ N"
-      ],
-      "answer": 3,
-      "explanation": "$a = \\dfrac{0 - 10^2}{2\\cdot 25} = -2\\ \\text{m/s}^2$ nên $F = 800\\cdot 2 = 1600$ N. $3200$ N là quên hệ số $2$ ở $2as$; $160$ N là dùng $v$ thay cho $v^2$; $6400$ N là nhân $2$ thay vì chia $2$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Khối $m_1$ trượt trên bàn có ma sát, nối dây với vật treo $m_2$. Chọn chiều dương đi vòng theo dây ($m_1$ sang phải, $m_2$ xuống). Các phương trình sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Với $m_1$: $T - \\mu m_1 g = m_1 a$.",
-          "answer": true
-        },
-        {
-          "text": "Với $m_2$: $m_2 g - T = m_2 a$.",
-          "answer": true
-        },
-        {
-          "text": "Cộng hai phương trình thì lực căng $T$ triệt tiêu.",
-          "answer": true
-        },
-        {
-          "text": "Với $m_2$: $T - m_2 g = m_2 a$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Chiều dương hướng xuống cho $m_2$: $\\vec P_2$ cùng chiều dương, $\\vec T$ ngược chiều, nên $m_2 g - T = m_2 a$. Dạng $T - m_2 g = m_2 a$ chỉ đúng nếu đổi trục của $m_2$ hướng lên."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Vật trượt từ nghỉ xuống dốc nhẵn nghiêng $30^\\circ$, $g = 10\\ \\text{m/s}^2$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Gia tốc của vật là $5\\ \\text{m/s}^2$.",
-          "answer": true
-        },
-        {
-          "text": "Sau $4$ s vật đạt tốc độ $20$ m/s.",
-          "answer": true
-        },
-        {
-          "text": "Sau $4$ s vật đi được quãng đường $40$ m.",
-          "answer": true
-        },
-        {
-          "text": "Nếu khối lượng vật gấp đôi thì gia tốc cũng gấp đôi.",
-          "answer": false
-        }
-      ],
-      "explanation": "$a = g\\sin 30^\\circ = 5\\ \\text{m/s}^2$ không chứa $m$; $v = at = 20$ m/s; $s = \\tfrac12 at^2 = 40$ m. Khối lượng triệt tiêu nên không ảnh hưởng $a$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Khối $m_1 = 3$ kg trên bàn nhẵn nối dây với vật treo $m_2 = 2$ kg qua ròng rọc nhẹ; $g = 10\\ \\text{m/s}^2$. Gia tốc của hệ bằng bao nhiêu $\\text{m/s}^2$?",
-      "answer": "4",
-      "explanation": "Không ma sát: $a = \\dfrac{m_2 g}{m_1 + m_2} = \\dfrac{20}{5} = 4\\ \\text{m/s}^2$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Khối $m_1 = 3$ kg trên bàn nhẵn nối dây với vật treo $m_2 = 2$ kg qua ròng rọc nhẹ; $g = 10\\ \\text{m/s}^2$ (gia tốc của hệ là $4\\ \\text{m/s}^2$). Lực căng dây bằng bao nhiêu niutơn?",
-      "answer": "12",
-      "explanation": "Xét $m_1$: $T = m_1 a = 3\\cdot 4 = 12$ N. Kiểm với $m_2$: $m_2(g - a) = 2\\cdot 6 = 12$ N."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Viên đá trượt lên dốc băng nghiêng $37^\\circ$ (bỏ ma sát; $\\sin 37^\\circ = 0{,}6$), $g = 10\\ \\text{m/s}^2$. Chọn chiều dương hướng lên dốc. Gia tốc của viên đá bằng bao nhiêu $\\text{m/s}^2$ (kể cả dấu)?",
-      "answer": "-6",
-      "explanation": "Lực dọc dốc duy nhất là $P\\sin\\alpha$ hướng xuống dốc, ngược chiều dương: $a = -g\\sin 37^\\circ = -6\\ \\text{m/s}^2$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Kéo thùng $10$ kg từ nghỉ trên sàn ngang bằng lực ngang $50$ N; $\\mu = 0{,}2$, $g = 10\\ \\text{m/s}^2$. Quãng đường thùng đi được sau $2$ s bằng bao nhiêu mét?",
-      "answer": "6",
-      "explanation": "$a = \\dfrac{50 - 0{,}2\\cdot 100}{10} = 3\\ \\text{m/s}^2$; $s = \\tfrac12 at^2 = \\tfrac12\\cdot 3\\cdot 2^2 = 6$ m."
+     "text": "Lúc đi xuống, $v \\lt 0$ và $a \\lt 0$: viên đá nhanh dần theo chiều âm.",
+     "answer": true
     }
-  ]
+   ],
+   "explanation": "Chiều dương giữ nguyên nên $a = -g\\sin\\alpha$ suốt; $v$ đổi dấu còn $a$ thì không, kể cả ở điểm cao nhất.",
+   "distractorNotes": {
+    "0": "Không thể coi ý này sai: đã bỏ ma sát và $N$ vuông góc mặt dốc, nên dọc dốc chỉ còn $P\\sin\\alpha$ hướng xuống.",
+    "1": "Không thể coi ý này đúng: chiều dương chọn một lần và giữ đến hết bài; khi quay đầu chỉ $v$ đổi dấu.",
+    "2": "Không thể coi ý này đúng: ở điểm cao nhất $v = 0$ nhưng $P\\sin\\alpha$ vẫn tác dụng, nên $a \\ne 0$.",
+    "3": "Không thể coi ý này sai: lúc đi xuống $v$ và $a$ cùng dấu âm, tức vật nhanh dần theo chiều âm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đẩy ngang một tủ quần áo trên sàn nằm ngang, tủ không nhúc nhích. Gọi $\\mu_n$ là hệ số ma sát nghỉ, $N$ là áp lực của tủ lên sàn.",
+   "statements": [
+    {
+     "text": "Lực ma sát của sàn lên tủ có độ lớn bằng lực đẩy.",
+     "answer": true
+    },
+    {
+     "text": "Lực ma sát của sàn lên tủ bằng $\\mu_n N$.",
+     "answer": false
+    },
+    {
+     "text": "$\\mu_n N$ là giá trị lớn nhất mà ma sát nghỉ có thể đạt được.",
+     "answer": true
+    },
+    {
+     "text": "Khi tủ đã trượt, ma sát vẫn tìm từ điều kiện cân bằng như lúc đứng yên.",
+     "answer": false
+    }
+   ],
+   "explanation": "Tủ đứng yên nên $a = 0$, ma sát nghỉ vừa đủ bằng lực đẩy và không vượt mức trần $\\mu_n N$; khi trượt mới dùng $\\mu N$.",
+   "distractorNotes": {
+    "0": "Không thể coi ý này sai: tủ đứng yên nên $a = 0$, chiếu Ox cho ma sát nghỉ bằng đúng lực đẩy.",
+    "1": "Không thể coi ý này đúng: $\\mu_n N$ chỉ là mức trần, ma sát nghỉ chỉ lớn vừa đủ để giữ tủ.",
+    "2": "Không thể coi ý này sai: ma sát nghỉ không vượt quá $\\mu_n N$; cần lớn hơn mức đó thì vật bắt đầu trượt.",
+    "3": "Không thể coi ý này đúng: tủ đã trượt thì ma sát là ma sát trượt, bằng $\\mu N$, không tìm từ cân bằng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Kéo một thùng khối lượng $m$ trượt trên sàn nằm ngang bằng lực $F$, hệ số ma sát trượt $\\mu$. Chọn Ox theo chiều kéo, Oy hướng lên.",
+   "statements": [
+    {
+     "text": "Khi lực kéo nằm ngang, chiếu Oy cho $N = mg$.",
+     "answer": true
+    },
+    {
+     "text": "Khi kéo xiên lên góc $\\alpha$, áp lực là $N = mg + F\\sin\\alpha$.",
+     "answer": false
+    },
+    {
+     "text": "Khi kéo xiên lên góc $\\alpha$, chiếu Ox cho $F\\cos\\alpha - \\mu N = ma$.",
+     "answer": true
+    },
+    {
+     "text": "Kéo xiên với góc càng lớn thì càng nhẹ tay hơn kéo ngang.",
+     "answer": false
+    }
+   ],
+   "explanation": "Oy: $N + F\\sin\\alpha - P = 0$ nên $N = mg - F\\sin\\alpha$; kéo hơi xiên nhẹ tay hơn chỉ đúng với góc nhỏ vì $F\\cos\\alpha$ giảm khi góc lớn.",
+   "distractorNotes": {
+    "0": "Không thể coi ý này sai: kéo ngang thì phương thẳng đứng chỉ có $N$ và $P$, nên hai lực cân bằng.",
+    "1": "Không thể coi ý này đúng: dây xiên lên nhấc bớt thùng, nên áp lực phải trừ chứ không cộng $F\\sin\\alpha$.",
+    "2": "Không thể coi ý này sai: dọc sàn có thành phần kéo $F\\cos\\alpha$ và ma sát $\\mu N$ ngược chiều kéo.",
+    "3": "Không thể coi ý này đúng: kéo xiên chỉ nhẹ tay khi góc nhỏ; góc lớn thì $F\\cos\\alpha$ giảm nhiều."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Khối $m_1$ trên bàn nằm ngang (hệ số ma sát $\\mu$, coi như nhau khi nghỉ và khi trượt) nối dây nhẹ không dãn qua ròng rọc nhẹ với quả nặng $m_2$ treo. Chiều dương đi vòng theo dây, hệ đang chuyển động.",
+   "statements": [
+    {
+     "text": "Phương trình cho $m_1$: $T - \\mu m_1 g = m_1 a$.",
+     "answer": true
+    },
+    {
+     "text": "Cộng hai phương trình, $T$ triệt tiêu: $a = \\dfrac{m_2 g - \\mu m_1 g}{m_1 + m_2}$.",
+     "answer": true
+    },
+    {
+     "text": "Lực căng dây bằng trọng lượng quả nặng: $T = m_2 g$.",
+     "answer": false
+    },
+    {
+     "text": "Nếu $\\mu m_1 g \\gt m_2 g$, thay vào công thức ra $a \\lt 0$, nghĩa là hệ chuyển động ngược chiều đã chọn.",
+     "answer": false
+    }
+   ],
+   "explanation": "Từ $m_2 g - T = m_2 a$ có $T = m_2(g - a) \\lt m_2 g$; khi mức trần ma sát lớn hơn $m_2 g$ thì hệ đứng yên, ma sát là ma sát nghỉ.",
+   "distractorNotes": {
+    "0": "Không thể coi ý này sai: theo phương ngang, lên $m_1$ chỉ có lực căng theo chiều dương và ma sát trượt ngược chiều.",
+    "1": "Không thể coi ý này sai: lực căng ở hai phương trình ngược dấu, nên cộng lại thì triệt tiêu và cho đúng biểu thức $a$.",
+    "2": "Không thể coi ý này đúng: quả nặng đi xuống nhanh dần, nên $T = m_2(g - a)$ nhỏ hơn $m_2 g$.",
+    "3": "Không thể coi ý này đúng: khi đó ma sát nghỉ giữ được hệ đứng yên; $a \\lt 0$ chỉ do dùng nhầm ma sát trượt."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hộp khối lượng $m$ trượt xuống mặt phẳng nghiêng góc $\\alpha$, hệ số ma sát trượt $\\mu$. Chọn Ox dọc mặt nghiêng hướng xuống, Oy vuông góc mặt nghiêng.",
+   "statements": [
+    {
+     "text": "Với cách chọn trục này, chỉ có trọng lực phải phân tích thành hai thành phần.",
+     "answer": true
+    },
+    {
+     "text": "Áp lực $N = mg\\cos\\alpha$, nhỏ hơn $mg$.",
+     "answer": true
+    },
+    {
+     "text": "Bỏ qua ma sát, gia tốc của hộp là $a = g\\cos\\alpha$.",
+     "answer": false
+    },
+    {
+     "text": "Lực ma sát trượt tác dụng lên hộp hướng xuống dốc.",
+     "answer": false
+    }
+   ],
+   "explanation": "Oy: $N = mg\\cos\\alpha$; Ox: thành phần dọc dốc là $P\\sin\\alpha$ nên bỏ ma sát $a = g\\sin\\alpha$; ma sát ngược chiều trượt, tức hướng lên dốc.",
+   "distractorNotes": {
+    "0": "Không thể coi ý này sai: $\\vec N$ nằm trên Oy, ma sát nằm trên Ox, chỉ $\\vec P$ xiên so với hai trục.",
+    "1": "Không thể coi ý này sai: $N$ cân bằng với $P\\cos\\alpha$, mà $\\cos\\alpha \\lt 1$ nên $N$ nhỏ hơn $mg$.",
+    "2": "Không thể coi ý này đúng: ý này nhầm sin với cos, vì thành phần dọc dốc là $P\\sin\\alpha$.",
+    "3": "Không thể coi ý này đúng: hộp trượt xuống thì ma sát trượt ngược chiều trượt, tức hướng lên dốc."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 20. Một số ví dụ về cách giải các bài toán thuộc phần động lực học",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thí nghiệm: xe lăn $m_1$ trên máng ngang nối dây qua ròng rọc với quả nặng $m_2$, thả từ nghỉ, đo thời gian $t$ xe đi quãng đường $s$ rồi tính gia tốc; so với giá trị lí thuyết khi bỏ ma sát.",
+   "statements": [
+    {
+     "text": "Gia tốc đo được tính bằng $a = \\dfrac{2s}{t^2}$, suy từ $s = \\tfrac12 at^2$ với $v_0 = 0$.",
+     "answer": true
+    },
+    {
+     "text": "Bỏ ma sát, gia tốc lí thuyết là $a = \\dfrac{m_2 g}{m_1}$.",
+     "answer": false
+    },
+    {
+     "text": "Cả 5 lần đo đều nhỏ hơn giá trị lí thuyết; độ lệch một phía này là sai số ngẫu nhiên.",
+     "answer": false
+    },
+    {
+     "text": "Với cùng quãng đường $s$, nếu thời gian đo được gấp đôi thì gia tốc tính ra giảm 4 lần.",
+     "answer": true
+    }
+   ],
+   "explanation": "Cộng $T = m_1 a$ và $m_2 g - T = m_2 a$ được $a = \\dfrac{m_2 g}{m_1 + m_2}$; lệch về một phía là sai số hệ thống do ma sát trục, ròng rọc.",
+   "distractorNotes": {
+    "0": "Không thể coi ý này sai: thả từ nghỉ nên $v_0 = 0$, biến đổi $s = \\tfrac12 at^2$ được đúng $a = 2s/t^2$.",
+    "1": "Không thể coi ý này đúng: trọng lực quả nặng phải tăng tốc cả hai vật, nên mẫu số là $m_1 + m_2$.",
+    "2": "Không thể coi ý này đúng: lệch luôn về một phía là sai số hệ thống; sai số ngẫu nhiên lệch lúc lớn lúc nhỏ.",
+    "3": "Không thể coi ý này sai: $a$ tỉ lệ nghịch với $t^2$, nên $t$ gấp đôi thì $a$ giảm bốn lần."
+   }
+  }
+ ]
 }

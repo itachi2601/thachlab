@@ -1,386 +1,550 @@
 {
-  "lesson_id": 48,
-  "lesson_title": "Bài 3. Thực hành tính sai số trong phép đo. Ghi kết quả đo",
-  "item_id": 87,
-  "generated_at": "2026-10-17",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 48,
+ "lesson_title": "Bài 3. Thực hành tính sai số trong phép đo. Ghi kết quả đo",
+ "item_id": 87,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Sai số trong phép đo",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đặc điểm nào sau đây là của sai số hệ thống?",
+   "options": [
+    "Các lần đo tản đều về hai phía giá trị thật",
+    "Giảm dần khi đo nhiều lần rồi lấy trung bình",
+    "Lặp lại ở mọi lần đo và lệch về cùng một phía",
+    "Chỉ do người đo bấm đồng hồ sớm hoặc muộn"
+   ],
+   "answer": 2,
+   "explanation": "Sai số hệ thống có tính quy luật, lặp lại ở mọi lần đo và lệch cùng một phía. Nguồn của nó là dụng cụ chưa chỉnh về 0 hoặc ĐCNN.",
+   "distractorNotes": {
+    "A": "Nhầm với sai số ngẫu nhiên: tản về hai phía là đặc trưng của ngẫu nhiên, còn hệ thống lệch một phía.",
+    "B": "Tưởng lấy trung bình xoá được mọi sai số, nhưng độ lệch cùng phía ở mọi lần đo thì trung bình vẫn còn nguyên.",
+    "D": "Gán thao tác bấm sớm, muộn của người đo cho sai số hệ thống, trong khi đó là nguồn sai số ngẫu nhiên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Sai số trong phép đo",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguyên nhân chủ yếu gây ra sai số ngẫu nhiên là",
+   "options": [
+    "thao tác, phản xạ của người đo và yếu tố bên ngoài",
+    "dụng cụ đo chưa được chỉnh về đúng vạch số 0",
+    "thước đo bị mòn đầu nên lần nào cũng đo thiếu",
+    "độ chia nhỏ nhất của dụng cụ đo còn quá lớn"
+   ],
+   "answer": 0,
+   "explanation": "Sai số ngẫu nhiên do thao tác, phản xạ và yếu tố bên ngoài, làm các lần đo tản quanh giá trị trung bình.",
+   "distractorNotes": {
+    "B": "Nhầm nguồn gốc: cân chưa chỉnh về 0 làm mọi lần đo lệch cùng phía, tức sai số hệ thống.",
+    "C": "Thước mòn đầu luôn đo thiếu, lệch một phía có quy luật nên thuộc sai số hệ thống, không phải ngẫu nhiên.",
+    "D": "ĐCNN quyết định sai số dụng cụ, thuộc nhóm hệ thống; học sinh nhầm nó với sai sót của người đo."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Sai số trong phép đo",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đo một đại lượng nhiều lần rồi lấy giá trị trung bình giúp",
+   "options": [
+    "loại bỏ hoàn toàn mọi loại sai số của phép đo",
+    "giảm sai số hệ thống do cân chưa chỉnh về số 0",
+    "giảm sai số dụng cụ bằng nửa độ chia nhỏ nhất",
+    "giảm sai số ngẫu nhiên do thao tác của người đo"
+   ],
+   "answer": 3,
+   "explanation": "Các lần đo có sai số ngẫu nhiên tản hai phía nên trung bình triệt tiêu bớt. Sai số hệ thống lệch cùng phía thì trung bình vẫn lệch.",
+   "distractorNotes": {
+    "A": "Phóng đại tác dụng của trung bình: sai số hệ thống lệch cùng phía mọi lần nên không bị loại bỏ.",
+    "B": "Áp nhầm cách khắc phục: cân lệch cùng phía mọi lần thì giá trị trung bình vẫn lệch đúng chừng ấy.",
+    "C": "Sai số dụng cụ do ĐCNN cố định quyết định, đo thêm bao nhiêu lần cũng không thay đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Sai số trong phép đo",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Với dụng cụ đo hiện số như đồng hồ số, cân điện tử, sai số dụng cụ thường được lấy bằng",
+   "options": [
+    "một nửa độ chia nhỏ nhất",
+    "một độ chia nhỏ nhất",
+    "hai độ chia nhỏ nhất",
+    "một phần mười độ chia nhỏ nhất"
+   ],
+   "answer": 1,
+   "explanation": "Bài quy ước: dụng cụ có vạch chia lấy nửa ĐCNN, dụng cụ hiện số lấy một ĐCNN.",
+   "distractorNotes": {
+    "A": "Áp quy ước của dụng cụ có vạch chia sang dụng cụ hiện số; dụng cụ hiện số lấy trọn một ĐCNN.",
+    "C": "Tự đặt ra quy ước gấp đôi ĐCNN, bài không có quy ước nào như vậy cho sai số dụng cụ.",
+    "D": "Dụng cụ hiện số không cho đọc phần nhỏ hơn ĐCNN nên không thể lấy sai số nhỏ hơn ĐCNN."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sai số tỉ đối của một phép đo cho biết",
+   "options": [
+    "độ lệch lớn nhất giữa các lần đo",
+    "giá trị thật của đại lượng cần đo",
+    "mức độ chính xác của phép đo",
+    "độ chia nhỏ nhất của dụng cụ đo"
+   ],
+   "answer": 2,
+   "explanation": "Sai số tỉ đối $\\delta A = \\dfrac{\\Delta A}{\\overline{A}} \\cdot 100\\,\\%$ cho biết mức độ chính xác: càng nhỏ càng chính xác.",
+   "distractorNotes": {
+    "A": "Nhầm với một độ lệch $\\Delta A_i$ riêng lẻ, trong khi sai số tỉ đối là tỉ số $\\Delta A/\\overline{A}$.",
+    "B": "Tưởng sai số cho ra giá trị thật, nhưng không phép đo nào cho giá trị thật tuyệt đối.",
+    "D": "Nhầm đặc trưng của dụng cụ với đặc trưng của phép đo; ĐCNN chỉ dùng để lấy sai số dụng cụ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Ghi kết quả đo và chữ số có nghĩa",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo quy tắc đếm chữ số có nghĩa, chữ số nào sau đây KHÔNG có nghĩa?",
+   "options": [
+    "Số 0 đứng đầu, trước chữ số khác 0 đầu tiên",
+    "Số 0 nằm giữa hai chữ số khác 0 trong số",
+    "Số 0 nằm ở cuối phần thập phân của số",
+    "Chữ số khác 0 ở bất kì vị trí nào trong số"
+   ],
+   "answer": 0,
+   "explanation": "Chữ số khác 0, số 0 giữa hai chữ số khác 0 và số 0 cuối phần thập phân đều có nghĩa; chỉ số 0 đứng đầu là không có nghĩa.",
+   "distractorNotes": {
+    "B": "Quên rằng số 0 kẹp giữa hai chữ số khác 0 có nghĩa, như $1001$ có 4 chữ số có nghĩa.",
+    "C": "Coi số 0 cuối phần thập phân là thừa, trong khi nó cho biết dụng cụ đo tới đâu nên có nghĩa.",
+    "D": "Chữ số khác 0 luôn có nghĩa ở mọi vị trí; vị trí chỉ ảnh hưởng đến số 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Ghi kết quả đo và chữ số có nghĩa",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi ghi kết quả đo dạng $A = \\overline{A} \\pm \\Delta A$, giá trị $\\overline{A}$ được viết đến",
+   "options": [
+    "càng nhiều chữ số thập phân càng chính xác",
+    "đúng số chữ số hiện trên màn hình máy tính",
+    "hàng đơn vị, bỏ hết toàn bộ phần thập phân",
+    "cùng bậc thập phân với sai số tuyệt đối $\\Delta A$"
+   ],
+   "answer": 3,
+   "explanation": "$\\overline{A}$ viết đến cùng bậc thập phân với $\\Delta A$, ví dụ $\\Delta l = 0{,}004\\ \\text{m}$ thì ghi $\\overline{l} = 1{,}527\\ \\text{m}$.",
+   "distractorNotes": {
+    "A": "Nhầm số chữ số với độ chính xác: chữ số vượt quá bậc của $\\Delta A$ không đáng tin.",
+    "B": "Lấy máy tính làm chuẩn, trong khi số chữ số được giữ do sai số $\\Delta A$ quyết định.",
+    "C": "Làm tròn quá tay, bỏ mất những chữ số thập phân mà sai số vẫn cho phép giữ lại."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sai số tuyệt đối của lần đo thứ $i$ được tính bằng công thức nào?",
+   "options": [
+    "$\\Delta A_i = \\overline{A} + A_i$",
+    "$\\Delta A_i = |\\overline{A} - A_i|$",
+    "$\\Delta A_i = \\dfrac{\\overline{A}}{A_i}$",
+    "$\\Delta A_i = \\overline{A} - A_i$"
+   ],
+   "answer": 1,
+   "explanation": "Bài ghi: $\\Delta A_i = |\\overline{A} - A_i|$, tức độ lệch (lấy trị tuyệt đối) giữa giá trị trung bình và lần đo đó.",
+   "distractorNotes": {
+    "A": "Lấy tổng thay vì hiệu: sai số là độ lệch giữa lần đo và giá trị trung bình.",
+    "C": "Dùng tỉ số nên không được độ lệch mang đơn vị của đại lượng đo như sai số tuyệt đối.",
+    "D": "Quên trị tuyệt đối nên độ lệch có thể âm, các lần đo triệt tiêu nhau khi lấy trung bình."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sai số tuyệt đối của phép đo trực tiếp lặp lại nhiều lần được tính bằng",
+   "options": [
+    "$\\Delta A = \\overline{\\Delta A}$",
+    "$\\Delta A = \\Delta A_{\\text{dc}}$",
+    "$\\Delta A = \\overline{\\Delta A} + \\Delta A_{\\text{dc}}$",
+    "$\\Delta A = \\overline{\\Delta A} - \\Delta A_{\\text{dc}}$"
+   ],
+   "answer": 2,
+   "explanation": "Sai số tuyệt đối của phép đo bằng sai số trung bình các lần cộng sai số dụng cụ: $\\Delta A = \\overline{\\Delta A} + \\Delta A_{\\text{dc}}$.",
+   "distractorNotes": {
+    "A": "Quên cộng sai số dụng cụ, phần do ĐCNN gây ra luôn có mặt ở mọi phép đo.",
+    "B": "Áp công thức của trường hợp đo một lần cho phép đo lặp lại nhiều lần.",
+    "D": "Trừ bớt sai số dụng cụ là sai, vì các nguồn sai số luôn cộng dồn vào nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính sai số tỉ đối của phép đo là",
+   "options": [
+    "$\\delta A = \\dfrac{\\Delta A}{\\overline{A}} \\cdot 100\\,\\%$",
+    "$\\delta A = \\dfrac{\\overline{A}}{\\Delta A} \\cdot 100\\,\\%$",
+    "$\\delta A = \\Delta A \\cdot \\overline{A} \\cdot 100\\,\\%$",
+    "$\\delta A = \\dfrac{\\Delta A_{\\text{dc}}}{\\Delta A} \\cdot 100\\,\\%$"
+   ],
+   "answer": 0,
+   "explanation": "Sai số tỉ đối là sai số tuyệt đối chia cho giá trị trung bình: $\\delta A = \\dfrac{\\Delta A}{\\overline{A}} \\cdot 100\\,\\%$.",
+   "distractorNotes": {
+    "B": "Đảo tử và mẫu, cho con số rất lớn thay vì phần trăm sai lệch so với giá trị đo.",
+    "C": "Nhân thay vì chia nên kết quả còn mang đơn vị bình phương, không phải tỉ số phần trăm.",
+    "D": "Chọn nhầm mẫu số: phải chia cho giá trị trung bình $\\overline{A}$, không chia cho sai số tuyệt đối."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đại lượng $F = X - Y$ được đo gián tiếp từ $X$ và $Y$. Sai số tuyệt đối của $F$ là",
+   "options": [
+    "$\\Delta F = \\Delta X - \\Delta Y$",
+    "$\\Delta F = \\delta X + \\delta Y$",
+    "$\\Delta F = |\\Delta X - \\Delta Y|$",
+    "$\\Delta F = \\Delta X + \\Delta Y$"
+   ],
+   "answer": 3,
+   "explanation": "Với tổng hoặc hiệu, sai số tuyệt đối luôn cộng: $\\Delta F = \\Delta X + \\Delta Y$, kể cả khi là phép trừ.",
+   "distractorNotes": {
+    "A": "Thấy phép trừ nên trừ luôn sai số, trong khi với hiệu thì sai số tuyệt đối vẫn phải cộng.",
+    "B": "Áp quy tắc của tích, thương (cộng sai số tỉ đối) cho phép hiệu.",
+    "C": "Lấy hiệu hai sai số làm sai số nhỏ đi, trái với việc sai số luôn cộng dồn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đại lượng $A = X\\dfrac{Y}{Z}$ được đo gián tiếp. Biểu thức sai số nào sau đây đúng?",
+   "options": [
+    "$\\delta A = \\delta X + \\delta Y - \\delta Z$",
+    "$\\delta A = \\delta X + \\delta Y + \\delta Z$",
+    "$\\Delta A = \\Delta X + \\Delta Y + \\Delta Z$",
+    "$\\delta A = \\dfrac{\\delta X \\cdot \\delta Y}{\\delta Z}$"
+   ],
+   "answer": 1,
+   "explanation": "Với tích và thương, sai số tỉ đối cộng lại: $\\delta A = \\delta X + \\delta Y + \\delta Z$.",
+   "distractorNotes": {
+    "A": "Thấy $Z$ ở mẫu nên trừ $\\delta Z$, trong khi đại lượng ở mẫu vẫn góp thêm sai số tỉ đối.",
+    "C": "Áp quy tắc cộng sai số tuyệt đối của tổng, hiệu cho biểu thức dạng tích, thương.",
+    "D": "Bắt chước dạng công thức để nhân chia sai số, trong khi các sai số tỉ đối phải cộng lại."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thể tích hình lập phương $V = a^3$. Sai số tỉ đối của $V$ gấp bao nhiêu lần sai số tỉ đối của cạnh $a$?",
+   "options": [
+    "1 lần, vì chỉ đo một đại lượng $a$",
+    "2 lần, vì $a$ có mặt với số mũ 2",
+    "3 lần, vì số mũ của $a$ bằng 3",
+    "$\\tfrac{1}{3}$ lần, vì lấy căn bậc ba của $V$"
+   ],
+   "answer": 2,
+   "explanation": "Với luỹ thừa, số mũ nhân với sai số tỉ đối của chính nó: $\\delta V = 3\\,\\delta a$.",
+   "distractorNotes": {
+    "A": "Quên nhân với số mũ; $a$ xuất hiện ba lần trong tích $a \\cdot a \\cdot a$.",
+    "B": "Nhầm thể tích lập phương với diện tích hình vuông, nơi số mũ là 2.",
+    "D": "Chia cho số mũ thay vì nhân, đảo ngược quy tắc tính sai số của luỹ thừa."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nhận xét nào đúng về đơn vị của sai số tuyệt đối $\\Delta A$ và sai số tỉ đối $\\delta A$?",
+   "options": [
+    "$\\Delta A$ cùng đơn vị với $A$, còn $\\delta A$ tính bằng phần trăm",
+    "$\\Delta A$ tính bằng phần trăm, còn $\\delta A$ cùng đơn vị với $A$",
+    "Cả $\\Delta A$ và $\\delta A$ đều cùng đơn vị với đại lượng $A$",
+    "Cả $\\Delta A$ và $\\delta A$ đều tính bằng phần trăm, không đơn vị"
+   ],
+   "answer": 0,
+   "explanation": "$\\Delta A$ là độ lệch của $A$ nên cùng đơn vị với $A$ (ví dụ $0{,}15\\ \\text{s}$); $\\delta A = \\Delta A/\\overline{A}$ là tỉ số nên tính bằng %.",
+   "distractorNotes": {
+    "B": "Đảo vai hai đại lượng: độ lệch mang đơn vị của $A$, còn tỉ số thì tính bằng phần trăm.",
+    "C": "Quên rằng $\\delta A$ là tỉ số hai đại lượng cùng đơn vị nên đơn vị bị triệt tiêu.",
+    "D": "Quên rằng $\\Delta A$ là độ lệch của chính $A$ nên phải mang đơn vị của $A$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Sai số trong phép đo",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một cân điện tử chưa được chỉnh về số 0 nên lần cân nào cũng chỉ thừa $0{,}3\\ \\text{g}$. Một học sinh cân một vật 5 lần rồi lấy giá trị trung bình.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Ghi kết quả đo và chữ số có nghĩa",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Cặp đại lượng – đơn vị cơ bản của hệ SI nào ghép đúng?",
-      "options": [
-        "Nhiệt độ – độ C ($^\\circ\\text{C}$)",
-        "Chiều dài – centimét ($\\text{cm}$)",
-        "Khối lượng – kilôgam ($\\text{kg}$)",
-        "Thời gian – phút ($\\text{min}$)"
-      ],
-      "answer": 2,
-      "explanation": "Bảng SI của bài: khối lượng – kilôgam, chiều dài – mét, thời gian – giây, nhiệt độ – kelvin. Độ C, centimét và phút không phải đơn vị cơ bản SI."
+     "text": "Độ lệch $0{,}3\\ \\text{g}$ này là sai số hệ thống.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Ghi kết quả đo và chữ số có nghĩa",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điều nào đúng về hai vế của một biểu thức vật lí?",
-      "options": [
-        "Hai vế phải cùng thứ nguyên",
-        "Hai vế có thể khác thứ nguyên nếu hệ số chọn hợp lí",
-        "Chỉ cần hai vế cùng chữ số, không cần cùng thứ nguyên",
-        "Hệ số như $\\tfrac{1}{2}$ làm hai vế thay đổi thứ nguyên"
-      ],
-      "answer": 0,
-      "explanation": "Bài nêu hai vế biểu thức vật lí và các số hạng cộng, trừ nhau phải cùng thứ nguyên. Hệ số như $\\tfrac{1}{2}$, $2$ không có thứ nguyên nên không làm đổi gì."
+     "text": "Lấy trung bình 5 lần cân thì độ lệch giảm còn khoảng một phần năm.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Sai số hệ thống có đặc điểm nào sau đây?",
-      "options": [
-        "Tản hai phía quanh giá trị trung bình",
-        "Do thao tác của người đo, giảm bằng cách đo nhiều lần",
-        "Xuất hiện ngẫu nhiên, mỗi lần một kiểu",
-        "Lặp lại, lệch cùng một phía ở mọi lần đo, ví dụ do dụng cụ chưa chỉnh về số $0$"
-      ],
-      "answer": 3,
-      "explanation": "Sai số hệ thống lệch cùng một phía, nguồn từ dụng cụ. Ba phương án còn lại mô tả sai số ngẫu nhiên."
+     "text": "Muốn bỏ độ lệch này, phải chỉnh cân về số 0 trước khi cân.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hai phép đo có cùng sai số tuyệt đối $0{,}5\\ \\text{mm}$ nhưng giá trị đo khác nhau. Cách so sánh mức chính xác đúng là gì?",
-      "options": [
-        "Vật nhỏ hơn luôn chính xác hơn",
-        "So sai số tỉ đối của hai phép đo; phép đo có sai số tỉ đối nhỏ hơn thì chính xác hơn",
-        "Hai phép đo chính xác như nhau vì cùng sai số tuyệt đối",
-        "Phép đo ghi nhiều chữ số hơn thì chính xác hơn"
-      ],
-      "answer": 1,
-      "explanation": "Sai số tỉ đối $\\delta A = \\dfrac{\\Delta A}{\\overline{A}}$ mới cho biết mức chính xác. Cùng $\\Delta A$ thì giá trị đo càng lớn, $\\delta A$ càng nhỏ."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Đo nhiều lần rồi lấy giá trị trung bình giúp giảm loại sai số nào?",
-      "options": [
-        "Sai số hệ thống",
-        "Sai số ngẫu nhiên",
-        "Cả sai số hệ thống lẫn sai số ngẫu nhiên",
-        "Không loại nào"
-      ],
-      "answer": 1,
-      "explanation": "Các lần đo ngẫu nhiên tản hai phía nên trung bình triệt tiêu bớt. Sai số hệ thống lệch cùng phía nên trung bình vẫn lệch."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "don_vi",
-      "topic": "Ghi kết quả đo và chữ số có nghĩa",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đổi $54\\ \\text{km/h}$ ra $\\text{m/s}$ được kết quả nào?",
-      "options": [
-        "$194{,}4\\ \\text{m/s}$",
-        "$0{,}015\\ \\text{m/s}$",
-        "$54\\,000\\ \\text{m/s}$",
-        "$15\\ \\text{m/s}$"
-      ],
-      "answer": 3,
-      "explanation": "$54\\ \\text{km/h} = \\dfrac{54 \\cdot 10^{3}}{3600}\\ \\text{m/s} = 15\\ \\text{m/s}$. $194{,}4$ do nhân $3{,}6$ thay vì chia; $0{,}015$ do quên đổi $\\text{km}$ ra $\\text{m}$; $54\\,000$ do quên chia $3600$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Ghi kết quả đo và chữ số có nghĩa",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Biết $[v] = \\text{L}\\cdot\\text{T}^{-1}$ và $[a] = \\text{L}\\cdot\\text{T}^{-2}$. Thứ nguyên của $\\dfrac{v^2}{a}$ là gì?",
-      "options": [
-        "$\\text{L}$",
-        "$\\text{L}^2$",
-        "$\\text{T}$",
-        "$\\text{L}\\cdot\\text{T}^{-1}$"
-      ],
-      "answer": 0,
-      "explanation": "$[v^2] = \\text{L}^2\\text{T}^{-2}$ nên $\\dfrac{v^2}{a}$ có thứ nguyên $\\dfrac{\\text{L}^2\\text{T}^{-2}}{\\text{L}\\text{T}^{-2}} = \\text{L}$. $\\text{L}^2$ do quên chia $\\text{L}$ trong $[a]$; $\\text{T}$ do quên bình phương $v$; $\\text{L}\\text{T}^{-1}$ do nhầm $[a]$ bằng $[v]$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "tinh_nhanh",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đo chiều dài $l$ năm lần bằng thước vạch có ĐCNN $0{,}1\\ \\text{cm}$: $10{,}2$; $10{,}5$; $10{,}3$; $10{,}4$; $10{,}1\\ (\\text{cm})$. Lấy sai số dụng cụ bằng nửa ĐCNN. Sai số tuyệt đối $\\Delta l$ của phép đo là:",
-      "options": [
-        "$0{,}12\\ \\text{cm}$",
-        "$0{,}22\\ \\text{cm}$",
-        "$0{,}17\\ \\text{cm}$",
-        "$0{,}65\\ \\text{cm}$"
-      ],
-      "answer": 2,
-      "explanation": "$\\overline{l} = 10{,}3$; các $\\Delta l_i$: $0{,}1;\\ 0{,}2;\\ 0;\\ 0{,}1;\\ 0{,}2$ nên $\\overline{\\Delta l} = \\dfrac{0{,}6}{5} = 0{,}12$, cộng $0{,}05$ được $0{,}17\\ \\text{cm}$. $0{,}12$ quên cộng sai số dụng cụ; $0{,}22$ lấy cả ĐCNN thay vì nửa; $0{,}65$ không chia $0{,}6$ cho $5$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Một vật có giá trị trung bình $\\overline{A} = 60\\ \\text{mm}$ và $\\Delta A = 0{,}3\\ \\text{mm}$. Sai số tỉ đối $\\delta A$ là:",
-      "options": [
-        "$0{,}005\\,\\%$",
-        "$0{,}5\\,\\%$",
-        "$5\\,\\%$",
-        "$200\\,\\%$"
-      ],
-      "answer": 1,
-      "explanation": "$\\delta A = \\dfrac{0{,}3}{60} \\cdot 100\\,\\% = 0{,}5\\,\\%$. $0{,}005\\,\\%$ do quên nhân $100$; $5\\,\\%$ do chia nhầm cho $6$; $200\\,\\%$ do đảo tử và mẫu."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Gia tốc đo gián tiếp theo $a = \\dfrac{2s}{t^2}$ với $\\delta s = 1{,}0\\,\\%$ và $\\delta t = 0{,}6\\,\\%$. Sai số tỉ đối $\\delta a$ là:",
-      "options": [
-        "$1{,}6\\,\\%$",
-        "$1{,}2\\,\\%$",
-        "$2{,}2\\,\\%$",
-        "$0{,}4\\,\\%$"
-      ],
-      "answer": 2,
-      "explanation": "$t$ có số mũ $2$ nên $\\delta a = \\delta s + 2\\,\\delta t = 1{,}0 + 1{,}2 = 2{,}2\\,\\%$. $1{,}6$ do quên số mũ; $1{,}2$ do bỏ $\\delta s$; $0{,}4$ do trừ thay vì cộng."
-    },
-    {
-      "type": "true_false",
-      "kind": "hien_tuong",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về các loại sai số, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Thước mòn đầu luôn đo thiếu là sai số hệ thống.",
-          "answer": true
-        },
-        {
-          "text": "Bấm đồng hồ lúc sớm lúc muộn là sai số hệ thống.",
-          "answer": false
-        },
-        {
-          "text": "Đo nhiều lần giúp giảm sai số ngẫu nhiên.",
-          "answer": true
-        },
-        {
-          "text": "Cân điện tử chưa chỉnh số $0$ có thể sửa bằng cách cân nhiều lần rồi lấy trung bình.",
-          "answer": false
-        }
-      ],
-      "explanation": "Bấm lúc sớm lúc muộn tản hai phía nên là sai số ngẫu nhiên. Sai số hệ thống như cân chưa chỉnh về $0$ phải sửa bằng cách chỉnh dụng cụ."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Ghi kết quả đo và chữ số có nghĩa",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về chữ số có nghĩa (CSCN), các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Số $0{,}0035$ có $2$ chữ số có nghĩa.",
-          "answer": true
-        },
-        {
-          "text": "Số $0$ cuối phần thập phân của $1{,}30$ là chữ số có nghĩa.",
-          "answer": true
-        },
-        {
-          "text": "Các số $0$ nằm giữa hai chữ số khác $0$ như trong $1001$ không có nghĩa.",
-          "answer": false
-        },
-        {
-          "text": "Ghi $1{,}5\\ \\text{m}$ và $1{,}50\\ \\text{m}$ cho cùng thông tin về độ chính xác của dụng cụ.",
-          "answer": false
-        }
-      ],
-      "explanation": "Số $0$ đứng đầu không có nghĩa, số $0$ giữa và số $0$ cuối phần thập phân đều có nghĩa. $1{,}50$ có $3$ CSCN, cho biết đo tới cm, khác $1{,}5$."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Về sai số của phép đo gián tiếp, các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Nếu $F = X + Y$ thì $\\Delta F = \\Delta X + \\Delta Y$.",
-          "answer": true
-        },
-        {
-          "text": "Nếu $F = X - Y$ thì $\\Delta F = \\Delta X - \\Delta Y$.",
-          "answer": false
-        },
-        {
-          "text": "Nếu $A = \\dfrac{XY}{Z}$ thì $\\delta A = \\delta X + \\delta Y + \\delta Z$.",
-          "answer": true
-        },
-        {
-          "text": "Nếu $V = a^3$ thì $\\delta V = \\delta a$.",
-          "answer": false
-        }
-      ],
-      "explanation": "Hiệu cũng cộng sai số tuyệt đối. Tích thương cộng sai số tỉ đối, số mũ nhân với $\\delta$ của chính nó nên $\\delta V = 3\\,\\delta a$."
-    },
-    {
-      "type": "true_false",
-      "kind": "tinh_nhanh",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Đo thời gian rơi ba lần được $2{,}0$; $2{,}2$; $1{,}8\\ (\\text{s})$ bằng đồng hồ số ĐCNN $0{,}01\\ \\text{s}$. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$\\overline{t} = 2{,}0\\ \\text{s}$.",
-          "answer": true
-        },
-        {
-          "text": "Sai số tuyệt đối của lần đo thứ hai là $\\Delta t_2 = 0{,}2\\ \\text{s}$.",
-          "answer": true
-        },
-        {
-          "text": "Sai số tuyệt đối trung bình $\\overline{\\Delta t} = 0{,}2\\ \\text{s}$.",
-          "answer": false
-        },
-        {
-          "text": "$\\Delta t = \\overline{\\Delta t} + \\Delta t_{\\text{dc}} \\approx 0{,}14\\ \\text{s}$.",
-          "answer": true
-        }
-      ],
-      "explanation": "$\\Delta t_i$ là $0;\\ 0{,}2;\\ 0{,}2$ nên $\\overline{\\Delta t} = \\dfrac{0{,}4}{3} \\approx 0{,}13\\ \\text{s}$, không phải $0{,}2$. Cộng sai số dụng cụ $0{,}01$ được $\\approx 0{,}14\\ \\text{s}$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Ghi kết quả đo và chữ số có nghĩa",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Hệ SI xây dựng trên bao nhiêu đơn vị cơ bản?",
-      "answer": "7",
-      "explanation": "Bảng SI của bài gồm $7$ đơn vị cơ bản: m, kg, s, K, A, mol, cd."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Ghi kết quả đo và chữ số có nghĩa",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Số $20{,}070$ có bao nhiêu chữ số có nghĩa?",
-      "answer": "5",
-      "explanation": "Số $0$ giữa hai chữ số khác $0$ và số $0$ cuối phần thập phân đều có nghĩa, nên $2;\\ 0;\\ 0;\\ 7;\\ 0$ là $5$ chữ số có nghĩa."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dieu_kien",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Với dụng cụ hiện số như cân điện tử, sai số dụng cụ thường lấy bằng bao nhiêu lần độ chia nhỏ nhất?",
-      "answer": "1",
-      "explanation": "Dụng cụ có vạch chia lấy nửa ĐCNN; dụng cụ hiện số (đồng hồ số, cân điện tử) lấy một ĐCNN."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Thước vạch ĐCNN $1\\ \\text{mm}$ đo một lần được $80\\ \\text{mm}$, sai số dụng cụ bằng nửa ĐCNN. Sai số tỉ đối là bao nhiêu phần trăm? (làm tròn đến $1$ chữ số thập phân)",
-      "answer": "0,6",
-      "explanation": "$\\Delta A = 0{,}5\\ \\text{mm}$ nên $\\delta A = \\dfrac{0{,}5}{80} \\cdot 100\\,\\% = 0{,}625\\,\\% \\approx 0{,}6\\,\\%$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Cạnh hình vuông có sai số tỉ đối $\\delta a = 1{,}5\\,\\%$. Sai số tỉ đối của diện tích $S = a^2$ là bao nhiêu phần trăm?",
-      "answer": "3",
-      "explanation": "$S = a^2$ có số mũ $2$ nên $\\delta S = 2\\,\\delta a = 2 \\cdot 1{,}5 = 3\\,\\%$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Sai số tuyệt đối, sai số tỉ đối",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Đo $g = \\dfrac{4\\pi^2 l}{T^2}$ (bỏ qua sai số của $\\pi$) với $\\delta l = 0{,}2\\,\\%$ và $\\delta T = 0{,}5\\,\\%$. Sai số tỉ đối $\\delta g$ là bao nhiêu phần trăm?",
-      "answer": "1,2",
-      "explanation": "$T$ có số mũ $2$ nên $\\delta g = \\delta l + 2\\,\\delta T = 0{,}2 + 2 \\cdot 0{,}5 = 1{,}2\\,\\%$."
+     "text": "Nếu cân thêm thật nhiều lần thì độ lệch $0{,}3\\ \\text{g}$ sẽ tự triệt tiêu.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Độ lệch lặp lại và cùng phía ở mọi lần nên là sai số hệ thống; trung bình vẫn thừa $0{,}3\\ \\text{g}$, chỉ chỉnh cân về 0 mới sửa được.",
+   "distractorNotes": {
+    "0": "Độ lệch do dụng cụ, lặp lại cùng phía ở mọi lần nên không thể xếp vào sai số ngẫu nhiên.",
+    "1": "Cả 5 lần đều thừa $0{,}3\\ \\text{g}$ nên trung bình vẫn thừa $0{,}3\\ \\text{g}$; không có lí do gì để chia cho 5.",
+    "2": "Nguồn lệch chính là cân chưa về 0, nên chỉnh cân về 0 là cách duy nhất xoá được nó.",
+    "3": "Đo nhiều lần chỉ làm nhỏ sai số tản hai phía; độ lệch một phía vẫn giữ nguyên dù đo bao nhiêu lần."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
+   "topic": "Ghi kết quả đo và chữ số có nghĩa",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Ba bạn ghi chiều dài cùng một chiếc bàn lần lượt là $1{,}5\\ \\text{m}$; $1{,}50\\ \\text{m}$ và $1{,}500\\ \\text{m}$.",
+   "statements": [
+    {
+     "text": "Số $1{,}5$ có 2 chữ số có nghĩa.",
+     "answer": true
+    },
+    {
+     "text": "Số 0 ở cuối $1{,}50$ không có nghĩa nên $1{,}50\\ \\text{m}$ và $1{,}5\\ \\text{m}$ cho biết như nhau.",
+     "answer": false
+    },
+    {
+     "text": "Cách ghi $1{,}500\\ \\text{m}$ cho biết phép đo chính xác tới milimét.",
+     "answer": true
+    },
+    {
+     "text": "Theo cùng quy tắc, số $0{,}0350$ có 2 chữ số có nghĩa.",
+     "answer": false
+    }
+   ],
+   "explanation": "Số 0 cuối phần thập phân có nghĩa và cho biết dụng cụ đo tới đâu; số 0 đứng đầu không có nghĩa nên $0{,}0350$ có 3 chữ số có nghĩa.",
+   "distractorNotes": {
+    "0": "Hai chữ số 1 và 5 đều khác 0 nên đều có nghĩa, cho đúng 2 chữ số có nghĩa.",
+    "1": "Số 0 cuối phần thập phân có nghĩa: $1{,}50$ cho biết đo tới cm, còn $1{,}5$ chỉ tới dm.",
+    "2": "Chữ số cuối của $1{,}500\\ \\text{m}$ ở hàng phần nghìn mét, tức hàng milimét.",
+    "3": "Chỉ bỏ các số 0 đứng đầu; còn lại 3, 5 và số 0 cuối thập phân là 3 chữ số có nghĩa."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Sai số trong phép đo",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dùng thước kẻ có độ chia nhỏ nhất $1\\ \\text{mm}$ đo một lần độ dày cục tẩy; mép cục tẩy nằm đúng vạch $12$.",
+   "statements": [
+    {
+     "text": "Sai số dụng cụ của thước có vạch chia thường lấy bằng nửa ĐCNN, tức $0{,}5\\ \\text{mm}$.",
+     "answer": true
+    },
+    {
+     "text": "Vì chỉ đo một lần nên sai số tuyệt đối của phép đo bằng sai số dụng cụ.",
+     "answer": true
+    },
+    {
+     "text": "Có thể ghi kết quả là $12{,}00\\ \\text{mm}$ để chính xác ngang thước điện tử.",
+     "answer": false
+    },
+    {
+     "text": "Đây là phép đo gián tiếp vì phải so mép cục tẩy với vạch chia.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đo một lần thì $\\Delta A = \\Delta A_{\\text{dc}} = 0{,}5\\ \\text{mm}$, kết quả $(12{,}0 \\pm 0{,}5)\\ \\text{mm}$; số chữ số do dụng cụ quyết định, và đọc ngay trên thước là đo trực tiếp.",
+   "distractorNotes": {
+    "0": "Thước có vạch chia nên theo quy ước lấy nửa ĐCNN, đúng bằng $0{,}5\\ \\text{mm}$.",
+    "1": "Đo một lần thì không có sai số trung bình các lần, chỉ còn lại sai số dụng cụ.",
+    "2": "Nhầm số chữ số với độ chính xác: tự thêm số 0 không làm phép đo chính xác hơn.",
+    "3": "Đọc giá trị ngay trên dụng cụ là đo trực tiếp; đo gián tiếp phải tính qua công thức."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đo thời gian $t$ của 10 dao động con lắc đơn 5 lần bằng đồng hồ số có ĐCNN $0{,}01\\ \\text{s}$; năm giá trị đo không trùng nhau.",
+   "statements": [
+    {
+     "text": "Giá trị trung bình là $\\overline{t} = \\dfrac{t_1 + t_2 + t_3 + t_4 + t_5}{5}$.",
+     "answer": true
+    },
+    {
+     "text": "Sai số tuyệt đối của phép đo là độ lệch $|\\overline{t} - t_i|$ lớn nhất trong 5 lần.",
+     "answer": false
+    },
+    {
+     "text": "Sai số dụng cụ của đồng hồ số này là $\\Delta t_{\\text{dc}} = 0{,}01\\ \\text{s}$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu $\\Delta t$ giữ nguyên mà $\\overline{t}$ lớn gấp đôi thì sai số tỉ đối $\\delta t$ cũng tăng gấp đôi.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\Delta t = \\overline{\\Delta t} + \\Delta t_{\\text{dc}}$ dùng trung bình các độ lệch, không lấy độ lệch lớn nhất; $\\delta t = \\Delta t/\\overline{t}$ nên $\\overline{t}$ gấp đôi thì $\\delta t$ giảm một nửa.",
+   "distractorNotes": {
+    "0": "Giá trị trung bình đúng là tổng các lần đo chia cho số lần đo, như công thức đã nêu.",
+    "1": "Sai số của phép đo lấy trung bình các độ lệch cộng sai số dụng cụ, không lấy độ lệch lớn nhất.",
+    "2": "Đồng hồ hiện số lấy sai số dụng cụ bằng một ĐCNN, tức đúng $0{,}01\\ \\text{s}$.",
+    "3": "Đảo tỉ lệ: $\\overline{t}$ nằm ở mẫu của $\\delta t$, nên tăng gấp đôi thì $\\delta t$ giảm một nửa."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Đo gia tốc trọng trường bằng con lắc đơn theo công thức $g = \\dfrac{4\\pi^2 l}{T^2}$, bỏ qua sai số của $\\pi$.",
+   "statements": [
+    {
+     "text": "$g$ là đại lượng đo gián tiếp.",
+     "answer": true
+    },
+    {
+     "text": "Sai số tỉ đối của $g$ là $\\delta g = \\delta l + 2\\,\\delta T$.",
+     "answer": true
+    },
+    {
+     "text": "Vì $T$ nằm ở mẫu nên $\\delta g = \\delta l - 2\\,\\delta T$.",
+     "answer": false
+    },
+    {
+     "text": "Sai số tuyệt đối của $g$ tính trực tiếp bằng $\\Delta g = \\Delta l + 2\\,\\Delta T$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$g$ tính qua công thức từ $l$, $T$ nên là đo gián tiếp; với tích, thương, luỹ thừa thì cộng sai số tỉ đối, số mũ 2 nhân với $\\delta T$: $\\delta g = \\delta l + 2\\,\\delta T$.",
+   "distractorNotes": {
+    "0": "$g$ không đọc được trực tiếp trên dụng cụ mà phải tính qua công thức từ $l$ và $T$.",
+    "1": "Với tích, thương thì cộng sai số tỉ đối, và số mũ 2 của $T$ nhân với $\\delta T$.",
+    "2": "Đại lượng nằm ở mẫu vẫn góp thêm sai số tỉ đối, không được trừ đi.",
+    "3": "Cộng sai số tuyệt đối chỉ dùng cho tổng, hiệu; công thức của $g$ là dạng tích, thương, luỹ thừa."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Sai số tuyệt đối, sai số tỉ đối",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Dùng cùng một thước vạch $1\\ \\text{mm}$ đo một lần, được kết quả tấm bìa $(250{,}0 \\pm 0{,}5)\\ \\text{mm}$ và cục tẩy $(12{,}0 \\pm 0{,}5)\\ \\text{mm}$.",
+   "statements": [
+    {
+     "text": "Hai phép đo có cùng sai số tuyệt đối.",
+     "answer": true
+    },
+    {
+     "text": "Hai phép đo chính xác như nhau vì có cùng $\\Delta A$.",
+     "answer": false
+    },
+    {
+     "text": "Phép đo tấm bìa có sai số tỉ đối nhỏ hơn nên chính xác hơn.",
+     "answer": true
+    },
+    {
+     "text": "Với cùng $\\Delta A$, giá trị đo càng nhỏ thì sai số tỉ đối càng nhỏ.",
+     "answer": false
+    }
+   ],
+   "explanation": "Độ chính xác so bằng $\\delta A = \\Delta A/\\overline{A}$: cùng $\\Delta A$ thì vật lớn (tấm bìa) có $\\delta$ nhỏ hơn, vật nhỏ có $\\delta$ lớn hơn.",
+   "distractorNotes": {
+    "0": "Cả hai kết quả đều ghi $\\pm 0{,}5\\ \\text{mm}$ nên chắc chắn có cùng sai số tuyệt đối.",
+    "1": "Độ chính xác so bằng sai số tỉ đối, nên phải chia $\\Delta A$ cho giá trị đo chứ không so $\\Delta A$.",
+    "2": "Cùng $\\Delta A$ nhưng giá trị đo của tấm bìa lớn hơn nhiều nên $\\delta$ nhỏ hơn hẳn.",
+    "3": "Đảo tỉ lệ: giá trị đo nằm ở mẫu của $\\delta A$, nhỏ đi thì $\\delta A$ lớn lên."
+   }
+  }
+ ]
 }

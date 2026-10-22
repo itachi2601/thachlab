@@ -1,386 +1,550 @@
 {
-  "lesson_id": 35,
-  "lesson_title": "Bài 16. Lực tương tác giữa hai điện tích",
-  "item_id": 186,
-  "generated_at": "2026-10-02",
-  "generated_by": "claude-code",
-  "quiz_min_correct": 15,
-  "review": {
-    "checked": true,
-    "counts": {
-      "kien_thuc": 10,
-      "cong_thuc": 10
-    },
-    "removed": []
+ "lesson_id": 35,
+ "lesson_title": "Bài 16. Lực tương tác giữa hai điện tích",
+ "item_id": 186,
+ "generated_at": "2026-10-21",
+ "generated_by": "batch-api claude-opus-5-5",
+ "quiz_min_correct": 15,
+ "review": {
+  "checked": true,
+  "counts": {
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "questions": [
+  "removed": []
+ },
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Lực tương tác giữa hai điện tích",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo thuyết electron, một vật nhiễm điện âm là vật",
+   "options": [
+    "thiếu electron so với lúc trung hoà",
+    "thừa electron so với lúc trung hoà",
+    "thừa proton so với lúc trung hoà",
+    "thiếu proton so với lúc trung hoà"
+   ],
+   "answer": 1,
+   "explanation": "Bài nêu: vật nhiễm điện âm là vật thừa electron, vật nhiễm điện dương là vật thiếu electron.",
+   "distractorNotes": {
+    "A": "Nhầm chiều: thiếu electron làm vật nhiễm điện dương, không phải âm.",
+    "C": "Proton nằm chặt trong hạt nhân, không chuyển giữa các vật khi nhiễm điện.",
+    "D": "Proton không rời hạt nhân; vật nhiễm điện là do electron dịch chuyển."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực tương tác giữa hai điện tích",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thanh thuỷ tinh cọ xát với lụa thì nhiễm điện dương. Nguyên nhân là thanh thuỷ tinh",
+   "options": [
+    "nhận thêm proton từ lụa",
+    "nhận thêm electron từ lụa",
+    "tự tạo ra điện tích dương mới",
+    "mất bớt electron sang lụa"
+   ],
+   "answer": 3,
+   "explanation": "Khi cọ xát chỉ electron dời chỗ: thanh mất electron nên thiếu electron, nhiễm điện dương; lụa thừa electron nên âm.",
+   "distractorNotes": {
+    "A": "Proton nằm trong hạt nhân, không rời nguyên tử khi cọ xát.",
+    "B": "Nhận thêm electron thì thanh thừa electron, phải nhiễm điện âm chứ không dương.",
+    "C": "Điện tích không tự sinh ra, chỉ dịch chuyển từ vật này sang vật khác."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Lực tương tác giữa hai điện tích",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đưa một thanh nhiễm điện lại gần (không chạm) một vật dẫn trung hoà, vật dẫn nhiễm điện do hưởng ứng. Phát biểu nào sau đây đúng?",
+   "options": [
+    "Electron chỉ dời chỗ bên trong vật dẫn",
+    "Vật dẫn nhận electron từ thanh qua không khí",
+    "Vật dẫn nhiễm điện cùng dấu với thanh",
+    "Hai đầu vật dẫn nhiễm điện cùng dấu nhau"
+   ],
+   "answer": 0,
+   "explanation": "Nhiễm điện do hưởng ứng: electron chỉ dời chỗ trong vật, hai đầu nhiễm điện trái dấu, đầu gần ngược dấu với vật kia.",
+   "distractorNotes": {
+    "B": "Thanh không chạm vật dẫn nên không có electron truyền sang, tổng điện tích vật dẫn vẫn bằng không.",
+    "C": "Nhầm với nhiễm điện do tiếp xúc; hưởng ứng không làm cả vật mang điện cùng dấu thanh.",
+    "D": "Electron dồn về một đầu nên một đầu thừa, một đầu thiếu electron, hai đầu trái dấu."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Lực tương tác giữa hai điện tích",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Định luật bảo toàn điện tích: trong một hệ cô lập về điện,",
+   "options": [
+    "tổng độ lớn các điện tích không đổi",
+    "số electron của mỗi vật không đổi",
+    "tổng đại số các điện tích không đổi",
+    "điện tích của mỗi vật không đổi"
+   ],
+   "answer": 2,
+   "explanation": "Bài phát biểu: trong hệ cô lập về điện, tổng đại số các điện tích (cộng giữ nguyên dấu) không đổi.",
+   "distractorNotes": {
+    "A": "Bỏ dấu khi cộng là sai; điện tích trái dấu trung hoà nhau làm tổng độ lớn thay đổi.",
+    "B": "Electron vẫn chuyển được giữa các vật bên trong hệ cô lập.",
+    "D": "Từng vật trong hệ vẫn trao đổi điện tích được; chỉ tổng đại số của cả hệ không đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Định luật Coulomb",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Theo định luật Coulomb, độ lớn lực tương tác giữa hai điện tích điểm đứng yên trong chân không",
+   "options": [
+    "tỉ lệ thuận với khoảng cách giữa chúng",
+    "tỉ lệ nghịch với bình phương khoảng cách",
+    "tỉ lệ nghịch với khoảng cách giữa chúng",
+    "tỉ lệ thuận với bình phương khoảng cách"
+   ],
+   "answer": 1,
+   "explanation": "Định luật Coulomb: độ lớn lực tỉ lệ thuận với tích độ lớn hai điện tích, tỉ lệ nghịch với bình phương khoảng cách.",
+   "distractorNotes": {
+    "A": "Lực điện giảm khi khoảng cách tăng nên không thể tỉ lệ thuận với khoảng cách.",
+    "C": "Thiếu bình phương: lực tỉ lệ nghịch với $r^2$, không phải với $r$.",
+    "D": "Đảo chiều phụ thuộc: $r^2$ nằm ở mẫu số nên lực giảm khi khoảng cách tăng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Định luật Coulomb",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức của định luật Coulomb áp dụng được trực tiếp cho trường hợp nào sau đây?",
+   "options": [
+    "Hai quả cầu nhỏ tích điện đều, ở xa nhau",
+    "Hai vật lớn tích điện bất kì, đặt sát nhau",
+    "Hai thanh kim loại dài tích điện, đặt song song",
+    "Hai tấm phẳng rộng tích điện, đặt đối diện"
+   ],
+   "answer": 0,
+   "explanation": "Định luật Coulomb chỉ đúng cho điện tích điểm hoặc quả cầu tích điện đều (coi điện tích đặt ở tâm).",
+   "distractorNotes": {
+    "B": "Vật lớn đặt sát nhau có kích thước không nhỏ so với khoảng cách, không coi là điện tích điểm.",
+    "C": "Thanh dài không phải điện tích điểm hay quả cầu tích điện đều nên không áp dụng trực tiếp được.",
+    "D": "Tấm phẳng rộng có kích thước lớn so với khoảng cách, không coi là điện tích điểm được."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Định luật Coulomb",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai điện tích điểm $q_1 = 4\\ \\mu$C và $q_2 = 1\\ \\mu$C đặt gần nhau. Lực do $q_1$ tác dụng lên $q_2$ so với lực do $q_2$ tác dụng lên $q_1$ thì",
+   "options": [
+    "lớn gấp 4 lần",
+    "nhỏ hơn 4 lần",
+    "có độ lớn bằng nhau",
+    "lớn gấp 2 lần"
+   ],
+   "answer": 2,
+   "explanation": "Hai lực là cặp lực–phản lực, cùng độ lớn $k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$, ngược chiều, đặt vào hai vật khác nhau.",
+   "distractorNotes": {
+    "A": "Tin điện tích lớn \"đẩy mạnh hơn\"; thực ra hai lực có chung tích $|q_1q_2|$.",
+    "B": "Đổi chỗ hai điện tích thì tích $|q_1q_2|$ không đổi, nên hai lực không thể khác nhau.",
+    "D": "Lấy căn tỉ số điện tích là nhầm với điều kiện cân bằng; cặp lực–phản lực luôn bằng độ lớn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Cân bằng của điện tích chịu nhiều lực",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điện tích $q_1$, $q_2$ cùng dấu đặt tại A và B, với $|q_1| \\gt |q_2|$. Để điện tích $q_0$ cân bằng, phải đặt $q_0$ tại điểm",
+   "options": [
+    "ngoài đoạn AB, về phía A",
+    "ngoài đoạn AB, về phía B",
+    "trong đoạn AB, gần A hơn",
+    "trong đoạn AB, gần B hơn"
+   ],
+   "answer": 3,
+   "explanation": "Hai điện tích cùng dấu thì điểm cân bằng ở giữa A và B, gần điện tích có độ lớn nhỏ hơn, tức gần B.",
+   "distractorNotes": {
+    "A": "Ngoài đoạn AB, hai lực do điện tích cùng dấu gây ra cùng chiều nên không thể triệt tiêu.",
+    "B": "Áp nhầm quy tắc của hai điện tích trái dấu; cùng dấu thì điểm cân bằng phải nằm giữa A và B.",
+    "C": "Đặt gần điện tích lớn thì lực của nó càng trội, ngược quy tắc phải gần điện tích nhỏ."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Lực tương tác giữa hai điện tích",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cọ thước nhựa vào tóc khô rồi đưa lại gần giấy vụn: giấy vụn bay lên bám thước. Sau đó đưa thước lại gần (không chạm) một lon nhôm rỗng nằm ngang: lon nhôm lăn về phía thước.",
+   "statements": [
     {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Theo thuyết electron, vật nhiễm điện âm là vật nào sau đây?",
-      "options": [
-        "Vật thiếu electron",
-        "Vật thừa electron",
-        "Vật có hạt nhân mang điện âm",
-        "Vật có thêm proton"
-      ],
-      "answer": 1,
-      "explanation": "Vật nhiễm điện âm là vật thừa electron, vật nhiễm điện dương là vật thiếu electron."
+     "text": "Cọ xát làm electron dịch chuyển giữa thước và tóc, nên thước và tóc nhiễm điện trái dấu.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Đặc điểm nào sau đây đúng với nhiễm điện do hưởng ứng?",
-      "options": [
-        "Có electron chuyển từ vật này sang vật kia, tổng điện tích mỗi vật thay đổi",
-        "Hai vật khác bản chất cọ xát vào nhau",
-        "Không có electron rời khỏi vật, chỉ phân bố lại điện tích; đưa vật gây hưởng ứng ra xa thì vật lại trung hoà",
-        "Vật trung hoà tiếp xúc với vật đã nhiễm điện nên nhiễm điện cùng dấu"
-      ],
-      "answer": 2,
-      "explanation": "Ở hưởng ứng không có electron rời khỏi vật mà chỉ phân bố lại điện tích."
+     "text": "Cọ xát đã tạo ra điện tích mới trên thước nhựa.",
+     "answer": false
     },
     {
-      "type": "multiple_choice",
-      "kind": "dinh_luat",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Nội dung của định luật bảo toàn điện tích là gì?",
-      "options": [
-        "Trong hệ cô lập về điện, tổng đại số các điện tích không đổi",
-        "Trong hệ cô lập về điện, tổng độ lớn các điện tích không đổi",
-        "Điện tích của mỗi vật luôn không đổi",
-        "Tổng điện tích của hệ luôn bằng không"
-      ],
-      "answer": 0,
-      "explanation": "Trong hệ cô lập về điện (không trao đổi điện tích với bên ngoài), tổng đại số các điện tích là không đổi."
+     "text": "Lon nhôm nhiễm điện do hưởng ứng, đầu gần thước nhiễm điện trái dấu với thước.",
+     "answer": true
     },
     {
-      "type": "multiple_choice",
-      "kind": "dieu_kien",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Định luật Coulomb chỉ áp dụng đúng cho trường hợp nào?",
-      "options": [
-        "Hai vật tích điện bất kì ở gần nhau",
-        "Các điện tích điểm, hoặc các quả cầu tích điện phân bố đều trên bề mặt",
-        "Chỉ các điện tích cùng dấu",
-        "Chỉ các điện tích đặt trong điện môi"
-      ],
-      "answer": 1,
-      "explanation": "Bài lưu ý định luật chỉ đúng cho điện tích điểm hoặc quả cầu tích điện phân bố đều (coi như điện tích điểm đặt ở tâm)."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Công thức tính độ lớn lực tương tác giữa hai điện tích điểm đặt trong điện môi đồng tính có hằng số điện môi $\\varepsilon$ là",
-      "options": [
-        "$F=k\\dfrac{\\left|q_1q_2\\right|}{\\varepsilon r^2}$",
-        "$F=k\\dfrac{\\varepsilon\\left|q_1q_2\\right|}{r^2}$",
-        "$F=k\\dfrac{\\left|q_1q_2\\right|}{\\varepsilon r}$",
-        "$F=k\\dfrac{\\left|q_1q_2\\right|}{r^2}\\varepsilon^2$"
-      ],
-      "answer": 0,
-      "explanation": "Trong điện môi lực giảm $\\varepsilon$ lần so với chân không nên $F=k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "bien_doi",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Giữ nguyên độ lớn hai điện tích, tăng khoảng cách giữa chúng lên gấp đôi thì độ lớn lực tương tác",
-      "options": [
-        "tăng 2 lần",
-        "giảm 2 lần",
-        "giảm 4 lần",
-        "tăng 4 lần"
-      ],
-      "answer": 2,
-      "explanation": "$F\\sim\\dfrac{1}{r^2}$ nên $r$ tăng 2 lần thì $F$ giảm $2^2=4$ lần."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Cân bằng của điện tích chịu nhiều lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Hai lực điện $\\vec{F_1}$ và $\\vec{F_2}$ vuông góc nhau tác dụng lên một điện tích. Độ lớn hợp lực là",
-      "options": [
-        "$F=F_1+F_2$",
-        "$F=\\left|F_1-F_2\\right|$",
-        "$F=\\sqrt{F_1^2+F_2^2}$",
-        "$F=F_1^2+F_2^2$"
-      ],
-      "answer": 2,
-      "explanation": "Hai lực vuông góc thì hợp lực tính theo định lí Pythagoras: $F=\\sqrt{F_1^2+F_2^2}$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "cong_thuc",
-      "topic": "Cân bằng của điện tích chịu nhiều lực",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Hai lực điện cùng độ lớn $F_1$ hợp nhau góc $\\alpha$. Độ lớn hợp lực là",
-      "options": [
-        "$F=2F_1\\cos\\alpha$",
-        "$F=2F_1\\cos\\left(\\dfrac{\\alpha}{2}\\right)$",
-        "$F=2F_1\\sin\\left(\\dfrac{\\alpha}{2}\\right)$",
-        "$F=F_1\\cos\\left(\\dfrac{\\alpha}{2}\\right)$"
-      ],
-      "answer": 1,
-      "explanation": "Khi $F_1=F_2$ thì $F=2F_1\\cos\\left(\\dfrac{\\alpha}{2}\\right)$."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "dinh_nghia",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 3,
-      "question": "Điện tích điểm là",
-      "options": [
-        "vật tích điện có kích thước rất nhỏ so với khoảng cách đang xét",
-        "vật tích điện có khối lượng rất nhỏ",
-        "vật tích điện có điện tích rất nhỏ",
-        "vật tích điện có dạng hình cầu"
-      ],
-      "answer": 0,
-      "explanation": "Vật tích điện có kích thước rất nhỏ so với khoảng cách đang xét được coi là điện tích điểm."
-    },
-    {
-      "type": "multiple_choice",
-      "kind": "hien_tuong",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Một vật trung hoà điện được cho tiếp xúc với một vật đã nhiễm điện dương. Sau khi tiếp xúc, vật ban đầu trung hoà sẽ",
-      "options": [
-        "nhiễm điện âm",
-        "nhiễm điện dương",
-        "vẫn trung hoà",
-        "nhiễm điện hai đầu trái dấu"
-      ],
-      "answer": 1,
-      "explanation": "Nhiễm điện do tiếp xúc làm vật nhiễm điện cùng dấu với vật đã nhiễm điện."
-    },
-    {
-      "type": "true_false",
-      "kind": "dinh_luat",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xét định luật Coulomb. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Lực hút hay đẩy giữa hai điện tích điểm có phương trùng với đường thẳng nối hai điện tích.",
-          "answer": true
-        },
-        {
-          "text": "Độ lớn lực tỉ lệ nghịch với tích độ lớn hai điện tích.",
-          "answer": false
-        },
-        {
-          "text": "Độ lớn lực tỉ lệ nghịch với bình phương khoảng cách giữa hai điện tích.",
-          "answer": true
-        },
-        {
-          "text": "Trong chân không, lực tương tác phụ thuộc hằng số điện môi $\\varepsilon$ của môi trường.",
-          "answer": false
-        }
-      ],
-      "explanation": "Lực tỉ lệ thuận với tích $|q_1q_2|$ và tỉ lệ nghịch với $r^2$; trong chân không $\\varepsilon=1$."
-    },
-    {
-      "type": "true_false",
-      "kind": "dieu_kien",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Xét vector lực tương tác giữa hai điện tích. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Điểm đặt tại mỗi điện tích.",
-          "answer": true
-        },
-        {
-          "text": "Hai điện tích cùng dấu ($q_1q_2>0$) thì hút nhau.",
-          "answer": false
-        },
-        {
-          "text": "Hai điện tích trái dấu ($q_1q_2<0$) thì hút nhau.",
-          "answer": true
-        },
-        {
-          "text": "Phương của lực vuông góc với đường nối hai điện tích.",
-          "answer": false
-        }
-      ],
-      "explanation": "Lực có phương trùng đường nối; đẩy nếu cùng dấu, hút nếu trái dấu."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Xét công thức $F=k\\dfrac{\\left|q_1q_2\\right|}{r^2}$ trong chân không. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "$k=9.10^9\\ \\dfrac{N.m^2}{C^2}$.",
-          "answer": true
-        },
-        {
-          "text": "$k=\\dfrac{1}{4\\pi\\varepsilon_0}$.",
-          "answer": true
-        },
-        {
-          "text": "$r$ là khoảng cách giữa hai điện tích, đơn vị là cm.",
-          "answer": false
-        },
-        {
-          "text": "$F$ là lực điện, đơn vị là N.",
-          "answer": true
-        }
-      ],
-      "explanation": "Trong công thức $r$ tính bằng mét; $k=\\dfrac{1}{4\\pi\\varepsilon_0}=9.10^9$ và $F$ tính bằng N."
-    },
-    {
-      "type": "true_false",
-      "kind": "cong_thuc",
-      "topic": "Cân bằng của điện tích chịu nhiều lực",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Xét tổng hợp hai lực điện $\\vec{F_1},\\vec{F_2}$ tác dụng lên một điện tích. Các phát biểu sau đúng hay sai?",
-      "statements": [
-        {
-          "text": "Hai lực cùng chiều thì $F=F_1+F_2$.",
-          "answer": true
-        },
-        {
-          "text": "Hai lực ngược chiều thì $F=F_1+F_2$.",
-          "answer": false
-        },
-        {
-          "text": "Hai lực ngược chiều thì $F=\\left|F_1-F_2\\right|$.",
-          "answer": true
-        },
-        {
-          "text": "Hai lực hợp góc $\\alpha$ bất kì thì $F^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$.",
-          "answer": true
-        }
-      ],
-      "explanation": "Đúng theo bảng tổng hợp lực trong bài: cùng chiều cộng, ngược chiều lấy hiệu, góc bất kì dùng công thức có $\\cos\\alpha$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 1,
-      "question": "Điện tích của vật luôn là bội số của $\\left|e\\right|=1{,}6.10^{-x}\\ C$. Tìm $x$.",
-      "answer": "19",
-      "explanation": "Bài nêu $\\left|e\\right|=1{,}6.10^{-19}C$ nên $x=19$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "dinh_nghia",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 0,
-      "question": "Có bao nhiêu cách làm vật nhiễm điện được nêu trong bài (cọ xát, tiếp xúc, hưởng ứng)?",
-      "answer": "3",
-      "explanation": "Bài nêu ba cách làm vật nhiễm điện: cọ xát, tiếp xúc, hưởng ứng."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 2,
-      "question": "Hai quả cầu kim loại giống hệt nhau mang điện tích $+6\\ \\mu C$ và $-2\\ \\mu C$ được cho tiếp xúc rồi tách ra. Điện tích mỗi quả sau đó là bao nhiêu $\\mu C$?",
-      "answer": "2",
-      "explanation": "$q'=\\dfrac{q_1+q_2}{2}=\\dfrac{6-2}{2}=2\\ \\mu C$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "bien_doi",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Giữ nguyên các điện tích, giảm khoảng cách giữa hai điện tích điểm đi một nửa thì lực tương tác tăng lên bao nhiêu lần?",
-      "answer": "4",
-      "explanation": "$F\\sim\\dfrac{1}{r^2}$ nên $r$ giảm 2 lần thì $F$ tăng $2^2=4$ lần."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Cân bằng của điện tích chịu nhiều lực",
-      "form": "ly_thuyet",
-      "difficulty": "de",
-      "difficultySource": "ai",
-      "theorySection": 5,
-      "question": "Hai lực điện vuông góc có độ lớn $3\\ N$ và $4\\ N$ cùng tác dụng lên một điện tích. Độ lớn hợp lực là bao nhiêu N?",
-      "answer": "5",
-      "explanation": "$F=\\sqrt{3^2+4^2}=5\\ N$."
-    },
-    {
-      "type": "short_answer",
-      "kind": "tinh_nhanh",
-      "topic": "Định luật Coulomb",
-      "form": "ly_thuyet",
-      "difficulty": "trung-binh",
-      "difficultySource": "ai",
-      "theorySection": 4,
-      "question": "Lực tương tác giữa hai điện tích điểm trong chân không là $8\\ N$. Đặt chúng trong điện môi đồng tính có $\\varepsilon=4$ (giữ nguyên khoảng cách) thì lực là bao nhiêu N?",
-      "answer": "2",
-      "explanation": "Trong điện môi lực giảm $\\varepsilon$ lần: $F=\\dfrac{8}{4}=2\\ N$."
+     "text": "Lon nhôm lăn về phía thước vì tổng điện tích của lon khác không.",
+     "answer": false
     }
-  ]
+   ],
+   "explanation": "Cọ xát chỉ làm electron dời chỗ, hai vật nhiễm điện trái dấu. Lon nhôm nhiễm điện do hưởng ứng, tổng điện tích vẫn bằng không; đầu gần trái dấu ở gần hơn nên bị hút mạnh hơn đầu xa bị đẩy.",
+   "distractorNotes": {
+    "0": "Cọ xát làm electron chuyển từ vật này sang vật kia nên hai vật luôn nhiễm điện trái dấu.",
+    "1": "Điện tích không tự sinh ra; cọ xát chỉ làm electron dời chỗ theo bảo toàn điện tích.",
+    "2": "Thước không chạm lon nên lon nhiễm điện hưởng ứng, đầu gần mang dấu ngược với thước.",
+    "3": "Hưởng ứng không thêm bớt electron nên tổng điện tích lon vẫn bằng không; lon bị hút vì đầu trái dấu ở gần hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Cân bằng của điện tích chịu nhiều lực",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đặt điện tích $q_1 = +q$ tại A và $q_2 = -9q$ tại B. Xét vị trí C đặt điện tích $q_0$ để $q_0$ cân bằng dưới tác dụng của hai lực điện.",
+   "statements": [
+    {
+     "text": "Điểm C nằm trên đường thẳng AB.",
+     "answer": true
+    },
+    {
+     "text": "Điểm C nằm trong đoạn AB.",
+     "answer": false
+    },
+    {
+     "text": "Điểm C ở gần A hơn B.",
+     "answer": true
+    },
+    {
+     "text": "Nếu đổi dấu $q_0$ thì vị trí điểm C thay đổi.",
+     "answer": false
+    }
+   ],
+   "explanation": "Hai lực phải cùng phương, ngược chiều nên C nằm trên đường AB; hai điện tích trái dấu thì C ở ngoài đoạn AB, gần điện tích độ lớn nhỏ hơn (A). Kết quả không phụ thuộc dấu và độ lớn của $q_0$.",
+   "distractorNotes": {
+    "0": "Hai lực chỉ triệt tiêu khi cùng phương, nên C bắt buộc nằm trên đường thẳng AB.",
+    "1": "Trong đoạn AB, lực hút và lực đẩy của hai điện tích trái dấu cùng chiều nhau nên không triệt tiêu.",
+    "2": "Điểm cân bằng luôn gần điện tích có độ lớn nhỏ hơn, ở đây là $+q$ tại A.",
+    "3": "Đổi dấu $q_0$ thì cả hai lực cùng đổi chiều, vẫn triệt tiêu nên vị trí C giữ nguyên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Định luật Coulomb",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Độ lớn lực tương tác giữa hai điện tích điểm $q_1$, $q_2$ cách nhau $r$ trong môi trường có hằng số điện môi $\\varepsilon$ là",
+   "options": [
+    "$F = k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$",
+    "$F = k\\dfrac{\\varepsilon|q_1q_2|}{r^2}$",
+    "$F = k\\dfrac{|q_1q_2|}{\\varepsilon r}$",
+    "$F = k\\dfrac{\\varepsilon r^2}{|q_1q_2|}$"
+   ],
+   "answer": 0,
+   "explanation": "Công thức định luật Coulomb trong bài: $F = k\\dfrac{|q_1q_2|}{\\varepsilon r^2}$; trong điện môi lực giảm $\\varepsilon$ lần.",
+   "distractorNotes": {
+    "B": "Đặt $\\varepsilon$ ở tử làm lực tăng trong điện môi, trái với việc lực giảm $\\varepsilon$ lần.",
+    "C": "Thiếu bình phương khoảng cách ở mẫu số.",
+    "D": "Đảo tử và mẫu, khiến lực tăng khi khoảng cách tăng và giảm khi điện tích tăng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "don_vi",
+   "topic": "Định luật Coulomb",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong hệ SI, đơn vị của hằng số $k$ trong định luật Coulomb là",
+   "options": [
+    "C²/(N·m²)",
+    "N·m/C²",
+    "N·m²/C²",
+    "N·m²/C"
+   ],
+   "answer": 2,
+   "explanation": "Bài ghi $k = 9\\cdot10^9$ N·m²/C²; suy từ $k = \\dfrac{Fr^2}{|q_1q_2|}$.",
+   "distractorNotes": {
+    "A": "Nhầm với đơn vị của $\\varepsilon_0$, là nghịch đảo đơn vị của $k$.",
+    "B": "Thiếu bình phương mét do quên $r^2$ khi suy từ $k = \\dfrac{Fr^2}{|q_1q_2|}$.",
+    "D": "Thiếu bình phương culông do quên mẫu số là tích hai điện tích $|q_1q_2|$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật Coulomb",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên hai điện tích điểm và môi trường, tăng khoảng cách giữa chúng lên 2 lần thì độ lớn lực tương tác",
+   "options": [
+    "giảm 2 lần",
+    "giảm 4 lần",
+    "tăng 2 lần",
+    "tăng 4 lần"
+   ],
+   "answer": 1,
+   "explanation": "$F$ tỉ lệ nghịch với $r^2$: $r$ tăng 2 lần thì $F$ giảm $2^2 = 4$ lần.",
+   "distractorNotes": {
+    "A": "Quên bình phương khoảng cách trong công thức Coulomb.",
+    "C": "Lực điện giảm khi khoảng cách tăng, không thể tăng theo khoảng cách.",
+    "D": "Đúng hệ số bình phương nhưng nhầm chiều; $r^2$ ở mẫu số nên lực phải giảm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật Coulomb",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điện tích điểm đặt trong không khí. Giữ nguyên khoảng cách, đưa chúng vào dầu có hằng số điện môi $\\varepsilon = 2$ thì lực tương tác",
+   "options": [
+    "tăng 2 lần",
+    "tăng 4 lần",
+    "giảm 4 lần",
+    "giảm 2 lần"
+   ],
+   "answer": 3,
+   "explanation": "Trong điện môi lực giảm $\\varepsilon$ lần so với chân không (không khí $\\varepsilon \\approx 1$), nên giảm 2 lần.",
+   "distractorNotes": {
+    "A": "Đặt $\\varepsilon$ ở tử số; thực ra $\\varepsilon$ ở mẫu nên lực giảm trong điện môi.",
+    "B": "Vừa nhầm chiều vừa bình phương $\\varepsilon$; công thức chỉ chia cho $\\varepsilon$ một lần.",
+    "C": "Bình phương nhầm $\\varepsilon$; chỉ khoảng cách $r$ mới có bình phương trong công thức."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Lực tương tác giữa hai điện tích",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích $q_0$ chịu hai lực điện $\\vec F_1$ và $\\vec F_2$ vuông góc với nhau. Độ lớn hợp lực tác dụng lên $q_0$ là",
+   "options": [
+    "$F = \\sqrt{F_1^2 + F_2^2}$",
+    "$F = F_1 + F_2$",
+    "$F = |F_1 - F_2|$",
+    "$F = \\sqrt{|F_1^2 - F_2^2|}$"
+   ],
+   "answer": 0,
+   "explanation": "Theo bảng tổng hợp lực: hai lực vuông góc thì $F = \\sqrt{F_1^2 + F_2^2}$ (quy tắc hình bình hành).",
+   "distractorNotes": {
+    "B": "Cộng trực tiếp độ lớn chỉ đúng khi hai lực cùng chiều.",
+    "C": "Lấy hiệu độ lớn chỉ đúng khi hai lực ngược chiều.",
+    "D": "Sai dấu định lí Pitago; hai lực vuông góc thì cộng bình phương, không trừ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Cân bằng của điện tích chịu nhiều lực",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích $q_0$ cân bằng tại C dưới tác dụng của $q_1$ (cách C đoạn $r_1$) và $q_2$ (cách C đoạn $r_2$). Hệ thức đúng là",
+   "options": [
+    "$\\dfrac{r_1}{r_2} = \\dfrac{|q_1|}{|q_2|}$",
+    "$\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{|q_1|}{|q_2|}}$",
+    "$\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{|q_2|}{|q_1|}}$",
+    "$\\dfrac{r_1}{r_2} = \\dfrac{|q_2|}{|q_1|}$"
+   ],
+   "answer": 1,
+   "explanation": "Hai lực bằng độ lớn: $\\dfrac{|q_1|}{r_1^2} = \\dfrac{|q_2|}{r_2^2}$, suy ra $\\dfrac{r_1}{r_2} = \\sqrt{\\dfrac{|q_1|}{|q_2|}}$.",
+   "distractorNotes": {
+    "A": "Quên khai căn khi chuyển từ tỉ số $r^2$ về tỉ số $r$.",
+    "C": "Đảo tỉ số khi biến đổi, khiến điểm cân bằng gần điện tích lớn hơn.",
+    "D": "Vừa quên khai căn vừa đảo tỉ số điện tích."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Định luật Coulomb",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điện tích điểm $q_1$, $q_2$ đặt cách nhau khoảng $r$ trong không khí, tương tác với nhau bằng lực có độ lớn $F$.",
+   "statements": [
+    {
+     "text": "Trong không khí lấy $\\varepsilon \\approx 1$, nên $F = k\\dfrac{|q_1q_2|}{r^2}$.",
+     "answer": true
+    },
+    {
+     "text": "Khi tính $F$, phải thay $\\varepsilon_0 = 8{,}85\\cdot10^{-12}$ vào chỗ $\\varepsilon$ trong công thức.",
+     "answer": false
+    },
+    {
+     "text": "Tăng $|q_1|$ gấp đôi, giữ nguyên $q_2$ và $r$ thì $F$ tăng gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Khoảng cách tăng 2 lần và $|q_1|$ giảm 2 lần thì $F$ giảm 4 lần.",
+     "answer": false
+    }
+   ],
+   "explanation": "Không khí có $\\varepsilon \\approx 1$; $\\varepsilon_0$ chỉ dùng để tính ra $k$. $F$ tỉ lệ với $|q_1q_2|$ và nghịch với $r^2$: $r$ tăng 2 lần, $|q_1|$ giảm 2 lần thì $F$ giảm $2\\cdot2^2 = 8$ lần.",
+   "distractorNotes": {
+    "0": "Bài nêu rõ không khí có $\\varepsilon \\approx 1$ nên bỏ được $\\varepsilon$ khỏi công thức.",
+    "1": "$\\varepsilon_0$ chỉ dùng để tính $k = \\dfrac{1}{4\\pi\\varepsilon_0}$; $\\varepsilon$ là hằng số điện môi không đơn vị, $\\varepsilon \\ge 1$.",
+    "2": "$F$ tỉ lệ thuận với tích $|q_1q_2|$, nên một điện tích gấp đôi thì lực gấp đôi.",
+    "3": "Chỉ tính phần do khoảng cách mà quên điện tích giảm 2 lần; lực giảm $2\\times2^2 = 8$ lần."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Lực tương tác giữa hai điện tích",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai quả cầu nhỏ giống hệt nhau mang điện tích $+6\\ \\mu$C và $-2\\ \\mu$C. Cho chúng chạm nhau rồi tách ra, đặt lại đúng khoảng cách cũ.",
+   "statements": [
+    {
+     "text": "Sau khi tách, mỗi quả mang điện tích $+2\\ \\mu$C.",
+     "answer": true
+    },
+    {
+     "text": "Sau khi tách, mỗi quả mang điện tích $+4\\ \\mu$C.",
+     "answer": false
+    },
+    {
+     "text": "Sau khi tách, hai quả đẩy nhau.",
+     "answer": true
+    },
+    {
+     "text": "Lực tương tác sau khi tách lớn hơn lúc đầu.",
+     "answer": false
+    }
+   ],
+   "explanation": "Theo $q' = \\dfrac{q_1 + q_2}{2}$ cộng có dấu: $\\dfrac{6 + (-2)}{2} = +2\\ \\mu$C, cùng dấu nên đẩy nhau. Tích độ lớn từ 12 còn 4 nên lực giảm 3 lần.",
+   "distractorNotes": {
+    "0": "Cộng có dấu $6 + (-2) = 4$ rồi chia đều cho hai quả giống hệt được đúng $+2\\ \\mu$C.",
+    "1": "Cộng độ lớn $6 + 2$ rồi chia đôi là bỏ mất dấu âm của điện tích.",
+    "2": "Sau khi tách hai quả cùng mang điện dương nên đẩy nhau, không còn hút.",
+    "3": "Ở cùng khoảng cách, tích độ lớn điện tích giảm từ $6\\cdot2$ xuống $2\\cdot2$ nên lực nhỏ đi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Lực tương tác giữa hai điện tích",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện tích $q_0$ chịu tác dụng đồng thời hai lực điện $\\vec F_1$ và $\\vec F_2$ do hai điện tích khác gây ra; $\\alpha$ là góc giữa hai vectơ lực đặt chung gốc tại $q_0$.",
+   "statements": [
+    {
+     "text": "Lực tổng hợp tính theo nguyên lí chồng chất $\\vec F = \\vec F_1 + \\vec F_2$.",
+     "answer": true
+    },
+    {
+     "text": "Hai lực cùng chiều thì $F = |F_1 - F_2|$.",
+     "answer": false
+    },
+    {
+     "text": "Hai lực có độ lớn bằng nhau thì $F = 2F_1\\cos\\dfrac{\\alpha}{2}$.",
+     "answer": true
+    },
+    {
+     "text": "Với góc $\\alpha$ bất kì, $F^2 = F_1^2 + F_2^2 - 2F_1F_2\\cos\\alpha$.",
+     "answer": false
+    }
+   ],
+   "explanation": "Bài nêu nguyên lí chồng chất và bảng hợp lực: cùng chiều $F = F_1 + F_2$; góc bất kì $F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$; hai lực bằng nhau $F = 2F_1\\cos\\dfrac{\\alpha}{2}$.",
+   "distractorNotes": {
+    "0": "Các lực điện cộng theo quy tắc vectơ, đó chính là nguyên lí chồng chất nêu trong bài.",
+    "1": "Lấy hiệu độ lớn chỉ dùng khi hai lực ngược chiều; cùng chiều thì cộng độ lớn.",
+    "2": "Đây là trường hợp riêng của công thức góc bất kì khi $F_1 = F_2$, bài đã nêu rõ.",
+    "3": "Sai dấu: với $\\alpha$ là góc giữa hai lực chung gốc, số hạng $2F_1F_2\\cos\\alpha$ mang dấu cộng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Cân bằng của điện tích chịu nhiều lực",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Hai quả cầu nhỏ giống nhau, tích điện bằng nhau, treo vào cùng một điểm bằng hai dây mảnh cách điện dài bằng nhau. Chúng đẩy nhau; khi cân bằng, mỗi dây lệch góc $\\alpha$ so với phương thẳng đứng.",
+   "statements": [
+    {
+     "text": "Mỗi quả chịu trọng lực $\\vec P$, lực điện $\\vec F$ nằm ngang và lực căng $\\vec T$ dọc dây.",
+     "answer": true
+    },
+    {
+     "text": "Hai quả cầu mang điện tích trái dấu.",
+     "answer": false
+    },
+    {
+     "text": "Góc lệch thoả mãn $\\tan\\alpha = \\dfrac{F}{P}$.",
+     "answer": true
+    },
+    {
+     "text": "Từ $|q| = r\\sqrt{F/k}$, giữ nguyên $r$ mà lực điện tăng 4 lần thì $|q|$ tăng 4 lần.",
+     "answer": false
+    }
+   ],
+   "explanation": "Cân bằng $\\vec P + \\vec T + \\vec F = \\vec 0$, tam giác lực vuông cho $\\tan\\alpha = \\dfrac{F}{P}$. Hai quả đẩy nhau nên cùng dấu; $|q|$ tỉ lệ với $\\sqrt{F}$ nên lực gấp 4 thì $q$ chỉ gấp 2.",
+   "distractorNotes": {
+    "0": "Lời giải mẫu liệt kê đúng ba lực này; lực điện nằm ngang theo đường nối hai quả.",
+    "1": "Hai quả đẩy nhau nên phải cùng dấu; trái dấu thì hút nhau và chạm vào nhau.",
+    "2": "Trong tam giác lực, cạnh đối góc $\\alpha$ là $F$, cạnh kề là $P$, nên $\\tan\\alpha = F/P$.",
+    "3": "Quên căn bậc hai: $|q|$ tỉ lệ với $\\sqrt{F}$, lực gấp 4 lần thì $|q|$ chỉ gấp 2 lần."
+   }
+  }
+ ]
 }
