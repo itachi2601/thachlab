@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
@@ -12,11 +12,19 @@ import type { SchoolClass } from "@/features/exams/types";
 
 const inputCls = "w-full rounded-ui-md border border-white/10 bg-white/5 px-4 py-2.5 text-white focus:border-primary focus:outline-none placeholder:text-slate-600";
 
-function readInternalNext(): string | null {
-  if (typeof window === "undefined") return null;
-  const next = new URLSearchParams(window.location.search).get("next");
+const searchSubscribe = () => () => {};
+const getSearchSnapshot = () => (typeof window === "undefined" ? "" : window.location.search);
+const getSearchServerSnapshot = () => "";
+
+function extractInternalNext(search: string): string | null {
+  const next = new URLSearchParams(search).get("next");
   if (next && /^\/(?!\/)/.test(next)) return next;
   return null;
+}
+
+function readInternalNext(): string | null {
+  if (typeof window === "undefined") return null;
+  return extractInternalNext(window.location.search);
 }
 
 export default function RegisterPage() {
@@ -37,28 +45,31 @@ export default function RegisterPage() {
   const [gender, setGender] = useState("");
   const [studentId, setStudentId] = useState("");
   const [classes, setClasses] = useState<SchoolClass[]>([]);
-  const [classId, setClassId] = useState("");
+  // null = người dùng chưa tự chọn khối lớp (để áp dụng gợi ý từ ?lop=)
+  const [pickedClassId, setPickedClassId] = useState<string | null>(null);
   const [error, setError] = useState("");
-  const [nextQuery, setNextQuery] = useState("");
 
-  useEffect(() => {
-    const next = readInternalNext();
-    if (next) setNextQuery(`?next=${encodeURIComponent(next)}`);
-  }, []);
+  const search = useSyncExternalStore(searchSubscribe, getSearchSnapshot, getSearchServerSnapshot);
+
+  const nextQuery = useMemo(() => {
+    const next = extractInternalNext(search);
+    return next ? `?next=${encodeURIComponent(next)}` : "";
+  }, [search]);
+
+  const lopParam = useMemo(() => new URLSearchParams(search).get("lop") ?? "", [search]);
+
+  const defaultClassId = useMemo(() => {
+    if (!lopParam || classes.length === 0) return "";
+    const hit = classes.find((item) => item.slug === lopParam || item.name === lopParam);
+    return hit ? String(hit.id) : "";
+  }, [lopParam, classes]);
+
+  const classId = pickedClassId ?? defaultClassId;
+  const setClassId = (value: string) => setPickedClassId(value);
 
   useEffect(() => {
     fetchClasses().then(setClasses).catch(() => setClasses([]));
   }, []);
-
-  useEffect(() => {
-    const lop = new URLSearchParams(window.location.search).get("lop");
-    if (!lop || classes.length === 0) return;
-    setClassId((cur) => {
-      if (cur) return cur;
-      const hit = classes.find((item) => item.slug === lop || item.name === lop);
-      return hit ? String(hit.id) : cur;
-    });
-  }, [classes]);
 
   const validateForm = (): boolean => {
     setError("");

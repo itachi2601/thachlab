@@ -26,7 +26,7 @@ export default function CrossCheckChecklist({ machine, lessonId, courseId }: { m
   const [error, setError] = useState("");
   const [result, setResult] = useState<{ passed: boolean; score: number; studentName: string } | null>(null);
   const [startedAt,setStartedAt]=useState("");
-  const [now,setNow]=useState(Date.now());
+  const [now,setNow]=useState(()=>Date.now());
 
   const config = cncChecklistConfig[lessonId];
   const sections = config.sections;
@@ -38,12 +38,16 @@ export default function CrossCheckChecklist({ machine, lessonId, courseId }: { m
   const passed = score >= 8 && criticalOk && zeroToleranceOk;
 
   const load = useCallback(() => {
-    if (!courseId) { setSessions([]); setClassmates([]); return; }
-    setLoadError("");
-    fetchChecklistSessions(courseId, lessonId)
-      .then((rows) => setSessions(rows.filter((row) => row.status === "open")))
+    const sessionsRequest = courseId
+      ? fetchChecklistSessions(courseId, lessonId)
+      : Promise.resolve<ChecklistSession[]>([]);
+    const classmatesRequest = courseId
+      ? fetchCourseClassmates(courseId)
+      : Promise.resolve<Classmate[]>([]);
+    sessionsRequest
+      .then((rows) => { if (courseId) setLoadError(""); setSessions(rows.filter((row) => row.status === "open")); })
       .catch((cause) => { setSessions([]); setLoadError(cause instanceof Error ? cause.message : "Không tải được phiên chấm."); });
-    fetchCourseClassmates(courseId)
+    classmatesRequest
       .then(setClassmates)
       .catch((cause) => { setClassmates([]); setLoadError(cause instanceof Error ? cause.message : "Không tải được danh sách bạn học."); });
   }, [courseId, lessonId]);
@@ -83,7 +87,7 @@ export default function CrossCheckChecklist({ machine, lessonId, courseId }: { m
       <ClipboardCheck size={19} />
       <div>
         <strong>Chưa có phiên chấm chéo nào đang mở</strong>
-        <p>Hỏi giáo viên mở "Phiên chấm thực hành" cho ca máy {machine} hiện tại, sau đó bấm làm mới.</p>
+        <p>Hỏi giáo viên mở &quot;Phiên chấm thực hành&quot; cho ca máy {machine} hiện tại, sau đó bấm làm mới.</p>
         {loadError && <p className="cnc-checklist-error">{loadError}</p>}
       </div>
       <button type="button" onClick={load} className="cnc-checklist-refresh"><RefreshCw size={15} /> Làm mới</button>

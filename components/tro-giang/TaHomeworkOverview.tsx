@@ -8,20 +8,22 @@ const dateText = (iso: string | null) =>
 
 /** Bài đã giao riêng 3 tuần gần nhất của một lớp: ai đã làm, điểm, ai trễ hạn. Nhóm theo đề, em chưa làm đứng trước. */
 export default function TaHomeworkOverview({ classId }: { classId: number }) {
-  const [rows, setRows] = useState<HomeworkOverviewRow[] | null>(null);
-  const [error, setError] = useState(false);
+  const [result, setResult] = useState<{ classId: number; rows: HomeworkOverviewRow[] | null; error: boolean } | null>(null);
 
   useEffect(() => {
     let alive = true;
-    setRows(null);
-    setError(false);
     fetchHomeworkOverview(classId)
-      .then((data) => alive && setRows(data))
-      .catch(() => alive && setError(true));
+      .then((data) => alive && setResult({ classId, rows: data, error: false }))
+      .catch(() => alive && setResult({ classId, rows: null, error: true }));
     return () => {
       alive = false;
     };
   }, [classId]);
+
+  // Kết quả chỉ dùng khi còn khớp lớp hiện tại; đổi lớp thì tự về trạng thái đang tải.
+  const current = result !== null && result.classId === classId ? result : null;
+  const rows = current ? current.rows : null;
+  const error = current ? current.error : false;
 
   const groups = useMemo(() => {
     const map = new Map<number, { title: string; dueAt: string | null; items: HomeworkOverviewRow[] }>();

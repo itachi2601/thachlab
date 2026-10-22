@@ -174,12 +174,11 @@ function PreviewThptHome({studentId,profile,onSignOut}:{studentId:string;profile
 function Account(){
   const router=useRouter();const{session,profile,signOut,previewMode}=useAuth();
   const [enrollments,setEnrollments]=useState<Enrollment[]|undefined>(undefined);
-  const [pickedCourseId,setPickedCourseId]=useState<number|null>(null);
-  useEffect(()=>{try{const v=Number(window.localStorage.getItem("tl-tai-khoan-lop"));if(v>0)setPickedCourseId(v);}catch{}},[]);
+  const [pickedCourseId,setPickedCourseId]=useState<number|null>(()=>{try{const v=Number(window.localStorage.getItem("tl-tai-khoan-lop"));return v>0?v:null;}catch{return null;}});
   const enrollment:Enrollment|null|undefined=enrollments===undefined?undefined:(enrollments.find(e=>e.course.id===pickedCourseId)??enrollments[0]??null);
   const pickCourse=(id:number)=>{setPickedCourseId(id);try{window.localStorage.setItem("tl-tai-khoan-lop",String(id));}catch{}};
   const [classRequest,setClassRequest]=useState<MyClassRequest|null|undefined>(undefined);
-  const [records,setRecords]=useState<CncLearningRecord[]>([]);
+  const [recordsState,setRecordsState]=useState<{courseId:number;items:CncLearningRecord[]}|null>(null);
   const isStaff=profile?.role==="admin"||profile?.role==="instructor";
   const isParent=profile?.role==="parent";
   const reload=useCallback(()=>{
@@ -199,11 +198,12 @@ function Account(){
   },[session,isStaff,isParent,enrollments,reload]);
   const activeCourseId=enrollment?.status==="active"?enrollment.course.id:null;
   useEffect(()=>{
-    if(!session||activeCourseId===null){setRecords([]);return;}
+    if(!session||activeCourseId===null)return;
     let cancelled=false;
-    fetchCncLearningRecords(activeCourseId,session.user.id).catch(()=>[]).then(own=>{if(!cancelled)setRecords(own);});
+    fetchCncLearningRecords(activeCourseId,session.user.id).catch(()=>[]).then(own=>{if(!cancelled)setRecordsState({courseId:activeCourseId,items:own});});
     return()=>{cancelled=true;};
   },[session,activeCourseId]);
+  const records:CncLearningRecord[]=activeCourseId!==null&&recordsState!==null&&recordsState.courseId===activeCourseId?recordsState.items:[];
 
   if(!session)return <p className="rounded-2xl border border-line bg-panel p-6 text-muted">Đang tải không gian học tập…</p>;
   const welcome=(v:WelcomeVariant)=><WelcomePanel variant={v} userId={session.user.id} name={profile?.full_name} loginKey={v==="welcome_back"?session.user.last_sign_in_at:undefined}/>;

@@ -117,11 +117,13 @@ export default function RankCelebrationWatcher() {
 
   useEffect(() => {
     if (!uid || !isStudent || quiet || isStudentPreview()) return;
-    void check();
+    // Lần kiểm đầu tiên chạy trong callback (sau commit) thay vì đồng bộ trong thân effect.
+    const initial = window.setTimeout(() => void check(), 0);
     const onVis = () => void check();
     document.addEventListener("visibilitychange", onVis);
     window.addEventListener("thachlab:rank-check", onVis);
     return () => {
+      window.clearTimeout(initial);
       document.removeEventListener("visibilitychange", onVis);
       window.removeEventListener("thachlab:rank-check", onVis);
     };

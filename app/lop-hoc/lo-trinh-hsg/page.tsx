@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -29,6 +29,40 @@ import {
 import { SessionLessons, TaskList, type LessonProgressMap } from "@/components/lop-hoc/Hsg9Parts";
 
 /**
+ * Nguồn ngoài (URL, localStorage) đọc qua useSyncExternalStore thay vì setState trong effect.
+ * Dấu tick là ghi chép riêng trên máy nên giữ trong một store nhỏ ở phạm vi module.
+ */
+const EMPTY_TICKS: Record<string, boolean> = {};
+let ticksStore: { key: string; value: Record<string, boolean> } | null = null;
+const ticksListeners = new Set<() => void>();
+
+function subscribeTicks(listener: () => void): () => void {
+  ticksListeners.add(listener);
+  return () => {
+    ticksListeners.delete(listener);
+  };
+}
+
+function readTicksSnapshot(key: string): Record<string, boolean> {
+  if (!ticksStore || ticksStore.key !== key) ticksStore = { key, value: loadTicks(key) };
+  return ticksStore.value;
+}
+
+function commitTicks(key: string, value: Record<string, boolean>) {
+  ticksStore = { key, value };
+  saveTicks(key, value);
+  for (const listener of ticksListeners) listener();
+}
+
+const subscribeNoop = () => () => {};
+
+/** Ngày xem lộ trình: ?ngay=yyyy-mm-dd nếu hợp lệ, ngược lại là hôm nay (giờ VN). */
+function readTodaySnapshot(): string {
+  const ngay = new URLSearchParams(window.location.search).get("ngay");
+  return ngay && /^\d{4}-\d{2}-\d{2}$/.test(ngay) ? ngay : todayVn();
+}
+
+/**
  * Lộ trình 18 buổi thứ Bảy của khoá HSG Vật lí 9 cho học sinh.
  * Thứ tự theo việc cần làm (G3, N1): tuần này → ôn lại → các buổi sắp tới; buổi đã qua thu gọn.
  * Không điểm thưởng/xếp hạng (L3): tiến độ bài lấy từ dấu đã học của chính em, dấu tick là ghi chép riêng.
@@ -37,22 +71,34 @@ export default function LoTrinhHsgPage() {
   const { session } = useAuth();
   const { isTeacherView } = useTeacherView();
   const userId = session?.user.id ?? null;
-  const [today, setToday] = useState<string | null>(null);
+  // ?ngay=yyyy-mm-dd: xem trước lộ trình như vào ngày đó (thầy soát, hoặc em xem tuần sau).
+  const today = useSyncExternalStore<string | null>(subscribeNoop, readTodaySnapshot, () => null);
+  const ticksKey = userId && !isTeacherView ? userId : null;
+  const ticks = useSyncExternalStore<Record<string, boolean>>(
+    subscribeTicks,
+    () => (ticksKey ? readTicksSnapshot(ticksKey) : EMPTY_TICKS),
+    () => EMPTY_TICKS,
+  );
   const [lessons, setLessons] = useState<LessonWithItemRefs[] | null>(null);
   const [marks, setMarks] = useState<MyProgressMarks | null>(null);
-  const [ticks, setTicks] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    // ?ngay=yyyy-mm-dd: xem trước lộ trình như vào ngày đó (thầy soát, hoặc em xem tuần sau).
-    const ngay = new URLSearchParams(window.location.search).get("ngay");
-    setToday(ngay && /^\d{4}-\d{2}-\d{2}$/.test(ngay) ? ngay : todayVn());
     if (supabaseConfigured) fetchLessonsStatic(setLessons).then(setLessons).catch(() => setLessons([]));
   }, []);
 
   useEffect(() => {
     if (!userId || !supabaseConfigured || isTeacherView) return;
-    setTicks(loadTicks(userId));
-    fetchMyProgressMarks(userId).then(setMarks).catch(() => setMarks(null));
+    let cancelled = false;
+    fetchMyProgressMarks(userId)
+      .then((result) => {
+        if (!cancelled) setMarks(result);
+      })
+      .catch(() => {
+        if (!cancelled) setMarks(null);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [userId, isTeacherView]);
 
   const progress: LessonProgressMap | null = useMemo(
@@ -62,9 +108,7 @@ export default function LoTrinhHsgPage() {
 
   const toggle = userId && !isTeacherView
     ? (id: string) => {
-        const next = { ...ticks, [id]: !ticks[id] };
-        setTicks(next);
-        saveTicks(userId, next);
+        commitTicks(userId, { ...ticks, [id]: !ticks[id] });
       }
     : null;
 

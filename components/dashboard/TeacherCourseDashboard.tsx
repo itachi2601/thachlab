@@ -91,15 +91,16 @@ export default function TeacherCourseDashboard() {
   const availableSubjects = isInstructor ? SUBJECTS.filter((item) => item.isPracticum || item.code === "khac" || item.code === "avcn" || item.code === HOMEROOM_SUBJECT_CODE) : SUBJECTS;
   const [subjectCode, setSubjectCode] = useState<string>(availableSubjects[0]?.code ?? SUBJECTS[0].code);
   const [courses, setCourses] = useState<CourseOffering[]>([]);
-  const [selectedCourseId, setSelectedCourseId] = useState<number | null>(null);
-  const [students, setStudents] = useState<DashboardStudent[]>([]);
+  const [selectedCourseIdState, setSelectedCourseIdState] = useState<number | null>(null);
+  // Học sinh được nạp theo lớp và ghi nhớ lớp của lần nạp gần nhất, để suy ra lúc render
+  // (tương đương việc reset danh sách khi lớp đang chọn bị bộ lọc loại ra).
+  const [loadedStudents, setLoadedStudents] = useState<DashboardStudent[]>([]);
+  const [studentsCourseId, setStudentsCourseId] = useState<number | null>(null);
   const [courseError, setCourseError] = useState("");
   const [roadmap, setRoadmap] = useState<CncLesson[]>([]);
   useEffect(() => {
     fetchCncLessons().then((rows) => setRoadmap(rows.filter((row) => row.id !== "intro"))).catch(() => undefined);
   }, []);
-  const student = students[activeStudent] ?? null;
-  const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? null;
   // Bộ lọc danh sách lớp: tìm theo tên/mã, năm học, trạng thái.
   const [courseQuery, setCourseQuery] = useState("");
   const [courseYear, setCourseYear] = useState("");
@@ -118,9 +119,19 @@ export default function TeacherCourseDashboard() {
   const isHomeroom = subjectCode === HOMEROOM_SUBJECT_CODE;
 
   // Lớp chủ nhiệm chỉ dùng 4 tab: Điểm danh · Sinh hoạt lớp · Bảng điểm · Danh sách lớp.
-  useEffect(() => {
-    if (isHomeroom && !["attendance", "shcn", "grades", "roster"].includes(activeTab)) setActiveTab("attendance");
-  }, [isHomeroom, activeTab]);
+  // Suy ra tab hiển thị ngay lúc render thay vì setState trong effect.
+  const homeroomTabs: readonly string[] = ["attendance", "shcn", "grades", "roster"];
+  const currentTab = isHomeroom && !homeroomTabs.includes(activeTab) ? "attendance" : activeTab;
+
+  // Lớp đang chọn bị bộ lọc loại ra thì chuyển sang lớp đầu tiên còn lại.
+  // Suy ra giá trị lúc render (không reset bằng setState trong effect).
+  const selectedCourseId = courses.length > 0 && !filteredCourses.some((course) => course.id === selectedCourseIdState)
+    ? filteredCourses[0]?.id ?? null
+    : selectedCourseIdState;
+  const studentsMatchSelectedCourse = studentsCourseId === selectedCourseId;
+  const students = studentsMatchSelectedCourse ? loadedStudents : [];
+  const student = students[studentsMatchSelectedCourse ? activeStudent : 0] ?? null;
+  const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? null;
 
   const openProfile = (id: string) => {
     const index = students.findIndex((item) => item.id === id);
@@ -129,19 +140,13 @@ export default function TeacherCourseDashboard() {
   };
 
   const [coursesNonce, setCoursesNonce] = useState(0);
-  // Lớp đang chọn bị bộ lọc loại ra thì chuyển sang lớp đầu tiên còn lại.
-  useEffect(() => {
-    if (!courses.length || filteredCourses.some((course) => course.id === selectedCourseId)) return;
-    setStudents([]); setActiveStudent(0);
-    setSelectedCourseId(filteredCourses[0]?.id ?? null);
-  }, [courses, courseQuery, courseYear, courseStatus]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     let cancelled = false;
     fetchCncCourses(subjectCode)
       .then((rows) => {
         if (cancelled) return;
         setCourses(rows);
-        setSelectedCourseId((current) => rows.some((course) => course.id === current) ? current : rows[0]?.id ?? null);
+        setSelectedCourseIdState((current) => rows.some((course) => course.id === current) ? current : rows[0]?.id ?? null);
         setCourseError("");
       })
       .catch((error: unknown) => {
@@ -159,13 +164,15 @@ export default function TeacherCourseDashboard() {
     const reload = () => Promise.all([fetchCourseEnrollments(selectedCourseId), fetchCncLearningRecords(selectedCourseId).catch(()=>[])])
       .then(([rows,records]) => {
         if (cancelled) return;
-        setStudents(rows.filter((row) => row.status === "active" || row.status === "pending").map((row)=>toDashboardStudent(row,records,roadmap)));
+        setLoadedStudents(rows.filter((row) => row.status === "active" || row.status === "pending").map((row)=>toDashboardStudent(row,records,roadmap)));
+        setStudentsCourseId(selectedCourseId);
         setActiveStudent(0);
         setCourseError("");
       })
       .catch((error: unknown) => {
         if (cancelled) return;
-        setStudents([]);
+        setLoadedStudents([]);
+        setStudentsCourseId(selectedCourseId);
         setCourseError(error && typeof error === "object" && "message" in error ? String(error.message) : "Không tải được danh sách học sinh.");
       });
     void reload();
@@ -186,13 +193,13 @@ export default function TeacherCourseDashboard() {
     <section className="grid gap-3 rounded-2xl border border-line bg-panel p-4 sm:grid-cols-2 sm:p-5">
       <label className="block">
         <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted"><GraduationCap size={14}/> Môn học</span>
-        <select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseId(null);setCourseQuery("");setCourseYear("");setCourseStatus("all");setSubjectCode(event.target.value);}} className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink">
+        <select aria-label="Môn học" value={subjectCode} onChange={(event)=>{setCourses([]);setSelectedCourseIdState(null);setCourseQuery("");setCourseYear("");setCourseStatus("all");setSubjectCode(event.target.value);}} className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink">
           {availableSubjects.map((item)=><option key={item.code} value={item.code}>{item.label}</option>)}
         </select>
       </label>
       <label className="block">
         <span className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted"><Users2 size={14}/> Lớp đang dạy{courses.length>0 && ` · ${courseFiltered ? `${filteredCourses.length}/${courses.length}` : courses.length} lớp`}</span>
-        <select aria-label="Lớp đang dạy" value={selectedCourseId ?? ""} onChange={(event)=>{setStudents([]);setActiveStudent(0);setSelectedCourseId(Number(event.target.value));}} className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink">
+        <select aria-label="Lớp đang dạy" value={selectedCourseId ?? ""} onChange={(event)=>{setLoadedStudents([]);setActiveStudent(0);setSelectedCourseIdState(Number(event.target.value));}} className="w-full rounded-xl border border-line-strong bg-panel-deep px-4 py-3 text-sm font-semibold text-ink">
           <option value="" disabled>{courses.length ? (filteredCourses.length ? "Chọn lớp đang dạy" : "Không có lớp khớp bộ lọc") : "Chưa có lớp nào"}</option>
           {filteredCourses.map((course)=><option key={course.id} value={course.id}>{course.class_label || course.name} · {course.school_year}</option>)}
         </select>
@@ -213,32 +220,32 @@ export default function TeacherCourseDashboard() {
       </div>}
     </section>
 
-    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-line bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"shcn",label:"Sinh hoạt lớp",icon:NotebookPen},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>isHomeroom?["attendance","shcn","grades","roster"].includes(item.id):item.id!=="shcn").map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${activeTab===item.id?"bg-blue-600 text-white":"text-muted hover:bg-surface-2 hover:text-primary"}`}><Icon size={17}/>{item.label}</button>})}</nav>
+    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-line bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"shcn",label:"Sinh hoạt lớp",icon:NotebookPen},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>isHomeroom?["attendance","shcn","grades","roster"].includes(item.id):item.id!=="shcn").map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${currentTab===item.id?"bg-blue-600 text-white":"text-muted hover:bg-surface-2 hover:text-primary"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
-    {activeTab==="attendance"&&selectedCourseId&&(isHomeroom
+    {currentTab==="attendance"&&selectedCourseId&&(isHomeroom
       ? <HomeroomAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>
       : <TeacherAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} workshop={subject.workshop}/>)}
-    {activeTab==="shcn"&&selectedCourseId&&<HomeroomShcnPanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>}
-    {activeTab==="competencies"&&selectedCourseId&&(subject.hasCurriculum?<TeacherCompetencyHub courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
+    {currentTab==="shcn"&&selectedCourseId&&<HomeroomShcnPanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>}
+    {currentTab==="competencies"&&selectedCourseId&&(subject.hasCurriculum?<TeacherCompetencyHub courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
 
-    {activeTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={openProfile} onOpenLiveExam={()=>setLiveExamOpen(true)}/>:(subjectCode==="avcn"?<TeacherAvcnProgress students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>:<CurriculumPending subjectLabel={subject.label}/>))}
+    {currentTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={openProfile} onOpenLiveExam={()=>setLiveExamOpen(true)}/>:(subjectCode==="avcn"?<TeacherAvcnProgress students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>:<CurriculumPending subjectLabel={subject.label}/>))}
 
-    {activeTab==="grades"&&selectedCourseId&&isHomeroom&&selectedCourse&&<HomeroomGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} className={selectedCourse.class_label||selectedCourse.name} schoolYear={selectedCourse.school_year}/>}
+    {currentTab==="grades"&&selectedCourseId&&isHomeroom&&selectedCourse&&<HomeroomGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} className={selectedCourse.class_label||selectedCourse.name} schoolYear={selectedCourse.school_year}/>}
 
-    {activeTab==="grades"&&selectedCourseId&&!isHomeroom&&(subject.hasCurriculum?<div className="space-y-4">
+    {currentTab==="grades"&&selectedCourseId&&!isHomeroom&&(subject.hasCurriculum?<div className="space-y-4">
       <div className="flex w-fit rounded-xl border border-line bg-black/20 p-1">{([["process","Quá trình"],["final","Tổng kết học phần"]] as const).map(([id,label])=><button key={id} onClick={()=>setGradeView(id)} className={`rounded-lg px-4 py-2 text-sm font-bold transition ${gradeView===id?"bg-blue-600 text-white":"text-muted hover:text-primary"}`}>{label}</button>)}</div>
       {gradeView==="process"
         ? <TeacherProgressGradebook students={students} selectedId={student?.id} onSelect={openProfile}/>
         : <TeacherFinalGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>}
     </div>:(subjectCode==="avcn"?<TeacherAvcnProgress students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>:<CurriculumPending subjectLabel={subject.label}/>))}
 
-    {activeTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} joinCode={selectedCourse.join_code} hideGradebook={isHomeroom} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)} onEnrollmentChange={()=>setStudentsNonce((n)=>n+1)}/>:<NoCourseYet subjectLabel={subject.label} hasCourses={courses.length>0} isAdmin={isAdmin} subjectCode={subjectCode} onCourseCreated={()=>setCoursesNonce((n)=>n+1)}/>)}
+    {currentTab==="roster"&&(selectedCourseId&&selectedCourse?<CourseRosterPanel courseId={selectedCourseId} courseName={selectedCourse.name} classLabel={selectedCourse.class_label} schoolYear={selectedCourse.school_year} subjectLabel={subject.label} subjectCode={subjectCode} isPracticum={subject.isPracticum} isAdmin={isAdmin} joinCode={selectedCourse.join_code} hideGradebook={isHomeroom} onImported={()=>setStudentsNonce((n)=>n+1)} onCourseCreated={()=>setCoursesNonce((n)=>n+1)} onEnrollmentChange={()=>setStudentsNonce((n)=>n+1)}/>:<NoCourseYet subjectLabel={subject.label} hasCourses={courses.length>0} isAdmin={isAdmin} subjectCode={subjectCode} onCourseCreated={()=>setCoursesNonce((n)=>n+1)}/>)}
 
     {profileOpen&&selectedCourseId&&subject.hasCurriculum&&<>
       <div className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm" onClick={()=>setProfileOpen(false)}/>
       <aside className="fixed inset-y-0 right-0 z-50 w-full max-w-2xl overflow-y-auto border-l border-line bg-panel-deep p-5 shadow-2xl">
         <div className="mb-4 flex justify-end"><button onClick={()=>setProfileOpen(false)} className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-2 text-xs font-bold text-ink hover:bg-surface-2"><X size={14}/>Đóng</button></div>
-        <TeacherStudentProfile courseId={selectedCourseId} students={students} selectedId={student?.id} onSelect={openProfile} onRemoved={()=>{setStudents(current=>current.filter(item=>item.id!==student?.id));setActiveStudent(0);setProfileOpen(false)}}/>
+        <TeacherStudentProfile courseId={selectedCourseId} students={students} selectedId={student?.id} onSelect={openProfile} onRemoved={()=>{setLoadedStudents(current=>current.filter(item=>item.id!==student?.id));setActiveStudent(0);setProfileOpen(false)}}/>
       </aside>
     </>}
 

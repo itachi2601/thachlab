@@ -47,20 +47,25 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
   const [view, setView] = useState<"live" | "summary">("live");
   const [sessions, setSessions] = useState<AttendanceSession[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
-  const [records, setRecords] = useState<AttendanceRecord[]>([]);
+  const [recordRows, setRecordRows] = useState<AttendanceRecord[]>([]);
   const [allRecords, setAllRecords] = useState<AttendanceRecord[]>([]);
   const [creating, setCreating] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
   const [copied, setCopied] = useState(false);
-  const [noteDraft, setNoteDraft] = useState("");
-  const [bonusDrafts, setBonusDrafts] = useState<Record<string, string>>({});
-  const [recordNoteDrafts, setRecordNoteDrafts] = useState<Record<string, string>>({});
+  const [noteDraftState, setNoteDraftState] = useState<{ key: string; value: string } | null>(null);
+  const [bonusDraftState, setBonusDraftState] = useState<{ sessionId: number | null; values: Record<string, string> }>({ sessionId: null, values: {} });
+  const [recordNoteDraftState, setRecordNoteDraftState] = useState<{ sessionId: number | null; values: Record<string, string> }>({ sessionId: null, values: {} });
   const [title, setTitle] = useState("Giáo dục đạo đức & phát triển nghề nghiệp");
   const [sessionDate, setSessionDate] = useState(() => new Date().toISOString().slice(0, 10));
 
   const selected = sessions.find((item) => item.id === selectedId) ?? null;
+  const records: AttendanceRecord[] = selectedId ? recordRows : [];
+  const noteKey = `${selected?.id ?? ""}::${selected?.note ?? ""}`;
+  const noteDraft = noteDraftState?.key === noteKey ? noteDraftState.value : selected?.note ?? "";
+  const bonusDrafts: Record<string, string> = bonusDraftState.sessionId === selectedId ? bonusDraftState.values : {};
+  const recordNoteDrafts: Record<string, string> = recordNoteDraftState.sessionId === selectedId ? recordNoteDraftState.values : {};
 
   const loadSessions = useCallback(
     () =>
@@ -83,12 +88,13 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
   }, [sessions]);
 
   useEffect(() => {
-    if (!selectedId) { setRecords([]); return; }
-    fetchAttendanceRecords(selectedId).then(setRecords).catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được kết quả điểm danh."));
+    if (!selectedId) return;
+    let cancelled = false;
+    fetchAttendanceRecords(selectedId).then((rows) => {
+      if (!cancelled) setRecordRows(rows);
+    }).catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được kết quả điểm danh."));
+    return () => { cancelled = true; };
   }, [selectedId]);
-
-  useEffect(() => { setNoteDraft(selected?.note ?? ""); }, [selected?.id, selected?.note]);
-  useEffect(() => { setBonusDrafts({}); setRecordNoteDrafts({}); }, [selectedId]);
 
   async function createSession() {
     setBusy(true);
@@ -116,7 +122,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
     setBusy(true);
     try {
       await setAttendanceRecord(selected.id, studentId, status);
-      setRecords(await fetchAttendanceRecords(selected.id));
+      setRecordRows(await fetchAttendanceRecords(selected.id));
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Không cập nhật được điểm danh.");
     } finally {
@@ -131,7 +137,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
     setBusy(true);
     try {
       await Promise.all(unmarked.map((student) => setAttendanceRecord(selected.id, student.id, "present")));
-      setRecords(await fetchAttendanceRecords(selected.id));
+      setRecordRows(await fetchAttendanceRecords(selected.id));
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Không cập nhật được điểm danh.");
     } finally {
@@ -156,7 +162,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
     const value = Math.trunc(Number(raw)) || 0;
     try {
       await setAttendanceRecordBonus(selected.id, studentId, value);
-      setRecords((current) => current.map((item) => (item.student_id === studentId ? { ...item, bonus_points: value } : item)));
+      setRecordRows((current) => current.map((item) => (item.student_id === studentId ? { ...item, bonus_points: value } : item)));
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Không lưu được điểm nề nếp.");
     }
@@ -168,7 +174,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
     if (value === undefined) return;
     try {
       await setAttendanceRecordNote(selected.id, studentId, value);
-      setRecords((current) => current.map((item) => (item.student_id === studentId ? { ...item, note: value } : item)));
+      setRecordRows((current) => current.map((item) => (item.student_id === studentId ? { ...item, note: value } : item)));
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Không lưu được ghi chú.");
     }
@@ -182,7 +188,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
     setError("");
     try {
       await deleteAttendanceSession(selected.id);
-      setRecords([]);
+      setRecordRows([]);
       await loadSessions();
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Không xóa được buổi điểm danh.");
@@ -285,7 +291,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-white/[.02] p-5">
                   <div className="flex items-center gap-2 text-sm font-bold text-white"><NotebookPen size={16} className="text-violet-300" />Sổ đầu bài / ghi chú buổi</div>
-                  <textarea value={noteDraft} onChange={(e) => setNoteDraft(e.target.value)} onBlur={saveNote} rows={4} placeholder="Nội dung dạy, xếp loại tiết, học sinh vi phạm / tuyên dương, HS xin nghỉ đột xuất…" className="mt-3 w-full resize-none rounded-xl border border-white/10 bg-panel-deep px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none" />
+                  <textarea value={noteDraft} onChange={(e) => setNoteDraftState({ key: noteKey, value: e.target.value })} onBlur={saveNote} rows={4} placeholder="Nội dung dạy, xếp loại tiết, học sinh vi phạm / tuyên dương, HS xin nghỉ đột xuất…" className="mt-3 w-full resize-none rounded-xl border border-white/10 bg-panel-deep px-3 py-2.5 text-sm text-white placeholder:text-slate-500 focus:outline-none" />
                 </div>
               </div>
 
@@ -329,7 +335,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
                               disabled={!record}
                               title={!record ? "Điểm danh trước khi chấm nề nếp" : ""}
                               value={bonusValue}
-                              onChange={(e) => setBonusDrafts((current) => ({ ...current, [student.id]: e.target.value }))}
+                              onChange={(e) => setBonusDraftState((current) => ({ sessionId: selectedId, values: { ...(current.sessionId === selectedId ? current.values : {}), [student.id]: e.target.value } }))}
                               onBlur={() => void saveStudentBonus(student.id)}
                               className={`w-20 rounded-lg border bg-panel-deep px-2 py-1.5 text-xs font-bold disabled:cursor-not-allowed disabled:opacity-30 ${bonusNum > 0 ? "border-emerald-400/30 text-emerald-300" : bonusNum < 0 ? "border-red-400/30 text-red-300" : "border-white/10 text-slate-300"}`}
                             />
@@ -340,7 +346,7 @@ export default function HomeroomAttendancePanel({ courseId, students }: { course
                               disabled={!record}
                               title={!record ? "Điểm danh trước khi ghi chú" : ""}
                               value={noteValue}
-                              onChange={(e) => setRecordNoteDrafts((current) => ({ ...current, [student.id]: e.target.value }))}
+                              onChange={(e) => setRecordNoteDraftState((current) => ({ sessionId: selectedId, values: { ...(current.sessionId === selectedId ? current.values : {}), [student.id]: e.target.value } }))}
                               onBlur={() => void saveStudentNote(student.id)}
                               placeholder={record ? "Lý do vắng, vi phạm…" : "—"}
                               className="w-44 rounded-lg border border-white/10 bg-panel-deep px-2 py-1.5 text-xs text-white placeholder:text-slate-600 disabled:cursor-not-allowed disabled:opacity-30"

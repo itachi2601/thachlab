@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { AlertTriangle, BarChart3, BookOpenCheck, CalendarCheck, ClipboardPen, LayoutDashboard, ListChecks, Megaphone, UserRound } from "lucide-react";
 import type { SchoolClass } from "@/features/exams/types";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -71,11 +71,24 @@ const TABS: { id: DashboardTab; label: string; icon: typeof LayoutDashboard }[] 
   { id: "enrollment", label: "Ghi danh", icon: ClipboardPen },
 ];
 
+// Đọc tab mặc định từ query string như một nguồn ngoài (không setState trong effect).
+const subscribeToUrl = () => () => {};
+function getTabFromUrl(): DashboardTab {
+  if (typeof window === "undefined") return "overview";
+  const tab = new URLSearchParams(window.location.search).get("tab");
+  return tab && TABS.some((item) => item.id === tab) ? (tab as DashboardTab) : "overview";
+}
+function getServerTab(): DashboardTab {
+  return "overview";
+}
+
 export default function TeacherThptDashboard() {
   const { profile } = useAuth();
   // Trợ giảng thấy đủ các khối lớp như admin.
   const isAdmin = profile?.role === "admin" || profile?.role === "tro_giang";
-  const [activeTab, setActiveTab] = useState<DashboardTab>("overview");
+  const urlTab = useSyncExternalStore(subscribeToUrl, getTabFromUrl, getServerTab);
+  const [chosenTab, setActiveTab] = useState<DashboardTab | null>(null);
+  const activeTab: DashboardTab = chosenTab ?? urlTab;
   const [classes, setClasses] = useState<SchoolClass[]>([]);
   const [selectedClassId, setSelectedClassId] = useState<number | null>(null);
   const [students, setStudents] = useState<ClassStudent[]>([]);
@@ -85,8 +98,12 @@ export default function TeacherThptDashboard() {
   const [resultsView, setResultsView] = useState<"lessons" | "scores">("lessons");
   const [alertsView, setAlertsView] = useState<"alerts" | "early" | "tutoring">("alerts");
   const preferredClassId = useRef<number | null>(null);
-  const [lastSession, setLastSession] = useState<string | null>(null);
-  const [idleThisWeek, setIdleThisWeek] = useState<number | null>(null);
+  const [lastSessionState, setLastSessionState] = useState<{ classId: number; value: string | null } | null>(null);
+  const [idleThisWeekState, setIdleThisWeekState] = useState<{ classId: number; value: number } | null>(null);
+  // Giá trị suy ra: đổi lớp (hoặc chưa chọn lớp) thì coi như chưa có dữ liệu,
+  // thay cho việc reset state bằng setState đồng bộ trong effect.
+  const lastSession = lastSessionState && lastSessionState.classId === selectedClassId ? lastSessionState.value : null;
+  const idleThisWeek = idleThisWeekState && idleThisWeekState.classId === selectedClassId ? idleThisWeekState.value : null;
   const [tabsMore, setTabsMore] = useState(false);
   const tabsRef = useRef<HTMLElement | null>(null);
 
@@ -94,8 +111,6 @@ export default function TeacherThptDashboard() {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const tab = params.get("tab");
-    if (tab && TABS.some((item) => item.id === tab)) setActiveTab(tab as DashboardTab);
     const lop = Number(params.get("lop"));
     if (Number.isInteger(lop) && lop > 0) preferredClassId.current = lop;
   }, []);
@@ -152,22 +167,25 @@ export default function TeacherThptDashboard() {
 
   // Dòng tóm tắt đầu trang: buổi điểm danh gần nhất + số em chưa làm bài kể từ thứ Hai tuần này.
   useEffect(() => {
-    setLastSession(null);
-    setIdleThisWeek(null);
     if (!selectedClassId) return;
+    const classId = selectedClassId;
     let cancelled = false;
-    fetchAttendanceSessions(selectedClassId)
+    fetchAttendanceSessions(classId)
       .then((rows) => {
         if (cancelled) return;
         const latest = [...rows].sort((a, b) => b.session_date.localeCompare(a.session_date))[0];
-        setLastSession(latest ? new Date(`${latest.session_date}T00:00:00`).toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit" }) : null);
+        setLastSessionState({
+          classId,
+          value: latest ? new Date(`${latest.session_date}T00:00:00`).toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit" }) : null,
+        });
       })
       .catch(() => undefined);
     return () => { cancelled = true; };
   }, [selectedClassId]);
 
   useEffect(() => {
-    if (students.length === 0) return;
+    if (students.length === 0 || !selectedClassId) return;
+    const classId = selectedClassId;
     let cancelled = false;
     const monday = new Date();
     monday.setHours(0, 0, 0, 0);
@@ -176,11 +194,11 @@ export default function TeacherThptDashboard() {
       .then((rows) => {
         if (cancelled) return;
         const done = new Set(rows.map((r) => r.student_id));
-        setIdleThisWeek(students.filter((s) => !done.has(s.id)).length);
+        setIdleThisWeekState({ classId, value: students.filter((s) => !done.has(s.id)).length });
       })
       .catch(() => undefined);
     return () => { cancelled = true; };
-  }, [students]);
+  }, [students, selectedClassId]);
 
   useEffect(() => {
     const el = tabsRef.current;

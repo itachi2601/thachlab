@@ -14,30 +14,32 @@ export default function TaskRpLine({
   /** Việc không bao giờ cộng RP (luyện theo chủ đề, bài thoát phụ đạo). */
   staticText?: string;
 }) {
-  const [text, setText] = useState<string | null>(staticText ?? null);
+  const requestKey = `${kind ?? ""}:${sourceId ?? ""}`;
+  const [fetched, setFetched] = useState<{ key: string; text: string | null } | null>(null);
 
   useEffect(() => {
-    if (staticText) {
-      setText(staticText);
-      return;
-    }
-    if (kind == null || sourceId == null) {
-      setText("Lượt này không tính RP.");
-      return;
-    }
+    if (staticText) return;
+    if (kind == null || sourceId == null) return;
     let alive = true;
-    setText(null);
     fetchTaskRpMessage(kind, sourceId)
       .then((line) => {
-        if (alive) setText(line);
+        if (alive) setFetched({ key: requestKey, text: line });
       })
       .catch(() => {
-        if (alive) setText(null);
+        if (alive) setFetched({ key: requestKey, text: null });
       });
     return () => {
       alive = false;
     };
-  }, [kind, sourceId, staticText]);
+  }, [kind, sourceId, staticText, requestKey]);
+
+  const text =
+    staticText ??
+    (kind == null || sourceId == null
+      ? "Lượt này không tính RP."
+      : fetched && fetched.key === requestKey
+        ? fetched.text
+        : null);
 
   if (!text) return null;
   return <p className="text-base leading-relaxed text-ink">{text}</p>;

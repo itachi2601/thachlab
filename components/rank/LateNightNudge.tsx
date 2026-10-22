@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "@/components/auth/auth-context";
 
 const KEY = "thachlab-khuya-nhac";
@@ -27,17 +27,19 @@ function nightId() {
  */
 export default function LateNightNudge({ className = "" }: { className?: string }) {
   const { profile } = useAuth();
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    if (profile?.role !== "student" || !isLate()) return;
+  // Đêm học hiện tại (null nếu chưa tới giờ khuya) — chỉ tính một lần lúc mount.
+  const [night] = useState<string | null>(() => (isLate() ? nightId() : null));
+  // Đêm em đã bấm tắt, đọc từ sessionStorage một lần lúc mount.
+  const [dismissed, setDismissed] = useState<string | null>(() => {
     try {
-      if (sessionStorage.getItem(KEY) === nightId()) return;
+      return sessionStorage.getItem(KEY);
     } catch {
       /* không có sessionStorage thì vẫn hiện */
+      return null;
     }
-    setShow(true);
-  }, [profile?.role]);
+  });
+
+  const show = profile?.role === "student" && night !== null && dismissed !== night;
 
   if (!show) return null;
 
@@ -57,7 +59,7 @@ export default function LateNightNudge({ className = "" }: { className?: string 
       <button
         type="button"
         onClick={() => {
-          setShow(false);
+          setDismissed(night);
           try {
             sessionStorage.setItem(KEY, nightId());
           } catch {

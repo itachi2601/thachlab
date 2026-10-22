@@ -16,19 +16,21 @@ export default function StudentAttendancePanel({courseId,studentId}:{courseId:nu
 function DutyBadge(){return <span className="flex items-center gap-1 rounded-full bg-fuchsia-500/15 px-1.5 py-0.5 text-[12px] font-bold text-fuchsia-200"><Dices size={9}/>Bạn được chọn</span>}
 
 function MachineDutyPanel({sessionId,machineCode,open,onMachineChosen}:{sessionId:number;machineCode:string|null;open:boolean;onMachineChosen:()=>void}){
-  const[picked,setPicked]=useState("");
+  const[pickedState,setPickedState]=useState<{code:string|null;value:string}>({code:machineCode,value:machineCode??""});
   const[busy,setBusy]=useState(false);
   const[error,setError]=useState("");
   const[editing,setEditing]=useState(false);
   const[photos,setPhotos]=useState<AttendanceMachinePhoto[]>([]);
-  const[machineDuty,setMachineDuty]=useState(false);
+  const[dutyState,setDutyState]=useState<{sessionId:number;machineCode:string;duty:boolean}>({sessionId,machineCode:machineCode??"",duty:false});
   const[machines,setMachines]=useState<Machine[]>([]);
   const[machinesError,setMachinesError]=useState("");
+  const picked=pickedState.code===machineCode?pickedState.value:(machineCode??"");
+  const machineDuty=Boolean(machineCode)&&dutyState.sessionId===sessionId&&dutyState.machineCode===machineCode&&dutyState.duty;
+  function setPicked(value:string){setPickedState({code:machineCode,value})}
   const load=useCallback(()=>fetchAttendanceMachinePhotos(sessionId).then(setPhotos).catch(()=>undefined),[sessionId]);
   useEffect(()=>{void load()},[load]);
   useEffect(()=>{let cancelled=false;void fetchSessionMachines(sessionId).then(data=>{if(!cancelled){setMachines(data);setMachinesError("")}}).catch(()=>{if(!cancelled){setMachines([]);setMachinesError("Không tải được danh sách máy. Vui lòng tải lại trang để thử lại.")}});return()=>{cancelled=true}},[sessionId]);
-  useEffect(()=>{setPicked(machineCode??"")},[machineCode]);
-  useEffect(()=>{if(!machineCode){setMachineDuty(false);return}void isPhotoDutyMachine(sessionId,machineCode).then(setMachineDuty).catch(()=>setMachineDuty(false))},[sessionId,machineCode]);
+  useEffect(()=>{if(!machineCode)return;let cancelled=false;void isPhotoDutyMachine(sessionId,machineCode).then(value=>{if(!cancelled)setDutyState({sessionId,machineCode,duty:value})}).catch(()=>{if(!cancelled)setDutyState({sessionId,machineCode,duty:false})});return()=>{cancelled=true}},[sessionId,machineCode]);
 
   async function chooseMachine(){if(!picked||!open)return;setBusy(true);setError("");try{await selectAttendanceMachine(sessionId,picked);setEditing(false);onMachineChosen()}catch(cause){setError(cause instanceof Error?cause.message:"Không chọn được máy.")}finally{setBusy(false)}}
 

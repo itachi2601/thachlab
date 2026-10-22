@@ -11,6 +11,13 @@ export type CelebrationEvent =
   | { kind: "rank"; code: TierCode; division: number | null; paragon: boolean; name: string; en: string }
   | { kind: "title"; code: string; level: TitleLevel; name: string; description: string; first: boolean };
 
+/** Đặt kích thước canvas theo DPR (tách khỏi effect để không sửa trực tiếp phần tử lấy từ ref của hook). */
+function sizeCanvas(c: HTMLCanvasElement, dpr: number) {
+  c.width = innerWidth * dpr;
+  c.height = innerHeight * dpr;
+  return { W: c.width, H: c.height };
+}
+
 /** Pháo hoa + pháo giấy bằng canvas thuần (không thêm thư viện), phủ TRÊN thẻ, bắt đầu khi huy chương lộ diện (~1,3 s), tự dừng ~5 s. */
 function useFireworks(cv: React.RefObject<HTMLCanvasElement | null>, badge: React.RefObject<HTMLElement | null>, colors: string[]) {
   useEffect(() => {
@@ -19,8 +26,7 @@ function useFireworks(cv: React.RefObject<HTMLCanvasElement | null>, badge: Reac
     const ctx = c.getContext("2d");
     if (!ctx) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const W = (c.width = innerWidth * dpr);
-    const H = (c.height = innerHeight * dpr);
+    const { W, H } = sizeCanvas(c, dpr);
     const r = badge.current?.getBoundingClientRect();
     const cx = (r ? r.left + r.width / 2 : innerWidth / 2) * dpr;
     const cy = (r ? r.top + r.height / 2 : innerHeight / 3) * dpr;

@@ -8,51 +8,74 @@ import type { ExamQuestion } from "@/features/exams/types";
 
 type ExamRef = { id: number; title: string };
 
+const EMPTY_EXAMS: ExamRef[] = [];
+const EMPTY_QUESTIONS: ExamQuestion[] = [];
+
 /**
  * Phân tích đề của bài AVCN đang chọn (Luyện tập + Kiểm tra) để thầy biết câu nào sai nhiều mà sửa đề.
  * Đề AVCN không gán lớp (lớp vào tự do, gán sẽ chặn xem lại), nên lấy đề qua lesson_items.exam_ids
  * thay vì exam_classes như phân tích của lớp THPT.
  */
 export default function TeacherAvcnExamAnalysis({ examIds, studentIds }: { examIds: number[]; studentIds: string[] }) {
-  const [exams, setExams] = useState<ExamRef[]>([]);
-  const [examId, setExamId] = useState<number | null>(null);
-  const [questions, setQuestions] = useState<ExamQuestion[]>([]);
-  const [overview, setOverview] = useState<ExamOverview | null>(null);
-  const [wrongest, setWrongest] = useState<WrongestQuestion[] | null>(null);
+  const [examsState, setExamsState] = useState<ExamRef[] | null>(null);
+  const [selectedExamId, setSelectedExamId] = useState<number | null>(null);
+  const [questionsState, setQuestionsState] = useState<{ examId: number; list: ExamQuestion[] } | null>(null);
+  const [overviewState, setOverviewState] = useState<{ examId: number; data: ExamOverview } | null>(null);
+  const [wrongestState, setWrongestState] = useState<{ examId: number; list: WrongestQuestion[] } | null>(null);
 
   const idsKey = examIds.join(",");
+  // Khoá rỗng (không còn đề) hoặc đổi đề: giá trị được suy ra ngay lúc render thay vì reset bằng setState trong effect.
+  const exams = idsKey === "" ? EMPTY_EXAMS : (examsState ?? EMPTY_EXAMS);
+  const examId = idsKey === "" ? null : selectedExamId;
+  const questions = questionsState && questionsState.examId === examId ? questionsState.list : EMPTY_QUESTIONS;
+  const overview = overviewState && overviewState.examId === examId ? overviewState.data : null;
+  const wrongest = wrongestState && wrongestState.examId === examId ? wrongestState.list : null;
+
   useEffect(() => {
-    if (examIds.length === 0) {
-      setExams([]);
-      setExamId(null);
-      return;
-    }
+    if (examIds.length === 0) return;
     void getSupabase()
       .from("exams")
       .select("id, title")
       .in("id", examIds)
       .then(({ data }) => {
         const list = (data ?? []) as ExamRef[];
-        setExams(list);
+        setExamsState(list);
         // Ưu tiên đề Kiểm tra (id lớn hơn, đăng sau Luyện tập).
-        setExamId((cur) => (cur !== null && list.some((e) => e.id === cur) ? cur : (list.at(-1)?.id ?? null)));
+        setSelectedExamId((cur) => (cur !== null && list.some((e) => e.id === cur) ? cur : (list.at(-1)?.id ?? null)));
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [idsKey]);
 
   useEffect(() => {
     if (examId === null) return;
-    setOverview(null);
-    setWrongest(null);
-    setQuestions([]);
+    let cancelled = false;
     void getSupabase()
       .from("exams")
       .select("questions")
       .eq("id", examId)
       .single()
-      .then(({ data }) => setQuestions((data?.questions as ExamQuestion[]) ?? []));
-    fetchExamOverview(examId, studentIds).then(setOverview).catch(() => undefined);
-    fetchWrongestQuestions(examId, studentIds).then(setWrongest).catch(() => setWrongest([]));
+      .then(({ data }) => {
+        if (cancelled) return;
+        setQuestionsState({ examId, list: (data?.questions as ExamQuestion[]) ?? [] });
+      });
+    fetchExamOverview(examId, studentIds)
+      .then((data) => {
+        if (cancelled) return;
+        setOverviewState({ examId, data });
+      })
+      .catch(() => undefined);
+    fetchWrongestQuestions(examId, studentIds)
+      .then((list) => {
+        if (cancelled) return;
+        setWrongestState({ examId, list });
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setWrongestState({ examId, list: [] });
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [examId, studentIds]);
 
   if (exams.length === 0) return null;
@@ -64,7 +87,7 @@ export default function TeacherAvcnExamAnalysis({ examIds, studentIds }: { examI
         <select
           aria-label="Đề"
           value={examId ?? ""}
-          onChange={(e) => setExamId(Number(e.target.value))}
+          onChange={(e) => setSelectedExamId(Number(e.target.value))}
           className="rounded-xl border border-line-strong bg-panel-deep px-3 py-2 text-sm text-ink"
         >
           {exams.map((e) => (

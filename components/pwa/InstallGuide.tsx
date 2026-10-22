@@ -7,7 +7,7 @@
  * Quy tắc: M4/C1 chữ ≥ 14px, D2/D3 nút ≥ 44px, mỗi ý một dòng, một nút chính.
  */
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 
 type Platform = "ios" | "android" | "desktop";
 
@@ -51,30 +51,46 @@ function getPrompt() {
   return (window as unknown as { __thachlabInstallPrompt?: InstallPromptEvent }).__thachlabInstallPrompt ?? null;
 }
 
-export default function InstallGuide() {
-  const [platform, setPlatform] = useState<Platform>("android");
-  const [canPrompt, setCanPrompt] = useState(false);
-  const [installed, setInstalled] = useState(false);
+// Nguồn ngoài (navigator/matchMedia) đọc qua useSyncExternalStore thay vì setState trong effect.
+const subscribeNever = () => () => {};
 
-  useEffect(() => {
-    setPlatform(detect());
-    setInstalled(
-      window.matchMedia("(display-mode: standalone)").matches ||
-        (navigator as Navigator & { standalone?: boolean }).standalone === true,
-    );
-    setCanPrompt(!!getPrompt());
-    // PwaBoot bắt sự kiện sớm; nghe thêm phòng trường hợp sự kiện đến sau khi trang này mở.
-    const onPrompt = () => window.setTimeout(() => setCanPrompt(!!getPrompt()), 0);
-    window.addEventListener("beforeinstallprompt", onPrompt);
-    return () => window.removeEventListener("beforeinstallprompt", onPrompt);
-  }, []);
+const getPlatform = (): Platform => detect();
+const getPlatformOnServer = (): Platform => "android";
+
+const getInstalled = (): boolean =>
+  window.matchMedia("(display-mode: standalone)").matches ||
+  (navigator as Navigator & { standalone?: boolean }).standalone === true;
+const getInstalledOnServer = (): boolean => false;
+
+// PwaBoot bắt sự kiện sớm; nghe thêm phòng trường hợp sự kiện đến sau khi trang này mở.
+const subscribeInstallPrompt = (onChange: () => void) => {
+  const handler = () => {
+    window.setTimeout(onChange, 0);
+  };
+  window.addEventListener("beforeinstallprompt", handler);
+  return () => window.removeEventListener("beforeinstallprompt", handler);
+};
+
+const getPromptAvailable = (): boolean => !!getPrompt();
+const getPromptAvailableOnServer = (): boolean => false;
+
+export default function InstallGuide() {
+  const platform = useSyncExternalStore(subscribeNever, getPlatform, getPlatformOnServer);
+  const installed = useSyncExternalStore(subscribeNever, getInstalled, getInstalledOnServer);
+  const promptAvailable = useSyncExternalStore(
+    subscribeInstallPrompt,
+    getPromptAvailable,
+    getPromptAvailableOnServer,
+  );
+  const [promptUsed, setPromptUsed] = useState(false);
+  const canPrompt = promptAvailable && !promptUsed;
 
   const install = async () => {
     const p = getPrompt();
     if (!p) return;
     await p.prompt().catch(() => {});
     (window as unknown as { __thachlabInstallPrompt?: unknown }).__thachlabInstallPrompt = undefined;
-    setCanPrompt(false);
+    setPromptUsed(true);
   };
 
   if (installed)

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown, ExternalLink, LogOut, Menu, X } from "lucide-react";
@@ -38,13 +38,35 @@ function NavLink({ item, pathname, onNavigate }: { item: AdminNavItem; pathname:
 
 const COLLAPSE_KEY = "thachlab-admin-nav-collapsed";
 
-function readCollapsed(): string[] {
+function parseCollapsed(raw: string | null): string[] {
   try {
-    const raw = JSON.parse(localStorage.getItem(COLLAPSE_KEY) ?? "[]");
-    return Array.isArray(raw) ? raw.filter((v): v is string => typeof v === "string") : [];
+    const parsed: unknown = JSON.parse(raw ?? "[]");
+    return Array.isArray(parsed) ? parsed.filter((v): v is string => typeof v === "string") : [];
   } catch {
     return [];
   }
+}
+
+function readCollapsed(): string[] {
+  try {
+    return parseCollapsed(localStorage.getItem(COLLAPSE_KEY));
+  } catch {
+    return [];
+  }
+}
+
+// Chuỗi thô trong localStorage — ổn định giữa các lần render nên dùng được cho useSyncExternalStore.
+function readCollapsedRaw(): string {
+  try {
+    return localStorage.getItem(COLLAPSE_KEY) ?? "[]";
+  } catch {
+    return "[]";
+  }
+}
+
+function subscribeCollapsed(listener: () => void): () => void {
+  window.addEventListener("storage", listener);
+  return () => window.removeEventListener("storage", listener);
 }
 
 function NavGroup({
@@ -61,14 +83,16 @@ function NavGroup({
   onNavigate: () => void;
 }) {
   // Nhóm gập lại được, nhớ lựa chọn; nhóm đang chứa trang hiện tại luôn mở để không mất dấu đang ở đâu.
-  const [collapsed, setCollapsed] = useState(false);
+  const storedCollapsed = useSyncExternalStore(subscribeCollapsed, readCollapsedRaw, () => "[]");
+  const [override, setOverride] = useState<{ label: string; collapsed: boolean } | null>(null);
+  const collapsed =
+    override?.label === label ? override.collapsed : parseCollapsed(storedCollapsed).includes(label);
   const hasCurrent = items.some((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
-  useEffect(() => setCollapsed(readCollapsed().includes(label)), [label]);
   const hidden = collapsed && !hasCurrent;
 
   function toggle() {
     const next = !collapsed;
-    setCollapsed(next);
+    setOverride({ label, collapsed: next });
     try {
       const rest = readCollapsed().filter((v) => v !== label);
       localStorage.setItem(COLLAPSE_KEY, JSON.stringify(next ? [...rest, label] : rest));
@@ -97,17 +121,16 @@ function NavGroup({
 export default function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { profile, signOut } = useAuth();
-  const [open, setOpen] = useState(false);
-
-  // Đổi trang thì đóng ngăn kéo trên điện thoại.
-  useEffect(() => setOpen(false), [pathname]);
+  // Đổi trang thì đóng ngăn kéo trên điện thoại: trạng thái mở gắn với trang lúc mở.
+  const [drawer, setDrawer] = useState<{ path: string; open: boolean }>({ path: pathname, open: false });
+  const open = drawer.open && drawer.path === pathname;
 
   const isAdmin = profile?.role === "admin";
   // Giảng viên chỉ được phân công đúng 1 khu vực — chỉ thấy khu đó, không thấy mục dùng chung.
   const restrictedArea = profile?.role === "instructor" ? profile.admin_area : null;
   const showNav = isAdmin || !!restrictedArea;
   const area = areaOfPath(pathname) ?? restrictedArea;
-  const closeDrawer = () => setOpen(false);
+  const closeDrawer = () => setDrawer({ path: pathname, open: false });
 
   const areas: AdminArea[] = restrictedArea ? [restrictedArea] : ["thpt", "cttc"];
   const initial = (profile?.full_name ?? "?").trim().charAt(0).toUpperCase();
@@ -174,7 +197,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
             <button
               type="button"
               className="admin-burger"
-              onClick={() => setOpen((value) => !value)}
+              onClick={() => setDrawer({ path: pathname, open: !open })}
               aria-label={open ? "Đóng menu" : "Mở menu"}
             >
               {open ? <X size={18} /> : <Menu size={18} />}

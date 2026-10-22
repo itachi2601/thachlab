@@ -53,9 +53,12 @@ export function useHarmonicMotion(
   const rafId = useRef<number | null>(null);
   const lastTimestamp = useRef<number | null>(null);
 
-  amplitudeRef.current = amplitude;
-  frequencyRef.current = frequency;
-  isPlayingRef.current = isPlaying;
+  // Đồng bộ refs sau khi commit thay vì ghi ref trong lúc render.
+  useEffect(() => {
+    amplitudeRef.current = amplitude;
+    frequencyRef.current = frequency;
+    isPlayingRef.current = isPlaying;
+  }, [amplitude, frequency, isPlaying]);
 
   useEffect(() => {
     const loop = (timestamp: number) => {

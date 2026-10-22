@@ -27,17 +27,24 @@ export default function TeacherThptAttendancePanel({ classId, students }: { clas
   const [view, setView] = useState<"live" | "summary">("live");
   const [sessions, setSessions] = useState<ThptAttendanceSession[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
-  const [records, setRecords] = useState<ThptAttendanceRecord[]>([]);
+  const [recordsState, setRecordsState] = useState<{ sessionId: number | null; rows: ThptAttendanceRecord[] }>({ sessionId: null, rows: [] });
   const [allRecords, setAllRecords] = useState<ThptAttendanceRecord[]>([]);
   const [creating, setCreating] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
-  const [noteDraft, setNoteDraft] = useState("");
+  const [noteEdit, setNoteEdit] = useState<{ key: string; value: string } | null>(null);
   const [title, setTitle] = useState("Buổi học");
   const [sessionDate, setSessionDate] = useState(() => new Date().toISOString().slice(0, 10));
 
   const selected = sessions.find((item) => item.id === selectedId) ?? null;
+
+  // Bản ghi chỉ có giá trị với đúng phiên đang chọn; khi chưa chọn phiên thì suy ra mảng rỗng.
+  const records = recordsState.sessionId === selectedId ? recordsState.rows : [];
+
+  // Ghi chú đang soạn gắn với khoá (phiên + nội dung đã lưu) để tự đặt lại khi đổi phiên.
+  const noteKey = selected ? `${selected.id}:${selected.note}` : "";
+  const noteDraft = noteEdit && noteEdit.key === noteKey ? noteEdit.value : (selected?.note ?? "");
 
   const loadSessions = useCallback(
     () =>
@@ -60,11 +67,13 @@ export default function TeacherThptAttendancePanel({ classId, students }: { clas
   }, [sessions]);
 
   useEffect(() => {
-    if (!selectedId) { setRecords([]); return; }
-    fetchAttendanceRecords(selectedId).then(setRecords).catch((cause) => setError(cause instanceof Error ? cause.message : "Không tải được kết quả điểm danh."));
+    if (!selectedId) return;
+    let cancelled = false;
+    fetchAttendanceRecords(selectedId)
+      .then((rows) => { if (!cancelled) setRecordsState({ sessionId: selectedId, rows }); })
+      .catch((cause) => { if (!cancelled) setError(cause instanceof Error ? cause.message : "Không tải được kết quả điểm danh."); });
+    return () => { cancelled = true; };
   }, [selectedId]);
-
-  useEffect(() => { setNoteDraft(selected?.note ?? ""); }, [selected?.id, selected?.note]);
 
   async function createSession() {
     setBusy(true);
@@ -86,7 +95,7 @@ export default function TeacherThptAttendancePanel({ classId, students }: { clas
     setBusy(true);
     try {
       await setAttendanceRecord(selected.id, studentId, status);
-      setRecords(await fetchAttendanceRecords(selected.id));
+      setRecordsState({ sessionId: selected.id, rows: await fetchAttendanceRecords(selected.id) });
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Không cập nhật được điểm danh.");
     } finally {
@@ -101,7 +110,7 @@ export default function TeacherThptAttendancePanel({ classId, students }: { clas
     setBusy(true);
     try {
       await Promise.all(unmarked.map((student) => setAttendanceRecord(selected.id, student.id, "present")));
-      setRecords(await fetchAttendanceRecords(selected.id));
+      setRecordsState({ sessionId: selected.id, rows: await fetchAttendanceRecords(selected.id) });
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Không cập nhật được điểm danh.");
     } finally {
@@ -130,7 +139,7 @@ export default function TeacherThptAttendancePanel({ classId, students }: { clas
     setError("");
     try {
       await deleteAttendanceSession(selected.id);
-      setRecords([]);
+      setRecordsState({ sessionId: null, rows: [] });
       await loadSessions();
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : "Không xóa được phiên điểm danh.");
@@ -216,7 +225,7 @@ export default function TeacherThptAttendancePanel({ classId, students }: { clas
                 </div>
                 <div className="rounded-2xl border border-line bg-surface-2 p-5">
                   <div className="flex items-center gap-2 text-sm font-bold text-ink"><NotebookPen size={16} className="text-violet-300" />Ghi chú buổi học</div>
-                  <textarea value={noteDraft} onChange={(e) => setNoteDraft(e.target.value)} onBlur={saveNote} rows={4} placeholder="Ghi chú nhanh: nội dung dạy, học sinh xin nghỉ đột xuất…" className="mt-3 w-full resize-none rounded-xl border border-line-strong bg-panel-deep px-3 py-2.5 text-sm text-ink placeholder:text-slate-500 focus:outline-none" />
+                  <textarea value={noteDraft} onChange={(e) => setNoteEdit({ key: noteKey, value: e.target.value })} onBlur={saveNote} rows={4} placeholder="Ghi chú nhanh: nội dung dạy, học sinh xin nghỉ đột xuất…" className="mt-3 w-full resize-none rounded-xl border border-line-strong bg-panel-deep px-3 py-2.5 text-sm text-ink placeholder:text-slate-500 focus:outline-none" />
                 </div>
               </div>
 

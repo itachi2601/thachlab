@@ -24,6 +24,9 @@ const NAV_HITS: Hit[] = [OVERVIEW_ITEM, ...AREA_ITEMS.thpt, ...AREA_ITEMS.cttc, 
   icon: item.icon,
 }));
 
+/** Mảng rỗng dùng chung để giá trị suy ra giữ nguyên tham chiếu giữa các lần render. */
+const NO_HITS: Hit[] = [];
+
 /** Bỏ dấu + chữ thường để gõ "hoc sinh" vẫn ra "Học sinh". */
 function fold(text: string): string {
   return text.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase();
@@ -39,11 +42,21 @@ export default function AdminSearch() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [remote, setRemote] = useState<Hit[]>([]);
-  const [busy, setBusy] = useState(false);
+  // Kết quả DB của lần tìm gần nhất, kèm từ khoá đã tìm — `remote`/`busy` suy ra từ đây lúc render.
+  const [found, setFound] = useState<{ q: string; hits: Hit[] }>({ q: "", hits: [] });
   const [active, setActive] = useState(0);
+  const [prevOpen, setPrevOpen] = useState(open);
   const inputRef = useRef<HTMLInputElement>(null);
   const reqId = useRef(0);
+
+  // Mở hộp thoại thì xoá từ khoá và chọn lại dòng đầu — so sánh ngay lúc render thay vì trong effect.
+  if (open !== prevOpen) {
+    setPrevOpen(open);
+    if (open) {
+      setQuery("");
+      setActive(0);
+    }
+  }
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
@@ -63,25 +76,18 @@ export default function AdminSearch() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Chỉ chạm DOM sau khi mở hộp thoại đã commit: đưa focus vào ô nhập.
   useEffect(() => {
-    if (open) {
-      setQuery("");
-      setRemote([]);
-      setActive(0);
-      requestAnimationFrame(() => inputRef.current?.focus());
-    }
+    if (!open) return;
+    const frame = requestAnimationFrame(() => inputRef.current?.focus());
+    return () => cancelAnimationFrame(frame);
   }, [open]);
 
   // Truy vấn DB sau 250ms ngừng gõ; bỏ kết quả của lần gõ cũ nếu đã gõ tiếp.
   useEffect(() => {
     const q = safe(query);
-    if (!open || q.length < 2 || !supabaseConfigured) {
-      setRemote([]);
-      setBusy(false);
-      return;
-    }
+    if (!open || q.length < 2 || !supabaseConfigured) return;
     const id = ++reqId.current;
-    setBusy(true);
     const timer = setTimeout(async () => {
       const sb = getSupabase();
       const like = `%${q}%`;
@@ -149,11 +155,15 @@ export default function AdminSearch() {
       }
       // Gom theo nhóm (đề trùng mã đứng đầu) để mỗi nhóm chỉ có một tiêu đề.
       const rank = { "Đề": 0, "Học sinh": 1, "Bài học": 2, Trang: 3 } as const;
-      setRemote(hits.sort((a, b) => rank[a.group] - rank[b.group]));
-      setBusy(false);
+      setFound({ q, hits: hits.sort((a, b) => rank[a.group] - rank[b.group]) });
     }, 250);
     return () => clearTimeout(timer);
   }, [query, open]);
+
+  const typed = safe(query);
+  // Nhánh reset cũ (đóng hộp thoại / chưa đủ 2 ký tự) nay là giá trị suy ra lúc render.
+  const remote = open && typed.length >= 2 ? found.hits : NO_HITS;
+  const busy = open && typed.length >= 2 && supabaseConfigured && found.q !== typed;
 
   const results = useMemo(() => {
     const q = fold(query.trim());
@@ -161,7 +171,12 @@ export default function AdminSearch() {
     return [...remote, ...pages];
   }, [query, remote]);
 
-  useEffect(() => setActive(0), [results.length]);
+  // Danh sách kết quả đổi độ dài thì chọn lại dòng đầu — so sánh lúc render thay cho effect.
+  const [prevLength, setPrevLength] = useState(results.length);
+  if (prevLength !== results.length) {
+    setPrevLength(results.length);
+    setActive(0);
+  }
 
   function go(hit: Hit) {
     setOpen(false);
