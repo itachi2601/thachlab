@@ -41,16 +41,21 @@
 <li>Trọng lực hướng xuống nên chỉ gây gia tốc theo Oy: $a_x=0$ và $a_y=g$.</li>
 </ul>
 
-<div class="table-scroll">
-<table class="tl-table">
-<thead>
-<tr><th>Phương</th><th>Chuyển động · công thức</th></tr>
-</thead>
-<tbody>
-<tr><td>Ox (ngang)</td><td>thẳng đều · $v_x=v_0$ · $x=v_0t$</td></tr>
-<tr><td>Oy (xuống)</td><td>rơi tự do · $v_y=gt$ · $y=\dfrac{1}{2}gt^2$</td></tr>
-</tbody>
-</table>
+<div class="tl-fx">
+<p class="tl-fx-name">Ném ngang: hai chuyển động thành phần</p>
+<p class="tl-fx-cond">Ox (ngang): thẳng đều</p>
+<p>$$v_x=v_0$$</p>
+<p>$$x=v_0t$$</p>
+<p class="tl-fx-cond">Oy (hướng xuống): rơi tự do</p>
+<p>$$v_y=gt$$</p>
+<p>$$y=\dfrac{1}{2}gt^2$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v_x,\ v_y$</span><span>thành phần vận tốc theo Ox, Oy (m/s)</span></li>
+<li><span class="tl-sym">$v_0$</span><span>vận tốc ném (m/s)</span></li>
+<li><span class="tl-sym">$x,\ y$</span><span>toạ độ của vật tại thời điểm $t$ (m)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian kể từ lúc ném (s)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do, $g\approx 9{,}8$ m/s²</span></li>
+</ul>
 </div>
 
 <p>Hai chuyển động này <strong>độc lập</strong>; ném ngang là tổng hợp của chúng. Ký hiệu: $v_0$ vận tốc ném (m/s) · $h$ độ cao lúc ném (m) · $g\approx 9{,}8$ m/s².</p>
@@ -75,7 +80,16 @@
 
 <p>Từ $x=v_0t$ rút ra $t=\dfrac{x}{v_0}$, rồi thế vào $y=\dfrac{1}{2}gt^2$:</p>
 
+<div class="tl-fx">
+<p class="tl-fx-name">Quỹ đạo ném ngang</p>
 <p>$$y=\dfrac{g}{2v_0^2}x^2$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$y$</span><span>độ sâu dưới điểm ném (m)</span></li>
+<li><span class="tl-sym">$x$</span><span>quãng đường ngang đã đi (m)</span></li>
+<li><span class="tl-sym">$v_0$</span><span>vận tốc ném (m/s)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do (m/s²)</span></li>
+</ul>
+</div>
 
 <p>$g$ và $v_0$ đều không đổi, nên $y$ tỉ lệ với $x^2$: quỹ đạo là một <strong>parabol</strong> có đỉnh tại điểm ném. Vật chỉ vẽ một <strong>phần</strong> của parabol, vì tới mặt đất là chuyển động kết thúc.</p>
 
@@ -86,9 +100,21 @@
 <p><strong>🔑 Thời gian chỉ do $h$ · Tầm xa do cả $h$ và $v_0$</strong></p>
 
 <ul>
-<li>Vật chạm đất khi $y=h$, tức $h=\dfrac{1}{2}gt^2$, suy ra $t=\sqrt{\dfrac{2h}{g}}$. Trong công thức <strong>không có $v_0$</strong>.</li>
-<li>Tầm xa là quãng đường ngang đi được trong thời gian đó: $L=v_0t=v_0\sqrt{\dfrac{2h}{g}}$.</li>
+<li>Vật chạm đất khi $y=h$, tức $h=\dfrac{1}{2}gt^2$, suy ra thời gian bay. Trong công thức thời gian <strong>không có $v_0$</strong>.</li>
+<li>Tầm xa là quãng đường ngang đi được trong thời gian đó.</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Thời gian bay và tầm xa (ném ngang)</p>
+<p>$$t=\sqrt{\dfrac{2h}{g}}$$</p>
+<p>$$L=v_0t=v_0\sqrt{\dfrac{2h}{g}}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$t$</span><span>thời gian bay (s)</span></li>
+<li><span class="tl-sym">$h$</span><span>độ cao lúc ném (m)</span></li>
+<li><span class="tl-sym">$L$</span><span>tầm xa theo phương ngang (m)</span></li>
+<li><span class="tl-sym">$v_0$</span><span>vận tốc ném (m/s)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do (m/s²)</span></li>
+</ul>
+</div>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-nemngang-02">
 <p class="tl-label">🔬 Thí nghiệm đo: bắn bi ngang khỏi mép bàn ở ba độ cao</p>
@@ -140,10 +166,27 @@
 <p><strong>🔑 $v_x$ giữ nguyên · $v_y$ lớn dần · cộng hai vectơ vuông góc</strong></p>
 
 <ul>
-<li>Tại thời điểm $t$: $\vec v=\vec v_x+\vec v_y$, hai thành phần vuông góc nên $v=\sqrt{v_x^2+v_y^2}=\sqrt{v_0^2+(gt)^2}$.</li>
-<li>Khi chạm đất $t=\sqrt{\dfrac{2h}{g}}$ nên $v_y=g\sqrt{\dfrac{2h}{g}}=\sqrt{g^2\cdot\dfrac{2h}{g}}=\sqrt{2gh}$, do đó vận tốc chạm đất $v_{cd}=\sqrt{v_0^2+2gh}$.</li>
-<li>Góc lệch so với phương ngang: $\tan\alpha=\dfrac{v_y}{v_x}=\dfrac{gt}{v_0}$ — càng rơi, $\vec v$ càng dốc xuống.</li>
+<li>Tại thời điểm $t$: $\vec v=\vec v_x+\vec v_y$, hai thành phần vuông góc nên độ lớn tính theo Pythagore.</li>
+<li>Khi chạm đất $t=\sqrt{\dfrac{2h}{g}}$ nên $v_y=g\sqrt{\dfrac{2h}{g}}=\sqrt{g^2\cdot\dfrac{2h}{g}}=\sqrt{2gh}$, do đó có vận tốc chạm đất.</li>
+<li>Góc lệch so với phương ngang: càng rơi, $\vec v$ càng dốc xuống.</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Vận tốc của vật ném ngang</p>
+<p>$$v=\sqrt{v_x^2+v_y^2}=\sqrt{v_0^2+(gt)^2}$$</p>
+<p class="tl-fx-cond">Khi chạm đất</p>
+<p>$$v_{\mathrm{cd}}=\sqrt{v_0^2+2gh}$$</p>
+<p class="tl-fx-cond">Góc lệch so với phương ngang</p>
+<p>$$\tan\alpha=\dfrac{v_y}{v_x}=\dfrac{gt}{v_0}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>độ lớn vận tốc tại thời điểm $t$ (m/s)</span></li>
+<li><span class="tl-sym">$v_{\mathrm{cd}}$</span><span>vận tốc lúc chạm đất (m/s)</span></li>
+<li><span class="tl-sym">$v_0$</span><span>vận tốc ném (m/s)</span></li>
+<li><span class="tl-sym">$h$</span><span>độ cao lúc ném (m)</span></li>
+<li><span class="tl-sym">$\alpha$</span><span>góc giữa $\vec v$ và phương ngang (độ)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian kể từ lúc ném (s)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do (m/s²)</span></li>
+</ul>
+</div>
 
 <!--FIG4-->
 
@@ -329,16 +372,22 @@
 
 <!--FIG5-->
 
-<div class="table-scroll">
-<table class="tl-table">
-<thead>
-<tr><th>Phương</th><th>Chuyển động · công thức</th></tr>
-</thead>
-<tbody>
-<tr><td>Ox</td><td>thẳng đều · $v_x=v_0\cos\alpha$ · $x=v_0\cos\alpha\,t$</td></tr>
-<tr><td>Oy (<em>lên</em>)</td><td>$a_y=-g$ · $v_y=v_0\sin\alpha-gt$ · $y=v_0\sin\alpha\,t-\dfrac{1}{2}gt^2$</td></tr>
-</tbody>
-</table>
+<div class="tl-fx">
+<p class="tl-fx-name">Ném xiên: hai chuyển động thành phần</p>
+<p class="tl-fx-cond">Ox: thẳng đều</p>
+<p>$$v_x=v_0\cos\alpha$$</p>
+<p>$$x=v_0\cos\alpha\,t$$</p>
+<p class="tl-fx-cond">Oy (hướng lên): gia tốc $-g$</p>
+<p>$$v_y=v_0\sin\alpha-gt$$</p>
+<p>$$y=v_0\sin\alpha\,t-\dfrac{1}{2}gt^2$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v_0$</span><span>vận tốc ném (m/s)</span></li>
+<li><span class="tl-sym">$\alpha$</span><span>góc ném so với phương ngang (độ)</span></li>
+<li><span class="tl-sym">$v_x,\ v_y$</span><span>thành phần vận tốc theo Ox, Oy (m/s)</span></li>
+<li><span class="tl-sym">$x,\ y$</span><span>toạ độ của vật tại thời điểm $t$ (m)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian kể từ lúc ném (s)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do, $g\approx 9{,}8$ m/s²</span></li>
+</ul>
 </div>
 
 <h4>2. Điểm cao nhất, thời gian bay, tầm xa</h4>
@@ -347,9 +396,24 @@
 
 <ul>
 <li>Tại đỉnh $v_y=0$, suy ra thời gian lên $t_{lên}=\dfrac{v_0\sin\alpha}{g}$; thế $t_{lên}$ vào $y$ được tầm cao $H=\dfrac{v_0^2\sin^2\alpha}{g}-\dfrac{v_0^2\sin^2\alpha}{2g}=\dfrac{v_0^2\sin^2\alpha}{2g}$.</li>
-<li>Ném từ mặt đất thì chạm đất khi $y=0$: $t\big(v_0\sin\alpha-\tfrac{1}{2}gt\big)=0$, bỏ nghiệm $t=0$ (lúc ném) được thời gian bay $t=\dfrac{2v_0\sin\alpha}{g}=2t_{lên}$.</li>
-<li>Tầm xa $L=v_0\cos\alpha\cdot t=\dfrac{2v_0^2\sin\alpha\cos\alpha}{g}=\dfrac{v_0^2\sin 2\alpha}{g}$ (công thức nhân đôi $2\sin\alpha\cos\alpha=\sin2\alpha$, Toán 11).</li>
+<li>Ném từ mặt đất thì chạm đất khi $y=0$: $t\big(v_0\sin\alpha-\tfrac{1}{2}gt\big)=0$, bỏ nghiệm $t=0$ (lúc ném) được thời gian bay gấp đôi thời gian lên.</li>
+<li>Tầm xa $L=v_0\cos\alpha\cdot t=\dfrac{2v_0^2\sin\alpha\cos\alpha}{g}$, dùng công thức nhân đôi $2\sin\alpha\cos\alpha=\sin2\alpha$ (Toán 11).</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Ném xiên từ mặt đất: tầm cao, thời gian bay, tầm xa</p>
+<p>$$H=\dfrac{v_0^2\sin^2\alpha}{2g}$$</p>
+<p>$$t=\dfrac{2v_0\sin\alpha}{g}$$</p>
+<p>$$L=\dfrac{v_0^2\sin 2\alpha}{g}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$H$</span><span>tầm cao (m)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian bay (s)</span></li>
+<li><span class="tl-sym">$L$</span><span>tầm xa (m)</span></li>
+<li><span class="tl-sym">$v_0$</span><span>vận tốc ném (m/s)</span></li>
+<li><span class="tl-sym">$\alpha$</span><span>góc ném (độ)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do (m/s²)</span></li>
+</ul>
+<p class="tl-fx-note">Xa nhất khi $\alpha=45^\circ$; hai góc phụ nhau cho cùng tầm xa $L$.</p>
+</div>
 
 <div class="tl-box tl-box--think tl-note">
 <p class="tl-label">📊 Đọc bảng: cùng $v_0=10$ m/s, $g=10$ m/s², đổi góc ném</p>

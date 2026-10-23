@@ -85,11 +85,20 @@
 
 <h4>2. Công thức đoạn mạch nối tiếp</h4>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Đoạn mạch nối tiếp</p>
-$$I = I_1 = I_2$$
-$$U = U_1 + U_2$$
-$$R_{td} = R_1 + R_2$$
+<div class="tl-fx">
+<p class="tl-fx-name">Đoạn mạch nối tiếp</p>
+<p class="tl-fx-cond">Cường độ dòng điện</p>
+<p>$$I = I_1 = I_2$$</p>
+<p class="tl-fx-cond">Hiệu điện thế</p>
+<p>$$U = U_1 + U_2$$</p>
+<p class="tl-fx-cond">Điện trở tương đương</p>
+<p>$$R_\mathrm{td} = R_1 + R_2$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$I, I_1, I_2$</span><span>cường độ dòng điện qua cả đoạn mạch, qua điện trở 1, qua điện trở 2 (A)</span></li>
+<li><span class="tl-sym">$U, U_1, U_2$</span><span>hiệu điện thế hai đầu cả đoạn mạch, hai đầu điện trở 1, hai đầu điện trở 2 (V)</span></li>
+<li><span class="tl-sym">$R_1, R_2$</span><span>các điện trở thành phần (Ω)</span></li>
+<li><span class="tl-sym">$R_\mathrm{td}$</span><span>điện trở tương đương của cả đoạn mạch (Ω)</span></li>
+</ul>
 </div>
 
 <ul>
@@ -124,15 +133,25 @@ $$R_{td} = R_1 + R_2$$
 </ol>
 </div>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Đoạn mạch song song</p>
-$$U = U_1 = U_2$$
-$$I = I_1 + I_2$$
-$$\frac{1}{R_{td}} = \frac{1}{R_1} + \frac{1}{R_2}$$
+<div class="tl-fx">
+<p class="tl-fx-name">Đoạn mạch song song</p>
+<p class="tl-fx-cond">Hiệu điện thế</p>
+<p>$$U = U_1 = U_2$$</p>
+<p class="tl-fx-cond">Cường độ dòng điện</p>
+<p>$$I = I_1 + I_2$$</p>
+<p class="tl-fx-cond">Điện trở tương đương</p>
+<p>$$\dfrac{1}{R_\mathrm{td}} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$$</p>
+<p class="tl-fx-cond">Hai điện trở (tích chia tổng)</p>
+<p>$$R_\mathrm{td} = \dfrac{R_1 R_2}{R_1 + R_2}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$U, U_1, U_2$</span><span>hiệu điện thế hai đầu cả đoạn mạch, hai đầu mỗi nhánh (V)</span></li>
+<li><span class="tl-sym">$I, I_1, I_2$</span><span>cường độ dòng điện mạch chính, qua nhánh 1, qua nhánh 2 (A)</span></li>
+<li><span class="tl-sym">$R_1, R_2$</span><span>các điện trở thành phần (Ω)</span></li>
+<li><span class="tl-sym">$R_\mathrm{td}$</span><span>điện trở tương đương của cả đoạn mạch (Ω)</span></li>
+</ul>
 </div>
 
 <ul>
-<li>Hai điện trở: $R_{td} = \dfrac{R_1 R_2}{R_1 + R_2}$ (mẹo: <strong>tích chia tổng</strong>).</li>
 <li>$R_{td}$ <strong>nhỏ hơn mỗi điện trở thành phần</strong>: thêm nhánh là thêm đường cho dòng đi.</li>
 <li>Ví dụ: $R_{td} = \dfrac{10 \cdot 15}{10 + 15} = 6\ \Omega.$<br>$I = \dfrac{6\ \text{V}}{6\ \Omega} = 1\ \text{A}.$<br>Khớp số chỉ ampe kế mạch chính.</li>
 <li>$\dfrac{I_1}{I_2} = \dfrac{R_2}{R_1}{:}$ nhánh có điện trở nhỏ thì dòng lớn.</li>

@@ -36,10 +36,18 @@
 
 <ul>
 <li><strong>Chuyển động thẳng biến đổi đều:</strong> quỹ đạo thẳng, gia tốc không đổi (cả độ lớn lẫn hướng).</li>
-<li>Gia tốc: $a = \dfrac{\Delta v}{\Delta t} = \dfrac{v - v_0}{t - t_0}$, với $v_0$, $v$ là vận tốc lúc $t_0$, lúc $t$. Đơn vị $\text{m/s}^2$.</li>
 <li><strong>Nhanh dần đều:</strong> $a$ cùng dấu $v$ $(a \cdot v \gt 0)$</li>
 <li><strong>Chậm dần đều:</strong> $a$ ngược dấu $v$ $(a \cdot v \lt 0)$</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Gia tốc</p>
+<p>$$a = \dfrac{\Delta v}{\Delta t} = \dfrac{v - v_0}{t - t_0}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$a$</span><span>gia tốc ($\text{m/s}^2$)</span></li>
+<li><span class="tl-sym">$v_0$, $v$</span><span>vận tốc lúc $t_0$, lúc $t$ ($\text{m/s}$)</span></li>
+<li><span class="tl-sym">$t_0$, $t$</span><span>thời điểm đầu, thời điểm sau (s)</span></li>
+</ul>
+</div>
 
 <p>Ví dụ: vận động viên trượt băng thả trôi với $6\ \text{m/s}$, cứ mỗi giây chậm đi $0{,}5\ \text{m/s}$. Chọn chiều dương theo chiều trượt: $v \gt 0$, $a = -0{,}5\ \text{m/s}^2$, ngược dấu nên chậm dần đều.</p>
 
@@ -53,11 +61,23 @@
 <p><strong>🔑 $v = v_0 + at$ · đường thẳng · độ dốc là $a$</strong></p>
 
 <ul>
-<li>$v = v_0 + a(t - t_0)$. Chọn gốc thời gian lúc bắt đầu xét ($t_0 = 0$): $v = v_0 + at$.</li>
-<li>Bắt đầu từ nghỉ ($v_0 = 0$): $v = at$.</li>
+<li>Chọn gốc thời gian lúc bắt đầu xét ($t_0 = 0$) thì có công thức vận tốc dưới đây.</li>
 <li>Đồ thị $v$ theo $t$ là <strong>đoạn thẳng</strong>, cắt trục $v$ tại $v_0$.</li>
 <li><strong>Độ dốc</strong> $= \dfrac{\Delta v}{\Delta t} = a$: dốc lên thì $a \gt 0$, dốc xuống thì $a \lt 0$, nằm ngang thì $a = 0$.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Vận tốc theo thời gian</p>
+<p>$$v = v_0 + at$$</p>
+<p class="tl-fx-cond">Bắt đầu từ nghỉ ($v_0 = 0$)</p>
+<p>$$v = at$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>vận tốc lúc $t$ ($\text{m/s}$)</span></li>
+<li><span class="tl-sym">$v_0$</span><span>vận tốc ban đầu ($\text{m/s}$)</span></li>
+<li><span class="tl-sym">$a$</span><span>gia tốc ($\text{m/s}^2$)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian kể từ gốc thời gian (s)</span></li>
+</ul>
+</div>
 
 <!--FIG2-->
 
@@ -109,14 +129,35 @@
 <ul>
 <li>Độ dịch chuyển $=$ <strong>diện tích</strong> giữa đồ thị $v$–$t$ và trục $t$.</li>
 <li>Hình thang có hai đáy $v_0$, $v$, chiều cao $t$: $d = \dfrac{v_0 + v}{2}\, t$, tức <strong>vận tốc trung bình × thời gian</strong>.</li>
-<li>Thay $v = v_0 + at$: $d = v_0t + \tfrac12 at^2$.</li>
+<li>Thay $v = v_0 + at$ được công thức dưới đây.</li>
 <li>Không đổi chiều chuyển động: quãng đường $s = |d|$, bằng $d$ nếu chọn chiều dương theo chiều chuyển động.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Độ dịch chuyển</p>
+<p>$$d = v_0t + \tfrac12 at^2$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$d$</span><span>độ dịch chuyển (m)</span></li>
+<li><span class="tl-sym">$v_0$</span><span>vận tốc ban đầu ($\text{m/s}$)</span></li>
+<li><span class="tl-sym">$a$</span><span>gia tốc ($\text{m/s}^2$)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
+</ul>
+</div>
 
 <!--FIG3-->
 
 <p><strong>Phương trình chuyển động.</strong> Vật ở toạ độ $x_0$ lúc $t = 0$ thì $d = x - x_0$, nên:</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Phương trình chuyển động</p>
 <p>$$x = x_0 + v_0t + \tfrac12 at^2$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$x$</span><span>toạ độ lúc $t$ (m)</span></li>
+<li><span class="tl-sym">$x_0$</span><span>toạ độ lúc $t = 0$ (m)</span></li>
+<li><span class="tl-sym">$v_0$</span><span>vận tốc ban đầu ($\text{m/s}$)</span></li>
+<li><span class="tl-sym">$a$</span><span>gia tốc ($\text{m/s}^2$)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
+</ul>
+</div>
 <p>Trước khi viết, chọn đủ ba thứ: <strong>gốc toạ độ</strong>, <strong>chiều dương</strong>, <strong>gốc thời gian</strong>. Dấu của $x_0$, $v_0$, $a$ đọc theo chiều dương đó.</p>
 
 <div class="tl-box tl-box--think tl-check">
@@ -137,10 +178,21 @@
 <p><strong>🔑 Không có $t$ · $v^2 - v_0^2 = 2ad$ · quãng phanh theo $v_0^2$</strong></p>
 
 <ul>
-<li>Khử $t$ giữa $v = v_0 + at$ và $d = \dfrac{v_0 + v}{2}\, t$ được: $v^2 - v_0^2 = 2ad$.</li>
+<li>Khử $t$ giữa $v = v_0 + at$ và $d = \dfrac{v_0 + v}{2}\, t$ được công thức dưới đây.</li>
 <li>Dùng khi đề <strong>không cho và không hỏi thời gian</strong>.</li>
-<li>Phanh tới dừng ($v = 0$): $d = \dfrac{v_0^2}{2|a|}$. Tốc độ gấp đôi, quãng phanh gấp bốn.</li>
+<li>Tốc độ gấp đôi, quãng phanh gấp bốn.</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Công thức không có thời gian</p>
+<p>$$v^2 - v_0^2 = 2ad$$</p>
+<p class="tl-fx-cond">Phanh tới dừng ($v = 0$)</p>
+<p>$$d = \dfrac{v_0^2}{2|a|}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$, $v_0$</span><span>vận tốc cuối, vận tốc đầu ($\text{m/s}$)</span></li>
+<li><span class="tl-sym">$a$</span><span>gia tốc ($\text{m/s}^2$)</span></li>
+<li><span class="tl-sym">$d$</span><span>độ dịch chuyển (m)</span></li>
+</ul>
+</div>
 
 <details class="tl-details tl-more">
 <summary>📐 Xem thêm: khử $t$ thế nào?</summary>

@@ -34,16 +34,23 @@
 
 <p><strong>🔑 Toàn phần = có ích + hao phí</strong></p>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Ba loại năng lượng của một máy</p>
 <ul>
 <li><strong>Toàn phần</strong> $W_{tp}$: năng lượng máy nhận vào.</li>
 <li><strong>Có ích</strong> $W_{ci}$: phần thành dạng ta cần (cơ năng, ánh sáng...). Nếu phần này là công thì gọi là <em>công có ích</em>.</li>
 <li><strong>Hao phí</strong> $W_{hp}$: phần thành nhiệt, âm, rung.</li>
 </ul>
-$$W_{tp} = W_{ci} + W_{hp}$$
-<p>Hao phí <strong>không biến mất</strong>: nó chỉ đi sang dạng ta không dùng được. Năng lượng vẫn bảo toàn.</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Ba loại năng lượng của một máy</p>
+<p>$$W_{\mathrm{tp}} = W_{\mathrm{ci}} + W_{\mathrm{hp}}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$W_{\mathrm{tp}}$</span><span>năng lượng toàn phần (J)</span></li>
+<li><span class="tl-sym">$W_{\mathrm{ci}}$</span><span>năng lượng có ích (J)</span></li>
+<li><span class="tl-sym">$W_{\mathrm{hp}}$</span><span>năng lượng hao phí (J)</span></li>
+</ul>
 </div>
+
+<p>Hao phí <strong>không biến mất</strong>: nó chỉ đi sang dạng ta không dùng được. Năng lượng vẫn bảo toàn.</p>
 
 <!--FIG2-->
 
@@ -78,16 +85,21 @@ $$W_{tp} = W_{ci} + W_{hp}$$
 
 <p><strong>🔑 Có ích chia toàn phần · không đơn vị · dưới 100 %</strong></p>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Hiệu suất $H$</p>
 <ul>
 <li>Cho biết <strong>bao nhiêu phần trăm</strong> năng lượng nhận vào thành có ích.</li>
 <li>Không có đơn vị; máy thật luôn có $H \lt 100\,\%$.</li>
+<li>Cùng khoảng thời gian $t$, chia tử và mẫu cho $t$ (nhớ $P = W/t$) thì được dạng theo công suất.</li>
 </ul>
-$$H = \dfrac{W_{ci}}{W_{tp}}\cdot 100\,\%$$
-<p>Cùng khoảng thời gian $t$, chia tử và mẫu cho $t$ (nhớ $P = W/t$) thì được công suất:</p>
-$$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
-<p>$P_{ci}$: công suất có ích (W)<br>$P_{tp}$: công suất toàn phần (W)</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Hiệu suất</p>
+<p>$$H = \dfrac{W_{\mathrm{ci}}}{W_{\mathrm{tp}}}\cdot 100\,\%$$</p>
+<p>$$H = \dfrac{P_{\mathrm{ci}}}{P_{\mathrm{tp}}}\cdot 100\,\%$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$H$</span><span>hiệu suất (%, không có đơn vị khác)</span></li>
+<li><span class="tl-sym">$W_{\mathrm{ci}}$, $W_{\mathrm{tp}}$</span><span>năng lượng có ích, toàn phần (J)</span></li>
+<li><span class="tl-sym">$P_{\mathrm{ci}}$, $P_{\mathrm{tp}}$</span><span>công suất có ích, toàn phần (W)</span></li>
+</ul>
 </div>
 
 <ul>
@@ -153,9 +165,18 @@ $$H = \dfrac{P_{ci}}{P_{tp}}\cdot 100\,\%$$
 <li>Ma sát biến cơ năng thành nhiệt; dây dẫn nóng lên; máy rung và kêu. Các hao phí này giảm được, không xoá hết được.</li>
 <li>Ròng rọc, mặt phẳng nghiêng giảm lực kéo nhưng phải kéo quãng đường dài hơn, nên không lợi về công. Thêm ma sát nên $W_{tp} \gt W_{ci}$.</li>
 <li>Nên $W_{hp} \gt 0$ và $H \lt 100\,\%$.</li>
-<li><strong>Ghép nối tiếp</strong>: máy sau nhận năng lượng ra của máy trước, nên $H = H_1\cdot H_2\cdots$ (đổi mỗi $H$ ra số thập phân rồi mới nhân).</li>
+<li><strong>Ghép nối tiếp</strong>: máy sau nhận năng lượng ra của máy trước (đổi mỗi $H$ ra số thập phân rồi mới nhân).</li>
 <li><strong>Giảm hao phí</strong>: bôi trơn, bảo dưỡng, cách nhiệt, bớt khâu truyền, dùng thiết bị hiệu suất cao.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Hiệu suất khi ghép nối tiếp</p>
+<p>$$H = H_1\cdot H_2\cdots$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$H$</span><span>hiệu suất cả hệ (số thập phân, không đơn vị)</span></li>
+<li><span class="tl-sym">$H_1$, $H_2$</span><span>hiệu suất từng máy (số thập phân, không đơn vị)</span></li>
+</ul>
+</div>
 
 <!--FIG4-->
 

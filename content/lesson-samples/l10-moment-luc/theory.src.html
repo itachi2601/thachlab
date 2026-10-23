@@ -64,15 +64,21 @@
 
 <p><strong>🔑 Tác dụng làm quay · lực nhân cánh tay đòn</strong></p>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Moment lực</p>
 <ul>
-<li>Đặc trưng cho <strong>tác dụng làm quay</strong> của lực quanh một trục.</li>
+<li>Moment lực đặc trưng cho <strong>tác dụng làm quay</strong> của lực quanh một trục.</li>
 </ul>
-$$M = F\cdot d$$
-<p>$F$: độ lớn lực (N)<br>$d$: cánh tay đòn (m)<br>$M$: moment lực ($\text{N}\cdot\text{m}$).</p>
-<p><strong>Cánh tay đòn $d$</strong> = khoảng cách từ trục quay tới <strong>giá của lực</strong> (đường thẳng chứa lực), đo vuông góc.</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Moment lực</p>
+<p>$$M = F\cdot d$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$M$</span><span>moment lực ($\text{N}\cdot\text{m}$)</span></li>
+<li><span class="tl-sym">$F$</span><span>độ lớn lực (N)</span></li>
+<li><span class="tl-sym">$d$</span><span>cánh tay đòn (m)</span></li>
+</ul>
 </div>
+
+<p><strong>Cánh tay đòn $d$</strong> = khoảng cách từ trục quay tới <strong>giá của lực</strong> (đường thẳng chứa lực), đo vuông góc.</p>
 
 <ul>
 <li>Ví dụ mở bài (lực vuông góc cán nên $d$ đúng bằng khoảng cách tới chỗ đặt tay): Minh $M = 300 \cdot 0{,}08 = 24\ \text{N}\cdot\text{m}$; anh Tuấn $M = 150 \cdot 0{,}30 = 45\ \text{N}\cdot\text{m}$. Nếu nhổ đinh cần khoảng $40\ \text{N}\cdot\text{m}$ quanh điểm tì thì chỉ anh Tuấn đủ.</li>
@@ -106,13 +112,18 @@ $$M = F\cdot d$$
 
 <p><strong>🔑 Moment thuận kim = moment ngược kim</strong></p>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Quy tắc moment lực</p>
 <ul>
 <li>Áp dụng cho vật có <strong>trục quay cố định</strong>.</li>
-<li>Vật cân bằng khi tổng moment làm quay <strong>thuận chiều kim đồng hồ</strong> ($M_1, M_2,\dots$) bằng tổng moment làm quay <strong>ngược chiều</strong> ($M_1', M_2',\dots$).</li>
+<li>Vật cân bằng khi tổng moment làm quay <strong>thuận chiều kim đồng hồ</strong> bằng tổng moment làm quay <strong>ngược chiều</strong>.</li>
 </ul>
-$$M_1 + M_2 + \dots = M_1' + M_2' + \dots$$
+
+<div class="tl-fx">
+<p class="tl-fx-name">Quy tắc moment lực</p>
+<p>$$M_1 + M_2 + \dots = M_1' + M_2' + \dots$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$M_1$, $M_2$, $\dots$</span><span>các moment làm quay thuận chiều kim đồng hồ ($\text{N}\cdot\text{m}$)</span></li>
+<li><span class="tl-sym">$M_1'$, $M_2'$, $\dots$</span><span>các moment làm quay ngược chiều kim đồng hồ ($\text{N}\cdot\text{m}$)</span></li>
+</ul>
 </div>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-moment-luc-02">
@@ -169,14 +180,23 @@ $$M_1 + M_2 + \dots = M_1' + M_2' + \dots$$
 
 <p><strong>🔑 Tổng lực bằng 0 · tổng moment bằng 0</strong></p>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Vật rắn cân bằng khi đủ cả hai</p>
-<ul>
-<li><strong>Tổng các lực</strong> tác dụng lên vật bằng $\vec 0$: vật không tịnh tiến.</li>
-<li><strong>Tổng các moment lực</strong> đối với <strong>một điểm bất kì</strong> bằng 0 (chọn một chiều quay làm chiều dương): vật không quay.</li>
-<li>Moment theo chiều dương mang dấu +, theo chiều kia mang dấu −. Tổng bằng 0 chính là: tổng moment thuận kim = tổng moment ngược kim.</li>
+<p>Vật rắn cân bằng khi đủ cả hai điều kiện:</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Điều kiện cân bằng của vật rắn</p>
+<p class="tl-fx-cond">Không tịnh tiến: tổng các lực bằng không</p>
+<p>$$\sum \vec F = \vec 0$$</p>
+<p class="tl-fx-cond">Không quay: tổng moment đối với một điểm bất kì bằng không</p>
+<p>$$\sum M = 0$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\vec F$</span><span>các lực tác dụng lên vật (N)</span></li>
+<li><span class="tl-sym">$M$</span><span>moment của từng lực ($\text{N}\cdot\text{m}$); chiều quay chọn làm dương mang dấu +, chiều kia mang dấu −</span></li>
 </ul>
 </div>
+
+<ul>
+<li>Tổng moment bằng 0 chính là: tổng moment thuận kim = tổng moment ngược kim.</li>
+</ul>
 
 <ul>
 <li>Mẹo chọn trục: "trục" ở đây là <strong>điểm tự chọn</strong> để tính moment, không cần là trục quay thật. Đặt nó ở chỗ có <strong>lực chưa biết</strong>: lực đó có $d = 0$, biến mất khỏi phương trình moment.</li>
@@ -193,18 +213,27 @@ $$M_1 + M_2 + \dots = M_1' + M_2' + \dots$$
 
 <!--FIG4-->
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Ngẫu lực và moment ngẫu lực</p>
 <ul>
 <li><strong>Ngẫu lực</strong>: hai lực song song, ngược chiều, cùng độ lớn, cùng đặt vào một vật.</li>
 <li>Tổng hai lực bằng 0: ngẫu lực <strong>chỉ làm biến đổi chuyển động quay</strong>.</li>
 <li>Vật <strong>không có trục cố định</strong> (thước trên bàn): quay quanh trục qua <strong>trọng tâm</strong>, vuông góc mặt phẳng chứa ngẫu lực.</li>
 <li>Vật <strong>có trục cố định</strong> (vô lăng): quay quanh chính trục đó.</li>
 </ul>
-$$M = F_1 d_1 + F_2 d_2 = F\cdot d$$
-<p>$F$: độ lớn mỗi lực (N)<br>$d_1$, $d_2$: cánh tay đòn của từng lực<br>$d = d_1 + d_2$ (trục nằm giữa hai giá): khoảng cách <strong>giữa hai giá</strong> (m), gọi là cánh tay đòn của ngẫu lực.<br>Trục nằm ngoài hai giá ($d_2 \gt d_1$): $M = F d_2 - F d_1$, vẫn bằng $F d$.</p>
-<p>Moment ngẫu lực <strong>không phụ thuộc vị trí trục quay</strong> (trục vuông góc mặt phẳng ngẫu lực).</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Moment ngẫu lực</p>
+<p>$$M = F_1 d_1 + F_2 d_2 = F\cdot d$$</p>
+<p class="tl-fx-cond">Trục nằm ngoài hai giá ($d_2 \gt d_1$)</p>
+<p>$$M = F d_2 - F d_1 = F\cdot d$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$M$</span><span>moment ngẫu lực ($\text{N}\cdot\text{m}$)</span></li>
+<li><span class="tl-sym">$F$</span><span>độ lớn mỗi lực (N)</span></li>
+<li><span class="tl-sym">$d_1$, $d_2$</span><span>cánh tay đòn của từng lực (m)</span></li>
+<li><span class="tl-sym">$d$</span><span>khoảng cách <strong>giữa hai giá</strong> (m), cánh tay đòn của ngẫu lực; $d = d_1 + d_2$ khi trục nằm giữa hai giá</span></li>
+</ul>
 </div>
+
+<p>Moment ngẫu lực <strong>không phụ thuộc vị trí trục quay</strong> (trục vuông góc mặt phẳng ngẫu lực).</p>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-moment-luc-03">
 <p class="tl-label">🔬 Thí nghiệm: thước trên mặt bàn</p>

@@ -59,13 +59,19 @@
 
 <p><strong>🔑 Hệ kín · tổng vectơ động lượng không đổi</strong></p>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Định luật bảo toàn động lượng</p>
 <p>Động lượng toàn phần của một hệ kín là một đại lượng bảo toàn:</p>
-$$\vec p_1 + \vec p_2 + \dots = \vec p_1\,' + \vec p_2\,' + \dots$$
-<p>Hệ hai vật:</p>
-$$m_1\vec v_1 + m_2\vec v_2 = m_1\vec v_1\,' + m_2\vec v_2\,'$$
-<p>$\vec v$: vận tốc trước tương tác.<br>$\vec v\,'$: vận tốc sau.</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Định luật bảo toàn động lượng</p>
+<p>$$\vec p_1 + \vec p_2 + \dots = \vec p_1\,' + \vec p_2\,' + \dots$$</p>
+<p class="tl-fx-cond">Hệ hai vật</p>
+<p>$$m_1\vec v_1 + m_2\vec v_2 = m_1\vec v_1\,' + m_2\vec v_2\,'$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\vec p$</span><span>động lượng của từng vật (kg·m/s)</span></li>
+<li><span class="tl-sym">$m_1, m_2$</span><span>khối lượng hai vật (kg)</span></li>
+<li><span class="tl-sym">$\vec v_1, \vec v_2$</span><span>vận tốc trước tương tác (m/s)</span></li>
+<li><span class="tl-sym">$\vec v_1\,', \vec v_2\,'$</span><span>vận tốc sau tương tác (m/s)</span></li>
+</ul>
 </div>
 
 <ul>
@@ -127,10 +133,17 @@ __BANG__
 <li>Cả hai loại: <strong>động lượng đều bảo toàn</strong>.</li>
 </ul>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Vận tốc chung sau va chạm mềm</p>
-$$v = \dfrac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$$
-<p>$v_1, v_2$: vận tốc trước va chạm.<br>$v$ (không dấu phẩy): vận tốc chung <strong>sau</strong> va chạm.<br>Cả ba là giá trị <strong>đại số</strong>: cùng chiều dương thì dương, ngược chiều thì âm.<br>Vật 2 đứng yên: $v = \dfrac{m_1 v_1}{m_1 + m_2}$.</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Vận tốc chung sau va chạm mềm</p>
+<p>$$v = \dfrac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$$</p>
+<p class="tl-fx-cond">Vật 2 đứng yên</p>
+<p>$$v = \dfrac{m_1 v_1}{m_1 + m_2}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>vận tốc chung <strong>sau</strong> va chạm, không dấu phẩy (m/s)</span></li>
+<li><span class="tl-sym">$v_1, v_2$</span><span>vận tốc trước va chạm (m/s)</span></li>
+<li><span class="tl-sym">$m_1, m_2$</span><span>khối lượng hai vật (kg)</span></li>
+</ul>
+<p class="tl-fx-note">Cả ba vận tốc là giá trị <strong>đại số</strong>: cùng chiều dương thì dương, ngược chiều thì âm.</p>
 </div>
 
 <p>Bi cái lăn $2\ \text{m/s}$ va thẳng vào bi đỏ cùng khối lượng đang đứng yên. Coi va chạm là đàn hồi. Kết quả nào thoả cả bảo toàn động lượng lẫn động năng?</p>
@@ -177,10 +190,17 @@ $$v_2' = \dfrac{(m_2 - m_1)v_2 + 2m_1 v_1}{m_1 + m_2}$$
 <li>Hệ đang chuyển động với $\vec v_0$ rồi mới tách: viết $(m + M)\vec v_0 = m\vec v + M\vec V$, không dùng công thức dưới đây.</li>
 </ul>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Chuyển động bằng phản lực</p>
-$$m\vec v + M\vec V = \vec 0 \;\Rightarrow\; \vec V = -\dfrac{m}{M}\,\vec v$$
-<p>$m, \vec v$: phần phụt ra, vận tốc ngay sau khi tách.<br>$M, \vec V$: phần còn lại.<br>Dấu "−": ngược chiều.</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Chuyển động bằng phản lực</p>
+<p>$$m\vec v + M\vec V = \vec 0$$</p>
+<p>$$\vec V = -\dfrac{m}{M}\,\vec v$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$m$</span><span>khối lượng phần phụt ra (kg)</span></li>
+<li><span class="tl-sym">$\vec v$</span><span>vận tốc phần phụt ra, ngay sau khi tách (m/s)</span></li>
+<li><span class="tl-sym">$M$</span><span>khối lượng phần còn lại (kg)</span></li>
+<li><span class="tl-sym">$\vec V$</span><span>vận tốc phần còn lại (m/s)</span></li>
+</ul>
+<p class="tl-fx-note">Dấu "−": phần còn lại chuyển động ngược chiều phần phụt ra.</p>
 </div>
 
 <!--FIG3-->

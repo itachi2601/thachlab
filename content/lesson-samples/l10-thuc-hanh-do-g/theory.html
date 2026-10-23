@@ -6,7 +6,7 @@
 <li>Đọc <strong>đồ thị $s$–$t^2$</strong>: độ dốc bằng $\dfrac{g}{2}$.</li>
 <li>Phân biệt sai số <strong>ngẫu nhiên</strong> và <strong>hệ thống</strong>, nói được cách giảm.</li>
 </ul>
-<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng 16 phút.</p>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng 17 phút.</p>
 </div>
 
 <h3>I. Mở bài: bấm tay hay cổng quang?</h3>
@@ -32,11 +32,19 @@
 
 <p><strong>🔑 Rơi từ nghỉ · $s = \dfrac{1}{2}gt^2$ · đo $s$ và $t$</strong></p>
 
-<ul>
-<li>Bi thả từ nghỉ, bỏ qua sức cản: rơi tự do, $v_0 = 0$, $a = g$ (Bài 10).</li>
-<li>Quãng đường: $s = \dfrac{1}{2}gt^2$.</li>
-<li>Suy ra: $$g = \dfrac{2s}{t^2}$$</li>
+<p>Bi thả từ nghỉ, bỏ qua sức cản: rơi tự do, $v_0 = 0$, $a = g$ (Bài 10).</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Nguyên lí đo $g$</p>
+<p>$$s = \dfrac{1}{2}gt^2$$</p>
+<p class="tl-fx-cond">Suy ra</p>
+<p>$$g = \dfrac{2s}{t^2}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$s$</span><span>quãng đường rơi (m)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian rơi (s)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do (m/s²)</span></li>
 </ul>
+</div>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
@@ -104,13 +112,31 @@
 
 <p><strong>🔑 Trung bình · sai số tuyệt đối · sai số tương đối</strong></p>
 
-<ul>
-<li>Trung bình: $\bar t = \dfrac{t_1 + t_2 + \dots + t_n}{n}$.</li>
-<li>Từng lần: $\Delta t_i = |t_i - \bar t|$; lấy trung bình được $\overline{\Delta t}$.</li>
-<li>Sai số của $t$: $\Delta t = \overline{\Delta t} + \Delta t_{\text{dc}}$ (độ phân tán giữa các lần cộng giới hạn của đồng hồ).</li>
-<li>Sai số tương đối của đại lượng $x$ là $\dfrac{\Delta x}{x}$. Tích, thương thì cộng sai số tương đối. $t^2 = t \cdot t$ nên phần của $t$ tính hai lần ($t$ lệch $1\,\%$ thì $t^2$ lệch khoảng $2\,\%$): $$\delta = \dfrac{\Delta g}{\bar g} = \dfrac{\Delta s}{s} + 2\dfrac{\Delta t}{\bar t}$$</li>
-<li>Kết quả: $\Delta g = \delta \cdot \bar g$, viết $g = \bar g \pm \Delta g$.</li>
+<p>Sai số tương đối của đại lượng $x$ là $\dfrac{\Delta x}{x}$. Tích, thương thì cộng sai số tương đối. $t^2 = t \cdot t$ nên phần của $t$ tính hai lần ($t$ lệch $1\,\%$ thì $t^2$ lệch khoảng $2\,\%$).</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Xử lí số liệu và sai số</p>
+<p class="tl-fx-cond">Giá trị trung bình</p>
+<p>$$\bar t = \dfrac{t_1 + t_2 + \dots + t_n}{n}$$</p>
+<p class="tl-fx-cond">Sai số của $t$ (độ phân tán cộng giới hạn của đồng hồ)</p>
+<p>$$\Delta t_i = |t_i - \bar t|, \qquad \Delta t = \overline{\Delta t} + \Delta t_{\mathrm{dc}}$$</p>
+<p class="tl-fx-cond">Sai số tương đối của $g$</p>
+<p>$$\delta = \dfrac{\Delta g}{\bar g} = \dfrac{\Delta s}{s} + 2\dfrac{\Delta t}{\bar t}$$</p>
+<p class="tl-fx-cond">Kết quả</p>
+<p>$$\Delta g = \delta \cdot \bar g, \qquad g = \bar g \pm \Delta g$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$t_i$</span><span>thời gian rơi ở lần đo thứ $i$ (s)</span></li>
+<li><span class="tl-sym">$n$</span><span>số lần đo</span></li>
+<li><span class="tl-sym">$\bar t$</span><span>thời gian rơi trung bình (s)</span></li>
+<li><span class="tl-sym">$\Delta t_i$</span><span>độ lệch của từng lần so với trung bình (s)</span></li>
+<li><span class="tl-sym">$\overline{\Delta t}$</span><span>trung bình các độ lệch $\Delta t_i$ (s)</span></li>
+<li><span class="tl-sym">$\Delta t_{\mathrm{dc}}$</span><span>giới hạn sai số của đồng hồ đo, dc: dụng cụ (s)</span></li>
+<li><span class="tl-sym">$\Delta t$</span><span>sai số tuyệt đối của $t$ (s)</span></li>
+<li><span class="tl-sym">$\Delta s$</span><span>sai số tuyệt đối của $s$ (m)</span></li>
+<li><span class="tl-sym">$\bar g,\ \Delta g$</span><span>giá trị trung bình và sai số tuyệt đối của $g$ (m/s²)</span></li>
+<li><span class="tl-sym">$\delta$</span><span>sai số tương đối của $g$ (không có đơn vị)</span></li>
 </ul>
+</div>
 
 <p>Làm cùng bảng ($s = 0{,}500\ \text{m}$, $\Delta s = 0{,}001\ \text{m}$):</p>
 <ol class="tl-steps">

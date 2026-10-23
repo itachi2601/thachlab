@@ -67,8 +67,21 @@
 <li>Điểm đặt: trên vật, tại mặt tiếp xúc. Phương: song song mặt tiếp xúc.</li>
 <li>Chiều: <strong>ngược xu hướng chuyển động</strong> tương đối của vật.</li>
 <li>Độ lớn: <strong>bằng</strong> thành phần ngoại lực song song mặt tiếp xúc.</li>
-<li>Có giới hạn: <strong>ma sát nghỉ cực đại</strong> $F_{\text{msn max}}$. Lực đẩy vượt mức này thì vật bắt đầu trượt.</li>
+<li>Có giới hạn: <strong>ma sát nghỉ cực đại</strong>. Lực đẩy vượt mức này thì vật bắt đầu trượt.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Ma sát nghỉ</p>
+<p>$$F_{\mathrm{msn}} = F_{\parallel}$$</p>
+<p class="tl-fx-cond">Giới hạn</p>
+<p>$$0 \le F_{\mathrm{msn}} \le F_{\mathrm{msn\,max}}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$F_{\mathrm{msn}}$</span><span>lực ma sát nghỉ (N)</span></li>
+<li><span class="tl-sym">$F_{\parallel}$</span><span>thành phần ngoại lực song song mặt tiếp xúc (N)</span></li>
+<li><span class="tl-sym">$F_{\mathrm{msn\,max}}$</span><span>ma sát nghỉ cực đại (N)</span></li>
+</ul>
+<p class="tl-fx-note">Ma sát nghỉ tự điều chỉnh theo ngoại lực, không có công thức $\mu N$.</p>
+</div>
 
 <details class="tl-details tl-more">
 <summary>📌 Bấm xem ví dụ: hai bạn cùng đẩy tủ</summary>
@@ -89,10 +102,15 @@
 <li>Thường <strong>nhỏ hơn</strong> nghỉ cực đại: vì thế An thấy nhẹ tay.</li>
 </ul>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Lực ma sát trượt</p>
-$$F_{\text{mst}} = \mu N$$
-<p>$\mu$: hệ số ma sát trượt, <strong>không có đơn vị</strong><br>$N$: độ lớn áp lực, bằng độ lớn phản lực của mặt lên vật.<br>Ký hiệu $N$ in nghiêng là áp lực; chữ N đứng sau con số là đơn vị niutơn.</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Lực ma sát trượt</p>
+<p>$$F_{\mathrm{mst}} = \mu N$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$F_{\mathrm{mst}}$</span><span>lực ma sát trượt (N)</span></li>
+<li><span class="tl-sym">$\mu$</span><span>hệ số ma sát trượt, <strong>không có đơn vị</strong></span></li>
+<li><span class="tl-sym">$N$</span><span>độ lớn áp lực, bằng độ lớn phản lực của mặt lên vật (N)</span></li>
+</ul>
+<p class="tl-fx-note">Ký hiệu $N$ in nghiêng là áp lực; chữ N đứng sau con số là đơn vị niutơn.</p>
 </div>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-luc-ma-sat-02">
@@ -159,11 +177,28 @@ $$F_{\text{mst}} = \mu N$$
 <p><strong>🔑 Chiếu lên phương vuông góc mặt tiếp xúc</strong></p>
 
 <ul>
-<li><strong>Mặt ngang, lực kéo ngang:</strong> $N = P = mg$.</li>
-<li><strong>Mặt ngang, kéo chếch lên góc $\alpha$ so với phương ngang:</strong> chiếu lên phương thẳng đứng, $N + F\sin\alpha - mg = 0$, nên $N = mg - F\sin\alpha$.</li>
-<li><strong>Mặt nghiêng góc $\alpha$:</strong> tách $P$ thành $P_x = mg\sin\alpha$ (dọc dốc, kéo vật xuống) và $P_y = mg\cos\alpha$ (ép vào dốc). $N$ cân bằng $P_y$: $N = mg\cos\alpha$.</li>
+<li><strong>Mặt ngang, lực kéo ngang:</strong> $N$ cân bằng trọng lượng $P$.</li>
+<li><strong>Mặt ngang, kéo chếch lên góc $\alpha$ so với phương ngang:</strong> chiếu lên phương thẳng đứng, $N + F\sin\alpha - mg = 0$.</li>
+<li><strong>Mặt nghiêng góc $\alpha$:</strong> tách $P$ thành $P_x = mg\sin\alpha$ (dọc dốc, kéo vật xuống) và $P_y = mg\cos\alpha$ (ép vào dốc). $N$ cân bằng $P_y$.</li>
 <li>$N$ vuông góc mặt dốc nên <strong>không kéo</strong> vật xuống dốc.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Áp lực N theo từng tình huống</p>
+<p class="tl-fx-cond">Mặt ngang, kéo ngang</p>
+<p>$$N = mg$$</p>
+<p class="tl-fx-cond">Mặt ngang, kéo chếch lên góc $\alpha$</p>
+<p>$$N = mg - F\sin\alpha$$</p>
+<p class="tl-fx-cond">Mặt nghiêng góc $\alpha$</p>
+<p>$$N = mg\cos\alpha$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$N$</span><span>áp lực lên mặt tiếp xúc (N)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng (kg)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do (m/s²)</span></li>
+<li><span class="tl-sym">$F$</span><span>lực kéo chếch (N)</span></li>
+<li><span class="tl-sym">$\alpha$</span><span>góc kéo hoặc góc nghiêng (độ)</span></li>
+</ul>
+</div>
 
 <!--FIG2-->
 

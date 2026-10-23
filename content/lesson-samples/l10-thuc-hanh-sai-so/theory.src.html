@@ -129,11 +129,27 @@
 
 <p><strong>🔑 Lệch trung bình + sai số dụng cụ</strong></p>
 
+<div class="tl-fx">
+<p class="tl-fx-name">Sai số tuyệt đối của phép đo trực tiếp</p>
+<p class="tl-fx-cond">Giá trị trung bình</p>
+<p>$$\overline{A} = \dfrac{A_1 + A_2 + \dots + A_n}{n}$$</p>
+<p class="tl-fx-cond">Sai số tuyệt đối từng lần</p>
+<p>$$\Delta A_i = |\overline{A} - A_i|$$</p>
+<p class="tl-fx-cond">Trung bình các lần</p>
+<p>$$\overline{\Delta A} = \dfrac{\Delta A_1 + \Delta A_2 + \dots + \Delta A_n}{n}$$</p>
+<p class="tl-fx-cond">Sai số tuyệt đối của phép đo</p>
+<p>$$\Delta A = \overline{\Delta A} + \Delta A_{\mathrm{dc}}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$A_i$</span><span>kết quả lần đo thứ $i$ (cùng đơn vị với $A$)</span></li>
+<li><span class="tl-sym">$n$</span><span>số lần đo (không có đơn vị)</span></li>
+<li><span class="tl-sym">$\overline{A}$</span><span>giá trị trung bình (cùng đơn vị với $A$)</span></li>
+<li><span class="tl-sym">$\Delta A_i$, $\overline{\Delta A}$</span><span>sai số tuyệt đối từng lần, trung bình các lần (cùng đơn vị với $A$)</span></li>
+<li><span class="tl-sym">$\Delta A_{\mathrm{dc}}$</span><span>sai số dụng cụ (cùng đơn vị với $A$)</span></li>
+<li><span class="tl-sym">$\Delta A$</span><span>sai số tuyệt đối của phép đo (cùng đơn vị với $A$)</span></li>
+</ul>
+</div>
+
 <ul>
-<li>Giá trị trung bình: $\overline{A} = \dfrac{A_1 + A_2 + \dots + A_n}{n}$.</li>
-<li>Sai số tuyệt đối từng lần: $\Delta A_i = |\overline{A} - A_i|$.</li>
-<li>Trung bình các lần: $\overline{\Delta A} = \dfrac{\Delta A_1 + \Delta A_2 + \dots + \Delta A_n}{n}$.</li>
-<li>Sai số tuyệt đối của phép đo: $$\Delta A = \overline{\Delta A} + \Delta A_{\text{dc}}$$</li>
 <li>Chỉ đo 1 lần: $\Delta A = \Delta A_{\text{dc}}$ (như Hình 1).</li>
 </ul>
 
@@ -174,8 +190,17 @@ __BANG_TN1__
 
 <p><strong>🔑 Sai số tỉ đối: ΔA chia Ā</strong></p>
 
+<div class="tl-fx">
+<p class="tl-fx-name">Sai số tỉ đối</p>
+<p>$$\delta A = \dfrac{\Delta A}{\overline{A}} \cdot 100\,\%$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\delta A$</span><span>sai số tỉ đối (%)</span></li>
+<li><span class="tl-sym">$\Delta A$</span><span>sai số tuyệt đối (cùng đơn vị với $A$)</span></li>
+<li><span class="tl-sym">$\overline{A}$</span><span>giá trị trung bình (cùng đơn vị với $A$)</span></li>
+</ul>
+</div>
+
 <ul>
-<li>$$\delta A = \dfrac{\Delta A}{\overline{A}} \cdot 100\,\%$$</li>
 <li>$\delta A$ cho biết <strong>mức độ chính xác</strong>: càng nhỏ càng chính xác.</li>
 <li>Ví dụ ở bảng trên: $\delta t = \dfrac{0{,}15}{20{,}07} \cdot 100\,\% \approx 0{,}75\,\%$.</li>
 </ul>
@@ -189,11 +214,20 @@ __BANG_TN1__
 
 <p><strong>🔑 Cộng/trừ: cộng ΔA · nhân/chia: cộng δ · mũ: nhân δ</strong></p>
 
-<ul>
-<li>$F = X \pm Y \pm Z$ thì $\Delta F = \Delta X + \Delta Y + \Delta Z$ (trừ cũng <em>cộng</em> sai số).</li>
-<li>$A = X\dfrac{Y}{Z}$ thì $\delta A = \delta X + \delta Y + \delta Z$.</li>
-<li>$A = X^{n}\dfrac{Y^{m}}{Z^{k}}$ thì $\delta A = n\,\delta X + m\,\delta Y + k\,\delta Z$: số mũ nhân với sai số tỉ đối của chính nó.</li>
+<div class="tl-fx">
+<p class="tl-fx-name">Sai số của phép đo gián tiếp</p>
+<p class="tl-fx-cond">Cộng, trừ: $F = X \pm Y \pm Z$ (trừ cũng cộng sai số)</p>
+<p>$$\Delta F = \Delta X + \Delta Y + \Delta Z$$</p>
+<p class="tl-fx-cond">Nhân, chia: $A = X\dfrac{Y}{Z}$</p>
+<p>$$\delta A = \delta X + \delta Y + \delta Z$$</p>
+<p class="tl-fx-cond">Có số mũ: $A = X^{n}\dfrac{Y^{m}}{Z^{k}}$ (số mũ nhân với sai số tỉ đối của chính nó)</p>
+<p>$$\delta A = n\,\delta X + m\,\delta Y + k\,\delta Z$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\Delta F$, $\Delta X$, $\Delta Y$, $\Delta Z$</span><span>sai số tuyệt đối (cùng đơn vị với đại lượng tương ứng)</span></li>
+<li><span class="tl-sym">$\delta A$, $\delta X$, $\delta Y$, $\delta Z$</span><span>sai số tỉ đối (%)</span></li>
+<li><span class="tl-sym">$n$, $m$, $k$</span><span>số mũ (không có đơn vị)</span></li>
 </ul>
+</div>
 
 <p>Ví dụ: hình lập phương $V = a^3$ có $\delta V = 3\,\delta a$.</p>
 
@@ -214,8 +248,17 @@ __BANG_TN1__
 
 <p><strong>🔑 Ghi A = Ā ± ΔA</strong></p>
 
+<div class="tl-fx">
+<p class="tl-fx-name">Kết quả đo</p>
+<p>$$A = \overline{A} \pm \Delta A$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\overline{A}$</span><span>giá trị trung bình (cùng đơn vị với $A$)</span></li>
+<li><span class="tl-sym">$\Delta A$</span><span>sai số tuyệt đối (cùng đơn vị với $A$)</span></li>
+</ul>
+</div>
+
 <ul>
-<li>Kết quả là một khoảng: $A = \overline{A} \pm \Delta A$.</li>
+<li>Kết quả là một khoảng.</li>
 <li>$\Delta A$ viết đến <strong>1–2 chữ số có nghĩa</strong> (CSCN): thường giữ 2 nếu chữ số đầu là 1 hoặc 2, còn lại giữ 1.</li>
 <li>$\overline{A}$ viết đến <strong>cùng bậc thập phân</strong> với $\Delta A$ (cùng số chữ số sau dấu phẩy).</li>
 </ul>

@@ -34,15 +34,28 @@
 <p><strong>🔑 Đo $s$ · đo $t$ · chia · ghi sai số</strong></p>
 
 <ul>
-<li>Tốc độ trung bình trên đoạn đo: $v = \dfrac{s}{t}$.</li>
 <li>Đo $n$ lần, lấy <strong>giá trị trung bình</strong> $\bar t$.</li>
 <li><strong>Sai số tuyệt đối</strong> $\Delta t$: trung bình các độ lệch $|t_i - \bar t|$.</li>
 <li>Đại lượng chỉ đo một lần (như $s$, $d$): $\Delta$ lấy bằng <strong>sai số dụng cụ</strong>, thường bằng nửa hoặc một độ chia nhỏ nhất (bài này lấy <strong>một độ chia</strong>).</li>
-<li><strong>Sai số tương đối</strong> $\delta t = \dfrac{\Delta t}{\bar t}$, đổi ra phần trăm.</li>
-<li>Thương hai đại lượng: $\delta v = \delta s + \delta t$.</li>
 </ul>
 
-<p>Mẹo nhớ: <strong>"chia thì cộng phần trăm"</strong>. Kết quả viết $v = \bar v \pm \Delta v$ với $\Delta v = \bar v \cdot \delta v$.</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Tốc độ trung bình và sai số</p>
+<p>$$v = \dfrac{s}{t}$$</p>
+<p class="tl-fx-cond">Sai số tương đối của thời gian</p>
+<p>$$\delta t = \dfrac{\Delta t}{\bar t}$$</p>
+<p class="tl-fx-cond">Thương hai đại lượng: chia thì cộng phần trăm</p>
+<p>$$\delta v = \delta s + \delta t$$</p>
+<p class="tl-fx-cond">Kết quả</p>
+<p>$$v = \bar v \pm \Delta v, \quad \Delta v = \bar v \cdot \delta v$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$, $\bar v$</span><span>tốc độ trung bình trên đoạn đo, và giá trị trung bình của nó (m/s)</span></li>
+<li><span class="tl-sym">$s$</span><span>chiều dài đoạn đo (m)</span></li>
+<li><span class="tl-sym">$t$, $\bar t$</span><span>thời gian chạy hết đoạn đo, và giá trị trung bình nhiều lần đo (s)</span></li>
+<li><span class="tl-sym">$\Delta t$, $\Delta v$</span><span>sai số tuyệt đối của $t$ (s) và của $v$ (m/s)</span></li>
+<li><span class="tl-sym">$\delta t$, $\delta s$, $\delta v$</span><span>sai số tương đối (không đơn vị, đổi ra phần trăm)</span></li>
+</ul>
+</div>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-do-toc-do-01">
 <p class="tl-label">🔬 Thí nghiệm 1: thước và đồng hồ bấm giây</p>
@@ -83,8 +96,18 @@ __BANG_TN1__
 <ul>
 <li>Quay xe chạy cạnh một thước chuẩn, máy cố định, vuông góc đường chạy.</li>
 <li>Đọc vị trí $x$ của xe theo từng khung hình; hai khung liền nhau cách $\Delta t = 1/(\text{số khung hình mỗi giây})$ (ở đây là khoảng thời gian, không phải sai số).</li>
-<li>Tính $v = \dfrac{\Delta x}{\Delta t}$ cho từng khoảng, hoặc để phần mềm Tracker vẽ đồ thị.</li>
+<li>Tính tốc độ cho từng khoảng giữa hai khung, hoặc để phần mềm Tracker vẽ đồ thị.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Tốc độ từ video</p>
+<p>$$v = \dfrac{\Delta x}{\Delta t}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>tốc độ trung bình giữa hai khung hình liền nhau (m/s)</span></li>
+<li><span class="tl-sym">$\Delta x$</span><span>độ dời của xe giữa hai khung (m)</span></li>
+<li><span class="tl-sym">$\Delta t$</span><span>khoảng thời gian giữa hai khung (s)</span></li>
+</ul>
+</div>
 
 <details class="tl-details tl-more">
 <summary>🎞️ Thử tính: video 30 khung hình mỗi giây thì hai khung liền nhau cách bao lâu?</summary>
@@ -99,8 +122,18 @@ __BANG_TN1__
 
 <ul>
 <li>Xe gắn một <strong>tấm chắn</strong> bề rộng $d$, khi qua cổng thì che tia sáng trong thời gian $t$.</li>
-<li>Đồng hồ hiện số ghi $t$; tốc độ là $v = \dfrac{d}{t}$, tức <strong>tốc độ trung bình</strong> trên bề rộng $d$ (xem mục 4).</li>
+<li>Đồng hồ hiện số ghi $t$; tốc độ tính được là <strong>tốc độ trung bình</strong> trên bề rộng $d$ (xem mục 4).</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Tốc độ qua cổng quang</p>
+<p>$$v = \dfrac{d}{t}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>tốc độ trung bình của xe khi tấm chắn đi qua cổng (m/s)</span></li>
+<li><span class="tl-sym">$d$</span><span>bề rộng tấm chắn (m)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian tấm chắn che tia sáng (s)</span></li>
+</ul>
+</div>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-do-toc-do-02">
 <p class="tl-label">🔬 Thí nghiệm 2: cổng quang</p>

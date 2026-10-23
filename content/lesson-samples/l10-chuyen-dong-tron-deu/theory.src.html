@@ -40,9 +40,19 @@
 <li><strong>Chuyển động tròn:</strong> quỹ đạo là một đường tròn.</li>
 <li><strong>Chuyển động tròn đều:</strong> quỹ đạo tròn và <strong>tốc độ không đổi</strong>.</li>
 <li>Vị trí của vật cho bằng <strong>cung $s$</strong> đã đi tính từ một điểm mốc chọn trước, hoặc bằng <strong>độ dịch chuyển góc $\theta$</strong> — góc ở tâm mà bán kính nối vật quét được.</li>
-<li>Đo góc bằng radian: $\theta = \dfrac{s}{r}$ (rad). Cung dài đúng bằng bán kính thì $\theta = 1\ \text{rad}$.</li>
+<li>Đo góc bằng radian. Cung dài đúng bằng bán kính thì $\theta = 1\ \text{rad}$.</li>
 <li>Đổi đơn vị: $180^\circ = \pi\ \text{rad}$, nên $1\ \text{rad} \approx 57{,}3^\circ$.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Độ dịch chuyển góc (radian)</p>
+<p>$$\theta = \dfrac{s}{r}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\theta$</span><span>độ dịch chuyển góc (rad)</span></li>
+<li><span class="tl-sym">$s$</span><span>độ dài cung đã đi (m)</span></li>
+<li><span class="tl-sym">$r$</span><span>bán kính quỹ đạo (m)</span></li>
+</ul>
+</div>
 
 <!--FIG2-->
 
@@ -79,11 +89,27 @@
 <p><strong>🔑 ω: góc mỗi giây · T: một vòng · f: vòng mỗi giây</strong></p>
 
 <ul>
-<li><strong>Tốc độ góc</strong> $\omega = \dfrac{\Delta\theta}{\Delta t}$ (rad/s): bán kính quét góc bao nhiêu mỗi giây. Chuyển động tròn đều thì $\omega$ không đổi.</li>
-<li><strong>Chu kì</strong> $T$ (s): thời gian đi hết <strong>một vòng</strong>. Quay $n$ vòng trong $\Delta t$ thì $T = \dfrac{\Delta t}{n}$.</li>
-<li><strong>Tần số</strong> $f$ (Hz = vòng/s): số vòng đi được trong một giây, $f = \dfrac{1}{T} = \dfrac{n}{\Delta t}$.</li>
-<li>Một vòng là $2\pi\ \text{rad}$, nên $\omega = \dfrac{2\pi}{T} = 2\pi f$.</li>
+<li><strong>Tốc độ góc</strong> $\omega$ (rad/s): bán kính quét góc bao nhiêu mỗi giây. Chuyển động tròn đều thì $\omega$ không đổi.</li>
+<li><strong>Chu kì</strong> $T$ (s): thời gian đi hết <strong>một vòng</strong>.</li>
+<li><strong>Tần số</strong> $f$ (Hz = vòng/s): số vòng đi được trong một giây.</li>
+<li>Một vòng là $2\pi\ \text{rad}$.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Tốc độ góc, chu kì, tần số</p>
+<p>$$\omega = \dfrac{\Delta\theta}{\Delta t}$$</p>
+<p>$$T = \dfrac{\Delta t}{n}$$</p>
+<p>$$f = \dfrac{1}{T} = \dfrac{n}{\Delta t}$$</p>
+<p>$$\omega = \dfrac{2\pi}{T} = 2\pi f$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\omega$</span><span>tốc độ góc (rad/s)</span></li>
+<li><span class="tl-sym">$\Delta\theta$</span><span>góc quét được (rad)</span></li>
+<li><span class="tl-sym">$\Delta t$</span><span>khoảng thời gian (s)</span></li>
+<li><span class="tl-sym">$n$</span><span>số vòng quay được trong $\Delta t$ (vòng)</span></li>
+<li><span class="tl-sym">$T$</span><span>chu kì (s)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số (Hz = vòng/s)</span></li>
+</ul>
+</div>
 
 <p>Ví dụ: kim giây quay một vòng mất $60\ \text{s}$, nên $\omega = \dfrac{2\pi}{60} = \dfrac{\pi}{30}\ \text{rad/s}$. Trái Đất tự quay một vòng mất $24\ \text{h} = 86\,400\ \text{s}$, nên $\omega = \dfrac{2\pi}{86\,400} \approx 7{,}27 \cdot 10^{-5}\ \text{rad/s}$.</p>
 
@@ -130,11 +156,23 @@ __BANG_DO__
 <p><strong>🔑 Cùng ω · Xa tâm hơn thì nhanh hơn</strong></p>
 
 <ul>
-<li>Tốc độ (còn gọi là tốc độ dài): $v = \dfrac{\Delta s}{\Delta t}$, không đổi trong chuyển động tròn đều.</li>
-<li>Cung $\Delta s = \Delta\theta \cdot r$, chia cho $\Delta t$: $v = \dfrac{\Delta\theta}{\Delta t}\, r = \omega r$.</li>
-<li>Một vòng dài $2\pi r$ đi hết trong $T$: $v = \dfrac{2\pi r}{T} = 2\pi f r$.</li>
+<li>Tốc độ (còn gọi là tốc độ dài) $v = \dfrac{\Delta s}{\Delta t}$ không đổi trong chuyển động tròn đều.</li>
+<li>Cung $\Delta s = \Delta\theta \cdot r$, chia cho $\Delta t$ thì được $v = \omega r$.</li>
 <li>Mọi điểm trên cùng một vật quay có cùng $\omega$, $T$, $f$; điểm xa tâm có $v$ lớn hơn.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Tốc độ và tốc độ góc</p>
+<p>$$v = \omega r$$</p>
+<p>$$v = \dfrac{2\pi r}{T} = 2\pi f r$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>tốc độ (dài) của điểm (m/s)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tốc độ góc (rad/s)</span></li>
+<li><span class="tl-sym">$r$</span><span>khoảng cách tới tâm quay (m)</span></li>
+<li><span class="tl-sym">$T$</span><span>chu kì (s)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số (Hz)</span></li>
+</ul>
+</div>
 
 <!--FIG3-->
 

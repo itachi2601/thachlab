@@ -63,14 +63,22 @@
 
 <p><strong>🔑 Vẽ · Kể lực · Viết ΣF = ma · Chiếu và giải</strong></p>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Quy trình 4 bước</p>
 <ol class="tl-steps">
 <li><strong>Vẽ:</strong> hình, chọn vật khảo sát, chọn hệ trục: Ox theo chiều chuyển động dự kiến (hoặc chiều lực kéo), chọn một lần và giữ đến hết bài; Oy vuông góc.</li>
 <li><strong>Kể lực:</strong> mỗi lực phải chỉ ra được <strong>vật nào gây ra</strong>; vẽ chung gốc ở trọng tâm.</li>
-<li><strong>Viết:</strong> $\vec P + \vec N + \vec F + \dots = m\vec a$, rồi <strong>chiếu</strong> lên Ox và Oy.</li>
+<li><strong>Viết</strong> định luật II Newton cho vật, rồi <strong>chiếu</strong> lên Ox và Oy.</li>
 <li><strong>Giải và kiểm:</strong> tìm $a$, ghép công thức chuyển động; kiểm đơn vị, dấu, trường hợp đặc biệt.</li>
 </ol>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Định luật II Newton (bước 3)</p>
+<p>$$\vec P + \vec N + \vec F + \dots = m\vec a$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\vec P,\ \vec N,\ \vec F,\ \dots$</span><span>các lực tác dụng lên vật (N)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng của vật (kg)</span></li>
+<li><span class="tl-sym">$\vec a$</span><span>gia tốc của vật (m/s²)</span></li>
+</ul>
+<p class="tl-fx-note">Vế trái là tổng vectơ mọi lực; chiếu lên Ox và Oy để được hai phương trình số.</p>
 </div>
 
 <!--FIG2-->
@@ -78,8 +86,20 @@
 <ul>
 <li><strong>Bài toán thuận:</strong> biết lực → tìm $a$ → tìm $v$, $s$, $t$.</li>
 <li><strong>Bài toán ngược:</strong> biết $v$, $s$, $t$ → tìm $a$ → tìm lực.</li>
-<li>Công thức hay ghép: $v = v_0 + at$; $s = v_0 t + \tfrac12 at^2$; $v^2 - v_0^2 = 2as$.</li>
+<li>Ba công thức hay ghép (bước 4):</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Công thức động học (chuyển động thẳng biến đổi đều)</p>
+<p>$$v = v_0 + at$$</p>
+<p>$$s = v_0 t + \tfrac12 at^2$$</p>
+<p>$$v^2 - v_0^2 = 2as$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v_0,\ v$</span><span>vận tốc đầu, vận tốc cuối (m/s)</span></li>
+<li><span class="tl-sym">$a$</span><span>gia tốc (m/s²)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
+<li><span class="tl-sym">$s$</span><span>quãng đường đi được (m)</span></li>
+</ul>
+</div>
 
 <h4>2. Tình huống 1: mặt ngang có ma sát</h4>
 
@@ -96,8 +116,21 @@
 </ul>
 
 <p>Kéo <strong>xiên lên</strong> góc $\alpha$ (Hình 3): dây nhấc bớt thùng, nên Oy cho $N + F\sin\alpha - P = 0$:</p>
-$$N = mg - F\sin\alpha$$
-<p>Ox: $F\cos\alpha - \mu N = ma$.</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Kéo xiên lên trên mặt ngang có ma sát</p>
+<p>$$N = mg - F\sin\alpha$$</p>
+<p>$$F\cos\alpha - \mu N = ma$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$N$</span><span>áp lực của sàn lên vật (N)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng (kg)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do (m/s²)</span></li>
+<li><span class="tl-sym">$F$</span><span>lực kéo (N)</span></li>
+<li><span class="tl-sym">$\alpha$</span><span>góc giữa dây và sàn (độ)</span></li>
+<li><span class="tl-sym">$\mu$</span><span>hệ số ma sát trượt, không có đơn vị</span></li>
+<li><span class="tl-sym">$a$</span><span>gia tốc của vật (m/s²)</span></li>
+</ul>
+<p class="tl-fx-note">Dòng đầu từ Oy, dòng sau từ Ox.</p>
+</div>
 
 <!--FIG3-->
 
@@ -127,10 +160,19 @@ $$N = mg - F\sin\alpha$$
 
 <!--FIG4-->
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Vật trượt xuống dốc</p>
-$$a = g(\sin\alpha - \mu\cos\alpha)$$
-<p>Không còn $m$: mọi vật cùng hệ số ma sát trượt xuống với <strong>cùng gia tốc</strong>. Bỏ ma sát: $a = g\sin\alpha$.</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Vật trượt xuống dốc có ma sát</p>
+<p>$$N = mg\cos\alpha$$</p>
+<p>$$a = g(\sin\alpha - \mu\cos\alpha)$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$N$</span><span>áp lực của mặt nghiêng lên vật (N)</span></li>
+<li><span class="tl-sym">$a$</span><span>gia tốc của vật dọc dốc (m/s²)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng (kg)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do (m/s²)</span></li>
+<li><span class="tl-sym">$\alpha$</span><span>góc nghiêng của mặt phẳng (độ)</span></li>
+<li><span class="tl-sym">$\mu$</span><span>hệ số ma sát trượt, không có đơn vị</span></li>
+</ul>
+<p class="tl-fx-note">Không còn $m$: mọi vật cùng hệ số ma sát trượt xuống với cùng gia tốc. Bỏ ma sát thì $a = g\sin\alpha$.</p>
 </div>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-giaibt-dlh-01">

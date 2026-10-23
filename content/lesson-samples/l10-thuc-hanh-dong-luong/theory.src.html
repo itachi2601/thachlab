@@ -33,11 +33,25 @@
 <p><strong>🔑 Đo $t$ · tính $v$ · tính $p$ · so $p'$ với $p$</strong></p>
 
 <ul>
-<li>Tấm cản quang rộng $s$ chắn tia sáng trong $t$ giây: $v = \dfrac{s}{t}$.</li>
-<li>Động lượng: $p = mv$. Hệ kín (hệ hai xe, ngoại lực cân bằng nhau) thì tổng $p$ trước bằng tổng $p'$ sau.</li>
+<li>Tấm cản quang rộng $s$ chắn tia sáng trong $t$ giây: đo được tốc độ của xe.</li>
+<li>Có $v$ thì tính động lượng. Hệ kín (hệ hai xe, ngoại lực cân bằng nhau) thì tổng $p$ trước bằng tổng $p'$ sau.</li>
 <li>Đồng hồ chỉ cho $t \gt 0$: <strong>dấu do em gán</strong> sau khi chọn chiều dương.</li>
 <li>$v = s/t$ là tốc độ trung bình lúc qua cổng; xe chạy đều và $s$ nhỏ thì coi là tốc độ của xe.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Tốc độ qua cổng quang và động lượng</p>
+<p>$$v = \dfrac{s}{t}$$</p>
+<p>$$p = mv$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>tốc độ của xe lúc qua cổng (m/s)</span></li>
+<li><span class="tl-sym">$s$</span><span>bề rộng tấm cản quang (m)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian tấm cản quang chắn tia sáng (s)</span></li>
+<li><span class="tl-sym">$p$</span><span>động lượng của xe (kg·m/s)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng của xe (kg)</span></li>
+</ul>
+<p class="tl-fx-note">Đổi cm sang m trước khi tính.</p>
+</div>
 
 <details class="tl-details tl-more">
 <summary>🔧 Bấm xem: chuẩn bị trước khi đo</summary>
@@ -70,6 +84,17 @@
 <h4>2. Thí nghiệm 1: va chạm mềm</h4>
 
 <p><strong>🔑 Xe 2 đứng yên · $p = m_1v_1$ · sau: $p' = (m_1 + m_2)v'$</strong></p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Va chạm mềm (xe 2 đứng yên)</p>
+<p>$$m_1v_1 = (m_1 + m_2)v'$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$m_1,\ m_2$</span><span>khối lượng xe 1, xe 2 (kg)</span></li>
+<li><span class="tl-sym">$v_1$</span><span>tốc độ xe 1 ngay trước va chạm (m/s)</span></li>
+<li><span class="tl-sym">$v'$</span><span>tốc độ hai xe dính nhau sau va chạm (m/s)</span></li>
+</ul>
+<p class="tl-fx-note">Vế trái là động lượng $p$ trước, vế phải là động lượng $p'$ sau.</p>
+</div>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-thuchanhdl-01">
 <p class="tl-label">🔬 Thí nghiệm: xe 1 đâm vào xe 2 đứng yên rồi dính nhau</p>
@@ -111,10 +136,26 @@ __BANG_A2__
 <p><strong>🔑 Độ lệch $\delta$ · sai số $\varepsilon$ · $\delta \le \varepsilon$ thì bảo toàn trong sai số</strong></p>
 
 <ul>
-<li>Độ lệch: $$\delta = \dfrac{|p' - p|}{p}$$</li>
-<li>Sai số của một động lượng: $\dfrac{\Delta p}{p} = \dfrac{\Delta m}{m} + \dfrac{\Delta t}{t}$ (với $\Delta m = 0{,}001\ \text{kg}$, $\Delta t = 0{,}001\ \text{s}$).</li>
-<li>Gộp trước và sau: $\varepsilon = \dfrac{\Delta p}{p} + \dfrac{\Delta p'}{p'}$; $\varepsilon$ là cận trên của sai số. Với $p'$ thì $\Delta m = 0{,}002\ \text{kg}$ (cân hai xe).</li>
+<li>Sai số của một động lượng tính theo $\Delta m = 0{,}001\ \text{kg}$, $\Delta t = 0{,}001\ \text{s}$.</li>
+<li>Gộp trước và sau được $\varepsilon$, là cận trên của sai số. Với $p'$ thì $\Delta m = 0{,}002\ \text{kg}$ (cân hai xe).</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Độ lệch và sai số khi so sánh động lượng</p>
+<p>$$\delta = \dfrac{|p' - p|}{p}$$</p>
+<p>$$\dfrac{\Delta p}{p} = \dfrac{\Delta m}{m} + \dfrac{\Delta t}{t}$$</p>
+<p>$$\varepsilon = \dfrac{\Delta p}{p} + \dfrac{\Delta p'}{p'}$$</p>
+<p class="tl-fx-cond">Kết luận</p>
+<p>$$\delta \le \varepsilon$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\delta$</span><span>độ lệch tương đối giữa $p'$ và $p$, không có đơn vị</span></li>
+<li><span class="tl-sym">$\varepsilon$</span><span>sai số tương đối gộp, không có đơn vị</span></li>
+<li><span class="tl-sym">$p,\ p'$</span><span>tổng động lượng trước, sau va chạm (kg·m/s)</span></li>
+<li><span class="tl-sym">$\Delta p,\ \Delta p'$</span><span>sai số tuyệt đối của $p$, $p'$ (kg·m/s)</span></li>
+<li><span class="tl-sym">$\Delta m,\ \Delta t$</span><span>sai số của khối lượng (kg), của thời gian (s)</span></li>
+</ul>
+<p class="tl-fx-note">$\delta \le \varepsilon$ thì động lượng bảo toàn trong phạm vi sai số.</p>
+</div>
 
 <details class="tl-details tl-more">
 <summary>🧮 Bấm xem: tính $\varepsilon$ và $\delta$ lần 1</summary>
@@ -132,6 +173,16 @@ Không cộng sai số của $s$: cùng tấm cản quang cho $p$ và $p'$ nên 
 <h4>4. Thí nghiệm 2: hai xe đẩy nhau</h4>
 
 <p><strong>🔑 Trước: $p = 0$ · sau: hai $p$ ngược dấu · tổng $\approx 0$</strong></p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Hai xe đẩy nhau (ban đầu đứng yên)</p>
+<p>$$m_1v_1' + m_2v_2' \approx 0$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$m_1,\ m_2$</span><span>khối lượng xe 1, xe 2 (kg)</span></li>
+<li><span class="tl-sym">$v_1',\ v_2'$</span><span>vận tốc hai xe sau khi đẩy nhau, gán dấu theo chiều dương đã chọn (m/s)</span></li>
+</ul>
+<p class="tl-fx-note">Hai xe chạy ngược chiều nên $v_1'$ và $v_2'$ trái dấu.</p>
+</div>
 
 <ul>
 <li>Lúc đầu hai xe đứng yên: $p = 0$.</li>
