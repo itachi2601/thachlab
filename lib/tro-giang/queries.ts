@@ -398,6 +398,29 @@ export async function fetchTouchBaselines(): Promise<Map<string, number>> {
   return new Map([...sums].map(([id, { total, count }]) => [id, total / count]));
 }
 
+/** Dữ liệu đối chiếu cho cờ bất thường: lịch sử 60 ngày của các trợ giảng có buổi chờ duyệt + kết quả bài cuối buổi của buổi phụ đạo. */
+export async function fetchFlagContext(
+  pending: TaPendingSession[],
+): Promise<{ history: TaSessionRow[]; passRatios: Map<string, number | null> }> {
+  const sb = getSupabase();
+  const ids = [...new Set(pending.map((p) => p.assistant_id))];
+  const since = new Date(Date.now() - 60 * 86400000).toISOString().slice(0, 10);
+  const historyReq = ids.length
+    ? sb.from("ta_sessions").select("*").in("assistant_id", ids).gte("work_date", since).neq("status", "rejected")
+    : Promise.resolve({ data: [], error: null });
+  const ratioReqs = pending
+    .filter((p) => p.session_type === "phudao")
+    .map(async (p) => {
+      const { data, error } = await sb.rpc("ta_tutoring_pass_ratio", { p_session: p.id });
+      return [p.id, error || data === undefined ? undefined : (data as number | null)] as const;
+    });
+  const [{ data, error }, ratios] = await Promise.all([historyReq, Promise.all(ratioReqs)]);
+  if (error) throw error;
+  const passRatios = new Map<string, number | null>();
+  for (const [id, r] of ratios) if (r !== undefined) passRatios.set(id, r);
+  return { history: (data ?? []) as TaSessionRow[], passRatios };
+}
+
 export async function createFlag(assistantId: string, note: string, flagDate: string): Promise<void> {
   const { error } = await getSupabase()
     .from("ta_flags")

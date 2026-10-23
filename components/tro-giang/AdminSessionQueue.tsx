@@ -7,8 +7,10 @@ import { TA_PENDING_CHANGED } from "./TroGiangAdminNav";
 import { SESSION_TYPE_META } from "@/lib/tro-giang/constants";
 import { formatHours } from "@/lib/tro-giang/format";
 import { missingParts } from "@/lib/tro-giang/thieu";
+import { flagSession, type SessionFlag } from "@/lib/tro-giang/co-bat-thuong";
 import {
   approveSessions,
+  fetchFlagContext,
   fetchPendingSessions,
   fetchTouchBaselines,
   rejectSession,
@@ -47,6 +49,7 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
   };
   const [rows, setRows] = useState<TaPendingSession[] | null>(null);
   const [baselines, setBaselines] = useState<Map<string, number>>(new Map());
+  const [flags, setFlags] = useState<Map<string, SessionFlag[]>>(new Map());
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [rejectingId, setRejectingId] = useState<string | null>(null);
   const [rejectReason, setRejectReason] = useState("");
@@ -57,6 +60,11 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
       .then((data) => {
         setRows(data);
         setSelected(new Set());
+        fetchFlagContext(data)
+          .then(({ history, passRatios }) =>
+            setFlags(new Map(data.map((r) => [r.id, flagSession(r, history, passRatios.get(r.id))] as const))),
+          )
+          .catch(() => setFlags(new Map()));
       })
       .catch(() => setRows([]));
     fetchTouchBaselines().then(setBaselines).catch(() => {});
@@ -164,11 +172,13 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
           s.student_touches >= baseline * ANOMALY_RATIO;
 
         const missing = missingParts(s);
+        const sFlags = flags.get(s.id) ?? [];
+        const hasRed = sFlags.some((f) => f.level === "red");
 
         return (
           <div
             key={s.id}
-            className={`rounded-2xl border p-4 ${anomaly ? "border-amber-400/40 bg-amber-500/5" : "border-white/10 bg-white/5"}`}
+            className={`rounded-2xl border p-4 ${hasRed ? "border-red-400/40 bg-red-500/5" : anomaly || sFlags.length ? "border-amber-400/40 bg-amber-500/5" : "border-white/10 bg-white/5"}`}
           >
             <div className="flex items-start gap-3">
               <input
@@ -204,6 +214,15 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
                 {s.error_note && <p className="mt-1 text-xs text-slate-400">Lỗi lớp: {s.error_note}</p>}
                 {s.policy && <div className="mt-2 space-y-1 text-xs text-blue-200"><p>Chữa bài: {s.policy.teaching_minutes || 0} phút · {s.policy.homework_checked ? "Đã kiểm tra bài tập" : "Chưa kiểm tra bài tập"}</p>{s.policy.teaching_note && <p>Nội dung chữa bài: {s.policy.teaching_note}</p>}{s.policy.attention_note && <p>Em cần chú ý: {s.policy.attention_note}</p>}{s.policy.followups?.map((f,i)=><p key={i}>{f.student} · {f.lesson || "Chưa ghi bài"} · {f.difficulty || "Chưa ghi nhận xét"}</p>)}</div>}
                 {s.note && <p className="mt-1 text-xs text-slate-500">Ghi chú: {s.note}</p>}
+                {sFlags.map((f) => (
+                  <p
+                    key={f.code}
+                    className={`mt-2 mr-1.5 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${f.level === "red" ? "bg-red-500/20 text-red-300" : "bg-amber-500/15 text-amber-300"}`}
+                  >
+                    <AlertTriangle size={12} />
+                    {f.text}
+                  </p>
+                ))}
                 {anomaly && (
                   <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-2.5 py-1 text-xs font-semibold text-amber-300">
                     <AlertTriangle size={12} />
