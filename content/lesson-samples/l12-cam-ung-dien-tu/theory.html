@@ -26,11 +26,16 @@
 <h3>II. Từ thông: đếm "số đường sức xuyên qua" mặt khung</h3>
 <p><strong>🔑 Φ = BS cos α · đơn vị Wb · α là góc của pháp tuyến</strong></p>
 <p>Để đo lượng đường sức xuyên qua mặt vòng dây, cần một đại lượng: <strong>từ thông</strong>.</p>
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Từ thông</p>
 <p>Từ thông qua một diện tích phẳng $S$ đặt trong từ trường đều có cảm ứng từ $B$:</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Từ thông</p>
 <p>$$\Phi = B\,S\cos\alpha$$</p>
-<p>$\Phi$ (Wb, vê-be); $B$ (T); $S$ ($\text{m}^2$); $\alpha$ là góc giữa <strong>pháp tuyến</strong> $\vec{n}$ của mặt khung và $\vec{B}$.</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\Phi$</span><span>từ thông qua khung (Wb, vê-be)</span></li>
+<li><span class="tl-sym">$B$</span><span>cảm ứng từ (T)</span></li>
+<li><span class="tl-sym">$S$</span><span>diện tích khung (m²)</span></li>
+<li><span class="tl-sym">$\alpha$</span><span>góc giữa <strong>pháp tuyến</strong> $\vec{n}$ của mặt khung và $\vec{B}$ (độ hoặc rad)</span></li>
+</ul>
 </div>
 <ul>
 <li><strong>$B$ lớn thì $\Phi$ lớn:</strong> cùng vòng dây, đặt gần cực nam châm mạnh thì $\Phi$ lớn hơn.</li>
@@ -217,13 +222,25 @@ Hai hàng $v = 0{,}2\ \text{m/s}$ ($2{,}1\ \text{mA}$ khi đưa vào, $-2{,}0\ \
 <h3>V. Suất điện động cảm ứng: biến thiên nhanh thì dòng điện mạnh</h3>
 <p><strong>🔑 $|e_c| = |\Delta\Phi/\Delta t|$ · Nhanh thì mạnh · $N$ vòng nhân $N$</strong></p>
 <p>Thí nghiệm cho thấy đưa nhanh thì kim lệch nhiều. Faraday gói điều đó thành công thức, dùng <strong>suất điện động cảm ứng</strong> $e_c$.</p>
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Định luật Faraday</p>
 <p>Độ lớn suất điện động cảm ứng trong mạch bằng <strong>tốc độ biến thiên từ thông</strong> qua mạch:</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Định luật Faraday</p>
 <p>$$|e_c| = \left|\frac{\Delta\Phi}{\Delta t}\right|$$</p>
-<p>Dấu trừ trong $e_c = -\dfrac{\Delta\Phi}{\Delta t}$ chính là định luật Lenz. Mạch kín có $R$ thì $i = \dfrac{|e_c|}{R}$; mạch hở vẫn có $e_c$, không có dòng.</p>
+<p class="tl-fx-cond">Cuộn $N$ vòng ($\Phi$ qua một vòng)</p>
+<p>$$|e_c| = N\left|\dfrac{\Delta\Phi}{\Delta t}\right|$$</p>
+<p class="tl-fx-cond">Mạch kín có điện trở $R$</p>
+<p>$$i = \dfrac{|e_c|}{R}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$e_c$</span><span>suất điện động cảm ứng (V)</span></li>
+<li><span class="tl-sym">$\Delta\Phi$</span><span>độ biến thiên từ thông (Wb)</span></li>
+<li><span class="tl-sym">$\Delta t$</span><span>thời gian biến thiên (s)</span></li>
+<li><span class="tl-sym">$N$</span><span>số vòng dây (không có đơn vị)</span></li>
+<li><span class="tl-sym">$i$</span><span>cường độ dòng cảm ứng (A)</span></li>
+<li><span class="tl-sym">$R$</span><span>điện trở của mạch ($\Omega$)</span></li>
+</ul>
+<p class="tl-fx-note">Dấu trừ trong $e_c = -\dfrac{\Delta\Phi}{\Delta t}$ chính là định luật Lenz. Mạch hở vẫn có $e_c$, không có dòng.</p>
 </div>
-<p>Đưa nam châm vào trong $1\ \text{s}$ hay $0{,}1\ \text{s}$ thì $\Delta\Phi$ như nhau, nhưng $\Delta t$ nhỏ hơn 10 lần nên $e_c$ lớn hơn 10 lần. Cuộn $N$ vòng: $|e_c| = N\left|\dfrac{\Delta\Phi}{\Delta t}\right|$, với $\Phi$ qua <em>một vòng</em>.</p>
+<p>Đưa nam châm vào trong $1\ \text{s}$ hay $0{,}1\ \text{s}$ thì $\Delta\Phi$ như nhau, nhưng $\Delta t$ nhỏ hơn 10 lần nên $e_c$ lớn hơn 10 lần.</p>
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Từ thông qua một mạch kín giảm đều từ $6\ \text{mWb}$ về $0$ trong $0{,}03\ \text{s}$. Độ lớn suất điện động cảm ứng trong mạch là:</p>

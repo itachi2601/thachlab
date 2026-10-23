@@ -106,12 +106,23 @@
 <li>Phương trình phân rã và chỗ dịch chuyển của hạt nhân con trong bảng tuần hoàn (mỗi ô ứng với $Z$ đổi 1):</li>
 </ul>
 
-<ul>
-<li>$\alpha$: $^A_Z X \to\ ^{A-4}_{Z-2}Y + ^4_2\text{He}$ — con lùi 2 ô, $A$ giảm 4.</li>
-<li>$\beta^-$: $^A_Z X \to\ ^A_{Z+1}Y + ^0_{-1}e$ — con tiến 1 ô, $A$ nguyên.</li>
-<li>$\beta^+$: $^A_Z X \to\ ^A_{Z-1}Y + ^0_1e$ — con lùi 1 ô, $A$ nguyên.</li>
-<li>$\gamma$: $^A_Z X^* \to\ ^A_Z X + \gamma$ — không đổi ô, chỉ mất năng lượng.</li>
+<div class="tl-fx">
+<p class="tl-fx-name">Phương trình phân rã</p>
+<p class="tl-fx-cond">Phân rã $\alpha$: con lùi 2 ô, $A$ giảm 4</p>
+<p>$$^A_Z X \to\ ^{A-4}_{Z-2}Y + ^4_2\text{He}$$</p>
+<p class="tl-fx-cond">Phân rã $\beta^-$: con tiến 1 ô, $A$ nguyên</p>
+<p>$$^A_Z X \to\ ^A_{Z+1}Y + ^0_{-1}e$$</p>
+<p class="tl-fx-cond">Phân rã $\beta^+$: con lùi 1 ô, $A$ nguyên</p>
+<p>$$^A_Z X \to\ ^A_{Z-1}Y + ^0_1e$$</p>
+<p class="tl-fx-cond">Phát tia $\gamma$: không đổi ô, chỉ mất năng lượng</p>
+<p>$$^A_Z X^* \to\ ^A_Z X + \gamma$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$A$</span><span>số khối (không đơn vị)</span></li>
+<li><span class="tl-sym">$Z$</span><span>số proton, tức số thứ tự ô trong bảng tuần hoàn (không đơn vị)</span></li>
+<li><span class="tl-sym">$X$, $Y$</span><span>hạt nhân mẹ, hạt nhân con</span></li>
+<li><span class="tl-sym">$X^*$</span><span>hạt nhân ở trạng thái kích thích</span></li>
 </ul>
+</div>
 
 <p>Tia $\gamma$ phát ra ngay sau phân rã $\alpha$ hoặc $\beta$, khi hạt nhân con còn ở trạng thái kích thích $X^*$.</p>
 
@@ -136,19 +147,48 @@
 
 <ul>
 <li><strong>Chu kì bán rã</strong> $T$ là thời gian để một nửa số hạt nhân phân rã. Mỗi chất có $T$ riêng, không đổi theo lượng chất.</li>
-<li><strong>Định luật phóng xạ:</strong> số hạt nhân còn lại giảm theo hàm mũ sau thời gian $t$:</li>
+<li><strong>Định luật phóng xạ:</strong> số hạt nhân còn lại giảm theo hàm mũ sau thời gian $t$.</li>
 </ul>
 
-$$N_t = N_0\,2^{-t/T} = N_0\,e^{-\lambda t}$$
-
-<ul>
-<li><strong>Hằng số phóng xạ</strong> $\lambda = \dfrac{\ln 2}{T} = \dfrac{0{,}693}{T}$, đơn vị $1/\text{s}$.</li>
-<li>Số hạt <strong>đã</strong> phân rã: $\Delta N = N_0\left(1 - 2^{-t/T}\right)$.</li>
-<li>Khối lượng chất mẹ và độ phóng xạ $H$ (số phân rã mỗi giây) giảm <em>cùng quy luật</em>: $m_t = m_0\,2^{-t/T}$, $H_t = H_0\,2^{-t/T}$.</li>
-<li>Khối lượng chất mẹ <strong>đã</strong> biến thành hạt nhân con: $\Delta m = m_0\left(1 - 2^{-t/T}\right)$.</li>
-<li>Độ phóng xạ <strong>đã</strong> giảm đi: $\Delta H = H_0\left(1 - 2^{-t/T}\right)$.</li>
-<li>Từ khối lượng suy ra số hạt ban đầu: $N_0 = \dfrac{m_0}{A}N_A$ ($m_0$ theo gam, $A$ lấy gần đúng bằng khối lượng mol theo g/mol, $N_A \approx 6{,}022.10^{23}$ hạt/mol).</li>
+<div class="tl-fx">
+<p class="tl-fx-name">Định luật phóng xạ</p>
+<p>$$N_t = N_0\,2^{-t/T} = N_0\,e^{-\lambda t}$$</p>
+<p class="tl-fx-cond">Khối lượng chất mẹ và độ phóng xạ giảm cùng quy luật</p>
+<p>$$m_t = m_0\,2^{-t/T}$$</p>
+<p>$$H_t = H_0\,2^{-t/T}$$</p>
+<p class="tl-fx-cond">Phần đã phân rã</p>
+<p>$$\Delta N = N_0\left(1 - 2^{-t/T}\right)$$</p>
+<p>$$\Delta m = m_0\left(1 - 2^{-t/T}\right)$$</p>
+<p>$$\Delta H = H_0\left(1 - 2^{-t/T}\right)$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$N_0$, $N_t$</span><span>số hạt nhân lúc đầu, sau thời gian $t$ (hạt)</span></li>
+<li><span class="tl-sym">$m_0$, $m_t$</span><span>khối lượng chất mẹ lúc đầu, sau thời gian $t$ (g hoặc kg)</span></li>
+<li><span class="tl-sym">$H_0$, $H_t$</span><span>độ phóng xạ lúc đầu, sau thời gian $t$ (Bq)</span></li>
+<li><span class="tl-sym">$T$</span><span>chu kì bán rã (s, ngày, năm; cùng đơn vị với $t$)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>hằng số phóng xạ ($1/\text{s}$)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian phân rã (cùng đơn vị với $T$)</span></li>
 </ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Hằng số phóng xạ</p>
+<p>$$\lambda = \dfrac{\ln 2}{T} = \dfrac{0{,}693}{T}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\lambda$</span><span>hằng số phóng xạ ($1/\text{s}$)</span></li>
+<li><span class="tl-sym">$T$</span><span>chu kì bán rã (s)</span></li>
+</ul>
+</div>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Số hạt nhân ban đầu từ khối lượng</p>
+<p>$$N_0 = \dfrac{m_0}{A}N_A$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$N_0$</span><span>số hạt nhân ban đầu (hạt)</span></li>
+<li><span class="tl-sym">$m_0$</span><span>khối lượng ban đầu (g)</span></li>
+<li><span class="tl-sym">$A$</span><span>số khối, lấy gần đúng bằng khối lượng mol (g/mol)</span></li>
+<li><span class="tl-sym">$N_A$</span><span>số Avôgađrô, $N_A \approx 6{,}022.10^{23}$ (hạt/mol)</span></li>
+</ul>
+</div>
 
 <table class="tl-table">
 <thead>
@@ -211,7 +251,20 @@ $$N_t = N_0\,2^{-t/T} = N_0\,e^{-\lambda t}$$
 
 <ul>
 <li><strong>Độ phóng xạ</strong> $H$ của một lượng chất là số hạt nhân phân rã trong <em>một giây</em>; nó đo mức phóng xạ mạnh hay yếu, không đo mức nguy hiểm.</li>
-<li>Tại thời điểm đang xét $H = \lambda N$; ban đầu $H_0 = \lambda N_0$.</li>
+</ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Độ phóng xạ</p>
+<p>$$H = \lambda N$$</p>
+<p>$$H_0 = \lambda N_0$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$H$, $H_0$</span><span>độ phóng xạ lúc đang xét, lúc đầu (Bq)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>hằng số phóng xạ ($1/\text{s}$)</span></li>
+<li><span class="tl-sym">$N$, $N_0$</span><span>số hạt nhân lúc đang xét, lúc đầu (hạt)</span></li>
+</ul>
+</div>
+
+<ul>
 <li>Đơn vị SI là <strong>becơren</strong> $\text{Bq}$: $1\ \text{Bq} = 1$ phân rã mỗi giây. Đơn vị thực tế hay dùng là <strong>curi</strong> $\text{Ci}$: $1\ \text{Ci} = 3{,}7.10^{10}\ \text{Bq}$.</li>
 <li>Ví dụ: $N = 4.10^{12}$ hạt, $T = 8$ ngày $= 8 \times 86\,400\ \text{s} \approx 6{,}9.10^5\ \text{s}$ → $\lambda \approx 1{,}0.10^{-6}\ \text{s}^{-1}$ → $H = \lambda N \approx 4.10^{6}\ \text{Bq}$.</li>
 </ul>

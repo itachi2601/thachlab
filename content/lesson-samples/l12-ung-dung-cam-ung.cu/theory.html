@@ -62,6 +62,16 @@
 <li>Từ thông biến thiên xuyên sang cuộn máy, sinh suất điện động để nạp pin.</li>
 <li>Cùng nguyên lí máy biến áp (bài 14). Dòng một chiều ổn định thì pin không được nạp.</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Suất điện động cảm ứng</p>
+<p>$$e=-N\dfrac{\Delta\Phi}{\Delta t}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$e$</span><span>suất điện động cảm ứng (V)</span></li>
+<li><span class="tl-sym">$N$</span><span>số vòng dây (không đơn vị)</span></li>
+<li><span class="tl-sym">$\Delta\Phi$</span><span>độ biến thiên từ thông (Wb)</span></li>
+<li><span class="tl-sym">$\Delta t$</span><span>khoảng thời gian (s)</span></li>
+</ul>
+</div>
 <figure class="fig" data-tl="1" data-exp="tn-l12-udcamung-02"><svg viewBox="0 0 430 246" role="img" aria-label="Đế sạc và điện thoại: hai cuộn đặt sát, từ thông biến thiên đi từ cuộn sơ cấp sang cuộn thứ cấp"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="28" y="16" width="230" height="78" rx="10" fill="none" stroke="currentColor" stroke-width="2.2"/><text x="40" y="36" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">điện thoại</text><ellipse cx="78" cy="62" rx="30" ry="16" fill="none" stroke="#38bdf8" stroke-width="2.4"/><text x="118" y="58" fill="#38bdf8" font-size="13" font-weight="600" text-anchor="start">cuộn máy</text><text x="118" y="78" fill="#38bdf8" font-size="13" font-weight="600" text-anchor="start">nối với pin</text><text x="140" y="118" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">không chạm dây</text><rect x="28" y="132" width="230" height="96" rx="10" fill="none" stroke="currentColor" stroke-width="2.2"/><ellipse cx="78" cy="180" rx="36" ry="18" fill="none" stroke="#f87171" stroke-width="2.4"/><text x="124" y="172" fill="#f87171" font-size="13" font-weight="600" text-anchor="start">cuộn đế sạc</text><text x="124" y="194" fill="#f87171" font-size="13" font-weight="600" text-anchor="start">điện xoay chiều</text><line x1="62" y1="78" x2="62" y2="162" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 4"/><line x1="78" y1="78" x2="78" y2="162" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 4"/><line x1="94" y1="78" x2="94" y2="162" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 4"/><text x="278" y="48" fill="#38bdf8" font-size="15" font-weight="600" text-anchor="start">thứ cấp</text><text x="278" y="70" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">nhận suất</text><text x="278" y="90" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">điện động</text><text x="278" y="168" fill="#f87171" font-size="15" font-weight="600" text-anchor="start">sơ cấp</text><text x="278" y="190" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">gây từ thông</text><text x="278" y="210" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">biến thiên</text></svg><figcaption>Hình 2. Sạc không dây là một biến áp có khe hở: cuộn đế chạy điện xoay chiều, cuộn trong máy nhận suất điện động.</figcaption></figure>
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-udcamung-02">
 <p class="tl-label">🔬 Thí nghiệm: hai cuộn đặt cạnh nhau</p>
@@ -135,14 +145,27 @@
 <p>Từ trường vẫn xuyên dọc các lá. Dòng Foucault muốn chạy ngang qua nhiều lá thì bị lớp cách điện chặn, vòng xoáy nhỏ đi, nhiệt giảm.</p>
 </details>
 
-<details class="tl-details tl-more">
-<summary>🔑 Nhắc lại: công suất toả nhiệt của suất điện động xoay chiều <small>(cần cho bài toán mẫu)</small></summary>
-<p>Từ thông $\Phi=\Phi_0\cos(\omega t)$ thì $e=-\Phi'=\Phi_0\omega\sin(\omega t)$, biên độ $e_0=\Phi_0\omega$. Hiệu dụng $E=e_0/\sqrt{2}$, công suất trung bình trên điện trở $r$ là $P=E^2/r$. Không thay $e_0$ thẳng vào $P$, vì $e$ đổi dấu theo thời gian.</p>
-</details>
+<p>🔑 <strong>Nhắc lại, cần cho bài toán mẫu:</strong> từ thông $\Phi=\Phi_0\cos(\omega t)$ thì $e=-\Phi'=\Phi_0\omega\sin(\omega t)$. Từ đó:</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Công suất toả nhiệt của suất điện động xoay chiều</p>
+<p>$$e_0=\Phi_0\omega$$</p>
+<p>$$E=\dfrac{e_0}{\sqrt{2}}$$</p>
+<p>$$P=\dfrac{E^2}{r}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\Phi_0$</span><span>từ thông cực đại (Wb)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+<li><span class="tl-sym">$e_0$</span><span>suất điện động cực đại (V)</span></li>
+<li><span class="tl-sym">$E$</span><span>suất điện động hiệu dụng (V)</span></li>
+<li><span class="tl-sym">$P$</span><span>công suất toả nhiệt trung bình (W)</span></li>
+<li><span class="tl-sym">$r$</span><span>điện trở của vòng dây (Ω)</span></li>
+</ul>
+<p class="tl-fx-note">Không thay $e_0$ thẳng vào $P$, vì $e$ đổi dấu theo thời gian.</p>
+</div>
 
 <h3>III. Ba chỗ dễ nhầm</h3>
 
-<h4>III.1 Nam châm mạnh không thay được đế sạc</h4>
+<div class="tl-trap">
+<h4>Bẫy 1: tưởng nam châm mạnh thay được đế sạc</h4>
 <p>🔑 <strong>Đứng yên · Từ thông không đổi · Suất điện động bằng không</strong></p>
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>Cách nghĩ hay gặp</th><th>Cách nghĩ đúng</th></tr></thead>
@@ -155,6 +178,8 @@
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl15-q3-conf" value="chac"> Chắc</label>
 <label><input type="radio" name="tl15-q3-conf" value="khong"> Không chắc</label></p>
+</div>
+
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Để điện thoại lên một nam châm vĩnh cửu, không có đế sạc. Pin có được nạp không?</p>
@@ -167,7 +192,8 @@
 </div>
 </div>
 
-<h4>III.2 Phanh Foucault chỉ hãm khi đang chuyển động</h4>
+<div class="tl-trap">
+<h4>Bẫy 2: tưởng phanh Foucault hãm cả khi đã dừng</h4>
 <p>🔑 <strong>Hết chuyển động · Hết lực hãm Foucault</strong></p>
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>Tình huống</th><th>Kết quả</th></tr></thead>
@@ -180,6 +206,8 @@
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl15-q4-conf" value="chac"> Chắc</label>
 <label><input type="radio" name="tl15-q4-conf" value="khong"> Không chắc</label></p>
+</div>
+
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 4.</strong> Xe đã dừng. Phanh Foucault (nam châm một chiều kẹp đĩa) còn hãm không?</p>
@@ -192,7 +220,8 @@
 </div>
 </div>
 
-<h4>III.3 Nồi nào dùng được trên bếp từ</h4>
+<div class="tl-trap">
+<h4>Bẫy 3: tưởng nồi nào cũng dùng được trên bếp từ</h4>
 <p>🔑 <strong>Nam châm dính đáy · Mới có Foucault mạnh</strong></p>
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>Đáy nồi</th><th>Trên bếp từ</th></tr></thead>
@@ -202,6 +231,8 @@
 <tr><td>Thuỷ tinh, sứ</td><td>Không dẫn điện, không có dòng Foucault</td></tr>
 </tbody>
 </table></div>
+</div>
+
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Nồi nào sôi trên bếp từ thông thường?</p>

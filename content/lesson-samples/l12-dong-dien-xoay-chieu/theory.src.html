@@ -34,8 +34,21 @@
 <li>Từ thông: $\Phi=\Phi_0\cos(\omega t+\varphi)$, trong đó $\Phi_0=NBS$.</li>
 <li>Theo Faraday, $e=-\Phi'=NBS\omega\sin(\omega t+\varphi)$. Đổi $\sin x=\cos\left(x-\dfrac{\pi}{2}\right)$ thì $e$ là hàm cos <strong>chậm pha $\dfrac{\pi}{2}$</strong> so với $\Phi$, pha ban đầu $\varphi-\dfrac{\pi}{2}$:</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Suất điện động xoay chiều của khung quay</p>
 <p>$$e=E_0\cos\left(\omega t+\varphi-\frac{\pi}{2}\right)$$</p>
 <p>$$E_0=NBS\omega$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$e$</span><span>suất điện động tức thời (V)</span></li>
+<li><span class="tl-sym">$E_0$</span><span>suất điện động cực đại (V)</span></li>
+<li><span class="tl-sym">$N$</span><span>số vòng dây (không đơn vị)</span></li>
+<li><span class="tl-sym">$B$</span><span>cảm ứng từ (T)</span></li>
+<li><span class="tl-sym">$S$</span><span>diện tích một vòng dây (m²)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tốc độ góc của khung (rad/s)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
+<li><span class="tl-sym">$\varphi$</span><span>góc giữa $\vec n$ và $\vec B$ lúc $t=0$ (rad)</span></li>
+</ul>
+</div>
 <!--FIG:1-->
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-xoaychieu-01">
 <p class="tl-label">🔬 Thí nghiệm đo: máy phát mini quay tay</p>
@@ -76,8 +89,20 @@
 <h4>II.2 Biểu thức dòng điện và điện áp xoay chiều</h4>
 <p>🔑 <strong>Hàm cos · $I_0$, $\omega$, $\varphi$ · Cùng tần số</strong></p>
 <p>Nối khung với mạch ngoài, $u$ và $i$ biến thiên cùng tần số với $e$:</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Điện áp và dòng điện xoay chiều</p>
 <p>$$u=U_0\cos(\omega t+\varphi_u)$$</p>
 <p>$$i=I_0\cos(\omega t+\varphi_i)$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$u$</span><span>điện áp tức thời (V)</span></li>
+<li><span class="tl-sym">$i$</span><span>cường độ dòng điện tức thời (A)</span></li>
+<li><span class="tl-sym">$U_0$</span><span>điện áp cực đại (V)</span></li>
+<li><span class="tl-sym">$I_0$</span><span>cường độ cực đại (A)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
+<li><span class="tl-sym">$\varphi_u,\ \varphi_i$</span><span>pha ban đầu của $u$, của $i$ (rad)</span></li>
+</ul>
+</div>
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>Đại lượng</th><th>Nghĩa</th></tr></thead>
 <tbody>
@@ -87,6 +112,16 @@
 <tr><td>$\omega$ (rad/s)</td><td>tần số góc, $\omega=2\pi f$</td></tr>
 </tbody></table></div>
 <p>🔑 <strong>$T=\dfrac{2\pi}{\omega}$ · $f=\dfrac{1}{T}$ · Đổi chiều $2f$ lần/s</strong></p>
+<div class="tl-fx">
+<p class="tl-fx-name">Tần số góc, chu kì, tần số</p>
+<p>$$\omega=2\pi f$$</p>
+<p>$$T=\dfrac{2\pi}{\omega}=\dfrac{1}{f}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số (Hz)</span></li>
+<li><span class="tl-sym">$T$</span><span>chu kì (s)</span></li>
+</ul>
+</div>
 <ul>
 <li>Điện lưới Việt Nam: $f=50\ \text{Hz}$, nên $\omega=100\pi\approx314\ \text{rad/s}$ và $T=0{,}02\ \text{s}$.</li>
 <li>Mỗi chu kì dòng điện đổi chiều 2 lần, nên 1 s đổi chiều $2f$ lần: ổ điện nhà em là <strong>100 lần/s</strong>.</li>
@@ -127,9 +162,18 @@
 <ul>
 <li>Giá trị trung bình trong một chu kì bằng 0, nhưng dây vẫn nóng lên: nhiệt tỉ lệ với $i^2$ chứ không phải $i$.</li>
 <li><strong>Cường độ hiệu dụng</strong> $I$ là cường độ của dòng không đổi toả nhiệt bằng dòng xoay chiều, khi qua cùng một điện trở trong cùng thời gian.</li>
-<li>$I=\dfrac{I_0}{\sqrt{2}}$ · $U=\dfrac{U_0}{\sqrt{2}}$ · $E=\dfrac{E_0}{\sqrt{2}}$.</li>
 <li>Ampe kế, vôn kế xoay chiều và số ghi trên thiết bị đều là giá trị hiệu dụng. Ổ điện 220 V có $U_0=220\sqrt{2}\approx311\ \text{V}$.</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Giá trị hiệu dụng</p>
+<p>$$I=\dfrac{I_0}{\sqrt{2}}$$</p>
+<p>$$U=\dfrac{U_0}{\sqrt{2}}$$</p>
+<p>$$E=\dfrac{E_0}{\sqrt{2}}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$I,\ U,\ E$</span><span>giá trị hiệu dụng: A, V, V</span></li>
+<li><span class="tl-sym">$I_0,\ U_0,\ E_0$</span><span>giá trị cực đại: A, V, V</span></li>
+</ul>
+</div>
 <!--FIG:3-->
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-xoaychieu-03">
 <p class="tl-label">🔬 Thí nghiệm: một chiều 12 V so với xoay chiều 12 V</p>
