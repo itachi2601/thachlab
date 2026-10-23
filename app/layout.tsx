@@ -119,10 +119,10 @@ export default function RootLayout({
         />
         {/* Lưới an toàn SỚM cho ChunkLoadError: chạy trước hydrate (ChunkErrorGuard chỉ đăng ký
             trong useEffect nên không bắt được lỗi chunk xảy ra trước đó → trang trắng).
-            Cùng cờ sessionStorage với ChunkErrorGuard: reload đúng 1 lần mỗi phiên tab. */}
+            Cùng cờ sessionStorage với ChunkErrorGuard: reload tối đa 1 lần mỗi 5 phút (không còn "1 lần cả phiên" — tab mở cả buổi qua nhiều lần deploy vẫn tự hồi phục). Bắt thêm lỗi 404 của thẻ <script> trong HTML (không phải ChunkLoadError, trước đây trang trắng). */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var K="thachlab-chunk-reload",P=["ChunkLoadError","Failed to load chunk","Loading chunk","Failed to fetch dynamically imported module"];function m(x){if(!x)return"";return typeof x==="string"?x:(x.message||"")}function h(s){if(!s)return;for(var i=0;i<P.length;i++){if(s.indexOf(P[i])>-1){try{if(sessionStorage.getItem(K))return;sessionStorage.setItem(K,"1")}catch(e){return}location.reload();return}}}window.addEventListener("error",function(e){h(m(e.error)||e.message)});window.addEventListener("unhandledrejection",function(e){h(m(e.reason))})})()`,
+            __html: `(function(){var K="thachlab-chunk-reload",W=300000,P=["ChunkLoadError","Failed to load chunk","Loading chunk","Failed to fetch dynamically imported module"];function go(){try{var t=+sessionStorage.getItem(K)||0;if(Date.now()-t<W)return;sessionStorage.setItem(K,String(Date.now()))}catch(e){return}location.reload()}function m(x){if(!x)return"";return typeof x==="string"?x:(x.message||"")}function h(s){if(!s)return;for(var i=0;i<P.length;i++){if(s.indexOf(P[i])>-1){go();return}}}window.addEventListener("error",function(e){var t=e.target;if(t&&t.tagName==="SCRIPT"&&t.src&&t.src.indexOf("/_next/static/")>-1){go();return}h(m(e.error)||e.message)},true);window.addEventListener("unhandledrejection",function(e){h(m(e.reason))})})())`,
           }}
         />
       </head>

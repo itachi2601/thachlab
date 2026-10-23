@@ -36,8 +36,9 @@
  * thêm pattern nào khác ngoài những gì đã thấy thực tế hoặc là biến thể đã biết rõ của
  * đúng loại lỗi này.
  *
- * Xử lý: reload trang ĐÚNG MỘT LẦN (đánh dấu bằng `sessionStorage`, tự hết khi đóng tab
- * — mỗi phiên duyệt mới lại được thử reload 1 lần). Nếu đã reload rồi mà lỗi vẫn xảy ra
+ * Xử lý: reload trang tối đa MỘT LẦN mỗi RELOAD_WINDOW_MS (đánh dấu thời điểm bằng
+ * `sessionStorage`; 23/10/2026 đổi từ "1 lần cả phiên tab" vì tab mở cả buổi qua nhiều lần
+ * deploy chỉ được cứu lần đầu). Nếu đã reload rồi mà lỗi vẫn xảy ra
  * (mạng vẫn đứt, hosting vẫn thiếu file) → để nó rơi xuống `app/error.tsx` bình thường,
  * KHÔNG tự xử lý tiếp, không bao giờ im lặng/trắng trang.
  */
@@ -45,6 +46,7 @@
 import { useEffect } from "react";
 
 const RELOAD_FLAG = "thachlab-chunk-reload";
+const RELOAD_WINDOW_MS = 5 * 60 * 1000;
 
 const CHUNK_ERROR_PATTERNS = [
   "ChunkLoadError",
@@ -60,12 +62,13 @@ function isChunkLoadError(message: unknown): boolean {
 
 function reloadOnce() {
   try {
-    if (sessionStorage.getItem(RELOAD_FLAG)) {
-      // Đã reload 1 lần trong phiên tab này rồi mà lỗi vẫn còn — không lặp lại,
+    const last = Number(sessionStorage.getItem(RELOAD_FLAG)) || 0;
+    if (Date.now() - last < RELOAD_WINDOW_MS) {
+      // Vừa reload trong 5 phút qua mà lỗi vẫn còn — không lặp lại,
       // để app/error.tsx (nếu lỗi lọt vào React) hoặc chính trang lỗi hiện tại xử lý.
       return;
     }
-    sessionStorage.setItem(RELOAD_FLAG, "1");
+    sessionStorage.setItem(RELOAD_FLAG, String(Date.now()));
   } catch {
     // sessionStorage có thể bị chặn (chế độ ẩn danh nghiêm ngặt, cookie bị tắt…) —
     // không có cách nào đánh dấu "đã reload" thì thà không tự reload còn hơn lặp vô hạn.
@@ -92,9 +95,17 @@ export default function ChunkErrorGuard() {
       }
     }
 
+    // Lỗi 404 của thẻ <script> không phải ChunkLoadError và không nổi bọt: chỉ bắt được ở pha capture.
+    function onResourceError(event: Event) {
+      const el = event.target;
+      if (el instanceof HTMLScriptElement && el.src.includes("/_next/static/")) reloadOnce();
+    }
+
     window.addEventListener("error", onError);
+    window.addEventListener("error", onResourceError, true);
     window.addEventListener("unhandledrejection", onRejection);
     return () => {
+      window.removeEventListener("error", onResourceError, true);
       window.removeEventListener("error", onError);
       window.removeEventListener("unhandledrejection", onRejection);
     };

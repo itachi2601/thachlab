@@ -52,6 +52,17 @@ RedirectMatch 404 /\.git
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
 
+  # HTML + dữ liệu RSC (__next.*.txt) + sw.js KHÔNG có hash trong tên và tham chiếu tới chunk theo hash:
+  # sau deploy chunk cũ bị xoá, nên trang cũ còn nằm trong cache sẽ gọi chunk 404 (log LiteSpeed 23/10/2026).
+  # no-cache = luôn hỏi lại máy chủ (vẫn dùng bản cache nếu chưa đổi, nhận 304) nên không tốn băng thông.
+  # Đặt SAU các khối js/css để sw.js (đuôi .js) bị ghi đè khỏi "immutable 1 năm".
+  <FilesMatch "\.(html|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "^sw\.js$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
   # Header bảo mật (Đợt 2 rà soát 17/10/2026, docs/RA-SOAT-MA-NGUON-2026-10-17.md mục A7).
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
