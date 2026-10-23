@@ -28,7 +28,7 @@ export default function PwaBoot() {
   useEffect(() => {
     if (process.env.NODE_ENV !== "production") return;
     if (!("serviceWorker" in navigator)) return;
-    const register = () => navigator.serviceWorker.register("/sw.js", { scope: "/" }).catch(() => {});
+    const register = () => navigator.serviceWorker.register("/sw.js", { scope: "/", updateViaCache: "none" }).catch(() => {});
     // Đăng ký sau khi trang tải xong để không tranh băng thông với nội dung.
     if (document.readyState === "complete") register();
     else window.addEventListener("load", register, { once: true });

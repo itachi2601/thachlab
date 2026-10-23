@@ -132,7 +132,7 @@ export default function NotificationBell() {
       {toast && (
         <div role="status" aria-live="polite" className="fixed inset-x-3 top-3 z-[100] sm:left-auto sm:right-4 sm:w-96">
           <div className="flex items-start gap-2 rounded-2xl border border-blue-400/40 bg-panel p-3 shadow-2xl shadow-black/50">
-            <Link
+            <Link prefetch={false}
               href={toast.href}
               onClick={() => setToast(null)}
               className="flex min-h-11 min-w-0 flex-1 items-start gap-3 rounded-xl px-1"
@@ -188,7 +188,7 @@ export default function NotificationBell() {
               <ul>
                 {items.map((item) => (
                   <li key={item.id} className="border-b border-line last:border-0">
-                    <Link
+                    <Link prefetch={false}
                       href={item.href || "/thong-bao"}
                       onClick={() => void openItem(item)}
                       className={`block px-4 py-3.5 transition-colors hover:bg-surface-2 ${item.read_at ? "" : "bg-blue-500/[.06]"}`}
@@ -207,7 +207,7 @@ export default function NotificationBell() {
               </ul>
             )}
           </div>
-          <Link href="/hop-thu" onClick={() => setOpen(false)} className="block border-t border-line px-4 py-3 text-center text-sm font-semibold text-blue-300 hover:bg-surface-2">
+          <Link prefetch={false} href="/hop-thu" onClick={() => setOpen(false)} className="block border-t border-line px-4 py-3 text-center text-sm font-semibold text-blue-300 hover:bg-surface-2">
             Mở hộp thư
           </Link>
         </div>

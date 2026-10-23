@@ -375,7 +375,7 @@ export default function MobileTabBar() {
           <button type="button" className="mobile-more-backdrop" aria-label="Đóng menu" onClick={() => setMoreOpen(false)} />
           <div className="mobile-more" role="menu" onClick={() => setMoreOpen(false)}>
             {more.map((l) => (
-              <Link key={l.href} href={l.href} role="menuitem">
+              <Link prefetch={false} key={l.href} href={l.href} role="menuitem">
                 {l.label}
               </Link>
             ))}
@@ -391,7 +391,7 @@ export default function MobileTabBar() {
         aria-label="Điều hướng nhanh"
       >
         {items.map((item) => (
-          <Link
+          <Link prefetch={false}
             key={item.key}
             href={item.href}
             aria-current={item.active ? "page" : undefined}

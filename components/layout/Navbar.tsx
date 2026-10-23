@@ -115,7 +115,7 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-panel-deep/90 backdrop-blur-md">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
+        <Link prefetch={false} href="/" className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white font-display">
             T
           </span>
@@ -129,7 +129,7 @@ export default function Navbar() {
             const hasQuick = link.href === "/lop-hoc";
             return (
               <li key={link.href} className={hasQuick ? "group relative" : undefined}>
-                <Link
+                <Link prefetch={false}
                   href={link.href}
                   className="inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-ink transition-colors hover:text-primary"
                 >
@@ -144,7 +144,7 @@ export default function Navbar() {
                     <ul className="w-52 overflow-hidden rounded-ui-md border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50">
                       {THPT_QUICK_LINKS.map((q) => (
                         <li key={q.href}>
-                          <Link
+                          <Link prefetch={false}
                             href={q.href}
                             className="flex items-center justify-between rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                           >
@@ -172,7 +172,7 @@ export default function Navbar() {
               <ul className="w-48 overflow-hidden rounded-ui-md border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50">
                 {MORE_LINKS.map((q) => (
                   <li key={q.href}>
-                    <Link
+                    <Link prefetch={false}
                       href={q.href}
                       className="flex items-center justify-between whitespace-nowrap rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
@@ -193,7 +193,7 @@ export default function Navbar() {
           {/* Mọi học sinh/sinh viên (THPT và CTTC) đều quét mã được — đề kiểm tra chương của
               CTTC (AVCN) cũng có mã QR chiếu ở trang bài (22/10/2026). */}
           {profile?.role === "student" && (
-            <Link
+            <Link prefetch={false}
               href="/quet-ma"
               aria-label="Quét mã QR vào lớp"
               className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -221,7 +221,7 @@ export default function Navbar() {
                   role="menu"
                   className="absolute right-0 top-[calc(100%+8px)] w-56 overflow-hidden rounded-ui-md border border-line bg-panel/95 p-1.5 shadow-2xl shadow-black/50"
                 >
-                  <Link
+                  <Link prefetch={false}
                     href="/tai-khoan"
                     onClick={() => setAccountMenuOpen(false)}
                     className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -230,7 +230,7 @@ export default function Navbar() {
                     <User size={16} /> {profile?.role === "student" && profile.track !== "cttc" ? "Hôm nay" : "Tài khoản của tôi"}
                   </Link>
                   {profile?.role === "student" && profile.track !== "cttc" && (
-                    <Link
+                    <Link prefetch={false}
                       href="/tai-khoan/them"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -239,7 +239,7 @@ export default function Navbar() {
                     </Link>
                   )}
                   {profile?.role === "parent" && (
-                    <Link
+                    <Link prefetch={false}
                       href="/phu-huynh"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -248,7 +248,7 @@ export default function Navbar() {
                     </Link>
                   )}
                   {profile?.role === "student" && profile.track !== "cttc" && (
-                    <Link
+                    <Link prefetch={false}
                       href="/luyen-tap"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -257,7 +257,7 @@ export default function Navbar() {
                     </Link>
                   )}
                   {!isStaff && profile?.role !== "parent" && (
-                    <Link
+                    <Link prefetch={false}
                       href="/lop-hoc/ket-qua"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -266,7 +266,7 @@ export default function Navbar() {
                     </Link>
                   )}
                   {isStaff && profile?.admin_area !== "thpt" && (
-                    <Link
+                    <Link prefetch={false}
                       href="/dashboard"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -275,7 +275,7 @@ export default function Navbar() {
                     </Link>
                   )}
                   {isStaff && profile?.admin_area !== "cttc" && (
-                    <Link
+                    <Link prefetch={false}
                       href="/dashboard-thpt"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -285,7 +285,7 @@ export default function Navbar() {
                   )}
                   {/* Trợ giảng trước đây phải tự gõ /tro-giang mới vào được khu làm việc của mình. */}
                   {isTa && (
-                    <Link
+                    <Link prefetch={false}
                       href="/dashboard-thpt"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -294,7 +294,7 @@ export default function Navbar() {
                     </Link>
                   )}
                   {profile?.role === "tro_giang" && (
-                    <Link
+                    <Link prefetch={false}
                       href="/tro-giang"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -303,7 +303,7 @@ export default function Navbar() {
                     </Link>
                   )}
                   {(isStaff || isTa) && (
-                    <Link
+                    <Link prefetch={false}
                       href="/tro-giang/do-vui"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -312,7 +312,7 @@ export default function Navbar() {
                     </Link>
                   )}
                   {(isStaff || isTa) && (
-                    <Link
+                    <Link prefetch={false}
                       href="/tro-giang/on-tap"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -321,7 +321,7 @@ export default function Navbar() {
                     </Link>
                   )}
                   {profile?.role === "admin" && (
-                    <Link
+                    <Link prefetch={false}
                       href="/quan-tri"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary-soft"
@@ -329,7 +329,7 @@ export default function Navbar() {
                       <ShieldCheck size={16} /> Quản trị
                     </Link>
                   )}
-                  <Link
+                  <Link prefetch={false}
                     href="/tai-khoan/doi-mat-khau"
                     onClick={() => setAccountMenuOpen(false)}
                     className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
@@ -348,13 +348,13 @@ export default function Navbar() {
             </div>
           ) : (
             <>
-              <Link
+              <Link prefetch={false}
                 href="/dang-nhap"
                 className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-ui-md border border-blue-400/40 bg-blue-500/10 px-3.5 py-2 text-sm font-semibold text-ink transition-colors hover:border-blue-400/70 hover:bg-blue-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6] sm:px-4"
               >
                 Đăng nhập
               </Link>
-              <Link
+              <Link prefetch={false}
                 href="/dang-ky"
                 className="hidden min-h-11 items-center whitespace-nowrap rounded-ui-md bg-primary px-3.5 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark sm:inline-flex sm:px-5"
               >
@@ -395,7 +395,7 @@ export default function Navbar() {
                 return (
                   <li key={link.href}>
                     {!(link.href === "/lop-hoc" && tabBarShown) && (
-                    <Link
+                    <Link prefetch={false}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       aria-current={isActive ? "page" : undefined}
@@ -412,7 +412,7 @@ export default function Navbar() {
                     {link.href === "/lop-hoc" && (
                       <div className="flex flex-wrap gap-1.5 px-4 pb-2 pt-1">
                         {THPT_QUICK_LINKS.map((q) => (
-                          <Link
+                          <Link prefetch={false}
                             key={q.href}
                             href={q.href}
                             onClick={() => setMobileMenuOpen(false)}
@@ -434,7 +434,7 @@ export default function Navbar() {
               </li>
               {!session && (
                 <li className="border-t border-line pt-1 sm:hidden">
-                  <Link
+                  <Link prefetch={false}
                     href="/dang-ky"
                     onClick={() => setMobileMenuOpen(false)}
                     className="flex min-h-12 items-center justify-between rounded-ui-md px-4 py-3 text-[15px] font-semibold text-blue-300 transition-colors hover:bg-blue-500/10"

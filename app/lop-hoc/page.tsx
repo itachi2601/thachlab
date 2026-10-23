@@ -559,7 +559,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
       <Fragment key={ch.id}>
         <section id={desktop ? `chapter-pick-${ch.id}` : `chapter-${ch.id}`} className="class-chapter">
           {only ? (
-            <Link
+            <Link prefetch={false}
               href={lessonHref(only)}
               onClick={() => rememberLesson(only)}
               className="class-chapter-head class-chapter-head--link"
@@ -652,7 +652,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                     {isParent ? (
                       <div className={`${rowClass} class-lesson--static`}>{rowInner}</div>
                     ) : (
-                      <Link href={lessonHref(lesson)} onClick={() => rememberLesson(lesson)} className={rowClass}>
+                      <Link prefetch={false} href={lessonHref(lesson)} onClick={() => rememberLesson(lesson)} className={rowClass}>
                         {rowInner}
                       </Link>
                     )}
@@ -682,7 +682,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
               return isParent ? (
                 <div key={exam.id} className={`${examClass} class-lesson--static`}>{examInner}</div>
               ) : (
-                <Link
+                <Link prefetch={false}
                   key={exam.id}
                   id={desktop ? undefined : `lesson-${exam.id}`}
                   href={lessonHref(exam)}
@@ -740,7 +740,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                     <header className="lesson-head">
                       {isAvcn && (
                         <p className="lesson-eyebrow">
-                          <Link href="/lop-hoc/cttc">Sinh viên CTTC</Link>
+                          <Link prefetch={false} href="/lop-hoc/cttc">Sinh viên CTTC</Link>
                         </p>
                       )}
                       <h1>{activeDisplayName}</h1>
@@ -763,7 +763,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       )}
                       {grade === "9" && activeSubjectCode === HSG_SUBJECT_CODE && (
                         <p className="lesson-lead">
-                          <Link href="/lop-hoc/khtn-9" className="lesson-link">
+                          <Link prefetch={false} href="/lop-hoc/khtn-9" className="lesson-link">
                             <ArrowLeft size={14} /> Về KHTN 9
                           </Link>
                         </p>
@@ -800,7 +800,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         )}
                         {isParent && parentChildren?.length === 0 && (
                           <p className="class-parent-band">
-                            Tài khoản chưa nối với em nào. <Link href="/phu-huynh">Nối mã phụ huynh ở đây</Link> để xem tiến độ của con.
+                            Tài khoản chưa nối với em nào. <Link prefetch={false} href="/phu-huynh">Nối mã phụ huynh ở đây</Link> để xem tiến độ của con.
                           </p>
                         )}
                         {isParent && session && progressMarks && (
@@ -832,7 +832,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                               <a href="#de-thi" className="class-chip">Đề thi</a>
                             )}
                             {rank && (rank.rp > 0 || (rank.daily?.streak ?? 0) > 0) && (
-                              <Link href="/lop-hoc/xep-hang/" className="class-chip">Xếp hạng</Link>
+                              <Link prefetch={false} href="/lop-hoc/xep-hang/" className="class-chip">Xếp hạng</Link>
                             )}
                           </div>
                         )}
@@ -863,7 +863,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
 
                     {!session && (
                       <p className="lesson-muted class-login-hint">
-                        <Link href="/dang-nhap" className="lesson-link">Đăng nhập</Link> để xem đề thi và lưu tiến độ học.
+                        <Link prefetch={false} href="/dang-nhap" className="lesson-link">Đăng nhập</Link> để xem đề thi và lưu tiến độ học.
                       </p>
                     )}
 
@@ -873,7 +873,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         <ol className="class-lessons class-lessons--flat">
                           {classPosts.map((p) => (
                             <li key={p.id}>
-                              <Link href={`/tin-tuc#post-${p.id}`} className="class-lesson">
+                              <Link prefetch={false} href={`/tin-tuc#post-${p.id}`} className="class-lesson">
                                 <span className="class-lesson-title">
                                   {p.title}
                                   {(p.body || p.video_url) && (
@@ -928,7 +928,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                   const schoolClass = displayClasses.find((c) => classGrade(c.name) === grade);
                   if (!schoolClass) return null;
                   return (
-                    <Link key={grade} href={`/lop-hoc/${schoolClass.slug}`} className="hub-card">
+                    <Link prefetch={false} key={grade} href={`/lop-hoc/${schoolClass.slug}`} className="hub-card">
                       <span className="hub-tile">{grade}</span>
                       <span className="hub-card-body">
                         <span className="hub-card-title">{GRADE_LABELS[grade] ?? `Vật lý ${grade}`}</span>
@@ -938,7 +938,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                     </Link>
                   );
                 })}
-                <Link href={HSG_HREF} className="hub-card">
+                <Link prefetch={false} href={HSG_HREF} className="hub-card">
                   <span className="hub-tile">🏆</span>
                   <span className="hub-card-body">
                     <span className="hub-card-title">Luyện thi chuyên & HSG</span>
@@ -950,7 +950,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
             )}
             <p className="hub-switch">
               Bạn là sinh viên CTTC?
-              <Link href="/lop-hoc/cttc" className="lesson-link">
+              <Link prefetch={false} href="/lop-hoc/cttc" className="lesson-link">
                 Sang không gian CTTC <ArrowRight size={14} />
               </Link>
             </p>
