@@ -96,7 +96,13 @@ const url = env("NEXT_PUBLIC_SUPABASE_URL"), key = env("SUPABASE_SERVICE_ROLE_KE
 if (!url || !key) fail("thiếu NEXT_PUBLIC_SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY");
 const sb = createClient(url, key, { auth: { autoRefreshToken: false, persistSession: false } });
 
-const { data: lesson } = await sb.from("lessons").select("id, title").eq("id", lessonId).single();
+// DB đôi lúc quá tải/time-out → truy vấn trả null; thử lại vài lần trước khi kết luận "không thấy bài".
+let lesson: { id: number; title: string } | null = null;
+for (let lan = 1; lan <= 4 && !lesson; lan++) {
+  const r = await sb.from("lessons").select("id, title").eq("id", lessonId).maybeSingle();
+  lesson = r.data;
+  if (!lesson) { console.log(`(thử lần ${lan}/4: ${r.error?.message ?? "không có dòng"})`); await new Promise((ok) => setTimeout(ok, 5000 * lan)); }
+}
 if (!lesson) fail(`không thấy bài ${lessonId}`);
 console.log(`Bài #${lesson.id} "${lesson.title}"`);
 
