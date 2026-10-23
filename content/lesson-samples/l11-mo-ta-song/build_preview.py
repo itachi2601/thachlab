@@ -38,15 +38,15 @@ CSS_EXTRA = """
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 """
 
-BASE = """<!doctype html><html lang="vi"><meta charset="utf-8">
+BASE = """<!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="{katex}/katex.min.css">
 <style>
-:root{{color-scheme:dark}}
-body{{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}}
+:root{{color-scheme:light}}
+body{{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}}
 .wrap{{max-width:720px;margin:0 auto;padding:20px 16px 64px}}
 .exam-content{{display:block}}
-h1{{font-size:20px;margin:0 0 4px}} .sub{{color:#94a3b8;font-size:13px;margin:0 0 16px}}
+h1{{font-size:20px;margin:0 0 4px}} .sub{{color:var(--color-ink-muted,#475569);font-size:13px;margin:0 0 16px}}
 {css}
 </style>
 {body}

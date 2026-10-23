@@ -122,3 +122,6 @@ Học sinh phản hồi: quá nhiều loại khung thì không biết ô nào qu
 | Bẫy mất điểm | `<div class="tl-trap">` bọc `<h4>Bẫy …` + nội dung | ⚠️ `--color-warn` (đỏ chỉ để "sai" trong phản hồi quiz bên trong) |
 | Tự kiểm tra, Trả bài, biến thể | `.tl-box.tl-box--think.tl-check` | ✍️ `--color-primary` |
 Mọi thứ còn lại KHÔNG có khung: `.tl-box … tl-note` (mục tiêu, dự đoán, 🔬 thí nghiệm, 🎬 video, 📄 đề bài; chỉ một vạch trái mỏng trung tính `--color-line-strong`; phân biệt loại bằng emoji ở nhãn, không bằng màu) và `<details class="tl-details tl-more">` (bấm xem). Giữ NGUYÊN các lớp cũ (`tl-box--exp`, `tl-box--video`, `tl-box--think`) vì script chèn video/thí nghiệm bám vào chúng; chỉ thêm lớp mới. Nhãn của hộp có khung bỏ emoji đầu (icon góc đã thay). Icon do CSS `::before`, không viết vào HTML. Thêm loại khung thứ tư = phá quy tắc, phải hỏi thầy.
+
+### Chuyển bài CŨ sang hệ khung (23/10/2026)
+`python3 scripts/ap-he-khung.py content/lesson-samples/<bài>/theory.src.html` tự thêm lớp `tl-keep`/`tl-check`/`tl-note`/`tl-more` và bọc `<h4>Bẫy …` vào `tl-trap` (chạy lại an toàn). Khối `.tl-fx` viết tay (bảng chú giải đại lượng). Sau đó `build_figs.py` → `build_bundle.py` → `build_preview.py` + `chup_anh.py` (xem thử nay nền sáng, `data-theme="light"`). Mẫu: `l11-mo-ta-song`. Ghi DB bằng `cap-nhat-ly-thuyet.sh` sau khi thầy duyệt.

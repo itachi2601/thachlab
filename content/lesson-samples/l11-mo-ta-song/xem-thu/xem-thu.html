@@ -1,12 +1,12 @@
-<!doctype html><html lang="vi"><meta charset="utf-8">
+<!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
 <style>
-:root{color-scheme:dark}
-body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{color-scheme:light}
+body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
 .exam-content{display:block}
-h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+h1{font-size:20px;margin:0 0 4px} .sub{color:var(--color-ink-muted,#475569);font-size:13px;margin:0 0 16px}
 /* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
 /* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
 .exam-content {
@@ -14,6 +14,27 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   line-height: 1.65;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+/* Vùng ĐỀ giống đề giấy (thầy chốt 11/10/2026): serif Tinos (= Times New Roman về số đo), chữ ≥ 17px, dòng ≥ 1,6.
+   Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
+   Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
+.exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
+.exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
+@media (max-width: 640px) {
+  .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
+}
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
 }
 
 /* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
@@ -97,7 +118,16 @@ html[data-theme="light"] .review-board .exam-content img.eq {
   margin: 0.75rem auto;
   border-radius: 0.5rem;
   background: #f8fafc;
-  padding: 0.5rem;
+  padding: 0.75rem;
+}
+
+/* M5: ảnh scan/dán ngoài luồng (không .eq/.figure) cũng có khung sáng đệm 12px
+   đồng nhất — ô trắng trần giữa nền tối gây loá cục bộ. */
+.exam-content img:not(.eq):not(.figure) {
+  background: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
 }
 
 /* SVG trần (không bọc trong figure.fig) render theo kích thước gốc trong HTML
@@ -121,7 +151,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 }
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
-  font-size: 0.85em;
+  font-size: var(--fs-sm);
   color: #94a3b8;
   text-align: center;
 }
@@ -131,7 +161,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
 .exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
 .exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
-.exam-content .tl-label { margin: 0 0 8px; font-size: 13px; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
 .exam-content .tl-box--rule .tl-label { color: #fbbf24; }
 .exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
 .exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
@@ -153,15 +183,112 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
-.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
-html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
+/* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
+   --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
+.exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
+.exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
+.exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
+.exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
+.exam-content .tl-sim__row > input:checked + .tl-sim__chip { border-color: #22d3ee; background: rgba(34,211,238,.16); }
+.exam-content .tl-sim__row > input:focus-visible + .tl-sim__chip { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-sim svg { display: block; width: 100%; max-width: 420px; margin: 0 auto; height: auto; }
+.exam-content .tl-sim__st { display: none; margin-top: 8px; }
+.exam-content .tl-sim__st p { margin: 2px 0; }
+.exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
+.exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
+.exam-content .tl-sim__leg li { margin: 2px 0; }
+.exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
+.exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
+.exam-content .tl-sim .sim-sh { transform: scaleY(calc(var(--L) / 120)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-hd { transform: translateY(calc(var(--L) * -1px)) rotate(calc(90deg * (1 - var(--sg)))); transform-box: fill-box; transform-origin: 50% 0; opacity: clamp(0, calc(var(--L) * var(--L)), 1); transition: transform .25s ease, opacity .25s ease; }
+.exam-content .tl-sim .a-F { --L: calc(9 * var(--i) * var(--s)); --sg: var(--s); }
+.exam-content .tl-sim .a-Q { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Fp { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Pm { --L: -60; --sg: -1; }
+.exam-content .tl-sim .a-N { --L: calc(60 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .a-Pc { --L: -40; --sg: -1; }
+.exam-content .tl-sim .a-Np { --L: calc(-60 - 9 * var(--i) * var(--s)); --sg: -1; }
+.exam-content .tl-sim .a-Qb { --L: calc(100 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .sim-bar { transform: scaleX(calc(var(--i) * var(--s) / 5)); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-wn { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) { --s: -1; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wp { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wn { display: inline; }
+@media (prefers-reduced-motion: reduce) { .exam-content .tl-sim :is(.sim-sh, .sim-hd, .sim-bar) { transition: none; } }
+.exam-content .tl-sim:has(.tls-i0:checked) { --i: 0; }
+.exam-content .tl-sim:has(.tls-i1:checked) { --i: 1; }
+.exam-content .tl-sim:has(.tls-i2:checked) { --i: 2; }
+.exam-content .tl-sim:has(.tls-i3:checked) { --i: 3; }
+.exam-content .tl-sim:has(.tls-i4:checked) { --i: 4; }
+.exam-content .tl-sim:has(.tls-i5:checked) { --i: 5; }
+.exam-content .tl-sim:has(.tls-i0:checked) .st-0 { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-f:checked) .st-1p { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-r:checked) .st-1n { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-f:checked) .st-2p { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-r:checked) .st-2n { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-f:checked) .st-3p { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-r:checked) .st-3n { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-f:checked) .st-4p { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-r:checked) .st-4n { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-f:checked) .st-5p { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-r:checked) .st-5n { display: block; }
+html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-content .tl-sim__chip { border-color: rgba(15,23,42,.28); }
+/* Mô phỏng bài Tổng hợp lực (L10): hai dây kéo xe + lực kế trên dốc. Chỉ radio + CSS. */
+.exam-content .tl-sim--keo > svg,
+.exam-content .tl-sim--doc > svg { display: none; }
+.exam-content .tl-sim--keo:has(.k-a0:checked) > svg.k-a0,
+.exam-content .tl-sim--keo:has(.k-a60:checked) > svg.k-a60,
+.exam-content .tl-sim--keo:has(.k-a90:checked) > svg.k-a90,
+.exam-content .tl-sim--keo:has(.k-a120:checked) > svg.k-a120,
+.exam-content .tl-sim--keo:has(.k-a180:checked) > svg.k-a180,
+.exam-content .tl-sim--doc:has(.n-a0:checked) > svg.n-a0,
+.exam-content .tl-sim--doc:has(.n-a15:checked) > svg.n-a15,
+.exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
+.exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
+.exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -175,7 +302,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -184,30 +311,48 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
+  }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
-   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
-   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -219,6 +364,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .lesson-page .exam-content .katex { display: inline; max-width: none; overflow: visible; vertical-align: baseline; }
 .lesson-page .exam-content .katex-display { margin: 1em 0; padding: 0; border: 0; border-radius: 0; background: none; text-align: center; }
 .lesson-page .exam-content .katex-display > .katex { display: block; }
+/* Dấu căn KaTeX (\sqrt) là một <svg> có height theo thuộc tính; quy tắc ".exam-content svg { height: auto }"
+   ở trên làm nó xẹp về 0 nên mọi công thức căn mất dấu √ (hiện thành "I/2" thay vì "I/√2"). Trả lại chiều cao KaTeX. */
+.exam-content .katex svg { height: inherit; max-width: none; }
 
 /* ==================================================================
    CHẾ ĐỘ TRÌNH CHIẾU BÀI GIẢNG — dạy lý thuyết trên lớp, chiếu tivi/máy chiếu
@@ -365,6 +513,27 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
 
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
+
 .presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
 .presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
 
@@ -393,6 +562,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .lesson-page .exam-content h3 { font-size: 1.3rem; }
 .lesson-page .exam-content h4 { font-size: 1.1rem; }
 .lesson-page .exam-content p { margin: 0 0 1em; }
+/* Lề trái/phải của nội dung trong <details> bài lý thuyết: phải có .lesson-page để thắng `p`/`h3`… ở trên (cùng 0,2,1, dòng sau thắng) — chỉ đặt lề ngang, lề dưới vẫn do từng phần tử quyết định. */
+.lesson-page .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.lesson-page .exam-content .tl-details > :is(table, .tl-table) { width: calc(100% - 28px); }
+.lesson-page .exam-content .tl-details > span > .katex-display { margin-left: 14px; margin-right: 14px; }
 html[data-theme="light"] .lesson-page .exam-content :is(strong, b, h2, h3, h4) { color: #0f172a; }
 
 /* Đồng bộ trang bài: navbar/footer cùng họ nền #0f172a; đầu trang chọn lớp xếp dọc. */
@@ -408,6 +581,8 @@ html:not([data-theme="light"]) footer#contact { background-color: #0b1220; }
 /* Màu nhấn tiêu đề (thay chữ gradient). Tối: #60a5fa = 7,9:1 trên #05070b, #fb923c = 8,9:1.
    Sáng: #1d4ed8 = 6,4:1 trên #f8fafc, #c2410c = 5,2:1 trên trắng. */
 :root { --accent-brand-text: #60a5fa; --accent-warm-text: #fb923c; }
+/* C3: thang chữ vùng nội dung học sinh — chỉ 3 mức nhỏ (cỡ thân = 16px; tiêu đề lấy từ h1/h2/h3) thay cho 12,5/13/13,5/15/15,5 rải rác. */
+:root { --fs-cap: 12px; --fs-sm: 14px; --fs-body: 16px; }
 html[data-theme="light"] { --accent-brand-text: #1d4ed8; --accent-warm-text: #c2410c; }
 
 /* Công cụ đọc dùng chung (components/ui/ReadingZone.tsx — /phu-huynh, /kiem-tra/lam).
@@ -418,6 +593,15 @@ html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); -
 /* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
    rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
 html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
 html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
 html.is-dim[data-theme="light"] .text-white { color: #33291a; }
 html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
@@ -496,12 +680,409 @@ html[data-theme="light"] .lesson-prose img.figure,
 .rcl-shine { overflow: hidden; background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%); mix-blend-mode: overlay; animation: rcl-shine 3s 2.6s ease-in-out infinite; pointer-events: none; }
 @media (prefers-reduced-motion: reduce) { .rcl-card, .rcl-badge, .rcl-rise, .rcl-rays, .rcl-glow, .rcl-shine, .rcl-flash, .rcl-ring { animation: none; opacity: 1; } .rcl-rays { opacity: .45; } .rcl-flash, .rcl-ring { opacity: 0; } }
 
+/* ============================================================
+   P1/P2/P4 — khối PHỤ HUYNH (45–60 tuổi) · docs/QUY-TAC-THIET-KE-PHU-HUYNH.md
+   Phạm vi: class .parent-page (đặt ở <main> của /phu-huynh). Trang học sinh KHÔNG bị đổi.
+   Vì sao có khối này thay vì sửa từng component: các component của phụ huynh
+   (StudentResultsDashboard viewer="parent", ParentHomeworkNotes, CatchupCard) dùng chung
+   với trang học sinh — nâng sàn cỡ chữ theo phạm vi trang là cách duy nhất không kéo
+   giao diện học sinh 14–18 tuổi theo.
+   ============================================================ */
+/* P1 sàn cỡ chữ: thân 18px, nhãn phụ 15px (nghiên cứu: thân ≥17–18px, nhãn 15–16px, không có
+   12–13px cho câu cần đọc — docs/NGHIEN-CUU-PHU-HUYNH-45-60.md §2). Dùng rem (KHÔNG px) để nút
+   A+/A− của ReadingZone — thứ phụ huynh lão thị cần nhất — vẫn phóng được toàn bộ chữ trong trang. */
+.parent-page { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-xs) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-\[11px\], .text-\[12px\], .text-\[13px\]) { font-size: .9375rem; line-height: 1.55; }
+.parent-page :is(.text-sm) { font-size: 1.125rem; line-height: 1.65; }
+.parent-page :is(.text-base) { font-size: 1.1875rem; }
+.parent-page :is(.text-lg) { font-size: 1.3125rem; }
+/* P2 tương phản: chữ phụ phải ≥ 4,5:1 (AA) và nhắm 7:1 (AAA) — #64748b trên nền sáng chỉ 4,76:1.
+   #475569 trên #fff = 7,0:1; trên panel tối #b8c4d6 = 9,3:1. */
+.parent-page :is(.text-slate-500, .text-slate-400) { color: #475569; }
+html[data-theme="dark"] .parent-page :is(.text-slate-500, .text-slate-400) { color: #b8c4d6; }
+/* Chế độ "Dịu mắt" (kem/nâu): #6b5a3e = 5,8:1 → đậm lên #57492f = 7,6:1 trên #f5efe0. */
+html.is-dim[data-theme="light"] .parent-page :is(.text-slate-500, .text-slate-400, .text-slate-300) { color: #57492f; }
+/* P2 (và tinh thần "đọc được trong phòng thiếu sáng"): màu nhấn/trạng thái trong khối phụ huynh
+   đạt ≥7:1 ở theme sáng — lớp override sáng phía trên ép #0e7490/#047857/#b91c1c/#a16207
+   (4,9–5,9:1) bằng !important nên ở đây cũng phải !important. Theme tối giữ nguyên (đều >9:1). */
+html[data-theme="light"] .parent-page :is(.text-cyan-300, .text-cyan-400) { color: #155e75 !important; }
+html[data-theme="light"] .parent-page :is(.text-emerald-300, .text-emerald-200) { color: #065f46 !important; }
+html[data-theme="light"] .parent-page :is(.text-red-300, .text-red-200) { color: #991b1b !important; }
+html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { color: #92400e !important; }
+/* P4 đích chạm ≥ 48px (≥ 3rem) và P18 hạn chế gõ: ô nhập ≥ 18px để iOS không tự phóng to. */
+.parent-page :is(button, select, summary) { min-height: 3rem; }
+.parent-page a[class*="rounded-xl"], .parent-page a[class*="rounded-full"], .parent-page a[class*="rounded-2xl"] { min-height: 3rem; }
+.parent-page :is(input, select, textarea) { font-size: 1.125rem; }
+/* Công cụ đọc (Dịu mắt · A− / A+): globals đặt 13px cho .lesson-tool — đúng cho học sinh nhưng
+   13px là chữ nhỏ nhất trên trang phụ huynh, mà đây lại đúng là nút người lão thị cần bấm. */
+.parent-page .read-zone-tools :is(button, span) { font-size: .9375rem; }
+.parent-page .read-zone-tools :is(button) { min-width: 2.75rem; }
+/* P6 con số phải to và thẳng cột; P12 không dựa vào màu: luôn có nhãn chữ đi kèm. */
+.parent-page .parent-num { font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+/* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
+.parent-page .parent-copy { max-width: 44rem; }
+
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
+
+/* Bài tập mẫu — tự giải từng bước (components/lessons/StepwiseSolution.tsx, 9/10/2026). D2 đích chạm ≥ 44px, L1 phản hồi tức thì, N7 một kiểu nhấn. */
+.exam-content .bt-step--ask { padding: 12px 12px 12px; border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.exam-content .bt-step--locked { opacity: .45; margin: 0 0 14px; }
+.exam-content .bt-ask { margin: 8px 0 0 36px; }
+.exam-content .bt-ask + .bt-ask { margin-top: 14px; }
+.exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
+.exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
+.exam-content .bt-ask-unit { color: #94a3b8; }
+.exam-content .bt-ask-row .lesson-btn-ghost { min-height: 44px; }
+.exam-content .bt-choice { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; background: rgba(255,255,255,.03); color: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+.exam-content .bt-choice:hover { background: rgba(255,255,255,.07); }
+.exam-content .bt-choice:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+.exam-content .bt-feedback { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
+.exam-content .bt-feedback--wrong { background: rgba(248,113,113,.12); }
+.exam-content .bt-feedback--ok { background: rgba(52,211,153,.10); }
+.exam-content .bt-show-all { display: block; margin: 4px 0 18px 36px; min-height: 44px; padding: 0; border: 0; background: none; color: #94a3b8; font-size: 14px; text-decoration: underline; cursor: pointer; }
+.exam-content .bt-flash { border-radius: 10px; box-shadow: 0 0 0 3px rgba(251,191,36,.6); transition: box-shadow .4s; }
+.bt-goroi-btn { display: block; width: 100%; min-height: 44px; white-space: normal; text-align: left; }
+.bt-nhan-dang { margin: 0 0 10px; padding: 8px 12px; border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; background: rgba(255,255,255,.04); font-size: 15px; line-height: 1.6; }
+.bt-nhan-dang .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .exam-content :is(.bt-step--ask, .bt-ask-input, .bt-choice) { border-color: rgba(15,23,42,.28); background: rgba(15,23,42,.03); }
+html[data-theme="light"] .exam-content .bt-choice:hover { background: rgba(15,23,42,.07); }
+html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: #475569; }
+html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
+html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+
+/* ==========================================================================
+   NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
+   ==========================================================================
+   Vì sao có khối này: trước đây theme TỐI là mặc định, nên hàng trăm chỗ trong JSX viết
+   thẳng class màu của nền tối — `bg-[#0B1020]`, `bg-white/5` (ô sáng mờ trên nền đen),
+   `border-white/10`, gradient `from-[#172c46]`, quầng sáng `shadow-[0_0_24px_…]`. Bật nền
+   sáng lên thì những chỗ đó thành mảng xám bết hoặc mảng tối lẫn trong trang trắng — đúng
+   cảm giác "màu không đẹp" mà thầy thấy.
+
+   Cách xử lý ở đây là LƯỚI AN TOÀN theo token, không phải nguồn màu:
+   · quét bằng attribute selector KHÔNG phân biệt hoa/thường (`i`) vì JSX viết lẫn
+     `bg-[#0B1020]` và `bg-[#0b1020]`, kèm cả biến thể mờ `/80`, `/[0.98]`;
+   · `[class~="…"]` (khớp ĐÚNG một token class) cho các idiom `bg-white/10` để KHÔNG đụng
+     `hover:bg-white/20` — biến thể hover xử riêng, nếu không nút mất phản hồi khi trỏ;
+   · mọi giá trị lấy từ token ở @theme, nên đổi bảng màu chỉ sửa một nơi.
+   Sửa gốc vẫn phải làm ở component (bỏ hex, dùng bg-panel/text-ink/border-line) — lưới này
+   chỉ để không còn ô tối nào lọt ra ngoài. Khi component đã sạch thì các rule dưới thành vô hại.
+   ========================================================================== */
+
+/* (1) Nền tối hard-code → mặt thẻ. Mọi biến thể hoa/thường + độ mờ đều khớp. */
+html[data-theme="light"] [class*="bg-[#04060a]" i],
+html[data-theme="light"] [class*="bg-[#05070b]" i],
+html[data-theme="light"] [class*="bg-[#050914]" i],
+html[data-theme="light"] [class*="bg-[#070b16]" i],
+html[data-theme="light"] [class*="bg-[#080d18]" i],
+html[data-theme="light"] [class*="bg-[#080d1a]" i],
+html[data-theme="light"] [class*="bg-[#080d1d]" i],
+html[data-theme="light"] [class*="bg-[#0a1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1220]" i],
+html[data-theme="light"] [class*="bg-[#0b1324]" i],
+html[data-theme="light"] [class*="bg-[#10192a]" i],
+html[data-theme="light"] [class*="bg-[#111a2e]" i],
+html[data-theme="light"] [class*="bg-[#172033]" i] {
+  background-color: var(--color-panel) !important;
+}
+
+/* (2) Ô sáng mờ trên nền tối (`bg-white/5`) → ô xám nhạt trên nền sáng. Giữ nguyên thứ bậc
+   đậm/nhạt giữa các mức để chỗ nào đậm hơn vẫn nổi hơn. */
+html[data-theme="light"] [class~="bg-white/5"],
+html[data-theme="light"] [class~="hover:bg-white/5"]:hover,
+html[data-theme="light"] [class~="bg-white/[.01]"],
+html[data-theme="light"] [class~="bg-white/[0.01]"] { background-color: rgba(15, 23, 42, .035) !important; }
+html[data-theme="light"] [class~="bg-white/[.02]"],
+html[data-theme="light"] [class~="bg-white/[0.02]"],
+html[data-theme="light"] [class~="bg-white/[.025]"],
+html[data-theme="light"] [class~="bg-white/[0.025]"],
+html[data-theme="light"] [class~="bg-white/[.03]"],
+html[data-theme="light"] [class~="bg-white/[0.03]"],
+html[data-theme="light"] [class~="bg-white/[.035]"],
+html[data-theme="light"] [class~="bg-white/[0.035]"],
+html[data-theme="light"] [class~="bg-white/[.04]"],
+html[data-theme="light"] [class~="bg-white/[0.04]"],
+html[data-theme="light"] [class~="bg-white/[.05]"],
+html[data-theme="light"] [class~="bg-white/[0.05]"],
+html[data-theme="light"] [class~="bg-white/[.06]"],
+html[data-theme="light"] [class~="bg-white/[0.06]"],
+html[data-theme="light"] [class~="bg-white/[.07]"],
+html[data-theme="light"] [class~="bg-white/[0.07]"],
+html[data-theme="light"] [class~="bg-white/[.08]"],
+html[data-theme="light"] [class~="bg-white/[0.08]"] { background-color: rgba(15, 23, 42, .05) !important; }
+html[data-theme="light"] [class~="bg-white/10"],
+html[data-theme="light"] [class~="hover:bg-white/10"]:hover { background-color: rgba(15, 23, 42, .055) !important; }
+html[data-theme="light"] [class~="bg-white/[0.14]"],
+html[data-theme="light"] [class~="bg-white/15"],
+html[data-theme="light"] [class~="hover:bg-white/15"]:hover { background-color: rgba(15, 23, 42, .075) !important; }
+html[data-theme="light"] [class~="bg-white/20"],
+html[data-theme="light"] [class~="hover:bg-white/20"]:hover { background-color: rgba(15, 23, 42, .09) !important; }
+
+/* (3) Viền trắng mờ trên nền tối → viền xám trên nền sáng. Không đụng /60 và /70: đó là khung
+   trắng cố ý đè LÊN ảnh/camera (QrScannerCard), phải giữ trắng. */
+html[data-theme="light"] [class~="border-white/5"],
+html[data-theme="light"] [class~="hover:border-white/5"]:hover { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="border-white/10"],
+html[data-theme="light"] [class~="hover:border-white/10"]:hover { border-color: rgba(15, 23, 42, .10) !important; }
+html[data-theme="light"] [class~="border-white/15"],
+html[data-theme="light"] [class~="hover:border-white/15"]:hover { border-color: rgba(15, 23, 42, .14) !important; }
+html[data-theme="light"] [class~="border-white/20"],
+html[data-theme="light"] [class~="hover:border-white/20"]:hover { border-color: rgba(15, 23, 42, .18) !important; }
+html[data-theme="light"] [class~="border-white/25"],
+html[data-theme="light"] [class~="hover:border-white/25"]:hover { border-color: rgba(15, 23, 42, .22) !important; }
+html[data-theme="light"] [class~="border-white/30"],
+html[data-theme="light"] [class~="hover:border-white/30"]:hover { border-color: rgba(15, 23, 42, .26) !important; }
+html[data-theme="light"] [class~="border-white/40"],
+html[data-theme="light"] [class~="hover:border-white/40"]:hover { border-color: rgba(15, 23, 42, .34) !important; }
+html[data-theme="light"] [class~="divide-white/5"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="divide-white/10"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .10) !important; }
+
+/* (4) Gradient nền tối + quầng sáng neon (M6: không gradient/glow ở vùng đọc và làm bài).
+   `background-image: none` là cách chắc nhất vì Tailwind dựng gradient qua biến --tw-gradient-*. */
+html[data-theme="light"] [class*="from-[#172c46]" i],
+html[data-theme="light"] [class*="via-[#0e1c32]" i],
+html[data-theme="light"] [class*="to-[#071426]" i],
+html[data-theme="light"] [class*="to-[#091627]" i],
+html[data-theme="light"] [class*="to-[#101a3a]" i],
+html[data-theme="light"] [class*="from-[#183a4a]" i],
+html[data-theme="light"] [class*="from-[#0b1020]" i],
+html[data-theme="light"] [class*="to-[#0b1020]" i] { background-image: none !important; }
+html[data-theme="light"] [class*="shadow-[0_0_"],
+html[data-theme="light"] [class*="shadow-[0_2px_4px_rgba(0,0,0"] { box-shadow: 0 1px 2px rgb(15 23 42 / .06) !important; }
+
+/* (5) Hai chỗ đặc biệt, phải đổi cả nền lẫn chữ vì chữ thừa hưởng màu của nền tối:
+   · badge 📖 của bài học (nền navy đậm, không đặt màu chữ) → chip nhấn nhạt;
+   · dải cảnh báo rời trang khi làm bài (nền nâu đậm + chữ amber) → nền amber rất nhạt. */
+html[data-theme="light"] [class*="bg-[#1d3461]" i] {
+  background-color: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
+}
+html[data-theme="light"] [class*="bg-[#2a2210]" i] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+/* Nút đặc màu teal đậm ở trang chủ (bg-[#155e75] + chữ trắng, hover bg-[#0e7490]): theo M3 chỉ
+   giữ MỘT màu nhấn cho hành động, nên đưa về primary thay vì thêm sắc độ bão hoà thứ hai. */
+html[data-theme="light"] [class*="bg-[#155e75]" i],
+html[data-theme="light"] [class*="bg-[#0e7490]" i] { background-color: var(--color-primary) !important; }
+
+/* (6) Không gian học CNC: vài mảng tối viết trong CSS (không phải class JSX) nên lưới ở trên
+   không với tới. Khung code thì CỐ Ý giữ tối (như trình soạn thảo) — chỉ đổi các mảng UI. */
+html[data-theme="light"] .cnc-embedded .cnc-programming-tabs button,
+html[data-theme="light"] .cnc-embedded .cnc-programming-suite > div.grid > div.bg-white,
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group {
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted);
+}
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group > header { background: var(--color-surface-2) !important; color: var(--color-ink); }
+
+/* ==========================================================================
+   PHẠM VI THEO NHÓM NGƯỜI XEM — cùng một bảng màu, khác số đo thị giác
+   ==========================================================================
+   Không phải "mỗi trang một bộ màu" (như vậy là phá N4/M3 và làm site rối), mà là: cùng hệ
+   thần, đổi đúng những chỗ nghiên cứu nói phải đổi cho từng lứa tuổi. */
+
+/* PHỤ HUYNH 45–60 — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1, P2, P5, P6).
+   Nền hơi ngả ấm (không dùng trắng tinh để giảm chói với người lão thị), chữ phụ tối hơn để
+   đạt ≥7:1 (AAA), nhấn dùng xanh navy đậm cho trang trọng và đủ tương phản. Cỡ chữ và đích
+   chạm đã có ở khối "P1/P2/P4 — khối PHỤ HUYNH" phía trên.
+
+   `html:not(.is-dim)` là BẮT BUỘC: "Dịu mắt" đặt token trên <html>, mà token khai ở phần tử con
+   luôn thắng token thừa hưởng — thiếu điều kiện này thì bật Dịu mắt ở /phu-huynh vẫn ra nền trắng
+   ấm thay vì nền kem, tức là vô hiệu hoá đúng tính năng dành cho người lão thị. */
+html:not(.is-dim) .parent-page {
+  --color-bg: #f7f7f4;
+  --color-panel: #ffffff;
+  --color-surface-2: #f1f1ec;
+  --color-ink: #14181f;          /* 15,9:1 trên #f7f7f4 */
+  --color-muted: #3d4653;        /* 8,9:1 trên #f7f7f4, 9,8:1 trên trắng — vượt AAA 7:1 */
+  --color-line: rgba(20, 24, 31, .14);
+  /* Phụ huynh phải thấy rõ ô nhập/viền hơn học sinh ⇒ viền đậm hơn (4,2:1 trên trắng). */
+  --color-line-strong: #767f8d;
+  --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+/* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
+   tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ
+   Dịu mắt vẫn đổi được nền sang kem. */
+.parent-page { background: var(--color-bg); }
+
+/* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
+   nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
+   nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
+html[data-theme="light"] .teacher-dashboard {
+  --color-bg: #f4f5f7;
+  --color-panel: #ffffff;
+  --color-surface-2: #eceef2;
+  --color-line: rgba(15, 23, 42, .12);
+}
+
+/* RP bài lý thuyết: thanh nộp câu tự chấm (đích chạm >=44px) */
+.theory-rp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: var(--fs-sm); color: #cbd5e1; }
+.theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
+.theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
+html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
+
+/* Bài Anh văn chuyên ngành (AVCN, lớp avcn): thẻ từ vựng có ảnh, câu đọc chạm hiện dịch, nút nghe 🔊
+   (<button data-tl-speak> — trang bài học xử lý uỷ quyền, HTML lưu DB không chứa JS). Mẫu: content/lesson-samples/avcn-*. */
+.exam-content .avcn-photo img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 12px; }
+.exam-content .avcn-photo figcaption { opacity: .85; }
+.exam-content .avcn-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.exam-content .avcn-card { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; }
+.exam-content .avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-card img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; }
+.exam-content .avcn-card__body p { margin: 0 0 4px; text-align: left; }
+.exam-content .avcn-term { font-weight: 700; font-size: 1.1rem; }
+.exam-content .avcn-term small { font-weight: 400; font-size: .9rem; opacity: .8; }
+.exam-content .avcn-star { font-size: .8rem; }
+.exam-content .avcn-vi { color: #22d3ee; font-weight: 600; }
+html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
+.exam-content .avcn-def { font-size: .95rem; }
+.exam-content .tl-speak { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; padding: 0 6px; border: 1px solid rgba(148,163,184,.4); border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; vertical-align: middle; }
+.exam-content .tl-speak:hover { border-color: #22d3ee; }
+.exam-content .avcn-sent { margin: 6px 0; }
+.exam-content .avcn-sent > summary { font-weight: 400; line-height: 1.6; }
+.exam-content .avcn-n { font-weight: 700; opacity: .7; margin-right: 4px; }
+.exam-content .avcn-trans { opacity: .9; }
+.exam-content .avcn-list { padding-left: 18px; }
+.exam-content .avcn-list li { margin: 6px 0; text-align: left; }
+.exam-content .avcn-box { padding: 8px 12px; border: 1px dashed rgba(148,163,184,.6); border-radius: 10px; text-align: left; }
+.exam-content .avcn-passage { padding: 12px 14px; border-left: 3px solid #22d3ee; background: rgba(148,163,184,.08); border-radius: 0 10px 10px 0; margin: 10px 0; }
+.exam-content .avcn-passage p { margin: 0; text-align: left; line-height: 1.7; }
+@media (max-width: 420px) { .exam-content .avcn-card { grid-template-columns: 88px 1fr; } .exam-content .avcn-card img { width: 88px; height: 66px; } }
+.exam-content .avcn-card.avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-tbl :is(th, td):first-child { white-space: nowrap; }
+.exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
+.exam-content .avcn-term .tl-speak { margin-left: 2px; }
+.exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
+
+/* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
+   Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
+.exam-content .tl-fx > p { margin: 0; }
+.exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
+.exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
+.exam-content .tl-fx .katex-display { margin: 4px 0; padding: 6px 0; border: 0; background: none; text-align: center; overflow-x: auto; overflow-y: hidden; }
+.exam-content .tl-fx .katex-display > .katex { display: block; }
+.exam-content ul.tl-fx-def { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--color-line, rgba(148,163,184,.4)); display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: baseline; text-align: left; }
+.exam-content ul.tl-fx-def > li { display: contents; }
+.exam-content ul.tl-fx-def .tl-sym { text-align: right; white-space: nowrap; }
+.exam-content ul.tl-fx-def .tl-sym::after { content: " :"; }
+.exam-content .tl-fx-note { margin-top: 10px !important; font-size: .95em; text-align: left; }
+/* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
+.lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
+.lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, icon tròn ở góc phải trên, màu theo ĐÚNG token của docs/MAU-NEN-SANG.md (M3):
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) — viền trung tính đậm (màu mực), KHÔNG dùng màu nhấn/trạng thái
+     ⚠️ bẫy mất điểm (.tl-trap) — --color-warn (cần chú ý); không dùng đỏ vì đỏ chỉ để "sai" ở phản hồi quiz bên trong
+     ✍️ tự kiểm tra (.tl-check) — --color-primary (khối có thứ bấm được)
+   Mọi thứ còn lại là ghi chú: .tl-note (vạch trái mỏng trung tính), .tl-more (mục bấm xem). Không để khung nằm trong khung.
+   Tương phản viền ≥ 3:1 ở cả hai theme (WCAG 1.4.11); nghĩa nằm ở icon + nhãn, không chỉ ở màu (M4). */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: var(--color-ink, #0f172a); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--color-surface-2, rgba(148,163,184,.08)); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: var(--color-warn, #b45309); background: color-mix(in srgb, var(--kc) 7%, var(--color-panel, #fff)); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: var(--color-primary, #1d4ed8); background: color-mix(in srgb, var(--kc) 6%, var(--color-panel, #fff)); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--color-panel, #fff); border: 2px solid var(--kc); font-size: 17px; line-height: 1; transform: rotate(8deg); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
 <li>Chỉ ra <strong>cái gì truyền đi</strong>, <strong>cái gì ở nguyên tại chỗ</strong>.</li>
@@ -514,15 +1095,22 @@ html[data-theme="light"] .lesson-prose img.figure,
 
 <h3>I. Mở bài: làn sóng người trên khán đài</h3>
 
-<p>Trận bóng tối qua, cả khán đài đứng lên rồi ngồi xuống theo một làn sóng chạy vòng quanh sân. Để ý kỹ: <strong>không ai rời chỗ ngồi cả</strong>. Người ở ghế A đứng lên rồi ngồi xuống; người ghế B làm y hệt, chỉ chậm hơn một nhịp.</p>
+<p>Trận bóng tối qua, cả khán đài đứng lên rồi ngồi xuống theo một làn sóng chạy vòng quanh sân. <strong>Không ai rời chỗ ngồi cả</strong>. Người ghế A đứng lên rồi ngồi xuống; người ghế B làm y hệt, chỉ chậm hơn một nhịp.</p>
 
-<p>Thử ngay tại lớp: tổ 1 giơ tay, tổ 2 giơ tay chậm hơn nửa nhịp, đến tổ cuối. Tay ai vẫn ở nguyên trên vai người đó, nhưng mắt em thấy một làn sóng tay chạy hết lớp.</p>
-
-<p>Câu hỏi để nghĩ trước khi đọc tiếp: <em>vậy cái gì đã chạy hết khán đài, còn cái gì ở nguyên tại chỗ?</em></p>
+<p>Thử tại lớp: tổ 1 giơ tay, mỗi tổ sau chậm hơn nửa nhịp. Tay ai vẫn ở trên vai người đó, nhưng một làn sóng tay chạy hết lớp.</p>
 
 <figure class="fig" data-tl="1"><svg viewBox="0 0 440 224" role="img" aria-label="Khán đài: làn sóng người chạy qua, mỗi người chỉ đứng lên rồi ngồi xuống tại chỗ"><text x="14" y="24" fill="currentColor" font-size="12" font-weight="500" text-anchor="start">mỗi người: đứng lên – ngồi xuống tại chỗ, không rời ghế</text><rect x="14" y="168" width="412" height="9" rx="2" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="1.5"/><line x1="30.0" y1="162.0" x2="30.0" y2="136.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="30.0" cy="128.0" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><line x1="77.5" y1="128.0" x2="77.5" y2="102.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="77.5" cy="94.0" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><line x1="77.5" y1="113.0" x2="62.5" y2="90.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><line x1="77.5" y1="113.0" x2="92.5" y2="90.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><line x1="125.0" y1="162.0" x2="125.0" y2="136.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="125.0" cy="128.0" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><line x1="172.5" y1="162.0" x2="172.5" y2="136.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="172.5" cy="128.0" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><line x1="220.0" y1="162.0" x2="220.0" y2="136.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="220.0" cy="128.0" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><line x1="267.5" y1="128.0" x2="267.5" y2="102.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="267.5" cy="94.0" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><line x1="267.5" y1="113.0" x2="252.5" y2="90.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><line x1="267.5" y1="113.0" x2="282.5" y2="90.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><line x1="315.0" y1="162.0" x2="315.0" y2="136.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="315.0" cy="128.0" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><line x1="362.5" y1="162.0" x2="362.5" y2="136.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="362.5" cy="128.0" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><line x1="410.0" y1="162.0" x2="410.0" y2="136.0" stroke="currentColor" stroke-width="2.2" opacity="1"/><circle cx="410.0" cy="128.0" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><polyline fill="none" stroke="#f87171" stroke-width="2.2" points="18.0,128.0 24.0,128.0 30.0,128.0 36.0,121.3 42.0,114.9 48.0,108.9 54.0,103.8 60.0,99.5 66.0,96.4 72.0,94.6 78.0,94.0 84.0,94.8 90.0,96.9 96.0,100.2 102.0,104.6 108.0,109.9 114.0,115.9 120.0,122.4 126.0,128.0 132.0,128.0 138.0,128.0 144.0,128.0 150.0,128.0 156.0,128.0 162.0,128.0 168.0,128.0 174.0,128.0 180.0,128.0 186.0,128.0 192.0,128.0 198.0,128.0 204.0,128.0 210.0,128.0 216.0,128.0 222.0,125.8 228.0,119.1 234.0,112.8 240.0,107.1 246.0,102.2 252.0,98.4 258.0,95.7 264.0,94.2 270.0,94.1 276.0,95.3 282.0,97.8 288.0,101.5 294.0,106.2 300.0,111.8 306.0,118.0 312.0,124.6 318.0,128.0 324.0,128.0 330.0,128.0 336.0,128.0 342.0,128.0 348.0,128.0 354.0,128.0 360.0,128.0 366.0,128.0 372.0,128.0 378.0,128.0 384.0,128.0 390.0,128.0 396.0,128.0 402.0,128.0 408.0,128.0 414.0,123.5 420.0,117.0"/><line x1="30" y1="208" x2="410" y2="208" stroke="#34d399" stroke-width="3" marker-end="url(#f1-g)"/><text x="220" y="200" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">chiều làn sóng</text></svg><figcaption>Hình 1. Làn sóng người: đường đỏ là “trạng thái đứng lên” đang chạy qua; không ai rời ghế.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
+
+
+
+<!--video:mo_bai-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thực tế: khán đài làm sóng người</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/hq387m0PRac?rel=0&start=15&end=24" title="khán đài làm sóng người" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Làn sóng chạy từ đầu nào sang đầu nào?</p>
+</div>
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Khi làn sóng người chạy hết khán đài, thứ gì đã "đi" từ đầu này sang đầu kia?</p>
 <div class="tl-quiz">
@@ -550,7 +1138,7 @@ html[data-theme="light"] .lesson-prose img.figure,
 
 <p>Ví dụ: gõ nhẹ một đầu thước kẻ trên bàn, đầu kia nghe tiếng; mẩu tẩy trên thước chỉ rung tại chỗ, không chạy ra xa.</p>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l11-motasong-01">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-motasong-01">
 <p class="tl-label">🔬 Thí nghiệm: khay nước và miếng xốp</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> đổ nước vào khay, thả miếng xốp nhỏ C lên mặt nước, chấm đầu một vật nhọn O xuống nước theo nhịp đều tay.</li>
@@ -558,6 +1146,15 @@ html[data-theme="light"] .lesson-prose img.figure,
 <li><strong>Rút ra:</strong> thứ lan ra xa là <strong>pha dao động</strong>, không phải nước.</li>
 </ol>
 </div>
+<!--video:tn-l11-motasong-01-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thí nghiệm thật: bóng nổi tại chỗ</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/RRvgdqqcrcE?rel=0" title="bóng nổi tại chỗ" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Bóng có trôi ra xa khi sóng chạy qua không?</p>
+</div>
+
+
+
 
 <figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Mặt cắt nước trong khay có dạng hình sin; nguồn O dao động, miếng xốp C chỉ nhấp nhô tại chỗ"><path d="M40,182.0 L40,138.0 L40,138.0 L46,132.8 L52,128.2 L58,124.5 L64,122.0 L70,121.0 L76,121.4 L82,123.2 L88,126.3 L94,130.3 L100,134.8 L106,139.6 L112,144.1 L118,148.0 L124,150.9 L130,152.7 L136,153.2 L142,152.4 L148,150.4 L154,147.3 L160,143.6 L166,139.4 L172,135.2 L178,131.4 L184,128.2 L190,126.0 L196,124.8 L202,124.8 L208,125.9 L214,128.0 L220,130.9 L226,134.3 L232,138.0 L238,141.6 L244,144.7 L250,147.2 L256,148.9 L262,149.5 L268,149.2 L274,147.9 L280,145.8 L286,143.1 L292,140.1 L298,137.0 L304,134.0 L310,131.5 L316,129.7 L322,128.6 L328,128.3 L334,128.9 L340,130.3 L346,132.2 L352,134.6 L358,137.1 L364,139.7 L370,142.0 L376,143.9 L382,145.1 L388,145.8 L394,145.7 L400,145.0 L406,143.7 L412,142.0 L418,140.0 L420,182.0 Z" fill="rgba(56,189,248,.12)"/><polyline fill="none" stroke="#38bdf8" stroke-width="2.4" points="40.0,138.0 46.0,132.8 52.0,128.2 58.0,124.5 64.0,122.0 70.0,121.0 76.0,121.4 82.0,123.2 88.0,126.3 94.0,130.3 100.0,134.8 106.0,139.6 112.0,144.1 118.0,148.0 124.0,150.9 130.0,152.7 136.0,153.2 142.0,152.4 148.0,150.4 154.0,147.3 160.0,143.6 166.0,139.4 172.0,135.2 178.0,131.4 184.0,128.2 190.0,126.0 196.0,124.8 202.0,124.8 208.0,125.9 214.0,128.0 220.0,130.9 226.0,134.3 232.0,138.0 238.0,141.6 244.0,144.7 250.0,147.2 256.0,148.9 262.0,149.5 268.0,149.2 274.0,147.9 280.0,145.8 286.0,143.1 292.0,140.1 298.0,137.0 304.0,134.0 310.0,131.5 316.0,129.7 322.0,128.6 328.0,128.3 334.0,128.9 340.0,130.3 346.0,132.2 352.0,134.6 358.0,137.1 364.0,139.7 370.0,142.0 376.0,143.9 382.0,145.1 388.0,145.8 394.0,145.7 400.0,145.0 406.0,143.7 412.0,142.0 418.0,140.0"/><line x1="40" y1="182.0" x2="420" y2="182.0" stroke="currentColor" stroke-width="2" opacity="0.7"/><line x1="40" y1="62" x2="40" y2="132.0" stroke="currentColor" stroke-width="3.2" opacity="1"/><circle cx="40" cy="138.0" r="6" fill="#fb923c"/><text x="40" y="44" fill="#fb923c" font-size="14" font-weight="700" text-anchor="middle">O</text><text x="54" y="44" fill="#fb923c" font-size="11" font-weight="600" text-anchor="start">nguồn dao động lên – xuống</text><line x1="74" y1="72" x2="404" y2="72" stroke="#34d399" stroke-width="2.5" marker-end="url(#f2-g)"/><text x="239" y="64" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">pha lan ra xa</text><rect x="272" y="135" width="16" height="11" rx="2" fill="#fb923c"/><text x="294.0" y="132.81539073943028" fill="#fb923c" font-size="12" font-weight="700" text-anchor="start">miếng xốp C</text><line x1="284.0" y1="119.81539073943028" x2="284.0" y2="175.81539073943028" stroke="#34d399" stroke-width="1.8"/><path d="M280.0,126.81539073943028 L284.0,119.81539073943028 L288.0,126.81539073943028" fill="none" stroke="#34d399" stroke-width="1.8"/><path d="M280.0,168.81539073943028 L284.0,175.81539073943028 L288.0,168.81539073943028" fill="none" stroke="#34d399" stroke-width="1.8"/><text x="292" y="198" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">C chỉ nhấp nhô tại chỗ</text><line x1="72.0" y1="114.92631578947368" x2="72.0" y2="218" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="200.0" y1="118.63157894736842" x2="200.0" y2="218" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="72" y1="214" x2="200" y2="214" stroke="#34d399" stroke-width="1.8"/><path d="M79,210 L72,214 L79,218" fill="none" stroke="#34d399" stroke-width="1.8"/><path d="M193,210 L200,214 L193,218" fill="none" stroke="#34d399" stroke-width="1.8"/><text x="136" y="238" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">λ</text></svg><figcaption>Hình 2. Mặt cắt nước dạng hình sin: sóng lan ra xa, miếng xốp C chỉ nhấp nhô tại chỗ; λ là khoảng cách hai đỉnh liên tiếp.</figcaption></figure>
 
@@ -572,7 +1169,7 @@ html[data-theme="light"] .lesson-prose img.figure,
 <tr><td>Biên độ sóng $A$ (m, cm)</td><td>độ lệch lớn nhất khỏi vị trí cân bằng</td></tr>
 <tr><td>Chu kì sóng $T$ (s)</td><td>thời gian một phần tử làm xong một dao động toàn phần: $T = \dfrac{1}{f}$</td></tr>
 <tr><td>Tần số sóng $f$ (Hz)</td><td>số dao động toàn phần trong một giây</td></tr>
-<tr><td>Bước sóng $\lambda$ (m, cm)</td><td>quãng đường sóng truyền trong một chu kì, cũng là khoảng cách hai điểm gần nhau nhất cùng pha: $\lambda = vT$</td></tr>
+<tr><td>Bước sóng $\lambda$ (m, cm)</td><td>quãng đường sóng truyền trong một chu kì, cũng là khoảng cách hai điểm gần nhau nhất trên cùng một phương truyền dao động cùng pha: $\lambda = vT$</td></tr>
 <tr><td>Tốc độ truyền sóng $v$ (m/s)</td><td>tốc độ lan truyền pha; mỗi môi trường cho $v$ một giá trị xác định</td></tr>
 </tbody>
 </table>
@@ -580,26 +1177,26 @@ html[data-theme="light"] .lesson-prose img.figure,
 
 <p><strong>🔑 $T = \dfrac{1}{f}$ · $\lambda = vT = \dfrac{v}{f}$ · $v = \lambda f$</strong></p>
 
-<p>Mẹo nhớ: <strong>"Một chu kì — một bước sóng"</strong> — hết một chu kì thì sóng đi đúng một bước sóng.</p>
+<p>Mẹo nhớ: <strong>"Một chu kì — một bước sóng"</strong>.</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>📐 Bấm xem: hai điểm lệch pha bao nhiêu thì cách nhau bao xa</summary>
 <div class="table-scroll">
 <table class="tl-table">
 <thead>
-<tr><th>Hai điểm trên cùng phương truyền</th><th>Khoảng cách</th></tr>
+<tr><th>Hai điểm trên cùng phương truyền ($k$ nguyên)</th><th>Khoảng cách</th></tr>
 </thead>
 <tbody>
-<tr><td>Cùng pha, gần nhau nhất</td><td>$d = \lambda$</td></tr>
-<tr><td>Ngược pha, gần nhau nhất</td><td>$d = \dfrac{\lambda}{2}$</td></tr>
-<tr><td>Vuông pha, gần nhau nhất</td><td>$d = \dfrac{\lambda}{4}$</td></tr>
-<tr><td>$n$ đỉnh sóng liên tiếp</td><td>$d = (n-1)\lambda$</td></tr>
+<tr><td>Cùng pha ($\Delta\varphi = 2k\pi$), gần nhau nhất</td><td>$d = \lambda$</td></tr>
+<tr><td>Ngược pha ($\Delta\varphi = (2k+1)\pi$), gần nhau nhất</td><td>$d = \dfrac{\lambda}{2}$</td></tr>
+<tr><td>Vuông pha ($\Delta\varphi = (2k+1)\dfrac{\pi}{2}$), gần nhau nhất</td><td>$d = \dfrac{\lambda}{4}$</td></tr>
+<tr><td>Từ đỉnh thứ nhất đến đỉnh thứ $n$ (các đỉnh liên tiếp)</td><td>$d = (n-1)\lambda$</td></tr>
 </tbody>
 </table>
 </div>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🌊 Bấm xem: sóng đổi môi trường thì đại lượng nào đổi, vì sao</summary>
 <p><strong>🔑 $f$ và $T$ giữ nguyên · $v$ và $\lambda$ thay đổi</strong></p>
 <p>Môi trường quyết định <em>tốc độ</em> lan truyền; nguồn quyết định <em>nhịp</em> dao động. Nguồn không đổi thì $f$, $T$ không đổi, nên $\lambda = \dfrac{v}{f}$ đổi theo $v$.</p>
@@ -608,17 +1205,17 @@ html[data-theme="light"] .lesson-prose img.figure,
 
 <p>Ví dụ: sóng biển đập vào bờ cách nhau 5 s → $T = 5$ s; hai đỉnh liên tiếp cách nhau 12 m → $\lambda = 12$ m, nên $v = \dfrac{\lambda}{T} = 2{,}4$ m/s.</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🔬 Bấm xem: thí nghiệm đo bước sóng trên dây lò xo (làm được ở lớp)</summary>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> căng một lò xo mềm trên sàn, một bạn giữ chặt một đầu, một bạn gảy nhẹ đầu kia theo nhịp đều tay và quay chậm (240 fps). Đo khoảng cách hai đỉnh liên tiếp để được $\lambda$; đếm số khung hình giữa hai lần dây đạt đỉnh tại cùng một điểm để suy ra $T$.</li>
+<li><strong>Làm:</strong> căng một lò xo mềm trên sàn, một bạn giữ chặt một đầu, một bạn gảy nhẹ đầu kia theo nhịp đều tay và quay chậm (240 fps). Đo khoảng cách hai đỉnh liên tiếp để được $\lambda$; đếm số khung hình giữa hai lần dây đạt đỉnh tại cùng một điểm để suy ra $T$. Quay 240 fps là 240 khung hình mỗi giây, nên $T = \dfrac{N}{240}$ s với $N$ là số khung hình đếm được.</li>
 <li><strong>Quan sát:</strong> sóng chạy từ đầu gảy sang đầu giữ, biên độ giảm dần. Kéo căng dây hơn thì $\lambda$ tăng.</li>
 <li><strong>Rút ra:</strong> $v = \dfrac{\lambda}{T}$; sức căng đổi làm $v$ và $\lambda$ đổi, còn $T$ gần như không đổi.</li>
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Một sóng cơ có chu kì $T = 0{,}4$ s lan truyền với tốc độ $v = 2{,}5$ m/s. Bước sóng của sóng này là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl8-q2" id="tl8-q2a"><label for="tl8-q2a" class="tl-opt tl-no">A. $0{,}16$ m</label>
@@ -626,37 +1223,63 @@ html[data-theme="light"] .lesson-prose img.figure,
 <input type="radio" name="tl8-q2" id="tl8-q2c"><label for="tl8-q2c" class="tl-opt tl-no">C. $6{,}25$ m</label>
 <input type="radio" name="tl8-q2" id="tl8-q2d"><label for="tl8-q2d" class="tl-opt tl-no">D. $0{,}4$ m</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\lambda = vT = 2{,}5 \times 0{,}4 = 1$ m. Nhớ kiểm đơn vị: (m/s) nhân (s) ra mét.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Công thức cần dùng là $\lambda = vT$, không phải $\dfrac{v}{T}$. Em nào ra $6{,}25$ là đã chia nhầm. Thử lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Công thức cần dùng là $\lambda = vT$.<br>Ra $6{,}25$ là đã lấy $\dfrac{v}{T}$.<br>Ra $0{,}16$ là đã lấy $\dfrac{T}{v}$.<br>Thử lại nhé.</p></div>
 </div>
 </div>
+
+<details class="tl-details tl-more">
+<summary>🧪 Thử với mô phỏng: sóng trên sợi dây</summary>
+<iframe src="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Sóng trên một sợi dây"></iframe>
+<p><strong>Thử:</strong></p>
+<ol class="tl-steps">
+<li>Chọn <strong>Dao động</strong>, <strong>Không vật cản</strong>, bật <strong>Thước</strong>. Giữ biên độ, tăng tần số. Bước sóng $\lambda$ trên dây dài ra hay ngắn lại?</li>
+<li>Giữ tần số, tăng biên độ. $\lambda$ có đổi không? Sóng cao hơn có chạy nhanh hơn không?</li>
+<li>Tăng <strong>Sức căng dây</strong>. Tốc độ truyền $v$ đổi thế nào, và $\lambda = v/f$ khi $f$ giữ nguyên?</li>
+<li>Bật <strong>Đồng hồ</strong>, đếm thời gian một đỉnh sóng chạy hết một đoạn đã biết để tính $v$ rồi so với $\lambda f$.</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
 
 <h4>3. Độ trễ pha và phương trình sóng</h4>
 
 <p>Nguồn O dao động $u_O = A\cos(\omega t)$, sóng truyền theo chiều dương với tốc độ $v$; điểm M cách O đoạn $d$.</p>
 
-<p>Sóng mất thêm $t_0 = \dfrac{d}{v}$ mới tới M, nên M dao động "chậm" hơn O đúng khoảng đó:</p>
+<p>Sóng mất thêm $t_0 = \dfrac{d}{v}$ mới tới M (trước lúc đó M còn đứng yên), nên M dao động "chậm" hơn O đúng khoảng đó:</p>
 
-$$u_M = A\cos\left[\omega\left(t - \dfrac{d}{v}\right)\right]$$
+<div class="tl-fx">
+<p class="tl-fx-name">Phương trình sóng tại M (sóng truyền theo chiều dương)</p>
+<p>$$u_M = A\cos\left[\omega\left(t - \dfrac{d}{v}\right)\right]$$</p>
+</div>
 
-<p>Thay $\omega = \dfrac{2\pi}{T}$ và $v = \dfrac{\lambda}{T}$ vào, ta được dạng hay dùng nhất:</p>
+<p>Thay $\omega = \dfrac{2\pi}{T}$ và $v = \dfrac{\lambda}{T}$: $\omega\dfrac{d}{v} = \dfrac{2\pi}{T}\cdot\dfrac{dT}{\lambda} = \dfrac{2\pi d}{\lambda}$, ta được dạng hay dùng nhất:</p>
 
-$$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
+<div class="tl-fx">
+<p class="tl-fx-name">Dạng hay dùng nhất</p>
+<p>$$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$u_M$</span><span>li độ của M tại thời điểm $t$ (cm)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ sóng (cm)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc của nguồn (rad/s)</span></li>
+<li><span class="tl-sym">$d$</span><span>khoảng cách từ M tới nguồn (cm)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (cm)</span></li>
+</ul>
+</div>
 
 <p><strong>🔑 Xa nguồn $d$ · trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda}$ · theo chiều truyền thì trừ pha</strong></p>
 
 <ul>
-<li>Đi thêm một bước sóng thì pha trễ thêm $2\pi$ — coi như quay lại từ đầu.</li>
+<li>Đi thêm một bước sóng thì pha trễ thêm $2\pi$.</li>
 <li>Đi thêm $\dfrac{\lambda}{2}$ thì trễ pha $\pi$: hai điểm ngược pha nhau.</li>
 </ul>
 
-<p>Mẹo nhớ: <strong>"Xa nguồn bao nhiêu bước sóng, trễ pha bấy nhiêu vòng."</strong> Tỉ số $\dfrac{d}{\lambda}$ chính là số vòng pha bị trễ.</p>
+<p>Mẹo nhớ: <strong>"Xa nguồn bao nhiêu bước sóng, trễ pha bấy nhiêu vòng."</strong></p>
 
 <figure class="fig" data-tl="1"><svg viewBox="0 0 440 248" role="img" aria-label="Điểm M cách nguồn O đoạn d: dao động tại M trễ pha hơn O đúng Δφ = 2πd/λ"><line x1="30" y1="70" x2="410" y2="70" stroke="currentColor" stroke-width="1.6" opacity="0.7"/><line x1="330" y1="44" x2="408" y2="44" stroke="#34d399" stroke-width="2.2" marker-end="url(#f3-g)"/><text x="330" y="36" fill="#34d399" font-size="11" font-weight="600" text-anchor="middle">chiều truyền</text><circle cx="70" cy="70" r="6" fill="#fb923c"/><circle cx="330" cy="70" r="6" fill="#38bdf8"/><text x="70" y="92" fill="#fb923c" font-size="14" font-weight="700" text-anchor="middle">O</text><text x="330" y="92" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">M</text><line x1="70" y1="56" x2="330" y2="56" stroke="#34d399" stroke-width="1.6"/><path d="M77,52 L70,56 L77,60" fill="none" stroke="#34d399" stroke-width="1.6"/><path d="M323,52 L330,56 L323,60" fill="none" stroke="#34d399" stroke-width="1.6"/><text x="200" y="48" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">d</text><line x1="30" y1="200" x2="410" y2="200" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="30" y1="130" x2="30" y2="226" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/><text x="414" y="204" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">t</text><polyline fill="none" stroke="#f87171" stroke-width="2.4" points="30.0,200.0 31.0,198.4 32.0,196.9 33.0,195.3 34.0,193.8 35.0,192.2 36.0,190.7 37.0,189.2 38.0,187.8 39.0,186.4 40.0,185.0 41.0,183.7 42.0,182.4 43.0,181.1 44.0,179.9 45.0,178.8 46.0,177.7 47.0,176.7 48.0,175.7 49.0,174.8 50.0,174.0 51.0,173.3 52.0,172.6 53.0,172.0 54.0,171.5 55.0,171.0 56.0,170.7 57.0,170.4 58.0,170.2 59.0,170.0 60.0,170.0 61.0,170.0 62.0,170.2 63.0,170.4 64.0,170.7 65.0,171.0 66.0,171.5 67.0,172.0 68.0,172.6 69.0,173.3 70.0,174.0 71.0,174.8 72.0,175.7 73.0,176.7 74.0,177.7 75.0,178.8 76.0,179.9 77.0,181.1 78.0,182.4 79.0,183.7 80.0,185.0 81.0,186.4 82.0,187.8 83.0,189.2 84.0,190.7 85.0,192.2 86.0,193.8 87.0,195.3 88.0,196.9 89.0,198.4 90.0,200.0 91.0,201.6 92.0,203.1 93.0,204.7 94.0,206.2 95.0,207.8 96.0,209.3 97.0,210.8 98.0,212.2 99.0,213.6 100.0,215.0 101.0,216.3 102.0,217.6 103.0,218.9 104.0,220.1 105.0,221.2 106.0,222.3 107.0,223.3 108.0,224.3 109.0,225.2 110.0,226.0 111.0,226.7 112.0,227.4 113.0,228.0 114.0,228.5 115.0,229.0 116.0,229.3 117.0,229.6 118.0,229.8 119.0,230.0 120.0,230.0 121.0,230.0 122.0,229.8 123.0,229.6 124.0,229.3 125.0,229.0 126.0,228.5 127.0,228.0 128.0,227.4 129.0,226.7 130.0,226.0 131.0,225.2 132.0,224.3 133.0,223.3 134.0,222.3 135.0,221.2 136.0,220.1 137.0,218.9 138.0,217.6 139.0,216.3 140.0,215.0 141.0,213.6 142.0,212.2 143.0,210.8 144.0,209.3 145.0,207.8 146.0,206.2 147.0,204.7 148.0,203.1 149.0,201.6 150.0,200.0 151.0,198.4 152.0,196.9 153.0,195.3 154.0,193.8 155.0,192.2 156.0,190.7 157.0,189.2 158.0,187.8 159.0,186.4 160.0,185.0 161.0,183.7 162.0,182.4 163.0,181.1 164.0,179.9 165.0,178.8 166.0,177.7 167.0,176.7 168.0,175.7 169.0,174.8 170.0,174.0 171.0,173.3 172.0,172.6 173.0,172.0 174.0,171.5 175.0,171.0 176.0,170.7 177.0,170.4 178.0,170.2 179.0,170.0 180.0,170.0 181.0,170.0 182.0,170.2 183.0,170.4 184.0,170.7 185.0,171.0 186.0,171.5 187.0,172.0 188.0,172.6 189.0,173.3 190.0,174.0 191.0,174.8 192.0,175.7 193.0,176.7 194.0,177.7 195.0,178.8 196.0,179.9 197.0,181.1 198.0,182.4 199.0,183.7 200.0,185.0 201.0,186.4 202.0,187.8 203.0,189.2 204.0,190.7 205.0,192.2 206.0,193.8 207.0,195.3 208.0,196.9 209.0,198.4 210.0,200.0 211.0,201.6 212.0,203.1 213.0,204.7 214.0,206.2 215.0,207.8 216.0,209.3 217.0,210.8 218.0,212.2 219.0,213.6 220.0,215.0 221.0,216.3 222.0,217.6 223.0,218.9 224.0,220.1 225.0,221.2 226.0,222.3 227.0,223.3 228.0,224.3 229.0,225.2 230.0,226.0 231.0,226.7 232.0,227.4 233.0,228.0 234.0,228.5 235.0,229.0 236.0,229.3 237.0,229.6 238.0,229.8 239.0,230.0 240.0,230.0 241.0,230.0 242.0,229.8 243.0,229.6 244.0,229.3 245.0,229.0 246.0,228.5 247.0,228.0 248.0,227.4 249.0,226.7 250.0,226.0 251.0,225.2 252.0,224.3 253.0,223.3 254.0,222.3 255.0,221.2 256.0,220.1 257.0,218.9 258.0,217.6 259.0,216.3 260.0,215.0 261.0,213.6 262.0,212.2 263.0,210.8 264.0,209.3 265.0,207.8 266.0,206.2 267.0,204.7 268.0,203.1 269.0,201.6 270.0,200.0 271.0,198.4 272.0,196.9 273.0,195.3 274.0,193.8 275.0,192.2 276.0,190.7 277.0,189.2 278.0,187.8 279.0,186.4 280.0,185.0 281.0,183.7 282.0,182.4 283.0,181.1 284.0,179.9 285.0,178.8 286.0,177.7 287.0,176.7 288.0,175.7 289.0,174.8 290.0,174.0 291.0,173.3 292.0,172.6 293.0,172.0 294.0,171.5 295.0,171.0 296.0,170.7 297.0,170.4 298.0,170.2 299.0,170.0 300.0,170.0 301.0,170.0 302.0,170.2 303.0,170.4 304.0,170.7 305.0,171.0 306.0,171.5 307.0,172.0 308.0,172.6 309.0,173.3 310.0,174.0 311.0,174.8 312.0,175.7 313.0,176.7 314.0,177.7 315.0,178.8 316.0,179.9 317.0,181.1 318.0,182.4 319.0,183.7 320.0,185.0 321.0,186.4 322.0,187.8 323.0,189.2 324.0,190.7 325.0,192.2 326.0,193.8 327.0,195.3 328.0,196.9 329.0,198.4 330.0,200.0 331.0,201.6 332.0,203.1 333.0,204.7 334.0,206.2 335.0,207.8 336.0,209.3 337.0,210.8 338.0,212.2 339.0,213.6 340.0,215.0 341.0,216.3 342.0,217.6 343.0,218.9 344.0,220.1 345.0,221.2 346.0,222.3 347.0,223.3 348.0,224.3 349.0,225.2 350.0,226.0 351.0,226.7 352.0,227.4 353.0,228.0 354.0,228.5 355.0,229.0 356.0,229.3 357.0,229.6 358.0,229.8 359.0,230.0 360.0,230.0 361.0,230.0 362.0,229.8 363.0,229.6 364.0,229.3 365.0,229.0 366.0,228.5 367.0,228.0 368.0,227.4 369.0,226.7 370.0,226.0 371.0,225.2 372.0,224.3 373.0,223.3 374.0,222.3 375.0,221.2 376.0,220.1 377.0,218.9 378.0,217.6 379.0,216.3 380.0,215.0 381.0,213.6 382.0,212.2 383.0,210.8 384.0,209.3 385.0,207.8 386.0,206.2 387.0,204.7 388.0,203.1 389.0,201.6 390.0,200.0"/><polyline fill="none" stroke="#38bdf8" stroke-width="2.4" points="60.0,200.0 61.0,198.4 62.0,196.9 63.0,195.3 64.0,193.8 65.0,192.2 66.0,190.7 67.0,189.2 68.0,187.8 69.0,186.4 70.0,185.0 71.0,183.7 72.0,182.4 73.0,181.1 74.0,179.9 75.0,178.8 76.0,177.7 77.0,176.7 78.0,175.7 79.0,174.8 80.0,174.0 81.0,173.3 82.0,172.6 83.0,172.0 84.0,171.5 85.0,171.0 86.0,170.7 87.0,170.4 88.0,170.2 89.0,170.0 90.0,170.0 91.0,170.0 92.0,170.2 93.0,170.4 94.0,170.7 95.0,171.0 96.0,171.5 97.0,172.0 98.0,172.6 99.0,173.3 100.0,174.0 101.0,174.8 102.0,175.7 103.0,176.7 104.0,177.7 105.0,178.8 106.0,179.9 107.0,181.1 108.0,182.4 109.0,183.7 110.0,185.0 111.0,186.4 112.0,187.8 113.0,189.2 114.0,190.7 115.0,192.2 116.0,193.8 117.0,195.3 118.0,196.9 119.0,198.4 120.0,200.0 121.0,201.6 122.0,203.1 123.0,204.7 124.0,206.2 125.0,207.8 126.0,209.3 127.0,210.8 128.0,212.2 129.0,213.6 130.0,215.0 131.0,216.3 132.0,217.6 133.0,218.9 134.0,220.1 135.0,221.2 136.0,222.3 137.0,223.3 138.0,224.3 139.0,225.2 140.0,226.0 141.0,226.7 142.0,227.4 143.0,228.0 144.0,228.5 145.0,229.0 146.0,229.3 147.0,229.6 148.0,229.8 149.0,230.0 150.0,230.0 151.0,230.0 152.0,229.8 153.0,229.6 154.0,229.3 155.0,229.0 156.0,228.5 157.0,228.0 158.0,227.4 159.0,226.7 160.0,226.0 161.0,225.2 162.0,224.3 163.0,223.3 164.0,222.3 165.0,221.2 166.0,220.1 167.0,218.9 168.0,217.6 169.0,216.3 170.0,215.0 171.0,213.6 172.0,212.2 173.0,210.8 174.0,209.3 175.0,207.8 176.0,206.2 177.0,204.7 178.0,203.1 179.0,201.6 180.0,200.0 181.0,198.4 182.0,196.9 183.0,195.3 184.0,193.8 185.0,192.2 186.0,190.7 187.0,189.2 188.0,187.8 189.0,186.4 190.0,185.0 191.0,183.7 192.0,182.4 193.0,181.1 194.0,179.9 195.0,178.8 196.0,177.7 197.0,176.7 198.0,175.7 199.0,174.8 200.0,174.0 201.0,173.3 202.0,172.6 203.0,172.0 204.0,171.5 205.0,171.0 206.0,170.7 207.0,170.4 208.0,170.2 209.0,170.0 210.0,170.0 211.0,170.0 212.0,170.2 213.0,170.4 214.0,170.7 215.0,171.0 216.0,171.5 217.0,172.0 218.0,172.6 219.0,173.3 220.0,174.0 221.0,174.8 222.0,175.7 223.0,176.7 224.0,177.7 225.0,178.8 226.0,179.9 227.0,181.1 228.0,182.4 229.0,183.7 230.0,185.0 231.0,186.4 232.0,187.8 233.0,189.2 234.0,190.7 235.0,192.2 236.0,193.8 237.0,195.3 238.0,196.9 239.0,198.4 240.0,200.0 241.0,201.6 242.0,203.1 243.0,204.7 244.0,206.2 245.0,207.8 246.0,209.3 247.0,210.8 248.0,212.2 249.0,213.6 250.0,215.0 251.0,216.3 252.0,217.6 253.0,218.9 254.0,220.1 255.0,221.2 256.0,222.3 257.0,223.3 258.0,224.3 259.0,225.2 260.0,226.0 261.0,226.7 262.0,227.4 263.0,228.0 264.0,228.5 265.0,229.0 266.0,229.3 267.0,229.6 268.0,229.8 269.0,230.0 270.0,230.0 271.0,230.0 272.0,229.8 273.0,229.6 274.0,229.3 275.0,229.0 276.0,228.5 277.0,228.0 278.0,227.4 279.0,226.7 280.0,226.0 281.0,225.2 282.0,224.3 283.0,223.3 284.0,222.3 285.0,221.2 286.0,220.1 287.0,218.9 288.0,217.6 289.0,216.3 290.0,215.0 291.0,213.6 292.0,212.2 293.0,210.8 294.0,209.3 295.0,207.8 296.0,206.2 297.0,204.7 298.0,203.1 299.0,201.6 300.0,200.0 301.0,198.4 302.0,196.9 303.0,195.3 304.0,193.8 305.0,192.2 306.0,190.7 307.0,189.2 308.0,187.8 309.0,186.4 310.0,185.0 311.0,183.7 312.0,182.4 313.0,181.1 314.0,179.9 315.0,178.8 316.0,177.7 317.0,176.7 318.0,175.7 319.0,174.8 320.0,174.0 321.0,173.3 322.0,172.6 323.0,172.0 324.0,171.5 325.0,171.0 326.0,170.7 327.0,170.4 328.0,170.2 329.0,170.0 330.0,170.0 331.0,170.0 332.0,170.2 333.0,170.4 334.0,170.7 335.0,171.0 336.0,171.5 337.0,172.0 338.0,172.6 339.0,173.3 340.0,174.0 341.0,174.8 342.0,175.7 343.0,176.7 344.0,177.7 345.0,178.8 346.0,179.9 347.0,181.1 348.0,182.4 349.0,183.7 350.0,185.0 351.0,186.4 352.0,187.8 353.0,189.2 354.0,190.7 355.0,192.2 356.0,193.8 357.0,195.3 358.0,196.9 359.0,198.4 360.0,200.0 361.0,201.6 362.0,203.1 363.0,204.7 364.0,206.2 365.0,207.8 366.0,209.3 367.0,210.8 368.0,212.2 369.0,213.6 370.0,215.0 371.0,216.3 372.0,217.6 373.0,218.9 374.0,220.1 375.0,221.2 376.0,222.3 377.0,223.3 378.0,224.3 379.0,225.2 380.0,226.0 381.0,226.7 382.0,227.4 383.0,228.0 384.0,228.5 385.0,229.0 386.0,229.3 387.0,229.6 388.0,229.8 389.0,230.0 390.0,230.0"/><line x1="60" y1="162" x2="60" y2="196" stroke="#f87171" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/><line x1="90" y1="162" x2="90" y2="196" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/><line x1="60" y1="166" x2="90" y2="166" stroke="#34d399" stroke-width="1.6"/><path d="M67,162 L60,166 L67,170" fill="none" stroke="#34d399" stroke-width="1.6"/><path d="M83,162 L90,166 L83,170" fill="none" stroke="#34d399" stroke-width="1.6"/><text x="75" y="152" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">Δφ</text><text x="36" y="122" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">O (nguồn)</text><text x="120" y="122" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="start">M (trễ pha hơn)</text><text x="36" y="240" fill="currentColor" font-size="11" font-weight="500" text-anchor="start">Δφ = 2πd/λ: sóng tới M chậm hơn O một khoảng thời gian d/v</text></svg><figcaption>Hình 3. Sóng đi thêm đoạn d mới tới M, nên u(t) tại M trễ pha hơn O đúng Δφ = 2πd/λ.</figcaption></figure>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem thêm: sóng truyền ngược chiều, hoặc nguồn đã có pha ban đầu</summary>
 <ul>
-<li>Sóng truyền ngược chiều dương (từ phải sang trái) thì M <em>sớm</em> pha hơn nguồn: $u_M = A\cos\left(\omega t + \dfrac{2\pi d}{\lambda}\right)$.</li>
+<li>Sóng truyền ngược chiều dương (từ phải sang trái), viết theo toạ độ $x$ của M: $u_M = A\cos\left(\omega t + \dfrac{2\pi x}{\lambda}\right)$. Lúc này nguồn nằm xa về phía $x$ dương, O chỉ là gốc toạ độ có $u_O = A\cos(\omega t)$ đã biết, nên điểm có $x \gt 0$ gần nguồn hơn, nhận sóng trước O và sớm pha hơn O. Còn tính theo khoảng cách $d$ tới nguồn thì luôn trừ pha.</li>
 <li>Nguồn có pha ban đầu $\varphi_0$: $u_M = A\cos\left(\omega t + \varphi_0 - \dfrac{2\pi d}{\lambda}\right)$.</li>
 <li>Cách nhớ dấu: điểm nào sóng tới <strong>sau</strong> thì bị <strong>trừ</strong> pha.</li>
 </ul>
@@ -664,7 +1287,7 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 
 <h4>4. Đồ thị sóng: hai loại, đừng lẫn</h4>
 
-<p>Cùng một sóng hình sin, vẽ theo hai trục hoành khác nhau cho hai loại thông tin:</p>
+<p>Cùng một đường sin, đổi trục hoành là đổi thông tin:</p>
 
 <div class="table-scroll">
 <table class="tl-table">
@@ -673,29 +1296,31 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 </thead>
 <tbody>
 <tr><td>$u - t$ (tại MỘT điểm)</td><td>trục hoành là thời gian $t$ (s); hai đỉnh liên tiếp cách nhau $T$. Cho biết chu kì, tần số, biên độ và một điểm đang đi lên hay đi xuống</td></tr>
-<tr><td>$u - x$ (tại MỘT lúc)</td><td>trục hoành là khoảng cách $x$ (cm, m); hai đỉnh liên tiếp cách nhau $\lambda$. Cho biết bước sóng, hình dạng sợi dây và chiều truyền sóng</td></tr>
+<tr><td>$u - x$ (tại MỘT lúc)</td><td>trục hoành là khoảng cách $x$ (cm, m); hai đỉnh liên tiếp cách nhau $\lambda$. Cho biết bước sóng, hình dạng sợi dây. Chiều truyền sóng: cần biết thêm một điểm đang lên hay xuống, rồi thử dịch dạng dây một chút sang phải hoặc sang trái, chiều dịch nào khớp với chuyển động của điểm đó là chiều truyền</td></tr>
 </tbody>
 </table>
 </div>
 
 <p><strong>🔑 $u-t$: một bước = $T$ · $u-x$: một bước = $\lambda$</strong></p>
 
-<p>Không đọc nhãn trục hoành là lỗi mất điểm phổ biến nhất của bài này.</p>
+<p>Luôn đọc nhãn trục hoành trước.</p>
 
 <figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Hai loại đồ thị sóng: bên trái u theo thời gian (một bước là T), bên phải u theo không gian (một bước là λ)"><line x1="220" y1="10" x2="220" y2="244" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.35"/><text x="117" y="20" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">Tại MỘT điểm,</text><text x="117" y="36" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">theo thời gian t</text><line x1="30" y1="180" x2="210" y2="180" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="30" y1="140" x2="30" y2="208" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/><polyline fill="none" stroke="#f87171" stroke-width="2.4" points="30.0,180.0 31.0,178.2 32.0,176.4 33.0,174.6 34.0,172.8 35.0,171.1 36.0,169.4 37.0,167.8 38.0,166.2 39.0,164.7 40.0,163.3 41.0,161.9 42.0,160.7 43.0,159.5 44.0,158.4 45.0,157.5 46.0,156.6 47.0,155.9 48.0,155.3 49.0,154.8 50.0,154.4 51.0,154.1 52.0,154.0 53.0,154.0 54.0,154.1 55.0,154.4 56.0,154.8 57.0,155.3 58.0,155.9 59.0,156.6 60.0,157.5 61.0,158.4 62.0,159.5 63.0,160.7 64.0,161.9 65.0,163.3 66.0,164.7 67.0,166.2 68.0,167.8 69.0,169.4 70.0,171.1 71.0,172.8 72.0,174.6 73.0,176.4 74.0,178.2 75.0,180.0 76.0,181.8 77.0,183.6 78.0,185.4 79.0,187.2 80.0,188.9 81.0,190.6 82.0,192.2 83.0,193.8 84.0,195.3 85.0,196.7 86.0,198.1 87.0,199.3 88.0,200.5 89.0,201.6 90.0,202.5 91.0,203.4 92.0,204.1 93.0,204.7 94.0,205.2 95.0,205.6 96.0,205.9 97.0,206.0 98.0,206.0 99.0,205.9 100.0,205.6 101.0,205.2 102.0,204.7 103.0,204.1 104.0,203.4 105.0,202.5 106.0,201.6 107.0,200.5 108.0,199.3 109.0,198.1 110.0,196.7 111.0,195.3 112.0,193.8 113.0,192.2 114.0,190.6 115.0,188.9 116.0,187.2 117.0,185.4 118.0,183.6 119.0,181.8 120.0,180.0 121.0,178.2 122.0,176.4 123.0,174.6 124.0,172.8 125.0,171.1 126.0,169.4 127.0,167.8 128.0,166.2 129.0,164.7 130.0,163.3 131.0,161.9 132.0,160.7 133.0,159.5 134.0,158.4 135.0,157.5 136.0,156.6 137.0,155.9 138.0,155.3 139.0,154.8 140.0,154.4 141.0,154.1 142.0,154.0 143.0,154.0 144.0,154.1 145.0,154.4 146.0,154.8 147.0,155.3 148.0,155.9 149.0,156.6 150.0,157.5 151.0,158.4 152.0,159.5 153.0,160.7 154.0,161.9 155.0,163.3 156.0,164.7 157.0,166.2 158.0,167.8 159.0,169.4 160.0,171.1 161.0,172.8 162.0,174.6 163.0,176.4 164.0,178.2 165.0,180.0 166.0,181.8 167.0,183.6 168.0,185.4 169.0,187.2 170.0,188.9 171.0,190.6 172.0,192.2 173.0,193.8 174.0,195.3 175.0,196.7 176.0,198.1 177.0,199.3 178.0,200.5 179.0,201.6 180.0,202.5 181.0,203.4 182.0,204.1 183.0,204.7 184.0,205.2 185.0,205.6 186.0,205.9 187.0,206.0 188.0,206.0 189.0,205.9 190.0,205.6 191.0,205.2 192.0,204.7 193.0,204.1 194.0,203.4 195.0,202.5 196.0,201.6 197.0,200.5 198.0,199.3 199.0,198.1 200.0,196.7 201.0,195.3 202.0,193.8 203.0,192.2 204.0,190.6 205.0,188.9"/><line x1="52.5" y1="200" x2="52.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="142.5" y1="200" x2="142.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="52.5" y1="214" x2="142.5" y2="214" stroke="#34d399" stroke-width="1.8"/><path d="M59.5,210 L52.5,214 L59.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><path d="M135.5,210 L142.5,214 L135.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><text x="97.5" y="240" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">T</text><text x="34" y="197" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">t (s)</text><text x="327" y="20" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">Tại MỘT lúc,</text><text x="327" y="36" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">theo không gian x</text><line x1="240" y1="180" x2="420" y2="180" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="240" y1="140" x2="240" y2="208" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/><polyline fill="none" stroke="#38bdf8" stroke-width="2.4" points="240.0,180.0 241.0,178.2 242.0,176.4 243.0,174.6 244.0,172.8 245.0,171.1 246.0,169.4 247.0,167.8 248.0,166.2 249.0,164.7 250.0,163.3 251.0,161.9 252.0,160.7 253.0,159.5 254.0,158.4 255.0,157.5 256.0,156.6 257.0,155.9 258.0,155.3 259.0,154.8 260.0,154.4 261.0,154.1 262.0,154.0 263.0,154.0 264.0,154.1 265.0,154.4 266.0,154.8 267.0,155.3 268.0,155.9 269.0,156.6 270.0,157.5 271.0,158.4 272.0,159.5 273.0,160.7 274.0,161.9 275.0,163.3 276.0,164.7 277.0,166.2 278.0,167.8 279.0,169.4 280.0,171.1 281.0,172.8 282.0,174.6 283.0,176.4 284.0,178.2 285.0,180.0 286.0,181.8 287.0,183.6 288.0,185.4 289.0,187.2 290.0,188.9 291.0,190.6 292.0,192.2 293.0,193.8 294.0,195.3 295.0,196.7 296.0,198.1 297.0,199.3 298.0,200.5 299.0,201.6 300.0,202.5 301.0,203.4 302.0,204.1 303.0,204.7 304.0,205.2 305.0,205.6 306.0,205.9 307.0,206.0 308.0,206.0 309.0,205.9 310.0,205.6 311.0,205.2 312.0,204.7 313.0,204.1 314.0,203.4 315.0,202.5 316.0,201.6 317.0,200.5 318.0,199.3 319.0,198.1 320.0,196.7 321.0,195.3 322.0,193.8 323.0,192.2 324.0,190.6 325.0,188.9 326.0,187.2 327.0,185.4 328.0,183.6 329.0,181.8 330.0,180.0 331.0,178.2 332.0,176.4 333.0,174.6 334.0,172.8 335.0,171.1 336.0,169.4 337.0,167.8 338.0,166.2 339.0,164.7 340.0,163.3 341.0,161.9 342.0,160.7 343.0,159.5 344.0,158.4 345.0,157.5 346.0,156.6 347.0,155.9 348.0,155.3 349.0,154.8 350.0,154.4 351.0,154.1 352.0,154.0 353.0,154.0 354.0,154.1 355.0,154.4 356.0,154.8 357.0,155.3 358.0,155.9 359.0,156.6 360.0,157.5 361.0,158.4 362.0,159.5 363.0,160.7 364.0,161.9 365.0,163.3 366.0,164.7 367.0,166.2 368.0,167.8 369.0,169.4 370.0,171.1 371.0,172.8 372.0,174.6 373.0,176.4 374.0,178.2 375.0,180.0 376.0,181.8 377.0,183.6 378.0,185.4 379.0,187.2 380.0,188.9 381.0,190.6 382.0,192.2 383.0,193.8 384.0,195.3 385.0,196.7 386.0,198.1 387.0,199.3 388.0,200.5 389.0,201.6 390.0,202.5 391.0,203.4 392.0,204.1 393.0,204.7 394.0,205.2 395.0,205.6 396.0,205.9 397.0,206.0 398.0,206.0 399.0,205.9 400.0,205.6 401.0,205.2 402.0,204.7 403.0,204.1 404.0,203.4 405.0,202.5 406.0,201.6 407.0,200.5 408.0,199.3 409.0,198.1 410.0,196.7 411.0,195.3 412.0,193.8 413.0,192.2 414.0,190.6 415.0,188.9"/><line x1="262.5" y1="200" x2="262.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="352.5" y1="200" x2="352.5" y2="220" stroke="#34d399" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.8"/><line x1="262.5" y1="214" x2="352.5" y2="214" stroke="#34d399" stroke-width="1.8"/><path d="M269.5,210 L262.5,214 L269.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><path d="M345.5,210 L352.5,214 L345.5,218" fill="none" stroke="#34d399" stroke-width="1.8"/><text x="307.5" y="240" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">λ</text><text x="244" y="197" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">x (cm)</text></svg><figcaption>Hình 4. Cùng một sóng, khác trục hoành: u–t (một điểm) một bước là T; u–x (một lúc) một bước là λ.</figcaption></figure>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⚡ Bấm xem thêm (bài 28 học sâu): sóng mang năng lượng, cường độ sóng $I = \dfrac{P}{S}$</summary>
-<p>Sóng mang năng lượng từ nguồn ra xa. Càng xa nguồn, năng lượng càng trải trên diện tích lớn nên sóng càng yếu: cường độ $I = \dfrac{P}{S}$ (W/m²), với $S$ là diện tích vuông góc với phương truyền. Sóng lan đều mọi hướng ở khoảng cách $r$ có $S = 4\pi r^2$, nên $I = \dfrac{P}{4\pi r^2}$: xa gấp đôi thì cường độ chỉ còn một phần tư.</p>
+<p>Sóng mang năng lượng từ nguồn ra xa. Càng xa nguồn, năng lượng càng trải trên diện tích lớn nên sóng càng yếu: cường độ $I = \dfrac{P}{S}$ (W/m²), với $P$ là công suất của nguồn (W), $S$ là diện tích vuông góc với phương truyền. Sóng lan đều mọi hướng ở khoảng cách $r$ có $S = 4\pi r^2$, nên $I = \dfrac{P}{4\pi r^2}$: xa gấp đôi thì cường độ chỉ còn một phần tư.</p>
 </details>
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1: "sóng đến thì vật trôi theo sóng"</h4>
 
 <p>Sai. Sóng tới đâu, phần tử môi trường chỉ dao động tại chỗ tới đó. Sóng biển đánh vào bờ mang năng lượng và gây xói lở, nhưng một chiếc lá trên mặt nước chỉ nhấp nhô lên xuống.</p>
 
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl8-q3c" value="chac"> Chắc</label> <label><input type="radio" name="tl8-q3c" value="khong"> Không chắc</label></p>
+<p>Sóng lan tới, chiếc lá sẽ:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl8-q3" id="tl8-q3a"><label for="tl8-q3a" class="tl-opt tl-no">A. Trôi ra xa theo chiều sóng truyền</label>
 <input type="radio" name="tl8-q3" id="tl8-q3b"><label for="tl8-q3b" class="tl-opt tl-ok">B. Nhấp nhô tại chỗ, gần như không dịch chuyển theo sóng</label>
@@ -704,7 +1329,9 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sóng truyền pha và năng lượng; chiếc lá dao động tại chỗ quanh vị trí cân bằng của nó.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Để ý: nước ở chỗ chiếc lá <em>không chảy ra xa</em>. Nếu nước chảy ra xa thì cả hồ sẽ dồn về một phía. Vậy cái gì đã lan truyền? Chọn lại nhé. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
+</div>
 
+<div class="tl-trap">
 <h4>Bẫy 2: lẫn tốc độ truyền sóng với tốc độ dao động của phần tử</h4>
 
 <p>Hai đại lượng hoàn toàn khác nhau, chỉ tình cờ cùng được ký hiệu là $v$:</p>
@@ -724,6 +1351,7 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <p><strong>🔑 $v$ theo môi trường · $v_{max} = \omega A$ theo nguồn · không có quy luật "cái nào lớn hơn"</strong></p>
 
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl8-q4c" value="chac"> Chắc</label> <label><input type="radio" name="tl8-q4c" value="khong"> Không chắc</label></p>
+<p>Sóng có $A = 2$ cm, $f = 50$ Hz, tốc độ truyền sóng $v = 2$ m/s. Phát biểu nào đúng?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl8-q4" id="tl8-q4a"><label for="tl8-q4a" class="tl-opt tl-no">A. Hai tốc độ này bằng nhau vì cùng ký hiệu $v$</label>
 <input type="radio" name="tl8-q4" id="tl8-q4b"><label for="tl8-q4b" class="tl-opt tl-ok">B. $v_{max} = \omega A \approx 6{,}28$ m/s, khác với $v = 2$ m/s</label>
@@ -732,11 +1360,14 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\omega = 2\pi f = 100\pi$ rad/s và $A = 0{,}02$ m, nên $v_{max} = 100\pi \times 0{,}02 = 2\pi \approx 6{,}28$ m/s.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nhớ $\omega = 2\pi f$ và đổi $A$ ra mét trước khi nhân. Hai đại lượng này đo hai chuyện khác nhau nên không có chuyện "luôn lớn hơn" hay "luôn nhỏ hơn". Thử lại nhé. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
+</div>
 
+<div class="tl-trap">
 <h4>Bẫy 3: nhìn đồ thị mà không đọc nhãn trục hoành</h4>
 
 <p>Đường sin thì giống nhau, nhưng trục hoành ghi $t$ hay ghi $x$ lại cho hai kết luận khác nhau.</p>
 
+<p>Một đồ thị sin có hai đỉnh liên tiếp cách nhau 4 (đơn vị trên trục hoành), nhưng chưa thấy nhãn trục. Có thể kết luận gì?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl8-q5" id="tl8-q5a"><label for="tl8-q5a" class="tl-opt tl-no">A. Bước sóng bằng 4 cm</label>
 <input type="radio" name="tl8-q5" id="tl8-q5b"><label for="tl8-q5b" class="tl-opt tl-no">B. Chu kì bằng 4 s</label>
@@ -745,8 +1376,9 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Việc đầu tiên khi gặp một đồ thị sóng là đọc nhãn trục hoành và đơn vị trên trục.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hỏi lại: trục hoành của đồ thị đó ghi gì? Chưa biết trục hoành thì chưa kết luận được gì. Chọn lại nhé.</p></div>
 </div>
+</div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧨 Bẫy phụ: tưởng rằng đổi môi trường thì tần số đổi</summary>
 <p>Sóng âm truyền từ nước ra không khí: nguồn vẫn dao động đúng nhịp cũ nên $f$ và $T$ không đổi; nhưng $v$ giảm nên $\lambda = \dfrac{v}{f}$ giảm theo. Đề cho "đổi môi trường" thì phải hỏi ngay: <strong>đại lượng nào bị khoá?</strong> Trả lời: $f$, $T$ bị khoá theo nguồn.</p>
 </details>
@@ -755,53 +1387,54 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 
 <p>Em đọc to câu trả lời trước, rồi mới bấm xem đáp án.</p>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>1. Sóng cơ là gì? Cần những điều kiện nào để có sóng cơ? Vì sao sóng cơ không truyền được trong chân không? <small>(nói trước rồi mới bấm)</small></summary>
 <p>Sóng cơ là dao động cơ lan truyền trong một môi trường. Cần <strong>nguồn dao động</strong> và <strong>lực liên kết</strong> giữa các phần tử môi trường. Chân không không có phần tử nên không có lực liên kết, do đó không truyền được sóng cơ.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>2. Viết các công thức liên hệ giữa bước sóng, chu kì, tần số, tốc độ truyền sóng và nêu đơn vị. <small>(nói trước rồi mới bấm)</small></summary>
 <p>$\lambda = vT = \dfrac{v}{f}$; $v = \lambda f = \dfrac{\lambda}{T}$; $T = \dfrac{1}{f}$. Đơn vị: $\lambda$ (m, cm), $v$ (m/s), $T$ (s), $f$ (Hz).</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>3. Phát biểu hai định nghĩa của bước sóng. <small>(nói trước rồi mới bấm)</small></summary>
 <p><em>Định nghĩa 1:</em> bước sóng là quãng đường sóng truyền được trong một chu kì. <em>Định nghĩa 2:</em> bước sóng là khoảng cách giữa hai điểm gần nhau nhất trên cùng một phương truyền dao động cùng pha.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>4. Điểm M cách nguồn O đoạn $d$ theo chiều truyền thì trễ pha bao nhiêu? Viết phương trình dao động tại M. <small>(nói trước rồi mới bấm)</small></summary>
 <p>Trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda}$; phương trình $u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$ (nguồn $u_O = A\cos(\omega t)$).</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>5. Sóng truyền từ môi trường này sang môi trường khác: đại lượng nào không đổi, đại lượng nào đổi? Vì sao? <small>(nói trước rồi mới bấm)</small></summary>
 <p>$f$ và $T$ <strong>không đổi</strong> vì do nguồn quyết định. $v$ <strong>đổi</strong> vì do môi trường quyết định, kéo theo $\lambda = \dfrac{v}{f}$ cũng đổi.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>6. Đồ thị $u - t$ và đồ thị $u - x$ khác nhau ở đâu? Mỗi đồ thị cho em biết gì? <small>(nói trước rồi mới bấm)</small></summary>
-<p>Khác ở trục hoành: $t$ và $x$. Hai đỉnh liên tiếp cách nhau $T$ (đồ thị $u-t$) và $\lambda$ (đồ thị $u-x$). $u-t$ cho chu kì, biên độ và chiều chuyển động của một điểm; $u-x$ cho bước sóng, hình dạng sợi dây và chiều truyền sóng.</p>
+<p>Khác ở trục hoành: $t$ và $x$.<br>Đồ thị $u-t$: hai đỉnh liên tiếp cách nhau $T$, cho chu kì, biên độ và chiều chuyển động của một điểm.<br>Đồ thị $u-x$: hai đỉnh liên tiếp cách nhau $\lambda$, cho bước sóng và hình dạng sợi dây.<br>Biết thêm chiều chuyển động của một điểm trên đồ thị $u-x$ thì suy ra được chiều truyền sóng.</p>
 </details>
 </div>
 
 <h3>V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó</h3>
 
-<div class="tl-box tl-box--rule">
+<div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📝 Đề bài</p>
-<p>Sóng cơ lan truyền trên mặt nước từ nguồn O theo chiều dương trục Ox với tốc độ $v = 60$ cm/s. Nguồn O dao động điều hoà theo phương trình $u_O = 2\cos(40\pi t)$ cm.</p>
+<p>Sóng truyền trên mặt nước từ nguồn O theo chiều dương trục Ox với tốc độ $v = 60$ cm/s. Nguồn O dao động theo phương trình $u_O = 2\cos(40\pi t)$ cm.</p>
 <p>a) Tính chu kì, tần số và bước sóng.</p>
-<p>b) Viết phương trình dao động của điểm M trên mặt nước, cách O 9 cm.</p>
-<p>c) Tại $t = \dfrac{T}{4}$, phần tử nước tại M có li độ nào và chuyển động theo chiều nào?</p>
+<p>b) Viết phương trình dao động của điểm M cách O 9 cm.</p>
+<p>c) Tại $t = 0{,}1625$ s, M có li độ bao nhiêu và đang đi theo chiều nào?</p>
 <p>d) So sánh tốc độ truyền sóng với tốc độ dao động cực đại của phần tử nước.</p>
 </div>
 
+<details class="tl-details tl-more">
+<summary>🔍 Bảng đọc đề từng câu</summary>
 <p>Mỗi câu của đề, tự hỏi: <strong>cho dữ liệu gì?</strong> và <strong>gọi ra kiến thức nào?</strong></p>
-
 <div class="table-scroll">
 <table class="tl-table tl-table--data">
 <thead>
@@ -812,35 +1445,36 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <tr><td>"tốc độ $v = 60$ cm/s"</td><td>$v = 60$ cm/s</td><td>$\lambda = \dfrac{v}{f}$</td></tr>
 <tr><td>"$u_O = 2\cos(40\pi t)$ cm"</td><td>$A = 2$ cm, $\omega = 40\pi$ rad/s</td><td>$\omega = 2\pi f$; $T = \dfrac{1}{f}$</td></tr>
 <tr><td>"M cách O 9 cm"</td><td>$d = 9$ cm</td><td>độ trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda}$; so $\dfrac{d}{\lambda}$</td></tr>
-<tr><td>"tại thời điểm $t = \dfrac{T}{4}$"</td><td>$t = 0{,}0125$ s</td><td>thay $t$ vào $u_M$; xét dấu $v_M = u_M'$</td></tr>
-<tr><td>"so sánh hai tốc độ"</td><td>cần tính $v$ và $\omega A$</td><td>hai đại lượng khác nhau, không so sánh "hơn kém"</td></tr>
+<tr><td>"tại $t = 0{,}1625$ s"</td><td>$t = 0{,}1625$ s; khi đã có $T = 0{,}05$ s (câu a) thì $\dfrac{t}{T} = 3{,}25$, tức $t = 3T + \dfrac{T}{4}$</td><td>kiểm sóng đã tới M chưa: $t \ge \dfrac{d}{v} = 0{,}15$ s<br>thay $t$ vào $u_M$<br>xét dấu vận tốc dao động $v_M$</td></tr>
+<tr><td>"so sánh hai tốc độ"</td><td>cần tính $v$ và $\omega A$</td><td>tính cả hai rồi so số<br>không có quy luật chung cái nào luôn lớn hơn</td></tr>
 </tbody>
 </table>
 </div>
+</details>
 
-<details class="tl-details">
-<summary>🧮 Bấm xem: lời giải</summary>
+<details class="tl-details tl-more">
+<summary>🧮 Lời giải</summary>
 <ol class="tl-steps">
 <li>Tần số: $\omega = 2\pi f \Rightarrow f = \dfrac{40\pi}{2\pi} = 20$ Hz. Chu kì: $T = \dfrac{1}{f} = 0{,}05$ s.</li>
 <li>Bước sóng: $\lambda = \dfrac{v}{f} = \dfrac{60}{20} = 3$ cm.</li>
 <li>Câu b: $u_M = 2\cos\left(40\pi t - \dfrac{2\pi \cdot 9}{3}\right) = 2\cos(40\pi t - 6\pi) = 2\cos(40\pi t)$ cm. Vì $d = 9$ cm $= 3\lambda$ nên M <strong>cùng pha</strong> với O.</li>
-<li>Câu c: $t = \dfrac{T}{4} = 0{,}0125$ s. Li độ $u_M = 2\cos(40\pi \cdot 0{,}0125) = 2\cos\dfrac{\pi}{2} = 0$: M đang ở vị trí cân bằng.</li>
-<li>Chiều chuyển động: $v_M = u_M' = -80\pi\sin(40\pi t)$. Tại $t = 0{,}0125$ s: $v_M = -80\pi \lt 0$, vậy M đang đi theo <strong>chiều âm</strong> (đi xuống).</li>
+<li>Câu c: sóng tới M lúc $\dfrac{d}{v} = \dfrac{9}{60} = 0{,}15$ s $= 3T$, nên $u_M$ chỉ dùng khi $t \ge 0{,}15$ s. Tại $t = 0{,}1625$ s $= 3T + \dfrac{T}{4}$: li độ $u_M = 2\cos(40\pi \cdot 0{,}1625) = 2\cos(6{,}5\pi) = 2\cos\dfrac{\pi}{2} = 0$: M đang ở vị trí cân bằng.</li>
+<li>Chiều chuyển động: nhắc lại từ bài dao động điều hoà, $u = A\cos\varphi$ thì vận tốc $v = -\omega A\sin\varphi$.<br>Vận tốc dao động của phần tử (không phải tốc độ truyền sóng) là $v_M = -\omega A\sin(40\pi t - 6\pi) = -80\pi\sin(40\pi t)$ cm/s. Tại $t = 0{,}1625$ s: $\sin(6{,}5\pi) = 1$ nên $v_M = -80\pi \lt 0$, vậy M đang đi theo <strong>chiều âm</strong> (đi xuống).</li>
 <li>Câu d: $v_{max} = \omega A = 40\pi \cdot 2 = 80\pi \approx 251$ cm/s, lớn hơn $v = 60$ cm/s. Không có gì vô lí: đây là hai đại lượng khác nhau, $v$ do môi trường quyết định còn $v_{max}$ do nguồn quyết định.</li>
 <li>Kiểm tra: $\lambda = 3$ cm nên 9 cm đúng bằng $3\lambda$ → M cùng pha O, khớp với kết quả câu b. Đơn vị của $u_M$ là cm, của $v_M$ là cm/s: hợp lí.</li>
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu (làm ra giấy trước)</p>
 <p>Cùng kiểu đề: $v = 80$ cm/s, $f = 20$ Hz, N cách O $9$ cm. N lệch pha bao nhiêu so với O?</p>
 <ol class="tl-steps">
 <li>Bước sóng: $\lambda = \dfrac{v}{f} = \dfrac{80}{20} = 4$ cm.</li>
-<li><strong>Em điền:</strong> độ trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda} = \;?$ (gợi ý: $d$ bằng bao nhiêu lần $\lambda$?)</li>
-<li><strong>Em điền:</strong> bỏ các vòng $2\pi$ trọn vẹn rồi gọi tên độ lệch pha?</li>
+<li><strong>Em điền:</strong> độ trễ pha $\Delta\varphi = \dfrac{2\pi d}{\lambda} = \;?$ ($d$ gấp mấy lần $\lambda$?)</li>
+<li><strong>Em điền:</strong> bỏ vòng $2\pi$ trọn rồi gọi tên độ lệch pha?</li>
 </ol>
-<details class="tl-details">
-<summary>Bấm xem bước 2 và 3</summary>
+<details class="tl-details tl-more">
+<summary>Đáp án bước 2, 3</summary>
 <ol class="tl-steps">
 <li>$\Delta\varphi = \dfrac{2\pi \cdot 9}{4} = \dfrac{9\pi}{2}$.</li>
 <li>$\dfrac{9\pi}{2} = 4\pi + \dfrac{\pi}{2}$, bỏ $4\pi$ (hai vòng trọn) còn $\dfrac{\pi}{2}$: N <strong>vuông pha</strong> với O. Cách nhìn nhanh: $d = 2{,}25\lambda$, phần lẻ $0{,}25\lambda$ ứng với $\dfrac{\pi}{2}$.</li>
@@ -849,10 +1483,11 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 </details>
 </div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Thử sức: đổi số, đổi chiều</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức</p>
 
-<p><strong>Câu 2.</strong> Một sóng cơ truyền với tốc độ $v = 40$ cm/s và tần số $f = 20$ Hz. Điểm M cách nguồn O đoạn $5$ cm. Dao động của M so với O là:</p>
+<p><strong>Câu 2.</strong> Sóng có $v = 40$ cm/s, $f = 20$ Hz. Điểm M cách nguồn O đoạn $5$ cm. Dao động của M so với O là:</p>
+<p>⚠ $\lambda = \dfrac{v}{f}$, không phải $\dfrac{f}{v}$: (cm/s) chia (Hz) mới ra cm.</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl8-q6c" value="chac"> Chắc</label> <label><input type="radio" name="tl8-q6c" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
 <input type="radio" name="tl8-q6" id="tl8-q6a"><label for="tl8-q6a" class="tl-opt tl-no">A. Cùng pha</label>
@@ -860,49 +1495,50 @@ $$u_M = A\cos\left(\omega t - \dfrac{2\pi d}{\lambda}\right)$$
 <input type="radio" name="tl8-q6" id="tl8-q6c"><label for="tl8-q6c" class="tl-opt tl-no">C. Vuông pha</label>
 <input type="radio" name="tl8-q6" id="tl8-q6d"><label for="tl8-q6d" class="tl-opt tl-no">D. Không xác định được vì thiếu biên độ</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\lambda = \dfrac{v}{f} = \dfrac{40}{20} = 2$ cm. Tỉ số $\dfrac{d}{\lambda} = \dfrac{5}{2} = 2{,}5$ — nguyên cộng $\dfrac{1}{2}$, tức trễ pha $5\pi$, nên M <strong>ngược pha</strong> với O. Độ lệch pha không phụ thuộc biên độ.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tính $\lambda$ trước, rồi lấy $\dfrac{d}{\lambda}$. Nguyên → cùng pha; nguyên cộng $\dfrac{1}{2}$ → ngược pha; nguyên cộng $\dfrac{1}{4}$ → vuông pha. Thử lại nhé. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tính $\lambda$ trước, rồi lấy $\dfrac{d}{\lambda}$:<br>nguyên → cùng pha<br>nguyên cộng $\dfrac{1}{2}$ → ngược pha<br>nguyên cộng $\dfrac{1}{4}$ hoặc $\dfrac{3}{4}$ → vuông pha.<br>Thử lại nhé. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
 <p><strong>Câu 3.</strong> Sóng truyền trên dây từ trái sang phải; tại một thời điểm, điểm P ở <strong>sườn bên phải</strong> của một đỉnh sóng (phía trước theo chiều truyền). Ngay sau đó P sẽ:</p>
+<p>⚠ Đừng đoán theo độ dốc của sườn: hình dung đỉnh sóng dịch sang phải một chút rồi xem P bị nâng lên hay hạ xuống.</p>
 <div class="tl-quiz">
 <input type="radio" name="tl8-q7" id="tl8-q7a"><label for="tl8-q7a" class="tl-opt tl-ok">A. Đi lên</label>
 <input type="radio" name="tl8-q7" id="tl8-q7b"><label for="tl8-q7b" class="tl-opt tl-no">B. Đi xuống</label>
 <input type="radio" name="tl8-q7" id="tl8-q7c"><label for="tl8-q7c" class="tl-opt tl-no">C. Đứng yên vì đang ở sườn dốc</label>
 <input type="radio" name="tl8-q7" id="tl8-q7d"><label for="tl8-q7d" class="tl-opt tl-no">D. Chạy sang phải cùng với đỉnh sóng</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sóng truyền sang phải thì đỉnh sóng dịch sang phải. Điểm P nằm ngay trước đỉnh nên bị "đẩy" lên. Quy tắc nhớ: <strong>sườn trước đi lên, sườn sau đi xuống</strong> (với sóng truyền sang phải).</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng đoán theo hình dạng. Hãy tưởng tượng nửa chu kì sau: đỉnh sóng dịch sang phải một đoạn, và dạng dây bị kéo theo. Điểm nằm trước đỉnh sẽ bị nâng lên. Thử lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng đoán theo hình dạng. Hãy tưởng tượng một thoáng rất ngắn sau: đỉnh sóng dịch sang phải một chút, và dạng dây bị kéo theo. Điểm nằm trước đỉnh sẽ bị nâng lên. Thử lại nhé.</p></div>
 </div>
 </div>
 
 <h3>VI. Sóng trong đời sống, thử thách phân tầng và mang về</h3>
 
 <ul>
-<li><strong>Cảnh báo sóng thần:</strong> trạm đo áp suất dưới đáy biển phát hiện sóng lan qua cả nghìn km; sóng mang năng lượng khổng lồ tới bờ dù nước giữa biển gần như không dịch chuyển ngang.</li>
+<li><strong>Cảnh báo sóng thần:</strong> trạm đo áp suất dưới đáy biển phát hiện sóng lan qua cả nghìn km; sóng mang năng lượng khổng lồ tới bờ.</li>
 <li><strong>Siêu âm y tế:</strong> đo thời gian xung siêu âm dội về để tính khoảng cách tới khối u, thai nhi — nhờ $v$ xác định trong mô.</li>
-<li><strong>Dây đàn:</strong> lên dây căng hơn làm $v$ tăng; bấm phím cho dây ngắn lại làm $\lambda$ giảm nên nốt cao hơn.</li>
+<li><strong>Dây đàn:</strong> không có tay hay máy áp nhịp từ ngoài như khi gảy lò xo, nên $f$ không bị khoá; chính chiều dài dây quy định $\lambda$. Lên dây căng hơn làm $v$ tăng, bấm phím cho dây ngắn lại làm $\lambda$ giảm, cả hai đều làm $f = \dfrac{v}{\lambda}$ tăng nên nốt cao hơn.</li>
 </ul>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎯 Thử thách phân tầng</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐ Cơ bản: một sóng có $T = 0{,}4$ s và $\lambda = 2$ m. Tính tốc độ truyền sóng.</summary>
 <p>$v = \dfrac{\lambda}{T} = \dfrac{2}{0{,}4} = 5$ m/s.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐⭐ Khá: hai điểm M, N trên cùng phương truyền cách nhau $\dfrac{3\lambda}{4}$. Chúng lệch pha bao nhiêu?</summary>
-<p>$\Delta\varphi = \dfrac{2\pi d}{\lambda} = 2\pi \cdot \dfrac{3}{4} = \dfrac{3\pi}{2}$, tức lệch pha vuông pha (một phần tư vòng pha).</p>
+<p>$\Delta\varphi = \dfrac{2\pi d}{\lambda} = 2\pi \cdot \dfrac{3}{4} = \dfrac{3\pi}{2}$ (ba phần tư vòng pha).<br>Đây vẫn là vuông pha vì $\dfrac{3\pi}{2}$ là số lẻ lần $\dfrac{\pi}{2}$.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐⭐⭐ Thách đấu: sóng truyền sang phải, điểm P ở sườn bên trái của một đỉnh sóng (phía sau theo chiều truyền) — P đi lên hay đi xuống? Vì sao?</summary>
-<p>P <strong>đi xuống</strong>. Lập luận: nửa chu kì sau, đỉnh sóng dịch sang phải, phần dây phía sau đỉnh bị hạ xuống để "nhường" đỉnh cho vị trí mới. Quy tắc gọn: <strong>sườn trước đi lên, sườn sau đi xuống</strong> khi sóng truyền sang phải (đổi chiều truyền thì đảo lại).</p>
+<p>P <strong>đi xuống</strong>. Lập luận: một thoáng rất ngắn sau, đỉnh sóng dịch sang phải một chút, phần dây phía sau đỉnh bị hạ xuống để "nhường" đỉnh cho vị trí mới. Quy tắc gọn: <strong>sườn trước đi lên, sườn sau đi xuống</strong> khi sóng truyền sang phải (đổi chiều truyền thì đảo lại).</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Truyền gì:</strong> pha + năng lượng, <strong>không</strong> vật chất.</li>
 <li><strong>Cần gì:</strong> nguồn dao động · lực liên kết · không chân không.</li>
