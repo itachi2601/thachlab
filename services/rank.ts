@@ -31,10 +31,53 @@ import { isStudentPreview, unlockBoard, unlockSeasons, unlockStatus, unlockTitle
 // ============================================================
 // Học sinh / phụ huynh / giáo viên xem
 // ============================================================
-export async function fetchMyRankStatus(): Promise<RankStatus | null> {
-  const { data, error } = await getSupabase().rpc("rank_my_status");
-  if (error) throw error;
-  const status = (data as RankStatus | null) ?? null;
+// Cache 2 phút cho rank_my_status / rank_my_titles (sự cố 23/10/2026: 77k lượt gọi, mỗi lượt ~300 ms,
+// Supabase cạn Disk IO). Nhiều chỗ gọi cùng lúc khi mở trang (hub lớp, trang chủ HS, RankCelebrationWatcher);
+// chỉ chạy RPC thật khi quá hạn hoặc { force: true }. Mọi hành động làm đổi RP/danh hiệu gọi invalidateMyRankCache().
+const RANK_CACHE_MS = 2 * 60 * 1000;
+interface RankCacheEntry<T> { uid: string; at: number; value: Promise<T> }
+let statusCache: RankCacheEntry<RankStatus | null> | null = null;
+let titlesCache: RankCacheEntry<RankTitle[]> | null = null;
+
+export function invalidateMyRankCache() {
+  statusCache = null;
+  titlesCache = null;
+}
+
+async function currentUid(): Promise<string> {
+  const { data } = await getSupabase().auth.getSession();
+  return data.session?.user.id ?? "";
+}
+
+async function cached<T>(
+  get: () => RankCacheEntry<T> | null,
+  set: (e: RankCacheEntry<T> | null) => void,
+  load: () => Promise<T>,
+  force?: boolean,
+): Promise<T> {
+  const uid = await currentUid();
+  const hit = get();
+  if (!force && hit && hit.uid === uid && Date.now() - hit.at < RANK_CACHE_MS) return hit.value;
+  const value = load();
+  const entry = { uid, at: Date.now(), value };
+  set(entry);
+  value.catch(() => {
+    if (get() === entry) set(null);
+  });
+  return value;
+}
+
+export async function fetchMyRankStatus(opts?: { force?: boolean }): Promise<RankStatus | null> {
+  const status = await cached(
+    () => statusCache,
+    (e) => (statusCache = e),
+    async () => {
+      const { data, error } = await getSupabase().rpc("rank_my_status");
+      if (error) throw error;
+      return (data as RankStatus | null) ?? null;
+    },
+    opts?.force,
+  );
   // Admin đang "Xem như học sinh" → mở khoá hết (Thách Đấu, 45 danh hiệu, chuỗi ngày…), xem features/rank/preview.ts.
   return isStudentPreview() ? unlockStatus(status) : status;
 }
@@ -66,10 +109,17 @@ export async function fetchRankStatusOf(studentId: string): Promise<RankStatus |
   return (data as RankStatus | null) ?? null;
 }
 
-export async function fetchMyTitles(): Promise<RankTitle[]> {
-  const { data, error } = await getSupabase().rpc("rank_my_titles");
-  if (error) throw error;
-  const titles = (data as RankTitle[] | null) ?? [];
+export async function fetchMyTitles(opts?: { force?: boolean }): Promise<RankTitle[]> {
+  const titles = await cached(
+    () => titlesCache,
+    (e) => (titlesCache = e),
+    async () => {
+      const { data, error } = await getSupabase().rpc("rank_my_titles");
+      if (error) throw error;
+      return (data as RankTitle[] | null) ?? [];
+    },
+    opts?.force,
+  );
   return isStudentPreview() ? unlockTitles(titles) : titles;
 }
 
@@ -99,6 +149,7 @@ export async function fetchSeasonsOf(studentId: string): Promise<RankSeasonSumma
 export async function setDisplayTitle(code: string | null, level: TitleLevel | null): Promise<void> {
   const { error } = await getSupabase().rpc("rank_set_display_title", { p_code: code, p_level: level });
   if (error) throw error;
+  invalidateMyRankCache();
 }
 
 export async function fetchClassRankGroups(classId: number): Promise<ClassRankGroups | null> {
@@ -153,6 +204,7 @@ export async function submitFixQuiz(attemptId: number, correct: number): Promise
     p_correct: correct,
   });
   if (error) throw new Error(error.message);
+  invalidateMyRankCache();
   const d = data as { pct: number; passed: boolean; rp_delta: number; fixed_topics: number; wrong_topics: number };
   return { pct: d.pct, passed: d.passed, rpDelta: d.rp_delta, fixedTopics: d.fixed_topics, wrongTopics: d.wrong_topics };
 }
@@ -238,6 +290,7 @@ export async function answerGateQuiz(attemptId: number, response: unknown, quest
 export async function finishGateQuiz(attemptId: number): Promise<GateResult> {
   const { data, error } = await getSupabase().rpc("rank_gate_finish", { p_attempt_id: attemptId });
   if (error) throw new Error(error.message);
+  invalidateMyRankCache();
   return mapGateResult(data as RawGateResult);
 }
 

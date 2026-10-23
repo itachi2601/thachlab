@@ -31,7 +31,7 @@ import {
   type OpenExamAttempt,
 } from "@/services/progress";
 import { getSupabase } from "@/services/supabase";
-import { fetchStartRpNotice, type StartRpNotice } from "@/services/rank";
+import { fetchStartRpNotice, invalidateMyRankCache, type StartRpNotice } from "@/services/rank";
 
 // Màn hình sau khi nộp bài (điểm + xem lại từng câu, components/exams/ExamDoneView.tsx) kéo theo
 // ExamResultSummary + ExamReviewPager — học sinh KHÔNG thấy màn này lúc mới vào trang (chỉ hiện
@@ -233,6 +233,7 @@ export default function ExamRunner({
         }
         resultId = res.data.id as number;
       }
+      invalidateMyRankCache();
       savedResultIdRef.current = resultId;
       setSaveState("saved");
       void finishExamAttempt(token, resultId);

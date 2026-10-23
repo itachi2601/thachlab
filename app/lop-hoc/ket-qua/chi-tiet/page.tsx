@@ -31,7 +31,7 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
   useEffect(() => {
     fetchMyExamResultDetail(resultId).then(setDetail).catch(() => setDetail(null));
     if (fromParent) return;
-    fetchMyRankStatus().then(setRankStatus).catch(() => setRankStatus(null));
+    fetchMyRankStatus({ force: true }).then(setRankStatus).catch(() => setRankStatus(null));
     fetchFixableTopics(resultId).then(setTopics).catch(() => setTopics([]));
   }, [resultId, fromParent]);
 

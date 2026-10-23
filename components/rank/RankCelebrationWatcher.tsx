@@ -22,6 +22,7 @@ import { fetchMyRankStatus, fetchMyTitles } from "@/services/rank";
 const RankCelebrationModal = dynamic(() => import("@/components/rank/RankCelebrationModal"), { ssr: false });
 
 const QUIET_PREFIXES = ["/quan-tri", "/kiem-tra/lam", "/phu-huynh", "/tro-giang/ghi"];
+const CHECK_EVERY_MS = 2 * 60 * 1000;
 
 interface Snapshot {
   season: number | null;
@@ -79,11 +80,16 @@ export default function RankCelebrationWatcher() {
   const isStudent = profile?.role === "student";
   const quiet = QUIET_PREFIXES.some((p) => pathname.startsWith(p));
 
-  const check = useCallback(async () => {
+  // Tối đa 1 lần kiểm / 2 phút (sự cố 23/10/2026: mỗi lần tab hiện lại gọi 2 RPC rank ~300 ms, 77k lượt,
+  // Supabase cạn Disk IO). Sự kiện thachlab:rank-check (vừa thi thăng hạng, đổi danh hiệu) bỏ qua giới hạn.
+  const lastCheck = useRef(0);
+  const check = useCallback(async (force = false) => {
     if (!uid || busy.current || pending.current || document.visibilityState === "hidden") return;
+    if (!force && Date.now() - lastCheck.current < CHECK_EVERY_MS) return;
+    lastCheck.current = Date.now();
     busy.current = true;
     try {
-      const [status, titles] = await Promise.all([fetchMyRankStatus(), fetchMyTitles()]);
+      const [status, titles] = await Promise.all([fetchMyRankStatus({ force }), fetchMyTitles({ force })]);
       const now = snapOf(status, titles);
       const before = readSnap(uid);
       if (!before || before.season !== now.season) {
@@ -128,8 +134,9 @@ export default function RankCelebrationWatcher() {
     // Lần kiểm đầu tiên chạy trong callback (sau commit) thay vì đồng bộ trong thân effect.
     const initial = window.setTimeout(() => void check(), 0);
     const onVis = () => void check();
+    const onForce = () => void check(true);
     document.addEventListener("visibilitychange", onVis);
-    window.addEventListener("thachlab:rank-check", onVis);
+    window.addEventListener("thachlab:rank-check", onForce);
     return () => {
       window.clearTimeout(initial);
       document.removeEventListener("visibilitychange", onVis);

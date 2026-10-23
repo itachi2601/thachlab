@@ -93,7 +93,7 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
   const gatePromoted = useRef(false);
 
   const load = useCallback(() => {
-    fetchMyRankStatus()
+    fetchMyRankStatus({ force: true })
       .then((s) => {
         setStatus(s);
         // Hiệu ứng lên hạng nhẹ: so với bậc lần trước xem trang này (lưu trên máy em).
@@ -108,7 +108,7 @@ export default function RankPage({ studentId, studentName, classId = null }: { s
         }
       })
       .catch(() => setStatus(null));
-    fetchMyTitles().then(setTitles).catch(() => setTitles([]));
+    fetchMyTitles({ force: true }).then(setTitles).catch(() => setTitles([]));
     fetchLedgerOf(studentId, null, 60).then(setLedger).catch(() => setLedger([]));
     fetchSeasonsOf(studentId).then(setSeasons).catch(() => setSeasons([]));
   }, [studentId]);

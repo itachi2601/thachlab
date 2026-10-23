@@ -283,3 +283,6 @@ memory `feedback_*`/`user_*`, script chưa commit, `scripts/logs/` (sao lưu DB)
 
 # Sửa hàng loạt câu trong đề/ngân hàng
 **Sửa hàng loạt câu trong đề/ngân hàng**: luôn qua SQL giao dịch (tắt `trg_exams_sync_bank`, sao lưu, đếm dòng trước/sau). Chi tiết: `docs/AGENTS-CHUYEN-DE.md`.
+
+# Script ghi hàng loạt vào DB chỉ chạy sau 22h (sự cố 23/10/2026: Supabase cạn Disk IO budget)
+Script/migration ghi hoặc quét hàng chục nghìn dòng (`question_bank`, `exams.questions`, quét trùng `question_bank_plain_text`, backfill) ăn hết ngân sách IO burst của gói compute, cả ngày sau đó DB chậm cho học sinh. Chỉ chạy sau 22h hoặc trước 6h; chia mẻ ≤2.000 dòng, nghỉ giữa mẻ; ghi giờ chạy vào STATE.md. Tra nhanh khi nghi DB chậm: `pg_stat_statements` sắp theo `shared_blks_read` và `wal_bytes` (file mẫu: memory `project_thachlab_hosting`).
