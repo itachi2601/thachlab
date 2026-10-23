@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { AlertTriangle, ChevronRight } from "lucide-react";
+import FlagLegend from "./FlagLegend";
 import { flagSession } from "@/lib/tro-giang/co-bat-thuong";
 import { formatHours, formatVnd } from "@/lib/tro-giang/format";
 import { getPolicyMonth, getPolicySessions, POLICY_SCORES, type MonthPolicy } from "@/lib/tro-giang/policy";
@@ -131,7 +132,7 @@ export default function PolicyTeamOverview({ month, onOpen }: { month: string; o
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Cần thầy xem</p>
           <p className="mt-1 text-2xl font-bold text-white">{summary.attention} / {rows.length} người</p>
-          <p className={`mt-2 text-xs ${summary.reds ? "text-red-300" : "text-slate-400"}`}>{summary.reds ? `${summary.reds} buổi có cờ đỏ` : "Không có cờ đỏ"}</p>
+          <p className={`mt-2 text-xs ${summary.reds ? "text-red-300" : "text-slate-400"}`}>{summary.reds ? `${summary.reds} buổi cờ đỏ: có thể không diễn ra hoặc ghi sai` : "Không có cờ đỏ"}</p>
         </div>
         <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Chưa đủ để chốt</p>
@@ -139,6 +140,8 @@ export default function PolicyTeamOverview({ month, onOpen }: { month: string; o
           <p className="mt-2 text-xs text-slate-400">Còn buổi chờ duyệt hoặc thiếu đơn giá</p>
         </div>
       </div>
+
+      <FlagLegend />
 
       <ul className="space-y-2">
         {sorted.map((r) => {
@@ -173,12 +176,12 @@ export default function PolicyTeamOverview({ month, onOpen }: { month: string; o
                 )}
                 {r.red > 0 && (
                   <span className="inline-flex items-center gap-1 rounded-full bg-red-500/20 px-2.5 py-1 text-xs font-semibold text-red-300">
-                    <AlertTriangle size={12} /> {r.red} cờ đỏ
+                    <AlertTriangle size={12} /> {r.red} buổi cờ đỏ
                   </span>
                 )}
                 {r.amber > 0 && (
                   <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/15 px-2.5 py-1 text-xs font-semibold text-amber-300">
-                    <AlertTriangle size={12} /> {r.amber} cờ vàng
+                    <AlertTriangle size={12} /> {r.amber} buổi cờ vàng
                   </span>
                 )}
                 {r.red === 0 && r.amber === 0 && r.sessionCount > 0 && (

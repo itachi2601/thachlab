@@ -7,7 +7,8 @@ import { TA_PENDING_CHANGED } from "./TroGiangAdminNav";
 import { SESSION_TYPE_META } from "@/lib/tro-giang/constants";
 import { formatHours } from "@/lib/tro-giang/format";
 import { missingParts } from "@/lib/tro-giang/thieu";
-import { flagSession, type SessionFlag } from "@/lib/tro-giang/co-bat-thuong";
+import FlagLegend from "./FlagLegend";
+import { FLAG_INFO, flagSession, type SessionFlag } from "@/lib/tro-giang/co-bat-thuong";
 import {
   approveSessions,
   fetchFlagContext,
@@ -136,6 +137,7 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
 
   return (
     <div className="space-y-3">
+      <FlagLegend />
       <div className="flex flex-wrap items-center gap-3">
         <label className="flex items-center gap-2 text-sm text-slate-300">
           <input
@@ -223,6 +225,9 @@ export default function AdminSessionQueue({ onChanged }: { onChanged?: () => voi
                     {f.text}
                   </p>
                 ))}
+                {sFlags.length > 0 && (
+                  <p className="mt-1.5 text-xs text-slate-400">Nên làm: {sFlags.map((f) => FLAG_INFO[f.code]?.todo).filter(Boolean)[0]}</p>
+                )}
                 {anomaly && (
                   <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-2.5 py-1 text-xs font-semibold text-amber-300">
                     <AlertTriangle size={12} />

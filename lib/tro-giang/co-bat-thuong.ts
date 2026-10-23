@@ -103,3 +103,58 @@ export function flagSession(
 
   return flags.sort((x, y) => (x.level === y.level ? 0 : x.level === "red" ? -1 : 1));
 }
+
+export const LEVEL_INFO: Record<FlagLevel, { label: string; meaning: string }> = {
+  red: {
+    label: "Cờ đỏ",
+    meaning: "Dấu hiệu buổi này có thể không diễn ra hoặc ghi sai. Nên xác minh trước khi duyệt hoặc chốt tháng.",
+  },
+  amber: {
+    label: "Cờ vàng",
+    meaning: "Bất thường nhẹ hoặc quá đều đặn. Chưa kết luận gì, chỉ cần liếc qua; nhiều cờ vàng lặp lại ở cùng một người thì hỏi lại người đó.",
+  },
+};
+
+/** Giải thích bằng lời thường: cờ nghĩa là gì và thầy nên làm gì. */
+export const FLAG_INFO: Record<string, { title: string; why: string; todo: string }> = {
+  overlap: {
+    title: "Trùng giờ",
+    why: "Hai buổi của cùng một người chồng lên nhau trong một ngày, nên không thể cùng diễn ra thật.",
+    todo: "Mở cả hai buổi, hỏi lại giờ đúng rồi sửa; buổi nào không có thật thì chuyển sang Từ chối.",
+  },
+  no_exit_evidence: {
+    title: "Phụ đạo chưa có bằng chứng",
+    why: "Hôm đó không em nào làm đạt bài cuối buổi trong hệ thống, trong khi điểm phụ đạo dựa vào bài này.",
+    todo: "Hỏi trợ giảng đã mở bài cuối buổi chưa hoặc hỏi lại em; nếu buổi có thật mà quên mở bài thì ghi chú rồi cho duyệt, không thì từ chối.",
+  },
+  no_topics: {
+    title: "Chưa gắn chủ đề phụ đạo",
+    why: "Buổi chưa ghi chủ đề cho em nào nên hệ thống không đối chiếu được với bài cuối buổi.",
+    todo: "Nhắc trợ giảng gắn chủ đề cho lần sau; buổi này duyệt theo ghi chú trong phiếu.",
+  },
+  hours_mismatch: {
+    title: "Giờ ghi lệch giờ vào/ra",
+    why: "Số giờ tính tiền khác khoảng giờ bắt đầu đến kết thúc đã ghi.",
+    todo: "So lại hai con số, sửa cho khớp. Tiền tính theo số giờ nên đây là chỗ dễ sai nhất.",
+  },
+  late_log: {
+    title: "Ghi muộn",
+    why: "Phiếu được ghi hơn 5 ngày sau buổi, dễ nhớ nhầm giờ hoặc số liệu.",
+    todo: "Nếu chỉ một lần thì bỏ qua; nếu lặp lại thì nhắc ghi trong ngày.",
+  },
+  same_slot: {
+    title: "Khung giờ lặp y hệt",
+    why: "Nhiều buổi gần đây có đúng cùng giờ vào và ra, có thể là lịch cố định, cũng có thể là điền sẵn.",
+    todo: "Đối chiếu với lịch lớp. Khớp lịch thì bỏ qua.",
+  },
+  all_ticks: {
+    title: "Tick đủ mọi mục nhiều buổi liền",
+    why: "Mọi ô trong phiếu đều được tick ở nhiều buổi liên tiếp, nên khó phân biệt làm thật với tick cho xong.",
+    todo: "Hỏi miệng một việc cụ thể (hôm đó em nào làm sai bài gì), hoặc dự một buổi.",
+  },
+  touch_streak: {
+    title: "Tiếp xúc luôn đạt mục tiêu",
+    why: "Số lượt tiếp xúc đạt từ 12 ở nhiều buổi liên tiếp. Có thể giỏi thật, cũng có thể đếm rộng tay.",
+    todo: "Hỏi tên vài em đã tiếp xúc hôm đó; trả lời được thì yên tâm.",
+  },
+};
