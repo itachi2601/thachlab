@@ -2,6 +2,7 @@
 # - Fast-forward được → push thẳng, main = nhánh.
 # - Không fast-forward nhưng merge sạch → tạo merge commit rồi push.
 # - Đụng nhau → job đỏ + cảnh báo, thầy merge tay trên Mac.
+# Chỉ gộp khi tsc + eslint xanh (job kiem); đỏ thì nhánh ở lại, main không bị đụng.
 # Deploy không gắn với main (nhánh deploy riêng) nên gộp tự động không ảnh hưởng web.
 name: Gộp nhánh claude vào main
 
@@ -17,7 +18,22 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  kiem:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Type-check
+        run: npx tsc --noEmit
+      - name: ESLint
+        run: npx eslint --max-warnings 20 app components features hooks lib services types
+
   gop:
+    needs: kiem
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
