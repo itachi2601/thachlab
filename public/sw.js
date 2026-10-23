@@ -10,7 +10,7 @@
  *  - push + notificationclick: nhắc luyện 1 lần/ngày (M4) và thông báo trong web (kind "notification", rung máy,
  *    báo cho tab đang mở qua postMessage để hiện popup ngay); bấm vào mở đúng trang và focus tab có sẵn.
  * Đổi VERSION để dọn cache cũ. */
-const VERSION = "v5";
+const VERSION = "v6"; // v6: P0 #1 — client mới lấy đề lược đáp án qua RPC (bản cũ đọc exams.questions sẽ lỗi sau khi thu quyền cột)
 const SHELL_CACHE = "thachlab-shell-" + VERSION;
 const RUNTIME_CACHE = "thachlab-runtime-" + VERSION;
 const MAX_RUNTIME_ENTRIES = 120;
