@@ -332,7 +332,7 @@ export default function ReviewHome() {
   );
 }
 
-const KIND_TEXT: Record<string, string> = { bai_tap_ve_nha: "Bài tập về nhà", kiem_tra: "Kiểm tra", luyen_tap: "Luyện tập" };
+const KIND_TEXT: Record<string, string> = { bai_tap_ve_nha: "Bài tập về nhà", kiem_tra: "Kiểm tra" };
 
 function ExamPicker({
   heading,

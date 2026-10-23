@@ -153,9 +153,9 @@ export async function fetchPickerChapters(classId: number): Promise<PickerChapte
  */
 export const fetchChapterQuickQuizzes = (chapterId: number) => fetchChapterExams(chapterId, ["ly_thuyet"]);
 
-/** Đề bài tập của một chương (ôn các dạng): đề gắn vào mục kiểm tra / bài tập về nhà / luyện tập của từng bài. */
+/** Đề bài tập của một chương (ôn các dạng): đề gắn vào mục kiểm tra / bài tập về nhà của từng bài (không lấy Luyện tập: đề cả chương hàng trăm câu, làm qua PracticeSession không ghi exam_results). */
 export const fetchChapterExerciseExams = (chapterId: number) =>
-  fetchChapterExams(chapterId, ["bai_tap_ve_nha", "kiem_tra", "luyen_tap"]);
+  fetchChapterExams(chapterId, ["bai_tap_ve_nha", "kiem_tra"]);
 
 async function fetchChapterExams(chapterId: number, kinds: string[]): Promise<PickerExam[]> {
   const supabase = getSupabase();
