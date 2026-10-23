@@ -188,7 +188,14 @@ export function isFullExam(e: ExamForTaking): e is ExamForTaking & { full: true;
 }
 
 /** Gói trả về của submit_exam_attempt: điểm do server chấm + đề ĐỦ đáp án/lời giải để xem lại. */
-export interface ExamSubmitResult {
+export type ExamSubmitResult = ExamSubmitBase &
+  (
+    | { answers_revealed: true; questions: ExamQuestion[] }
+    // Đề đánh giá chưa đủ 3 lượt nộp / chưa đạt: câu hỏi vẫn có nhưng đã lược đáp án + lời giải; per_question (đúng/sai) luôn có.
+    | { answers_revealed: false; questions: ExamQuestionPublic[] }
+  );
+
+interface ExamSubmitBase {
   result_id: number;
   exam_id: number;
   score10: number;
@@ -199,7 +206,6 @@ export interface ExamSubmitResult {
   earned: number;
   max: number;
   per_question: { question_index?: number; earned: number; max: number; is_correct: boolean }[];
-  questions: ExamQuestion[];
 }
 
 /** Gói trả về của check_practice_answer: chấm đúng 1 câu + câu đầy đủ (đáp án, lời giải, distractorNotes). */

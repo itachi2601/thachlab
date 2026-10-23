@@ -418,7 +418,8 @@ export async function fetchMyLatestMistakes(userId: string): Promise<MistakeRevi
   const mistakes: MistakeReviewItem[] = [];
   for (const [examId, detail] of latest) {
     const exam = reviews.get(examId);
-    if (!exam?.questions || !detail?.responses) continue;
+    // Đề đánh giá chưa mở đáp án (chưa đủ 3 lượt/chưa đạt): không có đáp án để ôn → bỏ qua đề này.
+    if (!exam?.questions || !exam.answers_revealed || !detail?.responses) continue;
     exam.questions.forEach((question, index) => {
       const response = detail.responses?.[index] ?? (question.type === "true_false" ? [null, null, null, null] : question.type === "short_answer" || question.type === "essay" ? "" : null);
       const grade = gradeQuestion(question, response);

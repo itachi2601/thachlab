@@ -70,6 +70,11 @@ function ExamDoneView(props: ComponentProps<typeof ExamDoneViewLazy>) {
   );
 }
 
+const ExamDoneLocked = dynamic(() => import("@/components/exams/ExamDoneLocked"), {
+  ssr: false,
+  loading: () => <p className="text-center text-muted">Đang tính điểm…</p>,
+});
+
 type Phase = "intro" | "running" | "done";
 
 type ViolationType = "tab_switch" | "fullscreen_exit";
@@ -778,6 +783,20 @@ export default function ExamRunner({
           <p className="text-base text-ink">Đang nộp bài và chấm điểm…</p>
         )}
       </div>
+    );
+  }
+
+  if (!result.answers_revealed) {
+    return (
+      <ExamDoneLocked
+        title={exam.title}
+        questions={result.questions}
+        responses={responses}
+        perQuestion={result.per_question}
+        score10={result.score10}
+        correctCount={result.correct_count}
+        usedSeconds={usedSeconds}
+      />
     );
   }
 

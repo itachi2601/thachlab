@@ -52,15 +52,22 @@ export async function submitExamAttempt(args: {
 }
 
 /** Đề ĐỦ đáp án + lời giải của các đề em đã nộp (hoặc staff được phép). Đề không có quyền thì vắng mặt. */
-export async function fetchExamReviews(
-  ids: number[],
-): Promise<Map<number, { id: number; title: string; pass_score: number | null; questions: ExamQuestion[] }>> {
-  const out = new Map<number, { id: number; title: string; pass_score: number | null; questions: ExamQuestion[] }>();
+export interface ExamReviewRow {
+  id: number;
+  title: string;
+  pass_score: number | null;
+  /** false: đề đánh giá chưa đủ 3 lượt nộp/chưa đạt — questions đã lược đáp án, đừng chấm lại ở máy. */
+  answers_revealed: boolean;
+  questions: ExamQuestion[];
+}
+
+export async function fetchExamReviews(ids: number[]): Promise<Map<number, ExamReviewRow>> {
+  const out = new Map<number, ExamReviewRow>();
   const uniq = [...new Set(ids)];
   for (let i = 0; i < uniq.length; i += 200) {
     const { data, error } = await getSupabase().rpc("get_exam_review", { p_exam_ids: uniq.slice(i, i + 200) });
     if (error) throw error;
-    for (const row of (data ?? []) as unknown as { id: number; title: string; pass_score: number | null; questions: ExamQuestion[] }[]) {
+    for (const row of (data ?? []) as unknown as ExamReviewRow[]) {
       out.set(row.id, row);
     }
   }
