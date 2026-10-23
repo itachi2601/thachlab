@@ -35,8 +35,21 @@
 <li>Mốc thế năng đặt tại VTCB. Ở đó $x=0$ và $E_t=0$.</li>
 <li>$E_t$ chỉ phụ thuộc li độ, không phụ thuộc vận tốc.</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Thế năng</p>
 <p>$$E_t=\dfrac{1}{2}kx^2=\dfrac{1}{2}m\omega^2 x^2$$</p>
 <p>$$E_t=\dfrac{1}{2}m\omega^2 A^2\cos^2(\omega t+\varphi)$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$E_t$</span><span>thế năng (J)</span></li>
+<li><span class="tl-sym">$k$</span><span>độ cứng lò xo (N/m)</span></li>
+<li><span class="tl-sym">$x$</span><span>li độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng vật (kg)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$\varphi$</span><span>pha ban đầu (rad)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
+</ul>
+</div>
 <ul>
 <li>$E_{t,\max}=\dfrac{1}{2}kA^2=\dfrac{1}{2}m\omega^2 A^2$ tại biên $x=\pm A$.</li>
 <li>$E_{t,\min}=0$ tại VTCB.</li>
@@ -52,11 +65,31 @@
 <ul>
 <li>Động năng phụ thuộc vận tốc: vật càng nhanh, $E_d$ càng lớn.</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Động năng</p>
 <p>$$E_d=\dfrac{1}{2}mv^2$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$E_d$</span><span>động năng (J)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng vật (kg)</span></li>
+<li><span class="tl-sym">$v$</span><span>vận tốc (cm/s hoặc m/s)</span></li>
+</ul>
+</div>
 <p>Vì $v=-\omega A\sin(\omega t+\varphi)$, bình phương thì mất dấu trừ:</p>
 <p>$$E_d=\dfrac{1}{2}m\omega^2 A^2\sin^2(\omega t+\varphi)$$</p>
 <p>Dùng $\sin^2=1-\cos^2$ và $x=A\cos(\omega t+\varphi)$:</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Động năng theo li độ</p>
 <p>$$E_d=\dfrac{1}{2}m\omega^2(A^2-x^2)$$</p>
+<p>$$E_d=\dfrac{1}{2}k(A^2-x^2)$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$E_d$</span><span>động năng (J)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng vật (kg)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$x$</span><span>li độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$k$</span><span>độ cứng lò xo (N/m)</span></li>
+</ul>
+</div>
 <ul>
 <li>$E_{d,\max}=\dfrac{1}{2}m v_{\max}^2=\dfrac{1}{2}m\omega^2 A^2$ tại VTCB ($x=0$, $v=\pm v_{\max}$ với $v_{\max}=\omega A$).</li>
 <li>$E_{d,\min}=0$ tại hai biên ($v=0$).</li>
@@ -106,8 +139,21 @@
 <h4>4. Cơ năng — tổng không đổi</h4>
 <p><strong>🔑 Tổng không đổi · Tỉ lệ $A^2$</strong></p>
 <p>Bỏ qua ma sát, cơ năng là hằng số:</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Cơ năng</p>
+<p class="tl-fx-cond">Bỏ qua ma sát, cơ năng không đổi</p>
 <p>$$W=E_t+E_d=\dfrac{1}{2}kA^2$$</p>
 <p>$$W=\dfrac{1}{2}m\omega^2 A^2=E_{t,\max}=E_{d,\max}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$W$</span><span>cơ năng (J)</span></li>
+<li><span class="tl-sym">$E_t$</span><span>thế năng (J)</span></li>
+<li><span class="tl-sym">$E_d$</span><span>động năng (J)</span></li>
+<li><span class="tl-sym">$k$</span><span>độ cứng lò xo (N/m)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng vật (kg)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+</ul>
+</div>
 <ul>
 <li>$W$ tỉ lệ với <strong>bình phương biên độ</strong>.</li>
 <li>Con lắc lò xo: $W$ phụ thuộc $k$ và $A$; giữ nguyên $k$ và $A$ thì <strong>không phụ thuộc $m$</strong>.</li>
@@ -127,8 +173,21 @@
 <li><strong>$E_t$ max:</strong> $x=\pm A$, $v=0$, 2 lần.</li>
 </ul>
 <p>Tổng quát, khi $E_d=nE_t$ với $n\gt 0$:</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Chỗ động năng gấp n lần thế năng</p>
+<p class="tl-fx-cond">Khi $E_d=nE_t$ với $n\gt 0$</p>
 <p>$$x=\pm\dfrac{A}{\sqrt{n+1}}$$</p>
 <p>$$v=\pm\dfrac{v_{\max}}{\sqrt{1/n+1}}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$E_d$</span><span>động năng (J)</span></li>
+<li><span class="tl-sym">$E_t$</span><span>thế năng (J)</span></li>
+<li><span class="tl-sym">$n$</span><span>tỉ số động năng : thế năng (không đơn vị)</span></li>
+<li><span class="tl-sym">$x$</span><span>li độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$v$</span><span>vận tốc (cm/s hoặc m/s)</span></li>
+<li><span class="tl-sym">$v_{\max}$</span><span>tốc độ cực đại (cm/s hoặc m/s)</span></li>
+</ul>
+</div>
 <details class="tl-details tl-more">
 <summary>Công thức tổng quát ra từ đâu?</summary>
 <p>$E_t=\dfrac{1}{2}kx^2$ và $E_d=\dfrac{1}{2}k(A^2-x^2)$. Đặt $E_d=nE_t$ thì $A^2-x^2=nx^2$, nên $x^2=A^2/(n+1)$. Vì $v^2=\omega^2(A^2-x^2)$ và $v_{\max}^2=\omega^2 A^2$, ta được $|v|=v_{\max}/\sqrt{1/n+1}$.</p>
@@ -204,6 +263,7 @@
 
 <h3>III. Ba cái bẫy hay sập</h3>
 
+<div class="tl-trap">
 <h4>1. Tưởng cơ năng đổi theo thời gian, hoặc phụ thuộc khối lượng</h4>
 <p><strong>🔑 $W$ phẳng · $m$ bị triệt</strong></p>
 <table class="tl-table">
@@ -213,6 +273,7 @@
 <tr><td>$\dfrac{1}{2}m\omega^2 A^2$ nên $W$ phụ thuộc $m$</td><td>$\omega^2=k/m$ nên $W=\dfrac{1}{2}kA^2$, không còn $m$</td></tr>
 </tbody>
 </table>
+</div>
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra</p>
 <p>Giữ $k$ và $A$, chỉ đổi vật nặng (đổi $m$). Cơ năng $W$ của con lắc lò xo, bỏ ma sát, thì sao?</p>
@@ -226,6 +287,7 @@
 </div>
 </div>
 
+<div class="tl-trap">
 <h4>2. Tưởng $E_d$ và $E_t$ cùng chu kì với li độ</h4>
 <p><strong>🔑 Năng lượng nhanh gấp đôi</strong></p>
 <table class="tl-table">
@@ -235,6 +297,7 @@
 <tr><td>Tần số góc $\omega$</td><td>Tần số góc $2\omega$, ngược pha nhau</td></tr>
 </tbody>
 </table>
+</div>
 <p>Chu kì biến thiên của $E_t$ và $E_d$ là bao nhiêu?</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl24-c5" value="chac"> Chắc</label> <label><input type="radio" name="tl24-c5" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
@@ -246,6 +309,7 @@
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A quên rằng mỗi dao động có hai lần $E_t$ cực đại. C lấy số lần $E_d=E_t$ làm chu kì. D đi ngược: năng lượng đổi nhanh hơn li độ, không chậm hơn. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
+<div class="tl-trap">
 <h4>3. Lẫn chỗ $E_d=E_t$ với $x=A/2$</h4>
 <p><strong>🔑 Bằng nhau thì chia căn hai</strong></p>
 <table class="tl-table">
@@ -255,6 +319,7 @@
 <tr><td>$x=\pm A/2$ là chỗ năng lượng chia đôi</td><td>$x=\pm A/2$ thì $E_t=W/4$, $E_d=3W/4$</td></tr>
 </tbody>
 </table>
+</div>
 <p>Động năng bằng thế năng khi li độ bằng bao nhiêu?</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl24-c6" value="chac"> Chắc</label> <label><input type="radio" name="tl24-c6" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">

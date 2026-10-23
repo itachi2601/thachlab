@@ -38,9 +38,22 @@
 
 <ul>
 <li>Tần số $f$ (Hz): số dao động toàn phần trong $1\ \text{s}$. Chu kì $T$ (s): thời gian một dao động toàn phần.</li>
-<li>Liên hệ: $f = \dfrac{1}{T}$, và $f = \dfrac{N}{t}$ khi đếm $N$ dao động trong thời gian $t$.</li>
+<li>Liên hệ giữa $f$, $T$ và cách đếm: công thức dưới.</li>
 <li>Âm đơn: một tần số duy nhất, đồ thị theo thời gian là hình sin.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Tần số và chu kì</p>
+<p>$$f = \dfrac{1}{T}$$</p>
+<p class="tl-fx-cond">Khi đếm $N$ dao động trong thời gian $t$</p>
+<p>$$f = \dfrac{N}{t}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$f$</span><span>tần số (Hz)</span></li>
+<li><span class="tl-sym">$T$</span><span>chu kì (s)</span></li>
+<li><span class="tl-sym">$N$</span><span>số dao động toàn phần đếm được (không đơn vị)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian đếm (s)</span></li>
+</ul>
+</div>
 
 <p>Ví dụ: âm thoa $440\ \text{Hz}$ có chu kì $T = \dfrac{1}{440} \approx 2{,}27\ \text{ms}$.</p>
 
@@ -84,8 +97,18 @@
 
 <p>Hai điểm cùng pha liên tiếp trên màn (như hai đỉnh liên tiếp, hoặc hai lần liên tiếp sóng cắt trục đi lên) cách nhau đúng một chu kì. Đo $N$ chu kì liên tiếp chiếm $L$ ô, độ chia thời gian là $k$ (ms/ô):</p>
 
-<p>$$T = \dfrac{L\,k}{N}$$
-$$f = \dfrac{1}{T}$$</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Tần số từ màn dao động kí</p>
+<p>$$T = \dfrac{L\,k}{N}$$</p>
+<p>$$f = \dfrac{1}{T}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$T$</span><span>chu kì (ms nếu $k$ tính bằng ms/ô; đổi ra s trước khi tính $f$)</span></li>
+<li><span class="tl-sym">$L$</span><span>bề rộng $N$ chu kì liên tiếp trên màn (ô)</span></li>
+<li><span class="tl-sym">$k$</span><span>độ chia thời gian TIME/DIV (ms/ô)</span></li>
+<li><span class="tl-sym">$N$</span><span>số chu kì liên tiếp đo (không đơn vị)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số (Hz)</span></li>
+</ul>
+</div>
 
 <ul>
 <li>$T$ ra ms khi $k$ tính bằng ms/ô.</li>
@@ -145,6 +168,27 @@ $$f = \dfrac{1}{T}$$</p>
 </div>
 
 <p>Lần 1: $f = \dfrac{4}{9{,}1 \cdot 10^{-3}\ \text{s}} \approx 439{,}6\ \text{Hz}$.</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Xử lý nhiều lần đo</p>
+<p class="tl-fx-cond">Trung bình</p>
+<p>$$\bar f = \dfrac{\sum f_i}{n}$$</p>
+<p class="tl-fx-cond">Sai số từng lần</p>
+<p>$$\Delta f_i = |f_i - \bar f|$$</p>
+<p class="tl-fx-cond">Sai số tổng</p>
+<p>$$\Delta f = \Delta\bar f + \Delta f_{dc}$$</p>
+<p class="tl-fx-cond">Sai số tỉ đối</p>
+<p>$$\delta = \dfrac{\Delta f}{\bar f}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$f_i$</span><span>tần số của lần đo thứ $i$ (Hz)</span></li>
+<li><span class="tl-sym">$n$</span><span>số lần đo (không đơn vị)</span></li>
+<li><span class="tl-sym">$\bar f$</span><span>tần số trung bình (Hz)</span></li>
+<li><span class="tl-sym">$\Delta\bar f$</span><span>trung bình các $\Delta f_i$, sai số ngẫu nhiên (Hz)</span></li>
+<li><span class="tl-sym">$\Delta f_{dc}$</span><span>sai số dụng cụ (Hz)</span></li>
+<li><span class="tl-sym">$\delta$</span><span>sai số tỉ đối (nhân 100 để ra %)</span></li>
+</ul>
+<p class="tl-fx-note">Ghi kết quả $f = \bar f \pm \Delta f$ với $\Delta f$ là sai số tổng.</p>
+</div>
 
 <ul>
 <li>Trung bình: $\bar f = \dfrac{\sum f_i}{5} \approx 440{,}6\ \text{Hz}$.</li>

@@ -37,15 +37,25 @@
 
 <p>Bài 24 (Nguồn điện) đã có định luật Ohm toàn mạch. Mạch ngoài gồm điện trở $R_0$ đã biết nối tiếp biến trở $R_x$:</p>
 
-<p>$$I = \dfrac{\mathcal{E}}{R_0 + R_x + r}$$
-$$\Rightarrow\; \mathcal{E} = I(R_0 + R_x) + Ir$$
-$$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Đường thẳng $U$–$I$ của pin</p>
+<p class="tl-fx-cond">Định luật Ohm toàn mạch</p>
+<p>$$I = \dfrac{\mathcal{E}}{R_0 + R_x + r}$$</p>
+<p class="tl-fx-cond">Biến đổi</p>
+<p>$$\mathcal{E} = I(R_0 + R_x) + Ir$$</p>
+<p class="tl-fx-cond">Hiệu điện thế hai cực pin</p>
+<p>$$U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$U$</span><span>hiệu điện thế hai cực pin, cũng là hai đầu mạch ngoài (V), vôn kế đọc</span></li>
+<li><span class="tl-sym">$I$</span><span>dòng mạch (A), ampe kế đọc</span></li>
+<li><span class="tl-sym">$\mathcal{E}$</span><span>suất điện động của pin (V)</span></li>
+<li><span class="tl-sym">$r$</span><span>điện trở trong của pin (Ω)</span></li>
+<li><span class="tl-sym">$R_0$</span><span>điện trở đã biết (Ω)</span></li>
+<li><span class="tl-sym">$R_x$</span><span>biến trở (Ω)</span></li>
+</ul>
+</div>
 
 <ul>
-<li>$U$: hai cực pin, cũng là hai đầu mạch ngoài (V), vôn kế đọc.</li>
-<li>$I$: dòng mạch (A), ampe kế đọc.</li>
-<li>$\mathcal{E}$: suất điện động của pin (V).</li>
-<li>$r$: điện trở trong của pin ($\Omega$).</li>
 <li>Vẽ $U$ theo $I$: <strong>đường thẳng</strong> dốc xuống.</li>
 <li>Cắt trục $U$ ($I = 0$, mạch hở) tại $\mathcal{E}$.</li>
 <li>Hệ số góc $-r$: thêm $1$ A thì $U$ tụt thêm $r$ vôn.</li>
@@ -53,7 +63,15 @@ $$\Rightarrow\; U = I(R_0 + R_x) = \mathcal{E} - Ir$$</p>
 
 <p>Hai điểm trên đường: $U_1 = \mathcal{E} - I_1 r$ và $U_2 = \mathcal{E} - I_2 r$. Trừ vế: $U_1 - U_2 = (I_2 - I_1)\,r$, nên:</p>
 
+<div class="tl-fx">
+<p class="tl-fx-name">Điện trở trong từ hai điểm trên đường thẳng</p>
 <p>$$r = \dfrac{U_1 - U_2}{I_2 - I_1}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$r$</span><span>điện trở trong của pin (Ω)</span></li>
+<li><span class="tl-sym">$U_1,\ U_2$</span><span>hiệu điện thế hai cực ở hai điểm trên đường (V)</span></li>
+<li><span class="tl-sym">$I_1,\ I_2$</span><span>dòng điện tương ứng (A)</span></li>
+</ul>
+</div>
 
 <p>Mẹo nhớ: <strong>"Vôn tụt chia ampe tăng"</strong>.</p>
 

@@ -6,7 +6,7 @@ from svg_lib import *
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-PHUT = 17   # = làm tròn LÊN số phút do lint_do_dai.py đo trên theory.html (script kiểm ở cuối)
+PHUT = 19   # = làm tròn LÊN số phút do lint_do_dai.py đo trên theory.html (script kiểm ở cuối)
 
 subprocess.run([sys.executable, str(HERE / "build_thi_nghiem.py")], check=True, cwd=HERE)
 

@@ -132,24 +132,39 @@
 
 <p><strong>🔑 Hai đầu cố định: nguyên lần λ/2 · Một đầu tự do: lẻ lần λ/4</strong></p>
 
-<div class="table-scroll">
-<table class="tl-table">
-<thead>
-<tr><th>Trường hợp</th><th>Điều kiện · số nút · số bụng</th></tr>
-</thead>
-<tbody>
-<tr><td>Hai đầu cố định</td><td>$l=k\dfrac{\lambda}{2}$ với $k=1,2,3,\dots$ · số bụng $=k$ · số nút $=k+1$ · tần số $f=k\dfrac{v}{2l}$, nhỏ nhất $f_0=\dfrac{v}{2l}$</td></tr>
-<tr><td>Một đầu cố định, một đầu tự do</td><td>$l=(2k+1)\dfrac{\lambda}{4}$ với $k=0,1,2,\dots$ · số bụng = số nút $=k+1$ · tần số $f=(2k+1)\dfrac{v}{4l}$, nhỏ nhất $f_0=\dfrac{v}{4l}$</td></tr>
-</tbody>
-</table>
+<div class="tl-fx">
+<p class="tl-fx-name">Hai đầu cố định</p>
+<p>$$l=k\dfrac{\lambda}{2}\quad(k=1,2,3,\dots)$$</p>
+<p class="tl-fx-cond">Tần số có sóng dừng</p>
+<p>$$f=k\dfrac{v}{2l}$$</p>
+<p class="tl-fx-cond">Tần số nhỏ nhất</p>
+<p>$$f_0=\dfrac{v}{2l}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$l$</span><span>chiều dài dây (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+<li><span class="tl-sym">$v$</span><span>tốc độ truyền sóng (m/s)</span></li>
+<li><span class="tl-sym">$k$</span><span>số bó sóng, từ $1$ (không đơn vị)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số (Hz)</span></li>
+</ul>
+<p class="tl-fx-note">Số bụng $=k$, số nút $=k+1$.</p>
 </div>
 
-<p>Ký hiệu:<br>
-$l$: chiều dài dây<br>
-$\lambda$: bước sóng<br>
-$v$: tốc độ truyền sóng<br>
-$k$ ở dòng hai đầu cố định: số bó, từ $1$<br>
-$k$ ở dòng một đầu tự do: số bó nguyên, từ $0$ (số bụng là $k+1$)</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Một đầu cố định, một đầu tự do</p>
+<p>$$l=(2k+1)\dfrac{\lambda}{4}\quad(k=0,1,2,\dots)$$</p>
+<p class="tl-fx-cond">Tần số có sóng dừng</p>
+<p>$$f=(2k+1)\dfrac{v}{4l}$$</p>
+<p class="tl-fx-cond">Tần số nhỏ nhất</p>
+<p>$$f_0=\dfrac{v}{4l}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$l$</span><span>chiều dài dây (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+<li><span class="tl-sym">$v$</span><span>tốc độ truyền sóng (m/s)</span></li>
+<li><span class="tl-sym">$k$</span><span>số bó nguyên, từ $0$ (không đơn vị)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số (Hz)</span></li>
+</ul>
+<p class="tl-fx-note">Số bụng = số nút $=k+1$.</p>
+</div>
 
 <!--FIG3-->
 
@@ -172,6 +187,19 @@ $k$ ở dòng một đầu tự do: số bó nguyên, từ $0$ (số bụng là 
 <h4>4. Đo bước sóng và tốc độ truyền sóng từ sóng dừng</h4>
 
 <p><strong>🔑 Đếm bó → ra λ · Nhân với f → ra v</strong></p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Đo bước sóng và tốc độ từ sóng dừng (hai đầu cố định)</p>
+<p>$$\lambda=\dfrac{2l}{k}$$</p>
+<p>$$v=\lambda f$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+<li><span class="tl-sym">$l$</span><span>chiều dài dây (m)</span></li>
+<li><span class="tl-sym">$k$</span><span>số bó đếm được (không đơn vị)</span></li>
+<li><span class="tl-sym">$v$</span><span>tốc độ truyền sóng (m/s)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số máy rung (Hz)</span></li>
+</ul>
+</div>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-songdung-02">
 <p class="tl-label">🔬 Thí nghiệm đo: dây đàn hồi hai đầu cố định, $l=0{,}80\ \text{m}$</p>
@@ -248,10 +276,21 @@ $25\ \text{Hz}=4\times6{,}25\ \text{Hz}$ là số chẵn lần nên mất sóng 
 <p><strong>🔑 Xa nút dần → mạnh dần · Bụng $2A$ · Bề rộng $4A$</strong></p>
 
 <ul>
-<li>Gọi $A$ là biên độ sóng tới (bằng biên độ sóng phản xạ). Điểm cách nút gần nhất đoạn $x$ có biên độ $A_M=2A\left|\sin\left(2\pi\dfrac{x}{\lambda}\right)\right|$: bằng $0$ tại nút, bằng $2A$ tại bụng.</li>
+<li>Gọi $A$ là biên độ sóng tới (bằng biên độ sóng phản xạ). Điểm cách nút gần nhất đoạn $x$ có biên độ $A_M$ như công thức dưới: bằng $0$ tại nút, bằng $2A$ tại bụng.</li>
 <li><strong>Bề rộng</strong> vùng dao động của bụng (từ vị trí cao nhất $+2A$ xuống vị trí thấp nhất $-2A$) bằng $4A$ — đừng lẫn với biên độ $2A$.</li>
 <li>Các điểm trong <strong>cùng một bó</strong> dao động <strong>cùng pha</strong>; hai bó kề nhau dao động <strong>ngược pha</strong>.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Biên độ của điểm cách nút gần nhất đoạn $x$</p>
+<p>$$A_M=2A\left|\sin\left(2\pi\dfrac{x}{\lambda}\right)\right|$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$A_M$</span><span>biên độ dao động của điểm đang xét (cùng đơn vị với $A$, ví dụ cm)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ sóng tới (cm)</span></li>
+<li><span class="tl-sym">$x$</span><span>khoảng cách từ điểm đó tới nút gần nhất (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+</ul>
+</div>
 
 <details class="tl-details tl-more">
 <summary>🧮 Bấm xem: thay số vào công thức biên độ</summary>

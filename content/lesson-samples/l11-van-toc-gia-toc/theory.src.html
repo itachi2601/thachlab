@@ -42,9 +42,20 @@
 
 <p>Nếu $x=A\cos(\omega t+\varphi)$ thì $v$ là đạo hàm của $x$ theo thời gian:</p>
 
+<div class="tl-fx">
+<p class="tl-fx-name">Vận tốc</p>
 <p>$$v=-A\omega\sin(\omega t+\varphi)$$</p>
-
 <p>$$v=A\omega\cos(\omega t+\varphi+\pi/2)$$</p>
+<p>$$v_{\max}=A\omega$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>vận tốc (cm/s hoặc m/s)</span></li>
+<li><span class="tl-sym">$v_{\max}$</span><span>tốc độ cực đại (cm/s hoặc m/s)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+<li><span class="tl-sym">$\varphi$</span><span>pha ban đầu (rad)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
+</ul>
+</div>
 
 <p>Đơn vị cùng loại với $x$: cm thì $v$ là cm/s.</p>
 
@@ -123,11 +134,22 @@
 
 <p>$a$ là đạo hàm của $v$:</p>
 
+<div class="tl-fx">
+<p class="tl-fx-name">Gia tốc</p>
 <p>$$a=-A\omega^{2}\cos(\omega t+\varphi)$$</p>
-
 <p>$$a=A\omega^{2}\cos(\omega t+\varphi+\pi)$$</p>
-
 <p>$$a=-\omega^{2}x$$</p>
+<p>$$|a|_{\max}=A\omega^{2}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$a$</span><span>gia tốc (cm/s² hoặc m/s²)</span></li>
+<li><span class="tl-sym">$|a|_{\max}$</span><span>độ lớn gia tốc cực đại (cm/s² hoặc m/s²)</span></li>
+<li><span class="tl-sym">$x$</span><span>li độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+<li><span class="tl-sym">$\varphi$</span><span>pha ban đầu (rad)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
+</ul>
+</div>
 
 <ul>
 <li>$a_{min}=-A\omega^{2}$ tại biên dương. $a_{max}=+A\omega^{2}$ tại biên âm.</li>
@@ -207,9 +229,17 @@
 
 <p>$x$ và $v$ vuông pha, nên</p>
 
-<p>$$(x/A)^{2}+(v/\omega A)^{2}=1$$</p>
-
-<p>$$A^{2}=x^{2}+v^{2}/\omega^{2}$$</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Hệ thức độc lập giữa x và v</p>
+<p>$$\left(\dfrac{x}{A}\right)^{2}+\left(\dfrac{v}{\omega A}\right)^{2}=1$$</p>
+<p>$$A^{2}=x^{2}+\dfrac{v^{2}}{\omega^{2}}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$x$</span><span>li độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$v$</span><span>vận tốc (cm/s hoặc m/s)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+</ul>
+</div>
 
 <p>Đồ thị $x$–$v$ là một elip. Thế $x=A/2$ thì $(1/2)^{2}+(v/A\omega)^{2}=1$, nên $|v|=A\omega\sqrt{3}/2$.</p>
 
@@ -219,9 +249,17 @@
 
 <p>$v$ và $a$ vuông pha, nên</p>
 
-<p>$$(v/\omega A)^{2}+(a/\omega^{2}A)^{2}=1$$</p>
-
-<p>$$A^{2}=v^{2}/\omega^{2}+a^{2}/\omega^{4}$$</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Hệ thức độc lập giữa v và a</p>
+<p>$$\left(\dfrac{v}{\omega A}\right)^{2}+\left(\dfrac{a}{\omega^{2}A}\right)^{2}=1$$</p>
+<p>$$A^{2}=\dfrac{v^{2}}{\omega^{2}}+\dfrac{a^{2}}{\omega^{4}}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>vận tốc (cm/s hoặc m/s)</span></li>
+<li><span class="tl-sym">$a$</span><span>gia tốc (cm/s² hoặc m/s²)</span></li>
+<li><span class="tl-sym">$A$</span><span>biên độ (cm hoặc m)</span></li>
+<li><span class="tl-sym">$\omega$</span><span>tần số góc (rad/s)</span></li>
+</ul>
+</div>
 
 <p>Đồ thị $v$–$a$ cũng là một elip. $x$ và $a$ ngược pha, nên $a=-\omega^{2}x$: đồ thị là đoạn thẳng qua gốc.</p>
 
@@ -291,6 +329,7 @@
 
 <h3>III. Ba cái bẫy hay gặp</h3>
 
+<div class="tl-trap">
 <h4>1. Lẫn v với tốc độ</h4>
 
 <p><strong>🔑 v có dấu · |v| không âm</strong></p>
@@ -304,6 +343,7 @@
 <tr><td>$|v|_{max}$</td><td>$A\omega$, qua O cả hai chiều</td></tr>
 </tbody>
 </table></div>
+</div>
 
 <p>Vật qua O theo chiều âm. Phát biểu nào đúng?</p>
 <p class="tl-conf">Em chắc bao nhiêu?
@@ -318,6 +358,7 @@
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B quên chiều âm. C gộp $a=0$ với $v=0$. D tưởng đổi chiều ở O — đổi chiều là ở hai biên. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
+<div class="tl-trap">
 <h4>2. Tưởng a cùng chiều v, hoặc có chuyển động đều</h4>
 
 <p><strong>🔑 Ra biên thì ngược chiều</strong></p>
@@ -330,6 +371,7 @@
 <tr><td>Nhanh dần đều</td><td>không có trong dao động điều hoà</td></tr>
 </tbody>
 </table></div>
+</div>
 
 <p>Vật đi từ O ra biên dương. Câu nào đúng?</p>
 <p class="tl-conf">Em chắc bao nhiêu?
@@ -344,6 +386,7 @@
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và B cùng chiều — đó là lúc từ biên về O. A còn thêm “đều”, mà $a$ đổi theo $x$. D chỉ đúng ngay tại O, không đúng trên đoạn ra biên. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
+<div class="tl-trap">
 <h4>3. Lẫn v_max với tốc độ truyền</h4>
 
 <p><strong>🔑 Aω là của vật · không phải sóng</strong></p>
@@ -355,6 +398,7 @@
 <tr><td>Tốc độ truyền sóng (chương 2)</td><td>môi trường, không phải $A\omega$. Đó là tốc độ dao động lan đi, khác tốc độ của từng phần tử</td></tr>
 </tbody>
 </table></div>
+</div>
 
 <p>⚠ Đề cho $f$ thì đổi $\omega=2\pi f$ trước, rồi mới nhân với $A$.</p>
 

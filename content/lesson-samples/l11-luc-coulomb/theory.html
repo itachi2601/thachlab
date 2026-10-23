@@ -43,8 +43,17 @@
 <p><strong>🔑 Hệ cô lập · tổng đại số điện tích không đổi</strong></p>
 <ul>
 <li><strong>Hệ cô lập:</strong> không trao đổi điện tích với bên ngoài.<br><strong>Tổng đại số:</strong> cộng giữ nguyên dấu + và −.</li>
-<li>$n$ quả cầu <strong>giống hệt</strong> chạm nhau rồi tách ra: mỗi quả $q' = \dfrac{q_1 + q_2 + \dots + q_n}{n}$ (cộng <strong>có dấu</strong>).</li>
+<li>$n$ quả cầu <strong>giống hệt</strong> chạm nhau rồi tách ra (cộng <strong>có dấu</strong>):</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Chạm nhau rồi tách ra</p>
+<p>$$q' = \dfrac{q_1 + q_2 + \dots + q_n}{n}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$q'$</span><span>điện tích mỗi quả sau khi tách (C)</span></li>
+<li><span class="tl-sym">$q_i$</span><span>điện tích mỗi quả trước khi chạm (C), kể cả dấu</span></li>
+<li><span class="tl-sym">$n$</span><span>số quả cầu giống hệt nhau</span></li>
+</ul>
+</div>
 <details class="tl-details tl-more">
 <summary>🔢 Ví dụ: thanh thuỷ tinh cọ lụa tích điện $+13$ nC. Bao nhiêu electron đã rời thanh?</summary>
 <p>$n = \dfrac{13\cdot10^{-9}}{1{,}6\cdot10^{-19}} \approx 8{,}1\cdot10^{10}$ electron.<br>Chúng sang lụa, lụa nhiễm điện âm.</p>
@@ -80,12 +89,18 @@
 <li><strong>Điện tích điểm:</strong> vật tích điện rất nhỏ so với khoảng cách đang xét. Lực hút, đẩy giữa các điện tích đứng yên gọi là <strong>lực tĩnh điện</strong> (lực Coulomb).</li>
 <li>Cùng dấu thì <strong>đẩy</strong>, trái dấu thì <strong>hút</strong>.</li>
 </ul>
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Định luật Coulomb</p>
 <p>Lực hút hay đẩy giữa hai điện tích điểm trong chân không có phương trùng đường thẳng nối hai điện tích, độ lớn tỉ lệ thuận với tích độ lớn hai điện tích, tỉ lệ nghịch với bình phương khoảng cách.</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Định luật Coulomb</p>
 <p>$$F = k\dfrac{|q_1q_2|}{\varepsilon r^2}$$</p>
 <p>$$k = \dfrac{1}{4\pi\varepsilon_0} = 9\cdot10^9\ \text{N·m}^2/\text{C}^2$$</p>
-<p>$F$ (N), $q$ (C), $r$ (m).<br>$\varepsilon_0 = 8{,}85\cdot10^{-12}\ \text{C}^2/(\text{N·m}^2)$ chỉ dùng để tính ra $k$, không thay vào chỗ $\varepsilon$.<br>$\varepsilon \ge 1$ là hằng số điện môi, không có đơn vị.</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$F$</span><span>độ lớn lực tương tác giữa hai điện tích (N)</span></li>
+<li><span class="tl-sym">$q_1,\ q_2$</span><span>điện tích của hai vật (C)</span></li>
+<li><span class="tl-sym">$r$</span><span>khoảng cách giữa hai điện tích (m)</span></li>
+<li><span class="tl-sym">$\varepsilon$</span><span>hằng số điện môi, $\varepsilon \ge 1$ (không có đơn vị)</span></li>
+<li><span class="tl-sym">$\varepsilon_0$</span><span>$8{,}85\cdot10^{-12}\ \text{C}^2/(\text{N·m}^2)$, chỉ dùng để tính ra $k$, không thay vào chỗ $\varepsilon$</span></li>
+</ul>
 </div>
 <ul>
 <li><strong>Vectơ lực:</strong> đặt tại mỗi điện tích · phương nối hai điện tích · chiều đẩy nếu $q_1q_2 \gt 0$, hút nếu $q_1q_2 \lt 0$.</li>
@@ -345,3 +360,15 @@
 <summary>⭐⭐⭐ $q_1 = -2\ \mu$C tại A, $q_2 = +8\ \mu$C tại B, $AB = 12$ cm. Đặt $q_0$ ở đâu để nó cân bằng? Kết quả có đổi nếu $q_0$ âm?</summary>
 <p>Trái dấu nên C ở <strong>ngoài</strong> đoạn AB, phía A (điện tích nhỏ). $\dfrac{r_1}{r_2} = \sqrt{\dfrac{2}{8}} = \dfrac12$ và $r_2 - r_1 = 12$ cm, nên $r_1 = 12$ cm, $r_2 = 24$ cm. Đổi dấu $q_0$ thì cả hai lực cùng đổi chiều, vẫn triệt tiêu: vị trí không đổi.</p>
 </details>
+
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
+<ul>
+<li><strong>Nhiễm điện:</strong> thừa electron: âm · thiếu: dương · $|q| = n|e|$; tổng đại số điện tích không đổi.</li>
+<li><strong>Coulomb:</strong> $F = k\dfrac{|q_1q_2|}{\varepsilon r^2}$ · cùng dấu đẩy, trái dấu hút.</li>
+<li><strong>Đơn vị:</strong> đổi SI trước (C, m), bình phương $r$ sau.</li>
+<li><strong>Hai điện tích:</strong> cặp lực bằng độ lớn, ngược chiều, đặt lên hai vật khác nhau.</li>
+<li><strong>Nhiều lực:</strong> vẽ từng lực rồi cộng vectơ.</li>
+<li><strong>Cân bằng:</strong> hợp lực bằng 0 · cùng phương, ngược chiều, bằng độ lớn.</li>
+</ul>
+</div>

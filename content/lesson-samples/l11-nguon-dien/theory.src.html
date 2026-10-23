@@ -69,13 +69,15 @@
 
 <!--FIG2-->
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Suất điện động</p>
-<p>Đặc trưng cho <strong>khả năng thực hiện công</strong> của nguồn điện:</p>
+<p>Suất điện động đặc trưng cho <strong>khả năng thực hiện công</strong> của nguồn điện:</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Suất điện động</p>
 <p>$$\mathcal{E} = \dfrac{A}{q}$$</p>
-<ul>
-<li>$A$: công của lực lạ (J) đưa điện tích dương $q$ (C) từ (−) sang (+) trong nguồn.</li>
-<li>$\mathcal{E}$: đơn vị <strong>vôn</strong> (V), vì J/C = V.</li>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\mathcal{E}$</span><span>suất điện động (V), vì J/C = V</span></li>
+<li><span class="tl-sym">$A$</span><span>công của lực lạ đưa điện tích dương từ (−) sang (+) trong nguồn (J)</span></li>
+<li><span class="tl-sym">$q$</span><span>điện tích dương được đưa đi (C)</span></li>
 </ul>
 </div>
 
@@ -128,10 +130,16 @@
 
 <p>Đồ thị $U$ theo $I$ là đường thẳng $U = \mathcal{E} - rI$: độ dốc $= -r$, nên $r = -\Delta U/\Delta I$.</p>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Hiệu điện thế hai cực</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Hiệu điện thế hai cực của nguồn</p>
 <p>$$U = \mathcal{E} - Ir$$</p>
-<p>$Ir$: độ giảm thế trên $r$, mạch ngoài không nhận được.</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$U$</span><span>hiệu điện thế hai cực nguồn (V)</span></li>
+<li><span class="tl-sym">$\mathcal{E}$</span><span>suất điện động (V)</span></li>
+<li><span class="tl-sym">$I$</span><span>cường độ dòng điện qua nguồn (A)</span></li>
+<li><span class="tl-sym">$r$</span><span>điện trở trong của nguồn (Ω)</span></li>
+</ul>
+<p class="tl-fx-note">$Ir$: độ giảm thế trên $r$, mạch ngoài không nhận được.</p>
 </div>
 
 <p>Từ bảng trên, $r$ của pin bằng bao nhiêu?</p>
@@ -156,14 +164,22 @@
 
 <p>Bảo toàn năng lượng trong mạch kín: công của nguồn $A = \mathcal{E}q = \mathcal{E}It$ (vì $q = It$) bằng nhiệt toả (định luật Joule) ở $R$ và $r$ là $RI^2t + rI^2t$. Chia hai vế cho $It$: $\mathcal{E} = I(R + r)$.</p>
 
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Định luật Ohm cho toàn mạch</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Định luật Ohm cho toàn mạch</p>
 <p>$$I = \dfrac{\mathcal{E}}{R + r}$$</p>
-<p>Với $U = IR$: $U = \mathcal{E} - Ir$, hai công thức là một.</p>
+<p class="tl-fx-cond">Đoản mạch ($R \to 0$): dòng lớn nhất</p>
+<p>$$I_{\mathrm{dm}} = \dfrac{\mathcal{E}}{r}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$I$</span><span>cường độ dòng điện trong mạch (A)</span></li>
+<li><span class="tl-sym">$I_{\mathrm{dm}}$</span><span>dòng đoản mạch (A); đm: đoản mạch, không phải định mức</span></li>
+<li><span class="tl-sym">$\mathcal{E}$</span><span>suất điện động của nguồn (V)</span></li>
+<li><span class="tl-sym">$R$</span><span>điện trở mạch ngoài (Ω)</span></li>
+<li><span class="tl-sym">$r$</span><span>điện trở trong của nguồn (Ω)</span></li>
+</ul>
+<p class="tl-fx-note">Với $U = IR$: $U = \mathcal{E} - Ir$, hai công thức là một.</p>
 </div>
 
 <ul>
-<li><strong>Đoản mạch:</strong> $R \to 0$, dòng lớn nhất $I_{\text{đm}} = \mathcal{E}/r$ (đm: đoản mạch, không phải định mức).</li>
 <li>Pin tiểu mới ($r = 0{,}3\ \Omega$): $5$ A; ắc quy xe máy ($12{,}6$ V, $r = 0{,}02\ \Omega$): $630$ A, dây đỏ lên.</li>
 </ul>
 

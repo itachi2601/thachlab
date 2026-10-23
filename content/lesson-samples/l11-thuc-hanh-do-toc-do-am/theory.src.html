@@ -76,10 +76,23 @@
 <p><strong>🔑 $v=\lambda f$ · trời nóng thì nhanh hơn</strong></p>
 
 <ul>
-<li>Trong một chu kì sóng đi được một bước sóng, nên $v = \lambda f$.</li>
-<li>Trong không khí, $v \approx 331 + 0{,}6\,t$ (m/s), $t$ tính bằng °C. Ở $20\ ^\circ\text{C}$: $v \approx 343$ (m/s).</li>
+<li>Trong một chu kì sóng đi được một bước sóng, nên có $v = \lambda f$.</li>
+<li>Trong không khí $v$ phụ thuộc nhiệt độ. Ở $20\ ^\circ\text{C}$: $v \approx 343$ (m/s).</li>
 <li>$v$ chỉ do môi trường và nhiệt độ quyết định: đổi $f$ thì $\lambda$ đổi theo, $v$ giữ nguyên.</li>
 </ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Tốc độ truyền âm</p>
+<p>$$v = \lambda f$$</p>
+<p class="tl-fx-cond">Trong không khí</p>
+<p>$$v \approx 331 + 0{,}6\,t$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$v$</span><span>tốc độ truyền âm (m/s)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số (Hz)</span></li>
+<li><span class="tl-sym">$t$</span><span>nhiệt độ không khí (°C)</span></li>
+</ul>
+</div>
 
 <p>Máy phát cho $f$ khá chính xác (cỡ $\pm 1\ \text{Hz}$). Còn $\lambda$ cỡ nửa mét, không "đặt thước lên sóng" được: hãy cho cột không khí <strong>cộng hưởng</strong> rồi đo cột khí.</p>
 
@@ -109,7 +122,16 @@
 
 <p>Gọi $l$ là chiều dài cột khí, đo từ miệng ống xuống mặt nước:</p>
 
+<div class="tl-fx">
+<p class="tl-fx-name">Điều kiện cộng hưởng của cột khí (một đầu kín)</p>
 <p>$$l + e = (2k+1)\dfrac{\lambda}{4}\qquad (k = 0, 1, 2, \dots)$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$l$</span><span>chiều dài cột khí, từ miệng ống xuống mặt nước (cm hoặc m)</span></li>
+<li><span class="tl-sym">$e$</span><span>hiệu chỉnh đầu hở, bụng cao hơn miệng ống (cùng đơn vị với $l$)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (cùng đơn vị với $l$)</span></li>
+<li><span class="tl-sym">$k$</span><span>số nguyên, thứ tự lần cộng hưởng (không đơn vị)</span></li>
+</ul>
+</div>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
@@ -132,8 +154,19 @@
 
 <p>Trừ vế với vế, $e$ mất đi (mẹo: <strong>"hiệu hai lần, nửa bước sóng"</strong>):</p>
 
-<p>$$l_2 - l_1 = \dfrac{\lambda}{2}\;\Rightarrow\;\lambda = 2\,(l_2 - l_1)$$
-$$v = \lambda f = 2\,(l_2 - l_1)\,f$$</p>
+<p>$$l_2 - l_1 = \dfrac{\lambda}{2}$$</p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Đo bước sóng và tốc độ âm từ hai lần cộng hưởng</p>
+<p>$$\lambda = 2\,(l_2 - l_1)$$</p>
+<p>$$v = \lambda f = 2\,(l_2 - l_1)\,f$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$l_1,\,l_2$</span><span>chiều dài cột khí ở lần cộng hưởng thứ nhất, thứ hai (m)</span></li>
+<li><span class="tl-sym">$\lambda$</span><span>bước sóng (m)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số máy phát (Hz)</span></li>
+<li><span class="tl-sym">$v$</span><span>tốc độ truyền âm (m/s)</span></li>
+</ul>
+</div>
 
 <h4>4. Dụng cụ và cách đo</h4>
 
@@ -191,13 +224,30 @@ $$v = \lambda f = 2\,(l_2 - l_1)\,f$$</p>
 
 <p>Quy tắc: tổng hoặc hiệu thì cộng <strong>sai số tuyệt đối</strong>. Với $l_2 - l_1$, cộng hai sai số rồi nhân 2 vì $\lambda = 2(l_2 - l_1)$:</p>
 
-<p>$$\Delta\lambda = 2\,(\Delta l_1 + \Delta l_2) \approx 0{,}26\ \text{cm}$$
-$$\dfrac{\Delta\lambda}{\bar\lambda} = \dfrac{0{,}26}{68{,}32} \approx 0{,}4\,\%$$</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Sai số của bước sóng</p>
+<p>$$\Delta\lambda = 2\,(\Delta l_1 + \Delta l_2) \approx 0{,}26\ \text{cm}$$</p>
+<p>$$\dfrac{\Delta\lambda}{\bar\lambda} = \dfrac{0{,}26}{68{,}32} \approx 0{,}4\,\%$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\Delta\lambda$</span><span>sai số tuyệt đối của bước sóng (cm)</span></li>
+<li><span class="tl-sym">$\Delta l_1,\,\Delta l_2$</span><span>sai số tuyệt đối của $l_1$, $l_2$ (cm)</span></li>
+<li><span class="tl-sym">$\bar\lambda$</span><span>bước sóng trung bình (cm)</span></li>
+</ul>
+</div>
 
 <p>Tích hoặc thương thì cộng <strong>sai số tỉ đối</strong>. Với $v = \lambda f$, thêm $\Delta f/f = 1/500 = 0{,}2\,\%$:</p>
 
-<p>$$\dfrac{\Delta v}{\bar v} = \dfrac{\Delta\lambda}{\bar\lambda} + \dfrac{\Delta f}{f} \approx 0{,}6\,\%$$
-$$\Delta v \approx 2{,}0\ \text{m/s}$$</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Sai số của tốc độ âm</p>
+<p>$$\dfrac{\Delta v}{\bar v} = \dfrac{\Delta\lambda}{\bar\lambda} + \dfrac{\Delta f}{f} \approx 0{,}6\,\%$$</p>
+<p>$$\Delta v \approx 2{,}0\ \text{m/s}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\Delta v$</span><span>sai số tuyệt đối của tốc độ âm (m/s)</span></li>
+<li><span class="tl-sym">$\bar v$</span><span>tốc độ âm trung bình (m/s)</span></li>
+<li><span class="tl-sym">$\Delta f$</span><span>sai số của tần số máy phát (Hz)</span></li>
+<li><span class="tl-sym">$f$</span><span>tần số máy phát (Hz)</span></li>
+</ul>
+</div>
 
 <p>Kết quả (chỉ tính sai số ngẫu nhiên): $v = 341{,}6 \pm 2{,}0\ \text{m/s}$.</p>
 
