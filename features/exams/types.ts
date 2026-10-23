@@ -567,18 +567,18 @@ export const SECONDS_PER_FORM: Record<QuestionForm, number> = {
   bai_tap: 90,
 };
 
-export function questionSeconds(q: ExamQuestion): number {
+export function questionSeconds(q: { form?: QuestionForm | "" }): number {
   return q.form === "ly_thuyet"
     ? SECONDS_PER_FORM.ly_thuyet
     : SECONDS_PER_FORM.bai_tap;
 }
 
-export function totalSeconds(questions: ExamQuestion[]): number {
+export function totalSeconds(questions: { form?: QuestionForm | "" }[]): number {
   return questions.reduce((sum, q) => sum + questionSeconds(q), 0);
 }
 
 /** Thời lượng trung bình một câu của ngân hàng — để ước lượng trước khi bốc câu. */
-export function averageSeconds(questions: ExamQuestion[]): number {
+export function averageSeconds(questions: { form?: QuestionForm | "" }[]): number {
   if (questions.length === 0) return SECONDS_PER_FORM.bai_tap;
   return totalSeconds(questions) / questions.length;
 }

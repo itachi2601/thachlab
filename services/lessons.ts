@@ -6,12 +6,13 @@ import {
   type LessonItem,
   type TypeCounts,
 } from "@/features/lessons/types";
-import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
+import type { ExamForTaking, ExamQuestion, ExamQuestionPublic, QuestionResponse } from "@/features/exams/types";
 import {
   buildQuestionResults,
   gradeQuestion,
 } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
+import { checkPracticeAnswer, fetchExamReviews, fetchExamsForTaking, unansweredSentinel } from "@/services/exam-server";
 import {
   enqueue,
   flushQueue,
@@ -246,15 +247,20 @@ export async function fetchExamMetas(examIds: number[]): Promise<Map<number, Les
   );
 }
 
-/** Đề đầy đủ (kèm câu hỏi) — dùng cho lưới tự chấm của mục Luyện tập. Đề ẩn cũng không trả về. */
-export async function fetchExamsFull(examIds: number[]): Promise<Map<number, Exam>> {
-  if (examIds.length === 0) return new Map();
-  const { data } = await getSupabase()
-    .from("exams")
-    .select("id, title, duration_minutes, published, questions")
-    .eq("published", true)
-    .in("id", examIds);
-  return new Map(((data as Exam[]) ?? []).map((e) => [e.id, e]));
+/**
+ * Đề kèm câu hỏi ĐÃ LƯỢC ĐÁP ÁN — dùng cho Luyện tập / Bài tập mẫu / phụ đạo (P0 #1, 24/10/2026).
+ * Đáp án + lời giải của từng câu lấy sau khi em trả lời, qua RPC check_practice_answer (services/exam-server.ts).
+ * Đề ẩn (published = false) không trả về.
+ */
+export async function fetchExamsForPractice(examIds: number[]): Promise<Map<number, ExamForTaking>> {
+  const out = new Map<number, ExamForTaking>();
+  const ids = [...new Set(examIds)];
+  for (let i = 0; i < ids.length; i += 200) {
+    for (const e of await fetchExamsForTaking(ids.slice(i, i + 200))) {
+      if (e.published) out.set(e.id, e);
+    }
+  }
+  return out;
 }
 
 /** Điểm cao nhất từng đề của học sinh — quyết định trạng thái "Đã làm". */
@@ -393,23 +399,25 @@ export interface MistakeReviewItem {
   response: QuestionResponse;
 }
 
-/** Câu chưa đạt trọn điểm trong lần làm gần nhất của từng đề. */
+/** Câu chưa đạt trọn điểm trong lần làm gần nhất của từng đề. Đáp án lấy qua get_exam_review (chỉ đề em đã nộp). */
 export async function fetchMyLatestMistakes(userId: string): Promise<MistakeReviewItem[]> {
   const { data, error } = await getSupabase()
     .from("exam_results")
-    .select("exam_id, created_at, detail, exams(id, title, questions)")
+    .select("exam_id, created_at, detail")
     .eq("student_id", userId)
     .order("created_at", { ascending: false });
   if (error) throw error;
 
-  const seenExamIds = new Set<number>();
-  const mistakes: MistakeReviewItem[] = [];
+  const latest = new Map<number, { responses?: QuestionResponse[] }>();
   for (const row of data ?? []) {
-    if (seenExamIds.has(row.exam_id)) continue;
-    seenExamIds.add(row.exam_id);
-    const examValue = Array.isArray(row.exams) ? row.exams[0] : row.exams;
-    const exam = examValue as { id: number; title: string; questions: ExamQuestion[] } | null;
-    const detail = row.detail as { responses?: QuestionResponse[] } | null;
+    if (latest.has(row.exam_id)) continue;
+    latest.set(row.exam_id, (row.detail ?? {}) as { responses?: QuestionResponse[] });
+  }
+  const reviews = await fetchExamReviews([...latest.keys()]);
+
+  const mistakes: MistakeReviewItem[] = [];
+  for (const [examId, detail] of latest) {
+    const exam = reviews.get(examId);
     if (!exam?.questions || !detail?.responses) continue;
     exam.questions.forEach((question, index) => {
       const response = detail.responses?.[index] ?? (question.type === "true_false" ? [null, null, null, null] : question.type === "short_answer" || question.type === "essay" ? "" : null);
@@ -427,17 +435,44 @@ export async function fetchMyLatestMistakes(userId: string): Promise<MistakeRevi
 // practice_sessions + practice_question_results để em tự theo dõi và để phần
 // Phân tích/Cảnh báo phụ đạo biết em hổng chủ đề nào.
 
+/** Câu bốc vào phiên luyện: đang làm thì là bản lược đáp án; chấm xong (server) thì thay bằng câu đủ đáp án. */
 export interface PracticePick {
-  question: ExamQuestion;
+  question: ExamQuestionPublic;
   examId: number;
   sourceIndex: number;
+}
+
+/** PracticePick đã được server chấm: câu đã đủ đáp án + lời giải (nguồn của màn xem lại và của dòng kết quả). */
+export interface GradedPick extends PracticePick {
+  question: ExamQuestion;
+}
+
+/**
+ * Chấm cả phiên ở server (chế độ "Cả bài"): mỗi câu 1 lượt check_practice_answer, chạy song song vài luồng.
+ * Câu bỏ trống cũng gửi (giá trị "trống") để lấy đáp án + lời giải cho màn xem lại. Một câu lỗi thì cả lượt lỗi
+ * (ném lỗi) — nơi gọi giữ bài và cho thử lại, KHÔNG chấm tạm ở máy.
+ */
+export async function gradePracticePicks(picks: PracticePick[], responses: QuestionResponse[]): Promise<GradedPick[]> {
+  const out: GradedPick[] = new Array(picks.length);
+  let next = 0;
+  async function worker() {
+    while (next < picks.length) {
+      const i = next++;
+      const p = picks[i];
+      const r = responses[i];
+      const res = await checkPracticeAnswer(p.examId, p.sourceIndex, r == null ? unansweredSentinel(p.question) : r);
+      out[i] = { ...p, question: res.question };
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(6, picks.length) }, worker));
+  return out;
 }
 
 export interface PracticeSessionInput {
   studentId: string;
   lessonId: number | null;
   itemId: number | null;
-  picks: PracticePick[];
+  picks: GradedPick[];
   responses: QuestionResponse[];
   score10: number;
   correctCount: number;

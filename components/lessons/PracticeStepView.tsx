@@ -4,13 +4,15 @@ import { useMemo, useState } from "react";
 import { BookOpen, CheckCircle2, CircleAlert, RotateCcw } from "lucide-react";
 import QuestionCard from "@/components/exams/QuestionCard";
 import Html from "@/components/exams/ContentHtml";
-import { emptyResponses, isAnswered, type QuestionResponse } from "@/features/exams/types";
-import { distractorHints, isFullyCorrect, pickKey, similarCandidates, WEAK_TOPIC_MIN } from "@/features/lessons/practice-step";
-import type { PracticePick } from "@/services/lessons";
+import { emptyResponses, isAnswered, type ExamQuestion, type QuestionResponse } from "@/features/exams/types";
+import { distractorHints, pickKey, similarCandidates, WEAK_TOPIC_MIN } from "@/features/lessons/practice-step";
+import { checkPracticeAnswer } from "@/services/exam-server";
+import type { GradedPick, PracticePick } from "@/services/lessons";
 
 /** Kết quả LẦN ĐẦU của một câu — thứ duy nhất được lưu vào practice_question_results. */
 export interface StepItem {
-  pick: PracticePick;
+  /** Câu đã được server chấm: đủ đáp án + lời giải (để màn kết quả và dòng lưu DB dùng). */
+  pick: GradedPick;
   response: QuestionResponse;
   correct: boolean;
 }
@@ -58,6 +60,10 @@ export default function PracticeStepView({
   const [streak, setStreak] = useState(0);
   const [usedKeys, setUsedKeys] = useState<Set<string>>(() => new Set(initialPicks.map(pickKey)));
   const [lastCorrect, setLastCorrect] = useState(true);
+  // Server chấm từng câu (check_practice_answer): câu ĐỦ đáp án/lời giải của câu vừa kiểm tra, chỉ có ở màn phản hồi.
+  const [fullQ, setFullQ] = useState<ExamQuestion | null>(null);
+  const [checking, setChecking] = useState(false);
+  const [checkError, setCheckError] = useState("");
   // Số lần sai (kể cả câu làm lại) theo chủ đề trong phiên này; chủ đề trống = gom chung "".
   const [wrongByTopic, setWrongByTopic] = useState<Record<string, number>>({});
 
@@ -69,21 +75,34 @@ export default function PracticeStepView({
   const planned = queue.filter((s) => !s.retry).length;
   const retriesLeft = queue.slice(pos).filter((s) => s.retry).length;
   const isLast = pos >= queue.length - 1;
-  const canCheck = stage === "answering" && isAnswered(q, response);
+  const canCheck = stage === "answering" && !checking && isAnswered(q, response);
 
   const similar = useMemo(
     () => (stage === "feedback" && !slot.retry && !lastCorrect ? similarCandidates(bank, q, usedKeys) : []),
     [stage, slot.retry, lastCorrect, bank, q, usedKeys],
   );
-  const hints = stage === "feedback" ? distractorHints(q, response) : [];
+  const hints = stage === "feedback" && fullQ ? distractorHints(fullQ, response) : [];
 
-  function check() {
+  async function check() {
     if (!canCheck) return;
-    const ok = isFullyCorrect(q, response);
+    setChecking(true);
+    setCheckError("");
+    let res;
+    try {
+      res = await checkPracticeAnswer(slot.pick.examId, slot.pick.sourceIndex, response);
+    } catch {
+      // Mất mạng / câu thuộc đề kiểm tra chưa nộp (server không đưa đáp án): giữ nguyên đáp án em đã chọn.
+      setCheckError("Chưa kiểm tra được câu này. Kiểm tra mạng rồi bấm Kiểm tra lại, hoặc bỏ qua câu này.");
+      setChecking(false);
+      return;
+    }
+    setChecking(false);
+    const ok = res.is_correct;
+    setFullQ(res.question);
     setLastCorrect(ok);
     if (!ok) setWrongByTopic((m) => ({ ...m, [topicKey]: (m[topicKey] ?? 0) + 1 }));
     if (!slot.retry) {
-      setItems((prev) => [...prev, { pick: slot.pick, response, correct: ok }]);
+      setItems((prev) => [...prev, { pick: { ...slot.pick, question: res.question }, response, correct: ok }]);
       setStreak((s) => (ok ? s + 1 : 0));
       // Sai (hoặc đúng một phần) → xếp lại 1 lần ở cuối phiên.
       if (!ok) setQueue((prev) => [...prev, { pick: slot.pick, retry: true }]);
@@ -91,8 +110,21 @@ export default function PracticeStepView({
     setStage("feedback");
   }
 
+  // Bỏ qua câu không chấm được (không tính vào kết quả phiên).
+  function skipUnchecked() {
+    setCheckError("");
+    if (isLast) {
+      if (items.length === 0) onQuit();
+      else onFinish(items);
+      return;
+    }
+    goTo(pos + 1, queue);
+  }
+
   function goTo(nextPos: number, nextQueue: Slot[]) {
     setPos(nextPos);
+    setFullQ(null);
+    setCheckError("");
     setStage("answering");
     setResponse(emptyResponses([nextQueue[nextPos].pick.question])[0]);
   }
@@ -171,7 +203,7 @@ export default function PracticeStepView({
       <QuestionCard
         key={`${pos}-${stage}`}
         index={pos + 1}
-        question={q}
+        question={stage === "feedback" && fullQ ? fullQ : q}
         response={response}
         onChange={stage === "answering" ? setResponse : undefined}
         review={stage === "feedback"}
@@ -230,6 +262,14 @@ export default function PracticeStepView({
             )}
           </div>
         )}
+        {checkError && (
+          <div role="alert" className="flex flex-col gap-2 rounded-xl border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-base text-amber-100">
+            <span>{checkError}</span>
+            <button type="button" onClick={skipUnchecked} className="min-h-11 self-start rounded-full border border-line-strong px-4 text-base font-semibold text-ink">
+              Bỏ qua câu này
+            </button>
+          </div>
+        )}
         {stage === "answering" ? (
           <button
             type="button"
@@ -238,7 +278,7 @@ export default function PracticeStepView({
             className="min-h-12 w-full rounded-full px-5 text-base font-bold text-white disabled:opacity-40"
             style={{ backgroundColor: color }}
           >
-            Kiểm tra
+            {checking ? "Đang kiểm tra…" : "Kiểm tra"}
           </button>
         ) : (
           <>

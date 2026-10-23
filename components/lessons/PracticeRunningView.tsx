@@ -5,7 +5,7 @@ import QuestionCard from "@/components/exams/QuestionCard";
 import {
   isAnswered,
   questionSeconds,
-  type ExamQuestion,
+  type ExamQuestionPublic,
   type QuestionResponse,
 } from "@/features/exams/types";
 
@@ -36,7 +36,7 @@ export default function PracticeRunningView({
   onToggleFlag,
   onConfirmSubmit,
 }: {
-  questions: ExamQuestion[];
+  questions: ExamQuestionPublic[];
   responses: QuestionResponse[];
   cur: number;
   flags: Set<number>;

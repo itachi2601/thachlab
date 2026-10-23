@@ -7,18 +7,21 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import QuestionCard from "@/components/exams/QuestionCard";
 import {
   emptyResponses,
-  gradeQuestion,
   isAnswered,
-  type Exam,
+  type ExamForTaking,
   type ExamQuestion,
+  type ExamQuestionPublic,
   type QuestionResponse,
 } from "@/features/exams/types";
 import { TYPE_SHORT } from "@/features/lessons/types";
-import { fetchExamsFull } from "@/services/lessons";
+import { fetchExamsForPractice } from "@/services/lessons";
+import { checkPracticeAnswer, unansweredSentinel } from "@/services/exam-server";
 
 interface Pick {
   key: string;
-  question: ExamQuestion;
+  examId: number;
+  questionIndex: number;
+  question: ExamQuestionPublic;
   examTitle: string;
 }
 
@@ -44,6 +47,26 @@ export default function SampleQuestionsGrid({
   const [responses, setResponses] = useState<Record<string, QuestionResponse>>({});
   const [status, setStatus] = useState<Record<string, Status>>({});
   const [open, setOpen] = useState<string | null>(null);
+  // Câu đã Kiểm tra / Xem lời giải: server trả câu đủ đáp án + lời giải của riêng câu đó (P0 #1).
+  const [full, setFull] = useState<Record<string, { question: ExamQuestion; correct: boolean }>>({});
+  const [busy, setBusy] = useState<string | null>(null);
+  const [errorKey, setErrorKey] = useState<string | null>(null);
+
+  async function reveal(p: Pick, next: Status) {
+    if (busy) return;
+    setBusy(p.key);
+    setErrorKey(null);
+    try {
+      const resp = next === "checked" ? responses[p.key] : unansweredSentinel(p.question);
+      const res = await checkPracticeAnswer(p.examId, p.questionIndex, resp);
+      setFull((cur) => ({ ...cur, [p.key]: { question: res.question, correct: res.is_correct } }));
+      setStatus((cur) => ({ ...cur, [p.key]: next }));
+    } catch {
+      setErrorKey(p.key);
+    } finally {
+      setBusy(null);
+    }
+  }
 
   useEffect(() => {
     if (!session) return;
@@ -51,17 +74,17 @@ export default function SampleQuestionsGrid({
     void (async () => {
       setLoadState("loading");
       try {
-        const metas = await fetchExamsFull(examIds);
+        const metas = await fetchExamsForPractice(examIds);
         if (!alive) return;
         const flat: Pick[] = [];
         const seed: Record<string, QuestionResponse> = {};
         for (const id of examIds) {
-          const exam = metas.get(id) as Exam | undefined;
+          const exam: ExamForTaking | undefined = metas.get(id);
           if (!exam) continue;
           const blanks = emptyResponses(exam.questions);
           exam.questions.forEach((question, qi) => {
             const key = `${id}-${qi}`;
-            flat.push({ key, question, examTitle: exam.title });
+            flat.push({ key, examId: id, questionIndex: qi, question, examTitle: exam.title });
             seed[key] = blanks[qi];
           });
         }
@@ -96,11 +119,8 @@ export default function SampleQuestionsGrid({
       {picks.map((p, idx) => {
         const st = status[p.key] ?? "doing";
         const active = open === p.key;
-        const graded =
-          st === "checked" && p.question.type !== "essay"
-            ? gradeQuestion(p.question, responses[p.key])
-            : null;
-        const mark = graded ? (graded.earned === graded.max ? "correct" : "wrong") : st === "revealed" ? "revealed" : null;
+        const fq = full[p.key];
+        const mark = st === "checked" && fq ? (fq.correct ? "correct" : "wrong") : st === "revealed" ? "revealed" : null;
         const answered = isAnswered(p.question, responses[p.key]);
 
         return (
@@ -128,7 +148,7 @@ export default function SampleQuestionsGrid({
               <div className="lesson-sample-body">
                 <QuestionCard
                   index={idx + 1}
-                  question={p.question}
+                  question={st !== "doing" && fq ? fq.question : p.question}
                   response={responses[p.key]}
                   onChange={
                     st === "doing"
@@ -142,19 +162,21 @@ export default function SampleQuestionsGrid({
                   <div className="lesson-sample-actions">
                     <button
                       type="button"
-                      disabled={!answered}
-                      onClick={() => setStatus((cur) => ({ ...cur, [p.key]: "checked" }))}
+                      disabled={!answered || busy === p.key}
+                      onClick={() => void reveal(p, "checked")}
                       style={{ backgroundColor: color }}
                     >
-                      Kiểm tra
+                      {busy === p.key ? "Đang kiểm tra…" : "Kiểm tra"}
                     </button>
                     <button
                       type="button"
                       className="is-ghost"
-                      onClick={() => setStatus((cur) => ({ ...cur, [p.key]: "revealed" }))}
+                      disabled={busy === p.key}
+                      onClick={() => void reveal(p, "revealed")}
                     >
                       Chưa làm được, xem lời giải
                     </button>
+                    {errorKey === p.key && <span className="hint">Chưa tải được đáp án — kiểm tra mạng rồi bấm lại.</span>}
                     {!answered && <span className="hint">Chọn đáp án trước rồi mới kiểm tra được.</span>}
                   </div>
                 ) : (
@@ -164,6 +186,11 @@ export default function SampleQuestionsGrid({
                       className="is-ghost"
                       onClick={() => {
                         setStatus((cur) => {
+                          const next = { ...cur };
+                          delete next[p.key];
+                          return next;
+                        });
+                        setFull((cur) => {
                           const next = { ...cur };
                           delete next[p.key];
                           return next;

@@ -1,4 +1,4 @@
-import { gradeQuestion, type ExamQuestion, type QuestionResponse } from "@/features/exams/types";
+import { gradeQuestion, type ExamQuestion, type ExamQuestionPublic, type QuestionResponse } from "@/features/exams/types";
 
 /**
  * Luyện tập chế độ "Từng câu" (kiểu Duolingo): chọn → Kiểm tra → biết ngay đúng/sai + lời giải, câu sai làm lại
@@ -34,10 +34,10 @@ export const STEP_SECONDS_PER_QUESTION = 50;
 
 // ---------- Khoá nhận diện một câu ----------
 /** FNV-1a 32-bit trên phần nội dung câu (đề bài, phương án, các ý) — đủ ổn định để nhận lại cùng câu giữa các phiên. */
-export function questionHash(q: ExamQuestion): string {
+export function questionHash(q: ExamQuestionPublic): string {
   const parts: string[] = [q.type, q.question];
   if (q.type === "multiple_choice") parts.push(...q.options);
-  if (q.type === "true_false") parts.push(...q.statements.map((s) => s.text));
+  if (q.type === "true_false") parts.push(...(q.statements ?? []).map((s) => s.text));
   const s = parts.join("␟");
   let h = 0x811c9dc5;
   for (let i = 0; i < s.length; i += 1) {
@@ -164,9 +164,9 @@ export function isFullyCorrect(q: ExamQuestion, r: QuestionResponse): boolean {
 const LETTERS = ["A", "B", "C", "D"];
 
 /** Câu cùng chủ đề (nhãn `topic`) cùng mức, chưa dùng trong phiên — từ ngân hàng của mục luyện tập. */
-export function similarCandidates<T extends { question: ExamQuestion; examId: number; sourceIndex: number }>(
+export function similarCandidates<T extends { question: ExamQuestionPublic; examId: number; sourceIndex: number }>(
   bank: T[],
-  from: ExamQuestion,
+  from: ExamQuestionPublic,
   usedKeys: Set<string>,
 ): T[] {
   const topic = (from.topic ?? "").trim();

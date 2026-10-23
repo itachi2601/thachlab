@@ -8,10 +8,11 @@ import QuestionCard from "@/components/exams/QuestionCard";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useTeacherView } from "@/components/auth/useTeacherView";
 import { useToast } from "@/components/ui/Toast";
-import type { PracticePick } from "@/services/lessons";
+import type { GradedPick, PracticePick } from "@/services/lessons";
+import { checkPracticeAnswer } from "@/services/exam-server";
 import { markFirstPracticeDone } from "@/lib/pwa-install";
-import { fetchExamsFull, savePracticeSession } from "@/services/lessons";
-import type { Difficulty, Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
+import { fetchExamsForPractice, gradePracticePicks, savePracticeSession } from "@/services/lessons";
+import type { Difficulty, ExamForTaking, ExamQuestion, QuestionResponse } from "@/features/exams/types";
 import {
   DIFFICULTY_LABELS,
   buildQuestionResults,
@@ -22,7 +23,6 @@ import {
 } from "@/features/exams/types";
 
 import { questionKey } from "@/services/question-context";
-import { isFullyCorrect } from "@/features/lessons/practice-step";
 import { arrangeForMotivation, pickAndArrange, pickByMix } from "@/features/lessons/practice-arrange";
 
 type Phase = "loading" | "empty" | "intro" | "running" | "done";
@@ -77,7 +77,7 @@ function masteryTone(correct: number, total: number): { tone: "success" | "warni
  * cách trang bài học vẫn dùng — không cần RLS/RPC mới cho `question_bank`).
  *
  * Cố tình TÁI DÙNG plumbing "luyện tập" hiện có thay vì viết luồng mới:
- * - `fetchExamsFull` (services/lessons.ts) — đúng hàm PracticeSession.tsx đang dùng để tải câu hỏi.
+ * - `fetchExamsForPractice` (services/lessons.ts) — đúng hàm PracticeSession.tsx đang dùng để tải câu hỏi.
  * - `gradeExam`/`emptyResponses`/`isAnswered`/`pickRandom` (features/exams/types.ts).
  * - `savePracticeSession` (services/lessons.ts) — ghi practice_sessions + practice_question_results,
  *   NHỜ VẬY lượt luyện này cũng tự động tính vào 10 lượt gần nhất của lần tính mastery kế tiếp.
@@ -137,6 +137,9 @@ export default function TopicPracticeModal({
   // Chế độ phụ đạo một phần (có topicName): báo đúng/sai ngay từng câu. checked[i] = câu i đã kiểm tra, ok[i] = đúng trọn vẹn.
   const [checked, setChecked] = useState<boolean[]>([]);
   const [ok, setOk] = useState<boolean[]>([]);
+  // Câu đã được server chấm lúc bấm Kiểm tra (đủ đáp án + lời giải) — đỡ chấm lại khi nộp.
+  const [fullQs, setFullQs] = useState<Record<number, ExamQuestion>>({});
+  const [checking, setChecking] = useState(false);
   const [saving, setSaving] = useState(false);
   const [result, setResult] = useState<{ score10: number; correctCount: number; total: number } | null>(null);
   // Bài của từng câu đã bốc (chỉ dùng ở chế độ nhiều bài) và kết quả theo bài sau khi nộp.
@@ -160,12 +163,12 @@ export default function TopicPracticeModal({
         const allIds = examIdsByLesson
           ? [...new Set(Object.values(examIdsByLesson).flat())]
           : examIds;
-        const metas = await fetchExamsFull(allIds);
+        const metas = await fetchExamsForPractice(allIds);
         if (cancelled) return;
         const collect = (ids: number[], seen?: Set<string>, anyTopic = false) => {
           const out: PracticePick[] = [];
           for (const id of ids) {
-            const exam = metas.get(id) as Exam | undefined;
+            const exam: ExamForTaking | undefined = metas.get(id);
             if (!exam) continue;
             exam.questions.forEach((question, qi) => {
               if (question.type === "essay") return;
@@ -234,10 +237,21 @@ export default function TopicPracticeModal({
   const focusWrong = picks.filter((p, i) => checked[i] && !ok[i] && (p.question.topic ?? "").trim() === topicName.trim()).length;
   const needTheory = guided && lessonId !== null && focusWrong >= THEORY_AFTER_WRONG;
 
-  function checkCurrent() {
-    if (!isAnswered(questions[cur], responses[cur])) return;
-    setChecked((p) => p.map((v, i) => (i === cur ? true : v)));
-    setOk((p) => p.map((v, i) => (i === cur ? isFullyCorrect(questions[cur], responses[cur]) : v)));
+  async function checkCurrent() {
+    if (checking || !isAnswered(questions[cur], responses[cur])) return;
+    const idx = cur;
+    setChecking(true);
+    try {
+      // Server chấm + trả đáp án/lời giải của đúng câu này (check_practice_answer).
+      const res = await checkPracticeAnswer(picks[idx].examId, picks[idx].sourceIndex, responses[idx]);
+      setFullQs((p) => ({ ...p, [idx]: res.question }));
+      setChecked((p) => p.map((v, i) => (i === idx ? true : v)));
+      setOk((p) => p.map((v, i) => (i === idx ? res.is_correct : v)));
+    } catch {
+      toast("error", "Chưa kiểm tra được câu này, kiểm tra mạng rồi bấm lại nhé.");
+    } finally {
+      setChecking(false);
+    }
   }
 
   function setResponse(i: number, r: QuestionResponse) {
@@ -263,14 +277,27 @@ export default function TopicPracticeModal({
     submitting.current = true;
     setSaving(true);
     try {
-      const summary = gradeExam(questions, responses);
+      // Server chấm các câu chưa kiểm tra (câu đã kiểm tra có sẵn trong fullQs). Mất mạng → ném lỗi, giữ bài, em bấm nộp lại.
+      const missing = picks.map((p, i) => i).filter((i) => !fullQs[i]);
+      const gradedMissing = missing.length
+        ? await gradePracticePicks(
+            missing.map((i) => picks[i]),
+            missing.map((i) => responses[i]),
+          )
+        : [];
+      const graded: GradedPick[] = picks.map((p, i) => {
+        const fromMissing = missing.indexOf(i);
+        return fromMissing >= 0 ? gradedMissing[fromMissing] : { ...p, question: fullQs[i] };
+      });
+      const gradedQs = graded.map((p) => p.question);
+      const summary = gradeExam(gradedQs, responses);
       clientToken.current ??= crypto.randomUUID();
       if (recordProgress) {
         await savePracticeSession({
           studentId: session.user.id,
           lessonId: multi ? null : lessonId,
           itemId: null,
-          picks,
+          picks: graded,
           responses,
           score10: summary.score10,
           correctCount: summary.correctCount,
@@ -281,7 +308,7 @@ export default function TopicPracticeModal({
         markFirstPracticeDone();
       }
       if (multi) {
-        const rows = buildQuestionResults(questions, responses);
+        const rows = buildQuestionResults(gradedQs, responses);
         const acc = new Map<number, LessonResult>();
         rows.forEach((r, i) => {
           const lid = pickLessons[i];
@@ -297,7 +324,7 @@ export default function TopicPracticeModal({
       setPhase("done");
       onFinished?.();
     } catch {
-      toast("error", "Chưa lưu được kết quả, thử lại nhé.");
+      toast("error", "Chưa chấm/lưu được kết quả — bài của em vẫn giữ, kiểm tra mạng rồi bấm Nộp bài lại nhé.");
     } finally {
       submitting.current = false;
       setSaving(false);
@@ -418,7 +445,7 @@ export default function TopicPracticeModal({
               <QuestionCard
                 key={`${cur}-${guided && checked[cur] ? "r" : "a"}`}
                 index={cur + 1}
-                question={questions[cur]}
+                question={guided && checked[cur] && fullQs[cur] ? fullQs[cur] : questions[cur]}
                 response={responses[cur]}
                 onChange={guided && checked[cur] ? undefined : (r) => setResponse(cur, r)}
                 review={guided && checked[cur]}
@@ -443,14 +470,14 @@ export default function TopicPracticeModal({
                   Câu trước
                 </Button>
                 {guided && !checked[cur] ? (
-                  <Button onClick={checkCurrent} disabled={!isAnswered(questions[cur], responses[cur])}>
-                    Kiểm tra
+                  <Button onClick={() => void checkCurrent()} disabled={checking || !isAnswered(questions[cur], responses[cur])}>
+                    {checking ? "Đang kiểm tra…" : "Kiểm tra"}
                   </Button>
                 ) : cur < lastIndex ? (
                   <Button onClick={() => setCur((i) => Math.min(lastIndex, i + 1))}>Câu tiếp</Button>
                 ) : (
                   <Button onClick={submit} disabled={saving}>
-                    {saving ? "Đang nộp…" : "Nộp bài"}
+                    {saving ? "Đang chấm và nộp…" : "Nộp bài"}
                   </Button>
                 )}
               </div>

@@ -16,7 +16,7 @@ import type { Chapter } from "@/features/lessons/types";
 import { isPeriodicExam } from "@/features/lessons/types";
 import { displayClassesByGrade, expandClassIdsByGrade, fetchMyClassIds } from "@/services/classes";
 import { visibleTo } from "@/services/content";
-import { fetchExamsFull, type LessonWithItemRefs } from "@/services/lessons";
+import { fetchExamsForPractice, type LessonWithItemRefs } from "@/services/lessons";
 import { fetchLearnedLessonIds } from "@/services/progress";
 import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/services/static-content";
 import { supabaseConfigured } from "@/services/supabase";
@@ -222,7 +222,7 @@ function Content() {
   useEffect(() => {
     if (examIds.length === 0) return;
     let cancelled = false;
-    fetchExamsFull(examIds)
+    fetchExamsForPractice(examIds)
       .then((metas) => {
         if (cancelled) return;
         const rows: { topic: string; difficulty: Difficulty }[] = [];

@@ -82,6 +82,13 @@ export async function checkPracticeAnswer(
   return data as unknown as PracticeAnswerCheck;
 }
 
+/** Giá trị "chưa trả lời" hợp lệ để gửi cho check_practice_answer (RPC từ chối null) — chấm ra 0 điểm, vẫn trả đáp án. */
+export function unansweredSentinel(q: { type: string }): QuestionResponse {
+  if (q.type === "true_false") return [null, null, null, null];
+  if (q.type === "short_answer" || q.type === "essay" || q.type === "translation") return "";
+  return -1;
+}
+
 /** Ghép đề metadata + câu hỏi đầy đủ thành Exam (dùng cho màn xem lại). */
 export function toFullExam(
   base: { id: number; title: string; duration_minutes?: number; published?: boolean; pass_score?: number | null },

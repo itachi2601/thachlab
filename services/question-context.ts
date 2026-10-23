@@ -5,7 +5,10 @@
  * Dùng ở trang Đăng đề / Nhập bài (khoá nút Đăng tới khi sửa hoặc xác nhận) và ở PracticeSession
  * (loại khỏi lượt bốc ngẫu nhiên).
  */
-import type { ExamQuestion } from "@/features/exams/types";
+import type { ExamQuestion, ExamQuestionPublic } from "@/features/exams/types";
+
+// Nhận cả câu đầy đủ (admin) lẫn câu đã lược đáp án (học sinh): chỉ đọc nội dung hiển thị, trừ khoá `answer` (nếu có).
+type AnyQuestion = ExamQuestion | ExamQuestionPublic;
 
 export const CONTEXT_DEPENDENCY_RE =
   /\(\s*tiếp\s+(?:theo\s+)?câu|(?:ở|trong|của|như|từ|theo)\s+câu\s+(?:trên|trước)|câu\s+(?:trên|trước)\b|(?:dữ kiện|thông tin|kết quả)\s+(?:của\s+)?câu\s+\d+/i;
@@ -14,13 +17,13 @@ export const CONTEXT_DEPENDENCY_RE =
  * (đề 136, 138, 173... bị 2/10/2026). Đứng đầu câu thì là đoạn dẫn của chính câu đó — hợp lệ. */
 export const GLUED_PASSAGE_RE = /\S[^<]{0,}?\s(?:sử dụng (?:thông tin|dữ kiện)[^:<]{0,40}?(?:cho|để trả lời|trả lời)[^:<]{0,40}?:)/i;
 
-export function dependsOnOtherQuestion(q: ExamQuestion): boolean {
+export function dependsOnOtherQuestion(q: AnyQuestion): boolean {
   const text = (q.question ?? "").replace(/<[^>]+>/g, " ").trim();
   return CONTEXT_DEPENDENCY_RE.test(text) || (GLUED_PASSAGE_RE.test(text) && !/^sử dụng/i.test(text));
 }
 
 /** Số thứ tự (1-based) các câu phụ thuộc câu khác. */
-export function questionsDependingOnOthers(questions: ExamQuestion[]): number[] {
+export function questionsDependingOnOthers(questions: AnyQuestion[]): number[] {
   const out: number[] = [];
   questions.forEach((q, i) => {
     if (dependsOnOtherQuestion(q)) out.push(i + 1);
@@ -39,11 +42,12 @@ export function contextDependencyWarning(nums: number[]): string | null {
 
 /** Chuỗi so khớp câu trùng giữa các đề: bỏ HTML, gom khoảng trắng, không phân biệt hoa/thường.
  *  Gồm cả phương án/ý/đáp án để hai câu cùng đề bài nhưng khác lựa chọn không bị coi là một. */
-export function questionKey(q: ExamQuestion): string {
+export function questionKey(q: AnyQuestion): string {
   const clean = (t: string) => t.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
   const parts = [q.question];
   if (q.type === "multiple_choice") parts.push(...q.options);
-  else if (q.type === "true_false") parts.push(...q.statements.map((s) => s.text));
-  else if (q.type === "short_answer") parts.push(q.answer);
+  else if (q.type === "true_false") parts.push(...(q.statements ?? []).map((s) => s.text));
+  // Bản lược đáp án không có `answer` → khoá chỉ dựa vào đề bài (đủ để khử câu trùng giữa các đề).
+  else if (q.type === "short_answer") parts.push(String((q as { answer?: unknown }).answer ?? ""));
   return parts.map(clean).join("|");
 }

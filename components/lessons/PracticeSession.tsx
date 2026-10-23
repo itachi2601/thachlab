@@ -14,12 +14,12 @@ import {
   isAnswered,
   pickRandom,
   totalSeconds,
-  type Exam,
+  type ExamForTaking,
   type QuestionResponse,
 } from "@/features/exams/types";
 import { pendingCount } from "@/lib/offline-queue";
 import { markFirstPracticeDone } from "@/lib/pwa-install";
-import { fetchExamsFull, savePracticeSession, type PracticePick } from "@/services/lessons";
+import { fetchExamsForPractice, gradePracticePicks, savePracticeSession, type GradedPick, type PracticePick } from "@/services/lessons";
 import {
   hasLabelledQuestions,
   LADDER_MIN_QUESTIONS,
@@ -115,7 +115,8 @@ function PracticeDoneView(props: ComponentProps<typeof PracticeDoneViewLazy>) {
 }
 
 // "step" = chế độ Từng câu (không đếm giờ, không dùng timer của "running").
-type Phase = "setup" | "running" | "step" | "done";
+// "grading" = đã nộp (Cả bài), đang chờ server chấm — giữ bài, không chấm tạm ở máy.
+type Phase = "setup" | "running" | "step" | "grading" | "done";
 
 const COUNT_CHOICES = [10, 20, 30, 50];
 const DEFAULT_COUNT = 20;
@@ -173,6 +174,11 @@ export default function PracticeSession({
   const submittedRef = useRef(false);
   const responsesRef = useRef<QuestionResponse[]>([]);
   const picksRef = useRef<PracticePick[]>([]);
+  // Câu đã được server chấm (đủ đáp án + lời giải) — nguồn của màn xem lại và của dòng kết quả lưu DB.
+  const gradedRef = useRef<GradedPick[]>([]);
+  const [gradedPicks, setGradedPicks] = useState<GradedPick[]>([]);
+  const [gradeFailed, setGradeFailed] = useState(false);
+  const gradePendingRef = useRef<{ timedOut: boolean; used: number } | null>(null);
   const clientTokenRef = useRef<string>("");
   const timedOutRef = useRef(false);
 
@@ -183,12 +189,12 @@ export default function PracticeSession({
     void (async () => {
       setBankState("loading");
       try {
-        const metas = await fetchExamsFull(allIds);
+        const metas = await fetchExamsForPractice(allIds);
         if (!alive) return;
         const flat: PracticePick[] = [];
         const seen = new Set<string>();
         for (const id of allIds) {
-          const exam = metas.get(id) as Exam | undefined;
+          const exam: ExamForTaking | undefined = metas.get(id);
           if (!exam) continue;
           exam.questions.forEach((question, qi) => {
             // Câu tự luận không chấm tự động được — để dành cho mục Kiểm tra.
@@ -218,7 +224,7 @@ export default function PracticeSession({
 
   // Đang làm dở = phase running/step. Báo lên trang (đổi tab unmount → mất bài) và chặn đóng/tải lại
   // trang bằng beforeunload. Unmount thì báo false để trang không hỏi oan.
-  const practiceActive = phase === "running" || phase === "step";
+  const practiceActive = phase === "running" || phase === "step" || phase === "grading";
   useEffect(() => {
     onActiveChange?.(practiceActive);
     if (!practiceActive) return;
@@ -251,7 +257,7 @@ export default function PracticeSession({
         setSaveState("idle");
         return;
       }
-      const finalPicks = picksRef.current;
+      const finalPicks = gradedRef.current;
       const finalResponses = responsesRef.current;
       const summary = gradeExam(
         finalPicks.map((p) => p.question),
@@ -292,17 +298,43 @@ export default function PracticeSession({
     [session, lessonId, itemId, ladderScope, recordProgress],
   );
 
+  // Chấm xong (server) → sang màn kết quả và lưu phiên.
+  const finalize = useCallback(
+    (graded: GradedPick[], used: number, timedOut: boolean) => {
+      gradedRef.current = graded;
+      setGradedPicks(graded);
+      setGradeFailed(false);
+      setPhase("done");
+      save(used, timedOut);
+    },
+    [save],
+  );
+
+  // "Cả bài": gửi từng câu cho server chấm. Lỗi mạng → giữ bài, hiện nút Thử lại (gradeFailed).
+  const runGrading = useCallback(
+    (used: number, timedOut: boolean) => {
+      gradePendingRef.current = { used, timedOut };
+      setGradeFailed(false);
+      setPhase("grading");
+      gradePracticePicks(picksRef.current, responsesRef.current)
+        .then((graded) => finalize(graded, used, timedOut))
+        .catch(() => setGradeFailed(true));
+    },
+    [finalize],
+  );
+
   const submit = useCallback(
-    (timedOut = false) => {
+    (timedOut = false, preGraded?: GradedPick[]) => {
       if (submittedRef.current) return;
       submittedRef.current = true;
       const used = Math.round((Date.now() - startedAt.current) / 1000);
       timedOutRef.current = timedOut;
       setUsedSeconds(used);
-      setPhase("done");
-      save(used, timedOut);
+      // Từng câu: mỗi câu đã được server chấm lúc bấm Kiểm tra → có sẵn câu đủ đáp án, khỏi chấm lại.
+      if (preGraded) finalize(preGraded, used, timedOut);
+      else runGrading(used, timedOut);
     },
-    [save],
+    [finalize, runGrading],
   );
   const retry = useCallback(() => save(usedSeconds, timedOutRef.current), [save, usedSeconds]);
 
@@ -384,7 +416,7 @@ export default function PracticeSession({
         items.map((i) => ({ topic: i.pick.question.topic ?? "", correct: i.correct })),
       );
     }
-    submit(false);
+    submit(false, finalPicks);
   }
 
   function answer(r: QuestionResponse) {
@@ -580,10 +612,38 @@ export default function PracticeSession({
     );
   }
 
+  // ---------- Đang chờ server chấm (Cả bài) ----------
+  if (phase === "grading") {
+    return (
+      <div className="rounded-2xl border border-line bg-panel p-5 text-center" role="status" aria-live="polite">
+        {gradeFailed ? (
+          <>
+            <p className="text-base font-semibold text-ink">Chưa chấm được bài.</p>
+            <p className="mt-2 text-sm text-muted">
+              Bài làm của em vẫn được giữ trên trang này. Kiểm tra mạng rồi bấm Thử lại — đừng tắt hay tải lại trang.
+            </p>
+            <button
+              type="button"
+              className="mt-4 min-h-11 rounded-full border border-line-strong px-5 text-base font-semibold text-ink"
+              onClick={() => {
+                const pending = gradePendingRef.current;
+                if (pending) runGrading(pending.used, pending.timedOut);
+              }}
+            >
+              Thử lại
+            </button>
+          </>
+        ) : (
+          <p className="text-base text-ink">Đang chấm bài…</p>
+        )}
+      </div>
+    );
+  }
+
   // ---------- Đã nộp ----------
   return (
     <PracticeDoneView
-      questions={questions}
+      questions={gradedPicks.map((p) => p.question)}
       responses={responses}
       usedSeconds={usedSeconds}
       saveState={saveState}
