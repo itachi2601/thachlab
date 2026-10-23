@@ -10,8 +10,9 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import TeacherViewBanner from "@/components/auth/TeacherViewBanner";
 import { useTeacherView } from "@/components/auth/useTeacherView";
 import ExamRunner from "@/components/exams/ExamRunner";
-import type { Exam } from "@/features/exams/types";
+import type { ExamForTaking } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
+import { fetchExamForTaking } from "@/services/exam-server";
 import { fetchMyClassIds } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { joinSampleClassIfUnset } from "@/services/exam-sample-join";
@@ -41,7 +42,7 @@ function ExamLoader() {
   const id = Number(searchParams.get("id")) || fallbackId || 0;
   const itemIdParam = searchParams.get("item");
   const itemId = itemIdParam ? Number(itemIdParam) : null;
-  const [exam, setExam] = useState<Exam | null>(null);
+  const [exam, setExam] = useState<ExamForTaking | null>(null);
   const [minCorrect, setMinCorrect] = useState<number | null>(null);
   const [theoryLessonId, setTheoryLessonId] = useState<number | null>(null);
   const [error, setError] = useState("");
@@ -50,37 +51,25 @@ function ExamLoader() {
     if (!session || !id) return;
     void (async () => {
       const supabase = getSupabase();
-      const loadExam = () =>
-        supabase
-          .from("exams")
-          .select("id, title, duration_minutes, published, questions, pass_score")
-          .eq("id", id)
-          .single();
-      let res = await loadExam();
-      // pass_score là cột mới (docs/supabase-migration-learning-progress.sql) — lùi
-      // về danh sách cột cũ khi DB chưa chạy migration.
-      if (res.error) {
-        res = await supabase
-          .from("exams")
-          .select("id, title, duration_minutes, published, questions")
-          .eq("id", id)
-          .single();
-      }
+      // Đề lấy qua RPC get_exam_for_taking: học sinh nhận bản đã lược đáp án (P0 #1) — không còn
+      // select exams.questions. Không có quyền/không tồn tại → RPC không trả dòng nào.
+      const loadExam = () => fetchExamForTaking(id).catch(() => null);
+      let data = await loadExam();
       // Đề mẫu: em vừa đăng ký có thể chưa có dòng lớp, RLS chặn đọc đề.
       // Vào đúng lớp của đề rồi đọc lại một lần.
       const isStaffEarly =
         realProfile?.role === "admin" ||
         realProfile?.role === "instructor" ||
         realProfile?.role === "tro_giang";
-      if ((res.error || !res.data) && !isStaffEarly) {
+      if (!data && !isStaffEarly) {
         const joined = await joinSampleClassIfUnset(id, session.user.id).catch(() => false);
-        if (joined) res = await loadExam();
+        if (joined) data = await loadExam();
       }
-      if (res.error || !res.data) {
+      if (!data) {
         setError("Không tìm thấy đề này.");
         return;
       }
-      if (!res.data.published) {
+      if (!data.published) {
         setError("Đề này đang ẩn, chưa thể làm bài.");
         return;
       }
@@ -110,7 +99,7 @@ function ExamLoader() {
           return;
         }
       }
-      setExam(res.data as Exam);
+      setExam(data);
     })();
   }, [session, id, realProfile]);
 

@@ -104,7 +104,7 @@ export const QUESTION_TYPE_ORDER: ExamQuestion["type"][] = [
 /** Gom chỉ số câu (0-based) theo QUESTION_TYPE_ORDER — dùng để vẽ "bảng câu hỏi" chia theo mục
  * mà không đổi số thứ tự câu gốc (giữ nguyên `index+1` để khớp với QuestionCard/chấm điểm). */
 export function groupQuestionIndexesByType(
-  questions: ExamQuestion[],
+  questions: { type: ExamQuestion["type"] }[],
 ): { type: ExamQuestion["type"]; indices: number[] }[] {
   return QUESTION_TYPE_ORDER.map((type) => ({
     type,
@@ -146,6 +146,70 @@ export interface Exam {
   created_at?: string;
   cnc_key?: string | null;
   pass_score?: number | null; // điểm đạt thang 10, null = giáo viên chưa cấu hình
+}
+
+// ── Đề lược đáp án (P0 #1, 24/10/2026) ─────────────────────────────────────────
+// Học sinh KHÔNG đọc được exams.questions: RPC get_exam_for_taking trả bản đã lược (danh sách trắng ở
+// DB: exam_q_public). Kiểu riêng để code không thể "lỡ tay" đọc q.answer ở chỗ chưa nộp bài; đừng nới
+// `Exam` (kiểu của staff) cho khớp. ExamQuestion gán được vào ExamQuestionPublic (thừa trường thì được).
+type OmitUnion<T, K extends PropertyKey> = T extends unknown ? Omit<T, K> : never;
+
+export type ExamQuestionPublic = OmitUnion<
+  ExamQuestion,
+  | "answer"
+  | "answers"
+  | "explanation"
+  | "suggestedAnswer"
+  | "gradingGuide"
+  | "distractorNotes"
+  | "difficultySource"
+  | "lint_ignored"
+  | "statements"
+> &
+  // Chỉ true_false có statements; ở bản lược mỗi ý chỉ còn `text`.
+  { statements?: { text: string }[] };
+
+export interface ExamForTaking {
+  id: number;
+  title: string;
+  duration_minutes: number;
+  published: boolean;
+  pass_score?: number | null;
+  question_count?: number | null;
+  cnc_key?: string | null;
+  /** true: người xem là staff được xem đáp án — questions là bản đầy đủ (đề làm thử/xem đáp án). */
+  full: boolean;
+  questions: ExamQuestionPublic[];
+}
+
+/** Đề đầy đủ đáp án (chỉ staff nhận được từ get_exam_for_taking). */
+export function isFullExam(e: ExamForTaking): e is ExamForTaking & { full: true; questions: ExamQuestion[] } {
+  return e.full === true;
+}
+
+/** Gói trả về của submit_exam_attempt: điểm do server chấm + đề ĐỦ đáp án/lời giải để xem lại. */
+export interface ExamSubmitResult {
+  result_id: number;
+  exam_id: number;
+  score10: number;
+  duration_seconds: number | null;
+  created_at: string;
+  correct_count: number;
+  responses: QuestionResponse[];
+  earned: number;
+  max: number;
+  per_question: { question_index?: number; earned: number; max: number; is_correct: boolean }[];
+  questions: ExamQuestion[];
+}
+
+/** Gói trả về của check_practice_answer: chấm đúng 1 câu + câu đầy đủ (đáp án, lời giải, distractorNotes). */
+export interface PracticeAnswerCheck {
+  exam_id: number;
+  question_index: number;
+  earned: number;
+  max: number;
+  is_correct: boolean;
+  question: ExamQuestion;
 }
 
 // Bài làm của học sinh: song song với mảng questions
@@ -300,7 +364,7 @@ export function questionTopicNames(questions: ExamQuestion[]): string[] {
   ];
 }
 
-export function emptyResponses(questions: ExamQuestion[]): QuestionResponse[] {
+export function emptyResponses(questions: { type: ExamQuestion["type"] }[]): QuestionResponse[] {
   return questions.map((q) => {
     if (q.type === "true_false") return [null, null, null, null];
     if (q.type === "short_answer" || q.type === "essay" || q.type === "translation") return "";
@@ -308,7 +372,7 @@ export function emptyResponses(questions: ExamQuestion[]): QuestionResponse[] {
   });
 }
 
-export function isAnswered(q: ExamQuestion, r: QuestionResponse): boolean {
+export function isAnswered(q: { type: ExamQuestion["type"] }, r: QuestionResponse): boolean {
   if (q.type === "multiple_choice") return r !== null;
   if (q.type === "true_false")
     return Array.isArray(r) && r.some((v) => v !== null);

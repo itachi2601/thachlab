@@ -46,6 +46,7 @@ export default function ExamDoneView({
   onRetry,
   memoryOnly = false,
   onBackToAnswers,
+  serverSummary,
 }: {
   exam: Exam;
   responses: QuestionResponse[];
@@ -58,6 +59,8 @@ export default function ExamDoneView({
   /** Làm thử của giáo viên: điểm chỉ nằm trên máy, không có dòng "đã ghi nhận". */
   memoryOnly?: boolean;
   onBackToAnswers?: () => void;
+  /** Điểm do server chấm (submit_exam_attempt) — ưu tiên hơn số tính lại tại máy từ đáp án server trả. */
+  serverSummary?: { score10: number; correctCount: number };
 }) {
   const { profile } = useAuth();
 
@@ -71,7 +74,8 @@ export default function ExamDoneView({
       .catch(() => undefined);
   }, [exam.questions]);
 
-  const finalSummary = gradeExam(exam.questions, responses);
+  const localSummary = gradeExam(exam.questions, responses);
+  const finalSummary = serverSummary ? { ...localSummary, ...serverSummary } : localSummary;
   const hasEssay = exam.questions.some((q) => q.type === "essay");
   let badge: ResultBadge | null = null;
   if (hasEssay) {

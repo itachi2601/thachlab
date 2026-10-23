@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import type { ExamQuestion, QuestionResponse, QuestionStatus } from "@/features/exams/types";
+import type { ExamQuestion, ExamQuestionPublic, QuestionResponse, QuestionStatus } from "@/features/exams/types";
 import {
   gradeQuestion,
   questionStatus,
@@ -84,7 +84,8 @@ function OptionButton({
 
 interface Props {
   index: number; // số thứ tự hiển thị (1-based)
-  question: ExamQuestion;
+  /** Đang làm bài (review=false) có thể là bản lược đáp án; xem lại (review) bắt buộc là câu đủ đáp án. */
+  question: ExamQuestion | ExamQuestionPublic;
   response: QuestionResponse;
   onChange?: (r: QuestionResponse) => void; // undefined = chế độ xem lại
   review?: boolean;
@@ -96,13 +97,16 @@ interface Props {
 
 export default function QuestionCard({
   index,
-  question: q,
+  question,
   response: r,
   onChange,
   review = false,
   selfCheck = false,
   showAllNotes = false,
 }: Props) {
+  // Chỗ duy nhất ép kiểu: khi review=false thẻ không đọc answer/explanation (xem các nhánh `review &&` bên dưới),
+  // còn review=true thì nơi gọi luôn đưa câu đủ đáp án (sau khi nộp / staff / check_practice_answer).
+  const q = question as ExamQuestion;
   const scored = review && !selfCheck;
   const status = scored ? questionStatus(q, r) : null;
   const graded = scored && q.type !== "essay" ? gradeQuestion(q, r) : null;
@@ -273,8 +277,9 @@ export default function QuestionCard({
             </div>
           ) : (
             <input
-              // Bàn phím số thập phân của iOS không có dấu trừ → câu có đáp án âm dùng bàn phím chữ.
-              inputMode={/^[-−–]/.test(String(q.answer ?? "").trim()) ? "text" : "decimal"}
+              // Bàn phím số thập phân của iOS không có dấu trừ. Đề lược đáp án (học sinh đang làm bài) không biết
+              // đáp án âm hay dương → dùng bàn phím chữ; chỉ khi có đáp án (staff) mới chọn bàn phím số cho câu dương.
+              inputMode={q.answer == null || /^[-−–]/.test(String(q.answer).trim()) ? "text" : "decimal"}
               autoComplete="off"
               autoCapitalize="off"
               spellCheck={false}

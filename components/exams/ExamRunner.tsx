@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState, type ComponentProps } from "r
 import dynamic from "next/dynamic";
 import { CheckCircle2, CircleAlert, Flag } from "lucide-react";
 import Html from "@/components/exams/ContentHtml";
-import { allDistractorHints, distractorHints, isFullyCorrect } from "@/features/lessons/practice-step";
+import { allDistractorHints, distractorHints } from "@/features/lessons/practice-step";
 import LateNightNudge from "@/components/rank/LateNightNudge";
 import { useAuth } from "@/components/auth/AuthProvider";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
@@ -12,25 +12,28 @@ import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
 import QuestionSlide from "@/components/exams/QuestionSlide";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
-import type { Exam, ExamQuestion, QuestionResponse } from "@/features/exams/types";
-import {
-  buildQuestionResults,
-  emptyResponses,
-  gradeExam,
-  groupQuestionIndexesByType,
-  isAnswered,
-  QUESTION_TYPE_LABELS,
-  questionTopicNames,
+import type {
+  ExamForTaking,
+  ExamQuestionPublic,
+  ExamSubmitResult,
+  PracticeAnswerCheck,
+  QuestionResponse,
 } from "@/features/exams/types";
 import {
-  finishExamAttempt,
-  findExistingExamResultId,
+  emptyResponses,
+  gradeQuestion,
+  groupQuestionIndexesByType,
+  isAnswered,
+  isFullExam,
+  QUESTION_TYPE_LABELS,
+} from "@/features/exams/types";
+import {
   findOpenExamAttempt,
   saveExamAttemptProgress,
   startExamAttempt,
   type OpenExamAttempt,
 } from "@/services/progress";
-import { getSupabase } from "@/services/supabase";
+import { checkPracticeAnswer, submitExamAttempt, toFullExam } from "@/services/exam-server";
 import { fetchStartRpNotice, invalidateMyRankCache, type StartRpNotice } from "@/services/rank";
 
 // Màn hình sau khi nộp bài (điểm + xem lại từng câu, components/exams/ExamDoneView.tsx) kéo theo
@@ -43,9 +46,8 @@ const ExamDoneViewLazy = dynamic(() => import("@/components/exams/ExamDoneView")
   loading: () => <p className="text-center text-muted">Đang tính điểm…</p>,
 });
 
-// LazyErrorBoundary: điểm đã được lưu (save() ở dưới gọi ĐỘC LẬP với việc chunk này tải được hay
-// không — submit() gọi setPhase("done") rồi save() ngay trong cùng 1 callback, không chờ
-// ExamDoneView mount) — nên nếu chunk lỗi (mất mạng, hoặc site vừa deploy bản mới xoá chunk cũ),
+// LazyErrorBoundary: điểm đã được server lưu (màn này chỉ mount SAU khi submit_exam_attempt trả kết quả)
+// — nên nếu chunk lỗi (mất mạng, hoặc site vừa deploy bản mới xoá chunk cũ),
 // fallback có thể yên tâm báo "điểm đã lưu" thay vì làm học sinh tưởng mất bài. app/error.tsx là
 // lưới cuối nếu vì lý do gì đó boundary này không bắt được (xem components/ui/LazyErrorBoundary.tsx).
 function ExamDoneView(props: ComponentProps<typeof ExamDoneViewLazy>) {
@@ -77,12 +79,13 @@ type Violation = { type: ViolationType; at: string; away_ms: number };
 // em bấm được vài ý rồi bỏ qua, nhìn bảng phải thấy ngay chỗ còn thiếu.
 type AnswerState = "done" | "partial" | "empty";
 
-function answerState(q: ExamQuestion, r: QuestionResponse): AnswerState {
+function answerState(q: ExamQuestionPublic, r: QuestionResponse): AnswerState {
   if (q.type === "true_false") {
     const picks = Array.isArray(r) ? r : [];
-    const filled = q.statements.filter((_, i) => picks[i] != null).length;
+    const statements = q.statements ?? [];
+    const filled = statements.filter((_, i) => picks[i] != null).length;
     if (filled === 0) return "empty";
-    return filled === q.statements.length ? "done" : "partial";
+    return filled === statements.length ? "done" : "partial";
   }
   return isAnswered(q, r) ? "done" : "empty";
 }
@@ -100,7 +103,8 @@ export default function ExamRunner({
   theoryLessonId = null,
   teacherView = false,
 }: {
-  exam: Exam;
+  /** Đề đã lược đáp án (get_exam_for_taking). Staff nhận đề đầy đủ (exam.full) để xem đáp án / làm thử. */
+  exam: ExamForTaking;
   /** Mục bài học đang gắn đề này (nếu có) — dùng để ghi nhận exam_attempts. */
   itemId?: number | null;
   /** Chỉ có khi đây là quiz kiểm tra nhanh cuối lý thuyết: số câu đúng tối thiểu để đạt. */
@@ -136,12 +140,19 @@ export default function ExamRunner({
     "idle" | "saving" | "saved" | "failed"
   >("idle");
   const [usedSeconds, setUsedSeconds] = useState(0);
+  // Kết quả server chấm (điểm + đề đủ đáp án/lời giải). Chưa có thì màn "done" chỉ hiện trạng thái chờ —
+  // KHÔNG chấm tạm ở máy học sinh (thầy chốt 24/10/2026: đáp án không bao giờ nằm ở trình duyệt khi chưa nộp).
+  const [result, setResult] = useState<ExamSubmitResult | null>(null);
+  const durationRef = useRef(0);
+  const submittingRef = useRef(false);
   const [cur, setCur] = useState(0);
   const [flags, setFlags] = useState<Set<number>>(new Set());
   // Kiểm tra nhanh cuối lý thuyết: bấm "Kiểm tra" là biết đúng/sai câu đó ngay (L1), câu đã kiểm thì khoá đáp án
   // nên điểm vẫn là lần chọn đầu. Đề thường (Luyện tập/Kiểm tra) không đổi: có điểm sau khi nộp.
   const instant = theoryLessonId != null;
-  const [checked, setChecked] = useState<Set<number>>(new Set());
+  const [checked, setChecked] = useState<Map<number, PracticeAnswerCheck>>(new Map());
+  const [checkBusy, setCheckBusy] = useState(false);
+  const [checkError, setCheckError] = useState("");
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [violationBanner, setViolationBanner] = useState<{
@@ -160,7 +171,6 @@ export default function ExamRunner({
   const clientTokenRef = useRef<string>(crypto.randomUUID());
   const lastSavedResponsesRef = useRef<QuestionResponse[] | null>(null);
   const lastSavedAtRef = useRef(0);
-  const savedResultIdRef = useRef<number | null>(null);
   const secondsLeftRef = useRef(secondsLeft);
 
   // Bài đang làm dở của học sinh này cho đúng đề này (nếu có) — dò 1 lần khi vào
@@ -197,78 +207,58 @@ export default function ExamRunner({
     });
   }
 
-  // Lưu điểm — retry-an-toàn: kiểm tra client_token đã có chưa trước khi insert,
-  // để bấm "Thử lại" sau lỗi mạng không tạo thêm một lượt làm mới.
-  const save = useCallback(() => {
-    if (!session || memoryOnly) return;
-    setSaveState("saving");
-    const finalResponses = responsesRef.current;
-    const summary = gradeExam(exam.questions, finalResponses);
-    const studentId = session.user.id;
-    const token = clientTokenRef.current;
+  // Tự lưu tiến độ (đáp án + thời gian còn lại) vào exam_attempts, để lỡ thoát ra/mất
+  // mạng/sập máy thì vào lại vẫn khôi phục được, không phải làm lại.
+  // Tiết kiệm log Supabase (28/9/2026): kiểm mỗi 30s nhưng chỉ ghi khi đáp án có đổi so với
+  // lần ghi trước; ngoài ra cứ tối đa 2 phút ghi một lần dù không đổi để đồng hồ còn lại
+  // (seconds_left) không lệch quá 2 phút khi khôi phục. Trước đây ghi vô điều kiện mỗi 15s.
+  const flushProgress = useCallback((force: boolean) => {
+    if (memoryOnly) return;
+    const dirty = responsesRef.current !== lastSavedResponsesRef.current;
+    const stale = Date.now() - lastSavedAtRef.current >= 120_000;
+    if (!force && !dirty && !stale) return;
+    lastSavedResponsesRef.current = responsesRef.current;
+    lastSavedAtRef.current = Date.now();
+    void saveExamAttemptProgress(clientTokenRef.current, responsesRef.current, secondsLeftRef.current);
+  }, [memoryOnly]);
 
-    void (async () => {
-      const supabase = getSupabase();
-      let resultId = savedResultIdRef.current ?? (await findExistingExamResultId(token).catch(() => null));
-      if (!resultId) {
-        const base = {
-          student_id: studentId,
-          exam_id: exam.id,
-          score: summary.score10,
-          duration_seconds: Math.round((Date.now() - startedAt.current) / 1000),
-          detail: {
-            responses: finalResponses,
-            correctCount: summary.correctCount,
-          },
-          violation_count: violationsRef.current.length,
-          violations: violationsRef.current,
-        };
-        let res = await supabase.from("exam_results").insert({ ...base, client_token: token }).select("id").single();
-        // client_token là cột mới (migration chưa chạy) — lùi về insert không có token,
-        // chấp nhận mất khả năng chống trùng khi thử lại trên DB cũ.
-        if (res.error) res = await supabase.from("exam_results").insert(base).select("id").single();
-        if (res.error || !res.data) {
-          setSaveState("failed");
-          return;
-        }
-        resultId = res.data.id as number;
-      }
-      invalidateMyRankCache();
-      savedResultIdRef.current = resultId;
-      setSaveState("saved");
-      void finishExamAttempt(token, resultId);
-      // Chốt đúng/sai + nhãn từng câu để phân tích chủ đề. Không chặn — lỗi ở
-      // đây chỉ mất dữ liệu phân tích, điểm vẫn được lưu ở trên. Nếu lượt lưu
-      // trước đã tạo các dòng này rồi thì insert lại chỉ va khóa chính, bỏ qua.
-      try {
-        const names = questionTopicNames(exam.questions);
-        const idByName = new Map<string, number>();
-        if (names.length) {
-          const { data: topics } = await supabase
-            .from("question_topics")
-            .select("id, name")
-            .in("name", names);
-          for (const t of topics ?? []) idByName.set(t.name as string, t.id as number);
-        }
-        const rows = buildQuestionResults(exam.questions, finalResponses, idByName).map(
-          (r) => ({ ...r, exam_result_id: resultId, student_id: studentId, exam_id: exam.id }),
-        );
-        await supabase.from("exam_question_results").insert(rows);
-      } catch {
-        /* bảng phân tích chưa có / lỗi mạng / đã có từ lượt lưu trước — bỏ qua */
-      }
-    })();
-  }, [exam, session, memoryOnly]);
+  // Nộp bài: server chấm + ghi (RPC submit_exam_attempt). Idempotent theo client_token nên "Thử lại" sau lỗi
+  // mạng không tạo thêm lượt làm. Mất mạng thì CHỜ: giữ bài ở màn này (responses vẫn trong bộ nhớ + exam_attempts
+  // tự lưu nháp), chưa có điểm/đáp án tới khi server trả lời.
+  const save = useCallback(() => {
+    if (!session || memoryOnly || submittingRef.current) return;
+    submittingRef.current = true;
+    setSaveState("saving");
+    submitExamAttempt({
+      examId: exam.id,
+      clientToken: clientTokenRef.current,
+      responses: responsesRef.current,
+      durationSeconds: durationRef.current,
+      violations: violationsRef.current,
+    })
+      .then((r) => {
+        invalidateMyRankCache();
+        setResult(r);
+        setSaveState("saved");
+      })
+      .catch(() => setSaveState("failed"))
+      .finally(() => {
+        submittingRef.current = false;
+      });
+  }, [exam.id, session, memoryOnly]);
 
   // submit được gọi từ nút bấm và từ interval hết giờ — chuyển màn hình 1 lần rồi lưu
   const submit = useCallback(() => {
     if (submittedRef.current) return;
     submittedRef.current = true;
-    setUsedSeconds(Math.round((Date.now() - startedAt.current) / 1000));
+    durationRef.current = Math.round((Date.now() - startedAt.current) / 1000);
+    setUsedSeconds(durationRef.current);
     setPhase("done");
+    // Lưu nháp lần cuối để lỡ mất mạng/đóng trang thì vào lại vẫn khôi phục được bài.
+    flushProgress(true);
     if (document.fullscreenElement) document.exitFullscreen().catch(() => undefined);
     save();
-  }, [save]);
+  }, [save, flushProgress]);
 
   const confirmSubmit = () => {
     if (answeredCount === exam.questions.length) submit();
@@ -287,21 +277,6 @@ export default function ExamRunner({
     }, 1000);
     return () => clearInterval(timer);
   }, [phase, submit]);
-
-  // Tự lưu tiến độ (đáp án + thời gian còn lại) vào exam_attempts, để lỡ thoát ra/mất
-  // mạng/sập máy thì vào lại vẫn khôi phục được, không phải làm lại.
-  // Tiết kiệm log Supabase (28/9/2026): kiểm mỗi 30s nhưng chỉ ghi khi đáp án có đổi so với
-  // lần ghi trước; ngoài ra cứ tối đa 2 phút ghi một lần dù không đổi để đồng hồ còn lại
-  // (seconds_left) không lệch quá 2 phút khi khôi phục. Trước đây ghi vô điều kiện mỗi 15s.
-  const flushProgress = useCallback((force: boolean) => {
-    if (memoryOnly) return;
-    const dirty = responsesRef.current !== lastSavedResponsesRef.current;
-    const stale = Date.now() - lastSavedAtRef.current >= 120_000;
-    if (!force && !dirty && !stale) return;
-    lastSavedResponsesRef.current = responsesRef.current;
-    lastSavedAtRef.current = Date.now();
-    void saveExamAttemptProgress(clientTokenRef.current, responsesRef.current, secondsLeftRef.current);
-  }, [memoryOnly]);
 
   useEffect(() => {
     if (phase !== "running") return;
@@ -369,7 +344,46 @@ export default function ExamRunner({
     return () => clearTimeout(timer);
   }, [violationBanner]);
 
-  if (teacherView && !tryMode) {
+  // Bấm "Kiểm tra" (quiz cuối lý thuyết): hỏi server chấm 1 câu. Làm thử của giáo viên (đề đầy đủ, không
+  // ghi gì) chấm ngay ở máy vì giáo viên vốn đã xem được đáp án.
+  async function runCheck(idx: number) {
+    if (checkBusy) return;
+    const resp = responsesRef.current[idx];
+    setCheckError("");
+    setCheckBusy(true);
+    try {
+      let res: PracticeAnswerCheck;
+      if (memoryOnly && isFullExam(exam)) {
+        const full = exam.questions[idx];
+        const g = gradeQuestion(full, resp);
+        res = {
+          exam_id: exam.id,
+          question_index: idx,
+          earned: g.earned,
+          max: g.max,
+          is_correct: g.max > 0 && g.earned === g.max,
+          question: full,
+        };
+      } else {
+        res = await checkPracticeAnswer(exam.id, idx, resp);
+      }
+      setChecked((prev) => new Map(prev).set(idx, res));
+    } catch {
+      setCheckError("Chưa kiểm tra được câu này — kiểm tra mạng rồi bấm Kiểm tra lại. Đáp án của em vẫn được giữ.");
+    } finally {
+      setCheckBusy(false);
+    }
+  }
+
+  if (teacherView && !isFullExam(exam)) {
+    return (
+      <p className="text-center text-muted">
+        Em chưa có quyền xem đáp án của đề này (chỉ đề của lớp mình trợ giảng hoặc đề đã gửi xem trước).
+      </p>
+    );
+  }
+
+  if (teacherView && !tryMode && isFullExam(exam)) {
     const blanks = emptyResponses(exam.questions);
     return (
       <div className="mx-auto max-w-3xl">
@@ -497,10 +511,12 @@ export default function ExamRunner({
 
   if (phase === "running") {
     const q = exam.questions[cur];
-    const isChecked = instant && checked.has(cur);
-    const curCorrect = isChecked && isFullyCorrect(q, responses[cur]);
+    // Câu đã Kiểm tra: server (check_practice_answer) trả đúng/sai + câu ĐỦ đáp án/lời giải của riêng câu đó.
+    const check = instant ? checked.get(cur) : undefined;
+    const isChecked = check !== undefined;
+    const curCorrect = check?.is_correct === true;
     // Giáo viên/trợ giảng làm thử: thấy lý do của MỌI phương án sai, không chỉ phương án mình chọn.
-    const curHints = isChecked ? (teacherView ? allDistractorHints(q) : distractorHints(q, responses[cur])) : [];
+    const curHints = check ? (teacherView ? allDistractorHints(check.question) : distractorHints(check.question, responses[cur])) : [];
     return (
       <div ref={topRef} className="mx-auto max-w-3xl scroll-mt-24">
         <ConfirmDialog
@@ -640,7 +656,7 @@ export default function ExamRunner({
         <QuestionSlide slideKey={cur}>
           <QuestionCard
             index={cur + 1}
-            question={q}
+            question={check ? check.question : q}
             response={responses[cur]}
             review={isChecked}
             onChange={
@@ -656,6 +672,12 @@ export default function ExamRunner({
           />
         </QuestionSlide>
         </div>
+
+        {checkError && !isChecked && (
+          <p role="alert" className="mt-4 rounded-xl border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-base text-amber-100">
+            {checkError}
+          </p>
+        )}
 
         {isChecked && (
           <div className="mt-4 space-y-3" role="status" aria-live="polite">
@@ -700,10 +722,10 @@ export default function ExamRunner({
           {instant && !isChecked ? (
             <Button
               className="ml-auto min-h-11"
-              disabled={!isAnswered(q, responses[cur])}
-              onClick={() => setChecked((prev) => new Set(prev).add(cur))}
+              disabled={checkBusy || !isAnswered(q, responses[cur])}
+              onClick={() => void runCheck(cur)}
             >
-              Kiểm tra
+              {checkBusy ? "Đang kiểm tra…" : "Kiểm tra"}
             </Button>
           ) : cur < lastIndex ? (
             <Button className="ml-auto min-h-11" onClick={() => goTo(cur + 1)}>
@@ -719,18 +741,57 @@ export default function ExamRunner({
     );
   }
 
+  // Làm thử của giáo viên: đề đã đầy đủ đáp án, chấm tại máy (không ghi gì).
+  if (memoryOnly && isFullExam(exam)) {
+    return (
+      <ExamDoneView
+        exam={toFullExam(exam, exam.questions)}
+        responses={responses}
+        itemId={itemId}
+        minCorrect={minCorrect}
+        theoryLessonId={theoryLessonId}
+        usedSeconds={usedSeconds}
+        saveState="idle"
+        onRetry={save}
+        memoryOnly
+        onBackToAnswers={() => { setTryMode(false); setPhase("intro"); }}
+      />
+    );
+  }
+
+  // Chưa có kết quả từ server: giữ bài, báo rõ, cho thử lại. Không hiện điểm/đáp án tự tính.
+  if (!result) {
+    return (
+      <div className="mx-auto max-w-xl rounded-2xl border border-line bg-panel p-6 text-center" role="status" aria-live="polite">
+        {saveState === "failed" ? (
+          <>
+            <p className="text-base font-semibold text-ink">Chưa nộp được bài lên hệ thống.</p>
+            <p className="mt-2 text-sm text-muted">
+              Bài làm của em vẫn được giữ trên trang này. Kiểm tra mạng rồi bấm Thử lại — đừng tắt hay tải lại trang. Điểm và
+              đáp án sẽ hiện ngay khi hệ thống chấm xong.
+            </p>
+            <Button className="mt-4 min-h-11" onClick={save}>
+              Thử lại
+            </Button>
+          </>
+        ) : (
+          <p className="text-base text-ink">Đang nộp bài và chấm điểm…</p>
+        )}
+      </div>
+    );
+  }
+
   return (
     <ExamDoneView
-      exam={exam}
+      exam={toFullExam(exam, result.questions)}
       responses={responses}
       itemId={itemId}
       minCorrect={minCorrect}
       theoryLessonId={theoryLessonId}
       usedSeconds={usedSeconds}
-      saveState={memoryOnly ? "idle" : saveState}
+      saveState="saved"
       onRetry={save}
-      memoryOnly={memoryOnly}
-      onBackToAnswers={memoryOnly ? () => { setTryMode(false); setPhase("intro"); } : undefined}
+      serverSummary={{ score10: result.score10, correctCount: result.correct_count }}
     />
   );
 }
