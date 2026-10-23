@@ -70,7 +70,7 @@
 - [Chữa bài mobile + TA](project_thachlab_chua_bai_mobile_ta.md) — iPhone ngang chiếu tivi; treo thử máy thật
 - [Kiểm tra hiểu bài](project_thachlab_kiem_tra_hieu_bai.md) — chờ thầy cho ví dụ "map sai lý thuyết"
 ## Giao diện & sản phẩm
-- [Ôn tập theo chặng](project_thachlab_on_tap_theo_chang.md) — 21/10: 3 màn hình (thầy/TA, tivi, HS) trên đề Kiểm tra nhanh; migration đã chạy, CHƯA DEPLOY
+- [Ôn tập theo chặng](project_thachlab_on_tap_theo_chang.md) — 21/10 3 màn hình trên đề Kiểm tra nhanh + 23/10 ôn dạng bài tập (question_dang); CHƯA DEPLOY
 - [Lịch công tác tuần](project_thachlab_lich_tuan.md) — skill lich-tuan + /tai-khoan; 19/10: tên thầy, ưu tiên công tác, cảnh báo nhờ xem hộ; chờ thầy chọn T6 23/10
 - [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`, xem thử `/dev/giao-dien`
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
