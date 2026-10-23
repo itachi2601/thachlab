@@ -124,6 +124,8 @@ export interface PickerExam {
   title: string;
   questionCount: number;
   published: boolean;
+  /** Loại mục chứa đề (ly_thuyet = Kiểm tra nhanh; còn lại = đề bài tập). */
+  kind?: string;
 }
 
 export interface PickerChapter {
@@ -149,7 +151,13 @@ export async function fetchPickerChapters(classId: number): Promise<PickerChapte
  * Các đề "Kiểm tra nhanh" của một chương: đề gắn vào mục lý thuyết (`ly_thuyet`) của từng bài, theo thứ tự bài.
  * Lấy cả bài chưa công bố vì thầy có thể ôn bằng đề chưa mở cho học sinh; cờ `published` để người chọn thấy.
  */
-export async function fetchChapterQuickQuizzes(chapterId: number): Promise<PickerExam[]> {
+export const fetchChapterQuickQuizzes = (chapterId: number) => fetchChapterExams(chapterId, ["ly_thuyet"]);
+
+/** Đề bài tập của một chương (ôn các dạng): đề gắn vào mục kiểm tra / bài tập về nhà / luyện tập của từng bài. */
+export const fetchChapterExerciseExams = (chapterId: number) =>
+  fetchChapterExams(chapterId, ["bai_tap_ve_nha", "kiem_tra", "luyen_tap"]);
+
+async function fetchChapterExams(chapterId: number, kinds: string[]): Promise<PickerExam[]> {
   const supabase = getSupabase();
   const { data: lessons, error: le } = await supabase
     .from("lessons")
@@ -163,11 +171,12 @@ export async function fetchChapterQuickQuizzes(chapterId: number): Promise<Picke
 
   const { data: items, error: ie } = await supabase
     .from("lesson_items")
-    .select("id, lesson_id, exam_ids")
-    .eq("kind", "ly_thuyet")
+    .select("id, lesson_id, kind, exam_ids")
+    .in("kind", kinds)
+    .order("sort_order")
     .in("lesson_id", lessonRows.map((l) => l.id));
   if (ie) throw new Error(ie.message);
-  const itemRows = (items ?? []) as { id: number; lesson_id: number; exam_ids: number[] | null }[];
+  const itemRows = (items ?? []) as { id: number; lesson_id: number; kind: string; exam_ids: number[] | null }[];
   const examIds = [...new Set(itemRows.flatMap((i) => i.exam_ids ?? []))];
   if (examIds.length === 0) return [];
 
@@ -192,6 +201,7 @@ export async function fetchChapterQuickQuizzes(chapterId: number): Promise<Picke
           title: e.title,
           questionCount: e.question_count ?? 0,
           published: e.published,
+          kind: it.kind,
         });
       }
     }

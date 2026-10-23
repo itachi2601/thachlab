@@ -10,6 +10,7 @@ import type { SchoolClass } from "@/features/exams/types";
 import { fetchClasses } from "@/services/classes";
 import {
   createReviewSession,
+  fetchChapterExerciseExams,
   fetchChapterQuickQuizzes,
   fetchPickerChapters,
   fetchPickerExamById,
@@ -43,6 +44,7 @@ export default function ReviewHome() {
   const [chapters, setChapters] = useState<PickerChapter[]>([]);
   const [chapterId, setChapterId] = useState<number | null>(null);
   const [options, setOptions] = useState<PickerExam[] | null>(null);
+  const [exercises, setExercises] = useState<PickerExam[] | null>(null);
   const [stages, setStages] = useState<PickedStage[]>([]);
   const [title, setTitle] = useState("");
   const [threshold, setThreshold] = useState(80);
@@ -71,6 +73,7 @@ export default function ReviewHome() {
         setChapters(c);
         setChapterId(null);
         setOptions(null);
+        setExercises(null);
       })
       .catch(() => !off && setChapters([]));
     return () => {
@@ -82,12 +85,16 @@ export default function ReviewHome() {
     async (id: number) => {
       setChapterId(id);
       setOptions(null);
+      setExercises(null);
       try {
-        setOptions(await fetchChapterQuickQuizzes(id));
+        const [quick, ex] = await Promise.all([fetchChapterQuickQuizzes(id), fetchChapterExerciseExams(id)]);
+        setOptions(quick);
+        setExercises(ex);
         const ch = chapters.find((c) => c.id === id);
         setTitle((t) => t || (ch ? `Ôn tập · ${ch.title}` : ""));
       } catch {
         setOptions([]);
+        setExercises([]);
         toast("error", "Không tải được danh sách đề của chương này.");
       }
     },
@@ -154,7 +161,7 @@ export default function ReviewHome() {
       <header>
         <h1 className="font-display text-2xl font-bold text-ink">Ôn tập theo chặng</h1>
         <p className="mt-1 text-sm text-muted">
-          Cả lớp ôn cùng nhịp: mỗi chặng là một đề (thường là Kiểm tra nhanh cuối bài), có đồng hồ chung. Giáo viên và trợ giảng thấy
+          Cả lớp ôn cùng nhịp: mỗi chặng là một đề (Kiểm tra nhanh để ôn lý thuyết, đề bài tập để ôn các dạng), có đồng hồ chung. Giáo viên và trợ giảng thấy
           từng em chưa mở, đang làm hay đã đạt; học sinh chỉ thấy tiến độ của mình và số liệu chung của lớp.
         </p>
       </header>
@@ -220,36 +227,22 @@ export default function ReviewHome() {
         </div>
 
         {chapterId && (
-          <div>
-            <p className="mb-2 text-sm font-semibold text-ink">Đề Kiểm tra nhanh của chương — chọn các đề làm chặng</p>
-            {options === null ? (
-              <p className="text-sm text-muted">Đang tải…</p>
-            ) : options.length === 0 ? (
-              <p className="text-sm text-muted">Chương này chưa có Kiểm tra nhanh gắn vào bài. Có thể nhập mã đề ở dưới.</p>
-            ) : (
-              <ul className="space-y-1.5">
-                {options.map((o) => (
-                  <li key={o.examId}>
-                    <label className="flex min-h-11 cursor-pointer items-start gap-3 rounded-xl border border-line px-3 py-2 hover:bg-surface-2">
-                      <input
-                        type="checkbox"
-                        checked={chosen.has(o.examId)}
-                        onChange={() => toggle(o)}
-                        className="mt-1 size-5 shrink-0"
-                      />
-                      <span className="min-w-0 flex-1 text-sm text-ink">
-                        <span className="font-semibold">{o.lessonTitle}</span>
-                        <span className="block text-muted">
-                          {o.questionCount} câu · đề số {o.examId}
-                          {!o.published && <span className="ml-2 font-semibold text-warn">⚠ đề đang ẩn</span>}
-                        </span>
-                      </span>
-                    </label>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+          <>
+            <ExamPicker
+              heading="Ôn lý thuyết — đề Kiểm tra nhanh của chương"
+              empty="Chương này chưa có Kiểm tra nhanh gắn vào bài. Có thể nhập mã đề ở dưới."
+              list={options}
+              chosen={chosen}
+              toggle={toggle}
+            />
+            <ExamPicker
+              heading="Ôn các dạng bài tập — đề bài tập của chương"
+              empty="Chương này chưa có đề bài tập gắn vào bài. Có thể nhập mã đề ở dưới."
+              list={exercises}
+              chosen={chosen}
+              toggle={toggle}
+            />
+          </>
         )}
 
         <div className="flex flex-wrap items-end gap-2">
@@ -335,6 +328,51 @@ export default function ReviewHome() {
           {busy ? "Đang tạo…" : "Tạo buổi ôn"}
         </Button>
       </section>
+    </div>
+  );
+}
+
+const KIND_TEXT: Record<string, string> = { bai_tap_ve_nha: "Bài tập về nhà", kiem_tra: "Kiểm tra", luyen_tap: "Luyện tập" };
+
+function ExamPicker({
+  heading,
+  empty,
+  list,
+  chosen,
+  toggle,
+}: {
+  heading: string;
+  empty: string;
+  list: PickerExam[] | null;
+  chosen: Set<number>;
+  toggle: (p: PickerExam) => void;
+}) {
+  return (
+    <div>
+      <p className="mb-2 text-sm font-semibold text-ink">{heading} — chọn các đề làm chặng</p>
+      {list === null ? (
+        <p className="text-sm text-muted">Đang tải…</p>
+      ) : list.length === 0 ? (
+        <p className="text-sm text-muted">{empty}</p>
+      ) : (
+        <ul className="space-y-1.5">
+          {list.map((o) => (
+            <li key={o.examId}>
+              <label className="flex min-h-11 cursor-pointer items-start gap-3 rounded-xl border border-line px-3 py-2 hover:bg-surface-2">
+                <input type="checkbox" checked={chosen.has(o.examId)} onChange={() => toggle(o)} className="mt-1 size-5 shrink-0" />
+                <span className="min-w-0 flex-1 text-sm text-ink">
+                  <span className="font-semibold">{o.lessonTitle}</span>
+                  <span className="block text-muted">
+                    {o.kind && KIND_TEXT[o.kind] ? `${KIND_TEXT[o.kind]} · ` : ""}
+                    {o.questionCount} câu · đề số {o.examId}
+                    {!o.published && <span className="ml-2 font-semibold text-warn">⚠ đề đang ẩn</span>}
+                  </span>
+                </span>
+              </label>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
