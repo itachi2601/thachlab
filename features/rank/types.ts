@@ -1,4 +1,4 @@
-import type { ExamQuestion } from "@/features/exams/types";
+import type { ExamQuestion, ExamQuestionPublic } from "@/features/exams/types";
 
 // Hệ thống rank — kiểu dữ liệu dùng chung cho các RPC rank_* (docs/supabase-migration-rank-system.sql).
 
@@ -389,7 +389,8 @@ export interface FixQuizStart {
   total: number;
   attemptsLeft: number;
   passPct: number;
-  questions: ExamQuestion[];
+  /** Câu đã lược đáp án (rank_fix_quiz_open) — chấm ở server khi nộp. */
+  questions: ExamQuestionPublic[];
 }
 
 export interface FixQuizResult {
@@ -398,6 +399,11 @@ export interface FixQuizResult {
   rpDelta: number;
   fixedTopics: number;
   wrongTopics: number;
+  /** Số câu đúng do server chấm. */
+  correct: number;
+  total: number;
+  /** Câu đủ đáp án + lời giải: chỉ có khi đã đạt (null khi chưa passed). */
+  questions: ExamQuestion[] | null;
 }
 
 export interface FixableTopic {

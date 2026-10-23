@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
 import { useToast } from "@/components/ui/Toast";
 import type { QuestionResponse } from "@/features/exams/types";
-import { emptyResponses, gradeExam, isAnswered } from "@/features/exams/types";
+import { emptyResponses, isAnswered } from "@/features/exams/types";
 import type { FixQuizResult, FixQuizStart, FixableTopic } from "@/features/rank/types";
 import { startFixQuiz, submitFixQuiz } from "@/services/rank";
 
@@ -15,7 +15,7 @@ type Phase = "loading" | "error" | "intro" | "running" | "result";
 
 /**
  * Sửa sai để nhận RP: bài ngắn bốc từ ngân hàng cùng chủ đề, loại câu đã gặp trong đề gốc
- * (RPC rank_fix_quiz_start chọn câu và kiểm điều kiện phía DB). Chấm ở client như mọi đề khác,
+ * (RPC rank_fix_quiz_start chọn câu và kiểm điều kiện phía DB). Server chấm (câu đã lược đáp án),
  * DB tính pct/đạt và cộng RP theo tỉ lệ chủ đề đã sửa (rank_fix_quiz_submit).
  */
 export default function FixQuizModal({
@@ -75,9 +75,9 @@ export default function FixQuizModal({
     if (!quiz) return;
     setSubmitting(true);
     try {
-      const summary = gradeExam(questions, responses);
-      const r = await submitFixQuiz(quiz.attemptId, summary.correctCount);
-      setResult({ ...r, correct: summary.correctCount, total: questions.length });
+      // Server chấm (rank_fix_quiz_submit nhận câu trả lời); mất mạng thì bài vẫn giữ, em bấm Nộp lại.
+      const r = await submitFixQuiz(quiz.attemptId, responses);
+      setResult(r);
       setPhase("result");
       if (r.rpDelta > 0) toast("success", `+${r.rpDelta} RP sửa sai!`);
       onDone(r);

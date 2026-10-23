@@ -1,7 +1,7 @@
 // Hệ thống rank (RP theo mùa + danh hiệu) — mọi tính toán nằm trong Postgres
 // (docs/supabase-migration-rank-system.sql); ở đây chỉ gọi RPC và đọc bảng cấu hình.
 
-import type { ExamQuestion } from "@/features/exams/types";
+import type { ExamQuestion, ExamQuestionPublic, QuestionResponse } from "@/features/exams/types";
 import type {
   ClassRankBoard,
   ClassRankGroups,
@@ -175,7 +175,7 @@ export async function fetchClassRankBoard(classId: number): Promise<ClassRankBoa
 // Sửa sai để nhận RP
 // ============================================================
 export async function startFixQuiz(resultId: number, topicId: number): Promise<FixQuizStart> {
-  const { data, error } = await getSupabase().rpc("rank_fix_quiz_start", {
+  const { data, error } = await getSupabase().rpc("rank_fix_quiz_open", {
     p_exam_result_id: resultId,
     p_topic_id: topicId,
   });
@@ -186,7 +186,7 @@ export async function startFixQuiz(resultId: number, topicId: number): Promise<F
     total: number;
     attempts_left: number;
     pass_pct: number;
-    questions: ExamQuestion[];
+    questions: ExamQuestionPublic[];
   };
   return {
     attemptId: d.attempt_id,
@@ -198,15 +198,34 @@ export async function startFixQuiz(resultId: number, topicId: number): Promise<F
   };
 }
 
-export async function submitFixQuiz(attemptId: number, correct: number): Promise<FixQuizResult> {
+/** Nộp bài sửa sai: gửi câu trả lời, server chấm (không còn nhận "số câu đúng" từ máy). */
+export async function submitFixQuiz(attemptId: number, responses: QuestionResponse[]): Promise<FixQuizResult> {
   const { data, error } = await getSupabase().rpc("rank_fix_quiz_submit", {
     p_attempt_id: attemptId,
-    p_correct: correct,
+    p_responses: responses,
   });
   if (error) throw new Error(error.message);
   invalidateMyRankCache();
-  const d = data as { pct: number; passed: boolean; rp_delta: number; fixed_topics: number; wrong_topics: number };
-  return { pct: d.pct, passed: d.passed, rpDelta: d.rp_delta, fixedTopics: d.fixed_topics, wrongTopics: d.wrong_topics };
+  const d = data as {
+    pct: number;
+    passed: boolean;
+    rp_delta: number;
+    fixed_topics: number;
+    wrong_topics: number;
+    correct: number;
+    total: number;
+    questions: ExamQuestion[] | null;
+  };
+  return {
+    pct: d.pct,
+    passed: d.passed,
+    rpDelta: d.rp_delta,
+    fixedTopics: d.fixed_topics,
+    wrongTopics: d.wrong_topics,
+    correct: d.correct,
+    total: d.total,
+    questions: d.questions ?? null,
+  };
 }
 
 // ============================================================
