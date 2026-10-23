@@ -72,9 +72,20 @@ def problems(md: str):
     """[(id, tiêu đề đầy đủ, khối md)] theo tiêu đề dạng '## D1 ⭐ …' hoặc '### S1 ⭐⭐ …'."""
     parts = re.split(r"(?m)^#{2,3} (?=[A-Za-z]+\d+ )", md)
     out = []
+    group = ""
     for p in parts[1:]:
         head, _, body = p.partition("\n")
-        out.append((head.split()[0], head.strip(), body.strip().rstrip("-").strip()))
+        # tiêu đề nhóm '## B. CALC' đứng cuối khối của bài trước: tách ra, gắn vào đầu bài kế để không lọt vào <details>
+        m = re.search(r"(?m)^-{3,}\s*\n+## (.+)\s*$", body)
+        nxt = ""
+        if m:
+            nxt = m.group(1).strip()
+            body = body[: m.start()]
+        body = body.strip().rstrip("-").strip()
+        if group:
+            body = f"**Nhóm {group}**\n\n" + body
+        group = nxt
+        out.append((head.split()[0], head.strip(), body))
     return out
 
 
