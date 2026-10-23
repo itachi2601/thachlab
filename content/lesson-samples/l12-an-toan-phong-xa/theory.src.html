@@ -1,4 +1,4 @@
-<div class="tl-box">
+<div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học</p>
 <ul>
 <li>Nêu được <strong>tác hại của tia phóng xạ</strong> và bốn yếu tố quyết định.</li>
@@ -17,7 +17,7 @@
 
 <!--FIG1-->
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Kỹ thuật viên lùi từ 1 m ra 3 m. Suất liều ở chỗ mới sẽ:</p>
 <div class="tl-quiz">
@@ -44,13 +44,13 @@
 
 <p>Liều thấp gây đỏ da, rụng tóc; liều cao gây bỏng xạ, suy tuỷ xương.</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: vì sao tia phóng xạ "ưa" tế bào đang phân chia?</summary>
 <p>Tế bào phân chia phải mở xoắn ADN để sao chép, nên ADN dễ đứt và ít có thời gian sửa chữa hơn tế bào đã biệt hoá. Vì vậy các cơ quan thay tế bào nhanh — tuỷ xương, niêm mạc ruột, tuyến sinh dục, nang tóc — phản ứng sớm nhất với phóng xạ. Cùng một liều, trẻ em và thai nhi chịu ảnh hưởng nặng hơn người lớn.</p>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Hai kỹ thuật viên cùng đứng cách nguồn 2 m; A vào 5 phút, B vào 20 phút. Vì sao B nhận liều hơn?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl19-q1" id="tl19-q1a"><label for="tl19-q1a" class="tl-opt tl-ok">A. Vì thời gian chiếu xạ dài hơn — cùng khoảng cách, liều tỉ lệ thuận thời gian</label>
@@ -75,7 +75,7 @@
 
 <!--FIG2-->
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: bảng tra nhanh và vài mốc liều nên nhớ</summary>
 <table class="tl-table">
 <thead>
@@ -95,8 +95,8 @@
 </ul>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl19-q2conf" value="chac"> Chắc</label> <label><input type="radio" name="tl19-q2conf" value="khong"> Không chắc</label></p>
 <p><strong>Câu 2.</strong> Mẫu mô phơi nhiễm tia alpha, nhận liều hấp thụ $D = 0{,}05\ \text{Gy}$. Liều tương đương là:</p>
 <div class="tl-quiz">
@@ -121,7 +121,7 @@
 
 <!--FIG3-->
 
-<div class="tl-box tl-box--exp" data-exp="tn-l12-antoanpx-01">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-antoanpx-01">
 <p class="tl-label">🔬 Thí nghiệm: đo suất liều theo khoảng cách</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> đặt máy đo (ống Geiger) cách nguồn gamma lần lượt 0,5 m; 1 m; 1,5 m; 2 m; 3 m, mỗi vị trí đếm 1 phút, đã trừ phông 30 xung/phút. Máy quy đổi $k = 0{,}25$ µSv/h mỗi xung/phút.</li>
@@ -143,7 +143,7 @@
 </tbody>
 </table>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🤏 Vì sao trong phép đo thật, tỉ số số đếm chỉ khớp $1/r^2$ trong phạm vi $\pm\sqrt{N}$?</summary>
 <p>Phép đếm hạt là quá trình ngẫu nhiên, nên sai số chuẩn của $N$ xung đếm được là $\sqrt{N}$: với $1440$ xung là $\pm 38$ (khoảng 2,6%), với $360$ xung là $\pm 19$ (khoảng 5%). Bảng trên là số liệu minh hoạ lấy đúng theo mô hình $360/d^2$, nên các tỉ số khớp chính xác; đo thật thì mỗi số đếm dao động vài phần trăm và tỉ số chỉ khớp $1/r^2$ trong phạm vi sai số $\pm\sqrt{N}$.</p>
 <p>Ví dụ ở 3 m: $N = 40 \pm 6$, tức $\pm 15\%$; tỉ số $360/40 = 9$ vì thế mang sai số cỡ $\pm 1{,}4$. Ba nguồn lệch khác: số đếm phông trừ đi cũng mang sai số riêng; khoảng cách đo bằng thước có sai số $\pm 1$ cm (ở 0,5 m đã là 2%); nguồn thực không phải nguồn điểm và bức xạ tán xạ từ sàn, tường cũng lọt vào máy đo.</p>
@@ -165,15 +165,15 @@
 </table>
 </details>
 <!--video:sau:tn-l12-antoanpx-02-->
-<div class="tl-box tl-box--video">
+<div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem video: ba tia, ba tấm chắn</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/bPF2dKzEHac?rel=0&start=10&end=45" title="ba tia, ba tấm chắn" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
 <p><strong>Nhìn vào:</strong> Tấm nào chặn được tia alpha, beta, gamma?</p>
 </div>
 
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Cùng một nguồn gamma, cách nào giảm liều nhiều nhất?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl19-q3" id="tl19-q3a"><label for="tl19-q3a" class="tl-opt tl-no">A. Giữ khoảng cách, giảm thời gian một nửa</label>
@@ -222,15 +222,15 @@
 <li><strong>Nguyên tắc:</strong> liều đủ ích, thấp nhất cho mô lành.</li>
 </ul>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: chụp X-quang ngực khác chụp CT thế nào?</summary>
 <p>Chụp X-quang ngực dùng một chùm tia rất ngắn, liều cỡ 0,1 mSv — cỡ phông tự nhiên của hai tuần (khoảng 0,09 mSv). Chụp CT ghi nhiều lớp cắt nên liều cỡ 7 mSv, gấp hàng chục lần; vì vậy bác sĩ chỉ định CT khi thật cần và ghi lại số lần chụp. Với một chỉ định đúng, lợi ích của việc chẩn đoán thường lớn hơn rủi ro của liều đó.</p>
 </details>
 
 <p>⚠ X-quang, CT chiếu từ ngoài; Xofigo là điều trị đưa chất vào trong.</p>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 4.</strong> Khác nhau cơ bản giữa chẩn đoán hình ảnh phóng xạ và xạ trị ung thư là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl19-q4" id="tl19-q4a"><label for="tl19-q4a" class="tl-opt tl-no">A. Chẩn đoán dùng đồng vị phóng xạ, xạ trị thì không</label>
@@ -272,8 +272,8 @@
 
 <p>⚠ Trong bể nước, chất thải nằm kín trong vỏ bọc; nước chỉ chắn tia và làm mát.</p>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Cách làm nào <em>không</em> phù hợp với chất thải mức cao?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl19-q5" id="tl19-q5a"><label for="tl19-q5a" class="tl-opt tl-no">A. Thuỷ tinh hoá, bọc thép rồi chôn sâu trong tầng địa chất</label>
@@ -287,6 +287,7 @@
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1: "Gy và Sv là một"</h4>
 
 <p>Gy đo <strong>năng lượng mô hấp thụ</strong>; Sv đo <strong>mức nguy hiểm</strong> quy về tia X — hai đơn vị dễ gộp làm một.</p>
@@ -302,12 +303,14 @@
 <tr><td>liều xạ trị kê theo Gy</td><td>giới hạn an toàn, máy đo môi trường (µSv/h) dùng Sv</td></tr>
 </tbody>
 </table>
+</div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: cùng 1 Gy, loại tia nào nguy hiểm hơn?</summary>
 <p>1 Gy tia X cho 1 Sv, còn 1 Gy hạt alpha cho 20 Sv. Alpha mất năng lượng rất nhanh trên một quãng đường ngắn nên dồn tổn thương vào một dải tế bào hẹp. Đó cũng là lí do một nguồn alpha ở ngoài cơ thể chỉ cần tờ giấy chắn, nhưng hít phải bụi alpha thì cực kì nguy hiểm.</p>
 </details>
 
+<div class="tl-trap">
 <h4>Bẫy 2: "xa gấp đôi thì liều giảm một nửa"</h4>
 
 <p>Quy luật là <strong>bình phương</strong> khoảng cách. Chia theo <strong>tỉ số</strong>: đo ở 2 m, lùi tới 4 m là xa gấp 2, nên chia 4 chứ không chia 16.</p>
@@ -322,12 +325,14 @@
 <tr><td>gấp 5 lần</td><td>$1/25$</td></tr>
 </tbody>
 </table>
+</div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: vì sao lại là bình phương?</summary>
 <p>Nguồn phát ra mọi hướng, nên ở khoảng cách $r$ cùng một lượng bức xạ trải trên mặt cầu diện tích $4\pi r^2$. Diện tích tăng theo $r^2$ thì mật độ năng lượng — tức suất liều — giảm theo $1/r^2$.</p>
 </details>
 
+<div class="tl-trap">
 <h4>Bẫy 3: "alpha bị tờ giấy chắn nên vô hại"</h4>
 
 <p>Chỉ đúng khi nguồn ở <em>ngoài</em> cơ thể. Nguy hiểm nhất là lúc nguồn đã vào <em>bên trong</em>.</p>
@@ -341,9 +346,10 @@
 <tr><td>chắn được bằng giấy, nhôm, chì</td><td>không chắn được nữa, phải thải nhanh ra</td></tr>
 </tbody>
 </table>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl19-q6conf" value="chac"> Chắc</label> <label><input type="radio" name="tl19-q6conf" value="khong"> Không chắc</label></p>
 <p><strong>Câu 6.</strong> Phòng thí nghiệm nhận nguồn alpha hở (dạng bột). Cách phòng tránh đúng nhất?</p>
 <div class="tl-quiz">
@@ -358,36 +364,36 @@
 
 <h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài</p>
 <p>Nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>1. Tia phóng xạ gây hại cho cơ thể thế nào?</summary>
 <p><strong>Ion hoá · Phá tế bào.</strong> Tia phóng xạ ion hoá môi trường, phá huỷ phân tử sinh học và làm hỏng tế bào. Mức ảnh hưởng phụ thuộc <strong>cường độ</strong> chùm tia, <strong>khả năng ion hoá</strong>, <strong>khả năng đâm xuyên</strong> và <strong>thời gian chiếu xạ</strong>.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>2. Liều hấp thụ và liều tương đương khác nhau thế nào?</summary>
 <p><strong>Gy đo năng lượng · Sv đo nguy cơ.</strong> $D = E/m$ tính bằng Gy ($1\ \text{Gy} = 1\ \text{J/kg}$); $H = w_R D$ tính bằng Sv. Tia X, gamma, beta có $w_R = 1$; alpha $w_R = 20$; neutron $w_R$ khoảng 5–20.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>3. Phát biểu ba nguyên tắc an toàn phóng xạ.</summary>
 <p><strong>Thời gian ngắn · Khoảng cách xa · Che chắn đủ.</strong> Liều tỉ lệ thuận thời gian phơi nhiễm, tỉ lệ nghịch bình phương khoảng cách, và giảm theo vật liệu cùng độ dày của tấm chắn.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>4. Vì sao lùi xa gấp đôi thì liều còn một phần tư?</summary>
 <p>Vì nguồn phát ra mọi hướng: cùng lượng bức xạ trải trên mặt cầu có diện tích $4\pi r^2$, nên mật độ năng lượng tỉ lệ nghịch với $r^2$. Lùi gấp đôi, diện tích tăng 4 lần, liều còn $1/4$.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>5. Biển cảnh báo phóng xạ đặt ở đâu, để làm gì?</summary>
 <p>Đặt <strong>tại khu vực có thiết bị phát tia phóng xạ</strong>, <strong>trên thiết bị</strong> và <strong>trên vật chứa nguồn</strong>; mục đích là cảnh báo mọi người không tiếp cận và không làm hỏng thiết bị.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>6. Xử lí chất thải phóng xạ theo bước nào, vì sao tách theo chu kì?</summary>
 <p><strong>Giảm thể tích → cố định → cách li.</strong> Đồng vị chu kì ngắn thì lưu giữ chờ phân rã rồi thải theo quy định; đồng vị chu kì dài phải cố định trong khối bền và chôn sâu, cách li từ hàng trăm năm ($^{137}\text{Cs}$) tới hàng trăm nghìn năm ($^{239}\text{Pu}$). Nguyên tắc: cô lập, cô đặc — không pha loãng rồi xả ra môi trường.</p>
 </details>
@@ -395,7 +401,7 @@
 
 <h3>V. Bài toán mẫu: suất liều 90 µSv/h tại 1 m</h3>
 
-<div class="tl-box tl-box--rule">
+<div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📝 Đề bài</p>
 <p>Máy xạ trị áp sát dùng nguồn $^{192}_{77}\text{Ir}$; máy đo cho <strong>90 µSv/h tại 1 m</strong>. Kỹ thuật viên đứng ở <strong>3 m, mỗi ca 30 phút</strong>, cả năm tổng cộng <strong>2 000 giờ</strong>; giới hạn nghề nghiệp <strong>20 mSv/năm</strong>.</p>
 <p>a) Suất liều ở 3 m? b) Liều trong 30 phút ở 3 m? c) Ở 1 m trong 30 phút, liều gấp mấy lần? d) 2 000 giờ/năm ở 3 m có vượt giới hạn?</p>
@@ -416,7 +422,7 @@
 </table>
 </div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem: lời giải</summary>
 <ol class="tl-steps">
 <li>Câu a: khoảng cách gấp 3 lần nên suất liều giảm $3^2 = 9$ lần: $\dot H_3 = 90/9 = 10\ \mu\text{Sv/h}$.</li>
@@ -427,15 +433,15 @@
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy trước)</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu (làm trên giấy trước)</p>
 <p>Đổi nguồn: <strong>160 µSv/h tại 1 m</strong>; đứng cách <strong>2 m</strong> trong <strong>15 phút</strong>, không quá <strong>0,01 mSv</strong> mỗi ca.</p>
 <ol class="tl-steps">
 <li>Bước 1: khoảng cách gấp 2 nên suất liều giảm 4 lần — $\dot H_2 = 160/4 = 40\ \mu\text{Sv/h}$.</li>
 <li><strong>Em điền:</strong> liều trong 15 phút?</li>
 <li><strong>Em điền:</strong> đứng tối đa bao lâu?</li>
 </ol>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Bấm xem bước 2–3</summary>
 <p>Bước 2: $t = 15$ phút $= 0{,}25$ h, nên $H = 40 \times 0{,}25 = 10\ \mu\text{Sv} = 0{,}01\ \text{mSv}$ — vừa đúng mức cho phép. Bước 3: $t_{\max} = 10\ \mu\text{Sv} \div 40\ \mu\text{Sv/h} = 0{,}25$ h $= 15$ phút. Ghi nhớ hai bước không được quên: <strong>đổi phút ra giờ</strong> và <strong>lấy liều chia cho suất liều</strong> khi tìm thời gian.</p>
 </details>
@@ -443,8 +449,8 @@
 
 <p>⚠ Chia theo tỉ số khoảng cách mới/cũ, không theo số mét.</p>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Thử sức: đổi số, đổi khoảng cách</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức: đổi số, đổi khoảng cách</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl19-q7conf" value="chac"> Chắc</label> <label><input type="radio" name="tl19-q7conf" value="khong"> Không chắc</label></p>
 <p><strong>Câu 7.</strong> Máy đo cho 120 µSv/h tại 2 m. Muốn liều không quá 20 µSv, ở 4 m đứng tối đa bao lâu?</p>
 <div class="tl-quiz">
@@ -466,27 +472,27 @@
 <li><strong>Bảo quản thực phẩm:</strong> chiếu xạ diệt vi trùng, kéo dài hạn dùng, tránh mọc mầm; nhược điểm: đổi màu, hương vị, giá cao.</li>
 </ul>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎯 Thử thách phân tầng</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐ Cơ bản: đổi 0,1 mSv ra µSv; liều chụp X-quang ngực gấp mấy lần 5 µSv một ca?</summary>
 <p>$0{,}1\ \text{mSv} = 100\ \mu\text{Sv}$; $100/5 = 20$ lần. Một lần chụp X-quang ngực cho liều gấp 20 lần liều của một ca điều trị.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐⭐ Khá: vì sao cùng 1 Gy, tia alpha gây hại gấp 20 lần tia X?</summary>
 <p>Vì alpha mất năng lượng rất nhanh: nó chỉ đi được vài xentimét trong không khí và vài chục micrômét trong mô, nên toàn bộ năng lượng dồn vào một dải tế bào rất hẹp, gây đứt gãy ADN tập trung khó sửa. Tia X thì để lại năng lượng rải rác trên cả đường đi. Hệ số chất lượng $w_R$ chính là cách quy mức hại đó về cùng một thang Sv.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐⭐⭐ Thách đấu: vì sao ¹³¹I ($T = 8$ ngày) lưu vài tháng được, còn thanh nhiên liệu phải cách li hàng nghìn năm?</summary>
 <p>Vì độ phóng xạ giảm theo $2^{-t/T}$: ¹³¹I sau 10 chu kì (80 ngày) còn dưới 0,1%, sau khoảng một năm còn không đáng kể, nên chỉ cần lưu trong bể chờ phân rã rồi xử lí như chất thải y tế. Thanh nhiên liệu chứa $^{239}\text{Pu}$ ($T$ khoảng 24 000 năm) và các sản phẩm phân hạch chu kì dài: muốn giảm 1000 lần cũng phải chờ hàng trăm nghìn năm, nên con người buộc phải <em>cách li</em> nó khỏi sinh quyển — cố định trong khối thuỷ tinh, bọc thép, chôn sâu trong tầng địa chất ổn định và giám sát lâu dài.</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Tác hại:</strong> ion hoá · phá tế bào phân chia nhanh · tuỳ cường độ, ion hoá, đâm xuyên, thời gian chiếu.</li>
 <li><strong>Liều:</strong> $D = E/m$ (Gy) · $H = w_R\,D$ (Sv) · alpha $w_R = 20$.</li>
