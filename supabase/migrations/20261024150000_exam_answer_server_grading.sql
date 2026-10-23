@@ -258,6 +258,19 @@ as $$
   order by array_position(p_exam_ids, e.id)
 $$;
 
+-- Khi nào HS được thấy đáp án + lời giải của ĐỀ ĐÁNH GIÁ (thầy chốt 24/10/2026): đủ 3 lượt nộp, hoặc đã đạt pass_score.
+-- Đề không phải đánh giá (luyện tập) và staff luôn thấy sau khi nộp. Đề đánh giá không có pass_score chỉ mở theo 3 lượt.
+create or replace function public.exam_answers_revealed(p_exam_id bigint, p_uid uuid)
+returns boolean
+language sql stable security definer set search_path = public
+as $$
+  select not public.exam_is_assessment(p_exam_id)
+      or (select count(*) from public.exam_results er where er.exam_id = p_exam_id and er.student_id = p_uid) >= 3
+      or exists (select 1 from public.exam_results er join public.exams e on e.id = er.exam_id
+                 where er.exam_id = p_exam_id and er.student_id = p_uid
+                   and e.pass_score is not null and er.score >= e.pass_score)
+$$;
+
 -- ---------- 4. Nộp bài ----------
 -- Gói kết quả trả về client (màn Done/Review): đủ đáp án + lời giải, điểm từng câu từ exam_question_results.
 create or replace function public.exam_submit_payload(p_result_id bigint)
@@ -271,7 +284,9 @@ as $$
     'earned', coalesce(pq.earned, (g.v ->> 'earned')::numeric),
     'max', coalesce(pq.max, (g.v ->> 'max')::numeric),
     'per_question', coalesce(pq.rows, g.v -> 'per_question'),
-    'questions', e.questions)
+    'answers_revealed', (public.exam_staff_can_read(e.id) or public.exam_answers_revealed(e.id, er.student_id)),
+    'questions', case when public.exam_staff_can_read(e.id) or public.exam_answers_revealed(e.id, er.student_id) then e.questions
+                  else (select coalesce(jsonb_agg(public.exam_q_public(x.v) order by x.i), '[]'::jsonb) from jsonb_array_elements(e.questions) with ordinality as x(v, i)) end)
   from public.exam_results er
   join public.exams e on e.id = er.exam_id
   left join lateral (
@@ -396,7 +411,11 @@ returns setof jsonb
 language sql stable security definer set search_path = public
 as $$
   select jsonb_build_object('id', e.id, 'title', e.title, 'pass_score', e.pass_score,
-                            'questions', coalesce(e.questions, '[]'::jsonb))
+                            'answers_revealed', (public.exam_staff_can_read(e.id) or public.exam_answers_revealed(e.id, (select auth.uid()))),
+                            'questions', case when public.exam_staff_can_read(e.id) or public.exam_answers_revealed(e.id, (select auth.uid()))
+                                              then coalesce(e.questions, '[]'::jsonb)
+                                              else (select coalesce(jsonb_agg(public.exam_q_public(x.v) order by x.i), '[]'::jsonb)
+                                                    from jsonb_array_elements(coalesce(e.questions, '[]'::jsonb)) with ordinality as x(v, i)) end)
   from public.exams e
   where (select auth.uid()) is not null
     and e.id = any (p_exam_ids[1:200])
@@ -425,9 +444,8 @@ begin
     if not (v_exam.published and (v_exam.cnc_key is not null or public.exam_open_to_student(v_exam.id, v_uid) or public.is_staff())) then
       raise exception 'Không tìm thấy đề này' using errcode = 'P0002';
     end if;
-    if public.exam_is_assessment(v_exam.id)
-       and not exists (select 1 from public.exam_results er where er.exam_id = v_exam.id and er.student_id = v_uid) then
-      raise exception 'Đề kiểm tra chỉ xem đáp án sau khi nộp bài' using errcode = '42501';
+    if not public.exam_answers_revealed(v_exam.id, v_uid) then
+      raise exception 'Đề kiểm tra chỉ xem đáp án sau khi đủ 3 lượt hoặc đạt điểm' using errcode = '42501';
     end if;
   end if;
   if p_response is null or p_response = 'null'::jsonb then
@@ -517,7 +535,8 @@ begin
   return jsonb_build_object('pct', a.pct, 'passed', a.passed, 'rp_delta', v_delta,
     'fixed_topics', v_fixed, 'wrong_topics', v_wrong,
     'correct', v_correct, 'total', a.total,
-    'per_question', v_g -> 'per_question', 'questions', v_qs);
+    'per_question', v_g -> 'per_question',
+    'questions', case when a.passed then v_qs else null end);
 end;
 $$;
 
@@ -626,6 +645,7 @@ revoke all on function public.exam_grade_question(jsonb, jsonb) from public, ano
 revoke all on function public.exam_grade_responses(jsonb, jsonb) from public, anon, authenticated;
 revoke all on function public.exam_q_public(jsonb) from public, anon, authenticated;
 revoke all on function public.exam_submit_payload(bigint) from public, anon, authenticated;
+revoke all on function public.exam_answers_revealed(bigint, uuid) from public, anon, authenticated;
 revoke all on function public.trg_exam_results_server_grade() from public, anon, authenticated;
 revoke all on function public.trg_exam_question_results_server_grade() from public, anon, authenticated;
 
@@ -709,6 +729,7 @@ commit;
 -- drop view if exists public.exams_staff;
 -- drop function if exists public.exam_staff_can_read(bigint);
 -- drop function if exists public.exam_q_public(jsonb);
+-- drop function if exists public.exam_answers_revealed(bigint, uuid);
 -- drop function if exists public.exam_grade_responses(jsonb, jsonb);
 -- drop function if exists public.exam_grade_question(jsonb, jsonb);
 -- drop function if exists public.exam_translation_tokens(text);
