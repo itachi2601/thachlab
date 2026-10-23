@@ -33,3 +33,4 @@ Dùng trong app: `/tro-giang/on-tap/` → chọn lớp + chương → mục "Ôn
 - 2026-10-23 · Viết hàm insert vào `exams` bị lỗi vì `question_count` và `type_counts` là cột sinh → chạy thử trong giao dịch hoàn tác trước khi chạy thật; đừng insert hai cột này.
 - 2026-10-23 · `supabase db query` chỉ in kết quả câu cuối và cần chạy từ gốc repo (không nhận project ở thư mục khác); mỗi truy vấn một file; terminal chặn dấu ngoặc đơn trong lệnh inline → để SQL vào file `-f`.
 - 2026-10-23 · Giả định "dạng = YCCĐ" suýt thành cả migration sai → đọc vài dòng dữ liệu thật của đúng thứ thầy gọi tên trước khi thiết kế.
+- 2026-10-24 · Insert không đặt `source` nên dòng mới mang nhãn mặc định `claude-2026-10-23`, rollback theo nguồn xoá nhầm lượt khác → `tao-sql.py` nay ghi `source` tường minh (đổi ngày sau khi sinh bằng sed); chạy thử rollback bằng đếm `where source=` mới bắt được. Lớp 12: lesson_id ≠ số bài (id 2–9 = Bài 1–3, 5–8); Bài thực hành không có topic_id thì không gán được.

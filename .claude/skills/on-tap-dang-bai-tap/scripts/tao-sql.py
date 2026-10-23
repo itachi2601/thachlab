@@ -23,8 +23,8 @@ q = lambda s: "'" + s.replace("'", "''") + "'"
 vals = ",\n".join(f"  ({i}, {l}, {q(lab)}, {'true' if u else 'false'})" for i, l, lab, u in rows)
 open(OUT, 'w').write(f"""-- Gán dạng bài tập cho câu ngân hàng (sinh bởi skill on-tap-dang-bai-tap). Rollback: delete from public.question_dang where source = 'claude-2026-10-23';
 begin;
-insert into public.question_dang (question_id, lesson_id, dang_label, unsure)
-select v.qid, v.lid, v.label, v.unsure
+insert into public.question_dang (question_id, lesson_id, dang_label, unsure, source)
+select v.qid, v.lid, v.label, v.unsure, 'claude-2026-10-23'
 from (values
 {vals}
 ) as v(qid, lid, label, unsure)
