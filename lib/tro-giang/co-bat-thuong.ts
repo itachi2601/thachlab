@@ -6,10 +6,10 @@ export interface FlagSession {
   assistant_id: string;
   work_date: string;
   session_type: string;
-  start_time: string | null;
-  end_time: string | null;
-  hours: number | null;
-  student_touches: number | null;
+  start_time?: string | null;
+  end_time?: string | null;
+  hours?: number | null;
+  student_touches?: number | null;
   created_at?: string;
   policy?: SessionPolicy;
 }
@@ -26,7 +26,7 @@ const REPEAT_MIN = 4;
 const LATE_LOG_DAYS = 5;
 const TOUCH_TARGET = 12;
 
-const toMin = (t: string | null) => {
+const toMin = (t: string | null | undefined) => {
   if (!t) return null;
   const [h, m] = t.split(":").map(Number);
   return Number.isFinite(h) && Number.isFinite(m) ? h * 60 + m : null;
