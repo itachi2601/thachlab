@@ -324,7 +324,7 @@ function ExamTagger({
   useEffect(() => {
     if (!examId) return;
     getSupabase()
-      .from("exams")
+      .from("exams_staff")
       .select("questions")
       .eq("id", examId)
       .single()

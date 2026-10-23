@@ -61,7 +61,7 @@ export default function AdminOverviewPage() {
     let alive = true;
     Promise.all([
       sb.from("lessons").select("*", head),
-      sb.from("exams").select("*", head),
+      sb.from("exams").select("id", head),
       sb.from("question_bank").select("*", head),
       sb.from("profiles").select("*", head).eq("role", "student"),
       sb.from("exam_results").select("*", head).gte("created_at", since),

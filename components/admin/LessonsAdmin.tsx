@@ -444,7 +444,7 @@ function PracticeWrongestPanel({ itemId }: { itemId: number }) {
     setOpenKey(key);
     if (!questionsByExam[row.examId]) {
       const { data } = await getSupabase()
-        .from("exams")
+        .from("exams_staff")
         .select("questions")
         .eq("id", row.examId)
         .single();

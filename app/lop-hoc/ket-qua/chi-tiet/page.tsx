@@ -10,6 +10,7 @@ import RequireAuth from "@/components/auth/RequireAuth";
 import Button from "@/components/ui/Button";
 import ExamResultSummary from "@/components/exams/ExamResultSummary";
 import ExamReviewPager from "@/components/exams/ExamReviewPager";
+import ExamDoneLocked from "@/components/exams/ExamDoneLocked";
 import ExamNextSteps from "@/components/exams/ExamNextSteps";
 import FixQuizModal from "@/components/rank/FixQuizModal";
 import type { FixableTopic, RankStatus } from "@/features/rank/types";
@@ -55,6 +56,23 @@ function AttemptDetail({ resultId, fromParent }: { resultId: number; fromParent:
   }
 
   const dateLabel = new Date(detail.createdAt).toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric" });
+  if (!detail.answersRevealed) {
+    const correctCount = detail.perQuestion.filter((r) => r.max > 0 && r.earned >= r.max).length;
+    return (
+      <>
+        <p className="mb-2 text-sm text-muted">Làm ngày {dateLabel}</p>
+        <ExamDoneLocked
+          title={detail.examTitle}
+          questions={detail.questions}
+          responses={detail.responses}
+          perQuestion={detail.perQuestion}
+          score10={detail.score}
+          correctCount={correctCount}
+          usedSeconds={detail.durationSeconds}
+        />
+      </>
+    );
+  }
   const showFix = !fromParent && rp?.sourceEnabled && topics.length > 0;
 
   return (

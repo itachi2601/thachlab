@@ -9,7 +9,7 @@ export interface TaPreviewRow {
   exam_id: number;
   class_id: number;
   sent_at: string;
-  exams: { title: string; questions: unknown[] | null } | null;
+  exams: { title: string; question_count: number | null } | null;
   classes: { name: string } | null;
 }
 
@@ -40,7 +40,7 @@ export async function setTaPreviewClasses(examId: number, classIds: number[]): P
 export async function fetchMyTaPreviews(): Promise<TaPreviewRow[]> {
   const { data, error } = await getSupabase()
     .from("exam_ta_previews")
-    .select("exam_id, class_id, sent_at, exams(title, questions), classes(name)")
+    .select("exam_id, class_id, sent_at, exams(title, question_count), classes(name)")
     .order("sent_at", { ascending: false });
   if (error) throw error;
   return (data ?? []) as unknown as TaPreviewRow[];
@@ -48,7 +48,7 @@ export async function fetchMyTaPreviews(): Promise<TaPreviewRow[]> {
 
 export async function fetchPreviewExam(examId: number) {
   const { data, error } = await getSupabase()
-    .from("exams")
+    .from("exams_staff") // đề đủ đáp án cho trợ giảng được phép (P0 #1); không đọc exams.questions trực tiếp
     .select("id, title, duration_minutes, published, questions")
     .eq("id", examId)
     .single();

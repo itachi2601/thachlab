@@ -40,7 +40,7 @@ function List() {
                 <span className="flex-1">
                   {r.exams?.title ?? `Đề #${r.exam_id}`}
                   <span className="block text-xs text-slate-400">
-                    {r.classes?.name} · {r.exams?.questions?.length ?? 0} câu
+                    {r.classes?.name} · {r.exams?.question_count ?? 0} câu
                   </span>
                 </span>
               </Link>

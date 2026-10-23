@@ -176,7 +176,7 @@ export default function TeacherThptAnalysis({
       .then((d) => apply({ reviewStats: d.stats }))
       .catch(() => apply({ reviewStats: [] }));
     getSupabase()
-      .from("exams")
+      .from("exams_staff")
       .select("questions")
       .eq("id", examId)
       .single()

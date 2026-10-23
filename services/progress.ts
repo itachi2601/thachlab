@@ -438,7 +438,7 @@ export async function fetchStudentLearningHistory(studentId: string): Promise<Le
       .limit(100),
     supabase
       .from("exam_results")
-      .select("id, score, created_at, detail, exams(title, questions)")
+      .select("id, score, created_at, detail, exams(title, type_counts)")
       .eq("student_id", studentId)
       .order("created_at", { ascending: false })
       .limit(100),
@@ -472,7 +472,8 @@ export async function fetchStudentLearningHistory(studentId: string): Promise<Le
   for (const row of (resultsRes.data ?? []) as unknown as Record<string, unknown>[]) {
     const exam = Array.isArray(row.exams) ? row.exams[0] : row.exams;
     const detail = row.detail as { correctCount?: number } | null;
-    const hasEssay = ((exam as { questions?: { type: string }[] } | null)?.questions ?? []).some((q) => q.type === "essay");
+    // Chỉ cần biết đề có câu tự luận: đọc từ type_counts (metadata), không đọc exams.questions (P0 #1).
+    const hasEssay = ((exam as { type_counts?: Record<string, number> | null } | null)?.type_counts?.essay ?? 0) > 0;
     entries.push({
       at: row.created_at as string,
       activity: "exam",
@@ -503,15 +504,22 @@ export async function fetchPendingEssays(studentIds: string[]): Promise<PendingE
   const { data, error } = await supabase
     .from("exam_question_results")
     .select(
-      "exam_result_id, question_index, student_id, exam_id, qtype, graded_at, exam_results(created_at, detail), exams(title, questions), profiles(full_name)",
+      "exam_result_id, question_index, student_id, exam_id, qtype, graded_at, exam_results(created_at, detail), profiles(full_name)",
     )
     .eq("qtype", "essay")
     .is("graded_at", null)
     .in("student_id", studentIds);
   if (error || !data) return [];
+  // Nội dung câu tự luận lấy qua exams_staff (đề đủ đáp án cho staff được phép) — exams.questions không đọc trực tiếp nữa.
+  const examIds = [...new Set((data as unknown as { exam_id: number }[]).map((r) => r.exam_id))];
+  const examById = new Map<number, { title?: string; questions?: { question: string }[] }>();
+  for (let i = 0; i < examIds.length; i += 100) {
+    const { data: ex } = await supabase.from("exams_staff").select("id, title, questions").in("id", examIds.slice(i, i + 100));
+    for (const e of (ex ?? []) as unknown as { id: number; title?: string; questions?: { question: string }[] }[]) examById.set(e.id, e);
+  }
   return (data as unknown as Record<string, unknown>[]).map((row) => {
     const examResult = Array.isArray(row.exam_results) ? row.exam_results[0] : row.exam_results;
-    const exam = Array.isArray(row.exams) ? row.exams[0] : row.exams;
+    const exam = examById.get(row.exam_id as number);
     const profile = Array.isArray(row.profiles) ? row.profiles[0] : row.profiles;
     const detail = (examResult as { detail?: { responses?: unknown[] } } | null)?.detail;
     const questionIndex = row.question_index as number;

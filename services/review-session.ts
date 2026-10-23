@@ -266,7 +266,7 @@ export async function fetchPickerExamById(examId: number): Promise<PickerExam | 
 
 /** Nội dung ngắn của một câu để chiếu/đọc nhanh trên bảng điều phối. */
 export async function fetchQuestionSnippets(examId: number): Promise<string[]> {
-  const { data } = await getSupabase().from("exams").select("questions").eq("id", examId).maybeSingle();
+  const { data } = await getSupabase().from("exams_staff").select("questions").eq("id", examId).maybeSingle();
   const qs = ((data as { questions?: { question?: string }[] } | null)?.questions ?? []) as { question?: string }[];
   return qs.map((q) =>
     String(q.question ?? "")

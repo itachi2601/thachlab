@@ -3,8 +3,10 @@ import { callClassRpc } from "@/services/class-rpc";
 import {
   gradeQuestion,
   type ExamQuestion,
+  type ExamQuestionPublic,
   type QuestionResponse,
 } from "@/features/exams/types";
+import { fetchExamReviews } from "@/services/exam-server";
 
 // ============================================================
 // Kiểu dùng chung
@@ -168,7 +170,7 @@ export async function fetchMyWrongQuestions(
   const eqrCols = "exam_result_id, exam_id, question_index, topic_name, form, is_correct, created_at";
   let query = getSupabase()
     .from("exam_results")
-    .select(`id, exam_id, detail, exams(title, questions), exam_question_results!inner(${eqrCols})`)
+    .select(`id, exam_id, detail, exams(title), exam_question_results!inner(${eqrCols})`)
     .eq("student_id", userId)
     .eq("exam_question_results.is_correct", false)
     .order("id")
@@ -184,7 +186,7 @@ export async function fetchMyWrongQuestions(
     id: number;
     exam_id: number;
     detail: { responses?: QuestionResponse[] } | null;
-    exams: { title: string; questions: ExamQuestion[] } | { title: string; questions: ExamQuestion[] }[] | null;
+    exams: { title: string } | { title: string }[] | null;
     exam_question_results: EqrRow[] | null;
   };
   const rows: EqrRow[] = [];
@@ -196,6 +198,8 @@ export async function fetchMyWrongQuestions(
     }),
   );
   if (rows.length === 0) return [];
+  // Đáp án lấy qua get_exam_review (chỉ đề em đã nộp; đề đánh giá chưa mở đáp án thì bỏ qua — không có gì để ôn).
+  const reviews = await fetchExamReviews([...new Set(rows.map((r) => r.exam_id))]);
 
   const out: {
     ref: WrongQuestionRef;
@@ -204,7 +208,9 @@ export async function fetchMyWrongQuestions(
   }[] = [];
   for (const r of rows) {
     const entry = byResult.get(r.exam_result_id);
-    const question = entry?.exam?.questions?.[r.question_index];
+    const review = reviews.get(r.exam_id);
+    if (!review?.answers_revealed) continue;
+    const question = review.questions?.[r.question_index];
     if (!question) continue;
     out.push({
       ref: {
@@ -229,15 +235,18 @@ export async function fetchMyWrongQuestions(
   return out;
 }
 
-export interface MyExamAttemptDetail {
+export type MyExamAttemptDetail = {
   examId: number;
   examTitle: string;
-  questions: ExamQuestion[];
   responses: QuestionResponse[];
   score: number;
   durationSeconds: number;
   createdAt: string;
-}
+} & (
+  | { answersRevealed: true; questions: ExamQuestion[] }
+  // Đề đánh giá chưa đủ 3 lượt/chưa đạt: câu hỏi đã lược đáp án, chỉ có đúng/sai từng câu (perQuestion).
+  | { answersRevealed: false; questions: ExamQuestionPublic[]; perQuestion: { earned: number; max: number; is_correct: boolean }[] }
+);
 
 /** Toàn bộ 1 lượt làm bài của chính học sinh — để xem lại nguyên bài (không chỉ câu sai). */
 export async function fetchMyExamResultDetail(
@@ -245,22 +254,40 @@ export async function fetchMyExamResultDetail(
 ): Promise<MyExamAttemptDetail | null> {
   const { data, error } = await getSupabase()
     .from("exam_results")
-    .select("exam_id, score, duration_seconds, created_at, detail, exams(title, questions)")
+    .select("exam_id, score, duration_seconds, created_at, detail, exams(title)")
     .eq("id", resultId)
     .single();
   if (error || !data) return null;
   const exam = Array.isArray(data.exams) ? data.exams[0] : data.exams;
   const responses =
     (data.detail as { responses?: QuestionResponse[] } | null)?.responses ?? [];
-  return {
+  const base = {
     examId: data.exam_id as number,
     examTitle: exam?.title ?? "(Đề đã xóa)",
-    questions: (exam?.questions as ExamQuestion[]) ?? [],
     responses,
     score: Number(data.score),
     durationSeconds: data.duration_seconds as number,
     createdAt: data.created_at as string,
   };
+  const review = (await fetchExamReviews([base.examId])).get(base.examId);
+  if (review && !review.answers_revealed) {
+    const { data: per } = await getSupabase()
+      .from("exam_question_results")
+      .select("question_index, earned, max, is_correct")
+      .eq("exam_result_id", resultId)
+      .order("question_index");
+    return {
+      ...base,
+      answersRevealed: false,
+      questions: review.questions,
+      perQuestion: ((per ?? []) as { earned: number; max: number; is_correct: boolean }[]).map((r) => ({
+        earned: Number(r.earned),
+        max: Number(r.max),
+        is_correct: r.is_correct,
+      })),
+    };
+  }
+  return { ...base, answersRevealed: true, questions: review?.questions ?? [] };
 }
 
 // ============================================================
@@ -997,7 +1024,7 @@ export async function fetchExamReviewData(
   const [{ data: exam, error: examError }, { data: results, error: resultsError }] =
     await Promise.all([
       supabase
-        .from("exams")
+        .from("exams_staff")
         .select("title, duration_minutes, questions")
         .eq("id", examId)
         .single(),

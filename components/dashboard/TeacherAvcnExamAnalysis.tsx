@@ -50,7 +50,7 @@ export default function TeacherAvcnExamAnalysis({ examIds, studentIds }: { examI
     if (examId === null) return;
     let cancelled = false;
     void getSupabase()
-      .from("exams")
+      .from("exams_staff")
       .select("questions")
       .eq("id", examId)
       .single()

@@ -322,7 +322,7 @@ export async function syncLabelsToSourceExams(
   let failed = 0;
   for (const [examId, list] of byExam) {
     try {
-      const { data, error } = await sb.from("exams").select("questions").eq("id", examId).single();
+      const { data, error } = await sb.from("exams_staff").select("questions").eq("id", examId).single();
       if (error || !data || !Array.isArray(data.questions)) {
         failed++;
         continue;

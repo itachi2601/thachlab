@@ -64,7 +64,7 @@ export interface CncExamBankMeta {
 
 // Dùng ở trang quản trị LMS CNC để liệt kê tình trạng từng ngân hàng câu hỏi.
 export async function fetchCncExamBankMeta(): Promise<CncExamBankMeta[]> {
-  const { data, error } = await getSupabase().from("exams").select("id, cnc_key, questions").not("cnc_key", "is", null);
+  const { data, error } = await getSupabase().from("exams_staff").select("id, cnc_key, questions").not("cnc_key", "is", null);
   if (error) throw error;
   const byKey = new Map((data ?? []).map((row) => [row.cnc_key as string, row]));
   return CNC_QUIZ_BANKS.map(({ key, label }) => {
@@ -81,7 +81,7 @@ export async function fetchCncExamBankMeta(): Promise<CncExamBankMeta[]> {
 // Dùng khi mở "Xem/sửa" 1 ngân hàng trong ExamEditor.
 export async function fetchCncExamRow(key: string): Promise<Exam | null> {
   const { data, error } = await getSupabase()
-    .from("exams")
+    .from("exams_staff")
     .select("id, title, duration_minutes, published, questions, topic, difficulty, created_at, cnc_key")
     .eq("cnc_key", key)
     .maybeSingle();

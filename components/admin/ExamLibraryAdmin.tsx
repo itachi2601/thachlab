@@ -241,7 +241,7 @@ export default function ExamLibraryAdmin({
     setFigureAckFor(null);
     try {
       const [{ data, error }, { data: classRows }] = await Promise.all([
-        getSupabase().from("exams").select("*").eq("id", id).single(),
+        getSupabase().from("exams_staff").select("*").eq("id", id).single(),
         getSupabase().from("exam_classes").select("class_id").eq("exam_id", id),
       ]);
       if (error || !data) throw new Error(error?.message ?? "Không tải được đề.");
