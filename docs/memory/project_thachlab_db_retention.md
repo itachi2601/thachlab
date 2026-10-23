@@ -6,7 +6,7 @@ metadata:
 ---
 
 Đợt rà hạn mức Supabase Free 28/9/2026 (ảnh Usage: Log 83%, DB 21%, còn lại < 20%).
-Kết luận cho thầy: gói Pro 25 USD chấp nhận được; trên Pro dung lượng vượt 8 GB chỉ 0,125 USD/GB/tháng
+Kết luận cho thầy (23/10/2026 xác nhận dashboard: đang gói FREE, compute t3.nano, CPU trung bình 80 %, RAM 79 %, Disk IO balance 77 %, egress 5,49/5 GB đã vượt, log 1,79/1 GB vượt; DB 222 MB, 17/60 kết nối): gói Pro 25 USD chấp nhận được; trên Pro dung lượng vượt 8 GB chỉ 0,125 USD/GB/tháng
 nên "phình" không làm hoá đơn phình; rủi ro hoá đơn thật là compute (Small +15 USD) và egress.
 
 **Đã làm 28/9/2026**
