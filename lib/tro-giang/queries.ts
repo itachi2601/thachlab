@@ -400,7 +400,7 @@ export async function fetchTouchBaselines(): Promise<Map<string, number>> {
 
 /** Dữ liệu đối chiếu cho cờ bất thường: lịch sử 60 ngày của các trợ giảng có buổi chờ duyệt + kết quả bài cuối buổi của buổi phụ đạo. */
 export async function fetchFlagContext(
-  pending: TaPendingSession[],
+  pending: Pick<TaSessionRow, "id" | "assistant_id" | "session_type">[],
 ): Promise<{ history: TaSessionRow[]; passRatios: Map<string, number | null> }> {
   const sb = getSupabase();
   const ids = [...new Set(pending.map((p) => p.assistant_id))];
