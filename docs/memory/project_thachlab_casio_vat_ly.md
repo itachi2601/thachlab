@@ -1,6 +1,6 @@
 ---
 name: project-thachlab-casio-vat-ly
-description: Ôn thi Giải Vật lí trên máy tính cầm tay (Casio) — kế hoạch 12 gói WP-00..11; WP-01,03,04,05,06 đã soạn xong (18/10/2026), chờ thầy bấm thử máy và công văn thể lệ
+description: Ôn thi Giải Vật lí trên máy tính cầm tay (Casio) — kế hoạch 12 gói WP-00..11; WP-01,03,04,05,06 đã soạn xong (18/10/2026), đã ĐĂNG + HIỆN 24/10 (bài 179–183), chờ thầy bấm thử máy và công văn thể lệ
 metadata:
   type: project
 ---
@@ -30,3 +30,4 @@ Xem [[project-thachlab-khoa-hsg9-vat-ly]] cho quy trình soạn tương tự.
 
 **Lên web 19/10/2026:** lớp `casio-vat-ly` (môn cùng tên), chương 1 + bài 179–183 (Sổ tay, Dao động cơ, Sóng cơ, Điện xoay chiều, Điện từ & ánh sáng), mini-test = đề tự luận 984→đề mới (`subject_code=casio-vat-ly`). ĐÃ BẬT HIỆN 19/10. Phím/biến đã sửa theo sách fx-580VN X + thầy thử máy (báo cáo `content/casio-vat-ly/KIEM-PHIM-OPUS.md`). Dựng/đăng lại: `bash scripts/dang-casio-vat-ly.sh` (md → pandoc → bundle → upload-lesson; `--dry`, `--publish`). Lớp không hiện ở trang chủ (OpenClasses loại), vào bằng `/lop-hoc/casio-vat-ly`. Còn: WP-00/02/07–11, công văn thể lệ 2026–27.
 - Rút kinh nghiệm: pandoc đổi `<`,`>`,`'` trong công thức thành `&lt;`/`&#39;` → KaTeX lỗi; luôn `html.unescape` + `\lt`/`\gt` trong math, rồi quét `.katex-error` trên bản thật. Đề do `upload-lesson` tạo mặc định `published=true` nên phải ẩn tay cùng bài. Terminal mở trong worktree đã xoá thì `cd` về repo trước khi chạy.
+- 24/10/2026: kiem-code soát 5 bài (số liệu đúng, KaTeX 0 lỗi); sửa lỗi tiêu đề nhóm WP-01 lọt vào `<details>` ở `problems()` của build-casio-vat-ly.py; đăng đè + `--publish`; hub đã deploy. Treo: mini-test WP-01 lặp bài luyện; kiểm `suggestedAnswer` markdown trên trang HS; chỉ số dưới tiếng Việt (`W_đ`) → `\text{đ}`. Agent soát từng báo sai 1 lần (Q2 'thiếu (a)') → kiểm nguồn trước khi sửa.
