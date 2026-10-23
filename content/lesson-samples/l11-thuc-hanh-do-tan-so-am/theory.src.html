@@ -1,4 +1,4 @@
-<div class="tl-box">
+<div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
 <li>Thiết kế phương án đo tần số của một nguồn âm: dụng cụ, sơ đồ nối, các bước.</li>
@@ -17,7 +17,7 @@
 
 <!--FIG1-->
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Ứng dụng báo cho Mai một con số tính bằng héc (Hz). Theo em, nó xác định con số đó bằng cách nào?</p>
 <div class="tl-quiz">
@@ -44,8 +44,8 @@
 
 <p>Ví dụ: âm thoa $440\ \text{Hz}$ có chu kì $T = \dfrac{1}{440} \approx 2{,}27\ \text{ms}$.</p>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p>Một âm đơn có chu kì $T = 5\ \text{ms}$. Tần số của âm là:</p>
 <p>⚠ Nhớ đổi ms ra s trước khi lật ngược.</p>
 <div class="tl-quiz">
@@ -58,7 +58,7 @@
 </div>
 </div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧪 Thử với mô phỏng: sóng âm</summary>
 <iframe src="https://phet.colorado.edu/sims/html/sound-waves/latest/sound-waves_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Sóng âm"></iframe>
 <p><strong>Thử:</strong></p>
@@ -96,8 +96,8 @@ $$f = \dfrac{1}{T}$$</p>
 
 <!--FIG3-->
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p>Núm TIME/DIV ở $1\ \text{ms/ô}$. Ba chu kì liên tiếp chiếm $6{,}0$ ô. Tần số của âm là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl29-q3" id="tl29-q3a"><label for="tl29-q3a" class="tl-opt tl-no">A. $167\ \text{Hz}$</label>
@@ -113,7 +113,7 @@ $$f = \dfrac{1}{T}$$</p>
 
 <p><strong>🔑 Đo 5 lần, lấy trung bình, ghi ±</strong></p>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l11-dotansoam-01">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-dotansoam-01">
 <p class="tl-label">🔬 Thí nghiệm đo: tần số của âm thoa bằng dao động kí</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> nối micro vào CH1 (hình 2). Gõ âm thoa $440\ \text{Hz}$ sát micro. Đặt TIME/DIV ở $1\ \text{ms/ô}$, chỉnh VOLT/DIV và TRIGGER cho hình rõ, đứng yên. Đo bề rộng $L$ của $N = 4$ chu kì liên tiếp, đọc tới $0{,}1$ ô. Gõ lại, đo đủ 5 lần.</li>
@@ -122,7 +122,7 @@ $$f = \dfrac{1}{T}$$</p>
 </ol>
 </div>
 <!--video:tn-l11-dotansoam-01-->
-<div class="tl-box tl-box--video">
+<div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem thí nghiệm thật: âm thoa trên dao động kí</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/y5Si0RBKths?rel=0" title="âm thoa trên dao động kí" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
 <p><strong>Nhìn vào:</strong> Dạng sóng của âm thoa có dạng gì, một chu kì dài bao nhiêu ô?</p>
@@ -156,7 +156,7 @@ $$f = \dfrac{1}{T}$$</p>
 <li>Kết quả: $f = 441 \pm 8\ \text{Hz}$. Khoảng đó chứa $440\ \text{Hz}$.</li>
 </ul>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: nguồn sai số cụ thể và cách giảm</summary>
 <ul>
 <li><strong>Đọc ô:</strong> vạch ngắm dày, mắt nhìn xiên làm $L$ lệch cỡ $0{,}1$ ô. Giới hạn đọc $0{,}1$ ô được tính vào sai số dụng cụ, còn việc mỗi lần đọc thừa hay thiếu là ngẫu nhiên. Nhìn thẳng, dùng điểm cắt trục làm mốc.</li>
@@ -206,6 +206,7 @@ $$f = \dfrac{1}{T}$$</p>
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1: đếm đỉnh thay vì đếm chu kì</h4>
 
 <p>Giữa hai đỉnh liên tiếp là <strong>một</strong> chu kì: $n$ đỉnh cho $n - 1$ chu kì.</p>
@@ -231,7 +232,9 @@ $$f = \dfrac{1}{T}$$</p>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $6$ đỉnh là $N = 5$ chu kì. $T = (8{,}0 \cdot 0{,}5)/5 = 0{,}8\ \text{ms}$, nên $f = 1/(0{,}8 \cdot 10^{-3}) = 1\,250\ \text{Hz}$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A — $1\,500\ \text{Hz}$ ứng với $N = 6$: em đếm $6$ đỉnh thành $6$ chu kì. C — $625\ \text{Hz}$ là lấy nhầm độ chia $1\ \text{ms/ô}$ thay cho $0{,}5$. D — $8{,}0 \cdot 0{,}5 = 4\ \text{ms}$ là bề rộng cả đoạn, em quên chia cho $N$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
+</div>
 
+<div class="tl-trap">
 <h4>Bẫy 2: nhầm núm và nhầm đơn vị độ chia</h4>
 
 <p>Chu kì chỉ đọc trên trục <strong>ngang</strong>; hai núm nằm gần nhau.</p>
@@ -246,9 +249,10 @@ $$f = \dfrac{1}{T}$$</p>
 </tbody>
 </table>
 </div>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p>Núm TIME/DIV ở $0{,}2\ \text{ms/ô}$. Bốn chu kì chiếm $8{,}0$ ô. Tần số là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl29-q6" id="tl29-q6a"><label for="tl29-q6a" class="tl-opt tl-no">A. $2{,}5\ \text{Hz}$</label>
@@ -260,6 +264,7 @@ $$f = \dfrac{1}{T}$$</p>
 </div>
 </div>
 
+<div class="tl-trap">
 <h4>Bẫy 3: lấy biên độ làm tần số</h4>
 
 <p>To hay nhỏ do biên độ. Cao hay trầm do tần số. “Sóng cao” trên màn không có nghĩa là “âm cao”.</p>
@@ -274,9 +279,10 @@ $$f = \dfrac{1}{T}$$</p>
 </tbody>
 </table>
 </div>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p>Hai âm đơn A và B có biên độ như nhau. Trên màn cùng độ chia, trong cùng số ô, A có $3$ chu kì và B có $6$ chu kì. Nhận xét đúng là:</p>
 <p>⚠ Số chu kì $N$ khác chu kì $T$: cùng số ô mà nhiều chu kì hơn thì $T$ ngắn hơn.</p>
 <div class="tl-quiz">
@@ -291,42 +297,42 @@ $$f = \dfrac{1}{T}$$</p>
 
 <!--FIG4-->
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧨 Bẫy phụ: lấy số ghi trên nguồn âm làm kết quả đo</summary>
 <p>Số ghi trên âm thoa hay máy phát tần số là giá trị cần <strong>kiểm tra</strong>. Kết quả đo là số tính từ màn dao động kí.</p>
 </details>
 
 <h3>IV. Trả bài: nhớ lại trước khi xử lý số liệu</h3>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>1. Tần số và chu kì là gì? Liên hệ và đơn vị? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
 <p>$f$: số dao động mỗi giây, đơn vị Hz. $T$: thời gian một dao động, đơn vị s. $f = \dfrac{1}{T}$ và $f = \dfrac{N}{t}$.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>2. Kể dụng cụ của phương án dao động kí và vai trò từng thứ.</summary>
 <p>Nguồn âm đơn (âm thoa, hoặc loa và máy phát).<br>Micro đổi âm ra điện.<br>Dao động kí vẽ điện áp theo thời gian.<br>Dây tín hiệu nối micro tới CH1.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>3. Nêu các bước đo. Vì sao đo nhiều chu kì liên tiếp?</summary>
 <p>Nối micro vào CH1.<br>Gõ âm thoa sát micro.<br>Chỉnh VOLT/DIV, TIME/DIV, TRIGGER.<br>Đo $L$ của $N$ chu kì, lặp 5 lần.<br>Vì sao: độ lệch đọc cỡ $0{,}1$ ô không đổi theo $L$, nên $L$ càng dài thì độ lệch ấy chiếm tỉ lệ càng nhỏ.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>4. Viết công thức tính $f$ từ màn dao động kí.</summary>
 <p>$T = \dfrac{L\,k}{N}$ ra ms.<br>Đổi ra s.<br>$f = \dfrac{1}{T}$.<br>Mẹo: nhân, chia, đổi, lật.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>5. Ghi kết quả đo nhiều lần như thế nào?</summary>
 <p>$\bar f$ là trung bình.<br>$\Delta f_i = |f_i - \bar f|$.<br>$\Delta f = \Delta\bar f + \Delta f_{dc}$ (trung bình các $\Delta f_i$ cộng sai số dụng cụ).<br><strong>Ghi $f = \bar f \pm \Delta f$ với $\Delta f$ là sai số tổng</strong>, không phải $\Delta\bar f$.<br>Làm tròn $\Delta f$ tới 1–2 chữ số có nghĩa, $\bar f$ cùng hàng.<br>So với giá trị tham chiếu.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>6. Sai số ngẫu nhiên và hệ thống khác nhau thế nào? Nêu một cách đo khác khi không có dao động kí.</summary>
 <p>Ngẫu nhiên: lệch lúc thừa lúc thiếu, lấy trung bình giảm được. Hệ thống: lệch cùng chiều, phải kiểm dụng cụ. Cách khác: ứng dụng phân tích phổ, hoặc ghi âm rồi đếm chu kì, $f = \dfrac{N}{t}$.</p>
 </details>
@@ -334,7 +340,7 @@ $$f = \dfrac{1}{T}$$</p>
 
 <h3>V. Bài toán mẫu: xử lý một lần đo</h3>
 
-<div class="tl-box tl-box--rule">
+<div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📝 Đề bài</p>
 <p>Lan đo âm thoa ghi $440\ \text{Hz}$ bằng dao động kí, TIME/DIV ở $2\ \text{ms/ô}$. Lan thấy $5$ chu kì liên tiếp chiếm $5{,}7$ ô, đọc có thể lệch $0{,}1$ ô (số minh hoạ).</p>
 <p>a) Tính chu kì $T$ và tần số $f$.</p>
@@ -354,7 +360,7 @@ $$f = \dfrac{1}{T}$$</p>
 </table>
 </div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem: lời giải</summary>
 <ol class="tl-steps">
 <li>Câu a: $L\,k = 5{,}7 \cdot 2 = 11{,}4\ \text{ms}$ cho $5$ chu kì, nên $T = \dfrac{11{,}4}{5} = 2{,}28\ \text{ms}$. Tần số $f = 1/(2{,}28 \cdot 10^{-3}) \approx 438{,}6\ \text{Hz}$.</li>
@@ -364,22 +370,22 @@ $$f = \dfrac{1}{T}$$</p>
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu</p>
 <p>Âm thoa khác: $1\ \text{ms/ô}$, $4$ chu kì chiếm $7{,}8$ ô, lệch $0{,}1$ ô.</p>
 <ol class="tl-steps">
 <li><strong>Em điền:</strong> $T = \;?$ — nhân, chia.</li>
 <li><strong>Em điền:</strong> $f = \;?$ — đổi ms ra s, lật ngược.</li>
 <li><strong>Em điền:</strong> $\Delta f = \;?$ và viết $f = \ldots \pm \ldots$</li>
 </ol>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Bấm xem ba bước</summary>
 <p>$T = (7{,}8 \cdot 1)/4 = 1{,}95\ \text{ms}$. $f = 1/(1{,}95 \cdot 10^{-3}) \approx 513\ \text{Hz}$. $\dfrac{\Delta f}{f} = \dfrac{0{,}1}{7{,}8} \approx 0{,}013$ nên $\Delta f \approx 7\ \text{Hz}$, kết quả $f = 513 \pm 7\ \text{Hz}$.</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Thử sức: đổi độ chia và số chu kì</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức: đổi độ chia và số chu kì</p>
 <p>Âm thoa $440\ \text{Hz}$, TIME/DIV đổi sang $0{,}5\ \text{ms/ô}$, đếm $2$ chu kì liên tiếp. Hai chu kì chiếm khoảng:</p>
 <p>⚠ Tính lại theo độ chia mới: từ $T = \dfrac{L\,k}{N}$ suy ra $L = \dfrac{N\,T}{k}$.</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl29-sure8" value="chac"> Chắc</label> <label><input type="radio" name="tl29-sure8" value="khong"> Không chắc</label></p>
@@ -400,27 +406,27 @@ $$f = \dfrac{1}{T}$$</p>
 <li><strong>Điện lưới nhà em:</strong> $T = 20\ \text{ms}$, tức $50\ \text{Hz}$.</li>
 </ul>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎯 Thử thách phân tầng</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐ Âm đơn $1\,000\ \text{Hz}$. Tính chu kì theo ms.</summary>
 <p>$T = \dfrac{1}{1\,000} = 0{,}001\ \text{s} = 1\ \text{ms}$.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐⭐ Chỉ có cảm biến âm, máy tính và một loa lạ. Thiết kế phương án đo tần số của loa.</summary>
 <p>Đặt cảm biến sát loa. Chọn thang cho đồ thị hiện $4$ đến $8$ chu kì. Đọc $N$ chu kì liên tiếp và thời gian $t$, $f = \dfrac{N}{t}$. Lặp $5$ lần lấy trung bình, ghi $f = \bar f \pm \Delta f$. Sai số: đọc thời gian (ngẫu nhiên), thang thời gian của phần mềm (hệ thống), tiếng ồn nền làm đồ thị méo.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐⭐⭐ Âm $440\ \text{Hz}$, $2\ \text{ms/ô}$, đọc lệch $0{,}1$ ô. Sai số tỉ đối không quá $1{,}5\ \%$ thì cần đếm ít nhất mấy chu kì? Có vừa màn $10$ ô không?</summary>
 <p>Cần $\dfrac{0{,}1}{L} \le 0{,}015$, tức $L \ge 6{,}7$ ô. Mỗi chu kì chiếm $\dfrac{2{,}27}{2} = 1{,}14$ ô, nên $N \ge \dfrac{6{,}7}{1{,}14} \approx 5{,}9$, lấy $N = 6$ ($L \approx 6{,}8$ ô, sai số $\approx 1{,}5\ \%$). Vừa màn. Với $N = 5$ ($5{,}7$ ô) sai số $1{,}8\ \%$, chưa đạt — đúng như bài toán mẫu.</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Tần số:</strong> số dao động mỗi giây, $f = \dfrac{1}{T}$.</li>
 <li><strong>Công thức:</strong> $T = \dfrac{L\,k}{N}$, nhân – chia – đổi – lật.</li>

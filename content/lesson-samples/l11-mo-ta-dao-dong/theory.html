@@ -1,4 +1,4 @@
-<div class="tl-box">
+<div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
 <li>Viết $x = A\cos(\omega t+\varphi)$ và gọi tên $x$, $A$, pha, $\varphi$.</li>
@@ -13,7 +13,7 @@
 
 <p>Quả lắc đồng hồ đung đưa trong một khoảng cố định. Em nhìn lúc nó ở đầu bên phải, sắp quay vào. Bạn nhìn chậm hơn, lúc nó đang qua giữa.</p>
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Cùng một con lắc, hai người bắt đầu nhìn ở hai lúc khác nhau. Cái gì đổi?</p>
 <div class="tl-quiz">
@@ -45,7 +45,7 @@ $$x = A\cos(\omega t+\varphi)$$
 <li>$A$ phụ thuộc cách kích thích: kéo xa thì lớn.</li>
 </ul>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l11-motadddh-01">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-motadddh-01">
 <p class="tl-label">🔬 Thí nghiệm: vật không ra khỏi đoạn [−A, A]</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> lò xo ngang, đánh dấu O. Kéo lệch 4 cm rồi thả. Ghi bốn lần, lúc $t = 0$ rồi cứ thêm $T/4$, với chu kì $T = 2$ s (thời gian một dao động toàn phần, xem mục 2).</li>
@@ -68,7 +68,7 @@ $$x = A\cos(\omega t+\varphi)$$
 
 <p>Bốn số tính từ $x = 4\cos(\pi t)$ cm, với tần số góc $\omega = 2\pi/T = \pi$ rad/s (học ở mục 2).</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Vì sao lúc qua O, li độ bằng 0 mà vật không đứng yên?</summary>
 <p>Li độ bằng 0 chỉ nói vật đang ở vị trí cân bằng. Muốn biết sắp đi đâu, phải xem pha, hoặc xem li độ ở ngay sau đó tăng hay giảm. Hai lần $x = 0$ trong bảng là hai trạng thái khác nhau.</p>
 </details>
@@ -92,8 +92,8 @@ $$\omega = 2\pi f = \dfrac{2\pi}{T}$$
 <p>Ví dụ: đếm 20 dao động hết 16 s. Khi đó $T = 16/20 = 0{,}8$ s, $f = 1{,}25$ Hz, $\omega = 2{,}5\pi$ rad/s.</p>
 
 <p>⚠ Lấy $\omega/(2\pi)$ được $f$, chưa phải $T$.</p>
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Tần số góc $\omega = 10\pi$ rad/s. Chu kì bằng bao nhiêu?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl21-q2" id="tl21-q2a"><label for="tl21-q2a" class="tl-opt tl-no">A. $10\pi$ s</label>
@@ -122,7 +122,7 @@ $$\omega = 2\pi f = \dfrac{2\pi}{T}$$
 
 <p>Mẹo chiều: <strong>tăng $t$ một chút</strong>. $x$ giảm thì đi về phía âm; $x$ tăng thì đi về phía dương.</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Vì sao đổi lúc nhìn thì pha ban đầu đổi?</summary>
 <p>Bắt đầu quan sát muộn một khoảng $\tau$ thì thời gian mới là $t' = t-\tau$, tức $t = t'+\tau$. Thay vào: $x = A\cos(\omega(t'+\tau)+\varphi) = A\cos(\omega t'+\varphi+\omega\tau)$. Pha ban đầu mới là $\varphi+\omega\tau$. Cùng một vật, chỉ đổi mốc đồng hồ.</p>
 </details>
@@ -156,7 +156,7 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 <li>$\varphi_1 = \varphi_2\pm\pi$: hai dao động ngược pha, không nói sớm hay trễ.</li>
 </ul>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Khi nào không so thẳng $\varphi_1$ với $\varphi_2$ được?</summary>
 <p>Quy tắc trên dùng khi $|\varphi_1-\varphi_2| \le \pi$.<br>Nếu hiệu lớn hơn $\pi$, cộng hoặc trừ $2\pi$ để đưa hiệu về đoạn $[-\pi;\pi]$ rồi mới so.<br>Hiệu pha lấy trong đoạn kín $[-\pi;\pi]$ vì hiệu $\pm\pi$ đều là ngược pha.<br>Còn bản thân $\varphi$ thì lấy trong $(-\pi;\pi]$.<br>Ví dụ $\varphi_1 = 5\pi/6$, $\varphi_2 = -5\pi/6$: hiệu $5\pi/3$, trừ $2\pi$ còn $-\pi/3$, nên dao động 1 trễ pha $\pi/3$.<br>Dấu của hiệu $\varphi_1-\varphi_2$ cho biết ai sớm.<br>Trị tuyệt đối $|\varphi_1-\varphi_2|$ chỉ dùng để tính $\Delta t$.</p>
 </details>
@@ -177,8 +177,8 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 <p><strong>Độ lệch pha quan trọng hơn pha</strong> vì không đổi theo lúc quan sát.</p>
 
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl21-q3conf" value="chac"> Chắc</label> <label><input type="radio" name="tl21-q3conf" value="khong"> Không chắc</label></p>
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 2.</strong> Vật dao động theo $x = A\cos\left(\omega t-\dfrac{\pi}{2}\right)$. Lúc $t = 0$ vật ở đâu?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl21-q3" id="tl21-q3a"><label for="tl21-q3a" class="tl-opt tl-ok">A. Ở vị trí cân bằng, sắp sang phía $x$ dương</label>
@@ -215,7 +215,7 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 
 <figure class="fig" data-tl="1" data-exp="tn-l11-motadddh-02"><svg viewBox="0 0 440 228" role="img" aria-label="Đồ thị li độ theo thời gian với năm chấm tính từ phương trình x bằng 5 cos 2 pi t"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="72.0" y1="28.0" x2="72.0" y2="154.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="72.0" y1="100.0" x2="388.0" y2="100.0" stroke="currentColor" stroke-width="1.6" opacity="1"/><path d="M388,100 L378,95 L378,105 Z" fill="currentColor"/><text x="394" y="105" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">t (s)</text><text x="62" y="64" fill="currentColor" font-size="13" font-weight="700" text-anchor="end">5</text><text x="62" y="104" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">0</text><text x="62" y="144" fill="currentColor" font-size="13" font-weight="700" text-anchor="end">−5</text><text x="16" y="22" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">x (cm)</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.4" points="72.0,60.0 74.3,60.1 76.7,60.2 79.0,60.5 81.3,60.9 83.7,61.4 86.0,62.0 88.3,62.7 90.7,63.5 93.0,64.4 95.3,65.4 97.7,66.5 100.0,67.6 102.3,68.9 104.7,70.3 107.0,71.7 109.3,73.2 111.7,74.8 114.0,76.5 116.3,78.2 118.7,80.0 121.0,81.8 123.3,83.7 125.7,85.7 128.0,87.6 130.3,89.6 132.7,91.7 135.0,93.7 137.3,95.8 139.7,97.9 142.0,100.0 144.3,102.1 146.7,104.2 149.0,106.3 151.3,108.3 153.7,110.4 156.0,112.4 158.3,114.3 160.7,116.3 163.0,118.2 165.3,120.0 167.7,121.8 170.0,123.5 172.3,125.2 174.7,126.8 177.0,128.3 179.3,129.7 181.7,131.1 184.0,132.4 186.3,133.5 188.7,134.6 191.0,135.6 193.3,136.5 195.7,137.3 198.0,138.0 200.3,138.6 202.7,139.1 205.0,139.5 207.3,139.8 209.7,139.9 212.0,140.0 214.3,139.9 216.7,139.8 219.0,139.5 221.3,139.1 223.7,138.6 226.0,138.0 228.3,137.3 230.7,136.5 233.0,135.6 235.3,134.6 237.7,133.5 240.0,132.4 242.3,131.1 244.7,129.7 247.0,128.3 249.3,126.8 251.7,125.2 254.0,123.5 256.3,121.8 258.7,120.0 261.0,118.2 263.3,116.3 265.7,114.3 268.0,112.4 270.3,110.4 272.7,108.3 275.0,106.3 277.3,104.2 279.7,102.1 282.0,100.0 284.3,97.9 286.7,95.8 289.0,93.7 291.3,91.7 293.7,89.6 296.0,87.6 298.3,85.7 300.7,83.7 303.0,81.8 305.3,80.0 307.7,78.2 310.0,76.5 312.3,74.8 314.7,73.2 317.0,71.7 319.3,70.3 321.7,68.9 324.0,67.6 326.3,66.5 328.7,65.4 331.0,64.4 333.3,63.5 335.7,62.7 338.0,62.0 340.3,61.4 342.7,60.9 345.0,60.5 347.3,60.2 349.7,60.1 352.0,60.0"/><line x1="44.0" y1="100.0" x2="44.0" y2="60.0" stroke="#34d399" stroke-width="1.5"/><path d="M40.0,107.0 L44.0,100.0 L48.0,107.0" fill="none" stroke="#34d399" stroke-width="1.5"/><path d="M40.0,53.0 L44.0,60.0 L48.0,53.0" fill="none" stroke="#34d399" stroke-width="1.5"/><text x="44" y="84.0" fill="#34d399" font-size="14" font-weight="700" text-anchor="end">A</text><line x1="72.0" y1="96.0" x2="72.0" y2="104.0" stroke="currentColor" stroke-width="1.3" opacity="1"/><text x="72" y="188" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">0</text><line x1="212.0" y1="96.0" x2="212.0" y2="104.0" stroke="currentColor" stroke-width="1.3" opacity="1"/><text x="212.0" y="188" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">0,5</text><line x1="352.0" y1="96.0" x2="352.0" y2="104.0" stroke="currentColor" stroke-width="1.3" opacity="1"/><text x="352" y="188" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">1</text><line x1="72.0" y1="168.0" x2="352.0" y2="168.0" stroke="#34d399" stroke-width="1.5"/><path d="M79.0,164.0 L72.0,168.0 L79.0,172.0" fill="none" stroke="#34d399" stroke-width="1.5"/><path d="M345.0,164.0 L352.0,168.0 L345.0,172.0" fill="none" stroke="#34d399" stroke-width="1.5"/><text x="212.0" y="162" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">T</text><circle cx="72.0" cy="60.0" r="4.2" fill="#f87171"/><circle cx="100.0" cy="67.6" r="4.2" fill="#f87171"/><circle cx="128.0" cy="87.6" r="4.2" fill="#f87171"/><circle cx="156.0" cy="112.4" r="4.2" fill="#f87171"/><circle cx="184.0" cy="132.4" r="4.2" fill="#f87171"/></svg><figcaption>Hình 4. Năm chấm từ x = 5 cos(2πt) cm. Đỉnh là A, hai đỉnh cách T.</figcaption></figure>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l11-motadddh-02">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-motadddh-02">
 <p class="tl-label">🔬 Thí nghiệm đo: năm lần đọc li độ</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> $A = 5{,}0$ cm, $T = 1{,}00$ s và $\varphi = 0$. Đọc thước tại $0$, rồi $0{,}10$, $0{,}20$, $0{,}30$ và $0{,}40$ s.</li>
@@ -239,13 +239,13 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 
 <p>Câu hỏi sai số: ở $t = 0{,}10$ s, đọc $4{,}0$ cm nhưng tính được $4{,}045$ cm. Sai số tuyệt đối bằng bao nhiêu?</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Bấm xem: sai số 0,045 cm đến từ đâu</summary>
 <p>Sai số tuyệt đối = |giá trị tính − giá trị đọc| = $|4{,}045-4{,}0| = 0{,}045$ cm.<br>Làm tròn tới $0{,}1$ cm:<br>$4{,}045 \to 4{,}0$<br>$1{,}545 \to 1{,}5$<br>$-1{,}545 \to -1{,}5$<br>$-4{,}045 \to -4{,}0$<br>Số đọc trên thước chỉ ghi tới $0{,}1$ cm nên phần lẻ bị làm tròn đi, đó là nguồn của sai số.<br>Lúc $t = 0$, số tính đã là $5{,}000$ nên đọc đúng $5{,}0$.<br>Đây là tình huống lí tưởng: chỉ có sai số do độ chia của thước.<br>Đo thật còn có thêm sai số ngẫu nhiên khi đặt mắt và bấm giờ.</p>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Trên đồ thị $x$–$t$, hai đỉnh dương liên tiếp cách $0{,}4$ s và đỉnh cao $3$ cm. Kết luận nào đúng?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl21-q4" id="tl21-q4a"><label for="tl21-q4a" class="tl-opt tl-no">A. Chu kì bằng $0{,}2$ s và biên độ bằng $3$ cm</label>
@@ -257,7 +257,7 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 </div>
 </div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧪 Thử với mô phỏng: đo chu kì con lắc</summary>
 <iframe src="https://phet.colorado.edu/sims/html/pendulum-lab/latest/pendulum-lab_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Con lắc"></iframe>
 <p><strong>Thử:</strong></p>
@@ -266,7 +266,7 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 <li>Giữ nguyên chiều dài, đổi khối lượng và đo chu kì. Sau đó giữ khối lượng, đổi <strong>chiều dài</strong> và đo lại.</li>
 <li>Rút ra: chu kì phụ thuộc vào đại lượng nào, không phụ thuộc đại lượng nào? Tăng chiều dài lên 4 lần thì chu kì thay đổi thế nào?</li>
 </ol>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Bấm xem: kết quả mong đợi</summary>
 <p>Đổi khối lượng: chu kì gần như không đổi.<br>Tăng chiều dài: chu kì tăng.<br>Chiều dài tăng 4 lần: chu kì tăng khoảng 2 lần.</p>
 </details>
@@ -275,6 +275,7 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1. Li độ không phải quãng đường</h4>
 
 <p>Bạn nói: “Về giữa rồi, sao li độ bằng 0?” Li độ là lệch khỏi O, có dấu. Quãng đường là độ dài đã đi, luôn dương, có thể lớn hơn $A$.</p>
@@ -289,8 +290,9 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 </tbody>
 </table>
 </div>
+</div>
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p><strong>Câu 4.</strong> Vật đi từ biên dương về đúng vị trí cân bằng. Câu nào đúng?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl21-q5" id="tl21-q5a"><label for="tl21-q5a" class="tl-opt tl-no">A. Li độ bằng $A$, quãng đường bằng 0</label>
@@ -302,6 +304,7 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 </div>
 </div>
 
+<div class="tl-trap">
 <h4>Bẫy 2. Biên độ không phải li độ lúc này</h4>
 
 <p>Li độ đổi từng lúc. Biên độ của một vật thì không. Thấy $x = 2$ cm, đừng sửa $A$ thành 2 cm.</p>
@@ -316,8 +319,9 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 </tbody>
 </table>
 </div>
+</div>
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p><strong>Câu 5.</strong> Tại thời điểm đang xét, $x = 2$ cm và $A = 5$ cm. Câu nào đúng?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl21-q6" id="tl21-q6a"><label for="tl21-q6a" class="tl-opt tl-no">A. Biên độ bằng 2 cm vì đó là li độ hiện tại</label>
@@ -329,6 +333,7 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 </div>
 </div>
 
+<div class="tl-trap">
 <h4>Bẫy 3. Pha không phải độ lệch pha</h4>
 
 <p>Pha ban đầu đổi khi đổi lúc bấm giờ. Độ lệch pha của hai dao động cùng chu kì thì không. Cùng biên độ chưa phải đồng pha.</p>
@@ -345,7 +350,9 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 </div>
 
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl21-q7conf" value="chac"> Chắc</label> <label><input type="radio" name="tl21-q7conf" value="khong"> Không chắc</label></p>
-<div class="tl-box tl-box--think">
+</div>
+
+<div class="tl-box tl-box--think tl-note">
 <p><strong>Câu 6.</strong> Hai dao động cùng chu kì. Em đổi mốc $t = 0$. Điều nào đúng?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl21-q7" id="tl21-q7a"><label for="tl21-q7a" class="tl-opt tl-ok">A. Pha ban đầu mỗi vật đổi; độ lệch pha không đổi</label>
@@ -359,35 +366,35 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 
 <h3>IV. Trả bài: nhớ lại trước khi giải</h3>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>1. Thế nào là dao động điều hoà? Viết phương trình. <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
 <p>$x = A\cos(\omega t+\varphi)$. Vật chuyển động theo phương trình đó gọi là vật dao động điều hoà.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>2. $x$ và $A$ khác nhau thế nào? Vật nằm trong đoạn nào? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
 <p>$x$: lệch khỏi vị trí cân bằng, đổi theo $t$. $A$: cực đại của li độ, theo cách kích thích. $-A \le x \le A$.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>3. Viết $f$ và $\omega$ theo $T$. Cái nào theo cấu tạo? Cái nào không đổi với một vật? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
 <p>$f = 1/T$.<br>$\omega = 2\pi/T \gt 0$.<br>$T$, $f$, $\omega$ đều theo cấu tạo hệ.<br>$A$ theo cách kích thích.<br>Với một vật, $A$, $T$, $f$, $\omega$ không đổi theo lúc nhìn.<br>Vật khác thì có thể khác.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>4. $\varphi$ cho biết gì? Nằm trong khoảng nào? Trên vòng tròn, $\varphi$ là góc nào? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
 <p>Lúc $t = 0$ vật ở đâu và sắp đi đâu. Khoảng $(-\pi;\pi]$. $\varphi$: góc có hướng từ trục Ox tới bán kính lúc $t = 0$, dương nếu quay ngược chiều kim đồng hồ.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>5. $x_1 = A\cos(\omega t)$ và $x_2 = A\cos(\omega t-\pi/2)$. Ai sớm pha? Lệch bao nhiêu? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
 <p>$\varphi_1 = 0$, $\varphi_2 = -\pi/2$. Dao động 1 sớm hơn, đỉnh đến trước $T/4$. Độ lệch pha luôn $\pi/2$.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>6. Khi nào sớm, trễ, đồng, ngược pha? Đọc $A$ và $T$ trên đồ thị $x$–$t$ thế nào? <small>(nói bằng lời của em, rồi mới bấm)</small></summary>
 <p>Sớm: $\varphi_1 \gt \varphi_2$. Trễ: $\varphi_1 \lt \varphi_2$. Đồng: $\varphi_1 = \varphi_2$. Ngược: $\varphi_1 = \varphi_2\pm\pi$. Đỉnh dương cho $A$; hai đỉnh dương liên tiếp cách $T$.</p>
 </details>
@@ -397,7 +404,7 @@ $$\Delta t = \dfrac{\Delta\varphi}{\omega} = \dfrac{\pi/2}{2\pi/T} = \dfrac{T}{4
 
 <p>Với mỗi cụm của đề, tự hỏi: <strong>cho dữ liệu gì?</strong> và <strong>gọi kiến thức nào?</strong></p>
 
-<div class="tl-box tl-box--rule">
+<div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📝 Đề bài</p>
 <p>Một vật dao động điều hoà trên trục Ox:</p>
 $$x = 6\cos\left(\pi t+\dfrac{\pi}{3}\right)\ \text{cm}$$
@@ -417,7 +424,7 @@ $$x = 6\cos\left(\pi t+\dfrac{\pi}{3}\right)\ \text{cm}$$
 </table>
 </div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem: lời giải</summary>
 <ol class="tl-steps">
 <li>$A = 6$ cm, $\omega = \pi$ rad/s, $\varphi = \pi/3$ rad. $\varphi$ nằm trong $(-\pi;\pi]$.</li>
@@ -429,15 +436,15 @@ $$x = 6\cos\left(\pi t+\dfrac{\pi}{3}\right)\ \text{cm}$$
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu</p>
 <p>Cùng kiểu đề, đổi thành $x = 6\cos(\pi t)$ cm.</p>
 <ol class="tl-steps">
 <li>$A = 6$ cm, $\omega = \pi$ rad/s, $\varphi = 0$.</li>
 <li><strong>Em điền:</strong> $T = 2\pi/\omega = \;?$</li>
 <li><strong>Em điền:</strong> dao động trễ pha $\pi/2$ có $\varphi' = \;?$</li>
 </ol>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Xem đáp án hai chỗ Em điền</summary>
 <ol class="tl-steps">
 <li>$T = 2\pi/\pi = 2$ s. Lúc $t = 0$, vật ở biên dương $x = 6$ cm, sắp về O.</li>
@@ -447,8 +454,8 @@ $$x = 6\cos\left(\pi t+\dfrac{\pi}{3}\right)\ \text{cm}$$
 </div>
 
 <p>⚠ Đề hỏi dao động 2 so với dao động 1: dao động 1 sớm pha bao nhiêu thì dao động 2 trễ pha bấy nhiêu.</p>
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Thử sức: đổi số</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức: đổi số</p>
 <p><strong>Câu 7.</strong> So sánh $x_2 = 4\cos\left(2\pi t-\dfrac{\pi}{2}\right)$ cm với $x_1 = 4\cos(2\pi t)$ cm. Dao động 2 so với dao động 1 là:</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl21-q8conf" value="chac"> Chắc</label> <label><input type="radio" name="tl21-q8conf" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
@@ -469,27 +476,27 @@ $$x = 6\cos\left(\pi t+\dfrac{\pi}{3}\right)\ \text{cm}$$
 <li><strong>Máy đếm nhịp:</strong> mỗi tiếng cách một chu kì. Đổi lúc bấm giờ không đổi nhịp.</li>
 </ul>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎯 Thử thách phân tầng</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐ Cơ bản: $A = 5$ cm, $T = 2$ s, $\varphi = 0$. Tính $f$ và $\omega$.</summary>
 <p>$f = 1/T = 0{,}5$ Hz. $\omega = 2\pi/T = \pi$ rad/s.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐⭐ Khá: $x = 3\cos(4\pi t+\pi/6)$ cm. Lúc $t = 0$, li độ và chiều?</summary>
 <p>$x = 3\cos(\pi/6) = 3\sqrt{3}/2$ cm. Góc $\pi/6$ tăng thì côsin giảm, nên chiều âm, về phía O.</p>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐⭐⭐ Thách đấu: $\varphi_1 = \pi/3$, $\varphi_2 = -\pi/6$, $T = 2$ s. Ai sớm pha? Lệch bao nhiêu? Đổi mốc sang $t = 0{,}5$ s thì độ lệch pha còn đúng không?</summary>
 <p>$\varphi_1 \gt \varphi_2$ nên dao động 1 sớm pha. $\Delta\varphi = \pi/3-(-\pi/6) = \pi/2$. $\omega = \pi$ rad/s, $\Delta t = (\pi/2)/\pi = 0{,}5$ s. Đổi mốc thì cả hai pha cộng thêm cùng một lượng, độ lệch pha vẫn $\pi/2$.</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Phương trình:</strong> $x = A\cos(\omega t+\varphi)$.</li>
 <li><strong>Li độ:</strong> lệch O, trong $[-A;A]$.</li>
