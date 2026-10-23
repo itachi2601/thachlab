@@ -1,0 +1,27 @@
+# Cổng kiểm tra: type-check + lint code web trước khi vào main.
+# Lint chỉ quét thư mục code của web; scripts/ và .claude/ là script dùng một lần, còn nhiều lỗi cũ.
+name: CI
+
+on:
+  push:
+    branches: [main, 'claude/**']
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  kiem:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Type-check
+        run: npx tsc --noEmit
+      - name: ESLint
+        run: npx eslint --max-warnings 20 app components features hooks lib services types
