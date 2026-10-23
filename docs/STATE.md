@@ -11,6 +11,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
+- **24/10 P0 #1 chặng 1 (chấm server):** `20261024150000_exam_answer_server_grading` CHƯA CHẠY — chỉ thêm hàm/view/trigger; từ lúc chạy, điểm HS do DB chấm lại (điểm client lệch giữ ở `detail.client_score`). Chạy xong: `npx tsx scripts/doi-chieu-cham-diem-exam.mts 500` (TS≠SQL phải = 0). Còn chặng 2 (client dùng RPC + `exams_staff`) và 3 (thu quyền đọc `exams.questions`, bỏ INSERT trực tiếp, bỏ `rank_fix_quiz_submit(int)`).
 - **21/10 Ôn tập theo chặng:** `20261021120000_on_tap_theo_chang` ĐÃ CHẠY (bảng `review_sessions` + 8 hàm `review_*`). Client (`/tro-giang/on-tap`, `/lop-hoc/on-tap`, banner ở `/lop-hoc`) ĐÃ DEPLOY 21/10 (main@585514553, gồm cả mọi client chưa deploy của các phiên khác tới thời điểm đó); chưa thử học sinh/tivi thật. Chi tiết: `docs/memory/project_thachlab_on_tap_theo_chang.md`.
 - **23/10 Ôn dạng bài tập L11:** `gan-dang-chuong1-l11.sql` (380 câu, Dao động) + `gan-dang-chuong2-l11.sql` (411 câu, Sóng) ĐÃ CHẠY. Dạng thiếu câu (<3 chắc chắn): xem memory `project_thachlab_on_tap_theo_chang`.
 - **24/10 Ôn dạng bài tập L12 Ch.1+2:** `gan-dang-chuong1-l12.sql` (165 câu, Vật lí nhiệt) + `gan-dang-chuong2-l12.sql` (255 câu, Khí lí tưởng; tổng 92 `unsure`) ĐÃ CHẠY. Bài 4 (thực hành) chưa gán được. Dạng <3 câu chắc: xem memory `project_thachlab_on_tap_theo_chang`.

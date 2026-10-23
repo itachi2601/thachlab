@@ -73,6 +73,7 @@ FILES=(
   "scripts/sql/gan-dang-chuong2-l11.sql|Nạp 411 câu ngân hàng gán dạng bài tập mẫu (Chương 2 Sóng, lớp 11) vào question_dang|lúc nào cũng được"
   "scripts/sql/gan-dang-chuong1-l12.sql|Nạp 165 câu ngân hàng gán dạng bài tập mẫu (Chương 1 Vật lí nhiệt, lớp 12) vào question_dang|lúc nào cũng được"
   "scripts/sql/gan-dang-chuong2-l12.sql|Nạp 255 câu ngân hàng gán dạng bài tập mẫu (Chương 2 Khí lí tưởng, lớp 12) vào question_dang|lúc nào cũng được"
+  "supabase/migrations/20261024150000_exam_answer_server_grading.sql|P0 #1 chặng 1: chấm điểm server (trigger chấm lại exam_results/exam_question_results) + RPC get_exam_for_taking/submit_exam_attempt/get_exam_review/check_practice_answer/rank_fix_quiz_open + view exams_staff (chỉ thêm, có rollback; chạy xong: npx tsx scripts/doi-chieu-cham-diem-exam.mts 500)|lúc nào cũng được (chỉ tạo hàm)"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
