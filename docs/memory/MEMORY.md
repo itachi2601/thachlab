@@ -89,3 +89,4 @@
 - [Bỏ câu mơ hồ, đừng giải lại](feedback_bo_cau_mo_ho_thay_vi_giai_lai.md) — nạp ngân hàng: câu khó/lệch thì xoá, không tốn thêm API
 - [Bảng điều hành + 4 Project claude.ai](project_dieu_hanh_4_project_claude_ai.md) — 21/10/2026; Sheets, chuyển dần từ 16 Project cũ, lưu trữ sau 2 tuần
 - [Phong cách đề Bộ GD](project_thachlab_phong_cach_de_bo_gd.md) — đề TN 2025/2026; quiz cuối bài không ngoài chương trình; Ch.3 L12 đang batch
+- [Rà soát 22/10 + dọn lint DeepSeek](project_thachlab_ra_soat_22_10_lint.md) — lint 0 lỗi 23/10; tiếp: thử /lop-hoc điện thoại, camera=(self), CI gate, P0 #1 lược đáp án
