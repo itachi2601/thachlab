@@ -10,7 +10,7 @@ export interface FlagSession {
   end_time: string | null;
   hours: number | null;
   student_touches: number | null;
-  created_at: string;
+  created_at?: string;
   policy?: SessionPolicy;
 }
 
@@ -70,7 +70,7 @@ export function flagSession(
   }
 
   // Ghi muộn.
-  const lag = dayDiff(s.work_date, s.created_at.slice(0, 10));
+  const lag = s.created_at ? dayDiff(s.work_date, s.created_at.slice(0, 10)) : 0;
   if (lag > LATE_LOG_DAYS) flags.push({ code: "late_log", level: "amber", text: `Ghi muộn ${lag} ngày sau buổi` });
 
   // Khung giờ lặp y hệt.
