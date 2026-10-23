@@ -7,6 +7,8 @@ export interface ReviewStageDef {
   item_id: number | null;
   title: string;
   minutes: number;
+  /** Chặng "ôn dạng": nhãn dạng của từng câu theo thứ tự trong đề (dùng cho thống kê sai theo dạng). */
+  dang_by_index?: string[];
 }
 
 /** idle = chưa mở · doing = đang làm · failed = đã nộp, chưa đạt ngưỡng · passed = đạt. */
@@ -32,6 +34,16 @@ export interface WrongQuestion {
   total: number;
   wrong: number;
   pct: number;
+  dang?: string | null;
+}
+
+export interface DangStat {
+  label: string;
+  total: number;
+  wrong: number;
+  pct: number;
+  students_wrong: number;
+  students: number;
 }
 
 export interface ReviewBoard {
@@ -49,6 +61,8 @@ export interface ReviewBoard {
   };
   students: BoardStudent[];
   wrongest: WrongQuestion[];
+  /** Sai theo dạng ở chặng hiện tại (rỗng nếu chặng không phải ôn dạng). */
+  by_dang?: DangStat[];
 }
 
 export interface ReviewListItem {
@@ -104,12 +118,33 @@ export const getReviewBoard = (sessionId: number) => rpc<ReviewBoard>("review_bo
 export const getMyReviewState = (sessionId: number | null = null) =>
   rpc<MyReviewState | null>("review_my_state", { p_session: sessionId });
 
+export interface DangPoolItem {
+  label: string;
+  n: number;
+}
+
+export interface BuiltDangExam {
+  exam_id: number;
+  title: string;
+  question_count: number;
+  dang: { label: string; n: number }[];
+  dang_by_index: string[];
+}
+
+/** Số câu đã gán theo dạng của một bài (để biết bài nào đủ câu ôn dạng). */
+export const getDangPool = (lessonId: number) => rpc<DangPoolItem[]>("review_dang_pool", { p_lesson: lessonId });
+
+/** Dựng đề ôn dạng cho một bài: mỗi dạng bốc perDang câu đã gán, gán đề cho lớp. */
+export const buildDangExam = (classId: number, lessonId: number, perDang: number) =>
+  rpc<BuiltDangExam>("review_build_dang_exam", { p_class: classId, p_lesson: lessonId, p_per_dang: perDang });
+
 export function reviewErrorText(e: unknown): string {
   const m = e instanceof Error ? e.message : String(e);
   if (/forbidden/.test(m)) return "Tài khoản này không có quyền với buổi ôn.";
   if (/not_found/.test(m)) return "Không tìm thấy buổi ôn (có thể đã bị xoá).";
   if (/exam_not_found/.test(m)) return "Có đề trong danh sách không còn tồn tại.";
   if (/stages_invalid/.test(m)) return "Buổi ôn cần từ 1 đến 12 chặng.";
+  if (/no_dang/.test(m)) return "Bài này chưa có câu nào được gán dạng nên chưa dựng được đề ôn dạng.";
   if (/not_authenticated/.test(m)) return "Cần đăng nhập lại.";
   return "Chưa kết nối được, thử lại sau ít giây.";
 }
@@ -153,9 +188,17 @@ export async function fetchPickerChapters(classId: number): Promise<PickerChapte
  */
 export const fetchChapterQuickQuizzes = (chapterId: number) => fetchChapterExams(chapterId, ["ly_thuyet"]);
 
-/** Đề bài tập của một chương (ôn các dạng): đề gắn vào mục kiểm tra / bài tập về nhà của từng bài (không lấy Luyện tập: đề cả chương hàng trăm câu, làm qua PracticeSession không ghi exam_results). */
-export const fetchChapterExerciseExams = (chapterId: number) =>
-  fetchChapterExams(chapterId, ["bai_tap_ve_nha", "kiem_tra"]);
+/** Các bài của một chương (để chọn bài ôn dạng bài tập). */
+export async function fetchChapterLessons(chapterId: number): Promise<{ id: number; title: string }[]> {
+  const { data, error } = await getSupabase()
+    .from("lessons")
+    .select("id, title")
+    .eq("chapter_id", chapterId)
+    .order("sort_order")
+    .order("id");
+  if (error) throw new Error(error.message);
+  return (data ?? []) as { id: number; title: string }[];
+}
 
 async function fetchChapterExams(chapterId: number, kinds: string[]): Promise<PickerExam[]> {
   const supabase = getSupabase();

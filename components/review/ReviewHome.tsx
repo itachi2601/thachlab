@@ -10,14 +10,18 @@ import type { SchoolClass } from "@/features/exams/types";
 import { fetchClasses } from "@/services/classes";
 import {
   createReviewSession,
-  fetchChapterExerciseExams,
+  buildDangExam,
+  fetchChapterLessons,
+  getDangPool,
   fetchChapterQuickQuizzes,
   fetchPickerChapters,
   fetchPickerExamById,
   listReviewSessions,
   reviewErrorText,
   suggestedMinutes,
+  type DangPoolItem,
   type PickerChapter,
+  type ReviewStageDef,
   type PickerExam,
   type ReviewListItem,
 } from "@/services/review-session";
@@ -26,7 +30,17 @@ import { reviewConsolePath } from "@/lib/review-link";
 interface PickedStage {
   pick: PickerExam;
   minutes: number;
+  /** Chặng ôn dạng: đề được dựng lúc bấm "Tạo buổi ôn" (examId tạm = −lessonId). */
+  dang?: { lessonId: number; lessonTitle: string; count: number };
 }
+
+interface DangLesson {
+  id: number;
+  title: string;
+  pool: DangPoolItem[];
+}
+
+const MIN_PER_DANG = 3;
 
 const STATUS_TEXT: Record<ReviewListItem["status"], string> = {
   ready: "Chưa bắt đầu",
@@ -44,7 +58,8 @@ export default function ReviewHome() {
   const [chapters, setChapters] = useState<PickerChapter[]>([]);
   const [chapterId, setChapterId] = useState<number | null>(null);
   const [options, setOptions] = useState<PickerExam[] | null>(null);
-  const [exercises, setExercises] = useState<PickerExam[] | null>(null);
+  const [dangLessons, setDangLessons] = useState<DangLesson[] | null>(null);
+  const [perDang, setPerDang] = useState(3);
   const [stages, setStages] = useState<PickedStage[]>([]);
   const [title, setTitle] = useState("");
   const [threshold, setThreshold] = useState(80);
@@ -73,7 +88,7 @@ export default function ReviewHome() {
         setChapters(c);
         setChapterId(null);
         setOptions(null);
-        setExercises(null);
+        setDangLessons(null);
       })
       .catch(() => !off && setChapters([]));
     return () => {
@@ -85,16 +100,17 @@ export default function ReviewHome() {
     async (id: number) => {
       setChapterId(id);
       setOptions(null);
-      setExercises(null);
+      setDangLessons(null);
       try {
-        const [quick, ex] = await Promise.all([fetchChapterQuickQuizzes(id), fetchChapterExerciseExams(id)]);
-        setOptions(quick);
-        setExercises(ex);
+        setOptions(await fetchChapterQuickQuizzes(id));
+        const lessons = await fetchChapterLessons(id);
+        const pools = await Promise.all(lessons.map((l) => getDangPool(l.id).catch(() => [] as DangPoolItem[])));
+        setDangLessons(lessons.map((l, i) => ({ ...l, pool: pools[i] })).filter((l) => l.pool.length > 0));
         const ch = chapters.find((c) => c.id === id);
         setTitle((t) => t || (ch ? `Ôn tập · ${ch.title}` : ""));
       } catch {
         setOptions([]);
-        setExercises([]);
+        setDangLessons([]);
         toast("error", "Không tải được danh sách đề của chương này.");
       }
     },
@@ -109,6 +125,23 @@ export default function ReviewHome() {
         ? cur.filter((s) => s.pick.examId !== p.examId)
         : [...cur, { pick: p, minutes: suggestedMinutes(p.questionCount) }],
     );
+  }
+
+  function toggleDang(l: DangLesson) {
+    const key = -l.id;
+    if (chosen.has(key)) {
+      setStages((cur) => cur.filter((x) => x.pick.examId !== key));
+      return;
+    }
+    const count = l.pool.reduce((n, d) => n + Math.min(d.n, perDang), 0);
+    setStages((cur) => [
+      ...cur,
+      {
+        pick: { examId: key, itemId: null, lessonId: null, lessonTitle: l.title, title: `Ôn dạng — ${l.title}`, questionCount: count, published: true },
+        minutes: suggestedMinutes(count),
+        dang: { lessonId: l.id, lessonTitle: l.title, count },
+      },
+    ]);
   }
 
   function move(i: number, d: -1 | 1) {
@@ -141,12 +174,17 @@ export default function ReviewHome() {
     if (!classId || stages.length === 0 || busy) return;
     setBusy(true);
     try {
-      const id = await createReviewSession(
-        classId,
-        title.trim() || "Buổi ôn tập",
-        threshold,
-        stages.map((s) => ({ exam_id: s.pick.examId, item_id: s.pick.itemId, title: s.pick.title.replace(/^Kiểm tra nhanh\s*[—-]\s*/i, ""), minutes: s.minutes })),
-      );
+      // Chặng ôn dạng: dựng đề từ câu đã gán dạng ngay bây giờ, các chặng khác dùng đề có sẵn.
+      const defs: ReviewStageDef[] = [];
+      for (const s of stages) {
+        if (s.dang) {
+          const built = await buildDangExam(classId, s.dang.lessonId, perDang);
+          defs.push({ exam_id: built.exam_id, item_id: null, title: `Ôn dạng — ${s.dang.lessonTitle}`, minutes: s.minutes, dang_by_index: built.dang_by_index });
+        } else {
+          defs.push({ exam_id: s.pick.examId, item_id: s.pick.itemId, title: s.pick.title.replace(/^Kiểm tra nhanh\s*[—-]\s*/i, ""), minutes: s.minutes });
+        }
+      }
+      const id = await createReviewSession(classId, title.trim() || "Buổi ôn tập", threshold, defs);
       router.push(reviewConsolePath(id));
     } catch (e) {
       toast("error", reviewErrorText(e));
@@ -235,13 +273,63 @@ export default function ReviewHome() {
               chosen={chosen}
               toggle={toggle}
             />
-            <ExamPicker
-              heading="Ôn các dạng bài tập — đề bài tập của chương"
-              empty="Chương này chưa có đề bài tập gắn vào bài. Có thể nhập mã đề ở dưới."
-              list={exercises}
-              chosen={chosen}
-              toggle={toggle}
-            />
+            <div>
+              <p className="mb-1 text-sm font-semibold text-ink">Ôn các dạng bài tập — mỗi bài một chặng</p>
+              <p className="mb-2 text-sm text-muted">
+                Dạng lấy từ mục Bài tập mẫu của bài. Mỗi dạng bốc ngẫu nhiên vài câu đã gán dạng trong ngân hàng, để thấy cả lớp vướng dạng nào.
+              </p>
+              <label className="mb-2 flex items-center gap-2 text-sm text-ink">
+                Số câu mỗi dạng
+                <input
+                  type="number"
+                  min={1}
+                  max={6}
+                  value={perDang}
+                  onChange={(e) => setPerDang(Math.min(6, Math.max(1, Number(e.target.value) || 3)))}
+                  className="min-h-11 w-16 rounded-xl border border-line-strong bg-panel px-2 text-center text-base text-ink"
+                />
+              </label>
+              {dangLessons === null ? (
+                <p className="text-sm text-muted">Đang tải…</p>
+              ) : dangLessons.length === 0 ? (
+                <p className="text-sm text-muted">Chương này chưa có bài nào có dạng bài tập mẫu.</p>
+              ) : (
+                <ul className="space-y-1.5">
+                  {dangLessons.map((l) => {
+                    const ready = l.pool.filter((d) => d.n >= MIN_PER_DANG).length;
+                    const usable = l.pool.some((d) => d.n > 0);
+                    return (
+                      <li key={l.id}>
+                        <label className={`flex min-h-11 items-start gap-3 rounded-xl border border-line px-3 py-2 ${usable ? "cursor-pointer hover:bg-surface-2" : "opacity-60"}`}>
+                          <input
+                            type="checkbox"
+                            checked={chosen.has(-l.id)}
+                            disabled={!usable}
+                            onChange={() => toggleDang(l)}
+                            className="mt-1 size-5 shrink-0"
+                          />
+                          <span className="min-w-0 flex-1 text-sm text-ink">
+                            <span className="font-semibold">{l.title}</span>
+                            <span className="block text-muted">
+                              {l.pool.length} dạng · {usable ? `${ready} dạng đủ ${MIN_PER_DANG} câu để ôn` : "chưa có câu nào được gán dạng"}
+                            </span>
+                            {usable && (
+                              <span className="mt-1 block space-y-0.5 text-xs text-muted">
+                                {l.pool.map((d) => (
+                                  <span key={d.label} className={`block ${d.n < MIN_PER_DANG ? "text-warn" : ""}`}>
+                                    {d.label.replace(/^Dạng\s*\d+\s*·\s*/, "")} — {d.n} câu{d.n === 0 ? " (bỏ qua)" : d.n < MIN_PER_DANG ? " (ít)" : ""}
+                                  </span>
+                                ))}
+                              </span>
+                            )}
+                          </span>
+                        </label>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
           </>
         )}
 

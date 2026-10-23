@@ -317,6 +317,27 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
             <p className="mt-2 text-xs text-muted">Dấu “Hỏi thăm” chỉ lưu trên máy này, để trợ giảng không đến trùng một em.</p>
           </section>
 
+          {/* Sai theo dạng (chặng ôn dạng bài tập) */}
+          {board.by_dang && board.by_dang.length > 0 && (
+            <section aria-label="Sai theo dạng" className="space-y-3">
+              <h2 className="text-lg font-bold text-ink">Cả lớp vướng ở dạng nào</h2>
+              <ul className="space-y-2">
+                {board.by_dang.map((d) => (
+                  <li key={d.label} className="rounded-2xl border border-line bg-panel px-4 py-3">
+                    <p className="text-ink">
+                      <strong>{d.label.replace(/^Dạng\s*\d+\s*·\s*/, "")}</strong>
+                    </p>
+                    <p className="text-sm text-muted">
+                      sai {d.pct}% ({d.wrong}/{d.total} lượt) · {d.students_wrong}/{d.students} em sai ít nhất một câu của dạng này
+                      {d.pct >= 50 && <span className="ml-2 font-semibold text-warn">nên sửa chung</span>}
+                    </p>
+                    <div className="mt-2"><Bar value={d.pct} max={100} /></div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {/* Câu sai nhiều nhất */}
           <section aria-label="Câu sai nhiều nhất" className="space-y-3">
             <h2 className="text-lg font-bold text-ink">Câu sai nhiều nhất</h2>
@@ -331,6 +352,7 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
                       <div className="flex flex-wrap items-center gap-3">
                         <span className="min-w-0 flex-1 basis-48 text-ink">
                           <strong>Câu {q.idx + 1}</strong> · sai {q.pct}% ({q.wrong}/{q.total} lượt)
+                          {q.dang && <span className="block text-sm text-muted">{q.dang.replace(/^Dạng\s*\d+\s*·\s*/, "")}</span>}
                           {text && <span className="block truncate text-sm text-muted">{text}</span>}
                         </span>
                         <a

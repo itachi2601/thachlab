@@ -67,6 +67,8 @@ FILES=(
   "supabase/migrations/20261021120000_on_tap_theo_chang.sql|Buổi ôn tập theo chặng: bảng review_sessions + 6 hàm review_* (thầy/trợ giảng điều phối, học sinh xem chặng; chỉ thêm mới)|lúc nào cũng được"
   "supabase/migrations/20261021130000_khoa_rpc_anon.sql|Rà bảo mật: thu quyền anon khỏi ~23 hàm definer nội bộ, siết đọc cnc_milling_quiz_attempts, hàm mới mặc định không mở anon (có rollback; thử quiz CNC của HS chưa đăng nhập sau khi chạy)|ngoài giờ HS làm quiz CNC"
   "supabase/migrations/20261021140000_khoa_noi_dung_can_dang_nhap.sql|Khoá lesson_items với khách (trừ 3 bài xem thử: 2, 20, 46); thêm lessons.is_preview (có rollback; sau khi chạy phải build + deploy lại)|lúc nào cũng được, rồi build + deploy ngay"
+  "supabase/migrations/20261023120000_on_tap_dang_bai_tap.sql|Ôn tập theo chặng — ôn các dạng bài tập: bảng question_dang + hàm dựng đề ôn dạng + review_board thêm by_dang (chỉ thêm, không đụng dữ liệu cũ)|lúc nào cũng được"
+  "scripts/sql/gan-dang-chuong3-l12.sql|Nạp 362 câu ngân hàng đã được Claude gán dạng bài tập mẫu (Chương 3 lớp 12) vào question_dang|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
