@@ -62,6 +62,13 @@ function snapOf(status: RankStatus | null, titles: RankTitle[]): Snapshot {
   return { season: status?.season?.id ?? null, tier: tierScore(status), titles: map };
 }
 
+// Mốc "đã chúc mừng" chỉ tăng: rank/danh hiệu tụt rồi lên lại về mốc cũ không bật popup lần nữa (báo lỗi #130).
+function mergeMax(before: Snapshot, now: Snapshot): Snapshot {
+  const titles = { ...before.titles };
+  for (const [c, v] of Object.entries(now.titles)) titles[c] = Math.max(titles[c] ?? 0, v);
+  return { season: now.season, tier: Math.max(before.tier, now.tier), titles };
+}
+
 export default function RankCelebrationWatcher() {
   const { session, profile } = useAuth();
   const pathname = usePathname();
@@ -103,10 +110,11 @@ export default function RankCelebrationWatcher() {
         }
       }
       if (events.length === 0) {
-        if (JSON.stringify(now) !== JSON.stringify(before)) writeSnap(uid, now);
+        const merged = mergeMax(before, now);
+        if (JSON.stringify(merged) !== JSON.stringify(before)) writeSnap(uid, merged);
         return;
       }
-      pending.current = now;
+      pending.current = mergeMax(before, now);
       setQueue(events);
     } catch {
       /* mạng/RPC lỗi → bỏ qua, lần sau kiểm lại */
