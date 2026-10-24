@@ -439,9 +439,9 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
                         </button>
                       )}
                       {mineOpen && (
-                        <ul className="basis-full space-y-1 pb-1 text-sm text-ink">
+                        <ul className="w-full min-w-0 basis-full space-y-1 pb-1 text-sm text-ink">
                           {mine.map((w) => (
-                            <li key={w.idx}>
+                            <li key={w.idx} className="min-w-0">
                               <strong>Câu {w.idx + 1}</strong>
                               {w.dang && <span className="text-muted"> · {shortDang(w.dang)}</span>}
                               {w.max != null && w.earned != null && w.earned > 0 && (
