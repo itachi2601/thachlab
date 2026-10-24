@@ -1,8 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Check, Clock, Tv } from "lucide-react";
+import { ArrowLeft, Check, ChevronDown, Clock, Tv } from "lucide-react";
 import Button from "@/components/ui/Button";
 import ConfirmDialog from "@/components/ui/ConfirmDialog";
 import { useToast } from "@/components/ui/Toast";
@@ -12,11 +12,13 @@ import {
   extendReviewStage,
   fetchQuestionSnippets,
   getReviewBoard,
+  getWrongStudents,
   reviewErrorText,
   setReviewStage,
   type BoardStudent,
   type ReviewBoard,
   type StageState,
+  type WrongStudentRow,
 } from "@/services/review-session";
 import { reviewScreenPath } from "@/lib/review-link";
 import { Bar, clock, StatePill } from "./shared";
@@ -46,6 +48,37 @@ const FILTERS: { key: StageState | "all" | "care"; label: string }[] = [
   { key: "passed", label: "Đạt" },
 ];
 
+const shortDang = (d: string) => d.replace(/^Dạng\s*\d+\s*·\s*/, "");
+
+/** Danh sách tên em (nhạy địa vị bạn bè — chỉ hiện ở bảng của nhân sự, không bao giờ lên màn hình chiếu). */
+function NameChips({ items }: { items: { id: string; name: string; note?: string }[] }) {
+  const sorted = [...items].sort((a, b) => nameKey(a.name).localeCompare(nameKey(b.name), "vi"));
+  return (
+    <ul className="mt-2 flex flex-wrap gap-2">
+      {sorted.map((it) => (
+        <li key={it.id} className="rounded-full bg-surface-2 px-3 py-1.5 text-sm text-ink">
+          <span className="font-semibold">{it.name}</span>
+          {it.note && <span className="text-muted"> · {it.note}</span>}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function Toggle({ open, onClick, children }: { open: boolean; onClick: () => void; children: React.ReactNode }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-expanded={open}
+      className="inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary hover:bg-surface-2"
+    >
+      {children}
+      <ChevronDown size={16} aria-hidden className={open ? "rotate-180" : ""} />
+    </button>
+  );
+}
+
 function seenKey(id: number) {
   return `thachlab.on-tap.${id}.da-hoi`;
 }
@@ -60,6 +93,11 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
   const [fatal, setFatal] = useState("");
   const [filter, setFilter] = useState<(typeof FILTERS)[number]["key"]>("care");
   const [confirmNext, setConfirmNext] = useState<number | null>(null);
+  /** null = theo chặng đang mở; số = đang xem lại chặng đó. */
+  const [view, setView] = useState<number | null>(null);
+  const [wrongRows, setWrongRows] = useState<{ stage: number; rows: WrongStudentRow[] } | null>(null);
+  const [openKeys, setOpenKeys] = useState<Set<string>>(new Set());
+  const [showAllQ, setShowAllQ] = useState(false);
   const [snippets, setSnippets] = useState<{ exam: number; list: string[] } | null>(null);
   const [seen, setSeen] = useState<Set<string>>(() => {
     try {
@@ -70,7 +108,7 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
   });
 
   const { refresh, error } = usePoll(
-    () => getReviewBoard(sessionId),
+    () => getReviewBoard(sessionId, view),
     (last) => (last?.session.status === "running" ? 4000 : 10000),
     (d) => {
       setBoard(d);
@@ -85,7 +123,67 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
   const sess = board?.session;
   const idx = sess?.current_stage ?? -1;
   const running = sess?.status === "running";
-  const examId = idx >= 0 ? sess?.stages[idx]?.exam_id : undefined;
+  /** Chặng mà các số liệu bên dưới đang nói về (theo chính bảng máy chủ trả về, không theo ô bấm). */
+  const viewed = sess ? (sess.viewed_stage ?? idx) : -1;
+  const reviewing = viewed >= 0 && viewed !== idx;
+  const examId = viewed >= 0 ? sess?.stages[viewed]?.exam_id : undefined;
+
+  const { refresh: refreshWrong } = usePoll(
+    () => getWrongStudents(sessionId, view).then((rows) => ({ stage: view ?? idx, rows })),
+    () => (running && !reviewing ? 8000 : 20000),
+    (d) => setWrongRows(d),
+    !fatal && !!board && viewed >= 0,
+  );
+  const kickRef = useRef({ refresh, refreshWrong });
+  const firstView = useRef(true);
+  useEffect(() => {
+    kickRef.current = { refresh, refreshWrong };
+  });
+  useEffect(() => {
+    // đổi chặng đang xem: lấy ngay số liệu mới, đóng các danh sách đang mở của chặng cũ
+    if (firstView.current) {
+      firstView.current = false;
+      return;
+    }
+    setTimeout(() => {
+      setOpenKeys(new Set());
+      setShowAllQ(false);
+    }, 0);
+    kickRef.current.refresh();
+    kickRef.current.refreshWrong();
+  }, [view]);
+
+  // Chỉ dùng danh sách tên khi nó đúng là của chặng đang hiển thị (tránh nháy dữ liệu chặng khác).
+  const wrong = wrongRows && wrongRows.stage === viewed ? wrongRows.rows : null;
+  const byQuestion = useMemo(() => {
+    const m = new Map<number, WrongStudentRow[]>();
+    for (const w of wrong ?? []) m.set(w.idx, [...(m.get(w.idx) ?? []), w]);
+    return m;
+  }, [wrong]);
+  const byStudent = useMemo(() => {
+    const m = new Map<string, WrongStudentRow[]>();
+    for (const w of wrong ?? []) m.set(w.student_id, [...(m.get(w.student_id) ?? []), w]);
+    return m;
+  }, [wrong]);
+  const byDangStudents = useMemo(() => {
+    const m = new Map<string, Map<string, { name: string; qs: number[] }>>();
+    for (const w of wrong ?? []) {
+      if (!w.dang) continue;
+      const d = m.get(w.dang) ?? new Map<string, { name: string; qs: number[] }>();
+      const cur = d.get(w.student_id) ?? { name: w.name, qs: [] };
+      cur.qs.push(w.idx + 1);
+      d.set(w.student_id, cur);
+      m.set(w.dang, d);
+    }
+    return m;
+  }, [wrong]);
+  const toggleKey = (k: string) =>
+    setOpenKeys((cur) => {
+      const next = new Set(cur);
+      if (next.has(k)) next.delete(k);
+      else next.add(k);
+      return next;
+    });
   const left = useCountdown(sess?.secs_left ?? 0, stamp, running);
 
   useEffect(() => {
@@ -185,18 +283,31 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
       </div>
 
       {/* Dải chặng */}
-      <ol className="flex flex-wrap gap-2" aria-label="Các chặng">
+      <ol className="flex flex-wrap gap-2" aria-label="Các chặng — bấm để xem số liệu chặng đó">
         {sess.stages.map((s, i) => {
           const state = sess.status === "finished" || i < idx ? "done" : i === idx ? "now" : "next";
+          const opened = i <= idx; // chặng chưa mở thì chưa có số liệu
+          const watching = i === viewed;
           return (
-            <li
-              key={i}
-              className={`rounded-full border px-3 py-1.5 text-sm font-semibold ${
-                state === "now" ? "border-primary bg-primary-soft text-primary" : state === "done" ? "border-line bg-surface-2 text-muted" : "border-line text-ink"
-              }`}
-            >
-              {state === "done" ? "✓ " : ""}Chặng {i + 1}
-              <span className="ml-1 font-normal">· {s.title}</span>
+            <li key={i}>
+              <button
+                type="button"
+                disabled={!opened}
+                aria-current={watching ? "true" : undefined}
+                onClick={() => setView(i === idx && sess.status !== "finished" ? null : i)}
+                className={`min-h-11 rounded-full border px-3 py-1.5 text-left text-sm font-semibold disabled:cursor-default ${
+                  watching
+                    ? "border-primary bg-primary-soft text-primary ring-2 ring-primary"
+                    : state === "done"
+                      ? "border-line bg-surface-2 text-muted hover:text-ink"
+                      : state === "now"
+                        ? "border-primary text-primary"
+                        : "border-line text-ink"
+                }`}
+              >
+                {state === "done" ? "✓ " : ""}Chặng {i + 1}
+                <span className="ml-1 font-normal">· {s.title}</span>
+              </button>
             </li>
           );
         })}
@@ -246,12 +357,23 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
         )}
       </section>
 
-      {idx >= 0 && sess.status !== "finished" && (
+      {viewed >= 0 && (
         <>
+          {reviewing && (
+            <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-primary bg-primary-soft px-4 py-3">
+              <p className="flex-1 basis-60 text-ink">
+                Đang xem lại <strong>Chặng {viewed + 1}</strong> — số liệu tính đến bây giờ, các em vẫn có thể nộp thêm.
+              </p>
+              {sess.status !== "finished" && (
+                <Button variant="outline" onClick={() => setView(null)}>Về chặng {idx + 1} đang mở</Button>
+              )}
+            </div>
+          )}
+
           {/* Tổng quan */}
           <section aria-label="Tổng quan chặng" className="space-y-3">
             <div className="flex items-baseline justify-between gap-3">
-              <h2 className="text-lg font-bold text-ink">Đã nộp {submitted}/{counts.total}</h2>
+              <h2 className="text-lg font-bold text-ink">Chặng {viewed + 1} · đã nộp {submitted}/{counts.total}</h2>
               <span className="text-sm text-muted">Làm mới tự động</span>
             </div>
             <Bar value={submitted} max={counts.total} tone="ok" />
@@ -272,7 +394,7 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
                 );
               })}
             </div>
-            {counts.stalled > 0 && (
+            {!reviewing && counts.stalled > 0 && (
               <p className="text-sm font-semibold text-warn">
                 ● {counts.stalled} em đang làm nhưng đã {Math.round(STALL_SECS / 60)} phút chưa có đáp án mới — nên đến hỏi thăm.
               </p>
@@ -286,8 +408,10 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
             ) : (
               <ul className="divide-y divide-line rounded-2xl border border-line bg-panel">
                 {rows.map((s) => {
-                  const stalled = s.state === "doing" && (s.idle_secs ?? 0) >= STALL_SECS;
+                  const stalled = !reviewing && s.state === "doing" && (s.idle_secs ?? 0) >= STALL_SECS;
                   const done = seen.has(s.id);
+                  const mine = byStudent.get(s.id) ?? [];
+                  const mineOpen = openKeys.has(`s${s.id}`);
                   return (
                     <li key={s.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5">
                       <span className="min-w-0 flex-1 basis-40 font-semibold text-ink">{s.name}</span>
@@ -299,7 +423,12 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
                         <span className="text-sm font-semibold text-warn">đứng yên {Math.round((s.idle_secs ?? 0) / 60)} phút</span>
                       )}
                       {s.tries > 1 && <span className="text-sm text-muted">lần {s.tries}</span>}
-                      {s.state !== "passed" && (
+                      {mine.length > 0 && (
+                        <Toggle open={mineOpen} onClick={() => toggleKey(`s${s.id}`)}>
+                          Đang sai {mine.length} câu
+                        </Toggle>
+                      )}
+                      {!reviewing && s.state !== "passed" && (
                         <button
                           type="button"
                           onClick={() => toggleSeen(s.id)}
@@ -309,12 +438,31 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
                           <Check size={14} /> {done ? "Đã hỏi" : "Hỏi thăm"}
                         </button>
                       )}
+                      {mineOpen && (
+                        <ul className="basis-full space-y-1 pb-1 text-sm text-ink">
+                          {mine.map((w) => (
+                            <li key={w.idx}>
+                              <strong>Câu {w.idx + 1}</strong>
+                              {w.dang && <span className="text-muted"> · {shortDang(w.dang)}</span>}
+                              {w.max != null && w.earned != null && w.earned > 0 && (
+                                <span className="text-muted"> · được {w.earned}/{w.max} điểm</span>
+                              )}
+                              {snippets && snippets.exam === examId && snippets.list[w.idx] && (
+                                <span className="block truncate text-muted">{snippets.list[w.idx]}</span>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   );
                 })}
               </ul>
             )}
-            <p className="mt-2 text-xs text-muted">Dấu “Hỏi thăm” chỉ lưu trên máy này, để trợ giảng không đến trùng một em.</p>
+            <p className="mt-2 text-xs text-muted">
+              “Đang sai” = lượt làm mới nhất của em vẫn sai câu đó; em làm lại đúng thì hết hiện.
+              {!reviewing && " Dấu “Hỏi thăm” chỉ lưu trên máy này, để trợ giảng không đến trùng một em."}
+            </p>
           </section>
 
           {/* Sai theo dạng (chặng ôn dạng bài tập) */}
@@ -322,18 +470,32 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
             <section aria-label="Sai theo dạng" className="space-y-3">
               <h2 className="text-lg font-bold text-ink">Cả lớp vướng ở dạng nào</h2>
               <ul className="space-y-2">
-                {board.by_dang.map((d) => (
+                {board.by_dang.map((d) => {
+                  const who = byDangStudents.get(d.label);
+                  const key = `d${d.label}`;
+                  return (
                   <li key={d.label} className="rounded-2xl border border-line bg-panel px-4 py-3">
                     <p className="text-ink">
-                      <strong>{d.label.replace(/^Dạng\s*\d+\s*·\s*/, "")}</strong>
+                      <strong>{shortDang(d.label)}</strong>
                     </p>
                     <p className="text-sm text-muted">
                       sai {d.pct}% ({d.wrong}/{d.total} lượt) · {d.students_wrong}/{d.students} em sai ít nhất một câu của dạng này
                       {d.pct >= 50 && <span className="ml-2 font-semibold text-warn">nên sửa chung</span>}
                     </p>
                     <div className="mt-2"><Bar value={d.pct} max={100} /></div>
+                    {who && who.size > 0 && (
+                      <>
+                        <Toggle open={openKeys.has(key)} onClick={() => toggleKey(key)}>
+                          Xem {who.size} em đang sai dạng này
+                        </Toggle>
+                        {openKeys.has(key) && (
+                          <NameChips items={[...who.entries()].map(([id, v]) => ({ id, name: v.name, note: `câu ${v.qs.join(", ")}` }))} />
+                        )}
+                      </>
+                    )}
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </section>
           )}
@@ -345,8 +507,10 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
               <p className="text-sm text-muted">Chưa có câu nào bị sai — sẽ hiện khi có em nộp bài.</p>
             ) : (
               <ul className="space-y-2">
-                {board.wrongest.slice(0, 5).map((q) => {
+                {board.wrongest.slice(0, showAllQ ? board.wrongest.length : 5).map((q) => {
                   const text = snippets && snippets.exam === examId ? snippets.list[q.idx] : "";
+                  const who = byQuestion.get(q.idx);
+                  const key = `q${q.idx}`;
                   return (
                     <li key={q.idx} className="rounded-2xl border border-line bg-panel px-4 py-3">
                       <div className="flex flex-wrap items-center gap-3">
@@ -365,10 +529,32 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
                         </a>
                       </div>
                       <div className="mt-2"><Bar value={q.pct} max={100} /></div>
+                      {who && who.length > 0 ? (
+                        <>
+                          <Toggle open={openKeys.has(key)} onClick={() => toggleKey(key)}>
+                            Xem {who.length} em đang sai câu này
+                          </Toggle>
+                          {openKeys.has(key) && (
+                            <NameChips items={who.map((w) => ({ id: w.student_id, name: w.name, note: w.tries > 1 ? `lần ${w.tries}` : undefined }))} />
+                          )}
+                        </>
+                      ) : (
+                        wrong && <p className="mt-1 text-sm text-muted">Các em từng sai câu này đã làm lại đúng.</p>
+                      )}
                     </li>
                   );
                 })}
               </ul>
+            )}
+            {board.wrongest.length > 5 && (
+              <button
+                type="button"
+                onClick={() => setShowAllQ((v) => !v)}
+                aria-pressed={showAllQ}
+                className="inline-flex min-h-11 items-center rounded-full border border-line px-4 text-sm font-semibold text-ink hover:bg-surface-2"
+              >
+                {showAllQ ? "Chỉ 5 câu sai nhiều nhất" : `Mọi câu có em sai (${board.wrongest.length})`}
+              </button>
             )}
           </section>
         </>
