@@ -76,6 +76,7 @@ FILES=(
   "supabase/migrations/20261024150000_exam_answer_server_grading.sql|P0 #1 chặng 1: chấm điểm server (trigger chấm lại exam_results/exam_question_results) + RPC get_exam_for_taking/submit_exam_attempt/get_exam_review/check_practice_answer/rank_fix_quiz_open + view exams_staff (chỉ thêm, có rollback; chạy xong: npx tsx scripts/doi-chieu-cham-diem-exam.mts 500)|lúc nào cũng được (chỉ tạo hàm)"
   "supabase/migrations/20261024170000_on_tap_xem_lai_chang_em_sai.sql|Ôn tập theo chặng: review_board_stage (xem lại chặng cũ) + review_wrong_students (em nào đang sai câu/dạng nào); review_board giữ tên cũ, gọi sang hàm mới (chỉ tạo hàm, có rollback)|lúc nào cũng được"
   "supabase/migrations/20261024200000_lesson_practice_pool_ngan_hang.sql|Chặng 0: RPC lesson_practice_pool + check_bank_practice_answer (kho câu ngân hàng theo bài cho Luyện tập) + cột practice_question_results.bank_id|lúc nào cũng được"
+  "supabase/migrations/20261024210000_lesson_practice_pool_noi_loc_de_danh_gia.sql|Chặng 0 bản nới: câu ngân hàng từ đề đánh giá vào kho Luyện tập khi em đã được xem đáp án đề đó (exam_answers_revealed)|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
