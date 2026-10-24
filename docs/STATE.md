@@ -28,6 +28,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Sau khi chạy migration: chạy `node scripts/gen-database-doc.mjs` trên Mac để cập nhật `docs/DATABASE.md` + `docs/DATABASE-RPC.md`.
 
 ## Chờ deploy / chờ kiểm
+- 24/10 Làm bài (báo "tự nhảy câu, đáp án sai" + #140/#142): ĐÃ DEPLOY 4 sửa — chạm lại phương án/Đúng-Sai đang chọn không bỏ chọn; `/kiem-tra/lam` chỉ tải đề 1 lần theo (user, đề); lưới chống chunk 404 trong layout hết SyntaxError (trước nay chưa chạy); luôn xác nhận trước khi nộp. Code không có auto-advance, 36 bài đề 752 lưu đúng. CÒN: chờ HS phản hồi — nếu vẫn "nhảy câu" thì hỏi trang nào (Kiểm tra/Luyện tập Từng câu/Thăng hạng), máy gì.
 - 22/10 10:47: toàn bộ main@ee71b2bd1 đã deploy (gồm khoá nội dung bài cần đăng nhập, ôn tập theo chặng, CSS khung có nghĩa .tl-fx/.tl-trap/.tl-check/.tl-note — chỉ có tác dụng khi bài có dùng lớp mới; Bài 14 Sóng L11 vẫn là bản mẫu chưa đăng).
 - Push thông báo (18/10): 2 migration (150000, 160000) + 2 Edge Function ĐÃ chạy/deploy. Cron `send-notification-push` ĐÃ đặt (jobid 6, mỗi phút trong khung 6–22h VN, active; kiểm 19/10). CÒN: thử điện thoại thật (web đã deploy 19/10 từ 53f8b3cfa: sw.js v5, chuông, PushOptInPrompt, độ sâu đọc, lịch tuần).
 - HSG9 đợt 4 (17/10): cả 6 CĐ (151/152/163/156/158/178) đã ghi DB (ẩn) + deploy; chờ thầy xem `/lop-hoc/bai/?id=…` rồi bật Hiện (bật xong deploy lại để có file tĩnh) — xem `docs/memory/project_thachlab_khoa_hsg9_vat_ly.md`.
