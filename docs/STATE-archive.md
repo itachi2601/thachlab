@@ -712,3 +712,5 @@ xem mục "Đợt tối ưu tải số 4" ở trên.)
 - Lỗi nội dung L12 (bài 8, 10, 13, 19, 126): ĐÃ SỬA hết (18/10/2026; bài 8 `summary_html` ghi DB, sao lưu `scripts/logs/summary-bai8-backup-*.json`). Đề cũ 209, 239–257 vẫn trong DB — kiểm `exam_results` rồi dọn tay.
 ## Credit $100 Anthropic API — hết hạn 22/10/2026
 - Chỉ áp dụng API/Batch, không áp dụng Claude Code. `scripts/batch-ra-soat-bai.mts` (chi tiết `docs/memory/project_thachlab_anthropic_credit.md`). Chế độ `sua-ly-thuyet` đã chạy cho 20 bài L12; chế độ `bai-tap-mau` dùng khi thầy bảo.
+
+- **24/10 Ghi chú HS theo mục bài học — ĐÃ CHẠY 24/10 22:46, kiểm đạt: RLS bật, 4 policy, 0 dòng:** `20261024190000_lesson_notes.sql` (bảng mới `lesson_notes`, RLS chỉ chủ sở hữu 4 thao tác, giáo viên/TA không đọc; lúc nào cũng được; rollback: `drop table public.lesson_notes`).

@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 383 hàm, sinh tự động 2026-10-23
+# Hàm SQL / RPC (schema public) — 410 hàm, sinh tự động 2026-10-24
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -11,14 +11,18 @@ repo — xem trên Supabase Dashboard).
 - `apply_staff_invite(p_user_id uuid, p_email text, p_code text)` → uuid
 - `assists_class(p_class bigint)` → boolean
 - `bank_dup_topic_ids(p_grade text)` → TABLE(topic_id bigint, n bigint)
+- `bank_practice_lesson_ok(p_lesson_id bigint, p_uid uuid)` → boolean
 - `bank_replace_imgs_in_json(p_q jsonb, p_map jsonb)` → jsonb
 - `bank_replace_question_imgs(p_bank_id bigint, p_map jsonb)` → jsonb
 - `bank_set_distractor_notes(p_bank_id bigint, p_notes jsonb)` → integer
 - `bank_set_question_figure(p_bank_id bigint, p_img_html text)` → jsonb
 - `bank_set_question_figure_svc(p_bank_id bigint, p_img_html text)` → jsonb
+- `bank_source_is_assessment(p_exam bigint)` → boolean
 - `can_edit_teaching(p_class bigint)` → boolean
 - `can_manage_class(p_class_id bigint)` → boolean
 - `can_manage_course(p_course_id bigint)` → boolean
+- `check_bank_practice_answer(p_bank_id bigint, p_response jsonb)` → jsonb
+- `check_practice_answer(p_exam_id bigint, p_index integer, p_response jsonb)` → jsonb
 - `claim_notification_pushes(p_now timestamp with time zone)` → TABLE(notification_id bigint, subscription_id bigint, endpoint text, p256dh text, auth_key text, title text, body text, href text)
 - `claim_parent_by_child_info(p_name text, p_birth date, p_phone text)` → TABLE(status text, student_name text, class_name text)
 - `claim_parent_link(p_code text)` → TABLE(student_name text, class_name text)
@@ -35,8 +39,17 @@ repo — xem trên Supabase Dashboard).
 - `diagnostic_submit(p_student uuid, p_results jsonb)` → jsonb
 - `evaluate_exam_violation_alert(p_result_id bigint)` → void
 - `evaluate_student_alerts(p_student uuid)` → void
+- `exam_answers_revealed(p_exam_id bigint, p_uid uuid)` → boolean
+- `exam_grade_question(q jsonb, r jsonb, OUT earned double precision, OUT max_pts double precision)` → record
+- `exam_grade_responses(p_questions jsonb, p_responses jsonb)` → jsonb
 - `exam_is_assessment(p_exam bigint)` → boolean
+- `exam_js_round(x double precision)` → double precision
+- `exam_js_trim(t text)` → text
 - `exam_open_to_student(p_exam_id bigint, p_user_id uuid)` → boolean
+- `exam_q_public(q jsonb)` → jsonb
+- `exam_staff_can_read(p_exam_id bigint)` → boolean
+- `exam_submit_payload(p_result_id bigint)` → jsonb
+- `exam_translation_tokens(t text)` → text[]
 - `feature_enabled(p_flag text)` → boolean
 - `find_similar_bank_questions(p_grade text, p_threshold real)` → TABLE(topic_id bigint, topic_name text, id1 bigint, id2 bigint, similarity real)
 - `find_similar_bank_questions_in_topic(p_grade text, p_topic_id bigint, p_threshold real)` → TABLE(topic_id bigint, topic_name text, id1 bigint, id2 bigint, similarity real)
@@ -44,13 +57,16 @@ repo — xem trên Supabase Dashboard).
 - `get_class_exam_best(p_exam bigint, p_students uuid[])` → TABLE(student_id uuid, score numeric, duration_seconds integer)
 - `get_class_exam_question_stats(p_exam bigint, p_students uuid[])` → TABLE(question_index integer, topic_name text, form text, qtype text, total integer, wrong integer)
 - `get_class_topic_matrix(p_students uuid[], p_exam bigint)` → TABLE(topic_id bigint, topic_name text, form text, total integer, wrong integer)
+- `get_exam_for_taking(p_exam_ids bigint[])` → SETOF jsonb
 - `get_exam_rank(p_exam_id bigint)` → TABLE(rnk integer, total integer, my_best numeric)
+- `get_exam_review(p_exam_ids bigint[])` → SETOF jsonb
 - `get_lesson_mastery(p_lesson bigint)` → TABLE(topic_id bigint, topic_name text, sort_order integer, answered_count integer, level text, pct integer, is_summary boolean)
 - `get_my_chapter_mastery_pct(p_before timestamp with time zone)` → TABLE(chapter_id bigint, chapter_title text, lesson_id bigint, lesson_title text, sort_order integer, answered_count integer, pct integer, level text)
 - `get_my_course_mastery_pct(p_before timestamp with time zone)` → TABLE(chapter_id bigint, chapter_title text, chapter_sort integer, subject_code text, is_latest boolean, lesson_id bigint, lesson_title text, sort_order integer, answered_count integer, earned numeric, max numeric, pct integer, level text)
 - `get_my_weakest_topics(p_limit integer)` → TABLE(topic_id bigint, topic_name text, lesson_id bigint, lesson_title text, answered_count integer, pct integer, level text)
 - `get_periodic_rank(p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
 - `get_periodic_rank_of(p_student uuid, p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
+- `get_public_stats()` → jsonb
 - `get_similar_bank_questions(p_topic_id bigint, p_form text, p_exclude_ids bigint[], p_limit integer)` → TABLE(id bigint, topic_id bigint, topic_name text, form text, qtype text, difficulty text, question jsonb, same_form boolean)
 - `get_student_learning_history(p_student uuid)` → TABLE(activity text, at timestamp with time zone, lesson_title text, item_title text, score numeric, correct_count integer, question_count integer, detail_correct_count jsonb, has_essay boolean)
 - `gin_extract_query_trgm(text, internal, smallint, internal, internal, internal, internal)` → internal
@@ -81,6 +97,7 @@ repo — xem trên Supabase Dashboard).
 - `is_photo_duty_workshop(p_session_id bigint)` → boolean
 - `is_staff()` → boolean
 - `lesson_dang_labels(p_lesson bigint)` → TABLE(ord integer, label text)
+- `lesson_practice_pool(p_lesson_id bigint, p_per_level integer)` → jsonb
 - `list_cnc_course_classmates(p_course_id bigint)` → TABLE(student_id uuid, full_name text, class_name text)
 - `live_study_summary()` → jsonb
 - `log_learning_events(p_events jsonb)` → integer
@@ -145,7 +162,9 @@ repo — xem trên Supabase Dashboard).
 - `rank_eval_progress_week(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
 - `rank_eval_titles(p_student uuid, p_season bigint)` → void
 - `rank_eval_weekly_goal(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
+- `rank_fix_quiz_open(p_exam_result_id bigint, p_topic_id bigint)` → jsonb
 - `rank_fix_quiz_start(p_exam_result_id bigint, p_topic_id bigint)` → jsonb
+- `rank_fix_quiz_submit(p_attempt_id bigint, p_responses jsonb)` → jsonb
 - `rank_fix_quiz_submit(p_attempt_id bigint, p_correct integer)` → jsonb
 - `rank_gate_adaptive_code(p_code text)` → boolean
 - `rank_gate_answer(p_attempt_id bigint, p_response jsonb, p_question_id bigint)` → jsonb
@@ -211,6 +230,7 @@ repo — xem trên Supabase Dashboard).
 - `rank_weekly_goal_of(p_season bigint, p_student uuid, p_week date)` → TABLE(target integer, min_score numeric, personal boolean, n_items integer, avg_items numeric)
 - `record_cnc_learning_result(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_score integer, p_total integer, p_completed boolean)` → void
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
+- `refresh_public_stats()` → void
 - `refresh_tutoring_needs(p_student uuid)` → void
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
@@ -220,6 +240,7 @@ repo — xem trên Supabase Dashboard).
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_board(p_session bigint)` → jsonb
+- `review_board_stage(p_session bigint, p_stage integer)` → jsonb
 - `review_build_dang_exam(p_class bigint, p_lesson bigint, p_per_dang integer)` → jsonb
 - `review_create(p_class bigint, p_title text, p_threshold integer, p_stages jsonb)` → bigint
 - `review_dang_pool(p_lesson bigint)` → jsonb
@@ -231,6 +252,7 @@ repo — xem trên Supabase Dashboard).
 - `review_set_stage(p_session bigint, p_stage integer)` → void
 - `review_student_stage(r review_sessions, p_student uuid, p_idx integer)` → jsonb
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
+- `review_wrong_students(p_session bigint, p_stage integer)` → jsonb
 - `rl_allow(p_key text, p_max integer, p_window interval)` → boolean
 - `rl_client_ip()` → text
 - `rollup_lesson_read_depth(p_before date, p_dry boolean)` → jsonb
@@ -263,6 +285,8 @@ repo — xem trên Supabase Dashboard).
 - `submit_attendance_code(p_course_id bigint, p_code text)` → jsonb
 - `submit_attendance_machine_photo(p_session_id bigint, p_machine_code text, p_checkpoint text, p_storage_path text, p_note text)` → void
 - `submit_checklist_result(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text, p_item_results jsonb, p_score numeric, p_critical_ok boolean, p_zero_tolerance_ok boolean, p_passed boolean)` → jsonb
+- `submit_exam_attempt(p_exam_id bigint, p_client_token uuid, p_responses jsonb, p_duration_seconds integer, p_violations jsonb)` → jsonb
+- `submit_trial_request(p jsonb)` → jsonb
 - `sweep_engagement_alerts(p_class bigint, p_days integer, p_absent_min integer)` → jsonb
 - `sweep_missed_assessments(p_class bigint, p_days integer)` → integer
 - `sync_exam_to_bank(p_exam_id bigint)` → integer
@@ -332,7 +356,9 @@ repo — xem trên Supabase Dashboard).
 - `trg_claim_staff_invite()` → trigger
 - `trg_eqr_tutoring_needs()` → trigger
 - `trg_exam_classes_sync_bank()` → trigger
+- `trg_exam_question_results_server_grade()` → trigger
 - `trg_exam_result_alert()` → trigger
+- `trg_exam_results_server_grade()` → trigger
 - `trg_exams_sync_bank()` → trigger
 - `trg_ingest_exam_question_mistake()` → trigger
 - `trg_ingest_practice_question_mistake()` → trigger
@@ -356,6 +382,7 @@ repo — xem trên Supabase Dashboard).
 - `trg_ta_sessions_video_topic_check()` → trigger
 - `trg_tutoring_covered()` → trigger
 - `trg_tutoring_exit_attempt_clear()` → trigger
+- `trial_request_notify()` → trigger
 - `tutoring_check_topics(p_slot_id bigint, p_topics bigint[], p_check_deadline boolean, p_check_ready boolean)` → void
 - `tutoring_exit_attempt_guard()` → trigger
 - `tutoring_exit_window_defaults()` → trigger
