@@ -1,4 +1,4 @@
-// Dựng ruột tập Vật lí 12 – Bài 14 (trang 165×240 mm, ô ly 5 mm). Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
+// Dựng ruột tập Vật lí 12 – Bài 14 (6 trang 165×240 mm, ô ly 5 mm; trang 5–6 là mẫu Sửa bài sau đề, dùng chung cho mọi đề của chương). Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
 // Mặc định ghi scripts/ruot-tap/out/ruot-tap-vl12-bai14.pdf. Cần book/node_modules (katex, qrcode-generator, puppeteer-core):
 // worktree không có thì dùng book/ của bản chính ~/Projects/thachlab.
 // Mã ô "Tập: trang · ô" (nhãn Web … trên giấy = tên mục trên web) trùng data-tap trong content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.src.html.
@@ -22,8 +22,22 @@ const lines = (n) => Array.from({ length: n }, () => '<div class="ln"></div>').j
 // n dòng kẻ chấm, nhãn (a), b)…) nằm ngay đầu dòng đầu để không tốn thêm một dòng
 const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
 const tag = (t) => `<span class="tag">Web ${t}</span>`;
-const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · trang ${n}/4</span></div>`;
+const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · trang ${n}/6</span></div>`;
 const head = (t, s) => `<div class="top"><div><b>${t}</b><small>${s}</small></div><div class="who">Ngày …../….. &nbsp;Tên: ………………</div></div>`;
+
+// Trang "Sửa bài sau đề trên lớp": một đề một trang, 8 hàng câu sai, giải lại câu sai nhất, hẹn làm lại (retrieval cách quãng).
+const errRow = () => `<tr><td></td><td></td><td><span class="ck"></span>đọc đề <span class="ck"></span>nhớ sai<br><span class="ck"></span>tính <span class="ck"></span>chưa học</td><td></td></tr>`;
+const fixPage = (n) => `<section class="page">
+${head('SỬA BÀI SAU ĐỀ TRÊN LỚP', 'Sửa trong 24 giờ: ghi vì sao sai, không chỉ chép đáp án')}
+<div class="card soft" style="display:flex;gap:4mm;flex-wrap:wrap"><span>Đề: ……………………………</span><span>Điểm: ……/……</span><span>Sai: P.I …… · P.II …… · P.III ……</span></div>
+<h3><i>1</i>Câu sai và lí do <span class="hint">(mỗi câu một hàng)</span></h3>
+<table class="er"><tr><th style="width:12mm">Câu</th><th style="width:22mm">Chọn → Đúng</th><th style="width:40mm">Loại lỗi</th><th>Cần xem lại (Web II.x / Tập 2·x)</th></tr>${errRow().repeat(8)}</table>
+<h3><i>2</i>Giải lại câu sai nhất <span class="hint">(chữ trước, số sau)</span></h3>
+<div style="background:#fff;border:.3mm solid var(--grid);border-radius:1.5mm;padding:1mm 3mm">${wl('Câu …:', 6)}</div>
+<h3><i>3</i>Bẫy mới em phát hiện · câu hỏi cho thầy/trợ giảng</h3>
+<div style="background:#fff;border:.3mm solid var(--grid);border-radius:1.5mm;padding:1mm 3mm">${wl('Bẫy:', 2)}${wl('Hỏi:', 2)}</div>
+<div class="card soft" style="margin-top:2mm"><b>Làm lại các câu sai (không nhìn lời giải):</b> <span class="ck"></span>sau 2 ngày &nbsp;<span class="ck"></span>sau 1 tuần &nbsp;<span class="ck"></span>trước kiểm tra chương · lần cuối đúng ……/……</div>
+${foot(n)}</section>`;
 
 const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí 12 – Bài 14</title>
 <link rel="stylesheet" href="${pathToFileURL(BOOK + 'node_modules/katex/dist/katex.min.css').href}">
@@ -53,6 +67,7 @@ table{border-collapse:collapse;width:100%;background:#fff;font-size:3.3mm}
 th,td{border:.3mm solid var(--navy);padding:.7mm 1.8mm;vertical-align:top}
 th{background:var(--soft);font-weight:700;text-align:left}
 .ck{display:inline-block;width:4.8mm;height:4.8mm;border:.3mm solid var(--navy);border-radius:.7mm;vertical-align:-1.1mm;margin-right:1mm}
+.er td,.er th{padding:.6mm 1.2mm;height:11mm;font-size:2.9mm;vertical-align:middle;line-height:4.2mm}.er th{height:auto;text-align:center}.er .ck{margin:0 .6mm 0 0;vertical-align:middle}
 .rk td,.rk th{padding:0 1mm;height:5mm;line-height:3.6mm;font-size:3mm;text-align:center;vertical-align:middle}.rk .ck{margin:0;vertical-align:middle}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm;margin:2mm 0}
 .steps div{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:1.5mm 2mm;font-size:3.1mm}
@@ -172,6 +187,7 @@ ${wl('a)', 3)}${wl('b)', 3)}${wl('c)', 3)}${wl('d)', 1)}
 ${wl(`Bước 2: m(Cu) = 63,54 / ${m('N_A')} = …`, 2)}${wl('Bước 3: đổi sang u = …', 2)}</div>
 <div class="card soft" style="margin-top:2mm"><b>Em tự kiểm:</b> <span class="ck"></span>${m('N')} là số nguyên &nbsp;<span class="ck"></span>${m('R')} cỡ ${m('10^{-15}')} m &nbsp;<span class="ck"></span>có ghi đơn vị</div>
 ${foot(4)}</section>
+${fixPage(5)}${fixPage(6)}
 </body></html>`;
 
 const out = process.argv[2] ?? resolve(HERE, 'out/ruot-tap-vl12-bai14.pdf');
