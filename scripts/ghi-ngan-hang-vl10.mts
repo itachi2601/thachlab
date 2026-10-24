@@ -19,7 +19,7 @@ const sig = (q: any) => norm(String(q.question ?? "")).slice(0, 80) + "|" + norm
 
 // ngân hàng lớp 10 hiện có (đề + phương án) để so trùng
 const bank: any[] = [];
-for (let o = 0; ; o += 500) { const r = await rest("question_bank?grade=eq.${GRADE}&select=id,question&order=id", `${o}-${o + 499}`); if (!Array.isArray(r)) throw new Error(JSON.stringify(r)); bank.push(...r); if (r.length < 500) break; }
+for (let o = 0; ; o += 500) { const r = await rest(`question_bank?grade=eq.${GRADE}&select=id,question&order=id`, `${o}-${o + 499}`); if (!Array.isArray(r)) throw new Error(JSON.stringify(r)); bank.push(...r); if (r.length < 500) break; }
 const have = new Map(bank.map((b) => [sig(b.question), b.id]));
 const rows: any[] = [], trung: any[] = [], thieu: string[] = [];
 for (const q of cau) {
