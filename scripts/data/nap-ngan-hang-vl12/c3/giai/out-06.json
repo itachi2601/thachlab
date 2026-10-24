@@ -1,0 +1,149 @@
+{
+ "c3q-mc-262": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Đổi $i=2\\sin(100\\pi t+\\frac{\\pi}{6})=2\\cos(100\\pi t-\\frac{\\pi}{3})$.</p><p class=\"text-base leading-relaxed my-2\">Độ lệch pha $\\varphi=\\varphi_u-\\varphi_i=-\\frac{\\pi}{6}+\\frac{\\pi}{3}=\\frac{\\pi}{6}$.</p><p class=\"text-base leading-relaxed my-2\">$P=UI\\cos\\varphi=\\frac{180}{\\sqrt2}\\cdot\\frac{2}{\\sqrt2}\\cdot\\cos\\frac{\\pi}{6}=180\\cdot\\frac{\\sqrt3}{2}=90\\sqrt3$ W.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-263": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$U_0=400$ V nên $U=200\\sqrt2$ V; $\\varphi=60^\\circ$.</p><p class=\"text-base leading-relaxed my-2\">$P=\\frac{U^2\\cos^2\\varphi}{R}=\\frac{(200\\sqrt2)^2\\cdot 0{,}25}{200}=100$ W.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-264": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Nhiệt lượng $Q=\\frac{U^2}{R}t$ với $t=60$ s.</p><p class=\"text-base leading-relaxed my-2\">$Q=\\frac{220^2}{48{,}4}\\cdot 60=1000\\cdot60=6\\cdot10^4$ J $=60$ kJ.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-285": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Tần số suất điện động bằng tần số quay: $f=\\frac{\\omega}{2\\pi}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy tần số chỉ phụ thuộc tốc độ góc; $N$, $S$, $B$ chỉ ảnh hưởng biên độ $E_0=NBS\\omega$.</p>",
+  "ghi_chu": "",
+  "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-287": {
+  "answer": null,
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Suất điện động hiệu dụng $E=\\frac{E_0}{\\sqrt2}=\\frac{\\omega NBS}{\\sqrt2}$.</p>",
+  "ghi_chu": "Phương án A và C giống hệt nhau (cùng $\\frac{\\omega NBS}{\\sqrt2}$), hai phương án đúng nên không có đáp án duy nhất.",
+  "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-289": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$e=-\\Phi'=\\omega\\Phi_0\\sin(\\omega t+\\varphi_1)=E_0\\cos(\\omega t+\\varphi_1-\\frac{\\pi}{2})$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $\\varphi_2=\\varphi_1-\\frac{\\pi}{2}$, nên $\\varphi_1-\\varphi_2=\\frac{\\pi}{2}$.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-290": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ thông cực đại $\\Phi_0=NBS$, không phụ thuộc tốc độ quay.</p><p class=\"text-base leading-relaxed my-2\">$\\Phi_0=250\\cdot0{,}02\\cdot50\\cdot10^{-4}=0{,}025$ Wb.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "de"
+ },
+ "c3q-mc-291": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$\\Phi_0=NBS=200\\cdot0{,}005\\cdot100\\cdot10^{-4}=0{,}01$ Wb.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "de"
+ },
+ "c3q-mc-292": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Tốc độ góc $\\omega=2\\pi\\cdot\\frac{3000}{60}=100\\pi$ rad/s.</p><p class=\"text-base leading-relaxed my-2\">$E_0=NBS\\omega=500\\cdot0{,}01\\cdot0{,}01\\cdot100\\pi\\approx15{,}71$ V.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $E=\\frac{E_0}{\\sqrt2}\\approx11{,}11$ V.</p>",
+  "ghi_chu": "",
+  "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-293": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$E_0=NBS\\omega$ nên $\\omega=\\frac{E_0}{NBS}$.</p><p class=\"text-base leading-relaxed my-2\">$\\omega=\\frac{7{,}1}{200\\cdot0{,}015\\cdot300\\cdot10^{-4}}=\\frac{7{,}1}{0{,}09}\\approx79$ rad/s.</p>",
+  "ghi_chu": "",
+  "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-294": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ thông $\\Phi=\\Phi_0\\cos(\\omega t+\\alpha)$ thì $e=-\\Phi'=E_0\\cos(\\omega t+\\alpha-\\frac{\\pi}{2})$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $\\alpha-\\frac{\\pi}{2}=\\frac{\\pi}{6}$ nên $\\alpha=\\frac{2\\pi}{3}$.</p><p class=\"text-base leading-relaxed my-2\">Tại $t=0$ góc giữa pháp tuyến và $\\vec B$ là $\\alpha=120^\\circ$.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-295": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$e=E_0\\cos(\\omega t+\\alpha-\\frac{\\pi}{2})$ nên $\\alpha-\\frac{\\pi}{2}=\\frac{\\pi}{2}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $\\alpha=\\pi$, tức góc giữa pháp tuyến và $\\vec B$ là $180^\\circ$.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-296": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$e=-\\Phi'=\\omega\\Phi_0\\sin(\\omega t+\\frac{\\pi}{2})=E_0\\cos(\\omega t+\\frac{\\pi}{2}-\\frac{\\pi}{2})=E_0\\cos\\omega t$.</p><p class=\"text-base leading-relaxed my-2\">Vậy $\\varphi=0$ rad.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-298": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$e$ chậm pha $\\frac{\\pi}{2}$ so với $\\Phi$, nên $\\Phi$ sớm pha $\\frac{\\pi}{2}$ so với $e$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $\\Phi=\\Phi_0\\cos(\\omega t+\\frac{\\pi}{2})$ với $\\Phi_0=\\frac{E_0}{\\omega}$.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-299": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$E_0=\\omega\\Phi_0=100\\pi\\cdot\\frac{2\\cdot10^{-2}}{\\pi}=2$ V.</p><p class=\"text-base leading-relaxed my-2\">$e$ chậm pha $\\frac{\\pi}{2}$ so với $\\Phi$: $\\varphi_e=\\frac{\\pi}{4}-\\frac{\\pi}{2}=-\\frac{\\pi}{4}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $e=2\\cos(100\\pi t-\\frac{\\pi}{4})$ V.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-300": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$\\omega=2\\pi\\cdot\\frac{150}{60}=5\\pi$ rad/s; $E_0=\\omega\\Phi_0=5\\pi\\cdot\\frac{10}{\\pi}=50$ V.</p><p class=\"text-base leading-relaxed my-2\">Tại $t=0$ pháp tuyến trùng $\\vec B$ nên $\\Phi=\\Phi_0\\cos\\omega t$, suy ra $e=-\\Phi'=E_0\\sin\\omega t$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $e=50\\sin(5\\pi t)$ V.</p>",
+  "ghi_chu": "Phương án D bị dính thêm chữ thừa ('2.5.1. Máy phát điện xoay chiều') do lỗi chuyển Word, không ảnh hưởng đáp án.",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "kho"
+ },
+ "c3q-mc-302": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Phần cảm tạo từ trường, phần ứng tạo suất điện động; phần đứng yên là stato, phần quay là roto.</p><p class=\"text-base leading-relaxed my-2\">Phần cảm có thể là roto (máy có nam châm quay) hoặc stato nên phát biểu A (phần cảm luôn là stato, phần ứng luôn là roto) là không đúng.</p>",
+  "ghi_chu": "",
+  "topic": "Nguyên tắc tạo ra dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-317": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Sóng điện từ truyền theo $\\vec v$ với $\\vec E$, $\\vec B$ vuông góc nhau và cùng pha, $(\\vec E,\\vec B,\\vec v)$ tạo thành tam diện thuận.</p><p class=\"text-base leading-relaxed my-2\">Chọn Đông là $x$, Bắc là $y$, lên trên là $z$; $\\vec B$ hướng Nam ($-y$) và cực đại nên $\\vec E$ cũng cực đại.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $\\vec E\\times\\vec B$ cùng chiều $z$ nên $\\vec E$ hướng $-x$, tức hướng về phía Tây.</p>",
+  "ghi_chu": "",
+  "topic": "Điện từ trường và sóng điện từ",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-319": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Máy biến áp lí tưởng: $\\frac{U_1}{U_2}=\\frac{N_1}{N_2}$ (cuộn thứ cấp để hở).</p>",
+  "ghi_chu": "",
+  "topic": "Máy biến áp",
+  "difficulty": "de"
+ },
+ "c3q-mc-322": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Công suất hao phí $\\Delta P=\\frac{P^2R}{U^2}$, tăng $U$ lên $n$ lần thì $\\Delta P$ giảm $n^2$ lần nên A đúng.</p><p class=\"text-base leading-relaxed my-2\">B không phải biện pháp kĩ thuật thực tế chung; C sai vì giảm hiệu điện thế làm tăng dòng và hao phí; D không khả thi.</p>",
+  "ghi_chu": "",
+  "topic": "Máy biến áp",
+  "difficulty": "de"
+ },
+ "c3q-mc-325": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Cuộn sơ cấp 100 vòng có 10 vòng quấn ngược nên số vòng hiệu dụng là $100-2\\cdot10=80$ vòng.</p><p class=\"text-base leading-relaxed my-2\">$\\frac{U_2}{U_1}=\\frac{N_2}{N_1'}$ nên $U_2=5\\cdot\\frac{150}{80}=9{,}375\\approx9{,}37$ V.</p>",
+  "ghi_chu": "",
+  "topic": "Máy biến áp",
+  "difficulty": "kho"
+ }
+}

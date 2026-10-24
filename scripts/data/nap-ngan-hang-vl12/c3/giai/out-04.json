@@ -1,0 +1,177 @@
+{
+ "c3q-mc-194": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Suất điện động cảm ứng trong cuộn dây có $N$ vòng: $|e|=N\\dfrac{|\\Delta\\Phi|}{\\Delta t}$.</p><p class=\"text-base leading-relaxed my-2\">Ban đầu trục cuộn dây song song đường sức từ nên pháp tuyến song song $\\vec B$: $\\Phi_1=BS=0,2\\cdot 0,03=6\\cdot10^{-3}$ Wb.</p><p class=\"text-base leading-relaxed my-2\">Sau đó trục vuông góc đường sức từ nên $\\Phi_2=0$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow |\\Delta\\Phi|=6\\cdot10^{-3}$ Wb</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow |e|=100\\cdot\\dfrac{6\\cdot10^{-3}}{0,5}=1,2$ V. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-195": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ trường vuông góc mặt khung nên $\\Phi=BS$, $S=a^2=0,01$ m$^2$; $|e|=\\dfrac{S\\,\\Delta B}{\\Delta t}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow |e|=\\dfrac{0,01\\cdot0,5}{0,05}=0,1$ V. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "de"
+ },
+ "c3q-mc-196": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Góc giữa $\\vec B$ và mặt phẳng khung là $30^\\circ$ nên góc giữa $\\vec B$ và pháp tuyến là $60^\\circ$: $\\Phi=BS\\cos60^\\circ$.</p><p class=\"text-base leading-relaxed my-2\">$\\Phi_1=2\\cdot10^{-4}\\cdot20\\cdot10^{-4}\\cdot0,5=2\\cdot10^{-7}$ Wb, $\\Phi_2=0$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow |e|=N\\dfrac{|\\Delta\\Phi|}{\\Delta t}=10\\cdot\\dfrac{2\\cdot10^{-7}}{0,01}=2\\cdot10^{-4}$ V $=200\\ \\mu$V. Chọn A.</p><p class=\"text-base leading-relaxed my-2\">Phương án B, C nhầm giữa $\\cos30^\\circ$ và $\\sin30^\\circ$ (góc với mặt phẳng, không phải với pháp tuyến).</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-197": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Khung (1 vòng) ban đầu song song đường sức từ nên $\\Phi_1=0$; sau khi quay vuông góc đường sức từ nên $\\Phi_2=BS=0,01\\cdot0,02=2\\cdot10^{-4}$ Wb.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow |e|=\\dfrac{|\\Delta\\Phi|}{\\Delta t}=\\dfrac{2\\cdot10^{-4}}{0,04}=5\\cdot10^{-3}$ V $=5$ mV. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "de"
+ },
+ "c3q-mc-198": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Dòng điện cảm ứng: $|e|=IR=0,5\\cdot2=1$ V.</p><p class=\"text-base leading-relaxed my-2\">Từ trường vuông góc khung: $|e|=S\\left|\\dfrac{\\Delta B}{\\Delta t}\\right|$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\left|\\dfrac{\\Delta B}{\\Delta t}\\right|=\\dfrac{1}{100\\cdot10^{-4}}=100$ T/s. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-199": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ trường song song trục ống dây nên $|e|=NS\\left|\\dfrac{\\Delta B}{\\Delta t}\\right|=1000\\cdot10^{-2}\\cdot10^{-2}=0,1$ V.</p><p class=\"text-base leading-relaxed my-2\">Ống dây đoản mạch: $P=\\dfrac{e^2}{R}=\\dfrac{0,1^2}{16}=6,25\\cdot10^{-4}$ W $=625\\ \\mu$W. Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-200": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Ban đầu $\\vec B\\perp$ pháp tuyến nên $\\Phi_1=0$. Suất điện động trung bình: $|e|=N\\dfrac{|\\Delta\\Phi|}{\\Delta t}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow |\\Delta\\Phi|=\\dfrac{6,4\\cdot1}{1000}=6,4\\cdot10^{-3}$ Wb.</p><p class=\"text-base leading-relaxed my-2\">Mà $BS=0,8\\cdot80\\cdot10^{-4}=6,4\\cdot10^{-3}$ Wb nên từ thông cực đại: $|\\Phi_2|=BS$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ pháp tuyến song song $\\vec B$, tức $\\vec B$ vuông góc mặt phẳng khung, góc giữa $\\vec B$ và mặt phẳng khung là $90^\\circ$. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "kho"
+ },
+ "c3q-mc-210": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Với dòng/điện áp xoay chiều hình sin, giá trị hiệu dụng bằng giá trị cực đại chia $\\sqrt2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow U=\\dfrac{U_0}{\\sqrt2}$. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-216": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Trong $i=I_0\\cos(\\omega t+\\varphi)$: $\\omega$ là tần số góc, $I_0$ là cường độ cực đại, $(\\omega t+\\varphi)$ là pha, $\\varphi$ là pha ban đầu. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-217": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Viết $\\dfrac{2\\pi}{T}=\\omega$ với $\\omega=2\\pi/T$ nên $T$ là chu kì của dòng điện. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-218": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Pha của cường độ dòng điện tại thời điểm $t$ là đối số của hàm cosin: $50\\pi t+\\dfrac{\\pi}{4}$. Chọn D.</p><p class=\"text-base leading-relaxed my-2\">$\\dfrac{\\pi}{4}$ chỉ là pha ban đầu.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-219": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Đề ghi đơn vị \"V\" là in nhầm, đại lượng là cường độ dòng điện (A).</p><p class=\"text-base leading-relaxed my-2\">$I=\\dfrac{I_0}{\\sqrt2}=\\dfrac{2\\sqrt2}{\\sqrt2}=2$ A. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-220": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$U=\\dfrac{U_0}{\\sqrt2}=\\dfrac{141}{\\sqrt2}\\approx100$ V. Chọn C.</p><p class=\"text-base leading-relaxed my-2\">Đáp án 141 V là điện áp cực đại, không phải hiệu dụng.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-221": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$i=2\\cos(100\\pi t+\\pi/2)$ (A) có $I_0=2$ A, $\\omega=100\\pi$ rad/s.</p><p class=\"text-base leading-relaxed my-2\">A sai: $I=I_0/\\sqrt2=\\sqrt2$ A. B sai: không biết pha của điện áp nên không kết luận được độ lệch pha. D sai: $f=\\omega/2\\pi=50$ Hz ($100\\pi$ là tần số góc).</p><p class=\"text-base leading-relaxed my-2\">C đúng: $T=\\dfrac{2\\pi}{\\omega}=0,02$ s. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-223": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Trong $i=4\\cos(2\\pi ft+\\pi/2)$ ta có $\\omega=2\\pi f$ nên $f$ là tần số của dòng điện. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-224": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ $u=120\\cos(100\\pi t+\\pi/12)$ (V), điện áp cực đại là biên độ $U_0=120$ V. Chọn B.</p><p class=\"text-base leading-relaxed my-2\">Phương án $60\\sqrt2$ V ứng với giá trị hiệu dụng khi $U_0=120\\sqrt2$, không áp dụng ở đây; $120\\sqrt2$ V sai vì nhầm với $U_0=U\\sqrt2$.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-225": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$\\omega=100\\pi$ nên $f=50$ Hz, $T=0,02$ s.</p><p class=\"text-base leading-relaxed my-2\">Trong mỗi chu kì, điện áp bằng không 2 lần, mỗi giây có $50$ chu kì $\\Rightarrow 2\\cdot50=100$ lần. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-226": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Thay $t=\\dfrac{1}{200}$ s: $100\\pi t=\\dfrac{\\pi}{2}$.</p><p class=\"text-base leading-relaxed my-2\">$i=10\\sqrt2\\sin\\left(\\dfrac{\\pi}{2}-\\dfrac{\\pi}{3}\\right)=10\\sqrt2\\sin\\dfrac{\\pi}{6}=10\\sqrt2\\cdot\\dfrac12=5\\sqrt2$ A. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-227": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$I=\\dfrac{I_0}{\\sqrt2}$. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-230": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$U=220$ V nên $U_0=220\\sqrt2$ V; $\\omega=2\\pi f=100\\pi$ rad/s; pha đầu bằng 0.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow u=220\\sqrt2\\cos(100\\pi t)$ V. Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-231": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$i=2\\cos(100\\pi t)$ có pha ban đầu $\\varphi_i=0$. Điện áp sớm pha $\\pi/3$ so với dòng điện nên $\\varphi_u=\\varphi_i+\\dfrac{\\pi}{3}=\\dfrac{\\pi}{3}$.</p><p class=\"text-base leading-relaxed my-2\">$U_0=U\\sqrt2=12\\sqrt2$ V.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow u=12\\sqrt2\\cos\\left(100\\pi t+\\dfrac{\\pi}{3}\\right)$ V. Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-232": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$T=\\dfrac1f=0,02$ s. Trong một chu kì dòng điện bằng 0 hai lần, hai lần liên tiếp cách nhau $\\dfrac T2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac T2=\\dfrac{1}{100}$ s. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-233": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$U_0=400\\sqrt2$ V; $u=200\\sqrt2=\\dfrac{U_0}{2}$ và đang giảm nên pha tại thời điểm đó là $\\dfrac{\\pi}{3}$ (cos bằng $\\dfrac12$, hàm đang giảm).</p><p class=\"text-base leading-relaxed my-2\">Sau $\\Delta t=\\dfrac{1}{300}$ s pha tăng thêm $\\omega\\Delta t=\\dfrac{100\\pi}{300}=\\dfrac{\\pi}{3}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ pha mới $=\\dfrac{2\\pi}{3}$ $\\Rightarrow u=400\\sqrt2\\cos\\dfrac{2\\pi}{3}=-200\\sqrt2$ V. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "kho"
+ },
+ "c3q-mc-234": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$\\omega=100\\pi$ nên $T=0,02$ s. Hai lần liên tiếp $i=0$ cách nhau $\\dfrac T2=0,01$ s. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-235": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Thay $t=\\dfrac1{100}$ s: $100\\pi t=\\pi$.</p><p class=\"text-base leading-relaxed my-2\">$i=\\sqrt2\\sin\\left(\\pi+\\dfrac\\pi6\\right)=-\\sqrt2\\sin\\dfrac\\pi6=-\\dfrac{\\sqrt2}{2}$ A. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ }
+}

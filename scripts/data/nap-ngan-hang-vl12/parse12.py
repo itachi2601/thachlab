@@ -38,7 +38,7 @@ def split_options(t):
     pos, cur = [], 0
     for L in 'ABCD':
         f = None
-        for m in re.finditer(r'(?:^|(?<=[\s⟦M]))(?:\*\*)?' + L + r'\.(?:\*\*)?(?=\s|$)', t[cur:], flags=re.M):
+        for m in re.finditer(r'(?:^|(?<=[\s⟦M]))(?:\*\*)?' + L + r'\.(?:\*\*)?(?=\s|$|M⟧)', t[cur:], flags=re.M):
             f = m; break
         if not f: return t, [], ['khong-du-A-D']
         pos.append((cur + f.start(), cur + f.end())); cur = cur + f.end()
@@ -55,13 +55,15 @@ def unmark(s):
     return s.replace(M_OPEN, '').replace(M_CLOSE, '')
 
 def parse(name, a, b):
-    lines = open(os.path.join(HERE, 'md', name + '.md'), encoding='utf8').read().split('\n')[a - 1:b]
+    import unicodedata
+    lines = unicodedata.normalize('NFC', open(os.path.join(HERE, 'md', name + '.md'), encoding='utf8').read()).split('\n')[a - 1:b]
     blocks, cur = [], None
     for ln in lines:
         if HEAD.match(ln) and not Q.search(ln):
             cur = None; continue
         ms = list(Q.finditer(ln))
         if ms:
+            if cur is not None and ms[0].start() > 0: cur['raw'].append(ln[:ms[0].start()])
             cur = {'num': int(ms[0].group(1)), 'raw': [ln[ms[0].end():]]}
             blocks.append(cur)
             continue
@@ -70,6 +72,12 @@ def parse(name, a, b):
     for blk in blocks:
         raw = mark('\n'.join(blk['raw']))
         flags = []
+        hd = re.search(r'(?m)^[>\s]*\**\s*(?:Hướng dẫn|Lời giải|Giải)\b', raw)
+        chon = None
+        if hd:
+            lg = raw[hd.start():]; raw = raw[:hd.start()]
+            mc = re.search(r'Chọn\s*\**\s*([ABCD])\b', lg)
+            chon = mc.group(1) if mc else None
         stem, opts, fl = split_options(raw); flags += fl
         item = {'file': name, 'part': 'mc', 'num': blk['num'], 'flags': flags}
         item['stem'] = clean_math(tidy(unmark(stem)))
@@ -78,6 +86,8 @@ def parse(name, a, b):
         if not ans: flags.append('khong-gach-chan')
         elif len(ans) > 1: flags.append('nhieu-gach-chan')
         item['answer'] = ans[0] if len(ans) == 1 else None
+        item['chon'] = chon
+        if not ans and chon: item['answer'] = chon; flags.remove('khong-gach-chan'); flags.append('dap-an-chon')
         item['solution'] = ''
         if re.search(r'!\[', raw): flags.append('co-hinh')
         if 'Hướng dẫn' in raw or 'Lời giải' in raw: flags.append('co-loi-giai-trong-de')
