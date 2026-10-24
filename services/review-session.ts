@@ -35,6 +35,8 @@ export interface WrongQuestion {
   wrong: number;
   pct: number;
   dang?: string | null;
+  /** Số em ĐANG sai (lượt làm mới nhất của em vẫn sai). Bản máy chủ cũ không có trường này. */
+  students_wrong?: number;
 }
 
 export interface DangStat {
@@ -55,6 +57,8 @@ export interface ReviewBoard {
     threshold: number;
     status: "ready" | "running" | "finished";
     current_stage: number;
+    /** Chặng bảng này đang tính (bản máy chủ cũ không có: coi là chặng hiện tại). */
+    viewed_stage?: number;
     stage_started_at: string | null;
     secs_left: number | null;
     stages: ReviewStageDef[];
@@ -112,7 +116,25 @@ export const setReviewStage = (sessionId: number, stage: number) =>
 export const extendReviewStage = (sessionId: number, seconds: number) =>
   rpc<void>("review_extend", { p_session: sessionId, p_seconds: seconds });
 
-export const getReviewBoard = (sessionId: number) => rpc<ReviewBoard>("review_board", { p_session: sessionId });
+/** `stage` bỏ trống = chặng hiện tại; số khác = xem lại chặng đó. */
+export const getReviewBoard = (sessionId: number, stage: number | null = null) =>
+  stage === null
+    ? rpc<ReviewBoard>("review_board", { p_session: sessionId })
+    : rpc<ReviewBoard>("review_board_stage", { p_session: sessionId, p_stage: stage });
+
+/** Một em đang sai một câu (lượt làm mới nhất của em ở câu đó vẫn sai). */
+export interface WrongStudentRow {
+  student_id: string;
+  name: string;
+  idx: number;
+  dang: string | null;
+  earned: number | null;
+  max: number | null;
+  tries: number;
+}
+
+export const getWrongStudents = (sessionId: number, stage: number | null = null) =>
+  rpc<WrongStudentRow[]>("review_wrong_students", { p_session: sessionId, p_stage: stage });
 
 /** Buổi ôn đang diễn ra của lớp em (null nếu không có). */
 export const getMyReviewState = (sessionId: number | null = null) =>
@@ -143,6 +165,7 @@ export function reviewErrorText(e: unknown): string {
   if (/forbidden/.test(m)) return "Tài khoản này không có quyền với buổi ôn.";
   if (/not_found/.test(m)) return "Không tìm thấy buổi ôn (có thể đã bị xoá).";
   if (/exam_not_found/.test(m)) return "Có đề trong danh sách không còn tồn tại.";
+  if (/stage_invalid/.test(m)) return "Chặng này không có trong buổi ôn.";
   if (/stages_invalid/.test(m)) return "Buổi ôn cần từ 1 đến 12 chặng.";
   if (/no_dang/.test(m)) return "Bài này chưa có câu nào được gán dạng nên chưa dựng được đề ôn dạng.";
   if (/not_authenticated/.test(m)) return "Cần đăng nhập lại.";

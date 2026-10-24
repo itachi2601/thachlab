@@ -97,17 +97,38 @@ interface ChapterMasteryRow {
   level: MasteryLevel;
 }
 
+// Cache 3 phút theo (tài khoản, chương), cùng kiểu cache rank_my_status ở services/rank.ts: 24/10/2026
+// get_chapter_mastery bị gọi 66k lượt (~97 ms) vì mỗi lần mở /lop-hoc đều chạy lại. Nhãn chỉ là icon
+// trang trí nên trễ vài phút không sao; { force: true } để bỏ qua cache.
+const CHAPTER_MASTERY_CACHE_MS = 3 * 60 * 1000;
+const chapterMasteryCache = new Map<string, { at: number; value: Promise<Map<number, MasteryLevel>> }>();
+
 /**
  * Nhãn mastery từng bài trong một chương, cho học sinh đang đăng nhập — 1 dòng/bài.
  * Ném lỗi khi RPC chưa tồn tại — nơi gọi (app/lop-hoc/page.tsx) tự bắt và bỏ qua lặng lẽ, vì đây
  * chỉ là icon trang trí cạnh tên bài, không phải nội dung chính.
  */
-export async function fetchChapterMastery(chapterId: number): Promise<Map<number, MasteryLevel>> {
-  const { data, error } = await getSupabase().rpc("get_chapter_mastery", { p_chapter: chapterId });
-  if (error) throw error;
-  const map = new Map<number, MasteryLevel>();
-  for (const row of (data ?? []) as ChapterMasteryRow[]) map.set(row.lesson_id, row.level);
-  return map;
+export async function fetchChapterMastery(
+  chapterId: number,
+  opts?: { force?: boolean },
+): Promise<Map<number, MasteryLevel>> {
+  const { data: sess } = await getSupabase().auth.getSession();
+  const key = `${sess.session?.user.id ?? ""}:${chapterId}`;
+  const hit = chapterMasteryCache.get(key);
+  if (!opts?.force && hit && Date.now() - hit.at < CHAPTER_MASTERY_CACHE_MS) return hit.value;
+  const value = (async () => {
+    const { data, error } = await getSupabase().rpc("get_chapter_mastery", { p_chapter: chapterId });
+    if (error) throw error;
+    const map = new Map<number, MasteryLevel>();
+    for (const row of (data ?? []) as ChapterMasteryRow[]) map.set(row.lesson_id, row.level);
+    return map;
+  })();
+  const entry = { at: Date.now(), value };
+  chapterMasteryCache.set(key, entry);
+  value.catch(() => {
+    if (chapterMasteryCache.get(key) === entry) chapterMasteryCache.delete(key);
+  });
+  return value;
 }
 
 export interface WeakTopic {

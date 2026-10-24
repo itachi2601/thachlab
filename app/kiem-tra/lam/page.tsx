@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState, type ReactNode } from "react";
+import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import { useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -47,8 +47,17 @@ function ExamLoader() {
   const [theoryLessonId, setTheoryLessonId] = useState<number | null>(null);
   const [error, setError] = useState("");
 
+  // Chỉ tải đề MỘT lần cho mỗi (học sinh, đề). Trước đây effect phụ thuộc cả object `session`/`realProfile`:
+  // mỗi lần Supabase làm mới token (~1 giờ/lần, rơi đúng lúc đang làm bài) là tải lại đề; mạng chập một nhịp
+  // → `setError` → ExamRunner bị gỡ giữa chừng, em mất bài đang làm (báo "tự nhảy câu" 24/10/2026).
+  const userId = session?.user.id ?? null;
+  const role = realProfile?.role ?? null;
+  const loadedKeyRef = useRef<string | null>(null);
   useEffect(() => {
-    if (!session || !id) return;
+    if (!userId || !id) return;
+    const key = `${userId}:${id}`;
+    if (loadedKeyRef.current === key) return;
+    loadedKeyRef.current = key;
     void (async () => {
       const supabase = getSupabase();
       // Đề lấy qua RPC get_exam_for_taking: học sinh nhận bản đã lược đáp án (P0 #1) — không còn
@@ -57,12 +66,9 @@ function ExamLoader() {
       let data = await loadExam();
       // Đề mẫu: em vừa đăng ký có thể chưa có dòng lớp, RLS chặn đọc đề.
       // Vào đúng lớp của đề rồi đọc lại một lần.
-      const isStaffEarly =
-        realProfile?.role === "admin" ||
-        realProfile?.role === "instructor" ||
-        realProfile?.role === "tro_giang";
-      if (!data && !isStaffEarly) {
-        const joined = await joinSampleClassIfUnset(id, session.user.id).catch(() => false);
+      const isStaff = role === "admin" || role === "instructor" || role === "tro_giang";
+      if (!data && !isStaff) {
+        const joined = await joinSampleClassIfUnset(id, userId).catch(() => false);
         if (joined) data = await loadExam();
       }
       if (!data) {
@@ -76,21 +82,17 @@ function ExamLoader() {
       // Chặn học sinh làm đề không thuộc lớp của mình (đoán/chia sẻ id đề) —
       // staff (admin/instructor/tro_giang) không bị chặn, khớp RLS phía DB
       // (migration 20260927150000_exam_class_access.sql).
-      const isStaff =
-        realProfile?.role === "admin" ||
-        realProfile?.role === "instructor" ||
-        realProfile?.role === "tro_giang";
       if (!isStaff) {
         const [{ data: examClasses }, myClassIds] = await Promise.all([
           supabase.from("exam_classes").select("class_id").eq("exam_id", id),
-          fetchMyClassIds(session.user.id),
+          fetchMyClassIds(userId),
         ]);
         const examClassIds = (examClasses ?? []).map((r) => r.class_id as number);
         let allowed = visibleTo(examClassIds, myClassIds);
         if (!allowed) {
-          const joined = await joinSampleClassIfUnset(id, session.user.id).catch(() => false);
+          const joined = await joinSampleClassIfUnset(id, userId).catch(() => false);
           if (joined) {
-            const again = await fetchMyClassIds(session.user.id);
+            const again = await fetchMyClassIds(userId);
             allowed = visibleTo(examClassIds, again);
           }
         }
@@ -101,7 +103,7 @@ function ExamLoader() {
       }
       setExam(data);
     })();
-  }, [session, id, realProfile]);
+  }, [userId, id, role]);
 
   useEffect(() => {
     if (!session || !itemId) return;

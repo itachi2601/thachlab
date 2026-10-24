@@ -165,7 +165,11 @@ export default function QuestionCard({
                 key={oi}
                 picked={picked}
                 review={review}
-                onClick={() => onChange?.(picked ? null : oi)}
+                // Chạm lại phương án đang chọn thì GIỮ NGUYÊN (như tô phiếu thật): trước đây bấm lần 2 là bỏ chọn,
+                // điện thoại lag chạm 2 lần → câu thành "chưa làm" mà em không hay (báo lỗi 24/10/2026). Đổi ý thì chạm phương án khác.
+                onClick={() => {
+                  if (!picked) onChange?.(oi);
+                }}
                 className={`flex items-start gap-3 rounded-xl border px-3 py-2.5 text-left text-base transition-colors ${cls}`}
               >
                 <span
@@ -235,10 +239,11 @@ export default function QuestionCard({
                         type="button"
                         disabled={review}
                         onClick={() => {
+                          if (chosen) return; // chạm lại Đúng/Sai đang chọn: giữ nguyên, không bỏ chọn (xem trắc nghiệm ở trên)
                           const next = [
                             ...(Array.isArray(r) ? r : [null, null, null, null]),
                           ];
-                          next[si] = chosen ? null : val;
+                          next[si] = val;
                           onChange?.(next);
                         }}
                         className={`rounded-lg px-3 py-1 text-sm font-semibold transition-transform transition-colors duration-150 ${
