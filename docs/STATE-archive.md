@@ -712,3 +712,6 @@ xem mục "Đợt tối ưu tải số 4" ở trên.)
 - Lỗi nội dung L12 (bài 8, 10, 13, 19, 126): ĐÃ SỬA hết (18/10/2026; bài 8 `summary_html` ghi DB, sao lưu `scripts/logs/summary-bai8-backup-*.json`). Đề cũ 209, 239–257 vẫn trong DB — kiểm `exam_results` rồi dọn tay.
 ## Credit $100 Anthropic API — hết hạn 22/10/2026
 - Chỉ áp dụng API/Batch, không áp dụng Claude Code. `scripts/batch-ra-soat-bai.mts` (chi tiết `docs/memory/project_thachlab_anthropic_credit.md`). Chế độ `sua-ly-thuyet` đã chạy cho 20 bài L12; chế độ `bai-tap-mau` dùng khi thầy bảo.
+
+## Tuyển sinh GĐ 0 (T1/T1b) — ĐÃ CHẠY 24/10/2026 22:23
+- **24/10 tuyển sinh GĐ 0 (T1/T1b) migration đã chạy, kiểm lại đạt (RLS bật cả 3 bảng, cron public-stats-refresh có, get_public_stats trả số, anon: SĐT sai → invalid_phone, đọc trial_requests bị chặn):** `20261024160000_tuyen_sinh_trial_and_stats.sql` (trial_requests, RPC số liệu ẩn danh, referrals), sau 22h, rollback `perf/rollback/20261024160000_*.down.sql`. Trang `/gioi-thieu` có khối `TrialSignup` (chờ thầy duyệt chữ, chưa deploy; form chỉ chạy sau khi migration chạy). Kế hoạch: `user_thach_chien_luoc_chuyen_doi_tuyen_sinh` (Mac-only).
