@@ -154,3 +154,6 @@ export const flagCodes = (flags: LintFlag[]): string[] => [...new Set(flags.map(
 /** Số câu còn cờ mức "loi" chưa được bỏ qua — dùng để khoá nút Lưu/Đăng ở mọi trang soạn đề. */
 export const countBlockingQuestions = (questions: any[]): number =>
   questions.filter((q) => blockingFlags(activeLintFlags(q)).length > 0).length;
+
+/** Cờ do tay/script gắn vào question_bank.lint_flags (không do lintQuestion sinh ra) — scripts/cap-nhat-lint-flags.mts giữ nguyên các mã này khi ghi lại cờ. */
+export const MANUAL_FLAG_CODES: readonly string[] = ["canXacNhanDapAn"];

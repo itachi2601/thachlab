@@ -8,7 +8,7 @@ import { createClient } from "@supabase/supabase-js";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { activeLintFlags, blockingFlags, flagCodes } from "../lib/question-lint";
+import { activeLintFlags, blockingFlags, flagCodes, MANUAL_FLAG_CODES } from "../lib/question-lint";
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const envTxt = fs.readFileSync(path.resolve(dir, "..", ".env.local"), "utf8").split("\n");
@@ -50,8 +50,10 @@ for (;;) {
   if (!data?.length) break;
   for (const r of data) {
     total++;
-    const after = flagCodes(blockingFlags(activeLintFlags(r.question, r.qtype)));
     const before = [...((r.lint_flags as string[]) ?? [])].sort();
+    // Cờ gắn tay (vd canXacNhanDapAn — scripts/gan-co-can-xac-nhan-ngan-hang.mts) giữ nguyên, không bị lint ghi đè.
+    const manual = before.filter((c) => MANUAL_FLAG_CODES.includes(c));
+    const after = [...new Set([...flagCodes(blockingFlags(activeLintFlags(r.question, r.qtype))), ...manual])].sort();
     for (const c of after) byCode[c] = (byCode[c] ?? 0) + 1;
     if (!same(before, after)) changes.push({ id: r.id, before, after });
   }
