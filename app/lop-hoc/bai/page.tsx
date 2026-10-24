@@ -18,6 +18,7 @@ import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import LessonPresenter from "@/components/lessons/LessonPresenterLazy";
 import LessonNoteFab, { type LessonNoteContext } from "@/components/lessons/LessonNoteFab";
+import StudentNoteFab, { OPEN_STUDENT_NOTE_EVENT } from "@/components/lessons/StudentNoteFab";
 import PracticeSession from "@/components/lessons/PracticeSessionLazy";
 import NenKhtn9 from "@/components/lop-hoc/NenKhtn9";
 import { HSG_SUBJECT_CODE } from "@/services/academic-subjects";
@@ -97,7 +98,6 @@ const FONT_SCALES = [0.94, 1, 1.08];
 const FONT_STORE = "thachlab-read-font";
 const DIM_STORE = "thachlab-read-dim";
 const LESSON_DONE_STORE = "thachlab-lesson-done-";
-const NOTE_STORE = "thachlab-note-";
 /** Mục <h3> lý thuyết đọc dở lần trước, theo lesson_items.id — để "Tiếp tục" trỏ đúng chỗ (L5). */
 const THEORY_POS_STORE = "thachlab-theory-pos-";
 /** Sự kiện nội bộ: yêu cầu TheoryBlock mở một mục <h3> đang thu gọn trước khi cuộn/tô tới nó
@@ -798,9 +798,6 @@ function LessonLoader() {
   const [activeHeading, setActiveHeading] = useState<string | null>(null);
   /** Tìm trong mục lục: khớp theo itemId trong nội dung bài (không phải tiêu đề đề mục). */
   const [tocQuery, setTocQuery] = useState("");
-  /** Ghi chú của em — chỉ lưu trên máy, khoá thachlab-note-<lessonId>. */
-  const [note, setNote] = useState("");
-  const [noteOpen, setNoteOpen] = useState(false);
   /**
    * Nội dung của tab đang mở chỉ render SAU lần vẽ đầu (1 frame + requestIdleCallback), không
    * nằm trong lần render đầu tiên. Bối cảnh: bản accordion cũ để tất cả 6 mục ĐÓNG nên lúc tải
@@ -986,9 +983,6 @@ function LessonLoader() {
       if (savedDim !== dim) setDim(savedDim);
       const savedDone = window.localStorage.getItem(`${LESSON_DONE_STORE}${id}`) === "1";
       if (savedDone !== lessonMarked) setLessonMarked(savedDone);
-      const savedNote = window.localStorage.getItem(`${NOTE_STORE}${id}`) ?? "";
-      if (savedNote !== note) setNote(savedNote);
-      if (savedNote) setNoteOpen(true);
     } catch {}
     // Chỉ khôi phục 1 lần khi mở bài (theo id) — thêm dim/fontLevel/lessonMarked vào deps sẽ
     // làm effect chạy lại sau mỗi lần đổi cỡ chữ và ghi đè lựa chọn vừa bấm.
@@ -1337,22 +1331,6 @@ function LessonLoader() {
   }, [tocEntries, tocQuery]);
 
 
-  // Ghi chú: chỉ lưu trên máy, ghi sau khi học sinh ngừng gõ 400ms để không ghi localStorage
-  // liên tục theo từng ký tự.
-  const skipFirstNoteRef = useRef(true);
-  useEffect(() => {
-    if (skipFirstNoteRef.current) {
-      skipFirstNoteRef.current = false;
-      return;
-    }
-    const timer = window.setTimeout(() => {
-      try {
-        if (note) window.localStorage.setItem(`${NOTE_STORE}${id}`, note);
-        else window.localStorage.removeItem(`${NOTE_STORE}${id}`);
-      } catch {}
-    }, 400);
-    return () => window.clearTimeout(timer);
-  }, [note, id]);
   // Đến từ "Tiếp tục học" (resume=1): mở tab chứa mục đầu tiên chưa hoàn thành rồi cuộn tới đó;
   // không xác định được (chưa đăng nhập, đã xong hết…) thì cứ mở bài bình thường ở đầu trang.
   useEffect(() => {
@@ -2021,23 +1999,16 @@ function LessonLoader() {
           </Link>
         )}
 
-        {/* Ghi chú của em — chỉ lưu trên máy, không gửi lên máy chủ. Thu thành một nút nhỏ; tự mở
-            khi đã có ghi chú để em không quên mình từng viết. */}
-        <details
-          className="lesson-panel lesson-note-panel"
-          open={noteOpen}
-          onToggle={(e) => setNoteOpen(e.currentTarget.open)}
-        >
-          <summary>Ghi chú của em</summary>
-          <textarea
-            className="lesson-note"
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            placeholder="Chỗ này em chưa hiểu…"
-            aria-label="Ghi chú của em cho bài này"
-          />
-          <p className="lesson-panel-note">Chỉ lưu trên máy em.</p>
-        </details>
+        {/* Ghi chú của em: mở hộp ghi chú theo mục (StudentNoteFab) — một chỗ duy nhất, cùng nút nổi. */}
+        {!canPresent && (
+          <button
+            type="button"
+            className="lesson-panel lesson-note-open"
+            onClick={() => window.dispatchEvent(new Event(OPEN_STUDENT_NOTE_EVENT))}
+          >
+            Ghi chú của em
+          </button>
+        )}
       </>
     );
   }
@@ -2323,6 +2294,7 @@ function LessonLoader() {
       )}
 
       {canPresent && Number.isFinite(id) && <LessonNoteFab lessonId={id} getContext={getNoteContext} />}
+      {!canPresent && Number.isFinite(id) && <StudentNoteFab lessonId={id} getContext={getNoteContext} />}
 
       {/* Chế độ trình chiếu bài giảng — lớp phủ toàn màn hình, tải chậm, chỉ mount khi bấm nút
           (hoặc mở link có #chieu). Dựng từ theoryItems đã tải sẵn nên không thêm request nào. */}
