@@ -265,10 +265,10 @@ export default function ExamRunner({
     save();
   }, [save, flushProgress]);
 
-  const confirmSubmit = () => {
-    if (answeredCount === exam.questions.length) submit();
-    else setConfirmOpen(true);
-  };
+  // LUÔN hỏi lại trước khi nộp, kể cả đã làm đủ câu: nút "Nộp bài" nằm đúng chỗ nút "Sau →" ở câu cuối,
+  // em làm xong muốn xem lại thì bấm nhầm là mất bài (báo lỗi #140 ngày 23/10, thầy chốt 24/10). B2/D3.
+  const confirmSubmit = () => setConfirmOpen(true);
+  const unanswered = exam.questions.length - answeredCount;
 
   useEffect(() => {
     if (phase !== "running") return;
@@ -526,10 +526,14 @@ export default function ExamRunner({
       <div ref={topRef} className="mx-auto max-w-3xl scroll-mt-24">
         <ConfirmDialog
           open={confirmOpen}
-          title="Nộp bài luôn?"
-          description={`Còn ${exam.questions.length - answeredCount} câu chưa làm.`}
+          title={unanswered === 0 ? "Nộp bài?" : "Nộp bài luôn?"}
+          description={
+            unanswered === 0
+              ? `Em đã làm đủ ${exam.questions.length}/${exam.questions.length} câu. Nộp rồi thì không sửa được nữa — muốn xem lại thì bấm Xem lại.`
+              : `Còn ${unanswered} câu chưa làm. Nộp rồi thì không sửa được nữa.`
+          }
           confirmLabel="Nộp bài"
-          cancelLabel="Làm tiếp"
+          cancelLabel={unanswered === 0 ? "Xem lại" : "Làm tiếp"}
           onConfirm={() => {
             setConfirmOpen(false);
             submit();
