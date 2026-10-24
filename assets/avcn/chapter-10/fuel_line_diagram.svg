@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <pattern id="hatch10" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#e2e8f0"/><line x1="0" y1="0" x2="0" y2="10" stroke="#94a3b8" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="400" fill="#ffffff"/>
+  <!-- 1: engine -->
+  <rect x="40" y="90" width="150" height="260" rx="16" fill="url(#hatch10)" stroke="#1e293b" stroke-width="3"/>
+  <rect x="62" y="122" width="106" height="26" rx="6" fill="#cbd5e1" stroke="#1e293b" stroke-width="2.5"/>
+  <rect x="62" y="190" width="106" height="26" rx="6" fill="#cbd5e1" stroke="#1e293b" stroke-width="2.5"/>
+  <rect x="62" y="258" width="106" height="26" rx="6" fill="#cbd5e1" stroke="#1e293b" stroke-width="2.5"/>
+  <!-- 2: hydraulic pipe (oversized) -->
+  <rect x="190" y="210" width="480" height="50" rx="8" fill="#94a3b8" stroke="#1e293b" stroke-width="3"/>
+  <line x1="200" y1="222" x2="660" y2="222" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round"/>
+  <!-- 3: fuel line (bends down to touch the pipe, breaks at x=700) -->
+  <path d="M190 130 L400 130 C450 130 450 198 500 198 L690 198" fill="none" stroke="#1e293b" stroke-width="28" stroke-linecap="butt"/>
+  <path d="M190 130 L400 130 C450 130 450 198 500 198 L690 198" fill="none" stroke="#fbbf24" stroke-width="21" stroke-linecap="butt"/>
+  <path d="M722 198 L770 198" fill="none" stroke="#1e293b" stroke-width="28"/>
+  <path d="M722 198 L770 198" fill="none" stroke="#fbbf24" stroke-width="21"/>
+  <path d="M684 184 l10 8 l-8 6 l10 7 l-8 7 l-4 0 z" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+  <path d="M728 184 l-10 8 l8 6 l-10 7 l8 7 l4 0 z" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+  <!-- 5: wear marks where the pipes rub -->
+  <g stroke="#dc2626" stroke-width="4" stroke-linecap="round">
+    <line x1="520" y1="188" x2="534" y2="214"/><line x1="540" y1="188" x2="554" y2="214"/>
+    <line x1="560" y1="188" x2="574" y2="214"/><line x1="580" y1="188" x2="594" y2="214"/>
+    <line x1="600" y1="188" x2="614" y2="214"/>
+  </g>
+  <!-- 6: leaking fuel -->
+  <g fill="#f59e0b" stroke="#1e293b" stroke-width="2">
+    <path d="M700 232 q-9 16 0 22 q9 -6 0 -22 z" transform="translate(0,36)"/>
+    <path d="M714 232 q-9 16 0 22 q9 -6 0 -22 z" transform="translate(4,84)"/>
+    <path d="M706 232 q-9 16 0 22 q9 -6 0 -22 z" transform="translate(-2,132)"/>
+  </g>
+  <ellipse cx="706" cy="388" rx="46" ry="7" fill="#f59e0b" opacity="0.7"/>
+  <!-- leader lines -->
+  <g stroke="#0284c7" stroke-width="2.5" fill="none">
+    <line x1="115" y1="66" x2="115" y2="90"/>
+    <line x1="420" y1="318" x2="420" y2="262"/>
+    <line x1="300" y1="66" x2="300" y2="116"/>
+    <line x1="567" y1="66" x2="567" y2="186"/>
+    <line x1="710" y1="66" x2="706" y2="182"/>
+  </g>
+  <g font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="115" cy="46" r="20" fill="#0284c7"/><text x="115" y="54">1</text>
+    <circle cx="420" cy="338" r="20" fill="#0284c7"/><text x="420" y="346">2</text>
+    <circle cx="300" cy="46" r="20" fill="#0284c7"/><text x="300" y="54">3</text>
+    <circle cx="330" cy="176" r="20" fill="#0284c7"/><text x="330" y="184">4</text>
+    <circle cx="567" cy="46" r="20" fill="#0284c7"/><text x="567" y="54">5</text>
+    <circle cx="710" cy="46" r="20" fill="#0284c7"/><text x="710" y="54">6</text>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" font-family="sans-serif">
+  <rect width="480" height="280" fill="#ffffff"/>
+  <text x="130" y="32" fill="#1f2937" font-size="20" font-weight="600" text-anchor="middle">Tay xa trục</text>
+  <text x="360" y="32" fill="#1f2937" font-size="20" font-weight="600" text-anchor="middle">Tay gần trục</text>
+  <circle cx="130" cy="140" r="72" fill="none" stroke="#93c5fd" stroke-width="3" stroke-dasharray="7 6"/>
+  <circle cx="130" cy="140" r="8" fill="#1f2937"/>
+  <circle cx="68" cy="140" r="14" fill="#1d4ed8"/>
+  <circle cx="192" cy="140" r="14" fill="#1d4ed8"/>
+  <line x1="130" y1="140" x2="192" y2="140" stroke="#1f2937" stroke-width="2"/>
+  <text x="161" y="128" fill="#1f2937" font-size="18" font-weight="600" text-anchor="middle">0,60 m</text>
+  <text x="130" y="236" fill="#047857" font-size="20" font-weight="600" text-anchor="middle">I lớn, ω nhỏ</text>
+  <circle cx="360" cy="140" r="18" fill="none" stroke="#93c5fd" stroke-width="3" stroke-dasharray="6 5"/>
+  <circle cx="360" cy="140" r="6" fill="#1f2937"/>
+  <circle cx="342" cy="140" r="8" fill="#1d4ed8"/>
+  <circle cx="378" cy="140" r="8" fill="#1d4ed8"/>
+  <text x="360" y="112" fill="#1f2937" font-size="18" font-weight="600" text-anchor="middle">0,15 m</text>
+  <text x="360" y="236" fill="#b91c1c" font-size="20" font-weight="600" text-anchor="middle">I nhỏ, ω lớn</text>
+  <text x="240" y="268" fill="#1f2937" font-size="20" font-weight="600" text-anchor="middle">I · ω gần như không đổi</text>
+</svg>
