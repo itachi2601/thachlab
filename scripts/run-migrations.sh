@@ -79,6 +79,7 @@ FILES=(
   "supabase/migrations/20261024200000_lesson_practice_pool_ngan_hang.sql|Chặng 0: RPC lesson_practice_pool + check_bank_practice_answer (kho câu ngân hàng theo bài cho Luyện tập) + cột practice_question_results.bank_id|lúc nào cũng được"
   "supabase/migrations/20261024210000_lesson_practice_pool_noi_loc_de_danh_gia.sql|Chặng 0 bản nới: câu ngân hàng từ đề đánh giá vào kho Luyện tập khi em đã được xem đáp án đề đó (exam_answers_revealed)|lúc nào cũng được"
   "supabase/migrations/20261024220000_lesson_practice_pool_mo_ca_kho.sql|Chặng 0 mở cả kho: chỉ loại câu nguồn là đề kiểm tra thật (class_assessments/BTVN/TA/ôn tập), không tính đề thi thử gắn mục Kiểm tra|lúc nào cũng được"
+  "supabase/migrations/20261024190000_lesson_notes.sql|Bảng lesson_notes: ghi chú riêng của học sinh theo mục bài học (RLS chỉ chủ sở hữu, giáo viên không đọc), chỉ thêm bảng mới|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong

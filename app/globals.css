@@ -2812,6 +2812,9 @@ body:has(.admin-shell.is-open) .fixed.bottom-5 { display: none; }
 .exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
 .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
 .exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-conf { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; color: var(--color-muted, #475569); font-size: .92em; }
+.exam-content .tl-conf label { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; cursor: pointer; }
+.exam-content .tl-conf input { width: 18px; height: 18px; accent-color: var(--color-primary, #1d4ed8); }
 .exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
 .exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
@@ -3041,6 +3044,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(148,163,184,.24);
   --pres-surface: rgba(15,23,42,.86);
   --pres-panel: #101a2e;
+  /* Token site đặt lại theo nền chiếu, không theo theme của trang: khung .tl-trap/.tl-check/.tl-fx
+     dùng color-mix(var(--color-panel)) nên theme tối của trang + nền chiếu sáng = hộp đen chữ mờ. */
+  --color-panel: #101a2e; --color-ink: #f1f5f9; --color-warn: #fbbf24; --color-primary: #60a5fa;
+  --color-surface-2: rgba(255,255,255,.06); --color-line-strong: rgba(255,255,255,.34);
   position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
 }
@@ -3052,6 +3059,8 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(15,23,42,.16);
   --pres-surface: rgba(255,255,255,.92);
   --pres-panel: #fff;
+  --color-panel: #fff; --color-ink: #0f172a; --color-warn: #b45309; --color-primary: #1d4ed8;
+  --color-surface-2: #eef1f6; --color-line-strong: #8b93a1;
   background: #f4f6fb;
 }
 
@@ -3099,7 +3108,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
-.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
+.presenter-tap span { color: var(--pres-accent); }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
@@ -3160,6 +3171,23 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
 .lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
 .lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+/* Ghi chú của HỌC SINH (StudentNoteFab): góc TRÁI để cách xa nút Báo lỗi ở góc phải (D3); nền theo token site. */
+.lesson-note-open { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; padding: 0 14px; color: var(--color-ink); font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; text-align: left; }
+.lesson-note-open::after { content: "›"; color: var(--color-muted); font-size: 16px; }
+.student-note-float { position: fixed; z-index: 45; left: 12px; bottom: 20px; max-width: calc(100vw - 24px); }
+body:has(.lesson-bottombar) .student-note-float { bottom: calc(var(--lesson-bottombar-h, 62px) + 12px + env(safe-area-inset-bottom, 0px)); }
+.student-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; border: 2px solid var(--color-primary, #1d4ed8); border-radius: 999px; background: var(--color-panel, #fff); padding: 0 16px 0 13px; color: var(--color-primary, #1d4ed8); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(15,23,42,.35); }
+.student-note { width: min(360px, calc(100vw - 24px)); border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 16px; background: var(--color-panel, #fff); padding: 12px 14px 14px; color: var(--color-ink, #0f172a); box-shadow: 0 16px 40px -16px rgba(15,23,42,.45); }
+.student-note-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.student-note-head p { display: grid; gap: 2px; min-width: 0; margin: 0; font-size: 15px; }
+.student-note-head p span { overflow: hidden; color: var(--color-muted, #475569); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.student-note-head button { display: grid; width: 44px; height: 44px; margin: -8px -8px 0 0; place-items: center; border: 0; background: none; color: var(--color-muted, #475569); cursor: pointer; }
+.student-note-label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
+.student-note-body { width: 100%; min-height: 96px; resize: vertical; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 10px; background: var(--color-bg, #f5f7fa); padding: 9px 10px; color: var(--color-ink, #0f172a); font: inherit; font-size: 16px; line-height: 1.5; }
+.student-note-status { margin: 6px 0 0; color: var(--color-muted, #475569); font-size: 12.5px; }
+.student-note-others { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.student-note-others button { display: grid; width: 100%; min-height: 44px; gap: 1px; border: 1px solid var(--color-line, rgba(15,23,42,.1)); border-radius: 10px; background: none; padding: 6px 10px; color: var(--color-ink, #0f172a); font-family: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.student-note-others button span { overflow: hidden; color: var(--color-muted, #475569); text-overflow: ellipsis; white-space: nowrap; }
 @media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
 
 /* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
