@@ -1,0 +1,177 @@
+{
+ "c3q-mc-236": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Thay $t=0$ vào biểu thức tức thời: $u=100\\sqrt{2}\\cos(-\\frac{\\pi}{3})$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow u=100\\sqrt{2}\\cdot\\frac{1}{2}=50\\sqrt{2}$ V.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-237": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Tại $t=0$: $i=4\\cos 0=4$ A.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-238": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Pha của dòng điện là $100\\pi t-\\frac{\\pi}{6}$.</p><p class=\"text-base leading-relaxed my-2\">Tại $t=\\frac{1}{200}$ s: $\\varphi=\\frac{100\\pi}{200}-\\frac{\\pi}{6}=\\frac{\\pi}{2}-\\frac{\\pi}{6}=\\frac{\\pi}{3}$ rad.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "de"
+ },
+ "c3q-mc-239": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Dòng điện sớm pha $\\frac{\\pi}{2}$ so với điện áp nên pha ban đầu của $i$ là $\\frac{\\pi}{3}+\\frac{\\pi}{2}=\\frac{5\\pi}{6}$, do đó $i=3\\cos(100\\pi t+\\frac{5\\pi}{6})$ A.</p><p class=\"text-base leading-relaxed my-2\">Tại $t=1{,}2$ s: $100\\pi\\cdot1{,}2=120\\pi$ (bội của $2\\pi$), nên $i=3\\cos\\frac{5\\pi}{6}=3\\cdot(-\\frac{\\sqrt{3}}{2})=-1{,}5\\sqrt{3}$ A.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-240": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Chu kì $T=0{,}02$ s, khoảng $0\\to0{,}01$ s ứng với pha $100\\pi t$ chạy từ $0$ đến $\\pi$.</p><p class=\"text-base leading-relaxed my-2\">$i=0{,}5I_0\\Rightarrow\\sin100\\pi t=\\frac{1}{2}\\Rightarrow100\\pi t=\\frac{\\pi}{6}$ hoặc $\\frac{5\\pi}{6}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=\\frac{1}{600}$ s hoặc $t=\\frac{5}{600}$ s.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-241": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$u=U_0\\cos(100\\pi t-\\frac{\\pi}{2})=U_0\\sin100\\pi t$. Khoảng $0\\to0{,}01$ s ứng với $100\\pi t\\in[0;\\pi]$.</p><p class=\"text-base leading-relaxed my-2\">$u=0{,}5\\sqrt{2}U_0\\Rightarrow\\sin100\\pi t=\\frac{\\sqrt{2}}{2}\\Rightarrow100\\pi t=\\frac{\\pi}{4}$ hoặc $\\frac{3\\pi}{4}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=\\frac{1}{400}$ s hoặc $\\frac{3}{400}$ s.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-242": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Giá trị hiệu dụng $I=\\frac{I_0}{\\sqrt{2}}$, nên cần $\\cos(100\\pi t+\\frac{\\pi}{4})=\\frac{\\sqrt{2}}{2}$, tức $100\\pi t+\\frac{\\pi}{4}=\\pm\\frac{\\pi}{4}+2k\\pi$.</p><p class=\"text-base leading-relaxed my-2\">Với $t=\\frac{3}{200}$ s: $100\\pi t+\\frac{\\pi}{4}=\\frac{3\\pi}{2}+\\frac{\\pi}{4}=\\frac{7\\pi}{4}=-\\frac{\\pi}{4}+2\\pi$, thoả mãn.</p><p class=\"text-base leading-relaxed my-2\">Các thời điểm còn lại ($\\frac{1}{400},\\frac{1}{100},\\frac{1}{800}$ s) cho pha $\\frac{\\pi}{2},\\frac{5\\pi}{4},\\frac{3\\pi}{8}$, không có $\\cos=\\frac{\\sqrt{2}}{2}$.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-244": {
+  "answer": null,
+  "explanation": "",
+  "ghi_chu": "Đề vỡ công thức: i = 2cos() không có đối số nên không xác định được thời điểm i = 2 A.",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-245": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Khoảng $0\\to0{,}01$ s ứng với $100\\pi t\\in[0;\\pi]$.</p><p class=\"text-base leading-relaxed my-2\">$i=0{,}5I_0\\Rightarrow\\cos100\\pi t=\\frac{1}{2}\\Rightarrow100\\pi t=\\frac{\\pi}{3}$ (nghiệm $\\frac{5\\pi}{3}$ nằm ngoài khoảng).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=\\frac{1}{300}$ s.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-246": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$u=100$ V $\\Rightarrow\\cos(100\\pi t+\\frac{5\\pi}{6})=\\frac{1}{2}\\Rightarrow100\\pi t+\\frac{5\\pi}{6}=\\pm\\frac{\\pi}{3}+2k\\pi$.</p><p class=\"text-base leading-relaxed my-2\">Trong $0\\to0{,}02$ s pha $100\\pi t\\in[0;2\\pi]$.</p><p class=\"text-base leading-relaxed my-2\">Nghiệm 1: $100\\pi t=-\\frac{\\pi}{2}+2\\pi=\\frac{3\\pi}{2}\\Rightarrow t=\\frac{3}{200}$ s.</p><p class=\"text-base leading-relaxed my-2\">Nghiệm 2: $100\\pi t=-\\frac{7\\pi}{6}+2\\pi=\\frac{5\\pi}{6}\\Rightarrow t=\\frac{5}{600}$ s.</p><p class=\"text-base leading-relaxed my-2\">Các nghiệm khác ngoài khoảng $[0;0{,}02]$.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "kho"
+ },
+ "c3q-mc-247": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$u=0{,}5U_0$ và đang tăng ứng với pha $\\frac{2\\pi t}{T}=-\\frac{\\pi}{3}+2k\\pi$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=T(k-\\frac{1}{6})$, lần đầu tiên ứng với $k=1$: $t=\\frac{5T}{6}$.</p><p class=\"text-base leading-relaxed my-2\">Lần thứ 2014 ứng với $k=2014$: $t=T(2014-\\frac{1}{6})=\\frac{12083T}{6}$.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "kho"
+ },
+ "c3q-mc-248": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$u=0{,}5U_0$ và đang giảm ứng với pha $\\frac{2\\pi t}{T}=\\frac{\\pi}{3}+2k\\pi$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=T(k+\\frac{1}{6})$, lần đầu tiên ứng với $k=0$ ($t=\\frac{T}{6}$).</p><p class=\"text-base leading-relaxed my-2\">Lần thứ 2010 ứng với $k=2009$: $t=T(2009+\\frac{1}{6})=\\frac{12055T}{6}$.</p>",
+  "ghi_chu": "Đề ghi u=U0cos(2π/T) thiếu t, sửa ngầm thành cos(2πt/T) như câu liền trước.",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "kho"
+ },
+ "c3q-mc-249": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$i=\\frac{I_0}{\\sqrt{2}}\\Rightarrow\\cos(100\\pi t-\\frac{\\pi}{3})=\\frac{\\sqrt{2}}{2}$, pha $=\\pm\\frac{\\pi}{4}+2k\\pi$. Mỗi chu kì có 2 lần.</p><p class=\"text-base leading-relaxed my-2\">Tại $t=0$ pha là $-\\frac{\\pi}{3}$, lần thứ nhất pha $=-\\frac{\\pi}{4}$; lần lẻ thứ $2n+1$ có pha $-\\frac{\\pi}{4}+2n\\pi$.</p><p class=\"text-base leading-relaxed my-2\">Lần thứ 2009 ứng với $n=1004$: $100\\pi t-\\frac{\\pi}{3}=-\\frac{\\pi}{4}+2008\\pi\\Rightarrow100\\pi t=2008\\pi+\\frac{\\pi}{12}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=20{,}08+\\frac{1}{1200}=\\frac{24097}{1200}$ s.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "kho"
+ },
+ "c3q-mc-250": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Thiết bị hoạt động khi $|u|\\ge110$ V, mà $U_0=200$ V nên $|\\cos\\varphi|\\ge0{,}55$.</p><p class=\"text-base leading-relaxed my-2\">Trong mỗi nửa chu kì, pha thoả mãn $|\\varphi|\\le\\alpha$ với $\\cos\\alpha=0{,}55\\Rightarrow\\alpha\\approx0{,}9884$ rad; mỗi chu kì có 2 khoảng như vậy.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow\\Delta t=\\frac{4\\alpha}{2\\pi}T=\\frac{4\\cdot0{,}9884}{2\\pi}\\cdot0{,}02\\approx0{,}0126$ s.</p>",
+  "ghi_chu": "Đề ghi cosl00πt, hiểu là cos100πt.",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "kho"
+ },
+ "c3q-mc-251": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$U_0=220\\sqrt{2}$ V, thiết bị hoạt động khi $|u|\\ge220$ V $\\Rightarrow|\\cos\\varphi|\\ge\\frac{1}{\\sqrt{2}}$.</p><p class=\"text-base leading-relaxed my-2\">Trong nửa chu kì, pha nằm trong $[\\frac{\\pi}{4};\\frac{3\\pi}{4}]$, ứng với thời gian $\\frac{T}{4}$.</p><p class=\"text-base leading-relaxed my-2\">$T=\\frac{1}{50}=0{,}02$ s $\\Rightarrow\\Delta t=0{,}005$ s.</p>",
+  "ghi_chu": "",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-252": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$u=100\\sqrt{2}=\\frac{U_0}{2}$ ($U_0=200\\sqrt{2}$) và đang giảm nên pha hiện tại là $\\frac{\\pi}{3}$.</p><p class=\"text-base leading-relaxed my-2\">Sau $\\frac{1}{300}$ s pha tăng thêm $100\\pi\\cdot\\frac{1}{300}=\\frac{\\pi}{3}$, thành $\\frac{2\\pi}{3}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow u=200\\sqrt{2}\\cos\\frac{2\\pi}{3}=-100\\sqrt{2}$ V.</p>",
+  "ghi_chu": "Phương án D dính ký tự rác (gạch ngang, tiêu đề 2.3) do trích từ Word; không ảnh hưởng đáp án, nên làm sạch.",
+  "topic": "Viết biểu thức u, i theo thời gian",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-253": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Công suất trung bình của đoạn mạch xoay chiều là $P=UI\\cos\\varphi$, trong đó $\\cos\\varphi$ là hệ số công suất.</p><p class=\"text-base leading-relaxed my-2\">Phương án $P=UI$ chỉ đúng khi $\\cos\\varphi=1$; $P=RI^2\\cos\\varphi$ và $P=ZI^2\\cos\\varphi$ sai vì $P=RI^2=ZI^2\\cos\\varphi$ (không có thừa $\\cos\\varphi$).</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-254": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Công suất tức thời toả nhiệt trên điện trở là $p=Ri^2$ với $i$ là cường độ tức thời.</p><p class=\"text-base leading-relaxed my-2\">Các phương án có $I_0^2$ hoặc hệ số $\\frac{1}{2}$ là công suất trung bình, hoặc sai công thức.</p>",
+  "ghi_chu": "Phương án C có ký tự thừa '**'.",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-255": {
+  "answer": null,
+  "explanation": "",
+  "ghi_chu": "Hai phương án A (RI0²t/2) và D (RI²t) bằng nhau vì I²=I0²/2 nên có 2 đáp án đúng; cần duyệt tay.",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-256": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$u$ và $i$ cùng pha nên $\\cos\\varphi=1$; $U=220$ V, $I=2$ A.</p><p class=\"text-base leading-relaxed my-2\">$P=UI\\cos\\varphi=220\\cdot2\\cdot1=440$ W.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-257": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$Q=I^2Rt$ với $t=30$ phút $=1800$ s, $Q=900000$ J.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow I^2=\\frac{900000}{10\\cdot1800}=50\\Rightarrow I=5\\sqrt{2}\\approx7{,}07$ A (hiệu dụng).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow I_0=I\\sqrt{2}=10$ A.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-258": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Điện năng $A=Pt=0{,}75\\ \\text{kW}\\cdot6\\ \\text{h}=4{,}5$ kWh.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-259": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$I_0=2$ A $\\Rightarrow I^2=\\frac{I_0^2}{2}=2$ A$^2$; $t=0{,}5$ phút $=30$ s.</p><p class=\"text-base leading-relaxed my-2\">$Q=I^2Rt=2\\cdot10\\cdot30=600$ J.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-260": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$I_0=2$ A $\\Rightarrow I=\\sqrt{2}$ A.</p><p class=\"text-base leading-relaxed my-2\">$P=I^2R=2\\cdot100=200$ W.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "de"
+ },
+ "c3q-mc-261": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Độ lệch pha $\\varphi=\\varphi_u-\\varphi_i=\\frac{\\pi}{6}-(-\\frac{\\pi}{6})=\\frac{\\pi}{3}\\Rightarrow\\cos\\varphi=\\frac{1}{2}$.</p><p class=\"text-base leading-relaxed my-2\">$U=160$ V, $I=2$ A $\\Rightarrow P=UI\\cos\\varphi=160\\cdot2\\cdot\\frac{1}{2}=160$ W.</p>",
+  "ghi_chu": "",
+  "topic": "Giá trị hiệu dụng của dòng điện xoay chiều",
+  "difficulty": "trung-binh"
+ }
+}

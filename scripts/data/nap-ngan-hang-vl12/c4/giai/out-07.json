@@ -1,0 +1,177 @@
+{
+ "c4-mc-158": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Chu kì bán rã T là thời gian để số hạt nhân giảm còn một nửa: $e^{-\\lambda T}=\\frac12$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\lambda T=\\ln 2$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\lambda=\\frac{\\ln 2}{T}$. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "de"
+ },
+ "c4-mc-159": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hằng số phóng xạ $\\lambda=\\frac{\\ln 2}{T}$ nên có thứ nguyên nghịch đảo thời gian, đơn vị là $s^{-1}$. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "de"
+ },
+ "c4-mc-160": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hằng số phóng xạ $\\lambda$ chỉ phụ thuộc bản chất của chất phóng xạ nên đặc trưng cho từng loại chất phóng xạ. Chọn A.</p><p class=\"text-base leading-relaxed my-2\">Độ mạnh yếu của một mẫu cụ thể do độ phóng xạ $H$ (phụ thuộc cả số hạt nhân), nên D sai.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "de"
+ },
+ "c4-mc-161": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Tốc độ phân rã tỉ lệ với $\\lambda$: $H=\\lambda N$, nên $\\lambda$ lớn thì phân rã nhanh. Chọn A.</p><p class=\"text-base leading-relaxed my-2\">Phóng xạ không phụ thuộc nhiệt độ, áp suất; chu kì bán rã lớn thì phân rã chậm.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "de"
+ },
+ "c4-mc-162": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Độ phóng xạ $H=\\lambda N$, đơn vị Bq, đặc trưng cho tính phóng xạ mạnh hay yếu; A, B, C đúng.</p><p class=\"text-base leading-relaxed my-2\">Phóng xạ là quá trình hạt nhân, không phụ thuộc nhiệt độ nên D sai. Chọn D (câu hỏi tìm phát biểu sai).</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "de"
+ },
+ "c4-mc-163": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Độ phóng xạ đo bằng số phân rã/s, Bq, Ci.</p><p class=\"text-base leading-relaxed my-2\">u là đơn vị khối lượng nguyên tử nên không phải đơn vị độ phóng xạ. Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "de"
+ },
+ "c4-mc-164": {
+  "answer": null,
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">1 Ci = $3{,}7\\cdot10^{10}$ Bq, xấp xỉ độ phóng xạ của 1 g rađi.</p>",
+  "ghi_chu": "Mơ hồ: D ghi 7,3.10^10 (lỗi gõ của 3,7.10^10) còn B (1 g rađi) cũng là cách định nghĩa gần đúng của Ci; không rõ đáp án dự kiến.",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "de"
+ },
+ "c4-mc-165": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật phóng xạ cho độ phóng xạ: $H=H_0 e^{-\\lambda t}$. Chọn A.</p><p class=\"text-base leading-relaxed my-2\">C và D thiếu hoặc đảo vế so với A nên không đúng dạng cần tìm (H theo $H_0$).</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "de"
+ },
+ "c4-mc-166": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Ngoài đồng vị phóng xạ tự nhiên còn có rất nhiều đồng vị phóng xạ nhân tạo (như $^{60}Co$, $^{32}P$). Do đó B sai. Chọn B.</p><p class=\"text-base leading-relaxed my-2\">A, C đúng; D đúng vì $^{14}C$ phát $\\beta^-$ và dùng xác định tuổi cổ vật.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-167": {
+  "answer": null,
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Bảo toàn điện tích và số khối: $^{4}_{2}He+{}^{27}_{13}Al\\to {}^{A}_{Z}X+{}^{1}_{0}n$ nên $Z=15$, $A=30$, X là $^{30}_{15}P$.</p><p class=\"text-base leading-relaxed my-2\">$^{30}_{15}P\\to{}^{30}_{14}Si+\\beta^+$.</p>",
+  "ghi_chu": "A và C giống hệt nhau (chỉ khác khoảng trắng) và cùng ghi 'đồng vị phóng xạ tự nhiên' (sai, P-30 là nhân tạo): 2 phương án trùng, không có đáp án duy nhất.",
+  "topic": "Các tia phóng xạ α, β, γ",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-168": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Đồng vị phóng xạ nhân tạo được dùng làm nguyên tử đánh dấu trong y học, sinh học, xác định tuổi bằng $^{14}C$.</p><p class=\"text-base leading-relaxed my-2\">Không dùng để phóng tên lửa. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+  "difficulty": "de"
+ },
+ "c4-mc-169": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Phương pháp nguyên tử đánh dấu, xác định niên đại, điều trị ung thư đều dùng đồng vị phóng xạ.</p><p class=\"text-base leading-relaxed my-2\">Quay phim, chụp ảnh ban đêm dùng tia hồng ngoại, không phải đồng vị phóng xạ. Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "de"
+ },
+ "c4-mc-170": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Nhà máy Fukushima (11/3/2011) bị rò rỉ phóng xạ do trận động đất mạnh gây sóng thần làm mất hệ thống làm mát lò. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+  "difficulty": "de"
+ },
+ "c4-mc-171": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Các nguồn A, B, C đều gây ô nhiễm phóng xạ nên đáp án đúng là Cả A, B và C. Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+  "difficulty": "de"
+ },
+ "c4-mc-172": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Phơi nhiễm phóng xạ với liều lớn phá huỷ tế bào, gây bệnh tật và có thể gây chết người. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+  "difficulty": "de"
+ },
+ "c4-mc-173": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Ba quy tắc chính: giảm thời gian tiếp xúc, tăng khoảng cách, che chắn cơ quan trọng yếu.</p><p class=\"text-base leading-relaxed my-2\">D sai vì khi làm việc với nguồn phóng xạ cần đeo thêm mặt nạ để tránh hít chất phóng xạ. Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+  "difficulty": "de"
+ },
+ "c4-mc-174": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Tăng thời gian tiếp xúc làm tăng liều hấp thụ, không an toàn. Chọn A.</p><p class=\"text-base leading-relaxed my-2\">B, C, D là các biện pháp an toàn.</p>",
+  "ghi_chu": "",
+  "topic": "Nguyên tắc an toàn khi làm việc với nguồn phóng xạ",
+  "difficulty": "de"
+ },
+ "c4-mc-175": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Liều hấp thụ là năng lượng bức xạ truyền cho một đơn vị khối lượng: đơn vị SI là J/kg, gọi là Gray (Gy). Chọn A.</p><p class=\"text-base leading-relaxed my-2\">Becquerel (Bq) là đơn vị độ phóng xạ, Curie (Ci) cũng vậy, nên B, C, D sai.</p>",
+  "ghi_chu": "",
+  "topic": "Liều chiếu xạ và tác hại của phóng xạ",
+  "difficulty": "de"
+ },
+ "c4-mc-176": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Trong nhà máy điện hạt nhân, năng lượng từ phản ứng hạt nhân làm nóng nước tạo hơi nước quay tua bin máy phát điện (hoặc tạo lực đẩy). Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+  "difficulty": "de"
+ },
+ "c4-mc-177": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Lò phản ứng nhà máy điện hạt nhân dùng phản ứng phân hạch dây chuyền được kiểm soát ở mức tới hạn ($k=1$). Chọn C.</p><p class=\"text-base leading-relaxed my-2\">Nhiệt hạch chưa thực hiện được ở quy mô nhà máy; $k>1$ không kiểm soát là bom.</p>",
+  "ghi_chu": "",
+  "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+  "difficulty": "de"
+ },
+ "c4-mc-178": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Nhiên liệu phân hạch là $^{235}_{92}U$ và $^{239}_{94}Pu$. Chọn B.</p><p class=\"text-base leading-relaxed my-2\">Hiđrô, đơteri là nhiên liệu của phản ứng nhiệt hạch.</p>",
+  "ghi_chu": "",
+  "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+  "difficulty": "de"
+ },
+ "c4-mc-179": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Thanh điều khiển làm bằng vật liệu hấp thụ nơtron mạnh như bo và cađimi, để giữ $k=1$. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+  "difficulty": "de"
+ },
+ "c4-mc-180": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Để $k=1$, thanh điều khiển hấp thụ nơtron thừa sao cho trung bình mỗi phân hạch còn 1 nơtron tiếp tục gây phân hạch. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+  "difficulty": "de"
+ },
+ "c4-mc-181": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Khi lò hoạt động ổn định với $k=1$, số phân hạch mỗi giây không đổi nên công suất, năng lượng toả ra không đổi theo thời gian. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+  "difficulty": "de"
+ },
+ "c4-mc-182": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Năng lượng hạt nhân (phân hạch có kiểm soát, nhiệt hạch) là nguồn năng lượng nhân tạo to lớn được nghiên cứu cho mục đích hoà bình. Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
+  "difficulty": "de"
+ }
+}

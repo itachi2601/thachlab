@@ -1,0 +1,177 @@
+{
+ "c3q-mc-138": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Cảm ứng từ tại tâm vòng dây tròn có một vòng: $B=2\\pi\\cdot10^{-7}\\dfrac{I}{R}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $R=2\\pi\\cdot10^{-7}\\dfrac{I}{B}=2\\pi\\cdot10^{-7}\\cdot\\dfrac{10}{2,1\\cdot10^{-4}}\\approx 0,030$ m $=3,0$ cm.</p>",
+  "ghi_chu": "",
+  "topic": "Từ trường của nam châm và của dòng điện",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-139": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Khung dây tròn $N$ vòng: $B=2\\pi\\cdot10^{-7}\\dfrac{NI}{R}$.</p><p class=\"text-base leading-relaxed my-2\">Thay số: $B=2\\pi\\cdot10^{-7}\\cdot\\dfrac{100\\cdot0,3/\\pi}{0,3}=2\\cdot10^{-5}$ T.</p>",
+  "ghi_chu": "",
+  "topic": "Từ trường của nam châm và của dòng điện",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-141": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Trong lòng ống dây dài: $B=4\\pi\\cdot10^{-7}\\dfrac{N}{\\ell}I$.</p><p class=\"text-base leading-relaxed my-2\">Thay số: $B=4\\pi\\cdot10^{-7}\\cdot\\dfrac{100}{0,3}\\cdot\\dfrac{0,3}{\\pi}=4\\cdot10^{-5}$ T.</p>",
+  "ghi_chu": "",
+  "topic": "Từ trường của nam châm và của dòng điện",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-142": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Trong lòng ống dây: $B=4\\pi\\cdot10^{-7}\\dfrac{N}{\\ell}I$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $I=\\dfrac{B\\ell}{4\\pi\\cdot10^{-7}N}=\\dfrac{75\\cdot10^{-3}\\cdot0,2}{4\\pi\\cdot10^{-7}\\cdot1200}\\approx 9,9$ A.</p>",
+  "ghi_chu": "",
+  "topic": "Từ trường của nam châm và của dòng điện",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-143": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Trong lòng ống dây: $B=4\\pi\\cdot10^{-7}nI$ với $n$ là số vòng trên mỗi mét.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $n=\\dfrac{B}{4\\pi\\cdot10^{-7}I}=\\dfrac{8,2\\cdot10^{-3}}{4\\pi\\cdot10^{-7}\\cdot4,35}\\approx1500$ vòng/m.</p>",
+  "ghi_chu": "Đề thiếu đơn vị 'A' sau 4,35 (sửa ngầm); phương án A dính thẻ nhãn thừa trong dữ liệu nguồn.",
+  "topic": "Từ trường của nam châm và của dòng điện",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-144": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Các vòng quấn sát nhau nên số vòng trên mỗi mét: $n=\\dfrac{1}{d}=\\dfrac{1}{0,5\\cdot10^{-3}}=2000$ vòng/m.</p><p class=\"text-base leading-relaxed my-2\">$B=4\\pi\\cdot10^{-7}nI=4\\pi\\cdot10^{-7}\\cdot2000\\cdot2\\approx5\\cdot10^{-3}$ T.</p>",
+  "ghi_chu": "",
+  "topic": "Từ trường của nam châm và của dòng điện",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-145": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ thông $\\Phi=BS\\cos\\alpha$ có đơn vị vêbe (Wb), với $1\\ \\text{Wb}=1\\ \\text{T}\\cdot\\text{m}^2$.</p><p class=\"text-base leading-relaxed my-2\">Henry là đơn vị độ tự cảm, tesla là đơn vị cảm ứng từ, vôn là đơn vị hiệu điện thế.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "de"
+ },
+ "c3q-mc-146": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ thông qua diện tích $S$ đặt trong từ trường đều: $\\Phi=BS\\cos\\alpha$, với $\\alpha$ là góc giữa $\\vec B$ và pháp tuyến $\\vec n$ của mặt phẳng khung.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "de"
+ },
+ "c3q-mc-149": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Câu hỏi tìm phát biểu sai.</p><p class=\"text-base leading-relaxed my-2\">Phát biểu C sai: từ thông $\\Phi=BS\\cos\\alpha$ phụ thuộc cả $S$ và góc $\\alpha$, nên giá trị của $\\Phi$ không cho biết riêng cảm ứng từ $B$ lớn hay bé.</p><p class=\"text-base leading-relaxed my-2\">Các phát biểu A, B, D đúng.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "de"
+ },
+ "c3q-mc-150": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ thông $\\Phi=BS\\cos\\alpha$ phụ thuộc vào độ lớn cảm ứng từ $B$, diện tích $S$ và góc $\\alpha$ giữa pháp tuyến với $\\vec B$.</p><p class=\"text-base leading-relaxed my-2\">Nhiệt độ môi trường không xuất hiện trong công thức nên từ thông không phụ thuộc yếu tố này.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "de"
+ },
+ "c3q-mc-151": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Mặt phẳng vòng dây song song với đường sức từ, còn pháp tuyến $\\vec n$ vuông góc với mặt phẳng vòng dây.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $\\vec n$ vuông góc với $\\vec B$, góc giữa $\\vec B$ và $\\vec n$ là $90^\\circ$ (từ thông bằng 0).</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "de"
+ },
+ "c3q-mc-153": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Câu hỏi tìm phát biểu không đúng.</p><p class=\"text-base leading-relaxed my-2\">Phát biểu C sai: $\\Phi=BS\\cos\\alpha$ phụ thuộc cả góc nghiêng $\\alpha$ của mặt so với đường sức từ, không chỉ phụ thuộc diện tích $S$.</p><p class=\"text-base leading-relaxed my-2\">Các phát biểu A, B, D đúng.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "de"
+ },
+ "c3q-mc-156": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ thông $\\Phi=BS\\cos\\alpha$ biến thiên khi $\\alpha$ thay đổi (với $B$, $S$ không đổi).</p><p class=\"text-base leading-relaxed my-2\">Tịnh tiến, quay quanh trục vuông góc với mặt phẳng mạch, hoặc chuyển động trong mặt phẳng vuông góc với từ trường đều đều giữ nguyên $\\alpha$ nên $\\Phi$ không đổi.</p><p class=\"text-base leading-relaxed my-2\">Quay quanh trục nằm trong mặt phẳng mạch và không song song với đường sức từ làm $\\alpha$ thay đổi $\\Rightarrow$ từ thông biến thiên.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-163": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hiện tượng cảm ứng điện từ là sự xuất hiện suất điện động (dòng điện) cảm ứng trong mạch dẫn khi từ thông qua mạch biến thiên, ví dụ do có chuyển động tương đối giữa dây dẫn và từ trường.</p><p class=\"text-base leading-relaxed my-2\">Phương án D phát biểu đúng điều đó; các phương án còn lại sai vì không có chuyển động tương đối thì không có sự biến thiên từ thông, và dòng điện cảm ứng là hệ quả chứ không phải đối tượng chuyển động tương đối.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "de"
+ },
+ "c3q-mc-166": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Định luật Faraday: $e_c=-N\\dfrac{\\Delta\\Phi}{\\Delta t}$, dấu trừ thể hiện định luật Lenz.</p><p class=\"text-base leading-relaxed my-2\">Các biểu thức có tích $\\Delta\\Phi\\cdot\\Delta t$ sai về mặt thứ nguyên; biểu thức B thiếu dấu trừ.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "de"
+ },
+ "c3q-mc-167": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Câu hỏi tìm phát biểu sai.</p><p class=\"text-base leading-relaxed my-2\">Định luật Len-xơ xác định chiều dòng điện cảm ứng (từ trường cảm ứng chống lại nguyên nhân sinh ra nó), nên A, B, C đúng.</p><p class=\"text-base leading-relaxed my-2\">D sai: nhiệt lượng toả ra được xác định bởi định luật Jun - Len-xơ ($Q=RI^2t$), không phải bởi định luật Len-xơ về chiều dòng điện cảm ứng.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "de"
+ },
+ "c3q-mc-184": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Mặt phẳng vòng dây hợp với $\\vec B$ góc $30^\\circ$ nên góc giữa pháp tuyến và $\\vec B$ là $\\alpha=90^\\circ-30^\\circ=60^\\circ$.</p><p class=\"text-base leading-relaxed my-2\">$\\Phi=BS\\cos\\alpha=0,1\\cdot5\\cdot10^{-4}\\cdot\\cos60^\\circ=2,5\\cdot10^{-5}$ Wb.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-185": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Mặt phẳng khung vuông góc với đường sức nên $\\alpha=0^\\circ$, $\\Phi=BS=B\\pi r^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $r=\\sqrt{\\dfrac{\\Phi}{\\pi B}}=\\sqrt{\\dfrac{1,2\\cdot10^{-5}}{\\pi\\cdot0,06}}\\approx 7,98\\cdot10^{-3}$ m $\\approx 8$ mm.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-186": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Mặt phẳng khung hợp với $\\vec B$ góc $60^\\circ$ nên góc giữa $\\vec n$ và $\\vec B$ là $\\alpha=30^\\circ$.</p><p class=\"text-base leading-relaxed my-2\">Khung có $N=20$ vòng: $\\Phi=NBS\\cos\\alpha=20\\cdot0,1\\cdot5\\cdot10^{-4}\\cdot\\cos30^\\circ\\approx8,66\\cdot10^{-4}$ Wb.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-187": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Diện tích $S=(0,05)^2=2,5\\cdot10^{-3}$ m$^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Phi=BS\\cos\\alpha\\Rightarrow\\cos\\alpha=\\dfrac{10^{-6}}{8\\cdot10^{-4}\\cdot2,5\\cdot10^{-3}}=0,5$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $\\alpha=60^\\circ$.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-188": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Diện tích tam giác: $S=\\dfrac12\\cdot0,1\\cdot0,08=4\\cdot10^{-3}$ m$^2$ (đường sức vuông góc khung nên $\\alpha=0^\\circ$).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $B=\\dfrac{\\Phi}{S}=\\dfrac{40\\cdot10^{-6}}{4\\cdot10^{-3}}=0,01$ T.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-189": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Vectơ cảm ứng từ hợp với mặt phẳng khung góc $30^\\circ$ nên góc với pháp tuyến là $\\alpha=60^\\circ$.</p><p class=\"text-base leading-relaxed my-2\">$S=0,03\\cdot0,04=1,2\\cdot10^{-3}$ m$^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Phi=BS\\cos\\alpha=5\\cdot10^{-4}\\cdot1,2\\cdot10^{-3}\\cdot0,5=3\\cdot10^{-7}$ Wb.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-190": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Diện tích $S=(0,05)^2=2,5\\cdot10^{-3}$ m$^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\cos\\alpha=\\dfrac{\\Phi}{BS}=\\dfrac{10^{-6}}{4\\cdot10^{-4}\\cdot2,5\\cdot10^{-3}}=1$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ $\\alpha=0^\\circ$.</p>",
+  "ghi_chu": "",
+  "topic": "Từ thông qua khung dây",
+  "difficulty": "trung-binh"
+ },
+ "c3q-mc-191": {
+  "answer": null,
+  "explanation": "",
+  "ghi_chu": "Tính được |e| = (1,6 - 0,06)/0,1 = 15,4 V, không khớp phương án nào (6; 16; 10; 22). Có thể đề gốc sai số liệu nên không chọn.",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "de"
+ },
+ "c3q-mc-193": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Độ lớn suất điện động cảm ứng: $|e_c|=\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$.</p><p class=\"text-base leading-relaxed my-2\">$|e_c|=\\dfrac{6\\cdot10^{-3}}{0,04}=0,15$ V.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật Faraday và định luật Lenz",
+  "difficulty": "de"
+ }
+}
