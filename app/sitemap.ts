@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/de-thi/`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE}/blog/`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE}/tin-tuc/`, changeFrequency: "weekly", priority: 0.6 },
+    { url: `${SITE}/gioi-thieu/`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE}/cai-app/`, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE}/quy-che-hoc-tap/`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE}/dieu-khoan/`, changeFrequency: "yearly", priority: 0.3 },
