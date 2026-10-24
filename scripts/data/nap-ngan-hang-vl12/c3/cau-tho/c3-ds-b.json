@@ -1,0 +1,373 @@
+[
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 1,
+  "flags": [],
+  "stem": "Một dây dẫn thẳng dài, mang dòng điện I được bố trí xuyên qua một tấm giấy bìa tại điểm X như hình bên.",
+  "statements": [
+   [
+    "a",
+    "Vecto cảm ứng từ $B$ do dòng điện I gây ra tại điểm Y có chiều như hình vẽ",
+    "Đ"
+   ],
+   [
+    "b",
+    "Tại điểm Z, vecto cảm ứng từ do dòng điện I gây ra có chiều và độ lớn bằng với vecto cảm ứng từ tại điểm Y",
+    "S"
+   ],
+   [
+    "c",
+    "Nếu tịnh tiến đoạn dây dẫn sang vị trí Y thì vecto cảm ứng từ tại điểm X do dòng điện I gây ra có chiều và độ lớn bằng với vecto cảm ứng từ tại điểm Y trước khi tịnh tiến.",
+    "S"
+   ],
+   [
+    "d",
+    "Nếu bố trí thêm một dây dẫn thứ hai song song với dây dẫn đã cho, đi qua điểm Y và mang dòng điện $I'$ cùng chiều với I thì vecto cảm ứng từ tại điểm Z có chiều như cũ nhưng độ lớn tăng lên",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 2,
+  "flags": [],
+  "stem": "Một doạn dây dẫn MN có khối lượng m, độ dài L, mang dòng điện I, được giữ lơ lửng trong một mặt phẳng nằm ngang nhờ một từ trường đều có các đường sức từ hợp một góc $\\theta$ với đoạn dây và cũng nằm trong mặt phẳng ngang như hình dưới đây",
+  "statements": [
+   [
+    "a",
+    "Dòng điện qua đoạn dây có chiều từ M sang N.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Cường độ dòng điện qua đoạn dây là $I=\\frac{mg}{B\\cdot L\\cdot sin\\theta}$",
+    "Đ"
+   ],
+   [
+    "c",
+    "Khi đoạn dây quay tròn trong mặt phẳng nằm ngang thì lực từ tác dụng lên nó có độ lớn không đổi.",
+    "S"
+   ],
+   [
+    "d",
+    "Nếu đồng thời đổi chiều của các đường sức từ và chiều dòng điện thì lực từ tác dụng lên đoạn dây vẫn có chiều như cũ.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 3,
+  "flags": [],
+  "stem": "Theo lí thuyết cổ điển, mô hình nguyên tử hydrogen gồm electron quay quanh hạt nhân trên quỹ đạo tròn có bán kính $5,3\\cdot10^{-11} m$ với tốc độ $ v$",
+  "statements": [
+   [
+    "a",
+    "Sự chuyển động của electron quanh hạt nhân tạo nên dòng điện tròn",
+    "Đ"
+   ],
+   [
+    "b",
+    "Tốc độ của electron không phụ thuộc vào chuyển động nhiệt của nguyên tử hydrogen.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Chiều của vecto cảm ứng từ do dòng điện này tạo ra tại tâm của nguyên tử được biểu diễn như hình bên.",
+    "S"
+   ],
+   [
+    "d",
+    "Độ lớn cảm ứng từ do dòng điện này gây ra tịa vị trí hạt nhân có giá trị không đổi.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 4,
+  "flags": [],
+  "stem": "Để làm tăng từ trường của nam châm điện ta cần",
+  "statements": [
+   [
+    "a",
+    "Tăng cường độ dòng điện của nó",
+    "Đ"
+   ],
+   [
+    "b",
+    "Đảo ngược chiều dòng điện trong nó",
+    "S"
+   ],
+   [
+    "c",
+    "Thay lõi sắt của nó bằng lõi nhôm",
+    "S"
+   ],
+   [
+    "d",
+    "Giữ nguyên cường độ dòng điện, tăng số vòng dây của nó.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "lech-to-vang-b",
+   "lech-to-vang-d",
+   "thieu-dap-an-a",
+   "thieu-dap-an-b",
+   "thieu-dap-an-c",
+   "thieu-dap-an-d"
+  ],
+  "stem": "Hai dây thẳng dài nằm song song với nhau và cách nhau một đoạn 4,00 cm như hình vẽ. Điểm M cách dây có dòng điện $I_{2}$ một đoạn là 4,00 cm. Dòng điện trong hai dây này có cùng cường độ là 5,00 A, nhưng ngược chiều nhau. Biết độ lớn cảm ứng từ do một dây dẫn thẳng dài mang dòng điện I tạo ra ở vị trí cách trục dây dẫn một khoảng r là $ B=2,0\\cdot10^{-7}\\cdot\\left( \\frac{I}{r} \\right)$, với B tính bằng tesla (T), r tính bằng mét (m) và I tính bằng ampe (A)",
+  "statements": [
+   [
+    "a",
+    "Cảm ứng từ do dòng điện $I_{2}$ gây ra tại M có chiều hướng sang trái",
+    "?"
+   ],
+   [
+    "b",
+    "Cảm ứng từ do đòng điện $I_{1}$ gây ra tại M có độ lớn $1,25\\cdot10^{-5} T$",
+    "?"
+   ],
+   [
+    "c",
+    "Cảm ứng từ do dòng điện $I_{1}$ gây ra tại M có chiều hướng sang phải.",
+    "?"
+   ],
+   [
+    "d",
+    "Cảm ứng từ do cả hai dòng điện gây ra tại M có độ lớn là $1,25\\cdot10^{-5} T$",
+    "?"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 6,
+  "flags": [
+   "lech-to-vang-c",
+   "lech-to-vang-d",
+   "thieu-dap-an-a",
+   "thieu-dap-an-b",
+   "thieu-dap-an-c",
+   "thieu-dap-an-d"
+  ],
+  "stem": "Hai dây dẫn thẳng song song dài vô hạn và đồng phẳng cách nhau 10 cm đặt trong không khí. Dòng điện chạy trong 2 dây dẫn ngược chiều nhau và có cường độ $I_{1}=10 A$, $ I_{2}=20 A$. Biết độ lớn cảm ứng từ do một dây dẫn thẳng dài mang dòng điện I tạo ra ở vị trí cách trục dây dẫn một khoảng r là $ B=2,0\\cdot10^{-7}\\cdot\\left( \\frac{I}{r} \\right)$, với B tính bằng tesla (T), r tính bằng mét (m) và I tính bằng ampe (A)",
+  "statements": [
+   [
+    "a",
+    "Vecto cảm ứng từ do hai dòng điện $I_{1}$ và $ I_{2}$ ngược chiều nhau",
+    "?"
+   ],
+   [
+    "b",
+    "Độ lớn cảm ứng từ do dòng điện $I_{1}$ gây ra tại điểm M cách đó 5 cm là $2\\cdot10^{-5} T$",
+    "?"
+   ],
+   [
+    "c",
+    "Lực tương tác giữa hai dây dẫn là lực đẩy",
+    "?"
+   ],
+   [
+    "d",
+    "Độ lớn lực tương tác giữa hai dây dẫn là $4\\cdot10^{-4} N$",
+    "?"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 7,
+  "flags": [
+   "lech-to-vang-c",
+   "lech-to-vang-d",
+   "thieu-dap-an-b",
+   "thieu-dap-an-c",
+   "thieu-dap-an-d"
+  ],
+  "stem": "Hai dây dẫn thẳng, rất dài, đặt song song, cách nhau 20 cm trong không khí, có hai dòng điện ngược chiều nhau. Cường độ dòng điện chạy qua mỗi dây $I_{1}=I_{2}=12 A$. Gọi M là một điểm cách dây mang dòng điện $ I_{1}$ 16 cm và cách dây mang dòng $ I_{2}$ 12 cm. Biết độ lớn cảm ứng từ do một dây dẫn thẳng dài mang dòng điện I tạo ra ở vị trí cách trục dây dẫn một khoảng r là $ B=2,0\\cdot10^{-7}\\cdot\\left( \\frac{I}{r} \\right)$, với B tính bằng tesla (T), r tính bằng mét (m) và I tính bằng ampe (A)",
+  "statements": [
+   [
+    "a",
+    "Vecto cảm ứng từ $B_{1}$ và $ B_{2}$ do dòng điện $ I_{1}$ và $ I_{2}$ gây ra tại M có phương vuông góc với nhau",
+    "Đ"
+   ],
+   [
+    "b",
+    "Lực tương tác giữa hai dòng điện là lực hút",
+    "?"
+   ],
+   [
+    "c",
+    "Độ lớn vecto cảm ứng từ tại M do dòng điện $I_{1}$ và $ I_{2}$ gây ra lần lượt là $1,5\\cdot10^{-5} T$ và $2\\cdot10^{-5} T$",
+    "?"
+   ],
+   [
+    "d",
+    "Cảm ứng từ tổng hợp tại M có độ lớn là $2,5\\cdot10^{-5} T$",
+    "?"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 8,
+  "flags": [
+   "lech-to-vang-a",
+   "lech-to-vang-c",
+   "lech-to-vang-d",
+   "thieu-dap-an-a",
+   "thieu-dap-an-b",
+   "thieu-dap-an-c",
+   "thieu-dap-an-d"
+  ],
+  "stem": "Thiếp lập một thí nghiệm như hình vẽ, khung dây gồm 100 vòng, cạnh $a=5 cm$. Cho dòng điện $ I=5A$chạy qua khung dây. Trong các phát biểu sau đây, phát biểu nào là **đúng**, phát biểu nào là **sai**?",
+  "statements": [
+   [
+    "a",
+    "Các lực tác dụng vào khung dây gồm: Trọng lực $P$ của khung dây, lực từ $ F$ tác dụng vào cạnh dưới của khung.",
+    "?"
+   ],
+   [
+    "b",
+    "Lực từ $F$ tác dụng vào cạnh dưới của khung hướng thẳng đứng xuống dưới",
+    "?"
+   ],
+   [
+    "c",
+    "Điều kiện để cân thằng bằng là: $m_{1}\\cdot g=P-N\\cdot I\\cdot B\\cdot\\ell$",
+    "?"
+   ],
+   [
+    "d",
+    "Nếu xoay nam châm $180^{0}$ để đổi chiều từ trường thì phải thêm vào đĩa cân bên kia một quả cân có khối lượng 200 g thì cân mới thăng bằng. Độ lớn cảm ứng từ của nam châm bằng 0,04 T.",
+    "?"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 9,
+  "flags": [],
+  "stem": "Một đoạn dây dẫn nằm ngang được giữ cố định ở vùng từ trường đều trong khoảng không gian giữa hai cực của nam châm. Nam châm này được đặt trên một cái cân, phần nằm trong từ trường của đoạn dây dẫn có chiều dài là 1,0 cm. Khi không có dòng điện chạy trong đoạn dây, số chỉ của cân là 500,68 g. Khi có dòng điện cường độ 0,34 A chạy trong đoạn dây, số chỉ của cân là 500,12 g. Lấy $g=9,8 m/s^{2}$\n\nTrong các phát biểu sau đây, phát biểu nào là\\` **đúng**, phát biểu nào là **sai**?",
+  "statements": [
+   [
+    "a",
+    "Số chỉ của cân giảm đi chứng tỏ có một lực tác dụng vào cân theo chiều thẳng đứng lên trên.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Lực tác dụng làm cho số chỉ của cân giảm là lực từ tác dụng lên đoạn dây và có chiều hướng lên.",
+    "S"
+   ],
+   [
+    "c",
+    "Dòng điện trong dây có chiều từ trái sang phải.",
+    "S"
+   ],
+   [
+    "d",
+    "Độ lớn cảm ứng từ giữa các cực của nam châm là 0,16 T.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 10,
+  "flags": [
+   "lech-to-vang-b",
+   "lech-to-vang-d",
+   "thieu-dap-an-a",
+   "thieu-dap-an-b",
+   "thieu-dap-an-c",
+   "thieu-dap-an-d"
+  ],
+  "stem": "Bố trí thí nghiệm xác định độ lớn cảm ứng từ của nam châm bằng phương pháp \"cân dòng điện\" như hình vẽ. Đặt nam châm này lên một cái cân và hiệu chỉnh cân về số 0. Đoạn dây dẫn nằm trong từ trường của nam châm có chiều dài 3 cm. Cho dòng điện có cường độ 0,45A chạy qua dây dẫn. Lấy $g=10 m/s^{2}$",
+  "statements": [
+   [
+    "a",
+    "Nếu cho dòng điện qua theo chiều từ M đến N, số chỉ của cân tăng lên",
+    "?"
+   ],
+   [
+    "b",
+    "Số chỉ của cân tăng lên chứng tỏ có một lực tác dụng vào cân hướng thẳng đứng xuống dưới",
+    "?"
+   ],
+   [
+    "c",
+    "Trọng lực của nam châm là nguyên nhân làm số chỉ của cân tăng",
+    "?"
+   ],
+   [
+    "d",
+    "Nếu cân chỉ 0,34 gam thì độ lớn cảm ứng từ của nam châm bằng $0,25 T$",
+    "?"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 11,
+  "flags": [
+   "co-hinh",
+   "khong-du-a-d"
+  ],
+  "stem": "Đoạn dây AB có chiều dài $L=20 cm$ khối lượng $m=10 g$ được treo nằm ngang trong một từ trường đều có vecto cảm ứng từ thẳng đứng. Hai dây treo thẳng đứng, mảnh và nhẹ, chiều dài mỗi dây $\\ell=40 cm$. Cho dòng điện $ I=2A$ qua dây AB thì dây bị lệch sang một bên và khi cân bằng khi dây treo lệch góc $30^{0}$ so với phương thẳng đứng. Bỏ qua mọi ma sát và lực cản.\n\n**a)** Các lực tác dụng lên đoạn dây AB gồm: Trọng lực của đoạn dây $P$, lực từ $ F$\n\n**b)** ⟦U⟧  Đoạn dây AB cân bằng nên: $P+F+2T=0$\n\n**c)** ⟦U⟧  Độ lớn cảm ứng từ bằng 0,14 T\n\n![](media/media/image956.png){width=\"1.2173611111111111in\" height=\"1.4013888888888888in\"}**d)** Lực căng của mỗi sợi dây có độ lớn bằng $\\frac{\\sqrt{3}}{15} \\left( N \\right)$",
+  "statements": [],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/media/image956.png"
+  ]
+ }
+]

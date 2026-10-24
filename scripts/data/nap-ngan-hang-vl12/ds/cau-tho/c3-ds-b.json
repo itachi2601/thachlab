@@ -1,0 +1,162 @@
+[
+ {
+  "file": "c3-ds-b",
+  "part": "tf",
+  "num": 1,
+  "flags": [],
+  "stem": "Một dây dẫn thẳng dài, mang dòng điện I được bố trí xuyên qua một tấm giấy bìa tại điểm X như hình bên.",
+  "statements": [
+   [
+    "a",
+    "Vecto cảm ứng từ $B$ do dòng điện I gây ra tại điểm Y có chiều như hình vẽ",
+    "Đ"
+   ],
+   [
+    "b",
+    "Tại điểm Z, vecto cảm ứng từ do dòng điện I gây ra có chiều và độ lớn bằng với vecto cảm ứng từ tại điểm Y",
+    "S"
+   ],
+   [
+    "c",
+    "Nếu tịnh tiến đoạn dây dẫn sang vị trí Y thì vecto cảm ứng từ tại điểm X do dòng điện I gây ra có chiều và độ lớn bằng với vecto cảm ứng từ tại điểm Y trước khi tịnh tiến.",
+    "S"
+   ],
+   [
+    "d",
+    "Nếu bố trí thêm một dây dẫn thứ hai song song với dây dẫn đã cho, đi qua điểm Y và mang dòng điện $I'$ cùng chiều với I thì vecto cảm ứng từ tại điểm Z có chiều như cũ nhưng độ lớn tăng lên",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-ds-b",
+  "part": "tf",
+  "num": 2,
+  "flags": [],
+  "stem": "Một doạn dây dẫn MN có khối lượng m, độ dài L, mang dòng điện I, được giữ lơ lửng trong một mặt phẳng nằm ngang nhờ một từ trường đều có các đường sức từ hợp một góc $\\theta$ với đoạn dây và cũng nằm trong mặt phẳng ngang như hình dưới đây",
+  "statements": [
+   [
+    "a",
+    "Dòng điện qua đoạn dây có chiều từ M sang N.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Cường độ dòng điện qua đoạn dây là $I=\\frac{mg}{B\\cdot L\\cdot sin\\theta}$",
+    "Đ"
+   ],
+   [
+    "c",
+    "Khi đoạn dây quay tròn trong mặt phẳng nằm ngang thì lực từ tác dụng lên nó có độ lớn không đổi.",
+    "S"
+   ],
+   [
+    "d",
+    "Nếu đồng thời đổi chiều của các đường sức từ và chiều dòng điện thì lực từ tác dụng lên đoạn dây vẫn có chiều như cũ.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-ds-b",
+  "part": "tf",
+  "num": 3,
+  "flags": [],
+  "stem": "Theo lí thuyết cổ điển, mô hình nguyên tử hydrogen gồm electron quay quanh hạt nhân trên quỹ đạo tròn có bán kính $5,3\\cdot10^{-11} m$ với tốc độ $ v$",
+  "statements": [
+   [
+    "a",
+    "Sự chuyển động của electron quanh hạt nhân tạo nên dòng điện tròn",
+    "Đ"
+   ],
+   [
+    "b",
+    "Tốc độ của electron không phụ thuộc vào chuyển động nhiệt của nguyên tử hydrogen.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Chiều của vecto cảm ứng từ do dòng điện này tạo ra tại tâm của nguyên tử được biểu diễn như hình bên.",
+    "S"
+   ],
+   [
+    "d",
+    "Độ lớn cảm ứng từ do dòng điện này gây ra tịa vị trí hạt nhân có giá trị không đổi.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-ds-b",
+  "part": "tf",
+  "num": 4,
+  "flags": [],
+  "stem": "Để làm tăng từ trường của nam châm điện ta cần",
+  "statements": [
+   [
+    "a",
+    "Tăng cường độ dòng điện của nó",
+    "Đ"
+   ],
+   [
+    "b",
+    "Đảo ngược chiều dòng điện trong nó",
+    "S"
+   ],
+   [
+    "c",
+    "Thay lõi sắt của nó bằng lõi nhôm",
+    "S"
+   ],
+   [
+    "d",
+    "Giữ nguyên cường độ dòng điện, tăng số vòng dây của nó.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3-ds-b",
+  "part": "tf",
+  "num": 9,
+  "flags": [],
+  "stem": "Một đoạn dây dẫn nằm ngang được giữ cố định ở vùng từ trường đều trong khoảng không gian giữa hai cực của nam châm. Nam châm này được đặt trên một cái cân, phần nằm trong từ trường của đoạn dây dẫn có chiều dài là 1,0 cm. Khi không có dòng điện chạy trong đoạn dây, số chỉ của cân là 500,68 g. Khi có dòng điện cường độ 0,34 A chạy trong đoạn dây, số chỉ của cân là 500,12 g. Lấy $g=9,8 m/s^{2}$\n\nTrong các phát biểu sau đây, phát biểu nào là\\` **đúng**, phát biểu nào là **sai**?",
+  "statements": [
+   [
+    "a",
+    "Số chỉ của cân giảm đi chứng tỏ có một lực tác dụng vào cân theo chiều thẳng đứng lên trên.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Lực tác dụng làm cho số chỉ của cân giảm là lực từ tác dụng lên đoạn dây và có chiều hướng lên.",
+    "S"
+   ],
+   [
+    "c",
+    "Dòng điện trong dây có chiều từ trái sang phải.",
+    "S"
+   ],
+   [
+    "d",
+    "Độ lớn cảm ứng từ giữa các cực của nam châm là 0,16 T.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ }
+]

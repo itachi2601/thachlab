@@ -1,0 +1,288 @@
+[
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "![](media/media/image1890.png){width=\"1.4652777777777777in\" height=\"1.0375in\"} Để tạo ra dòng điện xoay chiều, người ta cho một khung dây dẫn phẳng ABCD gồm 50 vòng dây, mỗi vòng dây có diện tích $S=100 cm^{2}$, quay đều với tốc độ $\\frac{3000}{\\pi}$ vòng/phút quang một trục vuông góc với các đường sức của một từ trường đều có cảm ứng từ $ B=0,2 T$ như hình bên.",
+  "statements": [
+   [
+    "a",
+    "Dòng điện được tạo ra theo hiện tượng cảm ứng điện từ",
+    "Đ"
+   ],
+   [
+    "b",
+    "Tại vị trí khung dây như hình vẽ, từ thông qua khung dây bằng 0",
+    "Đ"
+   ],
+   [
+    "c",
+    "Từ thông cực đại qua khung là 10 Wb.",
+    "S"
+   ],
+   [
+    "d",
+    "Suất điện động hiệu dụng trong khung dây là $5\\sqrt{2} V$",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/media/image1890.png"
+  ]
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "![](media/media/image1898.png){width=\"1.3972222222222221in\" height=\"1.4659722222222222in\"} Một khung dây dẫn phẳng có N vòng, diện tích mỗi vòng là S, có thể quay đều với tần số góc $\\omega$ quanh trục $\\Delta$ như hình. Biết tại thời điểm $ t=0$ thì góc $\\alpha=0^{0}$ và khung dây được nối với điện trở R thành mạch kín",
+  "statements": [
+   [
+    "a",
+    "Tần số dòng điện xoay chiều qua điện trở R là $f=\\frac{\\omega}{2\\pi}\\left( Hz \\right)$",
+    "Đ"
+   ],
+   [
+    "b",
+    "Suất điện động cảm ứng ở hai đầu khung dây có dạng là $e=\\omega NBScos\\left( \\omega t+\\frac{\\pi}{2} \\right)\\left( V \\right)$",
+    "S"
+   ],
+   [
+    "c",
+    "Cường độ dòng điện cực đại qua điện trở R là $I_{0}=\\frac{\\omega NBS}{R}\\left( A \\right)$",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ lệch pha giữa điện áp đặt vào hai đầu điện trở và cường độ dòng điện qua điện trở là 0 (rad)",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/media/image1898.png"
+  ]
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "![](media/media/image1907.png){width=\"2.720833333333333in\" height=\"1.6319444444444444in\"}Đồ thị bên dưới biểu diễn sự biến thiên của từ thông và suất điện động xoay chiều trong khung dây của một máy phát điện xoay chiều theo thời gian, trong đó T là chu kì biến thiên của chúng. Nhận định sau đây là **đúng** hay **sai**?",
+  "statements": [
+   [
+    "a",
+    "Pha ban đầu của từ thông bằng 0.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Pha ban đầu của suất điện động biểu diễn dưới dạng hàm sin là $\\frac{\\pi}{2}rad$.",
+    "S"
+   ],
+   [
+    "c",
+    "Độ lệch pha giữa suất điện động và từ thông có độ lớn là $\\frac{\\pi}{2}rad$.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Tại những thời điểm từ thông có trị số bằng 0 suất điện động có độ lớn cực đại.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/media/image1907.png"
+  ]
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một dòng điện xoay chiều có cường độ dòng điện biến thiên theo thời gian được biểu diễn như đồ thị hình bên.\n\n![](media/media/image1911.png){width=\"2.8630752405949256in\" height=\"1.6770833333333333in\"}",
+  "statements": [
+   [
+    "a",
+    "Giá trị hiệu dụng của cường độ dòng điện là $2\\sqrt{2} A$.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Pha ban đầu của cường độ dòng điện trong đoạn mạch là $\\frac{\\pi}{2} rad$.",
+    "S"
+   ],
+   [
+    "c",
+    "Trong 1 giây dòng điện đổi chiều 100 lần.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Khoảng thời gian ngắn nhất giữa hai lần liên tiếp cường độ dòng điện có độ lớn bằng cường độ hiệu dụng là 0,005 giây.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/media/image1911.png"
+  ]
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "co-hinh",
+   "khong-du-a-d"
+  ],
+  "stem": "Dòng điện xoay chiều chạy qua một đoạn mạch có cường độ biến đổi điều hoà theo thời gian được mô tả bằng đồ thị ở hình dưới đây.\n\n![](media/media/image1918.png){width=\"2.8856780402449695in\" height=\"1.6050612423447068in\"}\n\n**[a)** Cường độ dòng điện cực đại là $4 A$.\n\n**b)** ⟦U⟧  Tần số góc $\\omega=100\\pi rad/s.$\n\n**c)** Pha ban đầu của dòng điện là $\\varphi=\\frac{\\pi}{3} rad.$\n\n**[d)** Biểu thức cường độ dòng điện là $i=4cos\\left( 100\\pi t-\\frac{\\pi}{4} \\right)(A)$.",
+  "statements": [],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/media/image1918.png"
+  ]
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 6,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Dòng điện xoay chiều chạy qua một đoạn mạch có cường độ biến đổi điều hoà theo thời gian được mô tả bởi đồ thị ở hình dưới đây (thêm chỗ i ban đầu vô đồ thị)\n\n![](media/media/image1925.png){width=\"3.2226126421697288in\" height=\"1.7604166666666667in\"}",
+  "statements": [
+   [
+    "a",
+    "Trong 1 s, dòng điện đổi chiều 100 lần",
+    "Đ"
+   ],
+   [
+    "b",
+    "Cường độ dòng điện cực đại có giá trị $I_{0}= -4A$",
+    "S"
+   ],
+   [
+    "c",
+    "Biểu thức cường độ dòng điện là $i=4cos\\left( 100\\pi t-\\frac{\\pi}{6} \\right)\\left( A \\right)$",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ lớn cường độ dòng điện tức thời bằng cường độ dòng điện hiệu dụng lần thứ 2025 tại thời điểm $t=10,124\\left( s \\right)$",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/media/image1925.png"
+  ]
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 7,
+  "flags": [],
+  "stem": "Một máy phát điện xoay chiều được sử dụng để cấp điện cho hộ gia đình sử dụng. Biết rằng dòng điện xoay chiều cung cấp có biểu thức $i=5\\sqrt{2}cos\\left( 100\\pi t \\right)$ trong đó $i$ tính bằng ampe, $ t$tính bằng giây.",
+  "statements": [
+   [
+    "a",
+    "Tần số của dòng điện là $f=0,02 Hz.$",
+    "S"
+   ],
+   [
+    "b",
+    "Thời điểm ban đầu dòng điện có độ lớn $5 A.$",
+    "S"
+   ],
+   [
+    "c",
+    "Thời gian ngắn nhất để cường độ dòng điện giảm từ $5\\sqrt{2} \\left( A \\right)$ về $0\\left( A \\right)$ là $ t=0,005 s.$",
+    "Đ"
+   ],
+   [
+    "d",
+    "Trong một chu kì, khoảng thời gian để cường độ dòng điện có độ lớn không vượt quá $5\\left( A \\right)$ là $0,01\\left( s \\right)$",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 8,
+  "flags": [],
+  "stem": "Một đoạn mạch điện xoay chiều chỉ có điện trở thuần với giá trị 200 Ω. Đặt hiệu điện thế $u=100\\sqrt{2}cos\\left( 100\\pi t \\right)V$ vào hai đầu đoạn mạch trên thì:",
+  "statements": [
+   [
+    "a",
+    "hiệu điện thế đặt vào hai đầu đoạn mạch có giá trị hiệu dụng bằng 100 V.",
+    "Đ"
+   ],
+   [
+    "b",
+    "dòng điện chạy trong mạch có tần số 50 Hz.",
+    "Đ"
+   ],
+   [
+    "c",
+    "công suất toả nhiệt trên điện trở bằng 50 W.",
+    "Đ"
+   ],
+   [
+    "d",
+    "dòng điện chạy trong mạch có giá trị hiệu dụng bằng $\\frac{\\sqrt{2}}{2} A$.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c3ds",
+  "part": "tf",
+  "num": 9,
+  "flags": [
+   "co-hinh",
+   "khong-co-dap-an",
+   "khong-du-a-d"
+  ],
+  "stem": "Rotato của một máy phát điện xoay chiều gồm N vòng dây, mỗi vòng có diện tích S, điện trở của rotato là r. Rotato quay trong từ trường của stato có độ lớn cảm ứng từ là B với tần số không đổi f. Phát biểu nào sau đây **đúng**, phát biểu nào **sai**?\n\n**a)** Suất điện động cảm ứng trên khung dây do máy phát ra có tần số là 2f.\n\n**b)** ⟦U⟧  Suất điện động cảm ứng trên khung dây do máy phát ra có độ lớn cực đại là $E_{0} = \\omega NBS$.\n\n[c) Bỏ qua điện trở mạch ngoài, cường độ dòng điện do máy phát ra có độ lớn cực đại là $I_{0} = \\frac{\\omega NBS}{r}$\n\n**d)** ⟦U⟧  Nếu mạch ngoài có điện trở R cường độ dòng điện do máy phát ra có độ lớn cực đại là $I_{0} = \\frac{\\omega NBS}{R + r}$.\n\n**ỨNG DỤNG HIỆN TƯỢNG CẢM ỨNG ĐIỆN TỪ**\n\n![**BÀI 5**](media/media/image1.png){width=\"7.111541994750656in\" height=\"0.3791305774278215in\"}\n\n**I. LÝ THUYẾT**\n\n**1. Hãm chuyển động bằng điện từ**\n\n**1.1. Cơ sở lý thuyết**\n\n\\- Cho một đĩa kim loại (đồng hoặc nhôm) dao động trong từ trường của nam châm. Ta thấy tấm kim loại chỉ dao động trong khoảng thời gian ngắn rồi dừng lại\n\n![](media/media/image1955.png){width=\"2.4305555555555554in\" height=\"2.1666666666666665in\"}- Khi tấm kim loại dao động, nó cắt các đường sức từ của nam châm. Do đó trong tấm kim loại sinh ra dòng điện cảm ứng (dòng điện này gọi là dòng điện xoáy, hay còn gọi dòng Foucault)\n\n\\- Theo định luật Lenz, dòng cảm ứng trong tấm kim loại có tác dụng ngăn cản sự chuyển động của chính tấm kim loại đó. Vì vậy tấm kim loại dừng lại nhanh chóng\n\n\\- Thay tấm kim loại liền khối bằng tấm kim loại có rãnh, thì thấy tấm kim loại này dao động lâu hơn. Nguyên nhân do điện trở tấm kim loại này đối với dòng Foucault tăng, làm cho cường độ dòng Foucault giảm.\n\n**1.2. Một số ứng dụng dòng Foucault**\n\n***- Hãm dao động của kim cân:*** Khi cân một vật bằng cân có độ nhạy cao, kim cân thường dao động khá lâu. Để tránh tình trạng đó, người ta cho kim cân dao động giữa hai cực của một nam châm, dao động của kim cân sẽ tắt khá nhanh\n\n\\- ***Phanh điện từ:*** Sử dụng tác dụng hãm của dòng điện Foucault trong phanh điện từ ở các xe có tải trọng lớn, loại phanh này không tiếp xúc, hạn chế được sự mài mòn.\n\n***- Hãm đĩa kim loại trong công tơ điện:*** Khi ngắt dòng điện, mặc dù không còn momen quay tác dụng lên đĩa, nhưng đĩa vẫn tiếp tục quay vì quán tính. Khi đó dòng Foucault có tác dụng làm cho đĩa ngừng quay một cách nhanh chóng\n\n![](media/media/image1959.png)\n\n**2. Máy biến áp**\n\n**2.1. Cấu tạo**\n\n\\- Gồm hai cuộn dây có số vòng dây khác nhau quấn trên một lõi kín (thường làm bằng các lá sắt hoặc thép pha silicon, ghép cách điện với nhau nhằm giảm hao phí điện năng do dòng Foucault). Các cuộn dây gồm nhiều vòng thường làm bằng đồng có phủ một lớp cách điện.\n\n![](media/media/image1958.png){width=\"3.1027405949256344in\" height=\"1.8958333333333333in\"}\n\n\\- Điện áp xoay chiều $u_{1}$ đặt vào hai đầu cuộn sơ cấp có giá trị thay đổi theo thời gian. Cuộn thứ cấp nối với tải tiêu thụ điện năng\n\n**2.2. Hoạt động của máy biến áp**\n\n\\- Máy biến áp hoạt động dựa trên hiện tượng cảm ứng điện từ.\n\n\\- Dòng điện xoay chiều chạy trong cuộn sơ cấp gây ra từ thông biến thiên qua cuộn thứ cấp, làm xuất hiện suất điện động xoay chiều trong cuộn thứ cấp\n\n+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+\n| $\\frac{U_{1}}{U_{2}}=\\frac{N_{1}}{N_{2}}$ | \\- $ U_{1}\\left( V \\right); U_{2}\\left( V \\right)$ là điện áp hiệu dụng giữa hai đầu cuộn sơ cấp và thứ cấp |\n|                                                                                        |                                                                                                                                                 |\n|                                                                                        | \\- $N_{1}, N_{2}$ là số vòng dây của cuộn sơ cấp và thứ cấp                                                                  |\n+========================================================================================+=================================================================================================================================================+\n\n![](media/media/image1963.png){width=\"2.033333333333333in\" height=\"2.1666666666666665in\"}**3. Đàn Guitar điện**\n\n\\- Bộ cảm ứng (pickup) của guitar điện gồm một cuộn dây và một nam châm vĩnh cửu, được đặt gần dây đàn guitar bằng kim loại có thể nhiễm từ.\n\n\\- Khi gảy đàn, đoạn dây gần nam châm bị nhiễm từ dao động và tạo ra sự biến thiên từ thông qua cuộn dây của bộ cảm ứng, từ đó tạo một suất điện động cảm ứng. Tín hiệu được đưa đến một bộ khuếch đại và loa, tạo ra sóng âm thanh chúng ta nghe được\n\n![](media/media/image1964.png){width=\"1.85625in\" height=\"1.4708333333333334in\"}**4. Mô hình sóng điện từ**\n\n**4.1. Điện trường biến thiên và từ trường biến thiên**\n\n\\- Thả nam châm rơi qua ống dây, từ thông qua các vòng dây dẫn biến thiên. Vì mạch kín, nên trong ống dây có dòng điện cảm ứng chứng tỏ trong dây dẫn đã xuất hiện điện trường\n\n![](media/media/image1965.png){width=\"1.6701388888888888in\" height=\"2.0083333333333333in\"}- Điện trường này có các đường sức điện là những đường cong kín gọi là điện trường xoáy.\n\n**- Kết luận:** Từ trường biến thiên theo thời gian làm xuất hiện điện trường xoáy\n\n\\- Khi một tụ điện đang tích điện hay phóng điện, giữa hai bản của tụ điện có một điện trường biến thiên, điện trường biến thiên này sinh ra một từ trường\n\n\\- Từ trường này có các đường sức từ là các đường cong kín\n\n**- Kết luận:** Điện trường biến thiên theo thời gian sẽ làm xuất hiện từ trường.\n\n![](media/media/image1966.png){width=\"5.1875645231846015in\" height=\"2.191372484689414in\"}\n\n\\- Trong vùng không gian có từ trường biến thiên theo thời gian thì trong vùng đó xuất hiện một điện trường xoáy; ngược lại, trong vùng không gian có điện trường biến thiên theo thời gian thì vùng đó xuất hiện một từ trường biến thiên theo thời gian.\n\n\\- Điện trường biến thiên và từ trường biến thiên theo thời gian chuyển hoá lẫn nhau và cùng tồn tại trong không gian, được gọi là điện từ trường.\n\n**4.2. Mô hình sóng điện từ**\n\n\\- Trường điện từ lan truyền trong không gian được gọi là sóng điện từ\n\n![](media/media/image1967.png){width=\"6.52830271216098in\" height=\"1.747458442694663in\"}\n\n\\- Tại một điểm, cường đọ điện trường và cảm ứng từ biến thiên cùng pha theo các phương vuông góc với nhau và vuông góc với phương truyền sóng\n\n![](media/media/image1968.png){width=\"3.9722856517935257in\" height=\"2.3965529308836397in\"}\n\n**II. BÀI TẬP**",
+  "statements": [],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "media/media/image1.png",
+   "media/media/image1955.png",
+   "media/media/image1959.png",
+   "media/media/image1958.png",
+   "media/media/image1963.png",
+   "media/media/image1964.png",
+   "media/media/image1965.png",
+   "media/media/image1966.png",
+   "media/media/image1967.png",
+   "media/media/image1968.png"
+  ]
+ }
+]
