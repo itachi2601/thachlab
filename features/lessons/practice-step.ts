@@ -164,7 +164,7 @@ export function isFullyCorrect(q: ExamQuestion, r: QuestionResponse): boolean {
 const LETTERS = ["A", "B", "C", "D"];
 
 /** Câu cùng chủ đề (nhãn `topic`) cùng mức, chưa dùng trong phiên — từ ngân hàng của mục luyện tập. */
-export function similarCandidates<T extends { question: ExamQuestionPublic; examId: number; sourceIndex: number }>(
+export function similarCandidates<T extends { question: ExamQuestionPublic; examId: number; sourceIndex: number; bankId?: number | null }>(
   bank: T[],
   from: ExamQuestionPublic,
   usedKeys: Set<string>,
@@ -181,8 +181,8 @@ export function similarCandidates<T extends { question: ExamQuestionPublic; exam
   );
 }
 
-export function pickKey(p: { examId: number; sourceIndex: number }): string {
-  return `${p.examId}:${p.sourceIndex}`;
+export function pickKey(p: { examId: number; sourceIndex: number; bankId?: number | null }): string {
+  return p.bankId != null ? `bank:${p.bankId}` : `${p.examId}:${p.sourceIndex}`;
 }
 
 // ---------- Ghi chú lý do chọn sai ----------

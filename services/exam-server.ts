@@ -3,6 +3,7 @@ import type {
   Exam,
   ExamForTaking,
   ExamQuestion,
+  ExamQuestionPublic,
   ExamSubmitResult,
   PracticeAnswerCheck,
   QuestionResponse,
@@ -87,6 +88,46 @@ export async function checkPracticeAnswer(
   });
   if (error) throw error;
   return data as unknown as PracticeAnswerCheck;
+}
+
+/** Câu ngân hàng trong kho luyện tập của bài (lesson_practice_pool): đã lược đáp án, đi kèm id ngân hàng + chủ đề. */
+export interface BankPoolItem {
+  bank_id: number;
+  topic_id: number | null;
+  topic_name: string;
+  form: string;
+  difficulty: string;
+  question: ExamQuestionPublic;
+}
+
+/** Kho câu ngân hàng của bài, bốc ngẫu nhiên tối đa perLevel câu mỗi mức. Lỗi (chưa có RPC, không đủ quyền…) → ném, nơi gọi tự lùi về chỉ dùng đề. */
+export async function fetchLessonPracticePool(lessonId: number, perLevel = 40): Promise<BankPoolItem[]> {
+  const { data, error } = await getSupabase().rpc("lesson_practice_pool", {
+    p_lesson_id: lessonId,
+    p_per_level: perLevel,
+  });
+  if (error) throw error;
+  return ((data as { items?: BankPoolItem[] } | null)?.items ?? []) as BankPoolItem[];
+}
+
+/** Luyện tập câu ngân hàng: chấm đúng 1 câu ở server, trả đáp án + lời giải (cùng dạng checkPracticeAnswer). */
+export async function checkBankPracticeAnswer(bankId: number, response: QuestionResponse): Promise<PracticeAnswerCheck> {
+  const { data, error } = await getSupabase().rpc("check_bank_practice_answer", {
+    p_bank_id: bankId,
+    p_response: response,
+  });
+  if (error) throw error;
+  return data as unknown as PracticeAnswerCheck;
+}
+
+/** Chấm 1 câu của phiên luyện: câu ngân hàng (bankId) đi RPC ngân hàng, còn lại đi RPC theo đề. */
+export function checkPick(
+  pick: { examId: number; sourceIndex: number; bankId?: number | null },
+  response: QuestionResponse,
+): Promise<PracticeAnswerCheck> {
+  return pick.bankId != null
+    ? checkBankPracticeAnswer(pick.bankId, response)
+    : checkPracticeAnswer(pick.examId, pick.sourceIndex, response);
 }
 
 /** Giá trị "chưa trả lời" hợp lệ để gửi cho check_practice_answer (RPC từ chối null) — chấm ra 0 điểm, vẫn trả đáp án. */

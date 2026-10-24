@@ -6,7 +6,7 @@ import QuestionCard from "@/components/exams/QuestionCard";
 import Html from "@/components/exams/ContentHtml";
 import { emptyResponses, isAnswered, type ExamQuestion, type QuestionResponse } from "@/features/exams/types";
 import { distractorHints, pickKey, similarCandidates, WEAK_TOPIC_MIN } from "@/features/lessons/practice-step";
-import { checkPracticeAnswer } from "@/services/exam-server";
+import { checkPick } from "@/services/exam-server";
 import type { GradedPick, PracticePick } from "@/services/lessons";
 
 /** Kết quả LẦN ĐẦU của một câu — thứ duy nhất được lưu vào practice_question_results. */
@@ -89,7 +89,7 @@ export default function PracticeStepView({
     setCheckError("");
     let res;
     try {
-      res = await checkPracticeAnswer(slot.pick.examId, slot.pick.sourceIndex, response);
+      res = await checkPick(slot.pick, response);
     } catch {
       // Mất mạng / câu thuộc đề kiểm tra chưa nộp (server không đưa đáp án): giữ nguyên đáp án em đã chọn.
       setCheckError("Chưa kiểm tra được câu này. Kiểm tra mạng rồi bấm Kiểm tra lại, hoặc bỏ qua câu này.");

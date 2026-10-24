@@ -19,6 +19,7 @@ import {
 } from "@/features/exams/types";
 import { pendingCount } from "@/lib/offline-queue";
 import { markFirstPracticeDone } from "@/lib/pwa-install";
+import { fetchLessonPracticePool } from "@/services/exam-server";
 import { fetchExamsForPractice, gradePracticePicks, savePracticeSession, type GradedPick, type PracticePick } from "@/services/lessons";
 import {
   hasLabelledQuestions,
@@ -30,7 +31,7 @@ import {
   writeLadderLevel,
   type LadderLevel,
 } from "@/features/lessons/practice-ladder";
-import { arrangeForMotivation, pickAndArrange, pickByMix } from "@/features/lessons/practice-arrange";
+import { arrangeForMotivation, pickByMix } from "@/features/lessons/practice-arrange";
 import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
   dueQuestionHashes,
@@ -119,6 +120,8 @@ function PracticeDoneView(props: ComponentProps<typeof PracticeDoneViewLazy>) {
 type Phase = "setup" | "running" | "step" | "grading" | "done";
 
 const COUNT_CHOICES = [10, 20, 30, 50];
+/** Tỉ lệ câu lấy từ kho ngân hàng theo chủ đề của bài (phần còn lại lấy từ đề gắn bài). */
+const POOL_SHARE = 0.4;
 const DEFAULT_COUNT = 20;
 
 /**
@@ -151,7 +154,9 @@ export default function PracticeSession({
   recordProgress?: boolean;
 }) {
   const { session } = useAuth();
-  const [bank, setBank] = useState<PracticePick[]>([]);
+  const [examBank, setExamBank] = useState<PracticePick[]>([]);
+  // Kho câu ngân hàng theo chủ đề của bài (lesson_practice_pool) — phần ~40% của phiên; rỗng nếu RPC lỗi/chưa có.
+  const [poolBank, setPoolBank] = useState<PracticePick[]>([]);
   const [bankState, setBankState] = useState<"loading" | "loaded" | "error">("loading");
   const [count, setCount] = useState(DEFAULT_COUNT);
   const [phase, setPhase] = useState<Phase>("setup");
@@ -182,14 +187,19 @@ export default function PracticeSession({
   const clientTokenRef = useRef<string>("");
   const timedOutRef = useRef(false);
 
+  const authUserId = session?.user.id;
   useEffect(() => {
     const allIds = [...new Set([...examIds, ...(poolExamIds ?? [])])];
-    if (!session || allIds.length === 0) return;
+    if (!authUserId || allIds.length === 0) return;
     let alive = true;
     void (async () => {
       setBankState("loading");
       try {
-        const metas = await fetchExamsForPractice(allIds);
+        // Song song với đề: kho ngân hàng chỉ bổ sung nên lỗi thì lặng lẽ chỉ dùng đề (không thêm round-trip nối tiếp).
+        const [metas, pool] = await Promise.all([
+          fetchExamsForPractice(allIds),
+          lessonId != null ? fetchLessonPracticePool(lessonId).catch(() => []) : Promise.resolve([]),
+        ]);
         if (!alive) return;
         const flat: PracticePick[] = [];
         const seen = new Set<string>();
@@ -207,9 +217,19 @@ export default function PracticeSession({
             flat.push({ question, examId: exam.id, sourceIndex: qi });
           });
         }
-        setBank(flat);
+        const extra: PracticePick[] = [];
+        for (const it of pool) {
+          const question = it.question.topic ? it.question : { ...it.question, topic: it.topic_name };
+          if (question.type === "essay" || dependsOnOtherQuestion(question)) continue;
+          const key = questionKey(question);
+          if (seen.has(key)) continue;
+          seen.add(key);
+          extra.push({ question, examId: 0, sourceIndex: 0, bankId: it.bank_id });
+        }
+        setExamBank(flat);
+        setPoolBank(extra);
         setBankState("loaded");
-        setCount((c) => Math.min(c, flat.length) || Math.min(DEFAULT_COUNT, flat.length));
+        setCount((c) => Math.min(c, flat.length + extra.length) || Math.min(DEFAULT_COUNT, flat.length + extra.length));
       } catch {
         if (alive) setBankState("error");
       }
@@ -217,7 +237,10 @@ export default function PracticeSession({
     return () => {
       alive = false;
     };
-  }, [examIds, poolExamIds, session]);
+  }, [examIds, poolExamIds, authUserId, lessonId]);
+
+  // Toàn bộ câu có thể bốc (đề + kho) — màn chọn số câu, thang độ khó và câu tương tự dùng chung.
+  const bank = useMemo(() => [...examBank, ...poolBank], [examBank, poolBank]);
 
   const ladderScope = itemId ?? lessonId;
   const studentId = session?.user.id;
@@ -354,30 +377,32 @@ export default function PracticeSession({
 
   function start() {
     if (bank.length === 0) return;
-    let chosen: PracticePick[];
-    if (mode === "step") {
-      // Giãn cách: ưu tiên (tối đa ~40% phiên) các câu em từng làm sai đã tới hạn ôn (2 ngày → 1 tuần → 1 tháng).
+    // ~60% từ đề của bài, ~40% từ kho ngân hàng; bên nào thiếu thì bên kia bù (kho rỗng ⇒ như cũ 100% đề).
+    const poolCount = Math.min(poolBank.length, Math.max(count - examBank.length, Math.round(count * POOL_SHARE)));
+    const examCount = Math.min(examBank.length, count - poolCount);
+    const pickPart = (src: PracticePick[], n: number): PracticePick[] => {
+      if (n <= 0 || src.length === 0) return [];
+      if (mode !== "step") return ladderOn ? pickForLevel(src, level, n) : pickByMix(src, n, "mid");
+      // Giãn cách: ưu tiên (tối đa ~40% phần) các câu em từng làm sai đã tới hạn ôn (2 ngày → 1 tuần → 1 tháng).
       const due = studentId ? dueQuestionHashes(studentId, Date.now()) : new Set<string>();
-      const dueBank = bank.filter((p) => due.has(questionHash(p.question)));
-      const duePicked = pickRandom(dueBank, Math.min(dueBank.length, Math.max(1, Math.ceil(count * 0.4))));
+      const dueBank = src.filter((p) => due.has(questionHash(p.question)));
+      const duePicked = pickRandom(dueBank, Math.min(dueBank.length, Math.max(1, Math.ceil(n * 0.4))));
       const dueKeys = new Set(duePicked.map(pickKey));
-      const afterDue = bank.filter((p) => !dueKeys.has(pickKey(p)));
-      // Chủ đề em hay sai: dành tối đa ~30% phiên để phần cần phụ đạo chắc chắn xuất hiện.
+      const afterDue = src.filter((p) => !dueKeys.has(pickKey(p)));
+      // Chủ đề em hay sai: dành tối đa ~30% phần để phần cần phụ đạo chắc chắn xuất hiện.
       const weak = studentId ? weakTopicSet(studentId) : new Set<string>();
       const weakBank = afterDue.filter((p) => weak.has((p.question.topic ?? "").trim()));
       const weakPicked = pickRandom(
         weakBank,
-        Math.min(weakBank.length, Math.ceil(count * WEAK_TOPIC_SHARE), Math.max(0, count - duePicked.length)),
+        Math.min(weakBank.length, Math.ceil(n * WEAK_TOPIC_SHARE), Math.max(0, n - duePicked.length)),
       );
       const takenKeys = new Set([...dueKeys, ...weakPicked.map(pickKey)]);
-      const restBank = bank.filter((p) => !takenKeys.has(pickKey(p)));
-      const need = Math.max(0, count - duePicked.length - weakPicked.length);
+      const restBank = src.filter((p) => !takenKeys.has(pickKey(p)));
+      const need = Math.max(0, n - duePicked.length - weakPicked.length);
       const rest = ladderOn ? pickForLevel(restBank, level, need) : pickByMix(restBank, need, "mid");
-      const all = [...duePicked, ...weakPicked, ...rest];
-      chosen = arrangeForMotivation(all);
-    } else {
-      chosen = ladderOn ? arrangeForMotivation(pickForLevel(bank, level, count)) : pickAndArrange(bank, count, "mid");
-    }
+      return [...duePicked, ...weakPicked, ...rest];
+    };
+    const chosen = arrangeForMotivation([...pickPart(examBank, examCount), ...pickPart(poolBank, poolCount)]);
     sessionLevelRef.current = ladderOn ? level : null;
     setLadderNote(null);
     const blanks = emptyResponses(chosen.map((p) => p.question));

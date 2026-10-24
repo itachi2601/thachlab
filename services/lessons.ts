@@ -12,7 +12,7 @@ import {
   gradeQuestion,
 } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
-import { checkPracticeAnswer, fetchExamReviews, fetchExamsForTaking, unansweredSentinel } from "@/services/exam-server";
+import { checkPick, fetchExamReviews, fetchExamsForTaking, unansweredSentinel } from "@/services/exam-server";
 import {
   enqueue,
   flushQueue,
@@ -440,8 +440,10 @@ export async function fetchMyLatestMistakes(userId: string): Promise<MistakeRevi
 /** Câu bốc vào phiên luyện: đang làm thì là bản lược đáp án; chấm xong (server) thì thay bằng câu đủ đáp án. */
 export interface PracticePick {
   question: ExamQuestionPublic;
+  /** Câu lấy từ kho ngân hàng (lesson_practice_pool) thì examId = 0, sourceIndex = 0 và bankId là id question_bank. */
   examId: number;
   sourceIndex: number;
+  bankId?: number | null;
 }
 
 /** PracticePick đã được server chấm: câu đã đủ đáp án + lời giải (nguồn của màn xem lại và của dòng kết quả). */
@@ -462,7 +464,7 @@ export async function gradePracticePicks(picks: PracticePick[], responses: Quest
       const i = next++;
       const p = picks[i];
       const r = responses[i];
-      const res = await checkPracticeAnswer(p.examId, p.sourceIndex, r == null ? unansweredSentinel(p.question) : r);
+      const res = await checkPick(p, r == null ? unansweredSentinel(p.question) : r);
       out[i] = { ...p, question: res.question };
     }
   }
@@ -499,8 +501,11 @@ export interface PracticeQueuePayload {
   occurredAt?: string;
   rows: {
     question_index: number;
-    exam_id: number;
+    /** null với câu ngân hàng (không thuộc đề nào). */
+    exam_id: number | null;
     source_index: number;
+    /** question_bank.id của câu ngân hàng; không có thì bỏ khỏi payload (cột mới, migration 20261024200000). */
+    bank_id?: number;
     topic_name: string;
     form: string;
     qtype: string;
@@ -515,8 +520,9 @@ function toPracticePayload(input: PracticeSessionInput): PracticeQueuePayload {
   const questions = input.picks.map((p) => p.question);
   const rows = buildQuestionResults(questions, input.responses).map((r, i) => ({
     question_index: r.question_index,
-    exam_id: input.picks[i].examId,
+    exam_id: input.picks[i].bankId != null ? null : input.picks[i].examId,
     source_index: input.picks[i].sourceIndex,
+    ...(input.picks[i].bankId != null ? { bank_id: input.picks[i].bankId as number } : {}),
     topic_name: r.topic_name,
     form: r.form,
     qtype: r.qtype,
@@ -603,6 +609,7 @@ async function sendPracticePayload(p: PracticeQueuePayload): Promise<SendResult>
       student_id: p.studentId,
       exam_id: r.exam_id,
       source_index: r.source_index,
+      ...(r.bank_id != null ? { bank_id: r.bank_id } : {}),
       topic_id: r.topic_name ? (idByName.get(r.topic_name) ?? null) : null,
       topic_name: r.topic_name,
       form: r.form,
