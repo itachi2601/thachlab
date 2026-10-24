@@ -242,7 +242,7 @@ as $$
   select jsonb_build_object(
       'id', e.id, 'title', e.title, 'duration_minutes', e.duration_minutes, 'published', e.published,
       'pass_score', e.pass_score, 'question_count', e.question_count, 'cnc_key', e.cnc_key,
-      'full', x.full_access,
+      'full', x.full_access, 'is_assessment', public.exam_is_assessment(e.id),
       'questions', case when x.full_access then coalesce(e.questions, '[]'::jsonb) else (
         select coalesce(jsonb_agg(public.exam_q_public(q.v) order by q.i), '[]'::jsonb)
         from jsonb_array_elements(case when jsonb_typeof(e.questions) = 'array' then e.questions else '[]'::jsonb end)

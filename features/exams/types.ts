@@ -179,6 +179,8 @@ export interface ExamForTaking {
   cnc_key?: string | null;
   /** true: người xem là staff được xem đáp án — questions là bản đầy đủ (đề làm thử/xem đáp án). */
   full: boolean;
+  /** Đề kiểm tra/BTVN/định kỳ (exam_is_assessment) — không đưa vào pool luyện tập/phụ đạo của học sinh. */
+  is_assessment?: boolean;
   questions: ExamQuestionPublic[];
 }
 

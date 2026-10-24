@@ -250,14 +250,15 @@ export async function fetchExamMetas(examIds: number[]): Promise<Map<number, Les
 /**
  * Đề kèm câu hỏi ĐÃ LƯỢC ĐÁP ÁN — dùng cho Luyện tập / Bài tập mẫu / phụ đạo (P0 #1, 24/10/2026).
  * Đáp án + lời giải của từng câu lấy sau khi em trả lời, qua RPC check_practice_answer (services/exam-server.ts).
- * Đề ẩn (published = false) không trả về.
+ * Đề ẩn (published = false) và đề đánh giá (kiểm tra/BTVN/định kỳ) không trả về cho học sinh.
  */
 export async function fetchExamsForPractice(examIds: number[]): Promise<Map<number, ExamForTaking>> {
   const out = new Map<number, ExamForTaking>();
   const ids = [...new Set(examIds)];
   for (let i = 0; i < ids.length; i += 200) {
     for (const e of await fetchExamsForTaking(ids.slice(i, i + 200))) {
-      if (e.published) out.set(e.id, e);
+      // Đề đánh giá không vào pool luyện tập của HS (check_practice_answer từ chối đến khi đủ 3 lượt/đạt điểm).
+      if (e.published && !(e.is_assessment && !e.full)) out.set(e.id, e);
     }
   }
   return out;
