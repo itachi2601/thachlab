@@ -31,7 +31,7 @@ import {
   ZoomOut,
 } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
-import { splitTheorySections } from "@/features/lessons/theory-sections";
+import { formatTapLabel, splitSubSections, splitTheorySections } from "@/features/lessons/theory-sections";
 import type { LessonItem } from "@/features/lessons/types";
 import PresenterNoteBox from "@/components/lessons/PresenterNoteBox";
 
@@ -92,6 +92,8 @@ interface DeckPage {
   groupTitle: string;
   heading: string;
   bodyHtml: string;
+  /** `data-tap` của thẻ tiêu đề: ô ghi tương ứng trong ruột tập in sẵn ("2.1" = trang 2, ô 1). */
+  tap?: string;
 }
 
 /** Tiêu đề chung của cả mục, không phải nội dung: "LÝ THUYẾT", "LÍ THUYẾT". */
@@ -151,6 +153,33 @@ export function buildPresenterDeck(lessonTitle: string, items: LessonItem[]): De
     }
 
     sections.forEach((section, index) => {
+      // Mục lớn có nhiều mục con "II.1.", "II.2." (h4) → mỗi mục con một trang, thầy khỏi cuộn.
+      const subs = splitSubSections(section.bodyHtml);
+      if (subs) {
+        if (hasVisibleContent(subs.introHtml)) {
+          pages.push({
+            key: `${groupKey}-${index}`,
+            kind: "content",
+            groupKey,
+            groupTitle: item.title,
+            heading: section.heading || item.title,
+            bodyHtml: subs.introHtml,
+            tap: section.tap,
+          });
+        }
+        subs.parts.forEach((part, subIndex) => {
+          pages.push({
+            key: `${groupKey}-${index}-${subIndex}`,
+            kind: "content",
+            groupKey,
+            groupTitle: item.title,
+            heading: part.heading,
+            bodyHtml: part.bodyHtml,
+            tap: part.tap,
+          });
+        });
+        return;
+      }
       pages.push({
         key: `${groupKey}-${index}`,
         kind: "content",
@@ -158,6 +187,7 @@ export function buildPresenterDeck(lessonTitle: string, items: LessonItem[]): De
         groupTitle: item.title,
         heading: section.heading || item.title,
         bodyHtml: section.bodyHtml,
+        tap: section.tap,
       });
     });
   });
@@ -718,6 +748,11 @@ export default function LessonPresenter({
           ) : (
             <>
               <p className="presenter-kicker">{page.groupTitle}</p>
+              {formatTapLabel(page.tap) && (
+                <p className="presenter-tap">
+                  <span aria-hidden>✍</span> {formatTapLabel(page.tap)}
+                </p>
+              )}
               {page.heading && <h2 className="presenter-heading">{page.heading}</h2>}
               <ContentHtml html={page.bodyHtml} className="presenter-prose" />
             </>

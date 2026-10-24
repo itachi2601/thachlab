@@ -91,6 +91,39 @@ function speakQuizOption(label: HTMLElement) {
   if (text) playSpeech(text, label.dataset.tlAudio ?? "");
 }
 
+/**
+ * Mọi câu dự đoán / tự kiểm tra (`.tl-quiz`) đều có dòng "Em chắc bao nhiêu? Chắc / Không chắc" — thang tự tin
+ * là nửa còn lại của retrieval practice (đoán sai mà chắc chắn mới là chỗ cần xem lại nhất). Bài soạn tay chỉ
+ * thêm được cho vài câu; thiếu chỗ nào thì chèn ngay trước khối câu hỏi, không sửa HTML đã đăng. Bỏ qua quiz từ
+ * vựng AVCN (`data-tl-word`/`data-tl-audio`: hàng chục câu nhỏ, hỏi mức tự tin từng từ là thừa). Tên nhóm
+ * `<tên-câu>-conf` để các bộ đếm câu (TheoryReviewStep.isConfGroup) không tính nó thành một câu hỏi.
+ */
+export function withConfidenceRows(html: string): string {
+  if (!html.includes("tl-quiz")) return html;
+  const starts = [...html.matchAll(/<div\b[^>]*\bclass="[^"]*\btl-quiz\b[^"]*"[^>]*>/g)];
+  let out = "";
+  let cursor = 0;
+  let prevStart = 0;
+  for (const m of starts) {
+    const at = m.index ?? 0;
+    const tag = m[0];
+    const segment = html.slice(prevStart, at);
+    prevStart = at + 1;
+    if (/data-tl-(word|audio)/.test(tag) || segment.includes("tl-conf")) continue;
+    const quizEnd = html.indexOf('<div class="tl-fb', at);
+    const name = /<input\b[^>]*\btype="radio"[^>]*\bname="([^"]+)"/.exec(html.slice(at, quizEnd < 0 ? at + 2000 : quizEnd))?.[1];
+    if (!name || /-(conf|sure)\d*$/i.test(name)) continue;
+    const g = `${name}-conf`;
+    out +=
+      html.slice(cursor, at) +
+      `<p class="tl-conf">Em chắc bao nhiêu? ` +
+      `<label><input type="radio" name="${g}" id="${g}-chac" value="chac"> Chắc</label> ` +
+      `<label><input type="radio" name="${g}" id="${g}-khong" value="khong"> Không chắc</label></p>`;
+    cursor = at;
+  }
+  return out + html.slice(cursor);
+}
+
 /** Hình SVG có hoạt hình SMIL (`<animate>`): người dùng bật "giảm chuyển động" thì bỏ hoạt hình, hình đứng yên ở khung đầu. */
 function withoutAnimationIfReduced(html: string): string {
   if (!html.includes("<animate")) return html;
@@ -289,7 +322,7 @@ export default function ContentHtml({
   className?: string;
 }) {
   const cleaned = useMemo(
-    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withDeBaiBox(stripWordArtifacts(html)))))),
+    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withDeBaiBox(withConfidenceRows(stripWordArtifacts(html))))))),
     [html],
   );
   const needsMath = useMemo(() => hasMath(cleaned), [cleaned]);
