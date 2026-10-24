@@ -3041,6 +3041,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(148,163,184,.24);
   --pres-surface: rgba(15,23,42,.86);
   --pres-panel: #101a2e;
+  /* Token site đặt lại theo nền chiếu, không theo theme của trang: khung .tl-trap/.tl-check/.tl-fx
+     dùng color-mix(var(--color-panel)) nên theme tối của trang + nền chiếu sáng = hộp đen chữ mờ. */
+  --color-panel: #101a2e; --color-ink: #f1f5f9; --color-warn: #fbbf24; --color-primary: #60a5fa;
+  --color-surface-2: rgba(255,255,255,.06); --color-line-strong: rgba(255,255,255,.34);
   position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
 }
@@ -3052,6 +3056,8 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(15,23,42,.16);
   --pres-surface: rgba(255,255,255,.92);
   --pres-panel: #fff;
+  --color-panel: #fff; --color-ink: #0f172a; --color-warn: #b45309; --color-primary: #1d4ed8;
+  --color-surface-2: #eef1f6; --color-line-strong: #8b93a1;
   background: #f4f6fb;
 }
 
@@ -3099,7 +3105,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
-.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
+.presenter-tap span { color: var(--pres-accent); }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,

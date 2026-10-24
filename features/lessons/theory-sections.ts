@@ -59,6 +59,40 @@ export interface TheorySectionPart extends TheorySection {
   /** Đoạn đã bỏ thẻ tiêu đề ở đầu, để chế độ trình chiếu render tiêu đề bằng kiểu chữ riêng
    *  (mốc tiêu đề có thể là <h3>, <h2> hoặc <p><strong> — trình chiếu cần một kiểu chữ duy nhất). */
   bodyHtml: string;
+  /** Vị trí ô ghi trong ruột tập in sẵn, đọc từ `data-tap="2.1"` trên thẻ tiêu đề ("trang.ô"). */
+  tap?: string;
+}
+
+const TAP_RE = /\bdata-tap="([^"]+)"/;
+
+/** `data-tap` trên một thẻ tiêu đề → chữ hiện ở góc trang chiếu ("2.1" → "trang 2 · ô 1"). */
+export function formatTapLabel(tap: string | undefined): string | null {
+  if (!tap) return null;
+  const [page, box] = tap.split(".");
+  if (!/^\d+$/.test(page)) return null;
+  return box ? `Tập: trang ${page} · ô ${box.replace("-", "–")}` : `Tập: trang ${page}`;
+}
+
+// Mục con "II.1. …", "II.2. …" (h4 đánh số La Mã.số) — trình chiếu mỗi mục con một trang.
+const SUB_H4_RE = /<h4\b[^>]*>(?=\s*[IVX]+\.\d+\.)(.*?)<\/h4>/gi;
+
+/** Tách thân một trang chiếu theo các <h4> "II.1." — trả về null nếu không có (hoặc chỉ một). */
+export function splitSubSections(
+  bodyHtml: string,
+): { introHtml: string; parts: Array<{ heading: string; bodyHtml: string; tap?: string }> } | null {
+  const matches = [...bodyHtml.matchAll(SUB_H4_RE)];
+  if (matches.length < 2) return null;
+  const introHtml = bodyHtml.slice(0, matches[0].index ?? 0);
+  const parts = matches.map((m, i) => {
+    const start = m.index ?? 0;
+    const end = i + 1 < matches.length ? (matches[i + 1].index ?? bodyHtml.length) : bodyHtml.length;
+    return {
+      heading: m[1].replace(/<[^>]+>/g, "").trim(),
+      bodyHtml: bodyHtml.slice(start + m[0].length, end).replace(/^\s+/, ""),
+      tap: TAP_RE.exec(m[0])?.[1],
+    };
+  });
+  return { introHtml, parts };
 }
 
 /**
@@ -75,7 +109,7 @@ export interface TheorySectionPart extends TheorySection {
 // Thanh lý thuyết đã hiện một ước lượng duy nhất (~N phút) — bỏ câu này lúc hiển thị
 // để không còn hai con số thời lượng. Không khớp "Khoảng cách / Khoảng chênh".
 const AUTHORED_DURATION_RE =
-  /(?:\s*[—–-]\s*|\s+)[Kk]hoảng\s+\d+\s+phút\s*·\s*(?:\d+\s+mục\s*·\s*)?\d+\s+câu tự kiểm tra\.?/g;
+  /(?:\s*[—–-]\s*|\s+)[Kk]hoảng\s+\d+\s+phút\s*·\s*(?:\d+\s+mục\s*·\s*)?(?:\d+\s+câu dự đoán\s*\+\s*)?\d+\s+câu tự kiểm tra\.?/g;
 
 export function stripAuthoredDuration(html: string): string {
   return html.replace(AUTHORED_DURATION_RE, "");
@@ -106,6 +140,7 @@ export function splitTheorySections(
       // m[0] là đúng thẻ tiêu đề nằm ở đầu `slice` (mọi regex mốc đều bắt đầu bằng thẻ mở),
       // nên cắt bỏ đúng độ dài chuỗi khớp là ra phần thân mà không đụng nội dung.
       bodyHtml: slice.slice(m[0].length).replace(/^\s+/, ""),
+      tap: TAP_RE.exec(m[0])?.[1],
     });
   });
 
