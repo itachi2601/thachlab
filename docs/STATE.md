@@ -29,19 +29,15 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 
 ## Chờ deploy / chờ kiểm
 - 24/10 Làm bài (báo "tự nhảy câu, đáp án sai" + #140/#142): ĐÃ DEPLOY 4 sửa — chạm lại phương án/Đúng-Sai đang chọn không bỏ chọn; `/kiem-tra/lam` chỉ tải đề 1 lần theo (user, đề); lưới chống chunk 404 trong layout hết SyntaxError (trước nay chưa chạy); luôn xác nhận trước khi nộp. Code không có auto-advance, 36 bài đề 752 lưu đúng. CÒN: chờ HS phản hồi — nếu vẫn "nhảy câu" thì hỏi trang nào (Kiểm tra/Luyện tập Từng câu/Thăng hạng), máy gì.
-- 22/10 10:47: toàn bộ main@ee71b2bd1 đã deploy (gồm khoá nội dung bài cần đăng nhập, ôn tập theo chặng, CSS khung có nghĩa .tl-fx/.tl-trap/.tl-check/.tl-note — chỉ có tác dụng khi bài có dùng lớp mới; Bài 14 Sóng L11 vẫn là bản mẫu chưa đăng).
 - Push thông báo (18/10): 2 migration (150000, 160000) + 2 Edge Function ĐÃ chạy/deploy. Cron `send-notification-push` ĐÃ đặt (jobid 6, mỗi phút trong khung 6–22h VN, active; kiểm 19/10). CÒN: thử điện thoại thật (web đã deploy 19/10 từ 53f8b3cfa: sw.js v5, chuông, PushOptInPrompt, độ sâu đọc, lịch tuần).
 - HSG9 đợt 4 (17/10): cả 6 CĐ (151/152/163/156/158/178) đã ghi DB (ẩn) + deploy; chờ thầy xem `/lop-hoc/bai/?id=…` rồi bật Hiện (bật xong deploy lại để có file tĩnh) — xem `docs/memory/project_thachlab_khoa_hsg9_vat_ly.md`.
 - AVCN (20/10): 10 bài tách thành **10 chương** (migration `20261020190000_avcn_tach_10_chuong`, mỗi chương 1 bài, tiêu đề chương bỏ "Chapter n:"); cả 10 bài đã có dòng 🎧 nghe lại câu tình huống bằng **giọng nam Guy** (bài 168–177, body_html đã ghi + deploy); mục tiêu/chuẩn đầu ra viết theo nội dung bài, bỏ "(Part 1/2…)"; tối 20/10 viết lại thành **4 gạch kiến thức/chương**, bỏ bảng 5 Part khỏi tab Học (đã ghi DB + deploy). Ch9 nay có đủ mp3 (trước 0 file). Chờ thầy nghe thử 1–2 bài rồi chốt giọng (Guy/Andrew/Brian) — đổi thì chạy lại `tao_giong_doc.py` + `cap-nhat-ly-thuyet.sh` + `deploy.sh`.
-- **Deploy 5a977bddd (15/10):** sửa 5 lỗi UI học sinh (đếm câu `-conf` ở bước xem lại lý thuyết phụ đạo, danh hiệu đã nhận luôn hiện, chủ đề đã chọn dưới buổi phụ đạo, lời chào em mới, mô tả thành tích lặp). Đã kiểm trên dev local bằng HS Test (`scripts/tao-hs-test.mjs`, `gieo-hs-test.mjs`); chưa deploy, chưa chụp 375px, chưa thử đường đạt ≥80% của bài thoát phụ đạo. Chi tiết: `docs/memory/project_thachlab_hs_test_accounts.md`. Cây làm việc còn thay đổi chưa commit của phiên khác (đăng nhập/PublicAuthGate, AdminHomeToday) — KHÔNG deploy khi chưa hỏi.
 - Mạng nhện Theo chương / Cả khoá (HSG: Theo mảng): migration `20261014160000` đã chạy 14/10 17:41, deploy 14/10 (commit 10eed8050). Chờ thầy xem 375px với dữ liệu thật; chưa có "Theo học kì" (DB chưa có trường học kì).
 - Thử "🧰 Kiểm tra hành trang" (2 câu kiến thức nền + Nhắc nhanh) ở 10 bài chương 3 L10 (lesson 58–67), đã đăng DB 13/10, không cần deploy. Chờ đo: tỉ lệ đọc hết bài + đúng quiz giữa bài trước/sau; ổn thì làm chương khác (`scripts/chen-hanh-trang.py`, PHUONG-PHAP §4.2b).
 - Mã QR đề (`ExamQrPanel`, `/quet-ma`): chưa thử iPhone + Android thật; chưa làm QR cho CNC và `LessonImporter`.
-- 22/10 ĐÃ DEPLOY: đề **kiểm tra** trong trang bài có "Mã đề #N" + nút "Mã QR" (màn chiếu QR lớn, full màn hình) — dùng cho KT chương AVCN/CTTC (916, 1051, 1053…) và KT chương THPT; CTTC vào `/quet-ma` được (icon Navbar + menu Thêm thanh đáy). Chờ thử camera thật iPhone/Android.
 - RP lý thuyết: UI đã gọi `rank_theory_open/submit`; **chưa có khoá** → `npx tsx scripts/sinh-khoa-quiz-ly-thuyet.mts` (xem thử) rồi `--ghi`. Chưa chụp 375px bằng tài khoản HS, chưa thử nộp thật.
 - Chấm nhanh HSG 9: Edge Function `hsg-ai-grade` chưa deploy (cần secret `ANTHROPIC_API_KEY`; DeepSeek đã gỡ 17/10, commit e1a9ca706). Thầy deploy lại để có hiệu lực.
 - DT-16 kiểm RLS 17/10 (chỉ đọc `pg_policies`): bảng `exam_results`, `lesson_progress`, `theory_sessions`, `theory_reviews` đều bật RLS, không có policy cho `anon`; `theory_*` chỉ cho `auth.uid()` = học sinh hoặc staff. Policy `public` còn lại là bảng nội dung công khai. Chưa kiểm grant bảng cho `anon` và `learning_events` (migration 9c50d5f0c chưa chạy).
-- Nền sáng: đã deploy `9077fbd47`; còn treo việc nhỏ ở `docs/MAU-NEN-SANG.md`.
 - Sách in Chương 2 L10 bản v6: chờ thầy chỉnh `book/src/dang-chung.json`, `tiet.json`; `public/sach-data/*.json` v6 chưa commit/deploy (xem `docs/memory/project_thachlab_sach_in_chuong2.md`).
 - Push nhắc hằng ngày: còn VAPID secrets + deploy `send-daily-push` + cron (`docs/PUSH-NHAC-HANG-NGAY.md`).
 - HTML chưa có `Cache-Control: no-cache` trong `.htaccess` của `scripts/deploy.sh` — chờ thầy gật.
@@ -52,16 +48,12 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Còn 23 đề chưa gán (không suy được: 19 "Kiểm tra nhanh"/"Luyện tập" mồ côi bài học #99–101, #209, #239–257 + vài đề khác): danh sách `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`, chờ thầy chọn lớp.
 - Bài tập mẫu L12 còn soạn lại 12 bài: 9, 11, 13–19, 125–127; kế hoạch 42 bài L10/L11 chờ thầy duyệt (`docs/memory/project_thachlab_btm_quet_dang.md`).
 - Bài 11 L12 Thực hành: chưa ghi DB (`upload-lesson.mts content/lesson-samples/l12-thuc-hanh-cam-ung-tu/bundle.json --lesson 12 --mode replace`); 4 bài L12 sửa đường sức chờ `cap-nhat-ly-thuyet-hang-loat.sh l12-luc-tu-cam-ung-tu:11 l12-khai-niem-tu-truong:10 l12-cam-ung-dien-tu:13 l12-dong-dien-xoay-chieu:14` — kiểm `so-file-voi-db.mts` trước vì có thể đã đăng.
-- Lỗi nội dung L12 (bài 8, 10, 13, 19, 126): ĐÃ SỬA hết (18/10/2026; bài 8 `summary_html` ghi DB, sao lưu `scripts/logs/summary-bai8-backup-*.json`). Đề cũ 209, 239–257 vẫn trong DB — kiểm `exam_results` rồi dọn tay.
 - Trùng slug lesson 126: `content/lesson-samples/l12-ung-dung-cam-ung/` là bản cũ, đăng từ đó sẽ LÙI bài; nên đổi tên/xoá khi rảnh.
 - Bài 65 L10: 3 góp ý nhỏ về Hình 3/4/5 chưa sửa; 2 bài 65/67 chưa xem 375px trên web.
 - Audit đáp án ngân hàng: chờ thầy duyệt 127 câu `_can_xac_nhan` (`scripts/data/bank-answer-fixes.json`), `scripts/logs/db-sai-can-duyet.csv` (556 + 100 câu), 8 `khong_ro` + 2 `cho_phan_xu`.
 - Backfill mức độ câu hỏi: còn ~3.500 câu `difficulty` rỗng — `npx tsx scripts/backfill-question-bank-difficulty.mts 20` (**ghi thật, không dry-run**).
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip (quy ước `content/thi-nghiem/README.md`, `docs/QUY-TAC-THIET-KE.md` mục 5b).
 - Rank: gắn `challenge_exam_id` cho cao_thu/thach_dau season 4 ở `/quan-tri/xep-hang`; spec thi thăng hạng thích ứng `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
-
-## Credit $100 Anthropic API — hết hạn 22/10/2026
-- Chỉ áp dụng API/Batch, không áp dụng Claude Code. `scripts/batch-ra-soat-bai.mts` (chi tiết `docs/memory/project_thachlab_anthropic_credit.md`). Chế độ `sua-ly-thuyet` đã chạy cho 20 bài L12; chế độ `bai-tap-mau` dùng khi thầy bảo.
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` có bộ lọc Lớp → Chương → Bài → YCCĐ → Dễ/TB/Khó; `/lo-trinh`; câu Động học 10 đủ ≥30 câu/bài.
