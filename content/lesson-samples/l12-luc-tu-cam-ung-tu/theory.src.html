@@ -19,10 +19,10 @@
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Đoạn dây mang dòng điện đặt <em>song song</em> với đường sức từ. Lực từ lên dây:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl11-q0" id="tl11-q0a"><label for="tl11-q0a" class="tl-opt tl-no">A. Lớn nhất, vì dây nằm trọn trong từ trường</label>
-<input type="radio" name="tl11-q0" id="tl11-q0b"><label for="tl11-q0b" class="tl-opt tl-ok">B. Bằng 0, vì dây cùng phương đường sức</label>
+<input type="radio" name="tl11-q0" id="tl11-q0a"><label for="tl11-q0a" class="tl-opt tl-no">A. Lớn nhất</label>
+<input type="radio" name="tl11-q0" id="tl11-q0b"><label for="tl11-q0b" class="tl-opt tl-ok">B. Bằng 0</label>
 <input type="radio" name="tl11-q0" id="tl11-q0c"><label for="tl11-q0c" class="tl-opt tl-no">C. Khác 0 nhưng nhỏ nhất</label>
-<input type="radio" name="tl11-q0" id="tl11-q0d"><label for="tl11-q0d" class="tl-opt tl-no">D. Bằng 0 khi dây vuông góc đường sức</label>
+<input type="radio" name="tl11-q0" id="tl11-q0d"><label for="tl11-q0d" class="tl-opt tl-no">D. Chỉ bằng 0 khi dây vuông góc đường sức</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\alpha$ là góc giữa dây và đường sức. Dây song song đường sức thì $\alpha = 0^\circ$ (hoặc $180^\circ$), $\sin\alpha = 0$, nên không có lực từ kéo dây.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng đoán theo cảm giác "nằm trong từ trường là bị đẩy mạnh": công thức $F = BIl\sin\alpha$ (học ở mục II.2) có thừa số $\sin\alpha$. Dây nằm dọc đường sức thì lực triệt tiêu. Chọn lại nhé.</p></div>
 </div>
@@ -38,8 +38,7 @@
 
 <ul>
 <li><strong>Điểm đặt:</strong> trung điểm của đoạn dây.</li>
-<li><strong>Phương:</strong> vuông góc đoạn dây và vuông góc đường sức từ — tức vuông góc mặt phẳng chứa đoạn dây và $\vec{B}$.</li>
-<li><strong>Chiều:</strong> theo quy tắc bàn tay trái.</li>
+<li><strong>Phương:</strong> vuông góc mặt phẳng chứa đoạn dây và $\vec{B}$.</li>
 <li><strong>Kí hiệu vẽ hình:</strong> ⊗ hướng vào mặt phẳng hình vẽ, ⊙ hướng ra ngoài.</li>
 </ul>
 
@@ -48,6 +47,8 @@
 <p>Đặt bàn tay trái duỗi thẳng sao cho đường cảm ứng từ <strong>xuyên vào lòng bàn tay</strong>, chiều <strong>cổ tay đến ngón tay</strong> trùng chiều dòng điện; ngón cái choãi $90^\circ$ chỉ chiều lực từ.</p>
 </div>
 
+<details class="tl-details tl-more">
+<summary>🔬 Bấm xem: dây treo giữa hai cực nam châm</summary>
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-luctu-02">
 <p class="tl-label">🔬 Thí nghiệm: dây treo giữa hai cực nam châm</p>
 <ol class="tl-steps">
@@ -56,6 +57,7 @@
 <li><strong>Rút ra:</strong> lực từ có khi dây không song song đường sức, đổi chiều theo chiều dòng.</li>
 </ol>
 </div>
+</details>
 <!--video:sau:tn-l12-luctu-02-->
 <div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem video: dây treo giữa hai cực nam châm</p>
@@ -86,6 +88,7 @@
 <div class="tl-fx">
 <p class="tl-fx-name">Lực từ lên đoạn dây mang dòng điện (định luật Ampe)</p>
 <p>$$F = B\,I\,l\,\sin\alpha$$</p>
+<p class="tl-fx-cond">Vuông góc: $F_{\max} = BIl$; song song: $F = 0$</p>
 <ul class="tl-fx-def">
 <li><span class="tl-sym">$F$</span><span>lực từ (N)</span></li>
 <li><span class="tl-sym">$B$</span><span>cảm ứng từ (T)</span></li>
@@ -95,51 +98,54 @@
 </ul>
 </div>
 
-<ul>
-<li><strong>Vuông góc</strong> đường sức: $\alpha = 90^\circ$, lực lớn nhất $F_{\max} = BIl$.</li>
-<li><strong>Song song</strong> đường sức: $\alpha = 0^\circ$ hoặc $180^\circ$, $F = 0$.</li>
-<li>Ví dụ: $B = 0,10$ T, $I = 5$ A, $l = 0,04$ m, vuông góc: $F = 0,02$ N.</li>
-</ul>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-luctu-01">
-<p class="tl-label">🔬 Thí nghiệm đo: lực từ theo cường độ dòng điện</p>
+<p class="tl-label">🔬 Thí nghiệm: đo lực từ bằng cân (cân dòng điện)</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đặt dây $l = 5,0$ cm vuông góc đường sức trong khe nam châm; móc vào lực kế, tăng dần $I$ và đọc lực.</li>
-<li><strong>Quan sát:</strong> số đọc ở bảng dưới; lực tăng gần như tuyến tính theo $I$.</li>
-<li><strong>Rút ra:</strong> $F$ tỉ lệ thuận với $I$; $F/(Il)$ cho cùng một giá trị — đó là cảm ứng từ của khe.</li>
+<li><strong>Giả thuyết cần kiểm:</strong> lực từ lên đoạn dây có độ lớn $F = BIl\sin\alpha$, chiều theo quy tắc bàn tay trái.</li>
+<li><strong>Dự đoán nếu đúng:</strong> số chỉ cân đổi một lượng $\Delta m$ với $\Delta m\,g = BIl\sin\alpha$; đảo chiều dòng thì đổi ngược lại.</li>
+<li><strong>Dụng cụ và cách đo:</strong> nam châm trên cân, dây MN giữ cố định nằm ngang trong khe (Hình 3, ngay dưới hộp).
+<details class="tl-details tl-more">
+<summary>Bấm xem 4 dụng cụ và các bước</summary>
+<p>(1) Nam châm chữ U, chiều dài phần dây nằm trong từ trường $l = 5,0$ cm; (2) cân điện tử chia 0,01 g; (3) dây đồng cứng MN kẹp trên giá riêng, không chạm nam châm hay cân; (4) nguồn một chiều, ampe kế, biến trở.</p>
+<p><strong>Làm:</strong> (1) ghi số chỉ cân khi chưa có dòng; (2) cho $I = 2,0$ A chạy từ M đến N, dây vuông góc đường sức, ghi số chỉ mới; (3) đảo chiều dòng, ghi lại; (4) xoay giá để dây hợp với $\vec{B}$ góc $60^\circ$, $30^\circ$, $0^\circ$ (dây vẫn nằm ngang), mỗi lần ghi số chỉ.</p>
+</details>
+<strong>Coi rằng</strong> từ trường trong khe đều, hướng từ cực N sang cực S. <strong>Bỏ qua</strong> từ trường Trái Đất.</li>
+<li><strong>Quan sát:</strong> dòng M → N, dây vuông góc đường sức: cân <strong>tăng</strong> 1,03 g; đảo chiều dòng: giảm chừng ấy; góc càng nhỏ, cân đổi càng ít; song song đường sức: không đổi.</li>
+<li><strong>Rút ra:</strong> bàn tay trái cho lực từ lên dây hướng <strong>lên</strong>; dây đẩy nam châm xuống một lực cùng độ lớn (cặp lực – phản lực) nên cân tăng. $F = \Delta m\,g \approx 0,010$ N $= BIl$. Lực luôn thẳng đứng, chỉ độ lớn đổi theo $\sin\alpha$.</li>
+<li><strong>Chưa nói được gì:</strong> cân chỉ cho tổng lực lên đoạn dây, không cho biết từ trường có đều dọc dây; một nam châm nên chưa kiểm được $F$ tỉ lệ với $B$.</li>
 </ol>
 </div>
-
-<table class="tl-table">
-<thead>
-<tr><th>$I$ (A)</th><th>$F$ đo (mN)</th><th>$B = F/(Il)$ (T)</th></tr>
-</thead>
-<tbody>
-<tr><td>1,0</td><td>4,6</td><td>0,092</td></tr>
-<tr><td>2,0</td><td>10,4</td><td>0,104</td></tr>
-<tr><td>3,0</td><td>14,2</td><td>0,095</td></tr>
-<tr><td>4,0</td><td>20,6</td><td>0,103</td></tr>
-<tr><td>5,0</td><td>25,5</td><td>0,102</td></tr>
-</tbody>
-</table>
 
 <!--FIG3-->
 
 <details class="tl-details tl-more">
-<summary>🤏 Câu hỏi về sai số: vì sao $B$ tính ra mỗi dòng một khác, và lấy giá trị nào?</summary>
-<p>Năm giá trị trong khoảng 0,092–0,104 T; trung bình <strong>0,099 T</strong>, ghi $B = 0,099 \pm 0,005$ T. Hai nguồn lệch chính: lực kế sai số $\pm 0,3$ mN (ở dòng 1,0 A sai số tới hơn 6%) và hai đầu dây bị kẹp nằm ngoài vùng từ trường đều. Độ dốc đồ thị $F$ theo $I$ là $B\,l \approx 5,1$ mN/A → $B \approx 0,10$ T.</p>
+<summary>📊 Bấm xem bảng theo góc $\alpha$ và sai số</summary>
+<p>Nếu giả thuyết đúng, tỉ số $\Delta m/\sin\alpha$ phải gần như không đổi. Em tự tính ô hàng $30^\circ$.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Góc $\alpha$</th><th>$\Delta m$ (g)</th><th>$\sin\alpha$</th><th>$\Delta m/\sin\alpha$ (g)</th></tr></thead>
+<tbody>
+<tr><td>$90^\circ$</td><td>1,03</td><td>1</td><td>1,03</td></tr>
+<tr><td>$60^\circ$</td><td>0,87</td><td>0,866</td><td>1,00</td></tr>
+<tr><td>$30^\circ$</td><td>0,52</td><td>0,500</td><td>em tự tính</td></tr>
+<tr><td>$0^\circ$</td><td>0,00</td><td>0</td><td>— (không chia được)</td></tr>
+</tbody></table></div>
+<p>So với hai hàng trên thì sao? Đảo chiều dòng ở $90^\circ$, cân giảm 1,03 g.</p>
+<p><small>Số liệu minh hoạ tính từ mô hình $B = 0,10$ T, $l = 5,0$ cm, $I = 2,0$ A, $g = 9,8$ m/s², cộng sai số đọc cân $\pm 0,01$ g. Bài 12 (thực hành) đo đầy đủ theo $I$ và $l$.</small></p>
+<p><strong>Sai số:</strong> dây lệch khỏi vuông góc vài độ làm $\Delta m$ nhỏ đi, $B$ tính ra <em>nhỏ hơn</em> thật; từ trường lan ra ngoài mép hai má cực cũng đẩy dây, nên lấy $l$ bằng chiều dài má cực thì $B$ tính ra <em>lớn hơn</em> thật. Giảm: đo cả hai chiều dòng rồi lấy trung bình độ lớn $\Delta m$ (khử trôi số của cân), lặp lại 3 lần.</p>
 </details>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
-<p><strong>Câu 2.</strong> Dây dài 10 cm mang dòng 2 A, vuông góc đường sức, $B = 0,05$ T. Lực từ bằng:</p>
+<p><strong>Câu 2.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
 <div class="tl-quiz">
-<input type="radio" name="tl11-q2" id="tl11-q2a"><label for="tl11-q2a" class="tl-opt tl-no">A. 1 N</label>
-<input type="radio" name="tl11-q2" id="tl11-q2b"><label for="tl11-q2b" class="tl-opt tl-no">B. 0,1 N</label>
-<input type="radio" name="tl11-q2" id="tl11-q2c"><label for="tl11-q2c" class="tl-opt tl-no">C. 0,005 N</label>
-<input type="radio" name="tl11-q2" id="tl11-q2d"><label for="tl11-q2d" class="tl-opt tl-ok">D. 0,01 N</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = BIl = 0,05 \times 2 \times 0,10 = 0,01$ N. Bước then chốt là đổi $10$ cm $= 0,10$ m trước khi thay số.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Mỗi phương án sai ứng với một lỗi:<br>A (1 N): thay $l = 10$, quên đổi cm sang m.<br>B (0,1 N): chỉ nhân $B \times I$, bỏ sót $l$.<br>C (0,005 N): chỉ nhân $B \times l$, bỏ sót $I$.<br>Dây vuông góc nên $F = BIl$. Chọn lại.</p></div>
+<input type="radio" name="tl11-q2" id="tl11-q2a"><label for="tl11-q2a" class="tl-opt tl-no">A. Có dòng thì cân đổi số chỉ; đảo chiều dòng thì đổi ngược lại</label>
+<input type="radio" name="tl11-q2" id="tl11-q2b"><label for="tl11-q2b" class="tl-opt tl-no">B. Lực từ lên dây có độ lớn $\Delta m\cdot g$</label>
+<input type="radio" name="tl11-q2" id="tl11-q2c"><label for="tl11-q2c" class="tl-opt tl-ok">C. Dây bị đẩy lên nên nam châm cũng bị kéo lên, cân chỉ giảm</label>
+<input type="radio" name="tl11-q2" id="tl11-q2d"><label for="tl11-q2d" class="tl-opt tl-no">D. Cân không cho biết từ trường có đều dọc dây</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng: ý C sai.</strong> Lực từ lên dây và lực dây đẩy lại nam châm là cặp lực – phản lực: cùng độ lớn, ngược chiều. Dây bị đẩy lên thì nam châm bị đẩy xuống, cân chỉ <strong>tăng</strong>. Đề 2025 (câu II.2) hỏi đúng chỗ này. Ba ý còn lại đúng; đề Phần II cũng hỏi theo kiểu bốn ý a)–d).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng thấy trên cân; B là kết luận dùng để đo lực; D nói đúng giới hạn: cân chỉ cho tổng lực lên đoạn dây. Vậy ý sai nằm ở <em>cơ chế</em> (C) — nhớ định luật III Newton. Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -162,9 +168,9 @@
 <p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Phát biểu nào đúng về vectơ cảm ứng từ tại một điểm?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl11-q3" id="tl11-q3a"><label for="tl11-q3a" class="tl-opt tl-no">A. Phương trùng phương dòng điện tại điểm đó</label>
-<input type="radio" name="tl11-q3" id="tl11-q3b"><label for="tl11-q3b" class="tl-opt tl-no">B. Chiều từ cực Bắc sang cực Nam của nam châm thử</label>
-<input type="radio" name="tl11-q3" id="tl11-q3c"><label for="tl11-q3c" class="tl-opt tl-ok">C. Chiều từ cực Nam sang cực Bắc của nam châm thử</label>
+<input type="radio" name="tl11-q3" id="tl11-q3a"><label for="tl11-q3a" class="tl-opt tl-no">A. Cùng phương dòng điện tại điểm đó</label>
+<input type="radio" name="tl11-q3" id="tl11-q3b"><label for="tl11-q3b" class="tl-opt tl-no">B. Chiều từ cực Bắc sang cực Nam nam châm thử</label>
+<input type="radio" name="tl11-q3" id="tl11-q3c"><label for="tl11-q3c" class="tl-opt tl-ok">C. Chiều từ cực Nam sang cực Bắc nam châm thử</label>
 <input type="radio" name="tl11-q3" id="tl11-q3d"><label for="tl11-q3d" class="tl-opt tl-no">D. Độ lớn tăng theo cường độ dòng điện thử</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Phương nam châm thử nằm cân bằng, chiều Nam sang Bắc, độ lớn $B = F/(Il\sin\alpha)$ — không phụ thuộc dòng thử.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>A sai: phương $\vec{B}$ là phương nam châm thử nằm cân bằng, không gắn với dòng điện.<br>B sai: chiều $\vec{B}$ là <em>Nam sang Bắc</em>.<br>D sai: $B$ có sẵn ở điểm đó, tăng dòng thử chỉ làm $F$ tăng.<br>Chọn lại.</p></div>
@@ -176,9 +182,7 @@
 <p><strong>🔑 Hai cạnh ngược chiều · Ngẫu lực làm khung quay · M = N·B·I·S·sinα (cực đại N·B·I·S)</strong></p>
 
 <ul>
-<li>Khung chữ nhật trong từ trường đều: hai cạnh đối diện chịu hai lực <strong>cùng độ lớn, ngược chiều, không cùng giá</strong> → <strong>ngẫu lực từ</strong>.</li>
-<li>Hợp lực của ngẫu lực bằng 0 nên khung không bị đẩy đi, nhưng mômen khác 0 nên khung <strong>quay</strong> quanh trục.</li>
-<li>Mômen ngẫu lực tác dụng lên khung:</li>
+<li>Hai cạnh đối diện của khung chịu hai lực <strong>cùng độ lớn, ngược chiều, không cùng giá</strong> → <strong>ngẫu lực từ</strong>.</li>
 </ul>
 <div class="tl-fx">
 <p class="tl-fx-name">Mômen ngẫu lực từ lên khung dây</p>
@@ -195,7 +199,7 @@
 </ul>
 </div>
 <ul>
-<li>$\alpha$ ở đây là góc giữa $\vec{B}$ và pháp tuyến khung, khác góc trong công thức $F$; mặt khung vuông góc đường sức thì $M = 0$.</li>
+<li>⚠ $\alpha$ ở đây khác góc trong công thức $F$; mặt khung vuông góc đường sức thì $M = 0$.</li>
 </ul>
 
 <details class="tl-details" data-exp="tn-l12-luctu-03">
@@ -214,7 +218,7 @@
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl11-q4c" value="chac"> Chắc</label> <label><input type="radio" name="tl11-q4c" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
 <input type="radio" name="tl11-q4" id="tl11-q4a"><label for="tl11-q4a" class="tl-opt tl-ok">A. Hợp lực bằng 0 nhưng mômen khác 0</label>
-<input type="radio" name="tl11-q4" id="tl11-q4b"><label for="tl11-q4b" class="tl-opt tl-no">B. Lực từ không tác dụng lên khung dây kín</label>
+<input type="radio" name="tl11-q4" id="tl11-q4b"><label for="tl11-q4b" class="tl-opt tl-no">B. Khung kín không chịu lực từ</label>
 <input type="radio" name="tl11-q4" id="tl11-q4c"><label for="tl11-q4c" class="tl-opt tl-no">C. Khung nhẹ nên chỉ quay mà không dịch chuyển</label>
 <input type="radio" name="tl11-q4" id="tl11-q4d"><label for="tl11-q4d" class="tl-opt tl-no">D. Hai lực cùng chiều hợp thành ngẫu lực</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ngẫu lực = hai lực cùng độ lớn, ngược chiều, giá khác nhau: hợp lực bằng 0 nhưng mômen $M = N\,B\,I\,S\,\sin\alpha$ làm khung quay.</p></div>
@@ -236,6 +240,8 @@
 </ul>
 </div>
 
+<details class="tl-details tl-more">
+<summary>📋 Bấm xem bảng so sánh ba dạng</summary>
 <div class="table-scroll">
 <table class="tl-table tl-table--data">
 <thead>
@@ -248,6 +254,7 @@
 </tbody>
 </table>
 </div>
+</details>
 
 <details class="tl-details tl-more">
 <summary>🧭 Quy tắc nắm tay phải: hai cách dùng — bấm xem</summary>
@@ -264,7 +271,6 @@
 
 <ul>
 <li>Đường sức là những <strong>đường tròn đồng tâm</strong>, tâm nằm trên dây, nằm trong mặt phẳng vuông góc với dây.</li>
-<li>$r$ là khoảng cách từ điểm xét tới dây; $B$ tỉ lệ nghịch với $r$.</li>
 </ul>
 
 <!--FIG4A-->
@@ -285,7 +291,6 @@
 
 <ul>
 <li>Đường sức xuyên qua mặt vòng dây, vào một mặt và ra mặt kia; tại tâm $\vec{B}$ <strong>vuông góc mặt phẳng vòng dây</strong>.</li>
-<li>$R$ là bán kính vòng, $N$ là số vòng chồng sát nhau.</li>
 </ul>
 
 <!--FIG4B-->
@@ -307,7 +312,7 @@
 
 <ul>
 <li>Trong lòng ống, từ trường là <strong>từ trường đều</strong>: đường sức song song với trục ống, cách đều nhau.</li>
-<li>$n = N/l$ (vòng/m; $l$ là chiều dài ống, khác $l$ trong $F = BIl$); $B$ không phụ thuộc đường kính ống (ống dài hơn nhiều so với đường kính).</li>
+<li>⚠ $l$ trong $n = N/l$ là chiều dài ống, khác $l$ trong $F = BIl$; $B$ không phụ thuộc đường kính ống.</li>
 </ul>
 
 <!--FIG4C-->
@@ -329,6 +334,7 @@
 <li>Ví dụ vòng dây: $N = 10$, $R = 5$ cm, $I = 2$ A → $B \approx 2,5\cdot10^{-4}$ T.</li>
 <li>Ví dụ ống dây: $n = 500$ vòng/m, $I = 2$ A → $B = 4\pi\cdot10^{-7} \times 500 \times 2 = 4\pi\cdot10^{-4} \approx 12,6\cdot10^{-4} = 1,26\cdot10^{-3}$ T.</li>
 </ul>
+<p>⚠ Dời dấu phẩy sang trái 1 chữ số: $12,6\cdot10^{-4} = 1,26\cdot10^{-3}$.</p>
 </details>
 
 
@@ -337,7 +343,6 @@
 <p><strong>Làm:</strong> đặt la bàn nhỏ cách dây dẫn thẳng khoảng 5 cm, cho dòng 5–10 A chạy qua vài giây; sau đó quấn dây thành ống dây và đưa la bàn vào trong lòng ống. <strong>Quan sát:</strong> cạnh dây thẳng, kim lệch hẳn khỏi phương Bắc – Nam (cỡ $50^\circ$ khi $I = 10$ A, $r = 5$ cm, nền là thành phần nằm ngang của từ trường Trái Đất, khoảng $30\ \mu\text{T}$ — chính thành phần này làm kim la bàn quay; càng gần dây hoặc càng tăng dòng thì lệch càng nhiều); đảo chiều dòng thì kim lệch sang phía ngược lại; trong lòng ống dây, kim chỉ dọc theo trục ống. <strong>Rút ra:</strong> chiều đường sức theo quy tắc nắm tay phải; từ trường trong lòng ống dây mạnh và song song trục ống.</p>
 </details>
 
-<p>⚠ Dời dấu phẩy sang trái 1 chữ số: $12,6\cdot10^{-4} = 1,26\cdot10^{-3}$.</p>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
@@ -529,9 +534,7 @@
 
 <ul>
 <li><strong>Loa, tai nghe:</strong> dòng biến thiên làm lực từ đổi chiều, kéo màng loa rung.</li>
-<li><strong>Động cơ điện:</strong> rôto là khung dây quay nhờ ngẫu lực từ.</li>
-<li><strong>Cân dòng điện:</strong> đo lực từ lên dây đã biết $I$, $l$ để suy ra $B$.</li>
-<li><strong>Máy MRI:</strong> nam châm siêu dẫn tạo từ trường 1,5–3 T, mạnh hơn từ trường Trái Đất hàng chục nghìn lần.</li>
+<li><strong>Máy MRI:</strong> nam châm siêu dẫn tạo từ trường 1,5–3 T.</li>
 </ul>
 
 <div class="tl-box tl-box--think tl-check">
