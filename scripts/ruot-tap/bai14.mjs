@@ -130,16 +130,15 @@ ${head('BÀI 14 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: V
 <h3><i>2</i>Dự đoán trước khi học <span class="hint">(đoán sai cũng không sao)</span></h3>${tag('1·2')}
 <div class="card">
 <p style="margin:0 0 1mm">Năm 1909, Rutherford bắn hạt alpha vào lá vàng mỏng và thấy như hình bên. Theo em, nguyên tử:</p>
-<div class="fig-side" style="grid-template-columns:1fr 44mm"><div>
+<div class="fig-side" style="grid-template-columns:1fr 22mm"><div>
 <div class="opt"><span class="b">A</span><span>Là khối cầu đặc, các hạt phân bố đều</span></div>
 <div class="opt"><span class="b">B</span><span>Không có hạt nhân, chỉ có các êlectron</span></div>
-<div class="opt"><span class="b">C</span><span>Gần như trống rỗng, điện dương tập trung ở một vùng rất nhỏ</span></div></div>
-${hinh.laVang('')}</div>
-<div style="margin-top:1.5mm">Em chọn: <span class="fill" style="min-width:10mm"></span> &nbsp;<span class="ck"></span>chắc &nbsp;<span class="ck"></span>không chắc &nbsp;· <span class="hint">Vì sao em nghĩ vậy?</span></div>${lines(1)}
+<div class="opt"><span class="b">C</span><span>Gần như trống rỗng, điện dương tập trung ở một vùng rất nhỏ</span></div>
+<div style="margin-top:1.5mm">Em chọn: <span class="fill" style="min-width:10mm"></span> &nbsp;<span class="ck"></span>chắc &nbsp;<span class="ck"></span>không chắc &nbsp;· <span class="hint">Vì sao?</span></div>${lines(1)}</div>
+${hinh.anh('rutherford-bo-thi-nghiem.png', 'Máy dò quay quanh lá vàng, đếm hạt ở góc φ.')}</div>
 </div>
 <h3><i>3</i>Học xong, em sửa lại <span class="hint">(bút khác màu, cuối giờ)</span></h3>${tag('1·3')}
-<div class="card soft"><div>Đáp án đúng là: <span class="fill"></span> &nbsp; Em đoán <span class="ck"></span>đúng &nbsp;<span class="ck"></span>sai</div>
-<div class="hint" style="margin-top:1mm">Điều em hiểu sai hoặc mới biết:</div>${lines(1)}</div>
+<div class="card soft"><div>Đáp án đúng là: <span class="fill"></span> &nbsp; Em đoán <span class="ck"></span>đúng &nbsp;<span class="ck"></span>sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 <h3><i>4</i>II.1 · Hạt nhân, lực hạt nhân, kí hiệu</h3>${tag('1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Hạt nhân gồm <span class="fill" style="min-width:16mm"></span> và <span class="fill" style="min-width:16mm"></span>, gọi chung là <span class="fill" style="min-width:16mm"></span>.</div>
@@ -150,7 +149,7 @@ ${hinh.laVang('')}</div>
 <div>${m('A')} (trên) = số <span class="fill" style="min-width:14mm"></span> = <span class="fill" style="min-width:14mm"></span> + <span class="fill" style="min-width:14mm"></span></div>
 <div>${m('Z')} (dưới) = số <span class="fill" style="min-width:20mm"></span> &nbsp; ${m('N')} = <span class="fill" style="min-width:8mm"></span> − <span class="fill" style="min-width:8mm"></span></div>
 </div></div></div>
-<div class="card" style="padding:1mm 3mm"><b>Tự kiểm tra 1.</b> ${m('{}^{65}_{29}\\mathrm{Cu}')} có:<div class="two" style="margin:0"><div><b>A.</b> 65 prôtôn, 29 nơtron</div><div><b>B.</b> 29 nuclôn, 36 nơtron</div><div><b>C.</b> 29 prôtôn, 36 nơtron</div><div><b>D.</b> 29 prôtôn, 65 nơtron</div></div>
+<div class="card" style="padding:1mm 3mm"><b>Tự kiểm tra 1.</b> ${m('{}^{65}_{29}\\mathrm{Cu}')} có:<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0 2mm;margin:0;font-size:var(--fs-sm)"><div><b>A.</b> 65 p, 29 n</div><div><b>B.</b> 29 nuclôn, 36 n</div><div><b>C.</b> 29 p, 36 n</div><div><b>D.</b> 29 p, 65 n</div></div>
 Em chọn: <span class="fill"></span> <span class="ck"></span>chắc &nbsp; Vì ${m('N=A-Z=')} <span class="fill" style="min-width:25mm"></span></div>
 ${foot(1)}</section>
 
@@ -240,9 +239,9 @@ ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 <h3><i>3</i>Thử thách phân tầng</h3>
 <div class="fig-side" style="grid-template-columns:1fr 42mm">${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:10mm"></span> · số nơtron <span class="fill" style="min-width:10mm"></span> · vì <span class="fill" style="min-width:20mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng chiếm bao nhiêu phần thể tích nguyên tử? (kích thước ở Tập 2·3)', 4))}${hinh.kichThuoc()}</div>
 <h3><i>4</i>Câu 7 (urani) và mô phỏng PhET</h3>
-${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = … · vì sao <span class="hint">(em chọn, chắc/đúng đã ghi ở Tập 2·4)</span>`, 2)
+<div class="fig-side" style="grid-template-columns:1fr 46mm">${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = …`, 2)
  + wl('Bắn hạt alpha (Rutherford) · Dự đoán:', 1) + wl('Thấy:', 2)
- + wl('Đồng vị neon · Dự đoán trung bình gần đồng vị nào:', 1) + wl('Thấy / vì sao 20,18:', 2))}
+ + wl('Đồng vị neon · Dự đoán gần đồng vị nào:', 1) + wl('Thấy / vì sao 20,18:', 2))}${hinh.anh('rutherford-alpha-qua-la-vang.png', 'Chỉ hạt alpha đi sát hạt nhân (chấm đỏ) mới lệch mạnh.')}</div>
 ${foot(5)}</section>
 
 ${btmPages(6, { m, head, foot, tag, lines, wl, hinh })}

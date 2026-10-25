@@ -51,7 +51,13 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
   `hinh.mjs`, mỗi hình trả lời một câu hỏi (H1), đặt CẠNH khối chữ bằng `.fig-side` (grid `1fr 40–46mm`) để không tốn
   chiều cao; hình ở ô giải dạng khó là gợi ý nhìn trước khi tính (để trống tỉ số/kết quả cho HS điền). Chữ trong SVG
   ≥ 20 đơn vị viewBox (≈3 mm khi in rộng 46 mm) — kiểm bằng `node scripts/ruot-tap/xem-hinh.mjs` trước khi dựng.
-  Không chép hình SGK/mạng không rõ giấy phép; cần ảnh thật thì chỉ Wikimedia Commons CC + ghi tác giả.
+  Ảnh sách tham khảo: ruột tập lưu hành nội bộ nên thầy chốt 25/10 **được lấy hình từ Halliday "Fundamentals of Physics 12th"**
+  (`/Users/MAC/Documents/THPT/số hoá THPT/Fundamentals of Physics 12th/`, 2 PDF) mà không xét giấy phép: `pdftotext` tìm
+  "Figure NN.N.N" → số trang, `pdftoppm -r 200 -f N -l N` → cắt bằng PIL bỏ chữ Anh thừa, xoay nếu cần để hình nằm ngang,
+  lưu `scripts/ruot-tap/anh/*.png` ≤150 KB, chèn bằng `hinh.anh(file, chú thích Việt dịch nhãn)`. Hình cao (dọc) tốn chỗ gấp
+  đôi hình ngang — chọn hình ngang hoặc xoay; cột ảnh ≤ 24 mm chỉ còn đọc được nhờ chú thích.
+  **Ảnh cắt từ sách và PDF chứa chúng chỉ giữ trên Mac, không đẩy lên GitHub** (`scripts/ruot-tap/anh/` và `out/*.pdf` đã
+  gitignore từ 25/10) — có bản sao ở ngoài repo vì mất là phải cắt lại.
 - **Trang sửa bài không có lưới đáp án**: đề làm trên web nên chỉ dòng "Câu sai P.I/P.II/P.III" + 5 ô Thầy chữa.
   Ghi chú tự do đúng 2 trang/bài; không ô "câu hỏi cho trợ giảng".
 - Cân trang bằng dòng `trang N: dư X mm` script in ra (mục tiêu 0–15 mm, âm = tràn); đo từng khối bằng
