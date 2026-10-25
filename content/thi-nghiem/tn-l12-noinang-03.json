@@ -1,0 +1,199 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+  "lesson_id": 4,
+  "nguon_trong_bai": "content/lesson-samples/l12-noi-nang-dl1/theory.html",
+  "id": "tn-l12-noinang-03",
+  "ten": "Thí nghiệm Joule: quả nặng rơi quay cánh khuấy làm nóng nước",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "noinang.thuc_hien_cong",
+    "nhietluong.cong_thuc_q_mcdt",
+    "dl1.do_bien_thien_noi_nang"
+  ],
+  "muc_tieu": "Thấy công cơ học làm tăng nội năng của nước đúng như nhiệt lượng tương ứng (công và nhiệt lượng tương đương), nên cộng được A và Q trong ΔU = A + Q.",
+  "gia_thuyet": [
+    "Công cơ học làm tăng nội năng y như nhiệt lượng: công và nhiệt lượng cùng là năng lượng được truyền."
+  ],
+  "du_doan_neu_dung": [
+    "Không đun mà nước vẫn nóng lên; công A = n·M·g·h gấp đôi thì độ tăng nhiệt độ Δt gấp đôi, tức A/(m·Δt) không đổi và xấp xỉ nhiệt dung riêng của nước."
+  ],
+  "khong_chung_minh": [
+    "Không cho biết nội năng ban đầu của nước — chỉ đo được phần biến thiên.",
+    "Không chứng minh được điều ngược lại: nhiệt lượng có thể biến hết thành công (điều này sai, là nội dung định luật II)."
+  ],
+  "dung_cu": [
+    {
+      "ten": "Quả nặng khối lượng M treo dây vắt qua ròng rọc",
+      "so_luong": 2
+    },
+    {
+      "ten": "Trục quấn dây gắn cánh khuấy",
+      "so_luong": 1
+    },
+    {
+      "ten": "Bình nước cách nhiệt có vách chắn để nước không quay theo",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nhiệt kế chính xác (độ chia nhỏ)",
+      "so_luong": 1
+    },
+    {
+      "ten": "Thước đo độ cao rơi h",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đọc nhiệt độ nước ban đầu.",
+      "Thả quả nặng rơi độ cao h; dây kéo trục quay cánh khuấy trong nước.",
+      "Cuộn dây lại, thả lặp n lần; đọc nhiệt độ nước sau cùng.",
+      "Coi rằng toàn bộ công A = n·M·g·h truyền cho nước; bỏ qua nhiệt dung của bình và cánh khuấy."
+    ],
+    "quan_sat": [
+      "Nước nóng dần theo số lần thả quả nặng, không có nguồn nhiệt nào.",
+      "Số lần thả gấp đôi thì Δt gần gấp đôi; tỉ số A/(m·Δt) gần không đổi, quanh 4,3.10³ J/(kg·K)."
+    ],
+    "rut_ra": [
+      "Cánh khuấy làm các lớp nước cọ xát, chuyển động có hướng chuyển thành chuyển động hỗn loạn của phân tử: nội năng nước tăng.",
+      "Cứ khoảng 4,2 kJ công làm 1 kg nước nóng thêm 1 K — đúng bằng nhiệt lượng cần nếu đun: công và nhiệt lượng tương đương, nên cộng được trong ΔU = A + Q."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "M",
+      "ten": "Khối lượng quả nặng",
+      "don_vi": "kg",
+      "kieu": "dieu_chinh",
+      "min": 5,
+      "max": 30,
+      "mac_dinh": 20,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "h",
+      "ten": "Độ cao rơi",
+      "don_vi": "m",
+      "kieu": "dieu_chinh",
+      "min": 0.5,
+      "max": 3.0,
+      "mac_dinh": 2.0,
+      "buoc": 0.1
+    },
+    {
+      "ky_hieu": "n",
+      "ten": "Số lần thả",
+      "don_vi": "lần",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 40,
+      "mac_dinh": 20,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "m",
+      "ten": "Khối lượng nước",
+      "don_vi": "kg",
+      "kieu": "co_dinh",
+      "gia_tri": 0.4
+    },
+    {
+      "ky_hieu": "g",
+      "ten": "Gia tốc trọng trường",
+      "don_vi": "m/s2",
+      "kieu": "co_dinh",
+      "gia_tri": 9.8
+    },
+    {
+      "ky_hieu": "c",
+      "ten": "Nhiệt dung riêng của nước",
+      "don_vi": "J/(kg.K)",
+      "kieu": "co_dinh",
+      "gia_tri": 4180
+    },
+    {
+      "ky_hieu": "A",
+      "ten": "Công của quả nặng",
+      "don_vi": "J",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "dt",
+      "ten": "Độ tăng nhiệt độ nước",
+      "don_vi": "K",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.01
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "A = n·M·g·h",
+      "Lí tưởng: A = m·c·Δt nên Δt = A/(m·c)",
+      "Có hao phí tỉ lệ η: Δt = (1 − η)·A/(m·c), tỉ số A/(m·Δt) = c/(1 − η) > c"
+    ],
+    "gia_thiet": [
+      "toàn bộ công truyền cho nước (mô hình lí tưởng)",
+      "số liệu mẫu coi 4% công bị hao (ma sát ròng rọc, động năng quả nặng lúc chạm sàn, nhiệt sang bình)"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo M, h, n và có công tắc 'có hao phí' để thấy tỉ số A/(m·Δt) lớn hơn 4180."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Số lần thả n",
+      "A = nMgh (J)",
+      "Δt (K)",
+      "A/(m·Δt) (J/(kg·K))"
+    ],
+    "hang": [
+      [
+        0,
+        0,
+        0.0,
+        0
+      ],
+      [
+        5,
+        1960,
+        1.13,
+        4336
+      ],
+      [
+        10,
+        3920,
+        2.25,
+        4356
+      ],
+      [
+        15,
+        5880,
+        3.38,
+        4349
+      ],
+      [
+        20,
+        7840,
+        4.5,
+        4356
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ, không phải số đo của Joule: Δt = 0,96·nMgh/(mc) làm tròn 0,01 K, M = 20 kg, h = 2,00 m, g = 9,8 m/s², m = 0,400 kg, c = 4180 J/(kg·K). Cột cuối tính từ Δt đã làm tròn; trong bài ô n = 20 để học sinh tự tính."
+  },
+  "ket_qua_ky_vong": "Nước nóng lên tỉ lệ với công của quả nặng; tỉ số A/(m·Δt) gần không đổi, khoảng 4,3–4,4.10³ J/(kg·K), hơi lớn hơn 4180 do hao phí.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng nước nóng lên vì 'nhận nhiệt lượng từ cánh khuấy' — thực ra nước nhận công, không có chênh lệch nhiệt độ ban đầu.",
+    "Cho rằng công và nhiệt lượng là hai thứ khác loại không cộng được — Joule cho thấy chúng tương đương.",
+    "Cho rằng thí nghiệm đo được nội năng của nước — chỉ đo được độ biến thiên."
+  ],
+  "sai_so_thuong_gap": [
+    "Một phần công mất cho ma sát ròng rọc, động năng quả nặng lúc chạm sàn và nhiệt sang bình → Δt đo được NHỎ hơn lí tưởng → tỉ số A/(m·Δt) LỚN hơn 4180. Giảm: trừ động năng ½Mv² lúc chạm sàn, tính thêm nhiệt bình nhận, đo nhiệt mất khi để yên cùng khoảng thời gian rồi cộng bù.",
+    "Δt rất nhỏ (cỡ 1 K) nên sai số đọc nhiệt kế chiếm tỉ lệ lớn. Giảm: thả nhiều lần để Δt lớn, dùng nhiệt kế độ chia nhỏ."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Quả nặng rơi kéo trục quay cánh khuấy trong bình; nhiệt kế leo theo số lần thả; bảng tự điền A, Δt, A/(mΔt).",
+    "diem_nhan": "Đặt cạnh bếp điện cùng năng lượng: công n·M·g·h và nhiệt lượng P·τ bằng nhau thì Δt như nhau — học sinh thấy công và nhiệt lượng tương đương."
+  }
+}

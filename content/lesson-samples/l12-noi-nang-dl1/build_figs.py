@@ -68,7 +68,7 @@ b += text(338, 118, "chậm", RED, 12.5, "start", "600")
 b += line(16, 222, 404, 222, "currentColor", 1.5, "", .5)
 b += text(16, 240, "Cùng nhiệt độ, khác tốc độ dẫn nhiệt → khác cảm giác", "currentColor", 12.5, "start", "600")
 fig1 = wrap("0 0 420 252", "Bàn tay đặt lên thanh kim loại 5 độ C và thanh gỗ 5 độ C: kim loại rút nhiệt từ tay nhanh hơn nên thấy buốt hơn",
-            b, "Hình 1. Hai vật cùng 5 °C nhưng kim loại dẫn nhiệt nhanh hơn gỗ, rút nhiệt từ tay nhanh hơn — nên tay thấy buốt. Cảm giác không phải là nhiệt độ.")
+            b, "Hình 1. Cùng 5 °C, nhưng kim loại rút nhiệt từ tay nhanh hơn gỗ. Cảm giác không phải là nhiệt độ.")
 
 # ======================================================= Hình 2: hai cách làm biến đổi nội năng
 b = defs("f2")
@@ -112,7 +112,7 @@ b += text(304, 176, "Cách phân biệt:", "currentColor", 12.5, "start", "700")
 b += text(304, 192, "có lực làm vật", GRN, 12, "start", "600")
 b += text(304, 206, "dịch chuyển không?", GRN, 12, "start", "600")
 fig2 = wrap("0 0 440 300", "Hai cách làm biến đổi nội năng: nén khí bằng công và hơ nóng bằng truyền nhiệt, cùng làm nội năng tăng",
-            b, "Hình 2. Nội năng đổi bằng hai đường: thực hiện công (có lực làm dịch chuyển) hoặc truyền nhiệt (chênh nhiệt độ). Cả hai đều dẫn tới nội năng tăng.")
+            b, "Hình 2. Hai đường làm đổi nội năng: thực hiện công (có lực làm dịch chuyển) và truyền nhiệt (chênh nhiệt độ).")
 
 # ======================================================= Hình 3: cùng khối lượng, cùng độ tăng nhiệt độ
 b = defs("f3")
@@ -142,7 +142,7 @@ b += text(220, 86, "tăng 1 K", "currentColor", 12.5, "middle", "600")
 b += line(16, 236, 424, 236, "currentColor", 1.5, "", .5)
 b += text(16, 254, "c nước lớn gấp ~4,7 lần c nhôm → nước “khó nóng, khó nguội”", "currentColor", 12, "start", "600")
 fig3 = wrap("0 0 440 266", "So sánh nhiệt lượng cần để làm 1 kg nước và 1 kg nhôm tăng thêm 1 K: nước cần 4180 J, nhôm chỉ cần 880 J",
-            b, "Hình 3. Cùng khối lượng và cùng độ tăng nhiệt độ, nước cần nhiều nhiệt hơn nhôm gần 5 lần — vì nhiệt dung riêng của nước lớn hơn. Đó là lí do nước làm mát tốt.")
+            b, "Hình 3. Cùng khối lượng, cùng độ tăng nhiệt độ: nước cần nhiệt gần gấp 5 lần nhôm — nên nước làm mát tốt.")
 
 # ======================================================= Hình 4: sơ đồ định luật I cho bài toán bơm
 b = defs("f4")
@@ -174,7 +174,7 @@ b += text(363, 219, "= +45 J", GRN, 14, "middle", "700")
 b += line(16, 268, 432, 268, "currentColor", 1.5, "", .5)
 b += text(16, 286, "Nhận vào thì dương (công +60) · mất đi thì âm (nhiệt −15)", "currentColor", 12, "start", "600")
 fig4 = wrap("0 0 440 298", "Sơ đồ định luật I cho một lần ấn bơm: công 60 J truyền vào khí, khí toả ra 15 J, độ biến thiên nội năng bằng 45 J",
-            b, "Hình 4. Cùng một lần bơm: công 60 J đi vào khí, nhiệt 15 J đi ra khỏi khí. Định luật I cộng hai số đại số lại: ΔU = 60 + (−15) = +45 J.")
+            b, "Hình 4. Một lần bơm: công 60 J vào khí, nhiệt 15 J ra khỏi khí: ΔU = 60 + (−15) = +45 J.")
 
 # ------------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
