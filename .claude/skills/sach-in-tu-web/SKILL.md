@@ -69,6 +69,7 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
   gitignore từ 25/10) — có bản sao ở ngoài repo vì mất là phải cắt lại.
 - **Trang sửa bài không có lưới đáp án**: đề làm trên web nên chỉ dòng "Câu sai P.I/P.II/P.III" + 5 ô Thầy chữa.
   Ghi chú tự do đúng 2 trang/bài; không ô "câu hỏi cho trợ giảng".
+- **Bài 15–18 (lesson 16–19) dùng khung chung** `scripts/ruot-tap/khung.mjs` (CSS, trang 8–12 sinh tự động, bài tập mẫu `btm.dang`, chẩn đoán dư mm) + `hinh-ch4.mjs` (hình): chạy `node scripts/ruot-tap/bai15.mjs` … `bai18.mjs`. Bài 14 giữ bản riêng `bai14.mjs`. Bài mới: chép `bai18.mjs`, đổi `khoiTao({bai, lid})`, nội dung 5 trang đầu + mảng `dang`, thêm hình vào `hinh-ch4.mjs`.
 - Cân trang bằng dòng `trang N: dư X mm` script in ra (mục tiêu 0–15 mm, âm = tràn); đo từng khối bằng
   `getBoundingClientRect` trên `.pdf.html` khi không rõ khối nào phình, rồi mới nhìn ảnh.
 
@@ -102,4 +103,4 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
   5 hình thêm vào mà tổng số trang không đổi.
 - 2026-10-25 · Lưới đáp án em–đúng trên trang sửa bài là chép lại thứ web đã hiện → với đề làm trên web, chỉ ghi số câu
   sai; hỏi "đề làm ở đâu" trước khi vẽ bảng điền.
-
+- 2026-10-25 · Ruột tập bài 15–18: tách KaTeX giữa chừng để chen ô trống (`m('…{')+fill+m('}')`) làm KaTeX báo lỗi → viết lại công thức bằng chỉ số riêng (`A_Y=` ô trống); hình trong SVG có `viewBox` rộng (>320) thì cột hình phải ≥ 52–56 mm mới giữ chữ ≈ 2,9 mm; hình chỉ hiện trong ô giải khi `gi > 0` (dạng `gi: 0` + `fig` thì mất hình, đã gặp ở Dạng 5 bài 18) → với dạng có hình luôn đặt `gi ≥ 1`; trang 7 tràn thì hạ `gi` các dạng không có hình trước, rồi mới rút hình.

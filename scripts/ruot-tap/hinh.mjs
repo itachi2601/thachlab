@@ -91,3 +91,5 @@ export const hinh = {
     return wrap('0 0 320 136', b, cap, 'Hai đồng vị bo trên một thanh cân, điểm tựa tại khối lượng trung bình');
   },
 };
+// Bộ vẽ dùng chung cho hình bài khác (hinh-ch4.mjs: bài 15–18): cùng màu/nét/cỡ chữ.
+export const ve = { t, nuc, p, n, defs, wrap, INK, RED, BLUE, GREY, FS, SW };
