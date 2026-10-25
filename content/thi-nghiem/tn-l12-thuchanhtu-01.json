@@ -14,6 +14,17 @@
   "thuchanhtu.sai_so"
  ],
  "muc_tieu": "Đo cảm ứng từ trong khe nam châm chữ U từ độ tăng số cân Δm khi có dòng chạy qua cạnh khung dây, bằng hai cách: tính từng lần và độ dốc đồ thị Δm–I, kèm sai số.",
+ "gia_thuyet": [
+  "Lực từ lên đoạn dây nằm trong khe nam châm tỉ lệ thuận với cường độ dòng điện I (F = BIl, B của khe không đổi)."
+ ],
+ "du_doan_neu_dung": [
+  "I gấp đôi thì độ thay đổi số chỉ cân Δm cũng gấp đôi; tỉ số Δm/I gần không đổi."
+ ],
+ "khong_chung_minh": [
+  "Chỉ đo khi dây vuông góc đường sức nên chưa cho biết lực từ đổi theo góc α.",
+  "Chưa đổi chiều dài l hay số vòng dây nên chưa kiểm F tỉ lệ với l.",
+  "Không cho biết cảm ứng từ ngoài khe nam châm."
+ ],
  "dung_cu": [
   {
    "ten": "Cân điện tử chia 0,01 g",
@@ -42,9 +53,9 @@
  ],
  "cac_buoc": {
   "lam": [
-   "Bấm TARE khi chưa có dòng, cân về 0,00 g; kiểm tra cạnh dưới khung vuông góc đường sức và không chạm nam châm.",
-   "Đóng mạch, chỉnh I = 1,0 A, đợi số cân ổn định rồi đọc Δm; ngắt mạch.",
-   "Tăng I lên 2,0 – 3,0 – 4,0 – 5,0 A, mỗi lần đóng mạch vài giây rồi ngắt, ghi Δm vào bảng."
+   "Khi I = 0, bấm TARE (hoặc ghi số chỉ ban đầu để trừ); kiểm tra cạnh dưới khung vuông góc đường sức và không chạm nam châm.",
+   "Đóng mạch, chỉnh I = 1,0 A, đọc Δm rồi ngắt; kiểm tra cân về số ban đầu.",
+   "Lặp lại ở 2,0 – 3,0 – 4,0 – 5,0 A; mỗi nấc đảo chiều dòng đọc thêm một lần, lấy trung bình độ lớn hai số đọc."
   ],
   "quan_sat": [
    "Δm tăng gần đều theo I: 0,50 g ở 1,0 A và 2,44 g ở 5,0 A.",
@@ -52,7 +63,7 @@
    "Tính B = Δm·g/(I·l) cho từng lần đều quanh 0,12 T (0,119 đến 0,123 T)."
   ],
   "rut_ra": [
-   "Lực từ lên cạnh khung tỉ lệ thuận với I: đồ thị Δm–I là đường thẳng qua gốc toạ độ.",
+   "Tỉ số Δm/I gần không đổi nên lực từ lên cạnh khung tỉ lệ thuận với I; đồ thị Δm–I là đường thẳng qua gốc toạ độ.",
    "Độ dốc k = B·l/g nên B = k·g/l ≈ 0,120 T.",
    "Đo ở dòng lớn cho sai số tương đối nhỏ hơn (2,7% ở 5,0 A so với 8,3% ở 1,0 A)."
   ]
@@ -122,42 +133,42 @@
   "cot": [
    "I (A)",
    "Δm đo (g)",
-   "F = Δm·g (mN)",
-   "B = Δm·g/(I·l) (T)"
+   "B = Δm·g/(I·l) (T)",
+   "Δm/I (g/A)"
   ],
   "hang": [
    [
     1,
     0.5,
-    4.91,
-    0.123
+    0.123,
+    0.5
    ],
    [
     2,
     0.97,
-    9.52,
-    0.119
+    0.119,
+    0.485
    ],
    [
     3,
     1.45,
-    14.22,
-    0.119
+    0.119,
+    0.483
    ],
    [
     4,
     1.97,
-    19.33,
-    0.121
+    0.121,
+    0.493
    ],
    [
     5,
     2.44,
-    23.94,
-    0.12
+    0.12,
+    0.488
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ tính từ mô hình B = 0,12 T, l = 4,0 cm (Δm lí thuyết 0,489·I g), thêm sai lệch cỡ ±0,02 g; không phải số đo thật. Trung bình B = 0,120 T; độ dốc 0,4885 g/A cho B = 0,1198 T."
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình Δm = B·I·l/g với B = 0,12 T, l = 0,040 m, g = 9,81 m/s² (Δm lí thuyết 0,4893·I g), cộng sai lệch không quá ±0,02 g; không phải số đo thật. Trong bài, ô Δm/I của hàng I = 5,0 A để trống cho học sinh tự tính. Trung bình B = 0,120 T; độ dốc 0,4885 g/A cho B = 0,1198 T."
  },
  "ket_qua_ky_vong": "Δm tăng đều theo I; năm giá trị B đều quanh 0,12 T và độ dốc đồ thị cho kết quả khớp trung bình từng lần.",
  "hien_tuong_hay_sai": [
@@ -166,10 +177,10 @@
   "Lấy số cân khi dây còn rung hoặc khi dây đã nóng lên."
  ],
  "sai_so_thuong_gap": [
-  "Không bấm TARE khi chưa có dòng.",
-  "Cạnh khung không vuông góc đường sức nên lực nhỏ đi theo sin θ.",
-  "Chiều dài hiệu dụng của cạnh trong khe nhỏ hơn l đo bằng thước kẹp do từ trường rò ở mép.",
-  "Đóng mạch quá lâu làm dây nóng, điện trở tăng và dòng trôi."
+  "Không bấm TARE khi cân đang lệch dương: mọi Δm dư một lượng → B LỚN HƠN thật. Giảm: đọc số chỉ cân lúc I = 0 rồi trừ; đảo chiều dòng, lấy nửa hiệu hai số đọc để khử phần lệch.",
+  "Cạnh khung không vuông góc đường sức: lực chỉ bằng BIl·sin θ → B tính theo F = BIl NHỎ HƠN thật. Giảm: chỉnh cạnh khung vuông góc đường sức trước khi đo.",
+  "Đóng mạch quá lâu: I ghi từ lúc mới đóng mạch, sau đó dây nóng làm I tụt → B tính ra NHỎ HƠN thật. Giảm: đọc I và Δm cùng lúc, đóng mạch ngắn.",
+  "Giá đỡ khung chạm bệ cân: phần lực từ lên dây truyền xuống cân, triệt tiêu một phần phản lực → Δm và B NHỎ HƠN thật. Giảm: giá đỡ đặt ngoài cân."
  ],
  "goi_y_mo_phong": {
   "loai": "do_thi+bang_so_lieu",

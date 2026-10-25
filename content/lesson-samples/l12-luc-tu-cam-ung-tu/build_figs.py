@@ -90,27 +90,31 @@ b += text(216, 324, "cổ tay → ngón tay", ORG, 15, "middle", "600")
 fig2 = wrap("0 0 460 340", "Bàn tay trái duỗi thẳng, lòng bàn tay hướng về phía người xem: đường sức từ xuyên vào lòng bàn tay, chiều từ cổ tay đến ngón tay theo dòng điện, ngón cái chỉ chiều lực từ",
             b, "Hình 2. Quy tắc bàn tay trái.")
 
-# ------------------------------------------------- Hình 3: đồ thị F theo I của thí nghiệm đo
+# ------------------------------------------------- Hình 3: cân dòng điện (bố trí đề 2025 câu II.2)
+# Nhìn chính diện: cực N trái, cực S phải, B nằm ngang N → S; dây MN nhìn đầu, dòng M (sau) → N (trước) = ⊙.
+# F lên dây hướng lên; phản lực F' dây đẩy nam châm hướng xuống → cân tăng.
 b = defs("f3")
-b += line(70, 200, 420, 200, "currentColor", 2)
-b += line(70, 200, 70, 40, "currentColor", 2)
-for fx, nhan in ((136, "10"), (72, "20")):
-    b += line(64, fx, 70, fx, "currentColor", 2)
-    b += text(60, fx + 4, nhan, "currentColor", 11, "end", "600")
-    b += line(70, fx, 400, fx, "currentColor", 1, "5 6", .22)
-for i in range(1, 6):
-    x = 70 + 62 * i
-    b += line(x, 200, x, 205, "currentColor", 2)
-    b += text(x, 220, str(i), "currentColor", 11, "middle", "600")
-b += text(42, 30, "F (mN)", "currentColor", 12, "start", "700")
-b += text(418, 190, "I (A)", "currentColor", 12, "end", "700")
-b += line(70, 200, 380, 38, GRN, 2.4, "7 5", .95)                              # đường hồi quy qua gốc (5,05 mN/A)
-for i, f in enumerate((4.6, 10.4, 14.2, 20.6, 25.5), 1):
-    b += dot(70 + 62 * i, 200 - 6.4 * f, 4.5, GRN)
-b += text(238, 166, "độ dốc ≈ 5,1 mN/A", GRN, 11, "start", "700")
-b += text(238, 184, "= B·l  →  B ≈ 0,10 T", GRN, 11, "start", "700")
-fig3 = wrap("0 0 440 232", "Đồ thị lực từ theo cường độ dòng điện: năm điểm đo nằm gần một đường thẳng đi qua gốc toạ độ, độ dốc bằng cảm ứng từ nhân chiều dài đoạn dây",
-            b, "Hình 3. F tỉ lệ thuận với I.")
+b += rect(100, 214, 240, 34, "rgba(148,163,184,.10)", "currentColor", 2, 6)     # cân
+b += rect(190, 222, 60, 18, "none", "currentColor", 1.5, 3)
+b += text(220, 236, "cân", "currentColor", 12, "middle", "700")
+b += rect(130, 178, 180, 34, "rgba(148,163,184,.16)", "currentColor", 2, 6)     # đế nam châm chữ U
+b += rect(130, 70, 52, 108, "rgba(148,163,184,.16)", "currentColor", 2, 6)      # cực N
+b += rect(258, 70, 52, 108, "rgba(148,163,184,.16)", "currentColor", 2, 6)      # cực S
+b += text(156, 128, "N", "currentColor", 18, "middle", "700")
+b += text(284, 128, "S", "currentColor", 18, "middle", "700")
+b += field_line(186, 88, 254, 88, BLUE, 2.2)                                    # đường sức nét đứt N → S
+b += field_line(186, 164, 254, 164, BLUE, 2.2)
+b += text(240, 106, "B", BLUE, 14, "middle", "700")
+b += f'<circle cx="220" cy="126" r="11" fill="none" stroke="{ORG}" stroke-width="2.5"/>' + dot(220, 126, 3.5, ORG)   # ⊙ dòng ra
+b += text(235, 132, "I", ORG, 14, "start", "700")
+b += arrow("f3", "r", 220, 112, 220, 40, 3)                                     # F lên dây
+b += text(230, 48, "F", RED, 15, "start", "700")
+b += arrow("f3", "r", 220, 182, 220, 210, 3)                                    # F' dây đẩy nam châm
+b += text(230, 204, "F′", RED, 15, "start", "700")
+b += text(20, 30, "dây MN giữ cố định", "currentColor", 12, "start", "600")
+b += text(20, 48, "dòng M → N: hướng ra (⊙)", ORG, 12, "start", "600")
+fig3 = wrap("0 0 440 260", "Nam châm chữ U đặt trên cân, cực N bên trái, cực S bên phải, đường sức nằm ngang từ N sang S; dây MN giữ cố định nằm ngang trong khe, dòng điện hướng ra phía người xem; lực từ lên dây hướng lên, lực dây đẩy nam châm hướng xuống",
+            b, "Hình 3. Cân dòng điện.")
 
 # ------------------------------------------------- Hình 4a/4b/4c: dây thẳng, vòng dây, ống dây (nhìn xiên, có che khuất)
 # Nét liền ở phía trước đè lên; vật phía sau bị ngắt một khe chỗ vật trước đi qua (svg_lib: arc_pts...).

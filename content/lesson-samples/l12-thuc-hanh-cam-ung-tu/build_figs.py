@@ -31,7 +31,7 @@ RED_F, BLUE_F, GREY_F = "rgba(248,113,113,.28)", "rgba(56,189,248,.28)", "rgba(1
 b = ""
 b += rect(30, 218, 190, 34, GREY_F)                       # bệ cân
 b += rect(140, 226, 70, 20, "rgba(52,211,153,.18)", GRN, 1.5, 4)
-b += text(175, 241, "1,45 g", GRN, 14, "middle", "700")
+b += text(175, 241, "? g", GRN, 14, "middle", "700")
 b += line(34, 214, 216, 214, "currentColor", 4)           # đĩa cân
 # nam châm chữ U trên đĩa
 b += rect(60, 120, 36, 94, RED_F, RED, 2, 3)
@@ -52,7 +52,7 @@ b += text(206, 170, "nam châm", "currentColor", 14, "start", "600")
 b += text(206, 188, "chữ U", "currentColor", 14, "start", "600")
 b += text(30, 272, "cân điện tử chia 0,01 g", "currentColor", 14, "start", "600")
 b += text(30, 291, "nguồn một chiều + ampe kế nối với khung", "currentColor", 14, "start", "600")
-fig1 = wrap("0 0 380 300", "Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá riêng, cạnh dưới nằm trong khe nam châm, cân chỉ 1,45 gam",
+fig1 = wrap("0 0 380 300", "Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá riêng, cạnh dưới nằm trong khe nam châm",
             b, "Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng với cạnh dưới trong khe.<br>Dây không chạm vào cân hay nam châm.")
 
 # ======================================================= Hình 2: lực và phản lực (mặt cắt khe nam châm)
@@ -202,7 +202,7 @@ def sim_html():
         fb += f'<circle cx="{cx}" cy="{CY}" r="4" fill="currentColor"/>'
     fb += text(76, CY - 8, "G", "currentColor", 14, "start", "700") + text(203, CY - 8, "G", "currentColor", 14, "start", "700") + text(330, CY - 8, "G", "currentColor", 14, "start", "700")
     fbd = (f'<div class="tl-sim__fbd"><svg viewBox="0 0 380 300" role="img" aria-label="Biểu đồ lực tác dụng lên dây, nam châm và cân; đuôi mũi tên đặt tại trọng tâm G của từng vật">{fb}</svg>'
-           '<ul class="tl-sim__leg">'
+           '<details class="tl-details tl-more"><summary>Chú giải các lực</summary><ul class="tl-sim__leg">'
            '<li><strong>Dây:</strong> <span class="lg lg-F">●</span> F lực từ</li>'
            '<li><strong>Dây:</strong> <span class="lg lg-Q">●</span> Q lực giữ của giá, ngược F nên dây đứng yên</li>'
            '<li><strong>Nam châm:</strong> <span class="lg lg-P">●</span> P trọng lực</li>'
@@ -218,7 +218,7 @@ def sim_html():
            '<p>Cân: G ở tâm bệ cân.</p>'
            '<p>Nam châm chữ U: G nằm <em>trong khe</em>, trên gông.</p>'
            '<p>Mũi tên F, F′ phóng to cho dễ thấy.</p>'
-           '<p>Các mũi tên còn lại không vẽ theo tỉ lệ.</p></div>')
+           '<p>Các mũi tên còn lại không vẽ theo tỉ lệ.</p></details></div>')
 
     h = '<div class="tl-box tl-box--exp tl-sim" data-exp="tn-l12-thuchanhtu-04">\n<p class="tl-label">🎛️ Mô phỏng: tự chỉnh dòng điện, quan sát cân</p>\n'
     h += '<div class="tl-sim__row"><b>Cường độ dòng điện</b>'

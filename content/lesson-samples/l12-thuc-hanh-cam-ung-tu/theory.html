@@ -1,7 +1,7 @@
 <div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
-<li>Giải thích vì sao <strong>cân điện tử</strong> đo được lực từ lên dây mà dây không đặt trên cân.</li>
+<li>Giải thích số chỉ <strong>cân điện tử</strong> đổi thế nào khi dây chịu lực từ.</li>
 <li>Tính <strong>cảm ứng từ</strong> $B = \dfrac{\Delta m\, g}{I\, l}$ từ số đo, và tìm $B$ bằng <strong>độ dốc</strong> đồ thị $\Delta m$–$I$.</li>
 <li>Đánh giá <strong>sai số</strong> và chọn lần đo cho sai số nhỏ nhất.</li>
 <li>Nhận ra hai lỗi hay gặp: <strong>đặt sai giá đỡ</strong>, <strong>dây lệch đường sức</strong>.</li>
@@ -11,32 +11,33 @@
 <p>6 mục, 7 câu tự kiểm tra.</p>
 </div>
 
-<h3>I. Mở bài: cân chỉ đổi số mà không ai chạm vào</h3>
+<h3>I. Mở bài: dây không chạm cân, cân có biết không?</h3>
 
 <p>Một nhóm đặt nam châm chữ U lên đĩa cân, bấm TARE cho cân về 0,00 g. Khung dây hình chữ nhật treo trên giá riêng; cạnh dưới lọt vào khe nam châm nhưng <strong>không chạm</strong> nam châm hay cân.</p>
 
-<p>Đóng công tắc cho dòng 3,0 A qua khung, số cân nhảy lên <strong>1,45 g</strong> dù không đặt gì thêm lên đĩa.</p>
+<p>Dây có dòng điện trong từ trường chịu lực từ, nhưng dây không chạm cân. Cân có "thấy" lực đó không?</p>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 380 300" role="img" aria-label="Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá riêng, cạnh dưới nằm trong khe nam châm, cân chỉ 1,45 gam"><rect x="30" y="218" width="190" height="34" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><rect x="140" y="226" width="70" height="20" rx="4" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="1.5"/><text x="175" y="241" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">1,45 g</text><line x1="34" y1="214" x2="216" y2="214" stroke="currentColor" stroke-width="4" opacity="1"/><rect x="60" y="120" width="36" height="94" rx="3" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="158" y="120" width="36" height="94" rx="3" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><rect x="60" y="182" width="134" height="32" rx="3" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="78" y="160" fill="#f87171" font-size="17" font-weight="700" text-anchor="middle">N</text><text x="176" y="160" fill="#38bdf8" font-size="17" font-weight="700" text-anchor="middle">S</text><line x1="346" y1="40" x2="346" y2="252" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="127" y1="40" x2="346" y2="40" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="346" y1="252" x2="300" y2="252" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="127" y1="40" x2="127" y2="150" stroke="currentColor" stroke-width="2" opacity="1"/><circle cx="127" cy="152" r="7" fill="#fb923c" stroke="#fb923c" stroke-width="2"/><text x="140" y="90" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">khung dây</text><text x="140" y="108" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">(cạnh dưới ở trong khe)</text><text x="140" y="28" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">giá đỡ riêng, không chạm cân</text><text x="206" y="170" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">nam châm</text><text x="206" y="188" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">chữ U</text><text x="30" y="272" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">cân điện tử chia 0,01 g</text><text x="30" y="291" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">nguồn một chiều + ampe kế nối với khung</text></svg><figcaption>Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng với cạnh dưới trong khe.<br>Dây không chạm vào cân hay nam châm.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 380 300" role="img" aria-label="Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá riêng, cạnh dưới nằm trong khe nam châm"><rect x="30" y="218" width="190" height="34" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><rect x="140" y="226" width="70" height="20" rx="4" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="1.5"/><text x="175" y="241" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">? g</text><line x1="34" y1="214" x2="216" y2="214" stroke="currentColor" stroke-width="4" opacity="1"/><rect x="60" y="120" width="36" height="94" rx="3" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="158" y="120" width="36" height="94" rx="3" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><rect x="60" y="182" width="134" height="32" rx="3" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="78" y="160" fill="#f87171" font-size="17" font-weight="700" text-anchor="middle">N</text><text x="176" y="160" fill="#38bdf8" font-size="17" font-weight="700" text-anchor="middle">S</text><line x1="346" y1="40" x2="346" y2="252" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="127" y1="40" x2="346" y2="40" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="346" y1="252" x2="300" y2="252" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="127" y1="40" x2="127" y2="150" stroke="currentColor" stroke-width="2" opacity="1"/><circle cx="127" cy="152" r="7" fill="#fb923c" stroke="#fb923c" stroke-width="2"/><text x="140" y="90" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">khung dây</text><text x="140" y="108" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">(cạnh dưới ở trong khe)</text><text x="140" y="28" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">giá đỡ riêng, không chạm cân</text><text x="206" y="170" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">nam châm</text><text x="206" y="188" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">chữ U</text><text x="30" y="272" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">cân điện tử chia 0,01 g</text><text x="30" y="291" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">nguồn một chiều + ampe kế nối với khung</text></svg><figcaption>Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng với cạnh dưới trong khe.<br>Dây không chạm vào cân hay nam châm.</figcaption></figure>
 
+
+<div class="tl-box tl-box--think tl-note">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Đóng công tắc cho dòng điện chạy qua dây; dây vẫn không chạm gì. Số chỉ của cân sẽ thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Không đổi, vì dây không chạm cân hay nam châm</label>
+<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-ok">B. Đổi đi một lượng nhỏ; đảo chiều dòng điện thì số chỉ đổi theo chiều ngược lại</label>
+<input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-no">C. Tăng thêm đúng bằng khối lượng của dây</label>
+<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Nhảy lung tung, vì từ trường làm cân hiển thị sai</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Với dòng 3,0 A, cân nhảy lên khoảng <strong>1,45 g</strong>; đảo chiều dòng thì cân chỉ khoảng −1,45 g. Dây chịu lực từ, và theo định luật III Newton nam châm chịu một lực <em>cùng độ lớn, ngược chiều</em>. Nam châm nằm trên đĩa cân nên cân đọc được lực đó. Đây là cách "cân dòng điện" biến một lực từ rất nhỏ thành số gam.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Dây không chạm cân nhưng vẫn tương tác với nam châm qua từ trường, nên cân không đứng yên (A). Dây không đặt lên cân nên khối lượng của dây không được tính (C). Cân cũng không bị "nhiễu" (D): số đo lặp lại được và đổi dấu theo chiều dòng. Hãy nghĩ tới <em>cặp lực – phản lực</em> giữa dây và nam châm. Chọn lại nhé.</p></div>
+</div>
+</div>
 
 <!--video:mo_bai-->
 <div class="tl-box tl-box--video tl-note">
-<p class="tl-label">🎬 Xem thực tế</p>
+<p class="tl-label">🎬 Xem thực tế, kiểm tra dự đoán</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/h8N9Un-Pp-w?rel=0&start=0&end=40" title="cân điện tử, dây dẫn và nam châm" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
 <p><strong>Nhìn vào:</strong> số cân đổi thế nào khi nối pin vào dây?</p>
-</div>
-<div class="tl-box tl-box--think tl-note">
-<p class="tl-label">🤔 Dự đoán trước khi học</p>
-<p>Cân đang đo cái gì khi dây không đặt trên cân?</p>
-<div class="tl-quiz">
-<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Dây nóng lên, không khí quanh dây nở ra và đẩy nam châm xuống</label>
-<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-ok">B. Dây chịu lực từ; nam châm chịu phản lực và đè thêm lên cân</label>
-<input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-no">C. Dòng điện làm khối lượng của nam châm tăng thêm 1,45 g</label>
-<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Từ trường làm cân hiển thị sai, thực tế không có lực nào đổi</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dây mang dòng điện trong từ trường chịu lực từ. Theo định luật III Newton, nam châm chịu một lực <em>cùng độ lớn, ngược chiều</em>. Nam châm nằm trên đĩa cân nên cân cảm nhận lực đó như một khối lượng thêm. Đây chính là cách "cân dòng điện" biến một lực từ rất nhỏ thành số gam đọc được.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Dòng 3 A chạy vài giây không đủ làm nóng không khí để đẩy được nam châm, và khối lượng của nam châm không đổi khi có dòng điện. Cân cũng không bị "nhiễu": số đo lặp lại được và đổi dấu theo chiều dòng. Hãy nghĩ tới <em>cặp lực – phản lực</em> giữa dây và nam châm. Chọn lại nhé.</p></div>
-</div>
 </div>
 
 <h3>II. Kiến thức</h3>
@@ -117,7 +118,7 @@
 <div class="tl-sim__st st-5p"><p>Cân: <strong>+2,44 g</strong></p><p>$F = \Delta m\, g \approx 23{,}94\ \text{mN}$</p><p>$B = \dfrac{F}{Il} \approx 0{,}120\ \text{T}$</p></div>
 <div class="tl-sim__st st-5n"><p>Cân: <strong>−2,44 g</strong></p><p>$F = \Delta m\, g \approx 23{,}94\ \text{mN}$</p><p>$B = \dfrac{F}{Il} \approx 0{,}120\ \text{T}$</p></div>
 </div>
-<div class="tl-sim__fbd"><svg viewBox="0 0 380 300" role="img" aria-label="Biểu đồ lực tác dụng lên dây, nam châm và cân; đuôi mũi tên đặt tại trọng tâm G của từng vật"><text x="63" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Dây điện</text><text x="190" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Nam châm</text><text x="317" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Cân</text><circle cx="63" cy="180" r="9" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/><circle class="sim-wp" cx="63" cy="180" r="3" fill="currentColor"/><path class="sim-wn" d="M58,175 L68,185 M68,175 L58,185" stroke="currentColor" stroke-width="2"/><g transform="translate(115.75,59.89) scale(0.55)"><rect x="40" y="112" width="40" height="64" rx="0" fill="rgba(248,113,113,.28)" stroke="none" stroke-width="0"/><rect x="190" y="112" width="40" height="64" rx="0" fill="rgba(56,189,248,.28)" stroke="none" stroke-width="0"/><path d="M40,112 H80 V252 H190 V112 H230 V292 H40 Z" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></g><rect x="262" y="158" width="110" height="44" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><g transform="translate(190,180)"><rect class="sim-sh a-Pm" x="-3.0" y="-120" width="6" height="120" fill="#94a3b8"/><polygon class="sim-hd a-Pm" points="0,0 -7,13 7,13" fill="#94a3b8"/></g><g transform="translate(190,180)"><rect class="sim-sh a-N" x="-3.0" y="-120" width="6" height="120" fill="#34d399"/><polygon class="sim-hd a-N" points="0,0 -7,13 7,13" fill="#34d399"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Pc" x="-3.0" y="-120" width="6" height="120" fill="#94a3b8"/><polygon class="sim-hd a-Pc" points="0,0 -7,13 7,13" fill="#94a3b8"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Np" x="-3.0" y="-120" width="6" height="120" fill="#34d399"/><polygon class="sim-hd a-Np" points="0,0 -7,13 7,13" fill="#34d399"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Qb" x="-3.0" y="-120" width="6" height="120" fill="#38bdf8"/><polygon class="sim-hd a-Qb" points="0,0 -7,13 7,13" fill="#38bdf8"/></g><g transform="translate(63,180)"><rect class="sim-sh a-F" x="-1.8" y="-120" width="3.6" height="120" fill="#f87171"/><polygon class="sim-hd a-F" points="0,0 -7,13 7,13" fill="#f87171"/></g><g transform="translate(63,180)"><rect class="sim-sh a-Q" x="-1.8" y="-120" width="3.6" height="120" fill="#a78bfa"/><polygon class="sim-hd a-Q" points="0,0 -7,13 7,13" fill="#a78bfa"/></g><g transform="translate(190,180)"><rect class="sim-sh a-Fp" x="-1.8" y="-120" width="3.6" height="120" fill="#fb923c"/><polygon class="sim-hd a-Fp" points="0,0 -7,13 7,13" fill="#fb923c"/></g><circle cx="63" cy="180" r="4" fill="currentColor"/><circle cx="190" cy="180" r="4" fill="currentColor"/><circle cx="317" cy="180" r="4" fill="currentColor"/><text x="76" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text><text x="203" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text><text x="330" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text></svg><ul class="tl-sim__leg"><li><strong>Dây:</strong> <span class="lg lg-F">●</span> F lực từ</li><li><strong>Dây:</strong> <span class="lg lg-Q">●</span> Q lực giữ của giá, ngược F nên dây đứng yên</li><li><strong>Nam châm:</strong> <span class="lg lg-P">●</span> P trọng lực</li><li><strong>Nam châm:</strong> <span class="lg lg-Fp">●</span> F′ phản lực của F</li><li><strong>Nam châm:</strong> <span class="lg lg-N">●</span> N phản lực của cân (N = P + F′)</li><li><strong>Cân:</strong> <span class="lg lg-P">●</span> P trọng lực</li><li><strong>Cân:</strong> <span class="lg lg-N">●</span> N′ áp lực của nam châm, bằng N</li><li><strong>Cân:</strong> <span class="lg lg-B">●</span> phản lực của mặt bàn</li><li><strong>Dây:</strong> trọng lực rất nhỏ nên bỏ qua.</li></ul><p>G là trọng tâm của từng vật.</p><p>Dây: G ở tâm tiết diện.</p><p>Cân: G ở tâm bệ cân.</p><p>Nam châm chữ U: G nằm <em>trong khe</em>, trên gông.</p><p>Mũi tên F, F′ phóng to cho dễ thấy.</p><p>Các mũi tên còn lại không vẽ theo tỉ lệ.</p></div>
+<div class="tl-sim__fbd"><svg viewBox="0 0 380 300" role="img" aria-label="Biểu đồ lực tác dụng lên dây, nam châm và cân; đuôi mũi tên đặt tại trọng tâm G của từng vật"><text x="63" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Dây điện</text><text x="190" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Nam châm</text><text x="317" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Cân</text><circle cx="63" cy="180" r="9" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/><circle class="sim-wp" cx="63" cy="180" r="3" fill="currentColor"/><path class="sim-wn" d="M58,175 L68,185 M68,175 L58,185" stroke="currentColor" stroke-width="2"/><g transform="translate(115.75,59.89) scale(0.55)"><rect x="40" y="112" width="40" height="64" rx="0" fill="rgba(248,113,113,.28)" stroke="none" stroke-width="0"/><rect x="190" y="112" width="40" height="64" rx="0" fill="rgba(56,189,248,.28)" stroke="none" stroke-width="0"/><path d="M40,112 H80 V252 H190 V112 H230 V292 H40 Z" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></g><rect x="262" y="158" width="110" height="44" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><g transform="translate(190,180)"><rect class="sim-sh a-Pm" x="-3.0" y="-120" width="6" height="120" fill="#94a3b8"/><polygon class="sim-hd a-Pm" points="0,0 -7,13 7,13" fill="#94a3b8"/></g><g transform="translate(190,180)"><rect class="sim-sh a-N" x="-3.0" y="-120" width="6" height="120" fill="#34d399"/><polygon class="sim-hd a-N" points="0,0 -7,13 7,13" fill="#34d399"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Pc" x="-3.0" y="-120" width="6" height="120" fill="#94a3b8"/><polygon class="sim-hd a-Pc" points="0,0 -7,13 7,13" fill="#94a3b8"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Np" x="-3.0" y="-120" width="6" height="120" fill="#34d399"/><polygon class="sim-hd a-Np" points="0,0 -7,13 7,13" fill="#34d399"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Qb" x="-3.0" y="-120" width="6" height="120" fill="#38bdf8"/><polygon class="sim-hd a-Qb" points="0,0 -7,13 7,13" fill="#38bdf8"/></g><g transform="translate(63,180)"><rect class="sim-sh a-F" x="-1.8" y="-120" width="3.6" height="120" fill="#f87171"/><polygon class="sim-hd a-F" points="0,0 -7,13 7,13" fill="#f87171"/></g><g transform="translate(63,180)"><rect class="sim-sh a-Q" x="-1.8" y="-120" width="3.6" height="120" fill="#a78bfa"/><polygon class="sim-hd a-Q" points="0,0 -7,13 7,13" fill="#a78bfa"/></g><g transform="translate(190,180)"><rect class="sim-sh a-Fp" x="-1.8" y="-120" width="3.6" height="120" fill="#fb923c"/><polygon class="sim-hd a-Fp" points="0,0 -7,13 7,13" fill="#fb923c"/></g><circle cx="63" cy="180" r="4" fill="currentColor"/><circle cx="190" cy="180" r="4" fill="currentColor"/><circle cx="317" cy="180" r="4" fill="currentColor"/><text x="76" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text><text x="203" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text><text x="330" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text></svg><details class="tl-details tl-more"><summary>Chú giải các lực</summary><ul class="tl-sim__leg"><li><strong>Dây:</strong> <span class="lg lg-F">●</span> F lực từ</li><li><strong>Dây:</strong> <span class="lg lg-Q">●</span> Q lực giữ của giá, ngược F nên dây đứng yên</li><li><strong>Nam châm:</strong> <span class="lg lg-P">●</span> P trọng lực</li><li><strong>Nam châm:</strong> <span class="lg lg-Fp">●</span> F′ phản lực của F</li><li><strong>Nam châm:</strong> <span class="lg lg-N">●</span> N phản lực của cân (N = P + F′)</li><li><strong>Cân:</strong> <span class="lg lg-P">●</span> P trọng lực</li><li><strong>Cân:</strong> <span class="lg lg-N">●</span> N′ áp lực của nam châm, bằng N</li><li><strong>Cân:</strong> <span class="lg lg-B">●</span> phản lực của mặt bàn</li><li><strong>Dây:</strong> trọng lực rất nhỏ nên bỏ qua.</li></ul><p>G là trọng tâm của từng vật.</p><p>Dây: G ở tâm tiết diện.</p><p>Cân: G ở tâm bệ cân.</p><p>Nam châm chữ U: G nằm <em>trong khe</em>, trên gông.</p><p>Mũi tên F, F′ phóng to cho dễ thấy.</p><p>Các mũi tên còn lại không vẽ theo tỉ lệ.</p></details></div>
 <p>Thử:</p>
 <p>1. Tăng $I$ từng nấc: số cân và mũi tên đổi thế nào?</p>
 <p>2. Đảo chiều ở cùng $I$.</p>
@@ -129,6 +130,8 @@
 
 <p><strong>🔑 TARE trước · Dây đứng riêng · Đóng mạch ngắn</strong></p>
 
+<details class="tl-details tl-more">
+<summary>🔧 Bấm xem dụng cụ và các bước đo</summary>
 <ul>
 <li><strong>Cân</strong> chia 0,01 g.</li>
 <li><strong>Nam châm chữ U</strong> đặt trên đĩa cân.</li>
@@ -141,6 +144,7 @@
 <li>Đóng mạch, chỉnh biến trở tới $I = 1{,}0\ \text{A}$, đợi số cân ổn định rồi đọc $\Delta m$.</li>
 <li>Ngắt mạch, kiểm tra cân về 0,00 g; đóng lại ở nấc tiếp theo (2,0 A … 5,0 A), đọc $\Delta m$ rồi ngắt ngay.</li>
 </ol>
+</details>
 
 <p>⚠ Cân đo <strong>tổng</strong> lực lên mọi vật tựa trên bệ (cộng theo chiều).</p>
 
@@ -162,25 +166,57 @@
 <p><strong>🔑 Mỗi lần: B = Δm·g / (I·l) · Hoặc lấy độ dốc đồ thị</strong></p>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-thuchanhtu-01">
-<p class="tl-label">📊 Số liệu minh hoạ: cạnh khung $l = 4{,}0\ \text{cm}$, $g = 9{,}81\ \text{m/s}^2$</p>
-<div class="table-scroll"><table class="tl-table tl-table--data">
-<thead>
-<tr><th>$I$ (A)</th><th>$\Delta m$ (g)</th><th>$F = \Delta m\, g$ (mN)</th><th>$B$ (T)</th></tr>
-</thead>
-<tbody>
-<tr><td>1,0</td><td>0,50</td><td>4,91</td><td>0,123</td></tr>
-<tr><td>2,0</td><td>0,97</td><td>9,52</td><td>0,119</td></tr>
-<tr><td>3,0</td><td>1,45</td><td>14,22</td><td>0,119</td></tr>
-<tr><td>4,0</td><td>1,97</td><td>19,33</td><td>0,121</td></tr>
-<tr><td>5,0</td><td>2,44</td><td>23,94</td><td>0,120</td></tr>
-</tbody>
-</table></div>
+<p class="tl-label">🧪 Thí nghiệm: lực từ có tỉ lệ với cường độ dòng điện?</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đo $\Delta m$ ở năm giá trị $I$, mỗi lần đóng mạch vài giây rồi ngắt.</li>
-<li><strong>Quan sát:</strong> $\Delta m$ tăng gần đều theo $I$; năm giá trị $B$ đều quanh <strong>0,12 T</strong>.</li>
-<li><strong>Rút ra:</strong> trung bình $B \approx 0{,}120\ \text{T}$. Đây là <em>số minh hoạ</em> tính từ mô hình, chưa phải số đo thật.</li>
+<li><strong>Giả thuyết cần kiểm:</strong> lực từ lên đoạn dây nằm trong khe tỉ lệ thuận với $I$ ($F = BIl$, $B$ của khe không đổi).</li>
+<li><strong>Dự đoán nếu đúng:</strong> $I$ gấp đôi thì độ thay đổi số chỉ cân $\Delta m$ cũng gấp đôi; tỉ số $\Delta m/I$ gần không đổi.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem dụng cụ và 3 bước</summary>
+<p>Bộ cân dòng điện ở mục II.2 (Hình 1): cạnh khung trong khe $l = 4{,}0\ \text{cm}$, cân chia 0,01 g, ampe kế nối tiếp khung.</p>
+<p><strong>Làm:</strong> (1) Khi $I = 0$, bấm TARE (hoặc ghi số chỉ ban đầu để trừ). (2) Đóng mạch ở $I = 1{,}0\ \text{A}$, đọc $\Delta m$ rồi ngắt, kiểm tra cân về số ban đầu. (3) Lặp lại ở 2,0 … 5,0 A; mỗi nấc đảo chiều dòng đọc thêm một lần, lấy trung bình độ lớn của hai số đọc.</p>
+</details>
+<strong>Coi rằng</strong> từ trường trong khe đều, hướng từ cực N sang cực S, đoạn dây vuông góc đường sức. <strong>Bỏ qua</strong> lực lên hai cạnh bên và từ trường Trái Đất.</li>
+<li><strong>Quan sát:</strong> ngắt mạch, cân về số ban đầu; đóng mạch, cân tăng $\Delta m$ từ 0,50 g (1,0 A) đến 2,44 g (5,0 A).</li>
+<li><strong>Rút ra:</strong> $\Delta m/I$ gần không đổi nên lực từ tỉ lệ thuận với $I$, đúng giả thuyết. Lực lên dây và lực lên nam châm là cặp lực – phản lực: dây bị đẩy lên thì nam châm bị đẩy xuống, cân chỉ tăng.</li>
+<li><strong>Chưa nói được gì:</strong> lực đổi thế nào khi dây lệch góc; chưa đổi chiều dài dây nên chưa biết $F$ có tỉ lệ với $l$ không.</li>
 </ol>
 </div>
+
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: số liệu và tự tính ô cuối</summary>
+<p>$l = 4{,}0\ \text{cm}$, $g = 9{,}81\ \text{m/s}^2$:</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>$I$ (A)</th><th>$\Delta m$ (g)</th><th>$B = \dfrac{\Delta m\, g}{Il}$ (T)</th><th>$\Delta m/I$ (g/A)</th></tr>
+</thead>
+<tbody>
+<tr><td>1,0</td><td>0,50</td><td>0,123</td><td>0,500</td></tr>
+<tr><td>2,0</td><td>0,97</td><td>0,119</td><td>0,485</td></tr>
+<tr><td>3,0</td><td>1,45</td><td>0,119</td><td>0,483</td></tr>
+<tr><td>4,0</td><td>1,97</td><td>0,121</td><td>0,493</td></tr>
+<tr><td>5,0</td><td>2,44</td><td>0,120</td><td>em tự tính</td></tr>
+</tbody>
+</table></div>
+<p>Em tự tính ô cuối rồi so với bốn hàng trên: tỉ số $\Delta m/I$ có gần không đổi không?</p>
+<p><small>Số liệu minh hoạ, không phải số đo thật: tính từ mô hình $\Delta m = \dfrac{BIl}{g}$ với $B = 0{,}12\ \text{T}$, $l = 0{,}040\ \text{m}$, cộng sai lệch ngẫu nhiên không quá 0,02 g.</small></p>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl12-q3-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl12-q3-conf" value="khong"> Không chắc</label></p>
+<p><strong>Câu 3.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q3" id="tl12-q3a"><label for="tl12-q3a" class="tl-opt tl-no">A. Tăng $I$ thì $\Delta m$ tăng</label>
+<input type="radio" name="tl12-q3" id="tl12-q3b"><label for="tl12-q3b" class="tl-opt tl-no">B. Lực từ tỉ lệ thuận với $I$</label>
+<input type="radio" name="tl12-q3" id="tl12-q3c"><label for="tl12-q3c" class="tl-opt tl-ok">C. Lực từ lên dây hướng lên nên cân chỉ nhỏ hơn ban đầu</label>
+<input type="radio" name="tl12-q3" id="tl12-q3d"><label for="tl12-q3d" class="tl-opt tl-no">D. Chưa biết lực đổi thế nào khi dây lệch góc</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng, C sai.</strong> Đây là ý về <em>cơ chế</em>: lực từ lên dây và lực dây tác dụng lên nam châm là cặp lực – phản lực (định luật III Newton). Dây bị đẩy lên thì nam châm bị đẩy <em>xuống</em>, nên cân chỉ <strong>tăng</strong>; chỉ khi lực lên dây hướng xuống thì cân mới giảm. A là hiện tượng, B là kết luận, D là giới hạn của phép đo: cả ba đúng, đúng kiểu bốn ý a)–d) của một câu Phần II trong đề thi tốt nghiệp.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng đọc từ bảng; B là kết luận rút từ tỉ số gần không đổi; D là giới hạn: chỉ đo ở góc vuông nên chưa nói được gì về góc khác. Ý sai nằm ở <em>cơ chế</em>: cân đọc lực lên nam châm hay lực lên dây, và hai lực đó cùng chiều hay ngược chiều? Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
+</div>
+</div>
+
 <!--video:tn-l12-thuchanhtu-01-->
 <div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem thí nghiệm thật</p>
@@ -191,21 +227,7 @@
 
 <figure class="fig" data-tl="1" data-exp="tn-l12-thuchanhtu-01"><svg viewBox="0 0 380 272" role="img" aria-label="Đồ thị khối lượng tăng theo cường độ dòng điện: năm điểm đo nằm gần đường thẳng qua gốc toạ độ có độ dốc khoảng 0,489 gam trên ampe"><text x="60" y="26" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">Δm (g)</text><line x1="56" y1="184.0" x2="350" y2="184.0" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="189.0" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">0,5</text><line x1="56" y1="153" x2="350" y2="153" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="158" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">1</text><line x1="56" y1="122.0" x2="350" y2="122.0" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="127.0" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">1,5</text><line x1="56" y1="91" x2="350" y2="91" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="96" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">2</text><line x1="56" y1="60.0" x2="350" y2="60.0" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="65.0" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">2,5</text><line x1="112" y1="215" x2="112" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="112" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">1</text><line x1="168" y1="215" x2="168" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="168" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">2</text><line x1="224" y1="215" x2="224" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="224" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">3</text><line x1="280" y1="215" x2="280" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="280" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">4</text><line x1="336" y1="215" x2="336" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="336" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">5</text><line x1="56" y1="215" x2="352" y2="215" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="56" y1="215" x2="56" y2="36" stroke="currentColor" stroke-width="2.5" opacity="1"/><text x="352" y="259" fill="currentColor" font-size="14" font-weight="700" text-anchor="end">I (A)</text><line x1="56" y1="215" x2="341.59999999999997" y2="60.52192727272728" stroke="#34d399" stroke-width="2.6" opacity="1"/><circle cx="112" cy="184.0" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="168" cy="154.9" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="224" cy="125.1" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="280" cy="92.9" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="336" cy="63.7" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><text x="78" y="92" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">độ dốc ≈ 0,489 g/A</text><text x="78" y="112" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">→ B ≈ 0,12 T</text></svg><figcaption>Hình 3. Δm tăng gần tỉ lệ với $I$: năm điểm đo (số liệu minh hoạ) nằm sát đường thẳng qua gốc toạ độ.<br>Độ dốc đường thẳng bằng $Bl/g$.</figcaption></figure>
 
-<p>Cách thứ hai: độ dốc đường thẳng $\Delta m$–$I$ bằng $\dfrac{Bl}{g}$, nên $B = \dfrac{\text{độ dốc} \times g}{l}$. Đường thẳng qua gốc (cách tính ở Thách đấu) có độ dốc $\approx 0{,}489\ \text{g/A}$, thế vào được $B \approx 0{,}120\ \text{T}$ — khớp cách tính từng lần.</p>
-
-<div class="tl-box tl-box--think tl-check">
-<p class="tl-label">Tự kiểm tra ngay</p>
-<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl12-q3-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl12-q3-conf" value="khong"> Không chắc</label></p>
-<p><strong>Câu 3.</strong> Một lần đo khác: cạnh khung $l = 4{,}0\ \text{cm}$, dòng $I = 2{,}5\ \text{A}$, cân tăng $\Delta m = 1{,}20\ \text{g}$. Cảm ứng từ là</p>
-<div class="tl-quiz">
-<input type="radio" name="tl12-q3" id="tl12-q3a"><label for="tl12-q3a" class="tl-opt tl-ok">A. $0{,}12\ \text{T}$</label>
-<input type="radio" name="tl12-q3" id="tl12-q3b"><label for="tl12-q3b" class="tl-opt tl-no">B. $0{,}012\ \text{T}$</label>
-<input type="radio" name="tl12-q3" id="tl12-q3c"><label for="tl12-q3c" class="tl-opt tl-no">C. $4{,}7 \times 10^{-3}\ \text{T}$</label>
-<input type="radio" name="tl12-q3" id="tl12-q3d"><label for="tl12-q3d" class="tl-opt tl-no">D. $1{,}2 \times 10^{2}\ \text{T}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = \Delta m\, g = 1{,}20 \times 10^{-3} \times 9{,}81 \approx 1{,}18 \times 10^{-2}\ \text{N}$; $B = \dfrac{F}{Il} = \dfrac{1{,}18 \times 10^{-2}}{2{,}5 \times 0{,}040} \approx 0{,}12\ \text{T}$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Viết từng bước: $F = 1{,}20 \times 10^{-3} \times 9{,}81 = 1{,}18 \times 10^{-2}\ \text{N}$; $Il = 2{,}5 \times 0{,}040 = 0{,}10\ \text{A·m}$; $B = 0{,}118 \approx 0{,}12\ \text{T}$. Ra 0,012 là quên nhân $g$; ra $4{,}7 \times 10^{-3}$ là quên chia cho $l$; ra $1{,}2 \times 10^{2}$ là quên đổi gam sang kilôgam. Nếu đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
-</div>
-</div>
+<p>Cách thứ hai: độ dốc đường thẳng $\Delta m$–$I$ bằng $\dfrac{Bl}{g}$, nên $B = \dfrac{\text{độ dốc} \times g}{l}$. Độ dốc (cách tính ở Thách đấu) cho $B \approx 0{,}120\ \text{T}$, khớp cách tính từng lần.</p>
 
 <h4>4. Sai số của phép đo</h4>
 
@@ -224,6 +246,7 @@
 </div>
 <ul>
 <li>Dụng cụ: cân $\pm 0{,}01\ \text{g}$ (1 độ chia), ampe kế $\pm 0{,}05\ \text{A}$, thước kẹp $\pm 0{,}5\ \text{mm}$.</li>
+<li>Quên TARE khi cân lệch +0,02 g: $B$ <strong>lớn hơn</strong> thật. Giảm: đọc cân lúc $I = 0$ rồi trừ, hoặc đảo chiều dòng, lấy nửa hiệu hai số đọc.</li>
 <li>Ví dụ: ở $I = 3{,}0\ \text{A}$: $\dfrac{0{,}01}{1{,}45} + \dfrac{0{,}05}{3{,}0} + \dfrac{0{,}5}{40} \approx 0{,}7\% + 1{,}7\% + 1{,}25\% \approx 3{,}6\%$.</li>
 </ul>
 
