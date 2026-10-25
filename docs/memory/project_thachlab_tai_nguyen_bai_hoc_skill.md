@@ -33,3 +33,6 @@ Tổng 49 bài, 55 khối. Commit cuối mỗi đợt nằm trong `git log --gre
 - Chèn thẳng vào cả `theory.src.html` và `theory.html` (chỉ thêm dòng); KHÔNG chạy lại `build_figs.py` vì SVG sinh lại khác bản trong DB.
 - Deploy: lỗi font "exactly one entry" = cache `.next` hỏng → `rm -rf .next`; `scripts/` đã loại khỏi typecheck (`tsconfig.json` exclude, commit 12bc84943) vì `.mts` của phiên khác làm build lỗi; sau deploy học sinh cũ còn thấy bản cũ tới khi service worker (`thachlab-runtime-v4`) làm mới (tải lại lần 2).
 - Ghi DB 10–12 bài mất 12–25 phút; gặp `TypeError: fetch failed` thì vòng lặp dừng ở bài lỗi, chạy lại các bài còn lại (an toàn vì script tự đối chiếu). Sim lần đầu mở trong pane có thể treo ở logo: tải lại.
+
+## Bổ sung 25/10/2026: L12 chương 4
+Thêm `build-an-atom` (id 15, bài 14) và `beta-decay` (id 18, bài 17), đã mở thật, đã ghi DB (backup `scripts/logs/ly-thuyet-bai15-*`, `bai18-*`), chưa deploy. Video mở bài id 16, 17 (V7, V8) chờ thầy dán Gemini (`content/tai-nguyen/vl12-ch3-4/prompts-video.md`). Chưa thử: kéo electron, ô Điện tích/Số khối ở build-an-atom; nút Chậm ở beta-decay.

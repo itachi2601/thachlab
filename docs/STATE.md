@@ -46,6 +46,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - HTML chưa có `Cache-Control: no-cache` trong `.htaccess` của `scripts/deploy.sh` — chờ thầy gật.
 
 ## Nội dung đang treo
+- 25/10 · L12 Bài 14 (id 15) làm lại phần thí nghiệm Rutherford theo `docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md` (T1–T12), build xong, CHƯA ghi DB — chờ thầy duyệt rồi `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.html 15`; nếu ưng thì áp dần cho các bài có thí nghiệm kinh điển (Joule, Boyle, Faraday, thực hành nhiệt).
 - 17/10/2026: đã gán lớp cho 664/687 đề published chưa có exam_classes (`scripts/gan-lop-de-chua-gan.mts`, suy theo bài học chứa đề; sao lưu + hoàn tác trong `scripts/logs/gan-lop-de-*.json`). Kệ đề lớp 10/11/12 giờ lọc đúng bằng DB; vá tạm bằng tiêu đề ở `features/exams/exam-grade.ts` có thể gỡ sau.
 - 17/10/2026 (sau đó): gỡ gán 10 đề `avcn` (lớp AVCN vào tự do, migration 20261013180000) bằng `scripts/go-gan-lop-de-avcn.mts`; script gán lớp giờ bỏ qua `avcn`. 23 đề không suy được: thầy duyệt 17/10 (22 → lớp 12, đề 99 → lớp 11), đã áp dụng bằng `ap-dung-duyet-lop-de.mts` (sao lưu `scripts/logs/ap-dung-duyet-lop-de-*.json`). Mọi đề published giờ đều có lớp trừ 10 đề `avcn` (cố ý).
 - Còn 23 đề chưa gán (không suy được: 19 "Kiểm tra nhanh"/"Luyện tập" mồ côi bài học #99–101, #209, #239–257 + vài đề khác): danh sách `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`, chờ thầy chọn lớp.

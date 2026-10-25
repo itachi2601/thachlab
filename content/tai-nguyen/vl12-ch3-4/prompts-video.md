@@ -28,3 +28,16 @@ Học sinh cần quan sát: số đếm nhảy ngẫu nhiên, không đều nhau
 ### V6 (bài 18. An toàn phóng xạ, tấm chắn)
 Cần: video thí nghiệm dùng giấy, nhôm, chì chắn các loại tia (alpha, beta, gamma) bằng máy đếm.
 Học sinh cần quan sát: tia nào bị tấm nào chặn lại.
+
+## Bổ sung 25/10/2026 (chương 4, đợt riêng)
+Cùng quy tắc trả lời như trên. WebSearch của Claude không lập chỉ mục YouTube nên hỏi Gemini ngay cho 2 mục mở bài.
+
+### V7 (bài 15. Năng lượng liên kết, mở bài)
+Cần: video ngắn cho thấy năng lượng khổng lồ trong hạt nhân so với phản ứng hoá học (ví dụ: so một gam nhiên liệu hạt nhân với than/xăng, hoặc minh hoạ hạt nhân giữ chặt bởi lực hạt nhân), tiếng Việt hoặc có phụ đề, dưới 5 phút.
+Học sinh cần quan sát: lượng năng lượng từ cùng khối lượng nhiên liệu hạt nhân lớn hơn nhiều bậc so với đốt than hay xăng.
+Lý do hỏi Gemini: không tìm ra.
+
+### V8 (bài 16. Phân hạch, nhiệt hạch, mở bài)
+Cần: video giải thích nhà máy điện hạt nhân lấy nhiệt từ phản ứng dây chuyền (thanh nhiên liệu, nước làm nguội, tua bin), hoặc hoạt hình phản ứng dây chuyền phân hạch urani-235 bằng neutron, dưới 5 phút.
+Học sinh cần quan sát: một neutron gây phân hạch, sinh thêm neutron gây tiếp, nhiệt đun nước chạy tua bin.
+Lý do hỏi Gemini: không tìm ra.
