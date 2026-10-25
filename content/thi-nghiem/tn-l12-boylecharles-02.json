@@ -60,10 +60,11 @@
     "quan_sat": [
       "Nước càng nóng, cột khí càng dài: từ 10,0 cm ở 0 °C lên 12,9 cm ở 75 °C.",
       "Thể tích tăng thêm tỉ lệ với nhiệt độ tuyệt đối chứ không tỉ lệ với nhiệt độ Celsius.",
-      "Tỉ số V/T gần như đứng yên quanh 0,0368 cm/K, lệch nhau khoảng 1,4%."
+      "Tỉ số V/T gần như đứng yên quanh 0,0368 cm/K, lệch nhau khoảng 1,2%."
     ],
     "rut_ra": [
       "Áp suất không đổi thì thể tích tỉ lệ thuận với nhiệt độ tuyệt đối: V1/T1 = V2/T2.",
+      "Cơ chế: T tăng thì phân tử chuyển động nhanh hơn; để áp suất khí vẫn bằng áp suất ngoài, khí phải dãn nên V tăng.",
       "Phải dùng kenvin: lấy tỉ số hai nhiệt độ Celsius cho kết quả sai hoàn toàn.",
       "Kéo dài đường V theo T về phía trái, đường cắt trục nhiệt độ tại gốc 0 K."
     ]
@@ -157,14 +158,14 @@
     ],
     "ghi_chu": "Số liệu minh hoạ: mô hình L = 10,0·T/273 cho 10,0; 10,9; 11,8; 12,7 cm; cột L trong bảng đã kể thêm sai số đọc của thước (thành 11,9 và 12,9 cm), nên V/T nhích dần từ 0,0366 lên 0,0371 cm/K — đúng như câu hỏi về sai số trong bài. Ở 100 °C mô hình cho 13,7 cm nhưng cột khí nhô lên khỏi mặt nước nên số đọc kém tin cậy, vì vậy bảng dừng ở 75 °C."
   },
-  "ket_qua_ky_vong": "Chiều dài cột khí tăng đều theo nhiệt độ tuyệt đối; đồ thị L theo T là đường thẳng, kéo dài đi qua gốc 0 K; tỉ số V/T không đổi trong khoảng 1,4%.",
+  "ket_qua_ky_vong": "Chiều dài cột khí tăng đều theo nhiệt độ tuyệt đối; đồ thị L theo T là đường thẳng, kéo dài đi qua gốc 0 K; tỉ số V/T không đổi trong khoảng 1,2%.",
   "hien_tuong_hay_sai": [
     "Lấy tỉ số hai nhiệt độ Celsius (87/27 ≈ 3,2) rồi kết luận thể tích tăng hơn ba lần.",
     "Nghĩ rằng nhiệt độ tăng gấp đôi thì thể tích cũng tăng gấp đôi tính theo °C (từ 20 °C lên 40 °C).",
     "Cho rằng phải giữ áp suất không đổi bằng cách bịt kín đầu ống, trong khi chính đầu hở mới giữ áp suất bằng khí quyển."
   ],
   "sai_so_thuong_gap": [
-    "Thước chia 1 mm nên chiều dài 12,9 cm đã có sai số ±0,1 cm, tức khoảng ±0,8%.",
+    "Thước chia 1 mm nên mỗi lần đọc sai ±0,1 cm: 10,0 cm sai tới 1%, 12,9 cm sai 0,8%; cộng lại tỉ số ℓ/T có thể lệch tới gần 2%, đủ giải thích mức lệch 1,2% giữa lần đo đầu và cuối.",
     "Chưa đợi đủ lâu: thuỷ tinh dẫn nhiệt chậm nên khí trong ống chưa cùng nhiệt độ với nước.",
     "Hơi nước bám thành ống làm nhoè vạch chia khi làm với nước nóng.",
     "Ống không đặt thẳng đứng nên chiều dài đọc được lớn hơn chiều cao thật của cột khí."
