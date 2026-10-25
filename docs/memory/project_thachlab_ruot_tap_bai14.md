@@ -1,6 +1,6 @@
 ---
 name: project-thachlab-ruot-tap-bai14
-description: Ruột tập in 12 trang cho Bài 14 VL12 (script dựng PDF trong repo) xếp theo nhịp buổi L12 + quy ước thiết kế thầy chốt 25/10; data-tap nối web với tập; chờ in thử, cập nhật DB, deploy
+description: Ruột tập in 12 trang cho Bài 14 VL12 (script dựng PDF trong repo) xếp theo nhịp buổi L12 + quy ước thiết kế thầy chốt 25/10 (lề lò xo, 4 cỡ chữ, hình SVG mỗi trang, không lưới đáp án); data-tap nối web với tập; chờ in thử, cập nhật DB, deploy
 metadata:
   type: project
 ---
@@ -14,6 +14,7 @@ Dựng: `node scripts/ruot-tap/bai14.mjs` (+ module `bai14-btm.mjs` cho 2 trang 
 - Bài tập mẫu: dạng dễ chỉ mấu chốt điền khuyết + ô đáp số (cao 9 mm cho phân số); dạng khó thêm MỘT ô "Phân tích và giải" 9 dòng — KHÔNG bảng phân tích đề riêng (phân tích ngay trong ô khi học).
 - Nhãn yêu cầu ghi gọn ("Phân tích và giải", "Giải"), không ghi cách làm trong ngoặc. Số + đơn vị không tách dòng (đưa đơn vị vào KaTeX `\\ \\mathrm{g}` hoặc bọc `.nw`).
 - Trang sửa bài theo góc HS trung bình theo kịp 30′: lưới đáp án em–đúng P.I 12 ô / P.II 3×a–d / P.III 3 ô (khoanh câu sai) → 4 ô "Câu …" rộng chỉ 4 tick lí do (đọc đề/công thức/tính/đơn vị) + ☐ làm lại (tr.10) → Ghi nhớ 2 dòng → dòng "Xem lại ở Tập". Không dùng bảng nhiều cột tick (HS không kịp điền khi thầy chữa).
+- **Bản 25/10 chiều (thầy chốt sau khi xem bản mẫu):** đóng lò xo → lề gáy 20 mm/ngoài 10 mm đổi bên chẵn–lẻ; bỏ lưới đáp án em–đúng ở trang sửa bài (đề làm trên web, chỉ ghi số câu sai) → 5 ô Thầy chữa; ghi chú tự do đúng 2 trang, bỏ mọi ô "câu hỏi cho trợ giảng"; cỡ chữ gom 4 mức (3,1/3,5/3,9/4,6 mm), 2 độ đậm; 6 hình SVG tự vẽ trong `scripts/ruot-tap/hinh.mjs` (lá vàng, đồng vị H, sân vận động–hạt đậu, nhãn Al, bán kính Zn–U, cân đồng vị B) đặt cạnh khối chữ; kiểm hình bằng `xem-hinh.mjs`. Quy ước đã ghi vào skill `sach-in-tu-web` mục "Ruột tập theo bài" để bài sau theo.
 - Lớp 10/11 buổi 195′ → bài mới còn 135′: ruột tập các bài đó có thể đưa nhiều dạng lên lớp hơn (xem `project_thachlab_lich_tuan.md`).
 
 **Còn chờ:** thầy in thử giấy thật (chưa ai cầm bản in); `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.html 15` (đưa data-tap vào DB) + deploy; migration `20261024190000_lesson_notes.sql` (ghi chú HS đồng bộ tài khoản). Nhánh `claude/fix-font-spacing-71c4ad` chỉ có commit font đã cherry-pick sang đây (e752ac9fb) — không cần merge lại.
