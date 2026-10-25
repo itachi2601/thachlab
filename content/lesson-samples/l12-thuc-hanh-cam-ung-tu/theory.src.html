@@ -1,7 +1,7 @@
 <div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
-<li>Giải thích vì sao <strong>cân điện tử</strong> đo được lực từ lên dây mà dây không đặt trên cân.</li>
+<li>Giải thích số chỉ <strong>cân điện tử</strong> đổi thế nào khi dây chịu lực từ.</li>
 <li>Tính <strong>cảm ứng từ</strong> $B = \dfrac{\Delta m\, g}{I\, l}$ từ số đo, và tìm $B$ bằng <strong>độ dốc</strong> đồ thị $\Delta m$–$I$.</li>
 <li>Đánh giá <strong>sai số</strong> và chọn lần đo cho sai số nhỏ nhất.</li>
 <li>Nhận ra hai lỗi hay gặp: <strong>đặt sai giá đỡ</strong>, <strong>dây lệch đường sức</strong>.</li>
@@ -11,32 +11,33 @@
 <p>6 mục, 7 câu tự kiểm tra.</p>
 </div>
 
-<h3>I. Mở bài: cân chỉ đổi số mà không ai chạm vào</h3>
+<h3>I. Mở bài: dây không chạm cân, cân có biết không?</h3>
 
 <p>Một nhóm đặt nam châm chữ U lên đĩa cân, bấm TARE cho cân về 0,00 g. Khung dây hình chữ nhật treo trên giá riêng; cạnh dưới lọt vào khe nam châm nhưng <strong>không chạm</strong> nam châm hay cân.</p>
 
-<p>Đóng công tắc cho dòng 3,0 A qua khung, số cân nhảy lên <strong>1,45 g</strong> dù không đặt gì thêm lên đĩa.</p>
+<p>Dây có dòng điện trong từ trường chịu lực từ, nhưng dây không chạm cân. Cân có "thấy" lực đó không?</p>
 
 <!--FIG1-->
 
 
-<!--video:mo_bai-->
-<div class="tl-box tl-box--video tl-note">
-<p class="tl-label">🎬 Xem thực tế</p>
-<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/h8N9Un-Pp-w?rel=0&start=0&end=40" title="cân điện tử, dây dẫn và nam châm" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
-<p><strong>Nhìn vào:</strong> số cân đổi thế nào khi nối pin vào dây?</p>
-</div>
 <div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
-<p>Cân đang đo cái gì khi dây không đặt trên cân?</p>
+<p>Đóng công tắc cho dòng điện chạy qua dây; dây vẫn không chạm gì. Số chỉ của cân sẽ thế nào?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Dây nóng lên, không khí quanh dây nở ra và đẩy nam châm xuống</label>
-<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-ok">B. Dây chịu lực từ; nam châm chịu phản lực và đè thêm lên cân</label>
-<input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-no">C. Dòng điện làm khối lượng của nam châm tăng thêm 1,45 g</label>
-<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Từ trường làm cân hiển thị sai, thực tế không có lực nào đổi</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dây mang dòng điện trong từ trường chịu lực từ. Theo định luật III Newton, nam châm chịu một lực <em>cùng độ lớn, ngược chiều</em>. Nam châm nằm trên đĩa cân nên cân cảm nhận lực đó như một khối lượng thêm. Đây chính là cách "cân dòng điện" biến một lực từ rất nhỏ thành số gam đọc được.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Dòng 3 A chạy vài giây không đủ làm nóng không khí để đẩy được nam châm, và khối lượng của nam châm không đổi khi có dòng điện. Cân cũng không bị "nhiễu": số đo lặp lại được và đổi dấu theo chiều dòng. Hãy nghĩ tới <em>cặp lực – phản lực</em> giữa dây và nam châm. Chọn lại nhé.</p></div>
+<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Không đổi, vì dây không chạm cân hay nam châm</label>
+<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-ok">B. Đổi đi một lượng nhỏ; đảo chiều dòng điện thì số chỉ đổi theo chiều ngược lại</label>
+<input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-no">C. Tăng thêm đúng bằng khối lượng của dây</label>
+<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Nhảy lung tung, vì từ trường làm cân hiển thị sai</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Với dòng 3,0 A, cân nhảy lên khoảng <strong>1,45 g</strong>; đảo chiều dòng thì cân chỉ khoảng −1,45 g. Dây chịu lực từ, và theo định luật III Newton nam châm chịu một lực <em>cùng độ lớn, ngược chiều</em>. Nam châm nằm trên đĩa cân nên cân đọc được lực đó. Đây là cách "cân dòng điện" biến một lực từ rất nhỏ thành số gam.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Dây không chạm cân nhưng vẫn tương tác với nam châm qua từ trường, nên cân không đứng yên (A). Dây không đặt lên cân nên khối lượng của dây không được tính (C). Cân cũng không bị "nhiễu" (D): số đo lặp lại được và đổi dấu theo chiều dòng. Hãy nghĩ tới <em>cặp lực – phản lực</em> giữa dây và nam châm. Chọn lại nhé.</p></div>
 </div>
+</div>
+
+<!--video:mo_bai-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thực tế, kiểm tra dự đoán</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/h8N9Un-Pp-w?rel=0&start=0&end=40" title="cân điện tử, dây dẫn và nam châm" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> số cân đổi thế nào khi nối pin vào dây?</p>
 </div>
 
 <h3>II. Kiến thức</h3>
@@ -104,6 +105,8 @@
 
 <p><strong>🔑 TARE trước · Dây đứng riêng · Đóng mạch ngắn</strong></p>
 
+<details class="tl-details tl-more">
+<summary>🔧 Bấm xem dụng cụ và các bước đo</summary>
 <ul>
 <li><strong>Cân</strong> chia 0,01 g.</li>
 <li><strong>Nam châm chữ U</strong> đặt trên đĩa cân.</li>
@@ -116,6 +119,7 @@
 <li>Đóng mạch, chỉnh biến trở tới $I = 1{,}0\ \text{A}$, đợi số cân ổn định rồi đọc $\Delta m$.</li>
 <li>Ngắt mạch, kiểm tra cân về 0,00 g; đóng lại ở nấc tiếp theo (2,0 A … 5,0 A), đọc $\Delta m$ rồi ngắt ngay.</li>
 </ol>
+</details>
 
 <p>⚠ Cân đo <strong>tổng</strong> lực lên mọi vật tựa trên bệ (cộng theo chiều).</p>
 
@@ -137,25 +141,57 @@
 <p><strong>🔑 Mỗi lần: B = Δm·g / (I·l) · Hoặc lấy độ dốc đồ thị</strong></p>
 
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-thuchanhtu-01">
-<p class="tl-label">📊 Số liệu minh hoạ: cạnh khung $l = 4{,}0\ \text{cm}$, $g = 9{,}81\ \text{m/s}^2$</p>
-<div class="table-scroll"><table class="tl-table tl-table--data">
-<thead>
-<tr><th>$I$ (A)</th><th>$\Delta m$ (g)</th><th>$F = \Delta m\, g$ (mN)</th><th>$B$ (T)</th></tr>
-</thead>
-<tbody>
-<tr><td>1,0</td><td>0,50</td><td>4,91</td><td>0,123</td></tr>
-<tr><td>2,0</td><td>0,97</td><td>9,52</td><td>0,119</td></tr>
-<tr><td>3,0</td><td>1,45</td><td>14,22</td><td>0,119</td></tr>
-<tr><td>4,0</td><td>1,97</td><td>19,33</td><td>0,121</td></tr>
-<tr><td>5,0</td><td>2,44</td><td>23,94</td><td>0,120</td></tr>
-</tbody>
-</table></div>
+<p class="tl-label">🧪 Thí nghiệm: lực từ có tỉ lệ với cường độ dòng điện?</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đo $\Delta m$ ở năm giá trị $I$, mỗi lần đóng mạch vài giây rồi ngắt.</li>
-<li><strong>Quan sát:</strong> $\Delta m$ tăng gần đều theo $I$; năm giá trị $B$ đều quanh <strong>0,12 T</strong>.</li>
-<li><strong>Rút ra:</strong> trung bình $B \approx 0{,}120\ \text{T}$. Đây là <em>số minh hoạ</em> tính từ mô hình, chưa phải số đo thật.</li>
+<li><strong>Giả thuyết cần kiểm:</strong> lực từ lên đoạn dây nằm trong khe tỉ lệ thuận với $I$ ($F = BIl$, $B$ của khe không đổi).</li>
+<li><strong>Dự đoán nếu đúng:</strong> $I$ gấp đôi thì độ thay đổi số chỉ cân $\Delta m$ cũng gấp đôi; tỉ số $\Delta m/I$ gần không đổi.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem dụng cụ và 3 bước</summary>
+<p>Bộ cân dòng điện ở mục II.2 (Hình 1): cạnh khung trong khe $l = 4{,}0\ \text{cm}$, cân chia 0,01 g, ampe kế nối tiếp khung.</p>
+<p><strong>Làm:</strong> (1) Khi $I = 0$, bấm TARE (hoặc ghi số chỉ ban đầu để trừ). (2) Đóng mạch ở $I = 1{,}0\ \text{A}$, đọc $\Delta m$ rồi ngắt, kiểm tra cân về số ban đầu. (3) Lặp lại ở 2,0 … 5,0 A; mỗi nấc đảo chiều dòng đọc thêm một lần, lấy trung bình độ lớn của hai số đọc.</p>
+</details>
+<strong>Coi rằng</strong> từ trường trong khe đều, hướng từ cực N sang cực S, đoạn dây vuông góc đường sức. <strong>Bỏ qua</strong> lực lên hai cạnh bên và từ trường Trái Đất.</li>
+<li><strong>Quan sát:</strong> ngắt mạch, cân về số ban đầu; đóng mạch, cân tăng $\Delta m$ từ 0,50 g (1,0 A) đến 2,44 g (5,0 A).</li>
+<li><strong>Rút ra:</strong> $\Delta m/I$ gần không đổi nên lực từ tỉ lệ thuận với $I$, đúng giả thuyết. Lực lên dây và lực lên nam châm là cặp lực – phản lực: dây bị đẩy lên thì nam châm bị đẩy xuống, cân chỉ tăng.</li>
+<li><strong>Chưa nói được gì:</strong> lực đổi thế nào khi dây lệch góc; chưa đổi chiều dài dây nên chưa biết $F$ có tỉ lệ với $l$ không.</li>
 </ol>
 </div>
+
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: số liệu và tự tính ô cuối</summary>
+<p>$l = 4{,}0\ \text{cm}$, $g = 9{,}81\ \text{m/s}^2$:</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>$I$ (A)</th><th>$\Delta m$ (g)</th><th>$B = \dfrac{\Delta m\, g}{Il}$ (T)</th><th>$\Delta m/I$ (g/A)</th></tr>
+</thead>
+<tbody>
+<tr><td>1,0</td><td>0,50</td><td>0,123</td><td>0,500</td></tr>
+<tr><td>2,0</td><td>0,97</td><td>0,119</td><td>0,485</td></tr>
+<tr><td>3,0</td><td>1,45</td><td>0,119</td><td>0,483</td></tr>
+<tr><td>4,0</td><td>1,97</td><td>0,121</td><td>0,493</td></tr>
+<tr><td>5,0</td><td>2,44</td><td>0,120</td><td>em tự tính</td></tr>
+</tbody>
+</table></div>
+<p>Em tự tính ô cuối rồi so với bốn hàng trên: tỉ số $\Delta m/I$ có gần không đổi không?</p>
+<p><small>Số liệu minh hoạ, không phải số đo thật: tính từ mô hình $\Delta m = \dfrac{BIl}{g}$ với $B = 0{,}12\ \text{T}$, $l = 0{,}040\ \text{m}$, cộng sai lệch ngẫu nhiên không quá 0,02 g.</small></p>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl12-q3-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl12-q3-conf" value="khong"> Không chắc</label></p>
+<p><strong>Câu 3.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q3" id="tl12-q3a"><label for="tl12-q3a" class="tl-opt tl-no">A. Tăng $I$ thì $\Delta m$ tăng</label>
+<input type="radio" name="tl12-q3" id="tl12-q3b"><label for="tl12-q3b" class="tl-opt tl-no">B. Lực từ tỉ lệ thuận với $I$</label>
+<input type="radio" name="tl12-q3" id="tl12-q3c"><label for="tl12-q3c" class="tl-opt tl-ok">C. Lực từ lên dây hướng lên nên cân chỉ nhỏ hơn ban đầu</label>
+<input type="radio" name="tl12-q3" id="tl12-q3d"><label for="tl12-q3d" class="tl-opt tl-no">D. Chưa biết lực đổi thế nào khi dây lệch góc</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng, C sai.</strong> Đây là ý về <em>cơ chế</em>: lực từ lên dây và lực dây tác dụng lên nam châm là cặp lực – phản lực (định luật III Newton). Dây bị đẩy lên thì nam châm bị đẩy <em>xuống</em>, nên cân chỉ <strong>tăng</strong>; chỉ khi lực lên dây hướng xuống thì cân mới giảm. A là hiện tượng, B là kết luận, D là giới hạn của phép đo: cả ba đúng, đúng kiểu bốn ý a)–d) của một câu Phần II trong đề thi tốt nghiệp.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng đọc từ bảng; B là kết luận rút từ tỉ số gần không đổi; D là giới hạn: chỉ đo ở góc vuông nên chưa nói được gì về góc khác. Ý sai nằm ở <em>cơ chế</em>: cân đọc lực lên nam châm hay lực lên dây, và hai lực đó cùng chiều hay ngược chiều? Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
+</div>
+</div>
+
 <!--video:tn-l12-thuchanhtu-01-->
 <div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem thí nghiệm thật</p>
@@ -166,21 +202,7 @@
 
 <!--FIG3-->
 
-<p>Cách thứ hai: độ dốc đường thẳng $\Delta m$–$I$ bằng $\dfrac{Bl}{g}$, nên $B = \dfrac{\text{độ dốc} \times g}{l}$. Đường thẳng qua gốc (cách tính ở Thách đấu) có độ dốc $\approx 0{,}489\ \text{g/A}$, thế vào được $B \approx 0{,}120\ \text{T}$ — khớp cách tính từng lần.</p>
-
-<div class="tl-box tl-box--think tl-check">
-<p class="tl-label">Tự kiểm tra ngay</p>
-<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl12-q3-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl12-q3-conf" value="khong"> Không chắc</label></p>
-<p><strong>Câu 3.</strong> Một lần đo khác: cạnh khung $l = 4{,}0\ \text{cm}$, dòng $I = 2{,}5\ \text{A}$, cân tăng $\Delta m = 1{,}20\ \text{g}$. Cảm ứng từ là</p>
-<div class="tl-quiz">
-<input type="radio" name="tl12-q3" id="tl12-q3a"><label for="tl12-q3a" class="tl-opt tl-ok">A. $0{,}12\ \text{T}$</label>
-<input type="radio" name="tl12-q3" id="tl12-q3b"><label for="tl12-q3b" class="tl-opt tl-no">B. $0{,}012\ \text{T}$</label>
-<input type="radio" name="tl12-q3" id="tl12-q3c"><label for="tl12-q3c" class="tl-opt tl-no">C. $4{,}7 \times 10^{-3}\ \text{T}$</label>
-<input type="radio" name="tl12-q3" id="tl12-q3d"><label for="tl12-q3d" class="tl-opt tl-no">D. $1{,}2 \times 10^{2}\ \text{T}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = \Delta m\, g = 1{,}20 \times 10^{-3} \times 9{,}81 \approx 1{,}18 \times 10^{-2}\ \text{N}$; $B = \dfrac{F}{Il} = \dfrac{1{,}18 \times 10^{-2}}{2{,}5 \times 0{,}040} \approx 0{,}12\ \text{T}$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Viết từng bước: $F = 1{,}20 \times 10^{-3} \times 9{,}81 = 1{,}18 \times 10^{-2}\ \text{N}$; $Il = 2{,}5 \times 0{,}040 = 0{,}10\ \text{A·m}$; $B = 0{,}118 \approx 0{,}12\ \text{T}$. Ra 0,012 là quên nhân $g$; ra $4{,}7 \times 10^{-3}$ là quên chia cho $l$; ra $1{,}2 \times 10^{2}$ là quên đổi gam sang kilôgam. Nếu đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
-</div>
-</div>
+<p>Cách thứ hai: độ dốc đường thẳng $\Delta m$–$I$ bằng $\dfrac{Bl}{g}$, nên $B = \dfrac{\text{độ dốc} \times g}{l}$. Độ dốc (cách tính ở Thách đấu) cho $B \approx 0{,}120\ \text{T}$, khớp cách tính từng lần.</p>
 
 <h4>4. Sai số của phép đo</h4>
 
@@ -199,6 +221,7 @@
 </div>
 <ul>
 <li>Dụng cụ: cân $\pm 0{,}01\ \text{g}$ (1 độ chia), ampe kế $\pm 0{,}05\ \text{A}$, thước kẹp $\pm 0{,}5\ \text{mm}$.</li>
+<li>Quên TARE khi cân lệch +0,02 g: $B$ <strong>lớn hơn</strong> thật. Giảm: đọc cân lúc $I = 0$ rồi trừ, hoặc đảo chiều dòng, lấy nửa hiệu hai số đọc.</li>
 <li>Ví dụ: ở $I = 3{,}0\ \text{A}$: $\dfrac{0{,}01}{1{,}45} + \dfrac{0{,}05}{3{,}0} + \dfrac{0{,}5}{40} \approx 0{,}7\% + 1{,}7\% + 1{,}25\% \approx 3{,}6\%$.</li>
 </ul>
 
