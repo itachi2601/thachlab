@@ -94,4 +94,4 @@
 - [Kế hoạch tự tuyển sinh + phòng thuê](user_thach_ke_hoach_tu_tuyen_sinh.md) — riêng, Mac-only; 4 chặng A–D, 8 phòng đã tra, ngưỡng ≤400k/giờ
 - [Chiến lược chuyển đổi tuyển sinh](user_thach_chien_luoc_chuyen_doi_tuyen_sinh.md) — Mac-only; cầu nối 2/2027 → lớp 10 giữa 7/2027 → bớt 1 lớp khi ≥15 em; cổng G0–G3, prompt T1–T7
 - [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — Ch.1 ABCD 189 + Ch.2 ABCD 60 câu đã Hiện (24/10); còn Đ–S/tính toán Ch.1–2, Ch.3–4; đáp án=tô vàng
-- [Ruột tập bài 14](project_thachlab_ruot_tap_bai14.md) — script dựng PDF + data-tap; chờ cập nhật DB, deploy, migration lesson_notes
+- [Ruột tập bài 14](project_thachlab_ruot_tap_bai14.md) — 12 trang theo nhịp buổi, quy ước 25/10 (BTVN = đề, sửa bài góc HS TB); chờ in thử, cập nhật DB, deploy
