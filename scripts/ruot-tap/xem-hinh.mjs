@@ -4,7 +4,9 @@ import { createRequire } from 'node:module';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { hinh } from './hinh.mjs';
+import { hinh as hinh14 } from './hinh.mjs';
+import { hinhCh4 } from './hinh-ch4.mjs';
+const hinh = { ...hinh14, ...hinhCh4 };
 const HERE = dirname(fileURLToPath(import.meta.url));
 const BOOK = [resolve(HERE, '../../book/'), '/Users/MAC/Projects/thachlab/book'].find((d) => existsSync(d + '/node_modules')) + '/';
 const puppeteer = createRequire(BOOK + 'package.json')('puppeteer-core');
@@ -17,6 +19,7 @@ const out = resolve(HERE, 'out/hinh'); mkdirSync(out, { recursive: true });
 const b = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox', '--allow-file-access-from-files'] });
 const pg = await b.newPage();
 for (const [name, fn] of Object.entries(hinh)) {
+  if (name === 'anh') continue; // ảnh raster cần tên tệp, kiểm bằng mắt khi chèn
   const html = `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${fn()}</body></html>`;
   writeFileSync(out + '/_tmp.html', html);
   await pg.goto(pathToFileURL(out + '/_tmp.html').href, { waitUntil: 'networkidle0' });
