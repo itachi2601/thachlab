@@ -19,9 +19,9 @@ const puppeteer = require('puppeteer-core');
 const m = (s) => katex.renderToString(s, { throwOnError: true, output: 'html' });
 const qr = qrcode(0, 'M'); qr.addData(LINK); qr.make();
 const qrSvg = qr.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
-// Noto Sans (OFL): hẹp hơn Be Vietnam Pro ~8% nên tiết kiệm giấy, dấu tiếng Việt rõ. Mỗi tệp con PHẢI có unicode-range, nếu không
-// tệp sau đè tệp trước và chữ in đậm rơi về Helvetica (lỗi trộn font ở bản cũ).
-const F = resolve(HERE, 'fonts') + '/noto-sans-';
+// Source Sans 3 (OFL, thầy chốt 25/10 để tiết kiệm trang): hẹp hơn Noto Sans ~10%, x-height cao nên hạ cỡ chữ xuống 3,3 mm vẫn dễ đọc;
+// có dấu tiếng Việt. Mỗi tệp con PHẢI có unicode-range, nếu không tệp sau đè tệp trước và chữ in đậm rơi về Helvetica.
+const F = resolve(HERE, 'fonts') + '/source-sans-3-';
 const UR = {
   latin: 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD',
   'latin-ext': 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF',
@@ -65,9 +65,9 @@ const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>
 ${fonts}
 @page{size:165mm 240mm;margin:0}
 *{box-sizing:border-box}
-/* Thang cỡ chữ 4 mức (C3): --fs-h1 tiêu đề trang · --fs-h3 tiêu đề mục · --fs-body thân (3,5 mm ≈ 10 pt) · --fs-sm chữ phụ (3 mm ≈ 8,5 pt,
-   không nhỏ hơn — C1). Dòng kẻ 5 mm = 1,43 thân chữ; đoạn chữ liền line-height 1.45 (= 5,1 mm, khớp ô ly) để dấu tiếng Việt không chạm dòng trên. */
-:root{--ink:#1c2540;--navy:#1d3a78;--grid:#d3dbec;--soft:#eef2fa;--hint:#5f6a88;--fs-h1:4.6mm;--fs-h3:3.9mm;--fs-body:3.5mm;--fs-sm:3.1mm;
+/* Thang cỡ chữ 4 mức (C3): --fs-h1 tiêu đề trang · --fs-h3 tiêu đề mục · --fs-body thân (3,3 mm ≈ 9,4 pt với Source Sans 3) · --fs-sm chữ phụ
+   (2,95 mm ≈ 8,4 pt, không nhỏ hơn — C1). Dòng kẻ 5 mm = 1,43 thân chữ; đoạn chữ liền line-height 1.45 (= 5,1 mm, khớp ô ly) để dấu tiếng Việt không chạm dòng trên. */
+:root{--ink:#1c2540;--navy:#1d3a78;--grid:#d3dbec;--soft:#eef2fa;--hint:#5f6a88;--fs-h1:4.4mm;--fs-h3:3.7mm;--fs-body:3.3mm;--fs-sm:2.95mm;
  --pl:20mm;--pr:10mm}
 body{margin:0;font:400 var(--fs-body)/1.45 BV,KaTeX_Main,KaTeX_AMS,sans-serif;text-rendering:optimizeLegibility;font-kerning:normal;color:var(--ink)}
 /* Lề đóng lò xo: mép gáy 20 mm (lỗ xoắn ăn ~8 mm + ngón tay giữ), mép ngoài 10 mm. Trang lẻ gáy bên trái, trang chẵn gáy bên phải (in hai mặt). */
@@ -149,7 +149,7 @@ ${hinh.anh('rutherford-bo-thi-nghiem.png', 'Máy dò quay quanh lá vàng, đế
 <div>${m('A')} (trên) = số <span class="fill" style="min-width:14mm"></span> = <span class="fill" style="min-width:14mm"></span> + <span class="fill" style="min-width:14mm"></span></div>
 <div>${m('Z')} (dưới) = số <span class="fill" style="min-width:20mm"></span> &nbsp; ${m('N')} = <span class="fill" style="min-width:8mm"></span> − <span class="fill" style="min-width:8mm"></span></div>
 </div></div></div>
-<div class="card" style="padding:1mm 3mm"><b>Tự kiểm tra 1.</b> ${m('{}^{65}_{29}\\mathrm{Cu}')} có:<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0 2mm;margin:0;font-size:var(--fs-sm)"><div><b>A.</b> 65 p, 29 n</div><div><b>B.</b> 29 nuclôn, 36 n</div><div><b>C.</b> 29 p, 36 n</div><div><b>D.</b> 29 p, 65 n</div></div>
+<div class="card" style="padding:1mm 3mm"><b>Tự kiểm tra 1.</b> ${m('{}^{65}_{29}\\mathrm{Cu}')} có:<div><b>A.</b> 65 prôtôn, 29 nơtron</div><div><b>B.</b> 29 nuclôn, 36 nơtron</div><div><b>C.</b> 29 prôtôn, 36 nơtron</div><div><b>D.</b> 29 prôtôn, 65 nơtron</div>
 Em chọn: <span class="fill"></span> <span class="ck"></span>chắc &nbsp; Vì ${m('N=A-Z=')} <span class="fill" style="min-width:25mm"></span></div>
 ${foot(1)}</section>
 
@@ -203,7 +203,7 @@ ${foot(3)}</section>
 ${head('BÀI TOÁN MẪU · ĐỌC NHÃN KIM LOẠI', 'Làm cùng thầy trên lớp')}
 <h3><i>1</i>V · Đề bài</h3>${tag('4')}
 <div class="card soft fig-side" style="grid-template-columns:1fr 34mm;padding:1.2mm 3mm"><div>Mẫu kim loại ghi ${m('{}^{27}_{13}\\mathrm{Al}')}. Khối lượng mol nguyên tử nhôm là ${m('26{,}98\\ \\mathrm{g/mol}')}; ${m('N_A=6{,}022\\cdot10^{23}\\ \\mathrm{mol}^{-1}')}.<br>
-<b>a)</b> Xác định số prôtôn, số nơtron của hạt nhân nhôm. &nbsp;<b>b)</b> Tính bán kính hạt nhân nhôm. &nbsp;<b>c)</b> Tính khối lượng một nguyên tử nhôm ra u và ra kg. &nbsp;<b>d)</b> Hai đồng vị của đồng (${m('{}^{63}_{29}\\mathrm{Cu}')}, ${m('{}^{65}_{29}\\mathrm{Cu}')}) khác nhau ở đại lượng nào?</div>${hinh.nhanKimLoai()}</div>
+<div><b>a)</b> Xác định số prôtôn, số nơtron của hạt nhân nhôm.</div><div><b>b)</b> Tính bán kính hạt nhân nhôm.</div><div><b>c)</b> Tính khối lượng một nguyên tử nhôm ra u và ra kg.</div><div><b>d)</b> Hai đồng vị của đồng (${m('{}^{63}_{29}\\mathrm{Cu}')}, ${m('{}^{65}_{29}\\mathrm{Cu}')}) khác nhau ở đại lượng nào?</div></div>${hinh.nhanKimLoai()}</div>
 <h3><i>2</i>Phân tích đề</h3>
 <table><tr><th style="width:42mm">Câu trong đề</th><th style="width:36mm">Dữ liệu</th><th>Kiến thức liên quan</th></tr>
 <tr><td>“${m('{}^{27}_{13}\\mathrm{Al}')}”</td><td>${m('A=27;\\ Z=13')}</td><td>${m('N=A-Z')}</td></tr>
@@ -239,7 +239,7 @@ ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 <h3><i>3</i>Thử thách phân tầng</h3>
 <div class="fig-side" style="grid-template-columns:1fr 42mm">${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:10mm"></span> · số nơtron <span class="fill" style="min-width:10mm"></span> · vì <span class="fill" style="min-width:20mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng chiếm bao nhiêu phần thể tích nguyên tử? (kích thước ở Tập 2·3)', 4))}${hinh.kichThuoc()}</div>
 <h3><i>4</i>Câu 7 (urani) và mô phỏng PhET</h3>
-<div class="fig-side" style="grid-template-columns:1fr 46mm">${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = …`, 2)
+<div class="fig-side" style="grid-template-columns:1fr 30mm">${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = …`, 2)
  + wl('Bắn hạt alpha (Rutherford) · Dự đoán:', 1) + wl('Thấy:', 2)
  + wl('Đồng vị neon · Dự đoán gần đồng vị nào:', 1) + wl('Thấy / vì sao 20,18:', 2))}${hinh.anh('rutherford-alpha-qua-la-vang.png', 'Chỉ hạt alpha đi sát hạt nhân (chấm đỏ) mới lệch mạnh.')}</div>
 ${foot(5)}</section>

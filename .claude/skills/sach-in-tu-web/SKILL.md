@@ -45,8 +45,11 @@ Khác sách A4 cả chương: ruột tập là 12 trang 165×240 mm cho MỘT b�
 chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy ước sau (không hạ chuẩn):
 - **Lề đóng lò xo**: gáy 20 mm, mép ngoài 10 mm, đổi bên theo trang chẵn/lẻ (`--pl/--pr` + `.page:nth-of-type(even)`);
   ô ly, chân trang, nhãn Tập đều bám `--pl/--pr`. Không còn ràng buộc "số trang chia hết cho 4".
-- **Cỡ chữ 4 mức** (C3): `--fs-h1` 4,6 · `--fs-h3` 3,9 · `--fs-body` 3,5 (≈10 pt) · `--fs-sm` 3,1 mm (≈8,8 pt, sàn — C1);
-  không đặt mm lẻ trong component; chỉ nạp 2 độ đậm (400/700). Thân chữ line-height 1,45 = ô ly 5 mm.
+- **Font Source Sans 3** (OFL, `scripts/ruot-tap/fonts/`, thầy chốt 25/10 để tiết kiệm trang: hẹp hơn Noto Sans ~10%, x-height cao)
+  với **cỡ chữ 4 mức** (C3): `--fs-h1` 4,4 · `--fs-h3` 3,7 · `--fs-body` 3,3 (≈9,4 pt) · `--fs-sm` 2,95 mm (≈8,4 pt, sàn — C1);
+  không đặt mm lẻ trong component; chỉ nạp 2 độ đậm (400/700). Thân chữ line-height 1,45; dòng kẻ viết tay giữ 5 mm.
+- **Mỗi ý của câu hỏi một dòng** (a), b), c)… và A. B. C. D.), không nối bằng “ · ” để tiết kiệm chỗ — thầy chốt 25/10.
+- **Không xoay ảnh** để vừa cột; ảnh dọc thì thu cột (≈30 mm) và đặt cạnh khối cao tương đương.
 - **Hình minh hoạ bắt buộc** (thầy 25/10: trang không hình là thiếu): mỗi trang học/bài tập có ≥1 hình SVG tự vẽ trong
   `hinh.mjs`, mỗi hình trả lời một câu hỏi (H1), đặt CẠNH khối chữ bằng `.fig-side` (grid `1fr 40–46mm`) để không tốn
   chiều cao; hình ở ô giải dạng khó là gợi ý nhìn trước khi tính (để trống tỉ số/kết quả cho HS điền). Chữ trong SVG
