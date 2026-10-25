@@ -52,14 +52,105 @@ function MyAction({ stage, index, threshold }: { stage: MyStage; index: number; 
   );
 }
 
+function dueText(iso: string): string {
+  return new Date(iso).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", weekday: "short", day: "2-digit", month: "2-digit" });
+}
+
+/** Buổi tự học ở nhà: các chặng xếp thành danh sách, mỗi chặng một nút; không đồng hồ, có hạn nộp, chặng sau chờ chặng trước nếu giáo viên bật. */
+function HomeView({ data, finished }: { data: MyReviewState; finished: boolean }) {
+  const n = data.stages.length;
+  const passedCount = data.stages.filter((s) => s.mine?.state === "passed").length;
+  const overdue = !finished && data.due_at ? Date.parse(data.due_at) < Date.parse(data.now) : false;
+  // Chặng đầu tiên chưa đạt và không khoá = việc tiếp theo của em.
+  const nextIdx = data.stages.findIndex((s) => s.mine?.state !== "passed" && !s.locked);
+  return (
+    <div className="space-y-5">
+      <div>
+        <Link href="/lop-hoc/" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-primary">
+          <ArrowLeft size={16} /> Lớp học
+        </Link>
+        <h1 className="font-display text-xl font-bold text-ink sm:text-2xl">{data.title}</h1>
+        {data.due_at && (
+          <p className={`mt-1 ${overdue ? "font-semibold text-warn" : "text-muted"}`}>
+            {finished ? "Đã kết thúc" : overdue ? `Quá hạn từ ${dueText(data.due_at)} — em vẫn làm được, giáo viên sẽ thấy khi em nộp` : `Hạn nộp: ${dueText(data.due_at)}`}
+          </p>
+        )}
+      </div>
+
+      <section className="space-y-2" aria-label="Tiến độ của em">
+        <p className="font-semibold text-ink">Em đã qua {passedCount}/{n} chặng</p>
+        <Bar value={passedCount} max={n} tone="ok" />
+        <p className="text-sm text-muted">
+          Đạt từ {data.threshold}% là qua chặng. Chưa đạt thì làm lại, điểm tốt nhất được tính.
+          {data.sequential ? " Chặng sau mở khi chặng trước đạt." : ""}
+        </p>
+      </section>
+
+      <ol className="space-y-3" aria-label="Các chặng">
+        {data.stages.map((s, i) => {
+          const state = s.mine?.state ?? "idle";
+          const href = examTakePath(s.exam_id, s.item_id);
+          const isNext = !finished && i === nextIdx;
+          return (
+            <li
+              key={i}
+              aria-current={isNext ? "step" : undefined}
+              className={`space-y-3 rounded-2xl border bg-panel p-4 ${isNext ? "border-primary" : "border-line"}`}
+            >
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span className="min-w-0 flex-1 basis-48 text-ink">
+                  <span className="block text-sm font-semibold text-muted">Chặng {i + 1}/{n}</span>
+                  <span className="block text-lg font-bold">{s.title}</span>
+                </span>
+                {s.locked ? (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">
+                    <span aria-hidden>🔒</span>Chờ chặng {i}
+                  </span>
+                ) : (
+                  <StatePill state={state} />
+                )}
+                {s.mine?.best_pct != null && <span className="text-sm tabular-nums text-muted">{s.mine.best_pct}%</span>}
+              </div>
+              {state === "doing" && (
+                <div className="space-y-2">
+                  <p className="text-sm text-ink">Em đã trả lời {s.mine?.answered}/{s.mine?.total} câu</p>
+                  <Bar value={s.mine?.answered ?? 0} max={s.mine?.total ?? 0} />
+                </div>
+              )}
+              {s.locked ? (
+                <p className="text-sm text-muted">Làm chặng {i} đạt {data.threshold}% (hoặc nộp 2 lượt) để mở chặng này.</p>
+              ) : finished ? null : state === "passed" ? (
+                <Link href={href} className="inline-flex min-h-11 items-center font-semibold text-primary underline">Làm lại để ôn thêm</Link>
+              ) : (
+                <Link href={href} className={isNext ? BTN : "inline-flex min-h-11 items-center font-semibold text-primary underline"}>
+                  {state === "doing" ? "Tiếp tục làm" : state === "failed" ? "Làm lại" : `Vào làm chặng ${i + 1}`}
+                </Link>
+              )}
+              {s.class_submitted != null && s.class_total ? (
+                <p className="text-xs text-muted">{s.class_submitted}/{s.class_total} bạn đã nộp chặng này</p>
+              ) : null}
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  );
+}
+
+/** Nhân sự xem thử trang học sinh của một buổi ôn bằng `?id=` (học sinh không dùng; máy chủ chỉ cho nhân sự hoặc em trong lớp đó). */
+function previewSessionId(): number | null {
+  const n = Number(new URLSearchParams(window.location.search).get("id"));
+  return Number.isInteger(n) && n > 0 ? n : null;
+}
+
 /** Trang của học sinh trong buổi ôn: chặng hiện tại, đồng hồ, việc của em, tiến độ chung của lớp (ẩn danh). */
 export default function ReviewStudent() {
   const [data, setData] = useState<MyReviewState | null | undefined>(undefined);
   const [stamp, setStamp] = useState(0);
 
   const { error } = usePoll(
-    () => getMyReviewState(null),
-    () => 5000,
+    () => getMyReviewState(previewSessionId()),
+    (last) => (last?.mode === "self" ? 30000 : 5000),
     (d) => {
       setData(d);
       setStamp(Date.now());
@@ -81,6 +172,8 @@ export default function ReviewStudent() {
       </div>
     );
   }
+
+  if (data.mode === "self") return <HomeView data={data} finished={data.status === "finished"} />;
 
   const n = data.stages.length;
   const idx = data.current_stage;

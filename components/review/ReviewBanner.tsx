@@ -16,7 +16,7 @@ function Inner() {
   const [data, setData] = useState<MyReviewState | null>(null);
   usePoll(
     () => getMyReviewState(null),
-    () => 20000,
+    (last) => (last?.mode === "self" ? 60000 : 20000),
     (d) => setData(d),
   );
   if (!data || data.status === "finished") return null;
@@ -31,7 +31,13 @@ function Inner() {
         <span className="min-w-0 flex-1">
           <span className="block font-bold">{data.title}</span>
           <span className="block text-sm text-muted">
-            {idx < 0 ? "Chờ giáo viên mở chặng 1" : `Đang ở chặng ${idx + 1}/${data.stages.length} · bấm để vào làm`}
+            {data.mode === "self"
+              ? `Bài ôn ở nhà · ${data.stages.filter((s) => s.mine?.state === "passed").length}/${data.stages.length} chặng đã qua${
+                  data.due_at ? ` · hạn ${new Date(data.due_at).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" })}` : ""
+                }`
+              : idx < 0
+                ? "Chờ giáo viên mở chặng 1"
+                : `Đang ở chặng ${idx + 1}/${data.stages.length} · bấm để vào làm`}
           </span>
         </span>
         <span aria-hidden className="text-xl font-bold text-primary">›</span>
