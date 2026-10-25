@@ -19,6 +19,14 @@ const puppeteer = require('puppeteer-core');
 const m = (s) => katex.renderToString(s, { throwOnError: true, output: 'html' });
 const qr = qrcode(0, 'M'); qr.addData(LINK); qr.make();
 const qrSvg = qr.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
+const qr2 = qrcode(0, 'M'); qr2.addData('https://thachlab.id.vn/'); qr2.make();
+const qrHome = qr2.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
+// Góc giới thiệu cuối tập (thầy chốt 25/10): bạn mượn tập thấy tò mò muốn biết thầy/web này là gì. Giọng kể, không rao bán;
+// nói đúng thứ HS 14–18 quan tâm (SDT: tự chủ, làm được, có bạn cùng học; Dahl–Steinberg: địa vị bạn cùng lứa → bảng xếp hạng).
+const gioiThieu = `<div class="gt"><div class="qr">${qrHome}</div><div>
+<b>Mượn tập của bạn?</b> Tập này đi cùng bài học trên <b>thachlab.id.vn</b> — lớp Vật lí của thầy Thạch.
+Mỗi bài có lý thuyết kèm thí nghiệm và mô phỏng, tự kiểm tra chấm ngay, bài tập mẫu giải từng bước, đề luyện bám đề thi tốt nghiệp,
+và bảng xếp hạng theo mùa để biết mình đang ở đâu so với bạn bè. Quét mã để xem thử.</div></div>`;
 // Source Sans 3 (OFL, thầy chốt 25/10 để tiết kiệm trang): hẹp hơn Noto Sans ~10%, x-height cao nên hạ cỡ chữ xuống 3,3 mm vẫn dễ đọc;
 // có dấu tiếng Việt. Mỗi tệp con PHẢI có unicode-range, nếu không tệp sau đè tệp trước và chữ in đậm rơi về Helvetica.
 const F = resolve(HERE, 'fonts') + '/source-sans-3-';
@@ -35,9 +43,9 @@ const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
 
 // Nhãn góc phải: mã "trang·ô" trùng nhãn "✍ Tập: trang · ô" khi trình chiếu (data-tap trong theory.src.html).
 const tag = (t) => `<span class="tag">Tập ${t}</span>`;
-const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · trang ${n}/12</span></div>`;
-// who=true chỉ ở trang 1 và trang Sửa bài (tập đóng sẵn, không lặp Ngày/Tên mỗi trang)
-const head = (t, s, who = false) => `<div class="top"><div><b>${t}</b><small>${s}</small></div>${who ? '<div class="who">Ngày …../….. &nbsp;Tên: ………………</div>' : ''}</div>`;
+const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · ${n}/12</span></div>`;
+// Không Ngày/Tên (các tờ đóng thành sách — thầy chốt 25/10); phụ đề chỉ khi thật cần, thầy tự điều phối nhịp buổi.
+const head = (t, s = '') => `<div class="top"><div><b>${t}</b>${s ? `<small>${s}</small>` : ''}</div><small class="brand">thachlab.id.vn</small></div>`;
 const yn = `<td style="white-space:nowrap;padding:.2mm 1.8mm"><span class="ck"></span>Có &nbsp;<span class="ck"></span>Không</td>`;
 const box = (inner, extra = '') => `<div style="background:#fff;border:.3mm solid var(--grid);border-radius:1.5mm;padding:1mm 3mm;${extra}">${inner}</div>`;
 const rkRow = (i) => `<tr><td><b>${i}</b></td><td></td><td><span class="ck"></span></td><td><span class="ck"></span></td></tr>`;
@@ -48,11 +56,11 @@ const rkTable = (rows) => `<table class="rk"><tr><th style="width:9mm">Câu</th>
 // 4 tick lí do + ☐ làm lại; hai dòng ghi nhớ; dưới cùng dòng tra ô Tập để xem lại.
 const traNhanh = `<div class="tra"><b>Xem lại ở Tập:</b> kí hiệu, lực hạt nhân 1·4 · đồng vị 2·1 · mô hình 2·2 · R, u, khối lượng 2·3 · bẫy 3·1 · dạng 1–3 → 6·1 · dạng 4–5 → 7·1</div>`;
 const chua = (k) => `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.10)</span></div>${lines(k)}</div>`;
-const fixPage = (n, { title, sub, lap = false, ks = [5, 4, 4, 4, 4] }) => `<section class="page">
-${head(title, sub, true)}
+const fixPage = (n, { title, sub = '', lap = false, ks = [5, 5, 5, 4, 4] }) => `<section class="page">
+${head(title, sub)}
 <div class="card soft" style="padding:1mm 3mm"><div style="display:flex;gap:4mm;flex-wrap:wrap"><span>Đề: ……………………………</span><span>Điểm: ……/……</span>${lap ? '<span>Lần trước: ……/……</span>' : '<span>Làm trên: <span class="ck"></span>thachlab <span class="ck"></span>Azota</span>'}</div>
-<div style="margin-top:.6mm"><b>Câu sai</b> <span class="hint">(xem trên web, chép số câu):</span> P.I <span class="fill" style="min-width:24mm"></span> · P.II <span class="fill" style="min-width:20mm"></span> · P.III <span class="fill" style="min-width:12mm"></span></div></div>
-<h3><i>1</i>Thầy chữa <span class="hint">(mỗi ô một câu, câu “chắc mà vẫn sai” trước)</span></h3>
+<div style="margin-top:.6mm"><b>Câu sai:</b> P.I <span class="fill" style="min-width:24mm"></span> · P.II <span class="fill" style="min-width:20mm"></span> · P.III <span class="fill" style="min-width:12mm"></span></div></div>
+<h3><i>1</i>Thầy chữa</h3>
 ${ks.map(chua).join('')}
 <h3><i>2</i>Ghi nhớ sau buổi sửa</h3>
 ${box(lines(2))}
@@ -77,7 +85,7 @@ body{margin:0;font:400 var(--fs-body)/1.45 BV,KaTeX_Main,KaTeX_AMS,sans-serif;te
 .page>*{position:relative}
 .top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:.5mm solid var(--navy);padding-bottom:1mm;margin-bottom:2mm;background:#fff}
 .top b{display:block;font-weight:700;font-size:var(--fs-h1);color:var(--navy)}.top small{color:var(--hint);font-size:var(--fs-sm)}
-.who{font-size:var(--fs-sm);color:var(--hint);white-space:nowrap}
+.brand{font-size:var(--fs-sm);color:var(--navy);font-weight:700;white-space:nowrap}
 h3{margin:1.8mm 0 1mm;line-height:1.25;font-weight:700;font-size:var(--fs-h3);color:var(--navy);background:#fff;display:inline-block;padding-right:2mm}
 h3 i{font-style:normal;background:var(--navy);color:#fff;border-radius:1mm;padding:.2mm 1.6mm;margin-right:1.5mm;font-size:var(--fs-sm)}
 .card{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:1.6mm 3mm;margin-bottom:1.5mm}
@@ -107,6 +115,7 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .fig-side{display:grid;gap:2.5mm;align-items:start}
 .page.dots{background-image:radial-gradient(circle,#aab4cc .3mm,transparent .35mm);background-size:5mm 5mm;background-position:0 0;background-origin:content-box;background-clip:content-box}
 .nw{white-space:nowrap}
+.gt{position:absolute;left:var(--pl);right:var(--pr);bottom:13mm;display:flex;gap:4mm;align-items:center;background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:2mm 3mm;line-height:1.45}.gt b{color:var(--navy)}
 .tra{background:#fff;border:.3mm dashed var(--navy);border-radius:1.2mm;padding:.6mm 2mm;font-size:var(--fs-sm);line-height:1.4;margin-bottom:.5mm}
 .chb{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm .4mm;margin-bottom:1.4mm}
 .chh{display:flex;justify-content:space-between;gap:2mm;align-items:center;font-size:var(--fs-sm);line-height:5mm;white-space:nowrap}.chh .ck{width:3.6mm;height:3.6mm;border-radius:.5mm;vertical-align:-.7mm;margin:0 .4mm 0 1mm}
@@ -119,25 +128,24 @@ ${btmCss}
 
 <!-- TRANG 1: mục tiêu, dự đoán, II.1 -->
 <section class="page">
-${head('BÀI 14 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: Vật lí hạt nhân', true)}
-<div class="nhip"><b>Hai buổi một tập.</b> Hôm nay: học bài trên lớp 60′ (tr. 1–5), cuối giờ chép <b>đề BTVN</b> (tr. 5). Buổi sau: <b>ôn 10′</b> (tr. 3) → <b>kiểm tra 20′</b> → <b>sửa bài 30′</b> (tr. 8).</div>
-<h3><i>1</i>Hôm nay em làm được gì?</h3>${tag('1·1')}
+${head('BÀI 14 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: Vật lí hạt nhân')}
+<h3><i>1</i>Mục tiêu</h3>${tag('1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0"><span class="ck"></span>Nêu được hạt nhân gồm <b>prôtôn, nơtron</b> và lực giữ chúng lại</div>
 <div style="margin:.3mm 0"><span class="ck"></span>Đọc và viết đúng kí hiệu ${m('{}^{A}_{Z}\\mathrm{X}')}, tính số nơtron</div>
 <div style="margin:.3mm 0"><span class="ck"></span>Nói được <b>đồng vị</b> là gì; phân biệt 3 mô hình nguyên tử</div>
 </div>
-<h3><i>2</i>Dự đoán trước khi học <span class="hint">(đoán sai cũng không sao)</span></h3>${tag('1·2')}
+<h3><i>2</i>Dự đoán trước khi học</h3>${tag('1·2')}
 <div class="card">
 <p style="margin:0 0 1mm">Năm 1909, Rutherford bắn hạt alpha vào lá vàng mỏng và thấy như hình bên. Theo em, nguyên tử:</p>
-<div class="fig-side" style="grid-template-columns:1fr 22mm"><div>
+<div class="fig-side" style="grid-template-columns:1fr 30mm"><div>
 <div class="opt"><span class="b">A</span><span>Là khối cầu đặc, các hạt phân bố đều</span></div>
 <div class="opt"><span class="b">B</span><span>Không có hạt nhân, chỉ có các êlectron</span></div>
 <div class="opt"><span class="b">C</span><span>Gần như trống rỗng, điện dương tập trung ở một vùng rất nhỏ</span></div>
 <div style="margin-top:1.5mm">Em chọn: <span class="fill" style="min-width:10mm"></span> &nbsp;<span class="ck"></span>chắc &nbsp;<span class="ck"></span>không chắc &nbsp;· <span class="hint">Vì sao?</span></div>${lines(1)}</div>
 ${hinh.anh('rutherford-bo-thi-nghiem.png', 'Máy dò quay quanh lá vàng, đếm hạt ở góc φ.')}</div>
 </div>
-<h3><i>3</i>Học xong, em sửa lại <span class="hint">(bút khác màu, cuối giờ)</span></h3>${tag('1·3')}
+<h3><i>3</i>Học xong, em sửa lại</h3>${tag('1·3')}
 <div class="card soft"><div>Đáp án đúng là: <span class="fill"></span> &nbsp; Em đoán <span class="ck"></span>đúng &nbsp;<span class="ck"></span>sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 <h3><i>4</i>II.1 · Hạt nhân, lực hạt nhân, kí hiệu</h3>${tag('1·4')}
 <div class="card" style="padding:1.2mm 3mm">
@@ -155,7 +163,7 @@ ${foot(1)}</section>
 
 <!-- TRANG 2: II.2–II.4, kết quả tự kiểm tra -->
 <section class="page">
-${head('GHI BÀI · ĐỒNG VỊ, MÔ HÌNH, KÍCH THƯỚC', 'Điền khi nghe giảng')}
+${head('ĐỒNG VỊ · MÔ HÌNH · KÍCH THƯỚC')}
 <h3><i>1</i>II.2 · Đồng vị</h3>${tag('2·1')}
 <div class="card fig-side" style="grid-template-columns:1fr 40mm;margin-bottom:1.5mm;padding:1.2mm 3mm"><div><div>Đồng vị: cùng số <span class="fill" style="min-width:14mm"></span>, khác số <span class="fill" style="min-width:14mm"></span>; tính chất <span class="fill" style="min-width:20mm"></span> giống nhau.</div>
 <div style="margin-top:1mm">Ba đồng vị của hiđrô: ${m('{}^{1}_{1}\\mathrm{H}')}, ${m('{}^{2}_{1}\\mathrm{H}')} (<span class="fill" style="min-width:12mm"></span>), ${m('{}^{3}_{1}\\mathrm{H}')} (<span class="fill" style="min-width:12mm"></span>): cùng <span class="fill" style="min-width:6mm"></span> prôtôn, nơtron <span class="fill" style="min-width:6mm"></span> / <span class="fill" style="min-width:6mm"></span> / <span class="fill" style="min-width:6mm"></span></div></div>
@@ -176,31 +184,31 @@ ${hinh.dongViH('Cùng 1 prôtôn (đặc, +), khác số nơtron (rỗng).')}</d
 <div>${m('1\\ \\mathrm{u}')} = <span class="fill" style="min-width:7mm"></span> khối lượng nguyên tử <span class="fill" style="min-width:9mm"></span> ≈ <span class="nw"><span class="fill" style="min-width:18mm"></span>&nbsp;kg</span> ≈ <span class="fill" style="min-width:12mm"></span> ${m('\\mathrm{MeV}/c^2')}</div>
 <div>${m('1\\ \\mathrm{MeV}=')} <span class="nw"><span class="fill" style="min-width:22mm"></span>&nbsp;J</span></div>
 <div>Một nguyên tử: ${m('m\\approx')} <span class="fill" style="min-width:8mm"></span> · u &nbsp;·&nbsp; một mol: ${m('M\\approx')} <span class="nw"><span class="fill" style="min-width:8mm"></span>&nbsp;g/mol</span></div></div>
-<h3><i>4</i>Kết quả tự kiểm tra <span class="hint">(câu 2–7 trên web)</span></h3>${tag('2·4')}
+<h3><i>4</i>Kết quả tự kiểm tra câu 2–7</h3>${tag('2·4')}
 <div class="two">${rkTable(rkRow(2) + rkRow(3) + rkRow(4))}${rkTable(rkRow(5) + rkRow(6) + rkRow(7))}</div>
 ${foot(2)}</section>
 
 <!-- TRANG 3: bẫy, trả bài -->
 <section class="page">
-${head('ÔN 10 PHÚT ĐẦU BUỔI SAU · BẪY VÀ TRẢ BÀI', 'Buổi sau: nói với bạn cùng bàn, không nhìn tập, rồi mới mở web đối chiếu')}
-<h3><i>1</i>III · Ba cái bẫy hay sập <span class="hint">(đánh dấu bẫy em từng sập)</span></h3>${tag('3·1')}
+${head('BẪY · TRẢ BÀI')}
+<h3><i>1</i>III · Ba cái bẫy hay sập</h3>${tag('3·1')}
 <div class="card">
 <div class="trap"><span class="ck"></span><span><b>Lấy số khối làm khối lượng.</b> ${m('A')} là số đếm nuclôn, còn khối lượng nguyên tử tính bằng u là số thực (nhôm: ${m('26{,}98\\ \\mathrm{u}')}).</span></div>
 <div class="trap"><span class="ck"></span><span><b>“Đồng vị khác số prôtôn”.</b> Sai: đồng vị phải <b>cùng</b> ${m('Z')}.</span></div>
 <div class="trap"><span class="ck"></span><span><b>Êlectron quay ở khoảng cách nào cũng được.</b> Bohr: chỉ ở quỹ đạo có năng lượng xác định.</span></div></div>
-<h3><i>2</i>IV · Trả bài 5 câu <span class="hint">(☐ = nói được không nhìn tập)</span></h3>${tag('3·2')}
+<h3><i>2</i>IV · Trả bài 5 câu</h3>${tag('3·2')}
 ${box(`<div><b>1.</b> Hạt nhân gồm những hạt nào? Vì sao không vỡ ra?<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}
 <div><b>2.</b> Viết kí hiệu ${m('{}^{A}_{Z}\\mathrm{X}')}, nói rõ từng chữ.<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}
 <div><b>3.</b> Đồng vị là gì? Kể tên ba đồng vị của hiđrô, chúng giống và khác nhau ở đâu?<span class="ck" style="float:right;margin:0"></span></div>${lines(3)}
 <div><b>4.</b> Thomson, Rutherford, Bohr khác nhau ở đâu?<span class="ck" style="float:right;margin:0"></span></div>${lines(3)}
 <div><b>5.</b> Đơn vị u là gì? Viết công thức bán kính hạt nhân.<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}`)}
-<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Đầu buổi sau, bạn cùng bàn kiểm cho em:</b> nói được ……/5 câu · câu chưa thuộc: <span class="fill" style="min-width:30mm"></span> → đọc lại ô Tập <span class="fill" style="min-width:14mm"></span></div>
-<div class="card" style="padding:1mm 3mm"><b>Ghi chú thêm của em</b> <span class="hint">(điều thầy nhấn mạnh, chỗ còn lấn cấn)</span>${lines(7)}</div>
+<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/5 câu · câu chưa thuộc: <span class="fill" style="min-width:30mm"></span> → đọc lại ô Tập <span class="fill" style="min-width:14mm"></span></div>
+<div class="card" style="padding:1mm 3mm"><b>Ghi chú</b>${lines(8)}</div>
 ${foot(3)}</section>
 
 <!-- TRANG 4: bài toán mẫu -->
 <section class="page">
-${head('BÀI TOÁN MẪU · ĐỌC NHÃN KIM LOẠI', 'Làm cùng thầy trên lớp')}
+${head('BÀI TOÁN MẪU · ĐỌC NHÃN KIM LOẠI')}
 <h3><i>1</i>V · Đề bài</h3>${tag('4')}
 <div class="card soft fig-side" style="grid-template-columns:1fr 34mm;padding:1.2mm 3mm"><div>Mẫu kim loại ghi ${m('{}^{27}_{13}\\mathrm{Al}')}. Khối lượng mol nguyên tử nhôm là ${m('26{,}98\\ \\mathrm{g/mol}')}; ${m('N_A=6{,}022\\cdot10^{23}\\ \\mathrm{mol}^{-1}')}.<br>
 <div><b>a)</b> Xác định số prôtôn, số nơtron của hạt nhân nhôm.</div><div><b>b)</b> Tính bán kính hạt nhân nhôm.</div><div><b>c)</b> Tính khối lượng một nguyên tử nhôm ra u và ra kg.</div><div><b>d)</b> Hai đồng vị của đồng (${m('{}^{63}_{29}\\mathrm{Cu}')}, ${m('{}^{65}_{29}\\mathrm{Cu}')}) khác nhau ở đại lượng nào?</div></div>${hinh.nhanKimLoai()}</div>
@@ -215,7 +223,7 @@ ${head('BÀI TOÁN MẪU · ĐỌC NHÃN KIM LOẠI', 'Làm cùng thầy trên l
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:1mm">
 ${wl('a)', 3)}${wl('b)', 3)}${wl('c)', 3)}${wl('d)', 2)}
 </div>
-<h3><i>4</i>Mở rộng: khối lượng trung bình của đồng <span class="hint">(làm sau câu d)</span></h3>
+<h3><i>4</i>Mở rộng: khối lượng trung bình của đồng</h3>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln" style="height:auto;padding-top:1mm"><b>Bước 1 (cho sẵn):</b> đồng tự nhiên = hai đồng vị ở câu d), ${m('M=63{,}54\\ \\mathrm{g/mol}')}.</div>
 ${wl(`Bước 2: m(Cu) = 63,54 / ${m('N_A')} = …&nbsp;g = …&nbsp;kg`, 2)}${wl('Bước 3: đổi sang u = … ; so với 63 và 65:', 2)}</div>
@@ -224,7 +232,7 @@ ${foot(4)}</section>
 
 <!-- TRANG 5: mang về, thử thách, mô phỏng -->
 <section class="page">
-${head('ĐỀ BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH', 'Chép đề thầy giao cuối giờ; phần ★ làm trước rồi mới xem web')}
+${head('BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH')}
 <h3><i>1</i>Đề BTVN</h3>
 <div class="card" style="display:flex;gap:3mm;align-items:flex-start;padding:1.2mm 3mm">
 <div style="flex:1">
@@ -232,32 +240,33 @@ ${head('ĐỀ BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH', 'Chép đề t
 <div style="margin-top:.8mm"><b>Làm ở:</b> <span class="ck"></span>thachlab &nbsp;<span class="ck"></span>Azota &nbsp;<span class="ck"></span>giấy &nbsp;· <b>Hạn:</b> ……/……</div>
 ${wl('Ghi chú của thầy về đề:', 2)}
 <div style="margin-top:.8mm"><span class="ck"></span><b>Đã nộp</b> &nbsp;· <b>Điểm:</b> ……/…… &nbsp;· <b>Câu sai:</b> <span class="fill" style="min-width:34mm"></span></div>
-<div class="hint" style="margin-top:.6mm">Câu sai của đề BTVN → ghi vào bảng trang 8 cùng đề trên lớp, cột Câu/ý ghi thêm chữ “BT”.</div></div>
-<div style="width:29mm;flex:none"><div class="qr">${qrSvg}</div><div class="hint" style="margin-top:.6mm;line-height:1.3">Tự kiểm tra 7 câu trên web (cần đăng nhập), không phải đề BTVN.</div></div></div>
+</div>
+<div style="width:29mm;flex:none"><div class="qr">${qrSvg}</div><div class="hint" style="margin-top:.6mm;line-height:1.3">Bài học này trên web</div></div></div>
 <h3><i>2</i>VI · Mang về: điều em dễ quên nhất</h3>${tag('5')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 <h3><i>3</i>Thử thách phân tầng</h3>
 <div class="fig-side" style="grid-template-columns:1fr 42mm">${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:10mm"></span> · số nơtron <span class="fill" style="min-width:10mm"></span> · vì <span class="fill" style="min-width:20mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng chiếm bao nhiêu phần thể tích nguyên tử? (kích thước ở Tập 2·3)', 4))}${hinh.kichThuoc()}</div>
 <h3><i>4</i>Câu 7 (urani) và mô phỏng PhET</h3>
-<div class="fig-side" style="grid-template-columns:1fr 30mm">${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = …`, 2)
+<div class="fig-side" style="grid-template-columns:1fr 36mm">${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = …`, 2)
  + wl('Bắn hạt alpha (Rutherford) · Dự đoán:', 1) + wl('Thấy:', 2)
- + wl('Đồng vị neon · Dự đoán gần đồng vị nào:', 1) + wl('Thấy / vì sao 20,18:', 2))}${hinh.anh('rutherford-alpha-qua-la-vang.png', 'Chỉ hạt alpha đi sát hạt nhân (chấm đỏ) mới lệch mạnh.')}</div>
+ + wl('Đồng vị neon · Dự đoán:', 1) + wl('Thấy / vì sao 20,18:', 2))}${hinh.anh('rutherford-alpha-qua-la-vang.png', 'Chỉ hạt alpha đi sát hạt nhân (chấm đỏ) mới lệch mạnh.')}</div>
 ${foot(5)}</section>
 
 ${btmPages(6, { m, head, foot, tag, lines, wl, hinh })}
-${fixPage(8, { title: 'SỬA BÀI TRÊN LỚP · 30 PHÚT', sub: 'Sau đề 20′ đầu buổi' })}
-${fixPage(9, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG · BÀI 14', sub: 'Chỉ câu thuộc bài 14', lap: true, ks: [4, 4, 4, 4, 3] })}
+${fixPage(8, { title: 'SỬA BÀI TRÊN LỚP' })}
+${fixPage(9, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG', lap: true, ks: [5, 5, 4, 4, 4] })}
 <!-- TRANG 10: làm lại câu sai sau 1 tuần (retrieval cách quãng) -->
 <section class="page">
-${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN', 'Chép đề câu sai ở trang 8–9, giải không nhìn lời giải', true)}
-<div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang 8 (câu ……………) · trang 9 (câu ……………) · ưu tiên câu “chắc mà vẫn sai”</div>
+${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN')}
+<div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang 8 (câu ……………) · trang 9 (câu ……………)</div>
 ${[1, 2, 3, 4].map((i) => `<h3><i>${i}</i>Câu …… <span class="hint">(từ trang ……)</span> &nbsp;<span class="ck"></span>lần này đúng</h3>${box(lines(6))}`).join('')}
-<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/…… · câu còn sai → hỏi thầy đầu buổi sau &nbsp;<span class="ck"></span>đã hỏi</div>
+<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/…… &nbsp;<span class="ck"></span>đã hỏi thầy câu còn sai</div>
 ${foot(10)}</section>
 
 <!-- TRANG 11–12: ghi chú tự do -->
 ${[11, 12].map((n) => `<section class="page dots">
-${head('GHI CHÚ TỰ DO', 'Sơ đồ, công thức thầy viết thêm trên bảng')}
+${head('GHI CHÚ')}
+${n === 12 ? gioiThieu : ''}
 ${foot(n)}</section>`).join('')}
 </body></html>`;
 

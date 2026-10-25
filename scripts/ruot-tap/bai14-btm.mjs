@@ -60,13 +60,13 @@ export const btmPages = (n, { m, head, foot, tag, lines, wl, hinh }) => {
   const kq = (ds) => `<div class="card soft" style="padding:1.2mm 3mm"><b>Ba bài tương tự:</b> đúng ${ds.map((i) => `D${i} ……/3`).join(' · ')}</div>`;
   const block = (d) => `<div class="bt"><div class="hd"><span>${d.t}</span>${tu}</div><div class="de">${d.de}</div><div class="nd"><b>Mấu chốt:</b> ${d.nd}</div>${gi(d.gi, d.fig)}${ans(d.a)}</div>`;
   return `<section class="page">
-${head('BÀI TẬP MẪU · DẠNG 1–3', 'Đề đủ và gợi ý từng bước ở mục Bài tập mẫu trên web')}
+${head('BÀI TẬP MẪU · DẠNG 1–3')}
 <h3><i>1</i>Nhận dạng và đáp số</h3>${tag(`${n}·1`)}
 ${dang.slice(0, 3).map(block).join('\n')}
 ${kq([1, 2, 3])}
 ${foot(n)}</section>
 <section class="page">
-${head('BÀI TẬP MẪU · DẠNG 4–5', 'Đề đủ và gợi ý từng bước ở mục Bài tập mẫu trên web')}
+${head('BÀI TẬP MẪU · DẠNG 4–5')}
 <h3><i>1</i>Giải</h3>${tag(`${n + 1}·1`)}
 ${dang.slice(3).map(block).join('\n')}
 ${kq([4, 5])}
