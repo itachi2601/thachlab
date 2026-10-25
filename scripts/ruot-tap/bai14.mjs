@@ -41,11 +41,11 @@ const traNhanh = `<div class="tra"><b>Tra ô Tập:</b> Kí hiệu, lực hạt 
 const fixPage = (n, lan, lap = false) => `<section class="page">
 ${head(`SỬA BÀI SAU ĐỀ TRÊN LỚP · ${lan}`, 'Sửa trong 24 giờ: ghi vì sao sai, không chỉ chép đáp án', true)}
 <div class="card soft" style="display:flex;gap:4mm;flex-wrap:wrap"><span>Đề: ……………………………</span><span>Điểm: ……/……</span><span>Sai: P.I …… · P.II …… · P.III ……</span></div>
-${lap ? `<div class="card" style="padding:1mm 3mm"><b>So với lần trước:</b> số câu sai …… → …… · <b>Lỗi lặp lại:</b> <span class="fill" style="min-width:48mm"></span></div>` : ''}
+${lap ? `<div class="card" style="padding:1mm 3mm;display:flex;align-items:baseline;gap:1.5mm;white-space:nowrap"><b>So với lần trước:</b> số câu sai …… → …… · <b>Lỗi lặp lại:</b> <span class="fill" style="flex:1;min-width:0"></span></div>` : ''}
 ${traNhanh}
 <h3><i>1</i>Câu sai và câu đúng nhờ đoán <span class="hint">(mỗi câu/ý một hàng, ví dụ II.2b)</span></h3>
-<table class="er"><tr><th style="width:12mm">Câu/ý</th><th style="width:27mm">Em ghi → Đúng</th><th style="width:14mm">Chắc?</th><th style="width:43mm">Loại lỗi</th><th style="width:10mm">Dạng</th><th>Tập ô</th></tr>${errRow().repeat(lap ? 7 : 8)}</table>
-<div class="hint" style="margin-top:.6mm">Chắc mà vẫn sai → sửa trước tiên. Đúng nhờ đoán → vẫn ghi, vẫn xem lại.</div>
+<table class="er"><tr><th style="width:12mm">Câu/ý</th><th style="width:40mm">Em ghi → Đúng</th><th style="width:14mm">Chắc?</th><th style="width:43mm">Loại lỗi</th><th style="width:10mm">Dạng</th><th>Tập ô</th></tr>${errRow().repeat(lap ? 7 : 8)}</table>
+<div class="hint" style="margin-top:.6mm">Chắc mà vẫn sai → sửa trước tiên. Đúng nhờ đoán → vẫn ghi, vẫn xem lại. Sai nhiều hơn số hàng → ghi tiếp ở trang 10.</div>
 <h3><i>2</i>Giải lại câu sai nhất <span class="hint">(chữ trước, số sau)</span></h3>
 ${box(wl('Câu …:', 5))}
 <h3><i>3</i>Bẫy mới em phát hiện · câu hỏi cho thầy/trợ giảng</h3>
@@ -91,7 +91,7 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .big{font-size:7mm;text-align:center;padding:0}
 .qr{width:29mm;height:29mm;padding:2mm;background:#fff;border:.3mm solid var(--grid);flex:none}.qr svg{width:25mm;height:25mm;display:block}
 .tag{position:absolute;right:12mm;margin:1.6mm 0 0;border-radius:1mm;padding:.2mm 2mm;background:var(--navy);color:#fff;font-size:3.2mm;font-weight:700;line-height:4.6mm}
-.page.dots{background-image:radial-gradient(circle,#aab4cc .3mm,transparent .35mm);background-size:5mm 5mm;background-position:11.5mm 8.5mm}
+.page.dots{background-image:radial-gradient(circle,#aab4cc .3mm,transparent .35mm);background-size:5mm 5mm;background-position:0 0;background-origin:content-box;background-clip:content-box}
 .tra{background:#fff;border:.3mm dashed var(--navy);border-radius:1.2mm;padding:.6mm 2mm;font-size:2.9mm;line-height:1.4;margin-bottom:.5mm}
 .er .dg{color:var(--hint);font-weight:700}
 .er td{white-space:nowrap}.er td .ck{width:3.6mm;height:3.6mm;border-radius:.5mm}
@@ -196,9 +196,12 @@ ${head('BÀI TOÁN MẪU · ĐỌC NHÃN KIM LOẠI', 'Phân tích đề trướ
 <tr><td style="height:6.5mm">“hai đồng vị của đồng”</td><td></td><td></td></tr></table>
 <h3><i>3</i>Giải <span class="hint">① lấy dữ liệu, đổi đơn vị → ② chữ trước, số sau → ③ kiểm đơn vị, số hợp lí</span></h3>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:1mm">
-${wl('a)', 3)}${wl('b)', 3)}${wl('c)', 4)}${wl('d)', 2)}
-<div class="ln" style="height:auto;padding-top:1mm;font-size:3.1mm"><b>Điền bước còn thiếu</b> · Bước 1 (cho sẵn): ${m('{}^{63}_{29}\\mathrm{Cu}')} và ${m('{}^{65}_{29}\\mathrm{Cu}')} cùng ${m('Z=29')}, ${m('N')} = 34 và 36. Đồng tự nhiên trộn hai đồng vị, khối lượng mol ${m('63{,}54')} g/mol.</div>
-${wl(`Bước 2: m(Cu) = 63,54 / ${m('N_A')} = … g = … kg`, 2)}${wl('Bước 3: đổi sang u = … ; so với 63 và 65:', 3)}</div>
+${wl('a)', 3)}${wl('b)', 3)}${wl('c)', 3)}${wl('d)', 2)}
+</div>
+<h3><i>4</i>Mở rộng: khối lượng trung bình của đồng <span class="hint">(điền bước còn thiếu, làm sau câu d)</span></h3>
+<div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
+<div class="ln" style="height:auto;padding-top:1mm;font-size:3.1mm"><b>Bước 1 (cho sẵn):</b> đồng tự nhiên là hỗn hợp hai đồng vị ở câu d), khối lượng mol ${m('63{,}54')} g/mol.</div>
+${wl(`Bước 2: m(Cu) = 63,54 / ${m('N_A')} = … g = … kg`, 2)}${wl('Bước 3: đổi sang u = … ; so với 63 và 65:', 2)}</div>
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Em tự kiểm:</b> <span class="ck"></span>${m('N')} là số nguyên &nbsp;<span class="ck"></span>${m('R')} cỡ ${m('10^{-15}')} m &nbsp;<span class="ck"></span>có ghi đơn vị</div>
 ${foot(4)}</section>
 
@@ -210,7 +213,7 @@ ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 <h3><i>2</i>Thử thách phân tầng <span class="hint">(tính ra giấy rồi mới bấm xem)</span></h3>
 ${box(`<div class="ln"><b>⭐ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:12mm"></span> · số nơtron <span class="fill" style="min-width:12mm"></span> · vì <span class="fill" style="min-width:36mm"></span></div>` + wl('⭐⭐ Vì sao nơtron làm hạt nhân bền hơn?', 4) + wl('⭐⭐⭐ Hạt nhân vàng chiếm bao nhiêu phần thể tích nguyên tử? (dùng kích thước ở Tập 2·3)', 10))}
 <h3><i>3</i>Câu 7 (urani) và mô phỏng PhET</h3>
-${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): em chọn … · A, Z, N =`, 2)
+${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = … · vì sao <span class="hint">(em chọn, chắc/đúng đã ghi ở Tập 2·4)</span>`, 2)
  + wl('Bắn hạt alpha (Rutherford) · Dự đoán:', 1) + wl('Thấy:', 3)
  + wl('Đồng vị neon · Dự đoán trung bình gần đồng vị nào:', 1) + wl('Thấy / vì sao 20,18:', 3))}
 ${foot(5)}</section>
