@@ -12,16 +12,10 @@ import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
 import { fileURLToPath } from "node:url";
-import { ensureLessons } from "../.claude/skills/soan-quiz-ly-thuyet/scripts/fetch-lessons.mts";
+import { ensureLessons, readEnvLocal } from "../.claude/skills/soan-quiz-ly-thuyet/scripts/fetch-lessons.mts";
 import { loadTopics, QUIZ_DIR, quizFilesIn, validateQuiz, KEY } from "../.claude/skills/soan-quiz-ly-thuyet/scripts/lib";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
-function readEnvLocal(key: string): string | undefined {
-  const p = path.resolve(scriptDir, "..", ".env.local");
-  if (!fs.existsSync(p)) return undefined;
-  const line = fs.readFileSync(p, "utf8").split("\n").find((l) => l.startsWith(`${key}=`));
-  return line ? line.slice(key.length + 1).trim() : undefined;
-}
 function askHidden(q: string): Promise<string> {
   return new Promise((resolve) => {
     const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
