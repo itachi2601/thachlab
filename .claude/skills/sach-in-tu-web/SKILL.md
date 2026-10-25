@@ -40,6 +40,23 @@ Lệnh > 30 s chạy trong tab terminal (`run_in_terminal`) để thầy theo d�
    Tổng kết, Tự đánh giá, Bảng đáp án) phải trỏ tới trang có đúng tiêu đề đó (so chuỗi đã bỏ khoảng trắng). Số 0 hoặc
    trống = tìm không ra, không được giao.
 
+## Ruột tập theo bài (`scripts/ruot-tap/`) — chuẩn chất lượng từ bài 14 VL12 (thầy chốt 25/10/2026)
+Khác sách A4 cả chương: ruột tập là 12 trang 165×240 mm cho MỘT bài, đóng **lò xo**, dùng hai buổi theo nhịp L12. Bài sau
+chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy ước sau (không hạ chuẩn):
+- **Lề đóng lò xo**: gáy 20 mm, mép ngoài 10 mm, đổi bên theo trang chẵn/lẻ (`--pl/--pr` + `.page:nth-of-type(even)`);
+  ô ly, chân trang, nhãn Tập đều bám `--pl/--pr`. Không còn ràng buộc "số trang chia hết cho 4".
+- **Cỡ chữ 4 mức** (C3): `--fs-h1` 4,6 · `--fs-h3` 3,9 · `--fs-body` 3,5 (≈10 pt) · `--fs-sm` 3,1 mm (≈8,8 pt, sàn — C1);
+  không đặt mm lẻ trong component; chỉ nạp 2 độ đậm (400/700). Thân chữ line-height 1,45 = ô ly 5 mm.
+- **Hình minh hoạ bắt buộc** (thầy 25/10: trang không hình là thiếu): mỗi trang học/bài tập có ≥1 hình SVG tự vẽ trong
+  `hinh.mjs`, mỗi hình trả lời một câu hỏi (H1), đặt CẠNH khối chữ bằng `.fig-side` (grid `1fr 40–46mm`) để không tốn
+  chiều cao; hình ở ô giải dạng khó là gợi ý nhìn trước khi tính (để trống tỉ số/kết quả cho HS điền). Chữ trong SVG
+  ≥ 20 đơn vị viewBox (≈3 mm khi in rộng 46 mm) — kiểm bằng `node scripts/ruot-tap/xem-hinh.mjs` trước khi dựng.
+  Không chép hình SGK/mạng không rõ giấy phép; cần ảnh thật thì chỉ Wikimedia Commons CC + ghi tác giả.
+- **Trang sửa bài không có lưới đáp án**: đề làm trên web nên chỉ dòng "Câu sai P.I/P.II/P.III" + 5 ô Thầy chữa.
+  Ghi chú tự do đúng 2 trang/bài; không ô "câu hỏi cho trợ giảng".
+- Cân trang bằng dòng `trang N: dư X mm` script in ra (mục tiêu 0–15 mm, âm = tràn); đo từng khối bằng
+  `getBoundingClientRect` trên `.pdf.html` khi không rõ khối nào phình, rồi mới nhìn ảnh.
+
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).
 - Commit `book/` (code + `src/*.json`; HTML/PDF sinh ra đã gitignore). `public/sach-data` + `app/(public)/sach/dap-an`
@@ -64,3 +81,10 @@ Lệnh > 30 s chạy trong tab terminal (`run_in_terminal`) để thầy theo d�
 - 2026-10-25 · Bảng sửa bài nhiều cột tick (chắc/đoán, 5 loại lỗi, dạng, ô Tập) là thiết kế cho người phân tích sau, HS trung bình không kịp điền khi thầy chữa → giấy điền TRONG giờ: lưới đáp án em–đúng để dò nhanh + ô chép rộng + ≤4 tick; tự hỏi "em có kịp điền không" trước khi thêm cột. Đề xuất bảng phân tích đề in sẵn cũng bị thầy bỏ (phân tích trong ô giải khi học) → chỗ trống rộng hơn khuôn in sẵn.
 - 2026-10-25 · Số + đơn vị bị tách dòng ("14 / g") → đưa đơn vị vào KaTeX (`14\ \mathrm{g}`) hoặc bọc `.nw{white-space:nowrap}`; ô đáp số có thể là phân số thì cao ≥ 9 mm. Nhãn yêu cầu ghi gọn ("Phân tích và giải"), không ghi cách làm trong ngoặc.
 - 2026-10-25 · Cân trang bằng chỉ số "dư … mm" script in ra, chỉ nhìn ảnh một lần cuối và cắt dải đầu trang bằng `pdftoppm -x -y -W -H`; đọc `.pdf.html` trung gian thay vì ảnh PDF khi cần nội dung. Trước khi sửa script ở worktree khác: `diff` với bản mình (bản kia mới hơn một commit font chưa vào main → cherry-pick).
+- 2026-10-25 · Hình SVG vẽ với chữ 10–11 đơn vị viewBox (như hình trên web) in ra chỉ 1,5 mm, không đọc được; `figure` còn
+  mang margin mặc định 40px của trình duyệt làm cột hình bị bóp → chữ trong SVG ≥ 20 đơn vị, `.fig{margin:0}`, và chụp
+  từng hình ở cỡ in bằng `xem-hinh.mjs` trước khi ghép vào trang. Hình đặt cạnh khối chữ (`.fig-side`) thay vì xếp dưới:
+  5 hình thêm vào mà tổng số trang không đổi.
+- 2026-10-25 · Lưới đáp án em–đúng trên trang sửa bài là chép lại thứ web đã hiện → với đề làm trên web, chỉ ghi số câu
+  sai; hỏi "đề làm ở đâu" trước khi vẽ bảng điền.
+
