@@ -137,13 +137,19 @@ function HomeView({ data, finished }: { data: MyReviewState; finished: boolean }
   );
 }
 
+/** Nhân sự xem thử trang học sinh của một buổi ôn bằng `?id=` (học sinh không dùng; máy chủ chỉ cho nhân sự hoặc em trong lớp đó). */
+function previewSessionId(): number | null {
+  const n = Number(new URLSearchParams(window.location.search).get("id"));
+  return Number.isInteger(n) && n > 0 ? n : null;
+}
+
 /** Trang của học sinh trong buổi ôn: chặng hiện tại, đồng hồ, việc của em, tiến độ chung của lớp (ẩn danh). */
 export default function ReviewStudent() {
   const [data, setData] = useState<MyReviewState | null | undefined>(undefined);
   const [stamp, setStamp] = useState(0);
 
   const { error } = usePoll(
-    () => getMyReviewState(null),
+    () => getMyReviewState(previewSessionId()),
     (last) => (last?.mode === "self" ? 30000 : 5000),
     (d) => {
       setData(d);
