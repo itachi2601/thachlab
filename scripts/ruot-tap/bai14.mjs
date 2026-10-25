@@ -17,8 +17,16 @@ const puppeteer = require('puppeteer-core');
 const m = (s) => katex.renderToString(s, { throwOnError: true, output: 'html' });
 const qr = qrcode(0, 'M'); qr.addData(LINK); qr.make();
 const qrSvg = qr.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
-const F = BOOK + 'node_modules/@fontsource/be-vietnam-pro/files/be-vietnam-pro-';
-const font = (w, sub) => `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(F + sub + '-' + w + '-normal.woff2').href}")}`;
+// Noto Sans (OFL): hẹp hơn Be Vietnam Pro ~8% nên tiết kiệm giấy, dấu tiếng Việt rõ. Mỗi tệp con PHẢI có unicode-range, nếu không
+// tệp sau đè tệp trước và chữ in đậm rơi về Helvetica (lỗi trộn font ở bản cũ).
+const F = resolve(HERE, 'fonts') + '/noto-sans-';
+const UR = {
+  latin: 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD',
+  'latin-ext': 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF',
+  vietnamese: 'U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB',
+};
+const fonts = [400, 600, 700].flatMap((w) => Object.keys(UR).map((sub) =>
+  `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(F + sub + '-' + w + '-normal.woff2').href}");unicode-range:${UR[sub]}}`)).join('');
 const lines = (n) => Array.from({ length: n }, () => '<div class="ln"></div>').join('');
 // n dòng kẻ chấm, nhãn (a), b)…) nằm ngay đầu dòng đầu để không tốn thêm một dòng
 const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
@@ -56,18 +64,18 @@ ${foot(n)}</section>`;
 const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí 12 – Bài 14</title>
 <link rel="stylesheet" href="${pathToFileURL(BOOK + 'node_modules/katex/dist/katex.min.css').href}">
 <style>
-${font(400, 'vietnamese')}${font(600, 'vietnamese')}${font(800, 'vietnamese')}${font(400, 'latin')}${font(700, 'latin')}
+${fonts}
 @page{size:165mm 240mm;margin:0}
 *{box-sizing:border-box}
 :root{--ink:#1c2540;--navy:#1d3a78;--grid:#d3dbec;--soft:#eef2fa;--hint:#6b7694}
-body{margin:0;font:400 3.5mm/1.45 BV,'Be Vietnam Pro',sans-serif;color:var(--ink)}
+body{margin:0;font:400 3.5mm/1.42 BV,KaTeX_Main,KaTeX_AMS,sans-serif;text-rendering:optimizeLegibility;font-kerning:normal;color:var(--ink)}
 .page{width:165mm;height:240mm;padding:11mm 12mm 14mm 14mm;position:relative;overflow:hidden;page-break-after:always;
  background-image:linear-gradient(var(--grid) .15mm,transparent .15mm),linear-gradient(90deg,var(--grid) .15mm,transparent .15mm);background-size:5mm 5mm;background-position:14mm 11mm}
 .page>*{position:relative}
 .top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:.5mm solid var(--navy);padding-bottom:1mm;margin-bottom:2mm;background:#fff}
-.top b{display:block;font-weight:800;font-size:4.6mm;color:var(--navy)}.top small{color:var(--hint);font-size:2.9mm}
+.top b{display:block;font-weight:700;font-size:4.6mm;color:var(--navy)}.top small{color:var(--hint);font-size:2.9mm}
 .who{font-size:3mm;color:var(--hint);white-space:nowrap}
-h3{margin:1.8mm 0 1mm;line-height:1.25;font-weight:800;font-size:3.9mm;color:var(--navy);background:#fff;display:inline-block;padding-right:2mm}
+h3{margin:1.8mm 0 1mm;line-height:1.25;font-weight:700;font-size:3.9mm;color:var(--navy);background:#fff;display:inline-block;padding-right:2mm}
 h3 i{font-style:normal;background:var(--navy);color:#fff;border-radius:1mm;padding:.2mm 1.6mm;margin-right:1.5mm;font-size:3.2mm}
 .card{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:1.6mm 3mm;margin-bottom:1.5mm}
 .card.soft{background:var(--soft);border-color:var(--grid)}
@@ -194,13 +202,13 @@ ${head('BÀI TOÁN MẪU · ĐỌC NHÃN KIM LOẠI', 'Phân tích đề trướ
 <tr><td style="height:6.5mm">“khối lượng mol”</td><td></td><td></td></tr>
 <tr><td style="height:6.5mm">“ra đơn vị u”</td><td></td><td></td></tr>
 <tr><td style="height:6.5mm">“hai đồng vị của đồng”</td><td></td><td></td></tr></table>
-<h3><i>3</i>Giải <span class="hint">① lấy dữ liệu, đổi đơn vị → ② chữ trước, số sau → ③ kiểm đơn vị, số hợp lí</span></h3>
+<h3><i>3</i>Giải <span class="hint">1) lấy dữ liệu, đổi đơn vị → 2) chữ trước, số sau → 3) kiểm đơn vị, số hợp lí</span></h3>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:1mm">
 ${wl('a)', 3)}${wl('b)', 3)}${wl('c)', 3)}${wl('d)', 2)}
 </div>
-<h3><i>4</i>Mở rộng: khối lượng trung bình của đồng <span class="hint">(điền bước còn thiếu, làm sau câu d)</span></h3>
+<h3><i>4</i>Mở rộng: khối lượng trung bình của đồng <span class="hint">(làm sau câu d)</span></h3>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-<div class="ln" style="height:auto;padding-top:1mm;font-size:3.1mm"><b>Bước 1 (cho sẵn):</b> đồng tự nhiên là hỗn hợp hai đồng vị ở câu d), khối lượng mol ${m('63{,}54')} g/mol.</div>
+<div class="ln" style="height:auto;padding-top:1mm;font-size:3.1mm"><b>Bước 1 (cho sẵn):</b> đồng tự nhiên = hai đồng vị ở câu d), ${m('M=63{,}54')} g/mol.</div>
 ${wl(`Bước 2: m(Cu) = 63,54 / ${m('N_A')} = … g = … kg`, 2)}${wl('Bước 3: đổi sang u = … ; so với 63 và 65:', 2)}</div>
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Em tự kiểm:</b> <span class="ck"></span>${m('N')} là số nguyên &nbsp;<span class="ck"></span>${m('R')} cỡ ${m('10^{-15}')} m &nbsp;<span class="ck"></span>có ghi đơn vị</div>
 ${foot(4)}</section>
@@ -211,7 +219,7 @@ ${head('MANG VỀ · THỬ THÁCH · MÔ PHỎNG', 'Viết không nhìn web, r�
 <h3><i>1</i>VI · Mang về: điều em dễ quên nhất <span class="hint">(Trả bài ở trang 3 đã ôn đủ ý)</span></h3>${tag('5')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 <h3><i>2</i>Thử thách phân tầng <span class="hint">(tính ra giấy rồi mới bấm xem)</span></h3>
-${box(`<div class="ln"><b>⭐ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:12mm"></span> · số nơtron <span class="fill" style="min-width:12mm"></span> · vì <span class="fill" style="min-width:36mm"></span></div>` + wl('⭐⭐ Vì sao nơtron làm hạt nhân bền hơn?', 4) + wl('⭐⭐⭐ Hạt nhân vàng chiếm bao nhiêu phần thể tích nguyên tử? (dùng kích thước ở Tập 2·3)', 10))}
+${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:12mm"></span> · số nơtron <span class="fill" style="min-width:12mm"></span> · vì <span class="fill" style="min-width:36mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 4) + wl('★★★ Hạt nhân vàng chiếm bao nhiêu phần thể tích nguyên tử? (dùng kích thước ở Tập 2·3)', 10))}
 <h3><i>3</i>Câu 7 (urani) và mô phỏng PhET</h3>
 ${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = … · vì sao <span class="hint">(em chọn, chắc/đúng đã ghi ở Tập 2·4)</span>`, 2)
  + wl('Bắn hạt alpha (Rutherford) · Dự đoán:', 1) + wl('Thấy:', 3)
