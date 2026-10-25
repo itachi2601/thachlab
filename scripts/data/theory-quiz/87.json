@@ -1,386 +1,550 @@
 {
- "lesson_id": 87,
- "lesson_title": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
- "item_id": 294,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 15,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 10,
-   "cong_thuc": 10
+  "lesson_id": 87,
+  "lesson_title": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+  "item_id": 294,
+  "generated_at": "2026-10-25",
+  "generated_by": "claude-code (phiên Mac)",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
   },
-  "removed": []
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ở cách 1 (vật rất xa), vì sao ảnh nằm xấp xỉ cách thấu kính một tiêu cự?",
-   "options": [
-    "Chùm sáng tới coi như song song nên hội tụ tại tiêu điểm ảnh $F'$",
-    "Vật ở xa nên ảnh luôn cách kính $2f$",
-    "Vật ở xa nên ảnh ảo nằm tại $F$",
-    "Chùm sáng tới phân kì mạnh nên ảnh ở gần kính"
-   ],
-   "answer": 0,
-   "explanation": "Mục II.2: vật rất xa thì chùm tới song song, hội tụ tại $F'$ nên $d' \\approx f$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Cách 2 (đo $d$ và $d'$), tiêu cự được tính bằng công thức nào?",
-   "options": [
-    "$f = \\dfrac{d + d'}{d\\,d'}$",
-    "$f = d + d'$",
-    "$f = \\dfrac{d\\,d'}{d + d'}$",
-    "$f = \\dfrac{d\\,d'}{d - d'}$"
-   ],
-   "answer": 2,
-   "explanation": "Quy đồng $\\dfrac{1}{f} = \\dfrac{1}{d} + \\dfrac{1}{d'}$ được $f = \\dfrac{dd'}{d + d'}$; phương án đầu là đảo tử mẫu."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ở cách 3 (ảnh bằng vật), gọi $L$ là khoảng cách vật – màn. Tiêu cự là:",
-   "options": [
-    "$f = 4L$",
-    "$f = \\dfrac{L}{2}$",
-    "$f = L$",
-    "$f = \\dfrac{L}{4}$"
-   ],
-   "answer": 3,
-   "explanation": "$L = d + d' = 4f$ nên $f = \\dfrac{L}{4}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Khoảng cách $d$ và $d'$ cần đo tới đâu?",
-   "options": [
-    "Tới mặt trước của giá đỡ thấu kính",
-    "Tới tâm $O$ của thấu kính",
-    "Tới mặt sau của giá đỡ thấu kính",
-    "Tới mép thước của ghế quang học"
-   ],
-   "answer": 1,
-   "explanation": "Bẫy 1: $d,\\ d'$ phải đo tới tâm $O$, không tới mép giá đỡ."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Khi $d = d' = 2f$, ảnh trên màn có đặc điểm nào?",
-   "options": [
-    "Ảnh thật, ngược chiều, cao đúng bằng vật",
-    "Ảnh ảo, cùng chiều, cao bằng vật",
-    "Ảnh thật, cùng chiều, lớn gấp đôi vật",
-    "Ảnh thật, ngược chiều, nhỏ hơn vật"
-   ],
-   "answer": 0,
-   "explanation": "Mục II.4: $\\dfrac{h'}{h} = \\dfrac{d'}{d} = 1$, ảnh thật, ngược chiều, bằng vật."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Khi ảnh nét là cả một đoạn trên thước, nên ghi $d'$ ở vị trí nào?",
-   "options": [
-    "Đầu mút gần thấu kính",
-    "Đầu mút xa thấu kính",
-    "Tổng hai đầu mút",
-    "Trung điểm của khoảng nét"
-   ],
-   "answer": 3,
-   "explanation": "Bẫy 2: nét là một đoạn, ghi trung điểm của hai chỗ bắt đầu nhoè."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Đo được $d = 30{,}0\\ \\text{cm}$ và $d' = 20{,}0\\ \\text{cm}$. Tiêu cự là:",
-   "options": [
-    "$12{,}0\\ \\text{cm}$",
-    "$50{,}0\\ \\text{cm}$",
-    "$10{,}0\\ \\text{cm}$",
-    "$600\\ \\text{cm}$"
-   ],
-   "answer": 0,
-   "explanation": "$f = \\dfrac{30\\cdot 20}{50} = 12{,}0\\ \\text{cm}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Sai số $\\Delta f$ trong bài được lấy bằng:",
-   "options": [
-    "Trung bình các độ lệch",
-    "Độ lệch lớn nhất so với $\\bar f$",
-    "Độ lệch nhỏ nhất so với $\\bar f$",
-    "Hiệu giữa $f$ lớn nhất và $\\bar f$ cộng $f$ nhỏ nhất"
-   ],
-   "answer": 1,
-   "explanation": "Mục II.3: sai số lấy bằng độ lệch lớn nhất, viết $f = \\bar f \\pm \\Delta f$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Khi dựng ảnh bằng sơ đồ tỉ lệ, bộ ba tia từ $B$ gồm:",
-   "options": [
-    "Ba tia đều song song trục",
-    "Tia qua $F'$, tia qua $F$, tia song song nhau",
-    "Tia song song trục, tia qua $O$, tia qua $F$",
-    "Chỉ tia qua $O$ và tia phản xạ"
-   ],
-   "answer": 2,
-   "explanation": "Bài toán mẫu: tia song song trục ló qua $F'$, tia qua $O$ đi thẳng, tia qua $F$ ló song song trục."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ảnh cao đúng bằng vật, khoảng cách vật – màn $L = 48{,}0\\ \\text{cm}$. Khi đó $d = d'$ bằng:",
-   "options": [
-    "$12\\ \\text{cm}$",
-    "$24\\ \\text{cm}$",
-    "$48\\ \\text{cm}$",
-    "$96\\ \\text{cm}$"
-   ],
-   "answer": 1,
-   "explanation": "$f = L/4 = 12$ cm nên $d = d' = 2f = 24$ cm."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về công thức thấu kính $\\dfrac{1}{f} = \\dfrac{1}{d} + \\dfrac{1}{d'}$ dùng trong bài:",
-   "statements": [
+  "questions": [
     {
-     "text": "$d' \\gt 0$ ứng với ảnh thật.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Việc làm nào sau đây là đúng khi thực hành với thấu kính hội tụ?",
+      "options": [
+        "Hướng thấu kính về phía Mặt Trời để có vật thật sự rất xa",
+        "Dùng đèn LED làm vật sáng và cất kính vào hộp sau khi dùng",
+        "Để thấu kính ngoài nắng cho tiện, miễn là không nhìn qua kính",
+        "Cầm bóng đèn nóng sát vật để ánh sáng chiếu mạnh hơn"
+      ],
+      "answer": 1,
+      "explanation": "Cần dùng đèn LED, không nhìn Mặt Trời qua kính, không để kính chỗ có nắng và cất kính vào hộp sau khi dùng.",
+      "distractorNotes": {
+        "A": "Thấu kính dồn nắng thành điểm nóng; nhìn Mặt Trời qua kính gây hại cho mắt, dù chỉ để lấy vật rất xa.",
+        "C": "Kính để chỗ có nắng vẫn có thể làm cháy giấy, vải hoặc da, không cần ai nhìn qua kính.",
+        "D": "Bóng đèn nóng gây bỏng; bài dùng đèn LED để tránh nguy cơ này."
+      }
     },
     {
-     "text": "$d' \\lt 0$ ứng với ảnh thật.",
-     "answer": false
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi vật ở rất xa, chùm tia từ vật tới thấu kính hội tụ coi như",
+      "options": [
+        "chùm song song, ảnh hiện xấp xỉ cách kính $2f$",
+        "chùm phân kì, ảnh hiện xa kính hơn nhiều so với $f$",
+        "chùm song song, ảnh nằm xấp xỉ tại tiêu điểm $F'$",
+        "chùm hội tụ, ảnh hiện sát quang tâm $O$ của kính"
+      ],
+      "answer": 2,
+      "explanation": "Vật rất xa thì chùm tia tới coi như song song, hội tụ tại $F'$ nên ảnh cách kính xấp xỉ $f$.",
+      "distractorNotes": {
+        "A": "Nhầm với cách 3: ảnh chỉ cách kính $2f$ khi vật cũng cách kính $2f$, không phải khi vật ở rất xa.",
+        "B": "Vật càng xa thì chùm tia tới càng gần song song; ảnh không bị đẩy ra rất xa mà tiến sát $F'$.",
+        "D": "Chùm song song hội tụ tại tiêu điểm cách $O$ một đoạn $f$, không phải tại sát $O$."
+      }
     },
     {
-     "text": "$\\dfrac{h'}{h} = \\dfrac{|d'|}{d}$.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ở cách 3 (ảnh cao bằng vật), vị trí của vật và của màn so với thấu kính là",
+      "options": [
+        "vật và màn cùng cách kính $2f$",
+        "vật cách kính $2f$, màn cách kính $f$",
+        "vật và màn cùng cách kính đúng một tiêu cự $f$",
+        "vật cách kính $4f$, màn cách kính $f$"
+      ],
+      "answer": 0,
+      "explanation": "Ảnh bằng vật khi $d=d'=2f$, nên vật và màn cùng cách kính $2f$ và $L=4f$.",
+      "distractorNotes": {
+        "B": "Nhầm với cách 1: màn đặt tại $f$ khi vật rất xa; ở cách 3 ảnh cũng phải cách kính $2f$ thì mới bằng vật.",
+        "C": "Vật đặt đúng tại tiêu điểm thì chùm tia ló song song, không có ảnh hứng được trên màn.",
+        "D": "$4f$ là tổng khoảng cách vật–màn chứ không phải khoảng cách từ vật tới kính."
+      }
     },
     {
-     "text": "Có thể suy ra $f = \\dfrac{d\\,d'}{d + d'}$.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Trong công thức tính tiêu cự, các khoảng cách $d$ và $d'$ phải đo tới",
+      "options": [
+        "mặt giá đỡ quay về phía vật cho cả hai khoảng cách",
+        "mặt giá đỡ gần vật với $d$, mặt giá gần màn với $d'$",
+        "mép ngoài của khung thấu kính cho cả hai khoảng cách",
+        "tâm $O$ của thấu kính, không phải mép giá đỡ"
+      ],
+      "answer": 3,
+      "explanation": "$d$ và $d'$ đều là khoảng cách tới tâm $O$ của thấu kính, không tới mép giá đỡ.",
+      "distractorNotes": {
+        "A": "Đo tới mặt giá làm $d$ và $d'$ lệch đi một đoạn, nên $f$ tính ra sai.",
+        "B": "Cả hai khoảng cách cùng bị hụt nửa bề dày giá, nên $f$ tính ra nhỏ hơn giá trị thật.",
+        "C": "Khung kính không phải điểm quy chiếu của tia sáng; khoảng cách phải tính tới quang tâm $O$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Khi dịch màn thấy ảnh còn khá nét trong cả một đoạn, nên ghi vị trí của màn ở",
+      "options": [
+        "đầu mút gần thấu kính của đoạn còn nét",
+        "trung điểm của đoạn còn nét",
+        "đầu mút xa thấu kính của đoạn còn nét",
+        "vị trí đầu tiên mà ảnh trông tạm nét"
+      ],
+      "answer": 1,
+      "explanation": "Ảnh nét là cả một đoạn; ghi trung điểm của đoạn đó thì sai số nhỏ nhất.",
+      "distractorNotes": {
+        "A": "Chọn một đầu mút làm kết quả thì luôn lệch về một phía một đoạn bằng nửa độ rộng khoảng nét.",
+        "C": "Cũng lệch về một phía; đầu mút chỉ là chỗ ảnh vừa bắt đầu nhoè.",
+        "D": "Dừng ngay khi thấy tạm nét làm mỗi lần đo lệch về một phía vài milimét."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Vì sao nên đo $f$ nhiều lần rồi lấy giá trị trung bình thay vì đo một lần?",
+      "options": [
+        "Để lần đo bị lệch được các lần khác kéo lại",
+        "Để mọi lần đo đều cho đúng cùng một giá trị",
+        "Để sai số của phép đo giảm về đúng bằng không",
+        "Để khỏi phải ghi sai số vào kết quả cuối cùng"
+      ],
+      "answer": 0,
+      "explanation": "Đo nhiều lần thì lần lệch bị các lần khác kéo lại, đồng thời cho biết mức dao động để tính sai số.",
+      "distractorNotes": {
+        "B": "Mỗi lần đo vẫn dao động quanh giá trị thật; đo nhiều lần không làm các kết quả bằng nhau.",
+        "C": "Sai số không bao giờ về không; ta chỉ ước lượng nó rồi ghi kèm vào kết quả.",
+        "D": "Kết quả vẫn phải viết dạng $\\bar f\\pm\\Delta f$; đo nhiều lần là để tính được $\\Delta f$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Khi dựng ảnh bằng sơ đồ tỉ lệ, điểm $B'$ (ảnh của $B$) là",
+      "options": [
+        "giao điểm của tia tới với mặt phẳng thấu kính",
+        "điểm đối xứng của $B$ qua trục chính",
+        "giao điểm các tia ló xuất phát từ $B$",
+        "điểm đối xứng của $B$ qua quang tâm $O$"
+      ],
+      "answer": 2,
+      "explanation": "Ảnh $B'$ là giao điểm của các tia ló; hạ vuông góc xuống trục chính được $A'$.",
+      "distractorNotes": {
+        "A": "Đó là điểm tới của tia sáng trên thấu kính, không phải ảnh.",
+        "B": "Đối xứng qua trục chính là phép phản xạ qua gương phẳng, không áp dụng cho thấu kính.",
+        "D": "Ảnh chỉ nằm đối xứng với vật qua $O$ ở trường hợp đặc biệt $d=2f$, không phải cách dựng chung."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ở cách 2, vật phải được đặt cách thấu kính một khoảng",
+      "options": [
+        "nhỏ hơn tiêu cự để ảnh to và rất dễ đo",
+        "đúng bằng tiêu cự để ảnh thật nét nhất",
+        "rất xa kính, giống hệt như khi làm cách 1",
+        "lớn hơn tiêu cự, lấy $f$ cách 1 làm mốc"
+      ],
+      "answer": 3,
+      "explanation": "Cần $d>f$ để có ảnh thật hứng được trên màn; cách 1 cho biết cỡ $f$ để chọn $d$.",
+      "distractorNotes": {
+        "A": "Vật trong tiêu cự cho ảnh ảo, không hứng được trên màn nên không đo được $d'$.",
+        "B": "Vật tại tiêu điểm thì chùm tia ló song song, không tạo ảnh trên màn.",
+        "C": "Vật rất xa là điều kiện của cách 1; cách 2 cần đo cả $d$ nên vật phải ở trong tầm thước."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ở cách 2, tiêu cự được tính bằng",
+      "options": [
+        "$f=\\dfrac{d\\,d'}{d+d'}$",
+        "$f=\\dfrac{d+d'}{d\\,d'}$",
+        "$f=d+d'$",
+        "$f=\\dfrac{d-d'}{2}$"
+      ],
+      "answer": 0,
+      "explanation": "Quy đồng $\\dfrac1f=\\dfrac1d+\\dfrac1{d'}$ rồi đảo ngược hai vế được $f=\\dfrac{d\\,d'}{d+d'}$.",
+      "distractorNotes": {
+        "B": "Đây là $\\dfrac1f$ chưa đảo ngược, nhầm giữa $f$ và $\\dfrac1f$.",
+        "C": "Cộng thẳng hai khoảng cách; công thức dùng nghịch đảo của chúng.",
+        "D": "Không suy ra được từ $\\dfrac1f=\\dfrac1d+\\dfrac1{d'}$; phép trừ rồi chia $2$ không có trong biến đổi."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ở cách 3, ảnh nét và cao đúng bằng vật; khoảng cách vật–màn là $L$. Tiêu cự được tính bằng",
+      "options": [
+        "$f=\\dfrac L2$",
+        "$f=L$",
+        "$f=\\dfrac L4$",
+        "$f=4L$"
+      ],
+      "answer": 2,
+      "explanation": "Khi $d=d'=2f$ thì $L=4f$, suy ra $f=\\dfrac L4$.",
+      "distractorNotes": {
+        "A": "Nhầm: $L=d+d'=4f$ vì mỗi đoạn $d$, $d'$ đều bằng $2f$; chia $2$ chỉ ra $2f$.",
+        "B": "Coi cả khoảng vật–màn là tiêu cự, quên rằng $L$ gồm hai đoạn $2f$ cộng lại.",
+        "D": "Đảo ngược quan hệ $L=4f$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Sai số $\\Delta f$ của tiêu cự trong bài này được lấy bằng",
+      "options": [
+        "độ lệch nhỏ nhất $\\min|f_i-\\bar f|$",
+        "độ lệch lớn nhất $\\max|f_i-\\bar f|$",
+        "chính giá trị trung bình $\\bar f$",
+        "độ lệch của lần đo đầu $|f_1-\\bar f|$"
+      ],
+      "answer": 1,
+      "explanation": "$\\Delta f$ lấy bằng độ lệch lớn nhất của các lần đo so với $\\bar f$, viết $f=\\bar f\\pm\\Delta f$.",
+      "distractorNotes": {
+        "A": "Lấy độ lệch nhỏ nhất sẽ đánh giá quá thấp mức dao động của phép đo.",
+        "C": "Giá trị trung bình là kết quả của phép đo, không phải sai số.",
+        "D": "Một lần đo tuỳ ý không đại diện cho toàn bộ mức dao động."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ở cách 3, khoảng cách vật–màn đo được có sai số $\\Delta L=0{,}8\\ \\text{cm}$. Sai số của tiêu cự là",
+      "options": [
+        "$\\Delta f=0{,}8\\ \\text{cm}$",
+        "$\\Delta f=3{,}2\\ \\text{cm}$",
+        "$\\Delta f=0{,}4\\ \\text{cm}$",
+        "$\\Delta f=0{,}2\\ \\text{cm}$"
+      ],
+      "answer": 3,
+      "explanation": "$f=\\dfrac L4$ nên $\\Delta f=\\dfrac{\\Delta L}{4}=\\dfrac{0{,}8}{4}=0{,}2\\ \\text{cm}$.",
+      "distractorNotes": {
+        "A": "Giữ nguyên sai số của $L$, quên rằng $f=\\dfrac L4$ nên sai số cũng bị chia $4$.",
+        "B": "Nhân với $4$ thay vì chia: sai số đi cùng hệ số với công thức $f=\\dfrac L4$.",
+        "C": "Chia $2$ thay vì chia $4$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Nhóm đo $d$ từ vật tới mặt giá đỡ gần vật và $d'$ từ mặt giá đỡ gần màn tới màn, nên cả hai đều nhỏ hơn giá trị thật. Tiêu cự tính từ $f=\\dfrac{d\\,d'}{d+d'}$ sẽ",
+      "options": [
+        "lớn hơn giá trị thật",
+        "đúng bằng giá trị thật",
+        "nhỏ hơn giá trị thật",
+        "lúc lớn lúc nhỏ tuỳ vị trí đặt vật"
+      ],
+      "answer": 2,
+      "explanation": "$d$ và $d'$ cùng hụt nên $f=\\dfrac{d\\,d'}{d+d'}$ nhỏ hơn giá trị thật.",
+      "distractorNotes": {
+        "A": "Hai sai số hụt cùng phía không triệt tiêu; $d$ và $d'$ nhỏ đi thì $f$ cũng nhỏ đi.",
+        "B": "Sai số chỉ bù nhau khi ngược chiều; ở đây $d$ và $d'$ cùng bị hụt nên không bù.",
+        "D": "Cả $d$ và $d'$ luôn hụt, mà $f$ tăng theo cả hai, nên $f$ luôn bị hụt."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đo được $d=30{,}0\\ \\text{cm}$ và $d'=20{,}0\\ \\text{cm}$ khi ảnh nét. Tiêu cự là",
+      "options": [
+        "$25{,}0\\ \\text{cm}$",
+        "$12{,}0\\ \\text{cm}$",
+        "$50{,}0\\ \\text{cm}$",
+        "$10{,}0\\ \\text{cm}$"
+      ],
+      "answer": 1,
+      "explanation": "$f=\\dfrac{d\\,d'}{d+d'}=\\dfrac{30{,}0\\cdot20{,}0}{50{,}0}=12{,}0\\ \\text{cm}$.",
+      "distractorNotes": {
+        "A": "Lấy trung bình cộng của $d$ và $d'$; công thức tiêu cự không có phép trung bình này.",
+        "C": "Chỉ cộng $d+d'$; tổng này mới là mẫu số, còn tử số là tích $d\\,d'$.",
+        "D": "Lấy hiệu $d-d'$; công thức tiêu cự không dùng hiệu hai khoảng cách."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhóm học sinh hướng thấu kính hội tụ ($f\\approx10\\ \\text{cm}$) về cái cây cách $20\\ \\text{m}$ và dịch màn tới khi ảnh nét. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Khoảng cách từ màn tới thấu kính khi ảnh nét xấp xỉ tiêu cự.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh nét nằm cách thấu kính khoảng $2f$.",
+          "answer": false
+        },
+        {
+          "text": "Chùm tia từ cây tới thấu kính là chùm phân kì mạnh.",
+          "answer": false
+        },
+        {
+          "text": "Ảnh cây trên màn ngược chiều và nhỏ hơn cây thật.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) đúng: $d'\\approx f$. b) sai: ảnh gần $F'$. c) sai: chùm coi như song song. d) đúng: ảnh thật, ngược chiều, nhỏ.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì chùm tia từ cây coi như song song, hội tụ ở tiêu điểm ảnh.",
+        "1": "Không thể coi là đúng vì ảnh chỉ cách kính $2f$ khi vật cũng cách kính $2f$ (cách 3).",
+        "2": "Không thể coi là đúng vì cây ở rất xa nên chùm tia tới coi như song song.",
+        "3": "Không thể coi là sai vì vật ở rất xa cho ảnh thật, ngược chiều, rất nhỏ."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một nhóm chuẩn bị bố trí đo tiêu cự trên ghế quang học, gồm vật sáng, thấu kính hội tụ có giá đỡ và màn. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Có thể hướng thấu kính về Mặt Trời để lấy vật rất xa cho chính xác.",
+          "answer": false
+        },
+        {
+          "text": "Vật sáng, thấu kính và màn phải cùng nằm trên một trục.",
+          "answer": true
+        },
+        {
+          "text": "Khi chưa dùng, nên để thấu kính ở chỗ có nắng cho khô.",
+          "answer": false
+        },
+        {
+          "text": "Màn được trượt dọc thước để tìm vị trí ảnh nét.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: nguy hiểm cho mắt và gây cháy. b) đúng. c) sai: phải cất kính vào hộp. d) đúng.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì không được nhìn Mặt Trời qua thấu kính, và kính dồn nắng gây cháy.",
+        "1": "Không thể coi là sai vì khi lệch trục, các khoảng cách đo được không còn là $d$ và $d'$ của công thức.",
+        "2": "Không thể coi là đúng vì thấu kính để chỗ có nắng có thể làm cháy giấy, vải; dùng xong phải cất vào hộp.",
+        "3": "Không thể coi là sai vì $d'$ chính là khoảng cách từ thấu kính tới màn khi ảnh nét."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một nhóm đặt vật cách thấu kính $d=20{,}0\\ \\text{cm}$ và đo được $d'=20{,}0\\ \\text{cm}$ khi ảnh nét. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Tiêu cự tính ra là $10{,}0\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Tiêu cự tính ra là $40{,}0\\ \\text{cm}$ vì $d+d'=40{,}0\\ \\text{cm}$.",
+          "answer": false
+        },
+        {
+          "text": "Ảnh cao đúng bằng vật.",
+          "answer": true
+        },
+        {
+          "text": "Vật đang nằm trong khoảng tiêu cự của thấu kính.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng: $f=10{,}0\\ \\text{cm}$. b) sai: không được cộng thẳng. c) đúng: $k=1$. d) sai: $d=2f>f$.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì $f=\\dfrac{20{,}0\\cdot20{,}0}{40{,}0}=10{,}0\\ \\text{cm}$.",
+        "1": "Không thể coi là đúng vì $d+d'$ chỉ là mẫu số của công thức, còn tử số là tích $d\\,d'$.",
+        "2": "Không thể coi là sai vì $\\dfrac{h'}{h}=\\dfrac{d'}{d}=1$.",
+        "3": "Không thể coi là đúng vì $d=20\\ \\text{cm}=2f$, vật nằm ngoài tiêu cự nên mới có ảnh thật hứng được."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Năm lần đo tiêu cự cho các giá trị $10{,}1;\\ 9{,}9;\\ 10{,}0;\\ 10{,}2;\\ 9{,}8$ (cm). Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Kết quả viết đúng là $f=10{,}0\\pm0{,}1\\ \\text{cm}$.",
+          "answer": false
+        },
+        {
+          "text": "Lần đo $10{,}2\\ \\text{cm}$ lệch ít nhất so với giá trị trung bình.",
+          "answer": false
+        },
+        {
+          "text": "Giá trị trung bình là $\\bar f=10{,}0\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Sai số $\\Delta f=0{,}2\\ \\text{cm}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: phải ghi $0{,}2$. b) sai: lần $10{,}0$ mới lệch ít nhất. c) đúng: $\\bar f=10{,}0$. d) đúng: $\\Delta f=0{,}2$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì sai số lấy theo độ lệch lớn nhất, bằng $0{,}2\\ \\text{cm}$ chứ không phải $0{,}1\\ \\text{cm}$.",
+        "1": "Không thể coi là đúng vì lần đo $10{,}2$ lệch $0{,}2\\ \\text{cm}$, thuộc nhóm lệch nhiều nhất; lệch ít nhất là lần đo $10{,}0$.",
+        "2": "Không thể coi là sai vì tổng năm giá trị là $50{,}0$, chia $5$ được $10{,}0$.",
+        "3": "Không thể coi là sai vì độ lệch lớn nhất là $|10{,}2-10{,}0|=|9{,}8-10{,}0|=0{,}2\\ \\text{cm}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhóm tìm vị trí ảnh nét có cao bằng vật rồi đo khoảng cách vật–màn $L=44{,}0\\ \\text{cm}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Nếu $\\Delta L=0{,}4\\ \\text{cm}$ thì sai số của tiêu cự cũng là $0{,}4\\ \\text{cm}$.",
+          "answer": false
+        },
+        {
+          "text": "Tiêu cự tính ra là $11{,}0\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Vật cách thấu kính $22{,}0\\ \\text{cm}$ và ảnh cũng cách thấu kính $22{,}0\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Tiêu cự tính ra là $22{,}0\\ \\text{cm}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) sai: $\\Delta f=0{,}1\\ \\text{cm}$. b) đúng. c) đúng: $d=d'=22{,}0$. d) sai: $22{,}0=2f$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì $f=\\dfrac L4$ nên $\\Delta f=\\dfrac{0{,}4}{4}=0{,}1\\ \\text{cm}$.",
+        "1": "Không thể coi là sai vì $f=\\dfrac{L}{4}=\\dfrac{44{,}0}{4}=11{,}0\\ \\text{cm}$.",
+        "2": "Không thể coi là sai vì ảnh bằng vật khi $d=d'=2f=22{,}0\\ \\text{cm}$.",
+        "3": "Không thể coi là đúng vì $22{,}0\\ \\text{cm}$ là $2f$, tức khoảng cách $d$ hay $d'$ chứ không phải tiêu cự."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Vẽ sơ đồ tỉ lệ $1\\ \\text{ô}=10\\ \\text{cm}$ cho thấu kính hội tụ $f=20\\ \\text{cm}$, vật $AB$ cao $10\\ \\text{cm}$ đặt cách kính $30\\ \\text{cm}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Tiêu điểm $F$ cách $O$ hai ô, còn vật cách $O$ ba ô.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh nằm cách thấu kính $6$ ô, tức $60\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh cao $1$ ô, bằng vật.",
+          "answer": false
+        },
+        {
+          "text": "Ảnh là ảnh ảo vì đã dựng được bằng ba tia.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng. b) đúng: $d'=60\\ \\text{cm}$. c) sai: $h'=20\\ \\text{cm}$. d) sai: tia ló cắt nhau thật là ảnh thật.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì $20\\ \\text{cm}=2$ ô và $30\\ \\text{cm}=3$ ô.",
+        "1": "Không thể coi là sai vì $\\dfrac{1}{d'}=\\dfrac{1}{20}-\\dfrac{1}{30}=\\dfrac{1}{60}$.",
+        "2": "Không thể coi là đúng vì $\\dfrac{h'}{h}=\\dfrac{60}{30}=2$, ảnh cao $2$ ô, gấp đôi vật.",
+        "3": "Không thể coi là đúng vì ba tia ló cắt nhau thật nên đây là ảnh thật, ngược chiều."
+      }
     }
-   ],
-   "explanation": "Phần nhắc lại: $d' \\gt 0$ là ảnh thật, $d' \\lt 0$ là ảnh ảo; quy đồng cho $f = \\dfrac{dd'}{d+d'}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về ba bẫy khi làm thực hành:",
-   "statements": [
-    {
-     "text": "Đo $d,\\ d'$ tới mép giá đỡ làm $f$ tính ra nhỏ hơn thật.",
-     "answer": true
-    },
-    {
-     "text": "Một lần đo cho biết rõ mức dao động của kết quả.",
-     "answer": false
-    },
-    {
-     "text": "Nên đo nhiều lần, lấy trung bình và kèm sai số.",
-     "answer": true
-    },
-    {
-     "text": "Ảnh nét chỉ là một điểm duy nhất trên thước nên ghi chỗ vừa thấy nét.",
-     "answer": false
-    }
-   ],
-   "explanation": "Mục III: $d,\\ d'$ cùng hụt thì $f$ nhỏ; một lần đo không biết dao động; nét là một đoạn, ghi trung điểm."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về cách 1 (vật rất xa):",
-   "statements": [
-    {
-     "text": "Chùm sáng tới thấu kính coi như song song.",
-     "answer": true
-    },
-    {
-     "text": "Ảnh trên màn nhỏ, ngược chiều.",
-     "answer": true
-    },
-    {
-     "text": "Kết quả $f \\approx d'$ là gần đúng.",
-     "answer": true
-    },
-    {
-     "text": "Vật cách $1\\ \\text{m}$ đã đủ coi là rất xa với $f \\approx 10\\ \\text{cm}$.",
-     "answer": false
-    }
-   ],
-   "explanation": "Bài nêu cần vật từ $20\\ \\text{m}$ trở lên; vật $1\\ \\text{m}$ chưa phải rất xa."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về cách 3, $f = \\dfrac{L}{4}$ với $L$ là khoảng cách vật – màn:",
-   "statements": [
-    {
-     "text": "$L = d + d' = 4f$.",
-     "answer": true
-    },
-    {
-     "text": "$\\Delta f = \\dfrac{\\Delta L}{4}$.",
-     "answer": true
-    },
-    {
-     "text": "$f = \\dfrac{L}{2}$ vì $d = d'$.",
-     "answer": false
-    },
-    {
-     "text": "Với $L = 40{,}4\\ \\text{cm}$ thì $f = 10{,}1\\ \\text{cm}$.",
-     "answer": true
-    }
-   ],
-   "explanation": "Mục II.4: $L = 4f$, $\\Delta f = \\Delta L/4$, $40{,}4/4 = 10{,}1$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Cách 3 cho $L = 48\\ \\text{cm}$. Tính $f$ (cm).",
-   "answer": "12",
-   "explanation": "$f = L/4 = 48/4 = 12$ cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Đo $d = d' = 20\\ \\text{cm}$ (cách 2). Tính $f$ (cm).",
-   "answer": "10",
-   "explanation": "$f = \\dfrac{20\\cdot 20}{40} = 10$ cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_nghia",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Bài nêu bao nhiêu cách đo tiêu cự của thấu kính hội tụ?",
-   "answer": "3",
-   "explanation": "Mục II: ba cách đo: vật rất xa, đo $d$ và $d'$, ảnh bằng vật."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "$f = 20\\ \\text{cm}$, $h = 10\\ \\text{cm}$, $d = 60\\ \\text{cm}$. Tính $d'$ (cm).",
-   "answer": "30",
-   "explanation": "$\\dfrac{1}{d'} = \\dfrac{1}{20} - \\dfrac{1}{60} = \\dfrac{1}{30}$ nên $d' = 30$ cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "$f = 20\\ \\text{cm}$, vật cao $10\\ \\text{cm}$ cách kính $30\\ \\text{cm}$. Tính chiều cao ảnh $h'$ (cm).",
-   "answer": "20",
-   "explanation": "$d' = 60$ cm nên $h' = h\\cdot d'/d = 10\\cdot 2 = 20$ cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Bài 9. Thực hành đo tiêu cự của thấu kính hội tụ",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Khoảng ảnh nét của màn từ $19{,}4\\ \\text{cm}$ đến $20{,}6\\ \\text{cm}$. Nên ghi $d'$ bằng bao nhiêu cm?",
-   "answer": "20",
-   "explanation": "Ghi trung điểm: $(19{,}4 + 20{,}6)/2 = 20$ cm."
-  }
- ]
+  ]
 }

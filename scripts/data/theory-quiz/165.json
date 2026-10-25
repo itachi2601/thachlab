@@ -1,379 +1,550 @@
 {
- "lesson_id": 165,
- "lesson_title": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
- "item_id": 346,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 15,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 9,
-   "cong_thuc": 10
+  "lesson_id": 165,
+  "lesson_title": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+  "item_id": 346,
+  "generated_at": "2026-10-25",
+  "generated_by": "claude-code (phiên Mac)",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
   },
-  "removed": [
-   {
-    "question": "Dây đồng tiết diện $2{,}5\\ \\text{mm}^2$ với $J\\le5\\ \\text{A/mm}^2$ chịu được tối đa bao nhiêu A? (làm tròn đến số nguyên)",
-    "reason": "sai: Bài cho dòng cho phép 12,5 A; làm tròn đến số nguyên theo quy tắc thông thường được 13 chứ không phải 12, nên yêu cầu làm tròn mâu thuẫn với đáp án. Nên giữ đáp án 12,5 (vẫn ≤ 4 ký tự)."
-   }
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Số ghi $220\\ \\text{V}-100\\ \\text{W}$ trên một bóng đèn có ý nghĩa nào sau đây?",
+      "options": [
+        "Bóng luôn có công suất $100\\ \\text{W}$ ở mọi hiệu điện thế",
+        "Dòng điện qua bóng luôn có cường độ $100\\ \\text{A}$",
+        "Chỉ đạt $100\\ \\text{W}$ khi hiệu điện thế đúng $220\\ \\text{V}$",
+        "Hiệu điện thế hai đầu bóng luôn bằng $100\\ \\text{V}$"
+      ],
+      "answer": 2,
+      "explanation": "Số ghi cho biết công suất định mức $100\\ \\text{W}$ chỉ đạt ở đúng hiệu điện thế định mức $220\\ \\text{V}$.",
+      "distractorNotes": {
+        "A": "Công suất định mức chỉ đạt khi hiệu điện thế bằng định mức; ở hiệu điện thế khác công suất thay đổi.",
+        "B": "Nhầm số oát với số ampe; công suất định mức không phải cường độ dòng điện.",
+        "D": "Nhầm số oát với số vôn; hiệu điện thế định mức của bóng là $220\\ \\text{V}$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Mắc nối tiếp hai bóng $220\\ \\text{V}-40\\ \\text{W}$ và $220\\ \\text{V}-100\\ \\text{W}$ vào mạng $220\\ \\text{V}$. Bóng nào sáng hơn?",
+      "options": [
+        "Bóng $40\\ \\text{W}$, vì điện trở lớn hơn nên $P=I^2R$ lớn hơn",
+        "Bóng $100\\ \\text{W}$, vì công suất ghi trên bóng này lớn hơn",
+        "Hai bóng sáng như nhau, vì cùng một dòng điện chạy qua",
+        "Cả hai bóng đều sáng đúng công suất định mức"
+      ],
+      "answer": 0,
+      "explanation": "Bóng $40\\ \\text{W}$ có điện trở lớn hơn, cùng dòng điện thì $P=I^2R$ lớn hơn nên sáng hơn.",
+      "distractorNotes": {
+        "B": "Số oát ghi chỉ đúng ở $220\\ \\text{V}$; nối tiếp thì mỗi bóng nhận một phần hiệu điện thế.",
+        "C": "Cùng dòng điện nhưng điện trở khác nhau nên $P=I^2R$ khác nhau.",
+        "D": "Mỗi bóng chỉ nhận một phần của $220\\ \\text{V}$ nên không bóng nào đạt định mức."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Mắc song song hai bóng $220\\ \\text{V}-40\\ \\text{W}$ và $220\\ \\text{V}-100\\ \\text{W}$ vào mạng $220\\ \\text{V}$. Bóng nào sáng hơn?",
+      "options": [
+        "Bóng $40\\ \\text{W}$, vì điện trở lớn hơn nên toả nhiệt nhiều hơn",
+        "Hai bóng sáng như nhau, vì cùng một hiệu điện thế",
+        "Bóng $40\\ \\text{W}$, vì dòng điện qua bóng này lớn hơn",
+        "Bóng $100\\ \\text{W}$, vì cùng $U$ nên $R$ nhỏ hơn thì $P$ lớn hơn"
+      ],
+      "answer": 3,
+      "explanation": "Song song thì cùng $U$, $P=\\dfrac{U^2}{R}$ nên bóng điện trở nhỏ hơn (bóng $100\\ \\text{W}$) sáng hơn.",
+      "distractorNotes": {
+        "A": "Nhầm với trường hợp nối tiếp; song song cùng $U$ thì $P=\\dfrac{U^2}{R}$ nên $R$ nhỏ mới sáng hơn.",
+        "B": "Cùng hiệu điện thế nhưng điện trở khác nhau nên $P=\\dfrac{U^2}{R}$ khác nhau.",
+        "C": "Bóng $40\\ \\text{W}$ có điện trở lớn hơn nên dòng qua nó nhỏ hơn, không lớn hơn."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi đề bài không nói gì thêm về điện trở dây tóc bóng đèn, ta coi điện trở của nó",
+      "options": [
+        "giảm đi khi dây tóc nóng lên và đèn sáng hơn",
+        "không đổi, dù thực tế nó tăng khi dây tóc nóng lên",
+        "tỉ lệ thuận với công suất mà đèn đang toả ra lúc đó",
+        "bằng không khi đèn đang sáng ở mức bình thường"
+      ],
+      "answer": 1,
+      "explanation": "Bài quy ước: đề không nói gì thì coi $R$ không đổi, dù thực tế dây tóc nóng lên thì $R$ tăng.",
+      "distractorNotes": {
+        "A": "Thực tế dây tóc nóng lên thì điện trở tăng, không giảm.",
+        "C": "Điện trở không được tính từ công suất đang toả ra; đề bài quy ước là không đổi.",
+        "D": "Bóng đèn luôn có điện trở khác không, nếu không dòng điện sẽ vô cùng lớn."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Muốn giảm hao phí điện năng trên đường dây khi truyền tải đi xa, ta nên",
+      "options": [
+        "tăng hiệu điện thế ở nơi truyền đi",
+        "giảm hiệu điện thế ở nơi truyền đi",
+        "tăng cường độ dòng điện trên dây",
+        "dùng dây có điện trở lớn hơn"
+      ],
+      "answer": 0,
+      "explanation": "Tăng $U$ thì $I=\\dfrac{P}{U}$ giảm, hao phí $P_{hp}=I^2R$ giảm rất nhanh.",
+      "distractorNotes": {
+        "B": "Giảm hiệu điện thế làm dòng $I=\\dfrac{P}{U}$ tăng, hao phí tăng.",
+        "C": "Hao phí $I^2R$ tăng theo bình phương dòng điện nên tăng dòng làm hao phí lớn hơn.",
+        "D": "Điện trở dây lớn hơn làm $P_{hp}=I^2R$ tăng, không giảm."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Khi chọn aptomat cho một nhánh điện trong nhà, dòng định mức của aptomat nên",
+      "options": [
+        "nhỏ hơn dòng làm việc để bảo đảm luôn luôn an toàn",
+        "lớn hơn dòng cho phép của dây để mạch không ngắt oan",
+        "lớn hơn dòng làm việc và không vượt dòng dây cho phép",
+        "bằng đúng giá trị hiệu điện thế $220\\ \\text{V}$ của mạng"
+      ],
+      "answer": 2,
+      "explanation": "Aptomat phải lớn hơn dòng làm việc và không vượt dòng cho phép của dây thì mới vừa không ngắt oan vừa bảo vệ được dây.",
+      "distractorNotes": {
+        "A": "Nhỏ hơn dòng làm việc thì aptomat ngắt mạch ngay cả khi mạng điện hoạt động bình thường.",
+        "B": "Lớn hơn dòng cho phép thì dây đã nóng mà aptomat chưa ngắt.",
+        "D": "Hiệu điện thế và cường độ dòng điện là hai đại lượng khác nhau, không so sánh trực tiếp."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Các thiết bị điện trong gia đình được mắc song song vào mạng điện vì khi đó",
+      "options": [
+        "mỗi thiết bị chỉ nhận một phần của $220\\ \\text{V}$ nguồn",
+        "mỗi thiết bị nhận đủ $220\\ \\text{V}$ của nguồn",
+        "dòng điện qua mọi thiết bị luôn luôn bằng nhau",
+        "tổng công suất tiêu thụ của cả nhà nhỏ nhất có thể"
+      ],
+      "answer": 1,
+      "explanation": "Song song thì các thiết bị cùng hiệu điện thế $220\\ \\text{V}$; dòng tổng bằng tổng các dòng nhánh.",
+      "distractorNotes": {
+        "A": "Mắc nối tiếp mới chia hiệu điện thế; song song thì mỗi nhánh nhận đủ hiệu điện thế nguồn.",
+        "C": "Dòng qua mỗi thiết bị là $I=\\dfrac{P}{U}$, khác nhau giữa các thiết bị công suất khác nhau.",
+        "D": "Tổng công suất là tổng công suất các thiết bị đang bật, không phải nhỏ nhất."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Từ số ghi định mức $U_{đm}$ và $P_{đm}$ của một bóng đèn, điện trở của bóng tính bằng",
+      "options": [
+        "$R=\\dfrac{P_{đm}}{U_{đm}^2}$",
+        "$R=U_{đm}\\cdot P_{đm}$",
+        "$R=\\dfrac{P_{đm}}{U_{đm}}$",
+        "$R=\\dfrac{U_{đm}^2}{P_{đm}}$"
+      ],
+      "answer": 3,
+      "explanation": "Từ $P=\\dfrac{U^2}{R}$ suy ra $R=\\dfrac{U_{đm}^2}{P_{đm}}$.",
+      "distractorNotes": {
+        "A": "Đảo tử và mẫu của $P=\\dfrac{U^2}{R}$.",
+        "B": "Nhân hai đại lượng cho đơn vị không phải ôm.",
+        "C": "Đó là cường độ dòng định mức $I_{đm}$, không phải điện trở."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bóng đèn $220\\ \\text{V}-100\\ \\text{W}$ được mắc vào hiệu điện thế $110\\ \\text{V}$, coi điện trở không đổi. Công suất của bóng là",
+      "options": [
+        "$25\\ \\text{W}$",
+        "$50\\ \\text{W}$",
+        "$12{,}5\\ \\text{W}$",
+        "$100\\ \\text{W}$"
+      ],
+      "answer": 0,
+      "explanation": "Với $R$ không đổi, $P$ tỉ lệ với $U^2$: $U$ giảm $2$ lần thì $P$ giảm $4$ lần, còn $25\\ \\text{W}$.",
+      "distractorNotes": {
+        "B": "Coi $P$ tỉ lệ với $U$, nên chỉ giảm $2$ lần.",
+        "C": "Giảm $8$ lần là không có cơ sở; $U$ giảm $2$ lần thì $P$ giảm $2^2$ lần.",
+        "D": "Giữ nguyên định mức, mà định mức chỉ đúng ở $220\\ \\text{V}$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Biết nhiệt lượng có ích $Q_{ích}$ và hiệu suất $H$ của bếp, điện năng bếp tiêu thụ $A$ tính bằng",
+      "options": [
+        "$A=Q_{ích}\\cdot H$",
+        "$A=\\dfrac{Q_{ích}}{H}$",
+        "$A=Q_{ích}-H$",
+        "$A=\\dfrac{H}{Q_{ích}}$"
+      ],
+      "answer": 1,
+      "explanation": "Từ $H=\\dfrac{Q_{ích}}{A}$ suy ra $A=\\dfrac{Q_{ích}}{H}$; có hao phí nên điện năng lớn hơn nhiệt có ích.",
+      "distractorNotes": {
+        "A": "Nhân với $H$ làm điện năng nhỏ hơn nhiệt có ích, vô lí vì có hao phí.",
+        "C": "Trừ hai đại lượng khác đơn vị không có nghĩa; $H$ không có đơn vị.",
+        "D": "Đảo tử và mẫu của $H=\\dfrac{Q_{ích}}{A}$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Bếp $800\\ \\text{W}$ đun $1\\ \\text{kg}$ nước từ $20\\ ^\\circ\\text{C}$ đến sôi, hiệu suất $70\\%$ ($c=4200\\ \\text{J/(kg·K)}$). Thời gian đun là",
+      "options": [
+        "$7$ phút",
+        "$4$ phút $54$ giây",
+        "$10$ phút",
+        "$14$ phút"
+      ],
+      "answer": 2,
+      "explanation": "$Q_{ích}=1\\cdot4200\\cdot80=336\\,000\\ \\text{J}$, $A=\\dfrac{336\\,000}{0{,}7}=480\\,000\\ \\text{J}$, $t=\\dfrac{480\\,000}{800}=600\\ \\text{s}$.",
+      "distractorNotes": {
+        "A": "Bỏ qua hiệu suất, chỉ lấy $Q_{ích}$ chia cho công suất.",
+        "B": "Nhân với $H$ thay vì chia, nên thời gian ngắn hơn cả khi không hao phí.",
+        "D": "Ứng với hiệu suất $50\\%$, không phải $70\\%$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Bếp $1000\\ \\text{W}$ hoạt động liên tục $30$ phút thì điện năng tiêu thụ là",
+      "options": [
+        "$30\\ \\text{kWh}$",
+        "$500\\ \\text{kWh}$",
+        "$2\\ \\text{kWh}$",
+        "$0{,}5\\ \\text{kWh}$"
+      ],
+      "answer": 3,
+      "explanation": "$A=Pt=1\\ \\text{kW}\\cdot0{,}5\\ \\text{h}=0{,}5\\ \\text{kWh}$.",
+      "distractorNotes": {
+        "A": "Nhân $1\\ \\text{kW}$ với $30$ mà quên đổi phút ra giờ.",
+        "B": "Quên đổi $1000\\ \\text{W}$ sang kW: $1000\\cdot0{,}5=500$ là số Wh, không phải kWh.",
+        "C": "Lấy công suất chia cho thời gian thay vì nhân với thời gian."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Giữ nguyên công suất và điện trở dây, tăng hiệu điện thế truyền tải lên $3$ lần thì hao phí trên dây",
+      "options": [
+        "giảm $3$ lần",
+        "giảm $9$ lần",
+        "giảm $27$ lần",
+        "không thay đổi"
+      ],
+      "answer": 1,
+      "explanation": "$I=\\dfrac{P}{U}$ giảm $3$ lần, $P_{hp}=I^2R$ giảm $3^2=9$ lần.",
+      "distractorNotes": {
+        "A": "Chỉ tính dòng điện giảm $3$ lần, quên rằng hao phí tỉ lệ với bình phương dòng.",
+        "C": "Dùng luỹ thừa ba, quá cao; bài cho hao phí giảm $n^2$ lần.",
+        "D": "Bỏ qua $I=\\dfrac{P}{U}$: $U$ lớn hơn thì dòng nhỏ hơn."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Trạm truyền công suất $P$ ở hiệu điện thế $U$ qua đường dây có điện trở $R$. Công suất hao phí trên dây là",
+      "options": [
+        "$P_{hp}=\\dfrac{P^2R}{U^2}$",
+        "$P_{hp}=\\dfrac{U^2}{R}$",
+        "$P_{hp}=\\dfrac{P\\,R}{U}$",
+        "$P_{hp}=I\\,R$"
+      ],
+      "answer": 0,
+      "explanation": "Từ $I=\\dfrac{P}{U}$ và $P_{hp}=I^2R$ suy ra $P_{hp}=\\dfrac{P^2R}{U^2}$.",
+      "distractorNotes": {
+        "B": "Không dùng $U$ của trạm cho điện trở dây; hiệu điện thế trên dây chỉ là độ sụt áp $IR$.",
+        "C": "Thiếu bình phương: hao phí là $I^2R$ với $I=\\dfrac{P}{U}$.",
+        "D": "$IR$ là độ sụt áp trên dây (đơn vị vôn), không phải công suất."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Thợ điện mắc nối tiếp hai bóng $220\\ \\text{V}-40\\ \\text{W}$ và $220\\ \\text{V}-100\\ \\text{W}$ vào mạng $220\\ \\text{V}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Dòng điện qua hai bóng có cường độ bằng nhau.",
+          "answer": true
+        },
+        {
+          "text": "Bóng $100\\ \\text{W}$ sáng hơn vì số oát ghi trên bóng lớn hơn.",
+          "answer": false
+        },
+        {
+          "text": "Bóng $40\\ \\text{W}$ có điện trở lớn hơn bóng $100\\ \\text{W}$.",
+          "answer": true
+        },
+        {
+          "text": "Hiệu điện thế hai đầu mỗi bóng đều bằng $220\\ \\text{V}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng vì nối tiếp cùng dòng. b) sai: nối tiếp thì bóng điện trở lớn toả nhiều nhiệt hơn. c) đúng vì $R=\\dfrac{U_{đm}^2}{P_{đm}}$ và $P_{đm}$ nhỏ hơn. d) sai: hai bóng chia nhau $220\\ \\text{V}$.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì mạch nối tiếp có chung một dòng điện chạy qua mọi phần tử.",
+        "1": "Không thể coi là đúng vì nối tiếp thì cùng $I$, $P=I^2R$ nên bóng $40\\ \\text{W}$ (điện trở lớn hơn) mới sáng hơn.",
+        "2": "Không thể coi là sai vì $R=\\dfrac{U_{đm}^2}{P_{đm}}$ nên công suất định mức nhỏ hơn thì điện trở lớn hơn.",
+        "3": "Không thể coi là đúng vì trong mạch nối tiếp hai bóng chia nhau hiệu điện thế $220\\ \\text{V}$ của nguồn."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thí nghiệm với đèn dây tóc $12\\ \\text{V}-6\\ \\text{W}$: tăng dần hiệu điện thế, chờ đèn ổn định rồi đọc vôn kế và ampe kế. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Điện trở của đèn ở $6\\ \\text{V}$ bằng điện trở của đèn ở $12\\ \\text{V}$.",
+          "answer": false
+        },
+        {
+          "text": "Ở mỗi lần đo, công suất đèn tính được bằng $P=UI$.",
+          "answer": true
+        },
+        {
+          "text": "Số oát ghi trên đèn là công suất của đèn ở mọi hiệu điện thế.",
+          "answer": false
+        },
+        {
+          "text": "Tỉ số $\\dfrac{U}{I}$ không cố định: dây tóc càng nóng thì điện trở càng lớn.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: ở hiệu điện thế nhỏ dây tóc nguội hơn nên $R$ nhỏ hơn. b) đúng vì $P=UI$ đúng ở từng lần đo. c) sai: số ghi chỉ đúng ở hiệu điện thế định mức. d) đúng vì dây tóc nóng lên thì $R$ tăng.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì ở hiệu điện thế nhỏ dây tóc nguội hơn nên điện trở nhỏ hơn.",
+        "1": "Không thể coi là sai vì công suất điện bằng tích hiệu điện thế và cường độ dòng điện ở từng lần đo.",
+        "2": "Không thể coi là đúng vì công suất định mức chỉ đạt khi hiệu điện thế đúng bằng hiệu điện thế định mức.",
+        "3": "Không thể coi là sai vì dây tóc nóng lên thì điện trở tăng, nên $\\dfrac{U}{I}$ thay đổi theo nhiệt độ."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Một nhánh điện trong nhà dùng dây đồng, có cầu chì hoặc aptomat bảo vệ. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Dùng dây nhỏ cho thiết bị công suất lớn thì dây không nóng lên.",
+          "answer": false
+        },
+        {
+          "text": "Các thiết bị trong nhánh được mắc song song, cùng hiệu điện thế $220\\ \\text{V}$.",
+          "answer": true
+        },
+        {
+          "text": "Cầu chì hoặc aptomat được mắc nối tiếp trên dây pha để ngắt mạch khi quá dòng.",
+          "answer": true
+        },
+        {
+          "text": "Aptomat có thể chọn lớn hơn dòng cho phép của dây vì nó tự ngắt kịp.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) sai: dòng lớn qua dây nhỏ làm $I^2R_{dây}$ lớn nên dây nóng. b), c) đúng theo mô tả mạng điện gia đình. d) sai: aptomat lớn hơn dòng cho phép thì dây đã nóng mà chưa ngắt.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì dòng lớn qua dây nhỏ làm $I^2R_{dây}$ lớn, dây nóng lên và có thể cháy.",
+        "1": "Không thể coi là sai vì thiết bị gia đình mắc song song nên mỗi thiết bị nhận đủ $220\\ \\text{V}$.",
+        "2": "Không thể coi là sai vì thiết bị bảo vệ phải nằm nối tiếp trên dây để cùng dòng chạy qua nó mới ngắt được.",
+        "3": "Không thể coi là đúng vì aptomat lớn hơn dòng cho phép của dây thì dây đã nóng mà aptomat chưa ngắt mạch."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Đ₁ ghi $6\\ \\text{V}-3\\ \\text{W}$, Đ₂ ghi $6\\ \\text{V}-6\\ \\text{W}$ mắc nối tiếp vào nguồn $9\\ \\text{V}$ ($R_1=12\\ \\Omega$, $R_2=6\\ \\Omega$). Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Cường độ dòng điện định mức của Đ₁ là $0{,}5\\ \\text{A}$.",
+          "answer": true
+        },
+        {
+          "text": "Đ₂ sáng đúng công suất định mức.",
+          "answer": false
+        },
+        {
+          "text": "Đ₂ bị cháy vì công suất ghi trên nó lớn.",
+          "answer": false
+        },
+        {
+          "text": "Dòng điện chạy trong mạch là $0{,}5\\ \\text{A}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) đúng vì $I_{đm1}=\\dfrac{3}{6}=0{,}5\\ \\text{A}$. b) sai: Đ₂ chỉ nhận $3\\ \\text{V}$. c) sai: dòng $0{,}5\\ \\text{A}$ nhỏ hơn định mức của Đ₂ ($1\\ \\text{A}$). d) đúng vì $I=\\dfrac{9}{12+6}=0{,}5\\ \\text{A}$.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì $I_{đm1}=\\dfrac{P_{đm}}{U_{đm}}=\\dfrac{3}{6}=0{,}5\\ \\text{A}$.",
+        "1": "Không thể coi là đúng vì Đ₂ chỉ nhận $0{,}5\\cdot6=3\\ \\text{V}$, thấp hơn định mức $6\\ \\text{V}$.",
+        "2": "Không thể coi là đúng vì dòng $0{,}5\\ \\text{A}$ nhỏ hơn dòng định mức $1\\ \\text{A}$ của Đ₂ nên Đ₂ không thể cháy.",
+        "3": "Không thể coi là sai vì tổng điện trở là $18\\ \\Omega$ nên $I=\\dfrac{9}{18}=0{,}5\\ \\text{A}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Bếp điện đun nước có hiệu suất $H$, công suất $P$, đun khối lượng $m$ nước nóng thêm $\\Delta t$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Muốn tìm thời gian đun, nhân $Q_{ích}$ với $H$ rồi chia cho $P$.",
+          "answer": false
+        },
+        {
+          "text": "Nhiệt lượng có ích làm nóng nước là $Q_{ích}=mc\\Delta t$.",
+          "answer": true
+        },
+        {
+          "text": "Cùng lượng nước, bếp hiệu suất nhỏ hơn thì cần ít điện năng hơn.",
+          "answer": false
+        },
+        {
+          "text": "Hiệu suất của bếp là $H=\\dfrac{Q_{ích}}{A}$ với $A$ là điện năng bếp tiêu thụ.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: phải chia cho $H$ rồi chia tiếp cho $P$, $t=\\dfrac{Q_{ích}}{HP}$. b) đúng theo công thức của bài. c) sai: hiệu suất nhỏ hơn thì hao phí nhiều hơn nên cần nhiều điện năng hơn. d) đúng theo công thức của bài.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì có hao phí nên điện năng lớn hơn nhiệt có ích: phải chia $Q_{ích}$ cho $H$ chứ không nhân.",
+        "1": "Không thể coi là sai vì nước nóng thêm $\\Delta t$ thu nhiệt lượng $mc\\Delta t$.",
+        "2": "Không thể coi là đúng vì $A=\\dfrac{Q_{ích}}{H}$ nên $H$ nhỏ hơn thì điện năng cần dùng lớn hơn.",
+        "3": "Không thể coi là sai vì hiệu suất là tỉ số giữa nhiệt có ích và điện năng tiêu thụ."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Một trạm truyền tải công suất $P$ ở hiệu điện thế $U$ qua dây dẫn có điện trở $R$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Công suất hao phí trên dây là $P_{hp}=I^2R$.",
+          "answer": true
+        },
+        {
+          "text": "Tăng $U$ lên $n$ lần thì hao phí giảm $n$ lần.",
+          "answer": false
+        },
+        {
+          "text": "Cường độ dòng điện trên dây là $I=\\dfrac{P}{U}$.",
+          "answer": true
+        },
+        {
+          "text": "Có thể viết $P_{hp}=\\dfrac{U^2}{R}$ với $U$ là hiệu điện thế của trạm.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng vì dây có điện trở toả nhiệt với công suất $I^2R$. b) sai: $P_{hp}\\sim\\dfrac{1}{U^2}$ nên giảm $n^2$ lần. c) đúng vì công suất truyền đi $P=UI$ nên $I=\\dfrac{P}{U}$. d) sai: hiệu điện thế trên dây chỉ là độ sụt áp $IR$, không phải $U$ của trạm.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì dây dẫn có điện trở $R$ toả nhiệt với công suất $I^2R$.",
+        "1": "Không thể coi là đúng vì $I$ giảm $n$ lần, $P_{hp}=I^2R$ giảm $n^2$ lần.",
+        "2": "Không thể coi là sai vì công suất truyền đi bằng tích hiệu điện thế và cường độ dòng điện.",
+        "3": "Không thể coi là đúng vì hiệu điện thế trên dây chỉ là độ sụt áp $IR$, không phải hiệu điện thế $U$ của trạm."
+      }
+    }
   ]
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Số ghi $220\\ \\text{V}-100\\ \\text{W}$ trên bóng đèn có ý nghĩa nào sau đây?",
-   "options": [
-    "Bóng luôn có công suất $100\\ \\text{W}$ ở mọi hiệu điện thế",
-    "Bóng chỉ có công suất $100\\ \\text{W}$ khi hiệu điện thế đúng $220\\ \\text{V}$",
-    "Dòng điện qua bóng luôn là $100\\ \\text{A}$",
-    "Hiệu điện thế qua bóng luôn là $100\\ \\text{V}$"
-   ],
-   "answer": 1,
-   "explanation": "Theo bài, công suất định mức chỉ đạt khi $U=U_{đm}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Hai đèn mắc nối tiếp thì đèn nào sáng hơn?",
-   "options": [
-    "Đèn có điện trở lớn hơn",
-    "Đèn có điện trở nhỏ hơn",
-    "Luôn sáng như nhau",
-    "Đèn có số oát ghi lớn hơn"
-   ],
-   "answer": 0,
-   "explanation": "Nối tiếp cùng $I$ nên $P=I^2R$: $R$ lớn thì $P$ lớn."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Hai đèn mắc song song vào nguồn thì đại lượng nào chung và đèn nào sáng hơn?",
-   "options": [
-    "Chung $I$; đèn $R$ lớn sáng hơn",
-    "Chung $U$; đèn $R$ lớn sáng hơn",
-    "Chung $U$; đèn $R$ nhỏ sáng hơn",
-    "Chung $I$; đèn $R$ nhỏ sáng hơn"
-   ],
-   "answer": 2,
-   "explanation": "Song song cùng $U$, $P=U^2/R$ nên $R$ nhỏ thì $P$ lớn."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Công suất trên biến trở $R$ mắc nối tiếp với $R_0$ (hiệu điện thế $U$ không đổi) lớn nhất khi nào?",
-   "options": [
-    "$R=0$",
-    "$R=R_0$",
-    "$R\\to\\infty$",
-    "$R=2R_0$"
-   ],
-   "answer": 1,
-   "explanation": "Từ $(R-R_0)^2\\ge0$, dấu bằng khi $R=R_0$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Trong thí nghiệm đo đèn $12\\ \\text{V}-6\\ \\text{W}$, điện trở $R=U/I$ của dây tóc thay đổi thế nào khi tăng $U$?",
-   "options": [
-    "Giảm dần",
-    "Không đổi",
-    "Tăng dần vì dây tóc nóng hơn",
-    "Bằng không"
-   ],
-   "answer": 2,
-   "explanation": "Bảng số liệu cho $R$ từ $11{,}5\\ \\Omega$ lên $24\\ \\Omega$ khi dây tóc nóng lên."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 6,
-   "question": "Aptomat của một nhánh phải được chọn thế nào so với dòng cho phép của dây?",
-   "options": [
-    "Lớn hơn dòng cho phép của dây",
-    "Không vượt dòng cho phép của dây",
-    "Bằng đúng dòng làm việc",
-    "Không liên quan đến dây"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu $I_{làm\\ việc}\\lt I_{aptomat}\\le I_{cho\\ phép\\ của\\ dây}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Điện trở của thiết bị ghi $U_{đm}-P_{đm}$ được tính bằng công thức nào?",
-   "options": [
-    "$R=\\dfrac{P_{đm}}{U_{đm}^2}$",
-    "$R=\\dfrac{U_{đm}}{P_{đm}}$",
-    "$R=\\dfrac{U_{đm}^2}{P_{đm}}$",
-    "$R=U_{đm}^2P_{đm}$"
-   ],
-   "answer": 2,
-   "explanation": "Từ $P=U^2/R$ suy ra $R=U_{đm}^2/P_{đm}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Công thức hao phí truyền tải điện đúng là:",
-   "options": [
-    "$P_{hp}=\\dfrac{U^2}{R}$",
-    "$P_{hp}=\\dfrac{P^2R}{U^2}$",
-    "$P_{hp}=\\dfrac{PR}{U}$",
-    "$P_{hp}=\\dfrac{U^2R}{P^2}$"
-   ],
-   "answer": 1,
-   "explanation": "$I=P/U$ nên $P_{hp}=I^2R=P^2R/U^2$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Để tính thời gian đun nước với hiệu suất $H$ và công suất $P$, trình tự đúng là:",
-   "options": [
-    "$A=Q_{ích}\\cdot H$, $t=A/P$",
-    "$A=Q_{ích}/H$, $t=A/P$",
-    "$A=Q_{ích}/H$, $t=AP$",
-    "$A=Q_{ích}\\cdot H$, $t=P/A$"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu $A=Q_{ích}/H$ rồi $t=A/P$; nhân với $H$ là lỗi hay gặp."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Biến trở nối tiếp $R_0=4\\ \\Omega$, $U=12\\ \\text{V}$. Công suất cực đại trên biến trở là:",
-   "options": [
-    "$36\\ \\text{W}$",
-    "$18\\ \\text{W}$",
-    "$9\\ \\text{W}$",
-    "$3\\ \\text{W}$"
-   ],
-   "answer": 2,
-   "explanation": "$P_{max}=U^2/(4R_0)=144/16=9\\ \\text{W}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Xét hai đèn $40\\ \\text{W}$ và $100\\ \\text{W}$ (cùng $220\\ \\text{V}$). Các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Mắc nối tiếp, đèn $40\\ \\text{W}$ sáng hơn.",
-     "answer": true
-    },
-    {
-     "text": "Mắc song song, đèn $100\\ \\text{W}$ sáng hơn.",
-     "answer": true
-    },
-    {
-     "text": "Mắc nối tiếp, đèn $100\\ \\text{W}$ sáng hơn vì công suất ghi lớn hơn.",
-     "answer": false
-    },
-    {
-     "text": "Mắc song song, hai đèn có cùng dòng điện.",
-     "answer": false
-    }
-   ],
-   "explanation": "Nối tiếp cùng $I$ nên $R$ lớn sáng hơn; song song cùng $U$ nên $R$ nhỏ sáng hơn."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về công suất điện và điện năng, phát biểu nào đúng?",
-   "statements": [
-    {
-     "text": "$P=UI=I^2R=U^2/R$ với điện trở thuần.",
-     "answer": true
-    },
-    {
-     "text": "$A=Pt$ có đơn vị J khi $P$ tính bằng W, $t$ bằng s.",
-     "answer": true
-    },
-    {
-     "text": "$1\\ \\text{kWh}=3{,}6\\cdot10^3\\ \\text{J}$.",
-     "answer": false
-    },
-    {
-     "text": "Với $R$ không đổi, $P'=P_{đm}\\dfrac{U'}{U_{đm}}$.",
-     "answer": false
-    }
-   ],
-   "explanation": "$1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$ và $P\\propto U^2$ khi $R$ không đổi."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Về truyền tải điện năng đi xa, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Hao phí xảy ra chủ yếu do điện trở dây dẫn: $P_{hp}=I^2R$.",
-     "answer": true
-    },
-    {
-     "text": "Tăng $U$ lên $n$ lần thì $P_{hp}$ giảm $n^2$ lần.",
-     "answer": true
-    },
-    {
-     "text": "Có thể viết $P_{hp}=U^2/R$ với $U$ là hiệu điện thế của trạm.",
-     "answer": false
-    },
-    {
-     "text": "Tăng $U$ thì dòng $I=P/U$ tăng.",
-     "answer": false
-    }
-   ],
-   "explanation": "Tăng $U$ làm $I=P/U$ giảm; $U^2/R$ không phải hao phí vì độ sụt áp chỉ là $IR$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Với biến trở $R$ nối tiếp $R_0$, hiệu điện thế $U$ không đổi, phát biểu nào đúng?",
-   "statements": [
-    {
-     "text": "$P_R$ lớn nhất khi $R=R_0$.",
-     "answer": true
-    },
-    {
-     "text": "Khi đó hiệu suất bằng $50\\%$.",
-     "answer": true
-    },
-    {
-     "text": "Công suất toàn mạch lớn nhất khi $R=R_0$.",
-     "answer": false
-    },
-    {
-     "text": "Mỗi mức $P_R$ dưới đỉnh chỉ ứng với một giá trị $R$.",
-     "answer": false
-    }
-   ],
-   "explanation": "Công suất toàn mạch lớn nhất khi $R\\to0$; mỗi mức dưới đỉnh có hai giá trị $R$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Bóng $220\\ \\text{V}-100\\ \\text{W}$ mắc vào $110\\ \\text{V}$, coi $R$ không đổi. Công suất bằng bao nhiêu W?",
-   "answer": "25",
-   "explanation": "$P'=100\\cdot(1/2)^2=25\\ \\text{W}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Giữ nguyên $P$, $R$, tăng $U$ lên $3$ lần thì hao phí giảm bao nhiêu lần?",
-   "answer": "9",
-   "explanation": "$P_{hp}\\propto 1/U^2$ nên giảm $3^2=9$ lần."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Điện năng $1\\,260\\,000\\ \\text{J}$ bằng bao nhiêu kWh? (viết số thập phân dùng dấu phẩy)",
-   "answer": "0,35",
-   "explanation": "$1\\,260\\,000/3\\,600\\,000=0{,}35\\ \\text{kWh}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Biến trở với $U=12\\ \\text{V}$, $R_0=4\\ \\Omega$: một giá trị $R$ cho $P_R=8\\ \\text{W}$ là $2\\ \\Omega$. Giá trị còn lại bằng bao nhiêu ôm?",
-   "answer": "8",
-   "explanation": "Hai nghiệm thoả $R_1R_2=R_0^2=16$ nên $R_2=8\\ \\Omega$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 05. Năng lượng của dòng điện, công suất điện và định luật Joule–Lenz",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Bếp $1000\\ \\text{W}$ đun nước cần $Q_{ích}=1\\,008\\,000\\ \\text{J}$ với hiệu suất $60\\%$. Thời gian đun là bao nhiêu phút?",
-   "answer": "28",
-   "explanation": "$A=1\\,008\\,000/0{,}6=1\\,680\\,000\\ \\text{J}$, $t=1680\\ \\text{s}=28$ phút."
-  }
- ]
 }

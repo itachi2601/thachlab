@@ -2,14 +2,14 @@
  "lesson_id": 129,
  "lesson_title": "Bài 2. Động năng. Thế năng",
  "item_id": 265,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 9,
-   "cong_thuc": 11
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
   "removed": []
  },
@@ -21,16 +21,21 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Động năng của một vật là dạng năng lượng mà vật có được do:",
+   "theorySection": 1,
+   "question": "Động năng là năng lượng mà vật có do",
    "options": [
-    "nó ở trên cao so với mốc",
-    "nó đang chuyển động",
-    "nó có khối lượng lớn",
-    "nó bị biến dạng"
+    "đang chuyển động so với mốc",
+    "đang ở trên cao so với mốc",
+    "có khối lượng lớn hơn vật khác",
+    "đang chịu tác dụng của lực"
    ],
-   "answer": 1,
-   "explanation": "Bài nêu động năng là năng lượng của vật có được do nó đang chuyển động."
+   "answer": 0,
+   "explanation": "Bài định nghĩa: năng lượng vật có do đang chuyển động gọi là động năng.",
+   "distractorNotes": {
+    "B": "Nhầm với thế năng; ở trên cao là điều kiện có thế năng, không phải động năng.",
+    "C": "Khối lượng chỉ là một yếu tố; vật đứng yên thì dù nặng vẫn không có động năng.",
+    "D": "Vật đứng yên vẫn có thể chịu lực (như trọng lực) mà không có động năng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -40,15 +45,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Thế năng trọng trường là năng lượng vật có được khi:",
+   "question": "Thế năng trọng trường là năng lượng mà vật có do",
    "options": [
-    "vật chuyển động nhanh",
-    "vật có nhiệt độ cao",
-    "vật ở trên cao so với mốc chọn",
-    "vật đứng yên trên mặt đất"
+    "đang chuyển động với tốc độ lớn",
+    "ở trên cao so với mốc chọn",
+    "có trọng lượng lớn dù ở mặt đất",
+    "bị tác dụng bởi lực đẩy của vật khác"
    ],
-   "answer": 2,
-   "explanation": "Thế năng trọng trường là năng lượng vật có được khi ở trên cao so với mặt đất hoặc mốc được chọn."
+   "answer": 1,
+   "explanation": "Bài định nghĩa: vật ở trên cao so với mốc có năng lượng gọi là thế năng trọng trường.",
+   "distractorNotes": {
+    "A": "Nhầm với động năng, vốn phụ thuộc tốc độ chứ không phụ thuộc độ cao.",
+    "C": "Vật ở đúng mốc có $h=0$ nên thế năng bằng 0, dù trọng lượng lớn.",
+    "D": "Lực đẩy làm vật chuyển động, tạo động năng, không phải thế năng trọng trường."
+   }
   },
   {
    "type": "multiple_choice",
@@ -58,15 +68,89 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 0,
-   "question": "Hai vật cùng khối lượng, vật nào có vận tốc lớn hơn thì:",
+   "question": "Chậu cây đặt đứng yên trên lan can tầng 8. So với mặt đất, chậu cây",
    "options": [
-    "động năng nhỏ hơn",
-    "động năng bằng nhau",
-    "thế năng lớn hơn",
-    "động năng lớn hơn"
+    "không có năng lượng vì đang đứng yên",
+    "có động năng vì chịu tác dụng của trọng lực",
+    "có thế năng nhưng chưa có động năng",
+    "có thế năng chỉ khi đã bắt đầu rơi"
+   ],
+   "answer": 2,
+   "explanation": "Chậu ở trên cao nên có thế năng; đứng yên nên $v=0$, động năng bằng 0.",
+   "distractorNotes": {
+    "A": "Đứng yên chỉ nghĩa là chưa có động năng; ở trên cao vẫn có thế năng.",
+    "B": "Động năng cần chuyển động; chậu đứng yên nên $v=0$ và động năng bằng 0.",
+    "D": "Thế năng có sẵn từ lúc chậu ở trên cao; rơi chỉ là lúc nó lộ ra."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một người ngồi yên trên ghế xe buýt đang chạy. Lấy mặt đường làm mốc, động năng của người đó",
+   "options": [
+    "bằng 0, vì người ngồi yên trên ghế",
+    "bằng 0, vì khối lượng người khá nhỏ bé",
+    "chưa xác định nếu chưa biết độ cao",
+    "khác 0, vì người chuyển động cùng xe"
    ],
    "answer": 3,
-   "explanation": "Cùng khối lượng, vận tốc lớn hơn thì động năng lớn hơn."
+   "explanation": "Động năng tuỳ vật làm mốc: so với mặt đường, người có tốc độ khác 0 nên có động năng.",
+   "distractorNotes": {
+    "A": "Ngồi yên là so với xe; đề đã chọn mặt đường làm mốc, so với mặt đường người vẫn chuyển động.",
+    "B": "Khối lượng nhỏ làm động năng nhỏ chứ không làm bằng 0 khi $v\\neq0$.",
+    "C": "Động năng chỉ cần khối lượng và tốc độ, không liên quan đến độ cao."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai bạn tính thế năng của cùng một quyển sách nhưng chọn gốc thế năng khác nhau. Nhận xét nào đúng?",
+   "options": [
+    "Chắc chắn có một bạn tính sai",
+    "Hai kết quả khác nhau và cùng đúng theo gốc chọn",
+    "Hai kết quả luôn bằng nhau vì là cùng quyển sách",
+    "Hai kết quả khác nhau vì khối lượng đổi theo gốc"
+   ],
+   "answer": 1,
+   "explanation": "Thế năng $W_{\\text{t}}=10mh$ với $h$ đo từ gốc thế năng; đổi gốc thì $h$ và thế năng đổi theo.",
+   "distractorNotes": {
+    "A": "Thế năng tuỳ gốc đã chọn; hai gốc khác nhau cho hai giá trị khác nhau mà không ai sai.",
+    "C": "Cùng quyển sách nhưng độ cao $h$ đo từ hai gốc khác nhau nên thế năng khác nhau.",
+    "D": "Khối lượng quyển sách không đổi; chỉ độ cao $h$ so với gốc thay đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đề bài tính thế năng của một vật nhưng không nói gì về gốc thế năng. Khi đó hiểu gốc thế năng ở",
+   "options": [
+    "vị trí vật đang đứng yên",
+    "điểm cao nhất vật lên được",
+    "mặt đất",
+    "mặt bàn gần vật nhất"
+   ],
+   "answer": 2,
+   "explanation": "Bài quy ước: đề không nói gì thì hiểu gốc thế năng ở mặt đất.",
+   "distractorNotes": {
+    "A": "Chọn gốc ngay tại vật thì $h=0$ và mọi bài đều ra thế năng bằng 0.",
+    "B": "Điểm cao nhất thay đổi theo từng bài, không phải quy ước chung.",
+    "D": "Mặt bàn chỉ là gốc khi đề nói rõ; không có quy ước ngầm như vậy."
+   }
   },
   {
    "type": "multiple_choice",
@@ -76,69 +160,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Hai vật ở cùng một độ cao, vật nào có khối lượng lớn hơn thì:",
+   "question": "Thả quả nặng $100\\ \\text{g}$ vào khay cát lần lượt từ độ cao $20\\ \\text{cm}$ rồi $40\\ \\text{cm}$. Vết lõm lần thả cao hơn sâu hơn, điều đó cho thấy",
    "options": [
-    "thế năng lớn hơn",
-    "thế năng nhỏ hơn",
-    "thế năng bằng nhau",
-    "động năng bằng 0"
+    "thế năng không phụ thuộc độ cao của vật",
+    "quả nặng nặng thêm khi thả từ cao hơn",
+    "quả nặng có động năng lớn hơn trước khi thả",
+    "thế năng lớn hơn khi vật ở cao hơn"
    ],
-   "answer": 0,
-   "explanation": "Cùng độ cao, khối lượng lớn hơn thì thế năng hấp dẫn lớn hơn."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Để nhận biết một vật có động năng hay không, ta xét xem vật đó:",
-   "options": [
-    "có chuyển động so với vật làm mốc hay không",
-    "có ở độ cao so với mặt đất hay không",
-    "có khối lượng lớn hay không",
-    "có bị nung nóng hay không"
-   ],
-   "answer": 0,
-   "explanation": "Vật chuyển động so với vật làm mốc thì có động năng."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Hành khách ngồi yên trên toa tàu đang chạy. Phát biểu đúng là:",
-   "options": [
-    "Luôn có động năng vì tàu chạy",
-    "Luôn không có động năng",
-    "Có động năng nếu lấy cây bên đường làm mốc",
-    "Có động năng nếu lấy toa tàu làm mốc"
-   ],
-   "answer": 2,
-   "explanation": "Động năng phụ thuộc vật làm mốc: so với cây bên đường người đó chuyển động nên có động năng."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Công thức tính động năng đúng là:",
-   "options": [
-    "$W_d=mv^2$",
-    "$W_d=\\frac{1}{2}mv$",
-    "$W_d=\\frac{1}{2}mv^2$",
-    "$W_d=\\frac{1}{2}m^2v$"
-   ],
-   "answer": 2,
-   "explanation": "Bài cho $W_d=\\frac{1}{2}mv^2$; các phương án khác thiếu 1/2 hoặc sai số mũ."
+   "answer": 3,
+   "explanation": "Cùng quả nặng, thả cao hơn thì vết lõm sâu hơn nên thế năng tăng theo độ cao.",
+   "distractorNotes": {
+    "A": "Kết quả ngược lại: độ cao càng lớn thì vết lõm càng sâu, tức thế năng càng lớn.",
+    "B": "Khối lượng quả nặng không đổi giữa hai lần thả, chỉ độ cao khác nhau.",
+    "C": "Quả nặng được thả từ yên nên trước khi thả động năng bằng 0 ở cả hai lần."
+   }
   },
   {
    "type": "multiple_choice",
@@ -148,15 +183,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Công thức tính thế năng trong bài là:",
+   "question": "Công thức tính động năng của vật khối lượng $m$ có tốc độ $v$ là",
    "options": [
-    "$W_t=10mh$",
-    "$W_t=\\frac{10m}{h}$",
-    "$W_t=10mh^2$",
-    "$W_t=\\frac{1}{2}10mh$"
+    "$W_{\\text{đ}}=\\dfrac{1}{2}mv^2$",
+    "$W_{\\text{đ}}=\\dfrac{1}{2}mv$",
+    "$W_{\\text{đ}}=mv^2$",
+    "$W_{\\text{đ}}=10\\,m\\,v$"
    ],
    "answer": 0,
-   "explanation": "Bài cho $W_t=Ph=10mh$."
+   "explanation": "Công thức động năng là $W_{\\text{đ}}=\\dfrac{1}{2}mv^2$, có hệ số một nửa và $v$ bình phương.",
+   "distractorNotes": {
+    "B": "Quên bình phương tốc độ; động năng tỉ lệ với $v^2$.",
+    "C": "Quên hệ số $\\dfrac{1}{2}$ trong công thức động năng.",
+    "D": "Nhầm với thế năng $10mh$, thay $h$ bằng $v$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính thế năng trọng trường của vật khối lượng $m$ ở độ cao $h$ so với gốc là",
+   "options": [
+    "$W_{\\text{t}}=\\dfrac{1}{2}\\cdot10\\,m\\,h$",
+    "$W_{\\text{t}}=m\\,h$",
+    "$W_{\\text{t}}=10\\,m\\,h$",
+    "$W_{\\text{t}}=10\\,m\\,h^2$"
+   ],
+   "answer": 2,
+   "explanation": "Thế năng là $W_{\\text{t}}=P\\,h=10\\,m\\,h$, với $h$ tính từ gốc thế năng.",
+   "distractorNotes": {
+    "A": "Thêm hệ số $\\dfrac{1}{2}$ như động năng; thế năng không có hệ số này.",
+    "B": "Quên đổi khối lượng ra trọng lượng $P=10m$.",
+    "D": "Độ cao chỉ có mũ 1; bình phương là của tốc độ trong động năng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -165,16 +228,90 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Đơn vị của động năng trong công thức $W_d=\\frac{1}{2}mv^2$ là:",
+   "theorySection": 1,
+   "question": "Đơn vị của động năng và thế năng trong bài là",
    "options": [
-    "N",
-    "J",
-    "kg",
-    "m/s"
+    "niutơn (N)",
+    "kilôgam (kg)",
+    "mét trên giây (m/s)",
+    "jun (J)"
+   ],
+   "answer": 3,
+   "explanation": "Động năng và thế năng đều là năng lượng nên đo bằng jun (J).",
+   "distractorNotes": {
+    "A": "Niutơn là đơn vị của lực, ví dụ trọng lượng $P=10m$, không phải của năng lượng.",
+    "B": "Kilôgam là đơn vị khối lượng, một đại lượng có mặt trong công thức.",
+    "C": "Mét trên giây là đơn vị của tốc độ $v$, không phải của năng lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Tốc độ của một vật tăng gấp $3$ lần, khối lượng giữ nguyên. Động năng của vật",
+   "options": [
+    "tăng gấp $9$ lần",
+    "tăng gấp $3$ lần",
+    "tăng gấp $6$ lần",
+    "tăng gấp $27$ lần"
+   ],
+   "answer": 0,
+   "explanation": "$W_{\\text{đ}}$ tỉ lệ với $v^2$, nên $v$ gấp $3$ thì $W_{\\text{đ}}$ gấp $3^2=9$ lần.",
+   "distractorNotes": {
+    "B": "Coi động năng tỉ lệ với $v$, quên rằng $v$ có mũ 2.",
+    "C": "Nhân $3$ với $2$ vì thấy số mũ 2; phải luỹ thừa $3^2$ chứ không nhân.",
+    "D": "Dùng $3^3$; trong công thức $v$ chỉ có mũ 2."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai xe có cùng tốc độ, xe thứ nhất có khối lượng bằng một nửa xe thứ hai. Động năng của xe thứ nhất so với xe thứ hai",
+   "options": [
+    "bằng một phần tư",
+    "bằng một nửa",
+    "bằng nhau vì cùng tốc độ",
+    "gấp đôi"
    ],
    "answer": 1,
-   "explanation": "Bài ghi $W_d$ tính bằng J."
+   "explanation": "$W_{\\text{đ}}$ tỉ lệ thuận với $m$, nên cùng $v$ mà $m$ giảm một nửa thì $W_{\\text{đ}}$ giảm một nửa.",
+   "distractorNotes": {
+    "A": "Bình phương cả khối lượng; chỉ tốc độ mới có mũ 2, khối lượng tỉ lệ bậc nhất.",
+    "C": "Động năng phụ thuộc cả khối lượng lẫn tốc độ, không chỉ tốc độ.",
+    "D": "Đảo tỉ lệ; khối lượng nhỏ hơn thì động năng nhỏ hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một vật khối lượng $2\\ \\text{kg}$ chuyển động với tốc độ $3\\ \\text{m/s}$. Động năng của vật là",
+   "options": [
+    "$18\\ \\text{J}$",
+    "$3\\ \\text{J}$",
+    "$6\\ \\text{J}$",
+    "$9\\ \\text{J}$"
+   ],
+   "answer": 3,
+   "explanation": "$W_{\\text{đ}}=\\dfrac{1}{2}\\cdot2\\cdot3^2=9\\ \\text{J}$.",
+   "distractorNotes": {
+    "A": "Quên hệ số $\\dfrac{1}{2}$: $2\\cdot3^2=18$.",
+    "B": "Quên bình phương tốc độ: $\\dfrac{1}{2}\\cdot2\\cdot3=3$.",
+    "C": "Lấy tích $m\\cdot v$ thay cho $\\dfrac{1}{2}mv^2$."
+   }
   },
   {
    "type": "multiple_choice",
@@ -183,204 +320,231 @@
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Hai vật cùng độ cao, vật 1 có khối lượng gấp 3 lần vật 2. Thế năng vật 1 so với vật 2 là:",
+   "theorySection": 4,
+   "question": "Muốn tính động năng của xe khi tốc độ cho bằng km/h và khối lượng cho bằng tấn, trước khi thế vào công thức cần",
    "options": [
-    "bằng nhau",
-    "gấp 9 lần",
-    "gấp 3 lần",
-    "bằng 1/3"
+    "giữ nguyên km/h và tấn, kết quả vẫn ra jun",
+    "chỉ đổi khối lượng sang kg, tốc độ giữ nguyên",
+    "đổi tốc độ sang m/s, khối lượng sang kg",
+    "chia tốc độ cho $10$ để ra m/s"
    ],
    "answer": 2,
-   "explanation": "$W_t$ tỉ lệ với $m$ nên $W_{t1}=3W_{t2}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về thế năng trọng trường, xét các phát biểu sau:",
-   "statements": [
-    {
-     "text": "Giá trị thế năng phụ thuộc vào gốc thế năng được chọn.",
-     "answer": true
-    },
-    {
-     "text": "Thông thường gốc thế năng được chọn tại mặt đất.",
-     "answer": true
-    },
-    {
-     "text": "Vật khối lượng càng lớn ở độ cao càng cao thì thế năng càng lớn.",
-     "answer": true
-    },
-    {
-     "text": "Thế năng không phụ thuộc vào độ cao của vật.",
-     "answer": false
-    }
-   ],
-   "explanation": "Thế năng phụ thuộc khối lượng, độ cao và gốc thế năng."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Về động năng $W_d=\\frac{1}{2}mv^2$, xét các phát biểu sau:",
-   "statements": [
-    {
-     "text": "Động năng bằng một nửa tích khối lượng và bình phương vận tốc.",
-     "answer": true
-    },
-    {
-     "text": "Hai vật cùng vận tốc khác không, vật khối lượng lớn hơn có động năng lớn hơn.",
-     "answer": true
-    },
-    {
-     "text": "Động năng tỉ lệ thuận với vận tốc (không bình phương).",
-     "answer": false
-    },
-    {
-     "text": "Vật đứng yên so với mốc thì có động năng lớn.",
-     "answer": false
-    }
-   ],
-   "explanation": "Động năng tỉ lệ với $v^2$ và chỉ có khi vật chuyển động so với mốc."
-  },
-  {
-   "type": "true_false",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật khối lượng $m$ chuyển động với vận tốc $v$ có $W_d=\\frac{1}{2}mv^2$. Xét các phát biểu:",
-   "statements": [
-    {
-     "text": "Nếu $v$ tăng gấp đôi, $m$ không đổi thì $W_d$ tăng gấp 4.",
-     "answer": true
-    },
-    {
-     "text": "Nếu $m$ tăng gấp đôi, $v$ không đổi thì $W_d$ tăng gấp đôi.",
-     "answer": true
-    },
-    {
-     "text": "Nếu $v$ tăng gấp đôi thì $W_d$ tăng gấp đôi.",
-     "answer": false
-    },
-    {
-     "text": "Nếu $m$ tăng gấp đôi thì $W_d$ tăng gấp 4.",
-     "answer": false
-    }
-   ],
-   "explanation": "$W_d$ tỉ lệ với $m$ và với $v^2$."
+   "explanation": "Công thức động năng dùng đơn vị SI: km/h chia $3{,}6$ ra m/s, tấn nhân $1\\,000$ ra kg.",
+   "distractorNotes": {
+    "A": "Công thức dùng đơn vị SI; km/h và tấn cho kết quả không phải jun.",
+    "B": "Tốc độ có mũ 2 nên sai lệch càng lớn nếu quên đổi km/h sang m/s.",
+    "D": "Đổi km/h sang m/s là chia cho $3{,}6$, không phải chia cho $10$."
+   }
   },
   {
    "type": "true_false",
    "kind": "hien_tuong",
    "topic": "Bài 2. Động năng. Thế năng",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Hai vật đang rơi có khối lượng như nhau, xét ở cùng một độ cao:",
+   "theorySection": 1,
+   "question": "Thả viên bi thép lăn xuống máng nghiêng, va vào một khúc gỗ đặt ở chân máng. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Thế năng của hai vật như nhau.",
-     "answer": true
-    },
-    {
-     "text": "Chưa thể kết luận về động năng nếu chưa biết vận tốc.",
-     "answer": true
-    },
-    {
-     "text": "Động năng của hai vật chắc chắn bằng nhau.",
+     "text": "Khi bi còn đứng yên ở đỉnh máng, động năng của bi lớn nhất.",
      "answer": false
     },
     {
-     "text": "Thế năng của hai vật chắc chắn khác nhau.",
+     "text": "Thả bi từ độ cao lớn hơn thì bi tới chân máng nhanh hơn và đẩy khúc gỗ đi xa hơn.",
+     "answer": true
+    },
+    {
+     "text": "Thay bi nặng hơn, thả cùng độ cao, khúc gỗ cũng bị đẩy xa hơn.",
+     "answer": true
+    },
+    {
+     "text": "Cùng tốc độ, bi càng nhẹ thì động năng càng lớn.",
      "answer": false
     }
    ],
-   "explanation": "Cùng khối lượng và độ cao thì thế năng bằng nhau; động năng phụ thuộc vận tốc."
+   "explanation": "a) sai: đứng yên thì động năng bằng 0. b) đúng: thả cao hơn thì bi nhanh hơn, động năng lớn hơn. c) đúng: bi nặng hơn có động năng lớn hơn. d) sai: động năng tăng theo khối lượng.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì đứng yên nên $v=0$; ở đỉnh máng bi có thế năng chứ chưa có động năng.",
+    "1": "Không thể coi là sai vì bi nhanh hơn thì động năng lớn hơn nên đẩy khúc gỗ xa hơn.",
+    "2": "Không thể coi là sai vì vật càng nặng thì động năng càng lớn khi các điều kiện khác như nhau.",
+    "3": "Không thể coi là đúng vì động năng tăng khi bi nặng hơn, không phải nhẹ hơn."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật $m=2$ kg chuyển động với $v=3$ m/s. Động năng của vật là bao nhiêu J?",
-   "answer": "9",
-   "explanation": "$W_d=\\frac{1}{2}\\cdot2\\cdot3^2=9$ J."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Vật $m=2$ kg ở độ cao $h=5$ m so với gốc thế năng. Thế năng là bao nhiêu J (dùng $W_t=10mh$)?",
-   "answer": "100",
-   "explanation": "$W_t=10\\cdot2\\cdot5=100$ J."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật có $m=4$ kg và $W_d=8$ J. Vận tốc của vật là bao nhiêu m/s?",
-   "answer": "2",
-   "explanation": "$v^2=2W_d/m=4$ nên $v=2$ m/s."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Bài 2. Động năng. Thế năng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Vật $m=5$ kg có $W_t=100$ J. Độ cao của vật là bao nhiêu m (dùng $W_t=10mh$)?",
-   "answer": "2",
-   "explanation": "$h=W_t/(10m)=100/50=2$ m."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
+   "type": "true_false",
+   "kind": "dieu_kien",
    "topic": "Bài 2. Động năng. Thế năng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Vật thứ nhất có khối lượng gấp 3 lần vật thứ hai, cùng độ cao. Thế năng vật thứ nhất gấp mấy lần vật thứ hai?",
-   "answer": "3",
-   "explanation": "$W_{t1}=3W_{t2}$ vì $W_t$ tỉ lệ với khối lượng khi cùng độ cao."
+   "question": "Hoa và Minh cùng nhìn một hành khách ngồi yên trên toa tàu đang chạy. Hoa nói khách có động năng, Minh nói khách không có động năng. Xét các nhận xét sau:",
+   "statements": [
+    {
+     "text": "Lấy toa tàu làm mốc, động năng của hành khách bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Chắc chắn có một trong hai bạn nói sai.",
+     "answer": false
+    },
+    {
+     "text": "Động năng của hành khách không phụ thuộc vật được chọn làm mốc.",
+     "answer": false
+    },
+    {
+     "text": "Lấy sân ga làm mốc, hành khách có động năng.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng: so với toa tàu $v=0$. b) sai: hai bạn chọn hai mốc khác nhau. c) sai: động năng tuỳ vật làm mốc. d) đúng: so với sân ga khách chuyển động.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì so với toa tàu khách đứng yên nên $v=0$ và $W_{\\text{đ}}=0$.",
+    "1": "Không thể coi là đúng vì mỗi bạn nói đúng theo mốc mình chọn.",
+    "2": "Không thể coi là đúng vì tốc độ đo được đổi theo vật làm mốc nên động năng cũng đổi theo.",
+    "3": "Không thể coi là sai vì so với sân ga khách chạy cùng tàu, tốc độ khác 0 nên có động năng."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Quyển sách $0{,}5\\ \\text{kg}$ nằm trên mặt bàn cao $0{,}8\\ \\text{m}$ so với sàn. Xét các nhận xét sau:",
+   "statements": [
+    {
+     "text": "Chọn mặt bàn làm gốc thế năng thì thế năng của quyển sách bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Chọn sàn làm gốc thế năng thì thế năng của quyển sách là $4\\ \\text{J}$.",
+     "answer": true
+    },
+    {
+     "text": "Chọn sàn làm gốc thế năng thì thế năng của quyển sách là $5\\ \\text{J}$.",
+     "answer": false
+    },
+    {
+     "text": "Đổi gốc thế năng thì thế năng của quyển sách không đổi.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng: $h=0$ nên thế năng bằng 0. b) đúng: $10\\cdot0{,}5\\cdot0{,}8=4\\ \\text{J}$. c) sai: $5\\ \\text{N}$ là trọng lượng. d) sai: thế năng tuỳ gốc đã chọn.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì sách nằm đúng ở gốc nên $h=0$ và $W_{\\text{t}}=0$.",
+    "1": "Không thể coi là sai vì $W_{\\text{t}}=10\\cdot0{,}5\\cdot0{,}8=4\\ \\text{J}$.",
+    "2": "Không thể coi là đúng vì $5$ là trọng lượng tính bằng N, chưa nhân độ cao; thế năng là $4\\ \\text{J}$.",
+    "3": "Không thể coi là đúng vì độ cao $h$ đo từ gốc mới khác đi nên thế năng đổi theo."
+   }
+  },
+  {
+   "type": "true_false",
    "kind": "tinh_nhanh",
    "topic": "Bài 2. Động năng. Thế năng",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Cùng một vật, vận tốc tăng từ 2 m/s lên 6 m/s. Động năng tăng gấp mấy lần?",
-   "answer": "9",
-   "explanation": "$W_d$ tỉ lệ với $v^2$, nên tăng $(6/2)^2=9$ lần."
+   "theorySection": 1,
+   "question": "Một xe lăn khối lượng $m$ chạy qua cổng quang với tốc độ $v$. Xét các nhận xét sau về động năng của xe:",
+   "statements": [
+    {
+     "text": "$v$ giảm đi một nửa thì động năng giảm đi một nửa.",
+     "answer": false
+    },
+    {
+     "text": "$v$ gấp đôi, $m$ giữ nguyên thì động năng gấp $4$ lần.",
+     "answer": true
+    },
+    {
+     "text": "Xe chạy ngược chiều lại thì động năng đổi dấu thành âm.",
+     "answer": false
+    },
+    {
+     "text": "$m$ gấp đôi, $v$ giữ nguyên thì động năng gấp đôi.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai: giảm $4$ lần chứ không phải $2$ lần. b) đúng: $2^2=4$. c) sai: $v^2\\ge0$. d) đúng: $W_{\\text{đ}}$ tỉ lệ thuận với $m$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $v$ giảm một nửa thì $v^2$ giảm $4$ lần nên động năng giảm $4$ lần.",
+    "1": "Không thể coi là sai vì $W_{\\text{đ}}$ tỉ lệ với $v^2$ và $2^2=4$.",
+    "2": "Không thể coi là đúng vì động năng chứa $v^2$ nên không bao giờ âm, bất kể chiều chuyển động.",
+    "3": "Không thể coi là sai vì $W_{\\text{đ}}$ tỉ lệ thuận với $m$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "don_vi",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ô tô $1$ tấn chạy với tốc độ $36\\ \\text{km/h}$. Xét các nhận xét sau khi tính động năng của ô tô:",
+   "statements": [
+    {
+     "text": "Động năng của ô tô là $5\\,000\\ \\text{J}$.",
+     "answer": false
+    },
+    {
+     "text": "Thế thẳng $36$ vào công thức vẫn cho kết quả đúng đơn vị jun.",
+     "answer": false
+    },
+    {
+     "text": "Phải đổi $36\\ \\text{km/h}$ thành $10\\ \\text{m/s}$ trước khi thế vào công thức.",
+     "answer": true
+    },
+    {
+     "text": "Khối lượng ô tô được đổi thành $1\\,000\\ \\text{kg}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai: $\\dfrac{1}{2}\\cdot1\\,000\\cdot10^2=50\\,000\\ \\text{J}$. b) sai: chưa đổi km/h sang m/s. c) đúng. d) đúng.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $5\\,000$ J có được khi quên bình phương tốc độ; đúng là $50\\,000\\ \\text{J}$.",
+    "1": "Không thể coi là đúng vì $36$ là km/h, thế thẳng sẽ không ra jun và sai về độ lớn.",
+    "2": "Không thể coi là sai vì công thức dùng đơn vị SI nên $36:3{,}6=10\\ \\text{m/s}$.",
+    "3": "Không thể coi là sai vì $1$ tấn bằng $1\\,000\\ \\text{kg}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Bài 2. Động năng. Thế năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Quả cam $200\\ \\text{g}$ treo trên cành, cao $3\\ \\text{m}$ so với mặt đất, gốc thế năng ở mặt đất. Xét các nhận xét sau:",
+   "statements": [
+    {
+     "text": "Trọng lượng của quả cam là $P=10\\cdot0{,}2=2\\ \\text{N}$.",
+     "answer": true
+    },
+    {
+     "text": "Thế năng của quả cam là $0{,}6\\ \\text{J}$.",
+     "answer": false
+    },
+    {
+     "text": "Thế năng của quả cam là $6\\ \\text{J}$.",
+     "answer": true
+    },
+    {
+     "text": "Công thức thế năng cũng có hệ số $\\dfrac{1}{2}$ như công thức động năng.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng: $P=10m$. b) sai: thiếu hệ số $10$. c) đúng: $2\\cdot3=6\\ \\text{J}$. d) sai: thế năng không có $\\dfrac{1}{2}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $m=0{,}2\\ \\text{kg}$ nên $P=10m=2\\ \\text{N}$.",
+    "1": "Không thể coi là đúng vì $0{,}6$ là $m\\cdot h$, quên đổi sang trọng lượng $P=10m$.",
+    "2": "Không thể coi là sai vì $W_{\\text{t}}=P\\,h=2\\cdot3=6\\ \\text{J}$.",
+    "3": "Không thể coi là đúng vì hệ số $\\dfrac{1}{2}$ chỉ có ở động năng; thế năng là $P\\,h$."
+   }
   }
  ]
 }

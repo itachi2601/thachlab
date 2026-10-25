@@ -1,386 +1,550 @@
 {
- "lesson_id": 151,
- "lesson_title": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
- "item_id": 395,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 15,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 10,
-   "cong_thuc": 10
+  "lesson_id": 151,
+  "lesson_title": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+  "item_id": 395,
+  "generated_at": "2026-10-25",
+  "generated_by": "claude-code (phiên Mac)",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
   },
-  "removed": []
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hiện tượng khúc xạ ánh sáng là hiện tượng:",
-   "options": [
-    "tia sáng đổi hướng khi qua mặt phân cách hai môi trường trong suốt",
-    "tia sáng bị hắt ngược trở lại môi trường cũ",
-    "tia sáng bị hấp thụ hoàn toàn ở mặt phân cách",
-    "chùm sáng trắng tách thành nhiều màu"
-   ],
-   "answer": 0,
-   "explanation": "Mục II: khúc xạ là tia sáng đổi hướng khi qua mặt phân cách hai môi trường trong suốt."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ánh sáng đi từ không khí vào nước thì tia khúc xạ:",
-   "options": [
-    "lệch xa pháp tuyến hơn tia tới",
-    "lệch lại gần pháp tuyến hơn tia tới",
-    "luôn trùng với tia tới",
-    "luôn nằm sát mặt nước"
-   ],
-   "answer": 1,
-   "explanation": "Vào môi trường chiết quang hơn thì $r\\lt i$, lệch gần pháp tuyến."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức chiết suất của môi trường theo vận tốc ánh sáng $v$ trong môi trường là:",
-   "options": [
-    "$n=\\dfrac{v}{c}$",
-    "$n=c\\,v$",
-    "$n=\\dfrac{c}{v}$",
-    "$n=\\dfrac{c}{v^2}$"
-   ],
-   "answer": 2,
-   "explanation": "Bài cho $n=\\dfrac cv$; $n$ lớn thì ánh sáng chậm."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Biểu thức đúng của định luật khúc xạ ánh sáng là:",
-   "options": [
-    "$n_2\\sin i=n_1\\sin r$",
-    "$n_1\\sin i=n_2\\sin r$",
-    "$n_1 i=n_2 r$",
-    "$\\dfrac{i}{r}=\\dfrac{n_1}{n_2}$"
-   ],
-   "answer": 1,
-   "explanation": "Định luật: $n_1\\sin i=n_2\\sin r$, $n$ nào đi với góc ở môi trường đó."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Nhìn gần vuông góc xuống đáy chậu nước sâu $h$, chiết suất $n$, độ sâu biểu kiến là:",
-   "options": [
-    "$h'=nh$",
-    "$h'=\\dfrac{n}{h}$",
-    "$h'=h-n$",
-    "$h'=\\dfrac{h}{n}$"
-   ],
-   "answer": 3,
-   "explanation": "Mục III: nhìn gần vuông góc mặt nước thì $h'=\\dfrac hn$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Góc giới hạn phản xạ toàn phần khi ánh sáng đi từ môi trường 1 sang môi trường 2 (có $n_1\\gt n_2$) được tính bởi:",
-   "options": [
-    "$\\sin i_{gh}=\\dfrac{n_1}{n_2}$",
-    "$\\sin i_{gh}=\\dfrac{n_2}{n_1}$",
-    "$\\sin i_{gh}=n_1n_2$",
-    "$\\cos i_{gh}=\\dfrac{n_2}{n_1}$"
-   ],
-   "answer": 1,
-   "explanation": "Bài cho $\\sin i_{gh}=\\dfrac{n_2}{n_1}$; ra số lớn hơn 1 là viết ngược."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Phản xạ toàn phần xảy ra khi:",
-   "options": [
-    "ánh sáng đi từ môi trường chiết quang kém sang chiết quang hơn và $i\\ge i_{gh}$",
-    "ánh sáng đi từ môi trường chiết quang hơn sang kém hơn và $i\\ge i_{gh}$",
-    "chỉ cần góc tới lớn, bất kể môi trường",
-    "ánh sáng đi từ môi trường chiết quang hơn sang kém hơn với mọi góc tới"
-   ],
-   "answer": 1,
-   "explanation": "Cần cả hai điều kiện: $n_1\\gt n_2$ và $i\\ge i_{gh}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Chiếu chùm sáng trắng qua lăng kính, tia lệch nhiều nhất về phía đáy là:",
-   "options": [
-    "tia đỏ",
-    "tia vàng",
-    "tia lục",
-    "tia tím"
-   ],
-   "answer": 3,
-   "explanation": "Chiết suất với tím lớn nhất nên tím lệch nhiều nhất, đỏ ít nhất."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Chiếu đèn lục và đèn lam chồng lên nhau trên tường trắng, vùng chồng có màu:",
-   "options": [
-    "lam lục, sáng hơn từng đèn",
-    "lục sẫm",
-    "đen",
-    "trắng"
-   ],
-   "answer": 0,
-   "explanation": "Trộn ánh sáng là cộng thêm: lục + lam → lam lục."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Áo vàng (hắt đỏ, vàng, lục; hấp thụ lam) dưới đèn lam thuần trông:",
-   "options": [
-    "vàng",
-    "lam",
-    "lục",
-    "tối, gần như đen"
-   ],
-   "answer": 3,
-   "explanation": "Đèn chỉ có lam mà áo hấp thụ lam nên gần như không có ánh sáng hắt về mắt."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về định luật khúc xạ ánh sáng $n_1\\sin i=n_2\\sin r$, xét các ý sau:",
-   "statements": [
+  "questions": [
     {
-     "text": "Góc $i$, $r$ đo so với pháp tuyến.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tia sáng đi xiên góc từ không khí vào nước thì tia khúc xạ",
+      "options": [
+        "lệch xa pháp tuyến hơn tia tới",
+        "đi thẳng, không đổi hướng so với tia tới",
+        "lệch lại gần pháp tuyến hơn tia tới",
+        "nằm trùng với pháp tuyến tại điểm tới"
+      ],
+      "answer": 2,
+      "explanation": "Vào môi trường chiết quang hơn (nước), ánh sáng truyền chậm hơn nên lệch lại gần pháp tuyến: $r<i$.",
+      "distractorNotes": {
+        "A": "Đây là chiều ngược lại, chỉ xảy ra khi ánh sáng đi từ nước ra không khí.",
+        "B": "Chỉ đi thẳng khi tia tới vuông góc mặt phân cách; tia xiên sang môi trường khác chiết suất luôn bị lệch.",
+        "D": "Tia khúc xạ lệch gần pháp tuyến hơn nhưng không trùng với nó, trừ khi tia tới đã vuông góc."
+      }
     },
     {
-     "text": "Tia khúc xạ nằm trong mặt phẳng tới, ở bên kia pháp tuyến.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong hiện tượng khúc xạ, góc tới và góc khúc xạ được đo so với",
+      "options": [
+        "pháp tuyến tại điểm tới",
+        "mặt phân cách hai môi trường",
+        "đường nối nguồn sáng với mắt",
+        "tia phản xạ tại điểm tới"
+      ],
+      "answer": 0,
+      "explanation": "Bài quy ước: mọi góc đo so với pháp tuyến, không đo so với mặt phân cách.",
+      "distractorNotes": {
+        "B": "Đo so với mặt phân cách là lỗi hay gặp; hai góc này luôn tính từ pháp tuyến.",
+        "C": "Đường nối nguồn sáng với mắt không phải mốc đo góc trong hiện tượng khúc xạ.",
+        "D": "Tia phản xạ cũng là một tia sáng, không phải đường chuẩn để đo góc tới và góc khúc xạ."
+      }
     },
     {
-     "text": "Ra môi trường chiết quang kém hơn thì $r\\lt i$.",
-     "answer": false
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Môi trường có chiết suất càng lớn thì tốc độ ánh sáng trong môi trường đó",
+      "options": [
+        "càng lớn so với trong chân không",
+        "luôn bằng tốc độ trong chân không",
+        "không phụ thuộc vào chiết suất",
+        "càng nhỏ so với trong chân không"
+      ],
+      "answer": 3,
+      "explanation": "Từ $n=\\dfrac cv$, $n$ lớn thì $v$ nhỏ: ánh sáng truyền chậm hơn trong môi trường chiết quang hơn.",
+      "distractorNotes": {
+        "A": "Nhầm chiều: $v=c/n$ nên $n$ lớn thì $v$ nhỏ.",
+        "B": "Chỉ chân không (và gần đúng không khí) mới có $n=1$; môi trường khác có $n>1$ nên $v<c$.",
+        "C": "Hai đại lượng này liên hệ trực tiếp qua $n=c/v$."
+      }
     },
     {
-     "text": "Khi $i=0$ tia sáng truyền thẳng.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tốc độ ánh sáng trong một chất là $2{,}0\\cdot10^8\\ \\text{m/s}$, trong chân không là $3\\cdot10^8\\ \\text{m/s}$. Chiết suất của chất đó là",
+      "options": [
+        "$0{,}67$",
+        "$1{,}5$",
+        "$5{,}0$",
+        "$6{,}0$"
+      ],
+      "answer": 1,
+      "explanation": "$n=\\dfrac cv=\\dfrac{3\\cdot10^8}{2\\cdot10^8}=1{,}5$.",
+      "distractorNotes": {
+        "A": "Đảo tỉ số thành $v/c$; chiết suất là $n=c/v\\ge1$.",
+        "C": "Cộng hai tốc độ thay vì lấy tỉ số $c/v$.",
+        "D": "Nhân hai tốc độ thay vì lấy tỉ số $c/v$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tia sáng đi từ không khí vào chất có $n=\\sqrt2$ với góc tới $45^\\circ$. Góc khúc xạ là",
+      "options": [
+        "$60^\\circ$",
+        "$45^\\circ$",
+        "$90^\\circ$",
+        "$30^\\circ$"
+      ],
+      "answer": 3,
+      "explanation": "$1\\cdot\\sin45^\\circ=\\sqrt2\\sin r$ nên $\\sin r=0{,}5$, $r=30^\\circ$.",
+      "distractorNotes": {
+        "A": "Đây là góc giữa tia khúc xạ và mặt phân cách, trong khi $r$ đo so với pháp tuyến.",
+        "B": "Coi như không bị lệch; chất có $n\\ne1$ thì tia xiên luôn đổi hướng.",
+        "C": "Viết ngược thành $n_2\\sin i=n_1\\sin r$ nên ra $\\sin r=1$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi ánh sáng đi từ môi trường 1 sang môi trường 2, hệ thức của định luật khúc xạ là",
+      "options": [
+        "$n_1\\sin i=n_2\\sin r$",
+        "$n_2\\sin i=n_1\\sin r$",
+        "$n_1 i=n_2 r$",
+        "$n_1\\cos i=n_2\\cos r$"
+      ],
+      "answer": 0,
+      "explanation": "Định luật khúc xạ viết $n_1\\sin i=n_2\\sin r$, môi trường 1 chứa tia tới, môi trường 2 chứa tia khúc xạ.",
+      "distractorNotes": {
+        "B": "Hoán đổi chiết suất: $n$ phải đi cùng góc ở môi trường của nó.",
+        "C": "Định luật áp dụng cho sin của góc, không áp dụng thẳng cho số đo góc.",
+        "D": "Dùng cos thay cho sin; định luật liên hệ qua sin của hai góc đo so với pháp tuyến."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Nước ($n=\\tfrac43$) trong bể sâu $1{,}2\\ \\text{m}$. Nhìn gần vuông góc từ trên xuống, đáy bể trông ở độ sâu",
+      "options": [
+        "$1{,}6\\ \\text{m}$",
+        "$1{,}2\\ \\text{m}$",
+        "$0{,}9\\ \\text{m}$",
+        "$0{,}3\\ \\text{m}$"
+      ],
+      "answer": 2,
+      "explanation": "$h'=\\dfrac hn=\\dfrac{1{,}2}{4/3}=0{,}9\\ \\text{m}$.",
+      "distractorNotes": {
+        "A": "Nhân với $n$; mắt ở trên không khí nhìn xuống thì phải chia, $h'=h/n$.",
+        "B": "Bỏ qua khúc xạ; tia sáng ló ra đổi hướng nên đáy trông nông hơn thật.",
+        "D": "Mới là đoạn đáy được nâng lên, không phải độ sâu mà mắt thấy."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Người đứng trên bờ nhìn xuống một con cá trong nước, thấy cá ở vị trí",
+      "options": [
+        "sâu hơn vị trí thật của cá",
+        "nông hơn vị trí thật của cá",
+        "đúng vị trí thật của cá",
+        "cao hơn hẳn mặt nước ở bên ngoài"
+      ],
+      "answer": 1,
+      "explanation": "Tia ló lệch xa pháp tuyến nên mắt thấy cá ở ảnh nông hơn; vì thế phải nhắm thấp hơn khi phóng lao.",
+      "distractorNotes": {
+        "A": "Nhầm chiều: ảnh dịch về phía môi trường chiết quang kém, tức lên gần mặt nước.",
+        "C": "Tia sáng từ cá bị khúc xạ khi ló ra nên mắt không thấy cá đúng chỗ thật.",
+        "D": "Ảnh của cá vẫn nằm dưới mặt nước, chỉ nông hơn so với vị trí thật."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Một tia sáng đi qua bản mặt song song (hai mặt song song, trong suốt) thì",
+      "options": [
+        "tia ló song song tia tới, chỉ bị dời ngang",
+        "tia ló lệch về phía đáy so với tia tới ban đầu",
+        "tia ló vuông góc với phương của tia tới",
+        "tia ló trùng hẳn với đường của tia tới cũ"
+      ],
+      "answer": 0,
+      "explanation": "Khúc xạ hai lần làm $i'=i$, nên tia ló song song tia tới và chỉ dời ngang.",
+      "distractorNotes": {
+        "B": "Đó là đặc điểm của lăng kính; bản mặt song song không làm tia đổi hướng.",
+        "C": "Tia ló có cùng phương với tia tới nên không thể vuông góc với nó.",
+        "D": "Bản dày $e$ làm tia ló dời sang một bên một đoạn, không trùng với đường cũ."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Phản xạ toàn phần xảy ra khi",
+      "options": [
+        "ánh sáng đi từ môi trường chiết quang kém sang hơn và $i\\ge i_{gh}$",
+        "ánh sáng đi từ môi trường chiết quang hơn sang kém hơn và $i<i_{gh}$",
+        "góc tới đủ lớn, bất kể hai môi trường là gì",
+        "đi từ môi trường chiết quang hơn sang kém hơn và $i\\ge i_{gh}$"
+      ],
+      "answer": 3,
+      "explanation": "Phản xạ toàn phần cần cả hai điều kiện: từ môi trường chiết quang hơn sang kém hơn và góc tới không nhỏ hơn góc giới hạn.",
+      "distractorNotes": {
+        "A": "Sang môi trường chiết quang hơn thì $r<i$, luôn có tia khúc xạ, không thể phản xạ toàn phần.",
+        "B": "Khi $i$ còn nhỏ hơn $i_{gh}$ thì vẫn có tia khúc xạ ló ra.",
+        "C": "Cần đủ cả hai điều kiện; chỉ lớn góc tới mà đi vào môi trường chiết quang hơn thì không xảy ra."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Ánh sáng đi từ nước ($n=\\tfrac43$) ra không khí. Góc giới hạn phản xạ toàn phần $i_{gh}$ thoả mãn",
+      "options": [
+        "$\\sin i_{gh}=\\dfrac43$",
+        "$\\sin i_{gh}=0{,}75$",
+        "$\\sin i_{gh}=\\dfrac13$",
+        "$\\sin i_{gh}=1$"
+      ],
+      "answer": 1,
+      "explanation": "$\\sin i_{gh}=\\dfrac{n_2}{n_1}=\\dfrac{1}{4/3}=0{,}75$.",
+      "distractorNotes": {
+        "A": "Viết ngược tỉ số; $\\sin$ không thể lớn hơn $1$, nên phải là $n_2/n_1$.",
+        "C": "Lấy hiệu hai chiết suất thay vì tỉ số $n_2/n_1$.",
+        "D": "$90^\\circ$ là giá trị của góc khúc xạ lúc tia ló đi là là mặt nước, không phải của góc tới."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Bóng đèn nhỏ ở đáy bể nước sáng ra mặt nước thành vùng tròn bán kính $R=h\\tan i_{gh}$. Đổ thêm nước để độ sâu $h$ tăng gấp đôi thì bán kính vùng sáng",
+      "options": [
+        "giảm còn một nửa",
+        "không đổi vì $i_{gh}$ không đổi",
+        "tăng gấp đôi",
+        "tăng gấp bốn"
+      ],
+      "answer": 2,
+      "explanation": "$i_{gh}$ chỉ phụ thuộc hai chiết suất nên không đổi; $R=h\\tan i_{gh}$ tỉ lệ với $h$, $h$ gấp đôi thì $R$ gấp đôi.",
+      "distractorNotes": {
+        "A": "Đảo quan hệ: $R$ tỉ lệ thuận với $h$ chứ không tỉ lệ nghịch.",
+        "B": "$i_{gh}$ không đổi nhưng $R$ còn tỉ lệ với $h$ nên vẫn thay đổi.",
+        "D": "Nhầm với diện tích tỉ lệ bình phương; bán kính chỉ tăng gấp đôi."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Chiếu một chùm sáng trắng hẹp qua lăng kính thuỷ tinh, ta thấy",
+      "options": [
+        "tia đỏ lệch nhiều nhất, tia tím lệch ít nhất",
+        "tia tím lệch nhiều nhất, tia đỏ lệch ít nhất",
+        "mọi màu lệch như nhau, chỉ khác độ sáng",
+        "lăng kính nhuộm màu cho chùm sáng trắng"
+      ],
+      "answer": 1,
+      "explanation": "Chiết suất của thuỷ tinh phụ thuộc màu: lớn nhất với tím, nhỏ nhất với đỏ, nên tím lệch nhiều nhất.",
+      "distractorNotes": {
+        "A": "Đảo ngược: thuỷ tinh có chiết suất với tím lớn nhất nên tím mới lệch nhiều nhất.",
+        "C": "Nếu lệch như nhau thì không tách thành dải màu; chiết suất phụ thuộc màu.",
+        "D": "Các màu có sẵn trong ánh sáng trắng, lăng kính chỉ tách chúng ra."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Áo màu vàng (hắt đỏ, vàng, lục; hấp thụ lam) được chiếu bằng đèn lam thuần, áo trông",
+      "options": [
+        "tối, gần như đen",
+        "vàng như khi đứng dưới ánh sáng trắng",
+        "lục vì vàng pha với lam cho ra lục",
+        "lam vì áo phản xạ ánh sáng lam tới"
+      ],
+      "answer": 0,
+      "explanation": "Đèn chỉ phát lam mà áo hấp thụ lam, gần như không có ánh sáng hắt về mắt nên áo tối.",
+      "distractorNotes": {
+        "B": "Màu vật không cố định mà phụ thuộc ánh sáng chiếu tới.",
+        "C": "Áp dụng quy tắc pha sơn, trong khi ở đây không có ánh sáng nào để hắt lại.",
+        "D": "Áo hấp thụ lam chứ không hắt lam, nên không có ánh sáng về mắt."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Chiếu đèn lục và đèn lam chồng lên nhau trên một bức tường trắng. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Vùng hai đèn chồng lên nhau có màu lam lục.",
+          "answer": true
+        },
+        {
+          "text": "Vùng chồng lên nhau tối đi vì mỗi màu hấp thụ bớt màu kia.",
+          "answer": false
+        },
+        {
+          "text": "Vùng chồng lên nhau sáng hơn từng đèn chiếu riêng.",
+          "answer": true
+        },
+        {
+          "text": "Trộn ba đèn đỏ, lục, lam đúng cường độ cho ra màu đen.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng: tường trắng hắt lại cả lục lẫn lam, mắt thấy lam lục. b) sai: hấp thụ là quy tắc của pha sơn, còn ánh sáng chồng lên thì cộng lại. c) đúng: trộn ánh sáng là cộng thêm ánh sáng nên chỉ sáng hơn. d) sai: ba màu này trộn lại cho màu trắng.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì tường trắng hắt lại cả lục lẫn lam, mắt thấy lam lục.",
+        "1": "Không thể coi là đúng vì hấp thụ là quy tắc của pha sơn, còn ánh sáng chồng lên thì cộng lại.",
+        "2": "Không thể coi là sai vì trộn ánh sáng là cộng thêm ánh sáng nên chỉ sáng hơn.",
+        "3": "Không thể coi là đúng vì ba màu này trộn lại cho màu trắng."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Chiếu laser vào tâm khối bán trụ thuỷ tinh đặt trên bảng chia độ, đo được: $i=20^\\circ$ thì $r=13^\\circ$; $i=40^\\circ$ thì $r=25^\\circ$; $i=70^\\circ$ thì $r=39^\\circ$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Tỉ số $\\sin i:\\sin r$ ở ba lần đo gần như không đổi.",
+          "answer": true
+        },
+        {
+          "text": "Tỉ số $i:r$ giữ nguyên ở cả ba lần đo.",
+          "answer": false
+        },
+        {
+          "text": "Ánh sáng truyền trong thuỷ tinh nhanh hơn trong không khí.",
+          "answer": false
+        },
+        {
+          "text": "Giá trị của tỉ số $\\sin i:\\sin r$ cho biết chiết suất của thuỷ tinh.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) đúng: cả ba lần đều cho xấp xỉ $1{,}5$. b) sai: $20:13\\approx1{,}54$ nhưng $70:39\\approx1{,}79$; chỉ tỉ số các sin mới giữ nguyên. c) sai: thuỷ tinh có $n>1$ nên ánh sáng truyền chậm hơn. d) đúng: không khí có $n=1$ nên tỉ số này chính là chiết suất thuỷ tinh.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì cả ba lần đều cho xấp xỉ $1{,}5$.",
+        "1": "Không thể coi là đúng vì $20:13\\approx1{,}54$ nhưng $70:39\\approx1{,}79$; chỉ tỉ số các sin mới giữ nguyên.",
+        "2": "Không thể coi là đúng vì thuỷ tinh có $n>1$ nên ánh sáng truyền chậm hơn.",
+        "3": "Không thể coi là sai vì không khí có $n=1$ nên tỉ số này chính là chiết suất thuỷ tinh."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Một con chim đậu cách mặt hồ $1{,}5\\ \\text{m}$. Con cá ngay bên dưới nhìn thẳng lên, nước có $n=\\tfrac43$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Cá thấy chim cách mặt nước $1{,}125\\ \\text{m}$.",
+          "answer": false
+        },
+        {
+          "text": "Cá thấy chim ở xa mặt nước hơn vị trí thật của chim.",
+          "answer": true
+        },
+        {
+          "text": "Cá thấy chim cách mặt nước $2{,}0\\ \\text{m}$.",
+          "answer": true
+        },
+        {
+          "text": "Cá không thấy chim vì ánh sáng bị phản xạ toàn phần ở mặt nước.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) sai: đó là kết quả khi chia cho $n$, dùng cho mắt ở trên nhìn xuống; ở đây phải nhân. b) đúng: mắt ở trong nước nhìn lên, ảnh dịch về phía môi trường chiết quang kém là không khí. c) đúng: $H'=nH=\\tfrac43\\cdot1{,}5=2{,}0\\ \\text{m}$. d) sai: ánh sáng đi từ không khí vào nước, không thể phản xạ toàn phần.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì đó là kết quả khi chia cho $n$, dùng cho mắt ở trên nhìn xuống; ở đây phải nhân.",
+        "1": "Không thể coi là sai vì mắt ở trong nước nhìn lên, ảnh dịch về phía môi trường chiết quang kém là không khí.",
+        "2": "Không thể coi là sai vì $H'=nH=\\tfrac43\\cdot1{,}5=2{,}0\\ \\text{m}$.",
+        "3": "Không thể coi là đúng vì ánh sáng đi từ không khí vào nước, không thể phản xạ toàn phần."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Tia sáng đi từ thuỷ tinh ($n=1{,}5$) sang nước ($n=\\tfrac43$) với góc tới $55^\\circ$ ($\\sin55^\\circ\\approx0{,}8192$). Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Tia khúc xạ lệch lại gần pháp tuyến hơn tia tới.",
+          "answer": false
+        },
+        {
+          "text": "Ánh sáng đi từ môi trường chiết quang hơn sang kém hơn nên có thể xảy ra phản xạ toàn phần.",
+          "answer": true
+        },
+        {
+          "text": "Với góc tới này đã xảy ra phản xạ toàn phần.",
+          "answer": false
+        },
+        {
+          "text": "Giá trị $\\sin i_{gh}=\\dfrac{n_2}{n_1}\\approx0{,}889$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: ra môi trường chiết quang kém hơn thì $r>i$, tia lệch xa pháp tuyến. b) đúng: đây là điều kiện cần thứ nhất của phản xạ toàn phần. c) sai: $\\sin55^\\circ\\approx0{,}8192$ nhỏ hơn $0{,}889$ nên $i<i_{gh}$ và vẫn có tia khúc xạ. d) đúng: $\\sin i_{gh}=\\dfrac{4/3}{1{,}5}\\approx0{,}889$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì ra môi trường chiết quang kém hơn thì $r>i$, tia lệch xa pháp tuyến.",
+        "1": "Không thể coi là sai vì đây là điều kiện cần thứ nhất của phản xạ toàn phần.",
+        "2": "Không thể coi là đúng vì $\\sin55^\\circ\\approx0{,}8192$ nhỏ hơn $0{,}889$ nên $i<i_{gh}$ và vẫn có tia khúc xạ.",
+        "3": "Không thể coi là sai vì $\\sin i_{gh}=\\dfrac{4/3}{1{,}5}\\approx0{,}889$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Lăng kính thuỷ tinh $n=1{,}5$ có góc chiết quang $A=35^\\circ$ ($\\sin35^\\circ\\approx0{,}5736$), góc giới hạn thuỷ tinh – không khí là $41{,}8^\\circ$. Tia sáng tới vuông góc mặt bên $AB$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Góc tới ở mặt $AC$ bằng góc chiết quang $A$.",
+          "answer": true
+        },
+        {
+          "text": "Tia sáng bị phản xạ toàn phần ở mặt $AC$.",
+          "answer": false
+        },
+        {
+          "text": "Tại mặt $AB$ tia sáng đi thẳng, không bị lệch.",
+          "answer": true
+        },
+        {
+          "text": "Góc lệch $D$ giữa tia ló và tia tới bằng $35^\\circ$.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng: hai góc có cạnh tương ứng vuông góc nên $i_2=A$. b) sai: $i_2=35^\\circ<41{,}8^\\circ$ nên tia vẫn ló ra khỏi mặt $AC$. c) đúng: tia tới vuông góc mặt phân cách nên truyền thẳng. d) sai: $D=r_2-A\\approx59{,}4^\\circ-35^\\circ=24{,}4^\\circ$, không bằng góc chiết quang.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì hai góc có cạnh tương ứng vuông góc nên $i_2=A$.",
+        "1": "Không thể coi là đúng vì $i_2=35^\\circ<41{,}8^\\circ$ nên tia vẫn ló ra khỏi mặt $AC$.",
+        "2": "Không thể coi là sai vì tia tới vuông góc mặt phân cách nên truyền thẳng.",
+        "3": "Không thể coi là đúng vì $D=r_2-A\\approx59{,}4^\\circ-35^\\circ=24{,}4^\\circ$, không bằng góc chiết quang."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tia sáng đi từ không khí vào một chất có $n=\\sqrt2$ với góc tới $45^\\circ$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Góc giữa tia phản xạ và tia khúc xạ bằng $75^\\circ$.",
+          "answer": false
+        },
+        {
+          "text": "Tốc độ ánh sáng trong chất này bằng $\\sqrt2\\,c$.",
+          "answer": false
+        },
+        {
+          "text": "Góc khúc xạ bằng $30^\\circ$.",
+          "answer": true
+        },
+        {
+          "text": "Tia khúc xạ lệch lại gần pháp tuyến hơn tia tới.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: góc đó bằng $180^\\circ-45^\\circ-30^\\circ=105^\\circ$. b) sai: từ $v=\\dfrac cn$ suy ra $v=\\dfrac{c}{\\sqrt2}$, nhỏ hơn $c$. c) đúng: $\\sin r=\\dfrac{\\sin45^\\circ}{\\sqrt2}=0{,}5$ nên $r=30^\\circ$. d) đúng: vào môi trường chiết quang hơn thì $r<i$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì góc đó bằng $180^\\circ-45^\\circ-30^\\circ=105^\\circ$.",
+        "1": "Không thể coi là đúng vì từ $v=\\dfrac cn$ suy ra $v=\\dfrac{c}{\\sqrt2}$, nhỏ hơn $c$.",
+        "2": "Không thể coi là sai vì $\\sin r=\\dfrac{\\sin45^\\circ}{\\sqrt2}=0{,}5$ nên $r=30^\\circ$.",
+        "3": "Không thể coi là sai vì vào môi trường chiết quang hơn thì $r<i$."
+      }
     }
-   ],
-   "explanation": "Ra môi trường chiết quang kém thì $r\\gt i$, lệch xa pháp tuyến."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về độ sâu biểu kiến và bản mặt song song, xét các ý sau:",
-   "statements": [
-    {
-     "text": "Nhìn gần vuông góc từ trên xuống: $h'=\\dfrac hn$.",
-     "answer": true
-    },
-    {
-     "text": "Mắt dưới nước nhìn vật trong không khí: $H'=\\dfrac Hn$.",
-     "answer": false
-    },
-    {
-     "text": "Tia ló qua bản mặt song song song song với tia tới.",
-     "answer": true
-    },
-    {
-     "text": "Nhìn xiên, đáy trông nông hơn nữa so với $h'=\\dfrac hn$.",
-     "answer": true
-    }
-   ],
-   "explanation": "Mắt dưới nước nhìn lên thì $H'=nH$, không phải chia."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Về lăng kính khi tia tới vuông góc mặt bên $AB$, xét các ý sau:",
-   "statements": [
-    {
-     "text": "Tia đi thẳng qua mặt $AB$.",
-     "answer": true
-    },
-    {
-     "text": "Góc tới ở mặt $AC$ bằng góc chiết quang $A$.",
-     "answer": true
-    },
-    {
-     "text": "Nếu $A\\lt i_{gh}$ thì tia ló với $\\sin r_2=n\\sin A$.",
-     "answer": true
-    },
-    {
-     "text": "Góc lệch $D=r_2$.",
-     "answer": false
-    }
-   ],
-   "explanation": "Góc lệch là $D=r_2-A$, không phải $r_2$."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Về tán sắc và màu sắc, xét các ý sau:",
-   "statements": [
-    {
-     "text": "Ánh sáng trắng là hỗn hợp nhiều ánh sáng màu.",
-     "answer": true
-    },
-    {
-     "text": "Lăng kính nhuộm màu cho ánh sáng trắng.",
-     "answer": false
-    },
-    {
-     "text": "Trộn đỏ, lục, lam bằng ánh sáng cho màu trắng.",
-     "answer": true
-    },
-    {
-     "text": "Tấm lọc màu cho màu của nó đi qua, hấp thụ màu khác.",
-     "answer": true
-    }
-   ],
-   "explanation": "Các màu có sẵn trong ánh sáng trắng, lăng kính chỉ tách chúng ra."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Khối kính dày $6\\ \\text{cm}$ ($n=1{,}5$) đặt trên trang sách, nhìn thẳng xuống. Chữ trông nổi lên bao nhiêu cm?",
-   "answer": "2",
-   "explanation": "$\\Delta=e\\left(1-\\dfrac1n\\right)=6\\cdot\\dfrac13=2$ cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Cá bơi ở độ sâu $1{,}2\\ \\text{m}$ trong nước ($n=\\frac43$). Nhìn thẳng từ trên xuống, độ sâu biểu kiến là bao nhiêu mét? (viết số thập phân dùng dấu phẩy)",
-   "answer": "0,9",
-   "explanation": "$h'=\\dfrac hn=1{,}2\\cdot\\dfrac34=0{,}9$ m."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Chim đậu cao $3\\ \\text{m}$ trên mặt hồ. Cá ngay bên dưới nhìn thẳng lên ($n=\\frac43$) thấy chim cách mặt nước bao nhiêu mét?",
-   "answer": "4",
-   "explanation": "$H'=nH=\\frac43\\cdot3=4$ m."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ánh sáng từ không khí vào chất có $n=\\sqrt2$ với $i=45^\\circ$. Góc khúc xạ $r$ bằng bao nhiêu độ?",
-   "answer": "30",
-   "explanation": "$\\sin r=\\dfrac{\\sin45^\\circ}{\\sqrt2}=0{,}5$ nên $r=30^\\circ$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Lăng kính phản xạ toàn phần vuông cân: tia vuông góc cạnh góc vuông tới mặt huyền với góc bao nhiêu độ?",
-   "answer": "45",
-   "explanation": "Mục V: tia tới mặt huyền với góc $45^\\circ\\gt41{,}8^\\circ$ nên quay $90^\\circ$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính và tán sắc",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Lăng kính có $r_2=60^\\circ$, góc chiết quang $A=35^\\circ$, tia tới vuông góc mặt $AB$. Góc lệch $D$ bằng bao nhiêu độ?",
-   "answer": "25",
-   "explanation": "$D=r_2-A=60^\\circ-35^\\circ=25^\\circ$."
-  }
- ]
+  ]
 }

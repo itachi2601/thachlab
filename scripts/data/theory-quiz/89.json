@@ -2,14 +2,14 @@
  "lesson_id": 89,
  "lesson_title": "Bài 11. Điện trở. Định luật Ohm",
  "item_id": 341,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 8,
-   "cong_thuc": 12
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
   "removed": []
  },
@@ -22,159 +22,158 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Điện trở của một vật dẫn cho biết điều gì?",
+   "question": "Điện trở của một vật dẫn cho biết",
    "options": [
-    "Vật dẫn tích được bao nhiêu điện",
-    "Vật dẫn cản trở dòng điện nhiều hay ít",
-    "Hiệu điện thế của nguồn lớn hay nhỏ",
-    "Dòng điện chạy theo chiều nào"
-   ],
-   "answer": 1,
-   "explanation": "Theo bài, điện trở cho biết vật dẫn cản trở dòng điện nhiều hay ít."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Định luật Ohm cho một điện trở",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Phát biểu nào đúng với định luật Ohm?",
-   "options": [
-    "I tỉ lệ nghịch với U, tỉ lệ thuận với R",
-    "I tỉ lệ thuận với U, tỉ lệ nghịch với R",
-    "I tỉ lệ thuận với cả U và R",
-    "I không phụ thuộc U và R"
-   ],
-   "answer": 1,
-   "explanation": "Định luật Ohm: I tỉ lệ thuận với U và tỉ lệ nghịch với R."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Điện trở. Định luật Ohm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Cách mắc đúng ampe kế và vôn kế để đo một điện trở là:",
-   "options": [
-    "Cả hai mắc nối tiếp",
-    "Cả hai mắc song song",
-    "Ampe kế nối tiếp, vôn kế song song",
-    "Ampe kế song song, vôn kế nối tiếp"
-   ],
-   "answer": 2,
-   "explanation": "Ampe kế mắc nối tiếp, vôn kế mắc song song với vật cần đo."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Điện trở. Định luật Ohm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Mắc nhầm vôn kế nối tiếp với bóng đèn thì hiện tượng xảy ra là:",
-   "options": [
-    "Đèn sáng bình thường",
-    "Đèn sáng mạnh hơn, vôn kế cháy",
-    "Đèn gần như không sáng, vôn kế chỉ gần bằng hiệu điện thế nguồn",
-    "Vôn kế chỉ đúng số 0"
-   ],
-   "answer": 2,
-   "explanation": "Vôn kế có điện trở rất lớn nên dòng gần bằng 0, hầu hết hiệu điện thế nguồn đặt lên vôn kế."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Điện trở suất ρ có đơn vị là:",
-   "options": [
-    "Ω",
-    "Ω·m",
-    "Ω/m",
-    "V/A"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu ρ đo bằng Ω·m, đặc trưng cho vật liệu."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Điện trở. Định luật Ohm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức tính điện trở từ U và I là:",
-   "options": [
-    "$R = U\\cdot I$",
-    "$R = \\dfrac{I}{U}$",
-    "$R = \\dfrac{U}{I}$",
-    "$R = U + I$"
-   ],
-   "answer": 2,
-   "explanation": "Bài cho $R = \\dfrac{U}{I}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức điện trở của dây dẫn là:",
-   "options": [
-    "$R = \\rho\\dfrac{S}{l}$",
-    "$R = \\dfrac{\\rho}{lS}$",
-    "$R = \\rho\\,l\\,S$",
-    "$R = \\rho\\dfrac{l}{S}$"
-   ],
-   "answer": 3,
-   "explanation": "Bài cho $R = \\rho\\dfrac{l}{S}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Định luật Ohm cho một điện trở",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hiệu điện thế 6 V đặt vào điện trở 30 Ω. Cường độ dòng điện là:",
-   "options": [
-    "0,2 A",
-    "5 A",
-    "180 A",
-    "0,02 A"
+    "mức cản trở dòng điện của vật dẫn đó",
+    "lượng điện tích vật dẫn có thể tích trữ",
+    "hiệu điện thế mà vật dẫn tự tạo ra",
+    "tốc độ chạy của dòng điện trong vật dẫn"
    ],
    "answer": 0,
-   "explanation": "$I = U/R = 6/30 = 0{,}2$ A."
+   "explanation": "Bài định nghĩa: điện trở cho biết vật dẫn cản trở dòng điện nhiều hay ít, tính bằng $R=\\dfrac{U}{I}$.",
+   "distractorNotes": {
+    "B": "Nhầm điện trở với khả năng tích điện; điện trở chỉ nói vật dẫn cản dòng nhiều hay ít.",
+    "C": "Hiệu điện thế do nguồn quyết định, vật dẫn không tạo ra nó; điện trở không đo đại lượng này.",
+    "D": "Điện trở không đo tốc độ; nó đo mức cản trở, tính bằng $R=\\dfrac{U}{I}$."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "kind": "dieu_kien",
+   "topic": "Điện trở. Định luật Ohm",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Dây có R = 12 Ω bị cắt lấy một nửa chiều dài. Điện trở đoạn đó là:",
+   "question": "Muốn đo cường độ dòng điện qua một điện trở, ampe kế phải được mắc",
    "options": [
-    "24 Ω",
-    "12 Ω",
-    "6 Ω",
-    "3 Ω"
+    "song song với điện trở, chốt (+) về phía cực (+) của nguồn",
+    "nối tiếp với điện trở, chốt (+) về phía cực (−) của nguồn",
+    "nối tiếp với điện trở, chốt (+) về phía cực (+) của nguồn",
+    "song song với điện trở, chốt (+) về phía cực (−) của nguồn"
    ],
    "answer": 2,
-   "explanation": "R tỉ lệ với l nên dài một nửa thì R còn 6 Ω."
+   "explanation": "Ampe kế mắc nối tiếp với vật cần đo; chốt (+) nối về phía cực (+) của nguồn.",
+   "distractorNotes": {
+    "A": "Mắc song song làm ampe kế gần như nối tắt điện trở, vì ampe kế có điện trở rất nhỏ.",
+    "B": "Đúng cách mắc nhưng sai chiều: chốt (+) phải nối về phía cực (+) của nguồn.",
+    "D": "Sai cả cách mắc lẫn chiều chốt; ampe kế phải nối tiếp và chốt (+) về phía cực (+)."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Định luật Ohm cho một điện trở",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đồ thị cường độ dòng điện theo hiệu điện thế của một điện trở có dạng",
+   "options": [
+    "đường thẳng nằm ngang song song trục hoành",
+    "đường thẳng đi qua gốc toạ độ của đồ thị",
+    "đường cong đi lên rồi nằm ngang dần dần",
+    "đường thẳng cắt trục tung tại điểm khác gốc"
+   ],
+   "answer": 1,
+   "explanation": "Vì $I$ tỉ lệ thuận với $U$ nên đồ thị $I$ theo $U$ là đường thẳng đi qua gốc toạ độ.",
+   "distractorNotes": {
+    "A": "Đường nằm ngang nghĩa là $I$ không đổi khi $U$ đổi, trái với định luật Ohm.",
+    "C": "Đường cong chỉ xuất hiện khi điện trở đổi (như dây tóc nóng lên), không phải điện trở không đổi.",
+    "D": "Khi $U=0$ thì $I=0$ nên đồ thị phải đi qua gốc toạ độ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một bạn mắc nhầm vôn kế nối tiếp với bóng đèn rồi đóng khoá. Hiện tượng xảy ra là",
+   "options": [
+    "đèn sáng mạnh hơn bình thường, vôn kế cháy vì dòng quá lớn",
+    "đèn sáng bình thường, vôn kế chỉ đúng hiệu điện thế của đèn",
+    "đèn sáng yếu đi một nửa, vôn kế chỉ đúng số 0 trên mặt",
+    "đèn gần như tắt, vôn kế chỉ gần bằng hiệu điện thế nguồn"
+   ],
+   "answer": 3,
+   "explanation": "Vôn kế có điện trở rất lớn; mắc nối tiếp thì dòng gần bằng 0, đèn tắt và gần như cả hiệu điện thế nguồn đặt lên vôn kế.",
+   "distractorNotes": {
+    "A": "Vôn kế có điện trở rất lớn nên cản dòng mạnh, dòng không thể lớn.",
+    "B": "Đó là kết quả khi mắc đúng (song song); mắc nối tiếp thì mạch gần như hở.",
+    "C": "Vôn kế vẫn có hiệu điện thế đặt vào nên kim không đứng ở 0."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Định luật Ohm cho một điện trở",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên đồ thị $I$ theo $U$ (trục đứng là $I$), dây có đường biểu diễn dốc hơn thì",
+   "options": [
+    "có điện trở lớn hơn, vì đường đi lên nhanh hơn",
+    "có hiệu điện thế đặt vào lớn hơn dây còn lại",
+    "có điện trở nhỏ hơn, vì cùng $U$ cho dòng lớn hơn",
+    "không còn tuân theo định luật Ohm như dây kia"
+   ],
+   "answer": 2,
+   "explanation": "Cùng một $U$, đường dốc hơn cho $I$ lớn hơn nên $R=\\dfrac{U}{I}$ nhỏ hơn.",
+   "distractorNotes": {
+    "A": "Nhầm trục: trục đứng là $I$, dốc hơn nghĩa là cùng $U$ dòng lớn hơn nên cản ít hơn.",
+    "B": "Đồ thị so hai dây ở cùng mức $U$; độ dốc không nói hiệu điện thế đặt vào.",
+    "D": "Đường thẳng qua gốc là đúng định luật Ohm; độ dốc khác nhau chỉ do $R$ khác nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ở nhiệt độ không đổi, điện trở của một dây dẫn kim loại phụ thuộc vào",
+   "options": [
+    "chiều dài, tiết diện và vật liệu làm dây",
+    "chiều dài và tiết diện của dây, không do vật liệu",
+    "hiệu điện thế đặt vào và tiết diện của dây",
+    "cường độ dòng điện qua dây và vật liệu dây"
+   ],
+   "answer": 0,
+   "explanation": "Bài nêu $R=\\rho\\dfrac{l}{S}$: $R$ do chiều dài, tiết diện và vật liệu quyết định, không do $U$ hay $I$.",
+   "distractorNotes": {
+    "B": "Bỏ sót vật liệu: điện trở suất $\\rho$ của dây cũng quyết định $R$.",
+    "C": "Hiệu điện thế không làm đổi $R$; $U$ đổi thì $I$ đổi, thương $\\dfrac{U}{I}$ vẫn như cũ.",
+    "D": "$I$ là hệ quả của $U$ và $R$, không phải nguyên nhân làm $R$ thay đổi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một điện trở $15\\ \\Omega$ đang mắc vào $3\\ \\text{V}$. Tăng hiệu điện thế lên $6\\ \\text{V}$ (nhiệt độ không đổi) thì",
+   "options": [
+    "điện trở tăng lên $30\\ \\Omega$, cường độ dòng điện giữ nguyên",
+    "điện trở còn $7{,}5\\ \\Omega$, cường độ dòng điện tăng gấp bốn",
+    "điện trở vẫn $15\\ \\Omega$, cường độ dòng điện cũng giữ nguyên",
+    "điện trở vẫn $15\\ \\Omega$, cường độ dòng điện tăng gấp đôi"
+   ],
+   "answer": 3,
+   "explanation": "$R$ do chính dây quyết định nên không đổi; $I=\\dfrac{U}{R}$ tăng gấp đôi khi $U$ tăng gấp đôi.",
+   "distractorNotes": {
+    "A": "Hiểu $R=\\dfrac{U}{I}$ thành $R$ tỉ lệ thuận với $U$; thật ra $R$ do dây quyết định.",
+    "B": "Nhầm $R$ tỉ lệ nghịch với $U$; $R$ không đổi theo $U$.",
+    "C": "Quên $I=\\dfrac{U}{R}$: $R$ không đổi mà $U$ tăng gấp đôi thì $I$ phải tăng gấp đôi."
+   }
   },
   {
    "type": "multiple_choice",
@@ -184,15 +183,228 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Đổi đúng: $4{,}7\\ \\text{k}\\Omega$ bằng",
+   "question": "Đơn vị đo điện trở là",
    "options": [
-    "$47\\ \\Omega$",
-    "$470\\ \\Omega$",
-    "$4\\,700\\ \\Omega$",
-    "$4\\,700\\,000\\ \\Omega$"
+    "vôn (V)",
+    "ôm ($\\Omega$)",
+    "ampe (A)",
+    "oát (W)"
+   ],
+   "answer": 1,
+   "explanation": "Từ $R=\\dfrac{U}{I}$, điện trở đo bằng ôm ($\\Omega$).",
+   "distractorNotes": {
+    "A": "Vôn là đơn vị của hiệu điện thế, không phải của điện trở.",
+    "C": "Ampe là đơn vị của cường độ dòng điện.",
+    "D": "Oát là đơn vị của công suất, không dùng cho điện trở trong bài này."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Định luật Ohm cho một điện trở",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Định luật Ohm cho một điện trở được viết là",
+   "options": [
+    "$I=U\\cdot R$",
+    "$I=\\dfrac{R}{U}$",
+    "$I=\\dfrac{U}{R}$",
+    "$I=\\dfrac{1}{U\\,R}$"
    ],
    "answer": 2,
-   "explanation": "1 kΩ = 1000 Ω nên 4,7 kΩ = 4700 Ω."
+   "explanation": "Định luật Ohm: $I$ tỉ lệ thuận với $U$ và tỉ lệ nghịch với $R$, tức $I=\\dfrac{U}{R}$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia: $R$ càng lớn thì $I$ phải càng nhỏ chứ không lớn.",
+    "B": "Đảo tử và mẫu: như vậy $U$ lớn lại làm $I$ nhỏ, ngược định luật.",
+    "D": "Cả $U$ và $R$ đều ở mẫu số, trái với việc $I$ tỉ lệ thuận với $U$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật Ohm cho một điện trở",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên hiệu điện thế, thay một điện trở bằng điện trở lớn gấp ba lần thì cường độ dòng điện",
+   "options": [
+    "tăng lên gấp ba lần",
+    "giảm còn một phần ba",
+    "không thay đổi",
+    "giảm còn một phần chín"
+   ],
+   "answer": 1,
+   "explanation": "$I=\\dfrac{U}{R}$ với $U$ không đổi, $R$ gấp 3 thì $I$ giảm còn một phần ba.",
+   "distractorNotes": {
+    "A": "Ngược chiều: $I$ tỉ lệ nghịch với $R$ nên $R$ tăng thì $I$ giảm.",
+    "C": "Quên $I=\\dfrac{U}{R}$: $U$ giữ nguyên nhưng $R$ đổi thì $I$ đổi.",
+    "D": "Bình phương nhầm: $I$ tỉ lệ nghịch với $R$, không phải với $R^2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Điện trở của một dây dẫn đồng chất được tính bằng",
+   "options": [
+    "$R=\\rho\\,\\dfrac{l}{S}$",
+    "$R=\\rho\\,\\dfrac{S}{l}$",
+    "$R=\\dfrac{l\\,S}{\\rho}$",
+    "$R=\\dfrac{\\rho}{l\\,S}$"
+   ],
+   "answer": 0,
+   "explanation": "$R=\\rho\\dfrac{l}{S}$: tỉ lệ thuận với chiều dài, tỉ lệ nghịch với tiết diện.",
+   "distractorNotes": {
+    "B": "Đảo $l$ và $S$: như vậy dây dài hơn lại cản ít hơn.",
+    "C": "Đưa $\\rho$ xuống mẫu và $S$ lên tử: vật liệu cản nhiều lại cho $R$ nhỏ.",
+    "D": "Đưa $l$ xuống mẫu: dây càng dài $R$ lại càng nhỏ, trái với thí nghiệm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai dây cùng vật liệu, cùng tiết diện, dây thứ hai dài gấp đôi dây thứ nhất. Điện trở dây thứ hai so với dây thứ nhất",
+   "options": [
+    "nhỏ bằng một nửa",
+    "lớn gấp bốn lần",
+    "bằng nhau vì cùng vật liệu",
+    "lớn gấp đôi"
+   ],
+   "answer": 3,
+   "explanation": "$R=\\rho\\dfrac{l}{S}$ với $\\rho$, $S$ như nhau, $l$ gấp đôi nên $R$ gấp đôi.",
+   "distractorNotes": {
+    "A": "Ngược chiều: dây dài hơn thì cản trở dòng điện nhiều hơn.",
+    "B": "Bình phương nhầm: $R$ tỉ lệ thuận với $l$, không với $l^2$.",
+    "C": "Cùng vật liệu chưa đủ; chiều dài khác thì $R$ khác."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trước khi thay vào $R=\\rho\\dfrac{l}{S}$, tiết diện $0{,}1\\ \\text{mm}^2$ phải đổi thành",
+   "options": [
+    "$1\\cdot10^{-6}\\ \\text{m}^2$",
+    "$1\\cdot10^{-4}\\ \\text{m}^2$",
+    "$1\\cdot10^{-7}\\ \\text{m}^2$",
+    "$1\\cdot10^{-2}\\ \\text{m}^2$"
+   ],
+   "answer": 2,
+   "explanation": "$1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$ nên $0{,}1\\ \\text{mm}^2=1\\cdot10^{-7}\\ \\text{m}^2$.",
+   "distractorNotes": {
+    "A": "Đây là $1\\ \\text{mm}^2$; quên hệ số $0{,}1$ của đề.",
+    "B": "Dùng nhầm hệ số của cm$^2$; $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$.",
+    "D": "Lấy nhầm hệ số: $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$ nên $0{,}1\\ \\text{mm}^2$ không thể là $10^{-2}\\ \\text{m}^2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đặt cùng một hiệu điện thế vào hai dây: dây (1) cho dòng $0{,}3\\ \\text{A}$, dây (2) cho dòng $0{,}1\\ \\text{A}$. Điện trở dây (2) so với dây (1)",
+   "options": [
+    "nhỏ hơn ba lần",
+    "lớn gấp ba lần",
+    "lớn gấp chín lần",
+    "bằng nhau vì cùng hiệu điện thế"
+   ],
+   "answer": 1,
+   "explanation": "Cùng $U$ thì $R=\\dfrac{U}{I}$: $I$ nhỏ gấp ba lần nên $R$ lớn gấp ba lần.",
+   "distractorNotes": {
+    "A": "Ngược chiều: cùng $U$ mà dòng nhỏ hơn thì cản nhiều hơn.",
+    "C": "Bình phương nhầm: $R$ tỉ lệ nghịch với $I$, không phải $I^2$.",
+    "D": "Cùng $U$ nhưng $I$ khác nên $R=\\dfrac{U}{I}$ khác."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mắc dây A rồi dây B vào cùng một mạch, nguồn $3\\ \\text{V}$. Vôn kế đều chỉ $3{,}0\\ \\text{V}$; ampe kế chỉ $0{,}30\\ \\text{A}$ với dây A và $0{,}15\\ \\text{A}$ với dây B. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Dây B có điện trở nhỏ hơn vì dòng điện qua nó nhỏ hơn.",
+     "answer": false
+    },
+    {
+     "text": "Dây B cản trở dòng điện nhiều hơn dây A.",
+     "answer": true
+    },
+    {
+     "text": "Điện trở của dây A là $10\\ \\Omega$.",
+     "answer": true
+    },
+    {
+     "text": "Hai dây có điện trở bằng nhau vì vôn kế đều chỉ $3{,}0\\ \\text{V}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: dòng nhỏ thì $R$ lớn. b) đúng: cùng $U$, dòng nhỏ hơn thì cản nhiều hơn. c) đúng: $R=3:0{,}30=10\\ \\Omega$. d) sai: $I$ khác nhau nên $R$ khác nhau.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì dòng nhỏ ở cùng $U$ nghĩa là $R=\\dfrac{U}{I}$ lớn hơn.",
+    "1": "Không thể coi là sai vì cùng hiệu điện thế mà dòng qua dây B nhỏ hơn.",
+    "2": "Không thể coi là sai vì $R=\\dfrac{3}{0{,}30}=10\\ \\Omega$.",
+    "3": "Không thể coi là đúng vì điện trở tính bằng $\\dfrac{U}{I}$ nên phải xét cả hai số đo."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Điện trở. Định luật Ohm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một bạn lắp mạch đo cường độ dòng điện và hiệu điện thế cho một điện trở $R$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Vôn kế được mắc song song với điện trở cần đo.",
+     "answer": true
+    },
+    {
+     "text": "Mắc vôn kế nối tiếp với bóng đèn thì đèn sáng mạnh hơn bình thường.",
+     "answer": false
+    },
+    {
+     "text": "Chốt (+) của hai dụng cụ đo nối về phía cực (−) của nguồn.",
+     "answer": false
+    },
+    {
+     "text": "Ampe kế được mắc nối tiếp với điện trở cần đo.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng: vôn kế song song. b) sai: vôn kế nối tiếp làm mạch gần như hở, đèn tắt. c) sai: chốt (+) nối về cực (+) của nguồn. d) đúng: ampe kế nối tiếp.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì vôn kế đo hiệu điện thế giữa hai đầu vật nên phải song song với vật.",
+    "1": "Không thể coi là đúng vì vôn kế có điện trở rất lớn nên mạch gần như hở và đèn gần như không sáng.",
+    "2": "Không thể coi là đúng vì chốt (+) phải nối về phía cực (+) của nguồn.",
+    "3": "Không thể coi là sai vì ampe kế đo dòng qua vật nên phải nằm trên cùng đường đi với vật."
+   }
   },
   {
    "type": "true_false",
@@ -201,186 +413,138 @@
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về một điện trở khi hiệu điện thế U thay đổi (nhiệt độ không đổi):",
-   "statements": [
-    {
-     "text": "R giữ nguyên khi U tăng.",
-     "answer": true
-    },
-    {
-     "text": "I tăng khi U tăng.",
-     "answer": true
-    },
-    {
-     "text": "R tỉ lệ thuận với U.",
-     "answer": false
-    },
-    {
-     "text": "Đồ thị I theo U là đường thẳng qua gốc toạ độ.",
-     "answer": true
-    }
-   ],
-   "explanation": "R do dây quyết định, không do U; I tỉ lệ thuận với U nên đồ thị là đường thẳng qua gốc."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về $R = \\rho\\dfrac{l}{S}$:",
+   "question": "Một nhóm đặt vào đoạn dây constantan các hiệu điện thế $1{,}5;\\ 3{,}0;\\ 4{,}5;\\ 6{,}0\\ \\text{V}$ và đọc được các cường độ $0{,}08;\\ 0{,}15;\\ 0{,}22;\\ 0{,}30\\ \\text{A}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Dây càng dài thì R càng lớn.",
+     "text": "Hiệu điện thế tăng thì cường độ dòng điện tăng gần đúng cùng tỉ lệ.",
      "answer": true
     },
     {
-     "text": "Tiết diện càng lớn thì R càng lớn.",
+     "text": "Điện trở của dây tăng gấp đôi khi hiệu điện thế tăng gấp đôi.",
      "answer": false
     },
     {
-     "text": "ρ càng nhỏ thì vật liệu dẫn điện càng tốt.",
-     "answer": true
+     "text": "Kết quả cho thấy cường độ dòng điện tỉ lệ nghịch với hiệu điện thế.",
+     "answer": false
     },
     {
-     "text": "S phải đổi ra m² khi thay số.",
+     "text": "Lần đo thứ nhất lệch nhiều nhất chủ yếu vì dòng nhỏ nên sai lệch khi đọc kim chiếm tỉ lệ lớn.",
      "answer": true
     }
    ],
-   "explanation": "R tỉ lệ thuận với l, tỉ lệ nghịch với S; ρ nhỏ dẫn điện tốt; 1 mm² = 10⁻⁶ m²."
+   "explanation": "a) đúng: $I$ tỉ lệ thuận với $U$. b) sai: $R$ giữ nguyên. c) sai: $I$ tỉ lệ nghịch với $R$, không với $U$. d) đúng: sai số đọc kim lớn hơn khi dòng nhỏ.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $U$ gấp 2, 3, 4 lần thì $I$ cũng gấp gần chừng ấy lần.",
+    "1": "Không thể coi là đúng vì thương $\\dfrac{U}{I}$ vẫn quanh $20\\ \\Omega$, nên $R$ không đổi.",
+    "2": "Không thể coi là đúng vì $I$ tăng khi $U$ tăng, tức tỉ lệ thuận; tỉ lệ nghịch là với $R$.",
+    "3": "Không thể coi là sai vì cùng một sai lệch khi đọc kim, dòng nhỏ $0{,}08\\ \\text{A}$ bị lệch theo tỉ lệ lớn hơn dòng $0{,}30\\ \\text{A}$."
+   }
   },
   {
    "type": "true_false",
-   "kind": "tinh_nhanh",
-   "topic": "Điện trở. Định luật Ohm",
+   "kind": "cong_thuc",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Điện trở 15 Ω mắc vào 3 V rồi tăng lên 6 V:",
+   "theorySection": 1,
+   "question": "Lần lượt mắc bốn dây vào cùng một nguồn. Dây (1): constantan dài $1\\ \\text{m}$, tiết diện $S$. Dây (2): constantan dài $2\\ \\text{m}$, tiết diện $S$. Dây (3): constantan dài $1\\ \\text{m}$, tiết diện $2S$. Dây (4): nichrome dài $1\\ \\text{m}$, tiết diện $S$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Lúc đầu I = 0,2 A.",
-     "answer": true
-    },
-    {
-     "text": "Sau khi tăng, I = 0,4 A.",
-     "answer": true
-    },
-    {
-     "text": "Sau khi tăng, R = 30 Ω.",
+     "text": "Điện trở dây (4) nhỏ hơn dây (1) vì nichrome có điện trở suất lớn hơn.",
      "answer": false
     },
     {
-     "text": "I tăng gấp đôi.",
+     "text": "Điện trở của dây không phụ thuộc tiết diện, chỉ phụ thuộc chiều dài và vật liệu.",
+     "answer": false
+    },
+    {
+     "text": "Điện trở dây (2) gấp đôi điện trở dây (1).",
+     "answer": true
+    },
+    {
+     "text": "Điện trở dây (3) bằng một nửa điện trở dây (1).",
      "answer": true
     }
    ],
-   "explanation": "R vẫn 15 Ω; I = 3/15 = 0,2 A rồi 6/15 = 0,4 A."
+   "explanation": "a) sai: $\\rho$ lớn thì $R$ lớn. b) sai: $R$ có phụ thuộc $S$. c) đúng: $R\\sim l$. d) đúng: $R\\sim\\dfrac{1}{S}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì điện trở suất lớn hơn làm $R$ lớn hơn, không nhỏ hơn.",
+    "1": "Không thể coi là đúng vì $R=\\rho\\dfrac{l}{S}$ có $S$ ở mẫu số nên $R$ phụ thuộc tiết diện.",
+    "2": "Không thể coi là sai vì cùng vật liệu và tiết diện, chiều dài gấp đôi thì $R$ gấp đôi.",
+    "3": "Không thể coi là sai vì tiết diện gấp đôi thì $R$ giảm một nửa."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Dây nung của máy sấy tóc làm bằng nichrome, dài $5\\ \\text{m}$, tiết diện $0{,}1\\ \\text{mm}^2$, điện trở suất $1{,}1\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$, mắc vào $220\\ \\text{V}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Dùng dây dài $5\\ \\text{m}$ nhưng tiết diện $0{,}2\\ \\text{mm}^2$ thì dòng điện giảm còn $2\\ \\text{A}$.",
+     "answer": false
+    },
+    {
+     "text": "Điện trở của dây nung là $55\\ \\Omega$.",
+     "answer": true
+    },
+    {
+     "text": "Cường độ dòng điện qua dây là $4\\ \\text{A}$.",
+     "answer": true
+    },
+    {
+     "text": "Dùng dây dài $10\\ \\text{m}$, cùng tiết diện, thì dòng điện tăng lên $8\\ \\text{A}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: tiết diện gấp đôi thì $I=8\\ \\text{A}$. b) đúng: $R=55\\ \\Omega$. c) đúng: $I=4\\ \\text{A}$. d) sai: dài gấp đôi thì $I=2\\ \\text{A}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì tiết diện gấp đôi nên $R=27{,}5\\ \\Omega$ và dòng tăng lên $8\\ \\text{A}$.",
+    "1": "Không thể coi là sai vì $R=1{,}1\\cdot10^{-6}\\cdot\\dfrac{5}{10^{-7}}=55\\ \\Omega$.",
+    "2": "Không thể coi là sai vì $I=\\dfrac{220}{55}=4\\ \\text{A}$.",
+    "3": "Không thể coi là đúng vì dây dài gấp đôi nên $R=110\\ \\Omega$ và dòng giảm còn $2\\ \\text{A}$."
+   }
   },
   {
    "type": "true_false",
    "kind": "hien_tuong",
-   "topic": "Định luật Ohm cho một điện trở",
+   "topic": "Điện trở. Định luật Ohm",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về đồ thị I theo U của hai dây (trục đứng là I):",
+   "theorySection": 0,
+   "question": "Lắp bóng LED đỏ nối tiếp với một linh kiện nhỏ như hạt đậu vào pin $9\\ \\text{V}$ thì LED sáng đều; bỏ linh kiện đó ra, nối LED thẳng vào pin thì LED loé chói rồi cháy. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Đường dốc hơn ứng với điện trở nhỏ hơn.",
+     "text": "LED cháy khi nối thẳng vào pin vì dòng điện qua nó quá lớn.",
      "answer": true
     },
     {
-     "text": "Đường dốc hơn ứng với điện trở lớn hơn.",
+     "text": "Linh kiện đó làm hiệu điện thế của pin tăng lên nên LED sáng đều.",
      "answer": false
     },
     {
-     "text": "Cùng U, dây có I nhỏ hơn thì cản trở nhiều hơn.",
-     "answer": true
+     "text": "Linh kiện đó tích điện cho pin nên pin bền hơn.",
+     "answer": false
     },
     {
-     "text": "Đồ thị của điện trở đi qua gốc toạ độ.",
+     "text": "Linh kiện đó là một điện trở, nó làm dòng điện qua LED nhỏ đi.",
      "answer": true
     }
    ],
-   "explanation": "Cùng U mà I lớn hơn thì R nhỏ hơn, đường dốc hơn."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Điện trở. Định luật Ohm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hiệu điện thế 6 V, ampe kế chỉ 200 mA. Điện trở của dây là bao nhiêu Ω?",
-   "answer": "30",
-   "explanation": "Đổi 0,2 A; R = 6/0,2 = 30 Ω."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Định luật Ohm cho một điện trở",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Điện trở 55 Ω đặt vào 220 V. Cường độ dòng điện là bao nhiêu A?",
-   "answer": "4",
-   "explanation": "I = 220/55 = 4 A."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Dây constantan (ρ = 0,5·10⁻⁶ Ω·m) dài 4 m, S = 0,5 mm². Điện trở là bao nhiêu Ω?",
-   "answer": "4",
-   "explanation": "R = 0,5·10⁻⁶·4/(0,5·10⁻⁶) = 4 Ω."
-  },
-  {
-   "type": "short_answer",
-   "kind": "don_vi",
-   "topic": "Điện trở. Định luật Ohm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "1 MΩ bằng $10^n$ Ω. Tìm n.",
-   "answer": "6",
-   "explanation": "1 MΩ = 1 000 000 Ω = 10⁶ Ω."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Dây 12 Ω gập đôi thành dây hai sợi chập nhau (dài một nửa, tiết diện gấp đôi). Điện trở mới là bao nhiêu Ω?",
-   "answer": "3",
-   "explanation": "R giảm một nửa do l và giảm một nửa do S: 12/4 = 3 Ω."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Điện trở phụ thuộc kích thước và vật liệu dây dẫn",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Dây nichrome 5 m, R = 55 Ω ở 220 V. Muốn I = 2 A với cùng tiết diện thì dây dài bao nhiêu m?",
-   "answer": "10",
-   "explanation": "R' = 220/2 = 110 Ω gấp đôi nên l' = 10 m."
+   "explanation": "a) đúng: dòng quá lớn làm cháy LED. b) sai: $U$ của pin không đổi. c) sai: nó không tích điện. d) đúng: nó là điện trở.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì không có điện trở cản dòng nên dòng qua LED vượt mức chịu được.",
+    "1": "Không thể coi là đúng vì hiệu điện thế do pin quyết định, linh kiện không làm nó tăng.",
+    "2": "Không thể coi là đúng vì linh kiện này không tích điện mà chỉ cản trở dòng điện.",
+    "3": "Không thể coi là sai vì điện trở cản trở dòng điện nên dòng qua LED giảm."
+   }
   }
  ]
 }

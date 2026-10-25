@@ -2,21 +2,16 @@
  "lesson_id": 153,
  "lesson_title": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
  "item_id": 388,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 8,
-   "cong_thuc": 11
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "removed": [
-   {
-    "question": "Thả $200\\ \\text{g}$ đá $-20\\,^\\circ\\text{C}$ vào $500\\ \\text{g}$ nước $20\\,^\\circ\\text{C}$. Nhiệt $Q_{\\text{max}}$ nước toả khi nguội về $0\\,^\\circ\\text{C}$ là bao nhiêu J?",
-    "reason": "sai: Phép tính đúng ($42000$ J) nhưng đáp án dài 5 ký tự, vượt giới hạn 4 ký tự; nên hỏi theo dạng $a\\cdot10^3$ J hoặc theo kJ."
-   }
-  ]
+  "removed": []
  },
  "questions": [
   {
@@ -27,15 +22,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Nhiệt dung riêng $c$ của một chất là:",
+   "question": "Nhiệt dung riêng của một chất cho biết",
    "options": [
-    "Nhiệt lượng làm $1\\ \\text{kg}$ chất đó nóng thêm $1\\,^\\circ\\text{C}$",
-    "Nhiệt lượng làm $1\\ \\text{kg}$ chất đó tan hoàn toàn",
-    "Nhiệt lượng vật chứa ở nhiệt độ hiện tại",
-    "Nhiệt lượng làm cả vật nóng thêm $1\\,^\\circ\\text{C}$"
+    "nhiệt lượng làm 1 kg chất đó nóng thêm $1\\,^\\circ\\text{C}$",
+    "nhiệt lượng làm 1 kg chất đó nóng chảy hoàn toàn",
+    "nhiệt độ chất đó đạt được sau khi nhận 1 J nhiệt",
+    "nhiệt lượng 1 kg chất đó đang chứa ở nhiệt độ hiện tại"
    ],
    "answer": 0,
-   "explanation": "Mục II: $c$ là nhiệt lượng làm $1\\ \\text{kg}$ chất nóng thêm $1\\,^\\circ\\text{C}$, đơn vị J/(kg·K)."
+   "explanation": "$c$ là nhiệt lượng cần để $1\\ \\text{kg}$ chất nóng thêm $1\\,^\\circ\\text{C}$, đơn vị $\\text{J/(kg·K)}$.",
+   "distractorNotes": {
+    "B": "Nhầm với nhiệt nóng chảy riêng $\\lambda$; nhiệt dung riêng chỉ liên quan tới việc nóng thêm $1\\,^\\circ\\text{C}$.",
+    "C": "Nhầm với độ tăng nhiệt độ; $c$ là nhiệt lượng chứ không phải nhiệt độ.",
+    "D": "Vật không chứa nhiệt lượng; nhiệt lượng chỉ có khi nhiệt năng được truyền."
+   }
   },
   {
    "type": "multiple_choice",
@@ -45,15 +45,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Vật có nhiệt dung riêng $c$ lớn thì khi nhận cùng nhiệt lượng (cùng khối lượng) sẽ:",
+   "question": "Ban đêm vùng ven biển ấm hơn vùng đất liền sâu vì nước biển",
    "options": [
-    "Nóng lên nhanh hơn",
-    "Nóng lên chậm hơn",
-    "Nóng lên như mọi vật khác",
-    "Không nóng lên"
+    "có nhiệt dung riêng nhỏ nên nguội chậm",
+    "có nhiệt dung riêng lớn nên nguội nhanh hơn đất",
+    "có nhiệt dung riêng lớn nên nguội chậm",
+    "hấp thụ thêm nhiệt từ Mặt Trời trong đêm tối"
    ],
-   "answer": 1,
-   "explanation": "Từ $\\Delta t=\\dfrac{Q}{mc}$, $c$ lớn thì $\\Delta t$ nhỏ: nóng chậm, nguội chậm."
+   "answer": 2,
+   "explanation": "Nước có $c$ rất lớn nên nóng chậm, nguội chậm; ban đêm biển giữ ấm lâu hơn đất liền.",
+   "distractorNotes": {
+    "A": "Đảo quan hệ; $c$ nhỏ thì nguội nhanh, nhiệt dung riêng lớn mới giữ nhiệt lâu.",
+    "B": "Hiểu ngược; $c$ lớn khiến vật cần mất nhiều nhiệt hơn mới giảm một độ.",
+    "D": "Ban đêm không có nguồn nhiệt từ Mặt Trời; biển chỉ toả nhiệt chậm hơn đất."
+   }
   },
   {
    "type": "multiple_choice",
@@ -63,15 +68,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Khi hai vật trao đổi nhiệt và bỏ qua hao phí, nhiệt truyền cho đến khi:",
+   "question": "Hai vật có nhiệt độ khác nhau tiếp xúc trực tiếp, bỏ qua hao phí. Nhiệt được truyền",
    "options": [
-    "Hai vật có cùng nhiệt lượng",
-    "Hai vật có nhiệt độ bằng nhau",
-    "Vật nóng hết nhiệt",
-    "Vật lạnh có nhiệt độ cao hơn"
+    "từ vật có nhiệt lượng lớn hơn sang vật có nhiệt lượng nhỏ hơn",
+    "từ vật nóng hơn sang vật lạnh hơn cho tới khi nhiệt độ bằng nhau",
+    "từ vật có khối lượng lớn hơn sang vật có khối lượng nhỏ hơn",
+    "từ vật lạnh hơn sang vật nóng hơn để hai vật cân bằng nhiệt"
    ],
    "answer": 1,
-   "explanation": "Mục III: nhiệt truyền từ vật nóng sang vật lạnh, dừng khi nhiệt độ bằng nhau ($t_{cb}$)."
+   "explanation": "Nhiệt tự truyền từ vật nóng hơn sang vật lạnh hơn và dừng khi nhiệt độ bằng nhau, gọi là $t_{cb}$.",
+   "distractorNotes": {
+    "A": "Nhiệt lượng không phải thứ vật có sẵn; chiều truyền nhiệt do nhiệt độ quyết định.",
+    "C": "Khối lượng không quyết định chiều truyền nhiệt, chỉ ảnh hưởng độ lớn nhiệt dung.",
+    "D": "Ngược chiều; nhiệt tự truyền từ nơi nhiệt độ cao tới nơi nhiệt độ thấp."
+   }
   },
   {
    "type": "multiple_choice",
@@ -81,15 +91,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Khi lập phương trình cân bằng nhiệt với nước trong cốc nhôm, cần lưu ý:",
+   "question": "Thả vật nóng vào cốc nhôm chứa nước lạnh (bỏ qua mất nhiệt ra môi trường). Khi lập phương trình cân bằng nhiệt, cốc nhôm",
    "options": [
-    "Bỏ qua cốc vì cốc không thu nhiệt",
-    "Cốc cũng thu nhiệt nên phải tính vào phương trình",
-    "Chỉ tính cốc, bỏ nước",
-    "Lấy trung bình cộng nhiệt độ"
+    "chỉ giữ nước nên không cần tính nhiệt lượng nào",
+    "cũng toả nhiệt nên phải tính vào vế toả nhiệt",
+    "giữ nguyên nhiệt độ nên không cần tính vào",
+    "cũng thu nhiệt nên phải tính vào vế thu nhiệt"
    ],
-   "answer": 1,
-   "explanation": "Mục III: bình chứa cũng nóng lên hay nguội đi nên phải tính."
+   "answer": 3,
+   "explanation": "Bình chứa cũng nóng lên hay nguội đi nên phải tính nhiệt lượng nó trao đổi vào phương trình $Q_{toả}=Q_{thu}$.",
+   "distractorNotes": {
+    "A": "Bình chứa cũng nóng lên theo nước nên có trao đổi nhiệt, không thể bỏ qua.",
+    "B": "Cốc ban đầu lạnh như nước nên nóng lên, tức là thu nhiệt chứ không toả.",
+    "C": "Cốc đạt cùng nhiệt độ cân bằng với nước nên nhiệt độ của nó thay đổi."
+   }
   },
   {
    "type": "multiple_choice",
@@ -99,33 +114,89 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Trong lúc nước đá đang tan ở áp suất chuẩn, nhiệt độ của nó:",
+   "question": "Nước đá đang tan ở $0\\,^\\circ\\text{C}$ được đun đều. Trong lúc đá còn đang tan",
    "options": [
-    "Tăng đều",
-    "Giảm dần",
-    "Không đổi ở $0\\,^\\circ\\text{C}$ dù vẫn nhận nhiệt",
-    "Không đổi vì không nhận nhiệt"
+    "nhiệt độ tăng dần vì đá liên tục nhận nhiệt",
+    "nhiệt độ giảm xuống vì đá cần nhiệt để tan",
+    "nhiệt độ không đổi dù đá vẫn nhận nhiệt",
+    "đá không nhận thêm nhiệt nên nhiệt độ không đổi"
    ],
    "answer": 2,
-   "explanation": "Mục IV: suốt lúc chuyển thể nhiệt độ không đổi, nhiệt nhận vào dùng để đổi thể."
+   "explanation": "Khi chuyển thể nhiệt độ không đổi; nhiệt nhận vào dùng để đổi thể ($Q=\\lambda m$), không làm nóng thêm.",
+   "distractorNotes": {
+    "A": "Nhiệt nhận vào dùng để đổi thể, không làm nóng thêm nên nhiệt độ không tăng.",
+    "B": "Đá lấy nhiệt từ nguồn chứ không tự lạnh đi; nhiệt độ vẫn giữ $0\\,^\\circ\\text{C}$.",
+    "D": "Nhiệt độ đứng yên không có nghĩa là không nhận nhiệt; đá vẫn nhận nhiệt suốt lúc tan."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "hien_tuong",
    "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
    "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Bỏng hơi nước $100\\,^\\circ\\text{C}$ nặng hơn bỏng nước sôi $100\\,^\\circ\\text{C}$ cùng khối lượng vì",
+   "options": [
+    "hơi nước còn toả thêm nhiệt khi ngưng tụ trên da",
+    "hơi nước có nhiệt độ cao hơn nước sôi",
+    "hơi nước có nhiệt dung riêng lớn hơn nước sôi",
+    "hơi nước có khối lượng lớn hơn nước sôi"
+   ],
+   "answer": 0,
+   "explanation": "Hơi ngưng tụ trên da còn toả thêm nhiệt $Lm$ so với nước sôi, nên gây bỏng nặng hơn.",
+   "distractorNotes": {
+    "B": "Cả hai đều ở $100\\,^\\circ\\text{C}$ nên nhiệt độ không phải lí do.",
+    "C": "Nhiệt dung riêng không giải thích được; khác biệt nằm ở nhiệt toả ra khi ngưng tụ.",
+    "D": "Đề đã cho cùng khối lượng; khác biệt do thể của chất chứ không do khối lượng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Trên đồ thị nhiệt độ theo thời gian khi đun đều một khối nước đá, đoạn nằm ngang cho biết",
+   "options": [
+    "chất ngừng nhận nhiệt từ nguồn",
+    "chất đang nóng lên đều trong một thể",
+    "nhiệt dung riêng của chất bằng không",
+    "chất đang chuyển thể, nhiệt độ đứng yên"
+   ],
+   "answer": 3,
+   "explanation": "Đoạn dốc là một thể đang nóng lên ($P\\Delta\\tau=mc\\Delta t$), đoạn ngang là chuyển thể ($P\\Delta\\tau=\\lambda m$ hoặc $Lm$).",
+   "distractorNotes": {
+    "A": "Nguồn vẫn cấp nhiệt đều; nhiệt chỉ không làm tăng nhiệt độ.",
+    "B": "Đó là đoạn dốc; đoạn ngang tương ứng nhiệt độ không đổi.",
+    "C": "Nhiệt dung riêng là hằng số của chất, không bằng không; chỉ là nhiệt dùng để đổi thể."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
+   "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Trên đồ thị nhiệt độ theo thời gian khi đun đều khối nước đá, đoạn nằm ngang ứng với:",
+   "question": "Thả đá ở dưới $0\\,^\\circ\\text{C}$ vào nước ấm trong bình cách nhiệt. Muốn biết đá có tan hết không, so nhiệt lượng nước toả khi nguội về $0\\,^\\circ\\text{C}$ với",
    "options": [
-    "Vật ở một thể, nhiệt độ tăng",
-    "Vật đang chuyển thể, nhiệt độ đứng yên",
-    "Nguồn nhiệt ngừng cấp",
-    "Vật toả nhiệt"
+    "chỉ nhiệt nóng chảy $\\lambda m$ của khối đá đang ở $0\\,^\\circ\\text{C}$",
+    "nhiệt lượng đưa đá lên $0\\,^\\circ\\text{C}$ rồi làm tan hết",
+    "nhiệt lượng làm toàn bộ nước trong bình đông đặc ở $0\\,^\\circ\\text{C}$",
+    "nhiệt lượng để đá nóng lên tới $100\\,^\\circ\\text{C}$"
    ],
    "answer": 1,
-   "explanation": "Hình 2: đoạn dốc là một thể, đoạn ngang là đang chuyển thể."
+   "explanation": "Đá tan hết khi $Q_{max}\\ge Q_2=Q_1+\\lambda m_{đ}$, với $Q_1$ là nhiệt đưa đá lên $0\\,^\\circ\\text{C}$.",
+   "distractorNotes": {
+    "A": "Bỏ sót phần nhiệt đưa đá từ nhiệt độ ban đầu lên $0\\,^\\circ\\text{C}$.",
+    "C": "Đó là mốc dành cho việc nước đông hết, không phải mốc để biết đá có tan hết không.",
+    "D": "Đá chỉ cần tan chứ không cần tới nhiệt độ sôi; mốc đúng là tan hết ở $0\\,^\\circ\\text{C}$."
+   }
   },
   {
    "type": "multiple_choice",
@@ -135,245 +206,345 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Công thức nhiệt lượng vật thu vào hoặc toả ra khi thay đổi nhiệt độ là:",
+   "question": "Đun $2\\ \\text{kg}$ nước từ $20\\,^\\circ\\text{C}$ lên $70\\,^\\circ\\text{C}$, biết $c=4200\\ \\text{J/(kg·K)}$. Nhiệt lượng nước nhận là",
    "options": [
-    "$Q=\\dfrac{mc}{\\Delta t}$",
-    "$Q=mc\\Delta t$",
-    "$Q=\\lambda m$",
-    "$Q=\\dfrac{m\\Delta t}{c}$"
-   ],
-   "answer": 1,
-   "explanation": "Mục II: $Q=mc\\Delta t$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Khi không có chuyển thể, nhiệt độ cân bằng của hệ nhiều vật là:",
-   "options": [
-    "$t_{cb}=\\dfrac{\\sum t_i}{n}$",
-    "$t_{cb}=\\dfrac{\\sum m_ic_it_i}{\\sum m_ic_i}$",
-    "$t_{cb}=\\dfrac{\\sum m_ic_i}{\\sum m_ic_it_i}$",
-    "$t_{cb}=\\sum m_it_i$"
-   ],
-   "answer": 1,
-   "explanation": "Mục III: trung bình có trọng số $C_i=m_ic_i$, không phải trung bình cộng."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Hiệu suất đun được tính bằng:",
-   "options": [
-    "$H=\\dfrac{Q_{\\text{tp}}}{Q_{\\text{ích}}}$",
-    "$H=Q_{\\text{ích}}\\cdot Q_{\\text{tp}}$",
-    "$H=\\dfrac{Q_{\\text{ích}}}{Q_{\\text{tp}}}$",
-    "$H=Q_{\\text{tp}}-Q_{\\text{ích}}$"
+    "$210\\,000\\ \\text{J}$",
+    "$8400\\ \\text{J}$",
+    "$420\\,000\\ \\text{J}$",
+    "$588\\,000\\ \\text{J}$"
    ],
    "answer": 2,
-   "explanation": "Mục V: $H=Q_{\\text{ích}}/Q_{\\text{tp}}$, luôn nhỏ hơn $1$."
+   "explanation": "$Q=mc\\Delta t=2\\cdot4200\\cdot(70-20)=420\\,000\\ \\text{J}$.",
+   "distractorNotes": {
+    "A": "Quên nhân với khối lượng $2\\ \\text{kg}$.",
+    "B": "Chỉ lấy $mc$, quên nhân độ tăng nhiệt độ.",
+    "D": "Dùng nhiệt độ cuối $70\\,^\\circ\\text{C}$ thay cho độ tăng $50\\,^\\circ\\text{C}$."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Một phần $H$ của cơ năng $W=mgh$ làm nóng vật: $H\\cdot mgh=mc\\Delta t$. Độ tăng nhiệt độ là:",
-   "options": [
-    "$\\Delta t=\\dfrac{c}{Hgh}$",
-    "$\\Delta t=\\dfrac{Hgh}{c}$",
-    "$\\Delta t=\\dfrac{gh}{Hc}$",
-    "$\\Delta t=\\dfrac{Hmgh}{c}$"
-   ],
-   "answer": 1,
-   "explanation": "Mục V: $m$ ở hai vế triệt tiêu nên $\\Delta t=Hgh/c$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về phương trình cân bằng nhiệt, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Bỏ qua hao phí thì $Q_{\\text{toả}}=Q_{\\text{thu}}$.",
-     "answer": true
-    },
-    {
-     "text": "Nhiệt tự truyền từ vật lạnh sang vật nóng.",
-     "answer": false
-    },
-    {
-     "text": "Bình chứa cũng phải được tính vào phương trình.",
-     "answer": true
-    },
-    {
-     "text": "$t_{cb}$ luôn là trung bình cộng nhiệt độ các vật.",
-     "answer": false
-    }
-   ],
-   "explanation": "Mục III: nhiệt truyền từ nóng sang lạnh; $t_{cb}$ là trung bình có trọng số $m_ic_i$."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Về sự chuyển thể, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Nóng chảy hoàn toàn cần nhiệt $Q=\\lambda m$.",
-     "answer": true
-    },
-    {
-     "text": "Hoá hơi hoàn toàn cần nhiệt $Q=Lm$.",
-     "answer": true
-    },
-    {
-     "text": "Đông đặc thì toả ra đúng lượng nhiệt đã thu khi nóng chảy.",
-     "answer": true
-    },
-    {
-     "text": "Đang chuyển thể thì vật không trao đổi nhiệt.",
-     "answer": false
-    }
-   ],
-   "explanation": "Mục IV: đang chuyển thể nhiệt độ đứng yên nhưng vẫn nhận hay toả nhiệt."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Về biện luận đá thả vào nước, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "$Q_{\\text{max}}$ là nhiệt nước toả khi nguội về $0\\,^\\circ\\text{C}$.",
-     "answer": true
-    },
-    {
-     "text": "$Q_2=Q_1+\\lambda m_{\\text{đ}}$ là nhiệt làm đá tan hết.",
-     "answer": true
-    },
-    {
-     "text": "Nếu $Q_1\\lt Q_{\\text{max}}\\lt Q_2$ thì $t_{cb}=0\\,^\\circ\\text{C}$.",
-     "answer": true
-    },
-    {
-     "text": "Nếu $Q_{\\text{max}}\\gt Q_2$ thì $t_{cb}=0\\,^\\circ\\text{C}$.",
-     "answer": false
-    }
-   ],
-   "explanation": "Mục IV: $Q_{\\text{max}}\\gt Q_2$ nghĩa là đá tan hết và $t_{cb}\\gt0\\,^\\circ\\text{C}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Ấm điện $1000\\ \\text{W}$ có hiệu suất $80\\%$ chạy trong $\\tau$ giây. Các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Điện năng tiêu thụ là $Q_{\\text{tp}}=P\\tau$.",
-     "answer": true
-    },
-    {
-     "text": "Nhiệt có ích là $Q_{\\text{ích}}=0{,}8P\\tau$.",
-     "answer": true
-    },
-    {
-     "text": "Có hao phí thì thời gian đun lâu hơn so với không hao phí.",
-     "answer": true
-    },
-    {
-     "text": "Nhiệt có ích lớn hơn điện năng tiêu thụ.",
-     "answer": false
-    }
-   ],
-   "explanation": "Mục V: $H\\lt1$ nên $Q_{\\text{ích}}\\lt Q_{\\text{tp}}$."
-  },
-  {
-   "type": "short_answer",
    "kind": "tinh_nhanh",
    "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Cùng nhận $42\\,000\\ \\text{J}$, $1\\ \\text{kg}$ nước ($c=4200$) nóng thêm bao nhiêu $^\\circ\\text{C}$?",
-   "answer": "10",
-   "explanation": "$\\Delta t=Q/(mc)=42\\,000/4200=10\\,^\\circ\\text{C}$."
+   "question": "Cùng nhận $12\\,600\\ \\text{J}$, $1\\ \\text{kg}$ nước ($c=4200$) nóng thêm $3\\,^\\circ\\text{C}$. Cũng nhận $12\\,600\\ \\text{J}$, $1\\ \\text{kg}$ chất X có $c=2100\\ \\text{J/(kg·K)}$ nóng thêm",
+   "options": [
+    "$6\\,^\\circ\\text{C}$",
+    "$3\\,^\\circ\\text{C}$",
+    "$1{,}5\\,^\\circ\\text{C}$",
+    "$12\\,^\\circ\\text{C}$"
+   ],
+   "answer": 0,
+   "explanation": "$\\Delta t=\\dfrac Q{mc}$ nên $c$ giảm một nửa thì $\\Delta t$ gấp đôi: $6\\,^\\circ\\text{C}$.",
+   "distractorNotes": {
+    "B": "Cho rằng cùng nhận nhiệt thì nóng như nhau, bỏ qua $c$.",
+    "C": "Nhầm $c$ nhỏ hơn thì nóng chậm hơn; thực ra $c$ nhỏ thì nóng nhanh hơn.",
+    "D": "Nhân bốn lần; $c$ chỉ giảm một nửa nên độ tăng nhiệt độ chỉ gấp đôi."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
    "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Cơ năng làm nóng bi chì ($c=130$), bi rơi từ $26\\ \\text{m}$, $H=50\\%$, $g=10$. Bi nóng thêm bao nhiêu $^\\circ\\text{C}$?",
-   "answer": "1",
-   "explanation": "$\\Delta t=0{,}5\\cdot10\\cdot26/130=1\\,^\\circ\\text{C}$."
+   "theorySection": 2,
+   "question": "Trộn $1\\ \\text{kg}$ nước $80\\,^\\circ\\text{C}$ với $4\\ \\text{kg}$ nước $30\\,^\\circ\\text{C}$ (bỏ qua hao phí). Nhiệt độ cân bằng là",
+   "options": [
+    "$55\\,^\\circ\\text{C}$",
+    "$70\\,^\\circ\\text{C}$",
+    "$50\\,^\\circ\\text{C}$",
+    "$40\\,^\\circ\\text{C}$"
+   ],
+   "answer": 3,
+   "explanation": "$t_{cb}=\\dfrac{1\\cdot80+4\\cdot30}{1+4}=40\\,^\\circ\\text{C}$ (trung bình có trọng số).",
+   "distractorNotes": {
+    "A": "Lấy trung bình cộng hai nhiệt độ, bỏ qua trọng số khối lượng.",
+    "B": "Gán khối lượng chéo cho hai nhiệt độ, khiến kết quả nghiêng về phía nước nóng.",
+    "C": "Lấy hiệu hai nhiệt độ ban đầu, không dùng phương trình cân bằng nhiệt."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "bien_doi",
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
    "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Rót $0{,}5\\ \\text{kg}$ nước $80\\,^\\circ\\text{C}$ vào $1\\ \\text{kg}$ nước $20\\,^\\circ\\text{C}$ (bỏ qua bình). Nhiệt độ cân bằng bao nhiêu $^\\circ\\text{C}$?",
-   "answer": "40",
-   "explanation": "$0{,}5(80-t)=1(t-20)$ nên $t=40\\,^\\circ\\text{C}$."
+   "theorySection": 2,
+   "question": "Cốc nhôm $100\\ \\text{g}$ ($c=880$) chứa $200\\ \\text{g}$ nước $20\\,^\\circ\\text{C}$. Thả vào $150\\ \\text{g}$ đồng ($c=380$) ở $100\\,^\\circ\\text{C}$ (bỏ qua hao phí). Nhiệt độ cân bằng xấp xỉ",
+   "options": [
+    "$25{,}1\\,^\\circ\\text{C}$",
+    "$24{,}6\\,^\\circ\\text{C}$",
+    "$46{,}7\\,^\\circ\\text{C}$",
+    "$60\\,^\\circ\\text{C}$"
+   ],
+   "answer": 1,
+   "explanation": "Nhiệt dung: cốc $88$, nước $840$, đồng $57\\ \\text{J/K}$ nên $t_{cb}=\\dfrac{928\\cdot20+57\\cdot100}{985}\\approx24{,}6\\,^\\circ\\text{C}$.",
+   "distractorNotes": {
+    "A": "Quên cốc nhôm nên bỏ sót phần nhiệt cốc thu.",
+    "C": "Chỉ dùng khối lượng làm trọng số, quên nhiệt dung riêng.",
+    "D": "Lấy trung bình cộng $20$ và $100$, bỏ qua cả khối lượng lẫn $c$."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
    "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Cho $\\lambda=3{,}4\\cdot10^5\\ \\text{J/kg}$. Nhiệt để làm tan hoàn toàn $2\\ \\text{kg}$ đá ở $0\\,^\\circ\\text{C}$ là $a\\cdot10^5\\ \\text{J}$. Tìm $a$ (dùng dấu phẩy).",
-   "answer": "6,8",
-   "explanation": "$Q=\\lambda m=3{,}4\\cdot10^5\\cdot2=6{,}8\\cdot10^5\\ \\text{J}$."
+   "question": "Làm tan hoàn toàn $0{,}5\\ \\text{kg}$ nước đá ở $0\\,^\\circ\\text{C}$, biết $\\lambda=3{,}4\\cdot10^5\\ \\text{J/kg}$. Nhiệt lượng cần cung cấp là",
+   "options": [
+    "$1{,}7\\cdot10^5\\ \\text{J}$",
+    "$3{,}4\\cdot10^5\\ \\text{J}$",
+    "$6{,}8\\cdot10^5\\ \\text{J}$",
+    "$1{,}15\\cdot10^6\\ \\text{J}$"
+   ],
+   "answer": 0,
+   "explanation": "$Q=\\lambda m=3{,}4\\cdot10^5\\cdot0{,}5=1{,}7\\cdot10^5\\ \\text{J}$.",
+   "distractorNotes": {
+    "B": "Quên nhân với khối lượng $0{,}5\\ \\text{kg}$.",
+    "C": "Chia cho khối lượng thay vì nhân; $Q=\\lambda m$.",
+    "D": "Dùng nhiệt hoá hơi riêng $L$ thay cho nhiệt nóng chảy riêng $\\lambda$."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Ấm điện $1500\\ \\text{W}$ có hiệu suất $70\\%$ đun $1\\ \\text{kg}$ nước từ $20\\,^\\circ\\text{C}$ tới $100\\,^\\circ\\text{C}$ ($c=4200$, bỏ qua nhiệt dung ấm). Thời gian đun là",
+   "options": [
+    "$224\\ \\text{s}$",
+    "$157\\ \\text{s}$",
+    "$400\\ \\text{s}$",
+    "$320\\ \\text{s}$"
+   ],
+   "answer": 3,
+   "explanation": "$Q_{ích}=4200\\cdot80=336\\,000\\ \\text{J}$, $Q_{tp}=336\\,000:0{,}7=480\\,000\\ \\text{J}$ nên $\\tau=480\\,000:1500=320\\ \\text{s}$.",
+   "distractorNotes": {
+    "A": "Quên hiệu suất, coi mọi điện năng đều vào nước.",
+    "B": "Nhân với hiệu suất thay vì chia; có hao phí thì phải đun lâu hơn.",
+    "C": "Lấy độ tăng nhiệt độ là $100\\,^\\circ\\text{C}$ thay vì $80\\,^\\circ\\text{C}$."
+   }
+  },
+  {
+   "type": "true_false",
    "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai vật X và Y có cùng khối lượng, cùng nhiệt độ đầu và cùng nhận một nhiệt lượng $Q$. Nhiệt dung riêng của X gấp đôi nhiệt dung riêng của Y.",
+   "statements": [
+    {
+     "text": "Độ tăng nhiệt độ của X gấp đôi độ tăng nhiệt độ của Y.",
+     "answer": false
+    },
+    {
+     "text": "Độ tăng nhiệt độ của X bằng một nửa độ tăng nhiệt độ của Y.",
+     "answer": true
+    },
+    {
+     "text": "Để X nóng thêm $1\\,^\\circ\\text{C}$ cần nhiệt lượng gấp đôi so với Y.",
+     "answer": true
+    },
+    {
+     "text": "Hai vật nóng lên như nhau vì cùng nhận nhiệt lượng $Q$.",
+     "answer": false
+    }
+   ],
+   "explanation": "$\\Delta t=\\dfrac Q{mc}$: cùng $m$ và $Q$ thì $c$ lớn hơn cho $\\Delta t$ nhỏ hơn.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $c$ lớn hơn thì vật nóng chậm hơn, độ tăng nhiệt độ nhỏ hơn.",
+    "1": "Không thể coi là sai vì $\\Delta t=\\dfrac Q{mc}$ nên $c$ gấp đôi thì $\\Delta t$ giảm còn một nửa.",
+    "2": "Không thể coi là sai vì nhiệt cần cho mỗi độ là $mc$, mà $c$ của X gấp đôi.",
+    "3": "Không thể coi là đúng vì độ tăng nhiệt độ còn phụ thuộc $c$, mà hai vật khác $c$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một học sinh bàn về nhiệt độ và nhiệt lượng khi cho các vật tiếp xúc nhau.",
+   "statements": [
+    {
+     "text": "Nhiệt độ cho biết nhiệt sẽ truyền từ vật nào sang vật nào.",
+     "answer": true
+    },
+    {
+     "text": "Vật nóng hơn luôn có nhiệt lượng lớn hơn.",
+     "answer": false
+    },
+    {
+     "text": "Trong $Q=mc\\Delta t$ có thể để khối lượng theo gam mà kết quả không đổi.",
+     "answer": false
+    },
+    {
+     "text": "Nhiệt lượng chỉ có ý nghĩa khi có sự truyền nhiệt giữa các vật.",
+     "answer": true
+    }
+   ],
+   "explanation": "Nhiệt độ quyết định chiều truyền nhiệt; nhiệt lượng chỉ có khi truyền, đo bằng J và dùng $m$ theo kg.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì nhiệt tự truyền từ vật có nhiệt độ cao sang vật có nhiệt độ thấp.",
+    "1": "Không thể coi là đúng vì vật không chứa nhiệt lượng; nhiệt độ cao chưa nói lên nhiệt lượng trao đổi nhiều.",
+    "2": "Không thể coi là đúng vì $m$ phải đổi ra kg, để gam sẽ lệch $1000$ lần.",
+    "3": "Không thể coi là sai vì nhiệt lượng là phần nhiệt năng nhận thêm hay mất bớt khi truyền, vật không có sẵn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Đun đều một khối nước đá từ $-10\\,^\\circ\\text{C}$ cho tới khi nước sôi hoàn toàn thành hơi.",
+   "statements": [
+    {
+     "text": "Trong lúc đá đang tan, nhiệt độ hỗn hợp đá và nước giữ ở $0\\,^\\circ\\text{C}$.",
+     "answer": true
+    },
+    {
+     "text": "Trong lúc đá đang tan, nguồn nhiệt ngừng truyền nhiệt cho khối đá.",
+     "answer": false
+    },
+    {
+     "text": "Khi nước đang sôi (hoá hơi), nhiệt độ không đổi dù vẫn nhận nhiệt.",
+     "answer": true
+    },
+    {
+     "text": "Hơi nước ngưng tụ thành nước ở $100\\,^\\circ\\text{C}$ thì thu thêm nhiệt lượng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Chuyển thể: nhiệt độ đứng yên; nóng chảy, hoá hơi thu nhiệt, đông đặc, ngưng tụ toả đúng lượng nhiệt đó.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì khi chuyển thể nhiệt độ không đổi dù vẫn nhận nhiệt.",
+    "1": "Không thể coi là đúng vì nguồn vẫn cấp nhiệt đều; nhiệt chỉ dùng để đổi thể.",
+    "2": "Không thể coi là sai vì nhiệt nhận vào dùng để hoá hơi ($Lm$), chưa làm tăng nhiệt độ.",
+    "3": "Không thể coi là đúng vì ngưng tụ thì toả ra đúng lượng nhiệt $Lm$ đã thu khi hoá hơi."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trộn $1\\ \\text{kg}$ nước $80\\,^\\circ\\text{C}$ với $1\\ \\text{kg}$ nước $20\\,^\\circ\\text{C}$ trong bình cách nhiệt, bỏ qua nhiệt dung bình.",
+   "statements": [
+    {
+     "text": "Thay bằng $1\\ \\text{kg}$ sắt $80\\,^\\circ\\text{C}$ thì nhiệt độ cuối vẫn là $50\\,^\\circ\\text{C}$ vì cùng khối lượng và nhiệt độ.",
+     "answer": false
+    },
+    {
+     "text": "Nhiệt độ cuối là $50\\,^\\circ\\text{C}$.",
+     "answer": true
+    },
+    {
+     "text": "Hai vật cùng khối lượng thì nhiệt độ cân bằng luôn là trung bình cộng nhiệt độ đầu dù khác chất.",
+     "answer": false
+    },
+    {
+     "text": "Thay $1\\ \\text{kg}$ nước $80\\,^\\circ\\text{C}$ bằng $1\\ \\text{kg}$ sắt $80\\,^\\circ\\text{C}$ thì nhiệt độ cuối thấp hơn $50\\,^\\circ\\text{C}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "$t_{cb}=\\dfrac{\\sum m_ic_it_i}{\\sum m_ic_i}$: trung bình cộng chỉ khi các $m_ic_i$ bằng nhau.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì trọng số của $t_{cb}$ là $mc$, khác nhau khi khác chất.",
+    "1": "Không thể coi là sai vì cùng chất, cùng khối lượng nên $t_{cb}$ là trung bình cộng: $50\\,^\\circ\\text{C}$.",
+    "2": "Không thể coi là đúng vì chỉ khi cùng chất (cùng $c$) mới có trung bình cộng.",
+    "3": "Không thể coi là sai vì sắt có $c$ nhỏ hơn nhiều nên toả ít nhiệt hơn, nước lạnh chỉ ấm lên chút ít."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
    "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Đun $2\\ \\text{kg}$ đá ở $0\\,^\\circ\\text{C}$ bằng nguồn có ích $680\\ \\text{W}$. Thời gian đá tan hết là bao nhiêu giây?",
-   "answer": "1000",
-   "explanation": "$\\Delta\\tau=\\lambda m/P=3{,}4\\cdot10^5\\cdot2/680=1000\\ \\text{s}$."
+   "question": "Đun $2\\ \\text{kg}$ nước đá ở $-20\\,^\\circ\\text{C}$ bằng nguồn có ích đều $680\\ \\text{W}$. Cho $c_{\\text{đ}}=2100\\ \\text{J/(kg·K)}$, $\\lambda=3{,}4\\cdot10^5\\ \\text{J/kg}$.",
+   "statements": [
+    {
+     "text": "Đoạn đá tan có độ dốc lớn hơn đoạn đá đang nóng lên.",
+     "answer": false
+    },
+    {
+     "text": "Nếu nguồn có công suất gấp đôi thì đoạn đá tan kéo dài $2000\\ \\text{s}$.",
+     "answer": false
+    },
+    {
+     "text": "Đoạn đá nóng từ $-20\\,^\\circ\\text{C}$ lên $0\\,^\\circ\\text{C}$ kéo dài khoảng $124\\ \\text{s}$.",
+     "answer": true
+    },
+    {
+     "text": "Đoạn đá tan ở $0\\,^\\circ\\text{C}$ kéo dài $1000\\ \\text{s}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Đoạn dốc: $P\\Delta\\tau=mc\\Delta t$; đoạn ngang: $P\\Delta\\tau=\\lambda m$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì lúc tan nhiệt độ đứng yên nên đoạn đó nằm ngang, không dốc.",
+    "1": "Không thể coi là đúng vì $\\tau=\\lambda m/P$ nên $P$ gấp đôi thì thời gian giảm còn $500\\ \\text{s}$.",
+    "2": "Không thể coi là sai vì $\\tau=\\dfrac{2\\cdot2100\\cdot20}{680}\\approx124\\ \\text{s}$.",
+    "3": "Không thể coi là sai vì $\\tau=\\dfrac{\\lambda m}{P}=\\dfrac{3{,}4\\cdot10^5\\cdot2}{680}=1000\\ \\text{s}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 12. Nhiệt học nâng cao: phương trình cân bằng nhiệt và chuyển thể",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Viên bi chì ($c=130\\ \\text{J/(kg·K)}$) rơi từ độ cao $26\\ \\text{m}$ xuống nền cứng, $50\\%$ cơ năng biến thành nhiệt làm nóng bi. Lấy $g=10\\ \\text{m/s}^2$.",
+   "statements": [
+    {
+     "text": "Bi nóng thêm khoảng $1\\,^\\circ\\text{C}$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu toàn bộ cơ năng làm nóng bi thì bi nóng thêm $4\\,^\\circ\\text{C}$.",
+     "answer": false
+    },
+    {
+     "text": "Độ nóng thêm của bi không phụ thuộc khối lượng bi.",
+     "answer": true
+    },
+    {
+     "text": "Thả từ độ cao gấp đôi thì bi nóng thêm gấp bốn lần.",
+     "answer": false
+    }
+   ],
+   "explanation": "$H\\cdot mgh=mc\\Delta t$ nên $\\Delta t=\\dfrac{Hgh}{c}$, không phụ thuộc $m$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $0{,}5\\,mgh=mc\\Delta t$ cho $\\Delta t=\\dfrac{0{,}5\\cdot10\\cdot26}{130}=1\\,^\\circ\\text{C}$.",
+    "1": "Không thể coi là đúng vì $H=1$ chỉ gấp đôi kết quả, tức $2\\,^\\circ\\text{C}$.",
+    "2": "Không thể coi là sai vì $m$ có mặt ở cả hai vế của phương trình nên triệt tiêu.",
+    "3": "Không thể coi là đúng vì $\\Delta t$ tỉ lệ thuận với $h$ nên chỉ gấp đôi."
+   }
   }
  ]
 }

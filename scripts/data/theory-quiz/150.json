@@ -2,14 +2,14 @@
  "lesson_id": 150,
  "lesson_title": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
  "item_id": 387,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 8,
-   "cong_thuc": 12
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
   "removed": []
  },
@@ -22,15 +22,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Mọi nguồn âm đều có đặc điểm chung nào?",
+   "question": "Điểm chung của mọi nguồn âm là",
    "options": [
-    "Đều dao động",
-    "Đều phát ra ánh sáng",
-    "Đều là chất rắn",
-    "Đều đứng yên"
+    "đều có phần đang dao động",
+    "đều là các vật ở thể rắn",
+    "đều đồng thời phát ra ánh sáng",
+    "đều chuyển động thẳng đều"
    ],
    "answer": 0,
-   "explanation": "Bài nêu: mọi nguồn âm đều dao động như dây đàn, màng loa, dây thanh quản."
+   "explanation": "Bài nêu: mọi nguồn âm đều dao động, hết dao động thì hết âm.",
+   "distractorNotes": {
+    "B": "Nhầm điều kiện với trạng thái chất: nguồn âm có thể là cột khí hay dây thanh quản, điều bắt buộc là phải dao động.",
+    "C": "Nhầm âm với ánh sáng; âm thoa hay dây đàn phát âm mà không cần phát sáng.",
+    "D": "Chuyển động thẳng đều không tạo ra âm; nguồn âm phải chuyển động qua lại, tức dao động."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai nhà du hành đứng cạnh nhau trên Mặt Trăng, không dùng bộ đàm thì không nói chuyện trực tiếp được, vì",
+   "options": [
+    "âm truyền quá nhanh nên tai không kịp nghe thấy",
+    "giữa hai người không có môi trường truyền âm",
+    "dây thanh quản không dao động khi quá lạnh",
+    "âm chỉ truyền được trong chất rắn mà thôi"
+   ],
+   "answer": 1,
+   "explanation": "Giữa hai nhà du hành là chân không nên âm không truyền được; chạm hai mũ vào nhau thì âm đi qua vỏ mũ rắn.",
+   "distractorNotes": {
+    "A": "Tốc độ truyền nhanh hay chậm không ngăn tai nghe; điều cần là phải có môi trường truyền âm.",
+    "C": "Trong bộ đồ du hành dây thanh quản vẫn dao động bình thường; vấn đề nằm ở môi trường truyền âm.",
+    "D": "Âm truyền được cả trong chất lỏng và chất khí, như trên Trái Đất ta nghe nhau qua không khí."
+   }
   },
   {
    "type": "multiple_choice",
@@ -40,15 +68,89 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Âm KHÔNG truyền được trong môi trường nào?",
+   "question": "Theo quy luật chung, tốc độ truyền âm lớn nhất trong môi trường",
    "options": [
-    "Chất rắn",
-    "Chất lỏng",
-    "Chân không",
-    "Chất khí"
+    "chất lỏng",
+    "chất khí",
+    "chất rắn",
+    "chân không"
    ],
    "answer": 2,
-   "explanation": "Âm truyền qua rắn, lỏng, khí nhưng không truyền được trong chân không."
+   "explanation": "Thường tốc độ truyền âm theo thứ tự rắn > lỏng > khí; chân không không truyền được âm.",
+   "distractorNotes": {
+    "A": "Chất lỏng đứng sau chất rắn về tốc độ truyền âm, chẳng hạn nước chậm hơn thép.",
+    "B": "Chất khí có tốc độ truyền âm nhỏ nhất trong ba thể, ví dụ không khí chỉ cỡ $340\\ \\text{m/s}$.",
+    "D": "Âm không truyền được trong chân không nên không thể có tốc độ truyền lớn nhất."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Thấy tia chớp, $6\\ \\text{s}$ sau mới nghe sấm. Coi ánh sáng tới tức thời, tốc độ âm $340\\ \\text{m/s}$. Chỗ có chớp cách người quan sát khoảng",
+   "options": [
+    "$57\\ \\text{m}$",
+    "$340\\ \\text{m}$",
+    "$1020\\ \\text{m}$",
+    "$2040\\ \\text{m}$"
+   ],
+   "answer": 3,
+   "explanation": "Âm đi một chiều trong $6\\ \\text{s}$: $s=vt=340\\cdot6=2040\\ \\text{m}$.",
+   "distractorNotes": {
+    "A": "Lấy $340:6$, chia thay vì nhân; quãng đường âm đi phải tính bằng $s=vt$.",
+    "B": "Mới là quãng âm đi trong $1\\ \\text{s}$, chưa nhân với $6\\ \\text{s}$.",
+    "C": "Chia đôi như bài đo tiếng vang, trong khi sấm chỉ truyền một chiều từ chỗ chớp tới tai."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một dây đàn thực hiện $600$ dao động trong $2\\ \\text{s}$. Tần số dao động của dây là",
+   "options": [
+    "$1200\\ \\text{Hz}$",
+    "$300\\ \\text{Hz}$",
+    "$600\\ \\text{Hz}$",
+    "$0{,}0033\\ \\text{Hz}$"
+   ],
+   "answer": 1,
+   "explanation": "Tần số $f=\\dfrac{N}{t}=\\dfrac{600}{2}=300\\ \\text{Hz}$.",
+   "distractorNotes": {
+    "A": "Nhân số dao động với thời gian, trong khi tần số là $f=N/t$.",
+    "C": "Lấy luôn số dao động làm tần số mà quên chia cho thời gian $2\\ \\text{s}$.",
+    "D": "Đảo tử và mẫu, tính $t/N$ thay vì $N/t$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai nốt nhạc, một nốt trầm và một nốt bổng, khác nhau chủ yếu ở",
+   "options": [
+    "biên độ dao động của nguồn âm",
+    "tốc độ truyền âm trong không khí",
+    "tần số dao động của nguồn âm",
+    "quãng đường mà âm truyền được"
+   ],
+   "answer": 2,
+   "explanation": "Độ cao của âm do tần số quyết định: tần số lớn là âm cao (bổng), tần số nhỏ là âm thấp (trầm).",
+   "distractorNotes": {
+    "A": "Biên độ quyết định độ to, không quyết định âm trầm hay bổng.",
+    "B": "Trong cùng một môi trường mọi âm truyền cùng tốc độ, nên đại lượng này không phân biệt độ cao.",
+    "D": "Quãng đường truyền phụ thuộc môi trường và thời gian, không liên quan độ cao của âm."
+   }
   },
   {
    "type": "multiple_choice",
@@ -58,33 +160,66 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Độ cao của âm phụ thuộc vào đại lượng nào?",
+   "question": "Gảy mạnh dây đàn thì tiếng đàn to hơn, vì",
    "options": [
-    "Biên độ dao động",
-    "Tần số dao động",
-    "Khối lượng nguồn âm",
-    "Màu sắc nguồn âm"
+    "tần số dao động của dây tăng lên",
+    "tốc độ truyền âm trong không khí tăng",
+    "chu kì dao động của dây tăng lên",
+    "biên độ dao động của dây tăng lên"
    ],
-   "answer": 1,
-   "explanation": "Tần số lớn thì âm cao, tần số nhỏ thì âm thấp."
+   "answer": 3,
+   "explanation": "Gảy mạnh thì dây rung rộng hơn, tức biên độ lớn hơn, nên âm to hơn.",
+   "distractorNotes": {
+    "A": "Nhầm độ to với độ cao: tần số tăng thì âm cao hơn chứ không to hơn.",
+    "B": "Tốc độ truyền âm do môi trường quyết định, gảy mạnh không làm nó đổi.",
+    "C": "Chu kì tăng nghĩa là tần số giảm, âm trầm hơn; nó không làm âm to hơn."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
+   "kind": "tinh_nhanh",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trên đồ thị dao động âm, từ một đỉnh tới đáy liền sau mất $0{,}25\\ \\text{ms}$. Tần số của âm là",
+   "options": [
+    "$2000\\ \\text{Hz}$",
+    "$4000\\ \\text{Hz}$",
+    "$1000\\ \\text{Hz}$",
+    "$4\\ \\text{Hz}$"
+   ],
+   "answer": 0,
+   "explanation": "Đỉnh tới đáy là nửa chu kì nên $T=0{,}5\\ \\text{ms}=5\\cdot10^{-4}\\ \\text{s}$, suy ra $f=\\dfrac1T=2000\\ \\text{Hz}$.",
+   "distractorNotes": {
+    "B": "Coi $0{,}25\\ \\text{ms}$ là cả chu kì, trong khi đỉnh tới đáy mới là nửa chu kì.",
+    "C": "Coi đỉnh tới đáy là một phần tư chu kì; thực ra đó là nửa chu kì.",
+    "D": "Quên đổi ms ra giây trước khi tính $f=1/T$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
    "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Âm có tần số trên 20 000 Hz gọi là:",
+   "question": "Âm có tần số $30\\,000\\ \\text{Hz}$ thuộc loại",
    "options": [
-    "Hạ âm",
-    "Âm nghe được",
-    "Siêu âm",
-    "Âm trầm"
+    "hạ âm, tai người không nghe được",
+    "âm nghe được, thuộc dải cao nhất",
+    "siêu âm, tai người không nghe được",
+    "siêu âm, tai người nghe được khá rõ"
    ],
    "answer": 2,
-   "explanation": "Trên 20 000 Hz là siêu âm, dưới 20 Hz là hạ âm."
+   "explanation": "Tai người nghe được $20\\ \\text{Hz}$ đến $20\\,000\\ \\text{Hz}$; trên $20\\,000\\ \\text{Hz}$ là siêu âm.",
+   "distractorNotes": {
+    "A": "Nhầm ngưỡng: hạ âm có tần số dưới $20\\ \\text{Hz}$, còn $30\\,000\\ \\text{Hz}$ nằm trên ngưỡng nghe.",
+    "B": "Dải tai người nghe chỉ từ $20\\ \\text{Hz}$ đến $20\\,000\\ \\text{Hz}$, quá ngưỡng này là siêu âm.",
+    "D": "Đúng loại nhưng sai về khả năng nghe: tai người không nghe được siêu âm."
+   }
   },
   {
    "type": "multiple_choice",
@@ -94,51 +229,89 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Vật nào hấp thụ âm tốt?",
+   "question": "Ta nghe được tiếng vang khi âm phản xạ tới tai",
    "options": [
-    "Tường gạch",
-    "Kính",
-    "Vách đá",
-    "Tấm mút"
+    "nhanh hơn âm trực tiếp ít nhất $\\tfrac{1}{15}\\ \\text{s}$",
+    "chậm hơn âm trực tiếp ít nhất $\\tfrac{1}{15}\\ \\text{s}$",
+    "cùng lúc với âm trực tiếp và to hơn nhiều",
+    "chậm hơn âm trực tiếp nhiều nhất $\\tfrac{1}{15}\\ \\text{s}$"
    ],
-   "answer": 3,
-   "explanation": "Vật mềm, xốp như rèm, thảm, mút hấp thụ âm tốt."
+   "answer": 1,
+   "explanation": "Điều kiện nghe tiếng vang: âm phản xạ tới tai chậm hơn âm trực tiếp ít nhất $\\tfrac{1}{15}\\ \\text{s}$.",
+   "distractorNotes": {
+    "A": "Âm phản xạ đi quãng đường dài hơn nên không thể tới sớm hơn âm trực tiếp.",
+    "C": "Khi tới cùng lúc thì hai âm chồng lên nhau, không tách ra thành tiếng vang.",
+    "D": "Đảo điều kiện: phải chậm hơn ít nhất, nếu chậm ít hơn thì tai không tách được hai âm."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_luat",
+   "kind": "hien_tuong",
    "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Khi đổi môi trường truyền, đại lượng nào của âm giữ nguyên?",
+   "theorySection": 3,
+   "question": "Vật nào sau đây phản xạ âm tốt nhất?",
    "options": [
-    "Tốc độ",
-    "Bước sóng",
-    "Tần số",
-    "Cả tốc độ và bước sóng"
+    "Bức tường gạch có mặt nhẵn",
+    "Tấm thảm len dày trải sàn",
+    "Tấm mút xốp dán lên tường",
+    "Tấm rèm vải dày treo cửa sổ"
    ],
-   "answer": 2,
-   "explanation": "Tần số do nguồn quyết định nên giữ nguyên; v và λ đổi."
+   "answer": 0,
+   "explanation": "Vật cứng, mặt nhẵn phản xạ âm tốt; vật mềm, xốp hấp thụ âm tốt.",
+   "distractorNotes": {
+    "B": "Thảm mềm, xốp nên hấp thụ âm mạnh, phản xạ kém.",
+    "C": "Mút xốp hấp thụ âm nên được dán ở phòng thu để hết tiếng vang.",
+    "D": "Rèm dày mềm hấp thụ âm; chỉ vật cứng, nhẵn mới phản xạ tốt."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "cong_thuc",
    "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Công thức đo độ sâu bằng tiếng vang, với t là thời gian đi và về:",
+   "question": "Tàu phát siêu âm xuống đáy biển, sau $0{,}6\\ \\text{s}$ thu được âm phản xạ. Tốc độ âm trong nước $1500\\ \\text{m/s}$. Độ sâu của đáy biển là",
    "options": [
-    "$d=vt$",
-    "$d=\\dfrac{vt}{2}$",
-    "$d=\\dfrac{2v}{t}$",
-    "$d=\\dfrac{t}{2v}$"
+    "$900\\ \\text{m}$",
+    "$2500\\ \\text{m}$",
+    "$102\\ \\text{m}$",
+    "$450\\ \\text{m}$"
    ],
-   "answer": 1,
-   "explanation": "Âm đi hai lần độ sâu nên d = vt/2."
+   "answer": 3,
+   "explanation": "Đi và về mất $0{,}6\\ \\text{s}$ nên $d=\\dfrac{vt}{2}=\\dfrac{1500\\cdot0{,}6}{2}=450\\ \\text{m}$.",
+   "distractorNotes": {
+    "A": "Quên chia đôi: $0{,}6\\ \\text{s}$ là thời gian đi xuống và dội lên.",
+    "B": "Lấy $1500:0{,}6$, chia thay vì nhân; quãng đường tính bằng vận tốc nhân thời gian.",
+    "C": "Dùng tốc độ âm trong không khí, trong khi siêu âm truyền trong nước."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Đứng cách một vách cứng, nhẵn $8\\ \\text{m}$ trong không khí rồi vỗ tay, em",
+   "options": [
+    "nghe được tiếng vang vì vách cứng phản xạ rất tốt",
+    "nghe được tiếng vang vì mọi âm dội về đều tách ra",
+    "không nghe riêng tiếng vang vì âm dội về quá nhanh",
+    "không nghe tiếng vang vì vách nhẵn hấp thụ hết âm thanh"
+   ],
+   "answer": 2,
+   "explanation": "Âm đi và về $16\\ \\text{m}$ mất $\\dfrac{16}{340}\\approx0{,}047\\ \\text{s}$, nhỏ hơn $\\tfrac{1}{15}\\ \\text{s}$ nên không tách thành tiếng vang.",
+   "distractorNotes": {
+    "A": "Phản xạ tốt chưa đủ; âm dội về còn phải chậm hơn âm trực tiếp ít nhất $\\tfrac{1}{15}\\ \\text{s}$.",
+    "B": "Âm dội về quá nhanh thì chồng lên âm trực tiếp, tai không tách được.",
+    "D": "Vách cứng, nhẵn phản xạ tốt chứ không hấp thụ; lí do là âm quay về quá sớm."
+   }
   },
   {
    "type": "multiple_choice",
@@ -147,110 +320,56 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Bước sóng được tính bằng công thức:",
+   "theorySection": 2,
+   "question": "Khi tần số của một nguồn âm tăng gấp đôi thì chu kì dao động của nguồn",
    "options": [
-    "$\\lambda=vf$",
-    "$\\lambda=\\dfrac{f}{v}$",
-    "$\\lambda=\\dfrac{v}{f}$",
-    "$\\lambda=\\dfrac{1}{vf}$"
-   ],
-   "answer": 2,
-   "explanation": "Bài nêu $\\lambda=v/f=vT$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Xe chạy về phía vách, bóp còi, nghe vang sau t. Hệ thức đúng là:",
-   "options": [
-    "$vt-v_xt=2d$",
-    "$vt+v_xt=2d$",
-    "$vt+v_xt=d$",
-    "$vt=v_xt+d$"
+    "tăng gấp đôi",
+    "giảm một nửa",
+    "tăng gấp bốn",
+    "không thay đổi"
    ],
    "answer": 1,
-   "explanation": "Quãng âm đi cộng quãng xe đi bằng 2d khi xe tiến về vách."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Thấy chớp, 3 s sau nghe sấm (v = 340 m/s). Chớp cách khoảng:",
-   "options": [
-    "113 m",
-    "1020 m",
-    "340 m",
-    "680 m"
-   ],
-   "answer": 1,
-   "explanation": "s = vt = 340·3 = 1020 m."
+   "explanation": "Từ $T=\\dfrac1f$, $f$ gấp đôi thì $T$ giảm còn một nửa.",
+   "distractorNotes": {
+    "A": "Nhầm quan hệ: chu kì và tần số tỉ lệ nghịch, không tỉ lệ thuận.",
+    "C": "Tự gán quan hệ bình phương, trong khi $T=1/f$ chỉ là tỉ lệ nghịch bậc nhất.",
+    "D": "Chu kì là nghịch đảo của tần số nên phải đổi khi tần số đổi."
+   }
   },
   {
    "type": "true_false",
-   "kind": "dinh_nghia",
+   "kind": "dinh_luat",
    "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Về độ to và độ cao của âm:",
+   "question": "Một học sinh đè chặt thước nhựa lên mép bàn, gảy đầu thò ra. Khi đổi độ dài đầu thò và độ mạnh của lần gảy, bạn nghe thấy tiếng thước thay đổi. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Biên độ lớn thì âm to",
+     "text": "Đầu thò ngắn hơn thì thước rung nhanh hơn và tiếng cao hơn.",
      "answer": true
     },
     {
-     "text": "Tần số lớn thì âm thấp",
+     "text": "Đầu thò dài hơn thì tiếng của thước cao hơn.",
      "answer": false
     },
     {
-     "text": "Âm to thì chắc chắn cao",
-     "answer": false
-    },
-    {
-     "text": "Tai người nghe từ 20 Hz đến 20 000 Hz",
-     "answer": true
-    }
-   ],
-   "explanation": "Độ to do biên độ, độ cao do tần số; hai điều độc lập."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Về tiếng vang:",
-   "statements": [
-    {
-     "text": "Âm phản xạ đến tai chậm hơn âm trực tiếp ít nhất 1/15 s thì nghe tiếng vang",
+     "text": "Gảy mạnh hơn thì thước rung rộng hơn nên tiếng to hơn.",
      "answer": true
     },
     {
-     "text": "Trong không khí cần cách vật cản khoảng 11,3 m trở lên",
-     "answer": true
-    },
-    {
-     "text": "Tường mút làm tiếng vang rõ hơn",
-     "answer": false
-    },
-    {
-     "text": "Vật mềm xốp phản xạ âm tốt",
+     "text": "Gảy mạnh hơn làm tần số tăng nên tiếng vừa to vừa cao hơn.",
      "answer": false
     }
    ],
-   "explanation": "Mút hấp thụ âm; vật cứng nhẵn phản xạ tốt."
+   "explanation": "a) đúng: đầu thò ngắn rung nhanh hơn, tần số lớn hơn nên âm cao hơn. b) sai: đầu thò dài rung chậm hơn, tần số nhỏ nên âm thấp hơn. c) đúng: gảy mạnh làm biên độ lớn hơn, mà biên độ lớn thì âm to. d) sai: gảy mạnh chỉ đổi biên độ, tần số vẫn do độ dài đầu thò quyết định.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì đầu thò ngắn rung nhanh hơn, tần số lớn hơn nên âm cao hơn.",
+    "1": "Không thể coi là đúng vì đầu thò dài rung chậm hơn, tần số nhỏ nên âm thấp hơn.",
+    "2": "Không thể coi là sai vì gảy mạnh làm biên độ lớn hơn, mà biên độ lớn thì âm to.",
+    "3": "Không thể coi là đúng vì gảy mạnh chỉ đổi biên độ, tần số vẫn do độ dài đầu thò quyết định."
+   }
   },
   {
    "type": "true_false",
@@ -260,127 +379,172 @@
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Về tần số và chu kì:",
+   "question": "Hai âm được ghi trên cùng một trục thời gian. Âm 1 có biên độ $2$ đơn vị và chu kì $2\\ \\text{ms}$. Âm 2 có biên độ $1$ đơn vị và chu kì $1\\ \\text{ms}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$f=N/t$",
-     "answer": true
-    },
-    {
-     "text": "$T=1/f$",
-     "answer": true
-    },
-    {
-     "text": "Từ đỉnh đến đáy liền sau là một chu kì",
+     "text": "Âm 1 cao hơn âm 2 vì biên độ của âm 1 lớn hơn.",
      "answer": false
     },
     {
-     "text": "Tính $f=1/T$ phải đổi T ra giây",
+     "text": "Tần số của âm 1 là $500\\ \\text{Hz}$.",
+     "answer": true
+    },
+    {
+     "text": "Âm 2 cao hơn âm 1.",
+     "answer": true
+    },
+    {
+     "text": "Tần số của âm 2 là $1\\ \\text{Hz}$ vì chu kì là $1\\ \\text{ms}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: biên độ lớn hơn chỉ làm âm to hơn, độ cao do tần số quyết định. b) đúng: $f=1/T=1/(2\\cdot10^{-3})=500\\ \\text{Hz}$. c) đúng: chu kì nhỏ hơn nên tần số lớn hơn, mà tần số lớn thì âm cao. d) sai: phải đổi $1\\ \\text{ms}=10^{-3}\\ \\text{s}$ trước khi tính, nên $f=1000\\ \\text{Hz}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì biên độ lớn hơn chỉ làm âm to hơn, độ cao do tần số quyết định.",
+    "1": "Không thể coi là sai vì $f=1/T=1/(2\\cdot10^{-3})=500\\ \\text{Hz}$.",
+    "2": "Không thể coi là sai vì chu kì nhỏ hơn nên tần số lớn hơn, mà tần số lớn thì âm cao.",
+    "3": "Không thể coi là đúng vì phải đổi $1\\ \\text{ms}=10^{-3}\\ \\text{s}$ trước khi tính, nên $f=1000\\ \\text{Hz}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Tàu phát siêu âm xuống đáy biển và thu được âm phản xạ sau $0{,}4\\ \\text{s}$. Tốc độ âm trong nước là $1500\\ \\text{m/s}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Độ sâu của đáy biển là $300\\ \\text{m}$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu dùng $340\\ \\text{m/s}$ thì kết quả vẫn như cũ vì tốc độ âm như nhau ở mọi môi trường.",
+     "answer": false
+    },
+    {
+     "text": "Độ sâu của đáy biển là $600\\ \\text{m}$.",
+     "answer": false
+    },
+    {
+     "text": "Khoảng $0{,}4\\ \\text{s}$ là thời gian âm đi xuống rồi dội lên.",
      "answer": true
     }
    ],
-   "explanation": "Đỉnh đến đáy chỉ là T/2."
+   "explanation": "a) đúng: $d=\\dfrac{vt}{2}=\\dfrac{1500\\cdot0{,}4}{2}=300\\ \\text{m}$. b) sai: tốc độ âm phụ thuộc môi trường; trong nước lớn hơn nhiều so với trong không khí. c) sai: đó mới là tổng quãng đi và về, phải chia đôi mới được độ sâu. d) đúng: thời gian đo được tính từ lúc phát đến lúc thu, gồm cả lượt đi và lượt về.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $d=\\dfrac{vt}{2}=\\dfrac{1500\\cdot0{,}4}{2}=300\\ \\text{m}$.",
+    "1": "Không thể coi là đúng vì tốc độ âm phụ thuộc môi trường; trong nước lớn hơn nhiều so với trong không khí.",
+    "2": "Không thể coi là đúng vì đó mới là tổng quãng đi và về, phải chia đôi mới được độ sâu.",
+    "3": "Không thể coi là sai vì thời gian đo được tính từ lúc phát đến lúc thu, gồm cả lượt đi và lượt về."
+   }
   },
   {
    "type": "true_false",
    "kind": "tinh_nhanh",
    "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Âm 680 Hz đi từ không khí (340 m/s) vào nước (1500 m/s):",
+   "question": "Thấy một tia chớp, $5\\ \\text{s}$ sau mới nghe tiếng sấm. Coi ánh sáng tới tức thời, tốc độ âm trong không khí là $340\\ \\text{m/s}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tần số vẫn 680 Hz",
-     "answer": true
-    },
-    {
-     "text": "Bước sóng trong khí là 0,5 m",
-     "answer": true
-    },
-    {
-     "text": "Bước sóng trong nước nhỏ hơn trong khí",
+     "text": "Chớp và sấm xảy ra không cùng lúc nên người quan sát mới nghe lệch.",
      "answer": false
     },
     {
-     "text": "Bước sóng trong nước khoảng 2,2 m",
+     "text": "Chỗ có chớp cách người quan sát khoảng $1700\\ \\text{m}$.",
+     "answer": true
+    },
+    {
+     "text": "Chỗ có chớp cách khoảng $850\\ \\text{m}$ vì phải chia đôi quãng đường.",
+     "answer": false
+    },
+    {
+     "text": "Khoảng $5\\ \\text{s}$ là thời gian âm đi từ chỗ có chớp tới tai.",
      "answer": true
     }
    ],
-   "explanation": "λ = v/f nên tăng theo v: 1500/680 ≈ 2,2 m."
+   "explanation": "a) sai: chúng xảy ra cùng lúc; độ lệch do ánh sáng tới nhanh hơn âm rất nhiều. b) đúng: $s=vt=340\\cdot5=1700\\ \\text{m}$. c) sai: sấm truyền một chiều tới tai, không có lượt về nên không chia đôi. d) đúng: ánh sáng tới gần như ngay, nên độ trễ chính là thời gian âm truyền.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì chúng xảy ra cùng lúc; độ lệch do ánh sáng tới nhanh hơn âm rất nhiều.",
+    "1": "Không thể coi là sai vì $s=vt=340\\cdot5=1700\\ \\text{m}$.",
+    "2": "Không thể coi là đúng vì sấm truyền một chiều tới tai, không có lượt về nên không chia đôi.",
+    "3": "Không thể coi là sai vì ánh sáng tới gần như ngay, nên độ trễ chính là thời gian âm truyền."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Tàu phát siêu âm, sau 0,8 s thu phản xạ, v = 1500 m/s. Độ sâu (m)?",
-   "answer": "600",
-   "explanation": "d = 1500·0,8/2 = 600 m."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
+   "type": "true_false",
+   "kind": "cong_thuc",
    "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Chu kì 1 ms. Tần số bằng bao nhiêu Hz?",
-   "answer": "1000",
-   "explanation": "f = 1/0,001 = 1000 Hz."
+   "question": "Một dây đàn thực hiện $1200$ dao động trong $3\\ \\text{s}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Âm của dây là siêu âm nên tai người không nghe được.",
+     "answer": false
+    },
+    {
+     "text": "Tần số dao động của dây là $1200\\ \\text{Hz}$.",
+     "answer": false
+    },
+    {
+     "text": "Tần số dao động của dây là $400\\ \\text{Hz}$.",
+     "answer": true
+    },
+    {
+     "text": "Chu kì dao động của dây là $2{,}5\\ \\text{ms}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai: $400\\ \\text{Hz}$ nằm trong dải $20\\ \\text{Hz}$ đến $20\\,000\\ \\text{Hz}$ mà tai người nghe được. b) sai: phải chia số dao động cho thời gian $3\\ \\text{s}$. c) đúng: $f=\\dfrac{N}{t}=\\dfrac{1200}{3}=400\\ \\text{Hz}$. d) đúng: $T=\\dfrac1f=\\dfrac1{400}=0{,}0025\\ \\text{s}=2{,}5\\ \\text{ms}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $400\\ \\text{Hz}$ nằm trong dải $20\\ \\text{Hz}$ đến $20\\,000\\ \\text{Hz}$ mà tai người nghe được.",
+    "1": "Không thể coi là đúng vì phải chia số dao động cho thời gian $3\\ \\text{s}$.",
+    "2": "Không thể coi là sai vì $f=\\dfrac{N}{t}=\\dfrac{1200}{3}=400\\ \\text{Hz}$.",
+    "3": "Không thể coi là sai vì $T=\\dfrac1f=\\dfrac1{400}=0{,}0025\\ \\text{s}=2{,}5\\ \\text{ms}$."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
+   "type": "true_false",
+   "kind": "cong_thuc",
    "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Đứng cách vách 170 m vỗ tay. Sau bao nhiêu giây nghe vang?",
-   "answer": "1",
-   "explanation": "t = 2·170/340 = 1 s."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Xe 20 m/s chạy về vách, bóp còi, sau 4 s nghe vang (v = 340 m/s). Lúc bóp còi xe cách vách bao nhiêu m?",
-   "answer": "720",
-   "explanation": "2d = 1360 + 80 = 1440 nên d = 720 m."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Vật thực hiện 600 dao động trong 2 s. Tần số bao nhiêu Hz?",
-   "answer": "300",
-   "explanation": "f = N/t = 600/2 = 300 Hz."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 15. Âm thanh: sóng âm, độ to – độ cao, phản xạ âm",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Âm 50 000 Hz trong nước (1500 m/s) có bước sóng bao nhiêu cm?",
-   "answer": "3",
-   "explanation": "λ = 1500/50000 = 0,03 m = 3 cm."
+   "question": "Một người đứng trước vách cứng, nhẵn cách mình $20\\ \\text{m}$ rồi vỗ tay trong không khí. Tốc độ âm $340\\ \\text{m/s}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Người đó nghe được tiếng vang riêng.",
+     "answer": true
+    },
+    {
+     "text": "Quãng đường âm đi cho tới khi quay về tai là $20\\ \\text{m}$.",
+     "answer": false
+    },
+    {
+     "text": "Âm phản xạ trở về tai sau khoảng $0{,}12\\ \\text{s}$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu chỉ đứng cách vách $5\\ \\text{m}$ thì vẫn nghe tiếng vang vì vách cứng phản xạ tốt.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng: $0{,}12\\ \\text{s}$ lớn hơn $\\tfrac1{15}\\ \\text{s}\\approx0{,}067\\ \\text{s}$ nên tai tách được hai âm. b) sai: âm đi tới vách rồi quay lại, tổng quãng đường là $40\\ \\text{m}$. c) đúng: Âm đi và về $40\\ \\text{m}$ nên $t=40/340\\approx0{,}12\\ \\text{s}$. d) sai: khi đó âm dội về sau chưa tới $\\tfrac1{15}\\ \\text{s}$ nên chồng với âm trực tiếp.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $0{,}12\\ \\text{s}$ lớn hơn $\\tfrac1{15}\\ \\text{s}\\approx0{,}067\\ \\text{s}$ nên tai tách được hai âm.",
+    "1": "Không thể coi là đúng vì âm đi tới vách rồi quay lại, tổng quãng đường là $40\\ \\text{m}$.",
+    "2": "Không thể coi là sai vì Âm đi và về $40\\ \\text{m}$ nên $t=40/340\\approx0{,}12\\ \\text{s}$.",
+    "3": "Không thể coi là đúng vì khi đó âm dội về sau chưa tới $\\tfrac1{15}\\ \\text{s}$ nên chồng với âm trực tiếp."
+   }
   }
  ]
 }

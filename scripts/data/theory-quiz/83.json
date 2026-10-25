@@ -2,8 +2,8 @@
  "lesson_id": 83,
  "lesson_title": "Bài 5. Khúc xạ ánh sáng",
  "item_id": 274,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
@@ -22,15 +22,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Khúc xạ ánh sáng là hiện tượng nào sau đây?",
+   "question": "Khúc xạ ánh sáng là hiện tượng",
    "options": [
-    "Tia sáng bị hắt trở lại môi trường cũ khi gặp mặt phân cách",
-    "Tia sáng bị gãy khúc khi truyền xiên góc qua mặt phân cách hai môi trường trong suốt khác nhau",
-    "Tia sáng bị hấp thụ hoàn toàn khi vào môi trường thứ hai",
-    "Tia sáng truyền thẳng qua mọi môi trường"
+    "tia sáng bị đổi phương khi truyền xiên góc qua mặt phân cách hai môi trường trong suốt",
+    "tia sáng bị hắt trở lại môi trường cũ khi tới mặt phân cách hai môi trường trong suốt",
+    "tia sáng giữ nguyên phương khi truyền xiên góc qua mặt phân cách hai môi trường trong suốt",
+    "tia sáng bị môi trường hấp thụ dần khi truyền xiên góc qua mặt phân cách hai môi trường"
    ],
-   "answer": 1,
-   "explanation": "Mục II.1 định nghĩa khúc xạ là sự gãy khúc của tia sáng khi truyền xiên góc qua mặt phân cách hai môi trường trong suốt khác nhau."
+   "answer": 0,
+   "explanation": "Khúc xạ ánh sáng là hiện tượng tia sáng gãy khúc (đổi phương) khi truyền xiên góc qua mặt phân cách giữa hai môi trường trong suốt khác nhau.",
+   "distractorNotes": {
+    "B": "Nhầm với phản xạ; khúc xạ là tia đi sang môi trường kia và đổi phương.",
+    "C": "Nếu phương không đổi thì chẳng có hiện tượng gì; khúc xạ là tia gãy khúc ở mặt phân cách.",
+    "D": "Nhầm với sự hấp thụ; khúc xạ nói về đổi phương chứ không phải mất năng lượng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -40,15 +45,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Chiếu tia sáng vuông góc với mặt phân cách hai môi trường (i = 0°) thì tia sáng:",
+   "question": "Chiếu tia laser vuông góc với mặt nước (góc tới $i = 0^\\circ$). Tia sáng đi vào nước",
    "options": [
-    "Gãy khúc lệch về một bên",
-    "Bị hắt ngược trở lại hoàn toàn",
-    "Đi thẳng, không đổi phương",
-    "Toả ra nhiều hướng"
+    "gãy khúc, lệch lại gần pháp tuyến một góc nhỏ",
+    "bị hắt ngược trở lại hết vào không khí",
+    "đi thẳng theo pháp tuyến, không bị gãy khúc",
+    "toả ra nhiều hướng khác nhau trong nước"
    ],
    "answer": 2,
-   "explanation": "Khi i = 0° thì r = 0°, tia đi thẳng theo pháp tuyến (Câu 1 mục II.1)."
+   "explanation": "Khi $i = 0^\\circ$ thì $r = 0^\\circ$: tia đi thẳng theo pháp tuyến, không đổi phương.",
+   "distractorNotes": {
+    "A": "Quên rằng tia chỉ gãy khi truyền xiên góc; tia vuông góc với mặt phân cách thì đi thẳng.",
+    "B": "Nhầm vuông góc với phản xạ toàn bộ; phần lớn ánh sáng vẫn đi vào nước.",
+    "D": "Tia vuông góc có phương xác định là pháp tuyến, không toả ra nhiều hướng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -58,15 +68,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Góc tới i là góc giữa:",
+   "question": "Góc tới $i$ trong hiện tượng khúc xạ là góc hợp bởi",
    "options": [
-    "Tia tới và mặt phân cách",
-    "Tia tới và pháp tuyến",
-    "Tia khúc xạ và mặt phân cách",
-    "Tia tới và tia khúc xạ"
+    "tia tới và mặt phân cách hai môi trường",
+    "tia tới và pháp tuyến tại điểm tới",
+    "tia tới và tia khúc xạ tại điểm tới",
+    "tia tới và tia phản xạ tại điểm tới"
    ],
    "answer": 1,
-   "explanation": "Bảng ký hiệu ở mục II.1: góc tới là góc giữa tia tới và pháp tuyến."
+   "explanation": "Góc tới $i = \\widehat{SIN}$ là góc giữa tia tới và pháp tuyến, đo từ pháp tuyến chứ không đo từ mặt phân cách.",
+   "distractorNotes": {
+    "A": "Đo góc từ mặt phân cách là lỗi hay gặp; góc tới luôn đo từ pháp tuyến.",
+    "C": "Đó là góc giữa hai tia, không phải góc tới.",
+    "D": "Góc giữa tia tới và tia phản xạ bằng $2i$, không phải $i$."
+   }
   },
   {
    "type": "multiple_choice",
@@ -76,51 +91,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Phát biểu nào đúng với định luật khúc xạ ánh sáng?",
+   "question": "Theo định luật khúc xạ ánh sáng, tia khúc xạ nằm",
    "options": [
-    "Tia khúc xạ và tia tới nằm cùng một bên pháp tuyến",
-    "Tia khúc xạ nằm ngoài mặt phẳng tới",
-    "Tia tới và tia khúc xạ nằm ở hai bên pháp tuyến, trong mặt phẳng tới",
-    "Góc khúc xạ luôn bằng góc tới"
+    "trong mặt phẳng tới, cùng bên pháp tuyến với tia tới",
+    "ngoài mặt phẳng tới, ở bên kia pháp tuyến so với tia tới",
+    "dọc theo mặt phân cách, vuông góc với pháp tuyến tại điểm tới",
+    "trong mặt phẳng tới, ở bên kia pháp tuyến so với tia tới"
    ],
-   "answer": 2,
-   "explanation": "Mục II.3: tia khúc xạ nằm trong mặt phẳng tới và hai tia ở hai bên pháp tuyến."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ánh sáng đi từ môi trường có chiết suất nhỏ sang môi trường có chiết suất lớn hơn thì:",
-   "options": [
-    "r < i, tia lệch gần pháp tuyến",
-    "r > i, tia lệch xa pháp tuyến",
-    "r = i",
-    "Không có tia khúc xạ"
-   ],
-   "answer": 0,
-   "explanation": "Vào môi trường chiết quang hơn (n₂ > n₁) thì r < i, lệch gần pháp tuyến."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Khúc xạ ánh sáng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Đứng trên bờ nhìn con cá trong hồ, muốn vợt trúng cá thì phải đưa vợt tới:",
-   "options": [
-    "Đúng chỗ nhìn thấy cá",
-    "Nông hơn chỗ nhìn thấy cá",
-    "Sâu hơn chỗ nhìn thấy cá",
-    "Gần bờ hơn chỗ nhìn thấy cá"
-   ],
-   "answer": 2,
-   "explanation": "Mắt thấy ảnh ảo của cá nằm cao hơn cá thật nên cá thật ở sâu hơn (Bẫy 3)."
+   "answer": 3,
+   "explanation": "Định luật khúc xạ: tia khúc xạ nằm trong mặt phẳng tới và ở phía bên kia pháp tuyến so với tia tới.",
+   "distractorNotes": {
+    "A": "Tia tới và tia khúc xạ nằm ở hai bên pháp tuyến, không cùng một bên.",
+    "B": "Tia khúc xạ luôn nằm trong mặt phẳng tới, tức mặt phẳng chứa tia tới và pháp tuyến.",
+    "C": "Tia khúc xạ đi vào môi trường thứ hai chứ không chạy dọc mặt phân cách."
+   }
   },
   {
    "type": "multiple_choice",
@@ -130,51 +114,89 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Công thức đúng của chiết suất tuyệt đối của một môi trường là:",
+   "question": "Chiết suất $n$ của môi trường trong suốt được tính bằng công thức nào ($c$ là tốc độ ánh sáng trong chân không, $v$ là tốc độ ánh sáng trong môi trường)?",
    "options": [
-    "$n = \\frac{v}{c}$",
+    "$n = \\dfrac{v}{c}$",
     "$n = c \\cdot v$",
-    "$n = \\frac{c}{v}$",
+    "$n = \\dfrac{c}{v}$",
     "$n = c - v$"
    ],
    "answer": 2,
-   "explanation": "Mục II.2: $n = \\frac{c}{v}$ với c là tốc độ ánh sáng trong chân không."
+   "explanation": "Chiết suất đo xem môi trường làm ánh sáng chậm đi bao nhiêu lần: $n = \\dfrac{c}{v}$.",
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu; $v < c$ nên $n$ sẽ nhỏ hơn 1, trong khi chiết suất không nhỏ hơn 1.",
+    "B": "Nhân thay vì chia; tích hai tốc độ có đơn vị $\\text{m}^2/\\text{s}^2$ trong khi chiết suất không có đơn vị.",
+    "D": "Lấy hiệu thay vì tỉ số; hiệu có đơn vị m/s trong khi chiết suất không có đơn vị."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "cong_thuc",
+   "kind": "don_vi",
    "topic": "Chiết suất và định luật khúc xạ ánh sáng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Biểu thức đúng của định luật khúc xạ ánh sáng là:",
+   "question": "Phát biểu nào sau đây về chiết suất của môi trường là đúng?",
    "options": [
-    "$n_1 \\sin r = n_2 \\sin i$",
-    "$n_1 \\sin i = n_2 \\sin r$",
-    "$n_1 i = n_2 r$",
-    "$\\frac{\\sin i}{\\sin r} = \\frac{n_1}{n_2}$"
+    "Không có đơn vị; mọi môi trường khác không khí đều có $n > 1$",
+    "Có đơn vị là m/s vì được tính từ hai tốc độ ánh sáng khác nhau",
+    "Có thể nhỏ hơn 1 nếu ánh sáng đi nhanh hơn so với trong chân không",
+    "Chỉ phụ thuộc hình dạng khối chất, không phụ thuộc chất"
    ],
-   "answer": 1,
-   "explanation": "Mục II.3: $n_1\\sin i = n_2\\sin r$, tức $\\frac{\\sin i}{\\sin r}=\\frac{n_2}{n_1}$."
+   "answer": 0,
+   "explanation": "$n = c/v$ là tỉ số hai tốc độ nên không có đơn vị; không khí có $n \\approx 1$, mọi môi trường khác có $n > 1$.",
+   "distractorNotes": {
+    "B": "Chiết suất là tỉ số của hai tốc độ cùng đơn vị nên không có đơn vị.",
+    "C": "Ánh sáng đi chậm hơn trong mọi môi trường so với chân không nên $n$ không thể nhỏ hơn 1.",
+    "D": "Chiết suất đặc trưng cho chất làm môi trường chứ không phải hình dạng khối chất."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "tinh_nhanh",
    "topic": "Chiết suất và định luật khúc xạ ánh sáng",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Tia sáng từ không khí vào nước ($n=\\frac{4}{3}$), $i = 53^\\circ$, $\\sin 53^\\circ \\approx 0{,}8$. Giá trị $\\sin r$ là:",
+   "theorySection": 1,
+   "question": "Ánh sáng truyền trong một khối chất có chiết suất $n = 2$. Tốc độ ánh sáng trong khối chất đó bằng",
    "options": [
-    "$1{,}07$",
-    "$0{,}6$",
-    "$0{,}8$",
-    "$0{,}4$"
+    "gấp đôi tốc độ ánh sáng trong chân không",
+    "bằng tốc độ ánh sáng trong chân không",
+    "một phần tư tốc độ ánh sáng trong chân không",
+    "một nửa tốc độ ánh sáng trong chân không"
+   ],
+   "answer": 3,
+   "explanation": "Từ $v = \\dfrac{c}{n}$ với $n = 2$ suy ra $v = \\dfrac{c}{2}$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia; từ $v = c/n$ với $n = 2$ thì $v$ nhỏ hơn $c$ chứ không lớn hơn.",
+    "B": "Bỏ qua tác dụng của môi trường; $n > 1$ nghĩa là ánh sáng đi chậm hơn so với trong chân không.",
+    "C": "Bình phương chiết suất; công thức là $v = c/n$ chứ không phải $c/n^2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dạng thường dùng của định luật khúc xạ để tính góc là",
+   "options": [
+    "$n_1 \\, i = n_2 \\, r$",
+    "$n_1 \\sin i = n_2 \\sin r$",
+    "$n_1 \\sin r = n_2 \\sin i$",
+    "$\\dfrac{n_1}{\\sin i} = \\dfrac{n_2}{\\sin r}$"
    ],
    "answer": 1,
-   "explanation": "$\\sin r = 0{,}8 : \\frac{4}{3} = 0{,}6$ (bài toán mẫu)."
+   "explanation": "Định luật khúc xạ: $\\dfrac{\\sin i}{\\sin r} = \\dfrac{n_2}{n_1}$, hay $n_1 \\sin i = n_2 \\sin r$.",
+   "distractorNotes": {
+    "A": "Thiếu hàm sin; định luật liên hệ các sin của góc chứ không phải chính các góc.",
+    "C": "Đổi chỗ $i$ và $r$; $n_1$ là chiết suất môi trường chứa tia tới nên đi cùng $i$.",
+    "D": "Đảo vị trí sin xuống mẫu; tỉ số đúng là $\\dfrac{\\sin i}{\\sin r} = \\dfrac{n_2}{n_1}$."
+   }
   },
   {
    "type": "multiple_choice",
@@ -184,203 +206,345 @@
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Từ $n_1\\sin i = n_2 \\sin r$, biểu thức của $\\sin r$ là:",
+   "question": "Tia sáng từ không khí vào một chất có $n = \\sqrt{2}$ với góc tới $i = 45^\\circ$. Góc khúc xạ $r$ bằng",
    "options": [
-    "$\\sin r = \\frac{n_2 \\sin i}{n_1}$",
-    "$\\sin r = \\frac{n_1 \\sin i}{n_2}$",
-    "$\\sin r = n_1 n_2 \\sin i$",
-    "$\\sin r = \\frac{n_1}{n_2 \\sin i}$"
+    "$45^\\circ$",
+    "$32^\\circ$",
+    "$30^\\circ$",
+    "$90^\\circ$"
    ],
-   "answer": 1,
-   "explanation": "Chia hai vế cho $n_2$ được $\\sin r = \\frac{n_1\\sin i}{n_2}$."
+   "answer": 2,
+   "explanation": "$1 \\cdot \\sin 45^\\circ = \\sqrt{2}\\,\\sin r$ nên $\\sin r = \\dfrac{1}{2}$, suy ra $r = 30^\\circ$, nhỏ hơn $i$ vì vào môi trường chiết quang hơn.",
+   "distractorNotes": {
+    "A": "Quên khúc xạ; với $n \\neq 1$ góc khúc xạ khác góc tới.",
+    "B": "Chia góc cho chiết suất ($45 : \\sqrt{2}$); phải chia $\\sin i$ cho $n$ rồi mới lấy sin ngược.",
+    "D": "Đặt $n$ vào phía tia tới nên được $\\sin r = \\sqrt{2}\\cdot\\sin 45^\\circ = 1$; thực tế $n_1 = 1$ ở phía tia tới."
+   }
   },
   {
-   "type": "true_false",
-   "kind": "dinh_luat",
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
    "topic": "Chiết suất và định luật khúc xạ ánh sáng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về chiều lệch của tia khúc xạ:",
-   "statements": [
-    {
-     "text": "Từ không khí vào thuỷ tinh thì r < i.",
-     "answer": true
-    },
-    {
-     "text": "Từ thuỷ tinh ra không khí thì tia lệch xa pháp tuyến.",
-     "answer": true
-    },
-    {
-     "text": "Tia khúc xạ luôn lệch về phía pháp tuyến trong mọi trường hợp.",
-     "answer": false
-    },
-    {
-     "text": "Từ nước ra không khí thì r < i.",
-     "answer": false
-    }
+   "question": "Ánh sáng đi từ nước ra không khí. So với góc tới, góc khúc xạ",
+   "options": [
+    "lớn hơn, tia khúc xạ lệch xa pháp tuyến",
+    "nhỏ hơn, tia khúc xạ lệch lại gần pháp tuyến",
+    "bằng góc tới vì cả hai môi trường đều trong suốt",
+    "luôn bằng $90^\\circ$ với mọi góc tới nhỏ hơn $90^\\circ$"
    ],
-   "explanation": "Vào môi trường n lớn hơn: gần pháp tuyến; vào n nhỏ hơn: xa pháp tuyến (Bẫy 1)."
+   "answer": 0,
+   "explanation": "Từ môi trường có $n$ lớn ra môi trường có $n$ nhỏ thì $r > i$, tia lệch xa pháp tuyến.",
+   "distractorNotes": {
+    "B": "Nhầm với chiều không khí vào nước; ra môi trường kém chiết quang thì tia lệch xa pháp tuyến.",
+    "C": "Trong suốt không có nghĩa là tia thẳng; hai chiết suất khác nhau thì phương tia đổi.",
+    "D": "Góc khúc xạ thay đổi theo góc tới chứ không cố định bằng $90^\\circ$ với mọi góc tới."
+   }
   },
   {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về chiết suất của môi trường:",
-   "statements": [
-    {
-     "text": "Chiết suất tuyệt đối của không khí xấp xỉ 1.",
-     "answer": true
-    },
-    {
-     "text": "Các môi trường khác không khí đều có n > 1.",
-     "answer": true
-    },
-    {
-     "text": "Ánh sáng đi càng chậm trong môi trường thì n càng nhỏ.",
-     "answer": false
-    },
-    {
-     "text": "Chiết suất n có đơn vị là m/s.",
-     "answer": false
-    }
-   ],
-   "explanation": "n = c/v không có đơn vị; v càng nhỏ thì n càng lớn."
-  },
-  {
-   "type": "true_false",
+   "type": "multiple_choice",
    "kind": "dieu_kien",
    "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Về cách đo góc khi giải bài toán khúc xạ:",
-   "statements": [
-    {
-     "text": "Góc tới và góc khúc xạ đo từ pháp tuyến.",
-     "answer": true
-    },
-    {
-     "text": "Tia hợp với mặt nước góc 60° thì góc tới là 30°.",
-     "answer": true
-    },
-    {
-     "text": "Tia hợp với mặt nước góc 60° thì góc tới là 60°.",
-     "answer": false
-    },
-    {
-     "text": "Góc khúc xạ đo từ mặt phân cách.",
-     "answer": false
-    }
+   "question": "Tia sáng từ không khí chiếu xuống mặt nước, hợp với mặt nước góc $30^\\circ$. Góc tới $i$ bằng",
+   "options": [
+    "$30^\\circ$",
+    "$60^\\circ$",
+    "$120^\\circ$",
+    "$150^\\circ$"
    ],
-   "explanation": "Mục Bẫy 2: góc luôn đo từ pháp tuyến, i = 90° − góc hợp với mặt phân cách."
+   "answer": 1,
+   "explanation": "Góc tới đo từ pháp tuyến nên $i = 90^\\circ - 30^\\circ = 60^\\circ$.",
+   "distractorNotes": {
+    "A": "Lấy góc hợp với mặt nước làm góc tới; góc tới phải đo từ pháp tuyến.",
+    "C": "Cộng $90^\\circ$ thay vì trừ; góc tới là $90^\\circ - 30^\\circ$.",
+    "D": "Lấy $180^\\circ - 30^\\circ$; góc tới là phần phụ của $30^\\circ$ với $90^\\circ$, tức $90^\\circ - 30^\\circ$."
+   }
   },
   {
-   "type": "true_false",
-   "kind": "tinh_nhanh",
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đứng trên bờ nhìn thấy một con cá trong hồ nước trong. Muốn đâm trúng cá, phải đưa vợt tới vị trí",
+   "options": [
+    "đúng chỗ nhìn thấy cá",
+    "nông hơn chỗ nhìn thấy cá",
+    "sát mặt nước ngay trên ảnh cá",
+    "sâu hơn chỗ nhìn thấy cá"
+   ],
+   "answer": 3,
+   "explanation": "Mắt thấy ảnh ảo của cá, nằm cao hơn cá thật, nên cá thật ở sâu hơn chỗ nhìn thấy.",
+   "distractorNotes": {
+    "A": "Em chỉ thấy ảnh của cá chứ không thấy chính cá, nên ảnh không nằm đúng chỗ vật.",
+    "B": "Đảo chiều; ảnh nổi lên cao hơn cá thật nên cá thật nằm sâu hơn, không nông hơn.",
+    "C": "Ảnh nằm ở độ sâu nhất định, không dính sát mặt nước; cá thật còn sâu hơn ảnh."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mắt nhìn một vật qua mặt phân cách giữa hai môi trường trong suốt khác nhau. Ảnh mắt nhìn thấy là",
+   "options": [
+    "ảnh ảo, nằm trên đường kéo dài của tia sáng tới mắt",
+    "ảnh thật, do các tia khúc xạ cắt nhau trực tiếp",
+    "chính vật, nằm đúng vị trí thật của nó trong môi trường",
+    "hình của vật phản chiếu ngay trên mặt phân cách"
+   ],
+   "answer": 0,
+   "explanation": "Giữa mắt và vật có mặt phân cách thì tia khúc xạ vào mắt, mắt thấy ảnh ảo nằm trên đường kéo dài của tia tới mắt.",
+   "distractorNotes": {
+    "B": "Ảnh thật cần các tia khúc xạ cắt nhau thật sự; ở đây phải kéo dài ngược mới gặp nhau.",
+    "C": "Chỉ khi mắt và vật cùng môi trường mới thấy chính vật; có mặt phân cách thì thấy ảnh.",
+    "D": "Ảnh do khúc xạ tạo ra chứ không phải hình phản chiếu trên mặt phân cách."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
    "topic": "Chiết suất và định luật khúc xạ ánh sáng",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về các công thức liên quan khúc xạ:",
-   "statements": [
-    {
-     "text": "Tính thuận nghịch: $n_{12} = \\frac{1}{n_{21}}$.",
-     "answer": true
-    },
-    {
-     "text": "Chiết suất tỉ đối $n_{21} = \\frac{n_2}{n_1}$.",
-     "answer": true
-    },
-    {
-     "text": "Góc phản xạ i' luôn bằng góc tới i.",
-     "answer": true
-    },
-    {
-     "text": "Góc khúc xạ tính bằng $r = \\frac{i}{n}$.",
-     "answer": false
-    }
+   "question": "Tia sáng đi từ không khí vào nước với góc tới $53^\\circ$ cho góc khúc xạ $37^\\circ$. Cho tia đi ngược lại từ nước ra không khí với góc tới $37^\\circ$, góc khúc xạ là",
+   "options": [
+    "$37^\\circ$",
+    "$16^\\circ$",
+    "$53^\\circ$",
+    "$90^\\circ$"
    ],
-   "explanation": "Phải chia sin cho n, không chia góc cho n."
+   "answer": 2,
+   "explanation": "Ánh sáng truyền ngược lại theo đường cũ nên $i$ và $r$ đổi vai: góc khúc xạ là $53^\\circ$.",
+   "distractorNotes": {
+    "A": "Quên khúc xạ; từ nước ra không khí góc khúc xạ lớn hơn góc tới.",
+    "B": "Lấy hiệu hai góc; tính thuận nghịch cho phép đổi vai $i$ và $r$ chứ không phải trừ góc.",
+    "D": "Góc khúc xạ không tự nhiên bằng $90^\\circ$; tia đi ngược theo đường cũ nên góc khúc xạ là $53^\\circ$."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "dinh_luat",
-   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Tia sáng chiếu vuông góc với mặt phân cách. Góc khúc xạ r bằng bao nhiêu độ?",
-   "answer": "0",
-   "explanation": "i = 0° thì r = 0°, tia đi thẳng."
-  },
-  {
-   "type": "short_answer",
+   "type": "true_false",
    "kind": "hien_tuong",
    "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Tia sáng chiếu tới mặt phân cách với góc tới 35°. Góc phản xạ i' bằng bao nhiêu độ?",
-   "answer": "35",
-   "explanation": "Góc phản xạ luôn bằng góc tới: i' = i."
+   "question": "Một nhóm học sinh chiếu bút laser từ không khí xiên xuống mặt nước trong bể, rồi thay đổi dần góc tới. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Chiếu vuông góc với mặt nước thì tia sáng vẫn gãy khúc vì đổi môi trường.",
+     "answer": false
+    },
+    {
+     "text": "Khi tăng góc tới thì góc khúc xạ cũng tăng.",
+     "answer": true
+    },
+    {
+     "text": "Ngoài tia khúc xạ còn có một tia phản xạ mờ trở lại không khí.",
+     "answer": true
+    },
+    {
+     "text": "Góc khúc xạ luôn lớn hơn góc tới vì nước đặc hơn không khí.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: tia vuông góc đi thẳng theo pháp tuyến, không gãy khúc. b) đúng: $\\sin r = \\dfrac{\\sin i}{n}$ nên $i$ tăng thì $r$ cũng tăng. c) đúng: khi khúc xạ, một phần ánh sáng vẫn bị hắt trở lại môi trường cũ. d) sai: vào nước có $n$ lớn hơn nên $r < i$, tia lệch lại gần pháp tuyến.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì tia vuông góc đi thẳng theo pháp tuyến, không gãy khúc.",
+    "1": "Không thể coi là sai vì $\\sin r = \\dfrac{\\sin i}{n}$ nên $i$ tăng thì $r$ cũng tăng.",
+    "2": "Không thể coi là sai vì khi khúc xạ, một phần ánh sáng vẫn bị hắt trở lại môi trường cũ.",
+    "3": "Không thể coi là đúng vì vào nước có $n$ lớn hơn nên $r < i$, tia lệch lại gần pháp tuyến."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "dieu_kien",
-   "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một học sinh dùng công thức $n = \\dfrac{c}{v}$ để so sánh ánh sáng trong không khí, nước và thuỷ tinh. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Môi trường nào làm ánh sáng đi càng chậm thì chiết suất càng lớn.",
+     "answer": true
+    },
+    {
+     "text": "Khối chất có $n = 1{,}5$ thì tốc độ ánh sáng trong đó là $v = 1{,}5\\,c$.",
+     "answer": false
+    },
+    {
+     "text": "Chiết suất được đo bằng đơn vị m/s giống tốc độ ánh sáng.",
+     "answer": false
+    },
+    {
+     "text": "Trong thuỷ tinh ($n \\approx 1{,}5$), ánh sáng đi chậm hơn trong không khí.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng: $n = c/v$ nên $v$ nhỏ thì $n$ lớn. b) sai: $v = c/n = c/1{,}5$, nhỏ hơn $c$ chứ không lớn hơn. c) sai: $n$ là tỉ số hai tốc độ nên không có đơn vị. d) đúng: $n$ của thuỷ tinh lớn hơn $n$ của không khí nên $v$ trong thuỷ tinh nhỏ hơn.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $n = c/v$ nên $v$ nhỏ thì $n$ lớn.",
+    "1": "Không thể coi là đúng vì $v = c/n = c/1{,}5$, nhỏ hơn $c$ chứ không lớn hơn.",
+    "2": "Không thể coi là đúng vì $n$ là tỉ số hai tốc độ nên không có đơn vị.",
+    "3": "Không thể coi là sai vì $n$ của thuỷ tinh lớn hơn $n$ của không khí nên $v$ trong thuỷ tinh nhỏ hơn."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Tia sáng đi từ không khí ($n_1 = 1$) vào thuỷ tinh ($n_2 = 1{,}5$) với góc tới $i$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Góc khúc xạ $r$ nhỏ hơn góc tới $i$.",
+     "answer": true
+    },
+    {
+     "text": "Cho tia đi ngược lại từ thuỷ tinh ra không khí theo đúng đường cũ thì góc tới mới bằng góc khúc xạ cũ.",
+     "answer": true
+    },
+    {
+     "text": "Tia khúc xạ lệch ra xa pháp tuyến so với tia tới.",
+     "answer": false
+    },
+    {
+     "text": "Muốn tính $r$ chỉ cần lấy $i$ chia cho $1{,}5$.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng: vào môi trường chiết quang hơn ($n_2 > n_1$) thì $r < i$. b) đúng: ánh sáng truyền ngược theo đường cũ nên $i$ và $r$ đổi vai. c) sai: vào môi trường chiết quang hơn thì tia lệch lại gần pháp tuyến. d) sai: định luật chia $\\sin i$ cho $n$ chứ không chia chính góc.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì vào môi trường chiết quang hơn ($n_2 > n_1$) thì $r < i$.",
+    "1": "Không thể coi là sai vì ánh sáng truyền ngược theo đường cũ nên $i$ và $r$ đổi vai.",
+    "2": "Không thể coi là đúng vì vào môi trường chiết quang hơn thì tia lệch lại gần pháp tuyến.",
+    "3": "Không thể coi là đúng vì định luật chia $\\sin i$ cho $n$ chứ không chia chính góc."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Khúc xạ ánh sáng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Tia sáng từ không khí hợp với mặt nước góc 60°. Góc tới bằng bao nhiêu độ?",
-   "answer": "30",
-   "explanation": "i = 90° − 60° = 30°, vì góc tới đo từ pháp tuyến."
+   "question": "Đứng ngoài hồ bơi nhìn xuống đáy hồ trong. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Các tia sáng từ đáy ra không khí lệch lại gần pháp tuyến hơn.",
+     "answer": false
+    },
+    {
+     "text": "Mắt nhìn thấy ảnh ảo của đáy hồ chứ không thấy chính đáy hồ.",
+     "answer": true
+    },
+    {
+     "text": "Độ sâu mắt thấy luôn bằng độ sâu thật của hồ.",
+     "answer": false
+    },
+    {
+     "text": "Đáy hồ trông nông hơn độ sâu thật.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai: từ nước ra không khí các tia lệch xa pháp tuyến. b) đúng: giữa mắt và đáy hồ có mặt phân cách nước – không khí nên mắt thấy ảnh. c) sai: vì nhìn thấy ảnh nổi lên nên độ sâu thật lớn hơn độ sâu trông thấy. d) đúng: ảnh của đáy nổi lên cao hơn vị trí thật.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì từ nước ra không khí các tia lệch xa pháp tuyến.",
+    "1": "Không thể coi là sai vì giữa mắt và đáy hồ có mặt phân cách nước – không khí nên mắt thấy ảnh.",
+    "2": "Không thể coi là đúng vì vì nhìn thấy ảnh nổi lên nên độ sâu thật lớn hơn độ sâu trông thấy.",
+    "3": "Không thể coi là sai vì ảnh của đáy nổi lên cao hơn vị trí thật."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một tia sáng từ không khí chiếu tới mặt nước, hợp với mặt nước một góc $20^\\circ$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Góc tới bằng $20^\\circ$ vì đó là góc hợp với mặt phân cách.",
+     "answer": false
+    },
+    {
+     "text": "Tia chiếu rất sát mặt nước nên không có tia khúc xạ.",
+     "answer": false
+    },
+    {
+     "text": "Góc tới bằng $70^\\circ$.",
+     "answer": true
+    },
+    {
+     "text": "Góc khúc xạ được đo giữa tia khúc xạ và pháp tuyến.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai: góc hợp với mặt phân cách chưa phải góc tới; góc tới đo từ pháp tuyến. b) sai: đi từ không khí vào nước luôn có tia khúc xạ, dù tia tới rất xiên. c) đúng: góc tới đo từ pháp tuyến nên $i = 90^\\circ - 20^\\circ$. d) đúng: cả góc tới và góc khúc xạ đều đo từ pháp tuyến.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì góc hợp với mặt phân cách chưa phải góc tới; góc tới đo từ pháp tuyến.",
+    "1": "Không thể coi là đúng vì đi từ không khí vào nước luôn có tia khúc xạ, dù tia tới rất xiên.",
+    "2": "Không thể coi là sai vì góc tới đo từ pháp tuyến nên $i = 90^\\circ - 20^\\circ$.",
+    "3": "Không thể coi là sai vì cả góc tới và góc khúc xạ đều đo từ pháp tuyến."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Khúc xạ ánh sáng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Ánh sáng trong khối nhựa có tốc độ $1{,}5\\cdot10^8$ m/s. Chiết suất của khối nhựa bằng bao nhiêu?",
-   "answer": "2",
-   "explanation": "$n = \\frac{3\\cdot10^8}{1{,}5\\cdot10^8} = 2$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Từ không khí vào nước, $i = 53^\\circ$ và $r \\approx 37^\\circ$. Góc lệch $D=|i-r|$ bằng bao nhiêu độ?",
-   "answer": "16",
-   "explanation": "D = 53° − 37° = 16° (bài toán mẫu)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chiết suất và định luật khúc xạ ánh sáng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Tia sáng từ thuỷ tinh ($n=1{,}5$) ra không khí, i = 30°. Tính $\\sin r$ (viết số thập phân dùng dấu phẩy).",
-   "answer": "0,75",
-   "explanation": "$\\sin r = 1{,}5\\sin 30^\\circ = 0{,}75$."
+   "question": "Đặt đồng xu dưới đáy bát, lùi đầu để thành bát vừa che khuất đồng xu và giữ yên mắt. Khi một bạn rót nước vào bát, đồng xu hiện ra. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Ánh sáng từ đồng xu bị gãy khúc ở mặt nước khi ra không khí.",
+     "answer": true
+    },
+    {
+     "text": "Nước làm đồng xu nổi lên cao thật sự trong bát.",
+     "answer": false
+    },
+    {
+     "text": "Mắt thấy ảnh của đồng xu nằm cao hơn chỗ thật.",
+     "answer": true
+    },
+    {
+     "text": "Mắt vẫn thấy đồng xu theo đường thẳng xuyên qua thành bát.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng: tia đi từ nước ra không khí qua mặt phân cách nên khúc xạ. b) sai: đồng xu vẫn nằm yên dưới đáy; chỉ có ảnh của nó nổi lên. c) đúng: tia khúc xạ kéo dài ngược gặp nhau ở điểm cao hơn vật. d) sai: thành bát che khuất đường thẳng; ánh sáng phải khúc xạ qua mặt nước và đi vòng qua mép bát.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì tia đi từ nước ra không khí qua mặt phân cách nên khúc xạ.",
+    "1": "Không thể coi là đúng vì đồng xu vẫn nằm yên dưới đáy; chỉ có ảnh của nó nổi lên.",
+    "2": "Không thể coi là sai vì tia khúc xạ kéo dài ngược gặp nhau ở điểm cao hơn vật.",
+    "3": "Không thể coi là đúng vì thành bát che khuất đường thẳng; ánh sáng phải khúc xạ qua mặt nước và đi vòng qua mép bát."
+   }
   }
  ]
 }

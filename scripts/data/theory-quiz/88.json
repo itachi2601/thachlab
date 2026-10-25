@@ -1,386 +1,550 @@
 {
- "lesson_id": 88,
- "lesson_title": "Bài 10. Kính lúp. Bài tập thấu kính",
- "item_id": 295,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 15,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 9,
-   "cong_thuc": 11
+  "lesson_id": 88,
+  "lesson_title": "Bài 10. Kính lúp. Bài tập thấu kính",
+  "item_id": 295,
+  "generated_at": "2026-10-25",
+  "generated_by": "claude-code (phiên Mac)",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
   },
-  "removed": []
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Kính lúp là loại thấu kính nào?",
-   "options": [
-    "Thấu kính phân kì có tiêu cự ngắn",
-    "Thấu kính hội tụ có tiêu cự ngắn",
-    "Thấu kính hội tụ có tiêu cự dài",
-    "Thấu kính phân kì có tiêu cự dài"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu kính lúp là thấu kính hội tụ có tiêu cự ngắn (vài xentimét)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Muốn quan sát ảnh ảo, cùng chiều, lớn hơn vật qua kính lúp thì phải đặt vật ở đâu?",
-   "options": [
-    "Trong khoảng từ quang tâm O tới tiêu điểm F",
-    "Đúng ở vị trí 2f",
-    "Ngoài khoảng 2f",
-    "Ở vị trí bất kì trước kính"
-   ],
-   "answer": 0,
-   "explanation": "Vật phải ở trong khoảng tiêu cự, d < f."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Vì sao đường kéo dài từ thấu kính về ảnh ảo B' phải vẽ bằng nét đứt?",
-   "options": [
-    "Vì ảnh ảo rất mờ",
-    "Vì đó là tia sáng yếu hơn",
-    "Vì ánh sáng không đi qua đó, đó chỉ là đường kéo dài ngược",
-    "Vì ánh sáng quay ngược về B'"
-   ],
-   "answer": 2,
-   "explanation": "Bài nêu nét đứt là đường kéo dài ngược, không có ánh sáng đi qua."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Đặt vật cách kính lúp xa hơn 2f. Ảnh qua kính là:",
-   "options": [
-    "Ảnh ảo, cùng chiều, lớn hơn vật",
-    "Ảnh thật, ngược chiều, nhỏ hơn vật",
-    "Ảnh thật, ngược chiều, lớn hơn vật",
-    "Ảnh ảo, ngược chiều, nhỏ hơn vật"
-   ],
-   "answer": 1,
-   "explanation": "Bảng ở bẫy 1: d > 2f cho ảnh thật, ngược chiều, nhỏ hơn vật."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Ảnh ảo qua kính lúp có đặc điểm nào sau đây?",
-   "options": [
-    "Hứng được trên màn",
-    "Không hứng được trên màn, chỉ nhìn thấy",
-    "Luôn ngược chiều vật",
-    "Nằm khác phía vật so với kính"
-   ],
-   "answer": 1,
-   "explanation": "Ảnh ảo không hứng được, chỉ nhìn thấy; nằm cùng phía vật."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Khi dựng ảnh qua kính lúp, hai tia đặc biệt là:",
-   "options": [
-    "Tia qua F' và tia qua F",
-    "Tia song song trục chính (ló qua F') và tia qua quang tâm O (đi thẳng)",
-    "Hai tia cùng song song trục chính",
-    "Hai tia cùng đi qua quang tâm"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu hai tia đặc biệt: song song trục chính ló qua F', và qua O đi thẳng."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức số bội giác của kính lúp là:",
-   "options": [
-    "$G = \\dfrac{f}{25}$",
-    "$G = 25f$",
-    "$G = \\dfrac{25}{f}$",
-    "$G = 25 - f$"
-   ],
-   "answer": 2,
-   "explanation": "Bài cho $G = 25/f$ với f tính bằng cm."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Kính lúp có $f = 5\\ \\text{cm}$ thì số bội giác là:",
-   "options": [
-    "$0{,}2$",
-    "$125$",
-    "$20$",
-    "$5$"
-   ],
-   "answer": 3,
-   "explanation": "$G = 25/5 = 5$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức thấu kính hội tụ đúng là:",
-   "options": [
-    "$\\dfrac{1}{f} = \\dfrac{1}{d} - \\dfrac{1}{d'}$",
-    "$f = d + d'$",
-    "$\\dfrac{1}{f} = \\dfrac{1}{d} + \\dfrac{1}{d'}$",
-    "$\\dfrac{1}{d'} = \\dfrac{1}{f} + \\dfrac{1}{d}$"
-   ],
-   "answer": 2,
-   "explanation": "Bài nhắc lại $\\frac1f=\\frac1d+\\frac1{d'}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Số phóng đại k được tính bằng:",
-   "options": [
-    "$k = \\dfrac{d}{|d'|}$",
-    "$k = \\dfrac{|d'|}{d}$",
-    "$k = d\\cdot d'$",
-    "$k = \\dfrac{f}{d}$"
-   ],
-   "answer": 1,
-   "explanation": "Bài cho $k = h'/h = |d'|/d$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về kính lúp và số bội giác G = 25/f:",
-   "statements": [
+  "questions": [
     {
-     "text": "f tính bằng xentimét.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Kính lúp là",
+      "options": [
+        "thấu kính hội tụ có tiêu cự ngắn, dùng để quan sát vật nhỏ",
+        "thấu kính hội tụ có tiêu cự dài, dùng để quan sát vật nhỏ",
+        "thấu kính phân kì có tiêu cự ngắn, dùng để quan sát vật nhỏ",
+        "thấu kính phân kì có tiêu cự dài, dùng để quan sát vật xa"
+      ],
+      "answer": 0,
+      "explanation": "Kính lúp là thấu kính hội tụ có tiêu cự ngắn (vài xentimét), dùng để quan sát vật nhỏ.",
+      "distractorNotes": {
+        "B": "Kính lúp cần tiêu cự ngắn (vài xentimét) để số bội giác lớn; tiêu cự dài phóng to rất ít.",
+        "C": "Thấu kính phân kì chỉ cho ảnh nhỏ hơn vật nên không thể phóng to vật.",
+        "D": "Sai cả loại thấu kính lẫn mục đích: kính lúp dùng để soi vật nhỏ ở gần."
+      }
     },
     {
-     "text": "f càng dài thì G càng lớn.",
-     "answer": false
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Muốn dùng kính lúp quan sát một vật nhỏ, phải đặt vật",
+      "options": [
+        "trong khoảng từ $F$ đến vị trí cách kính $2f$",
+        "ở xa kính hơn hai lần tiêu cự của kính",
+        "đúng tại vị trí cách kính một đoạn bằng $2f$",
+        "trong khoảng từ quang tâm $O$ đến $F$"
+      ],
+      "answer": 3,
+      "explanation": "Kính lúp chỉ phóng to cùng chiều khi vật nằm trong khoảng tiêu cự, $d<f$.",
+      "distractorNotes": {
+        "A": "Vật ở đây cho ảnh thật ngược chiều, không phải ảnh ảo to để soi vật nhỏ.",
+        "B": "Vật xa hơn $2f$ cho ảnh thật nhỏ hơn vật, không còn tác dụng của kính lúp.",
+        "C": "Vật tại $2f$ cho ảnh thật bằng vật, không phóng to."
+      }
     },
     {
-     "text": "Số 25 cm là khoảng nhìn rõ gần nhất thường dùng của mắt.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi dùng đúng cách, ảnh của vật nhỏ qua kính lúp là ảnh",
+      "options": [
+        "thật, ngược chiều và lớn hơn vật",
+        "ảo, cùng chiều và lớn hơn vật",
+        "ảo, ngược chiều và lớn hơn vật",
+        "thật, cùng chiều và nhỏ hơn vật"
+      ],
+      "answer": 1,
+      "explanation": "Vật trong tiêu cự cho ảnh ảo, cùng chiều, lớn hơn vật, nằm cùng phía với vật.",
+      "distractorNotes": {
+        "A": "Ảnh thật ngược chiều lớn hơn vật có khi vật ở ngoài tiêu cự, không phải cách dùng kính lúp.",
+        "C": "Ảnh ảo luôn cùng chiều với vật; ngược chiều là tính chất của ảnh thật.",
+        "D": "Kính lúp dùng đúng cách cho ảnh ảo, lớn hơn vật; ảnh thật thì ngược chiều với vật."
+      }
     },
     {
-     "text": "Kính ghi 5x có f = 125 cm.",
-     "answer": false
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Khi dựng ảnh qua kính lúp, đường nối về điểm $B'$ phải vẽ bằng nét đứt vì",
+      "options": [
+        "ánh sáng ở đó yếu hơn trên các tia thật",
+        "ảnh nhỏ nên rất khó vẽ nét liền cho rõ",
+        "đó là đường kéo dài, không có ánh sáng",
+        "ánh sáng quay ngược về phía vật rồi tới $B'$"
+      ],
+      "answer": 2,
+      "explanation": "Tia ló thật đi ra xa kính; đoạn nối về $B'$ chỉ là đường kéo dài ngược nên vẽ nét đứt.",
+      "distractorNotes": {
+        "A": "Nét đứt không biểu thị cường độ sáng; nó chỉ đường kéo dài, nơi không có ánh sáng thật.",
+        "B": "Ảnh qua kính lúp lớn hơn vật; cách vẽ phụ thuộc bản chất tia sáng, không phụ thuộc cỡ ảnh.",
+        "D": "Ánh sáng đi xuyên qua kính, không quay ngược về phía vật; chỉ đường kéo dài mới gặp nhau ở $B'$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Đặc điểm nào đúng với ảnh ảo qua kính lúp?",
+      "options": [
+        "Chỉ nhìn qua kính mới thấy, không hứng được",
+        "Hứng được trên màn đặt ở phía sau thấu kính",
+        "Hứng được trên màn nếu màn đặt sát mặt kính",
+        "Hứng được nếu tờ giấy đặt đúng tại tiêu điểm"
+      ],
+      "answer": 0,
+      "explanation": "Ảnh ảo chỉ thấy được khi nhìn qua kính và không hứng được trên màn.",
+      "distractorNotes": {
+        "B": "Ảnh ảo do đường kéo dài của tia ló tạo nên, không có ánh sáng thật tới màn.",
+        "C": "Vị trí màn không đổi được bản chất ảnh: đã là ảnh ảo thì không có tia thật nào gặp nhau.",
+        "D": "Giấy tại tiêu điểm chỉ nhận vệt sáng của chùm song song, không phải ảnh của vật."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Để thấy vùng quan sát qua kính lúp rộng nhất, nên",
+      "options": [
+        "đưa mắt ra xa kính vài chục xentimét",
+        "đưa kính ra xa vật hơn một tiêu cự",
+        "đặt mắt sát kính ở phía bên kia vật",
+        "che bớt một nửa mặt kính bằng giấy đen"
+      ],
+      "answer": 2,
+      "explanation": "Mắt sát kính thì thấy rộng nhất; mắt ra xa, khung kính che bớt nên vùng nhìn hẹp lại.",
+      "distractorNotes": {
+        "A": "Mắt xa kính thì khung kính che bớt, vùng nhìn thấy hẹp lại.",
+        "B": "Vật ra ngoài tiêu cự làm ảnh nhoè rồi lật ngược, không làm vùng nhìn rộng hơn.",
+        "D": "Che bớt kính chỉ làm ảnh tối đi và thu hẹp vùng nhìn, không làm rộng thêm."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi nâng kính lúp lên làm vật vượt ra ngoài tiêu điểm, ảnh qua kính",
+      "options": [
+        "to dần và vẫn cùng chiều",
+        "nhỏ dần nhưng vẫn cùng chiều",
+        "biến mất hoàn toàn khỏi tầm nhìn",
+        "nhoè đi rồi lật ngược"
+      ],
+      "answer": 3,
+      "explanation": "Ra ngoài tiêu điểm, ảnh nhoè rồi chuyển thành ảnh thật, ngược chiều.",
+      "distractorNotes": {
+        "A": "Chỉ khi vật còn trong tiêu cự ảnh mới to dần và cùng chiều; vượt tiêu điểm thì ảnh đổi bản chất.",
+        "B": "Ảnh cùng chiều chỉ có ở ảnh ảo trong tiêu cự, không còn khi vật ra ngoài tiêu cự.",
+        "C": "Vẫn có ảnh, nhưng là ảnh thật ngược chiều; chỉ ngay tại tiêu điểm mới không có ảnh."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trong công thức $G=\\dfrac{25}{f}$ của kính lúp, số $25$ là",
+      "options": [
+        "tiêu cự chuẩn chung của mọi kính lúp, tính bằng cm",
+        "khoảng nhìn rõ gần nhất của mắt, tính bằng cm",
+        "khoảng cách từ kính lúp tới ảnh ảo của vật, tính bằng cm",
+        "số lần phóng đại lớn nhất mà một kính lúp có thể đạt"
+      ],
+      "answer": 1,
+      "explanation": "Số $25$ là khoảng nhìn rõ gần nhất thường dùng của mắt bình thường, tính bằng cm.",
+      "distractorNotes": {
+        "A": "Tiêu cự mỗi kính lúp khác nhau và chính là $f$ trong công thức, không phải hằng số $25$.",
+        "C": "Khoảng cách ảnh là $d'$ và thay đổi theo vị trí vật; $25$ là hằng số của công thức.",
+        "D": "Số lần phóng đại của kính chính là $G$, kết quả của phép chia, không phải số $25$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Số bội giác của kính lúp có tiêu cự $f$ (tính bằng cm) là",
+      "options": [
+        "$G=\\dfrac{f}{25}$",
+        "$G=25f$",
+        "$G=\\dfrac{25}{f}$",
+        "$G=25-f$"
+      ],
+      "answer": 2,
+      "explanation": "Số bội giác $G=\\dfrac{25}{f}$, với $f$ tính bằng cm.",
+      "distractorNotes": {
+        "A": "Đảo tử và mẫu; tiêu cự càng ngắn thì kính càng phóng to nên $f$ phải ở mẫu số.",
+        "B": "Nhân thay vì chia: khi đó $f$ càng dài thì kính càng phóng to, trái với thực tế.",
+        "D": "Lấy hiệu hai độ dài; số bội giác không có đơn vị nên phải là một tỉ số."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Kính lúp ghi 5x có tiêu cự",
+      "options": [
+        "$5\\ \\text{cm}$",
+        "$20\\ \\text{cm}$",
+        "$125\\ \\text{cm}$",
+        "$0{,}2\\ \\text{cm}$"
+      ],
+      "answer": 0,
+      "explanation": "$f=\\dfrac{25}{G}=\\dfrac{25}{5}=5\\ \\text{cm}$.",
+      "distractorNotes": {
+        "B": "Lấy $25-5$; phải dùng phép chia $f=\\dfrac{25}{G}$.",
+        "C": "Nhân $25\\cdot5$ thay vì chia $25$ cho $G$.",
+        "D": "Chia ngược $\\dfrac{5}{25}$; phải lấy $25$ chia cho $G$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Muốn kính lúp phóng to nhiều hơn, nên chọn kính có",
+      "options": [
+        "tiêu cự dài hơn, vì $f$ ở tử số của $G$",
+        "tiêu cự ngắn hơn, vì $f$ ở mẫu số của $G$",
+        "tiêu cự dài hơn, vì khi đó $G=25f$ lớn hơn",
+        "tiêu cự bất kì, vì $G$ không phụ thuộc vào $f$"
+      ],
+      "answer": 1,
+      "explanation": "$G=\\dfrac{25}{f}$: $f$ càng ngắn thì $G$ càng lớn.",
+      "distractorNotes": {
+        "A": "$f$ nằm ở mẫu số của $G=\\dfrac{25}{f}$, không ở tử số.",
+        "C": "Công thức sai: $G=\\dfrac{25}{f}$, nên tiêu cự dài làm $G$ nhỏ đi.",
+        "D": "$G=\\dfrac{25}{f}$ phụ thuộc trực tiếp vào $f$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Với kính lúp (vật trong tiêu cự), số phóng đại của ảnh ảo ở một vị trí vật cụ thể tính bằng",
+      "options": [
+        "$k=\\dfrac{d}{|d'|}$",
+        "$k=\\dfrac{25}{f}$",
+        "$k=\\dfrac{|d'|}{f}$",
+        "$k=\\dfrac{|d'|}{d}$"
+      ],
+      "answer": 3,
+      "explanation": "Số phóng đại $k=\\dfrac{h'}{h}=\\dfrac{|d'|}{d}$ ở từng vị trí vật; $G$ khác $k$.",
+      "distractorNotes": {
+        "A": "Đảo tử và mẫu; ảnh ảo xa kính hơn vật nên $k>1$, cần $|d'|$ ở tử số.",
+        "B": "Đó là số bội giác $G$ (ảnh ở rất xa), không phải tỉ số cao ảnh/vật ở một vị trí cụ thể.",
+        "C": "Chia cho $f$ thay vì $d$; tam giác đồng dạng cho tỉ số với khoảng cách vật $d$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Kính lúp có $f=10\\ \\text{cm}$; vật đặt cách kính $5\\ \\text{cm}$. Ảnh của vật là ảnh",
+      "options": [
+        "thật, cách kính $10\\ \\text{cm}$, cao gấp $2$ lần vật",
+        "ảo, cách kính $3{,}3\\ \\text{cm}$, cao gấp $\\dfrac23$ lần vật",
+        "ảo, cách kính $10\\ \\text{cm}$, cao gấp $2$ lần vật",
+        "ảo, cách kính $10\\ \\text{cm}$, cao gấp $0{,}5$ lần vật"
+      ],
+      "answer": 2,
+      "explanation": "$\\dfrac1{d'}=\\dfrac1{10}-\\dfrac15=-\\dfrac1{10}$ nên $d'=-10\\ \\text{cm}$ (ảnh ảo) và $k=\\dfrac{10}{5}=2$.",
+      "distractorNotes": {
+        "A": "Đã quên đọc dấu: $d'$ ra âm nên đây là ảnh ảo, không phải ảnh thật.",
+        "B": "Cộng $\\dfrac1{10}+\\dfrac15$ thay vì trừ nên ra ảnh gần kính và nhỏ hơn vật.",
+        "D": "Đảo tỉ số: $k=\\dfrac{|d'|}{d}=\\dfrac{10}{5}=2$, không phải $\\dfrac{d}{|d'|}$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Kính lúp ghi số bội giác $G$. Tiêu cự $f$ (cm) của kính tính bằng",
+      "options": [
+        "$f=25G$",
+        "$f=\\dfrac{25}{G}$",
+        "$f=\\dfrac{G}{25}$",
+        "$f=25-G$"
+      ],
+      "answer": 1,
+      "explanation": "Từ $G=\\dfrac{25}{f}$ suy ra $f=\\dfrac{25}{G}$.",
+      "distractorNotes": {
+        "A": "Nhân thay vì chia; kính có $G$ lớn thì phải có $f$ nhỏ.",
+        "C": "Đảo tử và mẫu khi biến đổi từ $G=\\dfrac{25}{f}$.",
+        "D": "Biến đổi bằng phép trừ; từ $G=\\dfrac{25}{f}$ chỉ cần đổi chỗ $f$ và $G$ trong phép chia."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Em đặt kính lúp sát một con tem rồi nâng kính lên dần, mắt vẫn nhìn qua kính. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Khi con tem còn trong tiêu cự, ảnh qua kính là ảnh ảo, cùng chiều và to dần.",
+          "answer": true
+        },
+        {
+          "text": "Nâng kính càng cao thì ảnh càng to và luôn cùng chiều.",
+          "answer": false
+        },
+        {
+          "text": "Nâng kính vượt quá tiêu điểm thì ảnh nhoè rồi lật ngược.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh em thấy khi con tem trong tiêu cự có thể hứng trên tờ giấy.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng. b) sai: ra ngoài tiêu cự ảnh lật ngược. c) đúng. d) sai: ảnh ảo không hứng được.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì vật trong tiêu cự cho ảnh ảo, cùng chiều, lớn hơn vật.",
+        "1": "Không thể coi là đúng vì kính chỉ phóng to cùng chiều khi vật còn trong tiêu cự.",
+        "2": "Không thể coi là sai vì ra ngoài tiêu cự ảnh trở thành ảnh thật, ngược chiều.",
+        "3": "Không thể coi là đúng vì đó là ảnh ảo, chỉ nhìn qua kính mới thấy, không hứng được."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật $AB$ đặt trong tiêu cự của kính lúp, em dựng ảnh bằng hai tia đặc biệt xuất phát từ $B$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Hai tia ló cắt nhau thật ở phía sau kính.",
+          "answer": false
+        },
+        {
+          "text": "Tia đi qua quang tâm $O$ truyền thẳng.",
+          "answer": true
+        },
+        {
+          "text": "Giao điểm của hai tia ló là ảnh thật nên vẽ bằng nét liền.",
+          "answer": false
+        },
+        {
+          "text": "Tia song song trục chính ló ra đi qua tiêu điểm ảnh $F'$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: hai tia ló loe ra. b) đúng. c) sai: ảnh ảo vẽ nét đứt. d) đúng.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì với vật trong tiêu cự hai tia ló loe ra, không cắt nhau thật.",
+        "1": "Không thể coi là sai vì tia qua quang tâm không bị đổi hướng.",
+        "2": "Không thể coi là đúng vì chỉ đường kéo dài ngược của các tia ló gặp nhau, đó là ảnh ảo nên vẽ nét đứt.",
+        "3": "Không thể coi là sai vì tia tới song song trục chính luôn ló qua $F'$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Chữ F cao $2\\ \\text{cm}$ đặt cách thấu kính hội tụ tiêu cự $15\\ \\text{cm}$ một khoảng $20\\ \\text{cm}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Ảnh là ảnh thật, cách thấu kính $60\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Đưa vật vào cách kính $10\\ \\text{cm}$ thì vẫn hứng được ảnh trên màn.",
+          "answer": false
+        },
+        {
+          "text": "Ảnh nhỏ hơn vật vì vật nằm ngoài tiêu cự.",
+          "answer": false
+        },
+        {
+          "text": "Ảnh cao $6\\ \\text{cm}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) đúng: $d'=60\\ \\text{cm}$. b) sai: $d<f$ cho ảnh ảo. c) sai: $f<d<2f$ cho ảnh lớn hơn. d) đúng: $h'=6\\ \\text{cm}$.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì $\\dfrac1{d'}=\\dfrac1{15}-\\dfrac1{20}=\\dfrac1{60}>0$.",
+        "1": "Không thể coi là đúng vì khi $d=10\\ \\text{cm}<f$ ảnh là ảnh ảo, không hứng được trên màn.",
+        "2": "Không thể coi là đúng vì $f<d<2f$ cho ảnh lớn hơn vật; chỉ khi $d>2f$ ảnh mới nhỏ hơn vật.",
+        "3": "Không thể coi là sai vì $k=\\dfrac{60}{20}=3$ nên $h'=3\\cdot2=6\\ \\text{cm}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Lan dùng kính lúp ghi 5x soi một chữ in cao $2\\ \\text{mm}$, đặt cách kính $4\\ \\text{cm}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Ảnh của chữ cao $4\\ \\text{mm}$.",
+          "answer": false
+        },
+        {
+          "text": "Ảnh của chữ nằm khác phía với chữ so với kính.",
+          "answer": false
+        },
+        {
+          "text": "Tiêu cự của kính lúp là $5\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh của chữ là ảnh ảo, cách kính $20\\ \\text{cm}$, cùng phía với chữ.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: $h'=10\\ \\text{mm}$. b) sai: ảnh ảo cùng phía vật. c) đúng: $f=5\\ \\text{cm}$. d) đúng: $d'=-20\\ \\text{cm}$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì $k=\\dfrac{20}{4}=5$ nên ảnh cao $5\\cdot2=10\\ \\text{mm}$.",
+        "1": "Không thể coi là đúng vì ảnh ảo nằm cùng phía với vật; $d'<0$ cho biết điều đó.",
+        "2": "Không thể coi là sai vì $f=\\dfrac{25}{5}=5\\ \\text{cm}$.",
+        "3": "Không thể coi là sai vì $\\dfrac1{d'}=\\dfrac15-\\dfrac14=-\\dfrac1{20}$ nên $d'=-20\\ \\text{cm}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai kính lúp M và N, kính M ghi 4x còn kính N ghi 10x. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Số 4x nghĩa là ảnh qua kính M luôn cao gấp đúng 4 lần vật ở mọi vị trí đặt vật.",
+          "answer": false
+        },
+        {
+          "text": "Tiêu cự của kính M là $6{,}25\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Tiêu cự của kính N là $2{,}5\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Kính N có tiêu cự dài hơn kính M.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) sai: $G$ khác $k$. b) đúng: $f_M=6{,}25\\ \\text{cm}$. c) đúng: $f_N=2{,}5\\ \\text{cm}$. d) sai: $f_N<f_M$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì $G$ ứng với ảnh ở rất xa, còn số phóng đại $k$ thay đổi theo vị trí vật.",
+        "1": "Không thể coi là sai vì $f=\\dfrac{25}{4}=6{,}25\\ \\text{cm}$.",
+        "2": "Không thể coi là sai vì $f=\\dfrac{25}{10}=2{,}5\\ \\text{cm}$.",
+        "3": "Không thể coi là đúng vì $G$ lớn hơn thì $f$ ngắn hơn: $2{,}5\\ \\text{cm}$ so với $6{,}25\\ \\text{cm}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật cao $3\\ \\text{cm}$ đặt cách thấu kính hội tụ tiêu cự $20\\ \\text{cm}$ một khoảng $60\\ \\text{cm}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Ảnh là ảnh thật, ngược chiều và nhỏ hơn vật.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh cách thấu kính $30\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh cao $6\\ \\text{cm}$.",
+          "answer": false
+        },
+        {
+          "text": "Ảnh là ảnh ảo vì thấu kính này được dùng làm kính lúp.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng. b) đúng: $d'=30\\ \\text{cm}$. c) sai: $h'=1{,}5\\ \\text{cm}$. d) sai: $d>f$ cho ảnh thật.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì vật xa hơn $2f$ cho ảnh thật, ngược chiều, nhỏ hơn vật.",
+        "1": "Không thể coi là sai vì $\\dfrac1{d'}=\\dfrac1{20}-\\dfrac1{60}=\\dfrac1{30}$.",
+        "2": "Không thể coi là đúng vì $k=\\dfrac{30}{60}=0{,}5$ nên ảnh cao $0{,}5\\cdot3=1{,}5\\ \\text{cm}$, nhỏ hơn vật.",
+        "3": "Không thể coi là đúng vì ảnh ảo chỉ có khi $d<f$; ở đây $d=60\\ \\text{cm}$ lớn hơn nhiều so với $f$."
+      }
     }
-   ],
-   "explanation": "f nằm ở mẫu số nên f ngắn thì G lớn; kính 5x có f = 25/5 = 5 cm."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Vật đặt trong khoảng tiêu cự của kính lúp (d < f):",
-   "statements": [
-    {
-     "text": "Ảnh là ảnh ảo.",
-     "answer": true
-    },
-    {
-     "text": "Ảnh cùng chiều với vật.",
-     "answer": true
-    },
-    {
-     "text": "Ảnh nhỏ hơn vật.",
-     "answer": false
-    },
-    {
-     "text": "Ảnh hứng được trên màn.",
-     "answer": false
-    }
-   ],
-   "explanation": "Ảnh ảo, cùng chiều, lớn hơn vật, không hứng được."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về cách dùng kính lúp:",
-   "statements": [
-    {
-     "text": "Đặt kính sát vật rồi từ từ dịch ra tới khi thấy rõ.",
-     "answer": true
-    },
-    {
-     "text": "Vật vượt ra ngoài tiêu điểm thì ảnh nhoè.",
-     "answer": true
-    },
-    {
-     "text": "Mắt ở xa kính thì thấy vùng rộng hơn.",
-     "answer": false
-    },
-    {
-     "text": "Mắt đặt sát kính để thấy rộng nhất.",
-     "answer": true
-    }
-   ],
-   "explanation": "Mắt xa kính, khung che bớt nên vùng nhìn hẹp lại."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về công thức thấu kính $\\frac1f=\\frac1d+\\frac1{d'}$:",
-   "statements": [
-    {
-     "text": "d' > 0 là ảnh thật.",
-     "answer": true
-    },
-    {
-     "text": "d' < 0 là ảnh ảo, cùng phía vật.",
-     "answer": true
-    },
-    {
-     "text": "k = |d'|/d.",
-     "answer": true
-    },
-    {
-     "text": "Khi d < f thì d' > 0.",
-     "answer": false
-    }
-   ],
-   "explanation": "d < f cho d' < 0 (ảnh ảo)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Kính lúp có f = 2,5 cm. Số bội giác G bằng bao nhiêu?",
-   "answer": "10",
-   "explanation": "G = 25/2,5 = 10."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Kính lúp ghi 5x có tiêu cự bao nhiêu cm?",
-   "answer": "5",
-   "explanation": "f = 25/5 = 5 cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Thấu kính hội tụ f = 12 cm, vật cách kính 24 cm. Khoảng cách ảnh d' bằng bao nhiêu cm?",
-   "answer": "24",
-   "explanation": "1/d' = 1/12 − 1/24 = 1/24 nên d' = 24 cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Thấu kính hội tụ f = 12 cm, vật cao 2 cm cách kính 18 cm. Số phóng đại k bằng bao nhiêu?",
-   "answer": "2",
-   "explanation": "d' = 36 cm nên k = 36/18 = 2."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Thấu kính f = 10 cm, ngọn nến cao 6 cm cách kính 30 cm. Ảnh cao bao nhiêu cm?",
-   "answer": "3",
-   "explanation": "d' = 15 cm, k = 15/30 = 0,5 nên h' = 3 cm."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 10. Kính lúp. Bài tập thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Thấu kính f = 12 cm, vật đặt cách kính 8 cm. Số phóng đại k bằng bao nhiêu?",
-   "answer": "3",
-   "explanation": "1/d' = 1/12 − 1/8 = −1/24, d' = −24 cm, k = 24/8 = 3."
-  }
- ]
+  ]
 }
