@@ -14,12 +14,39 @@
     "boyle.dinh_luat_boyle"
   ],
   "muc_tieu": "Đo áp suất của một lượng khí khi thể tích giảm dần ở nhiệt độ không đổi, từ bảng số liệu thấy tích pV giữ nguyên trong phạm vi sai số — đó là định luật Boyle.",
+  "gia_thuyet": [
+    "Ở nhiệt độ không đổi, áp suất của một lượng khí nhốt kín tỉ lệ nghịch với thể tích."
+  ],
+  "du_doan_neu_dung": [
+    "Thể tích giảm 2 lần thì áp suất tăng 2 lần; tích pV ở mọi lần đo như nhau trong phạm vi sai số."
+  ],
+  "khong_chung_minh": [
+    "Không cho biết áp suất phụ thuộc nhiệt độ thế nào.",
+    "Chỉ đúng trong sai số đo (khoảng 5%) và trong khoảng áp suất đã đo."
+  ],
   "dung_cu": [
-    { "ten": "Xilanh nhựa 20 ml có pittông kín (loại bơm tiêm)", "so_luong": 1 },
-    { "ten": "Áp kế điện tử hoặc áp kế cơ có thang tới 300 kPa", "so_luong": 1, "ghi_chu": "sai số ±2 kPa" },
-    { "ten": "Ống nối nhanh giữa đầu xilanh và áp kế", "so_luong": 1 },
-    { "ten": "Nhiệt kế rượu", "so_luong": 1, "ghi_chu": "dùng để kiểm tra nhiệt độ phòng không đổi" },
-    { "ten": "Giá đỡ hoặc kẹp gỗ giữ xilanh", "so_luong": 1 }
+    {
+      "ten": "Xilanh nhựa 20 ml có pittông kín (loại bơm tiêm)",
+      "so_luong": 1
+    },
+    {
+      "ten": "Áp kế điện tử hoặc áp kế cơ có thang tới 300 kPa",
+      "so_luong": 1,
+      "ghi_chu": "sai số ±2 kPa"
+    },
+    {
+      "ten": "Ống nối nhanh giữa đầu xilanh và áp kế",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nhiệt kế rượu",
+      "so_luong": 1,
+      "ghi_chu": "dùng để kiểm tra nhiệt độ phòng không đổi"
+    },
+    {
+      "ten": "Giá đỡ hoặc kẹp gỗ giữ xilanh",
+      "so_luong": 1
+    }
   ],
   "cac_buoc": {
     "lam": [
@@ -39,12 +66,50 @@
     ]
   },
   "tham_so": [
-    { "ky_hieu": "V", "ten": "Thể tích khí trong xilanh", "don_vi": "ml", "kieu": "dieu_chinh", "min": 3, "max": 8, "mac_dinh": 8, "buoc": 0.5 },
-    { "ky_hieu": "t", "ten": "Nhiệt độ phòng (giữ không đổi)", "don_vi": "°C", "kieu": "co_dinh", "gia_tri": 25 },
-    { "ky_hieu": "p0", "ten": "Áp suất khí quyển lúc làm thí nghiệm", "don_vi": "kPa", "kieu": "co_dinh", "gia_tri": 100 },
-    { "ky_hieu": "V0", "ten": "Thể tích ban đầu của lượng khí nhốt trong xilanh", "don_vi": "ml", "kieu": "co_dinh", "gia_tri": 8 },
-    { "ky_hieu": "p", "ten": "Áp suất khí đọc trên áp kế", "don_vi": "kPa", "kieu": "do_duoc", "sai_so_do": 2 },
-    { "ky_hieu": "pV", "ten": "Tích áp suất và thể tích", "don_vi": "kPa·ml", "kieu": "tinh_ra" }
+    {
+      "ky_hieu": "V",
+      "ten": "Thể tích khí trong xilanh",
+      "don_vi": "ml",
+      "kieu": "dieu_chinh",
+      "min": 3,
+      "max": 8,
+      "mac_dinh": 8,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "t",
+      "ten": "Nhiệt độ phòng (giữ không đổi)",
+      "don_vi": "°C",
+      "kieu": "co_dinh",
+      "gia_tri": 25
+    },
+    {
+      "ky_hieu": "p0",
+      "ten": "Áp suất khí quyển lúc làm thí nghiệm",
+      "don_vi": "kPa",
+      "kieu": "co_dinh",
+      "gia_tri": 100
+    },
+    {
+      "ky_hieu": "V0",
+      "ten": "Thể tích ban đầu của lượng khí nhốt trong xilanh",
+      "don_vi": "ml",
+      "kieu": "co_dinh",
+      "gia_tri": 8
+    },
+    {
+      "ky_hieu": "p",
+      "ten": "Áp suất khí đọc trên áp kế",
+      "don_vi": "kPa",
+      "kieu": "do_duoc",
+      "sai_so_do": 2
+    },
+    {
+      "ky_hieu": "pV",
+      "ten": "Tích áp suất và thể tích",
+      "don_vi": "kPa·ml",
+      "kieu": "tinh_ra"
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
@@ -62,13 +127,43 @@
     "ghi_chu": "Mô phỏng nên cho kéo pittông bằng chuột và vẽ đồ thị p–V ngay cạnh bảng: khi V giảm, điểm chạy dọc theo nhánh hypebol p = 100·8/V, còn cột pV gần như đứng yên."
   },
   "so_lieu_mau": {
-    "cot": ["Lần đo", "V (ml)", "p (kPa)", "pV (kPa·ml)"],
+    "cot": [
+      "Lần đo",
+      "V (ml)",
+      "p (kPa)",
+      "pV (kPa·ml)"
+    ],
     "hang": [
-      [1, 8.0, 100, 800],
-      [2, 6.0, 142, 852],
-      [3, 5.0, 170, 850],
-      [4, 4.0, 215, 860],
-      [5, 3.0, 267, 801]
+      [
+        1,
+        8.0,
+        100,
+        800
+      ],
+      [
+        2,
+        6.0,
+        142,
+        852
+      ],
+      [
+        3,
+        5.0,
+        170,
+        850
+      ],
+      [
+        4,
+        4.0,
+        215,
+        860
+      ],
+      [
+        5,
+        3.0,
+        267,
+        801
+      ]
     ],
     "ghi_chu": "Số liệu minh hoạ tính từ mô hình p = 800/V rồi làm tròn theo độ chia của áp kế và cộng sai số đọc; ở 3,0 ml áp kế đã gần trần thang đo (300 kPa) nên số đọc kém tin cậy hơn."
   },
@@ -81,7 +176,7 @@
   "sai_so_thuong_gap": [
     "Đọc vạch chia xilanh sai ±0,2 ml; ở thể tích 4,0 ml thì đó đã là 5% và ở 3,0 ml là gần 7%.",
     "Ma sát giữa pittông và thành xilanh làm áp suất khí khác số chỉ áp kế vài kPa.",
-    "Hơi nóng từ tay truyền sang xilanh làm nhiệt độ khí tăng, khiến pV lần sau lớn hơn lần trước.",
+    "Hơi nóng từ tay hoặc ấn pittông quá nhanh làm khí nóng lên: p đo được lớn hơn, pV lần sau lớn hơn lần trước.",
     "Khí lọt ra qua gioăng khi áp suất đã cao làm lượng khí giảm dần, hằng số pV trôi xuống."
   ],
   "goi_y_mo_phong": {
