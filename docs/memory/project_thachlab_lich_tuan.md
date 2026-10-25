@@ -30,3 +30,4 @@ metadata:
 - Địa điểm trượt băng/gym, nội dung "việc khác 10h T2", giờ tiết tối Cao Thắng: vẫn trống trong `lich-co-dinh.json`.
 
 **Thời lượng buổi dạy (thầy cho 2026-10-25):** lớp 10 và 11: 1 buổi/tuần 3h15′ (195′); lớp 12: 2 buổi/tuần, mỗi buổi 2h (120′). Nhịp cố định đầu buổi 10′ ôn → 20′ kiểm tra → 30′ sửa bài = 60′, nên phần bài mới + BTVN còn 135′ (L10/11) hoặc 60′ (L12). Dùng khi soạn ruột tập, chia tiết sách in, ước lượng độ dài bài mới.
+- **BTVN = một ĐỀ thầy giao cuối buổi** (làm trên thachlab/Azota/giấy), không phải "phần lý thuyết web mang về": nội dung bài web dạy hết trên lớp (thầy chốt 2026-10-25). Ruột tập/sách in chỉ chừa ô ghi tên đề, hạn, điểm, câu sai — không gắn nhãn Lớp/Nhà cho mục bài học.

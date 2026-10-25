@@ -1,4 +1,4 @@
-// Dựng ruột tập Vật lí 12 – Bài 14 (12 trang 165×240 mm, ô ly 5 mm — chia hết cho 4 để in gấp đôi). Theo nhịp buổi L12 (2 h): buổi N học bài mới 60′ (trang 1–4, nhãn Lớp/Nhà) + BTVN (trang 5);
+// Dựng ruột tập Vật lí 12 – Bài 14 (12 trang 165×240 mm, ô ly 5 mm — chia hết cho 4 để in gấp đôi). Theo nhịp buổi L12 (2 h): buổi N dạy hết bài web trên lớp 60′ (trang 1–5) + cuối giờ giao ĐỀ BTVN (ô trang 5);
 // buổi N+1: 10′ ôn (trang 3) → 20′ kiểm tra → 30′ sửa bài trên lớp (trang 7); trang 8 sửa bài kiểm tra chương, trang 9 làm lại câu sai sau 1 tuần; trang 6 Bài tập mẫu 5 dạng (module bai14-btm.mjs); trang 10–12 ghi chú tự do. Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
 // Mặc định ghi scripts/ruot-tap/out/ruot-tap-vl12-bai14.pdf. Cần book/node_modules (katex, qrcode-generator, puppeteer-core):
 // worktree không có thì dùng book/ của bản chính ~/Projects/thachlab.
@@ -34,8 +34,6 @@ const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
 
 // Nhãn góc phải: mã "trang·ô" trùng nhãn "✍ Tập: trang · ô" khi trình chiếu (data-tap trong theory.src.html).
 const tag = (t) => `<span class="tag">Tập ${t}</span>`;
-// Nhãn Lớp (làm trong 60′ bài mới trên lớp) / Nhà (về nhà) cạnh tiêu đề mục — theo nhịp buổi L12: 10′ ôn → 20′ KT → 30′ sửa → 60′ bài mới.
-const LOP = '<span class="bd lop">Lớp</span>', NHA = '<span class="bd nha">Nhà</span>';
 const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · trang ${n}/12</span></div>`;
 // who=true chỉ ở trang 1 và trang Sửa bài (tập đóng sẵn, không lặp Ngày/Tên mỗi trang)
 const head = (t, s, who = false) => `<div class="top"><div><b>${t}</b><small>${s}</small></div>${who ? '<div class="who">Ngày …../….. &nbsp;Tên: ………………</div>' : ''}</div>`;
@@ -55,7 +53,7 @@ ${head(title, sub, true)}
 <div class="card soft" style="display:flex;gap:4mm;flex-wrap:wrap"><span>Đề: ……………………………</span><span>Điểm: ……/……</span><span>Sai: P.I …… · P.II …… · P.III ……</span></div>
 ${lap ? `<div class="card" style="padding:1mm 3mm;display:flex;align-items:baseline;gap:1.5mm;white-space:nowrap"><b>So với lần trước:</b> số câu sai …… → …… · <b>Lỗi lặp lại:</b> <span class="fill" style="flex:1;min-width:0"></span></div>` : ''}
 ${traNhanh}
-<h3><i>1</i>Câu sai và câu đúng nhờ đoán <span class="hint">(mỗi câu/ý một hàng, ví dụ II.2b)</span></h3>
+<h3><i>1</i>Câu sai và câu đúng nhờ đoán <span class="hint">(mỗi câu/ý một hàng, ví dụ II.2b; đề BTVN ghi BT 3)</span></h3>
 <table class="er"><tr><th style="width:12mm">Câu/ý</th><th style="width:40mm">Em ghi → Đúng</th><th style="width:14mm">Chắc?</th><th style="width:43mm">Loại lỗi</th><th style="width:10mm">Dạng</th><th>Tập ô</th></tr>${errRow().repeat(rows)}</table>
 <div class="hint" style="margin-top:.6mm">Chắc mà vẫn sai → sửa trước tiên. Đúng nhờ đoán → vẫn ghi, vẫn xem lại. Sai nhiều hơn số hàng → ghi tiếp ở trang 10.</div>
 <h3><i>2</i>Thầy chữa trên bảng, em chép cách giải <span class="hint">(chữ trước, số sau; mỗi ô một câu)</span></h3>
@@ -109,8 +107,6 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .er td{white-space:nowrap}.er td .ck{width:3.6mm;height:3.6mm;border-radius:.5mm}
 .exp{display:inline-block;width:9mm;height:3.8mm;border:.3mm solid var(--navy);border-radius:.6mm;background:#fff;vertical-align:1.3mm;margin:0 .5mm}
 .trap{display:flex;gap:2mm;align-items:flex-start;margin:1mm 0}
-.bd{display:inline-block;font-size:2.6mm;font-weight:700;border-radius:1mm;padding:0 1.4mm;line-height:3.8mm;vertical-align:.8mm;margin-left:1.2mm;letter-spacing:.1mm}
-.bd.lop{background:var(--navy);color:#fff}.bd.nha{background:#fff;color:var(--navy);border:.3mm solid var(--navy)}
 .nhip{background:var(--soft);border:.3mm solid var(--grid);border-radius:1.2mm;padding:.8mm 2.5mm;font-size:2.9mm;line-height:1.4;margin-bottom:1.5mm}
 .nhip b{color:var(--navy)}
 ${btmCss}
@@ -119,14 +115,14 @@ ${btmCss}
 <!-- TRANG 1: mục tiêu, dự đoán, II.1 -->
 <section class="page">
 ${head('BÀI 14 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: Vật lí hạt nhân', true)}
-<div class="nhip"><b>Tập này dùng cho hai buổi.</b> Hôm nay: học bài mới 60′ → chép BTVN (trang 5). Buổi sau: <b>10′ ôn</b> (trang 3) → <b>20′ kiểm tra</b> → <b>30′ sửa bài</b> (trang 7). Nhãn ${LOP} = làm trên lớp, ${NHA} = về nhà làm.</div>
-<h3><i>1</i>Hôm nay em làm được gì?${LOP}</h3>${tag('1·1')}
+<div class="nhip"><b>Tập này dùng cho hai buổi.</b> Hôm nay: học hết bài trên lớp 60′ (trang 1–5) → cuối giờ chép <b>đề BTVN</b> (trang 5). Buổi sau: <b>10′ ôn</b> (trang 3) → <b>20′ kiểm tra</b> → <b>30′ sửa bài</b> (trang 7).</div>
+<h3><i>1</i>Hôm nay em làm được gì?</h3>${tag('1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0"><span class="ck"></span>Nêu được hạt nhân gồm <b>prôtôn, nơtron</b> và lực giữ chúng lại</div>
 <div style="margin:.3mm 0"><span class="ck"></span>Đọc và viết đúng kí hiệu ${m('{}^{A}_{Z}\\mathrm{X}')}, tính số nơtron</div>
 <div style="margin:.3mm 0"><span class="ck"></span>Nói được <b>đồng vị</b> là gì; phân biệt 3 mô hình nguyên tử</div>
 </div>
-<h3><i>2</i>Dự đoán trước khi học <span class="hint">(đoán sai cũng không sao)</span>${LOP}</h3>${tag('1·2')}
+<h3><i>2</i>Dự đoán trước khi học <span class="hint">(đoán sai cũng không sao)</span></h3>${tag('1·2')}
 <div class="card">
 <p style="margin:0 0 1.5mm">Năm 1909, Rutherford bắn chùm hạt alpha vào lá vàng mỏng. Phần lớn hạt bay thẳng qua; một phần tám nghìn hạt lệch mạnh, vài hạt <b>bật ngược lại</b>. Theo em, nguyên tử:</p>
 <div class="opt"><span class="b">A</span><span>Là khối cầu đặc, các hạt phân bố đều</span></div>
@@ -134,10 +130,10 @@ ${head('BÀI 14 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: V
 <div class="opt"><span class="b">C</span><span>Gần như trống rỗng, điện dương tập trung ở một vùng rất nhỏ</span></div>
 <div style="margin-top:1.5mm">Em chọn: <span class="fill" style="min-width:10mm"></span> &nbsp;<span class="ck"></span>chắc &nbsp;<span class="ck"></span>không chắc &nbsp;· <span class="hint">Vì sao em nghĩ vậy?</span></div>${lines(1)}
 </div>
-<h3><i>3</i>Học xong, em sửa lại <span class="hint">(bút khác màu, cuối giờ)</span>${LOP}</h3>${tag('1·3')}
+<h3><i>3</i>Học xong, em sửa lại <span class="hint">(bút khác màu, cuối giờ)</span></h3>${tag('1·3')}
 <div class="card soft"><div>Đáp án đúng là: <span class="fill"></span> &nbsp; Em đoán <span class="ck"></span>đúng &nbsp;<span class="ck"></span>sai</div>
 <div class="hint" style="margin-top:1mm">Điều em hiểu sai hoặc mới biết:</div>${lines(1)}</div>
-<h3><i>4</i>II.1 · Hạt nhân, lực hạt nhân, kí hiệu${LOP}</h3>${tag('1·4')}
+<h3><i>4</i>II.1 · Hạt nhân, lực hạt nhân, kí hiệu</h3>${tag('1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Hạt nhân gồm <span class="fill" style="min-width:16mm"></span> và <span class="fill" style="min-width:16mm"></span>, gọi chung là <span class="fill" style="min-width:16mm"></span>.</div>
 <div>Lực hạt nhân: rất <span class="fill" style="min-width:12mm"></span>, thắng lực <span class="fill" style="min-width:16mm"></span>, tầm tác dụng cỡ 10<span class="exp"></span> m.</div>
@@ -154,7 +150,7 @@ ${foot(1)}</section>
 <!-- TRANG 2: II.2–II.4, kết quả tự kiểm tra -->
 <section class="page">
 ${head('GHI BÀI · ĐỒNG VỊ, MÔ HÌNH, KÍCH THƯỚC', 'Điền vào chỗ trống khi nghe giảng, đừng chép lại cả câu')}
-<h3><i>1</i>II.2 · Đồng vị${LOP}</h3>${tag('2·1')}
+<h3><i>1</i>II.2 · Đồng vị</h3>${tag('2·1')}
 <div class="card" style="margin-bottom:1.5mm;padding:1.2mm 3mm"><div>Đồng vị: cùng số <span class="fill" style="min-width:14mm"></span>, khác số <span class="fill" style="min-width:14mm"></span>; tính chất <span class="fill" style="min-width:20mm"></span> giống nhau.</div>
 <div style="margin-top:1mm">Ba đồng vị của hiđrô: ${m('{}^{1}_{1}\\mathrm{H}')}, ${m('{}^{2}_{1}\\mathrm{H}')} (<span class="fill" style="min-width:12mm"></span>), ${m('{}^{3}_{1}\\mathrm{H}')} (<span class="fill" style="min-width:12mm"></span>): cùng <span class="fill" style="min-width:6mm"></span> prôtôn, nơtron <span class="fill" style="min-width:6mm"></span> / <span class="fill" style="min-width:6mm"></span> / <span class="fill" style="min-width:6mm"></span></div></div>
 <table><tr><th>Cặp hạt nhân</th><th style="width:15mm">${m('Z')}</th><th style="width:15mm">${m('N')}</th><th style="width:36mm">Đồng vị?</th></tr>
@@ -162,31 +158,31 @@ ${head('GHI BÀI · ĐỒNG VỊ, MÔ HÌNH, KÍCH THƯỚC', 'Điền vào ch�
 <tr><td>${m('{}^{40}_{18}\\mathrm{Ar}')} và ${m('{}^{40}_{20}\\mathrm{Ca}')}</td><td></td><td></td>${yn}</tr>
 <tr><td>${m('{}^{35}_{17}\\mathrm{Cl}')} và ${m('{}^{37}_{17}\\mathrm{Cl}')}</td><td></td><td></td>${yn}</tr></table>
 
-<h3><i>2</i>II.3 · Ba mô hình nguyên tử${LOP} <span class="hint">(bảng: hình + “bị bác bỏ” về nhà)</span></h3>${tag('2·2')}
+<h3><i>2</i>II.3 · Ba mô hình nguyên tử</h3>${tag('2·2')}
 <div class="card" style="padding:1.2mm 3mm;margin-bottom:1mm">Rutherford: nguyên tử có hạt nhân rất nhỏ mang điện <span class="fill" style="min-width:14mm"></span>, êlectron ở vỏ. Bohr thêm: êlectron chỉ ở những quỹ đạo có <span class="fill" style="min-width:30mm"></span>.</div>
 <table class="mo"><tr><th>Thomson 1904</th><th>Rutherford 1911</th><th>Bohr 1913</th></tr>
 <tr><td><div>Hình:</div><div>Điểm mới:</div><div>Bị bác bỏ / còn thiếu:</div></td><td><div>Hình:</div><div>Điểm mới:</div><div>Bị bác bỏ / còn thiếu:</div></td><td><div>Hình:</div><div>Điểm mới:</div><div>Bị bác bỏ / còn thiếu:</div></td></tr></table>
 
-<h3><i>3</i>II.4 · Kích thước hạt nhân và đơn vị u${LOP}</h3>${tag('2·3')}
+<h3><i>3</i>II.4 · Kích thước hạt nhân và đơn vị u</h3>${tag('2·3')}
 <div class="card" style="padding:1.2mm 3mm"><div>${m('R=')} <span class="fill" style="min-width:9mm"></span> · 10<span class="exp"></span> · ${m('A^{1/3}')} (m) &nbsp;<span class="hint">${m('A')} là số khối, số nguyên</span></div>
 <div>Nguyên tử cỡ 10<span class="exp"></span> m · hạt nhân cỡ 10<span class="exp"></span> m → nhỏ hơn <span class="fill" style="min-width:12mm"></span> lần</div>
 <div>${m('1\\ \\mathrm{u}')} = <span class="fill" style="min-width:8mm"></span> khối lượng nguyên tử <span class="fill" style="min-width:12mm"></span> ≈ <span class="fill" style="min-width:22mm"></span> kg ≈ <span class="fill" style="min-width:16mm"></span> ${m('\\mathrm{MeV}/c^2')}</div>
 <div>${m('1\\ \\mathrm{MeV}=')} <span class="fill" style="min-width:22mm"></span> J</div>
 <div>Một nguyên tử: ${m('m\\approx')} <span class="fill" style="min-width:8mm"></span> · u &nbsp;·&nbsp; một mol: ${m('M\\approx')} <span class="fill" style="min-width:8mm"></span> g/mol &nbsp;<span class="hint">(gần đúng)</span></div></div>
-<h3><i>4</i>Kết quả tự kiểm tra <span class="hint">(câu 2–7 trên web; câu 1 đã ghi ở Tập 1·4)</span>${NHA}</h3>${tag('2·4')}
+<h3><i>4</i>Kết quả tự kiểm tra <span class="hint">(câu 2–7 trên web; câu 1 đã ghi ở Tập 1·4)</span></h3>${tag('2·4')}
 <div class="two">${rkTable(rkRow(2) + rkRow(3) + rkRow(4))}${rkTable(rkRow(5) + rkRow(6) + rkRow(7))}</div>
 <div class="hint" style="margin-top:1mm">Chắc mà vẫn sai → chỗ cần xem lại nhất.</div>
 ${foot(2)}</section>
 
 <!-- TRANG 3: bẫy, trả bài -->
 <section class="page">
-${head('ÔN 10 PHÚT ĐẦU BUỔI SAU · BẪY VÀ TRẢ BÀI', 'Nói với bạn cùng bàn, không nhìn tập; chỉ sau đó mới mở web đối chiếu')}
-<h3><i>1</i>III · Ba cái bẫy hay sập <span class="hint">(đánh dấu bẫy em từng sập)</span>${LOP}</h3>${tag('3·1')}
+${head('ÔN 10 PHÚT ĐẦU BUỔI SAU · BẪY VÀ TRẢ BÀI', 'Buổi sau: nói với bạn cùng bàn, không nhìn tập, rồi mới mở web đối chiếu')}
+<h3><i>1</i>III · Ba cái bẫy hay sập <span class="hint">(đánh dấu bẫy em từng sập)</span></h3>${tag('3·1')}
 <div class="card">
 <div class="trap"><span class="ck"></span><span><b>Lấy số khối làm khối lượng.</b> ${m('A')} là số đếm nuclôn, còn khối lượng nguyên tử tính bằng u là số thực (nhôm: ${m('26{,}98')} u).</span></div>
 <div class="trap"><span class="ck"></span><span><b>“Đồng vị khác số prôtôn”.</b> Sai: đồng vị phải <b>cùng</b> ${m('Z')}.</span></div>
 <div class="trap"><span class="ck"></span><span><b>Êlectron quay ở khoảng cách nào cũng được.</b> Bohr: chỉ ở quỹ đạo có năng lượng xác định.</span></div></div>
-<h3><i>2</i>IV · Trả bài 5 câu <span class="hint">(ở nhà viết; đầu buổi sau nói lại, ☐ = nói được không nhìn)</span>${NHA}</h3>${tag('3·2')}
+<h3><i>2</i>IV · Trả bài 5 câu <span class="hint">(viết trên lớp; đầu buổi sau nói lại, ☐ = nói được không nhìn)</span></h3>${tag('3·2')}
 ${box(`<div><b>1.</b> Hạt nhân gồm những hạt nào? Vì sao không vỡ ra?<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}
 <div><b>2.</b> Viết kí hiệu ${m('{}^{A}_{Z}\\mathrm{X}')}, nói rõ từng chữ.<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}
 <div><b>3.</b> Đồng vị là gì? Kể tên ba đồng vị của hiđrô, chúng giống và khác nhau ở đâu?<span class="ck" style="float:right;margin:0"></span></div>${lines(3)}
@@ -199,7 +195,7 @@ ${foot(3)}</section>
 <!-- TRANG 4: bài toán mẫu -->
 <section class="page">
 ${head('BÀI TOÁN MẪU · ĐỌC NHÃN KIM LOẠI', 'Phân tích đề trước, tính sau')}
-<h3><i>1</i>V · Đề bài${LOP}</h3>${tag('4')}
+<h3><i>1</i>V · Đề bài</h3>${tag('4')}
 <div class="card soft" style="padding:1.2mm 3mm">Mẫu kim loại ghi ${m('{}^{27}_{13}\\mathrm{Al}')}. Khối lượng mol nguyên tử nhôm là ${m('26{,}98')} g/mol; ${m('N_A=6{,}022\\cdot10^{23}\\ \\mathrm{mol}^{-1}')}.<br>
 <b>a)</b> Xác định số prôtôn, số nơtron của hạt nhân nhôm. &nbsp;<b>b)</b> Tính bán kính hạt nhân nhôm. &nbsp;<b>c)</b> Tính khối lượng một nguyên tử nhôm ra u và ra kg. &nbsp;<b>d)</b> Hai đồng vị của đồng (${m('{}^{63}_{29}\\mathrm{Cu}')}, ${m('{}^{65}_{29}\\mathrm{Cu}')}) khác nhau ở đại lượng nào?</div>
 <h3><i>2</i>Bảng phân tích đề <span class="hint">(dòng đầu đã làm mẫu)</span></h3>
@@ -213,7 +209,7 @@ ${head('BÀI TOÁN MẪU · ĐỌC NHÃN KIM LOẠI', 'Phân tích đề trướ
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:1mm">
 ${wl('a)', 3)}${wl('b)', 3)}${wl('c)', 3)}${wl('d)', 2)}
 </div>
-<h3><i>4</i>Mở rộng: khối lượng trung bình của đồng <span class="hint">(làm sau câu d)</span>${NHA}</h3>
+<h3><i>4</i>Mở rộng: khối lượng trung bình của đồng <span class="hint">(làm sau câu d)</span></h3>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln" style="height:auto;padding-top:1mm;font-size:3.1mm"><b>Bước 1 (cho sẵn):</b> đồng tự nhiên = hai đồng vị ở câu d), ${m('M=63{,}54')} g/mol.</div>
 ${wl(`Bước 2: m(Cu) = 63,54 / ${m('N_A')} = … g = … kg`, 2)}${wl('Bước 3: đổi sang u = … ; so với 63 và 65:', 2)}</div>
@@ -222,22 +218,21 @@ ${foot(4)}</section>
 
 <!-- TRANG 5: mang về, thử thách, mô phỏng -->
 <section class="page">
-${head('BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH', 'Chép BTVN cuối giờ; phần ★ và mô phỏng viết không nhìn web, rồi mới đối chiếu')}
-<h3><i>1</i>BTVN <span class="hint">(thầy giao cuối buổi, em chép vào · ☐ đánh khi xong)</span></h3>
+${head('ĐỀ BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH', 'Cuối giờ thầy giao một đề, chép tên đề và hạn; phần ★ viết trước rồi mới đối chiếu web')}
+<h3><i>1</i>Đề BTVN <span class="hint">(thầy giao cuối buổi · làm xong tự chấm, ghi điểm và câu sai)</span></h3>
 <div class="card" style="display:flex;gap:3mm;align-items:flex-start;padding:1.2mm 3mm">
 <div style="flex:1">
-<div><span class="ck"></span>Tự kiểm tra 7 câu trên web (QR bên) → ghi kết quả vào Tập 1·4, 2·4</div>
-<div><span class="ck"></span>Bài tập mẫu 5 dạng (trang 6) → đáp số + 3 bài tương tự</div>
-<div><span class="ck"></span>Viết Trả bài 5 câu (trang 3), buổi sau nói lại không nhìn</div>
-<div><span class="ck"></span>Phần ${NHA} còn lại ở trang 2, 4 và trang này</div>
-${wl('Thầy giao thêm:', 2)}
-<div style="margin-top:.6mm"><b>Hạn:</b> trước buổi sau, ngày ……/…… &nbsp;· <b>Đề 20′ buổi sau</b> hỏi: <span class="fill" style="min-width:40mm"></span></div></div>
-<div style="width:29mm;flex:none"><div class="qr">${qrSvg}</div><div class="hint" style="margin-top:.6mm;font-size:2.6mm;line-height:1.3">Tự kiểm tra 7 câu (cần đăng nhập), không phải đề trên lớp.</div></div></div>
-<h3><i>2</i>VI · Mang về: điều em dễ quên nhất${NHA}</h3>${tag('5')}
+<div><b>Đề:</b> <span class="fill" style="min-width:52mm"></span> &nbsp;<b>Số câu:</b> <span class="fill" style="min-width:10mm"></span></div>
+<div style="margin-top:.8mm"><b>Làm ở:</b> <span class="ck"></span>thachlab &nbsp;<span class="ck"></span>Azota &nbsp;<span class="ck"></span>giấy &nbsp;· <b>Hạn:</b> ……/……</div>
+${wl('Ghi chú của thầy về đề:', 2)}
+<div style="margin-top:.8mm"><span class="ck"></span><b>Đã nộp</b> &nbsp;· <b>Điểm:</b> ……/…… &nbsp;· <b>Câu sai:</b> <span class="fill" style="min-width:34mm"></span></div>
+<div class="hint" style="margin-top:.6mm">Câu sai của đề BTVN → ghi vào bảng trang 7 cùng đề trên lớp, cột Câu/ý ghi thêm chữ “BT”.</div></div>
+<div style="width:29mm;flex:none"><div class="qr">${qrSvg}</div><div class="hint" style="margin-top:.6mm;font-size:2.6mm;line-height:1.3">Tự kiểm tra 7 câu trên web (cần đăng nhập), không phải đề BTVN.</div></div></div>
+<h3><i>2</i>VI · Mang về: điều em dễ quên nhất</h3>${tag('5')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
-<h3><i>3</i>Thử thách phân tầng <span class="hint">(tính ra giấy rồi mới bấm xem)</span>${NHA}</h3>
+<h3><i>3</i>Thử thách phân tầng <span class="hint">(tính ra giấy rồi mới bấm xem)</span></h3>
 ${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:12mm"></span> · số nơtron <span class="fill" style="min-width:12mm"></span> · vì <span class="fill" style="min-width:36mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng chiếm bao nhiêu phần thể tích nguyên tử? (dùng kích thước ở Tập 2·3)', 4))}
-<h3><i>4</i>Câu 7 (urani) và mô phỏng PhET${NHA}</h3>
+<h3><i>4</i>Câu 7 (urani) và mô phỏng PhET</h3>
 ${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = … · vì sao <span class="hint">(em chọn, chắc/đúng đã ghi ở Tập 2·4)</span>`, 2)
  + wl('Bắn hạt alpha (Rutherford) · Dự đoán:', 1) + wl('Thấy:', 2)
  + wl('Đồng vị neon · Dự đoán trung bình gần đồng vị nào:', 1) + wl('Thấy / vì sao 20,18:', 2))}
