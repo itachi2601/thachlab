@@ -73,6 +73,11 @@ Dùng `<h3>` làm mốc — `wrapTheorySections` cắt đoạn theo `<h3>` để
 | V. Bài toán mẫu | Đề bài → bảng *Câu trong đề / Dữ liệu / Kiến thức liên quan* → lời giải từng bước → kiểm tra kết quả → **một bài để trống 1–2 bước cho học sinh điền** → **biến thể** (đổi số, đổi chiều, đổi vị trí điểm) | `.tl-table--data` + `.tl-steps` + hình + quiz |
 | VI. Đời sống + tổng kết | 3–4 ứng dụng; **thử thách phân tầng ⭐ ⭐⭐ ⭐⭐⭐**; khung "Mang về sau bài học" dạng chuỗi từ khoá (có ý về cách đọc đề) | `<details>` + hộp định nghĩa |
 
+**Hộp thí nghiệm có tên trong chương trình** (Rutherford, Joule, Boyle, Faraday, đo nhiệt dung riêng…) viết theo khung 6 ô
+Giả thuyết → Dự đoán nếu đúng → Dụng cụ & cách đo → Quan sát → Rút ra → Chưa nói được gì, đúng thứ tự đề TN THPT hỏi;
+kết quả không lộ trước hộp Dự đoán; quiz sau hộp kiểu "phát biểu nào sai" trộn hiện tượng–kết luận–cơ chế–giới hạn.
+Quy tắc T1–T12 + checklist: `docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md` (thử nghiệm đầu: L12 Bài 14, 25/10/2026).
+
 ## Giọng văn (thầy chốt lại 2/10/2026)
 
 - **KHÔNG dùng vai "thầy" trong bài đọc.** Bỏ hẳn các câu kiểu "Ở lớp, thầy cho cả lớp…", "Thầy hỏi: …",
@@ -365,3 +370,4 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-10-18 · Rà `<details>` 4 bài L12 chương 1 (17–18 → 8 khối): mở bẫy/kết quả thí nghiệm làm tổng từ hiện ngay vượt 2 500 vì bài đã sát trần (phiên khác vừa thêm chữ dự phòng video) → đo lại `lint_do_dai.py` NGAY trước khi sửa (đừng dùng số đo đầu phiên), viết phần mở ra ≤25 từ/khối; Trả bài gộp = câu hỏi hiện thành `<ol>` + 1 khối đáp án; thí nghiệm mở ra dùng `div.tl-box--exp` giữ `data-exp`.
 - 2026-10-20 · 6 file `tn-l11-song*.json` mất khối `video` (chèn sau bởi `chen-video-thi-nghiem.mts`) vì chạy lại `build_figs.py` → gọi `build_thi_nghiem.py` ghi đè cả file từ dữ liệu trong script → 7 `build_thi_nghiem.py` nay giữ lại `video` có sẵn khi ghi. Sau mỗi lần build lại bài: `git diff content/thi-nghiem` phải không có dòng `"video"` bị xoá.
 - 2026-10-21 · Bài 14 Sóng L11: khối "Họ A" dồn 3 công thức vào dòng 🔑 bằng "·", Dạng 3 gộp 3 trường hợp, phân số lớn chen giữa câu → HS đọc "·" thành dấu nhân, dòng đè nhau, ngắt giữa công thức. Quy tắc: 🔑 chỉ MỘT ý ngắn; mỗi Dạng là `<li class="tl-dang">` tiêu đề rồi từng ý một dòng bằng `<br>`; công thức dài/bất đẳng thức đứng riêng dòng. `lint_theory.py` đã cảnh báo " · " ghép ý và 🔑 >14 chữ.
+- 2026-10-25 · Đọc 2 đề TN THPT (2025, 2026): 5/8 câu Phần II là câu thí nghiệm theo khung giả thuyết → dụng cụ → bước → "coi rằng/bỏ qua" → kết quả → kết luận → cơ chế → giới hạn; bài 14 L12 kể Rutherford như chuyện và LỘ kết quả (1/8000, bật ngược) trước hộp Dự đoán, không có ô cơ chế (lệch do hạt nhân, không phải êlectron) và ô giới hạn (quỹ đạo dừng là Bohr) — đúng hai ý c), d) đề 2026 hỏi → viết hộp 6 ô theo `docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md`; khung 6 ô dài gấp đôi 3 ô nên bài sát trần 2 500 phải đưa Dụng cụ + bảng số liệu vào `<details>` và chuyển hình trùng ý (Hình 2 ba mô hình) vào đúng mục thay cho gạch đầu dòng lặp; PhET có hai mô hình thì bước Thử chạy mô hình SAI (bánh pudding) trước.
