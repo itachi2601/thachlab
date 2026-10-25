@@ -12,7 +12,7 @@
     "chuyenthe.mo_hinh_dong_hoc",
     "chuyenthe.nhiet_do_khong_doi_khi_chuyen_the"
   ],
-  "muc_tieu": "Chứng tỏ trong suốt thời gian nóng chảy (và sôi), nhiệt độ không đổi dù bếp vẫn cấp nhiệt; nhận ra đoạn nằm ngang trên đồ thị nhiệt độ – thời gian; biết đọc kết quả đo kèm sai số.",
+  "muc_tieu": "Kiểm giả thuyết: khi đang chuyển thể, nhiệt nhận vào dùng để phá vỡ liên kết chứ không làm tăng nhiệt độ; nhận ra đoạn nằm ngang ở 0 °C và 100 °C trên đồ thị nhiệt độ – thời gian; biết chiều sai số do nhiệt mất ra môi trường.",
   "dung_cu": [
     {
       "ten": "Nhiệt kế rượu hoặc nhiệt kế điện tử",
@@ -22,7 +22,7 @@
     {
       "ten": "Cốc thuỷ tinh chịu nhiệt 250 ml",
       "so_luong": 1,
-      "ghi_chu": "đặt trên bếp điện hoặc giá đun"
+      "ghi_chu": "có nắp; đặt trên bếp điện hoặc giá đun"
     },
     {
       "ten": "Nước đá nguyên chất",
@@ -38,24 +38,28 @@
       "ten": "Đồng hồ bấm giây",
       "so_luong": 1,
       "ghi_chu": "đọc thời gian mỗi phút"
+    },
+    {
+      "ten": "Que khuấy",
+      "so_luong": 1,
+      "ghi_chu": "khuấy đều để nhiệt độ trong cốc như nhau"
     }
   ],
   "cac_buoc": {
     "lam": [
-      "Cho 0,20 kg nước đá vào cốc, cắm nhiệt kế sao cho bầu nhiệt kế ngập trong phần đá và nước, không chạm đáy cốc.",
-      "Đặt cốc lên bếp điện và bật ở một mức không đổi; bấm đồng hồ.",
-      "Cứ mỗi phút đọc nhiệt kế một lần, ghi vào bảng, cho tới khi nước sôi vài phút."
+      "Cho 0,20 kg nước đá ở -6 °C vào cốc, cắm nhiệt kế ở giữa khối đá, không chạm đáy cốc.",
+      "Đặt cốc lên bếp điện, bật ở một mức không đổi, bấm đồng hồ, khuấy đều.",
+      "Mỗi phút đọc nhiệt kế một lần, ghi vào bảng; khi nước sôi, ghi thêm thời điểm nước cạn hết."
     ],
     "quan_sat": [
-      "Nhiệt độ tăng đều từ -6 °C lên gần 0 °C.",
-      "Rồi nhiệt độ đứng yên quanh 0 °C suốt mấy phút, trong khi đá vẫn tan dần và bếp vẫn đang cấp nhiệt.",
-      "Đá tan hết thì nhiệt độ mới tăng tiếp; tới khoảng 100 °C lại đứng yên một lần nữa (nước đang sôi).",
-      "Các số đọc trong đoạn nằm ngang không giống nhau tuyệt đối: 0,1–0,3 °C chứ không đúng 0,0 °C."
+      "Nhiệt kế lên khoảng 0 °C ngay phút đầu rồi đứng quanh 0 °C (đọc 0,2–0,3 °C) khoảng 4 phút trong khi đá tan dần.",
+      "Đá tan hết thì nhiệt độ tăng đều theo thời gian.",
+      "Từ phút 10 nhiệt độ lại đứng yên gần 100 °C trong khi nước sôi, tới lúc cạn hết ở khoảng phút 36."
     ],
     "rut_ra": [
-      "Chất đang chuyển thể thì nhiệt độ không đổi, dù vẫn nhận nhiệt.",
-      "Đoạn nằm ngang trên đồ thị (hoặc trong bảng số liệu) chính là giai đoạn nóng chảy hoặc sôi.",
-      "Sai lệch 0,2–0,3 °C so với 0 °C nằm trong sai số ±0,5 °C của nhiệt kế, nên kết quả vẫn phù hợp với lí thuyết."
+      "Kết quả phù hợp giả thuyết: chất đang chuyển thể thì nhiệt độ không đổi dù vẫn nhận nhiệt.",
+      "Cơ chế: nhiệt nhận vào dùng để phá vỡ liên kết giữa các phân tử, không làm tăng tốc độ trung bình của phân tử nên nhiệt độ không tăng.",
+      "Số đọc 0,2–0,3 °C nằm trong sai số ±0,5 °C của nhiệt kế, nên vẫn phù hợp nhiệt độ nóng chảy 0 °C."
     ]
   },
   "tham_so": [
@@ -76,8 +80,8 @@
       "kieu": "dieu_chinh",
       "min": 200,
       "max": 1000,
-      "mac_dinh": 500,
-      "buoc": 50
+      "mac_dinh": 280,
+      "buoc": 10
     },
     {
       "ky_hieu": "T0",
@@ -115,14 +119,29 @@
       "ten": "Thời gian nóng chảy",
       "don_vi": "phút",
       "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "c",
+      "ten": "Nhiệt dung riêng của nước",
+      "don_vi": "J/(kg.K)",
+      "kieu": "co_dinh",
+      "gia_tri": 4180
+    },
+    {
+      "ky_hieu": "L",
+      "ten": "Nhiệt hoá hơi riêng của nước",
+      "don_vi": "J/kg",
+      "kieu": "co_dinh",
+      "gia_tri": 2260000
     }
   ],
   "mo_hinh": {
     "phuong_trinh": [
-      "Nhiệt bếp cấp: Q = P·t",
+      "Nhiệt bếp cấp: Q = P·τ",
       "Giai đoạn nóng đá lên 0 °C: Q = m·c_da·(0 - T0)",
-      "Giai đoạn nóng chảy: Q = m·lambda và nhiệt độ giữ nguyên 0 °C",
-      "Thời gian nóng chảy: t_nc = m·lambda / P"
+      "Giai đoạn nóng chảy: Q = m·lambda, nhiệt độ giữ nguyên 0 °C; t_nc = m·lambda / P",
+      "Giai đoạn nước 0 → 100 °C: Q = m·c·100, nhiệt độ tăng đều P/(m·c) mỗi giây",
+      "Giai đoạn sôi: Q = m·L, nhiệt độ giữ nguyên 100 °C; t_soi / t_nc = L / lambda"
     ],
     "gia_thiet": [
       "bỏ qua nhiệt hao ra môi trường và nhiệt làm nóng cốc",
@@ -138,24 +157,35 @@
     ],
     "hang": [
       [0, -6.0],
+      [1, 0.2],
       [2, 0.2],
-      [4, 0.2],
-      [6, 0.3],
-      [8, 0.3],
-      [10, 4.0],
-      [12, 12.0]
+      [3, 0.2],
+      [4, 0.3],
+      [5, 17.8],
+      [6, 38.0],
+      [7, 58.1],
+      [8, 78.0],
+      [9, 98.1],
+      [10, 100.2],
+      [11, 100.3],
+      [15, 100.3],
+      [20, 100.3],
+      [25, 100.3],
+      [30, 100.3],
+      [35, 100.2]
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với m = 0,20 kg, P = 500 W, T0 = -6 °C (t_nc ≈ 2,2 phút). Số thực đo sẽ lệch vì có nhiệt hao; đoạn nằm ngang đọc được khoảng 0,2–0,3 °C do sai số nhiệt kế ±0,5 °C."
+    "ghi_chu": "Số liệu minh hoạ tính bằng script từ mô hình với m = 0,20 kg, P = 280 W, T0 = -6 °C, c_da = 2100, lambda = 3,34e5, c = 4180, L = 2,26e6, bỏ qua hao nhiệt; số đọc cộng độ lệch nhiệt kế +0,2 °C và thăng giáng 0–0,1 °C (seed 2); từ phút 11 chỉ ghi mỗi 5 phút, nước cạn hết ở phút 36. Mốc mô hình: đá lên 0 °C ở 9 s, tan hết ở 248 s (đoạn ngang ≈ 3,98 phút), nước tới 100 °C ở 546 s, cạn ở 2160 s (đoạn sôi ≈ 26,9 phút). Bộ số khác tn-l12-thuchanh-02 (0,100 kg đá ở 0 °C, 100 W, c = 4190) nhưng cùng mô hình nên tỉ lệ thời gian như nhau."
   },
-  "ket_qua_ky_vong": "Đồ thị T(t) có hai đoạn nằm ngang: một ở 0 °C (đang nóng chảy) và một ở khoảng 100 °C (đang sôi). Độ cao đoạn nằm ngang không phụ thuộc khối lượng hay công suất bếp; độ dài đoạn thì phụ thuộc cả hai.",
+  "ket_qua_ky_vong": "Đồ thị T(t) có hai đoạn nằm ngang: ở 0 °C (đang nóng chảy, khoảng 4 phút) và ở 100 °C (đang sôi, khoảng 27 phút). Độ cao đoạn nằm ngang không phụ thuộc khối lượng hay công suất bếp; độ dài đoạn thì phụ thuộc cả hai.",
   "hien_tuong_hay_sai": [
     "Cho rằng đang nhận nhiệt thì nhiệt độ phải tăng, nên đoán đồ thị là một đường dốc thẳng.",
     "Cho rằng đá tan xong mới bắt đầu nhận nhiệt, nên tưởng đoạn nằm ngang là lúc bếp ngừng cấp nhiệt.",
     "Đọc 0,2 °C rồi kết luận 'nước đá này nóng chảy ở 0,2 °C' mà bỏ qua sai số dụng cụ."
   ],
   "sai_so_thuong_gap": [
-    "Nhiệt kế chưa hiệu chuẩn hoặc bầu nhiệt kế chạm đáy cốc.",
-    "Cốc không được che nên nhiệt hao ra môi trường, làm nhiệt độ đo thấp hơn tính toán.",
+    "Nhiệt mất ra môi trường trong lúc tan và lúc sôi: chất nhận ít hơn P·τ nên đoạn nằm ngang dài hơn → λ, L tính bằng P·τ/m LỚN HƠN thật. Giảm: cốc cách nhiệt có nắp.",
+    "Bầu nhiệt kế chạm đáy cốc (sát bếp): nhiệt độ đọc CAO HƠN nhiệt độ của nước. Giảm: cắm nhiệt kế ở giữa, không chạm đáy.",
+    "Không khuấy: nước gần bếp nóng hơn chỗ cắm nhiệt kế, số đọc lệch theo vị trí. Giảm: khuấy đều suốt thí nghiệm.",
     "Đọc nhiệt kế không đúng thời điểm mỗi phút, cộng dồn sai lệch thời gian."
   ],
   "goi_y_mo_phong": {
@@ -166,5 +196,16 @@
   "an_toan": [
     "Dùng găng hoặc khăn khi cầm cốc nước sôi.",
     "Không để nước trào vào bếp điện."
+  ],
+  "gia_thuyet": [
+    "Khi chất đang chuyển thể, nhiệt lượng nhận vào dùng để phá vỡ liên kết giữa các phân tử, không làm tăng nhiệt độ."
+  ],
+  "du_doan_neu_dung": [
+    "Đun với công suất không đổi, đồ thị nhiệt độ – thời gian có đoạn nằm ngang ở 0 °C (đá tan) và ở 100 °C (nước sôi).",
+    "Đoạn nằm ngang khi sôi dài hơn hẳn khi tan (tỉ số thời gian bằng L/λ)."
+  ],
+  "khong_chung_minh": [
+    "Phần nhiệt mất ra môi trường là bao nhiêu: phép đo chỉ cho tổng nhiệt P·τ.",
+    "Nhiệt độ sôi thay đổi thế nào khi áp suất khác áp suất phòng."
   ]
 }

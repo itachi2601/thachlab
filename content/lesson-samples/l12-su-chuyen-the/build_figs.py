@@ -46,16 +46,16 @@ b += '<path d="M152 128 L152 182 Q152 194 166 194 L254 194 Q268 194 268 182 L268
 for x, y, w, h in ((166, 142, 28, 24), (200, 136, 30, 28), (234, 144, 26, 22)):
     b += f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="4" fill="rgba(56,189,248,.4)" stroke="{BLUE}" stroke-width="1.6"/>'
 b += text(160, 234, "đá đang tan", BLUE, 12, "start", "700")
-b += line(218, 74, 218, 158, "currentColor", 2.5) + dot(218, 158, 5, RED)
-b += text(228, 82, "nhiệt kế", GRN, 12)
-b += text(228, 100, "chỉ 0 °C", GRN, 14, "start", "700")
+b += line(218, 20, 218, 158, "currentColor", 2.5) + dot(218, 158, 5, RED)
+b += text(228, 24, "nhiệt kế", GRN, 12)
+b += text(228, 42, "chỉ ? °C", GRN, 14, "start", "700")
 b += f'<ellipse cx="146" cy="150" rx="4" ry="6" fill="{BLUE}"/>'
 b += f'<ellipse cx="143" cy="172" rx="3.4" ry="5" fill="{BLUE}"/>'
 b += text(14, 146, "hơi nước", BLUE, 12) + text(14, 162, "ngưng tụ", BLUE, 12)
 b += arrow("f1", "r", 372, 176, 276, 176, 3)
 b += text(276, 166, "nhiệt từ không khí vào", RED, 11)
-fig1 = wrap("0 0 420 250", "Li nước đá đang tan: nhiệt kế chỉ 0 °C, ngoài thành li có nước ngưng tụ",
-            b, "Hình 1. Đá tan dần mà nhiệt kế vẫn đứng ở 0 °C, dù không khí nóng vẫn truyền nhiệt vào li. Nước ngoài thành li là hơi nước trong không khí <em>ngưng tụ</em> khi gặp mặt lạnh.")
+fig1 = wrap("0 0 420 250", "Li nước đá đang tan có cắm nhiệt kế, ngoài thành li có nước ngưng tụ",
+            b, "Hình 1. Không khí nóng truyền nhiệt vào li đá đang tan: nhiệt kế chỉ bao nhiêu? Nước ngoài thành li là hơi nước <em>ngưng tụ</em> khi gặp mặt lạnh.")
 
 # ---------------------------------------------------------------- Hình 2: ba thể
 b = defs("f2")
@@ -78,7 +78,7 @@ b += arrow("f2", "g", 322, 78, 358, 70, 1.6, "4 3")
 b += arrow("f2", "g", 334, 132, 372, 128, 1.6, "4 3")
 b += arrow("f2", "g", 362, 150, 396, 132, 1.6, "4 3")
 fig2 = wrap("0 0 440 212", "Ba thể của chất: rắn sắp xếp trật tự và ở gần nhau, lỏng kém trật tự, khí rất xa nhau và chuyển động hỗn loạn",
-            b, "Hình 2. Cùng là các phân tử, khác nhau ở <strong>khoảng cách</strong> và <strong>mức trật tự</strong>: rắn gần – trật tự, lỏng kém trật tự, khí rất xa – hỗn loạn.")
+            b, "Hình 2. Cùng là các phân tử, khác nhau ở <strong>khoảng cách</strong> và <strong>mức trật tự</strong>.")
 
 # ---------------------------------------------------------------- Hình 3: vòng chuyển thể
 b = defs("f3")
@@ -125,7 +125,7 @@ b += text(150, 110, "nhiệt độ không đổi", BLUE, 11, "start", "500")
 b += text(292, 58, "c: lỏng nóng lên", GRN, 11, "start", "700")
 b += dot(140, 120, 4, RED) + dot(250, 120, 4, RED)
 fig4 = wrap("0 0 440 244", "Đồ thị nhiệt độ theo thời gian khi đun nước đá: đoạn dốc lên, đoạn nằm ngang ở 0 °C, rồi dốc lên tiếp",
-            b, "Hình 4. Đồ thị nhiệt độ – thời gian. Đoạn <strong>nằm ngang</strong> ở 0 °C là lúc nước đá đang nóng chảy: nhiệt độ không đổi, độ dài đoạn cho biết thời gian nóng chảy.")
+            b, "Hình 4. Đồ thị nhiệt độ – thời gian khi đun nước đá.")
 
 # ---------------------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

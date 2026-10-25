@@ -13,6 +13,16 @@
     "thangnhietdo.sai_so_dung_cu"
   ],
   "muc_tieu": "Kiểm chứng hai mốc quy ước của thang Celsius bằng chính nước đá đang tan và hơi nước đang sôi; tập đọc kết quả đo kèm sai số và nhận ra vì sao áp suất khí quyển làm nhiệt độ sôi thay đổi.",
+  "gia_thuyet": [
+    "Nhiệt kế của phòng thí nghiệm đã được chia độ đúng ở hai mốc 0 °C (nước đá đang tan) và 100 °C (hơi nước đang sôi ở 1 atm)."
+  ],
+  "du_doan_neu_dung": [
+    "Trong nước đá đang tan và trong hơi nước đang sôi ở 1 atm, số đọc lệch hai mốc không quá sai số ±0,5 °C của nhiệt kế."
+  ],
+  "khong_chung_minh": [
+    "Không cho biết nhiệt kế có chia đều ở khoảng giữa hai mốc (ví dụ ở 50 °C) không.",
+    "Không cho biết nhiệt kế đo đúng ngoài khoảng 0–100 °C."
+  ],
   "dung_cu": [
     { "ten": "Nhiệt kế rượu hoặc nhiệt kế điện tử", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C, đo được tới 110 °C" },
     { "ten": "Cốc thuỷ tinh chịu nhiệt 250 ml", "so_luong": 2 },
@@ -64,7 +74,7 @@
     "cot": ["Lần đọc", "Nước đá đang tan (°C)", "Hơi nước đang sôi (°C)"],
     "hang": [
       [1, 0.2, 99.6],
-      [2, 0.1, 99.8],
+      [2, 0.1, 99.7],
       [3, 0.3, 100.1]
     ],
     "ghi_chu": "Số liệu minh hoạ với p_kq = 101,325 kPa, sai_so_ht = 0, sai_so_dc = ±0,5 °C. Các số lệch ngẫu nhiên trong khoảng ±0,5 °C nên 0,2 °C và 99,6 °C đều phù hợp với hai mốc 0 °C và 100 °C."
@@ -76,9 +86,10 @@
     "Cho rằng sai số ±0,5 °C là do mốc quy ước của thang đo bị sai."
   ],
   "sai_so_thuong_gap": [
-    "Bầu nhiệt kế chạm đáy cốc hoặc bị nước sôi phủ trực tiếp nên đọc cao hơn.",
-    "Nước đá chưa tan hết hoặc lẫn tạp chất, nước không tinh khiết.",
-    "Nhiệt kế chưa được hiệu chuẩn: sai số hệ thống lệch cả hai mốc về cùng một phía."
+    "Áp suất khí quyển dưới 1 atm: nước sôi dưới 100 °C nên mốc trên đọc THẤP HƠN. Giảm: đo áp suất rồi hiệu chỉnh mốc sôi.",
+    "Nước đá lẫn muối, tạp chất: mốc dưới đọc THẤP HƠN 0 °C. Giảm: nước đá đập nhỏ trộn nước cất.",
+    "Bầu nhiệt kế chạm đáy bình đang đun: mốc trên đọc CAO HƠN. Giảm: giữ bầu trong hơi nước, không chạm bình.",
+    "Đọc khi số chưa đứng yên: mốc dưới đọc CAO HƠN, mốc trên đọc THẤP HƠN. Giảm: khuấy, chờ số ổn định, đọc ba lần lấy trung bình."
   ],
   "goi_y_mo_phong": {
     "loai": "bang_so_lieu+2d_dong_hoc",
