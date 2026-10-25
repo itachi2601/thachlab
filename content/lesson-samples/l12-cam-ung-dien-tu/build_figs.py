@@ -41,11 +41,11 @@ b += text(222, 194, "Cuộn dây", "currentColor", 12)
 b += '<path d="M240 139 V150 H336" fill="none" stroke="currentColor" stroke-width="2"/>'
 b += '<path d="M272 63 V28 H360 V126" fill="none" stroke="currentColor" stroke-width="2"/>'
 b += '<circle cx="360" cy="150" r="24" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2"/>'
-b += text(360, 156, "G", "currentColor", 16, "middle", "700")
-b += f'<line x1="360" y1="150" x2="373" y2="131" stroke="{GRN}" stroke-width="2.5"/>'
-b += text(360, 194, "Điện kế: kim lệch", GRN, 12, "middle")
-fig2 = wrap("0 0 430 205", "Đưa nam châm vào cuộn dây nối điện kế, kim điện kế lệch",
-            b, "Hình 2. Nam châm <em>đang chuyển động</em> thì kim lệch; đứng yên thì kim về 0; rút ra thì kim lệch ngược lại.", exp="tn-l12-camungdt-01")
+b += text(360, 170, "G", "currentColor", 13, "middle", "700")
+b += f'<line x1="360" y1="157" x2="360" y2="133" stroke="{GRN}" stroke-width="2.5"/>'
+b += text(360, 194, "Điện kế G (số 0 ở giữa)", GRN, 12, "middle")
+fig2 = wrap("0 0 430 205", "Thanh nam châm đặt trước cuộn dây nối kín với điện kế, không có pin",
+            b, "Hình 2. Bố trí: thanh nam châm, cuộn dây nối kín với điện kế G, không có pin.", exp="tn-l12-camungdt-01")
 
 # ---- Hình 3: định luật Lenz, cực Bắc tiến lại, vòng dây sinh cực Bắc đẩy ra
 b = defs("f3")

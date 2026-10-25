@@ -18,8 +18,8 @@
 <input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Lệch liên tục suốt thời gian nam châm nằm trong cuộn dây</label>
 <input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-no">B. Không bao giờ lệch, vì mạch không có nguồn điện</label>
 <input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-ok">C. Lệch trong lúc nam châm đang chuyển động, rồi về 0 khi nam châm đứng yên</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng rồi!</strong> Kim chỉ lệch khi nam châm <em>đang di chuyển</em>. Nam châm nằm yên thì kim về 0. Điều quyết định không phải là có từ trường, mà là từ trường qua cuộn dây có <em>đang thay đổi</em> hay không. Bài hôm nay giải thích điều đó.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chọn kim lệch mãi thì thử nghĩ: nam châm nằm yên thì có gì đang thay đổi? Chọn không bao giờ lệch thì mạch đúng là không có nguồn, nhưng kim vẫn lệch ở một lúc nào đó. Chọn lại rồi đọc tiếp nhé.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đã ghi dự đoán.</strong> Giữ lại lựa chọn của em; thí nghiệm ở mục III sẽ trả lời.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Đã ghi dự đoán.</strong> Giữ lại lựa chọn của em; thí nghiệm ở mục III sẽ trả lời.</p></div>
 </div>
 </div>
 
@@ -38,17 +38,19 @@
 </ul>
 </div>
 <ul>
-<li><strong>$B$ lớn thì $\Phi$ lớn:</strong> cùng vòng dây, đặt gần cực nam châm mạnh thì $\Phi$ lớn hơn.</li>
-<li><strong>$S$ lớn thì $\Phi$ lớn:</strong> vòng dây to "hứng" được nhiều đường sức hơn.</li>
+<li><strong>$B$ lớn thì $\Phi$ lớn:</strong> cùng vòng dây, đặt gần cực nam châm mạnh hơn.</li>
+<li><strong>$S$ lớn thì $\Phi$ lớn:</strong> vòng to "hứng" nhiều đường sức hơn.</li>
 <li><strong>$\cos\alpha$ là độ "đối diện":</strong> $\alpha = 0^\circ$ thì $\Phi = BS$ (lớn nhất); $\alpha = 90^\circ$ thì $\Phi = 0$.</li>
 </ul>
 <!--FIG1-->
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-camungdt-03">
 <p class="tl-label">🔬 Thí nghiệm: quay khung, từ thông đổi theo góc</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đặt khung dây có nối điện kế giữa hai cực nam châm chữ U (từ trường đều). Quay từ từ khung từ vị trí mặt khung vuông góc với đường sức đến vị trí song song.</li>
-<li><strong>Quan sát:</strong> kim lệch trong lúc quay khung, về 0 khi dừng quay. Mặt khung càng nghiêng thì càng ít đường sức xuyên qua.</li>
-<li><strong>Rút ra:</strong> khung song song đường sức thì không còn đường nào xuyên qua, nên $\Phi = BS\cos\alpha$ đổi khi $\alpha$ đổi, dù $B$ và $S$ giữ nguyên.</li>
+<li><strong>Dự đoán:</strong> giữ yên nam châm, chỉ quay khung thì kim điện kế có lệch không?</li>
+<li><strong>Làm:</strong> khung dây nối điện kế đặt giữa hai cực nam châm chữ U (từ trường đều). Quay khung từ vị trí vuông góc đến song song với đường sức.</li>
+<li><strong>Quan sát:</strong> kim lệch trong lúc quay khung, về 0 khi dừng quay; quay nhanh kim lệch nhiều hơn.</li>
+<li><strong>Rút ra:</strong> mặt khung càng nghiêng, càng ít đường sức xuyên qua: $\Phi = BS\cos\alpha$ đổi khi $\alpha$ đổi, dù $B$, $S$ giữ nguyên.</li>
+<li><strong>Chưa nói được gì:</strong> chiều dòng và độ lớn suất điện động (mục IV, V).</li>
 </ol>
 </div>
 <details class="tl-details tl-more">
@@ -69,13 +71,9 @@
 </div>
 </div>
 
-<h3>III. Hiện tượng cảm ứng điện từ: từ thông biến thiên thì sinh dòng điện</h3>
+<h3>III. Hiện tượng cảm ứng điện từ: khi nào kim điện kế lệch?</h3>
 <p><strong>🔑 Mạch kín · Từ thông biến thiên · Dòng cảm ứng</strong></p>
 <p>Nam châm lại gần thì từ thông <strong>tăng</strong>, rút ra thì <strong>giảm</strong>, đặt yên thì không đổi. Kim điện kế sẽ lệch vào lúc nào? Thí nghiệm bên dưới trả lời.</p>
-<div class="tl-box tl-box--rule tl-note">
-<p class="tl-label">📘 Hiện tượng cảm ứng điện từ</p>
-<p>Khi từ thông qua một mạch kín <strong>biến thiên</strong> thì trong mạch xuất hiện <strong>dòng điện cảm ứng</strong>. Dòng này chỉ tồn tại trong lúc từ thông còn biến thiên.</p>
-</div>
 <!--FIG2-->
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-camungdt-01">
 <p class="tl-label">🔬 Thí nghiệm nam châm và cuộn dây của Faraday (1831)</p>
@@ -86,7 +84,7 @@
 <details class="tl-details tl-more">
 <summary>Bấm xem 3 dụng cụ, các bước và bảng số liệu</summary>
 <p>(1) Cuộn dây 600 vòng; (2) điện kế nhạy, số 0 ở giữa, sai số dụng cụ $\pm0{,}5\ \text{mA}$, nối kín với cuộn dây, không có pin; (3) thanh nam châm thẳng đã biết cực.</p>
-<p><strong>Làm:</strong> đưa cực Bắc vào cuộn dây với ba tốc độ $0{,}1$; $0{,}2$; $0{,}4\ \text{m/s}$, giữ yên, rồi rút ra với $0{,}2\ \text{m/s}$. <strong>Coi rằng</strong> nam châm chuyển động đều; <strong>bỏ qua</strong> từ trường Trái Đất.</p>
+<p><strong>Làm:</strong> đưa cực Bắc vào cuộn dây với ba tốc độ $0{,}1$; $0{,}2$; $0{,}4\ \text{m/s}$, giữ yên, rồi rút ra với $0{,}2\ \text{m/s}$.</p>
 <div class="table-scroll"><table class="tl-table tl-table--data">
 <thead>
 <tr><th>$v$ (m/s)</th><th>Chiều</th><th>$i$ (mA)</th></tr>
@@ -101,13 +99,21 @@
 </table></div>
 <p><small>Số minh hoạ, không phải số đo thật (đã cộng dao động nhỏ).</small></p>
 <p><strong>Tự tính:</strong> với sai số $\pm0{,}5\ \text{mA}$, hàng nào kém tin cậy nhất? Tỉ số $i/v$ của ba hàng đưa vào là bao nhiêu?</p>
+<details class="tl-details tl-more">
+<summary>Bấm xem đáp số</summary>
 <p>Hàng $v = 0{,}1$ kém tin cậy nhất: sai số tương đối $0{,}5/1{,}0 = 50\ \%$, còn hàng $v = 0{,}4$ chỉ khoảng $13\ \%$. Tỉ số $i/v$ lần lượt $10$; $10{,}5$; $9{,}75$ (mA·s/m), gần như không đổi: $i$ <strong>tỉ lệ thuận</strong> với $v$ trong phạm vi sai số. Hai hàng $v = 0{,}2\ \text{m/s}$ lệch nhau $0{,}1\ \text{mA}$, nhỏ hơn sai số.</p>
+</details>
 <p><strong>Sai số có chiều:</strong> kim điện kế có quán tính nên khi đưa nhanh, số chỉ lớn nhất đọc được <em>nhỏ hơn</em> dòng cực đại thật; tay đưa không đều làm các hàng lệch về hai phía. Cách giảm: lặp mỗi tốc độ 3 lần lấy trung bình, đo tốc độ bằng thước và đồng hồ.</p>
-</details></li>
+</details>
+<strong>Coi rằng</strong> nam châm chuyển động đều; <strong>bỏ qua</strong> từ trường Trái Đất.</li>
 <li><strong>Quan sát:</strong> kim lệch khi đưa vào và khi rút ra, về hai phía ngược nhau; đưa nhanh lệch nhiều hơn đưa chậm; giữ yên thì về 0; đổi cực thì đổi phía lệch.</li>
 <li><strong>Rút ra:</strong> giả thuyết được ủng hộ. Nam châm chuyển động làm từ thông qua cuộn biến thiên nên sinh dòng cảm ứng; biến thiên càng nhanh, dòng càng lớn ($i$ tỉ lệ thuận $v$).</li>
-<li><strong>Chưa nói được gì:</strong> thí nghiệm chưa cho quy tắc xác định <em>chiều</em> dòng (định luật Lenz, mục IV).</li>
+<li><strong>Chưa nói được gì:</strong> thí nghiệm chưa cho quy tắc xác định <em>chiều</em> dòng (định luật Lenz, mục IV); chưa thử đổi $S$ (đề 2026: thanh kim loại trượt trên hai ray).</li>
 </ol>
+</div>
+<div class="tl-box tl-box--rule tl-note">
+<p class="tl-label">📘 Hiện tượng cảm ứng điện từ</p>
+<p>Khi từ thông qua một mạch kín <strong>biến thiên</strong> thì trong mạch xuất hiện <strong>dòng điện cảm ứng</strong>. Dòng này chỉ tồn tại trong lúc từ thông còn biến thiên.</p>
 </div>
 <p>Ba cách làm từ thông biến thiên: đổi $B$ (nam châm lại gần/ra xa, đổi dòng nam châm điện), đổi $S$ (kéo dãn khung), đổi $\alpha$ (quay khung).</p>
 <div class="tl-trap">
@@ -128,13 +134,14 @@
 <p class="tl-label">Tự kiểm tra ngay</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl12-q2c" value="chac"> Chắc</label> <label><input type="radio" name="tl12-q2c" value="khong"> Không chắc</label></p>
 <p><strong>Câu 2.</strong> Về thí nghiệm nam châm và cuộn dây nối điện kế, phát biểu nào sau đây <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
 <div class="tl-quiz">
-<input type="radio" name="tl12-q2" id="tl12-q2a"><label for="tl12-q2a" class="tl-opt tl-no">A. Khi nam châm đang chuyển động lại gần hoặc ra xa cuộn dây, kim điện kế lệch</label>
-<input type="radio" name="tl12-q2" id="tl12-q2b"><label for="tl12-q2b" class="tl-opt tl-no">B. Kết quả ủng hộ giả thuyết: dòng điện xuất hiện khi từ thông qua cuộn dây biến thiên</label>
-<input type="radio" name="tl12-q2" id="tl12-q2c"><label for="tl12-q2c" class="tl-opt tl-no">C. Nam châm chuyển động làm từ trường tại cuộn dây thay đổi, đó là cơ chế sinh dòng cảm ứng</label>
-<input type="radio" name="tl12-q2" id="tl12-q2d"><label for="tl12-q2d" class="tl-opt tl-ok">D. Thí nghiệm cho thấy từ trường càng mạnh thì cuộn dây luôn có dòng điện cảm ứng càng lớn</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Nam châm đứng yên trong cuộn dây thì từ thông tuy lớn nhưng <em>không đổi</em>, kim về 0. Điều kiện để có dòng cảm ứng là từ thông <em>biến thiên</em>, không phải từ thông lớn. Một vòng dây đứng yên trong từ trường đều rất mạnh cũng không có dòng cảm ứng.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng, B là kết luận, C là cơ chế: cả ba đều đúng. Phát biểu sai là phát biểu nói từ trường mạnh thì luôn có dòng: nhớ lại nam châm nằm yên trong cuộn dây mà kim vẫn về 0. Từ trường đều vẫn cho từ thông $\Phi = BS\cos\alpha \ne 0$, nhưng không biến thiên thì không sinh dòng. Chọn lại nhé.</p></div>
+<input type="radio" name="tl12-q2" id="tl12-q2a"><label for="tl12-q2a" class="tl-opt tl-no">A. Nam châm đang lại gần hoặc ra xa cuộn dây thì kim lệch</label>
+<input type="radio" name="tl12-q2" id="tl12-q2b"><label for="tl12-q2b" class="tl-opt tl-ok">B. Kết luận: từ trường càng mạnh thì cuộn dây luôn có dòng cảm ứng càng lớn</label>
+<input type="radio" name="tl12-q2" id="tl12-q2c"><label for="tl12-q2c" class="tl-opt tl-no">C. Nam châm chuyển động làm từ thông qua cuộn dây biến thiên, sinh dòng cảm ứng</label>
+<input type="radio" name="tl12-q2" id="tl12-q2d"><label for="tl12-q2d" class="tl-opt tl-no">D. Thí nghiệm chưa cho quy tắc xác định chiều dòng cảm ứng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> B là kết luận quá đà. Nam châm đứng yên trong cuộn dây thì từ thông tuy lớn nhưng <em>không đổi</em>, kim về 0. Điều kiện để có dòng cảm ứng là từ thông <em>biến thiên</em>, không phải từ thông lớn. Một vòng dây đứng yên trong từ trường đều rất mạnh cũng không có dòng cảm ứng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng, C là cơ chế, D là giới hạn (chiều dòng để định luật Lenz ở mục IV): cả ba đều đúng. Phát biểu sai là kết luận nói từ trường mạnh thì luôn có dòng: nhớ lại nam châm nằm yên trong cuộn dây mà kim vẫn về 0. Từ trường đều vẫn cho từ thông $\Phi = BS\cos\alpha \ne 0$, nhưng không biến thiên thì không sinh dòng. Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -168,6 +175,8 @@
 <p>Nếu cuộn dây <em>hút</em> nam châm đang tiến vào, nam châm sẽ càng nhanh, từ thông tăng càng nhanh, dòng càng mạnh, cứ thế tự tăng mà không ai tốn công: vô lí. Thực tế em phải <em>tốn công</em> thắng lực cản, và công đó biến thành điện năng.</p>
 </details>
 <!--FIG3-->
+<details class="tl-details tl-more">
+<summary>🔬 Bấm xem thí nghiệm: nam châm rơi chậm trong ống nhôm</summary>
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-camungdt-02">
 <p class="tl-label">🔬 Thí nghiệm: nam châm rơi chậm trong ống nhôm</p>
 <ol class="tl-steps">
@@ -176,6 +185,7 @@
 <li><strong>Rút ra:</strong> nam châm rơi làm từ thông qua thành ống biến thiên, sinh <strong>dòng xoáy</strong> (dòng cảm ứng khép kín trong khối kim loại). Theo Lenz, dòng này cản chuyển động: đó là nguyên lý <strong>phanh từ</strong>.</li>
 </ol>
 </div>
+</details>
 <!--video:sau:tn-l12-camungdt-02-->
 <div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem video: nam châm rơi trong ống đồng</p>

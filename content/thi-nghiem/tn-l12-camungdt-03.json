@@ -37,11 +37,11 @@
    "Đọc điện kế trong lúc quay."
   ],
   "quan_sat": [
-   "Số đường sức xuyên qua khung giảm dần khi α tăng.",
-   "Khi quay có dòng trong điện kế; đứng yên thì không."
+   "Kim điện kế lệch trong lúc quay khung, về 0 khi dừng quay.",
+   "Quay nhanh kim lệch nhiều hơn."
   ],
   "rut_ra": [
-   "Φ = BS cosα biến thiên khi α đổi.",
+   "Mặt khung càng nghiêng thì càng ít đường sức xuyên qua: Φ = BS cosα biến thiên khi α đổi, dù B và S không đổi.",
    "Quay đều thì Φ tuần hoàn: nguyên tắc máy phát điện xoay chiều."
   ]
  },
@@ -145,5 +145,14 @@
   "hinh_trong_bai": "Hình 1",
   "y_tuong": "Học sinh dự đoán dạng đồ thị Phi(alpha) trước khi mô phỏng vẽ."
  },
- "an_toan": "Không có nguy cơ đáng kể."
+ "an_toan": "Không có nguy cơ đáng kể.",
+ "gia_thuyet": [
+  "Chỉ đổi góc giữa khung và từ trường (B, S giữ nguyên) cũng làm từ thông biến thiên."
+ ],
+ "du_doan_neu_dung": [
+  "Giữ yên nam châm, chỉ quay khung thì kim điện kế vẫn lệch trong lúc quay, về 0 khi dừng."
+ ],
+ "khong_chung_minh": [
+  "Không cho chiều dòng cảm ứng (định luật Lenz) và độ lớn suất điện động (định luật Faraday)."
+ ]
 }
