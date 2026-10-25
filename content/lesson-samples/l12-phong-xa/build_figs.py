@@ -41,15 +41,14 @@ b += rect(24, 52, 100, 76, "rgba(148,163,184,.14)", "currentColor", 2, 8)       
 b += rect(50, 76, 48, 28, "rgba(248,113,113,.35)", RED, 2, 5)                     # mẫu quặng
 b += text(74, 148, "mẫu trong hộp chì", "currentColor", 10.5, "middle", "600")
 b += arrow("f1", "r", 106, 92, 202, 82, 2.2, "6 4")
-b += text(152, 66, "tia α, β, γ", RED, 11, "middle", "700")
+b += text(164, 66, "tia α, β, γ", RED, 11, "middle", "700")
 b += rect(210, 56, 92, 48, "rgba(56,189,248,.15)", BLUE, 2, 10)                   # ống đếm
 b += text(256, 78, "ống đếm", BLUE, 11, "middle", "700")
 b += text(256, 93, "Geiger", BLUE, 11, "middle", "700")
 b += text(256, 124, "≈ 500 xung/phút", "currentColor", 11, "middle", "600")
-b += text(14, 180, "ngâm đá · đun nóng · nén mạnh → nhịp đếm vẫn thế", "currentColor", 11, "start", "600")
 fig1 = wrap("0 0 440 200",
-            "Mẫu quặng phóng xạ trong hộp chì bắn tia vào ống đếm Geiger; ngâm đá, đun nóng hay nén mạnh đều không đổi nhịp đếm",
-            b, "Hình 1. Mẫu phóng xạ trong hộp chì bắn tia sang ống đếm Geiger. Ngâm đá, đun nóng hay nén mạnh đều không đổi nhịp đếm.")
+            "Mẫu quặng phóng xạ trong hộp chì bắn tia vào ống đếm Geiger, máy đếm khoảng 500 xung mỗi phút",
+            b, "Hình 1. Mẫu phóng xạ trong hộp chì bắn tia sang ống đếm Geiger.")
 
 # ------------------------------------------------- Hình 2: ba chùm tia trong điện trường
 b = defs("f2")
@@ -70,7 +69,7 @@ b += text(334, 196, "α", RED, 13, "start", "700")
 b += text(14, 254, "α, β⁺ lệch về bản âm · β⁻ lệch về bản dương · γ đi thẳng", "currentColor", 11, "start", "600")
 fig2 = wrap("0 0 440 270",
             "Ba chùm tia alpha, beta trừ và gamma bay vào điện trường đều: alpha lệch xuống bản âm, beta trừ lệch lên bản dương, gamma bay thẳng",
-            b, "Hình 2. Trong điện trường đều: α (điện dương) lệch về bản âm, β⁻ (electron) lệch về bản dương, γ không mang điện nên bay thẳng; β⁺ cũng lệch về bản âm nhưng nhẹ hơn α nên lệch nhiều hơn.")
+            b, "Hình 2. γ không mang điện nên bay thẳng; β⁺ nhẹ hơn α nên lệch nhiều hơn.")
 
 # ------------------------------------------------- Hình 3: đường cong phân rã
 X0, DX = 70, 85
@@ -109,7 +108,7 @@ for k, nhan in ((0, "0"), (1, "T"), (2, "2T"), (3, "3T"), (4, "4T")):
 b += text(248, 96, "mỗi T lại còn một nửa", GRN, 11, "start", "600")
 fig3 = wrap("0 0 440 240",
             "Đường cong phân rã: số hạt nhân giảm còn một nửa sau mỗi chu kì bán rã T",
-            b, "Hình 3. Định luật phóng xạ: sau mỗi khoảng T, số hạt nhân lại giảm đúng một nửa — N₀ → N₀/2 → N₀/4 → N₀/8.")
+            b, "Hình 3. Sau mỗi khoảng T, số hạt nhân giảm một nửa.")
 
 # ------------------------------------------------- Hình 4: dịch chuyển ô trong bảng tuần hoàn
 b = defs("f4")
