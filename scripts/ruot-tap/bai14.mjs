@@ -21,11 +21,10 @@ const qr = qrcode(0, 'M'); qr.addData(LINK); qr.make();
 const qrSvg = qr.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
 const qr2 = qrcode(0, 'M'); qr2.addData('https://thachlab.id.vn/'); qr2.make();
 const qrHome = qr2.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
-// Góc giới thiệu cuối tập (thầy chốt 25/10): bạn mượn tập thấy tò mò muốn biết thầy/web này là gì. Giọng kể, không rao bán;
-// nói đúng thứ HS 14–18 quan tâm (SDT: tự chủ, làm được, có bạn cùng học; Dahl–Steinberg: địa vị bạn cùng lứa → bảng xếp hạng).
+// Ô cuối tập (thầy chốt 25/10 tối): chỉ hướng dẫn xem lại bài trên web bằng QR, không giới thiệu/quảng cáo.
 const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div><small>Bài học này</small></div><div class="gtq"><div class="qr">${qrHome}</div><small>Trang chủ</small></div><div>
-<b>Vật lí thầy Thạch · thachlab.id.vn.</b> Tập này đi cùng bài học trên web: lý thuyết kèm thí nghiệm và mô phỏng, tự kiểm tra chấm
-ngay, bài tập mẫu giải từng bước, đề luyện bám đề thi tốt nghiệp, bảng xếp hạng theo mùa. Mượn tập của bạn thì quét mã trang chủ để xem thử.</div></div>`;
+<b>Xem lại bài này trên thachlab.id.vn:</b> quét mã <b>Bài học này</b> để mở lý thuyết, thí nghiệm, mô phỏng, tự kiểm tra và bài tập mẫu
+đúng bài 14; mã <b>Trang chủ</b> để vào các bài khác.</div></div>`;
 // Source Sans 3 (OFL, thầy chốt 25/10 để tiết kiệm trang): hẹp hơn Noto Sans ~10%, x-height cao nên hạ cỡ chữ xuống 3,3 mm vẫn dễ đọc;
 // có dấu tiếng Việt. Mỗi tệp con PHẢI có unicode-range, nếu không tệp sau đè tệp trước và chữ in đậm rơi về Helvetica.
 const F = resolve(HERE, 'fonts') + '/source-sans-3-';

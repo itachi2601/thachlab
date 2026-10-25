@@ -53,9 +53,9 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 - **Không giải thích quy trình trên giấy** (thầy chốt 25/10: thầy tự điều phối): không ô nhịp buổi, không phụ đề "điền khi nghe
   giảng"/"làm cùng thầy", không hint trong ngoặc sau tiêu đề mục; chỉ giữ nhãn cho biết ghi gì. Không Ngày/Tên đầu trang (tờ đóng
   thành sách).
-- **Giới thiệu và QR kín đáo, chỉ ở trang cuối** (thầy chốt 25/10 tối): không in tên web ở đầu/chân trang thường, không QR giữa
-  tập. Trang ghi chú cuối có một ô mảnh viền xám (`gioiThieu`): 2 QR nhỏ 22 mm (bài học này · trang chủ) + 3 dòng chữ phụ kể web
-  có gì. Giọng kể, không rao bán; nêu thứ HS 14–18 quan tâm (tự làm được, chấm ngay, xếp hạng theo mùa).
+- **QR chỉ ở trang cuối, chỉ để xem lại bài** (thầy chốt 25/10 tối): không in tên web ở đầu/chân trang, không QR giữa tập, không
+  câu giới thiệu/quảng cáo kiểu "mượn tập của bạn". Trang ghi chú cuối có một ô mảnh viền xám (`gioiThieu`): 2 QR nhỏ 22 mm
+  (bài học này · trang chủ) + 1–2 dòng chữ phụ "Xem lại bài này trên thachlab.id.vn: quét mã…".
 - **Hình minh hoạ bắt buộc** (thầy 25/10: trang không hình là thiếu): mỗi trang học/bài tập có ≥1 hình SVG tự vẽ trong
   `hinh.mjs`, mỗi hình trả lời một câu hỏi (H1), đặt CẠNH khối chữ bằng `.fig-side` (grid `1fr 40–46mm`) để không tốn
   chiều cao; hình ở ô giải dạng khó là gợi ý nhìn trước khi tính (để trống tỉ số/kết quả cho HS điền). Chữ trong SVG
