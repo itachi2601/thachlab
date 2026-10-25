@@ -76,3 +76,5 @@ làm này; chưa có trong tài liệu repo, ghi để tra sau.
 | Ngày | Bài | Thay đổi |
 |---|---|---|
 | 2026-10-25 | L12 Bài 14 (id 15) Hạt nhân và mô hình nguyên tử | Mở bài dừng ở giả thuyết Thomson + câu dự đoán hiện tượng (T2); II.3 thành hộp 6 ô thí nghiệm lá vàng (T1, T3–T6, T10); bảng Geiger–Marsden 1913 + kiểm $N\sin^4(\theta/2)$ trong `<details>` (T8); Câu 4 đổi thành "phát biểu nào sai" trộn 4 kiểu (T9); PhET chạy bánh pudding trước (T12); thêm `tn-l12-hatnhan-03.json` (T11); mô hình "bắn bi mù" chuyển vào `<details>` |
+| 2026-10-25 | L12 Bài 4 thực hành (id 5) Đo c, λ, L | Hộp đo c 6 ô theo đề 2026 II.4 (giả thuyết c phụ thuộc m → bác bỏ, bảng theo m); thêm hộp phễu nước đá hai giai đoạn theo đề 2025 II.1 (m₂ − m₁, Coi rằng/Bỏ qua, λ nhỏ hơn thật nếu bỏ giai đoạn 1); mở bài hết lộ "0 °C" (T2); Câu 3, 4 trộn 4 kiểu (T9); `tn-l12-thuchanh-03` mới, sửa số tn-02 |
+| 2026-10-25 | L12 Nội năng (id 4) | Hộp bơm xe 6 ô; thêm hộp Joule cánh khuấy 6 ô + bảng minh hoạ $A/(m\Delta t)$ (T8, `tn-l12-noinang-03` vi_du); hộp đo c thêm chiều sai số + cách giảm (T7); Câu 2 trộn 4 kiểu (T9) |
