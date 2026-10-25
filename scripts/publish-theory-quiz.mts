@@ -12,6 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
 import { fileURLToPath } from "node:url";
+import { ensureLessons } from "../.claude/skills/soan-quiz-ly-thuyet/scripts/fetch-lessons.mts";
 import { loadTopics, QUIZ_DIR, quizFilesIn, validateQuiz, KEY } from "../.claude/skills/soan-quiz-ly-thuyet/scripts/lib";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
@@ -51,6 +52,11 @@ const files = all
   : lessons.map((id) => path.join(QUIZ_DIR, `${id}.json`));
 for (const f of files) if (!fs.existsSync(f)) fail(`không thấy ${path.relative(process.cwd(), f)}`);
 
+// Bài khoá không có trong public/data/lessons (build-content chỉ xuất bài xem thử) → tải lý thuyết từ DB (chỉ đọc) vào .lesson-cache.
+try {
+  await ensureLessons(files.map((f) => Number(path.basename(f, ".json"))).filter(Number.isInteger));
+} catch (e) { fail((e as Error).message); }
+
 const topics = loadTopics();
 if (!topics) console.warn("Cảnh báo: chưa có scripts/data/question-topics.json — không kiểm topic theo YCCĐ (chạy export-question-topics.mts trước).");
 
@@ -81,11 +87,13 @@ if (!dryRun) {
   if (!key) fail("thiếu SUPABASE_SERVICE_ROLE_KEY");
   supabase = createClient(url, key, { auth: { autoRefreshToken: false, persistSession: false } });
 } else {
-  console.log("[DRY-RUN] không kết nối DB. Mục đã có exam_ids chỉ kiểm được khi chạy thật (dry-run đọc public/data).\n");
+  console.log("[DRY-RUN] không ghi DB (chỉ đọc lý thuyết bài khoá nếu thiếu file). Mục đã có exam_ids chỉ kiểm được khi chạy thật.\n");
 }
 
 // subject_code theo chương (dry-run: đọc catalog.json; chạy thật: đọc DB).
-const catalog = JSON.parse(fs.readFileSync(path.resolve(scriptDir, "../public/data/catalog.json"), "utf8"));
+// Worktree / máy chưa build-content không có catalog.json → dry-run dùng "vat-ly" (chạy thật luôn đọc DB).
+const catalogFile = path.resolve(scriptDir, "../public/data/catalog.json");
+const catalog = fs.existsSync(catalogFile) ? JSON.parse(fs.readFileSync(catalogFile, "utf8")) : { lessons: [], chapters: [] };
 function subjectFromCatalog(lessonId: number): string {
   const l = catalog.lessons.find((x: { id: number }) => x.id === lessonId);
   const ch = catalog.chapters.find((x: { id: number }) => x.id === l?.chapter_id);
