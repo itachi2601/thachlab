@@ -1,5 +1,5 @@
 // Dựng ruột tập Vật lí 12 – Bài 14 (12 trang 165×240 mm, ô ly 5 mm — chia hết cho 4 để in gấp đôi). Theo nhịp buổi L12 (2 h): buổi N dạy hết bài web trên lớp 60′ (trang 1–5) + cuối giờ giao ĐỀ BTVN (ô trang 5);
-// buổi N+1: 10′ ôn (trang 3) → 20′ kiểm tra → 30′ sửa bài trên lớp (trang 7); trang 8 sửa bài kiểm tra chương, trang 9 làm lại câu sai sau 1 tuần; trang 6 Bài tập mẫu 5 dạng (module bai14-btm.mjs); trang 10–12 ghi chú tự do. Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
+// buổi N+1: 10′ ôn (trang 3) → 20′ kiểm tra → 30′ sửa bài trên lớp (trang 8); trang 9 sửa bài kiểm tra chương, trang 10 làm lại câu sai sau 1 tuần; trang 6–7 Bài tập mẫu 5 dạng bán cấu trúc (module bai14-btm.mjs); trang 11–12 ghi chú tự do. Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
 // Mặc định ghi scripts/ruot-tap/out/ruot-tap-vl12-bai14.pdf. Cần book/node_modules (katex, qrcode-generator, puppeteer-core):
 // worktree không có thì dùng book/ của bản chính ~/Projects/thachlab.
 // Mã ô "Tập: trang · ô" (nhãn Web … trên giấy = tên mục trên web) trùng data-tap trong content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.src.html.
@@ -7,7 +7,7 @@ import { createRequire } from 'node:module';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { btmCss, btmPage } from './bai14-btm.mjs';
+import { btmCss, btmPages } from './bai14-btm.mjs';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const BOOK = [resolve(HERE, '../../book/'), '/Users/MAC/Projects/thachlab/book'].find((d) => existsSync(d + '/node_modules')) + '/';
 const LINK = 'https://thachlab.id.vn/lop-hoc/bai/?id=15#muc=kiem-tra';
@@ -46,7 +46,7 @@ const rkTable = (rows) => `<table class="rk"><tr><th style="width:9mm">Câu</th>
 // Cột "Câu/ý" để ghi ý Phần II (II.2b); "Em ghi → Đúng" đủ rộng cho đáp số Phần III; "Chắc/Đoán" như bảng Tập 2·4.
 const errRow = () => `<tr><td></td><td></td><td><span class="ck"></span>chắc<br><span class="ck"></span>đoán</td><td><span class="ck"></span>đọc đề <span class="ck"></span>nhớ sai <span class="ck"></span>tính<br><span class="ck"></span>đơn vị <span class="ck"></span>chưa học</td><td class="dg">D</td><td></td></tr>`;
 // Dòng tra nhanh: nội dung → ô Tập, để HS biết câu sai ứng với ô nào; Dạng 1–5 nối sang trang 6.
-const traNhanh = `<div class="tra"><b>Tra ô Tập:</b> Kí hiệu, lực hạt nhân → 1·4 · Đồng vị → 2·1 · Mô hình → 2·2 · R, u, khối lượng, kích thước → 2·3 · Bẫy → 3·1 · Dạng 1–5 (D1–D5) → 6·1</div>`;
+const traNhanh = `<div class="tra"><b>Tra ô Tập:</b> Kí hiệu, lực hạt nhân → 1·4 · Đồng vị → 2·1 · Mô hình → 2·2 · R, u, khối lượng, kích thước → 2·3 · Bẫy → 3·1 · Dạng 1–3 → 6·1 · Dạng 4–5 → 7·1</div>`;
 // Trang 7 = 30′ sửa bài ngay trên lớp sau đề 20′ (thầy chữa trên bảng → em chép vào mục 2, 3 ô); trang 8 = câu thuộc bài 14 trong bài kiểm tra chương.
 const fixPage = (n, { title, sub, lap = false, rows = 6 }) => `<section class="page">
 ${head(title, sub, true)}
@@ -55,12 +55,12 @@ ${lap ? `<div class="card" style="padding:1mm 3mm;display:flex;align-items:basel
 ${traNhanh}
 <h3><i>1</i>Câu sai và câu đúng nhờ đoán <span class="hint">(mỗi câu/ý một hàng, ví dụ II.2b; đề BTVN ghi BT 3)</span></h3>
 <table class="er"><tr><th style="width:12mm">Câu/ý</th><th style="width:40mm">Em ghi → Đúng</th><th style="width:14mm">Chắc?</th><th style="width:43mm">Loại lỗi</th><th style="width:10mm">Dạng</th><th>Tập ô</th></tr>${errRow().repeat(rows)}</table>
-<div class="hint" style="margin-top:.6mm">Chắc mà vẫn sai → sửa trước tiên. Đúng nhờ đoán → vẫn ghi, vẫn xem lại. Sai nhiều hơn số hàng → ghi tiếp ở trang 10.</div>
+<div class="hint" style="margin-top:.6mm">Chắc mà vẫn sai → sửa trước tiên. Đúng nhờ đoán → vẫn ghi, vẫn xem lại. Sai nhiều hơn số hàng → ghi tiếp ở trang 11.</div>
 <h3><i>2</i>Thầy chữa trên bảng, em chép cách giải <span class="hint">(chữ trước, số sau; mỗi ô một câu)</span></h3>
 ${box(wl('Câu …:', 3) + wl('Câu …:', 3) + wl('Câu …:', 3))}
 <h3><i>3</i>Bẫy mới em phát hiện · câu hỏi cho thầy/trợ giảng</h3>
 ${box(wl('Bẫy:', 1) + wl('Hỏi:', 1))}
-<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Làm lại các câu sai (không nhìn lời giải):</b> <span style="white-space:nowrap"><span class="ck"></span>sau 1 tuần → trang 9</span> &nbsp;<span style="white-space:nowrap"><span class="ck"></span>trước kiểm tra chương</span></div>
+<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Làm lại các câu sai (không nhìn lời giải):</b> <span style="white-space:nowrap"><span class="ck"></span>sau 1 tuần → trang 10</span> &nbsp;<span style="white-space:nowrap"><span class="ck"></span>trước kiểm tra chương</span></div>
 ${foot(n)}</section>`;
 
 const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí 12 – Bài 14</title>
@@ -115,7 +115,7 @@ ${btmCss}
 <!-- TRANG 1: mục tiêu, dự đoán, II.1 -->
 <section class="page">
 ${head('BÀI 14 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: Vật lí hạt nhân', true)}
-<div class="nhip"><b>Tập này dùng cho hai buổi.</b> Hôm nay: học hết bài trên lớp 60′ (trang 1–5) → cuối giờ chép <b>đề BTVN</b> (trang 5). Buổi sau: <b>10′ ôn</b> (trang 3) → <b>20′ kiểm tra</b> → <b>30′ sửa bài</b> (trang 7).</div>
+<div class="nhip"><b>Tập này dùng cho hai buổi.</b> Hôm nay: học hết bài trên lớp 60′ (trang 1–5) → cuối giờ chép <b>đề BTVN</b> (trang 5). Buổi sau: <b>10′ ôn</b> (trang 3) → <b>20′ kiểm tra</b> → <b>30′ sửa bài</b> (trang 8).</div>
 <h3><i>1</i>Hôm nay em làm được gì?</h3>${tag('1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0"><span class="ck"></span>Nêu được hạt nhân gồm <b>prôtôn, nơtron</b> và lực giữ chúng lại</div>
@@ -226,7 +226,7 @@ ${head('ĐỀ BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH', 'Cuối giờ 
 <div style="margin-top:.8mm"><b>Làm ở:</b> <span class="ck"></span>thachlab &nbsp;<span class="ck"></span>Azota &nbsp;<span class="ck"></span>giấy &nbsp;· <b>Hạn:</b> ……/……</div>
 ${wl('Ghi chú của thầy về đề:', 2)}
 <div style="margin-top:.8mm"><span class="ck"></span><b>Đã nộp</b> &nbsp;· <b>Điểm:</b> ……/…… &nbsp;· <b>Câu sai:</b> <span class="fill" style="min-width:34mm"></span></div>
-<div class="hint" style="margin-top:.6mm">Câu sai của đề BTVN → ghi vào bảng trang 7 cùng đề trên lớp, cột Câu/ý ghi thêm chữ “BT”.</div></div>
+<div class="hint" style="margin-top:.6mm">Câu sai của đề BTVN → ghi vào bảng trang 8 cùng đề trên lớp, cột Câu/ý ghi thêm chữ “BT”.</div></div>
 <div style="width:29mm;flex:none"><div class="qr">${qrSvg}</div><div class="hint" style="margin-top:.6mm;font-size:2.6mm;line-height:1.3">Tự kiểm tra 7 câu trên web (cần đăng nhập), không phải đề BTVN.</div></div></div>
 <h3><i>2</i>VI · Mang về: điều em dễ quên nhất</h3>${tag('5')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
@@ -238,21 +238,21 @@ ${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = … · vì sao <s
  + wl('Đồng vị neon · Dự đoán trung bình gần đồng vị nào:', 1) + wl('Thấy / vì sao 20,18:', 2))}
 ${foot(5)}</section>
 
-${btmPage(6, { m, head, foot, tag, lines })}
-${fixPage(7, { title: 'SỬA BÀI TRÊN LỚP · 30 PHÚT', sub: 'Thầy chữa trên bảng; em ghi vì sao sai, không chỉ chép đáp án' })}
-${fixPage(8, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG · BÀI 14', sub: 'Chỉ ghi câu về hạt nhân, đồng vị, mô hình, kích thước', lap: true, rows: 5 })}
-<!-- TRANG 9: làm lại câu sai sau 1 tuần (retrieval cách quãng) -->
+${btmPages(6, { m, head, foot, tag, lines, wl })}
+${fixPage(8, { title: 'SỬA BÀI TRÊN LỚP · 30 PHÚT', sub: 'Thầy chữa trên bảng; em ghi vì sao sai, không chỉ chép đáp án' })}
+${fixPage(9, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG · BÀI 14', sub: 'Chỉ ghi câu về hạt nhân, đồng vị, mô hình, kích thước', lap: true, rows: 5 })}
+<!-- TRANG 10: làm lại câu sai sau 1 tuần (retrieval cách quãng) -->
 <section class="page">
-${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN', 'Chép đề câu sai ở trang 7–8, giải không nhìn lời giải', true)}
-<div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang 7 (câu ……………) · trang 8 (câu ……………) · ưu tiên câu “chắc mà vẫn sai”</div>
+${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN', 'Chép đề câu sai ở trang 8–9, giải không nhìn lời giải', true)}
+<div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang 8 (câu ……………) · trang 9 (câu ……………) · ưu tiên câu “chắc mà vẫn sai”</div>
 ${[1, 2, 3, 4].map((i) => `<h3><i>${i}</i>Câu …… <span class="hint">(từ trang ……)</span> &nbsp;<span class="ck"></span>lần này đúng</h3>${box(lines(6))}`).join('')}
-<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/…… · câu còn sai → hỏi thầy / trợ giảng, ghi câu hỏi ở trang 10 &nbsp;<span class="ck"></span>đã hỏi</div>
-${foot(9)}</section>
+<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/…… · câu còn sai → hỏi thầy / trợ giảng, ghi câu hỏi ở trang 11 &nbsp;<span class="ck"></span>đã hỏi</div>
+${foot(10)}</section>
 
-<!-- TRANG 10–12: ghi chú tự do -->
-${[10, 11, 12].map((n) => `<section class="page dots">
+<!-- TRANG 11–12: ghi chú tự do -->
+${[11, 12].map((n) => `<section class="page dots">
 ${head('GHI CHÚ TỰ DO', 'Sơ đồ, công thức thầy viết thêm, điều muốn hỏi')}
-${n === 10 ? `<div class="card soft"><b>Câu hỏi còn lại cho thầy / trợ giảng:</b>${lines(3)}</div>` : ''}
+${n === 11 ? `<div class="card soft"><b>Câu hỏi còn lại cho thầy / trợ giảng:</b>${lines(3)}</div>` : ''}
 ${foot(n)}</section>`).join('')}
 </body></html>`;
 
