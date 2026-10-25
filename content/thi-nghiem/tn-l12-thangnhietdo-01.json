@@ -13,6 +13,17 @@
     "thangnhietdo.chieu_truyen_nhiet_nang"
   ],
   "muc_tieu": "Chứng tỏ nhiệt năng chỉ truyền từ phần nóng hơn sang phần lạnh hơn và dừng lại khi hai phần cùng nhiệt độ — đó là trạng thái cân bằng nhiệt.",
+  "gia_thuyet": [
+    "Trộn hai lượng nước khác nhiệt độ, nhiệt độ cân bằng nằm giữa hai nhiệt độ ban đầu và gần nhiệt độ của phần nước nhiều hơn: t_cb = (m1·t1 + m2·t2)/(m1 + m2) khi bỏ qua nhiệt làm nóng ca."
+  ],
+  "du_doan_neu_dung": [
+    "Nước lạnh gấp đôi nước nóng thì hỗn hợp dừng gần phía nước lạnh (100 g 60 °C + 200 g 20 °C → dưới 40 °C).",
+    "Hai lượng nước bằng nhau thì hỗn hợp dừng gần trung bình cộng hai nhiệt độ."
+  ],
+  "khong_chung_minh": [
+    "Không đo được riêng phần nhiệt làm nóng ca và mất ra không khí (phần làm số đo thấp hơn mô hình).",
+    "Không cho biết nhiệt độ cân bằng khi trộn hai chất khác nhau: cần thêm nhiệt dung riêng."
+  ],
   "dung_cu": [
     { "ten": "Cốc thuỷ tinh chịu nhiệt 250 ml", "so_luong": 2 },
     { "ten": "Ca (bình) trộn 500 ml", "so_luong": 1 },
@@ -23,12 +34,12 @@
   ],
   "cac_buoc": {
     "lam": [
-      "Rót 100 ml nước nóng (~60 °C) vào cốc 1 và 100 ml nước lạnh (~20 °C) vào cốc 2, đo nhiệt độ từng cốc bằng cùng một nhiệt kế.",
-      "Đổ cả hai cốc vào ca 500 ml, khuấy nhẹ một lần rồi bấm đồng hồ.",
-      "Cứ mỗi phút đọc nhiệt kế một lần, ghi vào bảng, trong khoảng 5 phút."
+      "Cân m2 nước lạnh rót vào ca, đo nhiệt độ t2; cân m1 nước nóng, đo nhiệt độ t1.",
+      "Đổ nước nóng vào ca, đậy nắp, khuấy đều; đọc nhiệt kế mỗi 30 s tới khi số đọc đứng yên, ghi t_cb.",
+      "Lặp lại với khối lượng và nhiệt độ khác."
     ],
     "quan_sat": [
-      "Ngay sau khi trộn, nhiệt độ hỗn hợp nhảy lên khoảng 40 °C rồi gần như đứng yên.",
+      "Nhiệt kế đổi nhanh rồi đứng yên ở một số nằm giữa hai nhiệt độ ban đầu: 100 g 60 °C + 100 g 20 °C cho khoảng 39,1 °C; 100 g 60 °C + 200 g 20 °C cho khoảng 32,9 °C.",
       "Các số đọc sau đó chỉ lệch nhau vài phần mười độ, và luôn thấp hơn giá trị tính toán một chút.",
       "Nhiệt kế đặt ở vị trí nào trong ca (giữa, sát thành) cũng cho cùng một số, miễn là đã khuấy đều."
     ],
@@ -43,7 +54,7 @@
     { "ky_hieu": "t1", "ten": "Nhiệt độ nước nóng", "don_vi": "°C", "kieu": "dieu_chinh", "min": 40, "max": 90, "mac_dinh": 60, "buoc": 5 },
     { "ky_hieu": "m2", "ten": "Khối lượng nước lạnh", "don_vi": "g", "kieu": "dieu_chinh", "min": 50, "max": 200, "mac_dinh": 100, "buoc": 10 },
     { "ky_hieu": "t2", "ten": "Nhiệt độ nước lạnh", "don_vi": "°C", "kieu": "dieu_chinh", "min": 5, "max": 30, "mac_dinh": 20, "buoc": 1 },
-    { "ky_hieu": "c", "ten": "Nhiệt dung riêng của nước", "don_vi": "J/(kg.K)", "kieu": "co_dinh", "gia_tri": 4200 },
+    { "ky_hieu": "c", "ten": "Nhiệt dung riêng của nước", "don_vi": "J/(kg.K)", "kieu": "co_dinh", "gia_tri": 4180 },
     { "ky_hieu": "t_cb", "ten": "Nhiệt độ cân bằng tính theo mô hình", "don_vi": "°C", "kieu": "tinh_ra" },
     { "ky_hieu": "t_do", "ten": "Nhiệt độ đọc trên nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.5 }
   ],
@@ -61,16 +72,14 @@
     "ghi_chu": "Mô phỏng nên vẽ đồ thị T(t) và cho kéo hai thanh trượt m1, m2: nhiệt độ cân bằng dịch về phía phần có khối lượng lớn hơn, còn thời gian tiến tới cân bằng dài ra khi khối lượng tăng."
   },
   "so_lieu_mau": {
-    "cot": ["Thời gian (phút)", "Nhiệt độ hỗn hợp (°C)"],
+    "cot": ["m1 (g)", "t1 (°C)", "m2 (g)", "t2 (°C)", "t_cb mô hình (°C)", "t_cb đo (°C)"],
     "hang": [
-      [0, 41.0],
-      [1, 40.2],
-      [2, 39.8],
-      [3, 39.7],
-      [4, 39.6],
-      [5, 39.5]
+      [100, 60, 100, 20, 40.0, 39.1],
+      [100, 60, 200, 20, 33.3, 32.9],
+      [200, 60, 100, 20, 46.7, 45.8],
+      [100, 80, 300, 20, 35.0, 34.6]
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với m1 = m2 = 100 g, t1 = 60 °C, t2 = 20 °C (t_cb = 40,0 °C). Số thực đo thấp hơn vì có hao nhiệt ra môi trường và nhiệt dung của ca."
+    "ghi_chu": "Số liệu minh hoạ, không phải số đo thật: cột 'đo' tính từ m1·c·(t1 − t_cb) = (m2·c + 40)·(t_cb − t2) với c = 4180 J/(kg·K), 40 J/K gộp nhiệt làm nóng ca và nhiệt mất ra không khí; cột 'mô hình' bỏ qua phần đó. Trong bài, ô 'mô hình' hàng cuối để học sinh tự tính."
   },
   "ket_qua_ky_vong": "Nhiệt độ hỗn hợp tiến nhanh tới một giá trị nằm giữa t1 và t2 rồi đứng yên; giá trị đó lệch về phía phần có khối lượng lớn hơn và không phụ thuộc vị trí đặt nhiệt kế.",
   "hien_tuong_hay_sai": [
@@ -79,9 +88,9 @@
     "Cho rằng nhiệt truyền từ cốc nhiều nước sang cốc ít nước, vì cốc nhiều nước chứa nhiều nhiệt lượng hơn."
   ],
   "sai_so_thuong_gap": [
-    "Nhiệt kế chưa hiệu chuẩn hoặc bầu nhiệt kế chạm thành cốc.",
-    "Không khuấy đều: cùng một ca nhưng chỗ nóng chỗ lạnh, số đọc phụ thuộc vị trí.",
-    "Hao nhiệt ra môi trường và nhiệt dung của ca làm t_cb đo được thấp hơn tính toán 0,3–0,5 °C."
+    "Ca và không khí cũng nhận nhiệt (hỗn hợp nóng hơn phòng): t_cb đo được THẤP HƠN mô hình khoảng 0,4–0,9 °C. Giảm: ca xốp có nắp, tráng ca bằng nước lạnh trước, đọc ngay khi số đứng yên.",
+    "Không khuấy đều: số đọc phụ thuộc vị trí, gần chỗ đổ nước nóng thì CAO HƠN giá trị cân bằng. Giảm: khuấy đều trước mỗi lần đọc.",
+    "Đọc khi số chưa đứng yên: số đọc lệch về phía nhiệt độ ban đầu của chỗ đặt nhiệt kế. Giảm: chờ số ổn định, đọc lặp."
   ],
   "goi_y_mo_phong": {
     "loai": "do_thi+bang_so_lieu",
