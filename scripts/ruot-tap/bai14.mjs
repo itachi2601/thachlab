@@ -1,4 +1,4 @@
-// Dựng ruột tập Vật lí 12 – Bài 14 (9 trang 165×240 mm, ô ly 5 mm; trang 6 Bài tập mẫu 5 dạng (module bai14-btm.mjs), trang 7–8 mẫu Sửa bài sau đề, trang 9 ghi chú tự do). Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
+// Dựng ruột tập Vật lí 12 – Bài 14 (12 trang 165×240 mm, ô ly 5 mm — chia hết cho 4 để in gấp đôi; trang 6 Bài tập mẫu 5 dạng (module bai14-btm.mjs), trang 7–9 mẫu Sửa bài sau đề Lần 1–3, trang 10–12 ghi chú tự do). Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
 // Mặc định ghi scripts/ruot-tap/out/ruot-tap-vl12-bai14.pdf. Cần book/node_modules (katex, qrcode-generator, puppeteer-core):
 // worktree không có thì dùng book/ của bản chính ~/Projects/thachlab.
 // Mã ô "Tập: trang · ô" (nhãn Web … trên giấy = tên mục trên web) trùng data-tap trong content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.src.html.
@@ -25,7 +25,7 @@ const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
 
 // Nhãn góc phải: mã "trang·ô" trùng nhãn "✍ Tập: trang · ô" khi trình chiếu (data-tap trong theory.src.html).
 const tag = (t) => `<span class="tag">Tập ${t}</span>`;
-const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · trang ${n}/9</span></div>`;
+const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · trang ${n}/12</span></div>`;
 // who=true chỉ ở trang 1 và trang Sửa bài (tập đóng sẵn, không lặp Ngày/Tên mỗi trang)
 const head = (t, s, who = false) => `<div class="top"><div><b>${t}</b><small>${s}</small></div>${who ? '<div class="who">Ngày …../….. &nbsp;Tên: ………………</div>' : ''}</div>`;
 const kw = (h) => `<div class="kw">🔑 ${h}</div>`;
@@ -208,13 +208,13 @@ ${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): em chọn … · A, Z, N =`
 ${foot(5)}</section>
 
 ${btmPage(6, { m, head, foot, tag, lines })}
-${fixPage(7, 'Lần 1')}${fixPage(8, 'Lần 2')}
+${fixPage(7, 'Lần 1')}${fixPage(8, 'Lần 2')}${fixPage(9, 'Lần 3')}
 
-<!-- TRANG 9: ghi chú tự do -->
-<section class="page">
+<!-- TRANG 10–12: ghi chú tự do -->
+${[10, 11, 12].map((n) => `<section class="page">
 ${head('GHI CHÚ TỰ DO', 'Sơ đồ, công thức thầy viết thêm, điều muốn hỏi')}
 <div class="card soft"><b>Câu hỏi còn lại cho thầy / trợ giảng:</b>${lines(3)}</div>
-${foot(9)}</section>
+${foot(n)}</section>`).join('')}
 </body></html>`;
 
 const out = process.argv[2] ?? resolve(HERE, 'out/ruot-tap-vl12-bai14.pdf');
