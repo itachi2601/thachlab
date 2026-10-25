@@ -83,7 +83,7 @@ b += text(372, 280, "m = 0,200 kg", "currentColor", 10.5, "middle", "600")
 b += text(16, 316, "Cân nước trước khi đổ vào bình; oát kế cho P và τ.", "currentColor", 10.5, "start", "600")
 
 fig1 = wrap("0 0 440 328", "Sơ đồ bố trí thí nghiệm đo nhiệt lượng: nhiệt lượng kế có điện trở nhiệt và nhiệt kế, điện trở nối với oát kế, cân điện tử đo khối lượng nước, số liệu ghi vào bảng",
-            b, "Hình 1. Một phép đo nhiệt lượng cần bốn số: công suất P và thời gian τ (oát kế), khối lượng m (cân), độ tăng nhiệt độ Δt (nhiệt kế). Không có dụng cụ nào đọc thẳng nhiệt lượng.")
+            b, "Hình 1. Bốn số cần đo: P và τ (oát kế), m (cân), Δt (nhiệt kế). Không dụng cụ nào đọc thẳng nhiệt lượng.")
 
 # ======================================================= Hình 2: đường cong đun nóng
 b = defs("f2")
@@ -121,7 +121,7 @@ b += text(196, 237, "λ = Pτ/m", ORG, 11, "start", "600")
 b += line(192, 232, 116, 249, ORG, 1, "3 3", .8)
 b += text(16, 310, "Đoạn ngang = nhiệt dùng để chuyển thể, không làm nhiệt độ đổi.", "currentColor", 10.5, "start", "600")
 fig2 = wrap("0 0 440 322", "Đường cong đun nóng của nước đá: nhiệt độ tăng, rồi đứng ở 0 độ C khi tan, tăng tiếp tới 100 độ C, rồi đứng ở 100 độ C khi sôi",
-            b, "Hình 2. Đường cong đun nóng: hai đoạn nằm ngang ứng với hai lần chuyển thể (tan ở 0 °C, sôi ở 100 °C). Đoạn ngang nghĩa là nhiệt đưa vào dùng để chuyển thể, không làm nhiệt độ đổi.")
+            b, "Hình 2. Đường cong đun nóng: hai đoạn nằm ngang ứng với hai lần chuyển thể, tan ở 0 °C và sôi ở 100 °C.")
 
 # ======================================================= Hình 3: bốn giai đoạn, tỉ lệ nhiệt
 b = defs("f3")
@@ -142,7 +142,7 @@ for i, (ten, phan, col, so) in enumerate(stages):
 b += text(16, 262, "Cùng một khối nước đá 0,500 kg, bếp 500 W", "currentColor", 11, "start", "600")
 b += text(16, 280, "→ riêng hoá hơi chiếm 3/4 tổng nhiệt", RED, 11, "start", "700")
 fig3 = wrap("0 0 440 292", "Bốn thanh biểu diễn nhiệt cần cho bốn giai đoạn: hoá hơi chiếm 74 phần trăm, hoá hơi và tan chiếm phần lớn",
-            b, "Hình 3. Cùng một khối nước đá 0,500 kg: hoá hơi chiếm 74% tổng nhiệt, còn giai đoạn đá nóng từ −10 °C lên 0 °C chỉ chiếm 0,7%. Đây là lí do cô đặc dung dịch rất tốn năng lượng.")
+            b, "Hình 3. Cùng 0,500 kg nước đá: hoá hơi chiếm 74% tổng nhiệt, đá nóng từ −10 °C lên 0 °C chỉ chiếm 0,7%.")
 
 # ======================================================= Hình 4: ba đại lượng cần đo
 b = defs("f4")
@@ -165,7 +165,7 @@ for i, (ten, dv, ct, mo, col) in enumerate(cards):
 b += text(16, 214, "Điểm chung: đo P, τ, m rồi chia. Điểm khác: đọc số liệu ở đoạn nào của đồ thị.", "currentColor", 10.5, "start", "600")
 b += text(16, 232, "Chú ý đơn vị: c có thêm K ở mẫu, λ và L thì không.", RED, 10.5, "start", "700")
 fig4 = wrap("0 0 440 244", "Ba thẻ công thức cho ba đại lượng cần đo: nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng",
-            b, "Hình 4. Ba đại lượng của bài thực hành. Cùng cách đo (P, τ, m) nhưng đọc số liệu ở đoạn khác nhau của đồ thị, và đơn vị khác nhau: c có J/(kg·K), còn λ và L chỉ có J/kg.")
+            b, "Hình 4. Cùng cách đo P, τ, m nhưng đọc ở đoạn khác nhau của đồ thị; c có đơn vị J/(kg·K), λ và L chỉ J/kg.")
 
 # ------------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

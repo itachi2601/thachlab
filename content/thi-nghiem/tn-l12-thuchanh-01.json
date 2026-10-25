@@ -14,46 +14,149 @@
     "thuchanh.doc_do_thi_t_tau"
   ],
   "muc_tieu": "Đo nhiệt dung riêng của nước theo hai cách (từng mốc và độ dốc đồ thị), so hai kết quả với nhau và với giá trị tra bảng, từ đó nhận ra sai số hệ thống do mất nhiệt.",
+  "gia_thuyet": [
+    "Một nhóm học sinh cho rằng: nhiệt dung riêng của nước phụ thuộc vào khối lượng của nước (vì m nằm trong công thức c = Q/(mΔt))."
+  ],
+  "du_doan_neu_dung": [
+    "Cùng P và τ, đổi khối lượng nước m thì giá trị c tính ra phải khác nhau rõ rệt, không chỉ lệch dưới 1%."
+  ],
+  "khong_chung_minh": [
+    "Không đo được phần nhiệt mất ra môi trường và phần làm nóng bình, dây, nhiệt kế; chỉ biết chúng làm c đo được lớn hơn giá trị thật.",
+    "Không cho biết c có thay đổi theo nhiệt độ hay không (mọi lần đo nằm trong khoảng 28–81 °C)."
+  ],
   "dung_cu": [
-    { "ten": "Nhiệt lượng kế bằng nhựa có vỏ xốp và nắp", "so_luong": 1 },
-    { "ten": "Điện trở nhiệt gắn trong bình (hoặc bếp điện)", "so_luong": 1 },
-    { "ten": "Oát kế có chức năng đo thời gian", "so_luong": 1, "ghi_chu": "hoặc ampe kế + vôn kế + đồng hồ bấm giây" },
-    { "ten": "Nhiệt kế thang -20 °C đến 110 °C, độ chia 0,1 °C", "so_luong": 1 },
-    { "ten": "Cân điện tử", "so_luong": 1, "ghi_chu": "sai số ±1 g" },
-    { "ten": "Que khuấy", "so_luong": 1 },
-    { "ten": "Nước sạch", "so_luong": 1, "ghi_chu": "khoảng 200 g cho mỗi lần đo" }
+    {
+      "ten": "Nhiệt lượng kế bằng nhựa có vỏ xốp và nắp",
+      "so_luong": 1
+    },
+    {
+      "ten": "Điện trở nhiệt gắn trong bình (hoặc bếp điện)",
+      "so_luong": 1
+    },
+    {
+      "ten": "Oát kế có chức năng đo thời gian",
+      "so_luong": 1,
+      "ghi_chu": "hoặc ampe kế + vôn kế + đồng hồ bấm giây"
+    },
+    {
+      "ten": "Nhiệt kế thang -20 °C đến 110 °C, độ chia 0,1 °C",
+      "so_luong": 1
+    },
+    {
+      "ten": "Cân điện tử",
+      "so_luong": 1,
+      "ghi_chu": "sai số ±1 g"
+    },
+    {
+      "ten": "Que khuấy",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nước sạch",
+      "so_luong": 1,
+      "ghi_chu": "khoảng 200 g cho mỗi lần đo"
+    }
   ],
   "cac_buoc": {
     "lam": [
-      "Cân khối lượng nước m (cân cả bình rồi trừ bì), đổ vào nhiệt lượng kế sao cho điện trở nhiệt chìm hoàn toàn.",
-      "Đậy nắp, cắm nhiệt kế qua lỗ nắp (đầu đo ngập trong nước, không chạm thành bình hay điện trở), đọc nhiệt độ ban đầu t1.",
-      "Nối oát kế vào mạch, bật nguồn, đọc công suất P trên oát kế.",
-      "Khuấy nhẹ liên tục; cứ 100 s ghi một lần: thời gian τ, nhiệt độ t.",
-      "Sau khoảng 300 s thì tắt nguồn, ghi số đọc cuối.",
-      "Tính c = P·τ / (m·Δt) cho từng mốc; vẽ đồ thị t theo τ, lấy độ dốc k rồi tính lại c = P / (m·k); so hai kết quả."
+      "Cân khối lượng nước m (cân cả bình rồi trừ bì), đổ vào nhiệt lượng kế có dây điện trở sao cho dây chìm hoàn toàn; đọc nhiệt độ t1 (nhiệt độ phòng).",
+      "Cấp điện cho dây điện trở với U, I không đổi (oát kế đọc P = UI và τ); khuấy nhẹ liên tục.",
+      "Sau khoảng thời gian τ tính từ lúc cấp điện, đọc nhiệt độ t2 của nước; lần m = 0,200 kg ghi thêm nhiệt độ mỗi 100 s.",
+      "Tính c = P·τ / (m·(t2 − t1)).",
+      "Lặp lại các bước trên với các giá trị m khác nhau (0,300 kg; 0,400 kg).",
+      "Coi rằng toàn bộ nhiệt lượng Q = P·τ dây toả ra đều làm nóng nước (thực tế một phần làm nóng bình, dây, nhiệt kế và mất ra môi trường)."
     ],
     "quan_sat": [
-      "Nhiệt độ tăng gần như đều theo thời gian, các điểm nằm gần một đường thẳng.",
-      "Ba giá trị c tính theo từng mốc đều quanh 4,22.10³ J/(kg·K), lệch nhau dưới 1%.",
-      "Giá trị c từ độ dốc đồ thị nằm trong cùng khoảng đó; nếu lệch quá 15% thì phải tìm mốc bị đọc sai."
+      "Khối lượng nước càng lớn thì nhiệt độ tăng càng ít sau cùng khoảng thời gian τ.",
+      "Ba giá trị c ứng với 0,200 kg, 0,300 kg, 0,400 kg là 4 221, 4 202, 4 198 J/(kg·K): chênh nhau dưới 1%, cùng cao hơn 4 180.",
+      "Với m = 0,200 kg, nhiệt độ tăng gần như đều theo thời gian; c tính theo từng mốc và theo độ dốc đều quanh 4,22.10³ J/(kg·K)."
     ],
     "rut_ra": [
-      "Nhiệt lượng bếp truyền tính bằng Q = P·τ — đây là cách duy nhất để biết nhiệt đã vào hệ bao nhiêu, vì không có dụng cụ đo thẳng Q.",
-      "Hai cách tính cho kết quả gần nhau, chứng tỏ số liệu tự nhất quán; chênh lệch với 4 180 là sai số hệ thống chứ không phải sai số ngẫu nhiên.",
-      "Nếu c đo được lớn hơn 4 180 thì phần dư thường do nhiệt kế đọc chậm so với lúc bấm đồng hồ; nếu nhỏ hơn thì do nhiệt mất ra môi trường và nhiệt dung của bình."
+      "Kết quả thí nghiệm bác bỏ giả thuyết: nhiệt dung riêng của nước không phụ thuộc khối lượng nước.",
+      "Một phần nhiệt lượng P·τ làm nóng bình, dây, nhiệt kế và mất ra môi trường, nên Δt nhỏ hơn và c đo được lớn hơn giá trị thật (sai số hệ thống, lệch một phía).",
+      "Nước càng nóng hơn môi trường thì mất nhiệt càng nhanh: t2 càng lớn thì nhiệt lượng mất mát càng lớn. Giảm sai số bằng bình vỏ xốp có nắp, khuấy đều, không đun nước nóng quá xa nhiệt độ phòng."
     ]
   },
   "tham_so": [
-    { "ky_hieu": "m", "ten": "Khối lượng nước", "don_vi": "kg", "kieu": "dieu_chinh", "min": 0.1, "max": 0.5, "mac_dinh": 0.2, "buoc": 0.05 },
-    { "ky_hieu": "P", "ten": "Công suất bếp", "don_vi": "W", "kieu": "dieu_chinh", "min": 100, "max": 500, "mac_dinh": 150, "buoc": 25 },
-    { "ky_hieu": "t1", "ten": "Nhiệt độ nước ban đầu", "don_vi": "°C", "kieu": "dieu_chinh", "min": 15, "max": 35, "mac_dinh": 28, "buoc": 1 },
-    { "ky_hieu": "tau", "ten": "Thời gian đun", "don_vi": "s", "kieu": "dieu_chinh", "min": 100, "max": 600, "mac_dinh": 300, "buoc": 50 },
-    { "ky_hieu": "c_that", "ten": "Nhiệt dung riêng thật của nước", "don_vi": "J/(kg.K)", "kieu": "co_dinh", "gia_tri": 4180 },
-    { "ky_hieu": "c_binh", "ten": "Nhiệt dung riêng của nhựa làm bình (quy đổi)", "don_vi": "J/(kg.K)", "kieu": "co_dinh", "gia_tri": 1500 },
-    { "ky_hieu": "k", "ten": "Độ dốc đường t(τ)", "don_vi": "K/s", "kieu": "tinh_ra" },
-    { "ky_hieu": "dt", "ten": "Độ tăng nhiệt độ (mô hình)", "don_vi": "K", "kieu": "tinh_ra" },
-    { "ky_hieu": "c_do", "ten": "Nhiệt dung riêng tính từ số đo", "don_vi": "J/(kg.K)", "kieu": "tinh_ra" },
-    { "ky_hieu": "t_do", "ten": "Nhiệt độ đọc trên nhiệt kế", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.1 }
+    {
+      "ky_hieu": "m",
+      "ten": "Khối lượng nước",
+      "don_vi": "kg",
+      "kieu": "dieu_chinh",
+      "min": 0.1,
+      "max": 0.5,
+      "mac_dinh": 0.2,
+      "buoc": 0.05
+    },
+    {
+      "ky_hieu": "P",
+      "ten": "Công suất bếp",
+      "don_vi": "W",
+      "kieu": "dieu_chinh",
+      "min": 100,
+      "max": 500,
+      "mac_dinh": 150,
+      "buoc": 25
+    },
+    {
+      "ky_hieu": "t1",
+      "ten": "Nhiệt độ nước ban đầu",
+      "don_vi": "°C",
+      "kieu": "dieu_chinh",
+      "min": 15,
+      "max": 35,
+      "mac_dinh": 28,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "tau",
+      "ten": "Thời gian đun",
+      "don_vi": "s",
+      "kieu": "dieu_chinh",
+      "min": 100,
+      "max": 600,
+      "mac_dinh": 300,
+      "buoc": 50
+    },
+    {
+      "ky_hieu": "c_that",
+      "ten": "Nhiệt dung riêng thật của nước",
+      "don_vi": "J/(kg.K)",
+      "kieu": "co_dinh",
+      "gia_tri": 4180
+    },
+    {
+      "ky_hieu": "C_b",
+      "ten": "Nhiệt dung quy đổi của bình + hao phí",
+      "don_vi": "J/K",
+      "kieu": "co_dinh",
+      "gia_tri": 8.2
+    },
+    {
+      "ky_hieu": "k",
+      "ten": "Độ dốc đường t(τ)",
+      "don_vi": "K/s",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "dt",
+      "ten": "Độ tăng nhiệt độ (mô hình)",
+      "don_vi": "K",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "c_do",
+      "ten": "Nhiệt dung riêng tính từ số đo",
+      "don_vi": "J/(kg.K)",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "t_do",
+      "ten": "Nhiệt độ đọc trên nhiệt kế",
+      "don_vi": "°C",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
@@ -61,36 +164,62 @@
       "Phần nhiệt vào nước: Q_nước = m·c·Δt",
       "Bỏ qua mất mát: c = P·τ / (m·Δt)",
       "Theo độ dốc đồ thị với k = Δt/Δτ: c = P / (m·k)",
-      "Có kể nhiệt dung bình và hao phí: P·τ = (m·c + m_b·c_b)·Δt + Q_hao, do đó c_đo nhỏ hơn c_thật"
+      "Có kể nhiệt dung bình và hao phí (gộp thành C_b): P·τ = (m·c + C_b)·Δt, do đó c_đo = c_thật + C_b/m lớn hơn c_thật"
     ],
     "gia_thiet": [
       "công suất bếp không đổi trong suốt quá trình đun",
       "khuấy đều nên nhiệt độ trong bình đồng nhất",
-      "khối lượng bình quy đổi khoảng 0,02 kg và nhiệt hao khoảng 1% trong 300 s (bài này bình nhỏ, cách nhiệt tốt)"
+      "nhiệt làm nóng bình và nhiệt hao gộp thành C_b ≈ 8,2 J/K (khớp bảng m = 0,200 kg: Δt = 53,3 °C sau 300 s)"
     ],
     "ghi_chu": "Mô phỏng nên có công tắc 'đọc nhiệt kế chậm 5 giây' và 'bình cách nhiệt hoàn hảo' để học sinh thấy cùng một phép đo có thể ra c cao hơn hoặc thấp hơn tuỳ nguồn sai số — đó là mục tiêu của bài thực hành."
   },
   "so_lieu_mau": {
-    "cot": ["Thời gian τ (s)", "Nhiệt độ t (°C)", "Q = P·τ (J)", "c = Q/(m·Δt) (J/(kg·K))"],
-    "hang": [
-      [0, 28.0, 0, 0],
-      [100, 45.8, 15000, 4213],
-      [200, 63.5, 30000, 4225],
-      [300, 81.3, 45000, 4221]
+    "cot": [
+      "Thời gian τ (s)",
+      "Nhiệt độ t (°C)",
+      "Q = P·τ (J)",
+      "c = Q/(m·Δt) (J/(kg·K))"
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với m = 0,200 kg, P = 150 W, c_hiệu dụng ≈ 4,22.10³ J/(kg·K). Độ dốc toàn đoạn k = (81,3 − 28,0)/300 = 0,178 K/s → c = 150/(0,200 × 0,178) ≈ 4,21.10³ J/(kg·K)."
+    "hang": [
+      [
+        0,
+        28.0,
+        0,
+        0
+      ],
+      [
+        100,
+        45.8,
+        15000,
+        4213
+      ],
+      [
+        200,
+        63.5,
+        30000,
+        4225
+      ],
+      [
+        300,
+        81.3,
+        45000,
+        4221
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình P·τ = (m·4180 + 8,2)·Δt với m = 0,200 kg, P = 150 W, t1 = 28,0 °C. Độ dốc toàn đoạn k = (81,3 − 28,0)/300 = 0,178 K/s → c = 150/(0,200 × 0,178) ≈ 4,21.10³ J/(kg·K). Lặp lại với m khác (τ = 300 s): m = 0,300 kg → t2 = 63,7 °C, Δt = 35,7 °C, c = 4 202; m = 0,400 kg → t2 = 54,8 °C, Δt = 26,8 °C, c = 4 198 (ô học sinh tự tính)."
   },
-  "ket_qua_ky_vong": "Ba giá trị c theo từng mốc và giá trị c theo độ dốc đồ thị đều nằm trong khoảng 4,2.10³ J/(kg·K), lệch nhau dưới 1%; so với 4 180 thì lệch khoảng 1% về phía cao hơn.",
+  "ket_qua_ky_vong": "Giá trị c với các khối lượng nước khác nhau đều khoảng 4,2.10³ J/(kg·K), chênh nhau dưới 1% → bác bỏ giả thuyết c phụ thuộc m; so với 4 180 thì lệch khoảng 0,5–1% về phía cao hơn do mất nhiệt.",
   "hien_tuong_hay_sai": [
     "Cho rằng phải đun nước tới 100 °C mới tính được c, trong khi chỉ cần một khoảng Δt bất kì miễn là chưa sôi.",
     "Cho rằng đồ thị t(τ) phải cong vì nước càng nóng càng dễ nóng thêm — thực tế gần như đường thẳng khi P không đổi.",
     "Cho rằng hai cách tính lệch nhau nghĩa là một cách sai, thay vì đi tìm nguồn sai số."
   ],
   "sai_so_thuong_gap": [
-    "Điện trở nhiệt không chìm hết trong nước: phần trên nóng đỏ và toả nhiệt ra không khí nhưng vẫn tính vào P·τ.",
-    "Đầu đo nhiệt kế chạm thành bình hoặc chạm điện trở: số đọc cao hơn nhiệt độ trung bình của nước.",
-    "Quên trừ bì khi cân nước, hoặc để nước bắn ra ngoài khi đun.",
-    "Tắt nguồn muộn hơn lúc bấm đồng hồ: τ bị tính dư, c ra cao hơn."
+    "Nhiệt làm nóng bình, dây, nhiệt kế và mất ra môi trường: nước nhận ít hơn P·τ → Δt nhỏ đi → c đo được LỚN HƠN giá trị thật. Giảm: bình vỏ xốp có nắp, không đun quá nóng so với phòng, khuấy đều.",
+    "Điện trở nhiệt không chìm hết trong nước: phần hở toả nhiệt ra không khí nhưng vẫn tính vào P·τ → c LỚN HƠN thật. Giảm: đổ đủ nước ngập dây.",
+    "Đầu đo nhiệt kế chạm thành bình hoặc chạm điện trở: số đọc cao hơn nhiệt độ trung bình của nước → Δt lớn → c NHỎ HƠN thật. Giảm: kẹp nhiệt kế giữa bình, khuấy đều.",
+    "Tắt nguồn muộn hơn lúc bấm đồng hồ: τ bị tính thiếu so với nhiệt thật đã cấp → c NHỎ HƠN thật; bấm đồng hồ muộn hơn lúc cấp điện cũng vậy. Giảm: dùng oát kế có chức năng đo thời gian.",
+    "Quên trừ bì khi cân nước: m lớn hơn thật → c NHỎ HƠN thật."
   ],
   "goi_y_mo_phong": {
     "loai": "do_thi+bang_so_lieu",
