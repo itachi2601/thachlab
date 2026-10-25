@@ -2,94 +2,164 @@
  "lesson_id": 178,
  "lesson_title": "Chuyên đề 17. Thiên văn: Mặt Trăng, Hệ Mặt Trời và Ngân Hà",
  "item_id": 361,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 15,
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
+ "quiz_min_correct": 14,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 11,
+   "kien_thuc": 10,
    "cong_thuc": 8
   },
   "removed": [
    {
-    "question": "Trục Trái Đất nghiêng bao nhiêu độ so với phương vuông góc mặt phẳng quỹ đạo? (làm tròn số nguyên, chỉ ghi số 23,5 theo bài)",
-    "reason": "nghi_ngo: Đề tự mâu thuẫn: vừa yêu cầu làm tròn số nguyên vừa yêu cầu ghi 23,5; ngoài ra bài không nêu mốc 'phương vuông góc mặt phẳng quỹ đạo'."
+    "question": "Hai nơi cùng kinh tuyến cách nhau cung $667$ km, góc lệch của tia nắng giữa hai nơi là $6^\\circ$. Chu vi Trái Đất xấp xỉ",
+    "reason": "Chu vi Trái Đất theo Eratosthenes thuộc mục V.3 ghi rõ Mở rộng HSG."
+   },
+   {
+    "question": "Ở A cọc không có bóng trưa hạ chí. Cùng lúc, ở B cùng kinh tuyến, phía Bắc A $667$ km, cọc cao $1{,}5$ m có bóng dài $0{,}158$ m, cho góc lệch tia nắng $\\theta\\approx6^\\circ$. Xét các phát biểu sau:",
+    "reason": "Bài Eratosthenes (cọc, bóng, cung 667 km) thuộc mục V.3 Mở rộng HSG."
    }
   ]
  },
  "questions": [
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Nguyên nhân chính gây ra các pha của Mặt Trăng là gì?",
-   "options": [
-    "Bóng của Trái Đất che bớt Mặt Trăng",
-    "Ta thấy nhiều hay ít phần nửa được Mặt Trời chiếu sáng tuỳ vị trí",
-    "Mặt Trăng tự phát sáng yếu dần",
-    "Mặt Trăng ở xa Mặt Trời hơn vào đầu tháng"
-   ],
-   "answer": 1,
-   "explanation": "Mặt Trăng luôn sáng một nửa; pha do ta thấy nhiều hay ít nửa sáng đó, không phải do bóng Trái Đất."
-  },
-  {
-   "type": "multiple_choice",
    "kind": "hien_tuong",
    "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Nhật thực xảy ra vào ngày nào của Tuần Trăng?",
+   "question": "Vì sao trong một tháng ta thấy Mặt Trăng có các pha thay đổi?",
    "options": [
-    "Trăng tròn",
-    "Thượng huyền",
-    "Không trăng (trăng non)",
-    "Hạ huyền"
+    "Bóng của Trái Đất che dần Mặt Trăng trong tháng",
+    "Mặt Trăng tự phát ra ánh sáng khi mạnh lúc yếu",
+    "Ta thấy nửa sáng nhiều hay ít tuỳ vị trí Mặt Trăng",
+    "Khoảng cách tới Mặt Trời đổi nhiều trong tháng"
    ],
    "answer": 2,
-   "explanation": "Nhật thực: Mặt Trời – Mặt Trăng – Trái Đất thẳng hàng, vào ngày không trăng."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Vì sao không phải tháng nào cũng có nhật thực hay nguyệt thực?",
-   "options": [
-    "Mặt Trăng lúc có lúc không phát sáng",
-    "Trái Đất quay quá nhanh",
-    "Quỹ đạo Mặt Trăng nghiêng khoảng 5° so với quỹ đạo Trái Đất",
-    "Mặt Trời thay đổi kích thước"
-   ],
-   "answer": 2,
-   "explanation": "Quỹ đạo nghiêng nên chỉ gần giao tuyến mới thẳng hàng, tức hai mùa thực mỗi năm."
+   "explanation": "Mặt Trăng luôn sáng một nửa; pha chỉ do ta thấy bao nhiêu phần của nửa sáng đó tuỳ vị trí Mặt Trời, Trái Đất, Mặt Trăng.",
+   "distractorNotes": {
+    "A": "Nhầm pha với nguyệt thực; bóng Trái Đất chỉ che Mặt Trăng lúc trăng tròn và hiếm khi.",
+    "B": "Mặt Trăng không tự phát sáng, chỉ phản xạ ánh sáng Mặt Trời.",
+    "D": "Khoảng cách tới Mặt Trời gần như không đổi trong một tháng."
+   },
+   "theorySection": 1
   },
   {
    "type": "multiple_choice",
    "kind": "dieu_kien",
    "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Nhật thực toàn phần xảy ra tại người quan sát khi nào?",
+   "question": "Nhật thực xảy ra vào ngày",
    "options": [
-    "Khoảng cách x = d − R_E lớn hơn độ dài nón bóng tối L",
-    "Khoảng cách x = d − R_E nhỏ hơn L",
-    "Khoảng cách d (tâm–tâm) lớn hơn L",
-    "Trăng tròn và thẳng hàng"
+    "trăng non, khi Mặt Trăng nằm giữa Mặt Trời và Trái Đất",
+    "trăng tròn, khi Trái Đất nằm giữa Mặt Trời và Mặt Trăng",
+    "trăng tròn, khi Mặt Trăng nằm giữa Mặt Trời và Trái Đất",
+    "trăng non, khi Trái Đất nằm giữa Mặt Trời và Mặt Trăng"
+   ],
+   "answer": 0,
+   "explanation": "Nhật thực: Mặt Trời, Mặt Trăng, Trái Đất thẳng hàng theo thứ tự đó, vào ngày không trăng.",
+   "distractorNotes": {
+    "B": "Đó là điều kiện của nguyệt thực, không phải nhật thực.",
+    "C": "Mặt Trăng nằm giữa Mặt Trời và Trái Đất thì mặt hướng về ta tối nên là trăng non, không phải trăng tròn.",
+    "D": "Đúng ngày trăng non nhưng thứ tự sai; Trái Đất ở giữa dẫn tới nguyệt thực."
+   },
+   "theorySection": 2
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Trăng non và trăng tròn xảy ra mỗi tháng nhưng không phải tháng nào cũng có nhật thực hay nguyệt thực vì",
+   "options": [
+    "Mặt Trăng quá nhỏ so với Trái Đất nên bóng không đủ lớn",
+    "quỹ đạo Mặt Trăng nghiêng nên ba thiên thể thường lệch nhau",
+    "Trái Đất tự quay nên bóng của nó bị lệch đi mỗi tháng",
+    "Mặt Trời lúc có lúc không chiếu sáng cho Mặt Trăng"
    ],
    "answer": 1,
-   "explanation": "Nếu x < L, chóp nón bóng tối chạm đất nên thấy toàn phần; x > L là hình khuyên."
+   "explanation": "Quỹ đạo Mặt Trăng nghiêng khoảng $5^\\circ$ so với quỹ đạo Trái Đất nên chỉ gần giao tuyến hai mặt phẳng mới thẳng hàng.",
+   "distractorNotes": {
+    "A": "Độ lớn của bóng đủ để xảy ra thực khi thẳng hàng; vấn đề là hiếm khi thẳng hàng.",
+    "C": "Tự quay của Trái Đất không làm bóng lệch khỏi đường thẳng hàng giữa các thiên thể.",
+    "D": "Mặt Trời luôn chiếu sáng một nửa Mặt Trăng; không có lúc nào tắt."
+   },
+   "theorySection": 2
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Hôm nay Mặt Trăng mọc lúc $19$ giờ $00$ phút. Mỗi ngày trăng mọc trễ khoảng $49$ phút. Ba ngày sau, Mặt Trăng mọc vào khoảng",
+   "options": [
+    "$16$ giờ $33$ phút",
+    "$19$ giờ $49$ phút",
+    "$22$ giờ $00$ phút",
+    "$21$ giờ $27$ phút"
+   ],
+   "answer": 3,
+   "explanation": "$3\\cdot49=147$ phút $=2$ giờ $27$ phút, nên mọc lúc $19$ giờ $00$ cộng $2$ giờ $27$ phút $=21$ giờ $27$ phút.",
+   "distractorNotes": {
+    "A": "Trừ thay vì cộng; Mặt Trăng mọc trễ dần chứ không sớm dần.",
+    "B": "Chỉ cộng $49$ phút của một ngày, quên nhân với $3$ ngày.",
+    "C": "Làm tròn mỗi ngày thành $1$ giờ nên sai lệch $33$ phút sau ba ngày."
+   },
+   "theorySection": 1
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Hai nơi nằm trên cùng một vĩ độ, nơi thứ nhất ở phía Đông nơi thứ hai và lệch $30^\\circ$ kinh độ. Giờ Mặt Trời ở nơi thứ nhất so với nơi thứ hai",
+   "options": [
+    "muộn hơn $2$ giờ",
+    "sớm hơn $30$ phút",
+    "sớm hơn $2$ giờ",
+    "sớm hơn $12$ giờ"
+   ],
+   "answer": 2,
+   "explanation": "Trái Đất quay $15^\\circ$ mỗi giờ nên $30^\\circ:15^\\circ=2$ giờ, phía Đông sớm hơn.",
+   "distractorNotes": {
+    "A": "Đúng độ lớn nhưng ngược chiều; Trái Đất quay về phía Đông nên phía Đông sớm hơn.",
+    "B": "Quên chia cho $15^\\circ$ mỗi giờ nên nhầm độ với phút.",
+    "D": "Lấy $360^\\circ$ chia cho $30^\\circ$ thay vì lấy $30^\\circ$ chia cho $15^\\circ$ mỗi giờ."
+   },
+   "theorySection": 3
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Vào ngày xuân phân, Mặt Trời đứng bóng ở xích đạo ($\\delta=0^\\circ$). Tại nơi có vĩ độ $20^\\circ$B, góc cao của Mặt Trời buổi trưa là",
+   "options": [
+    "$70^\\circ$",
+    "$20^\\circ$",
+    "$110^\\circ$",
+    "$90^\\circ$"
+   ],
+   "answer": 0,
+   "explanation": "$h=90^\\circ-|\\varphi-\\delta|=90^\\circ-20^\\circ=70^\\circ$.",
+   "distractorNotes": {
+    "B": "Lấy chính vĩ độ làm góc cao, quên trừ khỏi $90^\\circ$.",
+    "C": "Dùng $90^\\circ+\\varphi$; góc cao không thể vượt $90^\\circ$.",
+    "D": "Chỉ đúng khi Mặt Trời đứng bóng ngay trên đầu, tức khi $\\varphi=\\delta$."
+   },
+   "theorySection": 4
   },
   {
    "type": "multiple_choice",
@@ -98,16 +168,21 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Nguyên nhân có mùa trên Trái Đất là gì?",
+   "question": "Nguyên nhân chính gây ra các mùa trên Trái Đất là",
    "options": [
-    "Trái Đất gần Mặt Trời hơn vào mùa hè",
-    "Trục Trái Đất nghiêng và giữ hướng cố định khi quay quanh Mặt Trời",
-    "Mặt Trời thay đổi độ sáng theo mùa",
-    "Mặt Trăng kéo Trái Đất"
+    "Trái Đất lúc gần lúc xa Mặt Trời trong cả năm",
+    "trục quay nghiêng và có hướng không đổi trong cả năm",
+    "Mặt Trời phát ra năng lượng khi mạnh khi yếu theo năm",
+    "Trái Đất tự quay quanh trục của nó mỗi ngày"
    ],
    "answer": 1,
-   "explanation": "Mùa do trục nghiêng 23,5° giữ hướng cố định, không do gần xa."
+   "explanation": "Trục Trái Đất nghiêng $23{,}5^\\circ$ và giữ hướng cố định nên mỗi bán cầu lúc ngả về, lúc ngả xa Mặt Trời, tạo ra mùa.",
+   "distractorNotes": {
+    "A": "Mùa hè bán cầu Bắc lại ứng với lúc Trái Đất xa hơn; khoảng cách không phải nguyên nhân.",
+    "C": "Mặt Trời gần như phát năng lượng đều; mùa không do nguồn thay đổi.",
+    "D": "Tự quay chỉ gây ra ngày và đêm, không gây ra mùa."
+   },
+   "theorySection": 4
   },
   {
    "type": "multiple_choice",
@@ -116,264 +191,311 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 6,
-   "question": "Năm ánh sáng là đơn vị đo đại lượng nào?",
+   "question": "Năm ánh sáng là đơn vị đo",
    "options": [
-    "Thời gian",
-    "Khoảng cách",
-    "Vận tốc",
-    "Khối lượng"
+    "thời gian",
+    "tốc độ",
+    "độ sáng",
+    "khoảng cách"
    ],
-   "answer": 1,
-   "explanation": "Năm ánh sáng ≈ 9,46·10^12 km, là đơn vị khoảng cách."
+   "answer": 3,
+   "explanation": "Năm ánh sáng là quãng đường ánh sáng đi trong một năm, nên là đơn vị khoảng cách.",
+   "distractorNotes": {
+    "A": "Tên có chữ \"năm\" dễ khiến nhầm với thời gian, nhưng nó là quãng đường ánh sáng đi trong một năm.",
+    "B": "Tốc độ ánh sáng là $c$ còn năm ánh sáng là đơn vị độ dài.",
+    "C": "Độ sáng của sao không đo bằng năm ánh sáng."
+   },
+   "theorySection": 6
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Hệ Mặt Trời và Ngân Hà",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 6,
-   "question": "Mặt Trời nằm ở đâu trong Ngân Hà?",
-   "options": [
-    "Ở tâm",
-    "Ở một nhánh xoắn, cách tâm khoảng 26 000 ly",
-    "Ở ngoài rìa đĩa, cách tâm 100 000 ly",
-    "Ngoài Ngân Hà"
-   ],
-   "answer": 1,
-   "explanation": "Mặt Trời ở nhánh xoắn, không ở tâm, cách tâm ≈ 26 000 ly."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hôm nay trăng mọc lúc 19 h 00. Mỗi ngày trăng mọc trễ khoảng 49 phút. Ba ngày sau trăng mọc khoảng:",
-   "options": [
-    "16 h 33",
-    "19 h 49",
-    "21 h 27",
-    "22 h 00"
-   ],
-   "answer": 2,
-   "explanation": "3·49 = 147 phút = 2 h 27, nên 21 h 27."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Công thức góc cao Mặt Trời buổi trưa tại vĩ độ $\\varphi$ khi Mặt Trời đứng bóng ở vĩ độ $\\delta$ là:",
-   "options": [
-    "$h=90^\\circ-(\\varphi+\\delta)$",
-    "$h=90^\\circ-|\\varphi-\\delta|$",
-    "$h=|\\varphi-\\delta|$",
-    "$h=90^\\circ+|\\varphi-\\delta|$"
-   ],
-   "answer": 1,
-   "explanation": "Bài cho $h=90^\\circ-|\\varphi-\\delta|$, với $\\delta$ có dấu."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Hệ Mặt Trời và Ngân Hà",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Ánh sáng đến Trái Đất mất 8,3 phút. Đến hành tinh cách Mặt Trời 5,2 AU mất khoảng:",
-   "options": [
-    "1,6 phút",
-    "8,3 phút",
-    "43 phút",
-    "43 giây"
-   ],
-   "answer": 2,
-   "explanation": "Thời gian tỉ lệ với khoảng cách: 5,2·8,3 ≈ 43 phút."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về nhật thực và nguyệt thực, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Nguyệt thực xảy ra vào đêm trăng tròn.",
-     "answer": true
-    },
-    {
-     "text": "Nguyệt thực có thứ tự Mặt Trời – Mặt Trăng – Trái Đất.",
-     "answer": false
-    },
-    {
-     "text": "Nguyệt thực được cả nửa Trái Đất đang đêm nhìn thấy.",
-     "answer": true
-    },
-    {
-     "text": "Nhật thực toàn phần thấy được trên cả nửa Trái Đất ban ngày.",
-     "answer": false
-    }
-   ],
-   "explanation": "Theo bảng so sánh ở mục III: nhật thực toàn phần chỉ ở dải hẹp, nguyệt thực thấy ở cả nửa đêm."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Về góc cao Mặt Trời buổi trưa $h=90^\\circ-|\\varphi-\\delta|$, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Xuân phân và thu phân có $\\delta=0^\\circ$.",
-     "answer": true
-    },
-    {
-     "text": "Hạ chí có $\\delta=+23{,}5^\\circ$.",
-     "answer": true
-    },
-    {
-     "text": "Nếu $\\delta\\lt\\varphi$ thì bóng ngả về Nam.",
-     "answer": false
-    },
-    {
-     "text": "Bóng cọc ngả về phía ngược với Mặt Trời.",
-     "answer": true
-    }
-   ],
-   "explanation": "$\\delta\\lt\\varphi$: Mặt Trời ở phía Nam nên bóng ngả về Bắc."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Về giờ địa phương, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Trái Đất quay 15° mỗi giờ.",
-     "answer": true
-    },
-    {
-     "text": "Mỗi 1° kinh độ lệch tương ứng 4 phút.",
-     "answer": true
-    },
-    {
-     "text": "Nơi ở phía Đông có giờ Mặt Trời muộn hơn.",
-     "answer": false
-    },
-    {
-     "text": "Hai nơi lệch Δλ độ kinh thì giờ Mặt Trời lệch Δλ/15 giờ.",
-     "answer": true
-    }
-   ],
-   "explanation": "Phía Đông gặp Mặt Trời trước nên sớm hơn; độ lệch giờ là Δλ/15."
-  },
-  {
-   "type": "true_false",
    "kind": "hien_tuong",
    "topic": "Hệ Mặt Trời và Ngân Hà",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Về Hệ Mặt Trời, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Mặt Trời là một ngôi sao tự phát sáng.",
-     "answer": true
-    },
-    {
-     "text": "Sao Mộc, Thổ là hành tinh đất đá ở gần Mặt Trời.",
-     "answer": false
-    },
-    {
-     "text": "Càng xa Mặt Trời, chu kì quay càng dài.",
-     "answer": true
-    },
-    {
-     "text": "Sao chổi và vệ tinh chỉ phản xạ ánh sáng Mặt Trời.",
-     "answer": true
-    }
+   "question": "Dải sáng mờ vắt ngang bầu trời đêm gọi là dải Ngân Hà. Đó là",
+   "options": [
+    "đĩa thiên hà chứa Mặt Trời, nhìn từ bên trong",
+    "một đám mây bụi nằm trong Hệ Mặt Trời",
+    "đuôi của một sao chổi có kích thước rất lớn",
+    "vành đai các tiểu hành tinh quanh Mặt Trời"
    ],
-   "explanation": "Mộc, Thổ là hành tinh khí khổng lồ ở xa; các ý còn lại đúng theo mục VI."
+   "answer": 0,
+   "explanation": "Mặt Trời nằm trong đĩa Ngân Hà nên nhìn dọc theo đĩa từ bên trong ta thấy một dải sáng mờ.",
+   "distractorNotes": {
+    "B": "Hệ Mặt Trời không có đám mây bụi nào lớn đến mức tạo dải sáng khắp bầu trời.",
+    "C": "Sao chổi chỉ là thiên thể nhỏ trong Hệ Mặt Trời, không tạo ra dải sáng này.",
+    "D": "Vành đai tiểu hành tinh không sáng thành một dải mờ trên toàn bầu trời."
+   },
+   "theorySection": 6
   },
   {
-   "type": "short_answer",
-   "kind": "dinh_nghia",
-   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Một vòng pha (Tuần Trăng) dài khoảng bao nhiêu ngày? (làm tròn đến số nguyên)",
-   "answer": "30",
-   "explanation": "Tuần Trăng ≈ 29,5 ngày, làm tròn ≈ 30."
-  },
-  {
-   "type": "short_answer",
+   "type": "multiple_choice",
    "kind": "tinh_nhanh",
-   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Hai nơi lệch nhau 30° kinh độ thì giờ Mặt Trời lệch bao nhiêu giờ?",
-   "answer": "2",
-   "explanation": "30/15 = 2 giờ."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Vĩ độ φ = 20°B, ngày xuân phân (δ = 0°). Góc cao Mặt Trời buổi trưa là bao nhiêu độ?",
-   "answer": "70",
-   "explanation": "h = 90° − |20 − 0| = 70°."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
    "topic": "Hệ Mặt Trời và Ngân Hà",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Chu vi Trái Đất = s·360°/θ. Nếu θ = 6° và s = 667 km thì chu vi gấp s bao nhiêu lần?",
-   "answer": "60",
-   "explanation": "360/6 = 60 lần."
+   "question": "Ánh sáng Mặt Trời tới Trái Đất mất khoảng $8{,}3$ phút. Sao Mộc cách Mặt Trời $5{,}2$ AU. Ánh sáng Mặt Trời tới Sao Mộc mất khoảng",
+   "options": [
+    "$1{,}6$ phút",
+    "$8{,}3$ phút",
+    "$43$ phút",
+    "$43$ giây"
+   ],
+   "answer": 2,
+   "explanation": "Thời gian tỉ lệ với khoảng cách: $5{,}2\\cdot8{,}3\\approx43$ phút.",
+   "distractorNotes": {
+    "A": "Chia cho $5{,}2$ thay vì nhân; xa hơn thì phải mất lâu hơn.",
+    "B": "Quên rằng Sao Mộc xa Mặt Trời gấp $5{,}2$ lần Trái Đất.",
+    "D": "Đúng số nhưng sai đơn vị; $43$ là số phút."
+   },
+   "theorySection": 5
   },
   {
-   "type": "short_answer",
+   "type": "multiple_choice",
    "kind": "cong_thuc",
    "topic": "Hệ Mặt Trời và Ngân Hà",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 6,
-   "question": "Proxima Centauri cách 4,24 ly. Ánh sáng đi từ đó tới ta mất hơn bao nhiêu năm (làm tròn xuống số nguyên)?",
-   "answer": "4",
-   "explanation": "Khoảng cách tính theo ly bằng số năm ánh sáng đi, nên 4,24 năm."
+   "question": "Xung laser bắn tới gương đặt trên Mặt Trăng ở cách ta $384\\,000$ km rồi phản xạ về. Lấy $c=3\\cdot10^5$ km/s, thời gian từ lúc bắn tới lúc nhận lại là",
+   "options": [
+    "$1{,}28$ s",
+    "$128$ s",
+    "$0{,}78$ s",
+    "$2{,}56$ s"
+   ],
+   "answer": 3,
+   "explanation": "Một chiều mất $\\dfrac{384\\,000}{3\\cdot10^5}=1{,}28$ s, đi và về là $2{,}56$ s.",
+   "distractorNotes": {
+    "A": "Mới tính thời gian một chiều, quên chiều về.",
+    "B": "Nhầm bậc luỹ thừa của $10$ khi chia.",
+    "C": "Lấy $c$ chia cho quãng đường, đảo tử và mẫu."
+   },
+   "theorySection": 6
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Ta luôn nhìn thấy cùng một mặt của Mặt Trăng vì",
+   "options": [
+    "Mặt Trăng hoàn toàn không tự quay quanh trục của nó",
+    "chu kì tự quay bằng chu kì quay quanh Trái Đất",
+    "mặt kia luôn bị bóng của Trái Đất che khuất",
+    "mặt kia không phản xạ ánh sáng Mặt Trời"
+   ],
+   "answer": 1,
+   "explanation": "Tự quay một vòng hết khoảng $27{,}3$ ngày, đúng bằng một vòng quanh Trái Đất, nên mặt hướng về ta không đổi.",
+   "distractorNotes": {
+    "A": "Mặt Trăng có tự quay; chính vì tự quay cùng chu kì mới luôn quay một mặt về Trái Đất.",
+    "C": "Bóng Trái Đất chỉ rơi lên Mặt Trăng lúc nguyệt thực, không phủ cố định một mặt.",
+    "D": "Mặt kia vẫn nhận ánh sáng Mặt Trời bình thường khi quay tới phía chiếu sáng."
+   },
+   "theorySection": 6
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Trong nguyệt thực toàn phần, Mặt Trăng vẫn hiện màu đỏ đồng vì",
+   "options": [
+    "Mặt Trăng tự phát ra ánh sáng đỏ khi bị che",
+    "bề mặt Mặt Trăng nóng lên và phát sáng màu đỏ",
+    "khí quyển khúc xạ ánh sáng đỏ vào vùng bóng tối",
+    "ánh sáng đỏ Mặt Trời xuyên thẳng qua cả Trái Đất"
+   ],
+   "answer": 2,
+   "explanation": "Ánh sáng đi sượt qua khí quyển bị khúc xạ vào vùng tối, ánh sáng xanh bị tán xạ nên còn lại chủ yếu ánh sáng đỏ.",
+   "distractorNotes": {
+    "A": "Mặt Trăng không tự phát sáng mà chỉ phản xạ ánh sáng.",
+    "B": "Nhiệt độ không đủ để làm Mặt Trăng phát sáng nhìn thấy được.",
+    "D": "Trái Đất chắn ánh sáng nên không có tia nào xuyên qua phần đặc."
+   },
+   "theorySection": 2
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Một học sinh đặt bóng đèn ở góc phòng tối, cầm quả bóng trước mặt và xoay người một vòng để mô phỏng các pha Mặt Trăng. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Các pha là do bóng đổ của người cầm che dần quả bóng.",
+     "answer": false
+    },
+    {
+     "text": "Quả bóng luôn có một nửa được đèn chiếu sáng.",
+     "answer": true
+    },
+    {
+     "text": "Em thấy hình lưỡi liềm khi nửa sáng quay hẳn về phía mình.",
+     "answer": false
+    },
+    {
+     "text": "Khi xoay người, em thấy quả bóng lần lượt có các pha khác nhau.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai vì pha chỉ do góc nhìn, không do bóng che. b) đúng vì đèn luôn chiếu sáng đúng một nửa quả bóng. c) sai vì lưỡi liềm ứng với nửa sáng quay đi. d) đúng vì phần sáng nhìn thấy thay đổi khi xoay người.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì pha chỉ do góc nhìn đối với nửa sáng, không cần vật nào che.",
+    "1": "Không thể coi là sai vì đèn luôn chiếu sáng đúng một nửa bề mặt quả bóng, giống Mặt Trăng với Mặt Trời.",
+    "2": "Không thể coi là đúng vì nửa sáng quay hẳn về phía mình thì thấy tròn đầy; lưỡi liềm là khi nửa sáng gần như quay đi.",
+    "3": "Không thể coi là sai vì phần sáng nhìn thấy thay đổi theo vị trí quan sát, tạo ra các pha."
+   },
+   "theorySection": 1
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Pha Mặt Trăng, nhật thực và nguyệt thực",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Cùng một đêm trăng tròn có nguyệt thực toàn phần, và vào một ngày trăng non khác có nhật thực toàn phần. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Nguyệt thực chỉ xảy ra vào đêm trăng tròn.",
+     "answer": true
+    },
+    {
+     "text": "Nhật thực toàn phần thấy được trên cả nửa Trái Đất đang ban ngày.",
+     "answer": false
+    },
+    {
+     "text": "Nửa Trái Đất đang là ban đêm đều thấy được nguyệt thực.",
+     "answer": true
+    },
+    {
+     "text": "Đeo kính râm thường thì có thể nhìn thẳng Mặt Trời lúc nhật thực.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng. b) sai vì vùng tối của Mặt Trăng trên mặt đất rất hẹp. c) đúng vì Mặt Trăng thật sự mất ánh sáng. d) sai: phải dùng kính lọc chuẩn hoặc chiếu ảnh.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì Trái Đất nằm giữa Mặt Trời và Mặt Trăng chỉ khi Mặt Trăng ở phía đối diện Mặt Trời.",
+    "1": "Không thể coi là đúng vì vùng tối của Mặt Trăng trên mặt đất rất hẹp nên chỉ một dải nhỏ thấy toàn phần.",
+    "2": "Không thể coi là sai vì Mặt Trăng thật sự mất ánh sáng nên ai thấy Mặt Trăng cũng thấy nó tối.",
+    "3": "Không thể coi là đúng vì kính râm thường không đủ lọc; cần kính lọc chuẩn hoặc chiếu ảnh qua lỗ nhỏ."
+   },
+   "theorySection": 2
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "TP.HCM có kinh độ $106{,}7^\\circ$Đ, Hà Nội có kinh độ $105{,}8^\\circ$Đ, hai nơi dùng chung giờ UTC$+7$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Giữa trưa thật ở TP.HCM đến muộn hơn ở Hà Nội khoảng $3{,}6$ phút.",
+     "answer": false
+    },
+    {
+     "text": "Hai nơi lệch nhau $0{,}9^\\circ$ kinh độ.",
+     "answer": true
+    },
+    {
+     "text": "Mỗi độ kinh độ ứng với $4$ phút chênh lệch giờ Mặt Trời.",
+     "answer": true
+    },
+    {
+     "text": "Vì cùng múi giờ nên Mặt Trời lên cao nhất cùng lúc ở hai nơi.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai vì phía Đông sớm hơn. b) và c) đúng, chênh $0{,}9\\cdot4=3{,}6$ phút. d) sai vì múi giờ khác giờ Mặt Trời.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì TP.HCM ở phía Đông nên Mặt Trời tới trước, giữa trưa thật đến sớm hơn.",
+    "1": "Không thể coi là sai vì $106{,}7-105{,}8=0{,}9^\\circ$.",
+    "2": "Không thể coi là sai vì $360^\\circ$ ứng $24$ giờ nên $1^\\circ$ ứng $4$ phút.",
+    "3": "Không thể coi là đúng vì cùng múi giờ chỉ là đồng hồ giống nhau, giờ Mặt Trời vẫn lệch theo kinh độ."
+   },
+   "theorySection": 3
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyển động nhìn thấy của Mặt Trời, ngày đêm và mùa",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "question": "Cần Thơ ở vĩ độ $10{,}0^\\circ$B. Trưa ngày đông chí Mặt Trời đứng bóng ở vĩ độ $\\delta=-23{,}5^\\circ$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Góc cao của Mặt Trời buổi trưa hôm đó là $56{,}5^\\circ$.",
+     "answer": true
+    },
+    {
+     "text": "Trưa ngày hạ chí ($\\delta=+23{,}5^\\circ$), bóng cọc ngả về phía Bắc.",
+     "answer": false
+    },
+    {
+     "text": "Góc cao hôm đông chí được tính bằng $|\\varphi-\\delta|=33{,}5^\\circ$.",
+     "answer": false
+    },
+    {
+     "text": "Bóng của một cọc dựng thẳng buổi trưa hôm đó ngả về phía Bắc.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) và d) đúng. b) sai vì hạ chí Mặt Trời ở phía Bắc nơi này nên bóng ngả về Nam. c) sai vì chưa trừ khỏi $90^\\circ$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $h=90^\\circ-|10{,}0-(-23{,}5)|=90^\\circ-33{,}5^\\circ=56{,}5^\\circ$.",
+    "1": "Không thể coi là đúng vì $\\delta=23{,}5^\\circ>\\varphi=10^\\circ$ nên Mặt Trời ở phía Bắc, bóng ngả về Nam.",
+    "2": "Không thể coi là đúng vì đó mới là góc lệch so với phương thẳng đứng, còn phải lấy $90^\\circ$ trừ đi.",
+    "3": "Không thể coi là sai vì $\\delta<\\varphi$ nên Mặt Trời ở phía Nam, bóng ngả ngược về Bắc."
+   },
+   "theorySection": 4
+  },
+  {
+   "type": "true_false",
+   "kind": "tinh_nhanh",
+   "topic": "Hệ Mặt Trời và Ngân Hà",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "question": "Cho $1$ AU $=1{,}5\\cdot10^8$ km, $c=3\\cdot10^5$ km/s, ánh sáng Mặt Trời tới Trái Đất mất khoảng $8{,}3$ phút. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Năm ánh sáng là một đơn vị đo thời gian.",
+     "answer": false
+    },
+    {
+     "text": "Hành tinh càng xa Mặt Trời thì chu kì chuyển động quanh Mặt Trời càng ngắn.",
+     "answer": false
+    },
+    {
+     "text": "Từ $1$ AU chia cho $c$ được khoảng $500$ s, tức khoảng $8{,}3$ phút.",
+     "answer": true
+    },
+    {
+     "text": "Ánh sáng Mặt Trời tới Hải Vương Tinh (khoảng $30$ AU) mất khoảng $4{,}2$ giờ.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai vì đây là đơn vị độ dài. b) sai vì chu kì dài hơn. c) và d) đúng khi nhân tỉ lệ khoảng cách.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì năm ánh sáng là quãng đường ánh sáng đi trong một năm, nên là đơn vị khoảng cách.",
+    "1": "Không thể coi là đúng vì càng xa Mặt Trời, chuyển động càng chậm và quỹ đạo càng dài nên chu kì càng dài.",
+    "2": "Không thể coi là sai vì $\\dfrac{1{,}5\\cdot10^8}{3\\cdot10^5}=500$ s.",
+    "3": "Không thể coi là sai vì $30\\cdot8{,}3=250$ phút $\\approx4{,}2$ giờ."
+   },
+   "theorySection": 5
   }
  ]
 }

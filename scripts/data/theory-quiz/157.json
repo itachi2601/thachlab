@@ -2,25 +2,16 @@
  "lesson_id": 157,
  "lesson_title": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
  "item_id": 344,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 14,
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
+ "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 9,
-   "cong_thuc": 9
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "removed": [
-   {
-    "question": "Hình 2 ($U=12$ V, $R_1=4$, $R_2=12$, $R_3=6\\ \\Omega$), K song song $R_2$. Khi K đóng ampe kế chỉ bao nhiêu A?",
-    "reason": "kiem-code: đề tham chiếu hình/mạch không có trong câu hỏi"
-   },
-   {
-    "question": "Điện trở tương đương của mạch cầu cân bằng (hình 3) là:",
-    "reason": "kiem-code: đề tham chiếu hình/mạch không có trong câu hỏi"
-   }
-  ]
+  "removed": []
  },
  "questions": [
   {
@@ -31,15 +22,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Phát biểu nào đúng về đoạn mạch nối tiếp?",
+   "question": "Trong đoạn mạch gồm các điện trở mắc song song, đại lượng có giá trị bằng nhau ở mọi nhánh là",
    "options": [
-    "Hiệu điện thế chung, dòng điện cộng",
-    "Cường độ dòng điện chung, hiệu điện thế cộng",
-    "Cường độ dòng điện chung, nghịch đảo điện trở cộng",
-    "Hiệu điện thế chung, điện trở cộng"
+    "cường độ dòng điện qua mỗi nhánh rẽ",
+    "hiệu điện thế hai đầu mỗi nhánh",
+    "điện trở của mỗi nhánh",
+    "nghịch đảo điện trở của mỗi nhánh"
    ],
    "answer": 1,
-   "explanation": "Theo bài: nối tiếp thì $I$ chung, $U$ và $R$ cộng."
+   "explanation": "Mạch song song có hiệu điện thế chung, còn cường độ dòng điện và nghịch đảo điện trở thì cộng lại.",
+   "distractorNotes": {
+    "A": "Dòng tổng chia cho các nhánh theo điện trở, nhánh điện trở nhỏ nhận dòng lớn hơn; cường độ chỉ chung khi mắc nối tiếp.",
+    "C": "Các nhánh có thể có điện trở khác nhau; đại lượng chung của mạch song song là hiệu điện thế.",
+    "D": "Các nghịch đảo điện trở được cộng lại thành $\\dfrac1{R_{td}}$ chứ không bằng nhau."
+   }
   },
   {
    "type": "multiple_choice",
@@ -49,15 +45,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Phát biểu nào đúng về đoạn mạch song song?",
+   "question": "Với đoạn mạch gồm các điện trở mắc nối tiếp, phát biểu đúng là",
    "options": [
-    "$I$ chung, $U$ cộng",
-    "$U$ chung, $I$ và $\\dfrac1R$ cộng",
-    "$U$ chung, $R$ cộng",
-    "$I$ chung, $\\dfrac1R$ cộng"
+    "hiệu điện thế chung; cường độ dòng điện tỉ lệ với điện trở",
+    "hiệu điện thế chung; cường độ dòng điện tỉ lệ nghịch điện trở",
+    "cường độ dòng điện chung; hiệu điện thế tỉ lệ nghịch điện trở",
+    "cường độ dòng điện chung; hiệu điện thế tỉ lệ với điện trở"
    ],
-   "answer": 1,
-   "explanation": "Song song: $U$ chung, $I$ và $\\tfrac1R$ cộng."
+   "answer": 3,
+   "explanation": "Nối tiếp: $I$ chung và $\\dfrac{U_1}{U_2}=\\dfrac{R_1}{R_2}$.",
+   "distractorNotes": {
+    "A": "Đảo vai: nối tiếp thì dòng điện chung, còn hiệu điện thế mới được chia ra.",
+    "B": "Đây là quy tắc chia dòng của mạch song song, không phải của mạch nối tiếp.",
+    "C": "Dòng chung nhưng $U=IR$ nên hiệu điện thế tỉ lệ thuận, không phải tỉ lệ nghịch, với điện trở."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 0,
+   "question": "Em cắm thêm quạt vào ổ cắm đang cấp điện cho đèn bàn, hai thiết bị mắc song song. So với lúc chỉ có đèn, điện trở tương đương của mạch",
+   "options": [
+    "giảm, vì có thêm một đường cho dòng điện",
+    "tăng, vì có thêm một thiết bị trong mạch",
+    "không đổi, vì ổ cắm giữ hiệu điện thế không đổi",
+    "thay đổi tuỳ loại thiết bị được cắm thêm"
+   ],
+   "answer": 0,
+   "explanation": "Thêm một nhánh song song làm $\\dfrac1{R_{td}}$ tăng, tức $R_{td}$ giảm, dù thiết bị thêm vào là gì.",
+   "distractorNotes": {
+    "B": "Chỉ đúng khi mắc nối tiếp; thêm nhánh song song làm $\\dfrac1{R_{td}}$ tăng nên $R_{td}$ giảm.",
+    "C": "Nhầm hiệu điện thế không đổi với điện trở không đổi; nguồn giữ $U$ còn dòng tổng thì tăng.",
+    "D": "Thiết bị nào mắc song song cũng cộng thêm một số dương vào $\\dfrac1{R_{td}}$ nên chiều thay đổi luôn là giảm."
+   }
   },
   {
    "type": "multiple_choice",
@@ -67,15 +91,66 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Khi tính toán, khoá K mở được coi như:",
+   "question": "Khi tính toán, khoá K đóng được coi là",
    "options": [
-    "Dây dẫn chập hai nút",
-    "Một điện trở nhỏ",
-    "Đứt mạch, bỏ nhánh đó",
-    "Vôn kế"
+    "chỗ đứt mạch, nhánh chứa nó bị bỏ đi",
+    "vôn kế lí tưởng, bị bỏ khỏi sơ đồ",
+    "dây nối, hai đầu của nó cùng điện thế",
+    "điện trở nhỏ, vẫn phải giữ trong sơ đồ"
    ],
    "answer": 2,
-   "explanation": "Bảng ở mục IV: khoá K mở coi là đứt, bỏ nhánh."
+   "explanation": "Khoá K đóng là dây, nên chập hai nút mà hai đầu K nối vào; K mở thì nhánh đó đứt.",
+   "distractorNotes": {
+    "A": "Đó là cách coi khoá K khi mở, không phải khi đóng.",
+    "B": "Vôn kế lí tưởng mới bị bỏ khỏi sơ đồ; khoá đóng cho dòng điện đi qua như dây nối.",
+    "D": "Khoá đóng không có điện trở; coi như dây nối và chập hai nút nó nối vào."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_nghia",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Khi vẽ lại sơ đồ để tính, vôn kế lí tưởng được coi là",
+   "options": [
+    "dây nối, chập hai điểm mắc vôn kế",
+    "bị bỏ khỏi sơ đồ vì không có dòng qua",
+    "điện trở nhỏ mắc nối tiếp với đoạn đo",
+    "điện trở bằng điện trở của đoạn mạch cần đo"
+   ],
+   "answer": 1,
+   "explanation": "Vôn kế lí tưởng không có dòng chạy qua nên bỏ khỏi sơ đồ khi tính.",
+   "distractorNotes": {
+    "A": "Đó là cách coi ampe kế lí tưởng; vôn kế lí tưởng có điện trở vô cùng lớn nên không cho dòng qua.",
+    "C": "Điện trở nhỏ mắc nối tiếp là ampe kế thực; vôn kế phải mắc song song và có điện trở rất lớn.",
+    "D": "Nếu vôn kế có điện trở như đoạn đo thì nó rút đi một nửa dòng làm sai kết quả; vôn kế lí tưởng không rút dòng nào."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Khi mạch cầu cân bằng, nhánh nối hai điểm $P$ và $Q$",
+   "options": [
+    "không có dòng điện, chỉ khi đó là một vôn kế",
+    "có dòng điện, vì hai điểm này vẫn khác điện thế",
+    "có dòng điện, vì nhánh nối tắt dẫn điện rất tốt",
+    "không có dòng điện, dù đó là dây hay điện trở"
+   ],
+   "answer": 3,
+   "explanation": "Cầu cân bằng cho $V_P=V_Q$, nên dòng qua nhánh $PQ$ bằng $0$ dù nhánh đó là dây, điện trở hay vôn kế.",
+   "distractorNotes": {
+    "A": "Hai điểm cùng điện thế thì dòng qua mọi phần tử nối giữa chúng đều bằng $0$, không riêng gì vôn kế.",
+    "B": "Cầu cân bằng nghĩa là $V_P=V_Q$, nên không có chênh thế để tạo ra dòng điện.",
+    "C": "Dẫn điện tốt mà không có chênh điện thế thì vẫn không có dòng; dòng qua nhánh này bằng $0$."
+   }
   },
   {
    "type": "multiple_choice",
@@ -85,51 +160,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 5,
-   "question": "Vôn kế thực được đưa vào sơ đồ như thế nào?",
+   "question": "Vôn kế thực mắc song song vào hai đầu một điện trở sẽ cho số chỉ",
    "options": [
-    "Điện trở $R_V$ song song với đoạn đo",
-    "Điện trở $R_V$ nối tiếp với đoạn đo",
-    "Dây dẫn",
-    "Bỏ khỏi sơ đồ"
+    "nhỏ hơn hiệu điện thế thật, vì vôn kế rút bớt một phần dòng",
+    "lớn hơn hiệu điện thế thật, vì vôn kế có điện trở rất lớn",
+    "đúng bằng hiệu điện thế thật, vì mắc song song là đúng cách",
+    "lớn hơn hiệu điện thế thật, vì vôn kế rút bớt một phần dòng"
    ],
    "answer": 0,
-   "explanation": "Vôn kế thực: $R_V$ song song với đoạn đo."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Vôn kế mắc nối tiếp trong mạch chính (điện trở rất lớn) thì:",
-   "options": [
-    "Dòng gần bằng 0, vôn kế chỉ gần bằng $U$ nguồn",
-    "Dòng rất lớn",
-    "Vôn kế chỉ 0",
-    "Mạch không bị ảnh hưởng"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu: dòng gần bằng 0, vôn kế chỉ gần bằng $U$ nguồn."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 6,
-   "question": "Với biến trở, nghiệm tìm được cần thoả điều kiện nào?",
-   "options": [
-    "$R_b\\gt R_{max}$",
-    "$R_b\\lt 0$",
-    "$0\\le R_b\\le R_{max}$",
-    "Bất kì giá trị nào"
-   ],
-   "answer": 2,
-   "explanation": "Mục VII: chỉ lấy nghiệm trong $0\\le R_b\\le R_{max}$."
+   "explanation": "$R_V$ song song với đoạn đo làm điện trở đoạn đó giảm, nên số chỉ nhỏ hơn hiệu điện thế thật.",
+   "distractorNotes": {
+    "B": "Điện trở lớn chỉ làm sai số nhỏ đi, không làm số chỉ vượt giá trị thật; vôn kế thực luôn cho số chỉ thiếu.",
+    "C": "Mắc song song là đúng cách, nhưng $R_V$ hữu hạn vẫn rút bớt dòng nên số chỉ vẫn thiếu một chút.",
+    "D": "Rút bớt dòng làm điện trở của đoạn đo giảm nên hiệu điện thế trên đoạn đó giảm chứ không tăng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -138,16 +182,44 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Điều kiện cầu cân bằng là:",
+   "theorySection": 1,
+   "question": "Hai điện trở $R_1$ và $R_2$ mắc song song. Điện trở tương đương là",
    "options": [
-    "$R_1R_2=R_3R_4$",
-    "$R_1R_4=R_2R_3$",
-    "$R_1+R_4=R_2+R_3$",
-    "$R_1R_3=R_2R_4$"
+    "$R_1+R_2$",
+    "$\\dfrac{R_1+R_2}{R_1R_2}$",
+    "$\\dfrac{R_1R_2}{R_1+R_2}$",
+    "$R_1R_2$"
    ],
-   "answer": 1,
-   "explanation": "Cầu cân bằng khi $R_1R_4=R_2R_3$."
+   "answer": 2,
+   "explanation": "Từ $\\dfrac1{R_{td}}=\\dfrac1{R_1}+\\dfrac1{R_2}$ suy ra $R_{td}=\\dfrac{R_1R_2}{R_1+R_2}$.",
+   "distractorNotes": {
+    "A": "Đây là công thức nối tiếp; mạch song song luôn cho điện trở nhỏ hơn mỗi điện trở thành phần.",
+    "B": "Đây là $\\dfrac1{R_{td}}$, quên đảo ngược ở bước cuối.",
+    "D": "Bỏ mẫu $R_1+R_2$: kết quả có đơn vị $\\Omega^2$ và có thể lớn hơn cả hai điện trở."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ba điện trở $R_1$, $R_2$, $R_3$ mắc song song. Điện trở tương đương thoả mãn",
+   "options": [
+    "$\\dfrac1{R_{td}}=\\dfrac1{R_1}+\\dfrac1{R_2}+\\dfrac1{R_3}$",
+    "$R_{td}=\\dfrac{R_1R_2R_3}{R_1+R_2+R_3}$",
+    "$R_{td}=R_1+R_2+R_3$",
+    "$\\dfrac1{R_{td}}=\\dfrac1{R_1+R_2+R_3}$"
+   ],
+   "answer": 0,
+   "explanation": "Nhiều điện trở song song thì cộng nghịch đảo: $\\dfrac1{R_{td}}=\\sum\\dfrac1{R_k}$.",
+   "distractorNotes": {
+    "B": "Bài nhấn mạnh không có công thức tích chia tổng cho ba điện trở; thử ba điện trở bằng $r$ cho $\\dfrac{r^2}{3}$, trong khi kết quả đúng là $\\dfrac r3$.",
+    "C": "Đây là công thức nối tiếp, cho kết quả lớn hơn mọi điện trở thành phần.",
+    "D": "Nghịch đảo của tổng không bằng tổng các nghịch đảo; đây chỉ là $R_{td}=R_1+R_2+R_3$ viết lại."
+   }
   },
   {
    "type": "multiple_choice",
@@ -157,15 +229,89 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Bốn điện trở giống nhau $r=8\\ \\Omega$ mắc song song có điện trở tương đương:",
+   "question": "$n$ điện trở giống nhau, mỗi điện trở $r$, mắc song song. Điện trở tương đương bằng",
    "options": [
-    "$32\\ \\Omega$",
-    "$4\\ \\Omega$",
-    "$2\\ \\Omega$",
-    "$8\\ \\Omega$"
+    "$nr$",
+    "$\\dfrac nr$",
+    "$\\dfrac r{n^2}$",
+    "$\\dfrac rn$"
+   ],
+   "answer": 3,
+   "explanation": "$\\dfrac1{R_{td}}=n\\cdot\\dfrac1r$ nên $R_{td}=\\dfrac rn$.",
+   "distractorNotes": {
+    "A": "Đây là $n$ điện trở nối tiếp, không phải song song.",
+    "B": "Đảo tử mẫu: kết quả phải có đơn vị ôm, còn biểu thức này có đơn vị nghịch đảo của ôm.",
+    "C": "Thừa bình phương: với $n=2$ cho $\\dfrac r4$, trong khi $\\dfrac{r\\cdot r}{r+r}=\\dfrac r2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điện trở $R_1$ và $R_2$ mắc song song, dòng điện tổng là $I$. Cường độ dòng điện qua $R_1$ bằng",
+   "options": [
+    "$I\\cdot\\dfrac{R_1}{R_1+R_2}$",
+    "$I\\cdot\\dfrac{R_2}{R_1+R_2}$",
+    "$I\\cdot\\dfrac{R_1R_2}{R_1+R_2}$",
+    "$I\\cdot\\dfrac{R_2}{R_1}$"
+   ],
+   "answer": 1,
+   "explanation": "Từ $\\dfrac{I_1}{I_2}=\\dfrac{R_2}{R_1}$ và $I_1+I_2=I$ suy ra $I_1=I\\cdot\\dfrac{R_2}{R_1+R_2}$.",
+   "distractorNotes": {
+    "A": "Đây là dòng qua $R_2$; nhánh có điện trở nhỏ hơn nhận dòng lớn hơn nên dòng qua $R_1$ phải nhân với $R_2$.",
+    "C": "Đây là $I\\cdot R_{td}$, tức hiệu điện thế chứ không phải cường độ dòng điện qua $R_1$.",
+    "D": "Đây là tỉ số $\\dfrac{I_1}{I_2}$, còn thiếu bước chia cho tổng hai dòng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Mạch cầu có nhánh trái gồm $R_1$ rồi $R_3$, nhánh phải gồm $R_2$ rồi $R_4$; $P$ nằm giữa $R_1$ và $R_3$, $Q$ nằm giữa $R_2$ và $R_4$. $R_1$ và $R_2$ cùng nối vào một cực của nguồn. Cầu cân bằng khi",
+   "options": [
+    "$R_1R_2=R_3R_4$",
+    "$R_1R_3=R_2R_4$",
+    "$R_1R_4=R_2R_3$",
+    "$R_1+R_4=R_2+R_3$"
    ],
    "answer": 2,
-   "explanation": "$n$ điện trở giống nhau song song: $\\dfrac rn=2\\ \\Omega$."
+   "explanation": "$V_P=V_Q$ cho $\\dfrac{R_1}{R_2}=\\dfrac{R_3}{R_4}$, tức $R_1R_4=R_2R_3$.",
+   "distractorNotes": {
+    "A": "Nhân hai điện trở cùng nối vào một đầu nguồn; cầu cân bằng cần nhân chéo $R_1R_4$ với $R_2R_3$.",
+    "B": "Nhân hai điện trở cùng một nhánh với nhau; điều kiện đúng là $\\dfrac{R_1}{R_2}=\\dfrac{R_3}{R_4}$.",
+    "D": "Cộng thay vì nhân chéo: với $R_1=1$, $R_4=3$, $R_2=2$, $R_3=2$ thì tổng bằng nhau ($4=4$) nhưng $R_1R_4=3\\ne4=R_2R_3$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Sai số tương đối của phép đo hiệu điện thế bằng vôn kế thực được tính bằng",
+   "options": [
+    "$\\delta=\\dfrac{U_{that}-U_{do}}{U_{that}}\\cdot100\\%$",
+    "$\\delta=\\dfrac{U_{that}-U_{do}}{U_{do}}\\cdot100\\%$",
+    "$\\delta=\\dfrac{U_{do}}{U_{that}}\\cdot100\\%$",
+    "$\\delta=(U_{that}-U_{do})\\cdot100\\%$"
+   ],
+   "answer": 0,
+   "explanation": "Bài định nghĩa $\\delta=\\dfrac{U_{that}-U_{do}}{U_{that}}\\cdot100\\%$.",
+   "distractorNotes": {
+    "B": "Chia cho giá trị đo thay vì giá trị thật; sai số tương đối so với hiệu điện thế thật.",
+    "C": "Đây là tỉ lệ số chỉ so với giá trị thật, gần $100\\%$ khi vôn kế tốt, trong khi sai số phải gần $0$.",
+    "D": "Thiếu phép chia cho $U_{that}$ nên không phải sai số tương đối và còn mang đơn vị vôn."
+   }
   },
   {
    "type": "multiple_choice",
@@ -174,16 +320,21 @@
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hai điện trở nối tiếp, tỉ số hiệu điện thế $\\dfrac{U_1}{U_2}$ bằng:",
+   "theorySection": 6,
+   "question": "Một dây điện trở $R$ được chia thành hai đoạn $x$ và $R-x$ rồi mắc song song. Điện trở tương đương lớn nhất có thể đạt được bằng",
    "options": [
-    "$\\dfrac{R_2}{R_1}$",
-    "$\\dfrac{R_1}{R_2}$",
-    "$R_1R_2$",
-    "$\\dfrac{R_1+R_2}{R_1}$"
+    "$\\dfrac R2$",
+    "$R$",
+    "$\\dfrac R8$",
+    "$\\dfrac R4$"
    ],
-   "answer": 1,
-   "explanation": "Nối tiếp: $\\dfrac{U_1}{U_2}=\\dfrac{R_1}{R_2}$."
+   "answer": 3,
+   "explanation": "$R_{td}=\\dfrac{x(R-x)}R\\le\\dfrac R4$, dấu bằng khi $x=\\dfrac R2$.",
+   "distractorNotes": {
+    "A": "Nhầm với hai điện trở bằng $R$ mắc song song; ở đây hai đoạn có tổng điện trở chỉ bằng $R$.",
+    "B": "Điện trở tương đương của hai nhánh song song luôn nhỏ hơn điện trở nhỏ nhất, nên không thể bằng $R$.",
+    "C": "Giá trị nhỏ hơn mức lớn nhất: với $x=\\dfrac R2$ đã cho $\\dfrac R4$, tức lớn hơn $\\dfrac R8$."
+   }
   },
   {
    "type": "true_false",
@@ -191,57 +342,104 @@
    "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
    "form": "ly_thuyet",
    "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ba điện trở $R_1$, $R_2$, $R_3$ mắc song song vào một nguồn điện có hiệu điện thế không đổi. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hiệu điện thế giữa hai đầu mỗi điện trở bằng nhau.",
+     "answer": true
+    },
+    {
+     "text": "Cường độ dòng điện qua ba điện trở bằng nhau.",
+     "answer": false
+    },
+    {
+     "text": "Điện trở tương đương nhỏ hơn mọi điện trở thành phần.",
+     "answer": true
+    },
+    {
+     "text": "Điện trở tương đương bằng tổng ba điện trở.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng vì mạch song song có hiệu điện thế chung ở mọi nhánh. b) sai vì dòng chia cho các nhánh theo điện trở, chỉ bằng nhau nếu ba điện trở bằng nhau. c) đúng vì thêm nhánh song song làm $\\dfrac1{R_{td}}$ tăng nên $R_{td}$ nhỏ hơn điện trở nhỏ nhất. d) sai vì tổng các điện trở là công thức của mạch nối tiếp.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì mạch song song có hiệu điện thế chung ở mọi nhánh.",
+    "1": "Không thể coi là đúng vì dòng chia cho các nhánh theo điện trở, chỉ bằng nhau nếu ba điện trở bằng nhau.",
+    "2": "Không thể coi là sai vì thêm nhánh song song làm $\\dfrac1{R_{td}}$ tăng nên $R_{td}$ nhỏ hơn điện trở nhỏ nhất.",
+    "3": "Không thể coi là đúng vì tổng các điện trở là công thức của mạch nối tiếp."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Về các vật khi tính mạch điện:",
+   "question": "Mạch gồm điện trở $R_1$ nối tiếp với $R_2$ vào nguồn không đổi, ampe kế lí tưởng nối tiếp trong mạch, khoá K mắc song song với $R_2$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Ampe kế lí tưởng coi như dây nối",
-     "answer": true
-    },
-    {
-     "text": "Vôn kế lí tưởng được bỏ khỏi sơ đồ",
-     "answer": true
-    },
-    {
-     "text": "Khoá K đóng coi như đứt mạch",
+     "text": "Khi K đóng, hiệu điện thế giữa hai đầu $R_1$ giảm.",
      "answer": false
     },
     {
-     "text": "Điện trở bị nối tắt không có dòng qua",
+     "text": "Khi K đóng, $R_2$ bị nối tắt nên không có dòng điện chạy qua $R_2$.",
+     "answer": true
+    },
+    {
+     "text": "Khi K mở, K được coi là dây nối nên $R_2$ bị nối tắt.",
+     "answer": false
+    },
+    {
+     "text": "Khi K đóng, số chỉ ampe kế tăng so với khi K mở.",
      "answer": true
     }
    ],
-   "explanation": "Khoá K đóng là dây, chập hai nút."
+   "explanation": "a) sai vì toàn bộ hiệu điện thế nguồn đặt lên $R_1$ nên nó tăng. b) đúng vì khoá đóng là dây nối, chập hai đầu $R_2$ lại. c) sai vì khoá mở là chỗ đứt, nhánh chứa K bị bỏ đi và $R_2$ vẫn có dòng chạy qua. d) đúng vì điện trở tương đương giảm từ $R_1+R_2$ xuống $R_1$ trong khi hiệu điện thế nguồn không đổi.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì toàn bộ hiệu điện thế nguồn đặt lên $R_1$ nên nó tăng.",
+    "1": "Không thể coi là sai vì khoá đóng là dây nối, chập hai đầu $R_2$ lại.",
+    "2": "Không thể coi là đúng vì khoá mở là chỗ đứt, nhánh chứa K bị bỏ đi và $R_2$ vẫn có dòng chạy qua.",
+    "3": "Không thể coi là sai vì điện trở tương đương giảm từ $R_1+R_2$ xuống $R_1$ trong khi hiệu điện thế nguồn không đổi."
+   }
   },
   {
    "type": "true_false",
-   "kind": "dinh_luat",
+   "kind": "hien_tuong",
    "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Khi cầu cân bằng:",
+   "theorySection": 5,
+   "question": "Nối tiếp hai điện trở $R_1=R_2=100\\ \\Omega$ vào nguồn $12$ V rồi dùng vôn kế thực đo hiệu điện thế hai đầu $R_2$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$V_P=V_Q$",
+     "text": "Giá trị thật của hiệu điện thế trên $R_2$ là $6$ V.",
      "answer": true
     },
     {
-     "text": "Dòng qua nhánh PQ bằng 0",
-     "answer": true
-    },
-    {
-     "text": "Có thể bỏ nhánh PQ hoặc chập P với Q",
-     "answer": true
-    },
-    {
-     "text": "Dòng qua PQ khác 0 nếu nhánh PQ là dây",
+     "text": "Vôn kế thực luôn cho số chỉ lớn hơn giá trị thật.",
      "answer": false
+    },
+    {
+     "text": "Nếu mắc vôn kế nối tiếp trong mạch chính thì vôn kế chỉ gần bằng $0$.",
+     "answer": false
+    },
+    {
+     "text": "Vôn kế có $R_V$ càng lớn thì số chỉ càng gần giá trị thật.",
+     "answer": true
     }
    ],
-   "explanation": "Dòng qua PQ bằng 0 dù đó là vôn kế, dây hay điện trở."
+   "explanation": "a) đúng vì hai điện trở bằng nhau mắc nối tiếp chia đôi hiệu điện thế nguồn. b) sai vì vôn kế song song làm điện trở đoạn đo giảm nên số chỉ nhỏ hơn giá trị thật. c) sai vì vôn kế nối tiếp là điện trở rất lớn, dòng gần bằng $0$ và vôn kế chỉ gần bằng hiệu điện thế nguồn. d) đúng vì $R_V$ lớn rút ít dòng hơn nên điện trở đoạn đo ít bị thay đổi.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì hai điện trở bằng nhau mắc nối tiếp chia đôi hiệu điện thế nguồn.",
+    "1": "Không thể coi là đúng vì vôn kế song song làm điện trở đoạn đo giảm nên số chỉ nhỏ hơn giá trị thật.",
+    "2": "Không thể coi là đúng vì vôn kế nối tiếp là điện trở rất lớn, dòng gần bằng $0$ và vôn kế chỉ gần bằng hiệu điện thế nguồn.",
+    "3": "Không thể coi là sai vì $R_V$ lớn rút ít dòng hơn nên điện trở đoạn đo ít bị thay đổi."
+   }
   },
   {
    "type": "true_false",
@@ -250,116 +448,103 @@
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về điện trở tương đương:",
+   "theorySection": 2,
+   "question": "Điện trở $R_1=2\\ \\Omega$ nối tiếp với đoạn gồm $R_2=6\\ \\Omega$ song song $R_3=3\\ \\Omega$, mắc vào nguồn $U=12$ V. Ampe kế lí tưởng ở nhánh chính, vôn kế lí tưởng mắc song song với đoạn $R_2$, $R_3$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Nối tiếp: $R_{td}=R_1+R_2$",
+     "text": "Điện trở tương đương của mạch là $4\\ \\Omega$.",
      "answer": true
     },
     {
-     "text": "Song song hai điện trở: $R_{td}=\\dfrac{R_1R_2}{R_1+R_2}$",
-     "answer": true
-    },
-    {
-     "text": "Song song: $R_{td}$ lớn hơn điện trở lớn nhất",
+     "text": "Dòng điện qua $R_2$ lớn hơn dòng điện qua $R_3$.",
      "answer": false
     },
     {
-     "text": "Ba điện trở song song: $R_{td}=\\dfrac{R_1R_2R_3}{R_1+R_2+R_3}$",
+     "text": "Ampe kế chỉ $3$ A.",
+     "answer": true
+    },
+    {
+     "text": "Vôn kế chỉ $12$ V.",
      "answer": false
     }
    ],
-   "explanation": "Song song thì $R_{td}$ nhỏ hơn điện trở nhỏ nhất; ba điện trở dùng $\\tfrac1{R_{td}}=\\sum\\tfrac1{R_k}$."
+   "explanation": "a) đúng vì $R_{23}=\\dfrac{6\\cdot3}{9}=2\\ \\Omega$ nên $R_{td}=2+2=4\\ \\Omega$. b) sai vì hai nhánh cùng hiệu điện thế $6$ V nên $I_2=1$ A nhỏ hơn $I_3=2$ A. c) đúng vì $I=\\dfrac{12}{4}=3$ A. d) sai vì $R_1$ chiếm $U_1=3\\cdot2=6$ V nên vôn kế chỉ $12-6=6$ V.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $R_{23}=\\dfrac{6\\cdot3}{9}=2\\ \\Omega$ nên $R_{td}=2+2=4\\ \\Omega$.",
+    "1": "Không thể coi là đúng vì hai nhánh cùng hiệu điện thế $6$ V nên $I_2=1$ A nhỏ hơn $I_3=2$ A.",
+    "2": "Không thể coi là sai vì $I=\\dfrac{12}{4}=3$ A.",
+    "3": "Không thể coi là đúng vì $R_1$ chiếm $U_1=3\\cdot2=6$ V nên vôn kế chỉ $12-6=6$ V."
+   }
   },
   {
    "type": "true_false",
-   "kind": "dinh_nghia",
+   "kind": "tinh_nhanh",
    "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Về ampe kế và vôn kế thực:",
+   "theorySection": 2,
+   "question": "Điện trở $R_1$ nối tiếp với đoạn gồm $R_2$ song song $R_3$, mắc vào nguồn có hiệu điện thế không đổi. Giữ nguyên $R_1$, $R_2$ và tăng $R_3$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$R_A$ nối tiếp tại chỗ mắc",
-     "answer": true
-    },
-    {
-     "text": "Vôn kế thực làm số chỉ nhỏ hơn hiệu điện thế thật",
-     "answer": true
-    },
-    {
-     "text": "$R_V$ càng lớn thì sai số càng lớn",
+     "text": "Hiệu điện thế giữa hai đầu $R_1$ tăng.",
      "answer": false
     },
     {
-     "text": "Ampe kế thực làm dòng đo được nhỏ hơn dòng thật",
+     "text": "Điện trở tương đương của mạch tăng.",
      "answer": true
+    },
+    {
+     "text": "Dòng điện qua $R_3$ giảm.",
+     "answer": true
+    },
+    {
+     "text": "Dòng điện qua $R_2$ giảm.",
+     "answer": false
     }
    ],
-   "explanation": "$R_V$ càng lớn càng gần giá trị thật."
+   "explanation": "a) sai vì dòng điện chính giảm nên $U_1=IR_1$ giảm. b) đúng vì $R_3$ tăng thì $R_{23}$ tăng nên $R_{td}=R_1+R_{23}$ tăng. c) đúng vì $I_3=\\dfrac{UR_2}{R_1R_2+R_1R_3+R_2R_3}$ giảm khi $R_3$ tăng. d) sai vì $U_1$ giảm nên hiệu điện thế trên $R_2$ tăng, và dòng qua $R_2$ tăng.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì dòng điện chính giảm nên $U_1=IR_1$ giảm.",
+    "1": "Không thể coi là sai vì $R_3$ tăng thì $R_{23}$ tăng nên $R_{td}=R_1+R_{23}$ tăng.",
+    "2": "Không thể coi là sai vì $I_3=\\dfrac{UR_2}{R_1R_2+R_1R_3+R_2R_3}$ giảm khi $R_3$ tăng.",
+    "3": "Không thể coi là đúng vì $U_1$ giảm nên hiệu điện thế trên $R_2$ tăng, và dòng qua $R_2$ tăng."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ba điện trở $12$, $4$, $6\\ \\Omega$ song song. $R_{td}$ bằng bao nhiêu $\\Omega$?",
-   "answer": "2",
-   "explanation": "$\\tfrac1{R_{td}}=\\tfrac12$ nên $R_{td}=2\\ \\Omega$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "$R_1=2\\ \\Omega$ nối tiếp đoạn song song $6\\ \\Omega$ và $3\\ \\Omega$, $U=12$ V. Ampe kế ở nhánh chính chỉ bao nhiêu A?",
-   "answer": "3",
-   "explanation": "$R_{td}=2+2=4\\ \\Omega$, $I=12/4=3$ A."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Cầu cân bằng với $R_1=3$, $R_2=6$, $R_3=5\\ \\Omega$. $R_4$ bằng bao nhiêu $\\Omega$?",
-   "answer": "10",
-   "explanation": "$R_4=\\dfrac{R_2R_3}{R_1}=10\\ \\Omega$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
+   "type": "true_false",
+   "kind": "cong_thuc",
    "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 6,
-   "question": "Ba điện trở $r=6\\ \\Omega$ dùng cả ba, hai điện trở song song rồi nối tiếp điện trở thứ ba. $R_{td}$ bằng bao nhiêu $\\Omega$?",
-   "answer": "9",
-   "explanation": "$3+6=9\\ \\Omega$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 04. Đoạn mạch nối tiếp, song song và mạch hỗn hợp",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 6,
-   "question": "Điện trở $R_0$ nối tiếp biến trở: biến trở $4\\ \\Omega$ thì $I=2$ A; $10\\ \\Omega$ thì $I=1$ A. $R_0$ bằng bao nhiêu $\\Omega$?",
-   "answer": "2",
-   "explanation": "$2(R_0+4)=R_0+10$ nên $R_0=2\\ \\Omega$."
+   "question": "Nguồn có hiệu điện thế $U$ không đổi, điện trở $R_0$ nối tiếp với biến trở. Khi biến trở là $4\\ \\Omega$ ampe kế chỉ $2$ A, khi biến trở là $10\\ \\Omega$ ampe kế chỉ $1$ A. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Có thể lập hai phương trình $U=2(R_0+4)$ và $U=R_0+10$.",
+     "answer": true
+    },
+    {
+     "text": "$R_0=2\\ \\Omega$.",
+     "answer": true
+    },
+    {
+     "text": "$U=8$ V.",
+     "answer": false
+    },
+    {
+     "text": "Khi biến trở là $2\\ \\Omega$ thì ampe kế chỉ $4$ A.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng vì mỗi trạng thái của mạch cho một phương trình. b) đúng vì trừ hai phương trình được $2R_0+8=R_0+10$ nên $R_0=2\\ \\Omega$. c) sai vì thay $R_0=2\\ \\Omega$ vào được $U=2\\cdot6=12$ V. d) sai vì $I=\\dfrac{12}{2+2}=3$ A.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì mỗi trạng thái của mạch cho một phương trình.",
+    "1": "Không thể coi là sai vì trừ hai phương trình được $2R_0+8=R_0+10$ nên $R_0=2\\ \\Omega$.",
+    "2": "Không thể coi là đúng vì thay $R_0=2\\ \\Omega$ vào được $U=2\\cdot6=12$ V.",
+    "3": "Không thể coi là đúng vì $I=\\dfrac{12}{2+2}=3$ A."
+   }
   }
  ]
 }

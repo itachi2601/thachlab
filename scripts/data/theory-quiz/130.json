@@ -2,21 +2,16 @@
  "lesson_id": 130,
  "lesson_title": "Bài 3. Cơ năng",
  "item_id": 268,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 9,
+   "kien_thuc": 10,
    "cong_thuc": 10
   },
-  "removed": [
-   {
-    "question": "Con lắc đơn có bao nhiêu vị trí biên (A và B) mà tại đó thế năng lớn nhất?",
-    "reason": "nghi_ngo: Đáp án đúng nhưng đề đã nêu sẵn '(A và B)' nên lộ đáp án, câu không có giá trị kiểm tra."
-   }
-  ]
+  "removed": []
  },
  "questions": [
   {
@@ -26,52 +21,44 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Cơ năng của vật chuyển động dưới tác dụng của trọng lực bằng:",
-   "options": [
-    "Hiệu của động năng và thế năng",
-    "Tổng động năng và thế năng trọng trường",
-    "Tích của động năng và thế năng",
-    "Chỉ bằng động năng của vật"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu cơ năng bằng tổng động năng và thế năng trọng trường."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Bài 3. Cơ năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Với con lắc đơn, tại vị trí cân bằng O (gốc thế năng tại O) thì:",
+   "question": "Cơ năng của một vật chuyển động trong trọng trường là",
    "options": [
-    "Thế năng lớn nhất, động năng nhỏ nhất",
-    "Thế năng và động năng đều lớn nhất",
-    "Thế năng nhỏ nhất, động năng lớn nhất",
-    "Thế năng và động năng đều nhỏ nhất"
+    "hiệu của động năng và thế năng",
+    "năng lượng vật có khi đang chuyển động",
+    "tổng động năng và thế năng của vật",
+    "thế năng lớn nhất mà vật đạt được"
    ],
    "answer": 2,
-   "explanation": "Tại O thế năng nhỏ nhất, động năng lớn nhất."
+   "explanation": "Bài định nghĩa: cơ năng $W=W_{\\text{đ}}+W_{\\text{t}}$, là tổng động năng và thế năng.",
+   "distractorNotes": {
+    "A": "Cơ năng là tổng chứ không phải hiệu của hai dạng năng lượng.",
+    "B": "Đó chỉ là động năng, mới là một phần của cơ năng.",
+    "D": "Đó chỉ là một giá trị của thế năng, không phải cơ năng nói chung."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "hien_tuong",
+   "kind": "dinh_luat",
    "topic": "Bài 3. Cơ năng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Khi vật chuyển động từ thấp lên cao thì:",
+   "question": "Phát biểu nào sau đây về bảo toàn cơ năng là đúng?",
    "options": [
-    "Động năng chuyển hóa thành thế năng",
-    "Thế năng chuyển hóa thành động năng",
-    "Tốc độ tăng, độ cao tăng",
-    "Cơ năng chuyển hết thành nhiệt"
+    "Bỏ qua lực cản, cơ năng của vật không đổi",
+    "Cơ năng không đổi dù có lực cản hay không",
+    "Động năng của vật không đổi trong lúc rơi",
+    "Thế năng luôn bằng động năng tại mọi vị trí"
    ],
    "answer": 0,
-   "explanation": "Từ thấp lên cao tốc độ giảm, độ cao tăng: động năng chuyển hóa thành thế năng."
+   "explanation": "Bảo toàn cơ năng: khi bỏ qua lực cản, ma sát, tổng động năng và thế năng giữ nguyên.",
+   "distractorNotes": {
+    "B": "Có lực cản, ma sát thì cơ năng giảm dần vì một phần thành nhiệt.",
+    "C": "Khi rơi vật nhanh dần nên động năng tăng; chỉ tổng hai dạng năng mới không đổi.",
+    "D": "Hai dạng năng đổi qua lại; chúng chỉ bằng nhau ở một vị trí nhất định."
+   }
   },
   {
    "type": "multiple_choice",
@@ -81,15 +68,66 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Cơ năng của vật được bảo toàn khi vật:",
+   "question": "Điều kiện để áp dụng định luật bảo toàn cơ năng cho một vật là",
    "options": [
-    "Chuyển động có lực cản",
-    "Chuyển động không chịu tác dụng của lực cản",
-    "Đứng yên trên mặt đất",
-    "Chuyển động chậm"
+    "vật chuyển động thẳng đều trên mặt phẳng",
+    "vật đứng yên ở trên cao so với gốc",
+    "gốc thế năng đặt ở mặt đất",
+    "không có lực cản, ma sát tác dụng vào vật"
+   ],
+   "answer": 3,
+   "explanation": "Bài nêu: chỉ dùng bảo toàn cơ năng khi bỏ qua lực cản, ma sát.",
+   "distractorNotes": {
+    "A": "Chuyển động thẳng đều không bảo đảm vắng ma sát, và không phải điều kiện của định luật.",
+    "B": "Bảo toàn cơ năng nói về vật đang chuyển động đổi dạng năng, không cần đứng yên.",
+    "C": "Gốc thế năng chỉ để tính thế năng, không quyết định cơ năng có bảo toàn hay không."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc đơn đi từ biên A về vị trí cân bằng O. Trong quá trình này",
+   "options": [
+    "động năng giảm dần, thế năng tăng dần",
+    "thế năng giảm dần, động năng tăng dần",
+    "cả động năng và thế năng cùng tăng",
+    "cả động năng và thế năng cùng giảm"
    ],
    "answer": 1,
-   "explanation": "Không có lực cản thì cơ năng không đổi tại mọi thời điểm."
+   "explanation": "Từ biên về vị trí cân bằng vật thấp dần, nhanh dần: thế năng chuyển dần thành động năng.",
+   "distractorNotes": {
+    "A": "Đảo chiều chuyển hoá; đi xuống thì thế năng thành động năng.",
+    "C": "Nếu cả hai cùng tăng thì cơ năng tăng, trái với bảo toàn cơ năng.",
+    "D": "Nếu cả hai cùng giảm thì cơ năng giảm, trái với bảo toàn cơ năng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Con lắc đơn dao động, gốc thế năng ở vị trí cân bằng O. Khi con lắc ở vị trí biên",
+   "options": [
+    "thế năng bằng 0, động năng lớn nhất",
+    "động năng và thế năng đều bằng 0",
+    "động năng bằng 0, thế năng lớn nhất",
+    "động năng lớn nhất vì dây căng nhất"
+   ],
+   "answer": 2,
+   "explanation": "Ở biên vật cao nhất và đổi chiều: thế năng lớn nhất, động năng bằng 0.",
+   "distractorNotes": {
+    "A": "Đó là vị trí cân bằng O, không phải biên.",
+    "B": "Ở biên vật vẫn cao hơn O nên thế năng khác 0.",
+    "D": "Tại biên vật dừng trong tích tắc nên động năng bằng 0."
+   }
   },
   {
    "type": "multiple_choice",
@@ -99,15 +137,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Mũi tên được bắn đi từ chiếc cung có sự chuyển hóa:",
+   "question": "Thả quả bóng cao su xuống sàn cứng, mỗi lần nảy bóng lên thấp hơn lần trước. Giải thích đúng là",
    "options": [
-    "Động năng của mũi tên thành thế năng cánh cung",
-    "Thế năng của cánh cung thành động năng của mũi tên",
-    "Nhiệt năng thành thế năng",
-    "Động năng thành nhiệt năng"
+    "năng lượng mất hẳn, trái với bảo toàn năng lượng",
+    "cơ năng bảo toàn, thấp dần chỉ là cảm giác",
+    "động năng của bóng tăng sau mỗi lần nảy",
+    "cơ năng giảm, phần giảm thành nhiệt và âm thanh"
    ],
-   "answer": 1,
-   "explanation": "Theo bài: thế năng của cánh cung chuyển hóa thành động năng của mũi tên."
+   "answer": 3,
+   "explanation": "Mỗi lần va chạm có lực cản và va chạm, cơ năng giảm và chuyển thành nhiệt năng, âm thanh.",
+   "distractorNotes": {
+    "A": "Năng lượng không mất đi, chỉ chuyển sang dạng khó thấy như nhiệt và âm thanh.",
+    "B": "Độ cao đo được giảm nên thế năng ở điểm cao nhất giảm, tức cơ năng giảm.",
+    "C": "Bóng lên thấp dần nghĩa là lúc rời sàn bóng chậm hơn, động năng nhỏ hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trước khi tính thế năng trọng trường của một vật, cần xác định",
+   "options": [
+    "độ cao của vật so với gốc thế năng chọn",
+    "độ cao của vật so với nóc nhà gần nhất",
+    "tốc độ của vật tại thời điểm đang xét",
+    "chiều dài đường mà vật đã đi qua"
+   ],
+   "answer": 0,
+   "explanation": "$W_{\\text{t}}=10mh$ với $h$ là độ cao so với gốc thế năng, nên phải chọn gốc trước.",
+   "distractorNotes": {
+    "B": "Độ cao phải đo từ gốc thế năng đã chọn, không phải từ vật tuỳ ý.",
+    "C": "Tốc độ là của động năng; thế năng chỉ cần khối lượng và độ cao.",
+    "D": "Thế năng không phụ thuộc đường đi mà phụ thuộc độ cao so với gốc."
+   }
   },
   {
    "type": "multiple_choice",
@@ -116,117 +182,159 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Công thức tính cơ năng đúng là:",
+   "theorySection": 1,
+   "question": "Cơ năng của vật khối lượng $m$, tốc độ $v$, ở độ cao $h$ so với gốc thế năng được tính bằng",
    "options": [
-    "$W=10mh+\\frac{1}{2}mv^2$",
-    "$W=10mh-\\frac{1}{2}mv^2$",
-    "$W=mh+mv^2$",
-    "$W=10mh+\\frac{1}{2}m^2v$"
+    "$W=\\dfrac{1}{2}mv^2-10\\,m\\,h$",
+    "$W=\\dfrac{1}{2}mv^2+10\\,m\\,h$",
+    "$W=\\dfrac{1}{2}mv^2\\cdot10\\,m\\,h$",
+    "$W=mv^2+10\\,m\\,h$"
    ],
-   "answer": 0,
-   "explanation": "$W=W_t+W_d=10mh+\\frac{1}{2}mv^2$."
+   "answer": 1,
+   "explanation": "$W=W_{\\text{đ}}+W_{\\text{t}}=\\dfrac{1}{2}mv^2+10mh$.",
+   "distractorNotes": {
+    "A": "Cơ năng là tổng, không phải hiệu của động năng và thế năng.",
+    "C": "Hai phần được cộng với nhau, không nhân với nhau.",
+    "D": "Quên hệ số $\\dfrac{1}{2}$ trong động năng."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "bien_doi",
    "topic": "Bài 3. Cơ năng",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật đứng yên ở độ cao $h$ (gốc thế năng ở mặt đất) có cơ năng là:",
-   "options": [
-    "$\\frac{1}{2}mv^2$",
-    "$0$",
-    "$10mh$",
-    "$10mh+mv^2$"
-   ],
-   "answer": 2,
-   "explanation": "Đứng yên nên $v=0$, $W=10mh$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "don_vi",
-   "topic": "Bài 3. Cơ năng",
-   "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Đơn vị của cơ năng trong công thức của bài là:",
+   "theorySection": 5,
+   "question": "Thả rơi vật không vận tốc đầu từ độ cao $h$, bỏ qua sức cản. Từ bảo toàn cơ năng, vận tốc $v$ lúc chạm đất thoả mãn",
    "options": [
-    "N",
-    "W",
-    "J",
-    "m/s"
+    "$v^2=10\\,h$",
+    "$v=20\\,h$",
+    "$v^2=10\\,m\\,h$",
+    "$v^2=20\\,h$"
    ],
-   "answer": 2,
-   "explanation": "Bài ghi $W$ tính bằng (J)."
+   "answer": 3,
+   "explanation": "$10mh=\\dfrac{1}{2}mv^2$, giản ước $m$ được $v^2=20h$.",
+   "distractorNotes": {
+    "A": "Quên hệ số $\\dfrac{1}{2}$: từ $10mh=\\dfrac{1}{2}mv^2$ phải ra $v^2=20h$.",
+    "B": "Quên bình phương $v$ và quên lấy căn bậc hai ở bước cuối.",
+    "C": "Khối lượng $m$ ở hai vế triệt tiêu nên không còn trong biểu thức của $v^2$."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "tinh_nhanh",
-   "topic": "Bài 3. Cơ năng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật $m=1$ kg ở độ cao $h=2$ m, vận tốc $v=0$. Cơ năng là bao nhiêu J?",
-   "options": [
-    "2",
-    "10",
-    "20",
-    "40"
-   ],
-   "answer": 2,
-   "explanation": "$W=10mh=10\\cdot1\\cdot2=20$ J."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 3. Cơ năng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật $m=2$ kg ở mặt đất (gốc thế năng), $v=3$ m/s. Cơ năng là bao nhiêu J?",
-   "options": [
-    "3",
-    "6",
-    "9",
-    "18"
-   ],
-   "answer": 2,
-   "explanation": "$W=\\frac{1}{2}\\cdot2\\cdot3^2=9$ J."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
    "topic": "Bài 3. Cơ năng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về sự bảo toàn cơ năng:",
-   "statements": [
-    {
-     "text": "Động năng và thế năng có thể chuyển hóa qua lại lẫn nhau.",
-     "answer": true
-    },
-    {
-     "text": "Không có lực cản thì cơ năng không đổi tại mọi thời điểm.",
-     "answer": true
-    },
-    {
-     "text": "Vật đi từ cao xuống thấp thì thế năng tăng.",
-     "answer": false
-    },
-    {
-     "text": "Vật đi từ cao xuống thấp thì tốc độ tăng.",
-     "answer": true
-    }
+   "question": "Vật rơi tự do, bỏ qua lực cản. Khi thế năng của vật giảm $5\\ \\text{J}$ thì động năng của vật",
+   "options": [
+    "tăng $5\\ \\text{J}$",
+    "giảm $5\\ \\text{J}$",
+    "tăng $10\\ \\text{J}$",
+    "không đổi"
    ],
-   "explanation": "Theo phần kết luận: thế năng giảm, động năng tăng khi đi xuống."
+   "answer": 0,
+   "explanation": "Cơ năng không đổi: thế năng giảm bao nhiêu thì động năng tăng bấy nhiêu.",
+   "distractorNotes": {
+    "B": "Rơi thì nhanh dần nên động năng tăng, không giảm.",
+    "C": "Cơ năng không đổi nên động năng chỉ tăng đúng bằng thế năng đã giảm.",
+    "D": "Thế năng giảm mà động năng không đổi thì cơ năng giảm, trái với bảo toàn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Con lắc đơn thả từ biên A cao $20\\ \\text{cm}$ so với O, bỏ qua lực cản. Khi $W_{\\text{đ}}=W_{\\text{t}}$ thì vật cao so với O là",
+   "options": [
+    "$20\\ \\text{cm}$",
+    "$0\\ \\text{cm}$",
+    "$10\\ \\text{cm}$",
+    "$5\\ \\text{cm}$"
+   ],
+   "answer": 2,
+   "explanation": "$W_{\\text{đ}}=W_{\\text{t}}$ nên $W_{\\text{t}}=\\dfrac{W}{2}$, tức độ cao bằng một nửa: $10\\ \\text{cm}$.",
+   "distractorNotes": {
+    "A": "Đó là độ cao tại biên, nơi động năng bằng 0 chứ chưa bằng thế năng.",
+    "B": "Đó là O, nơi thế năng bằng 0 chứ chưa bằng động năng.",
+    "D": "Thế năng bằng nửa cơ năng nên độ cao bằng nửa độ cao cực đại, không phải một phần tư."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Vật $1\\ \\text{kg}$ ở độ cao $2\\ \\text{m}$ so với mặt đất, đang có vận tốc $4\\ \\text{m/s}$. Gốc thế năng ở mặt đất. Cơ năng của vật là",
+   "options": [
+    "$20\\ \\text{J}$",
+    "$28\\ \\text{J}$",
+    "$36\\ \\text{J}$",
+    "$10\\ \\text{J}$"
+   ],
+   "answer": 1,
+   "explanation": "$W_{\\text{t}}=10\\cdot1\\cdot2=20\\ \\text{J}$, $W_{\\text{đ}}=\\dfrac{1}{2}\\cdot1\\cdot4^2=8\\ \\text{J}$, $W=28\\ \\text{J}$.",
+   "distractorNotes": {
+    "A": "Chỉ tính thế năng $10\\cdot1\\cdot2$, quên cộng động năng.",
+    "C": "Quên hệ số $\\dfrac{1}{2}$: động năng tính ra $16$ thay vì $8$.",
+    "D": "Tính thế năng $m\\,h=2$ (quên hệ số $10$) rồi cộng động năng $8$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Ném vật $0{,}5\\ \\text{kg}$ thẳng đứng lên từ mặt đất với động năng $20\\ \\text{J}$, bỏ qua sức cản. Độ cao lớn nhất vật lên được là",
+   "options": [
+    "$2\\ \\text{m}$",
+    "$40\\ \\text{m}$",
+    "$8\\ \\text{m}$",
+    "$4\\ \\text{m}$"
+   ],
+   "answer": 3,
+   "explanation": "Ở điểm cao nhất $W=W_{\\text{t}}=10mh_{\\max}=20$, suy ra $h_{\\max}=\\dfrac{20}{10\\cdot0{,}5}=4\\ \\text{m}$.",
+   "distractorNotes": {
+    "A": "Chia $20$ cho $10$ mà quên chia tiếp cho khối lượng $0{,}5$.",
+    "B": "Chia $20$ cho $0{,}5$ mà quên hệ số $10$ trong thế năng.",
+    "C": "Nhân đôi nhầm vì tưởng thế năng có hệ số $\\dfrac{1}{2}$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Thả rơi hai vật khối lượng khác nhau từ cùng một độ cao, bỏ qua sức cản. Vận tốc lúc chạm đất của hai vật",
+   "options": [
+    "bằng nhau",
+    "lớn hơn ở vật nặng hơn",
+    "lớn hơn ở vật nhẹ hơn",
+    "chưa so sánh được vì chưa biết khối lượng"
+   ],
+   "answer": 0,
+   "explanation": "Từ $10mh=\\dfrac{1}{2}mv^2$ được $v^2=20h$, không phụ thuộc $m$: hai vật chạm đất cùng vận tốc.",
+   "distractorNotes": {
+    "B": "Khối lượng triệt tiêu ở hai vế của bảo toàn cơ năng nên không ảnh hưởng $v$.",
+    "C": "Không có lí do vật nhẹ nhanh hơn; $v^2=20h$ không chứa khối lượng.",
+    "D": "Khối lượng không có trong biểu thức của $v$, nên không cần biết."
+   }
   },
   {
    "type": "true_false",
@@ -236,26 +344,102 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về con lắc đơn dao động quanh O:",
+   "question": "Con lắc đơn dao động qua lại A, O, B với O là vị trí thấp nhất và là gốc thế năng, bỏ qua lực cản. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Tại biên A, B thế năng lớn nhất.",
-     "answer": true
-    },
-    {
-     "text": "Tại biên A, B động năng lớn nhất.",
+     "text": "Từ O đi lên B, thế năng chuyển dần thành động năng.",
      "answer": false
     },
     {
-     "text": "Từ O đến A tốc độ giảm dần.",
+     "text": "Tại hai biên A và B, thế năng của con lắc lớn nhất.",
      "answer": true
     },
     {
-     "text": "Từ A đến O động năng chuyển hóa thành thế năng.",
+     "text": "Tại biên A, cơ năng của con lắc bằng 0 vì vật dừng lại.",
+     "answer": false
+    },
+    {
+     "text": "Tại O, động năng của con lắc lớn nhất.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai: đi lên thì động năng thành thế năng. b) đúng. c) sai: cơ năng ở biên bằng thế năng, khác 0. d) đúng.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì đi lên thì vật chậm dần và cao dần, tức động năng chuyển thành thế năng.",
+    "1": "Không thể coi là sai vì ở biên vật cao nhất so với O nên $h$ lớn nhất.",
+    "2": "Không thể coi là đúng vì vật dừng chỉ làm động năng bằng 0; vật còn ở trên cao nên cơ năng bằng thế năng.",
+    "3": "Không thể coi là sai vì O thấp nhất, thế năng bằng 0 nên toàn bộ cơ năng là động năng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Thả bóng cao su từ độ cao $1{,}00\\ \\text{m}$, ba lần nảy đầu bóng lên được $0{,}80\\ \\text{m}$, $0{,}64\\ \\text{m}$, $0{,}51\\ \\text{m}$. Xét các nhận xét sau:",
+   "statements": [
+    {
+     "text": "Cơ năng của bóng giảm sau mỗi lần nảy.",
+     "answer": true
+    },
+    {
+     "text": "Phần cơ năng giảm đi chuyển thành nhiệt năng và âm thanh.",
+     "answer": true
+    },
+    {
+     "text": "Hiện tượng này trái với định luật bảo toàn năng lượng.",
+     "answer": false
+    },
+    {
+     "text": "Cơ năng của bóng được bảo toàn qua mỗi lần va chạm với sàn.",
      "answer": false
     }
    ],
-   "explanation": "Từ A đến O thế năng chuyển hóa thành động năng; tại biên động năng nhỏ nhất."
+   "explanation": "a) đúng. b) đúng. c) sai: tổng năng lượng, kể cả nhiệt năng, vẫn bảo toàn. d) sai: bóng nảy thấp dần.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì độ cao cực đại giảm nên thế năng ở điểm cao nhất giảm.",
+    "1": "Không thể coi là sai vì bóng và sàn nóng lên chút ít, có tiếng động khi va chạm.",
+    "2": "Không thể coi là đúng vì năng lượng chỉ chuyển sang dạng khó thấy, tổng năng lượng vẫn bảo toàn.",
+    "3": "Không thể coi là đúng vì nếu bảo toàn thì bóng phải nảy lên cùng độ cao lúc thả, mà đo được thấp dần."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Ném quả bóng thẳng đứng lên, bỏ qua sức cản, gốc thế năng ở mặt đất. Xét các nhận xét sau về lúc bóng ở điểm cao nhất:",
+   "statements": [
+    {
+     "text": "Động năng của bóng bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Cơ năng của bóng bằng 0 vì bóng dừng lại.",
+     "answer": false
+    },
+    {
+     "text": "Cơ năng của bóng lúc đi lên lớn hơn lúc đi xuống.",
+     "answer": false
+    },
+    {
+     "text": "Cơ năng của bóng bằng thế năng của bóng.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng. b) sai: $W=W_{\\text{t}}\\neq0$. c) sai: cơ năng bảo toàn. d) đúng.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì bóng dừng trong tích tắc nên $v=0$.",
+    "1": "Không thể coi là đúng vì dừng chỉ làm động năng bằng 0, bóng ở trên cao nên vẫn có thế năng.",
+    "2": "Không thể coi là đúng vì bỏ qua sức cản nên cơ năng không đổi ở mọi vị trí.",
+    "3": "Không thể coi là sai vì động năng bằng 0 nên $W=W_{\\text{t}}$."
+   }
   },
   {
    "type": "true_false",
@@ -264,116 +448,103 @@
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Về công thức $W=10mh+\\frac{1}{2}mv^2$:",
+   "theorySection": 4,
+   "question": "Từ độ cao $1{,}5\\ \\text{m}$ ném quả bóng $0{,}4\\ \\text{kg}$ thẳng đứng lên với vận tốc $6\\ \\text{m/s}$, bỏ qua sức cản, gốc thế năng ở mặt đất. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "$10mh$ là thế năng trọng trường.",
-     "answer": true
-    },
-    {
-     "text": "$\\frac{1}{2}mv^2$ là động năng.",
-     "answer": true
-    },
-    {
-     "text": "Khi $v=0$ thì cơ năng bằng 0.",
+     "text": "Cơ năng của bóng lúc ném là $7{,}2\\ \\text{J}$.",
      "answer": false
     },
     {
-     "text": "Khi $h=0$ thì cơ năng bằng động năng.",
+     "text": "Thế năng của bóng lúc ném là $6\\ \\text{J}$.",
      "answer": true
+    },
+    {
+     "text": "Động năng của bóng lúc ném là $7{,}2\\ \\text{J}$.",
+     "answer": true
+    },
+    {
+     "text": "Ném thẳng đứng xuống với cùng vận tốc thì cơ năng lúc ném nhỏ hơn.",
+     "answer": false
     }
    ],
-   "explanation": "Khi $v=0$ cơ năng bằng thế năng $10mh$, không bằng 0."
+   "explanation": "a) sai: $W=6+7{,}2=13{,}2\\ \\text{J}$. b) đúng. c) đúng. d) sai: động năng không phụ thuộc chiều chuyển động.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $7{,}2\\ \\text{J}$ mới là động năng; cơ năng còn cộng thế năng $6\\ \\text{J}$ thành $13{,}2\\ \\text{J}$.",
+    "1": "Không thể coi là sai vì $10\\cdot0{,}4\\cdot1{,}5=6\\ \\text{J}$.",
+    "2": "Không thể coi là sai vì $\\dfrac{1}{2}\\cdot0{,}4\\cdot6^2=7{,}2\\ \\text{J}$.",
+    "3": "Không thể coi là đúng vì động năng không phụ thuộc chiều chuyển động nên cơ năng vẫn là $13{,}2\\ \\text{J}$."
+   }
   },
   {
    "type": "true_false",
-   "kind": "hien_tuong",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 3. Cơ năng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Thả hai vật $1\\ \\text{kg}$ và $5\\ \\text{kg}$ cùng lúc từ độ cao $5\\ \\text{m}$, bỏ qua sức cản. Xét các nhận xét sau:",
+   "statements": [
+    {
+     "text": "Cơ năng ban đầu của vật $5\\ \\text{kg}$ gấp $5$ lần vật $1\\ \\text{kg}$.",
+     "answer": true
+    },
+    {
+     "text": "Vật nặng hơn chạm đất với vận tốc lớn hơn.",
+     "answer": false
+    },
+    {
+     "text": "Hai vật chạm đất với cùng vận tốc $10\\ \\text{m/s}$.",
+     "answer": true
+    },
+    {
+     "text": "Khối lượng có mặt trong biểu thức tính $v^2$ lúc chạm đất.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng. b) sai: vận tốc không phụ thuộc khối lượng. c) đúng: $v^2=20\\cdot5=100$. d) sai: $m$ bị giản ước.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì cùng độ cao, thế năng $10mh$ tỉ lệ với khối lượng.",
+    "1": "Không thể coi là đúng vì khối lượng triệt tiêu trong bảo toàn cơ năng nên không ảnh hưởng vận tốc.",
+    "2": "Không thể coi là sai vì $v^2=20h=100$ nên $v=10\\ \\text{m/s}$, không phụ thuộc khối lượng.",
+    "3": "Không thể coi là đúng vì hai vế đều có $m$ nên giản ước, còn lại $v^2=20h$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
    "topic": "Bài 3. Cơ năng",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Quả bóng cao su thả từ độ cao h, nảy lên thấp dần:",
+   "question": "Quả cam $0{,}2\\ \\text{kg}$ trên cành cao $3\\ \\text{m}$ so với mặt đất, mặt bàn dưới gốc cây cao $1\\ \\text{m}$. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Cơ năng của bóng giảm dần.",
-     "answer": true
-    },
-    {
-     "text": "Điều này trái định luật bảo toàn năng lượng.",
+     "text": "Chọn gốc ở mặt bàn thì độ cao của quả cam là $3+1=4\\ \\text{m}$.",
      "answer": false
     },
     {
-     "text": "Một phần cơ năng biến thành nhiệt năng khi va chạm.",
+     "text": "Chọn gốc ở mặt bàn thì thế năng quả cam vẫn là $6\\ \\text{J}$.",
+     "answer": false
+    },
+    {
+     "text": "Chọn gốc ở mặt đất thì thế năng của quả cam là $6\\ \\text{J}$.",
      "answer": true
     },
     {
-     "text": "Cơ năng biến mất hoàn toàn.",
-     "answer": false
+     "text": "Chọn gốc ở mặt bàn thì thế năng của quả cam là $4\\ \\text{J}$.",
+     "answer": true
     }
    ],
-   "explanation": "Một phần cơ năng thành nhiệt năng, không trái định luật bảo toàn năng lượng."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 3. Cơ năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật $m=3$ kg ở độ cao $2$ m, đứng yên. Cơ năng bằng bao nhiêu J?",
-   "answer": "60",
-   "explanation": "$W=10\\cdot3\\cdot2=60$ J."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 3. Cơ năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật $m=2$ kg ở mặt đất, $v=4$ m/s. Cơ năng bằng bao nhiêu J?",
-   "answer": "16",
-   "explanation": "$W=\\frac{1}{2}\\cdot2\\cdot16=16$ J."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 3. Cơ năng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật $m=1$ kg ở độ cao $5$ m, $v=2$ m/s. Cơ năng bằng bao nhiêu J?",
-   "answer": "52",
-   "explanation": "$W=10\\cdot1\\cdot5+\\frac{1}{2}\\cdot1\\cdot4=52$ J."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_nghia",
-   "topic": "Bài 3. Cơ năng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Trong công thức cơ năng, hệ số của $mv^2$ là $\\frac{1}{k}$. Tìm $k$.",
-   "answer": "2",
-   "explanation": "Động năng là $\\frac{1}{2}mv^2$ nên $k=2$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "cong_thuc",
-   "topic": "Bài 3. Cơ năng",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Vật $m=4$ kg đứng yên có cơ năng $80$ J (gốc thế năng ở mặt đất). Độ cao $h$ bằng bao nhiêu m?",
-   "answer": "2",
-   "explanation": "$W=10mh\\Rightarrow h=80/(10\\cdot4)=2$ m."
+   "explanation": "a) sai: $h=3-1$. b) sai: đổi gốc thì thế năng đổi. c) đúng. d) đúng: $h=2\\ \\text{m}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì bàn nằm dưới quả cam nên độ cao so với bàn là $3-1=2\\ \\text{m}$.",
+    "1": "Không thể coi là đúng vì độ cao so với gốc mới là $2\\ \\text{m}$ nên thế năng đổi thành $4\\ \\text{J}$.",
+    "2": "Không thể coi là sai vì $10\\cdot0{,}2\\cdot3=6\\ \\text{J}$.",
+    "3": "Không thể coi là sai vì $h=3-1=2\\ \\text{m}$ nên $W_{\\text{t}}=10\\cdot0{,}2\\cdot2=4\\ \\text{J}$."
+   }
   }
  ]
 }

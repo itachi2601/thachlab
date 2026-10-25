@@ -2,14 +2,14 @@
  "lesson_id": 84,
  "lesson_title": "Bài 6. Phản xạ toàn phần",
  "item_id": 278,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 11,
-   "cong_thuc": 9
+   "kien_thuc": 13,
+   "cong_thuc": 7
   },
   "removed": []
  },
@@ -22,15 +22,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Hiện tượng phản xạ toàn phần là hiện tượng:",
+   "question": "Phản xạ toàn phần là hiện tượng",
    "options": [
-    "Toàn bộ tia tới bị phản xạ tại mặt phân cách, không còn tia khúc xạ",
-    "Tia tới bị hấp thụ hoàn toàn tại mặt phân cách",
-    "Tia khúc xạ đi thẳng, không bị lệch hướng",
-    "Tia phản xạ yếu hơn tia tới rất nhiều"
+    "một phần ánh sáng bị phản xạ, phần còn lại khúc xạ sang môi trường kia",
+    "toàn bộ ánh sáng tới bị phản xạ lại, không còn tia khúc xạ",
+    "ánh sáng bị hấp thụ hết nên không còn tia nào ló ra",
+    "tia khúc xạ trùng với pháp tuyến tại điểm tới"
    ],
-   "answer": 0,
-   "explanation": "Phản xạ toàn phần là toàn bộ ánh sáng tới bị phản xạ, không còn tia khúc xạ (mục II.1)."
+   "answer": 1,
+   "explanation": "Phản xạ toàn phần: toàn bộ ánh sáng tới bị phản xạ tại mặt phân cách hai môi trường trong suốt, không còn tia khúc xạ.",
+   "distractorNotes": {
+    "A": "Đó là tình huống thông thường ở mọi mặt phân cách; phản xạ toàn phần thì không còn phần khúc xạ.",
+    "C": "Nhầm với sự hấp thụ; ở đây ánh sáng không mất mà bật trở lại môi trường cũ.",
+    "D": "Tia khúc xạ trùng pháp tuyến khi tia tới vuông góc, đó không phải phản xạ toàn phần."
+   }
   },
   {
    "type": "multiple_choice",
@@ -40,15 +45,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Góc tới hạn $i_{th}$ là góc tới ứng với:",
+   "question": "Góc tới hạn $i_{th}$ là góc tới mà tại đó",
    "options": [
-    "Tia phản xạ vuông góc với tia tới",
-    "Tia khúc xạ đi sát mặt phân cách ($r = 90^\\circ$)",
-    "Tia khúc xạ trùng với pháp tuyến",
-    "Tia tới trùng với pháp tuyến"
+    "tia phản xạ vuông góc với tia tới, ứng với $i = 45^\\circ$",
+    "góc khúc xạ bằng góc tới, ứng với $r = i$ ở mọi môi trường",
+    "tia khúc xạ trùng với pháp tuyến, ứng với $r = 0^\\circ$",
+    "tia khúc xạ đi sát mặt phân cách, ứng với $r = 90^\\circ$"
    ],
-   "answer": 1,
-   "explanation": "Góc tới hạn là góc tới mà tia khúc xạ đi sát mặt phân cách, $r = 90^\\circ$."
+   "answer": 3,
+   "explanation": "Góc tới hạn là góc tới ứng với tia khúc xạ đi sát mặt phân cách ($r = 90^\\circ$).",
+   "distractorNotes": {
+    "A": "Không có quan hệ giữa tia phản xạ vuông góc tia tới và góc tới hạn.",
+    "B": "Điều đó chỉ xảy ra khi hai chiết suất bằng nhau, không liên quan đến góc tới hạn.",
+    "C": "Đó là trường hợp tia tới vuông góc, không phải góc tới hạn."
+   }
   },
   {
    "type": "multiple_choice",
@@ -58,15 +68,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Điều kiện 1 để có phản xạ toàn phần là ánh sáng truyền từ môi trường:",
+   "question": "Điều kiện thứ nhất để có phản xạ toàn phần là ánh sáng truyền từ môi trường",
    "options": [
-    "Chiết suất nhỏ sang môi trường chiết suất lớn",
-    "Có cùng chiết suất với môi trường thứ hai",
-    "Chiết suất lớn sang môi trường chiết suất nhỏ",
-    "Bất kỳ sang môi trường bất kỳ"
+    "chiết quang hơn sang môi trường chiết quang kém hơn",
+    "chiết quang kém sang môi trường chiết quang hơn",
+    "bất kì sang môi trường bất kì miễn mặt phân cách phẳng",
+    "chân không sang mọi môi trường trong suốt khác bất kì"
+   ],
+   "answer": 0,
+   "explanation": "Điều kiện 1: ánh sáng đi từ môi trường có chiết suất lớn hơn sang môi trường có chiết suất nhỏ hơn ($n_1 > n_2$).",
+   "distractorNotes": {
+    "B": "Đảo chiều; vào môi trường chiết quang hơn luôn có tia khúc xạ nên không có phản xạ toàn phần.",
+    "C": "Phản xạ toàn phần phụ thuộc chiều truyền và chiết suất, không phải độ phẳng của mặt.",
+    "D": "Từ chân không sang môi trường khác là đi vào môi trường chiết quang hơn nên không có."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Điều kiện xảy ra phản xạ toàn phần",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi ánh sáng đã đi đúng chiều từ môi trường chiết quang hơn sang kém hơn, điều kiện thứ hai để có phản xạ toàn phần là góc tới",
+   "options": [
+    "nhỏ hơn góc tới hạn",
+    "bằng $0^\\circ$ để tia đi thẳng",
+    "lớn hơn hoặc bằng góc tới hạn",
+    "đúng bằng $90^\\circ$ thì mới xảy ra"
    ],
    "answer": 2,
-   "explanation": "Cần $n_1 \\gt n_2$: đi từ môi trường chiết quang hơn sang chiết quang kém."
+   "explanation": "Điều kiện 2: $i \\ge i_{th}$.",
+   "distractorNotes": {
+    "A": "Góc tới nhỏ hơn góc tới hạn thì vẫn còn tia khúc xạ ló ra.",
+    "B": "Tia vuông góc đi thẳng, đó là trường hợp không có hiện tượng này.",
+    "D": "Không cần đúng $90^\\circ$; chỉ cần vượt góc tới hạn."
+   }
   },
   {
    "type": "multiple_choice",
@@ -76,69 +114,112 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Công thức đúng tính góc tới hạn khi ánh sáng đi từ môi trường $n_1$ sang $n_2$ ($n_1 \\gt n_2$) là:",
+   "question": "Ánh sáng đi từ môi trường chiết suất $n_1$ sang môi trường chiết suất $n_2$ với $n_1 > n_2$. Công thức góc tới hạn là",
    "options": [
     "$\\sin i_{th} = \\dfrac{n_1}{n_2}$",
-    "$\\sin i_{th} = \\dfrac{n_2}{n_1}$",
-    "$\\sin i_{th} = n_1 n_2$",
-    "$\\cos i_{th} = \\dfrac{n_2}{n_1}$"
+    "$\\sin i_{th} = n_1 \\cdot n_2$",
+    "$i_{th} = \\dfrac{n_2}{n_1}$",
+    "$\\sin i_{th} = \\dfrac{n_2}{n_1}$"
    ],
-   "answer": 1,
-   "explanation": "Mẹo \"nhỏ trên lớn\": $\\sin i_{th} = n_2/n_1$. Đảo tử mẫu sẽ cho giá trị lớn hơn 1."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ánh sáng đi từ môi trường chiết suất $n$ ra không khí thì $\\sin i_{th}$ bằng:",
-   "options": [
-    "$n$",
-    "$\\dfrac{1}{n}$",
-    "$n^2$",
-    "$1 - n$"
-   ],
-   "answer": 1,
-   "explanation": "Với $n_2 = 1$ thì $\\sin i_{th} = 1/n_1$."
+   "answer": 3,
+   "explanation": "Tại góc tới hạn $r = 90^\\circ$ nên $n_1 \\sin i_{th} = n_2$, suy ra $\\sin i_{th} = \\dfrac{n_2}{n_1}$.",
+   "distractorNotes": {
+    "A": "Đảo tử và mẫu; khi đó sin lớn hơn 1, điều không thể có.",
+    "B": "Nhân hai chiết suất; tích lớn hơn 1 nên không thể là giá trị của sin.",
+    "C": "Thiếu hàm sin; tỉ số hai chiết suất bằng $\\sin i_{th}$ chứ không phải chính góc."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "tinh_nhanh",
    "topic": "Tính góc tới hạn, ứng dụng cáp quang",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Ánh sáng đi từ chất lỏng có chiết suất $1{,}25$ ra không khí. Giá trị $\\sin i_{th}$ là:",
+   "question": "Ánh sáng đi từ một chất lỏng có chiết suất $n = 2$ ra không khí. Giá trị $\\sin i_{th}$ bằng",
    "options": [
-    "$1{,}25$",
-    "$0{,}25$",
-    "$0{,}8$",
-    "$0{,}625$"
+    "$2$",
+    "$0{,}5$",
+    "$1$",
+    "$0{,}25$"
    ],
-   "answer": 2,
-   "explanation": "$\\sin i_{th} = 1/1{,}25 = 0{,}8$."
+   "answer": 1,
+   "explanation": "Ra không khí thì $\\sin i_{th} = \\dfrac{1}{n} = \\dfrac{1}{2} = 0{,}5$.",
+   "distractorNotes": {
+    "A": "Lấy $n$ thay cho $1/n$; sin không thể lớn hơn 1.",
+    "C": "Nhầm với $\\sin r = 1$ tại góc tới hạn; $\\sin i_{th}$ phải nhỏ hơn 1.",
+    "D": "Bình phương chiết suất; công thức là $1/n$ chứ không phải $1/n^2$."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
+   "kind": "tinh_nhanh",
    "topic": "Tính góc tới hạn, ứng dụng cáp quang",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Cấu tạo của sợi quang trong cáp quang gồm:",
+   "question": "Ánh sáng đi từ các chất khác nhau ra không khí. Chất có chiết suất càng lớn thì góc tới hạn",
    "options": [
-    "Lõi có chiết suất nhỏ hơn lớp vỏ",
-    "Lõi và vỏ có cùng chiết suất",
-    "Lõi bằng kim loại, vỏ trong suốt",
-    "Lõi trong suốt, bọc vỏ có chiết suất nhỏ hơn lõi"
+    "càng nhỏ",
+    "càng lớn",
+    "luôn bằng $90^\\circ$",
+    "không phụ thuộc chiết suất"
    ],
-   "answer": 3,
-   "explanation": "Sợi quang có lõi trong suốt bọc vỏ có chiết suất nhỏ hơn lõi."
+   "answer": 0,
+   "explanation": "Vì $\\sin i_{th} = \\dfrac{1}{n}$ nên $n$ càng lớn thì $i_{th}$ càng nhỏ, ánh sáng càng dễ bị nhốt bên trong.",
+   "distractorNotes": {
+    "B": "Từ $\\sin i_{th} = 1/n$, $n$ tăng thì $\\sin i_{th}$ giảm, nên $i_{th}$ giảm.",
+    "C": "$90^\\circ$ chỉ là giới hạn của góc tới, không phải giá trị cố định cho mọi chất.",
+    "D": "Góc tới hạn được tính trực tiếp từ chiết suất nên có phụ thuộc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Điều kiện xảy ra phản xạ toàn phần",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Trong khối thuỷ tinh, một tia sáng hợp với mặt phân cách thuỷ tinh – không khí góc $20^\\circ$. Góc tới bằng",
+   "options": [
+    "$20^\\circ$",
+    "$110^\\circ$",
+    "$70^\\circ$",
+    "$160^\\circ$"
+   ],
+   "answer": 2,
+   "explanation": "Góc tới đo từ pháp tuyến: $i = 90^\\circ - 20^\\circ = 70^\\circ$.",
+   "distractorNotes": {
+    "A": "Lấy góc hợp với mặt phân cách làm góc tới; góc tới phải đo từ pháp tuyến.",
+    "B": "Cộng $90^\\circ$ với $20^\\circ$ thay vì lấy $90^\\circ$ trừ đi $20^\\circ$.",
+    "D": "Lấy $180^\\circ - 20^\\circ$, trong khi góc tới nhọn và bằng $90^\\circ - 20^\\circ$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Điều kiện xảy ra phản xạ toàn phần",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Chiếu đèn pin từ không khí xuống mặt hồ rất xiên. Mặt nước",
+   "options": [
+    "gây phản xạ toàn phần, vì góc tới đã rất lớn so với pháp tuyến",
+    "không có phản xạ toàn phần, vì ánh sáng đi vào nước",
+    "gây phản xạ toàn phần, nhưng chỉ khi mặt nước thật phẳng lặng",
+    "hấp thụ hết ánh sáng nên không còn tia nào vào nước"
+   ],
+   "answer": 1,
+   "explanation": "Từ không khí vào nước là đi vào môi trường chiết quang hơn nên không có góc tới hạn và không có phản xạ toàn phần.",
+   "distractorNotes": {
+    "A": "Chỉ xét góc mà quên chiều truyền; vào môi trường chiết quang hơn không có phản xạ toàn phần.",
+    "C": "Phản xạ toàn phần không phụ thuộc độ phẳng mà phụ thuộc chiều truyền và góc tới.",
+    "D": "Ánh sáng vẫn khúc xạ vào nước nên đáy hồ nông vẫn sáng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -148,239 +229,322 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Cáp quang dẫn truyền ánh sáng nhờ:",
+   "question": "Ánh sáng truyền dọc theo sợi quang nhờ",
    "options": [
-    "Phản xạ toàn phần lặp lại nhiều lần trên thành sợi",
-    "Ánh sáng bị hấp thụ dần trong lõi",
-    "Khúc xạ ánh sáng từ lõi ra vỏ",
-    "Tán sắc ánh sáng trong lõi"
-   ],
-   "answer": 0,
-   "explanation": "Ánh sáng bị phản xạ toàn phần liên tiếp tại mặt lõi – vỏ."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Phản xạ toàn phần",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "So với phản xạ trên gương thông thường, trong phản xạ toàn phần tia phản xạ:",
-   "options": [
-    "Yếu hơn tia tới nhiều",
-    "Sáng gần bằng tia tới",
-    "Không tuân theo định luật phản xạ",
-    "Luôn xảy ra với mọi góc tới"
-   ],
-   "answer": 1,
-   "explanation": "Phản xạ toàn phần: tia phản xạ sáng như tia tới; phản xạ gương thì luôn yếu hơn."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Điều kiện xảy ra phản xạ toàn phần",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Tia sáng trong thủy tinh ($i_{th} \\approx 42^\\circ$) hợp với mặt phân cách với không khí góc $30^\\circ$. Góc tới là:",
-   "options": [
-    "$30^\\circ$",
-    "$150^\\circ$",
-    "$45^\\circ$",
-    "$60^\\circ$"
+    "khúc xạ liên tiếp làm tia sáng lệch dần theo hình sợi",
+    "phản xạ một phần tại thành sợi như ở mặt gương phẳng",
+    "vỏ hấp thụ ánh sáng rồi phát lại về phía đầu kia",
+    "phản xạ toàn phần liên tiếp tại mặt lõi – vỏ"
    ],
    "answer": 3,
-   "explanation": "Góc tới đo với pháp tuyến: $i = 90^\\circ - 30^\\circ = 60^\\circ$."
+   "explanation": "Lõi có chiết suất lớn hơn vỏ nên ánh sáng trong lõi phản xạ toàn phần hết lần này đến lần khác tại mặt lõi – vỏ.",
+   "distractorNotes": {
+    "A": "Khúc xạ cho tia đi ra khỏi lõi chứ không giữ tia ở trong lõi.",
+    "B": "Phản xạ một phần làm ánh sáng thất thoát qua thành sợi sau vài lần.",
+    "C": "Vỏ không hấp thụ rồi phát lại; vai trò của vỏ là có chiết suất nhỏ hơn lõi."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Khi gập sợi quang quá gắt, tín hiệu yếu đi nhiều. Nguyên nhân đúng là",
+   "options": [
+    "ánh sáng bị chậm lại nhiều tại đoạn sợi bị gập gắt",
+    "chiết suất của lõi tăng lên tại đoạn sợi bị gập gắt",
+    "góc tới tại thành sợi nhỏ đi, ánh sáng lọt ra vỏ",
+    "ánh sáng bị phản xạ ngược trở về đầu sợi đã phát"
+   ],
+   "answer": 2,
+   "explanation": "Chỗ gập gắt làm góc tới tại thành sợi tụt dưới $i_{th}$, điều kiện 2 không còn, ánh sáng khúc xạ ra vỏ.",
+   "distractorNotes": {
+    "A": "Gập sợi không làm đổi chất liệu lõi nên tốc độ ánh sáng trong lõi không đổi.",
+    "B": "Chiết suất do chất làm lõi quyết định, không đổi khi uốn sợi.",
+    "D": "Phản xạ ngược không làm ánh sáng thoát ra ngoài; vấn đề là ánh sáng lọt qua vỏ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Điều kiện xảy ra phản xạ toàn phần",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Đèn đặt dưới đáy bể, góc tới hạn của nước ra không khí khoảng $48{,}8^\\circ$. Một tia sáng tới mặt nước với góc tới $50^\\circ$ sẽ",
+   "options": [
+    "bị phản xạ toàn phần trở lại vào nước",
+    "ló ra không khí với góc khúc xạ bằng $50^\\circ$",
+    "ló ra không khí và đi sát mặt nước",
+    "ló ra không khí với góc khúc xạ nhỏ hơn $50^\\circ$"
+   ],
+   "answer": 0,
+   "explanation": "Vì $50^\\circ > 48{,}8^\\circ$ và ánh sáng đi từ nước ra không khí, đủ cả hai điều kiện nên phản xạ toàn phần.",
+   "distractorNotes": {
+    "B": "Quên khúc xạ; tia ló ra không khí thì góc khúc xạ luôn khác góc tới.",
+    "C": "Chỉ khi góc tới đúng bằng góc tới hạn tia ló mới đi sát mặt nước.",
+    "D": "Ra không khí thì góc khúc xạ lớn hơn góc tới, và ở đây còn không có tia ló."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ánh sáng đi từ thuỷ tinh ($n = 1{,}5$) sang nước ($n = 1{,}33$). Biểu thức đúng của góc tới hạn là",
+   "options": [
+    "$\\sin i_{th} = \\dfrac{1}{1{,}5}$",
+    "$\\sin i_{th} = \\dfrac{1{,}33}{1{,}5}$",
+    "$\\sin i_{th} = \\dfrac{1}{1{,}33}$",
+    "$\\sin i_{th} = \\dfrac{1{,}5}{1{,}33}$"
+   ],
+   "answer": 1,
+   "explanation": "Công thức là \"nhỏ trên lớn\": $\\sin i_{th} = \\dfrac{n_2}{n_1} = \\dfrac{1{,}33}{1{,}5}$.",
+   "distractorNotes": {
+    "A": "Coi môi trường kia là không khí; ở đây môi trường thứ hai là nước nên $n_2 = 1{,}33$.",
+    "C": "Dùng chiết suất của nước thay cho thuỷ tinh và coi mặt kia là không khí.",
+    "D": "Đảo tử và mẫu; giá trị lớn hơn 1 nên không thể là sin của góc."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Ưu điểm chính của lăng kính phản xạ toàn phần so với gương phẳng tráng bạc trong ống nhòm là",
+   "options": [
+    "làm ảnh to hơn vì lăng kính phóng đại",
+    "dùng được với mọi góc tới vì không có điều kiện",
+    "gần như không làm mất ánh sáng ở chỗ phản xạ",
+    "tách ánh sáng thành nhiều màu để ảnh rực rỡ hơn"
+   ],
+   "answer": 2,
+   "explanation": "Phản xạ toàn phần trả lại gần như toàn bộ ánh sáng, còn lớp bạc của gương hấp thụ một phần.",
+   "distractorNotes": {
+    "A": "Lăng kính ở đây chỉ bẻ hướng tia sáng như gương, không phóng đại.",
+    "B": "Phản xạ toàn phần vẫn cần góc tới vượt góc tới hạn.",
+    "D": "Ở đây không dùng lăng kính để tách màu mà để phản xạ."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Phản xạ toàn phần",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một nhóm học sinh chiếu tia laser vào mặt cong của khối bán trụ thuỷ tinh, hướng đúng vào tâm, rồi tăng dần góc tới tại tâm. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Khi tăng góc tới, tia khúc xạ sáng dần còn tia phản xạ mờ dần.",
+     "answer": false
+    },
+    {
+     "text": "Khi góc tới vượt góc tới hạn thì không còn tia khúc xạ.",
+     "answer": true
+    },
+    {
+     "text": "Khi góc tới còn nhỏ, ngoài tia khúc xạ còn có tia phản xạ mờ.",
+     "answer": true
+    },
+    {
+     "text": "Tại đúng góc tới hạn, tia khúc xạ trùng với pháp tuyến.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: ngược lại, tia khúc xạ mờ dần còn tia phản xạ sáng dần. b) đúng: ánh sáng bị phản xạ toàn phần, chỉ còn tia phản xạ. c) đúng: mặt phân cách luôn phản xạ một phần ánh sáng. d) sai: tại góc tới hạn tia khúc xạ đi sát mặt phân cách, ứng với $r = 90^\\circ$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì ngược lại, tia khúc xạ mờ dần còn tia phản xạ sáng dần.",
+    "1": "Không thể coi là sai vì ánh sáng bị phản xạ toàn phần, chỉ còn tia phản xạ.",
+    "2": "Không thể coi là sai vì mặt phân cách luôn phản xạ một phần ánh sáng.",
+    "3": "Không thể coi là đúng vì tại góc tới hạn tia khúc xạ đi sát mặt phân cách, ứng với $r = 90^\\circ$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một chất lỏng có chiết suất $n = \\sqrt{2}$, ánh sáng đi từ chất lỏng ra không khí, $\\sin 45^\\circ = \\dfrac{\\sqrt{2}}{2}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Góc tới hạn bằng $45^\\circ$.",
+     "answer": true
+    },
+    {
+     "text": "Tia tới với góc tới $60^\\circ$ vẫn có tia khúc xạ ló ra không khí.",
+     "answer": false
+    },
+    {
+     "text": "Cho ánh sáng đi từ không khí vào chất lỏng này cũng có góc tới hạn $45^\\circ$.",
+     "answer": false
+    },
+    {
+     "text": "Tia tới với góc tới $30^\\circ$ vẫn có tia khúc xạ ló ra không khí.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng: $\\sin i_{th} = \\dfrac{1}{\\sqrt{2}} = \\sin 45^\\circ$. b) sai: $60^\\circ > 45^\\circ$ nên bị phản xạ toàn phần. c) sai: từ không khí vào chất lỏng là đi vào môi trường chiết quang hơn nên không có góc tới hạn. d) đúng: $30^\\circ < 45^\\circ$ nên chưa tới góc tới hạn.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $\\sin i_{th} = \\dfrac{1}{\\sqrt{2}} = \\sin 45^\\circ$.",
+    "1": "Không thể coi là đúng vì $60^\\circ > 45^\\circ$ nên bị phản xạ toàn phần.",
+    "2": "Không thể coi là đúng vì từ không khí vào chất lỏng là đi vào môi trường chiết quang hơn nên không có góc tới hạn.",
+    "3": "Không thể coi là sai vì $30^\\circ < 45^\\circ$ nên chưa tới góc tới hạn."
+   }
   },
   {
    "type": "true_false",
    "kind": "dieu_kien",
    "topic": "Điều kiện xảy ra phản xạ toàn phần",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về điều kiện xảy ra phản xạ toàn phần:",
+   "theorySection": 2,
+   "question": "Bạn An phát biểu về các điều kiện của phản xạ toàn phần. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Ánh sáng phải đi từ môi trường chiết quang hơn sang chiết quang kém.",
+     "text": "Thiếu một trong hai điều kiện thì không có phản xạ toàn phần.",
      "answer": true
     },
     {
-     "text": "Góc tới phải thỏa $i \\ge i_{th}$.",
+     "text": "Ánh sáng đi từ nước ra không khí với góc tới đủ lớn có thể bị phản xạ toàn phần.",
      "answer": true
     },
     {
-     "text": "Ánh sáng đi từ không khí vào nước có thể phản xạ toàn phần nếu góc tới đủ lớn.",
+     "text": "Ánh sáng đi từ không khí vào nước với góc tới $85^\\circ$ bị phản xạ toàn phần.",
      "answer": false
     },
     {
-     "text": "Chỉ cần một trong hai điều kiện là đủ.",
+     "text": "Chỉ cần góc tới lớn hơn góc tới hạn là có phản xạ toàn phần, bất kể chiều truyền.",
      "answer": false
     }
    ],
-   "explanation": "Cần đồng thời $n_1 \\gt n_2$ và $i \\ge i_{th}$; đi vào môi trường chiết quang hơn thì không bao giờ có phản xạ toàn phần."
+   "explanation": "a) đúng: phải đủ cả điều kiện về chiều truyền và điều kiện về góc tới. b) đúng: đúng chiều từ chiết quang hơn sang chiết quang kém và có góc tới lớn. c) sai: sai chiều truyền nên vẫn có tia khúc xạ, dù góc tới rất lớn. d) sai: góc tới hạn chỉ tồn tại khi ánh sáng đi từ môi trường chiết quang hơn sang kém.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì phải đủ cả điều kiện về chiều truyền và điều kiện về góc tới.",
+    "1": "Không thể coi là sai vì đúng chiều từ chiết quang hơn sang chiết quang kém và có góc tới lớn.",
+    "2": "Không thể coi là đúng vì sai chiều truyền nên vẫn có tia khúc xạ, dù góc tới rất lớn.",
+    "3": "Không thể coi là đúng vì góc tới hạn chỉ tồn tại khi ánh sáng đi từ môi trường chiết quang hơn sang kém."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Sợi quang có lõi bằng thuỷ tinh hoặc nhựa trong suốt, bọc ngoài bằng lớp vỏ. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Sợi uốn càng gắt thì góc tới tại thành càng lớn nên tín hiệu càng tốt.",
+     "answer": false
+    },
+    {
+     "text": "Lõi có chiết suất lớn hơn lớp vỏ.",
+     "answer": true
+    },
+    {
+     "text": "Lớp vỏ có chiết suất lớn hơn lõi để giữ ánh sáng ở trong.",
+     "answer": false
+    },
+    {
+     "text": "Ánh sáng trong lõi phản xạ toàn phần liên tiếp tại mặt lõi – vỏ.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai: uốn gắt làm góc tới nhỏ đi, có thể tụt dưới góc tới hạn và ánh sáng lọt ra vỏ. b) đúng: nhờ vậy ánh sáng trong lõi gặp mặt lõi – vỏ ở đúng chiều có thể phản xạ toàn phần. c) sai: vỏ có chiết suất nhỏ hơn lõi thì mới có phản xạ toàn phần. d) đúng: đó là cách ánh sáng đi theo sợi dù sợi uốn nhẹ.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì uốn gắt làm góc tới nhỏ đi, có thể tụt dưới góc tới hạn và ánh sáng lọt ra vỏ.",
+    "1": "Không thể coi là sai vì nhờ vậy ánh sáng trong lõi gặp mặt lõi – vỏ ở đúng chiều có thể phản xạ toàn phần.",
+    "2": "Không thể coi là đúng vì vỏ có chiết suất nhỏ hơn lõi thì mới có phản xạ toàn phần.",
+    "3": "Không thể coi là sai vì đó là cách ánh sáng đi theo sợi dù sợi uốn nhẹ."
+   }
   },
   {
    "type": "true_false",
    "kind": "cong_thuc",
    "topic": "Tính góc tới hạn, ứng dụng cáp quang",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về công thức $\\sin i_{th} = \\dfrac{n_2}{n_1}$:",
+   "theorySection": 4,
+   "question": "Đèn LED đặt dưới đáy bể bơi (nước có $n = 1{,}33$), góc tới hạn của nước ra không khí khoảng $48{,}8^\\circ$. Xét hai tia tới mặt nước với góc tới $40^\\circ$ và $60^\\circ$:",
    "statements": [
     {
-     "text": "Công thức suy ra từ $n_1 \\sin i = n_2 \\sin r$ với $r = 90^\\circ$.",
-     "answer": true
-    },
-    {
-     "text": "Giá trị $\\sin i_{th}$ luôn nhỏ hơn 1.",
-     "answer": true
-    },
-    {
-     "text": "Ra không khí thì $\\sin i_{th} = n_1$.",
+     "text": "Tia ló của tia $40^\\circ$ có góc khúc xạ nhỏ hơn $40^\\circ$.",
      "answer": false
     },
     {
-     "text": "Chiết suất $n_1$ càng lớn (ra không khí) thì góc tới hạn càng lớn.",
+     "text": "Với tia $60^\\circ$ vẫn tính được một góc khúc xạ nhỏ hơn $90^\\circ$.",
      "answer": false
+    },
+    {
+     "text": "Tia tới mặt nước với góc tới $40^\\circ$ ló ra không khí.",
+     "answer": true
+    },
+    {
+     "text": "Tia $60^\\circ$ bị phản xạ toàn phần với góc phản xạ bằng $60^\\circ$.",
+     "answer": true
     }
    ],
-   "explanation": "Ra không khí $\\sin i_{th} = 1/n_1$, nên $n_1$ càng lớn thì góc tới hạn càng nhỏ."
+   "explanation": "a) sai: từ nước ra không khí thì $r > i$, tia lệch xa pháp tuyến. b) sai: $\\sin r = 1{,}33 \\sin 60^\\circ > 1$ nên không có góc $r$ thoả mãn. c) đúng: $40^\\circ < 48{,}8^\\circ$ nên chưa phản xạ toàn phần. d) đúng: $60^\\circ > 48{,}8^\\circ$ và góc phản xạ luôn bằng góc tới.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì từ nước ra không khí thì $r > i$, tia lệch xa pháp tuyến.",
+    "1": "Không thể coi là đúng vì $\\sin r = 1{,}33 \\sin 60^\\circ > 1$ nên không có góc $r$ thoả mãn.",
+    "2": "Không thể coi là sai vì $40^\\circ < 48{,}8^\\circ$ nên chưa phản xạ toàn phần.",
+    "3": "Không thể coi là sai vì $60^\\circ > 48{,}8^\\circ$ và góc phản xạ luôn bằng góc tới."
+   }
   },
   {
    "type": "true_false",
    "kind": "hien_tuong",
    "topic": "Phản xạ toàn phần",
    "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Trong thí nghiệm khối bán trụ thủy tinh, tăng dần góc tới $i$ (ánh sáng ra không khí):",
-   "statements": [
-    {
-     "text": "Tia khúc xạ lệch dần ra xa pháp tuyến và mờ đi.",
-     "answer": true
-    },
-    {
-     "text": "Tia phản xạ sáng dần lên.",
-     "answer": true
-    },
-    {
-     "text": "Khi $i$ vượt góc tới hạn vẫn còn tia khúc xạ sáng.",
-     "answer": false
-    },
-    {
-     "text": "Góc tới hạn của thủy tinh $n = 1{,}5$ xấp xỉ $41{,}8^\\circ$.",
-     "answer": true
-    }
-   ],
-   "explanation": "Vượt góc tới hạn chỉ còn tia phản xạ; thủy tinh có $i_{th} \\approx 41{,}8^\\circ$."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về cáp quang:",
-   "statements": [
-    {
-     "text": "Lõi có chiết suất lớn hơn vỏ.",
-     "answer": true
-    },
-    {
-     "text": "Sợi uốn quá gắt có thể làm góc tới nhỏ hơn $i_{th}$ và ánh sáng lọt ra vỏ.",
-     "answer": true
-    },
-    {
-     "text": "Cáp quang được dùng để truyền Internet và làm ống nội soi.",
-     "answer": true
-    },
-    {
-     "text": "Ánh sáng trong cáp quang bị khúc xạ liên tiếp ra vỏ.",
-     "answer": false
-    }
-   ],
-   "explanation": "Ánh sáng bị phản xạ toàn phần liên tiếp tại thành sợi chứ không khúc xạ ra vỏ."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ánh sáng đi từ chất có $n = 2$ ra không khí. Tính góc tới hạn (độ).",
-   "answer": "30",
-   "explanation": "$\\sin i_{th} = 1/2$ nên $i_{th} = 30^\\circ$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Điều kiện xảy ra phản xạ toàn phần",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Tia sáng hợp với mặt phân cách một góc $30^\\circ$. Góc tới bằng bao nhiêu độ?",
-   "answer": "60",
-   "explanation": "Góc tới là góc với pháp tuyến: $90^\\circ - 30^\\circ = 60^\\circ$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "don_vi",
-   "topic": "Phản xạ toàn phần",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Tại góc tới hạn, góc khúc xạ $r$ bằng bao nhiêu độ?",
-   "answer": "90",
-   "explanation": "Tại góc tới hạn tia khúc xạ đi sát mặt phân cách nên $r = 90^\\circ$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_nghia",
-   "topic": "Điều kiện xảy ra phản xạ toàn phần",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Có bao nhiêu điều kiện cần thỏa mãn đồng thời để xảy ra phản xạ toàn phần?",
-   "answer": "2",
-   "explanation": "Hai điều kiện: $n_1 \\gt n_2$ và $i \\ge i_{th}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_luat",
-   "topic": "Phản xạ toàn phần",
-   "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Ánh sáng đi từ không khí vào nước có thể xảy ra phản xạ toàn phần không? Nếu có ghi 1, nếu không ghi 0.",
-   "answer": "0",
-   "explanation": "Đi vào môi trường chiết quang hơn thì không có góc tới hạn, không bao giờ phản xạ toàn phần."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Ánh sáng đi từ chất lỏng ra không khí có $\\sin i_{th} = 0{,}5$. Chiết suất của chất lỏng bằng bao nhiêu?",
-   "answer": "2",
-   "explanation": "$\\sin i_{th} = 1/n$ nên $n = 1/0{,}5 = 2$."
+   "question": "So sánh phản xạ toàn phần với phản xạ trên một tấm gương phẳng. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Trong cả hai trường hợp, góc phản xạ bằng góc tới.",
+     "answer": true
+    },
+    {
+     "text": "Phản xạ trên gương chỉ xảy ra khi góc tới lớn hơn một giá trị nào đó.",
+     "answer": false
+    },
+    {
+     "text": "Trong phản xạ toàn phần, tia phản xạ sáng gần bằng tia tới.",
+     "answer": true
+    },
+    {
+     "text": "Phản xạ toàn phần xảy ra ở mọi mặt phân cách hai môi trường trong suốt với mọi góc tới.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng: đó là điểm giống nhau của hai loại phản xạ. b) sai: phản xạ trên gương xảy ra với mọi góc tới. c) đúng: vì toàn bộ ánh sáng bị phản xạ trở lại. d) sai: cần đủ hai điều kiện về chiều truyền và góc tới.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì đó là điểm giống nhau của hai loại phản xạ.",
+    "1": "Không thể coi là đúng vì phản xạ trên gương xảy ra với mọi góc tới.",
+    "2": "Không thể coi là sai vì toàn bộ ánh sáng bị phản xạ trở lại.",
+    "3": "Không thể coi là đúng vì cần đủ hai điều kiện về chiều truyền và góc tới."
+   }
   }
  ]
 }

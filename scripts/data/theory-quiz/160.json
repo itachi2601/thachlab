@@ -1,373 +1,550 @@
 {
- "lesson_id": 160,
- "lesson_title": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
- "item_id": 319,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 15,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 8,
-   "cong_thuc": 11
+  "lesson_id": 160,
+  "lesson_title": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+  "item_id": 319,
+  "generated_at": "2026-10-25",
+  "generated_by": "claude-code (phiên Mac)",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 9,
+      "cong_thuc": 11
+    },
+    "removed": []
   },
-  "removed": [
-   {
-    "question": "Một tấm bìa có diện tích $25\\ \\text{cm}^2$. Diện tích đó tính theo $\\text{m}^2$ là:",
-    "reason": "nghi_ngo: Đáp án B đúng, nhưng phương án A ($0{,}25$) và D ($2{,}5\\cdot10^{-1}$) cùng một giá trị nên hai nhiễu bị trùng."
-   }
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trước khi thay số vào một công thức vật lí, việc cần làm trước tiên là",
+      "options": [
+        "tính xong kết quả rồi mới đổi đơn vị cho đáp số",
+        "chỉ đổi những đại lượng có tiền tố như k hoặc M",
+        "đưa các đại lượng về một hệ đơn vị như SI",
+        "giữ nguyên đơn vị đề cho rồi ghi đơn vị ở cuối"
+      ],
+      "answer": 2,
+      "explanation": "Chỉ thay số khi mọi đại lượng đã ở cùng hệ đơn vị (SI); đổi sau sẽ không cứu được hệ số sai.",
+      "distractorNotes": {
+        "A": "Thay số khi đơn vị còn lẫn lộn (phút với giây, mm² với m²) sẽ sai cả hệ số, ví dụ lệch đúng $60$ lần khi quên đổi phút.",
+        "B": "Phút, giờ, cm, mm², lít cũng cần đổi; không chỉ đại lượng có tiền tố k hay M.",
+        "D": "Ghi đơn vị cuối không sửa được hệ số đã sai vì các đại lượng khác hệ đơn vị."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Khi vẽ đồ thị từ số liệu đo, việc làm nào sau đây là đúng?",
+      "options": [
+        "Ghi đại lượng và đơn vị trên hai trục",
+        "Nối các điểm đo bằng một đường gấp khúc",
+        "Chia các vạch trên trục không đều cho dễ vẽ",
+        "Bỏ đơn vị trên trục khi hình vẽ đã đẹp"
+      ],
+      "answer": 0,
+      "explanation": "Trục phải ghi tên đại lượng và đơn vị, chia vạch đều, nối điểm bằng đường thẳng hoặc đường trơn.",
+      "distractorNotes": {
+        "B": "Điểm đo phải nối bằng đường thẳng hoặc đường trơn sát các điểm, không gấp khúc.",
+        "C": "Phải chia vạch đều, nếu không độ dốc đồ thị bị méo và đọc sai.",
+        "D": "Thiếu đơn vị là mất điểm dù hình đẹp, vì không biết số đọc được là đại lượng nào."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Diện tích dưới đồ thị công suất $P$ theo thời gian $t$ biểu diễn đại lượng nào?",
+      "options": [
+        "Hiệu điện thế trung bình trong khoảng thời gian đó",
+        "Cường độ dòng điện trung bình trong khoảng đó",
+        "Điện trở của thiết bị trong khoảng thời gian đó",
+        "Điện năng tiêu thụ trong khoảng thời gian đó"
+      ],
+      "answer": 3,
+      "explanation": "Diện tích dưới đồ thị là tích hai đại lượng trục: $P\\cdot t$ có đơn vị $\\text{W}\\cdot\\text{s}=\\text{J}$, tức điện năng.",
+      "distractorNotes": {
+        "A": "Diện tích là tích $P\\cdot t$ (đơn vị $\\text{W}\\cdot\\text{s}=\\text{J}$), không phải hiệu điện thế.",
+        "B": "Nhầm tích $P\\cdot t$ với đại lượng khác; diện tích dưới đường $P$ có đơn vị jun nên là năng lượng.",
+        "C": "Điện trở có đơn vị ôm; còn $\\text{W}\\cdot\\text{s}$ là jun, đơn vị của năng lượng."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Kiểm tra đơn vị hai vế của một công thức giúp ta",
+      "options": [
+        "chứng minh được hệ số của công thức là hoàn toàn đúng",
+        "loại công thức sai đơn vị, chưa bắt được sai hệ số",
+        "thay thế được việc ước lượng bậc độ lớn của kết quả",
+        "bắt được mọi lỗi tính toán có trong cả bài giải"
+      ],
+      "answer": 1,
+      "explanation": "Đơn vị hai vế khớp là điều kiện cần; hệ số sai vẫn cho đơn vị đúng nên phải kiểm cả bản chất.",
+      "distractorNotes": {
+        "A": "Đơn vị đúng chưa chắc hệ số đúng; ví dụ $A=Fs/2$ vẫn ra jun.",
+        "C": "Ước lượng bậc độ lớn là bước riêng, bắt lỗi kết quả vô lí mà kiểm đơn vị không thấy.",
+        "D": "Kiểm đơn vị không phát hiện được lỗi bấm máy, sai hệ số hay đổi nhầm lũy thừa."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Đo nhiều lần rồi lấy giá trị trung bình giúp giảm chủ yếu loại sai số nào?",
+      "options": [
+        "Sai số hệ thống, vì mọi lần đo lệch cùng một phía",
+        "Sai số do dụng cụ lệch, vì lấy trung bình sẽ sửa được",
+        "Sai số ngẫu nhiên, vì lệch hai phía bù trừ nhau",
+        "Cả hai loại sai số như nhau, vì chỉ cần đo đủ nhiều"
+      ],
+      "answer": 2,
+      "explanation": "Sai số ngẫu nhiên lệch cả hai phía nên lấy trung bình làm giảm nó; sai số hệ thống không bù trừ được.",
+      "distractorNotes": {
+        "A": "Lệch cùng một phía thì cộng lại không triệt tiêu; sai số hệ thống phải sửa ở dụng cụ hoặc cách đo.",
+        "B": "Dụng cụ lệch tạo sai số hệ thống nên mọi lần đo bị lệch như nhau, trung bình vẫn lệch.",
+        "D": "Chỉ sai số ngẫu nhiên giảm khi đo nhiều lần; sai số hệ thống thì không."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi đổi đơn vị diện tích, ví dụ từ $\\text{mm}^2$ sang $\\text{m}^2$, hệ số đổi của đơn vị độ dài phải",
+      "options": [
+        "được bình phương, do diện tích gồm hai chiều",
+        "giữ nguyên, vì chỉ đổi đơn vị chiều dài",
+        "được nhân đôi, ví dụ $2\\cdot10^{-3}$ thay cho $10^{-3}$",
+        "được lấy căn bậc hai, vì đổi từ nhỏ sang lớn"
+      ],
+      "answer": 0,
+      "explanation": "$1\\ \\text{mm}=10^{-3}\\ \\text{m}$ nên $1\\ \\text{mm}^2=(10^{-3})^2=10^{-6}\\ \\text{m}^2$: bình phương cả luỹ thừa.",
+      "distractorNotes": {
+        "B": "Diện tích là tích hai độ dài nên hệ số xuất hiện hai lần (bình phương); giữ nguyên thì sai nhiều bậc.",
+        "C": "Nhân đôi hệ số ($2\\cdot10^{-3}$) không phải bình phương; bình phương mới cho $(10^{-3})^2=10^{-6}$.",
+        "D": "Căn bậc hai làm hệ số lớn lên ($\\sqrt{10^{-3}}\\approx0{,}03$); diện tích phải bình phương, hệ số nhỏ đi nhiều bậc."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Trong cách trình bày bài giải bốn bước, bước cuối cùng là",
+      "options": [
+        "ghi đại lượng đã cho, đã đổi về SI, và cái cần tìm",
+        "đặt ký hiệu cho các đại lượng và vẽ hình nếu cần",
+        "lập luận từng dòng, viết công thức gốc rồi thay số",
+        "kết luận thành câu, có đơn vị và nhận xét hợp lí"
+      ],
+      "answer": 3,
+      "explanation": "Bốn bước: tóm tắt, ký hiệu và hình, lập luận từng dòng, kết luận có đơn vị kèm kiểm tra hợp lí.",
+      "distractorNotes": {
+        "A": "Đây là bước tóm tắt, bước đầu tiên của bài giải.",
+        "B": "Đây là bước thứ hai: ký hiệu và hình, làm trước khi lập luận.",
+        "C": "Đây là bước thứ ba, làm trước khi kết luận."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một centimét vuông ($1\\ \\text{cm}^2$) bằng bao nhiêu mét vuông?",
+      "options": [
+        "$10^{-2}\\ \\text{m}^2$",
+        "$10^{-4}\\ \\text{m}^2$",
+        "$10^{-6}\\ \\text{m}^2$",
+        "$10^{4}\\ \\text{m}^2$"
+      ],
+      "answer": 1,
+      "explanation": "$1\\ \\text{cm}=10^{-2}\\ \\text{m}$ nên $1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$.",
+      "distractorNotes": {
+        "A": "Quên bình phương: $1\\ \\text{cm}=10^{-2}\\ \\text{m}$ nhưng diện tích phải lấy $(10^{-2})^2$.",
+        "C": "Đây là hệ số của $\\text{mm}^2$, không phải $\\text{cm}^2$.",
+        "D": "Đảo chiều: $\\text{cm}^2$ nhỏ hơn $\\text{m}^2$ nên hệ số phải là luỹ thừa âm."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một kilôoát giờ ($1\\ \\text{kWh}$) bằng",
+      "options": [
+        "$3{,}6\\cdot10^{3}\\ \\text{J}$",
+        "$6\\cdot10^{4}\\ \\text{J}$",
+        "$1\\cdot10^{3}\\ \\text{J}$",
+        "$3{,}6\\cdot10^{6}\\ \\text{J}$"
+      ],
+      "answer": 3,
+      "explanation": "$1\\ \\text{kWh}=1000\\ \\text{W}\\cdot3600\\ \\text{s}=3{,}6\\cdot10^{6}\\ \\text{J}$.",
+      "distractorNotes": {
+        "A": "Quên tiền tố kilô: $1\\ \\text{kW}=1000\\ \\text{W}$ chứ không phải $1\\ \\text{W}$.",
+        "B": "Đổi $1$ giờ thành $60$ giây thay vì $3600$ giây.",
+        "C": "Chỉ lấy $1000\\ \\text{W}$ mà quên nhân với $3600\\ \\text{s}$ của một giờ."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đổi $54\\ \\text{km/h}$ sang $\\text{m/s}$ được",
+      "options": [
+        "$15\\ \\text{m/s}$",
+        "$194{,}4\\ \\text{m/s}$",
+        "$0{,}015\\ \\text{m/s}$",
+        "$54\\ \\text{m/s}$"
+      ],
+      "answer": 0,
+      "explanation": "$54\\ \\text{km/h}=54\\cdot\\dfrac{1000}{3600}=\\dfrac{54}{3{,}6}=15\\ \\text{m/s}$.",
+      "distractorNotes": {
+        "B": "Nhân với $3{,}6$ thay vì chia; đổi từ km/h sang m/s phải chia cho $3{,}6$.",
+        "C": "Chia cho $3600$ mà quên nhân $1000$ để đổi km ra m.",
+        "D": "Không đổi gì, coi hai đơn vị bằng nhau."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Nguồn $12\\ \\text{V}$, điện trở $R_0=20\\ \\Omega$ nối tiếp biến trở $R$. Khi $R=20\\ \\Omega$ thì $I=0{,}3\\ \\text{A}$. Tăng $R$ lên $60\\ \\Omega$ thì $I$ bằng",
+      "options": [
+        "$0{,}10\\ \\text{A}$",
+        "$0{,}20\\ \\text{A}$",
+        "$0{,}15\\ \\text{A}$",
+        "$0{,}033\\ \\text{A}$"
+      ],
+      "answer": 2,
+      "explanation": "$I=\\dfrac{U}{R_0+R}=\\dfrac{12}{20+60}=0{,}15\\ \\text{A}$: $I$ tỉ lệ nghịch với tổng điện trở của mạch.",
+      "distractorNotes": {
+        "A": "Coi $I$ tỉ lệ nghịch với riêng $R$ ($R$ gấp $3$ nên $I$ giảm $3$ lần), bỏ qua $R_0$ cố định.",
+        "B": "Chỉ chia $12$ cho $R$ mới ($12/60$), quên cộng điện trở $R_0$ cố định.",
+        "D": "Chia $0{,}3$ cho $3^2=9$, tự gán quan hệ bình phương không có trong mạch này."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Trên đồ thị $I$–$U$ của một điện trở, hệ số góc của đường thẳng bằng",
+      "options": [
+        "$R$",
+        "$\\dfrac{1}{R}$",
+        "$R^2$",
+        "$U\\cdot I$"
+      ],
+      "answer": 1,
+      "explanation": "Hệ số góc là $\\dfrac{\\Delta I}{\\Delta U}=\\dfrac1R$.",
+      "distractorNotes": {
+        "A": "Đây là hệ số góc của đồ thị $U$–$I$; ở $I$–$U$ hai trục đã đổi chỗ nên lấy nghịch đảo.",
+        "C": "Tự thêm bình phương không có cơ sở trong $\\Delta I/\\Delta U$.",
+        "D": "Đây là công suất, không phải thương $\\Delta I/\\Delta U$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Bếp điện chạy $600\\ \\text{W}$ trong $2$ phút, rồi $1000\\ \\text{W}$ trong $3$ phút. Điện năng bếp tiêu thụ trong cả hai giai đoạn là",
+      "options": [
+        "$252\\,000\\ \\text{J}$",
+        "$4\\,200\\ \\text{J}$",
+        "$180\\,000\\ \\text{J}$",
+        "$72\\,000\\ \\text{J}$"
+      ],
+      "answer": 0,
+      "explanation": "Cộng diện tích từng hình chữ nhật: $600\\cdot120+1000\\cdot180=72\\,000+180\\,000=252\\,000\\ \\text{J}$.",
+      "distractorNotes": {
+        "B": "Quên đổi phút ra giây nên chỉ ra $600\\cdot2+1000\\cdot3$.",
+        "C": "Chỉ tính giai đoạn sau ($1000\\cdot180$), bỏ sót giai đoạn đầu.",
+        "D": "Chỉ tính giai đoạn đầu ($600\\cdot120$), bỏ sót giai đoạn sau."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Thước có ĐCNN $0{,}1\\ \\text{cm}$; sai số ngẫu nhiên của phép đo là $0{,}06\\ \\text{cm}$. Theo cách tính ở bài, sai số tuyệt đối $\\Delta A$ (chưa làm tròn) là",
+      "options": [
+        "$0{,}16\\ \\text{cm}$",
+        "$0{,}06\\ \\text{cm}$",
+        "$0{,}05\\ \\text{cm}$",
+        "$0{,}11\\ \\text{cm}$"
+      ],
+      "answer": 3,
+      "explanation": "$\\Delta A=\\Delta A_{ng}+\\Delta A_{dc}=0{,}06+0{,}05=0{,}11\\ \\text{cm}$ vì $\\Delta A_{dc}$ là nửa ĐCNN.",
+      "distractorNotes": {
+        "A": "Cộng cả ĐCNN $0{,}1$ thay vì nửa ĐCNN; sai số dụng cụ lấy bằng nửa ĐCNN.",
+        "B": "Bỏ sót sai số dụng cụ; $\\Delta A$ là tổng sai số ngẫu nhiên và sai số dụng cụ.",
+        "C": "Chỉ lấy sai số dụng cụ, bỏ sót sai số ngẫu nhiên của các lần đo."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 0,
+      "question": "Nồi cơm điện $600\\ \\text{W}$ chạy $20$ phút. Một bạn tính $A=P\\cdot t=600\\cdot20=12\\,000$ rồi ghi đơn vị jun. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Lỗi của bạn là chưa đổi $20$ phút ra giây trước khi thay số.",
+          "answer": true
+        },
+        {
+          "text": "Kết quả của bạn nhỏ hơn kết quả đúng $20$ lần.",
+          "answer": false
+        },
+        {
+          "text": "Điện năng đúng là $720\\,000\\ \\text{J}$.",
+          "answer": true
+        },
+        {
+          "text": "Công thức $A=P\\cdot t$ sai nên mới ra kết quả sai.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng. b) sai: nhỏ hơn $60$ lần. c) đúng. d) sai: công thức đúng, lỗi ở đơn vị.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì $t$ phải tính bằng giây ($1200\\ \\text{s}$) khi dùng $P$ tính bằng oát.",
+        "1": "Không thể coi là đúng vì thừa số bị bỏ là $60$ giây mỗi phút, nên kết quả nhỏ hơn đúng $60$ lần.",
+        "2": "Không thể coi là sai vì $A=600\\cdot1200=720\\,000\\ \\text{J}$.",
+        "3": "Không thể coi là đúng vì công thức đúng, lỗi nằm ở đơn vị thời gian chưa đổi."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Vẽ $I$ theo $U$ cho hai dây dẫn X và Y trên cùng một đồ thị, đường của dây X dốc hơn đường của dây Y. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Hai dây có điện trở bằng nhau vì cả hai đường đều đi qua gốc toạ độ.",
+          "answer": false
+        },
+        {
+          "text": "Hệ số góc của đồ thị $I$–$U$ bằng $\\dfrac1R$.",
+          "answer": true
+        },
+        {
+          "text": "Dây X có điện trở nhỏ hơn dây Y.",
+          "answer": true
+        },
+        {
+          "text": "Vẽ lại bằng đồ thị $U$–$I$ thì đường của dây X vẫn dốc hơn.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) sai: độ dốc khác thì $R$ khác. b) đúng. c) đúng. d) sai: ở $U$–$I$ dây X thoải hơn.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì đi qua gốc chỉ cho biết tỉ lệ thuận, còn độ dốc khác nhau thì $R$ khác nhau.",
+        "1": "Không thể coi là sai vì hệ số góc là $\\Delta I/\\Delta U$, chính là nghịch đảo của $R$.",
+        "2": "Không thể coi là sai vì dốc hơn thì $1/R$ lớn hơn, nên $R$ nhỏ hơn.",
+        "3": "Không thể coi là đúng vì ở $U$–$I$ hệ số góc là $R$; dây X có $R$ nhỏ nên đường của nó thoải hơn."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Đo một chiều dài chuẩn $50{,}0\\ \\text{cm}$ bằng một thước, $20$ lần liền, mọi số đọc đều cao hơn giá trị chuẩn khoảng $2\\ \\text{mm}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Đây là sai số hệ thống vì mọi lần đo lệch cùng một phía.",
+          "answer": true
+        },
+        {
+          "text": "Đo thêm nhiều lần nữa sẽ làm sai lệch này biến mất.",
+          "answer": false
+        },
+        {
+          "text": "Sai lệch này chủ yếu là sai số ngẫu nhiên.",
+          "answer": false
+        },
+        {
+          "text": "Giá trị trung bình của $20$ lần đo vẫn cao hơn giá trị chuẩn khoảng $2\\ \\text{mm}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) đúng. b) sai: đo thêm không sửa được sai số hệ thống. c) sai: lệch một phía là hệ thống. d) đúng.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì sai số hệ thống có đặc điểm lệch cùng phía ở mọi lần đo.",
+        "1": "Không thể coi là đúng vì đo thêm chỉ làm giảm sai số ngẫu nhiên; sai số hệ thống phải sửa ở dụng cụ hoặc cách đo.",
+        "2": "Không thể coi là đúng vì sai số ngẫu nhiên lệch cả hai phía, còn ở đây mọi lần đều lệch lên.",
+        "3": "Không thể coi là sai vì các lệch cùng một phía nên cộng lại không triệt tiêu."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Nguồn $12\\ \\text{V}$ không đổi, điện trở $R_0=10\\ \\Omega$ nối tiếp biến trở $R$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Tăng $R$ từ $10$ lên $20\\ \\Omega$ thì dòng giảm còn một nửa, tức $0{,}3\\ \\text{A}$.",
+          "answer": false
+        },
+        {
+          "text": "Khi $R=10\\ \\Omega$ thì dòng điện là $0{,}6\\ \\text{A}$.",
+          "answer": true
+        },
+        {
+          "text": "Có $R_0$ cố định mà vẫn viết trực tiếp $I_2/I_1=R_1/R_2$ là cách làm đúng.",
+          "answer": false
+        },
+        {
+          "text": "Khi $R=20\\ \\Omega$ thì dòng điện là $0{,}4\\ \\text{A}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: $I$ tỉ lệ nghịch với tổng điện trở. b) đúng. c) sai: phải dùng công thức gốc. d) đúng.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì $I$ tỉ lệ nghịch với tổng $R_0+R$, không phải với riêng $R$; dòng thực tế là $0{,}4\\ \\text{A}$.",
+        "1": "Không thể coi là sai vì $I=12/(10+10)=0{,}6\\ \\text{A}$.",
+        "2": "Không thể coi là đúng vì $R_0$ cộng vào mẫu; phải viết công thức gốc cho từng trạng thái rồi mới chia.",
+        "3": "Không thể coi là sai vì $I=12/(10+20)=0{,}4\\ \\text{A}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 6,
+      "question": "Ấm điện $1000\\ \\text{W}$ dùng đúng định mức đun $1{,}5$ lít nước ($1{,}5\\ \\text{kg}$) từ $25\\ ^\\circ\\text{C}$ lên $100\\ ^\\circ\\text{C}$, $c=4200\\ \\text{J/(kg·K)}$, hiệu suất $90\\%$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Thời gian đun là $472{,}5\\ \\text{s}$ vì $t=Q_{ích}/P$.",
+          "answer": false
+        },
+        {
+          "text": "Điện năng tiêu thụ là $A=0{,}9\\cdot472\\,500=425\\,250\\ \\text{J}$.",
+          "answer": false
+        },
+        {
+          "text": "Nhiệt lượng có ích làm nóng nước là $472\\,500\\ \\text{J}$.",
+          "answer": true
+        },
+        {
+          "text": "Điện năng ấm tiêu thụ là $525\\,000\\ \\text{J}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: $t=A/P=525\\ \\text{s}$. b) sai: phải chia cho $H$, không nhân. c) đúng. d) đúng.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì $A=Pt$ với $A$ là điện năng tiêu thụ, không phải nhiệt có ích; $t=525\\ \\text{s}$.",
+        "1": "Không thể coi là đúng vì hiệu suất nhỏ hơn $1$ nên điện năng phải lớn hơn nhiệt có ích, không thể nhỏ hơn.",
+        "2": "Không thể coi là sai vì $Q=mc\\Delta t=1{,}5\\cdot4200\\cdot75=472\\,500\\ \\text{J}$.",
+        "3": "Không thể coi là sai vì $H=Q_{ích}/A$ nên $A=472\\,500/0{,}9=525\\,000\\ \\text{J}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Vôn kế có ĐCNN $0{,}1\\ \\text{V}$ đọc $5$ lần được $5{,}8;\\ 5{,}9;\\ 5{,}8;\\ 5{,}9;\\ 6{,}1\\ \\text{V}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Sai số ngẫu nhiên là $\\Delta U_{ng}=0{,}08\\ \\text{V}$.",
+          "answer": true
+        },
+        {
+          "text": "Theo quy cách của bài (một chữ số có nghĩa cho sai số), có thể ghi $U=5{,}90\\pm0{,}13\\ \\text{V}$.",
+          "answer": false
+        },
+        {
+          "text": "Giá trị trung bình là $U_{tb}=5{,}9\\ \\text{V}$.",
+          "answer": true
+        },
+        {
+          "text": "Theo cách tính ở bài, sai số dụng cụ lấy bằng $0{,}1\\ \\text{V}$, đúng bằng ĐCNN.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng. b) sai: theo quy cách của bài phải làm tròn $\\Delta U$ còn $0{,}1$. c) đúng. d) sai: nửa ĐCNN là $0{,}05$.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì các độ lệch tuyệt đối $0{,}1;\\ 0;\\ 0{,}1;\\ 0;\\ 0{,}2$ có trung bình $0{,}08$.",
+        "1": "Không thể coi là đúng vì $\\Delta U$ chỉ giữ một chữ số có nghĩa: $U=5{,}9\\pm0{,}1\\ \\text{V}$.",
+        "2": "Không thể coi là sai vì tổng các số đọc là $29{,}5\\ \\text{V}$, chia $5$ được $5{,}9\\ \\text{V}$.",
+        "3": "Không thể coi là đúng vì sai số dụng cụ lấy bằng nửa ĐCNN, tức $0{,}05\\ \\text{V}$."
+      }
+    }
   ]
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Khi đổi đơn vị diện tích, ta cần làm gì với luỹ thừa của 10 của đơn vị độ dài?",
-   "options": [
-    "Giữ nguyên luỹ thừa",
-    "Bình phương cả luỹ thừa",
-    "Chia luỹ thừa cho 2",
-    "Nhân luỹ thừa với 2 rồi cộng 1"
-   ],
-   "answer": 1,
-   "explanation": "Diện tích bình phương, thể tích lập phương cả luỹ thừa: $1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Nguồn $12\\ \\text{V}$, $R_0=10\\ \\Omega$ nối tiếp biến trở $R$. Công thức đúng để tìm dòng điện là:",
-   "options": [
-    "$I=\\dfrac{U}{R}$",
-    "$I=\\dfrac{U}{R_0+R}$",
-    "$I=\\dfrac{U}{R_0\\cdot R}$",
-    "$I=\\dfrac{U}{R_0-R}$"
-   ],
-   "answer": 1,
-   "explanation": "Dòng điện tỉ lệ nghịch với tổng điện trở của mạch: $I=\\dfrac{U}{R_0+R}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Trên đồ thị $U$–$I$ của một dây dẫn, hệ số góc bằng:",
-   "options": [
-    "$R$",
-    "$\\dfrac1R$",
-    "$P$",
-    "$R^2$"
-   ],
-   "answer": 0,
-   "explanation": "Ở đồ thị $U$–$I$, hệ số góc $\\dfrac{\\Delta U}{\\Delta I}=R$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Diện tích dưới đồ thị công suất $P$ theo thời gian $t$ cho biết đại lượng nào?",
-   "options": [
-    "Điện năng",
-    "Hiệu điện thế",
-    "Điện trở",
-    "Cường độ dòng điện"
-   ],
-   "answer": 0,
-   "explanation": "Diện tích dưới đồ thị là tích hai đại lượng: $\\text{W}\\cdot\\text{s}=\\text{J}$, tức điện năng."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "don_vi",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Công thức nào không cho kết quả có đơn vị là oát?",
-   "options": [
-    "$P=U\\cdot I$",
-    "$P=I^2\\cdot R$",
-    "$P=\\dfrac{U^2}{R}$",
-    "$P=U^2\\cdot R$"
-   ],
-   "answer": 3,
-   "explanation": "$\\text{V}^2\\cdot\\Omega$ không phải oát; công thức đúng là $\\dfrac{U^2}{R}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Kiểm tra đơn vị hai vế của công thức có thể làm được điều nào?",
-   "options": [
-    "Chứng minh hệ số của công thức đúng",
-    "Loại công thức sai đơn vị nhưng không bắt được sai hệ số",
-    "Thay cho việc ước lượng",
-    "Xác định sai số dụng cụ"
-   ],
-   "answer": 1,
-   "explanation": "Đơn vị đúng chưa chắc hệ số đúng, ví dụ $A=\\dfrac{Fs}{2}$ vẫn ra J."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Thước có ĐCNN $0{,}1\\ \\text{cm}$ cho $L_{tb}=15{,}48\\ \\text{cm}$, $\\Delta L=0{,}114\\ \\text{cm}$. Cách ghi đúng quy cách là:",
-   "options": [
-    "$15{,}48\\pm0{,}114\\ \\text{cm}$",
-    "$15{,}5\\pm0{,}1\\ \\text{cm}$",
-    "$15{,}5\\pm0{,}114\\ \\text{cm}$",
-    "$15{,}48\\pm0{,}1\\ \\text{cm}$"
-   ],
-   "answer": 1,
-   "explanation": "$\\Delta L$ giữ một chữ số có nghĩa, $L_{tb}$ làm tròn cùng hàng thập phân với $\\Delta L$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Mọi lần đo đều lệch cùng một phía so với giá trị chuẩn. Việc lấy trung bình nhiều lần đo:",
-   "options": [
-    "Vẫn còn lệch, vì đây là sai số hệ thống",
-    "Làm lệch biến mất",
-    "Làm lệch giảm dần về 0",
-    "Chuyển thành sai số ngẫu nhiên"
-   ],
-   "answer": 0,
-   "explanation": "Lệch cùng phía nên không bù trừ; sai số hệ thống phải sửa ở dụng cụ hoặc cách đo."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 6,
-   "question": "Bốn bước trình bày một bài giải theo bài là:",
-   "options": [
-    "Tóm tắt; ký hiệu và hình; lập luận từng dòng; kết luận có đơn vị",
-    "Thay số; bấm máy; ghi đáp số; vẽ hình",
-    "Đọc đề; đoán đáp án; thay số; kết luận",
-    "Vẽ hình; tính; đổi đơn vị; làm tròn"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu bốn bước: tóm tắt, ký hiệu và hình, lập luận từng dòng, kết luận có đơn vị."
-  },
-  {
-   "type": "true_false",
-   "kind": "don_vi",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về đổi đơn vị, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "$1\\ \\text{mm}^2=10^{-6}\\ \\text{m}^2$",
-     "answer": true
-    },
-    {
-     "text": "$1\\ \\text{kWh}=3{,}6\\cdot10^{6}\\ \\text{J}$",
-     "answer": true
-    },
-    {
-     "text": "$1\\ \\text{cm}^2=10^{-2}\\ \\text{m}^2$",
-     "answer": false
-    },
-    {
-     "text": "$1\\ \\text{m/s}=3{,}6\\ \\text{km/h}$",
-     "answer": true
-    }
-   ],
-   "explanation": "$1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$; các ý còn lại đúng theo mục II."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về tỉ lệ và rút tỉ số, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Tỉ lệ thuận $y=kx$ thì $\\dfrac{y_2}{y_1}=\\dfrac{x_2}{x_1}$",
-     "answer": true
-    },
-    {
-     "text": "Với $P=I^2R$, $I$ gấp 3 thì $P$ gấp 9",
-     "answer": true
-    },
-    {
-     "text": "Mạch nối tiếp thì $\\dfrac{U_1}{U_2}=\\dfrac{R_2}{R_1}$",
-     "answer": false
-    },
-    {
-     "text": "Mạch song song thì $\\dfrac{I_1}{I_2}=\\dfrac{R_2}{R_1}$",
-     "answer": true
-    }
-   ],
-   "explanation": "Nối tiếp cùng $I$ nên $\\dfrac{U_1}{U_2}=\\dfrac{R_1}{R_2}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Về đọc và vẽ đồ thị, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Cần ghi tên đại lượng và đơn vị trên cả hai trục",
-     "answer": true
-    },
-    {
-     "text": "Điểm đo nên nối bằng đường gấp khúc qua từng điểm",
-     "answer": false
-    },
-    {
-     "text": "Trên đồ thị $I$–$U$, hệ số góc là $\\dfrac1R$",
-     "answer": true
-    },
-    {
-     "text": "Ngoại suy chỉ làm trong khoảng ngắn và phải ghi \"dự đoán\"",
-     "answer": true
-    }
-   ],
-   "explanation": "Đường nối phải là đường thẳng hoặc đường trơn sát các điểm, không gấp khúc."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Về tính sai số của phép đo, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "$A_{tb}=\\dfrac{A_1+A_2+\\dots+A_n}{n}$",
-     "answer": true
-    },
-    {
-     "text": "$\\Delta A=\\Delta A_{ng}+\\Delta A_{dc}$",
-     "answer": true
-    },
-    {
-     "text": "Sai số dụng cụ lấy bằng hai lần ĐCNN",
-     "answer": false
-    },
-    {
-     "text": "Sai số tương đối $\\delta A=\\dfrac{\\Delta A}{A_{tb}}$",
-     "answer": true
-    }
-   ],
-   "explanation": "Sai số dụng cụ lấy bằng nửa ĐCNN."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Một điện trở có $6\\ \\text{V}$ cho $0{,}30\\ \\text{A}$. Khi $U=9\\ \\text{V}$ thì $I$ bằng bao nhiêu ampe (viết dạng thập phân dùng dấu phẩy)?",
-   "answer": "0,45",
-   "explanation": "Tỉ lệ thuận: $I_2=0{,}30\\cdot\\dfrac96=0{,}45\\ \\text{A}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Nguồn $12\\ \\text{V}$, $R_0=10\\ \\Omega$ nối tiếp biến trở $R=20\\ \\Omega$. Cường độ dòng điện là bao nhiêu ampe?",
-   "answer": "0,4",
-   "explanation": "$I=\\dfrac{12}{10+20}=0{,}4\\ \\text{A}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Một giờ bằng bao nhiêu giây?",
-   "answer": "3600",
-   "explanation": "Bài nêu $1$ giờ $=3600$ s."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dây có $S=0{,}5\\ \\text{mm}^2=5\\cdot10^{-n}\\ \\text{m}^2$. Số $n$ bằng bao nhiêu?",
-   "answer": "7",
-   "explanation": "$0{,}5\\cdot10^{-6}=5\\cdot10^{-7}\\ \\text{m}^2$ nên $n=7$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 6,
-   "question": "Dây dẫn $R=20\\ \\Omega$, $U$ tăng từ $6\\ \\text{V}$ lên $9\\ \\text{V}$. Công suất $P=\\dfrac{U^2}{R}$ tăng gấp bao nhiêu lần (viết dạng thập phân)?",
-   "answer": "2,25",
-   "explanation": "$P$ tỉ lệ với $U^2$ nên gấp $1{,}5^2=2{,}25$ lần."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai số và thực hành",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 6,
-   "question": "Ấm $1000\\ \\text{W}$ cần điện năng $A=525\\,000\\ \\text{J}$ để đun nước. Thời gian đun bằng bao nhiêu giây?",
-   "answer": "525",
-   "explanation": "$t=\\dfrac AP=\\dfrac{525\\,000}{1000}=525\\ \\text{s}$."
-  }
- ]
 }

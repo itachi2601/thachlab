@@ -1,386 +1,550 @@
 {
- "lesson_id": 152,
- "lesson_title": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
- "item_id": 398,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 15,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 10,
-   "cong_thuc": 10
+  "lesson_id": 152,
+  "lesson_title": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+  "item_id": 398,
+  "generated_at": "2026-10-25",
+  "generated_by": "claude-code (phiên Mac)",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
   },
-  "removed": []
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Bên ngoài một nam châm thẳng, các đường sức từ có chiều như thế nào?",
-   "explanation": "Bài nêu: bên ngoài nam châm, đường sức đi ra ở cực Bắc và đi vào ở cực Nam.",
-   "options": [
-    "Đi ra ở cực Nam, vào ở cực Bắc",
-    "Đi ra ở cực Bắc, vào ở cực Nam",
-    "Đi ra ở cả hai cực",
-    "Đi vào ở cả hai cực"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Theo quy tắc nắm tay phải cho ống dây có dòng điện, ngón cái choãi ra chỉ:",
-   "explanation": "Bốn ngón theo chiều dòng điện, ngón cái chỉ chiều đường sức trong lòng ống, tức hướng về cực Bắc.",
-   "options": [
-    "Chiều dòng điện trong các vòng dây",
-    "Chiều đường sức trong lòng ống, về cực Bắc",
-    "Cực Nam của ống dây",
-    "Chiều quay của kim nam châm thử"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Điều kiện để cuộn dây kín xuất hiện dòng điện cảm ứng là:",
-   "explanation": "Cuộn dây kín có dòng cảm ứng khi số đường sức xuyên qua tiết diện biến thiên.",
-   "options": [
-    "Có nam châm đặt gần cuộn dây",
-    "Nam châm nằm yên trong cuộn dây",
-    "Số đường sức từ qua tiết diện cuộn dây biến thiên",
-    "Từ trường qua cuộn dây rất mạnh"
-   ],
-   "answer": 2
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Quay nam châm quanh trục dọc của chính nó trước cuộn dây kín nối điện kế thì kim điện kế:",
-   "explanation": "Từ phổ đối xứng quanh trục nên số đường sức qua cuộn dây không đổi, không có dòng.",
-   "options": [
-    "Lệch một phía",
-    "Dao động qua lại",
-    "Không lệch",
-    "Lệch rồi quay về 0"
-   ],
-   "answer": 2
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Kéo nam châm ra xa cuộn dây kín, mặt cuộn dây đối diện nam châm trở thành cực:",
-   "explanation": "Theo Lenz, nam châm ra xa thì mặt cuộn dây thành cực khác tên, hút lại.",
-   "options": [
-    "Cùng tên với cực nam châm đối diện, đẩy ra",
-    "Khác tên với cực nam châm đối diện, hút lại",
-    "Không có cực nào",
-    "Luôn là cực Bắc"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Trong một chu kì, dòng điện xoay chiều đổi chiều mấy lần?",
-   "explanation": "Bài nêu: mỗi chu kì dòng đổi chiều 2 lần.",
-   "options": [
-    "1 lần",
-    "2 lần",
-    "4 lần",
-    "Không đổi chiều"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Máy biến áp hoạt động với nguồn nào?",
-   "explanation": "Cần từ trường biến thiên trong lõi nên chỉ dùng dòng xoay chiều.",
-   "options": [
-    "Chỉ nguồn một chiều",
-    "Chỉ nguồn xoay chiều",
-    "Cả hai như nhau",
-    "Chỉ pin"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Công thức đúng của máy biến áp là:",
-   "explanation": "Hiệu điện thế cùng chiều với số vòng: $U_1/U_2=N_1/N_2$.",
-   "options": [
-    "$\\dfrac{U_1}{U_2}=\\dfrac{N_2}{N_1}$",
-    "$\\dfrac{U_1}{U_2}=\\dfrac{N_1}{N_2}$",
-    "$U_1N_1=U_2N_2$",
-    "$U_1U_2=N_1N_2$"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Công suất hao phí trên đường dây truyền tải được tính bằng:",
-   "explanation": "$P_{hp}=RI^2$ với $I=P/U$ nên $P_{hp}=P^2R/U^2$.",
-   "options": [
-    "$\\dfrac{P^2R}{U^2}$",
-    "$\\dfrac{PR}{U^2}$",
-    "$\\dfrac{P^2R}{U}$",
-    "$\\dfrac{U^2}{R}$"
-   ],
-   "answer": 0
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Điện trở của đường dây hai dây dẫn, khoảng cách truyền $\\ell$, tiết diện $S$ là:",
-   "explanation": "Hai dây dài $2\\ell$ nên $R=\\rho\\dfrac{2\\ell}{S}$.",
-   "options": [
-    "$\\rho\\dfrac{\\ell}{S}$",
-    "$\\rho\\dfrac{2\\ell}{S}$",
-    "$\\rho\\dfrac{S}{2\\ell}$",
-    "$\\rho\\dfrac{2S}{\\ell}$"
-   ],
-   "answer": 1
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về hiện tượng cảm ứng điện từ, các phát biểu sau đúng hay sai?",
-   "explanation": "Dòng cảm ứng cần mạch kín và đường sức biến thiên; Lenz: chống lại sự biến thiên.",
-   "statements": [
+  "questions": [
     {
-     "text": "Nam châm nằm yên trong cuộn dây kín thì không có dòng cảm ứng.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bên ngoài một nam châm thẳng, các đường sức từ",
+      "options": [
+        "đi ra từ cực Nam và đi vào cực Bắc",
+        "đi ra từ cực Bắc và đi vào cực Nam",
+        "đi vào ở cả hai cực rồi khép kín bên trong",
+        "đi ra ở cả hai cực rồi tản xa vô hạn"
+      ],
+      "answer": 1,
+      "explanation": "Quy ước: ngoài nam châm, đường sức đi ra ở cực Bắc, đi vào ở cực Nam, và là đường khép kín.",
+      "distractorNotes": {
+        "A": "Đảo chiều: bên ngoài nam châm đường sức đi ra ở cực Bắc, chỉ bên trong mới đi từ S sang N.",
+        "C": "Đường sức có hướng nhất định, không thể cùng đi vào ở cả hai cực.",
+        "D": "Đường sức từ là những đường khép kín, không tản ra vô hạn."
+      }
     },
     {
-     "text": "Có nam châm mạnh gần cuộn dây là chắc chắn có dòng cảm ứng.",
-     "answer": false
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Bẻ đôi một thanh nam châm thẳng, ta được",
+      "options": [
+        "một mảnh chỉ có cực Bắc, mảnh kia chỉ có cực Nam",
+        "hai mảnh đều mất từ tính vì không còn đủ cực",
+        "hai mảnh đều chỉ còn cực Bắc sau khi bẻ",
+        "hai nam châm, mỗi mảnh đủ cả hai cực"
+      ],
+      "answer": 3,
+      "explanation": "Bài nêu: bẻ đôi vẫn được hai nam châm, mỗi mảnh đủ hai cực.",
+      "distractorNotes": {
+        "A": "Nam châm luôn có đủ hai cực, không có nam châm chỉ một cực.",
+        "B": "Mỗi mảnh tự có hai cực nên vẫn là nam châm.",
+        "C": "Mỗi mảnh đều xuất hiện cả cực Bắc lẫn cực Nam."
+      }
     },
     {
-     "text": "Nam châm lại gần thì mặt cuộn dây đối diện thành cực cùng tên, đẩy ra.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Nhìn vào đầu A của một ống dây, thấy dòng điện chạy ngược chiều kim đồng hồ. Khi đó",
+      "options": [
+        "đầu A là cực Bắc của ống dây",
+        "đầu A là cực Nam của ống dây",
+        "chưa xác định vì chưa biết chiều quấn dây",
+        "đầu A không có cực vì thiếu lõi sắt non"
+      ],
+      "answer": 0,
+      "explanation": "Theo quy tắc nắm tay phải, nhìn vào đầu ống thấy dòng ngược chiều kim đồng hồ thì đầu đó là cực Bắc.",
+      "distractorNotes": {
+        "B": "Đảo mẹo: ngược chiều kim đồng hồ là cực Bắc, cùng chiều mới là cực Nam.",
+        "C": "Chiều dòng nhìn từ đầu ống đã đủ để xác định cực, chiều quấn dây nằm sẵn trong đó.",
+        "D": "Ống dây có dòng điện đã giống nam châm thẳng; lõi sắt chỉ làm từ trường mạnh hơn."
+      }
     },
     {
-     "text": "Dòng cảm ứng sinh ra từ trường làm nam châm lao vào nhanh hơn.",
-     "answer": false
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Cuộn dây kín xuất hiện dòng điện cảm ứng khi",
+      "options": [
+        "có một nam châm mạnh đặt yên trong cuộn dây",
+        "nam châm chuyển động theo bất kì cách nào",
+        "số đường sức từ qua cuộn dây biến thiên",
+        "từ thông qua cuộn dây có giá trị rất lớn"
+      ],
+      "answer": 2,
+      "explanation": "Điều kiện của cảm ứng điện từ: mạch kín và số đường sức qua tiết diện của nó biến thiên.",
+      "distractorNotes": {
+        "A": "Từ trường mạnh nhưng không đổi thì không sinh dòng; cần sự biến thiên.",
+        "B": "Quay nam châm quanh trục dọc thì số đường sức qua cuộn dây vẫn không đổi nên không có dòng.",
+        "D": "Giá trị lớn mà không thay đổi thì không sinh dòng cảm ứng; chỉ sự biến thiên mới có tác dụng."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Một nam châm nằm yên trong lòng cuộn dây kín nối với điện kế. Kim điện kế",
+      "options": [
+        "đứng ở số 0",
+        "lệch mạnh vì từ trường trong cuộn dây rất mạnh",
+        "lệch về một phía rồi đứng yên ở đó",
+        "dao động qua lại liên tục quanh số 0"
+      ],
+      "answer": 0,
+      "explanation": "Nam châm yên thì số đường sức qua cuộn dây không đổi, không có dòng cảm ứng nên kim về số 0.",
+      "distractorNotes": {
+        "B": "Từ trường mạnh nhưng không đổi thì không sinh dòng cảm ứng.",
+        "C": "Dòng cảm ứng chỉ có khi đường sức đang biến thiên, nam châm yên thì không có.",
+        "D": "Nhầm với dòng xoay chiều; ở đây từ trường qua cuộn dây không thay đổi."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Cực Nam của một nam châm quay về đầu A của cuộn dây kín. Đưa nam châm lại gần thì",
+      "options": [
+        "A thành cực Bắc, hút nam châm vào",
+        "A thành cực Nam, hút nam châm vào",
+        "không có dòng vì cực Nam không sinh dòng",
+        "A thành cực Nam, đẩy nam châm ra"
+      ],
+      "answer": 3,
+      "explanation": "Dòng cảm ứng chống lại sự biến thiên: nam châm lại gần thì đầu A đẩy ra, nên A là cực cùng tên (cực Nam).",
+      "distractorNotes": {
+        "A": "Dòng cảm ứng sẽ giúp nam châm lao vào, trái với việc chống lại sự biến thiên.",
+        "B": "Hai cực Nam đối diện nhau thì đẩy chứ không hút.",
+        "C": "Cực nào lại gần cũng làm số đường sức qua cuộn dây tăng nên đều sinh dòng."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Dòng điện lưới có tần số $50\\ \\text{Hz}$. Mỗi giây, dòng điện đổi chiều",
+      "options": [
+        "$50$ lần",
+        "$100$ lần",
+        "$25$ lần",
+        "$200$ lần"
+      ],
+      "answer": 1,
+      "explanation": "Mỗi giây có $50$ chu kì, mỗi chu kì đổi chiều $2$ lần nên có $100$ lần đổi chiều.",
+      "distractorNotes": {
+        "A": "Quên rằng trong mỗi chu kì dòng đổi chiều hai lần.",
+        "C": "Chia đôi thay vì nhân đôi số chu kì mỗi giây.",
+        "D": "Nhân đôi hai lần; mỗi chu kì chỉ đổi chiều hai lần."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Một máy phát có rôto $4$ cực từ, quay $1500$ vòng/phút. Tần số dòng điện là",
+      "options": [
+        "$100\\ \\text{Hz}$",
+        "$3000\\ \\text{Hz}$",
+        "$50\\ \\text{Hz}$",
+        "$25\\ \\text{Hz}$"
+      ],
+      "answer": 2,
+      "explanation": "$4$ cực là $p=2$ cặp, $n=1500:60=25$ vòng/s nên $f=np=50\\ \\text{Hz}$.",
+      "distractorNotes": {
+        "A": "Lấy $p=4$ cực làm số cặp cực; số cặp cực là $2$.",
+        "B": "Quên đổi vòng/phút ra vòng/giây khi dùng $f=np$.",
+        "D": "Quên nhân với số cặp cực $p$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Trong máy phát điện xoay chiều, phần đứng yên được gọi là",
+      "options": [
+        "rôto",
+        "vành khuyên",
+        "chổi quét",
+        "stato"
+      ],
+      "answer": 3,
+      "explanation": "Bài nêu: phần quay của máy phát là rôto, phần đứng yên là stato.",
+      "distractorNotes": {
+        "A": "Rôto là phần quay của máy phát, ngược với phần đứng yên.",
+        "B": "Vành khuyên chỉ là chi tiết dùng để lấy điện từ cuộn dây quay.",
+        "C": "Chổi quét tì vào vành khuyên để lấy điện, không phải phần đứng yên của máy phát."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Nam châm điện của rơ-le vẫn hút sắt khi có dòng điện xoay chiều chạy qua. Đó là tác dụng",
+      "options": [
+        "từ của dòng điện",
+        "nhiệt của dòng điện",
+        "phát sáng của dòng điện",
+        "sinh lí của dòng điện"
+      ],
+      "answer": 0,
+      "explanation": "Hút sắt bằng nam châm điện là biểu hiện của tác dụng từ.",
+      "distractorNotes": {
+        "B": "Tác dụng nhiệt là làm nóng, như ấm điện hay bàn là.",
+        "C": "Tác dụng phát sáng thể hiện ở đèn LED, đèn ống, không phải ở sự hút sắt.",
+        "D": "Tác dụng sinh lí là việc điện giật làm co cơ, không liên quan sự hút sắt."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Nối cuộn sơ cấp của máy biến áp với nguồn một chiều không đổi thì cuộn thứ cấp",
+      "options": [
+        "vẫn có hiệu điện thế như khi dùng nguồn xoay chiều",
+        "có hiệu điện thế lớn gấp bội hiệu điện thế nguồn",
+        "gần như không có điện, trừ lúc đóng/ngắt nguồn",
+        "luôn có dòng điện chạy qua đều đặn như nguồn"
+      ],
+      "answer": 2,
+      "explanation": "Máy biến áp chỉ làm việc với từ trường biến thiên; nguồn một chiều thì từ trường không đổi, thứ cấp không có điện (trừ lúc đóng, ngắt).",
+      "distractorNotes": {
+        "A": "Cần từ trường biến thiên trong lõi; nguồn một chiều tạo từ trường không đổi.",
+        "B": "Máy biến áp không khuếch đại được nguồn một chiều, vì thiếu từ trường biến thiên.",
+        "D": "Dòng cảm ứng chỉ xuất hiện khi từ trường qua lõi thay đổi, không đều đặn mãi được."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Cuộn sơ cấp $500$ vòng nối nguồn xoay chiều $220\\ \\text{V}$, cuộn thứ cấp $25$ vòng. Hiệu điện thế thứ cấp (máy lí tưởng) là",
+      "options": [
+        "$4400\\ \\text{V}$",
+        "$11\\ \\text{V}$",
+        "$195\\ \\text{V}$",
+        "$220\\ \\text{V}$"
+      ],
+      "answer": 1,
+      "explanation": "$\\dfrac{U_1}{U_2}=\\dfrac{N_1}{N_2}$ nên $U_2=220\\cdot\\dfrac{25}{500}=11\\ \\text{V}$.",
+      "distractorNotes": {
+        "A": "Viết ngược tỉ số vòng dây; hiệu điện thế tỉ lệ thuận với số vòng.",
+        "C": "Lấy hiệu giữa các số, trong khi hiệu điện thế tỉ lệ với số vòng chứ không cộng trừ.",
+        "D": "Coi máy biến áp không đổi hiệu điện thế, trong khi số vòng hai cuộn khác nhau."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Giữ nguyên công suất truyền và đường dây, tăng hiệu điện thế ở đầu đường dây lên $5$ lần thì hao phí trên dây",
+      "options": [
+        "giảm 25 lần",
+        "giảm 5 lần",
+        "tăng 25 lần",
+        "giảm 10 lần"
+      ],
+      "answer": 0,
+      "explanation": "$P_{hp}=\\dfrac{P^2R}{U^2}$, $U$ tăng $5$ lần thì $P_{hp}$ giảm $5^2=25$ lần.",
+      "distractorNotes": {
+        "B": "Hao phí tỉ lệ nghịch với $U^2$, không chỉ với $U$.",
+        "C": "Đảo chiều: $U$ lớn thì dòng nhỏ nên dây ít nóng hơn.",
+        "D": "Nhân đôi số lần tăng áp một cách tuỳ tiện; quan hệ đúng là bình phương, $5^2=25$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Máy biến áp lí tưởng hạ $220\\ \\text{V}$ xuống $6\\ \\text{V}$, đèn $6\\ \\text{V}-12\\ \\text{W}$ sáng bình thường. Dòng điện qua cuộn sơ cấp xấp xỉ",
+      "options": [
+        "$2\\ \\text{A}$",
+        "$73\\ \\text{A}$",
+        "$0{,}055\\ \\text{A}$",
+        "$12\\ \\text{A}$"
+      ],
+      "answer": 2,
+      "explanation": "Máy lí tưởng: $P_1=P_2=12\\ \\text{W}$ nên $I_1=\\dfrac{12}{220}\\approx0{,}055\\ \\text{A}$.",
+      "distractorNotes": {
+        "A": "Đó là dòng qua cuộn thứ cấp (đèn); dòng hai cuộn không bằng nhau.",
+        "B": "Nhân ngược tỉ số: bên hiệu điện thế cao phải có dòng nhỏ.",
+        "D": "Lấy công suất làm cường độ dòng điện, nhầm đơn vị W với A."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Một học sinh nối cuộn dây kín với điện kế rồi làm thí nghiệm với một thanh nam châm thẳng. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Đưa nam châm lại gần cuộn dây thì kim điện kế lệch.",
+          "answer": true
+        },
+        {
+          "text": "Quay nam châm quanh trục dọc của chính nó thì kim lệch vì nam châm đang chuyển động.",
+          "answer": false
+        },
+        {
+          "text": "Giữ nam châm yên trong cuộn dây thì kim điện kế không lệch.",
+          "answer": true
+        },
+        {
+          "text": "Kéo nam châm ra xa thì kim không lệch vì không còn lại gần.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng: số đường sức qua cuộn dây tăng, có dòng cảm ứng. b) sai: từ phổ đối xứng quanh trục dọc, số đường sức qua cuộn dây không đổi. c) đúng: số đường sức không biến thiên nên không có dòng cảm ứng. d) sai: số đường sức qua cuộn dây giảm nên có dòng cảm ứng, kim lệch ngược chiều so với lúc lại gần.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì số đường sức qua cuộn dây tăng, có dòng cảm ứng.",
+        "1": "Không thể coi là đúng vì từ phổ đối xứng quanh trục dọc, số đường sức qua cuộn dây không đổi.",
+        "2": "Không thể coi là sai vì số đường sức không biến thiên nên không có dòng cảm ứng.",
+        "3": "Không thể coi là đúng vì số đường sức qua cuộn dây giảm nên có dòng cảm ứng, kim lệch ngược chiều so với lúc lại gần."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Một máy phát có rôto $6$ cực từ, quay $1000$ vòng/phút. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Tần số dòng điện của máy phát là khoảng $16{,}7\\ \\text{Hz}$.",
+          "answer": false
+        },
+        {
+          "text": "Rôto $6$ cực từ tương ứng với $3$ cặp cực.",
+          "answer": true
+        },
+        {
+          "text": "Tần số dòng điện của máy phát là $3000\\ \\text{Hz}$.",
+          "answer": false
+        },
+        {
+          "text": "Tần số dòng điện của máy phát là $50\\ \\text{Hz}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: đó là số vòng quay mỗi giây, còn phải nhân với số cặp cực. b) đúng: một cặp cực gồm hai cực, nên $6$ cực là $3$ cặp. c) sai: giá trị này do chưa đổi vòng/phút ra vòng/giây. d) đúng: $n=\\dfrac{1000}{60}$ vòng/s nên $f=np=\\dfrac{1000}{60}\\cdot3=50\\ \\text{Hz}$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì đó là số vòng quay mỗi giây, còn phải nhân với số cặp cực.",
+        "1": "Không thể coi là sai vì một cặp cực gồm hai cực, nên $6$ cực là $3$ cặp.",
+        "2": "Không thể coi là đúng vì giá trị này do chưa đổi vòng/phút ra vòng/giây.",
+        "3": "Không thể coi là sai vì $n=\\dfrac{1000}{60}$ vòng/s nên $f=np=\\dfrac{1000}{60}\\cdot3=50\\ \\text{Hz}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Máy biến áp lí tưởng hạ $220\\ \\text{V}$ xuống $12\\ \\text{V}$, đèn $12\\ \\text{V}-36\\ \\text{W}$ mắc ở cuộn thứ cấp sáng bình thường. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Dòng điện qua cuộn sơ cấp xấp xỉ $0{,}16\\ \\text{A}$.",
+          "answer": true
+        },
+        {
+          "text": "Cuộn sơ cấp có số vòng ít hơn cuộn thứ cấp.",
+          "answer": false
+        },
+        {
+          "text": "Dòng điện qua đèn (cuộn thứ cấp) là $3\\ \\text{A}$.",
+          "answer": true
+        },
+        {
+          "text": "Dòng điện qua cuộn sơ cấp cũng là $3\\ \\text{A}$ vì hai cuộn nối với nhau.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng: máy lí tưởng nên $I_1=\\dfrac{P}{U_1}=\\dfrac{36}{220}\\approx0{,}16\\ \\text{A}$. b) sai: đây là máy hạ áp nên cuộn sơ cấp có nhiều vòng hơn. c) đúng: $I_2=\\dfrac{P}{U_2}=\\dfrac{36}{12}=3\\ \\text{A}$. d) sai: hai cuộn không nối điện, dòng ngược với hiệu điện thế nên khác nhau.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì máy lí tưởng nên $I_1=\\dfrac{P}{U_1}=\\dfrac{36}{220}\\approx0{,}16\\ \\text{A}$.",
+        "1": "Không thể coi là đúng vì đây là máy hạ áp nên cuộn sơ cấp có nhiều vòng hơn.",
+        "2": "Không thể coi là sai vì $I_2=\\dfrac{P}{U_2}=\\dfrac{36}{12}=3\\ \\text{A}$.",
+        "3": "Không thể coi là đúng vì hai cuộn không nối điện, dòng ngược với hiệu điện thế nên khác nhau."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Một máy biến áp có cuộn sơ cấp $400$ vòng, nối nguồn xoay chiều $12\\ \\text{V}$. Học sinh đổi cuộn thứ cấp $100$, $200$, $400$ vòng và đo $U_2$ được $2{,}9\\ \\text{V}$, $5{,}8\\ \\text{V}$, $11{,}6\\ \\text{V}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Với thứ cấp $400$ vòng thì máy là máy tăng áp.",
+          "answer": false
+        },
+        {
+          "text": "Với thứ cấp $100$ vòng, lí thuyết cho $U_2=3\\ \\text{V}$.",
+          "answer": true
+        },
+        {
+          "text": "Số đo luôn nhỏ hơn lí thuyết vì lúc đọc vôn kế lệch nhiều, lúc lệch ít.",
+          "answer": false
+        },
+        {
+          "text": "Khi giữ $U_1$ và $N_1$, hiệu điện thế $U_2$ tỉ lệ với $N_2$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: hai cuộn bằng nhau nên hiệu điện thế gần như không đổi. b) đúng: $U_2=12\\cdot\\dfrac{100}{400}=3\\ \\text{V}$. c) sai: lệch cùng một phía là sai số hệ thống do toả nhiệt và rò từ, không phải do đọc số. d) đúng: đây là hệ thức $U_1/U_2=N_1/N_2$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì hai cuộn bằng nhau nên hiệu điện thế gần như không đổi.",
+        "1": "Không thể coi là sai vì $U_2=12\\cdot\\dfrac{100}{400}=3\\ \\text{V}$.",
+        "2": "Không thể coi là đúng vì lệch cùng một phía là sai số hệ thống do toả nhiệt và rò từ, không phải do đọc số.",
+        "3": "Không thể coi là sai vì đây là hệ thức $U_1/U_2=N_1/N_2$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Trạm truyền công suất $400\\ \\text{kW}$ qua đường dây có điện trở tổng $10\\ \\Omega$, hiệu điện thế ở đầu đường dây là $20\\ \\text{kV}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Dòng điện trên dây là $20\\ \\text{A}$.",
+          "answer": true
+        },
+        {
+          "text": "Hiệu suất truyền tải là $96\\%$.",
+          "answer": false
+        },
+        {
+          "text": "Nếu giảm hiệu điện thế xuống $10\\ \\text{kV}$ thì hao phí giảm một nửa.",
+          "answer": false
+        },
+        {
+          "text": "Công suất hao phí trên dây là $4\\ \\text{kW}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) đúng: $I=\\dfrac PU=\\dfrac{400\\,000}{20\\,000}=20\\ \\text{A}$. b) sai: $H=1-\\dfrac{4}{400}=99\\%$. c) sai: hao phí tỉ lệ nghịch với $U^2$, giảm $U$ một nửa thì hao phí tăng $4$ lần. d) đúng: $P_{hp}=RI^2=10\\cdot20^2=4000\\ \\text{W}$.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì $I=\\dfrac PU=\\dfrac{400\\,000}{20\\,000}=20\\ \\text{A}$.",
+        "1": "Không thể coi là đúng vì $H=1-\\dfrac{4}{400}=99\\%$.",
+        "2": "Không thể coi là đúng vì hao phí tỉ lệ nghịch với $U^2$, giảm $U$ một nửa thì hao phí tăng $4$ lần.",
+        "3": "Không thể coi là sai vì $P_{hp}=RI^2=10\\cdot20^2=4000\\ \\text{W}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Giữ nguyên công suất truyền, hiệu điện thế ở đầu đường dây và chiều dài, người ta thay dây dẫn bằng dây cùng chất có tiết diện gấp đôi. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Hao phí trên dây giảm $4$ lần.",
+          "answer": false
+        },
+        {
+          "text": "Điện trở của đường dây giảm còn một nửa.",
+          "answer": true
+        },
+        {
+          "text": "Dòng điện trên dây $I=P/U$ không đổi.",
+          "answer": true
+        },
+        {
+          "text": "Hao phí tăng $2$ lần vì dây to hơn thì dòng lớn hơn.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) sai: hao phí $RI^2$ chỉ tỉ lệ bậc nhất với $R$ khi $I$ không đổi, nên giảm $2$ lần. b) đúng: $R=\\rho\\dfrac{2\\ell}{S}$ tỉ lệ nghịch với tiết diện $S$. c) đúng: $P$ và $U$ giữ nguyên nên dòng không đổi. d) sai: dòng do $P$ và $U$ quyết định, không phụ thuộc tiết diện dây.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì hao phí $RI^2$ chỉ tỉ lệ bậc nhất với $R$ khi $I$ không đổi, nên giảm $2$ lần.",
+        "1": "Không thể coi là sai vì $R=\\rho\\dfrac{2\\ell}{S}$ tỉ lệ nghịch với tiết diện $S$.",
+        "2": "Không thể coi là sai vì $P$ và $U$ giữ nguyên nên dòng không đổi.",
+        "3": "Không thể coi là đúng vì dòng do $P$ và $U$ quyết định, không phụ thuộc tiết diện dây."
+      }
     }
-   ]
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Về dòng điện xoay chiều và máy phát điện, các phát biểu sau đúng hay sai?",
-   "explanation": "Rôto quay, stato đứng yên; lưới điện 50 Hz đổi chiều 100 lần mỗi giây.",
-   "statements": [
-    {
-     "text": "Phần quay của máy phát gọi là rôto.",
-     "answer": true
-    },
-    {
-     "text": "Lưới điện 50 Hz đổi chiều 100 lần mỗi giây.",
-     "answer": true
-    },
-    {
-     "text": "220 V là giá trị lớn nhất của hiệu điện thế lưới.",
-     "answer": false
-    },
-    {
-     "text": "Dòng xoay chiều có tác dụng nhiệt và tác dụng từ.",
-     "answer": true
-    }
-   ]
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Về máy biến áp lí tưởng, các phát biểu sau đúng hay sai?",
-   "explanation": "Máy lí tưởng $U_1I_1=U_2I_2$, nên áp tăng thì dòng giảm.",
-   "statements": [
-    {
-     "text": "$U_1I_1=U_2I_2$.",
-     "answer": true
-    },
-    {
-     "text": "$\\dfrac{I_1}{I_2}=\\dfrac{N_2}{N_1}$.",
-     "answer": true
-    },
-    {
-     "text": "Máy tăng áp có $N_2\\lt N_1$.",
-     "answer": false
-    },
-    {
-     "text": "Tăng áp bao nhiêu lần thì dòng tăng bấy nhiêu lần.",
-     "answer": false
-    }
-   ]
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Về hao phí truyền tải $P_{hp}=\\dfrac{P^2R}{U^2}$, các phát biểu sau đúng hay sai?",
-   "explanation": "Hao phí tỉ lệ nghịch với $U^2$ và thuận với $R$; $U$ là ở đầu đường dây.",
-   "statements": [
-    {
-     "text": "Tăng $U$ lên $k$ lần thì hao phí giảm $k^2$ lần.",
-     "answer": true
-    },
-    {
-     "text": "Tăng tiết diện dây gấp đôi thì hao phí giảm 2 lần.",
-     "answer": true
-    },
-    {
-     "text": "$U$ trong công thức là hiệu điện thế ở nơi tiêu thụ.",
-     "answer": false
-    },
-    {
-     "text": "Hiệu suất truyền tải $H=1-\\dfrac{P_{hp}}{P}$.",
-     "answer": true
-    }
-   ]
-  },
-  {
-   "type": "short_answer",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Lưới điện Việt Nam có tần số 50 Hz. Dòng điện đổi chiều bao nhiêu lần mỗi giây?",
-   "explanation": "Mỗi chu kì đổi chiều 2 lần, nên 50×2=100 lần mỗi giây.",
-   "answer": "100"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Máy phát có 2 cặp cực, rôto quay 25 vòng/s. Tần số dòng điện (Hz) là bao nhiêu?",
-   "explanation": "$f=np=25\\cdot2=50$ Hz.",
-   "answer": "50"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Máy biến áp lí tưởng có $N_1=500$ vòng, $N_2=100$ vòng, $U_1=220$ V. Tính $U_2$ (V), làm tròn đến hàng đơn vị.",
-   "explanation": "$U_2=U_1N_2/N_1=220\\cdot100/500=44$ V.",
-   "answer": "44"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Giữ nguyên $P$ và đường dây, tăng $U$ lên 5 lần. Hao phí giảm bao nhiêu lần?",
-   "explanation": "Giảm $k^2=5^2=25$ lần.",
-   "answer": "25"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Truyền $P=400$ kW, $U=20$ kV, điện trở dây $R=10\\ \\Omega$. Cường độ dòng trên dây (A) là bao nhiêu?",
-   "explanation": "$I=P/U=400000/20000=20$ A.",
-   "answer": "20"
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Dây có $R=10\\ \\Omega$ mang dòng $I=20$ A. Công suất hao phí là bao nhiêu kW?",
-   "explanation": "$P_{hp}=RI^2=10\\cdot400=4000$ W = 4 kW.",
-   "answer": "4"
-  }
- ]
+  ]
 }

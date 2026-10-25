@@ -1,386 +1,550 @@
 {
- "lesson_id": 86,
- "lesson_title": "Bài 8. Thấu kính",
- "item_id": 293,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 15,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 11,
-   "cong_thuc": 9
+  "lesson_id": 86,
+  "lesson_title": "Bài 8. Thấu kính",
+  "item_id": 293,
+  "generated_at": "2026-10-25",
+  "generated_by": "claude-code (phiên Mac)",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
   },
-  "removed": []
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Thấu kính hội tụ có đặc điểm hình dạng nào sau đây?",
-   "options": [
-    "Rìa mỏng hơn phần giữa",
-    "Rìa dày hơn phần giữa",
-    "Hai mặt đều phẳng",
-    "Rìa và giữa dày bằng nhau"
-   ],
-   "answer": 0,
-   "explanation": "Mục II.1: thấu kính hội tụ có rìa mỏng hơn phần giữa."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Đặc điểm thấu kính hội tụ, phân kì và tiêu cự",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Chùm sáng song song đi qua thấu kính phân kì thì chùm ló:",
-   "options": [
-    "Hội tụ tại một điểm",
-    "Loe ra",
-    "Vẫn song song",
-    "Bị phản xạ trở lại"
-   ],
-   "answer": 1,
-   "explanation": "Mục II.1: thấu kính phân kì làm chùm song song loe ra."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Đặc điểm thấu kính hội tụ, phân kì và tiêu cự",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Tia sáng đi qua quang tâm $O$ của thấu kính thì:",
-   "options": [
-    "Ló qua $F'$",
-    "Ló song song trục chính",
-    "Đi thẳng",
-    "Bị phản xạ"
-   ],
-   "answer": 2,
-   "explanation": "Mục II.2–3: tia qua quang tâm đi thẳng."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Dựng ảnh của vật qua thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Với thấu kính hội tụ, tia tới qua tiêu điểm $F$ thì tia ló:",
-   "options": [
-    "Đi qua $F'$",
-    "Song song với trục chính",
-    "Đi thẳng qua $O$",
-    "Quay ngược lại"
-   ],
-   "answer": 1,
-   "explanation": "Mục II.3: tia qua F ló song song trục chính."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Dựng ảnh của vật qua thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Vật đặt cách thấu kính hội tụ một khoảng $d \\gt 2f$ cho ảnh:",
-   "options": [
-    "Ảo, cùng chiều, nhỏ hơn vật",
-    "Thật, ngược chiều, lớn hơn vật",
-    "Thật, ngược chiều, nhỏ hơn vật",
-    "Ảo, cùng chiều, lớn hơn vật"
-   ],
-   "answer": 2,
-   "explanation": "Mục II.4: $d \\gt 2f$ cho ảnh thật, ngược chiều, nhỏ hơn vật."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Dựng ảnh của vật qua thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Thấu kính phân kì luôn cho ảnh có tính chất nào?",
-   "options": [
-    "Thật, ngược chiều, nhỏ hơn vật",
-    "Ảo, cùng chiều, nhỏ hơn vật",
-    "Ảo, cùng chiều, lớn hơn vật",
-    "Thật, cùng chiều, lớn hơn vật"
-   ],
-   "answer": 1,
-   "explanation": "Mục II.4: kính phân kì luôn cho ảnh ảo, cùng chiều, nhỏ hơn vật."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức thấu kính đúng là:",
-   "options": [
-    "$\\dfrac{1}{f} = \\dfrac{1}{d} + \\dfrac{1}{d'}$",
-    "$f = d + d'$",
-    "$\\dfrac{1}{f} = \\dfrac{1}{d} - \\dfrac{1}{d'}$",
-    "$\\dfrac{1}{f} = d + d'$"
-   ],
-   "answer": 0,
-   "explanation": "Mục II.5 nêu $\\dfrac{1}{f} = \\dfrac{1}{d} + \\dfrac{1}{d'}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Từ $\\dfrac{1}{f} = \\dfrac{1}{d} + \\dfrac{1}{d'}$, biểu thức của $f$ là:",
-   "options": [
-    "$f = \\dfrac{d + d'}{d\\,d'}$",
-    "$f = \\dfrac{d\\,d'}{d + d'}$",
-    "$f = d + d'$",
-    "$f = \\dfrac{d\\,d'}{d - d'}$"
-   ],
-   "answer": 1,
-   "explanation": "Quy đồng: $\\dfrac{1}{f} = \\dfrac{d+d'}{dd'}$ nên $f = \\dfrac{dd'}{d+d'}$ (mục II.5)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Thấu kính hội tụ $f = 8\\ \\text{cm}$, vật cách kính $12\\ \\text{cm}$. Ảnh cách kính:",
-   "options": [
-    "$4{,}8\\ \\text{cm}$",
-    "$24\\ \\text{cm}$",
-    "$20\\ \\text{cm}$",
-    "$4\\ \\text{cm}$"
-   ],
-   "answer": 1,
-   "explanation": "$\\dfrac{1}{d'} = \\dfrac{1}{8} - \\dfrac{1}{12} = \\dfrac{1}{24}$ nên $d' = 24\\ \\text{cm}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Số phóng đại của ảnh được tính bằng:",
-   "options": [
-    "$k = \\dfrac{d}{|d'|}$",
-    "$k = \\dfrac{|d'|}{d}$",
-    "$k = \\dfrac{f}{d}$",
-    "$k = d\\,|d'|$"
-   ],
-   "answer": 1,
-   "explanation": "Mục II.5: $k = \\dfrac{h'}{h} = \\dfrac{|d'|}{d}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Dựng ảnh của vật qua thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về ảnh thật và ảnh ảo qua thấu kính:",
-   "statements": [
+  "questions": [
     {
-     "text": "Ảnh thật hứng được trên màn.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Đặc điểm thấu kính hội tụ, phân kì và tiêu cự",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thấu kính hội tụ là thấu kính",
+      "options": [
+        "có rìa mỏng hơn phần giữa, làm chùm tia song song tụ lại",
+        "có rìa dày hơn phần giữa, làm chùm tia song song tụ lại",
+        "có rìa mỏng hơn phần giữa, làm chùm tia song song loe ra",
+        "có rìa dày hơn phần giữa, làm chùm tia song song bị loe ra"
+      ],
+      "answer": 0,
+      "explanation": "Thấu kính hội tụ có rìa mỏng hơn phần giữa; chùm tia tới song song đi qua thì gom lại một điểm.",
+      "distractorNotes": {
+        "B": "Nhầm hình dạng: rìa dày là đặc điểm của thấu kính phân kì, loại kính này không gom được chùm tia song song.",
+        "C": "Nhầm tác dụng: kính rìa mỏng gom chùm tia song song lại, không làm chùm tia loe ra.",
+        "D": "Đây là mô tả của thấu kính phân kì, trái với thấu kính hội tụ cả về hình dạng lẫn tác dụng."
+      }
     },
     {
-     "text": "Ảnh ảo do các tia ló gặp nhau thật tạo thành.",
-     "answer": false
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Dựng ảnh của vật qua thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Tia tới đi qua quang tâm $O$ của thấu kính thì tia ló",
+      "options": [
+        "song song với trục chính của thấu kính",
+        "tiếp tục truyền thẳng, không đổi hướng",
+        "đi qua tiêu điểm ảnh $F'$ của thấu kính",
+        "bị phản xạ trở lại về phía vật phát sáng"
+      ],
+      "answer": 1,
+      "explanation": "Quang tâm là điểm giữa thấu kính; tia đi qua $O$ truyền thẳng.",
+      "distractorNotes": {
+        "A": "Nhầm với tia qua tiêu điểm vật $F$: chỉ tia qua $F$ mới cho tia ló song song với trục chính.",
+        "C": "Nhầm với tia tới song song trục chính; tia qua quang tâm không bị bẻ về $F'$.",
+        "D": "Nhầm khúc xạ với phản xạ: ánh sáng đi xuyên qua thấu kính, không bật ngược trở lại."
+      }
     },
     {
-     "text": "Ảnh ảo chỉ thấy khi nhìn qua thấu kính.",
-     "answer": true
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Đặc điểm thấu kính hội tụ, phân kì và tiêu cự",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Chùm tia tới song song với trục chính của thấu kính hội tụ thì chùm tia ló",
+      "options": [
+        "song song với trục chính như chùm tia tới",
+        "loe ra, có đường kéo dài đi qua tiêu điểm $F'$",
+        "cắt nhau tại tiêu điểm ảnh $F'$",
+        "dồn về quang tâm $O$ rồi tiếp tục đi thẳng"
+      ],
+      "answer": 2,
+      "explanation": "Với thấu kính hội tụ, tia song song trục chính ló qua $F'$ nên cả chùm cắt nhau tại $F'$.",
+      "distractorNotes": {
+        "A": "Coi thấu kính như tấm kính phẳng; thấu kính hội tụ làm chùm tia đổi hướng và gom lại.",
+        "B": "Đây là tính chất của thấu kính phân kì, không phải của thấu kính hội tụ.",
+        "D": "Chỉ tia tới đi qua $O$ mới truyền thẳng; chùm song song ló tập trung ở tiêu điểm, không dồn về $O$."
+      }
     },
     {
-     "text": "Vật trong tiêu cự của kính hội tụ cho ảnh hứng được trên màn.",
-     "answer": false
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Dựng ảnh của vật qua thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật thật đặt trong khoảng tiêu cự của thấu kính hội tụ cho ảnh",
+      "options": [
+        "thật, ngược chiều và lớn hơn vật",
+        "ảo, cùng chiều và nhỏ hơn vật",
+        "thật, ngược chiều và nhỏ hơn vật",
+        "ảo, cùng chiều và lớn hơn vật"
+      ],
+      "answer": 3,
+      "explanation": "Khi $d<f$ hai tia ló loe ra, đường kéo dài gặp nhau cho ảnh ảo, cùng chiều, lớn hơn vật.",
+      "distractorNotes": {
+        "A": "Ảnh thật lớn hơn vật chỉ có khi $f<d<2f$; trong tiêu cự các tia ló loe ra nên không có ảnh thật.",
+        "B": "Ảnh ảo nhỏ hơn vật là của thấu kính phân kì; thấu kính hội tụ cho ảnh ảo lớn hơn vật.",
+        "C": "Ảnh thật nhỏ hơn vật chỉ có khi vật xa hơn $2f$, không phải khi vật ở trong tiêu cự."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Dựng ảnh của vật qua thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Vật thật đặt ở vị trí bất kì trước thấu kính phân kì luôn cho ảnh",
+      "options": [
+        "ảo, cùng chiều và lớn hơn vật",
+        "ảo, cùng chiều và nhỏ hơn vật",
+        "thật, ngược chiều và nhỏ hơn vật",
+        "thật, cùng chiều và nhỏ hơn vật"
+      ],
+      "answer": 1,
+      "explanation": "Thấu kính phân kì cho ảnh ảo, cùng chiều, nhỏ hơn vật, nằm trong khoảng từ $O$ tới $F'$.",
+      "distractorNotes": {
+        "A": "Nhầm với kính lúp (thấu kính hội tụ, vật trong tiêu cự); thấu kính phân kì luôn thu nhỏ ảnh.",
+        "C": "Thấu kính phân kì làm tia ló loe ra nên không bao giờ cho ảnh thật.",
+        "D": "Thấu kính phân kì không cho ảnh thật; ảnh luôn là ảnh ảo, nằm trong khoảng từ $O$ đến $F'$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Dựng ảnh của vật qua thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Ảnh ảo qua thấu kính là ảnh",
+      "options": [
+        "do các tia ló gặp nhau thật, nên hứng được trên màn",
+        "luôn nhỏ hơn vật, chỉ xuất hiện ở các thấu kính phân kì",
+        "chỉ thấy khi nhìn qua kính, không hứng được trên màn",
+        "luôn ngược chiều với vật và hứng được trên màn"
+      ],
+      "answer": 2,
+      "explanation": "Ảnh ảo do đường kéo dài của tia ló gặp nhau, phải nhìn qua thấu kính mới thấy, không hứng được trên màn.",
+      "distractorNotes": {
+        "A": "Đây là định nghĩa của ảnh thật; ảnh ảo chỉ có đường kéo dài của tia ló gặp nhau.",
+        "B": "Thấu kính hội tụ cũng cho ảnh ảo khi vật trong tiêu cự, và ảnh đó lớn hơn vật.",
+        "D": "Ảnh ảo cùng chiều với vật và không hứng được; ngược chiều, hứng được là tính chất của ảnh thật."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Dựng ảnh của vật qua thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Thấu kính hội tụ đang cho ảnh rõ của một bóng đèn trên màn. Dùng giấy đen che nửa dưới của thấu kính thì ảnh trên màn",
+      "options": [
+        "chỉ còn nửa trên của bóng đèn",
+        "chỉ còn nửa dưới của bóng đèn",
+        "biến mất hoàn toàn, màn tối đen",
+        "vẫn đủ hình nhưng tối hơn"
+      ],
+      "answer": 3,
+      "explanation": "Mỗi điểm của vật gửi tia tới khắp mặt kính; che một nửa thì chỉ còn ít ánh sáng hơn, ảnh vẫn đủ hình.",
+      "distractorNotes": {
+        "A": "Nhầm tưởng mỗi nửa kính tạo một nửa hình; thực ra tia từ mọi điểm của vật đều đi qua cả hai nửa kính.",
+        "B": "Che nửa dưới kính không làm mất nửa dưới của hình; tia từ mỗi điểm vật vẫn qua nửa kính còn lại.",
+        "C": "Nửa kính còn lại vẫn nhận ánh sáng và vẫn hội tụ đúng chỗ cũ, nên ảnh không mất."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Khi dùng công thức thấu kính, kết quả $d'<0$ cho biết",
+      "options": [
+        "ảnh ảo, nằm cùng phía với vật",
+        "ảnh thật, nằm bên kia thấu kính so với vật",
+        "ảnh ảo, nằm bên kia thấu kính so với vật",
+        "vật đặt đúng tại tiêu điểm của kính"
+      ],
+      "answer": 0,
+      "explanation": "Quy ước của bài: $d'>0$ là ảnh thật, $d'<0$ là ảnh ảo nằm cùng phía với vật.",
+      "distractorNotes": {
+        "B": "Ảnh thật ứng với $d'>0$; dấu âm là dấu hiệu của ảnh ảo.",
+        "C": "Đúng dấu nhưng sai vị trí: ảnh ảo nằm cùng phía với vật.",
+        "D": "Vật tại tiêu điểm thì $\\dfrac{1}{d'}=0$, không có ảnh; không phải trường hợp $d'<0$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Công thức thấu kính là",
+      "options": [
+        "$f=d+d'$",
+        "$\\dfrac{1}{f}=\\dfrac{1}{d}\\cdot\\dfrac{1}{d'}$",
+        "$\\dfrac{1}{f}=\\dfrac{1}{d}+\\dfrac{1}{d'}$",
+        "$f=\\dfrac{d+d'}{d\\,d'}$"
+      ],
+      "answer": 2,
+      "explanation": "Công thức thấu kính: $\\dfrac{1}{f}=\\dfrac{1}{d}+\\dfrac{1}{d'}$, với $d'$ có dấu.",
+      "distractorNotes": {
+        "A": "Cộng thẳng hai khoảng cách; công thức làm việc với nghịch đảo của chúng.",
+        "B": "Nhân hai nghịch đảo thay vì cộng chúng.",
+        "D": "Đây là $\\dfrac{1}{f}$ chưa đảo ngược, nhầm giữa $f$ và $\\dfrac{1}{f}$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Số phóng đại của ảnh qua thấu kính được tính bằng",
+      "options": [
+        "$k=\\dfrac{h}{h'}=\\dfrac{|d'|}{d}$",
+        "$k=\\dfrac{h'}{h}=\\dfrac{|d'|}{d}$",
+        "$k=\\dfrac{h'}{h}=\\dfrac{d}{|d'|}$",
+        "$k=\\dfrac{h'}{h}=\\dfrac{|d'|}{f}$"
+      ],
+      "answer": 1,
+      "explanation": "Số phóng đại $k=\\dfrac{h'}{h}=\\dfrac{|d'|}{d}$, không có đơn vị.",
+      "distractorNotes": {
+        "A": "Đảo tỉ số chiều cao: $k$ là chiều cao ảnh chia cho chiều cao vật.",
+        "C": "Đảo tỉ số khoảng cách: ảnh càng xa kính thì càng to nên $|d'|$ phải ở tử số.",
+        "D": "Chia cho $f$ thay vì $d$; tam giác đồng dạng cho tỉ số với khoảng cách vật $d$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thấu kính phân kì có tiêu cự $20\\ \\text{cm}$. Khi dùng công thức thấu kính phải thay",
+      "options": [
+        "$f=-20\\ \\text{cm}$",
+        "$f=+20\\ \\text{cm}$",
+        "$d=-20\\ \\text{cm}$",
+        "$d'=-20\\ \\text{cm}$"
+      ],
+      "answer": 0,
+      "explanation": "Thấu kính phân kì có $f<0$, nên thay $f=-20\\ \\text{cm}$.",
+      "distractorNotes": {
+        "B": "Quên quy ước dấu: tiêu cự của thấu kính phân kì lấy dấu âm.",
+        "C": "Nhầm đại lượng: $d$ luôn dương, dấu âm thuộc về $f$ của kính phân kì hoặc $d'$ của ảnh ảo.",
+        "D": "Con số $20\\ \\text{cm}$ cho trong đề là tiêu cự, còn $d'$ là đại lượng cần đi tìm."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thấu kính hội tụ cho ảnh thật cao đúng bằng vật; vật cách thấu kính $30\\ \\text{cm}$. Tiêu cự của thấu kính là",
+      "options": [
+        "$30\\ \\text{cm}$",
+        "$60\\ \\text{cm}$",
+        "$10\\ \\text{cm}$",
+        "$15\\ \\text{cm}$"
+      ],
+      "answer": 3,
+      "explanation": "Ảnh thật bằng vật khi $d=d'=2f$, nên $f=\\dfrac{30}{2}=15\\ \\text{cm}$.",
+      "distractorNotes": {
+        "A": "Nhầm: nếu vật ở đúng tiêu điểm thì không có ảnh; ảnh thật bằng vật xảy ra khi $d=2f$.",
+        "B": "Nhân đôi thay vì chia đôi: từ $d=2f$ phải suy ra $f=\\dfrac{d}{2}$.",
+        "C": "Chia ba không có căn cứ; ảnh thật bằng vật chỉ ứng với $d=2f$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Dựng ảnh của vật qua thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thấu kính hội tụ, vật thật ban đầu ở ngoài tiêu điểm $F$ rồi dịch dần lại gần $F$. Ảnh thật của vật",
+      "options": [
+        "xa kính hơn và nhỏ hơn",
+        "xa kính hơn và lớn hơn",
+        "gần kính hơn và lớn hơn",
+        "gần kính hơn và nhỏ hơn"
+      ],
+      "answer": 1,
+      "explanation": "Vật lại gần $F$ thì $d'$ tăng, ảnh thật dịch ra xa kính và to dần; đúng khi $d=f$ thì không có ảnh.",
+      "distractorNotes": {
+        "A": "Ảnh xa kính hơn thì $k=\\dfrac{|d'|}{d}$ tăng, ảnh không thể nhỏ đi.",
+        "C": "Vật lại gần $F$ thì tia ló gần song song hơn nên ảnh bị đẩy ra xa, không lại gần kính.",
+        "D": "Nhầm với trường hợp vật dịch ra xa: khi đó ảnh mới gần kính hơn và nhỏ dần."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một ảnh có số phóng đại $k<1$. Ảnh đó",
+      "options": [
+        "lớn hơn vật",
+        "bằng vật",
+        "nhỏ hơn vật",
+        "ngược chiều với vật"
+      ],
+      "answer": 2,
+      "explanation": "$k=\\dfrac{h'}{h}<1$ nghĩa là chiều cao ảnh nhỏ hơn chiều cao vật.",
+      "distractorNotes": {
+        "A": "Đảo ngược: $k>1$ mới là ảnh lớn hơn vật.",
+        "B": "Ảnh bằng vật ứng với $k=1$, không phải $k<1$.",
+        "D": "Số phóng đại $k=\\dfrac{h'}{h}$ chỉ cho biết ảnh lớn hay nhỏ hơn vật, không cho biết chiều."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Đặc điểm thấu kính hội tụ, phân kì và tiêu cự",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một học sinh chiếu ba vệt sáng song song qua một thấu kính rìa mỏng, rồi qua một thấu kính rìa dày. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Qua thấu kính rìa mỏng, ba vệt sáng gặp nhau tại một điểm phía sau kính.",
+          "answer": true
+        },
+        {
+          "text": "Qua thấu kính rìa dày, ba vệt sáng cũng gặp nhau tại một điểm phía sau kính.",
+          "answer": false
+        },
+        {
+          "text": "Thấu kính rìa dày là thấu kính phân kì.",
+          "answer": true
+        },
+        {
+          "text": "Tiêu cự của thấu kính rìa mỏng được quy ước là số âm.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng: rìa mỏng là thấu kính hội tụ. b) sai: kính rìa dày làm chùm loe ra. c) đúng. d) sai: kính hội tụ có $f>0$.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì kính rìa mỏng là thấu kính hội tụ, gom chùm song song về một điểm.",
+        "1": "Không thể coi là đúng vì kính rìa dày làm chùm song song loe rộng ra, ba vệt không gặp nhau.",
+        "2": "Không thể coi là sai vì rìa dày hơn phần giữa là dấu hiệu nhận biết thấu kính phân kì.",
+        "3": "Không thể coi là đúng vì thấu kính hội tụ (rìa mỏng) có tiêu cự dương; chỉ kính phân kì lấy dấu âm."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Dựng ảnh của vật qua thấu kính",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đứng cách cửa sổ vài mét, một bạn hướng kính lúp về phía cửa sổ rồi dịch tờ giấy trắng phía sau kính tới lui đến khi thấy hình rõ trên giấy. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Hình cửa sổ trên giấy lớn hơn cửa sổ thật.",
+          "answer": false
+        },
+        {
+          "text": "Hình cửa sổ trên giấy là ảnh thật.",
+          "answer": true
+        },
+        {
+          "text": "Hình cửa sổ trên giấy ngược chiều với cửa sổ thật.",
+          "answer": true
+        },
+        {
+          "text": "Tờ giấy ở cách kính gần bằng hai lần tiêu cự.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) sai: vật ở xa cho ảnh nhỏ. b) đúng vì hứng được. c) đúng: ảnh thật ngược chiều. d) sai: ảnh nằm gần $F'$, cách kính khoảng $f$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì cửa sổ ở rất xa nên ảnh thật nhỏ hơn vật nhiều.",
+        "1": "Không thể coi là sai vì hình hứng được trên giấy chứng tỏ các tia ló gặp nhau thật.",
+        "2": "Không thể coi là sai vì vật ở ngoài tiêu cự của thấu kính hội tụ cho ảnh thật, ngược chiều.",
+        "3": "Không thể coi là đúng vì vật ở xa thì ảnh nằm gần tiêu điểm, giấy cách kính gần bằng một tiêu cự."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Đặt ngọn nến cách thấu kính hội tụ tiêu cự $10\\ \\text{cm}$ một khoảng $6\\ \\text{cm}$, rồi dịch màn phía sau kính từ sát kính ra thật xa. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Ảnh rõ trên màn khi màn cách kính $15\\ \\text{cm}$.",
+          "answer": false
+        },
+        {
+          "text": "Vì $d<f$ nên $d'<0$.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh nhìn thấy qua kính ngược chiều với ngọn nến.",
+          "answer": false
+        },
+        {
+          "text": "Muốn thấy ảnh của nến phải đặt mắt sau kính và nhìn qua kính.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: $d'=-15\\ \\text{cm}$ là ảnh ảo. b) đúng: $\\dfrac{1}{d'}=\\dfrac{1}{10}-\\dfrac{1}{6}=-\\dfrac{1}{15}$. c) sai: ảnh ảo cùng chiều. d) đúng.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì $d'=-15\\ \\text{cm}$ có nghĩa ảnh ảo cùng phía với nến, không nằm trên màn.",
+        "1": "Không thể coi là sai vì $\\dfrac{1}{d'}=\\dfrac{1}{10}-\\dfrac{1}{6}<0$, nên $d'$ âm.",
+        "2": "Không thể coi là đúng vì vật trong tiêu cự cho ảnh ảo cùng chiều với vật.",
+        "3": "Không thể coi là sai vì ảnh ảo chỉ thấy được khi nhìn qua thấu kính."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một máy chiếu mini dùng thấu kính hội tụ tiêu cự $12\\ \\text{cm}$. Hình in trên phim cao $2\\ \\text{cm}$, đặt cách thấu kính $18\\ \\text{cm}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Ảnh rõ trên tường khi tường cách thấu kính $36\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh trên tường cùng chiều với hình in nên đặt phim thẳng là đủ.",
+          "answer": false
+        },
+        {
+          "text": "Dịch phim ra xa thấu kính tới $d=24\\ \\text{cm}$ thì ảnh to hơn trước.",
+          "answer": false
+        },
+        {
+          "text": "Ảnh trên tường cao $4\\ \\text{cm}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) đúng: $d'=36\\ \\text{cm}$. b) sai: ảnh ngược chiều. c) sai: $d=2f$ thì ảnh cao $2\\ \\text{cm}$. d) đúng: $h'=4\\ \\text{cm}$.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì $\\dfrac{1}{d'}=\\dfrac{1}{12}-\\dfrac{1}{18}=\\dfrac{1}{36}$.",
+        "1": "Không thể coi là đúng vì $f<d<2f$ cho ảnh thật ngược chiều, phải đặt phim lộn ngược.",
+        "2": "Không thể coi là đúng vì khi $d=24\\ \\text{cm}=2f$, ảnh bằng vật, nhỏ hơn ảnh lúc $d=18\\ \\text{cm}$.",
+        "3": "Không thể coi là sai vì $k=\\dfrac{36}{18}=2$ nên $h'=2\\cdot2=4\\ \\text{cm}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một thấu kính phân kì có tiêu cự $15\\ \\text{cm}$. Vật cao $6\\ \\text{cm}$ đặt cách kính $30\\ \\text{cm}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Ảnh cao $18\\ \\text{cm}$, lớn hơn vật.",
+          "answer": false
+        },
+        {
+          "text": "Nếu thay nhầm $f=+15\\ \\text{cm}$ thì vẫn ra ảnh ảo.",
+          "answer": false
+        },
+        {
+          "text": "Khi thay vào công thức thấu kính phải lấy $f=-15\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh là ảnh ảo, cách kính $10\\ \\text{cm}$, cùng phía với vật.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: $h'=6\\cdot\\dfrac{10}{30}=2\\ \\text{cm}$. b) sai: thay $f$ dương ra ảnh thật. c) đúng. d) đúng: $d'=-10\\ \\text{cm}$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì $k=\\dfrac{10}{30}<1$ nên ảnh cao $2\\ \\text{cm}$, nhỏ hơn vật.",
+        "1": "Không thể coi là đúng vì khi đó $\\dfrac{1}{d'}=\\dfrac{1}{15}-\\dfrac{1}{30}>0$, ra $d'=30\\ \\text{cm}$ là ảnh thật, sai bản chất kính.",
+        "2": "Không thể coi là sai vì tiêu cự thấu kính phân kì mang dấu âm.",
+        "3": "Không thể coi là sai vì $\\dfrac{1}{d'}=-\\dfrac{1}{15}-\\dfrac{1}{30}=-\\dfrac{1}{10}$ nên $d'=-10\\ \\text{cm}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "tinh_nhanh",
+      "topic": "Công thức thấu kính và số phóng đại",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Thấu kính hội tụ có $f=20\\ \\text{cm}$. Vật cao $4\\ \\text{cm}$ đặt cách kính $40\\ \\text{cm}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Ảnh cao $4\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Khoảng cách giữa vật và ảnh là $80\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
+          "text": "Ảnh là ảnh ảo, cùng chiều với vật.",
+          "answer": false
+        },
+        {
+          "text": "Dịch vật ra xa hơn $40\\ \\text{cm}$ thì ảnh cao hơn $4\\ \\text{cm}$.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng: $k=1$. b) đúng: $40+40=80\\ \\text{cm}$. c) sai: ảnh thật ngược chiều. d) sai: $d>2f$ thì ảnh nhỏ hơn vật.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì $d=2f$ nên $d'=40\\ \\text{cm}$, $k=1$.",
+        "1": "Không thể coi là sai vì vật cách kính $40\\ \\text{cm}$, ảnh cách kính $40\\ \\text{cm}$ ở hai phía.",
+        "2": "Không thể coi là đúng vì vật ngoài tiêu cự cho ảnh thật, ngược chiều.",
+        "3": "Không thể coi là đúng vì $d>2f$ cho ảnh thật nhỏ hơn vật, tức thấp hơn $4\\ \\text{cm}$."
+      }
     }
-   ],
-   "explanation": "Ảnh thật do tia ló gặp nhau, hứng được; ảnh ảo do đường kéo dài gặp nhau, vật trong tiêu cự cho ảnh ảo (mục III, bẫy 1)."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Dựng ảnh của vật qua thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Vật đặt trước thấu kính hội tụ tiêu cự $f$:",
-   "statements": [
-    {
-     "text": "Khi $d = 2f$, ảnh thật, ngược chiều, bằng vật.",
-     "answer": true
-    },
-    {
-     "text": "Khi $f \\lt d \\lt 2f$, ảnh thật, ngược chiều, lớn hơn vật.",
-     "answer": true
-    },
-    {
-     "text": "Khi $d = f$, ảnh ở rất gần kính.",
-     "answer": false
-    },
-    {
-     "text": "Khi $d \\lt f$, ảnh ảo, cùng chiều, lớn hơn vật.",
-     "answer": true
-    }
-   ],
-   "explanation": "Mục II.4: $d = f$ không có ảnh, tia ló song song."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Quy ước dấu trong công thức $\\dfrac{1}{f} = \\dfrac{1}{d} + \\dfrac{1}{d'}$:",
-   "statements": [
-    {
-     "text": "$f \\gt 0$ với thấu kính hội tụ.",
-     "answer": true
-    },
-    {
-     "text": "$f \\lt 0$ với thấu kính phân kì.",
-     "answer": true
-    },
-    {
-     "text": "$d' \\gt 0$ cho ảnh ảo.",
-     "answer": false
-    },
-    {
-     "text": "$d' \\lt 0$ cho ảnh ảo, cùng phía với vật.",
-     "answer": true
-    }
-   ],
-   "explanation": "Mục II.5: $d' \\gt 0$ là ảnh thật, $d' \\lt 0$ là ảnh ảo."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Dựng ảnh của vật qua thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Che nửa dưới của thấu kính hội tụ đang cho ảnh rõ của bóng đèn trên màn:",
-   "statements": [
-    {
-     "text": "Ảnh vẫn đủ hình.",
-     "answer": true
-    },
-    {
-     "text": "Ảnh tối hơn.",
-     "answer": true
-    },
-    {
-     "text": "Ảnh chỉ còn nửa trên.",
-     "answer": false
-    },
-    {
-     "text": "Mỗi điểm của vật chỉ gửi tia tới một nửa mặt kính.",
-     "answer": false
-    }
-   ],
-   "explanation": "Mỗi điểm gửi tia tới khắp mặt kính nên ảnh vẫn đủ nhưng ít sáng hơn (mục III, bẫy 2)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Thấu kính hội tụ $f = 12\\ \\text{cm}$, vật cách kính $20\\ \\text{cm}$. Ảnh cách kính bao nhiêu cm?",
-   "answer": "30",
-   "explanation": "$\\dfrac{1}{d'} = \\dfrac{1}{12} - \\dfrac{1}{20} = \\dfrac{1}{30}$ nên $d' = 30\\ \\text{cm}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Với $d = 20\\ \\text{cm}$, $d' = 30\\ \\text{cm}$, $h = 2\\ \\text{cm}$, ảnh cao bao nhiêu cm?",
-   "answer": "3",
-   "explanation": "$k = \\dfrac{30}{20} = 1{,}5$ nên $h' = 1{,}5 \\cdot 2 = 3\\ \\text{cm}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Thấu kính phân kì tiêu cự $20\\ \\text{cm}$, vật cách kính $30\\ \\text{cm}$. Ảnh cách kính bao nhiêu cm?",
-   "answer": "12",
-   "explanation": "Thay $f=-20$: $\\dfrac{1}{d'} = -\\dfrac{1}{20} - \\dfrac{1}{30} = -\\dfrac{1}{12}$, $|d'| = 12\\ \\text{cm}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Vật cao $3\\ \\text{cm}$ cách thấu kính hội tụ $f = 10\\ \\text{cm}$ một khoảng $30\\ \\text{cm}$. Ảnh cao bao nhiêu cm? (dùng dấu phẩy)",
-   "answer": "1,5",
-   "explanation": "$d' = 15\\ \\text{cm}$, $h' = 3 \\cdot \\dfrac{15}{30} = 1{,}5\\ \\text{cm}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_luat",
-   "topic": "Dựng ảnh của vật qua thấu kính",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Để dựng ảnh của điểm $B$ ở trước thấu kính cần vẽ ít nhất bao nhiêu tia đặc biệt từ $B$?",
-   "answer": "2",
-   "explanation": "Mục II.3: từ $B$ vẽ hai trong ba tia, giao điểm hai tia ló là $B'$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Công thức thấu kính và số phóng đại",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Thấu kính hội tụ $f = 20\\ \\text{cm}$ cho ảnh thật cao bằng vật. Vật cách kính bao nhiêu cm?",
-   "answer": "40",
-   "explanation": "Ảnh thật bằng vật khi $d = 2f = 40\\ \\text{cm}$ (mục II.4)."
-  }
- ]
+  ]
 }

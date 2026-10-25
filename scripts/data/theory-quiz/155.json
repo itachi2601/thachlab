@@ -2,14 +2,14 @@
  "lesson_id": 155,
  "lesson_title": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
  "item_id": 320,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 7,
-   "cong_thuc": 13
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
   "removed": []
  },
@@ -22,15 +22,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Bốn yếu tố cần có để vẽ một lực là:",
+   "question": "Để biểu diễn một lực bằng mũi tên, cần xác định đủ những yếu tố nào?",
    "options": [
-    "Điểm đặt, phương, chiều, độ lớn",
-    "Khối lượng, thể tích, phương, chiều",
-    "Điểm đặt, tốc độ, chiều, khối lượng",
-    "Phương, chiều, thời gian, độ lớn"
+    "phương, chiều và độ lớn, không cần điểm đặt",
+    "điểm đặt, độ lớn và khối lượng của vật chịu lực",
+    "điểm đặt, phương, chiều và độ lớn của lực",
+    "điểm đặt, chiều và thời gian tác dụng của lực"
    ],
-   "answer": 0,
-   "explanation": "Lực là đại lượng vectơ nên cần điểm đặt, phương, chiều, độ lớn (mục II.1)."
+   "answer": 2,
+   "explanation": "Lực là đại lượng vectơ nên có bốn yếu tố: điểm đặt, phương, chiều, độ lớn; mũi tên có gốc ở điểm đặt và dài tỉ lệ với độ lớn.",
+   "distractorNotes": {
+    "A": "Bỏ sót điểm đặt; gốc mũi tên chính là điểm đặt của lực nên bắt buộc phải có.",
+    "B": "Khối lượng vật không phải yếu tố của lực, còn phương và chiều thì lại bị bỏ sót.",
+    "D": "Thời gian tác dụng không phải yếu tố của lực, đồng thời thiếu phương và độ lớn."
+   }
   },
   {
    "type": "multiple_choice",
@@ -39,16 +44,44 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Khi hợp lực tác dụng lên một vật đang chuyển động bằng 0 thì vật:",
+   "theorySection": 1,
+   "question": "Hai lực cùng phương, ngược chiều, có độ lớn $F_1>F_2$ thì hợp lực của chúng",
    "options": [
-    "Dừng lại ngay",
-    "Chuyển động thẳng đều",
-    "Chuyển động nhanh dần",
-    "Đổi hướng liên tục"
+    "có độ lớn $F_1-F_2$, cùng chiều với $F_1$",
+    "có độ lớn $F_1+F_2$, cùng chiều với $F_1$",
+    "có độ lớn $F_1-F_2$, cùng chiều với $F_2$",
+    "bằng không vì hai lực ngược chiều nhau"
    ],
-   "answer": 1,
-   "explanation": "Hợp lực bằng 0: vật đang chuyển động thì chuyển động thẳng đều (mục III.1)."
+   "answer": 0,
+   "explanation": "Hai lực cùng phương, ngược chiều có hợp lực $R=|F_1-F_2|$ và cùng chiều với lực lớn hơn, như hai đội kéo co mạnh yếu khác nhau.",
+   "distractorNotes": {
+    "B": "Dùng công thức của hai lực cùng chiều; hai lực ngược chiều thì triệt tiêu bớt nhau.",
+    "C": "Đúng độ lớn nhưng sai chiều; hợp lực luôn cùng chiều với lực lớn hơn.",
+    "D": "Chỉ bằng không khi hai lực có độ lớn bằng nhau; ở đây $F_1>F_2$ nên còn dư $F_1-F_2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Giữ nguyên độ lớn hai lực $F_1$, $F_2$ có chung điểm đặt, tăng góc $\\alpha$ giữa chúng từ $0^\\circ$ đến $180^\\circ$ thì độ lớn hợp lực",
+   "options": [
+    "tăng dần từ $|F_1-F_2|$ lên $F_1+F_2$",
+    "giảm dần từ $F_1+F_2$ xuống đúng bằng 0",
+    "luôn bằng $F_1+F_2$, chỉ hướng của nó đổi",
+    "giảm dần từ $F_1+F_2$ xuống $|F_1-F_2|$"
+   ],
+   "answer": 3,
+   "explanation": "Từ $R^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$, góc càng lớn thì $\\cos\\alpha$ càng nhỏ nên $R$ giảm từ $F_1+F_2$ ($\\alpha=0^\\circ$) đến $|F_1-F_2|$ ($\\alpha=180^\\circ$).",
+   "distractorNotes": {
+    "A": "Đảo chiều biến thiên; $\\alpha=0^\\circ$ cho hợp lực lớn nhất chứ không phải nhỏ nhất.",
+    "B": "Chỉ về 0 khi hai lực bằng nhau; nói chung giá trị nhỏ nhất là $|F_1-F_2|$.",
+    "C": "Nhầm hợp lực với tổng độ lớn; đường chéo hình bình hành ngắn dần khi góc mở rộng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -58,15 +91,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Xe buýt phanh gấp, người đứng trên xe bị chúi về trước. Đây là biểu hiện của:",
+   "question": "Xe buýt đang chạy thì phanh gấp, hành khách đứng trên xe bị chúi về phía trước vì",
    "options": [
-    "Lực đàn hồi",
-    "Ma sát lăn",
-    "Quán tính",
-    "Moment lực"
+    "xe tác dụng lên hành khách một lực đẩy về phía trước",
+    "hành khách giữ nguyên xu hướng chuyển động ban đầu",
+    "hợp lực lên hành khách lớn hơn không và hướng ra trước",
+    "trọng lượng của hành khách tăng lên khi xe phanh gấp"
    ],
-   "answer": 2,
-   "explanation": "Vật có xu hướng giữ nguyên trạng thái chuyển động: quán tính (mục III.1)."
+   "answer": 1,
+   "explanation": "Quán tính là xu hướng giữ nguyên trạng thái chuyển động: xe dừng nhanh nhưng người vẫn muốn tiếp tục tiến tới.",
+   "distractorNotes": {
+    "A": "Coi quán tính là một lực do xe tác dụng; thực ra không có lực đẩy nào như vậy.",
+    "C": "Hợp lực ngay lúc phanh hướng về phía sau; việc chúi tới là do quán tính chứ không do lực hướng tới.",
+    "D": "Phanh ngang không làm tăng trọng lực; trọng lượng vẫn do Trái Đất hút như cũ."
+   }
   },
   {
    "type": "multiple_choice",
@@ -75,34 +113,90 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Vật đứng yên khi bị kéo ngang bởi lực nhỏ hơn mức cực đại. Lực ma sát tác dụng lên vật:",
+   "theorySection": 2,
+   "question": "Cặp lực nào sau đây là hai lực cân bằng?",
    "options": [
-    "Bằng $\\mu_tN$",
-    "Bằng $\\mu_nN$",
-    "Bằng 0",
-    "Bằng lực kéo"
+    "tác dụng lên hai vật khác nhau, cùng phương, ngược chiều, cùng độ lớn",
+    "cùng tác dụng lên một vật, cùng phương, cùng chiều, cùng độ lớn",
+    "cùng tác dụng lên một vật, cùng phương, ngược chiều, cùng độ lớn",
+    "cùng tác dụng lên một vật, cùng phương, ngược chiều, khác độ lớn"
    ],
-   "answer": 3,
-   "explanation": "Ma sát nghỉ luôn bằng lực kéo, miễn chưa vượt cực đại $\\mu_nN$ (mục IV.1)."
+   "answer": 2,
+   "explanation": "Hai lực cân bằng: cùng vật, cùng phương, ngược chiều, cùng độ lớn; khi đó hợp lực bằng 0.",
+   "distractorNotes": {
+    "A": "Hai lực cân bằng bắt buộc phải cùng tác dụng lên một vật; hai lực lên hai vật khác nhau không triệt tiêu nhau.",
+    "B": "Cùng chiều thì hợp lực là $2F$ chứ không triệt tiêu; cân bằng đòi hỏi ngược chiều.",
+    "D": "Khác độ lớn thì hợp lực khác không, vật không thể giữ nguyên trạng thái chuyển động."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
+   "kind": "hien_tuong",
    "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Cánh tay đòn của một lực đối với trục quay là:",
+   "theorySection": 3,
+   "question": "Người ta đẩy ngang một vật đặt trên sàn nhám, lực đẩy chưa đủ làm vật trượt. Lực ma sát nghỉ tác dụng lên vật",
    "options": [
-    "Khoảng cách từ trục tới điểm đặt của lực",
-    "Chiều dài của thanh",
-    "Khoảng cách vuông góc từ trục tới đường tác dụng của lực",
-    "Khoảng cách từ trục tới trọng tâm"
+    "bằng lực đẩy và ngược chiều với lực đẩy",
+    "bằng $\\mu_nN$ vì mặt sàn nhám",
+    "bằng không vì vật vẫn chưa chuyển động",
+    "luôn lớn hơn lực đẩy một chút để giữ vật"
    ],
-   "answer": 2,
-   "explanation": "Mục V.1 nêu $d$ vuông góc với đường tác dụng của lực."
+   "answer": 0,
+   "explanation": "Vật đứng yên thì hợp lực bằng 0 nên ma sát nghỉ bằng lực đẩy; nó chỉ tăng theo lực đẩy tới giá trị cực đại $\\mu_nN$.",
+   "distractorNotes": {
+    "B": "$\\mu_nN$ chỉ là giá trị cực đại; ma sát nghỉ đang có chỉ vừa đủ cân bằng lực đẩy.",
+    "C": "Nếu không có ma sát thì lực đẩy đã làm vật chuyển động; đứng yên chính là nhờ ma sát nghỉ.",
+    "D": "Nếu ma sát lớn hơn thì hợp lực khác không và vật bị đẩy lùi; hai lực phải bằng nhau."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Ở mức kiến thức của bài, độ lớn lực ma sát trượt phụ thuộc vào",
+   "options": [
+    "độ nhám hai mặt và diện tích mặt tiếp xúc",
+    "áp lực lên mặt và tốc độ trượt của vật",
+    "độ nhám hai mặt và quãng đường đã trượt",
+    "độ nhám hai mặt và áp lực lên mặt"
+   ],
+   "answer": 3,
+   "explanation": "$F_{mst}=\\mu_tN$: chỉ phụ thuộc hệ số ma sát (độ nhám) và áp lực $N$, không phụ thuộc diện tích tiếp xúc hay tốc độ.",
+   "distractorNotes": {
+    "A": "Diện tích tiếp xúc không làm đổi ma sát trượt ở mức bài này.",
+    "B": "Tốc độ trượt không làm đổi ma sát trượt ở mức bài này.",
+    "C": "Quãng đường đã trượt không ảnh hưởng; $F_{mst}=\\mu_tN$ chỉ phụ thuộc $\\mu_t$ và $N$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vali có gắn bánh xe để kéo đỡ tốn sức hơn vì",
+   "options": [
+    "bánh xe làm ma sát tác dụng lên vali biến mất hoàn toàn",
+    "ma sát lăn nhỏ hơn ma sát trượt rất nhiều",
+    "bánh xe làm giảm trọng lượng của vali khi kéo",
+    "ma sát lăn lớn hơn ma sát trượt nên vali ổn định"
+   ],
+   "answer": 1,
+   "explanation": "Ma sát lăn nhỏ hơn ma sát trượt rất nhiều, nên thay trượt bằng lăn giúp giảm lực cần kéo.",
+   "distractorNotes": {
+    "A": "Ma sát lăn vẫn còn, chỉ là nhỏ; không có chuyện triệt tiêu hoàn toàn.",
+    "C": "Bánh xe không đổi khối lượng hay trọng lực của vali.",
+    "D": "Đảo quan hệ; ma sát lăn nhỏ hơn trượt nên đẩy kéo nhẹ hơn."
+   }
   },
   {
    "type": "multiple_choice",
@@ -112,15 +206,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Hợp lực của hai lực $F_1$, $F_2$ hợp góc $\\alpha$ có độ lớn thỏa:",
+   "question": "Hai lực $9\\ \\text{N}$ và $12\\ \\text{N}$ có phương vuông góc nhau và cùng điểm đặt. Độ lớn hợp lực là",
    "options": [
-    "$R^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$",
-    "$R=F_1+F_2$ với mọi $\\alpha$",
-    "$R^2=F_1^2+F_2^2-2F_1F_2$",
-    "$R=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$"
+    "$15\\ \\text{N}$",
+    "$21\\ \\text{N}$",
+    "$3\\ \\text{N}$",
+    "$4{,}6\\ \\text{N}$"
    ],
    "answer": 0,
-   "explanation": "Đây là công thức hợp lực bằng quy tắc hình bình hành ở mục II.2."
+   "explanation": "Hai lực vuông góc: $R=\\sqrt{9^2+12^2}=15\\ \\text{N}$, là đường chéo hình chữ nhật.",
+   "distractorNotes": {
+    "B": "Cộng thẳng độ lớn; chỉ đúng khi hai lực cùng chiều.",
+    "C": "Lấy hiệu độ lớn; chỉ đúng khi hai lực ngược chiều.",
+    "D": "Lấy căn của tổng độ lớn, quên bình phương từng lực trước khi cộng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -130,33 +229,66 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Hai lực 9 N và 12 N vuông góc nhau. Hợp lực có độ lớn:",
+   "question": "Hai lực $5\\ \\text{N}$ và $7\\ \\text{N}$ cùng tác dụng vào một điểm, góc giữa chúng thay đổi được. Giá trị nào dưới đây không thể là độ lớn hợp lực?",
    "options": [
-    "21 N",
-    "3 N",
-    "15 N",
-    "108 N"
+    "$2\\ \\text{N}$",
+    "$12\\ \\text{N}$",
+    "$9\\ \\text{N}$",
+    "$13\\ \\text{N}$"
    ],
-   "answer": 2,
-   "explanation": "$R=\\sqrt{9^2+12^2}=15$ N."
+   "answer": 3,
+   "explanation": "Hợp lực chỉ nằm trong $|7-5|=2\\ \\text{N}$ đến $7+5=12\\ \\text{N}$, nên $13\\ \\text{N}$ vượt mức lớn nhất.",
+   "distractorNotes": {
+    "A": "Đạt được khi hai lực ngược chiều, là đầu mút nhỏ nhất của đoạn.",
+    "B": "Đạt được khi hai lực cùng chiều, là đầu mút lớn nhất của đoạn.",
+    "C": "Nằm giữa 2 và 12 nên đạt được ở một góc nào đó, không bị loại."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "bien_doi",
+   "kind": "cong_thuc",
    "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Vật khối lượng $m$ treo vào lò xo, đứng yên, độ dãn $\\Delta l$. Độ cứng $k$ bằng:",
+   "question": "Vật nặng $6\\ \\text{kg}$ được treo bằng hai dây đối xứng hợp với nhau góc $90^\\circ$. Lấy $g=10\\ \\text{m/s}^2$. Lực căng mỗi dây khoảng",
    "options": [
-    "$\\dfrac{\\Delta l}{mg}$",
-    "$mg\\Delta l$",
-    "$\\dfrac{mg}{\\Delta l}$",
-    "$\\dfrac{m}{g\\Delta l}$"
+    "$30\\ \\text{N}$",
+    "$42\\ \\text{N}$",
+    "$60\\ \\text{N}$",
+    "$85\\ \\text{N}$"
+   ],
+   "answer": 1,
+   "explanation": "Điều kiện cân bằng: $2T\\cos45^\\circ=P=60\\ \\text{N}$ nên $T=\\dfrac{60}{2\\cos45^\\circ}\\approx42\\ \\text{N}$.",
+   "distractorNotes": {
+    "A": "Chia đôi trọng lượng, quên rằng dây nghiêng nên mỗi dây phải gánh nhiều hơn.",
+    "C": "Cho lực căng bằng trọng lượng; điều này chỉ đúng khi hai dây hợp nhau $120^\\circ$.",
+    "D": "Nhân với $\\sqrt2$ thay vì chia; $2T\\cos45^\\circ=P$ cho $T=P/(2\\cos45^\\circ)$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Một lò xo có độ cứng $k=100\\ \\text{N/m}$, treo vật $0{,}4\\ \\text{kg}$ đứng yên. Lấy $g=10\\ \\text{m/s}^2$. Độ dãn của lò xo là",
+   "options": [
+    "$0{,}4\\ \\text{cm}$",
+    "$40\\ \\text{cm}$",
+    "$4\\ \\text{cm}$",
+    "$25\\ \\text{cm}$"
    ],
    "answer": 2,
-   "explanation": "Từ $k\\Delta l=mg$ suy ra $k=mg/\\Delta l$ (mục III.2)."
+   "explanation": "Vật đứng yên: $k\\Delta l=mg=4\\ \\text{N}$ nên $\\Delta l=4/100=0{,}04\\ \\text{m}=4\\ \\text{cm}$.",
+   "distractorNotes": {
+    "A": "Quên nhân với $g$, dùng $m/k$ thay vì $mg/k$.",
+    "B": "Đổi $0{,}04\\ \\text{m}$ sang cm với hệ số $1000$ thay vì $100$.",
+    "D": "Đảo tỉ lệ thành $k/(mg)$; độ dãn tỉ lệ thuận với $mg$, không tỉ lệ nghịch."
+   }
   },
   {
    "type": "multiple_choice",
@@ -166,33 +298,218 @@
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Vật trên mặt dốc nghiêng góc $\\alpha$ bắt đầu trượt khi:",
+   "question": "Một vật đặt trên tấm ván; nâng dần ván thì vật vừa bắt đầu trượt khi góc nghiêng bằng $30^\\circ$. Hệ số ma sát nghỉ $\\mu_n$ xấp xỉ",
    "options": [
-    "$\\tan\\alpha\\gt\\mu_n$",
-    "$\\sin\\alpha\\gt\\mu_n$",
-    "$\\cos\\alpha\\gt\\mu_n$",
-    "$\\tan\\alpha\\lt\\mu_n$"
+    "$0{,}58$",
+    "$0{,}50$",
+    "$0{,}87$",
+    "$1{,}73$"
    ],
    "answer": 0,
-   "explanation": "$P\\sin\\alpha\\gt\\mu_nP\\cos\\alpha$ tức $\\tan\\alpha\\gt\\mu_n$ (mục IV.2)."
+   "explanation": "Vật vừa trượt khi $\\tan\\alpha=\\mu_n$, nên $\\mu_n=\\tan30^\\circ\\approx0{,}58$; khối lượng không ảnh hưởng.",
+   "distractorNotes": {
+    "B": "Lấy $\\sin30^\\circ$; điều kiện trượt là $\\tan\\alpha=\\mu_n$.",
+    "C": "Lấy $\\cos30^\\circ$; điều kiện trượt là $\\tan\\alpha=\\mu_n$.",
+    "D": "Lấy $1/\\tan30^\\circ$, đảo tử và mẫu của $\\tan\\alpha$."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "cong_thuc",
    "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
    "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật $4\\ \\text{kg}$ đứng yên trên mặt dốc nghiêng $30^\\circ$ so với phương ngang. Lấy $g=10\\ \\text{m/s}^2$. Lực ma sát nghỉ tác dụng lên vật là",
+   "options": [
+    "$40\\ \\text{N}$",
+    "$34{,}6\\ \\text{N}$",
+    "$0\\ \\text{N}$",
+    "$20\\ \\text{N}$"
+   ],
+   "answer": 3,
+   "explanation": "Vật đứng yên nên $F_{msn}=P\\sin\\alpha=40\\cdot\\sin30^\\circ=20\\ \\text{N}$ (không phải $\\mu N$).",
+   "distractorNotes": {
+    "A": "Lấy bằng trọng lượng $P$; dọc dốc chỉ có thành phần $P\\sin\\alpha$ cần cân bằng.",
+    "B": "Lấy $P\\cos\\alpha$, là thành phần ép vào dốc chứ không phải thành phần kéo xuống dọc dốc.",
+    "C": "Bỏ qua ma sát vì vật đứng yên; thực ra $P\\sin\\alpha$ kéo xuống cần ma sát nghỉ cân bằng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Điều kiện cân bằng của đòn bẩy hai lực là:",
-   "options": [
-    "$F_1d_2=F_2d_1$",
-    "$F_1d_1=F_2d_2$",
-    "$F_1+d_1=F_2+d_2$",
-    "$F_1/d_1=F_2d_2$"
+   "theorySection": 2,
+   "question": "Hai lò xo giống nhau, mỗi lò xo có độ cứng $60\\ \\text{N/m}$, được ghép theo hai cách khác nhau.",
+   "statements": [
+    {
+     "text": "Ghép nối tiếp, độ cứng tương đương là $120\\ \\text{N/m}$.",
+     "answer": false
+    },
+    {
+     "text": "Ghép nối tiếp, cùng một lực kéo làm dãn nhiều hơn so với một lò xo đơn.",
+     "answer": true
+    },
+    {
+     "text": "Ghép song song, độ cứng tương đương là $120\\ \\text{N/m}$.",
+     "answer": true
+    },
+    {
+     "text": "Ghép song song, độ cứng tương đương nhỏ hơn độ cứng của mỗi lò xo.",
+     "answer": false
+    }
    ],
-   "answer": 1,
-   "explanation": "Mục V.1: moment thuận bằng moment ngược, $F_1d_1=F_2d_2$."
+   "explanation": "Song song: $k=k_1+k_2$ (tăng). Nối tiếp: $\\dfrac1k=\\dfrac1{k_1}+\\dfrac1{k_2}$ (giảm).",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì nối tiếp thì $\\dfrac1k=\\dfrac1{60}+\\dfrac1{60}$ nên $k=30\\ \\text{N/m}$; $120$ là của ghép song song.",
+    "1": "Không thể coi là sai vì nối tiếp có $k=30\\ \\text{N/m}$ nhỏ hơn $60$, nên cùng lực thì độ dãn lớn hơn.",
+    "2": "Không thể coi là sai vì khi ghép song song $k=k_1+k_2=60+60=120\\ \\text{N/m}$.",
+    "3": "Không thể coi là đúng vì ghép song song cộng độ cứng nên tăng lên ($120$), chỉ nối tiếp mới làm giảm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai lực $6\\ \\text{N}$ và $8\\ \\text{N}$ cùng tác dụng vào một điểm, góc giữa chúng thay đổi được.",
+   "statements": [
+    {
+     "text": "Hợp lực có thể đạt giá trị lớn nhất là $14\\ \\text{N}$.",
+     "answer": true
+    },
+    {
+     "text": "Hợp lực có thể bằng $1\\ \\text{N}$.",
+     "answer": false
+    },
+    {
+     "text": "Khi hai lực vuông góc nhau thì hợp lực bằng $14\\ \\text{N}$.",
+     "answer": false
+    },
+    {
+     "text": "Hợp lực có thể bằng $10\\ \\text{N}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Hợp lực luôn nằm trong đoạn $|F_1-F_2|\\le R\\le F_1+F_2$; vuông góc thì $R=\\sqrt{F_1^2+F_2^2}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì khi hai lực cùng chiều thì $R=6+8=14\\ \\text{N}$.",
+    "1": "Không thể coi là đúng vì giá trị nhỏ nhất là $|8-6|=2\\ \\text{N}$, $1\\ \\text{N}$ nằm ngoài đoạn cho phép.",
+    "2": "Không thể coi là đúng vì $14\\ \\text{N}$ chỉ có khi cùng chiều; vuông góc cho $R=10\\ \\text{N}$.",
+    "3": "Không thể coi là sai vì $10$ nằm trong đoạn $[2;14]$; hai lực vuông góc cho đúng $\\sqrt{6^2+8^2}=10\\ \\text{N}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Kéo một khối gỗ nặng $5\\ \\text{N}$ trên bàn nằm ngang bằng lực kế. Kéo $0{,}5$; $1{,}0$; $1{,}5$; $2{,}0\\ \\text{N}$ thì khối vẫn đứng yên; kéo $2{,}5\\ \\text{N}$ khối bắt đầu trượt, rồi chỉ cần kéo $2{,}0\\ \\text{N}$ để khối trượt đều.",
+   "statements": [
+    {
+     "text": "Khi kéo $1{,}0\\ \\text{N}$, khối đứng yên và ma sát nghỉ bằng $1{,}0\\ \\text{N}$.",
+     "answer": true
+    },
+    {
+     "text": "Khi kéo $1{,}5\\ \\text{N}$, ma sát nghỉ bằng $2{,}5\\ \\text{N}$.",
+     "answer": false
+    },
+    {
+     "text": "Ma sát nghỉ cực đại lớn hơn ma sát trượt trong thí nghiệm này.",
+     "answer": true
+    },
+    {
+     "text": "Khi khối trượt đều, ma sát trượt lớn hơn lực kéo.",
+     "answer": false
+    }
+   ],
+   "explanation": "Ma sát nghỉ bằng lực kéo cho đến mức cực đại $\\mu_nN$ (ở đây $2{,}5\\ \\text{N}$), sau đó vật trượt và ma sát trượt nhỏ hơn.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì vật đứng yên thì ma sát nghỉ cân bằng đúng với lực kéo.",
+    "1": "Không thể coi là đúng vì $2{,}5\\ \\text{N}$ là mức cực đại; khi kéo $1{,}5\\ \\text{N}$ ma sát nghỉ chỉ bằng $1{,}5\\ \\text{N}$.",
+    "2": "Không thể coi là sai vì $2{,}5\\ \\text{N}$ lớn hơn $2{,}0\\ \\text{N}$.",
+    "3": "Không thể coi là đúng vì trượt đều thì hợp lực bằng 0, ma sát trượt bằng đúng lực kéo $2{,}0\\ \\text{N}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 3,
+   "question": "Vật $10\\ \\text{kg}$ đứng yên trên mặt dốc nghiêng $30^\\circ$ so với phương ngang, lấy $g=10\\ \\text{m/s}^2$.",
+   "statements": [
+    {
+     "text": "Nếu $\\mu_n=0{,}4$ thì vật vẫn đứng yên trên dốc.",
+     "answer": false
+    },
+    {
+     "text": "Vì vật đứng yên nên lực ma sát nghỉ bằng $50\\ \\text{N}$.",
+     "answer": true
+    },
+    {
+     "text": "Khi đứng yên, lực ma sát nghỉ bằng $\\mu_nN$.",
+     "answer": false
+    },
+    {
+     "text": "Áp lực của vật lên dốc là $N=P\\cos30^\\circ\\approx86{,}6\\ \\text{N}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "Đứng yên: $F_{msn}=P\\sin\\alpha$, $N=P\\cos\\alpha$; vật trượt khi $\\tan\\alpha>\\mu_n$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $\\tan30^\\circ\\approx0{,}58>0{,}4$ nên vật sẽ trượt xuống.",
+    "1": "Không thể coi là sai vì $F_{msn}=P\\sin30^\\circ=50\\ \\text{N}$ cân bằng thành phần kéo xuống.",
+    "2": "Không thể coi là đúng vì $\\mu_nN$ chỉ là giá trị cực đại; ma sát đang có bằng $P\\sin\\alpha$.",
+    "3": "Không thể coi là sai vì trên dốc áp lực là thành phần vuông góc mặt dốc của trọng lực: $N=P\\cos\\alpha$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Cờ lê dài $0{,}5\\ \\text{m}$ dùng để vặn bu-lông, người vặn tác dụng lực $40\\ \\text{N}$ ở đầu cờ lê.",
+   "statements": [
+    {
+     "text": "Lực hợp góc $30^\\circ$ với cán thì moment vẫn là $20\\ \\text{N·m}$ vì lực không đổi.",
+     "answer": false
+    },
+    {
+     "text": "Cầm gần bu-lông hơn thì moment lớn hơn khi lực không đổi.",
+     "answer": false
+    },
+    {
+     "text": "Lực vuông góc với cán cờ lê thì moment của lực là $20\\ \\text{N·m}$.",
+     "answer": true
+    },
+    {
+     "text": "Lực hợp góc $30^\\circ$ với cán thì cánh tay đòn là $0{,}25\\ \\text{m}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "$M=F\\cdot d$ với $d$ là khoảng cách từ trục tới đường tác dụng của lực, $d=l\\sin\\theta$ khi lực hợp góc $\\theta$ với cán.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì moment phụ thuộc cánh tay đòn; lúc này $M=40\\cdot0{,}25=10\\ \\text{N·m}$.",
+    "1": "Không thể coi là đúng vì cánh tay đòn ngắn đi nên moment nhỏ hơn; muốn lớn hơn phải cầm xa trục.",
+    "2": "Không thể coi là sai vì cánh tay đòn bằng cả chiều dài cán: $M=40\\cdot0{,}5=20\\ \\text{N·m}$.",
+    "3": "Không thể coi là sai vì $d=l\\sin30^\\circ=0{,}5\\cdot0{,}5=0{,}25\\ \\text{m}$."
+   }
   },
   {
    "type": "true_false",
@@ -201,186 +518,33 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về hợp lực của hai lực $F_1$ và $F_2$ chung điểm đặt:",
-   "statements": [
-    {
-     "text": "Hai lực cùng phương cùng chiều thì $R=F_1+F_2$.",
-     "answer": true
-    },
-    {
-     "text": "Hai lực cùng phương ngược chiều thì $R=|F_1-F_2|$.",
-     "answer": true
-    },
-    {
-     "text": "Hợp lực luôn bằng $F_1+F_2$ với mọi góc.",
-     "answer": false
-    },
-    {
-     "text": "Góc giữa hai lực càng lớn thì hợp lực càng nhỏ.",
-     "answer": true
-    }
-   ],
-   "explanation": "Mục II.2: $R$ giảm từ $F_1+F_2$ ($0^\\circ$) đến $|F_1-F_2|$ ($180^\\circ$)."
-  },
-  {
-   "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Về ma sát:",
-   "statements": [
-    {
-     "text": "Ma sát nghỉ thỏa $0\\le F_{msn}\\le\\mu_nN$.",
-     "answer": true
-    },
-    {
-     "text": "Ma sát trượt phụ thuộc nhiều vào diện tích tiếp xúc ở mức bài này.",
-     "answer": false
-    },
-    {
-     "text": "Ma sát lăn nhỏ hơn ma sát trượt rất nhiều.",
-     "answer": true
-    },
-    {
-     "text": "Hệ số $\\mu$ có đơn vị là N.",
-     "answer": false
-    }
-   ],
-   "explanation": "Mục IV.1: $\\mu$ không có đơn vị, $F_{mst}$ không phụ thuộc diện tích hay tốc độ."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về lò xo và lực đàn hồi:",
-   "statements": [
-    {
-     "text": "$F_{đh}=k|\\Delta l|$ với $\\Delta l$ là độ biến dạng.",
-     "answer": true
-    },
-    {
-     "text": "Hai lò xo ghép song song có $k=k_1+k_2$.",
-     "answer": true
-    },
-    {
-     "text": "Hai lò xo nối tiếp 100 N/m cho độ cứng 200 N/m.",
-     "answer": false
-    },
-    {
-     "text": "$\\Delta l$ chính là chiều dài lò xo lúc treo vật.",
-     "answer": false
-    }
-   ],
-   "explanation": "Mục III.2: nối tiếp $1/k=1/k_1+1/k_2$ cho 50 N/m; $\\Delta l$ là hiệu hai chiều dài."
-  },
-  {
-   "type": "true_false",
-   "kind": "bien_doi",
-   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
    "theorySection": 4,
-   "question": "Về moment lực $M=Fd$:",
+   "question": "Hai bạn ngồi hai phía của một chiếc bập bênh và bập bênh đang cân bằng ở vị trí nằm ngang.",
    "statements": [
     {
-     "text": "Lực vuông góc cán chìa vặn dài $l$ có $d=l$.",
+     "text": "Tổng moment quay thuận chiều kim đồng hồ bằng tổng moment quay ngược chiều.",
      "answer": true
     },
     {
-     "text": "Lực hợp góc $\\theta$ với thanh dài $l$ có $d=l\\sin\\theta$.",
+     "text": "Hai bạn ngồi cách trục bằng nhau thì bập bênh chắc chắn cân bằng dù khối lượng khác nhau.",
+     "answer": false
+    },
+    {
+     "text": "Bạn nặng hơn phải ngồi gần trục hơn bạn nhẹ hơn.",
      "answer": true
     },
     {
-     "text": "Đặt trục tại điểm có phản lực chưa biết thì phản lực biến mất khỏi phương trình moment.",
-     "answer": true
-    },
-    {
-     "text": "Cân bằng chỉ cần $\\Sigma F=0$, không cần $\\Sigma M=0$.",
+     "text": "Cánh tay đòn luôn là đoạn từ trục tới điểm đặt của lực, dù lực hợp góc nào với thanh.",
      "answer": false
     }
    ],
-   "explanation": "Mục V: cân bằng cần cả $\\Sigma M=0$ và $\\Sigma F=0$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Mũi tên dài 3 cm, 1 cm ứng 20 N. Độ lớn lực là bao nhiêu N?",
-   "answer": "60",
-   "explanation": "$3\\cdot20=60$ N (mục II.1)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hai lực 6 N và 8 N có thể cho hợp lực nhỏ nhất bao nhiêu N?",
-   "answer": "2",
-   "explanation": "$R_{min}=|8-6|=2$ N (mục II.2)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Lò xo $k=50$ N/m treo vật 0,3 kg ($g=10$ m/s²). Độ dãn bao nhiêu cm?",
-   "answer": "6",
-   "explanation": "$\\Delta l=3/50=0{,}06$ m $=6$ cm (mục III.2)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Thùng 20 kg trên sàn, $\\mu_n=0{,}5$, $g=10$ m/s². Ma sát nghỉ cực đại bằng bao nhiêu N?",
-   "answer": "100",
-   "explanation": "$\\mu_nN=0{,}5\\cdot200=100$ N (mục IV.1)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Chìa vặn dài 0,4 m, kéo 30 N vuông góc cán. Moment bằng bao nhiêu N·m?",
-   "answer": "12",
-   "explanation": "$M=30\\cdot0{,}4=12$ N·m (mục V.1)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Bập bênh cân bằng: bạn 40 kg ngồi cách trục 1,5 m. Bạn 50 kg cách trục bao nhiêu m? (viết số thập phân dùng dấu phẩy)",
-   "answer": "1,2",
-   "explanation": "$400\\cdot1{,}5=500d$ nên $d=1{,}2$ m (mục V.1)."
+   "explanation": "Cân bằng quay: tổng moment thuận bằng tổng moment ngược; cánh tay đòn $d$ là khoảng cách vuông góc từ trục tới đường tác dụng của lực.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì đây chính là điều kiện cân bằng quay của vật có trục quay cố định.",
+    "1": "Không thể coi là đúng vì cánh tay đòn bằng nhau mà lực khác nhau thì moment hai bên không bằng nhau.",
+    "2": "Không thể coi là sai vì $F_1d_1=F_2d_2$: lực lớn hơn thì cánh tay đòn phải ngắn hơn.",
+    "3": "Không thể coi là đúng vì cánh tay đòn là khoảng cách vuông góc từ trục tới đường tác dụng của lực."
+   }
   }
  ]
 }

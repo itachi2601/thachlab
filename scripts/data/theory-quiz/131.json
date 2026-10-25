@@ -2,36 +2,18 @@
  "lesson_id": 131,
  "lesson_title": "Bài 4. Công và công suất",
  "item_id": 271,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 7,
-   "cong_thuc": 13
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
   "removed": []
  },
  "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Bài 4. Công và công suất",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Công cơ học là số đo của đại lượng nào sau đây?",
-   "options": [
-    "Phần năng lượng vật nhận vào hoặc mất đi do tương tác với vật khác",
-    "Tốc độ thực hiện công của vật",
-    "Quãng đường vật dịch chuyển",
-    "Độ lớn của lực tác dụng lên vật"
-   ],
-   "answer": 0,
-   "explanation": "Bài nêu: công là số đo phần năng lượng mà vật nhận vào hoặc mất đi do tương tác với vật khác."
-  },
   {
    "type": "multiple_choice",
    "kind": "dieu_kien",
@@ -39,16 +21,21 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Nếu vật chuyển dời theo phương vuông góc với phương của lực thì công của lực đó bằng bao nhiêu?",
+   "theorySection": 1,
+   "question": "Một lực thực hiện công cơ học khi",
    "options": [
-    "Bằng F.s",
-    "Bằng không",
-    "Bằng F/s",
-    "Luôn âm"
+    "lực tác dụng lên vật đang đứng yên",
+    "vật dịch chuyển theo hướng của lực",
+    "lực làm người đẩy cảm thấy mỏi cơ",
+    "vật dịch chuyển vuông góc với lực"
    ],
    "answer": 1,
-   "explanation": "Lưu ý trong bài: chuyển dời vuông góc với phương của lực thì công bằng không."
+   "explanation": "Bài nêu: lực làm vật dịch chuyển theo hướng của lực thì thực hiện công cơ học.",
+   "distractorNotes": {
+    "A": "Vật đứng yên không dịch chuyển nên $s=0$ và lực không thực hiện công.",
+    "C": "Mỏi cơ là do cơ bắp hoạt động bên trong người, không đo công cơ học lên vật.",
+    "D": "Không có quãng đường nào theo hướng lực nên lực không thực hiện công."
+   }
   },
   {
    "type": "multiple_choice",
@@ -58,33 +45,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Đại lượng đặc trưng cho tốc độ thực hiện công được gọi là gì?",
+   "question": "Công suất là đại lượng cho biết",
    "options": [
-    "Hiệu suất",
-    "Công suất",
-    "Năng lượng",
-    "Động năng"
+    "quãng đường vật đi trong một đơn vị thời gian",
+    "tổng công thực hiện trong cả quá trình",
+    "lực lớn nhất mà máy có thể tác dụng lên vật",
+    "công thực hiện trong một đơn vị thời gian"
    ],
-   "answer": 1,
-   "explanation": "Bài định nghĩa công suất là đại lượng đặc trưng cho tốc độ thực hiện công."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Bài 4. Công và công suất",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Hiệu suất của máy là tỉ số giữa đại lượng nào?",
-   "options": [
-    "Công toàn phần và công có ích",
-    "Công hao phí và công toàn phần",
-    "Công có ích và công toàn phần",
-    "Công có ích và công hao phí"
-   ],
-   "answer": 2,
-   "explanation": "Hiệu suất là tỉ số giữa công có ích và công toàn phần."
+   "answer": 3,
+   "explanation": "Công suất là công thực hiện trong một đơn vị thời gian, cho biết tốc độ thực hiện công.",
+   "distractorNotes": {
+    "A": "Đó là tốc độ, không phải công suất.",
+    "B": "Đó là công; công suất còn phải chia cho thời gian thực hiện.",
+    "C": "Lực khác công suất; công suất đo tốc độ thực hiện công."
+   }
   },
   {
    "type": "multiple_choice",
@@ -93,88 +67,159 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Hai hình thức truyền năng lượng cơ bản giữa các vật tương tác là gì?",
+   "theorySection": 1,
+   "question": "Năng lượng có thể truyền từ vật này sang vật khác bằng cách",
    "options": [
-    "Truyền nhiệt và thực hiện công",
-    "Phát sáng và truyền nhiệt",
-    "Thực hiện công và phát sóng",
-    "Bức xạ và dẫn điện"
+    "truyền nhiệt hoặc thực hiện công",
+    "chỉ bằng cách truyền nhiệt",
+    "chỉ bằng cách thực hiện công",
+    "truyền khối lượng hoặc truyền nhiệt"
    ],
    "answer": 0,
-   "explanation": "Bài nêu hai hình thức cơ bản là truyền nhiệt và thực hiện công."
+   "explanation": "Bài nêu: năng lượng truyền giữa các vật theo hai cách là truyền nhiệt và thực hiện công.",
+   "distractorNotes": {
+    "B": "Ngoài truyền nhiệt còn có thực hiện công, như lực đẩy làm thùng chạy nhanh dần.",
+    "C": "Ngoài thực hiện công còn có truyền nhiệt.",
+    "D": "Truyền khối lượng không phải cách truyền năng lượng được nêu trong bài."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "cong_thuc",
+   "kind": "dieu_kien",
    "topic": "Bài 4. Công và công suất",
    "form": "ly_thuyet",
    "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Biểu thức tính công cơ học khi vật chuyển dời theo phương của lực là:",
-   "options": [
-    "$A = F/s$",
-    "$A = F.s$",
-    "$A = s/F$",
-    "$A = F.s^2$"
-   ],
-   "answer": 1,
-   "explanation": "Bài cho $A = F.s$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 4. Công và công suất",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công suất được tính bằng biểu thức nào sau đây (v là tốc độ)?",
-   "options": [
-    "$P = F/v$",
-    "$P = A.t$",
-    "$P = Fv$",
-    "$P = t/A$"
-   ],
-   "answer": 2,
-   "explanation": "Bài cho $P = \\frac{A}{t} = \\frac{Fs}{t} = Fv$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bài 4. Công và công suất",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Biểu thức hiệu suất đúng là:",
+   "question": "Bạn học sinh xách cặp đi đều trên sân phẳng nằm ngang, lực tay giữ cặp hướng thẳng lên. Lực này không thực hiện công vì",
    "options": [
-    "$H = \\frac{A_{tp}}{A_{ci}} \\times 100\\%$",
-    "$H = \\frac{A_{ci}}{A_{tp}} \\times 100\\%$",
-    "$H = \\frac{A_{hp}}{A_{tp}} \\times 100\\%$",
-    "$H = A_{ci} - A_{tp}$"
+    "bạn đi quá chậm nên công rất nhỏ",
+    "cặp đang đứng yên đối với mặt đất",
+    "cặp dịch chuyển vuông góc với lực",
+    "bạn mỏi tay nên lực mất đi tác dụng"
    ],
-   "answer": 1,
-   "explanation": "Bài: $H = \\frac{A_{ci}}{A_{tp}} \\times 100\\%$."
+   "answer": 2,
+   "explanation": "Lực tay hướng lên, cặp đi ngang: không có quãng đường theo hướng lực nên $A=0$.",
+   "distractorNotes": {
+    "A": "Nhỏ không có nghĩa bằng 0; công bằng 0 do cặp dịch chuyển vuông góc với lực.",
+    "B": "Cặp đang đi ngang nên có dịch chuyển; lí do thật là dịch chuyển vuông góc với lực.",
+    "D": "Lực tay vẫn giữ cặp; mỏi tay không làm lực mất tác dụng."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "don_vi",
+   "kind": "dieu_kien",
    "topic": "Bài 4. Công và công suất",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Phát biểu nào về đơn vị công đúng?",
+   "theorySection": 2,
+   "question": "Cầm hai quyển sách đứng yên một phút, tay bị mỏi. Lực của tay lên sách",
    "options": [
-    "1 kWh = 3,6 kJ",
-    "1 kWh = 3,6 MJ",
-    "1 kWh = 36 MJ",
-    "1 kWh = 1000 J"
+    "có thực hiện công vì tay đang bị mỏi",
+    "có thực hiện công vì lực tay cân bằng trọng lực",
+    "có thực hiện công, bằng lực nhân thời gian giữ",
+    "không thực hiện công vì sách không dịch chuyển"
+   ],
+   "answer": 3,
+   "explanation": "Sách đứng yên nên $s=0$ và $A=F\\,s=0$ dù tay mỏi.",
+   "distractorNotes": {
+    "A": "Mỏi tay chưa chắc có công cơ học; cần có dịch chuyển theo hướng lực.",
+    "B": "Lực cân bằng với trọng lực nhưng sách không dịch chuyển nên không có công.",
+    "C": "Công là lực nhân quãng đường theo hướng lực, không phải nhân thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Máy bơm P có công suất lớn hơn máy bơm Q. Điều chắc chắn đúng là",
+   "options": [
+    "P luôn thực hiện tổng công nhiều hơn Q",
+    "trong cùng thời gian, P thực hiện nhiều công hơn Q",
+    "để làm cùng một công, P cần nhiều thời gian hơn Q",
+    "công suất của P tăng thêm khi P chạy lâu"
    ],
    "answer": 1,
-   "explanation": "Bài cho 1 kWh = 3600000 J = 3,6 MJ."
+   "explanation": "$A=P\\,t$: cùng thời gian $t$, công suất lớn hơn thì công lớn hơn.",
+   "distractorNotes": {
+    "A": "Q chạy lâu hơn có thể thực hiện tổng công nhiều hơn P.",
+    "C": "Ngược lại: cùng một công, máy mạnh hơn cần ít thời gian hơn.",
+    "D": "Chạy lâu thì công tăng, còn công suất của máy giữ nguyên."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Tính công của lực nâng khi đưa vật lên cao đều, quãng đường $s$ trong công thức $A=F\\,s$ là",
+   "options": [
+    "chiều dài cầu thang mà người nâng vật đi qua",
+    "số thứ tự tầng nhân với chiều cao một tầng",
+    "độ cao vật được nâng lên theo phương thẳng đứng",
+    "tổng quãng đường vật đi được kể cả đi ngang"
+   ],
+   "answer": 2,
+   "explanation": "Lực nâng hướng thẳng lên nên $s$ là độ cao đưa vật lên.",
+   "distractorNotes": {
+    "A": "Quãng đường phải theo hướng lực; lực nâng hướng lên nên lấy độ cao.",
+    "B": "Đứng ở tầng 1 mới lên được số tầng trừ đi 1 khoảng tầng, không tính theo số thứ tự.",
+    "D": "Phần đi ngang vuông góc với lực nâng nên không tính vào $s$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính công cơ học của một lực không đổi $F$ làm vật dịch chuyển quãng đường $s$ theo hướng lực là",
+   "options": [
+    "$A=F\\,s$",
+    "$A=\\dfrac{F}{s}$",
+    "$A=F+s$",
+    "$A=\\dfrac{s}{F}$"
+   ],
+   "answer": 0,
+   "explanation": "Công cơ học: $A=F\\,s$, đơn vị jun.",
+   "distractorNotes": {
+    "B": "Chia thay vì nhân; đơn vị khi đó là N/m chứ không phải jun.",
+    "C": "Không cộng được newton với mét vì hai đại lượng khác loại.",
+    "D": "Đảo tử và mẫu; công tăng khi lực và quãng đường tăng, không giảm."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công thức tính công suất khi thực hiện công $A$ trong thời gian $t$ là",
+   "options": [
+    "$P=A\\,t$",
+    "$P=\\dfrac{A}{t}$",
+    "$P=\\dfrac{t}{A}$",
+    "$P=A-t$"
+   ],
+   "answer": 1,
+   "explanation": "Công suất là công trong mỗi đơn vị thời gian: $P=\\dfrac{A}{t}$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia; đó là công khi biết công suất, không phải công suất.",
+    "C": "Đảo tử và mẫu; công làm càng nhiều thì công suất càng lớn.",
+    "D": "Không trừ được công cho thời gian vì khác loại đại lượng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -184,73 +229,217 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Trong hệ SI, đơn vị của công suất là:",
+   "question": "Oát (W), đơn vị của công suất, bằng",
    "options": [
-    "Jun (J)",
-    "Oát (W)",
-    "Niutơn (N)",
-    "Calo (cal)"
+    "$1\\ \\text{J}\\cdot\\text{s}$",
+    "$1\\ \\text{N/m}$",
+    "$1\\ \\text{J/m}$",
+    "$1\\ \\text{J/s}$"
+   ],
+   "answer": 3,
+   "explanation": "$1\\ \\text{W}=1\\ \\text{J/s}$: mỗi giây thực hiện công $1\\ \\text{J}$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia; công suất là công trong mỗi giây.",
+    "B": "Đó là tỉ số lực trên quãng đường, không phải công suất.",
+    "C": "Chia cho mét chứ không phải cho giây; công suất liên quan thời gian."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "bien_doi",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một thiết bị tiêu thụ $2\\ \\text{kWh}$ điện năng. Đổi ra jun, năng lượng đó bằng",
+   "options": [
+    "$7{,}2\\cdot10^{3}\\ \\text{J}$",
+    "$2\\cdot10^{3}\\ \\text{J}$",
+    "$7{,}2\\cdot10^{6}\\ \\text{J}$",
+    "$3{,}6\\cdot10^{6}\\ \\text{J}$"
+   ],
+   "answer": 2,
+   "explanation": "$1\\ \\text{kWh}=3{,}6\\cdot10^{6}\\ \\text{J}$ nên $2\\ \\text{kWh}=7{,}2\\cdot10^{6}\\ \\text{J}$.",
+   "distractorNotes": {
+    "A": "Coi $1\\ \\text{kWh}=3\\,600\\ \\text{J}$, nhầm giờ đổi giây với $1\\ \\text{kWh}$.",
+    "B": "Coi $1\\ \\text{kWh}=1\\,000\\ \\text{J}$, mới đổi tiền tố kilô.",
+    "D": "Đó là $1\\ \\text{kWh}$, quên nhân với $2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Máy X có công suất gấp đôi máy Y. Để thực hiện cùng một công, thời gian của máy X so với máy Y",
+   "options": [
+    "bằng một nửa",
+    "gấp đôi",
+    "bằng nhau",
+    "bằng một phần tư"
+   ],
+   "answer": 0,
+   "explanation": "$t=\\dfrac{A}{P}$: cùng $A$, $P$ gấp đôi thì $t$ giảm một nửa.",
+   "distractorNotes": {
+    "B": "Đảo tỉ lệ; máy mạnh hơn làm xong nhanh hơn chứ không chậm hơn.",
+    "C": "Công suất khác nhau thì thời gian làm cùng một công khác nhau.",
+    "D": "Công suất chỉ gấp đôi nên thời gian giảm một nửa, không phải một phần tư."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Ô tô chạy đều với tốc độ $54\\ \\text{km/h}$, lực kéo của động cơ là $2\\,000\\ \\text{N}$. Công suất của động cơ là",
+   "options": [
+    "$108\\ \\text{kW}$",
+    "$30\\ \\text{kW}$",
+    "$133\\ \\text{W}$",
+    "$37\\ \\text{W}$"
    ],
    "answer": 1,
-   "explanation": "Bài nêu đơn vị công suất trong SI là oát (W)."
+   "explanation": "$v=54:3{,}6=15\\ \\text{m/s}$, $P=F\\,v=2\\,000\\cdot15=30\\,000\\ \\text{W}=30\\ \\text{kW}$.",
+   "distractorNotes": {
+    "A": "Nhân $2\\,000\\cdot54$ mà chưa đổi km/h ra m/s.",
+    "C": "Chia $\\dfrac{F}{v}$ với $v=15\\ \\text{m/s}$ thay vì nhân.",
+    "D": "Chia $\\dfrac{F}{v}$ và còn quên đổi km/h ra m/s."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nâng đều vật $50\\ \\text{kg}$ lên cao $4\\ \\text{m}$ trong $10\\ \\text{s}$. Công suất của lực nâng là",
+   "options": [
+    "$20\\ \\text{W}$",
+    "$2\\,000\\ \\text{W}$",
+    "$200\\ \\text{W}$",
+    "$125\\ \\text{W}$"
+   ],
+   "answer": 2,
+   "explanation": "$F=10\\cdot50=500\\ \\text{N}$, $A=500\\cdot4=2\\,000\\ \\text{J}$, $P=\\dfrac{2\\,000}{10}=200\\ \\text{W}$.",
+   "distractorNotes": {
+    "A": "Dùng $F=50$ thay vì trọng lượng $10m=500\\ \\text{N}$.",
+    "B": "Đó là công $A=2\\,000\\ \\text{J}$, chưa chia cho thời gian.",
+    "D": "Chia lực cho độ cao thay vì tính công rồi chia cho thời gian."
+   }
   },
   {
    "type": "true_false",
    "kind": "dieu_kien",
    "topic": "Bài 4. Công và công suất",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Xét công thức $A = F.s$. Các nhận định sau đúng hay sai?",
+   "theorySection": 2,
+   "question": "Một học sinh làm ba lần: (1) cầm hai quyển sách đứng yên $1$ phút, (2) cầm sách đi ngang $5\\ \\text{m}$, (3) nâng sách từ mặt bàn lên cao thêm $0{,}5\\ \\text{m}$. Cả ba lần tay đều mỏi. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Công thức đúng khi vật chuyển dời theo phương của lực.",
+     "text": "Ở lần (1), lực tay không thực hiện công lên sách.",
      "answer": true
     },
     {
-     "text": "F là độ lớn của lực, đơn vị N.",
-     "answer": true
-    },
-    {
-     "text": "s là quãng đường dịch chuyển bất kỳ, không cần theo hướng lực.",
+     "text": "Ở lần (2), lực tay thực hiện công lên sách vì sách dịch chuyển $5\\ \\text{m}$.",
      "answer": false
     },
     {
-     "text": "Chuyển dời vuông góc với lực thì công bằng không.",
+     "text": "Ở lần (3), lực tay thực hiện công lên sách.",
      "answer": true
+    },
+    {
+     "text": "Tay mỏi ở cả ba lần nên cả ba lần đều có công cơ học.",
+     "answer": false
     }
    ],
-   "explanation": "Bài lưu ý công thức chỉ đúng khi s theo phương của lực; vuông góc thì công bằng 0."
+   "explanation": "a) đúng: $s=0$. b) sai: dịch chuyển vuông góc với lực. c) đúng: sách đi lên theo hướng lực. d) sai: mỏi tay không quyết định có công.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì sách đứng yên nên không có dịch chuyển.",
+    "1": "Không thể coi là đúng vì lực tay hướng lên còn sách đi ngang, dịch chuyển vuông góc với lực nên công bằng 0.",
+    "2": "Không thể coi là sai vì sách đi lên theo hướng lực tay.",
+    "3": "Không thể coi là đúng vì mỏi tay không phải điều kiện của công cơ học; cần dịch chuyển theo hướng lực."
+   }
   },
   {
    "type": "true_false",
-   "kind": "dinh_nghia",
+   "kind": "hien_tuong",
    "topic": "Bài 4. Công và công suất",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Về công suất, các nhận định sau đúng hay sai?",
+   "question": "Minh và Nam mỗi bạn xách một bao gạo $10\\ \\text{kg}$ lên cao $6\\ \\text{m}$. Minh mất $20\\ \\text{s}$, Nam mất $60\\ \\text{s}$. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Công suất là công thực hiện trong một đơn vị thời gian.",
-     "answer": true
-    },
-    {
-     "text": "Công suất càng lớn thì tốc độ thực hiện công càng nhanh.",
-     "answer": true
-    },
-    {
-     "text": "Công suất càng lớn thì tốc độ thực hiện công càng chậm.",
+     "text": "Nam thực hiện công nhiều hơn vì mất nhiều thời gian hơn.",
      "answer": false
     },
     {
-     "text": "Công suất đo bằng oát (W) trong hệ SI.",
+     "text": "Công mà hai bạn thực hiện lên bao gạo bằng nhau.",
      "answer": true
+    },
+    {
+     "text": "Minh làm việc nhanh hơn Nam.",
+     "answer": true
+    },
+    {
+     "text": "Công suất của hai bạn bằng nhau vì công bằng nhau.",
+     "answer": false
     }
    ],
-   "explanation": "Công suất đặc trưng cho tốc độ thực hiện công, đơn vị W."
+   "explanation": "a) sai: công không phụ thuộc thời gian. b) đúng: $600\\ \\text{J}$ mỗi bạn. c) đúng: $30\\ \\text{W}$ so với $10\\ \\text{W}$. d) sai: công suất khác nhau.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì công chỉ phụ thuộc lực và quãng đường theo hướng lực, không phụ thuộc thời gian.",
+    "1": "Không thể coi là sai vì cùng trọng lượng và cùng độ cao nên $A=100\\cdot6=600\\ \\text{J}$ cho mỗi bạn.",
+    "2": "Không thể coi là sai vì cùng công mà Minh mất ít thời gian hơn, công suất lớn hơn.",
+    "3": "Không thể coi là đúng vì công suất còn phụ thuộc thời gian: Minh $30\\ \\text{W}$, Nam $10\\ \\text{W}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dieu_kien",
+   "topic": "Bài 4. Công và công suất",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Máy bơm X có công suất $2\\ \\text{kW}$, máy bơm Y có công suất $1\\ \\text{kW}$. Xét các nhận xét sau:",
+   "statements": [
+    {
+     "text": "Trong cùng thời gian, máy X thực hiện công gấp đôi máy Y.",
+     "answer": true
+    },
+    {
+     "text": "Để thực hiện cùng một công, máy X cần thời gian bằng một nửa máy Y.",
+     "answer": true
+    },
+    {
+     "text": "Máy X lúc nào cũng thực hiện tổng công nhiều hơn máy Y.",
+     "answer": false
+    },
+    {
+     "text": "Máy X chạy càng lâu thì công suất của máy càng tăng.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng. b) đúng. c) sai: tổng công còn phụ thuộc thời gian chạy. d) sai: công suất không đổi theo thời gian chạy.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $A=P\\,t$ với cùng $t$ nên công tỉ lệ với công suất.",
+    "1": "Không thể coi là sai vì $t=\\dfrac{A}{P}$ nên $P$ gấp đôi thì $t$ giảm một nửa.",
+    "2": "Không thể coi là đúng vì máy Y chạy lâu hơn có thể thực hiện tổng công nhiều hơn máy X.",
+    "3": "Không thể coi là đúng vì chạy lâu làm công tăng, còn công suất của máy giữ nguyên."
+   }
   },
   {
    "type": "true_false",
@@ -259,128 +448,103 @@
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về hiệu suất, các nhận định sau đúng hay sai?",
+   "theorySection": 1,
+   "question": "Kéo đều khối gỗ bằng lực kế chỉ $1{,}5\\ \\text{N}$ theo phương ngang, khối gỗ dịch chuyển $0{,}50\\ \\text{m}$ theo hướng kéo. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Công toàn phần = công có ích + công hao phí.",
+     "text": "Công của lực kéo là $0{,}75\\ \\text{J}$.",
      "answer": true
     },
     {
-     "text": "$H = \\frac{P_{ci}}{P_{tp}} \\times 100\\%$.",
-     "answer": true
-    },
-    {
-     "text": "Công có ích luôn lớn hơn công toàn phần.",
+     "text": "Lực gấp đôi và quãng đường giảm một nửa thì công tăng gấp đôi.",
      "answer": false
     },
     {
-     "text": "$H = \\frac{A_{ci}}{A_{tp}} \\times 100\\%$.",
+     "text": "Công của lực kéo bằng $F+s=2{,}0\\ \\text{J}$.",
+     "answer": false
+    },
+    {
+     "text": "Kéo $1{,}00\\ \\text{m}$ với cùng lực thì công gấp đôi.",
      "answer": true
     }
    ],
-   "explanation": "Bài cho công thức hiệu suất và công toàn phần = có ích + hao phí nên có ích không vượt toàn phần."
+   "explanation": "a) đúng: $1{,}5\\cdot0{,}50=0{,}75\\ \\text{J}$. b) sai: công không đổi. c) sai: công là tích chứ không phải tổng. d) đúng.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $A=F\\,s=1{,}5\\cdot0{,}50=0{,}75\\ \\text{J}$.",
+    "1": "Không thể coi là đúng vì hai thay đổi bù nhau nên công không đổi.",
+    "2": "Không thể coi là đúng vì công là tích $F\\,s$, không phải tổng; không cộng được newton với mét.",
+    "3": "Không thể coi là sai vì $A=F\\,s$ nên $s$ gấp đôi thì $A$ gấp đôi."
+   }
   },
   {
    "type": "true_false",
-   "kind": "don_vi",
+   "kind": "cong_thuc",
    "topic": "Bài 4. Công và công suất",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về đơn vị công suất, các nhận định sau đúng hay sai?",
+   "theorySection": 4,
+   "question": "Cần cẩu nâng đều khối thép $0{,}8$ tấn lên cao $10\\ \\text{m}$ trong $20\\ \\text{s}$. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "1 kW = 1000 W.",
-     "answer": true
-    },
-    {
-     "text": "1 HP = 746 W.",
-     "answer": true
-    },
-    {
-     "text": "1 CV = 746 W.",
+     "text": "Công suất của cần cẩu là $80\\ \\text{kW}$.",
      "answer": false
     },
     {
-     "text": "1 MW = $10^{6}$ W.",
+     "text": "Lực nâng của cần cẩu là $8\\,000\\ \\text{N}$.",
+     "answer": true
+    },
+    {
+     "text": "Nâng cùng khối thép trong $40\\ \\text{s}$ thì công suất lớn hơn $4\\ \\text{kW}$.",
+     "answer": false
+    },
+    {
+     "text": "Công của lực nâng là $80\\ \\text{kJ}$.",
      "answer": true
     }
    ],
-   "explanation": "Bài: 1 HP = 746 W, 1 CV = 736 W."
+   "explanation": "a) sai: $P=\\dfrac{A}{t}=4\\ \\text{kW}$. b) đúng. c) sai: thời gian dài hơn thì công suất nhỏ hơn. d) đúng.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $80\\ \\text{kW}$ nhầm công với công suất; $P=\\dfrac{80\\,000}{20}=4\\,000\\ \\text{W}=4\\ \\text{kW}$.",
+    "1": "Không thể coi là sai vì nâng đều nên lực nâng bằng trọng lượng $10\\cdot800=8\\,000\\ \\text{N}$.",
+    "2": "Không thể coi là đúng vì cùng công mà thời gian dài hơn thì công suất nhỏ hơn, còn $2\\ \\text{kW}$.",
+    "3": "Không thể coi là sai vì $A=8\\,000\\cdot10=80\\,000\\ \\text{J}=80\\ \\text{kJ}$."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "true_false",
    "kind": "tinh_nhanh",
-   "topic": "Bài 4. Công và công suất",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Lực 5 N làm vật dịch chuyển 4 m theo hướng của lực. Công thực hiện bằng bao nhiêu jun?",
-   "answer": "20",
-   "explanation": "$A = F.s = 5.4 = 20$ J."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 4. Công và công suất",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Một máy thực hiện công 600 J trong 10 s. Công suất bằng bao nhiêu oát?",
-   "answer": "60",
-   "explanation": "$P = A/t = 600/10 = 60$ W."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bài 4. Công và công suất",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Công có ích 80 J, công toàn phần 100 J. Hiệu suất bằng bao nhiêu phần trăm?",
-   "answer": "80",
-   "explanation": "$H = 80/100 \\times 100\\% = 80\\%$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
-   "topic": "Bài 4. Công và công suất",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Lực kéo 20 N, vật chuyển động với tốc độ 3 m/s. Công suất bằng bao nhiêu oát?",
-   "answer": "60",
-   "explanation": "$P = Fv = 20.3 = 60$ W."
-  },
-  {
-   "type": "short_answer",
-   "kind": "don_vi",
-   "topic": "Bài 4. Công và công suất",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 0,
-   "question": "Số mũ của 10 trong biểu thức $1\\text{ MJ} = 10^{n}\\text{ J}$ là n bằng bao nhiêu?",
-   "answer": "6",
-   "explanation": "Bài: 1 MJ = $10^{6}$ J."
-  },
-  {
-   "type": "short_answer",
-   "kind": "bien_doi",
    "topic": "Bài 4. Công và công suất",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Công toàn phần 50 J, công hao phí 10 J. Công có ích bằng bao nhiêu jun?",
-   "answer": "40",
-   "explanation": "$A_{ci} = A_{tp} - A_{hp} = 50 - 10 = 40$ J."
+   "theorySection": 5,
+   "question": "Ô tô chạy đều và giữ công suất không đổi, công suất liên hệ với lực kéo và tốc độ bởi $P=F\\,v$. Xét các nhận xét sau:",
+   "statements": [
+    {
+     "text": "Lên dốc cần lực kéo gấp đôi thì tốc độ cũng gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Tốc độ $72\\ \\text{km/h}$ chính là $72\\ \\text{m/s}$.",
+     "answer": false
+    },
+    {
+     "text": "Lực kéo càng lớn thì tốc độ càng nhỏ.",
+     "answer": true
+    },
+    {
+     "text": "Công suất $30\\ \\text{kW}$, lực kéo $1\\,500\\ \\text{N}$ thì tốc độ là $20\\ \\text{m/s}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai: $F$ gấp đôi thì $v$ giảm một nửa. b) sai: chia $3{,}6$. c) đúng. d) đúng.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $F$ gấp đôi thì $v$ giảm một nửa vì $P$ không đổi.",
+    "1": "Không thể coi là đúng vì đổi km/h sang m/s phải chia cho $3{,}6$, nên $72\\ \\text{km/h}=20\\ \\text{m/s}$.",
+    "2": "Không thể coi là sai vì $P$ không đổi nên $F$ và $v$ tỉ lệ nghịch.",
+    "3": "Không thể coi là sai vì $v=\\dfrac{P}{F}=\\dfrac{30\\,000}{1\\,500}=20\\ \\text{m/s}$."
+   }
   }
  ]
 }

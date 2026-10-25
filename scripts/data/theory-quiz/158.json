@@ -2,21 +2,16 @@
  "lesson_id": 158,
  "lesson_title": "Chuyên đề 14. Gương phẳng, bóng tối và nửa tối",
  "item_id": 397,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 8,
-   "cong_thuc": 11
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
-  "removed": [
-   {
-    "question": "Đèn đường cao $H$, người cao $h$ cách chân đèn $x$, bóng dài $\\ell=\\dfrac{hx}{H-h}$. Các phát biểu sau đúng hay sai?",
-    "reason": "nghi_ngo: Đáp án các ý khớp bài, nhưng đề không định nghĩa ký hiệu v và không nói người đang chuyển động, trong khi ý 2 và ý 3 lại dựa vào tốc độ người."
-   }
-  ]
+  "removed": []
  },
  "questions": [
   {
@@ -27,15 +22,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Vùng nửa tối là vùng:",
+   "question": "Vùng nửa tối là vùng",
    "options": [
-    "Không nhận ánh sáng từ nguồn",
-    "Nhận ánh sáng từ một phần của nguồn",
-    "Nhận toàn bộ ánh sáng từ nguồn",
-    "Chỉ xuất hiện khi nguồn là nguồn điểm"
+    "không nhận ánh sáng từ bất kì điểm nào của nguồn",
+    "nhận ánh sáng từ mọi điểm của nguồn sáng",
+    "chỉ nhận ánh sáng từ một phần của nguồn sáng",
+    "chỉ xuất hiện khi nguồn sáng là nguồn điểm"
    ],
-   "answer": 1,
-   "explanation": "Mục II: vùng nửa tối nhận ánh sáng từ một phần nguồn."
+   "answer": 2,
+   "explanation": "Vùng nửa tối nhận ánh sáng từ một phần của nguồn rộng, nằm quanh vùng tối.",
+   "distractorNotes": {
+    "A": "Đó là vùng tối; vùng nửa tối vẫn nhận được ánh sáng từ một phần nguồn.",
+    "B": "Vùng nhận đủ ánh sáng từ mọi điểm của nguồn là vùng sáng; vùng nửa tối chỉ nhận một phần.",
+    "D": "Nguồn điểm chỉ cho vùng tối với mép rõ nét; vùng nửa tối chỉ có khi nguồn sáng rộng."
+   }
   },
   {
    "type": "multiple_choice",
@@ -45,15 +45,89 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Với nguồn sáng là nguồn điểm, sau vật chắn sáng có:",
+   "question": "Dùng một nguồn điểm chiếu sáng vật chắn lên màn. Trên màn có",
    "options": [
-    "Chỉ có vùng tối, mép bóng rõ nét",
-    "Vùng tối và vùng nửa tối",
-    "Chỉ có vùng nửa tối",
-    "Không có bóng"
+    "chỉ có vùng tối, mép bóng rõ nét, không nửa tối",
+    "vùng tối ở giữa và vành nửa tối bao quanh",
+    "chỉ có vùng nửa tối, mép bóng mờ dần ra ngoài",
+    "vùng tối nhỏ hơn vật chắn, bên ngoài là nửa tối"
    ],
    "answer": 0,
-   "explanation": "Mục II: nguồn điểm chỉ có vùng tối, mép bóng rõ nét."
+   "explanation": "Nguồn điểm chỉ có tia cùng mép nên chỉ tạo vùng tối với mép rõ nét.",
+   "distractorNotes": {
+    "B": "Vành nửa tối chỉ xuất hiện với nguồn rộng, khi các điểm khác nhau của nguồn bị che khác nhau.",
+    "C": "Nguồn điểm hoặc bị che hoàn toàn hoặc không bị che, nên không có vùng nửa tối.",
+    "D": "Với nguồn điểm không có vùng nửa tối, và bóng trên màn xa hơn vật chắn thì lớn hơn vật chứ không nhỏ hơn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bóng tối, bóng nửa tối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguồn điểm chiếu sáng vật chắn có đường kính $d$ đặt cách nguồn $a$; màn cách nguồn $L$. Đường kính bóng trên màn là",
+   "options": [
+    "$d\\cdot\\dfrac aL$",
+    "$d\\cdot\\dfrac{L-a}{a}$",
+    "$d\\left(\\dfrac La\\right)^2$",
+    "$d\\cdot\\dfrac La$"
+   ],
+   "answer": 3,
+   "explanation": "Hai tam giác đồng dạng đỉnh ở nguồn cho $\\dfrac{d'}{d}=\\dfrac La$.",
+   "distractorNotes": {
+    "A": "Đảo tỉ số: màn xa nguồn hơn vật thì bóng phải lớn hơn vật, còn biểu thức này cho nhỏ hơn.",
+    "B": "Dùng khoảng cách vật–màn thay cho nguồn–màn; tam giác đồng dạng có đỉnh ở nguồn nên phải dùng $L$.",
+    "C": "Bình phương là tỉ số diện tích, còn đường kính chỉ tỉ lệ bậc nhất với $\\dfrac La$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Bóng tối, bóng nửa tối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Nguồn điểm chiếu sáng vật chắn đặt cách nguồn $a$; màn cách nguồn $L$. Diện tích bóng trên màn gấp diện tích vật chắn",
+   "options": [
+    "$\\dfrac La$ lần",
+    "$\\left(\\dfrac La\\right)^2$ lần",
+    "$\\left(\\dfrac aL\\right)^2$ lần",
+    "$\\dfrac{L^2}{a}$ lần"
+   ],
+   "answer": 1,
+   "explanation": "Kích thước bóng gấp $\\dfrac La$ lần nên diện tích gấp $\\left(\\dfrac La\\right)^2$ lần.",
+   "distractorNotes": {
+    "A": "Đó là tỉ số đường kính; diện tích tỉ lệ với bình phương kích thước nên phải bình phương.",
+    "C": "Đảo tỉ số nên cho bóng nhỏ hơn vật, trong khi màn xa nguồn hơn vật thì bóng lớn hơn vật.",
+    "D": "Chỉ bình phương $L$ mà không bình phương $a$ nên không phải tỉ số hai diện tích đồng dạng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Bóng tối, bóng nửa tối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Đèn đường cao $H$, người cao $h$ đứng cách chân đèn $x$. Bóng của người trên mặt đất dài",
+   "options": [
+    "$\\dfrac{hx}{H-h}$",
+    "$\\dfrac{hx}{H}$",
+    "$\\dfrac{Hx}{H-h}$",
+    "$\\dfrac{hx}{H+h}$"
+   ],
+   "answer": 0,
+   "explanation": "Từ $\\dfrac{\\ell}{x+\\ell}=\\dfrac hH$ suy ra $\\ell=\\dfrac{hx}{H-h}$.",
+   "distractorNotes": {
+    "B": "Thiếu $h$ ở mẫu: tam giác đồng dạng cho $\\dfrac{\\ell}{x+\\ell}=\\dfrac hH$, biến đổi ra mẫu $H-h$.",
+    "C": "Đây là vị trí đỉnh bóng tính từ chân đèn ($x+\\ell$), chưa trừ đi khoảng cách $x$ của người.",
+    "D": "Sai dấu ở mẫu: người cao gần bằng đèn ($h\\to H$) thì bóng phải rất dài, còn biểu thức này chỉ cho $\\dfrac x2$."
+   }
   },
   {
    "type": "multiple_choice",
@@ -63,33 +137,66 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Theo định luật phản xạ ánh sáng, góc tới và góc phản xạ được đo với:",
+   "question": "Theo định luật phản xạ ánh sáng, tia phản xạ nằm trong",
    "options": [
-    "Mặt gương",
-    "Pháp tuyến",
-    "Tia tới",
-    "Tia phản xạ"
+    "mặt phẳng chứa tia tới và mặt phẳng gương",
+    "mặt phẳng vuông góc với tia tới",
+    "mặt phẳng chứa tia tới và pháp tuyến",
+    "mặt phẳng bất kì qua điểm tới"
    ],
-   "answer": 1,
-   "explanation": "Mục III: góc đo với pháp tuyến, không đo với mặt gương."
+   "answer": 2,
+   "explanation": "Ý thứ nhất của định luật: tia phản xạ nằm trong mặt phẳng chứa tia tới và pháp tuyến.",
+   "distractorNotes": {
+    "A": "Mốc của định luật là pháp tuyến chứ không phải mặt gương; tia phản xạ cùng mặt phẳng với tia tới và pháp tuyến.",
+    "B": "Tia phản xạ xuất phát từ điểm tới và nằm cùng mặt phẳng với tia tới, nên không thể nằm trong mặt phẳng vuông góc với tia tới.",
+    "D": "Định luật xác định rõ mặt phẳng chứa tia phản xạ; nó không thể nằm trong mặt phẳng tuỳ ý."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "dieu_kien",
+   "kind": "dinh_nghia",
    "topic": "Định luật phản xạ ánh sáng",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Tia tới vuông góc với mặt gương thì góc tới bằng:",
+   "question": "Góc tới là góc hợp bởi tia tới và",
    "options": [
-    "$90^\\circ$",
-    "$45^\\circ$",
-    "$0^\\circ$",
-    "$180^\\circ$"
+    "mặt gương tại điểm tới",
+    "pháp tuyến tại điểm tới",
+    "tia phản xạ tại điểm tới",
+    "phương nằm ngang qua điểm tới"
    ],
-   "answer": 2,
-   "explanation": "Mục III: tia vuông góc gương có $i=0$ và bật ngược lại."
+   "answer": 1,
+   "explanation": "Góc tới và góc phản xạ đều đo với pháp tuyến của gương tại điểm tới.",
+   "distractorNotes": {
+    "A": "Nhầm góc tới với góc giữa tia và mặt gương; hai góc này phụ nhau, $i=90^\\circ-\\beta$.",
+    "C": "Góc giữa tia tới và tia phản xạ là $2i$, không phải góc tới.",
+    "D": "Phương ngang không liên quan; góc tới luôn đo với pháp tuyến dù gương đặt nghiêng thế nào."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Định luật phản xạ ánh sáng",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Giữ nguyên tia tới, quay gương một góc $\\delta$ quanh trục qua điểm tới. Tia phản xạ quay một góc",
+   "options": [
+    "$\\delta$",
+    "$\\dfrac\\delta2$",
+    "$4\\delta$",
+    "$2\\delta$"
+   ],
+   "answer": 3,
+   "explanation": "Góc giữa tia tới và tia phản xạ là $2i$ đổi $2\\delta$ trong khi tia tới đứng yên.",
+   "distractorNotes": {
+    "A": "Pháp tuyến quay $\\delta$ làm góc tới đổi $\\delta$, nhưng góc giữa tia tới và tia phản xạ là $2i$ nên tia phản xạ quay gấp đôi.",
+    "B": "Đảo quan hệ: tia phản xạ quay nhiều hơn chứ không ít hơn gương.",
+    "C": "Nhân đôi hai lần: tia phản xạ chỉ quay $2\\delta$, gấp đôi góc quay của gương."
+   }
   },
   {
    "type": "multiple_choice",
@@ -99,105 +206,170 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Ảnh của một vật tạo bởi gương phẳng là:",
+   "question": "Ảnh của một vật tạo bởi gương phẳng là",
    "options": [
-    "Ảnh thật, nhỏ hơn vật",
-    "Ảnh ảo, lớn bằng vật",
-    "Ảnh thật, lớn bằng vật",
-    "Ảnh ảo, lớn hơn vật"
+    "ảnh ảo, lớn bằng vật, đối xứng với vật qua gương",
+    "ảnh ảo, nhỏ hơn vật, đối xứng với vật qua gương",
+    "ảnh thật, lớn bằng vật, đối xứng với vật qua gương",
+    "ảnh ảo, lớn bằng vật, nằm cùng phía gương với vật"
    ],
-   "answer": 1,
-   "explanation": "Mục IV: ảnh ảo, lớn bằng vật."
+   "answer": 0,
+   "explanation": "Ảnh qua gương phẳng là ảnh ảo, bằng vật và đối xứng với vật qua mặt gương.",
+   "distractorNotes": {
+    "B": "Ảnh trong gương phẳng luôn lớn bằng vật; chỉ trông nhỏ khi ở xa, lúc đó gương cũng trông nhỏ tương ứng.",
+    "C": "Ảnh do đường kéo dài của các tia phản xạ gặp nhau, không hứng được trên màn nên là ảnh ảo.",
+    "D": "Ảnh nằm sau gương, đối xứng với vật qua mặt gương, không cùng phía với vật."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "cong_thuc",
-   "topic": "Định luật phản xạ ánh sáng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Tia tới hợp mặt gương góc $\\beta$. Góc tới $i$ bằng:",
-   "options": [
-    "$\\beta$",
-    "$90^\\circ-\\beta$",
-    "$90^\\circ+\\beta$",
-    "$180^\\circ-\\beta$"
-   ],
-   "answer": 1,
-   "explanation": "Mục III: $i=90^\\circ-\\beta$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bóng tối, bóng nửa tối",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Nguồn điểm, vật đường kính $d$, khoảng cách từ nguồn tới vật là $a$, tới màn là $L$. Đường kính bóng $d'$ là:",
-   "options": [
-    "$d\\cdot\\dfrac{a}{L}$",
-    "$d\\cdot\\dfrac{L}{a}$",
-    "$d\\cdot\\left(\\dfrac{L}{a}\\right)^2$",
-    "$d\\cdot(L-a)$"
-   ],
-   "answer": 1,
-   "explanation": "Mục II: $d'=d\\cdot\\dfrac{L}{a}$ (tam giác đồng dạng đỉnh ở nguồn)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Bóng tối, bóng nửa tối",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Với nguồn điểm, diện tích bóng gấp diện tích vật:",
-   "options": [
-    "$\\dfrac{L}{a}$ lần",
-    "$\\left(\\dfrac{L}{a}\\right)^2$ lần",
-    "$\\dfrac{a}{L}$ lần",
-    "$2\\dfrac{L}{a}$ lần"
-   ],
-   "answer": 1,
-   "explanation": "Mục II: diện tích tỉ lệ bình phương tỉ số $\\dfrac{L}{a}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
    "topic": "Ảnh của vật tạo bởi gương phẳng",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Vật đứng yên, gương tịnh tiến $x$ theo phương vuông góc mặt gương. Ảnh dời:",
+   "question": "Vật đứng yên, tịnh tiến gương một đoạn $x$ theo phương vuông góc mặt gương. Ảnh của vật dời",
    "options": [
-    "$x$",
-    "$2x$",
-    "$x/2$",
-    "$0$"
+    "$x$, cùng chiều với gương",
+    "$2x$, cùng chiều với gương",
+    "$2x$, ngược chiều với gương",
+    "$x$, ngược chiều với gương"
    ],
    "answer": 1,
-   "explanation": "Mục IV: gương dời $x$ thì ảnh dời $2x$."
+   "explanation": "Gương dời $x$ thì ảnh đối xứng dời $2x$ cùng chiều gương.",
+   "distractorNotes": {
+    "A": "Ảnh đối xứng với vật qua gương: gương dời $x$ thì khoảng cách vật–gương đổi $x$ còn ảnh đổi $2x$.",
+    "C": "Khoảng cách ảnh–gương tăng khi gương dời ra xa vật, nên ảnh dời cùng chiều với gương.",
+    "D": "Sai cả độ lớn lẫn chiều: ảnh dời $2x$ và cùng chiều với gương."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "bien_doi",
+   "kind": "hien_tuong",
+   "topic": "Gương phẳng, bóng tối và nửa tối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Đứng trước gương treo tường, em chỉ thấy phần thân tới thắt lưng. Lùi ra xa gương thì em",
+   "options": [
+    "thấy nhiều hơn phần thân lúc đầu",
+    "thấy ít hơn phần thân lúc đầu",
+    "thấy đúng phần thân như lúc đầu",
+    "thấy toàn thân nếu đứng đủ xa"
+   ],
+   "answer": 2,
+   "explanation": "Phần gương cần dùng luôn bằng nửa phần thân nhìn được, không phụ thuộc khoảng cách.",
+   "distractorNotes": {
+    "A": "Ảnh lùi xa bao nhiêu thì mắt cũng lùi xa bấy nhiêu; phần gương dùng luôn bằng nửa phần thân nên không thấy thêm.",
+    "B": "Ảnh trông nhỏ hơn nhưng gương cũng trông nhỏ đi đúng tỉ lệ đó, nên phần thân thấy được không đổi.",
+    "D": "Dù lùi xa đến đâu, muốn thấy toàn thân thì gương vẫn phải cao tối thiểu bằng nửa người."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Gương phẳng, bóng tối và nửa tối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Người cao $h$ có mắt cách sàn $h_m$, muốn thấy toàn thân trong một gương phẳng treo thẳng đứng. Gương cần cao tối thiểu",
+   "options": [
+    "$h$",
+    "$\\dfrac h4$",
+    "$\\dfrac{h_m}{2}$",
+    "$\\dfrac h2$"
+   ],
+   "answer": 3,
+   "explanation": "Gương nằm giữa người và ảnh nên đoạn gương cần dùng là đường trung bình của tam giác, bằng $\\dfrac h2$.",
+   "distractorNotes": {
+    "A": "Gương cao bằng người là thừa: dựa vào đường trung bình của tam giác, chỉ cần một nửa.",
+    "B": "Quá nhỏ: tia từ đỉnh đầu và tia từ chân phản xạ ở hai mép cách nhau $\\dfrac h2$, gương ngắn hơn thì mất đầu hoặc chân.",
+    "C": "Đó là độ cao mép dưới của gương tính từ sàn ($h_m$ là độ cao của mắt), không phải chiều cao gương."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dieu_kien",
    "topic": "Gương phẳng, bóng tối và nửa tối",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Người cao $h$ muốn thấy toàn thân trong gương phẳng treo thẳng đứng. Gương ngắn nhất cần có chiều cao:",
+   "theorySection": 5,
+   "question": "Hai gương phẳng hợp nhau góc $\\alpha$ sao cho $m=\\dfrac{360^\\circ}{\\alpha}$ là số nguyên chẵn. Số ảnh của một vật đặt giữa hai gương",
    "options": [
-    "$h$",
-    "$\\dfrac{h}{2}$",
-    "$\\dfrac{h}{4}$",
-    "$2h$"
+    "bằng $m$, dù đặt vật ở đâu",
+    "bằng $m-1$, dù đặt vật ở đâu",
+    "bằng $m-1$, chỉ khi vật nằm trên phân giác",
+    "bằng $m$, khi vật lệch khỏi phân giác"
    ],
    "answer": 1,
-   "explanation": "Mục V: gương ngắn nhất cao $\\dfrac{h}{2}$, không phụ thuộc khoảng cách."
+   "explanation": "Với $m$ chẵn có $m-1$ ảnh ở mọi vị trí đặt vật.",
+   "distractorNotes": {
+    "A": "Trên đường tròn có $m$ điểm nhưng một điểm là chính vật nên chỉ có $m-1$ ảnh.",
+    "C": "Với $m$ chẵn số ảnh không phụ thuộc chỗ đặt; chỉ khi $m$ lẻ mới phân biệt vật trên phân giác hay lệch.",
+    "D": "Vật lệch phân giác làm thêm một ảnh chỉ khi $m$ lẻ; ở đây $m$ chẵn nên vẫn là $m-1$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Gương phẳng, bóng tối và nửa tối",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 5,
+   "question": "Tia sáng phản xạ lần lượt trên hai gương hợp nhau góc $\\alpha\\le90^\\circ$. Tia ló hợp với tia tới một góc",
+   "options": [
+    "$2\\alpha$",
+    "$\\alpha$",
+    "$180^\\circ-2\\alpha$",
+    "$360^\\circ-\\alpha$"
+   ],
+   "answer": 0,
+   "explanation": "Với $i_1+i_2=\\alpha$, tổng góc lệch $D=360^\\circ-2\\alpha$ nên tia ló hợp tia tới góc $2\\alpha$ khi $\\alpha\\le90^\\circ$.",
+   "distractorNotes": {
+    "B": "Đây là góc giữa hai gương; tia ló lệch $D=360^\\circ-2\\alpha$, tức hợp với tia tới góc $2\\alpha$.",
+    "C": "Thử $\\alpha=90^\\circ$: cho $0^\\circ$, trong khi tia ló phải song song ngược chiều với tia tới, hợp $180^\\circ$.",
+    "D": "Thử $\\alpha=90^\\circ$: cho $270^\\circ$, còn tia ló thực tế hợp với tia tới $180^\\circ$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Bóng tối, bóng nửa tối",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai bạn dùng một đèn điểm, rồi dùng một đèn đĩa rộng, để chiếu sáng cùng một vật chắn nhỏ lên màn. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Vùng nửa tối là vùng không nhận ánh sáng từ bất kì điểm nào của đèn.",
+     "answer": false
+    },
+    {
+     "text": "Với đèn điểm, trên màn chỉ có vùng tối với mép bóng rõ nét.",
+     "answer": true
+    },
+    {
+     "text": "Với đèn đĩa rộng, vùng tối nằm giữa và có vành nửa tối bao quanh.",
+     "answer": true
+    },
+    {
+     "text": "Với đèn điểm, vành nửa tối rộng hơn vùng tối.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai vì đó là vùng tối, còn vùng nửa tối vẫn nhận ánh sáng từ một phần của nguồn. b) đúng vì nguồn điểm chỉ có tia cùng mép, không có tia chéo mép để tạo vùng nửa tối. c) đúng vì các điểm khác nhau của nguồn rộng bị vật che khác nhau ở rìa bóng. d) sai vì nguồn điểm không tạo ra vành nửa tối.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì đó là vùng tối, còn vùng nửa tối vẫn nhận ánh sáng từ một phần của nguồn.",
+    "1": "Không thể coi là sai vì nguồn điểm chỉ có tia cùng mép, không có tia chéo mép để tạo vùng nửa tối.",
+    "2": "Không thể coi là sai vì các điểm khác nhau của nguồn rộng bị vật che khác nhau ở rìa bóng.",
+    "3": "Không thể coi là đúng vì nguồn điểm không tạo ra vành nửa tối."
+   }
   },
   {
    "type": "true_false",
@@ -207,26 +379,32 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Về định luật phản xạ ánh sáng, các phát biểu sau đúng hay sai?",
+   "question": "Một tia sáng tới mặt gương phẳng tại điểm $I$ với góc tới $30^\\circ$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tia phản xạ nằm trong mặt phẳng chứa tia tới và pháp tuyến.",
+     "text": "Góc phản xạ bằng $30^\\circ$.",
      "answer": true
     },
     {
-     "text": "Góc phản xạ bằng góc tới.",
+     "text": "Tia tới hợp với mặt gương góc $30^\\circ$.",
+     "answer": false
+    },
+    {
+     "text": "Nếu tia tới vuông góc với mặt gương thì góc tới bằng $90^\\circ$.",
+     "answer": false
+    },
+    {
+     "text": "Tia tới và tia phản xạ hợp nhau góc $60^\\circ$.",
      "answer": true
-    },
-    {
-     "text": "Tia tới và tia phản xạ hợp nhau góc $i$.",
-     "answer": false
-    },
-    {
-     "text": "Góc tới đo giữa tia tới và mặt gương.",
-     "answer": false
     }
    ],
-   "explanation": "Mục III: hai tia hợp nhau góc $2i$; góc đo với pháp tuyến."
+   "explanation": "a) đúng vì định luật phản xạ cho góc phản xạ bằng góc tới. b) sai vì góc tới đo với pháp tuyến nên tia hợp với mặt gương góc $90^\\circ-30^\\circ=60^\\circ$. c) sai vì tia vuông góc mặt gương trùng với pháp tuyến nên góc tới bằng $0^\\circ$. d) đúng vì hai tia nằm hai bên pháp tuyến, mỗi tia lệch $30^\\circ$ so với pháp tuyến.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì định luật phản xạ cho góc phản xạ bằng góc tới.",
+    "1": "Không thể coi là đúng vì góc tới đo với pháp tuyến nên tia hợp với mặt gương góc $90^\\circ-30^\\circ=60^\\circ$.",
+    "2": "Không thể coi là đúng vì tia vuông góc mặt gương trùng với pháp tuyến nên góc tới bằng $0^\\circ$.",
+    "3": "Không thể coi là sai vì hai tia nằm hai bên pháp tuyến, mỗi tia lệch $30^\\circ$ so với pháp tuyến."
+   }
   },
   {
    "type": "true_false",
@@ -236,127 +414,137 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Về ảnh của điểm sáng $S$ qua gương phẳng, các phát biểu sau đúng hay sai?",
+   "question": "An đứng trước một tấm gương phẳng treo thẳng đứng và quan sát ảnh của mình. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Ảnh $S'$ đối xứng với $S$ qua mặt gương.",
-     "answer": true
-    },
-    {
-     "text": "Ảnh hứng được trên màn.",
+     "text": "An cách gương $d$ thì An cách ảnh của mình cũng $d$.",
      "answer": false
     },
     {
-     "text": "Vật cách gương $d$ thì vật cách ảnh $2d$.",
+     "text": "Ảnh của An là ảnh ảo, không hứng được trên màn.",
      "answer": true
     },
     {
-     "text": "Đường kéo dài của các tia phản xạ đi qua $S'$.",
+     "text": "An lùi ra xa thì ảnh nhỏ đi so với An.",
+     "answer": false
+    },
+    {
+     "text": "Ảnh của An nằm sau gương, đối xứng với An qua mặt gương.",
      "answer": true
     }
    ],
-   "explanation": "Mục IV: ảnh ảo, đối xứng; hứng không được trên màn."
+   "explanation": "a) sai vì ảnh cũng cách gương $d$ ở phía bên kia nên An cách ảnh $2d$. b) đúng vì ảnh do đường kéo dài của các tia phản xạ gặp nhau. c) sai vì ảnh qua gương phẳng luôn lớn bằng vật. d) đúng vì đó là tính chất của ảnh qua gương phẳng.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì ảnh cũng cách gương $d$ ở phía bên kia nên An cách ảnh $2d$.",
+    "1": "Không thể coi là sai vì ảnh do đường kéo dài của các tia phản xạ gặp nhau.",
+    "2": "Không thể coi là đúng vì ảnh qua gương phẳng luôn lớn bằng vật.",
+    "3": "Không thể coi là sai vì đó là tính chất của ảnh qua gương phẳng."
+   }
   },
   {
    "type": "true_false",
-   "kind": "dieu_kien",
-   "topic": "Gương phẳng, bóng tối và nửa tối",
+   "kind": "cong_thuc",
+   "topic": "Bóng tối, bóng nửa tối",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Hai gương hợp góc $\\alpha$, đặt $m=\\dfrac{360^\\circ}{\\alpha}$ nguyên. Các phát biểu sau đúng hay sai?",
+   "theorySection": 1,
+   "question": "Đèn đường cao $6{,}0$ m. Một người cao $1{,}5$ m đi thẳng ra xa chân đèn với tốc độ $1{,}2$ m/s. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$m$ chẵn: có $m-1$ ảnh dù vật đặt đâu.",
+     "text": "Khi người cách chân đèn $6$ m, bóng của người dài $2{,}0$ m.",
      "answer": true
     },
     {
-     "text": "$m$ lẻ, vật trên phân giác: $m-1$ ảnh.",
-     "answer": true
-    },
-    {
-     "text": "$m$ lẻ, vật lệch phân giác: $m-1$ ảnh.",
+     "text": "Đỉnh bóng chạy cùng tốc độ với người.",
      "answer": false
     },
     {
-     "text": "Hai gương song song: vô số ảnh.",
+     "text": "Đỉnh bóng chạy với tốc độ $1{,}6$ m/s.",
      "answer": true
+    },
+    {
+     "text": "Một em bé cao $1{,}2$ m đứng cạnh người đó có bóng dài hơn $2{,}0$ m.",
+     "answer": false
     }
    ],
-   "explanation": "Mục VI: $m$ lẻ, vật lệch phân giác có $m$ ảnh."
+   "explanation": "a) đúng vì $\\ell=\\dfrac{hx}{H-h}=\\dfrac{1{,}5\\cdot6}{4{,}5}=2{,}0$ m. b) sai vì đỉnh bóng bằng vị trí người cộng chiều dài bóng, mà bóng dài thêm khi người ra xa nên đỉnh chạy nhanh hơn người. c) đúng vì $v_X=\\dfrac{H}{H-h}\\,v=\\dfrac{6}{4{,}5}\\cdot1{,}2=1{,}6$ m/s. d) sai vì người thấp hơn thì bóng ngắn hơn: $\\ell=\\dfrac{1{,}2\\cdot6}{4{,}8}=1{,}5$ m.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $\\ell=\\dfrac{hx}{H-h}=\\dfrac{1{,}5\\cdot6}{4{,}5}=2{,}0$ m.",
+    "1": "Không thể coi là đúng vì đỉnh bóng bằng vị trí người cộng chiều dài bóng, mà bóng dài thêm khi người ra xa nên đỉnh chạy nhanh hơn người.",
+    "2": "Không thể coi là sai vì $v_X=\\dfrac{H}{H-h}\\,v=\\dfrac{6}{4{,}5}\\cdot1{,}2=1{,}6$ m/s.",
+    "3": "Không thể coi là đúng vì người thấp hơn thì bóng ngắn hơn: $\\ell=\\dfrac{1{,}2\\cdot6}{4{,}8}=1{,}5$ m."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Định luật phản xạ ánh sáng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Tia tới hợp mặt gương góc $30^\\circ$. Tia tới và tia phản xạ hợp nhau góc bao nhiêu độ?",
-   "answer": "120",
-   "explanation": "$i=60^\\circ$, hai tia hợp $2i=120^\\circ$ (mục III)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Định luật phản xạ ánh sáng",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Tia tới giữ nguyên, gương quay $15^\\circ$ quanh trục qua điểm tới. Tia phản xạ quay bao nhiêu độ?",
-   "answer": "30",
-   "explanation": "Tia phản xạ quay $2\\delta=30^\\circ$ (mục III)."
-  },
-  {
-   "type": "short_answer",
+   "type": "true_false",
    "kind": "tinh_nhanh",
    "topic": "Ảnh của vật tạo bởi gương phẳng",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Vật cách gương phẳng $3$ m. Vật cách ảnh bao nhiêu mét?",
-   "answer": "6",
-   "explanation": "Vật cách ảnh $2d=6$ m (mục IV)."
+   "question": "Một người đứng yên cách một gương phẳng $2{,}0$ m. Dời gương ra xa người thêm $0{,}5$ m theo phương vuông góc mặt gương. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Sau khi dời, người cách ảnh $4{,}5$ m.",
+     "answer": false
+    },
+    {
+     "text": "Sau khi dời, người cách gương $2{,}5$ m.",
+     "answer": true
+    },
+    {
+     "text": "Ảnh của người đã dời đi $1{,}0$ m.",
+     "answer": true
+    },
+    {
+     "text": "Ảnh không dời vì người đứng yên.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai vì người cách gương $2{,}5$ m nên cách ảnh $2\\cdot2{,}5=5{,}0$ m. b) đúng vì $2{,}0+0{,}5=2{,}5$ m. c) đúng vì gương dời $x$ thì ảnh dời $2x$. d) sai vì ảnh đối xứng với người qua gương nên khi gương dời thì ảnh phải dời.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì người cách gương $2{,}5$ m nên cách ảnh $2\\cdot2{,}5=5{,}0$ m.",
+    "1": "Không thể coi là sai vì $2{,}0+0{,}5=2{,}5$ m.",
+    "2": "Không thể coi là sai vì gương dời $x$ thì ảnh dời $2x$.",
+    "3": "Không thể coi là đúng vì ảnh đối xứng với người qua gương nên khi gương dời thì ảnh phải dời."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Bóng tối, bóng nửa tối",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Nguồn điểm, vật tròn đường kính $10$ cm cách nguồn $a$, màn cách nguồn $2a$. Đường kính bóng bao nhiêu cm?",
-   "answer": "20",
-   "explanation": "$d'=d\\cdot\\dfrac{L}{a}=10\\cdot2=20$ cm (mục II)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Gương phẳng, bóng tối và nửa tối",
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Định luật phản xạ ánh sáng",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Hai gương phẳng hợp góc $20^\\circ$, vật đặt giữa hai gương. Có bao nhiêu ảnh?",
-   "answer": "17",
-   "explanation": "$m=18$ chẵn nên có $m-1=17$ ảnh (mục VI)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Gương phẳng, bóng tối và nửa tối",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Hai gương hợp góc $80^\\circ$, tia tới $G_1$ với góc tới $30^\\circ$, phản xạ tiếp trên $G_2$. Góc tới ở $G_2$ bằng bao nhiêu độ?",
-   "answer": "50",
-   "explanation": "$i_2=\\alpha-i_1=80^\\circ-30^\\circ=50^\\circ$ (mục VI)."
+   "theorySection": 2,
+   "question": "Tia laser tới gương phẳng, tia phản xạ đập vuông góc vào bức tường cách điểm tới $3{,}0$ m. Quay gương $5^\\circ$ quanh trục qua điểm tới, tia tới giữ nguyên. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Tia phản xạ quay một góc $10^\\circ$.",
+     "answer": true
+    },
+    {
+     "text": "Vệt sáng trên tường dịch khoảng $26$ cm.",
+     "answer": false
+    },
+    {
+     "text": "Góc giữa tia tới và tia phản xạ chỉ đổi $5^\\circ$.",
+     "answer": false
+    },
+    {
+     "text": "Vệt sáng trên tường dịch khoảng $53$ cm.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng vì gương quay $\\delta$ thì tia phản xạ quay $2\\delta$. b) sai vì $26$ cm ứng với tia quay $5^\\circ$, trong khi tia phản xạ quay $10^\\circ$. c) sai vì góc đó bằng $2i$ nên đổi $2\\delta=10^\\circ$. d) đúng vì $3{,}0\\cdot\\tan10^\\circ\\approx0{,}53$ m.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì gương quay $\\delta$ thì tia phản xạ quay $2\\delta$.",
+    "1": "Không thể coi là đúng vì $26$ cm ứng với tia quay $5^\\circ$, trong khi tia phản xạ quay $10^\\circ$.",
+    "2": "Không thể coi là đúng vì góc đó bằng $2i$ nên đổi $2\\delta=10^\\circ$.",
+    "3": "Không thể coi là sai vì $3{,}0\\cdot\\tan10^\\circ\\approx0{,}53$ m."
+   }
   }
  ]
 }

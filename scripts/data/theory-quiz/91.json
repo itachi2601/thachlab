@@ -2,53 +2,40 @@
  "lesson_id": 91,
  "lesson_title": "Bài 13. Năng lượng của dòng điện và công suất điện",
  "item_id": 352,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 9,
-   "cong_thuc": 11
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
   "removed": []
  },
  "questions": [
   {
    "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Năng lượng và công suất điện",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dòng điện có năng lượng. Năng lượng đó được gọi là gì?",
-   "options": [
-    "Nhiệt năng",
-    "Điện năng",
-    "Hoá năng",
-    "Quang năng"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu dòng điện có năng lượng gọi là điện năng."
-  },
-  {
-   "type": "multiple_choice",
    "kind": "hien_tuong",
    "topic": "Năng lượng và công suất điện",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Khi sạc điện thoại, điện năng chủ yếu được chuyển thành dạng năng lượng nào?",
+   "question": "Khi quạt điện đang chạy, điện năng được chuyển hoá chủ yếu thành",
    "options": [
-    "Nhiệt năng",
-    "Cơ năng",
-    "Năng lượng hoá học trong pin",
-    "Năng lượng ánh sáng"
+    "nhiệt năng làm nóng không khí",
+    "năng lượng ánh sáng của quạt",
+    "cơ năng làm cánh quạt quay",
+    "năng lượng hoá học trong pin"
    ],
    "answer": 2,
-   "explanation": "Bảng trong bài: sạc điện thoại chuyển điện năng thành năng lượng hoá học trong pin."
+   "explanation": "Quạt, máy bơm chuyển điện năng chủ yếu thành cơ năng; luôn có một phần thành nhiệt.",
+   "distractorNotes": {
+    "A": "Nhiệt năng là dạng chủ yếu của bàn là, nồi cơm điện; quạt chủ yếu tạo chuyển động.",
+    "B": "Năng lượng ánh sáng là dạng chủ yếu ở đèn LED, không phải quạt.",
+    "D": "Năng lượng hoá học trong pin là dạng tạo ra khi sạc điện thoại."
+   }
   },
   {
    "type": "multiple_choice",
@@ -58,15 +45,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Công suất điện của một thiết bị cho biết điều gì?",
+   "question": "Công suất điện của một thiết bị cho biết",
    "options": [
-    "Điện năng thiết bị tiêu thụ trong mỗi giây",
-    "Tổng điện năng tiêu thụ trong một tháng",
-    "Hiệu điện thế định mức của thiết bị",
-    "Cường độ dòng điện lớn nhất cho phép"
+    "điện năng thiết bị tiêu thụ trong mỗi giây",
+    "tổng điện năng thiết bị đã tiêu thụ từ khi bật",
+    "hiệu điện thế cần đặt vào để thiết bị hoạt động",
+    "thời gian thiết bị có thể hoạt động liên tục"
    ],
    "answer": 0,
-   "explanation": "Công suất điện cho biết điện năng thiết bị tiêu thụ trong mỗi giây."
+   "explanation": "Công suất điện là điện năng tiêu thụ trong mỗi giây, $P=UI$, đo bằng oát.",
+   "distractorNotes": {
+    "B": "Đó là điện năng $A$, đo bằng jun hoặc kWh, không phải công suất.",
+    "C": "Đó là hiệu điện thế định mức, một số ghi riêng trên thiết bị.",
+    "D": "Công suất không cho biết thời gian; thời gian là $t$ trong $A=P\\,t$."
+   }
   },
   {
    "type": "multiple_choice",
@@ -76,311 +68,483 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Bóng đèn ghi 220 V – 75 W. Số 75 W là gì?",
+   "question": "Bóng đèn ghi $220\\ \\text{V}-75\\ \\text{W}$. Số $75\\ \\text{W}$ là",
    "options": [
-    "Hiệu điện thế định mức",
-    "Điện năng tiêu thụ mỗi giờ",
-    "Công suất định mức khi dùng đúng 220 V",
-    "Cường độ dòng điện định mức"
+    "công suất của đèn ở mọi hiệu điện thế đặt vào",
+    "điện năng đèn tiêu thụ trong mỗi giờ sử dụng",
+    "công suất lớn nhất mà đèn chịu được rồi hỏng",
+    "công suất của đèn khi dùng đúng $220\\ \\text{V}$"
    ],
-   "answer": 2,
-   "explanation": "75 W là công suất khi dùng đúng hiệu điện thế 220 V."
+   "answer": 3,
+   "explanation": "$75\\ \\text{W}$ là công suất định mức: công suất khi dùng đúng hiệu điện thế định mức $220\\ \\text{V}$.",
+   "distractorNotes": {
+    "A": "Hiệu điện thế thấp hơn thì công suất nhỏ hơn, đèn tối hơn.",
+    "B": "Điện năng tính bằng $A=P\\,t$, còn oát là đơn vị của công suất.",
+    "C": "Số ghi là công suất khi chạy bình thường, không phải ngưỡng hỏng."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "dieu_kien",
-   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
+   "topic": "Tính điện năng tiêu thụ và tiền điện",
    "form": "ly_thuyet",
    "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Dùng thiết bị ở hiệu điện thế thấp hơn định mức thì điều gì xảy ra?",
-   "options": [
-    "Công suất lớn hơn định mức",
-    "Công suất nhỏ hơn, đèn tối hơn",
-    "Công suất không đổi",
-    "Thiết bị dễ hỏng vì nóng quá mức"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu: hiệu điện thế thấp hơn thì công suất nhỏ hơn, đèn tối hơn."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Hai đèn khác số oát mắc nối tiếp, coi điện trở không đổi. Đèn nào sáng hơn?",
+   "question": "Một thiết bị ghi $1\\,000\\ \\text{W}$. Phát biểu đúng là",
    "options": [
-    "Đèn nhiều oát hơn",
-    "Đèn ít oát hơn, vì điện trở lớn hơn",
-    "Hai đèn sáng như nhau",
-    "Cả hai đều tắt"
+    "mỗi tháng thiết bị tiêu thụ đúng $1\\,000\\ \\text{W}$ điện",
+    "chạy đúng công suất $1$ giờ thì tiêu thụ $1\\ \\text{kWh}$",
+    "chạy đúng công suất $1$ giờ thì tiêu thụ $1\\,000\\ \\text{kWh}$",
+    "bật càng lâu thì công suất của thiết bị càng tăng"
    ],
    "answer": 1,
-   "explanation": "Cùng I, P = I²R nên đèn có R lớn hơn (ít oát) sáng hơn."
+   "explanation": "$A=P\\,t=1\\ \\text{kW}\\cdot1\\ \\text{h}=1\\ \\text{kWh}$; W là công suất, kWh là điện năng.",
+   "distractorNotes": {
+    "A": "Oát đo công suất, không đo lượng điện tiêu thụ cả tháng.",
+    "C": "Nhầm $1\\,000\\ \\text{W}$ thành $1\\,000\\ \\text{kWh}$, gấp một nghìn lần.",
+    "D": "Bật lâu thì điện năng tăng, công suất vẫn giữ nguyên."
+   }
   },
   {
    "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Năng lượng và công suất điện",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công thức công suất điện là:",
-   "options": [
-    "$P = \\dfrac{U}{I}$",
-    "$P = UI$",
-    "$P = \\dfrac{I}{U}$",
-    "$P = U + I$"
-   ],
-   "answer": 1,
-   "explanation": "Bài nêu $P = UI$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Từ $P = UI$, cường độ dòng điện được tính bằng:",
-   "options": [
-    "$I = UP$",
-    "$I = \\dfrac{U}{P}$",
-    "$I = \\dfrac{P}{U}$",
-    "$I = P - U$"
-   ],
-   "answer": 2,
-   "explanation": "Chia hai vế cho U được $I = P/U$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Năng lượng và công suất điện",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Công suất theo điện trở đúng là:",
-   "options": [
-    "$P = IR^2 = \\dfrac{U}{R^2}$",
-    "$P = I^2R = \\dfrac{U^2}{R}$",
-    "$P = I^2R = \\dfrac{R}{U^2}$",
-    "$P = IR = \\dfrac{U}{R}$"
-   ],
-   "answer": 1,
-   "explanation": "Thế $U = IR$ vào $P = UI$ được $P = I^2R = U^2/R$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Tính điện năng tiêu thụ và tiền điện",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Một thiết bị 2 kW chạy đúng công suất trong 3 giờ tiêu thụ bao nhiêu điện năng?",
-   "options": [
-    "6 kWh",
-    "1,5 kWh",
-    "6 kW",
-    "0,67 kWh"
-   ],
-   "answer": 0,
-   "explanation": "$A = Pt = 2 \\cdot 3 = 6$ kWh."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Tính điện năng tiêu thụ và tiền điện",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về điều hoà ghi 1 000 W, xét các phát biểu sau:",
-   "statements": [
-    {
-     "text": "1 000 W là công suất: mỗi giây tiêu thụ 1 000 J.",
-     "answer": true
-    },
-    {
-     "text": "Chạy đúng công suất 1 giờ thì tiêu thụ 1 kWh.",
-     "answer": true
-    },
-    {
-     "text": "Bật càng lâu thì công suất của máy càng tăng.",
-     "answer": false
-    },
-    {
-     "text": "Oát là đơn vị đo lượng điện năng tiêu thụ.",
-     "answer": false
-    }
-   ],
-   "explanation": "Oát đo công suất; bật lâu thì điện năng tăng còn công suất vẫn vậy."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_nghia",
-   "topic": "Tính điện năng tiêu thụ và tiền điện",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về đơn vị điện năng, xét các phát biểu sau:",
-   "statements": [
-    {
-     "text": "1 kWh = 3,6·10^6 J.",
-     "answer": true
-    },
-    {
-     "text": "Mỗi số điện trên công tơ là 1 kWh.",
-     "answer": true
-    },
-    {
-     "text": "Công tơ điện đo công suất của thiết bị.",
-     "answer": false
-    },
-    {
-     "text": "1 kW = 1 000 W.",
-     "answer": true
-    }
-   ],
-   "explanation": "Công tơ đo điện năng tiêu thụ, không đo công suất."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về công thức $A = Pt = UIt$, xét các phát biểu sau:",
-   "statements": [
-    {
-     "text": "A tính bằng jun khi P tính bằng W và t tính bằng giây.",
-     "answer": true
-    },
-    {
-     "text": "Tính ra kWh thì P dùng kW và t dùng giờ.",
-     "answer": true
-    },
-    {
-     "text": "Tính ra jun thì có thể dùng t bằng giờ với P bằng W.",
-     "answer": false
-    },
-    {
-     "text": "A còn được gọi là công của dòng điện.",
-     "answer": true
-    }
-   ],
-   "explanation": "Oát đi với giây ra jun; kilôoát đi với giờ ra kWh."
-  },
-  {
-   "type": "true_false",
    "kind": "hien_tuong",
-   "topic": "Năng lượng và công suất điện",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về thiết bị điện, xét các phát biểu sau:",
-   "statements": [
-    {
-     "text": "Bàn là chuyển điện năng chủ yếu thành nhiệt năng.",
-     "answer": true
-    },
-    {
-     "text": "Quạt chuyển điện năng chủ yếu thành cơ năng.",
-     "answer": true
-    },
-    {
-     "text": "Đèn LED chuyển điện năng chủ yếu thành năng lượng hoá học.",
-     "answer": false
-    },
-    {
-     "text": "Luôn có một phần điện năng biến thành nhiệt.",
-     "answer": true
-    }
-   ],
-   "explanation": "Đèn LED chuyển điện năng chủ yếu thành năng lượng ánh sáng."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Tính điện năng tiêu thụ và tiền điện",
+   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Một thiết bị 500 W chạy đúng công suất 4 giờ. Điện năng tiêu thụ là bao nhiêu kWh?",
-   "answer": "2",
-   "explanation": "$A = 0{,}5 \\cdot 4 = 2$ kWh."
+   "theorySection": 2,
+   "question": "Đèn sợi đốt $220\\ \\text{V}-40\\ \\text{W}$ và $220\\ \\text{V}-100\\ \\text{W}$ mắc nối tiếp vào $220\\ \\text{V}$. Đèn sáng hơn là",
+   "options": [
+    "đèn $40\\ \\text{W}$, vì điện trở lớn hơn nên $I^2R$ lớn hơn",
+    "đèn $100\\ \\text{W}$, vì số oát ghi trên đèn lớn hơn",
+    "hai đèn sáng như nhau, vì dòng điện qua hai đèn bằng nhau",
+    "cả hai đèn đều tắt, vì mạch nối tiếp luôn bị hở"
+   ],
+   "answer": 0,
+   "explanation": "Nối tiếp cùng $I$; đèn $40\\ \\text{W}$ có $R=\\dfrac{U^2}{P}$ lớn hơn nên $P=I^2R$ lớn hơn, sáng hơn.",
+   "distractorNotes": {
+    "B": "$100\\ \\text{W}$ chỉ đúng khi đèn nhận đủ $220\\ \\text{V}$; nối tiếp thì mỗi đèn nhận ít hơn.",
+    "C": "Cùng dòng nhưng điện trở khác nên $P=I^2R$ khác nhau.",
+    "D": "Mạch kín vẫn có dòng điện nên hai đèn vẫn sáng, chỉ yếu hơn."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Hai đèn $220\\ \\text{V}-40\\ \\text{W}$ và $220\\ \\text{V}-100\\ \\text{W}$ mắc song song vào $220\\ \\text{V}$ thì",
+   "options": [
+    "đèn $40\\ \\text{W}$ sáng hơn, vì điện trở của nó lớn hơn",
+    "hai đèn sáng như nhau, vì cùng hiệu điện thế đặt vào",
+    "đèn $100\\ \\text{W}$ sáng hơn vì mỗi đèn chạy đúng định mức",
+    "hai đèn đều sáng yếu đi, vì chúng chia nhau dòng điện"
+   ],
+   "answer": 2,
+   "explanation": "Song song: mỗi đèn nhận đủ $220\\ \\text{V}$, công suất bằng số ghi, nên đèn nhiều oát hơn sáng hơn.",
+   "distractorNotes": {
+    "A": "Quy tắc điện trở lớn sáng hơn chỉ đúng khi nối tiếp (cùng dòng điện).",
+    "B": "Cùng $U$ nhưng mỗi đèn có công suất khác nhau nên độ sáng khác nhau.",
+    "D": "Song song thì mỗi đèn nhận đủ $220\\ \\text{V}$, không phải chia hiệu điện thế."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
    "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Đèn 220 V – 440 W sáng bình thường. Cường độ dòng điện qua đèn là bao nhiêu A?",
-   "answer": "2",
-   "explanation": "$I = P/U = 440/220 = 2$ A."
+   "question": "Dây điện trong nhà thường làm bằng đồng và đủ to vì",
+   "options": [
+    "điện trở lớn nên dây chịu được dòng điện lớn hơn",
+    "điện trở nhỏ nên điện năng hao phí thành nhiệt ít",
+    "điện trở lớn nên dây nóng lên giúp thiết bị chạy tốt",
+    "điện trở không ảnh hưởng đến lượng nhiệt toả ra"
+   ],
+   "answer": 1,
+   "explanation": "Dòng điện qua dây nào cũng toả nhiệt; dây đồng đủ to có $R$ nhỏ nên ít hao phí và ít nóng.",
+   "distractorNotes": {
+    "A": "Điện trở lớn làm dây nóng nhiều hơn khi có dòng, không giúp chịu dòng.",
+    "C": "Nhiệt toả trên dây dẫn là hao phí, không giúp thiết bị chạy tốt hơn.",
+    "D": "Theo $P=I^2R$, điện trở càng lớn thì nhiệt toả ra càng nhiều."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Năng lượng và công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Công suất điện của một thiết bị được tính bằng",
+   "options": [
+    "$P=\\dfrac{U}{I}$",
+    "$P=\\dfrac{I}{U}$",
+    "$P=U+I$",
+    "$P=U\\,I$"
+   ],
+   "answer": 3,
+   "explanation": "Công suất điện bằng tích hiệu điện thế và cường độ dòng điện, $P=UI$.",
+   "distractorNotes": {
+    "A": "Đây là điện trở $R$, không phải công suất.",
+    "B": "Đảo tỉ số: $U$ lớn lại làm $P$ nhỏ, ngược thực tế.",
+    "C": "Cộng hai đại lượng khác loại là không có nghĩa vật lí; công suất là tích."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
    "topic": "Tính điện năng tiêu thụ và tiền điện",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Một thiết bị dùng $A = 10$ kWh trong $t = 5$ giờ. Công suất là bao nhiêu kW?",
-   "answer": "2",
-   "explanation": "$P = A/t = 10/5 = 2$ kW."
+   "question": "Điện năng tiêu thụ của một thiết bị được tính bằng",
+   "options": [
+    "$A=P\\,t=U\\,I\\,t$",
+    "$A=\\dfrac{P}{t}=\\dfrac{UI}{t}$",
+    "$A=\\dfrac{t}{P}=\\dfrac{t}{UI}$",
+    "$A=\\dfrac{U}{I}\\,t$"
+   ],
+   "answer": 0,
+   "explanation": "Điện năng bằng công suất nhân thời gian: $A=P\\,t=UIt$.",
+   "distractorNotes": {
+    "B": "Chia cho thời gian cho ra công suất, không phải điện năng.",
+    "C": "Đảo tử mẫu: bật càng lâu thì điện năng phải càng lớn.",
+    "D": "$\\dfrac{U}{I}$ là điện trở, không phải công suất."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Tính điện năng tiêu thụ và tiền điện",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Thiết bị 1 kW dùng 30 giờ, giá điện 2 000 đồng/kWh. Tiền điện là bao nhiêu nghìn đồng?",
-   "answer": "60",
-   "explanation": "$A = 30$ kWh, tiền $= 30 \\cdot 2000 = 60\\,000$ đồng."
-  },
-  {
-   "type": "short_answer",
+   "type": "multiple_choice",
    "kind": "don_vi",
    "topic": "Tính điện năng tiêu thụ và tiền điện",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Hệ số a trong $1\\ \\text{kWh} = a \\cdot 10^6\\ \\text{J}$ là bao nhiêu? (Dùng dấu phẩy)",
-   "answer": "3,6",
-   "explanation": "1 kWh = 1 000 · 3 600 = 3,6·10^6 J."
+   "question": "Một kilôoát giờ ($1\\ \\text{kWh}$) bằng",
+   "options": [
+    "$3{,}6\\cdot10^{3}\\ \\text{J}$",
+    "$6\\cdot10^{4}\\ \\text{J}$",
+    "$1\\cdot10^{3}\\ \\text{J}$",
+    "$3{,}6\\cdot10^{6}\\ \\text{J}$"
+   ],
+   "answer": 3,
+   "explanation": "$1\\ \\text{kWh}=1\\,000\\ \\text{W}\\cdot3\\,600\\ \\text{s}=3{,}6\\cdot10^{6}\\ \\text{J}$.",
+   "distractorNotes": {
+    "A": "Quên đổi kilôoát ra oát (nhân $1\\,000$).",
+    "B": "Nhân $1\\,000$ với $60$ phút, quên đổi giờ ra giây là $3\\,600$ s.",
+    "C": "Chỉ đổi kilôoát ra oát, chưa nhân thời gian $1$ giờ $=3\\,600$ s."
+   }
   },
   {
-   "type": "short_answer",
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Năng lượng và công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Biết hiệu điện thế $U$ giữa hai đầu điện trở $R$, công suất tiêu thụ trên điện trở là",
+   "options": [
+    "$P=U^2R$",
+    "$P=\\dfrac{R}{U^2}$",
+    "$P=\\dfrac{U^2}{R}$",
+    "$P=\\dfrac{U}{R^2}$"
+   ],
+   "answer": 2,
+   "explanation": "Thế $I=\\dfrac{U}{R}$ vào $P=UI$ được $P=\\dfrac{U^2}{R}$.",
+   "distractorNotes": {
+    "A": "Nhân thay vì chia: $R$ lớn mà cùng $U$ thì dòng nhỏ, công suất phải nhỏ.",
+    "B": "Đảo tử và mẫu: $U$ lớn lại làm công suất nhỏ.",
+    "D": "Bình phương nhầm đại lượng: $U^2$ mới xuất hiện khi thế $I=\\dfrac{U}{R}$ vào $P=UI$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Năng lượng và công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Cường độ dòng điện qua một điện trở tăng gấp đôi, điện trở không đổi thì công suất toả nhiệt trên nó",
+   "options": [
+    "tăng gấp đôi",
+    "tăng gấp bốn lần",
+    "tăng gấp tám lần",
+    "giảm còn một nửa"
+   ],
+   "answer": 1,
+   "explanation": "$P=I^2R$ với $R$ không đổi, $I$ gấp đôi thì $P$ gấp $2^2=4$ lần.",
+   "distractorNotes": {
+    "A": "Quên bình phương: $P=I^2R$ tỉ lệ với $I^2$.",
+    "C": "Lập phương nhầm: $P$ tỉ lệ với $I^2$, không phải $I^3$.",
+    "D": "Ngược chiều: $I$ tăng thì $P$ tăng."
+   }
+  },
+  {
+   "type": "multiple_choice",
    "kind": "bien_doi",
+   "topic": "Tính điện năng tiêu thụ và tiền điện",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chỉ bật một máy sấy tóc trong $30$ phút thì công tơ tăng thêm $0{,}6$ số. Công suất của máy sấy là",
+   "options": [
+    "$1\\,200\\ \\text{W}$",
+    "$0{,}3\\ \\text{W}$",
+    "$1{,}2\\ \\text{W}$",
+    "$20\\ \\text{W}$"
+   ],
+   "answer": 0,
+   "explanation": "$A=0{,}6\\ \\text{kWh}$, $t=0{,}5\\ \\text{h}$ nên $P=\\dfrac{A}{t}=1{,}2\\ \\text{kW}=1\\,200\\ \\text{W}$.",
+   "distractorNotes": {
+    "B": "Nhân $A\\cdot t$ thay vì chia $\\dfrac{A}{t}$.",
+    "C": "Được $1{,}2\\ \\text{kW}$ nhưng quên đổi ra oát.",
+    "D": "Chia cho $30$ phút; kWh phải đi với giờ, $30$ phút $=0{,}5$ giờ."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Bóng đèn $220\\ \\text{V}-60\\ \\text{W}$ sáng bình thường. Cường độ dòng điện qua đèn khoảng",
+   "options": [
+    "$13\\,200\\ \\text{A}$",
+    "$3{,}67\\ \\text{A}$",
+    "$0{,}00027\\ \\text{A}$",
+    "$0{,}27\\ \\text{A}$"
+   ],
+   "answer": 3,
+   "explanation": "Đèn sáng bình thường nên $I=\\dfrac{P}{U}=\\dfrac{60}{220}\\approx0{,}27\\ \\text{A}$.",
+   "distractorNotes": {
+    "A": "Nhân $U\\cdot P$ thay vì dùng $I=\\dfrac{P}{U}$.",
+    "B": "Chia ngược $\\dfrac{U}{P}$ thay vì $\\dfrac{P}{U}$.",
+    "C": "Đổi $60\\ \\text{W}$ thành kW rồi chia; oát mới đi với vôn và ampe."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "dinh_nghia",
    "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Dây nung 50 Ω dùng ở 100 V. Công suất tính theo $P = U^2/R$ là bao nhiêu W?",
-   "answer": "200",
-   "explanation": "$P = 100^2/50 = 200$ W."
+   "question": "Mắc bóng đèn ghi $6\\ \\text{V}-3\\ \\text{W}$ vào mạch có ampe kế và vôn kế, đặt các hiệu điện thế $1{,}5;\\ 3{,}0;\\ 4{,}5;\\ 6{,}0\\ \\text{V}$ rồi tính $U\\cdot I$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Ở đúng $6\\ \\text{V}$, tích $U\\cdot I$ bằng số oát ghi trên đèn.",
+     "answer": true
+    },
+    {
+     "text": "Đặt vào đèn $9\\ \\text{V}$ thì đèn sáng tốt hơn mà vẫn an toàn.",
+     "answer": false
+    },
+    {
+     "text": "Số $6\\ \\text{V}$ ghi trên đèn là công suất định mức của đèn.",
+     "answer": false
+    },
+    {
+     "text": "Hiệu điện thế nhỏ hơn $6\\ \\text{V}$ thì công suất nhỏ hơn và đèn tối hơn.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng: đúng định mức thì $P=UI=3\\ \\text{W}$. b) sai: vượt định mức dễ hỏng. c) sai: $6\\ \\text{V}$ là hiệu điện thế định mức. d) đúng: $U$ nhỏ thì $P$ nhỏ.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì đèn chạy đúng định mức thì công suất bằng số ghi.",
+    "1": "Không thể coi là đúng vì hiệu điện thế vượt định mức làm đèn dễ cháy.",
+    "2": "Không thể coi là đúng vì $6\\ \\text{V}$ là hiệu điện thế định mức, công suất định mức là $3\\ \\text{W}$.",
+    "3": "Không thể coi là sai vì dùng điện áp thấp hơn định mức thì công suất giảm."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Năng lượng và công suất điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Một số thiết bị điện chuyển điện năng thành các dạng năng lượng khác nhau. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Quạt điện chuyển điện năng chủ yếu thành năng lượng ánh sáng.",
+     "answer": false
+    },
+    {
+     "text": "Có thiết bị điện hoạt động mà không có phần điện năng nào thành nhiệt.",
+     "answer": false
+    },
+    {
+     "text": "Bàn là chuyển điện năng chủ yếu thành nhiệt năng.",
+     "answer": true
+    },
+    {
+     "text": "Khi sạc điện thoại, điện năng chuyển thành năng lượng hoá học trong pin.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) sai: quạt cho cơ năng. b) sai: luôn có hao phí thành nhiệt. c) đúng: nhiệt năng. d) đúng: năng lượng hoá học.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì quạt chuyển điện năng chủ yếu thành cơ năng.",
+    "1": "Không thể coi là đúng vì luôn có một phần điện năng chuyển thành nhiệt.",
+    "2": "Không thể coi là sai vì tác dụng chính của bàn là là toả nhiệt.",
+    "3": "Không thể coi là sai vì pin tích trữ năng lượng dưới dạng hoá học."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tính điện năng tiêu thụ và tiền điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Chỉ bật một ấm điện $220\\ \\text{V}-1\\,000\\ \\text{W}$ (đúng $220\\ \\text{V}$) trong $30$ phút, công tơ tăng từ $1\\,234{,}6$ lên $1\\,235{,}1$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Mỗi số điện trên công tơ tương ứng $1\\ \\text{kWh}$.",
+     "answer": true
+    },
+    {
+     "text": "Điện năng ấm tiêu thụ là $500\\ \\text{kWh}$ vì $1\\,000\\cdot0{,}5$.",
+     "answer": false
+    },
+    {
+     "text": "Đun càng lâu thì công suất của ấm càng giảm.",
+     "answer": false
+    },
+    {
+     "text": "Ấm tiêu thụ $0{,}5\\ \\text{kWh}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng: một số điện bằng $1\\ \\text{kWh}$. b) sai: $1\\ \\text{kW}\\cdot0{,}5\\ \\text{h}=0{,}5\\ \\text{kWh}$. c) sai: công suất không đổi. d) đúng: $0{,}5\\ \\text{kWh}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì đó là đơn vị đo của công tơ điện.",
+    "1": "Không thể coi là đúng vì phải đổi $1\\,000\\ \\text{W}$ ra $1\\ \\text{kW}$ khi tính kWh.",
+    "2": "Không thể coi là đúng vì đun lâu thì điện năng tăng, công suất định mức vẫn giữ nguyên.",
+    "3": "Không thể coi là sai vì $1\\,235{,}1-1\\,234{,}6=0{,}5$ số, khớp $1\\ \\text{kW}\\cdot0{,}5\\ \\text{h}$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "hien_tuong",
+   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đèn X ghi $6\\ \\text{V}-3\\ \\text{W}$ và đèn Y ghi $6\\ \\text{V}-6\\ \\text{W}$, dùng nguồn $6\\ \\text{V}$. Mắc hai đèn nối tiếp, rồi mắc song song. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Mắc nối tiếp thì đèn Y sáng hơn vì ghi nhiều oát hơn.",
+     "answer": false
+    },
+    {
+     "text": "Mắc nối tiếp thì đèn X sáng hơn đèn Y.",
+     "answer": true
+    },
+    {
+     "text": "Mắc song song thì đèn Y sáng hơn đèn X.",
+     "answer": true
+    },
+    {
+     "text": "Mắc song song thì hai đèn sáng như nhau vì cùng $6\\ \\text{V}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: nối tiếp không nhận đủ $U$. b) đúng: nối tiếp, $R$ lớn sáng hơn. c) đúng: song song, nhiều oát hơn sáng hơn. d) sai: công suất khác nhau.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì nhiều oát hơn chỉ sáng hơn khi cả hai nhận đúng hiệu điện thế định mức.",
+    "1": "Không thể coi là sai vì X có điện trở lớn hơn, cùng dòng nên $P=I^2R$ lớn hơn.",
+    "2": "Không thể coi là sai vì mỗi đèn nhận đủ $6\\ \\text{V}$ nên đèn nhiều oát hơn sáng hơn.",
+    "3": "Không thể coi là đúng vì cùng hiệu điện thế nhưng công suất định mức khác nhau nên độ sáng khác nhau."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Tính điện năng tiêu thụ và tiền điện",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Nồi cơm điện ghi $220\\ \\text{V}-800\\ \\text{W}$, dùng đúng $220\\ \\text{V}$, mỗi ngày nấu $1{,}5$ giờ, giá điện $2\\,000$ đồng cho mỗi kWh. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Khi điện lưới tụt còn $200\\ \\text{V}$, nồi vẫn có công suất $800\\ \\text{W}$.",
+     "answer": false
+    },
+    {
+     "text": "Cường độ dòng điện qua nồi xấp xỉ $3{,}64\\ \\text{A}$.",
+     "answer": true
+    },
+    {
+     "text": "Điện năng nồi tiêu thụ trong $30$ ngày là $36\\ \\text{kWh}$.",
+     "answer": true
+    },
+    {
+     "text": "Tiền điện của nồi trong $30$ ngày là $7\\,200$ đồng.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: $P$ giảm còn khoảng $661\\ \\text{W}$. b) đúng: $3{,}64\\ \\text{A}$. c) đúng: $36\\ \\text{kWh}$. d) sai: $72\\,000$ đồng.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $R$ không đổi thì $P=\\dfrac{U^2}{R}$ nhỏ đi, khoảng $661\\ \\text{W}$.",
+    "1": "Không thể coi là sai vì $I=\\dfrac{P}{U}=\\dfrac{800}{220}\\approx3{,}64\\ \\text{A}$.",
+    "2": "Không thể coi là sai vì $0{,}8\\ \\text{kW}\\cdot1{,}5\\ \\text{h}\\cdot30=36\\ \\text{kWh}$.",
+    "3": "Không thể coi là đúng vì điện năng $36\\ \\text{kWh}$ nên tiền là $72\\,000$ đồng."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Công suất điện của dụng cụ và số ghi trên thiết bị",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Dây nung của một ấm điện có điện trở $48{,}4\\ \\Omega$, dùng ở $220\\ \\text{V}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Dùng ở $110\\ \\text{V}$ (điện trở không đổi) thì công suất còn $500\\ \\text{W}$.",
+     "answer": false
+    },
+    {
+     "text": "Với cùng một dòng điện, dây có điện trở càng nhỏ thì toả nhiệt càng ít.",
+     "answer": true
+    },
+    {
+     "text": "Công suất của dây nung là $1\\,000\\ \\text{W}$.",
+     "answer": true
+    },
+    {
+     "text": "Cường độ dòng điện qua dây nung là $2{,}5\\ \\text{A}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: $P\\sim U^2$ nên còn $250\\ \\text{W}$. b) đúng: $P=I^2R$. c) đúng: $1\\,000\\ \\text{W}$. d) sai: $I\\approx4{,}55\\ \\text{A}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $P$ tỉ lệ với $U^2$ nên $U$ giảm một nửa thì $P$ còn $250\\ \\text{W}$.",
+    "1": "Không thể coi là sai vì $P=I^2R$ nên cùng $I$ thì $R$ nhỏ cho $P$ nhỏ.",
+    "2": "Không thể coi là sai vì $P=\\dfrac{U^2}{R}=\\dfrac{220^2}{48{,}4}=1\\,000\\ \\text{W}$.",
+    "3": "Không thể coi là đúng vì $I=\\dfrac{220}{48{,}4}\\approx4{,}55\\ \\text{A}$."
+   }
   }
  ]
 }

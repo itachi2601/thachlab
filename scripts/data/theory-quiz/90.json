@@ -2,35 +2,40 @@
  "lesson_id": 90,
  "lesson_title": "Bài 12. Đoạn mạch nối tiếp, song song",
  "item_id": 350,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
+ "generated_at": "2026-10-25",
+ "generated_by": "claude-code (phiên Mac)",
  "quiz_min_correct": 15,
  "review": {
   "checked": true,
   "counts": {
-   "kien_thuc": 9,
-   "cong_thuc": 11
+   "kien_thuc": 10,
+   "cong_thuc": 10
   },
   "removed": []
  },
  "questions": [
   {
    "type": "multiple_choice",
-   "kind": "dinh_luat",
+   "kind": "dieu_kien",
    "topic": "Đoạn mạch nối tiếp, song song",
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Trong đoạn mạch nối tiếp, đại lượng nào có giá trị như nhau ở mọi điểm?",
+   "question": "Hai điện trở được gọi là mắc nối tiếp khi",
    "options": [
-    "Hiệu điện thế",
-    "Cường độ dòng điện",
-    "Điện trở",
-    "Công suất"
+    "hai đầu của chúng nối chung vào hai điểm và dòng điện rẽ thành hai nhánh",
+    "chúng nối liền nhau tại một điểm và dòng điện chỉ có một đường đi",
+    "chúng cùng nối vào một nguồn điện nhưng mỗi điện trở có một đường riêng",
+    "chúng có cùng giá trị điện trở và được đặt sát cạnh nhau trong mạch"
    ],
    "answer": 1,
-   "explanation": "Nối tiếp chỉ có một đường đi nên $I = I_1 = I_2$."
+   "explanation": "Nối tiếp là nối liền nhau tại một điểm, dòng điện chỉ có một đường đi.",
+   "distractorNotes": {
+    "A": "Đó là định nghĩa mắc song song, không phải nối tiếp.",
+    "C": "Mỗi điện trở một đường riêng là các nhánh song song.",
+    "D": "Nối tiếp nói về cách nối, không phụ thuộc giá trị điện trở hay vị trí đặt."
+   }
   },
   {
    "type": "multiple_choice",
@@ -40,15 +45,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Trong đoạn mạch song song, đại lượng nào bằng nhau giữa các nhánh?",
+   "question": "Trong đoạn mạch hai điện trở nối tiếp, đại lượng có giá trị như nhau ở mọi vị trí là",
    "options": [
-    "Cường độ dòng điện",
-    "Điện trở",
-    "Hiệu điện thế",
-    "Điện trở tương đương"
+    "hiệu điện thế giữa hai đầu mỗi điện trở",
+    "điện trở của mỗi điện trở thành phần",
+    "điện trở tương đương của từng đoạn nhỏ",
+    "cường độ dòng điện chạy trong mạch"
+   ],
+   "answer": 3,
+   "explanation": "Nối tiếp chỉ có một đường đi nên $I=I_1=I_2$; hiệu điện thế mới là đại lượng bị chia.",
+   "distractorNotes": {
+    "A": "Nối tiếp thì hiệu điện thế chia ra cho từng điện trở, $U=U_1+U_2$.",
+    "B": "Mỗi điện trở thành phần có giá trị riêng, không bắt buộc bằng nhau.",
+    "C": "Điện trở tương đương của cả đoạn bằng tổng, không phải một giá trị chung cho mọi đoạn."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "dinh_luat",
+   "topic": "Đoạn mạch nối tiếp, song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Trong đoạn mạch hai nhánh song song, đại lượng có giá trị như nhau ở hai nhánh là",
+   "options": [
+    "cường độ dòng điện qua mỗi nhánh",
+    "điện trở của từng nhánh trong mạch",
+    "hiệu điện thế giữa hai đầu mỗi nhánh",
+    "độ sáng của bóng đèn trên mỗi nhánh"
    ],
    "answer": 2,
-   "explanation": "Song song: $U = U_1 = U_2$."
+   "explanation": "Hai đầu mỗi nhánh nối chung vào hai điểm nên $U=U_1=U_2$.",
+   "distractorNotes": {
+    "A": "Dòng mạch chính chia cho các nhánh, $I=I_1+I_2$, nên mỗi nhánh nhận một phần.",
+    "B": "Các nhánh có điện trở riêng, thường khác nhau.",
+    "D": "Độ sáng phụ thuộc điện trở từng nhánh; không có quy tắc luôn bằng nhau."
+   }
   },
   {
    "type": "multiple_choice",
@@ -58,15 +91,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Hai bóng đèn mắc song song, một bóng đứt dây tóc thì bóng còn lại:",
+   "question": "Ba bóng đèn giống nhau mắc nối tiếp. Nhận xét đúng về cường độ dòng điện là",
    "options": [
-    "tắt theo",
-    "sáng hơn",
-    "vẫn sáng như cũ",
-    "sáng yếu đi"
+    "ampe kế đặt ở vị trí nào cũng chỉ cùng một số",
+    "mỗi bóng lấy đi một phần nên bóng cuối nhận dòng nhỏ nhất",
+    "dòng qua cả mạch bằng tổng dòng điện qua từng bóng",
+    "bóng nào cũng dùng hết dòng điện nên sau bóng cuối dòng bằng 0"
    ],
-   "answer": 2,
-   "explanation": "Nhánh còn lại vẫn nhận đủ $U$ nên $I$ không đổi."
+   "answer": 0,
+   "explanation": "Nối tiếp chỉ có một đường đi nên $I$ như nhau ở mọi chỗ; thứ được chia ra là hiệu điện thế.",
+   "distractorNotes": {
+    "B": "Bóng đèn dùng năng lượng của dòng điện, không làm dòng điện mất đi.",
+    "C": "Đó là quy tắc mạch song song; nối tiếp dòng chỉ có một đường nên bằng nhau.",
+    "D": "Dòng phải chạy về cực âm của nguồn qua đường duy nhất nên không thể mất đi."
+   }
   },
   {
    "type": "multiple_choice",
@@ -76,15 +114,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Vì sao đèn, quạt trong nhà được mắc song song?",
+   "question": "Hai bóng đèn $220\\ \\text{V}$ mắc song song vào lưới $220\\ \\text{V}$. Bóng 1 đứt dây tóc thì bóng 2",
    "options": [
-    "Để dòng điện giảm bớt",
-    "Để mỗi thiết bị nhận đủ hiệu điện thế và hoạt động riêng",
-    "Để điện trở tương đương lớn",
-    "Để tiết kiệm dây dẫn"
+    "tắt theo vì cả mạch điện bị hở hoàn toàn",
+    "sáng hơn vì nhận thêm dòng điện của bóng 1",
+    "sáng yếu đi vì dòng mạch chính đã giảm xuống",
+    "vẫn sáng như cũ vì vẫn nhận đủ $220\\ \\text{V}$"
    ],
-   "answer": 1,
-   "explanation": "Mỗi thiết bị nhận đủ $220\\ \\text{V}$, bật tắt riêng, một cái hỏng không làm tắt cái khác."
+   "answer": 3,
+   "explanation": "Nhánh bóng 2 vẫn có $U=220\\ \\text{V}$ nên $I_2=\\dfrac{U}{R_2}$ không đổi; chỉ dòng mạch chính giảm.",
+   "distractorNotes": {
+    "A": "Chỉ đúng với mạch nối tiếp; ở đây bóng 2 có nhánh riêng nối thẳng vào nguồn.",
+    "B": "Bóng 1 không còn dòng để chuyển sang; dòng qua bóng 2 vẫn là $\\dfrac{U}{R_2}$.",
+    "C": "Dòng mạch chính giảm là tổng, còn dòng của nhánh bóng 2 không đổi."
+   }
   },
   {
    "type": "multiple_choice",
@@ -94,15 +137,43 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 3,
-   "question": "Cách mắc dụng cụ đo đúng để đo $I$ mạch chính và $U$ giữa hai đầu một điện trở là:",
+   "question": "Muốn đo dòng điện ở mạch chính và hiệu điện thế hai đầu một điện trở, cần mắc",
    "options": [
-    "Ampe kế song song, vôn kế nối tiếp",
-    "Cả hai nối tiếp",
-    "Ampe kế nối tiếp, vôn kế song song với điện trở",
-    "Cả hai song song"
+    "ampe kế nối tiếp ở mạch chính, vôn kế nối tiếp với điện trở",
+    "ampe kế nối tiếp ở mạch chính, vôn kế song song với điện trở",
+    "ampe kế song song với điện trở, vôn kế song song với điện trở",
+    "ampe kế song song với điện trở, vôn kế nối tiếp ở mạch chính"
    ],
-   "answer": 2,
-   "explanation": "Ampe kế nối tiếp ở mạch chính, vôn kế song song với điện trở cần đo."
+   "answer": 1,
+   "explanation": "Ampe kế nối tiếp, vôn kế song song với đoạn cần đo.",
+   "distractorNotes": {
+    "A": "Vôn kế nối tiếp làm mạch gần như hở, kết quả đo sai.",
+    "C": "Ampe kế song song gần như nối tắt điện trở, dễ hỏng dụng cụ.",
+    "D": "Đảo cả hai dụng cụ: mạch gần như hở và không đo được đại lượng cần đo."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "hien_tuong",
+   "topic": "Đoạn mạch nối tiếp, song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 2,
+   "question": "Đèn, quạt trong nhà được mắc song song vào lưới điện vì khi đó",
+   "options": [
+    "mỗi thiết bị nhận đủ hiệu điện thế và bật tắt riêng được",
+    "các thiết bị chia nhau hiệu điện thế $220\\ \\text{V}$ nên an toàn hơn",
+    "điện trở của cả mạch lớn hơn nên dòng điện trong nhà nhỏ đi",
+    "dòng điện đi qua từng thiết bị lần lượt rồi mới về nguồn"
+   ],
+   "answer": 0,
+   "explanation": "Song song: mỗi thiết bị một nhánh, nhận đủ $U$, bật tắt riêng và một cái hỏng không làm tắt cái khác.",
+   "distractorNotes": {
+    "B": "Chia nhau hiệu điện thế là đặc điểm của mạch nối tiếp, làm thiết bị không đủ $U$.",
+    "C": "Song song làm điện trở tương đương nhỏ hơn mỗi điện trở thành phần.",
+    "D": "Đi lần lượt qua từng thiết bị là mạch nối tiếp, một cái hỏng thì cả mạch tắt."
+   }
   },
   {
    "type": "multiple_choice",
@@ -112,15 +183,20 @@
    "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Công thức điện trở tương đương của hai điện trở mắc song song là:",
+   "question": "Điện trở tương đương của đoạn mạch hai điện trở nối tiếp là",
    "options": [
-    "$R_{td} = R_1 + R_2$",
-    "$\\dfrac{1}{R_{td}} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2}$",
-    "$R_{td} = \\dfrac{R_1 + R_2}{R_1 R_2}$",
-    "$\\dfrac{1}{R_{td}} = R_1 + R_2$"
+    "$R_{td}=\\dfrac{R_1R_2}{R_1+R_2}$",
+    "$\\dfrac{1}{R_{td}}=R_1+R_2$",
+    "$R_{td}=R_1+R_2$",
+    "$R_{td}=\\dfrac{R_1+R_2}{R_1R_2}$"
    ],
-   "answer": 1,
-   "explanation": "Song song: nghịch đảo $R_{td}$ bằng tổng các nghịch đảo."
+   "answer": 2,
+   "explanation": "Nối tiếp: $U=U_1+U_2=IR_1+IR_2$ nên $R_{td}=R_1+R_2$.",
+   "distractorNotes": {
+    "A": "Đây là công thức mạch song song (tích chia tổng).",
+    "B": "Lấy nghịch đảo nhầm chỗ: nối tiếp thì cộng thẳng điện trở.",
+    "D": "Đảo tích chia tổng thành tổng chia tích, không phải công thức nào của bài."
+   }
   },
   {
    "type": "multiple_choice",
@@ -129,8 +205,100 @@
    "form": "ly_thuyet",
    "difficulty": "de",
    "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Hai điện trở $20\\ \\Omega$ và $30\\ \\Omega$ mắc song song có $R_{td}$ bằng:",
+   "theorySection": 1,
+   "question": "Điện trở tương đương của đoạn mạch hai điện trở song song so với mỗi điện trở thành phần thì",
+   "options": [
+    "lớn hơn cả hai điện trở thành phần",
+    "bằng tổng hai điện trở thành phần",
+    "bằng trung bình cộng hai điện trở",
+    "nhỏ hơn cả hai điện trở thành phần"
+   ],
+   "answer": 3,
+   "explanation": "Song song: $R_{td}=\\dfrac{R_1R_2}{R_1+R_2}$ luôn nhỏ hơn điện trở nhỏ nhất.",
+   "distractorNotes": {
+    "A": "Ngược lại: thêm nhánh là thêm đường cho dòng đi nên cản trở giảm.",
+    "B": "Tổng là của mạch nối tiếp, không phải song song.",
+    "C": "Không có quy tắc trung bình cộng nào trong bài; phải dùng tích chia tổng."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Đoạn mạch nối tiếp, song song",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hệ thức đúng cho đoạn mạch hai nhánh song song là",
+   "options": [
+    "$U=U_1+U_2$ và $I=I_1=I_2$",
+    "$U=U_1=U_2$ và $I=I_1=I_2$",
+    "$U=U_1=U_2$ và $I=I_1+I_2$",
+    "$U=U_1+U_2$ và $I=I_1+I_2$"
+   ],
+   "answer": 2,
+   "explanation": "Song song: $U=U_1=U_2$ và $I=I_1+I_2$.",
+   "distractorNotes": {
+    "A": "Hoán đổi quy tắc của nối tiếp sang song song.",
+    "B": "Hiệu điện thế bằng nhau đúng, nhưng dòng mạch chính chia cho hai nhánh.",
+    "D": "Hiệu điện thế hai nhánh bằng nhau, không cộng lại."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Điện trở tương đương của đoạn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điện trở $R_1=10\\ \\Omega$ và $R_2=20\\ \\Omega$ mắc nối tiếp. Hiệu điện thế hai đầu $R_2$ so với hai đầu $R_1$",
+   "options": [
+    "nhỏ bằng một nửa",
+    "lớn gấp đôi",
+    "bằng nhau vì cùng dòng điện",
+    "lớn gấp bốn lần"
+   ],
+   "answer": 1,
+   "explanation": "Nối tiếp cùng $I$ nên $\\dfrac{U_1}{U_2}=\\dfrac{R_1}{R_2}$; $R_2$ gấp đôi nên $U_2$ gấp đôi.",
+   "distractorNotes": {
+    "A": "Ngược chiều: điện trở lớn hơn nhận hiệu điện thế lớn hơn.",
+    "C": "Cùng $I$ nhưng $R$ khác nên $U=IR$ khác.",
+    "D": "Bình phương nhầm: $\\dfrac{U_2}{U_1}=\\dfrac{R_2}{R_1}=2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "tinh_nhanh",
+   "topic": "Điện trở tương đương của đoạn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Hai điện trở $R_1=6\\ \\Omega$ và $R_2=12\\ \\Omega$ mắc song song. Dòng điện qua $R_1$ so với qua $R_2$",
+   "options": [
+    "lớn gấp đôi",
+    "nhỏ bằng một nửa",
+    "bằng nhau vì cùng hiệu điện thế",
+    "lớn gấp bốn lần"
+   ],
+   "answer": 0,
+   "explanation": "Song song cùng $U$ nên $\\dfrac{I_1}{I_2}=\\dfrac{R_2}{R_1}=2$.",
+   "distractorNotes": {
+    "B": "Ngược chiều: nhánh có điện trở nhỏ hơn có dòng lớn hơn.",
+    "C": "Cùng $U$ nhưng $R$ khác nên $I=\\dfrac{U}{R}$ khác.",
+    "D": "Bình phương nhầm: $\\dfrac{I_1}{I_2}=\\dfrac{R_2}{R_1}=2$."
+   }
+  },
+  {
+   "type": "multiple_choice",
+   "kind": "cong_thuc",
+   "topic": "Điện trở tương đương của đoạn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "de",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mắc $R_1=20\\ \\Omega$ song song với $R_2=30\\ \\Omega$. Điện trở tương đương là",
    "options": [
     "$50\\ \\Omega$",
     "$25\\ \\Omega$",
@@ -138,249 +306,245 @@
     "$12\\ \\Omega$"
    ],
    "answer": 3,
-   "explanation": "$R_{td} = \\dfrac{20\\cdot 30}{20+30} = 12\\ \\Omega$."
+   "explanation": "$R_{td}=\\dfrac{20\\cdot30}{20+30}=12\\ \\Omega$.",
+   "distractorNotes": {
+    "A": "Cộng thẳng hai điện trở như mạch nối tiếp.",
+    "B": "Lấy trung bình cộng, không phải tích chia tổng.",
+    "C": "Mới là $\\dfrac{1}{R_{td}}$, chưa lấy nghịch đảo lần cuối."
+   }
   },
   {
    "type": "multiple_choice",
    "kind": "bien_doi",
-   "topic": "Điện trở tương đương của đoạn mạch",
+   "topic": "Tính U, I trong mạch hỗn hợp",
    "form": "ly_thuyet",
-   "difficulty": "trung-binh",
+   "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 1,
-   "question": "Trong đoạn mạch nối tiếp, tỉ số $\\dfrac{U_1}{U_2}$ bằng:",
+   "question": "Mạch gồm $R_1$ nối tiếp với cụm ($R_2$ song song $R_3$). Cách tính điện trở tương đương hợp lí là",
    "options": [
-    "$\\dfrac{R_2}{R_1}$",
-    "$\\dfrac{R_1}{R_2}$",
-    "$R_1 R_2$",
-    "$1$"
-   ],
-   "answer": 1,
-   "explanation": "Cùng $I$ nên $U = IR$, suy ra $\\dfrac{U_1}{U_2} = \\dfrac{R_1}{R_2}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Điện trở tương đương của đoạn mạch",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Trong đoạn mạch song song, tỉ số $\\dfrac{I_1}{I_2}$ bằng:",
-   "options": [
-    "$\\dfrac{R_1}{R_2}$",
-    "$R_1 R_2$",
-    "$\\dfrac{R_2}{R_1}$",
-    "$1$"
+    "cộng cả ba điện trở rồi lấy nghịch đảo kết quả",
+    "gộp $R_1$ với $R_2$ trước, rồi mắc song song với $R_3$",
+    "gộp cụm song song thành $R_{23}$, rồi cộng với $R_1$",
+    "lấy nghịch đảo tổng nghịch đảo của cả ba điện trở"
    ],
    "answer": 2,
-   "explanation": "Cùng $U$ nên $I = \\dfrac{U}{R}$, suy ra $\\dfrac{I_1}{I_2} = \\dfrac{R_2}{R_1}$."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Tính U, I trong mạch hỗn hợp",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Mạch $R_1$ nối tiếp cụm ($R_2$ song song $R_3$), $R_1 = 2\\ \\Omega$, $R_2 = R_3 = 6\\ \\Omega$. $R_{td}$ bằng:",
-   "options": [
-    "$14\\ \\Omega$",
-    "$1{,}2\\ \\Omega$",
-    "$5\\ \\Omega$",
-    "$3{,}4\\ \\Omega$"
-   ],
-   "answer": 2,
-   "explanation": "$R_{23} = 3\\ \\Omega$, $R_{td} = 2 + 3 = 5\\ \\Omega$."
+   "explanation": "Gộp cụm song song $R_{23}$ trước, sau đó nối tiếp: $R_{td}=R_1+R_{23}$.",
+   "distractorNotes": {
+    "A": "Cộng ba điện trở chỉ đúng khi cả ba nối tiếp.",
+    "B": "Gộp sai cụm: $R_2$ và $R_3$ mới có chung hai điểm.",
+    "D": "Công thức đó chỉ đúng khi cả ba mắc song song."
+   }
   },
   {
    "type": "true_false",
-   "kind": "dinh_luat",
+   "kind": "hien_tuong",
    "topic": "Đoạn mạch nối tiếp, song song",
    "form": "ly_thuyet",
-   "difficulty": "de",
+   "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về đoạn mạch nối tiếp, các phát biểu sau đúng hay sai?",
+   "theorySection": 0,
+   "question": "Dây đèn trang trí kiểu cũ có một bóng cháy thì cả dây tắt; còn trong nhà, đèn phòng khách hỏng thì đèn bếp vẫn sáng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Dòng điện chỉ có một đường đi.",
-     "answer": true
-    },
-    {
-     "text": "Hiệu điện thế hai đầu đoạn mạch bằng tổng các hiệu điện thế thành phần.",
-     "answer": true
-    },
-    {
-     "text": "Qua mỗi điện trở, dòng điện bị dùng bớt nên $I$ giảm dần.",
+     "text": "Các bóng của dây đèn kiểu cũ được mắc song song với nhau.",
      "answer": false
     },
     {
-     "text": "Điện trở lớn hơn nhận hiệu điện thế nhỏ hơn.",
+     "text": "Đèn phòng khách hỏng nhưng đèn bếp vẫn sáng vì mỗi đèn có nhánh riêng.",
+     "answer": true
+    },
+    {
+     "text": "Dây đèn kiểu cũ có các bóng mắc nối tiếp nên một bóng đứt làm hở cả mạch.",
+     "answer": true
+    },
+    {
+     "text": "Đèn trong nhà mắc song song nên mỗi đèn chỉ nhận một phần của $220\\ \\text{V}$.",
      "answer": false
     }
    ],
-   "explanation": "Nối tiếp: $I$ như nhau, $U$ cộng lại, $R$ lớn nhận $U$ lớn."
+   "explanation": "a) sai: kiểu cũ là nối tiếp. b) đúng: mỗi đèn một nhánh riêng. c) đúng: nối tiếp, một bóng đứt là hở mạch. d) sai: song song thì mỗi đèn nhận đủ $U$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì nếu song song thì một bóng hỏng không làm tắt các bóng khác.",
+    "1": "Không thể coi là sai vì nhánh đèn bếp vẫn nối thẳng vào nguồn.",
+    "2": "Không thể coi là sai vì các bóng nằm trên một đường đi duy nhất.",
+    "3": "Không thể coi là đúng vì mỗi nhánh song song nhận đủ hiệu điện thế của nguồn."
+   }
   },
   {
    "type": "true_false",
-   "kind": "dinh_luat",
+   "kind": "dieu_kien",
    "topic": "Đoạn mạch nối tiếp, song song",
    "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về đoạn mạch song song, các phát biểu sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "Hai đầu các điện trở nối chung vào hai điểm.",
-     "answer": true
-    },
-    {
-     "text": "Dòng mạch chính bằng tổng dòng các nhánh.",
-     "answer": true
-    },
-    {
-     "text": "Hiệu điện thế mỗi nhánh bằng một nửa hiệu điện thế nguồn.",
-     "answer": false
-    },
-    {
-     "text": "Điện trở tương đương lớn hơn mỗi điện trở thành phần.",
-     "answer": false
-    }
-   ],
-   "explanation": "Song song: $U$ như nhau, $I = I_1 + I_2$, $R_{td}$ nhỏ hơn mỗi $R$."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Tính U, I trong mạch hỗn hợp",
-   "form": "ly_thuyet",
    "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Mạch $R_1 = 4\\ \\Omega$ nối tiếp cụm ($R_2 = 12\\ \\Omega$ song song $R_3 = 6\\ \\Omega$), $U_{AB} = 12\\ \\text{V}$. Các ý sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "$R_{23} = 4\\ \\Omega$.",
-     "answer": true
-    },
-    {
-     "text": "$R_{td} = 8\\ \\Omega$.",
-     "answer": true
-    },
-    {
-     "text": "$I = 3\\ \\text{A}$.",
-     "answer": false
-    },
-    {
-     "text": "$I_3 = 1\\ \\text{A}$.",
-     "answer": true
-    }
-   ],
-   "explanation": "$I = 12/8 = 1{,}5\\ \\text{A}$, $U_{23} = 6\\ \\text{V}$, $I_3 = 6/6 = 1\\ \\text{A}$."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Điện trở tương đương của đoạn mạch",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hai điện trở $6\\ \\Omega$ và $12\\ \\Omega$ mắc song song vào nguồn $12\\ \\text{V}$. Các ý sau đúng hay sai?",
-   "statements": [
-    {
-     "text": "$I_1 = 2\\ \\text{A}$.",
-     "answer": true
-    },
-    {
-     "text": "$I_2 = 1\\ \\text{A}$.",
-     "answer": true
-    },
-    {
-     "text": "$I = 3\\ \\text{A}$.",
-     "answer": true
-    },
-    {
-     "text": "$R_{td} = 18\\ \\Omega$.",
-     "answer": false
-    }
-   ],
-   "explanation": "$R_{td} = 4\\ \\Omega$, $I = 12/4 = 3\\ \\text{A}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Điện trở tương đương của đoạn mạch",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Ba điện trở $10\\ \\Omega$ mắc nối tiếp. $R_{td}$ bằng bao nhiêu $\\Omega$?",
-   "answer": "30",
-   "explanation": "$R_{td} = 10 + 10 + 10 = 30\\ \\Omega$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Điện trở tương đương của đoạn mạch",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "$R_1 = 10\\ \\Omega$ song song $R_2 = 15\\ \\Omega$. $R_{td}$ bằng bao nhiêu $\\Omega$?",
-   "answer": "6",
-   "explanation": "$R_{td} = \\dfrac{10\\cdot 15}{25} = 6\\ \\Omega$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Tính U, I trong mạch hỗn hợp",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Hai điện trở $6\\ \\Omega$ và $12\\ \\Omega$ song song vào $12\\ \\text{V}$. Ampe kế mạch chính chỉ bao nhiêu A?",
-   "answer": "3",
-   "explanation": "$I = 2 + 1 = 3\\ \\text{A}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Tính U, I trong mạch hỗn hợp",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "$R_1 = 4\\ \\Omega$, $R_2 = 12\\ \\Omega$, $R_3 = 6\\ \\Omega$ như bài mẫu, $U_{AB} = 12\\ \\text{V}$. $R_{td}$ bằng bao nhiêu $\\Omega$?",
-   "answer": "8",
-   "explanation": "$R_{23} = 4\\ \\Omega$, $R_{td} = 4 + 4 = 8\\ \\Omega$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "dinh_nghia",
-   "topic": "Đoạn mạch nối tiếp, song song",
-   "form": "ly_thuyet",
-   "difficulty": "de",
    "difficultySource": "ai",
    "theorySection": 2,
-   "question": "Ba bóng giống nhau nối tiếp, ampe kế trước bóng thứ nhất chỉ $0{,}3\\ \\text{A}$. Ampe kế sau bóng thứ ba chỉ bao nhiêu A (viết dạng 0,3)?",
-   "answer": "0,3",
-   "explanation": "Nối tiếp thì $I$ như nhau ở mọi chỗ."
+   "question": "Dùng hai bóng đèn pin giống nhau và nguồn $3\\ \\text{V}$, mắc nối tiếp rồi tháo một bóng, sau đó mắc song song rồi tháo một bóng. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Mắc nối tiếp rồi tháo một bóng thì bóng còn lại tắt.",
+     "answer": true
+    },
+    {
+     "text": "Mắc nối tiếp thì mỗi bóng nhận đủ $3\\ \\text{V}$ của nguồn.",
+     "answer": false
+    },
+    {
+     "text": "Mắc song song thì hai bóng sáng mờ hơn khi mắc nối tiếp.",
+     "answer": false
+    },
+    {
+     "text": "Mắc song song rồi tháo một bóng thì bóng còn lại vẫn sáng như cũ.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng: hở mạch. b) sai: $U$ chia ra. c) sai: song song sáng rõ hơn. d) đúng: nhánh riêng.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì tháo bóng làm hở mạch nên không còn dòng điện.",
+    "1": "Không thể coi là đúng vì nối tiếp thì hiệu điện thế chia cho hai bóng nên mỗi bóng nhận ít hơn.",
+    "2": "Không thể coi là đúng vì mắc song song mỗi bóng nhận đủ $U$ nên sáng rõ hơn nối tiếp.",
+    "3": "Không thể coi là sai vì nhánh còn lại vẫn nhận đủ $3\\ \\text{V}$."
+   }
   },
   {
-   "type": "short_answer",
-   "kind": "dinh_nghia",
+   "type": "true_false",
+   "kind": "dinh_luat",
+   "topic": "Đoạn mạch nối tiếp, song song",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mắc $R_1=10\\ \\Omega$ nối tiếp với $R_2=20\\ \\Omega$, đặt ampe kế ở ba vị trí và đo hiệu điện thế từng điện trở. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Hiệu điện thế $U_1$ luôn gấp đôi $U_2$.",
+     "answer": false
+    },
+    {
+     "text": "Ampe kế đặt ở cả ba vị trí đều chỉ cùng một số.",
+     "answer": true
+    },
+    {
+     "text": "Tổng $U_1+U_2$ bằng hiệu điện thế hai đầu cả đoạn mạch.",
+     "answer": true
+    },
+    {
+     "text": "Điện trở tương đương của đoạn mạch nhỏ hơn $10\\ \\Omega$.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: $U_2$ gấp đôi $U_1$. b) đúng: $I$ như nhau. c) đúng: $U=U_1+U_2$. d) sai: $R_{td}=30\\ \\Omega$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì điện trở lớn hơn nhận hiệu điện thế lớn hơn, nên $U_2$ mới gấp đôi $U_1$.",
+    "1": "Không thể coi là sai vì nối tiếp thì cường độ dòng điện như nhau ở mọi chỗ.",
+    "2": "Không thể coi là sai vì hai đoạn ghép lại đúng bằng cả đoạn.",
+    "3": "Không thể coi là đúng vì nối tiếp thì $R_{td}=10+20=30\\ \\Omega$, lớn hơn mỗi điện trở thành phần."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
+   "topic": "Điện trở tương đương của đoạn mạch",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 1,
+   "question": "Mắc $R_1=10\\ \\Omega$ song song với $R_2=15\\ \\Omega$ vào nguồn $6\\ \\text{V}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Điện trở tương đương của đoạn mạch là $25\\ \\Omega$.",
+     "answer": false
+    },
+    {
+     "text": "Dòng điện qua $R_1$ là $0{,}60\\ \\text{A}$.",
+     "answer": true
+    },
+    {
+     "text": "Dòng điện qua $R_2$ nhỏ hơn dòng qua $R_1$ vì $R_2$ lớn hơn.",
+     "answer": true
+    },
+    {
+     "text": "Dòng điện mạch chính bằng dòng điện qua nhánh $R_1$.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: $R_{td}=6\\ \\Omega$. b) đúng: $0{,}60\\ \\text{A}$. c) đúng: $I_2=0{,}40\\ \\text{A}$. d) sai: $I=I_1+I_2=1{,}00\\ \\text{A}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì song song thì $R_{td}=\\dfrac{10\\cdot15}{25}=6\\ \\Omega$, nhỏ hơn mỗi điện trở.",
+    "1": "Không thể coi là sai vì $I_1=\\dfrac{6}{10}=0{,}60\\ \\text{A}$.",
+    "2": "Không thể coi là sai vì cùng $U$, điện trở lớn hơn thì dòng nhỏ hơn.",
+    "3": "Không thể coi là đúng vì dòng mạch chính là tổng hai nhánh nên lớn hơn dòng mỗi nhánh."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "cong_thuc",
    "topic": "Tính U, I trong mạch hỗn hợp",
    "form": "ly_thuyet",
    "difficulty": "trung-binh",
    "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Hai điện trở bằng nhau $R$ mắc song song. Nếu $R = 10\\ \\Omega$ thì $R_{td}$ bằng bao nhiêu $\\Omega$?",
-   "answer": "5",
-   "explanation": "Hai điện trở bằng nhau song song: $R_{td} = R/2 = 5\\ \\Omega$."
+   "theorySection": 4,
+   "question": "Mạch gồm $R_1=4\\ \\Omega$ nối tiếp với cụm ($R_2=12\\ \\Omega$ song song $R_3=6\\ \\Omega$), đặt vào $U_{AB}=12\\ \\text{V}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Điện trở tương đương của cả đoạn mạch là $8\\ \\Omega$.",
+     "answer": true
+    },
+    {
+     "text": "Cường độ dòng điện mạch chính là $3\\ \\text{A}$.",
+     "answer": false
+    },
+    {
+     "text": "Hiệu điện thế hai đầu cụm $R_2$, $R_3$ là $12\\ \\text{V}$.",
+     "answer": false
+    },
+    {
+     "text": "Điện trở tương đương của cụm $R_2$, $R_3$ là $4\\ \\Omega$.",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng: $R_{td}=8\\ \\Omega$. b) sai: $I=1{,}5\\ \\text{A}$. c) sai: $U_{23}=6\\ \\text{V}$. d) đúng: $R_{23}=4\\ \\Omega$.",
+   "distractorNotes": {
+    "0": "Không thể coi là sai vì $R_{td}=R_1+R_{23}=4+4=8\\ \\Omega$.",
+    "1": "Không thể coi là đúng vì $R_{td}=8\\ \\Omega$ nên $I=\\dfrac{12}{8}=1{,}5\\ \\text{A}$.",
+    "2": "Không thể coi là đúng vì $R_1$ nhận $6\\ \\text{V}$ nên cụm chỉ còn $12-6=6\\ \\text{V}$.",
+    "3": "Không thể coi là sai vì $R_{23}=\\dfrac{12\\cdot6}{12+6}=4\\ \\Omega$."
+   }
+  },
+  {
+   "type": "true_false",
+   "kind": "bien_doi",
+   "topic": "Tính U, I trong mạch hỗn hợp",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh",
+   "difficultySource": "ai",
+   "theorySection": 4,
+   "question": "Mạch gồm $R_1=4\\ \\Omega$ nối tiếp với cụm ($R_2=12\\ \\Omega$ song song $R_3=6\\ \\Omega$), đặt vào $12\\ \\text{V}$ (lúc đầu $R_1$ nhận $6\\ \\text{V}$). Nhánh $R_3$ bị đứt nên chỉ còn $R_1$ nối tiếp $R_2$, vẫn đặt vào $12\\ \\text{V}$. Xét các phát biểu sau:",
+   "statements": [
+    {
+     "text": "Dòng điện mạch chính vẫn là $1{,}5\\ \\text{A}$ vì $R_1$, $R_2$ không đổi.",
+     "answer": false
+    },
+    {
+     "text": "Dòng điện mạch chính giảm còn $0{,}75\\ \\text{A}$.",
+     "answer": true
+    },
+    {
+     "text": "Điện trở tương đương tăng lên thành $16\\ \\Omega$.",
+     "answer": true
+    },
+    {
+     "text": "Hiệu điện thế hai đầu $R_2$ vẫn là $6\\ \\text{V}$ như lúc đầu.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) sai: dòng giảm. b) đúng: $I=0{,}75\\ \\text{A}$. c) đúng: $R_{td}=16\\ \\Omega$. d) sai: $U_2=9\\ \\text{V}$.",
+   "distractorNotes": {
+    "0": "Không thể coi là đúng vì $R_{td}$ đã tăng nên dòng mạch chính giảm còn $0{,}75\\ \\text{A}$.",
+    "1": "Không thể coi là sai vì $I=\\dfrac{12}{16}=0{,}75\\ \\text{A}$.",
+    "2": "Không thể coi là sai vì $R_{td}=4+12=16\\ \\Omega$.",
+    "3": "Không thể coi là đúng vì $U_2=0{,}75\\cdot12=9\\ \\text{V}$, lớn hơn $6\\ \\text{V}$ lúc đầu."
+   }
   }
  ]
 }

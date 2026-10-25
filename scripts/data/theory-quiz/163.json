@@ -1,379 +1,550 @@
 {
- "lesson_id": 163,
- "lesson_title": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
- "item_id": 399,
- "generated_at": "2026-10-19",
- "generated_by": "batch-api claude-opus-5-5",
- "quiz_min_correct": 15,
- "review": {
-  "checked": true,
-  "counts": {
-   "kien_thuc": 9,
-   "cong_thuc": 10
+  "lesson_id": 163,
+  "lesson_title": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+  "item_id": 399,
+  "generated_at": "2026-10-25",
+  "generated_by": "claude-code (phiên Mac)",
+  "quiz_min_correct": 15,
+  "review": {
+    "checked": true,
+    "counts": {
+      "kien_thuc": 10,
+      "cong_thuc": 10
+    },
+    "removed": []
   },
-  "removed": [
-   {
-    "question": "Có bao nhiêu nguồn năng lượng không có gốc bức xạ Mặt Trời (địa nhiệt, hạt nhân, thuỷ triều)?",
-    "reason": "nghi_ngo: Đáp án 3 đúng theo bài, nhưng phần ngoặc đơn đã liệt kê sẵn ba nguồn nên lộ đáp án, câu hỏi gần như không kiểm tra được kiến thức."
-   }
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_luat",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Phát biểu nào sau đây về phần năng lượng hao phí là đúng?",
+      "options": [
+        "Phần hao phí biến mất hoàn toàn khỏi hệ thống",
+        "Phần hao phí chuyển hết thành năng lượng có ích",
+        "Phần hao phí thành nhiệt toả ra môi trường",
+        "Phần hao phí chỉ xuất hiện ở các máy đã hỏng"
+      ],
+      "answer": 2,
+      "explanation": "Năng lượng không tự sinh ra, không tự mất đi; phần hao phí vẫn còn, ở dạng nhiệt toả ra môi trường.",
+      "distractorNotes": {
+        "A": "Nhầm hao phí với mất đi; năng lượng không tự mất, chỉ đổi dạng hoặc truyền sang vật khác.",
+        "B": "Nếu hao phí thành năng lượng có ích thì không còn là hao phí và hiệu suất sẽ bằng 100%.",
+        "D": "Mọi máy thật đều có hao phí vì luôn toả nhiệt, không riêng máy hỏng."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Trong các nguồn năng lượng sau, nguồn nào không có gốc từ bức xạ Mặt Trời?",
+      "options": [
+        "Thuỷ triều do lực hút Mặt Trăng",
+        "Gió do mặt đất nóng lên không đều",
+        "Thuỷ điện nhờ nước bốc hơi rồi mưa",
+        "Than đá từ thực vật cổ quang hợp"
+      ],
+      "answer": 0,
+      "explanation": "Thuỷ triều do lực hút của Mặt Trăng (và Mặt Trời) cùng sự tự quay của Trái Đất; địa nhiệt và hạt nhân là hai ngoại lệ còn lại.",
+      "distractorNotes": {
+        "B": "Gió hình thành khi nắng làm mặt đất nóng không đều, nên có gốc Mặt Trời.",
+        "C": "Nắng làm nước bốc hơi, mưa trên cao rồi chảy xuống sông, nên có gốc Mặt Trời.",
+        "D": "Thực vật cổ sống nhờ quang hợp, nên than có gốc Mặt Trời."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Năng lượng chứa trong than đá có gốc từ đâu?",
+      "options": [
+        "Nhiệt trong lòng Trái Đất nung chảy đất đá thành than",
+        "Lực hút của Mặt Trăng nén chặt các lớp đất đá",
+        "Phản ứng hạt nhân diễn ra sẵn trong vỏ Trái Đất",
+        "Nắng Mặt Trời được thực vật cổ tích trữ nhờ quang hợp"
+      ],
+      "answer": 3,
+      "explanation": "Chuỗi: Mặt Trời, quang hợp, sinh khối, vùi lấp hàng trăm triệu năm, than. Than là năng lượng Mặt Trời được tích trữ từ rất lâu.",
+      "distractorNotes": {
+        "A": "Nhiệt và áp suất lòng đất chỉ biến xác thực vật thành than, năng lượng chứa trong than vốn đến từ nắng.",
+        "B": "Nhầm với nguồn gốc của thuỷ triều; lực hút Mặt Trăng không tạo ra năng lượng trong than.",
+        "C": "Nhầm với nguồn gốc năng lượng hạt nhân; than không chứa urani làm nhiên liệu."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Vì sao tăng lượng CO₂ trong khí quyển làm Trái Đất ấm thêm?",
+      "options": [
+        "CO₂ chặn bớt ánh sáng Mặt Trời tới mặt đất",
+        "CO₂ giữ lại một phần hồng ngoại của mặt đất",
+        "CO₂ làm thủng tầng ozone cho tia nóng lọt xuống",
+        "CO₂ tự phát ra nhiệt khi hấp thụ ánh sáng"
+      ],
+      "answer": 1,
+      "explanation": "Ánh sáng đi qua khí quyển làm nóng mặt đất; mặt đất phát hồng ngoại, CO₂ giữ lại một phần nên cân bằng ở mức ấm hơn.",
+      "distractorNotes": {
+        "A": "Chặn ánh sáng thì Trái Đất phải lạnh đi; thực tế CO₂ hầu như cho ánh sáng đi qua.",
+        "C": "Nhầm hiệu ứng nhà kính với thủng ozone; đây là hai hiện tượng khác nhau.",
+        "D": "CO₂ không là nguồn nhiệt; nó chỉ giữ lại hồng ngoại mặt đất đã phát ra rồi toả một phần về mặt đất."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Chuỗi chuyển hoá năng lượng trong nhà máy điện hạt nhân hiện nay là",
+      "options": [
+        "năng lượng phân hạch, nhiệt, cơ năng, điện năng",
+        "hoá năng do đốt urani, nhiệt, cơ năng, điện năng",
+        "năng lượng nhiệt hạch, nhiệt, cơ năng, điện năng",
+        "năng lượng hạt nhân biến thẳng thành điện năng"
+      ],
+      "answer": 0,
+      "explanation": "Lò phản ứng chỉ thay lò đốt than: phân hạch toả nhiệt đun nước thành hơi, từ đó giống nhiệt điện.",
+      "distractorNotes": {
+        "B": "Urani không cháy; năng lượng đến từ hạt nhân bị vỡ ra, không phải phản ứng với oxi.",
+        "C": "Nhiệt hạch là nguồn của Mặt Trời, chưa dùng phát điện thương mại.",
+        "D": "Nhà máy hiện nay vẫn cần hơi nước quay tuabin rồi mới đến máy phát điện."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Giờ nắng đỉnh trong tính toán pin Mặt Trời là",
+      "options": [
+        "số giờ từ lúc Mặt Trời mọc đến lúc lặn trong ngày",
+        "số giờ giữa trưa khi Mặt Trời ở vị trí cao nhất",
+        "số giờ quy đổi ngày nắng về bức xạ $1000\\ \\text{W/m}^2$",
+        "số giờ trong ngày hoàn toàn không có mây che nắng"
+      ],
+      "answer": 2,
+      "explanation": "Giờ nắng đỉnh quy cả ngày nắng yếu mạnh về số giờ có bức xạ $1000\\ \\text{W/m}^2$, khoảng 4 đến 5 giờ, không phải 12 giờ trời sáng.",
+      "distractorNotes": {
+        "A": "Đó là số giờ trời sáng, khoảng 12 giờ; giờ nắng đỉnh chỉ khoảng 4 đến 5 giờ.",
+        "B": "Giờ nắng đỉnh là một số giờ quy đổi, không phải một khung giờ buổi trưa.",
+        "D": "Mây chỉ là một lí do khiến bức xạ yếu đi; giờ nắng đỉnh quy đổi cả ngày về mức bức xạ chuẩn."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "dinh_nghia",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Năng suất toả nhiệt $q$ của nhiên liệu (đơn vị J/kg) là",
+      "options": [
+        "nhiệt lượng cần để $1\\ \\text{kg}$ nhiên liệu nóng thêm $1\\,^\\circ\\text{C}$",
+        "nhiệt lượng toả ra khi đốt hết $1\\ \\text{kg}$ nhiên liệu",
+        "khối lượng nhiên liệu cần đốt để toả ra được $1\\ \\text{J}$",
+        "khối lượng CO₂ thải ra khi đốt cháy $1\\ \\text{kg}$ nhiên liệu"
+      ],
+      "answer": 1,
+      "explanation": "Theo bài, $q$ là nhiệt toả ra khi đốt cháy hết $1\\ \\text{kg}$ nhiên liệu, nên nhiệt toàn phần là $Q=qm$.",
+      "distractorNotes": {
+        "A": "Nhầm với nhiệt dung riêng $c$ có đơn vị J/(kg·K); $q$ nói về nhiệt toả ra khi đốt cháy.",
+        "C": "Đảo ngược ý nghĩa: $q$ là nhiệt toả ra trên mỗi kg, không phải kg trên mỗi jun.",
+        "D": "Nhầm với hệ số phát thải $k$; $q$ đo nhiệt toả ra, không đo khí thải."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Một máy gồm các khâu nối tiếp có hiệu suất $H_1, H_2, H_3$. Hiệu suất cả máy là",
+      "options": [
+        "$H=\\dfrac{H_1+H_2+H_3}{3}$",
+        "$H=H_1+H_2+H_3$",
+        "$H$ bằng hiệu suất của khâu kém nhất",
+        "$H=H_1\\cdot H_2\\cdot H_3$"
+      ],
+      "answer": 3,
+      "explanation": "Các khâu nối tiếp thì hiệu suất nhân với nhau, nên kết quả nhỏ hơn hiệu suất của khâu kém nhất.",
+      "distractorNotes": {
+        "A": "Lấy trung bình cộng là sai; đầu ra khâu trước là đầu vào khâu sau nên phải nhân.",
+        "B": "Cộng các hiệu suất có thể vượt $100\\%$, vô lí với hiệu suất.",
+        "C": "Các khâu còn lại cũng hao phí thêm, nên hiệu suất cả máy thấp hơn cả khâu kém nhất."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "bien_doi",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Biết công có ích $A_{\\text{ích}}$ và hiệu suất $H$, công toàn phần $A_{\\text{tp}}$ tính bằng",
+      "options": [
+        "$A_{\\text{tp}}=\\dfrac{A_{\\text{ích}}}{H}$",
+        "$A_{\\text{tp}}=A_{\\text{ích}}\\cdot H$",
+        "$A_{\\text{tp}}=A_{\\text{ích}}-H$",
+        "$A_{\\text{tp}}=\\dfrac{H}{A_{\\text{ích}}}$"
+      ],
+      "answer": 0,
+      "explanation": "Từ $H=\\dfrac{A_{\\text{ích}}}{A_{\\text{tp}}}$ suy ra $A_{\\text{tp}}=\\dfrac{A_{\\text{ích}}}{H}$; có hao phí nên công toàn phần lớn hơn công có ích.",
+      "distractorNotes": {
+        "B": "Nhân với $H$ cho kết quả nhỏ hơn công có ích, vô lí vì công toàn phần phải lớn hơn.",
+        "C": "Trừ hai đại lượng khác đơn vị không có nghĩa; $H$ không có đơn vị.",
+        "D": "Đảo tử và mẫu của biểu thức $H=\\dfrac{A_{\\text{ích}}}{A_{\\text{tp}}}$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Hai khâu nối tiếp có hiệu suất $50\\%$ và $80\\%$. Hiệu suất cả chuỗi là",
+      "options": [
+        "$65\\%$",
+        "$40\\%$",
+        "$80\\%$",
+        "$130\\%$"
+      ],
+      "answer": 1,
+      "explanation": "$H=0{,}5\\cdot0{,}8=0{,}4$, tức $40\\%$, nhỏ hơn cả hai khâu.",
+      "distractorNotes": {
+        "A": "Đây là trung bình cộng; hiệu suất nối tiếp phải nhân.",
+        "C": "Chỉ lấy khâu tốt nhất; khâu kém hơn vẫn làm hao phí thêm.",
+        "D": "Cộng hai hiệu suất; hiệu suất không thể vượt $100\\%$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Công suất điện của thuỷ điện tính bằng $P_{\\text{đ}}=H\\,d\\,L\\,h$ với $L$ là lưu lượng nước. Đập có $h=50\\ \\text{m}$, $L=40\\ \\text{m}^3/\\text{s}$, $H=90\\%$, $d=10\\,000\\ \\text{N/m}^3$. Công suất điện là",
+      "options": [
+        "$20\\ \\text{MW}$",
+        "$1{,}8\\ \\text{MW}$",
+        "$18\\ \\text{MW}$",
+        "$22{,}2\\ \\text{MW}$"
+      ],
+      "answer": 2,
+      "explanation": "$P_{\\text{đ}}=0{,}9\\cdot10\\,000\\cdot40\\cdot50=1{,}8\\cdot10^7\\ \\text{W}=18\\ \\text{MW}$.",
+      "distractorNotes": {
+        "A": "Quên nhân hiệu suất; đó mới là công suất của dòng nước.",
+        "B": "Dùng khối lượng riêng $D=1000$ thay vì trọng lượng riêng $d=10\\,000$, thiếu hệ số $10$.",
+        "D": "Chia cho $H$; điện ra phải nhỏ hơn công suất dòng nước."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "tinh_nhanh",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Gió tăng từ $6\\ \\text{m/s}$ lên $9\\ \\text{m/s}$ (vẫn dưới tốc độ định mức). Công suất tuabin gió tăng khoảng",
+      "options": [
+        "$2{,}25$ lần",
+        "$1{,}5$ lần",
+        "$5{,}06$ lần",
+        "$3{,}375$ lần"
+      ],
+      "answer": 3,
+      "explanation": "$P\\sim v^3$ nên $\\left(\\dfrac96\\right)^3=1{,}5^3=3{,}375$.",
+      "distractorNotes": {
+        "A": "Dùng $v^2$ như động năng một vật; khối khí đi qua mỗi giây cũng tăng theo $v$ nên còn thêm một thừa số $v$.",
+        "B": "Coi công suất tỉ lệ thuận với $v$, bỏ sót phần phụ thuộc vào luỹ thừa.",
+        "C": "Dùng luỹ thừa bốn, quá cao; bài cho $P\\sim v^3$."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Công suất đỉnh của một tấm pin Mặt Trời có hiệu suất $H_{\\text{pin}}$, diện tích $S$, bức xạ tới $I$ tính bằng",
+      "options": [
+        "$P=\\dfrac{I\\,S}{H_{\\text{pin}}}$",
+        "$P=H_{\\text{pin}}\\,I\\,S$",
+        "$P=\\dfrac{H_{\\text{pin}}\\,I}{S}$",
+        "$P=\\dfrac{H_{\\text{pin}}\\,S}{I}$"
+      ],
+      "answer": 1,
+      "explanation": "Công suất nắng tới là $I\\,S$; pin đổi một phần $H_{\\text{pin}}$ thành điện nên $P=H_{\\text{pin}}IS$.",
+      "distractorNotes": {
+        "A": "Chia cho hiệu suất làm công suất điện lớn hơn cả công suất nắng tới, vô lí.",
+        "C": "Chia cho diện tích sai đơn vị; $IS$ mới là công suất nắng chiếu lên tấm pin.",
+        "D": "Chia cho bức xạ làm công suất giảm khi nắng mạnh lên, ngược thực tế."
+      }
+    },
+    {
+      "type": "multiple_choice",
+      "kind": "don_vi",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "de",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Điện năng tiêu thụ $2\\ \\text{kWh}$ bằng bao nhiêu jun?",
+      "options": [
+        "$7{,}2\\cdot10^{6}\\ \\text{J}$",
+        "$3{,}6\\cdot10^{6}\\ \\text{J}$",
+        "$7{,}2\\cdot10^{3}\\ \\text{J}$",
+        "$2\\,000\\ \\text{J}$"
+      ],
+      "answer": 0,
+      "explanation": "$1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$ nên $2\\ \\text{kWh}=7{,}2\\cdot10^6\\ \\text{J}$.",
+      "distractorNotes": {
+        "B": "Mới là giá trị của $1\\ \\text{kWh}$, quên nhân với $2$.",
+        "C": "Dùng $1\\ \\text{kWh}=3{,}6\\cdot10^3\\ \\text{J}$, sai hệ số: $1\\ \\text{kW}=1000\\ \\text{W}$ và $1\\ \\text{h}=3600\\ \\text{s}$.",
+        "D": "Nhầm kWh với Wh; $2\\ \\text{kWh}$ là $2000\\ \\text{Wh}$, còn xa mới là $2000\\ \\text{J}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 2,
+      "question": "Một học sinh vẽ sơ đồ vòng năng lượng trên Trái Đất, bắt đầu từ bức xạ của Mặt Trời. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Trái Đất hấp thụ bức xạ Mặt Trời rồi lại bức xạ nhiệt hồng ngoại ra vũ trụ, thu và toả cân bằng.",
+          "answer": true
+        },
+        {
+          "text": "Địa nhiệt cũng có gốc từ bức xạ Mặt Trời.",
+          "answer": false
+        },
+        {
+          "text": "Sóng biển có gốc từ gió, nên cũng có gốc từ Mặt Trời.",
+          "answer": true
+        },
+        {
+          "text": "Thuỷ triều hình thành do nắng làm nước biển bốc hơi.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng: Trái Đất thu và toả cân bằng. b) sai: địa nhiệt là nhiệt sẵn có trong lòng Trái Đất. c) đúng: nắng làm không khí chuyển động thành gió, gió tạo sóng. d) sai: thuỷ triều do lực hút của Mặt Trăng, Mặt Trời và sự tự quay của Trái Đất.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì bài nêu rõ Trái Đất bức xạ nhiệt hồng ngoại ra vũ trụ nên thu và toả cân bằng.",
+        "1": "Không thể coi là đúng vì địa nhiệt là nhiệt sẵn có trong lòng Trái Đất, thuộc ba nguồn không có gốc Mặt Trời.",
+        "2": "Không thể coi là sai vì sóng biển do gió tạo ra, mà gió do nắng làm mặt đất nóng không đều.",
+        "3": "Không thể coi là đúng vì thuỷ triều do lực hút của Mặt Trăng, Mặt Trời cùng sự tự quay của Trái Đất, không do nắng."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "hien_tuong",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Ánh sáng Mặt Trời đi qua khí quyển làm nóng mặt đất, mặt đất phát hồng ngoại ngược lên. Xét các phát biểu về hiệu ứng nhà kính:",
+      "statements": [
+        {
+          "text": "CO₂ hầu như cho ánh sáng Mặt Trời đi qua.",
+          "answer": true
+        },
+        {
+          "text": "Nếu không có hiệu ứng nhà kính tự nhiên thì Trái Đất vẫn ấm như hiện nay.",
+          "answer": false
+        },
+        {
+          "text": "Hiệu ứng nhà kính tăng cường chính là hiện tượng thủng tầng ozone.",
+          "answer": false
+        },
+        {
+          "text": "CO₂ giữ lại một phần hồng ngoại rồi toả một phần về mặt đất.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) đúng theo cơ chế nhà kính. b) sai: không có hiệu ứng tự nhiên, Trái Đất trung bình khoảng $-18\\,^\\circ\\text{C}$. c) sai: nhà kính giữ hồng ngoại làm ấm, thủng ozone là mất lớp chắn tia tử ngoại. d) đúng theo cơ chế nhà kính.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì CO₂ cho ánh sáng đi qua, nếu chặn ánh sáng thì Trái Đất đã lạnh đi.",
+        "1": "Không thể coi là đúng vì không có hiệu ứng tự nhiên, nhiệt độ trung bình của Trái Đất chỉ khoảng $-18\\,^\\circ\\text{C}$.",
+        "2": "Không thể coi là đúng vì hiệu ứng nhà kính giữ hồng ngoại làm ấm, còn thủng ozone là mất lớp chắn tia tử ngoại.",
+        "3": "Không thể coi là sai vì đây chính là cách CO₂ giữ nhiệt: hấp thụ hồng ngoại rồi toả lại về mặt đất."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "dieu_kien",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 5,
+      "question": "Một nhà máy điện hạt nhân dùng urani 235 làm nhiên liệu. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Trong phân hạch, hạt nhân nặng hấp thụ một nơtron rồi vỡ thành các hạt nhân nhẹ hơn.",
+          "answer": true
+        },
+        {
+          "text": "Khi vận hành, nhà máy điện hạt nhân thải CO₂ nhiều như nhà máy đốt than.",
+          "answer": false
+        },
+        {
+          "text": "Phản ứng dây chuyền trong lò phản ứng được điều khiển.",
+          "answer": true
+        },
+        {
+          "text": "Urani là nhiên liệu tái tạo vì khối lượng cần dùng rất nhỏ.",
+          "answer": false
+        }
+      ],
+      "explanation": "a), c) đúng theo mô tả phân hạch. b) sai: bài nêu không thải CO₂ khi vận hành. d) sai: urani có hạn nên không tái tạo, khối lượng nhỏ không làm nó thành nguồn tái tạo.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì phân hạch đúng là hạt nhân nặng hấp thụ nơtron rồi vỡ ra.",
+        "1": "Không thể coi là đúng vì lò phản ứng chỉ đun nước, không đốt cháy nhiên liệu nên không thải CO₂ khi vận hành.",
+        "2": "Không thể coi là sai vì nơtron mới sinh làm vỡ hạt nhân khác, và trong lò việc này được điều khiển.",
+        "3": "Không thể coi là đúng vì urani có sẵn một lượng hữu hạn trong vỏ Trái Đất nên không tái tạo."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 1,
+      "question": "Trạm điện diesel trên đảo có động cơ hiệu suất $H_1$ và máy phát hiệu suất $H_2$ mắc nối tiếp, cấp điện năng có ích $A_{\\text{ích}}$. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Hiệu suất cả trạm lớn hơn hiệu suất của khâu kém nhất.",
+          "answer": false
+        },
+        {
+          "text": "Hiệu suất cả trạm là $H=H_1H_2$.",
+          "answer": true
+        },
+        {
+          "text": "Khối lượng dầu cần đốt tính bằng $m=A_{\\text{tp}}\\cdot q$.",
+          "answer": false
+        },
+        {
+          "text": "Nhiệt năng cần toả ra từ nhiên liệu là $A_{\\text{tp}}=\\dfrac{A_{\\text{ích}}}{H}$.",
+          "answer": true
+        }
+      ],
+      "explanation": "a) sai: tích nhỏ hơn mỗi thừa số. b) đúng vì hai khâu nối tiếp thì nhân. c) sai: $m=\\dfrac{A_{\\text{tp}}}{q}$. d) đúng vì có hao phí nên phải chia cho $H$.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì tích hai hiệu suất nhỏ hơn mỗi hiệu suất thành phần, kể cả khâu kém nhất.",
+        "1": "Không thể coi là sai vì đầu ra động cơ là đầu vào máy phát nên hiệu suất được nhân với nhau.",
+        "2": "Không thể coi là đúng vì $Q=qm$ nên khối lượng phải là $m=\\dfrac{A_{\\text{tp}}}{q}$, chia chứ không nhân.",
+        "3": "Không thể coi là sai vì $H=\\dfrac{A_{\\text{ích}}}{A_{\\text{tp}}}$ nên $A_{\\text{tp}}=\\dfrac{A_{\\text{ích}}}{H}$."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 3,
+      "question": "Đốt hết $m$ kg xăng có năng suất toả nhiệt $q$ (J/kg), hệ số phát thải $k$ cho trên mỗi kg nhiên liệu. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Đốt $20$ lít xăng thì $m_{\\text{CO}_2}=k\\cdot20$, tức nhân $k$ với số lít.",
+          "answer": false
+        },
+        {
+          "text": "Nhiệt lượng toả ra khi đốt hết là $Q=qm$.",
+          "answer": true
+        },
+        {
+          "text": "Khối lượng CO₂ thải ra là $m_{\\text{CO}_2}=k\\,m$.",
+          "answer": true
+        },
+        {
+          "text": "Năng suất toả nhiệt $q$ có đơn vị J/(kg·K).",
+          "answer": false
+        }
+      ],
+      "explanation": "a) sai: $k$ tính trên mỗi kg nên phải đổi lít ra kg trước. b), c) đúng theo công thức của bài. d) sai: $q$ đo bằng J/kg; J/(kg·K) là đơn vị nhiệt dung riêng.",
+      "distractorNotes": {
+        "0": "Không thể coi là đúng vì $k$ tính trên mỗi kg nên phải đổi lít ra kg (nhân khối lượng riêng) rồi mới nhân với $k$.",
+        "1": "Không thể coi là sai vì đây chính là công thức $Q=qm$ của bài.",
+        "2": "Không thể coi là sai vì CO₂ thải ra tỉ lệ với khối lượng nhiên liệu đốt, theo hệ số $k$.",
+        "3": "Không thể coi là đúng vì J/(kg·K) là đơn vị của nhiệt dung riêng $c$, còn $q$ có đơn vị J/kg."
+      }
+    },
+    {
+      "type": "true_false",
+      "kind": "cong_thuc",
+      "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
+      "form": "ly_thuyet",
+      "difficulty": "trung-binh",
+      "difficultySource": "ai",
+      "theorySection": 4,
+      "question": "Một tuabin gió có tốc độ khởi động, tốc độ định mức và tốc độ ngắt. Xét các phát biểu sau:",
+      "statements": [
+        {
+          "text": "Dưới tốc độ khởi động, tuabin đứng yên và không phát điện.",
+          "answer": true
+        },
+        {
+          "text": "Từ tốc độ định mức tới tốc độ ngắt, công suất vẫn tiếp tục tăng theo $v^3$.",
+          "answer": false
+        },
+        {
+          "text": "Từ tốc độ khởi động tới tốc độ định mức, công suất tăng theo $v^3$.",
+          "answer": true
+        },
+        {
+          "text": "Vượt tốc độ ngắt, tuabin vẫn chạy ở công suất định mức.",
+          "answer": false
+        }
+      ],
+      "explanation": "a) đúng theo ba vùng làm việc. b) sai: vùng này giữ ở công suất định mức. c) đúng theo ba vùng làm việc. d) sai: quá tốc độ ngắt thì dừng để an toàn.",
+      "distractorNotes": {
+        "0": "Không thể coi là sai vì dưới tốc độ khởi động tuabin đứng yên theo vùng làm việc đầu tiên.",
+        "1": "Không thể coi là đúng vì từ tốc độ định mức tới tốc độ ngắt công suất được giữ ở mức định mức.",
+        "2": "Không thể coi là sai vì ở vùng này khối khí qua mỗi giây và động năng mỗi đơn vị khối lượng đều tăng, nên $P\\sim v^3$.",
+        "3": "Không thể coi là đúng vì quá tốc độ ngắt tuabin dừng để an toàn."
+      }
+    }
   ]
- },
- "questions": [
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Phát biểu nào đúng về bảo toàn năng lượng và phần hao phí?",
-   "options": [
-    "Năng lượng hao phí bị mất đi hoàn toàn",
-    "Năng lượng chỉ đổi dạng hoặc truyền đi, phần hao phí thành nhiệt toả ra môi trường",
-    "Năng lượng tự sinh ra thêm khi đổi dạng",
-    "Hiệu suất của máy có thể lớn hơn 1"
-   ],
-   "answer": 1,
-   "explanation": "Năng lượng không tự sinh ra, không tự mất đi; phần hao phí thành nhiệt toả ra môi trường (mục II)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Nguồn nào sau đây không có gốc từ bức xạ Mặt Trời?",
-   "options": [
-    "Gió",
-    "Thuỷ điện",
-    "Thuỷ triều",
-    "Than đá"
-   ],
-   "answer": 2,
-   "explanation": "Thuỷ triều do lực hút của Mặt Trăng, Mặt Trời và sự tự quay của Trái Đất (mục III)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Năng suất toả nhiệt $q$ của nhiên liệu (đơn vị J/kg) là gì?",
-   "options": [
-    "Nhiệt lượng làm 1 kg nhiên liệu nóng thêm $1\\,^\\circ\\text{C}$",
-    "Nhiệt toả ra khi đốt cháy hoàn toàn 1 kg nhiên liệu",
-    "Khối lượng CO₂ thải ra khi đốt 1 kg",
-    "Nhiệt lượng toả ra trong 1 giây"
-   ],
-   "answer": 1,
-   "explanation": "$q$ là nhiệt toả ra khi đốt cháy hết 1 kg nhiên liệu (mục IV)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Hiệu ứng nhà kính làm Trái Đất ấm lên vì:",
-   "options": [
-    "CO₂ chặn ánh sáng Mặt Trời",
-    "CO₂ hấp thụ một phần hồng ngoại từ mặt đất rồi toả lại về mặt đất",
-    "Tầng ozone bị thủng",
-    "Mặt Trời nóng lên"
-   ],
-   "answer": 1,
-   "explanation": "Khí nhà kính cho ánh sáng qua nhưng giữ một phần hồng ngoại và toả lại mặt đất (mục IV)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dinh_nghia",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Quá trình phân hạch là:",
-   "options": [
-    "Hạt nhân nhẹ kết hợp thành hạt nhân nặng hơn",
-    "Hạt nhân nặng hấp thụ nơtron, vỡ thành hai hạt nhân nhẹ hơn và toả năng lượng",
-    "Urani cháy với oxi",
-    "Hạt nhân hiđrô thành heli ở lõi Mặt Trời"
-   ],
-   "answer": 1,
-   "explanation": "Phân hạch là hạt nhân nặng như urani 235 vỡ ra, toả năng lượng lớn (mục VI)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "dieu_kien",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Giờ nắng đỉnh $t_{\\text{đ}}$ ở Việt Nam khoảng bao nhiêu và có nghĩa gì?",
-   "options": [
-    "12 h, là số giờ trời sáng",
-    "4–5 h, là số giờ quy đổi về $I=1000\\ \\text{W/m}^2$",
-    "24 h, là cả ngày đêm",
-    "1 h, là lúc trưa"
-   ],
-   "answer": 1,
-   "explanation": "Giờ nắng đỉnh quy cả ngày về số giờ có $I=1000\\ \\text{W/m}^2$, khoảng 4–5 h (mục V.2)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Máy gồm ba khâu nối tiếp có hiệu suất $H_1,H_2,H_3$. Hiệu suất cả máy là:",
-   "options": [
-    "$H=H_1+H_2+H_3$",
-    "$H=\\dfrac{H_1+H_2+H_3}{3}$",
-    "$H=H_1H_2H_3$",
-    "$H=\\dfrac{1}{H_1H_2H_3}$"
-   ],
-   "answer": 2,
-   "explanation": "Các khâu nối tiếp thì nhân hiệu suất (mục II)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Công suất điện của nhà máy thuỷ điện được tính bằng:",
-   "options": [
-    "$P=H\\,D\\,L\\,h$ với $D=1000\\ \\text{kg/m}^3$",
-    "$P=\\dfrac{d\\,L\\,h}{H}$",
-    "$P=H\\,d\\,L\\,h$ với $d=10\\,000\\ \\text{N/m}^3$",
-    "$P=d\\,L/h$"
-   ],
-   "answer": 2,
-   "explanation": "$P_{\\text{đ}}=H\\,d\\,L\\,h$, trong đó $d=10D$ (mục V.1)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Gió tăng từ $4\\ \\text{m/s}$ lên $8\\ \\text{m/s}$ (dưới tốc độ định mức). Công suất tuabin tăng:",
-   "options": [
-    "2 lần",
-    "4 lần",
-    "8 lần",
-    "16 lần"
-   ],
-   "answer": 2,
-   "explanation": "$P\\sim v^3$ nên tăng $2^3=8$ lần (mục V.3)."
-  },
-  {
-   "type": "multiple_choice",
-   "kind": "bien_doi",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Biết $A_{\\text{ích}}$ và $H$, năng lượng toàn phần là:",
-   "options": [
-    "$A_{\\text{tp}}=A_{\\text{ích}}\\cdot H$",
-    "$A_{\\text{tp}}=A_{\\text{ích}}:H$",
-    "$A_{\\text{tp}}=A_{\\text{ích}}+H$",
-    "$A_{\\text{tp}}=H:A_{\\text{ích}}$"
-   ],
-   "answer": 1,
-   "explanation": "Từ $H=A_{\\text{ích}}/A_{\\text{tp}}$ suy ra $A_{\\text{tp}}=A_{\\text{ích}}:H$ (mục II)."
-  },
-  {
-   "type": "true_false",
-   "kind": "dinh_luat",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Về bảo toàn năng lượng và hiệu suất, xét các ý sau:",
-   "statements": [
-    {
-     "text": "Năng lượng không tự sinh ra, không tự mất đi.",
-     "answer": true
-    },
-    {
-     "text": "Hiệu suất $H=A_{\\text{ích}}/A_{\\text{tp}}$ luôn nhỏ hơn 1.",
-     "answer": true
-    },
-    {
-     "text": "Hao phí là năng lượng biến mất khỏi vũ trụ.",
-     "answer": false
-    },
-    {
-     "text": "Hao phí $A_{\\text{hp}}=(1-H)A_{\\text{tp}}$.",
-     "answer": true
-    }
-   ],
-   "explanation": "Hao phí thành nhiệt toả ra môi trường chứ không mất đi (mục II)."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 2,
-   "question": "Về vòng năng lượng trên Trái Đất:",
-   "statements": [
-    {
-     "text": "Khoảng 30% bức xạ Mặt Trời tới bị phản xạ về vũ trụ.",
-     "answer": true
-    },
-    {
-     "text": "Gió có gốc từ việc mặt đất bị làm nóng không đều.",
-     "answer": true
-    },
-    {
-     "text": "Than đá có gốc từ nhiệt lòng đất.",
-     "answer": false
-    },
-    {
-     "text": "Địa nhiệt, hạt nhân và thuỷ triều không có gốc bức xạ Mặt Trời.",
-     "answer": true
-    }
-   ],
-   "explanation": "Than là năng lượng Mặt Trời tích trữ qua quang hợp (mục III)."
-  },
-  {
-   "type": "true_false",
-   "kind": "hien_tuong",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 5,
-   "question": "Về năng lượng hạt nhân:",
-   "statements": [
-    {
-     "text": "Nhà máy điện hạt nhân có chuỗi: phân hạch → nhiệt → cơ → điện.",
-     "answer": true
-    },
-    {
-     "text": "Điện hạt nhân là nguồn tái tạo.",
-     "answer": false
-    },
-    {
-     "text": "Khi vận hành không thải CO₂.",
-     "answer": true
-    },
-    {
-     "text": "Nhiệt hạch đang dùng phổ biến trong nhà máy điện thương mại.",
-     "answer": false
-    }
-   ],
-   "explanation": "Urani có hạn nên không tái tạo; nhiệt hạch chưa dùng thương mại (mục VI)."
-  },
-  {
-   "type": "true_false",
-   "kind": "cong_thuc",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Về công suất tuabin gió:",
-   "statements": [
-    {
-     "text": "$P_{\\text{gió}}=\\tfrac12 D S v^3$.",
-     "answer": true
-    },
-    {
-     "text": "Từ $v_{\\text{đm}}$ đến $v_{\\text{ngắt}}$, công suất giữ ở định mức.",
-     "answer": true
-    },
-    {
-     "text": "Công suất luôn tỉ lệ với $v^2$.",
-     "answer": false
-    },
-    {
-     "text": "Quá $v_{\\text{ngắt}}$ tuabin dừng để an toàn.",
-     "answer": true
-    }
-   ],
-   "explanation": "Công suất $P\\sim v^3$ chỉ ở vùng dưới định mức (mục V.3)."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Máy có hai khâu nối tiếp, hiệu suất $50\\%$ và $40\\%$. Hiệu suất cả máy bằng bao nhiêu phần trăm?",
-   "answer": "20",
-   "explanation": "$H=0{,}5\\cdot0{,}4=0{,}2=20\\%$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 3,
-   "question": "Đốt hết $10\\ \\text{kg}$ nhiên liệu có hệ số phát thải $k=3{,}2$. Khối lượng CO₂ thải ra bao nhiêu kg?",
-   "answer": "32",
-   "explanation": "$m_{\\text{CO}_2}=k\\,m=3{,}2\\cdot10=32\\ \\text{kg}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "de",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Thuỷ điện có $h=20\\ \\text{m}$, $L=5\\ \\text{m}^3/\\text{s}$, $H=100\\%$, $d=10\\,000\\ \\text{N/m}^3$. Công suất bằng bao nhiêu MW?",
-   "answer": "1",
-   "explanation": "$P=10\\,000\\cdot5\\cdot20=10^6\\ \\text{W}=1\\ \\text{MW}$."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 4,
-   "question": "Gió tăng gấp 3 lần tốc độ (dưới định mức). Công suất tuabin tăng bao nhiêu lần?",
-   "answer": "27",
-   "explanation": "$P\\sim v^3$ nên tăng $3^3=27$ lần."
-  },
-  {
-   "type": "short_answer",
-   "kind": "tinh_nhanh",
-   "topic": "Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái Đất, nhiên liệu và năng lượng tái tạo",
-   "form": "ly_thuyet",
-   "difficulty": "trung-binh",
-   "difficultySource": "ai",
-   "theorySection": 1,
-   "question": "Cần $A_{\\text{ích}}=30\\ \\text{J}$ với $H=30\\%$. Năng lượng toàn phần cần cấp bằng bao nhiêu J?",
-   "answer": "100",
-   "explanation": "$A_{\\text{tp}}=A_{\\text{ích}}:H=30:0{,}3=100\\ \\text{J}$."
-  }
- ]
 }
