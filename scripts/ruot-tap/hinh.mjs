@@ -4,7 +4,13 @@
 // CỠ CHỮ TRONG HÌNH: hình in rộng 40–46 mm, viewBox rộng ~300 đơn vị → 1 đơn vị ≈ 0,15 mm, nên chữ phải ≥ 20 đơn vị mới ra ≈ 3 mm
 // (≈ 8,5 pt, bằng --fs-sm). Lần đầu vẽ chữ 10–11 đơn vị ra 1,5 mm, không đọc được — đừng lặp lại. Nét ≥ 2,5 đơn vị (≈ 0,4 mm).
 // Dùng: `${hinh.laVang()}` trả về <figure class="fig">…</figure>; truyền chú thích riêng: hinh.laVang('chú thích khác').
+// Ảnh raster (scripts/ruot-tap/anh/*.png, cắt từ sách tham khảo — thầy chốt 25/10: tài liệu lưu hành nội bộ, lấy hình đẹp nhất
+// từ Halliday "Fundamentals of Physics 12th", không cần xét giấy phép): hinh.anh('tên.png', 'chú thích tiếng Việt'). Cắt ở 200 dpi,
+// bỏ phần chữ tiếng Anh thừa, ≤150 KB; chú thích dịch các nhãn còn lại.
 // Bài sau thêm hàm mới vào đây, giữ cùng bộ màu/nét; kiểm bằng `node scripts/ruot-tap/xem-hinh.mjs` (chụp từng hình ở cỡ in thật).
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+const ANH = resolve(dirname(fileURLToPath(import.meta.url)), 'anh');
 const INK = '#1c2540', RED = '#b3261e', BLUE = '#1f5fa8', GREY = '#8a94ad';
 const FS = 20; // ≈ 3 mm khi hình rộng 46 mm
 const SW = 2.8;
@@ -23,6 +29,7 @@ const wrap = (vb, body, cap, label) =>
   `<figure class="fig"><svg viewBox="${vb}" role="img" aria-label="${label}">${body}</svg>${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
 
 export const hinh = {
+  anh: (file, cap = '') => `<figure class="fig"><img src="${pathToFileURL(resolve(ANH, file)).href}" alt="${cap}" style="display:block;width:100%;height:auto">${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`,
   // Trang 1 · Dự đoán: chùm alpha gặp lá vàng, ba số phận
   laVang: (cap = 'Chùm hạt alpha bắn vào lá vàng mỏng: ba số phận của hạt.') => {
     let b = defs('al');
