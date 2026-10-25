@@ -23,10 +23,9 @@ const qr2 = qrcode(0, 'M'); qr2.addData('https://thachlab.id.vn/'); qr2.make();
 const qrHome = qr2.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
 // Góc giới thiệu cuối tập (thầy chốt 25/10): bạn mượn tập thấy tò mò muốn biết thầy/web này là gì. Giọng kể, không rao bán;
 // nói đúng thứ HS 14–18 quan tâm (SDT: tự chủ, làm được, có bạn cùng học; Dahl–Steinberg: địa vị bạn cùng lứa → bảng xếp hạng).
-const gioiThieu = `<div class="gt"><div class="qr">${qrHome}</div><div>
-<b>Mượn tập của bạn?</b> Tập này đi cùng bài học trên <b>thachlab.id.vn</b> — lớp Vật lí của thầy Thạch.
-Mỗi bài có lý thuyết kèm thí nghiệm và mô phỏng, tự kiểm tra chấm ngay, bài tập mẫu giải từng bước, đề luyện bám đề thi tốt nghiệp,
-và bảng xếp hạng theo mùa để biết mình đang ở đâu so với bạn bè. Quét mã để xem thử.</div></div>`;
+const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div><small>Bài học này</small></div><div class="gtq"><div class="qr">${qrHome}</div><small>Trang chủ</small></div><div>
+<b>Vật lí thầy Thạch · thachlab.id.vn.</b> Tập này đi cùng bài học trên web: lý thuyết kèm thí nghiệm và mô phỏng, tự kiểm tra chấm
+ngay, bài tập mẫu giải từng bước, đề luyện bám đề thi tốt nghiệp, bảng xếp hạng theo mùa. Mượn tập của bạn thì quét mã trang chủ để xem thử.</div></div>`;
 // Source Sans 3 (OFL, thầy chốt 25/10 để tiết kiệm trang): hẹp hơn Noto Sans ~10%, x-height cao nên hạ cỡ chữ xuống 3,3 mm vẫn dễ đọc;
 // có dấu tiếng Việt. Mỗi tệp con PHẢI có unicode-range, nếu không tệp sau đè tệp trước và chữ in đậm rơi về Helvetica.
 const F = resolve(HERE, 'fonts') + '/source-sans-3-';
@@ -43,9 +42,9 @@ const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
 
 // Nhãn góc phải: mã "trang·ô" trùng nhãn "✍ Tập: trang · ô" khi trình chiếu (data-tap trong theory.src.html).
 const tag = (t) => `<span class="tag">Tập ${t}</span>`;
-const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · ${n}/12</span></div>`;
+const foot = (n) => `<div class="foot"><span></span><span>Bài 14 · ${n}/12</span></div>`;
 // Không Ngày/Tên (các tờ đóng thành sách — thầy chốt 25/10); phụ đề chỉ khi thật cần, thầy tự điều phối nhịp buổi.
-const head = (t, s = '') => `<div class="top"><div><b>${t}</b>${s ? `<small>${s}</small>` : ''}</div><small class="brand">thachlab.id.vn</small></div>`;
+const head = (t, s = '') => `<div class="top"><div><b>${t}</b>${s ? `<small>${s}</small>` : ''}</div></div>`;
 const yn = `<td style="white-space:nowrap;padding:.2mm 1.8mm"><span class="ck"></span>Có &nbsp;<span class="ck"></span>Không</td>`;
 const box = (inner, extra = '') => `<div style="background:#fff;border:.3mm solid var(--grid);border-radius:1.5mm;padding:1mm 3mm;${extra}">${inner}</div>`;
 const rkRow = (i) => `<tr><td><b>${i}</b></td><td></td><td><span class="ck"></span></td><td><span class="ck"></span></td></tr>`;
@@ -85,7 +84,7 @@ body{margin:0;font:400 var(--fs-body)/1.45 BV,KaTeX_Main,KaTeX_AMS,sans-serif;te
 .page>*{position:relative}
 .top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:.5mm solid var(--navy);padding-bottom:1mm;margin-bottom:2mm;background:#fff}
 .top b{display:block;font-weight:700;font-size:var(--fs-h1);color:var(--navy)}.top small{color:var(--hint);font-size:var(--fs-sm)}
-.brand{font-size:var(--fs-sm);color:var(--navy);font-weight:700;white-space:nowrap}
+
 h3{margin:1.8mm 0 1mm;line-height:1.25;font-weight:700;font-size:var(--fs-h3);color:var(--navy);background:#fff;display:inline-block;padding-right:2mm}
 h3 i{font-style:normal;background:var(--navy);color:#fff;border-radius:1mm;padding:.2mm 1.6mm;margin-right:1.5mm;font-size:var(--fs-sm)}
 .card{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:1.6mm 3mm;margin-bottom:1.5mm}
@@ -115,7 +114,8 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .fig-side{display:grid;gap:2.5mm;align-items:start}
 .page.dots{background-image:radial-gradient(circle,#aab4cc .3mm,transparent .35mm);background-size:5mm 5mm;background-position:0 0;background-origin:content-box;background-clip:content-box}
 .nw{white-space:nowrap}
-.gt{position:absolute;left:var(--pl);right:var(--pr);bottom:13mm;display:flex;gap:4mm;align-items:center;background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:2mm 3mm;line-height:1.45}.gt b{color:var(--navy)}
+.gt{position:absolute;left:var(--pl);right:var(--pr);bottom:13mm;display:flex;gap:3mm;align-items:center;background:#fff;border:.25mm solid var(--grid);border-radius:1.5mm;padding:1.6mm 2.5mm;font-size:var(--fs-sm);line-height:1.4;color:var(--hint)}.gt b{color:var(--navy)}
+.gtq{text-align:center;flex:none}.gtq .qr{width:22mm;height:22mm;padding:1.5mm;border:0}.gtq .qr svg{width:19mm;height:19mm}.gtq small{display:block;font-size:var(--fs-sm)}
 .tra{background:#fff;border:.3mm dashed var(--navy);border-radius:1.2mm;padding:.6mm 2mm;font-size:var(--fs-sm);line-height:1.4;margin-bottom:.5mm}
 .chb{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm .4mm;margin-bottom:1.4mm}
 .chh{display:flex;justify-content:space-between;gap:2mm;align-items:center;font-size:var(--fs-sm);line-height:5mm;white-space:nowrap}.chh .ck{width:3.6mm;height:3.6mm;border-radius:.5mm;vertical-align:-.7mm;margin:0 .4mm 0 1mm}
@@ -234,14 +234,14 @@ ${foot(4)}</section>
 <section class="page">
 ${head('BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH')}
 <h3><i>1</i>Đề BTVN</h3>
-<div class="card" style="display:flex;gap:3mm;align-items:flex-start;padding:1.2mm 3mm">
-<div style="flex:1">
+<div class="card" style="padding:1.2mm 3mm">
+<div>
 <div><b>Đề:</b> <span class="fill" style="min-width:52mm"></span> &nbsp;<b>Số câu:</b> <span class="fill" style="min-width:10mm"></span></div>
 <div style="margin-top:.8mm"><b>Làm ở:</b> <span class="ck"></span>thachlab &nbsp;<span class="ck"></span>Azota &nbsp;<span class="ck"></span>giấy &nbsp;· <b>Hạn:</b> ……/……</div>
 ${wl('Ghi chú của thầy về đề:', 2)}
 <div style="margin-top:.8mm"><span class="ck"></span><b>Đã nộp</b> &nbsp;· <b>Điểm:</b> ……/…… &nbsp;· <b>Câu sai:</b> <span class="fill" style="min-width:34mm"></span></div>
 </div>
-<div style="width:29mm;flex:none"><div class="qr">${qrSvg}</div><div class="hint" style="margin-top:.6mm;line-height:1.3">Bài học này trên web</div></div></div>
+</div>
 <h3><i>2</i>VI · Mang về: điều em dễ quên nhất</h3>${tag('5')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 <h3><i>3</i>Thử thách phân tầng</h3>
