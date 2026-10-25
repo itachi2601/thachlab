@@ -8,17 +8,18 @@ import { execSync } from "node:child_process";
 const L = fs.readFileSync(".env.local", "utf8").split("\n");
 const env = (k: string) => L.find((l) => l.startsWith(k + "="))!.slice(k.length + 1).trim();
 const U = env("NEXT_PUBLIC_SUPABASE_URL"), K = env("SUPABASE_SERVICE_ROLE_KEY");
+const GRADE = process.env.VL_GRADE ?? "10"; // VL12: VL_GRADE=12 VL_TOPICS=<file chu-de>
 const DIR = (process.env.VL10_DIR ?? "scripts/data/nap-ngan-hang-vl10") + "/", NOTE = process.env.VL10_NOTE ?? "nap-vl10-c3-20261020";
 const cau: any[] = JSON.parse(fs.readFileSync(DIR + "cau-final.json", "utf8"));
 const nhan: Record<string, any> = JSON.parse(fs.readFileSync(DIR + "gan-nhan.json", "utf8"));
-const topics: any[] = JSON.parse(fs.readFileSync("scripts/data/nap-ngan-hang-vl10/chu-de-lop10.json", "utf8")).topics;
+const topics: any[] = JSON.parse(fs.readFileSync(process.env.VL_TOPICS ?? "scripts/data/nap-ngan-hang-vl10/chu-de-lop10.json", "utf8")).topics;
 const rest = async (p: string, range?: string) => (await fetch(`${U}/rest/v1/${p}`, { headers: { apikey: K, Authorization: `Bearer ${K}`, ...(range ? { Range: range } : {}) } })).json();
 const norm = (s: string) => s.replace(/<[^>]+>/g, "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").toLowerCase().replace(/[^a-z0-9]+/g, "");
 const sig = (q: any) => norm(String(q.question ?? "")).slice(0, 80) + "|" + norm((q.options ?? (q.statements ?? []).map((s: any) => s.text)).join("")).slice(0, 80);
 
 // ngân hàng lớp 10 hiện có (đề + phương án) để so trùng
 const bank: any[] = [];
-for (let o = 0; ; o += 500) { const r = await rest("question_bank?grade=eq.10&select=id,question&order=id", `${o}-${o + 499}`); if (!Array.isArray(r)) throw new Error(JSON.stringify(r)); bank.push(...r); if (r.length < 500) break; }
+for (let o = 0; ; o += 500) { const r = await rest(`question_bank?grade=eq.${GRADE}&select=id,question&order=id`, `${o}-${o + 499}`); if (!Array.isArray(r)) throw new Error(JSON.stringify(r)); bank.push(...r); if (r.length < 500) break; }
 const have = new Map(bank.map((b) => [sig(b.question), b.id]));
 const rows: any[] = [], trung: any[] = [], thieu: string[] = [];
 for (const q of cau) {
@@ -37,7 +38,7 @@ const sql: string[] = ["begin;", "create temp table _truoc as select count(*) n 
 for (let i = 0; i < rows.length; i += 40) {
   const vals = rows.slice(i, i + 40).map((r) => `($q$${JSON.stringify(r.jq)}$q$::jsonb, ${r.t.id}, $q$${r.t.name}$q$)`).join(",\n");
   sql.push(`insert into public.question_bank (subject_code, grade, topic_id, topic_name, form, qtype, difficulty, difficulty_source, question, content_hash, archived, note)
-select 'vat-ly', '10', v.tid, v.tname, 'bai_tap', v.q->>'type', v.q->>'difficulty', 'ai', v.q, public.question_content_hash(v.q), true, '${NOTE}'
+select 'vat-ly', '${GRADE}', v.tid, v.tname, 'bai_tap', v.q->>'type', v.q->>'difficulty', 'ai', v.q, public.question_content_hash(v.q), true, '${NOTE}'
 from (values ${vals}) as v(q, tid, tname)
 where not exists (select 1 from public.question_bank b where b.content_hash = public.question_content_hash(v.q));`);
 }

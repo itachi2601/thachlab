@@ -1,0 +1,2706 @@
+[
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 1,
+  "flags": [],
+  "stem": "Bạn An lấy một viên đá lạnh nhỏ ở trong tủ lạnh rồi bỏ lên chiếc đĩa. Khoảng một giờ sau, bạn An không thấy viên đá lạnh đâu nữa mà thấy nước trải đều trên mặt đĩa. Bạn An để luôn vậy và ra làm rau cùng mẹ. Đến trưa, bạn đến lấy chiếc đĩa ra để rửa thì không còn thấy nước.",
+  "statements": [
+   [
+    "a",
+    "Nước chỉ tồn tại ở thể rắn",
+    "S"
+   ],
+   [
+    "b",
+    "Nước loang đều trên mặt đĩa vì các hạt liên kết lỏng lẻo nên nó trượt đều ra",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nước đã bốc hơi mất nên không còn trên đĩa nữa",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nếu để một cốc có chứa đá lạnh bên trong, sau một thời gian thấy có nước ở bên ngoài cốc là do nước từ trong cốc chui ra ngoài",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 2,
+  "flags": [],
+  "stem": "Hình vẽ đường biểu diễn sự thay đổi nhiệt độ của nước theo thời gian đun.",
+  "statements": [
+   [
+    "a",
+    "Từ phút 0 đến phút thứ 5 nước ở thể rắn",
+    "Đ"
+   ],
+   [
+    "b",
+    "Từ phút thứ 5 đến phút thứ 10 xảy ra quá trình nóng chảy",
+    "Đ"
+   ],
+   [
+    "c",
+    "Từ phút thứ 10 đến phút thứ 25 nước ở thể rắn",
+    "S"
+   ],
+   [
+    "d",
+    "Từ phút thứ 25 đến phút thứ 30 xảy ra quá trình sôi",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Cho bảng:\n\n<table style=\"width:91%;\">\n<colgroup>\n<col style=\"width: 16%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n</colgroup>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><blockquote>\n<p>Chất</p>\n</blockquote></th>\n<th style=\"text-align: center;\">Nhôm</th>\n<th style=\"text-align: center;\">Nước đá</th>\n<th style=\"text-align: center;\">Rượu</th>\n<th style=\"text-align: center;\">Sắt</th>\n<th style=\"text-align: center;\">Đồng</th>\n<th style=\"text-align: center;\"><blockquote>\n<p>Thủy</p>\n<p>ngân</p>\n</blockquote></th>\n<th style=\"text-align: center;\">Muối ăn</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Nhiệt độ nóng</p>\n<p>chảy (<sup>o</sup>C)</p>\n</blockquote></td>\n<td style=\"text-align: center;\">660</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\">−117</td>\n<td style=\"text-align: center;\">1535</td>\n<td style=\"text-align: center;\">1083</td>\n<td style=\"text-align: center;\"><blockquote>\n<p>−39</p>\n</blockquote></td>\n<td style=\"text-align: center;\">801</td>\n</tr>\n</tbody>\n</table>",
+  "statements": [
+   [
+    "a",
+    "Chất có nhiệt độ nóng chảy cao nhất là rượu",
+    "S"
+   ],
+   [
+    "b",
+    "Chất có nhiệt độ nóng chảy thấp nhất thủy ngân",
+    "S"
+   ],
+   [
+    "c",
+    "Có thể dùng nhiệt kế rượu để đo những nhiệt độ thấp tới −50^∘^C.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Có thể dùng nhiệt kế thuỷ ngân để đo những nhiệt độ thấp tới −50^∘^C.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Bảng dưới đây ghi nhiệt độ nóng chảy và nhiệt độ sôi của một số chất được xếp theo thứ tự vần chữ cái.\n\n<table style=\"width:90%;\">\n<colgroup>\n<col style=\"width: 30%\" />\n<col style=\"width: 29%\" />\n<col style=\"width: 29%\" />\n</colgroup>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><blockquote>\n<p>Chất</p>\n</blockquote></th>\n<th style=\"text-align: center;\"><blockquote>\n<p>Nhiệt độ nóng chảy</p>\n</blockquote></th>\n<th style=\"text-align: center;\">Nhiệt độ sôi</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Chì</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>327<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\">1613<sup>∘</sup>C</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Nước</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>0<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\">100<sup>∘</sup>C</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Oxi</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>−219<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\">−183<sup>∘</sup>C</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Rượu</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>−117<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\">78<sup>∘</sup>C</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Thủy ngân</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>−39<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\">357<sup>∘</sup>C</td>\n</tr>\n</tbody>\n</table>",
+  "statements": [
+   [
+    "a",
+    "Chất có nhiệt độ sôi cao nhất là chì",
+    "Đ"
+   ],
+   [
+    "b",
+    "Chất có nhiệt độ nóng chảy thấp nhất là nước",
+    "S"
+   ],
+   [
+    "c",
+    "Ở nhiệt độ 25^𝑜^C thì chì ở thể rắn",
+    "Đ"
+   ],
+   [
+    "d",
+    "Ở nhiệt độ 25^𝑜^C thì oxi ở thể khí",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Bảng dưới đây nêu ra một số đặc điểm cấu trúc của chất rắn, chất lỏng và chất khí theo mô hình động học phân tử. Điền vào chỗ còn thiếu trong bảng cho phù hợp.\n\n<table style=\"width:90%;\">\n<colgroup>\n<col style=\"width: 27%\" />\n<col style=\"width: 12%\" />\n<col style=\"width: 27%\" />\n<col style=\"width: 22%\" />\n</colgroup>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><blockquote>\n<p><strong>Đặc điểm</strong></p>\n</blockquote></th>\n<th style=\"text-align: center;\"><strong>Chất rắn</strong></th>\n<th style=\"text-align: center;\"><blockquote>\n<p><strong>Chất lỏng</strong></p>\n</blockquote></th>\n<th style=\"text-align: center;\"><strong>Chất khí</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p><strong>Khoảng cách giữa các</strong></p>\n<p><strong>phân tử</strong></p>\n</blockquote></td>\n<td style=\"text-align: center;\">? (1)</td>\n<td style=\"text-align: center;\"><blockquote>\n<p>xa hơn khoảng cách giữa</p>\n<p>các phân tử chất rắn</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><p>rất lớn so với kích</p>\n<p>thước phân tử</p></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p><strong>Liên kết giữa các phân tử</strong></p>\n</blockquote></td>\n<td style=\"text-align: center;\">rất mạnh</td>\n<td style=\"text-align: center;\"><blockquote>\n<p>? (2)</p>\n</blockquote></td>\n<td style=\"text-align: center;\">rất yếu</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p><strong>Chuyển động phân tử</strong></p>\n</blockquote></td>\n<td style=\"text-align: center;\">? (3)</td>\n<td style=\"text-align: center;\"><blockquote>\n<p>dao động quanh vị trí cân bằng có thể di chuyển</p>\n</blockquote></td>\n<td style=\"text-align: center;\">? (4)</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p><strong>Hình dạng</strong></p>\n</blockquote></td>\n<td style=\"text-align: center;\">? (5)</td>\n<td style=\"text-align: center;\"><blockquote>\n<p>phụ thuộc bình chứa</p>\n</blockquote></td>\n<td style=\"text-align: center;\">? (6)</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p><strong>Thể tích</strong></p>\n</blockquote></td>\n<td style=\"text-align: center;\">xác định</td>\n<td style=\"text-align: center;\"><blockquote>\n<p>? (7)</p>\n</blockquote></td>\n<td style=\"text-align: center;\">phụ thuộc bình chứa</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p><strong>Sắp xếp của các phân tử</strong></p>\n</blockquote></td>\n<td style=\"text-align: center;\">? (8)</td>\n<td style=\"text-align: center;\"><blockquote>\n<p>kém trật tự</p>\n</blockquote></td>\n<td style=\"text-align: center;\">không có trật tự</td>\n</tr>\n</tbody>\n</table>",
+  "statements": [
+   [
+    "a",
+    "(1) rất gần nhau (cỡ kích thước phân tử); (2) lớn hơn ở thể khí và nhỏ hơn ở thể rắn.",
+    "Đ"
+   ],
+   [
+    "b",
+    "(3) dao động quanh vị trí cân bằng cố định; (4) hỗn loạn.",
+    "Đ"
+   ],
+   [
+    "c",
+    "(5) xác định; (6) phụ thuộc bình chứa.",
+    "Đ"
+   ],
+   [
+    "d",
+    "(7) không xác định; (8) trật tự.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 2,
+  "flags": [],
+  "stem": "Mô hình động học phân tử có thể dùng để giải thích cấu trúc của các chất rắn, chất lỏng và chất khí. Các chất được cấu tạo từ các nguyên tử, phân tử và chúng chuyển động không ngừng. Sự sắp xếp và tương tác khác nhau giữa các nguyên tử, phân tử sẽ tạo nên các tính chất khác nhau cho chất rắn, chất lỏng, chất khí.",
+  "statements": [
+   [
+    "a",
+    "Các chất rắn có hình dạng và thể tích xác định vì các phân tử cấu tạo nên nó đứng yên tại chỗ.",
+    "S"
+   ],
+   [
+    "b",
+    "Các chất khí dễ nén hơn các chất lỏng vì khoảng cách trung bình giữa các phân tử chất khí lớn hơn khoảng cách trung bình giữa các phân tử chất lỏng.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Chất lỏng không có hình dạng xác định vì các phân tử dao động quanh những vị trí cân bằng có thể di chuyển được.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Tất cả các chất rắn đều có cấu trúc tinh thể nên có hình dạng xác định.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 3,
+  "flags": [],
+  "stem": "Theo mô hình động học phân tử thì các phân tử cấu tạo nên các vật có sự tương tác với nhau. Sự khác biệt về độ lớn của lực tương tác giữa các phân tử trong chất rắn, chất lỏng, chất khí dẫn đến sự khác nhau về cấu trúc của chúng.",
+  "statements": [
+   [
+    "a",
+    "Lực tương tác giữa các phân tử chất rắn mạnh hơn lực tương tác giữa các phân tử chất khí.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Lực tương tác giữa các phân tử chất rắn rất mạnh nên giữ các phân tử chỉ dao động quanh các vị trí cân bằng cố định, vì vậy chất rắn có hình dạng xác định.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Các phân tử chất lỏng tương tác với nhau rất yếu nên các phân tử chất lỏng có thể chuyển động tự do ra xa nhau, vì vậy chất lỏng không có hình dạng xác định.",
+    "S"
+   ],
+   [
+    "d",
+    "Các chất khí có khoảng cách giữa các phân tử rất lớn so với kích thước của chúng nên lực tương tác giữa các phân tử gần như không đáng kể.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 4,
+  "flags": [],
+  "stem": "Chất rắn kết tinh là chất rắn có cấu trúc tinh thể xác định, ngược lại chất rắn vô định hình không có cấu trúc tinh thể xác định. Điều này dẫn đến một số điểm khác nhau về tính chất giữa chúng.",
+  "statements": [
+   [
+    "a",
+    "Chất rắn kết tinh có nhiệt độ nóng chảy xác định, chất rắn vô định hình không có nhiệt độ nóng chảy xác định.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Chất rắn kết tinh có cấu trúc tinh thể nên cứng hơn chất rắn vô định hình.",
+    "S"
+   ],
+   [
+    "c",
+    "Các phân tử trong chất rắn vô định hình không có lực tương tác với nhau nên chất rắn vô định hình không có hình dạng xác định.",
+    "S"
+   ],
+   [
+    "d",
+    "Khi ta đập vỡ một chất rắn kết tinh thành các mảnh vụn, các mảnh vụn này sẽ không còn cấu trúc tinh thể.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 5,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Bảng dưới đây ghi nhiệt độ nóng chảy và nhiệt độ sôi của một số chất được xếp theo thứ tự vần chữ cái.\n\n<table style=\"width:90%;\">\n<colgroup>\n<col style=\"width: 30%\" />\n<col style=\"width: 29%\" />\n<col style=\"width: 29%\" />\n</colgroup>\n<thead>\n<tr>\n<th style=\"text-align: center;\"><blockquote>\n<p>Chất</p>\n</blockquote></th>\n<th style=\"text-align: center;\"><blockquote>\n<p>Nhiệt độ nóng chảy</p>\n</blockquote></th>\n<th style=\"text-align: center;\"><blockquote>\n<p>Nhiệt độ sôi</p>\n</blockquote></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Chì</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>327<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>1613<sup>∘</sup>C</p>\n</blockquote></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Nước</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>0<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>100<sup>∘</sup>C</p>\n</blockquote></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Oxi</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>−219<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>−183<sup>∘</sup>C</p>\n</blockquote></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Rượu</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>−117<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>78<sup>∘</sup>C</p>\n</blockquote></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><blockquote>\n<p>Thủy ngân</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>−39<sup>∘</sup>C</p>\n</blockquote></td>\n<td style=\"text-align: center;\"><blockquote>\n<p>357<sup>∘</sup>C</p>\n</blockquote></td>\n</tr>\n</tbody>\n</table>",
+  "statements": [
+   [
+    "a",
+    "Chất có nhiệt độ sôi cao nhất là chì",
+    "Đ"
+   ],
+   [
+    "b",
+    "Chất có nhiệt độ nóng chảy thấp nhất là nước",
+    "S"
+   ],
+   [
+    "c",
+    "Ở nhiệt độ 25^𝑜^C thì chì ở thể rắn",
+    "Đ"
+   ],
+   [
+    "d",
+    "Ở nhiệt độ 25^𝑜^C thì oxi ở thể khí",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 6,
+  "flags": [],
+  "stem": "Sự hóa hơi chỉ xảy ra trên bề mặt chất lỏng gọi là sự bay hơi. Sự bay hơi xảy ra ở nhiệt độ bất kỳ. Tốc độ bay hơi của chất lỏng càng nhanh nếu",
+  "statements": [
+   [
+    "a",
+    "diện tích mặt thoáng càng lớn.",
+    "Đ"
+   ],
+   [
+    "b",
+    "tốc độ gió càng lớn.",
+    "Đ"
+   ],
+   [
+    "c",
+    "nhiệt độ càng cao",
+    "Đ"
+   ],
+   [
+    "d",
+    "độ ẩm không khí càng cao.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 7,
+  "flags": [],
+  "stem": "Máy thủy lực là một thiết bị quan trọng trong ngành xây dựng, kỹ thuật ôtô. Bên trong máy thủy lực người ta dùng một chất lỏng (dầu thủy lực). Khi ta tác dụng một lực f lên pittông nhỏ có diện tích s, lực này gây ra áp suất p = f/s và được truyền nguyên vẹn đến pittông lớn có diện tích S và gây ra lực nâng F.",
+  "statements": [
+   [
+    "a",
+    "Có thể thay thế chất lỏng trong máy thủy lực bằng chất khí.",
+    "S"
+   ],
+   [
+    "b",
+    "Người ta sử dụng dầu thủy lực vì dầu thủy lực có đặc tính rất khó bị nén.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nếu chúng ta nén với lực f rất lớn, các phân tử chất lỏng trong máy thủy lực càng bị nén chặt và có thể chuyển sang thể rắn",
+    "S"
+   ],
+   [
+    "d",
+    "Giả sử pittông lớn có diện tích gấp 50 lần pittông nhỏ. Khi đó, nếu muốn nâng một xe có khối lượng 1500 kg thì cần tác dụng lên pittông nhỏ một lực 30 N",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 8,
+  "flags": [],
+  "stem": "Bạn An lấy một viên đá lạnh nhỏ ở trong tủ lạnh rồi bỏ lên chiếc đĩa. Khoảng một giờ sau, bạn An không thấy viên đá lạnh đâu nữa mà thấy nước trải đều trên mặt đĩa. Bạn An để luôn vậy và ra làm rau cùng mẹ. Đến trưa, bạn đến lấy chiếc đĩa ra để rửa thì không còn thấy nước.",
+  "statements": [
+   [
+    "a",
+    "Nước chỉ tồn tại ở thể rắn",
+    "S"
+   ],
+   [
+    "b",
+    "Nước loang đều trên mặt đĩa vì các hạt liên kết lỏng lẻo nên nó trượt đều ra",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nước đã bốc hơi mất nên không còn trên đĩa nữa",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nếu để một cốc có chứa đá lạnh bên trong, sau một thời gian thấy có nước ở bên ngoài cốc là do nước từ trong cốc chui ra ngoài",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 9,
+  "flags": [],
+  "stem": "Nước có vai trò rất quan trọng trong cuộc sống. Sự biến đổi các trạng thái của nước tạo nên một vòng tuần hoàn được gọi là vòng tuần hoàn của nước. Hình bên mô tả một cách đơn giản vòng tuần hoàn của nước.",
+  "statements": [
+   [
+    "a",
+    "Trong vòng tuần hoàn của nước như hình bên, quá trình A\n\nlà sự bay hơi của các phân tử nước ở bề mặt sông, hồ,…",
+    "Đ"
+   ],
+   [
+    "b",
+    "Trong quá trình B, nước đã chuyển từ thể khí sang thể lỏng.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Trong sự chuyển thể ở quá trình B, hơi nước đã phải hấp thu một lượng nhiệt lớn từ không khí.",
+    "S"
+   ],
+   [
+    "d",
+    "Năng lượng cung cấp cho nước thực hiện quá trình hóa hơi chủ yếu được cung cấp từ Mặt Trời.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 10,
+  "flags": [],
+  "stem": "Để tạo ra các loại rượu truyền thống đặc trưng của Việt Nam, các cơ sở sản suất rượu đã thực hiện nhiều công đoạn. Trong các công đoạn đó có một công đoạn rất quan trọng là quá trình chưng cất rượu. Quá trình chưng cất được thể hiện đơn giản bằng sơ đồ như hình bên.",
+  "statements": [
+   [
+    "a",
+    "Ở bồn A hỗn hợp nguyên liệu lỏng được cung cấp nhiệt lượng để tạo hơi rượu.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Ở bồn B diễn ra quá trình hơi rượu ngưng tụ thành rượu dưới dạng lỏng.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nước làm mát ở bồn B có tác dụng cung cấp nhiệt lượng cho quá trình ngưng tụ của hơi rượu.",
+    "S"
+   ],
+   [
+    "d",
+    "Thực ra trong hỗn hợp hơi vừa có hơi rượu vừa có hơi nước.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 11,
+  "flags": [],
+  "stem": "Khi tiến hành đun nước ở áp suất tiêu chuẩn đến nhiệt độ 100^∘^C thì người ta thấy nước sẽ sôi.",
+  "statements": [
+   [
+    "a",
+    "Nếu tiếp tục đun thêm thì nhiệt độ của nước sẽ tăng thêm.",
+    "S"
+   ],
+   [
+    "b",
+    "Trong quá trình nước sôi có sự hóa hơi ở mặt thoáng và trong lòng chất lỏng.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Các bọt khí nổi lên trong lòng chất lỏng là do sự phân tách khí hiđrô và oxy có trong nước.",
+    "S"
+   ],
+   [
+    "d",
+    "Nhiệt lượng nước nhận thêm trong quá trình nước đang sôi dùng để phá vỡ liên kết giữa các phân tử và được gọi là “ẩn nhiệt hóa hơi\".",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 12,
+  "flags": [],
+  "stem": "Hình bên là đồ thị phác họa sự thay đổi nhiệt độ theo thời gian trong quá trình chuyển từ thể rắn sang thể lỏng của chất rắn kết tinh và chất rắn vô định hình.",
+  "statements": [
+   [
+    "a",
+    "Đường nét liền mô tả quá trình chuyển thể của chất rắn vô định hình.",
+    "S"
+   ],
+   [
+    "b",
+    "Đường nét đứt mô tả quá trình chuyển thể của chất rắn kết tinh.",
+    "S"
+   ],
+   [
+    "c",
+    "Nhiệt độ nóng chảy của chất rắn kết tinh là 232^∘^C",
+    "Đ"
+   ],
+   [
+    "d",
+    "Chất rắn vô định hình có nhiệt độ nóng chảy cao hơn chất rắn kết tinh.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 13,
+  "flags": [],
+  "stem": "Đồ thị biểu diễn sự thay đổi nhiệt độ theo thời gian của nước đá như hình vẽ bên",
+  "statements": [
+   [
+    "a",
+    "Từ phút thứ 6 đến phút thứ 10 nhiệt độ của nước đá không thay đổi ở 0^∘^C",
+    "Đ"
+   ],
+   [
+    "b",
+    "Từ phút thứ 6 đến phút thứ 10 là thời gian nước đá nóng chảy.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Sau phút thứ 10 thì nước đá đã tan chảy hết",
+    "Đ"
+   ],
+   [
+    "d",
+    "Từ phút thứ 0 đến phút thứ 6 nước đá nhận nhiệt để tăng nhiệt độ đến 0^∘^C đồng thời chuyển dần sang thể lỏng",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 14,
+  "flags": [],
+  "stem": "Hình vẽ đường biểu diễn sự thay đổi nhiệt độ của nước theo thời gian đun.",
+  "statements": [
+   [
+    "a",
+    "Từ phút 0 đến phút thứ 5 nước ở thể rắn",
+    "Đ"
+   ],
+   [
+    "b",
+    "Từ phút thứ 5 đến phút thứ 10 xảy ra quá trình nóng chảy",
+    "Đ"
+   ],
+   [
+    "c",
+    "Từ phút thứ 10 đến phút thứ 25 nước ở thể rắn",
+    "S"
+   ],
+   [
+    "d",
+    "Từ phút thứ 25 đến phút thứ 30 xảy ra quá trình sôi",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 15,
+  "flags": [],
+  "stem": "Hình bên là đồ thị minh họa sự thay đổi nhiệt độ của một khối nước đá theo thời gian khi nhận nhiệt và chuyển các thể.",
+  "statements": [
+   [
+    "a",
+    "Đoạn AB trên đồ thị thể hiện quá trình nóng chảy của nước đá.",
+    "S"
+   ],
+   [
+    "b",
+    "Đoạn BC trên đồ thị cho thấy khối nước đá không nhận thêm nhiệt lượng từ bên ngoài.",
+    "S"
+   ],
+   [
+    "c",
+    "Đoạn CD trên đồ thị là giai đoạn nước đang ở thể lỏng.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Đoạn DE trên đồ thị là giai đoạn hóa hơi của nước.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 16,
+  "flags": [],
+  "stem": "Khi tiến hành đun một khối nước đá, một học sinh ghi lại được đồ thị sự phụ thuộc của nhiệt độ theo thời gian (từ lúc bắt đầu đun τ = 0) như hình bên.",
+  "statements": [
+   [
+    "a",
+    "Đồ thị hình bên mô tả quá trình chuyển từ thể rắn sang thể lỏng và từ thể lỏng sang thể khí của chất.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Trên đoạn OA, khối nước đá không tăng nhiệt độ vì vậy nó không nhận nhiệt lượng từ nguồn nhiệt đun nước.",
+    "S"
+   ],
+   [
+    "c",
+    "Trên đoạn AB, xảy ra quá trình tan chảy của nước đá.",
+    "S"
+   ],
+   [
+    "d",
+    "Trên đoạn BC là giai đoạn nước ở thể hơi.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 17,
+  "flags": [],
+  "stem": "Người ta dùng lò nấu chảy kim loại để nấu chảy sắt. Hình bên là đồ thị ghi lại sự thay đổi nhiệt độ của sắt theo thời gian.",
+  "statements": [
+   [
+    "a",
+    "Kể từ thời điểm ban đầu đến phút thứ 50, sắt vẫn ở thể rắn.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt độ nóng chảy của sắt là 1530^∘^C",
+    "Đ"
+   ],
+   [
+    "c",
+    "Từ phút thứ 50 đến phút thứ 70 là giai đoạn chuyển từ thể rắn sang thể lỏng.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Đoạn CD trên đồ thị thể hiện quá trình sôi của sắt.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 18,
+  "flags": [],
+  "stem": "Đồ thị bên cho biết nhiệt độ của một mẫu chất rắn khi nó được làm nóng đều đặn. Mỗi phát biểu sau đây là đúng hay sai?",
+  "statements": [
+   [
+    "a",
+    "Ứng với đoạn A trên đồ thị, chất ở thể rắn.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Chất được làm nóng là chất rắn kết tinh và đoạn B trên đồ thị ứng với quá trình nóng chảy của chất.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Ứng với đoạn C trên đồ thị, chất ở thể khí và có nhiệt độ tăng dần.",
+    "S"
+   ],
+   [
+    "d",
+    "Ứng với đoạn D trên đồ thị, chất vừa ở thể lỏng vừa ở thể khí (hơi).",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 19,
+  "flags": [],
+  "stem": "Đồ thị hình vẽ sau biểu diễn sự phụ thuộc nhiệt độ sôi của nước vào độ cao so với mặt biển, căn cứ vào số liệu trên hình vẽ, hãy chọn câu trả lời đúng",
+  "statements": [
+   [
+    "a",
+    "Càng lên cao, nhiệt độ sôi của nước càng tăng",
+    "S"
+   ],
+   [
+    "b",
+    "Ở độ cao 3000 m thì nhiệt độ sôi của nước là 90^o^C",
+    "Đ"
+   ],
+   [
+    "c",
+    "Ở độ cao mặt nước biển, nhiệt độ sôi của nước là 80^o^C",
+    "S"
+   ],
+   [
+    "d",
+    "Ở độ cao 6000 m, nhiệt độ sôi của nước là 100^o^C",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Bảng sau đây ghi sự thay đổi nhiệt độ của không khí theo thời gian dựa trên số liệu của một trạm khí tượng ở Hà Nội ghi được vào một ngày mùa đông.\n\n<table style=\"width:91%;\">\n<colgroup>\n<col style=\"width: 16%\" />\n<col style=\"width: 9%\" />\n<col style=\"width: 9%\" />\n<col style=\"width: 9%\" />\n<col style=\"width: 9%\" />\n<col style=\"width: 9%\" />\n<col style=\"width: 9%\" />\n<col style=\"width: 9%\" />\n<col style=\"width: 9%\" />\n</colgroup>\n<thead>\n<tr>\n<th><blockquote>\n<p>Thời gian (giờ)</p>\n</blockquote></th>\n<th>1</th>\n<th>4</th>\n<th>7</th>\n<th>10</th>\n<th>13</th>\n<th>16</th>\n<th>19</th>\n<th>22</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Nhiệt độ ( <sup>0</sup>C)</td>\n<td>13</td>\n<td>13</td>\n<td>13</td>\n<td>18</td>\n<td>18</td>\n<td>20</td>\n<td>17</td>\n<td>12</td>\n</tr>\n</tbody>\n</table>",
+  "statements": [
+   [
+    "a",
+    "Nhiệt độ lúc 4 giờ là 13^o^C",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt độ thấp nhất trong ngày là vào lúc 1 giờ",
+    "S"
+   ],
+   [
+    "c",
+    "Nhiệt độ cao nhất trong ngày là vào lúc 16 giờ",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ chênh nhiệt độ trong ngày là 6^o^C",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Chuẩn bị ba cốc: cốc a đựng nước lạnh, cốc b đựng nước nguội và cốc c đựng nước ấm. Nhúng ngón tay trỏ phải vào cốc a, nhúng ngón tay trỏ trái vào cốc c. Sau một lúc, rút các ngón tay ra rồi cùng nhúng vào cốc b\n\n> ![A different colored mugs with fingers pointing at them Description automatically generated](scripts/data/nap-ngan-hang-vl12/c1/media/media/image147.jpeg){width=\"2.1033781714785653in\" height=\"1.5734372265966754in\"} ![A different colored mugs with fingers pointing at them Description automatically generated](scripts/data/nap-ngan-hang-vl12/c1/media/media/image148.jpeg){width=\"2.120686789151356in\" height=\"1.5524989063867016in\"}",
+  "statements": [
+   [
+    "a",
+    "Ngón tay trỏ phải khi nhúng vào cốc a cảm thấy lạnh.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Ngón tay trỏ trái khi nhúng vào cốc c cảm thấy nóng.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Khi rút hai ngón tay ra và cùng nhúng vào cốc b, hai ngón tay có cảm giác giống nhau.",
+    "S"
+   ],
+   [
+    "d",
+    "Cốc a có nhiệt độ cao nhất, cốc c có nhiệt độ thấp nhất.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl12/c1/media/media/image147.jpeg",
+   "scripts/data/nap-ngan-hang-vl12/c1/media/media/image148.jpeg"
+  ]
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 3,
+  "flags": [],
+  "stem": "Nước là một chất rất quan trọng trong nhiều ngành khoa học và trong đời sống. 70% diện tích bền mặt trái đất được nước che phủ nhưng chỉ 0,3% lượng nước trên trái đất nằm trong các nguồn có thể khai thác dùng làm nước uống. Nhiệt độ nóng chảy và nhiệt độ sôi của\n\nnước đã được Anders Celsius dùng làm hai điểm mốc cho độ bách phân Celsius. Cụ thể, nhiệt độ đóng băng của nước là 0 độ Celsius, còn nhiệt độ sôi bằng 100 độ Celsius. Nước đóng băng gọi là nước đá. Nước đã hóa hơi gọi là hơi nước. Nước có tính chất là với nhiệt độ dưới 4^∘^C, nước lại lạnh nở, nóng co. Điều này không được quan sát ở bất kì chất nào khác.",
+  "statements": [
+   [
+    "a",
+    "Nhiệt độ đông đặc của nước là 0^0^C",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt độ sôi của nước là 100^∘^C",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nhiệt độ đóng băng và nhiệt độ sôi của nước ứng với thang nhiệt độ Fahrenheit có giá trị lần lượt là 32^∘^F và 273^∘^F",
+    "S"
+   ],
+   [
+    "d",
+    "Người ta có thể dùng nước để chế tạo nhiệt kế",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Bảng dưới đây ghi tên các loại nhiệt kế và nhiệt độ ghi trên thang đo của chúng.\n\n![A group of objects with text Description automatically generated](scripts/data/nap-ngan-hang-vl12/c1/media/media/image150.jpeg){width=\"6.379515529308836in\" height=\"1.8673950131233596in\"}",
+  "statements": [
+   [
+    "a",
+    "Dùng nhiệt kế kim loại để đo nhiệt độ của bàn là",
+    "Đ"
+   ],
+   [
+    "b",
+    "Dùng nhiệt kế y tế để đo nhiệt độ của cơ thể người",
+    "S"
+   ],
+   [
+    "c",
+    "Dùng nhiệt kế thủy ngân để đo nhiệt độ của nước đang sôi",
+    "Đ"
+   ],
+   [
+    "d",
+    "Dùng nhiệt kế rượu để đo nhiệt độ của không khí trong phòng",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl12/c1/media/media/image150.jpeg"
+  ]
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 5,
+  "flags": [],
+  "stem": "Hình vẽ bên là một nhiệt kế",
+  "statements": [
+   [
+    "a",
+    "Giới hạn đo là 50^∘^C",
+    "Đ"
+   ],
+   [
+    "b",
+    "Độ chia nhỏ nhất là 1^𝑜^C",
+    "S"
+   ],
+   [
+    "c",
+    "Dùng nhiệt kế có thể đo được nhiệt độ nước sông đang chảy",
+    "Đ"
+   ],
+   [
+    "d",
+    "Dùng nhiệt kế có thể đo được nước đang sôi",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 6,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Hình bên là \"giản đồ chuyển thể nhiệt độ/áp suất của nước được đơn giản hoá\". Trong các phát biểu sau đây, phát biểu nào là đúng, phát biểu nào là sai?",
+  "statements": [
+   [
+    "a",
+    "![A diagram of a curve Description automatically generated](scripts/data/nap-ngan-hang-vl12/c1/media/media/image152.jpeg){width=\"2.2840277777777778in\" height=\"1.9076388888888889in\"}Thang nhiệt độ Celsius có nhiệt độ dùng làm mốc là nhiệt độ x và nhiệt độ z.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Thang nhiệt độ Kelvin có nhiệt độ đùng làm mốc là nhiệt độ thấp nhất mà các vật có thể đạt được (nhiệt độ không tuyệt đối) và nhiệt độ y.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Ở nhiệt độ không tuyệt đối, tất cả các chất đều có động năng chuyển động nhiệt của các phân tử bằng không và thế năng của chúng là tối thiểu.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Hiện nay, các nhà khoa học đã hạ thấp nhiệt độ đến 0 K.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl12/c1/media/media/image152.jpeg"
+  ]
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 7,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Cho bảng:\n\n<table style=\"width:91%;\">\n<colgroup>\n<col style=\"width: 16%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 10%\" />\n</colgroup>\n<thead>\n<tr>\n<th style=\"text-align: left;\"><blockquote>\n<p>Chất</p>\n</blockquote></th>\n<th style=\"text-align: left;\"><blockquote>\n<p>Nhôm</p>\n</blockquote></th>\n<th style=\"text-align: left;\"><blockquote>\n<p>Nước đá</p>\n</blockquote></th>\n<th style=\"text-align: left;\"><blockquote>\n<p>Rượu</p>\n</blockquote></th>\n<th style=\"text-align: left;\"><blockquote>\n<p>Sắt</p>\n</blockquote></th>\n<th style=\"text-align: left;\"><blockquote>\n<p>Đồng</p>\n</blockquote></th>\n<th style=\"text-align: left;\"><blockquote>\n<p>Thủy</p>\n<p>ngân</p>\n</blockquote></th>\n<th style=\"text-align: left;\"><blockquote>\n<p>Muối ăn</p>\n</blockquote></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: left;\"><blockquote>\n<p>Nhiệt độ nóng</p>\n<p>chảy (<sup>o</sup>C)</p>\n</blockquote></td>\n<td style=\"text-align: left;\"><blockquote>\n<p>660</p>\n</blockquote></td>\n<td style=\"text-align: left;\"><blockquote>\n<p>0</p>\n</blockquote></td>\n<td style=\"text-align: left;\"><blockquote>\n<p>−117</p>\n</blockquote></td>\n<td style=\"text-align: left;\"><blockquote>\n<p>1535</p>\n</blockquote></td>\n<td style=\"text-align: left;\"><blockquote>\n<p>1083</p>\n</blockquote></td>\n<td style=\"text-align: left;\"><blockquote>\n<p>−39</p>\n</blockquote></td>\n<td style=\"text-align: left;\"><blockquote>\n<p>801</p>\n</blockquote></td>\n</tr>\n</tbody>\n</table>",
+  "statements": [
+   [
+    "a",
+    "Chất có nhiệt độ nóng chảy cao nhất là rượu",
+    "S"
+   ],
+   [
+    "b",
+    "Chất có nhiệt độ nóng chảy thấp nhất thủy ngân",
+    "S"
+   ],
+   [
+    "c",
+    "Có thể dùng nhiệt kế rượu để đo những nhiệt độ thấp tới −50^∘^C.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Có thể dùng nhiệt kế thuỷ ngân để đo những nhiệt độ thấp tới −50^∘^C.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 8,
+  "flags": [],
+  "stem": "Các nhiệt kế được chế tạo dựa trên các tính chất phụ thuộc vào nhiệt độ có thể đo được như",
+  "statements": [
+   [
+    "a",
+    "thể tích chất khí, chất lỏng; chiều dài của vật rắn, lỏng.",
+    "Đ"
+   ],
+   [
+    "b",
+    "điện trở của dây dẫn kim loại.",
+    "Đ"
+   ],
+   [
+    "c",
+    "hiệu điện thế của cặp nhiệt điện.",
+    "Đ"
+   ],
+   [
+    "d",
+    "sự đổi màu của một số vật liệu.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 9,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Bảng dưới đây ghi tên các loại nhiệt kế và nhiệt độ ghi trên thang đo của chúng.\n\n![A group of objects with text Description automatically generated](scripts/data/nap-ngan-hang-vl12/c1/media/media/image150.jpeg){width=\"6.379861111111111in\" height=\"1.867361111111111in\"}",
+  "statements": [
+   [
+    "a",
+    "Dùng nhiệt kế kim loại để đo nhiệt độ của bàn là",
+    "Đ"
+   ],
+   [
+    "b",
+    "Dùng nhiệt kế y tế để đo nhiệt độ của cơ thể người",
+    "Đ"
+   ],
+   [
+    "c",
+    "Dùng nhiệt kế thủy ngân để đo nhiệt độ của nước đang sôi",
+    "Đ"
+   ],
+   [
+    "d",
+    "Dùng nhiệt kế rượu để đo nhiệt độ của không khí trong phòng",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl12/c1/media/media/image150.jpeg"
+  ]
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 10,
+  "flags": [],
+  "stem": "Một nhiệt kế có phạm vi đo từ 263K đến 1273K dùng để đo nhiệt độ của các lò nung.",
+  "statements": [
+   [
+    "a",
+    "Phạm vi đo trong thang Celsius là -10^o^C đến 1000^o^C",
+    "Đ"
+   ],
+   [
+    "b",
+    "Phạm vi đo trong thang Fehrenheit là 14^o^F đến 1832^o^F",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nhiệt kế có thể đo nhiệt độ của lò nung tại 1083^o^C",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nhiệt kế có thể đo nhiệt độ của lò nugn tại 1745^o^F",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 1,
+  "flags": [],
+  "stem": "Khi kéo đi kéo lại sợi dây cuốn quanh một ống nhôm đựng nước nút kín, người ta thấy nước trong ống nóng lên rồi sôi, hơi nước đẩy nút bật ra cùng với một lớp hơi nước trắng do các hạt nước rất nhỏ tạo thành.",
+  "statements": [
+   [
+    "a",
+    "Có sự chuyển hóa từ cơ năng sang nhiệt năng khi kéo đi kéo lại sợi dây",
+    "Đ"
+   ],
+   [
+    "b",
+    "Có sự truyền nhiệt năng từ ống nhôm vào nước làm nước nóng lên",
+    "Đ"
+   ],
+   [
+    "c",
+    "Có sự chuyển hóa từ nhiệt năng sang cơ năng nên hơi nước làm nút bật ra",
+    "Đ"
+   ],
+   [
+    "d",
+    "Có sự truyền nhiệt năng từ hơi nước ra môi trường bên ngoài và làm hơi nước lạnh đi ngưng tụ thành giọt nước",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 2,
+  "flags": [],
+  "stem": "Hiện nay, kính cường lực (kính chịu lực rất tốt) thường được sử dụng để làm một phần tường của các toà nhà, chung cư thương mại,. thay thế vật liệu gạch, bê tông. Tuy nhiên, vào những ngày mùa hè, nếu bước vào những căn phòng có tường làm bằng kính cường lực bị đóng kín, ta thường thấy không khí trong phòng nóng hơn so với bên ngoài.",
+  "statements": [
+   [
+    "a",
+    "Không khí trong phòng không thực hiện công.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Không khí trong phòng nhận nhiệt từ ánh sáng mặt trời.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Thể tích khí trong phòng tăng lên.",
+    "S"
+   ],
+   [
+    "d",
+    "Nội năng khí trong phòng tăng lên.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 3,
+  "flags": [],
+  "stem": "Các phân tử chuyển động hỗn loạn không ngừng nên chúng có động năng (động năng phân tử).\n\nCác phân tử tương tác với nhau nên chúng có thế năng thế năng (thế năng phân tử).",
+  "statements": [
+   [
+    "a",
+    "Động năng phân tử phụ thuộc vào tốc độ chuyển động của phân tử.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Thế năng phân tử phụ thuộc vào khoảng cách giữa các phân tử.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nội năng của vật là tổng động năng và thế năng của các phân tử cấu tạo nên vật.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nội năng của một vật phụ thuộc vào nhiệt độ và thể tích của vật.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 4,
+  "flags": [],
+  "stem": "Các vật thể được cấu tạo từ các phân tử. Người ta gọi tổng động năng và thế năng tương tác của các phân tử cấu tạo nên vật là nội năng của vật.",
+  "statements": [
+   [
+    "a",
+    "Nội năng là một dạng năng lượng.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nội năng của một vật phụ thuộc vào thể tích và nhiệt độ của vật",
+    "Đ"
+   ],
+   [
+    "c",
+    "Hai vật A và B có cùng chất liệu. Nếu nội năng của vật A lớn hơn vật B thì nhiệt độ của vật A\n\ncũng lớn hơn vật B.",
+    "S"
+   ],
+   [
+    "d",
+    "Có hai cách làm thay đổi nội năng của một vật là thực hiện công và truyền nhiệt.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 5,
+  "flags": [],
+  "stem": "Khi thực hiện quá trình truyền nhiệt cho vật, ta nói rằng vật nhận thêm nhiệt lượng nên nội năng thay đổi, giữa nội năng và nhiệt lượng có một mối liên hệ qua lại với nhau.",
+  "statements": [
+   [
+    "a",
+    "Nhiệt lượng là số đo độ biến thiên nội năng của vật trong quá trình truyền nhiệt.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Đơn vị của nhiệt lượng cũng là đơn vị của nội năng.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Một vật lúc nào cũng có nội năng, do đó lúc nào vật cũng có nhiệt lượng.",
+    "S"
+   ],
+   [
+    "d",
+    "Một vật có nội năng lớn khi cho tiếp xúc với vật khác có nội năng nhỏ hơn thì sẽ xảy ra quá trình truyền nhiệt.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 6,
+  "flags": [],
+  "stem": "Hình vẽ bên thể hiện hai cách làm thay đổi nội năng của một vật đó là dùng tay cọ xát miếng đồng trên mặt bàn (hình 1) và cho nước sôi vào trong cốc có sẵn miếng đồng ở nhiệt độ phòng (hình 2).",
+  "statements": [
+   [
+    "a",
+    "Hình 1 thể hiện quá trình truyền nhiệt.",
+    "S"
+   ],
+   [
+    "b",
+    "hình 2 là quá trình thực hiện công.",
+    "S"
+   ],
+   [
+    "c",
+    "Trong quá trình thực hiện công, có sự chuyển hóa từ một dạng năng lượng khác sang nội năng.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Trong quá trình truyền nhiệt, không có sự chuyển hóa năng lượng từ dạng này sang dạng khác.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 7,
+  "flags": [],
+  "stem": "Dùng tay cọ xát miếng kim loại vào sàn nhà thì miếng kim loại nóng lên.",
+  "statements": [
+   [
+    "a",
+    "Ta đã làm thay đổi nội năng của miếng kim loại bằng cách truyền nhiệt.",
+    "S"
+   ],
+   [
+    "b",
+    "Nội năng của miếng kim loại giảm.",
+    "S"
+   ],
+   [
+    "c",
+    "Mặt tiếp xúc giữa miếng kim loại và sàn nhà có ma sát.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Khi cọ xát trong thời gian đủ dài có thể tạo ra lửa.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 8,
+  "flags": [],
+  "stem": "Một khối khí đựng trong xilanh như hình. Dùng tay ấn pittong xuống dưới",
+  "statements": [
+   [
+    "a",
+    "Nhiệt độ khối khí không thay đổi",
+    "S"
+   ],
+   [
+    "b",
+    "Nội năng của khối khí không đổi",
+    "S"
+   ],
+   [
+    "c",
+    "Thể tích khối khí giảm",
+    "Đ"
+   ],
+   [
+    "d",
+    "Áp suất khối khí không đổi",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 9,
+  "flags": [],
+  "stem": "Một lượng khí được đặt trong một xilanh như hình bên. Khi bật đèn cồn, người ta nhận thấy nhiệt độ khối khí tăng lên và đẩy pittông đi lên một đoạn x.",
+  "statements": [
+   [
+    "a",
+    "Nội năng của khối khí đã thay đổi nhờ quá trình truyền nhiệt.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Độ biến thiên nội năng của khối khí đúng bằng nhiệt lượng mà khối khí nhận được.",
+    "S"
+   ],
+   [
+    "c",
+    "Khi khối khí dãn nỡ đẩy pit-tông đi lên, ta nói khối khí đã thực hiện công.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Công của khối khí khi đẩy pit-tông đi lên đúng bằng nhiệt lượng mà nó nhận được.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 10,
+  "flags": [],
+  "stem": "Một khối khí đựng trong xi lanh như hình vẽ. Ta dùng ngọn lửa đốt nóng xi lanh trong thời gian đủ dài (trong quá trình đốt pít tông không dịch chuyển).",
+  "statements": [
+   [
+    "a",
+    "Nhiệt độ khối khí tăng lên.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nội năng của khối khí giảm.",
+    "S"
+   ],
+   [
+    "c",
+    "Động năng trung bình của phân tử khí tăng.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Áp suất khối khí không đổi.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 11,
+  "flags": [],
+  "stem": "Dùng đèn cồn đun nóng bình đựng nước. Đặt ống nghiệm đựng bột băng phiến vào bình nước. Trong ống nghiệm có nhiệt kế để đo nhiệt độ của băng phiến. Thí nghiệm cho thấy, trong thời gian bị đun, bột băng phiến đang nóng chảy thì",
+  "statements": [
+   [
+    "a",
+    "nhiệt độ của băng phiến tăng.",
+    "S"
+   ],
+   [
+    "b",
+    "năng lượng nhận từ nguồn nhiệt dùng để phá vỡ liên kết.",
+    "Đ"
+   ],
+   [
+    "c",
+    "thế năng của các phân tử băng phiến thay đổi.",
+    "Đ"
+   ],
+   [
+    "d",
+    "nội năng của bột băng phiến tăng.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 12,
+  "flags": [],
+  "stem": "Định luật I của nhiệt động lực học có nhiều ứng dụng trong thực tế.",
+  "statements": [
+   [
+    "a",
+    "Ứng dụng vào việc chế tạo máy hơi nước.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Ứng dụng vào việc chế tạo động cơ đốt trong.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Dùng để giải thích các hiện tượng liên quan đến sự truyền và biến đổi nội năng.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Dùng để giải thích sự chuyển hóa năng lượng trong các quá trình chuyển thể.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 13,
+  "flags": [],
+  "stem": "Xét khối khí như trong hình. Dùng tay ấn mạnh và nhanh pit-tông, vừa nung nóng khí bằng ngọn lửa đèn cồn.",
+  "statements": [
+   [
+    "a",
+    "Công A \\> 0 vì khí bị nén (khí nhận công).",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt lượng Q \\< 0 vì khí bị nung nóng (khí nhận nhiệt).",
+    "S"
+   ],
+   [
+    "c",
+    "Nội năng của khí tăng ΔU \\> 0.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Biểu thức liên hệ độ biến thiên nội năng, công và nhiệt lượng là ΔU = A − Q.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 14,
+  "flags": [],
+  "stem": "Một vận động viên nhảy cầu có khối lượng m = 55 kg thực hiện động tác nhảy cầu từ độ cao 5 m xuống một bể bơi. Bỏ qua sự trao đổi nhiệt của nước trong bể bơi với môi trường bên ngoài, lấy g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Nội năng của nước trong bể bơi thay đổi chủ yếu là do quá trình truyền nhiệt cơ thể vận động viên sang nước trong bề bơi.",
+    "S"
+   ],
+   [
+    "b",
+    "Độ biến thiên của nước trong bể bằng độ biến thiên nội năng của cơ thể vận động viên.",
+    "S"
+   ],
+   [
+    "c",
+    "Cơ thể vận động viên đã truyền một nhiệt lượng là 2750 J cho bể nước.",
+    "S"
+   ],
+   [
+    "d",
+    "Độ biến thiên nội năng của nước trong bể bơi là 2750 J",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 15,
+  "flags": [],
+  "stem": "Quả bóng khối lượng 100 g rơi từ độ cao 1,5 m xuống đất và nảy lên đến độ cao 1,2 m. Xét hệ gồm bóng, mặt đất và không khí. Kết luận nào sau đây **đúng**, kết luận nào **sai**?",
+  "statements": [
+   [
+    "a",
+    "Khi bóng rơi, chạm đất và nảy lên, một phần cơ năng của bóng đã biến thành nội năng trong hệ.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Công mà trọng lực thực hiện trong quá trình rơi của quả bóng bằng độ giảm thế năng và bằng 30 J",
+    "S"
+   ],
+   [
+    "c",
+    "Độ tăng nội năng của bóng, mặt đất và không khí là 0,3 J",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ tăng nội năng của hệ nói trên làm tăng nhiệt độ của hệ và có thể làm biến dạng quả bóng, mặt đất.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 16,
+  "flags": [],
+  "stem": "Người ta thực hiện công 100 J để nén khí trong một xilanh. Khí truyền ra môi trường xung quanh nhiệt lượng 20 J.",
+  "statements": [
+   [
+    "a",
+    "Người ta thực hiện công lên khối khí nên khối khí nhận công.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Do khối khí nhận công nên A \\< 0 và có giá trị là −100 J.",
+    "S"
+   ],
+   [
+    "c",
+    "Khối khí truyền nhiệt ra môi trường bên ngoài nên Q \\< 0 và có giá trị là −20 J.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ biến thiên nội năng của khí có giá trị là −80 J.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 17,
+  "flags": [],
+  "stem": "Khi cung cấp nhiệt lượng 2 J cho khí trong xilanh đặt nằm ngang, khí nở ra đẩy pittông di chuyển đều đi được 5 cm. Cho lực ma sát giữa pittông và xilanh là 10 N.",
+  "statements": [
+   [
+    "a",
+    "Quá trình trên hệ nhận nhiệt lượng nên Q \\> 0.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Độ lớn của công chất khí thực hiện để pittông chuyển động đều là 5 J.",
+    "S"
+   ],
+   [
+    "c",
+    "Quá trình trên khí thực hiện công nên A \\< 0.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ biến thiên nội năng của khí là 15 J.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 18,
+  "flags": [],
+  "stem": "Cung cấp nhiệt lượng 1,5 J cho một khối khí trong một xilanh đặt nằm ngang. Chất khí nở ra đẩy pít-tông đi một đoạn 6 cm. Biết lực ma sát giữa pít-tông và xilanh có độ lớn là 20 N, diện tích tiết diện của pít-tông là 1 cm^2^. Coi pít-tông chuyển động thẳng đều. Trong các phát biểu sau, phát biểu nào là đúng, phát biểu nào là sai?",
+  "statements": [
+   [
+    "a",
+    "Độ lớn công của khối khí thực hiện là 1,2 J.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Độ biến thiên nội năng của khối khí là 0,5 J.",
+    "S"
+   ],
+   [
+    "c",
+    "Trong quá trình dãn nở, áp suất của chất khí là 2. 10^5^ Pa.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Thể tích khí trong xilanh tăng 6 lít.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 19,
+  "flags": [],
+  "stem": "Một lượng khí chứa trong một xilanh có pittong di chuyển được. Ở trạng thái cân bằng, chất khí chiếm thể tích V và tác dụng lên pittong một áp suất 4. 10^5^ N/m^2^. Khối khí nhận một nhiệt lượng 1000 J giãn nở đẩy pittong lên làm thể tích khí tăng thêm 0,003 m^3^. Coi rằng áp suất chất khí không đổi. Khẳng định nào sau đây là đúng, sai?",
+  "statements": [
+   [
+    "a",
+    "Lượng khí bên trong xilanh nhận nhiệt và sinh công làm biến đổi nội năng.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Theo quy ước, khối khí nhận nhiệt và sinh công nên\n\nA \\> 0; Q \\> 0",
+    "S"
+   ],
+   [
+    "c",
+    "Công mà khối khí thực hiện có độ lớn bằng 1200 J",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ biến thiên nội năng của khối khí ΔU = −200 J",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 20,
+  "flags": [],
+  "stem": "Khi truyền nhiệt lượng Q cho khối khí trong một xilanh hình trụ thì khí dãn nở đẩy pít-tông làm thể tích của khối khí tăng thêm 7,0 lít. Biết áp suất của khối khí là 3.10^5^ Pa và không đổi trong quá trình khí dãn nở.",
+  "statements": [
+   [
+    "a",
+    "Áp suất khí lên pít-tông là 3.10^5^ N/m^2^.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Công mà khối khí thực hiện là 2.10^3^ J.",
+    "S"
+   ],
+   [
+    "c",
+    "Nếu trong quá trình này nội năng của khối khí giảm đi 1100 J thì Q = 10^3^ J.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nếu trong quá trình này nội năng của khối khí tăng 1100 J thì Q = 3200 J.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 21,
+  "flags": [],
+  "stem": "Một xi lanh có pittong cách nhiệt và nằm ngang. Pittong chia xi lanh thành hai phần. Truyền nhiệt lượng 100 J cho khí bên ngăn A thì pittong chuyển động đều một đoạn d = 0,2 m về phía\n\nngăn B. Biết lực ma sát giữa xilanh và pittong là 16 N. Các kết luận nào sau đây đúng/sai?",
+  "statements": [
+   [
+    "a",
+    "Độ biến thiên nội năng ở ngăn A là −96,9 J",
+    "S"
+   ],
+   [
+    "b",
+    "Độ biến thiên nội năng ở ngăn B là 96,8 J",
+    "S"
+   ],
+   [
+    "c",
+    "Tổng độ biến thiên nội năng cả ngăn A và ngăn B là 100 J",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ biến thiên nội năng ở ngăn A bé hơn ở ngăn B",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 1,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Hình bên là các dụng cụ để đo nhiệt dung riêng của nước",
+  "statements": [
+   [
+    "a",
+    "![A close-up of several devices Description automatically generated](scripts/data/nap-ngan-hang-vl12/c1/media/media/image162.jpeg){width=\"2.4277777777777776in\" height=\"1.0763888888888888in\"}Dụng cụ số (1) là biến thế nguồn",
+    "Đ"
+   ],
+   [
+    "b",
+    "Dụng cụ số (2) là nhiệt lượng kế",
+    "Đ"
+   ],
+   [
+    "c",
+    "Dụng cụ số (3) là nhiệt kế điện tử",
+    "Đ"
+   ],
+   [
+    "d",
+    "Dụng cụ số (5) là cân điện tử",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl12/c1/media/media/image162.jpeg"
+  ]
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 2,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Để xác định nhiệt dung riêng của nước, có thể tiến hành thí nghiệm theo sơ đồ nguyên lí như hình bên dưới:\n\n![A diagram of a water supply Description automatically generated](scripts/data/nap-ngan-hang-vl12/c1/media/media/image163.jpeg){width=\"2.639321959755031in\" height=\"0.9993744531933508in\"}",
+  "statements": [
+   [
+    "a",
+    "Biến áp nguồn có nhiệm vụ cung cấp cho mạch một hiệu điện thế",
+    "Đ"
+   ],
+   [
+    "b",
+    "Oát kế dùng để đo cường độ dòng điện của nguồn điện",
+    "S"
+   ],
+   [
+    "c",
+    "Nhiệt lượng tỏa ra trên dây điện trở bằng nhiệt lượng mà nước thu vào",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nhiệt lượng kế ngăn cản sự truyền nhiệt của các chất đặt trong bình với môi trường bên ngoài",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl12/c1/media/media/image163.jpeg"
+  ]
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 3,
+  "flags": [],
+  "stem": "Một chiếc thìa bằng đồng và một chiếc thìa bằng nhôm có khối lượng và nhiệt độ ban đầu bằng nhau, được nhúng chìm vào cùng một cốc đựng nước nóng.",
+  "statements": [
+   [
+    "a",
+    "Nhiệt độ cuối cùng là nhiệt độ khi có cân bằng nhiệt",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt độ cuối cùng của hai thìa bằng nhau",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nhiệt lượng hai thìa thu được từ nước bằng nhau",
+    "S"
+   ],
+   [
+    "d",
+    "Độ tăng nhiệt độ của hai thìa giống nhau",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "thieu-dap-an-c"
+  ],
+  "stem": "Đổ một chất lỏng có khối lượng m~1~, nhiệt dung riêng c~1~ và nhiệt độ t~1~ vào một chất lỏng có khối lượng m~2~ = 2m~1~, nhiệt dung riêng $c_{2} = \\frac{1}{2}c_{1}$ và nhiệt độ t~2~ \\> t~1~.",
+  "statements": [
+   [
+    "a",
+    "Nhiệt độ của chất lỏng thứ nhất giảm đến khi có cân bằng nhiệt",
+    "S"
+   ],
+   [
+    "b",
+    "Nhiệt độ của chất lỏng thứ hai tăng đến khi có cân bằng nhiệt",
+    "S"
+   ],
+   [
+    "c",
+    "Nếu bỏ qua sự trao đổi nhiệt giữa hai chất lỏng và môi trường (cốc đựng, không khí) thì khi\n\ncó cân bằng nhiệt, nhiệt độ 𝑡 của hai chất lỏng trên có giá trị là t $= \\frac{t_{2} + t_{1}}{2}$",
+    "?"
+   ],
+   [
+    "d",
+    "Nếu không bỏ qua sự trao đổi nhiệt giữa hai chất lỏng và môi trường (cốc đựng, không khí) thì khi có cân bằng nhiệt, nhiệt độ 𝑡 của hai chất lỏng trên có giá trị là t $> \\frac{t_{2} + t_{1}}{2}$",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 5,
+  "flags": [],
+  "stem": "Một lượng nước và một lượng rượu có thể tích bằng nhau được cung cấp các nhiệt lượng tương ứng là Q~1~ và Q~2~. Biết khối lượng riêng của nước là 1000 kg/m^3^ và của rượu là 800 kg/m^3^, nhiệt dung riêng của nước là 4200 J/kg. K và của rượu là 2500 J/kg.K. Xét tính đúng sai của các phát biểu sau:",
+  "statements": [
+   [
+    "a",
+    "Nhiệt lượng để làm tăng nhiệt độ của 1 kg nước lên 1 K là 2500 J.",
+    "S"
+   ],
+   [
+    "b",
+    "Nhiệt lượng để làm tăng nhiệt độ của 1 g rượu lên 1^∘^C là 4,2 J.",
+    "S"
+   ],
+   [
+    "c",
+    "Nếu lượng nước và lượng rượu trong bài cùng hấp thụ một nhiệt lượng bằng nhau thì độ tăng nhiệt độ của nước sẽ lớn hơn của rượu.",
+    "S"
+   ],
+   [
+    "d",
+    "Để độ tăng nhiệt độ của nước và rượu bằng nhau thì Q~1~ = 2,1Q~2~.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 6,
+  "flags": [],
+  "stem": "Người ta thả miếng đồng có khối lượng 2 kg vào nước. Miếng đồng nguội đi từ 80^∘^C đến 10^∘^C.\n\nLấy c~Cu~ = 380 J/kg. K",
+  "statements": [
+   [
+    "a",
+    "Nhiệt lượng tỏa ra của đồng là 588000 J.",
+    "S"
+   ],
+   [
+    "b",
+    "Tỉ số giữa độ lớn nhiệt lượng tỏa ra của đồng và nhiệt lượng mà nước thu vào bằng 1.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nhiệt lượng mà nước thu vào bằng 53200 J.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Khi bỏ miếng đồng vào nước thì nước nóng thêm 63, 33^∘^C",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 7,
+  "flags": [],
+  "stem": "Người ta nung nóng miếng đồng có khối lượng 100 g đến nhiệt độ 650^∘^C rồi thả vào cốc nước có thể tích 1 lít đang có nhiệt độ 30^∘^C. Giả sử cốc nước được làm từ vật liệu cách nhiệt và bỏ qua sự trao đổi nhiệt giữa khối nước và môi trường bên ngoài. Biết khối lượng riêng của nước là 1000 kg/m^3^ và nhiệt dung riêng của đồng và của nước lần lượt là c~1~ = 380 J/kg. K và c~2~ = 4180 J/kg.K.",
+  "statements": [
+   [
+    "a",
+    "Đã có quá trình truyền nhiệt từ miếng đồng sang nước.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Khi hệ đã cân bằng nhiệt, so với ban đầu thì nội năng của miếng đồng đã giảm xuống, còn của nước tăng lên.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Khi hệ đã cân bằng nhiệt, nhiệt độ của của nước trong cốc là 35, 59^∘^C.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Độ biến thiên nội năng của miếng đồng là 24700 J.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 8,
+  "flags": [],
+  "stem": "Để xác định nhiệt độ của một lò, người ta đưa vào lò một miếng sắt khối lượng 75 g. Khi miếng sắt có nhiệt độ bằng nhiệt độ của lò, người ta lấy ra và thi ngay vào một nhiệt lượng kế có khối lượng 200 g có chứa 500 g nước ở nhiệt độ 30^∘^C, khi hệ cân bằng nhiệt thì nhiệt độ của nước tăng lên đến 45^∘^C. Coi nhiệt dung riêng của nước gần đúng là 4200 J/kg. K, của sắt là 478 J/kg. K và của nhiệt lượng kế là 418 J/kg.K. Giả sử hệ không trao đổi nhiệt với môi trường bên ngoài.",
+  "statements": [
+   [
+    "a",
+    "Trong quá trình trên độ giảm nội năng của miếng sắt bằng độ tăng nội năng của nước.",
+    "S"
+   ],
+   [
+    "b",
+    "Độ tăng nội năng của nước là 31500 J.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nhiệt độ của lò xấp xỉ là 958, 6^∘^C.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Miếng sắt đã truyền một nhiệt lượng là 35052 J cho nước và nhiệt lượng kế.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 9,
+  "flags": [],
+  "stem": "Người ta bỏ một miếng hợp kim chì và kẽm có khối lượng 50 gam ở nhiệt độ 136^∘^C vào một nhiệt lượng kế có nhiệt dung (nhiệt lượng cần để làm cho vật nóng thêm lên 1^∘^C ) là 50 J/K chứa 100 gam nước ở 14^∘^C. Biết nhiệt độ khi có sự cân bằng nhiệt trong nhiệt lượng kế là 18^∘^C. Bỏ qua sự trao đổi nhiệt với môi trường bên ngoài. Nhiệt dung riêng của kẽm là 337 J/(kg. K), của chì là 126 J/(kg. K), của nước là 4180 J/(kg. K)",
+  "statements": [
+   [
+    "a",
+    "Khi bỏ miếng hợp kim vào nhiệt lượng kế thì miếng hợp kim toả nhiệt và nhiệt lượng kế thu nhiệt",
+    "Đ"
+   ],
+   [
+    "b",
+    "Khối lượng của kẽm là 0,45 kg.",
+    "S"
+   ],
+   [
+    "c",
+    "Khối lượng của chì là 0,005 kg.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Tỉ số khối lượng của kẽm và chì là 1/9.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 10,
+  "flags": [],
+  "stem": "Người ta dùng ấm điện có công suất tỏa nhiệt P = 800W để đun một lượng nước có khối lượng m. Hình bên là đồ thị biểu diễn sự phụ thuộc nhiệt lượng Q cung cấp cho nước theo nhiệt độ t của nước. Tại thời điểm ban đầu (τ = 0), nhiệt độ của nước là 25^∘^C. Lấy nhiệt dung riêng của nước là c = 4200 J/kg. K. Coi hiệu suất của ấm điện là 100%. Xét tính đúng sai của các phát biểu sau:",
+  "statements": [
+   [
+    "a",
+    "Giá trị của m là 1,2 kg.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt lượng cần cung cấp cho nước từ thời điểm τ = 0 đến khi nước bắt đầu sôi là 387 kJ.",
+    "S"
+   ],
+   [
+    "c",
+    "Khi nước bắt đầu sôi, nếu tiếp tục đun thì nước sẽ hóa hơi và nhiệt độ của nước luôn tăng trong quá trình hóa hơi.",
+    "S"
+   ],
+   [
+    "d",
+    "Thời gian đun sôi nước kế từ thời điểm τ = 0 là 472,5 giây.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 11,
+  "flags": [],
+  "stem": "Một người định đun 0,5 lít nước từ nhiệt độ 30^∘^C để pha cà phê nhưng thấy bếp đun bị hỏng. Anh ta có ý định sẽ thả rơi phích nước cho đến khi nước sôi ở 100^∘^C. Giả sử mỗi lần thực hiện phích nước sẽ rơi được quãng đường 0,5 m và mỗi phút anh ta thực hiện được 30 lần như vậy. Coi nhiệt dung riêng của nước là 4200 J/kg. K và phích nước không trao đổi nhiệt với môi trường bên ngoài, lấy g = 10 m/s^2^.",
+  "statements": [
+   [
+    "a",
+    "Dự định của người này là thực hiện công để làm thay đổi nội năng của nước.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Khi coi phích nước không trao đổi nhiệt với môi trường thì toàn bộ công trong mỗi lần lắc phích nước sẽ chuyển thành nội năng cho nước.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Chỉ cần 10 phút nước trong phích sẽ sôi để pha cà phê.",
+    "S"
+   ],
+   [
+    "d",
+    "Nếu người này thực hiện được ý định thì tổng công mà người này thực hiện tương ứng với công để nâng một chiếc xe tải có khối lượng 1,2 tấn theo phương thẳng đứng 10 m.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 12,
+  "flags": [],
+  "stem": "Một điện trở có khối lượng 200 g được nối với một nguồn có suất điện động 12V, điện trở trong 2Ω. Đồ thị liên hệ giữa nhiệt độ trên điện trở và thời gian được mô tả như hình vẽ. Biết nhiệt dung riêng của chất làm điện trở là c = 400J/kg.K",
+  "statements": [
+   [
+    "a",
+    "Nhiệt độ ban đầu của điện trở là T~0~ = 20^∘^C.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Đồ thị liên hệ giữa (T, t) là hàm bậc nhất.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Sau 1 phút điện trở có nhiệt độ là 35^∘^C.",
+    "S"
+   ],
+   [
+    "d",
+    "Điện trở có giá trị R = 3Ω.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 13,
+  "flags": [],
+  "stem": "Nhiệt lượng kế A chứa 6𝑙 nước ở nhiệt độ ban đầu t~0A~ = 60^∘^C, nhiệt lượng kế B chứa 2𝑙 nước ở nhiệt độ ban đầu t~0B~ = 20^∘^C. Người ta đổ V~0~ 𝑙 nước từ nhiệt lượng kế A sang nhiệt lượng kế B khi cân bằng nhiệt thì nhiệt độ trong nhiệt lượng kế B là t~1B~. Tiếp sau đó người ta đổ V~0~ 𝑙\n\nnước từ nhiệt lượng kế B về lại nhiệt lượng kế A. Đến khi cân bằng nhiệt thì nhiệt độ của nước trong nhiệt lượng kế A là t~1A~ = 58^∘^C. Việc đổ nước từ A sang B và sau đó từ B sang A gọi là một thao tác đổ nước. Bỏ qua sự hấp thụ nhiệt của nhiệt lượng kế và mất mát nhiệt ra môi trường bên ngoài.",
+  "statements": [
+   [
+    "a",
+    "$V_{0} = \\frac{2}{75}l$",
+    "S"
+   ],
+   [
+    "b",
+    "$t_{1B} = 21℃$",
+    "S"
+   ],
+   [
+    "c",
+    "Hiệu nhiệt độ của hai nhiệt lượng kế ứng với n = 10 thao tác đổ nước là 4, 29^∘^C.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Hiệu nhiệt độ của hai nhiệt lượng kế ứng với n = 20 thao tác đổ nước là 0, 46^∘^C.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 14,
+  "flags": [],
+  "stem": "Người ta dùng một lò hồ quang điện để nấu chảy một khối kim loại nặng 29 kg. Biết mỗi phút, lò hồ quang cung cấp cho khối kim loại một nhiệt lượng không đổi là 400 kJ. Sự thay đổi nhiệt độ của khối kim loại được ghi lại theo thời gian như hình vẽ.",
+  "statements": [
+   [
+    "a",
+    "Giai đoạn AB trên đồ thị tương ứng với quá trình nóng chảy của kim loại.",
+    "S"
+   ],
+   [
+    "b",
+    "Giai đoạn BC khối kim loại không nhận thêm nhiệt lượng từ lò nung.",
+    "S"
+   ],
+   [
+    "c",
+    "Đoạn CD ứng với giai đoạn khối kim loại ở thể lỏng.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nhiệt dung riêng của khối kim loại xấp xỉ 459,8 J/kg.K",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 1,
+  "flags": [],
+  "stem": "Nhiệt nóng chảy riêng và nhiệt độ nóng chảy là thông tin, giúp người ta",
+  "statements": [
+   [
+    "a",
+    "xác định được năng lượng cần cung cấp cho lò nung, thời gian nung.",
+    "Đ"
+   ],
+   [
+    "b",
+    "thời điểm đổ kim loại nóng chảy vào khuôn, thời điểm lấy sản phẩm ra khỏi khuôn.",
+    "Đ"
+   ],
+   [
+    "c",
+    "lựa chọn vật liệu chế tạo hợp kim phù hợp với từng yêu cầu sử dụng khác nhau.",
+    "Đ"
+   ],
+   [
+    "d",
+    "tách các kim loại nguyên chất ra khỏi quặng hỗn hợp.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 2,
+  "flags": [],
+  "stem": "Một chậu đựng hỗn hợp nước và nước đá có khối lượng là 10 kg. Chậu để trong phòng và người ta theo dõi nhiệt độ của hỗn hợp. Đồ thị biểu thị sự phụ thuộc nhiệt độ theo thời gian cho ở hình vẽ. Nhiệt dung riêng của nước là c = 4200 J/kg.K và nhiệt nóng chảy riêng của nước là *λ* = 3, 4.105 *J* / *kg* . Bỏ qua nhiệt dung của chậu.",
+  "statements": [
+   [
+    "a",
+    "Theo đồ thị, thời gian 50 phút đầu hỗn hợp ở 0^0^C. Quá trình này nhiệt thu được từ môi\n\ntrường dùng để làm nóng chảy nước đá. Trong 10 phút tiếp theo, toàn bộ nước trong chậu nóng dần lên nhờ thu nhiệt của môi trường.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt lượng nhận được từ môi trường trong 10 phút sau bằng 8, 4.10^4^ J.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Trong 50 phút trước đó, hỗn hợp đã nhận được của môi trường một nhiệt lượng bằng 4,2. 10^4^ J.",
+    "S"
+   ],
+   [
+    "d",
+    "Khối lượng nước đá có trong hỗn hợp đầu là 1,23 kg.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 3,
+  "flags": [
+   "co-hinh"
+  ],
+  "stem": "Một cốc cách nhiệt ban đầu chứa nước đá. Đổ nước từ từ vào cốc sao cho nhiệt độ của toàn bộ các vật trong cốc tại mỗi thời điểm là như nhau, biết tốc độ dòng chảy không đổi. Cho đồ thị khối lượng nước đá phụ thuộc thời gian được thể hiện như hình vẽ bên.\n\nBỏ qua thất thoát nhiệt ra môi trường không khí và quá trình cân bằng nhiệt diễn ra tức thời. Cho biết nhiệt dung riêng của nước là 4,2$\\frac{kJ}{g℃}$, nhiệt nóng chảy riêng của nước đá là 32$\\frac{kJ}{g}$",
+  "statements": [
+   [
+    "a",
+    "![A graph of a line with a pen Description automatically generated](scripts/data/nap-ngan-hang-vl12/c1/media/media/image167.jpeg){width=\"1.8604560367454068in\" height=\"1.5in\"}Khối lượng nước đổ vào cốc trong mỗi 𝑠 là $\\frac{1}{60}$ (g/s)",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt độ ban đầu của nước đổ vào cốc là 𝑡~01~ = 68, 6^∘^C.",
+    "S"
+   ],
+   [
+    "c",
+    "Nhiệt độ ban đầu của nước đá là 𝑡~02~ = 0^∘^C.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Tổng khối lượng nước đá ban đầu là 11 g.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": true,
+  "imgs": [
+   "scripts/data/nap-ngan-hang-vl12/c1/media/media/image167.jpeg"
+  ]
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 4,
+  "flags": [],
+  "stem": "Tính nhiệt lượng cần cung cấp cho 5 kg nước đá ở −10^∘^C chuyển hoàn toàn thành nước ở 0^∘^C. Cho biết nhiệt dung riêng của nước đá là 2090 J/kg.K và nhiệt nóng chảy riêng của nước đá 3,4. 10^5^ J/kg.",
+  "statements": [
+   [
+    "a",
+    "Nhiệt lượng cần cung cấp cho 5 kg nước đá ở −10^∘^C chuyển thành nước đá ở 0^∘^C là\n\n1045000 J.",
+    "S"
+   ],
+   [
+    "b",
+    "Nhiệt lượng cần cung cấp để 5 kg nước đá ở 0^∘^C chuyển thành nước là 17.10^5^ J.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nhiệt lượng cần cung cấp cho 5 kg nước đá ở −10^∘^C chuyển thành nước ở 0^∘^C là\n\n18045000 J.",
+    "S"
+   ],
+   [
+    "d",
+    "Nếu tiếp tục cung cấp nhiệt lượng thì nước sẽ chuyển hoá thành hơi (thể khí).",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 1,
+  "flags": [],
+  "stem": "Nhiệt hoá hơi riêng là thông tin cần thiết để thiết kế chế tạo các sản phẩm của sử dụng hiện tượng hoá hơi nhằm tiết kiệm năng lượng bảo vệ môi trường. Ví dụ như:",
+  "statements": [
+   [
+    "a",
+    "các nhiệt kế cảm ứng nhiệt.",
+    "S"
+   ],
+   [
+    "b",
+    "các thiết bị làm lạnh.",
+    "Đ"
+   ],
+   [
+    "c",
+    "nồi hấp tiệt trùng.",
+    "Đ"
+   ],
+   [
+    "d",
+    "thiết bị xử lí rác thải ứng dụng công nghệ nhiệt hoá hơi.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 2,
+  "flags": [],
+  "stem": "Một học sinh làm thí nghiệm đun nóng để làm 0,02 kg nước đá (thể rắn) ở 0^∘^C chuyển hoàn toàn thành hơi nước ở 100^∘^C. Cho nhiệt nóng chảy của nước ở 0^∘^C là 3, 34.10^5^ J/kg; nhiệt dung riêng của nước là 4,2 kJ/kgK; nhiệt hoá hơi riêng của nước ở 100^∘^C là 2,26. 10^6^ J/kg. Bỏ qua hao phí toả nhiệt ra môi truờng. Trong các phát biểu sau, phát biểu nào là đúng, phát biểu nào là sai?",
+  "statements": [
+   [
+    "a",
+    "Nhiệt lượng cần thiết để làm nóng chảy hoàn toàn 0,02 kg nước đá tại nhiệt độ nóng chảy là 6860 J.",
+    "S"
+   ],
+   [
+    "b",
+    "Nhiệt lượng cần thiết để đưa 0,020 kg nước từ 0^∘^C đến 100^∘^C là 8600 J.",
+    "S"
+   ],
+   [
+    "c",
+    "Nhiệt lượng cần thiết để làm hoá hơi hoàn toàn 0,020 kg nước ở 100^∘^C là 42500 J.",
+    "S"
+   ],
+   [
+    "d",
+    "Nhiệt lượng để làm 0,020 kg nước đá (thể rắn) ở 0^∘^C chuyển hoàn toàn thành hơi nước ở 100^∘^C là 60280 J.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 3,
+  "flags": [],
+  "stem": "Một khối nước đá khối lượng m = 2kg ở nhiệt độ −5^0^C. Cho biết nhiệt dung riêng của nước đá và nước lần lượt là 2000 J/kg. K, 4200J/kg. K; nhiệt nóng chảy riêng của nước đá ở 0^0^C là λ = 3,4.10^5^J/kg; nhiệt hoá hơi của nước ở 100^0^C là L = 2,3.10^6^J/kg. Trong các câu sau đây, câu nào đúng, sai?",
+  "statements": [
+   [
+    "a",
+    "Nhiệt lượng nước đá thu vào để tăng nhiệt độ từ −5^0^C đến 0^0^C là 18 kJ",
+    "S"
+   ],
+   [
+    "b",
+    "Nhiệt lượng nước đá ở 0^0^C thu vào để nóng chảy hoàn toàn là 840 kJ",
+    "S"
+   ],
+   [
+    "c",
+    "Nhiệt lượng nước ở 100^0^C thu vào để hoá hơi hoàn toàn là 4600 kJ",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nhiệt lượng tổng cộng cần cung cấp để nước đá ở −5^0^C biến thành hơi hoàn toàn ở 100^0^C là 6140 kJ",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 4,
+  "flags": [
+   "thieu-dap-an-a",
+   "thieu-dap-an-b",
+   "thieu-dap-an-c",
+   "thieu-dap-an-d"
+  ],
+  "stem": "Một ấm điện công suất 1000 W đun 300 g nước có nhiệt độ ban đầu là 20^∘^C đến khi sôi ở áp suất tiêu chuẩn. Để nước trong ấm sôi thêm 2 phút thì thì tắt bếp. Lấy nhiệt dung riêng và nhiệt hóa hơi riêng của nước là c = 4200 J/kg. K và L = 2,26. 10^6^ J/kg.",
+  "statements": [
+   [
+    "a",
+    "Nhiệt lượng cần để nước đạt đến nhiệt độ sôi là 10080 J.",
+    "?"
+   ],
+   [
+    "b",
+    "Thời gian cần để nước đạt đến nhiệt độ sôi là 1,68 phút.",
+    "?"
+   ],
+   [
+    "c",
+    "Nhiệt lượng đã chuyển cho nước trong thời gian thêm 2 phút là 120000 J.",
+    "?"
+   ],
+   [
+    "d",
+    "Lượng nước đã hoá hơi trong thời gian 2 phút đun thêm là 4,2 kg.",
+    "?"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 5,
+  "flags": [],
+  "stem": "Một ấm điện chứa đầy 1,3 kg nước ở nhiệt độ 20^∘^C. Công suất của ấm là 2,0 kW. Sau khi đóng công tắc 220s thì nước bắt đầu sôi. Nếu ấm vẫn tiếp tục đun thì sau khoảng thời gian Δt kể từ lúc sôi thì khối lượng nước còn lại trong ấm là 200 g (phần còn lại đã hóa hơi). Biết điểm sôi\n\ncủa nước là 100^∘^C và nhiệt hóa hơi riêng của nước là L = 2,26 . Cho rằng toàn bộ nhiệt lượng mà ấm tạo ra đều được nước hấp thụ.",
+  "statements": [
+   [
+    "a",
+    "Nhiệt lượng mà nước hấp thụ để tăng nhiệt độ từ 20^∘^C đến 100^∘^C là 2,49. 10^6^J.",
+    "S"
+   ],
+   [
+    "b",
+    "Nhiệt dung riêng của nước trong ấm là 4231 J/kg.K",
+    "Đ"
+   ],
+   [
+    "c",
+    "Khoảng thời gian Δt = 1243 s.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nếu hiệu suất của ấm là 80% thì thời gian để nước sôi là 250 s.",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 6,
+  "flags": [],
+  "stem": "Cho đồ thị biểu diễn sự thay đổi nhiệt độ của khối chất lỏng theo nhiệt lượng cung cấp có dạng như hình bên. Biết nhiệt dung riêng của chất lỏng đó là c = 2500J/kg. K",
+  "statements": [
+   [
+    "a",
+    "Đoạn AB: chất lỏng nhận nhiệt lượng Q~1~ = 1,8J để tăng nhiệt độ từ 20^0^C đến 80^0^C",
+    "S"
+   ],
+   [
+    "b",
+    "Khối lượng của chất lỏng là 1,2 kg",
+    "Đ"
+   ],
+   [
+    "c",
+    "Đoạn BC: Chất lỏng hoá hơi, trong giai đoạn này nó nhận nhiệt lượng 12,6.10^5^(J)",
+    "S"
+   ],
+   [
+    "d",
+    "Nhiệt hoá hơi riêng của chất lỏng này là 9.10^5^(J/kg)",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 7,
+  "flags": [],
+  "stem": "Người ta đổ một lượng chất lỏng có khối lượng m = 40 g vào một cốc kim loại không có nắp và bắt đầu đun nóng bằng đèn cồn, liên tục đo nhiệt độ cốc kim loại và thu được đồ thị phụ thuộc của nhiệt độ cốc t^0^C vào thời gian T(s) như hình. Biết mỗi giây đèn đốt hết 11mg cồn, và nhiệt lượng tỏa ra khi đốt cháy 1 gam cồn là 27 kJ. Bỏ qua nhiệt lượng hao phí ra môi trường.",
+  "statements": [
+   [
+    "a",
+    "Nhiệt lượng đèn cồn cung cấp trong giai đoạn BC là 0",
+    "S"
+   ],
+   [
+    "b",
+    "Nhiệt lượng đèn cồn cung cấp trong giai đoạn CD là 11,88 kJ",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nhiệt hóa hơi riêng của chất lỏng là 0,891 kJ/g",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nhiệt dung riêng của chất lỏng là 7,425 J/g.K",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 8,
+  "flags": [],
+  "stem": "Một bát bằng đồng nặng 150 g đựng 220 g nước đều ở nhiệt độ 20^0^C. Một miếng đồng hình trụ khối lượng 300 g ở nhiệt độ cao rơi vào bát nước làm nước sôi và chuyển 5,00 g nước thành hơi. Nhiệt độ cuối của hệ là 100^0^C. Biết nhiệt dung riêng của đồng là cđồng = 380J/kg. K; nhiệt dung riêng của nước c~H~2O = 4200J/kg. K và nhiệt hoá hơi riêng của nước L = 2,26.10^6^J/kg. K. Trong các câu sau đây, câu nào đúng, sai?",
+  "statements": [
+   [
+    "a",
+    "Bát đồng và nước nhận nhiệt lượng từ miếng đồng.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt lượng mà nước nhận được để tăng nhiệt độ từ 20^0^C đến 100^0^C là 124320J",
+    "S"
+   ],
+   [
+    "c",
+    "Nhiệt lượng bát đồng nhận được để tăng nhiệt độ từ 20^0^C đến 100^0^C là 4560J",
+    "Đ"
+   ],
+   [
+    "d",
+    "Nhiệt độ ban đầu của miếng đồng là 887, 5^0^C",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 1,
+  "flags": [],
+  "stem": "Một động cơ của xe máy có hiệu suất là 20%. Sau một giờ hoạt động tiêu thụ hết 1 kg xăng có năng suất toả nhiệt là 46. 10^6^ J/kg.",
+  "statements": [
+   [
+    "a",
+    "Khi 1 kg xăng cháy hết sẽ tỏa ra nhiệt lượng là 4,6. 10^6^ J.",
+    "S"
+   ],
+   [
+    "b",
+    "Tỉ số giữa công cơ học sinh ra và nhiệt lượng nguồn nóng là $\\frac{1}{2}$",
+    "S"
+   ],
+   [
+    "c",
+    "Công cơ học do động cơ sinh ra có độ lớn là 92. 10^5^ J.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Công suất của động cơ xe máy là 2555,56 W.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 2,
+  "flags": [],
+  "stem": "Hình vẽ bên dưới biểu diễn hệ thống làm mát của động cơ ô tô. Trong một lần thử nghiệm hệ thống này, các số liệu được thống kê ở bảng bên dưới. Cho rằng, khi nhiên liệu bị đốt cháy hoàn toàn thì 30% nhiệt năng từ nhiên liệu sẽ chuyển hóa thành cơ năng có ích.\n\n| Khối lượng nhiên liệu tiêu thụ           |         0,08 kg         |\n|------------------------------------------|:-----------------------:|\n| Năng suất tỏa nhiệt của nhiên liệu       | 4,6.10^7^$\\frac{J}{kg}$ |\n| Lưu lượng dòng nước làm mát              |   0,22$\\frac{kg}{s}$    |\n| Nhiệt độ của nước làm mát                |         30^o^C          |\n| Nhiệt độ của nước nóng                   |         80^o^C          |\n| Lưu lượng không khí qua các lá tản nhiệt |   1,25$\\frac{kg}{s}$    |\n| Nhiệt độ ban đầu của không khí           |        20,0^o^C         |\n| Nhiệt dung riêng của glycerine           |  2430$\\frac{J}{kg.K}$   |\n| Nhiệt dung riêng của nước                |  4200$\\frac{J}{kg.K}$   |\n| Nhiệt dung riêng của không khí           |   760$\\frac{J}{kg.K}$   |",
+  "statements": [
+   [
+    "a",
+    "Trong thực tế người ta dùng nước (thay vì glycerine) để làm vận hành hệ thông làm mát trên.",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt lượng hao phí của động cơ là 25,76. 10^6^ J.",
+    "Đ"
+   ],
+   [
+    "c",
+    "Nhiệt độ của dòng không khí khi đi qua các cánh tản nhiệt là 68, 6^∘^C.",
+    "Đ"
+   ],
+   [
+    "d",
+    "Tốc độ làm mát qua các cánh tản nhiệt là 46200 W.",
+    "Đ"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ },
+ {
+  "file": "c1",
+  "part": "tf",
+  "num": 3,
+  "flags": [],
+  "stem": "Một động cơ ô tô hoạt động trong thời gian $\\frac{10}{3}$ h tiêu thụ hết 62 lít xăng. Biết hiệu suất động cơ là 30%, năng suất tỏa nhiệt của xăng là q = 46.10^6^J/kg và khối lượng riêng của xăng là D = 0,7kg/l",
+  "statements": [
+   [
+    "a",
+    "Khối lượng xăng mà động cơ tiêu thụ là 43,4 kg",
+    "Đ"
+   ],
+   [
+    "b",
+    "Nhiệt lượng động cơ nhận được từ 62 lít xăng là 2852.10^6^J",
+    "S"
+   ],
+   [
+    "c",
+    "Công mà động cơ đã thực hiện là 598,92.10^6^J",
+    "Đ"
+   ],
+   [
+    "d",
+    "Công suất của động cơ là 179,676.10^6^W",
+    "S"
+   ]
+  ],
+  "solution": "",
+  "hasImg": false,
+  "imgs": []
+ }
+]

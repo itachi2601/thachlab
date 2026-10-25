@@ -1,0 +1,177 @@
+{
+ "c4-mc-262": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số hạt nhân Po ban đầu: $N_0=\\dfrac{0{,}02}{210}\\cdot 6{,}02\\cdot10^{23}\\approx 5{,}73\\cdot10^{19}$.</p><p class=\"text-base leading-relaxed my-2\">Thời gian $t=10$ phút $=\\dfrac{10}{138\\cdot1440}T\\approx5{,}03\\cdot10^{-5}T$ rất nhỏ nên $\\Delta N=N_0(1-2^{-t/T})\\approx N_0\\dfrac{t}{T}\\ln2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta N\\approx5{,}73\\cdot10^{19}\\cdot5{,}03\\cdot10^{-5}\\cdot0{,}693\\approx2{,}0\\cdot10^{15}$ hạt.</p><p class=\"text-base leading-relaxed my-2\">Mỗi hạt $\\alpha$ mang điện tích $2e$ nên $Q=2e\\Delta N=2\\cdot1{,}6\\cdot10^{-19}\\cdot2\\cdot10^{15}=6{,}4\\cdot10^{-4}$ C.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow U=\\dfrac{Q}{C}=\\dfrac{6{,}4\\cdot10^{-4}}{4\\cdot10^{-6}}=160$ V. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-263": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Mỗi hạt nhân Po phân rã tạo một hạt $\\alpha$ (He). Gọi $\\Delta N$ là số hạt Po đã phân rã, $N$ là số hạt Po còn lại.</p><p class=\"text-base leading-relaxed my-2\">$\\dfrac{m_1}{m_2}=\\dfrac{4\\Delta N}{210N}=\\dfrac54$ $\\Rightarrow \\dfrac{\\Delta N}{N}=\\dfrac{5\\cdot210}{4\\cdot4}=65{,}625$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 2^{X/T}=1+65{,}625=66{,}625$ $\\Rightarrow \\dfrac{X}{T}=\\log_2 66{,}625\\approx6{,}058$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow X\\approx6{,}058\\cdot138\\approx836$ ngày đêm. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-264": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Sau $t=3T$: số hạt X còn lại $N_X=N_0/8$, số hạt Y sinh ra $N_Y=N_0-N_0/8=7N_0/8$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{N_Y}{N_X}=7$. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "de"
+ },
+ "c4-mc-265": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số hạt đã phân rã bằng 3 lần số hạt còn lại: $N_0(1-2^{-x})=3N_02^{-x}$ với $x=t/T$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 2^{-x}=\\dfrac14\\Rightarrow x=2\\Rightarrow t=2T$. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "de"
+ },
+ "c4-mc-267": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số hạt Pb sinh ra bằng số hạt Po đã phân rã nên $\\dfrac{N_{Po}}{N_{Pb}}=\\dfrac{2^{-x}}{1-2^{-x}}$.</p><p class=\"text-base leading-relaxed my-2\">Tại $t_1$: $\\dfrac{2^{-x}}{1-2^{-x}}=\\dfrac13\\Rightarrow 2^{-x}=\\dfrac14\\Rightarrow t_1=2T$.</p><p class=\"text-base leading-relaxed my-2\">$t_2=t_1+276=2T+2T=4T$ (vì $276=2\\cdot138$).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{N_{Po}}{N_{Pb}}=\\dfrac{1/16}{15/16}=\\dfrac1{15}$. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-268": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Mỗi phân rã tạo một hạt $\\alpha$ và một hạt Pb nên tổng số hạt $\\alpha$ và Pb bằng $2\\Delta N$.</p><p class=\"text-base leading-relaxed my-2\">$2\\Delta N=14N\\Rightarrow \\dfrac{\\Delta N}{N}=7\\Rightarrow 2^{t/T}-1=7\\Rightarrow 2^{t/T}=8\\Rightarrow t=3T$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=3\\cdot138=414$ ngày. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-269": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Khối lượng Pb sinh ra: $m_{Pb}=\\dfrac{206}{N_A}\\Delta N$; khối lượng Po còn lại: $m_{Po}=\\dfrac{210}{N_A}N$.</p><p class=\"text-base leading-relaxed my-2\">$\\dfrac{m_{Pb}}{m_{Po}}=\\dfrac{206}{210}\\cdot\\dfrac{\\Delta N}{N}=0{,}6\\Rightarrow\\dfrac{\\Delta N}{N}=2^{t/T}-1\\approx0{,}6117$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 2^{t/T}\\approx1{,}6117\\Rightarrow\\dfrac tT\\approx0{,}689\\Rightarrow t\\approx95$ ngày. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-270": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Tỉ lệ $\\dfrac{N_Y}{N_X}=2^{t/T}-1$. Tại $t$: $2^{t/T}-1=1{,}5\\Rightarrow2^{t/T}=2{,}5$.</p><p class=\"text-base leading-relaxed my-2\">Tại $2t$: $2^{2t/T}=2{,}5^2=6{,}25$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{N_Y}{N_X}=6{,}25-1=5{,}25$. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-271": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$\\dfrac{N_Y}{N_X}=2^{t/T}-1$. Tại $t_1$: $2^{t_1/T}=1{,}25$. Tại $t_2$: $2^{t_2/T}=10$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 2^{(t_2-t_1)/T}=\\dfrac{10}{1{,}25}=8\\Rightarrow\\dfrac{61{,}2}{T}=3$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T=20{,}4$ phút, gần nhất với 22 phút. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-272": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$\\dfrac{N_Y}{N_X}=2^{t/T}-1$. Tại $t_1$: $2^{t_1/T}=3$; tại $t_2$: $2^{t_2/T}=4$.</p><p class=\"text-base leading-relaxed my-2\">$2^{t_3/T}=2^{(2t_1+3t_2)/T}=3^2\\cdot4^3=576$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow\\dfrac{N_Y}{N_X}=576-1=575$. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-273": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số mol Po ban đầu $\\dfrac{1}{210}$; số mol Pb tạo thành $\\dfrac{0{,}72}{206}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 1-2^{-t/T}=\\dfrac{0{,}72\\cdot210}{206}\\approx0{,}734\\Rightarrow2^{-t/T}\\approx0{,}266$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow\\dfrac tT\\approx1{,}91\\Rightarrow t\\approx1{,}91\\cdot138\\approx264$ ngày. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-275": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số phân rã trong 1 giờ tỉ lệ với độ phóng xạ: $H=H_02^{-t/T}$.</p><p class=\"text-base leading-relaxed my-2\">$2^{t/T}=\\dfrac{921}{497}\\approx1{,}853\\Rightarrow\\dfrac tT\\approx0{,}89$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t\\approx0{,}89\\cdot5730\\approx5100$ năm. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-276": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hai mẫu cùng khối lượng đầu nên cùng $N_0$: $N=N_02^{-t/T}$. $N_B>N_A$ nên mẫu A già hơn.</p><p class=\"text-base leading-relaxed my-2\">$\\dfrac{N_B}{N_A}=2^{(t_A-t_B)/T}=2{,}72\\Rightarrow t_A-t_B=T\\log_2 2{,}72\\approx138{,}2\\cdot1{,}4436$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t_A-t_B\\approx199{,}5$ ngày. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-277": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Chì phóng xạ sinh ra: ${}^{206}Pb^*/{}^{204}Pb=29{,}6-17{,}9=11{,}7$; ${}^{207}Pb^*/{}^{204}Pb=22{,}6-15{,}5=7{,}1$ (trừ chì nguyên thuỷ).</p><p class=\"text-base leading-relaxed my-2\">Số hạt Pb sinh ra bằng số hạt U đã phân rã: $\\dfrac{Pb207^*}{Pb206^*}=\\dfrac{N_{235}(e^{\\lambda_5t}-1)}{N_{238}(e^{\\lambda_8t}-1)}=\\dfrac{7{,}1}{11{,}7}$.</p><p class=\"text-base leading-relaxed my-2\">Với $\\dfrac{N_{235}}{N_{238}}=\\dfrac1{137}$ $\\Rightarrow\\dfrac{e^{\\lambda_5t}-1}{e^{\\lambda_8t}-1}=\\dfrac{7{,}1\\cdot137}{11{,}7}\\approx83{,}1$, trong đó $\\lambda_8=\\dfrac{\\ln2}{4{,}5}$, $\\lambda_5=\\dfrac{\\ln2}{0{,}71}$ (đơn vị $10^{-9}$ năm$^{-1}$).</p><p class=\"text-base leading-relaxed my-2\">Thử $t=4{,}558\\cdot10^9$ năm: $\\dfrac{e^{4{,}45}-1}{e^{0{,}702}-1}\\approx\\dfrac{84{,}6}{1{,}018}\\approx83{,}1$ (khớp). Các giá trị khác (4,615; 4,747; 4,832) cho tỉ số lớn hơn rõ rệt.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t\\approx4{,}558\\cdot10^9$ năm. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "kho"
+ },
+ "c4-mc-278": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số phân rã trong 1 phút lúc đầu là $\\Delta N_0$ nên trong 1 giờ lúc đầu là $60\\Delta N_0$. Số phân rã sau thời gian $t$ trong 1 giờ: $60\\Delta N_0\\,2^{-t/T}$.</p><p class=\"text-base leading-relaxed my-2\">Hết hạn khi $60\\cdot2^{-t/T}<39\\Rightarrow2^{-t/T}<0{,}65\\Rightarrow\\dfrac tT>0{,}6215$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t>0{,}6215\\cdot5{,}27\\approx3{,}28$ năm, tức khoảng 3 năm 3 tháng.</p><p class=\"text-base leading-relaxed my-2\">Từ tuần 2 tháng 5/2022 cộng 3 năm 3 tháng $\\Rightarrow$ khoảng tháng 8/2025. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-279": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Lượng tia $\\gamma$ nhận được tỉ lệ với (độ phóng xạ) × (thời gian chiếu). Lần 1: $H_0\\cdot20$.</p><p class=\"text-base leading-relaxed my-2\">Lần 4 cách lần 1 là 3 tháng: $H=H_02^{-3/4}$, nên $H\\Delta t'=H_0\\cdot20\\Rightarrow\\Delta t'=20\\cdot2^{3/4}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow\\Delta t'\\approx20\\cdot1{,}682\\approx33{,}6$ phút. Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-280": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Độ phóng xạ: $H=\\dfrac{5{,}55\\cdot10^{14}}{60}=9{,}25\\cdot10^{12}$ Bq. Hằng số phóng xạ $\\lambda=\\dfrac{\\ln2}{2{,}7\\cdot86400}\\approx2{,}97\\cdot10^{-6}$ s$^{-1}$.</p><p class=\"text-base leading-relaxed my-2\">$N=\\dfrac H\\lambda=\\dfrac{9{,}25\\cdot10^{12}}{2{,}97\\cdot10^{-6}}\\approx3{,}11\\cdot10^{18}$ hạt.</p><p class=\"text-base leading-relaxed my-2\">$m=\\dfrac{N}{N_A}\\cdot198=\\dfrac{3{,}11\\cdot10^{18}}{6{,}02\\cdot10^{23}}\\cdot198\\approx1{,}024\\cdot10^{-3}$ g $=1{,}024$ mg. Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-285": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Độ phóng xạ của 200 g cacbon khi còn sống: $H_0=15\\cdot200=3000$ phân rã/phút.</p><p class=\"text-base leading-relaxed my-2\">$2^{t/T}=\\dfrac{H_0}{H}=\\dfrac{3000}{375}=8\\Rightarrow t=3T$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=3\\cdot5730=17190$ năm. Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-286": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số hạt Sr: $N=\\dfrac{400}{90}\\cdot6{,}02\\cdot10^{23}\\approx2{,}68\\cdot10^{24}$; $\\lambda=\\dfrac{\\ln2}{29\\cdot365\\cdot86400}\\approx7{,}58\\cdot10^{-10}$ s$^{-1}$.</p><p class=\"text-base leading-relaxed my-2\">Tốc độ phân rã tổng: $H=\\lambda N\\approx2{,}03\\cdot10^{15}$ Bq, trải đều trên $2000$ km$^2=2\\cdot10^{13}$ cm$^2$ $\\Rightarrow$ khoảng $101$ Bq/cm$^2$.</p><p class=\"text-base leading-relaxed my-2\">Diện tích có tốc độ phân rã bằng ngưỡng: $S=\\dfrac{7{,}4\\cdot10^4}{101}\\approx730$ cm$^2$. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "kho"
+ },
+ "c4-mc-287": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Mẫu vừa chế tạo nên ban đầu chỉ có X: $N_X=N_02^{-t/T}$, $N_Y=N_0(1-2^{-t/T})$.</p><p class=\"text-base leading-relaxed my-2\">Hai đường cắt nhau khi $N_X=N_Y\\Rightarrow2^{-\\tau/T}=\\dfrac12\\Rightarrow\\tau=T$. Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "de"
+ },
+ "c4-mc-288": {
+  "answer": null,
+  "explanation": "",
+  "ghi_chu": "Thiếu đồ thị (cần đọc số liệu từ hình)",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-289": {
+  "answer": null,
+  "explanation": "",
+  "ghi_chu": "Thiếu đồ thị (cần đọc số liệu từ hình)",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-290": {
+  "answer": null,
+  "explanation": "",
+  "ghi_chu": "Thiếu đồ thị (cần đọc t1, t2 từ hình)",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-291": {
+  "answer": null,
+  "explanation": "",
+  "ghi_chu": "Thiếu đồ thị (cần độ dốc từ hình)",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-292": {
+  "answer": null,
+  "explanation": "",
+  "ghi_chu": "Thiếu đồ thị (cần Q từ hình; số liệu chữ không đủ)",
+  "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
+  "difficulty": "kho"
+ }
+}

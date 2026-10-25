@@ -1,0 +1,135 @@
+{
+ "c4-mc-294": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Sau đúng một chu kì bán rã ($9$ ngày), số hạt nhân $^{131}I$ giảm một nửa; $^{127}I$ bền nên không đổi, Xe và êlectron bay ra khỏi khối chất nên không tính vào tổng.</p><p class=\"text-base leading-relaxed my-2\">Lấy tổng ban đầu là $100$: $^{127}I$ còn $60$, $^{131}I$ còn $\\frac{40}{2}=20$.</p><p class=\"text-base leading-relaxed my-2\">Tổng còn lại $=60+20=80$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Tỉ lệ $^{131}I$ $=\\frac{20}{80}=25\\%$.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-295": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Mỗi đồng vị phân rã theo $N=N_0\\,2^{-t/T}$ nên tỉ số hai đồng vị đổi theo thời gian: $\\frac{N_{235}}{N_{238}}=\\left(\\frac{N_{235}}{N_{238}}\\right)_0 2^{-t\\left(\\frac1{T_5}-\\frac1{T_8}\\right)}$.</p><p class=\"text-base leading-relaxed my-2\">Thay số: $\\frac{7/1000}{3/100}=\\frac{7}{30}=2^{-x}$ với $x=t\\left(\\frac1{T_5}-\\frac1{T_8}\\right)$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow x=\\log_2\\frac{30}{7}\\approx 2{,}10$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\frac1{T_5}-\\frac1{T_8}=\\frac{1}{7\\cdot10^{8}}-\\frac{1}{4{,}5\\cdot10^{9}}\\approx1{,}206\\cdot10^{-9}$ (năm$^{-1}$).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=\\frac{2{,}10}{1{,}206\\cdot10^{-9}}\\approx1{,}74\\cdot10^{9}$ năm.</p><p class=\"text-base leading-relaxed my-2\">Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "kho"
+ },
+ "c4-mc-296": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Gọi hàm lượng $^{148}Gd$ ban đầu là $x$ thì $^{145}Pm$ là $2x$. Sau thời gian $t$: $N_{Pm}=2x\\cdot2^{-t/17,7}$, $N_{Gd}=x\\cdot2^{-t/85}$.</p><p class=\"text-base leading-relaxed my-2\">Hai hàm lượng bằng nhau: $2\\cdot2^{-t/17,7}=2^{-t/85}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 1-\\frac{t}{17{,}7}=-\\frac{t}{85}$ (lấy $\\log_2$ hai vế).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t\\left(\\frac1{17{,}7}-\\frac1{85}\\right)=1\\Rightarrow t\\approx22{,}4$ năm.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-297": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số hạt chưa phân rã của hỗn hợp: $N=N_0\\left(2^{-t/T_1}+2^{-t/T_2}\\right)$, ban đầu tổng là $2N_0$.</p><p class=\"text-base leading-relaxed my-2\">Còn một nửa: $N=N_0\\Rightarrow 2^{-t/100}+2^{-t/200}=1$.</p><p class=\"text-base leading-relaxed my-2\">Đặt $u=2^{-t/200}$: $u^2+u-1=0\\Rightarrow u=\\frac{\\sqrt5-1}{2}\\approx0{,}618$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t=200\\log_2\\frac1{0{,}618}\\approx200\\cdot0{,}694\\approx138{,}8$ ngày.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-298": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Khối lượng $^{210}Po$ ban đầu: $0{,}4\\cdot105=42$ g. $t=552$ ngày $=4T$ nên Po còn $\\frac{42}{2^4}=2{,}625$ g.</p><p class=\"text-base leading-relaxed my-2\">Khối lượng Po đã phân rã: $42-2{,}625=39{,}375$ g, tương ứng $\\frac{39{,}375}{210}=0{,}1875$ mol, mỗi hạt nhân phân rã cho ra một hạt $\\alpha$ bay khỏi mẫu (chì ở lại).</p><p class=\"text-base leading-relaxed my-2\">Khối lượng $\\alpha$ mất đi: $0{,}1875\\cdot4=0{,}75$ g.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Khối lượng mẫu $=105-0{,}75=104{,}25$ g.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-299": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Gọi khối lượng mẫu ban đầu là $m_0$. Po ban đầu $0{,}25m_0$; $276=2T$ nên Po còn $\\frac{0{,}25m_0}{4}=0{,}0625m_0$.</p><p class=\"text-base leading-relaxed my-2\">Po đã phân rã $0{,}1875m_0$, ứng với $\\frac{0{,}1875m_0}{210}$ mol nên khối lượng $\\alpha$ bay đi là $4\\cdot\\frac{0{,}1875m_0}{210}\\approx0{,}003571m_0$ (chì ở lại).</p><p class=\"text-base leading-relaxed my-2\">Khối lượng mẫu còn lại: $m\\approx0{,}996429m_0$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Phần trăm Po $=\\frac{0{,}0625}{0{,}996429}\\approx6{,}27\\%$.</p><p class=\"text-base leading-relaxed my-2\">Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-300": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Gọi $m_0=1$ và $x=2^{-t/T}$. Po còn $0{,}8x$; Po phân rã $0{,}8(1-x)$ làm mất khối lượng $\\alpha$ là $\\frac{4}{210}\\cdot0{,}8(1-x)$.</p><p class=\"text-base leading-relaxed my-2\">Khối lượng mẫu: $m=1-\\frac{4}{210}\\cdot0{,}8(1-x)$. Điều kiện $\\frac{0{,}8x}{m}=0{,}2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 0{,}8x=0{,}2-0{,}003048(1-x)\\Rightarrow x\\approx0{,}2471$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\frac tT=\\log_2\\frac1{0{,}2471}\\approx2{,}017\\Rightarrow t\\approx2{,}017\\cdot138\\approx278{,}3$ ngày.</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-301": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Gọi $a=\\frac{N_{Y0}}{N_{X0}}$ và $f=\\frac{N_X}{N_{X0}}=2^{-t/T}$. Hạt Y được giữ lại: $N_Y=N_{Y0}+N_{X0}(1-f)$, nên $\\frac{N_Y}{N_X}=\\frac{a+1-f}{f}$.</p><p class=\"text-base leading-relaxed my-2\">Tại $t_1$ tỉ số bằng $1$: $a+1-f_1=f_1\\Rightarrow f_1=\\frac{a+1}{2}$. Tại $t_2$ tỉ số bằng $7$: $f_2=\\frac{a+1}{8}$.</p><p class=\"text-base leading-relaxed my-2\">Vì $t_2=4{,}2t_1$ nên $f_2=f_1^{4,2}$. Đặt $u=\\frac{a+1}{2}$: $\\frac u4=u^{4,2}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow u^{3,2}=\\frac14\\Rightarrow u=2^{-0,625}\\approx0{,}648$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a=2u-1\\approx0{,}30$.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-302": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Gọi $m_0=1$, $x=2^{-t/T}$. Po còn $0{,}4x$, khối lượng mẫu $m=1-\\frac{4}{210}\\cdot0{,}4(1-x)=1-0{,}007619(1-x)$.</p><p class=\"text-base leading-relaxed my-2\">Tại $t_1$: $\\frac{0{,}4x}{m}=0{,}3\\Rightarrow x_1\\approx0{,}7486$, tức $\\frac{t_1}{T}\\approx0{,}4177$.</p><p class=\"text-base leading-relaxed my-2\">Tại $t_2$: $\\frac{0{,}4x}{m}=0{,}15\\Rightarrow x_2\\approx0{,}3732$, tức $\\frac{t_2}{T}\\approx1{,}4220$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow t_2-t_1\\approx(1{,}4220-0{,}4177)\\cdot138\\approx138{,}6$ ngày.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-303": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Trong thời gian $\\Delta t$ ở phần có $N_0$ hạt A lúc đầu, số hạt phân rã (bằng số hạt He) là $N_0\\left(2^{-t_a/T}-2^{-t_b/T}\\right)$ với $T=4$ h.</p><p class=\"text-base leading-relaxed my-2\">Phần I (0 đến 2 h): $n_I=\\frac{3{,}9}{22{,}4}=0{,}1741$ mol $=N_{I0}(1-2^{-0,5})\\Rightarrow N_{I0}\\approx0{,}5944$ mol.</p><p class=\"text-base leading-relaxed my-2\">Phần II (2 h đến 4 h): $n_{II}=\\frac{0{,}6}{22{,}4}=0{,}02679$ mol $=N_{II0}(2^{-0,5}-2^{-1})\\Rightarrow N_{II0}\\approx0{,}1293$ mol.</p><p class=\"text-base leading-relaxed my-2\">Tạp chất phân bố đều nên khối lượng mỗi phần tỉ lệ số hạt A: $m_{I0}=6000\\cdot\\frac{0{,}5944}{0{,}5944+0{,}1293}\\approx4927{,}8$ g.</p><p class=\"text-base leading-relaxed my-2\">$t_3=5t_2=20$ h $=5T$: số hạt A phân rã ở phần I là $0{,}5944\\left(1-\\frac1{32}\\right)\\approx0{,}5759$ mol, khối lượng $\\alpha$ mất đi $4\\cdot0{,}5759\\approx2{,}30$ g.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m_I\\approx4927{,}8-2{,}3\\approx4925{,}5$ g.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-304": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Từ $2T$ đến $3T$, số hạt Po phân rã là $N_0\\left(\\frac14-\\frac18\\right)=\\frac{N_0}{8}$, bằng số hạt He $=\\frac{2{,}24}{22{,}4}=0{,}1$ mol $\\Rightarrow N_0=0{,}8$ mol.</p><p class=\"text-base leading-relaxed my-2\">Tại $t_1=2T$: Po còn $0{,}2$ mol $=42$ g; Pb tạo ra $0{,}6$ mol $=123{,}6$ g; mẫu $197{,}6$ g $\\Rightarrow$ tạp chất $=197{,}6-42-123{,}6=32$ g.</p><p class=\"text-base leading-relaxed my-2\">Tại $t_3=4T$: Po còn $\\frac{0{,}8}{16}=0{,}05$ mol $=10{,}5$ g; Pb $=0{,}75\\cdot206=154{,}5$ g; mẫu $=10{,}5+154{,}5+32=197$ g.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Tỉ lệ Po $=\\frac{10{,}5}{197}\\approx5{,}3\\%$.</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Độ phóng xạ và bài toán xác định tuổi",
+  "difficulty": "kho"
+ },
+ "c4-mc-305": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hạt nhân mẹ đứng yên nên động lượng hai hạt con ngược chiều, cùng độ lớn: $p_\\alpha=p_{Th}\\Rightarrow m_\\alpha K_\\alpha=m_{Th}K_{Th}$.</p><p class=\"text-base leading-relaxed my-2\">Năng lượng toả ra $Q=K_\\alpha+K_{Th}$ nên $\\frac{K_\\alpha}{Q}=\\frac{m_{Th}}{m_\\alpha+m_{Th}}=\\frac{230}{234}\\approx98{,}29\\%$.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-306": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Năng lượng toả ra: $Q=(m_{Po}-m_\\alpha-m_X)c^2=(209{,}9828-4{,}0015-205{,}9744)\\cdot931=0{,}0069\\cdot931\\approx6{,}424$ MeV.</p><p class=\"text-base leading-relaxed my-2\">Hạt nhân Po đứng yên nên $p_\\alpha=p_X\\Rightarrow\\frac{K_X}{K_\\alpha}=\\frac{m_\\alpha}{m_X}$, suy ra $K_X=Q\\cdot\\frac{m_\\alpha}{m_\\alpha+m_X}=6{,}424\\cdot\\frac{4{,}0015}{209{,}9759}\\approx0{,}1224$ MeV.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow K_X=0{,}1224\\cdot1{,}6\\cdot10^{-13}\\approx1{,}96\\cdot10^{-14}$ J.</p><p class=\"text-base leading-relaxed my-2\">Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Năng lượng toả ra của phản ứng hạt nhân",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-307": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Hạt nhân con là $^{222}_{86}Rn$. Hạt nhân mẹ đứng yên nên $p_\\alpha=p_X\\Rightarrow\\frac{K_X}{K_\\alpha}=\\frac{m_\\alpha}{m_X}=\\frac{4}{222}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow K_X=4{,}8\\cdot\\frac{4}{222}\\approx0{,}0865$ MeV.</p><p class=\"text-base leading-relaxed my-2\">Không có bức xạ $\\gamma$ nên $Q=K_\\alpha+K_X=4{,}8+0{,}0865\\approx4{,}89$ MeV.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Năng lượng toả ra của phản ứng hạt nhân",
+  "difficulty": "de"
+ },
+ "c4-mc-308": {
+  "answer": "A",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số hạt Po ban đầu: $N_0=\\frac{10^{-3}}{210}\\cdot6{,}02\\cdot10^{23}\\approx2{,}867\\cdot10^{18}$.</p><p class=\"text-base leading-relaxed my-2\">Sau $1$ giờ ($\\ll T=138$ ngày $=3312$ giờ), số hạt phân rã $\\Delta N=N_0\\left(1-2^{-1/3312}\\right)\\approx2{,}867\\cdot10^{18}\\cdot2{,}09\\cdot10^{-4}\\approx6{,}0\\cdot10^{14}$.</p><p class=\"text-base leading-relaxed my-2\">Năng lượng mỗi phân rã: $Q=(209{,}9828-205{,}9744-4{,}0026)\\cdot931{,}5=0{,}0058\\cdot931{,}5\\approx5{,}40$ MeV.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Nhiệt toả ra $=6{,}0\\cdot10^{14}\\cdot5{,}40\\cdot1{,}6\\cdot10^{-13}\\approx518$ J (quy đổi $1$ MeV $=1{,}6\\cdot10^{-13}$ J).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow\\Delta T=\\frac{518}{8}\\approx65$ K.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+  "ghi_chu": "",
+  "topic": "Năng lượng toả ra của phản ứng hạt nhân",
+  "difficulty": "kho"
+ },
+ "c4-mc-309": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Phân rã $^{210}Po\\to\\alpha+{}^{206}Pb$ (đứng yên): $K_\\alpha=K_{Pb}\\cdot\\frac{206}{4}=0{,}103\\cdot51{,}5\\approx5{,}305$ MeV.</p><p class=\"text-base leading-relaxed my-2\">Phản ứng $\\alpha+{}^9_4Be\\to{}^{12}_6X+n$ có $Q=(4{,}0015+9{,}0169-12{,}000-1{,}0087)\\cdot931{,}5=0{,}0097\\cdot931{,}5\\approx9{,}036$ MeV, nên $K_X+K_n=K_\\alpha+Q\\approx14{,}34$ MeV.</p><p class=\"text-base leading-relaxed my-2\">Nơtron bay vuông góc với $\\alpha$: $p_X^2=p_\\alpha^2+p_n^2\\Rightarrow 12K_X=4{,}0015\\cdot5{,}305+1{,}0087K_n\\approx21{,}23+1{,}0087K_n$.</p><p class=\"text-base leading-relaxed my-2\">Thay $K_n=14{,}34-K_X$: $13{,}0087K_X\\approx35{,}69\\Rightarrow K_X\\approx2{,}74$ MeV.</p><p class=\"text-base leading-relaxed my-2\">Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
+  "difficulty": "kho"
+ },
+ "c4-mc-310": {
+  "answer": "B",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số xung đếm được bằng số hạt phân rã. Từ $0$ đến $2$ h: $N_0(1-y)=n$ với $y=2^{-2/T}$; từ $0$ đến $6$ h: $N_0(1-y^3)=2{,}3n$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow\\frac{1-y^3}{1-y}=1+y+y^2=2{,}3\\Rightarrow y^2+y-1{,}3=0\\Rightarrow y\\approx0{,}745$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow\\frac2T=\\log_2\\frac1{0{,}745}\\approx0{,}4247\\Rightarrow T\\approx4{,}71$ h.</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "trung-binh"
+ },
+ "c4-mc-311": {
+  "answer": "C",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">$T=2{,}6\\cdot365\\cdot24\\cdot60=1{,}3666\\cdot10^6$ phút nên $\\lambda=\\frac{\\ln2}{T}\\approx5{,}07\\cdot10^{-7}$ phút$^{-1}$.</p><p class=\"text-base leading-relaxed my-2\">Trong $10$ phút ($\\ll T$) số phân rã $\\Delta N\\approx\\lambda N t=5{,}07\\cdot10^{-7}\\cdot10^{7}\\cdot10\\approx50{,}7$.</p><p class=\"text-base leading-relaxed my-2\">Hạt phát đều mọi hướng, màn ở cách $1$ cm có diện tích $10$ cm$^2$ nên tỉ lệ hạt tới màn là $\\frac{S}{4\\pi r^2}=\\frac{10}{4\\pi\\cdot1^2}\\approx0{,}796$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Số chấm sáng $\\approx50{,}7\\cdot0{,}796\\approx40$.</p><p class=\"text-base leading-relaxed my-2\">Chọn C.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ },
+ "c4-mc-312": {
+  "answer": "D",
+  "explanation": "<p class=\"text-base leading-relaxed my-2\">Số hạt nhân trong mẫu: $N=\\frac{1{,}31\\cdot10^{-8}}{131}\\cdot6{,}02\\cdot10^{23}\\approx6{,}02\\cdot10^{13}$.</p><p class=\"text-base leading-relaxed my-2\">Tỉ lệ hạt tới đầu dò: $\\frac{\\pi(2{,}54)^2}{4\\pi\\cdot50^2}=\\frac{20{,}27}{31416}\\approx6{,}45\\cdot10^{-4}$. Cứ $5$ hạt tới có $4$ xung nên số hạt tới đầu dò là $1{,}68\\cdot10^6\\cdot\\frac54=2{,}1\\cdot10^6$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$ Số phân rã trong $1$ phút: $\\Delta N=\\frac{2{,}1\\cdot10^6}{6{,}45\\cdot10^{-4}}\\approx3{,}25\\cdot10^9$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow\\lambda\\approx\\frac{\\Delta N}{N\\,\\Delta t}=\\frac{3{,}25\\cdot10^9}{6{,}02\\cdot10^{13}}\\approx5{,}4\\cdot10^{-5}$ phút$^{-1}$ (vì $\\Delta N\\ll N$).</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T=\\frac{\\ln2}{\\lambda}\\approx1{,}28\\cdot10^4$ phút $\\approx8{,}9$ ngày.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+  "ghi_chu": "",
+  "topic": "Định luật phóng xạ và chu kì bán rã",
+  "difficulty": "kho"
+ }
+}
