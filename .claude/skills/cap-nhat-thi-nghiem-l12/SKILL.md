@@ -67,6 +67,7 @@ Thứ tự đề xuất: 5 → 12 → 18 → 11 → 13 → 2 → 8 → 3 → 126
 6. Vẫn vượt 2 500 → DỪNG, hỏi thầy tách mục/tách bài; không cắt Bẫy/Trả bài để lấy chỗ.
 
 ## 4. Chạy song song nhiều bài
+Prompt chép sẵn cho phiên chính (A), agent `general-purpose` soạn một bài (B), agent `kiem-code` (C) và lệnh đăng (D), kèm bảng 8 lô: `prompts.md` cùng thư mục.
 Mỗi agent một thư mục bài + bộ `tn-l12-<slug>-*.json` riêng → không đụng nhau. File dùng chung chỉ **thêm dòng**: `content/thi-nghiem/index.json` (sinh lại bằng `thi_nghiem.py`, lấy bản cuối), bảng mục 1 ở đây, `docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md` mục 4, `docs/STATE.md`. Prompt agent chép nguyên mục 2–3 + bảng ký hiệu của chương (bài học 7/10 skill soạn bài).
 
 ## Nhật ký rút kinh nghiệm
