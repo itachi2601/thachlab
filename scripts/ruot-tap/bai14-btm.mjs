@@ -12,7 +12,7 @@ export const btmCss = `
 .bt .nd{font-size:var(--fs-sm);background:var(--soft);border-radius:1mm;padding:.4mm 1.5mm;margin-bottom:.8mm}
 .bt .ans{display:grid;grid-template-columns:repeat(4,1fr);gap:1mm 2.5mm;font-size:var(--fs-sm)}
 .bt .ans.c3{grid-template-columns:repeat(3,1fr)}
-.bt .ans div{display:flex;gap:1mm;align-items:flex-end}.bt .ans .fill{flex:1;min-width:0;height:9mm}
+.bt .ans div{display:flex;gap:1mm;align-items:flex-end}.bt .ans .fill{flex:1;min-width:0;height:8.5mm}
 .bt .gi{border:.3mm solid var(--grid);border-radius:1mm;padding:0 2mm;margin-bottom:.8mm}
 `;
 
@@ -25,31 +25,31 @@ export const btmPages = (n, { m, head, foot, tag, lines, wl, hinh }) => {
   const dang = [
     {
       t: 'Dạng 1 · Dễ · Đọc kí hiệu hạt nhân',
-      de: `${m('{}^{63}_{29}\\mathrm{Cu}')}: <b>a)</b> số prôtôn, nuclôn · <b>b)</b> số nơtron · <b>c)</b> số êlectron, điện tích hạt nhân (theo ${m('e')}) · <b>d)</b> hạt nhân có 82 prôtôn, 124 nơtron: số khối, kí hiệu.`,
+      de: `${m('{}^{63}_{29}\\mathrm{Cu}')}:<br><b>a)</b> số prôtôn, nuclôn<br><b>b)</b> số nơtron<br><b>c)</b> số êlectron, điện tích hạt nhân (theo ${m('e')})<br><b>d)</b> hạt nhân có 82 prôtôn, 124 nơtron: số khối, kí hiệu.`,
       nd: `Thấy kí hiệu ${m('{}^{A}_{Z}\\mathrm{X}')} → đọc ${m('Z')} ở ${f(10)}, ${m('A')} ở ${f(10)}, dùng ${f(22)}`,
       a: ['a', 'b', 'c', 'd'], gi: 0,
     },
     {
       t: 'Dạng 2 · Trung bình · Nhận ra đồng vị',
-      de: `${m('{}^{12}_{6}\\mathrm{C},\\ {}^{14}_{6}\\mathrm{C},\\ {}^{14}_{7}\\mathrm{N},\\ {}^{15}_{7}\\mathrm{N},\\ {}^{16}_{8}\\mathrm{O},\\ {}^{17}_{8}\\mathrm{O}')}: <b>a)</b> số nơtron từng hạt · <b>b)</b> bao nhiêu cặp đồng vị · <b>c)</b> ${m('{}^{14}_{6}\\mathrm{C}')} và ${m('{}^{14}_{7}\\mathrm{N}')} có phải đồng vị?`,
+      de: `${m('{}^{12}_{6}\\mathrm{C},\\ {}^{14}_{6}\\mathrm{C},\\ {}^{14}_{7}\\mathrm{N},\\ {}^{15}_{7}\\mathrm{N},\\ {}^{16}_{8}\\mathrm{O},\\ {}^{17}_{8}\\mathrm{O}')}:<br><b>a)</b> số nơtron từng hạt<br><b>b)</b> bao nhiêu cặp đồng vị<br><b>c)</b> ${m('{}^{14}_{6}\\mathrm{C}')} và ${m('{}^{14}_{7}\\mathrm{N}')} có phải đồng vị?`,
       nd: `Hỏi “có phải đồng vị” → so ${f(8)} trước (phải ${f(12)}), rồi xét ${f(8)} khác nhau`,
       a: ['a', 'b', 'c'], gi: 0,
     },
     {
       t: 'Dạng 3 · Trung bình · Bán kính, thể tích theo số khối',
-      de: `${m('{}^{64}_{30}\\mathrm{Zn}')} và ${m('{}^{238}_{92}\\mathrm{U}')}, ${m('R=1{,}2\\cdot10^{-15}A^{1/3}')}: <b>a)</b> ${m('R_{\\mathrm{Zn}}')} · <b>b)</b> ${m('R_{\\mathrm{U}}')} (đơn vị ${m('10^{-15}\\ \\mathrm{m}')}) · <b>c)</b> ${m('R_{\\mathrm{U}}/R_{\\mathrm{Zn}}')} · <b>d)</b> ${m('V_{\\mathrm{U}}/V_{\\mathrm{Zn}}')}`,
+      de: `${m('{}^{64}_{30}\\mathrm{Zn}')} và ${m('{}^{238}_{92}\\mathrm{U}')}, ${m('R=1{,}2\\cdot10^{-15}A^{1/3}')}:<br><b>a)</b> ${m('R_{\\mathrm{Zn}}')}<br><b>b)</b> ${m('R_{\\mathrm{U}}')} (đơn vị ${m('10^{-15}\\ \\mathrm{m}')})<br><b>c)</b> ${m('R_{\\mathrm{U}}/R_{\\mathrm{Zn}}')}<br><b>d)</b> ${m('V_{\\mathrm{U}}/V_{\\mathrm{Zn}}')}`,
       nd: `Hỏi bán kính, tỉ số bán kính hay thể tích → ${m('R\\propto')} ${f(12)}, ${m('V\\propto R^3\\propto')} ${f(10)}`,
       a: ['a', 'b', 'c', 'd'], gi: 9, fig: 'banKinh',
     },
     {
       t: 'Dạng 4 · Khó · Đếm hạt trong một khối lượng chất',
-      de: `${m('14\\ \\mathrm{g}')} sắt ${m('{}^{56}_{26}\\mathrm{Fe}')}, ${m('M\\approx56\\ \\mathrm{g/mol}')}: <b>a)</b> số mol · <b>b)</b> số hạt nhân · <b>c)</b> số nơtron · <b>d)</b> tổng điện tích các prôtôn (C).`,
+      de: `${m('14\\ \\mathrm{g}')} sắt ${m('{}^{56}_{26}\\mathrm{Fe}')}, ${m('M\\approx56\\ \\mathrm{g/mol}')}:<br><b>a)</b> số mol<br><b>b)</b> số hạt nhân<br><b>c)</b> số nơtron<br><b>d)</b> tổng điện tích các prôtôn (C).`,
       nd: `Cho khối lượng, hỏi số hạt → ${m('n=')} ${f(10)}, ${m('N=')} ${f(10)}, × số ${f(10)} mỗi hạt nhân`,
-      a: ['a', 'b', 'c', 'd'], gi: 8,
+      a: ['a', 'b', 'c', 'd'], gi: 7,
     },
     {
       t: 'Dạng 5 · Nâng cao · Khối lượng nguyên tử trung bình',
-      de: `Bo: ${m('{}^{10}_{5}\\mathrm{B}')} (${m('10{,}013\\ \\mathrm{u}')}), ${m('{}^{11}_{5}\\mathrm{B}')} (${m('11{,}009\\ \\mathrm{u}')}), trung bình ${m('10{,}811\\ \\mathrm{u}')}: <b>a)</b> % mỗi đồng vị · <b>b)</b> khối lượng một nguyên tử ${m('{}^{11}_{5}\\mathrm{B}')} ra kg · <b>c)</b> ra ${m('\\mathrm{MeV}/c^2')}.`,
+      de: `Bo: ${m('{}^{10}_{5}\\mathrm{B}')} (${m('10{,}013\\ \\mathrm{u}')}), ${m('{}^{11}_{5}\\mathrm{B}')} (${m('11{,}009\\ \\mathrm{u}')}), trung bình ${m('10{,}811\\ \\mathrm{u}')}:<br><b>a)</b> % mỗi đồng vị<br><b>b)</b> khối lượng một nguyên tử ${m('{}^{11}_{5}\\mathrm{B}')} ra kg<br><b>c)</b> ra ${m('\\mathrm{MeV}/c^2')}.`,
       nd: `Cho khối lượng từng đồng vị và trung bình → ${f(20)}, ${m('x_1+x_2=')} ${f(6)}`,
       a: ['a', 'b', 'c'], gi: 8, fig: 'canDongVi',
     },
@@ -64,7 +64,6 @@ ${head('BÀI TẬP MẪU · DẠNG 1–3', 'Đề đủ và gợi ý từng bư�
 <h3><i>1</i>Nhận dạng và đáp số</h3>${tag(`${n}·1`)}
 ${dang.slice(0, 3).map(block).join('\n')}
 ${kq([1, 2, 3])}
-<div class="card" style="padding:0 3mm"><div class="ln"><b>Dạng 1–3: chỗ em còn vướng</b></div>${lines(2)}</div>
 ${foot(n)}</section>
 <section class="page">
 ${head('BÀI TẬP MẪU · DẠNG 4–5', 'Đề đủ và gợi ý từng bước ở mục Bài tập mẫu trên web')}
