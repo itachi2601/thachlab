@@ -1,4 +1,4 @@
-// Dựng ruột tập Vật lí 12 – Bài 14 (8 trang 165×240 mm, ô ly 5 mm; trang 6–7 là mẫu Sửa bài sau đề, trang 8 ghi chú tự do). Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
+// Dựng ruột tập Vật lí 12 – Bài 14 (9 trang 165×240 mm, ô ly 5 mm; trang 6 Bài tập mẫu 5 dạng (module bai14-btm.mjs), trang 7–8 mẫu Sửa bài sau đề, trang 9 ghi chú tự do). Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
 // Mặc định ghi scripts/ruot-tap/out/ruot-tap-vl12-bai14.pdf. Cần book/node_modules (katex, qrcode-generator, puppeteer-core):
 // worktree không có thì dùng book/ của bản chính ~/Projects/thachlab.
 // Mã ô "Tập: trang · ô" (nhãn Web … trên giấy = tên mục trên web) trùng data-tap trong content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.src.html.
@@ -6,6 +6,7 @@ import { createRequire } from 'node:module';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { btmCss, btmPage } from './bai14-btm.mjs';
 const HERE = dirname(fileURLToPath(import.meta.url));
 const BOOK = [resolve(HERE, '../../book/'), '/Users/MAC/Projects/thachlab/book'].find((d) => existsSync(d + '/node_modules')) + '/';
 const LINK = 'https://thachlab.id.vn/lop-hoc/bai/?id=15#muc=kiem-tra';
@@ -24,7 +25,7 @@ const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
 
 // Nhãn góc phải: mã "trang·ô" trùng nhãn "✍ Tập: trang · ô" khi trình chiếu (data-tap trong theory.src.html).
 const tag = (t) => `<span class="tag">Tập ${t}</span>`;
-const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · trang ${n}/8</span></div>`;
+const foot = (n) => `<div class="foot"><span>Vật lí thầy Thạch · thachlab.id.vn</span><span>Bài 14 · trang ${n}/9</span></div>`;
 // who=true chỉ ở trang 1 và trang Sửa bài (tập đóng sẵn, không lặp Ngày/Tên mỗi trang)
 const head = (t, s, who = false) => `<div class="top"><div><b>${t}</b><small>${s}</small></div>${who ? '<div class="who">Ngày …../….. &nbsp;Tên: ………………</div>' : ''}</div>`;
 const kw = (h) => `<div class="kw">🔑 ${h}</div>`;
@@ -87,6 +88,7 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .tag{position:absolute;right:12mm;margin:1.6mm 0 0;border-radius:1mm;padding:.2mm 2mm;background:var(--navy);color:#fff;font-size:3.2mm;font-weight:700;line-height:4.6mm}
 .kw{margin:1.1mm 0;font-size:3.4mm}
 .trap{display:flex;gap:2mm;align-items:flex-start;margin:1mm 0}
+${btmCss}
 </style></head><body>
 
 <!-- TRANG 1: mục tiêu, dự đoán, II.1 -->
@@ -205,13 +207,14 @@ ${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): em chọn … · A, Z, N =`
  + wl('Đồng vị neon · Dự đoán trung bình gần đồng vị nào:', 1) + wl('Thấy / vì sao 20,18:', 2))}
 ${foot(5)}</section>
 
-${fixPage(6, 'Lần 1')}${fixPage(7, 'Lần 2')}
+${btmPage(6, { m, head, foot, tag, lines })}
+${fixPage(7, 'Lần 1')}${fixPage(8, 'Lần 2')}
 
-<!-- TRANG 8: ghi chú tự do -->
+<!-- TRANG 9: ghi chú tự do -->
 <section class="page">
 ${head('GHI CHÚ TỰ DO', 'Sơ đồ, công thức thầy viết thêm, điều muốn hỏi')}
 <div class="card soft"><b>Câu hỏi còn lại cho thầy / trợ giảng:</b>${lines(3)}</div>
-${foot(8)}</section>
+${foot(9)}</section>
 </body></html>`;
 
 const out = process.argv[2] ?? resolve(HERE, 'out/ruot-tap-vl12-bai14.pdf');
