@@ -54,7 +54,7 @@ export const btmPage = (n, { m, head, foot, tag, lines }) => {
   return `<section class="page">
 ${head('BÀI TẬP MẪU · 5 DẠNG', 'Đề đủ + gợi ý từng bước: mục Bài tập mẫu trên web; giải ra nháp')}
 <h3><i>1</i>Nhận dạng và đáp số <span class="hint">(làm xong mới bấm xem lời giải)</span></h3>${tag(`${n}·1`)}
-${dang.map((d) => `<div class="bt"><div class="hd"><span>${d.t}</span>${tu}</div><div class="de">${d.de}</div><div class="nd">🔑 ${d.nd}</div>${ans(d.a)}</div>`).join('\n')}
+${dang.map((d) => `<div class="bt"><div class="hd"><span>${d.t}</span>${tu}</div><div class="de">${d.de}</div><div class="nd"><b>Mấu chốt:</b> ${d.nd}</div>${ans(d.a)}</div>`).join('\n')}
 <h3><i>2</i>Ba bài tương tự web đưa ra <span class="hint">(sau khi đọc xong một dạng)</span></h3>${tag(`${n}·2`)}
 <div class="card soft" style="padding:1.2mm 3mm">Đúng: ${[1, 2, 3, 4, 5].map((i) => `D${i} ……/3`).join(' &nbsp;· ')}<br>Dạng em thấy khó nhất: D……, vì:${lines(2)}</div>
 ${foot(n)}</section>`;
