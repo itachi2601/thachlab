@@ -28,3 +28,5 @@ metadata:
 - Dòng "Tiếp theo · còn X phút" chỉ hiện khi xem tuần hiện tại — chưa thấy trên dữ liệu thật (tuần 19/10 là tuần tới lúc làm). Vuốt chuyển ngày chưa thử trên điện thoại thật.
 - Chưa có cách tự động nhận tiến độ: mỗi tuần thầy vẫn phải báo "lớp X tới bài Y" (hoặc tick ở dashboard giáo viên → tiến trình) rồi chạy lại `lich-tuan.mts --ghi`.
 - Địa điểm trượt băng/gym, nội dung "việc khác 10h T2", giờ tiết tối Cao Thắng: vẫn trống trong `lich-co-dinh.json`.
+
+**Thời lượng buổi dạy (thầy cho 2026-10-25):** lớp 10 và 11: 1 buổi/tuần 3h15′ (195′); lớp 12: 2 buổi/tuần, mỗi buổi 2h (120′). Nhịp cố định đầu buổi 10′ ôn → 20′ kiểm tra → 30′ sửa bài = 60′, nên phần bài mới + BTVN còn 135′ (L10/11) hoặc 60′ (L12). Dùng khi soạn ruột tập, chia tiết sách in, ước lượng độ dài bài mới.
