@@ -13,7 +13,7 @@
 
 <p>Bệnh viện xạ trị áp sát: nguồn $^{192}_{77}\text{Ir}$ đặt sát khối u; kỹ thuật viên bấm nút từ xa, đứng sau tấm chắn chì.</p>
 
-<p>Người cách 1 m nhận bức xạ nhiều hơn hẳn người cách 3 m. Vì sao phải lùi xa và che chắn?</p>
+<p>Vì sao phải lùi xa và che chắn?</p>
 
 <!--FIG1-->
 
@@ -25,8 +25,8 @@
 <input type="radio" name="tl19-q0" id="tl19-q0b"><label for="tl19-q0b" class="tl-opt tl-ok">B. Giảm 9 lần</label>
 <input type="radio" name="tl19-q0" id="tl19-q0c"><label for="tl19-q0c" class="tl-opt tl-no">C. Không đổi, chỉ cần đứng lâu hơn</label>
 <input type="radio" name="tl19-q0" id="tl19-q0d"><label for="tl19-q0d" class="tl-opt tl-no">D. Tăng lên vì nguồn phát mọi hướng</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Suất liều của một nguồn điểm tỉ lệ nghịch với <em>bình phương</em> khoảng cách: xa gấp 3 thì còn $1/9$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Bức xạ toả ra mọi hướng, nên lùi xa thì cùng một lượng năng lượng trải trên diện tích lớn hơn: khoảng cách gấp $n$ lần thì suất liều còn $1/n^2$, không phải $1/n$. Lùi 3 lần là còn một phần chín. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng hướng.</strong> Bức xạ toả ra mọi hướng nên lùi xa thì cùng lượng tia trải trên diện tích lớn hơn nhiều. Mục II.3 đo nhịp đếm theo khoảng cách để kiểm dự đoán này.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Bức xạ toả ra mọi hướng: lùi xa thì cùng một lượng tia trải trên diện tích lớn hơn, mà diện tích tăng nhanh hơn khoảng cách. Mục II.3 có thí nghiệm kiểm. Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -53,7 +53,7 @@
 <p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Hai kỹ thuật viên cùng đứng cách nguồn 2 m; A vào 5 phút, B vào 20 phút. Vì sao B nhận liều hơn?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl19-q1" id="tl19-q1a"><label for="tl19-q1a" class="tl-opt tl-ok">A. Vì thời gian chiếu xạ dài hơn — cùng khoảng cách, liều tỉ lệ thuận thời gian</label>
+<input type="radio" name="tl19-q1" id="tl19-q1a"><label for="tl19-q1a" class="tl-opt tl-ok">A. Vì thời gian chiếu xạ dài hơn</label>
 <input type="radio" name="tl19-q1" id="tl19-q1b"><label for="tl19-q1b" class="tl-opt tl-no">B. Vì đứng lâu thì khả năng đâm xuyên mạnh dần</label>
 <input type="radio" name="tl19-q1" id="tl19-q1c"><label for="tl19-q1c" class="tl-opt tl-no">C. Vì nguồn phóng xạ mạnh dần trong lúc chiếu</label>
 <input type="radio" name="tl19-q1" id="tl19-q1d"><label for="tl19-q1d" class="tl-opt tl-no">D. Không ai nhận nhiều hơn, vì cùng khoảng cách</label>
@@ -149,9 +149,66 @@
 
 <p><strong>🔑 Nhanh · Xa · Chắn đủ</strong></p>
 
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-antoanpx-01">
+<p class="tl-label">🔬 Thí nghiệm: nhịp đếm đổi thế nào khi lùi xa nguồn?</p>
+<ol class="tl-steps">
+<li><strong>Giả thuyết cần kiểm:</strong> nguồn điểm phát tia đều ra mọi hướng nên nhịp đếm tỉ lệ với $1/d^2$ theo khoảng cách $d$.</li>
+<li><strong>Dự đoán nếu đúng:</strong> $d$ gấp đôi thì nhịp đếm thực còn một phần tư.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem dụng cụ và 3 bước</summary>
+<p>(1) Nguồn gamma kiểm định, hoạt độ thấp; (2) máy đếm Geiger hiện số xung; (3) thước dây, đo $d$ từ tâm nguồn tới đầu dò.</p>
+<p><strong>Làm:</strong> (1) Cất nguồn vào hộp chì, đếm 10 phút để đo phông nền (bức xạ nền), quy ra xung/phút. (2) Đặt đầu dò cách nguồn 0,5 m; 1 m; 1,5 m; 2 m; 3 m, mỗi chỗ đếm 5 phút, quy ra nhịp đo mỗi phút. (3) Nhịp đếm thực = nhịp đo − phông; nhân với 0,25 µSv/h cho mỗi xung/phút thì ra suất liều.</p>
+</details>
+<strong>Coi rằng</strong> nguồn là nguồn điểm; <strong>bỏ qua</strong> hấp thụ của không khí và tia tán xạ từ tường.</li>
+<li><strong>Quan sát:</strong> phông 30 xung/phút; từ 0,5 m ra 3 m, nhịp thực giảm từ khoảng 1 450 còn khoảng 40 xung/phút; các ô $N d^2$ đã tính chênh nhau vài phần trăm.</li>
+<li><strong>Rút ra:</strong> giả thuyết được ủng hộ: suất liều tỉ lệ nghịch với bình phương khoảng cách, vì cùng số hạt mỗi giây trải trên mặt cầu diện tích $4\pi d^2$ ngày càng lớn.</li>
+<li><strong>Chưa nói được gì:</strong> tác hại lên cơ thể (máy chỉ đếm xung); sát một nguồn lớn, không còn coi là nguồn điểm.</li>
+</ol>
+</div>
+
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: bảng số đếm, em tự tính một ô</summary>
+<p>Mỗi chỗ đếm 5 phút; phông đếm 10 phút được 304 xung, tức 30 xung/phút.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>$d$ (m)</th><th>Nhịp đo (xung/phút)</th><th>Nhịp thực $N$ (xung/phút)</th><th>$N d^2$</th></tr></thead>
+<tbody>
+<tr><td>0,5</td><td>1484</td><td>1454</td><td>364</td></tr>
+<tr><td>1,0</td><td>390</td><td>360</td><td>360</td></tr>
+<tr><td>1,5</td><td>196</td><td>166</td><td>374</td></tr>
+<tr><td>2,0</td><td>119</td><td>89</td><td>em tự tính</td></tr>
+<tr><td>3,0</td><td>71</td><td>41</td><td>369</td></tr>
+</tbody></table></div>
+<p>Em tự tính ô $N d^2$ ở dòng 2,0 m rồi so với các ô còn lại.</p>
+<p>Các ô không bằng nhau tuyệt đối vì phép đếm là ngẫu nhiên: đếm được $N$ xung thì độ lệch cỡ $\sqrt{N}$ xung. Ở 3 m, 5 phút đếm được tổng cộng khoảng 355 xung (gồm cả phông), lệch cỡ ±19 xung, tức khoảng 5%.</p>
+<!--FIG3-->
+<p><small>Số liệu minh hoạ, không phải số đo thật: tính từ mô hình nhịp thực bằng $360/d^2$ xung/phút ($d$ tính bằng m), phông 30 xung/phút, số đếm rút ngẫu nhiên theo phân bố Poisson.</small></p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>⚖ Bấm xem: sai số làm $N d^2$ lệch theo chiều nào</summary>
+<p><strong>Quên trừ phông:</strong> ở xa, nhịp thực nhỏ nên phông chiếm phần lớn nhịp đo. Tích tính bằng nhịp đo <em>tăng</em> dần theo $d$ (ở 3 m thành $71 \times 9 \approx 640$ thay vì khoảng 370), dễ tưởng quy luật sai.</p>
+<p><strong>Đo $d$ tới bề mặt nguồn thay vì tâm nguồn:</strong> $d$ ghi nhỏ hơn thật, lệch tương đối lớn nhất ở gần, nên $N d^2$ ở gần <em>nhỏ hơn</em> các ô ở xa.</p>
+<p><strong>Cách giảm:</strong> đo phông rồi trừ; đếm lâu hơn để độ lệch tương đối nhỏ đi; đo $d$ tới tâm nguồn.</p>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl19-q3" id="tl19-q3a"><label for="tl19-q3a" class="tl-opt tl-no">A. Từ 1 m ra 2 m, nhịp đếm thực còn khoảng một phần tư</label>
+<input type="radio" name="tl19-q3" id="tl19-q3b"><label for="tl19-q3b" class="tl-opt tl-no">B. $N d^2$ gần không đổi nên suất liều tỉ lệ nghịch bình phương khoảng cách</label>
+<input type="radio" name="tl19-q3" id="tl19-q3c"><label for="tl19-q3c" class="tl-opt tl-ok">C. Nhịp đếm giảm chủ yếu do không khí hấp thụ tia</label>
+<input type="radio" name="tl19-q3" id="tl19-q3d"><label for="tl19-q3d" class="tl-opt tl-no">D. Sát nguồn lớn, không phải nguồn điểm, quy luật không dùng được</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng: ý C sai.</strong> Nhịp đếm giảm vì cùng số hạt trải trên mặt cầu diện tích $4\pi d^2$ ngày càng lớn. Không khí chặn tia gamma rất ít trên vài mét, nên thí nghiệm mới bỏ qua được. A là hiện tượng, B là kết luận, D là giới hạn: ba ý đó đúng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng đọc từ bảng; B là kết luận rút từ tích $N d^2$ gần không đổi; D nói đúng giới hạn của thí nghiệm. Vậy ý sai nằm ở <em>cơ chế</em>. Chọn lại nhé.</p></div>
+</div>
+</div>
+
 <ul>
-<li><strong>Giảm thời gian:</strong> liều tỉ lệ thuận thời gian phơi nhiễm.</li>
-<li><strong>Tăng khoảng cách:</strong> suất liều tỉ lệ nghịch với $r^2$; xa gấp đôi, suất liều còn $1/4$.</li>
+<li><strong>Giảm thời gian:</strong> liều tỉ lệ thuận thời gian.</li>
+<li><strong>Tăng khoảng cách:</strong> xem công thức dưới.</li>
 </ul>
 
 <div class="tl-fx">
@@ -159,8 +216,8 @@
 <p>$$\dot H \sim \dfrac{1}{r^2}$$</p>
 <p>$$\dfrac{\dot H_2}{\dot H_1} = \left(\dfrac{r_1}{r_2}\right)^2$$</p>
 <ul class="tl-fx-def">
-<li><span class="tl-sym">$\dot H_1$, $\dot H_2$</span><span>suất liều tại khoảng cách $r_1$, $r_2$ (µSv/h)</span></li>
-<li><span class="tl-sym">$r_1$, $r_2$</span><span>khoảng cách từ nguồn tới người (m)</span></li>
+<li><span class="tl-sym">$\dot H_1$, $\dot H_2$</span><span>suất liều (µSv/h)</span></li>
+<li><span class="tl-sym">$r_1$, $r_2$</span><span>khoảng cách tới nguồn (m)</span></li>
 </ul>
 </div>
 
@@ -168,35 +225,6 @@
 <li><strong>Che chắn:</strong> giấy chặn alpha; nhôm chặn beta; chì, bê tông dày chặn gamma và tia X.</li>
 </ul>
 
-<!--FIG3-->
-
-<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-antoanpx-01">
-<p class="tl-label">🔬 Thí nghiệm: đo suất liều theo khoảng cách</p>
-<ol class="tl-steps">
-<li><strong>Làm:</strong> đặt máy đo (ống Geiger) cách nguồn gamma lần lượt 0,5 m; 1 m; 1,5 m; 2 m; 3 m, mỗi vị trí đếm 1 phút, đã trừ phông 30 xung/phút. Máy quy đổi $k = 0{,}25$ µSv/h mỗi xung/phút.</li>
-<li><strong>Quan sát:</strong> bảng dưới; lùi xa thì số đếm tụt rất nhanh.</li>
-<li><strong>Rút ra:</strong> suất liều giảm theo bình phương khoảng cách — lùi xa là cách giảm liều rẻ nhất.</li>
-</ol>
-</div>
-
-<table class="tl-table">
-<thead>
-<tr><th>$d$ (m)</th><th>Số đếm/phút</th><th>Suất liều (µSv/h)</th></tr>
-</thead>
-<tbody>
-<tr><td>0,5</td><td>$1440 \pm 38$</td><td>360</td></tr>
-<tr><td>1,0</td><td>$360 \pm 19$</td><td>90</td></tr>
-<tr><td>1,5</td><td>$160 \pm 13$</td><td>40</td></tr>
-<tr><td>2,0</td><td>$90 \pm 9$</td><td>22,5</td></tr>
-<tr><td>3,0</td><td>$40 \pm 6$</td><td>10</td></tr>
-</tbody>
-</table>
-
-<details class="tl-details tl-more">
-<summary>🤏 Vì sao trong phép đo thật, tỉ số số đếm chỉ khớp $1/r^2$ trong phạm vi $\pm\sqrt{N}$?</summary>
-<p>Phép đếm hạt là quá trình ngẫu nhiên, nên sai số chuẩn của $N$ xung đếm được là $\sqrt{N}$: với $1440$ xung là $\pm 38$ (khoảng 2,6%), với $360$ xung là $\pm 19$ (khoảng 5%). Bảng trên là số liệu minh hoạ lấy đúng theo mô hình $360/d^2$, nên các tỉ số khớp chính xác; đo thật thì mỗi số đếm dao động vài phần trăm và tỉ số chỉ khớp $1/r^2$ trong phạm vi sai số $\pm\sqrt{N}$.</p>
-<p>Ví dụ ở 3 m: $N = 40 \pm 6$, tức $\pm 15\%$; tỉ số $360/40 = 9$ vì thế mang sai số cỡ $\pm 1{,}4$. Ba nguồn lệch khác: số đếm phông trừ đi cũng mang sai số riêng; khoảng cách đo bằng thước có sai số $\pm 1$ cm (ở 0,5 m đã là 2%); nguồn thực không phải nguồn điểm và bức xạ tán xạ từ sàn, tường cũng lọt vào máy đo.</p>
-</details>
 
 <details class="tl-details" data-exp="tn-l12-antoanpx-02">
 <summary>🔬 Bấm xem: ba tấm chắn — giấy, nhôm, chì</summary>
@@ -218,20 +246,6 @@
 <p class="tl-label">🎬 Xem video: ba tia, ba tấm chắn</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/bPF2dKzEHac?rel=0&start=10&end=45" title="ba tia, ba tấm chắn" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
 <p><strong>Nhìn vào:</strong> Tấm nào chặn được tia alpha, beta, gamma?</p>
-</div>
-
-
-<div class="tl-box tl-box--think tl-check">
-<p class="tl-label">Tự kiểm tra ngay</p>
-<p><strong>Câu 3.</strong> Cùng một nguồn gamma, cách nào giảm liều nhiều nhất?</p>
-<div class="tl-quiz">
-<input type="radio" name="tl19-q3" id="tl19-q3a"><label for="tl19-q3a" class="tl-opt tl-no">A. Giữ khoảng cách, giảm thời gian một nửa</label>
-<input type="radio" name="tl19-q3" id="tl19-q3b"><label for="tl19-q3b" class="tl-opt tl-no">B. Đeo liều kế cá nhân khi đứng sát nguồn</label>
-<input type="radio" name="tl19-q3" id="tl19-q3c"><label for="tl19-q3c" class="tl-opt tl-no">C. Chèn một tờ giấy giữa người và nguồn</label>
-<input type="radio" name="tl19-q3" id="tl19-q3d"><label for="tl19-q3d" class="tl-opt tl-ok">D. Giữ thời gian, lùi xa gấp đôi</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lùi xa gấp đôi còn $1/4$ liều, giảm nhiều hơn cách A (chỉ còn một nửa).</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Xét từng phương án:<br>A chỉ giảm một nửa, ít hơn mức giảm 4 lần khi lùi xa gấp đôi.<br>C vô ích vì tờ giấy không chặn được tia gamma.<br>B cũng vô ích vì liều kế chỉ <em>ghi nhận</em> liều chứ không làm giảm liều.<br>Chọn lại nhé.</p></div>
-</div>
 </div>
 
 <h4>4. Biển cảnh báo và liều kế cá nhân</h4>
@@ -514,12 +528,14 @@
 
 <h3>VI. Đời sống, thử thách và mang về</h3>
 
+<details class="tl-details tl-more">
+<summary>🌾 Bấm xem: phóng xạ ngoài bệnh viện</summary>
 <ul>
-<li><strong>Y tế:</strong> chẩn đoán (X-quang, CT, PET), xạ trị diệt tế bào ung thư, chiếu xạ khử trùng dụng cụ.</li>
 <li><strong>Đời sống – an ninh:</strong> soi hành lý sân bay bằng tia X; đầu báo khói dùng nguồn phóng xạ nhỏ.</li>
 <li><strong>Nông nghiệp – sinh học:</strong> gây đột biến tạo giống mới (kháng sâu bệnh, năng suất cao, không hạt); đánh dấu $^{32}_{15}\text{P}$ theo dõi phân bón.</li>
 <li><strong>Bảo quản thực phẩm:</strong> chiếu xạ diệt vi trùng, kéo dài hạn dùng, tránh mọc mầm; nhược điểm: đổi màu, hương vị, giá cao.</li>
 </ul>
+</details>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Thử thách phân tầng</p>

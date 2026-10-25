@@ -85,7 +85,7 @@ for x, lab, col, hang in ((45, "X-quang ngực 0,1", BLUE, "tren"),
 b += text(20, 228, "hai vạch liền nhau cách nhau 10 lần", "currentColor", 9, "start", "500")
 fig2 = wrap("0 0 440 240",
             "Thang liều lôgarit với các mốc: chụp X-quang ngực, phông tự nhiên, chụp CT, giới hạn nghề nghiệp và liều gây chết",
-            b, "Hình 2. Thang liều lôgarit: X-quang ngực 0,1 mSv · phông tự nhiên 2,4 mSv/năm · chụp CT 7 mSv · giới hạn nghề nghiệp 20 mSv/năm.")
+            b, "Hình 2. Thang liều lôgarit, từ X-quang ngực 0,1 mSv tới giới hạn nghề nghiệp 20 mSv/năm.")
 
 # ------------------------------------------------------- Hình 3: suất liều giảm theo bình phương khoảng cách
 b = defs("f3")
@@ -97,7 +97,7 @@ def xt(d):
 
 b += line(56, 190, 420, 190, "currentColor", 2)
 b += line(56, 190, 56, 40, "currentColor", 2)
-b += text(44, 26, "H (%)", "currentColor", 11, "end", "600")
+b += text(44, 26, "N (%)", "currentColor", 11, "end", "600")
 b += text(420, 226, "d (m)", "currentColor", 11, "end", "600")
 for pct in (0, 25, 50, 75, 100):
     y = 190 - 1.5 * pct
