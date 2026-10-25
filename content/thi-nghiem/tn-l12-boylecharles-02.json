@@ -14,13 +14,42 @@
     "charles.nhiet_do_tuyet_doi"
   ],
   "muc_tieu": "Đo chiều dài một cột khí được giữ ở áp suất khí quyển khi ngâm vào các bình nước có nhiệt độ khác nhau, từ bảng số liệu thấy tỉ số V/T không đổi — đó là định luật Charles.",
+  "gia_thuyet": [
+    "Ở áp suất không đổi, thể tích một lượng khí tỉ lệ thuận với nhiệt độ tuyệt đối."
+  ],
+  "du_doan_neu_dung": [
+    "Nước càng nóng thì cột khí càng dài; tỉ số ℓ/T (T tính bằng kenvin) gần như không đổi."
+  ],
+  "khong_chung_minh": [
+    "Chỉ đo trong khoảng 273 K đến 348 K; việc V = 0 ở 0 K là kéo dài đường thẳng, không phải số đo (khí thật hoá lỏng trước đó).",
+    "Không cho biết thể tích phụ thuộc áp suất thế nào."
+  ],
   "dung_cu": [
-    { "ten": "Ống thuỷ tinh hẹp một đầu kín, dài khoảng 25 cm", "so_luong": 1 },
-    { "ten": "Dầu ăn hoặc nước màu nhỏ một giọt để đánh dấu cột khí", "so_luong": 1 },
-    { "ten": "Thước chia tới milimét", "so_luong": 1 },
-    { "ten": "Cốc thuỷ tinh chịu nhiệt 500 ml", "so_luong": 1 },
-    { "ten": "Nhiệt kế rượu tới 110 °C", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" },
-    { "ten": "Nước đá, nước nóng, bếp đun và giá kẹp giữ ống", "so_luong": 1 }
+    {
+      "ten": "Ống thuỷ tinh hẹp một đầu kín, dài khoảng 25 cm",
+      "so_luong": 1
+    },
+    {
+      "ten": "Dầu ăn hoặc nước màu nhỏ một giọt để đánh dấu cột khí",
+      "so_luong": 1
+    },
+    {
+      "ten": "Thước chia tới milimét",
+      "so_luong": 1
+    },
+    {
+      "ten": "Cốc thuỷ tinh chịu nhiệt 500 ml",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nhiệt kế rượu tới 110 °C",
+      "so_luong": 1,
+      "ghi_chu": "sai số ±0,5 °C"
+    },
+    {
+      "ten": "Nước đá, nước nóng, bếp đun và giá kẹp giữ ống",
+      "so_luong": 1
+    }
   ],
   "cac_buoc": {
     "lam": [
@@ -40,11 +69,42 @@
     ]
   },
   "tham_so": [
-    { "ky_hieu": "t", "ten": "Nhiệt độ nước ngâm ống", "don_vi": "°C", "kieu": "dieu_chinh", "min": 0, "max": 100, "mac_dinh": 0, "buoc": 5 },
-    { "ky_hieu": "L", "ten": "Chiều dài cột khí", "don_vi": "cm", "kieu": "do_duoc", "sai_so_do": 0.1 },
-    { "ky_hieu": "p0", "ten": "Áp suất khí quyển (giữ không đổi)", "don_vi": "kPa", "kieu": "co_dinh", "gia_tri": 100 },
-    { "ky_hieu": "T", "ten": "Nhiệt độ tuyệt đối của khí", "don_vi": "K", "kieu": "tinh_ra" },
-    { "ky_hieu": "L_T", "ten": "Tỉ số V/T của cột khí", "don_vi": "cm/K", "kieu": "tinh_ra" }
+    {
+      "ky_hieu": "t",
+      "ten": "Nhiệt độ nước ngâm ống",
+      "don_vi": "°C",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 100,
+      "mac_dinh": 0,
+      "buoc": 5
+    },
+    {
+      "ky_hieu": "L",
+      "ten": "Chiều dài cột khí",
+      "don_vi": "cm",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    },
+    {
+      "ky_hieu": "p0",
+      "ten": "Áp suất khí quyển (giữ không đổi)",
+      "don_vi": "kPa",
+      "kieu": "co_dinh",
+      "gia_tri": 100
+    },
+    {
+      "ky_hieu": "T",
+      "ten": "Nhiệt độ tuyệt đối của khí",
+      "don_vi": "K",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "L_T",
+      "ten": "Tỉ số V/T của cột khí",
+      "don_vi": "cm/K",
+      "kieu": "tinh_ra"
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
@@ -63,12 +123,37 @@
     "ghi_chu": "Mô phỏng nên vẽ ống thuỷ tinh nhúng trong cốc nước, thanh trượt nhiệt độ, giọt dầu chạy lên xuống; đồ thị V–T vẽ dần và kéo dài đường thẳng về phía trái để cắt trục tại 0 K."
   },
   "so_lieu_mau": {
-    "cot": ["t (°C)", "T (K)", "L = V (cm)", "V/T (cm/K)"],
+    "cot": [
+      "t (°C)",
+      "T (K)",
+      "L = V (cm)",
+      "V/T (cm/K)"
+    ],
     "hang": [
-      [0, 273, 10.0, 0.0366],
-      [25, 298, 10.9, 0.0366],
-      [50, 323, 11.9, 0.0368],
-      [75, 348, 12.9, 0.0371]
+      [
+        0,
+        273,
+        10.0,
+        0.0366
+      ],
+      [
+        25,
+        298,
+        10.9,
+        0.0366
+      ],
+      [
+        50,
+        323,
+        11.9,
+        0.0368
+      ],
+      [
+        75,
+        348,
+        12.9,
+        0.0371
+      ]
     ],
     "ghi_chu": "Số liệu minh hoạ: mô hình L = 10,0·T/273 cho 10,0; 10,9; 11,8; 12,7 cm; cột L trong bảng đã kể thêm sai số đọc của thước (thành 11,9 và 12,9 cm), nên V/T nhích dần từ 0,0366 lên 0,0371 cm/K — đúng như câu hỏi về sai số trong bài. Ở 100 °C mô hình cho 13,7 cm nhưng cột khí nhô lên khỏi mặt nước nên số đọc kém tin cậy, vì vậy bảng dừng ở 75 °C."
   },
