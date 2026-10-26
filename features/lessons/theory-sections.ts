@@ -228,6 +228,10 @@ export function estimateTheoryTime(html: string): TheoryEstimate {
     .replace(/<(script|style|svg)\b[\s\S]*?<\/\1>/gi, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/gi, " ");
+  // Bài đã ghi sẵn "⏱ Khoảng N phút" trong hộp mục tiêu thì dùng đúng số đó — hai con số khác nhau
+  // trên cùng một màn hình (đầu bài ~39 phút, hộp mục tiêu 17 phút) làm học sinh mất tin (N4, 26/10/2026).
+  const authored = /⏱\s*Khoảng\s+(\d{1,3})\s*phút/.exec(visible);
+  if (authored) return { minutes: Math.max(1, Number(authored[1])), quizzes };
   const words = visible.split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(1, Math.ceil(words / WORDS_PER_MIN + interactions * MIN_PER_INTERACTION));
   return { minutes, quizzes };

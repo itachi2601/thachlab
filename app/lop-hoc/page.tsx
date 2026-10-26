@@ -510,12 +510,20 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     if (isTeacherView || !nextAction) return null;
     const { lesson, why } = nextAction;
     if (!lesson) return <p className="class-next-line class-next-line--done">{why}</p>;
+    // B2/L5 (26/10/2026): điểm nổi DUY NHẤT của trang chương — khối màu đặc, ghi chỗ đang dở theo "x/y mục"
+    // (cùng đơn vị với dòng bài và rail, L2).
+    const p = lessonProgress.get(lesson.id);
+    const where = p && p.completed > 0 && p.total > 0 ? `Đã học ${p.completed}/${p.total} mục` : why;
     return (
       <button type="button" className="class-next-line" onClick={() => continueLesson(lesson)}>
-        <span className="class-next-line-label">Tiếp theo</span>
-        <span className="class-next-line-title">{lesson.title}</span>
-        <span className="class-next-line-why">{why}</span>
-        <ArrowRight size={16} aria-hidden />
+        <span className="class-next-line-text">
+          <span className="class-next-line-label">Học tiếp</span>
+          <span className="class-next-line-title">{lesson.title}</span>
+          <span className="class-next-line-why">{where}</span>
+        </span>
+        <span className="class-next-line-go">
+          Vào học <ArrowRight size={16} aria-hidden />
+        </span>
       </button>
     );
   }
@@ -552,8 +560,8 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
         : onlyPercent === 100
           ? "Hoàn thành"
           : onlyPercent > 0
-            ? `Đang học · ${onlyPercent}%`
-            : "Chưa học";
+            ? `Đang học · ${onlyP?.completed ?? 0}/${onlyP?.total ?? 0} mục`
+            : "";
     let lessonNumber = 0;
     return (
       <Fragment key={ch.id}>
@@ -642,8 +650,8 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                               : complete
                                 ? "Hoàn thành"
                                 : started
-                                  ? `Đang học · ${percent}%`
-                                  : "Chưa học"}
+                                  ? `Đang học · ${progress?.completed ?? 0}/${progress?.total ?? 0} mục`
+                                  : null}
                       </span>
                   </>
                 );
@@ -708,7 +716,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
         <main className="min-h-screen w-full pt-[76px]">
           <div className={isAvcn ? "lesson-shell lesson-shell--cttc" : "lesson-shell"}>
             <TeacherViewBanner />
-            <ReviewBanner />
             <div className="lesson-layout lesson-layout--pick">
               <aside className="lesson-nav" aria-label="Chương trình lớp">
                 {active && chapters && lessons && classChapters.length > 0 && (
@@ -807,6 +814,8 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                           <ClassProgressLine completedItems={statsDoneItems} totalItems={statsTotalItems} />
                         )}
                         {renderNextCard()}
+                        {/* Buổi ôn tập theo chặng: một dòng ngay dưới "Học tiếp", không còn banner thứ hai ở đầu trang (B2). */}
+                        <ReviewBanner compact />
                         {/* Khoá HSG Vật lí 9: buổi thứ Bảy tới + việc hôm nay (lộ trình 18 buổi ở /lop-hoc/lo-trinh-hsg). */}
                         {!isParent && subjectCode === HSG_SUBJECT_CODE && (
                           <Hsg9WeekCard
@@ -823,17 +832,22 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                           </div>
                         )}
 
-                        {/* Một hàng chip thay 3 khối rời (Kho bẫy gập tại chỗ, link đề, link xếp hạng): mỗi chip là link
-                            thẳng tới trang chính; chip Kho bẫy tự ẩn khi chưa có câu sai (N3). */}
-                        {!isParent && session && (
-                          <div className="class-chips" aria-label="Lối tắt">
-                            <MistakeVaultChip />
-                            {classExams.length > 0 && (
-                              <a href="#de-thi" className="class-chip">Đề thi</a>
-                            )}
-                            {rank && (rank.rp > 0 || (rank.daily?.streak ?? 0) > 0) && (
-                              <Link prefetch={false} href="/lop-hoc/xep-hang/" className="class-chip">Xếp hạng</Link>
-                            )}
+                        {/* iPad dọc (640–1023px): rail chương thành dải nút ngang ngay dưới đầu trang (B5) — bấm là
+                            chọn chương, cột giữa chỉ hiện chương đó như máy tính. */}
+                        {classChapters.length > 1 && (
+                          <div className="class-chapter-chips" role="tablist" aria-label="Chọn chương">
+                            {classChapters.map((ch, i) => (
+                              <button
+                                key={ch.id}
+                                type="button"
+                                role="tab"
+                                aria-selected={ch.id === selectedChapterId}
+                                className={ch.id === selectedChapterId ? "is-active" : ""}
+                                onClick={() => pickChapter(ch.id)}
+                              >
+                                Ch. {i + 1} · {chapterDisplayTitle(ch.title)}
+                              </button>
+                            ))}
                           </div>
                         )}
 
@@ -853,6 +867,21 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         {selectedChapter && (
                           <div className="class-pick-desktop">
                             {renderChapterSection(selectedChapter, selectedChapterIndex, true)}
+                          </div>
+                        )}
+
+                        {/* Lối tắt hạ xuống cuối danh sách (N2/B2): không tranh chỗ với "Học tiếp". Chip Kho bẫy tự ẩn
+                            khi chưa có câu sai (N3); hàng tự ẩn khi không còn chip nào (CSS :has). */}
+                        {!isParent && session && (
+                          <div className="class-chips class-more" aria-label="Ôn thêm">
+                            <span className="class-more-label">Ôn thêm:</span>
+                            <MistakeVaultChip />
+                            {classExams.length > 0 && (
+                              <a href="#de-thi" className="class-chip">Đề thi</a>
+                            )}
+                            {rank && (rank.rp > 0 || (rank.daily?.streak ?? 0) > 0) && (
+                              <Link prefetch={false} href="/lop-hoc/xep-hang/" className="class-chip">Xếp hạng</Link>
+                            )}
                           </div>
                         )}
                         {!isParent && session && <LiveStudyStrip />}

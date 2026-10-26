@@ -271,6 +271,21 @@ Mỗi bài có 4 loại việc đòi hỏi khác nhau; chọn mô hình theo vi�
 - Làm theo **lô theo chương** (ví dụ 6 bài Điện trường L11) để dùng chung thư viện SVG và khung bài.
 - Muốn chắc: soạn **cùng một bài** bằng hai mô hình, so số lỗi `chan` mà bản kiểm chéo bắt được rồi cập nhật bảng này.
 
+## Khối trình bày vùng đọc (thầy duyệt 26/10/2026 — lấy từ cách Apple trình bày, CSS sẵn trong `app/globals.css`)
+
+Chỉ HTML + CSS, không JS, lọt qua DOMPurify. Bài cũ chưa có thì vẫn hiển thị bình thường.
+1. **Câu chốt đầu mục** (N5, G3): ngay sau `<h3>` thêm `<p class="tl-claim">Đang chuyển thể thì nhiệt độ đứng yên.</p>` — một câu
+   kết luận ≤ 12 chữ, lấy từ từ khoá 🔑 của mục. Có câu chốt thì `<h3>` tự thu thành nhãn nhỏ in hoa.
+2. **Mỗi đoạn một chỗ in đậm** (N7): kiểm bằng `npx tsx scripts/kiem-dam-moi-doan.mts <file>` (thoát mã 1 khi vi phạm). Nhãn đầu
+   dòng `<strong>Rời:</strong>`, dòng 🔑, ô quiz không tính.
+3. **Ô "Số cần nhớ"** (L1, truy xuất): `<div class="tl-nums"><details class="tl-num"><summary>Nước đá tan</summary><p>0 °C</p></details>…</div>`
+   — số bị che, học sinh nhớ rồi bấm. 2–4 ô, chỉ hằng số/ngưỡng thật sự phải thuộc.
+4. **Bảng đặt cạnh nhau cho bẫy**: `<table class="tl-table tl-cmp">`, hàng = tiêu chí (`<th>` đầu hàng), ô khác nhau `<td class="tl-diff">`.
+   ≤ 3 cột để vừa 375px.
+5. **Nhịp mục**: tự động (CSS) — giữa hai mốc `<h3>` cách ~56px. Không chèn `<br>`/đoạn rỗng để tạo khoảng.
+6. **Thuật ngữ mở tại chỗ** (N8): `<span class="tl-term"><input type="checkbox" id="tl<lớp>b<bài>-t1"><label for="…">ngưng tụ</label><span class="tl-def">định nghĩa 1 câu</span></span>`.
+   Chú thích số mũ CHỈ cho nguồn/điều kiện đo: `<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>` + cuối bài `<ol class="tl-fns"><li id="tl-fn-1">…</li></ol>`.
+
 ## Nhật ký rút kinh nghiệm (bắt buộc cập nhật cuối MỖI phiên dùng skill này — xem `AGENTS.md`)
 
 Cuối phiên, thêm vào đây mỗi bài học một dòng `- YYYY-MM-DD · <sự cố/phát hiện> → <cách làm đúng>`; nếu bài học làm
@@ -376,3 +391,4 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-10-25 · Đọc 2 đề TN THPT (2025, 2026): 5/8 câu Phần II là câu thí nghiệm theo khung giả thuyết → dụng cụ → bước → "coi rằng/bỏ qua" → kết quả → kết luận → cơ chế → giới hạn; bài 14 L12 kể Rutherford như chuyện và LỘ kết quả (1/8000, bật ngược) trước hộp Dự đoán, không có ô cơ chế (lệch do hạt nhân, không phải êlectron) và ô giới hạn (quỹ đạo dừng là Bohr) — đúng hai ý c), d) đề 2026 hỏi → viết hộp 6 ô theo `docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md`; khung 6 ô dài gấp đôi 3 ô nên bài sát trần 2 500 phải đưa Dụng cụ + bảng số liệu vào `<details>` và chuyển hình trùng ý (Hình 2 ba mô hình) vào đúng mục thay cho gạch đầu dòng lặp; PhET có hai mô hình thì bước Thử chạy mô hình SAI (bánh pudding) trước.
 - 2026-10-26 · Video tóm tắt bài Thuyết động học (L12) dùng mẹo 3 chữ NHỎ – LOẠN – ĐẬP và 5 hình, học sinh ảo thấy dễ nhớ hơn từ khoá dài của bài web → quy tắc "Mẹo chữ đơn" và khung "Nhớ N hình = nhớ cả bài" ở mục "Ít chữ"; bài sát trần 2 500 từ thì viết lại khung Mang về ngắn hơn để bù câu "Hình dung…" thêm vào.
 - 2026-10-26 · Mẹo từ khoá đợt 1 (21 bài, 2 lô, kiem-code soát mỗi lô): lỗi lặp → (a) bài đã sát 2.500 từ thì mỗi dòng mẹo + "N hình" đẩy qua trần — bù bằng cách bỏ câu "nói bằng lời của em trước" lặp ở mỗi `<summary>` (chuyển lên nhãn Trả bài, `<small>` trong summary VẪN bị đếm) và dòng Mang về trùng ý; (b) chữ mẹo dùng chung phải cùng nghĩa, đừng nhét ý phụ ("thẳng đều") vào một chữ ở bài này mà bài kia có chữ riêng; (c) chèn mẹo vào đáp án Trả bài thì xoá phần liệt kê cũ, không để lặp hai lần; (d) đừng xoá dòng Mang về mà Trả bài còn hỏi; (e) mẹo đổi số ý (Ba Cùng – Một Ngược – Một Khác = 5 khái niệm) phải soát mọi chỗ ghi "bốn đặc điểm"; (f) chữ mẹo kiểu "Nhanh/To" dễ đọc thành "to đi cùng nhanh" — ghi "xét từng yếu tố" trong 🔑; (g) `.exam-content .tl-*` thua `.lesson-body .lesson-prose p` về độ ưu tiên — đo `getComputedStyle` trên web thật, preview cục bộ rộng hơn trang thật (343 vs 313px).
+- 2026-10-26 · Bài đã đăng ghi "⏱ Khoảng 17 phút" trong hộp mục tiêu nhưng đầu bài web tự tính "~39 phút" (đếm chữ 140 từ/phút) → web nay dùng số đã ghi trong bài; khi soạn, con số ⏱ phải đo lại theo `estimateTheoryTime` (features/lessons/theory-sections.ts) chứ đừng ước lượng tay, kẻo hứa 17 phút mà học sinh đọc mất gấp đôi.

@@ -1803,6 +1803,20 @@ function LessonLoader() {
     </button>
   );
 
+  // Trình chiếu (chỉ giáo viên) tách khỏi bảng Aa: còn đúng 2 nút ở đầu trang (N2, 26/10/2026).
+  const presentButton = canPresent && theoryItems.length > 0 && (
+    <button
+      type="button"
+      className="lesson-present-btn"
+      onClick={() => setPresenting(true)}
+      title="Chiếu lên tivi / máy chiếu: lật từng mục, bút khoanh ý chính, phóng to chữ"
+      aria-label="Trình chiếu"
+    >
+      <MonitorPlay size={16} aria-hidden />
+      <span className="lesson-tool-text">Trình chiếu</span>
+    </button>
+  );
+
   const readTools = (
     <>
       <button
@@ -1833,17 +1847,6 @@ function LessonLoader() {
           A+
         </button>
       </div>
-      {canPresent && theoryItems.length > 0 && (
-        <button
-          type="button"
-          className="lesson-tool"
-          onClick={() => setPresenting(true)}
-          title="Chiếu lên tivi / máy chiếu: lật từng mục, bút khoanh ý chính, phóng to chữ"
-        >
-          <MonitorPlay size={14} aria-hidden />
-          <span className="lesson-tool-text">Trình chiếu</span>
-        </button>
-      )}
       <button
         type="button"
         className={`lesson-tool ${fullscreen ? "is-on" : ""}`}
@@ -2087,22 +2090,16 @@ function LessonLoader() {
   return (
     <div className={`lesson-shell lesson-page ${isAvcn ? "lesson-shell--cttc" : ""} ${dim ? "is-dim" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
       <TeacherViewBanner />
-      <div className="lesson-layout">
-        {/* Cột trái trong bài chỉ cần: bài trước · bài sau (link về chương đã có ở breadcrumb) (N4: không lặp mục lục cả lớp —
-            cây chương đầy đủ nằm trong ngăn kéo "Mục lục" và ở trang lớp). */}
-        <aside className="lesson-nav lesson-nav--compact" aria-label="Điều hướng bài học">
-          {prevLesson && (
-            <Link href={siblingHref(prevLesson)} className="lesson-nav-step">
-              <small>‹ Bài trước</small>
-              <span>{prevLesson.title}</span>
-            </Link>
-          )}
-          {nextLesson && (
-            <Link href={siblingHref(nextLesson)} className="lesson-nav-step lesson-nav-step--next">
-              <small>Bài sau ›</small>
-              <span>{nextLesson.title}</span>
-            </Link>
-          )}
+      <div className="lesson-layout lesson-layout--rail">
+        {/* Rail trái = "mình đang ở đâu", cùng cạnh với rail chương ở trang chương (B5, 26/10/2026): lối về
+            chương + mục lục bài này + dụng cụ. Bài trước/Bài sau xuống cuối bài (.lesson-pager) và thanh đáy.
+            Cây chương đầy đủ vẫn ở ngăn kéo "Mục lục" và trang lớp (N4). */}
+        <aside className="lesson-nav lesson-nav--rail" aria-label="Điều hướng bài học">
+          <Link href={classHref} className="lesson-rail-back">
+            <ArrowLeft size={15} aria-hidden />
+            <span>{chapterFullLabel || "Về chương"}</span>
+          </Link>
+          {renderSidePanels()}
         </aside>
 
         <div className="lesson-main" ref={mainRef}>
@@ -2133,6 +2130,7 @@ function LessonLoader() {
                 </div>
               )}
             </div>
+            {presentButton}
             {readToolButton}
             <button
               type="button"
@@ -2195,13 +2193,32 @@ function LessonLoader() {
               </section>
             )}
 
+            {/* Bài trước / Bài sau ở CUỐI bài (B5/D3): hết bài mới mời đi tiếp, không treo ở góc trên. */}
+            {(prevLesson || nextLesson) && (
+              <nav className="lesson-pager" aria-label="Bài trước và bài sau">
+                {prevLesson ? (
+                  <Link href={siblingHref(prevLesson)} className="lesson-pager-link">
+                    <small>‹ Bài trước</small>
+                    <span>{prevLesson.title}</span>
+                  </Link>
+                ) : (
+                  <Link href={classHref} className="lesson-pager-link">
+                    <small>‹ Về chương</small>
+                    <span>{chapterFullLabel || "Chương"}</span>
+                  </Link>
+                )}
+                {nextLesson && (
+                  <Link href={siblingHref(nextLesson)} className="lesson-pager-link lesson-pager-link--next">
+                    <small>Bài sau ›</small>
+                    <span>{nextLesson.title}</span>
+                  </Link>
+                )}
+              </nav>
+            )}
+
             </div>
           </div>
         </div>
-
-        <aside className="lesson-side" aria-label="Dụng cụ học bài">
-          {renderSidePanels()}
-        </aside>
       </div>
 
       <nav className="lesson-bottombar lesson-bottombar--mobile lesson-bottombar--home" aria-label="Điều hướng bài học">
@@ -2275,6 +2292,8 @@ function LessonLoader() {
               </button>
             </div>
             <div className="lesson-drawer-body">
+              {/* Mục lục BÀI này lên đầu — cùng nội dung rail trái máy tính (B5); cây cả khoá ở dưới. */}
+              {renderSidePanels()}
               {renderCourseInfo()}
               <ChapterTree
                 entries={courseChapters}
@@ -2287,7 +2306,6 @@ function LessonLoader() {
                 showProgress={!!session && !isTeacherView}
                 filterLessonIds={matchingLessonIds}
               />
-              {renderSidePanels()}
             </div>
           </div>
         </div>
@@ -2314,7 +2332,7 @@ export default function LessonPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen w-full pt-[76px]">
+      <main className="min-h-screen w-full pt-[76px] lesson-page-main">
         <Suspense fallback={<p className="lesson-notice">Đang tải…</p>}>
           <LessonLoader />
         </Suspense>
