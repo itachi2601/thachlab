@@ -37,18 +37,22 @@ def wrap(vb, label, body, cap, exp=""):
 # ------------------------------------------------- Hình 1: nguồn phóng xạ và ống đếm
 b = defs("f1")
 b += text(14, 24, "Một nguồn phóng xạ và ống đếm", "currentColor", 12.5, "start", "700")
-b += rect(24, 52, 100, 76, "rgba(148,163,184,.14)", "currentColor", 2, 8)          # hộp chì
+b += '<path d="M124,84 V52 H24 V128 H124 V100" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.4"/>'                   # hộp chì, mở khe bên phải
+b += text(140, 118, "khe", "currentColor", 11, "middle", "600")
 b += rect(50, 76, 48, 28, "rgba(248,113,113,.35)", RED, 2, 5)                     # mẫu quặng
 b += text(74, 148, "mẫu trong hộp chì", "currentColor", 10.5, "middle", "600")
-b += arrow("f1", "r", 106, 92, 202, 82, 2.2, "6 4")
+b += arrow("f1", "r", 106, 92, 202, 84, 2.2, "6 4")
 b += text(164, 66, "tia α, β, γ", RED, 11, "middle", "700")
 b += rect(210, 56, 92, 48, "rgba(56,189,248,.15)", BLUE, 2, 10)                   # ống đếm
 b += text(256, 78, "ống đếm", BLUE, 11, "middle", "700")
 b += text(256, 93, "Geiger", BLUE, 11, "middle", "700")
-b += text(256, 124, "≈ 500 xung/phút", "currentColor", 11, "middle", "600")
+b += line(302, 80, 336, 80, "currentColor", 2)                                       # dây nối
+b += rect(336, 56, 84, 48, "rgba(148,163,184,.14)", "currentColor", 2, 8)           # bộ đếm
+b += text(378, 76, "bộ đếm", "currentColor", 11, "middle", "700")
+b += text(378, 93, "≈ 500/phút", "currentColor", 11, "middle", "600")
 fig1 = wrap("0 0 440 200",
-            "Mẫu quặng phóng xạ trong hộp chì bắn tia vào ống đếm Geiger, máy đếm khoảng 500 xung mỗi phút",
-            b, "Hình 1. Mẫu phóng xạ trong hộp chì bắn tia sang ống đếm Geiger.")
+            "Mẫu quặng phóng xạ trong hộp chì có một khe hở; tia thoát qua khe vào ống đếm Geiger nối với bộ đếm, khoảng 500 xung mỗi phút",
+            b, "Hình 1. Tia thoát qua khe hộp chì vào ống đếm Geiger, bộ đếm ghi xung.")
 
 # ------------------------------------------------- Hình 2: ba chùm tia trong điện trường
 b = defs("f2")
@@ -64,12 +68,14 @@ b += arrow("f2", "g", 74, 129, 380, 129, 2.2)
 b += text(388, 133, "γ", GRN, 13, "start", "700")
 b += path("M70,129 Q220,129 318,68", BLUE, 2.4, "f2-b")
 b += text(334, 62, "β⁻", BLUE, 13, "start", "700")
-b += path("M70,129 Q220,129 318,190", RED, 2.4, "f2-r")
-b += text(334, 196, "α", RED, 13, "start", "700")
-b += text(14, 254, "α, β⁺ lệch về bản âm · β⁻ lệch về bản dương · γ đi thẳng", "currentColor", 11, "start", "600")
+b += path("M70,129 Q240,129 318,166", RED, 2.4, "f2-r")
+b += text(334, 172, "α", RED, 13, "start", "700")
+b += arrow("f2", "o", 110, 72, 110, 114, 2.4)
+b += text(122, 98, "E", "currentColor", 13, "start", "700")
+b += text(14, 254, "α lệch về bản âm · β⁻ lệch về bản dương · γ đi thẳng", "currentColor", 11, "start", "600")
 fig2 = wrap("0 0 440 270",
             "Ba chùm tia alpha, beta trừ và gamma bay vào điện trường đều: alpha lệch xuống bản âm, beta trừ lệch lên bản dương, gamma bay thẳng",
-            b, "Hình 2. γ không mang điện nên bay thẳng; β⁺ nhẹ hơn α nên lệch nhiều hơn.")
+            b, "Hình 2. γ không mang điện nên bay thẳng; β⁻ nhẹ hơn α nhiều nên lệch gắt hơn.")
 
 # ------------------------------------------------- Hình 3: đường cong phân rã
 X0, DX = 70, 85
