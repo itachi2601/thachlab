@@ -45,7 +45,7 @@
 - [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — cap-nhat-ly-thuyet.sh
 - [Cập nhật bài theo Gemini](project_thachlab_cap_nhat_bai_theo_gemini.md) — skill rà bài; treo duyệt lý thuyết
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill + kho content/thi-nghiem
-- [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — T1–T12; xong cả 21 bài L12 (26/10); chờ đăng lại id 6 + nhánh data-tap merge main
+- [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — T1–T12; xong cả 21 bài L12 (26/10); chờ nhánh data-tap merge main
 - [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — treo 38/43/45, L12, L10 đợt B
 - [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
