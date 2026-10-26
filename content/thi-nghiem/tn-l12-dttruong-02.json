@@ -13,6 +13,9 @@
     "dttruong.dien_truong_bien_thien"
   ],
   "muc_tieu": "Đo cường độ dòng xoay chiều qua một tụ điện ở năm tần số khác nhau để thấy mạch có dòng dù giữa hai bản tụ là chất cách điện; dòng tỉ lệ với tần số, đúng với mô hình điện trường biến thiên đóng vai trò dòng điện dịch.",
+  "gia_thuyet": ["Mạch xoay chiều có tụ vẫn có dòng dù giữa hai bản là chất cách điện, vì điện trường biến thiên giữa hai bản tương đương một dòng điện (dòng điện dịch)."],
+  "du_doan_neu_dung": ["Đồng hồ chỉ có dòng khi dùng nguồn xoay chiều, chỉ 0 khi dùng nguồn một chiều.", "Điện trường biến thiên càng nhanh (tần số càng lớn) thì dòng càng mạnh; I/f gần như không đổi."],
+  "khong_chung_minh": ["Đồng hồ chỉ đo dòng trong dây, không cho thấy điện trường biến thiên giữa hai bản.", "Không đo được từ trường do dòng điện dịch sinh ra; đó là kết luận của Maxwell."],
   "dung_cu": [
     { "ten": "Tụ điện 1,0 μF", "so_luong": 1, "ghi_chu": "dung sai ±5%" },
     { "ten": "Máy phát tần số có đầu ra xoay chiều, dải 20 Hz – 2 kHz", "so_luong": 1 },
@@ -70,7 +73,7 @@
       [400, 29.5, 30.16],
       [800, 58.0, 60.32]
     ],
-    "ghi_chu": "Số đo minh hoạ theo mô hình I = 12·2πf·1,0·10⁻⁶ (A). Số đo thực thấp hơn 2–5% (trung bình gần 3%) vì dung sai tụ ±5%, sai số đồng hồ và điện áp rơi trên dây nối. Tỉ số I/f đo được ở cả năm dòng nằm trong khoảng 0,072–0,074 mA/Hz."
+    "ghi_chu": "Số đo minh hoạ theo mô hình I = 12·2πf·1,0·10⁻⁶ (A). Số đo thấp hơn 2–5% (trung bình gần 3%): dung sai tụ ±5% và sai số đồng hồ có thể làm lệch cả hai phía; chiều thấp hơn là do điện áp rơi trên dây nối và điện trở trong của máy phát. Tỉ số I/f đo được ở cả năm dòng nằm trong khoảng 0,072–0,074 mA/Hz."
   },
   "ket_qua_ky_vong": "Mạch xoay chiều có tụ vẫn có dòng; dòng tỉ lệ thuận với tần số và bằng 0 khi dùng nguồn một chiều.",
   "hien_tuong_hay_sai": [
@@ -81,8 +84,8 @@
   ],
   "sai_so_thuong_gap": [
     "Đặt thang đo dòng xoay chiều nhưng máy phát lại đang ở chế độ một chiều, hoặc ngược lại.",
-    "Điện áp đầu ra máy phát sụt khi tần số tăng: phải đọc lại điện áp ở mỗi tần số rồi mới ghi vào bảng.",
-    "Dung sai của tụ làm hệ số tỉ lệ lệch tới 5% giữa hai tụ cùng nhãn."
+    "Dây nối và điện trở trong của máy phát ăn bớt điện áp, nên điện áp thật trên tụ nhỏ hơn 12 V và dòng đo được NHỎ HƠN giá trị tính theo U·2πfC; giảm bằng cách đo lại điện áp ngay trên hai bản tụ ở mỗi tần số rồi dùng số đo đó để tính.",
+    "Dung sai của tụ (±5%) làm hệ số I/f lệch tới 5% về CẢ HAI phía so với nhãn; giảm bằng cách đo C bằng thang điện dung của đồng hồ và dùng giá trị đo được."
   ],
   "goi_y_mo_phong": {
     "loai": "bang_so_lieu+do_thi",
