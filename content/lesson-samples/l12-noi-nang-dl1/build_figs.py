@@ -116,32 +116,33 @@ fig2 = wrap("0 0 440 300", "Hai cách làm biến đổi nội năng: nén khí 
 
 # ======================================================= Hình 3: cùng khối lượng, cùng độ tăng nhiệt độ
 b = defs("f3")
-b += text(16, 24, "Cùng 1 kg, cùng tăng 1 K — khác nhiệt lượng", "currentColor", 13, "start", "700")
+b += text(16, 24, "Cùng 1 kg, cùng tăng 1 K — khác nhiệt lượng", "currentColor", 14, "start", "700")
 
 # cốc nước
 b += f'<path d="M56 52 l8 122 q1 10 11 10 l48 0 q10 0 11 -10 l8 -122 z" fill="rgba(56,189,248,.16)" stroke="currentColor" stroke-width="2.5"/>'
 b += line(58, 76, 140, 76, BLUE, 3)          # mặt nước
-b += text(99, 118, "1 kg", BLUE, 13, "middle", "700")
-b += text(99, 138, "nước", BLUE, 13, "middle", "600")
-b += text(99, 200, "c nước = 4180", BLUE, 13, "middle", "700")
-b += text(99, 218, "nhiệt cần: 4180 J", "currentColor", 12.5, "middle", "600")
+b += text(99, 118, "1 kg", BLUE, 14, "middle", "700")
+b += text(99, 138, "nước", BLUE, 14, "middle", "600")
+b += text(99, 238, "c nước = 4180", BLUE, 14, "middle", "700")
+b += text(99, 256, "nhiệt cần: 4180 J", "currentColor", 14, "middle", "600")
 for i in range(5):                            # ô nhiệt lượng
-    b += rect(58 + i * 17, 160, 14, 22, "rgba(56,189,248,.45)", BLUE, 1.5, 3)
+    b += rect(57 + i * 17, 196, 14, 22, "rgba(56,189,248,.45)", BLUE, 1.5, 3)
 
 # thỏi nhôm
 b += rect(258, 96, 104, 66, "rgba(251,146,60,.20)", ORG, 2.5)
-b += text(310, 128, "1 kg", ORG, 13, "middle", "700")
-b += text(310, 146, "nhôm", ORG, 13, "middle", "600")
-b += text(310, 200, "c nhôm = 880", ORG, 13, "middle", "700")
-b += text(310, 218, "nhiệt cần: 880 J", "currentColor", 12.5, "middle", "600")
+b += text(310, 128, "1 kg", ORG, 14, "middle", "700")
+b += text(310, 146, "nhôm", ORG, 14, "middle", "600")
+b += text(310, 238, "c nhôm = 880", ORG, 14, "middle", "700")
+b += text(310, 256, "nhiệt cần: 880 J", "currentColor", 14, "middle", "600")
 for i in range(1):                            # 1 ô ≈ 880 J → nước 5 ô (≈4,7 lần)
-    b += rect(282 + i * 17, 160, 14, 22, "rgba(251,146,60,.45)", ORG, 1.5, 3)
+    b += rect(303 + i * 17, 196, 14, 22, "rgba(251,146,60,.45)", ORG, 1.5, 3)
 
-b += text(220, 70, "cùng", "currentColor", 12.5, "middle", "600")
-b += text(220, 86, "tăng 1 K", "currentColor", 12.5, "middle", "600")
-b += line(16, 236, 424, 236, "currentColor", 1.5, "", .5)
-b += text(16, 254, "c nước lớn gấp ~4,7 lần c nhôm → nước “khó nóng, khó nguội”", "currentColor", 12, "start", "600")
-fig3 = wrap("0 0 440 266", "So sánh nhiệt lượng cần để làm 1 kg nước và 1 kg nhôm tăng thêm 1 K: nước cần 4180 J, nhôm chỉ cần 880 J",
+b += text(220, 70, "cùng", "currentColor", 14, "middle", "600")
+b += text(220, 86, "tăng 1 K", "currentColor", 14, "middle", "600")
+b += line(16, 276, 424, 276, "currentColor", 1.5, "", .5)
+b += text(16, 298, "c nước lớn gấp ~4,7 lần c nhôm", "currentColor", 14, "start", "600")
+b += text(16, 318, "→ nước “khó nóng, khó nguội”", "currentColor", 14, "start", "600")
+fig3 = wrap("0 0 440 332", "So sánh nhiệt lượng cần để làm 1 kg nước và 1 kg nhôm tăng thêm 1 K: nước cần 4180 J, nhôm chỉ cần 880 J",
             b, "Hình 3. Cùng khối lượng, cùng độ tăng nhiệt độ: nước cần nhiệt gần gấp 5 lần nhôm — nên nước làm mát tốt.")
 
 # ======================================================= Hình 4: sơ đồ định luật I cho bài toán bơm
