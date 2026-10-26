@@ -55,21 +55,21 @@ b += text(237, 232, "nguyên tử", ORG, 10, "middle", "500")
 # ba tia: thẳng, lệch, bật ngược
 b += arrow("f1", "g", 102, 126, 356, 126, 2.4)
 b += text(300, 168, "hầu hết bay thẳng", GRN, 11, "start", "700")
-# tia lệch: vào thẳng tới sát hạt nhân rồi gãy khúc lệch lên — không đi xuyên qua hạt nhân
-b += (f'<path d="M102,126 L237,104 L380,46" fill="none" stroke="{ORG}" stroke-width="2.4"'
+# tia lệch: đi ngang tới sát hạt nhân rồi gãy khúc lệch lên — không đi xuyên qua hạt nhân
+b += (f'<path d="M102,104 L237,104 L380,46" fill="none" stroke="{ORG}" stroke-width="2.4"'
       f' marker-end="url(#f1-o)"/>')
 b += rect(386, 28, 48, 28, "rgba(148,163,184,.10)", "currentColor", 1.6, 5)
 b += text(410, 46, "máy dò", "currentColor", 11, "middle", "700")
 b += text(380, 22, "lệch mạnh: vài hạt", ORG, 11, "end", "700")
-# góc lệch φ giữa hướng ban đầu (nét đứt ngang) và hướng sau tán xạ
+# góc lệch φ giữa phần kéo dài của tia tới (nét đứt, cùng phương tia tới) và tia ra
 b += line(237, 104, 310, 104, "currentColor", 1.2, "4 4", .6)
-b += f'<path d="M277,104 A40,40 0 0 0 273.9,88.6" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+b += f'<path d="M277,104 A40,40 0 0 0 274.1,89.0" fill="none" stroke="currentColor" stroke-width="1.6"/>'
 b += text(282, 98, "φ", "currentColor", 14, "start", "700")
 b += arrow("f1", "r", 231, 100, 134, 58, 2.6)
 b += text(126, 50, "bật ngược", RED, 11, "end", "700")
 b += f'<circle cx="237" cy="104" r="7" fill="rgba(248,113,113,.35)" stroke="{RED}" stroke-width="2"/>'
 b += text(24, 190, "Một chùm hạt, ba số phận", "currentColor", 10, "start", "500")
-fig1 = wrap2("0 0 440 244", "Chùm hạt alpha bắn vào lá vàng: hầu hết bay thẳng, vài hạt lệch mạnh hoặc bật ngược lại",
+fig1 = wrap2("0 0 440 244", "Chùm hạt alpha bắn vào lá vàng, máy dò ghi hạt lệch: hầu hết bay thẳng, vài hạt lệch mạnh theo góc lệch φ so với phương ban đầu hoặc bật ngược lại",
              b, "Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống, chỉ hạt sát hạt nhân mới lệch mạnh hoặc bật ngược.")
 
 # ---------------------------------------------- Hình 2: ba mô hình nguyên tử
