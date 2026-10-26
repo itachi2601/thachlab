@@ -77,14 +77,16 @@ def fig(vb, label, body, cap, exp=""):
 # ---------------------------------------------------------------- Hình 1: nén khí trong bơm
 b = defs("f1")
 b += text(14, 22, "Nén khí trong bơm, nhiệt độ không đổi", "currentColor", 14, "start", "700")
+# V ∝ 228 − y_p: trái 228−94 = 134, phải 228−194,5 = 33,5 ⇒ đúng 4:1.
 # Hai xi-lanh cạnh nhau: trước nén (trái), sau nén (phải); pittông đúng vị trí mỗi trạng thái.
-for x0, y_p, gas, col, fill in ((40, 94, GRN, GRN, "rgba(52,211,153,.18)"), (260, 196, RED, RED, "rgba(248,113,113,.20)")):
+for x0, y_p, gas, col, fill in ((40, 94, GRN, GRN, "rgba(52,211,153,.18)"), (260, 194.5, RED, RED, "rgba(248,113,113,.20)")):
     b += line(x0, 62, x0, 230, "currentColor", 2.5) + line(x0 + 100, 62, x0 + 100, 230, "currentColor", 2.5)
     b += line(x0, 230, x0 + 100, 230, "currentColor", 2.5)
     b += rect(x0 + 3, y_p, 94, 230 - y_p - 2, fill, col, 1.6, 4)          # khối khí
     b += rect(x0 + 3, y_p - 10, 94, 10, "currentColor", "currentColor", 0, 2)  # pittông
-    b += line(x0 + 50, 40, x0 + 50, y_p - 10, "currentColor", 3)           # cán bơm
-    b += line(x0 + 36, 40, x0 + 64, 40, "currentColor", 3)                 # tay cầm
+    y_tay = y_p - 10 - 44                                                  # cán dài 44 không đổi, tay cầm đi theo pittông
+    b += line(x0 + 50, y_tay, x0 + 50, y_p - 10, "currentColor", 3)        # cán bơm
+    b += line(x0 + 36, y_tay, x0 + 64, y_tay, "currentColor", 3)           # tay cầm
 b += text(90, 170, "V, p", GRN, 14, "middle", "700")
 b += text(310, 220, "V/4", RED, 14, "middle", "700")
 b += text(372, 214, "p′ = 4p", RED, 14, "start", "700")
