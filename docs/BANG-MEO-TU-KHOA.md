@@ -18,3 +18,22 @@ Dạng mỗi dòng: `lớp · bài · mục · mẹo · ý từng chữ · bài 
 - 12 · luc-tu-cam-ung-tu · 1. Lực từ lên đoạn dây · **Giữa – Vuông – Tay Trái** · Giữa: điểm đặt giữa dây; Vuông: vuông góc dây và B; Tay Trái: chiều theo quy tắc bàn tay trái · —. Khối mẹo + 🔑 dời xuống sau Câu 1 (Câu 1 hỏi phương lực — chữ Vuông lộ đáp án)
 - 12 · dong-dien-xoay-chieu · II.1 Khung dây quay · **Quay – Đổi – Sinh** · Quay: quay khung; Đổi: từ thông đổi; Sinh: sinh suất điện động xoay chiều · may-phat-dien-bien-ap II.1 (🔑 hai bài thống nhất "Từ thông đổi")
 - 12 · may-phat-dien-bien-ap · II.1 Nguyên tắc tạo dòng xoay chiều · **Quay – Đổi – Sinh** · như trên · dong-dien-xoay-chieu
+
+## Lớp 10 (đợt 1, 26/10/2026)
+
+- 10 · dinh-luat-3-newton · 2. Bốn đặc điểm cặp lực–phản lực · **Ba Cùng – Một Ngược – Một Khác** · Ba Cùng: cùng lúc, cùng loại, cùng độ lớn; Một Ngược: ngược chiều; Một Khác: khác vật · đối chiếu ngẫu lực (○ moment-luc: cùng vật). 🔑 giữ 4 đặc điểm, đổi "Bằng nhau, ngược chiều" thành "Cùng độ lớn, ngược chiều" (Ba Cùng gồm cùng độ lớn; Một Ngược là ngược chiều, cùng phương)
+- 10 · dinh-luat-2-newton · 5. Các bước · **Vẽ – Kể – Viết – Chiếu** · Vẽ: hình, vật, chiều dương/trục; Kể: kể mọi lực; Viết: ΣF = ma; Chiếu: chiếu lên trục rồi giải · giai-bai-toan-dong-luc-hoc §1. Sửa lỗi hai bài hai bộ bước: 🔑 + bước hai bài nay y nhau
+- 10 · giai-bai-toan-dong-luc-hoc · 1. Bốn bước · **Vẽ – Kể – Viết – Chiếu** · như trên · dinh-luat-2-newton
+- 10 · lam-quen-voi-vat-li · 5. Quy trình 5 bước · **Thấy – Hỏi – Đoán – Thử – Chốt** · Thấy: quan sát, suy luận; Hỏi: đề xuất vấn đề; Đoán: hình thành giả thuyết; Thử: kiểm tra; Chốt: kết luận · —. Khối mẹo + 🔑 dời xuống sau Câu 3 (Câu 3 hỏi "đoán nguyên nhân là bước nào" — chữ Đoán lộ đáp án)
+- 10 · luc-ma-sat · 5. (gom ba loại) · **Nghỉ – Trượt – Lăn** · Nghỉ: chưa trượt, bằng lực gây trượt (không dùng μN); Trượt: F = μN; Lăn: nhỏ nhất · 🔑 Bẫy 1 mở bằng "Nghỉ"; bảng 3 cột cuối mục 5
+- 10 · do-dich-chuyen-quang-duong · 2. Hệ quy chiếu · **Mốc – Trục – Giờ** · Mốc: vật mốc; Trục: hệ toạ độ; Giờ: gốc thời gian + đồng hồ · —
+- 10 · chuyen-dong-nem · 1. Hai thành phần · **Ngang Đều – Dọc Rơi** · Ngang Đều: Ox thẳng đều; Dọc Rơi: Oy rơi tự do · đợt sau: điện trường đều L11 "Ngang Đều – Dọc Nhanh Dần"
+
+## Lớp 11 (đợt 1, 26/10/2026)
+
+- 11 · dao-dong-dieu-hoa · 4. Phương trình · **Biên – Tần – Pha** · Biên: biên độ A; Tần: tần số góc ω; Pha: pha ban đầu φ · Tần, Pha cùng nghĩa ở giao-thoa-song. Bài trước đó không có dòng 🔑 nào: đã soạn 🔑 cho cả 5 mục (dòng in đậm cũ đổi thành 🔑)
+- 11 · giao-thoa-song · 1. Hai nguồn kết hợp · **Phương – Tần – Pha** · Phương: cùng phương dao động; Tần: cùng tần số; Pha: lệch pha không đổi · dao-dong-dieu-hoa (Tần, Pha)
+- 11 · tat-dan-cuong-buc · 6. Ba loại nhìn một lượt · **Mất – Bù – Theo – Trùng** · Mất: tắt dần mất năng lượng; Bù: duy trì bù đúng lúc; Theo: cưỡng bức theo tần số lực; Trùng: cộng hưởng, tần số lực trùng f₀ · thêm hàng "Mẹo" vào ba bảng; thêm Trả bài câu 7
+- 11 · song-dung · (gom 1 + 3 + 5, đặt sau Câu 2 mục 3) · **Cố Định: Nút – Ngược – Nguyên** / **Tự Do: Bụng – Cùng – Lẻ** · Nút/Bụng: đầu dây; Ngược/Cùng: pha sóng phản xạ; Nguyên/Lẻ: nguyên lần λ/2 / lẻ lần λ/4 · —. Bỏ "λ/2", "λ/4" khỏi chữ mẹo (bảng đề xuất có) vì ở 375px dòng "Cố Định: … Nguyên λ/2" xuống dòng; λ/2, λ/4 nằm ở 🔑 và bảng 2 cột ngay dưới. Bỏ 🔑 cũ của mục 3 (trùng ý khối gom)
+- 11 · khai-niem-dien-truong · 4. Đường sức điện · **Tiếp – Ra – Vào – Mau** · Tiếp: tiếp tuyến là giá E; Ra: ra từ điện tích dương; Vào: vào ở điện tích âm; Mau: mau thì mạnh · cặp với L12 Tiếp – Kín – Không Cắt – Mau (khác ở chữ 2–3). Khối mẹo + 🔑 dời xuống sau Câu 3 (Câu 3 hỏi "khép kín")
+- 11 · cuong-do-dong-dien · 4. Hạt tải điện · **Đông – Nhanh – To** · Đông: mật độ hạt tải n; Nhanh: tốc độ trôi v; To: tiết diện S (I = Snve) · —. 🔑 thêm "xét từng yếu tố, hai yếu tố kia giữ nguyên" vì Câu 4 hỏi cùng I mà S gấp đôi thì v giảm (tránh hiểu "to đi cùng nhanh")
