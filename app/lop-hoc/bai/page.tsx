@@ -29,6 +29,7 @@ import {
   consumeTheoryReviewContext,
   splitTheorySections,
   estimateTheoryTime,
+  decorateGoalBox,
   theorySectionItemId,
   wrapTheorySections,
   type TheoryReviewContext,
@@ -52,6 +53,7 @@ import {
   type LessonKind,
 } from "@/features/lessons/types";
 import { fetchExamMetas, markItemDone, type LessonExamMeta } from "@/services/lessons";
+import { clearResumeSpot, writeResumeSpot } from "@/features/lessons/resume-spot";
 import {
   fetchChaptersStatic,
   fetchClassesStatic,
@@ -100,6 +102,8 @@ const DIM_STORE = "thachlab-read-dim";
 const LESSON_DONE_STORE = "thachlab-lesson-done-";
 /** Mục <h3> lý thuyết đọc dở lần trước, theo lesson_items.id — để "Tiếp tục" trỏ đúng chỗ (L5). */
 const THEORY_POS_STORE = "thachlab-theory-pos-";
+/** Mục xa nhất trong mục lục em đã đọc tới, theo bài + tab — để rail đánh ✓ các mục trước đó (B7). */
+const TOC_READ_STORE = "thachlab-toc-read-";
 /** Sự kiện nội bộ: yêu cầu TheoryBlock mở một mục <h3> đang thu gọn trước khi cuộn/tô tới nó
  *  (mục lục, "Ôn ngay", thẻ câu sai) — detail là id `theory-sec-<itemId>-<n>`. */
 const OPEN_SECTION_EVENT = "thachlab:open-theory-section";
@@ -314,6 +318,7 @@ function TheoryBlock({
   onDone,
   recordProgress = true,
   forceAllOpen = false,
+  estimateInHead = false,
 }: {
   item: LessonItem;
   defaultOpen: boolean;
@@ -326,14 +331,17 @@ function TheoryBlock({
   recordProgress?: boolean;
   /** Mở sẵn mọi mốc để đọc, không đi lần lượt bằng nút Tiếp. */
   forceAllOpen?: boolean;
+  /** Thời lượng · số mục · số câu đã hiện ở dòng meta dưới tên bài → không lặp trong thẻ đọc (N4). */
+  estimateInHead?: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const hasBody = item.body_html.trim() !== "";
   // Tách theo từng mốc <h3> — cùng hàm với mục lục (tocEntries) và "Ôn ngay" nên id
   // `theory-sec-<itemId>-<n>` khớp nhau; chỉ tính lại khi nội dung mục thật sự đổi.
+  const displayHtml = useMemo(() => decorateGoalBox(item.body_html), [item.body_html]);
   const { introHtml, sections } = useMemo(
-    () => splitTheorySections(item.body_html, item.id),
-    [item.body_html, item.id],
+    () => splitTheorySections(displayHtml, item.id),
+    [displayHtml, item.id],
   );
   const total = sections.length;
   const estimate = useMemo(() => estimateTheoryTime(item.body_html), [item.body_html]);
@@ -449,7 +457,7 @@ function TheoryBlock({
         <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
           <TheoryRpHint rp={rp} />
           {total === 0 ? (
-            <ContentHtml html={item.body_html} className="block leading-relaxed" />
+            <ContentHtml html={displayHtml} className="block leading-relaxed" />
           ) : (
             <>
               {total > 1 && (
@@ -460,6 +468,8 @@ function TheoryBlock({
                       <strong>{resume.heading}</strong>
                       <Play size={14} fill="currentColor" aria-hidden />
                     </button>
+                  ) : estimateInHead ? (
+                    <span />
                   ) : (
                     <span>
                       ~{estimate.minutes} phút · {total} mục
@@ -788,6 +798,15 @@ function LessonLoader() {
     () => (items ?? []).filter((item) => item.kind === "ly_thuyet" && item.body_html.trim() !== ""),
     [items],
   );
+  // Dòng meta ngay dưới tên bài (bản duyệt 26/10/2026): "~17 phút · 6 mục · 7 câu tự kiểm tra" của mục lý thuyết
+  // duy nhất — trước đây nằm trong thẻ đọc cạnh "Mở tất cả". Bài nhiều mục lý thuyết giữ số đếm trong từng thẻ.
+  const headTheory = theoryItems.length === 1 ? theoryItems[0] : null;
+  const theoryMeta = useMemo(() => {
+    if (!headTheory) return null;
+    const est = estimateTheoryTime(headTheory.body_html);
+    const total = wrapTheorySections(headTheory.body_html, headTheory.id).sections.length;
+    return total > 1 ? { ...est, total } : null;
+  }, [headTheory]);
   // "Đánh dấu đã học xong bài này" ở thanh đáy: không có API lưu cấp-bài (chỉ có API cấp-mục),
   // nên ghi trên máy — nút vẫn phản hồi ngay, tiến độ "x/y mục" cộng thêm 1 khi đã đánh dấu.
   const [lessonMarked, setLessonMarked] = useState(false);
@@ -1119,25 +1138,6 @@ function LessonLoader() {
     } catch {}
   }
 
-  // Mục lục bài này: theo dõi h2/h3 của TAB ĐANG MỞ (nội dung soạn sẵn sinh ra id), không gọi
-  // mạng. Quan sát lại mỗi khi đổi tab / có dữ liệu mới vì panel được dựng lại.
-  useEffect(() => {
-    const root = bodyRef.current;
-    if (!root) return;
-    const targets = Array.from(root.querySelectorAll<HTMLElement>("h2[id], h3[id]"));
-    if (targets.length === 0) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible[0]) setActiveHeading(visible[0].target.id);
-      },
-      { rootMargin: "-130px 0px -65% 0px", threshold: 0 },
-    );
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
-  }, [activeTab, items]);
 
   function isDone(item: LessonItem) {
     if (isGradedKind(item.kind)) {
@@ -1329,6 +1329,92 @@ function LessonLoader() {
       (entry) => entry.heading.toLowerCase().includes(q) || entry.itemTitle.toLowerCase().includes(q),
     );
   }, [tocEntries, tocQuery]);
+
+  // Tô mục đang đọc trong mục lục (B7): mục cuối cùng có đỉnh đã qua dòng mắt (~35% màn hình). Đo theo cuộn
+  // thay vì IntersectionObserver vì mốc đang gập cao gần 0px; bỏ qua mốc gập (data-open="0"). Không gọi mạng.
+  useEffect(() => {
+    const root = bodyRef.current;
+    if (!root || !bodyReady || tocEntries.length === 0) return;
+    const ids = new Set(tocEntries.map((e) => e.id));
+    let targets: HTMLElement[] = [];
+    let raf = 0;
+    const collect = () => {
+      targets = Array.from(root.querySelectorAll<HTMLElement>("[id]")).filter(
+        (el) => ids.has(el.id) && el.dataset.open !== "0",
+      );
+    };
+    const compute = () => {
+      raf = 0;
+      const line = Math.min(window.innerHeight * 0.35, 240);
+      let cur: string | null = targets[0]?.id ?? null;
+      for (const el of targets) {
+        if (el.getBoundingClientRect().top <= line) cur = el.id;
+        else break;
+      }
+      setActiveHeading(cur);
+    };
+    const schedule = () => {
+      if (!raf) raf = window.requestAnimationFrame(compute);
+    };
+    const mo = new MutationObserver(() => {
+      collect();
+      schedule();
+    });
+    collect();
+    schedule();
+    mo.observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-open"] });
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      mo.disconnect();
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
+  }, [activeTab, items, bodyReady, tocEntries]);
+
+  // ✓ cho mục đã đọc: mục đứng trước mục xa nhất em từng đọc tới trong tab này. Nhớ trên máy (localStorage),
+  // không thêm bảng/round-trip — tiến độ chính thức vẫn là "Tôi đã đọc xong"/RP như cũ.
+  const tocStoreKey = `${TOC_READ_STORE}${id}-${activeTab}`;
+  const [tocRead, setTocRead] = useState<{ key: string; max: number }>({ key: "", max: 0 });
+  const tocActiveIndex = tocEntries.findIndex((e) => e.id === activeHeading);
+  /* eslint-disable react-hooks/set-state-in-effect -- đọc/ghi localStorage theo tab (trang prerender tĩnh, không đọc được lúc khởi tạo). */
+  useEffect(() => {
+    let max = 0;
+    try {
+      max = Number(window.localStorage.getItem(tocStoreKey)) || 0;
+    } catch {}
+    setTocRead({ key: tocStoreKey, max });
+  }, [tocStoreKey]);
+  useEffect(() => {
+    if (tocRead.key !== tocStoreKey || tocActiveIndex <= tocRead.max) return;
+    setTocRead({ key: tocStoreKey, max: tocActiveIndex });
+    try {
+      window.localStorage.setItem(tocStoreKey, String(tocActiveIndex));
+    } catch {}
+  }, [tocActiveIndex, tocRead, tocStoreKey]);
+  /* eslint-enable react-hooks/set-state-in-effect */
+  // Chỗ dừng cho trang chương ("Dừng ở mục IV. Trả bài · còn ~8 phút") — chỉ mục lý thuyết, chỉ học sinh.
+  // Chỉ ghi khi tới mục xa nhất từng đọc — mở bài (scroll-spy về mục 1) không đè chỗ dừng cũ. Xong tab → xoá.
+  const userId = session?.user.id;
+  const theoryTabDone =
+    !!session && (items ?? []).some((it) => it.kind === "ly_thuyet") && (items ?? []).filter((it) => it.kind === "ly_thuyet").every((it) => done.has(it.id));
+  useEffect(() => {
+    if (!recordProgress || !userId || !theoryMeta) return;
+    if (theoryTabDone) {
+      clearResumeSpot(userId, id);
+      return;
+    }
+    if (activeTab !== "ly_thuyet" || tocActiveIndex < 0 || tocRead.key !== tocStoreKey || tocActiveIndex < tocRead.max) return;
+    const entry = tocEntries[tocActiveIndex];
+    const total = tocEntries.length;
+    writeResumeSpot(userId, id, {
+      heading: entry.heading || entry.itemTitle,
+      index: tocActiveIndex,
+      total,
+      minutesLeft: Math.max(1, Math.round((theoryMeta.minutes * (total - tocActiveIndex)) / total)),
+    });
+  }, [recordProgress, userId, theoryTabDone, activeTab, theoryMeta, tocActiveIndex, tocRead, tocStoreKey, tocEntries, id]);
 
 
   // Đến từ "Tiếp tục học" (resume=1): mở tab chứa mục đầu tiên chưa hoàn thành rồi cuộn tới đó;
@@ -1566,7 +1652,11 @@ function LessonLoader() {
   const lessonTypeLabel = LESSON_KIND_META[lessonKind]?.label ?? "Bài học";
   const lessonTheoryPassed = !!session && progress.get(assignmentItem?.id ?? -1)?.theory?.status === "passed";
   // N4: chip "Bài học" và đếm "4 mục · 4 phần" bị bỏ (tab ngay dưới đã cho biết) — chỉ giữ thứ có ích.
-  const hasLessonMeta = lessonKind !== "bai_hoc" || !!assignmentItem?.due_at || lessonTheoryPassed;
+  const hasLessonMeta = lessonKind !== "bai_hoc" || !!assignmentItem?.due_at || lessonTheoryPassed || !!theoryMeta;
+  // Mục lục: số mục đã đọc (✓). Tab đã xong hết → mọi mục ✓.
+  const tocComplete = !!session && !!activeSection && activeSection.items.every(isDone);
+  const tocDoneCount = tocComplete ? tocEntries.length : Math.min(tocRead.key === tocStoreKey ? tocRead.max : 0, tocEntries.length);
+  const tocCount = !isTeacherView && tocEntries.length > 1 ? `${tocDoneCount}/${tocEntries.length}` : "";
   const stepLabel = !isTeacherView && lessonMarked ? "Đã học xong" : `Mục ${Math.max(activeIndex, 0) + 1}/${totalTabs || 1}`;
 
   // Mục lục bài này = các h2/h3 có id trong TAB đang mở (heading do nội dung soạn sẵn sinh ra).
@@ -1616,6 +1706,7 @@ function LessonLoader() {
               onDone={() => markDone(item)}
               recordProgress={recordProgress}
               forceAllOpen={isTeacherView}
+              estimateInHead={plain && theoryMeta !== null}
             />
             {item.exam_ids.length > 0 && (
               <TheoryQuizBlock
@@ -1909,11 +2000,14 @@ function LessonLoader() {
 
   /** Hộp dụng cụ cột phải — dùng chung cho cột phải (máy tính) và ngăn kéo (điện thoại). */
   function renderSidePanels() {
+    const multiItemToc = new Set(tocEntries.map((e) => e.itemTitle)).size > 1;
     return (
       <>
         {/* Mục lục bài này — scroll-spy trên các h2/h3 của tab đang mở, 0 request. */}
         <div className="lesson-panel lesson-toc">
-          <p className="lesson-panel-title">Mục lục bài này</p>
+          <p className="lesson-panel-title lesson-toc-title">
+            Mục lục bài {tocCount && <span>{tocCount}</span>}
+          </p>
           {tocEntries.length === 0 ? (
             <p className="lesson-panel-empty">Mục này chưa có đề mục nhỏ.</p>
           ) : (
@@ -1937,21 +2031,34 @@ function LessonLoader() {
                   // hiện nhãn cho dòng khớp đầu tiên của mục đó (so với dòng liền trước trong danh
                   // sách đang hiện, không phải trong danh sách gốc).
                   const showItemLabel =
+                    multiItemToc &&
                     !!entry.heading &&
                     entry.heading !== entry.itemTitle &&
                     shownToc[index - 1]?.itemTitle !== entry.itemTitle;
+                  const label = entry.heading || entry.itemTitle;
+                  const numbered = /^([IVXLC]+|\d+)[.)]\s+(.+)$/.exec(label);
+                  const order = tocEntries.indexOf(entry);
+                  const isActive = activeHeading === entry.id;
+                  const isRead = !isActive && !isTeacherView && (tocComplete || order < tocDoneCount);
                   return (
                     <li key={entry.id}>
                       <a
                         href={`#${entry.id}`}
-                        className={activeHeading === entry.id ? "is-active" : ""}
+                        className={`${isActive ? "is-active" : ""} ${isRead ? "is-done" : ""}`}
+                        aria-current={isActive ? "location" : undefined}
                         onClick={(e) => {
                           e.preventDefault();
                           flashTheorySection(entry.id, 2);
                         }}
                       >
-                        {showItemLabel && <small className="lesson-toc-item">{entry.itemTitle}</small>}
-                        <span>{entry.heading || entry.itemTitle}</span>
+                        <i className="lesson-toc-n" aria-hidden>
+                          {isRead ? "✓" : numbered ? numbered[1] : order + 1}
+                        </i>
+                        <span>
+                          {showItemLabel && <small className="lesson-toc-item">{entry.itemTitle}</small>}
+                          {numbered ? numbered[2] : label}
+                          {isRead && <span className="sr-only"> (đã đọc)</span>}
+                        </span>
                       </a>
                     </li>
                   );
@@ -1961,11 +2068,6 @@ function LessonLoader() {
             </>
           )}
         </div>
-
-        {/* Mức độ nắm vững — chuyển từ cuối bài sang đây, giữ nguyên props và nút "Luyện thêm". */}
-        {items && items.length > 0 && (
-          <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={recordProgress} />
-        )}
 
         {/* Câu sai liên quan: chỉ dùng reviewContexts đã mang theo từ trang làm đề — 0 request.
             Không có câu sai thì KHÔNG dựng thẻ (N3: trạng thái rỗng là nhiễu) — chỉ còn một dòng liên kết. */}
@@ -1998,11 +2100,20 @@ function LessonLoader() {
           </div>
         ) : (
           <Link href="/lop-hoc" className="lesson-side-link">
-            Sổ câu sai ›
+            Sổ câu sai của bài ›
           </Link>
         )}
+      </>
+    );
+  }
 
-        {/* Ghi chú của em: mở hộp ghi chú theo mục (StudentNoteFab) — một chỗ duy nhất, cùng nút nổi. */}
+  /** Cuối bài: Mức độ thành thạo (kèm Làm mới, Luyện thêm) và Ghi chú của em. Dời khỏi rail để rail chỉ còn
+   *  "mình đang ở đâu" như bản duyệt (B5/B7); đặt ở cuối vì mức độ có nghĩa sau khi học/làm xong (L5). */
+  function renderEndPanels() {
+    if (!items || items.length === 0) return null;
+    return (
+      <div className="lesson-endpanels">
+        <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={recordProgress} />
         {!canPresent && (
           <button
             type="button"
@@ -2012,7 +2123,28 @@ function LessonLoader() {
             Ghi chú của em
           </button>
         )}
-      </>
+      </div>
+    );
+  }
+
+  /** Dòng meta: ≥1024 ngay dưới tên bài; < 1024 tên bài lên thanh bài nên dòng này xuống dưới dải tab (bản duyệt). */
+  function renderMeta(className: string) {
+    return (
+      <div className={className}>
+        {theoryMeta && (
+          <span className="lesson-meta-time">
+            ~{theoryMeta.minutes} phút · {theoryMeta.total} mục
+            {theoryMeta.quizzes > 0 ? ` · ${theoryMeta.quizzes} câu tự kiểm tra` : ""}
+          </span>
+        )}
+        {lessonKind !== "bai_hoc" && <span className="lesson-meta-chip">{lessonTypeLabel}</span>}
+        {assignmentItem?.due_at && <span>BTVN hạn {formatDue(assignmentItem.due_at)}</span>}
+        {lessonTheoryPassed && (
+          <span className="lesson-meta-ok">
+            <Check size={13} aria-hidden /> Đã xem lý thuyết
+          </span>
+        )}
+      </div>
     );
   }
 
@@ -2104,9 +2236,10 @@ function LessonLoader() {
 
         <div className="lesson-main" ref={mainRef}>
           <header className="lesson-head">
-            <button type="button" className="lesson-head-back" onClick={() => window.history.back()} aria-label="Quay lại">
+            {/* < 1024: ‹ về chương (bản duyệt) thay cho "Quay lại" lịch sử — trang chương có đủ thanh site. */}
+            <Link href={classHref} className="lesson-head-back" aria-label={`Về ${chapterFullLabel || "chương"}`}>
               <ArrowLeft size={16} aria-hidden />
-            </button>
+            </Link>
             <div className="lesson-head-text">
               <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
                 <span className="lesson-crumb-class">
@@ -2118,17 +2251,7 @@ function LessonLoader() {
                 </Link>
               </nav>
               <h1>{title}</h1>
-              {hasLessonMeta && (
-                <div className="lesson-meta">
-                  {lessonKind !== "bai_hoc" && <span className="lesson-meta-chip">{lessonTypeLabel}</span>}
-                  {assignmentItem?.due_at && <span>BTVN hạn {formatDue(assignmentItem.due_at)}</span>}
-                  {lessonTheoryPassed && (
-                    <span className="lesson-meta-ok">
-                      <Check size={13} aria-hidden /> Đã xem lý thuyết
-                    </span>
-                  )}
-                </div>
-              )}
+              {hasLessonMeta && renderMeta("lesson-meta")}
             </div>
             {presentButton}
             {readToolButton}
@@ -2158,6 +2281,7 @@ function LessonLoader() {
             )}
 
             {tabNav}
+            {hasLessonMeta && renderMeta("lesson-meta lesson-meta--below-tabs")}
 
             <div className="lesson-body" ref={bodyRef}>
             {reviewBanner}
@@ -2193,6 +2317,8 @@ function LessonLoader() {
               </section>
             )}
 
+            {bodyReady && renderEndPanels()}
+
             {/* Bài trước / Bài sau ở CUỐI bài (B5/D3): hết bài mới mời đi tiếp, không treo ở góc trên. */}
             {(prevLesson || nextLesson) && (
               <nav className="lesson-pager" aria-label="Bài trước và bài sau">
@@ -2221,8 +2347,9 @@ function LessonLoader() {
         </div>
       </div>
 
-      <nav className="lesson-bottombar lesson-bottombar--mobile lesson-bottombar--home" aria-label="Điều hướng bài học">
-        <LessonHomeLink />
+      {/* Thanh đáy theo bản duyệt: Mục lục x/y · Học xong · Bài sau. Bỏ nút Trang chủ: nút ‹ ở thanh bài đã về
+          trang chương (có đủ thanh site), ba nút còn lại rộng hơn cho ngón cái (D2). */}
+      <nav className="lesson-bottombar lesson-bottombar--mobile lesson-bottombar--3" aria-label="Điều hướng bài học">
         <button
           type="button"
           className="lesson-bottom-link"
@@ -2231,7 +2358,7 @@ function LessonLoader() {
           aria-controls="lesson-drawer"
         >
           <Menu size={16} aria-hidden />
-          <span>Mục lục</span>
+          <span>Mục lục{tocCount ? ` ${tocCount}` : ""}</span>
         </button>
         {!isTeacherView && (
           <button

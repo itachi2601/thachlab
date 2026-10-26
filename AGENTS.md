@@ -291,3 +291,9 @@ Script/migration ghi hoặc quét hàng chục nghìn dòng (`question_bank`, `e
 
 # CSS @media mới: Lightning CSS gộp khối sát nhau (26/10/2026)
 Lightning CSS khi build gộp hai khối `@media` khác điều kiện đặt sát nhau → khối mới đặt cách khối khác bằng một rule thường; kiểm CSS đã ăn bằng `getComputedStyle` trên trang thật, không chỉ nhìn file.
+
+# Làm theo trang mẫu đã duyệt: chụp trang thật CẠNH mẫu rồi mới báo xong (thầy chốt 26/10/2026)
+Đợt đầu đồng bộ trang chương ↔ trang bài theo trang mẫu chỉ làm theo mô tả, báo xong khi trang thật còn lệch 12 chỗ. Khi việc là "làm giống trang mẫu":
+- Đọc CSS của mẫu (số đo thật), không làm theo ghi chú; lập danh sách điểm so sánh trước khi sửa.
+- Sau mỗi nhóm sửa: chụp trang thật và mẫu ở CÙNG cỡ (1280 · 1024 · 768 · 375, sáng + tối), so theo danh sách; đo bằng `getComputedStyle` (cỡ chữ, rộng cột, khoảng cách) — rule cũ kiểu `font-size: 1rem` cứng thường đè rule mới.
+- Điểm nào cố ý lệch thì ghi lý do vào commit và báo cáo, không im lặng bỏ qua.
