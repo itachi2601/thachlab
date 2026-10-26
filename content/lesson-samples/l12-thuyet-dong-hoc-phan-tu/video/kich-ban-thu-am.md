@@ -1,8 +1,10 @@
 # Kịch bản thu âm — video Thuyết động học phân tử chất khí
 
-47 câu. Thu **một file liền** bằng app Ghi âm trên iPhone, phòng yên tĩnh, máy cách miệng ~20 cm.
+48 câu. Thu **một file liền** bằng app Ghi âm trên iPhone, phòng yên tĩnh, máy cách miệng ~20 cm.
 Đọc lần lượt từng câu, **nghỉ ~2 giây giữa hai câu** (script cắt theo khoảng lặng). Đọc vấp thì dừng, nghỉ, đọc lại cả câu — rồi báo số câu vấp.
 Không đọc số thứ tự câu. Giọng gợi ý ở đầu mỗi cảnh, đọc như đang nói với một em học sinh.
+
+**Lần này chỉ cần thu 3 câu đánh dấu MỚI** (8, 10, 41), cũng một file liền, nghỉ ~2 giây giữa hai câu, rồi chạy `python3 nhap_giong.py --cau 8,10,41 <file>`.
 
 ## Cảnh 1 · Hạt khói nhảy múa
 *Giọng: tò mò, hạ giọng như kể chuyện bí ẩn; câu cuối hỏi chậm, bỏ lửng*
@@ -13,18 +15,18 @@ Không đọc số thứ tự câu. Giọng gợi ý ở đầu mỗi cảnh, đ
 4. Vậy cái gì đang đẩy chúng?
 
 ## Cảnh 2 · 1 · Chuyển động Brown
-*Giọng: "À!" — giọng phát hiện ra; câu cuối nhấn "quả bóng", "chen lấn"*
+*Giọng: "À!" — giọng phát hiện ra; câu cuối nhấn "quả bóng", "mọi phía"*
 
 5. Đó là chuyển động Brown.
 6. Vô số phân tử khí vô hình va vào hạt khói từ mọi phía.
 7. Hai phía không bao giờ va đều nhau, nên hạt bị đẩy lệch liên tục, đi theo đường gấp khúc.
-8. Hãy nhớ hình ảnh: quả bóng giữa đám đông chen lấn.
+8. Hãy nhớ hình ảnh: một quả bóng bị ném từ mọi phía.  **← MỚI, cần thu**
 
 ## Cảnh 3 · 2 · Ba nội dung của thuyết
 *Giọng: nhấn rời từng chữ NHỎ… LOẠN… ĐẬP, mỗi chữ dừng nửa nhịp*
 
 9. Thuyết động học phân tử chất khí gói gọn trong ba chữ: Nhỏ, Loạn, Đập.
-10. Nhỏ: phân tử rất nhỏ so với khoảng cách giữa chúng, nên lực hút và lực đẩy rất yếu.
+10. Nhỏ: phân tử rất nhỏ so với khoảng cách giữa chúng. Vì ở xa nhau nên lực hút và lực đẩy rất yếu, lực yếu chính là hệ quả của Nhỏ.  **← MỚI, cần thu**
 11. Loạn: phân tử chuyển động hỗn loạn, không ngừng. Nhiệt độ càng cao, chạy càng nhanh.
 12. Đập: phân tử đập vào thành bình, gây ra áp suất khí.
 
@@ -83,14 +85,15 @@ Không đọc số thứ tự câu. Giọng gợi ý ở đầu mỗi cảnh, đ
 
 39. Đáp án đây.
 40. Số mol bằng tám mươi tư chia hai mươi tám, bằng ba mol.
-41. Thể tích bằng ba nhân hai mươi hai phẩy bốn, bằng sáu mươi bảy phẩy hai lít.
+41. Số phân tử bằng ba nhân sáu phẩy không hai nhân mười mũ hai mươi ba, bằng một phẩy tám không sáu nhân mười mũ hai mươi tư phân tử.  **← MỚI, cần thu**
+42. Thể tích bằng ba nhân hai mươi hai phẩy bốn, bằng sáu mươi bảy phẩy hai lít.
 
 ## Cảnh 11 · Nhớ 5 hình = nhớ cả bài
 *Giọng: ấm, chậm lại; câu cuối chốt chắc*
 
-42. Tóm lại, năm hình ảnh.
-43. Hạt khói nhảy múa.
-44. Ba chữ nhỏ, loạn, đập.
-45. Ống khói trắng.
-46. Bàn bi-a hoàn hảo.
-47. Và thùng một mol. Nhớ năm hình, nhớ cả bài.
+43. Tóm lại, năm hình ảnh.
+44. Hạt khói nhảy múa.
+45. Ba chữ nhỏ, loạn, đập.
+46. Ống khói trắng.
+47. Bàn bi-a hoàn hảo.
+48. Và thùng một mol. Nhớ năm hình, nhớ cả bài.
