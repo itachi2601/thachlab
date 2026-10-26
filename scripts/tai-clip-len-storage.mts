@@ -127,6 +127,12 @@ data.video = {
   nguon: "tự dựng",
   da_kiem: new Date().toISOString().slice(0, 10),
 };
-const indent = /\n( +)"/.exec(raw)?.[1].length ?? 1;
-fs.writeFileSync(khoFile, JSON.stringify(data, null, indent) + (raw.endsWith("\n") ? "\n" : ""), "utf8");
+// Ghi đè đúng mục "video" bằng chữ, giữ nguyên kiểu trình bày phần còn lại (dung_cu… viết gọn một dòng/đối tượng).
+const indent = /\n( +)"/.exec(raw)?.[1].length ?? 2;
+const pad = " ".repeat(indent);
+const khoi = `${pad}"video": ` + JSON.stringify(data.video, null, indent).replace(/\n/g, `\n${pad}`);
+let moi = raw.replace(new RegExp(`,?\\n${pad}"video": \\{[^{}]*\\}`), "");
+moi = moi.replace(/\s*\}\s*$/, `,\n${khoi}\n}`) + (raw.endsWith("\n") ? "\n" : "");
+JSON.parse(moi);
+fs.writeFileSync(khoFile, moi, "utf8");
 console.log(`✓ ghi video vào ${path.relative(root, khoFile)}`);
