@@ -45,7 +45,7 @@ máy bật "giảm chuyển động"; clip YouTube hiện ảnh bìa, chỉ tả
 | Tải clip lên YouTube (không công khai) | **thầy** | tài khoản kênh của thầy |
 | Đăng bài | `bash scripts/cap-nhat-ly-thuyet.sh` trên Mac, sau khi thầy duyệt lô | chỉ ghi mục lý thuyết |
 
-Định nghĩa đề xuất cho hai agent mới (tạo `.claude/agents/<tên>.md` khi thầy đồng ý):
+Hai agent mới đã tạo 26/10/2026: `.claude/agents/ve-hinh-dong.md`, `.claude/agents/dung-clip.md` (tóm tắt):
 
 ```
 ---
