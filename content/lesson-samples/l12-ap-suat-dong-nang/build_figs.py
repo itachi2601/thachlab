@@ -56,10 +56,11 @@ b += text(228, 22, "b) Gặp nước nóng", "currentColor", 12, "start", "700")
 b += f'<path d="M250,58 L258,172 L372,172 L380,58" fill="none" stroke="currentColor" stroke-width="2.5"/>'
 b += line(256, 92, 374, 92, BLUE, 1.6, "6 5", .75)
 b += f'<circle cx="315" cy="118" r="40" fill="rgba(56,189,248,.14)" stroke="{BLUE}" stroke-width="2.2"/>'
-b += dot(288, 104, 4, BLUE) + arrow("f1", "b", 294, 104, 320, 104, 2.4)
-b += dot(302, 138, 4, BLUE) + arrow("f1", "b", 308, 138, 334, 124, 2.4)
-b += dot(342, 138, 4, BLUE) + arrow("f1", "b", 338, 134, 320, 120, 2.4)
-b += text(315, 184, "va chạm dày, mạnh", BLUE, 11, "middle", "600")
+# mũi tên dài gấp đôi hình a (v lớn hơn), ba mũi tên không chạm nhau
+b += dot(282, 100, 4, BLUE) + arrow("f1", "b", 288, 100, 324, 100, 2.4)
+b += dot(290, 140, 4, BLUE) + arrow("f1", "b", 296, 138, 328, 126, 2.4)
+b += dot(340, 142, 4, BLUE) + arrow("f1", "b", 334, 144, 304, 152, 2.4)
+b += text(315, 184, "bay nhanh, va chạm dày", BLUE, 11, "middle", "600")
 fig1 = wrap("0 0 420 200",
             "Hai trạng thái của quả bóng bàn: khí nguội thì phân tử đập thưa và nhẹ, khí nóng thì phân tử đập dày và mạnh nên đẩy vỏ bóng phồng ra",
             b, "Hình 1. Khí nguội: phân tử đập thưa nên vỏ bẹp. Khí nóng: phân tử bay nhanh hơn, đập dày và mạnh hơn nên đẩy vỏ phồng lại.",
