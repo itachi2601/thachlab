@@ -7,6 +7,12 @@
   "id": "tn-l12-phanbach-01",
   "ten": "Bàn ghim mô hình phản ứng dây chuyền: đổi khoảng cách để đổi hệ số nhân",
   "loai": "thi_nghiem",
+  "gia_thuyet": "Phản ứng dây chuyền lan được hay tắt phụ thuộc mỗi \"hạt\" bị kích thích làm kích thích trung bình bao nhiêu hạt khác (hệ số nhân k).",
+  "du_doan_neu_dung": "Ghim cắm càng sát thì mỗi ghim đổ làm đổ nhiều ghim hơn: số ghim đổ tăng mạnh khi giảm khoảng cách.",
+  "khong_chung_minh": [
+    "Mô hình không có nơtron, không có khối lượng tới hạn thật và không toả năng lượng hạt nhân.",
+    "Không cho giá trị k của lò thật; kết luận chỉ ở mức định tính."
+  ],
   "muc_do": "co_ban",
   "kien_thuc": [
     "phanhach.he_so_nhan_neutron",
@@ -76,7 +82,7 @@
   ],
   "sai_so_thuong_gap": [
     "Bi không rơi trúng cùng một điểm giữa các lần: lệch 1–3 ghim ở cùng khoảng cách.",
-    "Ghim cắm nghiêng sẵn hoặc lỏng chân, đổ dù không có ghim nào chạm tới.",
+    "Ghim cắm nghiêng sẵn hoặc lỏng chân, đổ dù không có ghim nào chạm tới — làm số đếm lớn hơn thật; cắm thẳng lại trước mỗi lần thả.",
     "Đếm sót ghim đổ nằm ngoài rìa lưới; cần vạch sẵn khung 7 × 7 trước khi cắm."
   ],
   "goi_y_mo_phong": {
