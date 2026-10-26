@@ -154,7 +154,7 @@ b += text(14, 208, "không đổi tần số · không sinh thêm điện năng"
 fig4 = wrap("0 0 440 220",
             "Sơ đồ máy biến áp: cuộn sơ cấp và cuộn thứ cấp quấn trên một lõi thép kín ghép từ các lá mỏng cách điện",
             b,
-            "Hình 4. Hai cuộn dây trên cùng một lõi kín ghép từ lá thép silic mỏng cách điện.")
+            "Hình 4. Sơ đồ máy biến áp một pha.")
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

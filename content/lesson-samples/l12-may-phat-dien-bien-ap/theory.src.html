@@ -55,7 +55,10 @@
 </ul>
 </div>
 
+<details class="tl-details tl-more">
+<summary>👀 Bấm xem: pha ban đầu của $e$</summary>
 <p>Vì $e = -\Phi'(t) = NBS\omega\sin(\omega t + \varphi)$ nên pha ban đầu của $e$ là $\varphi' = \varphi - \dfrac{\pi}{2}$.</p>
+</details>
 
 <p>Mẹo: khung quay <strong>một vòng</strong> thì $e$ lặp lại <strong>một chu kì</strong>.</p>
 
@@ -100,12 +103,19 @@
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-mayphatdien-01">
 <p class="tl-label">🔬 Thí nghiệm đo: quay đều và đếm tần số</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> nối máy phát mini (hai cặp cực) với tần số kế; quay đều ở $n = 5$–$25$ vòng/s.</li>
+<li><strong>Làm:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem cách làm</summary>
+<p>Nối máy phát mini (hai cặp cực) với tần số kế; quay đều ở $n = 5$–$25$ vòng/s, mỗi tốc độ đọc tần số kế một lần.</p>
+</details>
+<strong>Coi rằng</strong> rô-to quay đều trong lúc đọc số; tốc độ lấy bằng số vòng đếm trong 10 s chia cho 10.</li>
 <li><strong>Quan sát:</strong> $f$ tăng theo $n$; ghi số đọc vào bảng.</li>
 <li><strong>Rút ra:</strong> tính $f/n$ từng hàng, so với $p = 2$.</li>
 </ol>
 </div>
 
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: bảng số liệu, sai số từ đâu?</summary>
 <div class="table-scroll">
 <table class="tl-table">
 <thead>
@@ -121,12 +131,10 @@
 </table>
 </div>
 
-<p><em>Bảng số liệu mẫu (minh hoạ).</em></p>
-
-<details class="tl-details tl-more">
-<summary>📊 Bấm xem: bảng cho thấy gì, sai số từ đâu? <small>(trả lời bằng lời của em trước)</small></summary>
+<p><small>Bảng số liệu mẫu (minh hoạ).</small></p>
 <p><strong>Rút ra:</strong> $f/n$ luôn xấp xỉ $2$, đúng bằng số cặp cực, nên $f = np$. Đến $n = 25$ vòng/s thì $f \approx 50\ \text{Hz}$ — đúng tần số lưới điện.</p>
-<p><strong>Sai số:</strong> động cơ hoặc khoan quay không đều nên tốc độ thật lệch tốc độ đã định; tần số kế sai số $\pm 0{,}1\ \text{Hz}$; quay nhanh thì khung dây rung. Vì vậy $f/n$ dao động trong khoảng $1{,}96$–$2{,}01$ chứ không đúng $2{,}00$.</p>
+<p><strong>Sai số:</strong> quay không đều nên lúc tần số kế đọc số, tốc độ thật có khi <em>lớn hơn</em>, có khi <em>nhỏ hơn</em> tốc độ đã đếm. Vì vậy $f/n$ lệch về <em>cả hai phía</em> quanh 2 (bảng: từ 1,96 tới 2,01), là sai số ngẫu nhiên; tần số kế góp thêm $\pm 0{,}1\ \text{Hz}$ mỗi lần đọc.</p>
+<p><strong>Giảm sai số:</strong> đếm nhiều vòng (10 s trở lên) rồi chia, vì sai một phần vòng khi đếm 1–2 s đã thành sai lớn; đọc khi số chỉ đứng yên; lặp lại mỗi tốc độ vài lần rồi lấy trung bình.</p>
 </details>
 
 <div class="tl-box tl-box--think tl-check">
@@ -154,6 +162,8 @@
 
 <!--FIG3-->
 
+<details class="tl-details tl-more">
+<summary>🔬 Bấm xem: thí nghiệm ba cuộn dây và ba đèn LED</summary>
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-mayphatdien-02">
 <p class="tl-label">🔬 Thí nghiệm: ba cuộn dây lệch $120^\circ$ và ba bóng đèn</p>
 <ol class="tl-steps">
@@ -162,6 +172,7 @@
 <li><strong>Rút ra:</strong> ba suất điện động lệch pha nhau một phần ba chu kì.</li>
 </ol>
 </div>
+</details>
 
 <details class="tl-details tl-more">
 <summary>🧮 Bấm xem: lưới ba pha và cặp số 220 V – 380 V</summary>
@@ -188,14 +199,69 @@
 <ul>
 <li>Hai cuộn dây đồng $N_1 \ne N_2$ quấn trên một <strong>lõi kín</strong> bằng lá thép silic.</li>
 <li>Cuộn <strong>sơ cấp</strong> $N_1$ nối nguồn xoay chiều; cuộn <strong>thứ cấp</strong> $N_2$ nối tải.</li>
-<li>Dòng xoay chiều ở cuộn sơ cấp gây từ thông biến thiên trong lõi. Từ thông qua <em>một</em> vòng $\Phi$ ở hai cuộn bằng nhau ($\Phi$ ở đây tính cho một vòng, khác II.1) nên $e_1 = N_1\dfrac{\Delta\Phi}{\Delta t}$, $e_2 = N_2\dfrac{\Delta\Phi}{\Delta t}$, suy ra $e_1/e_2 = N_1/N_2$.</li>
 </ul>
 
 <details class="tl-details tl-more">
-<summary>👀 Bấm xem: vì sao lõi phải ghép từ nhiều lá mỏng cách điện?</summary>
+<summary>👀 Bấm xem: vì sao lõi ghép từ lá mỏng?</summary>
 <p>Từ thông biến thiên sinh ra dòng Fu-cô (dòng xoáy) chạy trong khối thép, làm lõi nóng lên vô ích. Ghép lõi từ nhiều lá thép silic mỏng, sơn cách điện giữa các lá thì mỗi lá chỉ còn một diện tích nhỏ, dòng xoáy yếu hẳn.</p>
 <p>Nối máy biến áp với nguồn một chiều có cường độ không đổi thì cuộn thứ cấp không có suất điện động, vì từ thông trong lõi không biến thiên.</p>
 </details>
+
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-mayphatdien-03">
+<p class="tl-label">🔬 Thí nghiệm đo: tự quấn máy biến áp</p>
+<ol class="tl-steps">
+<li><strong>Giả thuyết cần kiểm:</strong> điện áp hai cuộn tỉ lệ số vòng, $\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2}$ với máy lí tưởng.</li>
+<li><strong>Dự đoán nếu đúng:</strong> giữ cuộn sơ cấp 200 vòng, nguồn 12 V; gấp đôi số vòng thứ cấp thì $U_2$ gấp đôi theo.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem dụng cụ và 3 bước</summary>
+<p>Lõi thép kín ghép lá mỏng, dây đồng emay, nguồn xoay chiều 12 V, một vôn kế xoay chiều (đồng hồ vạn năng để thang AC).</p>
+<p><strong>Làm:</strong> (1) Quấn cuộn sơ cấp $N_1 = 200$ vòng, nối nguồn $U_1 = 12\ \text{V}$. (2) Quấn cuộn thứ cấp lần lượt 100, 200, 400, 600 vòng; mỗi lần đo $U_2$ khi chưa nối tải. (3) Đo cả $U_1$ và $U_2$ bằng cùng một vôn kế, cùng thang đo; tính $\dfrac{U_1}{U_2}$ rồi so với $\dfrac{N_1}{N_2}$ ở từng lần.</p>
+</details>
+<strong>Coi rằng</strong> máy lí tưởng: <strong>bỏ qua</strong> hao phí ở lõi và điện trở cuộn dây.</li>
+<li><strong>Quan sát:</strong> 100 → 200 → 400 vòng thì vôn kế chỉ 5,9 → 11,6 → 23,5 V. Ba hàng đã tính có $\dfrac{U_1}{U_2}$ là 2,03; 1,03; 0,511, còn $\dfrac{N_1}{N_2}$ là 2,00; 1,00; 0,500.</li>
+<li><strong>Rút ra:</strong> kết quả <strong>ủng hộ giả thuyết</strong>. Cơ chế: cùng lõi kín nên từ thông qua <em>mỗi vòng</em> ở hai cuộn biến thiên như nhau, suất điện động mỗi vòng như nhau, điện áp tỉ lệ số vòng. Hao phí ở lõi và điện trở cuộn dây làm $U_2$ đo <em>nhỏ hơn</em> lí tưởng, nên $\dfrac{U_1}{U_2}$ đo <em>lớn hơn</em> $\dfrac{N_1}{N_2}$ một chút. Giảm: lõi khép kín, dây to, đo khi chưa nối tải.</li>
+<li><strong>Chưa nói được gì:</strong> không đo dòng nên chưa kiểm được tỉ số dòng điện và hiệu suất khi có tải; không nói gì về nguồn một chiều.</li>
+</ol>
+</div>
+<!--video:sau:tn-l12-mayphatdien-03-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem video: quấn cuộn thứ cấp, đo bằng vôn kế xoay chiều</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/wvRpgn80oKA?rel=0&start=75&end=195" title="quấn cuộn thứ cấp, đo bằng vôn kế xoay chiều" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Khi số vòng cuộn thứ cấp giảm, số chỉ vôn kế thay đổi thế nào?</p>
+</div>
+
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: số liệu và tự tính tỉ số</summary>
+<p>Cuộn sơ cấp 200 vòng, nguồn 12,0 V, đo khi chưa nối tải:</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>$N_2$ (vòng)</th><th>$\dfrac{N_1}{N_2}$</th><th>$U_2$ đo (V)</th><th>$\dfrac{U_1}{U_2}$</th></tr>
+</thead>
+<tbody>
+<tr><td>100</td><td>2,00</td><td>5,9</td><td>2,03</td></tr>
+<tr><td>200</td><td>1,00</td><td>11,6</td><td>1,03</td></tr>
+<tr><td>400</td><td>0,500</td><td>23,5</td><td>0,511</td></tr>
+<tr><td>600</td><td>0,333</td><td>35,1</td><td>em tự tính</td></tr>
+</tbody>
+</table></div>
+<p>Tính ô cuối rồi so với tỉ số vòng của hàng đó: lớn hơn hay nhỏ hơn, có cùng chiều với ba hàng trên không?</p>
+<p><small>Số liệu minh hoạ, không phải số đo thật: tính từ mô hình $U_2 = U_1\dfrac{N_2}{N_1}(1 - \delta)$ với $\delta = 2{,}5\%$ gộp hao phí ở lõi và điện trở cuộn dây, cộng sai số đọc vôn kế khoảng 0,1 V.</small></p>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl125-q4" id="tl125-q4a"><label for="tl125-q4a" class="tl-opt tl-no">A. Gấp đôi số vòng thứ cấp thì vôn kế chỉ gần gấp đôi</label>
+<input type="radio" name="tl125-q4" id="tl125-q4b"><label for="tl125-q4b" class="tl-opt tl-no">B. Kết quả ủng hộ giả thuyết điện áp tỉ lệ số vòng</label>
+<input type="radio" name="tl125-q4" id="tl125-q4c"><label for="tl125-q4c" class="tl-opt tl-ok">C. Cuộn nhiều vòng có điện áp lớn vì từ thông mỗi vòng lớn hơn</label>
+<input type="radio" name="tl125-q4" id="tl125-q4d"><label for="tl125-q4d" class="tl-opt tl-no">D. Không đo dòng nên chưa kiểm được tỉ số dòng điện</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng: ý C sai.</strong> Hai cuộn quấn trên cùng một lõi kín nên từ thông qua mỗi vòng như nhau; cuộn thứ cấp có điện áp lớn hơn vì có <em>nhiều vòng hơn</em>, mỗi vòng góp cùng một suất điện động. A là hiện tượng đọc từ bảng, B là kết luận, D là giới hạn của phép đo: cả ba đúng, đúng kiểu bốn ý a)–d) của một câu Phần II trong đề thi tốt nghiệp.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng: từ 100 lên 200 vòng, vôn kế chỉ từ 5,9 V lên 11,6 V. B là kết luận: tỉ số điện áp bám sát tỉ số vòng. D là giới hạn: chỉ có vôn kế, không có ampe kế. Ý sai nằm ở <em>cơ chế</em>: từ thông qua mỗi vòng ở hai cuộn lớn bằng nhau hay khác nhau? Chọn lại nhé.</p></div>
+</div>
+</div>
 
 <!--FIG4-->
 
@@ -211,67 +277,19 @@
 
 <ul>
 <li>Đặt $k = N_1/N_2$: $k \gt 1$ <strong>hạ áp</strong>, $k \lt 1$ <strong>tăng áp</strong>.</li>
-<li><strong>Không đổi tần số</strong>, <strong>không sinh thêm điện năng</strong>: $U$ tăng bao nhiêu lần, $I$ giảm bấy nhiêu.</li>
-<li>Hiệu suất $H = \dfrac{U_2I_2\cos\varphi_2}{U_1I_1\cos\varphi_1}$; máy lí tưởng có $H = 1$.<br>$\cos\varphi$ ở đây là hệ số công suất, khác $\varphi$ ở II.1.</li>
 </ul>
 
-<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-mayphatdien-03">
-<p class="tl-label">🔬 Thí nghiệm đo: tự quấn máy biến áp</p>
-<ol class="tl-steps">
-<li><strong>Làm:</strong> quấn cuộn sơ cấp $N_1 = 200$ vòng, nối nguồn $U_1 = 12\ \text{V}$; quấn cuộn thứ cấp 100, 200, 400, 600 vòng, đo $U_2$.</li>
-<li><strong>Quan sát:</strong> $U_2$ tăng theo $N_2$; ghi vào bảng.</li>
-<li><strong>Rút ra:</strong> so $\dfrac{U_2}{U_1}$ với $\dfrac{N_2}{N_1}$.</li>
-</ol>
-</div>
-<!--video:sau:tn-l12-mayphatdien-03-->
-<div class="tl-box tl-box--video tl-note">
-<p class="tl-label">🎬 Xem video: quấn cuộn thứ cấp, đo bằng vôn kế xoay chiều</p>
-<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/wvRpgn80oKA?rel=0&start=75&end=195" title="quấn cuộn thứ cấp, đo bằng vôn kế xoay chiều" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
-<p><strong>Nhìn vào:</strong> Khi số vòng cuộn thứ cấp giảm, số chỉ vôn kế thay đổi thế nào?</p>
-</div>
-
-
-<div class="table-scroll">
-<table class="tl-table">
-<thead>
-<tr><th>$N_2$ (vòng)</th><th>$U_2$ đo (V)</th><th>So với lí thuyết</th></tr>
-</thead>
-<tbody>
-<tr><td>100</td><td>5,8</td><td>thấp hơn 6,0</td></tr>
-<tr><td>200</td><td>11,7</td><td>thấp hơn 12,0</td></tr>
-<tr><td>400</td><td>23,5</td><td>thấp hơn 24,0</td></tr>
-<tr><td>600</td><td>35,0</td><td>thấp hơn 36,0</td></tr>
-</tbody>
-</table>
-</div>
-
-<p><em>Bảng số liệu mẫu (minh hoạ).</em></p>
-
 <details class="tl-details tl-more">
-<summary>📊 Bấm xem: vì sao $U_2$ đo thấp hơn tính toán?</summary>
-<p><strong>Rút ra:</strong> tỉ số $\dfrac{U_2}{U_1}$ bám sát $\dfrac{N_2}{N_1}$ (0,48 so với 0,50; 1,96 so với 2,00; 2,92 so với 3,00), nên công thức $\dfrac{U_1}{U_2} = \dfrac{N_1}{N_2}$ là đúng.</p>
-<p><strong>Sai số:</strong> một phần từ thông rò ra ngoài không khí; cuộn dây bằng đồng có điện trở gây sụt áp. Hai nguồn này đều làm $U_2$ thấp hơn, lệch chừng $2$–$4\%$; riêng vôn kế sai số khoảng $1\%$ có thể lệch về cả hai phía.</p>
+<summary>👀 Bấm xem: hiệu suất của máy biến áp thực</summary>
+<p>Hiệu suất $H = \dfrac{U_2I_2\cos\varphi_2}{U_1I_1\cos\varphi_1}$; máy lí tưởng có $H = 1$.<br>$\cos\varphi$ ở đây là hệ số công suất, khác $\varphi$ ở II.1.</p>
 </details>
-
-<div class="tl-box tl-box--think tl-check">
-<p class="tl-label">Tự kiểm tra ngay</p>
-<p><strong>Câu 4.</strong> Máy biến áp lí tưởng có $N_1 = 500$ vòng, $N_2 = 50$ vòng, $U_1 = 220\ \text{V}$. Điện áp thứ cấp là:</p>
-<div class="tl-quiz">
-<input type="radio" name="tl125-q4" id="tl125-q4a"><label for="tl125-q4a" class="tl-opt tl-ok">A. $22\ \text{V}$</label>
-<input type="radio" name="tl125-q4" id="tl125-q4b"><label for="tl125-q4b" class="tl-opt tl-no">B. $2200\ \text{V}$</label>
-<input type="radio" name="tl125-q4" id="tl125-q4c"><label for="tl125-q4c" class="tl-opt tl-no">C. $220\ \text{V}$</label>
-<input type="radio" name="tl125-q4" id="tl125-q4d"><label for="tl125-q4d" class="tl-opt tl-no">D. $2{,}2\ \text{V}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $U_2 = U_1\dfrac{N_2}{N_1} = 220 \times \dfrac{50}{500} = 22\ \text{V}$. Ít vòng hơn thì điện áp nhỏ hơn — đây là máy hạ áp.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba lỗi cụ thể: B là viết ngược tỉ số (lấy $N_1/N_2$); C là tưởng máy biến áp không đổi điện áp; D là chia sai một bậc (nhầm 500 thành 5000).<br>Nhớ: $N_1$ đi với $U_1$ (sơ cấp), $N_2$ đi với $U_2$ (thứ cấp), cuộn nhiều vòng hơn thì điện áp lớn hơn.</p></div>
-</div>
-</div>
 
 <h4>II.5 Truyền tải điện năng đi xa</h4>
 
 <p>🔑 <strong>Tăng áp trước · Giảm hao phí · $k^2$ lần</strong></p>
 
 <ul>
-<li>Công suất $P$ phát đi ở điện áp hiệu dụng $U$ <em>nơi phát</em> (không phải độ sụt áp trên dây): $I = P/(U\cos\varphi)$. Bài này coi $\cos\varphi = 1$ nên $I = P/U$.</li>
+<li>Phát công suất $P$ ở điện áp $U$ <em>nơi phát</em> (không phải độ sụt áp trên dây) thì dòng $I = P/U$ chạy trên dây.</li>
 <li>Dây có điện trở $R$ nên toả nhiệt: hao phí $\Delta P = RI^2$, mất hẳn.</li>
 <li>Tăng $U$ lên $k$ lần thì $\Delta P$ giảm $k^2$ lần; nên đường dây dài dùng điện áp cao.</li>
 </ul>
@@ -289,8 +307,10 @@
 </ul>
 </div>
 
-<p>Hiệu suất truyền tải $H = 1 - \dfrac{\Delta P}{P}$ (khác $H$ ở II.4).</p>
+<p>Hiệu suất truyền tải $H = 1 - \dfrac{\Delta P}{P}$ (khác hiệu suất máy biến áp).</p>
 
+<details class="tl-details tl-more">
+<summary>🧪 Bấm xem: đèn 12 V nối bằng hai cuộn dây dài 20 m</summary>
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-mayphatdien-04">
 <p class="tl-label">🧪 Ví dụ thực tế: vì sao phải dùng đường dây cao thế</p>
 <ol class="tl-steps">
@@ -299,9 +319,10 @@
 <li><strong>Rút ra:</strong> phần dây dẫn "ăn" mất là $\Delta P = RI^2$.</li>
 </ol>
 </div>
+</details>
 
-<p><em>Bảng tính cho tổ máy $P = 20\ \text{kW}$, đường dây $R = 2\ \Omega$:</em></p>
-
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: bảng hao phí theo $U$ (tổ máy 20 kW, dây 2 Ω)</summary>
 <div class="table-scroll">
 <table class="tl-table">
 <thead>
@@ -315,6 +336,7 @@
 </tbody>
 </table>
 </div>
+</details>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
@@ -510,7 +532,6 @@
 <ul>
 <li><strong>Tác dụng của dòng xoay chiều:</strong> quang · nhiệt · từ · hoá · sinh lí.</li>
 <li><strong>Nhà máy thuỷ điện:</strong> rô-to quay chậm nên có hàng chục cặp cực.</li>
-<li><strong>Lưới truyền tải:</strong> 500 kV rồi hạ dần về 220 V.</li>
 <li><strong>Bộ sạc laptop:</strong> biến áp hạ 220 V xuống 5–20 V rồi chỉnh lưu (xoay chiều → một chiều).</li>
 </ul>
 

@@ -13,6 +13,17 @@
     "mayphatdien.cam_ung_dien_tu"
   ],
   "muc_tieu": "Chứng tỏ tần số dòng điện do máy phát ra tỉ lệ với tốc độ quay và với số cặp cực: f = n·p; học sinh đọc bảng số liệu để thấy tỉ số f/n không đổi và nhận xét được sai số.",
+  "gia_thuyet": [
+    "Tần số dòng điện do máy phát ra bằng tốc độ quay nhân số cặp cực: f = n·p."
+  ],
+  "du_doan_neu_dung": [
+    "Quay đều thì f tỉ lệ thuận với tốc độ quay n: gấp đôi n thì f gấp đôi.",
+    "Tỉ số f/n ở mọi hàng xấp xỉ bằng số cặp cực p = 2."
+  ],
+  "khong_chung_minh": [
+    "Chỉ dùng một máy hai cặp cực nên chưa kiểm trực tiếp f tỉ lệ với p (phải đổi máy có số cặp cực khác).",
+    "Không đo biên độ suất điện động nên không nói gì về E0 = NBSω."
+  ],
   "dung_cu": [
     { "ten": "Máy phát điện mini (quay bằng động cơ hoặc khoan; rô-to 2 cặp cực, có ghi trên vỏ)", "so_luong": 1, "ghi_chu": "kiểm tra vỏ ghi số cặp cực trước khi làm" },
     { "ten": "Tần số kế hoặc đồng hồ vạn năng có thang Hz", "so_luong": 1, "ghi_chu": "sai số ±0,1 Hz" },
@@ -75,9 +86,9 @@
     "Nghĩ rằng số '2 cặp cực' nghĩa là p = 4 rồi nhân thừa một lần."
   ],
   "sai_so_thuong_gap": [
-    "Quay tay không đều nên tốc độ thật lệch tốc độ đã định — đây là nguồn sai số lớn nhất.",
-    "Đếm vòng trong thời gian ngắn (1–2 giây) làm sai tốc độ; nên đếm trong 10 giây rồi chia 10.",
-    "Tần số kế sai số ±0,1 Hz và có thể chậm hiển thị khi tốc độ thay đổi nhanh."
+    "Coi rằng rô-to quay đều; thực tế quay không đều nên lúc tần số kế đọc, tốc độ thật có khi lớn hơn, có khi nhỏ hơn tốc độ đã đếm — f/n lệch về CẢ HAI PHÍA quanh p (bảng: 1,96–2,01), là sai số ngẫu nhiên.",
+    "Đếm vòng trong thời gian ngắn (1–2 giây) thì sai một phần vòng đã thành sai lớn. Giảm: đếm trong 10 giây trở lên rồi chia, lặp lại mỗi tốc độ vài lần lấy trung bình.",
+    "Tần số kế sai số ±0,1 Hz và có thể chậm hiển thị khi tốc độ thay đổi nhanh; đọc khi số chỉ đã đứng yên."
   ],
   "goi_y_mo_phong": {
     "loai": "do_thi+bang_so_lieu",
