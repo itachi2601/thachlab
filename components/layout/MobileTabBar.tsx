@@ -5,7 +5,7 @@
  *
  * Thanh đáy kiểu app cho điện thoại/tablet, mỗi vai một bộ nút (thầy chốt 7/10/2026):
  *   khách        Trang chủ · Học thử · Luyện tập · Đăng nhập
- *   HS THPT      Hôm nay · Bài học · Luyện tập · Xếp hạng · Thêm        (chấm đỏ "Hôm nay", số chưa đọc ở "Thêm")
+ *   HS THPT      Hôm nay · Bài học · Luyện tập · Thêm                   (chấm đỏ "Hôm nay", số chưa đọc ở "Thêm"; Xếp hạng nằm trong Thêm từ 27/10/2026 — N2)
  *   SV CTTC      Khoá học · Bài học · Thông báo · Thêm
  *   phụ huynh    Kết quả của con · Thông báo · Thêm                     (nút cao 64px, chữ 14px — P-quy tắc tuổi 45–60)
  *   trợ giảng    Việc của tôi · Phụ đạo · Ghi buổi · Thông báo · Thêm
@@ -307,7 +307,6 @@ export default function MobileTabBar() {
       { key: "today", label: "Hôm nay", href: "/tai-khoan", icon: "today", active: pathname === "/tai-khoan", badge: todayDot ? { kind: "dot" } : undefined },
       { key: "class", label: "Bài học", href: classSlug ? `/lop-hoc/${classSlug}` : "/lop-hoc", icon: "class", active: match("/lop-hoc") && !onRank && !onResults },
       { key: "practice", label: "Luyện tập", href: "/luyen-tap", icon: "practice", active: match("/luyen-tap") },
-      { key: "rank", label: "Xếp hạng", href: "/lop-hoc/xep-hang", icon: "rank", active: onRank },
       // "Thêm" là một trang (tài khoản, kết quả chi tiết, đăng xuất…), không còn menu nổi. Quét QR đã lên thanh đầu cạnh chuông;
       // thông báo/tin nhắn/tin tức gom vào Hộp thư (mở từ chuông).
       {
@@ -317,7 +316,7 @@ export default function MobileTabBar() {
         icon: "more",
         badge: dotIfUnread,
         active:
-          match("/tai-khoan/them") || match("/tai-khoan/doi-mat-khau") || onResults || match("/quet-ma") || onNotice || match("/hop-thu") || match("/tin-nhan") || match("/tin-tuc"),
+          match("/tai-khoan/them") || match("/tai-khoan/doi-mat-khau") || onResults || onRank || match("/quet-ma") || onNotice || match("/hop-thu") || match("/tin-nhan") || match("/tin-tuc"),
       },
     ];
   } else if (kind === "cttc") {
