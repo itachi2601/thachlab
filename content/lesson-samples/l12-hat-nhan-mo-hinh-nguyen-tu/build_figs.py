@@ -63,8 +63,21 @@ b += arrow("f1", "r", 231, 100, 134, 58, 2.6)
 b += text(126, 50, "bật ngược", RED, 11, "end", "700")
 b += f'<circle cx="237" cy="104" r="7" fill="rgba(248,113,113,.35)" stroke="{RED}" stroke-width="2"/>'
 b += text(24, 190, "Một chùm hạt, ba số phận", "currentColor", 10, "start", "500")
+# ảnh động bấm mới chạy: hạt alpha lần lượt bay qua — 4 hạt thẳng, 1 hạt lệch, 1 hạt bật ngược
+NA = 61
+for poly, t0, span, c in (
+        ([(102, 116), (356, 116)], 0.00, .30, GRN), ([(102, 136), (356, 136)], .10, .30, GRN),
+        ([(102, 122), (356, 122)], .22, .30, GRN), ([(102, 131), (356, 131)], .34, .30, GRN),
+        ([(102, 126), (237, 104), (404, 52)], .46, .34, ORG),
+        ([(102, 126), (229, 102), (134, 58)], .62, .34, RED)):
+    us = [(i / (NA - 1) - t0) / span for i in range(NA)]
+    mv = [along(poly, u) for u in us]
+    op = [1.0 if 0 < u < 1 else 0.0 for u in us]
+    b += (f'<g opacity="0">{anim("opacity", op)}<g>{anim_move([(x - 102, y - 126) for x, y in mv])}'
+          f'<circle cx="102" cy="126" r="5" fill="{c}"/></g></g>')
 fig1 = wrap2("0 0 440 244", "Chùm hạt alpha bắn vào lá vàng: hầu hết bay thẳng, vài hạt lệch mạnh hoặc bật ngược lại",
              b, "Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống, chỉ hạt sát hạt nhân mới lệch mạnh hoặc bật ngược.")
+fig1 = nut_chay(fig1)
 
 # ---------------------------------------------- Hình 2: ba mô hình nguyên tử
 b = defs("f2")

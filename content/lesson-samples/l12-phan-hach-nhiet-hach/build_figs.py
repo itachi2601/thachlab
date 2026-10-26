@@ -61,27 +61,46 @@ fig1 = wrap("0 0 440 210",
 # ------------------------------------------------- Hình 2: phân hạch U-235
 b = defs("f2")
 b += text(14, 22, "Phân hạch U-235", "currentColor", 13, "start", "700")
-b += circ(78, 112, 36, "rgba(248,113,113,.18)", RED)
-b += text(78, 117, "U-235", RED, 13, "middle", "700")
-b += circ(24, 74, 8, BLUE, BLUE)
-b += text(24, 58, "n", BLUE, 13, "middle", "700")
-b += arrow("f2", "b", 36, 80, 50, 92, 2.4)
-b += arrow("f2", "r", 116, 112, 166, 112, 2.6)
-b += text(141, 102, "vỡ ra", RED, 12.5, "middle", "700")
-b += circ(230, 84, 28, "rgba(251,146,60,.18)", ORG)
-b += text(230, 89, "Ba-144", ORG, 12.5, "middle", "700")
-b += circ(222, 160, 26, "rgba(56,189,248,.18)", BLUE)
-b += text(222, 165, "Kr-89", BLUE, 12.5, "middle", "700")
+# ảnh động bấm mới chạy (mỗi phần một <g>): n bay vào U → U vỡ → hai mảnh văng ra → 3 n mới → toả năng lượng;
+# cuối hoạt hình trả về đúng hình tĩnh.
+NA = 61
+TS = [i / (NA - 1) for i in range(NA)]
+
+
+def ramp(t, a, b):
+    return min(max((t - a) / (b - a), 0.0), 1.0)
+
+
+def nhom(body, op=None, mv=None):
+    a = anim("opacity", [op(t) for t in TS]) if op else ""
+    m = anim_move([mv(t) for t in TS]) if mv else ""
+    return f'<g>{a}<g>{m}{body}</g></g>'
+
+
+b += nhom(circ(78, 112, 36, "rgba(248,113,113,.18)", RED) + text(78, 117, "U-235", RED, 13, "middle", "700"),
+          op=lambda t: 1 - ramp(t, .30, .42) + ramp(t, .92, .97))
+b += nhom(circ(24, 74, 8, BLUE, BLUE) + text(24, 58, "n", BLUE, 13, "middle", "700"),
+          op=lambda t: 1 if t < .30 or t >= .95 else 0,
+          mv=lambda t: (30 * ramp(t, 0, .30), 20 * ramp(t, 0, .30)) if t < .95 else (0, 0))
+b += nhom(arrow("f2", "b", 36, 80, 50, 92, 2.4), op=lambda t: 1 if t < .05 or t >= .95 else 0)
+b += nhom(arrow("f2", "r", 116, 112, 166, 112, 2.6) + text(141, 102, "vỡ ra", RED, 12.5, "middle", "700"),
+          op=lambda t: 1 if t < .05 else ramp(t, .62, .70))
+for cx, cy, r, c, fill, nhan in ((230, 84, 28, ORG, "rgba(251,146,60,.18)", "Ba-144"),
+                                 (222, 160, 26, BLUE, "rgba(56,189,248,.18)", "Kr-89")):
+    b += nhom(circ(cx, cy, r, fill, c) + text(cx, cy + 5, nhan, c, 12.5, "middle", "700"),
+              op=lambda t: ramp(t, .38, .48),
+              mv=lambda t, cx=cx, cy=cy: ((78 - cx) * (1 - ramp(t, .38, .62)), (112 - cy) * (1 - ramp(t, .38, .62))))
 for ny in (56, 100, 144):
-    b += circ(306, ny, 8, BLUE, BLUE)
-    b += text(320, ny + 4, "n", BLUE, 13, "start", "700")
-b += arrow("f2", "b", 256, 74, 290, 62, 2)
-b += arrow("f2", "b", 246, 148, 290, 140, 2)
-b += text(296, 178, "2–3 nơtron mới", BLUE, 12.5, "start", "700")
-b += text(432, 200, "toả ≈ 173 MeV", ORG, 13, "end", "700")
+    b += nhom(circ(306, ny, 8, BLUE, BLUE) + text(320, ny + 4, "n", BLUE, 13, "start", "700"),
+              op=lambda t: ramp(t, .58, .64),
+              mv=lambda t, ny=ny: (-70 * (1 - ramp(t, .58, .80)), (118 - ny) * (1 - ramp(t, .58, .80))))
+b += nhom(arrow("f2", "b", 256, 74, 290, 62, 2) + arrow("f2", "b", 246, 148, 290, 140, 2)
+          + text(296, 178, "2–3 nơtron mới", BLUE, 12.5, "start", "700"), op=lambda t: ramp(t, .62, .72))
+b += nhom(text(432, 200, "toả ≈ 173 MeV", ORG, 13, "end", "700"), op=lambda t: ramp(t, .70, .80))
 fig2 = wrap("0 0 440 210",
             "Một nơtron chậm bị U-235 hấp thụ, hạt nhân vỡ thành hai mảnh Ba-144 và Kr-89, nhả thêm 2 đến 3 nơtron và toả năng lượng",
             b, "Hình 2. Nơtron chậm làm U-235 vỡ thành hai mảnh và nhả thêm nơtron.")
+fig2 = nut_chay(fig2)
 
 # ------------------------------------------------- Hình 3: ba kiểu phát triển dây chuyền
 b = defs("f3")

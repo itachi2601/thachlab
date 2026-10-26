@@ -105,10 +105,34 @@ for k, nhan in ((0, "N₀"), (1, "N₀/2"), (2, "N₀/4"), (3, "N₀/8")):
     b += text(64, ry(k) + 4, nhan, GRN, 10.5, "end", "700")
 for k, nhan in ((0, "0"), (1, "T"), (2, "2T"), (3, "3T"), (4, "4T")):
     b += text(rx(k), 206, nhan, "currentColor", 11.5, "middle", "600")
-b += text(248, 96, "mỗi T lại còn một nửa", GRN, 11, "start", "600")
+b += text(248, 140, "mỗi T lại còn một nửa", GRN, 11, "start", "600")
+# ảnh động bấm mới chạy: 16 hạt nhân phân rã NGẪU NHIÊN từng hạt (không biết hạt nào trước),
+# nhưng cứ hết một T thì còn đúng một nửa (16 → 8 → 4 → 2 → 1); chấm chạy trên đường cong cùng nhịp.
+import random
+NA = 91
+TS = [i / (NA - 1) for i in range(NA)]
+def nT(t):
+    return 4 * min(t / .9, 1.0)
+rnd = random.Random(17)
+thu_tu = list(range(16)); rnd.shuffle(thu_tu)
+luc_ra = {}
+i = 0
+for k, so in ((1, 8), (2, 4), (3, 2), (4, 1)):
+    for _ in range(so):
+        luc_ra[thu_tu[i]] = rnd.uniform(k - 1 + .08, k - .08); i += 1
+for j in range(16):
+    gx, gy = 342 + 18 * (j % 4), 40 + 18 * (j // 4)
+    tr = luc_ra.get(j, 99)
+    b += (f'<circle cx="{gx}" cy="{gy}" r="6" fill="{GRN}">'
+          + anim("opacity", [1.0 if nT(t) < tr else .15 for t in TS]) + '</circle>')
+b += text(369, 117, "1 chấm = 1 hạt nhân", "currentColor", 10.5, "middle", "500")
+b += (f'<g opacity="0">{anim("opacity", [1.0] * (NA - 1) + [0.0])}<g>'
+      + anim_move([(rx(nT(t)) - X0, ry(nT(t)) - ry(0)) for t in TS])
+      + f'<circle cx="{X0}" cy="{ry(0):.1f}" r="6" fill="none" stroke="{ORG}" stroke-width="3"/></g></g>')
 fig3 = wrap("0 0 440 240",
             "Đường cong phân rã: số hạt nhân giảm còn một nửa sau mỗi chu kì bán rã T",
             b, "Hình 3. Sau mỗi khoảng T, số hạt nhân giảm một nửa.")
+fig3 = nut_chay(fig3)
 
 # ------------------------------------------------- Hình 4: dịch chuyển ô trong bảng tuần hoàn
 b = defs("f4")

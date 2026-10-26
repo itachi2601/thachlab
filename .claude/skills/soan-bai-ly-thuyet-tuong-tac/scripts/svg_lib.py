@@ -111,3 +111,40 @@ def chev_on(P, i, c, w=2.2, L=12):
     """Đầu V tại điểm thứ i của đường gấp khúc P, hướng theo chiều đi của P."""
     (x, y), (x2, y2) = P[i], P[i + 1]
     return chevron(x, y, x2 - x, y2 - y, c, w, L)
+
+
+# ---------------------------------------------------------------- ảnh động bấm mới chạy (B4, B9 trong docs/QUY-TAC-THIET-KE.md)
+# Hình tĩnh là trạng thái mặc định (đọc được khi chưa bấm, khi máy bật "giảm chuyển động" — ContentHtml
+# gỡ hết <animate> và nút). Bấm nút `data-bt-run` thì mọi <animate> trong <figure> chạy MỘT lần
+# (begin="indefinite"), giá trị cuối nên trả về đúng trạng thái tĩnh (hoặc trạng thái kết thúc có nghĩa).
+# Mỗi animate nhận danh sách giá trị lấy mẫu đều theo thời gian (calcMode linear mặc định).
+ANIM_DUR = 6.0
+
+
+def anim(attr, vals, dur=ANIM_DUR, fmt="{:.2f}"):
+    v = ";".join(fmt.format(x) for x in vals)
+    return f'<animate attributeName="{attr}" values="{v}" dur="{dur}s" begin="indefinite" fill="freeze"/>'
+
+
+def anim_move(pts, dur=ANIM_DUR):
+    """Dịch phần tử theo danh sách (dx, dy) lấy mẫu đều — đặt trong <g> bọc phần tử."""
+    v = ";".join(f"{x:.1f} {y:.1f}" for x, y in pts)
+    return (f'<animateTransform attributeName="transform" type="translate" values="{v}" dur="{dur}s"'
+            f' begin="indefinite" fill="freeze"/>')
+
+
+def along(poly, u):
+    """Điểm trên đường gấp khúc poly [(x, y)…] ở tỉ lệ chiều dài u ∈ [0, 1]."""
+    import math
+    segs = [math.dist(poly[i], poly[i + 1]) for i in range(len(poly) - 1)]
+    L = sum(segs) * min(max(u, 0.0), 1.0)
+    for i, s in enumerate(segs):
+        if L <= s or i == len(segs) - 1:
+            k = 0 if s == 0 else min(L / s, 1.0)
+            return (poly[i][0] + (poly[i + 1][0] - poly[i][0]) * k, poly[i][1] + (poly[i + 1][1] - poly[i][1]) * k)
+        L -= s
+
+
+def nut_chay(fig_html, nhan="▶ Chạy hình"):
+    """Gắn nút chạy ngay sau </svg> của hình (ContentHtml bắt `button[data-bt-run]`)."""
+    return fig_html.replace("</svg>", f'</svg><button type="button" class="bt-run" data-bt-run="1">{nhan}</button>', 1)
