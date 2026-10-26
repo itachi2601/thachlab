@@ -91,25 +91,25 @@ fig1 = wrap("0 0 440 252",
 b = defs("f2")
 b += text(12, 20, "Đàn ghi ta điện: dao động thành dòng điện", "currentColor", 13, "start", "700")
 b += line(30, 64, 250, 64, "currentColor", 2.5)                            # dây thép
-b += arrow("f2", "r", 70, 76, 70, 50, 1.8)
-b += arrow("f2", "r", 86, 50, 86, 76, 1.8)
+b += arrow("f2", "r", 44, 76, 44, 50, 1.8)
+b += arrow("f2", "r", 60, 50, 60, 76, 1.8)
 b += text(268, 56, "dây thép dao động", RED, 13, "start", "600")
 b += rect(130, 92, 40, 30, "rgba(248,113,113,.22)", RED, 2, 2)             # nam châm: cực N sát dây
 b += rect(130, 122, 40, 30, "rgba(56,189,248,.22)", BLUE, 2, 2)
 b += text(150, 112, "N", RED, 13, "middle", "700")
-b += text(150, 142, "S", BLUE, 13, "middle", "700")
-for i in range(6):                                                         # cuộn dây quấn quanh nam châm
-    y = 98 + i * 9
-    b += f'<ellipse cx="150" cy="{y}" rx="29" ry="3.5" fill="none" stroke="{RED}" stroke-width="2"/>'
-b += field_path("M138,92 C96,-10 40,150 129,142", (129, 142), (1, .3), BLUE)     # đường sức từ cực N ra, về cực S
-b += field_path("M162,92 C204,-10 260,150 171,142", (171, 142), (-1, .3), BLUE)
-b += field_line(150, 90, 150, 40, BLUE, 1.8)                                      # đường sức qua dây
+b += text(150, 144, "S", BLUE, 13, "middle", "700")
+for i in range(3):                                                         # cuộn dây quấn ở giữa nam châm, tránh chữ N, S
+    y = 118.5 + i * 4.5
+    b += f'<ellipse cx="150" cy="{y}" rx="26" ry="2.8" fill="none" stroke="{RED}" stroke-width="2"/>'
+b += field_path("M138,92 C70,-30 20,200 130,148", (130, 148), (1, -.3), BLUE)    # đường sức từ cực N ra, cắt dây, về cực S từ ngoài cuộn
+b += field_path("M162,92 C230,-30 280,200 170,148", (170, 148), (-1, -.3), BLUE)
+b += field_line(150, 90, 150, 38, BLUE, 1.8)                                      # đường sức qua dây
 b += text(268, 100, "nam châm: trục dọc", "currentColor", 13, "start", "600")
 b += text(268, 118, "cực N sát dây", "currentColor", 13, "start", "600")
 b += text(268, 136, "cuộn dây quanh nam châm", RED, 13, "start", "600")
 b += text(268, 80, "từ trường xuyên qua dây", BLUE, 13, "start", "600")
-b += line(121, 150, 121, 196, RED, 2) + line(121, 196, 270, 196, RED, 2)    # hai đầu cuộn dây nối ra máy
-b += line(179, 99, 196, 99, RED, 2) + line(196, 99, 196, 178, RED, 2) + line(196, 178, 270, 178, RED, 2)
+b += line(124, 127, 112, 127, RED, 2) + line(112, 127, 112, 196, RED, 2) + line(112, 196, 270, 196, RED, 2)    # hai đầu cuộn dây nối ra máy
+b += line(176, 118.5, 196, 118.5, RED, 2) + line(196, 118.5, 196, 178, RED, 2) + line(196, 178, 270, 178, RED, 2)
 b += rect(270, 168, 128, 38, "rgba(148,163,184,.16)", "currentColor", 2, 6)
 b += text(334, 192, "máy tăng âm → loa", "currentColor", 13, "middle", "600")
 b += arrow("f2", "r", 224, 178, 254, 178, 2.2)
