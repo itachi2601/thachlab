@@ -122,7 +122,8 @@
   "Dùng U0 thay cho U khi tính công suất."
  ],
  "sai_so_thuong_gap": [
-  "Mắt khó phân biệt chênh lệch nhỏ về độ sáng; nên dùng luxmet hoặc nhiệt kế."
+  "Cả hai nguồn đều có thể sụt áp khi có tải (biến áp không tải còn cho cao hơn số ghi) → điện áp thật trên đèn khác số ghi. Giảm: đo U của cả hai nguồn bằng vôn kế lúc đèn đang sáng, chỉnh cho bằng nhau rồi mới so độ sáng.",
+  "Mắt khó phân biệt chênh lệch nhỏ về độ sáng. Giảm: dùng cảm biến ánh sáng (luxmet) hoặc nhiệt kế."
  ],
  "an_toan": "Dùng nguồn hạ áp 12 V, không dùng điện lưới 220 V.",
  "goi_y_mo_phong": {
@@ -136,5 +137,15 @@
   ],
   "hinh_trong_bai": "Hình 2",
   "y_tuong": "Học sinh đoán đường trung bình của p(t) nằm ở đâu trước khi mô phỏng vẽ."
- }
+ },
+ "gia_thuyet": [
+  "Giá trị hiệu dụng được định nghĩa theo tác dụng nhiệt: xoay chiều U hiệu dụng toả nhiệt bằng một chiều U."
+ ],
+ "du_doan_neu_dung": [
+  "Cùng một bóng đèn sáng như nhau khi nối nguồn một chiều 12 V và nguồn xoay chiều 12 V hiệu dụng."
+ ],
+ "khong_chung_minh": [
+  "Mắt chỉ so độ sáng thô, không đo được công suất.",
+  "Không cho thấy hệ số √2 đến từ đâu; hệ số này rút ra từ trung bình của cos² bằng 1/2."
+ ]
 }

@@ -117,7 +117,9 @@
   "Cho rằng đèn sáng đều nghĩa là dòng không đổi chiều."
  ],
  "sai_so_thuong_gap": [
-  "Máy phát tín hiệu không ra đúng tần số ở thang thấp."
+  "Đếm số lần nháy trong 1 s có thể lệch ±1 lần (thừa hoặc thiếu): ở 1 Hz lệch 100%. Giảm: đếm trong 10 s rồi chia 10 (còn 10%).",
+  "Tính cả lần nháy lúc bấm đồng hồ → thừa 1 lần → f lớn hơn thật. Giảm: bấm đồng hồ ở lần nháy 0.",
+  "Máy phát tín hiệu không ra đúng tần số ở thang thấp. Giảm: kiểm tần số bằng dao động ký."
  ],
  "an_toan": "Dùng nguồn hạ áp vài vôn, không thí nghiệm trực tiếp với điện lưới 220 V.",
  "goi_y_mo_phong": {
@@ -131,5 +133,15 @@
   ],
   "hinh_trong_bai": "Hình 2",
   "y_tuong": "Học sinh kéo f từ 1 đến 50 Hz và dự đoán lúc nào mắt thôi thấy nhấp nháy."
- }
+ },
+ "gia_thuyet": [
+  "Dòng điện xoay chiều đổi chiều 2 lần trong mỗi chu kì."
+ ],
+ "du_doan_neu_dung": [
+  "Ở tần số thấp hai LED ngược chiều chớp luân phiên, mỗi LED một lần mỗi chu kì."
+ ],
+ "khong_chung_minh": [
+  "Không cho biết tần số chính xác hay giá trị hiệu dụng của dòng.",
+  "Ở 50 Hz mắt không phân biệt được hai LED chớp hay sáng liên tục."
+ ]
 }

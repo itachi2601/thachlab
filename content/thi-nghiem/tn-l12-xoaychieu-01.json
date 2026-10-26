@@ -154,9 +154,11 @@
   "Cho rằng e cực đại khi Φ cực đại (thực tế e = 0 lúc đó)."
  ],
  "sai_so_thuong_gap": [
-  "Tay quay không đều.",
-  "Đọc đỉnh sóng lệch nửa ô trên màn dao động ký.",
-  "Điện trở cuộn dây và ma sát chổi than làm U0 nhỏ hơn E0."
+  "Đếm vòng trong 1 s có thể lệch ±1 vòng (thừa hoặc thiếu): ở 2 vòng/s lệch 50%. Giảm: đếm trong 10 s rồi chia 10 (còn 5%).",
+  "Tính luôn vòng lúc bấm đồng hồ là vòng 1 → thừa 1 vòng → n lớn hơn thật, U0/n nhỏ hơn. Giảm: bấm đồng hồ ở vòng 0.",
+  "Tay quay không đều → tần số trên màn lệch khỏi n lúc đọc U0. Giảm: đọc ở đoạn sóng đều, lặp 3 lần lấy trung bình.",
+  "Đọc đỉnh sóng lệch nửa ô (cả hai phía). Giảm: đọc đỉnh–đỉnh rồi chia 2.",
+  "Điện trở cuộn dây và ma sát chổi than → U0 đo được nhỏ hơn E0. Giảm: dùng dao động ký có điện trở vào lớn."
  ],
  "an_toan": "Không có nguy cơ đáng kể (điện áp vài vôn).",
  "goi_y_mo_phong": {
@@ -173,5 +175,15 @@
   ],
   "hinh_trong_bai": "Hình 1, Hình 3",
   "y_tuong": "Học sinh dự đoán U0 khi n gấp đôi trước khi mô phỏng chạy."
- }
+ },
+ "gia_thuyet": [
+  "Biên độ suất điện động của khung quay tỉ lệ với tốc độ góc: E0 = NBSω."
+ ],
+ "du_doan_neu_dung": [
+  "Quay nhanh gấp k lần thì U0 gấp k lần, U0/n gần như không đổi; tần số sóng bằng n."
+ ],
+ "khong_chung_minh": [
+  "Không cho biết dạng sin chính xác (máy phát mini chỉ cho sóng gần hình sin).",
+  "Không cho giá trị hiệu dụng; dao động ký chỉ đọc biên độ."
+ ]
 }

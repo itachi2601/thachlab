@@ -56,6 +56,8 @@
 <li><strong>Làm:</strong> nối máy phát mini (một cặp cực) với dao động ký. Quay đều tay ở $n=2,4,6,8,10$ vòng/s, mỗi lần đọc biên độ $U_0$ trên màn.</li>
 <li><strong>Quan sát:</strong> màn hiện đường hình sin; quay càng nhanh, sóng càng cao và càng dày.</li>
 <li><strong>Rút ra:</strong> mỗi vòng quay cho một chu kì điện, nên tần số $f=n$. Số đo $U_0$ ở bảng dưới.</li>
+<li><strong>Coi rằng</strong> tay quay đều trong lúc đọc số. <strong>Bỏ qua</strong> điện trở dây nối.</li>
+<li><strong>Chưa nói được gì:</strong> máy phát mini chỉ cho sóng gần hình sin, không cho biết dạng sin chính xác; màn cũng không cho giá trị hiệu dụng.</li>
 </ol>
 </div>
 <div class="table-scroll"><table class="tl-table">
@@ -71,7 +73,14 @@
 <details class="tl-details tl-more">
 <summary>📊 Bấm xem: từ bảng rút ra gì, sai số đến từ đâu? <small>(trả lời bằng lời của em trước)</small></summary>
 <p><strong>Rút ra:</strong> $U_0/n$ gần như không đổi (khoảng $0{,}47$), nên $U_0\propto n\propto\omega$, đúng với $E_0=NBS\omega$.</p>
-<p><strong>Sai số:</strong> tay quay không đều · đọc đỉnh sóng trên màn lệch nửa ô · điện trở cuộn dây làm $U_0$ đo được nhỏ hơn $E_0$.</p>
+<p><strong>Sai số và cách giảm:</strong></p>
+<ul>
+<li>Đếm vòng trong 1 s có thể lệch ±1 vòng (thừa hoặc thiếu): ở 2 vòng/s là lệch 50%. Đếm trong 10 s rồi chia 10 thì còn 5%.</li>
+<li>Tính luôn vòng lúc bấm đồng hồ là vòng 1 thì thừa 1 vòng, nên $n$ ra <strong>lớn hơn</strong> thật. Bấm đồng hồ ở vòng 0.</li>
+<li>Quay không đều thì sóng trên màn chỗ thưa chỗ dày, tần số đếm lệch khỏi $n$ lúc đọc $U_0$. Đọc ở đoạn sóng đều, lặp mỗi tốc độ 3 lần rồi lấy trung bình.</li>
+<li>Đọc đỉnh sóng lệch nửa ô, lệch cả hai phía. Đọc khoảng đỉnh–đỉnh rồi chia 2.</li>
+<li>Điện trở cuộn dây làm $U_0$ đo được <strong>nhỏ hơn</strong> $E_0$. Dùng dao động ký có điện trở vào lớn để dòng qua cuộn dây gần bằng 0.</li>
+</ul>
 </details>
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
@@ -103,6 +112,8 @@
 <li><span class="tl-sym">$\varphi_u,\ \varphi_i$</span><span>pha ban đầu của $u$, của $i$ (rad)</span></li>
 </ul>
 </div>
+<details class="tl-details tl-more">
+<summary>📋 Bấm xem: bảng nghĩa từng đại lượng</summary>
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>Đại lượng</th><th>Nghĩa</th></tr></thead>
 <tbody>
@@ -111,6 +122,7 @@
 <tr><td>$\omega t+\varphi$</td><td>pha tại lúc $t$; $\varphi$ là pha ban đầu</td></tr>
 <tr><td>$\omega$ (rad/s)</td><td>tần số góc, $\omega=2\pi f$</td></tr>
 </tbody></table></div>
+</details>
 <p>🔑 <strong>$T=\dfrac{2\pi}{\omega}$ · $f=\dfrac{1}{T}$ · Đổi chiều $2f$ lần/s</strong></p>
 <div class="tl-fx">
 <p class="tl-fx-name">Tần số góc, chu kì, tần số</p>
@@ -132,7 +144,14 @@
 <li><strong>Làm:</strong> nối máy phát tín hiệu với hai LED mắc song song, ngược chiều, qua điện trở bảo vệ. Chỉnh $f=1\ \text{Hz}$, rồi tăng dần lên $50\ \text{Hz}$.</li>
 <li><strong>Quan sát:</strong> ở 1 Hz, hai LED chớp luân phiên, mỗi LED 1 lần mỗi giây. Lên 50 Hz, cả hai trông như sáng liên tục.</li>
 <li><strong>Rút ra:</strong> mỗi chu kì mỗi LED sáng 1 lần, tức dòng đổi chiều 2 lần. Mắt không theo kịp 100 lần đổi chiều mỗi giây nên thấy đèn sáng đều.</li>
+<li><strong>Coi rằng</strong> mỗi LED chỉ cho dòng đi qua theo một chiều. <strong>Bỏ qua</strong> điện trở dây nối.</li>
+<li><strong>Chưa nói được gì:</strong> hai LED cho thấy dòng đổi chiều, nhưng không cho biết tần số chính xác hay giá trị hiệu dụng của dòng.</li>
 </ol>
+<details class="tl-details tl-more">
+<summary>📏 Bấm xem: đếm số lần nháy sao cho ít sai?</summary>
+<p>Đếm trong 1 s có thể lệch ±1 lần nháy (thừa hoặc thiếu): ở 1 Hz là lệch 100%. Đếm số lần nháy của một LED trong 10 s rồi chia 10 thì còn 10%.</p>
+<p>Tính cả lần nháy lúc bấm đồng hồ thì thừa 1 lần, nên $f$ ra <strong>lớn hơn</strong> thật. Bấm đồng hồ ở lần nháy 0.</p>
+</details>
 </div>
 <details class="tl-details tl-more">
 <summary>🧮 Bấm xem: khi nào "$2f$ lần" thành "$2f-1$ lần"?</summary>
@@ -181,7 +200,13 @@
 <li><strong>Làm:</strong> lần lượt nối cùng một bóng đèn sợi đốt 12 V vào nguồn một chiều 12 V, rồi vào nguồn xoay chiều 12 V (hiệu dụng).</li>
 <li><strong>Quan sát:</strong> độ sáng hai lần như nhau.</li>
 <li><strong>Rút ra:</strong> xoay chiều 12 V hiệu dụng toả nhiệt bằng một chiều 12 V, dù đỉnh của nó là $12\sqrt{2}\approx17\ \text{V}$.</li>
+<li><strong>Coi rằng</strong> điện trở dây tóc như nhau ở hai lần đo. <strong>Bỏ qua</strong> điện trở dây nối.</li>
+<li><strong>Chưa nói được gì:</strong> mắt chỉ so độ sáng thô, không đo được công suất; thí nghiệm cũng không cho thấy hệ số $\sqrt{2}$ đến từ đâu.</li>
 </ol>
+<details class="tl-details tl-more">
+<summary>📏 Bấm xem: so độ sáng sao cho ít sai?</summary>
+<p>Cả hai nguồn đều có thể sụt áp khi có tải, nên số ghi trên nguồn chưa chắc là điện áp thật trên đèn. Đo $U$ hiệu dụng của nguồn xoay chiều và $U$ của nguồn một chiều bằng vôn kế lúc đèn đang sáng, chỉnh cho bằng nhau rồi mới so độ sáng, tốt nhất bằng cảm biến ánh sáng thay cho mắt.</p>
+</details>
 </div>
 <details class="tl-details tl-more">
 <summary>🧮 Bấm xem: vì sao lại là $\sqrt{2}$?</summary>
