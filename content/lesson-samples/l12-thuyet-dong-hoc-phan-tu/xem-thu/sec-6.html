@@ -1,6 +1,6 @@
 <!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/update-l12-dong-hoc-phan-tu-0f2485/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/xenodochial-bartik-dcce40/node_modules/katex/dist/katex.min.css">
 <style>
 :root{color-scheme:light}
 body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -193,6 +193,11 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   1.05rem (không 1.1rem): đo 375px, mẹo 4–5 chữ có dấu " – " mới nằm một dòng. Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo, .lesson-body .lesson-prose p.tl-meo { margin: 0 0 2px; font-size: 1.05rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
 /* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
    Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
 .exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
@@ -1114,9 +1119,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <ul>
 <li><strong>Mùi lan trong nhà:</strong> mở lọ tinh dầu, mùi lan khắp phòng nhờ khuếch tán; trời nóng lan nhanh hơn.</li>
-<li><strong>Bơm lốp, bình xịt sơn:</strong> áp suất sinh ra từ vô số va chạm phân tử vào thành.</li>
 <li><strong>Túi khí ô tô, gói snack:</strong> tính lượng khí nitrogen cần nạp theo số mol và 22,4 lít.</li>
-<li><strong>Bụi mịn PM2.5:</strong> lơ lửng hàng giờ vì tốc độ lắng rất nhỏ, bị dòng không khí cuốn đi.</li>
 </ul>
 
 <div class="tl-box tl-box--think tl-check">
@@ -1139,19 +1142,20 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </div>
 
 <div class="tl-box tl-box--rule tl-keep">
-<p class="tl-label">Mang về sau bài học: nhớ 5 hình = nhớ cả bài</p>
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Hạt khói nhảy múa</strong> → chuyển động Brown.</li>
-<li><strong>NHỎ – LOẠN – ĐẬP</strong> → thuyết động học phân tử.</li>
+<li><strong>Nhỏ – Loạn – Đập</strong> → thuyết động học phân tử.</li>
 <li><strong>Ống khói trắng</strong> → phân tử nhanh, mùi lan chậm.</li>
-<li><strong>Bàn bi-a hoàn hảo</strong> → khí lí tưởng.</li>
+<li><strong>Chấm – Không Lực – Thẳng – Nảy</strong> → khí lí tưởng (bàn bi-a).</li>
 <li><strong>Thùng 1 mol</strong> → $6{,}02 \times 10^{23}$ phân tử, 22,4 lít.</li>
 <li><strong>Đọc đề:</strong> gặp "mol" thì hỏi ngay — đề cho khối lượng hay thể tích ở đktc?</li>
+<li><strong>5 hình = cả bài:</strong> hạt khói nhảy, phân tử đập thành bình, ống khói trắng, bàn bi-a, thùng 1 mol.</li>
 </ul>
 </div>
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/update-l12-dong-hoc-phan-tu-0f2485/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/update-l12-dong-hoc-phan-tu-0f2485/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/xenodochial-bartik-dcce40/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/xenodochial-bartik-dcce40/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>
