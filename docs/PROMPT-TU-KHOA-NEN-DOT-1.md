@@ -28,12 +28,13 @@ Nguồn bài: `content/lesson-samples/<slug>/theory.src.html` → build theo cá
 - Chữ mẹo lấy **đúng** bảng đề xuất; chỉ đổi khi sai vật lí hoặc hai mẹo trong cùng khối lớp trùng chữ cho ý khác — khi đổi, ghi lý do vào `docs/BANG-MEO-TU-KHOA.md`.
 
 ## Mẫu HTML (thêm vào mọi chỗ ★)
+Dòng 🔑 hiện là `<p><strong>🔑 …</strong></p>` (không có class). Thêm ngay trên nó:
 ```html
 <p class="tl-meo">🧠 <b>Nhỏ – Loạn – Đập</b></p>
-<p class="tl-key">🔑 Kích thước bé xíu · Hỗn loạn không ngừng · Va chạm gây áp suất</p>
+<p><strong>🔑 Kích thước bé xíu · Hỗn loạn không ngừng · Va chạm gây áp suất</strong></p>
 ```
-CSS một lần vào nơi đang chứa `.tl-key` (kiểm `grep -rn "tl-key" app/ styles/ content/`): `.tl-meo` cỡ chữ bằng `.tl-key` + 2px, màu token nhấn nền sáng,
-`letter-spacing: .02em`, không nền. Không thêm font. Kiểm 375px: mẹo 4–5 chữ phải nằm trên MỘT dòng; nếu xuống dòng thì bỏ dấu " – " thành " · ".
+CSS một lần vào `app/globals.css`, cạnh các quy tắc `.exam-content .tl-box` (≈ dòng 2803): `.exam-content .tl-meo` cỡ chữ 1.1rem, màu token nhấn nền sáng
+(`docs/MAU-NEN-SANG.md`), `letter-spacing: .02em`, không nền, `margin-bottom: 2px`. Không thêm font. Deploy CSS cùng lô 1 (theo `feedback_deploy_scope`: chỉ commit/deploy đúng feature này). Kiểm 375px: mẹo 4–5 chữ phải nằm trên MỘT dòng; nếu xuống dòng thì bỏ dấu " – " thành " · ".
 
 ## Việc trong từng bài (checklist, làm đủ mới tính xong bài)
 1. Thêm `tl-meo` ở đúng mục theo bảng ★. Nếu mục có quiz hỏi cùng ý **đứng ngay sau** 🔑 → chuyển khối 🔑+mẹo xuống sau quiz (quy tắc lộ đáp án đã ghi trong skill).
@@ -41,7 +42,7 @@ CSS một lần vào nơi đang chứa `.tl-key` (kiểm `grep -rn "tl-key" app/
 3. Mang về: dòng của mục đó bắt đầu bằng chữ mẹo; thêm dòng cuối "N hình = cả bài: …".
 4. Sửa lỗi mục 4 của spec nếu bài có (dao-dong-dieu-hoa soạn 🔑 cho cả 5 mục; khí lí tưởng đủ 4 ý; phóng xạ đủ 4 tia; hai bộ bước động lực học về một bộ; áp suất–động năng dùng lại Nhỏ–Loạn–Đập; bai-tap-dao-dong tách hai 🔑 dính).
 5. Ghi mẹo vào `docs/BANG-MEO-TU-KHOA.md` (file mới, mỗi dòng: `lớp · bài · mục · mẹo · ý từng chữ · bài khác dùng lại`). Mẹo dùng chung (Vẽ–Kể–Viết–Chiếu; Ba cùng–Một ngược–Một khác; Nhỏ–Loạn–Đập; Quay–Đổi–Sinh; Tiếp–Ra–Vào–Mau / Tiếp–Kín–Không cắt–Mau) phải **y hệt từng chữ** ở mọi bài.
-6. `python3 scripts/lint_theory.py <theory.html>` (hoặc lint sẵn có của thư mục) sạch; `lint_do_dai` không vượt hạn mức — mẹo thêm ≈ 5 từ/mục, nếu bài đã sát hạn mức thì cắt một câu dẫn gần đó, không cắt 🔑.
+6. `python3 .claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_theory.py <theory.html>` sạch; `lint_do_dai` không vượt hạn mức — mẹo thêm ≈ 5 từ/mục, nếu bài đã sát hạn mức thì cắt một câu dẫn gần đó, không cắt 🔑.
 7. Chụp xem thử 375px (Chrome headless như skill `soan-bai-ly-thuyet-tuong-tac` làm) cho 2 bài đầu mỗi lô; các bài sau chỉ kiểm bằng lint + đọc.
 8. Giao `kiem-code` soát bài theo 5 điểm: (a) mỗi chữ mẹo tra ngược ra đúng một ý trong 🔑; (b) mẹo không lộ đáp án quiz đứng sau; (c) chữ mẹo xuất hiện ở Trả bài và Mang về; (d) mẹo dùng chung y hệt bài khác trong cùng lô; (e) lỗi mục 4 đã sửa. Prompt cho kiem-code chỉ gửi đường dẫn file + 5 điểm, không dán nội dung.
 9. Commit theo đường dẫn: `git commit -- content/lesson-samples/<slug>/ docs/BANG-MEO-TU-KHOA.md`, mô tả ghi mã G1, C-nhóm.
