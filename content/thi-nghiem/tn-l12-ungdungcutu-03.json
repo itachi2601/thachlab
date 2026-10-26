@@ -3,27 +3,32 @@
   "lop": 12,
   "bai": "Bài 15. Một số ứng dụng của cảm ứng điện từ",
   "lesson_id": 126,
-  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung-dien-tu/theory.html (mục II.4, hộp .tl-box--exp + bảng số liệu + câu hỏi sai số)",
+  "nguon_trong_bai": "content/lesson-samples/l12-ung-dung-cam-ung-dien-tu/theory.html (mục II.4, hộp .tl-box--exp 6 ô + bảng số liệu có đối chứng bếp điện trở + câu 4 phát biểu sai)",
   "id": "tn-l12-ungdungcutu-03",
-  "ten": "Bếp từ: đáy nồi gang tự nóng lên, mặt kính vẫn mát",
+  "ten": "Bếp từ: đo hiệu suất khi đun 1 lít nước, đối chứng với bếp điện trở",
   "loai": "thi_nghiem",
   "muc_do": "co_ban",
   "kien_thuc": [
     "ungdungcutu.bep_tu",
     "ungdungcutu.dong_foucault_toa_nhiet"
   ],
-  "muc_tieu": "Đo nhiệt độ nước theo thời gian khi đun bằng bếp từ để thấy nhiệt sinh ra ngay trong đáy nồi nhiễm từ (dòng Foucault toả nhiệt), đồng thời đo nhiệt độ mặt kính để loại bỏ cách giải thích \"truyền nhiệt từ mặt bếp sang nồi\"; từ bảng số liệu tính được công suất hữu ích và hiệu suất của bếp.",
+  "muc_tieu": "Đun 1,0 lít nước cùng nồi, cùng công suất, cùng thời gian trên bếp từ và trên bếp điện trở (đối chứng) để kiểm giả thuyết nhiệt sinh ngay trong đáy nồi do dòng Foucault; tính hiệu suất H = m·c·Δt/(P·τ) và nêu chiều của các nguồn sai số.",
   "dung_cu": [
     {
       "ten": "Bếp từ gia dụng ghi công suất 2 000 W",
       "so_luong": 1
     },
     {
-      "ten": "Nồi gang hoặc nồi thép không gỉ có đáy nhiễm từ",
+      "ten": "Bếp điện trở (mâm nhiệt) ghi 2 000 W — đối chứng",
       "so_luong": 1
     },
     {
-      "ten": "Nồi nhôm cùng cỡ",
+      "ten": "Oát kế cắm giữa ổ điện và bếp",
+      "so_luong": 1,
+      "ghi_chu": "đọc công suất thật P"
+    },
+    {
+      "ten": "Nồi thép đáy nhiễm từ có nắp",
       "so_luong": 1
     },
     {
@@ -38,39 +43,34 @@
     {
       "ten": "Nhiệt kế hồng ngoại",
       "so_luong": 1,
-      "ghi_chu": "đo mặt kính, sai số ±1 °C"
+      "ghi_chu": "đo mặt bếp sát mép nồi"
     },
     {
       "ten": "Đồng hồ bấm giây",
-      "so_luong": 1
-    },
-    {
-      "ten": "Nam châm nhỏ để thử đáy nồi",
       "so_luong": 1
     }
   ],
   "cac_buoc": {
     "lam": [
-      "Dí nam châm vào đáy hai nồi để kiểm tra: nam châm dính chặt đáy nồi gang, không dính đáy nồi nhôm.",
-      "Rót đúng 1,0 lít nước ở 25,0 °C vào nồi gang, đặt lên bếp, bật mức 2 000 W và bấm đồng hồ.",
-      "Cứ mỗi phút khuấy nhẹ rồi đọc nhiệt kế một lần; đồng thời bắn nhiệt kế hồng ngoại vào mặt kính cách mép nồi 2 cm.",
-      "Làm lại toàn bộ với nồi nhôm trong cùng điều kiện."
+      "Rót 1,0 lít nước ở nhiệt độ t1 vào nồi, đậy nắp, bật bếp từ, đọc công suất P trên oát kế.",
+      "Sau τ = 120 s, khuấy rồi đọc nhiệt độ t2 của nước; đo mặt kính sát mép nồi bằng nhiệt kế hồng ngoại.",
+      "Đối chứng: để nồi nguội, thay nước mới, đặt cùng nồi lên bếp điện trở và làm lại hai bước trên.",
+      "Tính hiệu suất H = m·c·Δt/(P·τ) cho mỗi bếp."
     ],
     "quan_sat": [
-      "Nồi gang: nước sôi sau 4 phút; nhiệt độ tăng gần 21 °C trong phút đầu rồi chậm dần.",
-      "Mặt kính cạnh nồi chỉ 45–50 °C; mảnh giấy đặt trên mặt kính không bén lửa.",
-      "Nồi nhôm: sau 4 phút nước mới ấm khoảng 35 °C, gần như chỉ nhận nhiệt từ phần kính bị nồi gang nóng trước đó truyền sang."
+      "Sau 120 s, nước lên 72,6 °C trên bếp từ (P đo 1 950 W) và 60,2 °C trên bếp điện trở (P đo 1 980 W), cùng t1 = 25,0 °C.",
+      "Mặt bếp sát mép nồi: bếp từ 38 °C, bếp điện trở 260 °C."
     ],
     "rut_ra": [
-      "Nhiệt không truyền từ mặt kính vào nồi: chính đáy nồi nhiễm từ sinh dòng Foucault và tự nóng lên.",
-      "Từ bảng số liệu, phút đầu nước nhận khoảng 88 kJ, tương ứng công suất hữu ích gần 1 470 W và hiệu suất khoảng 74% so với 2 000 W ghi trên bếp.",
-      "Phần năng lượng còn lại nung nóng thân nồi, toả ra không khí và làm hơi nước bay đi; đây là các nguồn sai số chính của phép đo."
+      "Kết quả ủng hộ giả thuyết: bếp từ cho hiệu suất cao hơn bếp điện trở.",
+      "Cơ chế: từ trường biến thiên của cuộn dây xuyên qua mặt kính cách điện, sinh dòng Foucault ngay trong đáy nồi; dòng này toả nhiệt Joule làm nồi nóng.",
+      "Suy từ cơ chế (thí nghiệm này không đo): thuỷ tinh không dẫn điện nên không có dòng; nhôm không nhiễm từ, điện trở suất thấp nên toả nhiệt rất ít."
     ]
   },
   "tham_so": [
     {
       "ky_hieu": "P",
-      "ten": "Công suất điện của bếp (mức đặt)",
+      "ten": "Công suất điện thật của bếp (đọc trên oát kế)",
       "don_vi": "W",
       "kieu": "dieu_chinh",
       "min": 800,
@@ -103,7 +103,7 @@
       "ten": "Nhiệt dung riêng của nước",
       "don_vi": "J/(kg.K)",
       "kieu": "co_dinh",
-      "gia_tri": 4200
+      "gia_tri": 4180
     },
     {
       "ky_hieu": "T",
@@ -114,7 +114,7 @@
     },
     {
       "ky_hieu": "T_kinh",
-      "ten": "Nhiệt độ mặt kính cạnh nồi",
+      "ten": "Nhiệt độ mặt bếp sát mép nồi",
       "don_vi": "°C",
       "kieu": "do_duoc",
       "sai_so_do": 1
@@ -135,69 +135,62 @@
   "mo_hinh": {
     "phuong_trinh": [
       "Nhiệt nước nhận: Q = m·c·Δt",
-      "Công suất hữu ích trung bình: P_ich = Q/Δτ",
-      "Hiệu suất bếp: H = P_ich/P",
-      "Thời gian đun sôi (bỏ qua hao phí): τ = m·c·(100 − t0)/P_ich",
+      "Điện năng bếp tiêu thụ: A = P·τ",
+      "Hiệu suất: H = m·c·Δt/(P·τ)",
       "Dòng Foucault trong đáy nồi toả nhiệt Joule: Q_nhiệt = I²·R·τ"
     ],
     "gia_thiet": [
-      "coi nhiệt dung riêng của nước không đổi trong khoảng 25–100 °C",
-      "bỏ qua khối lượng nước bay hơi trong 4 phút đầu",
-      "bỏ qua nhiệt dung của thân nồi khi tính nhanh, nhưng ghi rõ đây là nguồn hao",
+      "coi nhiệt dung riêng của nước c = 4 180 J/(kg·K) không đổi",
+      "bỏ qua nhiệt làm nóng thân nồi và nhiệt mất ra không khí khi tính H",
       "mặt kính không dẫn điện nên không sinh dòng Foucault đáng kể"
     ],
     "ghi_chu": "Mô phỏng nên vẽ mặt cắt bếp: cuộn dây phát từ trường biến thiên, dòng xoáy khép kín trong đáy nồi, nhiệt toả ra; thanh trượt công suất và khối lượng nước làm đường T(t) dốc lên nhanh hay chậm."
   },
   "so_lieu_mau": {
     "cot": [
-      "Thời gian (phút)",
-      "Nhiệt độ nước (°C)"
+      "Bếp",
+      "P đo (W)",
+      "t1 (°C)",
+      "t2 (°C)",
+      "Mặt bếp sát mép nồi (°C)",
+      "H"
     ],
     "hang": [
       [
-        0,
-        25
+        "Bếp từ",
+        1950,
+        25.0,
+        72.6,
+        38,
+        null
       ],
       [
-        1,
-        46
-      ],
-      [
-        2,
-        66.6
-      ],
-      [
-        3,
-        86.4
-      ],
-      [
-        4,
-        100
-      ],
-      [
-        5,
-        100
+        "Bếp điện trở",
+        1980,
+        25.0,
+        60.2,
+        260,
+        0.62
       ]
     ],
-    "ghi_chu": "Số liệu minh hoạ cho P = 2 000 W, m = 1,0 kg, t0 = 25,0 °C, nồi gang 0,8 kg, nhiệt kế sai số ±0,5 °C. Số đo thực có thể lệch 1–2 °C vì bếp tự ngắt theo chu kì và nhiệt kế chưa khuấy đều."
+    "ghi_chu": "Số liệu minh hoạ, không phải số đo thật: m = 1,0 kg, τ = 120 s, t2 tính từ mô hình m·c·Δt = H·P·τ với c = 4 180 J/(kg·K), H cố định cho mỗi bếp (bếp từ 0,85 — ô học sinh tự tính, không ghi trong bài; bếp điện trở 0,62); nhiệt độ mặt bếp lấy theo giá trị tiêu biểu."
   },
-  "ket_qua_ky_vong": "Nồi gang làm nước sôi sau khoảng 4 phút trong khi mặt kính cạnh nồi chỉ 45–50 °C; nồi nhôm gần như không nóng lên. Bảng số liệu cho công suất hữu ích khoảng 1 470 W, hiệu suất khoảng 74%.",
+  "ket_qua_ky_vong": "Cùng 120 s, nước trên bếp từ nóng hơn trên bếp điện trở (72,6 °C so với 60,2 °C); mặt bếp từ sát mép nồi chỉ 38 °C. Hiệu suất bếp từ khoảng 0,85, bếp điện trở khoảng 0,62.",
   "hien_tuong_hay_sai": [
     "Nghĩ rằng bếp từ nóng lên rồi truyền nhiệt sang nồi như bếp điện; thực tế mặt kính không nóng trước.",
     "Nghĩ rằng mọi loại nồi đều dùng được trên bếp từ, kể cả nồi nhôm và nồi thuỷ tinh.",
-    "Nghĩ rằng nhiệt độ nước tăng đều theo thời gian; thực tế chậm dần vì hao nhiệt ra môi trường tăng theo hiệu nhiệt độ.",
     "Nghĩ rằng 2 000 W ghi trên bếp là công suất truyền hết vào nồi — thực ra đó là công suất điện tiêu thụ."
   ],
   "sai_so_thuong_gap": [
-    "Không khuấy trước khi đọc: nước trong nồi chỗ nóng chỗ lạnh, nhiệt kế cho số thấp hơn.",
-    "Bầu nhiệt kế chạm đáy nồi gang: số đọc cao hơn nhiệt độ nước 2–3 °C.",
-    "Bếp tự ngắt theo chu kì nên công suất tức thời không ổn định; lấy trung bình theo phút.",
-    "Nhiệt kế hồng ngoại đo mặt kính bóng có thể sai vài độ; phải đo ở vùng kính nhám hoặc dán mẩu băng dính đen."
+    "Lấy 2 000 W ghi trên bếp thay cho công suất thật đo được (1 950 W): P·τ bị tính lớn → H tính ra NHỎ HƠN thật (bếp chạy cao hơn định mức thì ngược lại, H LỚN HƠN). Giảm: đo P bằng oát kế hoặc công tơ.",
+    "Bỏ qua nhiệt làm nóng thân nồi: nhiệt có ích bị tính thiếu → H NHỎ HƠN hiệu suất thật của bếp với nồi. Giảm: cộng thêm m_nồi·c_thép·Δt vào nhiệt có ích.",
+    "Đun lâu cho Δt lớn: nước càng nóng hơn phòng càng mất nhiệt ra không khí nhanh → H NHỎ HƠN. Giảm: đậy nắp, chỉ đun tăng khoảng 30–50 °C.",
+    "Bầu nhiệt kế chạm đáy nồi đang nóng: t2 đọc cao hơn nhiệt độ trung bình của nước → H LỚN HƠN thật. Không khuấy trước khi đọc: số đọc tuỳ chỗ đặt nhiệt kế. Giảm: khuấy đều, giữ bầu nhiệt kế giữa lòng nước."
   ],
   "goi_y_mo_phong": {
     "loai": "do_thi+2d_dong_hoc",
     "y_tuong": "Mặt cắt bếp từ với cuộn dây, đáy nồi, dòng xoáy và các mũi tên nhiệt; bên cạnh là đồ thị T(t) vẽ dần theo từng phút và một nhiệt kế phụ chỉ nhiệt độ mặt kính.",
-    "diem_nhan": "Cho thấy mặt kính luôn mát trong khi đáy nồi nóng, và đổi nồi gang thành nồi nhôm thì đường T(t) gần như nằm ngang."
+    "diem_nhan": "Cho thấy mặt kính luôn mát trong khi đáy nồi nóng; chạy bếp điện trở (đối chứng) trước để thấy mặt bếp nóng đỏ, rồi bếp từ để so hiệu suất."
   },
   "an_toan": [
     "Mặt bếp và đáy nồi rất nóng sau khi đun: chỉ chạm vào tay cầm nồi, dùng găng chịu nhiệt.",
@@ -213,5 +206,17 @@
     "ten": "Bếp từ nhập khẩu vì sao không nóng mặt khi đun nấu ? Bếp Cường Thịnh.VN",
     "kenh": "Bếp Cường Thịnh",
     "da_kiem": "2026-10-18"
-  }
+  },
+  "gia_thuyet": [
+    "Nhiệt sinh ra ngay trong đáy nồi kim loại do dòng điện xoáy (dòng Foucault), mặt kính chỉ ấm do nồi truyền xuống, nên bếp từ có hiệu suất cao hơn bếp điện trở."
+  ],
+  "du_doan_neu_dung": [
+    "Cùng nồi, cùng công suất và thời gian đun, nước trên bếp từ nóng hơn, hiệu suất tính ra lớn hơn bếp điện trở.",
+    "Mặt bếp từ sát mép nồi mát hơn hẳn mặt bếp điện trở."
+  ],
+  "khong_chung_minh": [
+    "Hiệu suất đo được là con số gộp: không tách được phần nhiệt thân nồi giữ lại và phần mất ra không khí.",
+    "Không đo được cường độ dòng Foucault hay sự phân bố nhiệt trong đáy nồi.",
+    "Chưa thử nồi nhôm, thuỷ tinh: kết luận về các loại nồi này mới chỉ suy từ cơ chế."
+  ]
 }
