@@ -58,7 +58,7 @@ b += text(372, 198, "47 °C · 5,3 bar", RED, 12, "middle", "700")
 b += text(220, 216, "thể tích bình không đổi", GRN, 11, "middle", "700")
 fig1 = wrap("0 0 440 228",
             "Bình khí nén mini kín để ngoài nắng: nhiệt độ tăng từ 27 lên 47 độ C làm áp suất tăng từ 5,0 lên 5,3 bar, kim áp kế nhích lên, thể tích bình không đổi",
-            b, "Hình 1. Bình kín, lượng khí không đổi, thể tích không đổi: chỉ nhiệt độ tăng mà kim áp kế đã nhích từ 5,0 lên 5,3 bar — đó là quá trình đẳng tích.",
+            b, "Hình 1. Bình kín, thể tích không đổi: chỉ nhiệt độ tăng, kim áp kế nhích từ 5,0 lên 5,3 bar.",
             exp="tn-l12-pttrangthai-03")
 
 # ------------------------------------------------- Hình 2: bóng bàn bẹp phồng lại
@@ -79,7 +79,7 @@ b += f'<circle cx="315" cy="128" r="30" fill="rgba(52,211,153,.18)" stroke="{GRN
 b += text(315, 205, "vỏ phồng trở lại", GRN, 11, "middle", "700")
 fig2 = wrap("0 0 440 214",
             "Quả bóng bàn bẹp được nhúng vào cốc nước nóng: khí bên trong nóng lên, áp suất tăng và đẩy vỏ bóng phồng trở lại",
-            b, "Hình 2. Khí trong bóng nóng lên: cả ba thông số đều đổi (nhiệt độ tăng, áp suất tăng, vỏ bóng phồng ra) — vì thế cần một phương trình cho cả ba.")
+            b, "Hình 2. Khí trong bóng nóng lên: nhiệt độ, áp suất và thể tích cùng đổi.")
 
 # ------------------------------------------------- Hình 3: hai đường đẳng tích trên đồ thị p - T
 b = defs("f3")
@@ -101,7 +101,7 @@ b += text(208, 84, "p lớn hơn", RED, 11, "start", "700")
 b += text(208, 192, "p nhỏ hơn", BLUE, 11, "start", "700")
 fig3 = wrap("0 0 440 240",
             "Đồ thị áp suất theo nhiệt độ tuyệt đối của hai quá trình đẳng tích: hai đường thẳng kéo dài qua gốc tọa độ, đường dốc hơn ứng với thể tích nhỏ hơn",
-            b, "Hình 3. Đường đẳng tích là đường thẳng kéo dài qua gốc toạ độ. Kẻ một đường thẳng đứng tại một giá trị T: đường nằm trên cho p lớn hơn, tức thể tích nhỏ hơn.")
+            b, "Hình 3. Đường đẳng tích kéo dài qua gốc toạ độ. Cùng một T, đường nằm trên có p lớn hơn, tức thể tích nhỏ hơn.")
 
 # ------------------------------------------------- Hình 4: ba định luật là ba trường hợp riêng
 b = defs("f4")

@@ -13,6 +13,17 @@
     "pttrangthai.ap_suat_ti_le_thuan_nhiet_do_tuyet_doi"
   ],
   "muc_tieu": "Đo áp suất của một lượng khí có thể tích không đổi ở năm nhiệt độ khác nhau, rồi tự chia p cho T (Kelvin) để nhận ra thương số ấy không đổi — nội dung định luật của quá trình đẳng tích.",
+  "gia_thuyet": [
+    "Thể tích và lượng khí không đổi thì áp suất tỉ lệ thuận với nhiệt độ tuyệt đối."
+  ],
+  "du_doan_neu_dung": [
+    "Thương số p/T như nhau ở mọi nhiệt độ trong phạm vi sai số.",
+    "Đồ thị p theo T là đường thẳng kéo dài qua gốc 0 K, không qua 0 °C."
+  ],
+  "khong_chung_minh": [
+    "Chỉ kiểm trong khoảng 0–100 °C và áp suất thấp; không cho biết khí còn lí tưởng ở áp suất cao hay gần nhiệt độ hoá lỏng.",
+    "Không nói gì khi lượng khí thay đổi (ví dụ xả bớt khí trong lốp xe qua van)."
+  ],
   "dung_cu": [
     { "ten": "Bình thuỷ tinh kín có nút và van (hoặc bình tam giác đậy kín)", "so_luong": 1, "ghi_chu": "thể tích bình không đổi suốt thí nghiệm" },
     { "ten": "Cảm biến áp suất hoặc áp kế chia tới 1 kPa", "so_luong": 1, "ghi_chu": "sai số ±1 kPa" },
@@ -29,8 +40,8 @@
     ],
     "quan_sat": [
       "Áp suất tăng đều theo nhiệt độ: nhiệt độ càng cao, kim áp kế càng lệch.",
-      "Cột p/T ở năm dòng gần như bằng nhau, chỉ lệch nhau ở chữ số thứ ba.",
-      "Không phụ thuộc việc chọn mức nhiệt độ nào: nếu ngâm ở 10 °C hay 60 °C thì p/T vẫn ra cùng một con số."
+      "Từ 0 °C lên 100 °C, áp kế tăng từ 100,0 lên 136,3 kPa; cột p/T nằm trong khoảng 0,365–0,367 kPa/K.",
+      "Không phụ thuộc việc chọn mức nhiệt độ nào: ở mọi mức đã đo, p/T vẫn ra gần cùng một con số."
     ],
     "rut_ra": [
       "Với thể tích không đổi, áp suất tỉ lệ thuận với nhiệt độ tuyệt đối: p/T = hằng số.",
@@ -52,7 +63,7 @@
       "Áp suất theo nhiệt độ Celsius: p = p0·(1 + alpha·t) với alpha = 1/273,15 K⁻¹",
       "Theo nhiệt độ tuyệt đối: p = p0·T/273,15 → p/T = p0/273,15 = hằng số",
       "Hệ thức hai trạng thái: p₁/T₁ = p₂/T₂",
-      "Với p0 = 100 kPa: hằng số p/T = 100/273,15 = 0,366 kPa/K"
+      "Với p0 = 100 kPa: hằng số p/T = 100/273 ≈ 0,366 kPa/K"
     ],
     "gia_thiet": [
       "thể tích bình không đổi, không rò khí trong suốt thí nghiệm",
@@ -62,15 +73,15 @@
     "ghi_chu": "Mô phỏng nên tự tính và hiện cột p/T ngay khi học sinh kéo thanh trượt nhiệt độ, để cột ấy đứng yên ở 0,366 kPa/K — đó là bằng chứng số của quá trình đẳng tích."
   },
   "so_lieu_mau": {
-    "cot": ["Nhiệt độ t (°C)", "Áp suất p (kPa)", "p/T (kPa/K)"],
+    "cot": ["Nhiệt độ t (°C)", "Nhiệt độ T (K)", "Áp suất p (kPa)", "p/T (kPa/K)"],
     "hang": [
-      [0, 100.0, 0.366],
-      [25, 109.2, 0.366],
-      [50, 118.3, 0.366],
-      [75, 127.5, 0.366],
-      [100, 136.6, 0.366]
+      [0, 273, 100.0, 0.366],
+      [25, 298, 108.9, 0.365],
+      [50, 323, 118.4, 0.367],
+      [75, 348, 126.9, 0.365],
+      [100, 373, 136.3, 0.365]
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ mô hình khí lí tưởng với p0 = 100,0 kPa (chính xác p/T = 0,36610 ÷ 0,36626 kPa/K, đã làm tròn 3 chữ số). Đo thật, cột p/T lệch nhau cỡ 1% vì cảm biến áp suất sai ±1 kPa và nhiệt kế sai ±0,5 °C."
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình p = (100/273)·T kPa (T = t + 273), trừ một độ trễ cân bằng nhiệt nhỏ tăng theo nhiệt độ (0,35% ở 100 °C) rồi cộng thăng giáng đọc ±0,3 kPa (seed cố định). Trong bài, ô p/T dòng cuối để học sinh tự tính."
   },
   "ket_qua_ky_vong": "Năm điểm (t, p) nằm gần như trên một đường thẳng; cột p/T (Kelvin) gần như không đổi. Kết luận: trong quá trình đẳng tích, áp suất tỉ lệ thuận với nhiệt độ tuyệt đối.",
   "hien_tuong_hay_sai": [
@@ -79,8 +90,10 @@
     "Cho rằng hằng số p/T là một hằng số chung cho mọi chất khí, trong khi nó bằng nR/V và phụ thuộc lượng khí, thể tích bình."
   ],
   "sai_so_thuong_gap": [
-    "Bình rò khí: áp suất không tăng đúng quy luật, cột p/T trôi dần.",
-    "Chưa chờ bình đạt nhiệt độ của nước đã đọc số, nhiệt độ và áp suất không còn tương ứng với nhau.",
+    "Bình rò khí: áp suất đọc thấp hơn quy luật, cột p/T nhỏ dần theo thời gian. Cách giảm: kiểm kín trước khi đo.",
+    "Đọc p khi khí chưa kịp cân bằng nhiệt với nước: ở mức nước nóng p đọc thấp hơn thật nên p/T nhỏ dần. Cách giảm: khuấy nước, đợi kim áp kế đứng yên rồi mới đọc.",
+    "Bình nở ra khi nóng làm V tăng nhẹ: p/T ở mức nóng nhỏ hơn mức lạnh. Cách giảm: dùng bình thành dày, ống nối áp kế ngắn.",
+    "Dùng nhiệt độ Celsius thay Kelvin: tỉ số p/t đổi rất mạnh (thậm chí vô nghĩa ở 0 °C) — lỗi khái niệm, không phải sai số đo.",
     "Bầu nhiệt kế chạm đáy nồi hoặc cảm biến bị nước làm ướt nên số đọc lệch."
   ],
   "goi_y_mo_phong": {
