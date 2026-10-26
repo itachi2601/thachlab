@@ -94,8 +94,8 @@ b += text(x0 + 26, AX + 34, "B", BLUE, 12.5, "start", "700")
 b += text(14, 216, "E vuông góc với B, cả hai cùng vuông góc với phương truyền", "currentColor", 10.5, "start", "600")
 b += text(14, 232, "E và B cùng pha: hai đường cong cùng cắt trục tại một chỗ", "currentColor", 10.5, "start", "600")
 b += text(14, 248, "E hướng lên, truyền sang phải thì B hướng ra khỏi trang (nét xiên)", "currentColor", 10.5, "start", "600")
-fig3 = wrap("0 0 420 258", "Sóng điện từ lan truyền theo trục ngang: vectơ E dao động thẳng đứng, vectơ B dao động theo phương xiên, hai đường cong cùng pha",
-            b, "Hình 3. Sóng điện từ là sóng ngang: E vuông góc với B, cả hai vuông góc phương truyền và luôn cùng pha.")
+fig3 = wrap("0 0 420 258", "Sóng điện từ lan truyền theo trục ngang: vectơ E dao động thẳng đứng, vectơ B dao động theo phương xiên và hướng ra khỏi trang khi E hướng lên, hai đường cong cùng pha",
+            b, "Hình 3. Sóng điện từ là sóng ngang: E vuông góc với B, cả hai vuông góc phương truyền và luôn cùng pha; khi E hướng lên và sóng truyền sang phải thì B hướng ra khỏi trang.")
 
 # ------------------------------------------------- Hình 4: thang sóng điện từ
 b = defs("f4")
