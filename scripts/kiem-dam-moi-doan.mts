@@ -22,16 +22,22 @@ function findTheoryFiles(dir: string, out: string[] = []): string[] {
 const SKIP_CLASS = /class="[^"]*\b(tl-label|tl-meo|tl-opt)\b/;
 const BOLD = /<(strong|b)\b[^>]*>/gi;
 
+// Quét thẻ theo ngăn xếp để <li> lồng nhau (danh sách con) được tính riêng: chữ của danh sách con thuộc <li> con,
+// không cộng dồn vào <li> cha. (Bản trước dùng regex lười nên <li> cha bị cắt ở </li> đầu tiên của danh sách con.)
+// Giới hạn: không hiểu thẻ đóng thiếu (<li> không có </li>) — file soạn tay luôn đóng đủ.
+const TAG = /<(\/?)(p|li|ul|ol)\b([^>]*)>/gi;
+type Frame = { tag: string; attrs: string; start: number; own: string };
+
 function check(file: string): string[] {
   const html = fs.readFileSync(file, "utf8");
   const problems: string[] = [];
-  const block = /<(p|li)\b([^>]*)>([\s\S]*?)<\/\1>/gi;
+  const stack: Frame[] = [];
+  let last = 0;
   let m: RegExpExecArray | null;
-  while ((m = block.exec(html))) {
-    const [, tag, attrs, inner] = m;
-    if (SKIP_CLASS.test(`class="${attrs}"`) || SKIP_CLASS.test(attrs)) continue;
+  const judge = ({ tag, attrs, start, own: inner }: Frame) => {
+    if (SKIP_CLASS.test(`class="${attrs}"`) || SKIP_CLASS.test(attrs)) return;
     const text = inner.replace(/<[^>]+>/g, "").trim();
-    if (text.startsWith("🔑")) continue;
+    if (text.startsWith("🔑")) return;
     // Bỏ cụm mở đầu phản hồi quiz ("Chính xác." / "Chưa đúng.") — đó là nhãn, không phải chỗ nhấn ý.
     // Cũng bỏ nhãn đầu dòng kiểu "<strong>Rời:</strong>", "<b>⭐⭐ Khá:</b>" — nhãn mở dòng, không phải chỗ nhấn ý.
     const body = inner
@@ -40,8 +46,24 @@ function check(file: string): string[] {
       .replace(/^\s*<(strong|b)>[^<]{1,40}<\/\1>\s*:/i, "");
     const count = (body.match(BOLD) ?? []).length;
     if (count >= 2) {
-      const line = html.slice(0, m.index).split("\n").length;
+      const line = html.slice(0, start).split("\n").length;
       problems.push(`${file}:${line} <${tag}> có ${count} chỗ in đậm — "${text.slice(0, 80)}${text.length > 80 ? "…" : ""}"`);
+    }
+  };
+  while ((m = TAG.exec(html))) {
+    const [whole, closing, rawTag, attrs] = m;
+    const tag = rawTag.toLowerCase();
+    if (stack.length) stack[stack.length - 1].own += html.slice(last, m.index);
+    last = m.index + whole.length;
+    if (!closing) {
+      stack.push({ tag, attrs, start: m.index, own: "" });
+      continue;
+    }
+    // Đóng thẻ: bật tới đúng thẻ mở tương ứng; <ul>/<ol> chỉ là vách ngăn, không chấm.
+    while (stack.length) {
+      const frame = stack.pop()!;
+      if (frame.tag === "p" || frame.tag === "li") judge(frame);
+      if (frame.tag === tag) break;
     }
   }
   return problems;
