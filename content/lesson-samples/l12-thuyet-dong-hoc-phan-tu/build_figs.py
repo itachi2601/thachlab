@@ -80,13 +80,13 @@ b += arrow("f1", "b", 324, 190, 230, 148, 2.2)
 # hạt bụi
 b += f'<circle cx="210" cy="120" r="20" fill="rgba(248,113,113,.28)" stroke="{RED}" stroke-width="2.5"/>'
 b += dot(210, 120, 8, RED)
-b += text(210, 162, "hạt khói", RED, 12.5, "middle", "700")
+b += text(210, 172, "hạt khói", RED, 12.5, "middle", "700")
 # hướng bị đẩy lệch (hợp lực không triệt tiêu)
 b += arrow("f1", "o", 236, 124, 306, 124, 2.6)
 b += text(272, 112, "hạt bị đẩy lệch", ORG, 11, "middle", "700")
 b += text(16, 214, "chấm xanh: phân tử khí · mũi tên xanh: hướng va đập (dài ngắn khác nhau)", "currentColor", 10.5, "start", "500")
 fig1 = wrap("0 0 420 240", "Hạt khói ở giữa bị nhiều phân tử khí va đập từ mọi phía với mức khác nhau, nên bị đẩy lệch",
-            b, "Hình 1. Hạt khói bị phân tử khí va đập từ mọi phía; hai bên không bao giờ cân bằng nên hạt bị đẩy lệch liên tục — đó là chuyển động Brown.")
+            b, "Hình 1. Va đập từ mọi phía không cân bằng đẩy hạt khói lệch liên tục.")
 
 # ======================================================= Hình 2: ba nội dung thuyết động học phân tử
 b = defs("f2")
