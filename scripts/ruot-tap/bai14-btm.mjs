@@ -25,7 +25,7 @@ export const btmPages = (n, { m, head, foot, tag, lines, wl, hinh }) => {
   const dang = [
     {
       t: 'Dạng 1 · Dễ · Đọc kí hiệu hạt nhân',
-      de: `${m('{}^{63}_{29}\\mathrm{Cu}')}:<br><b>a)</b> số prôtôn, nuclôn<br><b>b)</b> số nơtron<br><b>c)</b> số êlectron, điện tích hạt nhân (theo ${m('e')})<br><b>d)</b> hạt nhân có 82 prôtôn, 124 nơtron: số khối, kí hiệu.`,
+      de: `${m('{}^{63}_{29}\\mathrm{Cu}')}:<br><b>a)</b> số prôtôn, nuclôn<br><b>b)</b> số nơtron<br><b>c)</b> số êlectron của nguyên tử Cu trung hoà, điện tích hạt nhân (theo ${m('e')})<br><b>d)</b> hạt nhân có 82 prôtôn, 124 nơtron: số khối, kí hiệu.`,
       nd: `Thấy kí hiệu ${m('{}^{A}_{Z}\\mathrm{X}')} → đọc ${m('Z')} ở ${f(10)}, ${m('A')} ở ${f(10)}, dùng ${f(22)}`,
       a: ['a', 'b', 'c', 'd'], gi: 0,
     },

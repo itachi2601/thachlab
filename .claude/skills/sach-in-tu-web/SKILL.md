@@ -65,11 +65,18 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
   "Figure NN.N.N" → số trang, `pdftoppm -r 200 -f N -l N` → cắt bằng PIL bỏ chữ Anh thừa, xoay nếu cần để hình nằm ngang,
   lưu `scripts/ruot-tap/anh/*.png` ≤150 KB, chèn bằng `hinh.anh(file, chú thích Việt dịch nhãn)`. Hình cao (dọc) tốn chỗ gấp
   đôi hình ngang — chọn hình ngang hoặc xoay; cột ảnh ≤ 24 mm chỉ còn đọc được nhờ chú thích.
+  **Nguồn + hình đã dùng (cắt bằng `python3 scripts/ruot-tap/cat-anh.py`, bảng `ANH` trong script ghi pdf/trang/bbox, chạy lại là có đủ):**
+  PDF = `/Users/MAC/Documents/THPT/số hoá THPT/Fundamentals of Physics 12th/Fundamentals of Physics 12th Volume 2.pdf` (chương 42 Nuclear Physics, 43 Energy from the Nucleus; trang PDF = trang in + 384).
+  Bài 14: Fig 42.1.1 (tr.737) `rutherford-bo-thi-nghiem.png`, Fig 42.1.3 (tr.737) `rutherford-alpha-qua-la-vang.png`; bài 15: Fig 42.2.3 (tr.743) `nang-luong-lien-ket-rieng.png`;
+  bài 16: Fig 43.2.2 (tr.778) `lo-phan-ung-nuoc-ap-luc.png`, Fig 43.5.1 (tr.784) `chu-trinh-proton-proton.png`; bài 17: Fig 42.3.1 (tr.748) `phong-xa-do-thi-ln-r.png`;
+  bài 18 (an toàn phóng xạ): Halliday không có hình phù hợp (chỉ ảnh chụp), dùng SVG tự vẽ. Bản sao ảnh ngoài repo: `/Users/MAC/Documents/THPT/số hoá THPT/ruot-tap-anh/`.
+  Hình Halliday chữ nhỏ (≈ 8 pt gốc) → thu còn 52–62 mm thì chữ trong hình không đọc được: chú thích tiếng Việt PHẢI nêu ý chính; muốn đọc được nhãn thì để rộng ≥ 84 mm (chu trình p–p).
   **Ảnh cắt từ sách và PDF chứa chúng chỉ giữ trên Mac, không đẩy lên GitHub** (`scripts/ruot-tap/anh/` và `out/*.pdf` đã
   gitignore từ 25/10) — có bản sao ở ngoài repo vì mất là phải cắt lại.
 - **Trang sửa bài không có lưới đáp án**: đề làm trên web nên chỉ dòng "Câu sai P.I/P.II/P.III" + 5 ô Thầy chữa.
   Ghi chú tự do đúng 2 trang/bài; không ô "câu hỏi cho trợ giảng".
 - **Bài 15–18 (lesson 16–19) dùng khung chung** `scripts/ruot-tap/khung.mjs` (CSS, trang 8–12 sinh tự động, bài tập mẫu `btm.dang`, chẩn đoán dư mm) + `hinh-ch4.mjs` (hình): chạy `node scripts/ruot-tap/bai15.mjs` … `bai18.mjs`. Bài 14 giữ bản riêng `bai14.mjs`. Bài mới: chép `bai18.mjs`, đổi `khoiTao({bai, lid})`, nội dung 5 trang đầu + mảng `dang`, thêm hình vào `hinh-ch4.mjs`.
+- **Quyển = chương, đánh số trang liền mạch** (thầy chốt 26/10): bài 14 = tr.1–12, 15 = 13–24 … 18 = 49–60; chân trang "Bài N · tr. X", nhãn "Tập X·ô" và mọi tham chiếu (tr.10, trang 8, "Xem lại ở Tập") dùng số tuyệt đối (`khung.mjs`: `off`). Dựng cả quyển: `bash scripts/ruot-tap/dung-chuong4.sh` → `out/ruot-tap-vl12-chuong4.pdf` (60 trang, `pdfunite`). Nối tiếp chương liền kề: `BOOK_PAGE_START=61 bash …` (cả bài 14–18 theo; số bắt đầu chẵn thì lề gáy đổi bên; lưu ý data-tap trên web của bài 14 dùng số 1–12 nên chỉ khớp khi START=1).
 - Cân trang bằng dòng `trang N: dư X mm` script in ra (mục tiêu 0–15 mm, âm = tràn); đo từng khối bằng
   `getBoundingClientRect` trên `.pdf.html` khi không rõ khối nào phình, rồi mới nhìn ảnh.
 

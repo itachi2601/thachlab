@@ -51,7 +51,7 @@ ${h3(2, 'II.4 · Độ hụt khối, năng lượng liên kết', '2·2')}
 <div>Tách hạt nhân thành nuclôn rời: ${f(12)} năng lượng; tạo thành: ${f(12)}.</div></div>
 ${hinh.doHutKhoi('Vẽ phóng đại: hiệu chỉ 0,76 %. Nguyên tử nhẹ hơn tổng hạt rời.')}</div>
 ${h3(3, 'Tính cho bốn hạt nhân (Δm đã cho)', '2·3')}
-<table class="tbl-ct"><tr><th style="width:24mm">Hạt nhân</th><th style="width:33mm">${m('\\Delta m\\ (\\mathrm{u})')}</th><th>${m('E_{lk}\\ (\\mathrm{MeV})')}</th><th>${m('E_{lkr}\\ (\\mathrm{MeV/nuclôn})')}</th></tr>
+<table class="tbl-ct"><tr><th style="width:24mm">Hạt nhân</th><th style="width:33mm">${m('\\Delta m\\ (\\mathrm{u})')}</th><th>${m('E_{lk}\\ (\\mathrm{MeV})')}</th><th>${m('E_{lkr}\\ (\\text{MeV/nuclôn})')}</th></tr>
 <tr><td>${m('{}^{4}_{2}\\mathrm{He}')}</td><td>0,030377</td><td></td><td></td></tr>
 <tr><td>${m('{}^{16}_{\\ 8}\\mathrm{O}')}</td><td>0,137005</td><td></td><td></td></tr>
 <tr><td>${m('{}^{56}_{26}\\mathrm{Fe}')}</td><td>0,528462</td><td></td><td></td></tr>
@@ -68,7 +68,7 @@ ${foot(2)}</section>`;
 const p3 = `<section class="page">
 ${head('BẪY · TRẢ BÀI · KẾT QUẢ TỰ KIỂM TRA')}
 ${h3(1, 'II.6 · Hoá học và hạt nhân', '3·1')}
-<div class="card" style="padding:1.2mm 3mm">Đốt một phân tử: vài ${f(8)}; tạo một hạt nhân He-4: ${nw(`${f(8)}&nbsp;MeV`)} → hơn nhau cỡ ${f(14)} lần.</div>
+<div class="card" style="padding:1.2mm 3mm">Đốt một phân tử: vài ${nw(`${f(8)}&nbsp;eV`)}; tạo một hạt nhân He-4: ${nw(`${f(8)}&nbsp;MeV`)} → hơn nhau cỡ ${nw(`10${exp}&nbsp;lần`)}.</div>
 ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
 <div class="card" style="padding:1mm 3mm">
 <div class="trap">${ck}<span><b>“Khối lượng đã mất đi.”</b> Không mất: chuyển thành năng lượng ${m('E=\\Delta m\\,c^2')}.</span></div>
@@ -82,7 +82,7 @@ ${box(`<div><b>1.</b> Lực hạt nhân là gì? Ba đặc điểm?<span class="
 <div><b>5.</b> Xu hướng ${m('E_{lkr}')} hai bên đỉnh sắt?<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}
 <div><b>6.</b> Vì sao tính ${m('E_{lk}')} bằng 931,5 MeV/u không nhân ${m('c^2')} nữa?<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}`)}
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/6 câu · câu chưa thuộc: ${f(30)} → đọc lại ô Tập ${f(14)}</div>
-${h3(4, 'Kết quả tự kiểm tra câu 2–8', '3·4')}
+${h3(4, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·4')}
 ${rkHai([2, 3, 4, 5], [6, 7, 8])}
 ${foot(3)}</section>`;
 
@@ -91,7 +91,7 @@ ${head('BÀI TOÁN MẪU · NĂNG LƯỢNG LIÊN KẾT CỦA HELI-4')}
 ${h3(1, 'V · Đề bài', '4')}
 <div class="card soft" style="padding:1.2mm 3mm">Nguyên tử ${m('{}^{4}_{2}\\mathrm{He}')} có ${m('m_{\\mathrm{He}}=4{,}002603\\ \\mathrm{u}')}; ${m('m_p=1{,}007276\\ \\mathrm{u}')}, ${m('m_n=1{,}008665\\ \\mathrm{u}')}, ${m('m_e=0{,}000549\\ \\mathrm{u}')}; ${m('1\\ \\mathrm{u}=931{,}5\\ \\mathrm{MeV}/c^2')}.
 <div><b>a)</b> Tính độ hụt khối của hạt nhân.</div><div><b>b)</b> Tính ${m('E_{lk}')} và ${m('E_{lkr}')}.</div><div><b>c)</b> Tách hạt nhân thành nuclôn rời thì cấp vào hay thu về bao nhiêu năng lượng?</div></div>
-${h3(2, 'Phân tích đề')}
+${h3(2, 'Phân tích đề (điền cùng thầy)')}
 <table><tr><th style="width:46mm">Câu trong đề</th><th style="width:36mm">Dữ liệu</th><th>Kiến thức liên quan</th></tr>
 <tr><td>“khối lượng nguyên tử ${m('m_{\\mathrm{He}}')}”</td><td>đã gồm 2 êlectron</td><td>cộng ${m('Zm_e')}</td></tr>
 <tr><td style="height:6.5mm">“${m('m_p,\\ m_n,\\ m_e')}”</td><td></td><td></td></tr>
@@ -114,9 +114,9 @@ ${K.btvn()}
 ${h3(2, 'VI · Mang về: điều em dễ quên nhất', '5')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 ${h3(3, 'Thử thách phân tầng')}
-<div class="fig-side" style="${fs('', 52)}">${box(`<div class="ln"><b>★ ${m('{}^{16}_{\\ 8}\\mathrm{O}')}:</b> ${m('\\Delta m=0{,}137005\\ \\mathrm{u}')} → ${m('E_{lkr}=')} ${f(22)}</div>` + wl('★★ Vì sao urani có E<sub>lk</sub> lớn hơn sắt mà lại kém bền?', 3) + wl('★★★ Tổng E<sub>lk</sub> sau phản ứng lớn hơn trước: toả hay thu? Vì sao không cần Δm?', 4))}${hinh.soSanhNL('Thang logarit, mỗi vạch ×1000.')}</div>
+<div class="fig-side" style="${fs('', 52)}">${box(`<div class="ln"><b>★ ${m('{}^{16}_{\\ 8}\\mathrm{O}')}:</b> ${m('\\Delta m=0{,}137005\\ \\mathrm{u}')} → ${m('E_{lkr}=')} ${f(22)}</div>` + wl('★★ Vì sao urani có E<sub>lk</sub> lớn hơn sắt mà lại kém bền?', 3) + wl('★★★ Tổng E<sub>lk</sub> sau phản ứng lớn hơn trước: toả hay thu? Vì sao không cần Δm?', 4))}<div style="display:grid;gap:2mm">${hinh.anh('nang-luong-lien-ket-rieng.png', 'Trục dọc: năng lượng liên kết riêng (MeV/nuclôn). Đỉnh quanh Fe-56, Ni-62 (≈ 8,8); hạt nhân nặng bên phải kém bền hơn. (Halliday 42.2.3)')}</div></div>
 ${h3(4, 'Câu 8 và ví dụ 1 gam heli-4')}
-${box(wl('Câu 8 (D + T → He + n, Δm = 0,018883 u): W = …', 2)
+${box(wl('Câu 8: D + T → He + n, khối lượng giảm 0,018883 u; năng lượng toả ra cho MỘT phản ứng = …', 2)
  + wl('1 g He-4 có N = … hạt; E = N·28,3 MeV = … J', 2)
  + wl('So với đốt than (2,9·10⁷ J/kg): … kg', 2))}
 ${foot(5)}</section>`;

@@ -28,7 +28,8 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'II.1 · Phóng xạ là gì', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>Hạt nhân không ${f(10)} tự ${f(10)}, phát tia và biến thành hạt nhân ${f(10)}: ${m('{}^{A}_{Z}\\mathrm{X}\\to')} ${f(10)} + ${m('{}^{A\'}_{Z\'}\\mathrm{Y}')}</div>
+<div>Hạt nhân không ${f(10)} tự ${f(10)}, phát ra ${f(10)} (tia) và biến thành hạt nhân ${f(10)}.</div>
+<div>Hạt nhân mẹ ${m('{}^{A}_{Z}\\mathrm{X}')} → ${f(14)} + hạt nhân con ${m('{}^{A\'}_{Z\'}\\mathrm{Y}')}</div>
 <div>Tự ${f(10)} (không cần kích thích) · ${f(12)} (không đoán được hạt nào) · không phụ thuộc ${f(24)}.</div>
 <div>Đồng vị phóng xạ: tự nhiên ${f(16)}; nhân tạo ${f(16)}.</div></div>
 ${h3(5, 'Thí nghiệm: đếm xung của một nguồn', '1·5')}
@@ -55,10 +56,13 @@ ${h3(2, 'Phương trình và dịch chuyển ô', '2·2')}
 ${hinh.dichChuyenO('Hạt nhân con ở ô nào so với hạt nhân mẹ (ô Z)?')}</div>
 ${h3(3, 'II.3 · Định luật phóng xạ', '2·3')}
 <div class="card fig-side" style="${fs(52)};padding:1.2mm 3mm"><div>
-<div>${m('T')}: thời gian còn ${f(12)}. &nbsp;${m('N_t=N_0\\cdot')} ${f(14)}</div>
-<div>${m('m_t=')} ${f(16)} &nbsp;·&nbsp; ${m('H_t=')} ${f(16)}</div>
+<div>${m('T')}: thời gian còn ${f(12)} số hạt.</div>
+<div>${m('N_t=N_0\\cdot')} ${f(14)}</div>
+<div>${m('m_t=')} ${f(16)}</div>
+<div>${m('H_t=')} ${f(16)}</div>
 <div>${m('\\Delta N=')} ${f(24)}</div>
-<div>${m('\\lambda=')} ${f(10)} / ${f(6)} ≈ ${f(10)} / ${m('T')} &nbsp;·&nbsp; ${m('N_0=\\dfrac{m_0}{A}\\,')} ${f(10)}</div>
+<div>${m('\\lambda=')} ${f(10)} / ${m('T')} ≈ ${f(10)} / ${m('T')}</div>
+<div>${m('N_0=\\dfrac{m_0}{A}\\cdot')} ${f(10)}</div>
 <div>Sau ${m('T,\\,2T,\\,3T')}: còn ${f(8)}, ${f(8)}, ${f(8)}; đã rã ${f(8)}, ${f(8)}, ${f(8)}.</div></div>
 ${hinh.phanRaMu('Mỗi T còn một nửa. Điền tỉ lệ còn lại ở các mốc.')}</div>
 ${h3(4, 'II.4 · Độ phóng xạ', '2·4')}
@@ -82,7 +86,7 @@ ${tb('4. Chu kì bán rã là gì? Hệ thức với hằng số phóng xạ λ?
 ${tb('5. Độ phóng xạ là gì, đơn vị, liên hệ với số hạt nhân?')}${lines(2)}
 ${tb('6. Vì sao phóng xạ là ngẫu nhiên, và lộ ra thế nào khi đo?')}${lines(2)}`)}
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/6 câu · câu chưa thuộc: ${f(30)} → đọc lại ô Tập ${f(14)}</div>
-${h3(3, 'Kết quả tự kiểm tra câu 2–8', '3·3')}
+${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·3')}
 ${rkHai([2, 3, 4, 5], [6, 7, 8])}
 ${foot(3)}</section>`;
 
@@ -91,7 +95,7 @@ ${head('BÀI TOÁN MẪU · MẪU NA-24 TRONG Y HỌC')}
 ${h3(1, 'V · Đề bài', '4')}
 <div class="card soft" style="padding:1.2mm 3mm">Mẫu ${m('{}^{24}_{11}\\mathrm{Na}')}, ${m('T=15\\ \\mathrm{h}')}, ban đầu ${m('N_0=1{,}2\\cdot10^{15}')} hạt nhân.
 <div><b>a)</b> Viết phương trình phân rã ${m('\\beta^-')}; hạt nhân con tiến hay lùi mấy ô?</div><div><b>b)</b> Tính ${m('\\lambda')} (${m('1/\\mathrm{s}')}).</div><div><b>c)</b> Sau 45 giờ còn bao nhiêu hạt nhân, đã rã bao nhiêu phần trăm?</div><div><b>d)</b> Tính ${m('H_0')} và độ phóng xạ còn lại sau 45 giờ.</div><div><b>e)</b> Đổi ${m('H_0')} ra curi.</div></div>
-${h3(2, 'Phân tích đề')}
+${h3(2, 'Phân tích đề (điền cùng thầy)')}
 <table><tr><th style="width:42mm">Câu trong đề</th><th style="width:40mm">Dữ liệu</th><th>Kiến thức liên quan</th></tr>
 <tr><td>“${m('{}^{24}_{11}\\mathrm{Na}')}”</td><td>${m('A=24,\\ Z=11')}</td><td>${m('\\beta^-')}: ${m('Z+1')}</td></tr>
 <tr><td style="height:6.5mm">“${m('T=15')} giờ”</td><td></td><td></td></tr>
@@ -115,7 +119,7 @@ ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 ${h3(3, 'Thử thách phân tầng')}
 <div class="fig-side" style="${fs(46)}">${box(wl('★ N₀ = 6·10²⁰ hạt, T = 5 năm. Sau 10 năm còn:', 2)
  + wl('★★ Vì sao nhiệt độ, axit không xử lí được chất thải phóng xạ?', 3)
- + wl('★★★ Xương cổ còn 1/8 lượng C-14: tuổi? Một giả thiết dễ vỡ:', 4))}${hinh.chiaDoiMau('Chia mẫu làm hai: N và H giảm một nửa, còn T thì sao?')}</div>
+ + wl('★★★ Xương cổ còn 1/8 lượng C-14: tuổi? Nêu một giả thiết về lượng C-14 ban đầu có thể sai:', 4))}<div style="display:grid;gap:2mm">${hinh.chiaDoiMau('Chia mẫu làm hai: N và H giảm một nửa, còn T thì sao?')}${hinh.anh('phong-xa-do-thi-ln-r.png', 'Đồ thị ln R theo t (R: số phân rã/giây) là đường thẳng, độ dốc = −λ (I-128: λ ≈ 0,0276/phút, T ≈ 25 phút). (Halliday 42.3.1)')}</div></div>
 ${h3(4, 'Câu 7, câu 8 (C-14)')}
 ${box(wl('Câu 7: I-131, T = 8 ngày, sau 16 ngày còn … %', 2) + wl('Câu 8: vì sao C-14 chỉ định tuổi được tới vài chục nghìn năm?', 2))}
 ${foot(5)}</section>`;
