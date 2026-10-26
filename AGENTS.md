@@ -35,6 +35,7 @@ hàm/tham số). Log migration đã chạy ở `docs/STATE-archive.md`. Các fil
 | **Bảng màu nền sáng — mặc định toàn site từ 11/10/2026** (token, số đo tương phản, bảng quy đổi idiom nền tối → token, khác biệt theo nhóm tuổi, trang xem thử `/dev/giao-dien`) | `docs/MAU-NEN-SANG.md` |
 | **Độ dài & nhịp bài lý thuyết** (hạn mức đo được, vì sao bài dài làm HS bỏ, cách kiểm chứng) | `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md` |
 | **Thí nghiệm trong bài lý thuyết** viết theo cách đề TN THPT hỏi (khung 6 ô, T1–T12, checklist soát hộp `.tl-box--exp`) | `docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md` |
+| Rút hộp có video, clip hiện tượng có phụ đề, SVG chuyển động (V8–V11; kế hoạch chặng 0–3, prompt, agent) | `docs/KE-HOACH-CLIP-ANH-DONG.md` |
 | AI Tutor Socratic (GĐ 4, Q2–Q3/2027): quyết định kiến trúc không phụ thuộc model + eval offline `scripts/eval-ai-tutor.mts` | `docs/AI-TUTOR.md` |
 
 Còn lại (`BRAND.md`, `UI.md`, `THONG-BAO.md`, `BAN-GIAO-*.md`, `prompt-toc-do-*.md`,
