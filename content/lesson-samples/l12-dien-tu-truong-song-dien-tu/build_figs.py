@@ -64,10 +64,10 @@ b += line(210, 52, 210, 184, RED, 3)
 b += f'<path d="M210,56 L204,68 L216,68 z" fill="{RED}"/>'
 b += arrow("f2", "b", 176, 62, 244, 62, 2.4)
 b += arrow("f2", "b", 244, 174, 176, 174, 2.4)
-b += text(222, 46, "đường sức từ biến thiên (B)", RED, 10.5, "start", "600")
+b += text(222, 46, "đường sức từ B, đang tăng", RED, 10.5, "start", "600")
 b += text(22, 214, "đường sức điện trường xoáy: đường cong kín bao quanh đường cảm ứng từ", BLUE, 10.5, "start", "600")
 fig2 = wrap("0 0 420 226", "Đường sức từ thẳng đứng có một mũi tên ở đầu trên chỉ chiều, bao quanh là một đường cong kín của điện trường xoáy với hai mũi tên chỉ chiều",
-            b, "Hình 2. Từ trường biến thiên sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.")
+            b, "Hình 2. Từ trường biến thiên (ở đây B đang tăng) sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.")
 
 # ------------------------------------------------- Hình 3: sóng điện từ
 b = defs("f3")
@@ -93,7 +93,8 @@ b += text(x0, AX - AMP - 10, "E", RED, 12.5, "middle", "700")
 b += text(x0 + 26, AX + 34, "B", BLUE, 12.5, "start", "700")
 b += text(14, 216, "E vuông góc với B, cả hai cùng vuông góc với phương truyền", "currentColor", 10.5, "start", "600")
 b += text(14, 232, "E và B cùng pha: hai đường cong cùng cắt trục tại một chỗ", "currentColor", 10.5, "start", "600")
-fig3 = wrap("0 0 420 243", "Sóng điện từ lan truyền theo trục ngang: vectơ E dao động thẳng đứng, vectơ B dao động theo phương xiên, hai đường cong cùng pha",
+b += text(14, 248, "E hướng lên, truyền sang phải thì B hướng ra khỏi trang (nét xiên)", "currentColor", 10.5, "start", "600")
+fig3 = wrap("0 0 420 258", "Sóng điện từ lan truyền theo trục ngang: vectơ E dao động thẳng đứng, vectơ B dao động theo phương xiên, hai đường cong cùng pha",
             b, "Hình 3. Sóng điện từ là sóng ngang: E vuông góc với B, cả hai vuông góc phương truyền và luôn cùng pha.")
 
 # ------------------------------------------------- Hình 4: thang sóng điện từ
