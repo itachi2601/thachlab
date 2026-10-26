@@ -36,11 +36,11 @@ SCENES = [
   ("Đó là chuyển động Brown.", "Đó là chuyển động Brao."),
   ("Vô số phân tử khí va vào hạt khói từ mọi phía.", "Vô số phân tử khí vô hình va vào hạt khói từ mọi phía."),
   ("Hai phía không bao giờ va đều nhau → hạt bị đẩy lệch, đi đường gấp khúc.", "Hai phía không bao giờ va đều nhau, nên hạt bị đẩy lệch liên tục, đi theo đường gấp khúc."),
-  ("Nhớ hình: quả bóng giữa đám đông chen lấn.", "Hãy nhớ hình ảnh: quả bóng giữa đám đông chen lấn."),
+  ("Nhớ hình: quả bóng bị ném từ mọi phía.", "Hãy nhớ hình ảnh: một quả bóng bị ném từ mọi phía."),
  ]),
  dict(key="three", title="2 · Ba nội dung của thuyết", lines=[
   ("Thuyết động học phân tử gói trong 3 chữ: NHỎ – LOẠN – ĐẬP.", "Thuyết động học phân tử chất khí gói gọn trong ba chữ: Nhỏ, Loạn, Đập."),
-  ("NHỎ: phân tử rất nhỏ so với khoảng cách giữa chúng; lực hút, đẩy rất yếu.", "Nhỏ: phân tử rất nhỏ so với khoảng cách giữa chúng, nên lực hút và lực đẩy rất yếu."),
+  ("NHỎ: phân tử nhỏ, ở xa nhau → lực hút, đẩy rất yếu (hệ quả của NHỎ).", "Nhỏ: phân tử rất nhỏ so với khoảng cách giữa chúng. Vì ở xa nhau nên lực hút và lực đẩy rất yếu, lực yếu chính là hệ quả của Nhỏ."),
   ("LOẠN: chuyển động hỗn loạn, không ngừng; nhiệt độ càng cao càng nhanh.", "Loạn: phân tử chuyển động hỗn loạn, không ngừng. Nhiệt độ càng cao, chạy càng nhanh."),
   ("ĐẬP: phân tử đập vào thành bình → gây ra áp suất khí.", "Đập: phân tử đập vào thành bình, gây ra áp suất khí."),
  ]),
@@ -53,7 +53,7 @@ SCENES = [
   ("Phân tử N₂ ở 0 °C bay khoảng 455 m/s.", "Phân tử khí ni tơ ở không độ bay khoảng bốn trăm năm mươi lăm mét mỗi giây."),
   ("Ống dài 40 cm: NH₃ một đầu, HCl đầu kia.", "Trong ống dài bốn mươi xen ti mét, đặt a mô ni ắc ở một đầu, a xít clo hy đric ở đầu kia."),
   ("Khoảng 3 phút sau mới có vòng khói trắng NH₄Cl, gần đầu HCl hơn.", "Khoảng ba phút sau mới hiện vòng khói trắng, nằm gần đầu a xít hơn."),
-  ("Mỗi phân tử chạy rất nhanh nhưng va chạm liên tục, đi gấp khúc → cả đám lan chậm hơn hàng trăm nghìn lần.", "Mỗi phân tử chạy rất nhanh, nhưng va chạm liên tục, đi đường gấp khúc, nên cả đám lan chậm hơn hàng trăm nghìn lần."),
+  ("Chạy nhanh từng hạt · va liên tục · cả đám lan chậm hàng trăm nghìn lần.", "Mỗi phân tử chạy rất nhanh, nhưng va chạm liên tục, đi đường gấp khúc, nên cả đám lan chậm hơn hàng trăm nghìn lần."),
   ("Như chen chợ Tết: chân chạy nhanh, người đi chậm.", "Giống như chen chợ Tết vậy."),
  ]),
  dict(key="ideal", title="4 · Mô hình khí lí tưởng", lines=[
@@ -85,6 +85,7 @@ SCENES = [
  dict(key="answer", title="Đáp án", lines=[
   ("Đáp án đây!", "Đáp án đây."),
   ("n = 84 : 28 = 3 mol.", "Số mol bằng tám mươi tư chia hai mươi tám, bằng ba mol."),
+  ("N = 3 × 6,02×10²³ = 1,806×10²⁴ phân tử.", "Số phân tử bằng ba nhân sáu phẩy không hai nhân mười mũ hai mươi ba, bằng một phẩy tám không sáu nhân mười mũ hai mươi tư phân tử."),
   ("V = 3 × 22,4 = 67,2 lít.", "Thể tích bằng ba nhân hai mươi hai phẩy bốn, bằng sáu mươi bảy phẩy hai lít."),
  ]),
  dict(key="recap", title="Nhớ 5 hình = nhớ cả bài", tail=2.5, lines=[
@@ -101,7 +102,13 @@ SCENES = [
 GAP, TAIL = 0.28, 0.55
 SR = 22050
 def tts(text, path):
+    # file .txt canh moi .wav ghi cau da doc; doi cau thi doc lai (giong thu that cung bi thay -> phai thu lai cau do)
+    side = path[:-4] + ".txt"
+    if os.path.exists(path) and not os.path.exists(side): open(side, "w", encoding="utf-8").write(text)
+    if os.path.exists(path) and open(side, encoding="utf-8").read() != text:
+        print("cau doi, doc lai bang giong may:", os.path.basename(path)); os.remove(path)
     if not os.path.exists(path):
+        open(side, "w", encoding="utf-8").write(text)
         aiff = path[:-4] + ".aiff"
         subprocess.run(["say", "-v", "Linh", "-r", "185", "-o", aiff, text], check=True)
         subprocess.run([FF, "-y", "-loglevel", "error", "-i", aiff, "-ar", str(SR), "-ac", "1", path], check=True)
@@ -308,7 +315,7 @@ def s_brown(img, d, t, sc):
             p2 = (px + 66 * math.cos(a), py + 66 * math.sin(a))
             arrow(d, p1, p2, RED, 6, 18)
     if t > M[3] - 0.2:
-        keyword(d, "Quả bóng giữa đám đông chen lấn", t, M[3] - 0.2, color=ORANGE, size=54,
+        keyword(d, "Quả bóng bị ném từ mọi phía", t, M[3] - 0.2, color=ORANGE, size=54,
                 sub="va đập không cân bằng → đường gấp khúc")
     elif t > M[2]:
         keyword(d, "Va đập KHÔNG cân bằng", t, M[2], color=RED)
@@ -456,7 +463,7 @@ def s_tube(img, d, t, sc):
     if t > M[4] - 0.2:
         keyword(d, "Như chen chợ Tết", t, M[4] - 0.2, color=PURPLE, y=1400, size=56, sub="cả đám lan ~0,13 cm/s")
     elif t > M[3] + 1:
-        keyword(d, "Nhanh từng hạt · chậm cả đám", t, M[3] + 1, color=PURPLE, y=1400, size=50)
+        keyword(d, "Bẫy: nhanh từng hạt ≠ lan cả đám", t, M[3] + 1, color=RED, y=1400, size=50)
 
 pool = Gas(10, 51, 180, 320)
 def s_ideal(img, d, t, sc):
@@ -488,6 +495,8 @@ def s_ideal(img, d, t, sc):
         text(d, (1000, y + 40), b, 28, MUTED, bold=False, anchor="rm")
     if t > M[6] - 0.2:
         keyword(d, "Nén mạnh · lạnh sâu → khí thực lệch", t, M[6] - 0.2, color=RED, y=1420, size=46)
+    elif t > M[3] + 0.6:
+        keyword(d, "Bẫy: bỏ qua ≠ bằng không", t, M[3] + 0.6, color=RED, y=1420, size=50)
 
 def cube(d, cx, cy, s, col, label, alpha=1.0):
     o = s * 0.35
@@ -589,19 +598,18 @@ def s_quiz(img, d, t, sc):
 
 def s_answer(img, d, t, sc):
     M = sc["M"]
-    car(d, 300, 330, 0.95, 1)
-    if t > M[1] - 0.2:
-        k = back((t - M[1] + 0.2) / 0.5)
-        card(d, (60, 640, 1020, 800), fill=WHITE, outline=BLUE, w=5)
-        text(d, (540, 720), "n = 84 : 28 = 3 mol", int(60 * k) or 1, BLUE)
-    if t > M[2] - 0.2:
-        k = back((t - M[2] + 0.2) / 0.5)
-        card(d, (60, 830, 1020, 990), fill=WHITE, outline=TEAL, w=5)
-        text(d, (540, 910), "V = 3 × 22,4 = 67,2 L", int(60 * k) or 1, TEAL)
+    car(d, 330, 320, 0.85, 1)
+    rows = [(1, "n = 84 : 28 = 3 mol", BLUE), (2, "N = 3 × 6,02×10^{23} = 1,806×10^{24}", PURPLE), (3, "V = 3 × 22,4 = 67,2 L", TEAL)]
+    for r, (mi, s_, col) in enumerate(rows):
+        if t < M[mi] - 0.2: continue
+        k = back((t - M[mi] + 0.2) / 0.5); y0 = 600 + r * 150
+        card(d, (60, y0, 1020, y0 + 130), fill=WHITE, outline=col, w=5)
+        rich(d, 540, y0 + 65, s_, max(4, int(54 * k)), col)
+    if t > M[3] - 0.2:
         for j in range(3):
-            kj = appear(t, M[2] + 0.2 + j * 0.35)
-            cube(d, 250 + j * 290, 1170, 200 * max(kj, 0.01), TEAL, "22,4 L", alpha=kj)
-    keyword(d, "Chia M → ra mol · nhân 22,4 → ra lít", t, M[2] + 2.2, color=ORANGE, y=1430, size=46)
+            kj = appear(t, M[3] + 0.2 + j * 0.35)
+            cube(d, 270 + j * 270, 1150, 150 * max(kj, 0.01), TEAL, "22,4 L", alpha=kj)
+    keyword(d, "Chia M → mol · nhân Nₐ → phân tử\nnhân 22,4 → lít", t, M[3] + 2.2, color=ORANGE, y=1400, size=46)
 
 def mini(d, i, x, y, t):
     if i == 0:
@@ -652,6 +660,14 @@ def frame(gt):
     if t < 0.25:  # chuyen canh mo dan
         img = Image.blend(Image.new("RGB", (W, H), BG), img, ease(t / 0.25))
     return img
+
+if "--kiem" in sys.argv:  # moi cau phu de <= 2 dong
+    _d = ImageDraw.Draw(Image.new("RGB", (W, H))); bad = 0; n = 0
+    for si, sc in enumerate(SCENES):
+        for li, (cap, _) in enumerate(sc["lines"]):
+            n += 1; k = len(wrap(_d, cap, F(46), 900))
+            if k > 2: bad += 1; print(f"  cau {n} (canh {si + 1}): {k} dong -> {cap}")
+    print(f"{n} cau, {bad} cau qua 2 dong"); sys.exit(1 if bad else 0)
 
 if PREVIEW:
     os.makedirs(os.path.join(HERE, "preview"), exist_ok=True)
