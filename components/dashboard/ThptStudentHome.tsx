@@ -20,6 +20,7 @@ import TutoringSection, { liveExitWindows } from "@/components/dashboard/Tutorin
 import SlotTopicPicker from "@/components/results/SlotTopicPicker";
 import { rankNextSteps, shouldOfferRetry } from "@/features/learning/next-steps";
 import { fetchMyPendingHomework, type PendingHomework } from "@/services/ta-homework";
+import { getMyReviewState, type MyReviewState } from "@/services/review-session";
 import CatchupCard from "@/components/results/CatchupCard";
 import EntryDiagnosticCard from "@/components/results/EntryDiagnosticCard";
 import QuickPractice, { type QuickPracticeRequest } from "@/components/mastery/QuickPractice";
@@ -148,6 +149,8 @@ export default function ThptStudentHome({
   const [lastExitAttempt, setLastExitAttempt] = useState<Map<number, string>>(new Map());
   const [pendingHomework, setPendingHomework] = useState<PendingHomework[]>([]);
   const [homeworkLoaded, setHomeworkLoaded] = useState(false);
+  const [reviewState, setReviewState] = useState<MyReviewState | null>(null);
+  const [reviewLoaded, setReviewLoaded] = useState(false);
   // Đề kiểm tra lớp đã giao (17/10/2026: quay lại thẻ Hôm nay khi em chưa làm). null = đang tải.
   const [assessments, setAssessments] = useState<ClassAssessment[] | null>(null);
   const [quizNeed, setQuizNeed] = useState<TutoringNeed | null>(null);
@@ -188,6 +191,8 @@ export default function ThptStudentHome({
     fetchMyWeakestTopics(3).then(setWeakTopics).catch(() => setWeakTopics([]));
     // BTVN trợ giảng giao riêng: chạy song song với các truy vấn trên; lỗi thì thẻ Hôm nay chỉ thiếu việc này.
     fetchMyPendingHomework().then(setPendingHomework).catch(() => setPendingHomework([])).finally(() => setHomeworkLoaded(true));
+    // Buổi ôn tập theo chặng của lớp (ôn ở nhà / trên lớp): lỗi thì thẻ Hôm nay chỉ thiếu việc này.
+    getMyReviewState(null).then(setReviewState).catch(() => setReviewState(null)).finally(() => setReviewLoaded(true));
   }, [studentId]);
 
   function reloadTutoring() {
@@ -337,9 +342,23 @@ export default function ThptStudentHome({
     return scores.filter((p) => new Date(p.at).getTime() >= start.getTime()).length;
   }, [scores, nowMs]);
 
+  // Buổi ôn còn mở và em chưa qua hết chặng thì thành việc hôm nay.
+  const reviewSession = useMemo(() => {
+    const r = reviewState;
+    if (!r || r.status === "finished") return null;
+    const passed = r.stages.filter((st) => st.mine?.state === "passed").length;
+    if (r.mode === "self") {
+      if (passed >= r.stages.length) return null;
+      return { mode: "self" as const, title: r.title, dueAt: r.due_at ?? null, passed, total: r.stages.length, stage: 0 };
+    }
+    if (r.current_stage < 0 || r.stages[r.current_stage]?.mine?.state === "passed") return null;
+    return { mode: "live" as const, title: r.title, dueAt: null, passed, total: r.stages.length, stage: r.current_stage + 1 };
+  }, [reviewState]);
+
   const nextSteps = useMemo(
     () =>
       rankNextSteps({
+        session: reviewSession,
         assigned: assignedTodo,
         homework: pendingHomework.map((h) => ({ examId: h.examId, examTitle: h.examTitle, dueAt: h.dueAt, note: h.note })),
         need: needs[0] ? { id: needs[0].id, label: needLabel(needs[0]) } : null,
@@ -358,12 +377,12 @@ export default function ThptStudentHome({
         weak: weakList,
         reviewLesson,
       }),
-    [assignedTodo, pendingHomework, needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter, progress, weakList, reviewLesson],
+    [reviewSession, assignedTodo, pendingHomework, needs, lastExitAttempt, nowMs, retryExam, nextLesson, nextChapter, progress, weakList, reviewLesson],
   );
 
   // Thẻ "Hôm nay em làm gì": chỉ việc thích ứng theo hồ sơ em (rankNextSteps). Việc đầu là nút nổi duy nhất của trang (B2, L5);
   // tối đa 3 lựa chọn khác (N2). Chờ đủ điểm + kỹ năng yếu + danh mục mới vẽ (tránh chớp "Ôn lại").
-  const attentionReady = scoresLoaded && catalogLoaded && homeworkLoaded && assessments !== null && weakTopics !== undefined;
+  const attentionReady = scoresLoaded && catalogLoaded && homeworkLoaded && reviewLoaded && assessments !== null && weakTopics !== undefined;
   const todaySteps = attentionReady ? nextSteps : [];
   const primaryStep = todaySteps[0] ?? null;
   const secondarySteps = todaySteps.slice(1);
