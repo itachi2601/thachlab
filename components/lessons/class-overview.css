@@ -27,10 +27,8 @@
 .class-lesson--static:hover { border-color: var(--lesson-line); background: var(--lesson-surface); box-shadow: none; }
 .class-mastery--text { display: inline-flex; align-items: center; gap: 4px; margin-left: 8px; color: #94a3b8; font-size: 14px; font-weight: 500; white-space: nowrap; }
 html[data-theme="light"] .lesson-shell .class-progress-line,
-html[data-theme="light"] .lesson-shell .class-next-line-why,
+/* "Học tiếp" là khối màu đặc chữ trắng ở cả hai nền (globals.css, 26/10/2026) — chỉ dòng "đã học xong" đổi màu. */
 html[data-theme="light"] .lesson-shell .class-next-line--done { color: #334155; }
-html[data-theme="light"] .lesson-shell .class-next-line-label,
-html[data-theme="light"] .lesson-shell .class-next-line svg { color: #1d4ed8; }
 html[data-theme="light"] .lesson-shell .class-chip { color: #0f172a; }
 html[data-theme="light"] .lesson-shell .class-search-btn { color: #334155; }
 html[data-theme="light"] .lesson-shell .class-search-btn:hover { color: #0f172a; }
@@ -41,7 +39,7 @@ html[data-theme="light"] .lesson-shell .class-parent-band b { color: #064e3b; }
 html[data-theme="light"] .lesson-shell .class-parent-band a { color: #047857; }
 html[data-theme="light"] .lesson-shell .class-parent-band select { color: #0f172a; }
 html[data-theme="light"] .lesson-shell .class-mastery--text { color: #475569; }
-@media (max-width: 639px) { .class-next-line-why { display: none; } }
+
 /* Hàng phẳng (thông báo, kệ đề) không có ô số. Dưới 640px lưới 26px | 1fr | auto
    nhét tiêu đề vào cột 26px nên mỗi chữ một dòng. */
 @media (max-width: 639px) {
