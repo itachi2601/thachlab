@@ -35,20 +35,20 @@ b += f'<circle cx="72" cy="140" r="42" fill="none" stroke="currentColor" stroke-
 b += f'<circle cx="72" cy="140" r="4" fill="currentColor"/>'
 b += f'<polygon points="72,106 78,140 72,134 66,140" fill="{RED}"/>'
 b += f'<polygon points="72,174 78,140 72,146 66,140" fill="{BLUE}"/>'
-b += text(72, 91, "N", RED, 12, "middle", "700")
-b += text(72, 199, "S", BLUE, 12, "middle", "700")
-b += text(84, 238, "la bàn trong máy", "currentColor", 10, "start", "500")
-b += arrow("f1", "r", 140, 176, 140, 100, 2.6)
-b += text(154, 132, "kim chỉ bắc", RED, 14, "start", "700")
-b += text(154, 152, "dù xoay máy", "currentColor", 14, "start", "500")
-b += rect(236, 50, 196, 188, "rgba(52,211,153,.14)", GRN, 1.8, 10)
-b += text(334, 76, "cạnh cửa sắt", GRN, 14, "middle", "700")
-b += f'<circle cx="334" cy="130" r="34" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>'
-b += line(334, 92, 334, 104, "currentColor", 1.2, "3 3", .6)
-b += f'<g transform="translate(334,130) rotate(55)"><polygon points="0,-28 6,0 0,-6 -6,0" fill="{RED}"/><polygon points="0,28 6,0 0,6 -6,0" fill="{BLUE}"/></g>'
-b += text(334, 200, "kim lệch hẳn", GRN, 14, "middle", "500")
-b += text(334, 220, "khỏi hướng bắc", GRN, 14, "middle", "500")
-fig1 = wrap("0 0 440 252",
+b += text(72, 91, "N", RED, 14, "middle", "700")
+b += text(72, 199, "S", BLUE, 14, "middle", "700")
+b += text(84, 246, "la bàn trong máy", "currentColor", 14, "start", "500")
+b += arrow("f1", "r", 132, 176, 132, 100, 2.6)
+b += text(144, 132, "kim chỉ bắc", RED, 14, "start", "700")
+b += text(144, 152, "dù xoay máy", "currentColor", 14, "start", "500")
+b += rect(252, 50, 184, 188, "rgba(52,211,153,.14)", GRN, 1.8, 10)
+b += text(344, 76, "cạnh cửa sắt", GRN, 14, "middle", "700")
+b += f'<circle cx="344" cy="130" r="34" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>'
+b += line(344, 92, 344, 104, "currentColor", 1.2, "3 3", .6)
+b += f'<g transform="translate(344,130) rotate(55)"><polygon points="0,-28 6,0 0,-6 -6,0" fill="{RED}"/><polygon points="0,28 6,0 0,6 -6,0" fill="{BLUE}"/></g>'
+b += text(344, 200, "kim lệch hẳn", GRN, 14, "middle", "500")
+b += text(344, 220, "khỏi hướng bắc", GRN, 14, "middle", "500")
+fig1 = wrap("0 0 440 258",
             "Điện thoại có la bàn: kim chỉ về phía bắc dù xoay máy; đặt cạnh cửa sắt thì kim lệch hẳn",
             b, "Hình 1. La bàn chỉ một phía; gần cửa sắt thì kim lệch.")
 
@@ -77,11 +77,11 @@ fig2 = wrap("0 0 440 146",
 # ------------------------------------------- Hình 3: bốn khung đường sức từ
 b = defs("f3")
 # a) thanh nam châm — N bên trái, S bên phải
-b += text(14, 20, "a) Thanh nam châm", "currentColor", 11, "start", "700")
+b += text(14, 20, "a) Thanh nam châm", "currentColor", 14, "start", "700")
 b += rect(44, 72, 68, 30, "rgba(248,113,113,.18)", RED, 2, 4)
 b += rect(112, 72, 68, 30, "rgba(56,189,248,.18)", BLUE, 2, 4)
-b += text(78, 93, "N", RED, 13, "middle", "700")
-b += text(146, 93, "S", BLUE, 13, "middle", "700")
+b += text(78, 93, "N", RED, 14, "middle", "700")
+b += text(146, 93, "S", BLUE, 14, "middle", "700")
 D = 'fill="none" stroke="{}" stroke-width="1.8" stroke-dasharray="6 4"'.format(RED)
 b += f'<path d="M44,87 C14,87 20,34 112,34 C204,34 210,87 180,87" {D}/>'
 b += f'<path d="M44,87 C14,87 20,140 112,140 C204,140 210,87 180,87" {D}/>'
@@ -95,18 +95,19 @@ b += chevron(124, 56, 24.0, 0.0, RED, 1.8, 10)
 b += chevron(124, 118, 24.0, 0.0, RED, 1.8, 10)
 b += chevron(100, 75, -24.0, 0.0, RED, 1.8, 10)
 b += chevron(100, 99, -24.0, 0.0, RED, 1.8, 10)
-b += text(14, 166, "ra ở bắc, vào ở nam", "currentColor", 10, "start", "500")
+b += text(14, 168, "ra ở bắc, vào ở nam", "currentColor", 14, "start", "500")
 # b) nam châm chữ U — N bên trái, S bên phải (đường sức giữa hai cực đi từ N sang S)
-b += text(232, 20, "b) Chữ U", "currentColor", 11, "start", "700")
+b += text(232, 20, "b) Chữ U", "currentColor", 14, "start", "700")
 b += f'<path d="M244,50 L244,64 Q244,84 264,84 L316,84 Q336,84 336,64 L336,50" fill="none" stroke="currentColor" stroke-width="5"/>'
-b += text(242, 44, "N", RED, 12, "start", "700")
-b += text(338, 44, "S", BLUE, 12, "end", "700")
+b += text(242, 44, "N", RED, 14, "start", "700")
+b += text(338, 44, "S", BLUE, 14, "end", "700")
 for y in (52, 64, 76):
     b += field_line(268, y, 312, y, BLUE, 1.8, "5 3", 7)
-b += text(232, 114, "song song, cách đều", GRN, 10, "start", "600")
-b += text(232, 129, "→ từ trường đều", GRN, 10, "start", "600")
+b += text(232, 116, "song song, cách đều", GRN, 14, "start", "600")
+b += text(232, 133, "→ từ trường đều", GRN, 14, "start", "600")
 # c) từ phổ mạt sắt
-b += text(14, 186, "c) Từ phổ", "currentColor", 11, "start", "700")
+b += '<g transform="translate(0,18)">'
+b += text(14, 186, "c) Từ phổ", "currentColor", 14, "start", "700")
 b += rect(18, 196, 136, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
 F = 'fill="none" stroke="{}" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 5"'.format(GRN)
 b += rect(60, 223, 52, 10, "rgba(248,113,113,.2)", "currentColor", 1.2, 2)
@@ -116,18 +117,19 @@ for k in (0, 1):
     b += f'<path d="M60,228 C{36-8*k},228 {36-8*k},{228+h} 86,{228+h} C{136+8*k},{228+h} {136+8*k},228 112,228" {F}/>'
 b += f'<path d="M58,228 L24,228" {F}/>'
 b += f'<path d="M114,228 L148,228" {F}/>'
-b += text(86, 274, "mạt sắt dày ở hai cực", "currentColor", 10, "middle", "500")
+b += text(86, 276, "mạt sắt dày ở hai cực", "currentColor", 14, "middle", "500")
 # d) đường vẽ theo quy ước
-b += text(232, 186, "d) Đường quy ước", "currentColor", 11, "start", "700")
+b += text(232, 186, "d) Đường quy ước", "currentColor", 14, "start", "700")
 b += rect(236, 196, 190, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
 b += f'<path d="M248,254 C280,198 384,198 414,254" fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="6 4"/>'
 b += f'<path d="M250,242 C288,204 374,204 412,242" fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="6 4"/>'
 b += f'<path d="M256,208 L408,208" fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="6 4"/>'
 b += chevron(308, 215, 30.0, -9.0, RED, 1.8, 10)
 b += chevron(366, 208, 22.0, 0.0, RED, 1.8, 10)
-b += text(236, 274, "mũi tên chỉ chiều", "currentColor", 10, "start", "500")
-b += text(236, 286, "không cắt nhau", "currentColor", 10, "start", "500")
-fig3 = wrap("0 0 440 296",
+b += text(236, 276, "mũi tên chỉ chiều", "currentColor", 14, "start", "500")
+b += text(236, 294, "không cắt nhau", "currentColor", 14, "start", "500")
+b += "</g>"
+fig3 = wrap("0 0 440 322",
             "Bốn khung: đường sức từ của thanh nam châm, của nam châm chữ U (từ trường đều), từ phổ mạt sắt và đường sức vẽ theo quy ước",
             b, "Hình 3.<br>a) Đường sức thanh nam châm: ra ở bắc, vào ở nam, khép kín.<br>b) Chữ U: từ trường đều.<br>"
                "c) Từ phổ.<br>d) Đường vẽ theo quy ước.")
