@@ -62,8 +62,9 @@ import { fetchMyRankStatus, fetchRankStatusOf } from "@/services/rank";
 import LiveStudyStrip from "@/components/lessons/LiveStudyStrip";
 import ReviewBanner from "@/components/review/ReviewBanner";
 import type { RankStatus } from "@/features/rank/types";
-import ChapterTree, { type ChapterTreeEntry } from "@/components/lessons/ChapterTree";
+import type { ChapterTreeEntry } from "@/components/lessons/ChapterTree";
 import Hsg9WeekCard from "@/components/lop-hoc/Hsg9WeekCard";
+import { readResumeSpot } from "@/features/lessons/resume-spot";
 
 const LAST_LESSON_KEY = "thachlab-last-secondary-lesson";
 
@@ -105,7 +106,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   // >= 1024: chương đang chọn (cột giữa chỉ hiện chương này) + chương người dùng tự mở trong cây.
   // Tách khỏi collapsedChapters của accordion điện thoại để hai chế độ không giật nhau.
   const [pickedChapterId, setPickedChapterId] = useState<number | null>(null);
-  const [treeOpenIds, setTreeOpenIds] = useState<Set<number>>(new Set());
   const [defaultChapterApplied, setDefaultChapterApplied] = useState(false);
   const [handledRequestedChapterKey, setHandledRequestedChapterKey] = useState<string | null>(null);
   // Bài học cuối cùng đã mở, đọc từ localStorage lúc khởi tạo. Toàn trang nằm trong Suspense + useSearchParams
@@ -329,9 +329,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const selectedChapterIndex = classChapters.findIndex((c) => c.id === selectedChapterId);
   const selectedChapter = selectedChapterIndex >= 0 ? classChapters[selectedChapterIndex] : null;
 
-  // Chương đang chọn luôn mở trên cây; người dùng vẫn gấp/mở được các chương khác.
-  const openIdsForTree = new Set(treeOpenIds);
-  if (selectedChapterId !== null) openIdsForTree.add(selectedChapterId);
 
   // Mặc định chỉ mở một chương: chương trên URL, không thì chương của bài đang dở.
   // Điện thoại thu các chương còn lại để danh sách bài bắt đầu sớm. Chỉ áp dụng một lần.
@@ -446,16 +443,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     window.localStorage.setItem(LAST_LESSON_KEY, String(lesson.id));
   }
 
-  /** Gấp/mở một chương trên cây cột trái (>= 1024) — không dùng chung state với accordion điện thoại. */
-  function toggleTreeChapter(chapterId: number) {
-    setTreeOpenIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(chapterId)) next.delete(chapterId);
-      else next.add(chapterId);
-      return next;
-    });
-  }
-
   /** Bấm tên chương trên cây (>= 1024): đổi cột giữa + ghi ?chapter= lên URL để F5/chia sẻ link vẫn đúng. */
   function pickChapter(chapterId: number) {
     setPickedChapterId(chapterId);
@@ -463,14 +450,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     const params = new URLSearchParams(window.location.search);
     params.set("chapter", String(chapterId));
     router.replace(`/lop-hoc/${effectiveSlug}?${params.toString()}`, { scroll: false });
-  }
-
-  /** Bài đã học xong = đủ 100% số mục — đúng công thức thanh tiến độ trong accordion. */
-  function lessonIsComplete(lesson: Lesson): boolean {
-    if (isTeacherView) return false;
-    const p = lessonProgress.get(lesson.id);
-    const percent = p?.total ? Math.round((p.completed / p.total) * 100) : 0;
-    return !!session && percent === 100;
   }
 
   /**
@@ -512,8 +491,15 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     if (!lesson) return <p className="class-next-line class-next-line--done">{why}</p>;
     // B2/L5 (26/10/2026): điểm nổi DUY NHẤT của trang chương — khối màu đặc, ghi chỗ đang dở theo "x/y mục"
     // (cùng đơn vị với dòng bài và rail, L2).
+    // Có chỗ dừng ghi trên máy này (trang bài ghi khi đọc lý thuyết) → "Dừng ở mục IV. Trả bài · còn ~8 phút";
+    // không có thì quay về "Đã học x/y mục" từ tiến độ đã tải (không thêm round-trip).
     const p = lessonProgress.get(lesson.id);
-    const where = p && p.completed > 0 && p.total > 0 ? `Đã học ${p.completed}/${p.total} mục` : why;
+    const spot = readResumeSpot(session?.user.id, lesson.id);
+    const where = spot
+      ? `Dừng ở mục ${spot.heading}${spot.minutesLeft > 0 ? ` · còn ~${spot.minutesLeft} phút` : ""}`
+      : p && p.completed > 0 && p.total > 0
+        ? `Đã học ${p.completed}/${p.total} mục`
+        : why;
     return (
       <button type="button" className="class-next-line" onClick={() => continueLesson(lesson)}>
         <span className="class-next-line-text">
@@ -522,10 +508,25 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
           <span className="class-next-line-why">{where}</span>
         </span>
         <span className="class-next-line-go">
-          Vào học <ArrowRight size={16} aria-hidden />
+          Học tiếp <ArrowRight size={16} aria-hidden />
         </span>
       </button>
     );
+  }
+
+  /** Dòng bài đang học: "Đang học · mục 4/6" theo chỗ dừng trên máy này; không có thì "x/y mục" (tab). */
+  function startedLabel(lessonId: number, progress: InlineLessonProgress | undefined) {
+    const spot = readResumeSpot(session?.user.id, lessonId);
+    if (spot && spot.total > 1) return `Đang học · mục ${spot.index + 1}/${spot.total}`;
+    return `Đang học · ${progress?.completed ?? 0}/${progress?.total ?? 0} mục`;
+  }
+
+  /** Tiến độ một chương theo "x/y mục" (L2) — cùng công thức với dòng tiến độ đầu chương. */
+  function chapterProgress(chapterId: number) {
+    const inChapter = (lessons ?? []).filter((l) => l.chapter_id === chapterId && !isSemesterExam(l.lesson_kind));
+    const total = inChapter.reduce((sum, l) => sum + (lessonProgress.get(l.id)?.total ?? l.itemCount), 0);
+    const completed = inChapter.reduce((sum, l) => sum + (lessonProgress.get(l.id)?.completed ?? 0), 0);
+    return { total, completed };
   }
 
   /** Số liệu cho dải A1: chỉ tính bài thường (kiểm tra giữa/cuối kì không nằm trong "x mục"). */
@@ -650,7 +651,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                               : complete
                                 ? "Hoàn thành"
                                 : started
-                                  ? `Đang học · ${progress?.completed ?? 0}/${progress?.total ?? 0} mục`
+                                  ? startedLabel(lesson.id, progress)
                                   : null}
                       </span>
                   </>
@@ -710,6 +711,12 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   // Trang của một lớp: mục lục chương → bài, cùng ngôn ngữ với trang bài học.
   if (effectiveSlug) {
     const grade = active ? classGrade(active.name) : null;
+    const gradeDescription = grade ? GRADE_DESCRIPTIONS[grade] ?? "" : "";
+    const streakDays =
+      !isParent && !isTeacherView && session && rank?.season && rank.daily ? rank.daily.streak : 0;
+    const rootHref = isAvcn ? "/lop-hoc/cttc" : "/lop-hoc";
+    const rootLabel = isAvcn ? "CTTC" : "Lớp học";
+    const showRailProgress = !!session && !isTeacherView;
     return (
       <>
         <Navbar />
@@ -717,22 +724,45 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
           <div className={isAvcn ? "lesson-shell lesson-shell--cttc" : "lesson-shell"}>
             <TeacherViewBanner />
             <div className="lesson-layout lesson-layout--pick">
-              <aside className="lesson-nav" aria-label="Chương trình lớp">
-                {active && chapters && lessons && classChapters.length > 0 && (
-                  <ChapterTree
-                    entries={treeEntries}
-                    mode="pick"
-                    chaptersOnly
-                    currentChapterId={selectedChapterId ?? undefined}
-                    openChapterIds={openIdsForTree}
-                    onToggleChapter={toggleTreeChapter}
-                    onPickChapter={pickChapter}
-                    lessonHref={lessonHref}
-                    isLessonDone={lessonIsComplete}
-                    showProgress={false}
-                    readOnly={isParent}
-                    onLessonClick={rememberLesson}
-                  />
+              {/* Rail chương (≥1024) theo bản duyệt (L2/B5): lối về Lớp học, khung "<lớp> · Chương", mỗi chương có
+                  tiến độ x/y mục ("—" khi chưa học). Cùng khung với rail mục lục ở trang bài. */}
+              <aside className="lesson-nav class-rail" aria-label="Chương trình lớp">
+                <Link prefetch={false} href={rootHref} className="lesson-rail-back">
+                  <ArrowLeft size={15} aria-hidden />
+                  <span>{rootLabel}</span>
+                </Link>
+                {active && chapters && lessons && treeEntries.length > 0 && (
+                  <nav className="class-rail-box" aria-label="Chương">
+                    <p className="class-rail-title">
+                      {activeDisplayName}
+                      <span>Chương</span>
+                    </p>
+                    <ol>
+                      {treeEntries.map(({ chapter }) => {
+                        const index = classChapters.findIndex((c) => c.id === chapter.id);
+                        const progress = chapterProgress(chapter.id);
+                        const isCurrent = chapter.id === selectedChapterId;
+                        return (
+                          <li key={chapter.id}>
+                            <button
+                              type="button"
+                              className={`class-rail-item ${isCurrent ? "is-active" : ""}`}
+                              aria-current={isCurrent ? "true" : undefined}
+                              onClick={() => pickChapter(chapter.id)}
+                            >
+                              <span className="class-rail-n">{index + 1}</span>
+                              <span>{chapterDisplayTitle(chapter.title)}</span>
+                              {showRailProgress && (
+                                <span className="class-rail-st">
+                                  {progress.completed > 0 ? `${progress.completed}/${progress.total}` : "—"}
+                                </span>
+                              )}
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  </nav>
                 )}
               </aside>
               <div className="lesson-main lesson-main--single">
@@ -744,29 +774,36 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                   <p className="lesson-notice">Không tìm thấy lớp học này.</p>
                 ) : (
                   <>
-                    <header className="lesson-head">
-                      {isAvcn && (
-                        <p className="lesson-eyebrow">
-                          <Link prefetch={false} href="/lop-hoc/cttc">Sinh viên CTTC</Link>
-                        </p>
-                      )}
+                    {/* Đầu trang cùng mẫu trang bài (C3): đường dẫn + Tìm bài một hàng, H1, một dòng meta — chuỗi ngày
+                        là một mục của dòng meta, không còn nhãn tròn riêng. */}
+                    <header className="lesson-head class-head">
+                      <div className="class-crumb-row">
+                        <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
+                          <Link prefetch={false} href={rootHref}>{rootLabel}</Link>
+                          <span aria-hidden className="lesson-crumb-sep">›</span>
+                          <span>{activeDisplayName}</span>
+                        </nav>
+                        {/* Ô tìm bài thu thành nút (B1): bấm mới mở ô nhập ngay dưới tiêu đề. */}
+                        <button
+                          type="button"
+                          className="class-search-btn"
+                          aria-label={searchOpen ? "Đóng ô tìm bài" : "Tìm bài"}
+                          aria-expanded={searchOpen}
+                          aria-controls="class-search"
+                          onClick={() => setSearchOpen((v) => !v)}
+                        >
+                          {searchOpen ? <X size={18} aria-hidden /> : <Search size={18} aria-hidden />}
+                          <span className="class-search-text" aria-hidden>
+                            {searchOpen ? "Đóng" : "Tìm bài"}
+                          </span>
+                        </button>
+                      </div>
                       <h1>{activeDisplayName}</h1>
-                      {!isParent && !isTeacherView && session && rank?.season && rank.daily && rank.daily.streak > 0 && (
-                        <p className="class-streak-chip">🔥 Chuỗi {rank.daily.streak} ngày</p>
-                      )}
-                      {/* Ô tìm bài thu thành icon (B1): bấm mới mở ô nhập ngay dưới tiêu đề. */}
-                      <button
-                        type="button"
-                        className="class-search-btn"
-                        aria-label={searchOpen ? "Đóng ô tìm bài" : "Tìm bài"}
-                        aria-expanded={searchOpen}
-                        aria-controls="class-search"
-                        onClick={() => setSearchOpen((v) => !v)}
-                      >
-                        {searchOpen ? <X size={20} aria-hidden /> : <Search size={20} aria-hidden />}
-                      </button>
-                      {grade && GRADE_DESCRIPTIONS[grade] && (
-                        <p className="lesson-lead">{GRADE_DESCRIPTIONS[grade]}</p>
+                      {(gradeDescription || streakDays > 0) && (
+                        <p className="lesson-meta class-head-meta">
+                          {gradeDescription && <span className="class-head-desc">{gradeDescription}</span>}
+                          {streakDays > 0 && <span>Chuỗi {streakDays} ngày</span>}
+                        </p>
                       )}
                       {grade === "9" && activeSubjectCode === HSG_SUBJECT_CODE && (
                         <p className="lesson-lead">

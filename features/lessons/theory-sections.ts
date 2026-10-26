@@ -243,3 +243,17 @@ export function estimateTheoryTime(html: string): TheoryEstimate {
   }
   return { minutes: computed, quizzes, paceMinutes: computed };
 }
+
+/** Hộp mục tiêu đầu bài ("🎯 Mục tiêu bài học…") trình bày theo bản duyệt 26/10/2026, xử lý lúc render — không sửa
+ *  HTML đã đăng: thêm lớp `tl-goal` (viền trái màu nhấn, CSS bỏ in đậm bên trong — N7), đổi nhãn thành
+ *  "Học xong bài này, em làm được", bỏ dòng "⏱ Khoảng N phút…" vì thời lượng đã ở dòng meta dưới tên bài (N4).
+ *  Gọi trên HTML hiển thị; estimateTheoryTime vẫn đọc HTML gốc để lấy số ⏱. */
+export function decorateGoalBox(html: string): string {
+  if (!html.includes("🎯")) return html;
+  return html
+    .replace(
+      /(<div class="tl-box\b[^"]*)("\s*>\s*<p class="tl-label">)🎯[^<]*(<\/p>)/,
+      "$1 tl-goal$2Học xong bài này, em làm được$3",
+    )
+    .replace(/<p>⏱[^<]*<\/p>\s*/, "");
+}
