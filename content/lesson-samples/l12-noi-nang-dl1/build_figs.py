@@ -134,7 +134,7 @@ b += text(310, 128, "1 kg", ORG, 13, "middle", "700")
 b += text(310, 146, "nhôm", ORG, 13, "middle", "600")
 b += text(310, 200, "c nhôm = 880", ORG, 13, "middle", "700")
 b += text(310, 218, "nhiệt cần: 880 J", "currentColor", 12.5, "middle", "600")
-for i in range(2):
+for i in range(1):                            # 1 ô ≈ 880 J → nước 5 ô (≈4,7 lần)
     b += rect(282 + i * 17, 160, 14, 22, "rgba(251,146,60,.45)", ORG, 1.5, 3)
 
 b += text(220, 70, "cùng", "currentColor", 12.5, "middle", "600")

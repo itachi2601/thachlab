@@ -38,38 +38,39 @@ b += f'<polygon points="72,174 78,140 72,146 66,140" fill="{BLUE}"/>'
 b += text(72, 91, "N", RED, 12, "middle", "700")
 b += text(72, 199, "S", BLUE, 12, "middle", "700")
 b += text(84, 238, "la bàn trong máy", "currentColor", 10, "start", "500")
-b += text(150, 132, "kim chỉ bắc", RED, 12, "start", "700")
-b += text(150, 158, "dù xoay máy", "currentColor", 11, "start", "500")
-b += line(150, 140, 268, 140, RED, 2.4)
-b += arrow("f1", "r", 268, 140, 300, 140, 2.6)
-b += rect(316, 62, 108, 84, "rgba(52,211,153,.14)", GRN, 1.8, 10)
-b += text(370, 92, "cạnh cửa sắt", GRN, 12, "middle", "700")
-b += text(370, 112, "kim lệch hẳn", GRN, 11, "middle", "500")
-b += text(370, 132, "khỏi hướng bắc", GRN, 11, "middle", "500")
-b += line(300, 140, 316, 122, "currentColor", 1.2, "5 4", .7)
+b += arrow("f1", "r", 140, 176, 140, 100, 2.6)
+b += text(154, 132, "kim chỉ bắc", RED, 14, "start", "700")
+b += text(154, 152, "dù xoay máy", "currentColor", 14, "start", "500")
+b += rect(236, 50, 196, 188, "rgba(52,211,153,.14)", GRN, 1.8, 10)
+b += text(334, 76, "cạnh cửa sắt", GRN, 14, "middle", "700")
+b += f'<circle cx="334" cy="130" r="34" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.55"/>'
+b += line(334, 92, 334, 104, "currentColor", 1.2, "3 3", .6)
+b += f'<g transform="translate(334,130) rotate(55)"><polygon points="0,-28 6,0 0,-6 -6,0" fill="{RED}"/><polygon points="0,28 6,0 0,6 -6,0" fill="{BLUE}"/></g>'
+b += text(334, 200, "kim lệch hẳn", GRN, 14, "middle", "500")
+b += text(334, 220, "khỏi hướng bắc", GRN, 14, "middle", "500")
 fig1 = wrap("0 0 440 252",
             "Điện thoại có la bàn: kim chỉ về phía bắc dù xoay máy; đặt cạnh cửa sắt thì kim lệch hẳn",
             b, "Hình 1. La bàn chỉ một phía; gần cửa sắt thì kim lệch.")
 
 # ------------------------------------------- Hình 2: hút – đẩy giữa hai nam châm
 b = defs("f2")
-b += text(14, 22, "a) Khác tên: hút nhau", "currentColor", 12, "start", "700")
-b += rect(24, 44, 78, 42, "rgba(248,113,113,.16)", RED, 2, 6)
-b += rect(102, 44, 78, 42, "rgba(56,189,248,.16)", BLUE, 2, 6)
-b += text(63, 71, "N", RED, 15, "middle", "700")
-b += text(141, 71, "S", BLUE, 15, "middle", "700")
-b += arrow("f2", "r", 84, 65, 106, 65, 2.4)
-b += arrow("f2", "b", 120, 65, 98, 65, 2.4)
-b += text(24, 106, "hút", GRN, 11, "start", "700")
-b += text(230, 22, "b) Cùng tên: đẩy nhau", "currentColor", 12, "start", "700")
-b += rect(240, 44, 78, 42, "rgba(248,113,113,.16)", RED, 2, 6)
-b += rect(318, 44, 78, 42, "rgba(248,113,113,.16)", RED, 2, 6)
-b += text(279, 71, "N", RED, 15, "middle", "700")
-b += text(357, 71, "N", RED, 15, "middle", "700")
-b += arrow("f2", "r", 316, 65, 292, 65, 2.4)
-b += arrow("f2", "r", 320, 65, 344, 65, 2.4)
-b += text(240, 106, "đẩy", RED, 11, "start", "700")
-fig2 = wrap("0 0 440 120",
+b += text(14, 22, "a) Khác tên: hút nhau", "currentColor", 14, "start", "700")
+b += rect(24, 44, 72, 42, "rgba(248,113,113,.16)", RED, 2, 6)
+b += rect(116, 44, 72, 42, "rgba(56,189,248,.16)", BLUE, 2, 6)
+b += text(60, 72, "N", RED, 15, "middle", "700")
+b += text(152, 72, "S", BLUE, 15, "middle", "700")
+b += arrow("f2", "r", 36, 106, 90, 106, 2.4)
+b += arrow("f2", "b", 176, 106, 122, 106, 2.4)
+b += text(106, 134, "hút", GRN, 14, "middle", "700")
+b += text(230, 22, "b) Cùng tên: đẩy nhau", "currentColor", 14, "start", "700")
+b += rect(240, 44, 72, 42, "rgba(248,113,113,.16)", RED, 2, 6)
+b += rect(332, 44, 72, 42, "rgba(248,113,113,.16)", RED, 2, 6)
+b += text(276, 72, "N", RED, 15, "middle", "700")
+b += text(368, 72, "N", RED, 15, "middle", "700")
+b += arrow("f2", "r", 300, 106, 246, 106, 2.4)
+b += arrow("f2", "r", 344, 106, 398, 106, 2.4)
+b += text(322, 134, "đẩy", RED, 14, "middle", "700")
+fig2 = wrap("0 0 440 146",
             "Hai nam châm: khác tên hút nhau, cùng tên đẩy nhau",
             b, "Hình 2. Khác cực hút, cùng cực đẩy.")
 
@@ -81,20 +82,19 @@ b += rect(44, 72, 68, 30, "rgba(248,113,113,.18)", RED, 2, 4)
 b += rect(112, 72, 68, 30, "rgba(56,189,248,.18)", BLUE, 2, 4)
 b += text(78, 93, "N", RED, 13, "middle", "700")
 b += text(146, 93, "S", BLUE, 13, "middle", "700")
-b += f'<path d="M78,72 C78,42 146,42 146,72" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 4"/>'
-b += f'<path d="M78,102 C78,132 146,132 146,102" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 4"/>'
-b += f'<path d="M44,87 C14,87 20,34 112,34 C204,34 210,87 180,87" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 4"/>'
-b += f'<path d="M44,87 C14,87 20,140 112,140 C204,140 210,87 180,87" fill="none" stroke="{RED}" stroke-width="1.8" stroke-dasharray="6 4"/>'
-b += chevron(118, 49, 18.0, -1.0, RED, 1.8, 10)
-b += chevron(126, 124, 18.0, -1.0, RED, 1.8, 10)
+D = 'fill="none" stroke="{}" stroke-width="1.8" stroke-dasharray="6 4"'.format(RED)
+b += f'<path d="M44,87 C14,87 20,34 112,34 C204,34 210,87 180,87" {D}/>'
+b += f'<path d="M44,87 C14,87 20,140 112,140 C204,140 210,87 180,87" {D}/>'
+b += f'<path d="M44,79 C26,79 40,56 112,56 C184,56 198,79 180,79" {D}/>'
+b += f'<path d="M44,95 C26,95 40,118 112,118 C184,118 198,95 180,95" {D}/>'
+b += f'<path d="M180,79 L44,79" {D}/>'
+b += f'<path d="M180,95 L44,95" {D}/>'
 b += chevron(124, 34, 24.0, 0.0, RED, 1.8, 10)
 b += chevron(124, 140, 24.0, 0.0, RED, 1.8, 10)
-def _bz(P, t):
-    u = 1 - t
-    return tuple(u**3*P[0][k] + 3*u*u*t*P[1][k] + 3*u*t*t*P[2][k] + t**3*P[3][k] for k in (0, 1))
-for P in (((112, 34), (204, 34), (210, 87), (180, 87)), ((112, 140), (204, 140), (210, 87), (180, 87))):
-    a, c = _bz(P, 0.66), _bz(P, 0.74)
-    b += chevron(round(c[0], 1), round(c[1], 1), c[0] - a[0], c[1] - a[1], RED, 1.8, 10)
+b += chevron(124, 56, 24.0, 0.0, RED, 1.8, 10)
+b += chevron(124, 118, 24.0, 0.0, RED, 1.8, 10)
+b += chevron(100, 79, -24.0, 0.0, RED, 1.8, 10)
+b += chevron(100, 95, -24.0, 0.0, RED, 1.8, 10)
 b += text(14, 166, "ra ở bắc, vào ở nam", "currentColor", 10, "start", "500")
 # b) nam châm chữ U — N bên trái, S bên phải (đường sức giữa hai cực đi từ N sang S)
 b += text(232, 20, "b) Chữ U", "currentColor", 11, "start", "700")
@@ -108,11 +108,15 @@ b += text(232, 129, "→ từ trường đều", GRN, 10, "start", "600")
 # c) từ phổ mạt sắt
 b += text(14, 186, "c) Từ phổ", "currentColor", 11, "start", "700")
 b += rect(18, 196, 136, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
-b += f'<path d="M24,202 C54,252 112,252 148,198" fill="none" stroke="{GRN}" stroke-width="1.6" stroke-dasharray="2 3"/>'
-b += f'<path d="M20,218 C50,256 116,256 152,194" fill="none" stroke="{GRN}" stroke-width="1.6" stroke-dasharray="2 3"/>'
-b += f'<path d="M20,238 C50,262 116,262 152,198" fill="none" stroke="{GRN}" stroke-width="1.6" stroke-dasharray="2 3"/>'
-b += f'<ellipse cx="86" cy="226" rx="6" ry="15" fill="{RED}" stroke="currentColor" stroke-width="1"/>'
-b += text(86, 274, "ảnh thật", "currentColor", 10, "middle", "500")
+F = 'fill="none" stroke="{}" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 5"'.format(GRN)
+b += rect(60, 223, 52, 10, "rgba(248,113,113,.2)", "currentColor", 1.2, 2)
+for k in (0, 1):
+    h = 22 + 14 * k
+    b += f'<path d="M60,228 C{36-8*k},228 {36-8*k},{228-h} 86,{228-h} C{136+8*k},{228-h} {136+8*k},228 112,228" {F}/>'
+    b += f'<path d="M60,228 C{36-8*k},228 {36-8*k},{228+h} 86,{228+h} C{136+8*k},{228+h} {136+8*k},228 112,228" {F}/>'
+b += f'<path d="M58,228 L24,228" {F}/>'
+b += f'<path d="M114,228 L148,228" {F}/>'
+b += text(86, 274, "mạt sắt dày ở hai cực", "currentColor", 10, "middle", "500")
 # d) đường vẽ theo quy ước
 b += text(232, 186, "d) Đường quy ước", "currentColor", 11, "start", "700")
 b += rect(236, 196, 190, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)

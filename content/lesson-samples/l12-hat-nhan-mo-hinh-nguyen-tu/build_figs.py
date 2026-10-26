@@ -56,9 +56,15 @@ b += text(237, 232, "nguyên tử", ORG, 10, "middle", "500")
 b += arrow("f1", "g", 102, 126, 356, 126, 2.4)
 b += text(300, 168, "hầu hết bay thẳng", GRN, 11, "start", "700")
 # tia lệch: vào thẳng tới sát hạt nhân rồi gãy khúc lệch lên — không đi xuyên qua hạt nhân
-b += (f'<path d="M102,126 L237,104 L404,52" fill="none" stroke="{ORG}" stroke-width="2.4"'
+b += (f'<path d="M102,126 L237,104 L380,46" fill="none" stroke="{ORG}" stroke-width="2.4"'
       f' marker-end="url(#f1-o)"/>')
-b += text(404, 44, "lệch mạnh: vài hạt", ORG, 11, "end", "700")
+b += rect(386, 28, 48, 28, "rgba(148,163,184,.10)", "currentColor", 1.6, 5)
+b += text(410, 46, "máy dò", "currentColor", 11, "middle", "700")
+b += text(380, 22, "lệch mạnh: vài hạt", ORG, 11, "end", "700")
+# góc lệch φ giữa hướng ban đầu (nét đứt ngang) và hướng sau tán xạ
+b += line(237, 104, 310, 104, "currentColor", 1.2, "4 4", .6)
+b += f'<path d="M277,104 A40,40 0 0 0 273.9,88.6" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+b += text(282, 98, "φ", "currentColor", 14, "start", "700")
 b += arrow("f1", "r", 231, 100, 134, 58, 2.6)
 b += text(126, 50, "bật ngược", RED, 11, "end", "700")
 b += f'<circle cx="237" cy="104" r="7" fill="rgba(248,113,113,.35)" stroke="{RED}" stroke-width="2"/>'
@@ -92,8 +98,9 @@ b += f'<circle cx="352" cy="112" r="46" fill="none" stroke="{BLUE}" stroke-width
 b += dot(328, 112, 4.5, BLUE) + dot(352, 66, 4.5, BLUE)
 b += text(352, 166, "quỹ đạo cho phép,", "currentColor", 10, "middle", "500")
 b += text(352, 180, "có năng lượng xác định", "currentColor", 10, "middle", "500")
-b += text(16, 238, "Nguyên tử gần như trống: hạt nhân chiếm một phần mười nghìn tỉ thể tích", "currentColor", 10, "start", "500")
-fig2 = wrap2("0 0 440 250", "Ba mô hình nguyên tử đặt cạnh nhau: Thomson cầu đặc, Rutherford có hạt nhân nhỏ ở giữa, Bohr thêm các quỹ đạo cho phép",
+b += text(16, 238, "Nguyên tử gần như trống: hạt nhân chiếm cỡ một phần mười nghìn tỉ thể tích", "currentColor", 11, "start", "500")
+b += text(16, 252, "Hạt nhân vẽ phóng to, không đúng tỉ lệ", "currentColor", 11, "start", "500")
+fig2 = wrap2("0 0 440 262", "Ba mô hình nguyên tử đặt cạnh nhau: Thomson cầu đặc, Rutherford có hạt nhân nhỏ ở giữa, Bohr thêm các quỹ đạo cho phép",
              b, "Hình 2. Ba mô hình nguyên tử: Thomson bị thí nghiệm lá vàng bác bỏ; Rutherford có hạt nhân nhỏ, nặng; Bohr thêm các quỹ đạo xác định.")
 
 # ---------------------------------------------- Hình 3: kí hiệu hạt nhân

@@ -49,28 +49,35 @@ def wrap_fig(vb, label, body, cap, exp=""):
 b = defs("f1")
 b += text(14, 24, "Trong hạt nhân: đẩy và hút cùng tồn tại", "currentColor", 13, "start", "700")
 b += rect(20, 44, 186, 142, "rgba(248,113,113,.10)", RED, 1.6, 12)
-b += text(113, 64, "hạt nhân heli-4", RED, 12.5, "middle", "700")
-# 2 proton (đỏ) + 2 neutron (xanh)
-b += f'<circle cx="113" cy="126" r="57" fill="none" stroke="{RED}" stroke-width="2" stroke-dasharray="6 5" opacity=".85"/>'
-b += dot(76, 112, 15, RED) + dot(150, 112, 15, RED)
-b += dot(113, 152, 15, BLUE) + dot(113, 86, 15, BLUE)
-b += text(76, 117, "p", "#0f172a", 13, "middle", "700")
-b += text(150, 117, "p", "#0f172a", 13, "middle", "700")
-b += text(113, 157, "n", "#0f172a", 13, "middle", "700")
-b += text(113, 91, "n", "#0f172a", 13, "middle", "700")
-# hai mũi tên đẩy nhau giữa hai prôtôn
-# hai prôtôn đẩy nhau: mũi tên ngang mức hai chữ p, hướng ra phía ngoài mỗi hạt
-b += arrow("f1", "g", 59, 112, 28, 112, 2.2)
-b += arrow("f1", "g", 167, 112, 198, 112, 2.2)
-b += text(113, 210, "hai prôtôn đẩy nhau", GRN, 12.5, "middle", "700")
-# chú thích lực hạt nhân
-b += text(222, 84, "lực hạt nhân", RED, 13, "start", "700")
-b += text(222, 104, "hút mọi cặp", RED, 12.5, "start", "600")
-b += text(222, 120, "nuclôn, mạnh", RED, 12.5, "start", "600")
-b += text(222, 136, "hơn hẳn lực", RED, 12.5, "start", "600")
-b += text(222, 152, "đẩy tĩnh điện", RED, 12.5, "start", "600")
-b += text(222, 176, "tầm 10⁻¹⁵ m", BLUE, 13, "start", "700")
-b += text(14, 232, "4 nuclôn = 2 prôtôn (p) + 2 nơtron (n)", "currentColor", 12.5, "start", "600")
+b += text(113, 57, "hạt nhân heli-4", RED, 13, "middle", "700")
+# 2 proton (đỏ) + 2 neutron (xanh), bán kính 13, đặt giãn ra để thấy lực hút giữa các cặp kề nhau
+b += f'<circle cx="113" cy="119" r="57" fill="none" stroke="{RED}" stroke-width="2" stroke-dasharray="6 5" opacity=".85"/>'
+P1, P2, N1, N2 = (70, 119), (156, 119), (113, 157), (113, 81)
+for (x, y), c in ((P1, RED), (P2, RED), (N1, BLUE), (N2, BLUE)):
+    b += dot(x, y, 13, c)
+for (x, y), t in ((P1, "p"), (P2, "p"), (N1, "n"), (N2, "n")):
+    b += text(x, y + 5, t, "#0f172a", 14, "middle", "700")
+# lực hạt nhân (cam): mỗi cặp p–n kề nhau hút nhau, hai mũi tên ngắn hướng vào nhau
+import math
+for A, B in ((P1, N2), (P2, N2), (P1, N1), (P2, N1)):
+    d = math.hypot(B[0] - A[0], B[1] - A[1])
+    ux, uy = (B[0] - A[0]) / d, (B[1] - A[1]) / d
+    for (S, sg) in ((A, 1), (B, -1)):
+        x0, y0 = S[0] + sg * ux * 14.5, S[1] + sg * uy * 14.5
+        x1, y1 = S[0] + sg * ux * 26.5, S[1] + sg * uy * 26.5
+        b += arrow("f1", "o", round(x0, 1), round(y0, 1), round(x1, 1), round(y1, 1), 2)
+# hai prôtôn đẩy nhau (xanh lá): mũi tên ngang, hướng ra phía ngoài mỗi hạt
+b += arrow("f1", "g", 55, 119, 28, 119, 2.2)
+b += arrow("f1", "g", 171, 119, 198, 119, 2.2)
+b += text(113, 210, "hai prôtôn đẩy nhau", GRN, 14, "middle", "700")
+# chú thích: nhãn đặt ngay cạnh khung, cùng màu cam với mũi tên lực hút
+b += text(214, 84, "lực hạt nhân:", ORG, 14, "start", "700")
+b += text(214, 104, "mũi tên cam", ORG, 14, "start", "600")
+b += text(214, 124, "hút các nuclôn", ORG, 14, "start", "600")
+b += text(214, 144, "kề nhau", ORG, 14, "start", "600")
+b += text(214, 172, "mạnh hơn lực đẩy", "currentColor", 14, "start", "600")
+b += text(214, 192, "tầm 10⁻¹⁵ m", "currentColor", 14, "start", "600")
+b += text(14, 232, "4 nuclôn = 2 prôtôn (p) + 2 nơtron (n)", "currentColor", 14, "start", "600")
 fig1 = wrap_fig("0 0 420 244",
                 "Mô hình hạt nhân heli-4 gồm hai prôtôn đẩy nhau và hai nơtron, được lực hạt nhân hút lại",
                 b,
@@ -111,37 +118,42 @@ fig2 = wrap_fig("0 0 420 254",
 # ------------------------------------------------- Hình 3: đường cong năng lượng liên kết riêng (mục 5)
 b = defs("f3")
 b += text(14, 22, "Năng lượng liên kết riêng theo số khối", "currentColor", 13, "start", "700")
-# trục
+# trục: A chia đúng tỉ lệ (x = 52 + 1,5·A), E/A: 0 → 190, 8,8 → 60
+def X(a): return 52 + 1.5 * a
+def Y(e): return round(190 - e * 130 / 8.8, 1)
 b += line(52, 190, 414, 190, "currentColor", 2)
 b += line(52, 190, 52, 40, "currentColor", 2)
-b += text(408, 208, "A", "currentColor", 12, "end", "700")
+b += text(414, 224, "A", "currentColor", 14, "end", "700")
 b += text(16, 36, "MeV/nuclôn", "currentColor", 12, "start", "600")
 b += line(52, 60, 414, 60, "currentColor", 1, "5 4", .3)
 b += text(46, 64, "8,8", "currentColor", 12, "end", "600")
 b += line(52, 125, 414, 125, "currentColor", 1, "5 4", .3)
 b += text(46, 129, "4,4", "currentColor", 12, "end", "600")
 b += text(46, 193, "0", "currentColor", 12, "end", "600")
-# vùng A=50..80 tô nhạt
-b += rect(160, 32, 74, 158, "rgba(52,211,153,.10)", GRN, 1, 6)
-b += text(197, 224, "vùng bền nhất", GRN, 12.5, "middle", "700")
-b += text(197, 240, "A ≈ 50 – 80", GRN, 12.5, "middle", "600")
-# đường cong phác hoạ: trục tung đúng thang 0–4,4–8,8, các điểm đúng giá trị
-# (A, E/A) -> toạ độ; trục hoành vẽ phác hoạ, không theo tỉ lệ
-diem = [(56, 174), (72, 86), (100, 77), (125, 72), (197, 60), (250, 61), (310, 66), (368, 74), (404, 78)]
-d = " ".join(f"{x},{y}" for x, y in diem)
+for a in (0, 50, 100, 150, 200):
+    b += line(X(a), 190, X(a), 196, "currentColor", 2)
+    b += text(X(a), 212, str(a), "currentColor", 12, "middle", "600")
+# vùng bền A = 50..80 tô nhạt
+b += rect(X(50), 32, X(80) - X(50), 158, "rgba(52,211,153,.10)", GRN, 1, 6)
+b += text(X(65), 242, "vùng bền nhất: A ≈ 50 – 80", GRN, 13, "middle", "700")
+# đường cong theo số liệu thực (A, E/A MeV): He-4 nhô lên so với H-3, Li-6
+diem = [(2, 1.11), (3, 2.83), (4, 7.07), (6, 5.33), (9, 6.46), (12, 7.68), (16, 7.98), (30, 8.52),
+        (56, 8.79), (100, 8.55), (150, 8.2), (200, 7.87), (238, 7.57)]
+d = " ".join(f"{X(a):.1f},{Y(e)}" for a, e in diem)
 b += f'<polyline fill="none" stroke="{GRN}" stroke-width="2.6" points="{d}"/>'
-for x, y in diem:
-    b += dot(x, y, 3.5, GRN)
-b += text(197, 50, "Fe-56", GRN, 12.5, "middle", "700")
-b += text(80, 106, "He-4", BLUE, 12.5, "start", "700")
-b += text(392, 66, "U-235", ORG, 12.5, "middle", "700")
-b += text(14, 240, "trục hoành: vẽ phác hoạ", "currentColor", 11, "start", "500")
+for a, e in ((4, 7.07), (56, 8.79), (235, 7.6)):
+    b += dot(round(X(a), 1), Y(e), 4, GRN)
+b += text(X(56), 50, "Fe-56", GRN, 13, "middle", "700")
+b += line(round(X(4), 1), Y(7.07) + 5, 70, 132, BLUE, 1.2)
+b += text(66, 148, "He-4", BLUE, 13, "start", "700")
+b += text(410, Y(7.6) - 8, "U-235", ORG, 13, "end", "700")
 # hai mũi tên chỉ hai chiều tiến về đỉnh
-b += arrow("f3", "b", 78, 170, 150, 98, 2.2)
-b += text(108, 184, "nhẹ: hợp lại", BLUE, 12, "middle", "700")
-b += arrow("f3", "o", 400, 94, 300, 86, 2.2)
-b += text(368, 108, "nặng: vỡ ra", ORG, 12, "middle", "700")
-fig3 = wrap_fig("0 0 420 250",
+b += arrow("f3", "b", 100, 168, 116, 116, 2.2)
+b += text(58, 166, "nhẹ:", BLUE, 13, "start", "700")
+b += text(58, 182, "hợp lại", BLUE, 13, "start", "700")
+b += arrow("f3", "o", 396, 104, 300, 92, 2.2)
+b += text(362, 124, "nặng: vỡ ra", ORG, 13, "middle", "700")
+fig3 = wrap_fig("0 0 420 252",
                 "Đường cong phác hoạ năng lượng liên kết riêng theo số khối, đạt đỉnh quanh sắt-56 ở 8,8 MeV mỗi nuclôn",
                 b,
                 "Hình 3. Năng lượng liên kết riêng đạt đỉnh quanh sắt-56 (khoảng 8,8 MeV/nuclôn). Bên trái đỉnh, "
@@ -150,32 +162,34 @@ fig3 = wrap_fig("0 0 420 250",
 # ------------------------------------------------- Hình 4: hai thang năng lượng (hoá học vs hạt nhân, mục 6)
 b = defs("f4")
 b += text(14, 22, "Hai thang năng lượng, cách nhau cả triệu lần", "currentColor", 13, "start", "700")
-b += arrow("f4", "r", 30, 40, 404, 40, 2)
-b += text(30, 58, "năng lượng tăng theo chiều này", "currentColor", 12.5, "start", "600")
+# trục năng lượng đứng: mũi tên chỉ LÊN, các cột cùng đứng trên một đáy chung
+b += arrow("f4", "r", 22, 252, 22, 70, 2)
+b += text(14, 42, "năng lượng", "currentColor", 14, "start", "600")
+b += text(14, 58, "tăng lên", "currentColor", 14, "start", "600")
+b += line(40, 260, 410, 260, "currentColor", 2)
 # hai mốc năng lượng: mỗi đường đứt nét đi đúng ĐỈNH cột tương ứng
-b += line(96, 74, 404, 74, "currentColor", 1, "5 4", .3)
-b += line(96, 198, 404, 198, "currentColor", 1, "5 4", .3)
-b += text(90, 78, "28,3 MeV", "currentColor", 12, "end", "600")
-b += text(90, 202, "8 eV", "currentColor", 12, "end", "600")
-# cột hoá học
-b += rect(92, 198, 36, 20, "rgba(251,146,60,.35)", ORG, 1.6, 4)
-b += arrow("f4", "o", 110, 248, 110, 220, 2)
-b += text(110, 264, "hoá học", ORG, 12, "middle", "700")
-b += text(110, 280, "≈ 8 eV", ORG, 12, "middle", "700")
-b += text(110, 296, "một phân tử", "currentColor", 11.5, "middle", "500")
+b += line(104, 74, 410, 74, "currentColor", 1, "5 4", .3)
+b += line(104, 240, 410, 240, "currentColor", 1, "5 4", .3)
+b += text(98, 79, "28,3 MeV", "currentColor", 13, "end", "600")
+b += text(98, 245, "8 eV", "currentColor", 13, "end", "600")
+# cột hoá học (đứng trên đáy chung)
+b += rect(108, 240, 36, 20, "rgba(251,146,60,.35)", ORG, 1.6, 4)
+b += text(126, 282, "hoá học", ORG, 14, "middle", "700")
+b += text(126, 298, "≈ 8 eV", ORG, 14, "middle", "700")
+b += text(126, 314, "một phân tử", "currentColor", 12, "middle", "500")
 # cột hạt nhân: cùng bề rộng, cao hơn hẳn
-b += rect(262, 74, 36, 144, "rgba(56,189,248,.35)", BLUE, 1.6, 4)
-b += text(280, 264, "hạt nhân", BLUE, 12, "middle", "700")
-b += text(280, 280, "≈ 28,3 MeV", BLUE, 12, "middle", "700")
-b += text(280, 296, "một nguyên tử He-4", "currentColor", 11.5, "middle", "500")
-# chú thích
-b += line(168, 162, 254, 156, GRN, 1.4, "4 3", .9)
-b += text(250, 132, "lớn hơn cỡ", RED, 13, "end", "700")
-b += text(250, 148, "ba triệu lần", RED, 13, "end", "700")
-b += text(30, 122, "cột vẽ phóng đại", "currentColor", 11.5, "start", "500")
-b += text(30, 136, "cho thấy được", "currentColor", 11.5, "start", "500")
-b += text(14, 320, "cùng khối lượng: năng lượng hạt nhân lớn hơn hoá học rất nhiều", "currentColor", 12, "start", "600")
-fig4 = wrap_fig("0 0 420 334",
+b += rect(262, 74, 36, 186, "rgba(56,189,248,.35)", BLUE, 1.6, 4)
+b += text(280, 282, "hạt nhân", BLUE, 14, "middle", "700")
+b += text(280, 298, "≈ 28,3 MeV", BLUE, 14, "middle", "700")
+b += text(280, 314, "một nguyên tử He-4", "currentColor", 12, "middle", "500")
+# chênh lệch giữa hai đỉnh cột: mũi tên hai đầu, nhãn ngay cạnh
+b += arrow("f4", "r", 318, 157, 318, 79, 2)
+b += arrow("f4", "r", 318, 157, 318, 235, 2)
+b += text(328, 150, "lớn hơn cỡ", RED, 13, "start", "700")
+b += text(328, 166, "ba triệu lần", RED, 13, "start", "700")
+b += text(14, 340, "hai cột không đúng tỉ lệ: cột hoá học vẽ phóng đại", "currentColor", 12, "start", "500")
+b += text(14, 358, "cùng khối lượng: năng lượng hạt nhân lớn hơn hoá học rất nhiều", "currentColor", 12, "start", "600")
+fig4 = wrap_fig("0 0 420 368",
                 "So sánh thang năng lượng hoá học cỡ vài eV với năng lượng liên kết hạt nhân cỡ vài MeV",
                 b,
                 "Hình 4. Năng lượng hoá học cỡ vài eV cho một phân tử, năng lượng liên kết hạt nhân cỡ vài MeV — "

@@ -174,17 +174,25 @@ b = defs("f4c")
 cy = 130; rx, ry = 12, 44
 xs = [110 + 40 * i for i in range(6)]
 x0, x1 = xs[0] - 24, xs[-1] + rx + 34
-ax = [x0]
+import math
+OFF = 20                                                                  # hai đường sức song song, cách trục đều nhau
+tOff = math.degrees(math.asin(OFF / ry))                                   # góc elip tại độ cao ±OFF
+for yy in (cy - OFF, cy, cy + OFF):
+    ax = [x0]
+    for x in xs:
+        dxo = rx * math.cos(math.asin((yy - cy) / ry))
+        ax += [x + dxo - 6, x + dxo + 6]                                   # nửa phải mỗi vòng ở phía trước, đè lên đường sức
+    ax.append(x1)
+    for i in range(0, len(ax), 2):
+        b += line(ax[i], yy, ax[i + 1], yy, BLUE, 2.2, "6 4")
+    b += chevron(x1, yy, 1, 0, BLUE, 2.2) + chevron(132, yy, 1, 0, BLUE, 2.2)
+g = GAP * 1.3
 for x in xs:
-    ax += [x + rx - 6, x + rx + 6]                                     # nửa phải mỗi vòng ở phía trước, đè lên đường sức
-ax.append(x1)
-for i in range(0, len(ax), 2):
-    b += line(ax[i], cy, ax[i + 1], cy, BLUE, 2.2, "6 4")
-b += chevron(x1, cy, 1, 0, BLUE, 2.2) + chevron(190, cy, 1, 0, BLUE, 2.2)
-for x in xs:
-    b += pts_path(arc_pts(x, cy, rx, ry, 90, 180 - GAP * 1.3), "currentColor", W)    # nửa trái ở phía sau: đường sức đè lên
-    b += pts_path(arc_pts(x, cy, rx, ry, 180 + GAP * 1.3, 270), "currentColor", W)
-    b += pts_path(arc_pts(x, cy, rx, ry, -90, 90), "currentColor", W)
+    # nửa trái ở phía sau: ba đường sức đè lên -> bỏ đoạn vòng nằm giữa ba đường sức
+    h = tOff + 7
+    b += pts_path(arc_pts(x, cy, rx, ry, 90, 180 - h, n=5), "currentColor", W)
+    b += pts_path(arc_pts(x, cy, rx, ry, 180 + h, 270, n=5), "currentColor", W)
+    b += pts_path(arc_pts(x, cy, rx, ry, -90, 90, n=14), "currentColor", W)
     if x in (xs[1], xs[4]):
         px, py = ell_pt(x, cy, rx, ry, 40)
         dx, dy = ell_tan(rx, ry, 40, 1)

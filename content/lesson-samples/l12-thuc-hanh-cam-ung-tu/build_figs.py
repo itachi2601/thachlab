@@ -108,7 +108,9 @@ b += field_line(40, 150, 330, 150, GRN, 2.2)
 b += text(342, 157, "B", GRN, 16, "start", "700")
 b += line(120, 150, 195, 20, "currentColor", 4)
 b += '<circle cx="120" cy="150" r="5" fill="currentColor"/>'
-b += text(206, 46, "dây, dòng I", "currentColor", 14, "start", "700")
+b += text(206, 46, "dây dẫn", "currentColor", 14, "start", "700")
+b += arrow("o", "o", 157, 41, 120, 106, 2.8)             # chiều dòng điện I (song song dây): đi xuống-trái để L×B hướng ra khỏi trang
+b += text(112, 76, "I", ORG, 16, "end", "700")
 b += '<path d="M165,150 A45,45 0 0 0 142.5,111" fill="none" stroke="' + ORG + '" stroke-width="2.5"/>'
 b += text(176, 134, "θ = 60°", ORG, 14, "start", "700")
 b += '<circle cx="64" cy="204" r="9" fill="none" stroke="' + RED + '" stroke-width="2"/><circle cx="64" cy="204" r="3" fill="' + RED + '"/>'
