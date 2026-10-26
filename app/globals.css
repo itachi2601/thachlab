@@ -2835,6 +2835,11 @@ body:has(.admin-shell.is-open) .fixed.bottom-5 { display: none; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo { margin: 0 0 2px; font-size: 1.1rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
 /* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
    Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
 .exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
