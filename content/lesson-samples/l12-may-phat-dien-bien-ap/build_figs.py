@@ -95,12 +95,12 @@ b += line(330, 86, 330, 74, ORG, 2.4)
 b += line(358, 94, 370, 94, ORG, 2.4)
 b += text(374, 98, "chổi quét", ORG, 11, "start", "600")
 b += text(320, 70, "vành khuyên", ORG, 11, "start", "600")
-b += text(236, 170, "khung dây", BLUE, 11, "start", "600")
-b += text(236, 188, "ra mạch ngoài", "currentColor", 11, "start", "600")
+b += text(240, 128, "khung dây", BLUE, 11, "end", "600")
+b += text(362, 124, "ra mạch ngoài", "currentColor", 11, "start", "600")
 fig2 = wrap("0 0 440 196",
-            "Hai cách bố trí máy phát điện xoay chiều một pha: cho nam châm quay thì lấy điện trực tiếp; cho khung dây quay thì phải dùng vành khuyên và chổi quét",
+            "Hai cách bố trí máy phát điện xoay chiều một pha: cho nam châm quay thì lấy điện trực tiếp; cho khung dây quay trong từ trường B với tốc độ góc ω thì phải dùng vành khuyên và chổi quét",
             b,
-            "Hình 2. Hai cách bố trí: (a) nam châm quay — lấy điện trực tiếp; (b) khung dây quay — cần vành khuyên.")
+            "Hình 2. Hai cách bố trí: (a) nam châm quay — lấy điện trực tiếp; (b) khung dây quay với tốc độ góc ω trong từ trường B — cần vành khuyên và chổi quét để đưa điện ra mạch ngoài.")
 
 # ------------------------------------------------- Hình 3: ba pha — ba cuộn dây và ba suất điện động
 b = defs("f3")
@@ -176,7 +176,7 @@ b += text(14, 208, "không đổi tần số · không sinh thêm điện năng"
 fig4 = wrap("0 0 440 220",
             "Sơ đồ máy biến áp: cuộn sơ cấp và cuộn thứ cấp quấn trên một lõi thép kín ghép từ các lá mỏng cách điện",
             b,
-            "Hình 4. Sơ đồ máy biến áp một pha.")
+            "Hình 4. Sơ đồ máy biến áp một pha; từ thông Φ<sub>B</sub> khép kín trong lõi.")
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
