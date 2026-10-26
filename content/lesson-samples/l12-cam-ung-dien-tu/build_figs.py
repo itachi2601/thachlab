@@ -65,9 +65,10 @@ b += text(140, 66, "từ trường nam châm", RED, 12)
 b += arrow("f3", "o", 316, 112, 316, 88, 3)
 b += text(326, 104, "i", ORG, 15, "start", "700")
 b += text(326, 120, "dòng cảm ứng", ORG, 12)
+b += text(426, 186, "nhìn từ phía nam châm: ngược chiều kim đồng hồ", ORG, 11, "end")
 b += text(24, 156, "lực đẩy cản lại", RED, 12)
-b += text(24, 192, "Từ thông tăng → từ trường cảm ứng ngược chiều → cản sự tăng", "currentColor", 12, "start", "400")
-fig3 = wrap("0 0 430 205", "Định luật Lenz: nam châm tiến lại gần, vòng dây tạo cực cùng tên để đẩy ra",
+b += text(24, 210, "Từ thông tăng → từ trường cảm ứng ngược chiều → cản sự tăng", "currentColor", 12, "start", "400")
+fig3 = wrap("0 0 430 220", "Định luật Lenz: nam châm tiến lại gần, vòng dây tạo cực cùng tên để đẩy ra; dòng cảm ứng nhìn từ phía nam châm ngược chiều kim đồng hồ",
             b, "Hình 3. Từ thông tăng nên vòng dây tạo cực Bắc ở đầu gần: hai cực cùng tên <em>đẩy</em> nhau, cản nam châm tiến vào.")
 
 src = open("theory.src.html", encoding="utf8").read()
