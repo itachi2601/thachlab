@@ -14,6 +14,7 @@ Thầy chốt 25/10/2026: phần thí nghiệm trong bài lý thuyết phải vi
 - Quy tắc T1–T12 + checklist: `docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md`.
 - Skill làm tiếp các bài: `.claude/skills/cap-nhat-thi-nghiem-l12/SKILL.md` (bảng 22 bài L12 + id, thứ tự ưu tiên 5 → 11 → 13 → 7 → 4).
 - Đã đăng: L12 Bài 14 (id 15) 25/10, sao lưu `scripts/logs/ly-thuyet-bai15-backup-1792921923643.json`.
+- 25–26/10: cả 21 bài L12 đã đăng theo khung (8 lô, 2–3 agent soạn song song + kiem-code mỗi bài); sao lưu từng bài ghi trong `docs/STATE.md`. Còn chờ: đăng lại id 6 sau khi gộp mẹo NHỎ–LOẠN–ĐẬP của phiên khác; nhánh ruột tập data-tap phải merge main trước.
 
 **Why:** học sinh thuộc kết luận nhưng mất ý c) cơ chế và d) giới hạn của câu Đúng/Sai; bài cũ lộ kết quả trước hộp Dự đoán.
 **How to apply:** mỗi lượt 1–3 bài cùng chương; đo `lint_do_dai` trước vì khung 6 ô dài gấp đôi; đăng bằng `cap-nhat-ly-thuyet.sh`
