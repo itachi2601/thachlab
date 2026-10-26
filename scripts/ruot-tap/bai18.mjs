@@ -81,7 +81,7 @@ ${tb('4. Vì sao lùi xa gấp đôi thì liều còn một phần tư?')}${line
 ${tb('5. Biển cảnh báo phóng xạ đặt ở đâu, để làm gì?')}${lines(2)}
 ${tb('6. Xử lí chất thải phóng xạ theo bước nào, vì sao tách theo chu kì?')}${lines(2)}`)}
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/6 câu · câu chưa thuộc: ${f(30)} → đọc lại ô Tập ${f(14)}</div>
-${h3(3, 'Kết quả tự kiểm tra câu 2–7', '3·3')}
+${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·3')}
 ${rkHai([2, 3, 4], [5, 6, 7])}
 ${foot(3)}</section>`;
 
@@ -90,7 +90,7 @@ ${head('BÀI TOÁN MẪU · SUẤT LIỀU 90 µSv/h TẠI 1 m')}
 ${h3(1, 'V · Đề bài', '4')}
 <div class="card soft" style="padding:1.2mm 3mm">Nguồn ${m('{}^{192}_{77}\\mathrm{Ir}')}: máy đo cho ${m('90\\ \\mu\\mathrm{Sv/h}')} tại 1 m. Kỹ thuật viên đứng ở 3 m, mỗi ca 30 phút, cả năm 2 000 giờ; giới hạn nghề nghiệp 20 mSv/năm.
 <div><b>a)</b> Suất liều ở 3 m?</div><div><b>b)</b> Liều trong 30 phút ở 3 m?</div><div><b>c)</b> Ở 1 m trong 30 phút, liều gấp mấy lần?</div><div><b>d)</b> 2 000 giờ/năm ở 3 m có vượt giới hạn?</div></div>
-${h3(2, 'Phân tích đề')}
+${h3(2, 'Phân tích đề (điền cùng thầy)')}
 <table><tr><th style="width:46mm">Câu trong đề</th><th style="width:36mm">Dữ liệu</th><th>Kiến thức liên quan</th></tr>
 <tr><td>“90 µSv/h tại 1 m”</td><td>${m('\\dot H_1=90')}</td><td>suất liều gốc</td></tr>
 <tr><td style="height:6.5mm">“đứng cách nguồn 3 m”</td><td></td><td></td></tr>
@@ -102,7 +102,7 @@ ${wl('a)', 2)}${wl('b)', 2)}${wl('c)', 2)}${wl('d)', 3)}</div>${hinh.nguoiSauChi
 ${h3(4, 'Mở rộng: 160 µSv/h tại 1 m')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln" style="height:auto;padding-top:1mm"><b>Đề:</b> đứng cách 2 m trong 15 phút, mỗi ca không quá 0,01 mSv. <b>Bước 1 (cho sẵn):</b> xa gấp 2 ⇒ ${hd}${m('_2=160/4=40\\ \\mu\\mathrm{Sv/h}')}.</div>
-${wl('Bước 2: liều trong 15 phút = …', 2)}${wl('Bước 3: đứng tối đa bao lâu để H ≤ 10 µSv?', 2)}</div>
+${wl('Bước 2: liều trong 15 phút = …', 2)}${wl('Bước 3: muốn liều ≤ 5 µSv thì đứng tối đa mấy phút?', 2)}</div>
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Em tự kiểm:</b> ${ck}đổi phút ra giờ &nbsp;${ck}chia theo tỉ số khoảng cách &nbsp;${ck}có ghi đơn vị</div>
 ${foot(4)}</section>`;
 

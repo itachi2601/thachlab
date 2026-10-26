@@ -64,16 +64,18 @@ export const hinhCh4 = {
     haiThanh('hạt rời: 4,032980 u', 'nguyên tử: 4,002603 u', 'Δm = ?', cap, 'dhk'),
   // Trang 3 · đường cong năng lượng liên kết riêng
   duongCongLkr: (cap = 'Đỉnh ở giữa (sắt-56). Hạt nhân nhẹ hợp lại và hạt nhân nặng vỡ ra đều tiến về phía đỉnh.') => {
-    const X = (a) => 36 + a * 1.1, Y = (e) => 172 - e * 16;
+    const X = (a) => 44 + a * 1.1, Y = (e) => 172 - e * 16;
     let b = defs('dc');
-    b += `<line x1="36" y1="172" x2="306" y2="172" stroke="${INK}" stroke-width="${SW}"/><line x1="36" y1="172" x2="36" y2="20" stroke="${INK}" stroke-width="${SW}"/>`;
-    b += T(306, 196, 'A', { a: 'end' }) + T(306, 16, `E${sb('lkr')} (MeV/nuclôn)`, { a: 'end', size: 18 });
+    b += `<line x1="44" y1="172" x2="306" y2="172" stroke="${INK}" stroke-width="${SW}"/><line x1="44" y1="172" x2="44" y2="20" stroke="${INK}" stroke-width="${SW}"/>`;
+    b += T(306, 168, 'A', { a: 'end' }) + T(306, 16, `E${sb('lkr')} (MeV/nuclôn)`, { a: 'end', size: 18 });
     const pts = [[2, 1.11], [4, 7.07], [16, 7.98], [56, 8.79], [120, 8.5], [235, 7.59]];
     b += `<path d="M${pts.map(([a, e]) => `${X(a).toFixed(1)},${Y(e).toFixed(1)}`).join(' L')}" fill="none" stroke="${INK}" stroke-width="${SW}"/>`;
     for (const [a, e, lab, dx, dy, c] of [[4, 7.07, 'He-4', 12, 30, INK], [16, 7.98, 'O-16', 6, 28, INK], [56, 8.79, 'Fe-56', 4, -14, RED], [235, 7.59, 'U-235', -50, 30, INK]])
       b += `<circle cx="${X(a)}" cy="${Y(e)}" r="5" fill="${c}"/>` + T(X(a) + dx, Y(e) + dy, lab, { c, size: 18, w: c === RED ? 700 : 400 });
-    b += arr(60, 140, 106, 140, 'dc', BLUE, '6 4') + arr(292, 140, 190, 140, 'dc', BLUE, '6 4');
-    b += T(44, 162, 'hợp lại: toả', { size: 18, c: BLUE }) + T(296, 162, 'vỡ ra: toả', { size: 18, c: BLUE, a: 'end' });
+    [[0, '0'], [5, '5'], [8.8, '8,8']].forEach(([e, l]) => { b += `<line x1="38" y1="${Y(e)}" x2="44" y2="${Y(e)}" stroke="${INK}" stroke-width="2"/>` + T(34, Y(e) + 6, l, { a: 'end', size: 18 }); });
+    [100, 200].forEach((a) => { b += `<line x1="${X(a)}" y1="172" x2="${X(a)}" y2="178" stroke="${INK}" stroke-width="2"/>` + T(X(a), 196, String(a), { a: 'middle', size: 18 }); });
+    b += arr(70, 140, 112, 140, 'dc', BLUE, '6 4') + arr(292, 140, 190, 140, 'dc', BLUE, '6 4');
+    b += T(58, 162, 'hợp lại: toả', { size: 18, c: BLUE }) + T(296, 162, 'vỡ ra: toả', { size: 18, c: BLUE, a: 'end' });
     return wrap('0 0 320 204', b, cap, 'Năng lượng liên kết riêng theo số khối');
   },
   // Trang 4 · bậc thang năng lượng của heli-4

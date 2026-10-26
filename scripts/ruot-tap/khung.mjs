@@ -46,11 +46,19 @@ export const abcd = (a) => a.map((s, i) => `<div><b>${'ABCD'[i]}.</b> ${s}</div>
 // Một dòng chọn đáp án + chắc + (tuỳ) lí do
 export const chon = (n = 10) => `Em chọn: ${fill(n)} <span class="ck"></span>chắc &nbsp;<span class="ck"></span>không chắc`;
 
+// Đánh số trang liền mạch cả quyển (một quyển = một chương, năm bài × 12 trang): bài 14 = tr.1–12, bài 15 = tr.13–24 … bài 18 = tr.49–60.
+// BOOK_PAGE_START (mặc định 1) = số trang của trang đầu bài 14, để quyển nối tiếp chương liền kề (vd 61 nếu chương trước dài 60 trang);
+// số bắt đầu chẵn thì lề gáy đổi bên (class .flip). Nhãn "Tập t·ô" trên giấy dùng số trang tuyệt đối này.
+export const BAI_DAU = 14, TRANG_MOI_BAI = 12;
+export const TRANG_DAU = Number(process.env.BOOK_PAGE_START ?? 1);
 export function khoiTao({ bai, lid, ten, sub = 'Vật lí 12 · Chương 4: Vật lí hạt nhân' }) {
+  const off = (bai - BAI_DAU) * TRANG_MOI_BAI + TRANG_DAU - 1;   // + off = số trang trong quyển
+  const abs = (t) => String(t).replace(/^(\d+)/, (_, a) => Number(a) + off);
+  const absAll = (s) => s.replace(/(\d+)(·\d+)/g, (_, a, k) => Number(a) + off + k);
   const LINK = `https://thachlab.id.vn/lop-hoc/bai/?id=${lid}#muc=kiem-tra`;
   const qrSvg = qrSvgOf(LINK), qrHome = qrSvgOf('https://thachlab.id.vn/');
-  const tag = (t) => `<span class="tag">Tập ${t}</span>`;
-  const foot = (n) => `<div class="foot"><span></span><span>Bài ${bai} · ${n}/12</span></div>`;
+  const tag = (t) => `<span class="tag">Tập ${abs(t)}</span>`;
+  const foot = (n) => `<div class="foot"><span></span><span>Bài ${bai} · tr. ${n + off}</span></div>`;
   const head = (t, s = '') => `<div class="top"><div><b>${t}</b>${s ? `<small>${s}</small>` : ''}</div></div>`;
   const h3 = (i, t, tg = '') => `<h3><i>${i}</i>${t}</h3>${tg ? tag(tg) : ''}`;
   const card = (inner, extra = '', cls = '') => `<div class="card ${cls}" style="${extra}">${inner}</div>`;
@@ -58,7 +66,7 @@ export function khoiTao({ bai, lid, ten, sub = 'Vật lí 12 · Chương 4: Vậ
 <b>Xem lại bài này trên thachlab.id.vn:</b> quét mã <b>Bài học này</b> để mở lý thuyết, thí nghiệm, mô phỏng, tự kiểm tra và bài tập mẫu
 đúng bài ${bai}; mã <b>Trang chủ</b> để vào các bài khác.</div></div>`;
 
-  const chua = (k) => `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.10)</span></div>${lines(k)}</div>`;
+  const chua = (k) => `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.${10 + off})</span></div>${lines(k)}</div>`;
   const fixPage = (n, tra, { title, lap = false, ks = [5, 5, 5, 4, 4] }) => `<section class="page">
 ${head(title)}
 <div class="card soft" style="padding:1mm 3mm"><div style="display:flex;gap:4mm;flex-wrap:wrap"><span>Đề: ……………………………</span><span>Điểm: ……/……</span>${lap ? '<span>Lần trước: ……/……</span>' : '<span>Làm trên: <span class="ck"></span>thachlab <span class="ck"></span>Azota</span>'}</div>
@@ -67,7 +75,7 @@ ${head(title)}
 ${ks.map(chua).join('')}
 <h3><i>2</i>Ghi nhớ sau buổi sửa</h3>
 ${box(lines(2))}
-<div class="tra"><b>Xem lại ở Tập:</b> ${tra}</div>
+<div class="tra"><b>Xem lại ở Tập:</b> ${absAll(tra)}</div>
 ${foot(n)}</section>`;
 
   const btvn = () => `<h3><i>1</i>Đề BTVN</h3>
@@ -113,6 +121,7 @@ body{margin:0;font:400 var(--fs-body)/1.45 BV,KaTeX_Main,KaTeX_AMS,sans-serif;te
  background-image:linear-gradient(var(--grid) .15mm,transparent .15mm),linear-gradient(90deg,var(--grid) .15mm,transparent .15mm);background-size:5mm 5mm;background-position:var(--pl) 11mm}
 .page:nth-of-type(even){--pl:10mm;--pr:20mm}
 .page>*{position:relative}
+body.flip .page:nth-of-type(odd){--pl:10mm;--pr:20mm}body.flip .page:nth-of-type(even){--pl:20mm;--pr:10mm}
 .top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:.5mm solid var(--navy);padding-bottom:1mm;margin-bottom:2mm;background:#fff}
 .top b{display:block;font-weight:700;font-size:var(--fs-h1);color:var(--navy)}.top small{color:var(--hint);font-size:var(--fs-sm)}
 h3{margin:1.8mm 0 1mm;line-height:1.25;font-weight:700;font-size:var(--fs-h3);color:var(--navy);background:#fff;display:inline-block;padding-right:2mm}
@@ -153,14 +162,14 @@ ${btmCss}`;
   async function dung({ trang1to5, btm, tra, out = resolve(HERE, `out/ruot-tap-vl12-bai${bai}.pdf`), fix2 = {} }) {
     const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí 12 – Bài ${bai}</title>
 <link rel="stylesheet" href="${pathToFileURL(BOOK + 'node_modules/katex/dist/katex.min.css').href}">
-<style>${css}</style></head><body>
+<style>${css}</style></head><body${TRANG_DAU % 2 === 0 ? ' class="flip"' : ''}>
 ${trang1to5}
 ${btmTrang(6, btm)}
 ${fixPage(8, tra, { title: 'SỬA BÀI TRÊN LỚP' })}
 ${fixPage(9, tra, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG', lap: true, ks: [5, 5, 4, 4, 4], ...fix2 })}
 <section class="page">
 ${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN')}
-<div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang 8 (câu ……………) · trang 9 (câu ……………)</div>
+<div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang ${8 + off} (câu ……………) · trang ${9 + off} (câu ……………)</div>
 ${[1, 2, 3, 4].map((i) => `<h3><i>${i}</i>Câu …… <span class="hint">(từ trang ……)</span> &nbsp;<span class="ck"></span>lần này đúng</h3>${box(lines(6))}`).join('')}
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/…… &nbsp;<span class="ck"></span>đã hỏi thầy câu còn sai</div>
 ${foot(10)}</section>
