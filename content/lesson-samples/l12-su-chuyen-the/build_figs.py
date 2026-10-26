@@ -98,11 +98,16 @@ b += text(220, 44, "nóng chảy", RED, 12, "middle", "700")
 b += arrow("f3", "b", 286, 86, 154, 86, 2.6)
 b += text(220, 106, "đông đặc", BLUE, 12, "middle", "700")
 b += arrow("f3", "o", 372, 100, 268, 178, 2.6)
-b += text(150, 148, "hoá hơi", ORG, 12, "start", "700")
+b += text(314, 132, "hoá hơi", ORG, 13, "end", "700")
 b += arrow("f3", "b", 292, 178, 392, 100, 2.6)
-b += text(298, 214, "ngưng tụ", BLUE, 12, "start", "700")
-b += f'<path d="M92 98 C 92 158, 112 202, 156 203" fill="none" stroke="{ORG}" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#f3-o)"/>'
-b += text(14, 240, "thăng hoa ⇄ ngưng kết (bỏ qua thể lỏng)", ORG, 11, "start", "500")
+b += text(344, 170, "ngưng tụ", BLUE, 13, "start", "700")
+# thăng hoa (rắn -> khí) và ngưng kết (khí -> rắn): hai nét đứt song song, mỗi chiều một mũi tên chevron
+b += f'<path d="M90 98 C 88 170, 108 218, 154 218" fill="none" stroke="{ORG}" stroke-width="2.2" stroke-dasharray="5 4"/>'
+b += chevron(158, 218, 44, 0, ORG, 2.2, 9)
+b += text(82, 150, "thăng hoa", ORG, 13, "end", "700")
+b += f'<path d="M158 203 C 132 200, 114 160, 116 102" fill="none" stroke="{BLUE}" stroke-width="2.2" stroke-dasharray="5 4"/>'
+b += chevron(116, 98, 0, -70, BLUE, 2.2, 9)
+b += text(132, 166, "ngưng kết", BLUE, 13, "start", "700")
 fig3 = wrap("0 0 440 254", "Vòng chuyển thể: nóng chảy, đông đặc, hoá hơi, ngưng tụ, thăng hoa và ngưng kết",
             b, "Hình 3. Bốn quá trình chính đi thành hai cặp ngược chiều. Nét đứt là hai quá trình ít gặp: <strong>thăng hoa</strong> (rắn → hơi) và <strong>ngưng kết</strong> (hơi → rắn).")
 
