@@ -81,6 +81,10 @@ for x, col in ((100, RED), (230, BLUE), (360, ORG)):
     b += line(x, 44, x, 214, "currentColor", 2)
     b += line(x - 8, 74, x + 8, 74, col, 3)
     b += line(x - 8, 190, x + 8, 190, col, 3)
+for x, n in ((100, 10), (230, 10), (360, 18)):
+    for i in range(1, n):
+        y = 190 - (190 - 74) * i / n
+        b += line(x, y, x + 7, y, "currentColor", 1.4)
 b += text(88, 66, "100 °C", RED, 12, "end", "700") + text(88, 182, "0 °C", RED, 12, "end", "700")
 b += text(218, 66, "373 K", BLUE, 12, "end", "700") + text(218, 182, "273 K", BLUE, 12, "end", "700")
 b += text(348, 66, "212 °F", ORG, 12, "end", "700") + text(348, 182, "32 °F", ORG, 12, "end", "700")
@@ -88,7 +92,8 @@ b += text(88, 138, "100 khoảng", GRN, 11, "end", "600")
 b += text(218, 138, "100 khoảng", GRN, 11, "end", "600")
 b += text(348, 138, "180 khoảng", ORG, 11, "end", "600")
 b += text(16, 238, "mốc dưới: nước đá đang tan · mốc trên: hơi nước đang sôi", "currentColor", 11)
-fig3 = wrap("0 0 440 250", "Ba thang nhiệt độ đặt cạnh nhau: Celsius 0 đến 100, Kelvin 273 đến 373, Fahrenheit 32 đến 212",
+b += text(16, 258, "mỗi vạch nhỏ = 10 độ", "currentColor", 14, "start", "700")
+fig3 = wrap("0 0 440 266", "Ba thang nhiệt độ đặt cạnh nhau: Celsius 0 đến 100, Kelvin 273 đến 373, Fahrenheit 32 đến 212",
             b, "Hình 4. Ba thang đo cùng hai mốc nước: Celsius 0 °C – 100 °C chia 100 khoảng, Kelvin 273 K – 373 K cũng 100 khoảng, Fahrenheit 32 °F – 212 °F chia 180 khoảng.")
 
 # ------------------------------------------------------- Hình 3 (mốc FIG4): ngoại suy về 0 K
@@ -103,6 +108,9 @@ pts = ((307, 91), (326, 80), (346, 70), (365, 59), (384, 49))
 for x, y in pts:
     b += dot(x, y, 4, GRN)
 b += line(95, 205, 95, 62, RED, 1.2, "5 4", .8)
+b += line(64, 91, 76, 91, "currentColor", 2) + line(64, 49, 76, 49, "currentColor", 2) + line(64, 205, 76, 205, "currentColor", 2)
+b += text(60, 96, "p₀", "currentColor", 14, "end", "700") + text(60, 54, "1,37 p₀", "currentColor", 14, "end", "700")
+b += text(60, 210, "p = 0", RED, 14, "end", "700")
 b += text(100, 50, "0 K", GRN, 12, "start", "700")
 b += text(95, 224, "-273", RED, 12, "middle", "700")
 b += text(307, 224, "0", "currentColor", 12, "middle", "600")
@@ -110,7 +118,7 @@ b += text(384, 224, "100", "currentColor", 12, "middle", "600")
 b += text(150, 62, "kéo dài đường thẳng", GRN, 11, "start", "600")
 b += text(150, 80, "→ cắt trục ở -273 °C", GRN, 11, "start", "600")
 fig4 = wrap("0 0 440 250", "Đồ thị áp suất khí theo nhiệt độ Celsius: các điểm nằm trên một đường thẳng, kéo dài cắt trục hoành ở -273 °C",
-            b, "Hình 3. Áp suất một lượng khí không đổi tăng đều theo nhiệt độ. Kéo dài đường biểu diễn, nó cắt trục nhiệt độ ở −273 °C — đó là gốc 0 K của thang Kelvin.")
+            b, "Hình 3. Áp suất một lượng khí không đổi tăng đều theo nhiệt độ (p₀ là áp suất ở 0 °C). Kéo dài đường biểu diễn, nó cắt trục nhiệt độ ở −273 °C — đó là gốc 0 K của thang Kelvin.")
 
 # ------------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
