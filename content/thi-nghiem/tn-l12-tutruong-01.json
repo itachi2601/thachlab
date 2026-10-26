@@ -5,17 +5,27 @@
   "lesson_id": 10,
   "nguon_trong_bai": "content/lesson-samples/l12-khai-niem-tu-truong/theory.html",
   "id": "tn-l12-tutruong-01",
-  "ten": "Dòng điện tác dụng lực từ lên kim la bàn",
+  "ten": "Thí nghiệm Oersted (1820): dòng điện làm lệch kim nam châm",
   "loai": "thi_nghiem",
   "muc_do": "co_ban",
   "kien_thuc": [
     "tutruong.tuong_tac_tu",
     "tutruong.dong_dien_co_tu_tinh"
   ],
-  "muc_tieu": "Chứng tỏ dòng điện tạo ra từ trường quanh nó và tác dụng lực từ lên kim nam châm; đổi chiều dòng điện thì đổi chiều lệch của kim.",
+  "muc_tieu": "Kể lại thí nghiệm Oersted theo khung đề thi (giả thuyết – dự đoán – dụng cụ – quan sát – rút ra – chưa nói được gì, docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md): dòng điện tạo ra từ trường quanh nó và tác dụng lực từ lên kim nam châm; đổi chiều dòng điện thì đổi chiều lệch của kim.",
+  "gia_thuyet": [
+    "Dòng điện có tác dụng từ, tức điện và từ có liên hệ với nhau (đầu thế kỉ XIX nhiều người coi điện và từ là hai hiện tượng tách rời)."
+  ],
+  "du_doan_neu_dung": [
+    "Có dòng điện chạy trong dây thì kim nam châm đặt gần dây quay khỏi hướng Bắc – Nam; nếu giả thuyết sai, kim đứng yên như khi chưa có dòng."
+  ],
+  "khong_chung_minh": [
+    "Không cho độ lớn cảm ứng từ của dòng điện (cần đo, ví dụ bằng cảm biến từ trường).",
+    "Không cho hình dạng đường sức từ quanh dây (cần rắc mạt sắt hoặc đặt nhiều kim nam châm nhỏ quanh dây)."
+  ],
   "dung_cu": [
     { "ten": "Dây đồng đơn cứng, dài khoảng 30 cm", "so_luong": 1 },
-    { "ten": "Tấm bìa cứng hoặc nhựa mỏng khoảng 10 × 15 cm, có lỗ ở giữa", "so_luong": 1 },
+    { "ten": "Hai giá đỡ để căng dây nằm ngang phía trên kim", "so_luong": 1 },
     { "ten": "La bàn nhỏ hoặc kim nam châm đặt trên trục quay", "so_luong": 1 },
     { "ten": "Pin 1,5 V (hoặc nguồn một chiều 3 V)", "so_luong": 1 },
     { "ten": "Công tắc và hai đoạn dây nối có kẹp cá sấu", "so_luong": 1 },
@@ -23,13 +33,13 @@
   ],
   "cac_buoc": {
     "lam": [
-      "Luồn dây đồng thẳng qua lỗ giữa tấm bìa sao cho dây vuông góc với mặt bìa; giữ dây thẳng đứng.",
-      "Đặt la bàn lên mặt bìa ở phía bắc hoặc phía nam của dây, cách dây khoảng 2 cm. Khi chưa nối pin, ghi lại hướng kim chỉ.",
+      "Đặt la bàn trên bàn, chờ kim đứng yên theo hướng Bắc – Nam.",
+      "Căng dây đồng nằm ngang ngay phía trên kim, song song với kim, cách kim khoảng 1–2 cm. Khi chưa nối pin, ghi lại hướng kim chỉ.",
       "Nối dây với pin qua công tắc và biến trở; đóng mạch vài giây, ghi hướng kim lệch; ngắt mạch.",
       "Đảo hai đầu pin (đổi chiều dòng điện), đóng mạch vài giây và ghi lại hướng kim lệch."
     ],
     "quan_sat": [
-      "Chưa có dòng điện, kim la bàn chỉ hướng bắc.",
+      "Chưa có dòng điện, kim la bàn chỉ hướng bắc, nằm song song với dây.",
       "Đóng mạch, kim quay lệch khỏi hướng bắc một góc 20°–60° tuỳ khoảng cách và cường độ dòng.",
       "Đảo hai đầu pin, kim lệch sang phía đối diện với góc lệch gần như cũ.",
       "Ngắt mạch, kim trở về hướng bắc ban đầu."
@@ -56,9 +66,9 @@
     ],
     "gia_thiet": [
       "dây dài so với khoảng cách d, coi là dòng điện thẳng dài",
-      "bỏ qua từ trường của các vật bằng sắt quanh đó và từ trường riêng của la bàn",
+      "coi dây đồng không bị nhiễm từ; bỏ qua từ trường của các vật bằng sắt quanh bàn và từ trường riêng của la bàn",
       "la bàn đặt nằm ngang nên chỉ thành phần nằm ngang của từ trường Trái Đất định hướng kim",
-      "dây và la bàn đặt cùng mặt phẳng nằm ngang, dây vuông góc phương bắc – nam ở chỗ khảo sát"
+      "dây nằm ngang theo phương Bắc – Nam ngay phía trên kim, nên từ trường của dây tại kim có phương Đông – Tây, vuông góc với thành phần nằm ngang của từ trường Trái Đất"
     ],
     "ghi_chu": "Mô phỏng nên có thanh trượt I và d, vẽ kim la bàn quay theo góc alpha, và hiện vectơ B_d, B_day, B tổng hợp. Cho đảo chiều dòng bằng một nút bấm: kim lệch sang phía đối diện."
   },
@@ -86,8 +96,8 @@
   ],
   "goi_y_mo_phong": {
     "loai": "2d_dong_hoc+bang_so_lieu",
-    "y_tuong": "Nhìn từ trên xuống: tấm bìa có lỗ, dây dẫn thẳng đứng xuyên qua, la bàn đặt cạnh dây. Thanh trượt I và d làm kim quay; nút đảo chiều cho kim quay sang phía đối diện.",
-    "diem_nhan": "Dây thẳng đứng xuyên qua tấm bìa, la bàn đặt trên bìa: nếu đường dây – la bàn nằm theo phương đông – tây thì từ trường của dây hướng bắc – nam, kim gần như không lệch; nếu đặt la bàn ở phía bắc hoặc nam của dây (từ trường của dây hướng đông – tây, vuông góc kim) thì kim lệch cực đại."
+    "y_tuong": "Nhìn từ trên xuống: dây dẫn nằm ngang theo phương Bắc – Nam ngay phía trên kim la bàn. Thanh trượt I và d làm kim quay; nút đảo chiều cho kim quay sang phía đối diện.",
+    "diem_nhan": "Dây đặt song song với kim (theo phương Bắc – Nam) thì từ trường của dây tại kim hướng Đông – Tây, vuông góc kim, nên kim lệch rõ nhất; nếu dây đặt theo phương Đông – Tây thì từ trường của dây cùng phương với kim, kim gần như không lệch. Đặt dây dưới kim thì kim lệch ngược với khi đặt trên."
   },
   "an_toan": [
     "Chỉ đóng mạch vài giây mỗi lần để dây và pin không nóng.",

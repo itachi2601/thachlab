@@ -69,11 +69,9 @@ b += text(357, 71, "N", RED, 15, "middle", "700")
 b += arrow("f2", "r", 316, 65, 292, 65, 2.4)
 b += arrow("f2", "r", 320, 65, 344, 65, 2.4)
 b += text(240, 106, "đẩy", RED, 11, "start", "700")
-b += line(14, 122, 426, 122, "currentColor", 1.2, "6 5", .35)
-b += text(14, 150, "Dòng điện cũng có từ tính", "currentColor", 11, "start", "700")
-fig2 = wrap("0 0 440 168",
-            "Hai nam châm: khác tên hút nhau, cùng tên đẩy nhau; dòng điện cũng có tương tác từ",
-            b, "Hình 2. Khác cực hút, cùng cực đẩy; dòng điện cũng có từ tính.")
+fig2 = wrap("0 0 440 120",
+            "Hai nam châm: khác tên hút nhau, cùng tên đẩy nhau",
+            b, "Hình 2. Khác cực hút, cùng cực đẩy.")
 
 # ------------------------------------------- Hình 3: bốn khung đường sức từ
 b = defs("f3")
