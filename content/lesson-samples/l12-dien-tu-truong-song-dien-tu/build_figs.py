@@ -58,21 +58,23 @@ fig1 = wrap("0 0 420 158", "Bếp từ chạy dòng xoay chiều đặt cạnh m
 
 # ------------------------------------------------- Hình 2: điện trường xoáy
 b = defs("f2")
-b += text(14, 22, "Điện trường xoáy bao quanh đường sức từ", "currentColor", 12.5, "start", "700")
+b += text(14, 22, "Điện trường xoáy bao quanh đường sức từ", "currentColor", 14, "start", "700")
 b += f'<ellipse cx="210" cy="118" rx="96" ry="56" fill="none" stroke="{BLUE}" stroke-width="2.6"/>'
 b += line(210, 52, 210, 184, RED, 3)
 b += f'<path d="M210,56 L204,68 L216,68 z" fill="{RED}"/>'
 b += arrow("f2", "b", 176, 62, 244, 62, 2.4)
 b += arrow("f2", "b", 244, 174, 176, 174, 2.4)
-b += text(222, 46, "đường sức từ B, đang tăng", RED, 10.5, "start", "600")
-b += text(22, 214, "đường sức điện trường xoáy: đường cong kín bao quanh đường cảm ứng từ", BLUE, 10.5, "start", "600")
-fig2 = wrap("0 0 420 226", "Đường sức từ thẳng đứng có một mũi tên ở đầu trên chỉ chiều, bao quanh là một đường cong kín của điện trường xoáy với hai mũi tên chỉ chiều",
+b += text(222, 44, "từ trường B đang tăng", RED, 14, "start", "600")
+b += text(22, 214, "đường sức điện trường xoáy:", BLUE, 14, "start", "600")
+b += text(22, 232, "đường cong kín bao quanh đường cảm ứng từ", BLUE, 14, "start", "600")
+fig2 = wrap("0 0 420 244", "Đường sức từ thẳng đứng có một mũi tên ở đầu trên chỉ chiều, bao quanh là một đường cong kín của điện trường xoáy với hai mũi tên chỉ chiều",
             b, "Hình 2. Từ trường biến thiên (ở đây B đang tăng) sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.")
 
 # ------------------------------------------------- Hình 3: sóng điện từ
 b = defs("f3")
-b += text(14, 20, "Sóng điện từ: sóng ngang, E và B cùng pha", "currentColor", 12.5, "start", "700")
-b += text(410, 136, "phương truyền sóng", "currentColor", 10.5, "end", "600")
+b += text(14, 20, "Sóng điện từ: sóng ngang, E và B cùng pha", "currentColor", 14, "start", "700")
+b += text(410, 112, "phương truyền", "currentColor", 14, "end", "600")
+b += text(410, 130, "sóng", "currentColor", 14, "end", "600")
 AX, AMP, LAM = 146, 42, 185.0
 b += line(30, AX, 404, AX, "currentColor", 2)
 b += '<path d="M404,140 L415,146 L404,152 z" fill="currentColor"/>'
@@ -89,12 +91,15 @@ b += poly(e_pts, RED, 2.6)
 x0 = 30 + LAM / 4
 b += arrow("f3", "r", x0, AX, x0, AX - AMP, 2.6)
 b += arrow("f3", "b", x0, AX, x0 + 0.28 * 40, AX + 0.55 * 40, 2.6)
-b += text(x0, AX - AMP - 10, "E", RED, 12.5, "middle", "700")
-b += text(x0 + 26, AX + 34, "B", BLUE, 12.5, "start", "700")
-b += text(14, 216, "E vuông góc với B, cả hai cùng vuông góc với phương truyền", "currentColor", 10.5, "start", "600")
-b += text(14, 232, "E và B cùng pha: hai đường cong cùng cắt trục tại một chỗ", "currentColor", 10.5, "start", "600")
-b += text(14, 248, "E hướng lên, truyền sang phải thì B hướng ra khỏi trang (nét xiên)", "currentColor", 10.5, "start", "600")
-fig3 = wrap("0 0 420 258", "Sóng điện từ lan truyền theo trục ngang: vectơ E dao động thẳng đứng, vectơ B dao động theo phương xiên và hướng ra khỏi trang khi E hướng lên, hai đường cong cùng pha",
+b += text(x0, AX - AMP - 10, "E", RED, 14, "middle", "700")
+b += text(x0 + 26, AX + 34, "B", BLUE, 14, "start", "700")
+b += text(14, 214, "E vuông góc với B, cả hai cùng vuông góc", "currentColor", 14, "start", "600")
+b += text(14, 232, "với phương truyền", "currentColor", 14, "start", "600")
+b += text(14, 250, "E và B cùng pha: hai đường cong cùng cắt", "currentColor", 14, "start", "600")
+b += text(14, 268, "trục tại một chỗ", "currentColor", 14, "start", "600")
+b += text(14, 286, "E hướng lên, truyền sang phải thì B hướng", "currentColor", 14, "start", "600")
+b += text(14, 304, "ra khỏi trang (nét xiên)", "currentColor", 14, "start", "600")
+fig3 = wrap("0 0 420 324", "Sóng điện từ lan truyền theo trục ngang: vectơ E dao động thẳng đứng, vectơ B dao động theo phương xiên và hướng ra khỏi trang khi E hướng lên, hai đường cong cùng pha",
             b, "Hình 3. Sóng điện từ là sóng ngang: E vuông góc với B, cả hai vuông góc phương truyền và luôn cùng pha; khi E hướng lên và sóng truyền sang phải thì B hướng ra khỏi trang.")
 
 # ------------------------------------------------- Hình 4: thang sóng điện từ
