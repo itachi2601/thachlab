@@ -94,3 +94,4 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi; flip-1 lên web; treo duyệt bảng 12 buổi
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — xong 14/10; treo Gemini tìm ảnh, chưa deploy
 - [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10
+- [Giảm token 28/9](project_thachlab_token_hygiene.md) — .claudeignore, đọc DATABASE.md thay vì dò schema

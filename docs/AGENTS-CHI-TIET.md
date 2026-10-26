@@ -89,3 +89,148 @@ text thuần (không ảnh, không đụng code).
 
 
 ---
+
+
+# Mục 4. Migration — bản đầy đủ (chuyển từ AGENTS.md 26/10/2026; câu "agent không tự chạy" đã được thay bằng mục "Có script thì chạy giúp" 11/10)
+
+## Migration Supabase — quy tắc bắt buộc
+
+Hiện trạng dự án: `docs/STATE.md`. Đọc file đó trước khi bắt đầu một đợt việc lớn.
+
+### Agent KHÔNG được tự chạy migration lên production
+Mọi thay đổi schema/policy/hàm chỉ được **viết thành file** trong `supabase/migrations/`,
+kèm khối rollback ở cuối file (hoặc file `.down.sql` riêng trong `perf/rollback/`).
+Không `supabase db push` (thư mục migrations mới, CLI không biết ~99 migration cũ).
+Không tự gọi `supabase db query --linked` với lệnh ghi.
+
+### Khi có migration mới đang chờ → tự xuất lệnh cho Thạch chạy
+Kết thúc đợt việc, nếu `supabase/migrations/` có file chưa chạy trên production:
+
+1. Cập nhật mảng `FILES` trong `scripts/run-migrations.sh` theo đúng thứ tự chạy.
+2. In ra cho Thạch **đúng khối này**, không diễn giải dài:
+
+```
+bash scripts/run-migrations.sh
+```
+
+3. Kèm 3 dòng: mỗi file làm gì, file nào cần chạy ngoài giờ học sinh làm bài, lệnh rollback nếu hỏng.
+4. Ghi các file đang chờ vào mục "ĐANG CHỜ" của `docs/STATE.md`.
+
+Script đã lo: hỏi xác nhận từng file, ghi log `scripts/logs/`, dừng ngay khi lỗi,
+nhắc lệnh rollback. `--yes` chạy thẳng, `--only N` chạy riêng một file.
+
+### Script/migration viết trên cloud phải VÀO `main` trước khi giao lệnh cho Thạch
+Mac của Thạch chỉ chạy được file có trong `main` (thường còn thay đổi chưa commit nên không checkout nhánh khác được).
+Khi giao lệnh chạy (`run-migrations.sh`, file `.sql`, script `.mts`):
+1. Đảm bảo file đã nằm trong `main` — cloud chỉ đẩy nhánh `claude/...`, nên in lệnh để Thạch merge nhánh vào `main` trên Mac (`git fetch origin && git merge origin/claude/<tên>`) rồi mới chạy. Không mở PR (repo chỉ có một người làm).
+2. Lệnh đầu tiên luôn là `cd /Users/MAC/Projects/thachlab && git pull origin main`.
+3. Nếu Mac báo "local changes would be overwritten": KHÔNG bảo bỏ thay đổi; hướng dẫn `git stash` → `git pull origin main` → `git stash pop`, hoặc `git diff --stat <file>` để xem trước.
+4. Sau khi merge, kiểm lại `FILES` trong `scripts/run-migrations.sh` (bản trên `main`) khớp danh sách đang chờ.
+
+### Chi tiết migration (lý do máy Thạch, kiểm số thứ tự/đã chạy chưa, dọn câu trùng, RLS bảng mới)
+- Chỉ chạy được trên Mac của Thạch (sandbox chặn `*.supabase.co`). Trước khi chạy: `bash scripts/run-migrations.sh --list`, đối chiếu TÊN file, kiểm `scripts/logs/` và STATE.md.
+- Bảng mới trong `public` (kể cả bảng sao lưu) phải `enable row level security` + `revoke all from anon, authenticated` ngay trong file.
+- Dọn câu trùng ngân hàng: quét ghép cặp trực tiếp, lặp tới khi sạch, mỗi đợt một bảng sao lưu tên khác.
+- Đầy đủ: `docs/AGENTS-CHI-TIET.md` mục 1.
+
+### Sau khi migration chạy xong
+- Sinh lại sơ đồ bảng: `node scripts/gen-database-doc.mjs` (ghi `docs/DATABASE.md` + `DATABASE-RPC.md`),
+  rồi chuyển mục vừa chạy từ "ĐANG CHỜ" trong `docs/STATE.md` sang `docs/STATE-archive.md`.
+- Đối chiếu RPC: `npx tsx scripts/perf-compare-rpc.mts`
+- Backfill mức độ câu hỏi — **GHI THẬT NGAY, không có dry-run**, tham số chỉ giới hạn số câu:
+  `npx tsx scripts/backfill-question-bank-difficulty.mts 20` (thử nhỏ, xem lại UI rồi mới chạy hết)
+
+
+# Mục 5. Đồng bộ giữa các phiên — bản đầy đủ (chuyển từ AGENTS.md 26/10/2026)
+
+## Đồng bộ giữa các phiên (cloud + Mac) — không giẫm chân nhau
+
+Mỗi phiên cloud chạy trên nhánh `claude/<tên>` riêng, tách từ `main` lúc mở. Chỉ thứ đã **commit và vào `main`** mới tới
+được phiên khác và máy Thạch. Việc nằm trên nhánh mà chưa merge coi như chưa tồn tại với phần còn lại.
+
+### Đầu phiên
+- `git fetch origin` rồi `git merge origin/main` vào nhánh phiên (không rebase nhánh đã push, không force-push).
+- Chạy `/tinh-hinh`; xem `git branch -r --sort=-committerdate | head` để biết phiên khác đang đụng tới đâu.
+
+### Trong phiên — giữ đúng phạm vi
+- Chỉ sửa file thuộc việc được giao. Không "tiện tay" dọn/đổi tên/format file ngoài phạm vi.
+- File dùng chung (`docs/STATE.md`, `docs/memory/MEMORY.md`, `scripts/run-migrations.sh`, `AGENTS.md`, `package.json`): chỉ
+  **thêm dòng/mục mới**, không viết lại hay sắp xếp lại phần có sẵn — để hai phiên cùng thêm vẫn merge sạch.
+- Migration: tên file theo timestamp, không sửa/xoá migration của phiên khác; chỉ nối thêm vào mảng `FILES`.
+- Không xoá, reset, force-push nhánh hay worktree của phiên khác. Thấy lạ thì ghi vào `STATE.md`, đừng tự dọn.
+- Script/batch ghi thẳng vào file nguồn (`theory.src.html`, `theory.html`, `bundle.json`) là thay đổi **chưa commit**:
+  commit (hoặc ít nhất `git add`) NGAY sau khi chạy xong, trước mọi `git pull`/`merge`/`reset`. **Không dọn cây bằng
+  `git stash` rồi `reset`** — mẻ sửa lý thuyết 20 bài L12 (8/10/2026) mất khỏi cây đúng như vậy, phải moi lại từ
+  `stash@{0}` (xem `docs/STATE.md`). Cần cây sạch để pull thì tạo nhánh/worktree riêng.
+- Skill mới/sửa: chỉ ở `.claude/skills/<tên>/` trong repo (nguồn duy nhất). Không chép tay sang `~/.codex`, Library plugin.
+
+### Cuối phiên — việc "xong" nghĩa là đã tới `main`
+1. Commit đúng file của mình (`git commit -- <path>`), push nhánh.
+2. KHÔNG mở PR (repo chỉ có Thạch làm). Báo ngắn: nhánh nào, đổi gì, file chung nào đã đụng, rồi in lệnh để Thạch merge trên Mac: `git -C ~/Projects/thachlab fetch origin && git -C ~/Projects/thachlab merge origin/claude/<tên>`. Phiên chạy trên Mac thì commit thẳng `main`.
+3. Phiên cloud không merge được thì **báo rõ "chưa vào main, cần merge nhánh claude/…"** — không báo "xong".
+4. Có skill mới/sửa → in kèm lệnh cho Thạch trên Mac, sau khi nhánh đã merge:
+```
+git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh
+```
+5. Có migration → theo mục "Migration Supabase" ở trên. Ghi mục "ĐANG CHỜ" trong `docs/STATE.md`, rồi `/ban-giao`.
+
+### Xung đột
+Hai phiên cùng sửa một file riêng (không phải file dùng chung) → phiên merge sau tự gộp và kiểm lại; nếu ý định mâu thuẫn
+thì dừng, hỏi Thạch, không ghi đè bản của phiên kia.
+
+### Commit theo ĐƯỜNG DẪN CỤ THỂ — không `git commit -a`/`git add .` (bài học 11/10/2026)
+Hai phiên cùng mở một cây làm việc (khác nhánh vẫn chung thư mục) thì `git commit -a` của phiên này **nuốt luôn thay đổi
+chưa commit của phiên kia**, và có thể chỉ nuốt một phần file (đợt 11/10/2026: khối CSS cuối `globals.css` bị commit kèm
+vào commit của phiên khác, khối bảng màu ở đầu file thì không → main ở trạng thái nửa vời tới khi đợt sau commit).
+- Commit sớm, chia mẻ nhỏ; ghi rõ đường dẫn (`git commit -- <path>…`), kiểm `git status` trước khi commit.
+- Thấy file dùng chung "tự nhiên" khác đi thì tra `git log -S '<chuỗi>' -- <file>` trước khi sửa tiếp, đừng ghi lại từ đầu.
+- Muốn biết thay đổi của mình có bị lẫn không: `git show HEAD:<file> | grep '<dấu hiệu của mình>'`.
+
+
+# Mục 6. Rút kinh nghiệm cuối phiên (nội dung) — bản đầy đủ (chuyển từ AGENTS.md 26/10/2026)
+
+## Rút kinh nghiệm cuối phiên — bắt buộc với bài lý thuyết, đề thi, đề kiểm tra (thầy chốt 5/10/2026)
+
+Mọi phiên có làm bài học lý thuyết, đề thi, đề kiểm tra, quiz, ngân hàng câu hỏi (soạn, sửa, lọc, đăng) **phải kết thúc bằng
+phần "Rút kinh nghiệm"** — không có thì chưa tính là xong phiên. Làm trước khi báo hoàn thành / chạy `/ban-giao`:
+
+1. **Viết ngắn trong câu trả lời cuối** (3–6 gạch đầu dòng, mỗi dòng một bài học cụ thể): lỗi đã gặp + nguyên nhân thật,
+   cách phát hiện, cách làm đúng lần sau, việc gì tốn token/thời gian vô ích. Không có gì mới thì ghi rõ "không có bài học mới".
+2. **Ghi vào đúng nơi, không chỉ nói miệng**:
+   - Bài học gắn với một quy trình → mục `## Nhật ký rút kinh nghiệm` ở cuối skill tương ứng trong `.claude/skills/<tên>/SKILL.md`
+     (`soan-bai-ly-thuyet-tuong-tac`, `soan-quiz-ly-thuyet`, `up-de-kiem-tra`, `dang-de-hang-loat`). Skill nằm ngoài repo
+     (`azota`, `ngan-hang-cau-hoi`, `dang-bai-hoc-thachlab`, `latex`) → ghi vào file `project_*.md` liên quan trong `docs/memory/`
+     và nhắc thầy cập nhật skill đó.
+   - Bài học áp cho mọi phiên/mọi skill → thêm quy tắc ngắn vào `AGENTS.md` (chỉ thêm, không viết lại phần có sẵn).
+3. **Dạng mỗi mục**: `- YYYY-MM-DD · <sự cố/phát hiện> → <quy tắc làm đúng>`. Sửa ngay bước trong skill nếu bước đó sai, đừng chỉ
+   chất thêm ghi chú. Mục trùng ý đã có thì gộp, không lặp.
+4. Báo trong câu trả lời cuối: đã ghi vào file nào.
+
+
+# Mục 7. Phân công mô hình — bản đầy đủ (chuyển từ AGENTS.md 26/10/2026)
+
+## Phân công mô hình (thầy chốt 6/10/2026) — Claude làm việc của Claude, việc khác gợi ý Cursor
+
+Hai nhánh, không trộn:
+
+**Nhánh Claude — giao subagent trong `.claude/agents/`, mỗi agent đã ghim model:**
+
+| Việc | Agent | Model |
+|---|---|---|
+| Schema, RLS, migration, YCCĐ–danh hiệu–phụ đạo, backup, đổi vùng, dependency lớn | `kien-truc-du-lieu` | opus |
+| Review diff trước commit/merge; soát nội dung lý thuyết sắp đăng; soát UI | `kiem-code` | sonnet |
+| Chép đề từ ảnh trang đã render (thay cho `general-purpose`) | `chep-de` | sonnet |
+| Import roster, điểm danh Zalo, bảng điểm, học phí — mọi dữ liệu có tên học sinh | `nhap-du-lieu-hoc-sinh` | haiku |
+| Soạn bài lý thuyết, quiz, tin tức, AI tutor giải đủ, UI học sinh | phiên chính (sonnet/opus) | — |
+
+**Nhánh ngoài Claude — KHÔNG tự làm, KHÔNG viết router gọi API ngoài. Dừng lại, in hướng dẫn cho Thạch làm trên Cursor
+(chế độ Auto, Cursor tự chọn model), kèm prompt mẫu và tên file kết quả cần nộp lại, rồi chờ:**
+- OCR đề thi nhiều hình vẽ / công thức MathType dạng ảnh, PDF scan dày (Gemini Flash làm tốt và rẻ hơn).
+- Sinh lời giải chi tiết hàng loạt cho ngân hàng câu (Gemini/DeepSeek), sau đó quay lại Claude đối chiếu đáp án.
+- Code thường không đụng schema/RLS: bugfix, refactor component, script một lần.
+- Tin tức/xu hướng cần dữ liệu thời gian thực từ X (Grok).
+
+**Ranh giới không đổi:**
+- Dữ liệu định danh học sinh (tên, điểm, phụ huynh, SĐT) chỉ đi qua Claude — không đưa vào prompt gửi Cursor/DeepSeek/Gemini.
+- Model rẻ làm → `kiem-code` kiểm trước khi merge. Lời giải do model ngoài sinh → Claude đối chiếu đáp án trước khi đăng.
+- Model chạy TRONG app (Edge Function `classify-questions`, `ai-tutor`) chọn bằng env/bảng cấu hình, không hard-code tên model (xem mục "Gọi AI provider trong code").
