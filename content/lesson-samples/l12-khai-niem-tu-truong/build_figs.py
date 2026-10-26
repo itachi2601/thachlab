@@ -85,16 +85,16 @@ b += text(146, 93, "S", BLUE, 13, "middle", "700")
 D = 'fill="none" stroke="{}" stroke-width="1.8" stroke-dasharray="6 4"'.format(RED)
 b += f'<path d="M44,87 C14,87 20,34 112,34 C204,34 210,87 180,87" {D}/>'
 b += f'<path d="M44,87 C14,87 20,140 112,140 C204,140 210,87 180,87" {D}/>'
-b += f'<path d="M44,79 C26,79 40,56 112,56 C184,56 198,79 180,79" {D}/>'
-b += f'<path d="M44,95 C26,95 40,118 112,118 C184,118 198,95 180,95" {D}/>'
-b += f'<path d="M180,79 L44,79" {D}/>'
-b += f'<path d="M180,95 L44,95" {D}/>'
+b += f'<path d="M44,75 C26,75 40,56 112,56 C184,56 198,75 180,75" {D}/>'
+b += f'<path d="M44,99 C26,99 40,118 112,118 C184,118 198,99 180,99" {D}/>'
+b += f'<path d="M180,75 L44,75" {D}/>'
+b += f'<path d="M180,99 L44,99" {D}/>'
 b += chevron(124, 34, 24.0, 0.0, RED, 1.8, 10)
 b += chevron(124, 140, 24.0, 0.0, RED, 1.8, 10)
 b += chevron(124, 56, 24.0, 0.0, RED, 1.8, 10)
 b += chevron(124, 118, 24.0, 0.0, RED, 1.8, 10)
-b += chevron(100, 79, -24.0, 0.0, RED, 1.8, 10)
-b += chevron(100, 95, -24.0, 0.0, RED, 1.8, 10)
+b += chevron(100, 75, -24.0, 0.0, RED, 1.8, 10)
+b += chevron(100, 99, -24.0, 0.0, RED, 1.8, 10)
 b += text(14, 166, "ra ở bắc, vào ở nam", "currentColor", 10, "start", "500")
 # b) nam châm chữ U — N bên trái, S bên phải (đường sức giữa hai cực đi từ N sang S)
 b += text(232, 20, "b) Chữ U", "currentColor", 11, "start", "700")
@@ -111,7 +111,7 @@ b += rect(18, 196, 136, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
 F = 'fill="none" stroke="{}" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 5"'.format(GRN)
 b += rect(60, 223, 52, 10, "rgba(248,113,113,.2)", "currentColor", 1.2, 2)
 for k in (0, 1):
-    h = 22 + 14 * k
+    h = 18 + 8 * k
     b += f'<path d="M60,228 C{36-8*k},228 {36-8*k},{228-h} 86,{228-h} C{136+8*k},{228-h} {136+8*k},228 112,228" {F}/>'
     b += f'<path d="M60,228 C{36-8*k},228 {36-8*k},{228+h} 86,{228+h} C{136+8*k},{228+h} {136+8*k},228 112,228" {F}/>'
 b += f'<path d="M58,228 L24,228" {F}/>'
