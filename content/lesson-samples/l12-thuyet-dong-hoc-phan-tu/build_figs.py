@@ -131,7 +131,7 @@ PATH = trace_bounce((24.0, 180.0), (170.0, -34.0), 5, BOX)
 assert all(abs(p[0] - BOX[0]) < .05 or abs(p[0] - BOX[1]) < .05
            or abs(p[1] - BOX[2]) < .05 or abs(p[1] - BOX[3]) < .05 for p in PATH), PATH
 b = defs("f3")
-b += text(14, 26, "Mô hình khí lí tưởng", "currentColor", 12.5, "start", "700")
+b += text(14, 26, "Mô hình khí lí tưởng", "currentColor", 14, "start", "700")
 b += rect(14, 40, 180, 140, "rgba(148,163,184,.08)", "currentColor", 2.4, 6)
 b += poly(PATH, GRN, 2.6)
 for x, y in PATH:  # chấm xanh ở MỌI điểm chạm thành, kể cả điểm đầu và điểm cuối
@@ -139,12 +139,12 @@ for x, y in PATH:  # chấm xanh ở MỌI điểm chạm thành, kể cả đi�
 for i in (0, 2):  # đầu mũi tên chỉ chiều chuyển động ở giữa đoạn 1 và đoạn 3
     (xa, ya), (xb, yb) = PATH[i], PATH[i + 1]
     b += chevron((xa + xb) / 2 + (xb - xa) * .08, (ya + yb) / 2 + (yb - ya) * .08, xb - xa, yb - ya, GRN, 2.6, 11)
-b += text(104, 200, "mỗi đoạn: bay thẳng đều", GRN, 10.5, "middle", "600")
-b += f'<circle cx="202" cy="66" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 70, "bỏ qua kích thước phân tử", "currentColor", 11, "start", "500")
-b += f'<circle cx="202" cy="96" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 100, "bỏ qua lực tương tác khi ở xa", "currentColor", 11, "start", "500")
-b += f'<circle cx="202" cy="126" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 130, "giữa hai va chạm: thẳng đều", "currentColor", 11, "start", "500")
-b += f'<circle cx="202" cy="156" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 160, "va chạm: hoàn toàn đàn hồi", "currentColor", 11, "start", "500")
-fig3 = wrap("0 0 420 216", "Bình chứa với đường đi gấp khúc của phân tử khí lí tưởng: mỗi đoạn thẳng nối hai lần va chạm với thành bình, va chạm hoàn toàn đàn hồi nên bật ngược lại",
+b += text(104, 202, "mỗi đoạn: bay thẳng đều", GRN, 14, "middle", "600")
+b += f'<circle cx="202" cy="66" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 70, "bỏ qua kích thước phân tử", "currentColor", 14, "start", "500")
+b += f'<circle cx="202" cy="96" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 100, "bỏ qua lực hút, đẩy ở xa", "currentColor", 14, "start", "500")
+b += f'<circle cx="202" cy="126" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 130, "giữa hai va chạm: thẳng đều", "currentColor", 14, "start", "500")
+b += f'<circle cx="202" cy="156" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 160, "va chạm: hoàn toàn đàn hồi", "currentColor", 14, "start", "500")
+fig3 = wrap("0 0 420 220", "Bình chứa với đường đi gấp khúc của phân tử khí lí tưởng: mỗi đoạn thẳng nối hai lần va chạm với thành bình, va chạm hoàn toàn đàn hồi nên bật ngược lại",
             b, "Hình 3. Giữa hai va chạm, phân tử bay thẳng đều; mỗi chấm xanh là một lần gặp thành bình — va chạm hoàn toàn đàn hồi rồi bật ngược lại.")
 
 # ======================================================= Hình 4: 1 mol khí ở điều kiện tiêu chuẩn
