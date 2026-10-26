@@ -51,16 +51,16 @@ def dbl(x1, y1, x2, y2, c, w=1.8):
 
 
 b = defs("f1")
-b += text(14, 20, "Bếp từ: nhiệt sinh ngay trong đáy nồi", "currentColor", 13, "start", "700")
+b += text(14, 20, "Bếp từ: nhiệt sinh ngay trong đáy nồi", "currentColor", 14, "start", "700")
 b += rect(130, 50, 180, 54, "rgba(56,189,248,.18)", "none", 0, 0)          # nước trong nồi
-b += text(170, 72, "nước", BLUE, 13, "start", "600")
+b += text(170, 72, "nước", BLUE, 14, "start", "600")
 b += rect(120, 44, 10, 66, "rgba(251,146,60,.20)", ORG, 2, 3)              # thành nồi trái
 b += rect(310, 44, 10, 66, "rgba(251,146,60,.20)", ORG, 2, 3)              # thành nồi phải
 b += rect(120, 104, 200, 16, "rgba(251,146,60,.30)", ORG, 2)               # đáy nồi
-b += text(326, 116, "đáy nồi gang", ORG, 13, "start", "600")
+b += text(326, 116, "đáy nồi gang", ORG, 14, "start", "600")
 b += rect(60, 124, 320, 9, "rgba(148,163,184,.28)", "currentColor", 1.2, 3)  # mặt kính
-b += text(14, 150, "mặt kính", "currentColor", 13)
-b += text(14, 166, "(cách điện)", "currentColor", 13)
+b += text(14, 150, "mặt kính", "currentColor", 14)
+b += text(14, 166, "(cách điện)", "currentColor", 14)
 for i in range(8):                                                         # mặt cắt cuộn dây: dây ra/vào mặt giấy
     x = 167.5 + i * 15
     b += f'<circle cx="{x}" cy="150" r="6" fill="none" stroke="{RED}" stroke-width="2"/>'
@@ -68,20 +68,20 @@ for i in range(8):                                                         # m�
         b += line(x - 3.5, 146.5, x + 3.5, 153.5, RED, 1.6) + line(x - 3.5, 153.5, x + 3.5, 146.5, RED, 1.6)
     else:
         b += dot(x, 150, 2.2, RED)
-b += text(296, 160, "cuộn dây", RED, 13, "start", "700")
-b += text(296, 176, "dòng xoay chiều", RED, 13, "start", "600")
+b += text(296, 160, "cuộn dây", RED, 14, "start", "700")
+b += text(296, 176, "dòng xoay chiều", RED, 14, "start", "600")
 for x in (190, 220, 250):                                                  # B(t): mũi tên hai đầu
     b += dbl(x, 138, x, 100, BLUE)
-b += text(262, 94, "B(t)", BLUE, 13, "start", "700")
+b += text(262, 94, "B(t)", BLUE, 14, "start", "700")
 for ry in (86, 46):                                                        # vòng Foucault đồng tâm phủ đáy nồi
     b += f'<ellipse cx="220" cy="112" rx="{ry}" ry="6" fill="none" stroke="{GRN}" stroke-width="1.8" stroke-dasharray="5 4"/>'
     b += chevron(220 + ry, 112, 0, 1, GRN, 1.8, 7)
     b += chevron(220 - ry, 112, 0, -1, GRN, 1.8, 7)
 for x in (142, 298):                                                       # nhiệt vào nước
     b += arrow("f1", "r", x, 100, x, 82, 2)
-b += text(14, 200, "từ trường biến thiên xuyên qua mặt kính", BLUE, 13)
-b += text(14, 220, "dòng Foucault: vòng tròn đồng tâm trong đáy nồi", GRN, 13)
-b += text(14, 240, "dòng đó toả nhiệt (Joule) làm nồi nóng lên", RED, 13)
+b += text(14, 200, "từ trường biến thiên xuyên qua mặt kính", BLUE, 14)
+b += text(14, 220, "dòng Foucault: vòng tròn đồng tâm trong đáy nồi", GRN, 14)
+b += text(14, 240, "dòng đó toả nhiệt (Joule) làm nồi nóng lên", RED, 14)
 fig1 = wrap("0 0 440 252",
             "Mặt cắt bếp từ: cuộn dây dưới mặt kính tạo từ trường biến thiên xuyên vào đáy nồi gang, sinh dòng Foucault dạng vòng đồng tâm và toả nhiệt trong đáy nồi",
             b, "Hình 1. Từ trường biến thiên xuyên qua mặt kính, sinh dòng Foucault toả nhiệt "
@@ -89,33 +89,33 @@ fig1 = wrap("0 0 440 252",
 
 # ------------------------------------------------- Hình 2: đàn ghi ta điện
 b = defs("f2")
-b += text(12, 20, "Đàn ghi ta điện: dao động thành dòng điện", "currentColor", 13, "start", "700")
+b += text(12, 20, "Đàn ghi ta điện: dao động thành dòng điện", "currentColor", 14, "start", "700")
 b += line(30, 64, 250, 64, "currentColor", 2.5)                            # dây thép
 b += arrow("f2", "r", 44, 76, 44, 50, 1.8)
 b += arrow("f2", "r", 60, 50, 60, 76, 1.8)
-b += text(268, 56, "dây thép dao động", RED, 13, "start", "600")
+b += text(268, 56, "dây thép dao động", RED, 14, "start", "600")
 b += rect(130, 92, 40, 30, "rgba(248,113,113,.22)", RED, 2, 2)             # nam châm: cực N sát dây
 b += rect(130, 122, 40, 30, "rgba(56,189,248,.22)", BLUE, 2, 2)
-b += text(150, 112, "N", RED, 13, "middle", "700")
-b += text(150, 144, "S", BLUE, 13, "middle", "700")
+b += text(150, 112, "N", RED, 14, "middle", "700")
+b += text(150, 144, "S", BLUE, 14, "middle", "700")
 for i in range(3):                                                         # cuộn dây quấn ở giữa nam châm, tránh chữ N, S
     y = 118.5 + i * 4.5
     b += f'<ellipse cx="150" cy="{y}" rx="26" ry="2.8" fill="none" stroke="{RED}" stroke-width="2"/>'
 b += field_path("M138,92 C70,-30 20,200 130,148", (130, 148), (1, -.3), BLUE)    # đường sức từ cực N ra, cắt dây, về cực S từ ngoài cuộn
 b += field_path("M162,92 C230,-30 280,200 170,148", (170, 148), (-1, -.3), BLUE)
 b += field_line(150, 90, 150, 38, BLUE, 1.8)                                      # đường sức qua dây
-b += text(268, 100, "nam châm: trục dọc", "currentColor", 13, "start", "600")
-b += text(268, 118, "cực N sát dây", "currentColor", 13, "start", "600")
-b += text(268, 136, "cuộn dây quanh nam châm", RED, 13, "start", "600")
-b += text(268, 80, "từ trường xuyên qua dây", BLUE, 13, "start", "600")
+b += text(268, 100, "nam châm: trục dọc", "currentColor", 14, "start", "600")
+b += text(268, 118, "cực N sát dây", "currentColor", 14, "start", "600")
+b += text(268, 136, "cuộn quanh nam châm", RED, 14, "start", "600")
+b += text(268, 80, "từ trường qua dây", BLUE, 14, "start", "600")
 b += line(124, 127, 112, 127, RED, 2) + line(112, 127, 112, 196, RED, 2) + line(112, 196, 270, 196, RED, 2)    # hai đầu cuộn dây nối ra máy
 b += line(176, 118.5, 196, 118.5, RED, 2) + line(196, 118.5, 196, 178, RED, 2) + line(196, 178, 270, 178, RED, 2)
-b += rect(270, 168, 128, 38, "rgba(148,163,184,.16)", "currentColor", 2, 6)
-b += text(334, 192, "máy tăng âm → loa", "currentColor", 13, "middle", "600")
+b += rect(270, 168, 160, 38, "rgba(148,163,184,.16)", "currentColor", 2, 6)
+b += text(350, 192, "máy tăng âm → loa", "currentColor", 14, "middle", "600")
 b += arrow("f2", "r", 224, 178, 254, 178, 2.2)
-b += text(12, 226, "dây dao động: từ thông qua cuộn biến thiên", RED, 13)
-b += text(12, 244, "cuộn dây cho dòng cảm ứng cùng tần số dây", RED, 13)
-fig2 = wrap("0 0 440 254",
+b += text(12, 226, "dây dao động: từ thông qua cuộn biến thiên", RED, 14)
+b += text(12, 244, "cuộn dây cho dòng cảm ứng cùng tần số dây", RED, 14)
+fig2 = wrap("0 0 440 258",
             "Sơ đồ đàn ghi ta điện: nam châm trục dọc có một cực sát dây thép, cuộn dây quấn quanh nam châm, hai đầu cuộn nối ra máy tăng âm và loa; dây dao động làm từ thông qua cuộn biến thiên nên có dòng cảm ứng cùng tần số",
             b, "Hình 2. Bộ cảm ứng: dây thép dao động trên nam châm, cuộn dây cho dòng cảm ứng "
                "cùng tần số ra loa.")
@@ -171,18 +171,18 @@ def eddy(cx, cy, rx, ry, L=9):
 
 
 b = defs("f4")
-b += text(12, 20, "a) Tấm liền khối", "currentColor", 13, "start", "700")
+b += text(12, 20, "a) Tấm liền khối", "currentColor", 14, "start", "700")
 b += line(110, 30, 110, 52, "currentColor", 1.5)                           # dây treo
 b += rect(50, 52, 120, 110, "rgba(148,163,184,.22)", "currentColor", 2, 3)
 b += field_dots(110, 112, 30)
 b += eddy(126, 112, 34, 30)
 b += arrow("f4", "o", 60, 182, 150, 182, 2.4)                              # vận tốc tấm
-b += text(12, 212, "tấm đang chuyển động sang phải", ORG, 13)
-b += text(12, 230, "chấm: B vuông góc mặt tấm", BLUE, 13)
-b += text(12, 248, "vòng dòng khép kín lớn", GRN, 13)
-b += text(12, 266, "→ hãm mạnh", GRN, 13)
-b += text(12, 284, "6 lần qua · tắt sau 3,8 s", GRN, 13, "start", "700")
-b += text(232, 20, "b) Tấm có rãnh xẻ", "currentColor", 13, "start", "700")
+b += text(12, 212, "tấm chuyển động sang phải", ORG, 14)
+b += text(12, 230, "chấm: B vuông góc mặt tấm", BLUE, 14)
+b += text(12, 248, "vòng dòng khép kín lớn", GRN, 14)
+b += text(12, 266, "→ hãm mạnh", GRN, 14)
+b += text(12, 284, "qua 6 lần · tắt 3,8 s", GRN, 14, "start", "700")
+b += text(232, 20, "b) Tấm có rãnh xẻ", "currentColor", 14, "start", "700")
 b += line(330, 30, 330, 52, "currentColor", 1.5)
 x0, w, g, n = 272, 20, 4, 5                                                # tấm xẻ rãnh: dạng chiếc lược
 b += rect(x0, 52, n * w + (n - 1) * g, 50, "rgba(148,163,184,.22)", "currentColor", 2, 3)   # thanh ngang phía trên
@@ -192,10 +192,11 @@ b += field_dots(330, 112, 30)
 for i in (1, 2, 3):
     b += eddy(x0 + i * (w + g) + w / 2, 132, 7, 20, 6)
 b += arrow("f4", "o", 282, 182, 372, 182, 2.4)
-b += text(232, 212, "cùng khối lượng, cùng từ trường", "currentColor", 13)
-b += text(232, 230, "rãnh cắt đường dòng", GRN, 13)
-b += text(232, 248, "→ dòng nhỏ → hãm yếu", GRN, 13)
-b += text(232, 284, "21 lần qua · tắt sau 13,3 s", GRN, 13, "start", "700")
+b += text(232, 212, "cùng khối lượng,", "currentColor", 14)
+b += text(232, 230, "cùng từ trường", "currentColor", 14)
+b += text(232, 248, "rãnh cắt đường dòng", GRN, 14)
+b += text(232, 266, "→ dòng nhỏ → hãm yếu", GRN, 14)
+b += text(232, 284, "qua 21 lần · tắt 13,3 s", GRN, 14, "start", "700")
 fig4 = wrap("0 0 440 296",
             "Hai tấm nhôm dao động qua vùng từ trường vuông góc mặt tấm: tấm liền khối có dòng Foucault khép kín lớn nên tắt nhanh, tấm có rãnh xẻ bị cắt đường dòng nên dao động lâu hơn",
             b, "Hình 4. Cùng khối lượng, cùng từ trường: tấm liền khối tắt nhanh, tấm có rãnh xẻ lâu hơn.")
