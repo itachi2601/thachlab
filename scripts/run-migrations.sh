@@ -81,6 +81,7 @@ FILES=(
   "supabase/migrations/20261024220000_lesson_practice_pool_mo_ca_kho.sql|Chặng 0 mở cả kho: chỉ loại câu nguồn là đề kiểm tra thật (class_assessments/BTVN/TA/ôn tập), không tính đề thi thử gắn mục Kiểm tra|lúc nào cũng được"
   "supabase/migrations/20261024190000_lesson_notes.sql|Bảng lesson_notes: ghi chú riêng của học sinh theo mục bài học (RLS chỉ chủ sở hữu, giáo viên không đọc), chỉ thêm bảng mới|lúc nào cũng được"
   "supabase/migrations/20261025100000_on_tap_tu_hoc_ve_nha.sql|Ôn tập theo chặng: chế độ Tự học ở nhà (cột mode/due_at/sequential, hàm review_create_self, review_session_meta; thay review_my_state/list/set_stage/secs_left, buổi live chạy y như cũ)|lúc nào cũng được"
+  "supabase/migrations/20261026200000_bucket_lesson_clips.sql|Bucket Storage công khai lesson-clips cho clip hiện tượng tự dựng (mp4 + ảnh bìa webp, ≤ 5 MB), chỉ thêm bucket|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
