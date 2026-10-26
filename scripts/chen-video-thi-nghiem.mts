@@ -43,7 +43,12 @@ const khoDir = path.resolve(root, opt("--kho") || "content/thi-nghiem");
 const lessonRoot = path.resolve(root, opt("--root") || "content/lesson-samples");
 
 type Video = {
-  youtube_id: string;
+  /** Clip YouTube có sẵn (11 ký tự) — hoặc dùng `mp4` cho clip tự dựng lưu ở Storage. */
+  youtube_id?: string;
+  /** Clip tự dựng/tự quay: URL công khai ở bucket lesson-clips (scripts/tai-clip-len-storage.mts ghi). */
+  mp4?: string;
+  /** Ảnh bìa .webp của clip mp4 (hiện trước khi bấm; video không tải gì khi chưa bấm). */
+  poster?: string;
   ten?: string;
   kenh?: string;
   nhan?: string;
@@ -55,6 +60,11 @@ type Video = {
 };
 type KhoEntry = { expTen: string; lessonId?: number | string; video: Video };
 
+/** Khoá nhận diện một video: youtube_id, hoặc URL mp4 với clip tự dựng. */
+function khoaVideo(v: Video | undefined): string {
+  return v?.youtube_id || v?.mp4 || "";
+}
+
 function docKho(): Map<string, KhoEntry> {
   const map = new Map<string, KhoEntry>();
   if (!fs.existsSync(khoDir)) {
@@ -64,7 +74,7 @@ function docKho(): Map<string, KhoEntry> {
   for (const name of fs.readdirSync(khoDir).sort()) {
     if (!/^tn-.*\.json$/.test(name)) continue;
     const data = JSON.parse(fs.readFileSync(path.join(khoDir, name), "utf8"));
-    if (!data?.video?.youtube_id) continue;
+    if (!khoaVideo(data?.video)) continue;
     map.set(data.id, { expTen: data.ten ?? data.id, lessonId: data.lesson_id, video: data.video });
   }
   return map;
@@ -104,7 +114,10 @@ function renderBlock(marker: string, tieuDeHop: string, nhan: string, v: Video):
     `<!--video:${marker}-->`,
     `<div class="tl-box tl-box--video">`,
     `<p class="tl-label">🎬 ${escapeHtml(tieuDeHop)}: ${escapeHtml(nhan)}</p>`,
-    `<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/${v.youtube_id}?${params.toString()}" title="${escapeHtml(nhan)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`,
+    v.mp4
+      ? // Clip tự dựng: thẻ <video> thuần, preload="none" → chỉ tải ảnh bìa, không JS, không gợi ý video khác (V5, V9)
+        `<div class="tl-video"><video src="${escapeHtml(v.mp4)}"${v.poster ? ` poster="${escapeHtml(v.poster)}"` : ""} controls preload="none" playsinline title="${escapeHtml(nhan)}" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>`
+      : `<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/${v.youtube_id}?${params.toString()}" title="${escapeHtml(nhan)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`,
   ];
   if (v.nhin_vao?.trim()) lines.push(`<p><strong>Nhìn vào:</strong> ${escapeHtml(v.nhin_vao.trim())}</p>`);
   lines.push(`</div>`, ``);
@@ -113,7 +126,7 @@ function renderBlock(marker: string, tieuDeHop: string, nhan: string, v: Video):
 
 /** Tên hộp + nhãn của một khối video, theo vị trí chèn. */
 function nhanCuaVideo(v: Video, pool: Map<string, Video>, macDinh: string): { tieuDeHop: string; nhan: string } {
-  const shared = pool.get(v.youtube_id);
+  const shared = pool.get(khoaVideo(v));
   return {
     tieuDeHop: v.tieu_de_hop?.trim() || macDinh,
     nhan: (v.nhan ?? v.ten ?? shared?.ten ?? "video").trim(),
@@ -133,7 +146,7 @@ function docVideoTheoBai(): Map<string, ViTriBai[]> {
   const data = JSON.parse(fs.readFileSync(f, "utf8")) as { bai?: { slug?: string; videos?: ViTriBai[] }[] };
   for (const b of data?.bai ?? []) {
     if (!b?.slug || !Array.isArray(b.videos)) continue;
-    map.set(b.slug, b.videos.filter((v) => v?.video?.youtube_id));
+    map.set(b.slug, b.videos.filter((v) => khoaVideo(v?.video)));
   }
   return map;
 }
@@ -301,8 +314,8 @@ function chenVaoHtml(
       boQua.push(`${id} (đã chèn trước đó)`);
       continue;
     }
-    if (html.includes(video.youtube_id)) {
-      boQua.push(`${id} (bài đã có video ${video.youtube_id} chèn tay)`);
+    if (html.includes(khoaVideo(video))) {
+      boQua.push(`${id} (bài đã có video ${khoaVideo(video)} chèn tay)`);
       continue;
     }
     const anchor = findAnchor(html, id);
@@ -318,7 +331,7 @@ function chenVaoHtml(
     }
     const { tieuDeHop, nhan } = nhanCuaVideo(video, pool, "Xem thí nghiệm thật");
     inserts.push({ pos, block: renderBlock(id, tieuDeHop, nhan || entry.expTen, video) });
-    chen.push(`${id} → ${video.youtube_id}${quaFig ? " (qua mốc <!--FIGn-->, khớp hình trong theory.html)" : ""}`);
+    chen.push(`${id} → ${khoaVideo(video)}${quaFig ? " (qua mốc <!--FIGn-->, khớp hình trong theory.html)" : ""}`);
   }
 
   // Video gắn theo BÀI (mở bài / trước-sau một mốc) — khai ở video-theo-bai.json
@@ -327,8 +340,8 @@ function chenVaoHtml(
       boQua.push(`${viTri} (đã chèn trước đó)`);
       continue;
     }
-    if (html.includes(video.youtube_id)) {
-      boQua.push(`${viTri} (bài đã có video ${video.youtube_id} chèn tay)`);
+    if (html.includes(khoaVideo(video))) {
+      boQua.push(`${viTri} (bài đã có video ${khoaVideo(video)} chèn tay)`);
       continue;
     }
     const pos = viTriChon(html, viTri);
@@ -338,7 +351,7 @@ function chenVaoHtml(
     }
     const { tieuDeHop, nhan } = nhanCuaVideo(video, pool, viTri === "mo_bai" ? "Xem thực tế" : "Xem video");
     inserts.push({ pos, block: renderBlock(viTri, tieuDeHop, nhan, video) });
-    chen.push(`${viTri} → ${video.youtube_id}`);
+    chen.push(`${viTri} → ${khoaVideo(video)}`);
   }
 
   let out = html;

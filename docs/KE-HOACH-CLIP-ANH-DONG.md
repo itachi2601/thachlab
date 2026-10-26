@@ -164,3 +164,10 @@ Nộp lại: hai file trên; Claude (kiem-code) soát trước khi dùng.
 - Hộp rút: _(chờ chặng 0)_
 - SVG chuyển động: _(chờ chặng 0)_
 - Kịch bản clip: _(chờ chặng 0)_
+
+## Cập nhật 26/10/2026 — bỏ bước tải YouTube cho clip tự dựng
+`scripts/tai-clip-len-storage.mts <clip.mp4> --tn <id> [--nhan …] [--nhin-vao …] [--apply]`: kiểm 8–30 s, ≤ 3 MB, tạo
+ảnh bìa webp từ giây 1, tải lên bucket `lesson-clips` (migration `20261026200000_bucket_lesson_clips.sql`), ghi
+`video.mp4`/`poster` vào `tn-*.json`. Rồi `chen-video-thi-nghiem.mts` chèn `<video preload="none">`. Ở chặng 3b, bước
+"thầy tải lên YouTube" thay bằng lệnh trên (Claude chạy trong tab terminal). Clip mẫu: `l12-thuyet-dong-hoc-phan-tu/video/clip_bong_bay.py`.
+
