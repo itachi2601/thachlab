@@ -154,7 +154,7 @@ b += text(58, 182, "hợp lại", BLUE, 13, "start", "700")
 b += arrow("f3", "o", 396, 104, 300, 92, 2.2)
 b += text(362, 124, "nặng: vỡ ra", ORG, 13, "middle", "700")
 fig3 = wrap_fig("0 0 420 252",
-                "Đường cong phác hoạ năng lượng liên kết riêng theo số khối, đạt đỉnh quanh sắt-56 ở 8,8 MeV mỗi nuclôn",
+                "Đường cong theo số liệu năng lượng liên kết riêng theo số khối, đạt đỉnh quanh sắt-56 ở 8,8 MeV mỗi nuclôn",
                 b,
                 "Hình 3. Năng lượng liên kết riêng đạt đỉnh quanh sắt-56 (khoảng 8,8 MeV/nuclôn). Bên trái đỉnh, "
                 "hợp hạt nhân nhẹ lại thì toả năng lượng; bên phải đỉnh, cho hạt nhân nặng vỡ ra cũng toả năng lượng.")
