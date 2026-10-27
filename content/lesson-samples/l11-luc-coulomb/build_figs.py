@@ -15,26 +15,14 @@ def charge(x, y, sign, r=14):
 def sub(base, s):  # chữ có chỉ số dưới, không dùng KaTeX trong SVG
     return f'{base}<tspan baseline-shift="sub" font-size="11">{s}</tspan>'
 
-# ---- Hình 1: cùng dấu đẩy, trái dấu hút; hai lực bằng nhau, ngược chiều
-b = defs("f1")
-b += text(12, 22, "Cùng dấu: đẩy nhau", "currentColor", 13, "start", "700")
-y = 55
-b += line(150, y, 290, y, "currentColor", 1.2, "3 3", .5)
-b += arrow("f1", "r", 136, y, 86, y) + arrow("f1", "b", 304, y, 354, y)
-b += charge(150, y, "+") + charge(290, y, "+")
-b += text(111, y - 16, sub("F", "21"), RED, 13, "middle", "700") + text(329, y - 16, sub("F", "12"), BLUE, 13, "middle", "700")
-b += text(150, y + 32, sub("q", "1"), "currentColor", 13, "middle") + text(290, y + 32, sub("q", "2"), "currentColor", 13, "middle")
-b += text(12, 117, "Trái dấu: hút nhau", "currentColor", 13, "start", "700")
-y = 150
-b += line(150, y, 290, y, "currentColor", 1.2, "3 3", .5)
-b += arrow("f1", "r", 164, y, 214, y) + arrow("f1", "b", 276, y, 226, y)
-b += charge(150, y, "+") + charge(290, y, "-")
-b += text(186, y - 16, sub("F", "21"), RED, 13, "middle", "700") + text(254, y - 16, sub("F", "12"), BLUE, 13, "middle", "700")
-b += text(150, y + 32, sub("q", "1"), "currentColor", 13, "middle") + text(290, y + 32, sub("q", "2"), "currentColor", 13, "middle")
-b += line(150, 196, 290, 196, "currentColor", 1.2) + line(150, 190, 150, 202, "currentColor", 1.2) + line(290, 190, 290, 202, "currentColor", 1.2)
-b += text(220, 214, "r", "currentColor", 13, "middle", "700")
-fig1 = wrap("0 0 440 222", "Hai điện tích cùng dấu đẩy nhau, trái dấu hút nhau; hai lực cùng độ lớn, ngược chiều, nằm trên đường nối",
-            b, "Hình 1. F<sub>12</sub>: lực q<sub>1</sub> tác dụng lên q<sub>2</sub>; F<sub>21</sub>: lực q<sub>2</sub> tác dụng lên q<sub>1</sub>. Hai lực dài bằng nhau, ngược chiều, nằm trên đường nối hai điện tích.")
+# ---- Hình 1: ảnh OpenStax College Physics 2e, Hình 18.17 (đợt 28/10/2026)
+fig1 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-luc-coulomb/hinh-luc-hai-dien-tich.webp" '
+        'alt="Hai cặp điện tích điểm: (a) hai điện tích cùng dấu, hai lực đẩy ra xa nhau; (b) hai điện tích trái dấu, hai lực hút lại gần nhau" '
+        'loading="lazy" width="1000" height="196" style="max-width:100%;height:auto">'
+        '<figcaption>Hình 1. (a) Cùng dấu: đẩy nhau. (b) Trái dấu: hút nhau.<br>'
+        'F<sub>12</sub>: lực q<sub>1</sub> tác dụng lên q<sub>2</sub>; F<sub>21</sub>: ngược lại. Hai lực bằng nhau, ngược chiều.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 18.17 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 
 # ---- Hình 2: tổng hợp hai lực vuông góc tại C (thang 40 px/cm, lực 10 px/mN)
 C, A, B = (300, 100), (180, 100), (300, 260)

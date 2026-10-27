@@ -58,70 +58,39 @@ fig1 = wrap("0 0 420 158", "Bếp từ chạy dòng xoay chiều đặt cạnh m
 
 # ------------------------------------------------- Hình 2: điện trường xoáy
 b = defs("f2")
-b += text(14, 22, "Điện trường xoáy bao quanh đường sức từ", "currentColor", 12.5, "start", "700")
+b += text(14, 22, "Điện trường xoáy bao quanh đường sức từ", "currentColor", 14, "start", "700")
 b += f'<ellipse cx="210" cy="118" rx="96" ry="56" fill="none" stroke="{BLUE}" stroke-width="2.6"/>'
 b += line(210, 52, 210, 184, RED, 3)
 b += f'<path d="M210,56 L204,68 L216,68 z" fill="{RED}"/>'
 b += arrow("f2", "b", 176, 62, 244, 62, 2.4)
 b += arrow("f2", "b", 244, 174, 176, 174, 2.4)
-b += text(222, 46, "đường sức từ biến thiên (B)", RED, 10.5, "start", "600")
-b += text(22, 214, "đường sức điện trường xoáy: đường cong kín bao quanh đường cảm ứng từ", BLUE, 10.5, "start", "600")
-fig2 = wrap("0 0 420 226", "Đường sức từ thẳng đứng có một mũi tên ở đầu trên chỉ chiều, bao quanh là một đường cong kín của điện trường xoáy với hai mũi tên chỉ chiều",
-            b, "Hình 2. Từ trường biến thiên sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.")
+b += text(222, 44, "từ trường B đang tăng", RED, 14, "start", "600")
+b += text(22, 214, "đường sức điện trường xoáy:", BLUE, 14, "start", "600")
+b += text(22, 232, "đường cong kín bao quanh đường cảm ứng từ", BLUE, 14, "start", "600")
+fig2 = wrap("0 0 420 244", "Đường sức từ thẳng đứng có một mũi tên ở đầu trên chỉ chiều, bao quanh là một đường cong kín của điện trường xoáy với hai mũi tên chỉ chiều",
+            b, "Hình 2. Từ trường biến thiên (ở đây B đang tăng) sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.")
 
-# ------------------------------------------------- Hình 3: sóng điện từ
-b = defs("f3")
-b += text(14, 20, "Sóng điện từ: sóng ngang, E và B cùng pha", "currentColor", 12.5, "start", "700")
-b += text(410, 136, "phương truyền sóng", "currentColor", 10.5, "end", "600")
-AX, AMP, LAM = 146, 42, 185.0
-b += line(30, AX, 404, AX, "currentColor", 2)
-b += '<path d="M404,140 L415,146 L404,152 z" fill="currentColor"/>'
-e_pts, b_pts = [], []
-x = 30.0
-while x <= 30 + 1.5 * LAM:
-    s = math.sin(2 * math.pi * (x - 30) / LAM)
-    e_pts.append((x, AX - AMP * s))
-    bb = 40 * s
-    b_pts.append((x + 0.28 * bb, AX + 0.55 * bb))
-    x += 2
-b += poly(b_pts, BLUE, 2.4)
-b += poly(e_pts, RED, 2.6)
-x0 = 30 + LAM / 4
-b += arrow("f3", "r", x0, AX, x0, AX - AMP, 2.6)
-b += arrow("f3", "b", x0, AX, x0 + 0.28 * 40, AX + 0.55 * 40, 2.6)
-b += text(x0, AX - AMP - 10, "E", RED, 12.5, "middle", "700")
-b += text(x0 + 26, AX + 34, "B", BLUE, 12.5, "start", "700")
-b += text(14, 216, "E vuông góc với B, cả hai cùng vuông góc với phương truyền", "currentColor", 10.5, "start", "600")
-b += text(14, 232, "E và B cùng pha: hai đường cong cùng cắt trục tại một chỗ", "currentColor", 10.5, "start", "600")
-fig3 = wrap("0 0 420 243", "Sóng điện từ lan truyền theo trục ngang: vectơ E dao động thẳng đứng, vectơ B dao động theo phương xiên, hai đường cong cùng pha",
-            b, "Hình 3. Sóng điện từ là sóng ngang: E vuông góc với B, cả hai vuông góc phương truyền và luôn cùng pha.")
+# ------------------------------------------------- Hình 3: sóng điện từ (ảnh OpenStax, chèn trực tiếp)
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-3.webp" '
+        'alt="Một đoạn sóng điện từ truyền sang phải: các mũi tên xanh của vectơ E dao động thẳng đứng, các mũi tên hồng của vectơ B dao động trong mặt phẳng nằm ngang, hai đường cong cùng pha và cùng vuông góc phương truyền" '
+        'loading="lazy" width="875" height="602"><figcaption>'
+        'Hình 3. Sóng điện từ: E vuông góc B, cả hai vuông góc phương truyền, cùng pha.<br>'
+        'Mũi tên xanh: vectơ điện trường E.<br>'
+        'Mũi tên hồng: vectơ cảm ứng từ B.<br>'
+        'Mũi tên xanh lá c: phương truyền sóng.<br>'
+        'Hình: OpenStax, College Physics 2e, Hình 24.7 — CC BY\u2011NC\u2011SA 4.0 — openstax.org/books/college-physics-2e'
+        '</figcaption></figure>')
 
-# ------------------------------------------------- Hình 4: thang sóng điện từ
-b = defs("f4")
-b += text(14, 18, "Thang sóng điện từ", "currentColor", 12.5, "start", "700")
-b += text(406, 18, "bước sóng giảm dần", "currentColor", 10.5, "end", "600")
-edges = [30, 125, 180, 225, 280, 335, 400]
-names = ["sóng vô tuyến", "hồng ngoại", "ánh sáng nhìn thấy", "tử ngoại", "tia X", "tia gamma"]
-for i in range(6):
-    x1, x2 = edges[i], edges[i + 1]
-    col = BLUE if i == 0 else "currentColor"
-    fill = "rgba(56,189,248,.20)" if i == 0 else "rgba(148,163,184,.14)"
-    b += rect(x1, 82, x2 - x1, 22, fill, col, 1.6, 3)
-cen = [(edges[i] + edges[i + 1]) / 2 for i in range(6)]
-for i in (0, 2, 4):
-    col = BLUE if i == 0 else "currentColor"
-    b += line(cen[i], 56, cen[i], 82, "currentColor", 1, "3 3", .55)
-    b += text(cen[i], 50, names[i], col, 10.5, "middle", "700")
-for i in (1, 3, 5):
-    b += line(cen[i], 72, cen[i], 82, "currentColor", 1, "3 3", .55)
-    b += text(cen[i], 66, names[i], "currentColor", 10.5, "middle", "700")
-b += text(14, 126, "Ranh giới các vùng: 1 mm · 0,76 μm · 0,38 μm · 10 nm · 0,01 nm", "currentColor", 10, "start", "600")
-b += text(14, 144, "Sơ đồ bậc thang: độ rộng các vùng không theo tỉ lệ bước sóng", "currentColor", 10, "start", "600")
-b += text(14, 164, "mọi vùng đều là sóng điện từ, truyền trong chân không với cùng tốc độ c", "currentColor", 10.5, "start", "600")
-b += text(14, 180, "bước sóng càng nhỏ thì tần số và năng lượng càng lớn", "currentColor", 10.5, "start", "600")
-fig4 = wrap("0 0 420 194", "Thang sóng điện từ vẽ theo sơ đồ bậc thang, độ rộng các vùng không theo tỉ lệ bước sóng: sáu vùng xếp theo bước sóng giảm dần gồm vô tuyến, hồng ngoại, ánh sáng nhìn thấy, tử ngoại, tia X, tia gamma",
-            b, "Hình 4. Thang sóng điện từ: sáu vùng xếp theo bước sóng giảm dần (sơ đồ bậc thang, độ rộng các vùng không theo tỉ lệ); vùng tô xanh là sóng vô tuyến.",
-            exp="tn-l12-dttruong-04")
+# ------------------------------------------------- Hình 4: thang sóng điện từ (ảnh OpenStax, chèn trực tiếp)
+fig4 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-dttruong-04"><img src="/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-pho-dien-tu.webp" '
+        'alt="Thang sóng điện từ theo bước sóng (trục trên) và tần số (trục dưới): sóng vô tuyến gồm vi ba, TV, FM, AM ở tần số thấp, tiếp đến hồng ngoại, dải ánh sáng nhìn thấy rất hẹp, tử ngoại, tia X, tia gamma ở tần số cao" '
+        'loading="lazy" width="1000" height="377"><figcaption>'
+        'Hình 4. Thang sóng điện từ: bước sóng giảm dần từ sóng vô tuyến tới tia gamma; ánh sáng nhìn thấy là dải rất hẹp.<br>'
+        'Nhãn: Wavelength = bước sóng; Frequency = tần số; Radio waves = sóng vô tuyến; Microwaves = vi ba.<br>'
+        'Nhãn: Infrared = hồng ngoại; Visible light = nhìn thấy; Ultraviolet = tử ngoại; X rays = tia X; \u03b3 rays = tia gamma.<br>'
+        'Nhãn: \u00c5 = $10^{-10}$ m; fermis = $10^{-15}$ m.<br>'
+        'Hình: OpenStax, College Physics 2e, Hình 24.8 \u2014 CC BY\u2011NC\u2011SA 4.0 \u2014 openstax.org/books/college-physics-2e'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

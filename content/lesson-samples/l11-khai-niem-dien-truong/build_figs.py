@@ -66,22 +66,15 @@ b += text(330, 228, "Q &lt; 0: E hướng về Q", BLUE, 13, "middle", "700")
 fig1 = wrap("0 0 440 240", "Vectơ cường độ điện trường tại các điểm cách đều điện tích: hướng ra xa điện tích dương, hướng về điện tích âm",
             b, "Hình 1. Các điểm cách đều Q có E bằng nhau về độ lớn. Q dương: E hướng ra xa Q; Q âm: E hướng về Q.")
 
-# ------------------------------------------------ Hình 2: đường sức điện tích dương / âm
-b = defs("f2")
-for cx, sign in ((110, 1), (330, -1)):
-    cy = 108
-    b += charge(cx, cy, sign)
-    for k in range(8):
-        t = k * math.pi / 4 + math.pi / 8
-        ux, uy = math.cos(t), math.sin(t)
-        b += line(cx + 18 * ux, cy + 18 * uy, cx + 96 * ux, cy + 96 * uy, "currentColor", 1.6, "", 0.75)
-        r_a, r_b = (50, 66) if sign > 0 else (66, 50)  # dương: mũi chỉ ra; âm: mũi chỉ vào
-        assert (r_b > r_a) == (sign > 0)
-        b += arr("f2", "r", cx + r_a * ux, cy + r_a * uy, cx + r_b * ux, cy + r_b * uy, 2.2)
-b += text(110, 226, "Dương: đường sức đi ra", RED, 13, "middle", "700")
-b += text(330, 226, "Âm: đường sức đi vào", BLUE, 13, "middle", "700")
-fig2 = wrap("0 0 440 238", "Đường sức điện của điện tích dương hướng ra ngoài, của điện tích âm hướng vào trong",
-            b, "Hình 2. Đường sức của một điện tích: ra từ điện tích dương tới vô cực, từ vô cực về điện tích âm. Gần điện tích đường sức mau: điện trường mạnh.")
+# ------------------------------------------------ Hình 2: ảnh OpenStax College Physics 2e, Hình 18.20 (đợt 28/10/2026)
+fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-khai-niem-dien-truong/hinh-duong-suc-diem.webp" '
+        'alt="Đường sức của ba điện tích điểm: (a) điện tích dương, đường sức hướng ra; (b) điện tích âm cùng độ lớn, đường sức hướng vào; (c) điện tích âm lớn hơn, đường sức mau hơn" '
+        'loading="lazy" width="1000" height="368" style="max-width:100%;height:auto">'
+        '<figcaption>Hình 2. (a) Điện tích dương: đường sức đi ra.<br>'
+        '(b) Điện tích âm: đường sức đi vào.<br>'
+        '(c) Điện tích âm lớn hơn: đường sức mau hơn.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 18.20 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 
 # ------------------------------------------------ Hình 3: quy tắc hình bình hành
 b = defs("f3")

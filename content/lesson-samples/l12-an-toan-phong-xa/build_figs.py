@@ -97,16 +97,16 @@ def xt(d):
 
 b += line(56, 190, 420, 190, "currentColor", 2)
 b += line(56, 190, 56, 40, "currentColor", 2)
-b += text(44, 26, "N (%)", "currentColor", 11, "end", "600")
-b += text(420, 226, "d (m)", "currentColor", 11, "end", "600")
+b += text(6, 16, "suất liều tương đối (%)", "currentColor", 14, "start", "600")
+b += text(420, 228, "d (m)", "currentColor", 14, "end", "600")
 for pct in (0, 25, 50, 75, 100):
     y = 190 - 1.5 * pct
     b += line(50, y, 56, y, "currentColor", 1.4)
-    b += text(44, y + 3.5, str(pct), "currentColor", 9, "end", "600")
+    b += text(44, y + 5, str(pct), "currentColor", 14, "end", "600")
 for d in (1, 1.5, 2, 2.5, 3):
     b += line(xt(d), 190, xt(d), 196, "currentColor", 1.4)
 for d in (1, 2, 3):
-    b += text(xt(d), 208, str(d), "currentColor", 10, "middle", "600")
+    b += text(xt(d), 212, str(d), "currentColor", 14, "middle", "600")
 pts = []
 d = 1.0
 while d <= 3.201:
@@ -115,10 +115,10 @@ while d <= 3.201:
 b += f'<polyline fill="none" stroke="{GRN}" stroke-width="2.4" points="{" ".join(pts)}"/>'
 for d, lab in ((1, "100%"), (1.5, "44%"), (2, "25%"), (3, "11%")):
     b += dot(xt(d), 190 - 150 / (d * d), 4, GRN)
-    b += text(xt(d) + 7, 190 - 150 / (d * d) - 4, lab, GRN, 11, "start", "700")
+    b += text(xt(d) + 7, 190 - 150 / (d * d) - 4, lab, GRN, 14, "start", "700")
 b += line(xt(1), 44, xt(2), 44, "currentColor", 1.2, "5 4", 0.8)
 b += line(xt(2), 44, xt(2), 148, "currentColor", 1.2, "5 4", 0.8)
-b += text(150, 34, "d gấp đôi → H còn 1/4", "currentColor", 10, "start", "600")
+b += text(150, 36, "d gấp đôi → suất liều còn 1/4", "currentColor", 14, "start", "600")
 fig3 = wrap("0 0 440 236",
             "Đồ thị suất liều còn lại theo khoảng cách: giảm nhanh theo bình phương khoảng cách, ở 2 m còn 25 phần trăm",
             b, "Hình 3. Suất liều giảm theo bình phương khoảng cách: ở 2 m còn 25%, ở 3 m còn 11%.")

@@ -27,10 +27,8 @@
 .class-lesson--static:hover { border-color: var(--lesson-line); background: var(--lesson-surface); box-shadow: none; }
 .class-mastery--text { display: inline-flex; align-items: center; gap: 4px; margin-left: 8px; color: #94a3b8; font-size: 14px; font-weight: 500; white-space: nowrap; }
 html[data-theme="light"] .lesson-shell .class-progress-line,
-html[data-theme="light"] .lesson-shell .class-next-line-why,
+/* "Học tiếp" là khối màu đặc chữ trắng ở cả hai nền (globals.css, 26/10/2026) — chỉ dòng "đã học xong" đổi màu. */
 html[data-theme="light"] .lesson-shell .class-next-line--done { color: #334155; }
-html[data-theme="light"] .lesson-shell .class-next-line-label,
-html[data-theme="light"] .lesson-shell .class-next-line svg { color: #1d4ed8; }
 html[data-theme="light"] .lesson-shell .class-chip { color: #0f172a; }
 html[data-theme="light"] .lesson-shell .class-search-btn { color: #334155; }
 html[data-theme="light"] .lesson-shell .class-search-btn:hover { color: #0f172a; }
@@ -41,7 +39,7 @@ html[data-theme="light"] .lesson-shell .class-parent-band b { color: #064e3b; }
 html[data-theme="light"] .lesson-shell .class-parent-band a { color: #047857; }
 html[data-theme="light"] .lesson-shell .class-parent-band select { color: #0f172a; }
 html[data-theme="light"] .lesson-shell .class-mastery--text { color: #475569; }
-@media (max-width: 639px) { .class-next-line-why { display: none; } }
+
 /* Hàng phẳng (thông báo, kệ đề) không có ô số. Dưới 640px lưới 26px | 1fr | auto
    nhét tiêu đề vào cột 26px nên mỗi chữ một dòng. */
 @media (max-width: 639px) {
@@ -55,3 +53,79 @@ html[data-theme="light"] .lesson-shell .class-mastery--text { color: #475569; }
 .lesson-layout--pick .lesson-main--single > .lesson-head h1 { flex: 1 1 auto; }
 .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { flex: 0 0 100%; min-width: 100%; }
 .lesson-layout--pick .lesson-main--single > .lesson-head .class-search-btn { margin-left: auto; }
+
+/* ============================================================================================
+   TRANG CHƯƠNG KHỚP BẢN DUYỆT 26/10/2026 (đợt 2) — số đo theo bản xem thử "Trang chương và trang bài".
+   ============================================================================================ */
+/* Rail chương: lối về Lớp học + khung "<lớp> · Chương", tiến độ x/y mục từng chương (L2/B5). */
+.class-rail { display: grid; gap: 14px; align-content: start; }
+.class-rail .lesson-rail-back { display: flex; min-height: 32px; align-items: center; gap: 6px; padding: 0; color: var(--color-muted); font-size: 14px; font-weight: 500; }
+.class-rail-box { border: 1px solid var(--lesson-line); border-radius: 14px; background: var(--color-panel); padding: 10px; }
+.class-rail-title { display: flex; justify-content: space-between; gap: 8px; margin: 0; padding: 6px 10px 8px; color: var(--color-slate-500, #64748b); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.class-rail-box ol { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.class-rail-item { display: grid; width: 100%; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: start; gap: 8px; min-height: 40px; border: 0; border-radius: 9px; background: none; padding: 9px 10px; color: var(--color-ink); font: inherit; font-size: 14px; line-height: 1.4; text-align: left; cursor: pointer; }
+.class-rail-item:hover { background: var(--lesson-surface); }
+.class-rail-n, .class-rail-st { padding-top: 1px; color: var(--color-slate-500, #64748b); font-size: 12px; font-variant-numeric: tabular-nums; }
+.class-rail-item.is-active { background: var(--color-primary-soft, #eef2ff); color: var(--color-primary, #1d4ed8); font-weight: 600; }
+.class-rail-item.is-active :is(.class-rail-n, .class-rail-st) { color: inherit; }
+
+/* Đầu trang: đường dẫn + Tìm bài một hàng, H1, một dòng meta (chuỗi ngày là một mục trong meta). */
+.lesson-layout--pick .lesson-main--single > .lesson-head.class-head { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
+.class-crumb-row { display: flex; min-height: 36px; align-items: center; justify-content: space-between; gap: 12px; }
+.class-head .lesson-breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; color: var(--color-muted); font-size: 14px; }
+.class-head .lesson-breadcrumb a { color: inherit; text-decoration: none; }
+.class-head .lesson-breadcrumb a:hover { color: var(--color-primary, #1d4ed8); }
+.lesson-layout--pick .class-head h1 { flex: none; margin: 0; }
+.lesson-layout--pick .class-head .class-search-btn { width: auto; min-width: 44px; height: 44px; gap: 6px; margin: 0; padding: 0 12px; border-radius: 10px; background: var(--color-panel); color: var(--color-ink); font-size: 14px; font-weight: 500; }
+.class-search-text { display: none; }
+.class-head-meta { margin: 0; }
+.class-head-meta > span + span::before { content: "·"; margin-right: 10px; color: var(--color-slate-500, #64748b); }
+.lesson-layout--pick .class-next-line-why { white-space: normal; }
+
+/* Danh sách bài: MỘT khối liền, dòng cách nhau bằng đường kẻ, dòng ≥ 56px (bản duyệt; D2). */
+.lesson-layout--pick :is(.class-lessons, .class-semester) { display: grid; gap: 0; margin: 12px 0 0; border: 1px solid var(--lesson-line); border-radius: 14px; background: var(--color-panel); padding: 0; overflow: hidden; }
+.lesson-layout--pick .class-lessons > li + li, .lesson-layout--pick .class-semester > * + * { border-top: 1px solid var(--lesson-line); }
+.lesson-layout--pick :is(.class-lessons, .class-semester) .class-lesson { display: grid; min-height: 56px; grid-template-columns: 30px minmax(0, 1fr) auto; align-items: center; gap: 14px; border: 0; border-radius: 0; background: none; box-shadow: none; padding: 14px 18px; }
+.lesson-layout--pick :is(.class-lessons, .class-semester) .class-lesson:hover { background: var(--lesson-surface); box-shadow: none; }
+.lesson-layout--pick .class-lessons--flat .class-lesson { grid-template-columns: minmax(0, 1fr); }
+.lesson-layout--pick .class-lesson .class-num { width: 28px; height: 28px; border-width: 1.5px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.lesson-layout--pick .class-lesson-title { font-size: 16px; font-weight: 600; line-height: 1.35; }
+.lesson-layout--pick .class-lesson .class-meta { font-size: 13px; font-weight: 600; }
+.lesson-layout--pick .class-lesson.is-started .class-meta { color: var(--color-primary, #1d4ed8); }
+.lesson-layout--pick .class-lesson.is-started .class-num { border-color: var(--color-primary, #1d4ed8); color: var(--color-primary, #1d4ed8); }
+.lesson-layout--pick .class-lesson.is-complete .class-num { border-color: var(--color-ok, #047857); background: var(--color-ok, #047857); color: #fff; }
+
+@media (min-width: 1024px) {
+  .lesson-layout--pick { grid-template-columns: 248px minmax(0, 1fr); gap: 40px; max-width: 1200px; padding: 28px 40px 48px; }
+  .lesson-layout--pick > .lesson-main { max-width: 720px; }
+  .lesson-layout--pick .class-head .class-search-text { display: inline; }
+}
+.class-rail .lesson-rail-back:hover { color: var(--color-primary, #1d4ed8); }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lesson-layout--pick { grid-template-columns: 220px minmax(0, 1fr); gap: 28px; padding: 24px 28px 40px; }
+  .lesson-layout--pick .class-head .class-search-text { display: none; }
+}
+.class-rail-item:focus-visible { outline: 2px solid var(--color-primary, #1d4ed8); outline-offset: 2px; }
+@media (max-width: 639px) {
+  .lesson-layout--pick :is(.class-lessons, .class-semester) .class-lesson { grid-template-columns: 28px minmax(0, 1fr); gap: 2px 12px; padding: 12px 14px; }
+  .lesson-layout--pick .class-lesson .class-meta { grid-column: 2; font-size: 12px; }
+  .lesson-layout--pick .class-lesson-title { font-size: 15px; }
+  .lesson-layout--pick .class-head-desc { display: none; }
+  .lesson-layout--pick .class-head-desc + span::before { content: none; }
+}
+/* Điện thoại: globals.css ẩn mọi .lesson-crumb-sep (đường dẫn trang bài) — trang chương vẫn cần "Lớp học › Vật lý 12". */
+.lesson-layout--pick .class-head .lesson-crumb-sep { display: inline !important; color: var(--color-slate-500, #64748b); }
+
+/* Màn rộng ≥ 1280px (27/10/2026): cột giữa trang chương lan sang khoảng trống bên phải tới cùng mép với thẻ lý thuyết
+   ở trang bài (100vw − 72px), danh sách bài chia 2 cột; rail giữ chỗ cũ. < 1280 không đổi. */
+.lesson-layout--pick { --wide-bleed: 0px; }
+@media (min-width: 1280px) {
+  /* Cột giữa bắt đầu ở (100vw − 1200)/2 + 40 + 248 + 40, rộng 720 → phần thêm = 50vw − 520, tối đa 320px. */
+  .lesson-layout--pick { --wide-bleed: clamp(0px, calc(50vw - 520px), 320px); }
+  /* Rộng hơn ô lưới (832px) nên tràn sang phải có chủ ý; vẫn trong khung nhìn. */
+  .lesson-layout--pick > .lesson-main { width: calc(720px + var(--wide-bleed)); max-width: none; }
+  /* Kiểm tra học kì (.class-semester, 1–2 mục) không chia cột. */
+  .lesson-layout--pick .lesson-main .class-lessons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lesson-layout--pick .lesson-main .class-lessons > li:nth-child(2) { border-top: 0; }
+  .lesson-layout--pick .lesson-main .class-lessons > li:nth-child(odd):not(:last-child) { border-right: 1px solid var(--lesson-line); }
+}

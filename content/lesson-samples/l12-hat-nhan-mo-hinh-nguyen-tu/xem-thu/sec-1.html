@@ -1,12 +1,12 @@
-<!doctype html><html lang="vi"><meta charset="utf-8">
+<!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.css">
 <style>
-:root{color-scheme:dark}
-body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{color-scheme:light}
+body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
 .exam-content{display:block}
-h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+h1{font-size:20px;margin:0 0 4px} .sub{color:var(--color-ink-muted,#475569);font-size:13px;margin:0 0 16px}
 /* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
 /* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
 .exam-content {
@@ -14,6 +14,27 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   line-height: 1.65;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+/* Vùng ĐỀ giống đề giấy (thầy chốt 11/10/2026): serif Tinos (= Times New Roman về số đo), chữ ≥ 17px, dòng ≥ 1,6.
+   Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
+   Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
+.exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
+.exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
+@media (max-width: 640px) {
+  .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
+}
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
 }
 
 /* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
@@ -130,7 +151,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 }
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
-  font-size: 0.85em;
+  font-size: var(--fs-sm);
   color: #94a3b8;
   text-align: center;
 }
@@ -140,7 +161,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
 .exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
 .exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
-.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
 .exam-content .tl-box--rule .tl-label { color: #fbbf24; }
 .exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
 .exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
@@ -149,6 +170,9 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
 .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
 .exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-conf { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; color: var(--color-muted, #475569); font-size: .92em; }
+.exam-content .tl-conf label { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; cursor: pointer; }
+.exam-content .tl-conf input { width: 18px; height: 18px; accent-color: var(--color-primary, #1d4ed8); }
 .exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
 .exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
@@ -162,15 +186,117 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
-.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
-html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   1.05rem (không 1.1rem): đo 375px, mẹo 4–5 chữ có dấu " – " mới nằm một dòng. Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo, .lesson-body .lesson-prose p.tl-meo { margin: 0 0 2px; font-size: 1.05rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
+/* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
+   --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
+.exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
+.exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
+.exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
+.exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
+.exam-content .tl-sim__row > input:checked + .tl-sim__chip { border-color: #22d3ee; background: rgba(34,211,238,.16); }
+.exam-content .tl-sim__row > input:focus-visible + .tl-sim__chip { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-sim svg { display: block; width: 100%; max-width: 420px; margin: 0 auto; height: auto; }
+.exam-content .tl-sim__st { display: none; margin-top: 8px; }
+.exam-content .tl-sim__st p { margin: 2px 0; }
+.exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
+.exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
+.exam-content .tl-sim__leg li { margin: 2px 0; }
+.exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
+.exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
+.exam-content .tl-sim .sim-sh { transform: scaleY(calc(var(--L) / 120)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-hd { transform: translateY(calc(var(--L) * -1px)) rotate(calc(90deg * (1 - var(--sg)))); transform-box: fill-box; transform-origin: 50% 0; opacity: clamp(0, calc(var(--L) * var(--L)), 1); transition: transform .25s ease, opacity .25s ease; }
+.exam-content .tl-sim .a-F { --L: calc(9 * var(--i) * var(--s)); --sg: var(--s); }
+.exam-content .tl-sim .a-Q { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Fp { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Pm { --L: -60; --sg: -1; }
+.exam-content .tl-sim .a-N { --L: calc(60 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .a-Pc { --L: -40; --sg: -1; }
+.exam-content .tl-sim .a-Np { --L: calc(-60 - 9 * var(--i) * var(--s)); --sg: -1; }
+.exam-content .tl-sim .a-Qb { --L: calc(100 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .sim-bar { transform: scaleX(calc(var(--i) * var(--s) / 5)); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-wn { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) { --s: -1; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wp { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wn { display: inline; }
+@media (prefers-reduced-motion: reduce) { .exam-content .tl-sim :is(.sim-sh, .sim-hd, .sim-bar) { transition: none; } }
+.exam-content .tl-sim:has(.tls-i0:checked) { --i: 0; }
+.exam-content .tl-sim:has(.tls-i1:checked) { --i: 1; }
+.exam-content .tl-sim:has(.tls-i2:checked) { --i: 2; }
+.exam-content .tl-sim:has(.tls-i3:checked) { --i: 3; }
+.exam-content .tl-sim:has(.tls-i4:checked) { --i: 4; }
+.exam-content .tl-sim:has(.tls-i5:checked) { --i: 5; }
+.exam-content .tl-sim:has(.tls-i0:checked) .st-0 { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-f:checked) .st-1p { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-r:checked) .st-1n { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-f:checked) .st-2p { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-r:checked) .st-2n { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-f:checked) .st-3p { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-r:checked) .st-3n { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-f:checked) .st-4p { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-r:checked) .st-4n { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-f:checked) .st-5p { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-r:checked) .st-5n { display: block; }
+html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-content .tl-sim__chip { border-color: rgba(15,23,42,.28); }
+/* Mô phỏng bài Tổng hợp lực (L10): hai dây kéo xe + lực kế trên dốc. Chỉ radio + CSS. */
+.exam-content .tl-sim--keo > svg,
+.exam-content .tl-sim--doc > svg { display: none; }
+.exam-content .tl-sim--keo:has(.k-a0:checked) > svg.k-a0,
+.exam-content .tl-sim--keo:has(.k-a60:checked) > svg.k-a60,
+.exam-content .tl-sim--keo:has(.k-a90:checked) > svg.k-a90,
+.exam-content .tl-sim--keo:has(.k-a120:checked) > svg.k-a120,
+.exam-content .tl-sim--keo:has(.k-a180:checked) > svg.k-a180,
+.exam-content .tl-sim--doc:has(.n-a0:checked) > svg.n-a0,
+.exam-content .tl-sim--doc:has(.n-a15:checked) > svg.n-a15,
+.exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
+.exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
+.exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +310,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,30 +319,48 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
+  }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
-   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
-   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -263,6 +407,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(148,163,184,.24);
   --pres-surface: rgba(15,23,42,.86);
   --pres-panel: #101a2e;
+  /* Token site đặt lại theo nền chiếu, không theo theme của trang: khung .tl-trap/.tl-check/.tl-fx
+     dùng color-mix(var(--color-panel)) nên theme tối của trang + nền chiếu sáng = hộp đen chữ mờ. */
+  --color-panel: #101a2e; --color-ink: #f1f5f9; --color-warn: #fbbf24; --color-primary: #60a5fa;
+  --color-surface-2: rgba(255,255,255,.06); --color-line-strong: rgba(255,255,255,.34);
   position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
 }
@@ -274,6 +422,8 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(15,23,42,.16);
   --pres-surface: rgba(255,255,255,.92);
   --pres-panel: #fff;
+  --color-panel: #fff; --color-ink: #0f172a; --color-warn: #b45309; --color-primary: #1d4ed8;
+  --color-surface-2: #eef1f6; --color-line-strong: #8b93a1;
   background: #f4f6fb;
 }
 
@@ -321,7 +471,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
-.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
+.presenter-tap span { color: var(--pres-accent); }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
@@ -376,6 +528,44 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+/* Ghi chú của HỌC SINH (StudentNoteFab): góc TRÁI để cách xa nút Báo lỗi ở góc phải (D3); nền theo token site. */
+.lesson-note-open { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; padding: 0 14px; color: var(--color-ink); font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; text-align: left; }
+.lesson-note-open::after { content: "›"; color: var(--color-muted); font-size: 16px; }
+.student-note-float { position: fixed; z-index: 45; left: 12px; bottom: 20px; max-width: calc(100vw - 24px); }
+body:has(.lesson-bottombar) .student-note-float { bottom: calc(var(--lesson-bottombar-h, 62px) + 12px + env(safe-area-inset-bottom, 0px)); }
+.student-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; border: 2px solid var(--color-primary, #1d4ed8); border-radius: 999px; background: var(--color-panel, #fff); padding: 0 16px 0 13px; color: var(--color-primary, #1d4ed8); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(15,23,42,.35); }
+.student-note { width: min(360px, calc(100vw - 24px)); border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 16px; background: var(--color-panel, #fff); padding: 12px 14px 14px; color: var(--color-ink, #0f172a); box-shadow: 0 16px 40px -16px rgba(15,23,42,.45); }
+.student-note-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.student-note-head p { display: grid; gap: 2px; min-width: 0; margin: 0; font-size: 15px; }
+.student-note-head p span { overflow: hidden; color: var(--color-muted, #475569); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.student-note-head button { display: grid; width: 44px; height: 44px; margin: -8px -8px 0 0; place-items: center; border: 0; background: none; color: var(--color-muted, #475569); cursor: pointer; }
+.student-note-label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
+.student-note-body { width: 100%; min-height: 96px; resize: vertical; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 10px; background: var(--color-bg, #f5f7fa); padding: 9px 10px; color: var(--color-ink, #0f172a); font: inherit; font-size: 16px; line-height: 1.5; }
+.student-note-status { margin: 6px 0 0; color: var(--color-muted, #475569); font-size: 12.5px; }
+.student-note-others { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.student-note-others button { display: grid; width: 100%; min-height: 44px; gap: 1px; border: 1px solid var(--color-line, rgba(15,23,42,.1)); border-radius: 10px; background: none; padding: 6px 10px; color: var(--color-ink, #0f172a); font-family: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.student-note-others button span { overflow: hidden; color: var(--color-muted, #475569); text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
 
 .presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
 .presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
@@ -436,6 +626,15 @@ html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); -
 /* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
    rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
 html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
 html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
 html.is-dim[data-theme="light"] .text-white { color: #33291a; }
 html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
@@ -557,36 +756,861 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 /* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
 .parent-page .parent-copy { max-width: 44rem; }
 
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
+
+/* Bài tập mẫu — tự giải từng bước (components/lessons/StepwiseSolution.tsx, 9/10/2026). D2 đích chạm ≥ 44px, L1 phản hồi tức thì, N7 một kiểu nhấn. */
+.exam-content .bt-step--ask { padding: 12px 12px 12px; border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.exam-content .bt-step--locked { opacity: .45; margin: 0 0 14px; }
+.exam-content .bt-ask { margin: 8px 0 0 36px; }
+.exam-content .bt-ask + .bt-ask { margin-top: 14px; }
+.exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
+.exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
+.exam-content .bt-ask-unit { color: #94a3b8; }
+.exam-content .bt-ask-row .lesson-btn-ghost { min-height: 44px; }
+.exam-content .bt-choice { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; background: rgba(255,255,255,.03); color: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+.exam-content .bt-choice:hover { background: rgba(255,255,255,.07); }
+.exam-content .bt-choice:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+.exam-content .bt-feedback { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
+.exam-content .bt-feedback--wrong { background: rgba(248,113,113,.12); }
+.exam-content .bt-feedback--ok { background: rgba(52,211,153,.10); }
+.exam-content .bt-show-all { display: block; margin: 4px 0 18px 36px; min-height: 44px; padding: 0; border: 0; background: none; color: #94a3b8; font-size: 14px; text-decoration: underline; cursor: pointer; }
+.exam-content .bt-flash { border-radius: 10px; box-shadow: 0 0 0 3px rgba(251,191,36,.6); transition: box-shadow .4s; }
+.bt-goroi-btn { display: block; width: 100%; min-height: 44px; white-space: normal; text-align: left; }
+.bt-nhan-dang { margin: 0 0 10px; padding: 8px 12px; border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; background: rgba(255,255,255,.04); font-size: 15px; line-height: 1.6; }
+.bt-nhan-dang .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .exam-content :is(.bt-step--ask, .bt-ask-input, .bt-choice) { border-color: rgba(15,23,42,.28); background: rgba(15,23,42,.03); }
+html[data-theme="light"] .exam-content .bt-choice:hover { background: rgba(15,23,42,.07); }
+html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: #475569; }
+html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
+html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+
+/* ==========================================================================
+   NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
+   ==========================================================================
+   Vì sao có khối này: trước đây theme TỐI là mặc định, nên hàng trăm chỗ trong JSX viết
+   thẳng class màu của nền tối — `bg-[#0B1020]`, `bg-white/5` (ô sáng mờ trên nền đen),
+   `border-white/10`, gradient `from-[#172c46]`, quầng sáng `shadow-[0_0_24px_…]`. Bật nền
+   sáng lên thì những chỗ đó thành mảng xám bết hoặc mảng tối lẫn trong trang trắng — đúng
+   cảm giác "màu không đẹp" mà thầy thấy.
+
+   Cách xử lý ở đây là LƯỚI AN TOÀN theo token, không phải nguồn màu:
+   · quét bằng attribute selector KHÔNG phân biệt hoa/thường (`i`) vì JSX viết lẫn
+     `bg-[#0B1020]` và `bg-[#0b1020]`, kèm cả biến thể mờ `/80`, `/[0.98]`;
+   · `[class~="…"]` (khớp ĐÚNG một token class) cho các idiom `bg-white/10` để KHÔNG đụng
+     `hover:bg-white/20` — biến thể hover xử riêng, nếu không nút mất phản hồi khi trỏ;
+   · mọi giá trị lấy từ token ở @theme, nên đổi bảng màu chỉ sửa một nơi.
+   Sửa gốc vẫn phải làm ở component (bỏ hex, dùng bg-panel/text-ink/border-line) — lưới này
+   chỉ để không còn ô tối nào lọt ra ngoài. Khi component đã sạch thì các rule dưới thành vô hại.
+   ========================================================================== */
+
+/* (1) Nền tối hard-code → mặt thẻ. Mọi biến thể hoa/thường + độ mờ đều khớp. */
+html[data-theme="light"] [class*="bg-[#04060a]" i],
+html[data-theme="light"] [class*="bg-[#05070b]" i],
+html[data-theme="light"] [class*="bg-[#050914]" i],
+html[data-theme="light"] [class*="bg-[#070b16]" i],
+html[data-theme="light"] [class*="bg-[#080d18]" i],
+html[data-theme="light"] [class*="bg-[#080d1a]" i],
+html[data-theme="light"] [class*="bg-[#080d1d]" i],
+html[data-theme="light"] [class*="bg-[#0a1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1220]" i],
+html[data-theme="light"] [class*="bg-[#0b1324]" i],
+html[data-theme="light"] [class*="bg-[#10192a]" i],
+html[data-theme="light"] [class*="bg-[#111a2e]" i],
+html[data-theme="light"] [class*="bg-[#172033]" i] {
+  background-color: var(--color-panel) !important;
+}
+
+/* (2) Ô sáng mờ trên nền tối (`bg-white/5`) → ô xám nhạt trên nền sáng. Giữ nguyên thứ bậc
+   đậm/nhạt giữa các mức để chỗ nào đậm hơn vẫn nổi hơn. */
+html[data-theme="light"] [class~="bg-white/5"],
+html[data-theme="light"] [class~="hover:bg-white/5"]:hover,
+html[data-theme="light"] [class~="bg-white/[.01]"],
+html[data-theme="light"] [class~="bg-white/[0.01]"] { background-color: rgba(15, 23, 42, .035) !important; }
+html[data-theme="light"] [class~="bg-white/[.02]"],
+html[data-theme="light"] [class~="bg-white/[0.02]"],
+html[data-theme="light"] [class~="bg-white/[.025]"],
+html[data-theme="light"] [class~="bg-white/[0.025]"],
+html[data-theme="light"] [class~="bg-white/[.03]"],
+html[data-theme="light"] [class~="bg-white/[0.03]"],
+html[data-theme="light"] [class~="bg-white/[.035]"],
+html[data-theme="light"] [class~="bg-white/[0.035]"],
+html[data-theme="light"] [class~="bg-white/[.04]"],
+html[data-theme="light"] [class~="bg-white/[0.04]"],
+html[data-theme="light"] [class~="bg-white/[.05]"],
+html[data-theme="light"] [class~="bg-white/[0.05]"],
+html[data-theme="light"] [class~="bg-white/[.06]"],
+html[data-theme="light"] [class~="bg-white/[0.06]"],
+html[data-theme="light"] [class~="bg-white/[.07]"],
+html[data-theme="light"] [class~="bg-white/[0.07]"],
+html[data-theme="light"] [class~="bg-white/[.08]"],
+html[data-theme="light"] [class~="bg-white/[0.08]"] { background-color: rgba(15, 23, 42, .05) !important; }
+html[data-theme="light"] [class~="bg-white/10"],
+html[data-theme="light"] [class~="hover:bg-white/10"]:hover { background-color: rgba(15, 23, 42, .055) !important; }
+html[data-theme="light"] [class~="bg-white/[0.14]"],
+html[data-theme="light"] [class~="bg-white/15"],
+html[data-theme="light"] [class~="hover:bg-white/15"]:hover { background-color: rgba(15, 23, 42, .075) !important; }
+html[data-theme="light"] [class~="bg-white/20"],
+html[data-theme="light"] [class~="hover:bg-white/20"]:hover { background-color: rgba(15, 23, 42, .09) !important; }
+
+/* (3) Viền trắng mờ trên nền tối → viền xám trên nền sáng. Không đụng /60 và /70: đó là khung
+   trắng cố ý đè LÊN ảnh/camera (QrScannerCard), phải giữ trắng. */
+html[data-theme="light"] [class~="border-white/5"],
+html[data-theme="light"] [class~="hover:border-white/5"]:hover { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="border-white/10"],
+html[data-theme="light"] [class~="hover:border-white/10"]:hover { border-color: rgba(15, 23, 42, .10) !important; }
+html[data-theme="light"] [class~="border-white/15"],
+html[data-theme="light"] [class~="hover:border-white/15"]:hover { border-color: rgba(15, 23, 42, .14) !important; }
+html[data-theme="light"] [class~="border-white/20"],
+html[data-theme="light"] [class~="hover:border-white/20"]:hover { border-color: rgba(15, 23, 42, .18) !important; }
+html[data-theme="light"] [class~="border-white/25"],
+html[data-theme="light"] [class~="hover:border-white/25"]:hover { border-color: rgba(15, 23, 42, .22) !important; }
+html[data-theme="light"] [class~="border-white/30"],
+html[data-theme="light"] [class~="hover:border-white/30"]:hover { border-color: rgba(15, 23, 42, .26) !important; }
+html[data-theme="light"] [class~="border-white/40"],
+html[data-theme="light"] [class~="hover:border-white/40"]:hover { border-color: rgba(15, 23, 42, .34) !important; }
+html[data-theme="light"] [class~="divide-white/5"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="divide-white/10"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .10) !important; }
+
+/* (4) Gradient nền tối + quầng sáng neon (M6: không gradient/glow ở vùng đọc và làm bài).
+   `background-image: none` là cách chắc nhất vì Tailwind dựng gradient qua biến --tw-gradient-*. */
+html[data-theme="light"] [class*="from-[#172c46]" i],
+html[data-theme="light"] [class*="via-[#0e1c32]" i],
+html[data-theme="light"] [class*="to-[#071426]" i],
+html[data-theme="light"] [class*="to-[#091627]" i],
+html[data-theme="light"] [class*="to-[#101a3a]" i],
+html[data-theme="light"] [class*="from-[#183a4a]" i],
+html[data-theme="light"] [class*="from-[#0b1020]" i],
+html[data-theme="light"] [class*="to-[#0b1020]" i] { background-image: none !important; }
+html[data-theme="light"] [class*="shadow-[0_0_"],
+html[data-theme="light"] [class*="shadow-[0_2px_4px_rgba(0,0,0"] { box-shadow: 0 1px 2px rgb(15 23 42 / .06) !important; }
+
+/* (5) Hai chỗ đặc biệt, phải đổi cả nền lẫn chữ vì chữ thừa hưởng màu của nền tối:
+   · badge 📖 của bài học (nền navy đậm, không đặt màu chữ) → chip nhấn nhạt;
+   · dải cảnh báo rời trang khi làm bài (nền nâu đậm + chữ amber) → nền amber rất nhạt. */
+html[data-theme="light"] [class*="bg-[#1d3461]" i] {
+  background-color: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
+}
+html[data-theme="light"] [class*="bg-[#2a2210]" i] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+/* Nút đặc màu teal đậm ở trang chủ (bg-[#155e75] + chữ trắng, hover bg-[#0e7490]): theo M3 chỉ
+   giữ MỘT màu nhấn cho hành động, nên đưa về primary thay vì thêm sắc độ bão hoà thứ hai. */
+html[data-theme="light"] [class*="bg-[#155e75]" i],
+html[data-theme="light"] [class*="bg-[#0e7490]" i] { background-color: var(--color-primary) !important; }
+
+/* (6) Không gian học CNC: vài mảng tối viết trong CSS (không phải class JSX) nên lưới ở trên
+   không với tới. Khung code thì CỐ Ý giữ tối (như trình soạn thảo) — chỉ đổi các mảng UI. */
+html[data-theme="light"] .cnc-embedded .cnc-programming-tabs button,
+html[data-theme="light"] .cnc-embedded .cnc-programming-suite > div.grid > div.bg-white,
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group {
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted);
+}
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group > header { background: var(--color-surface-2) !important; color: var(--color-ink); }
+
+/* ==========================================================================
+   PHẠM VI THEO NHÓM NGƯỜI XEM — cùng một bảng màu, khác số đo thị giác
+   ==========================================================================
+   Không phải "mỗi trang một bộ màu" (như vậy là phá N4/M3 và làm site rối), mà là: cùng hệ
+   thần, đổi đúng những chỗ nghiên cứu nói phải đổi cho từng lứa tuổi. */
+
+/* PHỤ HUYNH 45–60 — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1, P2, P5, P6).
+   Nền hơi ngả ấm (không dùng trắng tinh để giảm chói với người lão thị), chữ phụ tối hơn để
+   đạt ≥7:1 (AAA), nhấn dùng xanh navy đậm cho trang trọng và đủ tương phản. Cỡ chữ và đích
+   chạm đã có ở khối "P1/P2/P4 — khối PHỤ HUYNH" phía trên.
+
+   `html:not(.is-dim)` là BẮT BUỘC: "Dịu mắt" đặt token trên <html>, mà token khai ở phần tử con
+   luôn thắng token thừa hưởng — thiếu điều kiện này thì bật Dịu mắt ở /phu-huynh vẫn ra nền trắng
+   ấm thay vì nền kem, tức là vô hiệu hoá đúng tính năng dành cho người lão thị. */
+html:not(.is-dim) .parent-page {
+  --color-bg: #f7f7f4;
+  --color-panel: #ffffff;
+  --color-surface-2: #f1f1ec;
+  --color-ink: #14181f;          /* 15,9:1 trên #f7f7f4 */
+  --color-muted: #3d4653;        /* 8,9:1 trên #f7f7f4, 9,8:1 trên trắng — vượt AAA 7:1 */
+  --color-line: rgba(20, 24, 31, .14);
+  /* Phụ huynh phải thấy rõ ô nhập/viền hơn học sinh ⇒ viền đậm hơn (4,2:1 trên trắng). */
+  --color-line-strong: #767f8d;
+  --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+/* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
+   tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ
+   Dịu mắt vẫn đổi được nền sang kem. */
+.parent-page { background: var(--color-bg); }
+
+/* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
+   nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
+   nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
+html[data-theme="light"] .teacher-dashboard {
+  --color-bg: #f4f5f7;
+  --color-panel: #ffffff;
+  --color-surface-2: #eceef2;
+  --color-line: rgba(15, 23, 42, .12);
+}
+
+/* RP bài lý thuyết: thanh nộp câu tự chấm (đích chạm >=44px) */
+.theory-rp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: var(--fs-sm); color: #cbd5e1; }
+.theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
+.theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
+html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
+
+/* Bài Anh văn chuyên ngành (AVCN, lớp avcn): thẻ từ vựng có ảnh, câu đọc chạm hiện dịch, nút nghe 🔊
+   (<button data-tl-speak> — trang bài học xử lý uỷ quyền, HTML lưu DB không chứa JS). Mẫu: content/lesson-samples/avcn-*. */
+.exam-content .avcn-photo img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 12px; }
+.exam-content .avcn-photo figcaption { opacity: .85; }
+.exam-content .avcn-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.exam-content .avcn-card { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; }
+.exam-content .avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-card img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; }
+.exam-content .avcn-card__body p { margin: 0 0 4px; text-align: left; }
+.exam-content .avcn-term { font-weight: 700; font-size: 1.1rem; }
+.exam-content .avcn-term small { font-weight: 400; font-size: .9rem; opacity: .8; }
+.exam-content .avcn-star { font-size: .8rem; }
+.exam-content .avcn-vi { color: #22d3ee; font-weight: 600; }
+html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
+.exam-content .avcn-def { font-size: .95rem; }
+.exam-content .tl-speak { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; padding: 0 6px; border: 1px solid rgba(148,163,184,.4); border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; vertical-align: middle; }
+.exam-content .tl-speak:hover { border-color: #22d3ee; }
+.exam-content .avcn-sent { margin: 6px 0; }
+.exam-content .avcn-sent > summary { font-weight: 400; line-height: 1.6; }
+.exam-content .avcn-n { font-weight: 700; opacity: .7; margin-right: 4px; }
+.exam-content .avcn-trans { opacity: .9; }
+.exam-content .avcn-list { padding-left: 18px; }
+.exam-content .avcn-list li { margin: 6px 0; text-align: left; }
+.exam-content .avcn-box { padding: 8px 12px; border: 1px dashed rgba(148,163,184,.6); border-radius: 10px; text-align: left; }
+.exam-content .avcn-passage { padding: 12px 14px; border-left: 3px solid #22d3ee; background: rgba(148,163,184,.08); border-radius: 0 10px 10px 0; margin: 10px 0; }
+.exam-content .avcn-passage p { margin: 0; text-align: left; line-height: 1.7; }
+@media (max-width: 420px) { .exam-content .avcn-card { grid-template-columns: 88px 1fr; } .exam-content .avcn-card img { width: 88px; height: 66px; } }
+.exam-content .avcn-card.avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-tbl :is(th, td):first-child { white-space: nowrap; }
+.exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
+.exam-content .avcn-term .tl-speak { margin-left: 2px; }
+.exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
+
+/* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
+   Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
+.exam-content .tl-fx > p { margin: 0; }
+.exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
+.exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
+.exam-content .tl-fx .katex-display { margin: 4px 0; padding: 6px 0; border: 0; background: none; text-align: center; overflow-x: auto; overflow-y: hidden; }
+.exam-content .tl-fx .katex-display > .katex { display: block; }
+.exam-content ul.tl-fx-def { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--color-line, rgba(148,163,184,.4)); display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: baseline; text-align: left; }
+.exam-content ul.tl-fx-def > li { display: contents; }
+.exam-content ul.tl-fx-def .tl-sym { text-align: right; white-space: nowrap; }
+.exam-content ul.tl-fx-def .tl-sym::after { content: " :"; }
+.exam-content .tl-fx-note { margin-top: 10px !important; font-size: .95em; text-align: left; }
+/* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
+.lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
+.lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, icon tròn ở góc phải trên, màu theo ĐÚNG token của docs/MAU-NEN-SANG.md (M3):
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) — viền trung tính đậm (màu mực), KHÔNG dùng màu nhấn/trạng thái
+     ⚠️ bẫy mất điểm (.tl-trap) — --color-warn (cần chú ý); không dùng đỏ vì đỏ chỉ để "sai" ở phản hồi quiz bên trong
+     ✍️ tự kiểm tra (.tl-check) — --color-primary (khối có thứ bấm được)
+   Mọi thứ còn lại là ghi chú: .tl-note (vạch trái mỏng trung tính), .tl-more (mục bấm xem). Không để khung nằm trong khung.
+   Tương phản viền ≥ 3:1 ở cả hai theme (WCAG 1.4.11); nghĩa nằm ở icon + nhãn, không chỉ ở màu (M4). */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: var(--color-ink, #0f172a); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--color-surface-2, rgba(148,163,184,.08)); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: var(--color-warn, #b45309); background: color-mix(in srgb, var(--kc) 7%, var(--color-panel, #fff)); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: var(--color-primary, #1d4ed8); background: color-mix(in srgb, var(--kc) 6%, var(--color-panel, #fff)); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--color-panel, #fff); border: 2px solid var(--kc); font-size: 17px; line-height: 1; transform: rotate(8deg); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>I. Mở bài: chuyện lạ trong phòng thí nghiệm năm 1909</h3>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>II. Kiến thức</h3>
 
-<p>Rutherford và hai học trò bắn chùm hạt alpha vào lá vàng mỏng cỡ vài nghìn nguyên tử. Nếu điện tích dương rải đều khắp nguyên tử (mô hình Thomson), hạt alpha chỉ lệch chút ít, hầu hết bay thẳng qua — nhưng không thể có hạt bật ngược.</p>
+<h4 data-tap="1.4">II.1. Cấu tạo hạt nhân, lực hạt nhân và kí hiệu hạt nhân</h4>
 
-<p>Thực tế: một phần tám nghìn hạt lệch mạnh, vài hạt bật ngược hẳn lại.</p>
+<p><strong>🔑 Prôtôn · Nơtron · Nuclôn · Lực hạt nhân rất mạnh</strong></p>
 
-<p>Nghĩ trước: nếu hầu hết hạt xuyên thẳng, nguyên tử phải cấu tạo thế nào? Chọn một phương án ở hộp dưới.</p>
+<ul>
+<li>Hạt nhân gồm <strong>prôtôn</strong> $p$ ($+e$) và <strong>nơtron</strong> $n$ (không mang điện).</li>
+<li>Hai loại hạt gọi chung là <strong>nuclôn</strong>: số nuclôn = prôtôn + nơtron.</li>
+<li>Hạt nhân mang <strong>điện dương</strong>; nguyên tử trung hoà nên số êlectron ở vỏ bằng số prôtôn.</li>
+<li><strong>Lực hạt nhân</strong> liên kết các nuclôn: rất mạnh, thắng lực đẩy tĩnh điện, chỉ tác dụng trong phạm vi $10^{-15}$ m.</li>
+</ul>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 244" role="img" aria-label="Chùm hạt alpha bắn vào lá vàng: hầu hết bay thẳng, vài hạt lệch mạnh hoặc bật ngược lại"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="24" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">Chùm hạt alpha bắn vào lá vàng mỏng</text><rect x="24" y="78" width="74" height="96" rx="8" fill="rgba(148,163,184,.10)" stroke="currentColor" stroke-width="2"/><rect x="36" y="108" width="50" height="34" rx="8" fill="rgba(148,163,184,.10)" stroke="currentColor" stroke-width="2"/><text x="61.0" y="129.0" fill="currentColor" font-size="10" font-weight="700" text-anchor="middle">nguồn</text><rect x="232" y="62" width="11" height="128" rx="3" fill="rgba(251,146,60,.35)" stroke="#fb923c" stroke-width="2"/><text x="237" y="206" fill="#fb923c" font-size="11" font-weight="700" text-anchor="middle">lá vàng</text><text x="237" y="220" fill="#fb923c" font-size="10" font-weight="500" text-anchor="middle">mỏng vài nghìn</text><text x="237" y="232" fill="#fb923c" font-size="10" font-weight="500" text-anchor="middle">nguyên tử</text><line x1="102" y1="126" x2="356" y2="126" stroke="#34d399" stroke-width="2.4" marker-end="url(#f1-g)"/><text x="300" y="168" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">hầu hết bay thẳng</text><path d="M102,126 L237,104 L404,52" fill="none" stroke="#fb923c" stroke-width="2.4" marker-end="url(#f1-o)"/><text x="404" y="44" fill="#fb923c" font-size="11" font-weight="700" text-anchor="end">lệch mạnh: vài hạt</text><line x1="102" y1="126" x2="62" y2="44" stroke="#f87171" stroke-width="2.6" marker-end="url(#f1-r)"/><text x="46" y="40" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">bật ngược</text><circle cx="237" cy="104" r="7" fill="rgba(248,113,113,.35)" stroke="#f87171" stroke-width="2"/><text x="24" y="190" fill="currentColor" font-size="10" font-weight="500" text-anchor="start">Cùng một chùm hạt, ba số phận khác nhau</text></svg><figcaption>Hình 1. Thí nghiệm lá vàng: hạt alpha bay thẳng qua khe giữa các nguyên tử; chỉ hạt đi sát hạt nhân mới bị lệch mạnh hoặc bật ngược.</figcaption></figure>
+<table class="tl-table">
+<thead>
+<tr><th>Hạt</th><th>Khối lượng và điện tích</th></tr>
+</thead>
+<tbody>
+<tr><td>Prôtôn $p = ^1_1\text{H}$</td><td>$m_p \approx 1{,}67262 \cdot 10^{-27}$ kg $\approx 1{,}00728\ \text{u}$ · điện tích $+e$</td></tr>
+<tr><td>Nơtron $n = ^1_0\text{n}$</td><td>$m_n \approx 1{,}67493 \cdot 10^{-27}$ kg $\approx 1{,}00866\ \text{u}$ · không mang điện</td></tr>
+</tbody>
+</table>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🤔 Dự đoán trước khi học</p>
-<p>Theo em, kết quả thí nghiệm lá vàng cho thấy nguyên tử:</p>
+
+<p><strong>🔑 A trên · Z dưới · N = A − Z</strong></p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Kí hiệu hạt nhân và số nơtron</p>
+<p>$$^A_Z X$$</p>
+<p>$$A = Z + N \quad\Longleftrightarrow\quad N = A - Z$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$X$</span><span>kí hiệu hoá học của nguyên tố</span></li>
+<li><span class="tl-sym">$Z$</span><span>số prôtôn, bằng điện tích hạt nhân tính theo $e$ (nguyên tử số; không có đơn vị)</span></li>
+<li><span class="tl-sym">$A$</span><span>số nuclôn, tức số khối (không có đơn vị)</span></li>
+<li><span class="tl-sym">$N$</span><span>số nơtron (không có đơn vị)</span></li>
+</ul>
+</div>
+
+<p>Thí dụ $^{27}_{13}\text{Al}$: $Z = 13$ prôtôn, $A = 27$ nuclôn, $N = 27 - 13 = 14$ nơtron.</p>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 244" role="img" aria-label="Kí hiệu hạt nhân đồng: chỉ số trên là số nuclôn A, chỉ số dưới là số prôtôn Z"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="26" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">Đọc kí hiệu hạt nhân</text><text x="210" y="118" fill="currentColor" font-size="40" font-weight="700" text-anchor="start">Cu</text><text x="204" y="102" fill="#f87171" font-size="24" font-weight="700" text-anchor="end">65</text><text x="204" y="140" fill="#38bdf8" font-size="24" font-weight="700" text-anchor="end">29</text><text x="232" y="162" fill="currentColor" font-size="10" font-weight="500" text-anchor="middle">kí hiệu hoá học</text><line x1="124" y1="94" x2="170" y2="94" stroke="#f87171" stroke-width="1.8"/><path d="M163.0,89.9 L170.0,94.0 L163.0,98.1" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="14" y="90" fill="#f87171" font-size="12" font-weight="700" text-anchor="start">A = số nuclôn</text><text x="14" y="106" fill="#f87171" font-size="10" font-weight="500" text-anchor="start">= prôtôn + nơtron</text><line x1="124" y1="132" x2="170" y2="132" stroke="#38bdf8" stroke-width="1.8"/><path d="M163.0,127.9 L170.0,132.0 L163.0,136.1" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="14" y="128" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="start">Z = số prôtôn</text><text x="14" y="144" fill="#38bdf8" font-size="10" font-weight="500" text-anchor="start">= điện tích hạt nhân</text><text x="14" y="212" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">Ví dụ: Cu có 29 prôtôn, 65 nuclôn nên có 65 − 29 = 36 nơtron</text><text x="14" y="230" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">Cùng 29 prôtôn mà khác số nơtron thì gọi là hai đồng vị</text></svg><figcaption>Hình 3. Kí hiệu hạt nhân $^A_Z X$: $A$ là số nuclôn, $Z$ là số prôtôn.</figcaption></figure>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Hạt nhân $^{65}_{29}\text{Cu}$ có:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl15-q1" id="tl15-q1a"><label for="tl15-q1a" class="tl-opt tl-no">A. Là một khối cầu đặc, các hạt phân bố đều</label>
-<input type="radio" name="tl15-q1" id="tl15-q1b"><label for="tl15-q1b" class="tl-opt tl-no">B. Không có hạt nhân, chỉ có các êlectron</label>
-<input type="radio" name="tl15-q1" id="tl15-q1c" checked><label for="tl15-q1c" class="tl-opt tl-ok">C. Gần như trống rỗng, điện dương tập trung ở một vùng rất nhỏ</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hạt alpha xuyên qua dễ dàng vì nguyên tử gần như trống; chỉ hạt đi sát vùng điện dương tập trung mới bị đẩy lệch mạnh. Vùng nhỏ đó chính là <em>hạt nhân</em>.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Mô hình Thomson (điện dương rải đều khắp nguyên tử) vẫn cho hầu hết hạt bay thẳng, chỉ lệch chút ít — nhưng không thể có hạt bật ngược. Thực tế có một phần tám nghìn hạt lệch mạnh và vài hạt bật ngược, nên điện dương phải tập trung ở một vùng rất nhỏ, rất nặng; cũng không phải là không có hạt nhân. Chọn lại nhé.</p></div>
+<input type="radio" name="tl15-q2" id="tl15-q2a"><label for="tl15-q2a" class="tl-opt tl-no">A. 65 prôtôn và 29 nơtron</label>
+<input type="radio" name="tl15-q2" id="tl15-q2b"><label for="tl15-q2b" class="tl-opt tl-no">B. 29 nuclôn và 36 nơtron</label>
+<input type="radio" name="tl15-q2" id="tl15-q2c" checked><label for="tl15-q2c" class="tl-opt tl-ok">C. 29 prôtôn và 36 nơtron</label>
+<input type="radio" name="tl15-q2" id="tl15-q2d"><label for="tl15-q2d" class="tl-opt tl-no">D. 29 prôtôn và 65 nơtron</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chỉ số dưới luôn là số prôtôn: $Z = 29$. Chỉ số trên là số nuclôn: $A = 65$. Vậy số nơtron $N = A - Z = 65 - 29 = 36$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Xem lại từng phương án: A đọc ngược hai chỉ số (65 prôtôn, 29 nơtron); B lấy chỉ số dưới $Z = 29$ làm số nuclôn trong khi 29 chỉ là số prôtôn (còn 36 nơtron thì đúng); D lấy số nuclôn $A = 65$ làm số nơtron. Nhớ thứ tự: <em>trên là tổng, dưới là prôtôn</em>. Chọn lại nhé.</p></div>
 </div>
 </div>
 
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Ra xa hơn kích thước hạt nhân, lực hạt nhân thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q3" id="tl15-q3a" checked><label for="tl15-q3a" class="tl-opt tl-ok">A. Yếu đi rất nhanh, coi như không còn tác dụng</label>
+<input type="radio" name="tl15-q3" id="tl15-q3b"><label for="tl15-q3b" class="tl-opt tl-no">B. Vẫn mạnh như trong hạt nhân</label>
+<input type="radio" name="tl15-q3" id="tl15-q3c"><label for="tl15-q3c" class="tl-opt tl-no">C. Đổi thành lực đẩy</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lực hạt nhân chỉ tác dụng trong phạm vi cỡ $10^{-15}$ m. Ra xa hơn, nó yếu đi rất nhanh nên hầu như không còn ảnh hưởng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đặc điểm của lực hạt nhân là <em>tầm tác dụng rất ngắn</em>.<br>B: ra ngoài phạm vi cỡ $10^{-15}$ m, lực hạt nhân không còn mạnh như trong hạt nhân.<br>C: nó cũng không đổi thành lực đẩy — chỉ yếu dần rồi coi như bằng không, khi đó chỉ còn lực tĩnh điện và lực hấp dẫn.<br>Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4 data-tap="2.1">II.2. Đồng vị</h4>
+
+<p><strong>🔑 Cùng Z · Khác N · Cùng tính chất hoá học</strong></p>
+
+<ul>
+<li><strong>Đồng vị</strong> là những nguyên tử cùng số prôtôn $Z$, khác số nơtron $N$ (nên khác $A)$.</li>
+<li>Cùng $Z$ là cùng nguyên tố, cùng số êlectron ở vỏ nên <strong>tính chất hoá học giống nhau</strong>; chỉ khác khối lượng.</li>
+<li>Hiđrô có ba đồng vị: $^1_1\text{H}$, $^2_1\text{H}$ (đơteri), $^3_1\text{H}$ (triti).</li>
+<li>Một nguyên tố có thể có cả đồng vị bền lẫn phóng xạ: tự nhiên ($^{14}\text{C}$) hoặc nhân tạo ($^{131}\text{I}$).</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 278" role="img" aria-label="So sánh hai bộ vạch quang phổ của hiđrô và đơteri: các vạch nằm gần cùng vị trí, vạch của đơteri hơi dịch về phía bước sóng ngắn hơn"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="20" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">Hai đồng vị hiđrô, hai bộ vạch quang phổ</text><text x="14" y="36" fill="currentColor" font-size="10" font-weight="500" text-anchor="start">cùng một nguyên tố, cùng số prôtôn, khác số nơtron</text><text x="258" y="52" fill="currentColor" font-size="10" font-weight="600" text-anchor="middle">bước sóng (nm)</text><line x1="104" y1="90" x2="412" y2="90" stroke="currentColor" stroke-width="2" opacity="0.5"/><line x1="104.0" y1="86" x2="104.0" y2="94" stroke="currentColor" stroke-width="1.4" opacity="0.8"/><text x="104.0" y="78" fill="currentColor" font-size="10" font-weight="500" text-anchor="middle">400</text><line x1="206.66666666666669" y1="86" x2="206.66666666666669" y2="94" stroke="currentColor" stroke-width="1.4" opacity="0.8"/><text x="206.66666666666669" y="78" fill="currentColor" font-size="10" font-weight="500" text-anchor="middle">500</text><line x1="309.33333333333337" y1="86" x2="309.33333333333337" y2="94" stroke="currentColor" stroke-width="1.4" opacity="0.8"/><text x="309.33333333333337" y="78" fill="currentColor" font-size="10" font-weight="500" text-anchor="middle">600</text><line x1="412.0" y1="86" x2="412.0" y2="94" stroke="currentColor" stroke-width="1.4" opacity="0.8"/><text x="412.0" y="78" fill="currentColor" font-size="10" font-weight="500" text-anchor="middle">700</text><text x="96" y="126" fill="#f87171" font-size="15" font-weight="700" text-anchor="end">H</text><text x="96" y="142" fill="#f87171" font-size="9" font-weight="500" text-anchor="end">1 prôtôn</text><line x1="104" y1="132" x2="412" y2="132" stroke="currentColor" stroke-width="1" opacity="0.3"/><line x1="192.39600000000002" y1="116" x2="192.39600000000002" y2="148" stroke="#38bdf8" stroke-width="3" opacity="1"/><text x="192.39600000000002" y="164" fill="#38bdf8" font-size="9" font-weight="600" text-anchor="middle">486,1</text><line x1="367.1346666666666" y1="116" x2="367.1346666666666" y2="148" stroke="#f87171" stroke-width="3" opacity="1"/><text x="367.1346666666666" y="164" fill="#f87171" font-size="9" font-weight="600" text-anchor="middle">656,3</text><text x="96" y="210" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="end">D</text><text x="96" y="226" fill="#38bdf8" font-size="9" font-weight="500" text-anchor="end">1 p + 1 n</text><line x1="104" y1="216" x2="412" y2="216" stroke="currentColor" stroke-width="1" opacity="0.3"/><line x1="192.29333333333335" y1="200" x2="192.29333333333335" y2="232" stroke="#38bdf8" stroke-width="3" opacity="1"/><text x="192.29333333333335" y="248" fill="#38bdf8" font-size="9" font-weight="600" text-anchor="middle">486,0</text><line x1="366.9293333333333" y1="200" x2="366.9293333333333" y2="232" stroke="#f87171" stroke-width="3" opacity="1"/><text x="366.9293333333333" y="248" fill="#f87171" font-size="9" font-weight="600" text-anchor="middle">656,1</text><text x="16" y="268" fill="currentColor" font-size="10" font-weight="500" text-anchor="start">Vạch D lệch về phía bước sóng ngắn hơn: ~0,2 nm ở Hα, ~0,1 nm ở Hβ</text></svg><figcaption>Hình 4. Hai đồng vị hiđrô cho hai bộ vạch quang phổ gần giống nhau; vạch của đơteri dịch nhẹ về phía bước sóng ngắn hơn.</figcaption></figure>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl15-q6-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl15-q6-conf" value="khong"> Không chắc</label></p>
+<p><strong>Câu 3.</strong> Hai hạt nhân nào sau đây là đồng vị của nhau?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q6" id="tl15-q6a" checked><label for="tl15-q6a" class="tl-opt tl-ok">A. $^{16}_{8}\text{O}$ và $^{17}_{8}\text{O}$</label>
+<input type="radio" name="tl15-q6" id="tl15-q6b"><label for="tl15-q6b" class="tl-opt tl-no">B. $^{14}_{6}\text{C}$ và $^{14}_{7}\text{N}$ — cùng số khối 14</label>
+<input type="radio" name="tl15-q6" id="tl15-q6c"><label for="tl15-q6c" class="tl-opt tl-no">C. $^{3}_{1}\text{H}$ và $^{3}_{2}\text{He}$ — cùng số khối 3</label>
+<input type="radio" name="tl15-q6" id="tl15-q6d"><label for="tl15-q6d" class="tl-opt tl-no">D. $^{13}_{6}\text{C}$ và $^{14}_{7}\text{N}$ — cùng 7 nơtron</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $^{16}_{8}\text{O}$ và $^{17}_{8}\text{O}$ cùng $Z = 8$, khác số nơtron (8 và 9) nên là hai đồng vị của oxi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B và C chỉ giống nhau ở <em>số khối</em>, còn D chỉ giống nhau ở <em>số nơtron</em> — cả ba cặp đều khác số prôtôn nên không phải đồng vị. Điều kiện duy nhất cần kiểm là chỉ số dưới $Z$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+</div>
+
+<h4 data-tap="2.2">II.3. Mô hình nguyên tử Rutherford – Bohr</h4>
+
+<p><strong>🔑 Vỏ êlectron · Hạt nhân nhỏ nặng · Quỹ đạo lượng tử hoá</strong></p>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 306" role="img" aria-label="Ba mô hình nguyên tử đặt cạnh nhau: Thomson cầu đặc, Rutherford có hạt nhân nhỏ ở giữa, Bohr thêm các quỹ đạo cho phép"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="66" y="22" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Thomson 1904</text><text x="202" y="22" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Rutherford 1911</text><text x="352" y="22" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Bohr 1913</text><circle cx="66" cy="112" r="56" fill="rgba(251,146,60,.16)" stroke="#fb923c" stroke-width="1.8"/><circle cx="40" cy="86" r="4" fill="#38bdf8"/><circle cx="92" cy="86" r="4" fill="#38bdf8"/><circle cx="66" cy="112" r="4" fill="#38bdf8"/><circle cx="40" cy="138" r="4" fill="#38bdf8"/><circle cx="92" cy="138" r="4" fill="#38bdf8"/><text x="66" y="192" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">cầu dương đặc</text><text x="66" y="210" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">êlectron rải rác</text><circle cx="202" cy="112" r="56" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.5"/><circle cx="202" cy="112" r="13" fill="#f87171"/><text x="202" y="117" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">+</text><ellipse cx="202" cy="112" rx="42" ry="42" fill="none" stroke="#38bdf8" stroke-width="1.4" stroke-dasharray="4 4"/><circle cx="160" cy="112" r="4" fill="#38bdf8"/><circle cx="244" cy="112" r="4" fill="#38bdf8"/><text x="202" y="192" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">hạt nhân nhỏ, nặng</text><text x="202" y="210" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">êlectron quay</text><text x="202" y="228" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">quanh hạt nhân</text><circle cx="352" cy="112" r="13" fill="#f87171"/><text x="352" y="117" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">+</text><circle cx="352" cy="112" r="24" fill="none" stroke="#38bdf8" stroke-width="1.8"/><circle cx="352" cy="112" r="46" fill="none" stroke="#38bdf8" stroke-width="1.8"/><circle cx="328" cy="112" r="4.5" fill="#38bdf8"/><circle cx="352" cy="66" r="4.5" fill="#38bdf8"/><text x="352" y="192" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">quỹ đạo cho phép,</text><text x="352" y="210" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">năng lượng xác định</text><text x="16" y="258" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">Nguyên tử gần như trống: hạt nhân chiếm</text><text x="16" y="276" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">cỡ một phần mười nghìn tỉ thể tích</text><text x="16" y="296" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">Hạt nhân vẽ phóng to, không đúng tỉ lệ</text></svg><figcaption>Hình 2. Ba mô hình nguyên tử: Thomson bị thí nghiệm lá vàng bác bỏ; Rutherford có hạt nhân nhỏ, nặng; Bohr thêm các quỹ đạo xác định.</figcaption></figure>
+
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-hatnhan-03">
+<p class="tl-label">🔬 Thí nghiệm tán xạ hạt alpha của Rutherford (1909–1911)</p>
+<ol class="tl-steps">
+<li><strong>Giả thuyết cần kiểm:</strong> mô hình Thomson, điện dương phân bố đều.</li>
+<li><strong>Dự đoán nếu đúng:</strong> hạt alpha chỉ lệch nhẹ vài độ, không hạt nào bật ngược.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem 4 dụng cụ và các bước</summary>
+<p>(1) Nguồn phóng xạ phát hạt alpha trong hộp chì có khe hẹp; (2) lá vàng mỏng cỡ vài nghìn lớp nguyên tử; (3) màn kẽm sunfua phát chớp sáng khi hạt alpha đập vào; (4) kính hiển vi đếm chớp, xoay được quanh lá vàng. Cả hệ đặt trong buồng chân không.</p>
+<p><strong>Làm:</strong> đặt kính ở góc $\theta$, đếm số chớp trong cùng một khoảng thời gian; lặp lại ở nhiều góc từ $15^\circ$ tới $150^\circ$. <strong>Bỏ qua</strong> va chạm của hạt alpha với không khí (nhờ chân không) và tán xạ nhiều lần trong lá mỏng.</p>
+</details></li>
+<li><strong>Quan sát:</strong> phần lớn hạt đi thẳng qua; một số ít bị lệch với các góc khác nhau; khoảng 1/8 000 hạt lệch quá $90^\circ$; vài hạt bật ngược.</li>
+<li><strong>Rút ra:</strong> mô hình Thomson bị bác bỏ. Hạt alpha lệch mạnh do lực điện đẩy từ một vùng điện dương rất nhỏ, mang gần hết khối lượng — <strong>hạt nhân</strong>; êlectron quá nhẹ, không làm hạt alpha đổi hướng được. Phần còn lại gần như trống rỗng.</li>
+<li><strong>Chưa nói được gì:</strong> êlectron chuyển động thế nào. Quỹ đạo có năng lượng xác định là Bohr bổ sung năm 1913, không phải kết quả thí nghiệm này.</li>
+</ol>
+</div>
+
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: số chớp Geiger và Marsden đếm năm 1913 — kiểm mô hình hạt nhân</summary>
+<p>Nếu hạt alpha bị lệch bởi lực điện của một hạt nhân rất nhỏ, Rutherford tính ra số hạt $N$ đếm được ở góc $\theta$ phải cho tích $N\sin^4(\theta/2)$ gần như không đổi.</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Góc $\theta$</th><th>Số chớp $N$</th><th>$\sin^4(\theta/2)$</th><th>$N\sin^4(\theta/2)$</th></tr></thead>
+<tbody>
+<tr><td>$30^\circ$</td><td>7 800</td><td>0,0045</td><td>35</td></tr>
+<tr><td>$60^\circ$</td><td>477</td><td>0,0625</td><td>30</td></tr>
+<tr><td>$120^\circ$</td><td>51,9</td><td>0,5625</td><td>29</td></tr>
+<tr><td>$150^\circ$</td><td>33,1</td><td>0,8705</td><td>em tự tính</td></tr>
+</tbody></table></div>
+<p>$N$ giảm hơn 200 lần từ $30^\circ$ tới $150^\circ$ mà tích chỉ dao động quanh 30 (ô cuối ra khoảng 29): đúng dự đoán của mô hình hạt nhân. Mô hình Thomson không cho ra hạt nào ở $150^\circ$ để mà đếm.</p>
+<p><small>Số liệu: H. Geiger &amp; E. Marsden, <em>Philosophical Magazine</em> 25 (1913), lá vàng, quy về cùng thời gian đếm.</small></p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>🎲 Bấm xem: mô hình "bắn bi mù" làm được ngay tại lớp</summary>
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-hatnhan-01">
+<p class="tl-label">🔬 Thí nghiệm: tìm vật chắn khuất bằng chùm bi bị lệch</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> dán một chiếc đinh nhỏ lên mặt bàn, kê tấm bìa che khuất nó (bi vẫn lăn lọt dưới bìa); lăn viên bi thép qua lại vài chục lượt, chỉ ghi hướng bi vào và bi bật ra.</li>
+<li><strong>Quan sát:</strong> hầu hết lượt bi lăn thẳng qua; vài lượt sát chiếc đinh bị lệch rõ hoặc bật ngược — tất cả quanh đúng một vị trí.</li>
+<li><strong>Rút ra:</strong> chùm bi lệch đã "chỉ điểm" cho vật nhỏ, cứng dán trên bàn. Hạt alpha bật ngược cũng chỉ điểm cho hạt nhân: rất nhỏ, rất nặng, mang điện dương.</li>
+</ol>
+</div>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Về thí nghiệm tán xạ hạt alpha, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q4" id="tl15-q4a"><label for="tl15-q4a" class="tl-opt tl-no">A. Phần lớn hạt alpha đi thẳng qua lá vàng, số ít bị lệch với các góc khác nhau</label>
+<input type="radio" name="tl15-q4" id="tl15-q4b"><label for="tl15-q4b" class="tl-opt tl-no">B. Kết quả cho thấy nguyên tử không có cấu tạo như mô hình Thomson</label>
+<input type="radio" name="tl15-q4" id="tl15-q4c" checked><label for="tl15-q4c" class="tl-opt tl-ok">C. Hạt alpha tán xạ góc lớn là do tương tác điện với các êlectron</label>
+<input type="radio" name="tl15-q4" id="tl15-q4d"><label for="tl15-q4d" class="tl-opt tl-no">D. Thí nghiệm không chứng minh êlectron có quỹ đạo dừng; đó là của Bohr</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng, C sai.</strong> Êlectron nhẹ hơn hạt alpha hơn 7 000 lần, gặp nó chỉ như bi sắt gặp hạt bụi. Chỉ hạt nhân nặng, điện dương tập trung mới đẩy được hạt alpha quay ngược. Ba ý còn lại đúng và chính là kiểu bốn ý a)–d) của một câu Phần II trong đề thi tốt nghiệp.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng quan sát được; B là kết luận bác bỏ Thomson; D nói đúng giới hạn của thí nghiệm: quỹ đạo dừng là của Bohr (1913). Vậy ý sai nằm ở <em>cơ chế</em>. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4 data-tap="2.3">II.4. Kích thước hạt nhân và đơn vị khối lượng nguyên tử</h4>
+
+<p><strong>🔑 Đo bằng u · R theo căn bậc ba A</strong></p>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Bán kính hạt nhân</p>
+<p>$$R = 1{,}2 \cdot 10^{-15} A^{1/3}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$R$</span><span>bán kính hạt nhân (m)</span></li>
+<li><span class="tl-sym">$A$</span><span>số khối (không có đơn vị)</span></li>
+</ul>
+</div>
+
+<ul>
+<li><strong>Đơn vị khối lượng nguyên tử</strong> $u$ bằng $1/12$ khối lượng nguyên tử $^{12}_6\text{C}$ ($\text{MeV}/c^2$ suy từ $E = mc^2$).</li>
+</ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Đơn vị khối lượng nguyên tử</p>
+<p>$$1\ \text{u} \approx 1{,}66054 \cdot 10^{-27}\ \text{kg} \approx 931{,}5\ \text{MeV}/c^2$$</p>
+<p>$$1\ \text{MeV} = 1{,}6 \cdot 10^{-13}\ \text{J}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\text{u}$</span><span>đơn vị khối lượng nguyên tử</span></li>
+<li><span class="tl-sym">$\text{MeV}/c^2$</span><span>đơn vị khối lượng suy từ $E = mc^2$, $c$ là tốc độ ánh sáng trong chân không (m/s)</span></li>
+<li><span class="tl-sym">$\text{MeV}$</span><span>mêga êlectron vôn, đơn vị năng lượng; đổi sang jun (J)</span></li>
+</ul>
+</div>
+
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-hatnhan-02">
+<p class="tl-label">🔬 Thí nghiệm đo: số lớp nguyên tử trong lá nhôm</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> cắt ba mẩu lá nhôm, đo $a$, $b$ bằng thước kẹp ($\pm0{,}1$ mm), cân $m$ ($\pm0{,}01$ g); tính bề dày $d = \dfrac{m}{D\,a\,b}$ với $D = 2\,700$ kg/m³.</li>
+<li><strong>Quan sát:</strong> lá dày cỡ $10^{-5}$ m; chia cho <strong>đường kính nguyên tử nhôm</strong> ($2 \times 1{,}4 \cdot 10^{-10}$ m) ra vài vạn lớp — không chia cho đường kính <em>hạt nhân</em> $2R$.</li>
+<li><strong>Rút ra:</strong> lá 10 $\mu\text{m}$ chứa vài vạn lớp nguyên tử, dày hơn lá vàng của Rutherford (vài nghìn lớp), mà hạt alpha vẫn xuyên qua hầu như không gặp hạt nhân.</li>
+</ol>
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem bảng đo ba lá (số minh hoạ)</summary>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>Lá ($a \times b$; $m$)</th><th>$d$ ($\mu\text{m}$)</th><th>Số lớp</th></tr>
+</thead>
+<tbody>
+<tr><td>1: $100 \times 100$ mm; $0{,}27$ g</td><td>10,0</td><td>$3{,}6 \cdot 10^4$</td></tr>
+<tr><td>2: $100 \times 50$ mm; $0{,}14$ g</td><td>10,4</td><td>$3{,}7 \cdot 10^4$</td></tr>
+<tr><td>3: $150 \times 100$ mm; $0{,}41$ g</td><td>10,1</td><td>$3{,}6 \cdot 10^4$</td></tr>
+</tbody>
+</table></div>
+</details>
+<p><strong>Câu hỏi sai số:</strong> lá nào cho $d$ đáng tin nhất?</p>
+<details class="tl-details tl-more">
+<summary>Bấm xem trả lời</summary>
+<p>Sai số tương đối của $d$ gần bằng tổng sai số tương đối của $m$, $a$, $b$: lá 1 khoảng $3{,}9\ \%$; lá 2 khoảng $7{,}4\ \%$; lá 3 khoảng $2{,}6\ \%$. Lá 3 đáng tin nhất vì nặng nhất, nên sai số $\pm0{,}01$ g của cân chiếm phần nhỏ nhất. Ba kết quả khác nhau mà vẫn cùng cỡ vài vạn lớp vì ba giá trị $d$ lệch nhau không quá $4\ \%$, nằm trong sai số ghi trên, nên số lớp vẫn cùng cỡ $3{,}6$–$3{,}7 \cdot 10^4$.</p>
+</details>
+</div>
+
+<details class="tl-details tl-more">
+<summary>📊 Bảng: bán kính ba hạt nhân theo $A^{1/3}$</summary>
+<table class="tl-table">
+<thead>
+<tr><th>Kim loại (A)</th><th>$R$ tính từ công thức</th></tr>
+</thead>
+<tbody>
+<tr><td>Nhôm: $A = 27$</td><td>$1{,}2 \cdot 27^{1/3} \approx 3{,}6 \cdot 10^{-15}$ m</td></tr>
+<tr><td>Đồng: $A = 63$</td><td>$1{,}2 \cdot 63^{1/3} \approx 4{,}8 \cdot 10^{-15}$ m</td></tr>
+<tr><td>Vàng: $A = 197$</td><td>$1{,}2 \cdot 197^{1/3} \approx 7{,}0 \cdot 10^{-15}$ m</td></tr>
+</tbody>
+</table>
+<p>Đọc bảng: $A$ tăng 7,3 lần (từ 27 lên 197) nhưng $R$ chỉ tăng khoảng 2 lần — vì $R$ tỉ lệ với $A^{1/3}$.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>🤏 Vì sao $R$ xấp xỉ? Khối lượng riêng nhôm thì sao?</summary>
+<p>Sai số của $R$ đến từ <strong>công thức thực nghiệm</strong>: hệ số $1{,}2$ chỉ gần đúng, và mật độ nuclôn giảm dần ở rìa nên "bán kính" còn tuỳ chỗ quy ước. Vì vậy phải ghi kèm sai số: $R = (3{,}6 \pm 0{,}2) \cdot 10^{-15}$ m. Con số $\pm 0{,}2$ chỉ là cỡ sai số ước lượng do hệ số $1{,}2$ gần đúng, không tính ra từ một phép đo.</p>
+<p>Khối lượng riêng nhôm <em>không</em> dính tới $R$: nó chỉ quyết định bề dày $d$ và <strong>số lớp nguyên tử</strong> trong bảng đo. Lá nhôm bị oxi hoá hay cân lệch chỉ làm số lớp sai lệch vài phần trăm.</p>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl15-q5-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl15-q5-conf" value="khong"> Không chắc</label></p>
+<p><strong>Câu 5.</strong> Một mol có $N_A = 6{,}022 \cdot 10^{23}$ nguyên tử. Từ khối lượng mol $M$ (g/mol), muốn tìm khối lượng một nguyên tử thì làm thế nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q5" id="tl15-q5a"><label for="tl15-q5a" class="tl-opt tl-no">A. Lấy $M$ nhân với $N_A$</label>
+<input type="radio" name="tl15-q5" id="tl15-q5b" checked><label for="tl15-q5b" class="tl-opt tl-ok">B. Lấy $M$ chia cho $N_A$ (ra gam, rồi đổi sang u nếu cần)</label>
+<input type="radio" name="tl15-q5" id="tl15-q5c"><label for="tl15-q5c" class="tl-opt tl-no">C. Lấy số khối $A$ làm khối lượng (tính bằng u)</label>
+<input type="radio" name="tl15-q5" id="tl15-q5d"><label for="tl15-q5d" class="tl-opt tl-no">D. Lấy $M$ chia cho số khối $A$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Một mol là $N_A$ nguyên tử, nên khối lượng <em>một</em> nguyên tử $= M \div N_A$. Với neon: $20{,}18 \div 6{,}022 \cdot 10^{23} \approx 3{,}35 \cdot 10^{-23}$ g; chia tiếp cho $1\ \text{u} \approx 1{,}66 \cdot 10^{-24}$ g được $20{,}18\ \text{u}$ — đúng con số trên bảng tuần hoàn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: nhân thay vì chia, kết quả lớn gấp $N_A^2$ lần đáp số đúng.<br>C: lấy khối lượng $\approx A$ u chỉ là phép gần đúng khi đề cho phép, không phải cách tính. Số trên bảng tuần hoàn lệch số khối chủ yếu vì là trung bình theo tỉ lệ đồng vị (Bẫy 1), còn từng hạt nhân chỉ lệch nhỏ (độ hụt khối, bài sau).<br>D: $M/A$ ra gần 1 g/mol, không phải khối lượng một nguyên tử.<br>Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<details class="tl-details tl-more">
+<summary>🧪 Thử với mô phỏng: bắn hạt alpha vào nguyên tử</summary>
+<iframe src="https://phet.colorado.edu/sims/html/rutherford-scattering/latest/rutherford-scattering_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Tán xạ Rutherford"></iframe>
+<p><strong>Thử:</strong></p>
+<ol class="tl-steps">
+<li>Chọn màn <strong>Mẫu Nguyên tử bánh pudding</strong> (mô hình Thomson) rồi bấm nút đỏ <strong>Hạt Alpha</strong>. Đây là dự đoán của Thomson: có hạt nào lệch rõ hay bật ngược không?</li>
+<li>Sang màn <strong>Mẫu Nguyên tử Rutherford</strong> (mặc định 79 prôtôn, 118 nơtron), bắn lại. Khác màn trước ở đâu? Hạt nào lệch mạnh, và nó đi qua gần cái gì?</li>
+<li>Kéo thanh số prôtôn xuống thấp rồi tăng dần, bắn lại mỗi lần. Hạt lệch mạnh hơn hay yếu hơn khi điện tích hạt nhân tăng? Vì sao?</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>🧪 Thử với mô phỏng: đồng vị và nguyên tử khối trung bình</summary>
+<iframe src="https://phet.colorado.edu/sims/html/isotopes-and-atomic-mass/latest/isotopes-and-atomic-mass_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Đồng vị và nguyên tử khối"></iframe>
+<p><strong>Thử:</strong></p>
+<ol class="tl-steps">
+<li>Chọn màn hình <strong>Hỗn hợp</strong>, trong bảng tuần hoàn nhỏ chọn <strong>Ne</strong> (neon). Theo em, nguyên tử khối trung bình của neon gần đồng vị nào hơn?</li>
+<li>Chọn <strong>Hỗn hợp trong thiên nhiên</strong>. Đọc thành phần phần trăm các đồng vị và nguyên tử khối trung bình trên thang.</li>
+<li>Chọn <strong>Hỗn hợp của tôi</strong>, thêm các nguyên tử từ rổ đồng vị vào hộp, đổi tỉ lệ. Trung bình dịch về phía đồng vị nào khi đồng vị đó nhiều hơn? Giải thích vì sao neon ghi 20,18 chứ không phải 20.</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>🧪 Thử với mô phỏng: tạo dựng nguyên tử từ proton, neutron, electron</summary>
+<iframe src="https://phet.colorado.edu/sims/html/build-an-atom/latest/build-an-atom_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Tạo dựng nguyên tử"></iframe>
+<p><strong>Thử:</strong></p>
+<ol class="tl-steps">
+<li>Chọn màn hình <strong>Nguyên tử</strong>. Theo em, chỉ cần kéo 1 proton vào giữa thì nguyên tố nào hiện ra? Kéo thử rồi đối chiếu với ô sáng trong bảng tuần hoàn.</li>
+<li>Kéo thêm 1 neutron, rồi thêm 1 neutron nữa. Tên nguyên tố có đổi không? Số hạt trong hạt nhân đổi, vậy cái gì quyết định "đây là nguyên tố nào"?</li>
+<li>Kéo electron từ rổ xanh vào các quỹ đạo, quan sát dòng chữ <strong>Ion+</strong>, trung hoà hay ion âm. Rút ra: đổi số proton, số neutron, số electron thì mỗi lần nguyên tử thành cái gì?</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+
+<h3 data-tap="3.1">III. Ba cái bẫy sập nhiều nhất</h3>
+
+<div class="tl-trap">
+<h4>Bẫy 1: lấy số khối $A$ làm khối lượng</h4>
+
+<p>Số khối là số <em>đếm</em>, không phải khối lượng.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Số khối $A$</th><th>Khối lượng nguyên tử theo u</th></tr>
+</thead>
+<tbody>
+<tr><td>Số nuclôn, là số nguyên</td><td>Là số thực, thường có hai chữ số thập phân</td></tr>
+<tr><td>Nhôm luôn là 27; đồng là 63 hoặc 65</td><td>Nhôm: 26,98 u; đồng: 63,54 u; neon: 20,18 u</td></tr>
+<tr><td>Không phụ thuộc tỉ lệ đồng vị</td><td>Là trung bình theo tỉ lệ đồng vị</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details tl-more">
+<summary>👀 Bấm xem: vì sao bảng tuần hoàn ghi neon là 20,18 chứ không phải 20?</summary>
+<p>Neon trong tự nhiên là hỗn hợp hai đồng vị chính: $^{20}_{10}\text{Ne}$ chiếm gần 91% và $^{22}_{10}\text{Ne}$ chiếm gần 9%. Khối lượng trung bình: $0{,}91 \cdot 20 + 0{,}09 \cdot 22 \approx 20{,}18\ \text{u}$. Số khối của từng nguyên tử thì luôn nguyên; chỉ con số ghi trong bảng tuần hoàn mới là trung bình.</p>
+</details>
+
+<div class="tl-trap">
+<h4>Bẫy 2: "đồng vị khác số prôtôn"</h4>
+
+<table class="tl-table">
+<thead>
+<tr><th>Đồng vị — cùng $Z$</th><th>Không phải đồng vị — khác $Z$</th></tr>
+</thead>
+<tbody>
+<tr><td>$^{12}_{6}\text{C}$ và $^{14}_{6}\text{C}$: cùng 6 prôtôn</td><td>$^{14}_{6}\text{C}$ và $^{14}_{7}\text{N}$: 6 và 7 prôtôn</td></tr>
+<tr><td>Cùng một nguyên tố, cùng tính chất hoá học</td><td>Hai nguyên tố khác nhau</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details tl-more">
+<summary>👀 Bấm xem: vì sao $^{14}_{6}\text{C}$ và $^{14}_{7}\text{N}$ không phải đồng vị?</summary>
+<p>Hai hạt nhân này chỉ giống nhau ở <em>số khối</em> $A = 14$. Số prôtôn khác nhau ($Z = 6$ và $Z = 7$) nên chúng thuộc hai nguyên tố khác nhau; đồng vị bắt buộc phải cùng số prôtôn. Tương tự, cặp $^{13}_{6}\text{C}$ và $^{14}_{7}\text{N}$ giống nhau ở số nơtron nhưng cũng khác số prôtôn, nên cũng không phải đồng vị.</p>
+</details>
+
+<div class="tl-trap">
+<h4>Bẫy 3: tưởng êlectron quay ở khoảng cách nào cũng được</h4>
+
+<p>Bohr giữ mô hình Rutherford, chỉ bổ sung một điều kiện: êlectron chỉ ở các quỹ đạo cho phép, mỗi quỹ đạo có bán kính và năng lượng xác định.</p>
+
+<table class="tl-table">
+<thead>
+<tr><th>Mô hình Rutherford</th><th>Mô hình Bohr</th></tr>
+</thead>
+<tbody>
+<tr><td>Hạt nhân nhỏ, nặng, mang điện dương</td><td>Giữ nguyên hạt nhân đó</td></tr>
+<tr><td>Êlectron quay quanh hạt nhân</td><td>Êlectron chỉ nằm trên các <strong>quỹ đạo cho phép</strong></td></tr>
+<tr><td>Không giải thích được vạch quang phổ</td><td>Giải thích được vạch quang phổ</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Điểm khác nhau cốt lõi giữa mô hình Bohr và mô hình Rutherford là:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q7" id="tl15-q7a"><label for="tl15-q7a" class="tl-opt tl-no">A. Bohr phủ nhận hạt nhân, cho rằng điện tích dương rải đều</label>
+<input type="radio" name="tl15-q7" id="tl15-q7b" checked><label for="tl15-q7b" class="tl-opt tl-ok">B. Bohr thêm điều kiện êlectron chỉ ở những quỹ đạo có năng lượng xác định</label>
+<input type="radio" name="tl15-q7" id="tl15-q7c"><label for="tl15-q7c" class="tl-opt tl-no">C. Bohr thay êlectron bằng nơtron quay quanh hạt nhân</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bohr giữ nguyên hạt nhân của Rutherford và bổ sung quy tắc lượng tử hoá quỹ đạo. Nhờ điều kiện đó mới giải thích được vì sao mỗi nguyên tố phát ra một bộ vạch quang phổ riêng, rời rạc.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Rutherford chính là người <em>phát hiện</em> hạt nhân, Bohr không phủ nhận nó (A). Nơtron mãi tới 1932 mới được tìm ra, và nó nằm <em>trong</em> hạt nhân chứ không quay quanh (C). Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3 data-tap="3.2">IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài</p>
+<p>Nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+
+<details class="tl-details tl-more">
+<summary>1. Hạt nhân gồm những loại hạt nào? Vì sao hạt nhân không bị vỡ ra?</summary>
+<p><strong>Prôtôn · Nơtron · Lực hạt nhân.</strong> Hạt nhân gồm prôtôn (điện tích $+e$) và nơtron (không mang điện), gọi chung là nuclôn. Các prôtôn đẩy nhau bằng lực tĩnh điện, nhưng lực hạt nhân hút rất mạnh, chỉ tác dụng trong phạm vi cỡ $10^{-15}$ m, đủ giữ các nuclôn lại với nhau.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>2. Viết kí hiệu hạt nhân $^A_Z X$ và nói rõ từng chữ.</summary>
+<p><strong>Trên là tổng · Dưới là prôtôn · $N = A - Z$.</strong> $Z$ là số prôtôn (điện tích hạt nhân), $A$ là số nuclôn (số khối), $N$ là số nơtron.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>3. Đồng vị là gì? Kể tên ba đồng vị của hiđrô và chỉ rõ chúng giống, khác nhau ở đâu.</summary>
+<p><strong>Cùng $Z$ · Khác $N$.</strong> Ba đồng vị: $^1_1\text{H}$, $^2_1\text{H}$ (đơteri), $^3_1\text{H}$ (triti). Cả ba đều có 1 prôtôn nên cùng là hiđrô, tính chất hoá học giống nhau; số nơtron lần lượt là 0, 1, 2 nên khối lượng khác nhau.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>4. Ba mô hình nguyên tử Thomson – Rutherford – Bohr khác nhau ở đâu?</summary>
+<p><strong>Đặc · Rỗng có hạt nhân · Quỹ đạo lượng tử hoá.</strong> Thomson: cầu điện dương đặc, êlectron cắm rải rác. Rutherford: nguyên tử gần như trống, hạt nhân nhỏ và nặng ở giữa. Bohr: thêm điều kiện êlectron chỉ ở những quỹ đạo có năng lượng xác định nên nguyên tử hấp thụ và phát xạ theo từng lượng tử.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>5. Đơn vị $u$ được định nghĩa thế nào? Viết công thức bán kính hạt nhân và nói rõ các kí hiệu.</summary>
+<p><strong>$u$ là 1/12 khối lượng $^{12}_6\text{C}$ · $1\ \text{u} \approx 1{,}66054 \cdot 10^{-27}$ kg $\approx 931{,}5$ MeV/$c^2$ · $1\ \text{MeV} = 1{,}6 \cdot 10^{-13}$ J.</strong> Bán kính hạt nhân $R = 1{,}2 \cdot 10^{-15} A^{1/3}$ (m), trong đó $A$ là số nuclôn; đơn vị của $R$ là mét.</p>
+</details>
+</div>
+
+<h3 data-tap="4">V. Bài toán mẫu: đọc nhãn hai mẫu kim loại</h3>
+
+<div class="tl-box tl-box--rule tl-note">
+<p class="tl-label">📝 Đề bài</p>
+<p>Một phòng thí nghiệm nhận hai mẫu kim loại: mẫu thứ nhất ghi $^{27}_{13}\text{Al}$, mẫu thứ hai ghi "đồng tự nhiên". Sổ tay ghi: khối lượng mol nguyên tử nhôm là $26{,}98$ g/mol; đồng tự nhiên gồm $^{63}_{29}\text{Cu}$ và $^{65}_{29}\text{Cu}$; $N_A = 6{,}022 \cdot 10^{23}$ mol$^{-1}$.</p>
+<p>a) Xác định số prôtôn, số nơtron của hạt nhân nhôm.</p>
+<p>b) Tính bán kính hạt nhân nhôm.</p>
+<p>c) Tính khối lượng một nguyên tử nhôm ra đơn vị u và ra kilôgam.</p>
+<p>d) Hai đồng vị của đồng khác nhau ở đại lượng nào?</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"$^{27}_{13}\text{Al}$"</td><td>$A = 27$; $Z = 13$</td><td>$N = A - Z$</td></tr>
+<tr><td>"bán kính hạt nhân"</td><td>$A = 27$</td><td>$R = 1{,}2 \cdot 10^{-15} A^{1/3}$</td></tr>
+<tr><td>"khối lượng mol"</td><td>$M = 26{,}98$ g/mol</td><td>khối lượng một nguyên tử $= M / N_A$</td></tr>
+<tr><td>"ra đơn vị u"</td><td>$1\ \text{u} \approx 1{,}66054 \cdot 10^{-27}$ kg</td><td>đổi kg sang u</td></tr>
+<tr><td>"hai đồng vị của đồng"</td><td>$Z = 29$; $N$ là 34 và 36</td><td>cùng $Z$, khác $N$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details tl-more">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Câu a: $Z = 13$ prôtôn và $N = A - Z = 27 - 13 = 14$ nơtron.</li>
+<li>Câu b: $R = 1{,}2 \cdot 10^{-15} \cdot 27^{1/3}$. Vì $27^{1/3} = 3$ nên $R = 3{,}6 \cdot 10^{-15}$ m.</li>
+<li>Câu c: khối lượng một nguyên tử $= \dfrac{26{,}98}{6{,}022 \cdot 10^{23}} \approx 4{,}48 \cdot 10^{-23}$ g $= 4{,}48 \cdot 10^{-26}$ kg. Đổi sang u: $\dfrac{4{,}48 \cdot 10^{-26}}{1{,}66054 \cdot 10^{-27}} \approx 26{,}98\ \text{u}$.</li>
+<li>Câu d: hai hạt nhân có cùng 29 prôtôn nhưng khác số nơtron (34 và 36), nên khác số nuclôn (63 và 65). Đó đúng là định nghĩa hai đồng vị của đồng.</li>
+<li>Nhận xét: khối lượng một nguyên tử theo u luôn cùng con số với khối lượng mol theo g/mol, nên 26,98 u chỉ là phép đối chiếu chứ chưa phải kiểm tra độc lập.<br>Nhôm tự nhiên chỉ có một đồng vị bền $^{27}_{13}\text{Al}$, nên 26,98 lệch 27 không do trộn đồng vị mà do khối lượng từng nuclôn khác 1 u và độ hụt khối (bài sau).<br>$27^{1/3} = 3$ là số nguyên nên câu b không có sai số làm tròn căn, nhưng kết quả vẫn mang sai số của công thức thực nghiệm.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<ol class="tl-steps">
+<li>Bước 1: đồng có khối lượng mol $63{,}54$ g/mol; $R_{\text{Cu}} = 1{,}2 \cdot 10^{-15} \cdot 63^{1/3} \approx 4{,}8 \cdot 10^{-15}$ m.</li>
+<li><strong>Em điền bước 2:</strong> khối lượng một nguyên tử đồng $= \dfrac{63{,}54}{N_A} = \;?$ g $= \;?$ kg.</li>
+<li><strong>Em điền bước 3:</strong> đổi sang u và so với hai số khối 63 và 65.</li>
+</ol>
+<details class="tl-details tl-more">
+<summary>Bấm xem bước 2–3</summary>
+<p><strong>Bước 2:</strong> $63{,}54 / (6{,}022 \cdot 10^{23}) \approx 1{,}055 \cdot 10^{-22}$ g $= 1{,}055 \cdot 10^{-25}$ kg.</p>
+<p><strong>Bước 3:</strong> $1{,}055 \cdot 10^{-25} / (1{,}66054 \cdot 10^{-27}) \approx 63{,}5$ u — nằm giữa 63 và 65 vì đồng tự nhiên là hỗn hợp $^{63}\text{Cu}$ (nhiều hơn) và $^{65}\text{Cu}$.<br>Đây là khối lượng trung bình, không phải số khối.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức: đổi số, đổi chất</p>
+<p><strong>Câu 7.</strong> Hạt nhân urani $^{238}_{92}\text{U}$ có bao nhiêu nuclôn, prôtôn, nơtron?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl15-q8" id="tl15-q8a"><label for="tl15-q8a" class="tl-opt tl-no">A. 238 nuclôn · 238 prôtôn · 92 nơtron</label>
+<input type="radio" name="tl15-q8" id="tl15-q8b"><label for="tl15-q8b" class="tl-opt tl-no">B. 238 nuclôn · 92 prôtôn · 92 nơtron</label>
+<input type="radio" name="tl15-q8" id="tl15-q8c" checked><label for="tl15-q8c" class="tl-opt tl-ok">C. 238 nuclôn · 92 prôtôn · 146 nơtron</label>
+<input type="radio" name="tl15-q8" id="tl15-q8d"><label for="tl15-q8d" class="tl-opt tl-no">D. 330 nuclôn · 92 prôtôn · 238 nơtron</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $A = 238$ nuclôn, $Z = 92$ prôtôn, $N = 238 - 92 = 146$ nơtron. Với hạt nhân nặng, nơtron thường nhiều hơn prôtôn — vì thêm nơtron làm các prôtôn xa nhau hơn (lực đẩy tĩnh điện yếu đi) và thêm lực hạt nhân giữ các nuclôn lại.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là tổng số nuclôn chứ không phải số prôtôn; B là lỗi lấy nơtron bằng đúng số prôtôn; D là lỗi cộng $A + Z$. Luôn nhớ một hệ thức duy nhất: $A = Z + N$. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3 data-tap="5">VI. Đời sống, thử thách và mang về</h3>
+
+<ul>
+<li><strong>Y học hạt nhân:</strong> đồng vị phóng xạ chụp hình, xạ trị trong cơ thể.</li>
+<li><strong>Xác định tuổi cổ vật:</strong> theo tỉ lệ $^{14}\text{C}$ còn lại trong di vật hữu cơ.</li>
+<li><strong>Nhiên liệu hạt nhân:</strong> urani tự nhiên chủ yếu $^{238}\text{U}$, phải tách tăng $^{235}\text{U}$.</li>
+<li><strong>Chế tạo máy:</strong> tia gamma của đồng vị phóng xạ $^{60}\text{Co}$ soi kiểm mối hàn.</li>
+</ul>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
+
+<details class="tl-details tl-more">
+<summary>⭐ Cơ bản: hạt nhân $^{4}_{2}\text{He}$ có bao nhiêu prôtôn và nơtron?</summary>
+<p>$Z = 2$ prôtôn và $N = 4 - 2 = 2$ nơtron — đây chính là hạt alpha trong thí nghiệm lá vàng. Bán kính $R = 1{,}2 \cdot 4^{1/3} \approx 1{,}9 \cdot 10^{-15}$ m, nhỏ hơn hạt nhân vàng gần bốn lần.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>⭐⭐ Khá: vì sao nơtron có mặt trong hạt nhân lại làm hạt nhân bền hơn?</summary>
+<p>Nơtron không mang điện nên <em>không</em> thêm lực đẩy tĩnh điện, nhưng vẫn hút các nuclôn bằng lực hạt nhân — thêm nơtron là thêm "chất keo" mà không thêm "lực đẩy". Hạt nhân nhẹ có $N \approx Z$; hạt nhân càng nặng thì $N/Z$ càng lớn: $^{238}_{92}\text{U}$ có $146/92 \approx 1{,}6$.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>⭐⭐⭐ Thách đấu: hạt nhân vàng có $R = 7{,}0 \cdot 10^{-15}$ m, nguyên tử vàng có bán kính cỡ $1{,}4 \cdot 10^{-10}$ m. Hỏi hạt nhân chiếm bao nhiêu phần thể tích nguyên tử?</summary>
+<p>Coi gần đúng là hình cầu nên thể tích tỉ lệ với lập phương bán kính: $\left(\dfrac{7{,}0 \cdot 10^{-15}}{1{,}4 \cdot 10^{-10}}\right)^3 = (5 \cdot 10^{-5})^3 = 1{,}25 \cdot 10^{-13}$. Hạt nhân chỉ chiếm khoảng một phần mười nghìn tỉ thể tích nguyên tử — đó là lí do hạt alpha bay thẳng qua mà không "chạm" gì.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
+<ul>
+<li><strong>Hạt nhân:</strong> prôtôn $+e$ · nơtron không điện · gọi chung nuclôn.</li>
+<li><strong>Lực hạt nhân:</strong> hút rất mạnh · chỉ trong phạm vi $10^{-15}$ m · thắng lực đẩy tĩnh điện.</li>
+<li><strong>Kí hiệu:</strong> $^A_Z X$ · trên là tổng nuclôn · dưới là prôtôn · $N = A - Z$.</li>
+<li><strong>Đồng vị:</strong> cùng $Z$, khác $N$ · cùng tính chất hoá học · khác khối lượng.</li>
+<li><strong>Mô hình:</strong> Thomson đặc · Rutherford có hạt nhân, nguyên tử gần như trống · Bohr thêm quỹ đạo lượng tử.</li>
+<li><strong>Kích thước:</strong> $R = 1{,}2 \cdot 10^{-15} A^{1/3}$ m · tăng chậm theo căn bậc ba.</li>
+<li><strong>Khối lượng:</strong> $1\ \text{u} \approx 1{,}66054 \cdot 10^{-27}$ kg $\approx 931{,}5$ MeV/$c^2$; $1\ \text{MeV} = 1{,}6 \cdot 10^{-13}$ J.</li>
+<li><strong>Đọc đề:</strong> "số khối" là số đếm nuclôn, không phải khối lượng.</li>
+</ul>
+</div>
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

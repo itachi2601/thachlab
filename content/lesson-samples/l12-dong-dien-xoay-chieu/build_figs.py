@@ -67,7 +67,7 @@ b += text(round(xq) + 8, 20, "e đỉnh · Φ = 0", "currentColor", 12, "start",
 b += f'<line x1="40" y1="196" x2="68" y2="196" stroke="{BLUE}" stroke-width="3"/>' + text(74, 200, "Φ (từ thông)", BLUE, 12)
 b += f'<line x1="190" y1="196" x2="218" y2="196" stroke="{RED}" stroke-width="3"/>' + text(224, 200, "e (suất điện động)", RED, 12)
 fig2 = wrap("0 0 430 212", "Đồ thị từ thông Φ và suất điện động e theo thời gian, lệch nhau một phần tư chu kì",
-            b, "Hình 3. Φ và e lệch nhau T/4 (vuông pha): cái này ở đỉnh thì cái kia đi qua 0.",
+            b, "Hình 4. Φ và e lệch nhau T/4 (vuông pha): cái này ở đỉnh thì cái kia đi qua 0.",
             exp="tn-l12-xoaychieu-01")
 
 # ---- Hình 3: u(t), đỉnh 311 V, hiệu dụng 220 V, T = 20 ms
@@ -92,11 +92,20 @@ b += f'<line x1="{xa}" y1="252" x2="{xb:.0f}" y2="252" stroke="{ORG}" stroke-wid
 b += f'<line x1="{xa}" y1="246" x2="{xa}" y2="258" stroke="{ORG}" stroke-width="2.4"/><line x1="{xb:.0f}" y1="246" x2="{xb:.0f}" y2="258" stroke="{ORG}" stroke-width="2.4"/>'
 b += text(round((xa + xb) / 2), 244, "T = 20 ms", ORG, 12, "middle", "700")
 fig3 = wrap("0 0 430 266", "Đồ thị điện áp lưới 220 V 50 Hz: đỉnh 311 V, hiệu dụng 220 V, chu kì 20 mili giây",
-            b, "Hình 2. Điện áp ổ điện nhà em. Chấm xanh: lúc dòng đổi chiều, 2 lần mỗi chu kì, tức 100 lần mỗi giây.",
+            b, "Hình 3. Điện áp ổ điện nhà em. Chấm xanh: lúc dòng đổi chiều, 2 lần mỗi chu kì, tức 100 lần mỗi giây.",
             exp="tn-l12-xoaychieu-03")
 
+# ---- Hình 2 (mới): ảnh OpenStax Hình 23.21 (vành trượt + chổi than + đồ thị e theo t), chèn trực tiếp, không vẽ lại
+fig4 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-dong-dien-xoay-chieu/hinh-may-phat-vanh-truot-choi-than.webp" '
+        'alt="Máy phát điện xoay chiều: khung dây quay giữa hai cực N và S, hai vành trượt có hai chổi than nối với bóng đèn; bên phải là đồ thị suất điện động hình sin theo thời gian" '
+        'loading="lazy" width="1000" height="554"><figcaption>Hình 2. Lấy điện ra khỏi khung quay.<br>'
+        'Hai đầu khung nối hai vành trượt quay cùng trục; hai chổi than tì lên vành và nối với bóng đèn.<br>'
+        'Suất điện động có dạng hình sin, chu kì T = 2π/ω.<br>'
+        'Nhãn: Brushes = chổi than; ω = tốc độ góc; ℰ = suất điện động; ℰ₀ = suất điện động cực đại; T = chu kì; t = thời gian.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 23.21 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 src = (HERE / "theory.src.html").read_text(encoding="utf-8")
-for n, f in ((1, fig1), (2, fig2), (3, fig3)):
+for n, f in ((1, fig1), (2, fig2), (3, fig3), (4, fig4)):
     assert f"<!--FIG:{n}-->" in src, n
     src = src.replace(f"<!--FIG:{n}-->", f)
 (HERE / "theory.html").write_text(src, encoding="utf-8")

@@ -30,36 +30,14 @@ def wrap(vb, label, body, cap, exp=""):
             f'<figcaption>{cap}</figcaption></figure>')
 
 
-# ------------------------------------------------- Hình 1: bình kín để ngoài nắng
-b = defs("f1")
-b += text(14, 24, "Bình kín để ngoài nắng", "currentColor", 13, "start", "700")
-for x, ten in ((68, "sáng"), (372, "trưa")):
-    b += rect(x - 32, 68, 64, 92, "rgba(148,163,184,.10)", "currentColor", 2.5, 10)
-    b += f'<circle cx="{x}" cy="54" r="17" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2"/>'
-    for a in (-30, 0, 30):                       # vạch chia áp kế để đọc được góc kim
-        rad = math.radians(a)
-        dx, dy = math.sin(rad), -math.cos(rad)
-        b += line(x + 13 * dx, 54 + 13 * dy, x + 17 * dx, 54 + 17 * dy, "currentColor", 1.2, "", .45)
-# 5,0 bar (sáng) → 5,3 bar (trưa): kim nhích lên ~16°; kim mờ = vị trí buổi sáng
-b += line(68, 54, 78, 39, RED, 2.2)
-b += line(372, 54, 382, 39, RED, 1.6, "2 2", .5)
-b += line(372, 54, 377, 37, RED, 2.2)
-b += text(436, 22, "kim: 5,0 → 5,3 bar", ORG, 11, "end", "700")
-b += f'<circle cx="220" cy="48" r="14" fill="{ORG}" opacity="0.9"/>'
-for dx, dy in ((0, -24), (17, -17), (24, 0), (17, 17), (0, 24), (-17, 17), (-24, 0), (-17, -17)):
-    b += line(220 + dx * 0.75, 48 + dy * 0.75, 220 + dx, 48 + dy, ORG, 2.2)
-b += text(220, 96, "trời nắng", ORG, 12, "middle", "700")
-b += arrow("f1", "o", 112, 112, 328, 112, 2.6)
-b += text(220, 134, "nhiệt độ tăng, áp suất tăng", ORG, 12, "middle", "700")
-b += text(68, 180, "sáng", "currentColor", 12, "middle", "700")
-b += text(68, 198, "27 °C · 5,0 bar", RED, 12, "middle", "700")
-b += text(372, 180, "trưa", "currentColor", 12, "middle", "700")
-b += text(372, 198, "47 °C · 5,3 bar", RED, 12, "middle", "700")
-b += text(220, 216, "thể tích bình không đổi", GRN, 11, "middle", "700")
-fig1 = wrap("0 0 440 228",
-            "Bình khí nén mini kín để ngoài nắng: nhiệt độ tăng từ 27 lên 47 độ C làm áp suất tăng từ 5,0 lên 5,3 bar, kim áp kế nhích lên, thể tích bình không đổi",
-            b, "Hình 1. Bình kín, thể tích không đổi: chỉ nhiệt độ tăng, kim áp kế nhích từ 5,0 lên 5,3 bar.",
-            exp="tn-l12-pttrangthai-03")
+# ------------------------------------------------- Hình 1: ảnh OpenStax (đợt 2, 27/10/2026) - lốp xe, tăng nhiệt độ
+fig1 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-pttrangthai-03">'
+        '<img src="/assets/openstax/l12-phuong-trinh-trang-thai/hinh-lop-tang-nhiet-do.webp" '
+        'alt="Hai lốp xe nối với áp kế: sau khi nhiệt độ tăng, kim áp kế quay sang số lớn hơn, lốp không phồng thêm" '
+        'loading="lazy" width="712" height="540">'
+        '<figcaption>Hình 1. Nhiệt độ tăng, thể tích không đổi: kim lên.<br>Nhãn: increase temperature = tăng nhiệt độ.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 13.19c — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- Hình 2: bóng bàn bẹp phồng lại
 b = defs("f2")

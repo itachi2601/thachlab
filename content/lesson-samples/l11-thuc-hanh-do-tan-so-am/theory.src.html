@@ -33,13 +33,14 @@
 <h3>II. Cơ sở lý thuyết và phương án đo</h3>
 
 <h4>1. Tần số, chu kì và nguồn âm đơn</h4>
+<p class="tl-claim">Tần số là số dao động trong mỗi giây.</p>
 
 <p><strong>🔑 Tần số là số dao động mỗi giây</strong></p>
 
 <ul>
 <li>Tần số $f$ (Hz): số dao động toàn phần trong $1\ \text{s}$. Chu kì $T$ (s): thời gian một dao động toàn phần.</li>
 <li>Liên hệ giữa $f$, $T$ và cách đếm: công thức dưới.</li>
-<li>Âm đơn: một tần số duy nhất, đồ thị theo thời gian là hình sin.</li>
+<li>Âm đơn: một tần số duy nhất, đồ thị theo thời gian là <span class="tl-term"><input type="checkbox" id="tl29-t1"><label for="tl29-t1">hình sin</label><span class="tl-def">đường cong lượn đều lên xuống, giống đồ thị hàm sin.</span></span>.</li>
 </ul>
 
 <div class="tl-fx">
@@ -55,7 +56,7 @@
 </ul>
 </div>
 
-<p>Ví dụ: âm thoa $440\ \text{Hz}$ có chu kì $T = \dfrac{1}{440} \approx 2{,}27\ \text{ms}$.</p>
+<p>Ví dụ: <span class="tl-term"><input type="checkbox" id="tl29-t2"><label for="tl29-t2">âm thoa</label><span class="tl-def">thanh kim loại hình chữ U, gõ vào thì phát ra âm có tần số cố định.</span></span> $440\ \text{Hz}$ có chu kì $T = \dfrac{1}{440} \approx 2{,}27\ \text{ms}$.</p>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
@@ -77,18 +78,19 @@
 <p><strong>Thử:</strong></p>
 <ol class="tl-steps">
 <li>Màn hình <strong>Phần giới thiệu</strong>: kéo tần số lên, nghe âm cao hơn. Khoảng cách giữa hai vòng nén liên tiếp ngắn lại hay dài ra?</li>
-<li>Màn hình <strong>Đo đạc</strong>: dùng thước đo bước sóng $\lambda$ tại hai tần số khác nhau, rồi tính $f = v/\lambda$ với $v \approx 340\ \text{m/s}$ của không khí.</li>
+<li>Màn hình <strong>Đo đạc</strong>: dùng thước đo bước sóng $\lambda$ tại hai tần số khác nhau, rồi tính $f = v/\lambda$ với $v \approx 340\ \text{m/s}$<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup> của không khí.</li>
 <li>Chu kì $T = 1/f$: tần số gấp đôi thì $T$ đổi thế nào?</li>
 </ol>
 <p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
 </details>
 
 <h4>2. Phương án 1: dao động kí và micro</h4>
+<p class="tl-claim">Micro nhận âm, dao động kí vẽ sóng.</p>
 
 <p><strong>🔑 Micro nhận âm, màn vẽ sóng</strong></p>
 
 <ul>
-<li><strong>Nguồn âm đơn:</strong> âm thoa $440\ \text{Hz}$ có hộp cộng hưởng, hoặc loa nối máy phát tần số.</li>
+<li><strong>Nguồn âm đơn:</strong> âm thoa $440\ \text{Hz}$ có hộp <span class="tl-term"><input type="checkbox" id="tl29-t3"><label for="tl29-t3">cộng hưởng</label><span class="tl-def">không khí trong hộp dao động mạnh khi tần số trùng tần số riêng, làm âm to hơn.</span></span>, hoặc loa nối máy phát tần số.</li>
 <li><strong>Micro:</strong> đổi dao động của âm thành hiệu điện thế biến thiên, nối vào CH1 (kênh vào số 1 của dao động kí).</li>
 <li><strong>Dao động kí:</strong> trục ngang là thời gian (núm TIME/DIV, ms/ô), trục dọc là điện áp (núm VOLT/DIV). Núm TRIGGER (đồng bộ) giữ cho hình sóng đứng yên.</li>
 </ul>
@@ -133,6 +135,7 @@
 </div>
 
 <h4>3. Đo thật: 5 lần đo và sai số</h4>
+<p class="tl-claim">Đo năm lần, lấy trung bình, ghi kèm ±.</p>
 
 <p><strong>🔑 Đo 5 lần, lấy trung bình, ghi ±</strong></p>
 
@@ -228,6 +231,7 @@
 </div>
 
 <h4>4. Phương án 2: điện thoại hoặc bộ dụng cụ thực hành</h4>
+<p class="tl-claim">Không có dao động kí vẫn đo được tần số.</p>
 
 <p><strong>🔑 Không có dao động kí vẫn đo được</strong></p>
 
@@ -352,7 +356,7 @@
 <p class="tl-label">Trả bài</p>
 
 <details class="tl-details tl-more">
-<summary>1. Tần số và chu kì là gì? Liên hệ và đơn vị? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<summary>1. Tần số và chu kì là gì? Liên hệ và đơn vị?</summary>
 <p>$f$: số dao động mỗi giây, đơn vị Hz. $T$: thời gian một dao động, đơn vị s. $f = \dfrac{1}{T}$ và $f = \dfrac{N}{t}$.</p>
 </details>
 
@@ -480,3 +484,7 @@
 <li><strong>Đọc đề:</strong> tìm $k$, $N$, $L$ và độ lệch đọc trước.</li>
 </ul>
 </div>
+
+<ol class="tl-fns">
+<li id="tl-fn-1">Giá trị ở khoảng 15–20 °C ($343$ m/s ở $20$ °C); tốc độ âm trong không khí tăng theo nhiệt độ.</li>
+</ol>

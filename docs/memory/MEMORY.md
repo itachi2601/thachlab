@@ -96,3 +96,5 @@
 - [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — Ch.1 ABCD 189 + Ch.2 ABCD 60 câu đã Hiện (24/10); còn Đ–S/tính toán Ch.1–2, Ch.3–4; đáp án=tô vàng
 - [Ruột tập bài 14](project_thachlab_ruot_tap_bai14.md) — 12 trang theo nhịp buổi, quy ước 25/10 (BTVN = đề, sửa bài góc HS TB); chờ in thử, cập nhật DB, deploy
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 9:16 không lời, Lô 0 = 3 clip L12 (27/10); chờ thầy duyệt + chốt nơi đặt mp4
+- [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 1 21 bài đã đăng 26/10; đợt 2 (○) chờ số liệu Trả bài
+- [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — bản duyệt 26/10; ≥1280 media lan phải + cột lề Tufte 27/10, chưa deploy

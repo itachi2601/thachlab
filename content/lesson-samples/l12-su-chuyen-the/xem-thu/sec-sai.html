@@ -1,12 +1,12 @@
-<!doctype html><html lang="vi"><meta charset="utf-8">
+<!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.css">
 <style>
-:root{color-scheme:dark}
-body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{color-scheme:light}
+body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
 .exam-content{display:block}
-h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+h1{font-size:20px;margin:0 0 4px} .sub{color:var(--color-ink-muted,#475569);font-size:13px;margin:0 0 16px}
 /* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
 /* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
 .exam-content {
@@ -170,6 +170,9 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
 .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
 .exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-conf { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; color: var(--color-muted, #475569); font-size: .92em; }
+.exam-content .tl-conf label { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; cursor: pointer; }
+.exam-content .tl-conf input { width: 18px; height: 18px; accent-color: var(--color-primary, #1d4ed8); }
 .exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
 .exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
@@ -190,6 +193,11 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   1.05rem (không 1.1rem): đo 375px, mẹo 4–5 chữ có dấu " – " mới nằm một dòng. Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo, .lesson-body .lesson-prose p.tl-meo { margin: 0 0 2px; font-size: 1.05rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
 /* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
    Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
 .exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
@@ -326,21 +334,14 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 .lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
 
 /* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
-   Thẻ "Nên làm tiếp" bấm được cả thẻ (nút thật phủ trong suốt lên thẻ); mỗi bài một hàng: số · tên · trạng thái. */
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
 @media (max-width: 639px) {
   .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
   .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
     .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
   .lesson-layout--pick .class-toc { gap: 12px; }
-  .lesson-layout--pick .class-continue--main {
-    position: relative;
-    gap: 2px;
-    border-radius: 14px;
-    padding: 10px 14px;
-  }
-  .lesson-layout--pick .class-continue--main .lesson-btn { position: absolute; inset: 0; width: 100%; opacity: 0; }
-  .lesson-layout--pick .class-toc-toolbar { display: none; }
-  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
   .lesson-layout--pick .class-chapter-progress small { display: none; }
   .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
   .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
@@ -360,15 +361,6 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương xếp NGAY TRÊN tabbar toàn site ----------
-   Giữ tabbar để học sinh luôn quay về được 5 nút chính; thanh chương nằm trên nó (56px). */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .lesson-bottombar--pick { bottom: calc(56px + env(safe-area-inset-bottom, 0px)); padding-bottom: 6px; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(118px + env(safe-area-inset-bottom, 0px)); }
-  body:has(.lesson-bottombar--pick) .mobile-more-backdrop { z-index: 46; }
-  body:has(.lesson-bottombar--pick) .mobile-more { z-index: 47; }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -415,6 +407,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(148,163,184,.24);
   --pres-surface: rgba(15,23,42,.86);
   --pres-panel: #101a2e;
+  /* Token site đặt lại theo nền chiếu, không theo theme của trang: khung .tl-trap/.tl-check/.tl-fx
+     dùng color-mix(var(--color-panel)) nên theme tối của trang + nền chiếu sáng = hộp đen chữ mờ. */
+  --color-panel: #101a2e; --color-ink: #f1f5f9; --color-warn: #fbbf24; --color-primary: #60a5fa;
+  --color-surface-2: rgba(255,255,255,.06); --color-line-strong: rgba(255,255,255,.34);
   position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
 }
@@ -426,6 +422,8 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(15,23,42,.16);
   --pres-surface: rgba(255,255,255,.92);
   --pres-panel: #fff;
+  --color-panel: #fff; --color-ink: #0f172a; --color-warn: #b45309; --color-primary: #1d4ed8;
+  --color-surface-2: #eef1f6; --color-line-strong: #8b93a1;
   background: #f4f6fb;
 }
 
@@ -473,7 +471,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
-.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
+.presenter-tap span { color: var(--pres-accent); }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
@@ -534,6 +534,23 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
 .lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
 .lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+/* Ghi chú của HỌC SINH (StudentNoteFab): góc TRÁI để cách xa nút Báo lỗi ở góc phải (D3); nền theo token site. */
+.lesson-note-open { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; padding: 0 14px; color: var(--color-ink); font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; text-align: left; }
+.lesson-note-open::after { content: "›"; color: var(--color-muted); font-size: 16px; }
+.student-note-float { position: fixed; z-index: 45; left: 12px; bottom: 20px; max-width: calc(100vw - 24px); }
+body:has(.lesson-bottombar) .student-note-float { bottom: calc(var(--lesson-bottombar-h, 62px) + 12px + env(safe-area-inset-bottom, 0px)); }
+.student-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; border: 2px solid var(--color-primary, #1d4ed8); border-radius: 999px; background: var(--color-panel, #fff); padding: 0 16px 0 13px; color: var(--color-primary, #1d4ed8); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(15,23,42,.35); }
+.student-note { width: min(360px, calc(100vw - 24px)); border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 16px; background: var(--color-panel, #fff); padding: 12px 14px 14px; color: var(--color-ink, #0f172a); box-shadow: 0 16px 40px -16px rgba(15,23,42,.45); }
+.student-note-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.student-note-head p { display: grid; gap: 2px; min-width: 0; margin: 0; font-size: 15px; }
+.student-note-head p span { overflow: hidden; color: var(--color-muted, #475569); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.student-note-head button { display: grid; width: 44px; height: 44px; margin: -8px -8px 0 0; place-items: center; border: 0; background: none; color: var(--color-muted, #475569); cursor: pointer; }
+.student-note-label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
+.student-note-body { width: 100%; min-height: 96px; resize: vertical; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 10px; background: var(--color-bg, #f5f7fa); padding: 9px 10px; color: var(--color-ink, #0f172a); font: inherit; font-size: 16px; line-height: 1.5; }
+.student-note-status { margin: 6px 0 0; color: var(--color-muted, #475569); font-size: 12.5px; }
+.student-note-others { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.student-note-others button { display: grid; width: 100%; min-height: 44px; gap: 1px; border: 1px solid var(--color-line, rgba(15,23,42,.1)); border-radius: 10px; background: none; padding: 6px 10px; color: var(--color-ink, #0f172a); font-family: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.student-note-others button span { overflow: hidden; color: var(--color-muted, #475569); text-overflow: ellipsis; white-space: nowrap; }
 @media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
 
 /* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
@@ -1050,17 +1067,359 @@ html[data-theme="light"] .class-done-tag { color: #475569; }
 html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
 html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
+
+/* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
+   Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
+.exam-content .tl-fx > p { margin: 0; }
+.exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
+.exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
+.exam-content .tl-fx .katex-display { margin: 4px 0; padding: 6px 0; border: 0; background: none; text-align: center; overflow-x: auto; overflow-y: hidden; }
+.exam-content .tl-fx .katex-display > .katex { display: block; }
+.exam-content ul.tl-fx-def { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--color-line, rgba(148,163,184,.4)); display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: baseline; text-align: left; }
+.exam-content ul.tl-fx-def > li { display: contents; }
+.exam-content ul.tl-fx-def .tl-sym { text-align: right; white-space: nowrap; }
+.exam-content ul.tl-fx-def .tl-sym::after { content: " :"; }
+.exam-content .tl-fx-note { margin-top: 10px !important; font-size: .95em; text-align: left; }
+/* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
+.lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
+.lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, icon tròn ở góc phải trên, màu theo ĐÚNG token của docs/MAU-NEN-SANG.md (M3):
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) — viền trung tính đậm (màu mực), KHÔNG dùng màu nhấn/trạng thái
+     ⚠️ bẫy mất điểm (.tl-trap) — --color-warn (cần chú ý); không dùng đỏ vì đỏ chỉ để "sai" ở phản hồi quiz bên trong
+     ✍️ tự kiểm tra (.tl-check) — --color-primary (khối có thứ bấm được)
+   Mọi thứ còn lại là ghi chú: .tl-note (vạch trái mỏng trung tính), .tl-more (mục bấm xem). Không để khung nằm trong khung.
+   Tương phản viền ≥ 3:1 ở cả hai theme (WCAG 1.4.11); nghĩa nằm ở icon + nhãn, không chỉ ở màu (M4). */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: var(--color-ink, #0f172a); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--color-surface-2, rgba(148,163,184,.08)); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: var(--color-warn, #b45309); background: color-mix(in srgb, var(--kc) 7%, var(--color-panel, #fff)); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: var(--color-primary, #1d4ed8); background: color-mix(in srgb, var(--kc) 6%, var(--color-panel, #fff)); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--color-panel, #fff); border: 2px solid var(--kc); font-size: 17px; line-height: 1; transform: rotate(8deg); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
+
+/* ============================================================================================
+   KHUNG ĐỒNG BỘ TRANG CHƯƠNG ↔ TRANG BÀI (thầy duyệt 26/10/2026, bản xem thử "Trang chương và trang bài")
+   Rail trái luôn là "mình đang ở đâu" (B5): trang chương = danh sách chương, trang bài = mục lục bài.
+   Đầu trang cùng mẫu: đường dẫn + công cụ một hàng, H1 cùng cỡ (C3), một dòng meta. Một điểm nổi mỗi trang (B2).
+   4 cỡ: ≥1024 (máy tính, iPad ngang) 2 cột · 640–1023 (iPad dọc) 1 cột + thanh đáy + ngăn kéo trái · <640 điện thoại.
+   ============================================================================================ */
+
+/* ---- Đầu trang bài: một lưới cho mọi cỡ ---- */
+.lesson-page .lesson-head {
+  position: relative; display: grid; align-items: center; column-gap: 8px; row-gap: 2px;
+  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+  grid-template-areas: "back crumb present aa drawer" "title title title title title" "meta meta meta meta meta";
+}
+.lesson-page .lesson-head-text { display: contents; }
+.lesson-page .lesson-head-back { grid-area: back; }
+.lesson-page .lesson-head .lesson-breadcrumb { grid-area: crumb; min-width: 0; align-self: center; }
+.lesson-page .lesson-head h1 { grid-area: title; margin-top: 4px; }
+.lesson-page .lesson-head .lesson-meta { grid-area: meta; }
+.lesson-page .lesson-head .lesson-tool-toggle { grid-area: aa; display: inline-flex; width: 44px; height: 44px; }
+.lesson-page .lesson-head .lesson-drawer-toggle { display: none; }
+.lesson-present-btn { grid-area: present; display: inline-flex; height: 44px; align-items: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; padding: 0 12px; color: var(--color-ink); font-size: 14px; font-weight: 600; cursor: pointer; }
+.lesson-present-btn:hover { border-color: var(--lesson-accent-line); }
+/* Cỡ chữ, Dịu mắt, Toàn màn hình gom vào bảng Aa (N2): bảng nổi ngay dưới nút. */
+.lesson-page .lesson-head .lesson-tools { position: absolute; top: 48px; right: 0; z-index: 30; display: none; min-width: 200px; flex-direction: column; align-items: stretch; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--color-panel); padding: 8px; box-shadow: 0 14px 30px -18px rgba(15,23,42,.45); }
+.lesson-page .lesson-head .lesson-tools.is-open { display: flex; }
+.lesson-page .lesson-head .lesson-tools .lesson-tool { justify-content: flex-start; min-height: 44px; }
+.lesson-page .lesson-head .lesson-fonttools button { min-height: 44px; }
+
+/* ---- Bài trước / Bài sau ở cuối bài ---- */
+.lesson-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0 8px; }
+.lesson-pager-link { display: grid; gap: 2px; min-height: 56px; align-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 10px 16px; color: var(--color-ink); font-size: 15px; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.lesson-pager-link small { color: var(--color-muted); font-size: 13px; font-weight: 500; }
+.lesson-pager-link:hover { border-color: var(--lesson-accent-line); }
+.lesson-pager-link--next { grid-column: 2; border-color: var(--lesson-accent-line); text-align: right; color: var(--lesson-accent-text); }
+
+/* ---- Rail trái trang bài ---- */
+.lesson-rail-back { display: flex; min-height: 44px; align-items: center; gap: 6px; color: var(--color-muted); font-size: 14px; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.lesson-rail-back:hover { color: var(--lesson-accent-text); }
+.lesson-nav--rail { display: grid; gap: 12px; align-content: start; }
+.lesson-nav--rail .lesson-toc ol { max-height: none; }
+.lesson-nav--rail .lesson-toc a { min-height: 40px; align-content: center; padding: 8px 10px; border-radius: 0 8px 8px 0; font-size: 14px; }
+
+/* Cột chữ ≤ ~62 ký tự (C2): giới hạn đoạn văn, không giới hạn hình/bảng. */
+.lesson-page .lesson-prose :is(p, li, h3, h4) { max-width: 36em; }
+
+@media (min-width: 1024px) {
+  .lesson-layout--rail { grid-template-columns: 248px minmax(0, 1fr); gap: 40px; max-width: 1200px; }
+  .lesson-layout--rail .lesson-nav--rail { position: sticky; top: 92px; max-height: calc(100vh - 112px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding-bottom: 72px; }
+  .lesson-layout--rail .lesson-main { max-width: 760px; }
+  .lesson-layout--rail .lesson-body { --lesson-read-width: 760px; max-width: 760px; }
+  .lesson-page .lesson-head { margin: 0 0 16px; }
+  .lesson-page .lesson-head-back { display: none; }
+  .lesson-page .lesson-head h1, .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 32px; line-height: 1.2; }
+}
+/* iPad ngang (1024–1279): rail hẹp lại, nút Trình chiếu chỉ còn icon. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lesson-layout--rail { grid-template-columns: 220px minmax(0, 1fr); gap: 28px; padding-inline: 24px; }
+  .lesson-present-btn { width: 44px; justify-content: center; padding: 0; }
+  .lesson-present-btn .lesson-tool-text { display: none; }
+}
+
+/* ---- < 1024 (iPad dọc + điện thoại): thanh bài thay thanh site, thanh đáy + ngăn kéo ---- */
+@media (max-width: 1023px) {
+  body:has(.lesson-page) header[data-site-navbar] { display: none; }
+  /* Chỉ khi bài đã dựng (.lesson-page có mặt) — lúc tải/lỗi navbar vẫn hiện nên phải giữ khoảng đệm. */
+  body:has(.lesson-page) main.lesson-page-main { padding-top: 0 !important; }
+  .lesson-layout--rail .lesson-nav--rail { display: none; }
+  .lesson-page .lesson-tabs { top: 0; }
+  .lesson-page .lesson-review-banner { top: 56px; }
+  .lesson-page .lesson-head { padding-top: 8px; }
+  .lesson-page .lesson-head .lesson-tools { top: 56px; }
+  .lesson-page .lesson-head-back { display: inline-flex; width: 44px; height: 44px; }
+  /* Tên chương nhỏ ở hàng đầu thay cho cả đường dẫn (biết mình ở chương nào, không lặp tên bài — N4). */
+  .lesson-page .lesson-breadcrumb { display: flex; flex-wrap: nowrap; overflow: hidden; }
+  .lesson-page .lesson-crumb-class { display: none !important; }
+  .lesson-page .lesson-crumb-chapter { display: block !important; overflow: hidden; color: var(--color-muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+  .lesson-page .lesson-pager { display: none; }
+  .lesson-present-btn { width: 44px; justify-content: center; padding: 0; }
+  .lesson-present-btn .lesson-tool-text { display: none; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Trước đây Bài trước/Bài sau treo ở đầu trang tablet; giờ là thanh đáy giống điện thoại, rộng tối đa 560px (D3/B6). */
+  .lesson-page .lesson-head h1 { font-size: 26px; }
+  .lesson-page .lesson-body { font-size: calc(1.0625rem * var(--lesson-read-scale, 1)); }
+  .lesson-page .lesson-tabs ol { justify-content: center; }
+  body:has(.lesson-page) { padding-bottom: calc(var(--lesson-bottombar-h, 72px) + env(safe-area-inset-bottom, 0px)); }
+  .lesson-page .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: 48px repeat(3, minmax(0, 1fr)); align-items: center; gap: 10px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 10px max(16px, calc((100vw - 600px) / 2)) calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .lesson-page .lesson-bottom-link, .lesson-page .lesson-bottom-done { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .lesson-page .lesson-bottom-link--next { border-color: var(--lesson-accent); background: var(--lesson-accent); color: #fff; }
+  .lesson-page .lesson-bottom-done { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
+  .lesson-page .lesson-bottom-done.is-done { color: var(--color-ok, #047857); }
+  .lesson-page .lesson-checkbox { width: 17px; height: 17px; border: 2px solid currentColor; border-radius: 5px; }
+  .lesson-page .lesson-bottom-step { display: none; }
+  .lesson-page.is-drawer-open .lesson-bottombar { display: none; }
+  /* Đề kiểm tra: Bài trước/Bài sau đã ở thanh đáy — bỏ hàng lặp ở đầu trang (D3). */
+  .lesson-layout--exam .lesson-nav--compact { display: none; }
+  /* Ngăn kéo mục lục trượt từ cạnh TRÁI — đúng cạnh của rail trên máy tính (B5/B7). */
+  .lesson-page .lesson-drawer { display: block; position: fixed; inset: 0; z-index: 60; }
+  .lesson-page .lesson-drawer-scrim { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(2, 6, 15, .45); cursor: pointer; }
+  .lesson-page .lesson-drawer-sheet { position: absolute; inset: 0 auto 0 0; display: flex; width: min(380px, 86vw); flex-direction: column; border-right: 1px solid var(--lesson-line); background: var(--color-panel); }
+  .lesson-page .lesson-drawer-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--lesson-line); padding: 14px 16px 12px; }
+  .lesson-page .lesson-drawer-title { margin: 0; color: var(--color-ink); font-size: 16px; font-weight: 700; }
+  .lesson-page .lesson-drawer-head small { display: block; margin-top: 3px; color: var(--color-muted); font-size: 13px; }
+  .lesson-page .lesson-drawer-head button { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); cursor: pointer; }
+  .lesson-page .lesson-drawer-body { overflow-y: auto; overscroll-behavior: contain; padding: 14px 16px 24px; }
+  .lesson-page .lesson-bottom-link.is-empty { opacity: .35; }
+  body:has(.lesson-bottombar) .bug-fab { bottom: calc(var(--lesson-bottombar-h, 72px) + 12px); z-index: 46; }
+  .lesson-page .lesson-drawer-body .lesson-toc ol { max-height: none; }
+  .lesson-page .lesson-drawer-body .lesson-toc a { min-height: 44px; align-content: center; font-size: 15px; }
+}
+@media (max-width: 639px) {
+  .lesson-page .lesson-head h1 { font-size: 22px; }
+}
+
+/* Cây chương, ô tìm, thẻ tiến độ trong ngăn kéo: dùng chung điện thoại + iPad dọc (ngăn kéo có ở mọi cỡ < 1024px từ 26/10/2026). */
+@media (max-width: 1023px) {
+  /* Hộp trong ngăn kéo (mục lục bài, mức nắm vững, cây khoá) cách nhau đều 14px. */
+  .lesson-page .lesson-drawer-body { display: grid; gap: 14px; align-content: start; }
+  .lesson-drawer-body .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 14px; }
+  .lesson-drawer-body .lesson-nav-search { display: flex; align-items: center; gap: 8px; margin: 10px 0; border: 1px solid var(--lesson-line); border-radius: 10px; background: var(--lesson-surface); padding: 8px 10px; color: var(--color-muted); }
+  .lesson-drawer-body .lesson-nav-search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--color-ink); font-size: 16px; }
+  .lesson-drawer-body .lesson-toc a { font-size: 13.5px; }
+  .lesson-drawer-body .lesson-progress-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 12px; }
+  .lesson-drawer-body .lesson-progress-summary > div:last-child { flex: 1 1 140px; min-width: 0; }
+  .lesson-drawer-body .lesson-continue-btn { display: flex; width: max-content; max-width: 100%; min-height: 36px; align-items: center; gap: 6px; margin-top: 10px; border-radius: 9px; background: var(--lesson-accent); padding: 8px 12px; color: #fff; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+  .lesson-drawer-body .lesson-progress-summary p { margin: 0; color: var(--color-ink); font-size: 14px; font-weight: 700; }
+  .lesson-drawer-body .lesson-progress-summary small { display: block; margin-top: 2px; color: var(--color-muted); font-size: 12px; }
+  .lesson-drawer-body .lesson-tree-chapter { width: 100%; display: grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items: center; gap: 6px; border: 0; background: none; padding: 10px 2px; color: var(--color-ink); font-family: var(--font-display), sans-serif; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; }
+  .lesson-drawer-body .lesson-tree-chapter em { display: flex; width: 22px; height: 22px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: var(--color-muted); font-size: 12px; font-style: normal; font-weight: 700; }
+  .lesson-drawer-body .lesson-tree-chapter small { color: var(--color-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lesson-drawer-body .lesson-tree-chapter.is-current { background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
+  .lesson-drawer-body .lesson-tree ol { display: grid; gap: 1px; margin: 2px 0 8px; padding: 0; list-style: none; }
+  .lesson-drawer-body .lesson-tree a, .lesson-drawer-body .lesson-tree .lesson-tree-current { display: grid; min-height: 44px; grid-template-columns: 18px minmax(0,1fr); align-items: center; gap: 8px; border-left: 2px solid transparent; border-radius: 0 8px 8px 0; padding: 8px; color: var(--color-muted); font-size: 13.5px; line-height: 1.35; text-decoration: none; }
+  .lesson-drawer-body .lesson-tree .is-current { border-left-color: var(--lesson-accent); background: var(--lesson-accent-soft); color: var(--color-ink); font-weight: 700; }
+  .lesson-drawer-body .lesson-tree .is-done i { color: #34d399; }
+  .lesson-drawer-body .lesson-tree .is-exam i { font-size: 12px; font-weight: 700; letter-spacing: .02em; }
+  .lesson-drawer-body .lesson-section h2 { font-size: 14px; }
+  .lesson-drawer-body .lesson-note-panel { padding: 0; }
+}
+
+/* ---- Trang chương ---- */
+/* "Học tiếp": khối màu đặc, điểm nổi duy nhất (B2/L5). */
+.lesson-shell .class-next-line:not(.class-next-line--done) { min-height: 64px; gap: 14px; border: 0; background: var(--color-primary, #1d4ed8); padding: 14px 18px; color: #fff; }
+.lesson-shell .class-next-line:not(.class-next-line--done):hover { background: var(--color-primary-dark, #1e40af); }
+.class-next-line-text { display: grid; flex: 1 1 auto; min-width: 0; gap: 1px; }
+.lesson-shell .class-next-line-label { color: rgba(255,255,255,.85); font-size: 12px; letter-spacing: .08em; }
+.lesson-shell .class-next-line-title { color: #fff; font-size: 17px; }
+.lesson-shell .class-next-line-why { color: rgba(255,255,255,.9); font-size: 14px; white-space: normal; }
+.class-next-line-go { display: inline-flex; flex: 0 0 auto; min-height: 44px; align-items: center; gap: 6px; border-radius: 10px; background: #fff; padding: 0 14px; color: var(--color-primary, #1d4ed8); font-size: 15px; font-weight: 700; }
+.lesson-shell .class-next-line:not(.class-next-line--done) svg { color: inherit; }
+/* Buổi ôn ở nhà: một dòng phụ, hạn nộp màu cần-chú-ý. */
+.class-task-row { display: flex; flex-wrap: wrap; min-height: 48px; align-items: center; gap: 4px 10px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 10px 14px; color: var(--color-ink); font-size: 14px; text-decoration: none; }
+.class-task-row:hover { border-color: var(--lesson-accent-line); }
+.class-task-title { font-weight: 600; }
+.class-task-sub { color: var(--color-muted); }
+.class-task-due { margin-left: auto; color: var(--color-warn, #b45309); font-weight: 600; white-space: nowrap; }
+/* "Ôn thêm:" — lối tắt cuối danh sách; tự ẩn khi không còn chip. */
+.class-more { align-items: center; }
+.class-more-label { color: var(--color-muted); font-size: 14px; }
+.class-more:not(:has(.class-chip, a, button)) { display: none; }
+/* Dải chương cho iPad dọc. */
+.class-chapter-chips { display: none; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Trang chương iPad dọc: dải chương thay thanh đáy site, như bản duyệt (B1/N3). */
+  body:has(.lesson-layout--pick) .mobile-tabbar { display: none; }
+  body:has(.lesson-layout--pick) { padding-bottom: 0; }
+  body:has(.lesson-layout--pick) .bug-fab { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .class-chapter-chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .class-chapter-chips button { flex: 0 0 auto; min-height: 44px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 0 14px; color: var(--color-ink); font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer; }
+  .class-chapter-chips button.is-active { border-color: transparent; background: var(--lesson-accent-soft); color: var(--lesson-accent-text); font-weight: 700; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
+  .lesson-layout--pick .class-pick-mobile { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 28px; }
+}
+
+/* ============================================================================================
+   VÙNG ĐỌC LÝ THUYẾT — 6 cách trình bày lấy từ trang iPad mini của Apple (thầy duyệt 26/10/2026)
+   Khối mới chỉ cần HTML + CSS (không JS, lọt qua DOMPurify). Cách soạn: skill soan-bai-ly-thuyet-tuong-tac.
+   ============================================================================================ */
+/* (5) Nhịp: giữa hai mục (mốc h3) ~56px, giữa hai đoạn ~14px — tỉ lệ ≥ 1:3 (B3). */
+.lesson-page .theory-section[data-open="1"] + .theory-section[data-open="1"] { margin-top: 56px; }
+@media (max-width: 639px) { .lesson-page .theory-section[data-open="1"] + .theory-section[data-open="1"] { margin-top: 40px; } }
+
+/* (1) Câu chốt đầu mục: <p class="tl-claim"> ngay sau <h3>. h3 thu thành nhãn nhỏ, câu chốt là chữ to (N5, G3). */
+.exam-content h3:has(+ .tl-claim) { margin-bottom: 4px; color: var(--color-primary, #1d4ed8); font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.exam-content .tl-claim, .lesson-body .lesson-prose .exam-content p.tl-claim { margin: 0 0 16px; color: var(--color-ink); font-size: 1.45rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; text-wrap: balance; }
+
+/* (2) Một chỗ in đậm mỗi đoạn — không có CSS, kiểm bằng scripts/kiem-dam-moi-doan.mts. */
+
+/* (3) Ô "Số cần nhớ": <div class="tl-nums"><details class="tl-num"><summary>nhãn</summary><b>giá trị</b></details>…</div>
+   Che sẵn, học sinh nhớ lại rồi bấm để kiểm (L1 — truy xuất). */
+.exam-content .tl-nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 12px 0 16px; }
+.exam-content .tl-num { display: flex; min-height: 96px; flex-direction: column; justify-content: space-between; gap: 6px; border: 1px solid var(--lesson-line, rgba(15,23,42,.1)); border-radius: 12px; background: var(--color-bg); padding: 12px 14px; }
+.exam-content .tl-num > summary { list-style: none; cursor: pointer; color: var(--color-muted); font-size: .9rem; line-height: 1.4; }
+.exam-content .tl-num > summary::-webkit-details-marker { display: none; }
+.exam-content .tl-num > summary::after { content: "Bấm để hiện"; display: block; margin-top: 8px; color: var(--color-primary, #1d4ed8); font-size: .9rem; font-weight: 600; }
+.exam-content .tl-num[open] > summary::after { content: none; }
+.exam-content .tl-num > :not(summary) { margin: 0; color: var(--color-ink); font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.exam-content .tl-num:hover { border-color: var(--lesson-accent-line, #1d4ed8); }
+
+/* (4) Bảng đặt cạnh nhau cho bẫy: <table class="tl-table tl-cmp">, ô khác nhau <td class="tl-diff">. */
+.exam-content .tl-cmp tbody th { width: 30%; color: var(--color-muted); font-size: .9rem; font-weight: 600; }
+.exam-content .tl-cmp .tl-diff { background: rgba(245, 158, 11, .12); }
+.exam-content .tl-cmp :is(th, td) { padding: 10px 12px; }
+
+/* (6) Thuật ngữ mở tại chỗ (N8): <span class="tl-term"><input type="checkbox" id="…"><label for="…">từ</label><span class="tl-def">định nghĩa</span></span>
+   Chú thích số mũ chỉ cho nguồn/điều kiện: <sup class="tl-fn"><a href="#tl-fn-1">1</a></sup> … <ol class="tl-fns"><li id="tl-fn-1">…</li></ol> */
+.exam-content .tl-term > input { position: absolute; opacity: 0; pointer-events: none; }
+.exam-content .tl-term > label { border-bottom: 1.5px dashed currentColor; color: var(--color-primary, #1d4ed8); font-weight: 500; cursor: pointer; }
+.exam-content .tl-term > input:focus-visible + label { outline: 2px solid var(--color-primary, #1d4ed8); outline-offset: 2px; border-radius: 3px; }
+.exam-content .tl-term > .tl-def { display: none; }
+.exam-content .tl-term > input:checked ~ .tl-def { display: block; margin: 8px 0 4px; border-radius: 10px; background: var(--color-surface-2, rgba(15,23,42,.05)); padding: 10px 14px; color: var(--color-ink); font-size: .92em; line-height: 1.6; }
+.exam-content .tl-fn { margin-left: 1px; font-size: .7em; font-weight: 700; line-height: 0; }
+.exam-content .tl-fn a { color: var(--color-primary, #1d4ed8); text-decoration: none; }
+.exam-content .tl-fns { margin: 36px 0 0; border-top: 1px solid var(--lesson-line, rgba(15,23,42,.1)); padding: 12px 0 0 20px; color: var(--color-muted); font-size: .82rem; line-height: 1.6; }
+
+/* ============================================================================================
+   TRANG BÀI KHỚP BẢN DUYỆT 26/10/2026 (đợt 2) — số đo lấy đúng CSS của bản xem thử "Trang chương và trang bài".
+   ============================================================================================ */
+/* Thân bài 17px (iPad dọc 18px), dòng ≤ 62 ký tự (C1/C2). */
+.lesson-page .lesson-body { font-size: calc(1.0625rem * var(--lesson-read-scale, 1)); }
+.lesson-page .lesson-prose :is(p, li, h3, h4) { max-width: 62ch; }
+/* .lesson-page .exam-content đặt 1rem cứng (16px, bỏ qua cả nút A−/A+) — trong thẻ lý thuyết theo cỡ của thân bài. */
+.lesson-page .lesson-prose .exam-content { font-size: 1em; }
+/* Hộp mục tiêu: viền trái màu nhấn, nhãn in hoa, không in đậm bên trong (N7); dòng ⏱ đã bỏ lúc render (N4). */
+.lesson-page .exam-content .tl-box.tl-goal { margin: 0 0 24px; border: 0; border-left: 3px solid var(--color-primary, #1d4ed8); border-radius: 0 10px 10px 0; background: var(--color-primary-soft, #eef2ff); padding: 12px 16px; font-size: 1rem; line-height: 1.65; }
+.lesson-page .exam-content .tl-goal > .tl-label { display: block; margin: 0 0 4px; color: var(--color-primary, #1d4ed8); font-size: .875rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.lesson-page .exam-content .tl-goal :is(strong, b) { font-weight: inherit; }
+.lesson-page .exam-content .tl-goal ul { margin: 0; padding-left: 18px; }
+/* Nhịp B3 khi vẫn giữ mốc gập: nút "Tiếp" (đầu mục sau) cách cuối mục đang mở như khoảng giữa hai mục mở. */
+.lesson-page .theory-section[data-open="1"] > .theory-next { margin-top: 56px; }
+/* Dòng meta: ngay dưới H1; bản dưới dải tab chỉ dùng < 1024. */
+.lesson-page .lesson-meta { gap: 6px 10px; font-size: 14px; }
+.lesson-page .lesson-meta--below-tabs { display: none; }
+/* Rail mục lục: khung, tiêu đề in hoa + số đếm, ✓ mục đã đọc, tô mục đang đọc (B5/B7). */
+.lesson-page .lesson-toc { border: 1px solid var(--lesson-line); border-radius: 14px; background: var(--color-panel); padding: 10px; }
+.lesson-page .lesson-toc-title { display: flex; justify-content: space-between; margin: 0; padding: 6px 10px 8px; color: var(--color-slate-500, #64748b); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.lesson-page .lesson-toc-title span { font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.lesson-page .lesson-toc a, .lesson-nav--rail .lesson-toc a { display: grid; grid-template-columns: 22px minmax(0, 1fr); align-items: start; gap: 8px; border: 0; border-radius: 9px; padding: 9px 10px; color: var(--color-ink); font-size: 14px; line-height: 1.4; }
+.lesson-page .lesson-toc-n { padding-top: 1px; color: var(--color-slate-500, #64748b); font-size: 12px; font-style: normal; font-variant-numeric: tabular-nums; }
+.lesson-page .lesson-toc a.is-done .lesson-toc-n { color: var(--color-ok, #047857); }
+.lesson-page .lesson-toc a.is-active { background: var(--color-primary-soft, #eef2ff); color: var(--color-primary, #1d4ed8); font-weight: 600; }
+.lesson-page .lesson-toc a.is-active .lesson-toc-n { color: inherit; }
+.lesson-page .lesson-toc .lesson-toc-item { display: block; color: var(--color-muted); font-size: 12px; font-weight: 500; }
+.lesson-page .lesson-nav--rail .lesson-side-link { min-height: 32px; padding: 0 10px; color: var(--color-primary, #1d4ed8); font-size: 14px; font-weight: 500; }
+/* Cuối bài: Mức độ thành thạo + Ghi chú của em (dời khỏi rail). */
+.lesson-endpanels { display: grid; gap: 12px; margin: 28px 0 0; }
+
+@media (min-width: 1024px) {
+  .lesson-layout--rail .lesson-main { max-width: 720px; }
+  .lesson-layout--rail .lesson-body { --lesson-read-width: 720px; max-width: 720px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { border-radius: 16px; padding: 28px 36px 32px; }
+}
+.lesson-page .lesson-meta-time { color: var(--color-muted); }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { padding: 26px 30px 30px; }
+}
+
+/* < 1024: tên bài nằm trong thanh bài (2 dòng: tên chương nhỏ / tên bài), bỏ H1 lớn (B1/B6). */
+@media (max-width: 1023px) {
+  .lesson-page .lesson-head { grid-template-areas: "back crumb present aa drawer" "back title present aa drawer"; row-gap: 0; align-items: center; border-bottom: 1px solid var(--lesson-line); background: var(--color-panel); }
+  .lesson-page .lesson-head-back { grid-area: back; grid-row: 1 / 3; border: 0; }
+  .lesson-page .lesson-head .lesson-breadcrumb { align-self: end; }
+  .lesson-page .lesson-head h1 { overflow: hidden; margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+  .lesson-page .lesson-crumb-chapter { font-size: 12px; line-height: 1.3; }
+  .lesson-page .lesson-head > .lesson-head-text > .lesson-meta { display: none; }
+  .lesson-page .lesson-meta--below-tabs { display: flex; margin: 0; padding: 12px 0 0; }
+  .lesson-page .lesson-tabs { top: 56px; background: var(--color-panel); }
+  /* Thanh bài dính trên cùng như bản duyệt (thanh site đã ẩn) — luôn biết đang ở bài nào; dải tab dính ngay dưới. */
+  .lesson-page .lesson-head { position: sticky; top: 0; z-index: 8; }
+  .lesson-page .lesson-layout--rail { padding-top: 0; }
+  .lesson-page .lesson-progressbar { margin-top: 0; border-radius: 0; }
+  .lesson-page .lesson-bottombar--3 { grid-template-columns: 1fr 1fr 1.3fr; }
+  .lesson-page .lesson-bottombar--3 .lesson-bottom-link--next { border-color: var(--lesson-accent); background: var(--lesson-accent); color: #fff; }
+}
+.lesson-page .lesson-progressbar > small { font-variant-numeric: tabular-nums; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  .lesson-page .lesson-body { font-size: calc(1.125rem * var(--lesson-read-scale, 1)); }
+  .lesson-page .lesson-head { min-height: 60px; padding: 0 16px 0 8px; }
+  .lesson-page .lesson-tabs { top: 60px; }
+  .lesson-page .lesson-meta--below-tabs { padding-inline: 4px; }
+  .lesson-page .lesson-head h1 { font-size: 17px; }
+  .lesson-page .lesson-crumb-chapter { font-size: 13px; }
+  .lesson-page .lesson-head-back { width: 48px; height: 48px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { border-radius: 16px; padding: 30px 40px 34px; }
+}
+.lesson-page .lesson-endpanels:empty { display: none; }
+@media (max-width: 639px) {
+  .lesson-page .lesson-head { min-height: 56px; padding: 0 6px; }
+  .lesson-page .lesson-meta--below-tabs { padding-top: 12px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { margin-inline: -16px; border-inline: 0; border-radius: 0; padding: 18px 16px; }
+  .lesson-page .theory-section[data-open="1"] > .theory-next { margin-top: 40px; }
+}
+/* Màn cảm ứng (iPad ngang 1024–1279 vẫn có rail): đích chạm ≥ 44px cho mục lục, lối về, link phụ (D2). */
+@media (pointer: coarse) {
+  .lesson-page .lesson-toc a, .lesson-rail-back, .lesson-page .lesson-nav--rail .lesson-side-link, .class-rail-item, .class-rail .lesson-rail-back { min-height: 44px; }
+}
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
 <li>Giải thích cấu trúc <strong>rắn – lỏng – khí</strong> bằng mô hình động học phân tử.</li>
 <li>Gọi tên <strong>bốn quá trình chuyển thể</strong> chính, biết thêm thăng hoa và ngưng kết.</li>
-<li>Giải thích vì sao <strong>nhiệt độ không đổi</strong> khi đang nóng chảy.</li>
+<li>Giải thích nhiệt độ <strong>thay đổi thế nào</strong> khi chất đang nóng chảy, đang sôi.</li>
 <li>Đọc <strong>đồ thị nhiệt độ – thời gian</strong>; trả lời <strong>6 câu ở mục Trả bài</strong>.</li>
 </ul>
 <p>⏱ Khoảng 17 phút · 6 mục · 7 câu tự kiểm — học 2 mục rồi quay lại cũng được.</p>
@@ -1070,11 +1429,9 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <p>Trưa nắng, em thả ba viên đá vào li nước ngọt. Một lúc sau: đá tan hết, nước vẫn mát, mà <strong>thành li lấm tấm nước</strong>.</p>
 
-<p>Cắm nhiệt kế vào li đá đang tan: kim đứng yên ở <strong>0 °C</strong> rất lâu, dù li vẫn nhận nhiệt.</p>
+<p>Cắm nhiệt kế vào li đá đang tan. Nghĩ trước: <em>li vẫn nhận nhiệt từ không khí nóng, nhiệt độ có tăng theo không?</em></p>
 
-<p>Nghĩ trước: <em>nhiệt vẫn vào li, sao nhiệt độ không tăng?</em></p>
-
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Đun một cốc nước đá. Trong lúc đá <strong>đang tan</strong>, nhiệt độ của cốc:</p>
 <div class="tl-quiz">
@@ -1082,26 +1439,29 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <input type="radio" name="tl12b1-q0" id="tl12b1-q0b"><label for="tl12b1-q0b" class="tl-opt tl-ok">B. Giữ nguyên ở 0 °C cho tới khi đá tan hết</label>
 <input type="radio" name="tl12b1-q0" id="tl12b1-q0c"><label for="tl12b1-q0c" class="tl-opt tl-no">C. Giảm rồi mới tăng trở lại</label>
 <input type="radio" name="tl12b1-q0" id="tl12b1-q0d"><label for="tl12b1-q0d" class="tl-opt tl-no">D. Tăng nhanh lúc đầu rồi chậm dần</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Bếp cấp nhiệt liên tục, nhưng nhiệt lượng đó dùng để <em>phá vỡ liên kết</em> trong mạng tinh thể nước đá, không làm các phân tử chạy nhanh hơn, nên nhiệt độ không tăng.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Cốc vẫn nhận nhiệt đều nên nhiệt độ không thể "giảm xuống" hay tăng "chậm dần". Còn nếu "tăng đều" thì nhiệt kế đã không đứng ở 0 °C như ở li đá. Nhiệt nhận vào đang được dùng vào việc gì, nếu không phải để làm nóng? Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Thí nghiệm ở mục II.4 sẽ kiểm bằng số đo. Bếp cấp nhiệt liên tục, nhưng nhiệt lượng đó dùng để <em>phá vỡ liên kết</em> trong mạng tinh thể nước đá, không làm các phân tử chạy nhanh hơn, nên nhiệt độ không tăng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Cốc vẫn nhận nhiệt đều nên nhiệt độ không thể "giảm xuống" hay tăng "chậm dần". Nhưng nhận nhiệt có nhất thiết làm nhiệt độ tăng không? Nhiệt nhận vào còn có thể dùng vào việc gì khác? Chọn lại nhé.</p></div>
 </div>
 </div>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 420 250" role="img" aria-label="Li nước đá đang tan: nhiệt kế chỉ 0 °C, ngoài thành li có nước ngưng tụ"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><path d="M150 58 L150 182 Q150 196 166 196 L254 196 Q270 196 270 182 L270 58" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M152 128 L152 182 Q152 194 166 194 L254 194 Q268 194 268 182 L268 128 Z" fill="rgba(56,189,248,.16)" stroke="none"/><rect x="166" y="142" width="28" height="24" rx="4" fill="rgba(56,189,248,.4)" stroke="#38bdf8" stroke-width="1.6"/><rect x="200" y="136" width="30" height="28" rx="4" fill="rgba(56,189,248,.4)" stroke="#38bdf8" stroke-width="1.6"/><rect x="234" y="144" width="26" height="22" rx="4" fill="rgba(56,189,248,.4)" stroke="#38bdf8" stroke-width="1.6"/><text x="160" y="234" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="start">đá đang tan</text><line x1="218" y1="74" x2="218" y2="158" stroke="currentColor" stroke-width="2.5" opacity="1"/><circle cx="218" cy="158" r="5" fill="#f87171"/><text x="228" y="82" fill="#34d399" font-size="12" font-weight="600" text-anchor="start">nhiệt kế</text><text x="228" y="100" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">chỉ 0 °C</text><ellipse cx="146" cy="150" rx="4" ry="6" fill="#38bdf8"/><ellipse cx="143" cy="172" rx="3.4" ry="5" fill="#38bdf8"/><text x="14" y="146" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="start">hơi nước</text><text x="14" y="162" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="start">ngưng tụ</text><line x1="372" y1="176" x2="276" y2="176" stroke="#f87171" stroke-width="2.8"/><path d="M286.0,181.8 L276.0,176.0 L286.0,170.2" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="276" y="166" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">nhiệt từ không khí vào</text></svg><figcaption>Hình 1. Đá tan dần mà nhiệt kế vẫn đứng ở 0 °C, dù không khí nóng vẫn truyền nhiệt vào li. Nước ngoài thành li là hơi nước trong không khí <em>ngưng tụ</em> khi gặp mặt lạnh.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 250" role="img" aria-label="Li nước đá đang tan có cắm nhiệt kế, ngoài thành li có nước ngưng tụ"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><path d="M150 58 L150 182 Q150 196 166 196 L254 196 Q270 196 270 182 L270 58" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M152 128 L152 182 Q152 194 166 194 L254 194 Q268 194 268 182 L268 128 Z" fill="rgba(56,189,248,.16)" stroke="none"/><rect x="166" y="142" width="28" height="24" rx="4" fill="rgba(56,189,248,.4)" stroke="#38bdf8" stroke-width="1.6"/><rect x="200" y="136" width="30" height="28" rx="4" fill="rgba(56,189,248,.4)" stroke="#38bdf8" stroke-width="1.6"/><rect x="234" y="144" width="26" height="22" rx="4" fill="rgba(56,189,248,.4)" stroke="#38bdf8" stroke-width="1.6"/><text x="160" y="234" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="start">đá đang tan</text><line x1="218" y1="20" x2="218" y2="158" stroke="currentColor" stroke-width="2.5" opacity="1"/><circle cx="218" cy="158" r="5" fill="#f87171"/><text x="228" y="24" fill="#34d399" font-size="12" font-weight="600" text-anchor="start">nhiệt kế</text><text x="228" y="42" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">chỉ ? °C</text><ellipse cx="146" cy="150" rx="4" ry="6" fill="#38bdf8"/><ellipse cx="143" cy="172" rx="3.4" ry="5" fill="#38bdf8"/><text x="14" y="146" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="start">hơi nước</text><text x="14" y="162" fill="#38bdf8" font-size="12" font-weight="600" text-anchor="start">ngưng tụ</text><line x1="372" y1="176" x2="276" y2="176" stroke="#f87171" stroke-width="2.8"/><path d="M286.0,181.8 L276.0,176.0 L286.0,170.2" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="276" y="166" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">nhiệt từ không khí vào</text></svg><figcaption>Hình 1. Không khí nóng truyền nhiệt vào li đá đang tan: nhiệt kế chỉ bao nhiêu? Nước ngoài thành li là hơi nước <em>ngưng tụ</em> khi gặp mặt lạnh.</figcaption></figure>
 
 <h3>II. Kiến thức</h3>
 
 <h4>1. Mô hình động học phân tử về cấu tạo chất</h4>
 
+<p class="tl-meo">🧠 <b>Rời – Loạn – Hút Đẩy</b></p>
 <p><strong>🔑 Hạt riêng biệt · Chuyển động không ngừng · Lực hút – lực đẩy</strong></p>
 
 <ul>
-<li><strong>Có khoảng cách:</strong> các chất cấu tạo từ những hạt riêng biệt nên giữa chúng có khoảng cách.</li>
-<li><strong>Chuyển động không ngừng:</strong> các hạt chuyển động hỗn loạn; nhiệt độ càng cao, tốc độ trung bình càng lớn.</li>
-<li><strong>Có lực liên kết:</strong> <em>gần</em> nhau thì lực đẩy, <em>xa</em> nhau thì lực hút chiếm ưu thế.</li>
+<li><strong>Rời:</strong> các chất cấu tạo từ những hạt riêng biệt nên giữa chúng có khoảng cách.</li>
+<li><strong>Loạn:</strong> các hạt chuyển động hỗn loạn, không ngừng; nhiệt độ càng cao, tốc độ trung bình càng lớn.</li>
+<li><strong>Hút Đẩy:</strong> có lực liên kết; <em>gần</em> nhau thì lực đẩy, <em>xa</em> nhau thì lực hút chiếm ưu thế.</li>
 </ul>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l12-chuyenthe-02">
+<details class="tl-details tl-more">
+<summary>🔬 Bấm xem thí nghiệm và video: 50 ml rượu + 50 ml nước</summary>
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-chuyenthe-02">
 <p class="tl-label">🔬 Thí nghiệm: 50 ml rượu + 50 ml nước</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> đong 50 ml nước vào ống đong 100 ml, rót tiếp 50 ml rượu, đọc mực chất lỏng.</li>
@@ -1110,15 +1470,20 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </ol>
 </div>
 <!--video:sau:tn-l12-chuyenthe-02-->
-<div class="tl-box tl-box--video">
+<div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem video: đổ 50 ml rượu vào 50 ml nước</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/T-9Ty_iXA6o?rel=0&start=5&end=55" title="đổ 50 ml rượu vào 50 ml nước" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nếu không xem được video:</strong><br>
+Đổ 50 ml rượu vào ống đong đã có 50 ml nước.<br>
+Sau khi trộn, mực chất lỏng dừng thấp hơn vạch 100 ml vài ml.<br>
+Kết luận: thể tích hỗn hợp nhỏ hơn tổng hai thể tích, vì giữa các phân tử có khoảng trống.</p>
 <p><strong>Nhìn vào:</strong> Sau khi trộn, mực chất lỏng dừng ở vạch nào so với 100 ml?</p>
 </div>
+</details>
 
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Đổ 50 ml rượu vào 50 ml nước, hỗn hợp có thể tích:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl12b1-q1" id="tl12b1-q1a"><label for="tl12b1-q1a" class="tl-opt tl-no">A. Bằng đúng 100 ml</label>
@@ -1134,7 +1499,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <p><strong>🔑 Rắn: gần – trật tự · Lỏng: kém trật tự · Khí: rất xa – hỗn loạn</strong></p>
 
-<p>Khoảng cách càng lớn, lực liên kết càng yếu; lực liên kết càng mạnh thì các hạt càng bị giữ chặt nên sắp xếp càng trật tự.</p>
+<p>Khoảng cách càng nhỏ, lực liên kết càng mạnh, các hạt càng bị giữ chặt và sắp xếp trật tự.</p>
 
 <table class="tl-table">
 <thead>
@@ -1147,92 +1512,109 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </tbody>
 </table>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 212" role="img" aria-label="Ba thể của chất: rắn sắp xếp trật tự và ở gần nhau, lỏng kém trật tự, khí rất xa nhau và chuyển động hỗn loạn"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="12" y="34" width="130" height="142" rx="8" fill="rgba(148,163,184,.08)" stroke="currentColor" stroke-width="1.5"/><text x="77" y="24" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">RẮN</text><circle cx="47" cy="75" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="77" cy="75" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="107" cy="75" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="47" cy="105" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="77" cy="105" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="107" cy="105" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="47" cy="135" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="77" cy="135" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="107" cy="135" r="7" fill="none" stroke="currentColor" stroke-width="2"/><text x="77" y="196" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">gần nhau, trật tự</text><rect x="152" y="34" width="130" height="142" rx="8" fill="rgba(148,163,184,.08)" stroke="currentColor" stroke-width="1.5"/><text x="217" y="24" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">LỎNG</text><circle cx="178" cy="72" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="209" cy="64" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="238" cy="78" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="188" cy="100" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="219" cy="96" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="243" cy="112" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="180" cy="132" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="211" cy="134" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="239" cy="142" r="7" fill="none" stroke="currentColor" stroke-width="2"/><text x="217" y="196" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">kém trật tự</text><rect x="292" y="34" width="130" height="142" rx="8" fill="rgba(148,163,184,.08)" stroke="currentColor" stroke-width="1.5"/><text x="357" y="24" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">KHÍ</text><circle cx="316" cy="66" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="378" cy="54" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="328" cy="120" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="392" cy="124" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="356" cy="158" r="7" fill="none" stroke="currentColor" stroke-width="2"/><text x="357" y="196" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">rất xa, hỗn loạn</text><line x1="322" y1="78" x2="358" y2="70" stroke="#34d399" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M350.9,67.8 L358.0,70.0 L352.5,75.0" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="334" y1="132" x2="372" y2="128" stroke="#34d399" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M365.2,125.0 L372.0,128.0 L366.0,132.4" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="362" y1="150" x2="396" y2="132" stroke="#34d399" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M388.6,131.7 L396.0,132.0 L392.0,138.3" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></svg><figcaption>Hình 2. Cùng là các phân tử, khác nhau ở <strong>khoảng cách</strong> và <strong>mức trật tự</strong>: rắn gần – trật tự, lỏng kém trật tự, khí rất xa – hỗn loạn.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 212" role="img" aria-label="Ba thể của chất: rắn sắp xếp trật tự và ở gần nhau, lỏng kém trật tự, khí rất xa nhau và chuyển động hỗn loạn"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="12" y="34" width="130" height="142" rx="8" fill="rgba(148,163,184,.08)" stroke="currentColor" stroke-width="1.5"/><text x="77" y="24" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">RẮN</text><circle cx="47" cy="75" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="77" cy="75" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="107" cy="75" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="47" cy="105" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="77" cy="105" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="107" cy="105" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="47" cy="135" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="77" cy="135" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="107" cy="135" r="7" fill="none" stroke="currentColor" stroke-width="2"/><text x="77" y="196" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">gần nhau, trật tự</text><rect x="152" y="34" width="130" height="142" rx="8" fill="rgba(148,163,184,.08)" stroke="currentColor" stroke-width="1.5"/><text x="217" y="24" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">LỎNG</text><circle cx="178" cy="72" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="209" cy="64" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="238" cy="78" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="188" cy="100" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="219" cy="96" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="243" cy="112" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="180" cy="132" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="211" cy="134" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="239" cy="142" r="7" fill="none" stroke="currentColor" stroke-width="2"/><text x="217" y="196" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">kém trật tự</text><rect x="292" y="34" width="130" height="142" rx="8" fill="rgba(148,163,184,.08)" stroke="currentColor" stroke-width="1.5"/><text x="357" y="24" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">KHÍ</text><circle cx="316" cy="66" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="378" cy="54" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="328" cy="120" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="392" cy="124" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="356" cy="158" r="7" fill="none" stroke="currentColor" stroke-width="2"/><text x="357" y="196" fill="currentColor" font-size="11" font-weight="500" text-anchor="middle">rất xa, hỗn loạn</text><line x1="322" y1="78" x2="358" y2="70" stroke="#34d399" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M350.9,67.8 L358.0,70.0 L352.5,75.0" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="334" y1="132" x2="372" y2="128" stroke="#34d399" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M365.2,125.0 L372.0,128.0 L366.0,132.4" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="362" y1="150" x2="396" y2="132" stroke="#34d399" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M388.6,131.7 L396.0,132.0 L392.0,138.3" fill="none" stroke="#34d399" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></svg><figcaption>Hình 2. Cùng là các phân tử, khác nhau ở <strong>khoảng cách</strong> và <strong>mức trật tự</strong>.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p>⚠ Cả ba thể đều chuyển động hỗn loạn. Nhưng rắn và lỏng chỉ dao động quanh vị trí cân bằng, còn khí bay tự do.</p>
-<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl12b1-q2-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl12b1-q2-conf" value="khong"> Không chắc</label></p>
-<p><strong>Câu 2.</strong> Vì sao chất lỏng có thể tích xác định mà hình dạng không xác định?</p>
-<div class="tl-quiz">
-<input type="radio" name="tl12b1-q2" id="tl12b1-q2a"><label for="tl12b1-q2a" class="tl-opt tl-ok">A. Phân tử dao động quanh vị trí cân bằng luôn thay đổi, nhưng khoảng cách giữa chúng khá ổn định</label>
-<input type="radio" name="tl12b1-q2" id="tl12b1-q2b"><label for="tl12b1-q2b" class="tl-opt tl-no">B. Chất lỏng không có lực liên kết</label>
-<input type="radio" name="tl12b1-q2" id="tl12b1-q2c"><label for="tl12b1-q2c" class="tl-opt tl-no">C. Chất lỏng có cấu trúc tinh thể như chất rắn</label>
-<input type="radio" name="tl12b1-q2" id="tl12b1-q2d"><label for="tl12b1-q2d" class="tl-opt tl-no">D. Chất lỏng chuyển động hỗn loạn như khí</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vị trí cân bằng của phân tử chất lỏng <em>luôn đổi</em> nên chất lỏng chảy, lấy hình dạng bình chứa. Khoảng cách giữa các phân tử vẫn gần như ở chất rắn nên thể tích xác định.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu chất lỏng không có lực liên kết hoặc chuyển động hỗn loạn như khí thì nó đã dàn ra hết bình và mất luôn thể tích xác định. Chất lỏng nằm <em>giữa</em> rắn và khí. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
-</div>
-</div>
 
 <h4>3. Sự chuyển thể: bốn quá trình và hai chiều</h4>
 
 <p><strong>🔑 Nóng chảy ⇄ Đông đặc · Hoá hơi ⇄ Ngưng tụ</strong></p>
 
-<p>Khi nhiệt độ hoặc áp suất đổi, chất chuyển thể:</p>
-
-<ul>
-<li><strong>Nóng chảy:</strong> rắn → lỏng.</li>
-<li><strong>Đông đặc:</strong> lỏng → rắn.</li>
-<li><strong>Hoá hơi:</strong> lỏng → khí, gồm <em>bay hơi</em> và <em>sôi</em>.</li>
-<li><strong>Ngưng tụ:</strong> khí (hơi) → lỏng.</li>
-</ul>
+<p>Khi nhiệt độ hoặc áp suất đổi, chất chuyển thể theo bốn quá trình ở Hình 3; <strong>hoá hơi</strong> gồm <em>bay hơi</em> và <em>sôi</em>.</p>
 
 <p><strong>Nhiệt độ nóng chảy bằng nhiệt độ đông đặc</strong>: thuỷ ngân nóng chảy ở -39 °C cũng đông đặc ở -39 °C.</p>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 254" role="img" aria-label="Vòng chuyển thể: nóng chảy, đông đặc, hoá hơi, ngưng tụ, thăng hoa và ngưng kết"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="30" y="50" width="120" height="46" rx="10" fill="rgba(148,163,184,.1)" stroke="#f87171" stroke-width="2"/><text x="90.0" y="79.0" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">RẮN</text><rect x="290" y="50" width="120" height="46" rx="10" fill="rgba(148,163,184,.1)" stroke="#38bdf8" stroke-width="2"/><text x="350.0" y="79.0" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">LỎNG</text><rect x="160" y="180" width="120" height="46" rx="10" fill="rgba(148,163,184,.1)" stroke="#34d399" stroke-width="2"/><text x="220.0" y="209.0" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">KHÍ</text><line x1="154" y1="62" x2="286" y2="62" stroke="#f87171" stroke-width="2.6"/><path d="M276.6,56.6 L286.0,62.0 L276.6,67.4" fill="none" stroke="#f87171" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="220" y="44" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">nóng chảy</text><line x1="286" y1="86" x2="154" y2="86" stroke="#38bdf8" stroke-width="2.6"/><path d="M163.4,91.4 L154.0,86.0 L163.4,80.6" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="220" y="106" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">đông đặc</text><line x1="372" y1="100" x2="268" y2="178" stroke="#fb923c" stroke-width="2.6"/><path d="M278.8,176.7 L268.0,178.0 L272.3,168.0" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="150" y="148" fill="#fb923c" font-size="12" font-weight="700" text-anchor="start">hoá hơi</text><line x1="292" y1="178" x2="392" y2="100" stroke="#38bdf8" stroke-width="2.6"/><path d="M381.3,101.5 L392.0,100.0 L387.9,110.0" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="298" y="214" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="start">ngưng tụ</text><path d="M92 98 C 92 158, 112 202, 156 203" fill="none" stroke="#fb923c" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#f3-o)"/><text x="14" y="240" fill="#fb923c" font-size="11" font-weight="500" text-anchor="start">thăng hoa ⇄ ngưng kết (bỏ qua thể lỏng)</text></svg><figcaption>Hình 3. Bốn quá trình chính đi thành hai cặp ngược chiều. Nét đứt là hai quá trình ít gặp: <strong>thăng hoa</strong> (rắn → hơi) và <strong>ngưng kết</strong> (hơi → rắn).</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 254" role="img" aria-label="Vòng chuyển thể: nóng chảy, đông đặc, hoá hơi, ngưng tụ, thăng hoa và ngưng kết"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><rect x="30" y="50" width="120" height="46" rx="10" fill="rgba(148,163,184,.1)" stroke="#f87171" stroke-width="2"/><text x="90.0" y="79.0" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">RẮN</text><rect x="290" y="50" width="120" height="46" rx="10" fill="rgba(148,163,184,.1)" stroke="#38bdf8" stroke-width="2"/><text x="350.0" y="79.0" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">LỎNG</text><rect x="160" y="180" width="120" height="46" rx="10" fill="rgba(148,163,184,.1)" stroke="#34d399" stroke-width="2"/><text x="220.0" y="209.0" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">KHÍ</text><line x1="154" y1="62" x2="286" y2="62" stroke="#f87171" stroke-width="2.6"/><path d="M276.6,56.6 L286.0,62.0 L276.6,67.4" fill="none" stroke="#f87171" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="220" y="44" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">nóng chảy</text><line x1="286" y1="86" x2="154" y2="86" stroke="#38bdf8" stroke-width="2.6"/><path d="M163.4,91.4 L154.0,86.0 L163.4,80.6" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="220" y="106" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">đông đặc</text><line x1="372" y1="100" x2="268" y2="178" stroke="#fb923c" stroke-width="2.6"/><path d="M278.8,176.7 L268.0,178.0 L272.3,168.0" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="314" y="132" fill="#fb923c" font-size="14" font-weight="700" text-anchor="end">hoá hơi</text><line x1="292" y1="178" x2="392" y2="100" stroke="#38bdf8" stroke-width="2.6"/><path d="M381.3,101.5 L392.0,100.0 L387.9,110.0" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="344" y="170" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">ngưng tụ</text><path d="M90 98 C 88 170, 108 218, 154 218" fill="none" stroke="#fb923c" stroke-width="2.2" stroke-dasharray="5 4"/><path d="M150.2,213.5 L158.0,218.0 L150.2,222.5" fill="none" stroke="#fb923c" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="82" y="150" fill="#fb923c" font-size="14" font-weight="700" text-anchor="end">thăng hoa</text><path d="M158 203 C 132 200, 114 160, 116 102" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="5 4"/><path d="M111.5,105.8 L116.0,98.0 L120.5,105.8" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="136" y="166" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">ngưng kết</text></svg><figcaption>Hình 3. Bốn quá trình chính đi thành hai cặp ngược chiều. Nét đứt là hai quá trình ít gặp: <strong>thăng hoa</strong> (rắn → hơi) và <strong>ngưng kết</strong> (hơi → rắn).</figcaption></figure>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: thăng hoa và ngưng kết</summary>
 <p>I-ốt, băng phiến, đá khô (CO₂ rắn) chuyển <strong>thẳng</strong> từ rắn sang hơi khi nhận nhiệt, bỏ qua thể lỏng: đó là <strong>sự thăng hoa</strong>. Chiều ngược lại, hơi → rắn, là <strong>sự ngưng kết</strong>. Tuyết trên đỉnh núi mờ dần trong ngày nắng khô là thăng hoa; hơi nước đóng thành tuyết là ngưng kết.</p>
+<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-su-chuyen-the/hinh-1a.webp" alt="Đá khô thăng hoa tạo làn khói trắng trong li thuỷ tinh" loading="lazy" width="537" height="400"><figcaption>Hình 3b. Hai quá trình nét đứt ở Hình 3 ngoài đời thực.<br>Đá khô thăng hoa thành khí CO₂; làn khói trắng là các giọt nước nhỏ.<br><small>Hình: OpenStax, College Physics 2e, Hình 14.11 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e (credit: Windell Oskay)</small></figcaption></figure>
+<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-su-chuyen-the/hinh-1b.webp" alt="Sương giá kết thành hoa văn trên cửa kính" loading="lazy" width="537" height="400"><figcaption>Hình 3c. Sương giá: hơi nước ngưng kết thẳng thành băng trên kính lạnh.<br><small>Hình: OpenStax, College Physics 2e, Hình 14.11 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e (credit: Liz West)</small></figcaption></figure>
 <p>Băng phiến thăng hoa chậm ngay ở nhiệt độ phòng, nhưng khi được đun tới 80 °C thì vẫn nóng chảy như trong bài toán mẫu.</p>
 </details>
 
 <h4>4. Mô hình phân tử giải thích nóng chảy, bay hơi, sôi</h4>
 
-<p><strong>🔑 Mạnh lên → phá liên kết → trật tự sụp · Mặt thoáng · Cả trong lòng</strong></p>
-
-<ul>
-<li><strong>Nóng chảy:</strong> tới nhiệt độ nóng chảy, phân tử dao động đủ mạnh để một số thắng lực liên kết, bật khỏi vị trí cố định. Nhiệt lượng từ đó chỉ dùng để phá liên kết, không làm dao động mạnh thêm, nên <strong>nhiệt độ không đổi</strong>.</li>
-<li><strong>Bay hơi:</strong> ở <strong>mặt thoáng</strong>, ở <strong>mọi nhiệt độ</strong>. Phân tử gần mặt thoáng có động năng đủ lớn thì thắng lực hút, thoát ra thành hơi.</li>
-<li><strong>Sôi:</strong> khi đủ nóng, hơi hình thành ngay <strong>trong lòng</strong> chất lỏng thành bọt, nổi lên rồi vỡ ở mặt thoáng. Sôi ở một <strong>nhiệt độ xác định</strong>, phụ thuộc áp suất.</li>
-</ul>
-
-<div class="tl-box tl-box--exp" data-exp="tn-l12-chuyenthe-01">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-chuyenthe-01">
 <p class="tl-label">🔬 Thí nghiệm: đun nước đá, ghi nhiệt độ mỗi phút</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> cho 0,20 kg nước đá (-6 °C) vào cốc, cắm nhiệt kế, đun với công suất không đổi.</li>
-<li><strong>Quan sát:</strong> nhiệt độ tăng nhanh, rồi <strong>đứng yên quanh 0 °C suốt mấy phút</strong> (0,2–0,3 °C là trong sai số) khi đá đang tan. Đun tiếp tới 100 °C (ngoài bảng dưới), nhiệt độ lại đứng yên khi nước sôi.</li>
-<li><strong>Rút ra:</strong> mỗi lần chất <em>đang chuyển thể</em>, nhiệt độ không đổi dù bếp vẫn cấp nhiệt.</li>
+<li><strong>Giả thuyết cần kiểm:</strong> khi đang chuyển thể, nhiệt lượng nhận vào dùng để phá vỡ liên kết giữa các phân tử, không làm tăng nhiệt độ.</li>
+<li><strong>Dự đoán nếu đúng:</strong> đun đều, đồ thị nhiệt độ – thời gian có đoạn nằm ngang ở 0 °C và 100 °C; đoạn ngang khi sôi dài hơn khi tan.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem dụng cụ và 3 bước</summary>
+<p>Cốc chịu nhiệt có nắp, nhiệt kế (−10 °C tới 110 °C, sai số ±0,5 °C), bếp điện giữ một mức, đồng hồ bấm giây, que khuấy.</p>
+<p><strong>Làm:</strong> (1) Cho 0,20 kg nước đá ở −6 °C vào cốc, cắm nhiệt kế ở giữa khối đá, không chạm đáy. (2) Bật bếp, bấm đồng hồ, khuấy đều. (3) Mỗi phút đọc nhiệt kế một lần; khi nước sôi, ghi thêm lúc nước cạn hết.</p>
+</details>
+<strong>Coi rằng</strong> công suất bếp $P$ không đổi. <strong>Bỏ qua</strong> nhiệt làm nóng cốc, nhiệt mất ra môi trường.</li>
+<li><strong>Quan sát:</strong> nhiệt kế lên khoảng 0 °C ngay phút đầu, <strong>đứng đó khoảng 4 phút</strong> khi đá tan; rồi tăng đều; từ phút 10 lại <strong>đứng yên gần 100 °C</strong> khi nước sôi, tới lúc cạn hết ở khoảng phút 36.</li>
+<li><strong>Rút ra:</strong> <strong>phù hợp giả thuyết</strong>: đang chuyển thể thì nhiệt độ không đổi dù vẫn nhận nhiệt. Cơ chế: nhiệt dùng để phá vỡ liên kết, không làm tăng tốc độ trung bình của phân tử. Nhiệt mất ra môi trường làm đoạn ngang dài ra, nên $\lambda$ hay $L$ tính ra <em>lớn hơn</em> thật; giảm bằng cốc cách nhiệt có nắp.</li>
+<li><strong>Chưa nói được gì:</strong> nhiệt mất ra môi trường là bao nhiêu; áp suất khác thì nhiệt độ sôi ra sao.</li>
 </ol>
 </div>
 
-<table class="tl-table">
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: bảng số đo mỗi phút và tự tính $P$</summary>
+<div class="table-scroll"><table class="tl-table tl-table--data">
 <thead>
-<tr><th>Thời gian (phút)</th><th>Nhiệt độ (°C)</th></tr>
+<tr><th>Thời gian (phút)</th><th>Nhiệt độ đọc được (°C)</th></tr>
 </thead>
 <tbody>
-<tr><td>0</td><td>-6,0</td></tr>
+<tr><td>0</td><td>−6,0</td></tr>
+<tr><td>1</td><td>0,2</td></tr>
 <tr><td>2</td><td>0,2</td></tr>
-<tr><td>4</td><td>0,2</td></tr>
-<tr><td>6</td><td>0,3</td></tr>
-<tr><td>8</td><td>0,3</td></tr>
-<tr><td>10</td><td>4,0</td></tr>
-<tr><td>12</td><td>12,0</td></tr>
+<tr><td>3</td><td>0,2</td></tr>
+<tr><td>4</td><td>0,3</td></tr>
+<tr><td>5</td><td>17,8</td></tr>
+<tr><td>6</td><td>38,0</td></tr>
+<tr><td>7</td><td>58,1</td></tr>
+<tr><td>8</td><td>78,0</td></tr>
+<tr><td>9</td><td>98,1</td></tr>
+<tr><td>10</td><td>100,2</td></tr>
+<tr><td>11</td><td>100,3</td></tr>
+<tr><td>15</td><td>100,3</td></tr>
+<tr><td>20</td><td>100,3</td></tr>
+<tr><td>25</td><td>100,3</td></tr>
+<tr><td>30</td><td>100,3</td></tr>
+<tr><td>35</td><td>100,2</td></tr>
+<tr><td>36</td><td>nước cạn hết</td></tr>
 </tbody>
-</table>
+</table></div>
+<p>Em tự tính hai ô: (1) từ phút 5 đến phút 9, nhiệt độ tăng bao nhiêu °C mỗi phút, rồi với $c = 4\,180$ J/(kg·K) suy ra công suất $P$ nước nhận; (2) với đoạn ngang ở 0 °C dài khoảng 4 phút, tính $\lambda = P\tau/m$ và so với giá trị tra bảng.</p>
+<p><strong>Sai số có chiều:</strong> nhiệt mất ra môi trường → đoạn ngang dài hơn → $\lambda$, $L$ tính bằng $P\tau/m$ <em>lớn hơn</em> thật. Nhiệt kế chạm đáy cốc (sát bếp) → đọc <em>cao hơn</em>. Giảm: cốc cách nhiệt có nắp, khuấy đều, cắm nhiệt kế ở giữa.</p>
+<p><small>Số liệu minh hoạ, không phải số đo thật: tính từ $Q = P\tau$ với 0,20 kg đá ở −6 °C, công suất không đổi, bỏ qua hao nhiệt, nhiệt kế lệch khoảng +0,2 °C. Bài Thực hành đo nhiệt dùng bộ số khác (0,100 kg đá ở 0 °C, 100 W), cùng mô hình.</small></p>
+</details>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>🤏 Vì sao nhiệt kế chỉ 0,2–0,3 °C mà không đúng 0 °C?</summary>
 <p>Nước đá nguyên chất nóng chảy ở đúng 0 °C, nhưng nhiệt kế phòng thí nghiệm có <strong>sai số ±0,5 °C</strong>. Đọc được 0,2 °C nghĩa là nhiệt độ nóng chảy đo được là <strong>0,2 °C ± 0,5 °C</strong> — khoảng này chứa 0 °C, nên kết quả <em>phù hợp</em> với lí thuyết. Hai nguồn sai lệch nhỏ khác: nhiệt kế chưa hiệu chuẩn, và nước đá không tinh khiết tuyệt đối. Ghi kết quả đo bao giờ cũng phải kèm sai số.</p>
 </details>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 244" role="img" aria-label="Đồ thị nhiệt độ theo thời gian khi đun nước đá: đoạn dốc lên, đoạn nằm ngang ở 0 °C, rồi dốc lên tiếp"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="50" y1="30" x2="50" y2="210" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="50" y1="210" x2="420" y2="210" stroke="currentColor" stroke-width="2" opacity="1"/><text x="20" y="24" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">T (°C)</text><text x="360" y="230" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">t (phút)</text><line x1="50" y1="120" x2="420" y2="120" stroke="#34d399" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.8"/><text x="24" y="124" fill="#34d399" font-size="12" font-weight="700" text-anchor="start">0</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" points="60.0,150.0 140.0,120.0 250.0,120.0 400.0,60.0"/><line x1="140" y1="120" x2="140" y2="150" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.9"/><line x1="250" y1="120" x2="250" y2="150" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.9"/><line x1="140" y1="152" x2="250" y2="152" stroke="#f87171" stroke-width="1.6" opacity="1"/><path d="M147,148 L140,152 L147,156" fill="none" stroke="#f87171" stroke-width="1.6"/><path d="M243,148 L250,152 L243,156" fill="none" stroke="#f87171" stroke-width="1.6"/><text x="195" y="170" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">thời gian nóng chảy</text><text x="56" y="198" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">a: rắn nóng lên</text><text x="150" y="94" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="start">b: đang nóng chảy</text><text x="150" y="110" fill="#38bdf8" font-size="11" font-weight="500" text-anchor="start">nhiệt độ không đổi</text><text x="292" y="58" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">c: lỏng nóng lên</text><circle cx="140" cy="120" r="4" fill="#f87171"/><circle cx="250" cy="120" r="4" fill="#f87171"/></svg><figcaption>Hình 4. Đồ thị nhiệt độ – thời gian. Đoạn <strong>nằm ngang</strong> ở 0 °C là lúc nước đá đang nóng chảy: nhiệt độ không đổi, độ dài đoạn cho biết thời gian nóng chảy.</figcaption></figure>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl12b1-q2-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl12b1-q2-conf" value="khong"> Không chắc</label></p>
+<p><strong>Câu 2.</strong> Về thí nghiệm đun nước đá, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12b1-q2" id="tl12b1-q2a"><label for="tl12b1-q2a" class="tl-opt tl-no">A. Lúc đá tan, nhiệt kế đứng quanh 0 °C dù vẫn được đun</label>
+<input type="radio" name="tl12b1-q2" id="tl12b1-q2b"><label for="tl12b1-q2b" class="tl-opt tl-no">B. Mỗi đoạn nằm ngang ứng với một lần chất chuyển thể</label>
+<input type="radio" name="tl12b1-q2" id="tl12b1-q2c"><label for="tl12b1-q2c" class="tl-opt tl-ok">C. Nhiệt cung cấp cho nước đang sôi làm tăng tốc độ phân tử nước</label>
+<input type="radio" name="tl12b1-q2" id="tl12b1-q2d"><label for="tl12b1-q2d" class="tl-opt tl-no">D. Thí nghiệm không đo được nhiệt mất ra môi trường</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng: ý C sai.</strong> Nước đang sôi thì nhiệt độ đứng yên ở 100 °C, nên tốc độ trung bình của phân tử <em>không</em> tăng; nhiệt nhận vào dùng để phá vỡ liên kết giữa các phân tử nước. Đun mạnh hơn cũng không làm nước sôi trên 100 °C, chỉ làm cạn nhanh hơn. A là hiện tượng, B là kết luận, D là giới hạn của phép đo: cả ba đúng, như bốn ý của một câu Phần II.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng đọc từ nhiệt kế; B là kết luận rút ra từ đồ thị; D là giới hạn: phép đo chỉ cho tổng nhiệt $P\tau$, không tách được phần mất ra ngoài. Ý sai nằm ở <em>cơ chế</em>: nhiệt độ đứng yên thì tốc độ trung bình của phân tử có tăng không? Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
+</div>
+</div>
 
-<p>Đọc đồ thị nhiệt độ – thời gian: tìm <strong>đoạn nằm ngang</strong>.</p>
+<p><strong>🔑 Phá liên kết · Mặt thoáng · Cả trong lòng</strong></p>
+
 <ul>
-<li><strong>Nằm ngang:</strong> chất đang chuyển thể; <strong>độ cao</strong> là nhiệt độ chuyển thể, <strong>độ dài</strong> là thời gian chuyển thể.</li>
-<li><strong>Dốc lên:</strong> chất đang nóng lên, chưa hoặc đã chuyển thể xong.</li>
+<li><strong>Bay hơi:</strong> ở <strong>mặt thoáng</strong>, ở <strong>mọi nhiệt độ</strong>: phân tử có động năng đủ lớn thắng lực hút, thoát ra thành hơi.</li>
+<li><strong>Sôi:</strong> bọt hơi hình thành ngay <strong>trong lòng</strong> chất lỏng, nổi lên rồi vỡ, ở một <strong>nhiệt độ xác định</strong> phụ thuộc áp suất.</li>
 </ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 244" role="img" aria-label="Đồ thị nhiệt độ theo thời gian khi đun nước đá: đoạn dốc lên, đoạn nằm ngang ở 0 °C, rồi dốc lên tiếp"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="50" y1="30" x2="50" y2="210" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="50" y1="210" x2="420" y2="210" stroke="currentColor" stroke-width="2" opacity="1"/><text x="20" y="24" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">T (°C)</text><text x="360" y="230" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">t (phút)</text><line x1="50" y1="120" x2="420" y2="120" stroke="#34d399" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.8"/><text x="24" y="124" fill="#34d399" font-size="12" font-weight="700" text-anchor="start">0</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" points="60.0,150.0 140.0,120.0 250.0,120.0 400.0,60.0"/><line x1="140" y1="120" x2="140" y2="150" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.9"/><line x1="250" y1="120" x2="250" y2="150" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.9"/><line x1="140" y1="152" x2="250" y2="152" stroke="#f87171" stroke-width="1.6" opacity="1"/><path d="M147,148 L140,152 L147,156" fill="none" stroke="#f87171" stroke-width="1.6"/><path d="M243,148 L250,152 L243,156" fill="none" stroke="#f87171" stroke-width="1.6"/><text x="195" y="170" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">thời gian nóng chảy</text><text x="56" y="198" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">a: rắn nóng lên</text><text x="150" y="94" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="start">b: đang nóng chảy</text><text x="150" y="110" fill="#38bdf8" font-size="11" font-weight="500" text-anchor="start">nhiệt độ không đổi</text><text x="292" y="58" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">c: lỏng nóng lên</text><circle cx="140" cy="120" r="4" fill="#f87171"/><circle cx="250" cy="120" r="4" fill="#f87171"/></svg><figcaption>Hình 4. Đồ thị nhiệt độ – thời gian khi đun nước đá.</figcaption></figure>
+
+<p>Đọc đồ thị: <strong>độ cao</strong> đoạn nằm ngang là nhiệt độ chuyển thể, <strong>độ dài</strong> là thời gian chuyển thể.</p>
 
 <h4>5. Chất rắn kết tinh và chất rắn vô định hình</h4>
 
@@ -1249,12 +1631,12 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </tbody>
 </table>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: đơn tinh thể, đa tinh thể</summary>
 <p>Nhóm kết tinh chia đôi: <strong>đơn tinh thể</strong> (một tinh thể lớn, tính chất khác nhau theo các hướng — <em>dị hướng</em>) như hạt muối, viên kim cương, miếng thạch anh; <strong>đa tinh thể</strong> (nhiều tinh thể nhỏ xếp lộn xộn, tính chất mọi hướng như nhau — <em>đẳng hướng</em>) như hầu hết các kim loại. Chú ý: đường, lưu huỳnh... có thể tồn tại ở cả hai dạng.</p>
 </details>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>🧪 Thử với mô phỏng: nước ở thể rắn, lỏng, hơi</summary>
 <iframe src="https://phet.colorado.edu/sims/html/states-of-matter/latest/states-of-matter_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Trạng thái của vật chất"></iframe>
 <p><strong>Thử:</strong></p>
@@ -1268,6 +1650,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1: "đang nóng chảy thì nhiệt độ vẫn tăng"</h4>
 
 <p>Lỗi này do lẫn <strong>nhiệt độ</strong> với <strong>nhiệt lượng</strong>.</p>
@@ -1295,7 +1678,9 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bếp vẫn truyền nhiệt vào khối đá, nhưng nhiệt lượng đó dùng để phá mạng tinh thể nên nhiệt độ đứng ở 0 °C. Nhiệt lượng <em>khác 0</em> chính là lí do đá tan được.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nếu nhiệt lượng bằng 0 thì đá lấy năng lượng ở đâu để tan? Còn nếu nhiệt độ tăng thì đá đã tan xong rồi. Nhớ lại: đang chuyển thể thì <em>nhiệt độ không đổi, nhiệt lượng vẫn vào</em>. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
+</div>
 
+<div class="tl-trap">
 <h4>Bẫy 2: "nước chỉ bay hơi khi đã sôi"</h4>
 
 <p>Phơi quần áo lúc hanh khô: vẫn khô dù chưa tới 100 °C.</p>
@@ -1310,15 +1695,23 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <tr><td>Ví dụ</td><td>Cốc nước không đậy cạn dần</td><td>Nồi nước sủi bọt trên bếp</td></tr>
 </tbody>
 </table>
+</div>
 
-<details class="tl-details" data-exp="tn-l12-chuyenthe-03">
-<summary>🔬 Bấm xem: hai đĩa nước, một đĩa trước quạt</summary>
-<p><strong>Làm:</strong> rót 20 ml nước vào hai đĩa giống nhau đặt cạnh nhau trong cùng một phòng; một đĩa để yên, một đĩa đặt trước quạt. Sau 1 giờ, so lượng nước còn lại. <strong>Quan sát:</strong> đĩa trước quạt còn ít nước hơn hẳn, dù nhiệt độ phòng không đổi và chưa hề có chuyện sôi. <strong>Rút ra:</strong> bay hơi xảy ra ở <em>mọi nhiệt độ</em>, chỉ ở mặt thoáng, và mạnh lên khi có gió. Còn 100 °C chỉ là nhiệt độ sôi của nước ở áp suất khí quyển tiêu chuẩn: lên núi cao áp suất nhỏ hơn nên nước sôi ở khoảng 90 °C, trong nồi áp suất thì nước sôi trên 100 °C.</p>
-</details>
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-chuyenthe-03">
+<p class="tl-label">🔬 Thí nghiệm: hai đĩa nước, một đĩa trước quạt</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> hai đĩa nước, một đĩa trước quạt; sau 1 giờ đĩa này cạn hơn hẳn, dù chưa sôi.</li>
+<li><strong>Rút ra:</strong> bay hơi xảy ra ở <em>mọi nhiệt độ</em>, mạnh lên khi có gió.</li>
+</ol>
+</div>
 <!--video:sau:tn-l12-chuyenthe-03-->
-<div class="tl-box tl-box--video">
+<div class="tl-box tl-box--video tl-note">
 <p class="tl-label">🎬 Xem video: thăng hoa của iốt</p>
 <div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/t9Yxqcdd5kc?rel=0&start=15&end=55" title="thăng hoa của iốt" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nếu không xem được video:</strong><br>
+Đun nóng vài tinh thể iốt rắn trong cốc thuỷ tinh có đậy kính.<br>
+Hơi màu tím bốc lên đầy cốc, không thấy iốt chảy thành chất lỏng.<br>
+Kết luận: iốt chuyển thẳng từ rắn sang khí, đó là sự thăng hoa.</p>
 <p><strong>Nhìn vào:</strong> Iốt rắn biến thành hơi tím có đi qua thể lỏng không?</p>
 </div>
 
@@ -1333,57 +1726,46 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nhớ lại: 100 °C chỉ đúng cho nước ở áp suất tiêu chuẩn, và sôi không phải là "chiều ngược" của bay hơi. Điểm khác căn bản nằm ở <em>nơi hơi thoát ra</em>. Chọn lại nhé.</p></div>
 </div>
 
+<div class="tl-trap">
 <h4>Bẫy 3: "khí thì không có thể tích"</h4>
 
 <p>Bình thuỷ tinh 20 lít đang chứa 20 lít khí oxygen. Bơm thêm vào bình một lượng oxygen mà ở ngoài không khí chiếm 2 lít. Thể tích khí trong bình là 22 lít hay vẫn 20 lít?</p>
 
 <p>Đáp án là <strong>vẫn 20 lít</strong>: khí dàn ra chiếm hết phần rỗng. Thứ tăng là <strong>số phân tử</strong> (áp suất tăng), không phải thể tích.</p>
 
-<details class="tl-details" open>
-<summary>👀 Bấm xem: vì sao đừng nói "khí không có thể tích"</summary>
-<p>Phải nói <strong>"khí không có thể tích riêng"</strong>. Rót thêm nước vào ca đã đầy thì nước tràn ra, còn bơm thêm khí vào bình kín thì khí không tràn ra mà áp suất tăng — đó là chỗ khác nhau giữa chất lỏng và chất khí.</p>
-</details>
+<p>Vì vậy phải nói <strong>"khí không có thể tích riêng"</strong>, không nói "khí không có thể tích".</p>
+</div>
 
 <h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài</p>
-<p>Nói bằng lời của em trước, rồi bấm xem đáp án.</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài — nói bằng lời của em trước</p>
 
-<details class="tl-details" open>
-<summary>1. Nêu ba nội dung của mô hình động học phân tử.</summary>
-<p><strong>Có khoảng cách · Chuyển động không ngừng · Có lực hút và lực đẩy.</strong> Nhiệt độ càng cao thì tốc độ chuyển động trung bình càng lớn; ở gần nhau lực đẩy chiếm ưu thế, ở xa nhau lực hút chiếm ưu thế.</p>
-</details>
+<ol>
+<li>Nêu ba nội dung của mô hình động học phân tử.</li>
+<li>Kể tên bốn quá trình chuyển thể và chiều của chúng.</li>
+<li>Vì sao chất lỏng có thể tích xác định mà hình dạng không xác định?</li>
+<li>Vì sao nhiệt độ không đổi suốt thời gian nóng chảy?</li>
+<li>Bay hơi khác sôi ở đâu? Nhiệt độ sôi phụ thuộc gì?</li>
+<li>Chất rắn kết tinh khác vô định hình ở đâu? Cho ví dụ mỗi loại.</li>
+</ol>
 
-<details class="tl-details" open>
-<summary>2. Kể tên bốn quá trình chuyển thể và chiều của chúng.</summary>
-<p><strong>Nóng chảy</strong> (rắn → lỏng) · <strong>Đông đặc</strong> (lỏng → rắn) · <strong>Hoá hơi</strong> (lỏng → khí) · <strong>Ngưng tụ</strong> (khí → lỏng). Ít gặp: <strong>thăng hoa</strong> (rắn → hơi) và <strong>ngưng kết</strong> (hơi → rắn).</p>
-</details>
-
-<details class="tl-details" open>
-<summary>3. Vì sao chất lỏng có thể tích xác định mà hình dạng không xác định?</summary>
-<p>Phân tử chất lỏng dao động quanh vị trí cân bằng <strong>luôn thay đổi</strong> nên chất lỏng chảy được, lấy hình dạng bình chứa. Nhưng khoảng cách giữa các phân tử vẫn gần như ở chất rắn, nên thể tích vẫn xác định.</p>
-</details>
-
-<details class="tl-details" open>
-<summary>4. Vì sao nhiệt độ không đổi suốt thời gian nóng chảy?</summary>
-<p>Nhiệt lượng nhận vào dùng để <strong>phá vỡ liên kết</strong> trong mạng tinh thể, làm các phân tử rời khỏi vị trí cố định — chứ không làm tăng tốc độ chuyển động trung bình của phân tử. Nhiệt độ gắn với tốc độ phân tử, nên nhiệt độ đứng yên.</p>
-</details>
-
-<details class="tl-details" open>
-<summary>5. Bay hơi khác sôi ở đâu? Nhiệt độ sôi phụ thuộc gì?</summary>
-<p>Bay hơi: chỉ ở mặt thoáng, xảy ra ở mọi nhiệt độ. Sôi: xảy ra cả trong lòng và mặt thoáng, ở một nhiệt độ xác định. Nhiệt độ sôi <strong>phụ thuộc áp suất</strong>: áp suất giảm thì nhiệt độ sôi giảm.</p>
-</details>
-
-<details class="tl-details" open>
-<summary>6. Chất rắn kết tinh khác vô định hình ở đâu? Cho ví dụ mỗi loại.</summary>
-<p>Kết tinh: <strong>có cấu trúc tinh thể</strong> và <strong>có nhiệt độ nóng chảy xác định</strong> — ví dụ muối ăn, kim cương, nhôm. Vô định hình: <strong>không có cấu trúc tinh thể</strong>, <strong>không có nhiệt độ nóng chảy xác định</strong> — ví dụ thuỷ tinh, nhựa, cao su.</p>
+<details class="tl-details tl-more">
+<summary>🔑 Nói xong cả 6 câu rồi mới bấm xem gợi ý đáp án</summary>
+<ol>
+<li><strong>Rời – Loạn – Hút Đẩy.</strong> Rời: hạt riêng biệt, có khoảng cách. Loạn: chuyển động hỗn loạn không ngừng. Hút Đẩy: có lực hút và lực đẩy. Nhiệt độ càng cao thì tốc độ chuyển động trung bình càng lớn; ở gần nhau lực đẩy chiếm ưu thế, ở xa nhau lực hút chiếm ưu thế.</li>
+<li><strong>Nóng chảy</strong> (rắn → lỏng) · <strong>Đông đặc</strong> (lỏng → rắn) · <strong>Hoá hơi</strong> (lỏng → khí) · <strong>Ngưng tụ</strong> (khí → lỏng). Ít gặp: <strong>thăng hoa</strong> (rắn → hơi) và <strong>ngưng kết</strong> (hơi → rắn).</li>
+<li>Phân tử chất lỏng dao động quanh vị trí cân bằng <strong>luôn thay đổi</strong> nên chất lỏng chảy được, lấy hình dạng bình chứa. Nhưng khoảng cách giữa các phân tử vẫn gần như ở chất rắn, nên thể tích vẫn xác định.</li>
+<li>Nhiệt lượng nhận vào dùng để <strong>phá vỡ liên kết</strong> trong mạng tinh thể, làm các phân tử rời khỏi vị trí cố định — chứ không làm tăng tốc độ chuyển động trung bình của phân tử. Nhiệt độ gắn với tốc độ phân tử, nên nhiệt độ đứng yên.</li>
+<li>Bay hơi: chỉ ở mặt thoáng, xảy ra ở mọi nhiệt độ. Sôi: xảy ra cả trong lòng và mặt thoáng, ở một nhiệt độ xác định. Nhiệt độ sôi <strong>phụ thuộc áp suất</strong>: áp suất giảm thì nhiệt độ sôi giảm.</li>
+<li>Kết tinh: <strong>có cấu trúc tinh thể</strong> và <strong>có nhiệt độ nóng chảy xác định</strong> — ví dụ muối ăn, kim cương, nhôm. Vô định hình: <strong>không có cấu trúc tinh thể</strong>, <strong>không có nhiệt độ nóng chảy xác định</strong> — ví dụ thuỷ tinh, nhựa, cao su.</li>
+</ol>
 </details>
 </div>
 
 <h3>V. Bài toán mẫu: đọc đề đến đâu, gọi kiến thức đến đó</h3>
 
-<div class="tl-box tl-box--rule">
+<div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📝 Đề bài</p>
 <p>Đun nóng đều một chất rắn kết tinh, ghi nhiệt độ sau mỗi phút:</p>
 <table class="tl-table">
@@ -1426,7 +1808,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </table>
 </div>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem: lời giải</summary>
 <ol class="tl-steps">
 <li>Câu a: nhiệt độ <strong>đứng yên ở 80 °C</strong> từ mốc phút 4 đến mốc phút 8 — đó là đoạn nằm ngang, tức giai đoạn nóng chảy. Vậy nhiệt độ nóng chảy là <strong>80 °C</strong>.</li>
@@ -1437,8 +1819,8 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy trước)</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu (làm trên giấy trước)</p>
 <p>Vẫn chất đó, nhưng <strong>làm nguội</strong> chất lỏng từ 140 °C xuống, mỗi phút toả ra nhiệt lượng đúng bằng lúc đun. Bao lâu thì chất đông đặc hoàn toàn?</p>
 <ol class="tl-steps">
 <li>Làm nguội đều: $15$ °C mỗi phút (giống đoạn lỏng lúc đun).</li>
@@ -1446,7 +1828,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <li><strong>Em điền:</strong> chất đông đặc ở nhiệt độ nào, mất bao lâu? (gợi ý: nhiệt toả ra khi đông đặc bằng nhiệt cần để nóng chảy)</li>
 <li><strong>Em điền:</strong> tổng thời gian đến khi đông đặc hoàn toàn?</li>
 </ol>
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>Bấm xem bước 2–4</summary>
 <ol class="tl-steps">
 <li>Từ 140 °C xuống 80 °C: $\dfrac{140 - 80}{15} = 4$ phút.</li>
@@ -1457,8 +1839,8 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </details>
 </div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Thử sức: đổi số, đổi chiều</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức: đổi số, đổi chiều</p>
 
 <p>⚠ Số đoạn nằm ngang là số lần chuyển thể, không liên quan chất vô định hình.</p>
 <p><strong>Câu 5.</strong> Đun nóng đều một chất rắn kết tinh, đồ thị nhiệt độ – thời gian có <strong>hai đoạn nằm ngang</strong> ở 80 °C và 250 °C. Kết luận nào đúng?</p>
@@ -1486,46 +1868,35 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <h3>VI. Sự chuyển thể trong đời sống, thử thách và mang về</h3>
 
-<ul>
-<li><strong>Đúc kim loại:</strong> nấu chảy nhôm ở 660 °C rồi rót vào khuôn cho đông đặc.</li>
-<li><strong>Nước đọng ở thành li:</strong> hơi nước gặp mặt lạnh thì <em>ngưng tụ</em>; cũng quá trình đó tạo mây, mưa.</li>
-<li><strong>Bảo quản thực phẩm:</strong> đá tan chậm, hút nhiệt xung quanh mà vẫn giữ 0 °C.</li>
-</ul>
+<p><strong>Đúc kim loại:</strong> nấu chảy nhôm ở 660 °C rồi rót vào khuôn cho đông đặc.</p>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎯 Thử thách phân tầng</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
 
-<details class="tl-details" open>
-<summary>⭐ Cơ bản: kể tên bốn quá trình chuyển thể và chiều.</summary>
-<p>Nóng chảy (rắn → lỏng) · Đông đặc (lỏng → rắn) · Hoá hơi (lỏng → khí) · Ngưng tụ (khí → lỏng).</p>
-</details>
-
-<details class="tl-details" open>
-<summary>⭐⭐ Khá: vì sao trời nồm, nền nhà và gương lại "đổ mồ hôi"?</summary>
-<p>Trời nồm, không khí có rất nhiều hơi nước. Gặp bề mặt lạnh hơn (nền nhà, gương), hơi nước <strong>ngưng tụ</strong> thành các giọt nhỏ bám lên bề mặt — ta thấy như bề mặt "đổ mồ hôi". Đây là ngưng tụ, không phải nước rỉ ra từ trong tường.</p>
-</details>
-
-<details class="tl-details" open>
-<summary>⭐⭐⭐ Thách đấu: trên núi cao 3000 m, nước sôi ở khoảng 90 °C. Vì sao nấu cơm ở đó lâu chín hơn?</summary>
-<p>Lên cao, <strong>áp suất khí quyển đè lên mặt nước nhỏ hơn</strong>, nên bọt hơi trong lòng nước hình thành và lớn lên được ở nhiệt độ thấp hơn. Vì vậy nước sôi ở khoảng 90 °C thay vì 100 °C.</p>
+<details class="tl-details tl-more">
+<summary>⭐ ⭐⭐ ⭐⭐⭐ — bấm xem đề và lời giải</summary>
+<p><strong>⭐ Cơ bản:</strong> kể tên bốn quá trình chuyển thể và chiều.<br>Nóng chảy (rắn → lỏng) · Đông đặc (lỏng → rắn) · Hoá hơi (lỏng → khí) · Ngưng tụ (khí → lỏng).</p>
+<p><strong>⭐⭐ Khá:</strong> vì sao trời nồm, nền nhà và gương lại "đổ mồ hôi"?<br>Trời nồm, không khí có rất nhiều hơi nước. Gặp bề mặt lạnh hơn (nền nhà, gương), hơi nước <strong>ngưng tụ</strong> thành các giọt nhỏ bám lên bề mặt — ta thấy như bề mặt "đổ mồ hôi". Đây là ngưng tụ, không phải nước rỉ ra từ trong tường.</p>
+<p><strong>⭐⭐⭐ Thách đấu:</strong> trên núi cao 3000 m, nước sôi ở khoảng 90 °C. Vì sao nấu cơm ở đó lâu chín hơn?<br>Lên cao, <strong>áp suất khí quyển đè lên mặt nước nhỏ hơn</strong>, nên bọt hơi trong lòng nước hình thành và lớn lên được ở nhiệt độ thấp hơn. Vì vậy nước sôi ở khoảng 90 °C thay vì 100 °C.</p>
 <p>Nước sôi ở 90 °C nghĩa là nước sôi "nguội" hơn: nó truyền nhiệt cho hạt cơm chậm hơn nên cơm lâu chín. Nồi áp suất dùng đúng nguyên lí ngược lại: giữ hơi để tăng áp suất, đẩy nhiệt độ sôi lên cao.</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
-<li><strong>Mô hình phân tử:</strong> khoảng cách · chuyển động không ngừng · lực hút – lực đẩy.</li>
+<li><strong>Rời – Loạn – Hút Đẩy:</strong> mô hình phân tử về cấu tạo chất.</li>
 <li><strong>Cấu trúc:</strong> rắn gần – trật tự · lỏng kém trật tự · khí rất xa – hỗn loạn.</li>
 <li><strong>Bốn quá trình:</strong> nóng chảy ⇄ đông đặc · hoá hơi ⇄ ngưng tụ (thêm thăng hoa ⇄ ngưng kết).</li>
 <li><strong>Đang chuyển thể:</strong> nhiệt độ không đổi · nhiệt lượng vẫn vào (hoặc ra).</li>
 <li><strong>Bay hơi:</strong> mặt thoáng, mọi nhiệt độ · <strong>sôi:</strong> cả trong lòng, nhiệt độ xác định.</li>
 <li><strong>Đọc đề:</strong> đồ thị nhiệt độ – thời gian → tìm <strong>đoạn nằm ngang</strong>.</li>
+<li><strong>5 hình = cả bài:</strong> ống đong rượu – nước, ba hộp hạt, vòng bốn mũi tên, đồ thị có đoạn ngang, muối và thuỷ tinh.</li>
 </ul>
 </div>
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

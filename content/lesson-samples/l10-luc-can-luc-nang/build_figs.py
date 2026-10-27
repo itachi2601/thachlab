@@ -148,38 +148,15 @@ fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Hình 3. Tốc độ người nhảy dù chưa mở dù (giả định tốc độ giới hạn 50 m/s). Đầu tiên đồ thị bám đường <em>v</em> = <em>gt</em> (cam), sau cong dần, cuối cùng nằm ngang.")
 fig3 = fig3.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-luc-can-luc-nang-04"', 1)
 
-# ---------------- Hình 4: áp lực nước lên khối hộp chìm ----------------
-CUR["fig"] = 4
-VB[4] = (440, 240)
-SURF, BOT = 40, 226
-BX0, BX1, BTOP, BBOT = 180, 260, 100, 160
-K = 0.5                                     # px áp lực / px độ sâu (chỉ phần do nước, p0 triệt tiêu)
-b = defs("f4")
-b += f'<rect x="30" y="{SURF}" width="380" height="{BOT-SURF}" fill="rgba(56,189,248,.12)"/>'
-b += f'<path d="M30,24 V{BOT} H410 V24" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += line(30, SURF, 410, SURF, BLUE, 2, track=False)
-b += text(404, SURF - 6, "mặt nước", BLUE, 13, "end", "600")
-b += f'<rect x="{BX0}" y="{BTOP}" width="{BX1-BX0}" height="{BBOT-BTOP}" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/>'
-CXB = (BX0 + BX1) / 2
-h1, h2 = BTOP - SURF, BBOT - SURF
-b += arrow("f4", "r", CXB, BTOP - K * h1, CXB, BTOP, 3)          # F1 đè xuống mặt trên
-b += arrow("f4", "b", CXB, BBOT + K * h2, CXB, BBOT, 3)          # F2 ép lên mặt dưới, dài hơn
-b += text(CXB + 10, BTOP - 10, sub("F", "1"), RED, 15)
-b += text(CXB + 10, BBOT + K * h2 - 6, sub("F", "2"), BLUE, 15)
-# áp lực mặt bên: bằng nhau, ngược chiều
-b += arrow("f4", "k", BX0 - 26, 130, BX0, 130, 1.6)
-b += arrow("f4", "k", BX1 + 26, 130, BX1, 130, 1.6)
-# kích thước h1, h2
-for x, y1, lab in ((150, BTOP, "1"), (110, BBOT, "2")):
-    b += line(x, SURF, x, y1, "currentColor", 1.3) + line(x - 6, y1, x + 6, y1, "currentColor", 1.3)
-    b += text(x - 6, (SURF + y1) / 2 + 12, sub("h", lab), "currentColor", 15, "end")
-# Δh
-b += line(306, BTOP, 306, BBOT, "currentColor", 1.3) + line(300, BTOP, 312, BTOP, "currentColor", 1.3) + line(300, BBOT, 312, BBOT, "currentColor", 1.3)
-b += text(316, 136, "Δ" + it("h"), "currentColor", 15)
-b += text(286, 212, sub("F", "A") + " = " + sub("F", "2") + " − " + sub("F", "1"), "currentColor", 14)
-fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
-            "Khối hộp chìm trong nước: mặt dưới sâu hơn nên bị nước ép lên mạnh hơn mặt trên bị ép xuống; hiệu hai áp lực là lực đẩy Archimedes", b,
-            "Hình 4. Mặt dưới sâu hơn nên áp lực <em>F</em><sub>2</sub> lớn hơn <em>F</em><sub>1</sub>; áp lực hai mặt bên triệt tiêu. Mũi tên chỉ vẽ phần do nước gây ra ($p_0$ ép cả hai mặt như nhau).")
+# ---------------- Hình 4: ảnh OpenStax College Physics 2e, Hình 11.18 (đợt 28/10/2026) ----------------
+fig4 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-luc-can-luc-nang/hinh-ap-luc-mat-tren-duoi.webp" '
+        'alt="Khối trụ chìm trong chất lỏng: mặt dưới ở sâu h2 bị ép lên bởi lực F2 lớn hơn lực F1 ép xuống mặt trên ở độ sâu h1; hiệu hai lực là lực đẩy Archimedes" '
+        'loading="lazy" width="725" height="768">'
+        '<figcaption>Hình 4. Mặt dưới sâu hơn nên áp lực <em>F</em><sub>2</sub> lớn hơn <em>F</em><sub>1</sub>:<br>'
+        '<em>F</em><sub>2</sub> − <em>F</em><sub>1</sub> = lực đẩy Archimedes (sách kí hiệu <em>F</em><sub>B</sub>).<br>'
+        'Nhãn: fluid = chất lỏng · <em>A</em> = diện tích mặt.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 11.18 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ---------------- Hình 5: bài toán mẫu — lực kế ngoài không khí và khi nhúng ----------------
 CUR["fig"] = 5
@@ -244,8 +221,6 @@ for f, x0, y0, x1, y1, s in LABELS:
         bad.append(f"Hình 3: nhãn '{s}' đè đường cong")
 # Hình 3: đường cong đúng phương trình, tiệm cận tốc độ giới hạn
 assert abs(vt(16) - VT) / VT < 0.01 and abs(vt(0.1) - G * 0.1) < 0.05
-# Hình 4: F2/F1 = h2/h1
-assert abs((K * h2) / (K * h1) - h2 / h1) < 1e-9
 print("\n".join(bad) if bad else "kiểm toạ độ: ok")
 
 src = (HERE / "theory.src.html").read_text(encoding="utf8")

@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from mach import *
 
-PHUT = 10   # điền theo lint_do_dai.py (làm tròn lên)
+PHUT = 11   # điền theo lint_do_dai.py (làm tròn lên)
 
 par = lambda *r: 1 / sum(F(1) / x for x in r)
 

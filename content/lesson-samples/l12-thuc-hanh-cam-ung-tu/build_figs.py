@@ -102,21 +102,17 @@ fig3 = wrap("0 0 380 272", "Đồ thị khối lượng tăng theo cường đ�
             b, "Hình 3. Δm tăng gần tỉ lệ với $I$: năm điểm đo (số liệu minh hoạ) nằm sát đường thẳng qua gốc toạ độ.<br>Độ dốc đường thẳng bằng $Bl/g$.",
             "tn-l12-thuchanhtu-01")
 
-# ======================================================= Hình 4: dây hợp góc với đường sức
-b = defs("f4")
-b += field_line(40, 150, 330, 150, GRN, 2.2)
-b += text(342, 157, "B", GRN, 16, "start", "700")
-b += line(120, 150, 195, 20, "currentColor", 4)
-b += '<circle cx="120" cy="150" r="5" fill="currentColor"/>'
-b += text(206, 46, "dây, dòng I", "currentColor", 14, "start", "700")
-b += '<path d="M165,150 A45,45 0 0 0 142.5,111" fill="none" stroke="' + ORG + '" stroke-width="2.5"/>'
-b += text(176, 134, "θ = 60°", ORG, 14, "start", "700")
-b += '<circle cx="64" cy="204" r="9" fill="none" stroke="' + RED + '" stroke-width="2"/><circle cx="64" cy="204" r="3" fill="' + RED + '"/>'
-b += text(82, 209, "lực từ F hướng ra khỏi trang", RED, 14, "start", "700")
-b += text(40, 238, "F = B·I·l·sin θ", "currentColor", 16, "start", "700")
-fig4 = wrap("0 0 380 250", "Dây hợp với đường sức từ một góc 60 độ; lực từ hướng ra khỏi trang và có độ lớn B nhân I nhân l nhân sin theta",
-            b, "Hình 4. Dây hợp với đường sức góc $\\theta$ (vẽ trong mặt phẳng chứa $\\vec B$ và dây).<br>Lực từ vuông góc với mặt phẳng đó; độ lớn $F = BIl\\sin\\theta$.",
-            "tn-l12-thuchanhtu-03")
+# ======================================================= Hình 4: dây hợp góc với đường sức (ảnh OpenStax, chèn trực tiếp)
+# Ảnh raster là ngoại lệ có chủ đích của quy tắc SVG tự vẽ. OpenStax, College Physics 2e, Hình 22.30 (CC BY-NC-SA 4.0).
+fig4 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-thuchanhtu-03">'
+        '<img src="/assets/openstax/l12-thuc-hanh-cam-ung-tu/hinh-5.webp" '
+        'alt="Bàn tay phải đặt trong mặt phẳng chứa dòng điện I và cảm ứng từ B hợp nhau góc theta; lực từ F hướng vuông góc với mặt phẳng đó" '
+        'loading="lazy" width="750" height="784">'
+        '<figcaption>Hình 4.<br>'
+        '<em>RHR-1</em>: bàn tay phải.<br>'
+        '<em>F ⊥ plane of I and B</em>: vuông góc mặt phẳng I, B.<br>'
+        'Hình: OpenStax, College Physics 2e, Hình 22.30 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</figcaption></figure>')
+
 
 
 # ======================================================= Mô phỏng (radio + CSS, không JS)

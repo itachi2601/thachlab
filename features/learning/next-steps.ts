@@ -3,7 +3,7 @@
 // Thầy chốt 8/10/2026: trang chủ chỉ gợi việc THÍCH ỨNG theo hồ sơ em. Thầy chốt lại 17/10/2026: đề KIỂM TRA lớp đã giao mà em
 // chưa làm (class_assessments, 21 ngày gần nhất) quay lại thẻ, chung 2 suất đầu với BTVN — em bỏ lỡ chuông thì vẫn thấy.
 
-export type NextStepKind = "homework" | "assigned" | "unlock" | "weak" | "retry" | "lesson" | "review";
+export type NextStepKind = "session" | "homework" | "assigned" | "unlock" | "weak" | "retry" | "lesson" | "review";
 
 export interface NextStep {
   kind: NextStepKind;
@@ -48,7 +48,20 @@ export interface AssignedInput {
   kindLabel: string;
 }
 
+export interface SessionInput {
+  mode: "live" | "self";
+  title: string;
+  /** ISO; chỉ buổi tự học ở nhà có hạn nộp. */
+  dueAt: string | null;
+  passed: number;
+  total: number;
+  /** Buổi trên lớp: chặng đang mở (số thứ tự từ 1). */
+  stage: number;
+}
+
 export interface NextStepInput {
+  /** Buổi ôn tập theo chặng của lớp đang mở (tự học ở nhà hoặc trên lớp), em chưa qua hết chặng — việc đầu tiên. */
+  session?: SessionInput | null;
   /** Đề kiểm tra lớp đã giao, em chưa làm — xếp sau BTVN, chung 2 suất đầu. */
   assigned?: AssignedInput[];
   /** BTVN trợ giảng giao riêng cho em và em chưa nộp — việc đầu tiên (giao đích danh, có hạn). */
@@ -103,8 +116,24 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
   const steps: NextStep[] = [];
   let locked: NextStep | null = null;
 
+  // Buổi ôn tập theo chặng của lớp (thầy mở): đứng đầu, chiếm 1 trong 2 suất đầu cùng BTVN/đề lớp giao.
+  if (input.session) {
+    const q = input.session;
+    steps.push({
+      kind: "session",
+      key: "session",
+      action: q.mode === "self" ? "Ôn tập ở nhà" : "Ôn tập theo chặng",
+      title: q.title,
+      hint:
+        q.mode === "self"
+          ? [`Em đã qua ${q.passed}/${q.total} chặng`, homeworkDueText(q.dueAt)].filter(Boolean).join(". ")
+          : `Đang ở chặng ${q.stage}/${q.total}. Vào làm cùng cả lớp`,
+      href: "/lop-hoc/on-tap/",
+    });
+  }
+
   // Tối đa 2 bài BTVN đứng đầu (bài hạn gần nhất trước, do my_pending_homework đã sắp). Còn chỗ cho việc thích ứng.
-  for (const h of (input.homework ?? []).slice(0, 2)) {
+  for (const h of (input.homework ?? []).slice(0, 2 - steps.length)) {
     steps.push({
       kind: "homework",
       key: `homework-${h.examId}`,

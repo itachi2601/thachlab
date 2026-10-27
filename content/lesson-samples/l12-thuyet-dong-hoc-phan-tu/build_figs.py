@@ -35,34 +35,6 @@ def wrap(vb, label, body, cap, exp=""):
             f'<figcaption>{cap}</figcaption></figure>')
 
 
-def trace_bounce(start, v, n_pts, box):
-    """Đường đi va đập trong bình chữ nhật, đúng định luật phản xạ gương:
-    gặp thành thì ĐẢO DẤU thành phần pháp tuyến và GIỮ NGUYÊN thành phần tiếp tuyến.
-    Trả về danh sách các điểm chạm thành (điểm đầu cũng nằm trên thành)."""
-    x0, x1, y0, y1 = box
-    x, y = start
-    vx, vy = v
-    pts = [(round(x, 1), round(y, 1))]
-    for _ in range(n_pts - 1):
-        ts = []
-        if vx > 0:
-            ts.append(((x1 - x) / vx, "x"))
-        elif vx < 0:
-            ts.append(((x0 - x) / vx, "x"))
-        if vy > 0:
-            ts.append(((y1 - y) / vy, "y"))
-        elif vy < 0:
-            ts.append(((y0 - y) / vy, "y"))
-        t, axis = min((c for c in ts if c[0] > 1e-9), key=lambda c: c[0])
-        x, y = x + vx * t, y + vy * t
-        if axis == "x":
-            vx = -vx
-        else:
-            vy = -vy
-        pts.append((round(x, 1), round(y, 1)))
-    return pts
-
-
 # ======================================================= Hình 1: vì sao hạt bụi nhảy múa
 b = defs("f1")
 b += text(14, 24, "Hạt khói bị phân tử khí đập lệch", "currentColor", 13, "start", "700")
@@ -122,27 +94,12 @@ b += arrow("f2", "b", 182, 246, 378, 250, 2)
 fig2 = wrap("0 0 420 314", "Ba nội dung của thuyết động học phân tử chất khí: kích thước bé xíu, chuyển động hỗn loạn không ngừng, va chạm vào thành bình gây áp suất",
             b, "Hình 2. Ba nội dung: phân tử bé xíu so với khoảng cách · chuyển động hỗn loạn, nóng thì nhanh hơn · va chạm thành bình tạo áp suất.")
 
-# ======================================================= Hình 3: mô hình khí lí tưởng
-# Bình chứa x=14..194, y=40..180. Đường đi sinh bằng phản xạ gương (trace_bounce):
-# mỗi lần gặp thành, thành phần pháp tuyến đổi dấu, thành phần tiếp tuyến giữ nguyên,
-# nên hình vẽ đúng định luật phản xạ và không tự cắt nhau.
-BOX = (14.0, 194.0, 40.0, 180.0)
-PATH = trace_bounce((24.0, 180.0), (170.0, -34.0), 5, BOX)
-assert all(abs(p[0] - BOX[0]) < .05 or abs(p[0] - BOX[1]) < .05
-           or abs(p[1] - BOX[2]) < .05 or abs(p[1] - BOX[3]) < .05 for p in PATH), PATH
-b = defs("f3")
-b += text(14, 26, "Mô hình khí lí tưởng", "currentColor", 12.5, "start", "700")
-b += rect(14, 40, 180, 140, "rgba(148,163,184,.08)", "currentColor", 2.4, 6)
-b += poly(PATH, GRN, 2.6)
-for x, y in PATH:  # chấm xanh ở MỌI điểm chạm thành, kể cả điểm đầu và điểm cuối
-    b += dot(x, y, 3.8, GRN)
-b += text(104, 200, "mỗi đoạn: bay thẳng đều", GRN, 10.5, "middle", "600")
-b += f'<circle cx="202" cy="66" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 70, "bỏ qua kích thước phân tử", "currentColor", 11, "start", "500")
-b += f'<circle cx="202" cy="96" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 100, "bỏ qua lực tương tác khi ở xa", "currentColor", 11, "start", "500")
-b += f'<circle cx="202" cy="126" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 130, "giữa hai va chạm: thẳng đều", "currentColor", 11, "start", "500")
-b += f'<circle cx="202" cy="156" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 160, "va chạm: hoàn toàn đàn hồi", "currentColor", 11, "start", "500")
-fig3 = wrap("0 0 420 216", "Bình chứa với đường đi gấp khúc của phân tử khí lí tưởng: mỗi đoạn thẳng nối hai lần va chạm với thành bình, va chạm hoàn toàn đàn hồi nên bật ngược lại",
-            b, "Hình 3. Giữa hai va chạm, phân tử bay thẳng đều; mỗi chấm xanh là một lần gặp thành bình — va chạm hoàn toàn đàn hồi rồi bật ngược lại.")
+# ======================================================= Hình 3: ảnh OpenStax (đợt 2, 27/10/2026)
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-thuyet-dong-hoc-phan-tu/hinh-va-cham-thanh-binh.webp" '
+        'alt="Phân tử khí va chạm đàn hồi với thành bình: thành phần vận tốc vx đảo chiều thành vx\', thành phần vy giữ nguyên" '
+        'loading="lazy" width="503" height="629"><figcaption>Hình 3. Đập vào thành: v<sub>x</sub> (vuông góc) đảo chiều, v<sub>y</sub> (song song) giữ nguyên.<br>'
+        "Nhãn: dấu ′ = sau va chạm; x, y, z = trục.<br>"
+        '<small>Hình: OpenStax, College Physics 2e, Hình 13.22 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ======================================================= Hình 4: 1 mol khí ở điều kiện tiêu chuẩn
 b = defs("f4")

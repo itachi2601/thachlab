@@ -116,87 +116,28 @@ b += text(20, 48, "dòng M → N: hướng ra (⊙)", ORG, 12, "start", "600")
 fig3 = wrap("0 0 440 260", "Nam châm chữ U đặt trên cân, cực N bên trái, cực S bên phải, đường sức nằm ngang từ N sang S; dây MN giữ cố định nằm ngang trong khe, dòng điện hướng ra phía người xem; lực từ lên dây hướng lên, lực dây đẩy nam châm hướng xuống",
             b, "Hình 3. Cân dòng điện.")
 
-# ------------------------------------------------- Hình 4a/4b/4c: dây thẳng, vòng dây, ống dây (nhìn xiên, có che khuất)
-# Nét liền ở phía trước đè lên; vật phía sau bị ngắt một khe chỗ vật trước đi qua (svg_lib: arc_pts...).
-W, GAP = 4, 14   # bề dày dây; nửa khe che (độ)
-VB = "0 0 440 250"
+# ------------------------------------------------- Hình 4a/4b/4c: ảnh OpenStax College Physics 2e (đợt 2, 27/10/2026)
+# Chèn trực tiếp Hình 22.37, 22.38, 22.39 (CC BY-NC-SA 4.0), không vẽ lại.
+def raster(file, alt, cap, w, h, hinh):
+    return (f'<figure class="fig" data-tl="1"><img src="{P}{file}" alt="{alt}" loading="lazy" width="{w}" height="{h}">'
+            f'<figcaption>{cap}<br><small>Hình: OpenStax, College Physics 2e, Hình {hinh} — CC BY‑NC‑SA 4.0 — '
+            f'openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
-# 4a) dây thẳng: đường sức là đường tròn đồng tâm
-b = defs("f4a")
-cx = 220
-levels = [(86, 100, 30), (158, 100, 30)]
-ys = [22]
-for g in sorted(cy + ry for cy, rx, ry in levels):
-    ys += [g - 7, g + 7]                      # nửa trước đường sức đè lên dây -> ngắt dây
-ys.append(236)
-for i in range(0, len(ys), 2):
-    b += line(cx, ys[i], cx, ys[i + 1], "currentColor", W)
-b += chevron(cx, 24, 0, -1, ORG, 3.4, 15)
-b += text(cx + 12, 34, "I", ORG, 16, "start", "700")
-for cy, rx, ry in levels:
-    b += pts_path(arc_pts(cx, cy, rx, ry, 180, 270 - GAP), BLUE, 2.2, "6 4")   # nửa sau: dây che
-    b += pts_path(arc_pts(cx, cy, rx, ry, 270 + GAP, 360), BLUE, 2.2, "6 4")
-    b += pts_path(arc_pts(cx, cy, rx, ry, 0, 180), BLUE, 2.2, "6 4")           # nửa trước
-    x, y = ell_pt(cx, cy, rx, ry, 38)
-    dx, dy = ell_tan(rx, ry, 38, -1)
-    b += chevron(x, y, dx, dy, BLUE, 2.2)
-b += text(cx + 106, 114, "B", BLUE, 16, "start", "700")
-fig4a = wrap(VB, "Dây thẳng dài mang dòng điện hướng lên; đường sức từ là những đường tròn đồng tâm quanh dây, nửa phía sau bị dây che, nửa phía trước đi đè lên dây",
-             b, "Hình 4a. Dây thẳng: đường sức là đường tròn đồng tâm quanh dây.")
 
-# 4b) vòng dây: B xuyên qua tâm, vuông góc mặt phẳng vòng
-b = defs("f4b")
-cx, cy, rx, ry = 220, 130, 84, 34
-top, bot = 22, 238
-yf = cy + ry
-b += line(cx, bot, cx, yf + 8, BLUE, 2.2, "6 4")                    # dây trước vòng đè lên đường sức -> ngắt
-b += line(cx, yf - 8, cx, top + 4, BLUE, 2.2, "6 4")
-b += chevron(cx, top, 0, -1, BLUE, 2.2)
-b += chevron(cx, 70, 0, -1, BLUE, 2.2)
-for sg in (1, -1):
-    P = cubic((cx, top), (cx + sg * 190, top - 10), (cx + sg * 190, bot + 10), (cx, bot))
-    b += pts_path(P, BLUE, 2.0, "6 4")
-    b += chev_on(P, 30, BLUE)
-b += pts_path(arc_pts(cx, cy, rx, ry, 180, 270 - GAP), "currentColor", W)   # nửa sau: đường sức đè lên -> ngắt dây
-b += pts_path(arc_pts(cx, cy, rx, ry, 270 + GAP, 360), "currentColor", W)
-b += pts_path(arc_pts(cx, cy, rx, ry, 0, 180), "currentColor", W)
-for t in (35, 215):
-    x, y = ell_pt(cx, cy, rx, ry, t)
-    dx, dy = ell_tan(rx, ry, t, -1)
-    b += chevron(x, y, dx, dy, ORG, 3.2, 14)
-b += text(cx + rx + 10, cy + 30, "I", ORG, 16, "start", "700")
-b += text(cx + 10, 60, "B", BLUE, 16, "start", "700")
-fig4b = wrap(VB, "Vòng dây tròn nhìn xiên: đường sức từ xuyên qua tâm vuông góc mặt phẳng vòng dây rồi khép kín bên ngoài; chỗ đường sức đi trước thì dây bị ngắt, chỗ dây đi trước thì đường sức bị ngắt",
-             b, "Hình 4b. Vòng dây: <strong>B</strong> xuyên qua tâm, vuông góc mặt phẳng vòng.")
-
-# 4c) ống dây: từ trường đều trong lòng
-b = defs("f4c")
-cy = 130; rx, ry = 12, 44
-xs = [110 + 40 * i for i in range(6)]
-x0, x1 = xs[0] - 24, xs[-1] + rx + 34
-ax = [x0]
-for x in xs:
-    ax += [x + rx - 6, x + rx + 6]                                     # nửa phải mỗi vòng ở phía trước, đè lên đường sức
-ax.append(x1)
-for i in range(0, len(ax), 2):
-    b += line(ax[i], cy, ax[i + 1], cy, BLUE, 2.2, "6 4")
-b += chevron(x1, cy, 1, 0, BLUE, 2.2) + chevron(190, cy, 1, 0, BLUE, 2.2)
-for x in xs:
-    b += pts_path(arc_pts(x, cy, rx, ry, 90, 180 - GAP * 1.3), "currentColor", W)    # nửa trái ở phía sau: đường sức đè lên
-    b += pts_path(arc_pts(x, cy, rx, ry, 180 + GAP * 1.3, 270), "currentColor", W)
-    b += pts_path(arc_pts(x, cy, rx, ry, -90, 90), "currentColor", W)
-    if x in (xs[1], xs[4]):
-        px, py = ell_pt(x, cy, rx, ry, 40)
-        dx, dy = ell_tan(rx, ry, 40, 1)
-        b += chevron(px, py, dx, dy, ORG, 3.2, 13)
-for sg in (-1, 1):
-    P = cubic((x1, cy), (x1 + 70, cy + sg * 100), (x0 - 70, cy + sg * 100), (x0, cy))
-    b += pts_path(P, BLUE, 2.0, "6 4")
-    b += chev_on(P, 30, BLUE)
-b += text(x1 + 20, cy - 14, "B", BLUE, 16, "start", "700")
-b += text(xs[1] + rx + 8, cy + 36, "I", ORG, 16, "start", "700")
-fig4c = wrap(VB, "Ống dây dài nhìn xiên: bên trong lòng ống đường sức song song với trục, cách đều; bên ngoài khép kín như nam châm thẳng; nửa vòng phía trước đè lên đường sức, nửa phía sau bị đường sức che",
-             b, "Hình 4c. Ống dây: trong lòng ống <strong>B</strong> đều, song song trục ống.")
+P = "/assets/openstax/l12-luc-tu-cam-ung-tu/"
+fig4a = raster("hinh-day-thang-duong-suc-tron.webp",
+               "Dây thẳng đứng mang dòng điện I hướng lên; các đường sức từ là những đường tròn đồng tâm quanh dây, nằm trong mặt phẳng ngang, mũi tên ngược chiều kim đồng hồ nhìn từ trên xuống; các kim la bàn xếp dọc theo đường tròn",
+               "Hình 4a. Dây thẳng: đường sức tròn.",
+               624, 440, "22.37a")
+fig4b = raster("hinh-vong-day-duong-suc.webp",
+               "Vòng dây tròn nhìn nghiêng mang dòng điện I; đường sức từ đi lên qua lòng vòng dây, vòng ra ngoài rồi quay xuống, giống đường sức của nam châm thẳng",
+               "Hình 4b. Vòng dây: đường sức xuyên qua vòng.",
+               360, 525, "22.38b")
+fig4c = raster("hinh-ong-day-duong-suc.webp",
+               "Mặt cắt ống dây dài: dòng điện đi vào trang ở hàng vòng trên (dấu X) và đi ra khỏi trang ở hàng vòng dưới (dấu chấm); trong lòng ống các đường sức xanh song song, cách đều, đi từ cực S sang cực N; bên ngoài khép kín như nam châm thẳng",
+               "Hình 4c. Ống dây: trong lòng ống đường sức song song, cách đều.<br>"
+               "I<sub>in</sub> = dòng vào trang (⊗) · I<sub>out</sub> = dòng ra (⊙).",
+               425, 440, "22.39b")
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

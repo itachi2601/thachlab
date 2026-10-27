@@ -1,0 +1,6 @@
+Hình 2 — bố cục tham khảo HRW 12e, Fig. 30.3.1 (ch. 30), vẽ lại bằng svg_lib
+Hình 3 — bố cục tham khảo HRW 12e, Fig. 33.1.5b (ch. 33), vẽ lại bằng svg_lib
+
+Hình 3 (giai đoạn 2 OpenStax, 27/10/2026): chèn trực tiếp ảnh OpenStax College Physics 2e, Hình 24.7 (sóng điện từ, E và B cùng pha), thay SVG tự vẽ; bảng ghi "vẽ lại" nhưng ảnh gốc chỉ có nhãn E, B, c, không đơn vị Mỹ, không credit bên thứ ba nên chèn trực tiếp. File: public/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-3.webp (875×602, 26 KB). Giấy phép CC BY-NC-SA 4.0. Ảnh raster là ngoại lệ có chủ đích của quy tắc SVG tự vẽ. Hình 1, 2, 4 giữ SVG theo bảng duyệt.
+
+Đợt 2 (27/10/2026, quy tắc mới: ưu tiên ảnh OpenStax, không vẽ lại): thay Hình 4 (thang sóng điện từ) bằng ảnh OpenStax College Physics 2e, Hình 24.8 (CC BY-NC-SA 4.0, không credit bên thứ ba); file public/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-pho-dien-tu.webp (1000×377, 19 KB); nhãn tiếng Anh được giải nghĩa trong figcaption; hàm SVG cũ xoá khỏi build_figs.py. Giữ SVG: Hình 1 (OpenStax không có hình tương ứng); Hình 2 (điện trường xoáy do B biến thiên; Hình 24.6 chỉ nói đường sức từ quanh ăng ten, không cùng hiện tượng). Hình 3 đã là ảnh OpenStax ở đợt 1. Ảnh raster là ngoại lệ có chủ đích của quy tắc SVG tự vẽ.

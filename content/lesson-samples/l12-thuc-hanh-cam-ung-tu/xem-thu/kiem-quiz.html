@@ -1,12 +1,12 @@
-<!doctype html><html lang="vi"><meta charset="utf-8">
+<!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.css">
 <style>
-:root{color-scheme:dark}
-body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{color-scheme:light}
+body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
 .exam-content{display:block}
-h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+h1{font-size:20px;margin:0 0 4px} .sub{color:var(--color-ink-muted,#475569);font-size:13px;margin:0 0 16px}
 /* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
 /* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
 .exam-content {
@@ -14,6 +14,22 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   line-height: 1.65;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+/* Vùng ĐỀ giống đề giấy (thầy chốt 11/10/2026): serif Tinos (= Times New Roman về số đo), chữ ≥ 17px, dòng ≥ 1,6.
+   Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
+   Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
+.exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
+.exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
+@media (max-width: 640px) {
+  .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
 }
 /* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
    16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
@@ -135,7 +151,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 }
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
-  font-size: 0.85em;
+  font-size: var(--fs-sm);
   color: #94a3b8;
   text-align: center;
 }
@@ -145,7 +161,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
 .exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
 .exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
-.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
 .exam-content .tl-box--rule .tl-label { color: #fbbf24; }
 .exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
 .exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
@@ -154,6 +170,9 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
 .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
 .exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-conf { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; color: var(--color-muted, #475569); font-size: .92em; }
+.exam-content .tl-conf label { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; cursor: pointer; }
+.exam-content .tl-conf input { width: 18px; height: 18px; accent-color: var(--color-primary, #1d4ed8); }
 .exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
 .exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
@@ -167,17 +186,38 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
-.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
-html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   1.05rem (không 1.1rem): đo 375px, mẹo 4–5 chữ có dấu " – " mới nằm một dòng. Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo, .lesson-body .lesson-prose p.tl-meo { margin: 0 0 2px; font-size: 1.05rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
 /* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
    --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
 .exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
 .exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
-.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: .95rem; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
 .exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
 .exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
@@ -188,7 +228,7 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 .exam-content .tl-sim__st p { margin: 2px 0; }
 .exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
 .exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
-.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: .95rem; line-height: 1.55; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
 .exam-content .tl-sim__leg li { margin: 2px 0; }
 .exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
 .exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
@@ -288,46 +328,39 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
   .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
 }
 
-/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
 @media (max-width: 639px) {
-  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
-  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
-  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
-  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
-  .lesson-layout--pick .class-continue--main {
-    gap: 2px;
-    border: 0;
-    border-radius: 0;
-    background: none;
-    padding: 0;
-  }
-  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
-  .lesson-layout--pick .class-toc-toolbar { display: none; }
-  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
   .lesson-layout--pick .class-lesson {
     display: grid;
-    grid-template-columns: 26px minmax(0, 1fr);
-    column-gap: 12px;
-    row-gap: 2px;
-    align-items: start;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
   }
-  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
-  .lesson-layout--pick .class-lesson-title,
-  .lesson-layout--pick .class-meta { grid-column: 2; }
-  .lesson-layout--pick .class-meta { justify-self: start; }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
-   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
-   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -374,6 +407,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(148,163,184,.24);
   --pres-surface: rgba(15,23,42,.86);
   --pres-panel: #101a2e;
+  /* Token site đặt lại theo nền chiếu, không theo theme của trang: khung .tl-trap/.tl-check/.tl-fx
+     dùng color-mix(var(--color-panel)) nên theme tối của trang + nền chiếu sáng = hộp đen chữ mờ. */
+  --color-panel: #101a2e; --color-ink: #f1f5f9; --color-warn: #fbbf24; --color-primary: #60a5fa;
+  --color-surface-2: rgba(255,255,255,.06); --color-line-strong: rgba(255,255,255,.34);
   position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
 }
@@ -385,6 +422,8 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(15,23,42,.16);
   --pres-surface: rgba(255,255,255,.92);
   --pres-panel: #fff;
+  --color-panel: #fff; --color-ink: #0f172a; --color-warn: #b45309; --color-primary: #1d4ed8;
+  --color-surface-2: #eef1f6; --color-line-strong: #8b93a1;
   background: #f4f6fb;
 }
 
@@ -432,7 +471,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
-.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
+.presenter-tap span { color: var(--pres-accent); }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
@@ -487,6 +528,44 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+/* Ghi chú của HỌC SINH (StudentNoteFab): góc TRÁI để cách xa nút Báo lỗi ở góc phải (D3); nền theo token site. */
+.lesson-note-open { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; padding: 0 14px; color: var(--color-ink); font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; text-align: left; }
+.lesson-note-open::after { content: "›"; color: var(--color-muted); font-size: 16px; }
+.student-note-float { position: fixed; z-index: 45; left: 12px; bottom: 20px; max-width: calc(100vw - 24px); }
+body:has(.lesson-bottombar) .student-note-float { bottom: calc(var(--lesson-bottombar-h, 62px) + 12px + env(safe-area-inset-bottom, 0px)); }
+.student-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; border: 2px solid var(--color-primary, #1d4ed8); border-radius: 999px; background: var(--color-panel, #fff); padding: 0 16px 0 13px; color: var(--color-primary, #1d4ed8); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(15,23,42,.35); }
+.student-note { width: min(360px, calc(100vw - 24px)); border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 16px; background: var(--color-panel, #fff); padding: 12px 14px 14px; color: var(--color-ink, #0f172a); box-shadow: 0 16px 40px -16px rgba(15,23,42,.45); }
+.student-note-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.student-note-head p { display: grid; gap: 2px; min-width: 0; margin: 0; font-size: 15px; }
+.student-note-head p span { overflow: hidden; color: var(--color-muted, #475569); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.student-note-head button { display: grid; width: 44px; height: 44px; margin: -8px -8px 0 0; place-items: center; border: 0; background: none; color: var(--color-muted, #475569); cursor: pointer; }
+.student-note-label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
+.student-note-body { width: 100%; min-height: 96px; resize: vertical; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 10px; background: var(--color-bg, #f5f7fa); padding: 9px 10px; color: var(--color-ink, #0f172a); font: inherit; font-size: 16px; line-height: 1.5; }
+.student-note-status { margin: 6px 0 0; color: var(--color-muted, #475569); font-size: 12.5px; }
+.student-note-others { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.student-note-others button { display: grid; width: 100%; min-height: 44px; gap: 1px; border: 1px solid var(--color-line, rgba(15,23,42,.1)); border-radius: 10px; background: none; padding: 6px 10px; color: var(--color-ink, #0f172a); font-family: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.student-note-others button span { overflow: hidden; color: var(--color-muted, #475569); text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
 
 .presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
 .presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
@@ -547,6 +626,15 @@ html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); -
 /* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
    rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
 html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
 html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
 html.is-dim[data-theme="light"] .text-white { color: #33291a; }
 html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
@@ -696,43 +784,377 @@ html[data-theme="light"] .exam-content .bt-note { color: #475569; }
 .exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
 html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
 
+/* Bài tập mẫu — tự giải từng bước (components/lessons/StepwiseSolution.tsx, 9/10/2026). D2 đích chạm ≥ 44px, L1 phản hồi tức thì, N7 một kiểu nhấn. */
+.exam-content .bt-step--ask { padding: 12px 12px 12px; border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.exam-content .bt-step--locked { opacity: .45; margin: 0 0 14px; }
+.exam-content .bt-ask { margin: 8px 0 0 36px; }
+.exam-content .bt-ask + .bt-ask { margin-top: 14px; }
+.exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
+.exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
+.exam-content .bt-ask-unit { color: #94a3b8; }
+.exam-content .bt-ask-row .lesson-btn-ghost { min-height: 44px; }
+.exam-content .bt-choice { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; background: rgba(255,255,255,.03); color: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+.exam-content .bt-choice:hover { background: rgba(255,255,255,.07); }
+.exam-content .bt-choice:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+.exam-content .bt-feedback { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
+.exam-content .bt-feedback--wrong { background: rgba(248,113,113,.12); }
+.exam-content .bt-feedback--ok { background: rgba(52,211,153,.10); }
+.exam-content .bt-show-all { display: block; margin: 4px 0 18px 36px; min-height: 44px; padding: 0; border: 0; background: none; color: #94a3b8; font-size: 14px; text-decoration: underline; cursor: pointer; }
+.exam-content .bt-flash { border-radius: 10px; box-shadow: 0 0 0 3px rgba(251,191,36,.6); transition: box-shadow .4s; }
+.bt-goroi-btn { display: block; width: 100%; min-height: 44px; white-space: normal; text-align: left; }
+.bt-nhan-dang { margin: 0 0 10px; padding: 8px 12px; border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; background: rgba(255,255,255,.04); font-size: 15px; line-height: 1.6; }
+.bt-nhan-dang .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .exam-content :is(.bt-step--ask, .bt-ask-input, .bt-choice) { border-color: rgba(15,23,42,.28); background: rgba(15,23,42,.03); }
+html[data-theme="light"] .exam-content .bt-choice:hover { background: rgba(15,23,42,.07); }
+html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: #475569; }
+html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
+html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+
+/* ==========================================================================
+   NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
+   ==========================================================================
+   Vì sao có khối này: trước đây theme TỐI là mặc định, nên hàng trăm chỗ trong JSX viết
+   thẳng class màu của nền tối — `bg-[#0B1020]`, `bg-white/5` (ô sáng mờ trên nền đen),
+   `border-white/10`, gradient `from-[#172c46]`, quầng sáng `shadow-[0_0_24px_…]`. Bật nền
+   sáng lên thì những chỗ đó thành mảng xám bết hoặc mảng tối lẫn trong trang trắng — đúng
+   cảm giác "màu không đẹp" mà thầy thấy.
+
+   Cách xử lý ở đây là LƯỚI AN TOÀN theo token, không phải nguồn màu:
+   · quét bằng attribute selector KHÔNG phân biệt hoa/thường (`i`) vì JSX viết lẫn
+     `bg-[#0B1020]` và `bg-[#0b1020]`, kèm cả biến thể mờ `/80`, `/[0.98]`;
+   · `[class~="…"]` (khớp ĐÚNG một token class) cho các idiom `bg-white/10` để KHÔNG đụng
+     `hover:bg-white/20` — biến thể hover xử riêng, nếu không nút mất phản hồi khi trỏ;
+   · mọi giá trị lấy từ token ở @theme, nên đổi bảng màu chỉ sửa một nơi.
+   Sửa gốc vẫn phải làm ở component (bỏ hex, dùng bg-panel/text-ink/border-line) — lưới này
+   chỉ để không còn ô tối nào lọt ra ngoài. Khi component đã sạch thì các rule dưới thành vô hại.
+   ========================================================================== */
+
+/* (1) Nền tối hard-code → mặt thẻ. Mọi biến thể hoa/thường + độ mờ đều khớp. */
+html[data-theme="light"] [class*="bg-[#04060a]" i],
+html[data-theme="light"] [class*="bg-[#05070b]" i],
+html[data-theme="light"] [class*="bg-[#050914]" i],
+html[data-theme="light"] [class*="bg-[#070b16]" i],
+html[data-theme="light"] [class*="bg-[#080d18]" i],
+html[data-theme="light"] [class*="bg-[#080d1a]" i],
+html[data-theme="light"] [class*="bg-[#080d1d]" i],
+html[data-theme="light"] [class*="bg-[#0a1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1220]" i],
+html[data-theme="light"] [class*="bg-[#0b1324]" i],
+html[data-theme="light"] [class*="bg-[#10192a]" i],
+html[data-theme="light"] [class*="bg-[#111a2e]" i],
+html[data-theme="light"] [class*="bg-[#172033]" i] {
+  background-color: var(--color-panel) !important;
+}
+
+/* (2) Ô sáng mờ trên nền tối (`bg-white/5`) → ô xám nhạt trên nền sáng. Giữ nguyên thứ bậc
+   đậm/nhạt giữa các mức để chỗ nào đậm hơn vẫn nổi hơn. */
+html[data-theme="light"] [class~="bg-white/5"],
+html[data-theme="light"] [class~="hover:bg-white/5"]:hover,
+html[data-theme="light"] [class~="bg-white/[.01]"],
+html[data-theme="light"] [class~="bg-white/[0.01]"] { background-color: rgba(15, 23, 42, .035) !important; }
+html[data-theme="light"] [class~="bg-white/[.02]"],
+html[data-theme="light"] [class~="bg-white/[0.02]"],
+html[data-theme="light"] [class~="bg-white/[.025]"],
+html[data-theme="light"] [class~="bg-white/[0.025]"],
+html[data-theme="light"] [class~="bg-white/[.03]"],
+html[data-theme="light"] [class~="bg-white/[0.03]"],
+html[data-theme="light"] [class~="bg-white/[.035]"],
+html[data-theme="light"] [class~="bg-white/[0.035]"],
+html[data-theme="light"] [class~="bg-white/[.04]"],
+html[data-theme="light"] [class~="bg-white/[0.04]"],
+html[data-theme="light"] [class~="bg-white/[.05]"],
+html[data-theme="light"] [class~="bg-white/[0.05]"],
+html[data-theme="light"] [class~="bg-white/[.06]"],
+html[data-theme="light"] [class~="bg-white/[0.06]"],
+html[data-theme="light"] [class~="bg-white/[.07]"],
+html[data-theme="light"] [class~="bg-white/[0.07]"],
+html[data-theme="light"] [class~="bg-white/[.08]"],
+html[data-theme="light"] [class~="bg-white/[0.08]"] { background-color: rgba(15, 23, 42, .05) !important; }
+html[data-theme="light"] [class~="bg-white/10"],
+html[data-theme="light"] [class~="hover:bg-white/10"]:hover { background-color: rgba(15, 23, 42, .055) !important; }
+html[data-theme="light"] [class~="bg-white/[0.14]"],
+html[data-theme="light"] [class~="bg-white/15"],
+html[data-theme="light"] [class~="hover:bg-white/15"]:hover { background-color: rgba(15, 23, 42, .075) !important; }
+html[data-theme="light"] [class~="bg-white/20"],
+html[data-theme="light"] [class~="hover:bg-white/20"]:hover { background-color: rgba(15, 23, 42, .09) !important; }
+
+/* (3) Viền trắng mờ trên nền tối → viền xám trên nền sáng. Không đụng /60 và /70: đó là khung
+   trắng cố ý đè LÊN ảnh/camera (QrScannerCard), phải giữ trắng. */
+html[data-theme="light"] [class~="border-white/5"],
+html[data-theme="light"] [class~="hover:border-white/5"]:hover { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="border-white/10"],
+html[data-theme="light"] [class~="hover:border-white/10"]:hover { border-color: rgba(15, 23, 42, .10) !important; }
+html[data-theme="light"] [class~="border-white/15"],
+html[data-theme="light"] [class~="hover:border-white/15"]:hover { border-color: rgba(15, 23, 42, .14) !important; }
+html[data-theme="light"] [class~="border-white/20"],
+html[data-theme="light"] [class~="hover:border-white/20"]:hover { border-color: rgba(15, 23, 42, .18) !important; }
+html[data-theme="light"] [class~="border-white/25"],
+html[data-theme="light"] [class~="hover:border-white/25"]:hover { border-color: rgba(15, 23, 42, .22) !important; }
+html[data-theme="light"] [class~="border-white/30"],
+html[data-theme="light"] [class~="hover:border-white/30"]:hover { border-color: rgba(15, 23, 42, .26) !important; }
+html[data-theme="light"] [class~="border-white/40"],
+html[data-theme="light"] [class~="hover:border-white/40"]:hover { border-color: rgba(15, 23, 42, .34) !important; }
+html[data-theme="light"] [class~="divide-white/5"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="divide-white/10"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .10) !important; }
+
+/* (4) Gradient nền tối + quầng sáng neon (M6: không gradient/glow ở vùng đọc và làm bài).
+   `background-image: none` là cách chắc nhất vì Tailwind dựng gradient qua biến --tw-gradient-*. */
+html[data-theme="light"] [class*="from-[#172c46]" i],
+html[data-theme="light"] [class*="via-[#0e1c32]" i],
+html[data-theme="light"] [class*="to-[#071426]" i],
+html[data-theme="light"] [class*="to-[#091627]" i],
+html[data-theme="light"] [class*="to-[#101a3a]" i],
+html[data-theme="light"] [class*="from-[#183a4a]" i],
+html[data-theme="light"] [class*="from-[#0b1020]" i],
+html[data-theme="light"] [class*="to-[#0b1020]" i] { background-image: none !important; }
+html[data-theme="light"] [class*="shadow-[0_0_"],
+html[data-theme="light"] [class*="shadow-[0_2px_4px_rgba(0,0,0"] { box-shadow: 0 1px 2px rgb(15 23 42 / .06) !important; }
+
+/* (5) Hai chỗ đặc biệt, phải đổi cả nền lẫn chữ vì chữ thừa hưởng màu của nền tối:
+   · badge 📖 của bài học (nền navy đậm, không đặt màu chữ) → chip nhấn nhạt;
+   · dải cảnh báo rời trang khi làm bài (nền nâu đậm + chữ amber) → nền amber rất nhạt. */
+html[data-theme="light"] [class*="bg-[#1d3461]" i] {
+  background-color: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
+}
+html[data-theme="light"] [class*="bg-[#2a2210]" i] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+/* Nút đặc màu teal đậm ở trang chủ (bg-[#155e75] + chữ trắng, hover bg-[#0e7490]): theo M3 chỉ
+   giữ MỘT màu nhấn cho hành động, nên đưa về primary thay vì thêm sắc độ bão hoà thứ hai. */
+html[data-theme="light"] [class*="bg-[#155e75]" i],
+html[data-theme="light"] [class*="bg-[#0e7490]" i] { background-color: var(--color-primary) !important; }
+
+/* (6) Không gian học CNC: vài mảng tối viết trong CSS (không phải class JSX) nên lưới ở trên
+   không với tới. Khung code thì CỐ Ý giữ tối (như trình soạn thảo) — chỉ đổi các mảng UI. */
+html[data-theme="light"] .cnc-embedded .cnc-programming-tabs button,
+html[data-theme="light"] .cnc-embedded .cnc-programming-suite > div.grid > div.bg-white,
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group {
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted);
+}
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group > header { background: var(--color-surface-2) !important; color: var(--color-ink); }
+
+/* ==========================================================================
+   PHẠM VI THEO NHÓM NGƯỜI XEM — cùng một bảng màu, khác số đo thị giác
+   ==========================================================================
+   Không phải "mỗi trang một bộ màu" (như vậy là phá N4/M3 và làm site rối), mà là: cùng hệ
+   thần, đổi đúng những chỗ nghiên cứu nói phải đổi cho từng lứa tuổi. */
+
+/* PHỤ HUYNH 45–60 — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1, P2, P5, P6).
+   Nền hơi ngả ấm (không dùng trắng tinh để giảm chói với người lão thị), chữ phụ tối hơn để
+   đạt ≥7:1 (AAA), nhấn dùng xanh navy đậm cho trang trọng và đủ tương phản. Cỡ chữ và đích
+   chạm đã có ở khối "P1/P2/P4 — khối PHỤ HUYNH" phía trên.
+
+   `html:not(.is-dim)` là BẮT BUỘC: "Dịu mắt" đặt token trên <html>, mà token khai ở phần tử con
+   luôn thắng token thừa hưởng — thiếu điều kiện này thì bật Dịu mắt ở /phu-huynh vẫn ra nền trắng
+   ấm thay vì nền kem, tức là vô hiệu hoá đúng tính năng dành cho người lão thị. */
+html:not(.is-dim) .parent-page {
+  --color-bg: #f7f7f4;
+  --color-panel: #ffffff;
+  --color-surface-2: #f1f1ec;
+  --color-ink: #14181f;          /* 15,9:1 trên #f7f7f4 */
+  --color-muted: #3d4653;        /* 8,9:1 trên #f7f7f4, 9,8:1 trên trắng — vượt AAA 7:1 */
+  --color-line: rgba(20, 24, 31, .14);
+  /* Phụ huynh phải thấy rõ ô nhập/viền hơn học sinh ⇒ viền đậm hơn (4,2:1 trên trắng). */
+  --color-line-strong: #767f8d;
+  --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+/* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
+   tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ
+   Dịu mắt vẫn đổi được nền sang kem. */
+.parent-page { background: var(--color-bg); }
+
+/* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
+   nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
+   nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
+html[data-theme="light"] .teacher-dashboard {
+  --color-bg: #f4f5f7;
+  --color-panel: #ffffff;
+  --color-surface-2: #eceef2;
+  --color-line: rgba(15, 23, 42, .12);
+}
+
+/* RP bài lý thuyết: thanh nộp câu tự chấm (đích chạm >=44px) */
+.theory-rp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: var(--fs-sm); color: #cbd5e1; }
+.theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
+.theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
+html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
+
+/* Bài Anh văn chuyên ngành (AVCN, lớp avcn): thẻ từ vựng có ảnh, câu đọc chạm hiện dịch, nút nghe 🔊
+   (<button data-tl-speak> — trang bài học xử lý uỷ quyền, HTML lưu DB không chứa JS). Mẫu: content/lesson-samples/avcn-*. */
+.exam-content .avcn-photo img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 12px; }
+.exam-content .avcn-photo figcaption { opacity: .85; }
+.exam-content .avcn-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.exam-content .avcn-card { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; }
+.exam-content .avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-card img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; }
+.exam-content .avcn-card__body p { margin: 0 0 4px; text-align: left; }
+.exam-content .avcn-term { font-weight: 700; font-size: 1.1rem; }
+.exam-content .avcn-term small { font-weight: 400; font-size: .9rem; opacity: .8; }
+.exam-content .avcn-star { font-size: .8rem; }
+.exam-content .avcn-vi { color: #22d3ee; font-weight: 600; }
+html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
+.exam-content .avcn-def { font-size: .95rem; }
+.exam-content .tl-speak { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; padding: 0 6px; border: 1px solid rgba(148,163,184,.4); border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; vertical-align: middle; }
+.exam-content .tl-speak:hover { border-color: #22d3ee; }
+.exam-content .avcn-sent { margin: 6px 0; }
+.exam-content .avcn-sent > summary { font-weight: 400; line-height: 1.6; }
+.exam-content .avcn-n { font-weight: 700; opacity: .7; margin-right: 4px; }
+.exam-content .avcn-trans { opacity: .9; }
+.exam-content .avcn-list { padding-left: 18px; }
+.exam-content .avcn-list li { margin: 6px 0; text-align: left; }
+.exam-content .avcn-box { padding: 8px 12px; border: 1px dashed rgba(148,163,184,.6); border-radius: 10px; text-align: left; }
+.exam-content .avcn-passage { padding: 12px 14px; border-left: 3px solid #22d3ee; background: rgba(148,163,184,.08); border-radius: 0 10px 10px 0; margin: 10px 0; }
+.exam-content .avcn-passage p { margin: 0; text-align: left; line-height: 1.7; }
+@media (max-width: 420px) { .exam-content .avcn-card { grid-template-columns: 88px 1fr; } .exam-content .avcn-card img { width: 88px; height: 66px; } }
+.exam-content .avcn-card.avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-tbl :is(th, td):first-child { white-space: nowrap; }
+.exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
+.exam-content .avcn-term .tl-speak { margin-left: 2px; }
+.exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
+
+/* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
+   Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
+.exam-content .tl-fx > p { margin: 0; }
+.exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
+.exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
+.exam-content .tl-fx .katex-display { margin: 4px 0; padding: 6px 0; border: 0; background: none; text-align: center; overflow-x: auto; overflow-y: hidden; }
+.exam-content .tl-fx .katex-display > .katex { display: block; }
+.exam-content ul.tl-fx-def { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--color-line, rgba(148,163,184,.4)); display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: baseline; text-align: left; }
+.exam-content ul.tl-fx-def > li { display: contents; }
+.exam-content ul.tl-fx-def .tl-sym { text-align: right; white-space: nowrap; }
+.exam-content ul.tl-fx-def .tl-sym::after { content: " :"; }
+.exam-content .tl-fx-note { margin-top: 10px !important; font-size: .95em; text-align: left; }
+/* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
+.lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
+.lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, icon tròn ở góc phải trên, màu theo ĐÚNG token của docs/MAU-NEN-SANG.md (M3):
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) — viền trung tính đậm (màu mực), KHÔNG dùng màu nhấn/trạng thái
+     ⚠️ bẫy mất điểm (.tl-trap) — --color-warn (cần chú ý); không dùng đỏ vì đỏ chỉ để "sai" ở phản hồi quiz bên trong
+     ✍️ tự kiểm tra (.tl-check) — --color-primary (khối có thứ bấm được)
+   Mọi thứ còn lại là ghi chú: .tl-note (vạch trái mỏng trung tính), .tl-more (mục bấm xem). Không để khung nằm trong khung.
+   Tương phản viền ≥ 3:1 ở cả hai theme (WCAG 1.4.11); nghĩa nằm ở icon + nhãn, không chỉ ở màu (M4). */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: var(--color-ink, #0f172a); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--color-surface-2, rgba(148,163,184,.08)); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: var(--color-warn, #b45309); background: color-mix(in srgb, var(--kc) 7%, var(--color-panel, #fff)); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: var(--color-primary, #1d4ed8); background: color-mix(in srgb, var(--kc) 6%, var(--color-panel, #fff)); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--color-panel, #fff); border: 2px solid var(--kc); font-size: 17px; line-height: 1; transform: rotate(8deg); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
-<li>Giải thích được vì sao <strong>cân điện tử</strong> đo được lực từ tác dụng lên dây mà dây không đặt trên cân.</li>
-<li>Tính được <strong>cảm ứng từ</strong> $B = \dfrac{\Delta m\, g}{I\, l}$ từ số đo, và tìm $B$ bằng <strong>độ dốc đồ thị</strong> $\Delta m$–$I$.</li>
-<li>Đánh giá được <strong>sai số</strong> của phép đo và chọn lần đo cho sai số nhỏ nhất.</li>
-<li>Nhận ra hai lỗi hay gặp: <strong>đặt sai giá đỡ</strong> và <strong>dây không vuông góc đường sức</strong>.</li>
+<li>Giải thích số chỉ <strong>cân điện tử</strong> đổi thế nào khi dây chịu lực từ.</li>
+<li>Tính <strong>cảm ứng từ</strong> $B = \dfrac{\Delta m\, g}{I\, l}$ từ số đo, và tìm $B$ bằng <strong>độ dốc</strong> đồ thị $\Delta m$–$I$.</li>
+<li>Đánh giá <strong>sai số</strong> và chọn lần đo cho sai số nhỏ nhất.</li>
+<li>Nhận ra hai lỗi hay gặp: <strong>đặt sai giá đỡ</strong>, <strong>dây lệch đường sức</strong>.</li>
 </ul>
-<p>Cuối bài, em phải tự trả lời được <strong>5 câu ở mục Trả bài</strong>.</p>
+<p>Cuối bài, em tự trả lời <strong>5 câu ở mục Trả bài</strong>.</p>
 <p>Khoảng 17 phút.</p>
 <p>6 mục, 7 câu tự kiểm tra.</p>
 </div>
 
-<h3>I. Mở bài: cân chỉ đổi số mà không ai chạm vào</h3>
+<h3>I. Mở bài: dây không chạm cân, cân có biết không?</h3>
 
-<p>Một nhóm đặt nam châm chữ U lên đĩa cân điện tử, bấm TARE cho cân về 0,00 g. Bên cạnh, một khung dây hình chữ nhật treo trên giá riêng; cạnh dưới của khung lọt vào khe nam châm nhưng <strong>không chạm</strong> vào nam châm hay cân.</p>
+<p>Một nhóm đặt nam châm chữ U lên đĩa cân, bấm TARE cho cân về 0,00 g. Khung dây hình chữ nhật treo trên giá riêng; cạnh dưới lọt vào khe nam châm nhưng <strong>không chạm</strong> nam châm hay cân.</p>
 
-<p>Khi đóng công tắc, số trên cân nhảy lên <strong>1,45 g</strong>. Không có gì được đặt thêm lên đĩa cân.</p>
+<p>Dây có dòng điện trong từ trường chịu lực từ, nhưng dây không chạm cân. Cân có "thấy" lực đó không?</p>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 380 300" role="img" aria-label="Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá riêng, cạnh dưới nằm trong khe nam châm, cân chỉ 1,45 gam"><rect x="30" y="218" width="190" height="34" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><rect x="140" y="226" width="70" height="20" rx="4" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="1.5"/><text x="175" y="241" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">1,45 g</text><line x1="34" y1="214" x2="216" y2="214" stroke="currentColor" stroke-width="4" opacity="1"/><rect x="60" y="120" width="36" height="94" rx="3" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="158" y="120" width="36" height="94" rx="3" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><rect x="60" y="182" width="134" height="32" rx="3" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="78" y="160" fill="#f87171" font-size="17" font-weight="700" text-anchor="middle">N</text><text x="176" y="160" fill="#38bdf8" font-size="17" font-weight="700" text-anchor="middle">S</text><line x1="346" y1="40" x2="346" y2="252" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="127" y1="40" x2="346" y2="40" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="346" y1="252" x2="300" y2="252" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="127" y1="40" x2="127" y2="150" stroke="currentColor" stroke-width="2" opacity="1"/><circle cx="127" cy="152" r="7" fill="#fb923c" stroke="#fb923c" stroke-width="2"/><text x="140" y="90" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">khung dây</text><text x="140" y="108" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">(cạnh dưới ở trong khe)</text><text x="140" y="28" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">giá đỡ riêng, không chạm cân</text><text x="206" y="170" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">nam châm</text><text x="206" y="188" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">chữ U</text><text x="30" y="272" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">cân điện tử chia 0,01 g</text><text x="30" y="291" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">nguồn một chiều + ampe kế nối với khung</text></svg><figcaption>Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng với cạnh dưới trong khe.<br>Dây không chạm vào cân hay nam châm.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 380 300" role="img" aria-label="Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá riêng, cạnh dưới nằm trong khe nam châm"><rect x="30" y="218" width="190" height="34" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><rect x="140" y="226" width="70" height="20" rx="4" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="1.5"/><text x="175" y="241" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">? g</text><line x1="34" y1="214" x2="216" y2="214" stroke="currentColor" stroke-width="4" opacity="1"/><rect x="60" y="120" width="36" height="94" rx="3" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="158" y="120" width="36" height="94" rx="3" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><rect x="60" y="182" width="134" height="32" rx="3" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="78" y="160" fill="#f87171" font-size="17" font-weight="700" text-anchor="middle">N</text><text x="176" y="160" fill="#38bdf8" font-size="17" font-weight="700" text-anchor="middle">S</text><line x1="346" y1="40" x2="346" y2="252" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="127" y1="40" x2="346" y2="40" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="346" y1="252" x2="300" y2="252" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="127" y1="40" x2="127" y2="150" stroke="currentColor" stroke-width="2" opacity="1"/><circle cx="127" cy="152" r="7" fill="#fb923c" stroke="#fb923c" stroke-width="2"/><text x="140" y="90" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">khung dây</text><text x="140" y="108" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">(cạnh dưới ở trong khe)</text><text x="140" y="28" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">giá đỡ riêng, không chạm cân</text><text x="206" y="170" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">nam châm</text><text x="206" y="188" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">chữ U</text><text x="30" y="272" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">cân điện tử chia 0,01 g</text><text x="30" y="291" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">nguồn một chiều + ampe kế nối với khung</text></svg><figcaption>Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng với cạnh dưới trong khe.<br>Dây không chạm vào cân hay nam châm.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
+
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
-<p>Cân đang đo cái gì khi dây không đặt trên cân?</p>
+<p>Đóng công tắc cho dòng điện chạy qua dây; dây vẫn không chạm gì. Số chỉ của cân sẽ thế nào?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Dây nóng lên, không khí quanh dây nở ra và đẩy nam châm xuống</label>
-<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-ok">B. Dây chịu lực từ; nam châm chịu phản lực và đè thêm lên cân</label>
-<input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-no">C. Dòng điện làm khối lượng của nam châm tăng thêm 1,45 g</label>
-<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Từ trường làm cân hiển thị sai, thực tế không có lực nào đổi</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dây mang dòng điện trong từ trường chịu lực từ. Theo định luật III Newton, nam châm chịu một lực <em>cùng độ lớn, ngược chiều</em>. Nam châm nằm trên đĩa cân nên cân cảm nhận lực đó như một khối lượng thêm. Đây chính là cách "cân dòng điện" biến một lực từ rất nhỏ thành số gam đọc được.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Dòng 3 A chạy vài giây không đủ làm nóng không khí để đẩy được nam châm, và khối lượng của nam châm không đổi khi có dòng điện. Cân cũng không bị "nhiễu": số đo lặp lại được và đổi dấu theo chiều dòng. Hãy nghĩ tới <em>cặp lực – phản lực</em> giữa dây và nam châm. Chọn lại nhé.</p></div>
+<input type="radio" name="tl12-q0" id="tl12-q0a"><label for="tl12-q0a" class="tl-opt tl-no">A. Không đổi, vì dây không chạm cân hay nam châm</label>
+<input type="radio" name="tl12-q0" id="tl12-q0b"><label for="tl12-q0b" class="tl-opt tl-ok">B. Đổi đi một lượng nhỏ; đảo chiều dòng điện thì số chỉ đổi theo chiều ngược lại</label>
+<input type="radio" name="tl12-q0" id="tl12-q0c"><label for="tl12-q0c" class="tl-opt tl-no">C. Tăng thêm đúng bằng khối lượng của dây</label>
+<input type="radio" name="tl12-q0" id="tl12-q0d"><label for="tl12-q0d" class="tl-opt tl-no">D. Nhảy lung tung, vì từ trường làm cân hiển thị sai</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Với dòng 3,0 A, cân nhảy lên khoảng <strong>1,45 g</strong>; đảo chiều dòng thì cân chỉ khoảng −1,45 g. Dây chịu lực từ, và theo định luật III Newton nam châm chịu một lực <em>cùng độ lớn, ngược chiều</em>. Nam châm nằm trên đĩa cân nên cân đọc được lực đó. Đây là cách "cân dòng điện" biến một lực từ rất nhỏ thành số gam.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Dây không chạm cân nhưng vẫn tương tác với nam châm qua từ trường, nên cân không đứng yên (A). Dây không đặt lên cân nên khối lượng của dây không được tính (C). Cân cũng không bị "nhiễu" (D): số đo lặp lại được và đổi dấu theo chiều dòng. Hãy nghĩ tới <em>cặp lực – phản lực</em> giữa dây và nam châm. Chọn lại nhé.</p></div>
 </div>
+</div>
+
+<!--video:mo_bai-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thực tế, kiểm tra dự đoán</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/h8N9Un-Pp-w?rel=0&start=0&end=40" title="cân điện tử, dây dẫn và nam châm" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> số cân đổi thế nào khi nối pin vào dây?</p>
 </div>
 
 <h3>II. Kiến thức</h3>
@@ -742,18 +1164,36 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 <p><strong>🔑 Lực từ lên dây · Phản lực lên nam châm · Cân đọc Δm</strong></p>
 
 <ul>
-<li>Dây dài $l$ vuông góc đường sức, dòng $I$: $F = BIl$.</li>
-<li>Nam châm chịu lực $F'$ <strong>cùng độ lớn, ngược chiều</strong> $F$.</li>
-<li>Cân đọc độ thay đổi khối lượng $\Delta m$: $F = \Delta m\, g$.</li>
-<li>Suy ra $B = \dfrac{\Delta m\, g}{I\, l}$ (đổi $\Delta m$ sang kg, $l$ sang m).</li>
+<li>Dây dài $l$ vuông góc đường sức, có dòng $I$ chạy qua thì chịu lực từ.</li>
+<li>Dây nằm ngang, vuông góc đường sức nên lực từ có phương thẳng đứng.</li>
+<li>Nam châm chịu lực $F'$ <strong>cùng độ lớn, ngược chiều</strong> $F$, nên cân đọc được $\Delta m$.</li>
 </ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Tính cảm ứng từ bằng cân dòng điện</p>
+<p class="tl-fx-cond">Lực từ lên dây (vuông góc đường sức)</p>
+<p>$$F = BIl$$</p>
+<p class="tl-fx-cond">Lực đọc từ cân</p>
+<p>$$F = \Delta m\, g$$</p>
+<p class="tl-fx-cond">Suy ra</p>
+<p>$$B = \dfrac{\Delta m\, g}{I\, l}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$F$</span><span>lực từ (N)</span></li>
+<li><span class="tl-sym">$B$</span><span>cảm ứng từ (T)</span></li>
+<li><span class="tl-sym">$I$</span><span>cường độ dòng điện (A)</span></li>
+<li><span class="tl-sym">$l$</span><span>chiều dài đoạn dây trong từ trường (m), đổi từ cm sang m</span></li>
+<li><span class="tl-sym">$\Delta m$</span><span>độ tăng số đọc của cân (kg), đổi từ g sang kg</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc trọng trường, $9{,}81$ (m/s²)</span></li>
+</ul>
+</div>
 
-<p>Ví dụ: cân báo thêm 1,00 g, tức nam châm bị ép thêm khoảng $9{,}81 \times 10^{-3}\ \text{N}$, cỡ trọng lượng một chiếc kẹp giấy.</p>
+<p>Ví dụ: 1,00 g tương ứng lực ép $\approx 9{,}81 \times 10^{-3}\ \text{N}$ — cỡ một chiếc kẹp giấy.</p>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 380 290" role="img" aria-label="Mặt cắt khe nam châm: dây có dòng hướng ra khỏi trang chịu lực từ hướng lên, nam châm chịu phản lực hướng xuống làm cân tăng"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="20" y="28" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">⊙ dòng điện hướng ra khỏi trang</text><rect x="20" y="240" width="230" height="40" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="135" y="266" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">cân điện tử</text><rect x="30" y="110" width="50" height="130" rx="3" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="190" y="110" width="50" height="130" rx="3" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><rect x="30" y="200" width="210" height="40" rx="3" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="55" y="160" fill="#f87171" font-size="18" font-weight="700" text-anchor="middle">N</text><text x="215" y="160" fill="#38bdf8" font-size="18" font-weight="700" text-anchor="middle">S</text><line x1="88" y1="172" x2="182" y2="172" stroke="#34d399" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M171.6,166.0 L182.0,172.0 L171.6,178.0" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="88" y1="189" x2="182" y2="189" stroke="#34d399" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M171.6,183.0 L182.0,189.0 L171.6,195.0" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="106" y="166" fill="#34d399" font-size="16" font-weight="700" text-anchor="middle">B</text><line x1="135" y1="50" x2="135" y2="141" stroke="currentColor" stroke-width="1.5" opacity="1"/><circle cx="135" cy="150" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="135" cy="150" r="3" fill="currentColor"/><line x1="152" y1="142" x2="152" y2="92" stroke="#f87171" stroke-width="3.5" marker-end="url(#f2-r)"/><text x="160" y="100" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">F lên dây</text><line x1="262" y1="130" x2="262" y2="195" stroke="#fb923c" stroke-width="3.5" marker-end="url(#f2-o)"/><text x="272" y="150" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">F′ lên</text><text x="272" y="168" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">nam châm</text></svg><figcaption>Hình 2. Mặt cắt khe nam châm chữ U.<br>Đường sức từ đi từ cực N sang cực S.<br>Dây chịu lực $F$, nam châm chịu lực $F'$ cùng độ lớn và ngược chiều; cân chỉ cảm nhận $F'$.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 380 290" role="img" aria-label="Mặt cắt khe nam châm: dây có dòng hướng ra khỏi trang chịu lực từ hướng lên, nam châm chịu phản lực hướng xuống làm cân tăng"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="20" y="28" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">⊙ dòng điện hướng ra khỏi trang</text><rect x="20" y="240" width="230" height="40" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="135" y="266" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">cân điện tử</text><rect x="30" y="110" width="50" height="130" rx="3" fill="rgba(248,113,113,.28)" stroke="#f87171" stroke-width="2"/><rect x="190" y="110" width="50" height="130" rx="3" fill="rgba(56,189,248,.28)" stroke="#38bdf8" stroke-width="2"/><rect x="30" y="200" width="210" height="40" rx="3" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="55" y="160" fill="#f87171" font-size="18" font-weight="700" text-anchor="middle">N</text><text x="215" y="160" fill="#38bdf8" font-size="18" font-weight="700" text-anchor="middle">S</text><line x1="88" y1="172" x2="182" y2="172" stroke="#34d399" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M171.6,166.0 L182.0,172.0 L171.6,178.0" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="88" y1="189" x2="182" y2="189" stroke="#34d399" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M171.6,183.0 L182.0,189.0 L171.6,195.0" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="106" y="166" fill="#34d399" font-size="16" font-weight="700" text-anchor="middle">B</text><line x1="135" y1="50" x2="135" y2="141" stroke="currentColor" stroke-width="1.5" opacity="1"/><circle cx="135" cy="150" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="135" cy="150" r="3" fill="currentColor"/><line x1="152" y1="142" x2="152" y2="92" stroke="#f87171" stroke-width="2.8"/><path d="M146.2,102.0 L152.0,92.0 L157.8,102.0" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="160" y="100" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">F lên dây</text><line x1="262" y1="130" x2="262" y2="195" stroke="#fb923c" stroke-width="2.8"/><path d="M267.8,185.0 L262.0,195.0 L256.2,185.0" fill="none" stroke="#fb923c" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="272" y="150" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">F′ lên</text><text x="272" y="168" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">nam châm</text></svg><figcaption>Hình 2. Mặt cắt khe nam châm chữ U.<br>Đường sức từ đi từ cực N sang cực S.<br>Dây chịu lực $F$, nam châm chịu lực $F'$ cùng độ lớn và ngược chiều; cân chỉ cảm nhận $F'$.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>⚠ Cân báo cả <strong>chiều</strong> lực (dấu + hay −), không chỉ độ lớn.</p>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Đang đo với dòng 3,0 A thì cân chỉ <strong>+1,45 g</strong>. Giữ nguyên độ lớn dòng nhưng <strong>đảo chiều</strong> dòng điện. Số trên cân sẽ là</p>
 <div class="tl-quiz">
 <input type="radio" name="tl12-q1" id="tl12-q1a"><label for="tl12-q1a" class="tl-opt tl-no">A. 0,00 g, vì hai chiều dòng điện triệt tiêu nhau</label>
@@ -765,12 +1205,12 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 </div>
 </div>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l12-thuchanhtu-02">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-thuchanhtu-02">
 <p class="tl-label">🧪 Thí nghiệm: đảo chiều dòng điện</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> bấm TARE khi chưa có dòng; đóng mạch với $I = 3{,}0\ \text{A}$ vài giây, đọc cân rồi ngắt; đảo hai đầu nguồn, đóng lại, đọc cân.</li>
+<li><strong>Làm:</strong> bấm TARE khi chưa có dòng; đóng mạch với $I = 3{,}0\ \text{A}$ vài giây, đọc cân rồi ngắt; đảo hai đầu nguồn, đọc lại.</li>
 <li><strong>Quan sát:</strong> cân chỉ <strong>+1,45 g</strong>, sau khi đảo chiều chỉ <strong>−1,45 g</strong>; ngắt mạch thì cân về 0,00 g.</li>
-<li><strong>Rút ra:</strong> lực từ đổi chiều theo chiều dòng điện, độ lớn không đổi; không có dòng thì không có lực.</li>
+<li><strong>Rút ra:</strong> lực từ đổi chiều theo dòng điện, độ lớn không đổi; không dòng thì không lực.</li>
 </ol>
 </div>
 
@@ -795,7 +1235,7 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 <div class="tl-sim__st st-5p"><p>Cân: <strong>+2,44 g</strong></p><p>$F = \Delta m\, g \approx 23{,}94\ \text{mN}$</p><p>$B = \dfrac{F}{Il} \approx 0{,}120\ \text{T}$</p></div>
 <div class="tl-sim__st st-5n"><p>Cân: <strong>−2,44 g</strong></p><p>$F = \Delta m\, g \approx 23{,}94\ \text{mN}$</p><p>$B = \dfrac{F}{Il} \approx 0{,}120\ \text{T}$</p></div>
 </div>
-<div class="tl-sim__fbd"><svg viewBox="0 0 380 300" role="img" aria-label="Biểu đồ lực tác dụng lên dây, nam châm và cân; đuôi mũi tên đặt tại trọng tâm G của từng vật"><text x="63" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Dây điện</text><text x="190" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Nam châm</text><text x="317" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Cân</text><circle cx="63" cy="180" r="9" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/><circle class="sim-wp" cx="63" cy="180" r="3" fill="currentColor"/><path class="sim-wn" d="M58,175 L68,185 M68,175 L58,185" stroke="currentColor" stroke-width="2"/><g transform="translate(115.75,59.89) scale(0.55)"><rect x="40" y="112" width="40" height="64" rx="0" fill="rgba(248,113,113,.28)" stroke="none" stroke-width="0"/><rect x="190" y="112" width="40" height="64" rx="0" fill="rgba(56,189,248,.28)" stroke="none" stroke-width="0"/><path d="M40,112 H80 V252 H190 V112 H230 V292 H40 Z" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></g><rect x="262" y="158" width="110" height="44" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><g transform="translate(190,180)"><rect class="sim-sh a-Pm" x="-3.0" y="-120" width="6" height="120" fill="#94a3b8"/><polygon class="sim-hd a-Pm" points="0,0 -7,13 7,13" fill="#94a3b8"/></g><g transform="translate(190,180)"><rect class="sim-sh a-N" x="-3.0" y="-120" width="6" height="120" fill="#34d399"/><polygon class="sim-hd a-N" points="0,0 -7,13 7,13" fill="#34d399"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Pc" x="-3.0" y="-120" width="6" height="120" fill="#94a3b8"/><polygon class="sim-hd a-Pc" points="0,0 -7,13 7,13" fill="#94a3b8"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Np" x="-3.0" y="-120" width="6" height="120" fill="#34d399"/><polygon class="sim-hd a-Np" points="0,0 -7,13 7,13" fill="#34d399"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Qb" x="-3.0" y="-120" width="6" height="120" fill="#38bdf8"/><polygon class="sim-hd a-Qb" points="0,0 -7,13 7,13" fill="#38bdf8"/></g><g transform="translate(63,180)"><rect class="sim-sh a-F" x="-1.8" y="-120" width="3.6" height="120" fill="#f87171"/><polygon class="sim-hd a-F" points="0,0 -7,13 7,13" fill="#f87171"/></g><g transform="translate(63,180)"><rect class="sim-sh a-Q" x="-1.8" y="-120" width="3.6" height="120" fill="#a78bfa"/><polygon class="sim-hd a-Q" points="0,0 -7,13 7,13" fill="#a78bfa"/></g><g transform="translate(190,180)"><rect class="sim-sh a-Fp" x="-1.8" y="-120" width="3.6" height="120" fill="#fb923c"/><polygon class="sim-hd a-Fp" points="0,0 -7,13 7,13" fill="#fb923c"/></g><circle cx="63" cy="180" r="4" fill="currentColor"/><circle cx="190" cy="180" r="4" fill="currentColor"/><circle cx="317" cy="180" r="4" fill="currentColor"/><text x="76" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text><text x="203" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text><text x="330" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text></svg><ul class="tl-sim__leg"><li><strong>Dây:</strong> <span class="lg lg-F">●</span> F lực từ</li><li><strong>Dây:</strong> <span class="lg lg-Q">●</span> Q lực giữ của giá, ngược F nên dây đứng yên</li><li><strong>Nam châm:</strong> <span class="lg lg-P">●</span> P trọng lực</li><li><strong>Nam châm:</strong> <span class="lg lg-Fp">●</span> F′ phản lực của F</li><li><strong>Nam châm:</strong> <span class="lg lg-N">●</span> N phản lực của cân (N = P + F′)</li><li><strong>Cân:</strong> <span class="lg lg-P">●</span> P trọng lực</li><li><strong>Cân:</strong> <span class="lg lg-N">●</span> N′ áp lực của nam châm, bằng N</li><li><strong>Cân:</strong> <span class="lg lg-B">●</span> phản lực của mặt bàn</li><li><strong>Dây:</strong> trọng lực rất nhỏ nên bỏ qua.</li></ul><p>G là trọng tâm của từng vật.</p><p>Dây: G ở tâm tiết diện.</p><p>Cân: G ở tâm bệ cân.</p><p>Nam châm chữ U: G nằm <em>trong khe</em>, trên gông.</p><p>Mũi tên F, F′ phóng to cho dễ thấy.</p><p>Các mũi tên còn lại không vẽ theo tỉ lệ.</p></div>
+<div class="tl-sim__fbd"><svg viewBox="0 0 380 300" role="img" aria-label="Biểu đồ lực tác dụng lên dây, nam châm và cân; đuôi mũi tên đặt tại trọng tâm G của từng vật"><text x="63" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Dây điện</text><text x="190" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Nam châm</text><text x="317" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Cân</text><circle cx="63" cy="180" r="9" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/><circle class="sim-wp" cx="63" cy="180" r="3" fill="currentColor"/><path class="sim-wn" d="M58,175 L68,185 M68,175 L58,185" stroke="currentColor" stroke-width="2"/><g transform="translate(115.75,59.89) scale(0.55)"><rect x="40" y="112" width="40" height="64" rx="0" fill="rgba(248,113,113,.28)" stroke="none" stroke-width="0"/><rect x="190" y="112" width="40" height="64" rx="0" fill="rgba(56,189,248,.28)" stroke="none" stroke-width="0"/><path d="M40,112 H80 V252 H190 V112 H230 V292 H40 Z" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></g><rect x="262" y="158" width="110" height="44" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><g transform="translate(190,180)"><rect class="sim-sh a-Pm" x="-3.0" y="-120" width="6" height="120" fill="#94a3b8"/><polygon class="sim-hd a-Pm" points="0,0 -7,13 7,13" fill="#94a3b8"/></g><g transform="translate(190,180)"><rect class="sim-sh a-N" x="-3.0" y="-120" width="6" height="120" fill="#34d399"/><polygon class="sim-hd a-N" points="0,0 -7,13 7,13" fill="#34d399"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Pc" x="-3.0" y="-120" width="6" height="120" fill="#94a3b8"/><polygon class="sim-hd a-Pc" points="0,0 -7,13 7,13" fill="#94a3b8"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Np" x="-3.0" y="-120" width="6" height="120" fill="#34d399"/><polygon class="sim-hd a-Np" points="0,0 -7,13 7,13" fill="#34d399"/></g><g transform="translate(317,180)"><rect class="sim-sh a-Qb" x="-3.0" y="-120" width="6" height="120" fill="#38bdf8"/><polygon class="sim-hd a-Qb" points="0,0 -7,13 7,13" fill="#38bdf8"/></g><g transform="translate(63,180)"><rect class="sim-sh a-F" x="-1.8" y="-120" width="3.6" height="120" fill="#f87171"/><polygon class="sim-hd a-F" points="0,0 -7,13 7,13" fill="#f87171"/></g><g transform="translate(63,180)"><rect class="sim-sh a-Q" x="-1.8" y="-120" width="3.6" height="120" fill="#a78bfa"/><polygon class="sim-hd a-Q" points="0,0 -7,13 7,13" fill="#a78bfa"/></g><g transform="translate(190,180)"><rect class="sim-sh a-Fp" x="-1.8" y="-120" width="3.6" height="120" fill="#fb923c"/><polygon class="sim-hd a-Fp" points="0,0 -7,13 7,13" fill="#fb923c"/></g><circle cx="63" cy="180" r="4" fill="currentColor"/><circle cx="190" cy="180" r="4" fill="currentColor"/><circle cx="317" cy="180" r="4" fill="currentColor"/><text x="76" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text><text x="203" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text><text x="330" y="172" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">G</text></svg><details class="tl-details tl-more"><summary>Chú giải các lực</summary><ul class="tl-sim__leg"><li><strong>Dây:</strong> <span class="lg lg-F">●</span> F lực từ</li><li><strong>Dây:</strong> <span class="lg lg-Q">●</span> Q lực giữ của giá, ngược F nên dây đứng yên</li><li><strong>Nam châm:</strong> <span class="lg lg-P">●</span> P trọng lực</li><li><strong>Nam châm:</strong> <span class="lg lg-Fp">●</span> F′ phản lực của F</li><li><strong>Nam châm:</strong> <span class="lg lg-N">●</span> N phản lực của cân (N = P + F′)</li><li><strong>Cân:</strong> <span class="lg lg-P">●</span> P trọng lực</li><li><strong>Cân:</strong> <span class="lg lg-N">●</span> N′ áp lực của nam châm, bằng N</li><li><strong>Cân:</strong> <span class="lg lg-B">●</span> phản lực của mặt bàn</li><li><strong>Dây:</strong> trọng lực rất nhỏ nên bỏ qua.</li></ul><p>G là trọng tâm của từng vật.</p><p>Dây: G ở tâm tiết diện.</p><p>Cân: G ở tâm bệ cân.</p><p>Nam châm chữ U: G nằm <em>trong khe</em>, trên gông.</p><p>Mũi tên F, F′ phóng to cho dễ thấy.</p><p>Các mũi tên còn lại không vẽ theo tỉ lệ.</p></details></div>
 <p>Thử:</p>
 <p>1. Tăng $I$ từng nấc: số cân và mũi tên đổi thế nào?</p>
 <p>2. Đảo chiều ở cùng $I$.</p>
@@ -807,29 +1247,34 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 
 <p><strong>🔑 TARE trước · Dây đứng riêng · Đóng mạch ngắn</strong></p>
 
+<details class="tl-details tl-more">
+<summary>🔧 Bấm xem dụng cụ và các bước đo</summary>
 <ul>
 <li><strong>Cân</strong> chia 0,01 g.</li>
 <li><strong>Nam châm chữ U</strong> đặt trên đĩa cân.</li>
-<li><strong>Khung dây</strong> treo trên giá riêng; chiều dài cạnh dưới $l$ đo bằng thước kẹp.</li>
+<li><strong>Khung dây</strong> treo trên giá riêng; $l$ là phần cạnh dưới nằm <strong>trong khe</strong> từ trường, đo bằng thước kẹp.</li>
 <li><strong>Nguồn một chiều</strong>, biến trở, ampe kế nối tiếp với khung.</li>
 </ul>
 
 <ol class="tl-steps">
 <li>Bấm TARE khi chưa có dòng, cân về 0,00 g.</li>
 <li>Đóng mạch, chỉnh biến trở tới $I = 1{,}0\ \text{A}$, đợi số cân ổn định rồi đọc $\Delta m$.</li>
-<li>Ngắt mạch, tăng $I$ lên từng nấc 1,0 A tới 5,0 A, lặp lại.</li>
+<li>Ngắt mạch, kiểm tra cân về 0,00 g; đóng lại ở nấc tiếp theo (2,0 A … 5,0 A), đọc $\Delta m$ rồi ngắt ngay.</li>
 </ol>
+</details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>⚠ Cân đo <strong>tổng</strong> lực lên mọi vật tựa trên bệ (cộng theo chiều).</p>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 2.</strong> Một nhóm lỡ để chân giá đỡ khung tựa lên chính bệ cân (cùng nam châm). Khi đóng mạch, số trên cân sẽ</p>
 <div class="tl-quiz">
 <input type="radio" name="tl12-q2" id="tl12-q2a"><label for="tl12-q2a" class="tl-opt tl-no">A. tăng gấp đôi, vì cân đo cả lực lên dây lẫn lên nam châm</label>
 <input type="radio" name="tl12-q2" id="tl12-q2b"><label for="tl12-q2b" class="tl-opt tl-no">B. báo lỗi quá tải vì có thêm giá đỡ</label>
 <input type="radio" name="tl12-q2" id="tl12-q2c"><label for="tl12-q2c" class="tl-opt tl-no">C. vẫn chỉ đúng $\Delta m$ như trước, giá đỡ không ảnh hưởng</label>
-<input type="radio" name="tl12-q2" id="tl12-q2d"><label for="tl12-q2d" class="tl-opt tl-ok">D. gần như không đổi, vì hai lực ngược chiều triệt tiêu trên cân</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lực lên dây truyền xuống giá rồi xuống cân; lực lên nam châm cũng đè lên cân. Hai lực <em>bằng nhau, ngược chiều</em> nên cân gần như không thấy gì. Muốn cân thấy phản lực thì dây phải được giữ bằng giá đứng <strong>ngoài</strong> cân.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Cân chỉ cảm nhận <em>tổng lực</em> lên cả hệ nằm trên bệ. Khi giá đỡ tựa lên cân, cặp lực – phản lực giữa dây và nam châm đều tác dụng lên hệ đó và cân nhau, nên không có phần dư để cân báo. Chọn lại nhé.</p></div>
+<input type="radio" name="tl12-q2" id="tl12-q2d"><label for="tl12-q2d" class="tl-opt tl-ok">D. gần như vẫn 0,00 g như lúc chưa đóng mạch, vì hai lực ngược chiều triệt tiêu trên cân</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lực từ lên dây (hướng lên, vì nam châm bị ép xuống) truyền qua giá và kéo bệ cân lên, còn phản lực ép nam châm xuống bệ. Hai lực <em>bằng nhau, ngược chiều</em> nên cân gần như vẫn chỉ 0,00 g. Muốn cân thấy phản lực thì dây phải được giữ bằng giá đứng <strong>ngoài</strong> cân.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Cân chỉ cảm nhận <em>tổng lực</em> lên cả hệ nằm trên bệ. Khi giá đỡ tựa lên cân, cặp lực – phản lực giữa dây và nam châm đều tác dụng lên hệ đó và cân nhau, nên không có phần dư để cân báo: lực thêm chỉ cỡ 1,45 g nên không thể tăng gấp đôi (A) hay quá tải (B), cũng không giữ nguyên $\Delta m$ (C). Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -837,57 +1282,103 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 
 <p><strong>🔑 Mỗi lần: B = Δm·g / (I·l) · Hoặc lấy độ dốc đồ thị</strong></p>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l12-thuchanhtu-01">
-<p class="tl-label">📊 Số liệu minh hoạ: cạnh khung $l = 4{,}0\ \text{cm}$, $g = 9{,}81\ \text{m/s}^2$</p>
-<div class="table-scroll"><table class="tl-table tl-table--data">
-<thead>
-<tr><th>$I$ (A)</th><th>$\Delta m$ (g)</th><th>$F = \Delta m\, g$ (mN)</th><th>$B$ (T)</th></tr>
-</thead>
-<tbody>
-<tr><td>1,0</td><td>0,50</td><td>4,91</td><td>0,123</td></tr>
-<tr><td>2,0</td><td>0,97</td><td>9,52</td><td>0,119</td></tr>
-<tr><td>3,0</td><td>1,45</td><td>14,22</td><td>0,119</td></tr>
-<tr><td>4,0</td><td>1,97</td><td>19,33</td><td>0,121</td></tr>
-<tr><td>5,0</td><td>2,44</td><td>23,94</td><td>0,120</td></tr>
-</tbody>
-</table></div>
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-thuchanhtu-01">
+<p class="tl-label">🧪 Thí nghiệm: lực từ có tỉ lệ với cường độ dòng điện?</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đo $\Delta m$ ở năm giá trị $I$, mỗi lần đóng mạch vài giây rồi ngắt.</li>
-<li><strong>Quan sát:</strong> $\Delta m$ tăng gần đều theo $I$; năm giá trị $B$ đều quanh <strong>0,12 T</strong>.</li>
-<li><strong>Rút ra:</strong> trung bình $B \approx 0{,}120\ \text{T}$. Đây là <em>số minh hoạ</em> tính từ mô hình, chưa phải số đo thật.</li>
+<li><strong>Giả thuyết cần kiểm:</strong> lực từ lên đoạn dây nằm trong khe tỉ lệ thuận với $I$ ($F = BIl$, $B$ của khe không đổi).</li>
+<li><strong>Dự đoán nếu đúng:</strong> $I$ gấp đôi thì độ thay đổi số chỉ cân $\Delta m$ cũng gấp đôi; tỉ số $\Delta m/I$ gần không đổi.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem dụng cụ và 3 bước</summary>
+<p>Bộ cân dòng điện ở mục II.2 (Hình 1): cạnh khung trong khe $l = 4{,}0\ \text{cm}$, cân chia 0,01 g, ampe kế nối tiếp khung.</p>
+<p><strong>Làm:</strong> (1) Khi $I = 0$, bấm TARE (hoặc ghi số chỉ ban đầu để trừ). (2) Đóng mạch ở $I = 1{,}0\ \text{A}$, đọc $\Delta m$ rồi ngắt, kiểm tra cân về số ban đầu. (3) Lặp lại ở 2,0 … 5,0 A; mỗi nấc đảo chiều dòng đọc thêm một lần, lấy trung bình độ lớn của hai số đọc.</p>
+</details>
+<strong>Coi rằng</strong> từ trường trong khe đều, hướng từ cực N sang cực S, đoạn dây vuông góc đường sức. <strong>Bỏ qua</strong> lực lên hai cạnh bên và từ trường Trái Đất.</li>
+<li><strong>Quan sát:</strong> ngắt mạch, cân về số ban đầu; đóng mạch, cân tăng $\Delta m$ từ 0,50 g (1,0 A) đến 2,44 g (5,0 A).</li>
+<li><strong>Rút ra:</strong> $\Delta m/I$ gần không đổi nên lực từ tỉ lệ thuận với $I$, đúng giả thuyết. Lực lên dây và lực lên nam châm là cặp lực – phản lực: dây bị đẩy lên thì nam châm bị đẩy xuống, cân chỉ tăng.</li>
+<li><strong>Chưa nói được gì:</strong> lực đổi thế nào khi dây lệch góc; chưa đổi chiều dài dây nên chưa biết $F$ có tỉ lệ với $l$ không.</li>
 </ol>
 </div>
 
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: số liệu và tự tính ô cuối</summary>
+<p>$l = 4{,}0\ \text{cm}$, $g = 9{,}81\ \text{m/s}^2$:</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>$I$ (A)</th><th>$\Delta m$ (g)</th><th>$B = \dfrac{\Delta m\, g}{Il}$ (T)</th><th>$\Delta m/I$ (g/A)</th></tr>
+</thead>
+<tbody>
+<tr><td>1,0</td><td>0,50</td><td>0,123</td><td>0,500</td></tr>
+<tr><td>2,0</td><td>0,97</td><td>0,119</td><td>0,485</td></tr>
+<tr><td>3,0</td><td>1,45</td><td>0,119</td><td>0,483</td></tr>
+<tr><td>4,0</td><td>1,97</td><td>0,121</td><td>0,493</td></tr>
+<tr><td>5,0</td><td>2,44</td><td>0,120</td><td>em tự tính</td></tr>
+</tbody>
+</table></div>
+<p>Em tự tính ô cuối rồi so với bốn hàng trên: tỉ số $\Delta m/I$ có gần không đổi không?</p>
+<p><small>Số liệu minh hoạ, không phải số đo thật: tính từ mô hình $\Delta m = \dfrac{BIl}{g}$ với $B = 0{,}12\ \text{T}$, $l = 0{,}040\ \text{m}$, cộng sai lệch ngẫu nhiên không quá 0,02 g.</small></p>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl12-q3-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl12-q3-conf" value="khong"> Không chắc</label></p>
+<p><strong>Câu 3.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl12-q3" id="tl12-q3a"><label for="tl12-q3a" class="tl-opt tl-no">A. Tăng $I$ thì $\Delta m$ tăng</label>
+<input type="radio" name="tl12-q3" id="tl12-q3b"><label for="tl12-q3b" class="tl-opt tl-no">B. Lực từ tỉ lệ thuận với $I$</label>
+<input type="radio" name="tl12-q3" id="tl12-q3c"><label for="tl12-q3c" class="tl-opt tl-ok">C. Lực từ lên dây hướng lên nên cân chỉ nhỏ hơn ban đầu</label>
+<input type="radio" name="tl12-q3" id="tl12-q3d"><label for="tl12-q3d" class="tl-opt tl-no">D. Chưa biết lực đổi thế nào khi dây lệch góc</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng, C sai.</strong> Đây là ý về <em>cơ chế</em>: lực từ lên dây và lực dây tác dụng lên nam châm là cặp lực – phản lực (định luật III Newton). Dây bị đẩy lên thì nam châm bị đẩy <em>xuống</em>, nên cân chỉ <strong>tăng</strong>; chỉ khi lực lên dây hướng xuống thì cân mới giảm. A là hiện tượng, B là kết luận, D là giới hạn của phép đo: cả ba đúng, đúng kiểu bốn ý a)–d) của một câu Phần II trong đề thi tốt nghiệp.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng đọc từ bảng; B là kết luận rút từ tỉ số gần không đổi; D là giới hạn: chỉ đo ở góc vuông nên chưa nói được gì về góc khác. Ý sai nằm ở <em>cơ chế</em>: cân đọc lực lên nam châm hay lực lên dây, và hai lực đó cùng chiều hay ngược chiều? Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<!--video:tn-l12-thuchanhtu-01-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thí nghiệm thật</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/PAx9B8AX49A?rel=0&start=20&end=110" title="đo cảm ứng từ bằng cân dòng điện" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> số cân đổi thế nào khi tăng dòng qua khung?</p>
+</div>
+
+
 <figure class="fig" data-tl="1" data-exp="tn-l12-thuchanhtu-01"><svg viewBox="0 0 380 272" role="img" aria-label="Đồ thị khối lượng tăng theo cường độ dòng điện: năm điểm đo nằm gần đường thẳng qua gốc toạ độ có độ dốc khoảng 0,489 gam trên ampe"><text x="60" y="26" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">Δm (g)</text><line x1="56" y1="184.0" x2="350" y2="184.0" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="189.0" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">0,5</text><line x1="56" y1="153" x2="350" y2="153" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="158" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">1</text><line x1="56" y1="122.0" x2="350" y2="122.0" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="127.0" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">1,5</text><line x1="56" y1="91" x2="350" y2="91" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="96" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">2</text><line x1="56" y1="60.0" x2="350" y2="60.0" stroke="currentColor" stroke-width="1" opacity="0.18"/><text x="48" y="65.0" fill="currentColor" font-size="14" font-weight="500" text-anchor="end">2,5</text><line x1="112" y1="215" x2="112" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="112" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">1</text><line x1="168" y1="215" x2="168" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="168" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">2</text><line x1="224" y1="215" x2="224" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="224" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">3</text><line x1="280" y1="215" x2="280" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="280" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">4</text><line x1="336" y1="215" x2="336" y2="221" stroke="currentColor" stroke-width="2" opacity="1"/><text x="336" y="239" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">5</text><line x1="56" y1="215" x2="352" y2="215" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="56" y1="215" x2="56" y2="36" stroke="currentColor" stroke-width="2.5" opacity="1"/><text x="352" y="259" fill="currentColor" font-size="14" font-weight="700" text-anchor="end">I (A)</text><line x1="56" y1="215" x2="341.59999999999997" y2="60.52192727272728" stroke="#34d399" stroke-width="2.6" opacity="1"/><circle cx="112" cy="184.0" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="168" cy="154.9" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="224" cy="125.1" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="280" cy="92.9" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><circle cx="336" cy="63.7" r="5.5" fill="#fb923c" stroke="currentColor" stroke-width="1.2"/><text x="78" y="92" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">độ dốc ≈ 0,489 g/A</text><text x="78" y="112" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">→ B ≈ 0,12 T</text></svg><figcaption>Hình 3. Δm tăng gần tỉ lệ với $I$: năm điểm đo (số liệu minh hoạ) nằm sát đường thẳng qua gốc toạ độ.<br>Độ dốc đường thẳng bằng $Bl/g$.</figcaption></figure>
 
-<p>Cách thứ hai: độ dốc đường thẳng $\Delta m$–$I$ bằng $\dfrac{Bl}{g}$, nên $B = \dfrac{\text{độ dốc} \times g}{l}$. Ở đây độ dốc $\approx 0{,}489\ \text{g/A}$ cho $B \approx 0{,}120\ \text{T}$ — khớp với cách tính từng lần.</p>
-
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl12-q3-conf" value="chac"> Chắc</label> <label><input type="radio" name="tl12-q3-conf" value="khong"> Không chắc</label></p>
-<p><strong>Câu 3.</strong> Một lần đo khác: cạnh khung $l = 4{,}0\ \text{cm}$, dòng $I = 2{,}5\ \text{A}$, cân tăng $\Delta m = 1{,}20\ \text{g}$. Cảm ứng từ là</p>
-<div class="tl-quiz">
-<input type="radio" name="tl12-q3" id="tl12-q3a"><label for="tl12-q3a" class="tl-opt tl-ok">A. $0{,}12\ \text{T}$</label>
-<input type="radio" name="tl12-q3" id="tl12-q3b"><label for="tl12-q3b" class="tl-opt tl-no">B. $0{,}012\ \text{T}$</label>
-<input type="radio" name="tl12-q3" id="tl12-q3c"><label for="tl12-q3c" class="tl-opt tl-no">C. $4{,}7 \times 10^{-3}\ \text{T}$</label>
-<input type="radio" name="tl12-q3" id="tl12-q3d"><label for="tl12-q3d" class="tl-opt tl-no">D. $1{,}2 \times 10^{2}\ \text{T}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = \Delta m\, g = 1{,}20 \times 10^{-3} \times 9{,}81 \approx 1{,}18 \times 10^{-2}\ \text{N}$; $B = \dfrac{F}{Il} = \dfrac{1{,}18 \times 10^{-2}}{2{,}5 \times 0{,}040} \approx 0{,}12\ \text{T}$.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Viết từng bước: $F = 1{,}20 \times 10^{-3} \times 9{,}81 = 1{,}18 \times 10^{-2}\ \text{N}$; $Il = 2{,}5 \times 0{,}040 = 0{,}10\ \text{A·m}$; $B = 0{,}118 \approx 0{,}12\ \text{T}$. Ra 0,012 là quên nhân $g$ (lấy 1,2 mà không đổi sang lực); ra $4{,}7 \times 10^{-3}$ là quên chia cho $l$; ra $1{,}2 \times 10^{2}$ là quên đổi gam sang kilôgam. Nếu đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất. Chọn lại nhé.</p></div>
-</div>
-</div>
+<p>Cách thứ hai: độ dốc đường thẳng $\Delta m$–$I$ bằng $\dfrac{Bl}{g}$, nên $B = \dfrac{\text{độ dốc} \times g}{l}$. Độ dốc (cách tính ở Thách đấu) cho $B \approx 0{,}120\ \text{T}$, khớp cách tính từng lần.</p>
 
 <h4>4. Sai số của phép đo</h4>
 
 <p><strong>🔑 Cộng sai số tương đối · Đo ở I lớn</strong></p>
 
+<div class="tl-fx">
+<p class="tl-fx-name">Sai số tương đối của $B$</p>
+<p>$$\dfrac{\Delta B}{B} \approx \dfrac{\Delta(\Delta m)}{\Delta m} + \dfrac{\Delta I}{I} + \dfrac{\Delta l}{l}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\Delta B$</span><span>sai số tuyệt đối của $B$ (T)</span></li>
+<li><span class="tl-sym">$\Delta(\Delta m)$</span><span>sai số tuyệt đối của số đọc cân (g)</span></li>
+<li><span class="tl-sym">$\Delta I$</span><span>sai số tuyệt đối của ampe kế (A)</span></li>
+<li><span class="tl-sym">$\Delta l$</span><span>sai số tuyệt đối của thước kẹp (mm)</span></li>
+<li><span class="tl-sym">$\Delta m,\ I,\ l$</span><span>giá trị đo tương ứng (cùng đơn vị với sai số của nó)</span></li>
+</ul>
+</div>
 <ul>
-<li>Sai số tương đối: $\dfrac{\Delta B}{B} \approx \dfrac{\Delta(\Delta m)}{\Delta m} + \dfrac{\Delta I}{I} + \dfrac{\Delta l}{l}$.</li>
-<li>Dụng cụ: cân $\pm 0{,}01\ \text{g}$, ampe kế $\pm 0{,}05\ \text{A}$, thước kẹp $\pm 0{,}5\ \text{mm}$.</li>
+<li>Dụng cụ: cân $\pm 0{,}01\ \text{g}$ (1 độ chia), ampe kế $\pm 0{,}05\ \text{A}$, thước kẹp $\pm 0{,}5\ \text{mm}$.</li>
+<li>Quên TARE khi cân lệch +0,02 g: $B$ <strong>lớn hơn</strong> thật. Giảm: đọc cân lúc $I = 0$ rồi trừ, hoặc đảo chiều dòng, lấy nửa hiệu hai số đọc.</li>
 <li>Ví dụ: ở $I = 3{,}0\ \text{A}$: $\dfrac{0{,}01}{1{,}45} + \dfrac{0{,}05}{3{,}0} + \dfrac{0{,}5}{40} \approx 0{,}7\% + 1{,}7\% + 1{,}25\% \approx 3{,}6\%$.</li>
 </ul>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<details class="tl-details tl-more">
+<summary>Ký hiệu $\Delta$ ở mục này nghĩa là gì?</summary>
+<ul>
+<li>$\Delta X$: sai số tuyệt đối của $X$, lấy từ dụng cụ.</li>
+<li>$\dfrac{\Delta X}{X}$: sai số tương đối.</li>
+<li>$\Delta m$: độ tăng số đọc của cân (đại lượng đo).</li>
+<li>$\Delta(\Delta m)$: sai số tuyệt đối của số đọc $\Delta m$.</li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 4.</strong> So hai lần đo: $I = 1{,}0\ \text{A}$ ($\Delta m = 0{,}50\ \text{g}$) và $I = 5{,}0\ \text{A}$ ($\Delta m = 2{,}44\ \text{g}$). Lần nào cho $B$ có sai số tương đối nhỏ hơn?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl12-q4" id="tl12-q4a"><label for="tl12-q4a" class="tl-opt tl-no">A. Lần 1,0 A, vì dòng nhỏ thì dây ít nóng hơn nhiều</label>
@@ -900,6 +1391,7 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 
 <h3>III. Hai cái bẫy của bài thực hành</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1. Tưởng cân đo lực lên dây</h4>
 
 <div class="table-scroll"><table class="tl-table">
@@ -912,47 +1404,50 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 <tr><td>Cân</td><td>Chỉ đo lực lên vật nằm trên đĩa</td></tr>
 </tbody>
 </table></div>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Khi đóng mạch, cân <em>tăng</em> thêm 1,45 g. Lực từ lên dây hướng</p>
 <div class="tl-quiz">
 <input type="radio" name="tl12-q5" id="tl12-q5a"><label for="tl12-q5a" class="tl-opt tl-no">A. xuống, vì cân tăng nghĩa là có lực ép xuống</label>
 <input type="radio" name="tl12-q5" id="tl12-q5b"><label for="tl12-q5b" class="tl-opt tl-no">B. nằm ngang, vì dây nằm ngang trong khe</label>
 <input type="radio" name="tl12-q5" id="tl12-q5c"><label for="tl12-q5c" class="tl-opt tl-ok">C. lên, vì phản lực lên nam châm hướng xuống</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cân tăng nghĩa là nam châm bị ép <em>xuống</em>; đó là phản lực nên lực lên dây ngược lại, hướng <em>lên</em>. Cặp lực – phản lực luôn ngược chiều.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Số đọc của cân cho biết lực lên <em>nam châm</em>, chứ không phải lực lên dây. Nam châm bị ép xuống, nên lực lên dây (phản lực của nó) phải ngược lại. Lực từ vuông góc với cả dây lẫn đường sức nên cũng không thể nằm ngang khi đường sức nằm ngang. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Số đọc của cân cho biết lực lên <em>nam châm</em>, chứ không phải lực lên dây. Nam châm bị ép xuống, nên lực lên dây (phản lực của nó) phải ngược lại. Lực từ có phương thẳng đứng (mục II.1) nên không thể nằm ngang. Chọn lại nhé.</p></div>
 </div>
 </div>
 
+<div class="tl-trap">
 <h4>Bẫy 2. Dây không vuông góc đường sức</h4>
 
 <p><strong>🔑 Lệch góc → F nhỏ đi · B tính ra nhỏ đi</strong></p>
 
-<figure class="fig" data-tl="1" data-exp="tn-l12-thuchanhtu-03"><svg viewBox="0 0 380 250" role="img" aria-label="Dây hợp với đường sức từ một góc 60 độ; lực từ hướng ra khỏi trang và có độ lớn B nhân I nhân l nhân sin theta"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="40" y1="150" x2="330" y2="150" stroke="#34d399" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M319.6,144.0 L330.0,150.0 L319.6,156.0" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="342" y="157" fill="#34d399" font-size="16" font-weight="700" text-anchor="start">B</text><line x1="120" y1="150" x2="195" y2="20" stroke="currentColor" stroke-width="4" opacity="1"/><circle cx="120" cy="150" r="5" fill="currentColor"/><text x="206" y="46" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">dây, dòng I</text><path d="M165,150 A45,45 0 0 0 142.5,111" fill="none" stroke="#fb923c" stroke-width="2.5"/><text x="176" y="134" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">θ = 60°</text><circle cx="64" cy="204" r="9" fill="none" stroke="#f87171" stroke-width="2"/><circle cx="64" cy="204" r="3" fill="#f87171"/><text x="82" y="209" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">lực từ F hướng ra khỏi trang</text><text x="40" y="238" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">F = B·I·l·sin θ</text></svg><figcaption>Hình 4. Dây hợp với đường sức góc $\theta$ (vẽ trong mặt phẳng chứa $\vec B$ và dây).<br>Lực từ vuông góc với mặt phẳng đó; độ lớn $F = BIl\sin\theta$.</figcaption></figure>
+<figure class="fig" data-tl="1" data-exp="tn-l12-thuchanhtu-03"><svg viewBox="0 0 380 250" role="img" aria-label="Dây hợp với đường sức từ một góc 60 độ; lực từ hướng ra khỏi trang và có độ lớn B nhân I nhân l nhân sin theta"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="40" y1="150" x2="330" y2="150" stroke="#34d399" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M319.6,144.0 L330.0,150.0 L319.6,156.0" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="342" y="157" fill="#34d399" font-size="16" font-weight="700" text-anchor="start">B</text><line x1="120" y1="150" x2="195" y2="20" stroke="currentColor" stroke-width="4" opacity="1"/><circle cx="120" cy="150" r="5" fill="currentColor"/><text x="206" y="46" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">dây dẫn</text><line x1="157" y1="41" x2="120" y2="106" stroke="#fb923c" stroke-width="2.8"/><path d="M129.9,100.2 L120.0,106.0 L119.9,94.5" fill="none" stroke="#fb923c" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="112" y="76" fill="#fb923c" font-size="16" font-weight="700" text-anchor="end">I</text><path d="M165,150 A45,45 0 0 0 142.5,111" fill="none" stroke="#fb923c" stroke-width="2.5"/><text x="176" y="134" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">θ = 60°</text><circle cx="64" cy="204" r="9" fill="none" stroke="#f87171" stroke-width="2"/><circle cx="64" cy="204" r="3" fill="#f87171"/><text x="82" y="209" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">lực từ F hướng ra khỏi trang</text><text x="40" y="238" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">F = B·I·l·sin θ</text></svg><figcaption>Hình 4. Dây hợp với đường sức góc $\theta$ (vẽ trong mặt phẳng chứa $\vec B$ và dây).<br>Lực từ vuông góc với mặt phẳng đó; độ lớn $F = BIl\sin\theta$.</figcaption></figure>
 
-<p>Khi dây hợp với đường sức góc $\theta$: $F = BIl\sin\theta$. Công thức $F = BIl$ chỉ đúng khi $\theta = 90^\circ$.</p>
+<p>Khi dây hợp với đường sức góc $\theta$: $F = BIl\sin\theta$ — dùng $\sin\theta$, không dùng $\cos\theta$. Công thức $F = BIl$ chỉ đúng khi $\theta = 90^\circ$.</p>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 6.</strong> Do giá đỡ lệch, dây hợp với đường sức góc $60^\circ$ thay vì $90^\circ$, nhưng nhóm vẫn dùng $B = \dfrac{\Delta m\, g}{Il}$. Giá trị $B$ tính ra so với thật là</p>
 <div class="tl-quiz">
 <input type="radio" name="tl12-q6" id="tl12-q6a"><label for="tl12-q6a" class="tl-opt tl-no">A. lớn hơn khoảng 13%</label>
 <input type="radio" name="tl12-q6" id="tl12-q6b"><label for="tl12-q6b" class="tl-opt tl-no">B. nhỏ hơn khoảng 50%</label>
 <input type="radio" name="tl12-q6" id="tl12-q6c"><label for="tl12-q6c" class="tl-opt tl-no">C. không đổi, vì $B$ là đặc trưng của nam châm</label>
-<input type="radio" name="tl12-q6" id="tl12-q6d"><label for="tl12-q6d" class="tl-opt tl-ok">D. nhỏ hơn khoảng 13%, vì lực chỉ bằng $\sin 60^\circ \approx 0{,}87$ lần lực thật</label>
+<input type="radio" name="tl12-q6" id="tl12-q6d"><label for="tl12-q6d" class="tl-opt tl-ok">D. nhỏ hơn khoảng 13%, vì lực chỉ bằng $\sin 60^\circ \approx 0{,}87$ lần lực khi dây vuông góc</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lực đo được chỉ là $\sin 60^\circ \approx 0{,}87$ của $BIl$, nên $B$ tính theo công thức vuông góc ra nhỏ hơn thật khoảng 13%. Muốn tránh, kiểm tra dây thật vuông góc với đường sức trước khi đo.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $B$ của nam châm không đổi, nhưng <em>lực</em> mà cân đọc được đã nhỏ đi. Vì ta lấy lực nhỏ đó chia cho $Il$ như thể dây vuông góc, nên kết quả bị kéo xuống theo hệ số $\sin 60^\circ \approx 0{,}87$, tức nhỏ hơn thật khoảng 13%. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $B$ của nam châm không đổi, nhưng <em>lực</em> mà cân đọc được đã nhỏ đi. Vì ta lấy lực nhỏ đó chia cho $Il$ như thể dây vuông góc, nên kết quả bị kéo xuống theo hệ số $\sin 60^\circ \approx 0{,}87$, tức nhỏ hơn thật khoảng 13% — "lớn hơn 13%" (A) là ngược chiều, còn "nhỏ hơn 50%" (B) là lấy $\cos 60^\circ = 0{,}5$, nhầm $\cos$ sang $\sin$. Chọn lại nhé.</p></div>
 </div>
 </div>
 
 <h3>IV. Trả bài</h3>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài — nói bằng lời của em trước, rồi mới bấm xem</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài — nói bằng lời của em trước, rồi mới bấm xem</p>
 
-<details class="tl-details">
-<summary>1. Cân đang đo lực nào và vì sao dây không đặt trên cân? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>1. Cân đang đo lực nào và vì sao dây không đặt trên cân?</summary>
 <p><strong>Từ khoá:</strong></p>
 <ul>
 <li>cân đo lực lên <em>nam châm</em></li>
@@ -961,8 +1456,8 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 </ul>
 </details>
 
-<details class="tl-details">
-<summary>2. Viết công thức tính $B$ từ số đo và đơn vị từng đại lượng. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>2. Viết công thức tính $B$ từ số đo và đơn vị từng đại lượng.</summary>
 <p><strong>Từ khoá:</strong></p>
 <ul>
 <li>$B = \dfrac{\Delta m\, g}{Il}$</li>
@@ -973,8 +1468,8 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 </ul>
 </details>
 
-<details class="tl-details">
-<summary>3. Đảo chiều dòng điện thì số cân đổi thế nào, và vì sao? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>3. Đảo chiều dòng điện thì số cân đổi thế nào, và vì sao?</summary>
 <p><strong>Từ khoá:</strong></p>
 <ul>
 <li>đổi dấu</li>
@@ -984,8 +1479,8 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 </ul>
 </details>
 
-<details class="tl-details">
-<summary>4. Tìm $B$ bằng đồ thị như thế nào và vì sao nên đo ở dòng lớn? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>4. Tìm $B$ bằng đồ thị như thế nào và vì sao nên đo ở dòng lớn?</summary>
 <p><strong>Từ khoá:</strong></p>
 <ul>
 <li>đường thẳng qua gốc</li>
@@ -995,8 +1490,8 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 </ul>
 </details>
 
-<details class="tl-details">
-<summary>5. Kể hai lỗi làm sai kết quả và cách tránh. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>5. Kể hai lỗi làm sai kết quả và cách tránh.</summary>
 <p><strong>Từ khoá:</strong></p>
 <ul>
 <li>giá đỡ tựa lên cân → hai lực triệt tiêu → đặt giá riêng</li>
@@ -1007,7 +1502,7 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 
 <h3>V. Bài toán mẫu: tính $B$ và sai số</h3>
 
-<div class="tl-box tl-box--rule">
+<div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📄 Đề bài</p>
 <p>Một nhóm dùng cân dòng điện: cạnh khung dài $l = 5{,}0\ \text{cm}$. Khi dòng $I = 4{,}0\ \text{A}$ chạy qua, cân tăng <strong>2,45 g</strong>. Cân chia $0{,}01\ \text{g}$, ampe kế $\pm 0{,}05\ \text{A}$, thước kẹp $\pm 0{,}5\ \text{mm}$.</p>
 <p>a) Tính lực từ và cảm ứng từ $B$.</p>
@@ -1027,7 +1522,7 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 </tbody>
 </table></div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem lời giải từng bước</summary>
 <ol class="tl-steps">
 <li><strong>Lực từ:</strong> $F = \Delta m\, g = 2{,}45 \times 10^{-3} \times 9{,}81 \approx 2{,}40 \times 10^{-2}\ \text{N}$.</li>
@@ -1039,13 +1534,13 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p><strong>✍️ Điền bước còn thiếu.</strong> Lần đo khác: $l = 6{,}0\ \text{cm}$, $I = 3{,}0\ \text{A}$, cân tăng $1{,}80\ \text{g}$.</p>
+<div class="tl-box tl-box--think tl-note">
+<p><strong>✍️ Điền bước còn thiếu.</strong> Lần đo khác, với một nam châm khác: $l = 6{,}0\ \text{cm}$, $I = 3{,}0\ \text{A}$, cân tăng $1{,}80\ \text{g}$.</p>
 <ol class="tl-steps">
 <li><strong>Bước 1 (em điền):</strong> $F = \;?$ — gợi ý: $F = \Delta m\, g$ với $\Delta m$ tính bằng kg.</li>
 <li><strong>Bước 2 (em điền):</strong> $B = \;?$ — gợi ý: chia $F$ cho $Il$ với $l$ tính bằng mét.</li>
 </ol>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Xem đáp án hai bước</summary>
 <p><strong>Bước 1:</strong> $F = 1{,}80 \times 10^{-3} \times 9{,}81 \approx 1{,}77 \times 10^{-2}\ \text{N}$.<br>
 <strong>Bước 2:</strong> $B = \dfrac{1{,}77 \times 10^{-2}}{3{,}0 \times 0{,}060} \approx 0{,}098\ \text{T}$.</p>
@@ -1054,12 +1549,12 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 
 <h4>Thử sức: tăng độ nhạy</h4>
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p>Thay khung một vòng bằng cuộn <strong>20 vòng</strong> cùng cạnh dưới $l = 4{,}0\ \text{cm}$, dòng chỉ $I = 0{,}50\ \text{A}$, $B = 0{,}12\ \text{T}$. Cân sẽ tăng bao nhiêu gam?</p>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem lời giải biến thể</summary>
 <ol class="tl-steps">
-<li>Mỗi vòng có một cạnh nằm trong khe nên lực gấp $N$ lần: $F = NBIl = 20 \times 0{,}12 \times 0{,}50 \times 0{,}040 = 0{,}048\ \text{N}$.</li>
+<li>Mỗi vòng có một cạnh nằm trong khe nên lực gấp $N = 20$ lần ($N$ là số vòng dây): $F = NBIl = 20 \times 0{,}12 \times 0{,}50 \times 0{,}040 = 0{,}048\ \text{N}$.</li>
 <li>$\Delta m = \dfrac{F}{g} = \dfrac{0{,}048}{9{,}81} \approx 4{,}9 \times 10^{-3}\ \text{kg} = 4{,}9\ \text{g}$.</li>
 <li><strong>Kiểm tra:</strong> dòng nhỏ 0,5 A mà cân vẫn tăng gần 5 g — nên cuộn nhiều vòng vừa đo dễ hơn vừa ít nóng dây.</li>
 </ol>
@@ -1070,7 +1565,7 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 
 <h4>Thử thách và tổng kết</h4>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⚖️ Bấm xem: ba nơi dùng ý tưởng "cân lực từ"</summary>
 <ul>
 <li><strong>Loa:</strong> cuộn dây đặt trong từ trường chịu lực $F = BIl$ thay đổi theo dòng âm thanh nên kéo màng loa rung.</li>
@@ -1079,21 +1574,21 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 </ul>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🏅 Thử thách ⭐ ⭐⭐ ⭐⭐⭐ — bấm xem đề và lời giải</summary>
 <p><strong>⭐ Cơ bản.</strong> $l = 4{,}0\ \text{cm}$, $I = 3{,}0\ \text{A}$, $\Delta m = 1{,}45\ \text{g}$. Tính $B$.</p>
 <p>$B = \dfrac{1{,}45 \times 10^{-3} \times 9{,}81}{3{,}0 \times 0{,}040} \approx 0{,}119\ \text{T}$.</p>
 <p><strong>⭐⭐ Khá.</strong> Với $B = 0{,}12\ \text{T}$, $l = 4{,}0\ \text{cm}$, muốn cân tăng ít nhất $1{,}00\ \text{g}$ thì dòng tối thiểu bằng bao nhiêu?</p>
 <p>$I = \dfrac{\Delta m\, g}{Bl} = \dfrac{1{,}00 \times 10^{-3} \times 9{,}81}{0{,}12 \times 0{,}040} \approx 2{,}0\ \text{A}$.<br>
 <b>Bẫy:</b> quên đổi gam sang kilôgam sẽ ra 2 000 A.</p>
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p><strong>✍️ Em tự làm trước:</strong> cùng nam châm, muốn cân tăng $3{,}00\ \text{g}$ thì cần dòng bao nhiêu?</p>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Xem đáp án</summary>
 <p>$I = \dfrac{3{,}00 \times 10^{-3} \times 9{,}81}{0{,}12 \times 0{,}040} \approx 6{,}1\ \text{A}$ — gấp 3 lần ở trên vì $\Delta m \propto I$.</p>
 </details>
 </div>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐⭐⭐ Thách đấu: tìm $B$ bằng độ dốc</summary>
 <p><strong>⭐⭐⭐ Thách đấu.</strong> Dùng năm cặp $(I,\ \Delta m)$ ở mục II.3, với đường thẳng qua gốc toạ độ: độ dốc $k = \dfrac{\sum I\,\Delta m}{\sum I^2}$. Tính $B$.</p>
 <p>$\sum I\,\Delta m = 0{,}50 + 1{,}94 + 4{,}35 + 7{,}88 + 12{,}20 = 26{,}87\ \text{g·A}$; $\sum I^2 = 55\ \text{A}^2$ → $k \approx 0{,}489\ \text{g/A}$.<br>
@@ -1102,8 +1597,8 @@ $B = \dfrac{k\, g}{l} = \dfrac{0{,}489 \times 10^{-3} \times 9{,}81}{0{,}040} \a
 </details>
 </details>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Cân đo phản lực</strong> lên nam châm: $F = \Delta m\, g$.</li>
 <li><strong>Công thức:</strong> $B = \dfrac{\Delta m\, g}{Il}$.</li>
@@ -1117,8 +1612,8 @@ $B = \dfrac{k\, g}{l} = \dfrac{0{,}489 \times 10^{-3} \times 9{,}81}{0{,}040} \a
 </ul>
 </div>
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

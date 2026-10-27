@@ -1,6 +1,6 @@
 <!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/update-l12-dong-hoc-phan-tu-0f2485/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.css">
 <style>
 :root{color-scheme:light}
 body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -193,6 +193,11 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   1.05rem (không 1.1rem): đo 375px, mẹo 4–5 chữ có dấu " – " mới nằm một dòng. Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo, .lesson-body .lesson-prose p.tl-meo { margin: 0 0 2px; font-size: 1.05rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
 /* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
    Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
 .exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
@@ -1110,7 +1115,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Thuyết động học phân tử chất khí</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Trả bài</p>
@@ -1123,7 +1128,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <details class="tl-details tl-more">
 <summary>2. Ba nội dung của thuyết động học phân tử chất khí?</summary>
-<p><strong>NHỎ – LOẠN – ĐẬP.</strong> NHỎ: phân tử rất nhỏ so với khoảng cách giữa chúng (nên lực liên kết rất yếu). LOẠN: chuyển động hỗn loạn không ngừng, nóng thì nhanh. ĐẬP: va vào thành bình, gây áp suất khí.</p>
+<p><strong>Nhỏ – Loạn – Đập.</strong> Nhỏ: phân tử rất nhỏ so với khoảng cách giữa chúng (nên lực liên kết rất yếu). Loạn: chuyển động hỗn loạn không ngừng, nóng thì nhanh. Đập: va vào thành bình, gây áp suất khí.</p>
 </details>
 
 <details class="tl-details tl-more">
@@ -1138,7 +1143,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <details class="tl-details tl-more">
 <summary>5. Mô hình khí lí tưởng gồm gì? Khi nào dùng được?</summary>
-<p><strong>Bỏ kích thước · Bỏ lực tương tác · Thẳng đều giữa hai va chạm · Va chạm hoàn toàn đàn hồi.</strong> Dùng được cho khí loãng ở nhiệt độ và áp suất bình thường, khi khoảng cách giữa các phân tử còn lớn. Nén mạnh hoặc làm lạnh sâu thì mô hình sai rõ.</p>
+<p><strong>Chấm – Không Lực – Thẳng – Nảy.</strong> Chấm: bỏ kích thước, coi phân tử là chất điểm. Không lực: bỏ lực tương tác khi chưa va chạm. Thẳng: giữa hai va chạm đi thẳng đều. Nảy: va chạm hoàn toàn đàn hồi. Dùng được cho khí loãng ở nhiệt độ và áp suất bình thường, khi khoảng cách giữa các phân tử còn lớn. Nén mạnh hoặc làm lạnh sâu thì mô hình sai rõ.</p>
 </details>
 
 <details class="tl-details tl-more">
@@ -1148,8 +1153,8 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </div>
 
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/update-l12-dong-hoc-phan-tu-0f2485/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/update-l12-dong-hoc-phan-tu-0f2485/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

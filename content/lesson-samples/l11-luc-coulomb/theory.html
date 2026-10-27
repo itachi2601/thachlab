@@ -26,10 +26,11 @@
 <h3>II. Kiến thức: điện tích và lực giữa chúng</h3>
 
 <h4>1. Nhiễm điện và thuyết electron</h4>
+<p class="tl-claim">Thừa electron thì âm, thiếu electron thì dương.</p>
 <p><strong>🔑 Thừa electron: âm · Thiếu electron: dương · $|q| = n|e|$</strong></p>
 <ul>
 <li><strong>Vật nhiễm điện:</strong> hút, đẩy vật khác hoặc phóng tia lửa điện.</li>
-<li><strong>Thuyết electron:</strong> nguyên tử bình thường trung hoà; electron nhẹ, linh động, dễ rời nguyên tử.</li>
+<li><strong>Thuyết electron:</strong> nguyên tử bình thường <span class="tl-term"><input type="checkbox" id="tl35-t1"><label for="tl35-t1">trung hoà</label><span class="tl-def">có tổng điện tích bằng 0, không nhiễm điện.</span></span>; electron nhẹ, linh động, dễ rời nguyên tử.</li>
 <li>Điện tích luôn là bội của $|e| = 1{,}6\cdot10^{-19}$ C.</li>
 </ul>
 <div class="table-scroll"><table class="tl-table">
@@ -84,12 +85,18 @@
 </div>
 
 <h4>2. Định luật Coulomb</h4>
+<p class="tl-claim">Lực tỉ lệ thuận với tích điện tích, nghịch với r².</p>
 <p><strong>🔑 Phương nối hai điện tích · Tỉ lệ tích $|q_1q_2|$ · Nghịch bình phương $r$</strong></p>
 <ul>
 <li><strong>Điện tích điểm:</strong> vật tích điện rất nhỏ so với khoảng cách đang xét. Lực hút, đẩy giữa các điện tích đứng yên gọi là <strong>lực tĩnh điện</strong> (lực Coulomb).</li>
 <li>Cùng dấu thì <strong>đẩy</strong>, trái dấu thì <strong>hút</strong>.</li>
 </ul>
 <p>Lực hút hay đẩy giữa hai điện tích điểm trong chân không có phương trùng đường thẳng nối hai điện tích, độ lớn tỉ lệ thuận với tích độ lớn hai điện tích, tỉ lệ nghịch với bình phương khoảng cách.</p>
+<div class="tl-nums">
+<details class="tl-num"><summary>Hằng số Coulomb $k$</summary><p>$9\cdot10^9\ \text{N·m}^2/\text{C}^2$</p></details>
+<details class="tl-num"><summary>Điện tích nguyên tố $|e|$</summary><p>$1{,}6\cdot10^{-19}\ \text{C}$</p></details>
+<details class="tl-num"><summary>Hằng số điện môi của chân không</summary><p>$\varepsilon = 1$</p></details>
+</div>
 <div class="tl-fx">
 <p class="tl-fx-name">Định luật Coulomb</p>
 <p>$$F = k\dfrac{|q_1q_2|}{\varepsilon r^2}$$</p>
@@ -104,12 +111,12 @@
 </div>
 <ul>
 <li><strong>Vectơ lực:</strong> đặt tại mỗi điện tích · phương nối hai điện tích · chiều đẩy nếu $q_1q_2 \gt 0$, hút nếu $q_1q_2 \lt 0$.</li>
-<li>Chân không ($\varepsilon = 1$), không khí ($\varepsilon \approx 1$): bỏ $\varepsilon$, còn $F = k\dfrac{|q_1q_2|}{r^2}$.</li>
-<li>Trong điện môi (môi trường cách điện như dầu, thuỷ tinh, nước nguyên chất) lực <strong>giảm $\varepsilon$ lần</strong>.</li>
+<li>Chân không ($\varepsilon = 1$), không khí ($\varepsilon \approx 1$<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>): bỏ $\varepsilon$, còn $F = k\dfrac{|q_1q_2|}{r^2}$.</li>
+<li>Trong <span class="tl-term"><input type="checkbox" id="tl35-t2"><label for="tl35-t2">điện môi</label><span class="tl-def">chất cách điện, đặt giữa hai điện tích thì làm lực giảm.</span></span> (như dầu, thuỷ tinh, nước nguyên chất) lực <strong>giảm $\varepsilon$ lần</strong>.</li>
 <li>Chỉ đúng cho điện tích điểm, hoặc quả cầu tích điện đều (coi điện tích đặt ở tâm).</li>
 <li>Ví dụ: $r$ tăng 2 lần, $|q_1|$ giảm 2 lần thì $F$ giảm $2\times2^2 = 8$ lần.</li>
 </ul>
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 222" role="img" aria-label="Hai điện tích cùng dấu đẩy nhau, trái dấu hút nhau; hai lực cùng độ lớn, ngược chiều, nằm trên đường nối"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="12" y="22" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">Cùng dấu: đẩy nhau</text><line x1="150.0" y1="55.0" x2="290.0" y2="55.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/><line x1="136" y1="55" x2="86" y2="55" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r)"/><line x1="304" y1="55" x2="354" y2="55" stroke="#38bdf8" stroke-width="3" marker-end="url(#f1-b)"/><circle cx="150" cy="55" r="14" fill="rgba(248,113,113,.18)" stroke="currentColor" stroke-width="2"/><text x="150" y="61" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">+</text><circle cx="290" cy="55" r="14" fill="rgba(248,113,113,.18)" stroke="currentColor" stroke-width="2"/><text x="290" y="61" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">+</text><text x="111" y="39" fill="#f87171" font-size="13" font-weight="700" text-anchor="middle">F<tspan baseline-shift="sub" font-size="11">21</tspan></text><text x="329" y="39" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">F<tspan baseline-shift="sub" font-size="11">12</tspan></text><text x="150" y="87" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">q<tspan baseline-shift="sub" font-size="11">1</tspan></text><text x="290" y="87" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">q<tspan baseline-shift="sub" font-size="11">2</tspan></text><text x="12" y="117" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">Trái dấu: hút nhau</text><line x1="150.0" y1="150.0" x2="290.0" y2="150.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5"/><line x1="164" y1="150" x2="214" y2="150" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r)"/><line x1="276" y1="150" x2="226" y2="150" stroke="#38bdf8" stroke-width="3" marker-end="url(#f1-b)"/><circle cx="150" cy="150" r="14" fill="rgba(248,113,113,.18)" stroke="currentColor" stroke-width="2"/><text x="150" y="156" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">+</text><circle cx="290" cy="150" r="14" fill="rgba(56,189,248,.18)" stroke="currentColor" stroke-width="2"/><text x="290" y="156" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle">−</text><text x="186" y="134" fill="#f87171" font-size="13" font-weight="700" text-anchor="middle">F<tspan baseline-shift="sub" font-size="11">21</tspan></text><text x="254" y="134" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">F<tspan baseline-shift="sub" font-size="11">12</tspan></text><text x="150" y="182" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">q<tspan baseline-shift="sub" font-size="11">1</tspan></text><text x="290" y="182" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">q<tspan baseline-shift="sub" font-size="11">2</tspan></text><line x1="150.0" y1="196.0" x2="290.0" y2="196.0" stroke="currentColor" stroke-width="1.2" opacity="1"/><line x1="150.0" y1="190.0" x2="150.0" y2="202.0" stroke="currentColor" stroke-width="1.2" opacity="1"/><line x1="290.0" y1="190.0" x2="290.0" y2="202.0" stroke="currentColor" stroke-width="1.2" opacity="1"/><text x="220" y="214" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">r</text></svg><figcaption>Hình 1. F<sub>12</sub>: lực q<sub>1</sub> tác dụng lên q<sub>2</sub>; F<sub>21</sub>: lực q<sub>2</sub> tác dụng lên q<sub>1</sub>. Hai lực dài bằng nhau, ngược chiều, nằm trên đường nối hai điện tích.</figcaption></figure>
+<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-luc-coulomb/hinh-luc-hai-dien-tich.webp" alt="Hai cặp điện tích điểm: (a) hai điện tích cùng dấu, hai lực đẩy ra xa nhau; (b) hai điện tích trái dấu, hai lực hút lại gần nhau" loading="lazy" width="1000" height="196" style="max-width:100%;height:auto"><figcaption>Hình 1. (a) Cùng dấu: đẩy nhau. (b) Trái dấu: hút nhau.<br>F<sub>12</sub>: lực q<sub>1</sub> tác dụng lên q<sub>2</sub>; F<sub>21</sub>: ngược lại. Hai lực bằng nhau, ngược chiều.<br><small>Hình: OpenStax, College Physics 2e, Hình 18.17 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>
 
 <h4>3. Số liệu minh hoạ: lực giảm theo $r^2$</h4>
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-coulomb-02">
@@ -270,18 +277,18 @@
 
 <h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 <div class="tl-box tl-box--think tl-check">
-<p class="tl-label">Trả bài (tự đọc to, rồi bấm xem)</p>
-<details class="tl-details tl-more"><summary>1. Ba cách nhiễm điện, mỗi cách cho kết quả gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p class="tl-label">Trả bài</p>
+<details class="tl-details tl-more"><summary>1. Ba cách nhiễm điện, mỗi cách cho kết quả gì?</summary>
 <p>Cọ xát: trái dấu · Tiếp xúc: cùng dấu · Hưởng ứng: hai đầu trái dấu, electron chỉ dời chỗ.</p></details>
-<details class="tl-details tl-more"><summary>2. Vật nhiễm điện âm, dương theo thuyết electron? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>2. Vật nhiễm điện âm, dương theo thuyết electron?</summary>
 <p>Âm: thừa electron · Dương: thiếu electron · $|q| = n|e|$, $|e| = 1{,}6\cdot10^{-19}$ C.</p></details>
-<details class="tl-details tl-more"><summary>3. Phát biểu định luật bảo toàn điện tích; quả cầu giống nhau chạm rồi tách? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>3. Phát biểu định luật bảo toàn điện tích; quả cầu giống nhau chạm rồi tách?</summary>
 <p>Hệ cô lập: tổng đại số không đổi · Chia đều: $q' = \dfrac{q_1 + q_2 + \dots}{n}$, cộng có dấu.</p></details>
-<details class="tl-details tl-more"><summary>4. Phát biểu định luật Coulomb, viết công thức và đơn vị? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>4. Phát biểu định luật Coulomb, viết công thức và đơn vị?</summary>
 <p>Phương nối hai điện tích · tỉ lệ $|q_1q_2|$ · nghịch $r^2$ · $F = k\dfrac{|q_1q_2|}{\varepsilon r^2}$, $k = 9\cdot10^9$ N·m²/C², SI.</p></details>
-<details class="tl-details tl-more"><summary>5. Hai lực vuông góc, hai lực bằng nhau góc $\alpha$: hợp lực? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>5. Hai lực vuông góc, hai lực bằng nhau góc $\alpha$: hợp lực?</summary>
 <p>$F = \sqrt{F_1^2 + F_2^2}$ · $F = 2F_1\cos\dfrac{\alpha}{2}$.</p></details>
-<details class="tl-details tl-more"><summary>6. Đặt $q_0$ ở đâu để cân bằng giữa $q_1$, $q_2$? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>6. Đặt $q_0$ ở đâu để cân bằng giữa $q_1$, $q_2$?</summary>
 <p>Trên đường AB · gần điện tích nhỏ · cùng dấu: giữa · trái dấu: ngoài · $\dfrac{r_1}{r_2} = \sqrt{\dfrac{|q_1|}{|q_2|}}$.</p></details>
 </div>
 
@@ -372,3 +379,6 @@
 <li><strong>Cân bằng:</strong> hợp lực bằng 0 · cùng phương, ngược chiều, bằng độ lớn.</li>
 </ul>
 </div>
+<ol class="tl-fns">
+<li id="tl-fn-1">Không khí khô ở điều kiện thường có $\varepsilon \approx 1{,}0006$, nên coi bằng 1.</li>
+</ol>

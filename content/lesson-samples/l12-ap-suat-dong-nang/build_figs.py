@@ -45,22 +45,23 @@ def wrap(vb, label, body, cap, exp=""):
 
 # ------------------------------------------------- Hình 1: bóng bàn bẹp gặp nước nóng
 b = defs("f1")
-b += text(20, 22, "a) Khí nguội", "currentColor", 12, "start", "700")
+b += text(20, 22, "a) Khí nguội", "currentColor", 14, "start", "700")
 b += f'<circle cx="105" cy="105" r="42" fill="rgba(148,163,184,.10)" stroke="currentColor" stroke-width="2.5"/>'
 b += f'<path d="M132,77 A38,38 0 0 0 132,131" fill="none" stroke="{ORG}" stroke-width="2" stroke-dasharray="5 4"/>'
-b += text(140, 66, "vỏ bẹp", ORG, 11, "start", "700")
+b += text(140, 66, "vỏ bẹp", ORG, 14, "start", "700")
 b += dot(80, 95, 4, BLUE) + arrow("f1", "b", 86, 95, 106, 95, 2.4)
 b += dot(100, 125, 4, BLUE) + arrow("f1", "b", 106, 125, 122, 116, 2.4)
-b += text(105, 184, "va chạm thưa, nhẹ", BLUE, 11, "middle", "600")
-b += text(228, 22, "b) Gặp nước nóng", "currentColor", 12, "start", "700")
+b += text(105, 188, "va chạm thưa, nhẹ", BLUE, 14, "middle", "600")
+b += text(228, 22, "b) Gặp nước nóng", "currentColor", 14, "start", "700")
 b += f'<path d="M250,58 L258,172 L372,172 L380,58" fill="none" stroke="currentColor" stroke-width="2.5"/>'
 b += line(256, 92, 374, 92, BLUE, 1.6, "6 5", .75)
 b += f'<circle cx="315" cy="118" r="40" fill="rgba(56,189,248,.14)" stroke="{BLUE}" stroke-width="2.2"/>'
-b += dot(288, 104, 4, BLUE) + arrow("f1", "b", 294, 104, 320, 104, 2.4)
-b += dot(302, 138, 4, BLUE) + arrow("f1", "b", 308, 138, 334, 124, 2.4)
-b += dot(342, 138, 4, BLUE) + arrow("f1", "b", 338, 134, 320, 120, 2.4)
-b += text(315, 184, "va chạm dày, mạnh", BLUE, 11, "middle", "600")
-fig1 = wrap("0 0 420 200",
+# mũi tên dài gấp đôi hình a (v lớn hơn), ba mũi tên không chạm nhau
+b += dot(282, 100, 4, BLUE) + arrow("f1", "b", 288, 100, 324, 100, 2.4)
+b += dot(290, 140, 4, BLUE) + arrow("f1", "b", 296, 138, 328, 126, 2.4)
+b += dot(340, 142, 4, BLUE) + arrow("f1", "b", 334, 144, 304, 152, 2.4)
+b += text(315, 188, "bay nhanh, va chạm dày", BLUE, 14, "middle", "600")
+fig1 = wrap("0 0 420 204",
             "Hai trạng thái của quả bóng bàn: khí nguội thì phân tử đập thưa và nhẹ, khí nóng thì phân tử đập dày và mạnh nên đẩy vỏ bóng phồng ra",
             b, "Hình 1. Khí nguội: phân tử đập thưa nên vỏ bẹp. Khí nóng: phân tử bay nhanh hơn, đập dày và mạnh hơn nên đẩy vỏ phồng lại.",
             exp="tn-l12-apsuatdongnang-03")
@@ -137,9 +138,18 @@ fig4 = wrap("0 0 420 244",
             "Đồ thị động năng tịnh tiến trung bình theo nhiệt độ tuyệt đối là đường thẳng qua gốc toạ độ, dùng chung cho mọi chất khí",
             b, "Hình 4. Động năng trung bình tỉ lệ thuận với nhiệt độ tuyệt đối: đường thẳng qua gốc, dùng chung cho mọi chất khí.")
 
+
+# ------------------------------------------------- Hình 5: ảnh OpenStax Hình 13.25 (đợt 2, 27/10/2026)
+fig5 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-ap-suat-dong-nang/hinh-phan-bo-toc-do-hai-nhiet-do.webp" '
+        'alt="Hai đường cong phân bố tốc độ phân tử khí: ở nhiệt độ cao T2 đỉnh dịch sang phải, thấp hơn và rộng hơn so với nhiệt độ thấp T1" '
+        'loading="lazy" width="651" height="564"><figcaption>Hình 5. Phân bố tốc độ phân tử ở hai nhiệt độ.<br>'
+        'Đỏ T₁ (thấp): đỉnh cao, hẹp. Xanh T₂ (cao): đỉnh lệch phải, thấp, rộng.<br>'
+        'Probability = xác suất; Speed = tốc độ.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 13.25 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
-for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
+for n, f in enumerate((fig1, fig2, fig3, fig4, fig5), 1):
     assert f"<!--FIG{n}-->" in src, f"thiếu mốc FIG{n}"
     src = src.replace(f"<!--FIG{n}-->", f)
 open("theory.html", "w", encoding="utf8").write(src)

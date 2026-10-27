@@ -170,6 +170,9 @@ fig3 = fig("0 0 440 232",
            "Hình 3. Cộng hưởng, trục f đều. Đỉnh đúng tại f0. Cản nhỏ: cao, hẹp. Cản lớn: thấp, rộng.",
            "tn-l11-tatdan-01")
 
+# Hình 3 thay bằng ảnh OpenStax (28/10/2026, ngoại lệ có chủ đích: ảnh raster), giữ mốc FIG3
+fig3 = '<figure class="fig" data-tl="1" data-exp="tn-l11-tatdan-01"><img src="/assets/openstax/l11-tat-dan-cuong-buc/hinh-duong-cong-huong.webp" alt="Đồ thị biên độ theo tần số ngoại lực với ba mức cản: đỉnh cao và hẹp khi cản nhỏ, thấp và rộng khi cản lớn, đỉnh đúng tại tần số riêng f0" loading="lazy" width="400" height="291"><figcaption>Hình 3. Cộng hưởng: biên độ theo tần số ngoại lực f.<br>Đỉnh đúng tại f₀. Cản nhỏ: cao, hẹp. Cản lớn: thấp, rộng.<br>Small / Medium / Heavy damping = cản nhỏ / vừa / lớn.<br><small>Hình: OpenStax, College Physics 2e, Hình 16.25 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>'
+
 # ---- Hình 4: sơ đồ cầu Tacoma, tự vẽ, không phải ảnh
 b = defs("f4")
 # gió

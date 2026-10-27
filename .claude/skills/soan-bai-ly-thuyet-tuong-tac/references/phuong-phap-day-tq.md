@@ -47,7 +47,7 @@ VI.  Đời sống + Thử thách phân tầng ⭐ + "✅ Mang về sau bài h�
 
 | Nét | Việc phải làm | Vì sao (nghiên cứu) | Nằm ở phần |
 |---|---|---|---|
-| **Tự giải thích trước khi xem** | Ở mục Trả bài, mỗi `<summary>` kết bằng dòng nhỏ "Nói bằng lời của em vì sao, rồi mới bấm xem." Trong `.tl-fb--ok` của quiz khó: thêm một câu "Em giải thích được cho bạn ngồi cạnh chưa?" | Self-explanation (Chi): học sinh tự nói lý do nhớ lâu và chuyển giao tốt hơn chỉ đọc đáp án. | IV, quiz khó |
+| **Tự giải thích trước khi xem** | Ở mục Trả bài, mỗi `<summary>` là câu hỏi "vì sao". Trong `.tl-fb--ok` của quiz khó: thêm một câu "Em giải thích được cho bạn ngồi cạnh chưa?" | Self-explanation (Chi): học sinh tự nói lý do nhớ lâu và chuyển giao tốt hơn chỉ đọc đáp án. | IV, quiz khó |
 | **Rút dần giàn giáo** | Giữa bài toán mẫu giải trọn và biến thể, có **một bài giải để trống 1–2 bước** (bước dễ nhầm nhất) cho học sinh điền, đáp án bước trống trong `<details>`. Thứ tự: giải trọn → điền bước trống → tự giải biến thể. | Worked example → completion problem → independent (Sweller, Renkl); đọc mãi lời giải đầy đủ làm học sinh khá bị "đảo ngược chuyên môn". | V |
 | **Hiệu chuẩn tự tin** | Với 2–3 quiz quan trọng (bẫy, bài toán mẫu): trước phương án A–D có dòng radio "Em chắc bao nhiêu? ○ Chắc ○ Không chắc". Phản hồi sai nhắc: "Nếu em đã chọn *Chắc* mà sai, đây là chỗ cần xem lại nhất." | Siêu nhận thức: học sinh THPT thường tự tin quá mức ở đúng chỗ hiểu sai; tự chấm độ chắc giúp biết mình chưa biết gì (Dunlosky, Bjork). Chỉ cần radio, không JS. | III, V |
 

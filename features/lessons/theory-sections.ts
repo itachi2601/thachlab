@@ -211,6 +211,9 @@ export interface TheoryEstimate {
   minutes: number;
   /** Số câu tự kiểm tra (quiz) trong bài. */
   quizzes: number;
+  /** Số phút dùng làm mốc "đọc quá nhanh" (TheoryReviewStep, est_read_seconds): như `minutes`, nhưng khi tác giả
+   *  ghi số ⏱ thì không thấp hơn 60% số tự tính — tránh ngưỡng tụt quá thấp nếu tác giả ghi số lạc quan. */
+  paceMinutes: number;
 }
 
 // 140 từ/phút: tốc độ đọc chữ Việt trên điện thoại (docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md mục 2).
@@ -228,7 +231,29 @@ export function estimateTheoryTime(html: string): TheoryEstimate {
     .replace(/<(script|style|svg)\b[\s\S]*?<\/\1>/gi, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/gi, " ");
+  // Bài đã ghi sẵn "⏱ Khoảng N phút" trong hộp mục tiêu thì dùng đúng số đó — hai con số khác nhau
+  // trên cùng một màn hình (đầu bài ~39 phút, hộp mục tiêu 17 phút) làm học sinh mất tin (N4, 26/10/2026).
+  // Lưu ý: est_read_seconds của 73 bộ quiz đăng 26/10/2026 tính theo công thức cũ (chỉ số tự tính, chưa có kẹp này).
   const words = visible.split(/\s+/).filter(Boolean).length;
-  const minutes = Math.max(1, Math.ceil(words / WORDS_PER_MIN + interactions * MIN_PER_INTERACTION));
-  return { minutes, quizzes };
+  const computed = Math.max(1, Math.ceil(words / WORDS_PER_MIN + interactions * MIN_PER_INTERACTION));
+  const authored = /⏱\s*Khoảng\s+(\d{1,3})\s*phút/.exec(visible);
+  if (authored) {
+    const minutes = Math.max(1, Number(authored[1]));
+    return { minutes, quizzes, paceMinutes: Math.max(minutes, Math.ceil(computed * 0.6)) };
+  }
+  return { minutes: computed, quizzes, paceMinutes: computed };
+}
+
+/** Hộp mục tiêu đầu bài ("🎯 Mục tiêu bài học…") trình bày theo bản duyệt 26/10/2026, xử lý lúc render — không sửa
+ *  HTML đã đăng: thêm lớp `tl-goal` (viền trái màu nhấn, CSS bỏ in đậm bên trong — N7), đổi nhãn thành
+ *  "Học xong bài này, em làm được", bỏ dòng "⏱ Khoảng N phút…" vì thời lượng đã ở dòng meta dưới tên bài (N4).
+ *  Gọi trên HTML hiển thị; estimateTheoryTime vẫn đọc HTML gốc để lấy số ⏱. */
+export function decorateGoalBox(html: string): string {
+  if (!html.includes("🎯")) return html;
+  return html
+    .replace(
+      /(<div class="tl-box\b[^"]*)("\s*>\s*<p class="tl-label">)🎯[^<]*(<\/p>)/,
+      "$1 tl-goal$2Học xong bài này, em làm được$3",
+    )
+    .replace(/<p>⏱[^<]*<\/p>\s*/, "");
 }

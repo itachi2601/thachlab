@@ -37,52 +37,61 @@ def wrap(vb, label, body, cap, exp=""):
 
 # ======================================================= Hình 1: sơ đồ bố trí thí nghiệm
 b = defs("f1")
-b += text(16, 22, "Bố trí một phép đo nhiệt lượng", "currentColor", 12.5, "start", "700")
+b += text(16, 22, "Bố trí một phép đo nhiệt lượng", "currentColor", 14, "start", "700")
 
 # nhiệt lượng kế vỏ xốp
-b += text(16, 50, "nhiệt lượng kế vỏ xốp, có nắp", "currentColor", 11, "start", "600")
-b += line(50, 56, 50, 84, "currentColor", 1.2, "3 3", .8)
-b += rect(24, 84, 126, 120, "rgba(148,163,184,.14)", "currentColor", 2.5)
-b += rect(32, 92, 110, 104, "rgba(56,189,248,.14)", BLUE, 2)
-b += line(32, 122, 142, 122, BLUE, 3)          # mặt nước
-b += text(60, 112, "nước", BLUE, 12, "start", "600")
+b += text(16, 44, "nhiệt lượng kế vỏ xốp, có nắp", "currentColor", 14, "start", "600")
+b += line(100, 52, 100, 100, "currentColor", 1.2, "3 3", .8)
+b += rect(24, 100, 146, 120, "rgba(148,163,184,.14)", "currentColor", 2.5)
+b += rect(32, 108, 130, 104, "rgba(56,189,248,.14)", BLUE, 2)
+b += line(32, 138, 162, 138, BLUE, 3)          # mặt nước
+b += text(60, 130, "nước", BLUE, 14, "start", "600")
 
 # điện trở nhiệt: hai chân + đáy
-b += line(56, 130, 56, 184, RED, 4)
-b += line(80, 130, 80, 184, RED, 4)
-b += line(56, 184, 80, 184, RED, 4)
-b += text(88, 170, "điện trở", RED, 10.5, "start", "700")
+b += line(56, 146, 56, 200, RED, 4)
+b += line(80, 146, 80, 200, RED, 4)
+b += line(56, 200, 80, 200, RED, 4)
+b += text(88, 186, "điện trở", RED, 14, "start", "700")
 
+# que khuấy
+b += text(16, 70, "que khuấy", "currentColor", 14, "start", "600")
+b += line(40, 80, 40, 190, "currentColor", 2.5)
+b += line(32, 190, 48, 190, "currentColor", 3)
 # nhiệt kế
-b += rect(112, 64, 14, 62, "rgba(148,163,184,.18)", "currentColor", 2, 6)
-b += rect(115, 80, 8, 44, GRN, GRN, 0, 4)
-b += f'<circle cx="119" cy="128" r="8" fill="rgba(52,211,153,.35)" stroke="{GRN}" stroke-width="2"/>'
-b += text(134, 70, "nhiệt kế 0,1 °C", GRN, 11, "start", "700")
+b += rect(120, 82, 14, 62, "rgba(148,163,184,.18)", "currentColor", 2, 6)
+b += rect(123, 98, 8, 44, GRN, GRN, 0, 4)
+b += f'<circle cx="127" cy="146" r="8" fill="rgba(52,211,153,.35)" stroke="{GRN}" stroke-width="2"/>'
+b += text(142, 76, "nhiệt kế 0,1 °C", GRN, 14, "start", "700")
 
 # bảng số liệu (cột bên phải)
-b += rect(190, 90, 236, 140, "rgba(148,163,184,.10)", "currentColor", 2)
-b += text(202, 112, "Ghi vào vở mỗi 100 s", "currentColor", 11.5, "start", "700")
-b += line(202, 120, 414, 120, "currentColor", 1, "", .5)
-CX = (232, 312, 388)
+b += rect(190, 100, 246, 150, "rgba(148,163,184,.10)", "currentColor", 2)
+b += text(202, 122, "Ghi vào vở mỗi 100 s", "currentColor", 14, "start", "700")
+b += line(202, 130, 424, 130, "currentColor", 1, "", .5)
+CX = (234, 318, 396)
 for x, h in zip(CX, ("τ (s)", "t (°C)", "P (W)")):
-    b += text(x, 138, h, "currentColor", 11, "middle", "700")
+    b += text(x, 150, h, "currentColor", 14, "middle", "700")
 for r, row in enumerate((("0", "28,0", "150"), ("100", "45,8", "150"), ("200", "63,5", "150"), ("300", "81,3", "150"))):
     for x, v in zip(CX, row):
-        b += text(x, 160 + r * 18, v, "currentColor", 11, "middle", "500")
+        b += text(x, 174 + r * 20, v, "currentColor", 14, "middle", "500")
 
-# dây nối điện trở -> oát kế
-b += poly([(80, 184), (80, 254), (190, 254)], ORG, 2.4)
-b += poly([(56, 184), (56, 278), (190, 278)], ORG, 2.4)
-b += rect(190, 242, 112, 48, "rgba(251,146,60,.14)", ORG, 2, 8)
-b += text(246, 262, "oát kế", ORG, 11.5, "middle", "700")
-b += text(246, 280, "P = 150 W, đo τ", ORG, 10.5, "middle", "600")
+# mạch kín: điện trở -> oát kế -> nguồn điện -> điện trở
+b += poly([(80, 200), (80, 299), (186, 299)], ORG, 2.4)
+b += poly([(56, 200), (56, 356), (381, 356), (381, 336)], ORG, 2.4)
+b += rect(186, 262, 120, 74, "rgba(251,146,60,.14)", ORG, 2, 8)
+b += text(246, 284, "oát kế", ORG, 14, "middle", "700")
+b += text(246, 304, "P = 150 W", ORG, 14, "middle", "600")
+b += text(246, 324, "đo thời gian τ", ORG, 14, "middle", "600")
+b += line(306, 299, 326, 299, ORG, 2.4)
+b += rect(326, 262, 110, 74, "rgba(148,163,184,.14)", "currentColor", 2, 8)
+b += text(381, 294, "nguồn điện", "currentColor", 14, "middle", "700")
+b += text(381, 314, "nối ổ cắm", "currentColor", 14, "middle", "600")
 # cân điện tử
-b += rect(318, 242, 108, 48, "rgba(148,163,184,.14)", "currentColor", 2, 8)
-b += text(372, 262, "cân điện tử", "currentColor", 11, "middle", "700")
-b += text(372, 280, "m = 0,200 kg", "currentColor", 10.5, "middle", "600")
-b += text(16, 316, "Cân nước trước khi đổ vào bình; oát kế cho P và τ.", "currentColor", 10.5, "start", "600")
+b += rect(16, 374, 160, 56, "rgba(148,163,184,.14)", "currentColor", 2, 8)
+b += text(96, 396, "cân điện tử", "currentColor", 14, "middle", "700")
+b += text(96, 416, "m = 0,200 kg", "currentColor", 14, "middle", "600")
+b += text(190, 408, "Cân nước trước khi đổ vào bình.", "currentColor", 14, "start", "600")
 
-fig1 = wrap("0 0 440 328", "Sơ đồ bố trí thí nghiệm đo nhiệt lượng: nhiệt lượng kế có điện trở nhiệt và nhiệt kế, điện trở nối với oát kế, cân điện tử đo khối lượng nước, số liệu ghi vào bảng",
+fig1 = wrap("0 0 440 446", "Sơ đồ bố trí thí nghiệm đo nhiệt lượng: nhiệt lượng kế có điện trở nhiệt, nhiệt kế và que khuấy, điện trở nối kín với oát kế và nguồn điện, cân điện tử đo khối lượng nước, số liệu ghi vào bảng",
             b, "Hình 1. Bốn số cần đo: P và τ (oát kế), m (cân), Δt (nhiệt kế). Không dụng cụ nào đọc thẳng nhiệt lượng.")
 
 # ======================================================= Hình 2: đường cong đun nóng

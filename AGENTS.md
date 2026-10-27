@@ -35,6 +35,7 @@ hàm/tham số). Log migration đã chạy ở `docs/STATE-archive.md`. Các fil
 | **Bảng màu nền sáng — mặc định toàn site từ 11/10/2026** (token, số đo tương phản, bảng quy đổi idiom nền tối → token, khác biệt theo nhóm tuổi, trang xem thử `/dev/giao-dien`) | `docs/MAU-NEN-SANG.md` |
 | **Độ dài & nhịp bài lý thuyết** (hạn mức đo được, vì sao bài dài làm HS bỏ, cách kiểm chứng) | `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md` |
 | **Thí nghiệm trong bài lý thuyết** viết theo cách đề TN THPT hỏi (khung 6 ô, T1–T12, checklist soát hộp `.tl-box--exp`) | `docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md` |
+| Rút hộp có video, clip hiện tượng có phụ đề, SVG chuyển động (V8–V11; kế hoạch chặng 0–3, prompt, agent) | `docs/KE-HOACH-CLIP-ANH-DONG.md` |
 | AI Tutor Socratic (GĐ 4, Q2–Q3/2027): quyết định kiến trúc không phụ thuộc model + eval offline `scripts/eval-ai-tutor.mts` | `docs/AI-TUTOR.md` |
 
 Còn lại (`BRAND.md`, `UI.md`, `THONG-BAO.md`, `BAN-GIAO-*.md`, `prompt-toc-do-*.md`,
@@ -287,3 +288,13 @@ memory `feedback_*`/`user_*`, script chưa commit, `scripts/logs/` (sao lưu DB)
 
 # Script ghi hàng loạt vào DB chỉ chạy sau 22h (sự cố 23/10/2026: Supabase cạn Disk IO budget)
 Script/migration ghi hoặc quét hàng chục nghìn dòng (`question_bank`, `exams.questions`, quét trùng `question_bank_plain_text`, backfill) ăn hết ngân sách IO burst của gói compute, cả ngày sau đó DB chậm cho học sinh. Chỉ chạy sau 22h hoặc trước 6h; chia mẻ ≤2.000 dòng, nghỉ giữa mẻ; ghi giờ chạy vào STATE.md. Tra nhanh khi nghi DB chậm: `pg_stat_statements` sắp theo `shared_blks_read` và `wal_bytes` (file mẫu: memory `project_thachlab_hosting`).
+
+# CSS @media mới: Lightning CSS gộp khối sát nhau (26/10/2026)
+Lightning CSS khi build gộp hai khối `@media` khác điều kiện đặt sát nhau → khối mới đặt cách khối khác bằng một rule thường; kiểm CSS đã ăn bằng `getComputedStyle` trên trang thật, không chỉ nhìn file.
+Dev server Turbopack có lúc giữ CSS cũ sau khi sửa file (27/10/2026): số đo không đổi thì tra `document.styleSheets` xem rule mới đã có chưa; chưa có thì dừng server, xoá `.next/cache`, chạy lại.
+
+# Làm theo trang mẫu đã duyệt: chụp trang thật CẠNH mẫu rồi mới báo xong (thầy chốt 26/10/2026)
+Đợt đầu đồng bộ trang chương ↔ trang bài theo trang mẫu chỉ làm theo mô tả, báo xong khi trang thật còn lệch 12 chỗ. Khi việc là "làm giống trang mẫu":
+- Đọc CSS của mẫu (số đo thật), không làm theo ghi chú; lập danh sách điểm so sánh trước khi sửa.
+- Sau mỗi nhóm sửa: chụp trang thật và mẫu ở CÙNG cỡ (1280 · 1024 · 768 · 375, sáng + tối), so theo danh sách; đo bằng `getComputedStyle` (cỡ chữ, rộng cột, khoảng cách) — rule cũ kiểu `font-size: 1rem` cứng thường đè rule mới.
+- Điểm nào cố ý lệch thì ghi lý do vào commit và báo cáo, không im lặng bỏ qua.

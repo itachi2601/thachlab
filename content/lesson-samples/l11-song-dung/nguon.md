@@ -1,0 +1,2 @@
+## Hình OpenStax (28/10/2026)
+- Giữ cả 4 SVG. Hình 1 (bấm phím đàn): sách không có. Hình 2 (nút, bụng, λ/2, λ/4 nhiều bó): Hình 16.37/16.38 chỉ 1–2 bó, 400 px nhỏ. Hình 3 (hai đầu cố định 3 bó + một đầu tự do l = 3λ/4): Hình 17.28 là cột khí, 4 họa âm, không có trường hợp hai đầu cố định nhiều bó. Hình 4 (đường bao 2A, bề rộng 4A): sách không có. Hình 17.28 để dành nếu muốn thêm ảnh cột khí vào phần ống.
