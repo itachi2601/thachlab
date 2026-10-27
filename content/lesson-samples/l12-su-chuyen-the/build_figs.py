@@ -58,13 +58,14 @@ fig1 = wrap("0 0 420 250", "Li nước đá đang tan có cắm nhiệt kế, ng
             b, "Hình 1. Không khí nóng truyền nhiệt vào li đá đang tan: nhiệt kế chỉ bao nhiêu? Nước ngoài thành li là hơi nước <em>ngưng tụ</em> khi gặp mặt lạnh.")
 
 # ---------------------------------------------------------------- Hình 2: ảnh OpenStax 14.7 (đợt 2, 27/10/2026)
-fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-su-chuyen-the/hinh-ba-the-mo-hinh.webp" '
+fig2 = ('<p>Hình 2 đặt ba thể cạnh nhau ở mức phân tử.<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup></p>\n\n'
+        '<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-su-chuyen-the/hinh-ba-the-mo-hinh.webp" '
         'alt="Mô hình phân tử của chất rắn, chất lỏng và chất khí, kèm chiều nóng chảy, đông đặc, sôi, ngưng tụ" '
         'loading="lazy" width="875" height="864"><figcaption>Hình 2. Cùng là các phân tử, khác nhau ở <strong>khoảng cách</strong> và <strong>mức trật tự</strong>.<br>'
-        'Rắn: phân tử dao động quanh vị trí cố định, nối bằng "lò xo" liên kết. Lỏng: phân tử chuyển động tự do hơn. Khí: phân tử rất xa nhau, bay thẳng.<br>'
-        'Nhãn: Solid = rắn · Liquid = lỏng · Gas = khí · Limits of motion = giới hạn dao động · Energy input = nhận năng lượng · Energy output = toả năng lượng · '
-        'Melt = nóng chảy · Freeze = đông đặc · Boil = sôi (hoá hơi) · Condense = ngưng tụ.<br>'
-        '<small>Hình: OpenStax, College Physics 2e, Hình 14.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+        'Rắn: phân tử dao động quanh vị trí cố định, nối bằng "lò xo" liên kết. Lỏng: phân tử chuyển động tự do hơn. Khí: phân tử rất xa nhau, bay thẳng.</figcaption></figure>\n'
+        '<ol class="tl-fns"><li id="tl-fn-1"><strong>Nhãn trong hình:</strong> Solid = rắn · Liquid = lỏng · Gas = khí · Limits of motion = giới hạn dao động · '
+        'Energy input = nhận năng lượng · Energy output = toả năng lượng · Melt = nóng chảy · Freeze = đông đặc · Boil = sôi (hoá hơi) · Condense = ngưng tụ.<br>'
+        'Hình: OpenStax, College Physics 2e, Hình 14.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</li></ol>')
 
 # ---------------------------------------------------------------- Hình 3: vòng chuyển thể
 b = defs("f3")
