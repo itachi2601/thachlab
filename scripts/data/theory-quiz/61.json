@@ -387,11 +387,7 @@
    "question": "Một chiếc đèn treo vào trần nhà bằng một sợi dây và đang đứng yên.",
    "statements": [
     {
-     "text": "Trọng lực lên đèn và lực dây kéo đèn là hai lực cân bằng.",
-     "answer": true
-    },
-    {
-     "text": "Trọng lực lên đèn và lực dây kéo đèn là cặp lực – phản lực.",
+     "text": "Lực dây kéo đèn và lực đèn kéo dây triệt tiêu nhau vì bằng nhau, ngược chiều.",
      "answer": false
     },
     {
@@ -399,16 +395,20 @@
      "answer": true
     },
     {
-     "text": "Lực dây kéo đèn và lực đèn kéo dây triệt tiêu nhau vì bằng nhau, ngược chiều.",
+     "text": "Trọng lực lên đèn và lực dây kéo đèn là cặp lực – phản lực.",
      "answer": false
+    },
+    {
+     "text": "Trọng lực lên đèn và lực dây kéo đèn là hai lực cân bằng.",
+     "answer": true
     }
    ],
    "explanation": "Hai lực cùng đặt lên đèn là cân bằng; lực dây–đèn và đèn–dây đặt lên hai vật khác nhau là lực – phản lực, không triệt tiêu.",
    "distractorNotes": {
-    "0": "Hai lực cùng đặt lên đèn, bằng nhau, ngược chiều, đèn đứng yên nên đúng là cân bằng.",
-    "1": "Hai lực cùng đặt lên đèn và khác loại nên không thể là lực – phản lực.",
-    "2": "Cùng cặp vật dây–đèn, cùng là lực đàn hồi, đặt lên hai vật khác nhau nên ý này đúng.",
-    "3": "Lực và phản lực đặt lên hai vật khác nhau nên không được cộng để triệt tiêu."
+    "0": "Lực và phản lực đặt lên hai vật khác nhau nên không được cộng để triệt tiêu.",
+    "1": "Cùng cặp vật dây–đèn, cùng là lực đàn hồi, đặt lên hai vật khác nhau nên ý này đúng.",
+    "2": "Hai lực cùng đặt lên đèn và khác loại nên không thể là lực – phản lực.",
+    "3": "Hai lực cùng đặt lên đèn, bằng nhau, ngược chiều, đèn đứng yên nên đúng là cân bằng."
    }
   },
   {
@@ -422,16 +422,16 @@
    "question": "Định luật III Newton giải thích nhiều hiện tượng đời sống như đi bộ, bơi, súng giật.",
    "statements": [
     {
-     "text": "Khi đi bộ, chân đẩy đất ra sau và đất đẩy người về phía trước.",
-     "answer": true
+     "text": "Súng giật lùi vì lực đạn tác dụng lên súng lớn hơn lực súng tác dụng lên đạn.",
+     "answer": false
     },
     {
      "text": "Lực đất đẩy chân người đi bộ về phía trước là lực ma sát nghỉ.",
      "answer": true
     },
     {
-     "text": "Súng giật lùi vì lực đạn tác dụng lên súng lớn hơn lực súng tác dụng lên đạn.",
-     "answer": false
+     "text": "Khi đi bộ, chân đẩy đất ra sau và đất đẩy người về phía trước.",
+     "answer": true
     },
     {
      "text": "Khi bơi, tay đẩy nước về phía trước thì người tiến lên phía trước.",
@@ -440,9 +440,9 @@
    ],
    "explanation": "Đi bộ, bơi, súng giật đều do phản lực ngược chiều, cùng độ lớn; bơi phải đẩy nước ra sau, ma sát ở chân là ma sát nghỉ.",
    "distractorNotes": {
-    "0": "Đất tác dụng phản lực ngược chiều lực chân đẩy, nên người tiến lên là đúng.",
+    "0": "Lực và phản lực luôn bằng nhau; súng lùi chậm hơn đạn chỉ vì khối lượng lớn hơn.",
     "1": "Bàn chân không trượt trên đất nên lực đất đẩy chân đúng là ma sát nghỉ.",
-    "2": "Lực và phản lực luôn bằng nhau; súng lùi chậm hơn đạn chỉ vì khối lượng lớn hơn.",
+    "2": "Đất tác dụng phản lực ngược chiều lực chân đẩy, nên người tiến lên là đúng.",
     "3": "Phản lực ngược chiều lực đẩy; đẩy nước về trước thì nước đẩy người lùi về sau."
    }
   },
@@ -457,28 +457,28 @@
    "question": "Hai bạn A (nhẹ hơn) và B (nặng hơn) đứng đối diện trên giày trượt, A đẩy B. Bỏ qua ma sát.",
    "statements": [
     {
-     "text": "Lực B tác dụng lên A có độ lớn bằng lực A tác dụng lên B.",
+     "text": "Gia tốc của A lớn hơn gia tốc của B.",
      "answer": true
     },
     {
-     "text": "Gia tốc của A lớn hơn gia tốc của B.",
+     "text": "Hai bạn chuyển động cùng chiều với nhau.",
+     "answer": false
+    },
+    {
+     "text": "Lực B tác dụng lên A có độ lớn bằng lực A tác dụng lên B.",
      "answer": true
     },
     {
      "text": "Tỉ số độ lớn gia tốc $\\dfrac{a_A}{a_B}=\\dfrac{m_A}{m_B}$.",
      "answer": false
-    },
-    {
-     "text": "Hai bạn chuyển động cùng chiều với nhau.",
-     "answer": false
     }
    ],
    "explanation": "Lực bằng nhau nên $m_A a_A=m_B a_B$, suy ra $\\dfrac{a_A}{a_B}=\\dfrac{m_B}{m_A}$; hai lực ngược chiều nên hai bạn trượt ngược chiều.",
    "distractorNotes": {
-    "0": "Theo định luật III, lực và phản lực luôn bằng độ lớn dù ai là người chủ động đẩy.",
-    "1": "Cùng độ lớn lực mà A nhẹ hơn nên $a=F/m$ của A lớn hơn, ý này đúng.",
-    "2": "Đảo tỉ lệ; gia tốc tỉ lệ nghịch với khối lượng nên $\\dfrac{a_A}{a_B}=\\dfrac{m_B}{m_A}$.",
-    "3": "Lực lên hai bạn ngược chiều nhau nên hai bạn trượt ra hai phía ngược nhau."
+    "0": "Cùng độ lớn lực mà A nhẹ hơn nên $a=F/m$ của A lớn hơn, ý này đúng.",
+    "1": "Lực lên hai bạn ngược chiều nhau nên hai bạn trượt ra hai phía ngược nhau.",
+    "2": "Theo định luật III, lực và phản lực luôn bằng độ lớn dù ai là người chủ động đẩy.",
+    "3": "Đảo tỉ lệ; gia tốc tỉ lệ nghịch với khối lượng nên $\\dfrac{a_A}{a_B}=\\dfrac{m_B}{m_A}$."
    }
   },
   {
@@ -492,28 +492,28 @@
    "question": "Xét biểu thức định luật III Newton $\\vec F_{AB}=-\\vec F_{BA}$.",
    "statements": [
     {
-     "text": "Dấu trừ cho biết hai lực ngược chiều nhau.",
+     "text": "Về độ lớn, $F_{AB}=F_{BA}$.",
      "answer": true
     },
     {
-     "text": "Về độ lớn, $F_{AB}=F_{BA}$.",
-     "answer": true
+     "text": "$\\vec F_{BA}$ là lực do vật A tác dụng lên vật B.",
+     "answer": false
     },
     {
      "text": "Vì $\\vec F_{AB}+\\vec F_{BA}=\\vec 0$ nên hai vật luôn đứng yên.",
      "answer": false
     },
     {
-     "text": "$\\vec F_{BA}$ là lực do vật A tác dụng lên vật B.",
-     "answer": false
+     "text": "Dấu trừ cho biết hai lực ngược chiều nhau.",
+     "answer": true
     }
    ],
    "explanation": "$\\vec F_{AB}$ là lực A lên B, $\\vec F_{BA}$ là lực B lên A; hai lực đặt lên hai vật khác nhau nên không được cộng để kết luận vật đứng yên.",
    "distractorNotes": {
-    "0": "Vectơ đối có cùng độ lớn và ngược chiều; dấu trừ thể hiện đúng sự ngược chiều đó.",
-    "1": "Hai vectơ đối nhau luôn có cùng độ lớn, nên đẳng thức $F_{AB}=F_{BA}$ đúng.",
+    "0": "Hai vectơ đối nhau luôn có cùng độ lớn, nên đẳng thức $F_{AB}=F_{BA}$ đúng.",
+    "1": "Nhầm thứ tự chỉ số: $\\vec F_{BA}$ là lực do B tác dụng lên A.",
     "2": "Chỉ được cộng các lực cùng đặt lên một vật; lực và phản lực đặt lên hai vật khác nhau.",
-    "3": "Nhầm thứ tự chỉ số: $\\vec F_{BA}$ là lực do B tác dụng lên A."
+    "3": "Vectơ đối có cùng độ lớn và ngược chiều; dấu trừ thể hiện đúng sự ngược chiều đó."
    }
   }
  ]

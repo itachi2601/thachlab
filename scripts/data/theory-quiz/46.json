@@ -351,24 +351,24 @@
      "answer": true
     },
     {
+     "text": "Theo công thức, thời gian rơi không phụ thuộc vào $g$.",
+     "answer": false
+    },
+    {
      "text": "Thả từ độ cao gấp 4 lần thì thời gian rơi tính được cũng gấp 4 lần.",
      "answer": false
     },
     {
      "text": "Từ $h$ và $t$ đo được có thể tính $g = \\dfrac{2h}{t^2}$.",
      "answer": true
-    },
-    {
-     "text": "Theo công thức, thời gian rơi không phụ thuộc vào $g$.",
-     "answer": false
     }
    ],
-   "explanation": "a) đúng vì $t$ chứa $\\sqrt{h}$. b) sai: $h$ gấp 4 thì $t$ chỉ gấp $\\sqrt{4} = 2$ lần. c) đúng, biến đổi từ $t^2 = \\dfrac{2h}{g}$. d) sai vì $g$ nằm ở mẫu số dưới dấu căn.",
+   "explanation": "a) đúng vì $t$ chứa $\\sqrt{h}$. b) sai vì $g$ nằm ở mẫu số dưới dấu căn. c) sai: $h$ gấp 4 thì $t$ chỉ gấp $\\sqrt{4} = 2$ lần. d) đúng, biến đổi từ $t^2 = \\dfrac{2h}{g}$.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì $h$ nằm dưới dấu căn, nên $t$ tỉ lệ với $\\sqrt{h}$.",
-    "1": "Không thể coi là đúng vì đã quên dấu căn; $h$ gấp 4 thì $t$ chỉ gấp $\\sqrt{4} = 2$ lần.",
-    "2": "Không thể coi là sai vì bình phương hai vế được $t^2 = \\dfrac{2h}{g}$, rồi tách ra đúng biểu thức này.",
-    "3": "Không thể coi là đúng vì $g$ nằm ở mẫu số dưới dấu căn nên $g$ đổi thì $t$ đổi."
+    "1": "Không thể coi là đúng vì $g$ nằm ở mẫu số dưới dấu căn nên $g$ đổi thì $t$ đổi.",
+    "2": "Không thể coi là đúng vì đã quên dấu căn; $h$ gấp 4 thì $t$ chỉ gấp $\\sqrt{4} = 2$ lần.",
+    "3": "Không thể coi là sai vì bình phương hai vế được $t^2 = \\dfrac{2h}{g}$, rồi tách ra đúng biểu thức này."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Robot hút bụi chạy dọc bốn cạnh một ô vuông. Mô hình lí thuyết coi robot chạy đều với tốc độ $v$ trên quãng đường $s$ nên dự đoán $t = \\dfrac{s}{v}$; đo thật thì thời gian dài hơn dự đoán. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Thời gian dự đoán được tính bằng quãng đường chia cho tốc độ.",
-     "answer": true
-    },
-    {
      "text": "Giữ nguyên quãng đường, tăng tốc độ gấp đôi thì thời gian dự đoán tăng gấp đôi.",
      "answer": false
     },
     {
-     "text": "Vì số đo lệch dự đoán nên phải bỏ hẳn phép tính lí thuyết.",
-     "answer": false
+     "text": "Thời gian dự đoán được tính bằng quãng đường chia cho tốc độ.",
+     "answer": true
     },
     {
      "text": "Chênh lệch gợi ý mô hình bỏ sót yếu tố, như robot giảm tốc khi rẽ ở góc.",
      "answer": true
+    },
+    {
+     "text": "Vì số đo lệch dự đoán nên phải bỏ hẳn phép tính lí thuyết.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng theo mô hình chạy đều. b) sai: $t$ tỉ lệ nghịch với $v$ nên giảm một nửa. c) sai: lệch thì tìm nguyên nhân, không bỏ bên nào. d) đúng như bài phân tích.",
+   "explanation": "a) sai: $t$ tỉ lệ nghịch với $v$ nên giảm một nửa. b) đúng theo mô hình chạy đều. c) đúng như bài phân tích. d) sai: lệch thì tìm nguyên nhân, không bỏ bên nào.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì với mô hình chạy đều, thời gian đúng bằng quãng đường chia tốc độ.",
-    "1": "Không thể coi là đúng vì $v$ ở mẫu số, tốc độ gấp đôi thì thời gian giảm còn một nửa.",
-    "2": "Không thể coi là đúng vì lệch số đo chỉ cho thấy mô hình thiếu yếu tố, cần sửa chứ không bỏ.",
-    "3": "Không thể coi là sai vì chênh lệch chính là dấu hiệu mô hình bỏ sót yếu tố như giảm tốc khi rẽ."
+    "0": "Không thể coi là đúng vì $v$ ở mẫu số, tốc độ gấp đôi thì thời gian giảm còn một nửa.",
+    "1": "Không thể coi là sai vì với mô hình chạy đều, thời gian đúng bằng quãng đường chia tốc độ.",
+    "2": "Không thể coi là sai vì chênh lệch chính là dấu hiệu mô hình bỏ sót yếu tố như giảm tốc khi rẽ.",
+    "3": "Không thể coi là đúng vì lệch số đo chỉ cho thấy mô hình thiếu yếu tố, cần sửa chứ không bỏ."
    }
   },
   {
@@ -487,7 +487,7 @@
    "question": "Một nhóm đặt giả thuyết: gắn thêm quả nặng thì xe đồ chơi chạy nhanh hơn. Đo xong, xe nặng hơn lại chạy chậm hơn. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Giả thuyết của nhóm đã bị bác bỏ.",
+     "text": "Kết quả trái dự đoán cho biết điều mới và giúp đặt giả thuyết tốt hơn.",
      "answer": true
     },
     {
@@ -495,20 +495,20 @@
      "answer": false
     },
     {
-     "text": "Nhóm nên ghi lại số liệu sao cho khớp với dự đoán ban đầu.",
-     "answer": false
+     "text": "Giả thuyết của nhóm đã bị bác bỏ.",
+     "answer": true
     },
     {
-     "text": "Kết quả trái dự đoán cho biết điều mới và giúp đặt giả thuyết tốt hơn.",
-     "answer": true
+     "text": "Nhóm nên ghi lại số liệu sao cho khớp với dự đoán ban đầu.",
+     "answer": false
     }
    ],
    "explanation": "Kết quả không khớp nên giả thuyết bị bác bỏ, và bác bỏ cũng là kết quả: biết thêm điều mới, dẫn tới giả thuyết mới. Chỉnh số liệu theo ý muốn không phải khoa học.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì kết quả đo ngược hẳn với điều giả thuyết dự đoán.",
+    "0": "Không thể coi là sai vì bác bỏ cũng là kết quả, gợi ý yếu tố mới như ma sát lớn hơn.",
     "1": "Không thể coi là đúng vì loại được một hướng sai cũng là biết thêm điều mới.",
-    "2": "Không thể coi là đúng vì chỉnh số liệu theo ý muốn làm mất giá trị phép đo, không phải khoa học.",
-    "3": "Không thể coi là sai vì bác bỏ cũng là kết quả, gợi ý yếu tố mới như ma sát lớn hơn."
+    "2": "Không thể coi là sai vì kết quả đo ngược hẳn với điều giả thuyết dự đoán.",
+    "3": "Không thể coi là đúng vì chỉnh số liệu theo ý muốn làm mất giá trị phép đo, không phải khoa học."
    }
   },
   {
@@ -522,6 +522,10 @@
    "question": "Ly nước đá để ngoài trời nóng, sau vài phút mặt ngoài ly đọng đầy giọt nước. Minh cho rằng nước trong ly thấm qua thành ra ngoài; một giả thuyết khác là hơi nước trong không khí ngưng tụ trên thành lạnh. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Ly rỗng ướp lạnh mang ra vẫn đọng giọt là bằng chứng ủng hộ giả thuyết của Minh.",
+     "answer": false
+    },
+    {
      "text": "Câu nói của Minh là một giả thuyết, chưa phải kết luận.",
      "answer": true
     },
@@ -530,19 +534,15 @@
      "answer": true
     },
     {
-     "text": "Ly rỗng ướp lạnh mang ra vẫn đọng giọt là bằng chứng ủng hộ giả thuyết của Minh.",
-     "answer": false
-    },
-    {
      "text": "Chỉ từ bước quan sát đã có thể kết luận giọt nước là hơi nước ngưng tụ.",
      "answer": false
     }
    ],
    "explanation": "Lời đoán nguyên nhân chưa kiểm tra là giả thuyết. Giọt không màu bác bỏ giả thuyết thấm; ly rỗng vẫn đọng giọt ủng hộ giả thuyết ngưng tụ. Kết luận chỉ có sau bước kiểm tra.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì Minh chỉ đoán nguyên nhân mà chưa kiểm tra gì.",
-    "1": "Không thể coi là sai vì nếu nước thấm qua thành thì giọt ngoài ly phải có màu mực.",
-    "2": "Không thể coi là đúng vì ly rỗng không có nước để thấm, kết quả này ủng hộ giả thuyết ngưng tụ.",
+    "0": "Không thể coi là đúng vì ly rỗng không có nước để thấm, kết quả này ủng hộ giả thuyết ngưng tụ.",
+    "1": "Không thể coi là sai vì Minh chỉ đoán nguyên nhân mà chưa kiểm tra gì.",
+    "2": "Không thể coi là sai vì nếu nước thấm qua thành thì giọt ngoài ly phải có màu mực.",
     "3": "Không thể coi là đúng vì quan sát chỉ dẫn tới câu hỏi; kết luận phải có sau bước kiểm tra giả thuyết."
    }
   }

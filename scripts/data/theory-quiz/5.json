@@ -190,12 +190,12 @@
      "answer": true
     },
     {
-     "text": "Đoạn nằm ngang thứ hai, ở 100 °C, ứng với lúc nước nóng chảy lần thứ hai.",
-     "answer": false
-    },
-    {
      "text": "Trên các đoạn nghiêng, nhiệt nhận vào làm tăng nhiệt độ của chất.",
      "answer": true
+    },
+    {
+     "text": "Đoạn nằm ngang thứ hai, ở 100 °C, ứng với lúc nước nóng chảy lần thứ hai.",
+     "answer": false
     },
     {
      "text": "Trên hai đoạn nằm ngang, bếp đã ngừng truyền nhiệt cho chất.",
@@ -205,8 +205,8 @@
    "explanation": "Đoạn ngang thấp là nóng chảy, đoạn ngang cao là sôi (hoá hơi), đoạn nghiêng là đổi nhiệt độ. Bếp vẫn cấp nhiệt suốt quá trình.",
    "distractorNotes": {
     "0": "Đá tan ở 0 °C với nhiệt độ không đổi, nên đoạn ngang ở 0 °C đúng là lúc nóng chảy.",
-    "1": "Một chất chỉ nóng chảy ở một nhiệt độ; đoạn ngang ở 100 °C là lúc nước sôi, tức hoá hơi.",
-    "2": "Đoạn nghiêng cho thấy nhiệt độ đang tăng, nên nhiệt nhận vào đúng là dùng để tăng nhiệt độ.",
+    "1": "Đoạn nghiêng cho thấy nhiệt độ đang tăng, nên nhiệt nhận vào đúng là dùng để tăng nhiệt độ.",
+    "2": "Một chất chỉ nóng chảy ở một nhiệt độ; đoạn ngang ở 100 °C là lúc nước sôi, tức hoá hơi.",
     "3": "Nhiệt kế đứng yên vì nhiệt dùng để chuyển thể; nếu bếp ngừng cấp nhiệt thì chất không thể tan hay sôi tiếp."
    }
   },
@@ -221,7 +221,7 @@
    "question": "Một nhóm tính nhiệt dung riêng của nước bằng hai cách: tính theo từng mốc đo $c = \\dfrac{P\\tau}{m\\Delta t}$, và tính theo độ dốc đồ thị $t$–$\\tau$. Hai kết quả lệch nhau một chút.",
    "statements": [
     {
-     "text": "Hai kết quả lệch nhau chứng tỏ một trong hai cách tính là sai.",
+     "text": "Nếu mọi mốc đều lệch về cùng một phía thì nguyên nhân là sai số ngẫu nhiên.",
      "answer": false
     },
     {
@@ -229,20 +229,20 @@
      "answer": true
     },
     {
-     "text": "Cách tính theo độ dốc san đều sai số ngẫu nhiên trên cả đường.",
-     "answer": true
+     "text": "Hai kết quả lệch nhau chứng tỏ một trong hai cách tính là sai.",
+     "answer": false
     },
     {
-     "text": "Nếu mọi mốc đều lệch về cùng một phía thì nguyên nhân là sai số ngẫu nhiên.",
-     "answer": false
+     "text": "Cách tính theo độ dốc san đều sai số ngẫu nhiên trên cả đường.",
+     "answer": true
     }
    ],
    "explanation": "Bẫy 2: cả hai cách đều đúng trong phạm vi sai số và cần giải thích chênh lệch. Lệch cùng phía ở mọi mốc là dấu hiệu sai số hệ thống, ví dụ do mất nhiệt.",
    "distractorNotes": {
-    "0": "Cả hai cách đều hợp lệ trong phạm vi sai số; chênh lệch nhỏ cần được giải thích, không chứng tỏ cách nào sai.",
+    "0": "Sai số ngẫu nhiên có dấu tuỳ lần đo; mọi mốc lệch cùng phía là dấu hiệu sai số hệ thống, chẳng hạn do mất nhiệt.",
     "1": "Mỗi mốc cho một giá trị $c$ riêng, nên mốc đọc nhiệt độ hay bấm giờ sai sẽ lộ ra ngay.",
-    "2": "Độ dốc lấy từ cả đường thẳng qua nhiều mốc, nên các sai số ngẫu nhiên bù trừ nhau.",
-    "3": "Sai số ngẫu nhiên có dấu tuỳ lần đo; mọi mốc lệch cùng phía là dấu hiệu sai số hệ thống, chẳng hạn do mất nhiệt."
+    "2": "Cả hai cách đều hợp lệ trong phạm vi sai số; chênh lệch nhỏ cần được giải thích, không chứng tỏ cách nào sai.",
+    "3": "Độ dốc lấy từ cả đường thẳng qua nhiều mốc, nên các sai số ngẫu nhiên bù trừ nhau."
    }
   },
   {
@@ -256,11 +256,11 @@
    "question": "Để đo nhiệt hoá hơi riêng của nước, một nhóm đun nước đã sôi ở 100 °C bằng bếp có oát kế, cân nước trước và sau khi đun rồi tính $L$.",
    "statements": [
     {
-     "text": "Trong lúc nước sôi, nhiệt độ của nước giữ không đổi dù bếp vẫn cấp nhiệt.",
-     "answer": true
+     "text": "Nhiệt toả ra không khí và làm nóng bình khiến $L$ tính ra nhỏ hơn giá trị thực.",
+     "answer": false
     },
     {
-     "text": "Nhiệt toả ra không khí và làm nóng bình khiến $L$ tính ra nhỏ hơn giá trị thực.",
+     "text": "Mất nhiệt ra môi trường và nước bắn ra ngoài làm kết quả lệch về cùng một phía.",
      "answer": false
     },
     {
@@ -268,16 +268,16 @@
      "answer": true
     },
     {
-     "text": "Mất nhiệt ra môi trường và nước bắn ra ngoài làm kết quả lệch về cùng một phía.",
-     "answer": false
+     "text": "Trong lúc nước sôi, nhiệt độ của nước giữ không đổi dù bếp vẫn cấp nhiệt.",
+     "answer": true
     }
    ],
    "explanation": "Mất nhiệt làm nước nhận ít hơn $P\\tau$ nên $L$ lớn hơn thực. Nước bắn ra làm khối lượng mất đi lớn hơn phần hoá hơi nên $L$ nhỏ hơn thực. Hai nguyên nhân làm kết quả lệch ngược chiều nhau.",
    "distractorNotes": {
-    "0": "Hoá hơi diễn ra ở nhiệt độ sôi không đổi; nhiệt bếp cấp vào dùng để chuyển thể chứ không làm tăng nhiệt độ.",
-    "1": "Mất nhiệt làm nước thực nhận ít hơn $P\\tau$ nhưng vẫn lấy $P\\tau$ chia cho $m$, nên $L$ tính ra lớn hơn thực.",
+    "0": "Mất nhiệt làm nước thực nhận ít hơn $P\\tau$ nhưng vẫn lấy $P\\tau$ chia cho $m$, nên $L$ tính ra lớn hơn thực.",
+    "1": "Mất nhiệt làm $L$ lớn hơn, còn nước bắn ra làm $L$ nhỏ hơn, nên hai nguyên nhân lệch ngược chiều nhau.",
     "2": "Nước bắn ra bị tính vào khối lượng hoá hơi, mẫu $m$ lớn lên nên $L$ tính ra nhỏ hơn thực.",
-    "3": "Mất nhiệt làm $L$ lớn hơn, còn nước bắn ra làm $L$ nhỏ hơn, nên hai nguyên nhân lệch ngược chiều nhau."
+    "3": "Hoá hơi diễn ra ở nhiệt độ sôi không đổi; nhiệt bếp cấp vào dùng để chuyển thể chứ không làm tăng nhiệt độ."
    }
   },
   {
@@ -452,11 +452,7 @@
    "question": "Đun liên tục một khối nước đá đang tan bằng bếp công suất $P$ không đổi cho tới khi nước hoá hơi hết. Từ đồ thị $t$–$\\tau$, một học sinh ghi công thức tính ba đại lượng.",
    "statements": [
     {
-     "text": "$c = \\dfrac{P\\tau}{m\\Delta t}$, với $\\tau$ là thời gian của đoạn nghiêng.",
-     "answer": true
-    },
-    {
-     "text": "$\\lambda = \\dfrac{P\\tau_1}{m\\Delta t}$, với $\\tau_1$ là thời gian đoạn ngang khi tan.",
+     "text": "Để tính $\\lambda$, phải lấy thời gian của đoạn nằm ngang ở nhiệt độ cao hơn.",
      "answer": false
     },
     {
@@ -464,16 +460,20 @@
      "answer": true
     },
     {
-     "text": "Để tính $\\lambda$, phải lấy thời gian của đoạn nằm ngang ở nhiệt độ cao hơn.",
+     "text": "$\\lambda = \\dfrac{P\\tau_1}{m\\Delta t}$, với $\\tau_1$ là thời gian đoạn ngang khi tan.",
      "answer": false
+    },
+    {
+     "text": "$c = \\dfrac{P\\tau}{m\\Delta t}$, với $\\tau$ là thời gian của đoạn nghiêng.",
+     "answer": true
     }
    ],
    "explanation": "Theo bài: $c$ đo ở đoạn nghiêng, $\\lambda = \\dfrac{P\\tau_1}{m}$ đo ở đoạn ngang thứ nhất, $L = \\dfrac{P\\tau_2}{m}$ đo ở đoạn ngang thứ hai.",
    "distractorNotes": {
-    "0": "Đoạn nghiêng là lúc nhiệt độ thay đổi, nên dùng $\\tau$ của đoạn đó cùng $\\Delta t$ để tính $c$ là đúng.",
-    "1": "Khi nóng chảy nhiệt độ không đổi, $\\Delta t = 0$, nên công thức tính $\\lambda$ không có $\\Delta t$ ở mẫu.",
-    "2": "Đoạn ngang khi sôi ứng với hoá hơi ở nhiệt độ không đổi, đúng là nơi đọc $\\tau_2$ để tính $L$.",
-    "3": "Đoạn ngang ở nhiệt độ cao hơn là lúc sôi, dùng để tính $L$; $\\lambda$ lấy từ đoạn ngang thấp lúc đá tan."
+    "0": "Đoạn ngang ở nhiệt độ cao hơn là lúc sôi, dùng để tính $L$; $\\lambda$ lấy từ đoạn ngang thấp lúc đá tan.",
+    "1": "Đoạn ngang khi sôi ứng với hoá hơi ở nhiệt độ không đổi, đúng là nơi đọc $\\tau_2$ để tính $L$.",
+    "2": "Khi nóng chảy nhiệt độ không đổi, $\\Delta t = 0$, nên công thức tính $\\lambda$ không có $\\Delta t$ ở mẫu.",
+    "3": "Đoạn nghiêng là lúc nhiệt độ thay đổi, nên dùng $\\tau$ của đoạn đó cùng $\\Delta t$ để tính $c$ là đúng."
    }
   },
   {
@@ -491,12 +491,12 @@
      "answer": true
     },
     {
-     "text": "Nhiệt lượng bếp đã truyền là $Q = P\\tau$.",
-     "answer": true
-    },
-    {
      "text": "Nhiệt hoá hơi riêng tính được là $L = \\dfrac{P\\tau}{m_1}$.",
      "answer": false
+    },
+    {
+     "text": "Nhiệt lượng bếp đã truyền là $Q = P\\tau$.",
+     "answer": true
     },
     {
      "text": "Có thể dùng $Q = mc\\Delta t$ để tính nhiệt hoá hơi, vì nước đang ở 100 °C.",
@@ -506,8 +506,8 @@
    "explanation": "$L = \\dfrac{Q}{m}$ chỉ tính cho phần đã hoá hơi $m_1 - m_2$. Khi sôi nhiệt độ không đổi nên không dùng $Q = mc\\Delta t$.",
    "distractorNotes": {
     "0": "Bình hở và không có nước trào ra, nên phần khối lượng hụt đi đúng bằng phần đã hoá hơi.",
-    "1": "Bếp cấp nhiệt với công suất không đổi đọc trên oát kế, nên nhiệt lượng bằng công suất nhân thời gian.",
-    "2": "Dùng nhầm khối lượng ban đầu $m_1$, trong khi $L$ chỉ tính cho phần đã hoá hơi $m_1 - m_2$.",
+    "1": "Dùng nhầm khối lượng ban đầu $m_1$, trong khi $L$ chỉ tính cho phần đã hoá hơi $m_1 - m_2$.",
+    "2": "Bếp cấp nhiệt với công suất không đổi đọc trên oát kế, nên nhiệt lượng bằng công suất nhân thời gian.",
     "3": "Khi sôi nhiệt độ đứng ở 100 °C, $\\Delta t = 0$ nên $mc\\Delta t$ bằng 0; phải dùng $Q = Lm$."
    }
   },
@@ -522,28 +522,28 @@
    "question": "Một học sinh thay số đo vào công thức $c = \\dfrac{P\\tau}{m\\Delta t}$. Đồng hồ ghi thời gian đun theo phút, nhiệt kế cho độ tăng nhiệt độ 40 °C.",
    "statements": [
     {
-     "text": "Thời gian $\\tau$ phải đổi ra giây trước khi thay vào công thức.",
-     "answer": true
-    },
-    {
      "text": "Độ tăng nhiệt độ 40 °C phải đổi thành 313 K.",
      "answer": false
     },
     {
-     "text": "Nếu oát kế ghi công suất theo kW thì phải đổi sang W.",
+     "text": "Thời gian $\\tau$ phải đổi ra giây trước khi thay vào công thức.",
      "answer": true
     },
     {
      "text": "Đơn vị của $c$ là J/kg, giống đơn vị của $\\lambda$.",
      "answer": false
+    },
+    {
+     "text": "Nếu oát kế ghi công suất theo kW thì phải đổi sang W.",
+     "answer": true
     }
    ],
    "explanation": "Bẫy 3: dùng kg, giây, oát; $\\Delta t$ ghi K hay °C như nhau vì 1 K = 1 °C. Đơn vị của $c$ là J/(kg·K).",
    "distractorNotes": {
-    "0": "Oát là jun trên giây, nên thời gian phải tính bằng giây thì $P\\tau$ mới ra jun.",
-    "1": "Nhầm khoảng nhiệt độ với giá trị nhiệt độ: độ tăng 40 °C cũng là 40 K, không cộng thêm 273.",
-    "2": "Công thức dùng đơn vị SI; nếu giữ công suất theo kW thì kết quả lệch 1 000 lần.",
-    "3": "$c$ chia thêm cho $\\Delta t$ nên có K ở mẫu, tức J/(kg·K); chỉ $\\lambda$ và $L$ mới có đơn vị J/kg."
+    "0": "Nhầm khoảng nhiệt độ với giá trị nhiệt độ: độ tăng 40 °C cũng là 40 K, không cộng thêm 273.",
+    "1": "Oát là jun trên giây, nên thời gian phải tính bằng giây thì $P\\tau$ mới ra jun.",
+    "2": "$c$ chia thêm cho $\\Delta t$ nên có K ở mẫu, tức J/(kg·K); chỉ $\\lambda$ và $L$ mới có đơn vị J/kg.",
+    "3": "Công thức dùng đơn vị SI; nếu giữ công suất theo kW thì kết quả lệch 1 000 lần."
    }
   }
  ]

@@ -355,20 +355,20 @@
      "answer": false
     },
     {
-     "text": "Khi hộp đã trượt, kéo mạnh hơn thì lực ma sát trượt cũng tăng theo.",
-     "answer": false
-    },
-    {
      "text": "Lực ma sát nghỉ có chiều ngược với xu hướng chuyển động của hộp.",
      "answer": true
+    },
+    {
+     "text": "Khi hộp đã trượt, kéo mạnh hơn thì lực ma sát trượt cũng tăng theo.",
+     "answer": false
     }
    ],
    "explanation": "Ma sát nghỉ bằng lực kéo và tăng tới giá trị cực đại; khi trượt, ma sát $\\mu N$ không đổi theo lực kéo nếu $N$ giữ nguyên.",
    "distractorNotes": {
     "0": "Hộp đứng yên nên hợp lực bằng 0, ma sát nghỉ phải tăng đúng bằng lực kéo, không thể coi là sai.",
     "1": "Ma sát nghỉ có giới hạn cực đại, vượt mức đó hộp bắt đầu trượt, nên phát biểu không thể đúng.",
-    "2": "Ma sát trượt bằng $\\mu N$, không đổi theo lực kéo khi áp lực giữ nguyên, nên không thể coi là đúng.",
-    "3": "Ma sát nghỉ luôn chống lại xu hướng trượt tương đối của hộp, nên không thể coi là sai."
+    "2": "Ma sát nghỉ luôn chống lại xu hướng trượt tương đối của hộp, nên không thể coi là sai.",
+    "3": "Ma sát trượt bằng $\\mu N$, không đổi theo lực kéo khi áp lực giữ nguyên, nên không thể coi là đúng."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Kéo đều một hộp gỗ trên bàn khi hộp nằm (mặt rộng), rồi dựng đứng (mặt hẹp), rồi kéo nhanh hơn; cuối cùng kê hộp lên hai bút chì tròn cho lăn. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Khi hộp lăn trên bút chì, lực cản nhỏ hơn nhiều so với lúc trượt.",
+     "answer": true
+    },
+    {
      "text": "Khi dựng đứng hộp, lực ma sát trượt giảm vì diện tích tiếp xúc nhỏ hơn.",
+     "answer": false
+    },
+    {
+     "text": "Ma sát lăn lớn hơn ma sát trượt vì vật phải lăn nhiều vòng.",
      "answer": false
     },
     {
      "text": "Khi kéo nhanh hơn, lực ma sát trượt gần như không đổi.",
      "answer": true
-    },
-    {
-     "text": "Khi hộp lăn trên bút chì, lực cản nhỏ hơn nhiều so với lúc trượt.",
-     "answer": true
-    },
-    {
-     "text": "Ma sát lăn lớn hơn ma sát trượt vì vật phải lăn nhiều vòng.",
-     "answer": false
     }
    ],
    "explanation": "Ma sát trượt không phụ thuộc diện tích tiếp xúc và tốc độ; ma sát lăn nhỏ hơn ma sát trượt rất nhiều.",
    "distractorNotes": {
-    "0": "Công thức $F=\\mu N$ không chứa diện tích, dựng đứng hộp không làm ma sát giảm, nên không thể đúng.",
-    "1": "Ma sát trượt gần đúng không phụ thuộc tốc độ, lực kế vẫn chỉ khoảng như cũ, nên không thể sai.",
-    "2": "Thí nghiệm cho thấy khi lăn lực kế chỉ dưới $0{,}1$ N, nhỏ hơn nhiều lúc trượt, nên không thể sai.",
-    "3": "Số vòng lăn không làm tăng ma sát; ma sát lăn nhỏ hơn ma sát trượt rất nhiều, nên không thể đúng."
+    "0": "Thí nghiệm cho thấy khi lăn lực kế chỉ dưới $0{,}1$ N, nhỏ hơn nhiều lúc trượt, nên không thể sai.",
+    "1": "Công thức $F=\\mu N$ không chứa diện tích, dựng đứng hộp không làm ma sát giảm, nên không thể đúng.",
+    "2": "Số vòng lăn không làm tăng ma sát; ma sát lăn nhỏ hơn ma sát trượt rất nhiều, nên không thể đúng.",
+    "3": "Ma sát trượt gần đúng không phụ thuộc tốc độ, lực kế vẫn chỉ khoảng như cũ, nên không thể sai."
    }
   },
   {
@@ -417,10 +417,6 @@
    "question": "Một chiếc tủ đặt trên sàn ngang. Em đẩy tủ theo phương ngang nhưng tủ vẫn đứng yên. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Lực ma sát sàn tác dụng lên tủ lúc này tính được bằng $\\mu N$.",
-     "answer": false
-    },
-    {
      "text": "Lực ma sát lên tủ có độ lớn bằng lực đẩy và ngược chiều lực đẩy.",
      "answer": true
     },
@@ -431,14 +427,18 @@
     {
      "text": "Lực ma sát luôn ngược chiều chuyển động của vật nên ma sát luôn cản chuyển động.",
      "answer": false
+    },
+    {
+     "text": "Lực ma sát sàn tác dụng lên tủ lúc này tính được bằng $\\mu N$.",
+     "answer": false
     }
    ],
    "explanation": "Vật đứng yên dùng cân bằng lực, không dùng $\\mu N$; ma sát ngược chiều trượt tương đối, có lúc giúp vật đi như khi bước chân.",
    "distractorNotes": {
-    "0": "Tủ đứng yên chịu ma sát nghỉ, phải tìm bằng cân bằng lực chứ không dùng $\\mu N$, nên không thể đúng.",
-    "1": "Tủ đứng yên nên hợp lực bằng 0, ma sát phải bằng và ngược chiều lực đẩy, nên không thể sai.",
-    "2": "Ma sát nghỉ tự điều chỉnh theo lực đẩy cho tới mức cực đại, nên không thể coi là sai.",
-    "3": "Ma sát ngược chiều trượt tương đối, có lúc giúp vật đi như khi bước chân, nên không thể đúng."
+    "0": "Tủ đứng yên nên hợp lực bằng 0, ma sát phải bằng và ngược chiều lực đẩy, nên không thể sai.",
+    "1": "Ma sát nghỉ tự điều chỉnh theo lực đẩy cho tới mức cực đại, nên không thể coi là sai.",
+    "2": "Ma sát ngược chiều trượt tương đối, có lúc giúp vật đi như khi bước chân, nên không thể đúng.",
+    "3": "Tủ đứng yên chịu ma sát nghỉ, phải tìm bằng cân bằng lực chứ không dùng $\\mu N$, nên không thể đúng."
    }
   },
   {
@@ -452,6 +452,10 @@
    "question": "Lực ma sát trượt được tính bằng công thức $F_{\\text{mst}} = \\mu N$. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Áp lực $N$ luôn bằng $mg$ trong mọi trường hợp.",
+     "answer": false
+    },
+    {
      "text": "Hệ số ma sát trượt $\\mu$ có đơn vị là niutơn.",
      "answer": false
     },
@@ -462,18 +466,14 @@
     {
      "text": "Trên mặt ngang, lực kéo nằm ngang thì $N = mg$.",
      "answer": true
-    },
-    {
-     "text": "Áp lực $N$ luôn bằng $mg$ trong mọi trường hợp.",
-     "answer": false
     }
    ],
    "explanation": "$\\mu$ không có đơn vị; $N$ là áp lực, chỉ bằng $mg$ khi mặt ngang và lực kéo nằm ngang.",
    "distractorNotes": {
-    "0": "$\\mu$ là tỉ số hai lực nên không có đơn vị; nhầm với chữ N chỉ niutơn, nên không thể đúng.",
-    "1": "Áp lực và phản lực của mặt có cùng độ lớn, nên dùng chung kí hiệu $N$; phát biểu không thể sai.",
-    "2": "Phương thẳng đứng chỉ có $P$ và $N$ cân bằng, nên $N = mg$; phát biểu không thể sai.",
-    "3": "Kéo chếch hay đặt trên dốc thì $N$ bằng $mg - F\\sin\\alpha$ hoặc $mg\\cos\\alpha$, nên không thể đúng."
+    "0": "Kéo chếch hay đặt trên dốc thì $N$ bằng $mg - F\\sin\\alpha$ hoặc $mg\\cos\\alpha$, nên không thể đúng.",
+    "1": "$\\mu$ là tỉ số hai lực nên không có đơn vị; nhầm với chữ N chỉ niutơn, nên không thể đúng.",
+    "2": "Áp lực và phản lực của mặt có cùng độ lớn, nên dùng chung kí hiệu $N$; phát biểu không thể sai.",
+    "3": "Phương thẳng đứng chỉ có $P$ và $N$ cân bằng, nên $N = mg$; phát biểu không thể sai."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Một vật khối lượng $m$ trượt xuống mặt phẳng nghiêng góc $\\alpha$, hệ số ma sát trượt $\\mu$. Phân tích trọng lực thành hai thành phần dọc dốc và vuông góc dốc. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Thành phần $P_x = mg\\sin\\alpha$ kéo vật xuống dốc.",
-     "answer": true
-    },
-    {
      "text": "Áp lực của vật lên mặt nghiêng là $N = mg\\cos\\alpha$.",
      "answer": true
     },
     {
-     "text": "Lực ma sát trượt tác dụng lên vật hướng xuống dốc.",
-     "answer": false
+     "text": "Thành phần $P_x = mg\\sin\\alpha$ kéo vật xuống dốc.",
+     "answer": true
     },
     {
      "text": "Tăng góc nghiêng (vật vẫn trượt) thì lực ma sát trượt tăng lên.",
+     "answer": false
+    },
+    {
+     "text": "Lực ma sát trượt tác dụng lên vật hướng xuống dốc.",
      "answer": false
     }
    ],
    "explanation": "$P_x = mg\\sin\\alpha$, $N = mg\\cos\\alpha$; ma sát $\\mu mg\\cos\\alpha$ hướng lên dốc và giảm khi $\\alpha$ tăng vì $\\cos\\alpha$ giảm.",
    "distractorNotes": {
-    "0": "Thành phần dọc dốc của trọng lực đúng là $mg\\sin\\alpha$ hướng xuống, nên không thể coi là sai.",
-    "1": "$N$ cân bằng thành phần ép vào dốc $P_y = mg\\cos\\alpha$, nên không thể coi là sai.",
-    "2": "Vật trượt xuống nên ma sát ngược chiều trượt, tức hướng lên dốc; phát biểu không thể đúng.",
-    "3": "Ma sát bằng $\\mu mg\\cos\\alpha$, góc tăng thì $\\cos\\alpha$ giảm nên ma sát giảm; không thể đúng."
+    "0": "$N$ cân bằng thành phần ép vào dốc $P_y = mg\\cos\\alpha$, nên không thể coi là sai.",
+    "1": "Thành phần dọc dốc của trọng lực đúng là $mg\\sin\\alpha$ hướng xuống, nên không thể coi là sai.",
+    "2": "Ma sát bằng $\\mu mg\\cos\\alpha$, góc tăng thì $\\cos\\alpha$ giảm nên ma sát giảm; không thể đúng.",
+    "3": "Vật trượt xuống nên ma sát ngược chiều trượt, tức hướng lên dốc; phát biểu không thể đúng."
    }
   },
   {
@@ -522,10 +522,6 @@
    "question": "Kéo một thùng khối lượng $m$ trượt trên sàn ngang bằng dây với lực $F$ chếch lên, hợp với phương ngang góc $\\alpha$ ($\\alpha \\lt 90^\\circ$). Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Thành phần $F\\sin\\alpha$ đỡ bớt thùng nên áp lực nhỏ hơn $mg$.",
-     "answer": true
-    },
-    {
      "text": "Giữ nguyên độ lớn $F$, tăng góc $\\alpha$ thì áp lực của thùng lên sàn giảm.",
      "answer": true
     },
@@ -534,15 +530,19 @@
      "answer": false
     },
     {
+     "text": "Thành phần $F\\sin\\alpha$ đỡ bớt thùng nên áp lực nhỏ hơn $mg$.",
+     "answer": true
+    },
+    {
      "text": "Thành phần của lực kéo làm giảm áp lực là $F\\cos\\alpha$.",
      "answer": false
     }
    ],
    "explanation": "$N = mg - F\\sin\\alpha$; $\\alpha$ tăng thì $\\sin\\alpha$ tăng nên $N$ giảm, và $F_{\\text{mst}} = \\mu N$ giảm theo.",
    "distractorNotes": {
-    "0": "Lực kéo chếch lên có thành phần thẳng đứng hướng lên làm sàn đỡ ít hơn, nên không thể sai.",
-    "1": "Góc tăng thì $\\sin\\alpha$ tăng, nên $N = mg - F\\sin\\alpha$ giảm; phát biểu không thể sai.",
-    "2": "Đảo tỉ lệ: ma sát trượt tỉ lệ thuận với áp lực, áp lực giảm thì ma sát giảm, nên không thể đúng.",
+    "0": "Góc tăng thì $\\sin\\alpha$ tăng, nên $N = mg - F\\sin\\alpha$ giảm; phát biểu không thể sai.",
+    "1": "Đảo tỉ lệ: ma sát trượt tỉ lệ thuận với áp lực, áp lực giảm thì ma sát giảm, nên không thể đúng.",
+    "2": "Lực kéo chếch lên có thành phần thẳng đứng hướng lên làm sàn đỡ ít hơn, nên không thể sai.",
     "3": "Nhầm sin với cos: $F\\cos\\alpha$ nằm ngang, thành phần làm giảm áp lực là $F\\sin\\alpha$, nên không thể đúng."
    }
   }

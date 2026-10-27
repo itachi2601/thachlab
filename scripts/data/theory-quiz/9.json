@@ -347,12 +347,12 @@
    "question": "Một bình kim loại kín chứa khí được nối với áp kế và ngâm trong nồi nước đun nóng dần; thể tích và lượng khí coi như không đổi. Người ta đọc áp suất ở nhiều nhiệt độ khác nhau.",
    "statements": [
     {
-     "text": "Tỉ số $\\dfrac{p}{T}$ (với $T$ tính bằng kenvin) gần như không đổi qua các lần đo.",
-     "answer": true
-    },
-    {
      "text": "Áp suất khí tỉ lệ thuận với nhiệt độ đo bằng độ C.",
      "answer": false
+    },
+    {
+     "text": "Tỉ số $\\dfrac{p}{T}$ (với $T$ tính bằng kenvin) gần như không đổi qua các lần đo.",
+     "answer": true
     },
     {
      "text": "Vì mật độ phân tử không đổi nên động năng tịnh tiến trung bình của phân tử tỉ lệ thuận với $T$.",
@@ -365,8 +365,8 @@
    ],
    "explanation": "Với $V$ và lượng khí không đổi, $p$ tỉ lệ thuận với nhiệt độ tuyệt đối; từ $p=\\dfrac{2}{3}\\mu\\overline{E_d}$ với $\\mu$ không đổi suy ra $\\overline{E_d}$ tỉ lệ $T$. Bình giãn nở làm thể tích tăng nên áp suất đo được thấp hơn.",
    "distractorNotes": {
-    "0": "Thể tích và lượng khí không đổi thì $p$ tỉ lệ thuận $T$ kenvin, nên tỉ số này không đổi thật.",
-    "1": "Thang Celsius không có gốc 0 thật; áp suất chỉ tỉ lệ thuận với nhiệt độ tuyệt đối.",
+    "0": "Thang Celsius không có gốc 0 thật; áp suất chỉ tỉ lệ thuận với nhiệt độ tuyệt đối.",
+    "1": "Thể tích và lượng khí không đổi thì $p$ tỉ lệ thuận $T$ kenvin, nên tỉ số này không đổi thật.",
     "2": "Với $p=\\dfrac{2}{3}\\mu\\overline{E_d}$, $\\mu$ cố định mà $p$ tỉ lệ $T$ thì $\\overline{E_d}$ cũng tỉ lệ $T$.",
     "3": "Bình giãn nở làm thể tích tăng, mật độ phân tử giảm nên áp suất đo được thấp hơn tính toán."
    }
@@ -382,28 +382,28 @@
    "question": "Hai bình kín cùng thể tích, chứa cùng số phân tử và cùng ở một nhiệt độ: bình 1 chứa khí H₂, bình 2 chứa khí O₂ (phân tử O₂ nặng hơn phân tử H₂).",
    "statements": [
     {
-     "text": "Động năng tịnh tiến trung bình của phân tử ở hai bình bằng nhau.",
-     "answer": true
-    },
-    {
      "text": "Áp suất bình O₂ lớn hơn vì phân tử O₂ nặng hơn.",
      "answer": false
+    },
+    {
+     "text": "Áp suất hai bình bằng nhau.",
+     "answer": true
     },
     {
      "text": "Tốc độ căn quân phương của phân tử H₂ lớn hơn của phân tử O₂.",
      "answer": true
     },
     {
-     "text": "Áp suất hai bình bằng nhau.",
+     "text": "Động năng tịnh tiến trung bình của phân tử ở hai bình bằng nhau.",
      "answer": true
     }
    ],
    "explanation": "Cùng $T$ nên cùng $\\overline{E_d}$, tức $m\\overline{v^2}$ như nhau; cùng $N$, $V$ thì $p=\\dfrac{1}{3}\\mu m\\overline{v^2}$ bằng nhau. Theo $v_{rms}=\\sqrt{\\dfrac{3kT}{m}}$, khí nhẹ hơn bay nhanh hơn.",
    "distractorNotes": {
-    "0": "$\\overline{E_d}=\\dfrac{3}{2}kT$ chỉ phụ thuộc nhiệt độ, nên cùng $T$ thì hai khí phải có cùng động năng.",
-    "1": "Chỉ nhìn khối lượng mà quên O₂ bay chậm hơn; tích $m\\overline{v^2}$ hai khí như nhau.",
+    "0": "Chỉ nhìn khối lượng mà quên O₂ bay chậm hơn; tích $m\\overline{v^2}$ hai khí như nhau.",
+    "1": "Cùng $\\mu$ và cùng $\\overline{E_d}$ thì $p=\\dfrac{2}{3}\\mu\\overline{E_d}$ bắt buộc bằng nhau.",
     "2": "Theo $v_{rms}=\\sqrt{\\dfrac{3kT}{m}}$, cùng $T$ thì phân tử nhẹ hơn chắc chắn bay nhanh hơn.",
-    "3": "Cùng $\\mu$ và cùng $\\overline{E_d}$ thì $p=\\dfrac{2}{3}\\mu\\overline{E_d}$ bắt buộc bằng nhau."
+    "3": "$\\overline{E_d}=\\dfrac{3}{2}kT$ chỉ phụ thuộc nhiệt độ, nên cùng $T$ thì hai khí phải có cùng động năng."
    }
   },
   {
@@ -417,7 +417,7 @@
    "question": "Xét mô hình động học phân tử của khí lí tưởng dùng để giải thích áp suất khí lên thành bình.",
    "statements": [
     {
-     "text": "Kích thước phân tử khí rất nhỏ so với khoảng cách giữa chúng.",
+     "text": "Giữa hai lần va chạm, mỗi phân tử chuyển động thẳng đều.",
      "answer": true
     },
     {
@@ -425,20 +425,20 @@
      "answer": false
     },
     {
-     "text": "Giữa hai lần va chạm, mỗi phân tử chuyển động thẳng đều.",
-     "answer": true
-    },
-    {
      "text": "Va chạm của phân tử với thành bình là không đàn hồi, phân tử mất động năng.",
      "answer": false
+    },
+    {
+     "text": "Kích thước phân tử khí rất nhỏ so với khoảng cách giữa chúng.",
+     "answer": true
     }
    ],
    "explanation": "Mô hình khí lí tưởng coi phân tử rất nhỏ, bỏ qua lực tương tác khi chưa va chạm, nên giữa hai va chạm phân tử bay thẳng đều; va chạm với thành là hoàn toàn đàn hồi.",
    "distractorNotes": {
-    "0": "Đây chính là giả thiết của mô hình: kích thước phân tử rất nhỏ so với khoảng cách giữa chúng.",
+    "0": "Không có lực tương tác giữa hai va chạm thì phân tử phải chuyển động thẳng đều.",
     "1": "Mô hình khí lí tưởng bỏ qua lực tương tác giữa các phân tử khi chưa va chạm.",
-    "2": "Không có lực tương tác giữa hai va chạm thì phân tử phải chuyển động thẳng đều.",
-    "3": "Va chạm với thành là hoàn toàn đàn hồi, phân tử bật ngược với tốc độ cũ, không mất động năng."
+    "2": "Va chạm với thành là hoàn toàn đàn hồi, phân tử bật ngược với tốc độ cũ, không mất động năng.",
+    "3": "Đây chính là giả thiết của mô hình: kích thước phân tử rất nhỏ so với khoảng cách giữa chúng."
    }
   },
   {
@@ -456,24 +456,24 @@
      "answer": false
     },
     {
+     "text": "Áp suất do một phân tử này gây ra lên thành là $p_m=\\dfrac{m}{V}v^2$.",
+     "answer": true
+    },
+    {
      "text": "Mỗi va chạm, thành bình nhận động lượng có độ lớn $2mv$.",
      "answer": true
     },
     {
      "text": "Thời gian giữa hai lần phân tử đập vào cùng một thành là $\\dfrac{2l}{v}$.",
      "answer": true
-    },
-    {
-     "text": "Áp suất do một phân tử này gây ra lên thành là $p_m=\\dfrac{m}{V}v^2$.",
-     "answer": true
     }
    ],
    "explanation": "Động lượng đổi chiều nên $|\\Delta p|=2mv$; mỗi vòng đi về mất $\\dfrac{2l}{v}$, lực trung bình $F=\\dfrac{mv^2}{l}$, chia cho $S=l^2$ được $p_m=\\dfrac{m}{V}v^2$.",
    "distractorNotes": {
     "0": "Lẫn tốc độ với động lượng: vectơ động lượng đổi chiều nên biến thiên có độ lớn $2mv$.",
-    "1": "Động lượng phân tử đổi từ $+mv$ sang $-mv$, nên thành nhận đúng độ lớn $2mv$.",
-    "2": "Phân tử đi sang thành đối diện rồi quay lại, quãng đường $2l$ với tốc độ $v$.",
-    "3": "Lực trung bình $\\dfrac{mv^2}{l}$ chia diện tích $l^2$ cho đúng $\\dfrac{m}{V}v^2$."
+    "1": "Lực trung bình $\\dfrac{mv^2}{l}$ chia diện tích $l^2$ cho đúng $\\dfrac{m}{V}v^2$.",
+    "2": "Động lượng phân tử đổi từ $+mv$ sang $-mv$, nên thành nhận đúng độ lớn $2mv$.",
+    "3": "Phân tử đi sang thành đối diện rồi quay lại, quãng đường $2l$ với tốc độ $v$."
    }
   },
   {
@@ -487,6 +487,10 @@
    "question": "Một học sinh dùng công thức $\\overline{E_d}=\\dfrac{3}{2}kT$ để so sánh động năng tịnh tiến trung bình của phân tử một khối khí ở các nhiệt độ khác nhau.",
    "statements": [
     {
+     "text": "Khi hỏi động năng tăng mấy lần, phải đổi nhiệt độ sang kenvin rồi mới lấy tỉ số.",
+     "answer": true
+    },
+    {
      "text": "Khí nóng từ $20\\ ^\\circ\\text{C}$ lên $40\\ ^\\circ\\text{C}$ thì động năng trung bình tăng gấp đôi.",
      "answer": false
     },
@@ -497,18 +501,14 @@
     {
      "text": "Hệ số $\\dfrac{3}{2}$ ứng với ba phương tịnh tiến, mỗi phương góp $\\dfrac{1}{2}kT$.",
      "answer": true
-    },
-    {
-     "text": "Khi hỏi động năng tăng mấy lần, phải đổi nhiệt độ sang kenvin rồi mới lấy tỉ số.",
-     "answer": true
     }
    ],
    "explanation": "$T$ là nhiệt độ tuyệt đối: 293 K lên 313 K chỉ tăng khoảng 1,07 lần; 0 °C ứng với 273 K nên vẫn còn động năng. Hệ số $\\dfrac{3}{2}$ ứng với ba phương tịnh tiến.",
    "distractorNotes": {
-    "0": "Lấy tỉ số Celsius là sai; theo kenvin từ 293 K lên 313 K chỉ tăng khoảng 1,07 lần.",
-    "1": "0 °C ứng với 273 K, chưa phải 0 tuyệt đối, nên phân tử vẫn còn động năng.",
-    "2": "Ba phương tịnh tiến bình đẳng, mỗi phương góp $\\dfrac{1}{2}kT$, cộng lại đúng $\\dfrac{3}{2}kT$.",
-    "3": "$\\overline{E_d}$ tỉ lệ thuận với nhiệt độ tuyệt đối nên tỉ số chỉ đúng khi tính bằng kenvin."
+    "0": "$\\overline{E_d}$ tỉ lệ thuận với nhiệt độ tuyệt đối nên tỉ số chỉ đúng khi tính bằng kenvin.",
+    "1": "Lấy tỉ số Celsius là sai; theo kenvin từ 293 K lên 313 K chỉ tăng khoảng 1,07 lần.",
+    "2": "0 °C ứng với 273 K, chưa phải 0 tuyệt đối, nên phân tử vẫn còn động năng.",
+    "3": "Ba phương tịnh tiến bình đẳng, mỗi phương góp $\\dfrac{1}{2}kT$, cộng lại đúng $\\dfrac{3}{2}kT$."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một bình thể tích $V$ chứa $N$ phân tử khí, mỗi phân tử khối lượng $m$, ở nhiệt độ tuyệt đối $T$. Xét các biểu thức của áp suất khí.",
    "statements": [
     {
-     "text": "$p=\\dfrac{1}{3}\\dfrac{Nm}{V}\\overline{v^2}$.",
-     "answer": true
-    },
-    {
      "text": "$\\overline{v^2}$ trong công thức là bình phương của tốc độ trung bình các phân tử.",
      "answer": false
     },
     {
-     "text": "Khối lượng riêng của khí liên hệ với mật độ phân tử theo $\\rho=\\mu m$.",
+     "text": "Áp suất khí có thể viết là $p=\\mu kT$.",
      "answer": true
     },
     {
-     "text": "Áp suất khí có thể viết là $p=\\mu kT$.",
+     "text": "$p=\\dfrac{1}{3}\\dfrac{Nm}{V}\\overline{v^2}$.",
+     "answer": true
+    },
+    {
+     "text": "Khối lượng riêng của khí liên hệ với mật độ phân tử theo $\\rho=\\mu m$.",
      "answer": true
     }
    ],
    "explanation": "$\\overline{v^2}=\\dfrac{v_1^2+\\dots+v_N^2}{N}$ là trung bình các bình phương tốc độ. Thay $\\overline{E_d}=\\dfrac{3}{2}kT$ vào $p=\\dfrac{2}{3}\\mu\\overline{E_d}$ được $p=\\mu kT$.",
    "distractorNotes": {
-    "0": "Cộng đóng góp của $N$ phân tử với $\\overline{v_x^2}=\\dfrac{1}{3}\\overline{v^2}$ cho đúng biểu thức này.",
-    "1": "Lẫn trung bình bình phương với bình phương trung bình; phải bình phương từng tốc độ rồi mới lấy trung bình.",
-    "2": "$\\rho=\\dfrac{Nm}{V}$ và $\\mu=\\dfrac{N}{V}$ nên khối lượng riêng đúng bằng $\\mu m$.",
-    "3": "Thay $\\overline{E_d}=\\dfrac{3}{2}kT$ vào $p=\\dfrac{2}{3}\\mu\\overline{E_d}$ thì hệ số triệt tiêu, còn $\\mu kT$."
+    "0": "Lẫn trung bình bình phương với bình phương trung bình; phải bình phương từng tốc độ rồi mới lấy trung bình.",
+    "1": "Thay $\\overline{E_d}=\\dfrac{3}{2}kT$ vào $p=\\dfrac{2}{3}\\mu\\overline{E_d}$ thì hệ số triệt tiêu, còn $\\mu kT$.",
+    "2": "Cộng đóng góp của $N$ phân tử với $\\overline{v_x^2}=\\dfrac{1}{3}\\overline{v^2}$ cho đúng biểu thức này.",
+    "3": "$\\rho=\\dfrac{Nm}{V}$ và $\\mu=\\dfrac{N}{V}$ nên khối lượng riêng đúng bằng $\\mu m$."
    }
   }
  ]

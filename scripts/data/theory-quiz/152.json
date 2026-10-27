@@ -347,8 +347,8 @@
       "question": "Một học sinh nối cuộn dây kín với điện kế rồi làm thí nghiệm với một thanh nam châm thẳng. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Đưa nam châm lại gần cuộn dây thì kim điện kế lệch.",
-          "answer": true
+          "text": "Kéo nam châm ra xa thì kim không lệch vì không còn lại gần.",
+          "answer": false
         },
         {
           "text": "Quay nam châm quanh trục dọc của chính nó thì kim lệch vì nam châm đang chuyển động.",
@@ -359,16 +359,16 @@
           "answer": true
         },
         {
-          "text": "Kéo nam châm ra xa thì kim không lệch vì không còn lại gần.",
-          "answer": false
+          "text": "Đưa nam châm lại gần cuộn dây thì kim điện kế lệch.",
+          "answer": true
         }
       ],
-      "explanation": "a) đúng: số đường sức qua cuộn dây tăng, có dòng cảm ứng. b) sai: từ phổ đối xứng quanh trục dọc, số đường sức qua cuộn dây không đổi. c) đúng: số đường sức không biến thiên nên không có dòng cảm ứng. d) sai: số đường sức qua cuộn dây giảm nên có dòng cảm ứng, kim lệch ngược chiều so với lúc lại gần.",
+      "explanation": "a) sai: số đường sức qua cuộn dây giảm nên có dòng cảm ứng, kim lệch ngược chiều so với lúc lại gần. b) sai: từ phổ đối xứng quanh trục dọc, số đường sức qua cuộn dây không đổi. c) đúng: số đường sức không biến thiên nên không có dòng cảm ứng. d) đúng: số đường sức qua cuộn dây tăng, có dòng cảm ứng.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì số đường sức qua cuộn dây tăng, có dòng cảm ứng.",
+        "0": "Không thể coi là đúng vì số đường sức qua cuộn dây giảm nên có dòng cảm ứng, kim lệch ngược chiều so với lúc lại gần.",
         "1": "Không thể coi là đúng vì từ phổ đối xứng quanh trục dọc, số đường sức qua cuộn dây không đổi.",
         "2": "Không thể coi là sai vì số đường sức không biến thiên nên không có dòng cảm ứng.",
-        "3": "Không thể coi là đúng vì số đường sức qua cuộn dây giảm nên có dòng cảm ứng, kim lệch ngược chiều so với lúc lại gần."
+        "3": "Không thể coi là sai vì số đường sức qua cuộn dây tăng, có dòng cảm ứng."
       }
     },
     {
@@ -382,28 +382,28 @@
       "question": "Một máy phát có rôto $6$ cực từ, quay $1000$ vòng/phút. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Tần số dòng điện của máy phát là khoảng $16{,}7\\ \\text{Hz}$.",
-          "answer": false
+          "text": "Tần số dòng điện của máy phát là $50\\ \\text{Hz}$.",
+          "answer": true
         },
         {
-          "text": "Rôto $6$ cực từ tương ứng với $3$ cặp cực.",
-          "answer": true
+          "text": "Tần số dòng điện của máy phát là khoảng $16{,}7\\ \\text{Hz}$.",
+          "answer": false
         },
         {
           "text": "Tần số dòng điện của máy phát là $3000\\ \\text{Hz}$.",
           "answer": false
         },
         {
-          "text": "Tần số dòng điện của máy phát là $50\\ \\text{Hz}$.",
+          "text": "Rôto $6$ cực từ tương ứng với $3$ cặp cực.",
           "answer": true
         }
       ],
-      "explanation": "a) sai: đó là số vòng quay mỗi giây, còn phải nhân với số cặp cực. b) đúng: một cặp cực gồm hai cực, nên $6$ cực là $3$ cặp. c) sai: giá trị này do chưa đổi vòng/phút ra vòng/giây. d) đúng: $n=\\dfrac{1000}{60}$ vòng/s nên $f=np=\\dfrac{1000}{60}\\cdot3=50\\ \\text{Hz}$.",
+      "explanation": "a) đúng: $n=\\dfrac{1000}{60}$ vòng/s nên $f=np=\\dfrac{1000}{60}\\cdot3=50\\ \\text{Hz}$. b) sai: đó là số vòng quay mỗi giây, còn phải nhân với số cặp cực. c) sai: giá trị này do chưa đổi vòng/phút ra vòng/giây. d) đúng: một cặp cực gồm hai cực, nên $6$ cực là $3$ cặp.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì đó là số vòng quay mỗi giây, còn phải nhân với số cặp cực.",
-        "1": "Không thể coi là sai vì một cặp cực gồm hai cực, nên $6$ cực là $3$ cặp.",
+        "0": "Không thể coi là sai vì $n=\\dfrac{1000}{60}$ vòng/s nên $f=np=\\dfrac{1000}{60}\\cdot3=50\\ \\text{Hz}$.",
+        "1": "Không thể coi là đúng vì đó là số vòng quay mỗi giây, còn phải nhân với số cặp cực.",
         "2": "Không thể coi là đúng vì giá trị này do chưa đổi vòng/phút ra vòng/giây.",
-        "3": "Không thể coi là sai vì $n=\\dfrac{1000}{60}$ vòng/s nên $f=np=\\dfrac{1000}{60}\\cdot3=50\\ \\text{Hz}$."
+        "3": "Không thể coi là sai vì một cặp cực gồm hai cực, nên $6$ cực là $3$ cặp."
       }
     },
     {
@@ -421,24 +421,24 @@
           "answer": true
         },
         {
-          "text": "Cuộn sơ cấp có số vòng ít hơn cuộn thứ cấp.",
-          "answer": false
-        },
-        {
           "text": "Dòng điện qua đèn (cuộn thứ cấp) là $3\\ \\text{A}$.",
           "answer": true
         },
         {
           "text": "Dòng điện qua cuộn sơ cấp cũng là $3\\ \\text{A}$ vì hai cuộn nối với nhau.",
           "answer": false
+        },
+        {
+          "text": "Cuộn sơ cấp có số vòng ít hơn cuộn thứ cấp.",
+          "answer": false
         }
       ],
-      "explanation": "a) đúng: máy lí tưởng nên $I_1=\\dfrac{P}{U_1}=\\dfrac{36}{220}\\approx0{,}16\\ \\text{A}$. b) sai: đây là máy hạ áp nên cuộn sơ cấp có nhiều vòng hơn. c) đúng: $I_2=\\dfrac{P}{U_2}=\\dfrac{36}{12}=3\\ \\text{A}$. d) sai: hai cuộn không nối điện, dòng ngược với hiệu điện thế nên khác nhau.",
+      "explanation": "a) đúng: máy lí tưởng nên $I_1=\\dfrac{P}{U_1}=\\dfrac{36}{220}\\approx0{,}16\\ \\text{A}$. b) đúng: $I_2=\\dfrac{P}{U_2}=\\dfrac{36}{12}=3\\ \\text{A}$. c) sai: hai cuộn không nối điện, dòng ngược với hiệu điện thế nên khác nhau. d) sai: đây là máy hạ áp nên cuộn sơ cấp có nhiều vòng hơn.",
       "distractorNotes": {
         "0": "Không thể coi là sai vì máy lí tưởng nên $I_1=\\dfrac{P}{U_1}=\\dfrac{36}{220}\\approx0{,}16\\ \\text{A}$.",
-        "1": "Không thể coi là đúng vì đây là máy hạ áp nên cuộn sơ cấp có nhiều vòng hơn.",
-        "2": "Không thể coi là sai vì $I_2=\\dfrac{P}{U_2}=\\dfrac{36}{12}=3\\ \\text{A}$.",
-        "3": "Không thể coi là đúng vì hai cuộn không nối điện, dòng ngược với hiệu điện thế nên khác nhau."
+        "1": "Không thể coi là sai vì $I_2=\\dfrac{P}{U_2}=\\dfrac{36}{12}=3\\ \\text{A}$.",
+        "2": "Không thể coi là đúng vì hai cuộn không nối điện, dòng ngược với hiệu điện thế nên khác nhau.",
+        "3": "Không thể coi là đúng vì đây là máy hạ áp nên cuộn sơ cấp có nhiều vòng hơn."
       }
     },
     {
@@ -452,11 +452,11 @@
       "question": "Một máy biến áp có cuộn sơ cấp $400$ vòng, nối nguồn xoay chiều $12\\ \\text{V}$. Học sinh đổi cuộn thứ cấp $100$, $200$, $400$ vòng và đo $U_2$ được $2{,}9\\ \\text{V}$, $5{,}8\\ \\text{V}$, $11{,}6\\ \\text{V}$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Với thứ cấp $400$ vòng thì máy là máy tăng áp.",
-          "answer": false
+          "text": "Với thứ cấp $100$ vòng, lí thuyết cho $U_2=3\\ \\text{V}$.",
+          "answer": true
         },
         {
-          "text": "Với thứ cấp $100$ vòng, lí thuyết cho $U_2=3\\ \\text{V}$.",
+          "text": "Khi giữ $U_1$ và $N_1$, hiệu điện thế $U_2$ tỉ lệ với $N_2$.",
           "answer": true
         },
         {
@@ -464,16 +464,16 @@
           "answer": false
         },
         {
-          "text": "Khi giữ $U_1$ và $N_1$, hiệu điện thế $U_2$ tỉ lệ với $N_2$.",
-          "answer": true
+          "text": "Với thứ cấp $400$ vòng thì máy là máy tăng áp.",
+          "answer": false
         }
       ],
-      "explanation": "a) sai: hai cuộn bằng nhau nên hiệu điện thế gần như không đổi. b) đúng: $U_2=12\\cdot\\dfrac{100}{400}=3\\ \\text{V}$. c) sai: lệch cùng một phía là sai số hệ thống do toả nhiệt và rò từ, không phải do đọc số. d) đúng: đây là hệ thức $U_1/U_2=N_1/N_2$.",
+      "explanation": "a) đúng: $U_2=12\\cdot\\dfrac{100}{400}=3\\ \\text{V}$. b) đúng: đây là hệ thức $U_1/U_2=N_1/N_2$. c) sai: lệch cùng một phía là sai số hệ thống do toả nhiệt và rò từ, không phải do đọc số. d) sai: hai cuộn bằng nhau nên hiệu điện thế gần như không đổi.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì hai cuộn bằng nhau nên hiệu điện thế gần như không đổi.",
-        "1": "Không thể coi là sai vì $U_2=12\\cdot\\dfrac{100}{400}=3\\ \\text{V}$.",
+        "0": "Không thể coi là sai vì $U_2=12\\cdot\\dfrac{100}{400}=3\\ \\text{V}$.",
+        "1": "Không thể coi là sai vì đây là hệ thức $U_1/U_2=N_1/N_2$.",
         "2": "Không thể coi là đúng vì lệch cùng một phía là sai số hệ thống do toả nhiệt và rò từ, không phải do đọc số.",
-        "3": "Không thể coi là sai vì đây là hệ thức $U_1/U_2=N_1/N_2$."
+        "3": "Không thể coi là đúng vì hai cuộn bằng nhau nên hiệu điện thế gần như không đổi."
       }
     },
     {
@@ -487,28 +487,28 @@
       "question": "Trạm truyền công suất $400\\ \\text{kW}$ qua đường dây có điện trở tổng $10\\ \\Omega$, hiệu điện thế ở đầu đường dây là $20\\ \\text{kV}$. Xét các phát biểu sau:",
       "statements": [
         {
+          "text": "Nếu giảm hiệu điện thế xuống $10\\ \\text{kV}$ thì hao phí giảm một nửa.",
+          "answer": false
+        },
+        {
           "text": "Dòng điện trên dây là $20\\ \\text{A}$.",
+          "answer": true
+        },
+        {
+          "text": "Công suất hao phí trên dây là $4\\ \\text{kW}$.",
           "answer": true
         },
         {
           "text": "Hiệu suất truyền tải là $96\\%$.",
           "answer": false
-        },
-        {
-          "text": "Nếu giảm hiệu điện thế xuống $10\\ \\text{kV}$ thì hao phí giảm một nửa.",
-          "answer": false
-        },
-        {
-          "text": "Công suất hao phí trên dây là $4\\ \\text{kW}$.",
-          "answer": true
         }
       ],
-      "explanation": "a) đúng: $I=\\dfrac PU=\\dfrac{400\\,000}{20\\,000}=20\\ \\text{A}$. b) sai: $H=1-\\dfrac{4}{400}=99\\%$. c) sai: hao phí tỉ lệ nghịch với $U^2$, giảm $U$ một nửa thì hao phí tăng $4$ lần. d) đúng: $P_{hp}=RI^2=10\\cdot20^2=4000\\ \\text{W}$.",
+      "explanation": "a) sai: hao phí tỉ lệ nghịch với $U^2$, giảm $U$ một nửa thì hao phí tăng $4$ lần. b) đúng: $I=\\dfrac PU=\\dfrac{400\\,000}{20\\,000}=20\\ \\text{A}$. c) đúng: $P_{hp}=RI^2=10\\cdot20^2=4000\\ \\text{W}$. d) sai: $H=1-\\dfrac{4}{400}=99\\%$.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì $I=\\dfrac PU=\\dfrac{400\\,000}{20\\,000}=20\\ \\text{A}$.",
-        "1": "Không thể coi là đúng vì $H=1-\\dfrac{4}{400}=99\\%$.",
-        "2": "Không thể coi là đúng vì hao phí tỉ lệ nghịch với $U^2$, giảm $U$ một nửa thì hao phí tăng $4$ lần.",
-        "3": "Không thể coi là sai vì $P_{hp}=RI^2=10\\cdot20^2=4000\\ \\text{W}$."
+        "0": "Không thể coi là đúng vì hao phí tỉ lệ nghịch với $U^2$, giảm $U$ một nửa thì hao phí tăng $4$ lần.",
+        "1": "Không thể coi là sai vì $I=\\dfrac PU=\\dfrac{400\\,000}{20\\,000}=20\\ \\text{A}$.",
+        "2": "Không thể coi là sai vì $P_{hp}=RI^2=10\\cdot20^2=4000\\ \\text{W}$.",
+        "3": "Không thể coi là đúng vì $H=1-\\dfrac{4}{400}=99\\%$."
       }
     },
     {
@@ -522,28 +522,28 @@
       "question": "Giữ nguyên công suất truyền, hiệu điện thế ở đầu đường dây và chiều dài, người ta thay dây dẫn bằng dây cùng chất có tiết diện gấp đôi. Xét các phát biểu sau:",
       "statements": [
         {
+          "text": "Dòng điện trên dây $I=P/U$ không đổi.",
+          "answer": true
+        },
+        {
           "text": "Hao phí trên dây giảm $4$ lần.",
+          "answer": false
+        },
+        {
+          "text": "Hao phí tăng $2$ lần vì dây to hơn thì dòng lớn hơn.",
           "answer": false
         },
         {
           "text": "Điện trở của đường dây giảm còn một nửa.",
           "answer": true
-        },
-        {
-          "text": "Dòng điện trên dây $I=P/U$ không đổi.",
-          "answer": true
-        },
-        {
-          "text": "Hao phí tăng $2$ lần vì dây to hơn thì dòng lớn hơn.",
-          "answer": false
         }
       ],
-      "explanation": "a) sai: hao phí $RI^2$ chỉ tỉ lệ bậc nhất với $R$ khi $I$ không đổi, nên giảm $2$ lần. b) đúng: $R=\\rho\\dfrac{2\\ell}{S}$ tỉ lệ nghịch với tiết diện $S$. c) đúng: $P$ và $U$ giữ nguyên nên dòng không đổi. d) sai: dòng do $P$ và $U$ quyết định, không phụ thuộc tiết diện dây.",
+      "explanation": "a) đúng: $P$ và $U$ giữ nguyên nên dòng không đổi. b) sai: hao phí $RI^2$ chỉ tỉ lệ bậc nhất với $R$ khi $I$ không đổi, nên giảm $2$ lần. c) sai: dòng do $P$ và $U$ quyết định, không phụ thuộc tiết diện dây. d) đúng: $R=\\rho\\dfrac{2\\ell}{S}$ tỉ lệ nghịch với tiết diện $S$.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì hao phí $RI^2$ chỉ tỉ lệ bậc nhất với $R$ khi $I$ không đổi, nên giảm $2$ lần.",
-        "1": "Không thể coi là sai vì $R=\\rho\\dfrac{2\\ell}{S}$ tỉ lệ nghịch với tiết diện $S$.",
-        "2": "Không thể coi là sai vì $P$ và $U$ giữ nguyên nên dòng không đổi.",
-        "3": "Không thể coi là đúng vì dòng do $P$ và $U$ quyết định, không phụ thuộc tiết diện dây."
+        "0": "Không thể coi là sai vì $P$ và $U$ giữ nguyên nên dòng không đổi.",
+        "1": "Không thể coi là đúng vì hao phí $RI^2$ chỉ tỉ lệ bậc nhất với $R$ khi $I$ không đổi, nên giảm $2$ lần.",
+        "2": "Không thể coi là đúng vì dòng do $P$ và $U$ quyết định, không phụ thuộc tiết diện dây.",
+        "3": "Không thể coi là sai vì $R=\\rho\\dfrac{2\\ell}{S}$ tỉ lệ nghịch với tiết diện $S$."
       }
     }
   ]

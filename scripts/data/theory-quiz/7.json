@@ -347,28 +347,28 @@
    "question": "Một xilanh kín nhốt sẵn 8,0 ml không khí, nối với áp kế. Giữ nhiệt độ phòng, đẩy pittông từ từ để thể tích khí giảm dần và đọc áp kế. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Thể tích khí càng nhỏ thì áp kế chỉ càng lớn.",
-     "answer": true
-    },
-    {
-     "text": "Tích $pV$ ở các lần đo gần như không đổi.",
-     "answer": true
-    },
-    {
      "text": "Vì thể tích khí thay đổi nên đây là quá trình đẳng tích.",
      "answer": false
     },
     {
      "text": "Đẩy pittông thật nhanh và nắm chặt xilanh bằng tay vẫn bảo đảm nhiệt độ khí không đổi.",
      "answer": false
+    },
+    {
+     "text": "Thể tích khí càng nhỏ thì áp kế chỉ càng lớn.",
+     "answer": true
+    },
+    {
+     "text": "Tích $pV$ ở các lần đo gần như không đổi.",
+     "answer": true
     }
    ],
    "explanation": "Thí nghiệm là đẳng nhiệt: $p$ tăng khi $V$ giảm, $pV$ gần như không đổi. Đẳng tích là giữ thể tích; hơi nóng từ tay và nén nhanh làm nhiệt độ khí tăng.",
    "distractorNotes": {
-    "0": "Nhốt khí vào chỗ chật hơn thì áp suất tăng, nên không thể coi phát biểu này là sai.",
-    "1": "Tích $pV$ gần như không đổi, phù hợp định luật Boyle nên phát biểu đúng.",
-    "2": "Đẳng tích là thể tích không đổi; ở đây nhiệt độ được giữ nên là đẳng nhiệt.",
-    "3": "Hơi nóng từ tay và nén nhanh làm khí nóng lên, nên nhiệt độ không còn giữ nguyên."
+    "0": "Đẳng tích là thể tích không đổi; ở đây nhiệt độ được giữ nên là đẳng nhiệt.",
+    "1": "Hơi nóng từ tay và nén nhanh làm khí nóng lên, nên nhiệt độ không còn giữ nguyên.",
+    "2": "Nhốt khí vào chỗ chật hơn thì áp suất tăng, nên không thể coi phát biểu này là sai.",
+    "3": "Tích $pV$ gần như không đổi, phù hợp định luật Boyle nên phát biểu đúng."
    }
   },
   {
@@ -386,24 +386,24 @@
      "answer": true
     },
     {
+     "text": "Khi ống ngâm trong nước đá đang tan ($0\\ ^\\circ\\text{C}$), thể tích cột khí bằng 0.",
+     "answer": false
+    },
+    {
      "text": "Nước càng nóng thì cột khí càng dài.",
      "answer": true
     },
     {
      "text": "Tỉ số $\\ell/t$ với $t$ tính bằng độ Celsius là không đổi.",
      "answer": false
-    },
-    {
-     "text": "Khi ống ngâm trong nước đá đang tan ($0\\ ^\\circ\\text{C}$), thể tích cột khí bằng 0.",
-     "answer": false
     }
    ],
    "explanation": "Đầu ống thông khí trời nên quá trình đẳng áp, $V$ tỉ lệ thuận với $T$ (K): $\\ell/T$ không đổi.",
    "distractorNotes": {
     "0": "Đầu ống thông khí trời nên áp suất cột khí luôn bằng áp suất bên ngoài, không đổi.",
-    "1": "Áp suất không đổi thì thể tích tăng theo nhiệt độ, nên cột khí dài ra khi nước nóng hơn.",
-    "2": "Tỉ lệ thuận chỉ đúng với nhiệt độ tuyệt đối; tỉ số không đổi là $\\ell/T$ với $T$ bằng kenvin.",
-    "3": "$0\\ ^\\circ\\text{C}$ là $273$ K chứ không phải độ không tuyệt đối, chiều dài cột khí không thể bằng không."
+    "1": "$0\\ ^\\circ\\text{C}$ là $273$ K chứ không phải độ không tuyệt đối, chiều dài cột khí không thể bằng không.",
+    "2": "Áp suất không đổi thì thể tích tăng theo nhiệt độ, nên cột khí dài ra khi nước nóng hơn.",
+    "3": "Tỉ lệ thuận chỉ đúng với nhiệt độ tuyệt đối; tỉ số không đổi là $\\ell/T$ với $T$ bằng kenvin."
    }
   },
   {
@@ -417,11 +417,7 @@
    "question": "Một học sinh vẽ đồ thị biểu diễn các đẳng quá trình của cùng một lượng khí xác định. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Đường đẳng nhiệt trên đồ thị $p$–$V$ là một nhánh hypebol.",
-     "answer": true
-    },
-    {
-     "text": "Trên đồ thị $p$–$V$, đường đẳng nhiệt nằm xa gốc toạ độ hơn ứng với nhiệt độ thấp hơn.",
+     "text": "Trên đồ thị $p$–$V$, quá trình đẳng tích cũng được biểu diễn bằng một nhánh hypebol.",
      "answer": false
     },
     {
@@ -429,16 +425,20 @@
      "answer": true
     },
     {
-     "text": "Trên đồ thị $p$–$V$, quá trình đẳng tích cũng được biểu diễn bằng một nhánh hypebol.",
+     "text": "Trên đồ thị $p$–$V$, đường đẳng nhiệt nằm xa gốc toạ độ hơn ứng với nhiệt độ thấp hơn.",
      "answer": false
+    },
+    {
+     "text": "Đường đẳng nhiệt trên đồ thị $p$–$V$ là một nhánh hypebol.",
+     "answer": true
     }
    ],
    "explanation": "Đẳng nhiệt: hypebol trên $p$–$V$, càng xa gốc nhiệt độ càng cao. Đẳng áp: đường thẳng qua gốc trên $V$–$T$. Đẳng tích trên $p$–$V$ là đoạn thẳng đứng.",
    "distractorNotes": {
-    "0": "Vì $pV = \\text{hằng số}$ nên $p$ theo $V$ là nhánh hypebol, không thể coi là sai.",
-    "1": "Ở cùng áp suất, đường xa gốc cho thể tích lớn hơn, tức khí nóng hơn chứ không lạnh hơn.",
-    "2": "$V/T$ không đổi nên $V$ theo $T$ là đường thẳng kéo dài qua gốc, không thể coi là sai.",
-    "3": "Đẳng tích giữ $V$ không đổi nên trên đồ thị $p$–$V$ là đoạn thẳng đứng, không phải hypebol."
+    "0": "Đẳng tích giữ $V$ không đổi nên trên đồ thị $p$–$V$ là đoạn thẳng đứng, không phải hypebol.",
+    "1": "$V/T$ không đổi nên $V$ theo $T$ là đường thẳng kéo dài qua gốc, không thể coi là sai.",
+    "2": "Ở cùng áp suất, đường xa gốc cho thể tích lớn hơn, tức khí nóng hơn chứ không lạnh hơn.",
+    "3": "Vì $pV = \\text{hằng số}$ nên $p$ theo $V$ là nhánh hypebol, không thể coi là sai."
    }
   },
   {
@@ -452,10 +452,6 @@
    "question": "Khi bơm xe đạp, một lượng khí bị nhốt trong thân bơm. Ấn pittông thật chậm để nhiệt độ khí coi như không đổi. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Trạng thái lượng khí trong bơm được xác định bởi áp suất, thể tích và nhiệt độ.",
-     "answer": true
-    },
-    {
      "text": "Quá trình nén chậm này được coi là quá trình đẳng nhiệt.",
      "answer": true
     },
@@ -466,14 +462,18 @@
     {
      "text": "Khi bị nén, áp suất khí giảm vì khí bị dồn vào chỗ chật hơn.",
      "answer": false
+    },
+    {
+     "text": "Trạng thái lượng khí trong bơm được xác định bởi áp suất, thể tích và nhiệt độ.",
+     "answer": true
     }
    ],
    "explanation": "Ba thông số trạng thái là $p$, $V$, $T$; nhiệt độ không đổi là đẳng nhiệt. Khi đó $p$ và $V$ đều thay đổi, $V$ giảm thì $p$ tăng.",
    "distractorNotes": {
-    "0": "Ba thông số trạng thái của khí đúng là $p$, $V$, $T$, nên phát biểu không thể sai.",
-    "1": "Nhiệt độ được giữ không đổi chính là dấu hiệu của quá trình đẳng nhiệt.",
-    "2": "Đẳng nhiệt chỉ giữ nhiệt độ; $p$ và $V$ cùng biến đổi sao cho $pV$ không đổi.",
-    "3": "Khí bị dồn vào chỗ chật thì mật độ phân tử tăng nên áp suất tăng, không giảm."
+    "0": "Nhiệt độ được giữ không đổi chính là dấu hiệu của quá trình đẳng nhiệt.",
+    "1": "Đẳng nhiệt chỉ giữ nhiệt độ; $p$ và $V$ cùng biến đổi sao cho $pV$ không đổi.",
+    "2": "Khí bị dồn vào chỗ chật thì mật độ phân tử tăng nên áp suất tăng, không giảm.",
+    "3": "Ba thông số trạng thái của khí đúng là $p$, $V$, $T$, nên phát biểu không thể sai."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Một lượng khí xác định được nén đẳng nhiệt từ trạng thái $(p_1, V_1)$ sang trạng thái $(p_2, V_2)$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Áp suất sau khi nén được tính bằng $p_2 = \\dfrac{p_1V_1}{V_2}$.",
+     "text": "Chỉ cần $p_1$, $p_2$ cùng đơn vị và $V_1$, $V_2$ cùng đơn vị là áp dụng được hệ thức, không bắt buộc đổi ra đơn vị SI.",
      "answer": true
     },
     {
-     "text": "Thể tích giảm 2 lần thì áp suất tăng 4 lần.",
-     "answer": false
-    },
-    {
-     "text": "Chỉ cần $p_1$, $p_2$ cùng đơn vị và $V_1$, $V_2$ cùng đơn vị là áp dụng được hệ thức, không bắt buộc đổi ra đơn vị SI.",
+     "text": "Áp suất sau khi nén được tính bằng $p_2 = \\dfrac{p_1V_1}{V_2}$.",
      "answer": true
     },
     {
      "text": "Nếu $V_2 = \\dfrac{V_1}{4}$ thì $p_2 = \\dfrac{p_1}{4}$.",
      "answer": false
+    },
+    {
+     "text": "Thể tích giảm 2 lần thì áp suất tăng 4 lần.",
+     "answer": false
     }
    ],
    "explanation": "Từ $p_1V_1 = p_2V_2$ suy ra $p_2 = p_1V_1/V_2$; $p$ tỉ lệ nghịch bậc nhất với $V$. Bài nêu chỉ cần các đại lượng cùng loại cùng đơn vị.",
    "distractorNotes": {
-    "0": "Chia hai vế $p_1V_1 = p_2V_2$ cho $V_2$ được đúng biểu thức này.",
-    "1": "Tỉ lệ nghịch bậc nhất: $V$ giảm 2 lần thì $p$ chỉ tăng 2 lần, không có bình phương.",
-    "2": "Hai vế hệ thức cùng dạng tích $pV$ nên đơn vị như nhau ở hai vế triệt tiêu, không cần đổi SI.",
-    "3": "Thể tích giảm 4 lần thì áp suất phải tăng 4 lần; giảm theo là coi nhầm thành tỉ lệ thuận."
+    "0": "Hai vế hệ thức cùng dạng tích $pV$ nên đơn vị như nhau ở hai vế triệt tiêu, không cần đổi SI.",
+    "1": "Chia hai vế $p_1V_1 = p_2V_2$ cho $V_2$ được đúng biểu thức này.",
+    "2": "Thể tích giảm 4 lần thì áp suất phải tăng 4 lần; giảm theo là coi nhầm thành tỉ lệ thuận.",
+    "3": "Tỉ lệ nghịch bậc nhất: $V$ giảm 2 lần thì $p$ chỉ tăng 2 lần, không có bình phương."
    }
   },
   {
@@ -526,12 +526,12 @@
      "answer": true
     },
     {
-     "text": "Thể tích khí tăng khoảng $\\dfrac{87}{27} \\approx 3{,}2$ lần.",
-     "answer": false
-    },
-    {
      "text": "Đổi ra kenvin được $300$ K và $360$ K nên thể tích tăng $1{,}2$ lần.",
      "answer": true
+    },
+    {
+     "text": "Thể tích khí tăng khoảng $\\dfrac{87}{27} \\approx 3{,}2$ lần.",
+     "answer": false
     },
     {
      "text": "Sau đó để khí nguội về $27\\ ^\\circ\\text{C}$ với cùng áp suất thì thể tích lớn hơn lúc ban đầu.",
@@ -541,8 +541,8 @@
    "explanation": "Đẳng áp: $V_2/V_1 = T_2/T_1 = 360/300 = 1{,}2$. Dùng tỉ số độ Celsius là bẫy; cùng lượng khí, cùng $p$, cùng $T$ thì cùng $V$.",
    "distractorNotes": {
     "0": "Từ $\\dfrac{V_1}{T_1} = \\dfrac{V_2}{T_2}$ nhân hai vế với $T_2$ được đúng biểu thức này.",
-    "1": "Lập tỉ số bằng độ Celsius là sai; hệ thức tỉ lệ thuận chỉ dùng nhiệt độ tuyệt đối.",
-    "2": "$27 + 273 = 300$ K, $87 + 273 = 360$ K, tỉ số $360/300 = 1{,}2$ nên phát biểu đúng.",
+    "1": "$27 + 273 = 300$ K, $87 + 273 = 360$ K, tỉ số $360/300 = 1{,}2$ nên phát biểu đúng.",
+    "2": "Lập tỉ số bằng độ Celsius là sai; hệ thức tỉ lệ thuận chỉ dùng nhiệt độ tuyệt đối.",
     "3": "Trạng thái cuối có cùng $p$ và cùng $T$ như ban đầu nên thể tích trở về đúng giá trị cũ."
    }
   }

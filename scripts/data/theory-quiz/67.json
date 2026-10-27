@@ -382,6 +382,10 @@
    "question": "Một nhóm làm thí nghiệm tổng hợp hai lực đồng quy, vẽ hình bình hành từ số đọc của lực kế 1, 2 rồi so với số chỉ lực kế 3. Xét các phát biểu sau về các bẫy của bài:",
    "statements": [
     {
+     "text": "Đường chéo hình bình hành phải nằm trên phương dây của lực kế 3.",
+     "answer": true
+    },
+    {
      "text": "Góc $\\alpha$ đưa vào công thức là góc giữa một dây và phương thẳng đứng.",
      "answer": false
     },
@@ -390,19 +394,15 @@
      "answer": true
     },
     {
-     "text": "Đường chéo hình bình hành phải nằm trên phương dây của lực kế 3.",
-     "answer": true
-    },
-    {
      "text": "Lệch số 0 của lực kế được khử hết nếu lấy trung bình nhiều lần đo.",
      "answer": false
     }
    ],
-   "explanation": "a) Sai: $\\alpha$ đo ở nút O giữa hai dây. b) Đúng: nối đuôi thì góc trong tam giác là góc bù. c) Đúng: $\\vec F$ và $\\vec F_3$ cùng phương. d) Sai: lệch số 0 là sai số hệ thống, cộng vào mọi lần đọc.",
+   "explanation": "a) Đúng: $\\vec F$ và $\\vec F_3$ cùng phương. b) Sai: $\\alpha$ đo ở nút O giữa hai dây. c) Đúng: nối đuôi thì góc trong tam giác là góc bù. d) Sai: lệch số 0 là sai số hệ thống, cộng vào mọi lần đọc.",
    "distractorNotes": {
-    "0": "Góc giữa dây và phương thẳng đứng không phải góc giữa hai lực; công thức cần $\\alpha$ đo ở nút O.",
-    "1": "Khi vẽ nối đuôi, góc trong tam giác bù với góc chung gốc, đúng bằng $180^\\circ - \\alpha$, nên không thể coi là sai.",
-    "2": "$\\vec F$ cân bằng với $\\vec F_3$ nên hai lực cùng phương; đường chéo lệch phương báo hiệu thao tác sai.",
+    "0": "$\\vec F$ cân bằng với $\\vec F_3$ nên hai lực cùng phương; đường chéo lệch phương báo hiệu thao tác sai.",
+    "1": "Góc giữa dây và phương thẳng đứng không phải góc giữa hai lực; công thức cần $\\alpha$ đo ở nút O.",
+    "2": "Khi vẽ nối đuôi, góc trong tam giác bù với góc chung gốc, đúng bằng $180^\\circ - \\alpha$, nên không thể coi là sai.",
     "3": "Lệch số 0 là sai số hệ thống, cộng vào mọi lần đọc, nên lấy trung bình vẫn giữ nguyên độ lệch."
    }
   },
@@ -421,24 +421,24 @@
      "answer": false
     },
     {
+     "text": "Đo thêm thật nhiều lần thì độ lệch cùng phía này sẽ tự biến mất.",
+     "answer": false
+    },
+    {
      "text": "Ba lần đều lệch về cùng một phía gợi ý có sai số hệ thống.",
      "answer": true
     },
     {
      "text": "Một nguyên nhân có thể là lực kế 1 và 2 bị dư số 0.",
      "answer": true
-    },
-    {
-     "text": "Đo thêm thật nhiều lần thì độ lệch cùng phía này sẽ tự biến mất.",
-     "answer": false
     }
    ],
-   "explanation": "a) Sai: $\\delta \\le \\Delta$ nên chưa bác bỏ quy tắc. b) Đúng: lệch cùng phía mọi lần là dấu hiệu sai số hệ thống. c) Đúng: dư số 0 làm $F_1$, $F_2$ đọc lớn nên $F_{\\text{vẽ}}$ lớn. d) Sai: sai số hệ thống không mất khi đo lặp.",
+   "explanation": "a) Sai: $\\delta \\le \\Delta$ nên chưa bác bỏ quy tắc. b) Sai: sai số hệ thống không mất khi đo lặp. c) Đúng: lệch cùng phía mọi lần là dấu hiệu sai số hệ thống. d) Đúng: dư số 0 làm $F_1$, $F_2$ đọc lớn nên $F_{\\text{vẽ}}$ lớn.",
    "distractorNotes": {
     "0": "Cả ba lần đều có $\\delta \\le \\Delta$ nên kết quả vẫn hợp quy tắc trong sai số, chưa thể bác bỏ.",
-    "1": "Sai số ngẫu nhiên lệch lúc lên lúc xuống; lệch cùng phía cả ba lần là dấu hiệu của sai số hệ thống.",
-    "2": "Lực kế 1, 2 dư số 0 làm số đọc lớn hơn thật và hình bình hành to ra, đúng chiều lệch quan sát được.",
-    "3": "Sai số hệ thống cộng vào mọi lần đọc; phải kiểm và trừ số lệch, đo lặp không khử được."
+    "1": "Sai số hệ thống cộng vào mọi lần đọc; phải kiểm và trừ số lệch, đo lặp không khử được.",
+    "2": "Sai số ngẫu nhiên lệch lúc lên lúc xuống; lệch cùng phía cả ba lần là dấu hiệu của sai số hệ thống.",
+    "3": "Lực kế 1, 2 dư số 0 làm số đọc lớn hơn thật và hình bình hành to ra, đúng chiều lệch quan sát được."
    }
   },
   {
@@ -452,8 +452,8 @@
    "question": "Thanh nhẹ AB nằm ngang, hai đầu treo vào hai lực kế thẳng đứng chỉ $F_A$, $F_B$. Vật trọng lượng $P$ treo cách A đoạn $d_A$, cách B đoạn $d_B$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Hợp lực của hai lực song song cùng chiều là $F = F_A + F_B$ và bằng $P$.",
-     "answer": true
+     "text": "Đường tác dụng của hợp lực luôn đi qua trung điểm AB, dù treo vật ở đâu.",
+     "answer": false
     },
     {
      "text": "Hai lực thỏa mãn hệ thức $F_Ad_B = F_Bd_A$.",
@@ -464,16 +464,16 @@
      "answer": true
     },
     {
-     "text": "Đường tác dụng của hợp lực luôn đi qua trung điểm AB, dù treo vật ở đâu.",
-     "answer": false
+     "text": "Hợp lực của hai lực song song cùng chiều là $F = F_A + F_B$ và bằng $P$.",
+     "answer": true
     }
    ],
-   "explanation": "a) Đúng: $F = F_A + F_B = P$. b) Sai: hệ thức đúng là $F_Ad_A = F_Bd_B$. c) Đúng: vật gần đầu nào, đầu đó gánh nhiều. d) Sai: hợp lực đi qua điểm treo vật.",
+   "explanation": "a) Sai: hợp lực đi qua điểm treo vật. b) Sai: hệ thức đúng là $F_Ad_A = F_Bd_B$. c) Đúng: vật gần đầu nào, đầu đó gánh nhiều. d) Đúng: $F = F_A + F_B = P$.",
    "distractorNotes": {
-    "0": "Hai lực kế cùng đỡ vật đứng yên nên tổng hai số chỉ luôn bằng $P$; ý này không thể sai.",
+    "0": "Hợp lực đi qua điểm treo vật, chỉ trùng trung điểm AB khi vật được treo chính giữa.",
     "1": "Đảo cặp khoảng cách: hệ thức đúng là $F_Ad_A = F_Bd_B$, lực lớn ứng với khoảng cách nhỏ.",
     "2": "Dời vật về A thì $d_B$ tăng, nên $F_A = P\\dfrac{d_B}{AB}$ tăng còn $F_B = P - F_A$ giảm.",
-    "3": "Hợp lực đi qua điểm treo vật, chỉ trùng trung điểm AB khi vật được treo chính giữa."
+    "3": "Hai lực kế cùng đỡ vật đứng yên nên tổng hai số chỉ luôn bằng $P$; ý này không thể sai."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": true
     },
     {
-     "text": "Hợp lực của hai lực căng luôn có độ lớn bằng $P$.",
-     "answer": true
+     "text": "Dây phơi kéo gần như nằm ngang thì lực căng nhỏ hơn trọng lượng vật.",
+     "answer": false
     },
     {
      "text": "Mỗi dây luôn chịu lực căng bằng $P/2$ vì hai dây giống hệt nhau.",
      "answer": false
     },
     {
-     "text": "Dây phơi kéo gần như nằm ngang thì lực căng nhỏ hơn trọng lượng vật.",
-     "answer": false
+     "text": "Hợp lực của hai lực căng luôn có độ lớn bằng $P$.",
+     "answer": true
     }
    ],
-   "explanation": "a) Đúng: $\\alpha$ tăng thì $\\cos(\\alpha/2)$ giảm nên $T$ tăng. b) Đúng: hai lực căng phải đỡ đủ $P$. c) Sai: $T = P/2$ chỉ khi $\\alpha = 0^\\circ$. d) Sai: $\\alpha$ gần $180^\\circ$ thì $T$ lớn hơn trọng lượng nhiều lần.",
+   "explanation": "a) Đúng: $\\alpha$ tăng thì $\\cos(\\alpha/2)$ giảm nên $T$ tăng. b) Sai: $\\alpha$ gần $180^\\circ$ thì $T$ lớn hơn trọng lượng nhiều lần. c) Sai: $T = P/2$ chỉ khi $\\alpha = 0^\\circ$. d) Đúng: hai lực căng phải đỡ đủ $P$.",
    "distractorNotes": {
     "0": "$\\alpha$ tăng làm $\\cos(\\alpha/2)$ ở mẫu số giảm, nên $T$ chắc chắn tăng.",
-    "1": "Vật đứng yên nên hợp lực của hai lực căng cân bằng với trọng lực, độ lớn luôn bằng $P$.",
+    "1": "$\\alpha$ gần $180^\\circ$ làm $\\cos(\\alpha/2)$ gần 0, nên $T$ lớn hơn trọng lượng nhiều lần.",
     "2": "$T = P/2$ chỉ đúng khi hai dây thẳng đứng; dây nghiêng thì chỉ phần thẳng đứng đỡ vật nên $T$ lớn hơn.",
-    "3": "$\\alpha$ gần $180^\\circ$ làm $\\cos(\\alpha/2)$ gần 0, nên $T$ lớn hơn trọng lượng nhiều lần."
+    "3": "Vật đứng yên nên hợp lực của hai lực căng cân bằng với trọng lực, độ lớn luôn bằng $P$."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Hai lực đồng quy có độ lớn $F_1$, $F_2$, hợp nhau góc $\\alpha$, hợp lực $F = \\sqrt{F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi $\\alpha = 0^\\circ$ thì $F = F_1 + F_2$.",
-     "answer": true
+     "text": "Hợp lực có độ lớn lớn nhất khi hai lực vuông góc nhau.",
+     "answer": false
     },
     {
      "text": "Khi $\\alpha = 180^\\circ$ thì $F = F_1 + F_2$.",
      "answer": false
     },
     {
-     "text": "Hợp lực có độ lớn lớn nhất khi hai lực vuông góc nhau.",
-     "answer": false
+     "text": "Hai người kéo một xe bằng hai dây lệch nhau góc $\\alpha$ với $0^\\circ \\lt \\alpha \\lt 180^\\circ$ thì hợp lực nhỏ hơn $F_1 + F_2$.",
+     "answer": true
     },
     {
-     "text": "Hai người kéo một xe bằng hai dây lệch nhau góc $\\alpha$ với $0^\\circ \\lt \\alpha \\lt 180^\\circ$ thì hợp lực nhỏ hơn $F_1 + F_2$.",
+     "text": "Khi $\\alpha = 0^\\circ$ thì $F = F_1 + F_2$.",
      "answer": true
     }
    ],
-   "explanation": "a) Đúng: $\\cos 0^\\circ = 1$. b) Sai: $\\alpha = 180^\\circ$ cho $F = |F_1 - F_2|$. c) Sai: $F$ lớn nhất khi $\\alpha = 0^\\circ$. d) Đúng: $\\cos\\alpha \\lt 1$ nên $F \\lt F_1 + F_2$.",
+   "explanation": "a) Sai: $F$ lớn nhất khi $\\alpha = 0^\\circ$. b) Sai: $\\alpha = 180^\\circ$ cho $F = |F_1 - F_2|$. c) Đúng: $\\cos\\alpha \\lt 1$ nên $F \\lt F_1 + F_2$. d) Đúng: $\\cos 0^\\circ = 1$.",
    "distractorNotes": {
-    "0": "Với $\\cos 0^\\circ = 1$, biểu thức dưới căn thành $(F_1 + F_2)^2$, nên ý này chắc chắn đúng.",
+    "0": "$F$ tăng theo $\\cos\\alpha$ nên lớn nhất khi $\\alpha = 0^\\circ$; vuông góc chỉ là trường hợp trung gian.",
     "1": "Hai lực ngược chiều có $\\cos 180^\\circ = -1$, nên hợp lực là $|F_1 - F_2|$ chứ không phải tổng.",
-    "2": "$F$ tăng theo $\\cos\\alpha$ nên lớn nhất khi $\\alpha = 0^\\circ$; vuông góc chỉ là trường hợp trung gian.",
-    "3": "Với $0^\\circ \\lt \\alpha \\lt 180^\\circ$ thì $\\cos\\alpha \\lt 1$, nên hợp lực luôn nhỏ hơn $F_1 + F_2$."
+    "2": "Với $0^\\circ \\lt \\alpha \\lt 180^\\circ$ thì $\\cos\\alpha \\lt 1$, nên hợp lực luôn nhỏ hơn $F_1 + F_2$.",
+    "3": "Với $\\cos 0^\\circ = 1$, biểu thức dưới căn thành $(F_1 + F_2)^2$, nên ý này chắc chắn đúng."
    }
   }
  ]

@@ -337,11 +337,11 @@
      "answer": true
     },
     {
-     "text": "Đồ thị gia tốc theo lực là một đường cong không đi qua gốc toạ độ.",
+     "text": "Kết quả thí nghiệm cho thấy gia tốc tỉ lệ nghịch với lực kéo.",
      "answer": false
     },
     {
-     "text": "Kết quả thí nghiệm cho thấy gia tốc tỉ lệ nghịch với lực kéo.",
+     "text": "Đồ thị gia tốc theo lực là một đường cong không đi qua gốc toạ độ.",
      "answer": false
     }
    ],
@@ -349,8 +349,8 @@
    "distractorNotes": {
     "0": "Bảng số liệu cho thấy lực tăng thì thời gian ngắn lại, gia tốc tăng, nên không thể coi ý này sai.",
     "1": "Từ $F = ma$, tỉ số $F/a$ chính là khối lượng xe, mà khối lượng giữ nguyên nên tỉ số gần không đổi.",
-    "2": "Gia tốc tỉ lệ thuận với lực nên các điểm đo nằm sát đường thẳng qua gốc, không phải đường cong.",
-    "3": "Lực tăng kéo theo gia tốc tăng là quan hệ tỉ lệ thuận, coi là tỉ lệ nghịch là đảo chiều tỉ lệ."
+    "2": "Lực tăng kéo theo gia tốc tăng là quan hệ tỉ lệ thuận, coi là tỉ lệ nghịch là đảo chiều tỉ lệ.",
+    "3": "Gia tốc tỉ lệ thuận với lực nên các điểm đo nằm sát đường thẳng qua gốc, không phải đường cong."
    }
   },
   {
@@ -364,28 +364,28 @@
    "question": "Một ô tô đang chạy về hướng bắc thì tài xế đạp phanh, lực hãm coi như không đổi. Xét xe trong lúc phanh, trước khi dừng.",
    "statements": [
     {
-     "text": "Lực hãm tác dụng lên xe hướng về phía nam.",
-     "answer": true
+     "text": "Lực hãm quyết định hướng vận tốc tức thời của xe.",
+     "answer": false
     },
     {
-     "text": "Gia tốc của xe hướng về phía bắc, cùng hướng vận tốc.",
-     "answer": false
+     "text": "Lực hãm tác dụng lên xe hướng về phía nam.",
+     "answer": true
     },
     {
      "text": "Vận tốc của xe vẫn hướng về phía bắc nhưng độ lớn giảm dần.",
      "answer": true
     },
     {
-     "text": "Lực hãm quyết định hướng vận tốc tức thời của xe.",
+     "text": "Gia tốc của xe hướng về phía bắc, cùng hướng vận tốc.",
      "answer": false
     }
    ],
    "explanation": "Gia tốc cùng hướng hợp lực (lực hãm, hướng nam); lực quyết định gia tốc chứ không quyết định vận tốc, nên vận tốc vẫn hướng bắc và giảm dần.",
    "distractorNotes": {
-    "0": "Lực hãm làm xe chậm lại nên phải ngược chiều chuyển động, tức hướng nam; ý này không thể sai.",
-    "1": "Gia tốc cùng hướng hợp lực là lực hãm hướng nam, nên coi gia tốc hướng bắc là nhầm với vận tốc.",
+    "0": "Lực quyết định gia tốc chứ không quyết định vận tốc; ở đây vận tốc còn ngược hướng lực hãm.",
+    "1": "Lực hãm làm xe chậm lại nên phải ngược chiều chuyển động, tức hướng nam; ý này không thể sai.",
     "2": "Vận tốc chỉ đổi dần theo thời gian, xe chưa dừng nên vẫn chạy về bắc với tốc độ giảm.",
-    "3": "Lực quyết định gia tốc chứ không quyết định vận tốc; ở đây vận tốc còn ngược hướng lực hãm."
+    "3": "Gia tốc cùng hướng hợp lực là lực hãm hướng nam, nên coi gia tốc hướng bắc là nhầm với vận tốc."
    }
   },
   {
@@ -399,28 +399,28 @@
    "question": "Thí nghiệm: chỉnh quả treo để lực kéo xe luôn bằng một giá trị không đổi, chất thêm gia trọng lên xe để tăng tổng khối lượng, rồi đo gia tốc của xe ở mỗi lần.",
    "statements": [
     {
-     "text": "Tích $m\\cdot a$ ở các lần đo xấp xỉ không đổi.",
-     "answer": true
-    },
-    {
-     "text": "Tổng khối lượng xe càng lớn thì gia tốc của xe càng lớn.",
-     "answer": false
-    },
-    {
      "text": "Tổng khối lượng tăng gấp 3 thì gia tốc giảm còn một phần ba.",
      "answer": true
     },
     {
      "text": "Tổng khối lượng tăng gấp đôi thì gia tốc giảm còn một phần tư.",
      "answer": false
+    },
+    {
+     "text": "Tổng khối lượng xe càng lớn thì gia tốc của xe càng lớn.",
+     "answer": false
+    },
+    {
+     "text": "Tích $m\\cdot a$ ở các lần đo xấp xỉ không đổi.",
+     "answer": true
     }
    ],
    "explanation": "Lực giữ nguyên nên $m\\cdot a = F$ không đổi: gia tốc tỉ lệ nghịch bậc một với khối lượng.",
    "distractorNotes": {
-    "0": "Lực kéo giữ không đổi và $F = ma$ nên tích $m\\cdot a$ luôn bằng lực đó, không thể coi ý này sai.",
-    "1": "Chất thêm gia trọng làm tăng mức quán tính, xe khó đổi vận tốc hơn nên gia tốc giảm.",
-    "2": "Gia tốc tỉ lệ nghịch bậc một với khối lượng nên khối lượng gấp 3 thì gia tốc đúng là còn một phần ba.",
-    "3": "Bình phương nhầm; khối lượng gấp đôi thì gia tốc chỉ còn một nửa."
+    "0": "Gia tốc tỉ lệ nghịch bậc một với khối lượng nên khối lượng gấp 3 thì gia tốc đúng là còn một phần ba.",
+    "1": "Bình phương nhầm; khối lượng gấp đôi thì gia tốc chỉ còn một nửa.",
+    "2": "Chất thêm gia trọng làm tăng mức quán tính, xe khó đổi vận tốc hơn nên gia tốc giảm.",
+    "3": "Lực kéo giữ không đổi và $F = ma$ nên tích $m\\cdot a$ luôn bằng lực đó, không thể coi ý này sai."
    }
   },
   {
@@ -434,6 +434,10 @@
    "question": "Khi dùng biểu thức $F = ma$ để giải bài tập, học sinh cần chú ý đơn vị của các đại lượng.",
    "statements": [
     {
+     "text": "1 N là lực truyền cho vật khối lượng 1 g gia tốc 1 m/s².",
+     "answer": false
+    },
+    {
      "text": "Trong hệ SI, $m$ tính bằng kg, $a$ tính bằng m/s² thì $F$ tính bằng N.",
      "answer": true
     },
@@ -442,19 +446,15 @@
      "answer": true
     },
     {
-     "text": "1 N là lực truyền cho vật khối lượng 1 g gia tốc 1 m/s².",
-     "answer": false
-    },
-    {
      "text": "Đơn vị N/kg tương đương với đơn vị kg·m/s².",
      "answer": false
     }
    ],
    "explanation": "$1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$ nên N/kg tương đương m/s²; khối lượng phải đổi ra kg trước khi thế.",
    "distractorNotes": {
-    "0": "Đây chính là bộ đơn vị SI của định luật 2 Newton, $1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$, nên không thể coi là sai.",
-    "1": "Vì $1\\ \\text{g} = 10^{-3}\\ \\text{kg}$, bỏ qua bước đổi 250 g ra 0,25 kg sẽ cho gia tốc sai hàng nghìn lần.",
-    "2": "Định nghĩa 1 N gắn với vật khối lượng 1 kg, thay bằng 1 g là quên quy về đơn vị SI.",
+    "0": "Định nghĩa 1 N gắn với vật khối lượng 1 kg, thay bằng 1 g là quên quy về đơn vị SI.",
+    "1": "Đây chính là bộ đơn vị SI của định luật 2 Newton, $1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$, nên không thể coi là sai.",
+    "2": "Vì $1\\ \\text{g} = 10^{-3}\\ \\text{kg}$, bỏ qua bước đổi 250 g ra 0,25 kg sẽ cho gia tốc sai hàng nghìn lần.",
     "3": "Lấy kg·m/s² chia cho kg được m/s², tức đơn vị gia tốc, không phải đơn vị lực."
    }
   },
@@ -469,10 +469,6 @@
    "question": "Giải bài toán động lực học: chọn vật, vẽ mọi lực, chọn chiều dương theo chiều chuyển động, rồi viết $F_{\\text{hl}} = ma$.",
    "statements": [
     {
-     "text": "Lực cùng chiều dương mang dấu +, lực ngược chiều dương mang dấu −.",
-     "answer": true
-    },
-    {
      "text": "Tính ra $a \\lt 0$ nghĩa là gia tốc ngược chiều dương.",
      "answer": true
     },
@@ -481,15 +477,19 @@
      "answer": false
     },
     {
+     "text": "Lực cùng chiều dương mang dấu +, lực ngược chiều dương mang dấu −.",
+     "answer": true
+    },
+    {
      "text": "Lực hãm tính ra mang dấu trừ nghĩa là lực cùng chiều chuyển động.",
      "answer": false
     }
    ],
    "explanation": "Dấu của lực và gia tốc chỉ chiều so với chiều dương; từ $F = ma$ rút ra $m = F/a$.",
    "distractorNotes": {
-    "0": "Quy ước dấu theo chiều dương đã chọn chính là bước tính hợp lực trong bài, nên ý này không sai.",
-    "1": "Dấu của gia tốc chỉ chiều so với chiều dương, nên $a \\lt 0$ đúng là gia tốc ngược chiều dương.",
-    "2": "Đảo tử và mẫu khi rút $m$ từ $F = ma$; đúng phải là chia lực cho gia tốc.",
+    "0": "Dấu của gia tốc chỉ chiều so với chiều dương, nên $a \\lt 0$ đúng là gia tốc ngược chiều dương.",
+    "1": "Đảo tử và mẫu khi rút $m$ từ $F = ma$; đúng phải là chia lực cho gia tốc.",
+    "2": "Quy ước dấu theo chiều dương đã chọn chính là bước tính hợp lực trong bài, nên ý này không sai.",
     "3": "Chiều dương đã chọn là chiều chuyển động, nên dấu trừ nghĩa là lực ngược chiều chuyển động."
    }
   },
@@ -504,28 +504,28 @@
    "question": "Xe đẩy trong siêu thị đang đứng yên trên sàn ngang. Người đẩy xe bằng lực nằm ngang $F$; lực ma sát $F_{\\text{ms}}$ ngược chiều; xe còn chịu trọng lực $P$ và phản lực $N$. Chọn chiều dương là chiều đẩy.",
    "statements": [
     {
-     "text": "Trọng lực và phản lực theo phương đứng triệt tiêu nhau.",
-     "answer": true
-    },
-    {
-     "text": "Hợp lực tác dụng lên xe có độ lớn $F - F_{\\text{ms}}$.",
-     "answer": true
-    },
-    {
      "text": "Nếu $F \\gt F_{\\text{ms}}$ thì xe chuyển động chậm dần.",
      "answer": false
     },
     {
      "text": "Với gia tốc $a$ không đổi, vận tốc của xe sau thời gian $t$ là $v = \\dfrac{a}{t}$.",
      "answer": false
+    },
+    {
+     "text": "Trọng lực và phản lực theo phương đứng triệt tiêu nhau.",
+     "answer": true
+    },
+    {
+     "text": "Hợp lực tác dụng lên xe có độ lớn $F - F_{\\text{ms}}$.",
+     "answer": true
     }
    ],
    "explanation": "Hợp lực $F - F_{\\text{ms}}$ hướng theo chiều đẩy khi $F \\gt F_{\\text{ms}}$, nên $a \\gt 0$, xe nhanh dần; từ đứng yên $v = at$.",
    "distractorNotes": {
-    "0": "Xe không chuyển động theo phương đứng nên trọng lực và phản lực phải cân bằng, ý này không thể sai.",
-    "1": "Lực đẩy và ma sát nằm ngang, ngược chiều nhau nên hợp lực bằng hiệu của chúng.",
-    "2": "Lực đẩy lớn hơn ma sát thì hợp lực cùng chiều chuyển động, $a \\gt 0$, xe nhanh dần chứ không chậm dần.",
-    "3": "Từ $v = v_0 + at$ với $v_0 = 0$ thì vận tốc bằng gia tốc nhân thời gian, không phải chia."
+    "0": "Lực đẩy lớn hơn ma sát thì hợp lực cùng chiều chuyển động, $a \\gt 0$, xe nhanh dần chứ không chậm dần.",
+    "1": "Từ $v = v_0 + at$ với $v_0 = 0$ thì vận tốc bằng gia tốc nhân thời gian, không phải chia.",
+    "2": "Xe không chuyển động theo phương đứng nên trọng lực và phản lực phải cân bằng, ý này không thể sai.",
+    "3": "Lực đẩy và ma sát nằm ngang, ngược chiều nhau nên hợp lực bằng hiệu của chúng."
    }
   }
  ]

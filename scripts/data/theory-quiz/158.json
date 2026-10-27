@@ -347,6 +347,10 @@
    "question": "Hai bạn dùng một đèn điểm, rồi dùng một đèn đĩa rộng, để chiếu sáng cùng một vật chắn nhỏ lên màn. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Với đèn đĩa rộng, vùng tối nằm giữa và có vành nửa tối bao quanh.",
+     "answer": true
+    },
+    {
      "text": "Vùng nửa tối là vùng không nhận ánh sáng từ bất kì điểm nào của đèn.",
      "answer": false
     },
@@ -355,19 +359,15 @@
      "answer": true
     },
     {
-     "text": "Với đèn đĩa rộng, vùng tối nằm giữa và có vành nửa tối bao quanh.",
-     "answer": true
-    },
-    {
      "text": "Với đèn điểm, vành nửa tối rộng hơn vùng tối.",
      "answer": false
     }
    ],
-   "explanation": "a) sai vì đó là vùng tối, còn vùng nửa tối vẫn nhận ánh sáng từ một phần của nguồn. b) đúng vì nguồn điểm chỉ có tia cùng mép, không có tia chéo mép để tạo vùng nửa tối. c) đúng vì các điểm khác nhau của nguồn rộng bị vật che khác nhau ở rìa bóng. d) sai vì nguồn điểm không tạo ra vành nửa tối.",
+   "explanation": "a) đúng vì các điểm khác nhau của nguồn rộng bị vật che khác nhau ở rìa bóng. b) sai vì đó là vùng tối, còn vùng nửa tối vẫn nhận ánh sáng từ một phần của nguồn. c) đúng vì nguồn điểm chỉ có tia cùng mép, không có tia chéo mép để tạo vùng nửa tối. d) sai vì nguồn điểm không tạo ra vành nửa tối.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì đó là vùng tối, còn vùng nửa tối vẫn nhận ánh sáng từ một phần của nguồn.",
-    "1": "Không thể coi là sai vì nguồn điểm chỉ có tia cùng mép, không có tia chéo mép để tạo vùng nửa tối.",
-    "2": "Không thể coi là sai vì các điểm khác nhau của nguồn rộng bị vật che khác nhau ở rìa bóng.",
+    "0": "Không thể coi là sai vì các điểm khác nhau của nguồn rộng bị vật che khác nhau ở rìa bóng.",
+    "1": "Không thể coi là đúng vì đó là vùng tối, còn vùng nửa tối vẫn nhận ánh sáng từ một phần của nguồn.",
+    "2": "Không thể coi là sai vì nguồn điểm chỉ có tia cùng mép, không có tia chéo mép để tạo vùng nửa tối.",
     "3": "Không thể coi là đúng vì nguồn điểm không tạo ra vành nửa tối."
    }
   },
@@ -382,28 +382,28 @@
    "question": "Một tia sáng tới mặt gương phẳng tại điểm $I$ với góc tới $30^\\circ$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Góc phản xạ bằng $30^\\circ$.",
+     "text": "Tia tới và tia phản xạ hợp nhau góc $60^\\circ$.",
      "answer": true
-    },
-    {
-     "text": "Tia tới hợp với mặt gương góc $30^\\circ$.",
-     "answer": false
     },
     {
      "text": "Nếu tia tới vuông góc với mặt gương thì góc tới bằng $90^\\circ$.",
      "answer": false
     },
     {
-     "text": "Tia tới và tia phản xạ hợp nhau góc $60^\\circ$.",
+     "text": "Góc phản xạ bằng $30^\\circ$.",
      "answer": true
+    },
+    {
+     "text": "Tia tới hợp với mặt gương góc $30^\\circ$.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng vì định luật phản xạ cho góc phản xạ bằng góc tới. b) sai vì góc tới đo với pháp tuyến nên tia hợp với mặt gương góc $90^\\circ-30^\\circ=60^\\circ$. c) sai vì tia vuông góc mặt gương trùng với pháp tuyến nên góc tới bằng $0^\\circ$. d) đúng vì hai tia nằm hai bên pháp tuyến, mỗi tia lệch $30^\\circ$ so với pháp tuyến.",
+   "explanation": "a) đúng vì hai tia nằm hai bên pháp tuyến, mỗi tia lệch $30^\\circ$ so với pháp tuyến. b) sai vì tia vuông góc mặt gương trùng với pháp tuyến nên góc tới bằng $0^\\circ$. c) đúng vì định luật phản xạ cho góc phản xạ bằng góc tới. d) sai vì góc tới đo với pháp tuyến nên tia hợp với mặt gương góc $90^\\circ-30^\\circ=60^\\circ$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì định luật phản xạ cho góc phản xạ bằng góc tới.",
-    "1": "Không thể coi là đúng vì góc tới đo với pháp tuyến nên tia hợp với mặt gương góc $90^\\circ-30^\\circ=60^\\circ$.",
-    "2": "Không thể coi là đúng vì tia vuông góc mặt gương trùng với pháp tuyến nên góc tới bằng $0^\\circ$.",
-    "3": "Không thể coi là sai vì hai tia nằm hai bên pháp tuyến, mỗi tia lệch $30^\\circ$ so với pháp tuyến."
+    "0": "Không thể coi là sai vì hai tia nằm hai bên pháp tuyến, mỗi tia lệch $30^\\circ$ so với pháp tuyến.",
+    "1": "Không thể coi là đúng vì tia vuông góc mặt gương trùng với pháp tuyến nên góc tới bằng $0^\\circ$.",
+    "2": "Không thể coi là sai vì định luật phản xạ cho góc phản xạ bằng góc tới.",
+    "3": "Không thể coi là đúng vì góc tới đo với pháp tuyến nên tia hợp với mặt gương góc $90^\\circ-30^\\circ=60^\\circ$."
    }
   },
   {
@@ -421,7 +421,7 @@
      "answer": false
     },
     {
-     "text": "Ảnh của An là ảnh ảo, không hứng được trên màn.",
+     "text": "Ảnh của An nằm sau gương, đối xứng với An qua mặt gương.",
      "answer": true
     },
     {
@@ -429,16 +429,16 @@
      "answer": false
     },
     {
-     "text": "Ảnh của An nằm sau gương, đối xứng với An qua mặt gương.",
+     "text": "Ảnh của An là ảnh ảo, không hứng được trên màn.",
      "answer": true
     }
    ],
-   "explanation": "a) sai vì ảnh cũng cách gương $d$ ở phía bên kia nên An cách ảnh $2d$. b) đúng vì ảnh do đường kéo dài của các tia phản xạ gặp nhau. c) sai vì ảnh qua gương phẳng luôn lớn bằng vật. d) đúng vì đó là tính chất của ảnh qua gương phẳng.",
+   "explanation": "a) sai vì ảnh cũng cách gương $d$ ở phía bên kia nên An cách ảnh $2d$. b) đúng vì đó là tính chất của ảnh qua gương phẳng. c) sai vì ảnh qua gương phẳng luôn lớn bằng vật. d) đúng vì ảnh do đường kéo dài của các tia phản xạ gặp nhau.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì ảnh cũng cách gương $d$ ở phía bên kia nên An cách ảnh $2d$.",
-    "1": "Không thể coi là sai vì ảnh do đường kéo dài của các tia phản xạ gặp nhau.",
+    "1": "Không thể coi là sai vì đó là tính chất của ảnh qua gương phẳng.",
     "2": "Không thể coi là đúng vì ảnh qua gương phẳng luôn lớn bằng vật.",
-    "3": "Không thể coi là sai vì đó là tính chất của ảnh qua gương phẳng."
+    "3": "Không thể coi là sai vì ảnh do đường kéo dài của các tia phản xạ gặp nhau."
    }
   },
   {
@@ -456,24 +456,24 @@
      "answer": true
     },
     {
-     "text": "Đỉnh bóng chạy cùng tốc độ với người.",
-     "answer": false
-    },
-    {
      "text": "Đỉnh bóng chạy với tốc độ $1{,}6$ m/s.",
      "answer": true
     },
     {
      "text": "Một em bé cao $1{,}2$ m đứng cạnh người đó có bóng dài hơn $2{,}0$ m.",
      "answer": false
+    },
+    {
+     "text": "Đỉnh bóng chạy cùng tốc độ với người.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng vì $\\ell=\\dfrac{hx}{H-h}=\\dfrac{1{,}5\\cdot6}{4{,}5}=2{,}0$ m. b) sai vì đỉnh bóng bằng vị trí người cộng chiều dài bóng, mà bóng dài thêm khi người ra xa nên đỉnh chạy nhanh hơn người. c) đúng vì $v_X=\\dfrac{H}{H-h}\\,v=\\dfrac{6}{4{,}5}\\cdot1{,}2=1{,}6$ m/s. d) sai vì người thấp hơn thì bóng ngắn hơn: $\\ell=\\dfrac{1{,}2\\cdot6}{4{,}8}=1{,}5$ m.",
+   "explanation": "a) đúng vì $\\ell=\\dfrac{hx}{H-h}=\\dfrac{1{,}5\\cdot6}{4{,}5}=2{,}0$ m. b) đúng vì $v_X=\\dfrac{H}{H-h}\\,v=\\dfrac{6}{4{,}5}\\cdot1{,}2=1{,}6$ m/s. c) sai vì người thấp hơn thì bóng ngắn hơn: $\\ell=\\dfrac{1{,}2\\cdot6}{4{,}8}=1{,}5$ m. d) sai vì đỉnh bóng bằng vị trí người cộng chiều dài bóng, mà bóng dài thêm khi người ra xa nên đỉnh chạy nhanh hơn người.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì $\\ell=\\dfrac{hx}{H-h}=\\dfrac{1{,}5\\cdot6}{4{,}5}=2{,}0$ m.",
-    "1": "Không thể coi là đúng vì đỉnh bóng bằng vị trí người cộng chiều dài bóng, mà bóng dài thêm khi người ra xa nên đỉnh chạy nhanh hơn người.",
-    "2": "Không thể coi là sai vì $v_X=\\dfrac{H}{H-h}\\,v=\\dfrac{6}{4{,}5}\\cdot1{,}2=1{,}6$ m/s.",
-    "3": "Không thể coi là đúng vì người thấp hơn thì bóng ngắn hơn: $\\ell=\\dfrac{1{,}2\\cdot6}{4{,}8}=1{,}5$ m."
+    "1": "Không thể coi là sai vì $v_X=\\dfrac{H}{H-h}\\,v=\\dfrac{6}{4{,}5}\\cdot1{,}2=1{,}6$ m/s.",
+    "2": "Không thể coi là đúng vì người thấp hơn thì bóng ngắn hơn: $\\ell=\\dfrac{1{,}2\\cdot6}{4{,}8}=1{,}5$ m.",
+    "3": "Không thể coi là đúng vì đỉnh bóng bằng vị trí người cộng chiều dài bóng, mà bóng dài thêm khi người ra xa nên đỉnh chạy nhanh hơn người."
    }
   },
   {
@@ -530,20 +530,20 @@
      "answer": false
     },
     {
-     "text": "Góc giữa tia tới và tia phản xạ chỉ đổi $5^\\circ$.",
-     "answer": false
-    },
-    {
      "text": "Vệt sáng trên tường dịch khoảng $53$ cm.",
      "answer": true
+    },
+    {
+     "text": "Góc giữa tia tới và tia phản xạ chỉ đổi $5^\\circ$.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng vì gương quay $\\delta$ thì tia phản xạ quay $2\\delta$. b) sai vì $26$ cm ứng với tia quay $5^\\circ$, trong khi tia phản xạ quay $10^\\circ$. c) sai vì góc đó bằng $2i$ nên đổi $2\\delta=10^\\circ$. d) đúng vì $3{,}0\\cdot\\tan10^\\circ\\approx0{,}53$ m.",
+   "explanation": "a) đúng vì gương quay $\\delta$ thì tia phản xạ quay $2\\delta$. b) sai vì $26$ cm ứng với tia quay $5^\\circ$, trong khi tia phản xạ quay $10^\\circ$. c) đúng vì $3{,}0\\cdot\\tan10^\\circ\\approx0{,}53$ m. d) sai vì góc đó bằng $2i$ nên đổi $2\\delta=10^\\circ$.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì gương quay $\\delta$ thì tia phản xạ quay $2\\delta$.",
     "1": "Không thể coi là đúng vì $26$ cm ứng với tia quay $5^\\circ$, trong khi tia phản xạ quay $10^\\circ$.",
-    "2": "Không thể coi là đúng vì góc đó bằng $2i$ nên đổi $2\\delta=10^\\circ$.",
-    "3": "Không thể coi là sai vì $3{,}0\\cdot\\tan10^\\circ\\approx0{,}53$ m."
+    "2": "Không thể coi là sai vì $3{,}0\\cdot\\tan10^\\circ\\approx0{,}53$ m.",
+    "3": "Không thể coi là đúng vì góc đó bằng $2i$ nên đổi $2\\delta=10^\\circ$."
    }
   }
  ]

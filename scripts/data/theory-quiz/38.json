@@ -347,28 +347,28 @@
    "question": "Trong máy lọc không khí, hai hạt bụi giống hệt nhau, cùng mang điện âm, cùng rời đầu kim và cùng bám vào điểm N trên tấm thu: một hạt bay thẳng, một hạt lượn cong theo đường dài hơn. Chỉ xét lực điện.",
    "statements": [
     {
-     "text": "Công của lực điện lên hạt bay theo đường cong lớn hơn vì nó đi quãng đường dài hơn.",
+     "text": "Kết luận về công của hai hạt chỉ đúng khi điện trường trong máy là điện trường đều.",
      "answer": false
-    },
-    {
-     "text": "Công của lực điện lên hai hạt bụi bằng nhau.",
-     "answer": true
     },
     {
      "text": "Trên một đoạn nhỏ mà hạt đi vuông góc với đường sức, lực điện không sinh công.",
      "answer": true
     },
     {
-     "text": "Kết luận về công của hai hạt chỉ đúng khi điện trường trong máy là điện trường đều.",
+     "text": "Công của lực điện lên hai hạt bụi bằng nhau.",
+     "answer": true
+    },
+    {
+     "text": "Công của lực điện lên hạt bay theo đường cong lớn hơn vì nó đi quãng đường dài hơn.",
      "answer": false
     }
    ],
    "explanation": "Công của lực điện chỉ phụ thuộc điểm đầu và điểm cuối, đúng cho mọi điện trường tĩnh. Đoạn đi vuông góc đường sức có $d = 0$ nên công bằng 0.",
    "distractorNotes": {
-    "0": "Lấy quãng đường làm thước đo công như lực ma sát, trong khi lực điện là lực thế nên quãng đường dài hơn không làm công lớn hơn.",
-    "1": "Hai hạt cùng điện tích, cùng điểm đầu và cùng điểm cuối, nên công của lực điện không thể khác nhau.",
-    "2": "Đoạn đi vuông góc đường sức có hình chiếu $d = 0$, nên không thể cho rằng lực điện sinh công trên đoạn đó.",
-    "3": "Tính chất công không phụ thuộc đường đi đúng cho mọi điện trường tĩnh, không riêng điện trường đều."
+    "0": "Tính chất công không phụ thuộc đường đi đúng cho mọi điện trường tĩnh, không riêng điện trường đều.",
+    "1": "Đoạn đi vuông góc đường sức có hình chiếu $d = 0$, nên không thể cho rằng lực điện sinh công trên đoạn đó.",
+    "2": "Hai hạt cùng điện tích, cùng điểm đầu và cùng điểm cuối, nên công của lực điện không thể khác nhau.",
+    "3": "Lấy quãng đường làm thước đo công như lực ma sát, trong khi lực điện là lực thế nên quãng đường dài hơn không làm công lớn hơn."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Trong một điện trường đều, một proton và một electron cùng di chuyển một đoạn xuôi theo chiều đường sức điện.",
    "statements": [
     {
-     "text": "Lực điện tác dụng lên proton cùng chiều với $\\vec E$.",
-     "answer": true
+     "text": "Thế năng điện của proton tăng.",
+     "answer": false
     },
     {
-     "text": "Công của lực điện tác dụng lên electron là dương.",
-     "answer": false
+     "text": "Lực điện tác dụng lên proton cùng chiều với $\\vec E$.",
+     "answer": true
     },
     {
      "text": "Thế năng điện của electron tăng.",
      "answer": true
     },
     {
-     "text": "Thế năng điện của proton tăng.",
+     "text": "Công của lực điện tác dụng lên electron là dương.",
      "answer": false
     }
    ],
    "explanation": "Bẫy 2: proton chịu lực cùng chiều $\\vec E$ nên đi xuôi có $A \\gt 0$, thế năng giảm; electron chịu lực ngược $\\vec E$ nên $A \\lt 0$, thế năng tăng.",
    "distractorNotes": {
-    "0": "Proton mang điện dương nên $\\vec F = q\\vec E$ cùng chiều $\\vec E$, không thể ngược chiều.",
-    "1": "Coi công là dương là bỏ dấu điện tích: $q \\lt 0$ và $d \\gt 0$ nên $A = qEd \\lt 0$.",
+    "0": "Công lên proton dương nên thế năng giảm; cho rằng thế năng tăng là lật dấu hệ thức $A = W_M - W_N$.",
+    "1": "Proton mang điện dương nên $\\vec F = q\\vec E$ cùng chiều $\\vec E$, không thể ngược chiều.",
     "2": "Công lên electron âm nên $W_M - W_N \\lt 0$, do đó thế năng phải tăng chứ không giảm.",
-    "3": "Công lên proton dương nên thế năng giảm; cho rằng thế năng tăng là lật dấu hệ thức $A = W_M - W_N$."
+    "3": "Coi công là dương là bỏ dấu điện tích: $q \\lt 0$ và $d \\gt 0$ nên $A = qEd \\lt 0$."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Một electron được đặt đứng yên tại điểm M nằm giữa hai bản phẳng tích điện trái dấu tạo ra điện trường đều. Chọn mốc thế năng ở bản âm.",
    "statements": [
     {
-     "text": "Thế năng điện của electron tại M là âm.",
-     "answer": true
+     "text": "Thế năng tại M có giá trị khác nhau tuỳ theo đường đi từ M về mốc.",
+     "answer": false
     },
     {
-     "text": "Electron đang đứng yên nên thế năng điện của nó bằng 0.",
-     "answer": false
+     "text": "Thế năng điện của electron tại M là âm.",
+     "answer": true
     },
     {
      "text": "Giá trị thế năng điện tại M phụ thuộc vào việc chọn mốc thế năng.",
      "answer": true
     },
     {
-     "text": "Thế năng tại M có giá trị khác nhau tuỳ theo đường đi từ M về mốc.",
+     "text": "Electron đang đứng yên nên thế năng điện của nó bằng 0.",
      "answer": false
     }
    ],
    "explanation": "$W_M = qEd$ với $q \\lt 0$, $d \\gt 0$ nên $W_M \\lt 0$; thế năng đo bằng công từ M tới mốc nên phụ thuộc mốc nhưng không phụ thuộc đường đi.",
    "distractorNotes": {
-    "0": "Với $q \\lt 0$, $E \\gt 0$ và $d \\gt 0$ thì tích $qEd$ âm, nên thế năng không thể dương hay bằng 0.",
-    "1": "Nhầm thế năng với động năng, trong khi điện tích đứng yên vẫn có thế năng điện.",
+    "0": "Công của lực điện không phụ thuộc đường đi, nên với mốc đã chọn thì thế năng tại M có một giá trị duy nhất.",
+    "1": "Với $q \\lt 0$, $E \\gt 0$ và $d \\gt 0$ thì tích $qEd$ âm, nên thế năng không thể dương hay bằng 0.",
     "2": "Thế năng là công từ M tới mốc, nên đổi mốc thì giá trị $W_M$ thay đổi theo.",
-    "3": "Công của lực điện không phụ thuộc đường đi, nên với mốc đã chọn thì thế năng tại M có một giá trị duy nhất."
+    "3": "Nhầm thế năng với động năng, trong khi điện tích đứng yên vẫn có thế năng điện."
    }
   },
   {
@@ -452,11 +452,7 @@
    "question": "Xét công thức tính công của lực điện khi điện tích $q$ đi từ M đến N trong điện trường đều: $A_{MN} = qEd$.",
    "statements": [
     {
-     "text": "Điện tích $q$ phải được thay vào công thức kèm cả dấu.",
-     "answer": true
-    },
-    {
-     "text": "Công $A_{MN}$ tính bằng vôn (V).",
+     "text": "Cường độ điện trường $E$ trong công thức có đơn vị là culông (C).",
      "answer": false
     },
     {
@@ -464,16 +460,20 @@
      "answer": true
     },
     {
-     "text": "Cường độ điện trường $E$ trong công thức có đơn vị là culông (C).",
+     "text": "Điện tích $q$ phải được thay vào công thức kèm cả dấu.",
+     "answer": true
+    },
+    {
+     "text": "Công $A_{MN}$ tính bằng vôn (V).",
      "answer": false
     }
    ],
    "explanation": "Bài ghi: $q$ (C) lấy cả dấu, $E$ (V/m), $A$ (J), $d$ là độ dài đại số hình chiếu, âm khi ngược chiều đường sức.",
    "distractorNotes": {
-    "0": "Bỏ dấu của $q$ chính là bẫy 2, vì với electron sẽ tính ra công sai dấu.",
-    "1": "Vôn là đơn vị điện thế, còn công là năng lượng nên đo bằng jun.",
-    "2": "$d$ là độ dài đại số, nên hình chiếu ngược chiều đường sức phải mang dấu âm.",
-    "3": "Culông là đơn vị điện tích, còn $E$ đo bằng V/m."
+    "0": "Culông là đơn vị điện tích, còn $E$ đo bằng V/m.",
+    "1": "$d$ là độ dài đại số, nên hình chiếu ngược chiều đường sức phải mang dấu âm.",
+    "2": "Bỏ dấu của $q$ chính là bẫy 2, vì với electron sẽ tính ra công sai dấu.",
+    "3": "Vôn là đơn vị điện thế, còn công là năng lượng nên đo bằng jun."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Một điện tích có khối lượng $m$ được thả không vận tốc đầu trong điện trường đều, chỉ chịu tác dụng của lực điện. Sau một đoạn, lực điện sinh công $A$ và tốc độ của nó là $v = \\sqrt{\\dfrac{2A}{m}}$.",
    "statements": [
     {
-     "text": "Thế năng điện giảm bao nhiêu thì động năng của điện tích tăng bấy nhiêu.",
-     "answer": true
+     "text": "Công $A$ của lực điện trong trường hợp này là âm.",
+     "answer": false
     },
     {
      "text": "Nếu công $A$ tăng gấp 4 lần thì tốc độ $v$ cũng tăng gấp 4 lần.",
      "answer": false
     },
     {
-     "text": "Nếu điện tích là electron thì nó tự di chuyển ngược chiều đường sức.",
+     "text": "Thế năng điện giảm bao nhiêu thì động năng của điện tích tăng bấy nhiêu.",
      "answer": true
     },
     {
-     "text": "Công $A$ của lực điện trong trường hợp này là âm.",
-     "answer": false
+     "text": "Nếu điện tích là electron thì nó tự di chuyển ngược chiều đường sức.",
+     "answer": true
     }
    ],
    "explanation": "Chỉ có lực điện thì độ giảm thế năng bằng độ tăng động năng; từ nghỉ điện tích đi theo hướng lực nên $A \\gt 0$, và $v$ tỉ lệ với $\\sqrt{A}$.",
    "distractorNotes": {
-    "0": "Khi chỉ có lực điện thì $W_M - W_N = A = \\tfrac12 mv^2$, nên phần thế năng giảm chuyển hết thành động năng.",
+    "0": "Từ trạng thái nghỉ, điện tích đi theo hướng lực điện nên lực sinh công dương, không thể âm.",
     "1": "Quên căn bậc hai: $v$ tỉ lệ với $\\sqrt{A}$, nên công tăng gấp 4 lần thì tốc độ chỉ tăng gấp 2 lần.",
-    "2": "Lực điện lên electron ngược chiều $\\vec E$, nên khi thả từ nghỉ nó phải đi ngược đường sức.",
-    "3": "Từ trạng thái nghỉ, điện tích đi theo hướng lực điện nên lực sinh công dương, không thể âm."
+    "2": "Khi chỉ có lực điện thì $W_M - W_N = A = \\tfrac12 mv^2$, nên phần thế năng giảm chuyển hết thành động năng.",
+    "3": "Lực điện lên electron ngược chiều $\\vec E$, nên khi thả từ nghỉ nó phải đi ngược đường sức."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Điện tích $q$ đặt cách điện tích điểm $Q$ một khoảng $r$. Chọn mốc thế năng ở vô cực, thế năng điện của $q$ là $W = k\\dfrac{qQ}{r}$.",
    "statements": [
     {
-     "text": "Khi thay số, phải lấy cả dấu của $q$ và của $Q$.",
-     "answer": true
-    },
-    {
      "text": "Khi $r$ tăng gấp đôi thì độ lớn của $W$ giảm còn một nửa.",
      "answer": true
     },
     {
-     "text": "Điện thế tại vị trí đặt $q$, tính bằng $V = \\dfrac{W}{q}$, phụ thuộc vào giá trị của $q$.",
-     "answer": false
+     "text": "Khi thay số, phải lấy cả dấu của $q$ và của $Q$.",
+     "answer": true
     },
     {
      "text": "Khi $q$ và $Q$ cùng dấu thì thế năng $W$ là âm.",
+     "answer": false
+    },
+    {
+     "text": "Điện thế tại vị trí đặt $q$, tính bằng $V = \\dfrac{W}{q}$, phụ thuộc vào giá trị của $q$.",
      "answer": false
     }
    ],
    "explanation": "$W$ tỉ lệ nghịch với $r$ và mang dấu của tích $qQ$; điện thế $V = W/q$ chỉ phụ thuộc vị trí, không phụ thuộc $q$.",
    "distractorNotes": {
-    "0": "Công thức yêu cầu lấy cả dấu của $q$ và $Q$; bỏ dấu sẽ làm sai dấu của thế năng.",
-    "1": "$r$ nằm ở mẫu với bậc nhất nên $W$ tỉ lệ nghịch với $r$; $r$ gấp đôi thì độ lớn $W$ giảm một nửa.",
-    "2": "Chia $W$ cho $q$ thì $q$ bị triệt tiêu, nên điện thế chỉ phụ thuộc vị trí chứ không phụ thuộc $q$.",
-    "3": "Khi $q$ và $Q$ cùng dấu thì $qQ \\gt 0$, lại có $k \\gt 0$ và $r \\gt 0$, nên $W$ dương chứ không âm."
+    "0": "$r$ nằm ở mẫu với bậc nhất nên $W$ tỉ lệ nghịch với $r$; $r$ gấp đôi thì độ lớn $W$ giảm một nửa.",
+    "1": "Công thức yêu cầu lấy cả dấu của $q$ và $Q$; bỏ dấu sẽ làm sai dấu của thế năng.",
+    "2": "Khi $q$ và $Q$ cùng dấu thì $qQ \\gt 0$, lại có $k \\gt 0$ và $r \\gt 0$, nên $W$ dương chứ không âm.",
+    "3": "Chia $W$ cho $q$ thì $q$ bị triệt tiêu, nên điện thế chỉ phụ thuộc vị trí chứ không phụ thuộc $q$."
    }
   }
  ]

@@ -347,16 +347,16 @@
    "question": "Một điện tích q di chuyển từ M đến N trong điện trường đều giữa hai bản kim loại, lần lượt theo đường thẳng MN và theo một đường cong nối M với N. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Công của lực điện không phụ thuộc hình dạng đường đi.",
-     "answer": true
+     "text": "Theo đường cong dài hơn thì lực điện sinh công lớn hơn.",
+     "answer": false
     },
     {
      "text": "Công của lực điện chỉ phụ thuộc vị trí điểm đầu và điểm cuối.",
      "answer": true
     },
     {
-     "text": "Theo đường cong dài hơn thì lực điện sinh công lớn hơn.",
-     "answer": false
+     "text": "Công của lực điện không phụ thuộc hình dạng đường đi.",
+     "answer": true
     },
     {
      "text": "Công của lực điện bằng độ tăng thế năng $W_N-W_M$.",
@@ -365,9 +365,9 @@
    ],
    "explanation": "Công lực điện không phụ thuộc đường đi, chỉ phụ thuộc điểm đầu, điểm cuối và bằng độ giảm thế năng $A_{MN}=W_M-W_N$.",
    "distractorNotes": {
-    "0": "Lực điện giống trọng lực khi trượt dốc: đi thẳng hay lượn vòng thì công vẫn như nhau, nên ý này không sai.",
+    "0": "Đường đi dài hơn không làm công lớn hơn, vì công lực điện không phụ thuộc hình dạng đường đi.",
     "1": "Công chỉ tính qua hình chiếu d của MN lên đường sức, do vị trí M và N quyết định.",
-    "2": "Đường đi dài hơn không làm công lớn hơn, vì công lực điện không phụ thuộc hình dạng đường đi.",
+    "2": "Lực điện giống trọng lực khi trượt dốc: đi thẳng hay lượn vòng thì công vẫn như nhau, nên ý này không sai.",
     "3": "Công bằng độ giảm thế năng $W_M-W_N$; viết thành độ tăng $W_N-W_M$ là sai dấu."
    }
   },
@@ -382,28 +382,28 @@
    "question": "Dùng vôn kế số đo một pin 1,5 V: lần 1 que đỏ chạm cực (+), que đen chạm cực (−); lần 2 đổi hai que; lần 3 chạm hai que vào hai điểm trên cùng một dây đồng nối với cực (+). Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Vôn kế số hiện giá trị $V_{\\text{đỏ}}-V_{\\text{đen}}$.",
+     "text": "Đổi hai que đo thì số chỉ đổi dấu.",
      "answer": true
     },
     {
-     "text": "Đổi hai que đo thì số chỉ đổi dấu.",
-     "answer": true
+     "text": "Ở lần 3, vôn kế chỉ khoảng 1,5 V vì dây nối với cực (+).",
+     "answer": false
     },
     {
      "text": "Vôn kế đo được điện thế của một điểm mà không cần mốc.",
      "answer": false
     },
     {
-     "text": "Ở lần 3, vôn kế chỉ khoảng 1,5 V vì dây nối với cực (+).",
-     "answer": false
+     "text": "Vôn kế số hiện giá trị $V_{\\text{đỏ}}-V_{\\text{đen}}$.",
+     "answer": true
     }
    ],
    "explanation": "Vôn kế đo hiệu điện thế giữa hai điểm chạm que; đổi que thì $U_{NM}=-U_{MN}$; hai điểm cùng một dây dẫn có $U\\approx0$.",
    "distractorNotes": {
-    "0": "Lần 1 máy chỉ dương, lần 2 chỉ âm, chứng tỏ máy hiện hiệu điện thế giữa que đỏ và que đen.",
-    "1": "Đổi thứ tự hai điểm thì hiệu điện thế đổi dấu, đúng như lần 2 máy chỉ −1,5 V.",
+    "0": "Đổi thứ tự hai điểm thì hiệu điện thế đổi dấu, đúng như lần 2 máy chỉ −1,5 V.",
+    "1": "Hai điểm trên cùng một dây dẫn gần như cùng điện thế nên $U\\approx0$, giống trường hợp con chim.",
     "2": "Vôn kế chỉ đo hiệu điện thế giữa hai điểm chạm que; điện thế một điểm luôn cần chọn mốc.",
-    "3": "Hai điểm trên cùng một dây dẫn gần như cùng điện thế nên $U\\approx0$, giống trường hợp con chim."
+    "3": "Lần 1 máy chỉ dương, lần 2 chỉ âm, chứng tỏ máy hiện hiệu điện thế giữa que đỏ và que đen."
    }
   },
   {
@@ -417,15 +417,15 @@
    "question": "Trong khay nước muối loãng đặt hai lá đồng phẳng song song nối với nguồn điện. Que đen vôn kế chạm lá âm, que đỏ nhúng vào nước ở các vị trí khác nhau. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Số chỉ vôn kế tăng đều theo khoảng cách từ que đỏ tới lá âm.",
-     "answer": true
-    },
-    {
      "text": "Di que đỏ song song với lá đồng thì số chỉ thay đổi mạnh.",
      "answer": false
     },
     {
      "text": "Các đường song song với bản cực là đường đẳng thế.",
+     "answer": true
+    },
+    {
+     "text": "Số chỉ vôn kế tăng đều theo khoảng cách từ que đỏ tới lá âm.",
      "answer": true
     },
     {
@@ -435,9 +435,9 @@
    ],
    "explanation": "Giữa hai lá điện trường gần như đều nên V tăng tuyến tính theo x; đường song song bản cực là đường đẳng thế; sát mép đường sức cong nên chỉ đo ở giữa khay.",
    "distractorNotes": {
-    "0": "Điện trường giữa hai lá gần như đều nên $V=Ex$ tăng tuyến tính theo x, ý này không sai.",
-    "1": "Di que song song với lá đồng là đi trên đường đẳng thế, nên số chỉ gần như không đổi.",
-    "2": "Số chỉ không đổi khi di que song song bản cực, chứng tỏ các đường đó là đường đẳng thế.",
+    "0": "Di que song song với lá đồng là đi trên đường đẳng thế, nên số chỉ gần như không đổi.",
+    "1": "Số chỉ không đổi khi di que song song bản cực, chứng tỏ các đường đó là đường đẳng thế.",
+    "2": "Điện trường giữa hai lá gần như đều nên $V=Ex$ tăng tuyến tính theo x, ý này không sai.",
     "3": "Sát mép lá đồng đường sức bị cong, điện trường không đều, nên chỉ đo ở giữa khay."
    }
   },
@@ -452,28 +452,28 @@
    "question": "Đặt điện tích q tại điểm M của một điện trường, thế năng của nó là $W_M$, điện thế tại M là $V_M$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Thế năng của điện tích tại M là $W_M=qV_M$.",
-     "answer": true
-    },
-    {
-     "text": "Điện thế tại M được tính bằng $V_M=\\dfrac{A_{M\\infty}}{q}$.",
-     "answer": true
+     "text": "Thế năng điện $W_M$ có đơn vị là vôn (V).",
+     "answer": false
     },
     {
      "text": "Điện thế tại M được tính bằng $V_M=qW_M$.",
      "answer": false
     },
     {
-     "text": "Thế năng điện $W_M$ có đơn vị là vôn (V).",
-     "answer": false
+     "text": "Thế năng của điện tích tại M là $W_M=qV_M$.",
+     "answer": true
+    },
+    {
+     "text": "Điện thế tại M được tính bằng $V_M=\\dfrac{A_{M\\infty}}{q}$.",
+     "answer": true
     }
    ],
    "explanation": "$V_M=\\dfrac{W_M}{q}=\\dfrac{A_{M\\infty}}{q}$, suy ra $W_M=qV_M$; điện thế đo bằng V, thế năng đo bằng J hoặc eV.",
    "distractorNotes": {
-    "0": "Từ $V_M=W_M/q$, nhân hai vế với q được ngay $W_M=qV_M$, nên ý này không sai.",
-    "1": "Bài định nghĩa điện thế tại M là công đưa q từ M ra vô cực chia cho q.",
-    "2": "Điện thế là thế năng chia điện tích; lấy q nhân với W là biến đổi sai.",
-    "3": "Vôn là đơn vị của điện thế; thế năng là năng lượng nên đo bằng J hoặc eV."
+    "0": "Vôn là đơn vị của điện thế; thế năng là năng lượng nên đo bằng J hoặc eV.",
+    "1": "Điện thế là thế năng chia điện tích; lấy q nhân với W là biến đổi sai.",
+    "2": "Từ $V_M=W_M/q$, nhân hai vế với q được ngay $W_M=qV_M$, nên ý này không sai.",
+    "3": "Bài định nghĩa điện thế tại M là công đưa q từ M ra vô cực chia cho q."
    }
   },
   {
@@ -487,10 +487,6 @@
    "question": "Một electron (điện tích $q=-e$) di chuyển từ điểm M đến điểm N trong điện trường, biết điện thế $V_N\\gt V_M$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Hiệu điện thế $U_{MN}$ có giá trị âm.",
-     "answer": true
-    },
-    {
      "text": "Công của lực điện là $A_{MN}=-eU_{MN}$.",
      "answer": true
     },
@@ -501,14 +497,18 @@
     {
      "text": "Hiệu điện thế $U_{NM}$ bằng $U_{MN}$.",
      "answer": false
+    },
+    {
+     "text": "Hiệu điện thế $U_{MN}$ có giá trị âm.",
+     "answer": true
     }
    ],
    "explanation": "$U_{MN}=V_M-V_N\\lt0$; $A_{MN}=qU_{MN}=(-e)U_{MN}\\gt0$: electron chạy về chỗ điện thế cao, lực điện sinh công dương; $U_{NM}=-U_{MN}$.",
    "distractorNotes": {
-    "0": "$U_{MN}=V_M-V_N$ mà $V_M<V_N$ nên hiệu này chắc chắn âm.",
-    "1": "Thay $q=-e$ vào công thức $A_{MN}=qU_{MN}$ được đúng biểu thức này.",
-    "2": "Cả $-e$ và $U_{MN}$ đều âm nên công dương; quên một dấu âm mới ra công âm.",
-    "3": "Đổi thứ tự hai điểm thì hiệu điện thế đổi dấu, $U_{NM}=-U_{MN}$, nên hai giá trị không bằng nhau."
+    "0": "Thay $q=-e$ vào công thức $A_{MN}=qU_{MN}$ được đúng biểu thức này.",
+    "1": "Cả $-e$ và $U_{MN}$ đều âm nên công dương; quên một dấu âm mới ra công âm.",
+    "2": "Đổi thứ tự hai điểm thì hiệu điện thế đổi dấu, $U_{NM}=-U_{MN}$, nên hai giá trị không bằng nhau.",
+    "3": "$U_{MN}=V_M-V_N$ mà $V_M<V_N$ nên hiệu này chắc chắn âm."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Trong điện trường đều cường độ E, xét hai điểm M, N với hiệu điện thế liên hệ theo $U_{MN}=Ed$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Cường độ điện trường E có đơn vị là V/m.",
-     "answer": true
+     "text": "d dương khi hình chiếu của $\\overrightarrow{MN}$ ngược chiều đường sức.",
+     "answer": false
     },
     {
-     "text": "d là độ dài đoạn MN, dù MN có phương bất kì.",
-     "answer": false
+     "text": "Cường độ điện trường E có đơn vị là V/m.",
+     "answer": true
     },
     {
      "text": "Nếu MN vuông góc với đường sức thì $U_{MN}=0$.",
      "answer": true
     },
     {
-     "text": "d dương khi hình chiếu của $\\overrightarrow{MN}$ ngược chiều đường sức.",
+     "text": "d là độ dài đoạn MN, dù MN có phương bất kì.",
      "answer": false
     }
    ],
    "explanation": "Từ $E=U/d$, E đo bằng V/m; d là hình chiếu có dấu của MN lên đường sức, dương khi cùng chiều đường sức; MN vuông góc đường sức thì d = 0, U = 0.",
    "distractorNotes": {
-    "0": "Từ $E=U/d$ suy ra đơn vị là vôn chia mét, tức V/m, nên ý này không sai.",
-    "1": "d là hình chiếu của MN lên đường sức; chỉ bằng độ dài MN khi MN nằm dọc đường sức.",
+    "0": "Đảo dấu: d dương khi hình chiếu của $\\overrightarrow{MN}$ cùng chiều đường sức, vì điện thế giảm theo chiều đó.",
+    "1": "Từ $E=U/d$ suy ra đơn vị là vôn chia mét, tức V/m, nên ý này không sai.",
     "2": "MN vuông góc đường sức thì hình chiếu d bằng 0, M và N nằm trên cùng một đường đẳng thế.",
-    "3": "Đảo dấu: d dương khi hình chiếu của $\\overrightarrow{MN}$ cùng chiều đường sức, vì điện thế giảm theo chiều đó."
+    "3": "d là hình chiếu của MN lên đường sức; chỉ bằng độ dài MN khi MN nằm dọc đường sức."
    }
   }
  ]

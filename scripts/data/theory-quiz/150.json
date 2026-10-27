@@ -347,12 +347,12 @@
    "question": "Một học sinh đè chặt thước nhựa lên mép bàn, gảy đầu thò ra. Khi đổi độ dài đầu thò và độ mạnh của lần gảy, bạn nghe thấy tiếng thước thay đổi. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Đầu thò ngắn hơn thì thước rung nhanh hơn và tiếng cao hơn.",
-     "answer": true
-    },
-    {
      "text": "Đầu thò dài hơn thì tiếng của thước cao hơn.",
      "answer": false
+    },
+    {
+     "text": "Đầu thò ngắn hơn thì thước rung nhanh hơn và tiếng cao hơn.",
+     "answer": true
     },
     {
      "text": "Gảy mạnh hơn thì thước rung rộng hơn nên tiếng to hơn.",
@@ -363,10 +363,10 @@
      "answer": false
     }
    ],
-   "explanation": "a) đúng: đầu thò ngắn rung nhanh hơn, tần số lớn hơn nên âm cao hơn. b) sai: đầu thò dài rung chậm hơn, tần số nhỏ nên âm thấp hơn. c) đúng: gảy mạnh làm biên độ lớn hơn, mà biên độ lớn thì âm to. d) sai: gảy mạnh chỉ đổi biên độ, tần số vẫn do độ dài đầu thò quyết định.",
+   "explanation": "a) sai: đầu thò dài rung chậm hơn, tần số nhỏ nên âm thấp hơn. b) đúng: đầu thò ngắn rung nhanh hơn, tần số lớn hơn nên âm cao hơn. c) đúng: gảy mạnh làm biên độ lớn hơn, mà biên độ lớn thì âm to. d) sai: gảy mạnh chỉ đổi biên độ, tần số vẫn do độ dài đầu thò quyết định.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì đầu thò ngắn rung nhanh hơn, tần số lớn hơn nên âm cao hơn.",
-    "1": "Không thể coi là đúng vì đầu thò dài rung chậm hơn, tần số nhỏ nên âm thấp hơn.",
+    "0": "Không thể coi là đúng vì đầu thò dài rung chậm hơn, tần số nhỏ nên âm thấp hơn.",
+    "1": "Không thể coi là sai vì đầu thò ngắn rung nhanh hơn, tần số lớn hơn nên âm cao hơn.",
     "2": "Không thể coi là sai vì gảy mạnh làm biên độ lớn hơn, mà biên độ lớn thì âm to.",
     "3": "Không thể coi là đúng vì gảy mạnh chỉ đổi biên độ, tần số vẫn do độ dài đầu thò quyết định."
    }
@@ -382,10 +382,6 @@
    "question": "Hai âm được ghi trên cùng một trục thời gian. Âm 1 có biên độ $2$ đơn vị và chu kì $2\\ \\text{ms}$. Âm 2 có biên độ $1$ đơn vị và chu kì $1\\ \\text{ms}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Âm 1 cao hơn âm 2 vì biên độ của âm 1 lớn hơn.",
-     "answer": false
-    },
-    {
      "text": "Tần số của âm 1 là $500\\ \\text{Hz}$.",
      "answer": true
     },
@@ -396,14 +392,18 @@
     {
      "text": "Tần số của âm 2 là $1\\ \\text{Hz}$ vì chu kì là $1\\ \\text{ms}$.",
      "answer": false
+    },
+    {
+     "text": "Âm 1 cao hơn âm 2 vì biên độ của âm 1 lớn hơn.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai: biên độ lớn hơn chỉ làm âm to hơn, độ cao do tần số quyết định. b) đúng: $f=1/T=1/(2\\cdot10^{-3})=500\\ \\text{Hz}$. c) đúng: chu kì nhỏ hơn nên tần số lớn hơn, mà tần số lớn thì âm cao. d) sai: phải đổi $1\\ \\text{ms}=10^{-3}\\ \\text{s}$ trước khi tính, nên $f=1000\\ \\text{Hz}$.",
+   "explanation": "a) đúng: $f=1/T=1/(2\\cdot10^{-3})=500\\ \\text{Hz}$. b) đúng: chu kì nhỏ hơn nên tần số lớn hơn, mà tần số lớn thì âm cao. c) sai: phải đổi $1\\ \\text{ms}=10^{-3}\\ \\text{s}$ trước khi tính, nên $f=1000\\ \\text{Hz}$. d) sai: biên độ lớn hơn chỉ làm âm to hơn, độ cao do tần số quyết định.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì biên độ lớn hơn chỉ làm âm to hơn, độ cao do tần số quyết định.",
-    "1": "Không thể coi là sai vì $f=1/T=1/(2\\cdot10^{-3})=500\\ \\text{Hz}$.",
-    "2": "Không thể coi là sai vì chu kì nhỏ hơn nên tần số lớn hơn, mà tần số lớn thì âm cao.",
-    "3": "Không thể coi là đúng vì phải đổi $1\\ \\text{ms}=10^{-3}\\ \\text{s}$ trước khi tính, nên $f=1000\\ \\text{Hz}$."
+    "0": "Không thể coi là sai vì $f=1/T=1/(2\\cdot10^{-3})=500\\ \\text{Hz}$.",
+    "1": "Không thể coi là sai vì chu kì nhỏ hơn nên tần số lớn hơn, mà tần số lớn thì âm cao.",
+    "2": "Không thể coi là đúng vì phải đổi $1\\ \\text{ms}=10^{-3}\\ \\text{s}$ trước khi tính, nên $f=1000\\ \\text{Hz}$.",
+    "3": "Không thể coi là đúng vì biên độ lớn hơn chỉ làm âm to hơn, độ cao do tần số quyết định."
    }
   },
   {
@@ -421,24 +421,24 @@
      "answer": true
     },
     {
-     "text": "Nếu dùng $340\\ \\text{m/s}$ thì kết quả vẫn như cũ vì tốc độ âm như nhau ở mọi môi trường.",
-     "answer": false
-    },
-    {
      "text": "Độ sâu của đáy biển là $600\\ \\text{m}$.",
      "answer": false
     },
     {
      "text": "Khoảng $0{,}4\\ \\text{s}$ là thời gian âm đi xuống rồi dội lên.",
      "answer": true
+    },
+    {
+     "text": "Nếu dùng $340\\ \\text{m/s}$ thì kết quả vẫn như cũ vì tốc độ âm như nhau ở mọi môi trường.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng: $d=\\dfrac{vt}{2}=\\dfrac{1500\\cdot0{,}4}{2}=300\\ \\text{m}$. b) sai: tốc độ âm phụ thuộc môi trường; trong nước lớn hơn nhiều so với trong không khí. c) sai: đó mới là tổng quãng đi và về, phải chia đôi mới được độ sâu. d) đúng: thời gian đo được tính từ lúc phát đến lúc thu, gồm cả lượt đi và lượt về.",
+   "explanation": "a) đúng: $d=\\dfrac{vt}{2}=\\dfrac{1500\\cdot0{,}4}{2}=300\\ \\text{m}$. b) sai: đó mới là tổng quãng đi và về, phải chia đôi mới được độ sâu. c) đúng: thời gian đo được tính từ lúc phát đến lúc thu, gồm cả lượt đi và lượt về. d) sai: tốc độ âm phụ thuộc môi trường; trong nước lớn hơn nhiều so với trong không khí.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì $d=\\dfrac{vt}{2}=\\dfrac{1500\\cdot0{,}4}{2}=300\\ \\text{m}$.",
-    "1": "Không thể coi là đúng vì tốc độ âm phụ thuộc môi trường; trong nước lớn hơn nhiều so với trong không khí.",
-    "2": "Không thể coi là đúng vì đó mới là tổng quãng đi và về, phải chia đôi mới được độ sâu.",
-    "3": "Không thể coi là sai vì thời gian đo được tính từ lúc phát đến lúc thu, gồm cả lượt đi và lượt về."
+    "1": "Không thể coi là đúng vì đó mới là tổng quãng đi và về, phải chia đôi mới được độ sâu.",
+    "2": "Không thể coi là sai vì thời gian đo được tính từ lúc phát đến lúc thu, gồm cả lượt đi và lượt về.",
+    "3": "Không thể coi là đúng vì tốc độ âm phụ thuộc môi trường; trong nước lớn hơn nhiều so với trong không khí."
    }
   },
   {
@@ -452,11 +452,7 @@
    "question": "Thấy một tia chớp, $5\\ \\text{s}$ sau mới nghe tiếng sấm. Coi ánh sáng tới tức thời, tốc độ âm trong không khí là $340\\ \\text{m/s}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Chớp và sấm xảy ra không cùng lúc nên người quan sát mới nghe lệch.",
-     "answer": false
-    },
-    {
-     "text": "Chỗ có chớp cách người quan sát khoảng $1700\\ \\text{m}$.",
+     "text": "Khoảng $5\\ \\text{s}$ là thời gian âm đi từ chỗ có chớp tới tai.",
      "answer": true
     },
     {
@@ -464,16 +460,20 @@
      "answer": false
     },
     {
-     "text": "Khoảng $5\\ \\text{s}$ là thời gian âm đi từ chỗ có chớp tới tai.",
+     "text": "Chớp và sấm xảy ra không cùng lúc nên người quan sát mới nghe lệch.",
+     "answer": false
+    },
+    {
+     "text": "Chỗ có chớp cách người quan sát khoảng $1700\\ \\text{m}$.",
      "answer": true
     }
    ],
-   "explanation": "a) sai: chúng xảy ra cùng lúc; độ lệch do ánh sáng tới nhanh hơn âm rất nhiều. b) đúng: $s=vt=340\\cdot5=1700\\ \\text{m}$. c) sai: sấm truyền một chiều tới tai, không có lượt về nên không chia đôi. d) đúng: ánh sáng tới gần như ngay, nên độ trễ chính là thời gian âm truyền.",
+   "explanation": "a) đúng: ánh sáng tới gần như ngay, nên độ trễ chính là thời gian âm truyền. b) sai: sấm truyền một chiều tới tai, không có lượt về nên không chia đôi. c) sai: chúng xảy ra cùng lúc; độ lệch do ánh sáng tới nhanh hơn âm rất nhiều. d) đúng: $s=vt=340\\cdot5=1700\\ \\text{m}$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì chúng xảy ra cùng lúc; độ lệch do ánh sáng tới nhanh hơn âm rất nhiều.",
-    "1": "Không thể coi là sai vì $s=vt=340\\cdot5=1700\\ \\text{m}$.",
-    "2": "Không thể coi là đúng vì sấm truyền một chiều tới tai, không có lượt về nên không chia đôi.",
-    "3": "Không thể coi là sai vì ánh sáng tới gần như ngay, nên độ trễ chính là thời gian âm truyền."
+    "0": "Không thể coi là sai vì ánh sáng tới gần như ngay, nên độ trễ chính là thời gian âm truyền.",
+    "1": "Không thể coi là đúng vì sấm truyền một chiều tới tai, không có lượt về nên không chia đôi.",
+    "2": "Không thể coi là đúng vì chúng xảy ra cùng lúc; độ lệch do ánh sáng tới nhanh hơn âm rất nhiều.",
+    "3": "Không thể coi là sai vì $s=vt=340\\cdot5=1700\\ \\text{m}$."
    }
   },
   {
@@ -526,24 +526,24 @@
      "answer": true
     },
     {
-     "text": "Quãng đường âm đi cho tới khi quay về tai là $20\\ \\text{m}$.",
-     "answer": false
-    },
-    {
      "text": "Âm phản xạ trở về tai sau khoảng $0{,}12\\ \\text{s}$.",
      "answer": true
     },
     {
      "text": "Nếu chỉ đứng cách vách $5\\ \\text{m}$ thì vẫn nghe tiếng vang vì vách cứng phản xạ tốt.",
      "answer": false
+    },
+    {
+     "text": "Quãng đường âm đi cho tới khi quay về tai là $20\\ \\text{m}$.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng: $0{,}12\\ \\text{s}$ lớn hơn $\\tfrac1{15}\\ \\text{s}\\approx0{,}067\\ \\text{s}$ nên tai tách được hai âm. b) sai: âm đi tới vách rồi quay lại, tổng quãng đường là $40\\ \\text{m}$. c) đúng: Âm đi và về $40\\ \\text{m}$ nên $t=40/340\\approx0{,}12\\ \\text{s}$. d) sai: khi đó âm dội về sau chưa tới $\\tfrac1{15}\\ \\text{s}$ nên chồng với âm trực tiếp.",
+   "explanation": "a) đúng: $0{,}12\\ \\text{s}$ lớn hơn $\\tfrac1{15}\\ \\text{s}\\approx0{,}067\\ \\text{s}$ nên tai tách được hai âm. b) đúng: Âm đi và về $40\\ \\text{m}$ nên $t=40/340\\approx0{,}12\\ \\text{s}$. c) sai: khi đó âm dội về sau chưa tới $\\tfrac1{15}\\ \\text{s}$ nên chồng với âm trực tiếp. d) sai: âm đi tới vách rồi quay lại, tổng quãng đường là $40\\ \\text{m}$.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì $0{,}12\\ \\text{s}$ lớn hơn $\\tfrac1{15}\\ \\text{s}\\approx0{,}067\\ \\text{s}$ nên tai tách được hai âm.",
-    "1": "Không thể coi là đúng vì âm đi tới vách rồi quay lại, tổng quãng đường là $40\\ \\text{m}$.",
-    "2": "Không thể coi là sai vì Âm đi và về $40\\ \\text{m}$ nên $t=40/340\\approx0{,}12\\ \\text{s}$.",
-    "3": "Không thể coi là đúng vì khi đó âm dội về sau chưa tới $\\tfrac1{15}\\ \\text{s}$ nên chồng với âm trực tiếp."
+    "1": "Không thể coi là sai vì Âm đi và về $40\\ \\text{m}$ nên $t=40/340\\approx0{,}12\\ \\text{s}$.",
+    "2": "Không thể coi là đúng vì khi đó âm dội về sau chưa tới $\\tfrac1{15}\\ \\text{s}$ nên chồng với âm trực tiếp.",
+    "3": "Không thể coi là đúng vì âm đi tới vách rồi quay lại, tổng quãng đường là $40\\ \\text{m}$."
    }
   }
  ]

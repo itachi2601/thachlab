@@ -347,28 +347,28 @@
    "question": "Con lắc đơn dao động qua lại A, O, B với O là vị trí thấp nhất và là gốc thế năng, bỏ qua lực cản. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Từ O đi lên B, thế năng chuyển dần thành động năng.",
-     "answer": false
+     "text": "Tại O, động năng của con lắc lớn nhất.",
+     "answer": true
     },
     {
      "text": "Tại hai biên A và B, thế năng của con lắc lớn nhất.",
      "answer": true
     },
     {
-     "text": "Tại biên A, cơ năng của con lắc bằng 0 vì vật dừng lại.",
+     "text": "Từ O đi lên B, thế năng chuyển dần thành động năng.",
      "answer": false
     },
     {
-     "text": "Tại O, động năng của con lắc lớn nhất.",
-     "answer": true
+     "text": "Tại biên A, cơ năng của con lắc bằng 0 vì vật dừng lại.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai: đi lên thì động năng thành thế năng. b) đúng. c) sai: cơ năng ở biên bằng thế năng, khác 0. d) đúng.",
+   "explanation": "a) đúng. b) đúng. c) sai: đi lên thì động năng thành thế năng. d) sai: cơ năng ở biên bằng thế năng, khác 0.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì đi lên thì vật chậm dần và cao dần, tức động năng chuyển thành thế năng.",
+    "0": "Không thể coi là sai vì O thấp nhất, thế năng bằng 0 nên toàn bộ cơ năng là động năng.",
     "1": "Không thể coi là sai vì ở biên vật cao nhất so với O nên $h$ lớn nhất.",
-    "2": "Không thể coi là đúng vì vật dừng chỉ làm động năng bằng 0; vật còn ở trên cao nên cơ năng bằng thế năng.",
-    "3": "Không thể coi là sai vì O thấp nhất, thế năng bằng 0 nên toàn bộ cơ năng là động năng."
+    "2": "Không thể coi là đúng vì đi lên thì vật chậm dần và cao dần, tức động năng chuyển thành thế năng.",
+    "3": "Không thể coi là đúng vì vật dừng chỉ làm động năng bằng 0; vật còn ở trên cao nên cơ năng bằng thế năng."
    }
   },
   {
@@ -382,6 +382,10 @@
    "question": "Thả bóng cao su từ độ cao $1{,}00\\ \\text{m}$, ba lần nảy đầu bóng lên được $0{,}80\\ \\text{m}$, $0{,}64\\ \\text{m}$, $0{,}51\\ \\text{m}$. Xét các nhận xét sau:",
    "statements": [
     {
+     "text": "Hiện tượng này trái với định luật bảo toàn năng lượng.",
+     "answer": false
+    },
+    {
      "text": "Cơ năng của bóng giảm sau mỗi lần nảy.",
      "answer": true
     },
@@ -390,19 +394,15 @@
      "answer": true
     },
     {
-     "text": "Hiện tượng này trái với định luật bảo toàn năng lượng.",
-     "answer": false
-    },
-    {
      "text": "Cơ năng của bóng được bảo toàn qua mỗi lần va chạm với sàn.",
      "answer": false
     }
    ],
-   "explanation": "a) đúng. b) đúng. c) sai: tổng năng lượng, kể cả nhiệt năng, vẫn bảo toàn. d) sai: bóng nảy thấp dần.",
+   "explanation": "a) sai: tổng năng lượng, kể cả nhiệt năng, vẫn bảo toàn. b) đúng. c) đúng. d) sai: bóng nảy thấp dần.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì độ cao cực đại giảm nên thế năng ở điểm cao nhất giảm.",
-    "1": "Không thể coi là sai vì bóng và sàn nóng lên chút ít, có tiếng động khi va chạm.",
-    "2": "Không thể coi là đúng vì năng lượng chỉ chuyển sang dạng khó thấy, tổng năng lượng vẫn bảo toàn.",
+    "0": "Không thể coi là đúng vì năng lượng chỉ chuyển sang dạng khó thấy, tổng năng lượng vẫn bảo toàn.",
+    "1": "Không thể coi là sai vì độ cao cực đại giảm nên thế năng ở điểm cao nhất giảm.",
+    "2": "Không thể coi là sai vì bóng và sàn nóng lên chút ít, có tiếng động khi va chạm.",
     "3": "Không thể coi là đúng vì nếu bảo toàn thì bóng phải nảy lên cùng độ cao lúc thả, mà đo được thấp dần."
    }
   },
@@ -417,28 +417,28 @@
    "question": "Ném quả bóng thẳng đứng lên, bỏ qua sức cản, gốc thế năng ở mặt đất. Xét các nhận xét sau về lúc bóng ở điểm cao nhất:",
    "statements": [
     {
-     "text": "Động năng của bóng bằng 0.",
+     "text": "Cơ năng của bóng bằng thế năng của bóng.",
      "answer": true
     },
     {
-     "text": "Cơ năng của bóng bằng 0 vì bóng dừng lại.",
-     "answer": false
+     "text": "Động năng của bóng bằng 0.",
+     "answer": true
     },
     {
      "text": "Cơ năng của bóng lúc đi lên lớn hơn lúc đi xuống.",
      "answer": false
     },
     {
-     "text": "Cơ năng của bóng bằng thế năng của bóng.",
-     "answer": true
+     "text": "Cơ năng của bóng bằng 0 vì bóng dừng lại.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng. b) sai: $W=W_{\\text{t}}\\neq0$. c) sai: cơ năng bảo toàn. d) đúng.",
+   "explanation": "a) đúng. b) đúng. c) sai: cơ năng bảo toàn. d) sai: $W=W_{\\text{t}}\\neq0$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì bóng dừng trong tích tắc nên $v=0$.",
-    "1": "Không thể coi là đúng vì dừng chỉ làm động năng bằng 0, bóng ở trên cao nên vẫn có thế năng.",
+    "0": "Không thể coi là sai vì động năng bằng 0 nên $W=W_{\\text{t}}$.",
+    "1": "Không thể coi là sai vì bóng dừng trong tích tắc nên $v=0$.",
     "2": "Không thể coi là đúng vì bỏ qua sức cản nên cơ năng không đổi ở mọi vị trí.",
-    "3": "Không thể coi là sai vì động năng bằng 0 nên $W=W_{\\text{t}}$."
+    "3": "Không thể coi là đúng vì dừng chỉ làm động năng bằng 0, bóng ở trên cao nên vẫn có thế năng."
    }
   },
   {
@@ -456,24 +456,24 @@
      "answer": false
     },
     {
-     "text": "Thế năng của bóng lúc ném là $6\\ \\text{J}$.",
-     "answer": true
+     "text": "Ném thẳng đứng xuống với cùng vận tốc thì cơ năng lúc ném nhỏ hơn.",
+     "answer": false
     },
     {
      "text": "Động năng của bóng lúc ném là $7{,}2\\ \\text{J}$.",
      "answer": true
     },
     {
-     "text": "Ném thẳng đứng xuống với cùng vận tốc thì cơ năng lúc ném nhỏ hơn.",
-     "answer": false
+     "text": "Thế năng của bóng lúc ném là $6\\ \\text{J}$.",
+     "answer": true
     }
    ],
-   "explanation": "a) sai: $W=6+7{,}2=13{,}2\\ \\text{J}$. b) đúng. c) đúng. d) sai: động năng không phụ thuộc chiều chuyển động.",
+   "explanation": "a) sai: $W=6+7{,}2=13{,}2\\ \\text{J}$. b) sai: động năng không phụ thuộc chiều chuyển động. c) đúng. d) đúng.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì $7{,}2\\ \\text{J}$ mới là động năng; cơ năng còn cộng thế năng $6\\ \\text{J}$ thành $13{,}2\\ \\text{J}$.",
-    "1": "Không thể coi là sai vì $10\\cdot0{,}4\\cdot1{,}5=6\\ \\text{J}$.",
+    "1": "Không thể coi là đúng vì động năng không phụ thuộc chiều chuyển động nên cơ năng vẫn là $13{,}2\\ \\text{J}$.",
     "2": "Không thể coi là sai vì $\\dfrac{1}{2}\\cdot0{,}4\\cdot6^2=7{,}2\\ \\text{J}$.",
-    "3": "Không thể coi là đúng vì động năng không phụ thuộc chiều chuyển động nên cơ năng vẫn là $13{,}2\\ \\text{J}$."
+    "3": "Không thể coi là sai vì $10\\cdot0{,}4\\cdot1{,}5=6\\ \\text{J}$."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Thả hai vật $1\\ \\text{kg}$ và $5\\ \\text{kg}$ cùng lúc từ độ cao $5\\ \\text{m}$, bỏ qua sức cản. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Cơ năng ban đầu của vật $5\\ \\text{kg}$ gấp $5$ lần vật $1\\ \\text{kg}$.",
-     "answer": true
-    },
-    {
      "text": "Vật nặng hơn chạm đất với vận tốc lớn hơn.",
      "answer": false
     },
     {
-     "text": "Hai vật chạm đất với cùng vận tốc $10\\ \\text{m/s}$.",
+     "text": "Cơ năng ban đầu của vật $5\\ \\text{kg}$ gấp $5$ lần vật $1\\ \\text{kg}$.",
      "answer": true
     },
     {
      "text": "Khối lượng có mặt trong biểu thức tính $v^2$ lúc chạm đất.",
      "answer": false
+    },
+    {
+     "text": "Hai vật chạm đất với cùng vận tốc $10\\ \\text{m/s}$.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng. b) sai: vận tốc không phụ thuộc khối lượng. c) đúng: $v^2=20\\cdot5=100$. d) sai: $m$ bị giản ước.",
+   "explanation": "a) sai: vận tốc không phụ thuộc khối lượng. b) đúng. c) sai: $m$ bị giản ước. d) đúng: $v^2=20\\cdot5=100$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì cùng độ cao, thế năng $10mh$ tỉ lệ với khối lượng.",
-    "1": "Không thể coi là đúng vì khối lượng triệt tiêu trong bảo toàn cơ năng nên không ảnh hưởng vận tốc.",
-    "2": "Không thể coi là sai vì $v^2=20h=100$ nên $v=10\\ \\text{m/s}$, không phụ thuộc khối lượng.",
-    "3": "Không thể coi là đúng vì hai vế đều có $m$ nên giản ước, còn lại $v^2=20h$."
+    "0": "Không thể coi là đúng vì khối lượng triệt tiêu trong bảo toàn cơ năng nên không ảnh hưởng vận tốc.",
+    "1": "Không thể coi là sai vì cùng độ cao, thế năng $10mh$ tỉ lệ với khối lượng.",
+    "2": "Không thể coi là đúng vì hai vế đều có $m$ nên giản ước, còn lại $v^2=20h$.",
+    "3": "Không thể coi là sai vì $v^2=20h=100$ nên $v=10\\ \\text{m/s}$, không phụ thuộc khối lượng."
    }
   },
   {
@@ -526,24 +526,24 @@
      "answer": false
     },
     {
+     "text": "Chọn gốc ở mặt bàn thì thế năng của quả cam là $4\\ \\text{J}$.",
+     "answer": true
+    },
+    {
      "text": "Chọn gốc ở mặt bàn thì thế năng quả cam vẫn là $6\\ \\text{J}$.",
      "answer": false
     },
     {
      "text": "Chọn gốc ở mặt đất thì thế năng của quả cam là $6\\ \\text{J}$.",
      "answer": true
-    },
-    {
-     "text": "Chọn gốc ở mặt bàn thì thế năng của quả cam là $4\\ \\text{J}$.",
-     "answer": true
     }
    ],
-   "explanation": "a) sai: $h=3-1$. b) sai: đổi gốc thì thế năng đổi. c) đúng. d) đúng: $h=2\\ \\text{m}$.",
+   "explanation": "a) sai: $h=3-1$. b) đúng: $h=2\\ \\text{m}$. c) sai: đổi gốc thì thế năng đổi. d) đúng.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì bàn nằm dưới quả cam nên độ cao so với bàn là $3-1=2\\ \\text{m}$.",
-    "1": "Không thể coi là đúng vì độ cao so với gốc mới là $2\\ \\text{m}$ nên thế năng đổi thành $4\\ \\text{J}$.",
-    "2": "Không thể coi là sai vì $10\\cdot0{,}2\\cdot3=6\\ \\text{J}$.",
-    "3": "Không thể coi là sai vì $h=3-1=2\\ \\text{m}$ nên $W_{\\text{t}}=10\\cdot0{,}2\\cdot2=4\\ \\text{J}$."
+    "1": "Không thể coi là sai vì $h=3-1=2\\ \\text{m}$ nên $W_{\\text{t}}=10\\cdot0{,}2\\cdot2=4\\ \\text{J}$.",
+    "2": "Không thể coi là đúng vì độ cao so với gốc mới là $2\\ \\text{m}$ nên thế năng đổi thành $4\\ \\text{J}$.",
+    "3": "Không thể coi là sai vì $10\\cdot0{,}2\\cdot3=6\\ \\text{J}$."
    }
   }
  ]

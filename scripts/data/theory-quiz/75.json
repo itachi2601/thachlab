@@ -382,16 +382,16 @@
    "question": "Thí nghiệm 2: hai xe đứng yên trên băng đệm khí, lò xo nén ở giữa được buộc bằng dây. Cắt dây, hai xe đẩy nhau chạy qua hai cổng quang.",
    "statements": [
     {
-     "text": "Trước khi cắt dây, tổng động lượng của hệ bằng $0$.",
-     "answer": true
+     "text": "Lực lò xo lên hai xe bằng nhau nên hai xe luôn chạy nhanh bằng nhau.",
+     "answer": false
     },
     {
      "text": "Sau khi cắt dây, hai xe đi ngược chiều nên động lượng của chúng ngược dấu.",
      "answer": true
     },
     {
-     "text": "Lực lò xo lên hai xe bằng nhau nên hai xe luôn chạy nhanh bằng nhau.",
-     "answer": false
+     "text": "Trước khi cắt dây, tổng động lượng của hệ bằng $0$.",
+     "answer": true
     },
     {
      "text": "Kiểm tra bảo toàn bằng cách tính $\\delta = \\dfrac{|p' - p|}{p}$ như thí nghiệm 1.",
@@ -400,9 +400,9 @@
    ],
    "explanation": "Hai xe đứng yên nên $p = 0$; sau đó $m_1v_1' \\approx m_2v_2'$ ngược dấu. Vì $p = 0$ không chia được, phải so $|p'|$ với $\\Delta p'$.",
    "distractorNotes": {
-    "0": "Cả hai xe đứng yên nên mỗi động lượng bằng $0$, tổng cũng bằng $0$; không thể coi là sai.",
+    "0": "Lực bằng nhau nhưng khối lượng khác thì tốc độ khác; chỉ độ lớn động lượng mới bằng nhau.",
     "1": "Tổng sau phải bằng $0$ nên hai động lượng khác không bắt buộc trái dấu; ý này đúng.",
-    "2": "Lực bằng nhau nhưng khối lượng khác thì tốc độ khác; chỉ độ lớn động lượng mới bằng nhau.",
+    "2": "Cả hai xe đứng yên nên mỗi động lượng bằng $0$, tổng cũng bằng $0$; không thể coi là sai.",
     "3": "Mẫu số $p = 0$ nên phép chia vô nghĩa; phải so $|p'|$ với sai số $\\Delta p'$."
    }
   },
@@ -417,7 +417,11 @@
    "question": "Đo động lượng trước và sau va chạm mềm, một nhóm thấy $p'$ lệch $p$ vài phần trăm và tìm nguyên nhân.",
    "statements": [
     {
-     "text": "Băng nghiêng xuống về phía cổng 2 làm $p'$ đo được lớn hơn $p$.",
+     "text": "Chỉ cần một lần đo có $\\delta \\gt \\varepsilon$ là kết luận định luật bảo toàn động lượng sai.",
+     "answer": false
+    },
+    {
+     "text": "Để kiểm băng ngang, bơm khí rồi đặt xe đứng yên giữa băng; xe trôi về một phía là băng nghiêng.",
      "answer": true
     },
     {
@@ -425,20 +429,16 @@
      "answer": true
     },
     {
-     "text": "Để kiểm băng ngang, bơm khí rồi đặt xe đứng yên giữa băng; xe trôi về một phía là băng nghiêng.",
+     "text": "Băng nghiêng xuống về phía cổng 2 làm $p'$ đo được lớn hơn $p$.",
      "answer": true
-    },
-    {
-     "text": "Chỉ cần một lần đo có $\\delta \\gt \\varepsilon$ là kết luận định luật bảo toàn động lượng sai.",
-     "answer": false
     }
    ],
    "explanation": "Hệ không kín hoàn toàn nên $p'$ lệch $p$; băng nghiêng làm lệch tuỳ chiều nghiêng. Khi $\\delta \\gt \\varepsilon$, bài yêu cầu kiểm lại băng, cổng quang rồi đo lại.",
    "distractorNotes": {
-    "0": "Xe nhanh dần khi xuống dốc về phía cổng 2 nên tốc độ đo sau va chạm lớn lên; ý này đúng.",
-    "1": "Trong thời gian rất ngắn, ngoại lực nhỏ hầu như không kịp làm đổi động lượng hệ; không thể coi là sai.",
-    "2": "Băng ngang thì trọng lực không có thành phần dọc băng, xe đứng yên không trôi; cách kiểm này đúng.",
-    "3": "Một lần lệch có thể do thao tác hoặc băng nghiêng; phải kiểm dụng cụ, đo lại chứ chưa bác bỏ định luật."
+    "0": "Một lần lệch có thể do thao tác hoặc băng nghiêng; phải kiểm dụng cụ, đo lại chứ chưa bác bỏ định luật.",
+    "1": "Băng ngang thì trọng lực không có thành phần dọc băng, xe đứng yên không trôi; cách kiểm này đúng.",
+    "2": "Trong thời gian rất ngắn, ngoại lực nhỏ hầu như không kịp làm đổi động lượng hệ; không thể coi là sai.",
+    "3": "Xe nhanh dần khi xuống dốc về phía cổng 2 nên tốc độ đo sau va chạm lớn lên; ý này đúng."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Xe chạy qua cổng quang, tấm cản quang rộng $s$ chắn tia sáng trong thời gian $t$; tính tốc độ $v = \\dfrac{s}{t}$ rồi động lượng $p = mv$.",
    "statements": [
     {
-     "text": "$v = \\dfrac{s}{t}$ là tốc độ trung bình lúc qua cổng; $s$ nhỏ, xe chạy đều thì coi là tốc độ của xe.",
-     "answer": true
+     "text": "Thời gian chắn cổng $t$ tăng gấp đôi thì tốc độ $v$ tăng gấp đôi.",
+     "answer": false
     },
     {
      "text": "Nếu $s$ cho theo cm thì phải đổi sang m trước khi tính $v$.",
      "answer": true
     },
     {
-     "text": "Thời gian chắn cổng $t$ tăng gấp đôi thì tốc độ $v$ tăng gấp đôi.",
-     "answer": false
+     "text": "Hai xe cùng tốc độ, xe có khối lượng gấp đôi thì động lượng gấp đôi.",
+     "answer": true
     },
     {
-     "text": "Hai xe cùng tốc độ, xe có khối lượng gấp đôi thì động lượng gấp đôi.",
+     "text": "$v = \\dfrac{s}{t}$ là tốc độ trung bình lúc qua cổng; $s$ nhỏ, xe chạy đều thì coi là tốc độ của xe.",
      "answer": true
     }
    ],
    "explanation": "$v$ tỉ lệ nghịch với $t$ nên $t$ gấp đôi thì $v$ giảm một nửa; $p = mv$ tỉ lệ thuận với $m$. Đơn vị kg·m/s đòi $s$ tính bằng m.",
    "distractorNotes": {
-    "0": "Phép đo chỉ cho thời gian qua đoạn $s$ nên được tốc độ trung bình; $s$ nhỏ thì sát tốc độ tức thời.",
+    "0": "$t$ nằm ở mẫu nên $v$ tỉ lệ nghịch với $t$: chắn cổng lâu hơn là xe chậm hơn.",
     "1": "Để $s$ theo cm thì $v$ lớn gấp 100 lần, động lượng sai đơn vị kg·m/s; phải đổi trước.",
-    "2": "$t$ nằm ở mẫu nên $v$ tỉ lệ nghịch với $t$: chắn cổng lâu hơn là xe chậm hơn.",
-    "3": "$p = mv$ tỉ lệ thuận với khối lượng khi tốc độ như nhau; ý này không sai."
+    "2": "$p = mv$ tỉ lệ thuận với khối lượng khi tốc độ như nhau; ý này không sai.",
+    "3": "Phép đo chỉ cho thời gian qua đoạn $s$ nên được tốc độ trung bình; $s$ nhỏ thì sát tốc độ tức thời."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": true
     },
     {
-     "text": "Vì $\\dfrac{m_1}{m_1 + m_2} \\lt 1$ nên $v' \\lt v_1$.",
-     "answer": true
+     "text": "Chỉ gấp đôi khối lượng xe 2 thì $v'$ chắc chắn giảm đúng một nửa.",
+     "answer": false
     },
     {
      "text": "Gắn gia trọng để cả hai xe nặng gấp đôi, giữ nguyên $v_1$, thì $v'$ giảm một nửa.",
      "answer": false
     },
     {
-     "text": "Chỉ gấp đôi khối lượng xe 2 thì $v'$ chắc chắn giảm đúng một nửa.",
-     "answer": false
+     "text": "Vì $\\dfrac{m_1}{m_1 + m_2} \\lt 1$ nên $v' \\lt v_1$.",
+     "answer": true
     }
    ],
    "explanation": "$v'$ chỉ phụ thuộc tỉ số $m_1 : m_2$ và $v_1$; nhân đôi cả hai khối lượng thì $v'$ không đổi. Gấp đôi riêng $m_2$ thì mẫu $m_1 + m_2$ không gấp đôi nên $v'$ không giảm đúng một nửa.",
    "distractorNotes": {
     "0": "Chia hai vế cho $m_1 + m_2$ là ra ngay biểu thức này; không thể coi là sai.",
-    "1": "Mẫu lớn hơn tử nên hệ số nhỏ hơn 1, cặp xe luôn chậm hơn xe 1 ban đầu.",
+    "1": "Mẫu thành $m_1 + 2m_2$, không phải $2(m_1 + m_2)$, nên $v'$ giảm ít hơn một nửa.",
     "2": "Tử và mẫu cùng gấp đôi nên tỉ số giữ nguyên, $v'$ không đổi chứ không giảm.",
-    "3": "Mẫu thành $m_1 + 2m_2$, không phải $2(m_1 + m_2)$, nên $v'$ giảm ít hơn một nửa."
+    "3": "Mẫu lớn hơn tử nên hệ số nhỏ hơn 1, cặp xe luôn chậm hơn xe 1 ban đầu."
    }
   },
   {
@@ -522,11 +522,7 @@
    "question": "Xử lí số liệu: tính sai số $\\varepsilon$ để so với độ lệch giữa động lượng trước và sau va chạm.",
    "statements": [
     {
-     "text": "Sai số gộp trước và sau là $\\varepsilon = \\dfrac{\\Delta p}{p} + \\dfrac{\\Delta p'}{p'}$.",
-     "answer": true
-    },
-    {
-     "text": "Với $p'$ của va chạm mềm lấy $\\Delta m = 0{,}002\\ \\text{kg}$ vì khối lượng cặp xe gồm hai lần cân.",
+     "text": "Ở thí nghiệm hai xe đẩy nhau, bảo toàn trong sai số khi $|p'| \\le \\Delta p'$.",
      "answer": true
     },
     {
@@ -534,16 +530,20 @@
      "answer": false
     },
     {
-     "text": "Ở thí nghiệm hai xe đẩy nhau, bảo toàn trong sai số khi $|p'| \\le \\Delta p'$.",
+     "text": "Sai số gộp trước và sau là $\\varepsilon = \\dfrac{\\Delta p}{p} + \\dfrac{\\Delta p'}{p'}$.",
+     "answer": true
+    },
+    {
+     "text": "Với $p'$ của va chạm mềm lấy $\\Delta m = 0{,}002\\ \\text{kg}$ vì khối lượng cặp xe gồm hai lần cân.",
      "answer": true
     }
    ],
    "explanation": "Bài cho $\\varepsilon = \\dfrac{\\Delta p}{p} + \\dfrac{\\Delta p'}{p'}$, $\\Delta m = 0{,}002\\ \\text{kg}$ cho $m_1 + m_2$; không cộng sai số $s$ vì dùng cùng tấm cản quang nên triệt tiêu khi so sánh. Khi $p = 0$ thì so $|p'|$ với $\\Delta p'$.",
    "distractorNotes": {
-    "0": "Cả $p$ và $p'$ đều là số đo có sai số nên khi so sánh phải gộp sai số của cả hai.",
-    "1": "Khối lượng cặp xe là tổng hai lần cân, mỗi lần sai $0{,}001\\ \\text{kg}$, nên sai số cộng lại; ý này đúng.",
-    "2": "Cùng một tấm cản quang dùng cho $p$ và $p'$ nên sai số của $s$ triệt tiêu khi so sánh.",
-    "3": "Tổng trước bằng $0$ nên chỉ cần tổng sau nằm trong khoảng sai số quanh $0$; ý này đúng."
+    "0": "Tổng trước bằng $0$ nên chỉ cần tổng sau nằm trong khoảng sai số quanh $0$; ý này đúng.",
+    "1": "Cùng một tấm cản quang dùng cho $p$ và $p'$ nên sai số của $s$ triệt tiêu khi so sánh.",
+    "2": "Cả $p$ và $p'$ đều là số đo có sai số nên khi so sánh phải gộp sai số của cả hai.",
+    "3": "Khối lượng cặp xe là tổng hai lần cân, mỗi lần sai $0{,}001\\ \\text{kg}$, nên sai số cộng lại; ý này đúng."
    }
   }
  ]

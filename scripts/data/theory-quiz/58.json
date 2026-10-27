@@ -347,28 +347,28 @@
    "question": "Thí nghiệm: buộc ba dây vào một vòng nhẫn, mỗi dây móc một lực kế. Kéo ba lực kế sao cho vòng nằm yên. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Hợp lực của hai lực kế 1 và 2 có cùng độ lớn và ngược chiều với lực của lực kế 3.",
-     "answer": true
-    },
-    {
-     "text": "Ba lực tác dụng lên vòng là ba lực đồng quy, đồng phẳng.",
-     "answer": true
+     "text": "Đặt ba vectơ lực nối đuôi nhau thì chúng tạo thành một đường gấp khúc không khép kín.",
+     "answer": false
     },
     {
      "text": "Một chất điểm chỉ được coi là cân bằng khi nó đứng yên.",
      "answer": false
     },
     {
-     "text": "Đặt ba vectơ lực nối đuôi nhau thì chúng tạo thành một đường gấp khúc không khép kín.",
-     "answer": false
+     "text": "Hợp lực của hai lực kế 1 và 2 có cùng độ lớn và ngược chiều với lực của lực kế 3.",
+     "answer": true
+    },
+    {
+     "text": "Ba lực tác dụng lên vòng là ba lực đồng quy, đồng phẳng.",
+     "answer": true
     }
    ],
    "explanation": "Vòng cân bằng nên tổng ba lực bằng $\\vec 0$: hợp của hai lực bằng và ngược chiều lực thứ ba, ba lực đồng quy, đồng phẳng và nối đuôi thành tam giác khép kín. Chất điểm cân bằng khi đứng yên hoặc chuyển động thẳng đều.",
    "distractorNotes": {
-    "0": "Nếu hợp lực hai lực không bằng và ngược chiều lực thứ ba thì tổng ba lực khác $\\vec 0$, vòng không thể nằm yên.",
-    "1": "Ba lực cân bằng tác dụng lên một chất điểm phải đồng quy, đồng phẳng thì tổng mới bằng $\\vec 0$.",
-    "2": "Chuyển động thẳng đều cũng là cân bằng vì tổng các lực vẫn bằng $\\vec 0$.",
-    "3": "Tổng ba lực bằng $\\vec 0$ nên khi nối đuôi, ngọn vectơ cuối trùng gốc vectơ đầu, tạo tam giác khép kín."
+    "0": "Tổng ba lực bằng $\\vec 0$ nên khi nối đuôi, ngọn vectơ cuối trùng gốc vectơ đầu, tạo tam giác khép kín.",
+    "1": "Chuyển động thẳng đều cũng là cân bằng vì tổng các lực vẫn bằng $\\vec 0$.",
+    "2": "Nếu hợp lực hai lực không bằng và ngược chiều lực thứ ba thì tổng ba lực khác $\\vec 0$, vòng không thể nằm yên.",
+    "3": "Ba lực cân bằng tác dụng lên một chất điểm phải đồng quy, đồng phẳng thì tổng mới bằng $\\vec 0$."
    }
   },
   {
@@ -382,11 +382,11 @@
    "question": "Quyển sách nằm yên trên mặt bàn. Trái Đất hút sách bằng trọng lực $\\vec P$, bàn đỡ sách bằng lực $\\vec N$. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Phản lực của $\\vec P$ là lực sách hút Trái Đất, đặt lên Trái Đất.",
+     "text": "Lực sách ép xuống mặt bàn là phản lực của lực đỡ $\\vec N$.",
      "answer": true
     },
     {
-     "text": "Lực sách ép xuống mặt bàn là phản lực của lực đỡ $\\vec N$.",
+     "text": "Phản lực của $\\vec P$ là lực sách hút Trái Đất, đặt lên Trái Đất.",
      "answer": true
     },
     {
@@ -400,8 +400,8 @@
    ],
    "explanation": "Lực – phản lực là cặp A lên B và B lên A, đặt lên hai vật khác nhau nên không triệt tiêu. Sách nằm yên vì $\\vec P$ và $\\vec N$ là hai lực cân bằng cùng đặt lên sách.",
    "distractorNotes": {
-    "0": "Trái Đất hút sách thì sách hút lại Trái Đất, đúng cặp \"A lên B\", \"B lên A\" nên là phản lực.",
-    "1": "Bàn đỡ sách thì sách ép lại bàn; hai lực đặt lên hai vật của cùng cặp sách – bàn nên là lực – phản lực.",
+    "0": "Bàn đỡ sách thì sách ép lại bàn; hai lực đặt lên hai vật của cùng cặp sách – bàn nên là lực – phản lực.",
+    "1": "Trái Đất hút sách thì sách hút lại Trái Đất, đúng cặp \"A lên B\", \"B lên A\" nên là phản lực.",
     "2": "Hai lực cùng đặt lên một vật, cùng độ lớn, ngược chiều là hai lực cân bằng chứ không phải lực – phản lực.",
     "3": "Lực và phản lực đặt lên hai vật khác nhau nên không thể triệt tiêu; sách yên là nhờ $\\vec P$ và $\\vec N$ cân bằng."
    }
@@ -417,28 +417,28 @@
    "question": "Hai bạn cùng kéo một chiếc xe trên sân băng bằng hai dây, mỗi bạn kéo $100$ N; góc giữa hai dây có thể thay đổi. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Hợp lực lớn nhất bằng $200$ N khi hai dây song song, cùng chiều.",
-     "answer": true
-    },
-    {
-     "text": "Khi hai bạn kéo ngược chiều nhau trên cùng một phương thì hợp lực bằng 0.",
-     "answer": true
-    },
-    {
      "text": "Hợp lực của hai lực kéo luôn lớn hơn mỗi lực kéo thành phần.",
      "answer": false
     },
     {
      "text": "Hợp lực luôn bằng $200$ N, bất kể góc giữa hai dây.",
      "answer": false
+    },
+    {
+     "text": "Khi hai bạn kéo ngược chiều nhau trên cùng một phương thì hợp lực bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Hợp lực lớn nhất bằng $200$ N khi hai dây song song, cùng chiều.",
+     "answer": true
     }
    ],
    "explanation": "Lực là vectơ nên hợp lực phụ thuộc góc: $\\lvert F_1 - F_2 \\rvert \\le F \\le F_1 + F_2$, tức từ $0$ đến $200$ N. Hợp lực có thể nhỏ hơn cả hai lực thành phần.",
    "distractorNotes": {
-    "0": "Khi $\\alpha = 0^\\circ$ hợp lực đạt cực đại $F_1 + F_2 = 200$ N, đúng như mô phỏng.",
-    "1": "Hai lực bằng nhau, ngược chiều thì $F = \\lvert F_1 - F_2 \\rvert = 0$.",
-    "2": "Góc mở rộng thì hợp lực có thể nhỏ hơn từng lực, ví dụ $120^\\circ$ cho đúng $100$ N, $180^\\circ$ cho $0$.",
-    "3": "Cộng số độ lớn chỉ đúng khi hai dây song song cùng chiều; hợp lực thay đổi theo góc giữa hai dây."
+    "0": "Góc mở rộng thì hợp lực có thể nhỏ hơn từng lực, ví dụ $120^\\circ$ cho đúng $100$ N, $180^\\circ$ cho $0$.",
+    "1": "Cộng số độ lớn chỉ đúng khi hai dây song song cùng chiều; hợp lực thay đổi theo góc giữa hai dây.",
+    "2": "Hai lực bằng nhau, ngược chiều thì $F = \\lvert F_1 - F_2 \\rvert = 0$.",
+    "3": "Khi $\\alpha = 0^\\circ$ hợp lực đạt cực đại $F_1 + F_2 = 200$ N, đúng như mô phỏng."
    }
   },
   {
@@ -456,12 +456,12 @@
      "answer": true
     },
     {
-     "text": "Lực kế cân bằng với thành phần trọng lực dọc ván, có độ lớn $P\\sin\\alpha$.",
-     "answer": true
-    },
-    {
      "text": "Thành phần trọng lực ép vuông góc vào ván có độ lớn $P\\sin\\alpha$.",
      "answer": false
+    },
+    {
+     "text": "Lực kế cân bằng với thành phần trọng lực dọc ván, có độ lớn $P\\sin\\alpha$.",
+     "answer": true
     },
     {
      "text": "Tăng góc nghiêng của ván thì số chỉ lực kế giảm.",
@@ -471,8 +471,8 @@
    "explanation": "Trọng lực phân tích thành $P_x = P\\sin\\alpha$ dọc ván (lực kế giữ) và $P_y = P\\cos\\alpha$ ép vào ván. Góc tăng thì $\\sin\\alpha$ tăng nên số chỉ lực kế tăng.",
    "distractorNotes": {
     "0": "Lực kế chỉ $P\\sin\\alpha$ mà $\\sin\\alpha \\lt 1$ khi $\\alpha \\lt 90^\\circ$, nên số chỉ luôn nhỏ hơn $P$.",
-    "1": "Vật đứng yên nên lực kế cân bằng thành phần dọc ván, thành phần này đối diện góc $\\alpha$ nên dùng sin.",
-    "2": "Thành phần ép vuông góc ván là cạnh kề góc $\\alpha$ nên bằng $P\\cos\\alpha$; gán sin là nhầm sin với cos.",
+    "1": "Thành phần ép vuông góc ván là cạnh kề góc $\\alpha$ nên bằng $P\\cos\\alpha$; gán sin là nhầm sin với cos.",
+    "2": "Vật đứng yên nên lực kế cân bằng thành phần dọc ván, thành phần này đối diện góc $\\alpha$ nên dùng sin.",
     "3": "Góc tăng thì $\\sin\\alpha$ tăng, thành phần dọc ván tăng nên số chỉ lực kế tăng chứ không giảm."
    }
   },
@@ -487,11 +487,11 @@
    "question": "Hai lực đồng quy $\\vec F_1$, $\\vec F_2$ hợp nhau góc $\\alpha$. Xét các phát biểu về công thức tính độ lớn hợp lực $F$.",
    "statements": [
     {
-     "text": "Công thức tổng quát là $F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$.",
-     "answer": true
+     "text": "Khi $F_1 = F_2$, độ lớn hợp lực là $F = 2F_1\\cos\\alpha$.",
+     "answer": false
     },
     {
-     "text": "Khi $\\alpha = 90^\\circ$, công thức trở thành $F = \\sqrt{F_1^2 + F_2^2}$.",
+     "text": "Công thức tổng quát là $F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$.",
      "answer": true
     },
     {
@@ -499,16 +499,16 @@
      "answer": false
     },
     {
-     "text": "Khi $F_1 = F_2$, độ lớn hợp lực là $F = 2F_1\\cos\\alpha$.",
-     "answer": false
+     "text": "Khi $\\alpha = 90^\\circ$, công thức trở thành $F = \\sqrt{F_1^2 + F_2^2}$.",
+     "answer": true
     }
    ],
    "explanation": "Từ $F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$: $\\alpha = 0^\\circ$ cho $F = F_1 + F_2$, $\\alpha = 90^\\circ$ cho $F = \\sqrt{F_1^2 + F_2^2}$, còn $F_1 = F_2$ cho $F = 2F_1\\cos\\dfrac{\\alpha}{2}$.",
    "distractorNotes": {
-    "0": "Đây đúng là công thức của bài; dấu cộng xuất hiện vì góc trong tam giác lực là $180^\\circ - \\alpha$.",
-    "1": "Với $\\alpha = 90^\\circ$ thì $\\cos\\alpha = 0$, số hạng cuối mất, còn lại căn của tổng bình phương.",
+    "0": "Đường chéo hình thoi chia đôi góc nên phải dùng $\\cos\\dfrac{\\alpha}{2}$, không phải $\\cos\\alpha$.",
+    "1": "Đây đúng là công thức của bài; dấu cộng xuất hiện vì góc trong tam giác lực là $180^\\circ - \\alpha$.",
     "2": "$\\alpha = 0^\\circ$ cho $\\cos\\alpha = 1$ nên $F = F_1 + F_2$; hiệu độ lớn chỉ ứng với $\\alpha = 180^\\circ$.",
-    "3": "Đường chéo hình thoi chia đôi góc nên phải dùng $\\cos\\dfrac{\\alpha}{2}$, không phải $\\cos\\alpha$."
+    "3": "Với $\\alpha = 90^\\circ$ thì $\\cos\\alpha = 0$, số hạng cuối mất, còn lại căn của tổng bình phương."
    }
   },
   {
@@ -522,10 +522,6 @@
    "question": "Một người gánh hai thùng nặng $F_1$ và $F_2$ ($F_1 \\gt F_2$) treo ở hai đầu đòn gánh; hai trọng lực là hai lực song song cùng chiều. Xét các phát biểu về hợp lực của chúng.",
    "statements": [
     {
-     "text": "Hợp lực song song, cùng chiều với hai lực và có độ lớn $F = F_1 + F_2$.",
-     "answer": true
-    },
-    {
      "text": "Giá của hợp lực (chỗ đặt vai) nằm gần thùng nặng hơn.",
      "answer": true
     },
@@ -534,15 +530,19 @@
      "answer": false
     },
     {
+     "text": "Hợp lực song song, cùng chiều với hai lực và có độ lớn $F = F_1 + F_2$.",
+     "answer": true
+    },
+    {
      "text": "Giá của hợp lực nằm ngoài khoảng giữa hai giá của hai lực.",
      "answer": false
     }
    ],
    "explanation": "Hợp lực hai lực song song cùng chiều có $F = F_1 + F_2$, giá nằm giữa hai giá và chia khoảng cách theo tỉ lệ nghịch $\\dfrac{F_1}{F_2} = \\dfrac{d_2}{d_1}$, nên gần lực lớn hơn.",
    "distractorNotes": {
-    "0": "Hai lực song song cùng chiều thì hợp lực cùng chiều và có độ lớn bằng tổng hai độ lớn.",
-    "1": "Giá chia khoảng cách tỉ lệ nghịch với lực nên lực lớn hơn ứng với khoảng cách nhỏ hơn, vai gần thùng nặng.",
-    "2": "Hệ thức này là tỉ lệ thuận, đảo $d_1$ và $d_2$; quy tắc đúng là $\\dfrac{F_1}{F_2} = \\dfrac{d_2}{d_1}$.",
+    "0": "Giá chia khoảng cách tỉ lệ nghịch với lực nên lực lớn hơn ứng với khoảng cách nhỏ hơn, vai gần thùng nặng.",
+    "1": "Hệ thức này là tỉ lệ thuận, đảo $d_1$ và $d_2$; quy tắc đúng là $\\dfrac{F_1}{F_2} = \\dfrac{d_2}{d_1}$.",
+    "2": "Hai lực song song cùng chiều thì hợp lực cùng chiều và có độ lớn bằng tổng hai độ lớn.",
     "3": "Với hai lực song song cùng chiều, giá hợp lực luôn nằm giữa hai giá, như vai nằm giữa hai thùng."
    }
   }

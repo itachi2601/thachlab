@@ -347,28 +347,28 @@
    "question": "Một nhóm học sinh chiếu tia laser vào mặt cong của khối bán trụ thuỷ tinh, hướng đúng vào tâm, rồi tăng dần góc tới tại tâm. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi tăng góc tới, tia khúc xạ sáng dần còn tia phản xạ mờ dần.",
-     "answer": false
-    },
-    {
      "text": "Khi góc tới vượt góc tới hạn thì không còn tia khúc xạ.",
      "answer": true
     },
     {
-     "text": "Khi góc tới còn nhỏ, ngoài tia khúc xạ còn có tia phản xạ mờ.",
-     "answer": true
+     "text": "Khi tăng góc tới, tia khúc xạ sáng dần còn tia phản xạ mờ dần.",
+     "answer": false
     },
     {
      "text": "Tại đúng góc tới hạn, tia khúc xạ trùng với pháp tuyến.",
      "answer": false
+    },
+    {
+     "text": "Khi góc tới còn nhỏ, ngoài tia khúc xạ còn có tia phản xạ mờ.",
+     "answer": true
     }
    ],
-   "explanation": "a) sai: ngược lại, tia khúc xạ mờ dần còn tia phản xạ sáng dần. b) đúng: ánh sáng bị phản xạ toàn phần, chỉ còn tia phản xạ. c) đúng: mặt phân cách luôn phản xạ một phần ánh sáng. d) sai: tại góc tới hạn tia khúc xạ đi sát mặt phân cách, ứng với $r = 90^\\circ$.",
+   "explanation": "a) đúng: ánh sáng bị phản xạ toàn phần, chỉ còn tia phản xạ. b) sai: ngược lại, tia khúc xạ mờ dần còn tia phản xạ sáng dần. c) sai: tại góc tới hạn tia khúc xạ đi sát mặt phân cách, ứng với $r = 90^\\circ$. d) đúng: mặt phân cách luôn phản xạ một phần ánh sáng.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì ngược lại, tia khúc xạ mờ dần còn tia phản xạ sáng dần.",
-    "1": "Không thể coi là sai vì ánh sáng bị phản xạ toàn phần, chỉ còn tia phản xạ.",
-    "2": "Không thể coi là sai vì mặt phân cách luôn phản xạ một phần ánh sáng.",
-    "3": "Không thể coi là đúng vì tại góc tới hạn tia khúc xạ đi sát mặt phân cách, ứng với $r = 90^\\circ$."
+    "0": "Không thể coi là sai vì ánh sáng bị phản xạ toàn phần, chỉ còn tia phản xạ.",
+    "1": "Không thể coi là đúng vì ngược lại, tia khúc xạ mờ dần còn tia phản xạ sáng dần.",
+    "2": "Không thể coi là đúng vì tại góc tới hạn tia khúc xạ đi sát mặt phân cách, ứng với $r = 90^\\circ$.",
+    "3": "Không thể coi là sai vì mặt phân cách luôn phản xạ một phần ánh sáng."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Một chất lỏng có chiết suất $n = \\sqrt{2}$, ánh sáng đi từ chất lỏng ra không khí, $\\sin 45^\\circ = \\dfrac{\\sqrt{2}}{2}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Góc tới hạn bằng $45^\\circ$.",
-     "answer": true
-    },
-    {
      "text": "Tia tới với góc tới $60^\\circ$ vẫn có tia khúc xạ ló ra không khí.",
-     "answer": false
-    },
-    {
-     "text": "Cho ánh sáng đi từ không khí vào chất lỏng này cũng có góc tới hạn $45^\\circ$.",
      "answer": false
     },
     {
      "text": "Tia tới với góc tới $30^\\circ$ vẫn có tia khúc xạ ló ra không khí.",
      "answer": true
+    },
+    {
+     "text": "Góc tới hạn bằng $45^\\circ$.",
+     "answer": true
+    },
+    {
+     "text": "Cho ánh sáng đi từ không khí vào chất lỏng này cũng có góc tới hạn $45^\\circ$.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng: $\\sin i_{th} = \\dfrac{1}{\\sqrt{2}} = \\sin 45^\\circ$. b) sai: $60^\\circ > 45^\\circ$ nên bị phản xạ toàn phần. c) sai: từ không khí vào chất lỏng là đi vào môi trường chiết quang hơn nên không có góc tới hạn. d) đúng: $30^\\circ < 45^\\circ$ nên chưa tới góc tới hạn.",
+   "explanation": "a) sai: $60^\\circ > 45^\\circ$ nên bị phản xạ toàn phần. b) đúng: $30^\\circ < 45^\\circ$ nên chưa tới góc tới hạn. c) đúng: $\\sin i_{th} = \\dfrac{1}{\\sqrt{2}} = \\sin 45^\\circ$. d) sai: từ không khí vào chất lỏng là đi vào môi trường chiết quang hơn nên không có góc tới hạn.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì $\\sin i_{th} = \\dfrac{1}{\\sqrt{2}} = \\sin 45^\\circ$.",
-    "1": "Không thể coi là đúng vì $60^\\circ > 45^\\circ$ nên bị phản xạ toàn phần.",
-    "2": "Không thể coi là đúng vì từ không khí vào chất lỏng là đi vào môi trường chiết quang hơn nên không có góc tới hạn.",
-    "3": "Không thể coi là sai vì $30^\\circ < 45^\\circ$ nên chưa tới góc tới hạn."
+    "0": "Không thể coi là đúng vì $60^\\circ > 45^\\circ$ nên bị phản xạ toàn phần.",
+    "1": "Không thể coi là sai vì $30^\\circ < 45^\\circ$ nên chưa tới góc tới hạn.",
+    "2": "Không thể coi là sai vì $\\sin i_{th} = \\dfrac{1}{\\sqrt{2}} = \\sin 45^\\circ$.",
+    "3": "Không thể coi là đúng vì từ không khí vào chất lỏng là đi vào môi trường chiết quang hơn nên không có góc tới hạn."
    }
   },
   {
@@ -417,10 +417,6 @@
    "question": "Bạn An phát biểu về các điều kiện của phản xạ toàn phần. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Thiếu một trong hai điều kiện thì không có phản xạ toàn phần.",
-     "answer": true
-    },
-    {
      "text": "Ánh sáng đi từ nước ra không khí với góc tới đủ lớn có thể bị phản xạ toàn phần.",
      "answer": true
     },
@@ -431,14 +427,18 @@
     {
      "text": "Chỉ cần góc tới lớn hơn góc tới hạn là có phản xạ toàn phần, bất kể chiều truyền.",
      "answer": false
+    },
+    {
+     "text": "Thiếu một trong hai điều kiện thì không có phản xạ toàn phần.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng: phải đủ cả điều kiện về chiều truyền và điều kiện về góc tới. b) đúng: đúng chiều từ chiết quang hơn sang chiết quang kém và có góc tới lớn. c) sai: sai chiều truyền nên vẫn có tia khúc xạ, dù góc tới rất lớn. d) sai: góc tới hạn chỉ tồn tại khi ánh sáng đi từ môi trường chiết quang hơn sang kém.",
+   "explanation": "a) đúng: đúng chiều từ chiết quang hơn sang chiết quang kém và có góc tới lớn. b) sai: sai chiều truyền nên vẫn có tia khúc xạ, dù góc tới rất lớn. c) sai: góc tới hạn chỉ tồn tại khi ánh sáng đi từ môi trường chiết quang hơn sang kém. d) đúng: phải đủ cả điều kiện về chiều truyền và điều kiện về góc tới.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì phải đủ cả điều kiện về chiều truyền và điều kiện về góc tới.",
-    "1": "Không thể coi là sai vì đúng chiều từ chiết quang hơn sang chiết quang kém và có góc tới lớn.",
-    "2": "Không thể coi là đúng vì sai chiều truyền nên vẫn có tia khúc xạ, dù góc tới rất lớn.",
-    "3": "Không thể coi là đúng vì góc tới hạn chỉ tồn tại khi ánh sáng đi từ môi trường chiết quang hơn sang kém."
+    "0": "Không thể coi là sai vì đúng chiều từ chiết quang hơn sang chiết quang kém và có góc tới lớn.",
+    "1": "Không thể coi là đúng vì sai chiều truyền nên vẫn có tia khúc xạ, dù góc tới rất lớn.",
+    "2": "Không thể coi là đúng vì góc tới hạn chỉ tồn tại khi ánh sáng đi từ môi trường chiết quang hơn sang kém.",
+    "3": "Không thể coi là sai vì phải đủ cả điều kiện về chiều truyền và điều kiện về góc tới."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Sợi quang có lõi bằng thuỷ tinh hoặc nhựa trong suốt, bọc ngoài bằng lớp vỏ. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Sợi uốn càng gắt thì góc tới tại thành càng lớn nên tín hiệu càng tốt.",
-     "answer": false
-    },
-    {
      "text": "Lõi có chiết suất lớn hơn lớp vỏ.",
      "answer": true
     },
     {
-     "text": "Lớp vỏ có chiết suất lớn hơn lõi để giữ ánh sáng ở trong.",
+     "text": "Ánh sáng trong lõi phản xạ toàn phần liên tiếp tại mặt lõi – vỏ.",
+     "answer": true
+    },
+    {
+     "text": "Sợi uốn càng gắt thì góc tới tại thành càng lớn nên tín hiệu càng tốt.",
      "answer": false
     },
     {
-     "text": "Ánh sáng trong lõi phản xạ toàn phần liên tiếp tại mặt lõi – vỏ.",
-     "answer": true
+     "text": "Lớp vỏ có chiết suất lớn hơn lõi để giữ ánh sáng ở trong.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai: uốn gắt làm góc tới nhỏ đi, có thể tụt dưới góc tới hạn và ánh sáng lọt ra vỏ. b) đúng: nhờ vậy ánh sáng trong lõi gặp mặt lõi – vỏ ở đúng chiều có thể phản xạ toàn phần. c) sai: vỏ có chiết suất nhỏ hơn lõi thì mới có phản xạ toàn phần. d) đúng: đó là cách ánh sáng đi theo sợi dù sợi uốn nhẹ.",
+   "explanation": "a) đúng: nhờ vậy ánh sáng trong lõi gặp mặt lõi – vỏ ở đúng chiều có thể phản xạ toàn phần. b) đúng: đó là cách ánh sáng đi theo sợi dù sợi uốn nhẹ. c) sai: uốn gắt làm góc tới nhỏ đi, có thể tụt dưới góc tới hạn và ánh sáng lọt ra vỏ. d) sai: vỏ có chiết suất nhỏ hơn lõi thì mới có phản xạ toàn phần.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì uốn gắt làm góc tới nhỏ đi, có thể tụt dưới góc tới hạn và ánh sáng lọt ra vỏ.",
-    "1": "Không thể coi là sai vì nhờ vậy ánh sáng trong lõi gặp mặt lõi – vỏ ở đúng chiều có thể phản xạ toàn phần.",
-    "2": "Không thể coi là đúng vì vỏ có chiết suất nhỏ hơn lõi thì mới có phản xạ toàn phần.",
-    "3": "Không thể coi là sai vì đó là cách ánh sáng đi theo sợi dù sợi uốn nhẹ."
+    "0": "Không thể coi là sai vì nhờ vậy ánh sáng trong lõi gặp mặt lõi – vỏ ở đúng chiều có thể phản xạ toàn phần.",
+    "1": "Không thể coi là sai vì đó là cách ánh sáng đi theo sợi dù sợi uốn nhẹ.",
+    "2": "Không thể coi là đúng vì uốn gắt làm góc tới nhỏ đi, có thể tụt dưới góc tới hạn và ánh sáng lọt ra vỏ.",
+    "3": "Không thể coi là đúng vì vỏ có chiết suất nhỏ hơn lõi thì mới có phản xạ toàn phần."
    }
   },
   {
@@ -487,27 +487,27 @@
    "question": "Đèn LED đặt dưới đáy bể bơi (nước có $n = 1{,}33$), góc tới hạn của nước ra không khí khoảng $48{,}8^\\circ$. Xét hai tia tới mặt nước với góc tới $40^\\circ$ và $60^\\circ$:",
    "statements": [
     {
-     "text": "Tia ló của tia $40^\\circ$ có góc khúc xạ nhỏ hơn $40^\\circ$.",
-     "answer": false
+     "text": "Tia tới mặt nước với góc tới $40^\\circ$ ló ra không khí.",
+     "answer": true
     },
     {
      "text": "Với tia $60^\\circ$ vẫn tính được một góc khúc xạ nhỏ hơn $90^\\circ$.",
      "answer": false
     },
     {
-     "text": "Tia tới mặt nước với góc tới $40^\\circ$ ló ra không khí.",
-     "answer": true
+     "text": "Tia ló của tia $40^\\circ$ có góc khúc xạ nhỏ hơn $40^\\circ$.",
+     "answer": false
     },
     {
      "text": "Tia $60^\\circ$ bị phản xạ toàn phần với góc phản xạ bằng $60^\\circ$.",
      "answer": true
     }
    ],
-   "explanation": "a) sai: từ nước ra không khí thì $r > i$, tia lệch xa pháp tuyến. b) sai: $\\sin r = 1{,}33 \\sin 60^\\circ > 1$ nên không có góc $r$ thoả mãn. c) đúng: $40^\\circ < 48{,}8^\\circ$ nên chưa phản xạ toàn phần. d) đúng: $60^\\circ > 48{,}8^\\circ$ và góc phản xạ luôn bằng góc tới.",
+   "explanation": "a) đúng: $40^\\circ < 48{,}8^\\circ$ nên chưa phản xạ toàn phần. b) sai: $\\sin r = 1{,}33 \\sin 60^\\circ > 1$ nên không có góc $r$ thoả mãn. c) sai: từ nước ra không khí thì $r > i$, tia lệch xa pháp tuyến. d) đúng: $60^\\circ > 48{,}8^\\circ$ và góc phản xạ luôn bằng góc tới.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì từ nước ra không khí thì $r > i$, tia lệch xa pháp tuyến.",
+    "0": "Không thể coi là sai vì $40^\\circ < 48{,}8^\\circ$ nên chưa phản xạ toàn phần.",
     "1": "Không thể coi là đúng vì $\\sin r = 1{,}33 \\sin 60^\\circ > 1$ nên không có góc $r$ thoả mãn.",
-    "2": "Không thể coi là sai vì $40^\\circ < 48{,}8^\\circ$ nên chưa phản xạ toàn phần.",
+    "2": "Không thể coi là đúng vì từ nước ra không khí thì $r > i$, tia lệch xa pháp tuyến.",
     "3": "Không thể coi là sai vì $60^\\circ > 48{,}8^\\circ$ và góc phản xạ luôn bằng góc tới."
    }
   },
@@ -522,11 +522,11 @@
    "question": "So sánh phản xạ toàn phần với phản xạ trên một tấm gương phẳng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Trong cả hai trường hợp, góc phản xạ bằng góc tới.",
-     "answer": true
+     "text": "Phản xạ trên gương chỉ xảy ra khi góc tới lớn hơn một giá trị nào đó.",
+     "answer": false
     },
     {
-     "text": "Phản xạ trên gương chỉ xảy ra khi góc tới lớn hơn một giá trị nào đó.",
+     "text": "Phản xạ toàn phần xảy ra ở mọi mặt phân cách hai môi trường trong suốt với mọi góc tới.",
      "answer": false
     },
     {
@@ -534,16 +534,16 @@
      "answer": true
     },
     {
-     "text": "Phản xạ toàn phần xảy ra ở mọi mặt phân cách hai môi trường trong suốt với mọi góc tới.",
-     "answer": false
+     "text": "Trong cả hai trường hợp, góc phản xạ bằng góc tới.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng: đó là điểm giống nhau của hai loại phản xạ. b) sai: phản xạ trên gương xảy ra với mọi góc tới. c) đúng: vì toàn bộ ánh sáng bị phản xạ trở lại. d) sai: cần đủ hai điều kiện về chiều truyền và góc tới.",
+   "explanation": "a) sai: phản xạ trên gương xảy ra với mọi góc tới. b) sai: cần đủ hai điều kiện về chiều truyền và góc tới. c) đúng: vì toàn bộ ánh sáng bị phản xạ trở lại. d) đúng: đó là điểm giống nhau của hai loại phản xạ.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì đó là điểm giống nhau của hai loại phản xạ.",
-    "1": "Không thể coi là đúng vì phản xạ trên gương xảy ra với mọi góc tới.",
+    "0": "Không thể coi là đúng vì phản xạ trên gương xảy ra với mọi góc tới.",
+    "1": "Không thể coi là đúng vì cần đủ hai điều kiện về chiều truyền và góc tới.",
     "2": "Không thể coi là sai vì toàn bộ ánh sáng bị phản xạ trở lại.",
-    "3": "Không thể coi là đúng vì cần đủ hai điều kiện về chiều truyền và góc tới."
+    "3": "Không thể coi là sai vì đó là điểm giống nhau của hai loại phản xạ."
    }
   }
  ]

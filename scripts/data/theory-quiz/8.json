@@ -347,28 +347,28 @@
    "question": "Thả một quả bóng bàn bị bẹp (nhưng chưa nứt) vào cốc nước nóng khoảng 80 °C, vỏ bóng từ từ phồng trở lại. Xét khối khí bên trong bóng:",
    "statements": [
     {
-     "text": "Nước nóng truyền nhiệt làm nhiệt độ khí trong bóng tăng.",
+     "text": "Áp suất khí trong bóng tăng, đẩy vỏ bóng về dạng cũ.",
      "answer": true
     },
     {
-     "text": "Áp suất khí trong bóng tăng, đẩy vỏ bóng về dạng cũ.",
-     "answer": true
+     "text": "Trong quá trình này chỉ nhiệt độ thay đổi, thể tích và áp suất khí giữ nguyên.",
+     "answer": false
     },
     {
      "text": "Bóng phồng lên vì lượng khí bên trong bóng tăng lên.",
      "answer": false
     },
     {
-     "text": "Trong quá trình này chỉ nhiệt độ thay đổi, thể tích và áp suất khí giữ nguyên.",
-     "answer": false
+     "text": "Nước nóng truyền nhiệt làm nhiệt độ khí trong bóng tăng.",
+     "answer": true
     }
    ],
    "explanation": "Bóng chưa nứt nên lượng khí không đổi; nhiệt độ tăng làm áp suất tăng, đẩy vỏ phồng ra: cả ba thông số đều đổi.",
    "distractorNotes": {
-    "0": "Nước nóng truyền nhiệt cho khối khí bên trong bóng, nên không thể cho rằng nhiệt độ khí không tăng.",
-    "1": "Chỉ có áp suất khí tăng mới đẩy được vỏ bóng phồng ra, nên không thể phủ nhận ý này.",
+    "0": "Chỉ có áp suất khí tăng mới đẩy được vỏ bóng phồng ra, nên không thể phủ nhận ý này.",
+    "1": "Vỏ bóng phồng ra tức thể tích tăng, áp suất cũng tăng, nên cả ba thông số đều đổi.",
     "2": "Bóng chưa nứt nên khí không lọt vào được; lượng khí giữ nguyên, chỉ trạng thái của khí thay đổi.",
-    "3": "Vỏ bóng phồng ra tức thể tích tăng, áp suất cũng tăng, nên cả ba thông số đều đổi."
+    "3": "Nước nóng truyền nhiệt cho khối khí bên trong bóng, nên không thể cho rằng nhiệt độ khí không tăng."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Một bình khí nén có thể tích không đổi. Bạn An xả bớt khí cho vơi bình, đóng van lại rồi đem bình phơi nắng.",
    "statements": [
     {
-     "text": "Dùng được $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ cho trạng thái trước khi xả khí và trạng thái sau khi phơi nắng.",
+     "text": "Vì bình vẫn kín nên lượng khí trước và sau khi xả là như nhau.",
      "answer": false
-    },
-    {
-     "text": "Sau khi xả, hằng số $\\dfrac{pV}{T}$ của khí trong bình nhỏ đi.",
-     "answer": true
     },
     {
      "text": "Trong lúc phơi nắng (không xả thêm), khí trong bình biến đổi đẳng tích.",
      "answer": true
     },
     {
-     "text": "Vì bình vẫn kín nên lượng khí trước và sau khi xả là như nhau.",
+     "text": "Dùng được $\\dfrac{p_1V_1}{T_1}=\\dfrac{p_2V_2}{T_2}$ cho trạng thái trước khi xả khí và trạng thái sau khi phơi nắng.",
      "answer": false
+    },
+    {
+     "text": "Sau khi xả, hằng số $\\dfrac{pV}{T}$ của khí trong bình nhỏ đi.",
+     "answer": true
     }
    ],
    "explanation": "Xả khí làm lượng khí đổi nên hằng số $pV/T = nR$ nhỏ đi, không nối được hai trạng thái trước và sau xả; khi phơi nắng, lượng khí và thể tích không đổi nên là đẳng tích.",
    "distractorNotes": {
-    "0": "Trước và sau khi xả là hai lượng khí khác nhau, hằng số $pV/T$ khác nhau nên không nối được bằng một phương trình.",
-    "1": "Hằng số $pV/T = nR$, số mol giảm khi xả nên hằng số chắc chắn nhỏ đi.",
-    "2": "Sau khi đóng van, lượng khí và thể tích bình đều không đổi, đúng định nghĩa quá trình đẳng tích.",
-    "3": "Bình chỉ kín sau khi đóng van; việc xả trước đó đã làm lượng khí giảm."
+    "0": "Bình chỉ kín sau khi đóng van; việc xả trước đó đã làm lượng khí giảm.",
+    "1": "Sau khi đóng van, lượng khí và thể tích bình đều không đổi, đúng định nghĩa quá trình đẳng tích.",
+    "2": "Trước và sau khi xả là hai lượng khí khác nhau, hằng số $pV/T$ khác nhau nên không nối được bằng một phương trình.",
+    "3": "Hằng số $pV/T = nR$, số mol giảm khi xả nên hằng số chắc chắn nhỏ đi."
    }
   },
   {
@@ -425,11 +425,11 @@
      "answer": true
     },
     {
-     "text": "Giữ $V$ không đổi: $p_1T_1=p_2T_2$.",
+     "text": "Giữ $T$ không đổi: $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$.",
      "answer": false
     },
     {
-     "text": "Giữ $T$ không đổi: $\\dfrac{p_1}{T_1}=\\dfrac{p_2}{T_2}$.",
+     "text": "Giữ $V$ không đổi: $p_1T_1=p_2T_2$.",
      "answer": false
     }
    ],
@@ -437,8 +437,8 @@
    "distractorNotes": {
     "0": "Giữ $T$ không đổi thì $T$ triệt tiêu ở hai vế, còn đúng $p_1V_1 = p_2V_2$ của định luật Boyle.",
     "1": "Giữ $p$ không đổi thì $p$ triệt tiêu ở hai vế, còn đúng $V_1/T_1 = V_2/T_2$.",
-    "2": "Giữ $V$ không đổi thì còn thương $p/T$ là hằng số, không phải tích $pT$.",
-    "3": "Hệ thức $p/T$ không đổi ứng với trường hợp giữ $V$; giữ $T$ thì còn $pV$ không đổi."
+    "2": "Hệ thức $p/T$ không đổi ứng với trường hợp giữ $V$; giữ $T$ thì còn $pV$ không đổi.",
+    "3": "Giữ $V$ không đổi thì còn thương $p/T$ là hằng số, không phải tích $pT$."
    }
   },
   {
@@ -452,16 +452,16 @@
    "question": "Bình khí nén mini kín để ngoài sân, thể tích không đổi, không ai bơm thêm khí. Buổi sáng khí ở $27\\ ^\\circ\\text{C}$ (300 K), giữa trưa lên $47\\ ^\\circ\\text{C}$ (320 K).",
    "statements": [
     {
-     "text": "Áp suất khí giữa trưa bằng áp suất buổi sáng nhân với $\\dfrac{320}{300}$.",
-     "answer": true
+     "text": "Vì thể tích bình không đổi nên áp suất khí không đổi.",
+     "answer": false
     },
     {
      "text": "Áp suất khí tăng theo tỉ số $\\dfrac{47}{27}$, tức gần gấp đôi.",
      "answer": false
     },
     {
-     "text": "Vì thể tích bình không đổi nên áp suất khí không đổi.",
-     "answer": false
+     "text": "Áp suất khí giữa trưa bằng áp suất buổi sáng nhân với $\\dfrac{320}{300}$.",
+     "answer": true
     },
     {
      "text": "Tỉ số $\\dfrac{p}{T}$ của khí trong bình buổi sáng và giữa trưa bằng nhau.",
@@ -470,9 +470,9 @@
    ],
    "explanation": "Lượng khí và thể tích không đổi nên là đẳng tích: $p/T$ không đổi, áp suất tăng theo tỉ số nhiệt độ tuyệt đối $320/300$.",
    "distractorNotes": {
-    "0": "Quá trình đẳng tích nên $p$ tỉ lệ thuận với nhiệt độ tuyệt đối, áp suất tăng đúng theo tỉ số $320/300$.",
+    "0": "Thể tích không đổi nhưng nhiệt độ tăng thì áp suất bắt buộc phải tăng.",
     "1": "Thang Celsius không có gốc 0 thật, nên lấy tỉ số $47/27$ là vô nghĩa.",
-    "2": "Thể tích không đổi nhưng nhiệt độ tăng thì áp suất bắt buộc phải tăng.",
+    "2": "Quá trình đẳng tích nên $p$ tỉ lệ thuận với nhiệt độ tuyệt đối, áp suất tăng đúng theo tỉ số $320/300$.",
     "3": "Lượng khí và thể tích giữ nguyên nên $p/T$ là hằng số, không thể khác nhau giữa sáng và trưa."
    }
   },
@@ -487,28 +487,28 @@
    "question": "Phương trình Clapeyron – Mendeleev $pV=nRT$ áp dụng cho $n$ mol khí lí tưởng.",
    "statements": [
     {
-     "text": "Số mol $n=\\dfrac{m}{M}$, với $m$ và $M$ dùng cùng gam hoặc cùng kilôgam.",
-     "answer": true
-    },
-    {
-     "text": "Hằng số khí $R=8{,}31\\ \\text{J/(mol·K)}$.",
-     "answer": true
-    },
-    {
      "text": "Ở điều kiện tiêu chuẩn (0 °C, 1 atm), 1 mol khí chiếm 24,79 lít.",
      "answer": false
     },
     {
      "text": "Hằng số $\\dfrac{pV}{T}$ của lượng khí bằng $\\dfrac{n}{R}$.",
      "answer": false
+    },
+    {
+     "text": "Hằng số khí $R=8{,}31\\ \\text{J/(mol·K)}$.",
+     "answer": true
+    },
+    {
+     "text": "Số mol $n=\\dfrac{m}{M}$, với $m$ và $M$ dùng cùng gam hoặc cùng kilôgam.",
+     "answer": true
     }
    ],
    "explanation": "Bài nêu $n = m/M$ (cùng đơn vị), $R = 8{,}31\\ \\text{J/(mol·K)}$, $pV/T = nR$; 1 mol khí chiếm 22,4 lít ở điều kiện tiêu chuẩn, còn 24,79 lít là ở điều kiện chuẩn (25 °C, 1 bar).",
    "distractorNotes": {
-    "0": "Bài yêu cầu rõ $m$ và $M$ phải cùng đơn vị khi tính $n = m/M$, nên không thể coi ý này là sai.",
-    "1": "Đây đúng là giá trị hằng số khí trong bài, dùng khi $p$ tính bằng Pa và $V$ tính bằng m³.",
-    "2": "24,79 lít ứng với điều kiện chuẩn (25 °C, 1 bar); ở điều kiện tiêu chuẩn, 1 mol khí chiếm 22,4 lít.",
-    "3": "Từ $pV = nRT$ suy ra $pV/T = nR$, là tích chứ không phải thương."
+    "0": "24,79 lít ứng với điều kiện chuẩn (25 °C, 1 bar); ở điều kiện tiêu chuẩn, 1 mol khí chiếm 22,4 lít.",
+    "1": "Từ $pV = nRT$ suy ra $pV/T = nR$, là tích chứ không phải thương.",
+    "2": "Đây đúng là giá trị hằng số khí trong bài, dùng khi $p$ tính bằng Pa và $V$ tính bằng m³.",
+    "3": "Bài yêu cầu rõ $m$ và $M$ phải cùng đơn vị khi tính $n = m/M$, nên không thể coi ý này là sai."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Thân bơm xe đạp bịt kín đầu vòi chứa $200\\ \\text{cm}^3$ không khí ở $27\\ ^\\circ\\text{C}$ (300 K), áp suất $p_1$. Pittông nén khí xuống còn $40\\ \\text{cm}^3$.",
    "statements": [
     {
-     "text": "Nếu nén nhanh làm nhiệt độ khí lên $87\\ ^\\circ\\text{C}$ (360 K) thì $p_2=p_1\\cdot 5\\cdot 1{,}2$.",
-     "answer": true
-    },
-    {
-     "text": "Nếu nén thật chậm để nhiệt độ không đổi thì dùng hệ thức $p_1V_1=p_2V_2$.",
-     "answer": true
-    },
-    {
      "text": "Để tính tỉ số $\\dfrac{p_2}{p_1}$ bắt buộc phải đổi thể tích từ cm³ ra m³.",
      "answer": false
     },
     {
      "text": "Nén chậm cho áp suất cuối cao hơn nén nhanh.",
      "answer": false
+    },
+    {
+     "text": "Nếu nén thật chậm để nhiệt độ không đổi thì dùng hệ thức $p_1V_1=p_2V_2$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu nén nhanh làm nhiệt độ khí lên $87\\ ^\\circ\\text{C}$ (360 K) thì $p_2=p_1\\cdot 5\\cdot 1{,}2$.",
+     "answer": true
     }
    ],
    "explanation": "$p_2 = p_1\\dfrac{V_1}{V_2}\\dfrac{T_2}{T_1} = p_1 \\cdot 5 \\cdot 1{,}2$; nén chậm là đẳng nhiệt nên dùng định luật Boyle. Chỉ lập tỉ số $V_1/V_2$ nên không cần đổi đơn vị; nén nhanh làm khí nóng lên nên áp suất cao hơn nén chậm.",
    "distractorNotes": {
-    "0": "Ta có $V_1/V_2 = 5$ và $T_2/T_1 = 1{,}2$; thay vào phương trình trạng thái cho đúng biểu thức này.",
-    "1": "Nhiệt độ không đổi thì $T$ triệt tiêu, còn đúng định luật Boyle $p_1V_1 = p_2V_2$.",
-    "2": "Khi chỉ lấy tỉ số $V_1/V_2$, hai thể tích cùng đơn vị là đủ; chỉ khi dùng $pV = nRT$ mới phải đổi.",
-    "3": "Nén nhanh làm khí nóng lên, thêm thừa số $T_2/T_1 \\gt 1$, nên áp suất cao hơn nén chậm."
+    "0": "Khi chỉ lấy tỉ số $V_1/V_2$, hai thể tích cùng đơn vị là đủ; chỉ khi dùng $pV = nRT$ mới phải đổi.",
+    "1": "Nén nhanh làm khí nóng lên, thêm thừa số $T_2/T_1 \\gt 1$, nên áp suất cao hơn nén chậm.",
+    "2": "Nhiệt độ không đổi thì $T$ triệt tiêu, còn đúng định luật Boyle $p_1V_1 = p_2V_2$.",
+    "3": "Ta có $V_1/V_2 = 5$ và $T_2/T_1 = 1{,}2$; thay vào phương trình trạng thái cho đúng biểu thức này."
    }
   }
  ]

@@ -382,28 +382,28 @@
       "question": "Vật $AB$ đặt trong tiêu cự của kính lúp, em dựng ảnh bằng hai tia đặc biệt xuất phát từ $B$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Hai tia ló cắt nhau thật ở phía sau kính.",
-          "answer": false
+          "text": "Tia song song trục chính ló ra đi qua tiêu điểm ảnh $F'$.",
+          "answer": true
         },
         {
-          "text": "Tia đi qua quang tâm $O$ truyền thẳng.",
-          "answer": true
+          "text": "Hai tia ló cắt nhau thật ở phía sau kính.",
+          "answer": false
         },
         {
           "text": "Giao điểm của hai tia ló là ảnh thật nên vẽ bằng nét liền.",
           "answer": false
         },
         {
-          "text": "Tia song song trục chính ló ra đi qua tiêu điểm ảnh $F'$.",
+          "text": "Tia đi qua quang tâm $O$ truyền thẳng.",
           "answer": true
         }
       ],
-      "explanation": "a) sai: hai tia ló loe ra. b) đúng. c) sai: ảnh ảo vẽ nét đứt. d) đúng.",
+      "explanation": "a) đúng. b) sai: hai tia ló loe ra. c) sai: ảnh ảo vẽ nét đứt. d) đúng.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì với vật trong tiêu cự hai tia ló loe ra, không cắt nhau thật.",
-        "1": "Không thể coi là sai vì tia qua quang tâm không bị đổi hướng.",
+        "0": "Không thể coi là sai vì tia tới song song trục chính luôn ló qua $F'$.",
+        "1": "Không thể coi là đúng vì với vật trong tiêu cự hai tia ló loe ra, không cắt nhau thật.",
         "2": "Không thể coi là đúng vì chỉ đường kéo dài ngược của các tia ló gặp nhau, đó là ảnh ảo nên vẽ nét đứt.",
-        "3": "Không thể coi là sai vì tia tới song song trục chính luôn ló qua $F'$."
+        "3": "Không thể coi là sai vì tia qua quang tâm không bị đổi hướng."
       }
     },
     {
@@ -421,24 +421,24 @@
           "answer": true
         },
         {
-          "text": "Đưa vật vào cách kính $10\\ \\text{cm}$ thì vẫn hứng được ảnh trên màn.",
-          "answer": false
+          "text": "Ảnh cao $6\\ \\text{cm}$.",
+          "answer": true
         },
         {
           "text": "Ảnh nhỏ hơn vật vì vật nằm ngoài tiêu cự.",
           "answer": false
         },
         {
-          "text": "Ảnh cao $6\\ \\text{cm}$.",
-          "answer": true
+          "text": "Đưa vật vào cách kính $10\\ \\text{cm}$ thì vẫn hứng được ảnh trên màn.",
+          "answer": false
         }
       ],
-      "explanation": "a) đúng: $d'=60\\ \\text{cm}$. b) sai: $d<f$ cho ảnh ảo. c) sai: $f<d<2f$ cho ảnh lớn hơn. d) đúng: $h'=6\\ \\text{cm}$.",
+      "explanation": "a) đúng: $d'=60\\ \\text{cm}$. b) đúng: $h'=6\\ \\text{cm}$. c) sai: $f<d<2f$ cho ảnh lớn hơn. d) sai: $d<f$ cho ảnh ảo.",
       "distractorNotes": {
         "0": "Không thể coi là sai vì $\\dfrac1{d'}=\\dfrac1{15}-\\dfrac1{20}=\\dfrac1{60}>0$.",
-        "1": "Không thể coi là đúng vì khi $d=10\\ \\text{cm}<f$ ảnh là ảnh ảo, không hứng được trên màn.",
+        "1": "Không thể coi là sai vì $k=\\dfrac{60}{20}=3$ nên $h'=3\\cdot2=6\\ \\text{cm}$.",
         "2": "Không thể coi là đúng vì $f<d<2f$ cho ảnh lớn hơn vật; chỉ khi $d>2f$ ảnh mới nhỏ hơn vật.",
-        "3": "Không thể coi là sai vì $k=\\dfrac{60}{20}=3$ nên $h'=3\\cdot2=6\\ \\text{cm}$."
+        "3": "Không thể coi là đúng vì khi $d=10\\ \\text{cm}<f$ ảnh là ảnh ảo, không hứng được trên màn."
       }
     },
     {
@@ -452,8 +452,8 @@
       "question": "Lan dùng kính lúp ghi 5x soi một chữ in cao $2\\ \\text{mm}$, đặt cách kính $4\\ \\text{cm}$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Ảnh của chữ cao $4\\ \\text{mm}$.",
-          "answer": false
+          "text": "Ảnh của chữ là ảnh ảo, cách kính $20\\ \\text{cm}$, cùng phía với chữ.",
+          "answer": true
         },
         {
           "text": "Ảnh của chữ nằm khác phía với chữ so với kính.",
@@ -464,16 +464,16 @@
           "answer": true
         },
         {
-          "text": "Ảnh của chữ là ảnh ảo, cách kính $20\\ \\text{cm}$, cùng phía với chữ.",
-          "answer": true
+          "text": "Ảnh của chữ cao $4\\ \\text{mm}$.",
+          "answer": false
         }
       ],
-      "explanation": "a) sai: $h'=10\\ \\text{mm}$. b) sai: ảnh ảo cùng phía vật. c) đúng: $f=5\\ \\text{cm}$. d) đúng: $d'=-20\\ \\text{cm}$.",
+      "explanation": "a) đúng: $d'=-20\\ \\text{cm}$. b) sai: ảnh ảo cùng phía vật. c) đúng: $f=5\\ \\text{cm}$. d) sai: $h'=10\\ \\text{mm}$.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì $k=\\dfrac{20}{4}=5$ nên ảnh cao $5\\cdot2=10\\ \\text{mm}$.",
+        "0": "Không thể coi là sai vì $\\dfrac1{d'}=\\dfrac15-\\dfrac14=-\\dfrac1{20}$ nên $d'=-20\\ \\text{cm}$.",
         "1": "Không thể coi là đúng vì ảnh ảo nằm cùng phía với vật; $d'<0$ cho biết điều đó.",
         "2": "Không thể coi là sai vì $f=\\dfrac{25}{5}=5\\ \\text{cm}$.",
-        "3": "Không thể coi là sai vì $\\dfrac1{d'}=\\dfrac15-\\dfrac14=-\\dfrac1{20}$ nên $d'=-20\\ \\text{cm}$."
+        "3": "Không thể coi là đúng vì $k=\\dfrac{20}{4}=5$ nên ảnh cao $5\\cdot2=10\\ \\text{mm}$."
       }
     },
     {
@@ -487,28 +487,28 @@
       "question": "Hai kính lúp M và N, kính M ghi 4x còn kính N ghi 10x. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Số 4x nghĩa là ảnh qua kính M luôn cao gấp đúng 4 lần vật ở mọi vị trí đặt vật.",
-          "answer": false
-        },
-        {
           "text": "Tiêu cự của kính M là $6{,}25\\ \\text{cm}$.",
           "answer": true
+        },
+        {
+          "text": "Kính N có tiêu cự dài hơn kính M.",
+          "answer": false
         },
         {
           "text": "Tiêu cự của kính N là $2{,}5\\ \\text{cm}$.",
           "answer": true
         },
         {
-          "text": "Kính N có tiêu cự dài hơn kính M.",
+          "text": "Số 4x nghĩa là ảnh qua kính M luôn cao gấp đúng 4 lần vật ở mọi vị trí đặt vật.",
           "answer": false
         }
       ],
-      "explanation": "a) sai: $G$ khác $k$. b) đúng: $f_M=6{,}25\\ \\text{cm}$. c) đúng: $f_N=2{,}5\\ \\text{cm}$. d) sai: $f_N<f_M$.",
+      "explanation": "a) đúng: $f_M=6{,}25\\ \\text{cm}$. b) sai: $f_N<f_M$. c) đúng: $f_N=2{,}5\\ \\text{cm}$. d) sai: $G$ khác $k$.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì $G$ ứng với ảnh ở rất xa, còn số phóng đại $k$ thay đổi theo vị trí vật.",
-        "1": "Không thể coi là sai vì $f=\\dfrac{25}{4}=6{,}25\\ \\text{cm}$.",
+        "0": "Không thể coi là sai vì $f=\\dfrac{25}{4}=6{,}25\\ \\text{cm}$.",
+        "1": "Không thể coi là đúng vì $G$ lớn hơn thì $f$ ngắn hơn: $2{,}5\\ \\text{cm}$ so với $6{,}25\\ \\text{cm}$.",
         "2": "Không thể coi là sai vì $f=\\dfrac{25}{10}=2{,}5\\ \\text{cm}$.",
-        "3": "Không thể coi là đúng vì $G$ lớn hơn thì $f$ ngắn hơn: $2{,}5\\ \\text{cm}$ so với $6{,}25\\ \\text{cm}$."
+        "3": "Không thể coi là đúng vì $G$ ứng với ảnh ở rất xa, còn số phóng đại $k$ thay đổi theo vị trí vật."
       }
     },
     {

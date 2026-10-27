@@ -186,28 +186,28 @@
    "question": "Dòng điện qua đèn LED sau bộ chỉnh lưu có chiều không đổi, còn cường độ nhấp nhô từ $0$ lên $20$ mA rồi về $0$, lặp lại 100 lần mỗi giây. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Dòng điện này là dòng điện một chiều.",
-     "answer": true
-    },
-    {
      "text": "Dòng điện này là dòng điện không đổi vì chiều của nó không đổi.",
      "answer": false
     },
     {
-     "text": "Dòng điện này là dòng xoay chiều vì cường độ thay đổi theo thời gian.",
-     "answer": false
+     "text": "Dòng điện này là dòng điện một chiều.",
+     "answer": true
     },
     {
      "text": "Mọi dòng điện không đổi đều là dòng điện một chiều.",
      "answer": true
+    },
+    {
+     "text": "Dòng điện này là dòng xoay chiều vì cường độ thay đổi theo thời gian.",
+     "answer": false
     }
    ],
    "explanation": "Chiều giữ nguyên nên đây là dòng một chiều. Cường độ thay đổi nên không phải dòng không đổi. Xoay chiều là chiều đổi qua lại. Dòng không đổi là trường hợp riêng của dòng một chiều.",
    "distractorNotes": {
-    "0": "Dòng một chiều chỉ cần chiều không đổi, mà ở đây chiều giữ nguyên nên không thể coi là sai.",
-    "1": "Dòng không đổi đòi cả cường độ không đổi, trong khi cường độ ở đây nhấp nhô từ 0 đến 20 mA.",
-    "2": "Xoay chiều là chiều đổi qua lại; cường độ thay đổi mà chiều giữ nguyên vẫn là dòng một chiều.",
-    "3": "Dòng không đổi có chiều không đổi nên luôn thỏa điều kiện của dòng một chiều, không thể coi là sai."
+    "0": "Dòng không đổi đòi cả cường độ không đổi, trong khi cường độ ở đây nhấp nhô từ 0 đến 20 mA.",
+    "1": "Dòng một chiều chỉ cần chiều không đổi, mà ở đây chiều giữ nguyên nên không thể coi là sai.",
+    "2": "Dòng không đổi có chiều không đổi nên luôn thỏa điều kiện của dòng một chiều, không thể coi là sai.",
+    "3": "Xoay chiều là chiều đổi qua lại; cường độ thay đổi mà chiều giữ nguyên vẫn là dòng một chiều."
    }
   },
   {
@@ -256,11 +256,7 @@
    "question": "Bật công tắc, bóng đèn cách công tắc 5 m sáng gần như tức thì. Xét các phát biểu về chuyển động của electron trong dây đồng:",
    "statements": [
     {
-     "text": "Tốc độ trôi có hướng của electron trong dây điện nhà rất nhỏ, dưới 1 mm/s.",
-     "answer": true
-    },
-    {
-     "text": "Mỗi electron đi từ công tắc tới đèn với tốc độ gần tốc độ ánh sáng.",
+     "text": "Chuyển động nhiệt hỗn loạn rất nhanh của electron là nguyên nhân tạo ra dòng điện.",
      "answer": false
     },
     {
@@ -268,16 +264,20 @@
      "answer": true
     },
     {
-     "text": "Chuyển động nhiệt hỗn loạn rất nhanh của electron là nguyên nhân tạo ra dòng điện.",
+     "text": "Tốc độ trôi có hướng của electron trong dây điện nhà rất nhỏ, dưới 1 mm/s.",
+     "answer": true
+    },
+    {
+     "text": "Mỗi electron đi từ công tắc tới đèn với tốc độ gần tốc độ ánh sáng.",
      "answer": false
     }
    ],
    "explanation": "Electron chỉ trôi có hướng cỡ phần mười mm/s, còn điện trường lan dọc dây gần tốc độ ánh sáng. Chuyển động nhiệt hỗn loạn không có hướng nên không tạo dòng điện.",
    "distractorNotes": {
-    "0": "Tính $v = I/(Sne)$ cho dây điện nhà ra cỡ phần mười mm/s, nên phát biểu không thể coi là sai.",
-    "1": "Nhầm tốc độ lan truyền điện trường với tốc độ trôi của từng electron, vốn rất nhỏ.",
-    "2": "Tín hiệu điện là điện trường lan dọc dây với tốc độ gần tốc độ ánh sáng, nên phát biểu đúng.",
-    "3": "Chuyển động nhiệt không có hướng nên không mang điện lượng có hướng qua tiết diện, không tạo dòng."
+    "0": "Chuyển động nhiệt không có hướng nên không mang điện lượng có hướng qua tiết diện, không tạo dòng.",
+    "1": "Tín hiệu điện là điện trường lan dọc dây với tốc độ gần tốc độ ánh sáng, nên phát biểu đúng.",
+    "2": "Tính $v = I/(Sne)$ cho dây điện nhà ra cỡ phần mười mm/s, nên phát biểu không thể coi là sai.",
+    "3": "Nhầm tốc độ lan truyền điện trường với tốc độ trôi của từng electron, vốn rất nhỏ."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Xét đoạn dây kim loại có dòng điện, với công thức $I = Snve$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$S$ là diện tích tiết diện của dây, đo bằng m².",
-     "answer": true
-    },
-    {
      "text": "$n$ là số electron chạy qua tiết diện dây trong mỗi giây.",
      "answer": false
     },
     {
-     "text": "$v$ là tốc độ trôi trung bình có hướng của hạt tải điện.",
+     "text": "$S$ là diện tích tiết diện của dây, đo bằng m².",
      "answer": true
     },
     {
      "text": "Vì electron mang điện âm nên $e$ trong công thức phải lấy giá trị âm.",
      "answer": false
+    },
+    {
+     "text": "$v$ là tốc độ trôi trung bình có hướng của hạt tải điện.",
+     "answer": true
     }
    ],
    "explanation": "$S$ là tiết diện (m²), $n$ là mật độ hạt tải (số hạt trong mỗi m³), $v$ là tốc độ trôi trung bình, $e$ là độ lớn điện tích $1{,}6\\cdot10^{-19}$ C; công thức dùng độ lớn.",
    "distractorNotes": {
-    "0": "Bài nêu rõ $S$ là diện tích tiết diện dây, đơn vị m², nên phát biểu không thể coi là sai.",
-    "1": "$n$ là mật độ hạt tải, số hạt trong mỗi mét khối, không phải số hạt qua tiết diện mỗi giây.",
-    "2": "$v$ trong công thức đúng là tốc độ trôi trung bình có hướng, không phải tốc độ chuyển động nhiệt.",
-    "3": "Công thức dùng độ lớn điện tích; electron trôi ngược chiều $I$ nhưng $e$ vẫn lấy giá trị dương."
+    "0": "$n$ là mật độ hạt tải, số hạt trong mỗi mét khối, không phải số hạt qua tiết diện mỗi giây.",
+    "1": "Bài nêu rõ $S$ là diện tích tiết diện dây, đơn vị m², nên phát biểu không thể coi là sai.",
+    "2": "Công thức dùng độ lớn điện tích; electron trôi ngược chiều $I$ nhưng $e$ vẫn lấy giá trị dương.",
+    "3": "$v$ trong công thức đúng là tốc độ trôi trung bình có hướng, không phải tốc độ chuyển động nhiệt."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Sạc điện thoại bằng dòng điện không đổi $I = 1{,}50$ A, đồng hồ USB ghi điện lượng sạc vào theo thời gian, cứ mỗi 10 phút thêm 250 mAh. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Điện lượng sạc vào tỉ lệ thuận với thời gian sạc.",
-     "answer": true
-    },
-    {
-     "text": "Đồ thị $\\Delta q$ theo $\\Delta t$ là đường thẳng qua gốc tọa độ, độ dốc bằng $I$.",
-     "answer": true
+     "text": "mAh là đơn vị đo cường độ dòng điện.",
+     "answer": false
     },
     {
      "text": "Thời gian sạc tăng gấp đôi thì điện lượng sạc vào tăng gấp bốn.",
      "answer": false
     },
     {
-     "text": "mAh là đơn vị đo cường độ dòng điện.",
-     "answer": false
+     "text": "Điện lượng sạc vào tỉ lệ thuận với thời gian sạc.",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị $\\Delta q$ theo $\\Delta t$ là đường thẳng qua gốc tọa độ, độ dốc bằng $I$.",
+     "answer": true
     }
    ],
    "explanation": "Với dòng không đổi, $\\Delta q = I\\,\\Delta t$ nên $\\Delta q$ tỉ lệ thuận với $\\Delta t$, đồ thị là đường thẳng qua gốc có độ dốc $I$. mAh là đơn vị điện lượng, $1$ mAh $= 3{,}6$ C.",
    "distractorNotes": {
-    "0": "$I$ không đổi nên $\\Delta q = I\\,\\Delta t$ tỉ lệ bậc nhất với thời gian, không thể coi là sai.",
-    "1": "Hàm $\\Delta q = I\\,\\Delta t$ là đường thẳng qua gốc với hệ số góc chính là $I$, phát biểu đúng.",
-    "2": "$\\Delta q$ tỉ lệ bậc nhất với $\\Delta t$, không có bình phương, nên thời gian gấp đôi thì chỉ gấp đôi.",
-    "3": "mAh là tích cường độ với thời gian, tức đơn vị điện lượng, không phải đơn vị cường độ."
+    "0": "mAh là tích cường độ với thời gian, tức đơn vị điện lượng, không phải đơn vị cường độ.",
+    "1": "$\\Delta q$ tỉ lệ bậc nhất với $\\Delta t$, không có bình phương, nên thời gian gấp đôi thì chỉ gấp đôi.",
+    "2": "$I$ không đổi nên $\\Delta q = I\\,\\Delta t$ tỉ lệ bậc nhất với thời gian, không thể coi là sai.",
+    "3": "Hàm $\\Delta q = I\\,\\Delta t$ là đường thẳng qua gốc với hệ số góc chính là $I$, phát biểu đúng."
    }
   },
   {
@@ -522,11 +522,7 @@
    "question": "Mật độ dòng điện trong dây dẫn được định nghĩa $j = \\dfrac{I}{S}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Từ $I = Snve$ suy ra $j = nve$.",
-     "answer": true
-    },
-    {
-     "text": "Mật độ dòng điện $j$ và mật độ hạt tải $n$ là cùng một đại lượng.",
+     "text": "Cùng cường độ $I$, tiết diện dây tăng gấp đôi thì mật độ dòng điện tăng gấp đôi.",
      "answer": false
     },
     {
@@ -534,16 +530,20 @@
      "answer": true
     },
     {
-     "text": "Cùng cường độ $I$, tiết diện dây tăng gấp đôi thì mật độ dòng điện tăng gấp đôi.",
+     "text": "Mật độ dòng điện $j$ và mật độ hạt tải $n$ là cùng một đại lượng.",
      "answer": false
+    },
+    {
+     "text": "Từ $I = Snve$ suy ra $j = nve$.",
+     "answer": true
     }
    ],
    "explanation": "Chia $I = Snve$ cho $S$ được $j = nve$ (A/m²), khác $n$ (m⁻³). Cùng $I$ thì $j$ tỉ lệ nghịch với $S$: dây nhỏ có $j$ lớn, $S$ gấp đôi thì $j$ giảm một nửa.",
    "distractorNotes": {
-    "0": "Chia hai vế $I = Snve$ cho $S$ cho ngay $j = nve$, nên phát biểu không thể coi là sai.",
-    "1": "$j$ đo bằng A/m² còn $n$ đo bằng m$^{-3}$, đây là hai đại lượng khác nhau.",
-    "2": "$S$ nằm ở mẫu của $j = I/S$, nên cùng $I$ thì dây nhỏ có $j$ lớn hơn.",
-    "3": "$S$ ở mẫu của $j = I/S$ nên tăng tiết diện làm $j$ giảm, không tăng."
+    "0": "$S$ ở mẫu của $j = I/S$ nên tăng tiết diện làm $j$ giảm, không tăng.",
+    "1": "$S$ nằm ở mẫu của $j = I/S$, nên cùng $I$ thì dây nhỏ có $j$ lớn hơn.",
+    "2": "$j$ đo bằng A/m² còn $n$ đo bằng m$^{-3}$, đây là hai đại lượng khác nhau.",
+    "3": "Chia hai vế $I = Snve$ cho $S$ cho ngay $j = nve$, nên phát biểu không thể coi là sai."
    }
   }
  ]

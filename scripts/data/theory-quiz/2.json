@@ -347,7 +347,7 @@
    "question": "Cho 0,20 kg nước đá ở -6 °C vào cốc, cắm nhiệt kế rồi đun với công suất không đổi và ghi nhiệt độ mỗi phút. Nhiệt độ tăng nhanh, rồi đứng yên quanh 0 °C suốt mấy phút khi đá đang tan, sau đó lại tăng.",
    "statements": [
     {
-     "text": "Trong lúc đá đang tan, nhiệt độ của cốc hầu như không đổi.",
+     "text": "Nhiệt lượng nhận vào khi đá đang tan dùng để phá vỡ liên kết trong mạng tinh thể.",
      "answer": true
     },
     {
@@ -355,7 +355,7 @@
      "answer": false
     },
     {
-     "text": "Nhiệt lượng nhận vào khi đá đang tan dùng để phá vỡ liên kết trong mạng tinh thể.",
+     "text": "Trong lúc đá đang tan, nhiệt độ của cốc hầu như không đổi.",
      "answer": true
     },
     {
@@ -365,9 +365,9 @@
    ],
    "explanation": "Đang chuyển thể thì nhiệt độ không đổi nhưng nhiệt lượng vẫn truyền vào liên tục. Nhiệt lượng đó dùng để phá liên kết chứ không làm tăng tốc độ phân tử.",
    "distractorNotes": {
-    "0": "Nhiệt độ chỉ dao động nhỏ quanh 0 °C, nằm trong sai số của phép đo, nên được coi là không đổi.",
+    "0": "Phủ nhận điều này thì không giải thích được vì sao đá nhận nhiệt liên tục mà nhiệt độ không tăng.",
     "1": "Bếp vẫn cấp nhiệt đều; nếu nhiệt lượng bằng 0 thì đá không có năng lượng để tan.",
-    "2": "Phủ nhận điều này thì không giải thích được vì sao đá nhận nhiệt liên tục mà nhiệt độ không tăng.",
+    "2": "Nhiệt độ chỉ dao động nhỏ quanh 0 °C, nằm trong sai số của phép đo, nên được coi là không đổi.",
     "3": "Phân tử chuyển động nhanh hơn thì nhiệt độ phải tăng, mâu thuẫn với việc nhiệt độ đứng yên."
    }
   },
@@ -382,11 +382,11 @@
    "question": "Đặt hai đĩa nước giống nhau trong phòng, một đĩa để trước quạt. Sau 1 giờ, đĩa trước quạt cạn hơn hẳn dù nước chưa sôi.",
    "statements": [
     {
-     "text": "Đĩa trước quạt cạn nhanh hơn chứng tỏ gió làm sự bay hơi mạnh lên.",
-     "answer": true
+     "text": "Nước chỉ bay hơi khi đã đạt tới nhiệt độ sôi.",
+     "answer": false
     },
     {
-     "text": "Nước chỉ bay hơi khi đã đạt tới nhiệt độ sôi.",
+     "text": "Mọi chất lỏng đều sôi ở 100 °C, dù áp suất bằng bao nhiêu.",
      "answer": false
     },
     {
@@ -394,16 +394,16 @@
      "answer": true
     },
     {
-     "text": "Mọi chất lỏng đều sôi ở 100 °C, dù áp suất bằng bao nhiêu.",
-     "answer": false
+     "text": "Đĩa trước quạt cạn nhanh hơn chứng tỏ gió làm sự bay hơi mạnh lên.",
+     "answer": true
     }
    ],
    "explanation": "Bay hơi xảy ra ở mặt thoáng, ở mọi nhiệt độ, và mạnh lên khi có gió. Sôi xảy ra ở một nhiệt độ xác định, phụ thuộc áp suất; 100 °C chỉ là nhiệt độ sôi của nước ở áp suất tiêu chuẩn.",
    "distractorNotes": {
-    "0": "Hai đĩa chỉ khác nhau ở gió, nên đĩa cạn nhanh hơn chứng tỏ gió làm bay hơi mạnh lên.",
-    "1": "Nước trong đĩa chưa sôi mà vẫn cạn, chứng tỏ bay hơi xảy ra ở mọi nhiệt độ.",
+    "0": "Nước trong đĩa chưa sôi mà vẫn cạn, chứng tỏ bay hơi xảy ra ở mọi nhiệt độ.",
+    "1": "Nhiệt độ sôi phụ thuộc áp suất và từng chất; 100 °C chỉ đúng cho nước ở áp suất tiêu chuẩn.",
     "2": "Bay hơi khác sôi chính ở chỗ hơi chỉ thoát ra từ mặt thoáng chất lỏng.",
-    "3": "Nhiệt độ sôi phụ thuộc áp suất và từng chất; 100 °C chỉ đúng cho nước ở áp suất tiêu chuẩn."
+    "3": "Hai đĩa chỉ khác nhau ở gió, nên đĩa cạn nhanh hơn chứng tỏ gió làm bay hơi mạnh lên."
    }
   },
   {
@@ -421,24 +421,24 @@
      "answer": true
     },
     {
-     "text": "Ở thể khí, các phân tử ở rất xa nhau và chuyển động hỗn loạn.",
-     "answer": true
-    },
-    {
      "text": "Chất khí có thể tích riêng, chỉ có hình dạng phụ thuộc bình chứa.",
      "answer": false
     },
     {
      "text": "Ở thể lỏng, các phân tử sắp xếp trật tự như ở thể rắn.",
      "answer": false
+    },
+    {
+     "text": "Ở thể khí, các phân tử ở rất xa nhau và chuyển động hỗn loạn.",
+     "answer": true
     }
    ],
    "explanation": "Rắn: phân tử gần nhau, trật tự, dao động quanh vị trí cố định. Lỏng: kém trật tự. Khí: phân tử rất xa nhau, hỗn loạn, cả thể tích và hình dạng đều theo bình chứa.",
    "distractorNotes": {
     "0": "Vị trí cân bằng cố định chính là lí do chất rắn giữ được hình dạng và thể tích riêng.",
-    "1": "Rất xa nhau và hỗn loạn đúng là đặc trưng thể khí, nhờ vậy khí chiếm hết bình chứa.",
-    "2": "Khí dàn ra chiếm hết phần rỗng của bình nên cả thể tích lẫn hình dạng đều theo bình.",
-    "3": "Phân tử chất lỏng sắp xếp kém trật tự, vị trí cân bằng luôn thay đổi, khác chất rắn."
+    "1": "Khí dàn ra chiếm hết phần rỗng của bình nên cả thể tích lẫn hình dạng đều theo bình.",
+    "2": "Phân tử chất lỏng sắp xếp kém trật tự, vị trí cân bằng luôn thay đổi, khác chất rắn.",
+    "3": "Rất xa nhau và hỗn loạn đúng là đặc trưng thể khí, nhờ vậy khí chiếm hết bình chứa."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Đun nóng đều một chất rắn kết tinh và ghi nhiệt độ mỗi phút. Nhiệt độ tăng từ 20 °C lên 80 °C trong 4 phút đầu, đứng yên ở 80 °C từ mốc phút 4 đến mốc phút 8, rồi tăng lên 140 °C ở phút 12.",
    "statements": [
     {
-     "text": "Nhiệt độ nóng chảy của chất là 80 °C.",
+     "text": "Từ phút 8 đến phút 12, chất ở thể lỏng và đang nóng lên.",
      "answer": true
     },
     {
-     "text": "Thời gian nóng chảy là 5 phút, vì có năm lần đọc được 80 °C (phút 4, 5, 6, 7, 8).",
-     "answer": false
-    },
-    {
-     "text": "Từ phút 8 đến phút 12, chất ở thể lỏng và đang nóng lên.",
+     "text": "Nhiệt độ nóng chảy của chất là 80 °C.",
      "answer": true
     },
     {
      "text": "Từ phút 4 đến phút 8, chất không nhận nhiệt lượng nào.",
      "answer": false
+    },
+    {
+     "text": "Thời gian nóng chảy là 5 phút, vì có năm lần đọc được 80 °C (phút 4, 5, 6, 7, 8).",
+     "answer": false
     }
    ],
    "explanation": "Đoạn nằm ngang ở 80 °C là giai đoạn nóng chảy, kéo dài từ mốc 4 đến mốc 8, tức 4 phút. Sau đó chất ở thể lỏng và tiếp tục nóng lên. Trong lúc nóng chảy, chất vẫn nhận nhiệt đều.",
    "distractorNotes": {
-    "0": "Nhiệt độ đứng yên trên đoạn nằm ngang chính là nhiệt độ nóng chảy của chất.",
-    "1": "Đếm số lần đọc thay vì khoảng giữa hai mốc; thời gian nóng chảy là $8-4=4$ phút.",
-    "2": "Sau đoạn ngang chất đã chảy hết, nên đoạn dốc tiếp theo là chất lỏng đang nóng lên.",
-    "3": "Chất vẫn được đun đều; nhiệt lượng nhận vào dùng để phá liên kết nên nhiệt độ không tăng."
+    "0": "Sau đoạn ngang chất đã chảy hết, nên đoạn dốc tiếp theo là chất lỏng đang nóng lên.",
+    "1": "Nhiệt độ đứng yên trên đoạn nằm ngang chính là nhiệt độ nóng chảy của chất.",
+    "2": "Chất vẫn được đun đều; nhiệt lượng nhận vào dùng để phá liên kết nên nhiệt độ không tăng.",
+    "3": "Đếm số lần đọc thay vì khoảng giữa hai mốc; thời gian nóng chảy là $8-4=4$ phút."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Đun nóng đều một chất rắn kết tinh từ nhiệt độ phòng. Đồ thị nhiệt độ – thời gian có hai đoạn nằm ngang, ở 80 °C và ở 250 °C, trong đó đoạn ở 250 °C dài hơn. Sau đó làm nguội hơi của chất này từ 300 °C xuống nhiệt độ phòng.",
    "statements": [
     {
-     "text": "Khi đun, đoạn nằm ngang ở 80 °C ứng với sự nóng chảy.",
-     "answer": true
-    },
-    {
-     "text": "Đoạn ở 250 °C dài hơn nên 250 °C là nhiệt độ nóng chảy.",
-     "answer": false
-    },
-    {
      "text": "Khi làm nguội, đoạn nằm ngang gặp đầu tiên là ở 250 °C, lúc hơi ngưng tụ.",
      "answer": true
     },
     {
      "text": "Khi làm nguội, chất toả nhiệt nên đồ thị không có đoạn nằm ngang nào.",
      "answer": false
+    },
+    {
+     "text": "Khi đun, đoạn nằm ngang ở 80 °C ứng với sự nóng chảy.",
+     "answer": true
+    },
+    {
+     "text": "Đoạn ở 250 °C dài hơn nên 250 °C là nhiệt độ nóng chảy.",
+     "answer": false
     }
    ],
    "explanation": "Đun nóng thì gặp nhiệt độ nóng chảy (80 °C) trước rồi mới tới nhiệt độ sôi (250 °C). Làm nguội thì đi theo chiều ngược lại: ngưng tụ ở 250 °C, rồi đông đặc ở 80 °C, và cả hai giai đoạn đều có đoạn nằm ngang.",
    "distractorNotes": {
-    "0": "Đun từ nhiệt độ phòng thì chất chảy lỏng trước rồi mới sôi, nên đoạn ngang thấp hơn là nóng chảy.",
-    "1": "Độ dài đoạn ngang chỉ cho biết thời gian chuyển thể, không quyết định đó là quá trình nào.",
-    "2": "Làm nguội từ 300 °C thì nhiệt độ hạ tới 250 °C trước, và tại đó hơi ngưng tụ.",
-    "3": "Chuyển thể theo chiều nào nhiệt độ cũng không đổi, kể cả khi chất toả nhiệt, nên vẫn có đoạn ngang."
+    "0": "Làm nguội từ 300 °C thì nhiệt độ hạ tới 250 °C trước, và tại đó hơi ngưng tụ.",
+    "1": "Chuyển thể theo chiều nào nhiệt độ cũng không đổi, kể cả khi chất toả nhiệt, nên vẫn có đoạn ngang.",
+    "2": "Đun từ nhiệt độ phòng thì chất chảy lỏng trước rồi mới sôi, nên đoạn ngang thấp hơn là nóng chảy.",
+    "3": "Độ dài đoạn ngang chỉ cho biết thời gian chuyển thể, không quyết định đó là quá trình nào."
    }
   }
  ]

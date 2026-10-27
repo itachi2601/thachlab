@@ -367,28 +367,28 @@
    "question": "Quả cầu $0{,}5$ kg ở cách mặt đất $5$ m. Một học sinh chọn mốc thế năng ở độ cao $8$ m so với mặt đất, lấy $g=10$ m/s². Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Với mốc này, thế năng của quả cầu là $25$ J, tính theo độ cao $5$ m so với mặt đất.",
-     "answer": false
+     "text": "Nếu đổi mốc về mặt đất thì thế năng của quả cầu thay đổi.",
+     "answer": true
     },
     {
-     "text": "Thế năng của quả cầu so với mốc này là một số âm.",
-     "answer": true
+     "text": "Với mốc này, thế năng của quả cầu là $25$ J, tính theo độ cao $5$ m so với mặt đất.",
+     "answer": false
     },
     {
      "text": "Thế năng đã âm thì cơ năng của quả cầu không thể dương.",
      "answer": false
     },
     {
-     "text": "Nếu đổi mốc về mặt đất thì thế năng của quả cầu thay đổi.",
+     "text": "Thế năng của quả cầu so với mốc này là một số âm.",
      "answer": true
     }
    ],
-   "explanation": "a) sai vì $h$ tính từ mốc: $h=-3$ m nên $W_t=-15$ J, không phải $25$ J. b) đúng vì $h=-3$ m. c) sai vì $W=W_đ+W_t$ có thêm $W_đ\\ge0$ nên cơ năng vẫn có thể dương. d) đúng: mốc đổi thì $W_t$ đổi.",
+   "explanation": "a) đúng: mốc đổi thì $W_t$ đổi. b) sai vì $h$ tính từ mốc: $h=-3$ m nên $W_t=-15$ J, không phải $25$ J. c) sai vì $W=W_đ+W_t$ có thêm $W_đ\\ge0$ nên cơ năng vẫn có thể dương. d) đúng vì $h=-3$ m.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì $h$ tính từ mốc: $h=-3$ m nên $W_t=-15$ J; $25$ J chỉ đúng khi mốc ở mặt đất.",
-    "1": "Không thể coi là sai vì quả cầu thấp hơn mốc $3$ m nên $h=-3$ m và $W_t=-15$ J.",
+    "0": "Không thể coi là sai vì thế năng phụ thuộc mốc; về mặt đất thì $W_t=25$ J, khác $-15$ J.",
+    "1": "Không thể coi là đúng vì $h$ tính từ mốc: $h=-3$ m nên $W_t=-15$ J; $25$ J chỉ đúng khi mốc ở mặt đất.",
     "2": "Không thể coi là đúng vì cơ năng còn cộng thêm động năng, nên vẫn có thể dương dù thế năng âm.",
-    "3": "Không thể coi là sai vì thế năng phụ thuộc mốc; về mặt đất thì $W_t=25$ J, khác $-15$ J."
+    "3": "Không thể coi là sai vì quả cầu thấp hơn mốc $3$ m nên $h=-3$ m và $W_t=-15$ J."
    },
    "theorySection": 1
   },
@@ -402,10 +402,6 @@
    "question": "Hai xe máy cùng khối lượng phanh với cùng một lực cản. Xe A chạy $20$ km/h, xe B chạy $40$ km/h. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Động năng của xe B gấp $4$ lần động năng của xe A.",
-     "answer": true
-    },
-    {
      "text": "Quãng đường phanh của xe B chỉ gấp $2$ lần vì vận tốc gấp $2$ lần.",
      "answer": false
     },
@@ -416,14 +412,18 @@
     {
      "text": "Khi phanh xong, động năng của xe biến mất hoàn toàn khỏi hệ.",
      "answer": false
+    },
+    {
+     "text": "Động năng của xe B gấp $4$ lần động năng của xe A.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng vì $W_đ\\sim v^2$. b) sai: $s\\sim v^2$ nên gấp $4$ lần chứ không phải $2$ lần. c) đúng vì $F_{ms}\\cdot s=W_đ$. d) sai: động năng hoá thành nhiệt.",
+   "explanation": "a) sai: $s\\sim v^2$ nên gấp $4$ lần chứ không phải $2$ lần. b) đúng vì $F_{ms}\\cdot s=W_đ$. c) sai: động năng hoá thành nhiệt. d) đúng vì $W_đ\\sim v^2$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì $v$ gấp đôi thì $W_đ$ gấp $2^2=4$ lần.",
-    "1": "Không thể coi là đúng vì quãng đường phanh tỉ lệ với động năng, tức tỉ lệ $v^2$, không phải $v$.",
-    "2": "Không thể coi là sai vì công cản $F_{ms}s$ phải bằng động năng, mà lực cản như nhau nên $s$ gấp $4$ lần.",
-    "3": "Không thể coi là đúng vì năng lượng chỉ chuyển thành nhiệt do ma sát, không biến mất."
+    "0": "Không thể coi là đúng vì quãng đường phanh tỉ lệ với động năng, tức tỉ lệ $v^2$, không phải $v$.",
+    "1": "Không thể coi là sai vì công cản $F_{ms}s$ phải bằng động năng, mà lực cản như nhau nên $s$ gấp $4$ lần.",
+    "2": "Không thể coi là đúng vì năng lượng chỉ chuyển thành nhiệt do ma sát, không biến mất.",
+    "3": "Không thể coi là sai vì $v$ gấp đôi thì $W_đ$ gấp $2^2=4$ lần."
    },
    "theorySection": 0
   },
@@ -507,6 +507,10 @@
    "question": "Vật $2$ kg rơi tự do từ độ cao $H=20$ m, chọn mốc ở mặt đất, bỏ qua lực cản, lấy $g=10$ m/s². Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Ở độ cao $10$ m, động năng của vật bằng thế năng của vật.",
+     "answer": true
+    },
+    {
      "text": "Ở độ cao $10$ m, cơ năng của vật chỉ còn $200$ J.",
      "answer": false
     },
@@ -517,18 +521,14 @@
     {
      "text": "Cơ năng của vật bằng $400$ J.",
      "answer": true
-    },
-    {
-     "text": "Ở độ cao $10$ m, động năng của vật bằng thế năng của vật.",
-     "answer": true
     }
    ],
-   "explanation": "a) sai vì không có ma sát nên cơ năng vẫn là $400$ J. b) sai: $v=\\sqrt{2g(H-h)}=\\sqrt{200}\\approx14{,}1$ m/s. c) đúng vì $W=mgH=400$ J. d) đúng vì $W_t=W_đ=W/2$.",
+   "explanation": "a) đúng vì $W_t=W_đ=W/2$. b) sai vì không có ma sát nên cơ năng vẫn là $400$ J. c) sai: $v=\\sqrt{2g(H-h)}=\\sqrt{200}\\approx14{,}1$ m/s. d) đúng vì $W=mgH=400$ J.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì không có ma sát nên cơ năng vẫn là $400$ J; $200$ J là thế năng hoặc động năng riêng.",
-    "1": "Không thể coi là đúng vì $v^2=2g(H-h)=200$ nên $v\\approx14{,}1$ m/s, lớn hơn $10$ m/s.",
-    "2": "Không thể coi là sai vì $W=mgH=2\\cdot10\\cdot20=400$ J và không đổi.",
-    "3": "Không thể coi là sai vì tại $h=H/2$ thì $W_đ=W_t=200$ J."
+    "0": "Không thể coi là sai vì tại $h=H/2$ thì $W_đ=W_t=200$ J.",
+    "1": "Không thể coi là đúng vì không có ma sát nên cơ năng vẫn là $400$ J; $200$ J là thế năng hoặc động năng riêng.",
+    "2": "Không thể coi là đúng vì $v^2=2g(H-h)=200$ nên $v\\approx14{,}1$ m/s, lớn hơn $10$ m/s.",
+    "3": "Không thể coi là sai vì $W=mgH=2\\cdot10\\cdot20=400$ J và không đổi."
    },
    "theorySection": 2
   },
@@ -542,28 +542,28 @@
    "question": "Bi $0{,}2$ kg lăn trên sàn ngang với vận tốc $5$ m/s rồi dừng lại do ma sát. Lực ma sát không đổi, bằng $0{,}5$ N. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Động năng ban đầu của bi là $2{,}5$ J.",
-     "answer": true
-    },
-    {
      "text": "Trong lúc lăn, cơ năng của bi không đổi.",
      "answer": false
     },
     {
-     "text": "Lượng nhiệt toả ra do ma sát tới lúc bi dừng là $2{,}5$ J.",
+     "text": "Động năng ban đầu của bi là $2{,}5$ J.",
      "answer": true
     },
     {
      "text": "Bi lăn được quãng đường $5$ m thì dừng.",
      "answer": true
+    },
+    {
+     "text": "Lượng nhiệt toả ra do ma sát tới lúc bi dừng là $2{,}5$ J.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng vì $W_đ=\\frac12\\cdot0{,}2\\cdot5^2=2{,}5$ J. b) sai vì có ma sát nên cơ năng giảm dần tới $0$. c) đúng vì cơ năng giảm hết $2{,}5$ J và hoá thành nhiệt. d) đúng vì $F_{ms}\\cdot s=W_đ$ nên $s=2{,}5/0{,}5=5$ m.",
+   "explanation": "a) sai vì có ma sát nên cơ năng giảm dần tới $0$. b) đúng vì $W_đ=\\frac12\\cdot0{,}2\\cdot5^2=2{,}5$ J. c) đúng vì $F_{ms}\\cdot s=W_đ$ nên $s=2{,}5/0{,}5=5$ m. d) đúng vì cơ năng giảm hết $2{,}5$ J và hoá thành nhiệt.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì $W_đ=\\frac12mv^2=\\frac12\\cdot0{,}2\\cdot25=2{,}5$ J.",
-    "1": "Không thể coi là đúng vì có ma sát thì cơ năng giảm, tới lúc dừng thì cơ năng bằng không.",
-    "2": "Không thể coi là sai vì cơ năng giảm hết $2{,}5$ J và phần giảm đó hoá thành nhiệt.",
-    "3": "Không thể coi là sai vì $F_{ms}\\cdot s=2{,}5$ J với $F_{ms}=0{,}5$ N cho $s=5$ m."
+    "0": "Không thể coi là đúng vì có ma sát thì cơ năng giảm, tới lúc dừng thì cơ năng bằng không.",
+    "1": "Không thể coi là sai vì $W_đ=\\frac12mv^2=\\frac12\\cdot0{,}2\\cdot25=2{,}5$ J.",
+    "2": "Không thể coi là sai vì $F_{ms}\\cdot s=2{,}5$ J với $F_{ms}=0{,}5$ N cho $s=5$ m.",
+    "3": "Không thể coi là sai vì cơ năng giảm hết $2{,}5$ J và phần giảm đó hoá thành nhiệt."
    },
    "theorySection": 3
   }

@@ -347,28 +347,28 @@
    "question": "Trong một thí nghiệm, bạn học sinh đổ 100 ml nước khoảng 60 °C và 100 ml nước khoảng 20 °C vào chung một ca, khuấy nhẹ rồi đọc nhiệt kế mỗi phút. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Nhiệt năng truyền từ phần nước nóng sang phần nước lạnh.",
+     "text": "Phần nhiệt năng truyền từ phần nước này sang phần nước kia gọi là nhiệt lượng.",
      "answer": true
     },
     {
-     "text": "Khi cả ca nước đã cùng nhiệt độ, nhiệt năng vẫn tiếp tục truyền từ phần nóng sang phần lạnh.",
-     "answer": false
-    },
-    {
-     "text": "Phần nhiệt năng truyền từ phần nước này sang phần nước kia gọi là nhiệt lượng.",
+     "text": "Nhiệt năng truyền từ phần nước nóng sang phần nước lạnh.",
      "answer": true
     },
     {
      "text": "Nếu lượng nước lạnh nhiều hơn hẳn thì nhiệt năng sẽ truyền từ phần nước lạnh sang phần nước nóng.",
      "answer": false
+    },
+    {
+     "text": "Khi cả ca nước đã cùng nhiệt độ, nhiệt năng vẫn tiếp tục truyền từ phần nóng sang phần lạnh.",
+     "answer": false
     }
    ],
    "explanation": "Nhiệt năng truyền từ nơi nhiệt độ cao sang nơi nhiệt độ thấp, phần truyền đi gọi là nhiệt lượng. Khi nhiệt độ bằng nhau thì hết truyền. Chiều truyền không phụ thuộc lượng nước.",
    "distractorNotes": {
-    "0": "Phần nước 60 °C có nhiệt độ cao hơn nên nhiệt năng phải truyền từ đó sang phần 20 °C.",
-    "1": "Khi cả ca cùng nhiệt độ, nước đã cân bằng nhiệt nên nhiệt năng ngừng truyền, không thể truyền tiếp.",
-    "2": "Bài định nghĩa đúng như vậy: phần nhiệt năng truyền đi giữa hai vật gọi là nhiệt lượng.",
-    "3": "Lượng nước không quyết định chiều truyền; nước lạnh nhiều đến đâu vẫn nhận nhiệt từ phần nóng hơn."
+    "0": "Bài định nghĩa đúng như vậy: phần nhiệt năng truyền đi giữa hai vật gọi là nhiệt lượng.",
+    "1": "Phần nước 60 °C có nhiệt độ cao hơn nên nhiệt năng phải truyền từ đó sang phần 20 °C.",
+    "2": "Lượng nước không quyết định chiều truyền; nước lạnh nhiều đến đâu vẫn nhận nhiệt từ phần nóng hơn.",
+    "3": "Khi cả ca cùng nhiệt độ, nước đã cân bằng nhiệt nên nhiệt năng ngừng truyền, không thể truyền tiếp."
    }
   },
   {
@@ -382,11 +382,7 @@
    "question": "Phòng thí nghiệm ghi nhiệt độ theo thang Kelvin, còn nhiệt kế ở nhà ghi theo thang Celsius. Xét các phát biểu sau về hai thang đo này:",
    "statements": [
     {
-     "text": "Nhiệt độ trên hai thang liên hệ theo hệ thức $T = t + 273$ (làm tròn).",
-     "answer": true
-    },
-    {
-     "text": "Nhiệt độ trên thang Kelvin có thể mang giá trị âm, ví dụ −10 K.",
+     "text": "Nước đá tinh khiết đang tan có nhiệt độ 0 K.",
      "answer": false
     },
     {
@@ -394,16 +390,20 @@
      "answer": true
     },
     {
-     "text": "Nước đá tinh khiết đang tan có nhiệt độ 0 K.",
+     "text": "Nhiệt độ trên thang Kelvin có thể mang giá trị âm, ví dụ −10 K.",
      "answer": false
+    },
+    {
+     "text": "Nhiệt độ trên hai thang liên hệ theo hệ thức $T = t + 273$ (làm tròn).",
+     "answer": true
     }
    ],
    "explanation": "Hai thang có độ chia bằng nhau và lệch gốc khoảng 273 độ. 0 K là độ không tuyệt đối nên nhiệt độ Kelvin không bao giờ âm. Nước đá tan ở 0 °C, tức khoảng 273 K.",
    "distractorNotes": {
-    "0": "Hai thang có độ chia bằng nhau và gốc lệch nhau khoảng 273, nên hệ thức cộng 273 là đúng.",
-    "1": "0 K là nhiệt độ thấp nhất có thể có, nên nhiệt độ Kelvin không bao giờ mang giá trị âm.",
-    "2": "Hai thang có khoảng chia bằng nhau, nên khoảng chênh 1 K đúng bằng khoảng chênh 1 °C.",
-    "3": "Nhầm gốc hai thang: nước đá tan là 0 °C, tức khoảng 273 K, còn 0 K là độ không tuyệt đối."
+    "0": "Nhầm gốc hai thang: nước đá tan là 0 °C, tức khoảng 273 K, còn 0 K là độ không tuyệt đối.",
+    "1": "Hai thang có khoảng chia bằng nhau, nên khoảng chênh 1 K đúng bằng khoảng chênh 1 °C.",
+    "2": "0 K là nhiệt độ thấp nhất có thể có, nên nhiệt độ Kelvin không bao giờ mang giá trị âm.",
+    "3": "Hai thang có độ chia bằng nhau và gốc lệch nhau khoảng 273, nên hệ thức cộng 273 là đúng."
    }
   },
   {
@@ -421,24 +421,24 @@
      "answer": true
     },
     {
+     "text": "Cùng một mức nhiệt độ, số đọc trên thang Fahrenheit luôn bằng số đọc trên thang Celsius.",
+     "answer": false
+    },
+    {
      "text": "Muốn đổi từ °C sang °F, chỉ cần cộng thêm 32.",
      "answer": false
     },
     {
      "text": "Muốn đổi từ °F sang °C, trừ 32 rồi chia cho 1,8.",
      "answer": true
-    },
-    {
-     "text": "Cùng một mức nhiệt độ, số đọc trên thang Fahrenheit luôn bằng số đọc trên thang Celsius.",
-     "answer": false
     }
    ],
    "explanation": "Hai mốc Fahrenheit là 32 °F và 212 °F, khoảng giữa chia 180 phần, nên $t_F = 1{,}8t + 32$ và đổi ngược là trừ 32 rồi chia 1,8. Hai thang khác cả gốc lẫn độ chia nên số đọc khác nhau.",
    "distractorNotes": {
     "0": "Đây đúng là hai mốc nước của thang Fahrenheit, khoảng giữa chúng chia thành 180 phần.",
-    "1": "Chỉ cộng 32 là quên hệ số 1,8 sinh ra do hai thang chia khoảng khác nhau.",
-    "2": "Đây là phép biến đổi ngược đúng của $t_F = 1{,}8t + 32$: trừ 32 trước, chia 1,8 sau.",
-    "3": "Hai thang khác cả mốc lẫn độ chia nên số đọc nói chung khác nhau, như 25 °C ứng với 77 °F."
+    "1": "Hai thang khác cả mốc lẫn độ chia nên số đọc nói chung khác nhau, như 25 °C ứng với 77 °F.",
+    "2": "Chỉ cộng 32 là quên hệ số 1,8 sinh ra do hai thang chia khoảng khác nhau.",
+    "3": "Đây là phép biến đổi ngược đúng của $t_F = 1{,}8t + 32$: trừ 32 trước, chia 1,8 sau."
    }
   },
   {
@@ -452,6 +452,10 @@
    "question": "Một khay bánh nguội từ 200 °C xuống 30 °C, tức nhiệt độ giảm 170 °C. Xét các phát biểu sau về độ giảm nhiệt độ này:",
    "statements": [
     {
+     "text": "Trên thang Fahrenheit, độ giảm nhiệt độ tính bằng 1,8 × 170 + 32.",
+     "answer": false
+    },
+    {
      "text": "Trên thang Kelvin, độ giảm nhiệt độ là 170 K.",
      "answer": true
     },
@@ -462,18 +466,14 @@
     {
      "text": "Trên thang Fahrenheit, độ giảm nhiệt độ bằng 1,8 lần độ giảm trên thang Celsius.",
      "answer": true
-    },
-    {
-     "text": "Trên thang Fahrenheit, độ giảm nhiệt độ tính bằng 1,8 × 170 + 32.",
-     "answer": false
     }
    ],
    "explanation": "Đây là khoảng chênh: $\\Delta T(\\text{K}) = \\Delta t(^\\circ\\text{C})$ và $\\Delta t(^\\circ\\text{F}) = 1{,}8\\,\\Delta t(^\\circ\\text{C})$. Các số 273 và 32 chỉ dùng khi đổi một giá trị nhiệt độ.",
    "distractorNotes": {
-    "0": "Độ chia Kelvin bằng độ chia Celsius, nên khoảng chênh 170 °C cũng chính là 170 K.",
-    "1": "Cộng 273 vào khoảng chênh; 273 là độ lệch gốc, triệt tiêu khi lấy hiệu hai nhiệt độ.",
-    "2": "Mỗi độ chia °C ứng với 1,8 độ chia °F, nên khoảng chênh trên thang °F gấp 1,8 lần.",
-    "3": "Cộng 32 vào khoảng chênh; 32 là độ lệch mốc, chỉ dùng khi đổi một giá trị nhiệt độ."
+    "0": "Cộng 32 vào khoảng chênh; 32 là độ lệch mốc, chỉ dùng khi đổi một giá trị nhiệt độ.",
+    "1": "Độ chia Kelvin bằng độ chia Celsius, nên khoảng chênh 170 °C cũng chính là 170 K.",
+    "2": "Cộng 273 vào khoảng chênh; 273 là độ lệch gốc, triệt tiêu khi lấy hiệu hai nhiệt độ.",
+    "3": "Mỗi độ chia °C ứng với 1,8 độ chia °F, nên khoảng chênh trên thang °F gấp 1,8 lần."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": true
     },
     {
+     "text": "Bắn nhiệt kế hồng ngoại vào mảnh giấy bạc dán ngoài cốc vẫn cho số đo chính xác như khi đo mặt nước.",
+     "answer": false
+    },
+    {
      "text": "Nhiệt kế điện trở dựa vào sự thay đổi điện trở của vật liệu theo nhiệt độ.",
      "answer": true
     },
     {
      "text": "Nhiệt kế hồng ngoại đo trực tiếp nhiệt độ bên trong lòng cốc nước.",
      "answer": false
-    },
-    {
-     "text": "Bắn nhiệt kế hồng ngoại vào mảnh giấy bạc dán ngoài cốc vẫn cho số đo chính xác như khi đo mặt nước.",
-     "answer": false
     }
    ],
    "explanation": "Nhiệt kế chất lỏng dựa vào sự nở dài của cột chất lỏng, nhiệt kế điện trở dựa vào sự thay đổi điện trở. Nhiệt kế hồng ngoại chỉ đo bức xạ bề mặt, nên gặp bề mặt bóng phản xạ mạnh như giấy bạc thì số đo sai lệch.",
    "distractorNotes": {
     "0": "Thuỷ ngân là chất lỏng, nên nhiệt kế này dựa vào sự nở dài của cột chất lỏng trong ống.",
-    "1": "Bảng các loại nhiệt kế nêu rõ nhiệt kế điện trở dựa vào điện trở vật liệu thay đổi theo nhiệt độ.",
-    "2": "Nhiệt kế hồng ngoại chỉ nhận bức xạ phát ra từ bề mặt, nên không đo được nhiệt độ bên trong.",
-    "3": "Giấy bạc phản xạ mạnh, phát xạ yếu nên cảm biến nhận ít bức xạ và cho số đo lệch hẳn."
+    "1": "Giấy bạc phản xạ mạnh, phát xạ yếu nên cảm biến nhận ít bức xạ và cho số đo lệch hẳn.",
+    "2": "Bảng các loại nhiệt kế nêu rõ nhiệt kế điện trở dựa vào điện trở vật liệu thay đổi theo nhiệt độ.",
+    "3": "Nhiệt kế hồng ngoại chỉ nhận bức xạ phát ra từ bề mặt, nên không đo được nhiệt độ bên trong."
    }
   },
   {
@@ -522,16 +522,16 @@
    "question": "Một lượng khí được giữ thể tích không đổi, bình chứa khí lần lượt được ngâm vào nước đá đang tan, nước ở nhiệt độ phòng, nước ấm và nước sôi; mỗi lần đều đọc áp suất khí. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Áp suất khí tăng đều theo nhiệt độ.",
-     "answer": true
+     "text": "Điểm cắt trục nhiệt độ đó ứng với 0 °C của thang Celsius.",
+     "answer": false
     },
     {
      "text": "Kéo dài đường biểu diễn áp suất theo nhiệt độ, đường này cắt trục nhiệt độ ở khoảng −273 °C.",
      "answer": true
     },
     {
-     "text": "Điểm cắt trục nhiệt độ đó ứng với 0 °C của thang Celsius.",
-     "answer": false
+     "text": "Áp suất khí tăng đều theo nhiệt độ.",
+     "answer": true
     },
     {
      "text": "Mỗi chất khí cho một điểm cắt khác nhau, nên không xác định được gốc chung cho thang Kelvin.",
@@ -540,9 +540,9 @@
    ],
    "explanation": "Áp suất tăng đều theo nhiệt độ. Kéo dài đường biểu diễn thì đường này cắt trục nhiệt độ ở −273 °C, và mọi chất khí đều cho cùng điểm cắt này, đó là gốc 0 K của thang Kelvin.",
    "distractorNotes": {
-    "0": "Các điểm số liệu nằm trên một đường thẳng: áp suất tăng đều theo nhiệt độ.",
+    "0": "Nhầm gốc hai thang: ở 0 °C áp suất vẫn là 100 kPa, còn điểm cắt là 0 K tức −273 °C.",
     "1": "Kéo dài đường thẳng áp suất – nhiệt độ về áp suất bằng 0 thì cắt trục nhiệt độ ở khoảng −273 °C.",
-    "2": "Nhầm gốc hai thang: ở 0 °C áp suất vẫn là 100 kPa, còn điểm cắt là 0 K tức −273 °C.",
+    "2": "Các điểm số liệu nằm trên một đường thẳng: áp suất tăng đều theo nhiệt độ.",
     "3": "Thí nghiệm cho thấy mọi chất khí đều cắt trục tại cùng một điểm, nên đó là gốc chung 0 K."
    }
   }

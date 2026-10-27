@@ -347,28 +347,28 @@
    "question": "Hai thang máy A và B nâng đều cùng một thùng hàng từ mặt đất lên cùng một sàn cao. Thang A mất ít thời gian hơn thang B.",
    "statements": [
     {
-     "text": "Công của lực nâng ở hai thang bằng nhau.",
-     "answer": true
-    },
-    {
      "text": "Thang A có công suất lớn hơn thang B.",
      "answer": true
     },
     {
-     "text": "Thang B làm việc lâu hơn nên sinh công lớn hơn thang A.",
-     "answer": false
+     "text": "Công của lực nâng ở hai thang bằng nhau.",
+     "answer": true
     },
     {
      "text": "Công suất của mỗi thang được đo bằng đơn vị jun (J).",
+     "answer": false
+    },
+    {
+     "text": "Thang B làm việc lâu hơn nên sinh công lớn hơn thang A.",
      "answer": false
     }
    ],
    "explanation": "Cùng vật, cùng độ cao nên công như nhau; thang A xong sớm hơn nên $P = \\dfrac{A}{t}$ lớn hơn. Công suất đo bằng oát, jun là đơn vị công.",
    "distractorNotes": {
-    "0": "Lực nâng và độ cao như nhau thì công như nhau, thời gian nâng không làm thay đổi công.",
-    "1": "Cùng công mà thời gian ngắn hơn thì $A/t$ lớn hơn, nên không thể coi ý này là sai.",
-    "2": "Làm việc lâu hơn không làm công tăng, vì công chỉ phụ thuộc lực nâng và độ cao.",
-    "3": "Jun là đơn vị công; công suất đo bằng jun trên giây, tức oát."
+    "0": "Cùng công mà thời gian ngắn hơn thì $A/t$ lớn hơn, nên không thể coi ý này là sai.",
+    "1": "Lực nâng và độ cao như nhau thì công như nhau, thời gian nâng không làm thay đổi công.",
+    "2": "Jun là đơn vị công; công suất đo bằng jun trên giây, tức oát.",
+    "3": "Làm việc lâu hơn không làm công tăng, vì công chỉ phụ thuộc lực nâng và độ cao."
    }
   },
   {
@@ -382,7 +382,11 @@
    "question": "Xét công thức công suất trung bình $P = \\dfrac{A}{t}$ của một máy.",
    "statements": [
     {
-     "text": "Với cùng một công, thời gian thực hiện tăng gấp đôi thì công suất giảm một nửa.",
+     "text": "Công suất tỉ lệ thuận với thời gian thực hiện công.",
+     "answer": false
+    },
+    {
+     "text": "Từ công thức suy ra công bằng công suất nhân thời gian, $A = P t$.",
      "answer": true
     },
     {
@@ -390,20 +394,16 @@
      "answer": true
     },
     {
-     "text": "Công suất tỉ lệ thuận với thời gian thực hiện công.",
-     "answer": false
-    },
-    {
-     "text": "Từ công thức suy ra công bằng công suất nhân thời gian, $A = P t$.",
+     "text": "Với cùng một công, thời gian thực hiện tăng gấp đôi thì công suất giảm một nửa.",
      "answer": true
     }
    ],
    "explanation": "$P$ tỉ lệ thuận với $A$ và tỉ lệ nghịch với $t$; đổi vế được $A = P t$.",
    "distractorNotes": {
-    "0": "$t$ nằm ở mẫu số nên $t$ gấp đôi thì $P$ giảm một nửa, không thể coi ý này là sai.",
-    "1": "$A$ ở tử số và $t$ cố định nên $P$ tăng đúng theo tỉ lệ của $A$.",
-    "2": "$t$ ở mẫu số nên công suất tỉ lệ nghịch chứ không tỉ lệ thuận với thời gian.",
-    "3": "Nhân hai vế của $P = A/t$ với $t$ được ngay $A = P t$, đây là phép biến đổi đúng."
+    "0": "$t$ ở mẫu số nên công suất tỉ lệ nghịch chứ không tỉ lệ thuận với thời gian.",
+    "1": "Nhân hai vế của $P = A/t$ với $t$ được ngay $A = P t$, đây là phép biến đổi đúng.",
+    "2": "$A$ ở tử số và $t$ cố định nên $P$ tăng đúng theo tỉ lệ của $A$.",
+    "3": "$t$ nằm ở mẫu số nên $t$ gấp đôi thì $P$ giảm một nửa, không thể coi ý này là sai."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Một bóng đèn ghi $100$ W được bật trong nhiều giờ, điện năng tiêu thụ ghi trên hoá đơn tính theo kWh.",
    "statements": [
     {
-     "text": "Con số $100$ W ghi trên đèn là công suất của đèn.",
-     "answer": true
-    },
-    {
      "text": "kWh là đơn vị của công suất, giống như kW.",
      "answer": false
     },
     {
-     "text": "$1\\ \\text{kWh} = 3{,}6\\cdot 10^{6}\\ \\text{J}$.",
+     "text": "Con số $100$ W ghi trên đèn là công suất của đèn.",
      "answer": true
     },
     {
      "text": "Điện năng đèn tiêu thụ bằng công suất nhân thời gian bật đèn.",
      "answer": true
+    },
+    {
+     "text": "$1\\ \\text{kWh} = 3{,}6\\cdot 10^{6}\\ \\text{J}$.",
+     "answer": true
     }
    ],
    "explanation": "Nhãn đèn ghi công suất (W); kWh là đơn vị công, $1\\ \\text{kWh} = 3{,}6\\cdot 10^{6}$ J; điện năng $A = P t$.",
    "distractorNotes": {
-    "0": "Oát là đơn vị công suất, nên số ghi bằng W trên nhãn đèn chính là công suất của đèn.",
-    "1": "Nhân kW với giờ được công suất nhân thời gian, tức là công chứ không còn là công suất.",
-    "2": "$1\\,000$ W nhân $3\\,600$ s bằng $3{,}6\\cdot 10^{6}$ J, nên đẳng thức này đúng.",
-    "3": "Điện năng là công của dòng điện và $A = P t$, nên không thể coi ý này là sai."
+    "0": "Nhân kW với giờ được công suất nhân thời gian, tức là công chứ không còn là công suất.",
+    "1": "Oát là đơn vị công suất, nên số ghi bằng W trên nhãn đèn chính là công suất của đèn.",
+    "2": "Điện năng là công của dòng điện và $A = P t$, nên không thể coi ý này là sai.",
+    "3": "$1\\,000$ W nhân $3\\,600$ s bằng $3{,}6\\cdot 10^{6}$ J, nên đẳng thức này đúng."
    }
   },
   {
@@ -460,11 +460,11 @@
      "answer": true
     },
     {
-     "text": "Giữ nguyên công suất, lực kéo lớn nhất tỉ lệ thuận với vận tốc.",
+     "text": "Chuyển sang số nhẹ làm tăng công suất tối đa của động cơ.",
      "answer": false
     },
     {
-     "text": "Chuyển sang số nhẹ làm tăng công suất tối đa của động cơ.",
+     "text": "Giữ nguyên công suất, lực kéo lớn nhất tỉ lệ thuận với vận tốc.",
      "answer": false
     }
    ],
@@ -472,8 +472,8 @@
    "distractorNotes": {
     "0": "Khi lực cùng hướng chuyển động, công suất tức thời đúng bằng $F v$ như công thức trong bài.",
     "1": "Từ $F = P/v$ với $P$ cố định, $v$ giảm thì $F$ tăng, nên không thể coi ý này là sai.",
-    "2": "$v$ nằm ở mẫu số của $F = P/v$, nên lực kéo tỉ lệ nghịch chứ không tỉ lệ thuận với vận tốc.",
-    "3": "Công suất tối đa do động cơ quyết định; chuyển số chỉ đổi vận tốc lấy lực kéo."
+    "2": "Công suất tối đa do động cơ quyết định; chuyển số chỉ đổi vận tốc lấy lực kéo.",
+    "3": "$v$ nằm ở mẫu số của $F = P/v$, nên lực kéo tỉ lệ nghịch chứ không tỉ lệ thuận với vận tốc."
    }
   },
   {
@@ -487,6 +487,10 @@
    "question": "Thang máy chở cabin cùng người nâng đều lên một độ cao xác định, bỏ qua ma sát và đối trọng.",
    "statements": [
     {
+     "text": "Nếu thang chạy chậm hơn thì công suất của lực kéo nhỏ hơn.",
+     "answer": true
+    },
+    {
      "text": "Vì nâng đều nên lực kéo bằng trọng lượng của cabin cùng người, $F = mg$.",
      "answer": true
     },
@@ -497,18 +501,14 @@
     {
      "text": "Nếu thang chạy chậm hơn thì công của lực kéo nhỏ hơn.",
      "answer": false
-    },
-    {
-     "text": "Nếu thang chạy chậm hơn thì công suất của lực kéo nhỏ hơn.",
-     "answer": true
     }
    ],
    "explanation": "Nâng đều nên $a = 0$, $F = mg$; công $A = F d$ không đổi theo thời gian, còn $P = \\dfrac{A}{t}$ giảm khi $t$ tăng.",
    "distractorNotes": {
-    "0": "Nâng đều nghĩa là gia tốc bằng không nên lực kéo cân bằng trọng lực, không thể khác $mg$.",
-    "1": "Lực không đổi và cùng hướng dịch chuyển nên $P = F v_{tb}$ với $v_{tb} = d/t$, cách kiểm này hợp lệ.",
-    "2": "Cùng lực kéo và cùng độ cao thì $A = F d$ không đổi, nên chạy chậm không làm giảm công.",
-    "3": "Công không đổi mà thời gian dài hơn thì $A/t$ nhỏ hơn, nên công suất chắc chắn giảm."
+    "0": "Công không đổi mà thời gian dài hơn thì $A/t$ nhỏ hơn, nên công suất chắc chắn giảm.",
+    "1": "Nâng đều nghĩa là gia tốc bằng không nên lực kéo cân bằng trọng lực, không thể khác $mg$.",
+    "2": "Lực không đổi và cùng hướng dịch chuyển nên $P = F v_{tb}$ với $v_{tb} = d/t$, cách kiểm này hợp lệ.",
+    "3": "Cùng lực kéo và cùng độ cao thì $A = F d$ không đổi, nên chạy chậm không làm giảm công."
    }
   },
   {
@@ -526,24 +526,24 @@
      "answer": true
     },
     {
+     "text": "Công suất tức thời tại mọi lúc luôn bằng công suất trung bình của cả quá trình.",
+     "answer": false
+    },
+    {
      "text": "Công suất tức thời tại một lúc bằng $F v$ với $v$ là vận tốc tức thời lúc đó.",
      "answer": true
     },
     {
      "text": "Công suất tức thời chỉ tính được khi lực kéo không đổi.",
      "answer": false
-    },
-    {
-     "text": "Công suất tức thời tại mọi lúc luôn bằng công suất trung bình của cả quá trình.",
-     "answer": false
     }
    ],
    "explanation": "Trung bình tính cho cả khoảng thời gian, tức thời tính tại đúng một lúc bằng $F v$, đúng cả khi $F$ thay đổi miễn cùng hướng $v$; vận tốc thay đổi nên hai giá trị nói chung khác nhau.",
    "distractorNotes": {
     "0": "Công suất trung bình được định nghĩa bằng tổng công chia tổng thời gian, nên ý này đúng.",
-    "1": "Khi lấy khoảng thời gian rất nhỏ, $v_{tb}$ trở thành vận tốc tức thời và cho $P = F v$ tại lúc đó.",
-    "2": "Điều kiện lực không đổi chỉ cần cho $P = F v_{tb}$; công suất tức thời vẫn đúng khi $F$ thay đổi.",
-    "3": "Vận tốc thay đổi nên $F v$ thay đổi theo từng lúc, không thể lúc nào cũng bằng giá trị trung bình."
+    "1": "Vận tốc thay đổi nên $F v$ thay đổi theo từng lúc, không thể lúc nào cũng bằng giá trị trung bình.",
+    "2": "Khi lấy khoảng thời gian rất nhỏ, $v_{tb}$ trở thành vận tốc tức thời và cho $P = F v$ tại lúc đó.",
+    "3": "Điều kiện lực không đổi chỉ cần cho $P = F v_{tb}$; công suất tức thời vẫn đúng khi $F$ thay đổi."
    }
   }
  ]

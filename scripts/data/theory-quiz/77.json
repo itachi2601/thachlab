@@ -347,6 +347,10 @@
    "question": "Một vật nhỏ chuyển động tròn đều trên quỹ đạo tâm O. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Độ lớn vận tốc không đổi nhưng hướng của vận tốc thay đổi liên tục.",
+     "answer": true
+    },
+    {
      "text": "Gia tốc hướng tâm có gốc tại vật và phương trùng với bán kính quỹ đạo.",
      "answer": true
     },
@@ -355,19 +359,15 @@
      "answer": false
     },
     {
-     "text": "Độ lớn vận tốc không đổi nhưng hướng của vận tốc thay đổi liên tục.",
-     "answer": true
-    },
-    {
      "text": "Vì tốc độ không đổi nên hợp lực tác dụng lên vật bằng 0.",
      "answer": false
     }
    ],
    "explanation": "Gia tốc hướng tâm có gốc tại vật, phương bán kính, vuông góc với vận tốc. Vật có gia tốc nên hợp lực khác 0 và hướng vào tâm.",
    "distractorNotes": {
-    "0": "Bài nêu rõ gia tốc hướng tâm có gốc tại vật, phương trùng bán kính, nên không thể coi phát biểu là sai.",
-    "1": "Vận tốc tiếp tuyến quỹ đạo, gia tốc theo bán kính, hai phương vuông góc nên không thể coi là cùng phương.",
-    "2": "Tròn đều đúng là tốc độ giữ nguyên, hướng vận tốc đổi liên tục, nên không thể coi phát biểu là sai.",
+    "0": "Tròn đều đúng là tốc độ giữ nguyên, hướng vận tốc đổi liên tục, nên không thể coi phát biểu là sai.",
+    "1": "Bài nêu rõ gia tốc hướng tâm có gốc tại vật, phương trùng bán kính, nên không thể coi phát biểu là sai.",
+    "2": "Vận tốc tiếp tuyến quỹ đạo, gia tốc theo bán kính, hai phương vuông góc nên không thể coi là cùng phương.",
     "3": "Hướng vận tốc đổi nên vật có gia tốc, theo $F = ma$ hợp lực khác 0 và hướng vào tâm."
    },
    "answer": null
@@ -383,11 +383,7 @@
    "question": "Đặt một vòng nhựa có thành, bị cắt bỏ một đoạn thành, lên bàn. Búng viên bi chạy vòng sát thành vòng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi bi chạy sát thành, lực của thành đẩy bi hướng vào tâm và đóng vai lực hướng tâm.",
-     "answer": true
-    },
-    {
-     "text": "Tới chỗ hở, bi bật ra theo phương bán kính do lực li tâm.",
+     "text": "Khi bi chạy sát thành, phải vẽ thêm lực hướng tâm bên cạnh lực của thành.",
      "answer": false
     },
     {
@@ -395,16 +391,20 @@
      "answer": true
     },
     {
-     "text": "Khi bi chạy sát thành, phải vẽ thêm lực hướng tâm bên cạnh lực của thành.",
+     "text": "Khi bi chạy sát thành, lực của thành đẩy bi hướng vào tâm và đóng vai lực hướng tâm.",
+     "answer": true
+    },
+    {
+     "text": "Tới chỗ hở, bi bật ra theo phương bán kính do lực li tâm.",
      "answer": false
     }
    ],
    "explanation": "Thành vòng đẩy bi vào tâm, đó là lực hướng tâm. Mất lực đó, bi đi thẳng theo tiếp tuyến. Không có lực li tâm, và không vẽ thêm lực hướng tâm riêng.",
    "distractorNotes": {
-    "0": "Lực của thành là lực duy nhất hướng vào tâm giữ bi đi vòng, nên chính nó đóng vai lực hướng tâm.",
-    "1": "Không vật nào gây ra lực li tâm; thí nghiệm cho thấy bi đi theo tiếp tuyến chứ không bật ra theo bán kính.",
-    "2": "Mất lực của thành, bi giữ vận tốc tiếp tuyến lúc đó theo quán tính, đúng như quan sát.",
-    "3": "Lực hướng tâm chỉ là tên vai của lực của thành, vẽ thêm là đếm một lực hai lần."
+    "0": "Lực hướng tâm chỉ là tên vai của lực của thành, vẽ thêm là đếm một lực hai lần.",
+    "1": "Mất lực của thành, bi giữ vận tốc tiếp tuyến lúc đó theo quán tính, đúng như quan sát.",
+    "2": "Lực của thành là lực duy nhất hướng vào tâm giữ bi đi vòng, nên chính nó đóng vai lực hướng tâm.",
+    "3": "Không vật nào gây ra lực li tâm; thí nghiệm cho thấy bi đi theo tiếp tuyến chứ không bật ra theo bán kính."
    },
    "answer": null
   },
@@ -419,15 +419,15 @@
    "question": "Một học sinh so sánh gia tốc hướng tâm bằng hai công thức $a = \\frac{v^2}{r}$ và $a = \\omega^2 r$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Hai xe cùng tốc độ $v$, xe qua cua có bán kính nhỏ hơn thì có gia tốc hướng tâm lớn hơn.",
-     "answer": true
-    },
-    {
      "text": "Trên cùng một cánh quạt quay đều, điểm càng xa trục thì gia tốc hướng tâm càng nhỏ.",
      "answer": false
     },
     {
      "text": "Thay $v = \\omega r$ vào $\\frac{v^2}{r}$ thì được $\\omega^2 r$.",
+     "answer": true
+    },
+    {
+     "text": "Hai xe cùng tốc độ $v$, xe qua cua có bán kính nhỏ hơn thì có gia tốc hướng tâm lớn hơn.",
      "answer": true
     },
     {
@@ -437,9 +437,9 @@
    ],
    "explanation": "Cùng $v$ thì $a \\sim \\frac{1}{r}$; cùng $\\omega$ thì $a \\sim r$. Mọi điểm trên cùng vật quay có chung $\\omega$, không chung $v$.",
    "distractorNotes": {
-    "0": "Khi $v$ giữ nguyên, $a = \\frac{v^2}{r}$ tỉ lệ nghịch với $r$, nên cua bán kính nhỏ cho gia tốc lớn hơn.",
-    "1": "Các điểm trên cánh quạt có chung $\\omega$, nên $a = \\omega^2 r$ tăng chứ không giảm khi xa trục.",
-    "2": "Thay đúng: $\\frac{(\\omega r)^2}{r} = \\omega^2 r$, nên không thể coi phát biểu là sai.",
+    "0": "Các điểm trên cánh quạt có chung $\\omega$, nên $a = \\omega^2 r$ tăng chứ không giảm khi xa trục.",
+    "1": "Thay đúng: $\\frac{(\\omega r)^2}{r} = \\omega^2 r$, nên không thể coi phát biểu là sai.",
+    "2": "Khi $v$ giữ nguyên, $a = \\frac{v^2}{r}$ tỉ lệ nghịch với $r$, nên cua bán kính nhỏ cho gia tốc lớn hơn.",
     "3": "Các điểm trên vật quay chung $\\omega$, còn $v = \\omega r$ lớn hơn ở điểm xa trục, nên không cùng $v$."
    },
    "answer": null
@@ -491,11 +491,7 @@
    "question": "Một đồng xu khối lượng $m$ đặt trên đĩa bàn xoay, cách tâm khoảng $r$. Đĩa quay đều với tốc độ góc $\\omega$ và xu không trượt. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Lực hướng tâm cần có để giữ xu đi vòng là $m\\omega^2 r$.",
-     "answer": true
-    },
-    {
-     "text": "Nếu $\\omega$ tăng gấp đôi thì lực hướng tâm cần có cũng chỉ tăng gấp đôi.",
+     "text": "Xu bắt đầu trượt khi $m\\omega^2 r$ nhỏ hơn ma sát nghỉ lớn nhất.",
      "answer": false
     },
     {
@@ -503,16 +499,20 @@
      "answer": true
     },
     {
-     "text": "Xu bắt đầu trượt khi $m\\omega^2 r$ nhỏ hơn ma sát nghỉ lớn nhất.",
+     "text": "Nếu $\\omega$ tăng gấp đôi thì lực hướng tâm cần có cũng chỉ tăng gấp đôi.",
      "answer": false
+    },
+    {
+     "text": "Lực hướng tâm cần có để giữ xu đi vòng là $m\\omega^2 r$.",
+     "answer": true
     }
    ],
    "explanation": "Ma sát nghỉ đóng vai lực hướng tâm $m\\omega^2 r$, tỉ lệ với $\\omega^2$ và với $r$. Xu trượt khi lực cần có vượt ma sát nghỉ lớn nhất.",
    "distractorNotes": {
-    "0": "Đây chính là $F_{ht} = m\\omega^2 r$ của bài, do ma sát nghỉ cung cấp, nên không thể coi là sai.",
-    "1": "Lực cần có tỉ lệ với $\\omega^2$, nên $\\omega$ gấp đôi thì lực gấp bốn chứ không chỉ gấp đôi.",
-    "2": "Với $\\omega$ giữ nguyên, $m\\omega^2 r$ tỉ lệ thuận với $r$, nên đặt xa tâm cần lực lớn hơn.",
-    "3": "Đảo điều kiện: xu chỉ trượt khi lực cần có vượt ma sát nghỉ lớn nhất, còn nhỏ hơn thì xu vẫn đi vòng."
+    "0": "Đảo điều kiện: xu chỉ trượt khi lực cần có vượt ma sát nghỉ lớn nhất, còn nhỏ hơn thì xu vẫn đi vòng.",
+    "1": "Với $\\omega$ giữ nguyên, $m\\omega^2 r$ tỉ lệ thuận với $r$, nên đặt xa tâm cần lực lớn hơn.",
+    "2": "Lực cần có tỉ lệ với $\\omega^2$, nên $\\omega$ gấp đôi thì lực gấp bốn chứ không chỉ gấp đôi.",
+    "3": "Đây chính là $F_{ht} = m\\omega^2 r$ của bài, do ma sát nghỉ cung cấp, nên không thể coi là sai."
    },
    "answer": null
   },
@@ -535,20 +535,20 @@
      "answer": true
     },
     {
-     "text": "Với $r$ không đổi, lực hướng tâm $m\\frac{v^2}{r}$ tỉ lệ thuận với chu kì $T$.",
-     "answer": false
-    },
-    {
      "text": "Dùng quả nặng lớn hơn mà giữ nguyên $r$ thì phải quay nút nhanh hơn.",
      "answer": true
+    },
+    {
+     "text": "Với $r$ không đổi, lực hướng tâm $m\\frac{v^2}{r}$ tỉ lệ thuận với chu kì $T$.",
+     "answer": false
     }
    ],
    "explanation": "Lực căng $Mg$ là lực hướng tâm. Thay $v = \\frac{2\\pi r}{T}$ thì $F \\sim \\frac{1}{T^2}$; $M$ lớn hơn cần $F$ lớn hơn nên $T$ nhỏ hơn, tức quay nhanh hơn.",
    "distractorNotes": {
     "0": "Quả nặng đứng yên nên lực căng cân bằng $Mg$, và chính lực căng kéo nút về tâm, nên phát biểu đúng.",
     "1": "Mỗi vòng nút đi quãng đường $2\\pi r$ trong thời gian $T$, nên $v = \\frac{2\\pi r}{T}$ là đúng.",
-    "2": "Thay $v = \\frac{2\\pi r}{T}$ thì lực tỉ lệ với $\\frac{1}{T^2}$, tức giảm khi $T$ tăng, không tỉ lệ thuận.",
-    "3": "$Mg$ lớn hơn đòi hỏi $m\\frac{v^2}{r}$ lớn hơn với $r$ cố định, nên $v$ phải tăng, đúng như quan sát."
+    "2": "$Mg$ lớn hơn đòi hỏi $m\\frac{v^2}{r}$ lớn hơn với $r$ cố định, nên $v$ phải tăng, đúng như quan sát.",
+    "3": "Thay $v = \\frac{2\\pi r}{T}$ thì lực tỉ lệ với $\\frac{1}{T^2}$, tức giảm khi $T$ tăng, không tỉ lệ thuận."
    },
    "answer": null
   }

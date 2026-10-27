@@ -351,24 +351,24 @@
      "answer": true
     },
     {
-     "text": "Lấy trung bình 5 lần đo làm giảm ảnh hưởng của sai số ngẫu nhiên.",
-     "answer": true
-    },
-    {
      "text": "Lấy trung bình đủ nhiều lần sẽ xoá được sai số dụng cụ $\\Delta t_{\\text{dc}}$ của đồng hồ.",
      "answer": false
     },
     {
      "text": "Nếu nhóm đo $s$ sai gốc thì lấy trung bình nhiều lần sẽ bù lại được.",
      "answer": false
+    },
+    {
+     "text": "Lấy trung bình 5 lần đo làm giảm ảnh hưởng của sai số ngẫu nhiên.",
+     "answer": true
     }
    ],
    "explanation": "Lệch thất thường là sai số ngẫu nhiên, trung bình làm giảm; nhưng trung bình không xoá được $\\Delta t_{\\text{dc}}$, và đo $s$ sai gốc là sai số hệ thống, lệch cùng phía mọi lần.",
    "distractorNotes": {
     "0": "Giá trị lên xuống không theo một phía cố định chính là dấu hiệu của sai số ngẫu nhiên.",
-    "1": "Các lần lệch lên và lệch xuống bù nhau một phần nên trung bình gần giá trị thật hơn.",
-    "2": "Sai số dụng cụ là giới hạn của đồng hồ, có mặt ở mọi lần đo nên trung bình không loại bỏ được.",
-    "3": "Sai gốc $s$ làm lệch cùng một chiều ở mọi lần, là sai số hệ thống nên trung bình không bù được."
+    "1": "Sai số dụng cụ là giới hạn của đồng hồ, có mặt ở mọi lần đo nên trung bình không loại bỏ được.",
+    "2": "Sai gốc $s$ làm lệch cùng một chiều ở mọi lần, là sai số hệ thống nên trung bình không bù được.",
+    "3": "Các lần lệch lên và lệch xuống bù nhau một phần nên trung bình gần giá trị thật hơn."
    }
   },
   {
@@ -382,6 +382,10 @@
    "question": "Bộ thí nghiệm gồm giá đỡ thẳng đứng, nam châm điện giữ viên bi thép, cổng quang ở phía dưới nối với đồng hồ hiện số chia tới $0{,}001\\ \\text{s}$; độ cao đo bằng thước chia tới $1\\ \\text{mm}$.",
    "statements": [
     {
+     "text": "Vì đồng hồ chia tới $0{,}001\\ \\text{s}$ nên phép đo thời gian không còn sai số.",
+     "answer": false
+    },
+    {
      "text": "Ngắt công tắc nam châm điện thì bi bắt đầu rơi và đồng hồ bắt đầu đếm.",
      "answer": true
     },
@@ -392,18 +396,14 @@
     {
      "text": "Sai số dụng cụ của thước được lấy bằng $0{,}001\\ \\text{m}$.",
      "answer": true
-    },
-    {
-     "text": "Vì đồng hồ chia tới $0{,}001\\ \\text{s}$ nên phép đo thời gian không còn sai số.",
-     "answer": false
     }
    ],
    "explanation": "Ngắt điện thì bi rơi, đồng hồ đếm; cổng quang chỉ ghi thời điểm. Sai số dụng cụ lấy bằng một độ chia ($1\\ \\text{mm}$), và đồng hồ vẫn có sai số $0{,}001\\ \\text{s}$.",
    "distractorNotes": {
-    "0": "Thao tác đúng như bài mô tả: ngắt công tắc thì bi rời nam châm và đồng hồ bắt đầu đếm.",
-    "1": "Cổng quang chỉ phát hiện lúc bi che tia sáng, không tác dụng lực lên bi.",
-    "2": "Sai số dụng cụ lấy bằng một độ chia, mà $1\\ \\text{mm} = 0{,}001\\ \\text{m}$.",
-    "3": "Đồng hồ nhiều chữ số vẫn có sai số dụng cụ bằng một độ chia $0{,}001\\ \\text{s}$."
+    "0": "Đồng hồ nhiều chữ số vẫn có sai số dụng cụ bằng một độ chia $0{,}001\\ \\text{s}$.",
+    "1": "Thao tác đúng như bài mô tả: ngắt công tắc thì bi rời nam châm và đồng hồ bắt đầu đếm.",
+    "2": "Cổng quang chỉ phát hiện lúc bi che tia sáng, không tác dụng lực lên bi.",
+    "3": "Sai số dụng cụ lấy bằng một độ chia, mà $1\\ \\text{mm} = 0{,}001\\ \\text{m}$."
    }
   },
   {
@@ -417,15 +417,15 @@
    "question": "Một nhóm đo $s$ từ mặt nam châm nên giá trị ghi được dài hơn đoạn bi thật sự rơi; thời gian $t$ vẫn đo đúng. Nhóm tính $g = \\dfrac{2s}{t^2}$.",
    "statements": [
     {
-     "text": "Thời gian $t$ đo được vẫn đúng vì ghi sai $s$ không làm bi rơi khác đi.",
-     "answer": true
-    },
-    {
      "text": "Gia tốc $g$ nhóm tính ra nhỏ hơn giá trị đúng.",
      "answer": false
     },
     {
      "text": "Nếu $s$ ghi lớn hơn thật $2\\,\\%$ thì $g$ tính ra lớn hơn khoảng $2\\,\\%$.",
+     "answer": true
+    },
+    {
+     "text": "Thời gian $t$ đo được vẫn đúng vì ghi sai $s$ không làm bi rơi khác đi.",
      "answer": true
     },
     {
@@ -435,9 +435,9 @@
    ],
    "explanation": "$g$ tỉ lệ với $s$ ở tử số nên $s$ ghi lớn thì $g$ lớn theo cùng tỉ lệ; lệch cùng một chiều mọi lần nên là sai số hệ thống.",
    "distractorNotes": {
-    "0": "Ghi sai số đo $s$ không ảnh hưởng đến chuyển động thật của bi nên $t$ vẫn đúng.",
-    "1": "$s$ nằm ở tử số của $g = \\dfrac{2s}{t^2}$, nên $s$ ghi lớn hơn thì $g$ lớn hơn chứ không nhỏ hơn.",
-    "2": "Khi $t$ không đổi, $g$ tỉ lệ thuận với $s$ nên lệch cùng tỉ lệ $2\\,\\%$.",
+    "0": "$s$ nằm ở tử số của $g = \\dfrac{2s}{t^2}$, nên $s$ ghi lớn hơn thì $g$ lớn hơn chứ không nhỏ hơn.",
+    "1": "Khi $t$ không đổi, $g$ tỉ lệ thuận với $s$ nên lệch cùng tỉ lệ $2\\,\\%$.",
+    "2": "Ghi sai số đo $s$ không ảnh hưởng đến chuyển động thật của bi nên $t$ vẫn đúng.",
     "3": "Sai gốc làm lệch cùng một phía ở mọi lần đo, đó là sai số hệ thống chứ không ngẫu nhiên."
    }
   },
@@ -487,28 +487,28 @@
    "question": "Khi xử lí số liệu đo $g = \\dfrac{2s}{t^2}$, học sinh dùng sai số tương đối $\\delta = \\dfrac{\\Delta s}{s} + 2\\dfrac{\\Delta t}{\\bar t}$ để viết kết quả $g = \\bar g \\pm \\Delta g$.",
    "statements": [
     {
-     "text": "Hệ số $2$ trước $\\dfrac{\\Delta t}{\\bar t}$ xuất hiện vì $g$ chứa $t^2 = t \\cdot t$.",
+     "text": "Nếu $t$ lệch $1\\,\\%$ thì $t^2$ lệch khoảng $2\\,\\%$.",
      "answer": true
     },
     {
-     "text": "Nếu $t$ lệch $1\\,\\%$ thì $t^2$ lệch khoảng $2\\,\\%$.",
+     "text": "Với tích, thương của các đại lượng, ta cộng sai số tuyệt đối của chúng.",
+     "answer": false
+    },
+    {
+     "text": "Hệ số $2$ trước $\\dfrac{\\Delta t}{\\bar t}$ xuất hiện vì $g$ chứa $t^2 = t \\cdot t$.",
      "answer": true
     },
     {
      "text": "Sai số tuyệt đối được tính bằng $\\Delta g = \\dfrac{\\delta}{\\bar g}$.",
      "answer": false
-    },
-    {
-     "text": "Với tích, thương của các đại lượng, ta cộng sai số tuyệt đối của chúng.",
-     "answer": false
     }
    ],
    "explanation": "Tích, thương thì cộng sai số tương đối, $t^2$ khiến phần của $t$ tính hai lần; sau đó $\\Delta g = \\delta \\cdot \\bar g$.",
    "distractorNotes": {
-    "0": "$t$ xuất hiện hai lần trong tích $t \\cdot t$ nên sai số tương đối của nó được cộng hai lần.",
-    "1": "Sai số tương đối của $t^2$ bằng hai lần của $t$, nên $1\\,\\%$ thành khoảng $2\\,\\%$.",
-    "2": "Từ $\\delta = \\dfrac{\\Delta g}{\\bar g}$ suy ra $\\Delta g = \\delta \\cdot \\bar g$, phải nhân chứ không chia.",
-    "3": "Với tích, thương ta cộng sai số tương đối, không phải cộng sai số tuyệt đối."
+    "0": "Sai số tương đối của $t^2$ bằng hai lần của $t$, nên $1\\,\\%$ thành khoảng $2\\,\\%$.",
+    "1": "Với tích, thương ta cộng sai số tương đối, không phải cộng sai số tuyệt đối.",
+    "2": "$t$ xuất hiện hai lần trong tích $t \\cdot t$ nên sai số tương đối của nó được cộng hai lần.",
+    "3": "Từ $\\delta = \\dfrac{\\Delta g}{\\bar g}$ suy ra $\\Delta g = \\delta \\cdot \\bar g$, phải nhân chứ không chia."
    }
   },
   {
@@ -522,7 +522,11 @@
    "question": "Một nhóm tăng độ cao thả bi từ $0{,}200\\ \\text{m}$ lên $0{,}800\\ \\text{m}$ (bỏ qua sai số hệ thống), giữ nguyên sai số $\\Delta t$ của thời gian.",
    "statements": [
     {
-     "text": "Thời gian rơi $t$ tăng gấp $4$ lần.",
+     "text": "Tỉ số $\\dfrac{2\\Delta t}{\\bar t}$ giảm còn một nửa.",
+     "answer": true
+    },
+    {
+     "text": "Thả từ độ cao lớn hơn làm phép đo $g$ kém chính xác hơn.",
      "answer": false
     },
     {
@@ -530,20 +534,16 @@
      "answer": true
     },
     {
-     "text": "Tỉ số $\\dfrac{2\\Delta t}{\\bar t}$ giảm còn một nửa.",
-     "answer": true
-    },
-    {
-     "text": "Thả từ độ cao lớn hơn làm phép đo $g$ kém chính xác hơn.",
+     "text": "Thời gian rơi $t$ tăng gấp $4$ lần.",
      "answer": false
     }
    ],
    "explanation": "$t$ tỉ lệ với $\\sqrt{s}$: $s$ gấp $4$ thì $t$ gấp $2$; $\\Delta t$ không đổi nên $\\dfrac{2\\Delta t}{\\bar t}$ giảm một nửa, phép đo chính xác hơn.",
    "distractorNotes": {
-    "0": "Coi $t$ tỉ lệ với $s$ là sai, vì $s$ tỉ lệ với $t^2$ nên $t$ chỉ gấp $\\sqrt{4} = 2$.",
-    "1": "Từ $t = \\sqrt{\\dfrac{2s}{g}}$, khi $s$ gấp $4$ thì $t$ gấp đúng $2$.",
-    "2": "$\\Delta t$ giữ nguyên còn $\\bar t$ gấp đôi nên tỉ số giảm còn một nửa.",
-    "3": "Thả cao hơn làm sai số tương đối của $t$ giảm nên kết quả chính xác hơn chứ không kém đi."
+    "0": "$\\Delta t$ giữ nguyên còn $\\bar t$ gấp đôi nên tỉ số giảm còn một nửa.",
+    "1": "Thả cao hơn làm sai số tương đối của $t$ giảm nên kết quả chính xác hơn chứ không kém đi.",
+    "2": "Từ $t = \\sqrt{\\dfrac{2s}{g}}$, khi $s$ gấp $4$ thì $t$ gấp đúng $2$.",
+    "3": "Coi $t$ tỉ lệ với $s$ là sai, vì $s$ tỉ lệ với $t^2$ nên $t$ chỉ gấp $\\sqrt{4} = 2$."
    }
   }
  ]

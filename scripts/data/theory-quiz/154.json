@@ -347,11 +347,7 @@
    "question": "Rót đầy nước vào cốc cao $10\\ \\text{cm}$, đậy kín bằng tấm nhựa mỏng rồi úp ngược cốc trên chậu. Bỏ tay ra, tấm nhựa vẫn dính vào miệng cốc, nước không đổ.",
    "statements": [
     {
-     "text": "Không khí bên ngoài tác dụng áp suất lên tấm nhựa theo mọi phía, trong đó có hướng lên.",
-     "answer": true
-    },
-    {
-     "text": "Áp suất do cột nước gây ra lớn hơn áp suất khí quyển nên tấm nhựa bị ép chặt vào miệng cốc.",
+     "text": "Nếu cốc cao khoảng $20\\ \\text{m}$ mà vẫn đầy nước thì tấm nhựa vẫn được giữ.",
      "answer": false
     },
     {
@@ -359,16 +355,20 @@
      "answer": true
     },
     {
-     "text": "Nếu cốc cao khoảng $20\\ \\text{m}$ mà vẫn đầy nước thì tấm nhựa vẫn được giữ.",
+     "text": "Không khí bên ngoài tác dụng áp suất lên tấm nhựa theo mọi phía, trong đó có hướng lên.",
+     "answer": true
+    },
+    {
+     "text": "Áp suất do cột nước gây ra lớn hơn áp suất khí quyển nên tấm nhựa bị ép chặt vào miệng cốc.",
      "answer": false
     }
    ],
    "explanation": "Tấm nhựa đứng yên khi áp suất khí quyển hướng lên lớn hơn áp suất của cột nước hướng xuống; cột nước tối đa được giữ khoảng $10\\ \\text{m}$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì áp suất khí quyển tác dụng theo mọi phương, phần hướng lên giữ tấm nhựa.",
-    "1": "Không thể coi là đúng vì $1000\\ \\text{Pa}$ nhỏ hơn $p_0\\approx10^5\\ \\text{Pa}$ rất nhiều; chính khí quyển mới giữ tấm nhựa.",
-    "2": "Không thể coi là sai vì $d\\,h=10\\,000\\cdot0{,}1=1000\\ \\text{Pa}$.",
-    "3": "Không thể coi là đúng vì cột nước cao hơn khoảng $10\\ \\text{m}$ có áp suất vượt $p_0$, tấm nhựa sẽ rơi."
+    "0": "Không thể coi là đúng vì cột nước cao hơn khoảng $10\\ \\text{m}$ có áp suất vượt $p_0$, tấm nhựa sẽ rơi.",
+    "1": "Không thể coi là sai vì $d\\,h=10\\,000\\cdot0{,}1=1000\\ \\text{Pa}$.",
+    "2": "Không thể coi là sai vì áp suất khí quyển tác dụng theo mọi phương, phần hướng lên giữ tấm nhựa.",
+    "3": "Không thể coi là đúng vì $1000\\ \\text{Pa}$ nhỏ hơn $p_0\\approx10^5\\ \\text{Pa}$ rất nhiều; chính khí quyển mới giữ tấm nhựa."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Một cục nước đá nổi trong bình đựng nước, mực nước chưa tràn. Để yên cho đá tan hết.",
    "statements": [
     {
-     "text": "Cục đá gắn một mẩu gỗ nổi tan hết thì mực nước hạ xuống.",
+     "text": "Cục đá chỉ có nước tan hết thì mực nước dâng lên vì có thêm nước.",
      "answer": false
     },
     {
-     "text": "Cục đá chỉ có nước (không gắn gì) tan hết thì mực nước trong bình không đổi.",
-     "answer": true
+     "text": "Cục đá gắn một mẩu gỗ nổi tan hết thì mực nước hạ xuống.",
+     "answer": false
     },
     {
      "text": "Cục đá gắn một viên sỏi (sỏi chìm xuống đáy sau khi đá tan) tan hết thì mực nước hạ xuống.",
      "answer": true
     },
     {
-     "text": "Cục đá chỉ có nước tan hết thì mực nước dâng lên vì có thêm nước.",
-     "answer": false
+     "text": "Cục đá chỉ có nước (không gắn gì) tan hết thì mực nước trong bình không đổi.",
+     "answer": true
     }
    ],
    "explanation": "So thể tích chiếm chỗ trước và sau: đá thuần thì bằng nhau; dị vật chìm làm chiếm chỗ ít đi nên mực nước hạ; dị vật nổi thì không đổi.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì gỗ nổi vẫn chiếm chỗ như cũ nên mực nước không đổi.",
-    "1": "Không thể coi là sai vì nước do đá tan ra có thể tích đúng bằng phần đá đã chìm chiếm chỗ.",
+    "0": "Không thể coi là đúng vì lượng nước mới đúng bằng phần chỗ đã bị đá chiếm, nên mực nước giữ nguyên.",
+    "1": "Không thể coi là đúng vì gỗ nổi vẫn chiếm chỗ như cũ nên mực nước không đổi.",
     "2": "Không thể coi là sai vì khi còn trong đá, sỏi chiếm chỗ như vật nổi; chìm xuống đáy thì chiếm ít chỗ hơn.",
-    "3": "Không thể coi là đúng vì lượng nước mới đúng bằng phần chỗ đã bị đá chiếm, nên mực nước giữ nguyên."
+    "3": "Không thể coi là sai vì nước do đá tan ra có thể tích đúng bằng phần đá đã chìm chiếm chỗ."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Bể nước sâu $3\\ \\text{m}$, đáy phẳng nằm ngang diện tích $2\\ \\text{m}^2$. Lấy $g=10\\ \\text{m/s}^2$, $D=1000\\ \\text{kg/m}^3$, $p_0=10^5\\ \\text{Pa}$.",
    "statements": [
     {
-     "text": "Áp suất do nước gây ra tại đáy bể là $30\\,000\\ \\text{Pa}$.",
+     "text": "Áp lực của nước lên đáy bể là $60\\,000\\ \\text{N}$.",
      "answer": true
     },
     {
-     "text": "Tại điểm cách mặt nước $1\\ \\text{m}$, áp suất do nước gây ra là $20\\,000\\ \\text{Pa}$.",
-     "answer": false
+     "text": "Áp suất do nước gây ra tại đáy bể là $30\\,000\\ \\text{Pa}$.",
+     "answer": true
     },
     {
      "text": "Bể hở mặt thoáng thì áp suất tổng ở đáy vẫn là $30\\,000\\ \\text{Pa}$.",
      "answer": false
     },
     {
-     "text": "Áp lực của nước lên đáy bể là $60\\,000\\ \\text{N}$.",
-     "answer": true
+     "text": "Tại điểm cách mặt nước $1\\ \\text{m}$, áp suất do nước gây ra là $20\\,000\\ \\text{Pa}$.",
+     "answer": false
     }
    ],
    "explanation": "$p=d\\,h$ là áp suất do nước; $F=d\\,h\\,S$; mặt thoáng hở thì cộng thêm $p_0$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì $p=d\\,h=10\\,000\\cdot3=30\\,000\\ \\text{Pa}$.",
-    "1": "Không thể coi là đúng vì $h=1\\ \\text{m}$ nên $p=10\\,000\\cdot1=10\\,000\\ \\text{Pa}$.",
+    "0": "Không thể coi là sai vì $F=p\\,S=30\\,000\\cdot2=60\\,000\\ \\text{N}$.",
+    "1": "Không thể coi là sai vì $p=d\\,h=10\\,000\\cdot3=30\\,000\\ \\text{Pa}$.",
     "2": "Không thể coi là đúng vì mặt thoáng hở còn chịu $p_0$, nên áp suất tổng là $p_0+d\\,h=1{,}3\\cdot10^5\\ \\text{Pa}$.",
-    "3": "Không thể coi là sai vì $F=p\\,S=30\\,000\\cdot2=60\\,000\\ \\text{N}$."
+    "3": "Không thể coi là đúng vì $h=1\\ \\text{m}$ nên $p=10\\,000\\cdot1=10\\,000\\ \\text{Pa}$."
    }
   },
   {
@@ -452,11 +452,11 @@
    "question": "Ống chữ U hai nhánh giống nhau chứa nước. Đổ dầu hỏa ($D=800\\ \\text{kg/m}^3$) vào nhánh trái tạo cột dầu cao $20\\ \\text{cm}$.",
    "statements": [
     {
-     "text": "Hai mặt thoáng ở hai nhánh cao bằng nhau vì hai nhánh thông nhau.",
-     "answer": false
+     "text": "Cột nước ở nhánh phải, tính từ mặt phân cách, cao $16\\ \\text{cm}$.",
+     "answer": true
     },
     {
-     "text": "Cột nước ở nhánh phải, tính từ mặt phân cách, cao $16\\ \\text{cm}$.",
+     "text": "Mặt thoáng của dầu cao hơn mặt thoáng của nước $4\\ \\text{cm}$.",
      "answer": true
     },
     {
@@ -464,16 +464,16 @@
      "answer": false
     },
     {
-     "text": "Mặt thoáng của dầu cao hơn mặt thoáng của nước $4\\ \\text{cm}$.",
-     "answer": true
+     "text": "Hai mặt thoáng ở hai nhánh cao bằng nhau vì hai nhánh thông nhau.",
+     "answer": false
     }
    ],
    "explanation": "Cùng mặt phẳng chuẩn thì $p_A=p_B$ nên $d_dh_d=d_nh_n$; chất lỏng nhẹ hơn thì cột cao hơn.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì kết luận cùng độ cao chỉ áp dụng cho một chất lỏng; ở đây là hai chất lỏng khác nhau.",
-    "1": "Không thể coi là sai vì $d_dh_d=d_nh_n$ cho $h_n=\\dfrac{800\\cdot20}{1000}=16\\ \\text{cm}$.",
+    "0": "Không thể coi là sai vì $d_dh_d=d_nh_n$ cho $h_n=\\dfrac{800\\cdot20}{1000}=16\\ \\text{cm}$.",
+    "1": "Không thể coi là sai vì cột dầu $20\\ \\text{cm}$ so với cột nước $16\\ \\text{cm}$ tính từ cùng mặt phẳng chuẩn.",
     "2": "Không thể coi là đúng vì nước nặng hơn nên chỉ cần cột thấp hơn để có cùng áp suất.",
-    "3": "Không thể coi là sai vì cột dầu $20\\ \\text{cm}$ so với cột nước $16\\ \\text{cm}$ tính từ cùng mặt phẳng chuẩn."
+    "3": "Không thể coi là đúng vì kết luận cùng độ cao chỉ áp dụng cho một chất lỏng; ở đây là hai chất lỏng khác nhau."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": false
     },
     {
+     "text": "Khi nổi yên, lực đẩy Archimedes tác dụng lên vật là $3\\ \\text{N}$.",
+     "answer": true
+    },
+    {
      "text": "Nếu nhúng chìm hẳn rồi thả tay thì vật chìm xuống đáy.",
      "answer": false
     },
     {
      "text": "Vật nổi trong nước.",
      "answer": true
-    },
-    {
-     "text": "Khi nổi yên, lực đẩy Archimedes tác dụng lên vật là $3\\ \\text{N}$.",
-     "answer": true
     }
    ],
    "explanation": "$D_v<D_n$ nên vật nổi; nổi yên thì $F_A=P$ và $V_{ch}=P/d_n$.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì $V_{ch}=\\dfrac{F_A}{d_n}=300\\ \\text{cm}^3$; chìm $400\\ \\text{cm}^3$ là chìm hẳn.",
-    "1": "Không thể coi là đúng vì khi chìm hẳn $F_A=4\\ \\text{N}$ lớn hơn $P=3\\ \\text{N}$, vật đi lên rồi nổi.",
-    "2": "Không thể coi là sai vì $D_v=\\dfrac{0{,}3}{400\\cdot10^{-6}}=750\\ \\text{kg/m}^3<1000$.",
-    "3": "Không thể coi là sai vì nổi yên thì $F_A=P=0{,}3\\cdot10=3\\ \\text{N}$."
+    "1": "Không thể coi là sai vì nổi yên thì $F_A=P=0{,}3\\cdot10=3\\ \\text{N}$.",
+    "2": "Không thể coi là đúng vì khi chìm hẳn $F_A=4\\ \\text{N}$ lớn hơn $P=3\\ \\text{N}$, vật đi lên rồi nổi.",
+    "3": "Không thể coi là sai vì $D_v=\\dfrac{0{,}3}{400\\cdot10^{-6}}=750\\ \\text{kg/m}^3<1000$."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Khối nhựa thể tích $1000\\ \\text{cm}^3$, trọng lượng $6\\ \\text{N}$, được buộc dây vào đáy bình để chìm hẳn trong nước. Lấy $D_n=1000\\ \\text{kg/m}^3$, $g=10\\ \\text{m/s}^2$.",
    "statements": [
     {
-     "text": "Lực căng của dây bằng lực đẩy Archimedes.",
+     "text": "Cắt dây thì khối chìm xuống đáy.",
      "answer": false
-    },
-    {
-     "text": "Lực đẩy Archimedes tác dụng lên khối là $10\\ \\text{N}$.",
-     "answer": true
     },
     {
      "text": "Lực căng của dây là $4\\ \\text{N}$.",
      "answer": true
     },
     {
-     "text": "Cắt dây thì khối chìm xuống đáy.",
+     "text": "Lực căng của dây bằng lực đẩy Archimedes.",
      "answer": false
+    },
+    {
+     "text": "Lực đẩy Archimedes tác dụng lên khối là $10\\ \\text{N}$.",
+     "answer": true
     }
    ],
    "explanation": "Dây buộc xuống đáy: $F_A=P+T$; cắt dây thì khối đi lên và nổi yên với $F_A=P$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì dây chỉ gánh phần chênh lệch $F_A-P$, còn trọng lượng $P$ cũng giữ khối xuống.",
-    "1": "Không thể coi là sai vì $F_A=10\\,000\\cdot1000\\cdot10^{-6}=10\\ \\text{N}$.",
-    "2": "Không thể coi là sai vì $F_A=P+T$ nên $T=10-6=4\\ \\text{N}$.",
-    "3": "Không thể coi là đúng vì hợp lực $F_A-P=4\\ \\text{N}$ hướng lên, khối đi lên rồi nổi yên."
+    "0": "Không thể coi là đúng vì hợp lực $F_A-P=4\\ \\text{N}$ hướng lên, khối đi lên rồi nổi yên.",
+    "1": "Không thể coi là sai vì $F_A=P+T$ nên $T=10-6=4\\ \\text{N}$.",
+    "2": "Không thể coi là đúng vì dây chỉ gánh phần chênh lệch $F_A-P$, còn trọng lượng $P$ cũng giữ khối xuống.",
+    "3": "Không thể coi là sai vì $F_A=10\\,000\\cdot1000\\cdot10^{-6}=10\\ \\text{N}$."
    }
   }
  ]

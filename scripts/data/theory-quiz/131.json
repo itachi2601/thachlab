@@ -347,11 +347,7 @@
    "question": "Một học sinh làm ba lần: (1) cầm hai quyển sách đứng yên $1$ phút, (2) cầm sách đi ngang $5\\ \\text{m}$, (3) nâng sách từ mặt bàn lên cao thêm $0{,}5\\ \\text{m}$. Cả ba lần tay đều mỏi. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Ở lần (1), lực tay không thực hiện công lên sách.",
-     "answer": true
-    },
-    {
-     "text": "Ở lần (2), lực tay thực hiện công lên sách vì sách dịch chuyển $5\\ \\text{m}$.",
+     "text": "Tay mỏi ở cả ba lần nên cả ba lần đều có công cơ học.",
      "answer": false
     },
     {
@@ -359,16 +355,20 @@
      "answer": true
     },
     {
-     "text": "Tay mỏi ở cả ba lần nên cả ba lần đều có công cơ học.",
+     "text": "Ở lần (2), lực tay thực hiện công lên sách vì sách dịch chuyển $5\\ \\text{m}$.",
      "answer": false
+    },
+    {
+     "text": "Ở lần (1), lực tay không thực hiện công lên sách.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng: $s=0$. b) sai: dịch chuyển vuông góc với lực. c) đúng: sách đi lên theo hướng lực. d) sai: mỏi tay không quyết định có công.",
+   "explanation": "a) sai: mỏi tay không quyết định có công. b) đúng: sách đi lên theo hướng lực. c) sai: dịch chuyển vuông góc với lực. d) đúng: $s=0$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì sách đứng yên nên không có dịch chuyển.",
-    "1": "Không thể coi là đúng vì lực tay hướng lên còn sách đi ngang, dịch chuyển vuông góc với lực nên công bằng 0.",
-    "2": "Không thể coi là sai vì sách đi lên theo hướng lực tay.",
-    "3": "Không thể coi là đúng vì mỏi tay không phải điều kiện của công cơ học; cần dịch chuyển theo hướng lực."
+    "0": "Không thể coi là đúng vì mỏi tay không phải điều kiện của công cơ học; cần dịch chuyển theo hướng lực.",
+    "1": "Không thể coi là sai vì sách đi lên theo hướng lực tay.",
+    "2": "Không thể coi là đúng vì lực tay hướng lên còn sách đi ngang, dịch chuyển vuông góc với lực nên công bằng 0.",
+    "3": "Không thể coi là sai vì sách đứng yên nên không có dịch chuyển."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Minh và Nam mỗi bạn xách một bao gạo $10\\ \\text{kg}$ lên cao $6\\ \\text{m}$. Minh mất $20\\ \\text{s}$, Nam mất $60\\ \\text{s}$. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Nam thực hiện công nhiều hơn vì mất nhiều thời gian hơn.",
+     "text": "Công suất của hai bạn bằng nhau vì công bằng nhau.",
      "answer": false
     },
     {
-     "text": "Công mà hai bạn thực hiện lên bao gạo bằng nhau.",
-     "answer": true
+     "text": "Nam thực hiện công nhiều hơn vì mất nhiều thời gian hơn.",
+     "answer": false
     },
     {
      "text": "Minh làm việc nhanh hơn Nam.",
      "answer": true
     },
     {
-     "text": "Công suất của hai bạn bằng nhau vì công bằng nhau.",
-     "answer": false
+     "text": "Công mà hai bạn thực hiện lên bao gạo bằng nhau.",
+     "answer": true
     }
    ],
-   "explanation": "a) sai: công không phụ thuộc thời gian. b) đúng: $600\\ \\text{J}$ mỗi bạn. c) đúng: $30\\ \\text{W}$ so với $10\\ \\text{W}$. d) sai: công suất khác nhau.",
+   "explanation": "a) sai: công suất khác nhau. b) sai: công không phụ thuộc thời gian. c) đúng: $30\\ \\text{W}$ so với $10\\ \\text{W}$. d) đúng: $600\\ \\text{J}$ mỗi bạn.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì công chỉ phụ thuộc lực và quãng đường theo hướng lực, không phụ thuộc thời gian.",
-    "1": "Không thể coi là sai vì cùng trọng lượng và cùng độ cao nên $A=100\\cdot6=600\\ \\text{J}$ cho mỗi bạn.",
+    "0": "Không thể coi là đúng vì công suất còn phụ thuộc thời gian: Minh $30\\ \\text{W}$, Nam $10\\ \\text{W}$.",
+    "1": "Không thể coi là đúng vì công chỉ phụ thuộc lực và quãng đường theo hướng lực, không phụ thuộc thời gian.",
     "2": "Không thể coi là sai vì cùng công mà Minh mất ít thời gian hơn, công suất lớn hơn.",
-    "3": "Không thể coi là đúng vì công suất còn phụ thuộc thời gian: Minh $30\\ \\text{W}$, Nam $10\\ \\text{W}$."
+    "3": "Không thể coi là sai vì cùng trọng lượng và cùng độ cao nên $A=100\\cdot6=600\\ \\text{J}$ cho mỗi bạn."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Máy bơm X có công suất $2\\ \\text{kW}$, máy bơm Y có công suất $1\\ \\text{kW}$. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Trong cùng thời gian, máy X thực hiện công gấp đôi máy Y.",
+     "text": "Để thực hiện cùng một công, máy X cần thời gian bằng một nửa máy Y.",
      "answer": true
     },
     {
-     "text": "Để thực hiện cùng một công, máy X cần thời gian bằng một nửa máy Y.",
+     "text": "Máy X chạy càng lâu thì công suất của máy càng tăng.",
+     "answer": false
+    },
+    {
+     "text": "Trong cùng thời gian, máy X thực hiện công gấp đôi máy Y.",
      "answer": true
     },
     {
      "text": "Máy X lúc nào cũng thực hiện tổng công nhiều hơn máy Y.",
      "answer": false
-    },
-    {
-     "text": "Máy X chạy càng lâu thì công suất của máy càng tăng.",
-     "answer": false
     }
    ],
-   "explanation": "a) đúng. b) đúng. c) sai: tổng công còn phụ thuộc thời gian chạy. d) sai: công suất không đổi theo thời gian chạy.",
+   "explanation": "a) đúng. b) sai: công suất không đổi theo thời gian chạy. c) đúng. d) sai: tổng công còn phụ thuộc thời gian chạy.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì $A=P\\,t$ với cùng $t$ nên công tỉ lệ với công suất.",
-    "1": "Không thể coi là sai vì $t=\\dfrac{A}{P}$ nên $P$ gấp đôi thì $t$ giảm một nửa.",
-    "2": "Không thể coi là đúng vì máy Y chạy lâu hơn có thể thực hiện tổng công nhiều hơn máy X.",
-    "3": "Không thể coi là đúng vì chạy lâu làm công tăng, còn công suất của máy giữ nguyên."
+    "0": "Không thể coi là sai vì $t=\\dfrac{A}{P}$ nên $P$ gấp đôi thì $t$ giảm một nửa.",
+    "1": "Không thể coi là đúng vì chạy lâu làm công tăng, còn công suất của máy giữ nguyên.",
+    "2": "Không thể coi là sai vì $A=P\\,t$ với cùng $t$ nên công tỉ lệ với công suất.",
+    "3": "Không thể coi là đúng vì máy Y chạy lâu hơn có thể thực hiện tổng công nhiều hơn máy X."
    }
   },
   {
@@ -452,10 +452,6 @@
    "question": "Kéo đều khối gỗ bằng lực kế chỉ $1{,}5\\ \\text{N}$ theo phương ngang, khối gỗ dịch chuyển $0{,}50\\ \\text{m}$ theo hướng kéo. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Công của lực kéo là $0{,}75\\ \\text{J}$.",
-     "answer": true
-    },
-    {
      "text": "Lực gấp đôi và quãng đường giảm một nửa thì công tăng gấp đôi.",
      "answer": false
     },
@@ -466,14 +462,18 @@
     {
      "text": "Kéo $1{,}00\\ \\text{m}$ với cùng lực thì công gấp đôi.",
      "answer": true
+    },
+    {
+     "text": "Công của lực kéo là $0{,}75\\ \\text{J}$.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng: $1{,}5\\cdot0{,}50=0{,}75\\ \\text{J}$. b) sai: công không đổi. c) sai: công là tích chứ không phải tổng. d) đúng.",
+   "explanation": "a) sai: công không đổi. b) sai: công là tích chứ không phải tổng. c) đúng. d) đúng: $1{,}5\\cdot0{,}50=0{,}75\\ \\text{J}$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì $A=F\\,s=1{,}5\\cdot0{,}50=0{,}75\\ \\text{J}$.",
-    "1": "Không thể coi là đúng vì hai thay đổi bù nhau nên công không đổi.",
-    "2": "Không thể coi là đúng vì công là tích $F\\,s$, không phải tổng; không cộng được newton với mét.",
-    "3": "Không thể coi là sai vì $A=F\\,s$ nên $s$ gấp đôi thì $A$ gấp đôi."
+    "0": "Không thể coi là đúng vì hai thay đổi bù nhau nên công không đổi.",
+    "1": "Không thể coi là đúng vì công là tích $F\\,s$, không phải tổng; không cộng được newton với mét.",
+    "2": "Không thể coi là sai vì $A=F\\,s$ nên $s$ gấp đôi thì $A$ gấp đôi.",
+    "3": "Không thể coi là sai vì $A=F\\,s=1{,}5\\cdot0{,}50=0{,}75\\ \\text{J}$."
    }
   },
   {
@@ -487,7 +487,7 @@
    "question": "Cần cẩu nâng đều khối thép $0{,}8$ tấn lên cao $10\\ \\text{m}$ trong $20\\ \\text{s}$. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Công suất của cần cẩu là $80\\ \\text{kW}$.",
+     "text": "Nâng cùng khối thép trong $40\\ \\text{s}$ thì công suất lớn hơn $4\\ \\text{kW}$.",
      "answer": false
     },
     {
@@ -495,20 +495,20 @@
      "answer": true
     },
     {
-     "text": "Nâng cùng khối thép trong $40\\ \\text{s}$ thì công suất lớn hơn $4\\ \\text{kW}$.",
-     "answer": false
-    },
-    {
      "text": "Công của lực nâng là $80\\ \\text{kJ}$.",
      "answer": true
+    },
+    {
+     "text": "Công suất của cần cẩu là $80\\ \\text{kW}$.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai: $P=\\dfrac{A}{t}=4\\ \\text{kW}$. b) đúng. c) sai: thời gian dài hơn thì công suất nhỏ hơn. d) đúng.",
+   "explanation": "a) sai: thời gian dài hơn thì công suất nhỏ hơn. b) đúng. c) đúng. d) sai: $P=\\dfrac{A}{t}=4\\ \\text{kW}$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì $80\\ \\text{kW}$ nhầm công với công suất; $P=\\dfrac{80\\,000}{20}=4\\,000\\ \\text{W}=4\\ \\text{kW}$.",
+    "0": "Không thể coi là đúng vì cùng công mà thời gian dài hơn thì công suất nhỏ hơn, còn $2\\ \\text{kW}$.",
     "1": "Không thể coi là sai vì nâng đều nên lực nâng bằng trọng lượng $10\\cdot800=8\\,000\\ \\text{N}$.",
-    "2": "Không thể coi là đúng vì cùng công mà thời gian dài hơn thì công suất nhỏ hơn, còn $2\\ \\text{kW}$.",
-    "3": "Không thể coi là sai vì $A=8\\,000\\cdot10=80\\,000\\ \\text{J}=80\\ \\text{kJ}$."
+    "2": "Không thể coi là sai vì $A=8\\,000\\cdot10=80\\,000\\ \\text{J}=80\\ \\text{kJ}$.",
+    "3": "Không thể coi là đúng vì $80\\ \\text{kW}$ nhầm công với công suất; $P=\\dfrac{80\\,000}{20}=4\\,000\\ \\text{W}=4\\ \\text{kW}$."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Ô tô chạy đều và giữ công suất không đổi, công suất liên hệ với lực kéo và tốc độ bởi $P=F\\,v$. Xét các nhận xét sau:",
    "statements": [
     {
-     "text": "Lên dốc cần lực kéo gấp đôi thì tốc độ cũng gấp đôi.",
-     "answer": false
+     "text": "Công suất $30\\ \\text{kW}$, lực kéo $1\\,500\\ \\text{N}$ thì tốc độ là $20\\ \\text{m/s}$.",
+     "answer": true
     },
     {
      "text": "Tốc độ $72\\ \\text{km/h}$ chính là $72\\ \\text{m/s}$.",
      "answer": false
     },
     {
-     "text": "Lực kéo càng lớn thì tốc độ càng nhỏ.",
-     "answer": true
+     "text": "Lên dốc cần lực kéo gấp đôi thì tốc độ cũng gấp đôi.",
+     "answer": false
     },
     {
-     "text": "Công suất $30\\ \\text{kW}$, lực kéo $1\\,500\\ \\text{N}$ thì tốc độ là $20\\ \\text{m/s}$.",
+     "text": "Lực kéo càng lớn thì tốc độ càng nhỏ.",
      "answer": true
     }
    ],
-   "explanation": "a) sai: $F$ gấp đôi thì $v$ giảm một nửa. b) sai: chia $3{,}6$. c) đúng. d) đúng.",
+   "explanation": "a) đúng. b) sai: chia $3{,}6$. c) sai: $F$ gấp đôi thì $v$ giảm một nửa. d) đúng.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì $F$ gấp đôi thì $v$ giảm một nửa vì $P$ không đổi.",
+    "0": "Không thể coi là sai vì $v=\\dfrac{P}{F}=\\dfrac{30\\,000}{1\\,500}=20\\ \\text{m/s}$.",
     "1": "Không thể coi là đúng vì đổi km/h sang m/s phải chia cho $3{,}6$, nên $72\\ \\text{km/h}=20\\ \\text{m/s}$.",
-    "2": "Không thể coi là sai vì $P$ không đổi nên $F$ và $v$ tỉ lệ nghịch.",
-    "3": "Không thể coi là sai vì $v=\\dfrac{P}{F}=\\dfrac{30\\,000}{1\\,500}=20\\ \\text{m/s}$."
+    "2": "Không thể coi là đúng vì $F$ gấp đôi thì $v$ giảm một nửa vì $P$ không đổi.",
+    "3": "Không thể coi là sai vì $P$ không đổi nên $F$ và $v$ tỉ lệ nghịch."
    }
   }
  ]

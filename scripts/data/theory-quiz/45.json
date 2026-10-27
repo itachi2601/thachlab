@@ -390,20 +390,20 @@
      "answer": false
     },
     {
-     "text": "Pin có điện trở trong lớn hơn thì đường thẳng dốc hơn.",
-     "answer": true
-    },
-    {
      "text": "Giao điểm của đường thẳng với trục $I$ (ứng với $U = 0$) cho suất điện động $\\mathcal{E}$.",
      "answer": false
+    },
+    {
+     "text": "Pin có điện trở trong lớn hơn thì đường thẳng dốc hơn.",
+     "answer": true
     }
    ],
    "explanation": "Từ $U = \\mathcal{E} - Ir$: khi $I = 0$ thì $U = \\mathcal{E}$, hệ số góc là $-r$. Vì vậy $r$ càng lớn đường càng dốc.",
    "distractorNotes": {
     "0": "Thay $I = 0$ vào $U = \\mathcal{E} - Ir$ được ngay $U = \\mathcal{E}$, nên ý này không thể sai.",
     "1": "Đường $U$–$I$ dốc xuống nên hệ số góc âm, bằng $-r$ chứ không phải $+r$.",
-    "2": "Độ dốc có độ lớn bằng $r$, nên $r$ lớn thì đường dốc hơn là đúng.",
-    "3": "Tại $U = 0$ thì $I = \\mathcal{E}/r$ là một cường độ dòng, không phải suất điện động."
+    "2": "Tại $U = 0$ thì $I = \\mathcal{E}/r$ là một cường độ dòng, không phải suất điện động.",
+    "3": "Độ dốc có độ lớn bằng $r$, nên $r$ lớn thì đường dốc hơn là đúng."
    }
   },
   {
@@ -417,10 +417,6 @@
    "question": "Mạch đo gồm pin nối tiếp khoá K, ampe kế, điện trở bảo vệ $R_0$ và biến trở $R_x$; vôn kế kẹp sát hai cực M, N của pin. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Vôn kế mắc song song với hai cực pin để đo $U$ giữa M và N.",
-     "answer": true
-    },
-    {
      "text": "Ampe kế mắc nối tiếp để đo cường độ dòng trong mạch.",
      "answer": true
     },
@@ -431,14 +427,18 @@
     {
      "text": "Điện trở tiếp xúc của dây nối giữa pin và chỗ kẹp vôn kế làm $r$ đo được lớn hơn giá trị thật.",
      "answer": true
+    },
+    {
+     "text": "Vôn kế mắc song song với hai cực pin để đo $U$ giữa M và N.",
+     "answer": true
     }
    ],
    "explanation": "Ampe kế không nằm giữa M và N nên điện trở của nó không cộng vào $r$. Ngược lại, dây và chuôi cắm giữa pin và chỗ kẹp vôn kế cộng thêm vào $r$ đo được.",
    "distractorNotes": {
-    "0": "Vôn kế điện trở rất lớn phải mắc song song mới đo được $U$ hai cực mà không chặn dòng.",
-    "1": "Ampe kế phải có dòng chạy qua mới đo được, nên bắt buộc mắc nối tiếp.",
-    "2": "Ampe kế nằm ngoài đoạn M–N mà vôn kế kẹp, nên điện trở của nó thuộc mạch ngoài, không cộng vào $r$.",
-    "3": "Điện trở nằm giữa pin và chỗ kẹp vôn kế gây sụt thế tính chung với $r$, nên làm $r$ đo ra lớn hơn."
+    "0": "Ampe kế phải có dòng chạy qua mới đo được, nên bắt buộc mắc nối tiếp.",
+    "1": "Ampe kế nằm ngoài đoạn M–N mà vôn kế kẹp, nên điện trở của nó thuộc mạch ngoài, không cộng vào $r$.",
+    "2": "Điện trở nằm giữa pin và chỗ kẹp vôn kế gây sụt thế tính chung với $r$, nên làm $r$ đo ra lớn hơn.",
+    "3": "Vôn kế điện trở rất lớn phải mắc song song mới đo được $U$ hai cực mà không chặn dòng."
    }
   },
   {
@@ -452,11 +452,11 @@
    "question": "Một bạn đã biết suất điện động $\\mathcal{E}$ của pin và đo được một cặp số $(I, U)$ ứng với một giá trị biến trở $R_x$, mạch ngoài gồm $R_0$ nối tiếp $R_x$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Thương $U/I$ bằng điện trở mạch ngoài $R_0 + R_x$.",
-     "answer": true
+     "text": "Thương $\\mathcal{E}/I$ bằng điện trở trong $r$ của pin.",
+     "answer": false
     },
     {
-     "text": "Thương $\\mathcal{E}/I$ bằng điện trở trong $r$ của pin.",
+     "text": "Thương $I/U$ cho điện trở trong $r$ của pin.",
      "answer": false
     },
     {
@@ -464,16 +464,16 @@
      "answer": true
     },
     {
-     "text": "Thương $I/U$ cho điện trở trong $r$ của pin.",
-     "answer": false
+     "text": "Thương $U/I$ bằng điện trở mạch ngoài $R_0 + R_x$.",
+     "answer": true
     }
    ],
    "explanation": "$U = I(R_0 + R_x)$ và $\\mathcal{E} = I(R_0 + R_x + r)$. Vì vậy $U/I$ là điện trở mạch ngoài, $\\mathcal{E}/I$ là điện trở toàn mạch, còn $(\\mathcal{E} - U)/I = r$.",
    "distractorNotes": {
-    "0": "$U$ là hiệu điện thế hai đầu mạch ngoài nên $U/I$ đúng bằng $R_0 + R_x$.",
-    "1": "$\\mathcal{E}/I$ là điện trở toàn mạch $R_0 + R_x + r$, chưa tách riêng được $r$.",
+    "0": "$\\mathcal{E}/I$ là điện trở toàn mạch $R_0 + R_x + r$, chưa tách riêng được $r$.",
+    "1": "$I/U$ có đơn vị nghịch đảo ôm và không có ý nghĩa điện trở trong ở đây.",
     "2": "Từ $U = \\mathcal{E} - Ir$ biến đổi một bước được đúng $r = (\\mathcal{E} - U)/I$.",
-    "3": "$I/U$ có đơn vị nghịch đảo ôm và không có ý nghĩa điện trở trong ở đây."
+    "3": "$U$ là hiệu điện thế hai đầu mạch ngoài nên $U/I$ đúng bằng $R_0 + R_x$."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": true
     },
     {
+     "text": "Cần nhiều cặp $(I, U)$ vì mỗi số đo đều có sai số, đường thẳng đi gần các điểm giúp bù trừ.",
+     "answer": true
+    },
+    {
      "text": "Nên đóng khoá K thật lâu để số đo ổn định rồi mới đọc.",
      "answer": false
     },
     {
      "text": "Không được nối thẳng hai cực pin bằng dây hay ampe kế vì gây đoản mạch.",
      "answer": true
-    },
-    {
-     "text": "Cần nhiều cặp $(I, U)$ vì mỗi số đo đều có sai số, đường thẳng đi gần các điểm giúp bù trừ.",
-     "answer": true
     }
    ],
    "explanation": "Giảm $R_x$ làm $I$ tăng nên $U = \\mathcal{E} - Ir$ giảm. Đóng K lâu làm pin nóng, $\\mathcal{E}$ và $r$ trôi, nên phải đọc nhanh và ngắt ngay.",
    "distractorNotes": {
     "0": "Điện trở mạch ngoài giảm thì dòng tăng, độ giảm thế $Ir$ tăng nên $U$ phải giảm.",
-    "1": "Đóng K lâu làm pin nóng, $\\mathcal{E}$ và $r$ trôi giữa các lần đo, số liệu kém tin cậy.",
-    "2": "Nối tắt hai cực qua vật có điện trở rất nhỏ cho dòng rất lớn, pin nóng và hỏng đồng hồ.",
-    "3": "Mỗi số đọc đều lệch, đường thẳng đi gần nhiều điểm mới bù trừ được độ lệch đó."
+    "1": "Mỗi số đọc đều lệch, đường thẳng đi gần nhiều điểm mới bù trừ được độ lệch đó.",
+    "2": "Đóng K lâu làm pin nóng, $\\mathcal{E}$ và $r$ trôi giữa các lần đo, số liệu kém tin cậy.",
+    "3": "Nối tắt hai cực qua vật có điện trở rất nhỏ cho dòng rất lớn, pin nóng và hỏng đồng hồ."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Đo một pin cũ và một pin mới cùng loại trong cùng mạch. Hai pin có $\\mathcal{E}$ gần bằng nhau, nhưng điện trở trong của pin cũ lớn gấp khoảng 3 lần pin mới. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi cùng cấp một dòng $I$, độ giảm thế $Ir$ trong pin cũ lớn gấp khoảng 3 lần trong pin mới.",
-     "answer": true
+     "text": "Pin cũ làm xe chạy yếu chủ yếu vì suất điện động giảm mạnh, còn $r$ không đổi.",
+     "answer": false
     },
     {
      "text": "Đường $U$–$I$ của pin cũ thoải hơn đường của pin mới.",
      "answer": false
     },
     {
-     "text": "Khi cùng cấp một dòng $I$, hiệu điện thế hai cực pin cũ nhỏ hơn pin mới.",
+     "text": "Khi cùng cấp một dòng $I$, độ giảm thế $Ir$ trong pin cũ lớn gấp khoảng 3 lần trong pin mới.",
      "answer": true
     },
     {
-     "text": "Pin cũ làm xe chạy yếu chủ yếu vì suất điện động giảm mạnh, còn $r$ không đổi.",
-     "answer": false
+     "text": "Khi cùng cấp một dòng $I$, hiệu điện thế hai cực pin cũ nhỏ hơn pin mới.",
+     "answer": true
     }
    ],
    "explanation": "Cùng $I$ thì $Ir$ tỉ lệ với $r$, nên pin cũ sụt thế nhiều hơn và $U = \\mathcal{E} - Ir$ nhỏ hơn. Độ dốc bằng $r$ nên đường pin cũ dốc hơn.",
    "distractorNotes": {
-    "0": "Với cùng $I$, $Ir$ tỉ lệ thuận với $r$ nên gấp khoảng 3 lần là đúng.",
+    "0": "Hai pin có $\\mathcal{E}$ gần bằng nhau, khác biệt chính nằm ở $r$ của pin cũ tăng lên.",
     "1": "Độ dốc đồ thị có độ lớn bằng $r$, nên $r$ lớn hơn thì đường dốc hơn chứ không thoải hơn.",
-    "2": "$\\mathcal{E}$ gần nhau nhưng pin cũ trừ đi $Ir$ lớn hơn, nên $U$ nhỏ hơn là đúng.",
-    "3": "Hai pin có $\\mathcal{E}$ gần bằng nhau, khác biệt chính nằm ở $r$ của pin cũ tăng lên."
+    "2": "Với cùng $I$, $Ir$ tỉ lệ thuận với $r$ nên gấp khoảng 3 lần là đúng.",
+    "3": "$\\mathcal{E}$ gần nhau nhưng pin cũ trừ đi $Ir$ lớn hơn, nên $U$ nhỏ hơn là đúng."
    }
   }
  ]

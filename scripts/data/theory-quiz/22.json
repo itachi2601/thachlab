@@ -329,28 +329,28 @@
    "question": "Một con lắc lò xo nằm ngang dao động điều hoà với biên độ $A$. Xét nửa chu kì vật đi từ biên dương $+A$ qua vị trí cân bằng O rồi tới biên âm $-A$.",
    "statements": [
     {
-     "text": "Trên quãng từ $+A$ về O, vectơ vận tốc và vectơ gia tốc cùng chiều, vật chuyển động nhanh dần.",
-     "answer": true
+     "text": "Tại biên $+A$, vận tốc và gia tốc của vật đều bằng 0.",
+     "answer": false
     },
     {
-     "text": "Tại vị trí cân bằng O, gia tốc của vật có độ lớn cực đại.",
-     "answer": false
+     "text": "Trên quãng từ $+A$ về O, vectơ vận tốc và vectơ gia tốc cùng chiều, vật chuyển động nhanh dần.",
+     "answer": true
     },
     {
      "text": "Trên quãng từ O ra $-A$, vật chuyển động chậm dần.",
      "answer": true
     },
     {
-     "text": "Tại biên $+A$, vận tốc và gia tốc của vật đều bằng 0.",
+     "text": "Tại vị trí cân bằng O, gia tốc của vật có độ lớn cực đại.",
      "answer": false
     }
    ],
    "explanation": "Về O thì $\\vec v$, $\\vec a$ cùng chiều (nhanh dần), ra biên thì ngược chiều (chậm dần). Tại O $a=0$; tại biên $v=0$ còn $|a|=A\\omega^{2}$ lớn nhất.",
    "distractorNotes": {
-    "0": "Gia tốc luôn chĩa về O nên cùng chiều chuyển động khi vật về O, vật nhanh dần là đúng.",
-    "1": "Tại O li độ bằng 0 nên $a=-\\omega^{2}x=0$; độ lớn gia tốc cực đại nằm ở biên.",
+    "0": "Tại biên vận tốc bằng 0 nhưng $|x|=A$ nên gia tốc có độ lớn lớn nhất, không bằng 0.",
+    "1": "Gia tốc luôn chĩa về O nên cùng chiều chuyển động khi vật về O, vật nhanh dần là đúng.",
     "2": "Ra biên thì vận tốc và gia tốc ngược chiều nên tốc độ giảm, chậm dần là đúng.",
-    "3": "Tại biên vận tốc bằng 0 nhưng $|x|=A$ nên gia tốc có độ lớn lớn nhất, không bằng 0."
+    "3": "Tại O li độ bằng 0 nên $a=-\\omega^{2}x=0$; độ lớn gia tốc cực đại nằm ở biên."
    }
   },
   {
@@ -364,6 +364,10 @@
    "question": "Một vật dao động điều hoà theo phương trình $x=A\\cos(\\omega t)$, chu kì $T$. Vẽ đồ thị li độ, vận tốc, gia tốc theo thời gian trên cùng trục thời gian.",
    "statements": [
     {
+     "text": "Tại $t=T/4$, vật qua vị trí cân bằng với vận tốc $v=+A\\omega$.",
+     "answer": false
+    },
+    {
      "text": "Vận tốc và li độ dao động vuông pha.",
      "answer": true
     },
@@ -374,18 +378,14 @@
     {
      "text": "Gia tốc và li độ dao động cùng pha.",
      "answer": false
-    },
-    {
-     "text": "Tại $t=T/4$, vật qua vị trí cân bằng với vận tốc $v=+A\\omega$.",
-     "answer": false
     }
    ],
    "explanation": "$v$ sớm $x$ góc $\\pi/2$, $a$ sớm $v$ góc $\\pi/2$, $a$ ngược pha $x$. Tại $t=T/4$, $v=-A\\omega\\sin(\\pi/2)=-A\\omega$.",
    "distractorNotes": {
-    "0": "Vận tốc sớm pha $\\pi/2$ so với li độ, đúng nghĩa vuông pha.",
-    "1": "Gia tốc là đạo hàm của vận tốc nên sớm thêm $\\pi/2$, phát biểu này đúng.",
-    "2": "Dấu trừ trong $a=-\\omega^{2}x$ cho thấy gia tốc ngược pha, không cùng pha với li độ.",
-    "3": "Thế $t=T/4$ vào $v=-A\\omega\\sin(\\omega t)$ được $-A\\omega$; vật qua O theo chiều âm."
+    "0": "Thế $t=T/4$ vào $v=-A\\omega\\sin(\\omega t)$ được $-A\\omega$; vật qua O theo chiều âm.",
+    "1": "Vận tốc sớm pha $\\pi/2$ so với li độ, đúng nghĩa vuông pha.",
+    "2": "Gia tốc là đạo hàm của vận tốc nên sớm thêm $\\pi/2$, phát biểu này đúng.",
+    "3": "Dấu trừ trong $a=-\\omega^{2}x$ cho thấy gia tốc ngược pha, không cùng pha với li độ."
    }
   },
   {
@@ -399,28 +399,28 @@
    "question": "Một vật dao động điều hoà với biên độ $A$, tần số góc $\\omega$. Tại một thời điểm, vật đi qua vị trí cân bằng theo chiều âm.",
    "statements": [
     {
-     "text": "Vận tốc của vật lúc đó là $v=-A\\omega$.",
-     "answer": true
+     "text": "Gia tốc của vật lúc đó đạt giá trị cực đại.",
+     "answer": false
     },
     {
      "text": "Tốc độ của vật lúc đó bằng $A\\omega$.",
      "answer": true
     },
     {
-     "text": "Gia tốc của vật lúc đó đạt giá trị cực đại.",
+     "text": "Vật đổi chiều chuyển động tại vị trí này.",
      "answer": false
     },
     {
-     "text": "Vật đổi chiều chuyển động tại vị trí này.",
-     "answer": false
+     "text": "Vận tốc của vật lúc đó là $v=-A\\omega$.",
+     "answer": true
     }
    ],
    "explanation": "Qua O theo chiều âm thì $v=-A\\omega$, tốc độ $|v|=A\\omega$. Tại O $a=0$; vật đổi chiều ở hai biên chứ không ở O.",
    "distractorNotes": {
-    "0": "Đi theo chiều âm thì vận tốc mang dấu âm, độ lớn cực đại $A\\omega$ khi qua O.",
+    "0": "Tại O li độ bằng 0 nên gia tốc bằng 0, không thể cực đại.",
     "1": "Tốc độ là độ lớn vận tốc, không âm, nên tại O bằng $A\\omega$ dù đi chiều nào.",
-    "2": "Tại O li độ bằng 0 nên gia tốc bằng 0, không thể cực đại.",
-    "3": "Vật đổi chiều nơi vận tốc bằng 0, tức ở biên; tại O tốc độ đang lớn nhất."
+    "2": "Vật đổi chiều nơi vận tốc bằng 0, tức ở biên; tại O tốc độ đang lớn nhất.",
+    "3": "Đi theo chiều âm thì vận tốc mang dấu âm, độ lớn cực đại $A\\omega$ khi qua O."
    }
   },
   {
@@ -438,7 +438,7 @@
      "answer": true
     },
     {
-     "text": "Đồ thị biểu diễn $a$ theo $x$ là đoạn thẳng qua gốc toạ độ có hệ số góc dương.",
+     "text": "Tại li độ $x=A/2$, tốc độ của vật bằng $A\\omega/2$.",
      "answer": false
     },
     {
@@ -446,16 +446,16 @@
      "answer": true
     },
     {
-     "text": "Tại li độ $x=A/2$, tốc độ của vật bằng $A\\omega/2$.",
+     "text": "Đồ thị biểu diễn $a$ theo $x$ là đoạn thẳng qua gốc toạ độ có hệ số góc dương.",
      "answer": false
     }
    ],
    "explanation": "$x,v$ và $v,a$ vuông pha nên đồ thị là elip; $a=-\\omega^{2}x$ là đoạn thẳng qua gốc dốc xuống. Thế $x=A/2$ vào $(x/A)^{2}+(v/\\omega A)^{2}=1$ được $|v|=A\\omega\\sqrt{3}/2$.",
    "distractorNotes": {
     "0": "$x$ và $v$ vuông pha nên thoả $(x/A)^{2}+(v/\\omega A)^{2}=1$, đúng phương trình elip.",
-    "1": "Hệ số góc của $a=-\\omega^{2}x$ là $-\\omega^{2}$, âm, nên đoạn thẳng dốc xuống.",
+    "1": "Tốc độ không giảm tuyến tính theo li độ; hệ thức vuông pha cho $|v|=A\\omega\\sqrt{3}/2$.",
     "2": "$v$ và $a$ vuông pha nên thoả hệ thức tổng hai bình phương bằng 1, đồ thị là elip.",
-    "3": "Tốc độ không giảm tuyến tính theo li độ; hệ thức vuông pha cho $|v|=A\\omega\\sqrt{3}/2$."
+    "3": "Hệ số góc của $a=-\\omega^{2}x$ là $-\\omega^{2}$, âm, nên đoạn thẳng dốc xuống."
    }
   },
   {
@@ -469,8 +469,8 @@
    "question": "Một vật dao động điều hoà với chu kì $T$, biên độ $A$. Xét thời gian ngắn nhất để vật đi giữa các vị trí đặc biệt.",
    "statements": [
     {
-     "text": "Từ vị trí cân bằng đến li độ $A\\sqrt{2}/2$ mất $T/8$.",
-     "answer": true
+     "text": "Từ li độ $-A/2$ đến li độ $A/2$ (đi qua vị trí cân bằng) mất $T/12$.",
+     "answer": false
     },
     {
      "text": "Từ vị trí cân bằng đến li độ $A\\sqrt{3}/2$ mất $T/6$.",
@@ -481,16 +481,16 @@
      "answer": false
     },
     {
-     "text": "Từ li độ $-A/2$ đến li độ $A/2$ (đi qua vị trí cân bằng) mất $T/12$.",
-     "answer": false
+     "text": "Từ vị trí cân bằng đến li độ $A\\sqrt{2}/2$ mất $T/8$.",
+     "answer": true
     }
    ],
    "explanation": "Từ O tới $A/2$, $A\\sqrt{2}/2$, $A\\sqrt{3}/2$, $A$ lần lượt mất $T/12$, $T/8$, $T/6$, $T/4$; từ $-A/2$ tới $A/2$ mất $2\\times T/12=T/6$.",
    "distractorNotes": {
-    "0": "Góc quét từ O đến $A\\sqrt{2}/2$ là $\\pi/4$, tức $1/8$ vòng, nên $T/8$ là đúng.",
+    "0": "Quãng này gồm hai lần đoạn O–$A/2$, mỗi lần $T/12$, nên tổng là $T/6$.",
     "1": "Góc quét từ O đến $A\\sqrt{3}/2$ là $\\pi/3$, tức $1/6$ vòng, nên $T/6$ là đúng.",
     "2": "$T/2$ là thời gian đi từ biên này sang biên kia; từ O ra biên chỉ mất $T/4$.",
-    "3": "Quãng này gồm hai lần đoạn O–$A/2$, mỗi lần $T/12$, nên tổng là $T/6$."
+    "3": "Góc quét từ O đến $A\\sqrt{2}/2$ là $\\pi/4$, tức $1/8$ vòng, nên $T/8$ là đúng."
    }
   },
   {
@@ -504,28 +504,28 @@
    "question": "Một vật dao động điều hoà với biên độ $A$, tần số $f$ và tần số góc $\\omega=2\\pi f$. Xét tốc độ cực đại và độ lớn gia tốc cực đại của vật.",
    "statements": [
     {
-     "text": "Tốc độ cực đại của vật là $|v|_{max}=A\\omega$.",
-     "answer": true
-    },
-    {
-     "text": "Độ lớn gia tốc cực đại của vật là $|a|_{max}=A\\omega^{2}$.",
-     "answer": true
+     "text": "Giữ nguyên $\\omega$, tăng biên độ lên gấp đôi thì $|a|_{max}$ tăng 4 lần.",
+     "answer": false
     },
     {
      "text": "Tính theo tần số, tốc độ cực đại là $|v|_{max}=Af$.",
      "answer": false
     },
     {
-     "text": "Giữ nguyên $\\omega$, tăng biên độ lên gấp đôi thì $|a|_{max}$ tăng 4 lần.",
-     "answer": false
+     "text": "Tốc độ cực đại của vật là $|v|_{max}=A\\omega$.",
+     "answer": true
+    },
+    {
+     "text": "Độ lớn gia tốc cực đại của vật là $|a|_{max}=A\\omega^{2}$.",
+     "answer": true
     }
    ],
    "explanation": "$|v|_{max}=A\\omega=2\\pi fA$ và $|a|_{max}=A\\omega^{2}$ tỉ lệ bậc nhất với $A$, nên $A$ gấp đôi thì $|a|_{max}$ chỉ gấp đôi.",
    "distractorNotes": {
-    "0": "Biên độ của $v=-A\\omega\\sin(\\omega t+\\varphi)$ là $A\\omega$, đạt khi vật qua O.",
-    "1": "Biên độ của $a=-A\\omega^{2}\\cos(\\omega t+\\varphi)$ là $A\\omega^{2}$, đạt tại hai biên.",
-    "2": "Quên đổi $\\omega=2\\pi f$ trước khi nhân với $A$; đúng phải là $2\\pi fA$.",
-    "3": "$|a|_{max}$ tỉ lệ bậc nhất với $A$, chỉ bình phương theo $\\omega$, nên chỉ tăng 2 lần."
+    "0": "$|a|_{max}$ tỉ lệ bậc nhất với $A$, chỉ bình phương theo $\\omega$, nên chỉ tăng 2 lần.",
+    "1": "Quên đổi $\\omega=2\\pi f$ trước khi nhân với $A$; đúng phải là $2\\pi fA$.",
+    "2": "Biên độ của $v=-A\\omega\\sin(\\omega t+\\varphi)$ là $A\\omega$, đạt khi vật qua O.",
+    "3": "Biên độ của $a=-A\\omega^{2}\\cos(\\omega t+\\varphi)$ là $A\\omega^{2}$, đạt tại hai biên."
    }
   }
  ]

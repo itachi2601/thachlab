@@ -347,6 +347,10 @@
    "question": "Mắc bóng đèn ghi $6\\ \\text{V}-3\\ \\text{W}$ vào mạch có ampe kế và vôn kế, đặt các hiệu điện thế $1{,}5;\\ 3{,}0;\\ 4{,}5;\\ 6{,}0\\ \\text{V}$ rồi tính $U\\cdot I$. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Số $6\\ \\text{V}$ ghi trên đèn là công suất định mức của đèn.",
+     "answer": false
+    },
+    {
      "text": "Ở đúng $6\\ \\text{V}$, tích $U\\cdot I$ bằng số oát ghi trên đèn.",
      "answer": true
     },
@@ -355,19 +359,15 @@
      "answer": false
     },
     {
-     "text": "Số $6\\ \\text{V}$ ghi trên đèn là công suất định mức của đèn.",
-     "answer": false
-    },
-    {
      "text": "Hiệu điện thế nhỏ hơn $6\\ \\text{V}$ thì công suất nhỏ hơn và đèn tối hơn.",
      "answer": true
     }
    ],
-   "explanation": "a) đúng: đúng định mức thì $P=UI=3\\ \\text{W}$. b) sai: vượt định mức dễ hỏng. c) sai: $6\\ \\text{V}$ là hiệu điện thế định mức. d) đúng: $U$ nhỏ thì $P$ nhỏ.",
+   "explanation": "a) sai: $6\\ \\text{V}$ là hiệu điện thế định mức. b) đúng: đúng định mức thì $P=UI=3\\ \\text{W}$. c) sai: vượt định mức dễ hỏng. d) đúng: $U$ nhỏ thì $P$ nhỏ.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì đèn chạy đúng định mức thì công suất bằng số ghi.",
-    "1": "Không thể coi là đúng vì hiệu điện thế vượt định mức làm đèn dễ cháy.",
-    "2": "Không thể coi là đúng vì $6\\ \\text{V}$ là hiệu điện thế định mức, công suất định mức là $3\\ \\text{W}$.",
+    "0": "Không thể coi là đúng vì $6\\ \\text{V}$ là hiệu điện thế định mức, công suất định mức là $3\\ \\text{W}$.",
+    "1": "Không thể coi là sai vì đèn chạy đúng định mức thì công suất bằng số ghi.",
+    "2": "Không thể coi là đúng vì hiệu điện thế vượt định mức làm đèn dễ cháy.",
     "3": "Không thể coi là sai vì dùng điện áp thấp hơn định mức thì công suất giảm."
    }
   },
@@ -382,11 +382,11 @@
    "question": "Một số thiết bị điện chuyển điện năng thành các dạng năng lượng khác nhau. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Quạt điện chuyển điện năng chủ yếu thành năng lượng ánh sáng.",
-     "answer": false
+     "text": "Khi sạc điện thoại, điện năng chuyển thành năng lượng hoá học trong pin.",
+     "answer": true
     },
     {
-     "text": "Có thiết bị điện hoạt động mà không có phần điện năng nào thành nhiệt.",
+     "text": "Quạt điện chuyển điện năng chủ yếu thành năng lượng ánh sáng.",
      "answer": false
     },
     {
@@ -394,16 +394,16 @@
      "answer": true
     },
     {
-     "text": "Khi sạc điện thoại, điện năng chuyển thành năng lượng hoá học trong pin.",
-     "answer": true
+     "text": "Có thiết bị điện hoạt động mà không có phần điện năng nào thành nhiệt.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai: quạt cho cơ năng. b) sai: luôn có hao phí thành nhiệt. c) đúng: nhiệt năng. d) đúng: năng lượng hoá học.",
+   "explanation": "a) đúng: năng lượng hoá học. b) sai: quạt cho cơ năng. c) đúng: nhiệt năng. d) sai: luôn có hao phí thành nhiệt.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì quạt chuyển điện năng chủ yếu thành cơ năng.",
-    "1": "Không thể coi là đúng vì luôn có một phần điện năng chuyển thành nhiệt.",
+    "0": "Không thể coi là sai vì pin tích trữ năng lượng dưới dạng hoá học.",
+    "1": "Không thể coi là đúng vì quạt chuyển điện năng chủ yếu thành cơ năng.",
     "2": "Không thể coi là sai vì tác dụng chính của bàn là là toả nhiệt.",
-    "3": "Không thể coi là sai vì pin tích trữ năng lượng dưới dạng hoá học."
+    "3": "Không thể coi là đúng vì luôn có một phần điện năng chuyển thành nhiệt."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Chỉ bật một ấm điện $220\\ \\text{V}-1\\,000\\ \\text{W}$ (đúng $220\\ \\text{V}$) trong $30$ phút, công tơ tăng từ $1\\,234{,}6$ lên $1\\,235{,}1$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Mỗi số điện trên công tơ tương ứng $1\\ \\text{kWh}$.",
-     "answer": true
-    },
-    {
      "text": "Điện năng ấm tiêu thụ là $500\\ \\text{kWh}$ vì $1\\,000\\cdot0{,}5$.",
      "answer": false
     },
     {
-     "text": "Đun càng lâu thì công suất của ấm càng giảm.",
-     "answer": false
+     "text": "Mỗi số điện trên công tơ tương ứng $1\\ \\text{kWh}$.",
+     "answer": true
     },
     {
      "text": "Ấm tiêu thụ $0{,}5\\ \\text{kWh}$.",
      "answer": true
+    },
+    {
+     "text": "Đun càng lâu thì công suất của ấm càng giảm.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng: một số điện bằng $1\\ \\text{kWh}$. b) sai: $1\\ \\text{kW}\\cdot0{,}5\\ \\text{h}=0{,}5\\ \\text{kWh}$. c) sai: công suất không đổi. d) đúng: $0{,}5\\ \\text{kWh}$.",
+   "explanation": "a) sai: $1\\ \\text{kW}\\cdot0{,}5\\ \\text{h}=0{,}5\\ \\text{kWh}$. b) đúng: một số điện bằng $1\\ \\text{kWh}$. c) đúng: $0{,}5\\ \\text{kWh}$. d) sai: công suất không đổi.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì đó là đơn vị đo của công tơ điện.",
-    "1": "Không thể coi là đúng vì phải đổi $1\\,000\\ \\text{W}$ ra $1\\ \\text{kW}$ khi tính kWh.",
-    "2": "Không thể coi là đúng vì đun lâu thì điện năng tăng, công suất định mức vẫn giữ nguyên.",
-    "3": "Không thể coi là sai vì $1\\,235{,}1-1\\,234{,}6=0{,}5$ số, khớp $1\\ \\text{kW}\\cdot0{,}5\\ \\text{h}$."
+    "0": "Không thể coi là đúng vì phải đổi $1\\,000\\ \\text{W}$ ra $1\\ \\text{kW}$ khi tính kWh.",
+    "1": "Không thể coi là sai vì đó là đơn vị đo của công tơ điện.",
+    "2": "Không thể coi là sai vì $1\\,235{,}1-1\\,234{,}6=0{,}5$ số, khớp $1\\ \\text{kW}\\cdot0{,}5\\ \\text{h}$.",
+    "3": "Không thể coi là đúng vì đun lâu thì điện năng tăng, công suất định mức vẫn giữ nguyên."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Đèn X ghi $6\\ \\text{V}-3\\ \\text{W}$ và đèn Y ghi $6\\ \\text{V}-6\\ \\text{W}$, dùng nguồn $6\\ \\text{V}$. Mắc hai đèn nối tiếp, rồi mắc song song. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Mắc nối tiếp thì đèn Y sáng hơn vì ghi nhiều oát hơn.",
+     "text": "Mắc song song thì hai đèn sáng như nhau vì cùng $6\\ \\text{V}$.",
      "answer": false
-    },
-    {
-     "text": "Mắc nối tiếp thì đèn X sáng hơn đèn Y.",
-     "answer": true
     },
     {
      "text": "Mắc song song thì đèn Y sáng hơn đèn X.",
      "answer": true
     },
     {
-     "text": "Mắc song song thì hai đèn sáng như nhau vì cùng $6\\ \\text{V}$.",
+     "text": "Mắc nối tiếp thì đèn X sáng hơn đèn Y.",
+     "answer": true
+    },
+    {
+     "text": "Mắc nối tiếp thì đèn Y sáng hơn vì ghi nhiều oát hơn.",
      "answer": false
     }
    ],
-   "explanation": "a) sai: nối tiếp không nhận đủ $U$. b) đúng: nối tiếp, $R$ lớn sáng hơn. c) đúng: song song, nhiều oát hơn sáng hơn. d) sai: công suất khác nhau.",
+   "explanation": "a) sai: công suất khác nhau. b) đúng: song song, nhiều oát hơn sáng hơn. c) đúng: nối tiếp, $R$ lớn sáng hơn. d) sai: nối tiếp không nhận đủ $U$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì nhiều oát hơn chỉ sáng hơn khi cả hai nhận đúng hiệu điện thế định mức.",
-    "1": "Không thể coi là sai vì X có điện trở lớn hơn, cùng dòng nên $P=I^2R$ lớn hơn.",
-    "2": "Không thể coi là sai vì mỗi đèn nhận đủ $6\\ \\text{V}$ nên đèn nhiều oát hơn sáng hơn.",
-    "3": "Không thể coi là đúng vì cùng hiệu điện thế nhưng công suất định mức khác nhau nên độ sáng khác nhau."
+    "0": "Không thể coi là đúng vì cùng hiệu điện thế nhưng công suất định mức khác nhau nên độ sáng khác nhau.",
+    "1": "Không thể coi là sai vì mỗi đèn nhận đủ $6\\ \\text{V}$ nên đèn nhiều oát hơn sáng hơn.",
+    "2": "Không thể coi là sai vì X có điện trở lớn hơn, cùng dòng nên $P=I^2R$ lớn hơn.",
+    "3": "Không thể coi là đúng vì nhiều oát hơn chỉ sáng hơn khi cả hai nhận đúng hiệu điện thế định mức."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Nồi cơm điện ghi $220\\ \\text{V}-800\\ \\text{W}$, dùng đúng $220\\ \\text{V}$, mỗi ngày nấu $1{,}5$ giờ, giá điện $2\\,000$ đồng cho mỗi kWh. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi điện lưới tụt còn $200\\ \\text{V}$, nồi vẫn có công suất $800\\ \\text{W}$.",
-     "answer": false
-    },
-    {
-     "text": "Cường độ dòng điện qua nồi xấp xỉ $3{,}64\\ \\text{A}$.",
-     "answer": true
-    },
-    {
      "text": "Điện năng nồi tiêu thụ trong $30$ ngày là $36\\ \\text{kWh}$.",
      "answer": true
     },
     {
      "text": "Tiền điện của nồi trong $30$ ngày là $7\\,200$ đồng.",
      "answer": false
+    },
+    {
+     "text": "Khi điện lưới tụt còn $200\\ \\text{V}$, nồi vẫn có công suất $800\\ \\text{W}$.",
+     "answer": false
+    },
+    {
+     "text": "Cường độ dòng điện qua nồi xấp xỉ $3{,}64\\ \\text{A}$.",
+     "answer": true
     }
    ],
-   "explanation": "a) sai: $P$ giảm còn khoảng $661\\ \\text{W}$. b) đúng: $3{,}64\\ \\text{A}$. c) đúng: $36\\ \\text{kWh}$. d) sai: $72\\,000$ đồng.",
+   "explanation": "a) đúng: $36\\ \\text{kWh}$. b) sai: $72\\,000$ đồng. c) sai: $P$ giảm còn khoảng $661\\ \\text{W}$. d) đúng: $3{,}64\\ \\text{A}$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì $R$ không đổi thì $P=\\dfrac{U^2}{R}$ nhỏ đi, khoảng $661\\ \\text{W}$.",
-    "1": "Không thể coi là sai vì $I=\\dfrac{P}{U}=\\dfrac{800}{220}\\approx3{,}64\\ \\text{A}$.",
-    "2": "Không thể coi là sai vì $0{,}8\\ \\text{kW}\\cdot1{,}5\\ \\text{h}\\cdot30=36\\ \\text{kWh}$.",
-    "3": "Không thể coi là đúng vì điện năng $36\\ \\text{kWh}$ nên tiền là $72\\,000$ đồng."
+    "0": "Không thể coi là sai vì $0{,}8\\ \\text{kW}\\cdot1{,}5\\ \\text{h}\\cdot30=36\\ \\text{kWh}$.",
+    "1": "Không thể coi là đúng vì điện năng $36\\ \\text{kWh}$ nên tiền là $72\\,000$ đồng.",
+    "2": "Không thể coi là đúng vì $R$ không đổi thì $P=\\dfrac{U^2}{R}$ nhỏ đi, khoảng $661\\ \\text{W}$.",
+    "3": "Không thể coi là sai vì $I=\\dfrac{P}{U}=\\dfrac{800}{220}\\approx3{,}64\\ \\text{A}$."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Dây nung của một ấm điện có điện trở $48{,}4\\ \\Omega$, dùng ở $220\\ \\text{V}$. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Công suất của dây nung là $1\\,000\\ \\text{W}$.",
+     "answer": true
+    },
+    {
      "text": "Dùng ở $110\\ \\text{V}$ (điện trở không đổi) thì công suất còn $500\\ \\text{W}$.",
+     "answer": false
+    },
+    {
+     "text": "Cường độ dòng điện qua dây nung là $2{,}5\\ \\text{A}$.",
      "answer": false
     },
     {
      "text": "Với cùng một dòng điện, dây có điện trở càng nhỏ thì toả nhiệt càng ít.",
      "answer": true
-    },
-    {
-     "text": "Công suất của dây nung là $1\\,000\\ \\text{W}$.",
-     "answer": true
-    },
-    {
-     "text": "Cường độ dòng điện qua dây nung là $2{,}5\\ \\text{A}$.",
-     "answer": false
     }
    ],
-   "explanation": "a) sai: $P\\sim U^2$ nên còn $250\\ \\text{W}$. b) đúng: $P=I^2R$. c) đúng: $1\\,000\\ \\text{W}$. d) sai: $I\\approx4{,}55\\ \\text{A}$.",
+   "explanation": "a) đúng: $1\\,000\\ \\text{W}$. b) sai: $P\\sim U^2$ nên còn $250\\ \\text{W}$. c) sai: $I\\approx4{,}55\\ \\text{A}$. d) đúng: $P=I^2R$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì $P$ tỉ lệ với $U^2$ nên $U$ giảm một nửa thì $P$ còn $250\\ \\text{W}$.",
-    "1": "Không thể coi là sai vì $P=I^2R$ nên cùng $I$ thì $R$ nhỏ cho $P$ nhỏ.",
-    "2": "Không thể coi là sai vì $P=\\dfrac{U^2}{R}=\\dfrac{220^2}{48{,}4}=1\\,000\\ \\text{W}$.",
-    "3": "Không thể coi là đúng vì $I=\\dfrac{220}{48{,}4}\\approx4{,}55\\ \\text{A}$."
+    "0": "Không thể coi là sai vì $P=\\dfrac{U^2}{R}=\\dfrac{220^2}{48{,}4}=1\\,000\\ \\text{W}$.",
+    "1": "Không thể coi là đúng vì $P$ tỉ lệ với $U^2$ nên $U$ giảm một nửa thì $P$ còn $250\\ \\text{W}$.",
+    "2": "Không thể coi là đúng vì $I=\\dfrac{220}{48{,}4}\\approx4{,}55\\ \\text{A}$.",
+    "3": "Không thể coi là sai vì $P=I^2R$ nên cùng $I$ thì $R$ nhỏ cho $P$ nhỏ."
    }
   }
  ]

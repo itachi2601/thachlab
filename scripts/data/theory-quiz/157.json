@@ -347,28 +347,28 @@
    "question": "Ba điện trở $R_1$, $R_2$, $R_3$ mắc song song vào một nguồn điện có hiệu điện thế không đổi. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Hiệu điện thế giữa hai đầu mỗi điện trở bằng nhau.",
-     "answer": true
-    },
-    {
-     "text": "Cường độ dòng điện qua ba điện trở bằng nhau.",
-     "answer": false
-    },
-    {
      "text": "Điện trở tương đương nhỏ hơn mọi điện trở thành phần.",
      "answer": true
     },
     {
      "text": "Điện trở tương đương bằng tổng ba điện trở.",
      "answer": false
+    },
+    {
+     "text": "Hiệu điện thế giữa hai đầu mỗi điện trở bằng nhau.",
+     "answer": true
+    },
+    {
+     "text": "Cường độ dòng điện qua ba điện trở bằng nhau.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng vì mạch song song có hiệu điện thế chung ở mọi nhánh. b) sai vì dòng chia cho các nhánh theo điện trở, chỉ bằng nhau nếu ba điện trở bằng nhau. c) đúng vì thêm nhánh song song làm $\\dfrac1{R_{td}}$ tăng nên $R_{td}$ nhỏ hơn điện trở nhỏ nhất. d) sai vì tổng các điện trở là công thức của mạch nối tiếp.",
+   "explanation": "a) đúng vì thêm nhánh song song làm $\\dfrac1{R_{td}}$ tăng nên $R_{td}$ nhỏ hơn điện trở nhỏ nhất. b) sai vì tổng các điện trở là công thức của mạch nối tiếp. c) đúng vì mạch song song có hiệu điện thế chung ở mọi nhánh. d) sai vì dòng chia cho các nhánh theo điện trở, chỉ bằng nhau nếu ba điện trở bằng nhau.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì mạch song song có hiệu điện thế chung ở mọi nhánh.",
-    "1": "Không thể coi là đúng vì dòng chia cho các nhánh theo điện trở, chỉ bằng nhau nếu ba điện trở bằng nhau.",
-    "2": "Không thể coi là sai vì thêm nhánh song song làm $\\dfrac1{R_{td}}$ tăng nên $R_{td}$ nhỏ hơn điện trở nhỏ nhất.",
-    "3": "Không thể coi là đúng vì tổng các điện trở là công thức của mạch nối tiếp."
+    "0": "Không thể coi là sai vì thêm nhánh song song làm $\\dfrac1{R_{td}}$ tăng nên $R_{td}$ nhỏ hơn điện trở nhỏ nhất.",
+    "1": "Không thể coi là đúng vì tổng các điện trở là công thức của mạch nối tiếp.",
+    "2": "Không thể coi là sai vì mạch song song có hiệu điện thế chung ở mọi nhánh.",
+    "3": "Không thể coi là đúng vì dòng chia cho các nhánh theo điện trở, chỉ bằng nhau nếu ba điện trở bằng nhau."
    }
   },
   {
@@ -382,7 +382,7 @@
    "question": "Mạch gồm điện trở $R_1$ nối tiếp với $R_2$ vào nguồn không đổi, ampe kế lí tưởng nối tiếp trong mạch, khoá K mắc song song với $R_2$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi K đóng, hiệu điện thế giữa hai đầu $R_1$ giảm.",
+     "text": "Khi K mở, K được coi là dây nối nên $R_2$ bị nối tắt.",
      "answer": false
     },
     {
@@ -390,20 +390,20 @@
      "answer": true
     },
     {
-     "text": "Khi K mở, K được coi là dây nối nên $R_2$ bị nối tắt.",
-     "answer": false
-    },
-    {
      "text": "Khi K đóng, số chỉ ampe kế tăng so với khi K mở.",
      "answer": true
+    },
+    {
+     "text": "Khi K đóng, hiệu điện thế giữa hai đầu $R_1$ giảm.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai vì toàn bộ hiệu điện thế nguồn đặt lên $R_1$ nên nó tăng. b) đúng vì khoá đóng là dây nối, chập hai đầu $R_2$ lại. c) sai vì khoá mở là chỗ đứt, nhánh chứa K bị bỏ đi và $R_2$ vẫn có dòng chạy qua. d) đúng vì điện trở tương đương giảm từ $R_1+R_2$ xuống $R_1$ trong khi hiệu điện thế nguồn không đổi.",
+   "explanation": "a) sai vì khoá mở là chỗ đứt, nhánh chứa K bị bỏ đi và $R_2$ vẫn có dòng chạy qua. b) đúng vì khoá đóng là dây nối, chập hai đầu $R_2$ lại. c) đúng vì điện trở tương đương giảm từ $R_1+R_2$ xuống $R_1$ trong khi hiệu điện thế nguồn không đổi. d) sai vì toàn bộ hiệu điện thế nguồn đặt lên $R_1$ nên nó tăng.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì toàn bộ hiệu điện thế nguồn đặt lên $R_1$ nên nó tăng.",
+    "0": "Không thể coi là đúng vì khoá mở là chỗ đứt, nhánh chứa K bị bỏ đi và $R_2$ vẫn có dòng chạy qua.",
     "1": "Không thể coi là sai vì khoá đóng là dây nối, chập hai đầu $R_2$ lại.",
-    "2": "Không thể coi là đúng vì khoá mở là chỗ đứt, nhánh chứa K bị bỏ đi và $R_2$ vẫn có dòng chạy qua.",
-    "3": "Không thể coi là sai vì điện trở tương đương giảm từ $R_1+R_2$ xuống $R_1$ trong khi hiệu điện thế nguồn không đổi."
+    "2": "Không thể coi là sai vì điện trở tương đương giảm từ $R_1+R_2$ xuống $R_1$ trong khi hiệu điện thế nguồn không đổi.",
+    "3": "Không thể coi là đúng vì toàn bộ hiệu điện thế nguồn đặt lên $R_1$ nên nó tăng."
    }
   },
   {
@@ -421,24 +421,24 @@
      "answer": true
     },
     {
-     "text": "Vôn kế thực luôn cho số chỉ lớn hơn giá trị thật.",
-     "answer": false
+     "text": "Vôn kế có $R_V$ càng lớn thì số chỉ càng gần giá trị thật.",
+     "answer": true
     },
     {
      "text": "Nếu mắc vôn kế nối tiếp trong mạch chính thì vôn kế chỉ gần bằng $0$.",
      "answer": false
     },
     {
-     "text": "Vôn kế có $R_V$ càng lớn thì số chỉ càng gần giá trị thật.",
-     "answer": true
+     "text": "Vôn kế thực luôn cho số chỉ lớn hơn giá trị thật.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng vì hai điện trở bằng nhau mắc nối tiếp chia đôi hiệu điện thế nguồn. b) sai vì vôn kế song song làm điện trở đoạn đo giảm nên số chỉ nhỏ hơn giá trị thật. c) sai vì vôn kế nối tiếp là điện trở rất lớn, dòng gần bằng $0$ và vôn kế chỉ gần bằng hiệu điện thế nguồn. d) đúng vì $R_V$ lớn rút ít dòng hơn nên điện trở đoạn đo ít bị thay đổi.",
+   "explanation": "a) đúng vì hai điện trở bằng nhau mắc nối tiếp chia đôi hiệu điện thế nguồn. b) đúng vì $R_V$ lớn rút ít dòng hơn nên điện trở đoạn đo ít bị thay đổi. c) sai vì vôn kế nối tiếp là điện trở rất lớn, dòng gần bằng $0$ và vôn kế chỉ gần bằng hiệu điện thế nguồn. d) sai vì vôn kế song song làm điện trở đoạn đo giảm nên số chỉ nhỏ hơn giá trị thật.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì hai điện trở bằng nhau mắc nối tiếp chia đôi hiệu điện thế nguồn.",
-    "1": "Không thể coi là đúng vì vôn kế song song làm điện trở đoạn đo giảm nên số chỉ nhỏ hơn giá trị thật.",
+    "1": "Không thể coi là sai vì $R_V$ lớn rút ít dòng hơn nên điện trở đoạn đo ít bị thay đổi.",
     "2": "Không thể coi là đúng vì vôn kế nối tiếp là điện trở rất lớn, dòng gần bằng $0$ và vôn kế chỉ gần bằng hiệu điện thế nguồn.",
-    "3": "Không thể coi là sai vì $R_V$ lớn rút ít dòng hơn nên điện trở đoạn đo ít bị thay đổi."
+    "3": "Không thể coi là đúng vì vôn kế song song làm điện trở đoạn đo giảm nên số chỉ nhỏ hơn giá trị thật."
    }
   },
   {
@@ -456,24 +456,24 @@
      "answer": true
     },
     {
-     "text": "Dòng điện qua $R_2$ lớn hơn dòng điện qua $R_3$.",
-     "answer": false
-    },
-    {
      "text": "Ampe kế chỉ $3$ A.",
      "answer": true
     },
     {
      "text": "Vôn kế chỉ $12$ V.",
      "answer": false
+    },
+    {
+     "text": "Dòng điện qua $R_2$ lớn hơn dòng điện qua $R_3$.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng vì $R_{23}=\\dfrac{6\\cdot3}{9}=2\\ \\Omega$ nên $R_{td}=2+2=4\\ \\Omega$. b) sai vì hai nhánh cùng hiệu điện thế $6$ V nên $I_2=1$ A nhỏ hơn $I_3=2$ A. c) đúng vì $I=\\dfrac{12}{4}=3$ A. d) sai vì $R_1$ chiếm $U_1=3\\cdot2=6$ V nên vôn kế chỉ $12-6=6$ V.",
+   "explanation": "a) đúng vì $R_{23}=\\dfrac{6\\cdot3}{9}=2\\ \\Omega$ nên $R_{td}=2+2=4\\ \\Omega$. b) đúng vì $I=\\dfrac{12}{4}=3$ A. c) sai vì $R_1$ chiếm $U_1=3\\cdot2=6$ V nên vôn kế chỉ $12-6=6$ V. d) sai vì hai nhánh cùng hiệu điện thế $6$ V nên $I_2=1$ A nhỏ hơn $I_3=2$ A.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì $R_{23}=\\dfrac{6\\cdot3}{9}=2\\ \\Omega$ nên $R_{td}=2+2=4\\ \\Omega$.",
-    "1": "Không thể coi là đúng vì hai nhánh cùng hiệu điện thế $6$ V nên $I_2=1$ A nhỏ hơn $I_3=2$ A.",
-    "2": "Không thể coi là sai vì $I=\\dfrac{12}{4}=3$ A.",
-    "3": "Không thể coi là đúng vì $R_1$ chiếm $U_1=3\\cdot2=6$ V nên vôn kế chỉ $12-6=6$ V."
+    "1": "Không thể coi là sai vì $I=\\dfrac{12}{4}=3$ A.",
+    "2": "Không thể coi là đúng vì $R_1$ chiếm $U_1=3\\cdot2=6$ V nên vôn kế chỉ $12-6=6$ V.",
+    "3": "Không thể coi là đúng vì hai nhánh cùng hiệu điện thế $6$ V nên $I_2=1$ A nhỏ hơn $I_3=2$ A."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": false
     },
     {
+     "text": "Dòng điện qua $R_2$ giảm.",
+     "answer": false
+    },
+    {
      "text": "Điện trở tương đương của mạch tăng.",
      "answer": true
     },
     {
      "text": "Dòng điện qua $R_3$ giảm.",
      "answer": true
-    },
-    {
-     "text": "Dòng điện qua $R_2$ giảm.",
-     "answer": false
     }
    ],
-   "explanation": "a) sai vì dòng điện chính giảm nên $U_1=IR_1$ giảm. b) đúng vì $R_3$ tăng thì $R_{23}$ tăng nên $R_{td}=R_1+R_{23}$ tăng. c) đúng vì $I_3=\\dfrac{UR_2}{R_1R_2+R_1R_3+R_2R_3}$ giảm khi $R_3$ tăng. d) sai vì $U_1$ giảm nên hiệu điện thế trên $R_2$ tăng, và dòng qua $R_2$ tăng.",
+   "explanation": "a) sai vì dòng điện chính giảm nên $U_1=IR_1$ giảm. b) sai vì $U_1$ giảm nên hiệu điện thế trên $R_2$ tăng, và dòng qua $R_2$ tăng. c) đúng vì $R_3$ tăng thì $R_{23}$ tăng nên $R_{td}=R_1+R_{23}$ tăng. d) đúng vì $I_3=\\dfrac{UR_2}{R_1R_2+R_1R_3+R_2R_3}$ giảm khi $R_3$ tăng.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì dòng điện chính giảm nên $U_1=IR_1$ giảm.",
-    "1": "Không thể coi là sai vì $R_3$ tăng thì $R_{23}$ tăng nên $R_{td}=R_1+R_{23}$ tăng.",
-    "2": "Không thể coi là sai vì $I_3=\\dfrac{UR_2}{R_1R_2+R_1R_3+R_2R_3}$ giảm khi $R_3$ tăng.",
-    "3": "Không thể coi là đúng vì $U_1$ giảm nên hiệu điện thế trên $R_2$ tăng, và dòng qua $R_2$ tăng."
+    "1": "Không thể coi là đúng vì $U_1$ giảm nên hiệu điện thế trên $R_2$ tăng, và dòng qua $R_2$ tăng.",
+    "2": "Không thể coi là sai vì $R_3$ tăng thì $R_{23}$ tăng nên $R_{td}=R_1+R_{23}$ tăng.",
+    "3": "Không thể coi là sai vì $I_3=\\dfrac{UR_2}{R_1R_2+R_1R_3+R_2R_3}$ giảm khi $R_3$ tăng."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Nguồn có hiệu điện thế $U$ không đổi, điện trở $R_0$ nối tiếp với biến trở. Khi biến trở là $4\\ \\Omega$ ampe kế chỉ $2$ A, khi biến trở là $10\\ \\Omega$ ampe kế chỉ $1$ A. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Có thể lập hai phương trình $U=2(R_0+4)$ và $U=R_0+10$.",
-     "answer": true
-    },
-    {
-     "text": "$R_0=2\\ \\Omega$.",
-     "answer": true
-    },
-    {
      "text": "$U=8$ V.",
      "answer": false
     },
     {
      "text": "Khi biến trở là $2\\ \\Omega$ thì ampe kế chỉ $4$ A.",
      "answer": false
+    },
+    {
+     "text": "$R_0=2\\ \\Omega$.",
+     "answer": true
+    },
+    {
+     "text": "Có thể lập hai phương trình $U=2(R_0+4)$ và $U=R_0+10$.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng vì mỗi trạng thái của mạch cho một phương trình. b) đúng vì trừ hai phương trình được $2R_0+8=R_0+10$ nên $R_0=2\\ \\Omega$. c) sai vì thay $R_0=2\\ \\Omega$ vào được $U=2\\cdot6=12$ V. d) sai vì $I=\\dfrac{12}{2+2}=3$ A.",
+   "explanation": "a) sai vì thay $R_0=2\\ \\Omega$ vào được $U=2\\cdot6=12$ V. b) sai vì $I=\\dfrac{12}{2+2}=3$ A. c) đúng vì trừ hai phương trình được $2R_0+8=R_0+10$ nên $R_0=2\\ \\Omega$. d) đúng vì mỗi trạng thái của mạch cho một phương trình.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì mỗi trạng thái của mạch cho một phương trình.",
-    "1": "Không thể coi là sai vì trừ hai phương trình được $2R_0+8=R_0+10$ nên $R_0=2\\ \\Omega$.",
-    "2": "Không thể coi là đúng vì thay $R_0=2\\ \\Omega$ vào được $U=2\\cdot6=12$ V.",
-    "3": "Không thể coi là đúng vì $I=\\dfrac{12}{2+2}=3$ A."
+    "0": "Không thể coi là đúng vì thay $R_0=2\\ \\Omega$ vào được $U=2\\cdot6=12$ V.",
+    "1": "Không thể coi là đúng vì $I=\\dfrac{12}{2+2}=3$ A.",
+    "2": "Không thể coi là sai vì trừ hai phương trình được $2R_0+8=R_0+10$ nên $R_0=2\\ \\Omega$.",
+    "3": "Không thể coi là sai vì mỗi trạng thái của mạch cho một phương trình."
    }
   }
  ]
