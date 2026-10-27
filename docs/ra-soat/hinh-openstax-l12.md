@@ -2,6 +2,13 @@
 
 Chỉ chọn, chưa sửa bài, chưa tải ảnh, chưa đăng DB. Giấy phép sách: **CC BY-NC-SA 4.0** (ghi nguồn trên mỗi trang; phi thương mại; bản phái sinh cùng giấy phép) — chờ thầy chốt trước giai đoạn 2. Hàng ghi "chưa xác minh" là chỗ agent chưa xem được hình thật. Tổng: chèn trực tiếp 8 · vẽ lại SVG 12 · giữ SVG 72 (theo số hàng).
 
+## Trạng thái đợt 2 (27/10/2026) — quy tắc mới: ưu tiên ảnh OpenStax trực tiếp, không vẽ lại
+
+Thầy xem bài đã đăng, thấy SVG vẽ lại theo OpenStax sai nhiều chỗ. Đợt 2 (21 bài, mỗi bài một agent xem ảnh thật): thay 25 hình bằng ảnh OpenStax, giữ SVG 58 hình (sách không có hình tương ứng, hoặc khác ký hiệu/số liệu của bài). Chưa đăng DB, ảnh mới chưa deploy.
+Thay bằng ảnh: ap-suat-dong-nang Hình 5 (13.25) · cam-ung-dien-tu Hình 1 (23.6) và 3 (23.7a) · dien-tu-truong Hình 4 (24.8) · dong-dien-xoay-chieu Hình 2 (23.21) · hat-nhan Hình 1 (30.10) · khai-niem-tu-truong Hình 3 (22.14) · luc-tu-cam-ung-tu Hình 4a/b/c (22.37a, 22.38b, 22.39b) · may-phat Hình 1 (23.26), 2 (23.21), 4 (23.27) · nang-luong-lien-ket Hình 3 (31.24) · noi-nang-dl1 Hình 3 (14.4) · phan-hach 2 hình (32.23, 32.21) · phong-xa Hình 3 (31.19) · phuong-trinh-trang-thai Hình 1 (13.19c) · su-chuyen-the Hình 2 (14.7) · thang-nhiet-do 3 hình (14.2, 13.10, 13.7) · ung-dung-cam-ung Hình 4 (23.12) · thuyet-dong-hoc Hình 3 (13.22).
+Giữ SVG: an-toan-phong-xa, boyle-charles, thuc-hanh-cam-ung-tu, thuc-hanh-nhiet (sách không có hình khớp), cùng các hình còn lại ghi lý do trong `nguon.md` từng bài (mục "Đợt 2").
+Hạn mức độ dài: sau khi thêm giải nghĩa nhãn, ba bài phải rút chữ để về ≤2500 từ (phuong-trinh-trang-thai, khai-niem-tu-truong, cam-ung-dien-tu); may-phat-dien-bien-ap vẫn 2698 từ như trước đợt này (lỗi có sẵn).
+
 ## Trạng thái giai đoạn 2 (27/10/2026)
 
 Thầy đã chấp nhận CC BY-NC-SA 4.0. Làm xong và commit 14 bài (chưa đăng DB cho tới khi thầy gõ `y` ở từng lệnh `cap-nhat-ly-thuyet.sh`; ảnh trong `public/assets/openstax/` chưa deploy). Bài không có hàng chèn/vẽ lại (7 bài còn lại) giữ nguyên.

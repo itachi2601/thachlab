@@ -42,37 +42,12 @@ def wrap2(vb, label, body, cap, exp=""):
             f'<figcaption>{cap}</figcaption></figure>')
 
 
-# ---------------------------------------------- Hình 1: thí nghiệm lá vàng
-b = defs("f1")
-b += text(14, 24, "Chùm hạt alpha bắn vào lá vàng mỏng", "currentColor", 14, "start", "700")
-b += rect(24, 78, 74, 96, "rgba(148,163,184,.10)", "currentColor", 2)
-b += hop(36, 108, 50, 34, "nguồn", "currentColor", 14)
-# lá vàng
-b += rect(232, 62, 11, 128, "rgba(251,146,60,.35)", ORG, 2, 3)
-b += text(237, 208, "lá vàng", ORG, 14, "middle", "700")
-b += text(237, 226, "mỏng vài nghìn", ORG, 14, "middle", "500")
-b += text(237, 244, "nguyên tử", ORG, 14, "middle", "500")
-# ba tia: thẳng, lệch, bật ngược
-b += arrow("f1", "g", 102, 126, 356, 126, 2.4)
-b += text(290, 150, "hầu hết bay thẳng", GRN, 14, "start", "700")
-# tia lệch: đi ngang tới sát hạt nhân rồi gãy khúc lệch lên — không đi xuyên qua hạt nhân
-b += (f'<path d="M102,104 L237,104 L380,46" fill="none" stroke="{ORG}" stroke-width="2.4"'
-      f' marker-end="url(#f1-o)"/>')
-b += rect(384, 26, 54, 30, "rgba(148,163,184,.10)", "currentColor", 1.6, 5)
-b += text(411, 46, "máy dò", "currentColor", 14, "middle", "700")
-b += text(436, 84, "lệch mạnh", ORG, 14, "end", "700")
-b += text(436, 102, "vài hạt", ORG, 14, "end", "700")
-# góc lệch φ giữa phần kéo dài của tia tới (nét đứt, cùng phương tia tới) và tia ra
-b += line(237, 104, 310, 104, "currentColor", 1.2, "4 4", .6)
-b += f'<path d="M277,104 A40,40 0 0 0 274.1,89.0" fill="none" stroke="currentColor" stroke-width="1.6"/>'
-b += text(282, 98, "φ", "currentColor", 14, "start", "700")
-b += arrow("f1", "r", 231, 100, 134, 58, 2.6)
-b += text(126, 50, "bật ngược", RED, 14, "end", "700")
-b += f'<circle cx="237" cy="104" r="7" fill="rgba(248,113,113,.35)" stroke="{RED}" stroke-width="2"/>'
-b += text(24, 196, "Một chùm hạt,", "currentColor", 14, "start", "500")
-b += text(24, 214, "ba số phận", "currentColor", 14, "start", "500")
-fig1 = wrap2("0 0 440 254", "Chùm hạt alpha bắn vào lá vàng, máy dò ghi hạt lệch: hầu hết bay thẳng, vài hạt lệch mạnh theo góc lệch φ so với phương ban đầu hoặc bật ngược lại",
-             b, "Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống, chỉ hạt sát hạt nhân mới lệch mạnh hoặc bật ngược.<br>Vẽ lại theo OpenStax, College Physics 2e, Hình 30.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
+# ---------------------------------------------- Hình 1: thí nghiệm lá vàng (ảnh OpenStax, đợt 2 27/10/2026)
+fig1 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-hat-nhan-mo-hinh-nguyen-tu/hinh-tan-xa-alpha.webp" '
+        'alt="Thí nghiệm lá vàng: nguồn hạt alpha bắn vào lá vàng đặt giữa màn hình trụ; bên phải, hầu hết hạt xuyên thẳng qua các nguyên tử, vài hạt lệch hoặc bật ngược khi gặp hạt nhân" '
+        'loading="lazy" width="1000" height="481"><figcaption>Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống, chỉ hạt sát hạt nhân mới lệch mạnh hoặc bật ngược. Bên phải là hình phóng to các nguyên tử trong lá vàng.<br>'
+        'Nhãn: Source of α particles = nguồn hạt α; Gold foil = lá vàng; Screen = màn dò; Atoms = nguyên tử; Nuclei = hạt nhân; 10<sup>−10</sup> m = đường kính nguyên tử; 10<sup>−15</sup> m = đường kính hạt nhân.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 30.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ---------------------------------------------- Hình 2: ba mô hình nguyên tử
 b = defs("f2")

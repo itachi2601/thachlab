@@ -114,36 +114,17 @@ b += text(304, 206, "dịch chuyển không?", GRN, 12, "start", "600")
 fig2 = wrap("0 0 440 300", "Hai cách làm biến đổi nội năng: nén khí bằng công và hơ nóng bằng truyền nhiệt, cùng làm nội năng tăng",
             b, "Hình 2. Hai đường làm đổi nội năng: thực hiện công (có lực làm dịch chuyển) và truyền nhiệt (chênh nhiệt độ).")
 
-# ======================================================= Hình 3: cùng khối lượng, cùng độ tăng nhiệt độ
-b = defs("f3")
-b += text(16, 24, "Cùng 1 kg, cùng tăng 1 K — khác nhiệt lượng", "currentColor", 14, "start", "700")
-
-# cốc nước
-b += f'<path d="M56 52 l8 122 q1 10 11 10 l48 0 q10 0 11 -10 l8 -122 z" fill="rgba(56,189,248,.16)" stroke="currentColor" stroke-width="2.5"/>'
-b += line(58, 76, 140, 76, BLUE, 3)          # mặt nước
-b += text(99, 118, "1 kg", BLUE, 14, "middle", "700")
-b += text(99, 138, "nước", BLUE, 14, "middle", "600")
-b += text(99, 238, "c nước = 4180", BLUE, 14, "middle", "700")
-b += text(99, 256, "nhiệt cần: 4180 J", "currentColor", 14, "middle", "600")
-for i in range(5):                            # ô nhiệt lượng
-    b += rect(57 + i * 17, 196, 14, 22, "rgba(56,189,248,.45)", BLUE, 1.5, 3)
-
-# thỏi nhôm
-b += rect(258, 96, 104, 66, "rgba(251,146,60,.20)", ORG, 2.5)
-b += text(310, 128, "1 kg", ORG, 14, "middle", "700")
-b += text(310, 146, "nhôm", ORG, 14, "middle", "600")
-b += text(310, 238, "c nhôm = 880", ORG, 14, "middle", "700")
-b += text(310, 256, "nhiệt cần: 880 J", "currentColor", 14, "middle", "600")
-for i in range(1):                            # 1 ô ≈ 880 J → nước 5 ô (≈4,7 lần)
-    b += rect(303 + i * 17, 196, 14, 22, "rgba(251,146,60,.45)", ORG, 1.5, 3)
-
-b += text(220, 70, "cùng", "currentColor", 14, "middle", "600")
-b += text(220, 86, "tăng 1 K", "currentColor", 14, "middle", "600")
-b += line(16, 276, 424, 276, "currentColor", 1.5, "", .5)
-b += text(16, 298, "c nước lớn gấp ~4,7 lần c nhôm", "currentColor", 14, "start", "600")
-b += text(16, 318, "→ nước “khó nóng, khó nguội”", "currentColor", 14, "start", "600")
-fig3 = wrap("0 0 440 332", "So sánh nhiệt lượng cần để làm 1 kg nước và 1 kg nhôm tăng thêm 1 K: nước cần 4180 J, nhôm chỉ cần 880 J",
-            b, "Hình 3. Cùng khối lượng, cùng độ tăng nhiệt độ: nước cần nhiệt gần gấp 5 lần nhôm — nên nước làm mát tốt.")
+# ======================================================= Hình 3: ảnh OpenStax College Physics 2e, Hình 14.4 (đợt 2, 27/10/2026)
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-noi-nang-dl1/hinh-nhiet-luong-3-yeu-to.webp" '
+        'alt="Ba cặp hình trụ nhận nhiệt: (a) nhiệt gấp đôi thì độ tăng nhiệt độ gấp đôi, (b) khối lượng gấp đôi thì cần nhiệt gấp đôi, '
+        '(c) cùng khối lượng và cùng độ tăng nhiệt độ, nước cần nhiệt gấp 10,8 lần đồng" loading="lazy" width="708" height="858">'
+        '<figcaption>Hình 3. Nhiệt lượng cần để vật nóng lên phụ thuộc ba yếu tố:<br>'
+        '(a) độ tăng nhiệt độ: tăng gấp đôi thì cần nhiệt gấp đôi.<br>'
+        '(b) khối lượng: gấp đôi thì cần nhiệt gấp đôi.<br>'
+        '(c) chất: cùng khối lượng, cùng độ tăng nhiệt độ, nước cần nhiệt gấp 10,8 lần đồng — nên nước “khó nóng, khó nguội”.<br>'
+        'Nhãn: Q = nhiệt lượng · m = khối lượng · ΔT = độ tăng nhiệt độ · Cu = đồng · water = nước.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 14.4 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ======================================================= Hình 4: sơ đồ định luật I cho bài toán bơm
 b = defs("f4")
