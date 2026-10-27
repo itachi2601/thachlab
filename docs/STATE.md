@@ -11,6 +11,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
+- **27/10 đề mã khách:** `20261027120000_de_ma_khach_xao_de_bang_diem.sql` (bảng guest_exam_links/sessions + RPC guest_exam_info/start/submit; đã thử trong giao dịch rollback). Trang `/thi/?ma=`, quản trị `/quan-tri/bang-diem-ma`. Đề: AVCN C10 kiểm tra (`content/lesson-samples/avcn-chapter-10-maintenance/data/kiem-tra.py`).
 - **24/10 Ghi chú HS theo mục bài học — CHƯA CHẠY:** `20261024190000_lesson_notes.sql` (bảng mới `lesson_notes`, RLS chỉ chủ sở hữu 4 thao tác, giáo viên/TA không đọc; lúc nào cũng được; rollback: `drop table public.lesson_notes`).
 - **25/10 Ôn tập theo chặng — chế độ Tự học ở nhà:** migration `20261025100000_on_tap_tu_hoc_ve_nha` ĐÃ CHẠY 25/10 (thử trong giao dịch tự huỷ trước). Client xong trên nhánh, CHƯA thử UI bằng tài khoản thầy trên local, CHƯA deploy. Chi tiết: memory `project_thachlab_on_tap_theo_chang`.
 - **26/10 Ôn tập ở nhà — thông báo chuông:** `20261026210000_on_tap_tu_hoc_thong_bao` ĐÃ CHẠY 26/10 (kiểm: hàm có href `/lop-hoc/on-tap/`, `notify_user` khớp 5 tham số). ĐÃ DEPLOY 26/10 (deploy@ad3fe60, gồm client "Tự học ở nhà"; thử 375px bảng điều phối + trang học sinh buổi id 19 ổn, không tràn ngang). CHƯA thử thông báo của buổi tạo MỚI; thông báo cũ vẫn trỏ `/tai-khoan`.
