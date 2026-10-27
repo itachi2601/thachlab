@@ -64,6 +64,13 @@ export default function DieuKhoanPage() {
           Một số thành phần thuộc bên thứ ba (ví dụ mô phỏng PhET của Đại học Colorado Boulder, thư viện mã nguồn mở)
           giữ nguyên giấy phép và quyền tác giả của chủ sở hữu; ThachLab chỉ nhúng hoặc dẫn link tới các thành phần đó.
         </p>
+        <p className={p}>
+          Một số hình trong bài lý thuyết lớp 12 được trích hoặc vẽ lại từ sách <em>College Physics 2e</em> (Urone và
+          Hinrichs, OpenStax, Đại học Rice) theo giấy phép CC BY-NC-SA 4.0 (openstax.org/books/college-physics-2e). Mỗi hình
+          có dòng ghi nguồn và số hình trong sách. Bản dịch nhãn và hình vẽ lại của ThachLab từ các hình này cũng theo
+          giấy phép CC BY-NC-SA 4.0: được dùng lại khi ghi nguồn, phi thương mại, và chia sẻ cùng giấy phép. Ảnh chụp có
+          ghi &quot;credit&quot; của bên thứ ba giữ nguyên quyền tác giả của người chụp.
+        </p>
 
         <h2 id="nguoi-hoc" className={h2}>2. Quyền và giới hạn của người học</h2>
         <p className={p}>Bạn được:</p>
