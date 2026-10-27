@@ -11,6 +11,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
+- **27/10 Quiz lý thuyết mở đáp án:** `20261027200000_quiz_ly_thuyet_mo_dap_an` ĐÃ CHẠY 27/10 (chạy bằng `supabase db query -f` từ thư mục chính vì worktree chưa `supabase link`; kiểm: đề 1147 mở, 0/110 quiz còn khoá, `exam_is_assessment` giữ nguyên cho phụ đạo). Rollback: `perf/rollback/20261027200000_*.down.sql`. Chuyển sang STATE-archive khi merge.
 - **27/10 đề mã khách:** `20261027120000_de_ma_khach_xao_de_bang_diem.sql` (bảng guest_exam_links/sessions + RPC guest_exam_info/start/submit; đã thử trong giao dịch rollback). Trang `/thi/?ma=`, quản trị `/quan-tri/bang-diem-ma`. Đề: AVCN C10 kiểm tra (`content/lesson-samples/avcn-chapter-10-maintenance/data/kiem-tra.py`).
 - **24/10 Ghi chú HS theo mục bài học — CHƯA CHẠY:** `20261024190000_lesson_notes.sql` (bảng mới `lesson_notes`, RLS chỉ chủ sở hữu 4 thao tác, giáo viên/TA không đọc; lúc nào cũng được; rollback: `drop table public.lesson_notes`).
 - **25/10 Ôn tập theo chặng — chế độ Tự học ở nhà:** migration `20261025100000_on_tap_tu_hoc_ve_nha` ĐÃ CHẠY 25/10 (thử trong giao dịch tự huỷ trước). Client xong trên nhánh, CHƯA thử UI bằng tài khoản thầy trên local, CHƯA deploy. Chi tiết: memory `project_thachlab_on_tap_theo_chang`.
