@@ -268,6 +268,11 @@ def sim_doc():
     h += "\n".join(parts) + "\n</div>\n"
     return h
 
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026): thay SVG vẽ lại bằng ảnh sách, xem nguon.md
+fig3 = (
+        '<figure class="fig"><img src="/assets/openstax/l10-tong-hop-phan-tich-luc/hinh-mat-phang-nghieng.webp" alt="Vật trên mặt phẳng nghiêng góc theta: trọng lực w hướng thẳng xuống tách thành w song song dốc bằng w sin theta và w vuông góc dốc bằng w cos theta" loading="lazy" width="798" height="323">'
+        '<figcaption>Hình 3. Tách trọng lực trên dốc:<br>w∥ = w sin θ: dọc dốc.<br>w⊥ = w cos θ: ép vào dốc.<br>Sách ghi w, θ; bài này ghi <em>P</em>, α.<br><small>Hình: OpenStax, College Physics 2e, Hình 4.13 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 h = open("theory.src.html", encoding="utf8").read()
 assert "<!--SIMKEO-->" in h and "<!--SIMDOC-->" in h
 h = h.replace("<!--SIMKEO-->", sim_keo()).replace("<!--SIMDOC-->", sim_doc())
