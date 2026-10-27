@@ -205,6 +205,24 @@ def frame(clip, gt):
 
 def run(clip, argv):
     build(clip); total = clip["TOTAL"]; print(f"{clip['id']}: {total:.1f}s")
+    if "--kich-ban" in argv:   # cong A: kich ban dang chu (khong ve, ~1 giay) de duyet truoc khi xem hinh
+        for sc in clip["scenes"]:
+            print(f"[{sc['key']}] {sc['title']} · bắt đầu {sc['t0']:.1f}s · dài {sc['T']:.1f}s")
+            for m, c in zip(sc["M"], sc["caps"]): print(f"  {sc['t0'] + m:5.1f}s  ({len(c)} kt)  {c}")
+        if "cues" in clip:
+            print("tiếng:", ", ".join(f"{t:.1f}s {k}" for t, k in clip["cues"](clip) if k != "tick"))
+        print(f"TỔNG {total:.1f}s" + ("  ← quá 50 s" if total > 50.05 else ""))
+        return
+    if "--sheet" in argv:      # cong B: MOT anh ghep khung o moi moc phu de (+1,6 s) va cuoi canh -> ra/<id>-sheet.png
+        ts = []
+        for sc in clip["scenes"]:
+            ts += [sc["t0"] + m + 1.6 for m in sc["M"]] + [sc["t0"] + sc["T"] - 0.1]
+        cols = 6; rows = (len(ts) + cols - 1) // cols
+        sheet = Image.new("RGB", (cols * 360, rows * 640), (0, 0, 0))
+        for i, t in enumerate(ts): sheet.paste(frame(clip, t).resize((360, 640)), ((i % cols) * 360, (i // cols) * 640))
+        sp = os.path.join(OUT, clip["id"] + "-sheet.png"); sheet.save(sp)
+        print(sp); print("khung (trái→phải, trên→dưới):", ", ".join(f"{t:.1f}s" for t in ts))
+        return
     if "--preview" in argv:
         pd = os.path.join(OUT, clip["id"] + "-preview"); os.makedirs(pd, exist_ok=True)
         for sc in clip["scenes"]:
