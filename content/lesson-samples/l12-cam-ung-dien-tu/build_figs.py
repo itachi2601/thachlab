@@ -1,4 +1,4 @@
-"""Chèn 3 hình SVG tự vẽ vào theory.html (idempotent). Chạy từ thư mục này:
+"""Chèn hình 1 (SVG tự vẽ) + hình 2, 3 (ảnh OpenStax) vào theory.html (idempotent). Chạy từ thư mục này:
 python3 build_figs.py"""
 import math, re, sys
 import pathlib
@@ -29,23 +29,13 @@ b += text(20, 222, "Φ = B·S·cos α", "currentColor", 14, "start", "700")
 fig1 = wrap("0 0 420 235", "Khung dây đặt trong từ trường đều, pháp tuyến n hợp với B góc alpha",
             b, "Hình 1. Số đường sức xuyên qua khung giảm khi pháp tuyến <strong>n</strong> nghiêng khỏi <strong>B</strong> (α tăng). α là góc của pháp tuyến, không phải của mặt khung.", exp="tn-l12-camungdt-03")
 
-# ---- Hình 2: nam châm, cuộn dây, điện kế
-b = defs("f2")
-b += '<rect x="30" y="85" width="50" height="32" fill="rgba(56,189,248,.25)" stroke="currentColor" stroke-width="2"/>'
-b += '<rect x="80" y="85" width="50" height="32" fill="rgba(248,113,113,.25)" stroke="currentColor" stroke-width="2"/>'
-b += text(55, 107, "S", BLUE, 15, "middle", "700") + text(105, 107, "N", RED, 15, "middle", "700")
-b += arrow("f2", "g", 40, 148, 130, 148, 3) + text(40, 170, "v: đưa vào cuộn dây", GRN, 12)
-for x in (240, 256, 272):
-    b += f'<ellipse cx="{x}" cy="101" rx="13" ry="38" fill="none" stroke="currentColor" stroke-width="2.5"/>'
-b += text(222, 194, "Cuộn dây", "currentColor", 12)
-b += '<path d="M240 139 V150 H336" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += '<path d="M272 63 V28 H360 V126" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += '<circle cx="360" cy="150" r="24" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2"/>'
-b += text(360, 170, "G", "currentColor", 13, "middle", "700")
-b += f'<line x1="360" y1="157" x2="360" y2="133" stroke="{GRN}" stroke-width="2.5"/>'
-b += text(360, 194, "Điện kế G (số 0 ở giữa)", GRN, 12, "middle")
-fig2 = wrap("0 0 430 205", "Thanh nam châm đặt trước cuộn dây nối kín với điện kế, không có pin",
-            b, "Hình 2. Bố trí: thanh nam châm, cuộn dây nối kín với điện kế G, không có pin.", exp="tn-l12-camungdt-01")
+# ---- Hình 2 và 3: ảnh OpenStax College Physics 2e (CC BY-NC-SA 4.0), chèn trực tiếp (webp trong public/assets/openstax/)
+OSX = "Hình: OpenStax, College Physics 2e, Hình {n} — CC BY\u2011NC\u2011SA 4.0 — openstax.org/books/college-physics-2e"
+fig2 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-camungdt-01"><img src="/assets/openstax/l12-cam-ung-dien-tu/hinh-2.webp" '
+        'alt="Thanh nam châm đưa vào rồi kéo ra khỏi cuộn dây nối điện kế, kim điện kế lệch ngược chiều nhau" loading="lazy" width="420" height="372">'
+        '<figcaption>Hình 2. Nam châm vào (a), ra (b): kim lệch ngược nhau.<br>'
+        'Galvanometer: điện kế · Coil: cuộn dây · I: dòng cảm ứng<br>'
+        + OSX.format(n="23.4 (hai phần a, b)") + '</figcaption></figure>')
 
 # ---- Hình 3: định luật Lenz, cực Bắc tiến lại, vòng dây sinh cực Bắc đẩy ra
 b = defs("f3")
@@ -70,7 +60,7 @@ b += text(430, 228, "nhìn từ phía nam châm: ngược chiều kim đồng h�
 b += text(24, 254, "Từ thông tăng → từ trường cảm ứng ngược chiều", "currentColor", 14, "start", "400")
 b += text(24, 274, "→ cản sự tăng của từ thông", "currentColor", 14, "start", "400")
 fig3 = wrap("0 0 440 285", "Định luật Lenz: nam châm tiến lại gần, vòng dây tạo cực cùng tên để đẩy ra; dòng cảm ứng nhìn từ phía nam châm ngược chiều kim đồng hồ",
-            b, "Hình 3. Từ thông tăng nên vòng dây tạo cực Bắc ở đầu gần: hai cực cùng tên <em>đẩy</em> nhau, cản nam châm tiến vào.")
+            b, "Hình 3. Từ thông tăng nên vòng dây tạo cực Bắc ở đầu gần: hai cực cùng tên <em>đẩy</em> nhau, cản nam châm tiến vào.<br>Vẽ lại theo OpenStax, College Physics 2e, Hình 23.7 — CC BY\u2011NC\u2011SA 4.0 — openstax.org/books/college-physics-2e")
 
 src = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3), 1):

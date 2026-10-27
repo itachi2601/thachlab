@@ -95,7 +95,7 @@ b += text(16, 238, "mốc dưới: nước đá đang tan", "currentColor", 14)
 b += text(16, 258, "mốc trên: hơi nước đang sôi", "currentColor", 14)
 b += text(16, 278, "mỗi vạch nhỏ = 10 độ", "currentColor", 14, "start", "700")
 fig3 = wrap("0 0 440 288", "Ba thang nhiệt độ đặt cạnh nhau: Celsius 0 đến 100, Kelvin 273 đến 373, Fahrenheit 32 đến 212",
-            b, "Hình 4. Ba thang đo cùng hai mốc nước: Celsius 0 °C – 100 °C chia 100 khoảng, Kelvin 273 K – 373 K cũng 100 khoảng, Fahrenheit 32 °F – 212 °F chia 180 khoảng.")
+            b, "Hình 4. Hai mốc nước: 0–100 °C (100 khoảng), 273–373 K (100 khoảng), 32–212 °F (180 khoảng).<br><small>Vẽ lại theo OpenStax, College Physics 2e, Hình 13.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
 
 # ------------------------------------------------------- Hình 3 (mốc FIG4): ngoại suy về 0 K
 b = defs("f4")
@@ -103,8 +103,15 @@ b += line(70, 205, 420, 205, "currentColor", 2)
 b += line(70, 205, 70, 40, "currentColor", 2)
 b += text(430, 190, "t (°C)", "currentColor", 14, "end", "600")
 b += text(24, 22, "p (kPa)", "currentColor", 14, "start", "600")
+for k, nm in ((.75, "khí 2"), (.5, "khí 3"), (.3, "khí 4")):
+    y0 = 205 - k * 155.4 * 212 / 289
+    y1 = 205 - k * 155.4
+    b += line(95, 205, 307, y0, GRN, 1.6, "6 5", .5)
+    b += f'<polyline fill="none" stroke="{GRN}" stroke-width="2" opacity=".6" points="307,{y0:.1f} 384,{y1:.1f}"/>'
+    b += text(392, y1 + 5, nm, GRN, 13, "start", "600")
 b += line(95, 205, 307, 91, GRN, 2, "6 5", .9)
 b += f'<polyline fill="none" stroke="{GRN}" stroke-width="2.6" points="307,91 384.5,49"/>'
+b += text(392, 54, "khí 1", GRN, 13, "start", "700")
 pts = ((307, 91), (326, 80), (346, 70), (365, 59), (384, 49))
 for x, y in pts:
     b += dot(x, y, 4, GRN)
@@ -119,7 +126,7 @@ b += text(384, 224, "100", "currentColor", 14, "middle", "600")
 b += text(140, 56, "kéo dài đường thẳng", GRN, 14, "start", "600")
 b += text(140, 74, "→ cắt trục ở -273 °C", GRN, 14, "start", "600")
 fig4 = wrap("0 0 440 250", "Đồ thị áp suất khí theo nhiệt độ Celsius: các điểm nằm trên một đường thẳng, kéo dài cắt trục hoành ở -273 °C",
-            b, "Hình 3. Áp suất một lượng khí không đổi tăng đều theo nhiệt độ (p₀ là áp suất ở 0 °C). Kéo dài đường biểu diễn, nó cắt trục nhiệt độ ở −273 °C — đó là gốc 0 K của thang Kelvin.")
+            b, "Hình 3. Bốn khí, bốn đường khác nhau, nhưng kéo dài (nét đứt) đều cùng cắt trục ở −273 °C — gốc 0 K.<br>p₀ là áp suất ở 0 °C.<br><small>Vẽ lại theo OpenStax, College Physics 2e, Hình 13.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
 
 # ------------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

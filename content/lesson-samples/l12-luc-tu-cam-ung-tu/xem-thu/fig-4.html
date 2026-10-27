@@ -1,6 +1,6 @@
 <!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.css">
 <style>
 :root{color-scheme:light}
 body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -1110,14 +1110,313 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content .tl-more > :last-child { margin-bottom: 6px; }
 .exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
 
+/* ============================================================================================
+   KHUNG ĐỒNG BỘ TRANG CHƯƠNG ↔ TRANG BÀI (thầy duyệt 26/10/2026, bản xem thử "Trang chương và trang bài")
+   Rail trái luôn là "mình đang ở đâu" (B5): trang chương = danh sách chương, trang bài = mục lục bài.
+   Đầu trang cùng mẫu: đường dẫn + công cụ một hàng, H1 cùng cỡ (C3), một dòng meta. Một điểm nổi mỗi trang (B2).
+   4 cỡ: ≥1024 (máy tính, iPad ngang) 2 cột · 640–1023 (iPad dọc) 1 cột + thanh đáy + ngăn kéo trái · <640 điện thoại.
+   ============================================================================================ */
+
+/* ---- Đầu trang bài: một lưới cho mọi cỡ ---- */
+.lesson-page .lesson-head {
+  position: relative; display: grid; align-items: center; column-gap: 8px; row-gap: 2px;
+  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+  grid-template-areas: "back crumb present aa drawer" "title title title title title" "meta meta meta meta meta";
+}
+.lesson-page .lesson-head-text { display: contents; }
+.lesson-page .lesson-head-back { grid-area: back; }
+.lesson-page .lesson-head .lesson-breadcrumb { grid-area: crumb; min-width: 0; align-self: center; }
+.lesson-page .lesson-head h1 { grid-area: title; margin-top: 4px; }
+.lesson-page .lesson-head .lesson-meta { grid-area: meta; }
+.lesson-page .lesson-head .lesson-tool-toggle { grid-area: aa; display: inline-flex; width: 44px; height: 44px; }
+.lesson-page .lesson-head .lesson-drawer-toggle { display: none; }
+.lesson-present-btn { grid-area: present; display: inline-flex; height: 44px; align-items: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; padding: 0 12px; color: var(--color-ink); font-size: 14px; font-weight: 600; cursor: pointer; }
+.lesson-present-btn:hover { border-color: var(--lesson-accent-line); }
+/* Cỡ chữ, Dịu mắt, Toàn màn hình gom vào bảng Aa (N2): bảng nổi ngay dưới nút. */
+.lesson-page .lesson-head .lesson-tools { position: absolute; top: 48px; right: 0; z-index: 30; display: none; min-width: 200px; flex-direction: column; align-items: stretch; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--color-panel); padding: 8px; box-shadow: 0 14px 30px -18px rgba(15,23,42,.45); }
+.lesson-page .lesson-head .lesson-tools.is-open { display: flex; }
+.lesson-page .lesson-head .lesson-tools .lesson-tool { justify-content: flex-start; min-height: 44px; }
+.lesson-page .lesson-head .lesson-fonttools button { min-height: 44px; }
+
+/* ---- Bài trước / Bài sau ở cuối bài ---- */
+.lesson-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0 8px; }
+.lesson-pager-link { display: grid; gap: 2px; min-height: 56px; align-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 10px 16px; color: var(--color-ink); font-size: 15px; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.lesson-pager-link small { color: var(--color-muted); font-size: 13px; font-weight: 500; }
+.lesson-pager-link:hover { border-color: var(--lesson-accent-line); }
+.lesson-pager-link--next { grid-column: 2; border-color: var(--lesson-accent-line); text-align: right; color: var(--lesson-accent-text); }
+
+/* ---- Rail trái trang bài ---- */
+.lesson-rail-back { display: flex; min-height: 44px; align-items: center; gap: 6px; color: var(--color-muted); font-size: 14px; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.lesson-rail-back:hover { color: var(--lesson-accent-text); }
+.lesson-nav--rail { display: grid; gap: 12px; align-content: start; }
+.lesson-nav--rail .lesson-toc ol { max-height: none; }
+.lesson-nav--rail .lesson-toc a { min-height: 40px; align-content: center; padding: 8px 10px; border-radius: 0 8px 8px 0; font-size: 14px; }
+
+/* Cột chữ ≤ ~62 ký tự (C2): giới hạn đoạn văn, không giới hạn hình/bảng. */
+.lesson-page .lesson-prose :is(p, li, h3, h4) { max-width: 36em; }
+
+@media (min-width: 1024px) {
+  .lesson-layout--rail { grid-template-columns: 248px minmax(0, 1fr); gap: 40px; max-width: 1200px; }
+  .lesson-layout--rail .lesson-nav--rail { position: sticky; top: 92px; max-height: calc(100vh - 112px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding-bottom: 72px; }
+  .lesson-layout--rail .lesson-main { max-width: 760px; }
+  .lesson-layout--rail .lesson-body { --lesson-read-width: 760px; max-width: 760px; }
+  .lesson-page .lesson-head { margin: 0 0 16px; }
+  .lesson-page .lesson-head-back { display: none; }
+  .lesson-page .lesson-head h1, .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 32px; line-height: 1.2; }
+}
+/* iPad ngang (1024–1279): rail hẹp lại, nút Trình chiếu chỉ còn icon. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lesson-layout--rail { grid-template-columns: 220px minmax(0, 1fr); gap: 28px; padding-inline: 24px; }
+  .lesson-present-btn { width: 44px; justify-content: center; padding: 0; }
+  .lesson-present-btn .lesson-tool-text { display: none; }
+}
+
+/* ---- < 1024 (iPad dọc + điện thoại): thanh bài thay thanh site, thanh đáy + ngăn kéo ---- */
+@media (max-width: 1023px) {
+  body:has(.lesson-page) header[data-site-navbar] { display: none; }
+  /* Chỉ khi bài đã dựng (.lesson-page có mặt) — lúc tải/lỗi navbar vẫn hiện nên phải giữ khoảng đệm. */
+  body:has(.lesson-page) main.lesson-page-main { padding-top: 0 !important; }
+  .lesson-layout--rail .lesson-nav--rail { display: none; }
+  .lesson-page .lesson-tabs { top: 0; }
+  .lesson-page .lesson-review-banner { top: 56px; }
+  .lesson-page .lesson-head { padding-top: 8px; }
+  .lesson-page .lesson-head .lesson-tools { top: 56px; }
+  .lesson-page .lesson-head-back { display: inline-flex; width: 44px; height: 44px; }
+  /* Tên chương nhỏ ở hàng đầu thay cho cả đường dẫn (biết mình ở chương nào, không lặp tên bài — N4). */
+  .lesson-page .lesson-breadcrumb { display: flex; flex-wrap: nowrap; overflow: hidden; }
+  .lesson-page .lesson-crumb-class { display: none !important; }
+  .lesson-page .lesson-crumb-chapter { display: block !important; overflow: hidden; color: var(--color-muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+  .lesson-page .lesson-pager { display: none; }
+  .lesson-present-btn { width: 44px; justify-content: center; padding: 0; }
+  .lesson-present-btn .lesson-tool-text { display: none; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Trước đây Bài trước/Bài sau treo ở đầu trang tablet; giờ là thanh đáy giống điện thoại, rộng tối đa 560px (D3/B6). */
+  .lesson-page .lesson-head h1 { font-size: 26px; }
+  .lesson-page .lesson-body { font-size: calc(1.0625rem * var(--lesson-read-scale, 1)); }
+  .lesson-page .lesson-tabs ol { justify-content: center; }
+  body:has(.lesson-page) { padding-bottom: calc(var(--lesson-bottombar-h, 72px) + env(safe-area-inset-bottom, 0px)); }
+  .lesson-page .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: 48px repeat(3, minmax(0, 1fr)); align-items: center; gap: 10px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 10px max(16px, calc((100vw - 600px) / 2)) calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .lesson-page .lesson-bottom-link, .lesson-page .lesson-bottom-done { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .lesson-page .lesson-bottom-link--next { border-color: var(--lesson-accent); background: var(--lesson-accent); color: #fff; }
+  .lesson-page .lesson-bottom-done { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
+  .lesson-page .lesson-bottom-done.is-done { color: var(--color-ok, #047857); }
+  .lesson-page .lesson-checkbox { width: 17px; height: 17px; border: 2px solid currentColor; border-radius: 5px; }
+  .lesson-page .lesson-bottom-step { display: none; }
+  .lesson-page.is-drawer-open .lesson-bottombar { display: none; }
+  /* Đề kiểm tra: Bài trước/Bài sau đã ở thanh đáy — bỏ hàng lặp ở đầu trang (D3). */
+  .lesson-layout--exam .lesson-nav--compact { display: none; }
+  /* Ngăn kéo mục lục trượt từ cạnh TRÁI — đúng cạnh của rail trên máy tính (B5/B7). */
+  .lesson-page .lesson-drawer { display: block; position: fixed; inset: 0; z-index: 60; }
+  .lesson-page .lesson-drawer-scrim { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(2, 6, 15, .45); cursor: pointer; }
+  .lesson-page .lesson-drawer-sheet { position: absolute; inset: 0 auto 0 0; display: flex; width: min(380px, 86vw); flex-direction: column; border-right: 1px solid var(--lesson-line); background: var(--color-panel); }
+  .lesson-page .lesson-drawer-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--lesson-line); padding: 14px 16px 12px; }
+  .lesson-page .lesson-drawer-title { margin: 0; color: var(--color-ink); font-size: 16px; font-weight: 700; }
+  .lesson-page .lesson-drawer-head small { display: block; margin-top: 3px; color: var(--color-muted); font-size: 13px; }
+  .lesson-page .lesson-drawer-head button { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); cursor: pointer; }
+  .lesson-page .lesson-drawer-body { overflow-y: auto; overscroll-behavior: contain; padding: 14px 16px 24px; }
+  .lesson-page .lesson-bottom-link.is-empty { opacity: .35; }
+  body:has(.lesson-bottombar) .bug-fab { bottom: calc(var(--lesson-bottombar-h, 72px) + 12px); z-index: 46; }
+  .lesson-page .lesson-drawer-body .lesson-toc ol { max-height: none; }
+  .lesson-page .lesson-drawer-body .lesson-toc a { min-height: 44px; align-content: center; font-size: 15px; }
+}
+@media (max-width: 639px) {
+  .lesson-page .lesson-head h1 { font-size: 22px; }
+}
+
+/* Cây chương, ô tìm, thẻ tiến độ trong ngăn kéo: dùng chung điện thoại + iPad dọc (ngăn kéo có ở mọi cỡ < 1024px từ 26/10/2026). */
+@media (max-width: 1023px) {
+  /* Hộp trong ngăn kéo (mục lục bài, mức nắm vững, cây khoá) cách nhau đều 14px. */
+  .lesson-page .lesson-drawer-body { display: grid; gap: 14px; align-content: start; }
+  .lesson-drawer-body .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 14px; }
+  .lesson-drawer-body .lesson-nav-search { display: flex; align-items: center; gap: 8px; margin: 10px 0; border: 1px solid var(--lesson-line); border-radius: 10px; background: var(--lesson-surface); padding: 8px 10px; color: var(--color-muted); }
+  .lesson-drawer-body .lesson-nav-search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--color-ink); font-size: 16px; }
+  .lesson-drawer-body .lesson-toc a { font-size: 13.5px; }
+  .lesson-drawer-body .lesson-progress-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 12px; }
+  .lesson-drawer-body .lesson-progress-summary > div:last-child { flex: 1 1 140px; min-width: 0; }
+  .lesson-drawer-body .lesson-continue-btn { display: flex; width: max-content; max-width: 100%; min-height: 36px; align-items: center; gap: 6px; margin-top: 10px; border-radius: 9px; background: var(--lesson-accent); padding: 8px 12px; color: #fff; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+  .lesson-drawer-body .lesson-progress-summary p { margin: 0; color: var(--color-ink); font-size: 14px; font-weight: 700; }
+  .lesson-drawer-body .lesson-progress-summary small { display: block; margin-top: 2px; color: var(--color-muted); font-size: 12px; }
+  .lesson-drawer-body .lesson-tree-chapter { width: 100%; display: grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items: center; gap: 6px; border: 0; background: none; padding: 10px 2px; color: var(--color-ink); font-family: var(--font-display), sans-serif; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; }
+  .lesson-drawer-body .lesson-tree-chapter em { display: flex; width: 22px; height: 22px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: var(--color-muted); font-size: 12px; font-style: normal; font-weight: 700; }
+  .lesson-drawer-body .lesson-tree-chapter small { color: var(--color-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lesson-drawer-body .lesson-tree-chapter.is-current { background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
+  .lesson-drawer-body .lesson-tree ol { display: grid; gap: 1px; margin: 2px 0 8px; padding: 0; list-style: none; }
+  .lesson-drawer-body .lesson-tree a, .lesson-drawer-body .lesson-tree .lesson-tree-current { display: grid; min-height: 44px; grid-template-columns: 18px minmax(0,1fr); align-items: center; gap: 8px; border-left: 2px solid transparent; border-radius: 0 8px 8px 0; padding: 8px; color: var(--color-muted); font-size: 13.5px; line-height: 1.35; text-decoration: none; }
+  .lesson-drawer-body .lesson-tree .is-current { border-left-color: var(--lesson-accent); background: var(--lesson-accent-soft); color: var(--color-ink); font-weight: 700; }
+  .lesson-drawer-body .lesson-tree .is-done i { color: #34d399; }
+  .lesson-drawer-body .lesson-tree .is-exam i { font-size: 12px; font-weight: 700; letter-spacing: .02em; }
+  .lesson-drawer-body .lesson-section h2 { font-size: 14px; }
+  .lesson-drawer-body .lesson-note-panel { padding: 0; }
+}
+
+/* ---- Trang chương ---- */
+/* "Học tiếp": khối màu đặc, điểm nổi duy nhất (B2/L5). */
+.lesson-shell .class-next-line:not(.class-next-line--done) { min-height: 64px; gap: 14px; border: 0; background: var(--color-primary, #1d4ed8); padding: 14px 18px; color: #fff; }
+.lesson-shell .class-next-line:not(.class-next-line--done):hover { background: var(--color-primary-dark, #1e40af); }
+.class-next-line-text { display: grid; flex: 1 1 auto; min-width: 0; gap: 1px; }
+.lesson-shell .class-next-line-label { color: rgba(255,255,255,.85); font-size: 12px; letter-spacing: .08em; }
+.lesson-shell .class-next-line-title { color: #fff; font-size: 17px; }
+.lesson-shell .class-next-line-why { color: rgba(255,255,255,.9); font-size: 14px; white-space: normal; }
+.class-next-line-go { display: inline-flex; flex: 0 0 auto; min-height: 44px; align-items: center; gap: 6px; border-radius: 10px; background: #fff; padding: 0 14px; color: var(--color-primary, #1d4ed8); font-size: 15px; font-weight: 700; }
+.lesson-shell .class-next-line:not(.class-next-line--done) svg { color: inherit; }
+/* Buổi ôn ở nhà: một dòng phụ, hạn nộp màu cần-chú-ý. */
+.class-task-row { display: flex; flex-wrap: wrap; min-height: 48px; align-items: center; gap: 4px 10px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 10px 14px; color: var(--color-ink); font-size: 14px; text-decoration: none; }
+.class-task-row:hover { border-color: var(--lesson-accent-line); }
+.class-task-title { font-weight: 600; }
+.class-task-sub { color: var(--color-muted); }
+.class-task-due { margin-left: auto; color: var(--color-warn, #b45309); font-weight: 600; white-space: nowrap; }
+/* "Ôn thêm:" — lối tắt cuối danh sách; tự ẩn khi không còn chip. */
+.class-more { align-items: center; }
+.class-more-label { color: var(--color-muted); font-size: 14px; }
+.class-more:not(:has(.class-chip, a, button)) { display: none; }
+/* Dải chương cho iPad dọc. */
+.class-chapter-chips { display: none; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Trang chương iPad dọc: dải chương thay thanh đáy site, như bản duyệt (B1/N3). */
+  body:has(.lesson-layout--pick) .mobile-tabbar { display: none; }
+  body:has(.lesson-layout--pick) { padding-bottom: 0; }
+  body:has(.lesson-layout--pick) .bug-fab { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .class-chapter-chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .class-chapter-chips button { flex: 0 0 auto; min-height: 44px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 0 14px; color: var(--color-ink); font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer; }
+  .class-chapter-chips button.is-active { border-color: transparent; background: var(--lesson-accent-soft); color: var(--lesson-accent-text); font-weight: 700; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
+  .lesson-layout--pick .class-pick-mobile { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 28px; }
+}
+
+/* ============================================================================================
+   VÙNG ĐỌC LÝ THUYẾT — 6 cách trình bày lấy từ trang iPad mini của Apple (thầy duyệt 26/10/2026)
+   Khối mới chỉ cần HTML + CSS (không JS, lọt qua DOMPurify). Cách soạn: skill soan-bai-ly-thuyet-tuong-tac.
+   ============================================================================================ */
+/* (5) Nhịp: giữa hai mục (mốc h3) ~56px, giữa hai đoạn ~14px — tỉ lệ ≥ 1:3 (B3). */
+.lesson-page .theory-section[data-open="1"] + .theory-section[data-open="1"] { margin-top: 56px; }
+@media (max-width: 639px) { .lesson-page .theory-section[data-open="1"] + .theory-section[data-open="1"] { margin-top: 40px; } }
+
+/* (1) Câu chốt đầu mục: <p class="tl-claim"> ngay sau <h3>. h3 thu thành nhãn nhỏ, câu chốt là chữ to (N5, G3). */
+.exam-content h3:has(+ .tl-claim) { margin-bottom: 4px; color: var(--color-primary, #1d4ed8); font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.exam-content .tl-claim, .lesson-body .lesson-prose .exam-content p.tl-claim { margin: 0 0 16px; color: var(--color-ink); font-size: 1.45rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; text-wrap: balance; }
+
+/* (2) Một chỗ in đậm mỗi đoạn — không có CSS, kiểm bằng scripts/kiem-dam-moi-doan.mts. */
+
+/* (3) Ô "Số cần nhớ": <div class="tl-nums"><details class="tl-num"><summary>nhãn</summary><b>giá trị</b></details>…</div>
+   Che sẵn, học sinh nhớ lại rồi bấm để kiểm (L1 — truy xuất). */
+.exam-content .tl-nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 12px 0 16px; }
+.exam-content .tl-num { display: flex; min-height: 96px; flex-direction: column; justify-content: space-between; gap: 6px; border: 1px solid var(--lesson-line, rgba(15,23,42,.1)); border-radius: 12px; background: var(--color-bg); padding: 12px 14px; }
+.exam-content .tl-num > summary { list-style: none; cursor: pointer; color: var(--color-muted); font-size: .9rem; line-height: 1.4; }
+.exam-content .tl-num > summary::-webkit-details-marker { display: none; }
+.exam-content .tl-num > summary::after { content: "Bấm để hiện"; display: block; margin-top: 8px; color: var(--color-primary, #1d4ed8); font-size: .9rem; font-weight: 600; }
+.exam-content .tl-num[open] > summary::after { content: none; }
+.exam-content .tl-num > :not(summary) { margin: 0; color: var(--color-ink); font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.exam-content .tl-num:hover { border-color: var(--lesson-accent-line, #1d4ed8); }
+
+/* (4) Bảng đặt cạnh nhau cho bẫy: <table class="tl-table tl-cmp">, ô khác nhau <td class="tl-diff">. */
+.exam-content .tl-cmp tbody th { width: 30%; color: var(--color-muted); font-size: .9rem; font-weight: 600; }
+.exam-content .tl-cmp .tl-diff { background: rgba(245, 158, 11, .12); }
+.exam-content .tl-cmp :is(th, td) { padding: 10px 12px; }
+
+/* (6) Thuật ngữ mở tại chỗ (N8): <span class="tl-term"><input type="checkbox" id="…"><label for="…">từ</label><span class="tl-def">định nghĩa</span></span>
+   Chú thích số mũ chỉ cho nguồn/điều kiện: <sup class="tl-fn"><a href="#tl-fn-1">1</a></sup> … <ol class="tl-fns"><li id="tl-fn-1">…</li></ol> */
+.exam-content .tl-term > input { position: absolute; opacity: 0; pointer-events: none; }
+.exam-content .tl-term > label { border-bottom: 1.5px dashed currentColor; color: var(--color-primary, #1d4ed8); font-weight: 500; cursor: pointer; }
+.exam-content .tl-term > input:focus-visible + label { outline: 2px solid var(--color-primary, #1d4ed8); outline-offset: 2px; border-radius: 3px; }
+.exam-content .tl-term > .tl-def { display: none; }
+.exam-content .tl-term > input:checked ~ .tl-def { display: block; margin: 8px 0 4px; border-radius: 10px; background: var(--color-surface-2, rgba(15,23,42,.05)); padding: 10px 14px; color: var(--color-ink); font-size: .92em; line-height: 1.6; }
+.exam-content .tl-fn { margin-left: 1px; font-size: .7em; font-weight: 700; line-height: 0; }
+.exam-content .tl-fn a { color: var(--color-primary, #1d4ed8); text-decoration: none; }
+.exam-content .tl-fns { margin: 36px 0 0; border-top: 1px solid var(--lesson-line, rgba(15,23,42,.1)); padding: 12px 0 0 20px; color: var(--color-muted); font-size: .82rem; line-height: 1.6; }
+
+/* ============================================================================================
+   TRANG BÀI KHỚP BẢN DUYỆT 26/10/2026 (đợt 2) — số đo lấy đúng CSS của bản xem thử "Trang chương và trang bài".
+   ============================================================================================ */
+/* Thân bài 17px (iPad dọc 18px), dòng ≤ 62 ký tự (C1/C2). */
+.lesson-page .lesson-body { font-size: calc(1.0625rem * var(--lesson-read-scale, 1)); }
+.lesson-page .lesson-prose :is(p, li, h3, h4) { max-width: 62ch; }
+/* .lesson-page .exam-content đặt 1rem cứng (16px, bỏ qua cả nút A−/A+) — trong thẻ lý thuyết theo cỡ của thân bài. */
+.lesson-page .lesson-prose .exam-content { font-size: 1em; }
+/* Hộp mục tiêu: viền trái màu nhấn, nhãn in hoa, không in đậm bên trong (N7); dòng ⏱ đã bỏ lúc render (N4). */
+.lesson-page .exam-content .tl-box.tl-goal { margin: 0 0 24px; border: 0; border-left: 3px solid var(--color-primary, #1d4ed8); border-radius: 0 10px 10px 0; background: var(--color-primary-soft, #eef2ff); padding: 12px 16px; font-size: 1rem; line-height: 1.65; }
+.lesson-page .exam-content .tl-goal > .tl-label { display: block; margin: 0 0 4px; color: var(--color-primary, #1d4ed8); font-size: .875rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.lesson-page .exam-content .tl-goal :is(strong, b) { font-weight: inherit; }
+.lesson-page .exam-content .tl-goal ul { margin: 0; padding-left: 18px; }
+/* Nhịp B3 khi vẫn giữ mốc gập: nút "Tiếp" (đầu mục sau) cách cuối mục đang mở như khoảng giữa hai mục mở. */
+.lesson-page .theory-section[data-open="1"] > .theory-next { margin-top: 56px; }
+/* Dòng meta: ngay dưới H1; bản dưới dải tab chỉ dùng < 1024. */
+.lesson-page .lesson-meta { gap: 6px 10px; font-size: 14px; }
+.lesson-page .lesson-meta--below-tabs { display: none; }
+/* Rail mục lục: khung, tiêu đề in hoa + số đếm, ✓ mục đã đọc, tô mục đang đọc (B5/B7). */
+.lesson-page .lesson-toc { border: 1px solid var(--lesson-line); border-radius: 14px; background: var(--color-panel); padding: 10px; }
+.lesson-page .lesson-toc-title { display: flex; justify-content: space-between; margin: 0; padding: 6px 10px 8px; color: var(--color-slate-500, #64748b); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.lesson-page .lesson-toc-title span { font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.lesson-page .lesson-toc a, .lesson-nav--rail .lesson-toc a { display: grid; grid-template-columns: 22px minmax(0, 1fr); align-items: start; gap: 8px; border: 0; border-radius: 9px; padding: 9px 10px; color: var(--color-ink); font-size: 14px; line-height: 1.4; }
+.lesson-page .lesson-toc-n { padding-top: 1px; color: var(--color-slate-500, #64748b); font-size: 12px; font-style: normal; font-variant-numeric: tabular-nums; }
+.lesson-page .lesson-toc a.is-done .lesson-toc-n { color: var(--color-ok, #047857); }
+.lesson-page .lesson-toc a.is-active { background: var(--color-primary-soft, #eef2ff); color: var(--color-primary, #1d4ed8); font-weight: 600; }
+.lesson-page .lesson-toc a.is-active .lesson-toc-n { color: inherit; }
+.lesson-page .lesson-toc .lesson-toc-item { display: block; color: var(--color-muted); font-size: 12px; font-weight: 500; }
+.lesson-page .lesson-nav--rail .lesson-side-link { min-height: 32px; padding: 0 10px; color: var(--color-primary, #1d4ed8); font-size: 14px; font-weight: 500; }
+/* Cuối bài: Mức độ thành thạo + Ghi chú của em (dời khỏi rail). */
+.lesson-endpanels { display: grid; gap: 12px; margin: 28px 0 0; }
+
+@media (min-width: 1024px) {
+  .lesson-layout--rail .lesson-main { max-width: 720px; }
+  .lesson-layout--rail .lesson-body { --lesson-read-width: 720px; max-width: 720px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { border-radius: 16px; padding: 28px 36px 32px; }
+}
+.lesson-page .lesson-meta-time { color: var(--color-muted); }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { padding: 26px 30px 30px; }
+}
+
+/* < 1024: tên bài nằm trong thanh bài (2 dòng: tên chương nhỏ / tên bài), bỏ H1 lớn (B1/B6). */
+@media (max-width: 1023px) {
+  .lesson-page .lesson-head { grid-template-areas: "back crumb present aa drawer" "back title present aa drawer"; row-gap: 0; align-items: center; border-bottom: 1px solid var(--lesson-line); background: var(--color-panel); }
+  .lesson-page .lesson-head-back { grid-area: back; grid-row: 1 / 3; border: 0; }
+  .lesson-page .lesson-head .lesson-breadcrumb { align-self: end; }
+  .lesson-page .lesson-head h1 { overflow: hidden; margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+  .lesson-page .lesson-crumb-chapter { font-size: 12px; line-height: 1.3; }
+  .lesson-page .lesson-head > .lesson-head-text > .lesson-meta { display: none; }
+  .lesson-page .lesson-meta--below-tabs { display: flex; margin: 0; padding: 12px 0 0; }
+  .lesson-page .lesson-tabs { top: 56px; background: var(--color-panel); }
+  /* Thanh bài dính trên cùng như bản duyệt (thanh site đã ẩn) — luôn biết đang ở bài nào; dải tab dính ngay dưới. */
+  .lesson-page .lesson-head { position: sticky; top: 0; z-index: 8; }
+  .lesson-page .lesson-layout--rail { padding-top: 0; }
+  .lesson-page .lesson-progressbar { margin-top: 0; border-radius: 0; }
+  .lesson-page .lesson-bottombar--3 { grid-template-columns: 1fr 1fr 1.3fr; }
+  .lesson-page .lesson-bottombar--3 .lesson-bottom-link--next { border-color: var(--lesson-accent); background: var(--lesson-accent); color: #fff; }
+}
+.lesson-page .lesson-progressbar > small { font-variant-numeric: tabular-nums; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  .lesson-page .lesson-body { font-size: calc(1.125rem * var(--lesson-read-scale, 1)); }
+  .lesson-page .lesson-head { min-height: 60px; padding: 0 16px 0 8px; }
+  .lesson-page .lesson-tabs { top: 60px; }
+  .lesson-page .lesson-meta--below-tabs { padding-inline: 4px; }
+  .lesson-page .lesson-head h1 { font-size: 17px; }
+  .lesson-page .lesson-crumb-chapter { font-size: 13px; }
+  .lesson-page .lesson-head-back { width: 48px; height: 48px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { border-radius: 16px; padding: 30px 40px 34px; }
+}
+.lesson-page .lesson-endpanels:empty { display: none; }
+@media (max-width: 639px) {
+  .lesson-page .lesson-head { min-height: 56px; padding: 0 6px; }
+  .lesson-page .lesson-meta--below-tabs { padding-top: 12px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { margin-inline: -16px; border-inline: 0; border-radius: 0; padding: 18px 16px; }
+  .lesson-page .theory-section[data-open="1"] > .theory-next { margin-top: 40px; }
+}
+/* Màn cảm ứng (iPad ngang 1024–1279 vẫn có rail): đích chạm ≥ 44px cho mục lục, lối về, link phụ (D2). */
+@media (pointer: coarse) {
+  .lesson-page .lesson-toc a, .lesson-rail-back, .lesson-page .lesson-nav--rail .lesson-side-link, .class-rail-item, .class-rail .lesson-rail-back { min-height: 44px; }
+}
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Dây thẳng dài mang dòng điện hướng lên; đường sức từ là những đường tròn đồng tâm quanh dây, nửa phía sau bị dây che, nửa phía trước đi đè lên dây"><defs><marker id="f4a-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4a-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4a-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4a-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="220" y1="22" x2="220" y2="109" stroke="currentColor" stroke-width="4" opacity="1"/><line x1="220" y1="123" x2="220" y2="181" stroke="currentColor" stroke-width="4" opacity="1"/><line x1="220" y1="195" x2="220" y2="236" stroke="currentColor" stroke-width="4" opacity="1"/><path d="M212.5,37.0 L220.0,24.0 L227.5,37.0" fill="none" stroke="#fb923c" stroke-width="3.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="232" y="34" fill="#fb923c" font-size="16" font-weight="700" text-anchor="start">I</text><path d="M120.0,86.0 L120.1,85.0 L120.2,84.0 L120.5,83.0 L120.9,82.0 L121.4,81.0 L122.0,80.1 L122.7,79.1 L123.5,78.1 L124.4,77.2 L125.4,76.2 L126.6,75.3 L127.8,74.4 L129.1,73.5 L130.6,72.6 L132.1,71.7 L133.7,70.8 L135.5,70.0 L137.3,69.1 L139.2,68.3 L141.2,67.5 L143.3,66.8 L145.5,66.0 L147.7,65.3 L150.0,64.6 L152.4,63.9 L154.9,63.2 L157.5,62.6 L160.1,62.0 L162.8,61.4 L165.5,60.8 L168.3,60.3 L171.2,59.8 L174.1,59.3 L177.1,58.9 L180.1,58.5 L183.2,58.1 L186.3,57.8 L189.4,57.4 L192.6,57.1 L195.8,56.9" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M244.2,56.9 L247.4,57.1 L250.6,57.4 L253.7,57.8 L256.8,58.1 L259.9,58.5 L262.9,58.9 L265.9,59.3 L268.8,59.8 L271.7,60.3 L274.5,60.8 L277.2,61.4 L279.9,62.0 L282.5,62.6 L285.1,63.2 L287.6,63.9 L290.0,64.6 L292.3,65.3 L294.5,66.0 L296.7,66.8 L298.8,67.5 L300.8,68.3 L302.7,69.1 L304.5,70.0 L306.3,70.8 L307.9,71.7 L309.4,72.6 L310.9,73.5 L312.2,74.4 L313.4,75.3 L314.6,76.2 L315.6,77.2 L316.5,78.1 L317.3,79.1 L318.0,80.1 L318.6,81.0 L319.1,82.0 L319.5,83.0 L319.8,84.0 L319.9,85.0 L320.0,86.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M320.0,86.0 L319.7,88.4 L318.8,90.7 L317.2,93.0 L315.1,95.3 L312.4,97.5 L309.1,99.6 L305.3,101.7 L300.9,103.6 L296.0,105.5 L290.7,107.2 L284.9,108.8 L278.8,110.3 L272.2,111.6 L265.4,112.7 L258.3,113.7 L250.9,114.5 L243.3,115.2 L235.6,115.6 L227.8,115.9 L220.0,116.0 L212.2,115.9 L204.4,115.6 L196.7,115.2 L189.1,114.5 L181.7,113.7 L174.6,112.7 L167.8,111.6 L161.2,110.3 L155.1,108.8 L149.3,107.2 L144.0,105.5 L139.1,103.6 L134.7,101.7 L130.9,99.6 L127.6,97.5 L124.9,95.3 L122.8,93.0 L121.2,90.7 L120.3,88.4 L120.0,86.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M286.9,102.6 L298.8,104.5 L291.3,113.8" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M120.0,158.0 L120.1,157.0 L120.2,156.0 L120.5,155.0 L120.9,154.0 L121.4,153.0 L122.0,152.1 L122.7,151.1 L123.5,150.1 L124.4,149.2 L125.4,148.2 L126.6,147.3 L127.8,146.4 L129.1,145.5 L130.6,144.6 L132.1,143.7 L133.7,142.8 L135.5,142.0 L137.3,141.1 L139.2,140.3 L141.2,139.5 L143.3,138.8 L145.5,138.0 L147.7,137.3 L150.0,136.6 L152.4,135.9 L154.9,135.2 L157.5,134.6 L160.1,134.0 L162.8,133.4 L165.5,132.8 L168.3,132.3 L171.2,131.8 L174.1,131.3 L177.1,130.9 L180.1,130.5 L183.2,130.1 L186.3,129.8 L189.4,129.4 L192.6,129.1 L195.8,128.9" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M244.2,128.9 L247.4,129.1 L250.6,129.4 L253.7,129.8 L256.8,130.1 L259.9,130.5 L262.9,130.9 L265.9,131.3 L268.8,131.8 L271.7,132.3 L274.5,132.8 L277.2,133.4 L279.9,134.0 L282.5,134.6 L285.1,135.2 L287.6,135.9 L290.0,136.6 L292.3,137.3 L294.5,138.0 L296.7,138.8 L298.8,139.5 L300.8,140.3 L302.7,141.1 L304.5,142.0 L306.3,142.8 L307.9,143.7 L309.4,144.6 L310.9,145.5 L312.2,146.4 L313.4,147.3 L314.6,148.2 L315.6,149.2 L316.5,150.1 L317.3,151.1 L318.0,152.1 L318.6,153.0 L319.1,154.0 L319.5,155.0 L319.8,156.0 L319.9,157.0 L320.0,158.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M320.0,158.0 L319.7,160.4 L318.8,162.7 L317.2,165.0 L315.1,167.3 L312.4,169.5 L309.1,171.6 L305.3,173.7 L300.9,175.6 L296.0,177.5 L290.7,179.2 L284.9,180.8 L278.8,182.3 L272.2,183.6 L265.4,184.7 L258.3,185.7 L250.9,186.5 L243.3,187.2 L235.6,187.6 L227.8,187.9 L220.0,188.0 L212.2,187.9 L204.4,187.6 L196.7,187.2 L189.1,186.5 L181.7,185.7 L174.6,184.7 L167.8,183.6 L161.2,182.3 L155.1,180.8 L149.3,179.2 L144.0,177.5 L139.1,175.6 L134.7,173.7 L130.9,171.6 L127.6,169.5 L124.9,167.3 L122.8,165.0 L121.2,162.7 L120.3,160.4 L120.0,158.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M286.9,174.6 L298.8,176.5 L291.3,185.8" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="326" y="114" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start">B</text></svg><figcaption>Hình 4a. Dây thẳng: đường sức là đường tròn đồng tâm quanh dây.</figcaption></figure></span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 260" role="img" aria-label="Dây thẳng dài mang dòng điện hướng lên; đường sức từ là ba đường tròn đồng tâm quanh dây, cách xa dây dần, chiều ngược chiều kim đồng hồ nhìn từ trên xuống; nửa phía sau bị dây che, nửa phía trước đi đè lên dây"><defs><marker id="f4a-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4a-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4a-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4a-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><path d="M220.0,18.0 L220.0,19.0 L220.0,20.0 L220.0,21.0 L220.0,22.0 L220.0,23.0 L220.0,24.0 L220.0,25.0 L220.0,26.0 L220.0,27.0 L220.0,28.0 L220.0,29.0 L220.0,30.0 L220.0,31.0 L220.0,32.0 L220.0,33.0 L220.0,34.0 L220.0,35.0 L220.0,36.0 L220.0,37.0 L220.0,38.0 L220.0,39.0 L220.0,40.0 L220.0,41.0 L220.0,42.0 L220.0,43.0 L220.0,44.0 L220.0,45.0 L220.0,46.0 L220.0,47.0 L220.0,48.0 L220.0,49.0 L220.0,50.0 L220.0,51.0 L220.0,52.0 L220.0,53.0 L220.0,54.0 L220.0,55.0 L220.0,56.0 L220.0,57.0 L220.0,58.0 L220.0,59.0 L220.0,60.0 L220.0,61.0 L220.0,62.0 L220.0,63.0 L220.0,64.0 L220.0,65.0 L220.0,66.0 L220.0,67.0 L220.0,68.0 L220.0,69.0 L220.0,70.0 L220.0,71.0 L220.0,72.0 L220.0,73.0 L220.0,74.0 L220.0,75.0 L220.0,76.0 L220.0,77.0 L220.0,78.0 L220.0,79.0 L220.0,80.0 L220.0,81.0 L220.0,82.0 L220.0,83.0 L220.0,84.0 L220.0,85.0 L220.0,86.0 L220.0,87.0 L220.0,88.0 L220.0,89.0 L220.0,90.0 L220.0,91.0 L220.0,92.0 L220.0,93.0 L220.0,94.0 L220.0,95.0 L220.0,96.0 L220.0,97.0 L220.0,98.0 L220.0,99.0 L220.0,100.0 L220.0,101.0 L220.0,102.0 L220.0,103.0 L220.0,104.0 L220.0,105.0 L220.0,106.0 L220.0,107.0 L220.0,108.0 L220.0,109.0 L220.0,110.0 L220.0,111.0 L220.0,112.0 L220.0,113.0 L220.0,114.0 L220.0,115.0 L220.0,116.0 L220.0,117.0 L220.0,118.0 L220.0,119.0 L220.0,120.0 L220.0,121.0 L220.0,122.0 L220.0,123.0 L220.0,124.0 L220.0,125.0 L220.0,126.0 L220.0,127.0 L220.0,128.0 L220.0,129.0 L220.0,130.0 L220.0,131.0 L220.0,132.0 L220.0,133.0 L220.0,134.0 L220.0,135.0 L220.0,136.0 L220.0,137.0 L220.0,138.0 L220.0,139.0 L220.0,140.0 L220.0,141.0 L220.0,142.0 L220.0,143.0 L220.0,144.0 L220.0,145.0 L220.0,146.0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M220.0,188.0 L220.0,189.0 L220.0,190.0 L220.0,191.0 L220.0,192.0 L220.0,193.0 L220.0,194.0 L220.0,195.0 L220.0,196.0 L220.0,197.0 L220.0,198.0 L220.0,199.0 L220.0,200.0 L220.0,201.0 L220.0,202.0 L220.0,203.0 L220.0,204.0 L220.0,205.0 L220.0,206.0 L220.0,207.0 L220.0,208.0 L220.0,209.0 L220.0,210.0 L220.0,211.0 L220.0,212.0 L220.0,213.0 L220.0,214.0 L220.0,215.0 L220.0,216.0 L220.0,217.0 L220.0,218.0 L220.0,219.0 L220.0,220.0 L220.0,221.0 L220.0,222.0 L220.0,223.0 L220.0,224.0 L220.0,225.0 L220.0,226.0 L220.0,227.0 L220.0,228.0 L220.0,229.0 L220.0,230.0 L220.0,231.0 L220.0,232.0 L220.0,233.0 L220.0,234.0 L220.0,235.0 L220.0,236.0 L220.0,237.0 L220.0,238.0 L220.0,239.0 L220.0,240.0 L220.0,241.0 L220.0,242.0 L220.0,243.0 L220.0,244.0 L220.0,245.0 L220.0,246.0 L220.0,247.0 L220.0,248.0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M212.5,33.0 L220.0,20.0 L227.5,33.0" fill="none" stroke="#fb923c" stroke-width="3.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="232" y="38" fill="#fb923c" font-size="16" font-weight="700" text-anchor="start">I</text><path d="M172.0,138.0 L172.0,137.8 L172.0,137.6 L172.0,137.4 L172.1,137.2 L172.1,137.1 L172.1,136.9 L172.2,136.7 L172.3,136.5 L172.3,136.3 L172.4,136.1 L172.5,135.9 L172.6,135.7 L172.7,135.6 L172.8,135.4 L172.9,135.2 L173.0,135.0 L173.2,134.8 L173.3,134.6 L173.5,134.5 L173.6,134.3 L173.8,134.1 L174.0,133.9 L174.2,133.7 L174.3,133.6 L174.5,133.4 L174.8,133.2 L175.0,133.0 L175.2,132.8 L175.4,132.7 L175.7,132.5 L175.9,132.3 L176.1,132.1 L176.4,132.0 L176.7,131.8 L177.0,131.6 L177.2,131.5 L177.5,131.3 L177.8,131.1 L178.1,131.0 L178.4,130.8 L178.7,130.6 L179.1,130.5 L179.4,130.3 L179.7,130.2 L180.1,130.0 L180.4,129.8 L180.8,129.7 L181.2,129.5 L181.5,129.4 L181.9,129.2 L182.3,129.1 L182.7,128.9 L183.1,128.8 L183.5,128.6 L183.9,128.5 L184.3,128.4 L184.8,128.2 L185.2,128.1 L185.6,128.0 L186.1,127.8 L186.5,127.7 L187.0,127.6 L187.4,127.4 L187.9,127.3 L188.4,127.2 L188.8,127.1 L189.3,126.9 L189.8,126.8 L190.3,126.7 L190.8,126.6 L191.3,126.5 L191.8,126.4 L192.3,126.2 L192.8,126.1 L193.3,126.0 L193.9,125.9 L194.4,125.8 L194.9,125.7 L195.5,125.6 L196.0,125.5 L196.5,125.4 L197.1,125.3 L197.7,125.3 L198.2,125.2 L198.8,125.1 L199.3,125.0 L199.9,124.9 L200.5,124.8 L201.1,124.8 L201.6,124.7 L202.2,124.6 L202.8,124.6 L203.4,124.5 L204.0,124.4 L204.6,124.4 L205.2,124.3 L205.8,124.2 L206.4,124.2 L207.0,124.1 L207.6,124.1 L208.2,124.0 L208.8,124.0 L209.4,124.0 L210.0,123.9 L210.6,123.9 L211.3,123.8 L211.9,123.8 L212.5,123.8 L213.1,123.7 L213.7,123.7 L214.4,123.7 L215.0,123.7" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M225.0,123.7 L225.6,123.7 L226.3,123.7 L226.9,123.7 L227.5,123.8 L228.1,123.8 L228.7,123.8 L229.4,123.9 L230.0,123.9 L230.6,124.0 L231.2,124.0 L231.8,124.0 L232.4,124.1 L233.0,124.1 L233.6,124.2 L234.2,124.2 L234.8,124.3 L235.4,124.4 L236.0,124.4 L236.6,124.5 L237.2,124.6 L237.8,124.6 L238.4,124.7 L238.9,124.8 L239.5,124.8 L240.1,124.9 L240.7,125.0 L241.2,125.1 L241.8,125.2 L242.3,125.3 L242.9,125.3 L243.5,125.4 L244.0,125.5 L244.5,125.6 L245.1,125.7 L245.6,125.8 L246.1,125.9 L246.7,126.0 L247.2,126.1 L247.7,126.2 L248.2,126.4 L248.7,126.5 L249.2,126.6 L249.7,126.7 L250.2,126.8 L250.7,126.9 L251.2,127.1 L251.6,127.2 L252.1,127.3 L252.6,127.4 L253.0,127.6 L253.5,127.7 L253.9,127.8 L254.4,128.0 L254.8,128.1 L255.2,128.2 L255.7,128.4 L256.1,128.5 L256.5,128.6 L256.9,128.8 L257.3,128.9 L257.7,129.1 L258.1,129.2 L258.5,129.4 L258.8,129.5 L259.2,129.7 L259.6,129.8 L259.9,130.0 L260.3,130.2 L260.6,130.3 L260.9,130.5 L261.3,130.6 L261.6,130.8 L261.9,131.0 L262.2,131.1 L262.5,131.3 L262.8,131.5 L263.0,131.6 L263.3,131.8 L263.6,132.0 L263.9,132.1 L264.1,132.3 L264.3,132.5 L264.6,132.7 L264.8,132.8 L265.0,133.0 L265.2,133.2 L265.5,133.4 L265.7,133.6 L265.8,133.7 L266.0,133.9 L266.2,134.1 L266.4,134.3 L266.5,134.5 L266.7,134.6 L266.8,134.8 L267.0,135.0 L267.1,135.2 L267.2,135.4 L267.3,135.6 L267.4,135.7 L267.5,135.9 L267.6,136.1 L267.7,136.3 L267.7,136.5 L267.8,136.7 L267.9,136.9 L267.9,137.1 L267.9,137.2 L268.0,137.4 L268.0,137.6 L268.0,137.8 L268.0,138.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M268.0,138.0 L268.0,138.3 L268.0,138.6 L267.9,138.8 L267.9,139.1 L267.8,139.4 L267.7,139.7 L267.5,140.0 L267.4,140.3 L267.3,140.5 L267.1,140.8 L266.9,141.1 L266.7,141.4 L266.4,141.6 L266.2,141.9 L265.9,142.2 L265.7,142.4 L265.4,142.7 L265.0,143.0 L264.7,143.2 L264.3,143.5 L264.0,143.8 L263.6,144.0 L263.2,144.3 L262.8,144.5 L262.3,144.8 L261.9,145.0 L261.4,145.3 L260.9,145.5 L260.4,145.8 L259.9,146.0 L259.4,146.2 L258.8,146.5 L258.3,146.7 L257.7,146.9 L257.1,147.1 L256.5,147.4 L255.9,147.6 L255.2,147.8 L254.6,148.0 L253.9,148.2 L253.3,148.4 L252.6,148.6 L251.9,148.8 L251.2,148.9 L250.5,149.1 L249.7,149.3 L249.0,149.5 L248.2,149.6 L247.4,149.8 L246.7,150.0 L245.9,150.1 L245.1,150.3 L244.3,150.4 L243.5,150.6 L242.6,150.7 L241.8,150.8 L240.9,151.0 L240.1,151.1 L239.2,151.2 L238.4,151.3 L237.5,151.4 L236.6,151.5 L235.7,151.6 L234.8,151.7 L233.9,151.8 L233.0,151.9 L232.1,151.9 L231.2,152.0 L230.3,152.1 L229.4,152.1 L228.4,152.2 L227.5,152.2 L226.6,152.3 L225.6,152.3 L224.7,152.3 L223.8,152.4 L222.8,152.4 L221.9,152.4 L220.9,152.4 L220.0,152.4 L219.1,152.4 L218.1,152.4 L217.2,152.4 L216.2,152.4 L215.3,152.3 L214.4,152.3 L213.4,152.3 L212.5,152.2 L211.6,152.2 L210.6,152.1 L209.7,152.1 L208.8,152.0 L207.9,151.9 L207.0,151.9 L206.1,151.8 L205.2,151.7 L204.3,151.6 L203.4,151.5 L202.5,151.4 L201.6,151.3 L200.8,151.2 L199.9,151.1 L199.1,151.0 L198.2,150.8 L197.4,150.7 L196.5,150.6 L195.7,150.4 L194.9,150.3 L194.1,150.1 L193.3,150.0 L192.6,149.8 L191.8,149.6 L191.0,149.5 L190.3,149.3 L189.5,149.1 L188.8,148.9 L188.1,148.8 L187.4,148.6 L186.7,148.4 L186.1,148.2 L185.4,148.0 L184.8,147.8 L184.1,147.6 L183.5,147.4 L182.9,147.1 L182.3,146.9 L181.7,146.7 L181.2,146.5 L180.6,146.2 L180.1,146.0 L179.6,145.8 L179.1,145.5 L178.6,145.3 L178.1,145.0 L177.7,144.8 L177.2,144.5 L176.8,144.3 L176.4,144.0 L176.0,143.8 L175.7,143.5 L175.3,143.2 L175.0,143.0 L174.6,142.7 L174.3,142.4 L174.1,142.2 L173.8,141.9 L173.6,141.6 L173.3,141.4 L173.1,141.1 L172.9,140.8 L172.7,140.5 L172.6,140.3 L172.5,140.0 L172.3,139.7 L172.2,139.4 L172.1,139.1 L172.1,138.8 L172.0,138.6 L172.0,138.3 L172.0,138.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M246.0,145.0 L257.8,146.9 L250.3,156.2" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M124.0,138.0 L124.0,137.6 L124.0,137.2 L124.1,136.9 L124.1,136.5 L124.2,136.1 L124.3,135.7 L124.4,135.4 L124.5,135.0 L124.7,134.6 L124.8,134.2 L125.0,133.9 L125.2,133.5 L125.4,133.1 L125.6,132.8 L125.8,132.4 L126.1,132.0 L126.4,131.6 L126.7,131.3 L127.0,130.9 L127.3,130.5 L127.6,130.2 L128.0,129.8 L128.3,129.5 L128.7,129.1 L129.1,128.7 L129.5,128.4 L129.9,128.0 L130.4,127.7 L130.8,127.3 L131.3,127.0 L131.8,126.6 L132.3,126.3 L132.8,125.9 L133.4,125.6 L133.9,125.3 L134.5,124.9 L135.0,124.6 L135.6,124.3 L136.2,123.9 L136.9,123.6 L137.5,123.3 L138.1,123.0 L138.8,122.6 L139.5,122.3 L140.2,122.0 L140.9,121.7 L141.6,121.4 L142.3,121.1 L143.1,120.8 L143.8,120.5 L144.6,120.2 L145.4,119.9 L146.2,119.6 L147.0,119.3 L147.8,119.0 L148.7,118.7 L149.5,118.5 L150.4,118.2 L151.2,117.9 L152.1,117.6 L153.0,117.4 L153.9,117.1 L154.8,116.9 L155.8,116.6 L156.7,116.3 L157.7,116.1 L158.6,115.9 L159.6,115.6 L160.6,115.4 L161.6,115.2 L162.6,114.9 L163.6,114.7 L164.6,114.5 L165.6,114.3 L166.7,114.1 L167.7,113.8 L168.8,113.6 L169.8,113.4 L170.9,113.2 L172.0,113.1 L173.1,112.9 L174.2,112.7 L175.3,112.5 L176.4,112.3 L177.5,112.2 L178.7,112.0 L179.8,111.8 L181.0,111.7 L182.1,111.5 L183.3,111.4 L184.4,111.3 L185.6,111.1 L186.8,111.0 L188.0,110.9 L189.1,110.7 L190.3,110.6 L191.5,110.5 L192.7,110.4 L193.9,110.3 L195.2,110.2 L196.4,110.1 L197.6,110.0 L198.8,109.9 L200.0,109.8 L201.3,109.8 L202.5,109.7 L203.7,109.6 L205.0,109.6 L206.2,109.5 L207.5,109.4 L208.7,109.4 L210.0,109.4 L211.2,109.3 L212.5,109.3 L213.7,109.3 L215.0,109.2" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M225.0,109.2 L226.3,109.3 L227.5,109.3 L228.8,109.3 L230.0,109.4 L231.3,109.4 L232.5,109.4 L233.8,109.5 L235.0,109.6 L236.3,109.6 L237.5,109.7 L238.7,109.8 L240.0,109.8 L241.2,109.9 L242.4,110.0 L243.6,110.1 L244.8,110.2 L246.1,110.3 L247.3,110.4 L248.5,110.5 L249.7,110.6 L250.9,110.7 L252.0,110.9 L253.2,111.0 L254.4,111.1 L255.6,111.3 L256.7,111.4 L257.9,111.5 L259.0,111.7 L260.2,111.8 L261.3,112.0 L262.5,112.2 L263.6,112.3 L264.7,112.5 L265.8,112.7 L266.9,112.9 L268.0,113.1 L269.1,113.2 L270.2,113.4 L271.2,113.6 L272.3,113.8 L273.3,114.1 L274.4,114.3 L275.4,114.5 L276.4,114.7 L277.4,114.9 L278.4,115.2 L279.4,115.4 L280.4,115.6 L281.4,115.9 L282.3,116.1 L283.3,116.3 L284.2,116.6 L285.2,116.9 L286.1,117.1 L287.0,117.4 L287.9,117.6 L288.8,117.9 L289.6,118.2 L290.5,118.5 L291.3,118.7 L292.2,119.0 L293.0,119.3 L293.8,119.6 L294.6,119.9 L295.4,120.2 L296.2,120.5 L296.9,120.8 L297.7,121.1 L298.4,121.4 L299.1,121.7 L299.8,122.0 L300.5,122.3 L301.2,122.6 L301.9,123.0 L302.5,123.3 L303.1,123.6 L303.8,123.9 L304.4,124.3 L305.0,124.6 L305.5,124.9 L306.1,125.3 L306.6,125.6 L307.2,125.9 L307.7,126.3 L308.2,126.6 L308.7,127.0 L309.2,127.3 L309.6,127.7 L310.1,128.0 L310.5,128.4 L310.9,128.7 L311.3,129.1 L311.7,129.5 L312.0,129.8 L312.4,130.2 L312.7,130.5 L313.0,130.9 L313.3,131.3 L313.6,131.6 L313.9,132.0 L314.2,132.4 L314.4,132.8 L314.6,133.1 L314.8,133.5 L315.0,133.9 L315.2,134.2 L315.3,134.6 L315.5,135.0 L315.6,135.4 L315.7,135.7 L315.8,136.1 L315.9,136.5 L315.9,136.9 L316.0,137.2 L316.0,137.6 L316.0,138.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M316.0,138.0 L316.0,138.6 L315.9,139.1 L315.8,139.7 L315.7,140.3 L315.5,140.8 L315.3,141.4 L315.1,141.9 L314.8,142.5 L314.5,143.1 L314.2,143.6 L313.8,144.2 L313.3,144.7 L312.9,145.3 L312.4,145.8 L311.9,146.4 L311.3,146.9 L310.7,147.4 L310.1,148.0 L309.4,148.5 L308.7,149.0 L308.0,149.5 L307.2,150.1 L306.4,150.6 L305.5,151.1 L304.7,151.6 L303.8,152.1 L302.8,152.6 L301.9,153.0 L300.9,153.5 L299.8,154.0 L298.8,154.5 L297.7,154.9 L296.5,155.4 L295.4,155.8 L294.2,156.3 L293.0,156.7 L291.8,157.1 L290.5,157.5 L289.2,158.0 L287.9,158.4 L286.5,158.8 L285.2,159.1 L283.8,159.5 L282.3,159.9 L280.9,160.3 L279.4,160.6 L277.9,161.0 L276.4,161.3 L274.9,161.6 L273.3,161.9 L271.8,162.3 L270.2,162.6 L268.5,162.8 L266.9,163.1 L265.3,163.4 L263.6,163.7 L261.9,163.9 L260.2,164.2 L258.5,164.4 L256.7,164.6 L255.0,164.8 L253.2,165.0 L251.5,165.2 L249.7,165.4 L247.9,165.6 L246.1,165.7 L244.2,165.9 L242.4,166.0 L240.6,166.1 L238.7,166.2 L236.9,166.4 L235.0,166.4 L233.2,166.5 L231.3,166.6 L229.4,166.7 L227.5,166.7 L225.7,166.8 L223.8,166.8 L221.9,166.8 L220.0,166.8 L218.1,166.8 L216.2,166.8 L214.3,166.8 L212.5,166.7 L210.6,166.7 L208.7,166.6 L206.8,166.5 L205.0,166.4 L203.1,166.4 L201.3,166.2 L199.4,166.1 L197.6,166.0 L195.8,165.9 L193.9,165.7 L192.1,165.6 L190.3,165.4 L188.5,165.2 L186.8,165.0 L185.0,164.8 L183.3,164.6 L181.5,164.4 L179.8,164.2 L178.1,163.9 L176.4,163.7 L174.7,163.4 L173.1,163.1 L171.5,162.8 L169.8,162.6 L168.2,162.3 L166.7,161.9 L165.1,161.6 L163.6,161.3 L162.1,161.0 L160.6,160.6 L159.1,160.3 L157.7,159.9 L156.2,159.5 L154.8,159.1 L153.5,158.8 L152.1,158.4 L150.8,158.0 L149.5,157.5 L148.2,157.1 L147.0,156.7 L145.8,156.3 L144.6,155.8 L143.5,155.4 L142.3,154.9 L141.2,154.5 L140.2,154.0 L139.1,153.5 L138.1,153.0 L137.2,152.6 L136.2,152.1 L135.3,151.6 L134.5,151.1 L133.6,150.6 L132.8,150.1 L132.0,149.5 L131.3,149.0 L130.6,148.5 L129.9,148.0 L129.3,147.4 L128.7,146.9 L128.1,146.4 L127.6,145.8 L127.1,145.3 L126.7,144.7 L126.2,144.2 L125.8,143.6 L125.5,143.1 L125.2,142.5 L124.9,141.9 L124.7,141.4 L124.5,140.8 L124.3,140.3 L124.2,139.7 L124.1,139.1 L124.0,138.6 L124.0,138.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M283.8,153.9 L295.6,155.7 L288.1,165.1" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M74.0,138.0 L74.0,137.4 L74.1,136.9 L74.1,136.3 L74.2,135.7 L74.3,135.1 L74.5,134.6 L74.6,134.0 L74.8,133.4 L75.0,132.9 L75.2,132.3 L75.5,131.7 L75.8,131.1 L76.1,130.6 L76.4,130.0 L76.8,129.5 L77.2,128.9 L77.6,128.3 L78.0,127.8 L78.5,127.2 L79.0,126.7 L79.5,126.1 L80.0,125.6 L80.6,125.0 L81.1,124.5 L81.7,123.9 L82.4,123.4 L83.0,122.8 L83.7,122.3 L84.4,121.8 L85.1,121.2 L85.9,120.7 L86.6,120.2 L87.4,119.7 L88.2,119.1 L89.1,118.6 L89.9,118.1 L90.8,117.6 L91.7,117.1 L92.6,116.6 L93.6,116.1 L94.5,115.6 L95.5,115.1 L96.5,114.6 L97.6,114.1 L98.6,113.7 L99.7,113.2 L100.8,112.7 L101.9,112.3 L103.0,111.8 L104.2,111.3 L105.3,110.9 L106.5,110.4 L107.7,110.0 L109.0,109.6 L110.2,109.1 L111.5,108.7 L112.8,108.3 L114.1,107.9 L115.4,107.4 L116.8,107.0 L118.1,106.6 L119.5,106.2 L120.9,105.8 L122.3,105.5 L123.7,105.1 L125.2,104.7 L126.6,104.3 L128.1,104.0 L129.6,103.6 L131.1,103.3 L132.6,102.9 L134.2,102.6 L135.7,102.2 L137.3,101.9 L138.9,101.6 L140.5,101.3 L142.1,101.0 L143.7,100.7 L145.4,100.4 L147.0,100.1 L148.7,99.8 L150.3,99.5 L152.0,99.2 L153.7,99.0 L155.4,98.7 L157.1,98.5 L158.9,98.2 L160.6,98.0 L162.4,97.8 L164.1,97.5 L165.9,97.3 L167.7,97.1 L169.5,96.9 L171.3,96.7 L173.1,96.5 L174.9,96.3 L176.7,96.2 L178.5,96.0 L180.4,95.8 L182.2,95.7 L184.1,95.5 L185.9,95.4 L187.8,95.3 L189.6,95.2 L191.5,95.0 L193.4,94.9 L195.3,94.8 L197.2,94.7 L199.1,94.7 L200.9,94.6 L202.8,94.5 L204.7,94.4 L206.6,94.4 L208.5,94.3 L210.5,94.3 L212.4,94.3 L214.3,94.2" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M225.7,94.2 L227.6,94.3 L229.5,94.3 L231.5,94.3 L233.4,94.4 L235.3,94.4 L237.2,94.5 L239.1,94.6 L240.9,94.7 L242.8,94.7 L244.7,94.8 L246.6,94.9 L248.5,95.0 L250.4,95.2 L252.2,95.3 L254.1,95.4 L255.9,95.5 L257.8,95.7 L259.6,95.8 L261.5,96.0 L263.3,96.2 L265.1,96.3 L266.9,96.5 L268.7,96.7 L270.5,96.9 L272.3,97.1 L274.1,97.3 L275.9,97.5 L277.6,97.8 L279.4,98.0 L281.1,98.2 L282.9,98.5 L284.6,98.7 L286.3,99.0 L288.0,99.2 L289.7,99.5 L291.3,99.8 L293.0,100.1 L294.6,100.4 L296.3,100.7 L297.9,101.0 L299.5,101.3 L301.1,101.6 L302.7,101.9 L304.3,102.2 L305.8,102.6 L307.4,102.9 L308.9,103.3 L310.4,103.6 L311.9,104.0 L313.4,104.3 L314.8,104.7 L316.3,105.1 L317.7,105.5 L319.1,105.8 L320.5,106.2 L321.9,106.6 L323.2,107.0 L324.6,107.4 L325.9,107.9 L327.2,108.3 L328.5,108.7 L329.8,109.1 L331.0,109.6 L332.3,110.0 L333.5,110.4 L334.7,110.9 L335.8,111.3 L337.0,111.8 L338.1,112.3 L339.2,112.7 L340.3,113.2 L341.4,113.7 L342.4,114.1 L343.5,114.6 L344.5,115.1 L345.5,115.6 L346.4,116.1 L347.4,116.6 L348.3,117.1 L349.2,117.6 L350.1,118.1 L350.9,118.6 L351.8,119.1 L352.6,119.7 L353.4,120.2 L354.1,120.7 L354.9,121.2 L355.6,121.8 L356.3,122.3 L357.0,122.8 L357.6,123.4 L358.3,123.9 L358.9,124.5 L359.4,125.0 L360.0,125.6 L360.5,126.1 L361.0,126.7 L361.5,127.2 L362.0,127.8 L362.4,128.3 L362.8,128.9 L363.2,129.5 L363.6,130.0 L363.9,130.6 L364.2,131.1 L364.5,131.7 L364.8,132.3 L365.0,132.9 L365.2,133.4 L365.4,134.0 L365.5,134.6 L365.7,135.1 L365.8,135.7 L365.9,136.3 L365.9,136.9 L366.0,137.4 L366.0,138.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M366.0,138.0 L366.0,138.9 L365.9,139.7 L365.7,140.6 L365.5,141.4 L365.3,142.3 L365.0,143.1 L364.6,144.0 L364.2,144.9 L363.7,145.7 L363.2,146.5 L362.6,147.4 L362.0,148.2 L361.3,149.1 L360.5,149.9 L359.7,150.7 L358.9,151.5 L357.9,152.4 L357.0,153.2 L356.0,154.0 L354.9,154.8 L353.8,155.6 L352.6,156.3 L351.4,157.1 L350.1,157.9 L348.8,158.6 L347.4,159.4 L346.0,160.1 L344.5,160.9 L343.0,161.6 L341.4,162.3 L339.8,163.0 L338.1,163.7 L336.4,164.4 L334.7,165.1 L332.9,165.8 L331.0,166.4 L329.1,167.1 L327.2,167.7 L325.2,168.4 L323.2,169.0 L321.2,169.6 L319.1,170.2 L317.0,170.7 L314.8,171.3 L312.6,171.9 L310.4,172.4 L308.1,172.9 L305.8,173.4 L303.5,173.9 L301.1,174.4 L298.7,174.9 L296.3,175.3 L293.8,175.8 L291.3,176.2 L288.8,176.6 L286.3,177.0 L283.7,177.4 L281.1,177.8 L278.5,178.1 L275.9,178.5 L273.2,178.8 L270.5,179.1 L267.8,179.4 L265.1,179.7 L262.4,179.9 L259.6,180.2 L256.9,180.4 L254.1,180.6 L251.3,180.8 L248.5,181.0 L245.7,181.1 L242.8,181.3 L240.0,181.4 L237.2,181.5 L234.3,181.6 L231.5,181.7 L228.6,181.7 L225.7,181.8 L222.9,181.8 L220.0,181.8 L217.1,181.8 L214.3,181.8 L211.4,181.7 L208.5,181.7 L205.7,181.6 L202.8,181.5 L200.0,181.4 L197.2,181.3 L194.3,181.1 L191.5,181.0 L188.7,180.8 L185.9,180.6 L183.1,180.4 L180.4,180.2 L177.6,179.9 L174.9,179.7 L172.2,179.4 L169.5,179.1 L166.8,178.8 L164.1,178.5 L161.5,178.1 L158.9,177.8 L156.3,177.4 L153.7,177.0 L151.2,176.6 L148.7,176.2 L146.2,175.8 L143.7,175.3 L141.3,174.9 L138.9,174.4 L136.5,173.9 L134.2,173.4 L131.9,172.9 L129.6,172.4 L127.4,171.9 L125.2,171.3 L123.0,170.7 L120.9,170.2 L118.8,169.6 L116.8,169.0 L114.8,168.4 L112.8,167.7 L110.9,167.1 L109.0,166.4 L107.1,165.8 L105.3,165.1 L103.6,164.4 L101.9,163.7 L100.2,163.0 L98.6,162.3 L97.0,161.6 L95.5,160.9 L94.0,160.1 L92.6,159.4 L91.2,158.6 L89.9,157.9 L88.6,157.1 L87.4,156.3 L86.2,155.6 L85.1,154.8 L84.0,154.0 L83.0,153.2 L82.1,152.4 L81.1,151.5 L80.3,150.7 L79.5,149.9 L78.7,149.1 L78.0,148.2 L77.4,147.4 L76.8,146.5 L76.3,145.7 L75.8,144.9 L75.4,144.0 L75.0,143.1 L74.7,142.3 L74.5,141.4 L74.3,140.6 L74.1,139.7 L74.0,138.9 L74.0,138.0" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M323.2,163.1 L335.0,165.0 L327.5,174.3" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="372" y="142" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start">B</text></svg><figcaption>Hình 4a. Dây thẳng: đường sức tròn đồng tâm.<br><span class="fig-src">Vẽ lại theo OpenStax, College Physics 2e, Hình 22.37 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</span></figcaption></figure></span></div></div>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

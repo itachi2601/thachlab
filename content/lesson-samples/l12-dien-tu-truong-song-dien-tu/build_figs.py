@@ -70,37 +70,16 @@ b += text(22, 232, "đường cong kín bao quanh đường cảm ứng từ", B
 fig2 = wrap("0 0 420 244", "Đường sức từ thẳng đứng có một mũi tên ở đầu trên chỉ chiều, bao quanh là một đường cong kín của điện trường xoáy với hai mũi tên chỉ chiều",
             b, "Hình 2. Từ trường biến thiên (ở đây B đang tăng) sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.")
 
-# ------------------------------------------------- Hình 3: sóng điện từ
-b = defs("f3")
-b += text(14, 20, "Sóng điện từ: sóng ngang, E và B cùng pha", "currentColor", 14, "start", "700")
-b += text(410, 112, "phương truyền", "currentColor", 14, "end", "600")
-b += text(410, 130, "sóng", "currentColor", 14, "end", "600")
-AX, AMP, LAM = 146, 42, 185.0
-b += line(30, AX, 404, AX, "currentColor", 2)
-b += '<path d="M404,140 L415,146 L404,152 z" fill="currentColor"/>'
-e_pts, b_pts = [], []
-x = 30.0
-while x <= 30 + 1.5 * LAM:
-    s = math.sin(2 * math.pi * (x - 30) / LAM)
-    e_pts.append((x, AX - AMP * s))
-    bb = 40 * s
-    b_pts.append((x + 0.28 * bb, AX + 0.55 * bb))
-    x += 2
-b += poly(b_pts, BLUE, 2.4)
-b += poly(e_pts, RED, 2.6)
-x0 = 30 + LAM / 4
-b += arrow("f3", "r", x0, AX, x0, AX - AMP, 2.6)
-b += arrow("f3", "b", x0, AX, x0 + 0.28 * 40, AX + 0.55 * 40, 2.6)
-b += text(x0, AX - AMP - 10, "E", RED, 14, "middle", "700")
-b += text(x0 + 26, AX + 34, "B", BLUE, 14, "start", "700")
-b += text(14, 214, "E vuông góc với B, cả hai cùng vuông góc", "currentColor", 14, "start", "600")
-b += text(14, 232, "với phương truyền", "currentColor", 14, "start", "600")
-b += text(14, 250, "E và B cùng pha: hai đường cong cùng cắt", "currentColor", 14, "start", "600")
-b += text(14, 268, "trục tại một chỗ", "currentColor", 14, "start", "600")
-b += text(14, 286, "E hướng lên, truyền sang phải thì B hướng", "currentColor", 14, "start", "600")
-b += text(14, 304, "ra khỏi trang (nét xiên)", "currentColor", 14, "start", "600")
-fig3 = wrap("0 0 420 324", "Sóng điện từ lan truyền theo trục ngang: vectơ E dao động thẳng đứng, vectơ B dao động theo phương xiên và hướng ra khỏi trang khi E hướng lên, hai đường cong cùng pha",
-            b, "Hình 3. Sóng điện từ là sóng ngang: E vuông góc với B, cả hai vuông góc phương truyền và luôn cùng pha; khi E hướng lên và sóng truyền sang phải thì B hướng ra khỏi trang.")
+# ------------------------------------------------- Hình 3: sóng điện từ (ảnh OpenStax, chèn trực tiếp)
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-3.webp" '
+        'alt="Một đoạn sóng điện từ truyền sang phải: các mũi tên xanh của vectơ E dao động thẳng đứng, các mũi tên hồng của vectơ B dao động trong mặt phẳng nằm ngang, hai đường cong cùng pha và cùng vuông góc phương truyền" '
+        'loading="lazy" width="875" height="602"><figcaption>'
+        'Hình 3. Sóng điện từ: E vuông góc B, cả hai vuông góc phương truyền, cùng pha.<br>'
+        'Mũi tên xanh: vectơ điện trường E.<br>'
+        'Mũi tên hồng: vectơ cảm ứng từ B.<br>'
+        'Mũi tên xanh lá c: phương truyền sóng.<br>'
+        'Hình: OpenStax, College Physics 2e, Hình 24.7 — CC BY\u2011NC\u2011SA 4.0 — openstax.org/books/college-physics-2e'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- Hình 4: thang sóng điện từ
 b = defs("f4")

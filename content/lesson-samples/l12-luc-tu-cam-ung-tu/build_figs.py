@@ -116,95 +116,200 @@ b += text(20, 48, "dòng M → N: hướng ra (⊙)", ORG, 12, "start", "600")
 fig3 = wrap("0 0 440 260", "Nam châm chữ U đặt trên cân, cực N bên trái, cực S bên phải, đường sức nằm ngang từ N sang S; dây MN giữ cố định nằm ngang trong khe, dòng điện hướng ra phía người xem; lực từ lên dây hướng lên, lực dây đẩy nam châm hướng xuống",
             b, "Hình 3. Cân dòng điện.")
 
-# ------------------------------------------------- Hình 4a/4b/4c: dây thẳng, vòng dây, ống dây (nhìn xiên, có che khuất)
-# Nét liền ở phía trước đè lên; vật phía sau bị ngắt một khe chỗ vật trước đi qua (svg_lib: arc_pts...).
-W, GAP = 4, 14   # bề dày dây; nửa khe che (độ)
-VB = "0 0 440 250"
+# ------------------------------------------------- Hình 4a/4b/4c: dây thẳng, vòng dây, ống dây
+# Vẽ lại theo OpenStax College Physics 2e, Hình 22.37-22.39 (CC BY-NC-SA 4.0). Đường sức của vòng dây và ống dây
+# được TÍNH bằng numpy (Biot–Savart cho các vòng dây, tích phân Runge–Kutta theo hướng B) trong mặt phẳng chứa trục,
+# rồi chiếu lên hình nhìn xiên. Quy ước che khuất: vật phía trước nét liền đè lên, vật phía sau bị ngắt một khe.
+import numpy as np
 
-# 4a) dây thẳng: đường sức là đường tròn đồng tâm
+W, GAP = 4, 14   # bề dày dây
+VB4 = "0 0 440 260"
+SRC = ('<br><span class="fig-src">Vẽ lại theo OpenStax, College Physics 2e, Hình {h} — CC BY‑NC‑SA 4.0 — '
+       'openstax.org/books/college-physics-2e</span>')
+
+
+def _nguon(vi_tri, kieu, R=1.0, M=120):
+    """Các đoạn dòng điện của chuỗi vòng dây bán kính R. kieu='y': trục thẳng đứng (4b), 'x': trục nằm ngang (4c).
+    Toạ độ (x phải, y lên, z hướng về phía người xem); chiều dòng chọn để B hướng +y (4b) / +x (4c)."""
+    t = (np.arange(M) + 0.5) * 2 * np.pi / M
+    dt = 2 * np.pi / M
+    mid, dl = [], []
+    for p in vi_tri:
+        if kieu == "y":
+            P = np.stack([R * np.cos(t), np.full(M, p), R * np.sin(t)], 1)
+            D = -np.stack([-R * np.sin(t), np.zeros(M), R * np.cos(t)], 1) * dt
+        else:
+            P = np.stack([np.full(M, p), -R * np.sin(t), R * np.cos(t)], 1)
+            D = np.stack([np.zeros(M), -R * np.cos(t), -R * np.sin(t)], 1) * dt
+        mid.append(P)
+        dl.append(D)
+    return np.concatenate(mid), np.concatenate(dl)
+
+
+def _B(q, mid, dl):
+    r = q[None, :] - mid
+    d = np.linalg.norm(r, axis=1)[:, None]
+    return (np.cross(dl, r) / d ** 3).sum(0)
+
+
+def _duong_suc(seed, nguon, h=0.03, hop=(14, 14), maxn=9000):
+    """Đường sức qua seed=(x,y) trong mặt phẳng z=0: tích phân RK4 theo hướng B tới khi khép kín hoặc ra khỏi `hop`."""
+    mid, dl = nguon
+
+    def hd(q, sg):
+        b = _B(np.r_[q, 0.0], mid, dl)[:2]
+        return sg * b / np.linalg.norm(b)
+
+    def theo(sg):
+        p = np.array(seed, float)
+        out = [p.copy()]
+        for i in range(maxn):
+            k1 = hd(p, sg); k2 = hd(p + k1 * h / 2, sg); k3 = hd(p + k2 * h / 2, sg); k4 = hd(p + k3 * h, sg)
+            p = p + (k1 + 2 * k2 + 2 * k3 + k4) / 6 * h
+            out.append(p.copy())
+            if abs(p[0]) > hop[0] or abs(p[1]) > hop[1]:
+                break
+            if i > 40 and np.linalg.norm(p - out[0]) < h * 1.2:
+                out[-1] = out[0].copy()
+                return np.array(out), True
+        return np.array(out), False
+    f, kin = theo(1)
+    if kin:
+        return f
+    b, _ = theo(-1)
+    return np.vstack([b[::-1][:-1], f])
+
+
+def _cach(P, occ, g):
+    """True ở các điểm P cách mọi điểm của occ ít nhất g px."""
+    if len(occ) == 0:
+        return np.ones(len(P), bool)
+    d = np.sqrt(((P[:, None, :] - occ[None, :, :]) ** 2).sum(2)).min(1)
+    return d > g
+
+
+def _ve(P, mask, c=BLUE, w=2.0, dash="6 4", chev=(), L=12):
+    """Vẽ các đoạn liền mạch của P (mask=True) bằng nét đứt; chev = các điểm mục tiêu (x,y) đặt đầu V gần nhất."""
+    s, i, n = "", 0, len(P)
+    while i < n:
+        if not mask[i]:
+            i += 1
+            continue
+        j = i
+        while j < n and mask[j]:
+            j += 1
+        if j - i >= 4:
+            s += pts_path([tuple(p) for p in P[i:j]], c, w, dash)
+        i = j
+    for tx, ty in chev:
+        d = np.hypot(P[:, 0] - tx, P[:, 1] - ty)
+        d[~mask] = 1e9
+        k = int(d.argmin())
+        if d[k] < 30 and 2 <= k < n - 2 and mask[k - 2:k + 3].all():
+            dx, dy = P[k + 2] - P[k - 2]
+            s += chevron(P[k][0], P[k][1], dx, dy, c, w, L)
+    return s
+
+
+def _khung(P, vb_w, vb_h, m=8):
+    return (P[:, 0] > m) & (P[:, 0] < vb_w - m) & (P[:, 1] > m) & (P[:, 1] < vb_h - m)
+
+
+# 4a) dây thẳng: ba đường sức tròn đồng tâm, cách xa dây dần
 b = defs("f4a")
-cx = 220
-levels = [(86, 100, 30), (158, 100, 30)]
-ys = [22]
-for g in sorted(cy + ry for cy, rx, ry in levels):
-    ys += [g - 7, g + 7]                      # nửa trước đường sức đè lên dây -> ngắt dây
-ys.append(236)
-for i in range(0, len(ys), 2):
-    b += line(cx, ys[i], cx, ys[i + 1], "currentColor", W)
-b += chevron(cx, 24, 0, -1, ORG, 3.4, 15)
-b += text(cx + 12, 34, "I", ORG, 16, "start", "700")
-for cy, rx, ry in levels:
-    b += pts_path(arc_pts(cx, cy, rx, ry, 180, 270 - GAP), BLUE, 2.2, "6 4")   # nửa sau: dây che
-    b += pts_path(arc_pts(cx, cy, rx, ry, 270 + GAP, 360), BLUE, 2.2, "6 4")
-    b += pts_path(arc_pts(cx, cy, rx, ry, 0, 180), BLUE, 2.2, "6 4")           # nửa trước
-    x, y = ell_pt(cx, cy, rx, ry, 38)
-    dx, dy = ell_tan(rx, ry, 38, -1)
+cx, cy, k = 220, 138, 0.30
+radii = [48, 96, 146]
+wire = np.array([(cx, y) for y in np.arange(18, 248.01, 1.0)])
+front = np.vstack([arc_pts(cx, cy, r, r * k, 0, 180, n=160) for r in radii])
+wmask = _cach(wire, front, 6.0)
+b += _ve(wire, wmask, "currentColor", W, "")
+b += chevron(cx, 20, 0, -1, ORG, 3.4, 15)
+b += text(cx + 12, 38, "I", ORG, 16, "start", "700")
+wire_pts = wire
+for r in radii:
+    sau = np.array(arc_pts(cx, cy, r, r * k, 180, 360, n=240))
+    b += _ve(sau, _cach(sau, wire_pts, 5.0), BLUE, 2.2, "6 4")
+    b += pts_path(arc_pts(cx, cy, r, r * k, 0, 180, n=160), BLUE, 2.2, "6 4")
+    x, y = ell_pt(cx, cy, r, r * k, 38)
+    dx, dy = ell_tan(r, r * k, 38, -1)
     b += chevron(x, y, dx, dy, BLUE, 2.2)
-b += text(cx + 106, 114, "B", BLUE, 16, "start", "700")
-fig4a = wrap(VB, "Dây thẳng dài mang dòng điện hướng lên; đường sức từ là những đường tròn đồng tâm quanh dây, nửa phía sau bị dây che, nửa phía trước đi đè lên dây",
-             b, "Hình 4a. Dây thẳng: đường sức là đường tròn đồng tâm quanh dây.")
+b += text(cx + radii[2] + 6, cy + 4, "B", BLUE, 16, "start", "700")
+fig4a = wrap(VB4, "Dây thẳng dài mang dòng điện hướng lên; đường sức từ là ba đường tròn đồng tâm quanh dây, cách xa dây dần, chiều ngược chiều kim đồng hồ nhìn từ trên xuống; nửa phía sau bị dây che, nửa phía trước đi đè lên dây",
+             b, "Hình 4a. Dây thẳng: đường sức tròn đồng tâm." + SRC.format(h="22.37"),
+             exp="")
 
-# 4b) vòng dây: B xuyên qua tâm, vuông góc mặt phẳng vòng
+# 4b) vòng dây: đường sức tính bằng Biot–Savart, chiếu lên hình nhìn xiên
 b = defs("f4b")
-cx, cy, rx, ry = 220, 130, 84, 34
-top, bot = 22, 238
-yf = cy + ry
-b += line(cx, bot, cx, yf + 8, BLUE, 2.2, "6 4")                    # dây trước vòng đè lên đường sức -> ngắt
-b += line(cx, yf - 8, cx, top + 4, BLUE, 2.2, "6 4")
-b += chevron(cx, top, 0, -1, BLUE, 2.2)
-b += chevron(cx, 70, 0, -1, BLUE, 2.2)
-for sg in (1, -1):
-    P = cubic((cx, top), (cx + sg * 190, top - 10), (cx + sg * 190, bot + 10), (cx, bot))
-    b += pts_path(P, BLUE, 2.0, "6 4")
-    b += chev_on(P, 30, BLUE)
-b += pts_path(arc_pts(cx, cy, rx, ry, 180, 270 - GAP), "currentColor", W)   # nửa sau: đường sức đè lên -> ngắt dây
-b += pts_path(arc_pts(cx, cy, rx, ry, 270 + GAP, 360), "currentColor", W)
-b += pts_path(arc_pts(cx, cy, rx, ry, 0, 180), "currentColor", W)
-for t in (35, 215):
+cx, cy, s = 220, 130, 68
+rx, ry = s, s * 0.36
+ng = _nguon([0.0], "y")
+dem = lambda p: np.column_stack([cx + s * p[:, 0], cy - s * p[:, 1]])
+lines = [dem(_duong_suc((0.0, 0.0), ng, hop=(0.0001, 1.95)))]   # đường sức trên trục
+for a in (0.4, 0.6, 0.78):    # 0.4: đường sức lớn hơn, bị khung hình cắt
+    for sg in (1, -1):
+        lines.append(dem(_duong_suc((sg * a, 0.0), ng, h=0.02, hop=(8, 8))))
+front = np.array(arc_pts(cx, cy, rx, ry, 0, 180, n=200))
+allL = np.vstack(lines)
+b += _ve(lines[0], _khung(lines[0], 440, 260), BLUE, 2.2, "6 4", chev=[(cx, cy - 1.1 * s), (cx, cy + 1.3 * s)])
+for P in lines[1:]:
+    m = _cach(P, front, 5.5) & _khung(P, 440, 260)
+    ytop = P[:, 1].argmin()
+    ch = [tuple(P[ytop]), tuple(P[P[:, 1].argmax()])]
+    if not _khung(P, 440, 260).all():       # đường lớn bị khung cắt: đầu V ngay phía trên và dưới vòng dây
+        ch = []
+        for yy in (cy - 1.25 * s, cy + 1.25 * s):
+            idx = np.where(m)[0]
+            j = idx[np.abs(P[idx, 1] - yy).argmin()]
+            ch.append((P[j, 0], P[j, 1]))
+    b += _ve(P, m, BLUE, 2.0, "6 4", chev=ch)
+sau = np.array(arc_pts(cx, cy, rx, ry, 180, 360, n=200))
+b += _ve(sau, _cach(sau, allL, 5.0), "currentColor", W, "")
+b += pts_path(front, "currentColor", W)
+for t in (100, 280):
     x, y = ell_pt(cx, cy, rx, ry, t)
     dx, dy = ell_tan(rx, ry, t, -1)
-    b += chevron(x, y, dx, dy, ORG, 3.2, 14)
-b += text(cx + rx + 10, cy + 30, "I", ORG, 16, "start", "700")
-b += text(cx + 10, 60, "B", BLUE, 16, "start", "700")
-fig4b = wrap(VB, "Vòng dây tròn nhìn xiên: đường sức từ xuyên qua tâm vuông góc mặt phẳng vòng dây rồi khép kín bên ngoài; chỗ đường sức đi trước thì dây bị ngắt, chỗ dây đi trước thì đường sức bị ngắt",
-             b, "Hình 4b. Vòng dây: <strong>B</strong> xuyên qua tâm, vuông góc mặt phẳng vòng.")
+    b += chevron(x, y, dx, dy, ORG, 3.2, 12)
+b += text(cx + 9, cy + ry + 24, "I", ORG, 16, "start", "700")
+b += text(cx + 12, cy - 1.45 * s, "B", BLUE, 16, "start", "700")
+fig4b = wrap(VB4, "Vòng dây tròn nhìn xiên với đường sức tính bằng mô hình Biot–Savart: đường sức trên trục thẳng đi qua tâm vuông góc mặt phẳng vòng dây; các đường sức khác là đường kín bao quanh từng đoạn dây, đi lên qua lòng vòng rồi vòng ra ngoài và đi xuống; chỗ vòng dây đi trước thì đường sức bị ngắt, chỗ đường sức đi trước thì vòng dây bị ngắt",
+             b, "Hình 4b. Vòng dây: <strong>B</strong> xuyên qua tâm." + SRC.format(h="22.38"))
 
-# 4c) ống dây: từ trường đều trong lòng
+# 4c) ống dây dài (L = 10R): trong lòng ống các đường sức song song, cách đều; bên ngoài khép kín như nam châm thẳng
 b = defs("f4c")
-cy = 130; rx, ry = 12, 44
-xs = [110 + 40 * i for i in range(6)]
-x0, x1 = xs[0] - 24, xs[-1] + rx + 34
-import math
-OFF = 20                                                                  # hai đường sức song song, cách trục đều nhau
-tOff = math.degrees(math.asin(OFF / ry))                                   # góc elip tại độ cao ±OFF
-for yy in (cy - OFF, cy, cy + OFF):
-    ax = [x0]
-    for x in xs:
-        dxo = rx * math.cos(math.asin((yy - cy) / ry))
-        ax += [x + dxo - 6, x + dxo + 6]                                   # nửa phải mỗi vòng ở phía trước, đè lên đường sức
-    ax.append(x1)
-    for i in range(0, len(ax), 2):
-        b += line(ax[i], yy, ax[i + 1], yy, BLUE, 2.2, "6 4")
-    b += chevron(x1, yy, 1, 0, BLUE, 2.2) + chevron(132, yy, 1, 0, BLUE, 2.2)
-g = GAP * 1.3
+cx, cy, s = 220, 130, 22
+rx, ry = 6, s
+ng = _nguon(list(np.linspace(-5, 5, 41)), "x")
+dem = lambda p: np.column_stack([cx + s * p[:, 0], cy - s * p[:, 1]])
+rhos = [-0.85, -0.45, 0.0, 0.45, 0.85]
+lines, chevs = [], []
+for r_ in rhos:
+    P = dem(_duong_suc((0.0, r_), ng, h=0.04, hop=(14, 14), maxn=6000))
+    lines.append(P)
+xs = [cx + s * (-4.5 + 9 * i / 8) for i in range(9)]       # 9 vòng vẽ (trường tính với 41 vòng sát nhau)
+trước = np.vstack([arc_pts(x, cy, rx, ry, -90, 90, n=40) for x in xs])
+allL = np.vstack(lines)
+for r_, P in zip(rhos, lines):
+    m = _cach(P, trước, 4.5) & _khung(P, 440, 260)
+    ya = cy - s * r_
+    xc = {-0.85: (-2.81, 1.69), -0.45: (-1.69, 2.81), 0.0: (-0.56, 3.94), 0.45: (-3.94, 0.56), 0.85: (-2.81, 1.69)}[r_]
+    ch = [(cx + s * u, ya) for u in xc]
+    if abs(r_) > 0.8:      # hai đường sát vách: thêm đầu V ở đỉnh vòng ngoài
+        ch += [(cx, P[:, 1].min() if r_ > 0 else P[:, 1].max())]
+    else:                  # các đường gần trục toả ra hai đầu: thêm đầu V ngoài ống
+        ch += [(cx - 5.2 * s - 26, ya), (cx + 5.2 * s + 26, ya)]
+    b += _ve(P, m, BLUE, 2.0, "6 4", chev=ch)
 for x in xs:
-    # nửa trái ở phía sau: ba đường sức đè lên -> bỏ đoạn vòng nằm giữa ba đường sức
-    h = tOff + 7
-    b += pts_path(arc_pts(x, cy, rx, ry, 90, 180 - h, n=5), "currentColor", W)
-    b += pts_path(arc_pts(x, cy, rx, ry, 180 + h, 270, n=5), "currentColor", W)
-    b += pts_path(arc_pts(x, cy, rx, ry, -90, 90, n=14), "currentColor", W)
-    if x in (xs[1], xs[4]):
-        px, py = ell_pt(x, cy, rx, ry, 40)
-        dx, dy = ell_tan(rx, ry, 40, 1)
-        b += chevron(px, py, dx, dy, ORG, 3.2, 13)
-for sg in (-1, 1):
-    P = cubic((x1, cy), (x1 + 70, cy + sg * 100), (x0 - 70, cy + sg * 100), (x0, cy))
-    b += pts_path(P, BLUE, 2.0, "6 4")
-    b += chev_on(P, 30, BLUE)
-b += text(x1 + 20, cy - 14, "B", BLUE, 16, "start", "700")
-b += text(xs[1] + rx + 8, cy + 36, "I", ORG, 16, "start", "700")
-fig4c = wrap(VB, "Ống dây dài nhìn xiên: bên trong lòng ống đường sức song song với trục, cách đều; bên ngoài khép kín như nam châm thẳng; nửa vòng phía trước đè lên đường sức, nửa phía sau bị đường sức che",
-             b, "Hình 4c. Ống dây: trong lòng ống <strong>B</strong> đều, song song trục ống.")
+    sau = np.array(arc_pts(x, cy, rx, ry, 90, 270, n=40))
+    b += _ve(sau, _cach(sau, allL, 4.5), "currentColor", W, "")
+    b += pts_path(arc_pts(x, cy, rx, ry, -90, 90, n=40), "currentColor", W)
+for x in (xs[2], xs[6]):
+    px, py = ell_pt(x, cy, rx, ry, 40)
+    dx, dy = ell_tan(rx, ry, 40, 1)
+    b += chevron(px, py, dx, dy, ORG, 3.2, 13)
+b += text(xs[2] + rx + 6, cy + ry + 16, "I", ORG, 16, "start", "700")
+b += text(cx + 6.2 * s, cy - 22, "B", BLUE, 16, "start", "700")
+fig4c = wrap(VB4, "Ống dây dài nhìn xiên với đường sức tính bằng mô hình Biot–Savart: trong lòng ống năm đường sức song song với trục, cách đều nhau; hai đường sát vách khép kín bên ngoài, các đường ở gần trục toả ra ngoài hai đầu như nam châm thẳng; nửa vòng phía trước đè lên đường sức, nửa phía sau bị đường sức che",
+             b, "Hình 4c. Ống dây: trong lòng ống <strong>B</strong> đều, bên ngoài như nam châm thẳng." + SRC.format(h="22.39"))
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
