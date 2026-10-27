@@ -1242,6 +1242,10 @@ a.lesson-tree-chapter { text-decoration: none; }
 /* Hub chọn lớp — hai luồng riêng (THPT / CTTC), thẻ kính như AudienceChooser trang chủ */
 .hub-grid { display: grid; gap: 14px; }
 @media (min-width: 640px) { .hub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Màn rộng: 3 thẻ một hàng thay vì 2 thẻ dài 690px (27/10/2026). Dòng dưới trùng rule có sẵn — chỉ để hai khối
+   @media không đứng sát nhau (Lightning CSS gộp nhầm, AGENTS.md). Áp cho cả /lop-hoc và /lop-hoc/cttc. */
+.hub-card-body { min-width: 0; }
+@media (min-width: 1280px) { .hub-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .hub-card { display: flex; align-items: center; gap: 16px; border: 1px solid var(--lesson-line); border-radius: 18px; background: var(--lesson-surface); padding: 18px 20px; color: #e2e8f0; text-decoration: none; transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .3s, background .3s, box-shadow .3s; }
 .hub-card:hover { transform: translateY(-3px); border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); box-shadow: 0 20px 50px -24px var(--lesson-glow); }
 .hub-card > svg { flex: 0 0 auto; color: var(--lesson-accent-text); opacity: 0; transition: opacity .2s, transform .2s; }
@@ -4020,4 +4024,26 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 /* Màn cảm ứng (iPad ngang 1024–1279 vẫn có rail): đích chạm ≥ 44px cho mục lục, lối về, link phụ (D2). */
 @media (pointer: coarse) {
   .lesson-page .lesson-toc a, .lesson-rail-back, .lesson-page .lesson-nav--rail .lesson-side-link, .class-rail-item, .class-rail .lesson-rail-back { min-height: 44px; }
+}
+
+/* ============================================================================================
+   MÀN RỘNG ≥ 1280px (27/10/2026): chữ giữ cột ≤ 62 ký tự (C2), còn bảng, mô phỏng, video, hình khổ rộng
+   lan sang khoảng trống bên phải — ngay tại chỗ câu nhắc tới chúng (N8). Rail và vị trí cột chữ không đổi.
+   Mép phải chung của phần lan = 100vw − 72px (trang bài và trang chương cùng mép; chừa nút Báo lỗi nổi ở góc phải). < 1280 không đổi gì.
+   ============================================================================================ */
+.lesson-layout--rail { --wide-bleed: 0px; }
+@media (min-width: 1280px) {
+  /* Cột giữa bắt đầu ở (100vw − 1200)/2 + 24 + 248 + 40, rộng 720 → phần thêm = 50vw − 504, tối đa 320px. */
+  .lesson-layout--rail { --wide-bleed: clamp(0px, calc(50vw - 504px), 320px); }
+  /* Thẻ lý thuyết nới sang phải nhưng vùng chữ bên trong giữ nguyên bề rộng (padding phải nuốt phần nới). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { margin-right: calc(-1 * var(--wide-bleed)); padding-right: calc(36px + var(--wide-bleed)); }
+  /* Chỉ khối media đứng trực tiếp trong mạch bài mới lan; nằm trong hộp (.tl-box, .tl-quiz…) thì theo hộp.
+     Hình .fig vẽ ở khổ 420–460 giữ 420px (phóng to chữ trong hình sẽ to hơn chữ bài); chỉ hình vẽ khổ ≥ 600 lan —
+     liệt kê đúng bề rộng kèm dấu cách để "0 0 60 40" không khớp nhầm; khổ khác thì gắn .fig--wide khi soạn. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > :is(.tl-video, iframe, details.tl-details:has(> iframe)) { width: calc(100% + var(--wide-bleed)); max-width: none; }
+  /* Bảng (ContentHtml bọc mọi <table> trong .table-scroll): chỉ nới khi nội dung cần — bảng ngắn 3 cột vẫn
+     rộng bằng cột chữ như cũ, bảng nhiều cột/câu dài/có ảnh mới lan, tránh ô trống dàn ngang 900px. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .table-scroll { width: max-content; min-width: 100%; max-width: calc(100% + var(--wide-bleed)); }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .table-scroll > table { width: auto; min-width: 100%; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > figure.fig:is(.fig--wide, :has(> svg:is([viewBox^="0 0 600 "], [viewBox^="0 0 640 "], [viewBox^="0 0 700 "], [viewBox^="0 0 720 "], [viewBox^="0 0 750 "], [viewBox^="0 0 800 "], [viewBox^="0 0 900 "], [viewBox^="0 0 960 "], [viewBox^="0 0 1000 "], [viewBox^="0 0 1200 "]))) { width: min(calc(100% + var(--wide-bleed)), 860px); max-width: none; margin-left: 0; }
 }
