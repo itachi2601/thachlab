@@ -38,12 +38,12 @@
     "type": "multiple_choice",
     "question": "A part that supports a rotating shaft and reduces friction.",
     "options": [
-     "gasket",
+     "bearing",
      "belt",
      "casing",
-     "bearing"
+     "gasket"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "<em>supports a rotating shaft</em> → bearing (ổ bi, ổ trục).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -53,12 +53,12 @@
     "type": "multiple_choice",
     "question": "The situation in which a machine stops working as it should.",
     "options": [
-     "failure",
+     "clearance",
      "schedule",
      "adjustment",
-     "clearance"
+     "failure"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "<em>stops working</em> → failure (sự hỏng).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -69,11 +69,11 @@
     "question": "The action of fixing something that is broken or damaged.",
     "options": [
      "replacement",
-     "inspection",
      "repair",
+     "inspection",
      "lubrication"
     ],
-    "answer": 2,
+    "answer": 1,
     "explanation": "<em>fixing … broken</em> → repair. Replacement là thay cái mới, không phải sửa.",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -81,14 +81,14 @@
    },
    {
     "type": "multiple_choice",
-    "question": "Gradual damage to a surface because two parts rub together.",
+    "question": "Slow damage to a surface because two parts rub together.",
     "options": [
      "corrosion",
      "leak",
-     "crack",
-     "wear"
+     "wear",
+     "crack"
     ],
-    "answer": 3,
+    "answer": 2,
     "explanation": "<em>rub together</em> → wear (mòn). Corrosion là gỉ do hoá chất.",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -98,12 +98,12 @@
     "type": "multiple_choice",
     "question": "A flat sheet of soft material fitted between two joined surfaces to make the joint tight.",
     "options": [
-     "belt",
-     "roller",
      "gasket",
+     "roller",
+     "belt",
      "bearing"
     ],
-    "answer": 2,
+    "answer": 0,
     "explanation": "<em>between two joined surfaces</em> → gasket (gioăng đệm).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -114,11 +114,11 @@
     "question": "A device that removes dirt from the oil.",
     "options": [
      "motor oil",
-     "oil filter",
+     "gasket",
      "belt",
-     "gasket"
+     "oil filter"
     ],
-    "answer": 1,
+    "answer": 3,
     "explanation": "<em>removes dirt</em> → oil filter (bộ lọc dầu).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -129,11 +129,11 @@
     "question": "A ring fitted around a rotating shaft to keep oil inside and dirt out.",
     "options": [
      "roller",
-     "belt",
+     "oil seal",
      "oil filter",
-     "oil seal"
+     "belt"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "<em>ring around a shaft … keep oil inside</em> → oil seal (phớt chắn dầu).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -141,7 +141,7 @@
    },
    {
     "type": "multiple_choice",
-    "question": "A flexible tube that carries pressurised fluid.",
+    "question": "A soft tube that carries oil under pressure.",
     "options": [
      "hydraulic hose",
      "belt",
@@ -149,14 +149,14 @@
      "gasket"
     ],
     "answer": 0,
-    "explanation": "<em>flexible tube … fluid</em> → hydraulic hose (ống mềm thuỷ lực).",
+    "explanation": "<em>tube … oil under pressure</em> → hydraulic hose (ống mềm thuỷ lực).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
     "difficulty": "trung-binh"
    },
    {
     "type": "multiple_choice",
-    "question": "A loop of flexible material that connects two pulleys and transmits motion.",
+    "question": "A loop that goes around two wheels to move power from one to the other.",
     "options": [
      "roller",
      "casing",
@@ -164,7 +164,7 @@
      "crack"
     ],
     "answer": 2,
-    "explanation": "<em>loop … connects two pulleys</em> → belt (dây đai).",
+    "explanation": "<em>loop around two wheels</em> → belt (dây đai).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
     "difficulty": "trung-binh"
@@ -203,12 +203,12 @@
     "type": "multiple_choice",
     "question": "Time worked in addition to normal working hours.",
     "options": [
-     "downtime",
      "overtime",
+     "downtime",
      "schedule",
      "inventory"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "<em>in addition to normal hours</em> → overtime. Downtime là lúc máy ngừng, không phải giờ làm thêm.",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -216,14 +216,14 @@
    },
    {
     "type": "multiple_choice",
-    "question": "The list or stock of goods, such as spare parts, kept in a store.",
+    "question": "The stock of goods, such as spare parts, kept in a store.",
     "options": [
-     "inventory",
+     "shutdown",
      "schedule",
-     "overtime",
-     "asset"
+     "inventory",
+     "belt"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "<em>stock of goods kept in a store</em> → inventory (hàng tồn kho).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -234,11 +234,11 @@
     "question": "The outer cover that protects the parts inside a machine.",
     "options": [
      "belt",
-     "roller",
+     "casing",
      "asset",
-     "casing"
+     "roller"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "<em>outer cover</em> → casing (vỏ máy).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -246,15 +246,15 @@
    },
    {
     "type": "multiple_choice",
-    "question": "Complete: \"Corrective maintenance is a technique that waits for equipment ______ before any maintenance action is taken.\"",
+    "question": "Complete: \"Corrective maintenance is the most ______ method of maintenance management.\"",
     "options": [
-     "reliability",
-     "failure",
-     "clearance",
-     "schedule"
+     "routine",
+     "oversized",
+     "hydraulic",
+     "expensive"
     ],
-    "answer": 1,
-    "explanation": "Corrective = chờ máy hỏng (<em>waits for … failure</em>) rồi mới sửa.",
+    "answer": 3,
+    "explanation": "Article 1: corrective là phương pháp tốn kém nhất (<em>the most expensive</em>).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
     "difficulty": "trung-binh"
@@ -264,11 +264,11 @@
     "question": "Complete: \"Preventive maintenance gives improved ______ of equipment.\"",
     "options": [
      "corrosion",
-     "inventory",
+     "reliability",
      "downtime",
-     "reliability"
+     "inventory"
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "Lợi ích của preventive: <em>improved reliability</em> (độ tin cậy cao hơn).",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -278,12 +278,12 @@
     "type": "multiple_choice",
     "question": "Complete: \"Preventive maintenance gives less unplanned ______ caused by equipment failure.\"",
     "options": [
+     "tension",
+     "clearance",
      "downtime",
-     "injury",
-     "overtime",
-     "inventory"
+     "schedule"
     ],
-    "answer": 0,
+    "answer": 2,
     "explanation": "Máy ngừng ngoài kế hoạch = <em>unplanned downtime</em>; preventive làm giảm nó.",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -295,10 +295,10 @@
     "options": [
      "adjusted",
      "lubricated",
-     "ruptured",
-     "aligned"
+     "aligned",
+     "ruptured"
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "Đường dẫn nhiên liệu bị vỡ (<em>ruptured</em>) nên mới rò rỉ lớn.",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
@@ -306,15 +306,15 @@
    },
    {
     "type": "multiple_choice",
-    "question": "Complete: \"We check the metal casing regularly for signs of ______.\"",
+    "question": "Complete: \"When a machine ______, fix it.\"",
     "options": [
-     "tension",
-     "schedule",
-     "overtime",
-     "corrosion"
+     "breaks",
+     "adjusts",
+     "aligns",
+     "lubricates"
     ],
-    "answer": 3,
-    "explanation": "Vỏ kim loại cần kiểm tra dấu hiệu gỉ sét: <em>corrosion</em>.",
+    "answer": 0,
+    "explanation": "Logic của corrective maintenance: <em>When a machine breaks, fix it.</em>",
     "topic": "AVCN C10: Maintenance",
     "form": "ly_thuyet",
     "difficulty": "trung-binh"
@@ -328,12 +328,12 @@
       "answer": true
      },
      {
-      "text": "A plant using run-to-failure management spends money on maintenance every week.",
-      "answer": false
-     },
-     {
       "text": "High machine downtime is one of the expenses of corrective maintenance.",
       "answer": true
+     },
+     {
+      "text": "A plant using run-to-failure management spends money on maintenance before a machine fails.",
+      "answer": false
      },
      {
       "text": "Corrective maintenance gives high production availability.",
@@ -350,10 +350,6 @@
     "question": "Read Article 2 (preventive maintenance). Mark each statement True or False.",
     "statements": [
      {
-      "text": "Preventive maintenance is routine maintenance of equipment and machinery.",
-      "answer": true
-     },
-     {
       "text": "Preventive maintenance leads to more unnecessary inspections.",
       "answer": false
      },
@@ -364,6 +360,10 @@
      {
       "text": "Preventive maintenance causes more expensive repairs after unexpected failures.",
       "answer": false
+     },
+     {
+      "text": "Preventive maintenance is routine maintenance of equipment and machinery.",
+      "answer": true
      }
     ],
     "explanation": "Preventive đem lại <em>less</em> unnecessary inspections và <em>fewer</em> expensive repairs; <em>prolonged life</em> là một lợi ích.",
@@ -384,12 +384,12 @@
       "answer": false
      },
      {
-      "text": "Flight 236 was flying from Toronto to Lisbon.",
-      "answer": true
-     },
-     {
       "text": "The problem was detected before the flight took off.",
       "answer": false
+     },
+     {
+      "text": "Flight 236 was flying from Toronto to Lisbon.",
+      "answer": true
      }
     ],
     "explanation": "Ống bị lắp sai và <em>oversized</em> (quá lớn); lỗi <em>went undetected</em> tới đêm 24/8/2001.",
