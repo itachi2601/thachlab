@@ -194,9 +194,14 @@ c.add(feather(294, Y_BI - 4))
 c.text(100, 290, "lông chim chậm hơn", size=14, anchor="middle")
 c.text(280, 290, "rơi như nhau", size=14, anchor="middle")
 ERR += [] if Y_LONG1 < Y_BI - 80 else ["f1: ống 1 lông chim phải ở cao hơn hẳn bi"]
-fig1 = c.svg("Hai ống Newton thả cùng lúc một lông chim và một hòn bi: ống còn không khí thì bi gần chạm đáy, lông chim mới rơi một đoạn; ống đã hút hết không khí thì hai vật rơi ngang nhau",
-             "Hình 1. Ống Newton. Còn không khí: lông chim bị cản nhiều, rơi chậm hơn hòn bi. Hút hết không khí: hai vật rơi như nhau. Đường đứt nét là mức thả chung.",
-             exp="tn-l10-roi-tu-do-01")
+# Hình 1: ảnh OpenStax College Physics 2e, Hình 2.37 (28/10/2026) — thay SVG ống Newton (xem nguon.md)
+fig1 = ('<figure class="fig" data-tl="1" data-exp="tn-l10-roi-tu-do-01"><img src="/assets/openstax/l10-su-roi-tu-do/hinh-long-chim-bua-chan-khong.webp" '
+        'alt="Lông chim và cái búa thả cùng lúc: trong không khí lông chim rơi chậm hơn nhiều; trong chân không hai vật rơi ngang nhau, như phi hành gia thử trên Mặt Trăng" '
+        'loading="lazy" width="1000" height="489">'
+        '<figcaption>Hình 1. Lông chim và búa.<br>'
+        'in air = có không khí · in a vacuum = chân không.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 2.37 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 ERR += c.check(obstacles=[(68, TOP, 132, BOT), (248, TOP, 312, BOT)])
 
 # ================= Hình 2: ảnh chụp nhiều lần viên bi, mỗi 0,1 s, cạnh thước và dây dọi

@@ -194,24 +194,13 @@ fig5 = wrap("0 0 440 256",
             b,
             "Hình 5. Ném xiên từ mặt đất: $\\vec v_0$ (đỏ) tách thành $v_{0x}$ (xanh) và $v_{0y}$ (cam). Ở <strong>đỉnh</strong> chỉ còn thành phần ngang; quỹ đạo đối xứng qua đỉnh nên bóng rơi xuống cùng độ cao lúc ném.")
 
-# ================= Hình 6: hai góc phụ nhau (30° và 60°) cùng tầm xa =================
-G6, O6X, L6 = 200, 50, 340
-b = defs("f6")
-b += seg(20, G6, 420, G6, "currentColor", 1.8)
-for H6, dash, w in ((147, "", 2.6), (49, "7 5", 2.4)):
-    pts = [(O6X + L6 * u / 40, G6 - 4 * H6 * (u / 40) * (1 - u / 40)) for u in range(0, 41)]
-    b += poly(pts, GRN, w, dash)
-    b += dot(O6X + L6 / 2, G6 - H6, 4.2, ORG)
-b += dot(O6X, G6, 4.5, ORG) + dot(O6X + L6, G6, 4.5, ORG)
-b += seg(O6X, 224, O6X + L6, 224, ORG, 1.4)
-b += seg(O6X, 220, O6X, 228, ORG, 1.4) + seg(O6X + L6, 220, O6X + L6, 228, ORG, 1.4)
-b += text(O6X + L6 / 2, 244, "cùng tầm xa L", ORG, 14, "middle", "700")
-b += text(20, 18, "α = 60° (nét liền): lên cao gấp 3, bay lâu hơn", GRN, 14, "start", "700")
-b += text(20, 38, "α = 30° (nét đứt): thấp hơn, bay nhanh hơn", GRN, 14, "start", "700")
-fig6 = wrap("0 0 440 254",
-            "Hai góc ném phụ nhau 30 độ và 60 độ với cùng vận tốc đầu cho cùng tầm xa; góc 60 độ lên cao gấp ba và bay lâu hơn",
-            b,
-            "Hình 6. Cùng $v_0$, ném ở $30^\\circ$ và $60^\\circ$ (hai góc <strong>phụ nhau</strong>): hai quỹ đạo rơi xuống <strong>cùng một điểm</strong>, nhưng quỹ đạo $60^\\circ$ cao gấp ba ($H\\sim\\sin^2\\alpha$) và bay lâu hơn.")
+# ================= Hình 6: ảnh OpenStax College Physics 2e, Hình 3.38(b) (28/10/2026) — thay SVG 30°/60° (xem nguon.md)
+fig6 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-chuyen-dong-nem/hinh-goc-nem-phu-nhau.webp" '
+        'alt="Cùng vận tốc đầu 50 m/s, ném ở 15, 45 và 75 độ: góc 15 và 75 độ (phụ nhau) rơi cùng một điểm, tầm xa 128 m; góc 45 độ xa nhất, 255 m" '
+        'loading="lazy" width="368" height="195">'
+        '<figcaption>Hình 6. Hai góc <strong>phụ nhau</strong> ($15^\\circ$, $75^\\circ$) cùng tầm xa; $45^\\circ$ xa nhất.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 3.38b — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 fig1 = fig1.replace("</svg>", '</svg><button type="button" class="bt-run" data-bt-run="1">▶ Chạy mô phỏng</button>', 1)
 h = open("theory.src.html", encoding="utf8").read()
