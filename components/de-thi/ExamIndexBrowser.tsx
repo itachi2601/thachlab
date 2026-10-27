@@ -133,7 +133,7 @@ export default function ExamIndexBrowser({ exams }: { exams: ExamIndexItem[] }) 
         {list.length > 0 ? `${list.length} đề` : "Không có đề nào khớp. Thử bỏ bớt một bộ lọc."}
       </p>
 
-      <ul className="mt-3 grid gap-3 md:grid-cols-2">
+      <ul className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {list.slice(0, shown).map((e) => (
           <li key={e.id}>
             <Link
