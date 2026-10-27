@@ -53,26 +53,14 @@ b += text(394, 182, "đáy lon", "currentColor", 13, "middle")
 fig1 = fig("0 0 440 192", "Máy in phun liên tục: giọt mực tích điện âm bay ngang vào khe giữa bản dương ở trên và bản âm ở dưới, rồi tới đáy lon",
            b, "Hình 1. Giọt mực tích điện bay qua khe giữa hai bản rồi mới tới đáy lon. Trong khe, giọt đi đường nào?")
 
-# ---------- Hình 2: đường sức giữa hai bản song song
-b = defs("f2")
-TOP, BOT, X0, X1 = 40, 170, 60, 380          # mặt trong hai bản
-b += plate(X0, TOP - 10, X1 - X0, 10, "+") + plate(X0, BOT, X1 - X0, 10, "-")
-b += text(X0, 22, "+ + + + + + + + + + +", RED, 13, "start", "700")
-b += text(X1, 22, "hiệu điện thế U", "currentColor", 13, "end", "700")
-b += text(X0, 200, "− − − − − − − − − − −", BLUE, 13, "start", "700")
-xs = [100 + 40 * i for i in range(7)]       # 100..340, cách đều 40 px
-for x in xs:
-    b += line(x, TOP + 2, x, BOT - 2, ORG, 2.2, marker="f2-o")
-b += text(xs[3] + 8, 110, "E", ORG, 15, "start", "700")
-for xe, ctrl in ((X0 + 6, 18), (X1 - 6, 422)):  # đường sức cong ở mép
-    b += (f'<path d="M{xe},{TOP + 2} Q{ctrl},{(TOP + BOT) / 2} {xe},{BOT - 2}" fill="none" stroke="{ORG}" '
-          f'stroke-width="1.8" stroke-dasharray="5 4" opacity=".8" marker-end="url(#f2-o)"/>')
-b += text(14, 222, "mép: đường sức cong, không đều", "currentColor", 13, "start", "400")
-b += line(432, TOP, 432, BOT, "currentColor", 1.5) + line(426, TOP, 438, TOP, "currentColor", 1.5) + line(426, BOT, 438, BOT, "currentColor", 1.5)
-b += text(426, 112, "d", "currentColor", 14, "end", "700")
-fig2 = fig("0 0 440 232", "Hai bản phẳng song song, bản trên dương, bản dưới âm. Giữa hai bản các đường sức thẳng, song song, cách đều, hướng từ bản dương xuống bản âm; ở mép đường sức cong ra",
-           b, "Hình 2. Giữa hai bản (xa mép): đường sức <strong>thẳng, song song, cách đều</strong>, từ bản dương sang bản âm. Hiệu điện thế giữa hai bản là $U$, khoảng cách $d$.",
-           exp="tn-l11-dien-truong-deu-01")
+# ---------- Hình 2: ảnh OpenStax College Physics 2e, Hình 19.5 (đợt 28/10/2026)
+fig2 = ('<figure class="fig" data-tl="1" data-exp="tn-l11-dien-truong-deu-01"><img src="/assets/openstax/l11-dien-truong-deu/hinh-hai-ban-song-song.webp" '
+        'alt="Hai bản dẫn điện song song cách nhau d, bản A dương bên trái, bản B âm bên phải; giữa hai bản các đường sức thẳng, song song, cách đều, cong ra ở mép" '
+        'loading="lazy" width="410" height="768" style="max-width:min(100%,300px);height:auto">'
+        '<figcaption>Hình 2. Giữa hai bản (xa mép): đường sức thẳng, song song, cách đều.<br>'
+        'V<sub>AB</sub> = U · d = khoảng cách · E = U/d.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 19.5 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 
 # ---------- Hình 3: quỹ đạo parabol của q > 0 và electron
 b = defs("f3")
