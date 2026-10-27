@@ -66,55 +66,15 @@ fig1 = wrap("0 0 420 250",
             b,
             "Hình 1. Gợn tròn lan từ chỗ hòn sỏi rơi về phía phao câu và chiếc lá.")
 
-# ---------------- Hình 2: sóng ngang trên dây nhảy — dao động thẳng đứng, truyền nằm ngang
-Y0, A2, LAM2, X0, X1 = 140, 40, 160, 40, 390
-rope = lambda x: Y0 - A2 * math.sin(2 * math.pi * (x - X0) / LAM2)
-b = seg(X0, Y0, X1, Y0, "currentColor", 1.2, "4 4", .45)
-b += poly([(x, rope(x)) for x in range(X0, X1 + 1, 3)], BLUE, 2.8)
-b += f'<rect x="{X1}" y="60" width="12" height="170" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="1.6"/>'
-b += t(X1 + 6, 50, "cột", "currentColor", "middle", "500")
-b += f'<circle cx="{X0}" cy="{Y0}" r="6" fill="currentColor"/>'
-b += t(14, 168, "tay vẩy", "currentColor", "start", "500")
-# phương truyền
-b += vec(70, 40, 350, 40, GRN, 2.6) + t(210, 28, "phương truyền sóng", GRN, "middle", "700")
-# dải băng ở đỉnh sóng x = 240 và biên độ dao động thẳng đứng ±A
-XR = 240
-assert abs(rope(XR) - (Y0 - A2)) < 0.5        # dải băng đặt đúng trên dây (ở đỉnh)
-b += dbl(XR, Y0 - A2 - 4, XR, Y0 + A2 + 4, ORG, 2.4)
-b += f'<rect x="{XR-5}" y="{rope(XR)-3:.1f}" width="10" height="16" fill="{ORG}"/>'
-b += t(XR, 214, "dải băng: lên – xuống", ORG, "middle", "700")
-fig2 = wrap("0 0 420 240",
-            "Sóng ngang trên dây: sóng truyền theo phương nằm ngang, dải băng trên dây dao động lên xuống theo phương thẳng đứng",
-            b,
-            "Hình 2. Sóng ngang trên dây nhảy.<br>Dải băng dao động vuông góc phương truyền.")
+# ---------------- Hình 2: ảnh OpenStax College Physics 2e, Hình 16.29 (28/10/2026) — thay SVG tự vẽ
+fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-song-ngang-song-doc/hinh-song-ngang-day.webp" '
+        'alt="Sóng ngang trên dây: tay lắc lên xuống, sóng truyền sang phải theo các mũi tên" loading="lazy" width="875" height="311">'
+        '<figcaption>Hình 2. Sóng ngang trên dây.<br>Tay lên – xuống.<br><small>Hình: OpenStax, College Physics 2e, Hình 16.29 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
-# ---------------- Hình 3: sóng dọc trên lò xo — vùng nén, vùng dãn, vòng đánh dấu dao động dọc trục
-XS, STEP, LAM3, AMP3 = 30, 9, 160, 18
-assert AMP3 * 2 * math.pi / LAM3 < 1                      # vòng không chạm nhau
-disp = lambda xe: AMP3 * math.sin(2 * math.pi * (xe - XS) / LAM3)
-MARK = 22                                                 # vòng đánh dấu (vị trí cân bằng 228, gần chỗ lệch cực đại)
-b = vec(70, 40, 350, 40, GRN, 2.6) + t(210, 28, "phương truyền sóng", GRN, "middle", "700")
-for i in range(42):
-    xe = XS + STEP * i
-    x = xe + disp(xe)
-    col, w = (ORG, 3.2) if i == MARK else ("currentColor", 1.8)
-    b += f'<ellipse cx="{x:.1f}" cy="125" rx="5" ry="30" fill="none" stroke="{col}" stroke-width="{w}"/>'
-# nén: du/dx < 0 tại xe − XS = λ/2 + nλ → 110, 270; dãn: du/dx > 0 → 190, 350
-for xn in (110, 270):
-    assert math.cos(2 * math.pi * (xn - XS) / LAM3) < -0.99
-    b += t(xn, 82, "nén", RED, "middle", "700")
-for xd in (190, 350):
-    assert math.cos(2 * math.pi * (xd - XS) / LAM3) > 0.99
-    b += t(xd, 82, "dãn", BLUE, "middle", "700")
-XM = XS + STEP * MARK
-b += dbl(XM - AMP3 - 6, 178, XM + AMP3 + 6, 178, ORG, 2.4)
-b += t(XM + 24, 206, "vòng đánh dấu: tiến – lùi", ORG, "middle", "700")
-b += dbl(14, 178, 46, 178, "currentColor", 2)
-b += t(14, 206, "đầu đẩy – kéo", "currentColor", "start", "500")
-fig3 = wrap("0 0 420 222",
-            "Sóng dọc trên lò xo: các vòng sít nhau ở vùng nén, thưa ra ở vùng dãn; vòng đánh dấu dao động qua lại dọc trục lò xo",
-            b,
-            "Hình 3. Sóng dọc trên lò xo slinky.<br>Vòng cam tiến – lùi dọc phương truyền.")
+# ---------------- Hình 3: ảnh OpenStax College Physics 2e, Hình 16.30 (28/10/2026) — thay SVG tự vẽ
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-song-ngang-song-doc/hinh-song-doc-lo-xo.webp" '
+        'alt="Sóng dọc trên lò xo: tay đẩy kéo dọc trục, các vùng vòng sít nhau chạy sang phải" loading="lazy" width="875" height="289">'
+        '<figcaption>Hình 3. Sóng dọc trên lò xo.<br>Tay đẩy – kéo dọc trục.<br><small>Hình: OpenStax, College Physics 2e, Hình 16.30 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ---------------- Hình 4: đồ thị u – x của sóng dọc và hàng phần tử bên dưới
 AX, A4, LAM4, XL, XR4 = 100, 45, 160, 40, 400

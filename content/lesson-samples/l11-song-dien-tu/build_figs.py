@@ -111,48 +111,10 @@ fig1 = wrap(f"0 0 {W1} {H1}",
             b,
             "Hình 1. Trạm phát sóng, thang máy, chảo thu và vệ tinh.")
 
-# ---------------- Hình 2: sóng điện từ — E (đỏ, thẳng đứng) ⊥ B (xanh, phương xiên vào trong) ⊥ phương truyền (trục ngang)
-W2, H2 = 420, 192
-X0, X1, Y0, LAM = 40, 340, 118, 200.0
-AE, AB = 62, 56
-ZX, ZY = -0.6, 0.6                     # phương "vào trong trang" vẽ xiên xuống – sang trái
-ZN = math.hypot(ZX, ZY)
-ZX, ZY = ZX / ZN, ZY / ZN
-# Chiều: x phải (truyền), y lên (E), z ra phía người xem vẽ xiên xuống–trái. E×B = ŷ×ẑ = +x̂ khớp chiều truyền.
-_E, _B = (0, 1, 0), (0, 0, 1)
-_c = (_E[1]*_B[2]-_E[2]*_B[1], _E[2]*_B[0]-_E[0]*_B[2], _E[0]*_B[1]-_E[1]*_B[0])
-assert _c == (1, 0, 0) and ZX < 0 and ZY > 0
-s_ = lambda x: math.sin(2 * math.pi * (x - X0) / LAM)
-b = vec(18, Y0, 404, Y0, "currentColor", 2, 12)
-for k in range(1, 24):                 # các vạch nối trục → đường cong (mỗi λ/16)
-    x = X0 + LAM / 16 * k
-    if x > X1:
-        break
-    v = s_(x)
-    b += seg(x, Y0, x, Y0 - AE * v, RED, 1.2, "", .55)
-    b += seg(x, Y0, x + ZX * AB * v, Y0 + ZY * AB * v, BLUE, 1.2, "", .55)
-xs = [X0 + i for i in range(0, int(X1 - X0) + 1, 2)]
-b += poly([(x + ZX * AB * s_(x), Y0 + ZY * AB * s_(x)) for x in xs], BLUE, 2.6)
-b += poly([(x, Y0 - AE * s_(x)) for x in xs], RED, 2.6)
-XM = X0 + LAM / 4                      # chỗ E, B cực đại (cùng pha)
-assert abs(s_(XM) - 1) < 1e-9 and abs(s_(X0 + LAM / 2)) < 1e-9
-b += vec(XM, Y0, XM, Y0 - AE, RED, 3)
-bx, by = XM + ZX * AB, Y0 + ZY * AB
-b += vec(XM, Y0, bx, by, BLUE, 3)
-lab2 = [("E", XM, Y0 - AE - 10, "middle", RED), ("B", bx - 6, by + 20, "end", BLUE),
-        ("phương", 412, Y0 + 30, "end", "currentColor"), ("truyền", 412, Y0 + 50, "end", "currentColor")]
-for s, x, y, a, c in lab2:
-    b += f'<text x="{x:.1f}" y="{y:.1f}" fill="{c}" font-size="{FS+2 if len(s)==1 else FS}" font-weight="700" text-anchor="{a}"' + (' font-style="italic" font-family="serif"' if len(s) == 1 else "") + f'>{s}</text>'
-# nhãn sát vật: E cách đầu vectơ E ≤ 30 px, B cách đầu vectơ B ≤ 30 px
-assert math.hypot(0, 10) < 30 and math.hypot((bx - 6) - bx, (by + 20) - by) < 30
-# nhãn "phương truyền" không chạm đường cong: các đường cong kết thúc ở X1 < hộp nhãn
-assert X1 + ZX * 0 < hop(412, Y0 + 30, "phương", "end")[0] - 4
-kiem_nhan([hop(x, y, s, a) for s, x, y, a, c in lab2], W2)
-fig2 = wrap(f"0 0 {W2} {H2}",
-            "Sóng điện từ truyền theo trục nằm ngang: vectơ E màu đỏ dao động theo phương thẳng đứng, vectơ B màu xanh dao động theo phương vuông góc với trang giấy, vẽ xiên hướng ra phía người xem, hai đường cong cùng đạt cực đại và cùng qua số 0 tại một chỗ",
-            b,
-            "Hình 2. E (đỏ) vuông góc với B (xanh, vẽ xiên, hướng ra phía người xem).<br>"
-            "Cả hai vuông góc với phương truyền, cùng pha.")
+# ---------------- Hình 2: ảnh OpenStax College Physics 2e, Hình 24.7 (28/10/2026) — thay SVG tự vẽ
+fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-song-dien-tu/hinh-song-dien-tu-E-B.webp" '
+        'alt="Sóng điện từ truyền theo mũi tên xanh lá c: vectơ điện trường E (xanh dương) thẳng đứng, vectơ từ trường B (hồng) nằm ngang, cả hai vuông góc nhau và vuông góc phương truyền, cùng pha" loading="lazy" width="875" height="602">'
+        '<figcaption>Hình 2. E (xanh dương) vuông góc B (hồng).<br>Cả hai vuông góc phương truyền, cùng pha.<br><small>Hình: OpenStax, College Physics 2e, Hình 24.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ---------------- Hình 3: thanh sô-cô-la nhìn từ trên, các vệt chảy cách đều d (= λ/2)
 W3, H3 = 420, 178
