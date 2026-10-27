@@ -5,7 +5,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "..", "..", ".claude", "skills", "soan-bai-ly-thuyet-tuong-tac", "scripts"))
 from svg_lib import RED, BLUE, ORG, GRN, text, wrap, chevron, arrow
 
-PHUT = 14
+PHUT = 15
 GREY = "rgba(148,163,184,.3)"
 
 

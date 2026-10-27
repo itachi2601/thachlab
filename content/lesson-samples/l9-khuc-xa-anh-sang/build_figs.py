@@ -8,7 +8,7 @@ from svg_lib import *
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-PHUT = 16          # số phút đọc: lấy từ lint_do_dai.py, làm tròn lên
+PHUT = 18          # số phút đọc: lấy từ lint_do_dai.py, làm tròn lên
 
 S_ = lambda d: math.sin(math.radians(d))
 ASIN = lambda x: math.degrees(math.asin(x))
