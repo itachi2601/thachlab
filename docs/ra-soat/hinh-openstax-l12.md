@@ -7,7 +7,7 @@ Chỉ chọn, chưa sửa bài, chưa tải ảnh, chưa đăng DB. Giấy phép
 Thầy xem bài đã đăng, thấy SVG vẽ lại theo OpenStax sai nhiều chỗ. Đợt 2 (21 bài, mỗi bài một agent xem ảnh thật): thay 25 hình bằng ảnh OpenStax, giữ SVG 58 hình (sách không có hình tương ứng, hoặc khác ký hiệu/số liệu của bài). Chưa đăng DB, ảnh mới chưa deploy.
 Thay bằng ảnh: ap-suat-dong-nang Hình 5 (13.25) · cam-ung-dien-tu Hình 1 (23.6) và 3 (23.7a) · dien-tu-truong Hình 4 (24.8) · dong-dien-xoay-chieu Hình 2 (23.21) · hat-nhan Hình 1 (30.10) · khai-niem-tu-truong Hình 3 (22.14) · luc-tu-cam-ung-tu Hình 4a/b/c (22.37a, 22.38b, 22.39b) · may-phat Hình 1 (23.26), 2 (23.21), 4 (23.27) · nang-luong-lien-ket Hình 3 (31.24) · noi-nang-dl1 Hình 3 (14.4) · phan-hach 2 hình (32.23, 32.21) · phong-xa Hình 3 (31.19) · phuong-trinh-trang-thai Hình 1 (13.19c) · su-chuyen-the Hình 2 (14.7) · thang-nhiet-do 3 hình (14.2, 13.10, 13.7) · ung-dung-cam-ung Hình 4 (23.12) · thuyet-dong-hoc Hình 3 (13.22).
 Giữ SVG: an-toan-phong-xa, boyle-charles, thuc-hanh-cam-ung-tu, thuc-hanh-nhiet (sách không có hình khớp), cùng các hình còn lại ghi lý do trong `nguon.md` từng bài (mục "Đợt 2").
-Hạn mức độ dài: sau khi thêm giải nghĩa nhãn, ba bài phải rút chữ để về ≤2500 từ (phuong-trinh-trang-thai, khai-niem-tu-truong, cam-ung-dien-tu); may-phat-dien-bien-ap vẫn 2698 từ như trước đợt này (lỗi có sẵn).
+Hạn mức độ dài (đã trả lại phần kiến thức bị cắt nhầm, chỉ rút figcaption ảnh OpenStax): phan-hach 2498 · khai-niem-tu-truong 2489 · cam-ung-dien-tu 2498 · phuong-trinh-trang-thai 2502 (vượt 2 từ, chấp nhận) · may-phat-dien-bien-ap 2698 (vượt từ trước đợt này).
 
 ## Trạng thái giai đoạn 2 (27/10/2026)
 
