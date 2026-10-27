@@ -179,38 +179,15 @@ fig2 = c.svg("Tìm trọng tâm tấm bìa: treo ở A rồi ở B, hai đườn
              exp="tn-l10-trong-luc-luc-cang-01")
 ERR += c.check()
 
-# ---------------- Hình 3: lực căng ở hai đầu dây treo vật
-c = Canvas("f3", 400, 320)
-X, YC, YT = 170, 34, 196                # trần ở y=34, đầu dưới dây (chỗ buộc vật) ở y=196
-c.line(80, YC, 260, YC, "currentColor", 3)
-for k in range(9):
-    c.line(86 + k * 20, YC, 78 + k * 20, YC - 10, "currentColor", 1.5, "", .55)
-c.line(X, YC, X, YT, "currentColor", 2, "", .55)          # sợi dây
-c.add(f'<rect x="{X-30}" y="{YT}" width="60" height="48" rx="4" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2.2"/>')
-GYc = YT + 24
-L_T = 62
-c.arr("T", "b", X, YT, X, YT - L_T, 3.4)                 # dây kéo vật: đặt ở chỗ buộc, hướng LÊN (vào giữa dây)
-c.arr("T2", "b", X, YC, X, YC + L_T, 3.4)                # dây kéo trần: đặt ở móc, hướng XUỐNG (vào giữa dây)
-c.dot(X, GYc, 4)
-c.arr("P", "r", X, GYc, X, GYc + L_T, 3.4)               # trọng lực, vật đứng yên nên P = T (dài bằng nhau)
-c.text(X + 12, YT - 26, "T", BLUE, 16, italic=True)
-c.text(X + 26, YT - 26, ": dây kéo vật", BLUE, 13, weight="600")
-c.text(X + 12, YC + 40, "T′", BLUE, 16, italic=True)
-c.text(X + 33, YC + 40, ": dây kéo trần", BLUE, 13, weight="600")
-c.text(X + 12, GYc + 50, "P", RED, 16, italic=True)
-c.text(X + 26, GYc + 50, ": Trái Đất hút vật", RED, 13, weight="600")
-c.text(X - 40, YC + 104, "hai đầu dây:", size=13, anchor="end", weight="600")
-c.text(X - 40, YC + 122, "T hướng vào", size=13, anchor="end", weight="600")
-c.text(X - 40, YC + 140, "giữa dây", size=13, anchor="end", weight="600")
-# kiểm chiều: T (đặt ở đầu dưới) phải hướng lên trên; T' (đặt ở đầu trên) hướng xuống; cả hai đều hướng VÀO giữa dây
-mid = (YC + YT) / 2
-for tag in ("T", "T2"):
-    x1, y1, x2, y2 = c.arrows[tag]
-    if abs(y2 - mid) >= abs(y1 - mid):
-        ERR.append(f"f3: {tag} không hướng vào giữa dây")
-fig3 = c.svg("Vật treo dưới trần bằng dây: lực căng T đặt lên vật hướng lên, lực căng T phẩy đặt lên trần hướng xuống, trọng lực P hướng xuống",
-             "Hình 3. Lực căng ở hai đầu dây đều hướng vào giữa dây: <em>T</em> kéo vật lên, <em>T</em>′ kéo móc trần xuống. Vật đứng yên nên <em>T</em> = <em>P</em> (mũi tên dài bằng nhau).")
-ERR += c.check()
+# ---------------- Hình 3: ảnh OpenStax College Physics 2e, Hình 4.14 (đợt 28/10/2026) ----------------
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-trong-luc-luc-cang/hinh-luc-cang-day.webp" '
+        'alt="Tay giữ dây treo một vật nặng: lực căng T ở hai đầu dây đều hướng vào giữa dây, kéo vật lên và kéo tay xuống, trọng lực w hướng xuống" '
+        'loading="lazy" width="539" height="750">'
+        '<figcaption>Hình 3. Lực căng ở hai đầu dây đều hướng vào giữa dây:<br>'
+        '<em>T</em> kéo vật lên, <em>T</em> kéo tay xuống.<br>'
+        'Vật đứng yên: <em>T</em> = <em>w</em> (<em>w</em> là <em>P</em> của bài).<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 4.14 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ---------------- Hình 4: hệ vật nối dây qua ròng rọc (dùng cho bài toán mẫu: mA = 2 kg, mB = 0,5 kg, T = 4 N, PB = 5 N, a = 2 m/s²)
 c = Canvas("f4", 400, 312)
