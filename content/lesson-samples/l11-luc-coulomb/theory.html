@@ -26,10 +26,11 @@
 <h3>II. Kiến thức: điện tích và lực giữa chúng</h3>
 
 <h4>1. Nhiễm điện và thuyết electron</h4>
+<p class="tl-claim">Thừa electron thì âm, thiếu electron thì dương.</p>
 <p><strong>🔑 Thừa electron: âm · Thiếu electron: dương · $|q| = n|e|$</strong></p>
 <ul>
 <li><strong>Vật nhiễm điện:</strong> hút, đẩy vật khác hoặc phóng tia lửa điện.</li>
-<li><strong>Thuyết electron:</strong> nguyên tử bình thường trung hoà; electron nhẹ, linh động, dễ rời nguyên tử.</li>
+<li><strong>Thuyết electron:</strong> nguyên tử bình thường <span class="tl-term"><input type="checkbox" id="tl35-t1"><label for="tl35-t1">trung hoà</label><span class="tl-def">có tổng điện tích bằng 0, không nhiễm điện.</span></span>; electron nhẹ, linh động, dễ rời nguyên tử.</li>
 <li>Điện tích luôn là bội của $|e| = 1{,}6\cdot10^{-19}$ C.</li>
 </ul>
 <div class="table-scroll"><table class="tl-table">
@@ -84,12 +85,18 @@
 </div>
 
 <h4>2. Định luật Coulomb</h4>
+<p class="tl-claim">Lực tỉ lệ thuận với tích điện tích, nghịch với r².</p>
 <p><strong>🔑 Phương nối hai điện tích · Tỉ lệ tích $|q_1q_2|$ · Nghịch bình phương $r$</strong></p>
 <ul>
 <li><strong>Điện tích điểm:</strong> vật tích điện rất nhỏ so với khoảng cách đang xét. Lực hút, đẩy giữa các điện tích đứng yên gọi là <strong>lực tĩnh điện</strong> (lực Coulomb).</li>
 <li>Cùng dấu thì <strong>đẩy</strong>, trái dấu thì <strong>hút</strong>.</li>
 </ul>
 <p>Lực hút hay đẩy giữa hai điện tích điểm trong chân không có phương trùng đường thẳng nối hai điện tích, độ lớn tỉ lệ thuận với tích độ lớn hai điện tích, tỉ lệ nghịch với bình phương khoảng cách.</p>
+<div class="tl-nums">
+<details class="tl-num"><summary>Hằng số Coulomb $k$</summary><p>$9\cdot10^9\ \text{N·m}^2/\text{C}^2$</p></details>
+<details class="tl-num"><summary>Điện tích nguyên tố $|e|$</summary><p>$1{,}6\cdot10^{-19}\ \text{C}$</p></details>
+<details class="tl-num"><summary>Hằng số điện môi của chân không</summary><p>$\varepsilon = 1$</p></details>
+</div>
 <div class="tl-fx">
 <p class="tl-fx-name">Định luật Coulomb</p>
 <p>$$F = k\dfrac{|q_1q_2|}{\varepsilon r^2}$$</p>
@@ -104,8 +111,8 @@
 </div>
 <ul>
 <li><strong>Vectơ lực:</strong> đặt tại mỗi điện tích · phương nối hai điện tích · chiều đẩy nếu $q_1q_2 \gt 0$, hút nếu $q_1q_2 \lt 0$.</li>
-<li>Chân không ($\varepsilon = 1$), không khí ($\varepsilon \approx 1$): bỏ $\varepsilon$, còn $F = k\dfrac{|q_1q_2|}{r^2}$.</li>
-<li>Trong điện môi (môi trường cách điện như dầu, thuỷ tinh, nước nguyên chất) lực <strong>giảm $\varepsilon$ lần</strong>.</li>
+<li>Chân không ($\varepsilon = 1$), không khí ($\varepsilon \approx 1$<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>): bỏ $\varepsilon$, còn $F = k\dfrac{|q_1q_2|}{r^2}$.</li>
+<li>Trong <span class="tl-term"><input type="checkbox" id="tl35-t2"><label for="tl35-t2">điện môi</label><span class="tl-def">chất cách điện, đặt giữa hai điện tích thì làm lực giảm.</span></span> (như dầu, thuỷ tinh, nước nguyên chất) lực <strong>giảm $\varepsilon$ lần</strong>.</li>
 <li>Chỉ đúng cho điện tích điểm, hoặc quả cầu tích điện đều (coi điện tích đặt ở tâm).</li>
 <li>Ví dụ: $r$ tăng 2 lần, $|q_1|$ giảm 2 lần thì $F$ giảm $2\times2^2 = 8$ lần.</li>
 </ul>
@@ -372,3 +379,6 @@
 <li><strong>Cân bằng:</strong> hợp lực bằng 0 · cùng phương, ngược chiều, bằng độ lớn.</li>
 </ul>
 </div>
+<ol class="tl-fns">
+<li id="tl-fn-1">Không khí khô ở điều kiện thường có $\varepsilon \approx 1{,}0006$, nên coi bằng 1.</li>
+</ol>

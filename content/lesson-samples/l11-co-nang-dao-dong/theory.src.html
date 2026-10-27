@@ -28,6 +28,7 @@
 <h3>II. Động năng, thế năng và cơ năng</h3>
 
 <h4>1. Thế năng — mốc ở vị trí cân bằng</h4>
+<p class="tl-claim">Mốc ở VTCB, thế năng lớn nhất ở biên.</p>
 <p><strong>🔑 Mốc ở VTCB · Lớn ở biên</strong></p>
 <p>Li độ tính từ vị trí cân bằng (VTCB):</p>
 <p>$$x=A\cos(\omega t+\varphi)$$</p>
@@ -61,6 +62,7 @@
 </details>
 
 <h4>2. Động năng — lớn ở giữa</h4>
+<p class="tl-claim">Động năng lớn nhất ở giữa, bằng không ở biên.</p>
 <p><strong>🔑 Lớn ở giữa · Bằng không ở biên</strong></p>
 <ul>
 <li>Động năng phụ thuộc vận tốc: vật càng nhanh, $E_d$ càng lớn.</li>
@@ -101,6 +103,7 @@
 </details>
 
 <h4>3. Hai cái đổi chỗ — đồ thị theo li độ</h4>
+<p class="tl-claim">Một cái tăng thì cái kia giảm.</p>
 <p><strong>🔑 Một tăng · Cái kia giảm</strong></p>
 <table class="tl-table">
 <thead><tr><th>Thế năng $E_t$</th><th>Động năng $E_d$</th></tr></thead>
@@ -118,7 +121,7 @@
 <li>Hai đường cắt nhau tại $x=\pm\dfrac{A}{\sqrt{2}}$, nơi $E_t=E_d$, tức $x^2=A^2-x^2$.</li>
 </ul>
 <!--FIG2-->
-<p>Xét theo thời gian $t$ (không phải theo $x$): $E_t$ và $E_d$ biến thiên tuần hoàn với tần số góc $2\omega$, tần số $2f$, chu kì $T/2$, và <strong>ngược pha</strong> nhau.</p>
+<p>Xét theo thời gian $t$ (không phải theo $x$): $E_t$ và $E_d$ biến thiên tuần hoàn với tần số góc $2\omega$, tần số $2f$, chu kì $T/2$, và <strong><span class="tl-term"><input type="checkbox" id="tl24-t1"><label for="tl24-t1">ngược pha</label><span class="tl-def">lệch nhau π: cái này cực đại thì cái kia cực tiểu.</span></span></strong> nhau.</p>
 <details class="tl-details tl-more">
 <summary>Vì sao chu kì năng lượng là $T/2$?</summary>
 <p>$\cos^2\alpha=\dfrac{1+\cos 2\alpha}{2}$ và $\sin^2\alpha=\dfrac{1-\cos 2\alpha}{2}$. Trong $E_t$, $E_d$ xuất hiện góc $2(\omega t+\varphi)$: tần số góc gấp đôi, chu kì còn một nửa. Dấu trước $\cos 2\alpha$ ngược nhau nên hai đại lượng ngược pha.</p>
@@ -137,8 +140,9 @@
 </div>
 
 <h4>4. Cơ năng — tổng không đổi</h4>
+<p class="tl-claim">Cơ năng không đổi và tỉ lệ với A².</p>
 <p><strong>🔑 Tổng không đổi · Tỉ lệ $A^2$</strong></p>
-<p>Bỏ qua ma sát, cơ năng là hằng số:</p>
+<p>Bỏ qua ma sát<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>, cơ năng là hằng số:</p>
 <div class="tl-fx">
 <p class="tl-fx-name">Cơ năng</p>
 <p class="tl-fx-cond">Bỏ qua ma sát, cơ năng không đổi</p>
@@ -163,6 +167,7 @@
 <!--FIG3-->
 
 <h4>5. Năm chỗ trên một chu kì</h4>
+<p class="tl-claim">Đếm số lần đi qua, không chỉ đếm số chỗ.</p>
 <p><strong>🔑 Đếm lần qua · Không chỉ đếm chỗ</strong></p>
 <p>Mẹo: <strong>giữa nhanh, biên chậm</strong>. Chỗ $E_d=E_t$ là chia căn hai, không phải một nửa biên độ.</p>
 <ul>
@@ -206,8 +211,9 @@
 </div>
 
 <h4>6. Con lắc lò xo nằm ngang — đo để kiểm</h4>
+<p class="tl-claim">Chu kì chỉ theo m và k, không theo A.</p>
 <p><strong>🔑 Chu kì theo $m$, $k$ · Không theo $A$</strong></p>
-<p>Lò xo nhẹ độ cứng $k$, vật $m$, nằm ngang, bỏ ma sát:</p>
+<p>Lò xo nhẹ<sup class="tl-fn"><a href="#tl-fn-2">2</a></sup> độ cứng $k$, vật $m$, nằm ngang, bỏ ma sát:</p>
 <ul>
 <li>$\omega=\sqrt{k/m}$ (rad/s)</li>
 <li>$T=2\pi\sqrt{m/k}$ (s)</li>
@@ -457,3 +463,8 @@
 <li><strong>Rút ra:</strong> Năng lượng không mất ở chỗ dừng. Nó đổi từ thế năng sang động năng. Xích đu thật còn mất dần vì ma sát. Khác con lắc lò xo, ở đây $W=mgh$ tỉ lệ với $m$.</li>
 </ol>
 </div>
+
+<ol class="tl-fns">
+<li id="tl-fn-1">Cơ năng chỉ giữ nguyên khi bỏ qua ma sát và lực cản. Thực tế chúng làm biên độ giảm dần (xem bài dao động tắt dần).</li>
+<li id="tl-fn-2">Lò xo nhẹ là lò xo coi như không có khối lượng, nên chỉ vật nặng mang động năng.</li>
+</ol>
