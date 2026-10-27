@@ -22,15 +22,17 @@ Hình trong bài lý thuyết lớp 12 đúng vật lý và rõ như sách in: t
 còn yếu (theo bảng `docs/ra-soat/hinh-hrw-l12.md`, cột mức A/B/C và Trạng thái), giữ SVG ở chỗ SVG đã đủ tốt hoặc cần chữ Việt
 trong hình. Không thêm hình chỉ để trang trí (quy tắc G1/G2, M trong `docs/QUY-TAC-THIET-KE.md`).
 
-## Quy tắc chọn hình (quyết định cho từng hình, ghi lý do vào bảng)
+## Quy tắc chọn hình (thầy chốt 27/10/2026 sau đợt 1: SVG vẽ lại sai nhiều → ưu tiên ảnh OpenStax)
 
-| Loại hình OpenStax | Cách dùng |
+| Tình huống | Cách dùng |
 |---|---|
-| Ảnh chụp thật, hình không có chữ hoặc chỉ có ký hiệu (B, v, F, N, S) | **Chèn trực tiếp** (webp) |
-| Sơ đồ có nhãn tiếng Anh ngắn (≤ 5 từ) | Chèn trực tiếp, giải nghĩa nhãn trong figcaption, mỗi nhãn một dòng |
-| Sơ đồ nhiều chữ tiếng Anh, bảng, đồ thị có trục chữ | **Vẽ lại SVG** theo bố cục đó bằng `svg_lib.py`, nhãn tiếng Việt, ghi "vẽ lại theo OpenStax Hình x.y" |
-| Hình ở đơn vị/bối cảnh Mỹ (feet, dặm, °F) không tránh được | Vẽ lại SVG, đổi sang SI |
+| OpenStax có hình cùng hiện tượng (ảnh thật, sơ đồ, đồ thị, kể cả có chữ tiếng Anh) | **Chèn trực tiếp** (webp). Nhãn tiếng Anh giải nghĩa trong figcaption, mỗi nhãn một dòng |
+| Hình ở đơn vị Mỹ (feet, dặm, °F) | Vẫn chèn trực tiếp, figcaption ghi quy đổi SI |
+| OpenStax không có hình cùng hiện tượng | Giữ SVG hiện có (bản đã sửa theo HRW) |
 | Hình có `(credit: …)` của bên thứ ba mà giấy phép riêng không rõ | Không dùng |
+
+**Không vẽ lại SVG theo sách nữa**: đợt 1 (27/10) cho thấy SVG do agent vẽ lại sai nhiều chỗ, trong khi ảnh sách đã qua 2 lần tái bản.
+Hình đã vẽ lại ở đợt 1 (12 hình + đường sức numpy ở 2 bài từ trường) phải thay bằng ảnh OpenStax khi sách có hình tương ứng.
 
 Mỗi bài giữ tổng số hình ≤ 6 và hạn mức độ dài trong `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md`; thay hình, không chồng thêm.
 

@@ -153,53 +153,14 @@ fig3 = wrap("0 0 440 240",
             b, "Hình 3. Sạc không dây = máy biến áp không lõi: hai cuộn rời ghép qua từ trường; "
                "số đo luôn thấp hơn lí tưởng 9,0 V.")
 
-# ------------------------------------------------- Hình 4: tấm Foucault (nhìn thẳng mặt tấm, B vuông góc mặt tấm)
-def field_dots(cx, cy, r):
-    """Vùng nam châm: từ trường vuông góc mặt tấm, hướng ra phía người xem (chấm)."""
-    o = f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="rgba(56,189,248,.10)" stroke="{BLUE}" stroke-width="1.6" stroke-dasharray="5 4"/>'
-    for dx in (-14, 0, 14):
-        for dy in (-14, 0, 14):
-            if dx * dx + dy * dy <= (r - 8) ** 2:
-                o += dot(cx + dx, cy + dy, 2.4, BLUE)
-    return o
-
-
-def eddy(cx, cy, rx, ry, L=9):
-    """Vòng dòng Foucault: bên trái đi xuống (trong vùng từ trường), bên phải đi lên."""
-    return (f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="none" stroke="{GRN}" stroke-width="2" stroke-dasharray="5 4"/>'
-            + chevron(cx - rx, cy, 0, 1, GRN, 2, L) + chevron(cx + rx, cy, 0, -1, GRN, 2, L))
-
-
-b = defs("f4")
-b += text(12, 20, "a) Tấm liền khối", "currentColor", 14, "start", "700")
-b += line(110, 30, 110, 52, "currentColor", 1.5)                           # dây treo
-b += rect(50, 52, 120, 110, "rgba(148,163,184,.22)", "currentColor", 2, 3)
-b += field_dots(110, 112, 30)
-b += eddy(126, 112, 34, 30)
-b += arrow("f4", "o", 60, 182, 150, 182, 2.4)                              # vận tốc tấm
-b += text(12, 212, "tấm chuyển động sang phải", ORG, 14)
-b += text(12, 230, "chấm: B vuông góc mặt tấm", BLUE, 14)
-b += text(12, 248, "vòng dòng khép kín lớn", GRN, 14)
-b += text(12, 266, "→ hãm mạnh", GRN, 14)
-b += text(12, 284, "qua 6 lần · tắt 3,8 s", GRN, 14, "start", "700")
-b += text(232, 20, "b) Tấm có rãnh xẻ", "currentColor", 14, "start", "700")
-b += line(330, 30, 330, 52, "currentColor", 1.5)
-x0, w, g, n = 272, 20, 4, 5                                                # tấm xẻ rãnh: dạng chiếc lược
-b += rect(x0, 52, n * w + (n - 1) * g, 50, "rgba(148,163,184,.22)", "currentColor", 2, 3)   # thanh ngang phía trên
-for i in range(n):
-    b += rect(x0 + i * (w + g), 102, w, 60, "rgba(148,163,184,.22)", "currentColor", 2, 2)  # các răng, giữa có rãnh
-b += field_dots(330, 112, 30)
-for i in (1, 2, 3):
-    b += eddy(x0 + i * (w + g) + w / 2, 132, 7, 20, 6)
-b += arrow("f4", "o", 282, 182, 372, 182, 2.4)
-b += text(232, 212, "cùng khối lượng,", "currentColor", 14)
-b += text(232, 230, "cùng từ trường", "currentColor", 14)
-b += text(232, 248, "rãnh cắt đường dòng", GRN, 14)
-b += text(232, 266, "→ dòng nhỏ → hãm yếu", GRN, 14)
-b += text(232, 284, "qua 21 lần · tắt 13,3 s", GRN, 14, "start", "700")
-fig4 = wrap("0 0 440 296",
-            "Hai tấm nhôm dao động qua vùng từ trường vuông góc mặt tấm: tấm liền khối có dòng Foucault khép kín lớn nên tắt nhanh, tấm có rãnh xẻ bị cắt đường dòng nên dao động lâu hơn",
-            b, "Hình 4. Cùng khối lượng, cùng từ trường: tấm liền khối tắt nhanh, tấm có rãnh xẻ lâu hơn.")
+# ------------------------------------------------- Hình 4: ảnh OpenStax College Physics 2e, Hình 23.12 (đợt 2, 27/10/2026)
+fig4 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-ung-dung-cam-ung-dien-tu/hinh-tam-foucault-lien-khoi-ranh-xe.webp" '
+        'alt="Ba tấm kim loại treo dao động giữa hai cực nam châm: a) tấm liền khối có dòng Foucault khép kín, b) tấm xẻ rãnh, c) tấm không dẫn điện" '
+        'loading="lazy" width="1000" height="653"><figcaption>'
+        'Hình 4. a) liền khối: hãm mạnh; b) xẻ rãnh: hãm ít; c) không dẫn điện: không hãm.<br>'
+        'Pivot = trục treo; v = vận tốc.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 23.12 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
