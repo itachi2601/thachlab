@@ -306,6 +306,11 @@ for i, (f, x0, y0, x1, y1, s) in enumerate(LABELS):
 print("\n".join(BAD) if BAD else "kiểm toạ độ: ok")
 
 src = (HERE / "theory.src.html").read_text(encoding="utf8")
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026): thay SVG vẽ lại bằng ảnh sách, xem nguon.md
+fig2 = (
+        '<figure class="fig"><img src="/assets/openstax/l10-moment-luc/hinh-canh-tay-don-xien.webp" alt="Tấm ván quay quanh bản lề, lực F nằm ngang tác dụng xiên góc theta với ván; đoạn vuông góc từ bản lề tới giá của lực là r vuông góc bằng r sin theta" loading="lazy" width="435" height="236">'
+        '<figcaption>Hình 2. Lực xiên: cánh tay đòn ngắn hơn <em>r</em>.<br><em>r</em>⊥ = <em>r</em> sin θ (bài này ghi <em>d</em> = <em>r</em> sin α).<br><em>r</em>: từ trục tới điểm đặt lực.<br>Ô (e) trích từ Hình 9.6.<br><small>Hình: OpenStax, College Physics 2e, Hình 9.6 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 figs = [fig1, fig2, fig3, fig4, fig5]
 order = [int(n) for n in re.findall(r"<!--FIG(\d)-->", src)]
 assert order == sorted(order) == list(range(1, len(figs) + 1)), order

@@ -45,29 +45,10 @@ b += arrow("f1", "g", 30, 208, 410, 208, 3) + text(220, 200, "chiều làn sóng
 fig1 = wrap("0 0 440 224", "Khán đài: làn sóng người chạy qua, mỗi người chỉ đứng lên rồi ngồi xuống tại chỗ",
             b, "Hình 1. Làn sóng người: đường đỏ là “trạng thái đứng lên” đang chạy qua; không ai rời ghế.")
 
-# ---- Hình 2: khay nước, mặt cắt hình sin, miếng xốp C nhấp nhô tại chỗ
-Lp, mean, bot = 128.0, 138.0, 182.0
-amp = lambda x: 18 - 11 * (x - 40) / 380.0
-surf = lambda x: mean - amp(x) * math.sin(2 * math.pi * (x - 40) / Lp)
-xs = list(range(40, 421, 6))
-top = " ".join(f"L{x},{surf(x):.1f}" for x in xs)
-b = f'<path d="M40,{bot} L40,{surf(40):.1f} {top} L420,{bot} Z" fill="rgba(56,189,248,.12)"/>'
-b += poly([(x, surf(x)) for x in xs], BLUE, 2.4)
-b += line(40, bot, 420, bot, "currentColor", 2, "", .7)
-b += line(40, 62, 40, surf(40) - 6, "currentColor", 3.2) + dot(40, surf(40), 6, ORG)
-b += text(40, 44, "O", ORG, 14, "middle", "700") + text(54, 44, "nguồn dao động lên – xuống", ORG, 11, "start", "600")
-b += arrow("f2", "g", 74, 72, 404, 72, 2.5) + text(239, 64, "pha lan ra xa", GRN, 12, "middle", "700")
-xc = 280.0
-b += f'<rect x="{xc-8:.0f}" y="{surf(xc)-11:.0f}" width="16" height="11" rx="2" fill="{ORG}"/>'
-b += text(xc + 14, surf(xc) - 13, "miếng xốp C", ORG, 12, "start", "700")
-b += dbl_v(xc + 4, surf(xc) - 26, surf(xc) + 30, GRN, 1.8)
-b += text(292, 198, "C chỉ nhấp nhô tại chỗ", GRN, 11, "start", "600")
-for cx in (72.0, 200.0):
-    b += line(cx, surf(cx) - 6, cx, 218, GRN, 1.2, "3 3", .8)
-b += dbl_h(72, 200, 214, GRN, 1.8) + text(136, 238, "λ", GRN, 13, "middle", "700")
-fig2 = wrap("0 0 440 250", "Mặt cắt nước trong khay có dạng hình sin; nguồn O dao động, miếng xốp C chỉ nhấp nhô tại chỗ",
-            b, "Hình 2. Mặt cắt nước dạng hình sin: sóng lan ra xa, miếng xốp C chỉ nhấp nhô tại chỗ; "
-               "λ là khoảng cách hai đỉnh liên tiếp.")
+# ---------------- Hình 2: ảnh OpenStax College Physics 2e, Hình 16.28 (28/10/2026) — thay SVG tự vẽ
+fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-mo-ta-song/hinh-hai-au-nhap-nho.webp" '
+        'alt="Sóng nước lan sang phải; chim hải âu chỉ nhấp nhô lên xuống tại chỗ; λ là khoảng cách hai đỉnh liên tiếp, X là biên độ" loading="lazy" width="875" height="404">'
+        '<figcaption>Hình 2. Hải âu chỉ nhấp nhô tại chỗ.<br>λ: hai đỉnh liên tiếp. X: biên độ.<br><small>Hình: OpenStax, College Physics 2e, Hình 16.28 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ---- Hình 3: trễ pha — O và M, đồ thị u(t) lệch nhau
 b = line(30, 70, 410, 70, "currentColor", 1.6, "", .7)

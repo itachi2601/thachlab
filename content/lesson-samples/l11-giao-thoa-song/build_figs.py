@@ -49,22 +49,10 @@ b += text(14, 255, "━ cực đại (đỏ)", RED, 12, "start") + text(150, 255
 fig2 = wrap("0 0 440 266", "Hai nguồn cùng pha A, B: các đường cực đại (đỏ, liền) và cực tiểu (xanh, đứt) xen kẽ dạng hypebol",
             b, "Hình 2. AB = 4λ: có 7 đường cực đại và 8 đường cực tiểu. Đường trung trực của AB là cực đại k = 0.")
 
-# ---- Hình 3: cùng pha vs ngược pha
-def sine(x0, y0, amp, ph, col, w=2.4, n=2, W=150):
-    pts = [(x0 + W * t / 100, y0 - amp * math.sin(2 * math.pi * n * t / 100 + ph)) for t in range(0, 101, 2)]
-    return poly(pts, col, w)
-b = text(110, 16, "Cực đại: cùng pha", RED, 13, "middle", "700") + text(330, 16, "Cực tiểu: ngược pha", BLUE, 13, "middle", "700")
-for x0, ph2 in ((38, 0), (258, math.pi)):
-    b += sine(x0, 50, 16, 0, RED) + sine(x0, 105, 16, ph2, BLUE)
-    amp = 28 if ph2 == 0 else 0
-    b += sine(x0, 158, amp, 0, GRN, 3)
-    for y, t in ((54, "từ A"), (109, "từ B"), (162, "tổng")):
-        b += text(x0 - 34, y, t, "currentColor", 11, "start", "400")
-    b += line(x0, 158, x0 + 150, 158, "currentColor", 1, "3 3", .35)
-b += text(110, 210, "biên độ 2a", GRN, 12, "middle", "700") + text(330, 210, "biên độ 0", GRN, 12, "middle", "700")
-b += text(110, 232, "d₂ − d₁ = kλ", "currentColor", 13, "middle", "700") + text(330, 232, "d₂ − d₁ = (k + ½)λ", "currentColor", 13, "middle", "700")
-fig3 = wrap("0 0 440 244", "Hai sóng cùng pha cộng thành biên độ gấp đôi, ngược pha triệt tiêu",
-            b, "Hình 3. Tại M, hai sóng thành phần (đỏ, xanh) cộng lại thành sóng tổng (lục). Cùng pha: mạnh gấp đôi. Ngược pha: triệt tiêu.")
+# ---------------- Hình 3: ảnh OpenStax College Physics 2e, Hình 27.11 (28/10/2026) — thay SVG tự vẽ
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-giao-thoa-song/hinh-cung-pha-nguoc-pha.webp" '
+        'alt="Hai sóng cộng lại: (a) cùng pha thì sóng tổng có biên độ 2X; (b) ngược pha thì sóng tổng bằng 0" loading="lazy" width="750" height="1025">'
+        '<figcaption>Hình 3. Hai sóng cộng lại thành sóng tổng.<br>(a) Cùng pha: biên độ gấp đôi.<br>(b) Ngược pha: triệt tiêu.<br>Nhãn: Wave = sóng · Resultant = sóng tổng.<br><small>Hình: OpenStax, College Physics 2e, Hình 27.11 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ---- Hình 4: khe Young
 b = defs("f4")

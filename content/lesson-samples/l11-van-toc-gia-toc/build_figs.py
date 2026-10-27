@@ -158,6 +158,8 @@ fig2 = fig2.replace(
     1,
 )
 
+# Hình 2 thay bằng ảnh OpenStax (28/10/2026, ngoại lệ có chủ đích: ảnh raster), giữ mốc FIG2
+fig2 = '<figure class="fig" data-tl="1" data-exp="tn-l11-vantocdddh-02"><img src="/assets/openstax/l11-van-toc-gia-toc/hinh-do-thi-x-v-a.webp" alt="Ba đồ thị theo thời gian của vật dao động trên lò xo: li độ x bắt đầu ở cực đại, vận tốc v bắt đầu bằng 0, gia tốc a bắt đầu ở cực tiểu" loading="lazy" width="704" height="515"><figcaption>Hình 2. φ = 0: x, v, a theo thời gian (trục đứng là x, v, a).<br>X = A; v<sub>max</sub> = Aω; a<sub>max</sub> = Aω².<br>v sớm x một góc π/2.<br>a ngược pha với x.<br>Position / Velocity / Acceleration = li độ / vận tốc / gia tốc.<br><small>Hình: OpenStax, College Physics 2e, Hình 16.12 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>'
 
 # ---- Hình 3: elip (x/A)² + (v/(ωA))² = 1
 # x = A cos θ, v = −Aω sin θ → xuôi chiều kim đồng hồ.

@@ -61,29 +61,16 @@ def person(x, ground, s=1.0, hand=None):
 
 VB = {}
 
-# ---------------- Hình 1: đẩy thành sân (mở bài, đặt SAU câu dự đoán) ----------------
-CUR["fig"] = 1
-VB[1] = (440, 262)
-G = 196
-b = defs("f1") + line(10, G, 430, G, BLUE, 2, "", .6)
-WALL_R = 64
-b += f'<rect x="10" y="50" width="{WALL_R-10}" height="{G-50}" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/>'
-b += text(10, 38, "Thành sân", "currentColor", 14, "start", "600")
-PX = 200
-hand = (WALL_R + 2, 108)
-g, sh = person(PX, G, 1.0, hand)
-b += g
-b += arrow("f1", "r", WALL_R, 108, 18, 108, 3.2, "F1")                  # lên thành: gốc ở mặt tiếp xúc, hướng vào thành
-b += text(20, 98, sub("F", "1"), RED, 15, "start")
-b += arrow("f1", "b", PX + 14, 158, PX + 94, 158, 3.2, "F2")            # lên em: gốc ở thân, hướng ra xa thành
-b += text(PX + 100, 163, sub("F", "2"), BLUE, 15, "start")
-b += arrow("f1", "g", PX, 64, PX + 90, 64, 3.2, "a", "7 4")
-b += text(PX, 50, "em trượt lùi", GRN, 14, "start")
-b += text(10, 226, sub("F", "1") + " (đỏ): em đẩy thành, đặt lên thành", RED, 14, "start", "600")
-b += text(10, 248, sub("F", "2") + " (xanh): thành đẩy em, đặt lên em", BLUE, 14, "start", "600")
-fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
-            "Em đẩy thành sân: lực F1 đặt lên thành hướng vào thành, phản lực F2 đặt lên em hướng ra xa thành, em trượt lùi", b,
-            "Hình 1. <em>F</em><sub>1</sub> đặt lên <strong>thành</strong>, <em>F</em><sub>2</sub> đặt lên <strong>em</strong>: bằng nhau về độ lớn, ngược chiều, ở hai vật khác nhau.")
+# ---------------- Hình 1: ảnh OpenStax College Physics 2e, Hình 4.9 (đợt 28/10/2026) ----------------
+fig1 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-dinh-luat-3-newton/hinh-boi-day-thanh.webp" '
+        'alt="Người bơi đẩy chân vào thành bể: lực chân đẩy thành hướng sang phải, lực thành đẩy chân hướng sang trái, người chuyển động sang trái" '
+        'loading="lazy" width="875" height="329">'
+        '<figcaption>Hình 1. Người bơi đẩy thành bể, thành đẩy lại:<br>'
+        '<em>F</em> chân lên thành: đặt lên <strong>thành</strong> (mũi tên đỏ đậm).<br>'
+        '<em>F</em> thành lên chân: đặt lên <strong>người</strong>, ngược chiều, cùng độ lớn.<br>'
+        'Nhãn: wall = thành · feet = chân · w = trọng lực · BF = lực đẩy của nước.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 4.9 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ---------------- Hình 2: hai lực kế móc vào nhau ----------------
 CUR["fig"] = 2
@@ -176,8 +163,6 @@ A = {(f, n): (x1, y1, x2, y2) for f, n, x1, y1, x2, y2 in ARROWS}
 # chiều vật lí
 def sgn(v): return (v > 0) - (v < 0)
 chk = [
-    ((1, "F1"), -1, "F1 lên thành, hướng vào thành (trái)"), ((1, "F2"), +1, "F2 lên em, hướng ra xa thành (phải)"),
-    ((1, "a"), +1, "em trượt lùi (phải)"),
     ((2, "F21"), +1, "lực kế 2 kéo 1: về phía 2 (phải)"), ((2, "F12"), -1, "lực kế 1 kéo 2: về phía 1 (trái)"),
     ((4, "F_BA"), -1, "lực lên A hướng ra xa B (trái)"), ((4, "F_AB"), +1, "lực lên B hướng ra xa A (phải)"),
     ((4, "aA"), -1, "a_A hướng trái"), ((4, "aB"), +1, "a_B hướng phải"),

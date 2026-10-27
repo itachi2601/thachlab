@@ -81,40 +81,17 @@ def angle_between(ux, uy, vx, vy):
     return math.degrees(math.acos(max(-1.0, min(1.0, c))))
 
 
-# ---------------- Hình 1: hai cảnh ở sân băng (mở bài, không ghi kết luận) ----------------
-CUR["fig"] = 1
-VB[1] = (440, 230)
-G1 = 200
-b = defs("f1")
-b += line(10, G1, 430, G1, "currentColor", 2, track=False)
-b += line(212, 20, 212, G1 - 4, "currentColor", 1.2, "4 5", .45, track=False)
-# Trái: Minh ôm ba lô đứng yên
-pm, shm = person(70, G1, arm_to=(104, 120))
-b += pm
-b += f'<rect x="100" y="106" width="34" height="40" rx="6" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/>'
-seg(100, 106, 134, 106); seg(100, 146, 134, 146); seg(100, 106, 100, 146); seg(134, 106, 134, 146)
-b += arrow("f1", "r", 117, 106, 117, 56, 3)          # lực tay lên ba lô, đặt tại ba lô, hướng lên
-b += text(126, 66, sub("F", "tay"), RED, 15, "start", "700", True)
-b += text(20, 30, "Minh giữ ba lô", "currentColor", 14, "start")
-b += text(20, 222, "đứng yên 5 phút", "currentColor", 13, "start", "600")
-# Phải: Lan đẩy lưng Hà, Hà lướt sang phải
-XH = 330
-contact = (XH - 4, G1 - 78)
-pl, _ = person(262, G1, arm_to=contact)
-ph, _ = person(XH, G1)
-b += pl + ph
-b += f'<circle cx="{contact[0]}" cy="{contact[1]}" r="3.5" fill="{RED}"/>'
-b += arrow("f1", "r", contact[0], contact[1], contact[0] + 52, contact[1], 3)   # lực đẩy đặt tại lưng Hà, chiều sang phải
-b += text(contact[0] + 58, contact[1] + 5, "F", RED, 16, "start", "700", True)
-b += text(228, 30, "Lan đẩy lưng Hà", "currentColor", 14, "start")
-b += arrow("f1", "g", XH - 20, 214, XH + 80, 214, 2.6, "6 4")
-b += text(XH - 24, 220, "Hà lướt 3 m", GRN, 13, "end", "600")
-b += text(244, 150, "Lan", "currentColor", 13, "end", "600")
-b += text(XH + 18, 162, "Hà", "currentColor", 13, "start", "600")
-expect(contact[0] + 52 > contact[0], "Hình 1: lực đẩy của Lan phải hướng sang phải (chiều Hà lướt)")
-fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
-            "Bên trái Minh đứng yên ôm ba lô, lực tay hướng lên; bên phải Lan đẩy lưng Hà, Hà lướt sang phải 3 m", b,
-            "Hình 1. Trái: Minh giữ ba lô đứng yên, lực tay hướng lên. Phải: Lan đẩy lưng Hà, Hà lướt đi $3$ m.")
+# ---------------- Hình 1: ảnh OpenStax College Physics 2e, Hình 7.2 a–c (đợt 28/10/2026) ----------------
+fig1 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-nang-luong-cong-co-hoc/hinh-cong-luc-goc.webp" '
+        'alt="Ba tình huống: (a) người đẩy máy cắt cỏ bằng lực F chếch góc θ so với độ dịch chuyển d, (b) người đứng giữ cặp, d = 0, (c) người xách cặp đi ngang, F vuông góc d" '
+        'loading="lazy" width="875" height="900">'
+        '<figcaption>Hình 1. Ba tình huống về công:<br>'
+        '(a) đẩy xe cắt cỏ, như Lan đẩy Hà: <em>F</em>·<em>d</em>·cosθ.<br>'
+        '(b) giữ cặp, như Minh ôm ba lô: <em>d</em> = 0.<br>'
+        '(c) xách cặp đi ngang: θ = 90°.<br>'
+        'Nhãn: <em>F</em> lực · <em>d</em> dịch chuyển.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 7.2 (a–c) — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ---------------- Hình 2: ba trường hợp góc α ----------------
 CUR["fig"] = 2

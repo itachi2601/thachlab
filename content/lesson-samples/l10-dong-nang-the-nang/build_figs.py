@@ -159,55 +159,15 @@ fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
             "Trục z hướng lên, gốc tại mốc thế năng; vật phía trên mốc có thế năng dương, tại mốc bằng 0, phía dưới mốc âm", b,
             "Hình 2. Trục <em>z</em> hướng lên, gốc tại mốc. Trên mốc <em>W</em><sub>t</sub> &gt; 0, tại mốc bằng 0, dưới mốc <em>W</em><sub>t</sub> &lt; 0.")
 
-# ---------------- Hình 3: công trọng lực không phụ thuộc đường đi ----------------
-CUR["fig"] = 3
-VB[3] = (440, 260)
-M3, N3 = (110, 50), (330, 196)
-K3 = (M3[0], N3[1])
-AX3 = 40
-b = defs("f3")
-b += arrow("f3", "k", AX3, 236, AX3, 14, 2)
-b += text(AX3 + 8, 24, "z", "currentColor", 15, "start", "700", True)
-for y, lab in ((M3[1], "M"), (N3[1], "N")):
-    b += line(AX3 - 5, y, AX3 + 5, y, "currentColor", 2)
-    b += line(AX3, y, M3[0], y, "currentColor", 1.2, "4 4", .6, track=False)
-    b += text(AX3 - 8, y + 5, sub("z", lab), "currentColor", 14, "end", "700", True)
-# đường 1: thẳng M -> N
-b += arrow("f3", "b", *M3, *N3, 2.6)
-# đường 2: M -> K -> N
-b += line(*M3, *K3, ORG, 2.6)
-b += arrow("f3", "o", *K3, N3[0] - 2, N3[1], 2.6)
-# đường 3: cong (cubic Bezier), ghi từng đoạn vào SEGS
-C1, C2 = (270, -10), (420, 110)
+# ---------------- Hình 3: ảnh OpenStax College Physics 2e, Hình 7.6 (đợt 28/10/2026) ----------------
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-dong-nang-the-nang/hinh-cong-trong-luc-hai-duong.webp" '
+        'alt="Nâng một chiếc tivi từ A lên B cao h bằng hai cách: người ôm đi lên cầu thang hoặc kéo bằng dây qua ròng rọc" '
+        'loading="lazy" width="369" height="768">'
+        '<figcaption>Hình 3. Nâng tivi từ <em>A</em> lên <em>B</em> bằng cầu thang hoặc dây:<br>'
+        'hai đường, cùng độ cao <em>h</em>, cùng công của trọng lực.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 7.6 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
-
-def bez(t):
-    s = 1 - t
-    return (s**3 * M3[0] + 3 * s * s * t * C1[0] + 3 * s * t * t * C2[0] + t**3 * N3[0],
-            s**3 * M3[1] + 3 * s * s * t * C1[1] + 3 * s * t * t * C2[1] + t**3 * N3[1])
-
-
-pts = [bez(i / 40) for i in range(41)]
-for p, q in zip(pts, pts[1:]):
-    seg(*p, *q)
-expect(all(4 < x < 436 and 4 < y < 256 for x, y in pts), "Hình 3: đường cong vượt viewBox")
-b += (f'<path d="M{M3[0]},{M3[1]} C{C1[0]},{C1[1]} {C2[0]},{C2[1]} {N3[0]},{N3[1]}" fill="none" stroke="{GRN}" '
-      f'stroke-width="2.6" marker-end="url(#f3-g)"/>')
-for p, lab in ((M3, "M"), (N3, "N"), (K3, "K")):
-    b += f'<circle cx="{p[0]}" cy="{p[1]}" r="4.5" fill="currentColor"/>'
-b += text(M3[0] - 10, M3[1] - 10, "M", "currentColor", 16, "end", "700", True)
-b += text(N3[0] + 4, N3[1] + 22, "N", "currentColor", 16, "start", "700", True)
-b += text(K3[0] - 6, K3[1] + 22, "K", "currentColor", 16, "end", "700", True)
-mid1 = ((M3[0] + N3[0]) / 2, (M3[1] + N3[1]) / 2)
-b += text(mid1[0] - 14, mid1[1] + 18, "1", BLUE, 15, "end")
-b += text(K3[0] + 10, (M3[1] + K3[1]) / 2, "2", ORG, 15, "start")
-p3 = bez(0.5)
-b += text(p3[0] + 10, p3[1] - 6, "3", GRN, 15, "start")
-b += text(220, 250, "A = mg(" + sub("z", "M") + " − " + sub("z", "N") + ") cho cả 3 đường", "currentColor", 14, "middle")
-expect(N3[1] > M3[1], "Hình 3: N phải thấp hơn M (đi xuống, công dương)")
-fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
-            "Ba đường đi từ M xuống N: đường thẳng, đường gấp khúc qua K, đường cong; công của trọng lực như nhau", b,
-            "Hình 3. Ba đường từ <em>M</em> xuống <em>N</em>: thẳng (1), gấp khúc qua <em>K</em> (2), cong (3). Công của trọng lực chỉ phụ thuộc độ cao đầu và cuối.")
 
 # ---------------- Hình 4: bài toán mẫu — tàu lượn ----------------
 CUR["fig"] = 4

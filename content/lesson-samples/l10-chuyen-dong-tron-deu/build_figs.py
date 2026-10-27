@@ -265,6 +265,14 @@ def vn(x, nd):
 
 kq = xu_li_do()
 bang = "\n".join(f"<tr><td>{i}</td><td>{t:.1f}</td></tr>".replace(".", ",") for i, t in enumerate(DO_3_VONG, 1))
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026): thay SVG vẽ lại bằng ảnh sách, xem nguon.md
+fig2 = (
+        '<figure class="fig"><img src="/assets/openstax/l10-chuyen-dong-tron-deu/hinh-radian.webp" alt="Đường tròn tâm O bán kính r; bán kính quay từ A tới B được góc delta theta chắn cung delta s, delta theta bằng delta s chia r" loading="lazy" width="414" height="345">'
+        '<figcaption>Hình 2. Góc quay chắn cung: Δθ = Δ<em>s</em>/<em>r</em>.<br>Bài này ghi θ = <em>s</em>/<em>r</em>.<br><small>Hình: OpenStax, College Physics 2e, Hình 6.3 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+fig3 = (
+        '<figure class="fig"><img src="/assets/openstax/l10-chuyen-dong-tron-deu/hinh-hai-diem-cung-goc.webp" alt="Hai điểm 1 và 2 trên cùng một bán kính, cách tâm r1 và r2, cùng quay góc delta theta; cung của điểm ngoài dài hơn" loading="lazy" width="750" height="734">'
+        '<figcaption>Hình 3. Cùng quay góc Δθ:<br>điểm ngoài đi cung dài hơn (Δ<em>s</em><sub>2</sub> &gt; Δ<em>s</em><sub>1</sub>),<br>nên <em>v</em> = <em>ωr</em> lớn hơn.<br><small>Hình: OpenStax, College Physics 2e, Hình 6.4 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 h = open("theory.src.html", encoding="utf8").read()
 h = (h.replace("__BANG_DO__", bang)
       .replace("__TB__", vn(kq["tb"], 2))
