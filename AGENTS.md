@@ -291,6 +291,7 @@ Script/migration ghi hoặc quét hàng chục nghìn dòng (`question_bank`, `e
 
 # CSS @media mới: Lightning CSS gộp khối sát nhau (26/10/2026)
 Lightning CSS khi build gộp hai khối `@media` khác điều kiện đặt sát nhau → khối mới đặt cách khối khác bằng một rule thường; kiểm CSS đã ăn bằng `getComputedStyle` trên trang thật, không chỉ nhìn file.
+Dev server Turbopack có lúc giữ CSS cũ sau khi sửa file (27/10/2026): số đo không đổi thì tra `document.styleSheets` xem rule mới đã có chưa; chưa có thì dừng server, xoá `.next/cache`, chạy lại.
 
 # Làm theo trang mẫu đã duyệt: chụp trang thật CẠNH mẫu rồi mới báo xong (thầy chốt 26/10/2026)
 Đợt đầu đồng bộ trang chương ↔ trang bài theo trang mẫu chỉ làm theo mô tả, báo xong khi trang thật còn lệch 12 chỗ. Khi việc là "làm giống trang mẫu":
