@@ -2,6 +2,11 @@
 
 Chỉ chọn, chưa sửa bài, chưa tải ảnh, chưa đăng DB. Giấy phép sách: **CC BY-NC-SA 4.0** (ghi nguồn trên mỗi trang; phi thương mại; bản phái sinh cùng giấy phép) — chờ thầy chốt trước giai đoạn 2. Hàng ghi "chưa xác minh" là chỗ agent chưa xem được hình thật. Tổng: chèn trực tiếp 8 · vẽ lại SVG 12 · giữ SVG 72 (theo số hàng).
 
+## Trạng thái giai đoạn 2 (27/10/2026)
+
+Thầy đã chấp nhận CC BY-NC-SA 4.0. Làm xong và commit 14 bài (chưa đăng DB cho tới khi thầy gõ `y` ở từng lệnh `cap-nhat-ly-thuyet.sh`; ảnh trong `public/assets/openstax/` chưa deploy). Bài không có hàng chèn/vẽ lại (7 bài còn lại) giữ nguyên.
+Chênh lệch so với bảng khi xem ảnh thật: `l12-khai-niem-tu-truong` Hình 3 chèn trực tiếp → vẽ lại bằng numpy (không có ảnh từ phổ thật); `l12-dien-tu-truong-song-dien-tu` Hình 3 vẽ lại → chèn trực tiếp (Hình 24.7 chỉ có nhãn E, B, c); `l12-hat-nhan-mo-hinh-nguyen-tu` Hình 30.10 giữ SVG đã có, thêm dòng nguồn; `l12-luc-tu-cam-ung-tu` Hình 4a/b/c vẽ lại bằng numpy theo yêu cầu thầy; `l12-su-chuyen-the` Hình 14.11 ghép hai ảnh thành 1 (Hình 3b); `l12-phong-xa` Hình 31.8a credit TimVickers (Wikimedia Commons, phạm vi công cộng theo caption sách — giấy phép chưa kiểm ở trang Commons).
+
 | Bài | Hình hiện có (aria-label) | Hình OpenStax (số, caption ngắn, credit) | Quyết định | Lý do |
 |---|---|---|---|---|
 | l12-an-toan-phong-xa | Hình 1 - Sơ đồ xạ trị áp sát, tấm chắn chì, liều kế (mức A) | Hình 32.7 - Che chắn, khoảng cách, thời gian ngắn khi chụp X-quang răng; không có credit; nhãn chưa xác minh | giữ SVG | SVG đã đúng vật lý và cần chữ Việt, hình 32.7 là cảnh nha khoa không khớp ca xạ trị áp sát |
