@@ -5,22 +5,6 @@
 import random
 from engine import *
 
-# Pillow 11 bo qua kenh alpha khi ve chu (ImageDraw "RGBA" tren anh RGB) -> chu khong mo dan duoc.
-# Viet lai text/ctext trong clip: alpha < 1 thi ve chu len mat na L roi dan mau qua mat na.
-_IMG = [None]
-def text(d, xy, s, size, color=INK, bold=True, anchor="mm", alpha=1.0):
-    if alpha <= 0.02: return
-    f = F(size, bold); col = tuple(color[:3])
-    if alpha >= 0.98 or _IMG[0] is None:
-        d.text(xy, s, font=f, fill=col, anchor=anchor); return
-    l, t, r, b = d.textbbox(xy, s, font=f, anchor=anchor); l, t, r, b = int(l) - 3, int(t) - 3, int(r) + 3, int(b) + 3
-    m = Image.new("L", (r - l, b - t), 0)
-    ImageDraw.Draw(m).text((xy[0] - l, xy[1] - t), s, font=f, fill=int(255 * alpha), anchor=anchor)
-    _IMG[0].paste(col, (l, t, r, b), m)
-def ctext(d, y, s, size, color=INK, bold=True, maxw=940, alpha=1.0, lh=1.22):
-    ls = wrap(d, s, F(size, bold), maxw); y0 = y - (len(ls) - 1) * size * lh / 2
-    for i, l in enumerate(ls): text(d, (W / 2, y0 + i * size * lh), l, size, color, bold, alpha=alpha)
-
 ROWS = [(8.0, 100), (6.0, 142), (5.0, 170), (4.0, 215), (3.0, 267)]   # so_lieu_mau: V (ml), p (kPa)
 PV = [round(v * p) for v, p in ROWS]                                   # 800 852 850 860 801
 T_PHONG, P0V0 = 25, 800                                                # tham_so: t = 25 C; p0*V0 = 100*8
@@ -98,7 +82,7 @@ def rig(d, t, V, p, push=False):
 
 # ---------------- canh 1: mo bai + du doan ----------------
 def s_hook(img, d, t, sc):
-    _IMG[0] = img
+    IMG_REF[0] = img
     rig(d, t, 8.0, 100)
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
@@ -131,7 +115,7 @@ def state(t, sc):
 def row_at(i, sc): return sc["M"][0] + 0.7 if i == 0 else sc["M"][i] + 0.1 + MOVE + 0.6
 
 def s_do(img, d, t, sc):
-    _IMG[0] = img
+    IMG_REF[0] = img
     V, p, mv = state(t, sc); rig(d, t, V, p, push=mv)
     card(d, (80, 1100, 1000, 1590), fill=WHITE, outline=NAVY, w=4)
     xs = [190, 420, 670]
@@ -148,7 +132,7 @@ def s_do(img, d, t, sc):
 
 # ---------------- canh 3: do thi p-V + tich pV ----------------
 def s_graph(img, d, t, sc):
-    _IMG[0] = img
+    IMG_REF[0] = img
     x0, x1, yb, yt = 190, 960, 930, 330
     X = lambda v: x0 + v / 9 * (x1 - x0); Y = lambda p: yb - p / 300 * (yb - yt)
     card(d, (60, 250, 1020, 1010), fill=WHITE, outline=LIGHT, w=3)
@@ -212,7 +196,7 @@ def box(d, t, t0, x0, x1, y0, y1, lbl, p_, a):
         text(d, ((x0 + x1) / 2, y1 + 108), f"p = {p_} kPa", 44, RED, alpha=appear(t, t0 + 1.2))
 
 def s_why(img, d, t, sc):
-    _IMG[0] = img
+    IMG_REF[0] = img
     a = appear(t, 0.1, 0.4); t0 = sc["M"][0] + 0.6
     box(d, t, t0, 110, 510, 330, 880, "8,0 ml", ROWS[0][1], a)
     box(d, t, t0, 680, 880, 330, 880, "4,0 ml", ROWS[3][1], a)
@@ -224,7 +208,7 @@ def s_why(img, d, t, sc):
 
 # ---------------- canh 5: gioi han + bay ----------------
 def s_trap(img, d, t, sc):
-    _IMG[0] = img
+    IMG_REF[0] = img
     a = appear(t, 0.1)
     card(d, (80, 250, 1000, 560), fill=WHITE, outline=BLUE, w=6)
     text(d, (W / 2, 305), "Chưa nói được gì?", 44, BLUE, alpha=a)

@@ -49,14 +49,27 @@ def wrap(d, text, f, maxw):
         out.append(cur)
     return out
 
+# Pillow 11 bo qua kenh alpha khi ve chu len anh RGB -> chu khong mo dan duoc. Khi alpha < 1 ve chu
+# len mat na L roi dan mau qua mat na. IMG_REF[0] = anh dang ve (frame() gan san; canh tu gan lai cung duoc).
+IMG_REF = [None]
+def dtext(d, xy, s, f, color, alpha=1.0, anchor="mm"):
+    if alpha <= 0.02: return
+    col = tuple(color[:3])
+    if alpha >= 0.98 or IMG_REF[0] is None:
+        d.text(xy, s, font=f, fill=col, anchor=anchor); return
+    l, t, r, b = d.textbbox(xy, s, font=f, anchor=anchor); l, t, r, b = int(l) - 3, int(t) - 3, int(r) + 3, int(b) + 3
+    m = Image.new("L", (r - l, b - t), 0)
+    ImageDraw.Draw(m).text((xy[0] - l, xy[1] - t), s, font=f, fill=int(255 * alpha), anchor=anchor)
+    IMG_REF[0].paste(col, (l, t, r, b), m)
+
 def text(d, xy, s, size, color=INK, bold=True, anchor="mm", alpha=1.0):
-    d.text(xy, s, font=F(size, bold), fill=A(color, alpha), anchor=anchor)
+    dtext(d, xy, s, F(size, bold), color, alpha, anchor)
 
 def ctext(d, y, s, size, color=INK, bold=True, maxw=940, alpha=1.0, lh=1.22):
     f = F(size, bold); ls = wrap(d, s, f, maxw)
     y0 = y - (len(ls) - 1) * size * lh / 2
     for i, l in enumerate(ls):
-        d.text((W / 2, y0 + i * size * lh), l, font=f, fill=A(color, alpha), anchor="mm")
+        dtext(d, (W / 2, y0 + i * size * lh), l, f, color, alpha)
 
 TOK = re.compile(r"(_\{[^}]*\}|\^\{[^}]*\})")
 def rich(d, cx, cy, s, size, color=INK, alpha=1.0, anchor="m"):
@@ -68,7 +81,7 @@ def rich(d, cx, cy, s, size, color=INK, alpha=1.0, anchor="m"):
     tot = sum(tw(d, t, F(sz)) for t, sz, _ in segs)
     x = cx - tot / 2 if anchor == "m" else cx
     for t, sz, dy in segs:
-        d.text((x, cy + dy), t, font=F(sz), fill=A(color, alpha), anchor="lm"); x += tw(d, t, F(sz))
+        dtext(d, (x, cy + dy), t, F(sz), color, alpha, "lm"); x += tw(d, t, F(sz))
 
 def arrow(d, p1, p2, color, w=6, head=22):
     d.line([p1, p2], fill=color, width=w)
@@ -125,7 +138,7 @@ def chrome(d, clip, sc, t, gt):
         a = appear(t, sc["M"][cur] - 0.05, 0.25)
         card(d, (60, y0, 1020, y1), fill=A(NAVY, 0.92 * a), r=30)
         for j, l in enumerate(ls):
-            d.text((W / 2, y0 + 25 + 29 + j * 58), l, font=f, fill=A(WHITE, a), anchor="mm")
+            dtext(d, (W / 2, y0 + 25 + 29 + j * 58), l, f, WHITE, a)
     text(d, (W / 2, 1860), clip["footer"], 30, MUTED, bold=False)
 
 # ---------------- nhac nen tong hop (khong ban quyen) ----------------
@@ -157,7 +170,7 @@ def frame(clip, gt):
     for sc in clip["scenes"]:
         if gt < sc["t0"] + sc["T"]: break
     t = gt - sc["t0"]
-    img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img, "RGBA")
+    img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img, "RGBA"); IMG_REF[0] = img
     sc["draw"](img, d, t, sc)
     chrome(d, clip, sc, t, gt)
     if t < 0.25: img = Image.blend(Image.new("RGB", (W, H), BG), img, ease(t / 0.25))
