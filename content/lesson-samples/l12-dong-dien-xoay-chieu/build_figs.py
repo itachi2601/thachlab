@@ -67,7 +67,7 @@ b += text(round(xq) + 8, 20, "e đỉnh · Φ = 0", "currentColor", 12, "start",
 b += f'<line x1="40" y1="196" x2="68" y2="196" stroke="{BLUE}" stroke-width="3"/>' + text(74, 200, "Φ (từ thông)", BLUE, 12)
 b += f'<line x1="190" y1="196" x2="218" y2="196" stroke="{RED}" stroke-width="3"/>' + text(224, 200, "e (suất điện động)", RED, 12)
 fig2 = wrap("0 0 430 212", "Đồ thị từ thông Φ và suất điện động e theo thời gian, lệch nhau một phần tư chu kì",
-            b, "Hình 3. Φ và e lệch nhau T/4 (vuông pha): cái này ở đỉnh thì cái kia đi qua 0.",
+            b, "Hình 4. Φ và e lệch nhau T/4 (vuông pha): cái này ở đỉnh thì cái kia đi qua 0.",
             exp="tn-l12-xoaychieu-01")
 
 # ---- Hình 3: u(t), đỉnh 311 V, hiệu dụng 220 V, T = 20 ms
@@ -92,11 +92,38 @@ b += f'<line x1="{xa}" y1="252" x2="{xb:.0f}" y2="252" stroke="{ORG}" stroke-wid
 b += f'<line x1="{xa}" y1="246" x2="{xa}" y2="258" stroke="{ORG}" stroke-width="2.4"/><line x1="{xb:.0f}" y1="246" x2="{xb:.0f}" y2="258" stroke="{ORG}" stroke-width="2.4"/>'
 b += text(round((xa + xb) / 2), 244, "T = 20 ms", ORG, 12, "middle", "700")
 fig3 = wrap("0 0 430 266", "Đồ thị điện áp lưới 220 V 50 Hz: đỉnh 311 V, hiệu dụng 220 V, chu kì 20 mili giây",
-            b, "Hình 2. Điện áp ổ điện nhà em. Chấm xanh: lúc dòng đổi chiều, 2 lần mỗi chu kì, tức 100 lần mỗi giây.",
+            b, "Hình 3. Điện áp ổ điện nhà em. Chấm xanh: lúc dòng đổi chiều, 2 lần mỗi chu kì, tức 100 lần mỗi giây.",
             exp="tn-l12-xoaychieu-03")
 
+# ---- Hình 2 (mới): lấy điện ra khỏi khung quay bằng vành trượt + chổi than (vẽ lại theo OpenStax Hình 23.19)
+b = defs("f4")
+for x, lab in ((20, "N"), (340, "S")):
+    b += f'<rect x="{x}" y="110" width="70" height="110" rx="4" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width="2"/>'
+    b += text(x + 35, 172, lab, "currentColor", 22, "middle", "700")
+for y in (140, 160, 180, 200):
+    b += field_line(92, y, 338, y, RED, 1.8)
+b += text(96, 130, "vectơ B", RED, 14, "start", "700")
+b += f'<rect x="150" y="120" width="130" height="100" fill="none" stroke="{ORG}" stroke-width="3.2" stroke-linejoin="round"/>'
+b += f'<line x1="215" y1="100" x2="215" y2="250" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>'
+b += f'<line x1="209" y1="88" x2="209" y2="120" stroke="{ORG}" stroke-width="2.4"/><line x1="221" y1="62" x2="221" y2="120" stroke="{ORG}" stroke-width="2.4"/>'
+for y in (62, 88):
+    b += f'<ellipse cx="215" cy="{y}" rx="14" ry="5" fill="none" stroke="currentColor" stroke-width="2.2"/>'
+b += f'<rect x="188" y="83" width="16" height="10" fill="{BLUE}" stroke="{BLUE}" stroke-width="1"/><rect x="226" y="57" width="16" height="10" fill="{BLUE}" stroke="{BLUE}" stroke-width="1"/>'
+b += f'<polyline points="188,88 150,88 150,21 172,21" fill="none" stroke="{BLUE}" stroke-width="2.2"/>'
+b += f'<polyline points="242,62 280,62 280,21 258,21" fill="none" stroke="{BLUE}" stroke-width="2.2"/>'
+b += f'<rect x="172" y="8" width="86" height="26" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>' + text(215, 26, "tải", "currentColor", 13, "middle", "700")
+b += text(142, 76, "vành trượt", "currentColor", 14, "end", "600")
+b += text(290, 80, "chổi than", BLUE, 14, "start", "700")
+b += text(292, 242, "khung dây", ORG, 14, "start", "700")
+b += text(205, 270, "trục quay", "currentColor", 14, "end", "600")
+b += f'<path d="M232 262 Q262 282 292 262" fill="none" stroke="{GRN}" stroke-width="2.6" marker-end="url(#f4-g)"/>'
+b += text(246, 292, "ω", GRN, 16, "start", "700")
+fig4 = wrap("0 0 430 300", "Máy phát điện xoay chiều: khung dây quay giữa hai cực nam châm, hai vành trượt và hai chổi than đưa dòng ra tải",
+            b, "Hình 2. Lấy điện ra khỏi khung quay.<br>Hai đầu khung nối hai vành trượt, quay cùng trục.<br>Hai chổi than (màu xanh) tì lên vành, nối với tải.<br>"
+               "Vẽ lại theo OpenStax, College Physics 2e, Hình 23.19 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
+
 src = (HERE / "theory.src.html").read_text(encoding="utf-8")
-for n, f in ((1, fig1), (2, fig2), (3, fig3)):
+for n, f in ((1, fig1), (2, fig2), (3, fig3), (4, fig4)):
     assert f"<!--FIG:{n}-->" in src, n
     src = src.replace(f"<!--FIG:{n}-->", f)
 (HERE / "theory.html").write_text(src, encoding="utf-8")

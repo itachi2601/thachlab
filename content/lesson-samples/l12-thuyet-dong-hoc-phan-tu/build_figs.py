@@ -140,12 +140,31 @@ for i in (0, 2):  # đầu mũi tên chỉ chiều chuyển động ở giữa �
     (xa, ya), (xb, yb) = PATH[i], PATH[i + 1]
     b += chevron((xa + xb) / 2 + (xb - xa) * .08, (ya + yb) / 2 + (yb - ya) * .08, xb - xa, yb - ya, GRN, 2.6, 11)
 b += text(104, 202, "mỗi đoạn: bay thẳng đều", GRN, 14, "middle", "600")
-b += f'<circle cx="202" cy="66" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 70, "bỏ qua kích thước phân tử", "currentColor", 14, "start", "500")
-b += f'<circle cx="202" cy="96" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 100, "bỏ qua lực hút, đẩy ở xa", "currentColor", 14, "start", "500")
-b += f'<circle cx="202" cy="126" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 130, "giữa hai va chạm: thẳng đều", "currentColor", 14, "start", "500")
-b += f'<circle cx="202" cy="156" r="2.6" fill="currentColor" opacity=".55"/>' + text(212, 160, "va chạm: hoàn toàn đàn hồi", "currentColor", 14, "start", "500")
-fig3 = wrap("0 0 420 220", "Bình chứa với đường đi gấp khúc của phân tử khí lí tưởng: mỗi đoạn thẳng nối hai lần va chạm với thành bình, va chạm hoàn toàn đàn hồi nên bật ngược lại",
-            b, "Hình 3. Giữa hai va chạm, phân tử bay thẳng đều; mỗi chấm xanh là một lần gặp thành bình — va chạm hoàn toàn đàn hồi rồi bật ngược lại.")
+# Khung phải: một lần va chạm với thành (theo ý OpenStax College Physics 2e, Hình 13.22):
+# thành phần vuông góc với thành đổi chiều, thành phần song song giữ nguyên.
+def vsub(x, y, base, sub, anchor="middle", c="currentColor", size=13):
+    return (f'<text x="{x}" y="{y}" fill="{c}" font-size="{size}" font-weight="700" font-style="italic" text-anchor="{anchor}">'
+            f'{base}<tspan font-size="{size - 3}" dy="3">{sub}</tspan></text>')
+WX, PY = 402, 118
+b += text(214, 56, "Một lần va chạm với thành", "currentColor", 12.5, "start", "700")
+b += line(WX, 66, WX, 172, "currentColor", 5)
+b += arrow("f3", "g", 306, 158, WX - 3, PY + 2, 2.6)       # vận tốc tới
+b += arrow("f3", "g", WX - 3, PY - 2, 306, 78, 2.6)        # vận tốc sau va chạm
+b += line(306, 158, WX - 3, 158, "currentColor", 1.6, "5 4", .75)   # thành phần x tới
+b += line(306, 158, 306, 78, "currentColor", 1.6, "5 4", .75)       # thành phần y (không đổi)
+b += line(306, 118, WX - 3, 118, "currentColor", 1.6, "5 4", .75)   # thành phần x sau va chạm
+b += chevron(WX - 3, 158, 1, 0, BLUE, 2.2, 9)
+b += chevron(306, 118, -1, 0, ORG, 2.2, 9)
+b += vsub(354, 174, "v", "x", "middle", BLUE)
+b += vsub(354, 112, "v", "x", "middle", ORG)
+b += vsub(298, 142, "v", "y", "end")
+b += vsub(298, 100, "v", "y", "end")
+b += vsub(214, 196, "v", "x", "start", BLUE, 12) + text(232, 196, "vuông góc thành: đảo chiều", BLUE, 12, "start", "600")
+b += vsub(214, 214, "v", "y", "start", "currentColor", 12) + text(232, 214, "song song thành: giữ nguyên", "currentColor", 12, "start", "600")
+fig3 = wrap("0 0 420 220", "Bình chứa với đường đi gấp khúc của phân tử khí lí tưởng: mỗi đoạn thẳng nối hai lần va chạm với thành bình, va chạm hoàn toàn đàn hồi nên bật ngược lại; bên phải là một lần va chạm với thành, vận tốc vuông góc đảo chiều còn vận tốc song song giữ nguyên",
+            b, "Hình 3. Giữa hai va chạm, phân tử bay thẳng đều; chấm xanh là điểm gặp thành.<br>"
+            "Bên phải: v<sub>x</sub> đảo chiều, v<sub>y</sub> giữ nguyên.<br>"
+            "Vẽ lại theo OpenStax, College Physics 2e, Hình 13.22 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
 
 # ======================================================= Hình 4: 1 mol khí ở điều kiện tiêu chuẩn
 b = defs("f4")

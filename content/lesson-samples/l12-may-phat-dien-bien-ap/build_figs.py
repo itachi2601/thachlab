@@ -87,19 +87,25 @@ b += rect(244, 70, 48, 52, "rgba(56,189,248,.14)", BLUE, 2, 4)
 b += f'<path d="M 236 80 A 16 16 0 0 0 236 112" fill="none" stroke="{GRN}" stroke-width="2.4" marker-end="url(#f2-g)"/>'
 b += text(206, 100, "ω", GRN, 14, "start", "700")
 b += circ(330, 94, 8, ORG, 2.2)
-b += circ(350, 94, 8, ORG, 2.2)
+b += circ(352, 94, 8, ORG, 2.2)
 b += line(292, 94, 322, 94, ORG, 2.2)
-b += line(292, 112, 350, 112, ORG, 2.2)
-b += line(350, 112, 350, 102, ORG, 2.2)
-b += line(330, 86, 330, 74, ORG, 2.4)
-b += line(358, 94, 362, 94, ORG, 2.4)
-b += text(366, 99, "chổi quét", ORG, 14, "start", "600")
-b += text(320, 64, "vành khuyên", ORG, 14, "start", "600")
-b += text(446, 132, "ra mạch ngoài", "currentColor", 14, "end", "600")
+b += line(292, 112, 352, 112, ORG, 2.2)
+b += line(352, 112, 352, 102, ORG, 2.2)
+b += line(322, 86, 322, 70, "currentColor", 1.4, "4 3")
+b += rect(325, 74, 10, 8, "rgba(251,146,60,.35)", ORG, 1.6, 2)
+b += rect(347, 74, 10, 8, "rgba(251,146,60,.35)", ORG, 1.6, 2)
+b += line(330, 74, 330, 52, ORG, 2.2)
+b += line(352, 74, 352, 66, ORG, 2.2)
+b += line(330, 52, 400, 52, ORG, 2.2)
+b += line(352, 66, 400, 66, ORG, 2.2)
+b += text(372, 84, "chổi quét", ORG, 14, "start", "600")
+b += text(318, 130, "hai vành khuyên", ORG, 12, "start", "600")
+b += text(318, 146, "riêng; mỗi vành nối", ORG, 12, "start", "600")
+b += text(318, 162, "một đầu khung dây", ORG, 12, "start", "600")
 fig2 = wrap("0 0 452 204",
             "Hai cách bố trí máy phát điện xoay chiều một pha: cho nam châm quay thì lấy điện trực tiếp; cho khung dây quay trong từ trường B với tốc độ góc ω thì phải dùng vành khuyên và chổi quét",
             b,
-            "Hình 2. Hai cách bố trí: (a) nam châm quay — lấy điện trực tiếp; (b) khung dây quay với tốc độ góc ω trong từ trường B — cần vành khuyên và chổi quét để đưa điện ra mạch ngoài.")
+            "Hình 2. Hai cách bố trí máy phát một pha.<br>(a) Nam châm quay: cuộn dây đứng yên, lấy điện trực tiếp.<br>(b) Khung dây quay với tốc độ góc ω trong từ trường B: cần hai vành khuyên và hai chổi quét.<br>Vẽ lại theo OpenStax, College Physics 2e, Hình 23.19 và 23.20 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
 
 # ------------------------------------------------- Hình 3: ba pha — ba cuộn dây và ba suất điện động
 b = defs("f3")
@@ -172,10 +178,15 @@ b += text(220, 114, "lõi thép", "currentColor", 14, "middle", "600")
 b += text(14, 190, "nguồn xoay chiều · U₁/U₂ = N₁/N₂ = I₂/I₁", "currentColor", 14, "start", "700")
 b += text(14, 210, "không đổi tần số · không sinh thêm điện năng", "currentColor", 14, "start", "600")
 b += text(14, 230, "lõi thép ghép từ các lá mỏng cách điện", "currentColor", 14, "start", "600")
+b += text(372, 168, "kí hiệu", "currentColor", 12, "middle", "600")
+b += f'<path d="M 340 224 v-8 M 340 216 c-10 0 -10 -6 0 -6 c-10 0 -10 -6 0 -6 c-10 0 -10 -6 0 -6 c-10 0 -10 -6 0 -6 v-8 M 404 224 v-8" fill="none" stroke="{RED}" stroke-width="1.8"/>'
+b += f'<path d="M 404 216 c10 0 10 -6 0 -6 c10 0 10 -6 0 -6 c10 0 10 -6 0 -6 c10 0 10 -6 0 -6 v-8" fill="none" stroke="{BLUE}" stroke-width="1.8"/>'
+b += line(370, 184, 370, 214, "currentColor", 1.6)
+b += line(376, 184, 376, 214, "currentColor", 1.6)
 fig4 = wrap("0 0 440 238",
             "Sơ đồ máy biến áp: cuộn sơ cấp và cuộn thứ cấp quấn trên một lõi thép kín ghép từ các lá mỏng cách điện",
             b,
-            "Hình 4. Sơ đồ máy biến áp một pha; từ thông Φ<sub>B</sub> khép kín trong lõi.")
+            "Hình 4. Sơ đồ máy biến áp một pha.<br>Từ thông Φ<sub>B</sub> khép kín trong lõi thép.<br>Phía dưới: kí hiệu máy biến áp trên sơ đồ mạch.<br>Vẽ lại theo OpenStax, College Physics 2e, Hình 23.27 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

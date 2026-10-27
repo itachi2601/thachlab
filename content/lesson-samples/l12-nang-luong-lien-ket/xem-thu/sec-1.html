@@ -1,6 +1,6 @@
 <!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.css">
 <style>
 :root{color-scheme:light}
 body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -1110,6 +1110,305 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content .tl-more > :last-child { margin-bottom: 6px; }
 .exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
 
+/* ============================================================================================
+   KHUNG ĐỒNG BỘ TRANG CHƯƠNG ↔ TRANG BÀI (thầy duyệt 26/10/2026, bản xem thử "Trang chương và trang bài")
+   Rail trái luôn là "mình đang ở đâu" (B5): trang chương = danh sách chương, trang bài = mục lục bài.
+   Đầu trang cùng mẫu: đường dẫn + công cụ một hàng, H1 cùng cỡ (C3), một dòng meta. Một điểm nổi mỗi trang (B2).
+   4 cỡ: ≥1024 (máy tính, iPad ngang) 2 cột · 640–1023 (iPad dọc) 1 cột + thanh đáy + ngăn kéo trái · <640 điện thoại.
+   ============================================================================================ */
+
+/* ---- Đầu trang bài: một lưới cho mọi cỡ ---- */
+.lesson-page .lesson-head {
+  position: relative; display: grid; align-items: center; column-gap: 8px; row-gap: 2px;
+  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+  grid-template-areas: "back crumb present aa drawer" "title title title title title" "meta meta meta meta meta";
+}
+.lesson-page .lesson-head-text { display: contents; }
+.lesson-page .lesson-head-back { grid-area: back; }
+.lesson-page .lesson-head .lesson-breadcrumb { grid-area: crumb; min-width: 0; align-self: center; }
+.lesson-page .lesson-head h1 { grid-area: title; margin-top: 4px; }
+.lesson-page .lesson-head .lesson-meta { grid-area: meta; }
+.lesson-page .lesson-head .lesson-tool-toggle { grid-area: aa; display: inline-flex; width: 44px; height: 44px; }
+.lesson-page .lesson-head .lesson-drawer-toggle { display: none; }
+.lesson-present-btn { grid-area: present; display: inline-flex; height: 44px; align-items: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; padding: 0 12px; color: var(--color-ink); font-size: 14px; font-weight: 600; cursor: pointer; }
+.lesson-present-btn:hover { border-color: var(--lesson-accent-line); }
+/* Cỡ chữ, Dịu mắt, Toàn màn hình gom vào bảng Aa (N2): bảng nổi ngay dưới nút. */
+.lesson-page .lesson-head .lesson-tools { position: absolute; top: 48px; right: 0; z-index: 30; display: none; min-width: 200px; flex-direction: column; align-items: stretch; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--color-panel); padding: 8px; box-shadow: 0 14px 30px -18px rgba(15,23,42,.45); }
+.lesson-page .lesson-head .lesson-tools.is-open { display: flex; }
+.lesson-page .lesson-head .lesson-tools .lesson-tool { justify-content: flex-start; min-height: 44px; }
+.lesson-page .lesson-head .lesson-fonttools button { min-height: 44px; }
+
+/* ---- Bài trước / Bài sau ở cuối bài ---- */
+.lesson-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0 8px; }
+.lesson-pager-link { display: grid; gap: 2px; min-height: 56px; align-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 10px 16px; color: var(--color-ink); font-size: 15px; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.lesson-pager-link small { color: var(--color-muted); font-size: 13px; font-weight: 500; }
+.lesson-pager-link:hover { border-color: var(--lesson-accent-line); }
+.lesson-pager-link--next { grid-column: 2; border-color: var(--lesson-accent-line); text-align: right; color: var(--lesson-accent-text); }
+
+/* ---- Rail trái trang bài ---- */
+.lesson-rail-back { display: flex; min-height: 44px; align-items: center; gap: 6px; color: var(--color-muted); font-size: 14px; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.lesson-rail-back:hover { color: var(--lesson-accent-text); }
+.lesson-nav--rail { display: grid; gap: 12px; align-content: start; }
+.lesson-nav--rail .lesson-toc ol { max-height: none; }
+.lesson-nav--rail .lesson-toc a { min-height: 40px; align-content: center; padding: 8px 10px; border-radius: 0 8px 8px 0; font-size: 14px; }
+
+/* Cột chữ ≤ ~62 ký tự (C2): giới hạn đoạn văn, không giới hạn hình/bảng. */
+.lesson-page .lesson-prose :is(p, li, h3, h4) { max-width: 36em; }
+
+@media (min-width: 1024px) {
+  .lesson-layout--rail { grid-template-columns: 248px minmax(0, 1fr); gap: 40px; max-width: 1200px; }
+  .lesson-layout--rail .lesson-nav--rail { position: sticky; top: 92px; max-height: calc(100vh - 112px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding-bottom: 72px; }
+  .lesson-layout--rail .lesson-main { max-width: 760px; }
+  .lesson-layout--rail .lesson-body { --lesson-read-width: 760px; max-width: 760px; }
+  .lesson-page .lesson-head { margin: 0 0 16px; }
+  .lesson-page .lesson-head-back { display: none; }
+  .lesson-page .lesson-head h1, .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 32px; line-height: 1.2; }
+}
+/* iPad ngang (1024–1279): rail hẹp lại, nút Trình chiếu chỉ còn icon. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lesson-layout--rail { grid-template-columns: 220px minmax(0, 1fr); gap: 28px; padding-inline: 24px; }
+  .lesson-present-btn { width: 44px; justify-content: center; padding: 0; }
+  .lesson-present-btn .lesson-tool-text { display: none; }
+}
+
+/* ---- < 1024 (iPad dọc + điện thoại): thanh bài thay thanh site, thanh đáy + ngăn kéo ---- */
+@media (max-width: 1023px) {
+  body:has(.lesson-page) header[data-site-navbar] { display: none; }
+  /* Chỉ khi bài đã dựng (.lesson-page có mặt) — lúc tải/lỗi navbar vẫn hiện nên phải giữ khoảng đệm. */
+  body:has(.lesson-page) main.lesson-page-main { padding-top: 0 !important; }
+  .lesson-layout--rail .lesson-nav--rail { display: none; }
+  .lesson-page .lesson-tabs { top: 0; }
+  .lesson-page .lesson-review-banner { top: 56px; }
+  .lesson-page .lesson-head { padding-top: 8px; }
+  .lesson-page .lesson-head .lesson-tools { top: 56px; }
+  .lesson-page .lesson-head-back { display: inline-flex; width: 44px; height: 44px; }
+  /* Tên chương nhỏ ở hàng đầu thay cho cả đường dẫn (biết mình ở chương nào, không lặp tên bài — N4). */
+  .lesson-page .lesson-breadcrumb { display: flex; flex-wrap: nowrap; overflow: hidden; }
+  .lesson-page .lesson-crumb-class { display: none !important; }
+  .lesson-page .lesson-crumb-chapter { display: block !important; overflow: hidden; color: var(--color-muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+  .lesson-page .lesson-pager { display: none; }
+  .lesson-present-btn { width: 44px; justify-content: center; padding: 0; }
+  .lesson-present-btn .lesson-tool-text { display: none; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Trước đây Bài trước/Bài sau treo ở đầu trang tablet; giờ là thanh đáy giống điện thoại, rộng tối đa 560px (D3/B6). */
+  .lesson-page .lesson-head h1 { font-size: 26px; }
+  .lesson-page .lesson-body { font-size: calc(1.0625rem * var(--lesson-read-scale, 1)); }
+  .lesson-page .lesson-tabs ol { justify-content: center; }
+  body:has(.lesson-page) { padding-bottom: calc(var(--lesson-bottombar-h, 72px) + env(safe-area-inset-bottom, 0px)); }
+  .lesson-page .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: 48px repeat(3, minmax(0, 1fr)); align-items: center; gap: 10px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 10px max(16px, calc((100vw - 600px) / 2)) calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .lesson-page .lesson-bottom-link, .lesson-page .lesson-bottom-done { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .lesson-page .lesson-bottom-link--next { border-color: var(--lesson-accent); background: var(--lesson-accent); color: #fff; }
+  .lesson-page .lesson-bottom-done { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
+  .lesson-page .lesson-bottom-done.is-done { color: var(--color-ok, #047857); }
+  .lesson-page .lesson-checkbox { width: 17px; height: 17px; border: 2px solid currentColor; border-radius: 5px; }
+  .lesson-page .lesson-bottom-step { display: none; }
+  .lesson-page.is-drawer-open .lesson-bottombar { display: none; }
+  /* Đề kiểm tra: Bài trước/Bài sau đã ở thanh đáy — bỏ hàng lặp ở đầu trang (D3). */
+  .lesson-layout--exam .lesson-nav--compact { display: none; }
+  /* Ngăn kéo mục lục trượt từ cạnh TRÁI — đúng cạnh của rail trên máy tính (B5/B7). */
+  .lesson-page .lesson-drawer { display: block; position: fixed; inset: 0; z-index: 60; }
+  .lesson-page .lesson-drawer-scrim { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(2, 6, 15, .45); cursor: pointer; }
+  .lesson-page .lesson-drawer-sheet { position: absolute; inset: 0 auto 0 0; display: flex; width: min(380px, 86vw); flex-direction: column; border-right: 1px solid var(--lesson-line); background: var(--color-panel); }
+  .lesson-page .lesson-drawer-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--lesson-line); padding: 14px 16px 12px; }
+  .lesson-page .lesson-drawer-title { margin: 0; color: var(--color-ink); font-size: 16px; font-weight: 700; }
+  .lesson-page .lesson-drawer-head small { display: block; margin-top: 3px; color: var(--color-muted); font-size: 13px; }
+  .lesson-page .lesson-drawer-head button { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); cursor: pointer; }
+  .lesson-page .lesson-drawer-body { overflow-y: auto; overscroll-behavior: contain; padding: 14px 16px 24px; }
+  .lesson-page .lesson-bottom-link.is-empty { opacity: .35; }
+  body:has(.lesson-bottombar) .bug-fab { bottom: calc(var(--lesson-bottombar-h, 72px) + 12px); z-index: 46; }
+  .lesson-page .lesson-drawer-body .lesson-toc ol { max-height: none; }
+  .lesson-page .lesson-drawer-body .lesson-toc a { min-height: 44px; align-content: center; font-size: 15px; }
+}
+@media (max-width: 639px) {
+  .lesson-page .lesson-head h1 { font-size: 22px; }
+}
+
+/* Cây chương, ô tìm, thẻ tiến độ trong ngăn kéo: dùng chung điện thoại + iPad dọc (ngăn kéo có ở mọi cỡ < 1024px từ 26/10/2026). */
+@media (max-width: 1023px) {
+  /* Hộp trong ngăn kéo (mục lục bài, mức nắm vững, cây khoá) cách nhau đều 14px. */
+  .lesson-page .lesson-drawer-body { display: grid; gap: 14px; align-content: start; }
+  .lesson-drawer-body .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 14px; }
+  .lesson-drawer-body .lesson-nav-search { display: flex; align-items: center; gap: 8px; margin: 10px 0; border: 1px solid var(--lesson-line); border-radius: 10px; background: var(--lesson-surface); padding: 8px 10px; color: var(--color-muted); }
+  .lesson-drawer-body .lesson-nav-search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--color-ink); font-size: 16px; }
+  .lesson-drawer-body .lesson-toc a { font-size: 13.5px; }
+  .lesson-drawer-body .lesson-progress-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 12px; }
+  .lesson-drawer-body .lesson-progress-summary > div:last-child { flex: 1 1 140px; min-width: 0; }
+  .lesson-drawer-body .lesson-continue-btn { display: flex; width: max-content; max-width: 100%; min-height: 36px; align-items: center; gap: 6px; margin-top: 10px; border-radius: 9px; background: var(--lesson-accent); padding: 8px 12px; color: #fff; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+  .lesson-drawer-body .lesson-progress-summary p { margin: 0; color: var(--color-ink); font-size: 14px; font-weight: 700; }
+  .lesson-drawer-body .lesson-progress-summary small { display: block; margin-top: 2px; color: var(--color-muted); font-size: 12px; }
+  .lesson-drawer-body .lesson-tree-chapter { width: 100%; display: grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items: center; gap: 6px; border: 0; background: none; padding: 10px 2px; color: var(--color-ink); font-family: var(--font-display), sans-serif; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; }
+  .lesson-drawer-body .lesson-tree-chapter em { display: flex; width: 22px; height: 22px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: var(--color-muted); font-size: 12px; font-style: normal; font-weight: 700; }
+  .lesson-drawer-body .lesson-tree-chapter small { color: var(--color-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lesson-drawer-body .lesson-tree-chapter.is-current { background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
+  .lesson-drawer-body .lesson-tree ol { display: grid; gap: 1px; margin: 2px 0 8px; padding: 0; list-style: none; }
+  .lesson-drawer-body .lesson-tree a, .lesson-drawer-body .lesson-tree .lesson-tree-current { display: grid; min-height: 44px; grid-template-columns: 18px minmax(0,1fr); align-items: center; gap: 8px; border-left: 2px solid transparent; border-radius: 0 8px 8px 0; padding: 8px; color: var(--color-muted); font-size: 13.5px; line-height: 1.35; text-decoration: none; }
+  .lesson-drawer-body .lesson-tree .is-current { border-left-color: var(--lesson-accent); background: var(--lesson-accent-soft); color: var(--color-ink); font-weight: 700; }
+  .lesson-drawer-body .lesson-tree .is-done i { color: #34d399; }
+  .lesson-drawer-body .lesson-tree .is-exam i { font-size: 12px; font-weight: 700; letter-spacing: .02em; }
+  .lesson-drawer-body .lesson-section h2 { font-size: 14px; }
+  .lesson-drawer-body .lesson-note-panel { padding: 0; }
+}
+
+/* ---- Trang chương ---- */
+/* "Học tiếp": khối màu đặc, điểm nổi duy nhất (B2/L5). */
+.lesson-shell .class-next-line:not(.class-next-line--done) { min-height: 64px; gap: 14px; border: 0; background: var(--color-primary, #1d4ed8); padding: 14px 18px; color: #fff; }
+.lesson-shell .class-next-line:not(.class-next-line--done):hover { background: var(--color-primary-dark, #1e40af); }
+.class-next-line-text { display: grid; flex: 1 1 auto; min-width: 0; gap: 1px; }
+.lesson-shell .class-next-line-label { color: rgba(255,255,255,.85); font-size: 12px; letter-spacing: .08em; }
+.lesson-shell .class-next-line-title { color: #fff; font-size: 17px; }
+.lesson-shell .class-next-line-why { color: rgba(255,255,255,.9); font-size: 14px; white-space: normal; }
+.class-next-line-go { display: inline-flex; flex: 0 0 auto; min-height: 44px; align-items: center; gap: 6px; border-radius: 10px; background: #fff; padding: 0 14px; color: var(--color-primary, #1d4ed8); font-size: 15px; font-weight: 700; }
+.lesson-shell .class-next-line:not(.class-next-line--done) svg { color: inherit; }
+/* Buổi ôn ở nhà: một dòng phụ, hạn nộp màu cần-chú-ý. */
+.class-task-row { display: flex; flex-wrap: wrap; min-height: 48px; align-items: center; gap: 4px 10px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 10px 14px; color: var(--color-ink); font-size: 14px; text-decoration: none; }
+.class-task-row:hover { border-color: var(--lesson-accent-line); }
+.class-task-title { font-weight: 600; }
+.class-task-sub { color: var(--color-muted); }
+.class-task-due { margin-left: auto; color: var(--color-warn, #b45309); font-weight: 600; white-space: nowrap; }
+/* "Ôn thêm:" — lối tắt cuối danh sách; tự ẩn khi không còn chip. */
+.class-more { align-items: center; }
+.class-more-label { color: var(--color-muted); font-size: 14px; }
+.class-more:not(:has(.class-chip, a, button)) { display: none; }
+/* Dải chương cho iPad dọc. */
+.class-chapter-chips { display: none; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Trang chương iPad dọc: dải chương thay thanh đáy site, như bản duyệt (B1/N3). */
+  body:has(.lesson-layout--pick) .mobile-tabbar { display: none; }
+  body:has(.lesson-layout--pick) { padding-bottom: 0; }
+  body:has(.lesson-layout--pick) .bug-fab { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .class-chapter-chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .class-chapter-chips button { flex: 0 0 auto; min-height: 44px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 0 14px; color: var(--color-ink); font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer; }
+  .class-chapter-chips button.is-active { border-color: transparent; background: var(--lesson-accent-soft); color: var(--lesson-accent-text); font-weight: 700; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
+  .lesson-layout--pick .class-pick-mobile { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 28px; }
+}
+
+/* ============================================================================================
+   VÙNG ĐỌC LÝ THUYẾT — 6 cách trình bày lấy từ trang iPad mini của Apple (thầy duyệt 26/10/2026)
+   Khối mới chỉ cần HTML + CSS (không JS, lọt qua DOMPurify). Cách soạn: skill soan-bai-ly-thuyet-tuong-tac.
+   ============================================================================================ */
+/* (5) Nhịp: giữa hai mục (mốc h3) ~56px, giữa hai đoạn ~14px — tỉ lệ ≥ 1:3 (B3). */
+.lesson-page .theory-section[data-open="1"] + .theory-section[data-open="1"] { margin-top: 56px; }
+@media (max-width: 639px) { .lesson-page .theory-section[data-open="1"] + .theory-section[data-open="1"] { margin-top: 40px; } }
+
+/* (1) Câu chốt đầu mục: <p class="tl-claim"> ngay sau <h3>. h3 thu thành nhãn nhỏ, câu chốt là chữ to (N5, G3). */
+.exam-content h3:has(+ .tl-claim) { margin-bottom: 4px; color: var(--color-primary, #1d4ed8); font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.exam-content .tl-claim, .lesson-body .lesson-prose .exam-content p.tl-claim { margin: 0 0 16px; color: var(--color-ink); font-size: 1.45rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; text-wrap: balance; }
+
+/* (2) Một chỗ in đậm mỗi đoạn — không có CSS, kiểm bằng scripts/kiem-dam-moi-doan.mts. */
+
+/* (3) Ô "Số cần nhớ": <div class="tl-nums"><details class="tl-num"><summary>nhãn</summary><b>giá trị</b></details>…</div>
+   Che sẵn, học sinh nhớ lại rồi bấm để kiểm (L1 — truy xuất). */
+.exam-content .tl-nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 12px 0 16px; }
+.exam-content .tl-num { display: flex; min-height: 96px; flex-direction: column; justify-content: space-between; gap: 6px; border: 1px solid var(--lesson-line, rgba(15,23,42,.1)); border-radius: 12px; background: var(--color-bg); padding: 12px 14px; }
+.exam-content .tl-num > summary { list-style: none; cursor: pointer; color: var(--color-muted); font-size: .9rem; line-height: 1.4; }
+.exam-content .tl-num > summary::-webkit-details-marker { display: none; }
+.exam-content .tl-num > summary::after { content: "Bấm để hiện"; display: block; margin-top: 8px; color: var(--color-primary, #1d4ed8); font-size: .9rem; font-weight: 600; }
+.exam-content .tl-num[open] > summary::after { content: none; }
+.exam-content .tl-num > :not(summary) { margin: 0; color: var(--color-ink); font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.exam-content .tl-num:hover { border-color: var(--lesson-accent-line, #1d4ed8); }
+
+/* (4) Bảng đặt cạnh nhau cho bẫy: <table class="tl-table tl-cmp">, ô khác nhau <td class="tl-diff">. */
+.exam-content .tl-cmp tbody th { width: 30%; color: var(--color-muted); font-size: .9rem; font-weight: 600; }
+.exam-content .tl-cmp .tl-diff { background: rgba(245, 158, 11, .12); }
+.exam-content .tl-cmp :is(th, td) { padding: 10px 12px; }
+
+/* (6) Thuật ngữ mở tại chỗ (N8): <span class="tl-term"><input type="checkbox" id="…"><label for="…">từ</label><span class="tl-def">định nghĩa</span></span>
+   Chú thích số mũ chỉ cho nguồn/điều kiện: <sup class="tl-fn"><a href="#tl-fn-1">1</a></sup> … <ol class="tl-fns"><li id="tl-fn-1">…</li></ol> */
+.exam-content .tl-term > input { position: absolute; opacity: 0; pointer-events: none; }
+.exam-content .tl-term > label { border-bottom: 1.5px dashed currentColor; color: var(--color-primary, #1d4ed8); font-weight: 500; cursor: pointer; }
+.exam-content .tl-term > input:focus-visible + label { outline: 2px solid var(--color-primary, #1d4ed8); outline-offset: 2px; border-radius: 3px; }
+.exam-content .tl-term > .tl-def { display: none; }
+.exam-content .tl-term > input:checked ~ .tl-def { display: block; margin: 8px 0 4px; border-radius: 10px; background: var(--color-surface-2, rgba(15,23,42,.05)); padding: 10px 14px; color: var(--color-ink); font-size: .92em; line-height: 1.6; }
+.exam-content .tl-fn { margin-left: 1px; font-size: .7em; font-weight: 700; line-height: 0; }
+.exam-content .tl-fn a { color: var(--color-primary, #1d4ed8); text-decoration: none; }
+.exam-content .tl-fns { margin: 36px 0 0; border-top: 1px solid var(--lesson-line, rgba(15,23,42,.1)); padding: 12px 0 0 20px; color: var(--color-muted); font-size: .82rem; line-height: 1.6; }
+
+/* ============================================================================================
+   TRANG BÀI KHỚP BẢN DUYỆT 26/10/2026 (đợt 2) — số đo lấy đúng CSS của bản xem thử "Trang chương và trang bài".
+   ============================================================================================ */
+/* Thân bài 17px (iPad dọc 18px), dòng ≤ 62 ký tự (C1/C2). */
+.lesson-page .lesson-body { font-size: calc(1.0625rem * var(--lesson-read-scale, 1)); }
+.lesson-page .lesson-prose :is(p, li, h3, h4) { max-width: 62ch; }
+/* .lesson-page .exam-content đặt 1rem cứng (16px, bỏ qua cả nút A−/A+) — trong thẻ lý thuyết theo cỡ của thân bài. */
+.lesson-page .lesson-prose .exam-content { font-size: 1em; }
+/* Hộp mục tiêu: viền trái màu nhấn, nhãn in hoa, không in đậm bên trong (N7); dòng ⏱ đã bỏ lúc render (N4). */
+.lesson-page .exam-content .tl-box.tl-goal { margin: 0 0 24px; border: 0; border-left: 3px solid var(--color-primary, #1d4ed8); border-radius: 0 10px 10px 0; background: var(--color-primary-soft, #eef2ff); padding: 12px 16px; font-size: 1rem; line-height: 1.65; }
+.lesson-page .exam-content .tl-goal > .tl-label { display: block; margin: 0 0 4px; color: var(--color-primary, #1d4ed8); font-size: .875rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.lesson-page .exam-content .tl-goal :is(strong, b) { font-weight: inherit; }
+.lesson-page .exam-content .tl-goal ul { margin: 0; padding-left: 18px; }
+/* Nhịp B3 khi vẫn giữ mốc gập: nút "Tiếp" (đầu mục sau) cách cuối mục đang mở như khoảng giữa hai mục mở. */
+.lesson-page .theory-section[data-open="1"] > .theory-next { margin-top: 56px; }
+/* Dòng meta: ngay dưới H1; bản dưới dải tab chỉ dùng < 1024. */
+.lesson-page .lesson-meta { gap: 6px 10px; font-size: 14px; }
+.lesson-page .lesson-meta--below-tabs { display: none; }
+/* Rail mục lục: khung, tiêu đề in hoa + số đếm, ✓ mục đã đọc, tô mục đang đọc (B5/B7). */
+.lesson-page .lesson-toc { border: 1px solid var(--lesson-line); border-radius: 14px; background: var(--color-panel); padding: 10px; }
+.lesson-page .lesson-toc-title { display: flex; justify-content: space-between; margin: 0; padding: 6px 10px 8px; color: var(--color-slate-500, #64748b); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.lesson-page .lesson-toc-title span { font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.lesson-page .lesson-toc a, .lesson-nav--rail .lesson-toc a { display: grid; grid-template-columns: 22px minmax(0, 1fr); align-items: start; gap: 8px; border: 0; border-radius: 9px; padding: 9px 10px; color: var(--color-ink); font-size: 14px; line-height: 1.4; }
+.lesson-page .lesson-toc-n { padding-top: 1px; color: var(--color-slate-500, #64748b); font-size: 12px; font-style: normal; font-variant-numeric: tabular-nums; }
+.lesson-page .lesson-toc a.is-done .lesson-toc-n { color: var(--color-ok, #047857); }
+.lesson-page .lesson-toc a.is-active { background: var(--color-primary-soft, #eef2ff); color: var(--color-primary, #1d4ed8); font-weight: 600; }
+.lesson-page .lesson-toc a.is-active .lesson-toc-n { color: inherit; }
+.lesson-page .lesson-toc .lesson-toc-item { display: block; color: var(--color-muted); font-size: 12px; font-weight: 500; }
+.lesson-page .lesson-nav--rail .lesson-side-link { min-height: 32px; padding: 0 10px; color: var(--color-primary, #1d4ed8); font-size: 14px; font-weight: 500; }
+/* Cuối bài: Mức độ thành thạo + Ghi chú của em (dời khỏi rail). */
+.lesson-endpanels { display: grid; gap: 12px; margin: 28px 0 0; }
+
+@media (min-width: 1024px) {
+  .lesson-layout--rail .lesson-main { max-width: 720px; }
+  .lesson-layout--rail .lesson-body { --lesson-read-width: 720px; max-width: 720px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { border-radius: 16px; padding: 28px 36px 32px; }
+}
+.lesson-page .lesson-meta-time { color: var(--color-muted); }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { padding: 26px 30px 30px; }
+}
+
+/* < 1024: tên bài nằm trong thanh bài (2 dòng: tên chương nhỏ / tên bài), bỏ H1 lớn (B1/B6). */
+@media (max-width: 1023px) {
+  .lesson-page .lesson-head { grid-template-areas: "back crumb present aa drawer" "back title present aa drawer"; row-gap: 0; align-items: center; border-bottom: 1px solid var(--lesson-line); background: var(--color-panel); }
+  .lesson-page .lesson-head-back { grid-area: back; grid-row: 1 / 3; border: 0; }
+  .lesson-page .lesson-head .lesson-breadcrumb { align-self: end; }
+  .lesson-page .lesson-head h1 { overflow: hidden; margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+  .lesson-page .lesson-crumb-chapter { font-size: 12px; line-height: 1.3; }
+  .lesson-page .lesson-head > .lesson-head-text > .lesson-meta { display: none; }
+  .lesson-page .lesson-meta--below-tabs { display: flex; margin: 0; padding: 12px 0 0; }
+  .lesson-page .lesson-tabs { top: 56px; background: var(--color-panel); }
+  /* Thanh bài dính trên cùng như bản duyệt (thanh site đã ẩn) — luôn biết đang ở bài nào; dải tab dính ngay dưới. */
+  .lesson-page .lesson-head { position: sticky; top: 0; z-index: 8; }
+  .lesson-page .lesson-layout--rail { padding-top: 0; }
+  .lesson-page .lesson-progressbar { margin-top: 0; border-radius: 0; }
+  .lesson-page .lesson-bottombar--3 { grid-template-columns: 1fr 1fr 1.3fr; }
+  .lesson-page .lesson-bottombar--3 .lesson-bottom-link--next { border-color: var(--lesson-accent); background: var(--lesson-accent); color: #fff; }
+}
+.lesson-page .lesson-progressbar > small { font-variant-numeric: tabular-nums; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  .lesson-page .lesson-body { font-size: calc(1.125rem * var(--lesson-read-scale, 1)); }
+  .lesson-page .lesson-head { min-height: 60px; padding: 0 16px 0 8px; }
+  .lesson-page .lesson-tabs { top: 60px; }
+  .lesson-page .lesson-meta--below-tabs { padding-inline: 4px; }
+  .lesson-page .lesson-head h1 { font-size: 17px; }
+  .lesson-page .lesson-crumb-chapter { font-size: 13px; }
+  .lesson-page .lesson-head-back { width: 48px; height: 48px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { border-radius: 16px; padding: 30px 40px 34px; }
+}
+.lesson-page .lesson-endpanels:empty { display: none; }
+@media (max-width: 639px) {
+  .lesson-page .lesson-head { min-height: 56px; padding: 0 6px; }
+  .lesson-page .lesson-meta--below-tabs { padding-top: 12px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { margin-inline: -16px; border-inline: 0; border-radius: 0; padding: 18px 16px; }
+  .lesson-page .theory-section[data-open="1"] > .theory-next { margin-top: 40px; }
+}
+/* Màn cảm ứng (iPad ngang 1024–1279 vẫn có rail): đích chạm ≥ 44px cho mục lục, lối về, link phụ (D2). */
+@media (pointer: coarse) {
+  .lesson-page .lesson-toc a, .lesson-rail-back, .lesson-page .lesson-nav--rail .lesson-side-link, .class-rail-item, .class-rail .lesson-rail-back { min-height: 44px; }
+}
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
@@ -1135,8 +1434,8 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </div>
 
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

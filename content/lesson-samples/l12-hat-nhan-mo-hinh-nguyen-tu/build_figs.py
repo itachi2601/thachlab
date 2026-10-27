@@ -72,7 +72,7 @@ b += f'<circle cx="237" cy="104" r="7" fill="rgba(248,113,113,.35)" stroke="{RED
 b += text(24, 196, "Một chùm hạt,", "currentColor", 14, "start", "500")
 b += text(24, 214, "ba số phận", "currentColor", 14, "start", "500")
 fig1 = wrap2("0 0 440 254", "Chùm hạt alpha bắn vào lá vàng, máy dò ghi hạt lệch: hầu hết bay thẳng, vài hạt lệch mạnh theo góc lệch φ so với phương ban đầu hoặc bật ngược lại",
-             b, "Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống, chỉ hạt sát hạt nhân mới lệch mạnh hoặc bật ngược.")
+             b, "Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống, chỉ hạt sát hạt nhân mới lệch mạnh hoặc bật ngược.<br>Vẽ lại theo OpenStax, College Physics 2e, Hình 30.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
 
 # ---------------------------------------------- Hình 2: ba mô hình nguyên tử
 b = defs("f2")
