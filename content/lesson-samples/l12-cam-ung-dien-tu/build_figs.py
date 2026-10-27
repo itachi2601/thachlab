@@ -49,19 +49,27 @@ fig2 = wrap("0 0 430 205", "Thanh nam châm đặt trước cuộn dây nối k�
 
 # ---- Hình 3: định luật Lenz, cực Bắc tiến lại, vòng dây sinh cực Bắc đẩy ra
 b = defs("f3")
-b += '<rect x="24" y="85" width="50" height="32" fill="rgba(56,189,248,.25)" stroke="currentColor" stroke-width="2"/>'
-b += '<rect x="74" y="85" width="50" height="32" fill="rgba(248,113,113,.25)" stroke="currentColor" stroke-width="2"/>'
-b += text(49, 107, "S", BLUE, 15, "middle", "700") + text(99, 107, "N", RED, 15, "middle", "700")
-b += arrow("f3", "g", 30, 60, 110, 60, 3) + text(30, 50, "nam châm tiến lại", GRN, 12)
-b += '<ellipse cx="300" cy="101" rx="16" ry="48" fill="none" stroke="currentColor" stroke-width="3"/>'
-b += text(300, 168, "vòng dây kín", "currentColor", 12, "middle")
-b += arrow("f3", "b", 292, 101, 215, 101, 3)
-b += text(278, 124, "đầu gần = cực Bắc", BLUE, 12, "end")
-b += text(222, 90, "B", BLUE, 14, "start", "700").replace("</text>", '<tspan dy="4" font-size="9">cảm ứng</tspan></text>')
-b += arrow("f3", "r", 76, 134, 26, 134, 3)
-b += text(24, 156, "lực đẩy cản lại", RED, 12)
-b += text(24, 192, "Từ thông tăng → từ trường cảm ứng ngược chiều → cản sự tăng", "currentColor", 12, "start", "400")
-fig3 = wrap("0 0 430 205", "Định luật Lenz: nam châm tiến lại gần, vòng dây tạo cực cùng tên để đẩy ra",
+b += '<rect x="24" y="114" width="50" height="32" fill="rgba(56,189,248,.25)" stroke="currentColor" stroke-width="2"/>'
+b += '<rect x="74" y="114" width="50" height="32" fill="rgba(248,113,113,.25)" stroke="currentColor" stroke-width="2"/>'
+b += text(49, 136, "S", BLUE, 15, "middle", "700") + text(99, 136, "N", RED, 15, "middle", "700")
+b += arrow("f3", "g", 30, 90, 110, 90, 3) + text(30, 80, "nam châm tiến lại", GRN, 14)
+b += '<ellipse cx="300" cy="130" rx="16" ry="50" fill="none" stroke="currentColor" stroke-width="3"/>'
+b += text(300, 204, "vòng dây kín", "currentColor", 14, "middle")
+b += arrow("f3", "b", 288, 130, 205, 130, 3)
+b += text(206, 116, "B", BLUE, 14, "start", "700").replace("</text>", '<tspan dy="4" font-size="12">cảm ứng</tspan></text>')
+b += text(272, 158, "đầu gần = cực Bắc", BLUE, 14, "end")
+b += arrow("f3", "r", 76, 168, 26, 168, 3)
+b += text(24, 190, "lực đẩy cản lại", RED, 14)
+b += field_line(150, 52, 395, 52, RED, 1.9)
+b += text(402, 57, "B", RED, 14, "start", "700")
+b += text(150, 38, "từ trường nam châm", RED, 14)
+b += arrow("f3", "o", 316, 142, 316, 118, 3)
+b += text(326, 134, "i", ORG, 15, "start", "700")
+b += text(326, 154, "dòng cảm ứng", ORG, 14)
+b += text(430, 228, "nhìn từ phía nam châm: ngược chiều kim đồng hồ", ORG, 14, "end")
+b += text(24, 254, "Từ thông tăng → từ trường cảm ứng ngược chiều", "currentColor", 14, "start", "400")
+b += text(24, 274, "→ cản sự tăng của từ thông", "currentColor", 14, "start", "400")
+fig3 = wrap("0 0 440 285", "Định luật Lenz: nam châm tiến lại gần, vòng dây tạo cực cùng tên để đẩy ra; dòng cảm ứng nhìn từ phía nam châm ngược chiều kim đồng hồ",
             b, "Hình 3. Từ thông tăng nên vòng dây tạo cực Bắc ở đầu gần: hai cực cùng tên <em>đẩy</em> nhau, cản nam châm tiến vào.")
 
 src = open("theory.src.html", encoding="utf8").read()

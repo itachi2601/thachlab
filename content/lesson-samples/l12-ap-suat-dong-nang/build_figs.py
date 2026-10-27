@@ -45,22 +45,23 @@ def wrap(vb, label, body, cap, exp=""):
 
 # ------------------------------------------------- Hình 1: bóng bàn bẹp gặp nước nóng
 b = defs("f1")
-b += text(20, 22, "a) Khí nguội", "currentColor", 12, "start", "700")
+b += text(20, 22, "a) Khí nguội", "currentColor", 14, "start", "700")
 b += f'<circle cx="105" cy="105" r="42" fill="rgba(148,163,184,.10)" stroke="currentColor" stroke-width="2.5"/>'
 b += f'<path d="M132,77 A38,38 0 0 0 132,131" fill="none" stroke="{ORG}" stroke-width="2" stroke-dasharray="5 4"/>'
-b += text(140, 66, "vỏ bẹp", ORG, 11, "start", "700")
+b += text(140, 66, "vỏ bẹp", ORG, 14, "start", "700")
 b += dot(80, 95, 4, BLUE) + arrow("f1", "b", 86, 95, 106, 95, 2.4)
 b += dot(100, 125, 4, BLUE) + arrow("f1", "b", 106, 125, 122, 116, 2.4)
-b += text(105, 184, "va chạm thưa, nhẹ", BLUE, 11, "middle", "600")
-b += text(228, 22, "b) Gặp nước nóng", "currentColor", 12, "start", "700")
+b += text(105, 188, "va chạm thưa, nhẹ", BLUE, 14, "middle", "600")
+b += text(228, 22, "b) Gặp nước nóng", "currentColor", 14, "start", "700")
 b += f'<path d="M250,58 L258,172 L372,172 L380,58" fill="none" stroke="currentColor" stroke-width="2.5"/>'
 b += line(256, 92, 374, 92, BLUE, 1.6, "6 5", .75)
 b += f'<circle cx="315" cy="118" r="40" fill="rgba(56,189,248,.14)" stroke="{BLUE}" stroke-width="2.2"/>'
-b += dot(288, 104, 4, BLUE) + arrow("f1", "b", 294, 104, 320, 104, 2.4)
-b += dot(302, 138, 4, BLUE) + arrow("f1", "b", 308, 138, 334, 124, 2.4)
-b += dot(342, 138, 4, BLUE) + arrow("f1", "b", 338, 134, 320, 120, 2.4)
-b += text(315, 184, "va chạm dày, mạnh", BLUE, 11, "middle", "600")
-fig1 = wrap("0 0 420 200",
+# mũi tên dài gấp đôi hình a (v lớn hơn), ba mũi tên không chạm nhau
+b += dot(282, 100, 4, BLUE) + arrow("f1", "b", 288, 100, 324, 100, 2.4)
+b += dot(290, 140, 4, BLUE) + arrow("f1", "b", 296, 138, 328, 126, 2.4)
+b += dot(340, 142, 4, BLUE) + arrow("f1", "b", 334, 144, 304, 152, 2.4)
+b += text(315, 188, "bay nhanh, va chạm dày", BLUE, 14, "middle", "600")
+fig1 = wrap("0 0 420 204",
             "Hai trạng thái của quả bóng bàn: khí nguội thì phân tử đập thưa và nhẹ, khí nóng thì phân tử đập dày và mạnh nên đẩy vỏ bóng phồng ra",
             b, "Hình 1. Khí nguội: phân tử đập thưa nên vỏ bẹp. Khí nóng: phân tử bay nhanh hơn, đập dày và mạnh hơn nên đẩy vỏ phồng lại.",
             exp="tn-l12-apsuatdongnang-03")

@@ -44,56 +44,67 @@ def wrap2(vb, label, body, cap, exp=""):
 
 # ---------------------------------------------- Hình 1: thí nghiệm lá vàng
 b = defs("f1")
-b += text(14, 24, "Chùm hạt alpha bắn vào lá vàng mỏng", "currentColor", 12, "start", "700")
+b += text(14, 24, "Chùm hạt alpha bắn vào lá vàng mỏng", "currentColor", 14, "start", "700")
 b += rect(24, 78, 74, 96, "rgba(148,163,184,.10)", "currentColor", 2)
-b += hop(36, 108, 50, 34, "nguồn", "currentColor", 10)
+b += hop(36, 108, 50, 34, "nguồn", "currentColor", 14)
 # lá vàng
 b += rect(232, 62, 11, 128, "rgba(251,146,60,.35)", ORG, 2, 3)
-b += text(237, 206, "lá vàng", ORG, 11, "middle", "700")
-b += text(237, 220, "mỏng vài nghìn", ORG, 10, "middle", "500")
-b += text(237, 232, "nguyên tử", ORG, 10, "middle", "500")
+b += text(237, 208, "lá vàng", ORG, 14, "middle", "700")
+b += text(237, 226, "mỏng vài nghìn", ORG, 14, "middle", "500")
+b += text(237, 244, "nguyên tử", ORG, 14, "middle", "500")
 # ba tia: thẳng, lệch, bật ngược
 b += arrow("f1", "g", 102, 126, 356, 126, 2.4)
-b += text(300, 168, "hầu hết bay thẳng", GRN, 11, "start", "700")
-# tia lệch: vào thẳng tới sát hạt nhân rồi gãy khúc lệch lên — không đi xuyên qua hạt nhân
-b += (f'<path d="M102,126 L237,104 L404,52" fill="none" stroke="{ORG}" stroke-width="2.4"'
+b += text(290, 150, "hầu hết bay thẳng", GRN, 14, "start", "700")
+# tia lệch: đi ngang tới sát hạt nhân rồi gãy khúc lệch lên — không đi xuyên qua hạt nhân
+b += (f'<path d="M102,104 L237,104 L380,46" fill="none" stroke="{ORG}" stroke-width="2.4"'
       f' marker-end="url(#f1-o)"/>')
-b += text(404, 44, "lệch mạnh: vài hạt", ORG, 11, "end", "700")
+b += rect(384, 26, 54, 30, "rgba(148,163,184,.10)", "currentColor", 1.6, 5)
+b += text(411, 46, "máy dò", "currentColor", 14, "middle", "700")
+b += text(436, 84, "lệch mạnh", ORG, 14, "end", "700")
+b += text(436, 102, "vài hạt", ORG, 14, "end", "700")
+# góc lệch φ giữa phần kéo dài của tia tới (nét đứt, cùng phương tia tới) và tia ra
+b += line(237, 104, 310, 104, "currentColor", 1.2, "4 4", .6)
+b += f'<path d="M277,104 A40,40 0 0 0 274.1,89.0" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+b += text(282, 98, "φ", "currentColor", 14, "start", "700")
 b += arrow("f1", "r", 231, 100, 134, 58, 2.6)
-b += text(126, 50, "bật ngược", RED, 11, "end", "700")
+b += text(126, 50, "bật ngược", RED, 14, "end", "700")
 b += f'<circle cx="237" cy="104" r="7" fill="rgba(248,113,113,.35)" stroke="{RED}" stroke-width="2"/>'
-b += text(24, 190, "Một chùm hạt, ba số phận", "currentColor", 10, "start", "500")
-fig1 = wrap2("0 0 440 244", "Chùm hạt alpha bắn vào lá vàng: hầu hết bay thẳng, vài hạt lệch mạnh hoặc bật ngược lại",
+b += text(24, 196, "Một chùm hạt,", "currentColor", 14, "start", "500")
+b += text(24, 214, "ba số phận", "currentColor", 14, "start", "500")
+fig1 = wrap2("0 0 440 254", "Chùm hạt alpha bắn vào lá vàng, máy dò ghi hạt lệch: hầu hết bay thẳng, vài hạt lệch mạnh theo góc lệch φ so với phương ban đầu hoặc bật ngược lại",
              b, "Hình 1. Thí nghiệm lá vàng: hạt alpha xuyên qua phần trống, chỉ hạt sát hạt nhân mới lệch mạnh hoặc bật ngược.")
 
 # ---------------------------------------------- Hình 2: ba mô hình nguyên tử
 b = defs("f2")
 for x, t in ((66, "Thomson 1904"), (202, "Rutherford 1911"), (352, "Bohr 1913")):
-    b += text(x, 22, t, "currentColor", 11, "middle", "700")
+    b += text(x, 22, t, "currentColor", 14, "middle", "700")
 # Thomson: quả cầu đặc
 b += f'<circle cx="66" cy="112" r="56" fill="rgba(251,146,60,.16)" stroke="{ORG}" stroke-width="1.8"/>'
 for dx, dy in ((-26, -26), (26, -26), (0, 0), (-26, 26), (26, 26)):
     b += dot(66 + dx, 112 + dy, 4, BLUE)
-b += text(66, 196, "cầu dương đặc", "currentColor", 10, "middle", "500")
-b += text(66, 210, "+ êlectron rải rác", "currentColor", 10, "middle", "500")
+b += text(66, 192, "cầu dương đặc", "currentColor", 14, "middle", "500")
+b += text(66, 210, "êlectron rải rác", "currentColor", 14, "middle", "500")
 # Rutherford
 b += f'<circle cx="202" cy="112" r="56" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.5"/>'
 b += dot(202, 112, 13, RED)
-b += text(202, 117, "+", "currentColor", 11, "middle", "700")
+b += text(202, 117, "+", "currentColor", 14, "middle", "700")
 b += f'<ellipse cx="202" cy="112" rx="42" ry="42" fill="none" stroke="{BLUE}" stroke-width="1.4" stroke-dasharray="4 4"/>'
 b += dot(160, 112, 4, BLUE) + dot(244, 112, 4, BLUE)
-b += text(202, 196, "hạt nhân nhỏ, nặng", "currentColor", 10, "middle", "500")
-b += text(202, 210, "êlectron quay quanh", "currentColor", 10, "middle", "500")
+b += text(202, 192, "hạt nhân nhỏ, nặng", "currentColor", 14, "middle", "500")
+b += text(202, 210, "êlectron quay", "currentColor", 14, "middle", "500")
+b += text(202, 228, "quanh hạt nhân", "currentColor", 14, "middle", "500")
 # Bohr
 b += dot(352, 112, 13, RED)
-b += text(352, 117, "+", "currentColor", 11, "middle", "700")
+b += text(352, 117, "+", "currentColor", 14, "middle", "700")
 b += f'<circle cx="352" cy="112" r="24" fill="none" stroke="{BLUE}" stroke-width="1.8"/>'
 b += f'<circle cx="352" cy="112" r="46" fill="none" stroke="{BLUE}" stroke-width="1.8"/>'
 b += dot(328, 112, 4.5, BLUE) + dot(352, 66, 4.5, BLUE)
-b += text(352, 166, "quỹ đạo cho phép,", "currentColor", 10, "middle", "500")
-b += text(352, 180, "có năng lượng xác định", "currentColor", 10, "middle", "500")
-b += text(16, 238, "Nguyên tử gần như trống: hạt nhân chiếm một phần mười nghìn tỉ thể tích", "currentColor", 10, "start", "500")
-fig2 = wrap2("0 0 440 250", "Ba mô hình nguyên tử đặt cạnh nhau: Thomson cầu đặc, Rutherford có hạt nhân nhỏ ở giữa, Bohr thêm các quỹ đạo cho phép",
+b += text(352, 192, "quỹ đạo cho phép,", "currentColor", 14, "middle", "500")
+b += text(352, 210, "năng lượng xác định", "currentColor", 14, "middle", "500")
+b += text(16, 258, "Nguyên tử gần như trống: hạt nhân chiếm", "currentColor", 14, "start", "500")
+b += text(16, 276, "cỡ một phần mười nghìn tỉ thể tích", "currentColor", 14, "start", "500")
+b += text(16, 296, "Hạt nhân vẽ phóng to, không đúng tỉ lệ", "currentColor", 14, "start", "500")
+fig2 = wrap2("0 0 440 306", "Ba mô hình nguyên tử đặt cạnh nhau: Thomson cầu đặc, Rutherford có hạt nhân nhỏ ở giữa, Bohr thêm các quỹ đạo cho phép",
              b, "Hình 2. Ba mô hình nguyên tử: Thomson bị thí nghiệm lá vàng bác bỏ; Rutherford có hạt nhân nhỏ, nặng; Bohr thêm các quỹ đạo xác định.")
 
 # ---------------------------------------------- Hình 3: kí hiệu hạt nhân
