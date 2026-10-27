@@ -113,7 +113,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-panel-deep/90 backdrop-blur-md">
+    <header data-site-navbar className="fixed inset-x-0 top-0 z-50 border-b border-line bg-panel-deep/90 backdrop-blur-md">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
         <Link prefetch={false} href="/" className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white font-display">
