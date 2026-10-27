@@ -115,23 +115,26 @@ fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-khai-nie
 
 # ------------------------------------------- Hình 3: bốn khung đường sức từ
 b = defs("f3")
-# a) thanh nam châm — đường sức TÍNH bằng Biot-Savart, khép kín qua thân nam châm
+# a) thanh nam châm — N bên trái, S bên phải
 b += text(14, 20, "a) Thanh nam châm", "currentColor", 14, "start", "700")
-CXa, CYa, SA = 110, 145, 26
-b += rect(CXa - 2.5 * SA, CYa - SA, 2.5 * SA, 2 * SA, "rgba(248,113,113,.22)", RED, 2, 3)
-b += rect(CXa, CYa - SA, 2.5 * SA, 2 * SA, "rgba(56,189,248,.22)", BLUE, 2, 3)
-b += text(CXa - 1.25 * SA, CYa + 6, "N", RED, 16, "middle", "700")
-b += text(CXa + 1.25 * SA, CYa + 6, "S", BLUE, 16, "middle", "700")
-for x0 in (0.95, 0.85, 0.75, -0.95, -0.85, -0.75):
-    P = _px(duong_suc(x0), CXa, CYa, SA)
-    P = [P[k] for k in range(0, len(P), 2)] + [P[-1]]
-    b += pts_path(P, RED, 1.6, "6 4")
-    # đầu V ngoài thân (gần mặt phẳng giữa) và trong thân (hướng về N)
-    k = min(range(len(P)), key=lambda j: abs(P[j][0] - CXa) + (0 if abs(P[j][1] - CYa) > 1.3 * SA else 999))
-    b += _chev_tai(P, k, RED, 1.6)
-    if abs(x0) == 0.85:
-        b += _chev_tai(P, 5, RED, 1.6)
-b += text(14, 274, "ngoài thân: từ N ra, vào S", "currentColor", 14, "start", "500")
+b += rect(44, 72, 68, 30, "rgba(248,113,113,.18)", RED, 2, 4)
+b += rect(112, 72, 68, 30, "rgba(56,189,248,.18)", BLUE, 2, 4)
+b += text(78, 93, "N", RED, 14, "middle", "700")
+b += text(146, 93, "S", BLUE, 14, "middle", "700")
+D = 'fill="none" stroke="{}" stroke-width="1.8" stroke-dasharray="6 4"'.format(RED)
+b += f'<path d="M44,87 C14,87 20,34 112,34 C204,34 210,87 180,87" {D}/>'
+b += f'<path d="M44,87 C14,87 20,140 112,140 C204,140 210,87 180,87" {D}/>'
+b += f'<path d="M44,75 C26,75 40,56 112,56 C184,56 198,75 180,75" {D}/>'
+b += f'<path d="M44,99 C26,99 40,118 112,118 C184,118 198,99 180,99" {D}/>'
+b += f'<path d="M180,75 L44,75" {D}/>'
+b += f'<path d="M180,99 L44,99" {D}/>'
+b += chevron(124, 34, 24.0, 0.0, RED, 1.8, 10)
+b += chevron(124, 140, 24.0, 0.0, RED, 1.8, 10)
+b += chevron(124, 56, 24.0, 0.0, RED, 1.8, 10)
+b += chevron(124, 118, 24.0, 0.0, RED, 1.8, 10)
+b += chevron(100, 75, -24.0, 0.0, RED, 1.8, 10)
+b += chevron(100, 99, -24.0, 0.0, RED, 1.8, 10)
+b += text(14, 168, "ra ở bắc, vào ở nam", "currentColor", 14, "start", "500")
 # b) nam châm chữ U — N bên trái, S bên phải (đường sức giữa hai cực đi từ N sang S)
 b += text(232, 20, "b) Chữ U", "currentColor", 14, "start", "700")
 b += f'<path d="M244,50 L244,64 Q244,84 264,84 L316,84 Q336,84 336,64 L336,50" fill="none" stroke="currentColor" stroke-width="5"/>'
@@ -141,20 +144,20 @@ for y in (52, 64, 76):
     b += field_line(268, y, 312, y, BLUE, 1.8, "5 3", 7)
 b += text(232, 116, "song song, cách đều", GRN, 14, "start", "600")
 b += text(232, 133, "→ từ trường đều", GRN, 14, "start", "600")
-# c) từ phổ: mạt sắt xếp theo đường sức (hình minh hoạ từ cùng trường đã tính, không phải ảnh chụp)
-b += text(14, 304, "c) Từ phổ (minh hoạ)", "currentColor", 14, "start", "700")
-b += '<clipPath id="f3clip"><rect x="18" y="314" width="192" height="98" rx="6"/></clipPath>'
-b += rect(18, 314, 192, 98, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
-CXc, CYc, SC = 114, 363, 12
-b += '<g clip-path="url(#f3clip)">'
-for x0 in (0.65, 0.72, 0.8, 1.15, 1.6, 2.4, 3.5, -0.65, -0.72, -0.8, -1.15, -1.6, -2.4, -3.5):
-    P = _px(duong_suc(x0, maxn=3500), CXc, CYc, SC)
-    b += pts_path(P[::5], GRN, 2.4, "0.1 5")
-b += '</g>'
-b += rect(CXc - 2.5 * SC, CYc - SC, 5 * SC, 2 * SC, "rgba(248,113,113,.2)", "currentColor", 1.2, 2)
-b += text(14, 430, "mạt sắt dày ở hai cực", "currentColor", 14, "start", "500")
+# c) từ phổ mạt sắt
+b += '<g transform="translate(0,18)">'
+b += text(14, 186, "c) Từ phổ", "currentColor", 14, "start", "700")
+b += rect(18, 196, 136, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
+F = 'fill="none" stroke="{}" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 5"'.format(GRN)
+b += rect(60, 223, 52, 10, "rgba(248,113,113,.2)", "currentColor", 1.2, 2)
+for k in (0, 1):
+    h = 18 + 8 * k
+    b += f'<path d="M60,228 C{36-8*k},228 {36-8*k},{228-h} 86,{228-h} C{136+8*k},{228-h} {136+8*k},228 112,228" {F}/>'
+    b += f'<path d="M60,228 C{36-8*k},228 {36-8*k},{228+h} 86,{228+h} C{136+8*k},{228+h} {136+8*k},228 112,228" {F}/>'
+b += f'<path d="M58,228 L24,228" {F}/>'
+b += f'<path d="M114,228 L148,228" {F}/>'
+b += text(86, 276, "mạt sắt dày ở hai cực", "currentColor", 14, "middle", "500")
 # d) đường vẽ theo quy ước
-b += '<g transform="translate(0,-22)">'
 b += text(232, 186, "d) Đường quy ước", "currentColor", 14, "start", "700")
 b += rect(236, 196, 190, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
 b += f'<path d="M248,254 C280,198 384,198 414,254" fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="6 4"/>'
@@ -165,11 +168,10 @@ b += chevron(366, 208, 22.0, 0.0, RED, 1.8, 10)
 b += text(236, 276, "mũi tên chỉ chiều", "currentColor", 14, "start", "500")
 b += text(236, 294, "không cắt nhau", "currentColor", 14, "start", "500")
 b += "</g>"
-fig3 = wrap("0 0 440 444",
-            "Bốn khung: đường sức từ của thanh nam châm khép kín qua thân nam châm, của nam châm chữ U (từ trường đều), từ phổ mạt sắt minh hoạ và đường sức vẽ theo quy ước",
-            b, "Hình 3.<br>a) Khép kín qua thân nam châm.<br>"
-               "b) Chữ U: từ trường đều.<br>c) Từ phổ.<br>d) Đường vẽ theo quy ước.<br>"
-               "Vẽ lại theo OpenStax, <em>College Physics 2e</em>, Hình 22.14 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
+fig3 = wrap("0 0 440 322",
+            "Bốn khung: đường sức từ của thanh nam châm, của nam châm chữ U (từ trường đều), từ phổ mạt sắt và đường sức vẽ theo quy ước",
+            b, "Hình 3.<br>a) Đường sức thanh nam châm: ra ở bắc, vào ở nam, khép kín.<br>b) Chữ U: từ trường đều.<br>"
+               "c) Từ phổ.<br>d) Đường vẽ theo quy ước.")
 
 # ------------------------------------------- Hình 4: từ trường Trái Đất
 b = defs("f4")
