@@ -49,19 +49,15 @@ fig1 = anh(
     "hinh-lo-ap-luc-d2.webp",
     "Sơ đồ nhà máy điện hạt nhân lò nước áp lực: thanh nhiên liệu và thanh điều khiển trong lò, bộ trao đổi nhiệt, tua bin hơi, máy phát điện, bình ngưng",
     1000, 611,
-    "Hình 1. Nhà máy điện hạt nhân: nhiệt sinh ra trong lò, không đốt gì.<br>"
-    "Nhãn: control rods = thanh điều khiển; fuel rods = thanh nhiên liệu; core = vùng hoạt (nhiên liệu + chất làm chậm); "
-    "heat exchanger = bộ trao đổi nhiệt; steam turbine = tua bin hơi; electric generator = máy phát; condenser = bình ngưng; "
-    "pump = bơm; shielding = lớp che chắn; primary/secondary system = hệ sơ cấp/thứ cấp.<br>"
+    "Hình 1. Nhà máy điện hạt nhân: nhiệt sinh ra trong lò.<br>"
+    "Nhãn: control rods = thanh điều khiển; fuel rods = nhiên liệu; steam turbine = tua bin hơi.<br>"
     "<small>Hình: OpenStax, College Physics 2e, Hình 32.23 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
 
 fig2 = anh(
     "hinh-phan-hach-4-buoc-d2.webp",
     "Bốn bước phân hạch: nơtron đến gần hạt nhân nặng, hạt nhân biến dạng thắt ở giữa, tách thành hai mảnh mang điện dương đẩy nhau, rồi hai mảnh vỡ bay ra cùng nơtron mới",
     661, 1000,
-    "Hình 2. Phân hạch do nơtron: (a) nơtron tới; (b) hạt nhân biến dạng, thắt giữa; "
-    "(c) hai phần mang điện + đẩy nhau; (d) hai mảnh bay ra cùng nơtron mới.<br>"
-    "Nhãn: FF<sub>1</sub>, FF<sub>2</sub> = hai mảnh phân hạch (fission fragments).<br>"
+    "Hình 2. Phân hạch: hạt nhân thắt giữa rồi vỡ thành hai mảnh (FF).<br>"
     "<small>Hình: OpenStax, College Physics 2e, Hình 32.21 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
 
 # ------------------------------------------------- Hình 3: ba kiểu phát triển dây chuyền

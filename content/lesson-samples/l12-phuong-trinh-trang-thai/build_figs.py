@@ -35,9 +35,7 @@ fig1 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-pttrangthai-03">'
         '<img src="/assets/openstax/l12-phuong-trinh-trang-thai/hinh-lop-tang-nhiet-do.webp" '
         'alt="Hai lốp xe nối với áp kế: sau khi nhiệt độ tăng, kim áp kế quay sang số lớn hơn, lốp không phồng thêm" '
         'loading="lazy" width="712" height="540">'
-        '<figcaption>Hình 1. Thể tích không đổi, nhiệt độ tăng: kim áp kế nhích lên.<br>'
-        'Ví dụ bình khí nén mini: 27 °C, 5,0 bar → 47 °C, 5,3 bar (ảnh minh hoạ bằng lốp xe).<br>'
-        'Nhãn: P, P′ = áp suất trước, sau · Increase temperature = tăng nhiệt độ.<br>'
+        '<figcaption>Hình 1. Nhiệt độ tăng, thể tích không đổi: kim lên.<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 13.19c — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
 

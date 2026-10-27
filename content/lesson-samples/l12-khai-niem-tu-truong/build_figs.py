@@ -109,8 +109,7 @@ fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-khai-nie
         'alt="Hai cặp nam châm thanh: hai cực khác tên đặt gần nhau thì hút nhau, hai cực cùng tên đặt gần nhau thì đẩy nhau; mũi tên đỏ chỉ chiều lực" '
         'loading="lazy" width="640" height="593" style="display:block;margin:0 auto;max-width:min(100%,420px);height:auto;border-radius:8px">'
         '<figcaption>Hình 2. Mũi tên đỏ: chiều lực.<br>'
-        'Unlikes attract: khác tên hút.<br>'
-        'Likes repel: cùng tên đẩy.<br>'
+        'Unlikes attract = khác tên hút.<br>'
         'Hình: OpenStax, <em>College Physics 2e</em>, Hình 22.5 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</figcaption></figure>')
 
 # ------------------------------------------- Hình 3 (OpenStax, đầu hàm) + Hình 4: ba khung đường sức còn lại (SVG)
@@ -159,8 +158,7 @@ fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-khai-nie
         'alt="Thanh nam châm thẳng: a) kim la bàn đặt quanh nam châm chỉ theo từ trường; b) và c) đường sức đi ra ở cực bắc, vào ở cực nam, đường c khép kín qua thân nam châm" '
         'loading="lazy" width="1000" height="344" style="display:block;margin:0 auto;max-width:100%;height:auto;border-radius:8px">'
         '<figcaption>Hình 3. Đường sức khép kín.<br>'
-        'a) Kim la bàn quanh nam châm; b) đường sức bên ngoài; c) đường sức khép kín qua thân nam châm.<br>'
-        'Nhãn: N = bắc, S = nam.<br>'
+        
         '<small>Hình: OpenStax, <em>College Physics 2e</em>, Hình 22.14 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ------------------------------------------- Hình 4: từ trường Trái Đất
