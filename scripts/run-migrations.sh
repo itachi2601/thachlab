@@ -85,6 +85,7 @@ FILES=(
   "supabase/migrations/20261026210000_on_tap_tu_hoc_thong_bao.sql|Ôn tập ở nhà: review_create_self gửi thông báo chuông trỏ /lop-hoc/on-tap/ cho cả lớp|lúc nào cũng được"
   "supabase/migrations/20261026230000_on_tap_tu_hoc_gui_bu_thong_bao.sql|Gửi bù thông báo chuông cho các buổi ôn ở nhà còn mở tạo trước đó (chỉ thêm dòng notifications, bỏ qua em đã có)|sau 22h, chỉ chạy MỘT lần"
   "supabase/migrations/20261027120000_de_ma_khach_xao_de_bang_diem.sql|Đề làm bằng mã không cần tài khoản: xáo câu + phương án mỗi lượt, nhập họ tên/MSSV/lớp, bảng điểm theo lớp (guest_exam_links/sessions + 3 RPC)|lúc nào cũng được"
+  "supabase/migrations/20261027200000_quiz_ly_thuyet_mo_dap_an.sql|Quiz Kiểm tra nhanh ở mục ly_thuyet luôn mở đáp án (đề 1147 bị TA giao BTVN nên bị khoá 3 lượt); chỉ thay hàm exam_answers_revealed|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
