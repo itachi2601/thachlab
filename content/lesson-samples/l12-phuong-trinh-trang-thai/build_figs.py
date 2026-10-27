@@ -30,40 +30,14 @@ def wrap(vb, label, body, cap, exp=""):
             f'<figcaption>{cap}</figcaption></figure>')
 
 
-# ------------------------------------------------- Hình 1: bình kín để ngoài nắng
-b = defs("f1")
-b += text(14, 24, "Bình kín để ngoài nắng", "currentColor", 14, "start", "700")
-for x, ten in ((68, "sáng"), (372, "trưa")):
-    b += rect(x - 32, 78, 64, 92, "rgba(148,163,184,.10)", "currentColor", 2.5, 10)
-    b += f'<circle cx="{x}" cy="60" r="22" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2"/>'
-    for a in (-25, 25):                          # hai vạch: 5,0 bar (trái) và 5,3 bar (phải), áp suất tăng = kim quay theo chiều kim đồng hồ
-        rad = math.radians(a)
-        dx, dy = math.sin(rad), -math.cos(rad)
-        b += line(x + 16 * dx, 60 + 16 * dy, x + 21 * dx, 60 + 21 * dy, "currentColor", 1.6, "", .7)
-    b += text(x - 27, 65, "5,0", "currentColor", 14, "end", "600")
-    b += text(x + 27, 65, "5,3", "currentColor", 14, "start", "600")
-def kim(x, a, w, dash="", op=1):
-    rad = math.radians(a)
-    return line(x, 60, round(x + 18 * math.sin(rad), 1), round(60 - 18 * math.cos(rad), 1), RED, w, dash, op)
-b += kim(68, -25, 2.2)                           # sáng: kim ở vạch 5,0
-b += kim(372, -25, 1.6, "2 2", .5)               # trưa: vị trí cũ (mờ)
-b += kim(372, 25, 2.2)                           # trưa: kim ở vạch 5,3, quay theo chiều kim đồng hồ
-b += text(436, 22, "kim: 5,0 → 5,3 bar", ORG, 14, "end", "700")
-b += f'<circle cx="220" cy="56" r="14" fill="{ORG}" opacity="0.9"/>'
-for dx, dy in ((0, -24), (17, -17), (24, 0), (17, 17), (0, 24), (-17, 17), (-24, 0), (-17, -17)):
-    b += line(220 + dx * 0.75, 56 + dy * 0.75, 220 + dx, 56 + dy, ORG, 2.2)
-b += text(220, 102, "trời nắng", ORG, 14, "middle", "700")
-b += arrow("f1", "o", 112, 122, 328, 122, 2.6)
-b += text(220, 146, "nhiệt độ tăng, áp suất tăng", ORG, 14, "middle", "700")
-b += text(68, 192, "sáng", "currentColor", 14, "middle", "700")
-b += text(68, 211, "27 °C · 5,0 bar", RED, 14, "middle", "700")
-b += text(372, 192, "trưa", "currentColor", 14, "middle", "700")
-b += text(372, 211, "47 °C · 5,3 bar", RED, 14, "middle", "700")
-b += text(220, 234, "thể tích bình không đổi", GRN, 14, "middle", "700")
-fig1 = wrap("0 0 440 244",
-            "Bình khí nén mini kín để ngoài nắng: nhiệt độ tăng từ 27 lên 47 độ C làm áp suất tăng từ 5,0 lên 5,3 bar, kim áp kế nhích lên, thể tích bình không đổi",
-            b, "Hình 1. Bình kín, thể tích không đổi: chỉ nhiệt độ tăng, kim áp kế nhích từ 5,0 lên 5,3 bar.",
-            exp="tn-l12-pttrangthai-03")
+# ------------------------------------------------- Hình 1: ảnh OpenStax (đợt 2, 27/10/2026) - lốp xe, tăng nhiệt độ
+fig1 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-pttrangthai-03">'
+        '<img src="/assets/openstax/l12-phuong-trinh-trang-thai/hinh-lop-tang-nhiet-do.webp" '
+        'alt="Hai lốp xe nối với áp kế: sau khi nhiệt độ tăng, kim áp kế quay sang số lớn hơn, lốp không phồng thêm" '
+        'loading="lazy" width="712" height="540">'
+        '<figcaption>Hình 1. Nhiệt độ tăng, thể tích không đổi: kim lên.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 13.19c — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- Hình 2: bóng bàn bẹp phồng lại
 b = defs("f2")

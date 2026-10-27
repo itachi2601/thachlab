@@ -109,34 +109,14 @@ fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-khai-nie
         'alt="Hai cặp nam châm thanh: hai cực khác tên đặt gần nhau thì hút nhau, hai cực cùng tên đặt gần nhau thì đẩy nhau; mũi tên đỏ chỉ chiều lực" '
         'loading="lazy" width="640" height="593" style="display:block;margin:0 auto;max-width:min(100%,420px);height:auto;border-radius:8px">'
         '<figcaption>Hình 2. Mũi tên đỏ: chiều lực.<br>'
-        'Unlikes attract: khác tên hút.<br>'
-        'Likes repel: cùng tên đẩy.<br>'
+        'Unlikes attract = khác tên hút.<br>'
         'Hình: OpenStax, <em>College Physics 2e</em>, Hình 22.5 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</figcaption></figure>')
 
-# ------------------------------------------- Hình 3: bốn khung đường sức từ
+# ------------------------------------------- Hình 3 (OpenStax, đầu hàm) + Hình 4: ba khung đường sức còn lại (SVG)
 b = defs("f3")
-# a) thanh nam châm — N bên trái, S bên phải
-b += text(14, 20, "a) Thanh nam châm", "currentColor", 14, "start", "700")
-b += rect(44, 72, 68, 30, "rgba(248,113,113,.18)", RED, 2, 4)
-b += rect(112, 72, 68, 30, "rgba(56,189,248,.18)", BLUE, 2, 4)
-b += text(78, 93, "N", RED, 14, "middle", "700")
-b += text(146, 93, "S", BLUE, 14, "middle", "700")
-D = 'fill="none" stroke="{}" stroke-width="1.8" stroke-dasharray="6 4"'.format(RED)
-b += f'<path d="M44,87 C14,87 20,34 112,34 C204,34 210,87 180,87" {D}/>'
-b += f'<path d="M44,87 C14,87 20,140 112,140 C204,140 210,87 180,87" {D}/>'
-b += f'<path d="M44,75 C26,75 40,56 112,56 C184,56 198,75 180,75" {D}/>'
-b += f'<path d="M44,99 C26,99 40,118 112,118 C184,118 198,99 180,99" {D}/>'
-b += f'<path d="M180,75 L44,75" {D}/>'
-b += f'<path d="M180,99 L44,99" {D}/>'
-b += chevron(124, 34, 24.0, 0.0, RED, 1.8, 10)
-b += chevron(124, 140, 24.0, 0.0, RED, 1.8, 10)
-b += chevron(124, 56, 24.0, 0.0, RED, 1.8, 10)
-b += chevron(124, 118, 24.0, 0.0, RED, 1.8, 10)
-b += chevron(100, 75, -24.0, 0.0, RED, 1.8, 10)
-b += chevron(100, 99, -24.0, 0.0, RED, 1.8, 10)
-b += text(14, 168, "ra ở bắc, vào ở nam", "currentColor", 14, "start", "500")
 # b) nam châm chữ U — N bên trái, S bên phải (đường sức giữa hai cực đi từ N sang S)
-b += text(232, 20, "b) Chữ U", "currentColor", 14, "start", "700")
+b += '<g transform="translate(-218,0)">'
+b += text(232, 20, "i) Chữ U", "currentColor", 14, "start", "700")
 b += f'<path d="M244,50 L244,64 Q244,84 264,84 L316,84 Q336,84 336,64 L336,50" fill="none" stroke="currentColor" stroke-width="5"/>'
 b += text(242, 44, "N", RED, 14, "start", "700")
 b += text(338, 44, "S", BLUE, 14, "end", "700")
@@ -144,9 +124,10 @@ for y in (52, 64, 76):
     b += field_line(268, y, 312, y, BLUE, 1.8, "5 3", 7)
 b += text(232, 116, "song song, cách đều", GRN, 14, "start", "600")
 b += text(232, 133, "→ từ trường đều", GRN, 14, "start", "600")
+b += "</g>"
 # c) từ phổ mạt sắt
-b += '<g transform="translate(0,18)">'
-b += text(14, 186, "c) Từ phổ", "currentColor", 14, "start", "700")
+b += '<g transform="translate(218,-150)">'
+b += text(14, 186, "ii) Từ phổ", "currentColor", 14, "start", "700")
 b += rect(18, 196, 136, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
 F = 'fill="none" stroke="{}" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 5"'.format(GRN)
 b += rect(60, 223, 52, 10, "rgba(248,113,113,.2)", "currentColor", 1.2, 2)
@@ -157,8 +138,10 @@ for k in (0, 1):
 b += f'<path d="M58,228 L24,228" {F}/>'
 b += f'<path d="M114,228 L148,228" {F}/>'
 b += text(86, 276, "mạt sắt dày ở hai cực", "currentColor", 14, "middle", "500")
+b += "</g>"
+b += '<g transform="translate(-118,18)">'
 # d) đường vẽ theo quy ước
-b += text(232, 186, "d) Đường quy ước", "currentColor", 14, "start", "700")
+b += text(232, 186, "iii) Đường quy ước", "currentColor", 14, "start", "700")
 b += rect(236, 196, 190, 62, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
 b += f'<path d="M248,254 C280,198 384,198 414,254" fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="6 4"/>'
 b += f'<path d="M250,242 C288,204 374,204 412,242" fill="none" stroke="{RED}" stroke-width="1.6" stroke-dasharray="6 4"/>'
@@ -168,10 +151,15 @@ b += chevron(366, 208, 22.0, 0.0, RED, 1.8, 10)
 b += text(236, 276, "mũi tên chỉ chiều", "currentColor", 14, "start", "500")
 b += text(236, 294, "không cắt nhau", "currentColor", 14, "start", "500")
 b += "</g>"
-fig3 = wrap("0 0 440 322",
-            "Bốn khung: đường sức từ của thanh nam châm, của nam châm chữ U (từ trường đều), từ phổ mạt sắt và đường sức vẽ theo quy ước",
-            b, "Hình 3.<br>a) Đường sức thanh nam châm: ra ở bắc, vào ở nam, khép kín.<br>b) Chữ U: từ trường đều.<br>"
-               "c) Từ phổ.<br>d) Đường vẽ theo quy ước.")
+fig3b = wrap("0 0 440 322",
+            "Ba khung: đường sức từ của nam châm chữ U (từ trường đều), từ phổ mạt sắt và đường sức vẽ theo quy ước",
+            b, "Hình 4.<br>i) Chữ U: từ trường đều.<br>ii) Từ phổ.<br>iii) Đường quy ước.")
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-khai-niem-tu-truong/hinh-duong-suc-thanh-nam-cham.webp" '
+        'alt="Thanh nam châm thẳng: a) kim la bàn đặt quanh nam châm chỉ theo từ trường; b) và c) đường sức đi ra ở cực bắc, vào ở cực nam, đường c khép kín qua thân nam châm" '
+        'loading="lazy" width="1000" height="344" style="display:block;margin:0 auto;max-width:100%;height:auto;border-radius:8px">'
+        '<figcaption>Hình 3. Đường sức khép kín.<br>'
+        
+        '<small>Hình: OpenStax, <em>College Physics 2e</em>, Hình 22.14 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ------------------------------------------- Hình 4: từ trường Trái Đất
 b = defs("f4")
@@ -201,7 +189,7 @@ b += text(14, 18, "đường sức", GRN, 12, "start", "600")
 b += text(14, 33, "vào cực từ nam", GRN, 12, "start", "600")
 fig4 = wrap("0 0 440 296",
             "Trái Đất như một nam châm khổng lồ: gần bắc địa lí là cực từ nam, đường sức đi vào đó; kim la bàn nằm theo đường sức",
-            b, "Hình 4. Gần bắc địa lí là <strong>cực từ nam</strong>, nên cực bắc của kim bị hút về đó.")
+            b, "Hình 5. Gần bắc địa lí là <strong>cực từ nam</strong>, nên cực bắc của kim bị hút về đó.")
 
 # ------------------------------------------- Hình 5: hai từ trường vuông góc
 b = defs("f5")
@@ -224,11 +212,11 @@ b += text(250, 146, "53°", "currentColor", 12, "start", "700")
 b += text(44, 250, "Kim chỉ theo vectơ tổng hợp.", "currentColor", 11, "start", "600")
 fig5 = wrap("0 0 440 268",
             "Hai từ trường thành phần vuông góc: 30 microtesla hướng bắc và 40 microtesla hướng đông, tổng hợp 50 microtesla lệch 53 độ",
-            b, "Hình 5. Kim chỉ theo vectơ tổng hợp $B = 50\\ \\mu\\text{T}$, lệch $53^\\circ$.")
+            b, "Hình 6. Kim chỉ theo vectơ tổng hợp $B = 50\\ \\mu\\text{T}$, lệch $53^\\circ$.")
 
 # ------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
-for n, f in enumerate((fig1, fig2, fig3, fig4, fig5), 1):
+for n, f in enumerate((fig1, fig2, fig3 + fig3b, fig4, fig5), 1):
     moc = f"<!--FIG{n}-->"
     assert moc in src, f"thiếu mốc FIG{n}"
     src = src.replace(moc, f)

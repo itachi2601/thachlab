@@ -7,3 +7,8 @@ Hình 1 — sửa theo rà soát vật lý, không có hình HRW tương ứng
 - Giữ SVG: Hình 1–4 (Hình 13.21 sách không hơn SVG hiện có).
 - Ảnh raster là ngoại lệ có chủ đích của quy tắc SVG tự vẽ — bài này không dùng raster nên không có file trong public/assets/openstax/l12-ap-suat-dong-nang/.
 - Để giữ hạn mức độ dài (2.495 từ hiện ngay < 2.500) đã rút gọn: lời giải bước Dự đoán, câu "Cơ chế" ở Rút ra, dòng "5 hình = cả bài" ở Mang về, hàng 3 bảng Bẫy 1, đuôi tiêu đề Thách đấu.
+
+## Đợt 2 (27/10/2026) — ưu tiên ảnh OpenStax, không vẽ lại
+- Thay bằng ảnh OpenStax: Hình 5 (phân bố tốc độ hai nhiệt độ) = College Physics 2e Hình 13.25, không credit bên thứ ba; file `public/assets/openstax/l12-ap-suat-dong-nang/hinh-phan-bo-toc-do-hai-nhiet-do.webp` (651×564, 11 KB). Bỏ SVG vẽ lại (và hàm numpy/Maxwell trong build_figs.py).
+- Giữ SVG: Hình 2 (Hình 13.21 chỉ vẽ va chạm xiên, vectơ v, v', F, không có +mv/−mv/2mv, cạnh l, V, S như bài; Hình 13.22 cũng là phân tích v_x, v_y, không khớp). Hình 1, 3, 4: sách không có hình cùng hiện tượng (13.19 là áp kế lốp xe).
+- Ảnh raster là ngoại lệ có chủ đích của quy tắc SVG tự vẽ.
