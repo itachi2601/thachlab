@@ -34,7 +34,7 @@
 <h3>II. Năng lượng điện và công suất điện</h3>
 
 <h4>1. Năng lượng điện tiêu thụ: A = UIt</h4>
-
+<p class="tl-claim">Năng lượng điện bằng U nhân I nhân t.</p>
 <p><strong>🔑 U nhân I nhân t · Jun hoặc kWh</strong></p>
 
 <ul>
@@ -62,6 +62,11 @@
 <div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📘 Đơn vị kWh và công tơ điện</p>
 <p>$1$ kWh = thiết bị $1$ kW dùng trong $1$ giờ $= 1000 \cdot 3600 = 3{,}6 \cdot 10^{6}$ J.</p>
+<div class="tl-nums">
+<details class="tl-num"><summary>1 kWh</summary><p>$3{,}6 \cdot 10^{6}$ J</p></details>
+<details class="tl-num"><summary>1 W</summary><p>$1$ J/s</p></details>
+<details class="tl-num"><summary>Điện lưới nhà ở Việt Nam</summary><p>$220$ V</p></details>
+</div>
 <p><strong>Công tơ điện</strong> đếm số kWh: đo <em>năng lượng</em>, không đo công suất.</p>
 </div>
 
@@ -85,7 +90,7 @@
 </div>
 
 <h4>2. Công suất điện: P = UI</h4>
-
+<p class="tl-claim">Công suất là năng lượng điện mỗi giây.</p>
 <p><strong>🔑 Công suất = năng lượng mỗi giây</strong></p>
 
 <div class="tl-fx">
@@ -133,14 +138,14 @@
 </div>
 
 <h4>3. Công và công suất của nguồn điện</h4>
-
+<p class="tl-claim">Công nguồn phát lớn hơn công mạch ngoài nhận.</p>
 <p><strong>🔑 Nguồn: $\mathcal{E}$ nhân I · Mạch ngoài: U nhân I</strong></p>
 
 <ul>
 <li>Nguồn đẩy điện lượng $q = It$ qua cả mạch kín. Công của nguồn: $A_{ng} = q\mathcal{E} = \mathcal{E}It$.</li>
 <li>Công suất của nguồn: $P_{ng} = \mathcal{E}I$.</li>
 <li>Nhắc lại Bài 24: $U = \mathcal{E} - Ir$. Nhân hai vế với $I$: $\mathcal{E}I = UI + I^2r$.</li>
-<li>Nguồn phát $\mathcal{E}I$ → mạch ngoài nhận $UI$ (có ích) + nguồn tự nóng $I^2r$ (hao phí).</li>
+<li>Nguồn phát $\mathcal{E}I$ → mạch ngoài nhận $UI$ (có ích) + nguồn tự nóng $I^2r$ (<span class="tl-term"><input type="checkbox" id="tl44-t2"><label for="tl44-t2">hao phí</label><span class="tl-def">phần năng lượng không dùng cho việc cần làm, ở đây thành nhiệt trong nguồn</span></span>).</li>
 <li>Ví dụ: sạc dự phòng ấm lên khi xả dòng lớn — đó là $I^2r$ toả ngay trong pin.</li>
 </ul>
 
@@ -153,7 +158,7 @@
 <ul class="tl-fx-def">
 <li><span class="tl-sym">$A_{ng}$</span><span>công của nguồn (J)</span></li>
 <li><span class="tl-sym">$P_{ng}$</span><span>công suất của nguồn (W)</span></li>
-<li><span class="tl-sym">$\mathcal{E}$</span><span>suất điện động của nguồn (V)</span></li>
+<li><span class="tl-sym">$\mathcal{E}$</span><span><span class="tl-term"><input type="checkbox" id="tl44-t1"><label for="tl44-t1">suất điện động</label><span class="tl-def">công nguồn thực hiện khi đẩy mỗi cu-lông điện tích qua mạch</span></span> của nguồn (V)</span></li>
 <li><span class="tl-sym">$I$</span><span>cường độ dòng điện (A)</span></li>
 <li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
 <li><span class="tl-sym">$U$</span><span>hiệu điện thế hai cực nguồn (V)</span></li>
@@ -164,7 +169,7 @@
 <figure class="fig" data-tl="1"><svg viewBox="0 0 440 210" role="img" aria-label="Sơ đồ dòng năng lượng: công suất nguồn EI tách thành phần có ích UI tới mạch ngoài và phần hao phí I bình phương r toả nhiệt trong nguồn"><defs><marker id="tl44-f2-r" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="tl44-f2-b" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="16" markerHeight="16" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="tl44-f2-o" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker></defs><rect x="15" y="60" width="120" height="90" rx="8" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2"/><text x="75" y="83" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">Nguồn</text><text x="75" y="102" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle"><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">E</tspan>, <tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">r</tspan></text><line x1="44" y1="130" x2="61" y2="130" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="61" y1="123" x2="61" y2="137" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="73" y1="117" x2="73" y2="143" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="73" y1="130" x2="90" y2="130" stroke="currentColor" stroke-width="2" opacity="1"/><text x="28" y="135" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">−</text><text x="106" y="135" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">+</text><rect x="300" y="60" width="125" height="90" rx="8" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2"/><text x="362" y="83" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">Mạch ngoài</text><polyline fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="1" points="322.0,114.0 330.0,122.0 337.0,106.0 344.0,122.0 351.0,106.0 358.0,122.0 365.0,106.0 372.0,122.0 379.0,106.0 402.0,114.0"/><text x="362" y="144" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle"><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">R</tspan></text><line x1="135" y1="105" x2="197" y2="105" stroke="#f87171" stroke-width="9" marker-end="url(#tl44-f2-r)"/><line x1="215" y1="105" x2="284" y2="105" stroke="#38bdf8" stroke-width="7" marker-end="url(#tl44-f2-b)"/><path d="M215,105 C252,66 118,12 118,50" fill="none" stroke="#fb923c" stroke-width="2" marker-end="url(#tl44-f2-o)"/><path d="M60,56 q-3,-3.5 0,-7 t0,-7" fill="none" stroke="#fb923c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M72,56 q-3,-3.5 0,-7 t0,-7" fill="none" stroke="#fb923c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><path d="M84,56 q-3,-3.5 0,-7 t0,-7" fill="none" stroke="#fb923c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /><text x="172" y="90" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle"><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">P</tspan><tspan baseline-shift="sub" font-size="0.75em">ng</tspan> = <tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">E</tspan><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">I</tspan></text><text x="257" y="130" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">Có ích: <tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">U</tspan><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">I</tspan></text><text x="228" y="38" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">Hao phí: <tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">I</tspan><tspan baseline-shift="super" font-size="0.75em">2</tspan><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">r</tspan></text><text x="220" y="190" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle"><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">E</tspan><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">I</tspan> = <tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">U</tspan><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">I</tspan> + <tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">I</tspan><tspan baseline-shift="super" font-size="0.75em">2</tspan><tspan font-style="italic" font-family="Georgia,'Times New Roman',serif" font-size="1.1em">r</tspan></text></svg><figcaption>Hình 2. Nguồn phát $\mathcal{E}I$: mạch ngoài nhận $UI$, nguồn nóng $I^2r$.</figcaption></figure>
 
 <h4>4. Hiệu suất của nguồn điện</h4>
-
+<p class="tl-claim">Hiệu suất nguồn là phần có ích chia toàn phần.</p>
 <p><strong>🔑 Có ích chia toàn phần · U chia $\mathcal{E}$</strong></p>
 
 <div class="tl-fx">
@@ -190,7 +195,7 @@
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l11-nang-luong-dien-03">
 <p class="tl-label">🔬 Thí nghiệm đo: hiệu suất của hai pin AA</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> hai pin AA nối tiếp ($\mathcal{E} = 3{,}0$ V, $r = 1{,}0\ \Omega$) nối với hộp điện trở $R$, ampe kế nối tiếp, vôn kế song song với $R$. Đặt lần lượt $R = 1{,}0$; $2{,}0$; $4{,}0$; $9{,}0\ \Omega$, đọc $U$ và $I$.</li>
+<li><strong>Làm:</strong> hai pin AA nối tiếp ($\mathcal{E} = 3{,}0$ V, $r = 1{,}0\ \Omega$<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>) nối với hộp điện trở $R$, ampe kế nối tiếp, vôn kế song song với $R$. Đặt lần lượt $R = 1{,}0$; $2{,}0$; $4{,}0$; $9{,}0\ \Omega$, đọc $U$ và $I$.</li>
 <li><strong>Quan sát:</strong> $R$ tăng thì $I$ giảm ($1{,}50 \to 0{,}30$ A) nhưng $U$ tăng dần về phía $3{,}0$ V.</li>
 <li><strong>Rút ra:</strong> $H = U/\mathcal{E}$ tăng theo $R$.</li>
 </ol>
@@ -228,14 +233,14 @@
 </div>
 
 <h4>5. An toàn điện: đoản mạch và cầu chì</h4>
-
+<p class="tl-claim">Đoản mạch làm dòng rất lớn, cầu chì đứt trước.</p>
 <p><strong>🔑 Đoản mạch · I = $\mathcal{E}$/r rất lớn · cầu chì đứt trước</strong></p>
 
 <ul>
 <li><strong>Đoản mạch</strong> (ngắn mạch): hai cực nguồn nối thẳng, $R \to 0$, dòng $I = \mathcal{E}/r$ rất lớn vì $r$ nhỏ.</li>
 <li>Nhiệt $I^2r$ trong nguồn và $I^2R_{\text{dây}}$ tăng vọt → cháy. Riêng khi làm việc bình thường (không đoản mạch) với cùng dòng $I$, pin cũ ($r$ lớn) hao $I^2r$ trong nguồn nhiều hơn.</li>
-<li>Ví dụ: ắc quy xe máy $\mathcal{E} = 12$ V, $r = 0{,}02\ \Omega$ bị chiếc chìa khoá chạm hai cực: $I \approx 600$ A, nhiệt trong ắc quy $600^2 \cdot 0{,}02 = 7200$ W. Chìa khoá có $R$ nhỏ nhưng khác 0, với $600$ A thì $I^2R$ trong nó vẫn rất lớn: chìa đỏ rực, ắc quy có thể nổ.</li>
-<li>Bảo vệ: <strong>cầu chì / aptomat</strong> tự ngắt mạch khi dòng vượt dòng định mức của nó, trước khi dây kịp nóng; dây dẫn tiết diện đủ; không để kim loại chạm hai cực ắc quy.</li>
+<li>Ví dụ: ắc quy xe máy $\mathcal{E} = 12$ V, $r = 0{,}02\ \Omega$<sup class="tl-fn"><a href="#tl-fn-2">2</a></sup> bị chiếc chìa khoá chạm hai cực: $I \approx 600$ A, nhiệt trong ắc quy $600^2 \cdot 0{,}02 = 7200$ W. Chìa khoá có $R$ nhỏ nhưng khác 0, với $600$ A thì $I^2R$ trong nó vẫn rất lớn: chìa đỏ rực, ắc quy có thể nổ.</li>
+<li>Bảo vệ: <strong>cầu chì / <span class="tl-term"><input type="checkbox" id="tl44-t3"><label for="tl44-t3">aptomat</label><span class="tl-def">công tắc tự ngắt khi dòng quá lớn, gạt lên là dùng lại</span></span></strong> tự ngắt mạch khi dòng vượt dòng định mức của nó, trước khi dây kịp nóng; dây dẫn tiết diện đủ; không để kim loại chạm hai cực ắc quy.</li>
 </ul>
 
 <div class="tl-fx">
@@ -490,3 +495,8 @@
 <li>Đọc đề: gặp "công suất của nguồn" hỏi $\mathcal{E}I$.<br>Gặp "toả nhiệt trong nguồn" hỏi $I^2r$.<br>Gặp "hiệu điện thế hai cực nguồn" hỏi $U = \mathcal{E} - Ir$.<br>Gặp "mạch ngoài", "thiết bị" hỏi $UI$.<br>Cần kết quả ra jun: đổi phút, giờ ra giây.<br>Cần kết quả ra kWh: giữ kW và giờ, không đổi ra giây.</li>
 </ul>
 </div>
+
+<ol class="tl-fns">
+<li id="tl-fn-1">Giá trị $r$ của pin thực thay đổi theo loại pin và mức cạn; bài lấy $r = 1{,}0\ \Omega$ làm số ví dụ.</li>
+<li id="tl-fn-2">Điện trở trong của ắc quy tuỳ loại và độ chai; $0{,}02\ \Omega$ là số ví dụ, dòng thực còn bị hạn chế bởi điện trở tiếp xúc và dây.</li>
+</ol>
