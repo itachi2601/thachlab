@@ -2,6 +2,7 @@
 # So lieu lay nguyen tu content/thi-nghiem/tn-l12-boylecharles-01.json (so_lieu_mau, tham_so).
 # Ban 2 (27/10/2026): ~46 s, xilanh dung + ap ke co vach so, du doan 3 lua chon cung kieu,
 # bang so lieu, do thi p-V + cot p.V, co che va cham, gioi han + bay nen nhanh.
+# Ban 3 (27/10/2026): noi ro dap an C o lan 4, canh chot + cau hoi tu nho lai, tieng bao thay nhac.
 import random
 from engine import *
 
@@ -128,7 +129,7 @@ def s_do(img, d, t, sc):
         if i == last: d.rounded_rectangle([100, y - 32, 980, y + 32], radius=16, fill=A((225, 236, 255), a))
         for x, s, col in zip(xs, [str(i + 1), fmt(v), str(pp)], [MUTED, BLUE, RED]):
             text(d, (x, y), s, 44, col, alpha=a)
-        if i == 3: text(d, (880, y), "≈ gấp đôi", 36, GREEN, alpha=a)
+        if i == 3: text(d, (875, y), "gấp đôi → C", 40, GREEN, alpha=a)
 
 # ---------------- canh 3: do thi p-V + tich pV ----------------
 def s_graph(img, d, t, sc):
@@ -212,8 +213,8 @@ def s_trap(img, d, t, sc):
     a = appear(t, 0.1)
     card(d, (80, 250, 1000, 560), fill=WHITE, outline=BLUE, w=6)
     text(d, (W / 2, 305), "Chưa nói được gì?", 44, BLUE, alpha=a)
-    ctext(d, 395, "p·V chỉ không đổi trong sai số ≈ 5%,\nkhông bằng nhau tuyệt đối.", 40, INK, alpha=a, lh=1.25)
-    text(d, (W / 2, 505), "Chưa cho biết p phụ thuộc nhiệt độ ra sao.", 36, MUTED, bold=False, alpha=a)
+    ctext(d, 395, "p·V chỉ không đổi trong sai số\n(lệch nhau không quá 8%).", 40, INK, alpha=a, lh=1.25)
+    text(d, (W / 2, 505), "Chưa cho biết p phụ thuộc nhiệt độ ra sao.", 40, MUTED, bold=False, alpha=a)
     b = appear(t, sc["M"][1] - 0.3)
     if b <= 0: return
     card(d, (80, 600, 1000, 1590), fill=A(WHITE, b), outline=A(RED, b), w=6)
@@ -223,6 +224,7 @@ def s_trap(img, d, t, sc):
     heat = ease((t - ts) / 1.2)
     V = lerp(8.0, 4.0, kc)
     syringe(d, t, V, bx0=190, bx1=310, y0=1230, px=34, scale_lbl=False, heat=heat, push=0 < t - ts < 0.4, vmin=4.0)
+    text(d, (250, 1296), "8,0 → 4,0 ml", 34, BLUE)
     # nhiet ke
     tx, tb, tt = 455, 1220, 770
     d.rounded_rectangle([tx - 16, tt, tx + 16, tb], radius=16, fill=WHITE, outline=NAVY, width=4)
@@ -240,25 +242,41 @@ def s_trap(img, d, t, sc):
     card(d, (130, 1410, 950, 1550), fill=A((220, 252, 231), c3), r=24)
     ctext(d, 1480, "Làm đúng: ấn từ từ, đợi 10 giây\nrồi mới đọc áp kế", 38, GREEN, alpha=c3, lh=1.25)
 
-CLIP = dict(id="tn-l12-boylecharles-01", header="VẬT LÍ 12 · THÍ NGHIỆM",
+# ---------------- canh 6: chot + cau hoi ----------------
+def s_end(img, d, t, sc):
+    IMG_REF[0] = img
+    chot_hoi(d, t, sc, "Nhiệt độ không đổi → p·V không đổi",
+             "Giữ nhiệt độ, ấn tới 2,0 ml thì áp kế chỉ bao nhiêu? Áp kế này còn đọc được không?",
+             f"p·V ≈ {P0V0} kPa·ml · thang đo tới 300 kPa")
+
+def _cues(clip):
+    sc = {s["key"]: s for s in clip["scenes"]}
+    h, do, g, tr, e = sc["hook"], sc["do"], sc["graph"], sc["trap"], sc["end"]
+    return [(h["t0"] + h["M"][1], "open"), (h["t0"] + h["T"] - 0.1, "ding"),
+            (do["t0"] + row_at(3, do), "ding"), (g["t0"] + g["M"][2], "tap"),
+            (tr["t0"] + tr["M"][1] + 0.4, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
+
+CLIP = dict(id="tn-l12-boylecharles-01", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
     footer="Định luật Boyle · thachlab.id.vn", scenes=[
  dict(key="hook", title="Nén khí trong xilanh kín", draw=s_hook, tail=0.6, caps=[
-   ("8,0 ml khí nhốt kín, nối với áp kế.", 2.8),
-   ("Chọn một đáp án trước khi xem tiếp.", 4.2)]),
+   ("8,0 ml khí nhốt kín, nối với áp kế.", 2.4),
+   ("Chọn một đáp án trước khi xem tiếp.", 4.8)]),
  dict(key="do", title="Ấn từ từ, đọc áp kế", draw=s_do, tail=0.8, caps=[
-   ("Ấn từ từ, đợi số chỉ ổn định rồi ghi.", 2.4),
-   ("6,0 ml → 142 kPa", 2.2), ("5,0 ml → 170 kPa", 2.2),
-   ("4,0 ml → 215 kPa: gần gấp đôi!", 2.6),
-   ("3,0 ml → 267 kPa, gần trần thang đo.", 2.6)]),
- dict(key="graph", title="Đồ thị p–V và tích p·V", draw=s_graph, tail=0.8, caps=[
-   ("V giảm, p tăng theo đường cong.", 3.0),
-   ("Nhân p với V ở mỗi lần đo.", 2.8),
-   ("800 đến 860: gần như không đổi.", 2.8)]),
- dict(key="why", title="Vì sao p tăng?", draw=s_why, tail=0.8, caps=[
-   ("Cùng số phân tử, mật độ gấp đôi.", 3.0),
-   ("Va chạm lên thành nhiều hơn → p tăng.", 3.2)]),
- dict(key="trap", title="Giới hạn và cái bẫy", draw=s_trap, tail=1.0, caps=[
-   ("Kết quả chỉ đúng trong sai số đo.", 2.6),
+   ("Ấn từ từ, đợi số chỉ ổn định rồi ghi.", 2.3),
+   ("6,0 ml → 142 kPa", 2.0), ("5,0 ml → 170 kPa", 2.0),
+   ("4,0 ml → 215 kPa: gần gấp đôi, đáp án C.", 2.8),
+   ("3,0 ml → 267 kPa, gần trần thang đo.", 2.4)]),
+ dict(key="graph", title="Đồ thị p–V và tích p·V", draw=s_graph, tail=0.6, caps=[
+   ("V giảm, p tăng theo đường cong.", 2.6),
+   ("Nhân p với V ở mỗi lần đo.", 2.6),
+   ("800 đến 860: gần như không đổi.", 2.6)]),
+ dict(key="why", title="Vì sao p tăng?", draw=s_why, tail=0.6, caps=[
+   ("Cùng số phân tử, mật độ gấp đôi.", 2.6),
+   ("Va chạm lên thành nhiều hơn → p tăng.", 2.8)]),
+ dict(key="trap", title="Giới hạn và cái bẫy", draw=s_trap, tail=0.6, caps=[
+   ("Kết quả chỉ đúng trong sai số đo.", 2.2),
    ("Ấn nhanh: khí nóng lên, p vọt cao.", 3.0),
-   ("Không còn đẳng nhiệt nữa!", 2.6)]),
+   ("Làm đúng: ấn từ từ, đợi rồi mới đọc.", 2.6)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
+   ("Thử nghĩ: ấn tới 2,0 ml thì sao?", 4.2)]),
 ])

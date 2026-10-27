@@ -1,6 +1,7 @@
 # Clip: tn-l12-camungdt-01 - Nam cham va cuon day noi dien ke (ban 2, 27/10/2026)
 # So lieu lay tu content/thi-nghiem/tn-l12-camungdt-01.json -> so_lieu_mau:
 #   dung yen 0,0 -> 0 ; dua vao 0,1 -> +1,0 ; dua vao 0,2 -> +2,1 ; dua vao 0,4 -> +3,9 ; rut ra 0,2 -> -2,0 (mA)
+# Ban 3 (27/10/2026): thanh dem o hop Du doan, lo dap an B ngay luc nam yen, canh chot + cau hoi doi cuc S, tieng bao.
 from engine import *
 
 # ---------------- bo cuc (toa do khung 1080x1920) ----------------
@@ -37,7 +38,7 @@ def coil_back(d):
 def coil_front(d):
     for x in turns():
         d.arc([x - 17, CY - CR, x + 17, CY + CR], 270, 90, fill=A(ORANGE, 0.92), width=9)
-    text(d, (CX, 334), "600 vòng", 32, MUTED, bold=False)
+    text(d, (CX, 334), "600 vòng", 36, MUTED, bold=False)
 
 
 def dashed_ellipse(d, box, a0, a1, color, w=4, seg=7, gap=6):
@@ -141,12 +142,15 @@ def s_hook(img, d, t, sc):
     apparatus(d, OUT_TIP, 0.0)
     k = appear(t, sc["M"][0] + 1.0, 0.5)
     if k > 0:
-        text(d, (905, CY - 20), "không", 32, MUTED, bold=False, alpha=k)
-        text(d, (905, CY + 20), "có pin", 32, MUTED, bold=False, alpha=k)
+        text(d, (905, CY - 22), "không", 36, MUTED, bold=False, alpha=k)
+        text(d, (905, CY + 22), "có pin", 36, MUTED, bold=False, alpha=k)
     k = appear(t, sc["M"][1] - 0.15, 0.45)
     if k <= 0: return
     y0 = TAB_Y + (1 - k) * 40
-    card(d, (60, y0, 1020, y0 + 340), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
+    card(d, (60, y0, 1020, y0 + 350), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
+    t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))   # thanh dem thoi gian nghi
+    d.rounded_rectangle([140, y0 + 330, 940, y0 + 340], radius=6, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, y0 + 330, 140 + 800 * (1 - q), y0 + 340], radius=6, fill=A(PURPLE, k))
     text(d, (W / 2, y0 + 40), "Dự đoán", 40, PURPLE, alpha=k)
     text(d, (W / 2, y0 + 92), "Nam châm nằm YÊN trong cuộn dây,", 38, INK, alpha=k)
     text(d, (W / 2, y0 + 138), "kim điện kế sẽ…", 38, INK, alpha=k)
@@ -218,6 +222,11 @@ def s_do(img, d, t, sc):
     chips(d, cur, done)
     apparatus(d, tip, i, ghost, malpha, vt)
     table(d, done, hl=done - 1 if done > 0 and (cur == done - 1) else -1)
+    ka = appear(t, sc["M"][2] + 1.0, 0.4) * (1 - appear(t, sc["M"][3] - 0.1, 0.3))   # lo dap an luc nam yen, tat khi rut ra
+    if ka > 0:
+        pw = tw(d, "ĐÁP ÁN B", F(32)) + 44
+        card(d, (880 - pw, 828, 880, 882), fill=A(GREEN, ka), r=27)
+        text(d, (880 - pw / 2, 855), "ĐÁP ÁN B", 32, WHITE, alpha=ka)
 
 
 # ---------------- canh 3: rut ra ----------------
@@ -228,14 +237,14 @@ def chart(d, t, sc):
     d.line([(ox, 330), (ox, 730)], fill=NAVY, width=4)
     d.line([(ox, oy), (ox + 0.45 * sx, oy)], fill=NAVY, width=4)
     chevron(d, ox, 330, -math.pi / 2, NAVY, s=16); chevron(d, ox + 0.45 * sx, oy, 0, NAVY, s=16)
-    text(d, (ox + 22, 336), "i (mA)", 30, MUTED, bold=False, anchor="lm")
-    text(d, (ox + 0.45 * sx, oy + 34), "v (m/s)", 30, MUTED, bold=False, anchor="rm")
+    text(d, (ox + 22, 336), "i (mA)", 32, MUTED, bold=False, anchor="lm")
+    text(d, (ox + 0.45 * sx, oy + 34), "v (m/s)", 32, MUTED, bold=False, anchor="rm")
     for v in (0.1, 0.2, 0.3):
         x = ox + v * sx; d.line([(x, oy - 8), (x, oy + 8)], fill=NAVY, width=3)
-        text(d, (x, oy + 34), fmt(v, sign=False), 30, MUTED, bold=False)
+        text(d, (x, oy + 34), fmt(v, sign=False), 32, MUTED, bold=False)
     for im in (-2, 2, 4):
         y = oy - im * sy; d.line([(ox - 8, y), (ox + 8, y)], fill=NAVY, width=3)
-        text(d, (ox - 18, y), str(im).replace("-", "−"), 30, MUTED, bold=False, anchor="rm")
+        text(d, (ox - 18, y), str(im).replace("-", "−"), 32, MUTED, bold=False, anchor="rm")
     k0 = appear(t, sc["M"][1] - 0.1, 0.8)
     if k0 > 0:  # duong qua goc toa do
         x1 = lerp(0, 0.43, k0)
@@ -254,6 +263,8 @@ def chart(d, t, sc):
         dot(d, x, y, 13 * k, PURPLE, outline=WHITE)
         text(d, (x + 26, y), "−2,0 (rút ra)", 32, PURPLE, anchor="lm", alpha=k)
         text(d, (x + 26, oy - 2.1 * sy + 6), "(cắm vào)", 32, ORANGE, bold=False, anchor="lm", alpha=k)
+    text(d, (W / 2, 762), "Số liệu minh hoạ, có thêm lần cắm vào 0,2 m/s", 32, MUTED, bold=False,
+         alpha=appear(t, sc["M"][0] + 1.0, 0.4))
 
 
 def kcard(d, y, title, ev, color, k, h=200):
@@ -286,14 +297,14 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, y + 44), "Cái bẫy", 42, RED, alpha=a1)
         text(d, (W / 2, y + 104), "Nam châm nằm yên trong cuộn:", 38, INK, alpha=a1)
         text(d, (W / 2, y + 152), "từ trường MẠNH, nhưng i = 0.", 38, INK, alpha=a1)
-        text(d, (W / 2, y + 222), "Đáp án dự đoán: B. kim chỉ đúng số 0", 34, GREEN, alpha=a1)
+        text(d, (W / 2, y + 222), "Cần từ thông BIẾN THIÊN, không chỉ từ trường", 34, GREEN, alpha=a1)
     if k2 > 0:
         y = TAB_Y + (1 - k2) * 30
         card(d, (60, y, 1020, y + 288), fill=A(WHITE, k2), outline=A(NAVY, k2), w=5)
         text(d, (W / 2, y + 44), "Thí nghiệm chưa nói được", 40, NAVY, alpha=k2)
         for j, s in enumerate(("• Quy tắc tìm chiều dòng (định luật Lenz).",
-                               "• Cắm nhanh: kim có quán tính,",
-                               "  số đọc được nhỏ hơn dòng thật.")):
+                               "• Số liệu ở đây là minh hoạ,",
+                               "  chưa phải số đo thật.")):
             text(d, (100, y + 108 + j * 54), s, 38, INK, bold=False, anchor="lm", alpha=k2)
     # nhac lai: tu truong van con
     k = appear(t, 0.9, 0.5)
@@ -302,20 +313,35 @@ def s_bay(img, d, t, sc):
         text(d, (905, CY - 44), "vẫn còn", 30, PURPLE, bold=False, alpha=k * a1)
 
 
-CLIP = dict(id="tn-l12-camungdt-01", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Cảm ứng điện từ · thachlab.id.vn", scenes=[
+# ---------------- canh 5: chot + cau hoi ----------------
+def s_end(img, d, t, sc):
+    chot_hoi(d, t, sc, "Từ thông biến thiên → có dòng cảm ứng",
+             "Đổi sang cực S, cắm vào nhanh như lần 1. Kim lệch khoảng bao nhiêu, về phía nào?",
+             "Cực N: cắm vào +3,9 · rút ra −2,0 mA\nCực S: từ trường ngược chiều cực N")
+
+def _cues(clip):
+    sc = {s["key"]: s for s in clip["scenes"]}
+    h, do, r, b, e = sc["hook"], sc["do"], sc["rut"], sc["bay"], sc["end"]
+    return [(h["t0"] + h["M"][1], "open"), (h["t0"] + h["T"] - 0.1, "ding"),
+            (do["t0"] + do["M"][2] + 1.0, "ding"), (r["t0"] + r["M"][0], "tap"),
+            (b["t0"] + b["M"][0], "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
+
+CLIP = dict(id="tn-l12-camungdt-01", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Cảm ứng điện từ · thachlab.id.vn", cues=_cues, scenes=[
  dict(key="hook", title="Cuộn dây không có pin", draw=s_hook, tail=0.5, caps=[
-   ("Cuộn dây 600 vòng nối với điện kế. Không có pin.", 3.3),
-   ("Dự đoán trước, rồi xem tiếp.", 4.4)]),
+   ("Cuộn dây 600 vòng nối điện kế, không pin.", 3.0),
+   ("Dự đoán trước, rồi xem tiếp.", 5.0)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.8, caps=[
    ("Cắm nhanh cực N vào cuộn dây.", 3.0),
    ("Cắm chậm hơn.", 4.4),
-   ("Giữ nam châm nằm yên trong cuộn.", 2.8),
+   ("Nằm yên trong cuộn: kim về 0, đáp án B.", 3.0),
    ("Rút nam châm ra.", 3.0)]),
- dict(key="rut", title="Rút ra", draw=s_rut, tail=0.9, caps=[
+ dict(key="rut", title="Kết luận", draw=s_rut, tail=0.9, caps=[
    ("Có dòng chỉ khi từ thông biến thiên.", 3.0),
    ("Nhanh gấp 4 lần, dòng lớn gần gấp 4.", 3.2),
    ("Rút ra thì dòng đổi chiều.", 3.0)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=1.0, caps=[
-   ("Bẫy: nằm yên trong cuộn vẫn KHÔNG có dòng.", 3.6),
-   ("Chưa cho biết quy tắc tìm chiều dòng.", 3.6)]),
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
+   ("Bẫy: nằm yên trong cuộn vẫn KHÔNG có dòng.", 3.2),
+   ("Thí nghiệm này chưa nói được gì?", 3.0)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=1.0, caps=[
+   ("Thử nghĩ: đổi sang cực S thì kim ra sao?", 4.6)]),
 ])

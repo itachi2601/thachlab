@@ -105,6 +105,26 @@ def keyword(d, s, t, at, color=ORANGE, y=1400, size=54, sub=None):
         d.text((W / 2, yy), l, font=f, fill=A(color, k), anchor="mm"); yy += size * 1.2
     if sub: text(d, (W / 2, yy + 10), sub, 34, MUTED, alpha=k)
 
+# Canh chot dung chung: mot cau chot (xanh) + cau hoi tu nho lai (cam) + goi y. body(d, t, k) ve them
+# trong vung y 1000-1260 neu can (vd. thanh so sanh). Phu de canh nay: 1 cau, hien o M[0].
+def chot_hoi(d, t, sc, chot, hoi, goi_y=None, body=None):
+    M = sc["M"]; k0 = appear(t, 0.2, 0.5)
+    card(d, (60, 260, 1020, 560), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
+    ctext(d, 410, chot, 52, GREEN, maxw=860, alpha=k0)
+    k1 = appear(t, M[0] + 0.1, 0.5)
+    if k1 <= 0: return
+    card(d, (40, 620, 1040, 1600), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pw = tw(d, "THỬ NGHĨ", F(38)) + 52
+    card(d, (W / 2 - pw / 2, 650, W / 2 + pw / 2, 714), fill=A(ORANGE, k1), r=32)
+    text(d, (W / 2, 682), "THỬ NGHĨ", 38, WHITE, alpha=k1)
+    ctext(d, 860 if body is None else 820, hoi, 46, INK, maxw=880, alpha=appear(t, M[0] + 0.4, 0.5))
+    if body: body(d, t, k1)
+    if goi_y:
+        kh = appear(t, M[0] + 1.2, 0.5)
+        card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
+        ctext(d, 1360, "Gợi ý", 36, MUTED, bold=False, alpha=kh)
+        ctext(d, 1445, goi_y, 42, ORANGE, maxw=820, alpha=kh)
+
 # ---------------- nhip phu de ----------------
 def cap_dur(s): return max(2.3, 0.052 * len(s) + 0.9)
 def build(clip):

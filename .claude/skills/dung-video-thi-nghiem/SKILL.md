@@ -5,7 +5,7 @@ description: Tự dựng video 9:16 KHÔNG giọng (phụ đề + nhạc tổng 
 
 # Dựng video thí nghiệm tự làm (không giọng)
 
-Thầy chốt 27/10/2026: thí nghiệm không có clip YouTube thì tự dựng; chỉ **phụ đề + nhạc**, giọng đọc dành riêng cho video ôn tập. Ba clip mẫu đã duyệt: `clips/boyle.py`, `clips/chuyenthe.py`, `clips/camungdt.py` (Opus làm lại, thầy đồng ý 27/10).
+Thầy chốt 27/10/2026: thí nghiệm không có clip YouTube thì tự dựng; chỉ **phụ đề + nhạc**, giọng đọc dành riêng cho video ôn tập. Ba clip mẫu đã duyệt: `clips/boyle.py`, `clips/chuyenthe.py`, `clips/camungdt.py` (bản 3, 27/10: có cảnh đáp án, cảnh chốt `chot_hoi()` trong engine, tiếng báo `cues`). Cảnh chốt mới dùng `chot_hoi(d, t, sc, chot, hoi, goi_y)` thay vì tự vẽ.
 
 ## Quy trình một clip
 1. Đọc `content/thi-nghiem/<id>.json` (`cac_buoc`, `so_lieu_mau`, `tham_so`, `hien_tuong_hay_sai`, `sai_so_thuong_gap`) và `docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md`. **Mọi con số trong clip phải có trong `so_lieu_mau`/`tham_so`** — không nội suy, không bịa điểm.
@@ -40,6 +40,7 @@ Thầy chốt 27/10/2026: thí nghiệm không có clip YouTube thì tự dựng
 mp4 chưa chèn vào bài: chỗ đặt (YouTube không công khai + `scripts/chen-video-thi-nghiem.mts` hay file tĩnh trong web) thầy chưa chốt. Không tự đăng. Lô: 1 = L12 còn lại (~40), 2 = L12 + L11 điện (~60), 3 = L11 dao động + L9 (~45), 4 = L10 (~112).
 
 ## Nhật ký rút kinh nghiệm
+- 2026-10-27 · Cổng B lần đầu (kiem-code vai HS) bắt được ở boyle/camungdt: thời gian nghĩ < 5 s, nhãn "Đáp án B" còn nằm sang bước sau, câu hỏi chốt cần dữ kiện clip chưa cho, chữ trong bài lệch số trong JSON (5% vs 8%), dòng "chưa nói được" không có nguồn → các mục này đã vào checklist; agent đọc ảnh nhỏ có khi báo nhầm chính tả, kiểm lại bằng mã trước khi sửa.
 - 2026-10-27 · Bản 2 chuyenthe render xong mới phát hiện 5 lỗi nội dung qua góp ý học sinh → thêm cổng A (`--kich-ban`) + cổng B (`--sheet` đọc trong `kiem-code`) trước render; sau render chỉ đo bằng ffmpeg.
 - 2026-10-27 · Học sinh ảo xem chuyenthe bản 2: đồ thị thật không khớp lựa chọn nào (đoạn −6→0 °C tàng hình trên trục 0–100), không lộ đáp án sau Dự đoán, nhãn "ghi lúc phút" lệch đồng hồ, trục t đổi thang giữa chừng → sau phần Tiến hành phải có cảnh "Đáp án X" + phóng to đoạn ngắn; trục cố định từ đầu; mỗi đoạn ngang một hình cơ chế riêng; kết bằng câu hỏi tự nhớ lại (không kết ở bẫy).
 - 2026-10-27 · Bản đầu của 3 clip dài 43–65 s, hộp Dự đoán tô khác màu từng lựa chọn (lộ đáp án), nhiều nhãn chồng, có số nội suy không có trong dữ liệu → viết lại bằng Opus theo quy tắc trên, thầy duyệt.
