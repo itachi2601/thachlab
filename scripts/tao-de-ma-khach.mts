@@ -4,7 +4,9 @@
 import { createClient } from "@supabase/supabase-js";
 import { readFileSync } from "node:fs";
 
-const [bundlePath, gradebook] = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+const [bundlePath, gradebookArg] = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+// "@đường-dẫn": đọc tên bảng điểm từ file (tránh gõ ký tự có dấu trên dòng lệnh)
+const gradebook = gradebookArg?.startsWith("@") ? readFileSync(gradebookArg.slice(1), "utf8").trim() : gradebookArg;
 const APPLY = process.argv.includes("--apply");
 if (!bundlePath || !gradebook) throw new Error('Cách dùng: tao-de-ma-khach.mts <bundle.json> "<tên bảng điểm>" [--apply]');
 const env = Object.fromEntries(
