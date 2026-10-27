@@ -1,7 +1,9 @@
-# Clip: tn-l12-chuyenthe-01 - Dun nuoc da, moi phut ghi nhiet do mot lan (ban 2, 27/10/2026)
+# Clip: tn-l12-chuyenthe-01 - Dun nuoc da, moi phut ghi nhiet do mot lan (ban 3, 27/10/2026: truc t co dinh,
+# lo dap an C + phong to doan -6 -> 0 °C, tach hinh phan tu luc tan / luc soi, cau hoi chot, tieng bao thay nhac)
 # So lieu lay nguyen tu content/thi-nghiem/tn-l12-chuyenthe-01.json -> so_lieu_mau (khong them diem).
 # Canh: Du doan (4 lua chon cung kieu) -> Tien hanh (coc + dau do + dong ho, do thi ve dan, tua nhanh)
-#       -> Vi sao nam ngang (pha lien ket, dong nang khong doi) -> Gioi han (+-0,5 °C) + Bay.
+#       -> Dap an + vi sao nam ngang (tan: pha lien ket; soi: phan tu thoat ra) -> Gioi han (+-0,5 °C) + Bay
+#       -> Chot + cau hoi tu nho lai (4 phut vs 27 phut, goi y lambda, L tu tham_so).
 import random
 import numpy as np
 from engine import *
@@ -115,9 +117,9 @@ def plot(d, box, tau, xmax, t, hl=0.0, show_pen=True):
             if X(m) < x1 - 150 or m == 0: text(d, (X(m), y0 + 34), str(m), 32, MUTED, bold=False)
         elif am > 0:
             d.line([(X(m), y0), (X(m), y0 + 8)], fill=A(NAVY, am), width=3)
-    if hl > 0:
-        for a, b, T in ((1, 4, 0), (10, 35, 100)):
-            d.rounded_rectangle([X(a) - 18, Y(T) - 20, X(b) + 18, Y(T) + 20], radius=20, fill=A((187, 247, 208), hl), outline=A(GREEN, hl), width=4)
+    hls = hl if isinstance(hl, tuple) else (hl, hl)
+    for (a, b, T), h in zip(((1, 4, 0), (10, 35, 100)), hls):
+        if h > 0: d.rounded_rectangle([X(a) - 18, Y(T) - 20, X(b) + 18, Y(T) + 20], radius=20, fill=A((187, 247, 208), h), outline=A(GREEN, h), width=4)
     if tau > 0:
         ms = np.linspace(0, tau, max(2, int(tau * 30)))
         d.line([(X(m), Y(Tline(m))) for m in ms], fill=BLUE, width=7, joint="curve")
@@ -129,7 +131,7 @@ def plot(d, box, tau, xmax, t, hl=0.0, show_pen=True):
         dot(d, X(tau), Y(Tline(tau)), 13, RED, outline=WHITE)
     return X, Y
 
-def xmax_of(tau): return 12 + 26 * ease((tau - 8) / 14)
+XMAX = 38   # truc t co dinh tu dau
 
 # ---------------- canh 1: Du doan ----------------
 OPTS = [("A", [(0, .06), (1, .94)]),
@@ -195,10 +197,11 @@ def s_do(img, d, t, sc):
     col = BLUE if rv < 5 else (RED if rv > 90 else ORANGE)
     if fl > 0: card(d, (630, 650, 990, 760), fill=A((255, 237, 213), fl), r=20)
     text(d, (810, 705), vn(rv) + " °C", 76, col)
-    text(d, (810, 805), f"ghi lúc phút {rm}", 32, MUTED, bold=False)
+    text(d, (810, 785 if rm >= 11 else 805), f"số ghi ở phút {rm}", 32, MUTED, bold=False)
+    if rm >= 11: text(d, (810, 828), "sau đó 5 phút ghi 1 lần", 32, MUTED, bold=False)
     # do thi
     card(d, (40, 960, 1040, 1610), fill=WHITE, outline=LIGHT, w=3)
-    plot(d, (160, 1010, 960, 1515), tau, xmax_of(tau), t)
+    plot(d, (160, 1010, 960, 1515), tau, XMAX, t)
 
 # ---------------- canh 3: Vi sao nam ngang ----------------
 GR = [(c, r) for r in range(4) for c in range(5)]
@@ -224,20 +227,60 @@ def bar(d, x, y, wdt, frac, color):
     d.rounded_rectangle([x, y - 13, x + wdt, y + 13], radius=13, fill=LIGHT)
     if frac > 0.01: d.rounded_rectangle([x, y - 13, x + wdt * frac, y + 13], radius=13, fill=color)
 
+def boil_panel(d, box, t):
+    # luc soi: phan tu trong nuoc chay tu do, mot so thoat qua mat nuoc thanh hoi
+    x0, y0, x1, y1 = box; sy = y0 + 190
+    d.rounded_rectangle([x0 + 12, sy, x1 - 12, y1 - 12], radius=18, fill=(214, 230, 250))
+    d.line([(x0 + 16, sy), (x1 - 16, sy)], fill=(120, 170, 225), width=5)
+    for i, (a, b, sp) in enumerate(PH[:14]):
+        x = refl(x0 + 50 + a * 60 + t * 70 * sp, x0 + 40, x1 - 40)
+        y = refl(sy + 40 + b * 40 + t * 55 * sp, sy + 36, y1 - 40)
+        dot(d, x, y, 17, BLUE, outline=WHITE)
+    for i in range(4):
+        u = (t * 0.45 + i / 4) % 1
+        x = x0 + 90 + i * 100 + 18 * math.sin(t * 2 + i)
+        y = sy - 10 - u * (sy - y0 - 40)
+        al = clamp((1 - u) / 0.3)
+        dot(d, x, y, 17, A(BLUE, al), outline=A(WHITE, al))
+        if u < 0.5: arrow(d, (x, y - 26), (x, y - 70), A(ORANGE, al * (1 - u * 2)), w=5, head=14)
+
 def s_graph(img, d, t, sc):
-    M = sc["M"]
+    M = sc["M"]; cur = cur_cap(sc, t)
     card(d, (40, 245, 1040, 960), fill=WHITE, outline=LIGHT, w=3)
-    hl = appear(t, M[0] + 0.2, 0.6)
-    X, Y = plot(d, (160, 300, 960, 870), 35, 38, t, hl=hl, show_pen=False)
-    text(d, ((X(10) + X(35)) / 2, Y(100) - 52), "100 °C · ≈ 27 phút · nước sôi", 36, GREEN, alpha=hl)
-    text(d, (X(1) - 10, Y(0) + 56), "0 °C · ≈ 4 phút · đá tan", 36, GREEN, anchor="lm", alpha=hl)
+    a0 = appear(t, M[0] + 0.2, 0.6)
+    b2 = appear(t, M[2] - 0.1, 0.4)
+    h0 = a0 * (1 - 0.75 * b2); h1 = a0 * (1 - 0.75 * (appear(t, M[1] - 0.1, 0.4) - b2))
+    X, Y = plot(d, (160, 300, 960, 870), 35, XMAX, t, hl=(h0, h1), show_pen=False)
+    text(d, ((X(10) + X(35)) / 2, Y(100) - 52), "100 °C · ≈ 27 phút · nước sôi", 36, GREEN, alpha=max(0.3, h1))
+    text(d, (X(1) - 10, Y(0) + 56), "0 °C · ≈ 4 phút · đá tan", 36, GREEN, anchor="lm", alpha=max(0.3, h0))
+    text(d, (X(9) + 24, Y(55)), "nước nóng lên", 34, BLUE, anchor="lm", alpha=a0)
+    # dap an C + o phong to doan da nong len -6 -> 0 °C
+    ka = appear(t, M[0] + 0.1, 0.5)
+    if ka > 0:
+        pill(d, 755, 470, "ĐÁP ÁN C", 36, WHITE, NAVY, ka)
+        P = [(885 + px * 105, 495 - py * 55) for px, py in OPTS[2][1]]
+        d.line(P, fill=A(NAVY, ka), width=6, joint="curve")
+        bx0, by0, bx1, by1 = 640, 540, 1010, 840
+        card(d, (bx0, by0, bx1, by1), fill=A((247, 248, 252), ka), outline=A(LIGHT, ka), r=20, w=3)
+        text(d, ((bx0 + bx1) / 2, by0 + 34), "Phóng to phút 0–2", 32, INK, alpha=ka)
+        ix = lambda m: bx0 + 70 + m / 2 * (bx1 - bx0 - 110); iy = lambda T: by1 - 50 - (T + 8) / 10 * (by1 - by0 - 130)
+        dashed(d, (ix(0), iy(0)), (ix(2), iy(0)), A(GREEN, ka), 3)
+        text(d, (ix(0) - 14, iy(0)), "0", 32, GREEN, anchor="rm", alpha=ka)
+        text(d, (ix(0) - 14, iy(-6)), "−6", 32, MUTED, bold=False, anchor="rm", alpha=ka)
+        d.line([(ix(m), iy(Tline(m))) for m in np.linspace(0, 2, 40)], fill=A(BLUE, ka), width=6, joint="curve")
+        for m in (0, 1, 2): dot(d, ix(m), iy(Tline(m)), 9, A(ORANGE, ka), outline=A(WHITE, ka))
+        text(d, (ix(0.55) + 10, iy(-3.5)), "đá nóng lên", 32, BLUE, anchor="lm", alpha=ka)
+        d.rectangle([X(0) - 10, Y(2) - 8, X(2) + 10, Y(-8) + 6], outline=A(NAVY, ka), width=3)
+        dashed(d, (X(2) + 10, Y(-3)), (bx0, iy(-3)), A(NAVY, 0.6 * ka), 3, 10, 8)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
+    soi = cur >= 2
     card(d, (40, 990, 1040, 1610), fill=A(WHITE, a), outline=A(LIGHT, a), w=3)
-    text(d, (W / 2, 1036), "Bên trong cốc, lúc đá đang tan", 36, MUTED, alpha=a)
-    p = clamp((t - M[1]) / (sc["T"] - M[1] - 0.6))
-    card(d, (70, 1075, 540, 1585), fill=A((244, 241, 255), a), r=24)
-    particles(d, (70, 1075, 540, 1585), t, p)
+    text(d, (W / 2, 1036), "Bên trong cốc, lúc nước đang sôi" if soi else "Bên trong cốc, lúc đá đang tan", 36, MUTED, alpha=a)
+    box = (70, 1075, 540, 1585)
+    card(d, box, fill=A((244, 241, 255), a), r=24)
+    if soi: boil_panel(d, box, t)
+    else: particles(d, box, t, clamp((t - M[1]) / (M[2] - M[1] - 0.3)))
     # cot phai: 3 hang
     rx = 580
     text(d, (rx, 1110), "Nhiệt từ bếp", 36, INK, anchor="lm", alpha=a)
@@ -247,13 +290,18 @@ def s_graph(img, d, t, sc):
         al = a * min(1, u / 0.15, (1 - u) / 0.15)
         d.line([(xx, 1150), (xx + 18, 1166), (xx, 1182)], fill=A(ORANGE, al), width=7)
     text(d, (rx, 1216), "vẫn cấp đều", 32, ORANGE, anchor="lm", alpha=a)
-    a2 = appear(t, M[1] + 0.6, 0.5)
-    text(d, (rx, 1290), "Liên kết giữa phân tử", 36, INK, anchor="lm", alpha=a2)
-    if a2 > 0: bar(d, rx, 1342, 400, 1 - p, PURPLE)
-    text(d, (rx, 1392), "bị phá dần", 32, PURPLE, anchor="lm", alpha=a2)
-    a3 = appear(t, M[2] - 0.1, 0.5)
+    a2 = appear(t, (M[2] if soi else M[1]) + 0.4, 0.5)
+    if soi:
+        text(d, (rx, 1290), "Phân tử thoát khỏi", 36, INK, anchor="lm", alpha=a2)
+        text(d, (rx, 1338), "mặt nước thành hơi", 36, INK, anchor="lm", alpha=a2)
+        text(d, (rx, 1392), "cần rất nhiều nhiệt", 32, PURPLE, anchor="lm", alpha=a2)
+    else:
+        text(d, (rx, 1290), "Liên kết giữa phân tử", 36, INK, anchor="lm", alpha=a2)
+        if a2 > 0: bar(d, rx, 1342, 400, 1 - clamp((t - M[1]) / (M[2] - M[1] - 0.3)), PURPLE)
+        text(d, (rx, 1392), "bị phá dần", 32, PURPLE, anchor="lm", alpha=a2)
+    a3 = appear(t, (M[2] if soi else M[1]) + 1.2, 0.5)
     text(d, (rx, 1466), "Động năng phân tử", 36, INK, anchor="lm", alpha=a3)
-    if a3 > 0: bar(d, rx, 1518, 400, 0.45, BLUE)
+    if a3 > 0: bar(d, rx, 1518, 400, 0.45 if not soi else 0.8, BLUE)
     text(d, (rx, 1566), "không tăng → T không đổi", 32, GREEN, anchor="lm", alpha=a3)
 
 # ---------------- canh 4: Gioi han + bay ----------------
@@ -261,7 +309,7 @@ def s_limit(img, d, t, sc):
     M = sc["M"]
     card(d, (40, 245, 1040, 960), fill=WHITE, outline=LIGHT, w=3)
     text(d, (W / 2, 296), "Phóng to đoạn 0 °C (phút 1–4)", 38, INK)
-    x0, x1, yt, yb = 200, 960, 380, 840
+    x0, x1, yt, yb = 200, 960, 370, 790
     X = lambda m: x0 + (m - 0.3) / 4.4 * (x1 - x0); Y = lambda T: yb - (T + 1) / 2 * (yb - yt)
     for T, lab in ((1, "1"), (0.5, "0,5"), (0, "0"), (-0.5, "−0,5"), (-1, "−1")):
         if T != 0: d.line([(x0, Y(T)), (x1, Y(T))], fill=LIGHT, width=2)
@@ -271,7 +319,7 @@ def s_limit(img, d, t, sc):
     dashed(d, (x0, Y(0)), (x1, Y(0)), GREEN, 5, 22, 12)
     text(d, (x0 + 18, Y(0) + 30), "0 °C", 34, GREEN, anchor="lm")
     for m in (1, 2, 3, 4):
-        text(d, (X(m), yb + 36), f"phút {m}", 30, MUTED, bold=False)
+        text(d, (X(m), yb + 34), f"phút {m}", 30, MUTED, bold=False)
     for i, m in enumerate((1, 2, 3, 4)):
         v = dict(ROWS)[m]; k = appear(t, M[0] + 0.25 * i, 0.4)
         if k <= 0: continue
@@ -281,8 +329,9 @@ def s_limit(img, d, t, sc):
             for yy in (Y(v - e), Y(v + e)): d.line([(X(m) - 18, yy), (X(m) + 18, yy)], fill=NAVY, width=5)
         dot(d, X(m), Y(v), 13 * k, ORANGE, outline=WHITE)
         text(d, (X(m) + 26, Y(v) - 4), vn(v), 32, ORANGE, anchor="lm", alpha=k)
-    ka = appear(t, M[0] + 1.8, 0.5)
-    text(d, (W / 2, 912), "Thanh dọc: sai số ±0,5 °C của nhiệt kế", 34, NAVY, alpha=ka)
+    ka = appear(t, M[0] + 1.6, 0.5)
+    text(d, (W / 2, 870), "Thanh dọc: sai số ±0,5 °C của nhiệt kế", 34, NAVY, alpha=ka)
+    text(d, (W / 2, 918), "Lúc sôi đọc 100,2–100,3 °C: cũng trong ±0,5 °C", 34, NAVY, alpha=appear(t, M[0] + 2.2, 0.5))
     # bay
     kb = appear(t, M[1] - 0.15, 0.5)
     if kb <= 0: return
@@ -290,30 +339,66 @@ def s_limit(img, d, t, sc):
     card(d, (40, y0, 1040, y0 + 600), fill=WHITE, outline=RED, w=6)
     pill(d, W / 2, y0 + 62, "BẪY", 38, WHITE, RED)
     q = "“Đoạn nằm ngang là lúc\nbếp ngừng cấp nhiệt”"; ls = wrap(d, q, F(44), 860)
-    ks = clamp((t - M[1] - 0.9) / 0.5)
+    ks = clamp((t - M[1] - 0.7) / 0.4)
     for j, l in enumerate(ls):
         yy = y0 + 170 + (j - (len(ls) - 1) / 2) * 54; lw = tw(d, l, F(44))
-        text(d, (W / 2, yy), l, 44, INK, alpha=1 - 0.45 * ks)
-        if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=RED, width=6)
-    kc = appear(t, M[1] + 1.4, 0.5)
-    ctext(d, y0 + 330, "Sai: bếp vẫn bật suốt.", 46, RED, alpha=kc)
-    ctext(d, y0 + 450, "Nhiệt vẫn vào, nhưng dùng để phá liên kết giữa các phân tử.", 42, INK, maxw=860, alpha=appear(t, M[1] + 1.9, 0.5))
+        text(d, (W / 2, yy), l, 44, mix(INK, GRAY, ks))
+        if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.8), width=4)
+    kc = appear(t, M[1] + 1.1, 0.5)
+    ctext(d, y0 + 330, "Sai: bếp vẫn bật suốt.", 50, RED, alpha=kc)
+    ctext(d, y0 + 450, "Nhiệt vẫn vào, nhưng dùng để phá liên kết giữa các phân tử.", 42, INK, maxw=860, alpha=appear(t, M[1] + 1.6, 0.5))
 
-CLIP = dict(id="tn-l12-chuyenthe-01", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Sự chuyển thể · thachlab.id.vn", scenes=[
- dict(key="hook", title="Đun nước đá, ghi nhiệt độ", draw=s_hook, tail=1.8, caps=[
-   ("Nước đá ở −6 °C, đun trên bếp giữ một mức.", 3.0),
-   ("Dự đoán trước: đồ thị nhiệt độ – thời gian có dạng nào?", 3.6)]),
- dict(key="do", title="Mỗi phút đọc nhiệt kế", draw=s_do, tail=1.0, caps=[
-   ("Bật bếp, khuấy đều, mỗi phút ghi một số đọc.", 2.8),
-   ("Phút 1 đến 4: nhiệt độ đứng quanh 0 °C, đá tan dần.", 3.8),
-   ("Đá tan hết: nhiệt độ tăng đều, khoảng 20 °C mỗi phút.", 3.6),
-   ("Từ phút 10: đứng gần 100 °C, nước sôi.", 3.2),
-   ("Bếp vẫn bật, nước cạn dần tới khoảng phút 36.", 3.6)]),
- dict(key="graph", title="Vì sao có đoạn nằm ngang?", draw=s_graph, tail=0.9, caps=[
-   ("Hai đoạn nằm ngang: 0 °C khi đá tan, 100 °C khi nước sôi.", 3.6),
-   ("Bếp vẫn cấp nhiệt, nhưng nhiệt dùng để phá liên kết.", 3.6),
-   ("Động năng phân tử không tăng, nên nhiệt độ không tăng.", 3.8)]),
- dict(key="limit", title="Giới hạn và cái bẫy", draw=s_limit, tail=1.3, caps=[
-   ("Đọc 0,2–0,3 °C vẫn khớp 0 °C: nằm trong sai số ±0,5 °C.", 4.0),
-   ("Bẫy hay gặp: tưởng đoạn nằm ngang là lúc bếp tắt.", 3.8)]),
+# ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
+def s_end(img, d, t, sc):
+    M = sc["M"]
+    k0 = appear(t, 0.2, 0.5)
+    card(d, (60, 260, 1020, 560), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
+    ctext(d, 360, "Nhiệt vẫn vào → phá liên kết", 52, GREEN, alpha=k0)
+    ctext(d, 450, "→ T đứng yên", 52, GREEN, alpha=k0)
+    k1 = appear(t, M[0] + 0.1, 0.5)
+    if k1 <= 0: return
+    card(d, (40, 620, 1040, 1600), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pill(d, W / 2, 682, "THỬ NGHĨ", 38, WHITE, ORANGE, k1)
+    for j, (lab, mins, col) in enumerate((("đá tan", 4, BLUE), ("sôi tới cạn", 27, RED))):
+        y = 820 + j * 130; g = ease((t - M[0] - 0.3 - 0.3 * j) / 0.8)
+        text(d, (100, y), lab, 38, INK, anchor="lm", alpha=k1)
+        wmax = 430 * mins / 27
+        d.rounded_rectangle([340, y - 24, 340 + max(48, wmax * g), y + 24], radius=24, fill=A(col, k1))
+        text(d, (340 + max(48, wmax * g) + 20, y), f"≈ {mins} phút", 38, col, anchor="lm", alpha=g)
+    ctext(d, 1130, "Cùng 0,20 kg, cùng bếp. Vì sao sôi tới cạn lâu gấp gần 7 lần?", 46, INK, maxw=880, alpha=appear(t, M[0] + 1.0, 0.5))
+    kh = appear(t, M[0] + 2.2, 0.5)
+    card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
+    ctext(d, 1360, "Gợi ý: so sánh", 36, MUTED, bold=False, alpha=kh)
+    ctext(d, 1445, "λ = 334 kJ/kg  ·  L = 2 260 kJ/kg", 46, ORANGE, alpha=kh)
+
+def _cues(clip):
+    sc = {s["key"]: s for s in clip["scenes"]}; out = []
+    h = sc["hook"]; out += [(h["t0"] + h["M"][1], "open"), (h["t0"] + h["T"] - 0.3, "ding")]
+    do = sc["do"]; t = do["t0"] + do["M"][0] + 0.5
+    while t < do["t0"] + do["T"] - 0.7: out.append((t, "tick")); t += 0.5
+    out += [(do["t0"] + do["M"][1], "tap"), (do["t0"] + do["M"][3], "tap")]
+    out += [(sc["graph"]["t0"] + sc["graph"]["M"][0] + 0.1, "ding"), (sc["limit"]["t0"] + sc["limit"]["M"][1], "buzz"),
+            (sc["end"]["t0"] + sc["end"]["M"][0] + 0.1, "open")]
+    return out
+
+CLIP = dict(id="tn-l12-chuyenthe-01", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Sự chuyển thể · thachlab.id.vn", cues=_cues, scenes=[
+ dict(key="hook", title="Đun nước đá, ghi nhiệt độ", draw=s_hook, tail=0.6, caps=[
+   ("Nước đá ở −6 °C, đun trên bếp giữ một mức.", 2.8),
+   ("Dự đoán trước: đồ thị nhiệt độ – thời gian có dạng nào?", 3.4),
+   ("Dừng lại vài giây, chọn A, B, C hay D.", 3.2)]),
+ dict(key="do", title="Mỗi phút đọc nhiệt kế", draw=s_do, tail=0.8, caps=[
+   ("Bật bếp, khuấy đều, mỗi phút ghi một số đọc.", 2.6),
+   ("Phút 1 đến 4: nhiệt độ đứng quanh 0 °C, đá tan dần.", 3.4),
+   ("Đá tan hết: nhiệt độ tăng đều, khoảng 20 °C mỗi phút.", 3.2),
+   ("Từ phút 10: đứng gần 100 °C, nước sôi.", 2.9),
+   ("Bếp vẫn bật, nước cạn dần tới khoảng phút 36.", 3.0)]),
+ dict(key="graph", title="Vì sao có đoạn nằm ngang?", draw=s_graph, tail=0.6, caps=[
+   ("Lên – ngang – lên – ngang: đáp án C.", 3.0),
+   ("Đá tan: nhiệt vào để phá liên kết.", 3.2),
+   ("Đang sôi: nhiệt giúp phân tử thoát ra.", 3.2)]),
+ dict(key="limit", title="Giới hạn và cái bẫy", draw=s_limit, tail=0.7, caps=[
+   ("0,2–0,3 °C vẫn khớp 0 °C: trong sai số ±0,5 °C.", 3.4),
+   ("Bẫy hay gặp: tưởng đoạn nằm ngang là lúc bếp tắt.", 3.3)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=1.1, caps=[
+   ("Thử nghĩ: vì sao sôi lâu hơn tan gần 7 lần?", 3.6)]),
 ])

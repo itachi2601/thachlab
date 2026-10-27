@@ -1,4 +1,4 @@
-# Bo dung video thi nghiem doc 9:16 (khong loi: phu de + nhac nen tong hop). Khung lay tu
+# Bo dung video thi nghiem doc 9:16 (khong loi: phu de + tieng bao o moc chinh, clip cu: nhac nen tong hop). Khung lay tu
 # content/lesson-samples/l12-thuyet-dong-hoc-phan-tu/video/make_video.py.
 #   python3 scripts/video-thi-nghiem/render.py boyle --preview   -> anh 540x960 o ra/<id>/preview
 #   python3 scripts/video-thi-nghiem/render.py boyle             -> ra/<id>.mp4
@@ -166,6 +166,33 @@ def music(total, seed=7):
     m = m / (np.abs(m).max() + 1e-9) * 0.35
     return (m[: int(total * SR)] * 32767).astype(np.int16)
 
+# ---------------- tieng bao o moc chinh (thay nhac lien mach, 27/10/2026) ----------------
+# Moreno & Mayer 2000: nhac nen lam giam nho + van dung -> clip co clip["cues"](clip) -> [(giay, loai)] thi
+# chi phat tieng ngan dung moc su kien, con lai im lang. Clip cu khong co "cues" van dung music().
+def _tone(x, f, decay, amp):
+    return amp * np.sin(2 * np.pi * f * x) * np.exp(-decay * x) * np.minimum(1, x / 0.005)
+
+def sfx(total, cues):
+    n = int(total * SR); out = np.zeros(n)
+    def put(at, sig):
+        a = int(at * SR); b = min(n, a + len(sig))
+        if 0 <= a < n: out[a:b] += sig[: b - a]
+    for at, kind in cues:
+        if kind == "tick":    # tich tac nhe khi tua nhanh
+            x = np.arange(int(0.05 * SR)) / SR; put(at, _tone(x, 1900, 90, 0.10))
+        elif kind == "tap":   # cham diem moc (bat dau doan nam ngang)
+            x = np.arange(int(0.4 * SR)) / SR; put(at, _tone(x, 880, 16, 0.45) + _tone(x, 1320, 22, 0.2))
+        elif kind == "open":  # hien cau hoi
+            x = np.arange(int(0.9 * SR)) / SR; put(at, _tone(x, 523.25, 4, 0.3)); put(at + 0.14, _tone(x, 783.99, 4, 0.3))
+        elif kind == "ding":  # het gio nghi / lo dap an
+            x = np.arange(int(1.2 * SR)) / SR; put(at, _tone(x, 659.25, 3.5, 0.4)); put(at + 0.12, _tone(x, 987.77, 3.5, 0.4))
+        elif kind == "buzz":  # bay
+            x = np.arange(int(0.18 * SR)) / SR
+            s = (np.sin(2 * np.pi * 150 * x) + 0.35 * np.sin(2 * np.pi * 450 * x)) * np.minimum(1, x / 0.005) * np.minimum(1, (0.18 - x) / 0.03) * 0.35
+            put(at, s); put(at + 0.24, s)
+    out = out / (np.abs(out).max() + 1e-9) * 0.5
+    return (out * 32767).astype(np.int16)
+
 def frame(clip, gt):
     for sc in clip["scenes"]:
         if gt < sc["t0"] + sc["T"]: break
@@ -184,7 +211,7 @@ def run(clip, argv):
             for fr in (0.3, 0.6, 0.97):
                 frame(clip, sc["t0"] + sc["T"] * fr).resize((540, 960)).save(os.path.join(pd, f"{sc['key']}_{int(fr*100)}.png"))
         return
-    wav = os.path.join(OUT, clip["id"] + ".wav"); a = music(total)
+    wav = os.path.join(OUT, clip["id"] + ".wav"); a = sfx(total, clip["cues"](clip)) if "cues" in clip else music(total)
     with wave.open(wav, "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(a.tobytes())
     out = os.path.join(OUT, clip["id"] + ".mp4")
