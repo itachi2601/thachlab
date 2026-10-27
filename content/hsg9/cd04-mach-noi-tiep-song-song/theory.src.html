@@ -2,8 +2,8 @@
 <p class="tl-label">🎯 Mục tiêu bài học</p>
 <ul>
 <li>Thu gọn mạch hỗn hợp theo bốn bước rồi tính ngược về từng điện trở.</li>
-<li>Nhận ra hai điểm cùng điện thế để chập hoặc bỏ nhánh: ampe kế lí tưởng, khoá K đóng, cầu cân bằng.</li>
-<li>Ampe kế và vôn kế thực: $R_A$ nối tiếp, $R_V$ song song; tính sai số của phép đo.</li>
+<li>Nhận ra hai điểm cùng <span class="tl-term"><input type="checkbox" id="tl157-t1"><label for="tl157-t1">điện thế</label><span class="tl-def">Mức điện của một điểm; hiệu hai điểm là hiệu điện thế.</span></span> để chập hoặc bỏ nhánh: ampe kế lí tưởng, khoá K đóng, cầu cân bằng.</li>
+<li>Ampe kế và vôn kế thực: $R_A$ nối tiếp, $R_V$ song song; tính <span class="tl-term"><input type="checkbox" id="tl157-t2"><label for="tl157-t2">sai số</label><span class="tl-def">Độ lệch giữa số đo được và giá trị thật.</span></span> của phép đo.</li>
 <li>Biến trở và ẩn số điện trở: viết một phương trình cho mỗi trạng thái của mạch.</li>
 <li>Quy ước: nguồn lí tưởng (không có điện trở trong), dây nối không có điện trở; chỉ dùng định luật Ohm, không dùng định luật Kirchhoff.</li>
 </ul>
@@ -26,6 +26,7 @@
 </div>
 
 <h3>II. Nối tiếp và song song: nền để thu gọn</h3>
+<p class="tl-claim">Nối tiếp: $I$ chung. Song song: $U$ chung.</p>
 
 <p><strong>🔑 Nối tiếp: $I$ chung · $U$ và $R$ cộng</strong></p>
 <p><strong>🔑 Song song: $U$ chung · $I$ và $\tfrac1R$ cộng</strong></p>
@@ -53,11 +54,12 @@
 </div>
 
 <h3>III. Mạch hỗn hợp: bốn bước</h3>
+<p class="tl-claim">Thu gọn từ trong ra ngoài, rồi tính ngược lại.</p>
 
 <p><strong>🔑 Phân tích · Thu gọn từ trong ra · Tính $I$ chính · Tính ngược</strong></p>
 <!--FIG1-->
 <ol class="tl-steps">
-<li><strong>Phân tích:</strong> đánh dấu nút (M, N), tìm đoạn nối tiếp thuần và song song thuần.</li>
+<li><strong>Phân tích:</strong> đánh dấu <span class="tl-term"><input type="checkbox" id="tl157-t3"><label for="tl157-t3">nút</label><span class="tl-def">Điểm nối của ba dây trở lên.</span></span> (M, N), tìm đoạn nối tiếp thuần và song song thuần.</li>
 <li><strong>Thu gọn:</strong> thay đoạn sâu nhất bằng một điện trở tương đương, vẽ lại, lặp tới còn một điện trở.</li>
 <li><strong>Dòng chính:</strong> $I=\dfrac U{R_{td}}$.</li>
 <li><strong>Tính ngược:</strong> từ ngoài vào trong, dùng chia thế, chia dòng; kiểm tổng dòng ở nút và tổng thế trên đoạn nối tiếp.</li>
@@ -111,6 +113,7 @@
 </div>
 
 <h3>IV. Điểm cùng điện thế: dây, ampe kế, khoá K</h3>
+<p class="tl-claim">Hai điểm cùng điện thế thì chập hoặc bỏ nhánh.</p>
 
 <p><strong>🔑 Không chênh thế · Chập lại hoặc bỏ đi</strong></p>
 <table class="tl-table">
@@ -139,6 +142,7 @@
 </div>
 
 <h3>V. Mạch cầu cân bằng</h3>
+<p class="tl-claim">Cầu cân bằng thì nhánh PQ không có dòng.</p>
 
 <p><strong>🔑 Tích chéo bằng nhau · $U_{PQ}=0$ · Bỏ nhánh PQ</strong></p>
 <!--FIG3-->
@@ -160,6 +164,7 @@
 </div>
 
 <h3>VI. Ampe kế và vôn kế thực</h3>
+<p class="tl-claim">Ampe kế và vôn kế thực đều có điện trở.</p>
 
 <p><strong>🔑 $R_A$ nối tiếp · $R_V$ song song · $R_A$ nhỏ, $R_V$ lớn</strong></p>
 <table class="tl-table">
@@ -177,7 +182,7 @@
 <div class="tl-box tl-box--exp">
 <p class="tl-label">🔬 Thí nghiệm: đo hiệu điện thế trên $R_2$ (số liệu minh hoạ)</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> $R_1=R_2=100\ \Omega$ nối tiếp, $U=12\ \text{V}$; mắc vôn kế vào hai đầu $R_2$, đổi ba vôn kế có $R_V$ khác nhau.</li>
+<li><strong>Làm:</strong> $R_1=R_2=100\ \Omega$ nối tiếp, $U=12\ \text{V}$<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>; mắc vôn kế vào hai đầu $R_2$, đổi ba vôn kế có $R_V$ khác nhau.</li>
 <li><strong>Quan sát:</strong> bảng bên dưới.</li>
 <li><strong>Rút ra:</strong> giá trị thật là $6\ \text{V}$; vôn kế nào cũng chỉ thiếu, và $R_V$ càng lớn càng gần giá trị thật.</li>
 </ol>
@@ -201,6 +206,7 @@
 </div>
 
 <h3>VII. Biến trở, ẩn số và cực trị</h3>
+<p class="tl-claim">Mỗi trạng thái của mạch cho một phương trình.</p>
 
 <p><strong>🔑 Mỗi trạng thái một phương trình · Kiểm tra miền giá trị</strong></p>
 <ul>
@@ -249,3 +255,7 @@
 <li>Đọc đề: đổi đơn vị, vẽ lại sơ đồ có tên nút, rồi mới tính.</li>
 </ul>
 </div>
+
+<ol class="tl-fns">
+<li id="tl-fn-1">Coi nguồn lí tưởng và dây nối không có điện trở. Số liệu tính từ mô hình, không phải đo thật.</li>
+</ol>
