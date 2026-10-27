@@ -139,34 +139,13 @@ fig4 = wrap("0 0 420 244",
             b, "Hình 4. Động năng trung bình tỉ lệ thuận với nhiệt độ tuyệt đối: đường thẳng qua gốc, dùng chung cho mọi chất khí.")
 
 
-# ------------------------------------------------- Hình 5: phân bố tốc độ phân tử theo nhiệt độ (vẽ lại theo OpenStax Hình 13.25)
-import math
-b = defs("f5")
-X0, Y0, XM, YT = 60, 190, 400, 30      # gốc, mép phải, đỉnh trục
-def _f(v, a):
-    return 4 / (math.sqrt(math.pi) * a ** 3) * v * v * math.exp(-v * v / (a * a))
-def _curve(a, c, dash=""):
-    pts = []
-    for i in range(0, 61):
-        v = i * 4.0 / 60 * 100            # v từ 0 đến 400 (đơn vị tuỳ ý)
-        y = Y0 - _f(v, a) * K
-        pts.append(f"{X0 + v * 0.8:.1f},{y:.1f}")
-    return f'<polyline fill="none" stroke="{c}" stroke-width="2.8" points="{" ".join(pts)}"/>'
-A1, A2 = 100.0, 100.0 * math.sqrt(2)     # T₂ = 2T₁ → v mp lớn gấp √2
-K = 130 / _f(A1, A1)                     # đỉnh T₁ cao 130 px
-b += line(X0, Y0, XM, Y0, "currentColor", 2) + line(X0, Y0, X0, YT, "currentColor", 2)
-b += text(XM, Y0 + 24, "tốc độ phân tử v (m/s)", "currentColor", 11, "end", "600")
-b += text(X0 + 6, YT + 4, "tỉ lệ phân tử", "currentColor", 11, "start", "600")
-b += _curve(A1, BLUE) + _curve(A2, ORG)
-b += line(X0 + A1 * 0.8, Y0 - 130, X0 + A1 * 0.8, Y0, BLUE, 1.2, "5 4", .6)
-pk2 = Y0 - _f(A2, A2) * K
-b += line(X0 + A2 * 0.8, pk2, X0 + A2 * 0.8, Y0, ORG, 1.2, "5 4", .6)
-b += text(X0 + A1 * 0.8 - 6, Y0 - 136, "T₁ (thấp)", BLUE, 12, "end", "700")
-b += text(X0 + A2 * 0.8 + 70, pk2 + 6, "T₂ (cao)", ORG, 12, "start", "700")
-b += text(XM, 50, "T₂ > T₁", "currentColor", 12, "end", "700")
-fig5 = wrap("0 0 420 222",
-            "Hai đường cong phân bố tốc độ phân tử khí: ở nhiệt độ cao T2 đỉnh đường cong dịch sang phải, thấp hơn và rộng hơn so với nhiệt độ thấp T1",
-            b, "Hình 5. Phân bố tốc độ phân tử khí ở hai nhiệt độ.<br>Xanh T₁ (thấp): đỉnh cao, hẹp.<br>Cam T₂ (cao): đỉnh dịch sang phải, thấp, rộng.<br>Vẽ lại theo OpenStax, College Physics 2e, Hình 13.25 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
+# ------------------------------------------------- Hình 5: ảnh OpenStax Hình 13.25 (đợt 2, 27/10/2026)
+fig5 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-ap-suat-dong-nang/hinh-phan-bo-toc-do-hai-nhiet-do.webp" '
+        'alt="Hai đường cong phân bố tốc độ phân tử khí: ở nhiệt độ cao T2 đỉnh dịch sang phải, thấp hơn và rộng hơn so với nhiệt độ thấp T1" '
+        'loading="lazy" width="651" height="564"><figcaption>Hình 5. Phân bố tốc độ phân tử ở hai nhiệt độ.<br>'
+        'Đỏ T₁ (thấp): đỉnh cao, hẹp. Xanh T₂ (cao): đỉnh lệch phải, thấp, rộng.<br>'
+        'Probability = xác suất; Speed = tốc độ.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 13.25 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

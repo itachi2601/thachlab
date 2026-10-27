@@ -78,44 +78,13 @@ fig2 = wrap("0 0 440 284",
             "Ba chùm tia alpha, beta trừ và gamma bay vào điện trường đều: alpha lệch xuống bản âm, beta trừ lệch lên bản dương, gamma bay thẳng",
             b, "Hình 2. γ không mang điện nên bay thẳng; β⁻ nhẹ hơn α nhiều nên lệch gắt hơn.")
 
-# ------------------------------------------------- Hình 3: đường cong phân rã
-X0, DX = 70, 85
-Y0, DY = 190, 130
-
-
-def rx(n):
-    return X0 + DX * n
-
-
-def ry(n):
-    return Y0 - DY * (2 ** (-n))
-
-
-b = defs("f3")
-b += text(14, 22, "Số hạt nhân giảm một nửa sau mỗi chu kì T", "currentColor", 12.5, "start", "700")
-b += line(X0, Y0, 410, Y0, "currentColor", 2)
-b += line(X0, Y0, X0, 44, "currentColor", 2)
-b += text(58, 40, "N", "currentColor", 12, "end", "700")
-b += text(432, 207, "t", "currentColor", 12, "middle", "700")
-pts = []
-n = 0.0
-while n <= 4.001:
-    pts.append(f"{rx(n):.1f},{ry(n):.1f}")
-    n += 0.2
-b += f'<polyline fill="none" stroke="{GRN}" stroke-width="2.6" points="{" ".join(pts)}"/>'
-for k in (1, 2, 3):
-    b += line(rx(k), Y0, rx(k), ry(k), "currentColor", 1, "4 4", .35)
-    b += line(X0, ry(k), rx(k), ry(k), "currentColor", 1, "4 4", .35)
-for k in range(5):
-    b += dot(rx(k), ry(k), 4, GRN)
-for k, nhan in ((0, "N₀"), (1, "N₀/2"), (2, "N₀/4"), (3, "N₀/8")):
-    b += text(64, ry(k) + 4, nhan, GRN, 10.5, "end", "700")
-for k, nhan in ((0, "0"), (1, "T"), (2, "2T"), (3, "3T"), (4, "4T")):
-    b += text(rx(k), 206, nhan, "currentColor", 11.5, "middle", "600")
-b += text(248, 96, "mỗi T lại còn một nửa", GRN, 11, "start", "600")
-fig3 = wrap("0 0 440 240",
-            "Đường cong phân rã: số hạt nhân giảm còn một nửa sau mỗi chu kì bán rã T",
-            b, "Hình 3. Sau mỗi khoảng T, số hạt nhân giảm một nửa.")
+# ------------------------------------------------- Hình 3: ảnh OpenStax (đợt 2, 27/10/2026)
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-phong-xa/hinh-phan-ra-theo-chu-ki.webp" '
+        'alt="Đồ thị số hạt nhân giảm một nửa sau mỗi chu kì bán rã" '
+        'loading="lazy" width="750" height="597" style="max-width:100%;height:auto"><figcaption>'
+        'Hình 3. Mỗi T còn một nửa. Nhãn: t<sub>1/2</sub> = T; Time = thời gian.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 31.19 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- Hình 4: dịch chuyển ô trong bảng tuần hoàn
 b = defs("f4")

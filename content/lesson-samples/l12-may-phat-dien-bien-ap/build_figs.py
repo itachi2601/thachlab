@@ -38,74 +38,27 @@ def wrap(vb, label, body, cap, exp=""):
             f'{body}</svg><figcaption>{cap}</figcaption></figure>')
 
 
-# ------------------------------------------------- Hình 1: bốn chặng từ tua-bin tới ổ cắm
-b = defs("f1")
-b += text(14, 24, "Từ tua-bin tới ổ cắm: bốn chặng đổi số", "currentColor", 13, "start", "700")
-b += hop(12, 52, 74, 56, "máy phát", RED)
-b += hop(104, 52, 74, 56, "tăng áp", ORG)
-b += hop(262, 52, 74, 56, "hạ áp", BLUE)
-b += hop(354, 52, 74, 56, "tải", GRN)
-b += arrow("f1", "r", 88, 80, 102, 80, 2.4)
-b += arrow("f1", "o", 180, 80, 196, 80, 2.4)
-b += line(196, 80, 260, 80, ORG, 2.4, "7 5")
-b += text(222, 44, "đường dây 500 kV", ORG, 11, "middle", "700")
-b += arrow("f1", "b", 338, 80, 352, 80, 2.4)
-b += text(49, 126, "tua-bin quay", "currentColor", 11, "middle", "600")
-b += text(141, 126, "lên 500 kV", ORG, 11, "middle", "600")
-b += text(299, 126, "về 220 V", BLUE, 11, "middle", "600")
-b += text(391, 126, "trong nhà", "currentColor", 11, "middle", "600")
-b += text(14, 158, "Hao phí trên đường dây: ΔP = R·P²/U²", RED, 12, "start", "700")
-b += text(14, 178, "Tăng điện áp lên k lần thì hao phí giảm k² lần", "currentColor", 11, "start", "600")
-fig1 = wrap("0 0 440 192",
-            "Sơ đồ từ máy phát điện tới ổ cắm: máy phát, máy biến áp tăng áp, đường dây 500 kV, máy biến áp hạ áp và tải 220 V",
-            b,
-            "Hình 1. Bốn chặng: máy phát → tăng áp lên 500 kV → đường dây → hạ áp về 220 V.")
+def wrap_img(img, alt, w, h, cap, src):
+    return (f'<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-may-phat-dien-bien-ap/{img}.webp" alt="{alt}" '
+            f'loading="lazy" width="{w}" height="{h}"><figcaption>{cap}<br><small>Hình: OpenStax, College Physics 2e, '
+            f'Hình {src} — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
-# ------------------------------------------------- Hình 2: hai cách bố trí máy phát một pha
-b = defs("f2")
-b += text(14, 38, "a) nam châm quay", RED, 14, "start", "700")
-b += circ(110, 100, 50, "currentColor", 2.2)
-b += rect(44, 84, 12, 32, "rgba(56,189,248,.18)", BLUE, 1.8, 3)
-b += rect(164, 84, 12, 32, "rgba(56,189,248,.18)", BLUE, 1.8, 3)
-b += line(86, 120, 110, 96, BLUE, 8, cap="round")
-b += line(110, 96, 134, 72, RED, 8, cap="round")
-b += text(148, 58, "N", RED, 14, "start", "700")
-b += text(87, 137, "S", BLUE, 14, "start", "700")
-b += f'<path d="M 162.6 124.5 A 58 58 0 0 1 134.5 152.6" fill="none" stroke="{GRN}" stroke-width="2.4" marker-end="url(#f2-g)"/>'
-b += text(168, 136, "ω", GRN, 14, "start", "700")
-b += text(14, 168, "cuộn dây đứng yên", BLUE, 14, "start", "600")
-b += text(14, 186, "lấy điện trực tiếp", "currentColor", 14, "start", "600")
-b += text(232, 36, "b) khung dây quay", BLUE, 14, "start", "700")
-b += rect(236, 40, 72, 18, "rgba(248,113,113,.18)", RED, 1.8, 3)
-b += text(272, 54.5, "N", RED, 14, "middle", "700")
-b += rect(236, 134, 72, 18, "rgba(56,189,248,.18)", BLUE, 1.8, 3)
-b += text(272, 147.5, "S", BLUE, 14, "middle", "700")
-b += field_line(256, 60, 256, 126, "currentColor")
-b += field_line(288, 60, 288, 126, "currentColor")
-b += text(222, 72, "B", "currentColor", 14, "start", "700")
-b += rect(244, 70, 48, 52, "rgba(56,189,248,.14)", BLUE, 2, 4)
-b += f'<path d="M 236 80 A 16 16 0 0 0 236 112" fill="none" stroke="{GRN}" stroke-width="2.4" marker-end="url(#f2-g)"/>'
-b += text(206, 100, "ω", GRN, 14, "start", "700")
-b += circ(330, 94, 8, ORG, 2.2)
-b += circ(352, 94, 8, ORG, 2.2)
-b += line(292, 94, 322, 94, ORG, 2.2)
-b += line(292, 112, 352, 112, ORG, 2.2)
-b += line(352, 112, 352, 102, ORG, 2.2)
-b += line(322, 86, 322, 70, "currentColor", 1.4, "4 3")
-b += rect(325, 74, 10, 8, "rgba(251,146,60,.35)", ORG, 1.6, 2)
-b += rect(347, 74, 10, 8, "rgba(251,146,60,.35)", ORG, 1.6, 2)
-b += line(330, 74, 330, 52, ORG, 2.2)
-b += line(352, 74, 352, 66, ORG, 2.2)
-b += line(330, 52, 400, 52, ORG, 2.2)
-b += line(352, 66, 400, 66, ORG, 2.2)
-b += text(372, 84, "chổi quét", ORG, 14, "start", "600")
-b += text(318, 130, "hai vành khuyên", ORG, 12, "start", "600")
-b += text(318, 146, "riêng; mỗi vành nối", ORG, 12, "start", "600")
-b += text(318, 162, "một đầu khung dây", ORG, 12, "start", "600")
-fig2 = wrap("0 0 452 204",
-            "Hai cách bố trí máy phát điện xoay chiều một pha: cho nam châm quay thì lấy điện trực tiếp; cho khung dây quay trong từ trường B với tốc độ góc ω thì phải dùng vành khuyên và chổi quét",
-            b,
-            "Hình 2. Hai cách bố trí máy phát một pha.<br>(a) Nam châm quay: cuộn dây đứng yên, lấy điện trực tiếp.<br>(b) Khung dây quay với tốc độ góc ω trong từ trường B: cần hai vành khuyên và hai chổi quét.<br>Vẽ lại theo OpenStax, College Physics 2e, Hình 23.19 và 23.20 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
+
+fig1 = wrap_img("hinh-he-thong-truyen-tai-d2",
+    "Sơ đồ truyền tải điện: nhà máy phát điện, máy biến áp tăng áp, đường dây cao áp trên các cột tháp, trạm hạ áp, đường dây phân phối, máy biến áp hạ áp tới ngôi nhà",
+    1000, 313,
+    "Hình 1. Máy phát → tăng áp → đường dây cao áp → hạ áp → nhà em.<br>"
+    "Số liệu trong ảnh là của sách; bài này dùng 500 kV và 220 V.<br>"
+    "Nhãn: Power plant = nhà máy · Step-up = tăng áp · High-voltage transmission line = đường dây cao áp · Step-down = hạ áp · substation = trạm biến áp.",
+    "23.26")
+
+fig2 = wrap_img("hinh-may-phat-khung-quay-d2",
+    "Máy phát điện xoay chiều một pha: khung dây quay quanh trục giữa hai cực N và S của nam châm, hai vành khuyên và hai chổi quét nối với bóng đèn, bên phải là đồ thị suất điện động hình sin theo thời gian",
+    1000, 554,
+    "Hình 2. Máy phát một pha: khung dây quay với tốc độ góc ω giữa hai cực N, S.<br>"
+    "Mỗi đầu khung nối một vành khuyên riêng; chổi quét lấy điện ra bóng đèn. Suất điện động biến thiên hình sin, T = 2π/ω.<br>"
+    "Nhãn: Brushes = chổi quét · ℰ = suất điện động · ℰ₀ = giá trị cực đại · T = chu kì.",
+    "23.21")
 
 # ------------------------------------------------- Hình 3: ba pha — ba cuộn dây và ba suất điện động
 b = defs("f3")
@@ -143,50 +96,13 @@ fig3 = wrap("0 0 440 244",
             b,
             "Hình 3. Ba cuộn dây lệch 120° trên stato cho ba suất điện động lệch pha một phần ba chu kì.")
 
-# ------------------------------------------------- Hình 4: máy biến áp
-b = defs("f4")
-b += text(14, 24, "Máy biến áp: hai cuộn dây trên một lõi kín", "currentColor", 14, "start", "700")
-b += rect(140, 40, 160, 26, "rgba(148,163,184,.22)", "currentColor", 1.6, 4)
-b += rect(140, 144, 160, 26, "rgba(148,163,184,.22)", "currentColor", 1.6, 4)
-b += rect(140, 40, 26, 130, "rgba(148,163,184,.22)", "currentColor", 1.6, 4)
-b += rect(274, 40, 26, 130, "rgba(148,163,184,.22)", "currentColor", 1.6, 4)
-for cy in (72, 101, 130):
-    b += circ(153, cy, 11, RED, 2.2)
-    b += circ(287, cy, 11, BLUE, 2.2)
-b += line(60, 76, 142, 76, RED, 2.2)
-b += line(60, 126, 142, 126, RED, 2.2)
-b += line(60, 76, 60, 89, RED, 2.2)
-b += line(60, 113, 60, 126, RED, 2.2)
-b += circ(60, 101, 12, RED, 2.2)
-b += f'<path d="M 52 101 q4 -8 8 0 t8 0" fill="none" stroke="{RED}" stroke-width="2"/>'
-b += line(298, 76, 380, 76, BLUE, 2.2)
-b += line(298, 126, 380, 126, BLUE, 2.2)
-b += line(380, 76, 380, 90, BLUE, 2.2)
-b += line(380, 112, 380, 126, BLUE, 2.2)
-b += rect(372, 90, 16, 22, "none", BLUE, 2.2, 2)
-b += text(396, 105, "R", BLUE, 14, "start", "700")
-b += field_line(160, 53, 280, 53, GRN, 2)
-b += field_line(280, 157, 160, 157, GRN, 2)
-b += f'<text x="220" y="86" fill="{GRN}" font-size="14" font-weight="700" text-anchor="middle">Φ<tspan dy="3" font-size="12">B</tspan></text>'
-b += text(24, 60, "nguồn u₁", RED, 14, "start", "700")
-b += text(374, 60, "tải u₂", BLUE, 14, "start", "700")
-b += text(130, 96, "sơ cấp", RED, 14, "end", "700")
-b += text(130, 114, "N₁", RED, 14, "end", "700")
-b += text(310, 96, "thứ cấp", BLUE, 14, "start", "700")
-b += text(310, 114, "N₂", BLUE, 14, "start", "700")
-b += text(220, 114, "lõi thép", "currentColor", 14, "middle", "600")
-b += text(14, 190, "nguồn xoay chiều · U₁/U₂ = N₁/N₂ = I₂/I₁", "currentColor", 14, "start", "700")
-b += text(14, 210, "không đổi tần số · không sinh thêm điện năng", "currentColor", 14, "start", "600")
-b += text(14, 230, "lõi thép ghép từ các lá mỏng cách điện", "currentColor", 14, "start", "600")
-b += text(372, 168, "kí hiệu", "currentColor", 12, "middle", "600")
-b += f'<path d="M 340 224 v-8 M 340 216 c-10 0 -10 -6 0 -6 c-10 0 -10 -6 0 -6 c-10 0 -10 -6 0 -6 c-10 0 -10 -6 0 -6 v-8 M 404 224 v-8" fill="none" stroke="{RED}" stroke-width="1.8"/>'
-b += f'<path d="M 404 216 c10 0 10 -6 0 -6 c10 0 10 -6 0 -6 c10 0 10 -6 0 -6 c10 0 10 -6 0 -6 v-8" fill="none" stroke="{BLUE}" stroke-width="1.8"/>'
-b += line(370, 184, 370, 214, "currentColor", 1.6)
-b += line(376, 184, 376, 214, "currentColor", 1.6)
-fig4 = wrap("0 0 440 238",
-            "Sơ đồ máy biến áp: cuộn sơ cấp và cuộn thứ cấp quấn trên một lõi thép kín ghép từ các lá mỏng cách điện",
-            b,
-            "Hình 4. Sơ đồ máy biến áp một pha.<br>Từ thông Φ<sub>B</sub> khép kín trong lõi thép.<br>Phía dưới: kí hiệu máy biến áp trên sơ đồ mạch.<br>Vẽ lại theo OpenStax, College Physics 2e, Hình 23.27 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
+fig4 = wrap_img("hinh-may-bien-ap-d2",
+    "Máy biến áp: hai cuộn dây quấn trên hai cạnh của một lõi thép kín ghép từ các lá mỏng, đường sức từ khép kín trong lõi; bên dưới là kí hiệu máy biến áp",
+    660, 768,
+    "Hình 4. Máy biến áp: hai cuộn dây quấn trên một lõi thép kín, đường sức từ (hồng) khép kín trong lõi.<br>"
+    "Cuộn sơ cấp (bên trái, 5 vòng) và cuộn thứ cấp (bên phải, 8 vòng): điện áp tỉ lệ với số vòng.<br>"
+    "Nhãn: V<sub>p</sub> = điện áp cuộn sơ cấp (tương ứng U₁) · V<sub>s</sub> = điện áp cuộn thứ cấp (U₂) · N<sub>p</sub> = số vòng cuộn sơ cấp (N₁) · Transformer symbol = kí hiệu máy biến áp.",
+    "23.27")
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

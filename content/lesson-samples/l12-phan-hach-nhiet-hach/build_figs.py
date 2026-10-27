@@ -39,49 +39,30 @@ def wrap(vb, label, body, cap, exp=""):
             f'<figcaption>{cap}</figcaption></figure>')
 
 
-# ------------------------------------------------- Hình 1: nhà máy điện hạt nhân (mở bài)
-b = defs("f1")
-b += text(14, 22, "Nhà máy điện hạt nhân: không đốt gì cả", "currentColor", 13, "start", "700")
-b += text(3, 50, "nhiên liệu + thanh điều khiển", ORG, 12.5, "start", "600")
-for x, nhan in ((3, "Lò phản ứng"), (117, "Bộ trao đổi nhiệt"), (231, "Tua bin"), (345, "Máy phát điện")):
-    b += rect(x, 60, 92, 80, "rgba(148,163,184,.10)")
-    if nhan == "Bộ trao đổi nhiệt":
-        b += text(x + 46, 96, "Bộ trao", "currentColor", 12.5, "middle", "700")
-        b += text(x + 46, 114, "đổi nhiệt", "currentColor", 12.5, "middle", "700")
-    else:
-        b += text(x + 46, 104, nhan, "currentColor", 11.5 if len(nhan) > 11 else 12.5, "middle", "700")
-for x in (95, 209, 323):
-    b += arrow("f1", "r", x, 100, x + 20, 100, 2.4)
-b += text(3, 168, "nhiệt của phản ứng → hơi nước → tua bin → điện năng", ORG, 12.5, "start", "700")
-b += text(3, 192, "nguồn nhiệt nằm trong lòng thanh nhiên liệu, không có ngọn lửa nào", "currentColor", 12)
-fig1 = wrap("0 0 440 210",
-            "Sơ đồ nhà máy điện hạt nhân: lò phản ứng cấp nhiệt cho bộ trao đổi nhiệt, hơi nước chạy tua bin rồi máy phát điện",
-            b, "Hình 1. Nhà máy điện hạt nhân: nhiệt từ thanh urani, không đốt gì.")
+# ------------------------------------------------- Hình 1, 2: ảnh OpenStax (đợt 2, 27/10/2026)
+def anh(file, alt, w, h, cap):
+    return (f'<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-phan-hach-nhiet-hach/{file}" alt="{alt}" '
+            f'loading="lazy" width="{w}" height="{h}"><figcaption>{cap}</figcaption></figure>')
 
-# ------------------------------------------------- Hình 2: phân hạch U-235
-b = defs("f2")
-b += text(14, 22, "Phân hạch U-235", "currentColor", 13, "start", "700")
-b += circ(78, 112, 36, "rgba(248,113,113,.18)", RED)
-b += text(78, 117, "U-235", RED, 13, "middle", "700")
-b += circ(24, 74, 8, BLUE, BLUE)
-b += text(24, 58, "n", BLUE, 13, "middle", "700")
-b += arrow("f2", "b", 36, 80, 50, 92, 2.4)
-b += arrow("f2", "r", 116, 112, 166, 112, 2.6)
-b += text(141, 102, "vỡ ra", RED, 12.5, "middle", "700")
-b += circ(230, 84, 28, "rgba(251,146,60,.18)", ORG)
-b += text(230, 89, "Ba-144", ORG, 12.5, "middle", "700")
-b += circ(222, 160, 26, "rgba(56,189,248,.18)", BLUE)
-b += text(222, 165, "Kr-89", BLUE, 12.5, "middle", "700")
-for ny in (56, 100, 144):
-    b += circ(306, ny, 8, BLUE, BLUE)
-    b += text(320, ny + 4, "n", BLUE, 13, "start", "700")
-b += arrow("f2", "b", 256, 74, 290, 62, 2)
-b += arrow("f2", "b", 246, 148, 290, 140, 2)
-b += text(296, 178, "2–3 nơtron mới", BLUE, 12.5, "start", "700")
-b += text(432, 200, "toả ≈ 173 MeV", ORG, 13, "end", "700")
-fig2 = wrap("0 0 440 210",
-            "Một nơtron chậm bị U-235 hấp thụ, hạt nhân vỡ thành hai mảnh Ba-144 và Kr-89, nhả thêm 2 đến 3 nơtron và toả năng lượng",
-            b, "Hình 2. Nơtron chậm làm U-235 vỡ thành hai mảnh và nhả thêm nơtron.")
+
+fig1 = anh(
+    "hinh-lo-ap-luc-d2.webp",
+    "Sơ đồ nhà máy điện hạt nhân lò nước áp lực: thanh nhiên liệu và thanh điều khiển trong lò, bộ trao đổi nhiệt, tua bin hơi, máy phát điện, bình ngưng",
+    1000, 611,
+    "Hình 1. Nhà máy điện hạt nhân: nhiệt sinh ra trong lò, không đốt gì.<br>"
+    "Nhãn: control rods = thanh điều khiển; fuel rods = thanh nhiên liệu; core = vùng hoạt (nhiên liệu + chất làm chậm); "
+    "heat exchanger = bộ trao đổi nhiệt; steam turbine = tua bin hơi; electric generator = máy phát; condenser = bình ngưng; "
+    "pump = bơm; shielding = lớp che chắn; primary/secondary system = hệ sơ cấp/thứ cấp.<br>"
+    "<small>Hình: OpenStax, College Physics 2e, Hình 32.23 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
+
+fig2 = anh(
+    "hinh-phan-hach-4-buoc-d2.webp",
+    "Bốn bước phân hạch: nơtron đến gần hạt nhân nặng, hạt nhân biến dạng thắt ở giữa, tách thành hai mảnh mang điện dương đẩy nhau, rồi hai mảnh vỡ bay ra cùng nơtron mới",
+    661, 1000,
+    "Hình 2. Phân hạch do nơtron: (a) nơtron tới; (b) hạt nhân biến dạng, thắt giữa; "
+    "(c) hai phần mang điện + đẩy nhau; (d) hai mảnh bay ra cùng nơtron mới.<br>"
+    "Nhãn: FF<sub>1</sub>, FF<sub>2</sub> = hai mảnh phân hạch (fission fragments).<br>"
+    "<small>Hình: OpenStax, College Physics 2e, Hình 32.21 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
 
 # ------------------------------------------------- Hình 3: ba kiểu phát triển dây chuyền
 b = defs("f3")
