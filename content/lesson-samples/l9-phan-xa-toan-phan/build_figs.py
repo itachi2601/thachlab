@@ -5,7 +5,7 @@ import math, re, pathlib
 from svg_lib import RED, BLUE, ORG, GRN, chevron, wrap
 
 HERE = pathlib.Path(__file__).resolve().parent
-PHUT = "16"            # số phút đọc theo lint_do_dai.py (cập nhật sau mỗi lần sửa chữ)
+PHUT = "18"            # số phút đọc theo lint_do_dai.py (cập nhật sau mỗi lần sửa chữ)
 
 FS, FSUB = 17, 13        # cỡ chữ SVG (viewBox ~420) và chỉ số dưới
 
