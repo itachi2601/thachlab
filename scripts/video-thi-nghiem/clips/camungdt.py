@@ -38,7 +38,7 @@ def coil_back(d):
 def coil_front(d):
     for x in turns():
         d.arc([x - 17, CY - CR, x + 17, CY + CR], 270, 90, fill=A(ORANGE, 0.92), width=9)
-    text(d, (CX, 334), "600 vòng", 36, MUTED, bold=False)
+    text(d, (905, CY - 150), "600 vòng", 36, MUTED, bold=False)
 
 
 def dashed_ellipse(d, box, a0, a1, color, w=4, seg=7, gap=6):
@@ -60,20 +60,49 @@ def chevron(d, x, y, ang, color, s=13, w=4):
         d.line([(x, y), (x + s * math.cos(a), y + s * math.sin(a))], fill=color, width=w)
 
 
+def _trace(ang, inset=10):
+    """Duong suc cua hai cuc tu dat gan hai dau nam cham (N duong, S am), toa do tuong doi (tip, CY)."""
+    nx, sx = -inset, -ML + inset
+    x, y = nx + 6 * math.cos(ang), -6 * math.sin(ang); pts = [(x, y)]
+    for _ in range(4000):
+        ex = ey = 0.0
+        for px, q in ((nx, 1), (sx, -1)):
+            dx, dy = x - px, y; r3 = (dx * dx + dy * dy) ** 1.5; ex += q * dx / r3; ey += q * dy / r3
+        n = math.hypot(ex, ey); x += 3 * ex / n; y += 3 * ey / n; pts.append((x, y))
+        if math.hypot(x - sx, y) < 8: break
+    return pts
+
+# Ba duong phia tren (duoi = doi xung). Ep doc de vua khung (giu dung hinh dang: ra o N, vao o S).
+_RAW = [_trace(math.radians(a)) for a in (60, 80, 100)]
+_SQ = 190 / max(-y for _, y in _RAW[0])
+FIELD = [[(x, y * _SQ) for x, y in ln] for ln in _RAW]
+
+
+def dashed_poly(d, pts, color, w=4, seg=10, gap=8):
+    acc, on, cur = 0.0, True, [pts[0]]
+    for p, q in zip(pts, pts[1:]):
+        acc += math.dist(p, q); cur.append(q)
+        if acc >= (seg if on else gap):
+            if on and len(cur) > 1: d.line(cur, fill=color, width=w)
+            on, acc, cur = not on, 0.0, [q]
+    if on and len(cur) > 1: d.line(cur, fill=color, width=w)
+
+
 def field(d, tip, alpha):
-    """Duong suc ngoai nam cham: ra o N (phai), vao o S (trai). Net dut, mui chevron."""
+    """Duong suc ngoai nam cham: di ra o cuc N (phai), vong qua, di vao cuc S (trai). Net dut, mui chevron."""
     if alpha <= 0: return
-    c = A(PURPLE, 0.55 * alpha); xs = tip - ML
-    for k, h in ((1, 92), (2, 150)):
-        box = [xs - 34 * k, CY - h, tip + 34 * k, CY + h]
-        dashed_ellipse(d, box, 180, 360, c)      # nua tren
-        dashed_ellipse(d, box, 0, 180, c)        # nua duoi
-        mx = (box[0] + box[2]) / 2
-        chevron(d, mx, CY - h, math.pi, c)       # tren: chay tu N sang S (sang trai)
-        chevron(d, mx, CY + h, math.pi, c)
-    # duong truc tu cuc N di ra
-    d.line([(tip + 6, CY), (tip + 120, CY)], fill=c, width=4)
-    chevron(d, tip + 120, CY, 0, c)
+    c = A(PURPLE, 0.55 * alpha)
+    for ln in FIELD:
+        for sg in (1, -1):
+            pts = [(tip + x, CY + sg * y) for x, y in ln]
+            dashed_poly(d, pts, c)
+            k = min(range(len(pts)), key=lambda n: -abs(pts[n][1] - CY))      # dinh cung: mui ten chi N -> S
+            (x0, y0), (x1, y1) = pts[max(0, k - 3)], pts[min(len(pts) - 1, k + 3)]
+            chevron(d, pts[k][0], pts[k][1], math.atan2(y1 - y0, x1 - x0), c)
+    # duong truc: ra khoi N ben phai, vao S ben trai
+    d.line([(tip + 6, CY), (tip + 120, CY)], fill=c, width=4); chevron(d, tip + 120, CY, 0, c)
+    xs = tip - ML
+    d.line([(xs - 120, CY), (xs - 6, CY)], fill=c, width=4); chevron(d, xs - 40, CY, 0, c)
 
 
 def magnet(d, tip, alpha=1.0):

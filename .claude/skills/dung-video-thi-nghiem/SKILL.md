@@ -26,6 +26,7 @@ Thầy chốt 27/10/2026: thí nghiệm không có clip YouTube thì tự dựng
    - Trục/thang không đổi giữa chừng; mỗi cơ chế (vd. tan và sôi) một hình riêng.
    - Kết bằng câu chốt + câu hỏi tự nhớ lại, không kết ở bẫy; tổng ≤ 50 s.
    - Chữ không chồng, không cắt mép phải (thanh/nhãn dài), chữ ≥ 32 px.
+   - Hình vật lí đúng: đường sức (ra N vào S, không cắt nhau), chiều vectơ/lực/dòng, tỉ lệ hình học.
    Rồi `render.py <tên>` ra `ra/<id>.mp4` (**chạy trong tab terminal**, song song được). `--preview` (3 khung/cảnh, nhiều file) chỉ dùng khi cần soi riêng một cảnh.
 7. Chạy lô: mỗi agent (Opus cho chất lượng hình) một clip, **mỗi agent một thư mục nháp con riêng** trong scratchpad; commit đúng file `clips/*.py` (mp4 nằm `ra/`, gitignore).
 
@@ -40,6 +41,7 @@ Thầy chốt 27/10/2026: thí nghiệm không có clip YouTube thì tự dựng
 mp4 chưa chèn vào bài: chỗ đặt (YouTube không công khai + `scripts/chen-video-thi-nghiem.mts` hay file tĩnh trong web) thầy chưa chốt. Không tự đăng. Lô: 1 = L12 còn lại (~40), 2 = L12 + L11 điện (~60), 3 = L11 dao động + L9 (~45), 4 = L10 (~112).
 
 ## Nhật ký rút kinh nghiệm
+- 2026-10-27 · camungdt vẽ đường sức nam châm bằng elip kín bao cả thanh (cắt trục ngay trước cực N, sau cực S) — thầy bắt sai → đường sức phải ra ở N, vòng ngoài, vào ở S: dùng `_trace()`/`field()` trong `clips/camungdt.py` (lần theo trường hai cực, ép dọc cho vừa khung). Cổng B phải hỏi riêng "hình vật lí có đúng không" (đường sức, chiều lực, chiều dòng), không chỉ soát chữ/số.
 - 2026-10-27 · Cổng B lần đầu (kiem-code vai HS) bắt được ở boyle/camungdt: thời gian nghĩ < 5 s, nhãn "Đáp án B" còn nằm sang bước sau, câu hỏi chốt cần dữ kiện clip chưa cho, chữ trong bài lệch số trong JSON (5% vs 8%), dòng "chưa nói được" không có nguồn → các mục này đã vào checklist; agent đọc ảnh nhỏ có khi báo nhầm chính tả, kiểm lại bằng mã trước khi sửa.
 - 2026-10-27 · Bản 2 chuyenthe render xong mới phát hiện 5 lỗi nội dung qua góp ý học sinh → thêm cổng A (`--kich-ban`) + cổng B (`--sheet` đọc trong `kiem-code`) trước render; sau render chỉ đo bằng ffmpeg.
 - 2026-10-27 · Học sinh ảo xem chuyenthe bản 2: đồ thị thật không khớp lựa chọn nào (đoạn −6→0 °C tàng hình trên trục 0–100), không lộ đáp án sau Dự đoán, nhãn "ghi lúc phút" lệch đồng hồ, trục t đổi thang giữa chừng → sau phần Tiến hành phải có cảnh "Đáp án X" + phóng to đoạn ngắn; trục cố định từ đầu; mỗi đoạn ngang một hình cơ chế riêng; kết bằng câu hỏi tự nhớ lại (không kết ở bẫy).
