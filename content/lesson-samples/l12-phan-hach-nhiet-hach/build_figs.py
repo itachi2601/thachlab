@@ -50,7 +50,7 @@ fig1 = anh(
     "Sơ đồ nhà máy điện hạt nhân lò nước áp lực: thanh nhiên liệu và thanh điều khiển trong lò, bộ trao đổi nhiệt, tua bin hơi, máy phát điện, bình ngưng",
     1000, 611,
     "Hình 1. Nhà máy điện hạt nhân: nhiệt sinh ra trong lò.<br>"
-    "Nhãn: control rods = thanh điều khiển; fuel rods = nhiên liệu; steam turbine = tua bin hơi.<br>"
+    "Nhãn: control rods = thanh điều khiển; fuel rods = nhiên liệu; heat exchanger = bộ trao đổi nhiệt; steam turbine = tua bin hơi; condenser = bình ngưng; electric generator = máy phát; primary/secondary system = vòng sơ cấp/thứ cấp.<br>"
     "<small>Hình: OpenStax, College Physics 2e, Hình 32.23 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
 
 fig2 = anh(

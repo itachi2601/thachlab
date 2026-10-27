@@ -109,7 +109,7 @@ fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-khai-nie
         'alt="Hai cặp nam châm thanh: hai cực khác tên đặt gần nhau thì hút nhau, hai cực cùng tên đặt gần nhau thì đẩy nhau; mũi tên đỏ chỉ chiều lực" '
         'loading="lazy" width="640" height="593" style="display:block;margin:0 auto;max-width:min(100%,420px);height:auto;border-radius:8px">'
         '<figcaption>Hình 2. Mũi tên đỏ: chiều lực.<br>'
-        'Unlikes attract = khác tên hút.<br>'
+        'Unlikes attract = khác tên hút; likes repel = cùng tên đẩy.<br>'
         'Hình: OpenStax, <em>College Physics 2e</em>, Hình 22.5 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</figcaption></figure>')
 
 # ------------------------------------------- Hình 3 (OpenStax, đầu hàm) + Hình 4: ba khung đường sức còn lại (SVG)
