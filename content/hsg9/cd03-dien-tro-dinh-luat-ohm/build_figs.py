@@ -6,7 +6,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "..", "..", "scripts", "data", "bai-tap-mau"))
 from hinh_159 import *
 
-PHUT = 11   # điền theo lint_do_dai.py (làm tròn lên)
+PHUT = 12   # điền theo lint_do_dai.py (làm tròn lên)
 
 # ---------- Hình 1: kéo dãn dây, thể tích không đổi ----------
 n = 2

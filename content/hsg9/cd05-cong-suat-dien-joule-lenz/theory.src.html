@@ -6,14 +6,14 @@
 <li>Tính hiệu suất bếp, ấm: $H=\dfrac{Q_{ích}}{A}$ với $Q_{ích}=mc\Delta t$.</li>
 <li>So sánh độ sáng đèn nối tiếp và song song; tìm dòng tối đa để đèn không vượt định mức.</li>
 <li>Tìm $R$ để công suất trên biến trở lớn nhất, chỉ dùng $(R-R_0)^2\ge0$.</li>
-<li>Tính hao phí truyền tải $P_{hp}=\dfrac{P^2R}{U^2}$; chọn aptomat và dây dẫn với $J\le5\ \text{A/mm}^2$.</li>
+<li>Tính hao phí truyền tải $P_{hp}=\dfrac{P^2R}{U^2}$; chọn <span class="tl-term"><input type="checkbox" id="tl165-t1"><label for="tl165-t1">aptomat</label><span class="tl-def">Thiết bị tự ngắt mạch khi dòng điện quá lớn.</span></span> và dây dẫn với $J\le5\ \text{A/mm}^2$.</li>
 <li>Quy ước: đề không nói gì thì coi $R$ không đổi (thực tế dây tóc nóng lên thì $R$ tăng); $c_{nước}=4200\ \text{J/(kg·K)}$; $1\ \text{kWh}=3{,}6\cdot10^6\ \text{J}$.</li>
 </ul>
 <p>Thời gian đọc khoảng <strong>__PHUT__ phút</strong>. Cuối bài phải tự trả lời được <strong>5 câu ở mục Trả bài</strong>.</p>
 </div>
 
 <h3>I. Mở bài: hai bóng nối tiếp, bóng nào sáng hơn</h3>
-<p>Thợ điện thử mạch bằng cách mắc <strong>nối tiếp</strong> hai bóng dây tóc vào ổ $220\ \text{V}$: một bóng ghi $220\ \text{V}-40\ \text{W}$, một bóng ghi $220\ \text{V}-100\ \text{W}$. Cả hai bóng đều sáng, không cháy.</p>
+<p>Thợ điện thử mạch bằng cách mắc <strong>nối tiếp</strong> hai bóng <span class="tl-term"><input type="checkbox" id="tl165-t2"><label for="tl165-t2">dây tóc</label><span class="tl-def">Sợi kim loại mảnh trong bóng đèn, nóng lên thì phát sáng.</span></span> vào ổ $220\ \text{V}$: một bóng ghi $220\ \text{V}-40\ \text{W}$, một bóng ghi $220\ \text{V}-100\ \text{W}$. Cả hai bóng đều sáng, không cháy.</p>
 <div class="tl-box tl-box--think">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Bóng nào sáng hơn?</p>
@@ -28,6 +28,7 @@
 </div>
 
 <h3>II. Công suất điện và công suất định mức</h3>
+<p class="tl-claim">Công suất định mức chỉ đạt ở $U_{đm}$.</p>
 
 <p><strong>🔑 $P=UI=I^2R=U^2/R$ · Định mức chỉ đúng ở $U$ định mức</strong></p>
 <ul>
@@ -43,7 +44,7 @@
 <tr><td>Dùng để tìm $R$ của thiết bị</td><td>Thay đổi theo mạch</td></tr>
 </tbody>
 </table>
-<p>Ví dụ: bếp $220\ \text{V}-1000\ \text{W}$ có $R=\dfrac{220^2}{1000}=48{,}4\ \Omega$. Sụt áp xuống $200\ \text{V}$ thì $P'=\dfrac{200^2}{48{,}4}\approx826\ \text{W}$, đun nước lâu hơn.</p>
+<p>Ví dụ: bếp $220\ \text{V}-1000\ \text{W}$ có $R=\dfrac{220^2}{1000}=48{,}4\ \Omega$. <span class="tl-term"><input type="checkbox" id="tl165-t3"><label for="tl165-t3">Sụt áp</label><span class="tl-def">Hiệu điện thế ở ổ cắm tụt thấp hơn bình thường.</span></span> xuống $200\ \text{V}$ thì $P'=\dfrac{200^2}{48{,}4}\approx826\ \text{W}$, đun nước lâu hơn.</p>
 <p>Bóng $220\ \text{V}-100\ \text{W}$ mắc vào $110\ \text{V}$, coi $R$ không đổi, có công suất:</p>
 <div class="tl-quiz">
 <input type="radio" name="tlh05-q1" id="tlh05-q1a"><label for="tlh05-q1a" class="tl-opt tl-no">A. $50\ \text{W}$</label>
@@ -82,6 +83,7 @@
 </div>
 
 <h3>III. Nhiệt lượng và hiệu suất</h3>
+<p class="tl-claim">Hiệu suất là nhiệt có ích chia điện năng đã dùng.</p>
 
 <p><strong>🔑 $Q=I^2Rt$ · $Q_{ích}=mc\Delta t$ · $H=Q_{ích}/A$</strong></p>
 <ul>
@@ -91,13 +93,18 @@
 <li>Muốn tìm thời gian: $A=\dfrac{Q_{ích}}{H}$ rồi $t=\dfrac{A}{P}$.</li>
 <li>Đun ít nước thì $H$ nhỏ hơn, vì hao phí chiếm phần lớn hơn.</li>
 </ul>
+<div class="tl-nums">
+<details class="tl-num"><summary>$1\ \text{kWh}$ bằng bao nhiêu jun?</summary><p>$3{,}6\cdot10^{6}\ \text{J}$</p></details>
+<details class="tl-num"><summary>Nhiệt dung riêng của nước?</summary><p>$4200\ \text{J/(kg·K)}$</p></details>
+<details class="tl-num"><summary>Hiệu điện thế mạng điện gia đình?</summary><p>$220\ \text{V}$</p></details>
+</div>
 <div class="tl-box">
 <p class="tl-label">🧮 Bài toán mẫu: đọc đề đến đâu, nêu kiến thức đến đó</p>
 <p>Bếp $220\ \text{V}-1000\ \text{W}$ đun $3\ \text{kg}$ nước từ $20\ ^\circ\text{C}$ đến sôi, hiệu suất $80\%$. a) Thời gian đun và tiền điện (giá $2000$ đồng/kWh). b) Đun xong, rót thêm $1\ \text{kg}$ nước $20\ ^\circ\text{C}$ vào, bỏ qua mất nhiệt. Nhiệt độ sau khi cân bằng?</p>
 <div class="table-scroll"><table class="tl-table tl-table--data">
 <thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
 <tbody>
-<tr><td>"đun $3\ \text{kg}$ từ $20\ ^\circ\text{C}$ đến sôi"</td><td>$\Delta t=80\ ^\circ\text{C}$ → $Q_{ích}=mc\Delta t$</td></tr>
+<tr><td>"đun $3\ \text{kg}$ từ $20\ ^\circ\text{C}$ đến sôi"</td><td>$\Delta t=80\ ^\circ\text{C}$<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup> → $Q_{ích}=mc\Delta t$</td></tr>
 <tr><td>"hiệu suất $80\%$"</td><td>$A=Q_{ích}/H$</td></tr>
 <tr><td>"$1000\ \text{W}$", "thời gian"</td><td>$t=A/P$</td></tr>
 <tr><td>"tiền điện"</td><td>đổi $A$ ra kWh rồi nhân giá</td></tr>
@@ -135,6 +142,7 @@
 </details>
 
 <h3>IV. Đèn nối tiếp và song song</h3>
+<p class="tl-claim">Nối tiếp thì $R$ lớn sáng hơn, song song thì ngược lại.</p>
 
 <p><strong>🔑 Nối tiếp: cùng $I$, $P\propto R$ · Song song: cùng $U$, $P\propto 1/R$</strong></p>
 <!--FIG1-->
@@ -173,6 +181,7 @@
 </details>
 
 <h3>V. Cực đại công suất trên biến trở</h3>
+<p class="tl-claim">Công suất trên biến trở lớn nhất khi $R=R_0$.</p>
 
 <p><strong>🔑 $R=R_0$ · $P_{max}=\dfrac{U^2}{4R_0}$ · $H=50\%$</strong></p>
 <p>Mạch: $R_0$ nối tiếp biến trở $R$, đặt vào $U$ không đổi.</p>
@@ -205,6 +214,7 @@
 </details>
 
 <h3>VI. Truyền tải điện và hao phí</h3>
+<p class="tl-claim">Tăng $U$ lên $n$ lần, hao phí giảm $n^2$ lần.</p>
 
 <p><strong>🔑 $P_{hp}=I^2R$ · $I=P/U$ · Tăng $U$ thì hao phí giảm theo $U^2$</strong></p>
 <!--FIG3-->
@@ -229,12 +239,13 @@
 </div>
 
 <h3>VII. Mạng điện gia đình: cầu chì, aptomat, dây dẫn</h3>
+<p class="tl-claim">Aptomat lớn hơn dòng dùng, nhỏ hơn dòng dây chịu được.</p>
 
 <p><strong>🔑 $I_{làm\ việc}\lt I_{aptomat}\le I_{cho\ phép\ của\ dây}$</strong></p>
 <ul>
 <li>Các thiết bị mắc song song: cùng $220\ \text{V}$, $I=\dfrac{P_1+P_2+\dots}{220}$.</li>
-<li>Cầu chì, aptomat mắc nối tiếp trên dây pha; quá dòng thì ngắt mạch.</li>
-<li>Quy ước dây đồng: $J=\dfrac{I}{S}\le5\ \text{A/mm}^2$, nên $I_{cho\ phép}=5S$ và $S\ge\dfrac{I}{5}$.</li>
+<li>Cầu chì, aptomat mắc nối tiếp trên <span class="tl-term"><input type="checkbox" id="tl165-t4"><label for="tl165-t4">dây pha</label><span class="tl-def">Dây nóng của nguồn; chạm bút thử điện vào thì bút sáng.</span></span>; quá dòng thì ngắt mạch.</li>
+<li>Quy ước dây đồng: $J=\dfrac{I}{S}\le5\ \text{A/mm}^2$<sup class="tl-fn"><a href="#tl-fn-2">2</a></sup>, nên $I_{cho\ phép}=5S$ và $S\ge\dfrac{I}{5}$.</li>
 <li>Chọn aptomat lớn hơn dòng làm việc, nhưng không vượt dòng cho phép của dây.</li>
 <li>Dây nhỏ cho thiết bị công suất lớn thì nóng lên ($I^2R_{dây}$ lớn) và có thể cháy.</li>
 </ul>
@@ -277,3 +288,8 @@
 <li>Đọc đề: hỏi công suất trên phần nào, thiết bị có đang ở đúng định mức không, đơn vị là J hay kWh.</li>
 </ul>
 </div>
+
+<ol class="tl-fns">
+<li id="tl-fn-1">Nước sôi ở $100\ ^\circ\text{C}$ khi áp suất khí quyển bình thường.</li>
+<li id="tl-fn-2">Mật độ dòng $5\ \text{A/mm}^2$ là quy ước dùng trong bài này; dây thật còn phụ thuộc loại dây và cách đi dây.</li>
+</ol>

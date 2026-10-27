@@ -12,7 +12,7 @@ _TXT = {"#fbbf24": "#b45309", "#fb923c": "#c2410c", "#38bdf8": "#0369a1", "#34d3
 def text(x, y, s, c="currentColor", *a, **k):
     return _text(x, y, s, _TXT.get(c, c), *a, **k)
 
-PHUT = 17          # theo lint_do_dai.py (17,2 phút)
+PHUT = 18          # theo lint_do_dai.py (17,9 phút)
 SUN = "#fbbf24"
 LIT = "#fde047"
 DARK = "#475569"
