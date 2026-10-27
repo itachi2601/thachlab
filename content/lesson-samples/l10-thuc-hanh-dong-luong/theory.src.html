@@ -11,7 +11,7 @@
 
 <h3>I. Mở bài: đẩy nhau trên sân băng</h3>
 
-<p>Hai bạn đứng yên đối mặt trên sân băng. Bạn nhẹ đẩy một cái: cả hai trượt ra hai phía, bạn nhẹ đi xa hơn hẳn. Trước khi đẩy, tổng động lượng bằng $0$. Sau đó còn bằng $0$ không? Phải đo tốc độ từng bạn, mà trên sân băng không ai bấm đồng hồ kịp. Phòng thí nghiệm thay sân băng bằng băng đệm khí.</p>
+<p>Hai bạn đứng yên đối mặt trên sân băng. Bạn nhẹ đẩy một cái: cả hai trượt ra hai phía, bạn nhẹ đi xa hơn hẳn. Trước khi đẩy, tổng động lượng bằng $0$. Sau đó còn bằng $0$ không? Phải đo tốc độ từng bạn, mà trên sân băng không ai bấm đồng hồ kịp. Phòng thí nghiệm thay sân băng bằng <span class="tl-term"><input type="checkbox" id="tl75-t1"><label for="tl75-t1">băng đệm khí</label><span class="tl-def">Ray thẳng có lỗ thổi khí, xe nổi trên lớp khí nên gần như không ma sát.</span></span>.</p>
 
 <div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
@@ -29,6 +29,8 @@
 <h3>II. Kiến thức: phương án đo và xử lí số liệu</h3>
 
 <h4>1. Ý tưởng: đo $v$ để có $p$</h4>
+
+<p class="tl-claim">Đo thời gian, tính vận tốc, rồi tính động lượng.</p>
 
 <p><strong>🔑 Đo $t$ · tính $v$ · tính $p$ · so $p'$ với $p$</strong></p>
 
@@ -83,6 +85,8 @@
 
 <h4>2. Thí nghiệm 1: va chạm mềm</h4>
 
+<p class="tl-claim">Xe 2 đứng yên, hai xe dính nhau sau va chạm.</p>
+
 <p><strong>🔑 Xe 2 đứng yên · $p = m_1v_1$ · sau: $p' = (m_1 + m_2)v'$</strong></p>
 
 <div class="tl-fx">
@@ -129,6 +133,8 @@ __BANG_A1__
 
 <h4>3. Xử lí số liệu: so $p'$ với $p$</h4>
 
+<p class="tl-claim">Độ lệch không vượt sai số thì động lượng bảo toàn.</p>
+
 <p>Kết quả cả ba lần:</p>
 
 __BANG_A2__
@@ -171,6 +177,8 @@ Không cộng sai số của $s$: cùng tấm cản quang cho $p$ và $p'$ nên 
 <!--FIG2-->
 
 <h4>4. Thí nghiệm 2: hai xe đẩy nhau</h4>
+
+<p class="tl-claim">Hai xe đẩy nhau: tổng động lượng sau gần bằng 0.</p>
 
 <p><strong>🔑 Trước: $p = 0$ · sau: hai $p$ ngược dấu · tổng $\approx 0$</strong></p>
 
@@ -348,9 +356,9 @@ Lần nào có $|p'| \le \Delta p'$ thì tổng động lượng sau bằng $0$ 
 </ol>
 </div>
 __BANG_NGHIENG__
-<p>Mô hình (bỏ qua ma sát): $a = g\sin\alpha \approx g\dfrac{h}{L}$ (góc nghiêng nhỏ)<br>
+<p>Mô hình (bỏ qua ma sát<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>): $a = g\sin\alpha \approx g\dfrac{h}{L}$ (góc nghiêng nhỏ)<br>
 Tốc độ ở chỗ va chạm: $v_{\text{thật}}^2 = v^2 + 2ax$<br>
-Ví dụ $h = 2\ \text{mm}$: $a \approx 9{,}8 \cdot \dfrac{0{,}002}{1{,}20} \approx 0{,}016\ \text{m/s}^2$<br>
+Ví dụ $h = 2\ \text{mm}$: $a \approx 9{,}8 \cdot \dfrac{0{,}002}{1{,}20} \approx 0{,}016\ \text{m/s}^2$<sup class="tl-fn"><a href="#tl-fn-2">2</a></sup><br>
 $v_{\text{thật}} = \sqrt{0{,}505^2 + 2 \cdot 0{,}016 \cdot 0{,}300} \approx 0{,}514\ \text{m/s}$, lớn hơn số đọc khoảng $2\,\%$.</p>
 <p>Cách kiểm băng ngang: bơm khí, đặt xe đứng yên giữa băng; xe trôi một phía là băng nghiêng, chỉnh chân vít.</p>
 </details>
@@ -487,3 +495,8 @@ $v_{\text{thật}} = \sqrt{0{,}505^2 + 2 \cdot 0{,}016 \cdot 0{,}300} \approx 0{
 <li>Đọc đề: $p'$ gồm mọi xe chuyển động · đổi cm sang m.</li>
 </ul>
 </div>
+
+<ol class="tl-fns">
+<li id="tl-fn-1">Lớp khí làm ma sát rất nhỏ, bỏ được khi chỉ xét một đoạn băng ngắn.</li>
+<li id="tl-fn-2">$g = 9{,}8\ \text{m/s}^2$ là giá trị gần mặt đất.</li>
+</ol>
