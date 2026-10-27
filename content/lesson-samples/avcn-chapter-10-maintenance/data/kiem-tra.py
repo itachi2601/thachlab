@@ -6,7 +6,13 @@ def mc(q, opts, ans, why):
     assert len(opts) == 4 and 0 <= ans < 4
     return {"type": "multiple_choice", "question": q, "options": opts, "answer": ans, "explanation": why,
             "topic": T, "form": "ly_thuyet", "difficulty": "trung-binh"}
-def tf(q, sts, why):
+BAI = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "bai.json")))["bai_doc"]
+def doan(i):
+    # Article nguyên văn giáo trình (bỏ thẻ <b> đánh dấu từ ⭐), hiện ngay trong câu hỏi để em đọc rồi chọn Đúng/Sai
+    txt = " ".join(c[0] for c in BAI[i]["cau"]).replace("<b>", "").replace("</b>", "")
+    return f"<blockquote><p>{txt}</p></blockquote>"
+def tf(q, sts, why, art):
+    q = f"{q}{doan(art)}"
     return {"type": "true_false", "question": q, "statements": [{"text": t, "answer": a} for t, a in sts],
             "explanation": why, "topic": T, "form": "ly_thuyet", "difficulty": "trung-binh"}
 Q = [
@@ -30,24 +36,24 @@ Q = [
  mc("Complete: \"Preventive maintenance gives less unplanned ______ caused by equipment failure.\"", ["downtime", "clearance", "tension", "schedule"], 0, "Máy ngừng ngoài kế hoạch = <em>unplanned downtime</em>; preventive làm giảm nó."),
  mc("Complete: \"The fuel line ______, resulting in a major leak.\"", ["adjusted", "lubricated", "ruptured", "aligned"], 2, "Đường dẫn nhiên liệu bị vỡ (<em>ruptured</em>) nên mới rò rỉ lớn."),
  mc("Complete: \"When a machine ______, fix it.\"", ["aligns", "adjusts", "breaks", "lubricates"], 2, "Logic của corrective maintenance: <em>When a machine breaks, fix it.</em>"),
- tf("Read Article 1 (corrective maintenance). Mark each statement True or False.", [
+ tf("Read Article 1. Mark each statement True or False.", [
    ("Corrective maintenance is also called breakdown maintenance.", True),
    ("High machine downtime is one of the expenses of corrective maintenance.", True),
    ("A plant using run-to-failure management spends money on maintenance before a machine fails.", False),
    ("Corrective maintenance gives high production availability.", False)],
-   "Run-to-failure: không tốn tiền bảo dưỡng cho tới khi máy hỏng; chi phí gồm downtime cao và <em>low</em> production availability."),
- tf("Read Article 2 (preventive maintenance). Mark each statement True or False.", [
+   "Run-to-failure: không tốn tiền bảo dưỡng cho tới khi máy hỏng; chi phí gồm downtime cao và <em>low</em> production availability.", 0),
+ tf("Read Article 2. Mark each statement True or False.", [
    ("Preventive maintenance leads to more unnecessary inspections.", False),
    ("Preventive maintenance helps prolong the life of equipment.", True),
    ("Preventive maintenance causes more expensive repairs after unexpected failures.", False),
    ("Preventive maintenance is routine maintenance of equipment and machinery.", True)],
-   "Preventive đem lại <em>less</em> unnecessary inspections và <em>fewer</em> expensive repairs; <em>prolonged life</em> là một lợi ích."),
- tf("Read Article 3 (Flight 236). Mark each statement True or False.", [
+   "Preventive đem lại <em>less</em> unnecessary inspections và <em>fewer</em> expensive repairs; <em>prolonged life</em> là một lợi ích.", 1),
+ tf("Read Article 3. Mark each statement True or False.", [
    ("An incorrect hydraulic pipe was fitted to the right-hand engine.", True),
    ("The pipe that was fitted was too small.", False),
    ("The wrong pipe was found before take-off.", False),
    ("Flight 236 was flying from Toronto to Lisbon.", True)],
-   "Ống bị lắp sai và <em>oversized</em> (quá lớn); lỗi <em>went undetected</em> tới đêm 24/8/2001."),
+   "Ống bị lắp sai và <em>oversized</em> (quá lớn); lỗi <em>went undetected</em> tới đêm 24/8/2001.", 2),
 ]
 TARGET = [2,0,3,1,2,0,3,1,0,2,1,3,0,2,1,3,1,2,3,0]
 for q, t in zip([x for x in Q if x["type"] == "multiple_choice"], TARGET):
