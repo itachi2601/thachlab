@@ -34,6 +34,7 @@ import {
   wrapTheorySections,
   type TheoryReviewContext,
 } from "@/features/lessons/theory-sections";
+import { withMarginNotes } from "@/features/lessons/margin-notes";
 import {
   LESSON_KIND_META,
   SECTION_ORDER,
@@ -338,7 +339,8 @@ function TheoryBlock({
   const hasBody = item.body_html.trim() !== "";
   // Tách theo từng mốc <h3> — cùng hàm với mục lục (tocEntries) và "Ôn ngay" nên id
   // `theory-sec-<itemId>-<n>` khớp nhau; chỉ tính lại khi nội dung mục thật sự đổi.
-  const displayHtml = useMemo(() => decorateGoalBox(item.body_html), [item.body_html]);
+  // Chú thích/định nghĩa/ô số của từng đoạn chép thêm một bản cho cột lề phải ≥ 1280px (features/lessons/margin-notes.ts).
+  const displayHtml = useMemo(() => withMarginNotes(decorateGoalBox(item.body_html)), [item.body_html]);
   const { introHtml, sections } = useMemo(
     () => splitTheorySections(displayHtml, item.id),
     [displayHtml, item.id],

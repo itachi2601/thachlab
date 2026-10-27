@@ -285,6 +285,9 @@ Chỉ HTML + CSS, không JS, lọt qua DOMPurify. Bài cũ chưa có thì vẫn 
 5. **Nhịp mục**: tự động (CSS) — giữa hai mốc `<h3>` cách ~56px. Không chèn `<br>`/đoạn rỗng để tạo khoảng.
 6. **Thuật ngữ mở tại chỗ** (N8): `<span class="tl-term"><input type="checkbox" id="tl<lớp>b<bài>-t1"><label for="…">ngưng tụ</label><span class="tl-def">định nghĩa 1 câu</span></span>`.
    Chú thích số mũ CHỈ cho nguồn/điều kiện đo: `<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>` + cuối bài `<ol class="tl-fns"><li id="tl-fn-1">…</li></ol>`.
+7. **Cột lề phải ≥ 1280px** (tự động, `features/lessons/margin-notes.ts`): thuật ngữ, chú thích số nằm trong một `<p>` ở cấp đầu
+   (không trong `.tl-box`/quiz/bảng) và `.tl-nums` đặt NGAY sau đoạn nó thuộc về thì lên lề, ngang đoạn đó. Trong hộp thì giữ
+   như mục 6. Mỗi đoạn tối đa ~2 ghi chú + 1 ô số, định nghĩa ≤ 1 câu, để cột lề (140–240px) không dài hơn đoạn.
 
 ## Nhật ký rút kinh nghiệm (bắt buộc cập nhật cuối MỖI phiên dùng skill này — xem `AGENTS.md`)
 
