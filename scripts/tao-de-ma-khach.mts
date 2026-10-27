@@ -25,7 +25,11 @@ if (!APPLY) {
   process.exit(0);
 }
 let examId = old?.id as number | undefined;
-if (!examId) {
+if (examId) {
+  // đề đã có: cập nhật nội dung (chỉ an toàn khi chưa có lượt làm nào cần giữ nguyên thứ tự câu)
+  const { error } = await sb.from("exams").update({ questions: exam.questions, duration_minutes: exam.duration_minutes }).eq("id", examId);
+  if (error) throw error;
+} else {
   const { data, error } = await sb
     .from("exams")
     .insert({ title: exam.title, topic: exam.topic, difficulty: exam.difficulty, duration_minutes: exam.duration_minutes, subject_code: exam.subject_code, published: false, questions: exam.questions })
