@@ -333,24 +333,24 @@
      "answer": true
     },
     {
-     "text": "Những chỗ dây đứng yên là nơi không có sóng truyền tới.",
-     "answer": false
-    },
-    {
      "text": "Mỗi múi giữa hai chỗ đứng yên liên tiếp là một bó sóng dài $\\dfrac{\\lambda}{2}$.",
      "answer": true
     },
     {
      "text": "Vung tay nhanh hơn thì số múi trên dây giảm.",
      "answer": false
+    },
+    {
+     "text": "Những chỗ dây đứng yên là nơi không có sóng truyền tới.",
+     "answer": false
     }
    ],
    "explanation": "Đầu cố định là nút; nút là nơi hai sóng ngược pha triệt tiêu chứ không phải vắng sóng; mỗi bó dài $\\dfrac{\\lambda}{2}$; vung nhanh hơn (tần số lớn) thì số múi tăng.",
    "distractorNotes": {
     "0": "Đầu buộc chặt không dao động được và sóng phản xạ ngược pha tại đó, nên chắc chắn đó là nút.",
-    "1": "Hai sóng vẫn truyền tới chỗ đứng yên nhưng ngược pha nhau, cộng lại bằng 0, nên đó không phải chỗ vắng sóng.",
-    "2": "Hai nút liên tiếp cách nhau đúng $\\dfrac{\\lambda}{2}$, nên mỗi múi giữa chúng dài nửa bước sóng.",
-    "3": "Vung nhanh hơn là tăng tần số, bước sóng giảm, nên cùng chiều dài dây chứa được nhiều múi hơn."
+    "1": "Hai nút liên tiếp cách nhau đúng $\\dfrac{\\lambda}{2}$, nên mỗi múi giữa chúng dài nửa bước sóng.",
+    "2": "Vung nhanh hơn là tăng tần số, bước sóng giảm, nên cùng chiều dài dây chứa được nhiều múi hơn.",
+    "3": "Hai sóng vẫn truyền tới chỗ đứng yên nhưng ngược pha nhau, cộng lại bằng 0, nên đó không phải chỗ vắng sóng."
    }
   },
   {
@@ -368,24 +368,24 @@
      "answer": true
     },
     {
+     "text": "Các điểm thuộc hai bó sóng kề nhau dao động cùng pha.",
+     "answer": false
+    },
+    {
      "text": "Bề rộng vùng dao động của bụng sóng bằng $2A$.",
      "answer": false
     },
     {
      "text": "Tại nút sóng, biên độ dao động bằng 0.",
      "answer": true
-    },
-    {
-     "text": "Các điểm thuộc hai bó sóng kề nhau dao động cùng pha.",
-     "answer": false
     }
    ],
    "explanation": "Bụng biên độ $2A$, vung từ $+2A$ đến $-2A$ nên bề rộng $4A$; nút biên độ 0; hai bó kề nhau dao động ngược pha.",
    "distractorNotes": {
     "0": "Ở bụng hai sóng cùng pha cộng lại, biên độ gấp đôi sóng tới, tức là $2A$.",
-    "1": "Nhầm bề rộng với biên độ; bề rộng là cả khoảng vung từ $+2A$ xuống $-2A$, bằng $4A$.",
-    "2": "Ở nút hai sóng cùng biên độ, ngược pha nên triệt tiêu hoàn toàn, biên độ bằng 0.",
-    "3": "Cùng pha chỉ đúng với các điểm trong cùng một bó; hai bó kề nhau dao động ngược pha."
+    "1": "Cùng pha chỉ đúng với các điểm trong cùng một bó; hai bó kề nhau dao động ngược pha.",
+    "2": "Nhầm bề rộng với biên độ; bề rộng là cả khoảng vung từ $+2A$ xuống $-2A$, bằng $4A$.",
+    "3": "Ở nút hai sóng cùng biên độ, ngược pha nên triệt tiêu hoàn toàn, biên độ bằng 0."
    }
   },
   {
@@ -403,24 +403,24 @@
      "answer": true
     },
     {
-     "text": "Điều kiện có sóng dừng vẫn là $l=k\\dfrac{\\lambda}{2}$ như khi B cố định.",
-     "answer": false
-    },
-    {
      "text": "Khi có sóng dừng, số nút trên dây bằng số bụng.",
      "answer": true
     },
     {
      "text": "Tốc độ truyền sóng trên dây do tần số máy rung quyết định.",
      "answer": false
+    },
+    {
+     "text": "Điều kiện có sóng dừng vẫn là $l=k\\dfrac{\\lambda}{2}$ như khi B cố định.",
+     "answer": false
     }
    ],
    "explanation": "Đầu tự do là bụng, điều kiện là $l=(2k+1)\\dfrac{\\lambda}{4}$ với số nút = số bụng = $k+1$; tốc độ truyền sóng do sợi dây quyết định.",
    "distractorNotes": {
     "0": "Vòng trượt làm B thành đầu tự do, sóng phản xạ cùng pha nên B dao động mạnh nhất, tức là bụng.",
-    "1": "Dây một đầu tự do phải dùng $l=(2k+1)\\dfrac{\\lambda}{4}$; giữ công thức $k\\dfrac{\\lambda}{2}$ là mắc bẫy 2.",
-    "2": "Theo bảng của bài, dây một đầu cố định, một đầu tự do có số nút bằng số bụng, bằng $k+1$.",
-    "3": "Đo ở nhiều tần số khác nhau vẫn cho $v$ gần như không đổi, nên $v$ do sợi dây quyết định chứ không do máy rung."
+    "1": "Theo bảng của bài, dây một đầu cố định, một đầu tự do có số nút bằng số bụng, bằng $k+1$.",
+    "2": "Đo ở nhiều tần số khác nhau vẫn cho $v$ gần như không đổi, nên $v$ do sợi dây quyết định chứ không do máy rung.",
+    "3": "Dây một đầu tự do phải dùng $l=(2k+1)\\dfrac{\\lambda}{4}$; giữ công thức $k\\dfrac{\\lambda}{2}$ là mắc bẫy 2."
    }
   },
   {
@@ -434,10 +434,6 @@
    "question": "Một dây đàn hồi hai đầu cố định, cùng sức căng, được cho rung bởi máy rung ở các tần số khác nhau. Mỗi lần dây rung rõ nét, học sinh ghi tần số $f$ và đếm số bó $k$, rồi tính $\\lambda$ và $v$.",
    "statements": [
     {
-     "text": "Các lần đo cho tốc độ truyền sóng gần như bằng nhau.",
-     "answer": true
-    },
-    {
      "text": "Tăng tần số máy rung thì số bó sóng trên dây tăng.",
      "answer": true
     },
@@ -448,14 +444,18 @@
     {
      "text": "Năng lượng truyền qua các nút sang bó bên cạnh giống như sóng chạy.",
      "answer": false
+    },
+    {
+     "text": "Các lần đo cho tốc độ truyền sóng gần như bằng nhau.",
+     "answer": true
     }
    ],
    "explanation": "Bảng đo cho $v\\approx20\\ \\text{m/s}$ ở mọi lần; $f$ tăng thì $k$ tăng; $\\lambda=\\dfrac{2l}{k}$ giảm khi $k$ tăng; năng lượng không truyền qua nút mà nằm lại trong từng bó.",
    "distractorNotes": {
-    "0": "Cùng dây, cùng sức căng thì tốc độ truyền sóng không đổi; chênh lệch nhỏ giữa các lần đo chỉ do sai số.",
-    "1": "$v$ không đổi nên tăng $f$ làm $\\lambda$ giảm, cùng chiều dài dây chứa nhiều bó hơn.",
-    "2": "Từ $\\lambda=\\dfrac{2l}{k}$, bước sóng tỉ lệ nghịch với số bó, nên giảm khi số bó tăng.",
-    "3": "Bài nêu rõ năng lượng không truyền qua nút mà nằm lại trong từng bó, khác với sóng chạy."
+    "0": "$v$ không đổi nên tăng $f$ làm $\\lambda$ giảm, cùng chiều dài dây chứa nhiều bó hơn.",
+    "1": "Từ $\\lambda=\\dfrac{2l}{k}$, bước sóng tỉ lệ nghịch với số bó, nên giảm khi số bó tăng.",
+    "2": "Bài nêu rõ năng lượng không truyền qua nút mà nằm lại trong từng bó, khác với sóng chạy.",
+    "3": "Cùng dây, cùng sức căng thì tốc độ truyền sóng không đổi; chênh lệch nhỏ giữa các lần đo chỉ do sai số."
    }
   },
   {
@@ -469,28 +469,28 @@
    "question": "Một sợi dây dài $l$, hai đầu cố định, tốc độ truyền sóng trên dây là $v$. Trên dây có sóng dừng với $k$ bó sóng.",
    "statements": [
     {
-     "text": "Tần số sóng thỏa mãn $f=k\\dfrac{v}{2l}$.",
+     "text": "Tần số nhỏ nhất để có sóng dừng là $f_0=\\dfrac{v}{2l}$.",
      "answer": true
     },
     {
-     "text": "Tần số nhỏ nhất để có sóng dừng là $f_0=\\dfrac{v}{2l}$.",
+     "text": "Các tần số cho sóng dừng là $f_0, 3f_0, 5f_0, \\ldots$",
+     "answer": false
+    },
+    {
+     "text": "Tần số sóng thỏa mãn $f=k\\dfrac{v}{2l}$.",
      "answer": true
     },
     {
      "text": "Số bụng sóng trên dây bằng $k+1$.",
      "answer": false
-    },
-    {
-     "text": "Các tần số cho sóng dừng là $f_0, 3f_0, 5f_0, \\ldots$",
-     "answer": false
     }
    ],
    "explanation": "Hai đầu cố định: $f=k\\dfrac{v}{2l}$, nhỏ nhất $f_0=\\dfrac{v}{2l}$, số bụng $k$, số nút $k+1$; các tần số là $f_0, 2f_0, 3f_0, \\ldots$",
    "distractorNotes": {
-    "0": "Thay $\\lambda=\\dfrac{2l}{k}$ vào $f=\\dfrac{v}{\\lambda}$ được đúng $f=k\\dfrac{v}{2l}$.",
-    "1": "Tần số nhỏ nhất ứng với $k=1$; thay vào $f=k\\dfrac{v}{2l}$ được đúng $\\dfrac{v}{2l}$.",
-    "2": "$k+1$ là số nút chứ không phải số bụng; mỗi bó có đúng một bụng nên số bụng là $k$.",
-    "3": "Dãy chỉ gồm bội lẻ là của dây một đầu tự do; dây hai đầu cố định có mọi bội nguyên của $f_0$."
+    "0": "Tần số nhỏ nhất ứng với $k=1$; thay vào $f=k\\dfrac{v}{2l}$ được đúng $\\dfrac{v}{2l}$.",
+    "1": "Dãy chỉ gồm bội lẻ là của dây một đầu tự do; dây hai đầu cố định có mọi bội nguyên của $f_0$.",
+    "2": "Thay $\\lambda=\\dfrac{2l}{k}$ vào $f=\\dfrac{v}{\\lambda}$ được đúng $f=k\\dfrac{v}{2l}$.",
+    "3": "$k+1$ là số nút chứ không phải số bụng; mỗi bó có đúng một bụng nên số bụng là $k$."
    }
   },
   {
@@ -504,15 +504,15 @@
    "question": "Một sợi dây dài $l$ có một đầu cố định, một đầu tự do, tốc độ truyền sóng trên dây là $v$. Điều kiện có sóng dừng là $l=(2k+1)\\dfrac{\\lambda}{4}$.",
    "statements": [
     {
-     "text": "Tần số nhỏ nhất để có sóng dừng là $f_0=\\dfrac{v}{4l}$.",
-     "answer": true
-    },
-    {
      "text": "Các tần số cho sóng dừng là $f_0, 2f_0, 3f_0, \\ldots$",
      "answer": false
     },
     {
      "text": "Trong công thức này, $k$ nhận các giá trị $0, 1, 2, \\ldots$",
+     "answer": true
+    },
+    {
+     "text": "Tần số nhỏ nhất để có sóng dừng là $f_0=\\dfrac{v}{4l}$.",
      "answer": true
     },
     {
@@ -522,9 +522,9 @@
    ],
    "explanation": "Ứng với $k=0$, $\\lambda=4l$ nên $f_0=\\dfrac{v}{4l}$; các tần số là bội lẻ $f_0, 3f_0, 5f_0, \\ldots$; tốc độ truyền sóng $v=\\lambda f$.",
    "distractorNotes": {
-    "0": "Với $k=0$ thì $l=\\dfrac{\\lambda}{4}$, tức $\\lambda=4l$, nên $f_0=\\dfrac{v}{\\lambda}=\\dfrac{v}{4l}$.",
-    "1": "Hệ số $(2k+1)$ chỉ cho bội lẻ; ở bội chẵn của $f_0$, đầu tự do thành nút nên mất sóng dừng.",
-    "2": "$k=0$ vẫn có nghĩa: dây chỉ dài $\\dfrac{\\lambda}{4}$, gồm một nút và một bụng, ứng với tần số nhỏ nhất.",
+    "0": "Hệ số $(2k+1)$ chỉ cho bội lẻ; ở bội chẵn của $f_0$, đầu tự do thành nút nên mất sóng dừng.",
+    "1": "$k=0$ vẫn có nghĩa: dây chỉ dài $\\dfrac{\\lambda}{4}$, gồm một nút và một bụng, ứng với tần số nhỏ nhất.",
+    "2": "Với $k=0$ thì $l=\\dfrac{\\lambda}{4}$, tức $\\lambda=4l$, nên $f_0=\\dfrac{v}{\\lambda}=\\dfrac{v}{4l}$.",
     "3": "Đảo phép tính; tốc độ truyền sóng bằng bước sóng nhân tần số, $v=\\lambda f$."
    }
   }

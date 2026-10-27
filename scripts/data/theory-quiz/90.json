@@ -351,24 +351,24 @@
      "answer": false
     },
     {
-     "text": "Đèn phòng khách hỏng nhưng đèn bếp vẫn sáng vì mỗi đèn có nhánh riêng.",
-     "answer": true
-    },
-    {
      "text": "Dây đèn kiểu cũ có các bóng mắc nối tiếp nên một bóng đứt làm hở cả mạch.",
      "answer": true
     },
     {
      "text": "Đèn trong nhà mắc song song nên mỗi đèn chỉ nhận một phần của $220\\ \\text{V}$.",
      "answer": false
+    },
+    {
+     "text": "Đèn phòng khách hỏng nhưng đèn bếp vẫn sáng vì mỗi đèn có nhánh riêng.",
+     "answer": true
     }
    ],
-   "explanation": "a) sai: kiểu cũ là nối tiếp. b) đúng: mỗi đèn một nhánh riêng. c) đúng: nối tiếp, một bóng đứt là hở mạch. d) sai: song song thì mỗi đèn nhận đủ $U$.",
+   "explanation": "a) sai: kiểu cũ là nối tiếp. b) đúng: nối tiếp, một bóng đứt là hở mạch. c) sai: song song thì mỗi đèn nhận đủ $U$. d) đúng: mỗi đèn một nhánh riêng.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì nếu song song thì một bóng hỏng không làm tắt các bóng khác.",
-    "1": "Không thể coi là sai vì nhánh đèn bếp vẫn nối thẳng vào nguồn.",
-    "2": "Không thể coi là sai vì các bóng nằm trên một đường đi duy nhất.",
-    "3": "Không thể coi là đúng vì mỗi nhánh song song nhận đủ hiệu điện thế của nguồn."
+    "1": "Không thể coi là sai vì các bóng nằm trên một đường đi duy nhất.",
+    "2": "Không thể coi là đúng vì mỗi nhánh song song nhận đủ hiệu điện thế của nguồn.",
+    "3": "Không thể coi là sai vì nhánh đèn bếp vẫn nối thẳng vào nguồn."
    }
   },
   {
@@ -382,6 +382,10 @@
    "question": "Dùng hai bóng đèn pin giống nhau và nguồn $3\\ \\text{V}$, mắc nối tiếp rồi tháo một bóng, sau đó mắc song song rồi tháo một bóng. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Mắc song song rồi tháo một bóng thì bóng còn lại vẫn sáng như cũ.",
+     "answer": true
+    },
+    {
      "text": "Mắc nối tiếp rồi tháo một bóng thì bóng còn lại tắt.",
      "answer": true
     },
@@ -392,18 +396,14 @@
     {
      "text": "Mắc song song thì hai bóng sáng mờ hơn khi mắc nối tiếp.",
      "answer": false
-    },
-    {
-     "text": "Mắc song song rồi tháo một bóng thì bóng còn lại vẫn sáng như cũ.",
-     "answer": true
     }
    ],
-   "explanation": "a) đúng: hở mạch. b) sai: $U$ chia ra. c) sai: song song sáng rõ hơn. d) đúng: nhánh riêng.",
+   "explanation": "a) đúng: nhánh riêng. b) đúng: hở mạch. c) sai: $U$ chia ra. d) sai: song song sáng rõ hơn.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì tháo bóng làm hở mạch nên không còn dòng điện.",
-    "1": "Không thể coi là đúng vì nối tiếp thì hiệu điện thế chia cho hai bóng nên mỗi bóng nhận ít hơn.",
-    "2": "Không thể coi là đúng vì mắc song song mỗi bóng nhận đủ $U$ nên sáng rõ hơn nối tiếp.",
-    "3": "Không thể coi là sai vì nhánh còn lại vẫn nhận đủ $3\\ \\text{V}$."
+    "0": "Không thể coi là sai vì nhánh còn lại vẫn nhận đủ $3\\ \\text{V}$.",
+    "1": "Không thể coi là sai vì tháo bóng làm hở mạch nên không còn dòng điện.",
+    "2": "Không thể coi là đúng vì nối tiếp thì hiệu điện thế chia cho hai bóng nên mỗi bóng nhận ít hơn.",
+    "3": "Không thể coi là đúng vì mắc song song mỗi bóng nhận đủ $U$ nên sáng rõ hơn nối tiếp."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Mắc $R_1=10\\ \\Omega$ nối tiếp với $R_2=20\\ \\Omega$, đặt ampe kế ở ba vị trí và đo hiệu điện thế từng điện trở. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Hiệu điện thế $U_1$ luôn gấp đôi $U_2$.",
-     "answer": false
-    },
-    {
      "text": "Ampe kế đặt ở cả ba vị trí đều chỉ cùng một số.",
      "answer": true
+    },
+    {
+     "text": "Điện trở tương đương của đoạn mạch nhỏ hơn $10\\ \\Omega$.",
+     "answer": false
     },
     {
      "text": "Tổng $U_1+U_2$ bằng hiệu điện thế hai đầu cả đoạn mạch.",
      "answer": true
     },
     {
-     "text": "Điện trở tương đương của đoạn mạch nhỏ hơn $10\\ \\Omega$.",
+     "text": "Hiệu điện thế $U_1$ luôn gấp đôi $U_2$.",
      "answer": false
     }
    ],
-   "explanation": "a) sai: $U_2$ gấp đôi $U_1$. b) đúng: $I$ như nhau. c) đúng: $U=U_1+U_2$. d) sai: $R_{td}=30\\ \\Omega$.",
+   "explanation": "a) đúng: $I$ như nhau. b) sai: $R_{td}=30\\ \\Omega$. c) đúng: $U=U_1+U_2$. d) sai: $U_2$ gấp đôi $U_1$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì điện trở lớn hơn nhận hiệu điện thế lớn hơn, nên $U_2$ mới gấp đôi $U_1$.",
-    "1": "Không thể coi là sai vì nối tiếp thì cường độ dòng điện như nhau ở mọi chỗ.",
+    "0": "Không thể coi là sai vì nối tiếp thì cường độ dòng điện như nhau ở mọi chỗ.",
+    "1": "Không thể coi là đúng vì nối tiếp thì $R_{td}=10+20=30\\ \\Omega$, lớn hơn mỗi điện trở thành phần.",
     "2": "Không thể coi là sai vì hai đoạn ghép lại đúng bằng cả đoạn.",
-    "3": "Không thể coi là đúng vì nối tiếp thì $R_{td}=10+20=30\\ \\Omega$, lớn hơn mỗi điện trở thành phần."
+    "3": "Không thể coi là đúng vì điện trở lớn hơn nhận hiệu điện thế lớn hơn, nên $U_2$ mới gấp đôi $U_1$."
    }
   },
   {
@@ -452,10 +452,6 @@
    "question": "Mắc $R_1=10\\ \\Omega$ song song với $R_2=15\\ \\Omega$ vào nguồn $6\\ \\text{V}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Điện trở tương đương của đoạn mạch là $25\\ \\Omega$.",
-     "answer": false
-    },
-    {
      "text": "Dòng điện qua $R_1$ là $0{,}60\\ \\text{A}$.",
      "answer": true
     },
@@ -466,14 +462,18 @@
     {
      "text": "Dòng điện mạch chính bằng dòng điện qua nhánh $R_1$.",
      "answer": false
+    },
+    {
+     "text": "Điện trở tương đương của đoạn mạch là $25\\ \\Omega$.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai: $R_{td}=6\\ \\Omega$. b) đúng: $0{,}60\\ \\text{A}$. c) đúng: $I_2=0{,}40\\ \\text{A}$. d) sai: $I=I_1+I_2=1{,}00\\ \\text{A}$.",
+   "explanation": "a) đúng: $0{,}60\\ \\text{A}$. b) đúng: $I_2=0{,}40\\ \\text{A}$. c) sai: $I=I_1+I_2=1{,}00\\ \\text{A}$. d) sai: $R_{td}=6\\ \\Omega$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì song song thì $R_{td}=\\dfrac{10\\cdot15}{25}=6\\ \\Omega$, nhỏ hơn mỗi điện trở.",
-    "1": "Không thể coi là sai vì $I_1=\\dfrac{6}{10}=0{,}60\\ \\text{A}$.",
-    "2": "Không thể coi là sai vì cùng $U$, điện trở lớn hơn thì dòng nhỏ hơn.",
-    "3": "Không thể coi là đúng vì dòng mạch chính là tổng hai nhánh nên lớn hơn dòng mỗi nhánh."
+    "0": "Không thể coi là sai vì $I_1=\\dfrac{6}{10}=0{,}60\\ \\text{A}$.",
+    "1": "Không thể coi là sai vì cùng $U$, điện trở lớn hơn thì dòng nhỏ hơn.",
+    "2": "Không thể coi là đúng vì dòng mạch chính là tổng hai nhánh nên lớn hơn dòng mỗi nhánh.",
+    "3": "Không thể coi là đúng vì song song thì $R_{td}=\\dfrac{10\\cdot15}{25}=6\\ \\Omega$, nhỏ hơn mỗi điện trở."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Mạch gồm $R_1=4\\ \\Omega$ nối tiếp với cụm ($R_2=12\\ \\Omega$ song song $R_3=6\\ \\Omega$), đặt vào $U_{AB}=12\\ \\text{V}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Điện trở tương đương của cả đoạn mạch là $8\\ \\Omega$.",
+     "text": "Điện trở tương đương của cụm $R_2$, $R_3$ là $4\\ \\Omega$.",
      "answer": true
     },
     {
-     "text": "Cường độ dòng điện mạch chính là $3\\ \\text{A}$.",
-     "answer": false
+     "text": "Điện trở tương đương của cả đoạn mạch là $8\\ \\Omega$.",
+     "answer": true
     },
     {
      "text": "Hiệu điện thế hai đầu cụm $R_2$, $R_3$ là $12\\ \\text{V}$.",
      "answer": false
     },
     {
-     "text": "Điện trở tương đương của cụm $R_2$, $R_3$ là $4\\ \\Omega$.",
-     "answer": true
+     "text": "Cường độ dòng điện mạch chính là $3\\ \\text{A}$.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng: $R_{td}=8\\ \\Omega$. b) sai: $I=1{,}5\\ \\text{A}$. c) sai: $U_{23}=6\\ \\text{V}$. d) đúng: $R_{23}=4\\ \\Omega$.",
+   "explanation": "a) đúng: $R_{23}=4\\ \\Omega$. b) đúng: $R_{td}=8\\ \\Omega$. c) sai: $U_{23}=6\\ \\text{V}$. d) sai: $I=1{,}5\\ \\text{A}$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì $R_{td}=R_1+R_{23}=4+4=8\\ \\Omega$.",
-    "1": "Không thể coi là đúng vì $R_{td}=8\\ \\Omega$ nên $I=\\dfrac{12}{8}=1{,}5\\ \\text{A}$.",
+    "0": "Không thể coi là sai vì $R_{23}=\\dfrac{12\\cdot6}{12+6}=4\\ \\Omega$.",
+    "1": "Không thể coi là sai vì $R_{td}=R_1+R_{23}=4+4=8\\ \\Omega$.",
     "2": "Không thể coi là đúng vì $R_1$ nhận $6\\ \\text{V}$ nên cụm chỉ còn $12-6=6\\ \\text{V}$.",
-    "3": "Không thể coi là sai vì $R_{23}=\\dfrac{12\\cdot6}{12+6}=4\\ \\Omega$."
+    "3": "Không thể coi là đúng vì $R_{td}=8\\ \\Omega$ nên $I=\\dfrac{12}{8}=1{,}5\\ \\text{A}$."
    }
   },
   {
@@ -522,7 +522,7 @@
    "question": "Mạch gồm $R_1=4\\ \\Omega$ nối tiếp với cụm ($R_2=12\\ \\Omega$ song song $R_3=6\\ \\Omega$), đặt vào $12\\ \\text{V}$ (lúc đầu $R_1$ nhận $6\\ \\text{V}$). Nhánh $R_3$ bị đứt nên chỉ còn $R_1$ nối tiếp $R_2$, vẫn đặt vào $12\\ \\text{V}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Dòng điện mạch chính vẫn là $1{,}5\\ \\text{A}$ vì $R_1$, $R_2$ không đổi.",
+     "text": "Hiệu điện thế hai đầu $R_2$ vẫn là $6\\ \\text{V}$ như lúc đầu.",
      "answer": false
     },
     {
@@ -530,20 +530,20 @@
      "answer": true
     },
     {
-     "text": "Điện trở tương đương tăng lên thành $16\\ \\Omega$.",
-     "answer": true
+     "text": "Dòng điện mạch chính vẫn là $1{,}5\\ \\text{A}$ vì $R_1$, $R_2$ không đổi.",
+     "answer": false
     },
     {
-     "text": "Hiệu điện thế hai đầu $R_2$ vẫn là $6\\ \\text{V}$ như lúc đầu.",
-     "answer": false
+     "text": "Điện trở tương đương tăng lên thành $16\\ \\Omega$.",
+     "answer": true
     }
    ],
-   "explanation": "a) sai: dòng giảm. b) đúng: $I=0{,}75\\ \\text{A}$. c) đúng: $R_{td}=16\\ \\Omega$. d) sai: $U_2=9\\ \\text{V}$.",
+   "explanation": "a) sai: $U_2=9\\ \\text{V}$. b) đúng: $I=0{,}75\\ \\text{A}$. c) sai: dòng giảm. d) đúng: $R_{td}=16\\ \\Omega$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì $R_{td}$ đã tăng nên dòng mạch chính giảm còn $0{,}75\\ \\text{A}$.",
+    "0": "Không thể coi là đúng vì $U_2=0{,}75\\cdot12=9\\ \\text{V}$, lớn hơn $6\\ \\text{V}$ lúc đầu.",
     "1": "Không thể coi là sai vì $I=\\dfrac{12}{16}=0{,}75\\ \\text{A}$.",
-    "2": "Không thể coi là sai vì $R_{td}=4+12=16\\ \\Omega$.",
-    "3": "Không thể coi là đúng vì $U_2=0{,}75\\cdot12=9\\ \\text{V}$, lớn hơn $6\\ \\text{V}$ lúc đầu."
+    "2": "Không thể coi là đúng vì $R_{td}$ đã tăng nên dòng mạch chính giảm còn $0{,}75\\ \\text{A}$.",
+    "3": "Không thể coi là sai vì $R_{td}=4+12=16\\ \\Omega$."
    }
   }
  ]

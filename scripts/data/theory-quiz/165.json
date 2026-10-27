@@ -347,7 +347,7 @@
       "question": "Thợ điện mắc nối tiếp hai bóng $220\\ \\text{V}-40\\ \\text{W}$ và $220\\ \\text{V}-100\\ \\text{W}$ vào mạng $220\\ \\text{V}$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Dòng điện qua hai bóng có cường độ bằng nhau.",
+          "text": "Bóng $40\\ \\text{W}$ có điện trở lớn hơn bóng $100\\ \\text{W}$.",
           "answer": true
         },
         {
@@ -355,7 +355,7 @@
           "answer": false
         },
         {
-          "text": "Bóng $40\\ \\text{W}$ có điện trở lớn hơn bóng $100\\ \\text{W}$.",
+          "text": "Dòng điện qua hai bóng có cường độ bằng nhau.",
           "answer": true
         },
         {
@@ -363,11 +363,11 @@
           "answer": false
         }
       ],
-      "explanation": "a) đúng vì nối tiếp cùng dòng. b) sai: nối tiếp thì bóng điện trở lớn toả nhiều nhiệt hơn. c) đúng vì $R=\\dfrac{U_{đm}^2}{P_{đm}}$ và $P_{đm}$ nhỏ hơn. d) sai: hai bóng chia nhau $220\\ \\text{V}$.",
+      "explanation": "a) đúng vì $R=\\dfrac{U_{đm}^2}{P_{đm}}$ và $P_{đm}$ nhỏ hơn. b) sai: nối tiếp thì bóng điện trở lớn toả nhiều nhiệt hơn. c) đúng vì nối tiếp cùng dòng. d) sai: hai bóng chia nhau $220\\ \\text{V}$.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì mạch nối tiếp có chung một dòng điện chạy qua mọi phần tử.",
+        "0": "Không thể coi là sai vì $R=\\dfrac{U_{đm}^2}{P_{đm}}$ nên công suất định mức nhỏ hơn thì điện trở lớn hơn.",
         "1": "Không thể coi là đúng vì nối tiếp thì cùng $I$, $P=I^2R$ nên bóng $40\\ \\text{W}$ (điện trở lớn hơn) mới sáng hơn.",
-        "2": "Không thể coi là sai vì $R=\\dfrac{U_{đm}^2}{P_{đm}}$ nên công suất định mức nhỏ hơn thì điện trở lớn hơn.",
+        "2": "Không thể coi là sai vì mạch nối tiếp có chung một dòng điện chạy qua mọi phần tử.",
         "3": "Không thể coi là đúng vì trong mạch nối tiếp hai bóng chia nhau hiệu điện thế $220\\ \\text{V}$ của nguồn."
       }
     },
@@ -382,28 +382,28 @@
       "question": "Thí nghiệm với đèn dây tóc $12\\ \\text{V}-6\\ \\text{W}$: tăng dần hiệu điện thế, chờ đèn ổn định rồi đọc vôn kế và ampe kế. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Điện trở của đèn ở $6\\ \\text{V}$ bằng điện trở của đèn ở $12\\ \\text{V}$.",
-          "answer": false
-        },
-        {
-          "text": "Ở mỗi lần đo, công suất đèn tính được bằng $P=UI$.",
-          "answer": true
-        },
-        {
           "text": "Số oát ghi trên đèn là công suất của đèn ở mọi hiệu điện thế.",
           "answer": false
         },
         {
           "text": "Tỉ số $\\dfrac{U}{I}$ không cố định: dây tóc càng nóng thì điện trở càng lớn.",
           "answer": true
+        },
+        {
+          "text": "Điện trở của đèn ở $6\\ \\text{V}$ bằng điện trở của đèn ở $12\\ \\text{V}$.",
+          "answer": false
+        },
+        {
+          "text": "Ở mỗi lần đo, công suất đèn tính được bằng $P=UI$.",
+          "answer": true
         }
       ],
-      "explanation": "a) sai: ở hiệu điện thế nhỏ dây tóc nguội hơn nên $R$ nhỏ hơn. b) đúng vì $P=UI$ đúng ở từng lần đo. c) sai: số ghi chỉ đúng ở hiệu điện thế định mức. d) đúng vì dây tóc nóng lên thì $R$ tăng.",
+      "explanation": "a) sai: số ghi chỉ đúng ở hiệu điện thế định mức. b) đúng vì dây tóc nóng lên thì $R$ tăng. c) sai: ở hiệu điện thế nhỏ dây tóc nguội hơn nên $R$ nhỏ hơn. d) đúng vì $P=UI$ đúng ở từng lần đo.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì ở hiệu điện thế nhỏ dây tóc nguội hơn nên điện trở nhỏ hơn.",
-        "1": "Không thể coi là sai vì công suất điện bằng tích hiệu điện thế và cường độ dòng điện ở từng lần đo.",
-        "2": "Không thể coi là đúng vì công suất định mức chỉ đạt khi hiệu điện thế đúng bằng hiệu điện thế định mức.",
-        "3": "Không thể coi là sai vì dây tóc nóng lên thì điện trở tăng, nên $\\dfrac{U}{I}$ thay đổi theo nhiệt độ."
+        "0": "Không thể coi là đúng vì công suất định mức chỉ đạt khi hiệu điện thế đúng bằng hiệu điện thế định mức.",
+        "1": "Không thể coi là sai vì dây tóc nóng lên thì điện trở tăng, nên $\\dfrac{U}{I}$ thay đổi theo nhiệt độ.",
+        "2": "Không thể coi là đúng vì ở hiệu điện thế nhỏ dây tóc nguội hơn nên điện trở nhỏ hơn.",
+        "3": "Không thể coi là sai vì công suất điện bằng tích hiệu điện thế và cường độ dòng điện ở từng lần đo."
       }
     },
     {
@@ -452,28 +452,28 @@
       "question": "Đ₁ ghi $6\\ \\text{V}-3\\ \\text{W}$, Đ₂ ghi $6\\ \\text{V}-6\\ \\text{W}$ mắc nối tiếp vào nguồn $9\\ \\text{V}$ ($R_1=12\\ \\Omega$, $R_2=6\\ \\Omega$). Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Cường độ dòng điện định mức của Đ₁ là $0{,}5\\ \\text{A}$.",
+          "text": "Dòng điện chạy trong mạch là $0{,}5\\ \\text{A}$.",
           "answer": true
-        },
-        {
-          "text": "Đ₂ sáng đúng công suất định mức.",
-          "answer": false
         },
         {
           "text": "Đ₂ bị cháy vì công suất ghi trên nó lớn.",
           "answer": false
         },
         {
-          "text": "Dòng điện chạy trong mạch là $0{,}5\\ \\text{A}$.",
+          "text": "Đ₂ sáng đúng công suất định mức.",
+          "answer": false
+        },
+        {
+          "text": "Cường độ dòng điện định mức của Đ₁ là $0{,}5\\ \\text{A}$.",
           "answer": true
         }
       ],
-      "explanation": "a) đúng vì $I_{đm1}=\\dfrac{3}{6}=0{,}5\\ \\text{A}$. b) sai: Đ₂ chỉ nhận $3\\ \\text{V}$. c) sai: dòng $0{,}5\\ \\text{A}$ nhỏ hơn định mức của Đ₂ ($1\\ \\text{A}$). d) đúng vì $I=\\dfrac{9}{12+6}=0{,}5\\ \\text{A}$.",
+      "explanation": "a) đúng vì $I=\\dfrac{9}{12+6}=0{,}5\\ \\text{A}$. b) sai: dòng $0{,}5\\ \\text{A}$ nhỏ hơn định mức của Đ₂ ($1\\ \\text{A}$). c) sai: Đ₂ chỉ nhận $3\\ \\text{V}$. d) đúng vì $I_{đm1}=\\dfrac{3}{6}=0{,}5\\ \\text{A}$.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì $I_{đm1}=\\dfrac{P_{đm}}{U_{đm}}=\\dfrac{3}{6}=0{,}5\\ \\text{A}$.",
-        "1": "Không thể coi là đúng vì Đ₂ chỉ nhận $0{,}5\\cdot6=3\\ \\text{V}$, thấp hơn định mức $6\\ \\text{V}$.",
-        "2": "Không thể coi là đúng vì dòng $0{,}5\\ \\text{A}$ nhỏ hơn dòng định mức $1\\ \\text{A}$ của Đ₂ nên Đ₂ không thể cháy.",
-        "3": "Không thể coi là sai vì tổng điện trở là $18\\ \\Omega$ nên $I=\\dfrac{9}{18}=0{,}5\\ \\text{A}$."
+        "0": "Không thể coi là sai vì tổng điện trở là $18\\ \\Omega$ nên $I=\\dfrac{9}{18}=0{,}5\\ \\text{A}$.",
+        "1": "Không thể coi là đúng vì dòng $0{,}5\\ \\text{A}$ nhỏ hơn dòng định mức $1\\ \\text{A}$ của Đ₂ nên Đ₂ không thể cháy.",
+        "2": "Không thể coi là đúng vì Đ₂ chỉ nhận $0{,}5\\cdot6=3\\ \\text{V}$, thấp hơn định mức $6\\ \\text{V}$.",
+        "3": "Không thể coi là sai vì $I_{đm1}=\\dfrac{P_{đm}}{U_{đm}}=\\dfrac{3}{6}=0{,}5\\ \\text{A}$."
       }
     },
     {
@@ -495,20 +495,20 @@
           "answer": true
         },
         {
-          "text": "Cùng lượng nước, bếp hiệu suất nhỏ hơn thì cần ít điện năng hơn.",
-          "answer": false
-        },
-        {
           "text": "Hiệu suất của bếp là $H=\\dfrac{Q_{ích}}{A}$ với $A$ là điện năng bếp tiêu thụ.",
           "answer": true
+        },
+        {
+          "text": "Cùng lượng nước, bếp hiệu suất nhỏ hơn thì cần ít điện năng hơn.",
+          "answer": false
         }
       ],
-      "explanation": "a) sai: phải chia cho $H$ rồi chia tiếp cho $P$, $t=\\dfrac{Q_{ích}}{HP}$. b) đúng theo công thức của bài. c) sai: hiệu suất nhỏ hơn thì hao phí nhiều hơn nên cần nhiều điện năng hơn. d) đúng theo công thức của bài.",
+      "explanation": "a) sai: phải chia cho $H$ rồi chia tiếp cho $P$, $t=\\dfrac{Q_{ích}}{HP}$. b) đúng theo công thức của bài. c) đúng theo công thức của bài. d) sai: hiệu suất nhỏ hơn thì hao phí nhiều hơn nên cần nhiều điện năng hơn.",
       "distractorNotes": {
         "0": "Không thể coi là đúng vì có hao phí nên điện năng lớn hơn nhiệt có ích: phải chia $Q_{ích}$ cho $H$ chứ không nhân.",
         "1": "Không thể coi là sai vì nước nóng thêm $\\Delta t$ thu nhiệt lượng $mc\\Delta t$.",
-        "2": "Không thể coi là đúng vì $A=\\dfrac{Q_{ích}}{H}$ nên $H$ nhỏ hơn thì điện năng cần dùng lớn hơn.",
-        "3": "Không thể coi là sai vì hiệu suất là tỉ số giữa nhiệt có ích và điện năng tiêu thụ."
+        "2": "Không thể coi là sai vì hiệu suất là tỉ số giữa nhiệt có ích và điện năng tiêu thụ.",
+        "3": "Không thể coi là đúng vì $A=\\dfrac{Q_{ích}}{H}$ nên $H$ nhỏ hơn thì điện năng cần dùng lớn hơn."
       }
     },
     {
@@ -526,23 +526,23 @@
           "answer": true
         },
         {
-          "text": "Tăng $U$ lên $n$ lần thì hao phí giảm $n$ lần.",
-          "answer": false
-        },
-        {
           "text": "Cường độ dòng điện trên dây là $I=\\dfrac{P}{U}$.",
           "answer": true
+        },
+        {
+          "text": "Tăng $U$ lên $n$ lần thì hao phí giảm $n$ lần.",
+          "answer": false
         },
         {
           "text": "Có thể viết $P_{hp}=\\dfrac{U^2}{R}$ với $U$ là hiệu điện thế của trạm.",
           "answer": false
         }
       ],
-      "explanation": "a) đúng vì dây có điện trở toả nhiệt với công suất $I^2R$. b) sai: $P_{hp}\\sim\\dfrac{1}{U^2}$ nên giảm $n^2$ lần. c) đúng vì công suất truyền đi $P=UI$ nên $I=\\dfrac{P}{U}$. d) sai: hiệu điện thế trên dây chỉ là độ sụt áp $IR$, không phải $U$ của trạm.",
+      "explanation": "a) đúng vì dây có điện trở toả nhiệt với công suất $I^2R$. b) đúng vì công suất truyền đi $P=UI$ nên $I=\\dfrac{P}{U}$. c) sai: $P_{hp}\\sim\\dfrac{1}{U^2}$ nên giảm $n^2$ lần. d) sai: hiệu điện thế trên dây chỉ là độ sụt áp $IR$, không phải $U$ của trạm.",
       "distractorNotes": {
         "0": "Không thể coi là sai vì dây dẫn có điện trở $R$ toả nhiệt với công suất $I^2R$.",
-        "1": "Không thể coi là đúng vì $I$ giảm $n$ lần, $P_{hp}=I^2R$ giảm $n^2$ lần.",
-        "2": "Không thể coi là sai vì công suất truyền đi bằng tích hiệu điện thế và cường độ dòng điện.",
+        "1": "Không thể coi là sai vì công suất truyền đi bằng tích hiệu điện thế và cường độ dòng điện.",
+        "2": "Không thể coi là đúng vì $I$ giảm $n$ lần, $P_{hp}=I^2R$ giảm $n^2$ lần.",
         "3": "Không thể coi là đúng vì hiệu điện thế trên dây chỉ là độ sụt áp $IR$, không phải hiệu điện thế $U$ của trạm."
       }
     }

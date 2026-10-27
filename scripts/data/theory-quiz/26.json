@@ -347,28 +347,28 @@
    "question": "Một bạn ngồi trên xích đu ở sân trường. Lần đầu được đẩy nhẹ, lần sau được đẩy cho góc lệch lớn nhất gấp đôi (vẫn là góc nhỏ). Bỏ qua ma sát trong một lượt đu.",
    "statements": [
     {
-     "text": "Ở vị trí biên, xích đu dừng lại tức thời.",
-     "answer": true
-    },
-    {
-     "text": "Xích đu qua chỗ thấp nhất với tốc độ lớn nhất.",
-     "answer": true
+     "text": "Cơ năng của xích đu ở hai lần đẩy bằng nhau vì vẫn là xích đu đó.",
+     "answer": false
     },
     {
      "text": "Góc lệch lớn nhất gấp đôi thì cơ năng của xích đu cũng gấp đôi.",
      "answer": false
     },
     {
-     "text": "Cơ năng của xích đu ở hai lần đẩy bằng nhau vì vẫn là xích đu đó.",
-     "answer": false
+     "text": "Ở vị trí biên, xích đu dừng lại tức thời.",
+     "answer": true
+    },
+    {
+     "text": "Xích đu qua chỗ thấp nhất với tốc độ lớn nhất.",
+     "answer": true
     }
    ],
    "explanation": "Ở biên $v=0$, qua đáy tốc độ cực đại. Với góc nhỏ $W\\approx\\tfrac12 mgl\\alpha_0^2$ nên góc gấp đôi thì cơ năng gấp 4; đẩy mạnh hơn là nạp thêm năng lượng.",
    "distractorNotes": {
-    "0": "Ở biên toàn bộ cơ năng là thế năng nên tốc độ bằng 0; coi ý này sai là nhầm biên với đáy.",
-    "1": "Chỗ thấp nhất thế năng nhỏ nhất nên động năng và tốc độ lớn nhất; không thể coi là sai.",
-    "2": "Coi cơ năng tỉ lệ thuận với góc là quên bình phương: $W\\approx\\tfrac12 mgl\\alpha_0^2$ nên góc gấp đôi thì cơ năng gấp 4.",
-    "3": "Cùng xích đu nhưng đẩy cho góc lớn hơn là đã nạp thêm năng lượng, nên cơ năng không thể bằng nhau."
+    "0": "Cùng xích đu nhưng đẩy cho góc lớn hơn là đã nạp thêm năng lượng, nên cơ năng không thể bằng nhau.",
+    "1": "Coi cơ năng tỉ lệ thuận với góc là quên bình phương: $W\\approx\\tfrac12 mgl\\alpha_0^2$ nên góc gấp đôi thì cơ năng gấp 4.",
+    "2": "Ở biên toàn bộ cơ năng là thế năng nên tốc độ bằng 0; coi ý này sai là nhầm biên với đáy.",
+    "3": "Chỗ thấp nhất thế năng nhỏ nhất nên động năng và tốc độ lớn nhất; không thể coi là sai."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Xét đồ thị động năng $W_{\\text{đ}}$, thế năng $W_t$ và cơ năng $W$ theo thời gian của một vật dao động điều hoà với chu kì $T$, tần số $f$.",
    "statements": [
     {
-     "text": "$W_{\\text{đ}}$ và $W_t$ biến thiên ngược pha nhau.",
-     "answer": true
-    },
-    {
-     "text": "$W_{\\text{đ}}$ và $W_t$ lên xuống quanh giá trị $\\tfrac12 W$.",
-     "answer": true
+     "text": "Động năng biến thiên với tần số $f$, bằng tần số dao động.",
+     "answer": false
     },
     {
      "text": "Thế năng biến thiên với chu kì $T$, bằng chu kì của li độ.",
      "answer": false
     },
     {
-     "text": "Động năng biến thiên với tần số $f$, bằng tần số dao động.",
-     "answer": false
+     "text": "$W_{\\text{đ}}$ và $W_t$ lên xuống quanh giá trị $\\tfrac12 W$.",
+     "answer": true
+    },
+    {
+     "text": "$W_{\\text{đ}}$ và $W_t$ biến thiên ngược pha nhau.",
+     "answer": true
     }
    ],
    "explanation": "$W_{\\text{đ}}$ và $W_t$ ngược pha, dao động quanh $\\tfrac12W$, có chu kì $T/2$ và tần số $2f$. Còn $W$ là đường nằm ngang.",
    "distractorNotes": {
-    "0": "Tổng $W_{\\text{đ}}+W_t$ không đổi nên một đại lượng tăng thì đại lượng kia giảm; không thể coi là sai.",
-    "1": "Cả hai biến thiên từ 0 đến $W$ một cách đối xứng nên dao động quanh $\\tfrac12W$; ý này đúng.",
-    "2": "Coi là đúng là lấy chu kì li độ cho năng lượng; $W_t\\propto x^2$ cực đại ở cả $\\pm A$ nên chu kì là $T/2$.",
-    "3": "Coi là đúng là quên năng lượng biến đổi gấp đôi nhịp dao động, tần số động năng là $2f$."
+    "0": "Coi là đúng là quên năng lượng biến đổi gấp đôi nhịp dao động, tần số động năng là $2f$.",
+    "1": "Coi là đúng là lấy chu kì li độ cho năng lượng; $W_t\\propto x^2$ cực đại ở cả $\\pm A$ nên chu kì là $T/2$.",
+    "2": "Cả hai biến thiên từ 0 đến $W$ một cách đối xứng nên dao động quanh $\\tfrac12W$; ý này đúng.",
+    "3": "Tổng $W_{\\text{đ}}+W_t$ không đổi nên một đại lượng tăng thì đại lượng kia giảm; không thể coi là sai."
    }
   },
   {
@@ -417,16 +417,16 @@
    "question": "Thí nghiệm: treo quả nặng vào lò xo thẳng đứng, kéo xuống lần lượt các biên độ $A$ khác nhau (đo bằng thước sai số $\\pm1\\ \\text{mm}$) rồi thả. Quay chậm để đo tốc độ khi vật qua VTCB và tính $\\tfrac12 mv_{\\max}^2$.",
    "statements": [
     {
-     "text": "Tỉ số $W/A^2$ gần như không đổi chứng tỏ cơ năng tỉ lệ với bình phương biên độ.",
-     "answer": true
+     "text": "Hàng đo với biên độ nhỏ nhất là hàng tin cậy nhất.",
+     "answer": false
     },
     {
      "text": "Lò xo thẳng đứng vẫn có $W=\\tfrac12 kA^2$ khi mốc ở VTCB và $A$ tính từ VTCB.",
      "answer": true
     },
     {
-     "text": "Hàng đo với biên độ nhỏ nhất là hàng tin cậy nhất.",
-     "answer": false
+     "text": "Tỉ số $W/A^2$ gần như không đổi chứng tỏ cơ năng tỉ lệ với bình phương biên độ.",
+     "answer": true
     },
     {
      "text": "Sai số tương đối của $A^2$ bằng đúng sai số tương đối của $A$.",
@@ -435,9 +435,9 @@
    ],
    "explanation": "Kết quả đo xác nhận $W\\propto A^2$, kể cả với lò xo thẳng đứng. Biên độ nhỏ thì sai số tương đối của thước lớn, và sai số tương đối của $A^2$ gấp đôi của $A$.",
    "distractorNotes": {
-    "0": "Tỉ số $W/A^2$ không đổi nghĩa là $W$ tỉ lệ thuận với $A^2$, đúng như $W=\\tfrac12 kA^2$.",
+    "0": "Coi là đúng là bỏ qua sai số tương đối: sai 1 mm trên biên độ nhỏ chiếm tỉ lệ lớn nhất.",
     "1": "Coi là sai là nghĩ trọng lực làm hỏng công thức; bài khẳng định vẫn đúng khi mốc và $A$ lấy từ VTCB.",
-    "2": "Coi là đúng là bỏ qua sai số tương đối: sai 1 mm trên biên độ nhỏ chiếm tỉ lệ lớn nhất.",
+    "2": "Tỉ số $W/A^2$ không đổi nghĩa là $W$ tỉ lệ thuận với $A^2$, đúng như $W=\\tfrac12 kA^2$.",
     "3": "Coi là đúng là quên rằng bình phương làm sai số tương đối của $A^2$ gấp đôi sai số của $A$."
    }
   },
@@ -452,28 +452,28 @@
    "question": "Vật dao động điều hoà với biên độ $A$, tốc độ cực đại $v_{\\max}$. Xét vị trí động năng bằng $n$ lần thế năng ($W_{\\text{đ}}=nW_t$).",
    "statements": [
     {
-     "text": "Tại đó cơ năng $W=(n+1)W_t$.",
-     "answer": true
-    },
-    {
-     "text": "Tại đó tốc độ $|v|=v_{\\max}\\sqrt{\\dfrac{n}{n+1}}$.",
-     "answer": true
-    },
-    {
      "text": "Tại đó li độ $x=\\pm\\dfrac{A}{\\sqrt{n}}$.",
      "answer": false
     },
     {
      "text": "Nếu đảo lại $W_t=nW_{\\text{đ}}$ thì $|v|=\\dfrac{v_{\\max}}{\\sqrt{n+1}}$.",
      "answer": true
+    },
+    {
+     "text": "Tại đó cơ năng $W=(n+1)W_t$.",
+     "answer": true
+    },
+    {
+     "text": "Tại đó tốc độ $|v|=v_{\\max}\\sqrt{\\dfrac{n}{n+1}}$.",
+     "answer": true
     }
    ],
    "explanation": "$n$ phần động, 1 phần thế, tổng $n+1$ phần: $x=\\pm\\dfrac{A}{\\sqrt{n+1}}$, $W_{\\text{đ}}=\\dfrac{n}{n+1}W$. Khi đảo lại thì $W_{\\text{đ}}=\\dfrac{W}{n+1}$.",
    "distractorNotes": {
-    "0": "$W=W_{\\text{đ}}+W_t=nW_t+W_t=(n+1)W_t$, phép cộng trực tiếp nên không thể coi là sai.",
-    "1": "$W_{\\text{đ}}=\\dfrac{n}{n+1}W$ và tốc độ tỉ lệ căn của động năng, nên biểu thức này đúng.",
-    "2": "Coi là đúng là quên cộng 1 phần thế năng; phải chia cho $\\sqrt{n+1}$ chứ không phải $\\sqrt{n}$.",
-    "3": "Khi đảo lại, động năng chỉ chiếm 1 trong $n+1$ phần, lấy căn ra đúng $\\dfrac{v_{\\max}}{\\sqrt{n+1}}$; không thể coi là sai."
+    "0": "Coi là đúng là quên cộng 1 phần thế năng; phải chia cho $\\sqrt{n+1}$ chứ không phải $\\sqrt{n}$.",
+    "1": "Khi đảo lại, động năng chỉ chiếm 1 trong $n+1$ phần, lấy căn ra đúng $\\dfrac{v_{\\max}}{\\sqrt{n+1}}$; không thể coi là sai.",
+    "2": "$W=W_{\\text{đ}}+W_t=nW_t+W_t=(n+1)W_t$, phép cộng trực tiếp nên không thể coi là sai.",
+    "3": "$W_{\\text{đ}}=\\dfrac{n}{n+1}W$ và tốc độ tỉ lệ căn của động năng, nên biểu thức này đúng."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Con lắc đơn khối lượng $m$, dây dài $l$, biên độ góc $\\alpha_0$, mốc thế năng ở đáy (VTCB). Bỏ qua ma sát.",
    "statements": [
     {
-     "text": "Độ cao của vật so với đáy khi dây lệch góc $\\alpha$ là $h=l(1-\\cos\\alpha)$.",
-     "answer": true
-    },
-    {
-     "text": "Tốc độ khi qua đáy là $v_{\\max}=\\sqrt{2gl(1-\\cos\\alpha_0)}$.",
-     "answer": true
-    },
-    {
      "text": "Cơ năng của con lắc là $W=mgl\\cos\\alpha_0$.",
      "answer": false
     },
     {
+     "text": "Độ cao của vật so với đáy khi dây lệch góc $\\alpha$ là $h=l(1-\\cos\\alpha)$.",
+     "answer": true
+    },
+    {
      "text": "Với góc nhỏ, $v_{\\max}\\approx\\alpha_0\\sqrt{gl}$ khi thế $\\alpha_0$ bằng độ.",
      "answer": false
+    },
+    {
+     "text": "Tốc độ khi qua đáy là $v_{\\max}=\\sqrt{2gl(1-\\cos\\alpha_0)}$.",
+     "answer": true
     }
    ],
    "explanation": "$h=l(1-\\cos\\alpha)$, $W=mgl(1-\\cos\\alpha_0)$, $v_{\\max}=\\sqrt{2gl(1-\\cos\\alpha_0)}$. Công thức góc nhỏ đòi hỏi $\\alpha_0$ tính bằng rad.",
    "distractorNotes": {
-    "0": "Vật thấp hơn điểm treo $l\\cos\\alpha$ nên cao hơn đáy $l-l\\cos\\alpha$; không thể coi là sai.",
-    "1": "Thế năng ở biên chuyển hết thành động năng ở đáy, cho đúng biểu thức này; không thể coi là sai.",
-    "2": "Coi là đúng là bỏ mất phần $1-$, lấy độ cao so với điểm treo thay vì so với đáy.",
-    "3": "Coi là đúng là quên điều kiện đơn vị: công thức góc nhỏ chỉ đúng khi $\\alpha_0$ đã đổi ra rad."
+    "0": "Coi là đúng là bỏ mất phần $1-$, lấy độ cao so với điểm treo thay vì so với đáy.",
+    "1": "Vật thấp hơn điểm treo $l\\cos\\alpha$ nên cao hơn đáy $l-l\\cos\\alpha$; không thể coi là sai.",
+    "2": "Coi là đúng là quên điều kiện đơn vị: công thức góc nhỏ chỉ đúng khi $\\alpha_0$ đã đổi ra rad.",
+    "3": "Thế năng ở biên chuyển hết thành động năng ở đáy, cho đúng biểu thức này; không thể coi là sai."
    }
   },
   {
@@ -522,11 +522,7 @@
    "question": "Một học sinh tính năng lượng dao động của con lắc lò xo và con lắc đơn. Xét các nhận định về đơn vị và cách nhập số.",
    "statements": [
     {
-     "text": "Biên độ cho bằng cm phải đổi ra mét trước, rồi mới bình phương.",
-     "answer": true
-    },
-    {
-     "text": "$1\\ \\text{cm}^2=10^{-2}\\ \\text{m}^2$.",
+     "text": "Trong công thức góc nhỏ $W\\approx\\tfrac12 mgl\\alpha_0^2$ được nhập góc bằng độ.",
      "answer": false
     },
     {
@@ -534,16 +530,20 @@
      "answer": true
     },
     {
-     "text": "Trong công thức góc nhỏ $W\\approx\\tfrac12 mgl\\alpha_0^2$ được nhập góc bằng độ.",
+     "text": "$1\\ \\text{cm}^2=10^{-2}\\ \\text{m}^2$.",
      "answer": false
+    },
+    {
+     "text": "Biên độ cho bằng cm phải đổi ra mét trước, rồi mới bình phương.",
+     "answer": true
     }
    ],
    "explanation": "Đổi mét trước, bình phương sau, vì $1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$. Đổi J sang mJ thì nhân 1000. Công thức góc nhỏ chỉ nhập góc bằng rad.",
    "distractorNotes": {
-    "0": "Để nguyên cm rồi bình phương thì kết quả lớn gấp $10^4$ lần, nên bắt buộc đổi mét trước.",
-    "1": "Coi là đúng là đổi diện tích mà không bình phương hệ số: $(10^{-2})^2=10^{-4}$.",
-    "2": "1 J bằng 1000 mJ nên đổi J sang mJ là nhân 1000; coi là sai là đảo chiều phép đổi.",
-    "3": "Coi là đúng là lẫn với công thức có $\\cos$; chỉ công thức đó mới nhập độ, công thức góc nhỏ phải dùng rad."
+    "0": "Coi là đúng là lẫn với công thức có $\\cos$; chỉ công thức đó mới nhập độ, công thức góc nhỏ phải dùng rad.",
+    "1": "1 J bằng 1000 mJ nên đổi J sang mJ là nhân 1000; coi là sai là đảo chiều phép đổi.",
+    "2": "Coi là đúng là đổi diện tích mà không bình phương hệ số: $(10^{-2})^2=10^{-4}$.",
+    "3": "Để nguyên cm rồi bình phương thì kết quả lớn gấp $10^4$ lần, nên bắt buộc đổi mét trước."
    }
   }
  ]

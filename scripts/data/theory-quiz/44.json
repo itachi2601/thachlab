@@ -329,28 +329,28 @@
    "question": "Một bàn là (chỉ toả nhiệt) có điện trở $R$, được mắc vào hiệu điện thế $U$, dòng điện $I$ chạy qua trong thời gian $t$.",
    "statements": [
     {
-     "text": "Điện năng bàn là tiêu thụ là $A = UIt$, tính ra jun khi $t$ đo bằng giây.",
+     "text": "Toàn bộ điện năng tiêu thụ chuyển thành nhiệt lượng $Q = I^{2}Rt$.",
      "answer": true
     },
     {
-     "text": "Toàn bộ điện năng tiêu thụ chuyển thành nhiệt lượng $Q = I^{2}Rt$.",
+     "text": "Công suất ghi trên bàn là chính là số kWh mà công tơ điện đếm được.",
+     "answer": false
+    },
+    {
+     "text": "Điện năng bàn là tiêu thụ là $A = UIt$, tính ra jun khi $t$ đo bằng giây.",
      "answer": true
     },
     {
      "text": "Dùng bàn là lâu gấp đôi (cùng $U$, $I$) thì điện năng tiêu thụ tăng gấp bốn.",
      "answer": false
-    },
-    {
-     "text": "Công suất ghi trên bàn là chính là số kWh mà công tơ điện đếm được.",
-     "answer": false
     }
    ],
    "explanation": "$A = UIt$ tỉ lệ bậc nhất với $t$; bàn là chỉ toả nhiệt nên $A = Q = I^2Rt$. Công suất (kW) khác điện năng (kWh) mà công tơ đếm.",
    "distractorNotes": {
-    "0": "Đây đúng là công thức $A = UIt$; dùng V, A và s thì kết quả ra jun.",
-    "1": "Bàn là chỉ toả nhiệt nên toàn bộ điện năng thành nhiệt theo định luật Jun – Len-xơ.",
-    "2": "Bình phương nhầm thời gian: $A = UIt$ chỉ tỉ lệ bậc nhất với $t$.",
-    "3": "Nhầm kW với kWh: công suất là tốc độ tiêu thụ, còn công tơ đếm tổng năng lượng."
+    "0": "Bàn là chỉ toả nhiệt nên toàn bộ điện năng thành nhiệt theo định luật Jun – Len-xơ.",
+    "1": "Nhầm kW với kWh: công suất là tốc độ tiêu thụ, còn công tơ đếm tổng năng lượng.",
+    "2": "Đây đúng là công thức $A = UIt$; dùng V, A và s thì kết quả ra jun.",
+    "3": "Bình phương nhầm thời gian: $A = UIt$ chỉ tỉ lệ bậc nhất với $t$."
    }
   },
   {
@@ -372,20 +372,20 @@
      "answer": false
     },
     {
-     "text": "$I^{2}r$ là công suất hao phí toả nhiệt ngay trong nguồn.",
-     "answer": true
-    },
-    {
      "text": "Công của nguồn trong thời gian $t$ là $A_{ng} = UIt$.",
      "answer": false
+    },
+    {
+     "text": "$I^{2}r$ là công suất hao phí toả nhiệt ngay trong nguồn.",
+     "answer": true
     }
    ],
    "explanation": "$\\mathcal{E}I = UI + I^2r$: nguồn phát $\\mathcal{E}I$, mạch ngoài nhận $UI$, nguồn tự nóng $I^2r$. Công của nguồn là $\\mathcal{E}It$.",
    "distractorNotes": {
     "0": "Công của nguồn là $\\mathcal{E}It$ nên công suất của nguồn đúng là $\\mathcal{E}I$.",
     "1": "Mạch ngoài chỉ nhận $UI$, nhỏ hơn $\\mathcal{E}I$ đúng phần $I^2r$ hao phí trong nguồn.",
-    "2": "Từ $\\mathcal{E}I = UI + I^2r$, phần $I^2r$ chính là nhiệt toả ra trong nguồn.",
-    "3": "Nhầm $U$ với $\\mathcal{E}$: $UIt$ là năng lượng mạch ngoài nhận, còn công của nguồn là $\\mathcal{E}It$."
+    "2": "Nhầm $U$ với $\\mathcal{E}$: $UIt$ là năng lượng mạch ngoài nhận, còn công của nguồn là $\\mathcal{E}It$.",
+    "3": "Từ $\\mathcal{E}I = UI + I^2r$, phần $I^2r$ chính là nhiệt toả ra trong nguồn."
    }
   },
   {
@@ -399,28 +399,28 @@
    "question": "Thí nghiệm: hai pin AA nối tiếp (có suất điện động $\\mathcal{E}$ và điện trở trong $r$) nối với hộp điện trở $R$; lần lượt tăng $R$ và đọc $U$, $I$.",
    "statements": [
     {
-     "text": "Khi $R$ tăng, $I$ giảm còn $U$ tăng dần về phía $\\mathcal{E}$.",
-     "answer": true
-    },
-    {
-     "text": "Hiệu suất nguồn tăng khi $R$ tăng.",
-     "answer": true
+     "text": "Hiệu suất nguồn giảm khi $R$ tăng vì dòng điện $I$ giảm.",
+     "answer": false
     },
     {
      "text": "Khi $R$ đủ lớn, hiệu suất nguồn đạt đúng $100\\ \\%$.",
      "answer": false
     },
     {
-     "text": "Hiệu suất nguồn giảm khi $R$ tăng vì dòng điện $I$ giảm.",
-     "answer": false
+     "text": "Khi $R$ tăng, $I$ giảm còn $U$ tăng dần về phía $\\mathcal{E}$.",
+     "answer": true
+    },
+    {
+     "text": "Hiệu suất nguồn tăng khi $R$ tăng.",
+     "answer": true
     }
    ],
    "explanation": "$H = U/\\mathcal{E} = R/(R + r)$ tăng theo $R$ và tiến sát $100\\ \\%$ nhưng không chạm vì luôn có $r \\gt 0$.",
    "distractorNotes": {
-    "0": "Từ $U = \\mathcal{E} - Ir$, khi $I$ giảm thì $U$ tăng dần về $\\mathcal{E}$, khớp bảng đo.",
-    "1": "$H = R/(R+r)$ tăng khi $R$ tăng, đúng như số liệu đo trong bảng.",
-    "2": "Muốn $H = 100\\ \\%$ thì phải có $r = 0$, mà nguồn thật luôn có $r \\gt 0$.",
-    "3": "Hiệu suất đi theo $U$ chứ không theo $I$; $I$ giảm nhưng $U$ tăng nên $H$ tăng."
+    "0": "Hiệu suất đi theo $U$ chứ không theo $I$; $I$ giảm nhưng $U$ tăng nên $H$ tăng.",
+    "1": "Muốn $H = 100\\ \\%$ thì phải có $r = 0$, mà nguồn thật luôn có $r \\gt 0$.",
+    "2": "Từ $U = \\mathcal{E} - Ir$, khi $I$ giảm thì $U$ tăng dần về $\\mathcal{E}$, khớp bảng đo.",
+    "3": "$H = R/(R+r)$ tăng khi $R$ tăng, đúng như số liệu đo trong bảng."
    }
   },
   {
@@ -434,28 +434,28 @@
    "question": "Đèn 1 ghi 220 V – 100 W, đèn 2 ghi 220 V – 40 W, coi điện trở các đèn không đổi.",
    "statements": [
     {
-     "text": "Đèn 2 có điện trở lớn hơn đèn 1.",
-     "answer": true
-    },
-    {
-     "text": "Mắc song song vào 220 V thì đèn 1 sáng hơn đèn 2.",
-     "answer": true
+     "text": "Mắc nối tiếp vào 220 V thì cả hai đèn đều sáng đúng định mức.",
+     "answer": false
     },
     {
      "text": "Mắc nối tiếp vào 220 V thì đèn 1 sáng hơn đèn 2.",
      "answer": false
     },
     {
-     "text": "Mắc nối tiếp vào 220 V thì cả hai đèn đều sáng đúng định mức.",
-     "answer": false
+     "text": "Mắc song song vào 220 V thì đèn 1 sáng hơn đèn 2.",
+     "answer": true
+    },
+    {
+     "text": "Đèn 2 có điện trở lớn hơn đèn 1.",
+     "answer": true
     }
    ],
    "explanation": "$R = U_{dm}^2/P_{dm}$ nên đèn 40 W có $R$ lớn hơn. Song song cùng $U$: $R$ nhỏ nhận nhiều hơn; nối tiếp cùng $I$: $R$ lớn nhận nhiều hơn.",
    "distractorNotes": {
-    "0": "Cùng $U_{dm}$, theo $R = U_{dm}^2/P_{dm}$, đèn có $P_{dm}$ nhỏ hơn thì có điện trở lớn hơn.",
-    "1": "Mắc song song thì mỗi đèn được đúng 220 V, đạt công suất định mức, nên đèn 100 W sáng hơn.",
-    "2": "Mắc nối tiếp thì cùng $I$, theo $P = I^2R$ đèn có $R$ lớn (đèn 40 W) sáng hơn.",
-    "3": "Mắc nối tiếp thì 220 V chia cho hai đèn, không đèn nào được đủ hiệu điện thế định mức."
+    "0": "Mắc nối tiếp thì 220 V chia cho hai đèn, không đèn nào được đủ hiệu điện thế định mức.",
+    "1": "Mắc nối tiếp thì cùng $I$, theo $P = I^2R$ đèn có $R$ lớn (đèn 40 W) sáng hơn.",
+    "2": "Mắc song song thì mỗi đèn được đúng 220 V, đạt công suất định mức, nên đèn 100 W sáng hơn.",
+    "3": "Cùng $U_{dm}$, theo $R = U_{dm}^2/P_{dm}$, đèn có $P_{dm}$ nhỏ hơn thì có điện trở lớn hơn."
    }
   },
   {
@@ -469,7 +469,7 @@
    "question": "Một chiếc chìa khoá kim loại vô tình chạm vào hai cực của ắc quy xe máy, gây đoản mạch.",
    "statements": [
     {
-     "text": "Điện trở mạch ngoài gần bằng 0 nên dòng điện xấp xỉ $I = \\mathcal{E}/r$.",
+     "text": "Nhiệt lượng toả ra trong ắc quy và trong chìa khoá tăng vọt.",
      "answer": true
     },
     {
@@ -477,7 +477,7 @@
      "answer": false
     },
     {
-     "text": "Nhiệt lượng toả ra trong ắc quy và trong chìa khoá tăng vọt.",
+     "text": "Điện trở mạch ngoài gần bằng 0 nên dòng điện xấp xỉ $I = \\mathcal{E}/r$.",
      "answer": true
     },
     {
@@ -487,9 +487,9 @@
    ],
    "explanation": "Đoản mạch: $R \\to 0$, $I = \\mathcal{E}/r$ rất lớn vì $r$ nhỏ, nhiệt $I^2r$ và $I^2R_{dây}$ tăng vọt; cầu chì đứt trước để bảo vệ.",
    "distractorNotes": {
-    "0": "Hai cực nối thẳng qua vật dẫn gần như không có điện trở, nên chỉ còn $r$ hạn chế dòng.",
+    "0": "Dòng rất lớn làm $I^2r$ trong ắc quy và $I^2R$ trong chìa khoá tăng vọt, gây nóng đỏ.",
     "1": "Ngược chiều: $r$ nằm ở mẫu của $I = \\mathcal{E}/r$, nên $r$ càng nhỏ thì dòng càng lớn.",
-    "2": "Dòng rất lớn làm $I^2r$ trong ắc quy và $I^2R$ trong chìa khoá tăng vọt, gây nóng đỏ.",
+    "2": "Hai cực nối thẳng qua vật dẫn gần như không có điện trở, nên chỉ còn $r$ hạn chế dòng.",
     "3": "Cầu chì phù hợp được chế tạo để tự ngắt khi dòng vượt định mức, trước khi dây kịp cháy."
    }
   },
@@ -504,11 +504,11 @@
    "question": "Nhãn lò nướng ghi \"2,2 kW\", còn hoá đơn tiền điện ghi \"312 kWh\". Xét các đơn vị kW và kWh.",
    "statements": [
     {
-     "text": "kW là đơn vị của công suất.",
-     "answer": true
+     "text": "kWh là một đơn vị công suất lớn hơn kW.",
+     "answer": false
     },
     {
-     "text": "kWh là một đơn vị công suất lớn hơn kW.",
+     "text": "$1$ kW $= 3{,}6\\cdot10^{6}$ J.",
      "answer": false
     },
     {
@@ -516,16 +516,16 @@
      "answer": true
     },
     {
-     "text": "$1$ kW $= 3{,}6\\cdot10^{6}$ J.",
-     "answer": false
+     "text": "kW là đơn vị của công suất.",
+     "answer": true
     }
    ],
    "explanation": "kW đo công suất (tốc độ tiêu thụ, $1$ kW $= 1000$ J/s); kWh đo năng lượng (tổng tiêu thụ), $1$ kWh $= 3{,}6\\cdot10^{6}$ J.",
    "distractorNotes": {
-    "0": "kW ghi trên nhãn thiết bị là công suất, tức năng lượng tiêu thụ mỗi giây.",
-    "1": "kWh là công suất nhân thời gian nên là đơn vị năng lượng, không phải công suất.",
+    "0": "kWh là công suất nhân thời gian nên là đơn vị năng lượng, không phải công suất.",
+    "1": "Nhầm kW với kWh: $3{,}6\\cdot10^{6}$ J là giá trị của 1 kWh, còn 1 kW bằng 1000 J/s.",
     "2": "Đúng định nghĩa: $1$ kWh bằng $1000$ W nhân $3600$ s.",
-    "3": "Nhầm kW với kWh: $3{,}6\\cdot10^{6}$ J là giá trị của 1 kWh, còn 1 kW bằng 1000 J/s."
+    "3": "kW ghi trên nhãn thiết bị là công suất, tức năng lượng tiêu thụ mỗi giây."
    }
   }
  ]

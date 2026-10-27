@@ -347,11 +347,7 @@
    "question": "Một vận động viên trượt băng thả trôi theo đường thẳng, cứ mỗi giây tốc độ giảm đi một lượng như nhau. Ban đầu chọn chiều dương theo chiều trượt. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Với chiều dương đã chọn, $v \\gt 0$ và $a \\lt 0$ nên người đó chuyển động chậm dần đều.",
-     "answer": true
-    },
-    {
-     "text": "Nếu chọn lại chiều dương ngược chiều trượt thì $a \\gt 0$, nên chuyển động trở thành nhanh dần đều.",
+     "text": "Gia tốc âm luôn có nghĩa là vật đang chuyển động chậm dần.",
      "answer": false
     },
     {
@@ -359,16 +355,20 @@
      "answer": true
     },
     {
-     "text": "Gia tốc âm luôn có nghĩa là vật đang chuyển động chậm dần.",
+     "text": "Với chiều dương đã chọn, $v \\gt 0$ và $a \\lt 0$ nên người đó chuyển động chậm dần đều.",
+     "answer": true
+    },
+    {
+     "text": "Nếu chọn lại chiều dương ngược chiều trượt thì $a \\gt 0$, nên chuyển động trở thành nhanh dần đều.",
      "answer": false
     }
    ],
    "explanation": "Bẫy 1: dấu của $a$ chỉ cho biết $\\vec a$ cùng hay ngược chiều dương; nhanh hay chậm xét dấu $a \\cdot v$, mà tích này không đổi khi đổi chiều dương.",
    "distractorNotes": {
-    "0": "$v \\gt 0$, $a \\lt 0$ nên $a \\cdot v \\lt 0$, đúng điều kiện chậm dần đều, không thể coi là sai.",
-    "1": "Đổi chiều dương thì $v$ cũng đổi dấu, $a \\cdot v$ vẫn âm nên vẫn chậm dần đều.",
-    "2": "Cả $a$ và $v$ cùng đổi dấu nên tích giữ nguyên, phát biểu này không sai.",
-    "3": "Gia tốc âm mà vận tốc cũng âm thì $a \\cdot v \\gt 0$, vật nhanh dần, nên không thể nói luôn chậm dần."
+    "0": "Gia tốc âm mà vận tốc cũng âm thì $a \\cdot v \\gt 0$, vật nhanh dần, nên không thể nói luôn chậm dần.",
+    "1": "Cả $a$ và $v$ cùng đổi dấu nên tích giữ nguyên, phát biểu này không sai.",
+    "2": "$v \\gt 0$, $a \\lt 0$ nên $a \\cdot v \\lt 0$, đúng điều kiện chậm dần đều, không thể coi là sai.",
+    "3": "Đổi chiều dương thì $v$ cũng đổi dấu, $a \\cdot v$ vẫn âm nên vẫn chậm dần đều."
    }
   },
   {
@@ -382,6 +382,10 @@
    "question": "Thí nghiệm: thả xe lăn từ nghỉ trên máng nghiêng, đo thời gian $t$ từ lúc thả và thời gian $\\tau$ tấm chắn rộng $b$ đi qua cổng quang điện, tính $v = b/\\tau$. Kết quả cho tỉ số $v/t$ gần như không đổi. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Giá trị $v = b/\\tau$ chính là vận tốc tức thời chính xác của xe tại cổng quang điện.",
+     "answer": false
+    },
+    {
      "text": "Vì $v/t$ gần như không đổi nên xe chuyển động nhanh dần đều.",
      "answer": true
     },
@@ -390,19 +394,15 @@
      "answer": true
     },
     {
-     "text": "Giá trị $v = b/\\tau$ chính là vận tốc tức thời chính xác của xe tại cổng quang điện.",
-     "answer": false
-    },
-    {
      "text": "Xe đi qua cổng càng nhanh thì $\\tau$ càng dài nên sai số tương đối của $v$ càng nhỏ.",
      "answer": false
     }
    ],
    "explanation": "$v/t$ không đổi nên $v = at$, đồ thị là đường thẳng qua gốc. $b/\\tau$ thực ra là vận tốc trung bình khi qua cổng; xe càng nhanh thì $\\tau$ càng ngắn, sai số tương đối càng lớn.",
    "distractorNotes": {
-    "0": "$v/t$ không đổi nghĩa là gia tốc không đổi và vận tốc tăng, đúng là nhanh dần đều.",
-    "1": "Thả từ nghỉ nên $v_0 = 0$, $v = at$, đồ thị đi qua gốc, phát biểu này không sai.",
-    "2": "$b/\\tau$ là vận tốc trung bình trong lúc tấm chắn đi qua cổng, không phải vận tốc tức thời chính xác.",
+    "0": "$b/\\tau$ là vận tốc trung bình trong lúc tấm chắn đi qua cổng, không phải vận tốc tức thời chính xác.",
+    "1": "$v/t$ không đổi nghĩa là gia tốc không đổi và vận tốc tăng, đúng là nhanh dần đều.",
+    "2": "Thả từ nghỉ nên $v_0 = 0$, $v = at$, đồ thị đi qua gốc, phát biểu này không sai.",
     "3": "Đảo quan hệ: xe nhanh thì $\\tau = b/v$ ngắn đi, sai một vạch đồng hồ chiếm tỉ lệ lớn hơn."
    }
   },
@@ -417,28 +417,28 @@
    "question": "Ô tô đang dừng ở vạch đèn đỏ, đèn xanh thì khởi hành nhanh dần đều. Đúng lúc đó một xe máy chạy thẳng đều đi qua vạch dừng, cùng chiều với ô tô. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Để lập phương trình, phải dùng chung một gốc tọa độ, một chiều dương và một gốc thời gian cho cả hai xe.",
-     "answer": true
-    },
-    {
-     "text": "Ô tô đuổi kịp xe máy khi tọa độ hai xe bằng nhau, $x_1 = x_2$.",
-     "answer": true
-    },
-    {
      "text": "Ô tô đuổi kịp xe máy đúng lúc hai xe có cùng vận tốc.",
      "answer": false
     },
     {
      "text": "Trước khi ô tô đuổi kịp, khoảng cách giữa hai xe luôn tăng dần.",
      "answer": false
+    },
+    {
+     "text": "Ô tô đuổi kịp xe máy khi tọa độ hai xe bằng nhau, $x_1 = x_2$.",
+     "answer": true
+    },
+    {
+     "text": "Để lập phương trình, phải dùng chung một gốc tọa độ, một chiều dương và một gốc thời gian cho cả hai xe.",
+     "answer": true
     }
    ],
    "explanation": "Bài toán mẫu: dùng chung hệ quy chiếu, gặp nhau khi $x_1 = x_2$. Lúc cùng vận tốc thì khoảng cách lớn nhất; sau đó ô tô nhanh hơn nên khoảng cách giảm dần tới 0.",
    "distractorNotes": {
-    "0": "Mỗi xe một hệ quy chiếu riêng thì tọa độ không so sánh được, nên phải dùng chung, phát biểu đúng.",
-    "1": "Gặp nhau là cùng vị trí trên đường, tức tọa độ bằng nhau, phát biểu này không sai.",
-    "2": "Nhầm vận tốc với vị trí: lúc cùng vận tốc là lúc khoảng cách lớn nhất, chưa phải lúc gặp.",
-    "3": "Ô tô nhanh dần nên đến lúc nhanh hơn xe máy, khi đó khoảng cách bắt đầu giảm."
+    "0": "Nhầm vận tốc với vị trí: lúc cùng vận tốc là lúc khoảng cách lớn nhất, chưa phải lúc gặp.",
+    "1": "Ô tô nhanh dần nên đến lúc nhanh hơn xe máy, khi đó khoảng cách bắt đầu giảm.",
+    "2": "Gặp nhau là cùng vị trí trên đường, tức tọa độ bằng nhau, phát biểu này không sai.",
+    "3": "Mỗi xe một hệ quy chiếu riêng thì tọa độ không so sánh được, nên phải dùng chung, phát biểu đúng."
    }
   },
   {
@@ -452,6 +452,10 @@
    "question": "Xét công thức vận tốc của chuyển động thẳng biến đổi đều $v = v_0 + at$ (gốc thời gian lúc bắt đầu xét). Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Khi $a = 0$, đồ thị $v$–$t$ là đường dốc lên.",
+     "answer": false
+    },
+    {
      "text": "Đồ thị $v$ theo $t$ là đoạn thẳng cắt trục $v$ tại $v_0$.",
      "answer": true
     },
@@ -460,19 +464,15 @@
      "answer": true
     },
     {
-     "text": "Khi $a = 0$, đồ thị $v$–$t$ là đường dốc lên.",
-     "answer": false
-    },
-    {
      "text": "Công thức này chỉ dùng được cho chuyển động nhanh dần đều.",
      "answer": false
     }
    ],
    "explanation": "Mục II.2: đồ thị là đoạn thẳng cắt trục $v$ tại $v_0$, nằm ngang khi $a = 0$. Từ nghỉ thì $v = at$. Công thức đúng cho cả nhanh dần và chậm dần, chỉ khác dấu của $a$.",
    "distractorNotes": {
-    "0": "$v$ là hàm bậc nhất của $t$ và bằng $v_0$ khi $t = 0$, nên phát biểu này đúng.",
-    "1": "Từ nghỉ thì $v_0 = 0$, thay vào được $v = at$, phát biểu này không sai.",
-    "2": "Nhầm $a = 0$ với $a \\gt 0$: khi $a = 0$ vận tốc không đổi nên đồ thị nằm ngang.",
+    "0": "Nhầm $a = 0$ với $a \\gt 0$: khi $a = 0$ vận tốc không đổi nên đồ thị nằm ngang.",
+    "1": "$v$ là hàm bậc nhất của $t$ và bằng $v_0$ khi $t = 0$, nên phát biểu này đúng.",
+    "2": "Từ nghỉ thì $v_0 = 0$, thay vào được $v = at$, phát biểu này không sai.",
     "3": "Chậm dần đều vẫn dùng công thức này, chỉ cần $a$ ngược dấu với $v$."
    }
   },
@@ -491,12 +491,12 @@
      "answer": true
     },
     {
-     "text": "Thời gian chuyển động tăng gấp đôi thì độ dịch chuyển tăng gấp đôi.",
-     "answer": false
-    },
-    {
      "text": "Với cùng thời gian, gia tốc tăng gấp đôi thì độ dịch chuyển tăng gấp đôi.",
      "answer": true
+    },
+    {
+     "text": "Thời gian chuyển động tăng gấp đôi thì độ dịch chuyển tăng gấp đôi.",
+     "answer": false
     },
     {
      "text": "Với cùng gia tốc, muốn đạt vận tốc gấp đôi thì quãng đường cần đi chỉ gấp đôi.",
@@ -506,8 +506,8 @@
    "explanation": "$v = at$ tỉ lệ thuận với $t$; $d = \\frac12at^2$ tỉ lệ với $t^2$ và với $a$; $v^2 = 2ad$ nên $d$ tỉ lệ với $v^2$.",
    "distractorNotes": {
     "0": "$v = at$ tỉ lệ thuận với $t$, nên $t$ gấp đôi thì $v$ gấp đôi, phát biểu đúng.",
-    "1": "Coi $d$ tỉ lệ thuận với $t$, trong khi $d = \\frac12at^2$ nên $t$ gấp đôi thì $d$ gấp bốn.",
-    "2": "Cùng $t$ thì $d = \\frac12at^2$ tỉ lệ thuận với $a$, phát biểu này không sai.",
+    "1": "Cùng $t$ thì $d = \\frac12at^2$ tỉ lệ thuận với $a$, phát biểu này không sai.",
+    "2": "Coi $d$ tỉ lệ thuận với $t$, trong khi $d = \\frac12at^2$ nên $t$ gấp đôi thì $d$ gấp bốn.",
     "3": "Quên bình phương: theo $v^2 = 2ad$, vận tốc gấp đôi thì quãng đường gấp bốn."
    }
   },
@@ -522,28 +522,28 @@
    "question": "Từ hai công thức $v = v_0 + at$ và $d = \\dfrac{v_0 + v}{2}\\, t$ của chuyển động thẳng biến đổi đều, xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Công thức $d = \\dfrac{v_0 + v}{2}\\, t$ cho biết độ dịch chuyển bằng vận tốc trung bình nhân với thời gian.",
-     "answer": true
-    },
-    {
-     "text": "Khử $t$ giữa hai công thức được $v^2 - v_0^2 = 2ad$.",
-     "answer": true
+     "text": "Từ $v^2 - v_0^2 = 2ad$ suy ra $d = \\dfrac{v^2 + v_0^2}{2a}$.",
+     "answer": false
     },
     {
      "text": "Công thức $v^2 - v_0^2 = 2ad$ thuận tiện khi đề không cho và không hỏi thời gian.",
      "answer": true
     },
     {
-     "text": "Từ $v^2 - v_0^2 = 2ad$ suy ra $d = \\dfrac{v^2 + v_0^2}{2a}$.",
-     "answer": false
+     "text": "Công thức $d = \\dfrac{v_0 + v}{2}\\, t$ cho biết độ dịch chuyển bằng vận tốc trung bình nhân với thời gian.",
+     "answer": true
+    },
+    {
+     "text": "Khử $t$ giữa hai công thức được $v^2 - v_0^2 = 2ad$.",
+     "answer": true
     }
    ],
    "explanation": "Mục II.3–II.4: $d$ là diện tích hình thang, bằng vận tốc trung bình nhân thời gian. Thay $t = \\dfrac{v - v_0}{a}$ được $v^2 - v_0^2 = 2ad$, nên $d = \\dfrac{v^2 - v_0^2}{2a}$, dùng khi không có $t$.",
    "distractorNotes": {
-    "0": "Trong biến đổi đều, $\\dfrac{v_0 + v}{2}$ đúng là vận tốc trung bình, nên phát biểu này đúng.",
-    "1": "Thay $t = \\dfrac{v - v_0}{a}$ vào công thức $d$ cho đúng $v^2 - v_0^2 = 2ad$, không sai.",
-    "2": "Công thức không chứa $t$ nên đúng là thuận tiện khi đề không cho và không hỏi thời gian.",
-    "3": "Sai dấu khi chuyển vế: tử số giữ nguyên hiệu $v^2 - v_0^2$, không thành tổng."
+    "0": "Sai dấu khi chuyển vế: tử số giữ nguyên hiệu $v^2 - v_0^2$, không thành tổng.",
+    "1": "Công thức không chứa $t$ nên đúng là thuận tiện khi đề không cho và không hỏi thời gian.",
+    "2": "Trong biến đổi đều, $\\dfrac{v_0 + v}{2}$ đúng là vận tốc trung bình, nên phát biểu này đúng.",
+    "3": "Thay $t = \\dfrac{v - v_0}{a}$ vào công thức $d$ cho đúng $v^2 - v_0^2 = 2ad$, không sai."
    }
   }
  ]

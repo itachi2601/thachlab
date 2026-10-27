@@ -347,7 +347,7 @@
    "question": "Hai vật X và Y có cùng khối lượng, cùng nhiệt độ đầu và cùng nhận một nhiệt lượng $Q$. Nhiệt dung riêng của X gấp đôi nhiệt dung riêng của Y.",
    "statements": [
     {
-     "text": "Độ tăng nhiệt độ của X gấp đôi độ tăng nhiệt độ của Y.",
+     "text": "Hai vật nóng lên như nhau vì cùng nhận nhiệt lượng $Q$.",
      "answer": false
     },
     {
@@ -359,16 +359,16 @@
      "answer": true
     },
     {
-     "text": "Hai vật nóng lên như nhau vì cùng nhận nhiệt lượng $Q$.",
+     "text": "Độ tăng nhiệt độ của X gấp đôi độ tăng nhiệt độ của Y.",
      "answer": false
     }
    ],
    "explanation": "$\\Delta t=\\dfrac Q{mc}$: cùng $m$ và $Q$ thì $c$ lớn hơn cho $\\Delta t$ nhỏ hơn.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì $c$ lớn hơn thì vật nóng chậm hơn, độ tăng nhiệt độ nhỏ hơn.",
+    "0": "Không thể coi là đúng vì độ tăng nhiệt độ còn phụ thuộc $c$, mà hai vật khác $c$.",
     "1": "Không thể coi là sai vì $\\Delta t=\\dfrac Q{mc}$ nên $c$ gấp đôi thì $\\Delta t$ giảm còn một nửa.",
     "2": "Không thể coi là sai vì nhiệt cần cho mỗi độ là $mc$, mà $c$ của X gấp đôi.",
-    "3": "Không thể coi là đúng vì độ tăng nhiệt độ còn phụ thuộc $c$, mà hai vật khác $c$."
+    "3": "Không thể coi là đúng vì $c$ lớn hơn thì vật nóng chậm hơn, độ tăng nhiệt độ nhỏ hơn."
    }
   },
   {
@@ -382,10 +382,6 @@
    "question": "Một học sinh bàn về nhiệt độ và nhiệt lượng khi cho các vật tiếp xúc nhau.",
    "statements": [
     {
-     "text": "Nhiệt độ cho biết nhiệt sẽ truyền từ vật nào sang vật nào.",
-     "answer": true
-    },
-    {
      "text": "Vật nóng hơn luôn có nhiệt lượng lớn hơn.",
      "answer": false
     },
@@ -394,15 +390,19 @@
      "answer": false
     },
     {
+     "text": "Nhiệt độ cho biết nhiệt sẽ truyền từ vật nào sang vật nào.",
+     "answer": true
+    },
+    {
      "text": "Nhiệt lượng chỉ có ý nghĩa khi có sự truyền nhiệt giữa các vật.",
      "answer": true
     }
    ],
    "explanation": "Nhiệt độ quyết định chiều truyền nhiệt; nhiệt lượng chỉ có khi truyền, đo bằng J và dùng $m$ theo kg.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì nhiệt tự truyền từ vật có nhiệt độ cao sang vật có nhiệt độ thấp.",
-    "1": "Không thể coi là đúng vì vật không chứa nhiệt lượng; nhiệt độ cao chưa nói lên nhiệt lượng trao đổi nhiều.",
-    "2": "Không thể coi là đúng vì $m$ phải đổi ra kg, để gam sẽ lệch $1000$ lần.",
+    "0": "Không thể coi là đúng vì vật không chứa nhiệt lượng; nhiệt độ cao chưa nói lên nhiệt lượng trao đổi nhiều.",
+    "1": "Không thể coi là đúng vì $m$ phải đổi ra kg, để gam sẽ lệch $1000$ lần.",
+    "2": "Không thể coi là sai vì nhiệt tự truyền từ vật có nhiệt độ cao sang vật có nhiệt độ thấp.",
     "3": "Không thể coi là sai vì nhiệt lượng là phần nhiệt năng nhận thêm hay mất bớt khi truyền, vật không có sẵn."
    }
   },
@@ -417,28 +417,28 @@
    "question": "Đun đều một khối nước đá từ $-10\\,^\\circ\\text{C}$ cho tới khi nước sôi hoàn toàn thành hơi.",
    "statements": [
     {
-     "text": "Trong lúc đá đang tan, nhiệt độ hỗn hợp đá và nước giữ ở $0\\,^\\circ\\text{C}$.",
-     "answer": true
-    },
-    {
-     "text": "Trong lúc đá đang tan, nguồn nhiệt ngừng truyền nhiệt cho khối đá.",
-     "answer": false
-    },
-    {
      "text": "Khi nước đang sôi (hoá hơi), nhiệt độ không đổi dù vẫn nhận nhiệt.",
      "answer": true
     },
     {
      "text": "Hơi nước ngưng tụ thành nước ở $100\\,^\\circ\\text{C}$ thì thu thêm nhiệt lượng.",
      "answer": false
+    },
+    {
+     "text": "Trong lúc đá đang tan, nguồn nhiệt ngừng truyền nhiệt cho khối đá.",
+     "answer": false
+    },
+    {
+     "text": "Trong lúc đá đang tan, nhiệt độ hỗn hợp đá và nước giữ ở $0\\,^\\circ\\text{C}$.",
+     "answer": true
     }
    ],
    "explanation": "Chuyển thể: nhiệt độ đứng yên; nóng chảy, hoá hơi thu nhiệt, đông đặc, ngưng tụ toả đúng lượng nhiệt đó.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì khi chuyển thể nhiệt độ không đổi dù vẫn nhận nhiệt.",
-    "1": "Không thể coi là đúng vì nguồn vẫn cấp nhiệt đều; nhiệt chỉ dùng để đổi thể.",
-    "2": "Không thể coi là sai vì nhiệt nhận vào dùng để hoá hơi ($Lm$), chưa làm tăng nhiệt độ.",
-    "3": "Không thể coi là đúng vì ngưng tụ thì toả ra đúng lượng nhiệt $Lm$ đã thu khi hoá hơi."
+    "0": "Không thể coi là sai vì nhiệt nhận vào dùng để hoá hơi ($Lm$), chưa làm tăng nhiệt độ.",
+    "1": "Không thể coi là đúng vì ngưng tụ thì toả ra đúng lượng nhiệt $Lm$ đã thu khi hoá hơi.",
+    "2": "Không thể coi là đúng vì nguồn vẫn cấp nhiệt đều; nhiệt chỉ dùng để đổi thể.",
+    "3": "Không thể coi là sai vì khi chuyển thể nhiệt độ không đổi dù vẫn nhận nhiệt."
    }
   },
   {
@@ -452,8 +452,8 @@
    "question": "Trộn $1\\ \\text{kg}$ nước $80\\,^\\circ\\text{C}$ với $1\\ \\text{kg}$ nước $20\\,^\\circ\\text{C}$ trong bình cách nhiệt, bỏ qua nhiệt dung bình.",
    "statements": [
     {
-     "text": "Thay bằng $1\\ \\text{kg}$ sắt $80\\,^\\circ\\text{C}$ thì nhiệt độ cuối vẫn là $50\\,^\\circ\\text{C}$ vì cùng khối lượng và nhiệt độ.",
-     "answer": false
+     "text": "Thay $1\\ \\text{kg}$ nước $80\\,^\\circ\\text{C}$ bằng $1\\ \\text{kg}$ sắt $80\\,^\\circ\\text{C}$ thì nhiệt độ cuối thấp hơn $50\\,^\\circ\\text{C}$.",
+     "answer": true
     },
     {
      "text": "Nhiệt độ cuối là $50\\,^\\circ\\text{C}$.",
@@ -464,16 +464,16 @@
      "answer": false
     },
     {
-     "text": "Thay $1\\ \\text{kg}$ nước $80\\,^\\circ\\text{C}$ bằng $1\\ \\text{kg}$ sắt $80\\,^\\circ\\text{C}$ thì nhiệt độ cuối thấp hơn $50\\,^\\circ\\text{C}$.",
-     "answer": true
+     "text": "Thay bằng $1\\ \\text{kg}$ sắt $80\\,^\\circ\\text{C}$ thì nhiệt độ cuối vẫn là $50\\,^\\circ\\text{C}$ vì cùng khối lượng và nhiệt độ.",
+     "answer": false
     }
    ],
    "explanation": "$t_{cb}=\\dfrac{\\sum m_ic_it_i}{\\sum m_ic_i}$: trung bình cộng chỉ khi các $m_ic_i$ bằng nhau.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì trọng số của $t_{cb}$ là $mc$, khác nhau khi khác chất.",
+    "0": "Không thể coi là sai vì sắt có $c$ nhỏ hơn nhiều nên toả ít nhiệt hơn, nước lạnh chỉ ấm lên chút ít.",
     "1": "Không thể coi là sai vì cùng chất, cùng khối lượng nên $t_{cb}$ là trung bình cộng: $50\\,^\\circ\\text{C}$.",
     "2": "Không thể coi là đúng vì chỉ khi cùng chất (cùng $c$) mới có trung bình cộng.",
-    "3": "Không thể coi là sai vì sắt có $c$ nhỏ hơn nhiều nên toả ít nhiệt hơn, nước lạnh chỉ ấm lên chút ít."
+    "3": "Không thể coi là đúng vì trọng số của $t_{cb}$ là $mc$, khác nhau khi khác chất."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Đun $2\\ \\text{kg}$ nước đá ở $-20\\,^\\circ\\text{C}$ bằng nguồn có ích đều $680\\ \\text{W}$. Cho $c_{\\text{đ}}=2100\\ \\text{J/(kg·K)}$, $\\lambda=3{,}4\\cdot10^5\\ \\text{J/kg}$.",
    "statements": [
     {
-     "text": "Đoạn đá tan có độ dốc lớn hơn đoạn đá đang nóng lên.",
-     "answer": false
-    },
-    {
-     "text": "Nếu nguồn có công suất gấp đôi thì đoạn đá tan kéo dài $2000\\ \\text{s}$.",
-     "answer": false
-    },
-    {
      "text": "Đoạn đá nóng từ $-20\\,^\\circ\\text{C}$ lên $0\\,^\\circ\\text{C}$ kéo dài khoảng $124\\ \\text{s}$.",
      "answer": true
     },
     {
+     "text": "Đoạn đá tan có độ dốc lớn hơn đoạn đá đang nóng lên.",
+     "answer": false
+    },
+    {
      "text": "Đoạn đá tan ở $0\\,^\\circ\\text{C}$ kéo dài $1000\\ \\text{s}$.",
      "answer": true
+    },
+    {
+     "text": "Nếu nguồn có công suất gấp đôi thì đoạn đá tan kéo dài $2000\\ \\text{s}$.",
+     "answer": false
     }
    ],
    "explanation": "Đoạn dốc: $P\\Delta\\tau=mc\\Delta t$; đoạn ngang: $P\\Delta\\tau=\\lambda m$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì lúc tan nhiệt độ đứng yên nên đoạn đó nằm ngang, không dốc.",
-    "1": "Không thể coi là đúng vì $\\tau=\\lambda m/P$ nên $P$ gấp đôi thì thời gian giảm còn $500\\ \\text{s}$.",
-    "2": "Không thể coi là sai vì $\\tau=\\dfrac{2\\cdot2100\\cdot20}{680}\\approx124\\ \\text{s}$.",
-    "3": "Không thể coi là sai vì $\\tau=\\dfrac{\\lambda m}{P}=\\dfrac{3{,}4\\cdot10^5\\cdot2}{680}=1000\\ \\text{s}$."
+    "0": "Không thể coi là sai vì $\\tau=\\dfrac{2\\cdot2100\\cdot20}{680}\\approx124\\ \\text{s}$.",
+    "1": "Không thể coi là đúng vì lúc tan nhiệt độ đứng yên nên đoạn đó nằm ngang, không dốc.",
+    "2": "Không thể coi là sai vì $\\tau=\\dfrac{\\lambda m}{P}=\\dfrac{3{,}4\\cdot10^5\\cdot2}{680}=1000\\ \\text{s}$.",
+    "3": "Không thể coi là đúng vì $\\tau=\\lambda m/P$ nên $P$ gấp đôi thì thời gian giảm còn $500\\ \\text{s}$."
    }
   },
   {

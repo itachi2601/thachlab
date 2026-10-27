@@ -347,11 +347,7 @@
       "question": "Thí nghiệm: ba que cùng cỡ bằng đồng, nhôm, thuỷ tinh, gắn đinh nhỏ bằng sáp dọc mỗi que, rồi hơ một đầu ba que trên cùng ngọn lửa. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Đinh trên que đồng rơi trước, chứng tỏ đồng dẫn nhiệt tốt hơn thuỷ tinh.",
-          "answer": true
-        },
-        {
-          "text": "Nhiệt đi dọc que nhờ đối lưu của kim loại.",
+          "text": "Chân không dẫn nhiệt tốt hơn kim loại.",
           "answer": false
         },
         {
@@ -359,16 +355,20 @@
           "answer": true
         },
         {
-          "text": "Chân không dẫn nhiệt tốt hơn kim loại.",
+          "text": "Nhiệt đi dọc que nhờ đối lưu của kim loại.",
           "answer": false
+        },
+        {
+          "text": "Đinh trên que đồng rơi trước, chứng tỏ đồng dẫn nhiệt tốt hơn thuỷ tinh.",
+          "answer": true
         }
       ],
-      "explanation": "a) đúng: đồng dẫn tốt, đinh rơi trước. b) sai: trong chất rắn nhiệt truyền bằng dẫn nhiệt. c) đúng: đó là dẫn nhiệt. d) sai: chân không không dẫn nhiệt.",
+      "explanation": "a) sai: chân không không dẫn nhiệt. b) đúng: đó là dẫn nhiệt. c) sai: trong chất rắn nhiệt truyền bằng dẫn nhiệt. d) đúng: đồng dẫn tốt, đinh rơi trước.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì đồng dẫn nhiệt tốt nên sáp chảy sớm và đinh rơi trước que thuỷ tinh.",
-        "1": "Không thể coi là đúng vì chất rắn không có dòng chuyển động, nhiệt đi dọc que bằng dẫn nhiệt.",
-        "2": "Không thể coi là sai vì dẫn nhiệt là nhiệt truyền dần trong vật mà vật không di chuyển.",
-        "3": "Không thể coi là đúng vì chân không không có chất nên không dẫn nhiệt."
+        "0": "Không thể coi là đúng vì chân không không có chất nên không dẫn nhiệt.",
+        "1": "Không thể coi là sai vì dẫn nhiệt là nhiệt truyền dần trong vật mà vật không di chuyển.",
+        "2": "Không thể coi là đúng vì chất rắn không có dòng chuyển động, nhiệt đi dọc que bằng dẫn nhiệt.",
+        "3": "Không thể coi là sai vì đồng dẫn nhiệt tốt nên sáp chảy sớm và đinh rơi trước que thuỷ tinh."
       }
     },
     {
@@ -417,7 +417,11 @@
       "question": "Trời rất lạnh, mặt hồ nước bắt đầu đóng băng trong khi cá dưới đáy vẫn sống. Xét các phát biểu về tính chất của nước:",
       "statements": [
         {
-          "text": "Từ $0\\ ^\\circ\\text{C}$ đến $4\\ ^\\circ\\text{C}$, nước nóng lên lại co lại.",
+          "text": "Lớp nước mặt nguội dưới $4\\ ^\\circ\\text{C}$ nặng hơn nên chìm xuống đáy.",
+          "answer": false
+        },
+        {
+          "text": "Khối lượng riêng của nước lớn nhất ở $4\\ ^\\circ\\text{C}$.",
           "answer": true
         },
         {
@@ -425,20 +429,16 @@
           "answer": false
         },
         {
-          "text": "Lớp nước mặt nguội dưới $4\\ ^\\circ\\text{C}$ nặng hơn nên chìm xuống đáy.",
-          "answer": false
-        },
-        {
-          "text": "Khối lượng riêng của nước lớn nhất ở $4\\ ^\\circ\\text{C}$.",
+          "text": "Từ $0\\ ^\\circ\\text{C}$ đến $4\\ ^\\circ\\text{C}$, nước nóng lên lại co lại.",
           "answer": true
         }
       ],
-      "explanation": "a) đúng theo tính chất nước. b) sai: $4\\ ^\\circ\\text{C}$ nặng hơn nên chìm. c) sai: nguội dưới $4\\ ^\\circ\\text{C}$ thì nhẹ hơn, nằm lại trên mặt rồi đóng băng. d) đúng theo tính chất nước.",
+      "explanation": "a) sai: nguội dưới $4\\ ^\\circ\\text{C}$ thì nhẹ hơn, nằm lại trên mặt rồi đóng băng. b) đúng theo tính chất nước. c) sai: $4\\ ^\\circ\\text{C}$ nặng hơn nên chìm. d) đúng theo tính chất nước.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì nước là chất bất thường: trong khoảng này nó co lại khi nóng lên.",
-        "1": "Không thể coi là đúng vì khối lượng riêng ở $4\\ ^\\circ\\text{C}$ lớn hơn nên nước nặng hơn và chìm xuống.",
-        "2": "Không thể coi là đúng vì nguội dưới $4\\ ^\\circ\\text{C}$ nước nhẹ đi, nằm lại trên mặt rồi đóng băng.",
-        "3": "Không thể coi là sai vì khối lượng riêng của nước đạt cực đại tại $4\\ ^\\circ\\text{C}$."
+        "0": "Không thể coi là đúng vì nguội dưới $4\\ ^\\circ\\text{C}$ nước nhẹ đi, nằm lại trên mặt rồi đóng băng.",
+        "1": "Không thể coi là sai vì khối lượng riêng của nước đạt cực đại tại $4\\ ^\\circ\\text{C}$.",
+        "2": "Không thể coi là đúng vì khối lượng riêng ở $4\\ ^\\circ\\text{C}$ lớn hơn nên nước nặng hơn và chìm xuống.",
+        "3": "Không thể coi là sai vì nước là chất bất thường: trong khoảng này nó co lại khi nóng lên."
       }
     },
     {
@@ -452,28 +452,28 @@
       "question": "Một thanh kim loại có chiều dài ban đầu $l_0$ và hệ số nở dài $\\alpha$ được nung nóng thêm $\\Delta t$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Cùng $\\alpha$ và $\\Delta t$, thanh dài gấp đôi thì độ dãn dài không đổi.",
-          "answer": false
-        },
-        {
           "text": "Độ dãn dài của thanh là $\\Delta l=l_0\\alpha\\Delta t$.",
           "answer": true
         },
         {
-          "text": "Khi tính độ dãn dài có thể thay $\\Delta t$ bằng nhiệt độ cuối của thanh.",
+          "text": "Giữ nguyên $l_0$ và $\\alpha$, tăng $\\Delta t$ gấp đôi thì độ dãn dài cũng gấp đôi.",
+          "answer": true
+        },
+        {
+          "text": "Cùng $\\alpha$ và $\\Delta t$, thanh dài gấp đôi thì độ dãn dài không đổi.",
           "answer": false
         },
         {
-          "text": "Giữ nguyên $l_0$ và $\\alpha$, tăng $\\Delta t$ gấp đôi thì độ dãn dài cũng gấp đôi.",
-          "answer": true
+          "text": "Khi tính độ dãn dài có thể thay $\\Delta t$ bằng nhiệt độ cuối của thanh.",
+          "answer": false
         }
       ],
-      "explanation": "a) sai: $\\Delta l$ tỉ lệ với $l_0$ nên gấp đôi. b) đúng theo công thức nở dài. c) sai: phải dùng độ tăng nhiệt độ. d) đúng vì $\\Delta l$ tỉ lệ với $\\Delta t$.",
+      "explanation": "a) đúng theo công thức nở dài. b) đúng vì $\\Delta l$ tỉ lệ với $\\Delta t$. c) sai: $\\Delta l$ tỉ lệ với $l_0$ nên gấp đôi. d) sai: phải dùng độ tăng nhiệt độ.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì $\\Delta l$ tỉ lệ thuận với $l_0$, thanh dài gấp đôi thì dãn gấp đôi.",
-        "1": "Không thể coi là sai vì đây chính là công thức nở dài của bài.",
-        "2": "Không thể coi là đúng vì công thức dùng độ tăng nhiệt độ $\\Delta t$, không dùng nhiệt độ cuối.",
-        "3": "Không thể coi là sai vì $\\Delta l$ tỉ lệ thuận với $\\Delta t$ khi các đại lượng còn lại giữ nguyên."
+        "0": "Không thể coi là sai vì đây chính là công thức nở dài của bài.",
+        "1": "Không thể coi là sai vì $\\Delta l$ tỉ lệ thuận với $\\Delta t$ khi các đại lượng còn lại giữ nguyên.",
+        "2": "Không thể coi là đúng vì $\\Delta l$ tỉ lệ thuận với $l_0$, thanh dài gấp đôi thì dãn gấp đôi.",
+        "3": "Không thể coi là đúng vì công thức dùng độ tăng nhiệt độ $\\Delta t$, không dùng nhiệt độ cuối."
       }
     },
     {
@@ -522,6 +522,10 @@
       "question": "Đường ray thép dài $10\\ \\text{m}$, $\\alpha=12\\cdot10^{-6}\\ \\text{K}^{-1}$, lắp ở $20\\ ^\\circ\\text{C}$, giữa hai thanh ray chừa một khe hở. Nhiệt độ nóng nhất là $60\\ ^\\circ\\text{C}$. Xét các phát biểu sau:",
       "statements": [
         {
+          "text": "Mỗi thanh ray dãn ra tối đa khoảng $4{,}8\\ \\text{mm}$.",
+          "answer": true
+        },
+        {
           "text": "Khe hở được chừa để ray có chỗ dãn khi nóng.",
           "answer": true
         },
@@ -532,18 +536,14 @@
         {
           "text": "Nếu khe hở nhỏ hơn độ dãn thì ray vẫn không bị cong vênh.",
           "answer": false
-        },
-        {
-          "text": "Mỗi thanh ray dãn ra tối đa khoảng $4{,}8\\ \\text{mm}$.",
-          "answer": true
         }
       ],
-      "explanation": "a) đúng vì khe hở là chỗ để ray dãn ra khi nóng. b) sai: nóng lên thì nở ra. c) sai: ray bị cản nở sẽ đẩy nhau và cong vênh. d) đúng: $\\Delta l=10\\cdot12\\cdot10^{-6}\\cdot40=4{,}8\\cdot10^{-3}\\ \\text{m}$.",
+      "explanation": "a) đúng: $\\Delta l=10\\cdot12\\cdot10^{-6}\\cdot40=4{,}8\\cdot10^{-3}\\ \\text{m}$. b) đúng vì khe hở là chỗ để ray dãn ra khi nóng. c) sai: nóng lên thì nở ra. d) sai: ray bị cản nở sẽ đẩy nhau và cong vênh.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì khe hở là chỗ để ray nở ra khi nóng lên.",
-        "1": "Không thể coi là đúng vì khi nóng lên vật nở ra, không co lại.",
-        "2": "Không thể coi là đúng vì vật bị cản nở tạo lực rất lớn, ray đẩy nhau và cong vênh.",
-        "3": "Không thể coi là sai vì $\\Delta t=60-20=40$ nên $\\Delta l=10\\cdot12\\cdot10^{-6}\\cdot40=4{,}8\\ \\text{mm}$."
+        "0": "Không thể coi là sai vì $\\Delta t=60-20=40$ nên $\\Delta l=10\\cdot12\\cdot10^{-6}\\cdot40=4{,}8\\ \\text{mm}$.",
+        "1": "Không thể coi là sai vì khe hở là chỗ để ray nở ra khi nóng lên.",
+        "2": "Không thể coi là đúng vì khi nóng lên vật nở ra, không co lại.",
+        "3": "Không thể coi là đúng vì vật bị cản nở tạo lực rất lớn, ray đẩy nhau và cong vênh."
       }
     }
   ]

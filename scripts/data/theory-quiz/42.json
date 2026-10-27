@@ -347,16 +347,16 @@
    "question": "Một học sinh thay điện trở 10 Ω trong mạch đo bằng bóng đèn 6 V – 3 W, tăng dần $U$ rồi ghi $I$. Kết quả: $U/I$ tăng dần khi $U$ tăng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Đường đặc trưng vôn – ampe của đèn là một đường cong, không thẳng.",
-     "answer": true
+     "text": "Điện trở đèn tăng là do $U$ tăng, theo đúng công thức $R = U/I$.",
+     "answer": false
     },
     {
      "text": "Tỉ số $U/I$ tăng dần vì dây tóc nóng lên khi dòng điện tăng.",
      "answer": true
     },
     {
-     "text": "Điện trở đèn tăng là do $U$ tăng, theo đúng công thức $R = U/I$.",
-     "answer": false
+     "text": "Đường đặc trưng vôn – ampe của đèn là một đường cong, không thẳng.",
+     "answer": true
     },
     {
      "text": "Với đèn này, $I$ vẫn tỉ lệ thuận với $U$ như với điện trở 10 Ω.",
@@ -365,9 +365,9 @@
    ],
    "explanation": "Dây tóc nóng lên làm $R$ tăng nên đường đặc trưng cong. $R = U/I$ chỉ là cách tính, nguyên nhân là nhiệt độ. Vì $R$ đổi nên $I$ không còn tỉ lệ thuận $U$.",
    "distractorNotes": {
-    "0": "Bảng đo cho $U/I$ thay đổi nên các điểm không thể nằm trên một đường thẳng qua gốc.",
+    "0": "$R = U/I$ chỉ là cách tính; điện trở 10 Ω ổn nhiệt tăng $U$ mà $R$ vẫn không đổi.",
     "1": "Dòng lớn hơn làm dây tóc nóng hơn, va chạm tăng, nên đây đúng là nguyên nhân $R$ tăng.",
-    "2": "$R = U/I$ chỉ là cách tính; điện trở 10 Ω ổn nhiệt tăng $U$ mà $R$ vẫn không đổi.",
+    "2": "Bảng đo cho $U/I$ thay đổi nên các điểm không thể nằm trên một đường thẳng qua gốc.",
     "3": "Tỉ lệ thuận đòi hỏi $R$ không đổi, mà $R$ dây tóc tăng theo nhiệt độ."
    }
   },
@@ -386,12 +386,12 @@
      "answer": true
     },
     {
-     "text": "Vì hiệu điện thế ổ điện không đổi nên dòng lúc vừa bật bằng dòng lúc sáng.",
-     "answer": false
-    },
-    {
      "text": "Dòng điện qua dây tóc lúc vừa bật lớn hơn nhiều so với lúc sáng ổn định.",
      "answer": true
+    },
+    {
+     "text": "Vì hiệu điện thế ổ điện không đổi nên dòng lúc vừa bật bằng dòng lúc sáng.",
+     "answer": false
     },
     {
      "text": "Dây tóc nóng sáng có ít electron tự do hơn hẳn nên điện trở lớn hơn.",
@@ -401,8 +401,8 @@
    "explanation": "Dây tóc nguội có $R$ nhỏ, cùng $U$ nên $I = U/R$ lớn hơn nhiều. Điện trở tăng khi nóng do va chạm electron – ion tăng, không phải do mất electron tự do.",
    "distractorNotes": {
     "0": "Kim loại nguội thì ion rung ít, cản ít, nên điện trở nhỏ hơn lúc nóng là đúng.",
-    "1": "$U$ không đổi nhưng $R$ thay đổi theo nhiệt độ, nên dòng không thể bằng nhau.",
-    "2": "Cùng $U$, $I$ tỉ lệ nghịch $R$; $R$ lúc nguội nhỏ hơn nhiều nên dòng lúc bật lớn hơn nhiều.",
+    "1": "Cùng $U$, $I$ tỉ lệ nghịch $R$; $R$ lúc nguội nhỏ hơn nhiều nên dòng lúc bật lớn hơn nhiều.",
+    "2": "$U$ không đổi nhưng $R$ thay đổi theo nhiệt độ, nên dòng không thể bằng nhau.",
     "3": "Số electron tự do hầu như không đổi theo nhiệt độ; cái tăng là mức va chạm."
    }
   },
@@ -417,28 +417,28 @@
    "question": "Một học sinh nhúng điện trở nhiệt NTC cùng nhiệt kế vào cốc nước có nhiệt độ tăng dần và đo điện trở bằng đồng hồ vạn năng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi nước nóng lên, điện trở của NTC giảm.",
-     "answer": true
-    },
-    {
      "text": "Mọi vật dẫn khi nóng lên đều có điện trở tăng, kể cả NTC.",
      "answer": false
     },
     {
-     "text": "Điện trở PTC tăng vọt khi nóng, nên PTC dùng làm cầu chì tự phục hồi.",
+     "text": "Điện trở NTC theo nhiệt độ tuân theo $R = R_0[1 + \\alpha(t - t_0)]$ với $\\alpha \\gt 0$.",
+     "answer": false
+    },
+    {
+     "text": "Khi nước nóng lên, điện trở của NTC giảm.",
      "answer": true
     },
     {
-     "text": "Điện trở NTC theo nhiệt độ tuân theo $R = R_0[1 + \\alpha(t - t_0)]$ với $\\alpha \\gt 0$.",
-     "answer": false
+     "text": "Điện trở PTC tăng vọt khi nóng, nên PTC dùng làm cầu chì tự phục hồi.",
+     "answer": true
     }
    ],
    "explanation": "NTC có hệ số nhiệt âm, nóng thì $R$ giảm mạnh; PTC thì ngược lại. Công thức bậc nhất với $\\alpha \\gt 0$ là của kim loại.",
    "distractorNotes": {
-    "0": "NTC là điện trở nhiệt hệ số âm, nên nóng thì $R$ giảm đúng định nghĩa.",
-    "1": "Quy luật nóng thì $R$ tăng chỉ đúng với kim loại; NTC thì ngược lại.",
-    "2": "Quá dòng làm PTC nóng, $R$ tăng vọt chặn dòng, nguội lại dẫn bình thường nên phát biểu đúng.",
-    "3": "Công thức bậc nhất với $\\alpha \\gt 0$ là của kim loại; NTC có hệ số nhiệt âm."
+    "0": "Quy luật nóng thì $R$ tăng chỉ đúng với kim loại; NTC thì ngược lại.",
+    "1": "Công thức bậc nhất với $\\alpha \\gt 0$ là của kim loại; NTC có hệ số nhiệt âm.",
+    "2": "NTC là điện trở nhiệt hệ số âm, nên nóng thì $R$ giảm đúng định nghĩa.",
+    "3": "Quá dòng làm PTC nóng, $R$ tăng vọt chặn dòng, nguội lại dẫn bình thường nên phát biểu đúng."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Trong thí nghiệm đo $U$ và $I$ của một điện trở công suất 10 Ω (ít nóng), hiệu điện thế được tăng dần từ 1,0 V đến 5,0 V. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Điện trở được xác định bằng $R = U/I$, với $U$ tính bằng V, $I$ tính bằng A thì $R$ tính bằng Ω.",
-     "answer": true
-    },
-    {
-     "text": "Khi $U$ tăng gấp đôi thì điện trở $R$ cũng tăng gấp đôi.",
-     "answer": false
-    },
-    {
      "text": "Tỉ số $U/I$ ở các lần đo gần như bằng nhau.",
      "answer": true
     },
     {
      "text": "Nếu đọc $I$ theo mA thì thế thẳng vào $R = U/I$ vẫn ra đúng số Ω.",
      "answer": false
+    },
+    {
+     "text": "Điện trở được xác định bằng $R = U/I$, với $U$ tính bằng V, $I$ tính bằng A thì $R$ tính bằng Ω.",
+     "answer": true
+    },
+    {
+     "text": "Khi $U$ tăng gấp đôi thì điện trở $R$ cũng tăng gấp đôi.",
+     "answer": false
     }
    ],
    "explanation": "Với điện trở ổn nhiệt, $R$ không đổi nên $U/I$ không đổi. Muốn ra Ω phải đổi mA về A trước khi thế vào công thức.",
    "distractorNotes": {
-    "0": "Đây đúng là định nghĩa điện trở với $1\\ \\Omega = 1$ V/A trong bài.",
-    "1": "$R$ do vật liệu và nhiệt độ quyết định; $U$ gấp đôi thì $I$ gấp đôi, $R$ giữ nguyên.",
-    "2": "$R$ không đổi thì $U/I$ không đổi, đúng như bảng đo cho cùng 10 Ω.",
-    "3": "Không đổi mA về A sẽ làm kết quả lệch hệ số 1000 so với Ω."
+    "0": "$R$ không đổi thì $U/I$ không đổi, đúng như bảng đo cho cùng 10 Ω.",
+    "1": "Không đổi mA về A sẽ làm kết quả lệch hệ số 1000 so với Ω.",
+    "2": "Đây đúng là định nghĩa điện trở với $1\\ \\Omega = 1$ V/A trong bài.",
+    "3": "$R$ do vật liệu và nhiệt độ quyết định; $U$ gấp đôi thì $I$ gấp đôi, $R$ giữ nguyên."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Dây tóc vonfram có điện trở $R_0$ ở $t_0 = 20$ °C và điện trở $R$ ở nhiệt độ $t$, liên hệ bởi $R = R_0[1 + \\alpha(t - t_0)]$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$R_0$ là điện trở của dây tóc ở nhiệt độ $t_0$.",
-     "answer": true
+     "text": "Khi tính $t - t_0$ bằng kelvin thì phải cộng thêm 273 vào hiệu số.",
+     "answer": false
     },
     {
      "text": "Phần điện trở tăng thêm là $R - R_0 = R_0\\,\\alpha\\,(t - t_0)$.",
      "answer": true
     },
     {
-     "text": "Khi tính $t - t_0$ bằng kelvin thì phải cộng thêm 273 vào hiệu số.",
+     "text": "Từ công thức suy ra $t = t_0 + \\dfrac{R - R_0}{\\alpha}$.",
      "answer": false
     },
     {
-     "text": "Từ công thức suy ra $t = t_0 + \\dfrac{R - R_0}{\\alpha}$.",
-     "answer": false
+     "text": "$R_0$ là điện trở của dây tóc ở nhiệt độ $t_0$.",
+     "answer": true
     }
    ],
    "explanation": "Hiệu nhiệt độ theo °C hay K có cùng giá trị. Biến đổi đúng: $t = t_0 + \\dfrac{R/R_0 - 1}{\\alpha}$, phải chia cho $R_0$.",
    "distractorNotes": {
-    "0": "Bài định nghĩa $R_0$ là điện trở ở $t_0$, mốc của công thức.",
+    "0": "Hiệu hai nhiệt độ theo °C và K bằng nhau, cộng 273 vào hiệu số là sai.",
     "1": "Phá ngoặc được $R = R_0 + R_0\\alpha(t - t_0)$, nên hiệu đúng bằng $R_0\\alpha(t - t_0)$.",
-    "2": "Hiệu hai nhiệt độ theo °C và K bằng nhau, cộng 273 vào hiệu số là sai.",
-    "3": "Thiếu chia cho $R_0$; $\\alpha$ là hệ số tương đối nên phải dùng $R/R_0 - 1$."
+    "2": "Thiếu chia cho $R_0$; $\\alpha$ là hệ số tương đối nên phải dùng $R/R_0 - 1$.",
+    "3": "Bài định nghĩa $R_0$ là điện trở ở $t_0$, mốc của công thức."
    }
   },
   {
@@ -522,11 +522,11 @@
    "question": "Một đoạn mạch chỉ có điện trở tuân theo định luật Ohm $I = U/R$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Giữ nguyên $U$, thay bằng điện trở lớn gấp đôi thì $I$ giảm còn một nửa.",
-     "answer": true
+     "text": "Giữ nguyên $U$, thay bằng điện trở nhỏ hơn 3 lần thì $I$ giảm 3 lần.",
+     "answer": false
     },
     {
-     "text": "Giữ nguyên $U$, thay bằng điện trở nhỏ hơn 3 lần thì $I$ giảm 3 lần.",
+     "text": "Từ định luật Ohm suy ra điện trở là $R = \\dfrac{I}{U}$.",
      "answer": false
     },
     {
@@ -534,16 +534,16 @@
      "answer": true
     },
     {
-     "text": "Từ định luật Ohm suy ra điện trở là $R = \\dfrac{I}{U}$.",
-     "answer": false
+     "text": "Giữ nguyên $U$, thay bằng điện trở lớn gấp đôi thì $I$ giảm còn một nửa.",
+     "answer": true
     }
    ],
    "explanation": "Cùng $U$, $I$ tỉ lệ nghịch $R$. Biến đổi đúng: $U = IR$ và $R = U/I$.",
    "distractorNotes": {
-    "0": "Cùng $U$, $I$ tỉ lệ nghịch với $R$ nên $R$ gấp đôi thì $I$ giảm một nửa.",
-    "1": "$R$ nhỏ đi thì cản ít hơn, dòng phải tăng 3 lần chứ không giảm.",
+    "0": "$R$ nhỏ đi thì cản ít hơn, dòng phải tăng 3 lần chứ không giảm.",
+    "1": "Đảo tử mẫu; $I/U$ là $1/R$, tức độ dốc đồ thị $I$ theo $U$, không phải $R$.",
     "2": "Nhân hai vế của $I = U/R$ với $R$ được đúng $U = IR$.",
-    "3": "Đảo tử mẫu; $I/U$ là $1/R$, tức độ dốc đồ thị $I$ theo $U$, không phải $R$."
+    "3": "Cùng $U$, $I$ tỉ lệ nghịch với $R$ nên $R$ gấp đôi thì $I$ giảm một nửa."
    }
   }
  ]

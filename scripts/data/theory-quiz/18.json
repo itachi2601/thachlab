@@ -347,11 +347,7 @@
    "question": "Đặt một nguồn phóng xạ yếu trước ống đếm Geiger, đếm số xung trong từng phút liên tiếp 5 lần, sau đó đưa nguồn ra xa để đo phông nền. Năm số đếm khác nhau nhưng dao động quanh một giá trị trung bình.",
    "statements": [
     {
-     "text": "Năm số đếm khác nhau chủ yếu do phóng xạ là quá trình ngẫu nhiên.",
-     "answer": true
-    },
-    {
-     "text": "Năm số đếm khác nhau chứng tỏ ống đếm bị hỏng, cần thay máy khác.",
+     "text": "Nếu đun nóng nguồn thì nhịp đếm trung bình sẽ tăng rõ rệt.",
      "answer": false
     },
     {
@@ -359,16 +355,20 @@
      "answer": true
     },
     {
-     "text": "Nếu đun nóng nguồn thì nhịp đếm trung bình sẽ tăng rõ rệt.",
+     "text": "Năm số đếm khác nhau chứng tỏ ống đếm bị hỏng, cần thay máy khác.",
      "answer": false
+    },
+    {
+     "text": "Năm số đếm khác nhau chủ yếu do phóng xạ là quá trình ngẫu nhiên.",
+     "answer": true
     }
    ],
    "explanation": "Phóng xạ ngẫu nhiên nên số đếm từng phút thăng giáng thống kê dù máy tốt; phải trừ phông nền; nhiệt độ không ảnh hưởng tới phân rã.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì tính ngẫu nhiên của phóng xạ gây thăng giáng thống kê, đây là nguồn lệch chính.",
-    "1": "Không thể coi là đúng vì số đếm dao động quanh trung bình là thăng giáng thống kê, máy tốt vẫn xảy ra.",
-    "2": "Không thể coi là sai vì phông nền luôn tồn tại, quên trừ thì số đếm của nguồn bị cao.",
-    "3": "Không thể coi là đúng vì phân rã xảy ra trong hạt nhân, nhiệt độ không làm thay đổi nhịp đếm."
+    "0": "Không thể coi là đúng vì phân rã xảy ra trong hạt nhân, nhiệt độ không làm thay đổi nhịp đếm.",
+    "1": "Không thể coi là sai vì phông nền luôn tồn tại, quên trừ thì số đếm của nguồn bị cao.",
+    "2": "Không thể coi là đúng vì số đếm dao động quanh trung bình là thăng giáng thống kê, máy tốt vẫn xảy ra.",
+    "3": "Không thể coi là sai vì tính ngẫu nhiên của phóng xạ gây thăng giáng thống kê, đây là nguồn lệch chính."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Cho các chùm tia $\\alpha$, $\\beta^-$, $\\beta^+$, $\\gamma$ lần lượt bay vào điện trường đều giữa hai bản kim loại tích điện trái dấu.",
    "statements": [
     {
-     "text": "Tia $\\alpha$ bị lệch về phía bản âm.",
-     "answer": true
-    },
-    {
      "text": "Tia $\\beta^-$ bị lệch về phía bản âm.",
      "answer": false
     },
     {
-     "text": "Tia $\\gamma$ đi thẳng vì không mang điện.",
+     "text": "Tia $\\alpha$ bị lệch về phía bản âm.",
      "answer": true
     },
     {
      "text": "Tia $\\beta^+$ bị lệch về phía bản dương.",
      "answer": false
+    },
+    {
+     "text": "Tia $\\gamma$ đi thẳng vì không mang điện.",
+     "answer": true
     }
    ],
    "explanation": "Hạt mang điện dương ($\\alpha$, $\\beta^+$) lệch về bản âm, electron ($\\beta^-$) lệch về bản dương, $\\gamma$ không mang điện nên không lệch.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì hạt $\\alpha$ mang điện dương nên bị lực điện kéo về bản âm.",
-    "1": "Không thể coi là đúng vì electron mang điện âm nên bị kéo lệch về bản dương.",
-    "2": "Không thể coi là sai vì $\\gamma$ là sóng điện từ không mang điện, nên không chịu lực điện.",
-    "3": "Không thể coi là đúng vì positron mang điện dương nên lệch về bản âm, giống hạt $\\alpha$."
+    "0": "Không thể coi là đúng vì electron mang điện âm nên bị kéo lệch về bản dương.",
+    "1": "Không thể coi là sai vì hạt $\\alpha$ mang điện dương nên bị lực điện kéo về bản âm.",
+    "2": "Không thể coi là đúng vì positron mang điện dương nên lệch về bản âm, giống hạt $\\alpha$.",
+    "3": "Không thể coi là sai vì $\\gamma$ là sóng điện từ không mang điện, nên không chịu lực điện."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Một mẫu chất phóng xạ có chu kì bán rã $T$, hằng số phóng xạ $\\lambda$; ban đầu có $N_0$ hạt nhân, khối lượng $m_0$, độ phóng xạ $H_0$.",
    "statements": [
     {
-     "text": "Khối lượng chất phóng xạ còn lại sau thời gian $t$ là $m_t = m_0\\,2^{-t/T}$.",
-     "answer": true
-    },
-    {
      "text": "Số hạt nhân đã phân rã sau thời gian $t$ là $\\Delta N = N_0\\,2^{-t/T}$.",
      "answer": false
     },
     {
-     "text": "Độ phóng xạ sau thời gian $t$ là $H_t = H_0\\,e^{-\\lambda t}$.",
+     "text": "Sau thời gian $2T$, số hạt nhân đã phân rã bằng $25\\%$ số hạt ban đầu.",
+     "answer": false
+    },
+    {
+     "text": "Khối lượng chất phóng xạ còn lại sau thời gian $t$ là $m_t = m_0\\,2^{-t/T}$.",
      "answer": true
     },
     {
-     "text": "Sau thời gian $2T$, số hạt nhân đã phân rã bằng $25\\%$ số hạt ban đầu.",
-     "answer": false
+     "text": "Độ phóng xạ sau thời gian $t$ là $H_t = H_0\\,e^{-\\lambda t}$.",
+     "answer": true
     }
    ],
    "explanation": "$N$, $m$, $H$ cùng giảm theo $2^{-t/T} = e^{-\\lambda t}$; phần đã phân rã là $N_0(1-2^{-t/T})$, sau $2T$ đã phân rã $75\\%$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì khối lượng chất mẹ tỉ lệ với số hạt nhân nên giảm cùng quy luật $2^{-t/T}$.",
-    "1": "Không thể coi là đúng vì $N_0\\,2^{-t/T}$ là số hạt còn lại; số đã phân rã là $N_0(1-2^{-t/T})$.",
-    "2": "Không thể coi là sai vì $2^{-t/T}$ và $e^{-\\lambda t}$ là một khi $\\lambda = \\ln 2/T$.",
-    "3": "Không thể coi là đúng vì $25\\%$ là phần còn lại sau $2T$; phần đã phân rã là $75\\%$."
+    "0": "Không thể coi là đúng vì $N_0\\,2^{-t/T}$ là số hạt còn lại; số đã phân rã là $N_0(1-2^{-t/T})$.",
+    "1": "Không thể coi là đúng vì $25\\%$ là phần còn lại sau $2T$; phần đã phân rã là $75\\%$.",
+    "2": "Không thể coi là sai vì khối lượng chất mẹ tỉ lệ với số hạt nhân nên giảm cùng quy luật $2^{-t/T}$.",
+    "3": "Không thể coi là sai vì $2^{-t/T}$ và $e^{-\\lambda t}$ là một khi $\\lambda = \\ln 2/T$."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Xét một mẫu chất phóng xạ có độ phóng xạ $H = \\lambda N$, với $\\lambda = \\dfrac{\\ln 2}{T}$.",
    "statements": [
     {
-     "text": "$1\\ \\text{Bq}$ bằng 1 phân rã mỗi giây.",
-     "answer": true
-    },
-    {
      "text": "Đổi độ phóng xạ từ Bq sang Ci thì con số thu được lớn hơn.",
      "answer": false
     },
     {
-     "text": "Cùng một chất, nếu số hạt nhân $N$ tăng gấp đôi thì $H$ tăng gấp đôi.",
+     "text": "$1\\ \\text{Bq}$ bằng 1 phân rã mỗi giây.",
      "answer": true
     },
     {
      "text": "Hai chất có cùng $N$, chất có $T$ lớn gấp đôi thì có $H$ lớn gấp đôi.",
      "answer": false
+    },
+    {
+     "text": "Cùng một chất, nếu số hạt nhân $N$ tăng gấp đôi thì $H$ tăng gấp đôi.",
+     "answer": true
     }
    ],
    "explanation": "$H = \\lambda N = \\dfrac{\\ln 2}{T}N$ nên $H$ tỉ lệ thuận với $N$, tỉ lệ nghịch với $T$; curi lớn hơn becơren nên đổi sang Ci con số nhỏ đi.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì becơren được định nghĩa đúng bằng 1 phân rã mỗi giây.",
-    "1": "Không thể coi là đúng vì curi là đơn vị lớn hơn becơren rất nhiều, nên đổi sang Ci con số nhỏ đi.",
-    "2": "Không thể coi là sai vì cùng chất thì $\\lambda$ không đổi, nên $H = \\lambda N$ tỉ lệ thuận với $N$.",
-    "3": "Không thể coi là đúng vì $\\lambda$ tỉ lệ nghịch với $T$, nên $T$ gấp đôi thì $H$ giảm một nửa."
+    "0": "Không thể coi là đúng vì curi là đơn vị lớn hơn becơren rất nhiều, nên đổi sang Ci con số nhỏ đi.",
+    "1": "Không thể coi là sai vì becơren được định nghĩa đúng bằng 1 phân rã mỗi giây.",
+    "2": "Không thể coi là đúng vì $\\lambda$ tỉ lệ nghịch với $T$, nên $T$ gấp đôi thì $H$ giảm một nửa.",
+    "3": "Không thể coi là sai vì cùng chất thì $\\lambda$ không đổi, nên $H = \\lambda N$ tỉ lệ thuận với $N$."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Trong y học dùng mẫu $^{24}_{11}\\text{Na}$ phóng xạ $\\beta^-$ với chu kì bán rã $T = 15$ giờ; ban đầu mẫu có $N_0$ hạt nhân và độ phóng xạ $H_0$.",
    "statements": [
     {
-     "text": "Hạt nhân con tạo thành là $^{24}_{12}\\text{Mg}$.",
-     "answer": true
+     "text": "Hằng số phóng xạ của Na-24 có đơn vị là giây (s).",
+     "answer": false
     },
     {
      "text": "Sau 45 giờ, số hạt nhân Na còn lại bằng $N_0/8$.",
      "answer": true
     },
     {
-     "text": "Sau 45 giờ, độ phóng xạ của mẫu còn bằng $H_0/3$.",
-     "answer": false
+     "text": "Hạt nhân con tạo thành là $^{24}_{12}\\text{Mg}$.",
+     "answer": true
     },
     {
-     "text": "Hằng số phóng xạ của Na-24 có đơn vị là giây (s).",
+     "text": "Sau 45 giờ, độ phóng xạ của mẫu còn bằng $H_0/3$.",
      "answer": false
     }
    ],
    "explanation": "Phân rã $\\beta^-$ giữ $A$, tăng $Z$ thành Mg-24; 45 giờ $= 3T$ nên $N$ và $H$ đều chia cho $2^3 = 8$; $\\lambda = \\ln 2/T$ có đơn vị $1/\\text{s}$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì phân rã $\\beta^-$ giữ $A = 24$ và tăng $Z$ từ 11 lên 12, tức là magie.",
+    "0": "Không thể coi là đúng vì $\\lambda = \\ln 2/T$ là nghịch đảo thời gian, đơn vị $1/\\text{s}$.",
     "1": "Không thể coi là sai vì $45/15 = 3$ chu kì, nên số hạt còn lại là $N_0/2^3$.",
-    "2": "Không thể coi là đúng vì $H$ giảm theo $2^{-t/T}$, sau 3 chu kì còn $H_0/8$, không giảm tuyến tính.",
-    "3": "Không thể coi là đúng vì $\\lambda = \\ln 2/T$ là nghịch đảo thời gian, đơn vị $1/\\text{s}$."
+    "2": "Không thể coi là sai vì phân rã $\\beta^-$ giữ $A = 24$ và tăng $Z$ từ 11 lên 12, tức là magie.",
+    "3": "Không thể coi là đúng vì $H$ giảm theo $2^{-t/T}$, sau 3 chu kì còn $H_0/8$, không giảm tuyến tính."
    }
   }
  ]

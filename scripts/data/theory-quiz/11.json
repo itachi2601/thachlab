@@ -355,20 +355,20 @@
      "answer": false
     },
     {
-     "text": "Nếu đặt dây song song với đường sức từ thì khi đóng mạch dây đứng yên.",
-     "answer": true
-    },
-    {
      "text": "Lực từ tác dụng lên dây có phương trùng với phương đường sức từ giữa hai cực.",
      "answer": false
+    },
+    {
+     "text": "Nếu đặt dây song song với đường sức từ thì khi đóng mạch dây đứng yên.",
+     "answer": true
     }
    ],
-   "explanation": "Thí nghiệm cho thấy dây lệch khi có dòng điện và lệch ngược lại khi đảo chiều dòng. Dây song song đường sức thì $F = 0$. Lực từ luôn vuông góc với đường sức nên ý d sai.",
+   "explanation": "Thí nghiệm cho thấy dây lệch khi có dòng điện và lệch ngược lại khi đảo chiều dòng. Dây song song đường sức thì $F = 0$. Lực từ luôn vuông góc với đường sức nên ý c sai.",
    "distractorNotes": {
     "0": "Coi là sai tức phủ nhận lực từ, trong khi thí nghiệm cho thấy dây lệch ngay khi đóng mạch.",
     "1": "Chiều lực từ phụ thuộc chiều dòng theo bàn tay trái, nên đảo dòng thì dây phải lệch ngược lại.",
-    "2": "Dây song song đường sức có $\\sin\\alpha=0$ nên $F=0$, dây không thể bị lệch.",
-    "3": "Lực từ vuông góc với đường sức từ, nên không thể trùng phương với đường sức giữa hai cực."
+    "2": "Lực từ vuông góc với đường sức từ, nên không thể trùng phương với đường sức giữa hai cực.",
+    "3": "Dây song song đường sức có $\\sin\\alpha=0$ nên $F=0$, dây không thể bị lệch."
    }
   },
   {
@@ -417,11 +417,11 @@
    "question": "Dùng một nam châm thử và một đoạn dây thử mang dòng điện để khảo sát từ trường tại một điểm.",
    "statements": [
     {
-     "text": "Cảm ứng từ là đại lượng vectơ đặc trưng cho từ trường về mặt tác dụng lực.",
+     "text": "Phương của $\\vec{B}$ là phương của nam châm thử nằm cân bằng tại điểm đó.",
      "answer": true
     },
     {
-     "text": "Phương của $\\vec{B}$ là phương của nam châm thử nằm cân bằng tại điểm đó.",
+     "text": "Cảm ứng từ là đại lượng vectơ đặc trưng cho từ trường về mặt tác dụng lực.",
      "answer": true
     },
     {
@@ -435,8 +435,8 @@
    ],
    "explanation": "Chiều của $\\vec{B}$ là từ cực Nam sang cực Bắc của nam châm thử. $B$ là tính chất của từ trường, không phụ thuộc dòng điện của dây thử.",
    "distractorNotes": {
-    "0": "Đây chính là định nghĩa cảm ứng từ trong bài: vectơ đặc trưng cho từ trường về mặt tác dụng lực.",
-    "1": "Bài quy ước phương $\\vec{B}$ là phương nam châm thử nằm cân bằng, nên không thể coi là sai.",
+    "0": "Bài quy ước phương $\\vec{B}$ là phương nam châm thử nằm cân bằng, nên không thể coi là sai.",
+    "1": "Đây chính là định nghĩa cảm ứng từ trong bài: vectơ đặc trưng cho từ trường về mặt tác dụng lực.",
     "2": "Đảo chiều quy ước; $\\vec{B}$ đi từ cực Nam sang cực Bắc của nam châm thử.",
     "3": "Tăng dòng thử chỉ làm $F$ tăng tỉ lệ, còn $B=F/(Il)$ giữ nguyên vì là tính chất của từ trường."
    }
@@ -452,28 +452,28 @@
    "question": "Một khung dây gồm nhiều vòng, có trục quay, đặt giữa hai cực của nam châm rồi nối với pin. Khung không có bộ đổi chiều dòng điện.",
    "statements": [
     {
-     "text": "Hai cạnh đối diện của khung chịu hai lực từ cùng độ lớn, ngược chiều, không cùng giá.",
-     "answer": true
+     "text": "Khung quay rồi dừng lại khi mặt phẳng khung song song với đường sức từ.",
+     "answer": false
     },
     {
-     "text": "Hợp lực của hai lực từ đó khác 0 nên khung bị đẩy đi khỏi vị trí ban đầu.",
-     "answer": false
+     "text": "Hai cạnh đối diện của khung chịu hai lực từ cùng độ lớn, ngược chiều, không cùng giá.",
+     "answer": true
     },
     {
      "text": "Đảo hai cực của pin thì khung quay theo chiều ngược lại.",
      "answer": true
     },
     {
-     "text": "Khung quay rồi dừng lại khi mặt phẳng khung song song với đường sức từ.",
+     "text": "Hợp lực của hai lực từ đó khác 0 nên khung bị đẩy đi khỏi vị trí ban đầu.",
      "answer": false
     }
    ],
    "explanation": "Ngẫu lực có hợp lực bằng 0 nhưng mômen khác 0 nên khung quay mà không bị đẩy đi. Khung dừng khi mặt phẳng khung vuông góc đường sức (lúc đó $M = 0$). Vị trí mặt khung song song đường sức là lúc mômen cực đại.",
    "distractorNotes": {
-    "0": "Dòng ở hai cạnh đối diện ngược chiều nên hai lực cùng độ lớn, ngược chiều, khác giá, đúng định nghĩa ngẫu lực.",
-    "1": "Hai lực cùng độ lớn, ngược chiều có hợp lực bằng 0; chỉ mômen khác 0 nên khung quay tại chỗ.",
+    "0": "Mặt khung song song đường sức là lúc mômen cực đại; khung chỉ dừng khi mặt khung vuông góc đường sức.",
+    "1": "Dòng ở hai cạnh đối diện ngược chiều nên hai lực cùng độ lớn, ngược chiều, khác giá, đúng định nghĩa ngẫu lực.",
     "2": "Đảo cực pin làm đổi chiều dòng, lực từ ở hai cạnh đổi chiều nên mômen và chiều quay đảo theo.",
-    "3": "Mặt khung song song đường sức là lúc mômen cực đại; khung chỉ dừng khi mặt khung vuông góc đường sức."
+    "3": "Hai lực cùng độ lớn, ngược chiều có hợp lực bằng 0; chỉ mômen khác 0 nên khung quay tại chỗ."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Một đoạn dây dẫn thẳng mang dòng điện đặt trong từ trường đều, dây hợp với đường sức góc $\\alpha$. Dùng công thức $F = BIl\\sin\\alpha$ để tìm lực từ.",
    "statements": [
     {
-     "text": "$\\alpha$ là góc hợp bởi đoạn dây và vectơ cảm ứng từ $\\vec{B}$.",
+     "text": "Chiều dài $l$ phải đổi ra mét khi thay số để $F$ tính bằng newton.",
      "answer": true
     },
     {
-     "text": "Chiều dài $l$ phải đổi ra mét khi thay số để $F$ tính bằng newton.",
+     "text": "Lực từ đạt giá trị cực đại $BIl$ khi $\\alpha = 0^\\circ$.",
+     "answer": false
+    },
+    {
+     "text": "$\\alpha$ là góc hợp bởi đoạn dây và vectơ cảm ứng từ $\\vec{B}$.",
      "answer": true
     },
     {
      "text": "Khi dây hợp với đường sức góc $30^\\circ$, ta thay $\\cos 30^\\circ$ vào công thức.",
      "answer": false
-    },
-    {
-     "text": "Lực từ đạt giá trị cực đại $BIl$ khi $\\alpha = 0^\\circ$.",
-     "answer": false
     }
    ],
    "explanation": "Công thức dùng $\\sin\\alpha$, không dùng $\\cos\\alpha$, và $l$ tính bằng mét. Lực cực đại $F = BIl$ khi $\\alpha = 90^\\circ$; khi $\\alpha = 0^\\circ$ thì $F = 0$.",
    "distractorNotes": {
-    "0": "Bài định nghĩa $\\alpha$ là góc giữa đoạn dây và $\\vec{B}$, nên không thể coi phát biểu này sai.",
-    "1": "Phải dùng $B$ (T), $I$ (A), $l$ (m) mới ra $F$ (N); không đổi cm sang m thì kết quả sai 100 lần.",
-    "2": "Công thức dùng $\\sin\\alpha$; thay $\\cos30^\\circ$ là nhầm hàm, cho kết quả lớn gấp khoảng 1,73 lần.",
-    "3": "Tại $\\alpha=0^\\circ$ thì $\\sin\\alpha=0$ nên $F=0$; lực cực đại ứng với $\\alpha=90^\\circ$."
+    "0": "Phải dùng $B$ (T), $I$ (A), $l$ (m) mới ra $F$ (N); không đổi cm sang m thì kết quả sai 100 lần.",
+    "1": "Tại $\\alpha=0^\\circ$ thì $\\sin\\alpha=0$ nên $F=0$; lực cực đại ứng với $\\alpha=90^\\circ$.",
+    "2": "Bài định nghĩa $\\alpha$ là góc giữa đoạn dây và $\\vec{B}$, nên không thể coi phát biểu này sai.",
+    "3": "Công thức dùng $\\sin\\alpha$; thay $\\cos30^\\circ$ là nhầm hàm, cho kết quả lớn gấp khoảng 1,73 lần."
    }
   },
   {
@@ -522,12 +522,12 @@
    "question": "Khung dây phẳng gồm $N$ vòng, diện tích mỗi vòng $S$, mang dòng điện $I$, đặt trong từ trường đều $B$. Mômen ngẫu lực từ tác dụng lên khung là $M = NBIS\\sin\\alpha$.",
    "statements": [
     {
-     "text": "Trong công thức của $M$, $\\alpha$ là góc giữa $\\vec{B}$ và pháp tuyến của mặt phẳng khung.",
-     "answer": true
-    },
-    {
      "text": "$\\alpha$ trong công thức $M$ có cùng ý nghĩa với $\\alpha$ trong công thức $F = BIl\\sin\\alpha$.",
      "answer": false
+    },
+    {
+     "text": "Trong công thức của $M$, $\\alpha$ là góc giữa $\\vec{B}$ và pháp tuyến của mặt phẳng khung.",
+     "answer": true
     },
     {
      "text": "Khi mặt phẳng khung vuông góc với đường sức từ thì $M = 0$.",
@@ -540,8 +540,8 @@
    ],
    "explanation": "Bài nhấn mạnh $\\alpha$ trong $M$ là góc giữa $\\vec{B}$ và pháp tuyến khung, khác góc trong $F$. Mặt khung vuông góc đường sức thì $M = 0$. $M$ tỉ lệ thuận với $N$ nên $N$ gấp đôi thì $M$ gấp đôi.",
    "distractorNotes": {
-    "0": "Bài nêu rõ $\\alpha$ trong $M$ là góc giữa $\\vec{B}$ và pháp tuyến khung, nên không thể coi là sai.",
-    "1": "Hai góc khác nhau: trong $F$ là góc giữa dây và $\\vec{B}$, trong $M$ là góc giữa pháp tuyến khung và $\\vec{B}$.",
+    "0": "Hai góc khác nhau: trong $F$ là góc giữa dây và $\\vec{B}$, trong $M$ là góc giữa pháp tuyến khung và $\\vec{B}$.",
+    "1": "Bài nêu rõ $\\alpha$ trong $M$ là góc giữa $\\vec{B}$ và pháp tuyến khung, nên không thể coi là sai.",
     "2": "Mặt khung vuông góc đường sức thì pháp tuyến song song $\\vec{B}$, $\\sin\\alpha=0$ nên $M=0$.",
     "3": "Đảo tỉ lệ; $M=NBIS\\sin\\alpha$ tỉ lệ thuận với $N$ nên gấp đôi số vòng thì mômen gấp đôi."
    }

@@ -351,24 +351,24 @@
           "answer": true
         },
         {
+          "text": "Công thức $A=P\\cdot t$ sai nên mới ra kết quả sai.",
+          "answer": false
+        },
+        {
           "text": "Kết quả của bạn nhỏ hơn kết quả đúng $20$ lần.",
           "answer": false
         },
         {
           "text": "Điện năng đúng là $720\\,000\\ \\text{J}$.",
           "answer": true
-        },
-        {
-          "text": "Công thức $A=P\\cdot t$ sai nên mới ra kết quả sai.",
-          "answer": false
         }
       ],
-      "explanation": "a) đúng. b) sai: nhỏ hơn $60$ lần. c) đúng. d) sai: công thức đúng, lỗi ở đơn vị.",
+      "explanation": "a) đúng. b) sai: công thức đúng, lỗi ở đơn vị. c) sai: nhỏ hơn $60$ lần. d) đúng.",
       "distractorNotes": {
         "0": "Không thể coi là sai vì $t$ phải tính bằng giây ($1200\\ \\text{s}$) khi dùng $P$ tính bằng oát.",
-        "1": "Không thể coi là đúng vì thừa số bị bỏ là $60$ giây mỗi phút, nên kết quả nhỏ hơn đúng $60$ lần.",
-        "2": "Không thể coi là sai vì $A=600\\cdot1200=720\\,000\\ \\text{J}$.",
-        "3": "Không thể coi là đúng vì công thức đúng, lỗi nằm ở đơn vị thời gian chưa đổi."
+        "1": "Không thể coi là đúng vì công thức đúng, lỗi nằm ở đơn vị thời gian chưa đổi.",
+        "2": "Không thể coi là đúng vì thừa số bị bỏ là $60$ giây mỗi phút, nên kết quả nhỏ hơn đúng $60$ lần.",
+        "3": "Không thể coi là sai vì $A=600\\cdot1200=720\\,000\\ \\text{J}$."
       }
     },
     {
@@ -382,10 +382,6 @@
       "question": "Vẽ $I$ theo $U$ cho hai dây dẫn X và Y trên cùng một đồ thị, đường của dây X dốc hơn đường của dây Y. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Hai dây có điện trở bằng nhau vì cả hai đường đều đi qua gốc toạ độ.",
-          "answer": false
-        },
-        {
           "text": "Hệ số góc của đồ thị $I$–$U$ bằng $\\dfrac1R$.",
           "answer": true
         },
@@ -396,14 +392,18 @@
         {
           "text": "Vẽ lại bằng đồ thị $U$–$I$ thì đường của dây X vẫn dốc hơn.",
           "answer": false
+        },
+        {
+          "text": "Hai dây có điện trở bằng nhau vì cả hai đường đều đi qua gốc toạ độ.",
+          "answer": false
         }
       ],
-      "explanation": "a) sai: độ dốc khác thì $R$ khác. b) đúng. c) đúng. d) sai: ở $U$–$I$ dây X thoải hơn.",
+      "explanation": "a) đúng. b) đúng. c) sai: ở $U$–$I$ dây X thoải hơn. d) sai: độ dốc khác thì $R$ khác.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì đi qua gốc chỉ cho biết tỉ lệ thuận, còn độ dốc khác nhau thì $R$ khác nhau.",
-        "1": "Không thể coi là sai vì hệ số góc là $\\Delta I/\\Delta U$, chính là nghịch đảo của $R$.",
-        "2": "Không thể coi là sai vì dốc hơn thì $1/R$ lớn hơn, nên $R$ nhỏ hơn.",
-        "3": "Không thể coi là đúng vì ở $U$–$I$ hệ số góc là $R$; dây X có $R$ nhỏ nên đường của nó thoải hơn."
+        "0": "Không thể coi là sai vì hệ số góc là $\\Delta I/\\Delta U$, chính là nghịch đảo của $R$.",
+        "1": "Không thể coi là sai vì dốc hơn thì $1/R$ lớn hơn, nên $R$ nhỏ hơn.",
+        "2": "Không thể coi là đúng vì ở $U$–$I$ hệ số góc là $R$; dây X có $R$ nhỏ nên đường của nó thoải hơn.",
+        "3": "Không thể coi là đúng vì đi qua gốc chỉ cho biết tỉ lệ thuận, còn độ dốc khác nhau thì $R$ khác nhau."
       }
     },
     {
@@ -417,28 +417,28 @@
       "question": "Đo một chiều dài chuẩn $50{,}0\\ \\text{cm}$ bằng một thước, $20$ lần liền, mọi số đọc đều cao hơn giá trị chuẩn khoảng $2\\ \\text{mm}$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Đây là sai số hệ thống vì mọi lần đo lệch cùng một phía.",
-          "answer": true
+          "text": "Sai lệch này chủ yếu là sai số ngẫu nhiên.",
+          "answer": false
         },
         {
           "text": "Đo thêm nhiều lần nữa sẽ làm sai lệch này biến mất.",
           "answer": false
         },
         {
-          "text": "Sai lệch này chủ yếu là sai số ngẫu nhiên.",
-          "answer": false
+          "text": "Giá trị trung bình của $20$ lần đo vẫn cao hơn giá trị chuẩn khoảng $2\\ \\text{mm}$.",
+          "answer": true
         },
         {
-          "text": "Giá trị trung bình của $20$ lần đo vẫn cao hơn giá trị chuẩn khoảng $2\\ \\text{mm}$.",
+          "text": "Đây là sai số hệ thống vì mọi lần đo lệch cùng một phía.",
           "answer": true
         }
       ],
-      "explanation": "a) đúng. b) sai: đo thêm không sửa được sai số hệ thống. c) sai: lệch một phía là hệ thống. d) đúng.",
+      "explanation": "a) sai: lệch một phía là hệ thống. b) sai: đo thêm không sửa được sai số hệ thống. c) đúng. d) đúng.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì sai số hệ thống có đặc điểm lệch cùng phía ở mọi lần đo.",
+        "0": "Không thể coi là đúng vì sai số ngẫu nhiên lệch cả hai phía, còn ở đây mọi lần đều lệch lên.",
         "1": "Không thể coi là đúng vì đo thêm chỉ làm giảm sai số ngẫu nhiên; sai số hệ thống phải sửa ở dụng cụ hoặc cách đo.",
-        "2": "Không thể coi là đúng vì sai số ngẫu nhiên lệch cả hai phía, còn ở đây mọi lần đều lệch lên.",
-        "3": "Không thể coi là sai vì các lệch cùng một phía nên cộng lại không triệt tiêu."
+        "2": "Không thể coi là sai vì các lệch cùng một phía nên cộng lại không triệt tiêu.",
+        "3": "Không thể coi là sai vì sai số hệ thống có đặc điểm lệch cùng phía ở mọi lần đo."
       }
     },
     {
@@ -452,28 +452,28 @@
       "question": "Nguồn $12\\ \\text{V}$ không đổi, điện trở $R_0=10\\ \\Omega$ nối tiếp biến trở $R$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Tăng $R$ từ $10$ lên $20\\ \\Omega$ thì dòng giảm còn một nửa, tức $0{,}3\\ \\text{A}$.",
-          "answer": false
-        },
-        {
-          "text": "Khi $R=10\\ \\Omega$ thì dòng điện là $0{,}6\\ \\text{A}$.",
-          "answer": true
-        },
-        {
           "text": "Có $R_0$ cố định mà vẫn viết trực tiếp $I_2/I_1=R_1/R_2$ là cách làm đúng.",
           "answer": false
         },
         {
           "text": "Khi $R=20\\ \\Omega$ thì dòng điện là $0{,}4\\ \\text{A}$.",
           "answer": true
+        },
+        {
+          "text": "Tăng $R$ từ $10$ lên $20\\ \\Omega$ thì dòng giảm còn một nửa, tức $0{,}3\\ \\text{A}$.",
+          "answer": false
+        },
+        {
+          "text": "Khi $R=10\\ \\Omega$ thì dòng điện là $0{,}6\\ \\text{A}$.",
+          "answer": true
         }
       ],
-      "explanation": "a) sai: $I$ tỉ lệ nghịch với tổng điện trở. b) đúng. c) sai: phải dùng công thức gốc. d) đúng.",
+      "explanation": "a) sai: phải dùng công thức gốc. b) đúng. c) sai: $I$ tỉ lệ nghịch với tổng điện trở. d) đúng.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì $I$ tỉ lệ nghịch với tổng $R_0+R$, không phải với riêng $R$; dòng thực tế là $0{,}4\\ \\text{A}$.",
-        "1": "Không thể coi là sai vì $I=12/(10+10)=0{,}6\\ \\text{A}$.",
-        "2": "Không thể coi là đúng vì $R_0$ cộng vào mẫu; phải viết công thức gốc cho từng trạng thái rồi mới chia.",
-        "3": "Không thể coi là sai vì $I=12/(10+20)=0{,}4\\ \\text{A}$."
+        "0": "Không thể coi là đúng vì $R_0$ cộng vào mẫu; phải viết công thức gốc cho từng trạng thái rồi mới chia.",
+        "1": "Không thể coi là sai vì $I=12/(10+20)=0{,}4\\ \\text{A}$.",
+        "2": "Không thể coi là đúng vì $I$ tỉ lệ nghịch với tổng $R_0+R$, không phải với riêng $R$; dòng thực tế là $0{,}4\\ \\text{A}$.",
+        "3": "Không thể coi là sai vì $I=12/(10+10)=0{,}6\\ \\text{A}$."
       }
     },
     {
@@ -530,20 +530,20 @@
           "answer": false
         },
         {
-          "text": "Giá trị trung bình là $U_{tb}=5{,}9\\ \\text{V}$.",
-          "answer": true
-        },
-        {
           "text": "Theo cách tính ở bài, sai số dụng cụ lấy bằng $0{,}1\\ \\text{V}$, đúng bằng ĐCNN.",
           "answer": false
+        },
+        {
+          "text": "Giá trị trung bình là $U_{tb}=5{,}9\\ \\text{V}$.",
+          "answer": true
         }
       ],
-      "explanation": "a) đúng. b) sai: theo quy cách của bài phải làm tròn $\\Delta U$ còn $0{,}1$. c) đúng. d) sai: nửa ĐCNN là $0{,}05$.",
+      "explanation": "a) đúng. b) sai: theo quy cách của bài phải làm tròn $\\Delta U$ còn $0{,}1$. c) sai: nửa ĐCNN là $0{,}05$. d) đúng.",
       "distractorNotes": {
         "0": "Không thể coi là sai vì các độ lệch tuyệt đối $0{,}1;\\ 0;\\ 0{,}1;\\ 0;\\ 0{,}2$ có trung bình $0{,}08$.",
         "1": "Không thể coi là đúng vì $\\Delta U$ chỉ giữ một chữ số có nghĩa: $U=5{,}9\\pm0{,}1\\ \\text{V}$.",
-        "2": "Không thể coi là sai vì tổng các số đọc là $29{,}5\\ \\text{V}$, chia $5$ được $5{,}9\\ \\text{V}$.",
-        "3": "Không thể coi là đúng vì sai số dụng cụ lấy bằng nửa ĐCNN, tức $0{,}05\\ \\text{V}$."
+        "2": "Không thể coi là đúng vì sai số dụng cụ lấy bằng nửa ĐCNN, tức $0{,}05\\ \\text{V}$.",
+        "3": "Không thể coi là sai vì tổng các số đọc là $29{,}5\\ \\text{V}$, chia $5$ được $5{,}9\\ \\text{V}$."
       }
     }
   ]

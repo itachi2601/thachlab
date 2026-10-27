@@ -351,12 +351,12 @@
      "answer": true
     },
     {
-     "text": "Viên bắn ngang chạm sàn sau viên thả rơi vì đi quãng đường dài hơn.",
-     "answer": false
-    },
-    {
      "text": "Thí nghiệm cho thấy chuyển động ngang không làm thay đổi chuyển động rơi theo phương thẳng đứng.",
      "answer": true
+    },
+    {
+     "text": "Viên bắn ngang chạm sàn sau viên thả rơi vì đi quãng đường dài hơn.",
+     "answer": false
     },
     {
      "text": "Gạt viên bi ngang mạnh hơn thì nó chạm sàn muộn hơn viên thả rơi.",
@@ -366,8 +366,8 @@
    "explanation": "Hai phương độc lập: phần rơi của hai viên giống hệt nhau nên luôn ngang nhau và chạm sàn cùng lúc; $v_0$ chỉ đổi tầm xa.",
    "distractorNotes": {
     "0": "Phần rơi theo phương đứng của hai viên giống hệt nhau nên chúng luôn ở cùng độ cao tại mỗi thời điểm.",
-    "1": "Quãng đường dài hơn không kéo dài thời gian rơi; thời gian chỉ do độ cao mép bàn quyết định.",
-    "2": "Hai viên luôn ngang nhau chứng tỏ chuyển động ngang không làm nhanh hay chậm phần rơi.",
+    "1": "Hai viên luôn ngang nhau chứng tỏ chuyển động ngang không làm nhanh hay chậm phần rơi.",
+    "2": "Quãng đường dài hơn không kéo dài thời gian rơi; thời gian chỉ do độ cao mép bàn quyết định.",
     "3": "Gạt mạnh hơn chỉ tăng $v_0$ nên tăng tầm xa, còn thời gian rơi $\\sqrt{2h/g}$ không đổi."
    }
   },
@@ -382,6 +382,10 @@
    "question": "Hai quả bóng được đá từ mặt đất với cùng tốc độ $v_0$, một quả hợp với phương ngang góc $30^\\circ$, quả kia góc $60^\\circ$ (bỏ qua lực cản).",
    "statements": [
     {
+     "text": "Hai quả bóng có cùng thời gian bay.",
+     "answer": false
+    },
+    {
      "text": "Hai quả bóng có cùng tầm xa.",
      "answer": true
     },
@@ -390,19 +394,15 @@
      "answer": true
     },
     {
-     "text": "Hai quả bóng có cùng thời gian bay.",
-     "answer": false
-    },
-    {
      "text": "Với cùng $v_0$, góc ném $60^\\circ$ cho tầm xa lớn nhất.",
      "answer": false
     }
    ],
    "explanation": "$L=\\dfrac{v_0^2\\sin2\\alpha}{g}$ bằng nhau ở hai góc phụ nhau; $H$ và $t$ tăng theo $\\sin\\alpha$ nên quả $60^\\circ$ cao hơn, bay lâu hơn; tầm xa lớn nhất ở $45^\\circ$.",
    "distractorNotes": {
-    "0": "Hai góc phụ nhau có cùng $\\sin2\\alpha$ nên tầm xa $\\dfrac{v_0^2\\sin2\\alpha}{g}$ bằng nhau.",
-    "1": "$H$ tỉ lệ $\\sin^2\\alpha$, mà $\\sin60^\\circ>\\sin30^\\circ$ nên quả góc lớn lên cao hơn.",
-    "2": "Cùng tầm xa không kéo theo cùng thời gian bay; $t=\\dfrac{2v_0\\sin\\alpha}{g}$ tăng theo $\\sin\\alpha$.",
+    "0": "Cùng tầm xa không kéo theo cùng thời gian bay; $t=\\dfrac{2v_0\\sin\\alpha}{g}$ tăng theo $\\sin\\alpha$.",
+    "1": "Hai góc phụ nhau có cùng $\\sin2\\alpha$ nên tầm xa $\\dfrac{v_0^2\\sin2\\alpha}{g}$ bằng nhau.",
+    "2": "$H$ tỉ lệ $\\sin^2\\alpha$, mà $\\sin60^\\circ>\\sin30^\\circ$ nên quả góc lớn lên cao hơn.",
     "3": "$\\sin2\\alpha$ đạt cực đại bằng 1 khi $\\alpha=45^\\circ$, nên $60^\\circ$ không cho tầm xa lớn nhất."
    }
   },
@@ -417,28 +417,28 @@
    "question": "Một vật được ném ngang với vận tốc $v_0$, bỏ qua lực cản. Chọn gốc toạ độ tại điểm ném, Ox nằm ngang theo $\\vec v_0$, Oy thẳng đứng hướng xuống.",
    "statements": [
     {
-     "text": "$a_x=0$ và $a_y=g$.",
-     "answer": true
-    },
-    {
-     "text": "$v_y=gt$ và $y=\\dfrac12gt^2$.",
-     "answer": true
-    },
-    {
      "text": "$x=\\dfrac12v_0t^2$.",
      "answer": false
     },
     {
+     "text": "$a_x=0$ và $a_y=g$.",
+     "answer": true
+    },
+    {
      "text": "Tốc độ của vật tại thời điểm $t$ là $v=v_0+gt$.",
      "answer": false
+    },
+    {
+     "text": "$v_y=gt$ và $y=\\dfrac12gt^2$.",
+     "answer": true
     }
    ],
    "explanation": "Theo Ox thẳng đều: $x=v_0t$; theo Oy rơi tự do. Tốc độ là tổng hai vectơ vuông góc: $v=\\sqrt{v_0^2+(gt)^2}$.",
    "distractorNotes": {
-    "0": "Trọng lực chỉ hướng xuống nên chỉ gây gia tốc theo Oy, theo Ox gia tốc bằng 0.",
-    "1": "Theo Oy vật rơi tự do không vận tốc đầu nên đúng là $v_y=gt$ và $y=\\frac12gt^2$.",
-    "2": "Gán nhầm dạng rơi tự do cho phương ngang; theo Ox thẳng đều nên $x=v_0t$.",
-    "3": "$\\vec v_x$ và $\\vec v_y$ vuông góc nên độ lớn phải cộng theo Pitago, không cộng đại số."
+    "0": "Gán nhầm dạng rơi tự do cho phương ngang; theo Ox thẳng đều nên $x=v_0t$.",
+    "1": "Trọng lực chỉ hướng xuống nên chỉ gây gia tốc theo Oy, theo Ox gia tốc bằng 0.",
+    "2": "$\\vec v_x$ và $\\vec v_y$ vuông góc nên độ lớn phải cộng theo Pitago, không cộng đại số.",
+    "3": "Theo Oy vật rơi tự do không vận tốc đầu nên đúng là $v_y=gt$ và $y=\\frac12gt^2$."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Một vật được ném xiên từ mặt đất với vận tốc $v_0$ hợp với phương ngang góc $\\alpha$, bỏ qua lực cản. Chọn Ox nằm ngang, Oy thẳng đứng hướng lên.",
    "statements": [
     {
-     "text": "$v_{0x}=v_0\\cos\\alpha$ và $v_{0y}=v_0\\sin\\alpha$.",
+     "text": "Thời gian bay của vật là $t=\\dfrac{2v_0\\sin\\alpha}{g}$.",
      "answer": true
     },
     {
-     "text": "Thời gian bay của vật là $t=\\dfrac{2v_0\\sin\\alpha}{g}$.",
-     "answer": true
+     "text": "Theo phương Oy, gia tốc của vật là $a_y=+g$.",
+     "answer": false
     },
     {
      "text": "Tầm xa của vật là $L=\\dfrac{v_0^2\\sin2\\alpha}{2g}$.",
      "answer": false
     },
     {
-     "text": "Theo phương Oy, gia tốc của vật là $a_y=+g$.",
-     "answer": false
+     "text": "$v_{0x}=v_0\\cos\\alpha$ và $v_{0y}=v_0\\sin\\alpha$.",
+     "answer": true
     }
    ],
    "explanation": "Tách $\\vec v_0$ thành hai thành phần; Oy hướng lên ngược chiều $\\vec g$ nên $a_y=-g$; tầm xa $L=\\dfrac{v_0^2\\sin2\\alpha}{g}$.",
    "distractorNotes": {
-    "0": "Góc $\\alpha$ đo so với phương ngang nên thành phần ngang dùng $\\cos$, thành phần đứng dùng $\\sin$.",
-    "1": "Ném từ mặt đất, quỹ đạo đối xứng nên thời gian bay bằng hai lần thời gian lên $\\dfrac{v_0\\sin\\alpha}{g}$.",
+    "0": "Ném từ mặt đất, quỹ đạo đối xứng nên thời gian bay bằng hai lần thời gian lên $\\dfrac{v_0\\sin\\alpha}{g}$.",
+    "1": "Quên dấu theo chiều trục: Oy hướng lên ngược chiều trọng lực nên $a_y=-g$.",
     "2": "Thừa hệ số 2 ở mẫu: $v_0\\cos\\alpha\\cdot\\dfrac{2v_0\\sin\\alpha}{g}=\\dfrac{v_0^2\\sin2\\alpha}{g}$.",
-    "3": "Quên dấu theo chiều trục: Oy hướng lên ngược chiều trọng lực nên $a_y=-g$."
+    "3": "Góc $\\alpha$ đo so với phương ngang nên thành phần ngang dùng $\\cos$, thành phần đứng dùng $\\sin$."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Một vật được ném ngang từ độ cao $h$ với vận tốc $v_0$, bỏ qua lực cản. Gọi $\\alpha$ là góc giữa vận tốc tại thời điểm $t$ và phương ngang.",
    "statements": [
     {
-     "text": "$\\tan\\alpha=\\dfrac{v_y}{v_x}=\\dfrac{gt}{v_0}$.",
-     "answer": true
-    },
-    {
-     "text": "Càng về sau, góc $\\alpha$ càng lớn, vận tốc càng dốc xuống.",
-     "answer": true
-    },
-    {
      "text": "Ở cùng thời điểm $t$, ném với $v_0$ lớn hơn thì góc $\\alpha$ lớn hơn.",
      "answer": false
     },
     {
      "text": "Khi chạm đất, $v_y=\\sqrt{2gh}$ nên $\\tan\\alpha=\\dfrac{\\sqrt{2gh}}{v_0}$.",
      "answer": true
+    },
+    {
+     "text": "$\\tan\\alpha=\\dfrac{v_y}{v_x}=\\dfrac{gt}{v_0}$.",
+     "answer": true
+    },
+    {
+     "text": "Càng về sau, góc $\\alpha$ càng lớn, vận tốc càng dốc xuống.",
+     "answer": true
     }
    ],
    "explanation": "$\\tan\\alpha=\\dfrac{gt}{v_0}$ tăng theo $t$ và giảm khi $v_0$ tăng; khi chạm đất $v_y=\\sqrt{2gh}$.",
    "distractorNotes": {
-    "0": "Tang góc với phương ngang bằng thành phần đứng chia thành phần ngang, tức $gt/v_0$.",
-    "1": "$v_y=gt$ tăng còn $v_x$ không đổi, nên $\\tan\\alpha$ tăng và vận tốc dốc dần xuống.",
-    "2": "Đảo tỉ lệ: $v_0$ nằm ở mẫu của $\\tan\\alpha$, nên $v_0$ lớn hơn thì góc nhỏ hơn.",
-    "3": "Lúc chạm đất $v_y=g\\sqrt{2h/g}=\\sqrt{2gh}$, thế vào $\\tan\\alpha=v_y/v_x$ là hợp lệ."
+    "0": "Đảo tỉ lệ: $v_0$ nằm ở mẫu của $\\tan\\alpha$, nên $v_0$ lớn hơn thì góc nhỏ hơn.",
+    "1": "Lúc chạm đất $v_y=g\\sqrt{2h/g}=\\sqrt{2gh}$, thế vào $\\tan\\alpha=v_y/v_x$ là hợp lệ.",
+    "2": "Tang góc với phương ngang bằng thành phần đứng chia thành phần ngang, tức $gt/v_0$.",
+    "3": "$v_y=gt$ tăng còn $v_x$ không đổi, nên $\\tan\\alpha$ tăng và vận tốc dốc dần xuống."
    }
   },
   {
@@ -526,24 +526,24 @@
      "answer": true
     },
     {
-     "text": "Khoảng cách ngang cần thả trước đích là $L=v_0\\sqrt{\\dfrac{2h}{g}}$.",
-     "answer": true
-    },
-    {
      "text": "Nếu máy bay bay nhanh gấp đôi ở cùng độ cao, thời gian rơi của gói hàng tăng gấp đôi.",
      "answer": false
     },
     {
      "text": "Nếu bay ở độ cao gấp 4 với cùng vận tốc, khoảng cách cần thả trước đích tăng 4 lần.",
      "answer": false
+    },
+    {
+     "text": "Khoảng cách ngang cần thả trước đích là $L=v_0\\sqrt{\\dfrac{2h}{g}}$.",
+     "answer": true
     }
    ],
    "explanation": "Gói hàng giữ vận tốc ngang $v_0$ nên bay tiếp một tầm xa $L=v_0\\sqrt{2h/g}$; thời gian rơi chỉ phụ thuộc $h$, còn $L$ tỉ lệ $\\sqrt h$.",
    "distractorNotes": {
     "0": "Gói hàng vẫn giữ vận tốc ngang của máy bay nên còn bay tiếp về phía trước khi rơi.",
-    "1": "Khoảng cách đó chính là tầm xa ném ngang với vận tốc ném bằng vận tốc máy bay.",
-    "2": "Thời gian rơi $\\sqrt{2h/g}$ không phụ thuộc vận tốc ném; tốc độ máy bay chỉ đổi tầm xa.",
-    "3": "Quên dấu căn: $L$ tỉ lệ $\\sqrt h$, độ cao gấp 4 thì khoảng cách chỉ gấp 2."
+    "1": "Thời gian rơi $\\sqrt{2h/g}$ không phụ thuộc vận tốc ném; tốc độ máy bay chỉ đổi tầm xa.",
+    "2": "Quên dấu căn: $L$ tỉ lệ $\\sqrt h$, độ cao gấp 4 thì khoảng cách chỉ gấp 2.",
+    "3": "Khoảng cách đó chính là tầm xa ném ngang với vận tốc ném bằng vận tốc máy bay."
    }
   }
  ]

@@ -347,6 +347,10 @@
    "question": "Mắc nối tiếp pin 9 V, một tụ điện và một đèn LED. Lúc vừa nối pin, LED loé rồi tắt hẳn. Sau đó tháo pin, nối hai đầu tụ qua LED (đảo chiều LED) thì LED lại loé rồi mờ dần.",
    "statements": [
     {
+     "text": "Sau khi tháo pin, LED loé lại là do tụ phóng điện tích đã tích qua LED.",
+     "answer": true
+    },
+    {
      "text": "LED tắt hẳn dù pin còn nối vì tụ đã nạp đầy, dòng điện ngừng.",
      "answer": true
     },
@@ -355,19 +359,15 @@
      "answer": false
     },
     {
-     "text": "Sau khi tháo pin, LED loé lại là do tụ phóng điện tích đã tích qua LED.",
-     "answer": true
-    },
-    {
      "text": "Bản tụ nối với cực dương của pin tích điện âm.",
      "answer": false
     }
    ],
    "explanation": "Tụ nạp điện tích rồi giữ lại, sau đó phóng ra; điện môi cách điện nên dòng một chiều không qua tụ. Bản nối cực dương tích $+Q$.",
    "distractorNotes": {
-    "0": "Không thể do pin hết điện hay LED cháy, vì LED còn loé lại; dòng ngừng chính vì tụ đã đầy.",
-    "1": "Điện môi cách điện nên điện tích không thể đi xuyên qua; dòng chỉ chạy trong dây nối lúc nạp.",
-    "2": "Tụ đã giữ điện tích từ lúc nạp và có khả năng phóng ra, nên đây đúng là nguồn làm LED loé.",
+    "0": "Tụ đã giữ điện tích từ lúc nạp và có khả năng phóng ra, nên đây đúng là nguồn làm LED loé.",
+    "1": "Không thể do pin hết điện hay LED cháy, vì LED còn loé lại; dòng ngừng chính vì tụ đã đầy.",
+    "2": "Điện môi cách điện nên điện tích không thể đi xuyên qua; dòng chỉ chạy trong dây nối lúc nạp.",
     "3": "Bản nối cực dương của pin tích $+Q$, bản còn lại mới tích $-Q$."
    }
   },
@@ -382,7 +382,7 @@
    "question": "Một tụ tự chế gồm hai tấm nhôm phẳng đặt song song, cách nhau một khoảng nhỏ. Mỗi lần chỉ thay đổi một yếu tố và đo điện dung bằng đồng hồ đo điện dung.",
    "statements": [
     {
-     "text": "Tăng khoảng cách hai tấm lên gấp đôi thì điện dung giảm còn khoảng một nửa.",
+     "text": "Chèn một tấm nhựa kín khe giữa hai tấm nhôm thì điện dung tăng.",
      "answer": true
     },
     {
@@ -390,7 +390,7 @@
      "answer": false
     },
     {
-     "text": "Chèn một tấm nhựa kín khe giữa hai tấm nhôm thì điện dung tăng.",
+     "text": "Tăng khoảng cách hai tấm lên gấp đôi thì điện dung giảm còn khoảng một nửa.",
      "answer": true
     },
     {
@@ -400,9 +400,9 @@
    ],
    "explanation": "C tỉ lệ thuận với diện tích phần đối diện S và ε, tỉ lệ nghịch với d; C có sẵn từ cấu tạo, không cần nối nguồn.",
    "distractorNotes": {
-    "0": "$C$ tỉ lệ nghịch với $d$, khớp số đo 350 pF giảm còn khoảng 180 pF, nên không thể coi là sai.",
+    "0": "Nhựa có $\\varepsilon$ lớn hơn không khí, mà $C$ tỉ lệ thuận với $\\varepsilon$ nên $C$ tăng.",
     "1": "$S$ trong công thức là diện tích phần đối diện; trượt lệch làm phần này giảm một nửa nên $C$ giảm.",
-    "2": "Nhựa có $\\varepsilon$ lớn hơn không khí, mà $C$ tỉ lệ thuận với $\\varepsilon$ nên $C$ tăng.",
+    "2": "$C$ tỉ lệ nghịch với $d$, khớp số đo 350 pF giảm còn khoảng 180 pF, nên không thể coi là sai.",
     "3": "Điện dung có sẵn từ cấu tạo, đồng hồ đo được $C$ mà không cần nối nguồn."
    }
   },
@@ -417,6 +417,10 @@
    "question": "Hai tụ điện chưa tích điện có $C_1 \\lt C_2$ được ghép nối tiếp rồi nối vào nguồn hiệu điện thế $U$.",
    "statements": [
     {
+     "text": "Điện dung của bộ lớn hơn $C_2$.",
+     "answer": false
+    },
+    {
      "text": "Điện tích trên hai tụ bằng nhau.",
      "answer": true
     },
@@ -427,18 +431,14 @@
     {
      "text": "Tụ $C_1$ chịu hiệu điện thế lớn hơn tụ $C_2$.",
      "answer": true
-    },
-    {
-     "text": "Điện dung của bộ lớn hơn $C_2$.",
-     "answer": false
     }
    ],
    "explanation": "Nối tiếp thì Q chung, $U_i=Q/C_i$ nên tụ nhỏ gánh U lớn; C bộ nhỏ hơn tụ nhỏ nhất.",
    "distractorNotes": {
-    "0": "Ghép nối tiếp các tụ chưa tích điện thì điện tích chung là quy tắc cơ bản, nên không thể coi là sai.",
-    "1": "$U$ chỉ chia đều khi hai tụ bằng nhau; ở đây $U_i=Q/C_i$ khác nhau vì $C_1\\lt C_2$.",
-    "2": "Với $Q$ chung, $U_1=Q/C_1$ lớn hơn $U_2=Q/C_2$ vì $C_1\\lt C_2$, đúng quy tắc tụ nhỏ gánh $U$ lớn.",
-    "3": "Nối tiếp thì cộng nghịch đảo nên điện dung bộ nhỏ hơn cả $C_1$, càng không thể lớn hơn $C_2$."
+    "0": "Nối tiếp thì cộng nghịch đảo nên điện dung bộ nhỏ hơn cả $C_1$, càng không thể lớn hơn $C_2$.",
+    "1": "Ghép nối tiếp các tụ chưa tích điện thì điện tích chung là quy tắc cơ bản, nên không thể coi là sai.",
+    "2": "$U$ chỉ chia đều khi hai tụ bằng nhau; ở đây $U_i=Q/C_i$ khác nhau vì $C_1\\lt C_2$.",
+    "3": "Với $Q$ chung, $U_1=Q/C_1$ lớn hơn $U_2=Q/C_2$ vì $C_1\\lt C_2$, đúng quy tắc tụ nhỏ gánh $U$ lớn."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Một tụ điện phẳng được nạp điện xong thì ngắt khỏi nguồn, sau đó kéo hai bản ra xa gấp đôi (giữ nguyên diện tích đối diện và điện môi).",
    "statements": [
     {
-     "text": "Điện tích của tụ không đổi.",
-     "answer": true
-    },
-    {
-     "text": "Điện dung của tụ giảm một nửa.",
-     "answer": true
-    },
-    {
      "text": "Hiệu điện thế giữa hai bản giảm một nửa.",
      "answer": false
     },
     {
      "text": "Năng lượng $W=\\dfrac{Q^2}{2C}$ của tụ giảm đi.",
      "answer": false
+    },
+    {
+     "text": "Điện tích của tụ không đổi.",
+     "answer": true
+    },
+    {
+     "text": "Điện dung của tụ giảm một nửa.",
+     "answer": true
     }
    ],
    "explanation": "Ngắt nguồn nên Q giữ; d gấp đôi thì C giảm một nửa, $U=Q/C$ gấp đôi và $W=Q^2/(2C)$ gấp đôi.",
    "distractorNotes": {
-    "0": "Tụ đã ngắt nguồn nên điện tích không có đường đi ra vào, buộc phải giữ nguyên.",
-    "1": "$C$ tỉ lệ nghịch với $d$, nên $d$ gấp đôi thì $C$ giảm một nửa là đúng.",
-    "2": "Cho $U$ đổi cùng chiều với $C$ là sai; $U=Q/C$ với $Q$ giữ nguyên nên $U$ tăng gấp đôi.",
-    "3": "$Q$ giữ nguyên mà $C$ ở mẫu số giảm, nên $W$ tăng gấp đôi, nhờ công kéo hai bản ra xa."
+    "0": "Cho $U$ đổi cùng chiều với $C$ là sai; $U=Q/C$ với $Q$ giữ nguyên nên $U$ tăng gấp đôi.",
+    "1": "$Q$ giữ nguyên mà $C$ ở mẫu số giảm, nên $W$ tăng gấp đôi, nhờ công kéo hai bản ra xa.",
+    "2": "Tụ đã ngắt nguồn nên điện tích không có đường đi ra vào, buộc phải giữ nguyên.",
+    "3": "$C$ tỉ lệ nghịch với $d$, nên $d$ gấp đôi thì $C$ giảm một nửa là đúng."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": true
     },
     {
-     "text": "Điện tích của bộ là $Q=Q_1+Q_2$.",
-     "answer": true
+     "text": "Hiệu điện thế tối đa của bộ bằng giá trị lớn nhất trong số vôn ghi trên hai tụ.",
+     "answer": false
     },
     {
      "text": "Điện dung của bộ là $C=\\dfrac{C_1C_2}{C_1+C_2}$.",
      "answer": false
     },
     {
-     "text": "Hiệu điện thế tối đa của bộ bằng giá trị lớn nhất trong số vôn ghi trên hai tụ.",
-     "answer": false
+     "text": "Điện tích của bộ là $Q=Q_1+Q_2$.",
+     "answer": true
     }
    ],
    "explanation": "Song song: U chung, Q cộng lại, $C=C_1+C_2$; hiệu điện thế tối đa của bộ lấy giá trị nhỏ nhất của các tụ.",
    "distractorNotes": {
     "0": "Hai tụ song song chung hai đầu nên chung hiệu điện thế $U$ của nguồn, không thể coi là sai.",
-    "1": "Ghép song song thì điện tích các tụ cộng lại thành điện tích của bộ, đúng như bảng ghép tụ.",
+    "1": "Lấy số vôn lớn nhất thì tụ chịu kém hơn sẽ bị đánh thủng, nên phải lấy giá trị nhỏ nhất.",
     "2": "Đây là công thức ghép nối tiếp; ghép song song thì cộng thẳng $C=C_1+C_2$.",
-    "3": "Lấy số vôn lớn nhất thì tụ chịu kém hơn sẽ bị đánh thủng, nên phải lấy giá trị nhỏ nhất."
+    "3": "Ghép song song thì điện tích các tụ cộng lại thành điện tích của bộ, đúng như bảng ghép tụ."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một tụ điện phẳng có điện dung $C$, khoảng cách hai bản $d$, được đặt hiệu điện thế $U$. Xét các hệ thức liên quan.",
    "statements": [
     {
-     "text": "Điện tích của tụ là $Q=CU$.",
-     "answer": true
+     "text": "Hiệu điện thế tối đa của tụ là $U_{\\max}=\\dfrac{E_{\\max}}{d}$.",
+     "answer": false
     },
     {
      "text": "Cường độ điện trường đều giữa hai bản là $E=\\dfrac{U}{d}$.",
      "answer": true
     },
     {
-     "text": "Hiệu điện thế tối đa của tụ là $U_{\\max}=\\dfrac{E_{\\max}}{d}$.",
+     "text": "Từ $C=\\dfrac{Q}{U}$ suy ra tăng $U$ thì điện dung của tụ giảm.",
      "answer": false
     },
     {
-     "text": "Từ $C=\\dfrac{Q}{U}$ suy ra tăng $U$ thì điện dung của tụ giảm.",
-     "answer": false
+     "text": "Điện tích của tụ là $Q=CU$.",
+     "answer": true
     }
    ],
    "explanation": "$Q=CU$, $E=U/d$ nên $U_{\\max}=E_{\\max}d$; C do cấu tạo quyết định, không giảm khi U tăng.",
    "distractorNotes": {
-    "0": "Biến đổi trực tiếp từ định nghĩa $C=Q/U$ cho ra $Q=CU$, nên hệ thức này đúng.",
+    "0": "Từ $E=U/d$ suy ra $U=Ed$, nên $U_{\\max}=E_{\\max}d$; chia cho $d$ là biến đổi sai.",
     "1": "Điện trường giữa hai bản tụ phẳng là đều và $E=U/d$ đúng như bài nêu.",
-    "2": "Từ $E=U/d$ suy ra $U=Ed$, nên $U_{\\max}=E_{\\max}d$; chia cho $d$ là biến đổi sai.",
-    "3": "Tăng $U$ thì $Q$ tăng theo, tỉ số $Q/U$ không đổi vì $C$ chỉ do cấu tạo quyết định."
+    "2": "Tăng $U$ thì $Q$ tăng theo, tỉ số $Q/U$ không đổi vì $C$ chỉ do cấu tạo quyết định.",
+    "3": "Biến đổi trực tiếp từ định nghĩa $C=Q/U$ cho ra $Q=CU$, nên hệ thức này đúng."
    }
   }
  ]

@@ -387,28 +387,28 @@
    "question": "Một học sinh làm thí nghiệm với tờ giấy A4 và hòn bi: thả tờ giấy phẳng cùng hòn bi, rồi vo tròn tờ giấy và thả lại cùng hòn bi; sau đó đặt tờ giấy phẳng nằm trên quyển sách rồi thả.",
    "statements": [
     {
-     "text": "Vo tròn tờ giấy làm khối lượng của tờ giấy giảm đi.",
+     "text": "Các lần thả chứng tỏ vật nặng luôn rơi nhanh hơn vật nhẹ.",
      "answer": false
-    },
-    {
-     "text": "Vo tròn tờ giấy làm lực cản không khí giảm so với trọng lượng của nó.",
-     "answer": true
     },
     {
      "text": "Tờ giấy đặt nằm trên quyển sách rơi sát theo sách, không tách ra.",
      "answer": true
     },
     {
-     "text": "Các lần thả chứng tỏ vật nặng luôn rơi nhanh hơn vật nhẹ.",
+     "text": "Vo tròn tờ giấy làm khối lượng của tờ giấy giảm đi.",
      "answer": false
+    },
+    {
+     "text": "Vo tròn tờ giấy làm lực cản không khí giảm so với trọng lượng của nó.",
+     "answer": true
     }
    ],
    "explanation": "Vo tròn giữ nguyên khối lượng nhưng giảm diện tích hứng gió, nên lực cản giảm và giấy rơi gần như bi. Tờ giấy trên sách được che gió nên rơi nhanh như sách: nhanh chậm do lực cản, không do nặng nhẹ.",
    "distractorNotes": {
-    "0": "Nhầm đổi hình dạng với đổi lượng chất: vo giấy không bớt giấy nên khối lượng giữ nguyên.",
-    "1": "Viên giấy vo tròn hứng ít không khí hơn tờ phẳng, nên lực cản so với trọng lượng chắc chắn giảm.",
-    "2": "Quyển sách che gió nên tờ giấy không bị không khí cản, rơi sát theo sách đúng như quan sát.",
-    "3": "Viên giấy nhẹ rơi gần như hòn bi, nên chính thí nghiệm này bác bỏ ý \"nặng rơi nhanh\"."
+    "0": "Viên giấy nhẹ rơi gần như hòn bi, nên chính thí nghiệm này bác bỏ ý \"nặng rơi nhanh\".",
+    "1": "Quyển sách che gió nên tờ giấy không bị không khí cản, rơi sát theo sách đúng như quan sát.",
+    "2": "Nhầm đổi hình dạng với đổi lượng chất: vo giấy không bớt giấy nên khối lượng giữ nguyên.",
+    "3": "Viên giấy vo tròn hứng ít không khí hơn tờ phẳng, nên lực cản so với trọng lượng chắc chắn giảm."
    }
   },
   {
@@ -422,7 +422,7 @@
    "question": "Một vật được thả rơi tự do từ độ cao h. Chọn gốc toạ độ tại điểm thả, chiều dương hướng xuống, gốc thời gian lúc thả.",
    "statements": [
     {
-     "text": "Vận tốc của vật tại thời điểm t là $v = gt$.",
+     "text": "Hệ thức không chứa thời gian là $v^2 = 2gs$.",
      "answer": true
     },
     {
@@ -430,7 +430,7 @@
      "answer": false
     },
     {
-     "text": "Hệ thức không chứa thời gian là $v^2 = 2gs$.",
+     "text": "Vận tốc của vật tại thời điểm t là $v = gt$.",
      "answer": true
     },
     {
@@ -440,9 +440,9 @@
    ],
    "explanation": "Với $v_0 = 0$, $a = g$: $v = gt$, $s = \\frac{1}{2}gt^2$, $v^2 = 2gs$; khi chạm đất $v = \\sqrt{2gh}$.",
    "distractorNotes": {
-    "0": "Thay $v_0 = 0$, $a = g$ vào $v = v_0 + at$ cho đúng $v = gt$, không có gì sai.",
+    "0": "Thay $v_0 = 0$, $a = g$ vào $v^2 - v_0^2 = 2ad$ cho đúng hệ thức này.",
     "1": "Thiếu hệ số $\\frac{1}{2}$; đúng phải là $s = \\frac{1}{2}gt^2$.",
-    "2": "Thay $v_0 = 0$, $a = g$ vào $v^2 - v_0^2 = 2ad$ cho đúng hệ thức này.",
+    "2": "Thay $v_0 = 0$, $a = g$ vào $v = v_0 + at$ cho đúng $v = gt$, không có gì sai.",
     "3": "Quên lấy căn bậc hai: $2gh$ là $v^2$, còn vận tốc chạm đất là $\\sqrt{2gh}$."
    }
   },
@@ -457,28 +457,28 @@
    "question": "Tại cùng một nơi, lần lượt thả rơi tự do một viên bi từ các độ cao khác nhau và so sánh thời gian rơi, vận tốc chạm đất.",
    "statements": [
     {
-     "text": "Độ cao gấp 4 lần thì thời gian rơi gấp 2 lần.",
-     "answer": true
-    },
-    {
      "text": "Độ cao gấp 2 lần thì thời gian rơi gấp 2 lần.",
      "answer": false
+    },
+    {
+     "text": "Thời gian rơi gấp 2 lần thì vận tốc chạm đất gấp 2 lần.",
+     "answer": true
     },
     {
      "text": "Độ cao gấp 4 lần thì vận tốc chạm đất gấp 4 lần.",
      "answer": false
     },
     {
-     "text": "Thời gian rơi gấp 2 lần thì vận tốc chạm đất gấp 2 lần.",
+     "text": "Độ cao gấp 4 lần thì thời gian rơi gấp 2 lần.",
      "answer": true
     }
    ],
    "explanation": "$t = \\sqrt{2h/g}$ và $v = \\sqrt{2gh}$ đều tỉ lệ với $\\sqrt{h}$; còn $v = gt$ tỉ lệ thuận với t (Bẫy 3).",
    "distractorNotes": {
-    "0": "Vì t tỉ lệ với $\\sqrt{h}$, độ cao gấp 4 thì thời gian gấp đúng $\\sqrt{4} = 2$.",
-    "1": "Coi t tỉ lệ thuận với h; độ cao gấp 2 thì t chỉ gấp $\\sqrt{2} \\approx 1{,}41$.",
+    "0": "Coi t tỉ lệ thuận với h; độ cao gấp 2 thì t chỉ gấp $\\sqrt{2} \\approx 1{,}41$.",
+    "1": "Từ $v = gt$, vận tốc tỉ lệ thuận với thời gian rơi nên t gấp 2 thì v gấp 2.",
     "2": "Coi v tỉ lệ thuận với h; thực ra $v = \\sqrt{2gh}$ nên chỉ gấp 2.",
-    "3": "Từ $v = gt$, vận tốc tỉ lệ thuận với thời gian rơi nên t gấp 2 thì v gấp 2."
+    "3": "Vì t tỉ lệ với $\\sqrt{h}$, độ cao gấp 4 thì thời gian gấp đúng $\\sqrt{4} = 2$."
    }
   },
   {
@@ -492,10 +492,6 @@
    "question": "Một vật được thả rơi tự do từ trạng thái nghỉ. Xét quãng đường vật rơi \"trong n giây đầu\" và \"trong giây thứ n\".",
    "statements": [
     {
-     "text": "Quãng đường rơi trong n giây đầu là $s_n = \\frac{1}{2}gn^2$.",
-     "answer": true
-    },
-    {
      "text": "Quãng đường rơi trong giây thứ n cũng bằng $\\frac{1}{2}gn^2$.",
      "answer": false
     },
@@ -506,14 +502,18 @@
     {
      "text": "Quãng đường rơi trong các giây liên tiếp bằng nhau.",
      "answer": false
+    },
+    {
+     "text": "Quãng đường rơi trong n giây đầu là $s_n = \\frac{1}{2}gn^2$.",
+     "answer": true
     }
    ],
    "explanation": "n giây đầu tính từ $t = 0$ nên $s_n = \\frac{1}{2}gn^2$; giây thứ n từ $t = n - 1$ đến $t = n$ nên $\\Delta s = s_n - s_{n-1}$, các giây sau rơi được xa hơn.",
    "distractorNotes": {
-    "0": "n giây đầu tính từ lúc thả $t = 0$, nên áp dụng thẳng $s = \\frac{1}{2}gt^2$ với $t = n$.",
-    "1": "Nhầm \"giây thứ n\" với \"n giây đầu\"; phải lấy $s_n - s_{n-1}$.",
-    "2": "Giây thứ n là một giây cuối của n giây đầu, tức đúng từ $t = n - 1$ đến $t = n$.",
-    "3": "Quên rằng rơi tự do nhanh dần đều; quãng đường các giây liên tiếp tăng theo tỉ lệ 1 : 3 : 5."
+    "0": "Nhầm \"giây thứ n\" với \"n giây đầu\"; phải lấy $s_n - s_{n-1}$.",
+    "1": "Giây thứ n là một giây cuối của n giây đầu, tức đúng từ $t = n - 1$ đến $t = n$.",
+    "2": "Quên rằng rơi tự do nhanh dần đều; quãng đường các giây liên tiếp tăng theo tỉ lệ 1 : 3 : 5.",
+    "3": "n giây đầu tính từ lúc thả $t = 0$, nên áp dụng thẳng $s = \\frac{1}{2}gt^2$ với $t = n$."
    }
   }
  ]

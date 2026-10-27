@@ -347,10 +347,6 @@
    "question": "Một vật gắn lò xo nằm ngang, đánh dấu vị trí cân bằng O. Kéo vật lệch 4 cm rồi thả, vật dao động điều hoà với chu kì 2 s. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Li độ của vật luôn nằm trong đoạn từ $-4$ cm đến $4$ cm.",
-     "answer": true
-    },
-    {
      "text": "Biên độ dao động bằng 4 cm và do cách kéo vật quyết định.",
      "answer": true
     },
@@ -359,15 +355,19 @@
      "answer": false
     },
     {
+     "text": "Li độ của vật luôn nằm trong đoạn từ $-4$ cm đến $4$ cm.",
+     "answer": true
+    },
+    {
      "text": "Nếu kéo vật lệch 6 cm rồi thả thì biên độ vẫn là 4 cm vì biên độ do cấu tạo hệ.",
      "answer": false
     }
    ],
    "explanation": "Vật không ra khỏi đoạn $[-A;A]$ và $A$ phụ thuộc cách kích thích. Hai lần qua O vật đi theo hai chiều ngược nhau nên là hai trạng thái khác nhau; kéo xa hơn thì $A$ lớn hơn.",
    "distractorNotes": {
-    "0": "Thí nghiệm cho thấy vật không vượt hai đầu, nên li độ không thể ra ngoài đoạn $[-4;4]$ cm.",
-    "1": "Biên độ bằng độ lệch lúc thả và phụ thuộc cách kích thích, nên phát biểu này không thể sai.",
-    "2": "Li độ bằng 0 chỉ cho biết vị trí; hai lần qua O vật đi ngược chiều nhau nên là hai trạng thái khác nhau.",
+    "0": "Biên độ bằng độ lệch lúc thả và phụ thuộc cách kích thích, nên phát biểu này không thể sai.",
+    "1": "Li độ bằng 0 chỉ cho biết vị trí; hai lần qua O vật đi ngược chiều nhau nên là hai trạng thái khác nhau.",
+    "2": "Thí nghiệm cho thấy vật không vượt hai đầu, nên li độ không thể ra ngoài đoạn $[-4;4]$ cm.",
     "3": "Biên độ phụ thuộc cách kích thích chứ không phải cấu tạo hệ, nên kéo lệch 6 cm thì biên độ là 6 cm."
    }
   },
@@ -382,28 +382,28 @@
    "question": "Một vật dao động điều hoà với biên độ $A$ đi từ biên dương về vị trí cân bằng O rồi tiếp tục tới biên âm. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Khi vật ở O, li độ của vật bằng 0.",
-     "answer": true
+     "text": "Khi vật tới biên âm, quãng đường vật đã đi bằng $-A$.",
+     "answer": false
     },
     {
      "text": "Quãng đường vật đi từ biên dương tới O bằng $A$.",
      "answer": true
     },
     {
-     "text": "Khi vật tới biên âm, quãng đường vật đã đi bằng $-A$.",
-     "answer": false
+     "text": "Khi vật ở biên âm, li độ của vật bằng $-A$.",
+     "answer": true
     },
     {
-     "text": "Khi vật ở biên âm, li độ của vật bằng $-A$.",
+     "text": "Khi vật ở O, li độ của vật bằng 0.",
      "answer": true
     }
    ],
    "explanation": "Li độ là độ lệch khỏi O, có dấu: tại O bằng 0, tại biên âm bằng $-A$. Quãng đường luôn dương và cộng dồn, từ biên dương tới biên âm là $2A$.",
    "distractorNotes": {
-    "0": "Li độ là độ lệch khỏi vị trí cân bằng, vật đang ở O thì độ lệch bằng 0.",
+    "0": "Quãng đường luôn dương và cộng dồn, từ biên dương tới biên âm là $2A$; còn $-A$ là li độ.",
     "1": "Từ biên dương về O vật đi đúng một đoạn dài bằng biên độ $A$.",
-    "2": "Quãng đường luôn dương và cộng dồn, từ biên dương tới biên âm là $2A$; còn $-A$ là li độ.",
-    "3": "Biên âm là vị trí lệch cực đại về phía âm, nên li độ đúng bằng $-A$."
+    "2": "Biên âm là vị trí lệch cực đại về phía âm, nên li độ đúng bằng $-A$.",
+    "3": "Li độ là độ lệch khỏi vị trí cân bằng, vật đang ở O thì độ lệch bằng 0."
    }
   },
   {
@@ -417,10 +417,6 @@
    "question": "Một vật dao động điều hoà trên trục Ox theo phương trình $x = 6\\cos\\left(\\pi t+\\dfrac{\\pi}{3}\\right)$ cm, $t$ tính bằng giây. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Biên độ dao động là 6 cm.",
-     "answer": true
-    },
-    {
      "text": "Tần số góc của dao động là $\\pi$ rad/s.",
      "answer": true
     },
@@ -429,15 +425,19 @@
      "answer": false
     },
     {
+     "text": "Biên độ dao động là 6 cm.",
+     "answer": true
+    },
+    {
      "text": "Tại $t = 0$ vật đang đi theo chiều dương của trục Ox.",
      "answer": false
     }
    ],
    "explanation": "So với $x = A\\cos(\\omega t+\\varphi)$: $A = 6$ cm, $\\omega = \\pi$ rad/s, $\\varphi = \\pi/3$. Chu kì là $T = 2\\pi/\\omega$; pha $\\pi/3$ tăng thì côsin giảm nên vật đi theo chiều âm.",
    "distractorNotes": {
-    "0": "Hệ số đứng trước hàm côsin trong $x = A\\cos(\\omega t+\\varphi)$ chính là biên độ, ở đây bằng 6 cm.",
-    "1": "Hệ số của $t$ trong pha là tần số góc, ở đây bằng $\\pi$ rad/s.",
-    "2": "$\\omega/(2\\pi)$ cho tần số $f$, còn chu kì phải là $T = 2\\pi/\\omega$.",
+    "0": "Hệ số của $t$ trong pha là tần số góc, ở đây bằng $\\pi$ rad/s.",
+    "1": "$\\omega/(2\\pi)$ cho tần số $f$, còn chu kì phải là $T = 2\\pi/\\omega$.",
+    "2": "Hệ số đứng trước hàm côsin trong $x = A\\cos(\\omega t+\\varphi)$ chính là biên độ, ở đây bằng 6 cm.",
     "3": "Pha $\\pi/3$ tăng thêm thì côsin giảm, $x$ giảm, nên vật đi theo chiều âm về phía O."
    }
   },
@@ -452,28 +452,28 @@
    "question": "Hai học sinh so sánh chu kì $T$, tần số $f$ và tần số góc $\\omega$ của hai con lắc dao động điều hoà dựa vào các hệ thức $f = 1/T$ và $\\omega = 2\\pi f$. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Con lắc có chu kì bằng một nửa thì tần số lớn gấp đôi.",
-     "answer": true
-    },
-    {
-     "text": "Tần số lớn gấp 2 lần thì tần số góc lớn gấp 4 lần.",
-     "answer": false
-    },
-    {
      "text": "Trong cùng một khoảng thời gian, con lắc thực hiện nhiều dao động hơn thì có chu kì nhỏ hơn.",
      "answer": true
     },
     {
      "text": "Tần số góc tỉ lệ thuận với chu kì.",
      "answer": false
+    },
+    {
+     "text": "Con lắc có chu kì bằng một nửa thì tần số lớn gấp đôi.",
+     "answer": true
+    },
+    {
+     "text": "Tần số lớn gấp 2 lần thì tần số góc lớn gấp 4 lần.",
+     "answer": false
     }
    ],
    "explanation": "$f = 1/T$ nên $f$ tỉ lệ nghịch với $T$; $\\omega = 2\\pi f$ nên $\\omega$ tỉ lệ thuận bậc nhất với $f$ và tỉ lệ nghịch với $T$. Chu kì bằng thời gian chia số dao động.",
    "distractorNotes": {
-    "0": "$f = 1/T$ là tỉ lệ nghịch, nên chu kì giảm một nửa thì tần số chắc chắn gấp đôi.",
-    "1": "$\\omega = 2\\pi f$ là tỉ lệ thuận bậc nhất, nên $f$ gấp 2 thì $\\omega$ chỉ gấp 2.",
-    "2": "Chu kì là thời gian một dao động; làm nhiều dao động trong cùng thời gian thì mỗi dao động ngắn hơn.",
-    "3": "$\\omega = 2\\pi/T$ nên tần số góc tỉ lệ nghịch với chu kì, không tỉ lệ thuận."
+    "0": "Chu kì là thời gian một dao động; làm nhiều dao động trong cùng thời gian thì mỗi dao động ngắn hơn.",
+    "1": "$\\omega = 2\\pi/T$ nên tần số góc tỉ lệ nghịch với chu kì, không tỉ lệ thuận.",
+    "2": "$f = 1/T$ là tỉ lệ nghịch, nên chu kì giảm một nửa thì tần số chắc chắn gấp đôi.",
+    "3": "$\\omega = 2\\pi f$ là tỉ lệ thuận bậc nhất, nên $f$ gấp 2 thì $\\omega$ chỉ gấp 2."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Hai vật dao động điều hoà cùng biên độ, cùng chu kì $T$ với phương trình $x_1 = A\\cos(\\omega t)$ và $x_2 = A\\cos\\left(\\omega t-\\dfrac{\\pi}{2}\\right)$. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Dao động 1 sớm pha $\\pi/2$ so với dao động 2.",
-     "answer": true
+     "text": "Hai dao động đồng pha vì có cùng biên độ và cùng chu kì.",
+     "answer": false
     },
     {
      "text": "Dao động 1 đạt li độ cực đại sớm hơn dao động 2 một khoảng $\\Delta t = \\dfrac{\\Delta\\varphi}{\\omega} = \\dfrac{T}{4}$.",
      "answer": true
     },
     {
-     "text": "Nếu đổi mốc thời gian thì độ lệch pha giữa hai dao động thay đổi.",
-     "answer": false
+     "text": "Dao động 1 sớm pha $\\pi/2$ so với dao động 2.",
+     "answer": true
     },
     {
-     "text": "Hai dao động đồng pha vì có cùng biên độ và cùng chu kì.",
+     "text": "Nếu đổi mốc thời gian thì độ lệch pha giữa hai dao động thay đổi.",
      "answer": false
     }
    ],
    "explanation": "$\\varphi_1 = 0 \\gt \\varphi_2 = -\\pi/2$ nên dao động 1 sớm pha $\\pi/2$, đỉnh đến trước $T/4$. Độ lệch pha không đổi khi đổi mốc thời gian, và cùng biên độ không suy ra đồng pha.",
    "distractorNotes": {
-    "0": "$\\varphi_1 = 0$ lớn hơn $\\varphi_2 = -\\pi/2$, nên dao động 1 chắc chắn sớm pha $\\pi/2$.",
+    "0": "Đồng pha đòi hỏi pha ban đầu bằng nhau; cùng biên độ, cùng chu kì nhưng lệch $\\pi/2$ thì không đồng pha.",
     "1": "Thay $\\Delta\\varphi = \\pi/2$ và $\\omega = 2\\pi/T$ vào $\\Delta t = \\Delta\\varphi/\\omega$ cho đúng $T/4$.",
-    "2": "Đổi mốc thì cả hai pha cùng cộng thêm $\\omega\\tau$, nên hiệu pha giữ nguyên.",
-    "3": "Đồng pha đòi hỏi pha ban đầu bằng nhau; cùng biên độ, cùng chu kì nhưng lệch $\\pi/2$ thì không đồng pha."
+    "2": "$\\varphi_1 = 0$ lớn hơn $\\varphi_2 = -\\pi/2$, nên dao động 1 chắc chắn sớm pha $\\pi/2$.",
+    "3": "Đổi mốc thì cả hai pha cùng cộng thêm $\\omega\\tau$, nên hiệu pha giữ nguyên."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một học sinh vẽ đồ thị li độ – thời gian của vật dao động theo phương trình $x = 5\\cos(2\\pi t)$ cm, $t$ tính bằng giây. Đồ thị có đỉnh dương cao 5 cm và hai đỉnh dương liên tiếp cách nhau 1 s. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Độ cao 5 cm của đỉnh dương là biên độ dao động.",
+     "text": "Khoảng 1 s giữa hai đỉnh dương liên tiếp là chu kì dao động.",
      "answer": true
     },
     {
-     "text": "Khoảng 1 s giữa hai đỉnh dương liên tiếp là chu kì dao động.",
+     "text": "Tại $t = 0$ đồ thị ở đỉnh dương nên pha ban đầu bằng 0.",
+     "answer": true
+    },
+    {
+     "text": "Độ cao 5 cm của đỉnh dương là biên độ dao động.",
      "answer": true
     },
     {
      "text": "Trục hoành của đồ thị biểu diễn quãng đường vật đi được.",
      "answer": false
-    },
-    {
-     "text": "Tại $t = 0$ đồ thị ở đỉnh dương nên pha ban đầu bằng 0.",
-     "answer": true
     }
    ],
    "explanation": "Đỉnh dương cho $A$, hai đỉnh dương liên tiếp cách $T$. Trục hoành là thời gian, không phải quãng đường; lúc $t = 0$ ở đỉnh dương, sắp xuống thì $\\varphi = 0$.",
    "distractorNotes": {
-    "0": "Đỉnh dương là li độ cực đại, mà li độ cực đại chính là biên độ.",
-    "1": "Giữa hai đỉnh dương liên tiếp vật trở lại cùng vị trí, cùng chiều, đúng định nghĩa chu kì.",
-    "2": "Đồ thị li độ – thời gian có trục hoành là thời gian $t$, bài nhấn mạnh đó không phải quãng đường.",
-    "3": "Tại $t = 0$ phương trình cho $x = 5$ cm, đúng đỉnh dương và sắp xuống, ứng với $\\varphi = 0$."
+    "0": "Giữa hai đỉnh dương liên tiếp vật trở lại cùng vị trí, cùng chiều, đúng định nghĩa chu kì.",
+    "1": "Tại $t = 0$ phương trình cho $x = 5$ cm, đúng đỉnh dương và sắp xuống, ứng với $\\varphi = 0$.",
+    "2": "Đỉnh dương là li độ cực đại, mà li độ cực đại chính là biên độ.",
+    "3": "Đồ thị li độ – thời gian có trục hoành là thời gian $t$, bài nhấn mạnh đó không phải quãng đường."
    }
   }
  ]

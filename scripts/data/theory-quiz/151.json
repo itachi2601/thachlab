@@ -347,10 +347,6 @@
       "question": "Chiếu đèn lục và đèn lam chồng lên nhau trên một bức tường trắng. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Vùng hai đèn chồng lên nhau có màu lam lục.",
-          "answer": true
-        },
-        {
           "text": "Vùng chồng lên nhau tối đi vì mỗi màu hấp thụ bớt màu kia.",
           "answer": false
         },
@@ -361,14 +357,18 @@
         {
           "text": "Trộn ba đèn đỏ, lục, lam đúng cường độ cho ra màu đen.",
           "answer": false
+        },
+        {
+          "text": "Vùng hai đèn chồng lên nhau có màu lam lục.",
+          "answer": true
         }
       ],
-      "explanation": "a) đúng: tường trắng hắt lại cả lục lẫn lam, mắt thấy lam lục. b) sai: hấp thụ là quy tắc của pha sơn, còn ánh sáng chồng lên thì cộng lại. c) đúng: trộn ánh sáng là cộng thêm ánh sáng nên chỉ sáng hơn. d) sai: ba màu này trộn lại cho màu trắng.",
+      "explanation": "a) sai: hấp thụ là quy tắc của pha sơn, còn ánh sáng chồng lên thì cộng lại. b) đúng: trộn ánh sáng là cộng thêm ánh sáng nên chỉ sáng hơn. c) sai: ba màu này trộn lại cho màu trắng. d) đúng: tường trắng hắt lại cả lục lẫn lam, mắt thấy lam lục.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì tường trắng hắt lại cả lục lẫn lam, mắt thấy lam lục.",
-        "1": "Không thể coi là đúng vì hấp thụ là quy tắc của pha sơn, còn ánh sáng chồng lên thì cộng lại.",
-        "2": "Không thể coi là sai vì trộn ánh sáng là cộng thêm ánh sáng nên chỉ sáng hơn.",
-        "3": "Không thể coi là đúng vì ba màu này trộn lại cho màu trắng."
+        "0": "Không thể coi là đúng vì hấp thụ là quy tắc của pha sơn, còn ánh sáng chồng lên thì cộng lại.",
+        "1": "Không thể coi là sai vì trộn ánh sáng là cộng thêm ánh sáng nên chỉ sáng hơn.",
+        "2": "Không thể coi là đúng vì ba màu này trộn lại cho màu trắng.",
+        "3": "Không thể coi là sai vì tường trắng hắt lại cả lục lẫn lam, mắt thấy lam lục."
       }
     },
     {
@@ -382,10 +382,6 @@
       "question": "Chiếu laser vào tâm khối bán trụ thuỷ tinh đặt trên bảng chia độ, đo được: $i=20^\\circ$ thì $r=13^\\circ$; $i=40^\\circ$ thì $r=25^\\circ$; $i=70^\\circ$ thì $r=39^\\circ$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Tỉ số $\\sin i:\\sin r$ ở ba lần đo gần như không đổi.",
-          "answer": true
-        },
-        {
           "text": "Tỉ số $i:r$ giữ nguyên ở cả ba lần đo.",
           "answer": false
         },
@@ -394,15 +390,19 @@
           "answer": false
         },
         {
+          "text": "Tỉ số $\\sin i:\\sin r$ ở ba lần đo gần như không đổi.",
+          "answer": true
+        },
+        {
           "text": "Giá trị của tỉ số $\\sin i:\\sin r$ cho biết chiết suất của thuỷ tinh.",
           "answer": true
         }
       ],
-      "explanation": "a) đúng: cả ba lần đều cho xấp xỉ $1{,}5$. b) sai: $20:13\\approx1{,}54$ nhưng $70:39\\approx1{,}79$; chỉ tỉ số các sin mới giữ nguyên. c) sai: thuỷ tinh có $n>1$ nên ánh sáng truyền chậm hơn. d) đúng: không khí có $n=1$ nên tỉ số này chính là chiết suất thuỷ tinh.",
+      "explanation": "a) sai: $20:13\\approx1{,}54$ nhưng $70:39\\approx1{,}79$; chỉ tỉ số các sin mới giữ nguyên. b) sai: thuỷ tinh có $n>1$ nên ánh sáng truyền chậm hơn. c) đúng: cả ba lần đều cho xấp xỉ $1{,}5$. d) đúng: không khí có $n=1$ nên tỉ số này chính là chiết suất thuỷ tinh.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì cả ba lần đều cho xấp xỉ $1{,}5$.",
-        "1": "Không thể coi là đúng vì $20:13\\approx1{,}54$ nhưng $70:39\\approx1{,}79$; chỉ tỉ số các sin mới giữ nguyên.",
-        "2": "Không thể coi là đúng vì thuỷ tinh có $n>1$ nên ánh sáng truyền chậm hơn.",
+        "0": "Không thể coi là đúng vì $20:13\\approx1{,}54$ nhưng $70:39\\approx1{,}79$; chỉ tỉ số các sin mới giữ nguyên.",
+        "1": "Không thể coi là đúng vì thuỷ tinh có $n>1$ nên ánh sáng truyền chậm hơn.",
+        "2": "Không thể coi là sai vì cả ba lần đều cho xấp xỉ $1{,}5$.",
         "3": "Không thể coi là sai vì không khí có $n=1$ nên tỉ số này chính là chiết suất thuỷ tinh."
       }
     },
@@ -417,28 +417,28 @@
       "question": "Một con chim đậu cách mặt hồ $1{,}5\\ \\text{m}$. Con cá ngay bên dưới nhìn thẳng lên, nước có $n=\\tfrac43$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Cá thấy chim cách mặt nước $1{,}125\\ \\text{m}$.",
-          "answer": false
-        },
-        {
           "text": "Cá thấy chim ở xa mặt nước hơn vị trí thật của chim.",
           "answer": true
+        },
+        {
+          "text": "Cá không thấy chim vì ánh sáng bị phản xạ toàn phần ở mặt nước.",
+          "answer": false
         },
         {
           "text": "Cá thấy chim cách mặt nước $2{,}0\\ \\text{m}$.",
           "answer": true
         },
         {
-          "text": "Cá không thấy chim vì ánh sáng bị phản xạ toàn phần ở mặt nước.",
+          "text": "Cá thấy chim cách mặt nước $1{,}125\\ \\text{m}$.",
           "answer": false
         }
       ],
-      "explanation": "a) sai: đó là kết quả khi chia cho $n$, dùng cho mắt ở trên nhìn xuống; ở đây phải nhân. b) đúng: mắt ở trong nước nhìn lên, ảnh dịch về phía môi trường chiết quang kém là không khí. c) đúng: $H'=nH=\\tfrac43\\cdot1{,}5=2{,}0\\ \\text{m}$. d) sai: ánh sáng đi từ không khí vào nước, không thể phản xạ toàn phần.",
+      "explanation": "a) đúng: mắt ở trong nước nhìn lên, ảnh dịch về phía môi trường chiết quang kém là không khí. b) sai: ánh sáng đi từ không khí vào nước, không thể phản xạ toàn phần. c) đúng: $H'=nH=\\tfrac43\\cdot1{,}5=2{,}0\\ \\text{m}$. d) sai: đó là kết quả khi chia cho $n$, dùng cho mắt ở trên nhìn xuống; ở đây phải nhân.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì đó là kết quả khi chia cho $n$, dùng cho mắt ở trên nhìn xuống; ở đây phải nhân.",
-        "1": "Không thể coi là sai vì mắt ở trong nước nhìn lên, ảnh dịch về phía môi trường chiết quang kém là không khí.",
+        "0": "Không thể coi là sai vì mắt ở trong nước nhìn lên, ảnh dịch về phía môi trường chiết quang kém là không khí.",
+        "1": "Không thể coi là đúng vì ánh sáng đi từ không khí vào nước, không thể phản xạ toàn phần.",
         "2": "Không thể coi là sai vì $H'=nH=\\tfrac43\\cdot1{,}5=2{,}0\\ \\text{m}$.",
-        "3": "Không thể coi là đúng vì ánh sáng đi từ không khí vào nước, không thể phản xạ toàn phần."
+        "3": "Không thể coi là đúng vì đó là kết quả khi chia cho $n$, dùng cho mắt ở trên nhìn xuống; ở đây phải nhân."
       }
     },
     {
@@ -452,7 +452,7 @@
       "question": "Tia sáng đi từ thuỷ tinh ($n=1{,}5$) sang nước ($n=\\tfrac43$) với góc tới $55^\\circ$ ($\\sin55^\\circ\\approx0{,}8192$). Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Tia khúc xạ lệch lại gần pháp tuyến hơn tia tới.",
+          "text": "Với góc tới này đã xảy ra phản xạ toàn phần.",
           "answer": false
         },
         {
@@ -460,7 +460,7 @@
           "answer": true
         },
         {
-          "text": "Với góc tới này đã xảy ra phản xạ toàn phần.",
+          "text": "Tia khúc xạ lệch lại gần pháp tuyến hơn tia tới.",
           "answer": false
         },
         {
@@ -468,11 +468,11 @@
           "answer": true
         }
       ],
-      "explanation": "a) sai: ra môi trường chiết quang kém hơn thì $r>i$, tia lệch xa pháp tuyến. b) đúng: đây là điều kiện cần thứ nhất của phản xạ toàn phần. c) sai: $\\sin55^\\circ\\approx0{,}8192$ nhỏ hơn $0{,}889$ nên $i<i_{gh}$ và vẫn có tia khúc xạ. d) đúng: $\\sin i_{gh}=\\dfrac{4/3}{1{,}5}\\approx0{,}889$.",
+      "explanation": "a) sai: $\\sin55^\\circ\\approx0{,}8192$ nhỏ hơn $0{,}889$ nên $i<i_{gh}$ và vẫn có tia khúc xạ. b) đúng: đây là điều kiện cần thứ nhất của phản xạ toàn phần. c) sai: ra môi trường chiết quang kém hơn thì $r>i$, tia lệch xa pháp tuyến. d) đúng: $\\sin i_{gh}=\\dfrac{4/3}{1{,}5}\\approx0{,}889$.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì ra môi trường chiết quang kém hơn thì $r>i$, tia lệch xa pháp tuyến.",
+        "0": "Không thể coi là đúng vì $\\sin55^\\circ\\approx0{,}8192$ nhỏ hơn $0{,}889$ nên $i<i_{gh}$ và vẫn có tia khúc xạ.",
         "1": "Không thể coi là sai vì đây là điều kiện cần thứ nhất của phản xạ toàn phần.",
-        "2": "Không thể coi là đúng vì $\\sin55^\\circ\\approx0{,}8192$ nhỏ hơn $0{,}889$ nên $i<i_{gh}$ và vẫn có tia khúc xạ.",
+        "2": "Không thể coi là đúng vì ra môi trường chiết quang kém hơn thì $r>i$, tia lệch xa pháp tuyến.",
         "3": "Không thể coi là sai vì $\\sin i_{gh}=\\dfrac{4/3}{1{,}5}\\approx0{,}889$."
       }
     },
@@ -487,10 +487,6 @@
       "question": "Lăng kính thuỷ tinh $n=1{,}5$ có góc chiết quang $A=35^\\circ$ ($\\sin35^\\circ\\approx0{,}5736$), góc giới hạn thuỷ tinh – không khí là $41{,}8^\\circ$. Tia sáng tới vuông góc mặt bên $AB$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Góc tới ở mặt $AC$ bằng góc chiết quang $A$.",
-          "answer": true
-        },
-        {
           "text": "Tia sáng bị phản xạ toàn phần ở mặt $AC$.",
           "answer": false
         },
@@ -501,14 +497,18 @@
         {
           "text": "Góc lệch $D$ giữa tia ló và tia tới bằng $35^\\circ$.",
           "answer": false
+        },
+        {
+          "text": "Góc tới ở mặt $AC$ bằng góc chiết quang $A$.",
+          "answer": true
         }
       ],
-      "explanation": "a) đúng: hai góc có cạnh tương ứng vuông góc nên $i_2=A$. b) sai: $i_2=35^\\circ<41{,}8^\\circ$ nên tia vẫn ló ra khỏi mặt $AC$. c) đúng: tia tới vuông góc mặt phân cách nên truyền thẳng. d) sai: $D=r_2-A\\approx59{,}4^\\circ-35^\\circ=24{,}4^\\circ$, không bằng góc chiết quang.",
+      "explanation": "a) sai: $i_2=35^\\circ<41{,}8^\\circ$ nên tia vẫn ló ra khỏi mặt $AC$. b) đúng: tia tới vuông góc mặt phân cách nên truyền thẳng. c) sai: $D=r_2-A\\approx59{,}4^\\circ-35^\\circ=24{,}4^\\circ$, không bằng góc chiết quang. d) đúng: hai góc có cạnh tương ứng vuông góc nên $i_2=A$.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì hai góc có cạnh tương ứng vuông góc nên $i_2=A$.",
-        "1": "Không thể coi là đúng vì $i_2=35^\\circ<41{,}8^\\circ$ nên tia vẫn ló ra khỏi mặt $AC$.",
-        "2": "Không thể coi là sai vì tia tới vuông góc mặt phân cách nên truyền thẳng.",
-        "3": "Không thể coi là đúng vì $D=r_2-A\\approx59{,}4^\\circ-35^\\circ=24{,}4^\\circ$, không bằng góc chiết quang."
+        "0": "Không thể coi là đúng vì $i_2=35^\\circ<41{,}8^\\circ$ nên tia vẫn ló ra khỏi mặt $AC$.",
+        "1": "Không thể coi là sai vì tia tới vuông góc mặt phân cách nên truyền thẳng.",
+        "2": "Không thể coi là đúng vì $D=r_2-A\\approx59{,}4^\\circ-35^\\circ=24{,}4^\\circ$, không bằng góc chiết quang.",
+        "3": "Không thể coi là sai vì hai góc có cạnh tương ứng vuông góc nên $i_2=A$."
       }
     },
     {
@@ -522,8 +522,8 @@
       "question": "Tia sáng đi từ không khí vào một chất có $n=\\sqrt2$ với góc tới $45^\\circ$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Góc giữa tia phản xạ và tia khúc xạ bằng $75^\\circ$.",
-          "answer": false
+          "text": "Tia khúc xạ lệch lại gần pháp tuyến hơn tia tới.",
+          "answer": true
         },
         {
           "text": "Tốc độ ánh sáng trong chất này bằng $\\sqrt2\\,c$.",
@@ -534,16 +534,16 @@
           "answer": true
         },
         {
-          "text": "Tia khúc xạ lệch lại gần pháp tuyến hơn tia tới.",
-          "answer": true
+          "text": "Góc giữa tia phản xạ và tia khúc xạ bằng $75^\\circ$.",
+          "answer": false
         }
       ],
-      "explanation": "a) sai: góc đó bằng $180^\\circ-45^\\circ-30^\\circ=105^\\circ$. b) sai: từ $v=\\dfrac cn$ suy ra $v=\\dfrac{c}{\\sqrt2}$, nhỏ hơn $c$. c) đúng: $\\sin r=\\dfrac{\\sin45^\\circ}{\\sqrt2}=0{,}5$ nên $r=30^\\circ$. d) đúng: vào môi trường chiết quang hơn thì $r<i$.",
+      "explanation": "a) đúng: vào môi trường chiết quang hơn thì $r<i$. b) sai: từ $v=\\dfrac cn$ suy ra $v=\\dfrac{c}{\\sqrt2}$, nhỏ hơn $c$. c) đúng: $\\sin r=\\dfrac{\\sin45^\\circ}{\\sqrt2}=0{,}5$ nên $r=30^\\circ$. d) sai: góc đó bằng $180^\\circ-45^\\circ-30^\\circ=105^\\circ$.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì góc đó bằng $180^\\circ-45^\\circ-30^\\circ=105^\\circ$.",
+        "0": "Không thể coi là sai vì vào môi trường chiết quang hơn thì $r<i$.",
         "1": "Không thể coi là đúng vì từ $v=\\dfrac cn$ suy ra $v=\\dfrac{c}{\\sqrt2}$, nhỏ hơn $c$.",
         "2": "Không thể coi là sai vì $\\sin r=\\dfrac{\\sin45^\\circ}{\\sqrt2}=0{,}5$ nên $r=30^\\circ$.",
-        "3": "Không thể coi là sai vì vào môi trường chiết quang hơn thì $r<i$."
+        "3": "Không thể coi là đúng vì góc đó bằng $180^\\circ-45^\\circ-30^\\circ=105^\\circ$."
       }
     }
   ]

@@ -347,28 +347,28 @@
    "question": "Hai lò xo giống nhau, mỗi lò xo có độ cứng $60\\ \\text{N/m}$, được ghép theo hai cách khác nhau.",
    "statements": [
     {
-     "text": "Ghép nối tiếp, độ cứng tương đương là $120\\ \\text{N/m}$.",
-     "answer": false
-    },
-    {
      "text": "Ghép nối tiếp, cùng một lực kéo làm dãn nhiều hơn so với một lò xo đơn.",
      "answer": true
+    },
+    {
+     "text": "Ghép song song, độ cứng tương đương nhỏ hơn độ cứng của mỗi lò xo.",
+     "answer": false
     },
     {
      "text": "Ghép song song, độ cứng tương đương là $120\\ \\text{N/m}$.",
      "answer": true
     },
     {
-     "text": "Ghép song song, độ cứng tương đương nhỏ hơn độ cứng của mỗi lò xo.",
+     "text": "Ghép nối tiếp, độ cứng tương đương là $120\\ \\text{N/m}$.",
      "answer": false
     }
    ],
    "explanation": "Song song: $k=k_1+k_2$ (tăng). Nối tiếp: $\\dfrac1k=\\dfrac1{k_1}+\\dfrac1{k_2}$ (giảm).",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì nối tiếp thì $\\dfrac1k=\\dfrac1{60}+\\dfrac1{60}$ nên $k=30\\ \\text{N/m}$; $120$ là của ghép song song.",
-    "1": "Không thể coi là sai vì nối tiếp có $k=30\\ \\text{N/m}$ nhỏ hơn $60$, nên cùng lực thì độ dãn lớn hơn.",
+    "0": "Không thể coi là sai vì nối tiếp có $k=30\\ \\text{N/m}$ nhỏ hơn $60$, nên cùng lực thì độ dãn lớn hơn.",
+    "1": "Không thể coi là đúng vì ghép song song cộng độ cứng nên tăng lên ($120$), chỉ nối tiếp mới làm giảm.",
     "2": "Không thể coi là sai vì khi ghép song song $k=k_1+k_2=60+60=120\\ \\text{N/m}$.",
-    "3": "Không thể coi là đúng vì ghép song song cộng độ cứng nên tăng lên ($120$), chỉ nối tiếp mới làm giảm."
+    "3": "Không thể coi là đúng vì nối tiếp thì $\\dfrac1k=\\dfrac1{60}+\\dfrac1{60}$ nên $k=30\\ \\text{N/m}$; $120$ là của ghép song song."
    }
   },
   {
@@ -390,20 +390,20 @@
      "answer": false
     },
     {
-     "text": "Khi hai lực vuông góc nhau thì hợp lực bằng $14\\ \\text{N}$.",
-     "answer": false
-    },
-    {
      "text": "Hợp lực có thể bằng $10\\ \\text{N}$.",
      "answer": true
+    },
+    {
+     "text": "Khi hai lực vuông góc nhau thì hợp lực bằng $14\\ \\text{N}$.",
+     "answer": false
     }
    ],
    "explanation": "Hợp lực luôn nằm trong đoạn $|F_1-F_2|\\le R\\le F_1+F_2$; vuông góc thì $R=\\sqrt{F_1^2+F_2^2}$.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì khi hai lực cùng chiều thì $R=6+8=14\\ \\text{N}$.",
     "1": "Không thể coi là đúng vì giá trị nhỏ nhất là $|8-6|=2\\ \\text{N}$, $1\\ \\text{N}$ nằm ngoài đoạn cho phép.",
-    "2": "Không thể coi là đúng vì $14\\ \\text{N}$ chỉ có khi cùng chiều; vuông góc cho $R=10\\ \\text{N}$.",
-    "3": "Không thể coi là sai vì $10$ nằm trong đoạn $[2;14]$; hai lực vuông góc cho đúng $\\sqrt{6^2+8^2}=10\\ \\text{N}$."
+    "2": "Không thể coi là sai vì $10$ nằm trong đoạn $[2;14]$; hai lực vuông góc cho đúng $\\sqrt{6^2+8^2}=10\\ \\text{N}$.",
+    "3": "Không thể coi là đúng vì $14\\ \\text{N}$ chỉ có khi cùng chiều; vuông góc cho $R=10\\ \\text{N}$."
    }
   },
   {
@@ -421,24 +421,24 @@
      "answer": true
     },
     {
-     "text": "Khi kéo $1{,}5\\ \\text{N}$, ma sát nghỉ bằng $2{,}5\\ \\text{N}$.",
-     "answer": false
-    },
-    {
      "text": "Ma sát nghỉ cực đại lớn hơn ma sát trượt trong thí nghiệm này.",
      "answer": true
     },
     {
      "text": "Khi khối trượt đều, ma sát trượt lớn hơn lực kéo.",
      "answer": false
+    },
+    {
+     "text": "Khi kéo $1{,}5\\ \\text{N}$, ma sát nghỉ bằng $2{,}5\\ \\text{N}$.",
+     "answer": false
     }
    ],
    "explanation": "Ma sát nghỉ bằng lực kéo cho đến mức cực đại $\\mu_nN$ (ở đây $2{,}5\\ \\text{N}$), sau đó vật trượt và ma sát trượt nhỏ hơn.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì vật đứng yên thì ma sát nghỉ cân bằng đúng với lực kéo.",
-    "1": "Không thể coi là đúng vì $2{,}5\\ \\text{N}$ là mức cực đại; khi kéo $1{,}5\\ \\text{N}$ ma sát nghỉ chỉ bằng $1{,}5\\ \\text{N}$.",
-    "2": "Không thể coi là sai vì $2{,}5\\ \\text{N}$ lớn hơn $2{,}0\\ \\text{N}$.",
-    "3": "Không thể coi là đúng vì trượt đều thì hợp lực bằng 0, ma sát trượt bằng đúng lực kéo $2{,}0\\ \\text{N}$."
+    "1": "Không thể coi là sai vì $2{,}5\\ \\text{N}$ lớn hơn $2{,}0\\ \\text{N}$.",
+    "2": "Không thể coi là đúng vì trượt đều thì hợp lực bằng 0, ma sát trượt bằng đúng lực kéo $2{,}0\\ \\text{N}$.",
+    "3": "Không thể coi là đúng vì $2{,}5\\ \\text{N}$ là mức cực đại; khi kéo $1{,}5\\ \\text{N}$ ma sát nghỉ chỉ bằng $1{,}5\\ \\text{N}$."
    }
   },
   {
@@ -452,8 +452,8 @@
    "question": "Vật $10\\ \\text{kg}$ đứng yên trên mặt dốc nghiêng $30^\\circ$ so với phương ngang, lấy $g=10\\ \\text{m/s}^2$.",
    "statements": [
     {
-     "text": "Nếu $\\mu_n=0{,}4$ thì vật vẫn đứng yên trên dốc.",
-     "answer": false
+     "text": "Áp lực của vật lên dốc là $N=P\\cos30^\\circ\\approx86{,}6\\ \\text{N}$.",
+     "answer": true
     },
     {
      "text": "Vì vật đứng yên nên lực ma sát nghỉ bằng $50\\ \\text{N}$.",
@@ -464,16 +464,16 @@
      "answer": false
     },
     {
-     "text": "Áp lực của vật lên dốc là $N=P\\cos30^\\circ\\approx86{,}6\\ \\text{N}$.",
-     "answer": true
+     "text": "Nếu $\\mu_n=0{,}4$ thì vật vẫn đứng yên trên dốc.",
+     "answer": false
     }
    ],
    "explanation": "Đứng yên: $F_{msn}=P\\sin\\alpha$, $N=P\\cos\\alpha$; vật trượt khi $\\tan\\alpha>\\mu_n$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì $\\tan30^\\circ\\approx0{,}58>0{,}4$ nên vật sẽ trượt xuống.",
+    "0": "Không thể coi là sai vì trên dốc áp lực là thành phần vuông góc mặt dốc của trọng lực: $N=P\\cos\\alpha$.",
     "1": "Không thể coi là sai vì $F_{msn}=P\\sin30^\\circ=50\\ \\text{N}$ cân bằng thành phần kéo xuống.",
     "2": "Không thể coi là đúng vì $\\mu_nN$ chỉ là giá trị cực đại; ma sát đang có bằng $P\\sin\\alpha$.",
-    "3": "Không thể coi là sai vì trên dốc áp lực là thành phần vuông góc mặt dốc của trọng lực: $N=P\\cos\\alpha$."
+    "3": "Không thể coi là đúng vì $\\tan30^\\circ\\approx0{,}58>0{,}4$ nên vật sẽ trượt xuống."
    }
   },
   {
@@ -491,12 +491,12 @@
      "answer": false
     },
     {
-     "text": "Cầm gần bu-lông hơn thì moment lớn hơn khi lực không đổi.",
-     "answer": false
-    },
-    {
      "text": "Lực vuông góc với cán cờ lê thì moment của lực là $20\\ \\text{N·m}$.",
      "answer": true
+    },
+    {
+     "text": "Cầm gần bu-lông hơn thì moment lớn hơn khi lực không đổi.",
+     "answer": false
     },
     {
      "text": "Lực hợp góc $30^\\circ$ với cán thì cánh tay đòn là $0{,}25\\ \\text{m}$.",
@@ -506,8 +506,8 @@
    "explanation": "$M=F\\cdot d$ với $d$ là khoảng cách từ trục tới đường tác dụng của lực, $d=l\\sin\\theta$ khi lực hợp góc $\\theta$ với cán.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì moment phụ thuộc cánh tay đòn; lúc này $M=40\\cdot0{,}25=10\\ \\text{N·m}$.",
-    "1": "Không thể coi là đúng vì cánh tay đòn ngắn đi nên moment nhỏ hơn; muốn lớn hơn phải cầm xa trục.",
-    "2": "Không thể coi là sai vì cánh tay đòn bằng cả chiều dài cán: $M=40\\cdot0{,}5=20\\ \\text{N·m}$.",
+    "1": "Không thể coi là sai vì cánh tay đòn bằng cả chiều dài cán: $M=40\\cdot0{,}5=20\\ \\text{N·m}$.",
+    "2": "Không thể coi là đúng vì cánh tay đòn ngắn đi nên moment nhỏ hơn; muốn lớn hơn phải cầm xa trục.",
     "3": "Không thể coi là sai vì $d=l\\sin30^\\circ=0{,}5\\cdot0{,}5=0{,}25\\ \\text{m}$."
    }
   },
@@ -522,12 +522,12 @@
    "question": "Hai bạn ngồi hai phía của một chiếc bập bênh và bập bênh đang cân bằng ở vị trí nằm ngang.",
    "statements": [
     {
-     "text": "Tổng moment quay thuận chiều kim đồng hồ bằng tổng moment quay ngược chiều.",
-     "answer": true
-    },
-    {
      "text": "Hai bạn ngồi cách trục bằng nhau thì bập bênh chắc chắn cân bằng dù khối lượng khác nhau.",
      "answer": false
+    },
+    {
+     "text": "Tổng moment quay thuận chiều kim đồng hồ bằng tổng moment quay ngược chiều.",
+     "answer": true
     },
     {
      "text": "Bạn nặng hơn phải ngồi gần trục hơn bạn nhẹ hơn.",
@@ -540,8 +540,8 @@
    ],
    "explanation": "Cân bằng quay: tổng moment thuận bằng tổng moment ngược; cánh tay đòn $d$ là khoảng cách vuông góc từ trục tới đường tác dụng của lực.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì đây chính là điều kiện cân bằng quay của vật có trục quay cố định.",
-    "1": "Không thể coi là đúng vì cánh tay đòn bằng nhau mà lực khác nhau thì moment hai bên không bằng nhau.",
+    "0": "Không thể coi là đúng vì cánh tay đòn bằng nhau mà lực khác nhau thì moment hai bên không bằng nhau.",
+    "1": "Không thể coi là sai vì đây chính là điều kiện cân bằng quay của vật có trục quay cố định.",
     "2": "Không thể coi là sai vì $F_1d_1=F_2d_2$: lực lớn hơn thì cánh tay đòn phải ngắn hơn.",
     "3": "Không thể coi là đúng vì cánh tay đòn là khoảng cách vuông góc từ trục tới đường tác dụng của lực."
    }

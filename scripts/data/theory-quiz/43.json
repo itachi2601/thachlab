@@ -94,15 +94,15 @@
    "question": "Một nguồn điện được nối với một bóng đèn thành mạch kín, đèn sáng. Xét các phát biểu sau về dòng điện và các lực tác dụng lên điện tích trong mạch.",
    "statements": [
     {
-     "text": "Ở mạch ngoài, dòng điện đi từ cực (+) qua đèn về cực (−).",
-     "answer": true
-    },
-    {
      "text": "Bên trong nguồn, dòng điện cũng đi từ cực (+) sang cực (−).",
      "answer": false
     },
     {
      "text": "Bên trong nguồn, lực lạ đưa điện tích dương đi ngược chiều điện trường.",
+     "answer": true
+    },
+    {
+     "text": "Ở mạch ngoài, dòng điện đi từ cực (+) qua đèn về cực (−).",
      "answer": true
     },
     {
@@ -112,9 +112,9 @@
    ],
    "explanation": "Dòng điện chạy thành vòng: ở mạch ngoài từ (+) về (−), trong nguồn từ (−) lên (+) nhờ lực lạ đi ngược điện trường. Theo bài, trong nguồn $A_{\\text{l}} \\gt A_{\\text{đ}}$.",
    "distractorNotes": {
-    "0": "Ở mạch ngoài, lực điện đưa điện tích dương xuôi điện trường từ cực (+) qua đèn về cực (−).",
-    "1": "Nếu trong nguồn dòng cũng đi từ (+) sang (−) thì dòng không khép thành vòng và hai cực sẽ trung hoà.",
-    "2": "Lực điện trong nguồn cản điện tích dương, nên phải có lực lạ đẩy chúng ngược chiều điện trường.",
+    "0": "Nếu trong nguồn dòng cũng đi từ (+) sang (−) thì dòng không khép thành vòng và hai cực sẽ trung hoà.",
+    "1": "Lực điện trong nguồn cản điện tích dương, nên phải có lực lạ đẩy chúng ngược chiều điện trường.",
+    "2": "Ở mạch ngoài, lực điện đưa điện tích dương xuôi điện trường từ cực (+) qua đèn về cực (−).",
     "3": "Nếu công lực lạ nhỏ hơn công cản của lực điện thì điện tích dương không lên được cực (+)."
    }
   },
@@ -221,6 +221,10 @@
    "question": "Một siêu tụ điện được nạp tới $2{,}7$ V rồi cho xả qua điện trở $100\\ \\Omega$. Bên cạnh, hai pin tiểu nối tiếp ($3{,}0$ V) nuôi một điện trở $100\\ \\Omega$ giống hệt. Vôn kế đo hiệu điện thế hai đầu mỗi điện trở trong vài phút.",
    "statements": [
     {
+     "text": "Vôn kế bên pin chỉ hơi nhỏ hơn $3{,}0$ V hoàn toàn do sai số dụng cụ, không liên quan đến pin.",
+     "answer": false
+    },
+    {
      "text": "Số chỉ vôn kế bên tụ điện giảm dần theo thời gian rồi gần về 0.",
      "answer": true
     },
@@ -231,18 +235,14 @@
     {
      "text": "Số chỉ vôn kế bên pin gần như không đổi, chứng tỏ pin duy trì được hiệu điện thế.",
      "answer": true
-    },
-    {
-     "text": "Vôn kế bên pin chỉ hơi nhỏ hơn $3{,}0$ V hoàn toàn do sai số dụng cụ, không liên quan đến pin.",
-     "answer": false
     }
    ],
    "explanation": "Tụ chỉ chứa sẵn điện tích nên xả dần là hết; pin duy trì được hiệu điện thế nên mới là nguồn. Số chỉ hụt chút ít so với $3{,}0$ V là do điện trở trong của pin ($U = \\mathcal{E} - Ir$).",
    "distractorNotes": {
-    "0": "Tụ chỉ có lượng điện tích nạp sẵn, xả qua điện trở thì hiệu điện thế phải giảm dần về 0.",
-    "1": "Có dòng trong chốc lát chưa đủ; nguồn phải duy trì hiệu điện thế, còn tụ xả là hết.",
-    "2": "Pin có lực lạ liên tục đưa điện tích về cực (+) nên giữ được hiệu điện thế gần như không đổi.",
-    "3": "Khi có dòng, pin mất phần $Ir$ trên điện trở trong nên hiệu điện thế hai cực nhỏ hơn suất điện động."
+    "0": "Khi có dòng, pin mất phần $Ir$ trên điện trở trong nên hiệu điện thế hai cực nhỏ hơn suất điện động.",
+    "1": "Tụ chỉ có lượng điện tích nạp sẵn, xả qua điện trở thì hiệu điện thế phải giảm dần về 0.",
+    "2": "Có dòng trong chốc lát chưa đủ; nguồn phải duy trì hiệu điện thế, còn tụ xả là hết.",
+    "3": "Pin có lực lạ liên tục đưa điện tích về cực (+) nên giữ được hiệu điện thế gần như không đổi."
    }
   },
   {
@@ -256,11 +256,11 @@
    "question": "Hai pin cùng loại, cùng ghi $1{,}5$ V: một pin mới có điện trở trong nhỏ, một pin gần hết có điện trở trong lớn hơn nhiều. Lần lượt dùng vôn kế lí tưởng đo hai cực mỗi pin khi hở mạch, rồi khi nối mỗi pin với cùng một điện trở $R$.",
    "statements": [
     {
-     "text": "Khi hở mạch, số chỉ vôn kế của hai pin gần như bằng nhau.",
-     "answer": true
+     "text": "Vôn kế chỉ $1{,}5$ V khi hở mạch chứng tỏ pin đó còn tốt.",
+     "answer": false
     },
     {
-     "text": "Vôn kế chỉ $1{,}5$ V khi hở mạch chứng tỏ pin đó còn tốt.",
+     "text": "Khi nối cùng $R$, dòng điện qua pin gần hết lớn hơn dòng qua pin mới.",
      "answer": false
     },
     {
@@ -268,16 +268,16 @@
      "answer": true
     },
     {
-     "text": "Khi nối cùng $R$, dòng điện qua pin gần hết lớn hơn dòng qua pin mới.",
-     "answer": false
+     "text": "Khi hở mạch, số chỉ vôn kế của hai pin gần như bằng nhau.",
+     "answer": true
     }
    ],
    "explanation": "Hở mạch $I = 0$ nên $U = \\mathcal{E}$ với cả hai pin, không phân biệt được. Có tải thì $I = \\mathcal{E}/(R + r)$ nhỏ hơn và $U = \\mathcal{E} - Ir$ thấp hơn ở pin có $r$ lớn.",
    "distractorNotes": {
-    "0": "Hở mạch không có dòng nên không có độ giảm thế trong, cả hai pin đều chỉ bằng suất điện động.",
-    "1": "Hở mạch chỉ đo được $\\mathcal{E}$, không lộ ra $r$; pin gần hết vẫn chỉ $1{,}5$ V.",
+    "0": "Hở mạch chỉ đo được $\\mathcal{E}$, không lộ ra $r$; pin gần hết vẫn chỉ $1{,}5$ V.",
+    "1": "$r$ lớn làm tổng điện trở $R + r$ lớn hơn, nên dòng qua pin gần hết nhỏ hơn.",
     "2": "Pin có $r$ lớn mất phần $Ir$ lớn hơn bên trong, nên phần còn lại ở hai cực nhỏ hơn.",
-    "3": "$r$ lớn làm tổng điện trở $R + r$ lớn hơn, nên dòng qua pin gần hết nhỏ hơn."
+    "3": "Hở mạch không có dòng nên không có độ giảm thế trong, cả hai pin đều chỉ bằng suất điện động."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Có hai pin giống nhau, mỗi pin có suất điện động $\\mathcal{E}$ và điện trở trong $r$. Xét các cách ghép hai pin thành bộ nguồn.",
    "statements": [
     {
-     "text": "Ghép hai pin nối tiếp (cực âm pin này nối cực dương pin kia), suất điện động của bộ gấp đôi của một pin.",
-     "answer": true
-    },
-    {
      "text": "Ghép hai pin nối tiếp, điện trở trong của bộ bằng một nửa điện trở trong của một pin.",
      "answer": false
     },
     {
-     "text": "Ghép hai pin song song, điện trở trong của bộ giảm một nửa so với một pin.",
+     "text": "Ghép hai pin nối tiếp (cực âm pin này nối cực dương pin kia), suất điện động của bộ gấp đôi của một pin.",
      "answer": true
     },
     {
      "text": "Lắp ngược một pin để hai cực cùng dấu nối nhau (xung đối), suất điện động của bộ vẫn gấp đôi của một pin.",
      "answer": false
+    },
+    {
+     "text": "Ghép hai pin song song, điện trở trong của bộ giảm một nửa so với một pin.",
+     "answer": true
     }
    ],
    "explanation": "Nối tiếp cộng cả $\\mathcal{E}$ lẫn $r$: $\\mathcal{E}_b = 2\\mathcal{E}$, $r_b = 2r$; song song giữ $\\mathcal{E}$, $r_b = r/2$. Xung đối $\\mathcal{E}_b = \\mathcal{E}_1 - \\mathcal{E}_2 = 0$.",
    "distractorNotes": {
-    "0": "Ghép nối tiếp thì các suất điện động cộng lại, hai pin giống nhau cho đúng $2\\mathcal{E}$.",
-    "1": "Nối tiếp thì điện trở trong cũng cộng lại thành $2r$; chia đôi $r$ là đặc điểm của ghép song song.",
-    "2": "Hai nguồn giống nhau song song chia nhau dòng, bộ ứng xử như nguồn có $r_b = r/2$.",
-    "3": "Ghép xung đối thì hai suất điện động trừ nhau, hai pin giống nhau cho $\\mathcal{E}_b = 0$."
+    "0": "Nối tiếp thì điện trở trong cũng cộng lại thành $2r$; chia đôi $r$ là đặc điểm của ghép song song.",
+    "1": "Ghép nối tiếp thì các suất điện động cộng lại, hai pin giống nhau cho đúng $2\\mathcal{E}$.",
+    "2": "Ghép xung đối thì hai suất điện động trừ nhau, hai pin giống nhau cho $\\mathcal{E}_b = 0$.",
+    "3": "Hai nguồn giống nhau song song chia nhau dòng, bộ ứng xử như nguồn có $r_b = r/2$."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Nguồn điện có suất điện động $\\mathcal{E}$, điện trở trong $r$ nối với điện trở ngoài $R$ thành mạch kín, dòng điện trong mạch là $I$. Định luật Ohm cho toàn mạch được suy ra từ bảo toàn năng lượng.",
    "statements": [
     {
-     "text": "Công của nguồn trong thời gian $t$ là $A = \\mathcal{E}It$.",
-     "answer": true
-    },
-    {
      "text": "Toàn bộ năng lượng nguồn cung cấp chỉ toả nhiệt ở điện trở ngoài $R$.",
      "answer": false
     },
     {
-     "text": "Giữ nguyên nguồn, giảm $R$ thì dòng điện tăng và hiệu điện thế hai cực nguồn giảm.",
+     "text": "Công của nguồn trong thời gian $t$ là $A = \\mathcal{E}It$.",
      "answer": true
     },
     {
      "text": "Giữ nguyên $\\mathcal{E}$ và $R$, nguồn có $r$ lớn hơn thì dòng điện trong mạch lớn hơn.",
      "answer": false
+    },
+    {
+     "text": "Giữ nguyên nguồn, giảm $R$ thì dòng điện tăng và hiệu điện thế hai cực nguồn giảm.",
+     "answer": true
     }
    ],
    "explanation": "$A = \\mathcal{E}q = \\mathcal{E}It$ bằng nhiệt toả ở cả $R$ và $r$: $RI^2t + rI^2t$, suy ra $I = \\mathcal{E}/(R + r)$. Giảm $R$ thì $I$ tăng, $U = \\mathcal{E} - Ir$ giảm; tăng $r$ thì $I$ giảm.",
    "distractorNotes": {
-    "0": "Vì $q = It$ nên công của nguồn $A = \\mathcal{E}q$ viết được thành $\\mathcal{E}It$.",
-    "1": "Dòng cũng chạy qua điện trở trong, nên một phần năng lượng toả nhiệt $rI^2t$ ngay trong nguồn.",
-    "2": "Giảm $R$ làm tổng $R + r$ nhỏ đi nên $I$ tăng, kéo theo $Ir$ tăng và $U$ tụt.",
-    "3": "$r$ nằm ở mẫu của $I = \\mathcal{E}/(R + r)$, nên $r$ lớn hơn làm dòng nhỏ hơn."
+    "0": "Dòng cũng chạy qua điện trở trong, nên một phần năng lượng toả nhiệt $rI^2t$ ngay trong nguồn.",
+    "1": "Vì $q = It$ nên công của nguồn $A = \\mathcal{E}q$ viết được thành $\\mathcal{E}It$.",
+    "2": "$r$ nằm ở mẫu của $I = \\mathcal{E}/(R + r)$, nên $r$ lớn hơn làm dòng nhỏ hơn.",
+    "3": "Giảm $R$ làm tổng $R + r$ nhỏ đi nên $I$ tăng, kéo theo $Ir$ tăng và $U$ tụt."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một pin được nối với hộp điện trở $R$, ampe kế đo dòng $I$, vôn kế đo hiệu điện thế hai cực $U$. Thay đổi $R$, ghi các cặp $(I, U)$ rồi vẽ đồ thị $U$ theo $I$, được một đường thẳng dốc xuống $U = \\mathcal{E} - rI$.",
    "statements": [
     {
-     "text": "Giao điểm của đồ thị với trục $U$ (ứng với $I = 0$) cho biết suất điện động của pin.",
-     "answer": true
-    },
-    {
-     "text": "Độ dốc của đường thẳng bằng $-r$, nên $r = -\\Delta U/\\Delta I$.",
-     "answer": true
+     "text": "Giao điểm của đồ thị với trục $I$ (ứng với $U = 0$) là dòng điện khi mạch hở.",
+     "answer": false
     },
     {
      "text": "Tỉ số $U/I$ tại mỗi điểm đo bằng điện trở trong $r$ của pin.",
      "answer": false
     },
     {
-     "text": "Giao điểm của đồ thị với trục $I$ (ứng với $U = 0$) là dòng điện khi mạch hở.",
-     "answer": false
+     "text": "Giao điểm của đồ thị với trục $U$ (ứng với $I = 0$) cho biết suất điện động của pin.",
+     "answer": true
+    },
+    {
+     "text": "Độ dốc của đường thẳng bằng $-r$, nên $r = -\\Delta U/\\Delta I$.",
+     "answer": true
     }
    ],
    "explanation": "Với $U = \\mathcal{E} - rI$: tại $I = 0$ có $U = \\mathcal{E}$, hệ số góc là $-r$. Tỉ số $U/I$ là điện trở ngoài $R$; còn $U = 0$ ứng với đoản mạch, $I = \\mathcal{E}/r$.",
    "distractorNotes": {
-    "0": "$I = 0$ là hở mạch, khi đó $U = \\mathcal{E}$, nên giao điểm với trục $U$ chính là suất điện động.",
-    "1": "Trong $U = \\mathcal{E} - rI$, hệ số của $I$ là $-r$, đó chính là độ dốc của đường thẳng.",
-    "2": "$U/I$ là điện trở mạch ngoài $R$ tại điểm đo; $r$ ứng với phần bị mất $(\\mathcal{E} - U)/I$.",
-    "3": "$U = 0$ xảy ra khi $R = 0$, tức đoản mạch với dòng lớn nhất; mạch hở thì $I = 0$."
+    "0": "$U = 0$ xảy ra khi $R = 0$, tức đoản mạch với dòng lớn nhất; mạch hở thì $I = 0$.",
+    "1": "$U/I$ là điện trở mạch ngoài $R$ tại điểm đo; $r$ ứng với phần bị mất $(\\mathcal{E} - U)/I$.",
+    "2": "$I = 0$ là hở mạch, khi đó $U = \\mathcal{E}$, nên giao điểm với trục $U$ chính là suất điện động.",
+    "3": "Trong $U = \\mathcal{E} - rI$, hệ số của $I$ là $-r$, đó chính là độ dốc của đường thẳng."
    }
   }
  ]

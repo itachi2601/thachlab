@@ -347,11 +347,11 @@
    "question": "Chiếu một tia laser đỏ vào mặt bên thứ nhất của lăng kính thuỷ tinh đặt trong không khí, rồi vẽ đường đi của tia sáng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tại mặt bên thứ nhất, tia sáng gãy khúc lại gần pháp tuyến.",
-     "answer": true
+     "text": "Hai lần khúc xạ bẻ tia về hai phía ngược nhau nên tia ló gần như không lệch.",
+     "answer": false
     },
     {
-     "text": "Hai lần khúc xạ bẻ tia về hai phía ngược nhau nên tia ló gần như không lệch.",
+     "text": "Tia ló lệch về phía cạnh của lăng kính.",
      "answer": false
     },
     {
@@ -359,16 +359,16 @@
      "answer": true
     },
     {
-     "text": "Tia ló lệch về phía cạnh của lăng kính.",
-     "answer": false
+     "text": "Tại mặt bên thứ nhất, tia sáng gãy khúc lại gần pháp tuyến.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng: vào thuỷ tinh có chiết suất lớn hơn thì tia lại gần pháp tuyến. b) sai: cả hai lần khúc xạ đều bẻ tia về phía đáy. c) đúng: ra không khí có chiết suất nhỏ hơn thì tia ra xa pháp tuyến. d) sai: tia ló lệch về phía đáy chứ không phải cạnh.",
+   "explanation": "a) sai: cả hai lần khúc xạ đều bẻ tia về phía đáy. b) sai: tia ló lệch về phía đáy chứ không phải cạnh. c) đúng: ra không khí có chiết suất nhỏ hơn thì tia ra xa pháp tuyến. d) đúng: vào thuỷ tinh có chiết suất lớn hơn thì tia lại gần pháp tuyến.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì vào thuỷ tinh có chiết suất lớn hơn thì tia lại gần pháp tuyến.",
-    "1": "Không thể coi là đúng vì cả hai lần khúc xạ đều bẻ tia về phía đáy.",
+    "0": "Không thể coi là đúng vì cả hai lần khúc xạ đều bẻ tia về phía đáy.",
+    "1": "Không thể coi là đúng vì tia ló lệch về phía đáy chứ không phải cạnh.",
     "2": "Không thể coi là sai vì ra không khí có chiết suất nhỏ hơn thì tia ra xa pháp tuyến.",
-    "3": "Không thể coi là đúng vì tia ló lệch về phía đáy chứ không phải cạnh."
+    "3": "Không thể coi là sai vì vào thuỷ tinh có chiết suất lớn hơn thì tia lại gần pháp tuyến."
    }
   },
   {
@@ -382,27 +382,27 @@
    "question": "Cho một chùm sáng trắng hẹp đi qua lăng kính rồi hứng trên màn trắng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Dải màu có ranh giới rõ ràng giữa bảy màu.",
-     "answer": false
+     "text": "Màu đỏ nằm xa đáy lăng kính hơn màu tím trên màn.",
+     "answer": true
     },
     {
      "text": "Trên màn có dải màu liên tục từ đỏ đến tím.",
      "answer": true
     },
     {
-     "text": "Màu đỏ nằm xa đáy lăng kính hơn màu tím trên màn.",
-     "answer": true
+     "text": "Dải màu có ranh giới rõ ràng giữa bảy màu.",
+     "answer": false
     },
     {
      "text": "Mọi màu lệch như nhau nên trên màn chỉ có một vệt trắng.",
      "answer": false
     }
    ],
-   "explanation": "a) sai: các màu chuyển dần vào nhau, không có ranh giới rõ ràng. b) đúng: đó là quang phổ của ánh sáng trắng. c) đúng: đỏ lệch ít nhất nên xa đáy nhất, tím lệch nhiều nhất nên sát đáy nhất. d) sai: mỗi màu có chiết suất khác nhau nên lệch khác nhau và tách ra.",
+   "explanation": "a) đúng: đỏ lệch ít nhất nên xa đáy nhất, tím lệch nhiều nhất nên sát đáy nhất. b) đúng: đó là quang phổ của ánh sáng trắng. c) sai: các màu chuyển dần vào nhau, không có ranh giới rõ ràng. d) sai: mỗi màu có chiết suất khác nhau nên lệch khác nhau và tách ra.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì các màu chuyển dần vào nhau, không có ranh giới rõ ràng.",
+    "0": "Không thể coi là sai vì đỏ lệch ít nhất nên xa đáy nhất, tím lệch nhiều nhất nên sát đáy nhất.",
     "1": "Không thể coi là sai vì đó là quang phổ của ánh sáng trắng.",
-    "2": "Không thể coi là sai vì đỏ lệch ít nhất nên xa đáy nhất, tím lệch nhiều nhất nên sát đáy nhất.",
+    "2": "Không thể coi là đúng vì các màu chuyển dần vào nhau, không có ranh giới rõ ràng.",
     "3": "Không thể coi là đúng vì mỗi màu có chiết suất khác nhau nên lệch khác nhau và tách ra."
    }
   },
@@ -417,7 +417,7 @@
    "question": "Newton cho ánh sáng trắng qua lăng kính thứ nhất, chắn lại chỉ để chùm màu đỏ lọt qua, rồi cho chùm đỏ đi qua lăng kính thứ hai. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Chùm ló khỏi lăng kính thứ hai vẫn có màu đỏ.",
+     "text": "Chùm đỏ bị lệch thêm về phía đáy của lăng kính thứ hai.",
      "answer": true
     },
     {
@@ -429,16 +429,16 @@
      "answer": false
     },
     {
-     "text": "Chùm đỏ bị lệch thêm về phía đáy của lăng kính thứ hai.",
+     "text": "Chùm ló khỏi lăng kính thứ hai vẫn có màu đỏ.",
      "answer": true
     }
    ],
-   "explanation": "a) đúng: lăng kính không đổi màu của ánh sáng đơn sắc. b) sai: chùm đơn sắc không thể tách thành nhiều màu. c) sai: màu có sẵn trong ánh sáng trắng và lăng kính chỉ tách ra, không tạo màu. d) đúng: ánh sáng đơn sắc qua lăng kính nào cũng bị lệch về đáy.",
+   "explanation": "a) đúng: ánh sáng đơn sắc qua lăng kính nào cũng bị lệch về đáy. b) sai: chùm đơn sắc không thể tách thành nhiều màu. c) sai: màu có sẵn trong ánh sáng trắng và lăng kính chỉ tách ra, không tạo màu. d) đúng: lăng kính không đổi màu của ánh sáng đơn sắc.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì lăng kính không đổi màu của ánh sáng đơn sắc.",
+    "0": "Không thể coi là sai vì ánh sáng đơn sắc qua lăng kính nào cũng bị lệch về đáy.",
     "1": "Không thể coi là đúng vì chùm đơn sắc không thể tách thành nhiều màu.",
     "2": "Không thể coi là đúng vì màu có sẵn trong ánh sáng trắng và lăng kính chỉ tách ra, không tạo màu.",
-    "3": "Không thể coi là sai vì ánh sáng đơn sắc qua lăng kính nào cũng bị lệch về đáy."
+    "3": "Không thể coi là sai vì lăng kính không đổi màu của ánh sáng đơn sắc."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Gọi $n_{\\text{đỏ}}$ và $n_{\\text{tím}}$ lần lượt là chiết suất của thuỷ tinh đối với ánh sáng đỏ và ánh sáng tím. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tốc độ ánh sáng đỏ trong thuỷ tinh nhỏ hơn tốc độ ánh sáng tím.",
-     "answer": false
-    },
-    {
      "text": "$n_{\\text{đỏ}} < n_{\\text{tím}}$.",
      "answer": true
     },
     {
-     "text": "Nếu chiết suất của thuỷ tinh như nhau với mọi màu thì ánh sáng trắng vẫn tách thành dải màu.",
+     "text": "Cùng góc tới, tia tím lệch về đáy nhiều hơn tia đỏ.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ ánh sáng đỏ trong thuỷ tinh nhỏ hơn tốc độ ánh sáng tím.",
      "answer": false
     },
     {
-     "text": "Cùng góc tới, tia tím lệch về đáy nhiều hơn tia đỏ.",
-     "answer": true
+     "text": "Nếu chiết suất của thuỷ tinh như nhau với mọi màu thì ánh sáng trắng vẫn tách thành dải màu.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai: $v = c/n$ nên $n$ nhỏ hơn của đỏ cho $v$ lớn hơn. b) đúng: chiết suất tăng dần từ đỏ đến tím. c) sai: chính việc chiết suất phụ thuộc màu mới gây ra tán sắc. d) đúng: chiết suất càng lớn thì tia càng bị bẻ mạnh.",
+   "explanation": "a) đúng: chiết suất tăng dần từ đỏ đến tím. b) đúng: chiết suất càng lớn thì tia càng bị bẻ mạnh. c) sai: $v = c/n$ nên $n$ nhỏ hơn của đỏ cho $v$ lớn hơn. d) sai: chính việc chiết suất phụ thuộc màu mới gây ra tán sắc.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì $v = c/n$ nên $n$ nhỏ hơn của đỏ cho $v$ lớn hơn.",
-    "1": "Không thể coi là sai vì chiết suất tăng dần từ đỏ đến tím.",
-    "2": "Không thể coi là đúng vì chính việc chiết suất phụ thuộc màu mới gây ra tán sắc.",
-    "3": "Không thể coi là sai vì chiết suất càng lớn thì tia càng bị bẻ mạnh."
+    "0": "Không thể coi là sai vì chiết suất tăng dần từ đỏ đến tím.",
+    "1": "Không thể coi là sai vì chiết suất càng lớn thì tia càng bị bẻ mạnh.",
+    "2": "Không thể coi là đúng vì $v = c/n$ nên $n$ nhỏ hơn của đỏ cho $v$ lớn hơn.",
+    "3": "Không thể coi là đúng vì chính việc chiết suất phụ thuộc màu mới gây ra tán sắc."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": false
     },
     {
+     "text": "Góc lệch $D = r - i \\approx 18{,}6^\\circ$, với $i = A = 30^\\circ$ là góc tới ở mặt $AC$.",
+     "answer": true
+    },
+    {
      "text": "Góc tới ở mặt $AC$ bằng $0^\\circ$ vì tia đi thẳng ở mặt $AB$.",
      "answer": false
     },
     {
      "text": "Tại mặt $AB$, tia sáng đi thẳng, không gãy khúc.",
      "answer": true
-    },
-    {
-     "text": "Góc lệch $D = r - i \\approx 18{,}6^\\circ$, với $i = A = 30^\\circ$ là góc tới ở mặt $AC$.",
-     "answer": true
     }
    ],
-   "explanation": "a) sai: tia ló lệch về phía đáy $BC$. b) sai: pháp tuyến ở mặt $AC$ không trùng tia sáng nên góc tới bằng $A = 30^\\circ$. c) đúng: tia tới vuông góc với mặt bên nên đi theo pháp tuyến. d) đúng: góc tới ở mặt $AC$ bằng góc chiết quang và $D = r - i$.",
+   "explanation": "a) sai: tia ló lệch về phía đáy $BC$. b) đúng: góc tới ở mặt $AC$ bằng góc chiết quang và $D = r - i$. c) sai: pháp tuyến ở mặt $AC$ không trùng tia sáng nên góc tới bằng $A = 30^\\circ$. d) đúng: tia tới vuông góc với mặt bên nên đi theo pháp tuyến.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì tia ló lệch về phía đáy $BC$.",
-    "1": "Không thể coi là đúng vì pháp tuyến ở mặt $AC$ không trùng tia sáng nên góc tới bằng $A = 30^\\circ$.",
-    "2": "Không thể coi là sai vì tia tới vuông góc với mặt bên nên đi theo pháp tuyến.",
-    "3": "Không thể coi là sai vì góc tới ở mặt $AC$ bằng góc chiết quang và $D = r - i$."
+    "1": "Không thể coi là sai vì góc tới ở mặt $AC$ bằng góc chiết quang và $D = r - i$.",
+    "2": "Không thể coi là đúng vì pháp tuyến ở mặt $AC$ không trùng tia sáng nên góc tới bằng $A = 30^\\circ$.",
+    "3": "Không thể coi là sai vì tia tới vuông góc với mặt bên nên đi theo pháp tuyến."
    }
   },
   {
@@ -526,24 +526,24 @@
      "answer": true
     },
     {
-     "text": "Cạnh vát của ly thuỷ tinh có thể làm việc như một lăng kính.",
-     "answer": true
+     "text": "Ánh sáng đơn sắc đi qua lăng kính vẫn bị tách thành bảy màu.",
+     "answer": false
     },
     {
      "text": "Lăng kính trong ống nhòm có tác dụng chính là tách màu để ảnh rực rỡ hơn.",
      "answer": false
     },
     {
-     "text": "Ánh sáng đơn sắc đi qua lăng kính vẫn bị tách thành bảy màu.",
-     "answer": false
+     "text": "Cạnh vát của ly thuỷ tinh có thể làm việc như một lăng kính.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng: mỗi giọt nước tách nắng thành các màu. b) đúng: cạnh vát để lại vệt màu như lăng kính. c) sai: nó bẻ gập đường đi của ánh sáng nhờ phản xạ toàn phần chứ không tách màu. d) sai: ánh sáng đơn sắc qua lăng kính vẫn là một màu, chỉ bị lệch.",
+   "explanation": "a) đúng: mỗi giọt nước tách nắng thành các màu. b) sai: ánh sáng đơn sắc qua lăng kính vẫn là một màu, chỉ bị lệch. c) sai: nó bẻ gập đường đi của ánh sáng nhờ phản xạ toàn phần chứ không tách màu. d) đúng: cạnh vát để lại vệt màu như lăng kính.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì mỗi giọt nước tách nắng thành các màu.",
-    "1": "Không thể coi là sai vì cạnh vát để lại vệt màu như lăng kính.",
+    "1": "Không thể coi là đúng vì ánh sáng đơn sắc qua lăng kính vẫn là một màu, chỉ bị lệch.",
     "2": "Không thể coi là đúng vì nó bẻ gập đường đi của ánh sáng nhờ phản xạ toàn phần chứ không tách màu.",
-    "3": "Không thể coi là đúng vì ánh sáng đơn sắc qua lăng kính vẫn là một màu, chỉ bị lệch."
+    "3": "Không thể coi là sai vì cạnh vát để lại vệt màu như lăng kính."
    }
   }
  ]

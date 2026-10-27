@@ -347,7 +347,7 @@
       "question": "Một học sinh chiếu ba vệt sáng song song qua một thấu kính rìa mỏng, rồi qua một thấu kính rìa dày. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Qua thấu kính rìa mỏng, ba vệt sáng gặp nhau tại một điểm phía sau kính.",
+          "text": "Thấu kính rìa dày là thấu kính phân kì.",
           "answer": true
         },
         {
@@ -355,7 +355,7 @@
           "answer": false
         },
         {
-          "text": "Thấu kính rìa dày là thấu kính phân kì.",
+          "text": "Qua thấu kính rìa mỏng, ba vệt sáng gặp nhau tại một điểm phía sau kính.",
           "answer": true
         },
         {
@@ -363,11 +363,11 @@
           "answer": false
         }
       ],
-      "explanation": "a) đúng: rìa mỏng là thấu kính hội tụ. b) sai: kính rìa dày làm chùm loe ra. c) đúng. d) sai: kính hội tụ có $f>0$.",
+      "explanation": "a) đúng. b) sai: kính rìa dày làm chùm loe ra. c) đúng: rìa mỏng là thấu kính hội tụ. d) sai: kính hội tụ có $f>0$.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì kính rìa mỏng là thấu kính hội tụ, gom chùm song song về một điểm.",
+        "0": "Không thể coi là sai vì rìa dày hơn phần giữa là dấu hiệu nhận biết thấu kính phân kì.",
         "1": "Không thể coi là đúng vì kính rìa dày làm chùm song song loe rộng ra, ba vệt không gặp nhau.",
-        "2": "Không thể coi là sai vì rìa dày hơn phần giữa là dấu hiệu nhận biết thấu kính phân kì.",
+        "2": "Không thể coi là sai vì kính rìa mỏng là thấu kính hội tụ, gom chùm song song về một điểm.",
         "3": "Không thể coi là đúng vì thấu kính hội tụ (rìa mỏng) có tiêu cự dương; chỉ kính phân kì lấy dấu âm."
       }
     },
@@ -382,12 +382,12 @@
       "question": "Đứng cách cửa sổ vài mét, một bạn hướng kính lúp về phía cửa sổ rồi dịch tờ giấy trắng phía sau kính tới lui đến khi thấy hình rõ trên giấy. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Hình cửa sổ trên giấy lớn hơn cửa sổ thật.",
-          "answer": false
-        },
-        {
           "text": "Hình cửa sổ trên giấy là ảnh thật.",
           "answer": true
+        },
+        {
+          "text": "Hình cửa sổ trên giấy lớn hơn cửa sổ thật.",
+          "answer": false
         },
         {
           "text": "Hình cửa sổ trên giấy ngược chiều với cửa sổ thật.",
@@ -398,10 +398,10 @@
           "answer": false
         }
       ],
-      "explanation": "a) sai: vật ở xa cho ảnh nhỏ. b) đúng vì hứng được. c) đúng: ảnh thật ngược chiều. d) sai: ảnh nằm gần $F'$, cách kính khoảng $f$.",
+      "explanation": "a) đúng vì hứng được. b) sai: vật ở xa cho ảnh nhỏ. c) đúng: ảnh thật ngược chiều. d) sai: ảnh nằm gần $F'$, cách kính khoảng $f$.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì cửa sổ ở rất xa nên ảnh thật nhỏ hơn vật nhiều.",
-        "1": "Không thể coi là sai vì hình hứng được trên giấy chứng tỏ các tia ló gặp nhau thật.",
+        "0": "Không thể coi là sai vì hình hứng được trên giấy chứng tỏ các tia ló gặp nhau thật.",
+        "1": "Không thể coi là đúng vì cửa sổ ở rất xa nên ảnh thật nhỏ hơn vật nhiều.",
         "2": "Không thể coi là sai vì vật ở ngoài tiêu cự của thấu kính hội tụ cho ảnh thật, ngược chiều.",
         "3": "Không thể coi là đúng vì vật ở xa thì ảnh nằm gần tiêu điểm, giấy cách kính gần bằng một tiêu cự."
       }
@@ -417,6 +417,10 @@
       "question": "Đặt ngọn nến cách thấu kính hội tụ tiêu cự $10\\ \\text{cm}$ một khoảng $6\\ \\text{cm}$, rồi dịch màn phía sau kính từ sát kính ra thật xa. Xét các phát biểu sau:",
       "statements": [
         {
+          "text": "Muốn thấy ảnh của nến phải đặt mắt sau kính và nhìn qua kính.",
+          "answer": true
+        },
+        {
           "text": "Ảnh rõ trên màn khi màn cách kính $15\\ \\text{cm}$.",
           "answer": false
         },
@@ -427,18 +431,14 @@
         {
           "text": "Ảnh nhìn thấy qua kính ngược chiều với ngọn nến.",
           "answer": false
-        },
-        {
-          "text": "Muốn thấy ảnh của nến phải đặt mắt sau kính và nhìn qua kính.",
-          "answer": true
         }
       ],
-      "explanation": "a) sai: $d'=-15\\ \\text{cm}$ là ảnh ảo. b) đúng: $\\dfrac{1}{d'}=\\dfrac{1}{10}-\\dfrac{1}{6}=-\\dfrac{1}{15}$. c) sai: ảnh ảo cùng chiều. d) đúng.",
+      "explanation": "a) đúng. b) sai: $d'=-15\\ \\text{cm}$ là ảnh ảo. c) đúng: $\\dfrac{1}{d'}=\\dfrac{1}{10}-\\dfrac{1}{6}=-\\dfrac{1}{15}$. d) sai: ảnh ảo cùng chiều.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì $d'=-15\\ \\text{cm}$ có nghĩa ảnh ảo cùng phía với nến, không nằm trên màn.",
-        "1": "Không thể coi là sai vì $\\dfrac{1}{d'}=\\dfrac{1}{10}-\\dfrac{1}{6}<0$, nên $d'$ âm.",
-        "2": "Không thể coi là đúng vì vật trong tiêu cự cho ảnh ảo cùng chiều với vật.",
-        "3": "Không thể coi là sai vì ảnh ảo chỉ thấy được khi nhìn qua thấu kính."
+        "0": "Không thể coi là sai vì ảnh ảo chỉ thấy được khi nhìn qua thấu kính.",
+        "1": "Không thể coi là đúng vì $d'=-15\\ \\text{cm}$ có nghĩa ảnh ảo cùng phía với nến, không nằm trên màn.",
+        "2": "Không thể coi là sai vì $\\dfrac{1}{d'}=\\dfrac{1}{10}-\\dfrac{1}{6}<0$, nên $d'$ âm.",
+        "3": "Không thể coi là đúng vì vật trong tiêu cự cho ảnh ảo cùng chiều với vật."
       }
     },
     {
@@ -452,10 +452,6 @@
       "question": "Một máy chiếu mini dùng thấu kính hội tụ tiêu cự $12\\ \\text{cm}$. Hình in trên phim cao $2\\ \\text{cm}$, đặt cách thấu kính $18\\ \\text{cm}$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Ảnh rõ trên tường khi tường cách thấu kính $36\\ \\text{cm}$.",
-          "answer": true
-        },
-        {
           "text": "Ảnh trên tường cùng chiều với hình in nên đặt phim thẳng là đủ.",
           "answer": false
         },
@@ -464,15 +460,19 @@
           "answer": false
         },
         {
+          "text": "Ảnh rõ trên tường khi tường cách thấu kính $36\\ \\text{cm}$.",
+          "answer": true
+        },
+        {
           "text": "Ảnh trên tường cao $4\\ \\text{cm}$.",
           "answer": true
         }
       ],
-      "explanation": "a) đúng: $d'=36\\ \\text{cm}$. b) sai: ảnh ngược chiều. c) sai: $d=2f$ thì ảnh cao $2\\ \\text{cm}$. d) đúng: $h'=4\\ \\text{cm}$.",
+      "explanation": "a) sai: ảnh ngược chiều. b) sai: $d=2f$ thì ảnh cao $2\\ \\text{cm}$. c) đúng: $d'=36\\ \\text{cm}$. d) đúng: $h'=4\\ \\text{cm}$.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì $\\dfrac{1}{d'}=\\dfrac{1}{12}-\\dfrac{1}{18}=\\dfrac{1}{36}$.",
-        "1": "Không thể coi là đúng vì $f<d<2f$ cho ảnh thật ngược chiều, phải đặt phim lộn ngược.",
-        "2": "Không thể coi là đúng vì khi $d=24\\ \\text{cm}=2f$, ảnh bằng vật, nhỏ hơn ảnh lúc $d=18\\ \\text{cm}$.",
+        "0": "Không thể coi là đúng vì $f<d<2f$ cho ảnh thật ngược chiều, phải đặt phim lộn ngược.",
+        "1": "Không thể coi là đúng vì khi $d=24\\ \\text{cm}=2f$, ảnh bằng vật, nhỏ hơn ảnh lúc $d=18\\ \\text{cm}$.",
+        "2": "Không thể coi là sai vì $\\dfrac{1}{d'}=\\dfrac{1}{12}-\\dfrac{1}{18}=\\dfrac{1}{36}$.",
         "3": "Không thể coi là sai vì $k=\\dfrac{36}{18}=2$ nên $h'=2\\cdot2=4\\ \\text{cm}$."
       }
     },
@@ -487,10 +487,6 @@
       "question": "Một thấu kính phân kì có tiêu cự $15\\ \\text{cm}$. Vật cao $6\\ \\text{cm}$ đặt cách kính $30\\ \\text{cm}$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Ảnh cao $18\\ \\text{cm}$, lớn hơn vật.",
-          "answer": false
-        },
-        {
           "text": "Nếu thay nhầm $f=+15\\ \\text{cm}$ thì vẫn ra ảnh ảo.",
           "answer": false
         },
@@ -501,14 +497,18 @@
         {
           "text": "Ảnh là ảnh ảo, cách kính $10\\ \\text{cm}$, cùng phía với vật.",
           "answer": true
+        },
+        {
+          "text": "Ảnh cao $18\\ \\text{cm}$, lớn hơn vật.",
+          "answer": false
         }
       ],
-      "explanation": "a) sai: $h'=6\\cdot\\dfrac{10}{30}=2\\ \\text{cm}$. b) sai: thay $f$ dương ra ảnh thật. c) đúng. d) đúng: $d'=-10\\ \\text{cm}$.",
+      "explanation": "a) sai: thay $f$ dương ra ảnh thật. b) đúng. c) đúng: $d'=-10\\ \\text{cm}$. d) sai: $h'=6\\cdot\\dfrac{10}{30}=2\\ \\text{cm}$.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì $k=\\dfrac{10}{30}<1$ nên ảnh cao $2\\ \\text{cm}$, nhỏ hơn vật.",
-        "1": "Không thể coi là đúng vì khi đó $\\dfrac{1}{d'}=\\dfrac{1}{15}-\\dfrac{1}{30}>0$, ra $d'=30\\ \\text{cm}$ là ảnh thật, sai bản chất kính.",
-        "2": "Không thể coi là sai vì tiêu cự thấu kính phân kì mang dấu âm.",
-        "3": "Không thể coi là sai vì $\\dfrac{1}{d'}=-\\dfrac{1}{15}-\\dfrac{1}{30}=-\\dfrac{1}{10}$ nên $d'=-10\\ \\text{cm}$."
+        "0": "Không thể coi là đúng vì khi đó $\\dfrac{1}{d'}=\\dfrac{1}{15}-\\dfrac{1}{30}>0$, ra $d'=30\\ \\text{cm}$ là ảnh thật, sai bản chất kính.",
+        "1": "Không thể coi là sai vì tiêu cự thấu kính phân kì mang dấu âm.",
+        "2": "Không thể coi là sai vì $\\dfrac{1}{d'}=-\\dfrac{1}{15}-\\dfrac{1}{30}=-\\dfrac{1}{10}$ nên $d'=-10\\ \\text{cm}$.",
+        "3": "Không thể coi là đúng vì $k=\\dfrac{10}{30}<1$ nên ảnh cao $2\\ \\text{cm}$, nhỏ hơn vật."
       }
     },
     {
@@ -526,24 +526,24 @@
           "answer": true
         },
         {
-          "text": "Khoảng cách giữa vật và ảnh là $80\\ \\text{cm}$.",
-          "answer": true
-        },
-        {
           "text": "Ảnh là ảnh ảo, cùng chiều với vật.",
           "answer": false
         },
         {
           "text": "Dịch vật ra xa hơn $40\\ \\text{cm}$ thì ảnh cao hơn $4\\ \\text{cm}$.",
           "answer": false
+        },
+        {
+          "text": "Khoảng cách giữa vật và ảnh là $80\\ \\text{cm}$.",
+          "answer": true
         }
       ],
-      "explanation": "a) đúng: $k=1$. b) đúng: $40+40=80\\ \\text{cm}$. c) sai: ảnh thật ngược chiều. d) sai: $d>2f$ thì ảnh nhỏ hơn vật.",
+      "explanation": "a) đúng: $k=1$. b) sai: ảnh thật ngược chiều. c) sai: $d>2f$ thì ảnh nhỏ hơn vật. d) đúng: $40+40=80\\ \\text{cm}$.",
       "distractorNotes": {
         "0": "Không thể coi là sai vì $d=2f$ nên $d'=40\\ \\text{cm}$, $k=1$.",
-        "1": "Không thể coi là sai vì vật cách kính $40\\ \\text{cm}$, ảnh cách kính $40\\ \\text{cm}$ ở hai phía.",
-        "2": "Không thể coi là đúng vì vật ngoài tiêu cự cho ảnh thật, ngược chiều.",
-        "3": "Không thể coi là đúng vì $d>2f$ cho ảnh thật nhỏ hơn vật, tức thấp hơn $4\\ \\text{cm}$."
+        "1": "Không thể coi là đúng vì vật ngoài tiêu cự cho ảnh thật, ngược chiều.",
+        "2": "Không thể coi là đúng vì $d>2f$ cho ảnh thật nhỏ hơn vật, tức thấp hơn $4\\ \\text{cm}$.",
+        "3": "Không thể coi là sai vì vật cách kính $40\\ \\text{cm}$, ảnh cách kính $40\\ \\text{cm}$ ở hai phía."
       }
     }
   ]

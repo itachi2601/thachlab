@@ -352,6 +352,10 @@
    "question": "Thí nghiệm 3: xe chạy nhanh dần qua cổng quang, đồng hồ hiện số chia tới $0{,}001\\ \\text{s}$. Lần lượt thay bốn tấm chắn có bề rộng $10{,}0\\ \\text{cm}$; $5{,}0\\ \\text{cm}$; $2{,}0\\ \\text{cm}$; $1{,}0\\ \\text{cm}$ rồi tính $d/t$.",
    "statements": [
     {
+     "text": "Tấm chắn quá hẹp làm $t$ quá ngắn, khi đó sai số làm tròn của đồng hồ trở nên đáng kể.",
+     "answer": true
+    },
+    {
      "text": "Tấm chắn càng rộng thì $d/t$ càng lệch khỏi tốc độ tức thời của xe tại cổng.",
      "answer": true
     },
@@ -360,19 +364,15 @@
      "answer": false
     },
     {
-     "text": "Tấm chắn quá hẹp làm $t$ quá ngắn, khi đó sai số làm tròn của đồng hồ trở nên đáng kể.",
-     "answer": true
-    },
-    {
      "text": "Tấm chắn càng hẹp thì kết quả đo luôn càng chính xác, không có giới hạn nào.",
      "answer": false
     }
    ],
    "explanation": "Xe đổi tốc độ trong lúc che sáng nên tấm chắn rộng làm lệch về một phía, lấy trung bình không bù được. Với $d = 1{,}0\\ \\text{cm}$, sai số làm tròn chiếm khoảng 3 % của $t$ nên kết quả lệch trở lại.",
    "distractorNotes": {
-    "0": "Xe nhanh dần nên trong lúc tấm chắn rộng đi qua tốc độ đổi nhiều, $d/t$ lệch nhiều hơn.",
-    "1": "Lấy trung bình chỉ bù độ lệch ngẫu nhiên; tấm chắn rộng làm lần nào cũng lệch cùng một phía.",
-    "2": "Với $d = 1{,}0\\ \\text{cm}$, $t$ chỉ khoảng 17 bước chia nên sai số làm tròn chiếm cỡ 3 %.",
+    "0": "Với $d = 1{,}0\\ \\text{cm}$, $t$ chỉ khoảng 17 bước chia nên sai số làm tròn chiếm cỡ 3 %.",
+    "1": "Xe nhanh dần nên trong lúc tấm chắn rộng đi qua tốc độ đổi nhiều, $d/t$ lệch nhiều hơn.",
+    "2": "Lấy trung bình chỉ bù độ lệch ngẫu nhiên; tấm chắn rộng làm lần nào cũng lệch cùng một phía.",
     "3": "Bảng cho hàng $d = 1{,}0\\ \\text{cm}$ lệch xa hơn hàng $2{,}0\\ \\text{cm}$, nên hẹp quá lại kém chính xác."
    }
   },
@@ -387,28 +387,28 @@
    "question": "Một nhóm cân nhắc ba phương án đo tốc độ xe đồ chơi: thước và đồng hồ bấm giây; cổng quang và đồng hồ hiện số; video và phần mềm Tracker.",
    "statements": [
     {
-     "text": "Thước và đồng hồ bấm giây rẻ, làm ở đâu cũng được, nhưng chỉ cho tốc độ trung bình cả đoạn.",
-     "answer": true
+     "text": "Phương án video không có sai số vì vị trí được đọc trực tiếp từ từng khung hình.",
+     "answer": false
     },
     {
-     "text": "Cổng quang cho biết tốc độ của xe ở mọi vị trí trên đường ray.",
-     "answer": false
+     "text": "Thước và đồng hồ bấm giây rẻ, làm ở đâu cũng được, nhưng chỉ cho tốc độ trung bình cả đoạn.",
+     "answer": true
     },
     {
      "text": "Khi quay video, máy quay đặt cố định, vuông góc đường chạy và quay xe chạy cạnh một thước chuẩn.",
      "answer": true
     },
     {
-     "text": "Phương án video không có sai số vì vị trí được đọc trực tiếp từ từng khung hình.",
+     "text": "Cổng quang cho biết tốc độ của xe ở mọi vị trí trên đường ray.",
      "answer": false
     }
    ],
    "explanation": "Theo bảng so sánh: cổng quang chỉ đo ở chỗ đặt cổng; video cho vị trí ở mọi thời điểm nhưng hình mờ gây sai số.",
    "distractorNotes": {
-    "0": "Bảng so sánh ghi đúng ưu điểm rẻ và nhược điểm chỉ cho tốc độ trung bình cả đoạn.",
-    "1": "Cổng quang chỉ đo được khi tấm chắn đi qua chỗ đặt cổng, không phải mọi vị trí.",
+    "0": "Hình mờ khi đọc vị trí vẫn gây sai số, nên video không thể hết sai số.",
+    "1": "Bảng so sánh ghi đúng ưu điểm rẻ và nhược điểm chỉ cho tốc độ trung bình cả đoạn.",
     "2": "Đây đúng là các bước chuẩn bị quay video mà bài nêu để đọc vị trí chính xác.",
-    "3": "Hình mờ khi đọc vị trí vẫn gây sai số, nên video không thể hết sai số."
+    "3": "Cổng quang chỉ đo được khi tấm chắn đi qua chỗ đặt cổng, không phải mọi vị trí."
    }
   },
   {
@@ -426,12 +426,12 @@
      "answer": true
     },
     {
-     "text": "Phép đo (II) có sai số tuyệt đối nhỏ hơn nên chính xác hơn phép đo (I).",
-     "answer": false
-    },
-    {
      "text": "Muốn so sánh độ chính xác của hai phép đo phải dùng sai số tương đối.",
      "answer": true
+    },
+    {
+     "text": "Phép đo (II) có sai số tuyệt đối nhỏ hơn nên chính xác hơn phép đo (I).",
+     "answer": false
     },
     {
      "text": "Không so sánh được hai phép đo vì chúng ghi sai số bằng hai đơn vị khác nhau.",
@@ -441,8 +441,8 @@
    "explanation": "Bẫy 3: (I) chỉ sai 0,1 % còn (II) sai 5 %. Cần so với giá trị đo bằng $\\delta A = \\Delta A/\\bar A$, đại lượng không đơn vị nên so được.",
    "distractorNotes": {
     "0": "Sai số tuyệt đối cho biết lệch bao nhiêu mét hay giây, nên mang đơn vị của đại lượng đo.",
-    "1": "Sai số tuyệt đối nhỏ chưa đủ; chia cho giá trị đo thì (II) sai tới 5 % so với 0,1 %.",
-    "2": "Chỉ sai số tương đối mới so độ lệch với cả phép đo, nên đó là thước đo độ chính xác.",
+    "1": "Chỉ sai số tương đối mới so độ lệch với cả phép đo, nên đó là thước đo độ chính xác.",
+    "2": "Sai số tuyệt đối nhỏ chưa đủ; chia cho giá trị đo thì (II) sai tới 5 % so với 0,1 %.",
     "3": "Sai số tương đối không có đơn vị, nên hai phép đo khác đơn vị vẫn so sánh được."
    }
   },
@@ -461,24 +461,24 @@
      "answer": true
     },
     {
-     "text": "$\\Delta t$ là trung bình các độ lệch $|t_i - \\bar t|$ của năm lần đo.",
-     "answer": true
-    },
-    {
      "text": "Vì $v$ là thương của $s$ và $t$ nên $\\delta v = \\delta s - \\delta t$.",
      "answer": false
     },
     {
      "text": "Kết quả cuối cùng được ghi dưới dạng $v = \\bar v \\pm \\delta v$.",
      "answer": false
+    },
+    {
+     "text": "$\\Delta t$ là trung bình các độ lệch $|t_i - \\bar t|$ của năm lần đo.",
+     "answer": true
     }
    ],
    "explanation": "Với thương, $\\delta v = \\delta s + \\delta t$ (chia thì cộng phần trăm). Kết quả viết $v = \\bar v \\pm \\Delta v$ với $\\Delta v = \\bar v\\cdot\\delta v$.",
    "distractorNotes": {
     "0": "Đo nhiều lần thì giá trị trung bình chính là trung bình cộng các lần đo.",
-    "1": "Đây đúng là định nghĩa sai số tuyệt đối khi đo nhiều lần mà bài nêu.",
-    "2": "Sai số tương đối của thương luôn cộng lại, không trừ cho nhau.",
-    "3": "$\\delta v$ là phần trăm không đơn vị; ghi kèm $\\bar v$ phải dùng $\\Delta v = \\bar v\\cdot\\delta v$ có đơn vị m/s."
+    "1": "Sai số tương đối của thương luôn cộng lại, không trừ cho nhau.",
+    "2": "$\\delta v$ là phần trăm không đơn vị; ghi kèm $\\bar v$ phải dùng $\\Delta v = \\bar v\\cdot\\delta v$ có đơn vị m/s.",
+    "3": "Đây đúng là định nghĩa sai số tuyệt đối khi đo nhiều lần mà bài nêu."
    }
   },
   {
@@ -492,8 +492,8 @@
    "question": "Đo tốc độ xe bằng cổng quang: tấm chắn rộng $d$ đo bằng thước chia mm, đồng hồ hiện số ghi thời gian che sáng $t$. Mỗi đại lượng chỉ đọc một lần, sai số lấy bằng sai số dụng cụ.",
    "statements": [
     {
-     "text": "Tốc độ của xe tính theo $v = d/t$, trong đó $d$ là bề rộng tấm chắn.",
-     "answer": true
+     "text": "Muốn có $v$ theo m/s, có thể giữ nguyên $d$ theo cm rồi chia cho $t$ tính bằng giây.",
+     "answer": false
     },
     {
      "text": "Giữ nguyên tấm chắn, xe chạy chậm hơn thì $t$ dài hơn nên $\\delta t$ nhỏ đi.",
@@ -504,16 +504,16 @@
      "answer": false
     },
     {
-     "text": "Muốn có $v$ theo m/s, có thể giữ nguyên $d$ theo cm rồi chia cho $t$ tính bằng giây.",
-     "answer": false
+     "text": "Tốc độ của xe tính theo $v = d/t$, trong đó $d$ là bề rộng tấm chắn.",
+     "answer": true
     }
    ],
    "explanation": "$\\Delta t$ cố định nên $t$ dài hơn thì $\\delta t$ nhỏ hơn. Khi $\\delta d$ lớn hơn thì thước đo $d$ quyết định sai số; và phải đổi $d$ ra mét trước khi chia.",
    "distractorNotes": {
-    "0": "Tấm chắn che tia sáng trên quãng bằng bề rộng $d$, nên $v = d/t$ đúng như bài nêu.",
+    "0": "Giữ $d$ theo cm mà chia cho giây sẽ ra kết quả lớn gấp 100 lần giá trị theo m/s.",
     "1": "Sai số dụng cụ $\\Delta t$ không đổi mà $t$ ở mẫu tăng, nên $\\delta t$ chắc chắn giảm.",
     "2": "Nguồn sai số lớn hơn là thước đo $d$; cải thiện đồng hồ chỉ giảm phần sai số nhỏ hơn.",
-    "3": "Giữ $d$ theo cm mà chia cho giây sẽ ra kết quả lớn gấp 100 lần giá trị theo m/s."
+    "3": "Tấm chắn che tia sáng trên quãng bằng bề rộng $d$, nên $v = d/t$ đúng như bài nêu."
    }
   }
  ]

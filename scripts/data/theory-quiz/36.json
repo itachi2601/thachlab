@@ -347,28 +347,28 @@
    "question": "Cọ thước nhựa vào tóc rồi đưa lại gần mẩu giấy vụn. Thước chưa chạm vào, giấy đã bật lên dính vào thước. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Lực tác dụng lên giấy được truyền qua điện trường quanh thước.",
-     "answer": true
+     "text": "Giấy bị hút chủ yếu do lực hấp dẫn giữa thước và giấy tăng lên khi cọ.",
+     "answer": false
     },
     {
      "text": "Điện trường quanh thước chỉ xuất hiện khi có mẩu giấy ở gần.",
      "answer": false
     },
     {
-     "text": "Điện trường do các điện tích đứng yên gây ra gọi là điện trường tĩnh.",
+     "text": "Lực tác dụng lên giấy được truyền qua điện trường quanh thước.",
      "answer": true
     },
     {
-     "text": "Giấy bị hút chủ yếu do lực hấp dẫn giữa thước và giấy tăng lên khi cọ.",
-     "answer": false
+     "text": "Điện trường do các điện tích đứng yên gây ra gọi là điện trường tĩnh.",
+     "answer": true
     }
    ],
    "explanation": "Điện tích trên thước tạo ra điện trường, và điện trường này tác dụng lực lên giấy. Điện trường có sẵn quanh thước. Lực hấp dẫn giữa hai vật nhẹ nhỏ không đáng kể và không tăng khi cọ.",
    "distractorNotes": {
-    "0": "Giấy bật lên khi chưa chạm thước, nên lực phải truyền qua thứ gì đó quanh thước, chính là điện trường.",
+    "0": "Cọ xát làm thước nhiễm điện chứ không đổi khối lượng; lực hấp dẫn giữa hai vật nhẹ nhỏ hơn hàng tỉ lần lực quan sát được.",
     "1": "Điện trường do điện tích trên thước tạo ra và gắn liền với điện tích đó, nên có sẵn dù không có giấy.",
-    "2": "Phát biểu này đúng với định nghĩa trong bài: điện trường tĩnh do các điện tích đứng yên gây ra.",
-    "3": "Cọ xát làm thước nhiễm điện chứ không đổi khối lượng; lực hấp dẫn giữa hai vật nhẹ nhỏ hơn hàng tỉ lần lực quan sát được."
+    "2": "Giấy bật lên khi chưa chạm thước, nên lực phải truyền qua thứ gì đó quanh thước, chính là điện trường.",
+    "3": "Phát biểu này đúng với định nghĩa trong bài: điện trường tĩnh do các điện tích đứng yên gây ra."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Rắc bột hạt cách điện vào khay dầu, cắm hai điện cực trái dấu nối với máy phát tĩnh điện. Các hạt xếp thành chuỗi nối hai điện cực. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Hình ảnh các chuỗi hạt (điện phổ) cho thấy dạng đường sức điện.",
-     "answer": true
-    },
-    {
-     "text": "Gần điện cực các chuỗi hạt mau hơn vì ở đó điện trường mạnh hơn.",
-     "answer": true
-    },
-    {
      "text": "Hai đường sức có thể cắt nhau tại một điểm nằm giữa hai điện cực.",
      "answer": false
     },
     {
+     "text": "Hình ảnh các chuỗi hạt (điện phổ) cho thấy dạng đường sức điện.",
+     "answer": true
+    },
+    {
      "text": "Đường sức điện chính là quỹ đạo mà mọi điện tích luôn chuyển động theo.",
      "answer": false
+    },
+    {
+     "text": "Gần điện cực các chuỗi hạt mau hơn vì ở đó điện trường mạnh hơn.",
+     "answer": true
     }
    ],
    "explanation": "Điện phổ cho thấy dạng đường sức, và chỗ đường sức mau thì điện trường mạnh. Các đường sức không cắt nhau. Đường sức chỉ cho biết hướng lực, không phải quỹ đạo của điện tích.",
    "distractorNotes": {
-    "0": "Bài khẳng định điện phổ chính là hình ảnh cho thấy dạng đường sức điện.",
-    "1": "Theo quy ước, chỗ đường sức mau ứng với điện trường mạnh, và gần điện cực thì $E$ lớn.",
-    "2": "Tại một điểm $\\vec E$ chỉ có một hướng, nên qua mỗi điểm chỉ có một đường sức.",
-    "3": "Đường sức chỉ cho biết hướng lực; quỹ đạo còn phụ thuộc vận tốc ban đầu nên thường lệch khỏi đường sức."
+    "0": "Tại một điểm $\\vec E$ chỉ có một hướng, nên qua mỗi điểm chỉ có một đường sức.",
+    "1": "Bài khẳng định điện phổ chính là hình ảnh cho thấy dạng đường sức điện.",
+    "2": "Đường sức chỉ cho biết hướng lực; quỹ đạo còn phụ thuộc vận tốc ban đầu nên thường lệch khỏi đường sức.",
+    "3": "Theo quy ước, chỗ đường sức mau ứng với điện trường mạnh, và gần điện cực thì $E$ lớn."
    }
   },
   {
@@ -417,11 +417,7 @@
    "question": "Dùng cân điện tử đo lực điện do quả cầu tích điện $Q$ tác dụng lên quả cầu nhỏ mang điện tích thử $q$ đặt cách nó một khoảng cố định, rồi tính $E=F/q$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Giảm điện tích thử $q$ còn một nửa thì lực điện đo được giảm một nửa.",
-     "answer": true
-    },
-    {
-     "text": "Giảm điện tích thử $q$ còn một nửa thì cường độ điện trường tính được tăng gấp đôi.",
+     "text": "Bỏ điện tích thử đi thì tại điểm đó không còn điện trường.",
      "answer": false
     },
     {
@@ -429,16 +425,20 @@
      "answer": true
     },
     {
-     "text": "Bỏ điện tích thử đi thì tại điểm đó không còn điện trường.",
+     "text": "Giảm điện tích thử $q$ còn một nửa thì cường độ điện trường tính được tăng gấp đôi.",
      "answer": false
+    },
+    {
+     "text": "Giảm điện tích thử $q$ còn một nửa thì lực điện đo được giảm một nửa.",
+     "answer": true
     }
    ],
    "explanation": "$F=|q|E$ nên $F$ tỉ lệ với $q$, còn $E$ do $Q$ và vị trí quyết định. Điện trường có sẵn kể cả khi chưa đặt $q$. Điện tích thử phải đủ nhỏ để không làm đổi điện trường cần đo.",
    "distractorNotes": {
-    "0": "$E$ tại điểm đó không đổi, nên $F=|q|E$ tỉ lệ thuận với $q$ và phải giảm một nửa.",
-    "1": "Đọc $E=F/q$ như quan hệ nhân quả; thực tế $F$ giảm cùng tỉ lệ với $q$ nên $E$ giữ nguyên.",
-    "2": "Điện tích thử lớn sẽ làm thay đổi điện trường cần đo, nên nó phải đủ nhỏ.",
-    "3": "Nhầm điện trường với lực điện; điện trường do $Q$ tạo ra vẫn tồn tại khi không có $q$."
+    "0": "Nhầm điện trường với lực điện; điện trường do $Q$ tạo ra vẫn tồn tại khi không có $q$.",
+    "1": "Điện tích thử lớn sẽ làm thay đổi điện trường cần đo, nên nó phải đủ nhỏ.",
+    "2": "Đọc $E=F/q$ như quan hệ nhân quả; thực tế $F$ giảm cùng tỉ lệ với $q$ nên $E$ giữ nguyên.",
+    "3": "$E$ tại điểm đó không đổi, nên $F=|q|E$ tỉ lệ thuận với $q$ và phải giảm một nửa."
    }
   },
   {
@@ -452,7 +452,7 @@
    "question": "Một điện tích điểm $Q\\gt 0$ đặt trong không khí. Xét điểm M cách $Q$ một khoảng $r$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Vectơ cường độ điện trường tại M hướng ra xa $Q$.",
+     "text": "Mọi điểm cách đều $Q$ một khoảng $r$ có cường độ điện trường bằng nhau về độ lớn.",
      "answer": true
     },
     {
@@ -460,20 +460,20 @@
      "answer": false
     },
     {
-     "text": "Mọi điểm cách đều $Q$ một khoảng $r$ có cường độ điện trường bằng nhau về độ lớn.",
-     "answer": true
-    },
-    {
      "text": "Vectơ cường độ điện trường tại M vuông góc với đường nối $Q$ và M.",
      "answer": false
+    },
+    {
+     "text": "Vectơ cường độ điện trường tại M hướng ra xa $Q$.",
+     "answer": true
     }
    ],
    "explanation": "$Q\\gt 0$ nên $\\vec E$ hướng ra xa $Q$ dọc theo đường nối $Q$ với M. Electron mang điện âm nên chịu lực ngược chiều $\\vec E$, tức hướng về phía $Q$. Độ lớn $E$ chỉ phụ thuộc $r$.",
    "distractorNotes": {
-    "0": "Điện tích nguồn dương luôn gây ra $\\vec E$ hướng ra xa nó.",
+    "0": "$E=k\\dfrac{|Q|}{r^2}$ chỉ phụ thuộc $r$, nên mọi điểm cùng khoảng cách có cùng độ lớn $E$.",
     "1": "Electron mang điện âm nên lực lên nó ngược chiều $\\vec E$, tức hướng về phía $Q$.",
-    "2": "$E=k\\dfrac{|Q|}{r^2}$ chỉ phụ thuộc $r$, nên mọi điểm cùng khoảng cách có cùng độ lớn $E$.",
-    "3": "Phương của $\\vec E$ trùng với đường nối điện tích và điểm xét, không vuông góc với đường đó."
+    "2": "Phương của $\\vec E$ trùng với đường nối điện tích và điểm xét, không vuông góc với đường đó.",
+    "3": "Điện tích nguồn dương luôn gây ra $\\vec E$ hướng ra xa nó."
    }
   },
   {
@@ -526,24 +526,24 @@
      "answer": true
     },
     {
-     "text": "Ở cùng vị trí và môi trường, $E$ tỉ lệ thuận với độ lớn điện tích $Q$.",
-     "answer": true
-    },
-    {
      "text": "Khi $Q\\lt 0$ thì $E$ mang giá trị âm, phải giữ dấu này khi cộng các điện trường.",
      "answer": false
     },
     {
      "text": "Trong môi trường có $\\varepsilon\\gt 1$, $E$ lớn hơn trong chân không $\\varepsilon$ lần.",
      "answer": false
+    },
+    {
+     "text": "Ở cùng vị trí và môi trường, $E$ tỉ lệ thuận với độ lớn điện tích $Q$.",
+     "answer": true
     }
    ],
    "explanation": "$E$ tỉ lệ với $|Q|$ và tỉ lệ nghịch với $\\varepsilon r^2$. Dấu của $Q$ chỉ dùng để xác định chiều của $\\vec E$, còn khi cộng phải cộng vectơ.",
    "distractorNotes": {
     "0": "$r^2$ nằm ở mẫu số, nên khi $Q$ và $\\varepsilon$ cố định thì $E$ tỉ lệ nghịch với $r^2$.",
-    "1": "$|Q|$ nằm ở tử số, nên $|Q|$ tăng bao nhiêu lần thì $E$ tăng bấy nhiêu lần.",
-    "2": "Công thức dùng $|Q|$ nên $E$ luôn dương; dấu của $Q$ chỉ xác định chiều, còn khi cộng phải cộng vectơ.",
-    "3": "$\\varepsilon$ nằm ở mẫu số, nên trong điện môi $E$ nhỏ hơn trong chân không $\\varepsilon$ lần."
+    "1": "Công thức dùng $|Q|$ nên $E$ luôn dương; dấu của $Q$ chỉ xác định chiều, còn khi cộng phải cộng vectơ.",
+    "2": "$\\varepsilon$ nằm ở mẫu số, nên trong điện môi $E$ nhỏ hơn trong chân không $\\varepsilon$ lần.",
+    "3": "$|Q|$ nằm ở tử số, nên $|Q|$ tăng bao nhiêu lần thì $E$ tăng bấy nhiêu lần."
    }
   }
  ]

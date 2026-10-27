@@ -186,28 +186,28 @@
    "question": "Một dây đồng thẳng đứng được luồn qua lỗ giữa tấm bìa. Đặt một la bàn trên bìa, cạnh dây, rồi nối dây với pin, đóng mạch vài giây rồi ngắt.",
    "statements": [
     {
-     "text": "Khi đóng mạch, kim la bàn lệch khỏi hướng ban đầu.",
-     "answer": true
+     "text": "Kim lệch vì dây có dòng điện trở thành nam châm có cực N và S.",
+     "answer": false
     },
     {
-     "text": "Khi ngắt mạch, kim la bàn vẫn giữ nguyên vị trí đã lệch.",
-     "answer": false
+     "text": "Khi đóng mạch, kim la bàn lệch khỏi hướng ban đầu.",
+     "answer": true
     },
     {
      "text": "Đảo hai đầu pin rồi đóng mạch, kim lệch về phía ngược lại.",
      "answer": true
     },
     {
-     "text": "Kim lệch vì dây có dòng điện trở thành nam châm có cực N và S.",
+     "text": "Khi ngắt mạch, kim la bàn vẫn giữ nguyên vị trí đã lệch.",
      "answer": false
     }
    ],
    "explanation": "Dòng điện tác dụng lực từ lên kim; đổi chiều dòng thì đổi chiều lực. Ngắt mạch thì kim trở về hướng cũ. Dây dẫn có từ tính nhưng không có cực N, S.",
    "distractorNotes": {
-    "0": "Thí nghiệm cho thấy khi đóng mạch, dòng điện tác dụng lực từ lên kim nên kim chắc chắn lệch.",
-    "1": "Từ trường của dây chỉ tồn tại khi có dòng điện; ngắt mạch thì chỉ còn từ trường Trái Đất nên kim trở về.",
+    "0": "Nhầm có từ tính với có cực: dây dẫn có dòng điện có từ tính nhưng không có cực N, S.",
+    "1": "Thí nghiệm cho thấy khi đóng mạch, dòng điện tác dụng lực từ lên kim nên kim chắc chắn lệch.",
     "2": "Đổi chiều dòng điện thì đổi chiều lực từ, nên kim không thể lệch về cùng phía như trước.",
-    "3": "Nhầm có từ tính với có cực: dây dẫn có dòng điện có từ tính nhưng không có cực N, S."
+    "3": "Từ trường của dây chỉ tồn tại khi có dòng điện; ngắt mạch thì chỉ còn từ trường Trái Đất nên kim trở về."
    }
   },
   {
@@ -221,6 +221,10 @@
    "question": "Đặt một thanh nam châm dưới tấm nhựa trong, rắc mạt sắt mịn lên tấm rồi gõ nhẹ. Mạt sắt nối thành những chuỗi hạt rõ nét.",
    "statements": [
     {
+     "text": "Ở chỗ mạt sắt dày nhất, hai đường sức từ có thể cắt nhau.",
+     "answer": false
+    },
+    {
      "text": "Hình ảnh các chuỗi mạt sắt này được gọi là từ phổ.",
      "answer": true
     },
@@ -231,18 +235,14 @@
     {
      "text": "Gần hai cực, mạt sắt dày đặc vì từ trường ở đó mạnh.",
      "answer": true
-    },
-    {
-     "text": "Ở chỗ mạt sắt dày nhất, hai đường sức từ có thể cắt nhau.",
-     "answer": false
     }
    ],
    "explanation": "Từ phổ là ảnh thật, còn đường sức từ là đường vẽ theo quy ước. Đường sức mau ở chỗ từ trường mạnh. Qua mỗi điểm chỉ vẽ được một đường sức, nên các đường không cắt nhau.",
    "distractorNotes": {
-    "0": "Hình ảnh chuỗi mạt sắt quanh nam châm chính là từ phổ, một ảnh thật của từ trường.",
-    "1": "Đồng nhất ảnh thật với đường quy ước: đường sức từ là đường vẽ theo quy ước, không phải chuỗi mạt sắt.",
-    "2": "Mạt sắt dày gần cực phản ánh từ trường mạnh ở đó, đúng với quy ước mau thì mạnh.",
-    "3": "Tại mỗi điểm từ trường chỉ có một hướng dù mạnh đến đâu, nên đường sức không bao giờ cắt nhau."
+    "0": "Tại mỗi điểm từ trường chỉ có một hướng dù mạnh đến đâu, nên đường sức không bao giờ cắt nhau.",
+    "1": "Hình ảnh chuỗi mạt sắt quanh nam châm chính là từ phổ, một ảnh thật của từ trường.",
+    "2": "Đồng nhất ảnh thật với đường quy ước: đường sức từ là đường vẽ theo quy ước, không phải chuỗi mạt sắt.",
+    "3": "Mạt sắt dày gần cực phản ánh từ trường mạnh ở đó, đúng với quy ước mau thì mạnh."
    }
   },
   {
@@ -452,6 +452,10 @@
    "question": "Một la bàn nằm ngang đặt dưới một dây dẫn thẳng. Tại đó, từ trường Trái Đất $\\vec B_\\text{đ}$ hướng bắc; khi có dòng điện, dây tạo thêm từ trường nằm ngang $\\vec B_1$.",
    "statements": [
     {
+     "text": "Nếu $\\vec B_1$ vuông góc $\\vec B_\\text{đ}$ thì góc lệch thỏa $\\tan\\alpha = B_\\text{đ}/B_1$.",
+     "answer": false
+    },
+    {
      "text": "Kim la bàn chỉ theo hướng của từ trường tổng hợp tại đó.",
      "answer": true
     },
@@ -462,18 +466,14 @@
     {
      "text": "Nếu $\\vec B_1$ vuông góc $\\vec B_\\text{đ}$ thì $B = B_1 + B_\\text{đ}$.",
      "answer": false
-    },
-    {
-     "text": "Nếu $\\vec B_1$ vuông góc $\\vec B_\\text{đ}$ thì góc lệch thỏa $\\tan\\alpha = B_\\text{đ}/B_1$.",
-     "answer": false
     }
    ],
-   "explanation": "Khi hai từ trường cùng phương, ta cộng đại số. Khi chúng vuông góc thì $B = \\sqrt{B_1^2 + B_\\text{đ}^2}$ và $\\tan\\alpha = B_1/B_\\text{đ}$; ý d viết đảo tử với mẫu.",
+   "explanation": "Khi hai từ trường cùng phương, ta cộng đại số. Khi chúng vuông góc thì $B = \\sqrt{B_1^2 + B_\\text{đ}^2}$ và $\\tan\\alpha = B_1/B_\\text{đ}$; ý a viết đảo tử với mẫu.",
    "distractorNotes": {
-    "0": "Kim chịu đồng thời cả hai từ trường nên chỉ theo từ trường tổng hợp, không theo riêng thành phần nào.",
-    "1": "Cùng phương, cùng chiều thì cộng đại số và vectơ tổng vẫn hướng bắc, nên kim không lệch là đúng.",
-    "2": "Cộng đại số chỉ đúng khi cùng phương; hai từ trường vuông góc phải dùng $\\sqrt{B_1^2 + B_\\text{đ}^2}$.",
-    "3": "Góc đo từ hướng bắc nên $B_1$ là cạnh đối, $B_\\text{đ}$ là cạnh kề; hệ thức này đã đảo tử với mẫu."
+    "0": "Góc đo từ hướng bắc nên $B_1$ là cạnh đối, $B_\\text{đ}$ là cạnh kề; hệ thức này đã đảo tử với mẫu.",
+    "1": "Kim chịu đồng thời cả hai từ trường nên chỉ theo từ trường tổng hợp, không theo riêng thành phần nào.",
+    "2": "Cùng phương, cùng chiều thì cộng đại số và vectơ tổng vẫn hướng bắc, nên kim không lệch là đúng.",
+    "3": "Cộng đại số chỉ đúng khi cùng phương; hai từ trường vuông góc phải dùng $\\sqrt{B_1^2 + B_\\text{đ}^2}$."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Dùng cảm biến từ trường của điện thoại đo cảm ứng từ trên trục một nam châm, tại các khoảng cách khác nhau tính từ mặt cực bắc.",
    "statements": [
     {
-     "text": "Cảm ứng từ $\\vec B$ là vectơ có hướng là hướng của từ trường.",
+     "text": "Đơn vị của cảm ứng từ là tesla, kí hiệu T.",
      "answer": true
     },
     {
-     "text": "Đơn vị của cảm ứng từ là tesla, kí hiệu T.",
-     "answer": true
+     "text": "Càng ra xa nam châm, số đo càng lớn và đường sức càng mau.",
+     "answer": false
     },
     {
      "text": "Ta có $1\\ \\text{mT} = 10^{-6}\\ \\text{T}$.",
      "answer": false
     },
     {
-     "text": "Càng ra xa nam châm, số đo càng lớn và đường sức càng mau.",
-     "answer": false
+     "text": "Cảm ứng từ $\\vec B$ là vectơ có hướng là hướng của từ trường.",
+     "answer": true
     }
    ],
    "explanation": "Đúng là $1\\ \\text{mT} = 10^{-3}\\ \\text{T}$, không phải $10^{-6}\\ \\text{T}$. Càng xa nguồn, từ trường càng yếu, số đo giảm và đường sức càng thưa.",
    "distractorNotes": {
-    "0": "Cảm ứng từ là vectơ, có hướng trùng hướng từ trường, chứ không chỉ là một độ lớn.",
-    "1": "Tesla đúng là đơn vị SI của cảm ứng từ, kí hiệu T, như bài đã nêu.",
+    "0": "Tesla đúng là đơn vị SI của cảm ứng từ, kí hiệu T, như bài đã nêu.",
+    "1": "Đảo chiều quan hệ: thực tế ra xa thì số đo giảm và đường sức thưa dần.",
     "2": "Nhầm mili với micro: $10^{-6}$ T là 1 μT, còn 1 mT bằng $10^{-3}$ T.",
-    "3": "Đảo chiều quan hệ: thực tế ra xa thì số đo giảm và đường sức thưa dần."
+    "3": "Cảm ứng từ là vectơ, có hướng trùng hướng từ trường, chứ không chỉ là một độ lớn."
    }
   }
  ]

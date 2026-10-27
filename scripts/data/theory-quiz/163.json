@@ -347,28 +347,28 @@
       "question": "Một học sinh vẽ sơ đồ vòng năng lượng trên Trái Đất, bắt đầu từ bức xạ của Mặt Trời. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Trái Đất hấp thụ bức xạ Mặt Trời rồi lại bức xạ nhiệt hồng ngoại ra vũ trụ, thu và toả cân bằng.",
-          "answer": true
-        },
-        {
-          "text": "Địa nhiệt cũng có gốc từ bức xạ Mặt Trời.",
-          "answer": false
-        },
-        {
           "text": "Sóng biển có gốc từ gió, nên cũng có gốc từ Mặt Trời.",
           "answer": true
         },
         {
           "text": "Thuỷ triều hình thành do nắng làm nước biển bốc hơi.",
           "answer": false
+        },
+        {
+          "text": "Địa nhiệt cũng có gốc từ bức xạ Mặt Trời.",
+          "answer": false
+        },
+        {
+          "text": "Trái Đất hấp thụ bức xạ Mặt Trời rồi lại bức xạ nhiệt hồng ngoại ra vũ trụ, thu và toả cân bằng.",
+          "answer": true
         }
       ],
-      "explanation": "a) đúng: Trái Đất thu và toả cân bằng. b) sai: địa nhiệt là nhiệt sẵn có trong lòng Trái Đất. c) đúng: nắng làm không khí chuyển động thành gió, gió tạo sóng. d) sai: thuỷ triều do lực hút của Mặt Trăng, Mặt Trời và sự tự quay của Trái Đất.",
+      "explanation": "a) đúng: nắng làm không khí chuyển động thành gió, gió tạo sóng. b) sai: thuỷ triều do lực hút của Mặt Trăng, Mặt Trời và sự tự quay của Trái Đất. c) sai: địa nhiệt là nhiệt sẵn có trong lòng Trái Đất. d) đúng: Trái Đất thu và toả cân bằng.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì bài nêu rõ Trái Đất bức xạ nhiệt hồng ngoại ra vũ trụ nên thu và toả cân bằng.",
-        "1": "Không thể coi là đúng vì địa nhiệt là nhiệt sẵn có trong lòng Trái Đất, thuộc ba nguồn không có gốc Mặt Trời.",
-        "2": "Không thể coi là sai vì sóng biển do gió tạo ra, mà gió do nắng làm mặt đất nóng không đều.",
-        "3": "Không thể coi là đúng vì thuỷ triều do lực hút của Mặt Trăng, Mặt Trời cùng sự tự quay của Trái Đất, không do nắng."
+        "0": "Không thể coi là sai vì sóng biển do gió tạo ra, mà gió do nắng làm mặt đất nóng không đều.",
+        "1": "Không thể coi là đúng vì thuỷ triều do lực hút của Mặt Trăng, Mặt Trời cùng sự tự quay của Trái Đất, không do nắng.",
+        "2": "Không thể coi là đúng vì địa nhiệt là nhiệt sẵn có trong lòng Trái Đất, thuộc ba nguồn không có gốc Mặt Trời.",
+        "3": "Không thể coi là sai vì bài nêu rõ Trái Đất bức xạ nhiệt hồng ngoại ra vũ trụ nên thu và toả cân bằng."
       }
     },
     {
@@ -390,20 +390,20 @@
           "answer": false
         },
         {
-          "text": "Hiệu ứng nhà kính tăng cường chính là hiện tượng thủng tầng ozone.",
-          "answer": false
-        },
-        {
           "text": "CO₂ giữ lại một phần hồng ngoại rồi toả một phần về mặt đất.",
           "answer": true
+        },
+        {
+          "text": "Hiệu ứng nhà kính tăng cường chính là hiện tượng thủng tầng ozone.",
+          "answer": false
         }
       ],
-      "explanation": "a) đúng theo cơ chế nhà kính. b) sai: không có hiệu ứng tự nhiên, Trái Đất trung bình khoảng $-18\\,^\\circ\\text{C}$. c) sai: nhà kính giữ hồng ngoại làm ấm, thủng ozone là mất lớp chắn tia tử ngoại. d) đúng theo cơ chế nhà kính.",
+      "explanation": "a) đúng theo cơ chế nhà kính. b) sai: không có hiệu ứng tự nhiên, Trái Đất trung bình khoảng $-18\\,^\\circ\\text{C}$. c) đúng theo cơ chế nhà kính. d) sai: nhà kính giữ hồng ngoại làm ấm, thủng ozone là mất lớp chắn tia tử ngoại.",
       "distractorNotes": {
         "0": "Không thể coi là sai vì CO₂ cho ánh sáng đi qua, nếu chặn ánh sáng thì Trái Đất đã lạnh đi.",
         "1": "Không thể coi là đúng vì không có hiệu ứng tự nhiên, nhiệt độ trung bình của Trái Đất chỉ khoảng $-18\\,^\\circ\\text{C}$.",
-        "2": "Không thể coi là đúng vì hiệu ứng nhà kính giữ hồng ngoại làm ấm, còn thủng ozone là mất lớp chắn tia tử ngoại.",
-        "3": "Không thể coi là sai vì đây chính là cách CO₂ giữ nhiệt: hấp thụ hồng ngoại rồi toả lại về mặt đất."
+        "2": "Không thể coi là sai vì đây chính là cách CO₂ giữ nhiệt: hấp thụ hồng ngoại rồi toả lại về mặt đất.",
+        "3": "Không thể coi là đúng vì hiệu ứng nhà kính giữ hồng ngoại làm ấm, còn thủng ozone là mất lớp chắn tia tử ngoại."
       }
     },
     {
@@ -456,23 +456,23 @@
           "answer": false
         },
         {
-          "text": "Hiệu suất cả trạm là $H=H_1H_2$.",
-          "answer": true
-        },
-        {
           "text": "Khối lượng dầu cần đốt tính bằng $m=A_{\\text{tp}}\\cdot q$.",
           "answer": false
+        },
+        {
+          "text": "Hiệu suất cả trạm là $H=H_1H_2$.",
+          "answer": true
         },
         {
           "text": "Nhiệt năng cần toả ra từ nhiên liệu là $A_{\\text{tp}}=\\dfrac{A_{\\text{ích}}}{H}$.",
           "answer": true
         }
       ],
-      "explanation": "a) sai: tích nhỏ hơn mỗi thừa số. b) đúng vì hai khâu nối tiếp thì nhân. c) sai: $m=\\dfrac{A_{\\text{tp}}}{q}$. d) đúng vì có hao phí nên phải chia cho $H$.",
+      "explanation": "a) sai: tích nhỏ hơn mỗi thừa số. b) sai: $m=\\dfrac{A_{\\text{tp}}}{q}$. c) đúng vì hai khâu nối tiếp thì nhân. d) đúng vì có hao phí nên phải chia cho $H$.",
       "distractorNotes": {
         "0": "Không thể coi là đúng vì tích hai hiệu suất nhỏ hơn mỗi hiệu suất thành phần, kể cả khâu kém nhất.",
-        "1": "Không thể coi là sai vì đầu ra động cơ là đầu vào máy phát nên hiệu suất được nhân với nhau.",
-        "2": "Không thể coi là đúng vì $Q=qm$ nên khối lượng phải là $m=\\dfrac{A_{\\text{tp}}}{q}$, chia chứ không nhân.",
+        "1": "Không thể coi là đúng vì $Q=qm$ nên khối lượng phải là $m=\\dfrac{A_{\\text{tp}}}{q}$, chia chứ không nhân.",
+        "2": "Không thể coi là sai vì đầu ra động cơ là đầu vào máy phát nên hiệu suất được nhân với nhau.",
         "3": "Không thể coi là sai vì $H=\\dfrac{A_{\\text{ích}}}{A_{\\text{tp}}}$ nên $A_{\\text{tp}}=\\dfrac{A_{\\text{ích}}}{H}$."
       }
     },
@@ -522,10 +522,6 @@
       "question": "Một tuabin gió có tốc độ khởi động, tốc độ định mức và tốc độ ngắt. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Dưới tốc độ khởi động, tuabin đứng yên và không phát điện.",
-          "answer": true
-        },
-        {
           "text": "Từ tốc độ định mức tới tốc độ ngắt, công suất vẫn tiếp tục tăng theo $v^3$.",
           "answer": false
         },
@@ -534,15 +530,19 @@
           "answer": true
         },
         {
+          "text": "Dưới tốc độ khởi động, tuabin đứng yên và không phát điện.",
+          "answer": true
+        },
+        {
           "text": "Vượt tốc độ ngắt, tuabin vẫn chạy ở công suất định mức.",
           "answer": false
         }
       ],
-      "explanation": "a) đúng theo ba vùng làm việc. b) sai: vùng này giữ ở công suất định mức. c) đúng theo ba vùng làm việc. d) sai: quá tốc độ ngắt thì dừng để an toàn.",
+      "explanation": "a) sai: vùng này giữ ở công suất định mức. b) đúng theo ba vùng làm việc. c) đúng theo ba vùng làm việc. d) sai: quá tốc độ ngắt thì dừng để an toàn.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì dưới tốc độ khởi động tuabin đứng yên theo vùng làm việc đầu tiên.",
-        "1": "Không thể coi là đúng vì từ tốc độ định mức tới tốc độ ngắt công suất được giữ ở mức định mức.",
-        "2": "Không thể coi là sai vì ở vùng này khối khí qua mỗi giây và động năng mỗi đơn vị khối lượng đều tăng, nên $P\\sim v^3$.",
+        "0": "Không thể coi là đúng vì từ tốc độ định mức tới tốc độ ngắt công suất được giữ ở mức định mức.",
+        "1": "Không thể coi là sai vì ở vùng này khối khí qua mỗi giây và động năng mỗi đơn vị khối lượng đều tăng, nên $P\\sim v^3$.",
+        "2": "Không thể coi là sai vì dưới tốc độ khởi động tuabin đứng yên theo vùng làm việc đầu tiên.",
         "3": "Không thể coi là đúng vì quá tốc độ ngắt tuabin dừng để an toàn."
       }
     }

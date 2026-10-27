@@ -347,8 +347,8 @@
       "question": "Tăng hiệu điện thế hai đầu một dây constantan từ $3\\ \\text{V}$ lên $6\\ \\text{V}$, nhiệt độ dây giữ nguyên. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Cường độ dòng điện qua dây tăng gấp đôi.",
-          "answer": true
+          "text": "Công thức $R=U/I$ chứng tỏ $R$ phụ thuộc vào $U$.",
+          "answer": false
         },
         {
           "text": "Điện trở của dây tăng gấp đôi.",
@@ -359,16 +359,16 @@
           "answer": true
         },
         {
-          "text": "Công thức $R=U/I$ chứng tỏ $R$ phụ thuộc vào $U$.",
-          "answer": false
+          "text": "Cường độ dòng điện qua dây tăng gấp đôi.",
+          "answer": true
         }
       ],
-      "explanation": "a) đúng: $I$ tỉ lệ thuận $U$. b) sai: $R$ không đổi. c) đúng: $U/I=R$ không đổi. d) sai: $U/I$ chỉ là cách đo.",
+      "explanation": "a) sai: $U/I$ chỉ là cách đo. b) sai: $R$ không đổi. c) đúng: $U/I=R$ không đổi. d) đúng: $I$ tỉ lệ thuận $U$.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì $U$ gấp đôi, $R$ không đổi thì $I=U/R$ cũng gấp đôi.",
+        "0": "Không thể coi là đúng vì công thức này chỉ cho cách đo $R$, không nói $R$ phụ thuộc $U$.",
         "1": "Không thể coi là đúng vì $R$ chỉ phụ thuộc vật liệu, $l$, $S$ và nhiệt độ; các yếu tố này đều không đổi.",
         "2": "Không thể coi là sai vì $U$ và $I$ cùng gấp đôi nên thương của chúng không đổi.",
-        "3": "Không thể coi là đúng vì công thức này chỉ cho cách đo $R$, không nói $R$ phụ thuộc $U$."
+        "3": "Không thể coi là sai vì $U$ gấp đôi, $R$ không đổi thì $I=U/R$ cũng gấp đôi."
       }
     },
     {
@@ -382,6 +382,10 @@
       "question": "Một nhóm đo $U$ và $I$ của một điện trở năm lần; bốn lần đầu cho $U/I=8\\ \\Omega$, lần thứ năm cho $U/I=8{,}7\\ \\Omega$. Xét các phát biểu sau:",
       "statements": [
         {
+          "text": "Đồ thị $U$–$I$ của bốn lần đầu không đi qua gốc toạ độ.",
+          "answer": false
+        },
+        {
           "text": "Cả năm lần đo đều cho $U/I$ bằng nhau nên $R$ không đổi.",
           "answer": false
         },
@@ -392,18 +396,14 @@
         {
           "text": "Điểm của lần thứ năm lệch khỏi đường thẳng nên cần đo lại hoặc loại ra.",
           "answer": true
-        },
-        {
-          "text": "Đồ thị $U$–$I$ của bốn lần đầu không đi qua gốc toạ độ.",
-          "answer": false
         }
       ],
-      "explanation": "a) sai: lần 5 cho $8{,}7$. b) đúng. c) đúng: điểm lệch hẳn thì cần đo lại. d) sai: $U\\propto I$ cho đường qua gốc.",
+      "explanation": "a) sai: $U\\propto I$ cho đường qua gốc. b) sai: lần 5 cho $8{,}7$. c) đúng. d) đúng: điểm lệch hẳn thì cần đo lại.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì lần thứ năm cho $8{,}7$, khác $8$ của bốn lần còn lại.",
-        "1": "Không thể coi là sai vì tỉ số $U/I$ không đổi qua bốn lần đo, tức các điểm nằm trên đường thẳng qua gốc.",
-        "2": "Không thể coi là sai vì điểm lệch hẳn khỏi đường thẳng là dấu hiệu phép đo hỏng hoặc dây nóng lên.",
-        "3": "Không thể coi là đúng vì $U/I$ không đổi tức $U\\propto I$, đồ thị phải đi qua gốc."
+        "0": "Không thể coi là đúng vì $U/I$ không đổi tức $U\\propto I$, đồ thị phải đi qua gốc.",
+        "1": "Không thể coi là đúng vì lần thứ năm cho $8{,}7$, khác $8$ của bốn lần còn lại.",
+        "2": "Không thể coi là sai vì tỉ số $U/I$ không đổi qua bốn lần đo, tức các điểm nằm trên đường thẳng qua gốc.",
+        "3": "Không thể coi là sai vì điểm lệch hẳn khỏi đường thẳng là dấu hiệu phép đo hỏng hoặc dây nóng lên."
       }
     },
     {
@@ -417,7 +417,7 @@
       "question": "Dùng ampe kế và vôn kế thật (có điện trở) để đo dòng qua điện trở $R$ và hiệu điện thế giữa hai đầu $R$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Ampe kế mắc nối tiếp nên tự cộng thêm điện trở $R_A$ vào mạch.",
+          "text": "Vôn kế mắc song song làm điện trở của đoạn đó nhỏ hơn $R$.",
           "answer": true
         },
         {
@@ -425,7 +425,7 @@
           "answer": false
         },
         {
-          "text": "Vôn kế mắc song song làm điện trở của đoạn đó nhỏ hơn $R$.",
+          "text": "Ampe kế mắc nối tiếp nên tự cộng thêm điện trở $R_A$ vào mạch.",
           "answer": true
         },
         {
@@ -433,11 +433,11 @@
           "answer": false
         }
       ],
-      "explanation": "a) đúng. b) sai: dòng giảm. c) đúng: $R_P<R$. d) sai: cần $R_V\\gg R$.",
+      "explanation": "a) đúng: $R_P<R$. b) sai: dòng giảm. c) đúng. d) sai: cần $R_V\\gg R$.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì điện trở toàn mạch trở thành $R+R_A$.",
+        "0": "Không thể coi là sai vì hai điện trở song song có điện trở tương đương nhỏ hơn điện trở nhỏ nhất.",
         "1": "Không thể coi là đúng vì $R_A$ làm điện trở mạch tăng nên dòng giảm, số chỉ nhỏ hơn dòng thật.",
-        "2": "Không thể coi là sai vì hai điện trở song song có điện trở tương đương nhỏ hơn điện trở nhỏ nhất.",
+        "2": "Không thể coi là sai vì điện trở toàn mạch trở thành $R+R_A$.",
         "3": "Không thể coi là đúng vì $R_V$ nhỏ làm $R_P$ lệch xa $R$, số chỉ sai nhiều; cần $R_V\\gg R$."
       }
     },
@@ -452,28 +452,28 @@
       "question": "Một đoạn dây đồng có điện trở $8\\ \\Omega$ được kéo dài gấp đôi, thể tích không đổi. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Tiết diện dây mới bằng một nửa tiết diện ban đầu.",
-          "answer": true
+          "text": "Nếu kéo cho đường kính còn một nửa thì $R$ cũng chỉ tăng $4$ lần.",
+          "answer": false
         },
         {
           "text": "Điện trở dây mới là $16\\ \\Omega$ vì chỉ chiều dài thay đổi.",
           "answer": false
         },
         {
-          "text": "Nếu kéo cho đường kính còn một nửa thì $R$ cũng chỉ tăng $4$ lần.",
-          "answer": false
+          "text": "Điện trở dây mới là $32\\ \\Omega$.",
+          "answer": true
         },
         {
-          "text": "Điện trở dây mới là $32\\ \\Omega$.",
+          "text": "Tiết diện dây mới bằng một nửa tiết diện ban đầu.",
           "answer": true
         }
       ],
-      "explanation": "a) đúng. b) sai: quên $S$ giảm. c) sai: đường kính giảm $2$ lần thì $R$ tăng $16$ lần. d) đúng: $R_2=8\\cdot2^2$.",
+      "explanation": "a) sai: đường kính giảm $2$ lần thì $R$ tăng $16$ lần. b) sai: quên $S$ giảm. c) đúng: $R_2=8\\cdot2^2$. d) đúng.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì $V=Sl$ không đổi mà $l$ gấp đôi nên $S$ phải giảm một nửa.",
+        "0": "Không thể coi là đúng vì đường kính giảm $2$ lần thì $R$ tăng $2^4=16$ lần.",
         "1": "Không thể coi là đúng vì tiết diện cũng giảm nên $R$ phải tăng thêm lần nữa; $16$ chỉ tính chiều dài.",
-        "2": "Không thể coi là đúng vì đường kính giảm $2$ lần thì $R$ tăng $2^4=16$ lần.",
-        "3": "Không thể coi là sai vì $R$ tăng $2\\cdot2=4$ lần: $8\\cdot4=32\\ \\Omega$."
+        "2": "Không thể coi là sai vì $R$ tăng $2\\cdot2=4$ lần: $8\\cdot4=32\\ \\Omega$.",
+        "3": "Không thể coi là sai vì $V=Sl$ không đổi mà $l$ gấp đôi nên $S$ phải giảm một nửa."
       }
     },
     {
@@ -491,7 +491,7 @@
           "answer": false
         },
         {
-          "text": "Dòng nhỏ nhất chỉnh được là $0{,}3\\ \\text{A}$.",
+          "text": "Dòng lớn nhất chỉnh được là $0{,}8\\ \\text{A}$.",
           "answer": true
         },
         {
@@ -499,16 +499,16 @@
           "answer": false
         },
         {
-          "text": "Dòng lớn nhất chỉnh được là $0{,}8\\ \\text{A}$.",
+          "text": "Dòng nhỏ nhất chỉnh được là $0{,}3\\ \\text{A}$.",
           "answer": true
         }
       ],
       "explanation": "a) sai: $R_b=40-30=10\\ \\Omega$. b) đúng. c) sai: thấp nhất chỉ $0{,}3\\ \\text{A}$. d) đúng.",
       "distractorNotes": {
         "0": "Không thể coi là đúng vì $40\\ \\Omega$ là điện trở cả mạch; phải trừ $R=30\\ \\Omega$, còn $10\\ \\Omega$.",
-        "1": "Không thể coi là sai vì $I_{min}=24/(50+30)=0{,}3\\ \\text{A}$.",
+        "1": "Không thể coi là sai vì khi $R_b=0$ có $I_{max}=24/30=0{,}8\\ \\text{A}$.",
         "2": "Không thể coi là đúng vì mức thấp nhất chỉ $0{,}3\\ \\text{A}$; muốn $0{,}2\\ \\text{A}$ phải thêm điện trở nối tiếp hoặc hạ nguồn.",
-        "3": "Không thể coi là sai vì khi $R_b=0$ có $I_{max}=24/30=0{,}8\\ \\text{A}$."
+        "3": "Không thể coi là sai vì $I_{min}=24/(50+30)=0{,}3\\ \\text{A}$."
       }
     },
     {
@@ -522,7 +522,7 @@
       "question": "Một dây điện trở $100\\ \\Omega$ được cắt thành $5$ đoạn bằng nhau. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Muốn bộ song song có $1\\ \\Omega$ phải cắt $100$ đoạn.",
+          "text": "Ghép nối tiếp lại cả $5$ đoạn được điện trở $20\\ \\Omega$.",
           "answer": false
         },
         {
@@ -530,20 +530,20 @@
           "answer": true
         },
         {
-          "text": "Mỗi đoạn có điện trở $20\\ \\Omega$.",
-          "answer": true
+          "text": "Muốn bộ song song có $1\\ \\Omega$ phải cắt $100$ đoạn.",
+          "answer": false
         },
         {
-          "text": "Ghép nối tiếp lại cả $5$ đoạn được điện trở $20\\ \\Omega$.",
-          "answer": false
+          "text": "Mỗi đoạn có điện trở $20\\ \\Omega$.",
+          "answer": true
         }
       ],
-      "explanation": "a) sai: $n=10$. b) đúng. c) đúng. d) sai: nối tiếp lại cho $100\\ \\Omega$.",
+      "explanation": "a) sai: nối tiếp lại cho $100\\ \\Omega$. b) đúng. c) sai: $n=10$. d) đúng.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì $R/n^2=1$ cho $n^2=100$, tức chỉ cắt $10$ đoạn.",
+        "0": "Không thể coi là đúng vì nối tiếp lại thì cộng $5\\cdot20=100\\ \\Omega$, trở về dây ban đầu.",
         "1": "Không thể coi là sai vì $R_{td}=20/5=4\\ \\Omega$, cũng bằng $100/5^2$.",
-        "2": "Không thể coi là sai vì cắt $n$ đoạn bằng nhau thì mỗi đoạn có $R/n=100/5=20\\ \\Omega$.",
-        "3": "Không thể coi là đúng vì nối tiếp lại thì cộng $5\\cdot20=100\\ \\Omega$, trở về dây ban đầu."
+        "2": "Không thể coi là đúng vì $R/n^2=1$ cho $n^2=100$, tức chỉ cắt $10$ đoạn.",
+        "3": "Không thể coi là sai vì cắt $n$ đoạn bằng nhau thì mỗi đoạn có $R/n=100/5=20\\ \\Omega$."
       }
     }
   ]

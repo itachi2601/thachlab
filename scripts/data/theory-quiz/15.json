@@ -310,11 +310,7 @@
    "question": "Bắn chùm hạt alpha vào một lá vàng mỏng. Kết quả: hầu hết hạt bay thẳng qua, một số ít bị lệch mạnh, vài hạt bật ngược lại. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Hầu hết hạt alpha bay thẳng qua lá vàng vì nguyên tử gần như trống rỗng.",
-     "answer": true
-    },
-    {
-     "text": "Hạt alpha bị lệch mạnh là do va chạm với các êlectron của nguyên tử vàng.",
+     "text": "Kết quả thí nghiệm chứng minh êlectron chỉ chuyển động trên các quỹ đạo có năng lượng xác định.",
      "answer": false
     },
     {
@@ -322,16 +318,20 @@
      "answer": true
     },
     {
-     "text": "Kết quả thí nghiệm chứng minh êlectron chỉ chuyển động trên các quỹ đạo có năng lượng xác định.",
+     "text": "Hầu hết hạt alpha bay thẳng qua lá vàng vì nguyên tử gần như trống rỗng.",
+     "answer": true
+    },
+    {
+     "text": "Hạt alpha bị lệch mạnh là do va chạm với các êlectron của nguyên tử vàng.",
      "answer": false
     }
    ],
    "explanation": "Thí nghiệm lá vàng cho thấy nguyên tử gần như trống và có hạt nhân nhỏ, nặng, mang điện dương. Êlectron rất nhẹ nên không làm hạt alpha lệch mạnh. Quỹ đạo có năng lượng xác định là phần Bohr bổ sung sau.",
    "distractorNotes": {
-    "0": "Coi ý này là sai thì không giải thích được vì sao phần lớn hạt alpha đi qua mà không gặp vật cản nào.",
-    "1": "Êlectron nhẹ hơn nuclôn gần hai nghìn lần nên không thể làm hạt alpha lệch mạnh.",
-    "2": "Điện dương rải đều như mô hình Thomson không thể làm hạt alpha bật ngược, nên phải có một vùng nhỏ và nặng.",
-    "3": "Thí nghiệm lá vàng không cho biết gì về quỹ đạo êlectron, vì quỹ đạo có năng lượng xác định là phần Bohr bổ sung sau."
+    "0": "Thí nghiệm lá vàng không cho biết gì về quỹ đạo êlectron, vì quỹ đạo có năng lượng xác định là phần Bohr bổ sung sau.",
+    "1": "Điện dương rải đều như mô hình Thomson không thể làm hạt alpha bật ngược, nên phải có một vùng nhỏ và nặng.",
+    "2": "Coi ý này là sai thì không giải thích được vì sao phần lớn hạt alpha đi qua mà không gặp vật cản nào.",
+    "3": "Êlectron nhẹ hơn nuclôn gần hai nghìn lần nên không thể làm hạt alpha lệch mạnh."
    }
   },
   {
@@ -345,6 +345,10 @@
    "question": "Một nguyên tử trung hoà về điện có hạt nhân gồm các prôtôn và nơtron. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
+     "text": "Số êlectron ở vỏ nguyên tử bằng số prôtôn trong hạt nhân.",
+     "answer": true
+    },
+    {
      "text": "Mỗi prôtôn mang điện tích $+e$.",
      "answer": true
     },
@@ -353,19 +357,15 @@
      "answer": false
     },
     {
-     "text": "Số êlectron ở vỏ nguyên tử bằng số prôtôn trong hạt nhân.",
-     "answer": true
-    },
-    {
      "text": "Hạt nhân trung hoà về điện vì chứa cả prôtôn lẫn nơtron.",
      "answer": false
     }
    ],
    "explanation": "Prôtôn mang điện $+e$, nơtron không mang điện. Vì vậy hạt nhân mang điện dương. Nguyên tử trung hoà nên số êlectron ở vỏ bằng số prôtôn.",
    "distractorNotes": {
-    "0": "Bài học nêu rõ prôtôn mang điện tích $+e$, nên không thể coi ý này là sai.",
-    "1": "Nhầm nơtron với êlectron, vì nơtron không mang điện còn hạt mang điện $-e$ là êlectron ở vỏ.",
-    "2": "Nguyên tử trung hoà nên điện tích âm ở vỏ phải cân bằng đúng điện tích dương của các prôtôn.",
+    "0": "Nguyên tử trung hoà nên điện tích âm ở vỏ phải cân bằng đúng điện tích dương của các prôtôn.",
+    "1": "Bài học nêu rõ prôtôn mang điện tích $+e$, nên không thể coi ý này là sai.",
+    "2": "Nhầm nơtron với êlectron, vì nơtron không mang điện còn hạt mang điện $-e$ là êlectron ở vỏ.",
     "3": "Nơtron không mang điện nên không trung hoà được prôtôn, vì vậy hạt nhân luôn mang điện dương."
    }
   },
@@ -380,28 +380,28 @@
    "question": "Hiđrô có ba đồng vị: $^1_1\\text{H}$, $^2_1\\text{H}$ (đơteri) và $^3_1\\text{H}$ (triti). Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Hạt nhân của cả ba đồng vị đều có 1 prôtôn.",
-     "answer": true
-    },
-    {
      "text": "Hạt nhân triti có 3 nơtron.",
      "answer": false
     },
     {
-     "text": "Ba đồng vị này có tính chất hoá học giống nhau.",
+     "text": "Hạt nhân của cả ba đồng vị đều có 1 prôtôn.",
      "answer": true
     },
     {
      "text": "Ba đồng vị này có khối lượng nguyên tử bằng nhau.",
      "answer": false
+    },
+    {
+     "text": "Ba đồng vị này có tính chất hoá học giống nhau.",
+     "answer": true
     }
    ],
    "explanation": "Cả ba đồng vị có $Z = 1$, với số nơtron lần lượt là 0, 1, 2. Chúng cùng tính chất hoá học nhưng khác khối lượng.",
    "distractorNotes": {
-    "0": "Chỉ số dưới của cả ba kí hiệu đều là 1, tức mỗi hạt nhân có đúng 1 prôtôn.",
-    "1": "Đọc nhầm số nuclôn thành số nơtron, trong khi triti có $N = 3 - 1 = 2$.",
-    "2": "Cùng số prôtôn nên cùng số êlectron ở vỏ, do đó tính chất hoá học giống nhau.",
-    "3": "Số nơtron lần lượt là 0, 1, 2 nên khối lượng của ba đồng vị khác nhau."
+    "0": "Đọc nhầm số nuclôn thành số nơtron, trong khi triti có $N = 3 - 1 = 2$.",
+    "1": "Chỉ số dưới của cả ba kí hiệu đều là 1, tức mỗi hạt nhân có đúng 1 prôtôn.",
+    "2": "Số nơtron lần lượt là 0, 1, 2 nên khối lượng của ba đồng vị khác nhau.",
+    "3": "Cùng số prôtôn nên cùng số êlectron ở vỏ, do đó tính chất hoá học giống nhau."
    }
   },
   {
@@ -423,11 +423,11 @@
      "answer": true
     },
     {
-     "text": "Mô hình Bohr phủ nhận sự tồn tại của hạt nhân nguyên tử.",
+     "text": "Theo mô hình Bohr, êlectron có thể chuyển động trên quỹ đạo có bán kính bất kì.",
      "answer": false
     },
     {
-     "text": "Theo mô hình Bohr, êlectron có thể chuyển động trên quỹ đạo có bán kính bất kì.",
+     "text": "Mô hình Bohr phủ nhận sự tồn tại của hạt nhân nguyên tử.",
      "answer": false
     }
    ],
@@ -435,8 +435,8 @@
    "distractorNotes": {
     "0": "Ý này khớp với mô tả mô hình Thomson trong bài: quả cầu dương đặc, êlectron cắm rải rác.",
     "1": "Rutherford đặt điện tích dương và gần hết khối lượng vào hạt nhân rất nhỏ, nên không thể coi ý này là sai.",
-    "2": "Bohr giữ nguyên hạt nhân của Rutherford, chỉ bổ sung điều kiện về quỹ đạo cho phép của êlectron.",
-    "3": "Điểm mới của Bohr chính là êlectron chỉ ở các quỹ đạo cho phép, có bán kính và năng lượng xác định."
+    "2": "Điểm mới của Bohr chính là êlectron chỉ ở các quỹ đạo cho phép, có bán kính và năng lượng xác định.",
+    "3": "Bohr giữ nguyên hạt nhân của Rutherford, chỉ bổ sung điều kiện về quỹ đạo cho phép của êlectron."
    }
   },
   {
@@ -458,20 +458,20 @@
      "answer": false
     },
     {
-     "text": "Hạt nhân có $N = A - Z = 36$ nơtron.",
-     "answer": true
-    },
-    {
      "text": "Số 65 cho biết khối lượng nguyên tử đồng đúng bằng 65 u.",
      "answer": false
+    },
+    {
+     "text": "Hạt nhân có $N = A - Z = 36$ nơtron.",
+     "answer": true
     }
    ],
    "explanation": "Trong kí hiệu, chỉ số dưới $Z = 29$ là số prôtôn và chỉ số trên $A = 65$ là số nuclôn. Do đó $N = 36$. Số khối là số đếm nuclôn, không phải khối lượng.",
    "distractorNotes": {
     "0": "Chỉ số dưới trong kí hiệu $^A_Z X$ luôn là số prôtôn, nên 29 là số prôtôn.",
     "1": "Nhầm chỉ số trên là số nơtron, trong khi 65 là tổng số nuclôn gồm cả prôtôn và nơtron.",
-    "2": "Phép tính $N = 65 - 29 = 36$ đúng theo hệ thức $A = Z + N$.",
-    "3": "Nhầm số khối với khối lượng: số khối là số đếm nguyên, còn khối lượng theo u là số thực."
+    "2": "Nhầm số khối với khối lượng: số khối là số đếm nguyên, còn khối lượng theo u là số thực.",
+    "3": "Phép tính $N = 65 - 29 = 36$ đúng theo hệ thức $A = Z + N$."
    }
   },
   {
@@ -485,8 +485,8 @@
    "question": "Cho các số liệu: khối lượng prôtôn $m_p \\approx 1{,}00728$ u, khối lượng nơtron $m_n \\approx 1{,}00866$ u; hạt nhân nhôm có số khối 27, khối lượng nguyên tử nhôm là 26,98 u. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "$1$ u $\\approx 1{,}66054 \\cdot 10^{-27}$ kg.",
-     "answer": true
+     "text": "Bán kính hạt nhân tỉ lệ thuận với số khối $A$.",
+     "answer": false
     },
     {
      "text": "Khối lượng nơtron lớn hơn khối lượng prôtôn.",
@@ -497,16 +497,16 @@
      "answer": false
     },
     {
-     "text": "Bán kính hạt nhân tỉ lệ thuận với số khối $A$.",
-     "answer": false
+     "text": "$1$ u $\\approx 1{,}66054 \\cdot 10^{-27}$ kg.",
+     "answer": true
     }
    ],
    "explanation": "Ta có $1$ u $\\approx 1{,}66054 \\cdot 10^{-27}$ kg, và $m_n \\gt m_p$. Nhôm có số khối 27 nhưng khối lượng 26,98 u, nên khối lượng không trùng số khối. Ngoài ra $R \\sim A^{1/3}$, không tỉ lệ thuận với $A$.",
    "distractorNotes": {
-    "0": "Đây đúng là giá trị của đơn vị u được nêu trong bài.",
+    "0": "Quên số mũ $1/3$: $R$ tỉ lệ với $A^{1/3}$ nên tăng chậm hơn nhiều so với $A$.",
     "1": "Theo số liệu đề cho, $1{,}00866$ u lớn hơn $1{,}00728$ u nên nơtron nặng hơn prôtôn.",
     "2": "Nhầm số khối với khối lượng, vì chính nhôm có $A = 27$ nhưng khối lượng nguyên tử là 26,98 u.",
-    "3": "Quên số mũ $1/3$: $R$ tỉ lệ với $A^{1/3}$ nên tăng chậm hơn nhiều so với $A$."
+    "3": "Đây đúng là giá trị của đơn vị u được nêu trong bài."
    }
   }
  ]

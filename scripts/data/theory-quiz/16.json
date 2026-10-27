@@ -347,28 +347,28 @@
    "question": "Hạt nhân heli-4 gồm 2 prôtôn và 2 nơtron. Hai prôtôn đẩy nhau bằng lực tĩnh điện, nhưng hạt nhân vẫn bền vững. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Lực hạt nhân giữa các nuclôn mạnh hơn hẳn lực đẩy tĩnh điện giữa hai prôtôn.",
-     "answer": true
-    },
-    {
-     "text": "Nơtron không mang điện nên không chịu tác dụng của lực hạt nhân.",
-     "answer": false
-    },
-    {
      "text": "Lực hạt nhân chính là lực hấp dẫn giữa các nuclôn.",
      "answer": false
     },
     {
      "text": "Lực hạt nhân chỉ tác dụng khi các nuclôn ở cách nhau cỡ $10^{-15}$ m.",
      "answer": true
+    },
+    {
+     "text": "Lực hạt nhân giữa các nuclôn mạnh hơn hẳn lực đẩy tĩnh điện giữa hai prôtôn.",
+     "answer": true
+    },
+    {
+     "text": "Nơtron không mang điện nên không chịu tác dụng của lực hạt nhân.",
+     "answer": false
     }
    ],
    "explanation": "Lực hạt nhân là lực hút rất mạnh giữa các nuclôn, không phụ thuộc điện tích (p–p, p–n, n–n đều hút) và có tầm cỡ $10^{-15}$ m. Nó không phải lực hấp dẫn.",
    "distractorNotes": {
-    "0": "Nếu lực hạt nhân không mạnh hơn lực đẩy tĩnh điện thì hạt nhân heli-4 đã bị bung ra.",
-    "1": "Lực hạt nhân không phụ thuộc điện tích, nơtron vẫn hút các nuclôn khác như prôtôn.",
-    "2": "Lực hấp dẫn quá yếu để thắng lực đẩy tĩnh điện; lực hạt nhân là loại lực riêng.",
-    "3": "Lực hạt nhân có tầm rất ngắn cỡ $10^{-15}$ m, đúng kích thước hạt nhân, nên không thể coi là sai."
+    "0": "Lực hấp dẫn quá yếu để thắng lực đẩy tĩnh điện; lực hạt nhân là loại lực riêng.",
+    "1": "Lực hạt nhân có tầm rất ngắn cỡ $10^{-15}$ m, đúng kích thước hạt nhân, nên không thể coi là sai.",
+    "2": "Nếu lực hạt nhân không mạnh hơn lực đẩy tĩnh điện thì hạt nhân heli-4 đã bị bung ra.",
+    "3": "Lực hạt nhân không phụ thuộc điện tích, nơtron vẫn hút các nuclôn khác như prôtôn."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Dùng phổ kế khối lượng đo khối lượng nguyên tử heli-4 rồi so với tổng khối lượng 2 prôtôn, 2 nơtron và 2 êlectron rời. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khối lượng nguyên tử heli-4 đo được nhỏ hơn tổng khối lượng các hạt rời đó.",
-     "answer": true
-    },
-    {
-     "text": "Vì đo khối lượng nguyên tử nên tổng hạt rời phải cộng thêm $2m_e$.",
-     "answer": true
-    },
-    {
      "text": "Phần chênh lệch khối lượng là khối lượng của các êlectron bị mất đi.",
      "answer": false
     },
     {
      "text": "Làm tròn các khối lượng về 4,00 u và 1,01 u vẫn tính đúng độ hụt khối.",
      "answer": false
+    },
+    {
+     "text": "Khối lượng nguyên tử heli-4 đo được nhỏ hơn tổng khối lượng các hạt rời đó.",
+     "answer": true
+    },
+    {
+     "text": "Vì đo khối lượng nguyên tử nên tổng hạt rời phải cộng thêm $2m_e$.",
+     "answer": true
     }
    ],
    "explanation": "Độ hụt khối là hiệu của hai số lớn gần bằng nhau, chỉ cỡ phần nghìn khối lượng, nên phải giữ số liệu tới phần triệu. Khối lượng nguyên tử đã gồm êlectron nên phần chênh lệch là độ hụt khối.",
    "distractorNotes": {
-    "0": "Khối lượng hạt nhân đo được nhỏ hơn tổng khối lượng các nuclôn riêng lẻ; chênh lệch này chính là độ hụt khối.",
-    "1": "Khối lượng nguyên tử đã gồm 2 êlectron, không cộng $2m_e$ thì hai vế không cùng tính êlectron.",
-    "2": "Khối lượng nguyên tử đã tính cả êlectron, nên chênh lệch không thể do êlectron bị mất.",
-    "3": "Độ hụt khối chỉ cỡ phần nghìn, làm tròn như vậy xoá mất toàn bộ phần chênh lệch cần tìm."
+    "0": "Khối lượng nguyên tử đã tính cả êlectron, nên chênh lệch không thể do êlectron bị mất.",
+    "1": "Độ hụt khối chỉ cỡ phần nghìn, làm tròn như vậy xoá mất toàn bộ phần chênh lệch cần tìm.",
+    "2": "Khối lượng hạt nhân đo được nhỏ hơn tổng khối lượng các nuclôn riêng lẻ; chênh lệch này chính là độ hụt khối.",
+    "3": "Khối lượng nguyên tử đã gồm 2 êlectron, không cộng $2m_e$ thì hai vế không cùng tính êlectron."
    }
   },
   {
@@ -417,10 +417,6 @@
    "question": "Xét đồ thị năng lượng liên kết riêng của các hạt nhân theo số khối A. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Năng lượng liên kết riêng đạt cực đại cỡ 8,8 MeV/nuclôn quanh sắt-56.",
-     "answer": true
-    },
-    {
      "text": "Với hạt nhân nhẹ, năng lượng liên kết riêng tăng nhanh theo A.",
      "answer": true
     },
@@ -429,15 +425,19 @@
      "answer": false
     },
     {
+     "text": "Năng lượng liên kết riêng đạt cực đại cỡ 8,8 MeV/nuclôn quanh sắt-56.",
+     "answer": true
+    },
+    {
      "text": "Hạt nhân rất nặng vỡ thành các hạt nhân trung bình thì thu năng lượng.",
      "answer": false
     }
    ],
    "explanation": "Đường cong tăng nhanh ở vùng nhẹ, đạt đỉnh quanh sắt-56 rồi giảm dần ở vùng nặng. Vì vậy hạt nhân nhẹ hợp lại hoặc hạt nhân nặng vỡ ra đều toả năng lượng.",
    "distractorNotes": {
-    "0": "Đường cong đạt đỉnh cỡ 8,8 MeV/nuclôn ở vùng quanh sắt-56, nên không thể coi là sai.",
-    "1": "Bên trái đỉnh, $E_{lkr}$ tăng rất nhanh theo $A$, như heli-4 chỉ 4 nuclôn đã đạt 7,07 MeV.",
-    "2": "Sau vùng sắt, $E_{lkr}$ giảm dần theo $A$ nên hạt nhân càng nặng càng kém bền.",
+    "0": "Bên trái đỉnh, $E_{lkr}$ tăng rất nhanh theo $A$, như heli-4 chỉ 4 nuclôn đã đạt 7,07 MeV.",
+    "1": "Sau vùng sắt, $E_{lkr}$ giảm dần theo $A$ nên hạt nhân càng nặng càng kém bền.",
+    "2": "Đường cong đạt đỉnh cỡ 8,8 MeV/nuclôn ở vùng quanh sắt-56, nên không thể coi là sai.",
     "3": "Vỡ ra làm $E_{lkr}$ tăng, tổng năng lượng liên kết tăng nên phần chênh lệch toả ra chứ không thu."
    }
   },
@@ -452,11 +452,11 @@
    "question": "Năng lượng liên kết của hạt nhân được tính theo hệ thức $E_{lk} = \\Delta m\\,c^2$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Hạt nhân có độ hụt khối gấp đôi thì năng lượng liên kết cũng gấp đôi.",
-     "answer": true
+     "text": "Năng lượng liên kết tỉ lệ với bình phương độ hụt khối.",
+     "answer": false
     },
     {
-     "text": "Nếu $\\Delta m$ tính theo u thì nhân với 931,5 ra MeV, không nhân thêm $c^2$.",
+     "text": "Hạt nhân có độ hụt khối gấp đôi thì năng lượng liên kết cũng gấp đôi.",
      "answer": true
     },
     {
@@ -464,16 +464,16 @@
      "answer": false
     },
     {
-     "text": "Năng lượng liên kết tỉ lệ với bình phương độ hụt khối.",
-     "answer": false
+     "text": "Nếu $\\Delta m$ tính theo u thì nhân với 931,5 ra MeV, không nhân thêm $c^2$.",
+     "answer": true
     }
    ],
    "explanation": "$E_{lk}$ tỉ lệ bậc nhất với $\\Delta m$. Hệ số 931,5 MeV/u đã chứa sẵn $c^2$; còn khi dùng kg và m/s thì năng lượng ra đơn vị J.",
    "distractorNotes": {
-    "0": "$E_{lk}$ tỉ lệ bậc nhất với $\\Delta m$, nên $\\Delta m$ gấp đôi thì $E_{lk}$ gấp đôi.",
-    "1": "$1\\ \\text{u} \\cdot c^2 = 931{,}5\\ \\text{MeV}$ đã gộp sẵn $c^2$; nhân thêm $c^2$ là tính hai lần.",
+    "0": "Bình phương nằm ở tốc độ ánh sáng $c$, còn $E_{lk}$ chỉ tỉ lệ bậc nhất với $\\Delta m$.",
+    "1": "$E_{lk}$ tỉ lệ bậc nhất với $\\Delta m$, nên $\\Delta m$ gấp đôi thì $E_{lk}$ gấp đôi.",
     "2": "Dùng kg và $c$ theo m/s thì tích $\\Delta m c^2$ ra đơn vị jun, không phải MeV.",
-    "3": "Bình phương nằm ở tốc độ ánh sáng $c$, còn $E_{lk}$ chỉ tỉ lệ bậc nhất với $\\Delta m$."
+    "3": "$1\\ \\text{u} \\cdot c^2 = 931{,}5\\ \\text{MeV}$ đã gộp sẵn $c^2$; nhân thêm $c^2$ là tính hai lần."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": false
     },
     {
-     "text": "Muốn so độ bền hai hạt nhân phải so năng lượng liên kết riêng.",
-     "answer": true
-    },
-    {
      "text": "Năng lượng liên kết của urani lớn chủ yếu vì nó có nhiều nuclôn hơn.",
      "answer": true
     },
     {
      "text": "Hai hạt nhân khác số khối nên không thể so sánh độ bền.",
      "answer": false
+    },
+    {
+     "text": "Muốn so độ bền hai hạt nhân phải so năng lượng liên kết riêng.",
+     "answer": true
     }
    ],
    "explanation": "Năng lượng liên kết tăng theo số nuclôn nên không dùng để so độ bền. Chia cho A thì urani có năng lượng liên kết riêng thấp hơn sắt, nên sắt bền hơn.",
    "distractorNotes": {
     "0": "So năng lượng liên kết thô là sai; chia cho $A$ thì urani có năng lượng liên kết riêng thấp hơn sắt.",
-    "1": "Năng lượng liên kết riêng đưa mọi hạt nhân về cùng thước đo một nuclôn, nên đây đúng là cách so.",
-    "2": "Năng lượng liên kết là của cả hạt nhân, tăng theo số nuclôn; urani có 235 so với 56.",
-    "3": "Năng lượng liên kết riêng so được độ bền cho mọi hạt nhân, bất kể số khối khác nhau."
+    "1": "Năng lượng liên kết là của cả hạt nhân, tăng theo số nuclôn; urani có 235 so với 56.",
+    "2": "Năng lượng liên kết riêng so được độ bền cho mọi hạt nhân, bất kể số khối khác nhau.",
+    "3": "Năng lượng liên kết riêng đưa mọi hạt nhân về cùng thước đo một nuclôn, nên đây đúng là cách so."
    }
   },
   {
@@ -522,11 +522,11 @@
    "question": "Cần tìm năng lượng liên kết riêng của hạt nhân $^{A}_{Z}X$ khi biết khối lượng hạt nhân và khối lượng các nuclôn. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Thứ tự tính là: độ hụt khối, rồi năng lượng liên kết, rồi chia cho A.",
+     "text": "Năng lượng liên kết riêng thường được tính bằng MeV/nuclôn.",
      "answer": true
     },
     {
-     "text": "Năng lượng liên kết riêng thường được tính bằng MeV/nuclôn.",
+     "text": "Thứ tự tính là: độ hụt khối, rồi năng lượng liên kết, rồi chia cho A.",
      "answer": true
     },
     {
@@ -540,8 +540,8 @@
    ],
    "explanation": "$E_{lkr} = E_{lk}/A$ với $E_{lk} = \\Delta m\\,c^2$, đơn vị MeV cho mỗi nuclôn. A ở mẫu số nên A tăng thì $E_{lkr}$ giảm.",
    "distractorNotes": {
-    "0": "$E_{lkr}$ cần $E_{lk}$, mà $E_{lk}$ lại tính từ $\\Delta m$, nên thứ tự này không thể coi là sai.",
-    "1": "$E_{lkr}$ là năng lượng tính cho một nuclôn nên đơn vị MeV/nuclôn là đúng.",
+    "0": "$E_{lkr}$ là năng lượng tính cho một nuclôn nên đơn vị MeV/nuclôn là đúng.",
+    "1": "$E_{lkr}$ cần $E_{lk}$, mà $E_{lk}$ lại tính từ $\\Delta m$, nên thứ tự này không thể coi là sai.",
     "2": "$A$ nằm ở mẫu số nên giữ nguyên $E_{lk}$ mà $A$ tăng thì $E_{lkr}$ giảm.",
     "3": "Phải chia cho tổng số nuclôn $A$; chia cho $Z$ là bỏ sót các nơtron."
    }

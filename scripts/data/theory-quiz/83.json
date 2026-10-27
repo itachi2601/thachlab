@@ -355,20 +355,20 @@
      "answer": true
     },
     {
-     "text": "Ngoài tia khúc xạ còn có một tia phản xạ mờ trở lại không khí.",
-     "answer": true
-    },
-    {
      "text": "Góc khúc xạ luôn lớn hơn góc tới vì nước đặc hơn không khí.",
      "answer": false
+    },
+    {
+     "text": "Ngoài tia khúc xạ còn có một tia phản xạ mờ trở lại không khí.",
+     "answer": true
     }
    ],
-   "explanation": "a) sai: tia vuông góc đi thẳng theo pháp tuyến, không gãy khúc. b) đúng: $\\sin r = \\dfrac{\\sin i}{n}$ nên $i$ tăng thì $r$ cũng tăng. c) đúng: khi khúc xạ, một phần ánh sáng vẫn bị hắt trở lại môi trường cũ. d) sai: vào nước có $n$ lớn hơn nên $r < i$, tia lệch lại gần pháp tuyến.",
+   "explanation": "a) sai: tia vuông góc đi thẳng theo pháp tuyến, không gãy khúc. b) đúng: $\\sin r = \\dfrac{\\sin i}{n}$ nên $i$ tăng thì $r$ cũng tăng. c) sai: vào nước có $n$ lớn hơn nên $r < i$, tia lệch lại gần pháp tuyến. d) đúng: khi khúc xạ, một phần ánh sáng vẫn bị hắt trở lại môi trường cũ.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì tia vuông góc đi thẳng theo pháp tuyến, không gãy khúc.",
     "1": "Không thể coi là sai vì $\\sin r = \\dfrac{\\sin i}{n}$ nên $i$ tăng thì $r$ cũng tăng.",
-    "2": "Không thể coi là sai vì khi khúc xạ, một phần ánh sáng vẫn bị hắt trở lại môi trường cũ.",
-    "3": "Không thể coi là đúng vì vào nước có $n$ lớn hơn nên $r < i$, tia lệch lại gần pháp tuyến."
+    "2": "Không thể coi là đúng vì vào nước có $n$ lớn hơn nên $r < i$, tia lệch lại gần pháp tuyến.",
+    "3": "Không thể coi là sai vì khi khúc xạ, một phần ánh sáng vẫn bị hắt trở lại môi trường cũ."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Một học sinh dùng công thức $n = \\dfrac{c}{v}$ để so sánh ánh sáng trong không khí, nước và thuỷ tinh. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Chiết suất được đo bằng đơn vị m/s giống tốc độ ánh sáng.",
+     "answer": false
+    },
+    {
      "text": "Môi trường nào làm ánh sáng đi càng chậm thì chiết suất càng lớn.",
+     "answer": true
+    },
+    {
+     "text": "Trong thuỷ tinh ($n \\approx 1{,}5$), ánh sáng đi chậm hơn trong không khí.",
      "answer": true
     },
     {
      "text": "Khối chất có $n = 1{,}5$ thì tốc độ ánh sáng trong đó là $v = 1{,}5\\,c$.",
      "answer": false
-    },
-    {
-     "text": "Chiết suất được đo bằng đơn vị m/s giống tốc độ ánh sáng.",
-     "answer": false
-    },
-    {
-     "text": "Trong thuỷ tinh ($n \\approx 1{,}5$), ánh sáng đi chậm hơn trong không khí.",
-     "answer": true
     }
    ],
-   "explanation": "a) đúng: $n = c/v$ nên $v$ nhỏ thì $n$ lớn. b) sai: $v = c/n = c/1{,}5$, nhỏ hơn $c$ chứ không lớn hơn. c) sai: $n$ là tỉ số hai tốc độ nên không có đơn vị. d) đúng: $n$ của thuỷ tinh lớn hơn $n$ của không khí nên $v$ trong thuỷ tinh nhỏ hơn.",
+   "explanation": "a) sai: $n$ là tỉ số hai tốc độ nên không có đơn vị. b) đúng: $n = c/v$ nên $v$ nhỏ thì $n$ lớn. c) đúng: $n$ của thuỷ tinh lớn hơn $n$ của không khí nên $v$ trong thuỷ tinh nhỏ hơn. d) sai: $v = c/n = c/1{,}5$, nhỏ hơn $c$ chứ không lớn hơn.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì $n = c/v$ nên $v$ nhỏ thì $n$ lớn.",
-    "1": "Không thể coi là đúng vì $v = c/n = c/1{,}5$, nhỏ hơn $c$ chứ không lớn hơn.",
-    "2": "Không thể coi là đúng vì $n$ là tỉ số hai tốc độ nên không có đơn vị.",
-    "3": "Không thể coi là sai vì $n$ của thuỷ tinh lớn hơn $n$ của không khí nên $v$ trong thuỷ tinh nhỏ hơn."
+    "0": "Không thể coi là đúng vì $n$ là tỉ số hai tốc độ nên không có đơn vị.",
+    "1": "Không thể coi là sai vì $n = c/v$ nên $v$ nhỏ thì $n$ lớn.",
+    "2": "Không thể coi là sai vì $n$ của thuỷ tinh lớn hơn $n$ của không khí nên $v$ trong thuỷ tinh nhỏ hơn.",
+    "3": "Không thể coi là đúng vì $v = c/n = c/1{,}5$, nhỏ hơn $c$ chứ không lớn hơn."
    }
   },
   {
@@ -417,8 +417,8 @@
    "question": "Tia sáng đi từ không khí ($n_1 = 1$) vào thuỷ tinh ($n_2 = 1{,}5$) với góc tới $i$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Góc khúc xạ $r$ nhỏ hơn góc tới $i$.",
-     "answer": true
+     "text": "Muốn tính $r$ chỉ cần lấy $i$ chia cho $1{,}5$.",
+     "answer": false
     },
     {
      "text": "Cho tia đi ngược lại từ thuỷ tinh ra không khí theo đúng đường cũ thì góc tới mới bằng góc khúc xạ cũ.",
@@ -429,16 +429,16 @@
      "answer": false
     },
     {
-     "text": "Muốn tính $r$ chỉ cần lấy $i$ chia cho $1{,}5$.",
-     "answer": false
+     "text": "Góc khúc xạ $r$ nhỏ hơn góc tới $i$.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng: vào môi trường chiết quang hơn ($n_2 > n_1$) thì $r < i$. b) đúng: ánh sáng truyền ngược theo đường cũ nên $i$ và $r$ đổi vai. c) sai: vào môi trường chiết quang hơn thì tia lệch lại gần pháp tuyến. d) sai: định luật chia $\\sin i$ cho $n$ chứ không chia chính góc.",
+   "explanation": "a) sai: định luật chia $\\sin i$ cho $n$ chứ không chia chính góc. b) đúng: ánh sáng truyền ngược theo đường cũ nên $i$ và $r$ đổi vai. c) sai: vào môi trường chiết quang hơn thì tia lệch lại gần pháp tuyến. d) đúng: vào môi trường chiết quang hơn ($n_2 > n_1$) thì $r < i$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì vào môi trường chiết quang hơn ($n_2 > n_1$) thì $r < i$.",
+    "0": "Không thể coi là đúng vì định luật chia $\\sin i$ cho $n$ chứ không chia chính góc.",
     "1": "Không thể coi là sai vì ánh sáng truyền ngược theo đường cũ nên $i$ và $r$ đổi vai.",
     "2": "Không thể coi là đúng vì vào môi trường chiết quang hơn thì tia lệch lại gần pháp tuyến.",
-    "3": "Không thể coi là đúng vì định luật chia $\\sin i$ cho $n$ chứ không chia chính góc."
+    "3": "Không thể coi là sai vì vào môi trường chiết quang hơn ($n_2 > n_1$) thì $r < i$."
    }
   },
   {
@@ -452,12 +452,12 @@
    "question": "Đứng ngoài hồ bơi nhìn xuống đáy hồ trong. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Các tia sáng từ đáy ra không khí lệch lại gần pháp tuyến hơn.",
-     "answer": false
-    },
-    {
      "text": "Mắt nhìn thấy ảnh ảo của đáy hồ chứ không thấy chính đáy hồ.",
      "answer": true
+    },
+    {
+     "text": "Các tia sáng từ đáy ra không khí lệch lại gần pháp tuyến hơn.",
+     "answer": false
     },
     {
      "text": "Độ sâu mắt thấy luôn bằng độ sâu thật của hồ.",
@@ -468,10 +468,10 @@
      "answer": true
     }
    ],
-   "explanation": "a) sai: từ nước ra không khí các tia lệch xa pháp tuyến. b) đúng: giữa mắt và đáy hồ có mặt phân cách nước – không khí nên mắt thấy ảnh. c) sai: vì nhìn thấy ảnh nổi lên nên độ sâu thật lớn hơn độ sâu trông thấy. d) đúng: ảnh của đáy nổi lên cao hơn vị trí thật.",
+   "explanation": "a) đúng: giữa mắt và đáy hồ có mặt phân cách nước – không khí nên mắt thấy ảnh. b) sai: từ nước ra không khí các tia lệch xa pháp tuyến. c) sai: vì nhìn thấy ảnh nổi lên nên độ sâu thật lớn hơn độ sâu trông thấy. d) đúng: ảnh của đáy nổi lên cao hơn vị trí thật.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì từ nước ra không khí các tia lệch xa pháp tuyến.",
-    "1": "Không thể coi là sai vì giữa mắt và đáy hồ có mặt phân cách nước – không khí nên mắt thấy ảnh.",
+    "0": "Không thể coi là sai vì giữa mắt và đáy hồ có mặt phân cách nước – không khí nên mắt thấy ảnh.",
+    "1": "Không thể coi là đúng vì từ nước ra không khí các tia lệch xa pháp tuyến.",
     "2": "Không thể coi là đúng vì vì nhìn thấy ảnh nổi lên nên độ sâu thật lớn hơn độ sâu trông thấy.",
     "3": "Không thể coi là sai vì ảnh của đáy nổi lên cao hơn vị trí thật."
    }
@@ -487,28 +487,28 @@
    "question": "Một tia sáng từ không khí chiếu tới mặt nước, hợp với mặt nước một góc $20^\\circ$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Góc tới bằng $20^\\circ$ vì đó là góc hợp với mặt phân cách.",
-     "answer": false
-    },
-    {
      "text": "Tia chiếu rất sát mặt nước nên không có tia khúc xạ.",
      "answer": false
     },
     {
-     "text": "Góc tới bằng $70^\\circ$.",
-     "answer": true
+     "text": "Góc tới bằng $20^\\circ$ vì đó là góc hợp với mặt phân cách.",
+     "answer": false
     },
     {
      "text": "Góc khúc xạ được đo giữa tia khúc xạ và pháp tuyến.",
      "answer": true
+    },
+    {
+     "text": "Góc tới bằng $70^\\circ$.",
+     "answer": true
     }
    ],
-   "explanation": "a) sai: góc hợp với mặt phân cách chưa phải góc tới; góc tới đo từ pháp tuyến. b) sai: đi từ không khí vào nước luôn có tia khúc xạ, dù tia tới rất xiên. c) đúng: góc tới đo từ pháp tuyến nên $i = 90^\\circ - 20^\\circ$. d) đúng: cả góc tới và góc khúc xạ đều đo từ pháp tuyến.",
+   "explanation": "a) sai: đi từ không khí vào nước luôn có tia khúc xạ, dù tia tới rất xiên. b) sai: góc hợp với mặt phân cách chưa phải góc tới; góc tới đo từ pháp tuyến. c) đúng: cả góc tới và góc khúc xạ đều đo từ pháp tuyến. d) đúng: góc tới đo từ pháp tuyến nên $i = 90^\\circ - 20^\\circ$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì góc hợp với mặt phân cách chưa phải góc tới; góc tới đo từ pháp tuyến.",
-    "1": "Không thể coi là đúng vì đi từ không khí vào nước luôn có tia khúc xạ, dù tia tới rất xiên.",
-    "2": "Không thể coi là sai vì góc tới đo từ pháp tuyến nên $i = 90^\\circ - 20^\\circ$.",
-    "3": "Không thể coi là sai vì cả góc tới và góc khúc xạ đều đo từ pháp tuyến."
+    "0": "Không thể coi là đúng vì đi từ không khí vào nước luôn có tia khúc xạ, dù tia tới rất xiên.",
+    "1": "Không thể coi là đúng vì góc hợp với mặt phân cách chưa phải góc tới; góc tới đo từ pháp tuyến.",
+    "2": "Không thể coi là sai vì cả góc tới và góc khúc xạ đều đo từ pháp tuyến.",
+    "3": "Không thể coi là sai vì góc tới đo từ pháp tuyến nên $i = 90^\\circ - 20^\\circ$."
    }
   },
   {
@@ -526,24 +526,24 @@
      "answer": true
     },
     {
+     "text": "Mắt vẫn thấy đồng xu theo đường thẳng xuyên qua thành bát.",
+     "answer": false
+    },
+    {
      "text": "Nước làm đồng xu nổi lên cao thật sự trong bát.",
      "answer": false
     },
     {
      "text": "Mắt thấy ảnh của đồng xu nằm cao hơn chỗ thật.",
      "answer": true
-    },
-    {
-     "text": "Mắt vẫn thấy đồng xu theo đường thẳng xuyên qua thành bát.",
-     "answer": false
     }
    ],
-   "explanation": "a) đúng: tia đi từ nước ra không khí qua mặt phân cách nên khúc xạ. b) sai: đồng xu vẫn nằm yên dưới đáy; chỉ có ảnh của nó nổi lên. c) đúng: tia khúc xạ kéo dài ngược gặp nhau ở điểm cao hơn vật. d) sai: thành bát che khuất đường thẳng; ánh sáng phải khúc xạ qua mặt nước và đi vòng qua mép bát.",
+   "explanation": "a) đúng: tia đi từ nước ra không khí qua mặt phân cách nên khúc xạ. b) sai: thành bát che khuất đường thẳng; ánh sáng phải khúc xạ qua mặt nước và đi vòng qua mép bát. c) sai: đồng xu vẫn nằm yên dưới đáy; chỉ có ảnh của nó nổi lên. d) đúng: tia khúc xạ kéo dài ngược gặp nhau ở điểm cao hơn vật.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì tia đi từ nước ra không khí qua mặt phân cách nên khúc xạ.",
-    "1": "Không thể coi là đúng vì đồng xu vẫn nằm yên dưới đáy; chỉ có ảnh của nó nổi lên.",
-    "2": "Không thể coi là sai vì tia khúc xạ kéo dài ngược gặp nhau ở điểm cao hơn vật.",
-    "3": "Không thể coi là đúng vì thành bát che khuất đường thẳng; ánh sáng phải khúc xạ qua mặt nước và đi vòng qua mép bát."
+    "1": "Không thể coi là đúng vì thành bát che khuất đường thẳng; ánh sáng phải khúc xạ qua mặt nước và đi vòng qua mép bát.",
+    "2": "Không thể coi là đúng vì đồng xu vẫn nằm yên dưới đáy; chỉ có ảnh của nó nổi lên.",
+    "3": "Không thể coi là sai vì tia khúc xạ kéo dài ngược gặp nhau ở điểm cao hơn vật."
    }
   }
  ]

@@ -382,12 +382,12 @@
       "question": "Đồ thị $x$–$t$: xe A đi từ gốc O, lúc $2$ giờ tới $80\\ \\text{km}$, nghỉ một giờ rồi đi tiếp. Xe B từ $160\\ \\text{km}$ chạy về O, lúc $2$ giờ cũng ở $80\\ \\text{km}$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Xe B có vận tốc dương vì tốc độ luôn là số dương.",
-          "answer": false
-        },
-        {
           "text": "Giao điểm hai đường lúc $2$ giờ cho biết hai xe gặp nhau tại vị trí $80\\ \\text{km}$.",
           "answer": true
+        },
+        {
+          "text": "Xe B có vận tốc dương vì tốc độ luôn là số dương.",
+          "answer": false
         },
         {
           "text": "Trong khi nghỉ, xe A ứng với đoạn nằm ngang trên đồ thị.",
@@ -398,10 +398,10 @@
           "answer": false
         }
       ],
-      "explanation": "a) sai: xe B có $v<0$. b) đúng. c) đúng. d) sai: nằm ngang là đứng yên.",
+      "explanation": "a) đúng. b) sai: xe B có $v<0$. c) đúng. d) sai: nằm ngang là đứng yên.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì xe B đi về gốc, ngược chiều dương nên vận tốc âm; chỉ tốc độ mới luôn dương.",
-        "1": "Không thể coi là sai vì cùng toạ độ $80\\ \\text{km}$ tại cùng thời điểm $2$ giờ.",
+        "0": "Không thể coi là sai vì cùng toạ độ $80\\ \\text{km}$ tại cùng thời điểm $2$ giờ.",
+        "1": "Không thể coi là đúng vì xe B đi về gốc, ngược chiều dương nên vận tốc âm; chỉ tốc độ mới luôn dương.",
         "2": "Không thể coi là sai vì đứng yên thì $x$ không đổi theo $t$, tức đoạn nằm ngang.",
         "3": "Không thể coi là đúng vì đoạn nằm ngang có $\\Delta x=0$, nghĩa là xe đứng yên."
       }
@@ -417,27 +417,27 @@
       "question": "Canô chạy ngược dòng làm rơi một chiếc phao, sau đó quay lại (vận tốc so với nước không đổi) và vớt được phao. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Canô rời phao bao lâu thì quay lại đuổi kịp phao bấy lâu.",
-          "answer": true
+          "text": "Để tính vận tốc dòng nước bắt buộc phải biết vận tốc canô so với nước.",
+          "answer": false
         },
         {
           "text": "Thời gian quay lại ngắn hơn thời gian đi vì canô xuôi dòng.",
           "answer": false
         },
         {
-          "text": "Để tính vận tốc dòng nước bắt buộc phải biết vận tốc canô so với nước.",
-          "answer": false
+          "text": "Canô rời phao bao lâu thì quay lại đuổi kịp phao bấy lâu.",
+          "answer": true
         },
         {
           "text": "Trong hệ quy chiếu gắn với nước, chiếc phao đứng yên.",
           "answer": true
         }
       ],
-      "explanation": "a) đúng. b) sai: hai thời gian bằng nhau. c) sai: chỉ cần quãng đường và thời gian phao trôi. d) đúng.",
+      "explanation": "a) sai: chỉ cần quãng đường và thời gian phao trôi. b) sai: hai thời gian bằng nhau. c) đúng. d) đúng.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì so với nước canô đi ra rồi về với cùng tốc độ trên cùng quãng đường.",
+        "0": "Không thể coi là đúng vì $v_n$ bằng quãng đường phao trôi chia tổng thời gian, không cần vận tốc canô.",
         "1": "Không thể coi là đúng vì khi lấy nước làm mốc, dòng nước bị loại bỏ nên hai thời gian bằng nhau.",
-        "2": "Không thể coi là đúng vì $v_n$ bằng quãng đường phao trôi chia tổng thời gian, không cần vận tốc canô.",
+        "2": "Không thể coi là sai vì so với nước canô đi ra rồi về với cùng tốc độ trên cùng quãng đường.",
         "3": "Không thể coi là sai vì phao trôi đúng bằng vận tốc dòng nước."
       }
     },
@@ -452,28 +452,28 @@
       "question": "A và B cách nhau $120\\ \\text{km}$; chọn gốc O tại A, chiều dương từ A đến B. Lúc $7$ giờ, ô tô từ A đi về B với $50\\ \\text{km/h}$, cùng lúc xe máy từ B đi về A với $30\\ \\text{km/h}$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Hai xe gặp nhau lúc $8$ giờ.",
-          "answer": false
-        },
-        {
-          "text": "Phương trình toạ độ của ô tô là $x_1=50t$.",
-          "answer": true
-        },
-        {
           "text": "Khoảng cách giữa hai xe giảm $20\\ \\text{km}$ mỗi giờ.",
           "answer": false
         },
         {
           "text": "Phương trình toạ độ của xe máy là $x_2=120-30t$.",
           "answer": true
+        },
+        {
+          "text": "Hai xe gặp nhau lúc $8$ giờ.",
+          "answer": false
+        },
+        {
+          "text": "Phương trình toạ độ của ô tô là $x_1=50t$.",
+          "answer": true
         }
       ],
-      "explanation": "a) sai: $t=1{,}5\\ \\text{h}$. b) đúng. c) sai: giảm $80\\ \\text{km/h}$. d) đúng.",
+      "explanation": "a) sai: giảm $80\\ \\text{km/h}$. b) đúng. c) sai: $t=1{,}5\\ \\text{h}$. d) đúng.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì $50t=120-30t$ cho $t=1{,}5\\ \\text{h}$, tức $8$ giờ $30$ phút.",
-        "1": "Không thể coi là sai vì ô tô xuất phát từ gốc và đi theo chiều dương.",
-        "2": "Không thể coi là đúng vì hai xe đi ngược chiều tiến lại nên khoảng cách giảm $50+30=80\\ \\text{km}$ mỗi giờ.",
-        "3": "Không thể coi là sai vì xe máy xuất phát từ $x=120$ và đi ngược chiều dương nên $v=-30$."
+        "0": "Không thể coi là đúng vì hai xe đi ngược chiều tiến lại nên khoảng cách giảm $50+30=80\\ \\text{km}$ mỗi giờ.",
+        "1": "Không thể coi là sai vì xe máy xuất phát từ $x=120$ và đi ngược chiều dương nên $v=-30$.",
+        "2": "Không thể coi là đúng vì $50t=120-30t$ cho $t=1{,}5\\ \\text{h}$, tức $8$ giờ $30$ phút.",
+        "3": "Không thể coi là sai vì ô tô xuất phát từ gốc và đi theo chiều dương."
       }
     },
     {
@@ -487,28 +487,28 @@
       "question": "Tàu dài $200\\ \\text{m}$ chạy $72\\ \\text{km/h}$ qua cây cầu dài $400\\ \\text{m}$. Xét các phát biểu sau:",
       "statements": [
         {
-          "text": "Thời gian tàu qua cầu là $20\\ \\text{s}$.",
-          "answer": false
+          "text": "Vận tốc của tàu là $20\\ \\text{m/s}$.",
+          "answer": true
         },
         {
           "text": "Tàu đó đi qua một cột đèn bên đường mất $30\\ \\text{s}$.",
           "answer": false
         },
         {
-          "text": "Vận tốc của tàu là $20\\ \\text{m/s}$.",
+          "text": "Từ lúc mũi tàu lên cầu đến lúc đuôi tàu rời cầu, mũi tàu đi được $600\\ \\text{m}$.",
           "answer": true
         },
         {
-          "text": "Từ lúc mũi tàu lên cầu đến lúc đuôi tàu rời cầu, mũi tàu đi được $600\\ \\text{m}$.",
-          "answer": true
+          "text": "Thời gian tàu qua cầu là $20\\ \\text{s}$.",
+          "answer": false
         }
       ],
-      "explanation": "a) sai: $t=600/20=30\\ \\text{s}$. b) sai: qua cột đèn mất $10\\ \\text{s}$. c) đúng. d) đúng.",
+      "explanation": "a) đúng. b) sai: qua cột đèn mất $10\\ \\text{s}$. c) đúng. d) sai: $t=600/20=30\\ \\text{s}$.",
       "distractorNotes": {
-        "0": "Không thể coi là đúng vì $20\\ \\text{s}$ chỉ ứng với chiều dài cầu ($400/20$), bỏ sót chiều dài tàu; đúng là $30\\ \\text{s}$.",
+        "0": "Không thể coi là sai vì $72/3{,}6=20\\ \\text{m/s}$.",
         "1": "Không thể coi là đúng vì qua cột đèn chỉ đi quãng bằng chiều dài tàu: $200/20=10\\ \\text{s}$.",
-        "2": "Không thể coi là sai vì $72/3{,}6=20\\ \\text{m/s}$.",
-        "3": "Không thể coi là sai vì quãng đường là chiều dài tàu cộng chiều dài cầu: $200+400$."
+        "2": "Không thể coi là sai vì quãng đường là chiều dài tàu cộng chiều dài cầu: $200+400$.",
+        "3": "Không thể coi là đúng vì $20\\ \\text{s}$ chỉ ứng với chiều dài cầu ($400/20$), bỏ sót chiều dài tàu; đúng là $30\\ \\text{s}$."
       }
     },
     {
@@ -522,6 +522,10 @@
       "question": "Kim phút quay $1$ vòng mỗi giờ, kim giờ quay $\\tfrac1{12}$ vòng mỗi giờ. Xét các phát biểu sau:",
       "statements": [
         {
+          "text": "Hai lần trùng nhau liên tiếp của hai kim cách nhau đúng $1$ giờ.",
+          "answer": false
+        },
+        {
           "text": "Từ $12$ giờ, hai kim vuông góc lần đầu sau $\\tfrac3{11}$ giờ.",
           "answer": true
         },
@@ -532,18 +536,14 @@
         {
           "text": "Kim phút quay nhanh hơn kim giờ $\\tfrac{11}{12}$ vòng mỗi giờ.",
           "answer": true
-        },
-        {
-          "text": "Hai lần trùng nhau liên tiếp của hai kim cách nhau đúng $1$ giờ.",
-          "answer": false
         }
       ],
-      "explanation": "a) đúng. b) sai: $\\tfrac6{11}\\ \\text{h}$. c) đúng. d) sai: $\\tfrac{12}{11}\\ \\text{h}$.",
+      "explanation": "a) sai: $\\tfrac{12}{11}\\ \\text{h}$. b) đúng. c) sai: $\\tfrac6{11}\\ \\text{h}$. d) đúng.",
       "distractorNotes": {
-        "0": "Không thể coi là sai vì kim phút vượt kim giờ $\\tfrac14$ vòng nên $t=\\dfrac{1/4}{11/12}=\\tfrac3{11}\\ \\text{h}$.",
-        "1": "Không thể coi là đúng vì kim giờ cũng đang quay, nên cần $\\dfrac{1/2}{11/12}=\\tfrac6{11}\\ \\text{h}$ chứ không phải $\\tfrac12$ giờ.",
-        "2": "Không thể coi là sai vì tốc độ tương đối là $1-\\tfrac1{12}=\\tfrac{11}{12}$ vòng/giờ.",
-        "3": "Không thể coi là đúng vì kim phút phải đuổi thêm một vòng so với kim giờ: $\\tfrac{12}{11}\\ \\text{h}$."
+        "0": "Không thể coi là đúng vì kim phút phải đuổi thêm một vòng so với kim giờ: $\\tfrac{12}{11}\\ \\text{h}$.",
+        "1": "Không thể coi là sai vì kim phút vượt kim giờ $\\tfrac14$ vòng nên $t=\\dfrac{1/4}{11/12}=\\tfrac3{11}\\ \\text{h}$.",
+        "2": "Không thể coi là đúng vì kim giờ cũng đang quay, nên cần $\\dfrac{1/2}{11/12}=\\tfrac6{11}\\ \\text{h}$ chứ không phải $\\tfrac12$ giờ.",
+        "3": "Không thể coi là sai vì tốc độ tương đối là $1-\\tfrac1{12}=\\tfrac{11}{12}$ vòng/giờ."
       }
     }
   ]

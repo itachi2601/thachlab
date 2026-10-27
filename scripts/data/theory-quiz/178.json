@@ -332,8 +332,8 @@
    "question": "Một học sinh đặt bóng đèn ở góc phòng tối, cầm quả bóng trước mặt và xoay người một vòng để mô phỏng các pha Mặt Trăng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Các pha là do bóng đổ của người cầm che dần quả bóng.",
-     "answer": false
+     "text": "Khi xoay người, em thấy quả bóng lần lượt có các pha khác nhau.",
+     "answer": true
     },
     {
      "text": "Quả bóng luôn có một nửa được đèn chiếu sáng.",
@@ -344,16 +344,16 @@
      "answer": false
     },
     {
-     "text": "Khi xoay người, em thấy quả bóng lần lượt có các pha khác nhau.",
-     "answer": true
+     "text": "Các pha là do bóng đổ của người cầm che dần quả bóng.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai vì pha chỉ do góc nhìn, không do bóng che. b) đúng vì đèn luôn chiếu sáng đúng một nửa quả bóng. c) sai vì lưỡi liềm ứng với nửa sáng quay đi. d) đúng vì phần sáng nhìn thấy thay đổi khi xoay người.",
+   "explanation": "a) đúng vì phần sáng nhìn thấy thay đổi khi xoay người. b) đúng vì đèn luôn chiếu sáng đúng một nửa quả bóng. c) sai vì lưỡi liềm ứng với nửa sáng quay đi. d) sai vì pha chỉ do góc nhìn, không do bóng che.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì pha chỉ do góc nhìn đối với nửa sáng, không cần vật nào che.",
+    "0": "Không thể coi là sai vì phần sáng nhìn thấy thay đổi theo vị trí quan sát, tạo ra các pha.",
     "1": "Không thể coi là sai vì đèn luôn chiếu sáng đúng một nửa bề mặt quả bóng, giống Mặt Trăng với Mặt Trời.",
     "2": "Không thể coi là đúng vì nửa sáng quay hẳn về phía mình thì thấy tròn đầy; lưỡi liềm là khi nửa sáng gần như quay đi.",
-    "3": "Không thể coi là sai vì phần sáng nhìn thấy thay đổi theo vị trí quan sát, tạo ra các pha."
+    "3": "Không thể coi là đúng vì pha chỉ do góc nhìn đối với nửa sáng, không cần vật nào che."
    },
    "theorySection": 1
   },
@@ -367,11 +367,7 @@
    "question": "Cùng một đêm trăng tròn có nguyệt thực toàn phần, và vào một ngày trăng non khác có nhật thực toàn phần. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Nguyệt thực chỉ xảy ra vào đêm trăng tròn.",
-     "answer": true
-    },
-    {
-     "text": "Nhật thực toàn phần thấy được trên cả nửa Trái Đất đang ban ngày.",
+     "text": "Đeo kính râm thường thì có thể nhìn thẳng Mặt Trời lúc nhật thực.",
      "answer": false
     },
     {
@@ -379,16 +375,20 @@
      "answer": true
     },
     {
-     "text": "Đeo kính râm thường thì có thể nhìn thẳng Mặt Trời lúc nhật thực.",
+     "text": "Nhật thực toàn phần thấy được trên cả nửa Trái Đất đang ban ngày.",
      "answer": false
+    },
+    {
+     "text": "Nguyệt thực chỉ xảy ra vào đêm trăng tròn.",
+     "answer": true
     }
    ],
-   "explanation": "a) đúng. b) sai vì vùng tối của Mặt Trăng trên mặt đất rất hẹp. c) đúng vì Mặt Trăng thật sự mất ánh sáng. d) sai: phải dùng kính lọc chuẩn hoặc chiếu ảnh.",
+   "explanation": "a) sai: phải dùng kính lọc chuẩn hoặc chiếu ảnh. b) đúng vì Mặt Trăng thật sự mất ánh sáng. c) sai vì vùng tối của Mặt Trăng trên mặt đất rất hẹp. d) đúng.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì Trái Đất nằm giữa Mặt Trời và Mặt Trăng chỉ khi Mặt Trăng ở phía đối diện Mặt Trời.",
-    "1": "Không thể coi là đúng vì vùng tối của Mặt Trăng trên mặt đất rất hẹp nên chỉ một dải nhỏ thấy toàn phần.",
-    "2": "Không thể coi là sai vì Mặt Trăng thật sự mất ánh sáng nên ai thấy Mặt Trăng cũng thấy nó tối.",
-    "3": "Không thể coi là đúng vì kính râm thường không đủ lọc; cần kính lọc chuẩn hoặc chiếu ảnh qua lỗ nhỏ."
+    "0": "Không thể coi là đúng vì kính râm thường không đủ lọc; cần kính lọc chuẩn hoặc chiếu ảnh qua lỗ nhỏ.",
+    "1": "Không thể coi là sai vì Mặt Trăng thật sự mất ánh sáng nên ai thấy Mặt Trăng cũng thấy nó tối.",
+    "2": "Không thể coi là đúng vì vùng tối của Mặt Trăng trên mặt đất rất hẹp nên chỉ một dải nhỏ thấy toàn phần.",
+    "3": "Không thể coi là sai vì Trái Đất nằm giữa Mặt Trời và Mặt Trăng chỉ khi Mặt Trăng ở phía đối diện Mặt Trời."
    },
    "theorySection": 2
   },
@@ -406,24 +406,24 @@
      "answer": false
     },
     {
+     "text": "Vì cùng múi giờ nên Mặt Trời lên cao nhất cùng lúc ở hai nơi.",
+     "answer": false
+    },
+    {
      "text": "Hai nơi lệch nhau $0{,}9^\\circ$ kinh độ.",
      "answer": true
     },
     {
      "text": "Mỗi độ kinh độ ứng với $4$ phút chênh lệch giờ Mặt Trời.",
      "answer": true
-    },
-    {
-     "text": "Vì cùng múi giờ nên Mặt Trời lên cao nhất cùng lúc ở hai nơi.",
-     "answer": false
     }
    ],
-   "explanation": "a) sai vì phía Đông sớm hơn. b) và c) đúng, chênh $0{,}9\\cdot4=3{,}6$ phút. d) sai vì múi giờ khác giờ Mặt Trời.",
+   "explanation": "a) sai vì phía Đông sớm hơn. b) sai vì múi giờ khác giờ Mặt Trời. c) và d) đúng, chênh $0{,}9\\cdot4=3{,}6$ phút.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì TP.HCM ở phía Đông nên Mặt Trời tới trước, giữa trưa thật đến sớm hơn.",
-    "1": "Không thể coi là sai vì $106{,}7-105{,}8=0{,}9^\\circ$.",
-    "2": "Không thể coi là sai vì $360^\\circ$ ứng $24$ giờ nên $1^\\circ$ ứng $4$ phút.",
-    "3": "Không thể coi là đúng vì cùng múi giờ chỉ là đồng hồ giống nhau, giờ Mặt Trời vẫn lệch theo kinh độ."
+    "1": "Không thể coi là đúng vì cùng múi giờ chỉ là đồng hồ giống nhau, giờ Mặt Trời vẫn lệch theo kinh độ.",
+    "2": "Không thể coi là sai vì $106{,}7-105{,}8=0{,}9^\\circ$.",
+    "3": "Không thể coi là sai vì $360^\\circ$ ứng $24$ giờ nên $1^\\circ$ ứng $4$ phút."
    },
    "theorySection": 3
   },
@@ -480,20 +480,20 @@
      "answer": false
     },
     {
-     "text": "Từ $1$ AU chia cho $c$ được khoảng $500$ s, tức khoảng $8{,}3$ phút.",
+     "text": "Ánh sáng Mặt Trời tới Hải Vương Tinh (khoảng $30$ AU) mất khoảng $4{,}2$ giờ.",
      "answer": true
     },
     {
-     "text": "Ánh sáng Mặt Trời tới Hải Vương Tinh (khoảng $30$ AU) mất khoảng $4{,}2$ giờ.",
+     "text": "Từ $1$ AU chia cho $c$ được khoảng $500$ s, tức khoảng $8{,}3$ phút.",
      "answer": true
     }
    ],
-   "explanation": "a) sai vì đây là đơn vị độ dài. b) sai vì chu kì dài hơn. c) và d) đúng khi nhân tỉ lệ khoảng cách.",
+   "explanation": "a) sai vì đây là đơn vị độ dài. b) sai vì chu kì dài hơn. c) đúng khi nhân tỉ lệ khoảng cách. d) và",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì năm ánh sáng là quãng đường ánh sáng đi trong một năm, nên là đơn vị khoảng cách.",
     "1": "Không thể coi là đúng vì càng xa Mặt Trời, chuyển động càng chậm và quỹ đạo càng dài nên chu kì càng dài.",
-    "2": "Không thể coi là sai vì $\\dfrac{1{,}5\\cdot10^8}{3\\cdot10^5}=500$ s.",
-    "3": "Không thể coi là sai vì $30\\cdot8{,}3=250$ phút $\\approx4{,}2$ giờ."
+    "2": "Không thể coi là sai vì $30\\cdot8{,}3=250$ phút $\\approx4{,}2$ giờ.",
+    "3": "Không thể coi là sai vì $\\dfrac{1{,}5\\cdot10^8}{3\\cdot10^5}=500$ s."
    },
    "theorySection": 5
   }

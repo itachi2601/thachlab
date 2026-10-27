@@ -351,24 +351,24 @@
      "answer": false
     },
     {
-     "text": "Dây B cản trở dòng điện nhiều hơn dây A.",
-     "answer": true
-    },
-    {
      "text": "Điện trở của dây A là $10\\ \\Omega$.",
      "answer": true
     },
     {
      "text": "Hai dây có điện trở bằng nhau vì vôn kế đều chỉ $3{,}0\\ \\text{V}$.",
      "answer": false
+    },
+    {
+     "text": "Dây B cản trở dòng điện nhiều hơn dây A.",
+     "answer": true
     }
    ],
-   "explanation": "a) sai: dòng nhỏ thì $R$ lớn. b) đúng: cùng $U$, dòng nhỏ hơn thì cản nhiều hơn. c) đúng: $R=3:0{,}30=10\\ \\Omega$. d) sai: $I$ khác nhau nên $R$ khác nhau.",
+   "explanation": "a) sai: dòng nhỏ thì $R$ lớn. b) đúng: $R=3:0{,}30=10\\ \\Omega$. c) sai: $I$ khác nhau nên $R$ khác nhau. d) đúng: cùng $U$, dòng nhỏ hơn thì cản nhiều hơn.",
    "distractorNotes": {
     "0": "Không thể coi là đúng vì dòng nhỏ ở cùng $U$ nghĩa là $R=\\dfrac{U}{I}$ lớn hơn.",
-    "1": "Không thể coi là sai vì cùng hiệu điện thế mà dòng qua dây B nhỏ hơn.",
-    "2": "Không thể coi là sai vì $R=\\dfrac{3}{0{,}30}=10\\ \\Omega$.",
-    "3": "Không thể coi là đúng vì điện trở tính bằng $\\dfrac{U}{I}$ nên phải xét cả hai số đo."
+    "1": "Không thể coi là sai vì $R=\\dfrac{3}{0{,}30}=10\\ \\Omega$.",
+    "2": "Không thể coi là đúng vì điện trở tính bằng $\\dfrac{U}{I}$ nên phải xét cả hai số đo.",
+    "3": "Không thể coi là sai vì cùng hiệu điện thế mà dòng qua dây B nhỏ hơn."
    }
   },
   {
@@ -382,6 +382,10 @@
    "question": "Một bạn lắp mạch đo cường độ dòng điện và hiệu điện thế cho một điện trở $R$. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Ampe kế được mắc nối tiếp với điện trở cần đo.",
+     "answer": true
+    },
+    {
      "text": "Vôn kế được mắc song song với điện trở cần đo.",
      "answer": true
     },
@@ -392,18 +396,14 @@
     {
      "text": "Chốt (+) của hai dụng cụ đo nối về phía cực (−) của nguồn.",
      "answer": false
-    },
-    {
-     "text": "Ampe kế được mắc nối tiếp với điện trở cần đo.",
-     "answer": true
     }
    ],
-   "explanation": "a) đúng: vôn kế song song. b) sai: vôn kế nối tiếp làm mạch gần như hở, đèn tắt. c) sai: chốt (+) nối về cực (+) của nguồn. d) đúng: ampe kế nối tiếp.",
+   "explanation": "a) đúng: ampe kế nối tiếp. b) đúng: vôn kế song song. c) sai: vôn kế nối tiếp làm mạch gần như hở, đèn tắt. d) sai: chốt (+) nối về cực (+) của nguồn.",
    "distractorNotes": {
-    "0": "Không thể coi là sai vì vôn kế đo hiệu điện thế giữa hai đầu vật nên phải song song với vật.",
-    "1": "Không thể coi là đúng vì vôn kế có điện trở rất lớn nên mạch gần như hở và đèn gần như không sáng.",
-    "2": "Không thể coi là đúng vì chốt (+) phải nối về phía cực (+) của nguồn.",
-    "3": "Không thể coi là sai vì ampe kế đo dòng qua vật nên phải nằm trên cùng đường đi với vật."
+    "0": "Không thể coi là sai vì ampe kế đo dòng qua vật nên phải nằm trên cùng đường đi với vật.",
+    "1": "Không thể coi là sai vì vôn kế đo hiệu điện thế giữa hai đầu vật nên phải song song với vật.",
+    "2": "Không thể coi là đúng vì vôn kế có điện trở rất lớn nên mạch gần như hở và đèn gần như không sáng.",
+    "3": "Không thể coi là đúng vì chốt (+) phải nối về phía cực (+) của nguồn."
    }
   },
   {
@@ -421,24 +421,24 @@
      "answer": true
     },
     {
-     "text": "Điện trở của dây tăng gấp đôi khi hiệu điện thế tăng gấp đôi.",
-     "answer": false
+     "text": "Lần đo thứ nhất lệch nhiều nhất chủ yếu vì dòng nhỏ nên sai lệch khi đọc kim chiếm tỉ lệ lớn.",
+     "answer": true
     },
     {
      "text": "Kết quả cho thấy cường độ dòng điện tỉ lệ nghịch với hiệu điện thế.",
      "answer": false
     },
     {
-     "text": "Lần đo thứ nhất lệch nhiều nhất chủ yếu vì dòng nhỏ nên sai lệch khi đọc kim chiếm tỉ lệ lớn.",
-     "answer": true
+     "text": "Điện trở của dây tăng gấp đôi khi hiệu điện thế tăng gấp đôi.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng: $I$ tỉ lệ thuận với $U$. b) sai: $R$ giữ nguyên. c) sai: $I$ tỉ lệ nghịch với $R$, không với $U$. d) đúng: sai số đọc kim lớn hơn khi dòng nhỏ.",
+   "explanation": "a) đúng: $I$ tỉ lệ thuận với $U$. b) đúng: sai số đọc kim lớn hơn khi dòng nhỏ. c) sai: $I$ tỉ lệ nghịch với $R$, không với $U$. d) sai: $R$ giữ nguyên.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì $U$ gấp 2, 3, 4 lần thì $I$ cũng gấp gần chừng ấy lần.",
-    "1": "Không thể coi là đúng vì thương $\\dfrac{U}{I}$ vẫn quanh $20\\ \\Omega$, nên $R$ không đổi.",
+    "1": "Không thể coi là sai vì cùng một sai lệch khi đọc kim, dòng nhỏ $0{,}08\\ \\text{A}$ bị lệch theo tỉ lệ lớn hơn dòng $0{,}30\\ \\text{A}$.",
     "2": "Không thể coi là đúng vì $I$ tăng khi $U$ tăng, tức tỉ lệ thuận; tỉ lệ nghịch là với $R$.",
-    "3": "Không thể coi là sai vì cùng một sai lệch khi đọc kim, dòng nhỏ $0{,}08\\ \\text{A}$ bị lệch theo tỉ lệ lớn hơn dòng $0{,}30\\ \\text{A}$."
+    "3": "Không thể coi là đúng vì thương $\\dfrac{U}{I}$ vẫn quanh $20\\ \\Omega$, nên $R$ không đổi."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Lần lượt mắc bốn dây vào cùng một nguồn. Dây (1): constantan dài $1\\ \\text{m}$, tiết diện $S$. Dây (2): constantan dài $2\\ \\text{m}$, tiết diện $S$. Dây (3): constantan dài $1\\ \\text{m}$, tiết diện $2S$. Dây (4): nichrome dài $1\\ \\text{m}$, tiết diện $S$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Điện trở dây (4) nhỏ hơn dây (1) vì nichrome có điện trở suất lớn hơn.",
-     "answer": false
-    },
-    {
-     "text": "Điện trở của dây không phụ thuộc tiết diện, chỉ phụ thuộc chiều dài và vật liệu.",
-     "answer": false
-    },
-    {
      "text": "Điện trở dây (2) gấp đôi điện trở dây (1).",
      "answer": true
     },
     {
+     "text": "Điện trở dây (4) nhỏ hơn dây (1) vì nichrome có điện trở suất lớn hơn.",
+     "answer": false
+    },
+    {
      "text": "Điện trở dây (3) bằng một nửa điện trở dây (1).",
      "answer": true
+    },
+    {
+     "text": "Điện trở của dây không phụ thuộc tiết diện, chỉ phụ thuộc chiều dài và vật liệu.",
+     "answer": false
     }
    ],
-   "explanation": "a) sai: $\\rho$ lớn thì $R$ lớn. b) sai: $R$ có phụ thuộc $S$. c) đúng: $R\\sim l$. d) đúng: $R\\sim\\dfrac{1}{S}$.",
+   "explanation": "a) đúng: $R\\sim l$. b) sai: $\\rho$ lớn thì $R$ lớn. c) đúng: $R\\sim\\dfrac{1}{S}$. d) sai: $R$ có phụ thuộc $S$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì điện trở suất lớn hơn làm $R$ lớn hơn, không nhỏ hơn.",
-    "1": "Không thể coi là đúng vì $R=\\rho\\dfrac{l}{S}$ có $S$ ở mẫu số nên $R$ phụ thuộc tiết diện.",
-    "2": "Không thể coi là sai vì cùng vật liệu và tiết diện, chiều dài gấp đôi thì $R$ gấp đôi.",
-    "3": "Không thể coi là sai vì tiết diện gấp đôi thì $R$ giảm một nửa."
+    "0": "Không thể coi là sai vì cùng vật liệu và tiết diện, chiều dài gấp đôi thì $R$ gấp đôi.",
+    "1": "Không thể coi là đúng vì điện trở suất lớn hơn làm $R$ lớn hơn, không nhỏ hơn.",
+    "2": "Không thể coi là sai vì tiết diện gấp đôi thì $R$ giảm một nửa.",
+    "3": "Không thể coi là đúng vì $R=\\rho\\dfrac{l}{S}$ có $S$ ở mẫu số nên $R$ phụ thuộc tiết diện."
    }
   },
   {
@@ -487,12 +487,12 @@
    "question": "Dây nung của máy sấy tóc làm bằng nichrome, dài $5\\ \\text{m}$, tiết diện $0{,}1\\ \\text{mm}^2$, điện trở suất $1{,}1\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$, mắc vào $220\\ \\text{V}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Dùng dây dài $5\\ \\text{m}$ nhưng tiết diện $0{,}2\\ \\text{mm}^2$ thì dòng điện giảm còn $2\\ \\text{A}$.",
-     "answer": false
-    },
-    {
      "text": "Điện trở của dây nung là $55\\ \\Omega$.",
      "answer": true
+    },
+    {
+     "text": "Dùng dây dài $5\\ \\text{m}$ nhưng tiết diện $0{,}2\\ \\text{mm}^2$ thì dòng điện giảm còn $2\\ \\text{A}$.",
+     "answer": false
     },
     {
      "text": "Cường độ dòng điện qua dây là $4\\ \\text{A}$.",
@@ -503,10 +503,10 @@
      "answer": false
     }
    ],
-   "explanation": "a) sai: tiết diện gấp đôi thì $I=8\\ \\text{A}$. b) đúng: $R=55\\ \\Omega$. c) đúng: $I=4\\ \\text{A}$. d) sai: dài gấp đôi thì $I=2\\ \\text{A}$.",
+   "explanation": "a) đúng: $R=55\\ \\Omega$. b) sai: tiết diện gấp đôi thì $I=8\\ \\text{A}$. c) đúng: $I=4\\ \\text{A}$. d) sai: dài gấp đôi thì $I=2\\ \\text{A}$.",
    "distractorNotes": {
-    "0": "Không thể coi là đúng vì tiết diện gấp đôi nên $R=27{,}5\\ \\Omega$ và dòng tăng lên $8\\ \\text{A}$.",
-    "1": "Không thể coi là sai vì $R=1{,}1\\cdot10^{-6}\\cdot\\dfrac{5}{10^{-7}}=55\\ \\Omega$.",
+    "0": "Không thể coi là sai vì $R=1{,}1\\cdot10^{-6}\\cdot\\dfrac{5}{10^{-7}}=55\\ \\Omega$.",
+    "1": "Không thể coi là đúng vì tiết diện gấp đôi nên $R=27{,}5\\ \\Omega$ và dòng tăng lên $8\\ \\text{A}$.",
     "2": "Không thể coi là sai vì $I=\\dfrac{220}{55}=4\\ \\text{A}$.",
     "3": "Không thể coi là đúng vì dây dài gấp đôi nên $R=110\\ \\Omega$ và dòng giảm còn $2\\ \\text{A}$."
    }
@@ -526,24 +526,24 @@
      "answer": true
     },
     {
-     "text": "Linh kiện đó làm hiệu điện thế của pin tăng lên nên LED sáng đều.",
-     "answer": false
-    },
-    {
      "text": "Linh kiện đó tích điện cho pin nên pin bền hơn.",
      "answer": false
     },
     {
      "text": "Linh kiện đó là một điện trở, nó làm dòng điện qua LED nhỏ đi.",
      "answer": true
+    },
+    {
+     "text": "Linh kiện đó làm hiệu điện thế của pin tăng lên nên LED sáng đều.",
+     "answer": false
     }
    ],
-   "explanation": "a) đúng: dòng quá lớn làm cháy LED. b) sai: $U$ của pin không đổi. c) sai: nó không tích điện. d) đúng: nó là điện trở.",
+   "explanation": "a) đúng: dòng quá lớn làm cháy LED. b) sai: nó không tích điện. c) đúng: nó là điện trở. d) sai: $U$ của pin không đổi.",
    "distractorNotes": {
     "0": "Không thể coi là sai vì không có điện trở cản dòng nên dòng qua LED vượt mức chịu được.",
-    "1": "Không thể coi là đúng vì hiệu điện thế do pin quyết định, linh kiện không làm nó tăng.",
-    "2": "Không thể coi là đúng vì linh kiện này không tích điện mà chỉ cản trở dòng điện.",
-    "3": "Không thể coi là sai vì điện trở cản trở dòng điện nên dòng qua LED giảm."
+    "1": "Không thể coi là đúng vì linh kiện này không tích điện mà chỉ cản trở dòng điện.",
+    "2": "Không thể coi là sai vì điện trở cản trở dòng điện nên dòng qua LED giảm.",
+    "3": "Không thể coi là đúng vì hiệu điện thế do pin quyết định, linh kiện không làm nó tăng."
    }
   }
  ]
