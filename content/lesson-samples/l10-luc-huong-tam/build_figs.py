@@ -300,7 +300,7 @@ fig2 = (
         '<figcaption>Hình 2. Vận tốc đổi hướng nên có gia tốc:<br><em>v</em><sub>1</sub>, <em>v</em><sub>2</sub> tiếp tuyến tại B, C.<br>Δ<em>v</em> = <em>v</em><sub>2</sub> − <em>v</em><sub>1</sub> chĩa vào tâm.<br>Sách ghi tâm là A; bài này ghi O.<br><small>Hình: OpenStax, College Physics 2e, Hình 6.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 fig5 = (
         '<figure class="fig" data-exp="tn-l10-huongtam-01"><img src="/assets/openstax/l10-luc-huong-tam/hinh-ma-sat-khuc-cua.webp" alt="Ô tô nhìn từ phía sau khi rẽ trên đường nằm ngang: trọng lực w xuống, phản lực N lên, ma sát nghỉ f hướng vào tâm cung cua là lực hướng tâm" loading="lazy" width="947" height="763">'
-        '<figcaption>Hình 5. Xe qua cua, nhìn từ phía sau:<br>w và N triệt tiêu.<br>f = μ<sub>s</sub>N (ma sát nghỉ) là lực hướng tâm F<sub>c</sub>.<br>Sách ghi w, f, F<sub>c</sub>; bài này ghi <em>P</em>, <em>F</em><sub>ms</sub>, <em>F</em><sub>ht</sub>.<br><small>Hình: OpenStax, College Physics 2e, Hình 6.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+        '<figcaption>Hình 5. Xe qua cua, nhìn từ phía sau:<br>w và N triệt tiêu.<br>f = μ<sub>s</sub>N (ma sát nghỉ) là lực hướng tâm F<sub>c</sub>.<br>F<sub>net</sub> = hợp lực. Sách ghi w, f, F<sub>c</sub>; bài này ghi <em>P</em>, <em>F</em><sub>ms</sub>, <em>F</em><sub>ht</sub>.<br><small>Hình: OpenStax, College Physics 2e, Hình 6.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 figs = (fig1, fig2, fig3, fig4, fig5)
 order = [int(n) for n in re.findall(r"<!--FIG(\d)-->", src)]

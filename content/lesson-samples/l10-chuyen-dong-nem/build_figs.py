@@ -199,6 +199,7 @@ fig6 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-chuyen-d
         'alt="Cùng vận tốc đầu 50 m/s, ném ở 15, 45 và 75 độ: góc 15 và 75 độ (phụ nhau) rơi cùng một điểm, tầm xa 128 m; góc 45 độ xa nhất, 255 m" '
         'loading="lazy" width="368" height="195">'
         '<figcaption>Hình 6. Hai góc <strong>phụ nhau</strong> ($15^\\circ$, $75^\\circ$) cùng tầm xa; $45^\\circ$ xa nhất.<br>'
+        'Ảnh sách dùng $v_0 = 50$ m/s; $R$ là tầm xa ($128$ m ở $15^\\circ$ và $75^\\circ$, $255$ m ở $45^\\circ$). Ví dụ $30^\\circ$/$60^\\circ$ ở trên cùng quy luật.<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 3.38b — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
 

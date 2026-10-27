@@ -58,7 +58,7 @@ fig2 = ('<figure class="fig" data-tl="1" data-exp="tn-l11-dien-truong-deu-01"><i
         'alt="Hai bản dẫn điện song song cách nhau d, bản A dương bên trái, bản B âm bên phải; giữa hai bản các đường sức thẳng, song song, cách đều, cong ra ở mép" '
         'loading="lazy" width="410" height="768" style="max-width:min(100%,300px);height:auto">'
         '<figcaption>Hình 2. Giữa hai bản (xa mép): đường sức thẳng, song song, cách đều.<br>'
-        'V<sub>AB</sub> = U · d = khoảng cách · E = U/d.<br>'
+        'V<sub>AB</sub> (bài ghi U) = E·d, tức E = U/d; d là khoảng cách hai bản.<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 19.5 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 

@@ -185,7 +185,7 @@ fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-trong-lu
         'loading="lazy" width="539" height="750">'
         '<figcaption>Hình 3. Lực căng ở hai đầu dây đều hướng vào giữa dây:<br>'
         '<em>T</em> kéo vật lên, <em>T</em> kéo tay xuống.<br>'
-        'Vật đứng yên: <em>T</em> = <em>w</em> (<em>w</em> là <em>P</em> của bài).<br>'
+        'Vật đứng yên: <em>T</em> = <em>w</em> (<em>w</em> là <em>P</em> của bài).<br>Free-body diagram = sơ đồ lực.<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 4.14 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
 
