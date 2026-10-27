@@ -115,51 +115,16 @@ fig2 = wrap_fig("0 0 420 254",
                 b,
                 "Hình 2. Tổng khối lượng bốn nuclôn rời (kể cả hai êlectron) là 4,032980 u, còn nguyên tử heli-4 chỉ 4,002603 u: phần hụt 0,030377 u đã toả ra 28,30 MeV khi hạt nhân hình thành.")
 
-# ------------------------------------------------- Hình 3: đường cong năng lượng liên kết riêng (mục 5)
-b = defs("f3")
-b += text(14, 18, "Năng lượng liên kết riêng theo số khối", "currentColor", 14, "start", "700")
-# trục: A chia đúng tỉ lệ (x = 52 + 1,5·A), E/A: 0 → 190, 8,8 → 60
-def X(a): return 52 + 1.5 * a
-def Y(e): return round(190 - e * 130 / 8.8, 1)
-b += line(52, 190, 414, 190, "currentColor", 2)
-b += line(52, 190, 52, 50, "currentColor", 2)
-b += text(414, 224, "A", "currentColor", 14, "end", "700")
-b += text(14, 40, "MeV/nuclôn", "currentColor", 14, "start", "600")
-b += line(52, 60, 414, 60, "currentColor", 1, "5 4", .3)
-b += text(46, 64, "8,8", "currentColor", 14, "end", "600")
-b += line(52, 125, 414, 125, "currentColor", 1, "5 4", .3)
-b += text(46, 129, "4,4", "currentColor", 14, "end", "600")
-b += text(46, 193, "0", "currentColor", 14, "end", "600")
-for a in (0, 50, 100, 150, 200):
-    b += line(X(a), 190, X(a), 196, "currentColor", 2)
-    b += text(X(a), 212, str(a), "currentColor", 14, "middle", "600")
-# vùng bền A = 50..80 tô nhạt
-b += rect(X(50), 68, X(80) - X(50), 122, "rgba(52,211,153,.10)", GRN, 1, 6)
-b += text(X(65), 242, "vùng bền nhất: A ≈ 50 – 80", GRN, 14, "middle", "700")
-# đường cong theo số liệu thực (A, E/A MeV): He-4 nhô lên so với H-3, Li-6
-diem = [(2, 1.11), (3, 2.83), (4, 7.07), (6, 5.33), (9, 6.46), (12, 7.68), (16, 7.98), (30, 8.52),
-        (56, 8.79), (100, 8.55), (150, 8.2), (200, 7.87), (238, 7.57)]
-d = " ".join(f"{X(a):.1f},{Y(e)}" for a, e in diem)
-b += f'<polyline fill="none" stroke="{GRN}" stroke-width="2.6" points="{d}"/>'
-for a, e in ((4, 7.07), (56, 8.79), (235, 7.6)):
-    b += dot(round(X(a), 1), Y(e), 4, GRN)
-b += text(X(56), 50, "Fe-56", GRN, 14, "middle", "700")
-b += line(round(X(4), 1), Y(7.07) + 5, 70, 132, BLUE, 1.2)
-b += text(68, 146, "He-4", BLUE, 14, "start", "700")
-b += text(410, 100, "U-235", ORG, 14, "end", "700")
-# hai mũi tên chỉ hai chiều tiến về đỉnh
-b += arrow("f3", "b", 118, 176, 124, 112, 2.2)
-b += text(60, 164, "nhẹ:", BLUE, 14, "start", "700")
-b += text(60, 180, "hợp lại", BLUE, 14, "start", "700")
-b += arrow("f3", "o", 384, 114, 300, 96, 2.2)
-b += text(350, 146, "nặng: vỡ ra", ORG, 14, "middle", "700")
-fig3 = wrap_fig("0 0 420 252",
-                "Đường cong theo số liệu năng lượng liên kết riêng theo số khối, đạt đỉnh quanh sắt-56 ở 8,8 MeV mỗi nuclôn",
-                b,
-                "Hình 3. Năng lượng liên kết riêng đạt đỉnh quanh sắt-56 (8,8 MeV/nuclôn).<br>"
-                "Trái đỉnh: hợp hạt nhân nhẹ lại toả năng lượng.<br>"
-                "Phải đỉnh: hạt nhân nặng vỡ ra cũng toả năng lượng.<br>"
-                "Hình: vẽ lại theo OpenStax, College Physics 2e, Hình 31.24 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e")
+# ------------------------------------------------- Hình 3: ảnh OpenStax Hình 31.24 (đợt 2, 27/10/2026)
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-nang-luong-lien-ket/hinh-nang-luong-lk-rieng-theo-so-khoi.webp" '
+        'alt="Đồ thị năng lượng liên kết riêng theo số khối: tăng nhanh ở hạt nhân nhẹ, đạt đỉnh quanh sắt và niken (khoảng 8,8 MeV mỗi nuclôn), rồi giảm chậm tới urani-238 (7,6)" '
+        'loading="lazy" width="750" height="590"><figcaption>Hình 3. Năng lượng liên kết riêng đạt đỉnh quanh sắt-56 (cỡ 8,8–9 MeV/nuclôn).<br>'
+        'Trái đỉnh: hợp hạt nhân nhẹ lại toả năng lượng.<br>'
+        'Phải đỉnh: hạt nhân nặng vỡ ra cũng toả năng lượng.<br>'
+        'Nhãn: BE/A = năng lượng liên kết riêng (MeV per nucleon = MeV/nuclôn).<br>'
+        'Atomic mass = số khối A. Fe = sắt, Ni = niken, U = urani, He = heli, Li = liti, C = cacbon, O = oxi.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 31.24 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- Hình 4: hai thang năng lượng (hoá học vs hạt nhân, mục 6)
 b = defs("f4")

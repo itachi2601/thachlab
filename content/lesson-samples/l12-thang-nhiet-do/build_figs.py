@@ -52,81 +52,33 @@ b += text(240, 100, "nhiệt độ", "currentColor", 11, "start", "600")
 fig1 = wrap("0 0 420 240", "Một nhiệt kế với ba nhãn nhiệt độ theo ba thang đo cho cùng một mức nhiệt độ",
             b, "Hình 1. Ba thang đo, một nhiệt độ: 38,5 °C = 311,5 K = 101,3 °F — chỉ khác cách chia thang.")
 
-# ------------------------------------------------------- Hình 2: cân bằng nhiệt
-b = defs("f2")
-b += text(14, 24, "a) Vừa tiếp xúc", "currentColor", 12, "start", "700")
-b += rect(30, 50, 80, 64, "rgba(248,113,113,.18)", RED, 2)
-b += rect(110, 50, 80, 64, "rgba(56,189,248,.18)", BLUE, 2)
-b += text(70, 72, "A", RED, 15, "middle", "700") + text(150, 72, "B", BLUE, 15, "middle", "700")
-b += text(70, 134, "80 °C", RED, 12, "middle", "700") + text(150, 134, "20 °C", BLUE, 12, "middle", "700")
-b += arrow("f2", "r", 74, 100, 146, 100, 2.6)
-b += text(110, 168, "nhiệt năng truyền A → B", RED, 11, "middle", "700")
-b += text(240, 24, "b) Một lúc sau", "currentColor", 12, "start", "700")
-b += rect(250, 50, 80, 64, "rgba(52,211,153,.18)", GRN, 2)
-b += rect(330, 50, 80, 64, "rgba(52,211,153,.18)", GRN, 2)
-b += text(290, 72, "A", GRN, 15, "middle", "700") + text(370, 72, "B", GRN, 15, "middle", "700")
-b += text(290, 134, "50 °C", GRN, 12, "middle", "700") + text(370, 134, "50 °C", GRN, 12, "middle", "700")
-b += text(330, 168, "cân bằng nhiệt — hết truyền", GRN, 11, "middle", "700")
-fig2 = wrap("0 0 440 186", "Hai vật A nóng và B lạnh tiếp xúc nhau: nhiệt năng truyền từ A sang B cho tới khi hai vật cùng nhiệt độ",
-            b, "Hình 2. Hai vật tiếp xúc: nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn cho tới khi hai nhiệt độ bằng nhau — lúc đó hai vật ở trạng thái cân bằng nhiệt.")
+# ------------------------------------------------------- Hình 2, 3, 4: ảnh OpenStax (đợt 2, 27/10/2026)
+SRC = "<small>OpenStax College Physics 2e, Hình {n} — CC BY‑NC‑SA 4.0</small>"
 
-# ------------------------------------------------------- Hình 4 (mốc FIG3): ba thang đo
-b = defs("f3")
-b += text(100, 24, "Celsius", RED, 14, "middle", "700")
-b += text(230, 24, "Kelvin", BLUE, 14, "middle", "700")
-b += text(360, 24, "Fahrenheit", ORG, 14, "middle", "700")
-b += line(40, 74, 422, 74, "currentColor", 1.2, "6 5", .35)
-b += line(40, 190, 422, 190, "currentColor", 1.2, "6 5", .35)
-for x, col in ((100, RED), (230, BLUE), (360, ORG)):
-    b += line(x, 44, x, 214, "currentColor", 2)
-    b += line(x - 8, 74, x + 8, 74, col, 3)
-    b += line(x - 8, 190, x + 8, 190, col, 3)
-for x, n in ((100, 10), (230, 10), (360, 18)):
-    for i in range(1, n):
-        y = 190 - (190 - 74) * i / n
-        b += line(x, y, x + 7, y, "currentColor", 1.4)
-b += text(88, 66, "100 °C", RED, 14, "end", "700") + text(88, 182, "0 °C", RED, 14, "end", "700")
-b += text(218, 66, "373 K", BLUE, 14, "end", "700") + text(218, 182, "273 K", BLUE, 14, "end", "700")
-b += text(348, 66, "212 °F", ORG, 14, "end", "700") + text(348, 182, "32 °F", ORG, 14, "end", "700")
-b += text(88, 138, "100 khoảng", GRN, 14, "end", "600")
-b += text(218, 138, "100 khoảng", GRN, 14, "end", "600")
-b += text(348, 138, "180 khoảng", ORG, 14, "end", "600")
-b += text(16, 238, "mốc dưới: nước đá đang tan", "currentColor", 14)
-b += text(16, 258, "mốc trên: hơi nước đang sôi", "currentColor", 14)
-b += text(16, 278, "mỗi vạch nhỏ = 10 độ", "currentColor", 14, "start", "700")
-fig3 = wrap("0 0 440 288", "Ba thang nhiệt độ đặt cạnh nhau: Celsius 0 đến 100, Kelvin 273 đến 373, Fahrenheit 32 đến 212",
-            b, "Hình 4. Hai mốc nước: 0–100 °C (100 khoảng), 273–373 K (100 khoảng), 32–212 °F (180 khoảng).<br><small>Vẽ lại theo OpenStax, College Physics 2e, Hình 13.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
 
-# ------------------------------------------------------- Hình 3 (mốc FIG4): ngoại suy về 0 K
-b = defs("f4")
-b += line(70, 205, 420, 205, "currentColor", 2)
-b += line(70, 205, 70, 40, "currentColor", 2)
-b += text(430, 190, "t (°C)", "currentColor", 14, "end", "600")
-b += text(24, 22, "p (kPa)", "currentColor", 14, "start", "600")
-for k, nm in ((.75, "khí 2"), (.5, "khí 3"), (.3, "khí 4")):
-    y0 = 205 - k * 155.4 * 212 / 289
-    y1 = 205 - k * 155.4
-    b += line(95, 205, 307, y0, GRN, 1.6, "6 5", .5)
-    b += f'<polyline fill="none" stroke="{GRN}" stroke-width="2" opacity=".6" points="307,{y0:.1f} 384,{y1:.1f}"/>'
-    b += text(392, y1 + 5, nm, GRN, 13, "start", "600")
-b += line(95, 205, 307, 91, GRN, 2, "6 5", .9)
-b += f'<polyline fill="none" stroke="{GRN}" stroke-width="2.6" points="307,91 384.5,49"/>'
-b += text(392, 54, "khí 1", GRN, 13, "start", "700")
-pts = ((307, 91), (326, 80), (346, 70), (365, 59), (384, 49))
-for x, y in pts:
-    b += dot(x, y, 4, GRN)
-b += line(95, 205, 95, 62, RED, 1.2, "5 4", .8)
-b += line(64, 91, 76, 91, "currentColor", 2) + line(64, 49, 76, 49, "currentColor", 2) + line(64, 205, 76, 205, "currentColor", 2)
-b += text(60, 96, "p₀", "currentColor", 14, "end", "700") + text(60, 54, "1,37 p₀", "currentColor", 14, "end", "700")
-b += text(60, 210, "p = 0", RED, 14, "end", "700")
-b += text(100, 50, "0 K", GRN, 14, "start", "700")
-b += text(95, 224, "-273", RED, 14, "middle", "700")
-b += text(307, 224, "0", "currentColor", 14, "middle", "600")
-b += text(384, 224, "100", "currentColor", 14, "middle", "600")
-b += text(140, 56, "kéo dài đường thẳng", GRN, 14, "start", "600")
-b += text(140, 74, "→ cắt trục ở -273 °C", GRN, 14, "start", "600")
-fig4 = wrap("0 0 440 250", "Đồ thị áp suất khí theo nhiệt độ Celsius: các điểm nằm trên một đường thẳng, kéo dài cắt trục hoành ở -273 °C",
-            b, "Hình 3. Bốn khí, bốn đường khác nhau, nhưng kéo dài (nét đứt) đều cùng cắt trục ở −273 °C — gốc 0 K.<br>p₀ là áp suất ở 0 °C.<br><small>Vẽ lại theo OpenStax, College Physics 2e, Hình 13.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
+def raster(f, w, h, alt, cap):
+    return (f'<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-thang-nhiet-do/{f}.webp" alt="{alt}" '
+            f'loading="lazy" width="{w}" height="{h}"><figcaption>{cap}</figcaption></figure>')
+
+
+fig2 = raster("hinh-can-bang-nhiet-lon-da-d2", 875, 854,
+              "Lon nước ngọt (nhiệt độ T₁) và viên đá (T₂) khác nhau; sau khi tiếp xúc, cả hai cùng nhiệt độ T′",
+              "Hình 2. a) Trước: T₁ ≠ T₂. b) Sau tiếp xúc: cùng T′ — cân bằng nhiệt.<br>"
+              + SRC.format(n="14.2"))
+
+# mốc FIG3: ba thang đo (Hình 4 trong bài)
+fig3 = raster("hinh-ba-thang-fck-d2", 954, 506,
+              "Ba thang nhiệt độ F, C, K đặt cạnh nhau với các mốc độ không tuyệt đối, nước đóng băng, thân nhiệt, nước sôi",
+              "Hình 4. 0 °C = 273,15 K = 32 °F; 100 °C = 373,15 K = 212 °F.<br>"
+              "Nhãn: Absolute zero = độ không tuyệt đối · Freezing/Boiling point = điểm đóng băng/sôi · Normal body temperature = thân nhiệt.<br>"
+              + SRC.format(n="13.7"))
+
+# mốc FIG4: ngoại suy về 0 K (Hình 3 trong bài)
+fig4 = raster("hinh-ap-suat-nhiet-do-khi-d2", 412, 421,
+              "Đồ thị áp suất theo nhiệt độ của bốn chất khí ở thể tích không đổi, các đường kéo dài cùng cắt trục ở −273,15 °C",
+              "Hình 3. Bốn khí, kéo dài (nét đứt) đều cắt trục ở −273,15 °C — gốc 0 K.<br>"
+              "Nhãn: Pressure = áp suất · Temperature = nhiệt độ · Gas = khí.<br>"
+              + SRC.format(n="13.10"))
 
 # ------------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()

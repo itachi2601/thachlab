@@ -81,32 +81,16 @@ fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-dien-tu-
         'Hình: OpenStax, College Physics 2e, Hình 24.7 — CC BY\u2011NC\u2011SA 4.0 — openstax.org/books/college-physics-2e'
         '</figcaption></figure>')
 
-# ------------------------------------------------- Hình 4: thang sóng điện từ
-b = defs("f4")
-b += text(14, 18, "Thang sóng điện từ", "currentColor", 12.5, "start", "700")
-b += text(406, 18, "bước sóng giảm dần", "currentColor", 10.5, "end", "600")
-edges = [30, 125, 180, 225, 280, 335, 400]
-names = ["sóng vô tuyến", "hồng ngoại", "ánh sáng nhìn thấy", "tử ngoại", "tia X", "tia gamma"]
-for i in range(6):
-    x1, x2 = edges[i], edges[i + 1]
-    col = BLUE if i == 0 else "currentColor"
-    fill = "rgba(56,189,248,.20)" if i == 0 else "rgba(148,163,184,.14)"
-    b += rect(x1, 82, x2 - x1, 22, fill, col, 1.6, 3)
-cen = [(edges[i] + edges[i + 1]) / 2 for i in range(6)]
-for i in (0, 2, 4):
-    col = BLUE if i == 0 else "currentColor"
-    b += line(cen[i], 56, cen[i], 82, "currentColor", 1, "3 3", .55)
-    b += text(cen[i], 50, names[i], col, 10.5, "middle", "700")
-for i in (1, 3, 5):
-    b += line(cen[i], 72, cen[i], 82, "currentColor", 1, "3 3", .55)
-    b += text(cen[i], 66, names[i], "currentColor", 10.5, "middle", "700")
-b += text(14, 126, "Ranh giới các vùng: 1 mm · 0,76 μm · 0,38 μm · 10 nm · 0,01 nm", "currentColor", 10, "start", "600")
-b += text(14, 144, "Sơ đồ bậc thang: độ rộng các vùng không theo tỉ lệ bước sóng", "currentColor", 10, "start", "600")
-b += text(14, 164, "mọi vùng đều là sóng điện từ, truyền trong chân không với cùng tốc độ c", "currentColor", 10.5, "start", "600")
-b += text(14, 180, "bước sóng càng nhỏ thì tần số và năng lượng càng lớn", "currentColor", 10.5, "start", "600")
-fig4 = wrap("0 0 420 194", "Thang sóng điện từ vẽ theo sơ đồ bậc thang, độ rộng các vùng không theo tỉ lệ bước sóng: sáu vùng xếp theo bước sóng giảm dần gồm vô tuyến, hồng ngoại, ánh sáng nhìn thấy, tử ngoại, tia X, tia gamma",
-            b, "Hình 4. Thang sóng điện từ: sáu vùng xếp theo bước sóng giảm dần (sơ đồ bậc thang, độ rộng các vùng không theo tỉ lệ); vùng tô xanh là sóng vô tuyến.",
-            exp="tn-l12-dttruong-04")
+# ------------------------------------------------- Hình 4: thang sóng điện từ (ảnh OpenStax, chèn trực tiếp)
+fig4 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-dttruong-04"><img src="/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-pho-dien-tu.webp" '
+        'alt="Thang sóng điện từ theo bước sóng (trục trên) và tần số (trục dưới): sóng vô tuyến gồm vi ba, TV, FM, AM ở tần số thấp, tiếp đến hồng ngoại, dải ánh sáng nhìn thấy rất hẹp, tử ngoại, tia X, tia gamma ở tần số cao" '
+        'loading="lazy" width="1000" height="377"><figcaption>'
+        'Hình 4. Thang sóng điện từ: bước sóng giảm dần từ sóng vô tuyến tới tia gamma; ánh sáng nhìn thấy là dải rất hẹp.<br>'
+        'Nhãn: Wavelength = bước sóng; Frequency = tần số; Radio waves = sóng vô tuyến; Microwaves = vi ba.<br>'
+        'Nhãn: Infrared = hồng ngoại; Visible light = nhìn thấy; Ultraviolet = tử ngoại; X rays = tia X; \u03b3 rays = tia gamma.<br>'
+        'Nhãn: \u00c5 = $10^{-10}$ m; fermis = $10^{-15}$ m.<br>'
+        'Hình: OpenStax, College Physics 2e, Hình 24.8 \u2014 CC BY\u2011NC\u2011SA 4.0 \u2014 openstax.org/books/college-physics-2e'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
