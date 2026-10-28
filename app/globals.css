@@ -2799,6 +2799,10 @@ body:has(.admin-shell.is-open) .fixed.bottom-5 { display: none; }
 .exam-content .tl-quiz > input:checked + .tl-opt.tl-no { border-color: #f87171; background: rgba(248,113,113,.16); }
 .exam-content .tl-fb { display: none; padding: 10px 14px; border-radius: 10px; }
 .exam-content .tl-fb p { margin: 0; text-align: left; }
+.exam-content .tl-fb p + p, .exam-content .tl-fb ul + p, .exam-content .tl-fb p + ul { margin-top: 6px; }
+.exam-content .tl-fb ul.tl-fb-list { margin: 6px 0 0; padding-left: 1.3em; list-style: disc; text-align: left; }
+.exam-content .tl-fb ul.tl-fb-list > li { margin: 0 0 4px; padding-left: 2px; }
+.exam-content .tl-fb ul.tl-fb-list > li::marker { color: currentColor; }
 .exam-content .tl-fb--ok { background: rgba(52,211,153,.14); }
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
