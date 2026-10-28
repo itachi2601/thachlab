@@ -203,6 +203,14 @@ fig6 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-chuyen-d
         '<small>Hình: OpenStax, College Physics 2e, Hình 3.38b — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
 
+# ================= Hình 3: ảnh OpenStax College Physics 2e, Hình 3.6 (28/10/2026) — thay SVG hai vận tốc ném (xem nguon.md)
+fig3 = ('<figure class="fig"><img src="/assets/openstax/l10-chuyen-dong-nem/hinh-roi-va-nem-ngang.webp" '
+        'alt="Hai quả bóng giống nhau chụp nhấp nháy theo khoảng thời gian bằng nhau: bóng đỏ thả rơi, bóng xanh ném ngang; ở mỗi lần chớp hai bóng cùng độ cao, mũi tên ngang bằng nhau, mũi tên xuống dài dần" '
+        'loading="lazy" width="319" height="400">'
+        '<figcaption>Hình 3. Đỏ thả rơi, xanh ném ngang: <strong>luôn cùng độ cao</strong>.<br>Mũi tên đen: $v_x$ không đổi.<br>Mũi tên xanh lá: $v_y$ tăng dần.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 3.6 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
+
 fig1 = fig1.replace("</svg>", '</svg><button type="button" class="bt-run" data-bt-run="1">▶ Chạy mô phỏng</button>', 1)
 h = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4, fig5, fig6), 1):
