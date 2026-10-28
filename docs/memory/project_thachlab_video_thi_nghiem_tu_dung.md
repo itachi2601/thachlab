@@ -16,3 +16,5 @@ Thầy chốt 27/10/2026: thí nghiệm không tìm được clip YouTube thì t
 
 **Why:** 271/306 thí nghiệm chưa có video; clip thật không có cho nhiều thí nghiệm.
 **How to apply:** lô tiếp theo = viết thêm `clips/<tên>.py` (copy mẫu gần nhất), render trong tab terminal (~2 phút/clip, chạy song song được). Liên quan: [[project_thachlab_thi_nghiem_khung_de_thi]].
+
+- 28/10: lọc YouTube 195 thí nghiệm → A 23 / B 88 / C 84 (`content/thi-nghiem/danh-sach-tu-dung.md`); thầy duyệt hết A → 20 clip nhập kho + chèn vào file bài (3 trùng clip đã có), **chưa đăng DB**. Thử 3 clip C bằng Opus: `phongxa2`, `udcamung2`, `thangnhietdo4` (47–50 s, 1,8–2,1 MB) — chi phí đo được 1,7–2,3 USD/clip → 84 clip C ≈ 170–200 USD. Chờ thầy xem 3 clip rồi chốt chạy hàng loạt; nhóm B (88) chờ thầy duyệt.
