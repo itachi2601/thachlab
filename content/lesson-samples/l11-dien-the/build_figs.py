@@ -88,11 +88,20 @@ b += text(68, 18, "V (V)", "currentColor", 13, "start", "700")
 b += text(120, 70, "lí thuyết: V = U·x/d", GRN, 13, "start", "700")
 b += text(250, 196, "● số đo", RED, 13, "start", "700")
 fig3 = wrap("0 0 440 248", "Đồ thị điện thế V theo khoảng cách x từ lá âm: bốn điểm đo nằm sát đường thẳng V = 0,6x",
-            b, "Hình 3. Bốn số đo (đỏ) nằm sát đường thẳng: V tăng đều theo x, nghĩa là điện trường giữa hai lá gần như đều.")
+            b, "Hình 4. Bốn số đo (đỏ) nằm sát đường thẳng: V tăng đều theo x, nghĩa là điện trường giữa hai lá gần như đều.")
+
+# ---- Ảnh OpenStax College Physics 2e, Hình 19.11 (đợt 2, 28/10/2026): thêm giữa Hình 2 và đồ thị
+fig2b = ('<figure class="fig"><img src="/assets/openstax/l11-dien-the/hinh-hai-ban-dang-the.webp" '
+         'alt="Hai bản kim loại song song, bản trái 100 V dấu cộng, bản phải 0 V dấu trừ; các đường sức nằm ngang song song, ba đường đẳng thế xanh lục thẳng đứng cách đều ứng với 75 V, 50 V, 25 V" '
+         'loading="lazy" width="407" height="768" style="max-width:min(100%,260px);height:auto">'
+         '<figcaption>Hình 3. Đường đẳng thế (lục) vuông góc đường sức, cách đều.<br>V giảm đều dọc đường sức.<br>100 V chỉ là ví dụ; số của bài ở Hình 2.<br>'
+         '<small>Hình: OpenStax, College Physics 2e, Hình 19.11 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 h = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3), 1):
     assert f"<!--FIG{n}-->" in h, n
     h = h.replace(f"<!--FIG{n}-->", f)
+assert "<!--FIG2B-->" in h
+h = h.replace("<!--FIG2B-->", fig2b)
 open("theory.html", "w", encoding="utf8").write(h)
 print("ok", len(h))

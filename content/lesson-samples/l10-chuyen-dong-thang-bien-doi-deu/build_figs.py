@@ -220,10 +220,15 @@ ERR += c.check()
 if ERR:
     print("\n".join("✗ " + e for e in ERR)); sys.exit(1)
 
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026): Hình 4 mới (Hình 2.46), xem nguon.md. Hình 4 cũ thành Hình 5.
+figA = ('<figure class="fig"><img src="/assets/openstax/l10-chuyen-dong-thang-bien-doi-deu/hinh-x-v-a-theo-t.webp" alt="Ba đồ thị chồng nhau theo thời gian của một xe phản lực có gia tốc không đổi: x–t cong lên, v–t đường thẳng dốc lên, a–t đường nằm ngang" loading="lazy" width="594" height="1397">'
+        '<figcaption>Hình 4. Cùng một chuyển động, ba đồ thị:<br>(a) <em>x</em>–<em>t</em> cong lên, (b) <em>v</em>–<em>t</em> thẳng dốc lên, (c) <em>a</em>–<em>t</em> nằm ngang.<br>Sách lấy <em>a</em> = 5,0 m/s² chỉ làm ví dụ.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 2.46 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+fig4 = fig4.replace("Hình 4.", "Hình 5.", 1)
 h = (HERE / "theory.src.html").read_text(encoding="utf8")
-for n, fg in enumerate((fig1, fig2, fig3, fig4), 1):
-    assert f"<!--FIG{n}-->" in h, n
-    h = h.replace(f"<!--FIG{n}-->", fg)
+for mark, fg in (("1", fig1), ("2", fig2), ("3", fig3), ("3B", figA), ("4", fig4)):
+    assert f"<!--FIG{mark}-->" in h, mark
+    h = h.replace(f"<!--FIG{mark}-->", fg)
 tmp = HERE / ".theory.tmp.html"
 tmp.write_text(h.replace("__PHUT__", "15"), encoding="utf8")
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"

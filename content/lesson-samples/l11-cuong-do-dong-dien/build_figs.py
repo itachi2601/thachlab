@@ -234,9 +234,11 @@ assert min(c for c, _ in IN) - 7 >= X0 and X0 < XS                              
 for i, (a, b) in enumerate(IN + OUT):
     for c, d in (IN + OUT)[i + 1:]:
         assert math.hypot(a - c, b - d) >= 16, ((a, b), (c, d))                 # hạt không chồng nhau
-fig4 = f.html("Đoạn dây dẫn hình trụ, tiết diện S vẽ nét đứt; các hạt tải điện dương nằm trong đoạn dài v nhân delta t phía trước S đang trôi sang phải sẽ đi qua S; mũi tên I cùng chiều với v.",
-              "Hình 4. Hạt trong hình trụ dài v·Δt trước tiết diện S đi qua S trong Δt: N = nSvΔt.",
-              "tn-l11-cuong-do-dong-dien-03")
+# Ảnh OpenStax College Physics 2e (28/10/2026): thay SVG Hình 4, xem nguon.md
+fig4 = (
+    '<figure class="fig" data-exp="tn-l11-cuong-do-dong-dien-03"><img src="/assets/openstax/l11-cuong-do-dong-dien/hinh-hat-tai-dien-trong-day.webp" alt="Đoạn dây dẫn hình trụ: các hạt tải q trong vùng dài x = v_d·t trước tiết diện A, thể tích A·x, đều trôi qua A trong thời gian t với vận tốc trôi v_d" loading="lazy" width="625" height="329">'
+    '<figcaption>Hình 4. Sách: A = S, v<sub>d</sub> = v, t = Δt, x = vΔt.<br>'
+    '<small>Hình: OpenStax, College Physics 2e, Hình 20.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 src = (HERE / "theory.src.html").read_text(encoding="utf8")
 for n, fg in enumerate((fig1, fig2, fig3, fig4), 1):

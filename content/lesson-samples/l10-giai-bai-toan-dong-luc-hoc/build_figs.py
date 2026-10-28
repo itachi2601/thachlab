@@ -236,10 +236,14 @@ b += arrow("f4", "k", *OX4, *xa, 2, name="Ox") + arrow("f4", "k", *OX4, *ya, 2, 
 b += text(xa[0] + 4, xa[1] + 16, it("x"), size=18) + text(ya[0] + 8, ya[1] + 6, it("y"), size=18)
 # kiểm: chân góc α nằm đúng giao của đáy và mặt nghiêng
 assert abs((BASE_Y - TOP[1]) / (XR - XL) - math.tan(ra)) < 1e-9
-fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
-            "Hộp trên mặt phẳng nghiêng góc alpha: trọng lực P thẳng đứng xuống, tách thành P sin alpha dọc dốc và P cos alpha vuông góc mặt nghiêng; phản lực N vuông góc mặt nghiêng bằng P cos alpha; ma sát hướng lên dốc; trục x dọc dốc hướng xuống",
-            b, "Hình 4. Trục <em>x</em> dọc dốc: chỉ trọng lực phải tách. <em>N</em> cân bằng với <em>P</em> cos<em>α</em> nên ngắn hơn <em>P</em>; ma sát ngược chiều trượt.")
-fig4 = fig4.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-giaibt-dlh-01"', 1)
+# Hình 4: ảnh OpenStax College Physics 2e Hình 4.12 (đợt 2, 28/10/2026) thay SVG vẽ lại, xem nguon.md
+fig4 = ('<figure class="fig" data-exp="tn-l10-giaibt-dlh-01"><img src="/assets/openstax/l10-giai-bai-toan-dong-luc-hoc/hinh-truot-tuyet-mat-nghieng.webp" '
+        'alt="Người trượt tuyết xuống dốc 25 độ: trục song song và vuông góc dốc; phản lực N vuông góc dốc, ma sát f dọc dốc, trọng lực w tách thành w vuông góc và w song song; bên phải là sơ đồ vật tự do" '
+        'loading="lazy" width="900" height="424">'
+        '<figcaption>Hình 4. Sách ghi w, θ; bài ghi <em>P</em>, α (25° là ví dụ).<br>'
+        '<em>N</em> cân bằng <em>w</em>⊥; <em>f</em> ngược chiều trượt.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 4.12 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ---------------- Hình 5: hai vật nối dây qua ròng rọc ----------------
 CUR["fig"] = 5

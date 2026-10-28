@@ -258,6 +258,16 @@ for n, f in enumerate(figs, 1):
     assert f"Hình {n}." in f, n
     src = src.replace(f"<!--FIG{n}-->", f)
 
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026, đợt 2): hình THÊM, đánh số lại theo thứ tự trong bài, xem nguon.md
+figx = (
+        '<figure class="fig"><img src="/assets/openstax/l10-dong-nang-the-nang/hinh-lo-xo-the-nang-dan-hoi.webp" alt="Đồ thị lực kéo lò xo F theo độ dãn x là đường thẳng có hệ số góc k; diện tích tam giác dưới đường bằng một phần hai k nhân x bình phương" loading="lazy" width="294" height="272">'
+        '<figcaption>Hình 9. Lực kéo tăng đều theo độ dãn.<br>Slope = hệ số góc; Area = diện tích = công.<br>Sách ghi <em>x</em>; bài ghi Δ<em>l</em>.<br><small>Hình: OpenStax, College Physics 2e, Hình 7.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>'
+)
+assert src.count("<!--FIGX-->") == 1
+src = src.replace("<!--FIGX-->", figx)
+_k = iter(range(1, 20))
+src = re.sub(r"<figcaption>Hình \d+\.", lambda m: f"<figcaption>Hình {next(_k)}.", src)
+
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
 out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")

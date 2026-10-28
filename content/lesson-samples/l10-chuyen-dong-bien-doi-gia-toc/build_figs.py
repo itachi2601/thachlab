@@ -250,10 +250,18 @@ bang = ('<div class="table-scroll">\n<table class="tl-table">\n<thead>\n'
         + "\n".join(rows) + "\n</tbody>\n</table>\n</div>")
 atong = (f"$\\dfrac{{{vn(VD[-1])} - {vn(VD[0])}}}{{{vn(T1[-1],1)}}} \\approx {vn(ATONG)}\\ \\text{{m/s}}^2$")
 
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026): xem nguon.md. Hình 2 (mới, Hình 2.14) và Hình 4 (thay SVG vào cua, Hình 6.7)
+SRC = "<small>Hình: OpenStax, College Physics 2e, Hình {} — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>"
+figA = ('<figure class="fig"><img src="/assets/openstax/l10-chuyen-dong-bien-doi-gia-toc/hinh-a-cung-nguoc-chieu-v.webp" alt="Bốn ô tô trên trục x: (a) v và a cùng sang phải, nhanh dần; (b) v sang phải, a sang trái, chậm dần; (c) v sang trái, a sang phải, chậm dần; (d) v và a cùng sang trái, nhanh dần" loading="lazy" width="565" height="920">'
+        '<figcaption>Hình 2. Chiều dương sang phải; <em>v</em> xanh, <em>a</em> tím:<br>(a), (d) <em>a</em> cùng chiều <em>v</em>: nhanh dần.<br>(b), (c) <em>a</em> ngược chiều <em>v</em>: chậm dần.<br>' + SRC.format("2.14") + '</figcaption></figure>')
+fig4s = ('<figure class="fig"><img src="/assets/openstax/l10-chuyen-dong-bien-doi-gia-toc/hinh-delta-v-huong-tam.webp" alt="Vật chuyển động tròn tâm A, vận tốc v1 tại B và v2 tại C đều tiếp tuyến; vẽ chung gốc thì hiệu vận tốc Δv chĩa về phía tâm" loading="lazy" width="748" height="748">'
+         '<figcaption>Hình 4. Tốc độ không đổi, vận tốc vẫn đổi hướng:<br>B = vị trí 1, C = vị trí 2; <em>v</em> tiếp tuyến.<br>Δ<em>v</em> = <em>v</em><sub>2</sub> − <em>v</em><sub>1</sub> chĩa vào tâm A.<br>Bỏ qua tam giác ABC.<br>' + SRC.format("6.7") + '</figcaption></figure>')
 h = (HERE / "theory.src.html").read_text(encoding="utf8")
-for n, fg in enumerate((fig1, fig2, fig3, fig4), 1):
-    assert f"<!--FIG{n}-->" in h, n
-    h = h.replace(f"<!--FIG{n}-->", fg)
+fig2 = fig2.replace("Hình 2.", "Hình 3.", 1) if "Hình 2." in fig2 else fig2
+fig4 = fig4.replace("Hình 4.", "Hình 5.", 1)
+for mark, fg in (("1", fig1), ("1B", figA), ("2", fig2), ("3", fig4s), ("4", fig4)):
+    assert f"<!--FIG{mark}-->" in h, mark
+    h = h.replace(f"<!--FIG{mark}-->", fg)
 h = h.replace("__BANG_TN1__", bang).replace("__A_TONG__", atong)
 assert "__" not in h.replace("__PHUT__", "")
 # số phút: điền từ lint_do_dai (đo trên chính bản đã chèn hình)

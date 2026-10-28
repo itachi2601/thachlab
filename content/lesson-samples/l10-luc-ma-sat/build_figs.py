@@ -250,6 +250,10 @@ NX = (f"$F_{{\\text{{trượt}}}}/N \\approx$ {'; '.join(num(r, 2) for r in rati
 print("tỉ số trượt:", [round(r, 3) for r in ratios], "μ tb", round(mu_tb, 3), "nghỉ:", [round(r, 3) for r in rn])
 src = src.replace("__NHANXET__", NX)
 
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026, đợt 2): thay SVG mặt nghiêng (H3) bằng Hình 5.4, xem nguon.md
+fig3 = (
+    '<figure class="fig"><img src="/assets/openstax/l10-luc-ma-sat/hinh-mat-nghieng-luc-ma-sat.webp" alt="Người trượt tuyết trên dốc 25 độ: trọng lực w tách thành w song song và w vuông góc với dốc, phản lực N vuông góc dốc, ma sát f hướng lên dốc, kèm sơ đồ lực" loading="lazy" width="875" height="416">'
+    '<figcaption>Hình 3. $w = P$; $w_\\parallel = P_x$; $w_\\perp = P_y$.<br>$N$ cân bằng $P_y$; $f = F_{\\text{ms}}$ hướng lên dốc.<br>Chỉ minh hoạ dạng lực: sách 25°, bài $\\alpha = 30^\\circ$.<br><small>Hình: OpenStax, College Physics 2e, Hình 5.4 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 # ---------------- Ghép hình ----------------
 figs = [re.sub(r"<figcaption>Hình \d\.", f"<figcaption>Hình {k}.", f) for k, f in enumerate((fig1, fig2, fig3, fig4), 1)]
 order = [int(k) for k in re.findall(r"<!--FIG(\d)-->", src)]
