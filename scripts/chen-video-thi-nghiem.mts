@@ -120,8 +120,8 @@ function renderBlock(marker: string, tieuDeHop: string, nhan: string, v: Video):
     // ép vào 16:9 để hai bên đen. Thẻ <video> thuần, preload="none" → chỉ tải ảnh bìa (V5, V9).
     const giay = typeof v.giay === "number" ? ` · ${Math.round(v.giay)} giây` : "";
     lines.push(
-      `<p class="tl-label">🎬 Video thí nghiệm${giay}</p>`,
-      `<p class="tl-video-ten">${escapeHtml(nhan)}</p>`,
+      `<p class="tl-label">🎬 ${escapeHtml(tieuDeHop)}${giay}</p>`,
+      `<p class="tl-video-ten">${escapeHtml(nhan.charAt(0).toLocaleUpperCase("vi") + nhan.slice(1))}</p>`,
       `<div class="tl-video tl-video--doc"><video src="${escapeHtml(v.mp4)}"${v.poster ? ` poster="${escapeHtml(v.poster)}"` : ""} controls preload="none" playsinline title="${escapeHtml(nhan)}" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>`,
       `<p class="tl-video-goi-y">${v.nhin_vao?.trim() ? `<strong>Nhìn vào:</strong> ${escapeHtml(v.nhin_vao.trim())}` : `Gặp ô <strong>Thử nghĩ</strong>: dừng video, tự trả lời rồi mới xem tiếp.`}</p>`,
     );
