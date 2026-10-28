@@ -7,6 +7,12 @@ export interface ReviewStageDef {
   item_id: number | null;
   title: string;
   minutes: number;
+  /** Chế độ tự học: chặng khoá tới giờ này (ISO). Bộ bài tập mỗi ngày dùng để mở từng ngày vào 6:00. */
+  open_at?: string;
+  /** Dòng giới thiệu ngắn gửi kèm chuông khi chặng mở (ví dụ "4 bài · 30–45 phút"). */
+  brief?: string;
+  /** Máy chủ đã gửi chuông mở chặng (cờ nội bộ). */
+  opened?: boolean;
   /** Chặng "ôn dạng": nhãn dạng của từng câu theo thứ tự trong đề (dùng cho thống kê sai theo dạng). */
   dang_by_index?: string[];
 }
@@ -181,6 +187,18 @@ export const getWrongStudents = (sessionId: number, stage: number | null = null)
   rpc<WrongStudentRow[]>("review_wrong_students", { p_session: sessionId, p_stage: stage });
 
 /** Buổi ôn đang diễn ra của lớp em (null nếu không có). */
+export interface RosterStudent {
+  id: string;
+  name: string;
+  me: boolean;
+  /** Mỗi chặng một trạng thái: done = đã nộp · doing = đang làm · none = chưa làm. Không có điểm. */
+  st: ("done" | "doing" | "none")[];
+}
+
+/** Bảng tên bạn đã nộp / chưa nộp từng chặng của buổi tự học (em trong lớp hoặc nhân sự). */
+export const getReviewRoster = (sessionId: number) =>
+  rpc<{ now: string; students: RosterStudent[] } | null>("review_roster", { p_session: sessionId });
+
 export const getMyReviewState = (sessionId: number | null = null) =>
   rpc<MyReviewState | null>("review_my_state", { p_session: sessionId });
 
