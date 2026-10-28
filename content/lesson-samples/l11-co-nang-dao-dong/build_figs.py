@@ -148,7 +148,7 @@ b += T(X(-xi), OY + 20, "−A/√2", RED, 13, "middle")
 b += T(X(xi), OY + 20, "A/√2", RED, 13, "middle")
 fig2 = wrap("0 0 440 252",
             "Đồ thị thế năng lõm lên và động năng lõm xuống theo li độ, cắt nhau tại cộng trừ A trên căn hai",
-            b, "Hình 2. $E_t$ lõm lên, $E_d$ lõm xuống.<br>Cắt nhau tại x = ±A/√2.")
+            b, "Hình 3. $E_t$ lõm lên, $E_d$ lõm xuống.<br>Cắt nhau tại x = ±A/√2.")
 kiem_nhan("0 0 440 252", "hình 2")
 print("giao phải px", round(X(xi), 1), round(Yet(xi), 1), "trái", round(X(-xi), 1))
 
@@ -195,13 +195,20 @@ b += T(Xt(0.25), yW + 48, "Ed", BLUE, 13, "middle")
 b += T((Xt(0) + Xt(0.5)) / 2, y0 + 34, "T/2", GRN, 13, "middle")
 fig3 = wrap("0 0 440 246",
             "Thế năng và động năng ngược pha, chu kì bằng nửa chu kì li độ; cơ năng là đường nằm ngang",
-            b, "Hình 3. $E_t$ và $E_d$ ngược pha, chu kì $T/2$. $W$ là đường nằm ngang.")
+            b, "Hình 4. $E_t$ và $E_d$ ngược pha, chu kì $T/2$. $W$ là đường nằm ngang.")
 kiem_nhan("0 0 440 246", "hình 3")
+
+# Ảnh OpenStax College Physics 2e (28/10/2026): THÊM Hình 16.14 trước hai đồ thị, xem nguon.md
+figos = (
+    '<figure class="fig"><img src="/assets/openstax/l11-co-nang-dao-dong/hinh-bien-doi-nang-luong-lo-xo.webp" alt="Khối m gắn lò xo trên mặt không ma sát ở năm vị trí: biên x = X (v = 0), qua x = 0 (v âm cực đại), biên x = −X (v = 0), qua x = 0 (v cực đại), lại biên x = X; ghi kèm năng lượng ở mỗi vị trí" loading="lazy" width="875" height="550">'
+    '<figcaption>Hình 2. a, c, e: biên, <em>v</em> = 0, thế năng ½<em>kX</em>².<br>b, d: <em>x</em> = 0, |<em>v</em>| cực đại, động năng ½<em>mv</em><sub>max</sub>².<br>Sách: <em>X</em> = <em>A</em>.<br>'
+    '<small>Hình: OpenStax, College Physics 2e, Hình 16.14 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 h = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3), 1):
     assert "<!--FIG%d-->" % n in h, n
     assert "$" not in f.split("<figcaption>")[0], n
     h = h.replace("<!--FIG%d-->" % n, f)
+h = h.replace("<!--FIGOS-->", figos)
 open("theory.html", "w", encoding="utf8").write(h)
 print("ok", len(h))

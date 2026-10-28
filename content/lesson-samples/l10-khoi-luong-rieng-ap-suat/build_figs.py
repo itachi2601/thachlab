@@ -372,6 +372,16 @@ for k, f in enumerate(figs, 1):
     src = src.replace(f"<!--FIG{k}-->", f)
 assert "__" not in src.replace("__PHUT__", ""), re.findall(r"__\w+__", src)
 
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026, đợt 2): hình THÊM, đánh số lại theo thứ tự trong bài, xem nguon.md
+figx = (
+        '<figure class="fig"><img src="/assets/openstax/l10-khoi-luong-rieng-ap-suat/hinh-luc-dien-tich-ap-suat.webp" alt="Cùng một lực: ngón tay ấn lên vai (diện tích lớn, áp suất nhỏ) và mũi kim tiêm (diện tích nhỏ, áp suất lớn)" loading="lazy" width="1000" height="464">'
+        '<figcaption>Hình 9. (a) <em>S</em> lớn, <em>p</em> nhỏ;<br>(b) <em>S</em> nhỏ, <em>p</em> lớn.<br><small>Hình: OpenStax, College Physics 2e, Hình 11.5 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>'
+)
+assert src.count("<!--FIGX-->") == 1
+src = src.replace("<!--FIGX-->", figx)
+_k = iter(range(1, 20))
+src = re.sub(r"<figcaption>Hình \d+\.", lambda m: f"<figcaption>Hình {next(_k)}.", src)
+
 lint = ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
 out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")

@@ -51,25 +51,11 @@ b += text(ox - 6, oy + 18, "O", "currentColor", 14, "end", "600")
 fig1 = wrap("0 0 440 220", "Quy tắc hình bình hành: hai lực F1, F2 hợp nhau góc alpha, đường chéo là hợp lực F",
             b, "Hình 1. Quy tắc hình bình hành: đường chéo xuất phát từ O (xanh lá) là hợp lực <em>F</em>; α là góc giữa hai lực.")
 
-# ---- Hình 2: phân tích lực khi kéo vali / xe
-gx = 70                       # mặt đất
-b = defs("f2")
-b += line(20, 190, 420, 190, "currentColor", 2, "", .7)
-b += f'<rect x="{gx+10}" y="146" width="96" height="44" rx="4" fill="rgba(148,163,184,.2)" stroke="currentColor" stroke-width="2.4"/>'
-b += f'<circle cx="{gx+30}" cy="192" r="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="{gx+88}" cy="192" r="6" fill="none" stroke="currentColor" stroke-width="2"/>'
-hx, hy = gx + 106, 160        # điểm đặt lực (tay kéo)
-alpha = 40
-s, (ex, ey) = vec("f2", "r", hx, hy, alpha, 140, 3.4)
-b += s
-b += line(ex, hy, ex, ey, "currentColor", 1.5, "5 4", .6) + line(hx, ey, ex, ey, "currentColor", 1.5, "5 4", .6)
-b += arrow("f2", "g", hx, hy, round(ex, 1), hy, 3)
-b += arrow("f2", "o", hx, hy, hx, round(ey, 1), 3)
-b += arc(hx, hy, 52, 0, alpha, "currentColor") + text(hx + 56, hy - 8, "α", "currentColor", 14, "start", "700")
-b += text((hx + ex) / 2 - 12, (hy + ey) / 2 - 8, "F", RED, 16, "end", "700")
-b += text(hx + 8, hy + 22, sub("F", "x") + " = F cos α", GRN, 14, "start", "700")
-b += text(hx - 8, (hy + ey) / 2 + 4, sub("F", "y") + " = F sin α", ORG, 14, "end", "700")
-fig2 = wrap("0 0 440 220", "Phân tích lực kéo F của tay thành thành phần nằm ngang Fx và thẳng đứng Fy",
-            b, "Hình 2. Lực kéo nghiêng <em>F</em> phân tích thành <em>F<sub>x</sub></em> (làm xe chạy) và <em>F<sub>y</sub></em> (nhấc bớt xe lên); α là góc với phương ngang.")
+# ---- Hình 2: ảnh OpenStax College Physics 2e Hình 3.25 (đợt 2, 28/10/2026): thay SVG phân tích lực kéo xe, xem nguon.md
+fig2 = (
+    '<figure class="fig"><img src="/assets/openstax/l10-tong-hop-phan-tich-luc/hinh-phan-tich-vecto.webp" alt="Vectơ A hợp góc theta với trục x, phân tích thành thành phần nằm ngang A x bằng A cos theta và thành phần thẳng đứng A y bằng A sin theta trên tam giác vuông" loading="lazy" width="347" height="400">'
+    '<figcaption>Hình 2. Sách ghi A, θ, A<sub>x</sub>, A<sub>y</sub>; bài ghi <em>F</em>, α, <em>F<sub>x</sub></em>, <em>F<sub>y</sub></em>.<br>'
+    '<small>Hình: OpenStax, College Physics 2e, Hình 3.25 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ---- Hình 3: mặt phẳng nghiêng
 al = 30
