@@ -1,6 +1,6 @@
 <!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/evaluate-magnetic-force-lesson-b1dac6/node_modules/katex/dist/katex.min.css">
 <style>
 :root{color-scheme:light}
 body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -288,6 +288,24 @@ html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-c
 html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
 .exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
 .exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Clip thí nghiệm tự dựng 9:16 (chen-video-thi-nghiem.mts): khung DỌC thay vì ép vào 16:9 (hết hai dải đen),
+   tên thí nghiệm là tiêu đề, nhãn "Video thí nghiệm" chỉ là dòng phụ. Màn hẹp: xếp chồng, video rộng tối đa 340px
+   (cao ~600px, vừa một màn điện thoại — D1). Màn ≥640px: video cột trái, chữ cột phải (B1, N1). */
+.exam-content .tl-box--video:has(> .tl-video--doc) { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; column-gap: 20px; }
+.exam-content .tl-box--video:has(> .tl-video--doc) > .tl-label { margin: 0 0 2px; font-size: 12.5px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+.exam-content .tl-video-ten { margin: 0 0 12px; font-size: 1.12em; font-weight: 700; line-height: 1.35; color: #f1f5f9; }
+.exam-content .tl-video--doc { aspect-ratio: 9 / 16; width: 100%; max-width: 340px; justify-self: center; margin: 0; border-radius: 12px; box-shadow: 0 6px 20px rgba(2,6,23,.28); }
+.exam-content .tl-video--doc video { display: block; object-fit: contain; }
+.exam-content .tl-video-goi-y { margin: 12px 0 0; padding: 8px 12px; border-left: 3px solid rgba(167,139,250,.6); border-radius: 0 6px 6px 0; background: rgba(167,139,250,.1); font-size: .94em; line-height: 1.5; }
+html[data-theme="light"] .exam-content .tl-video-ten { color: #1e1b4b; }
+html[data-theme="light"] .exam-content .tl-video-goi-y { border-left-color: #7c3aed; background: rgba(124,58,237,.07); }
+@media (min-width: 640px) {
+  .exam-content .tl-box--video:has(> .tl-video--doc) { grid-template-columns: minmax(220px, 300px) minmax(0, 1fr); grid-template-rows: auto auto 1fr; }
+  .exam-content .tl-box--video:has(> .tl-video--doc) > .tl-video--doc { grid-column: 1; grid-row: 1 / span 3; max-width: none; }
+  .exam-content .tl-box--video:has(> .tl-video--doc) > :not(.tl-video--doc) { grid-column: 2; }
+  .exam-content .tl-box--video:has(> .tl-video--doc) > .tl-label { margin-top: 4px; }
+  .exam-content .tl-video-goi-y { margin-top: 4px; }
+}
 /* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
    trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
 .exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
@@ -1409,6 +1427,65 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
   .lesson-page .lesson-toc a, .lesson-rail-back, .lesson-page .lesson-nav--rail .lesson-side-link, .class-rail-item, .class-rail .lesson-rail-back { min-height: 44px; }
 }
 
+/* ============================================================================================
+   MÀN RỘNG ≥ 1280px (27/10/2026): chữ giữ cột ≤ 62 ký tự (C2), còn bảng, mô phỏng, video, hình khổ rộng
+   lan sang khoảng trống bên phải — ngay tại chỗ câu nhắc tới chúng (N8). Rail và vị trí cột chữ không đổi.
+   Mép phải chung của phần lan = 100vw − 72px (trang bài và trang chương cùng mép; chừa nút Báo lỗi nổi ở góc phải). < 1280 không đổi gì.
+   ============================================================================================ */
+.lesson-layout--rail { --wide-bleed: 0px; }
+@media (min-width: 1280px) {
+  /* Cột giữa bắt đầu ở (100vw − 1200)/2 + 24 + 248 + 40, rộng 720 → phần thêm = 50vw − 504, tối đa 320px. */
+  .lesson-layout--rail { --wide-bleed: clamp(0px, calc(50vw - 504px), 320px); }
+  /* Thẻ lý thuyết nới sang phải nhưng vùng chữ bên trong giữ nguyên bề rộng (padding phải nuốt phần nới). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { margin-right: calc(-1 * var(--wide-bleed)); padding-right: calc(36px + var(--wide-bleed)); }
+  /* Chỉ khối media đứng trực tiếp trong mạch bài mới lan; nằm trong hộp (.tl-box, .tl-quiz…) thì theo hộp.
+     Hình .fig vẽ ở khổ 420–460 giữ 420px (phóng to chữ trong hình sẽ to hơn chữ bài); chỉ hình vẽ khổ ≥ 600 lan —
+     liệt kê đúng bề rộng kèm dấu cách để "0 0 60 40" không khớp nhầm; khổ khác thì gắn .fig--wide khi soạn. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > :is(.tl-video, iframe, details.tl-details:has(> iframe)) { width: calc(100% + var(--wide-bleed)); max-width: none; }
+  /* Bảng (ContentHtml bọc mọi <table> trong .table-scroll): chỉ nới khi nội dung cần — bảng ngắn 3 cột vẫn
+     rộng bằng cột chữ như cũ, bảng nhiều cột/câu dài/có ảnh mới lan, tránh ô trống dàn ngang 900px. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .table-scroll { width: max-content; min-width: 100%; max-width: calc(100% + var(--wide-bleed)); }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .table-scroll > table { width: auto; min-width: 100%; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > figure.fig:is(.fig--wide, :has(> svg:is([viewBox^="0 0 600 "], [viewBox^="0 0 640 "], [viewBox^="0 0 700 "], [viewBox^="0 0 720 "], [viewBox^="0 0 750 "], [viewBox^="0 0 800 "], [viewBox^="0 0 900 "], [viewBox^="0 0 960 "], [viewBox^="0 0 1000 "], [viewBox^="0 0 1200 "]))) { width: min(calc(100% + var(--wide-bleed)), 860px); max-width: none; margin-left: 0; }
+}
+
+/* ============================================================================================
+   CỘT LỀ PHẢI ≥ 1280px (thầy duyệt 27/10/2026, trang mẫu https://claude.ai/artifact/BXikspAiK5RZ9EteMUEc8C).
+   features/lessons/margin-notes.ts chép chú thích số, định nghĩa thuật ngữ và ô "Số cần nhớ" của mỗi đoạn cấp đầu
+   vào <div class="tl-sn"> đặt ngay trước đoạn. ≥ 1280: khối đó float sang phần thẻ đã nới (--wide-bleed), bản gốc
+   trong bài ẩn; < 1280: khối lề ẩn, bài như cũ. Chữ 13,5px màu phụ, kẻ mảnh trái, không nền, không màu nhấn (N1, G1, M3).
+   ============================================================================================ */
+.exam-content .tl-sn { display: none; }
+@media (min-width: 1280px) {
+  /* flow-root chỉ cho mục có ghi chú lề (giữ float trong mục); mục khác không đổi gộp lề so với trước. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content { --sn-w: min(240px, calc(var(--wide-bleed) + 4px)); }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content:has(> .tl-sn) { display: flow-root; }
+  /* Hộp lề có bề rộng lề âm bằng chính nó → chiếm 0px trong dòng, chữ đoạn văn không bị ép hẹp (kỹ thuật Tufte). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .tl-sn { display: grid; gap: 10px; float: right; clear: right; width: var(--sn-w); margin: 4px calc(-1 * (var(--sn-w) + 24px)) 14px 0; border-left: 1px solid var(--lesson-line); padding-left: 12px; color: var(--color-muted); font-size: 13.5px; font-weight: 400; line-height: 1.55; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .tl-sn:has(+ p:hover) { color: var(--color-ink); }
+  .lesson-page .exam-content .tl-sn-n { margin-right: 5px; color: var(--color-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .lesson-page .exam-content .tl-sn-item b { color: var(--color-ink); font-weight: 600; }
+  /* Ô số ở lề: mỗi ô một dòng, không khung (cột lề 1280px chỉ ~140px) — vẫn che, bấm nhãn để hiện giá trị (L1). */
+  .lesson-page .exam-content .tl-sn-nums { display: grid; gap: 2px; margin-top: 4px; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num { display: block; min-height: 0; border: 0; border-radius: 0; background: none; padding: 2px 0; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num > summary { display: inline-block; min-height: 28px; padding-top: 4px; color: var(--color-ink); font-size: 13px; line-height: 1.5; text-decoration: underline dotted var(--color-muted); text-underline-offset: 3px; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num > summary::after { content: none; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num > :not(summary) { display: block; font-size: 15px; }
+  /* Bản gốc trong bài: đã có ở lề thì ẩn (mỗi cỡ màn chỉ đúng một bản, trình đọc màn hình không nghe lặp). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content :is(.tl-nums--sn, .tl-fn--placed, .tl-fns--placed) { display: none; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content .tl-term--sn > :is(input, .tl-def) { display: none; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content .tl-term--sn > label { border-bottom-color: var(--color-muted); color: inherit; cursor: default; }
+  /* Số mũ đã có chữ ngay bên lề: không còn là liên kết (đích trong danh sách cuối bài đang ẩn). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .tl-sn + p .tl-fn a { color: var(--color-muted); pointer-events: none; }
+  /* Mốc mục và khối lan rộng bắt đầu dưới ghi chú lề, không bao giờ đè lên nhau. */
+  /* Chỉ trong mục có ghi chú lề (đã flow-root): mục khác có float sẵn của thẻ (nút Thu gọn) sẽ bị đẩy xuống nếu clear. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content:has(> .tl-sn) > :is(h3, h4, .table-scroll, .tl-video, iframe, details.tl-details:has(> iframe), figure.fig--wide) { clear: right; }
+}
+/* iPad ngang / laptop cảm ứng ≥ 1280: nhãn ô số ở lề đủ đích chạm 44px (D2). */
+@media (min-width: 1280px) and (pointer: coarse) {
+  .lesson-page .exam-content .tl-sn-nums .tl-num > summary { min-height: 44px; padding-top: 11px; }
+}
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
@@ -1417,7 +1494,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 
 <div class="tl-box tl-box--think tl-check">
-<p class="tl-label">Trả bài — nói bằng lời của em trước</p>
+<p class="tl-label">Trả bài</p>
 
 <details class="tl-details tl-more">
 <summary>1. Lực từ tác dụng lên đoạn dây có điểm đặt, phương, chiều thế nào?</summary>
@@ -1445,14 +1522,14 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 </details>
 
 <details class="tl-details tl-more">
-<summary>6. Chiều đường sức của dây thẳng, vòng dây, ống dây; công thức $B$ trong ống dây.</summary>
-<p><strong>Quy tắc nắm tay phải.</strong> Dây thẳng: đường sức là đường tròn đồng tâm trong mặt phẳng vuông góc với dây. Vòng dây: đường sức vào một mặt, ra mặt kia. Ống dây: từ trường trong lòng ống đều, song song trục ống, $B = 4\pi\cdot10^{-7} n I$ với $n = N/l$ (vòng/m).</p>
+<summary>6. Chiều đường sức của dây thẳng, vòng dây, ống dây xác định thế nào?</summary>
+<p><strong>Quy tắc nắm tay phải.</strong> Dây thẳng: đường sức là đường tròn đồng tâm trong mặt phẳng vuông góc với dây. Vòng dây: đường sức vào một mặt, ra mặt kia. Ống dây: từ trường trong lòng ống đều, song song trục ống. Dây thẳng: ngón cái theo $I$, bốn ngón khum chỉ đường sức; vòng dây, ống dây: bốn ngón khum theo $I$, ngón cái chỉ $\vec{B}$.</p>
 </details>
 </div>
 
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/evaluate-magnetic-force-lesson-b1dac6/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/evaluate-magnetic-force-lesson-b1dac6/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

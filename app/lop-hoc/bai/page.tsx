@@ -680,6 +680,15 @@ function ExamRow({
   );
 }
 
+/** "N dạng bài kèm lời giải" đếm theo dạng có cấu trúc (problem_html); mục cũ đi kèm (bài tự luận…) đếm riêng. */
+function workedSubtitle(item: LessonItem): string {
+  if (item.kind !== "bai_tap_mau" || item.questions.length === 0) return item.subtitle ?? "";
+  const dang = item.questions.filter((q) => q.problem_html).length;
+  const them = item.questions.length - dang;
+  if (dang === 0 || them === 0) return item.subtitle ?? "";
+  return `${dang} dạng bài kèm lời giải · ${them} mục bài tập thêm`;
+}
+
 /** Khung xương trong lúc chờ bài học — cùng lớp bố cục (lesson-shell/lesson-layout) để nội dung về không nhảy. */
 function LessonLoginWall({ title }: { title: string }) {
   const next = typeof window === "undefined" ? "" : encodeURIComponent(window.location.pathname + window.location.search);
@@ -1762,6 +1771,9 @@ function LessonLoader() {
 
       // bai_tap_mau / luyen_tap: lưới từng câu
       const showSummaries = item.kind === "luyen_tap" && itemIndex === 0;
+      // Phụ đề lưu trong DB dễ lệch số: Luyện tập ghi số câu của MỘT đề gắn kèm trong khi PracticeSession bốc từ cả
+      // ngân hàng (đã tự báo "Ngân hàng có N câu") → bỏ; Bài tập mẫu đếm cả mục tự luận cũ là "dạng" → đếm lại (N3).
+      const blockSub = item.kind === "luyen_tap" ? "" : workedSubtitle(item);
       return (
         <div key={item.id} id={`lesson-item-${item.id}`} className="lesson-block" data-item={item.id}>
           {showSummaries && (
@@ -1773,10 +1785,10 @@ function LessonLoader() {
                 ))}
             </div>
           )}
-          {(!plain || item.subtitle) && (
+          {(!plain || blockSub) && (
             <div className="lesson-block-head">
               {!plain && <p className="lesson-block-title">{item.title}</p>}
-              {item.subtitle && <p className="lesson-block-sub">{item.subtitle}</p>}
+              {blockSub && <p className="lesson-block-sub">{blockSub}</p>}
             </div>
           )}
           {item.kind === "bai_tap_mau" ? (

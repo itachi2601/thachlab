@@ -81,6 +81,12 @@ if (keepOld || fromBackup) {
   finalQ = [...questions, ...old.filter((q) => !q.problem_html)];
   console.log(`Giữ ${finalQ.length - questions.length} dạng cũ sau ${questions.length} dạng mới.`);
 }
-const upd = await sb.from("lesson_items").update({ questions: finalQ, subtitle: `${finalQ.length} dạng bài kèm lời giải` }).eq("id", item.id).eq("kind", "bai_tap_mau").select("id");
+// Chỉ dạng có cấu trúc (problem_html) mới là "dạng"; mục tự luận/dạng cũ đếm riêng (khớp workedSubtitle ở app/lop-hoc/bai/page.tsx).
+function workedSubtitle(qs: { problem_html?: string }[]): string {
+  const dang = qs.filter((q) => q.problem_html).length;
+  const them = qs.length - dang;
+  return dang && them ? `${dang} dạng bài kèm lời giải · ${them} mục bài tập thêm` : `${qs.length} dạng bài kèm lời giải`;
+}
+const upd = await sb.from("lesson_items").update({ questions: finalQ, subtitle: workedSubtitle(finalQ) }).eq("id", item.id).eq("kind", "bai_tap_mau").select("id");
 if (upd.error || upd.data?.length !== 1) fail(upd.error?.message ?? "UPDATE không đúng 1 dòng");
 console.log(`✓ Đã ghi. Hoàn tác: cập nhật lại questions từ ${path.relative(root, backup)}. Rồi: bash scripts/deploy.sh`);
