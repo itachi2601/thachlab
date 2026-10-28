@@ -88,7 +88,9 @@ execFileSync(ffmpeg, ["-y", "-loglevel", "error", "-ss", String(giayBia), "-i", 
 console.log(`ảnh bìa: ${bia} · ${Math.round(fs.statSync(bia).size / 1024)} KB (giây ${giayBia})`);
 
 const ngay = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-const dich = { mp4: `clip/${tn}-${ngay}.mp4`, bia: `clip/${tn}-${ngay}.webp` };
+const ban = opt("--ban"); // dựng lại trong cùng ngày: --ban 2 → <tn>-<ngày>-2 (bucket không ghi đè)
+const ten = `${tn}-${ngay}${ban ? `-${ban}` : ""}`;
+const dich = { mp4: `clip/${ten}.mp4`, bia: `clip/${ten}.webp` };
 console.log(`đích: ${BUCKET}/${dich.mp4} + ${dich.bia}`);
 if (!APPLY) {
   console.log("(xem thử — thêm --apply để tải lên và ghi kho)");

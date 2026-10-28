@@ -23,6 +23,12 @@ BG = (255, 248, 238); INK = (30, 41, 82); MUTED = (100, 105, 125); WHITE = (255,
 BLUE = (37, 99, 235); ORANGE = (234, 88, 12); GREEN = (22, 163, 74); RED = (220, 38, 38)
 PURPLE = (124, 58, 237); YELLOW = (250, 204, 21); TEAL = (13, 148, 136); NAVY = (24, 30, 56)
 GRAY = (150, 155, 170); LIGHT = (232, 226, 214)
+# Vung an toan (V12, 28/10/2026): khi dung video, thanh dieu khien trinh duyet che ~10% tren va ~10% duoi khung.
+# Canh van ve tren khung 1080x1920 nhu cu; frame() thu vung y SRC0..SRC1 vao tu DST0 (ti le SCALE), tieu de canh
+# o TITLE_Y, phu de mot dong ket thuc o CAP_Y1 -- ca hai nam ngoai vung bi che.
+SRC0, SRC1, DST0, SCALE = 200, 1690, 285, 0.88
+TITLE_Y, CAP_Y1 = 232, 1705
+WPM = 140   # toc do doc chu Viet tren dien thoai (docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md)
 
 def clamp(x, a=0.0, b=1.0): return max(a, min(b, x))
 def ease(x): x = clamp(x); return x * x * (3 - 2 * x)
@@ -126,12 +132,13 @@ def chot_hoi(d, t, sc, chot, hoi, goi_y=None, body=None):
         ctext(d, 1445, goi_y, 42, ORANGE, maxw=820, alpha=kh)
 
 # ---------------- nhip phu de ----------------
-def cap_dur(s): return max(2.3, 0.052 * len(s) + 0.9)
+def n_tu(s): return len(re.findall(r"[A-Za-zÀ-ỹđĐ]{2,}|\d+(?:[,.]\d+)?", s))
+def cap_dur(s): return max(2.5, n_tu(s) * 60 / WPM + 0.8)   # du thoi gian doc o WPM + 0,8 s nhin hinh
 def build(clip):
     t0 = 0.0
     for sc in clip["scenes"]:
         sc["t0"] = t0; t = 0.4; sc["M"] = []
-        durs = [c[1] if isinstance(c, tuple) else cap_dur(c) for c in sc["caps"]]
+        durs = [max(c[1], cap_dur(c[0])) if isinstance(c, tuple) else cap_dur(c) for c in sc["caps"]]  # khong ngan hon muc doc
         sc["caps"] = [c[0] if isinstance(c, tuple) else c for c in sc["caps"]]
         for dd in durs:
             sc["M"].append(t); t += dd
@@ -150,11 +157,11 @@ def chrome(d, clip, sc, t, gt):
     text(d, (350, 82), clip["header"], 28, WHITE)
     text(d, (1020, 82), "thachlab", 34, ORANGE, anchor="rm")
     k = appear(t, 0.0, 0.5)
-    text(d, (W / 2 - (1 - k) * 60, 178), sc["title"], 60, INK, alpha=k)
+    text(d, (W / 2 - (1 - k) * 60, TITLE_Y), sc["title"], 56, INK, alpha=k)
     cur = cur_cap(sc, t)
     if cur >= 0:
         f = F(46); ls = wrap(d, sc["caps"][cur], f, 900)
-        hgt = len(ls) * 58 + 50; y1 = 1790; y0 = y1 - hgt
+        hgt = len(ls) * 58 + 50; y1 = CAP_Y1; y0 = y1 - hgt
         a = appear(t, sc["M"][cur] - 0.05, 0.25)
         card(d, (60, y0, 1020, y1), fill=A(NAVY, 0.92 * a), r=30)
         for j, l in enumerate(ls):
@@ -219,20 +226,55 @@ def frame(clip, gt):
     t = gt - sc["t0"]
     img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img, "RGBA"); IMG_REF[0] = img
     sc["draw"](img, d, t, sc)
+    bw, bh = int(W * SCALE), int((SRC1 - SRC0) * SCALE)
+    body = img.crop((0, SRC0, W, SRC1)).resize((bw, bh), Image.LANCZOS)
+    img = Image.new("RGB", (W, H), BG); img.paste(body, ((W - bw) // 2, DST0)); d = ImageDraw.Draw(img, "RGBA")
     chrome(d, clip, sc, t, gt)
     if t < 0.25: img = Image.blend(Image.new("RGB", (W, H), BG), img, ease(t / 0.25))
     return img
+
+def do_chu(clip):
+    """Ghi moi chuoi ve len khung (alpha >= 0,6) moi 0,2 s; dem tu moi xuat hien trong tung canh (so doi thanh #)."""
+    rec = []; orig = ImageDraw.ImageDraw.text
+    def spy(self, xy, s, *a, **k):
+        fill = k.get("fill", a[0] if a else None)
+        al = fill[3] / 255 if isinstance(fill, tuple) and len(fill) == 4 else 1.0
+        if al >= 0.6 and isinstance(s, str) and s.strip(): rec.append((s.strip(), xy[1]))
+        return orig(self, xy, s, *a, **k)
+    ImageDraw.ImageDraw.text = spy
+    tong = 0
+    try:
+        for sc in clip["scenes"]:
+            seen = set(); t = 0.0
+            while t < sc["T"]:
+                rec.clear(); frame(clip, sc["t0"] + t)
+                for s, y in rec:
+                    if y < 150 or y > 1840 or s == sc["title"] or any(s in c for c in sc["caps"]): continue
+                    if n_tu(s) >= 2: seen.add(re.sub(r"\d+([,.]\d+)?", "#", s))
+                t += 0.2
+            w = sum(n_tu(s) for s in seen) + sum(n_tu(c) for c in sc["caps"]); tong += w
+            tpm = w / sc["T"] * 60
+            print(f"[{sc['key']}] {sc['T']:.1f}s  {w} từ  {tpm:.0f} từ/phút" + ("  ← dày" if tpm > 260 else ""))
+    finally:
+        ImageDraw.ImageDraw.text = orig
+    tpm = tong / clip["TOTAL"] * 60
+    print(f"CẢ CLIP {tong} từ / {clip['TOTAL']:.1f}s = {tpm:.0f} từ/phút (mức đọc {WPM}; đích ≤ 200)" + ("  ← dày" if tpm > 200 else ""))
 
 def run(clip, argv):
     build(clip); total = clip["TOTAL"]; print(f"{clip['id']}: {total:.1f}s")
     if "--kich-ban" in argv:   # cong A: kich ban dang chu (khong ve, ~1 giay) de duyet truoc khi xem hinh
         for sc in clip["scenes"]:
             print(f"[{sc['key']}] {sc['title']} · bắt đầu {sc['t0']:.1f}s · dài {sc['T']:.1f}s")
-            for m, c in zip(sc["M"], sc["caps"]): print(f"  {sc['t0'] + m:5.1f}s  ({len(c)} kt)  {c}")
+            for m, c in zip(sc["M"], sc["caps"]):
+                dd = ImageDraw.Draw(Image.new("RGB", (8, 8))); nl = len(wrap(dd, c, F(46), 900))
+                canh = ("  ← quá 8 từ" if n_tu(c) > 8 else "") + ("  ← 2 dòng" if nl > 1 else "")
+                print(f"  {sc['t0'] + m:5.1f}s  ({n_tu(c)} từ)  {c}{canh}")
         if "cues" in clip:
             print("tiếng:", ", ".join(f"{t:.1f}s {k}" for t, k in clip["cues"](clip) if k != "tick"))
         print(f"TỔNG {total:.1f}s" + ("  ← quá 50 s" if total > 50.05 else ""))
         return
+    if "--do-chu" in argv:     # cong A2: tong chu tren man (the, bang, cau hoi + phu de) / thoi luong -> tu/phut
+        do_chu(clip); return
     if "--sheet" in argv:      # cong B: MOT anh ghep khung o moi moc phu de (+1,6 s) va cuoi canh -> ra/<id>-sheet.png
         ts = []
         for sc in clip["scenes"]:
