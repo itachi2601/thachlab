@@ -23,7 +23,7 @@ Nhóm A+B nằm ở `video-de-xuat-l<lớp>-tu-loc.md`; nếu thầy loại mộ
 | tn-l12-camungdt-03 | Từ thông qua khung quay trong từ trường đều | chuyenthe |
 | tn-l12-dttruong-02 | Dòng xoay chiều "đi qua" tụ điện: điện trường biến thiên tương đương dòng điện dịch | boyle |
 | tn-l12-hatnhan-01 | Mô hình "bắn bi mù": tìm vật chắn bằng chùm hạt bị lệch | camungdt |
-| tn-l12-hatnhan-02 | Đo bề dày lá nhôm để suy ra bán kính hạt nhân | boyle |
+| tn-l12-hatnhan-02 | Đo bề dày lá nhôm: đếm lớp nguyên tử, so cỡ hạt nhân | boyle |
 | tn-l12-mayphatdien-01 | Máy phát mini quay bằng động cơ: đo tần số theo tốc độ quay để kiểm f = np | boyle |
 | tn-l12-mayphatdien-03 | Tự quấn máy biến áp: đo điện áp thứ cấp theo số vòng dây | boyle |
 | tn-l12-nllk-01 | Hai nam châm vòng đẩy nhau và chiếc đai giữ chúng lại | camungdt |
