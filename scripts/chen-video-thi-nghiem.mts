@@ -57,6 +57,10 @@ type Video = {
   giay_bat_dau?: number;
   giay_ket_thuc?: number;
   da_kiem?: string;
+  /** Độ dài clip tự dựng (giây), tai-clip-len-storage.mts ghi. */
+  giay?: number;
+  /** Clip mp4 khung NGANG 16:9 (clip hiện tượng V9) — mặc định clip tự dựng là dọc 9:16. */
+  ngang?: boolean;
 };
 type KhoEntry = { expTen: string; lessonId?: number | string; video: Video };
 
@@ -110,16 +114,26 @@ function renderBlock(marker: string, tieuDeHop: string, nhan: string, v: Video):
   const params = new URLSearchParams({ rel: "0" });
   if (typeof v.giay_bat_dau === "number") params.set("start", String(v.giay_bat_dau));
   if (typeof v.giay_ket_thuc === "number") params.set("end", String(v.giay_ket_thuc));
-  const lines = [
-    `<!--video:${marker}-->`,
-    `<div class="tl-box tl-box--video">`,
-    `<p class="tl-label">🎬 ${escapeHtml(tieuDeHop)}: ${escapeHtml(nhan)}</p>`,
-    v.mp4
-      ? // Clip tự dựng: thẻ <video> thuần, preload="none" → chỉ tải ảnh bìa, không JS, không gợi ý video khác (V5, V9)
-        `<div class="tl-video"><video src="${escapeHtml(v.mp4)}"${v.poster ? ` poster="${escapeHtml(v.poster)}"` : ""} controls preload="none" playsinline title="${escapeHtml(nhan)}" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>`
-      : `<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/${v.youtube_id}?${params.toString()}" title="${escapeHtml(nhan)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`,
-  ];
-  if (v.nhin_vao?.trim()) lines.push(`<p><strong>Nhìn vào:</strong> ${escapeHtml(v.nhin_vao.trim())}</p>`);
+  const lines = [`<!--video:${marker}-->`, `<div class="tl-box tl-box--video">`];
+  if (v.mp4 && !v.ngang) {
+    // Clip tự dựng 9:16: nhãn nhỏ + TÊN thí nghiệm làm tiêu đề, khung dọc (tl-video--doc) thay vì
+    // ép vào 16:9 để hai bên đen. Thẻ <video> thuần, preload="none" → chỉ tải ảnh bìa (V5, V9).
+    const giay = typeof v.giay === "number" ? ` · ${Math.round(v.giay)} giây` : "";
+    lines.push(
+      `<p class="tl-label">🎬 Video thí nghiệm${giay}</p>`,
+      `<p class="tl-video-ten">${escapeHtml(nhan)}</p>`,
+      `<div class="tl-video tl-video--doc"><video src="${escapeHtml(v.mp4)}"${v.poster ? ` poster="${escapeHtml(v.poster)}"` : ""} controls preload="none" playsinline title="${escapeHtml(nhan)}" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>`,
+      `<p class="tl-video-goi-y">${v.nhin_vao?.trim() ? `<strong>Nhìn vào:</strong> ${escapeHtml(v.nhin_vao.trim())}` : `Gặp ô <strong>Thử nghĩ</strong>: dừng video, tự trả lời rồi mới xem tiếp.`}</p>`,
+    );
+  } else {
+    lines.push(
+      `<p class="tl-label">🎬 ${escapeHtml(tieuDeHop)}: ${escapeHtml(nhan)}</p>`,
+      v.mp4
+        ? `<div class="tl-video"><video src="${escapeHtml(v.mp4)}"${v.poster ? ` poster="${escapeHtml(v.poster)}"` : ""} controls preload="none" playsinline title="${escapeHtml(nhan)}" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>`
+        : `<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/${v.youtube_id}?${params.toString()}" title="${escapeHtml(nhan)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`,
+    );
+    if (v.nhin_vao?.trim()) lines.push(`<p><strong>Nhìn vào:</strong> ${escapeHtml(v.nhin_vao.trim())}</p>`);
+  }
   lines.push(`</div>`, ``);
   return lines.join("\n");
 }
@@ -129,7 +143,7 @@ function nhanCuaVideo(v: Video, pool: Map<string, Video>, macDinh: string): { ti
   const shared = pool.get(khoaVideo(v));
   return {
     tieuDeHop: v.tieu_de_hop?.trim() || macDinh,
-    nhan: (v.nhan ?? v.ten ?? shared?.ten ?? "video").trim(),
+    nhan: (v.nhan ?? v.ten ?? shared?.ten ?? "").trim(),
   };
 }
 
@@ -350,7 +364,7 @@ function chenVaoHtml(
       continue;
     }
     const { tieuDeHop, nhan } = nhanCuaVideo(video, pool, viTri === "mo_bai" ? "Xem thực tế" : "Xem video");
-    inserts.push({ pos, block: renderBlock(viTri, tieuDeHop, nhan, video) });
+    inserts.push({ pos, block: renderBlock(viTri, tieuDeHop, nhan || "video", video) });
     chen.push(`${viTri} → ${khoaVideo(video)}`);
   }
 
