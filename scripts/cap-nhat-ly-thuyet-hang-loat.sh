@@ -21,7 +21,7 @@ PAIRS=()
 for a in "$@"; do
   case "$a" in
     --yes) YES="--yes" ;;
-    --chi-video|--cho-phep-khac|--with-title) EXTRA="$EXTRA $a" ;;
+    --chi-video|--cho-phep-khac|--bo-qua-nhac|--with-title) EXTRA="$EXTRA $a" ;;
     *) PAIRS+=("$a") ;;
   esac
 done
