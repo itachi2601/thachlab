@@ -250,7 +250,7 @@ if abs((x2 - x1) * (TOPB - AY) - (y2 - y1) * (CXp - AX)) > 1e-6:
 if abs(math.hypot(x2 - x1, y2 - y1) / VK - 5) > 1e-9:
     ERR.append("f4: |v13| ≠ 5")
 fig4 = c.svg("Ca nô xuất phát ở A, mũi hướng vuông góc bờ; vận tốc so với nước hướng sang bờ bên kia, nước chảy dọc bờ, vận tốc so với bờ hướng xiên theo đường A tới C; B là điểm đối diện A",
-             "Hình 4. Ca nô sang sông: $\\vec v_{12}$ (so với nước) vuông góc bờ, $\\vec v_{23}$ (nước so với bờ) dọc bờ, $\\vec v_{13}$ (so với bờ) xiên theo đường đi thật $AC$.")
+             "Hình 5. Ca nô sang sông: $\\vec v_{12}$ (so với nước) vuông góc bờ, $\\vec v_{23}$ (nước so với bờ) dọc bờ, $\\vec v_{13}$ (so với bờ) xiên theo đường đi thật $AC$.")
 ERR += c.check()
 ERR += c.label_hits_arrow(["v12", "v23", "v13"])
 
@@ -283,16 +283,24 @@ bang += f"\n<tr><td>Trung bình</td><td>${vn(tmean, 1)}$</td><td>${vn(vmean, 2)}
 if ERR:
     print("\n".join("✗ " + e for e in ERR)); sys.exit(1)
 
+# ---------------- Hình 4: ảnh OpenStax College Physics 2e, Hình 2.11 (cắt hai đồ thị dưới), thêm 28/10/2026 — xem nguon.md
+fig5 = ('<figure class="fig"><img src="/assets/openstax/l10-toc-do-van-toc/hinh-van-toc-am-toc-do-duong.webp" '
+        'alt="Đi tới cửa hàng cách 3 km rồi quay về: đồ thị vận tốc theo thời gian là +12 km/h rồi đổi thành −12 km/h; đồ thị tốc độ theo thời gian luôn bằng 12 km/h" '
+        'loading="lazy" width="575" height="880">'
+        '<figcaption>Hình 4. Đi 3 km rồi về: vận tốc đổi dấu, tốc độ không.<br>Velocity: vận tốc. Speed: tốc độ.<br>12 km/h ≈ 3,3 m/s.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 2.11 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
+
 h = (HERE / "theory.src.html").read_text(encoding="utf8")
-for n, fg in enumerate((fig1, fig2, fig3, fig4), 1):
+for n, fg in ((1, fig1), (2, fig2), (3, fig3), (4, fig4), (5, fig5)):
     assert h.count(f"<!--FIG{n}-->") == 1, n
     h = h.replace(f"<!--FIG{n}-->", fg)
 assert h.count("<!--BANG1-->") == 1
 h = h.replace("<!--BANG1-->", bang)
 # kiểm thứ tự hình theo xuất hiện
-pos = [h.find(f"Hình {n}.") for n in range(1, 5)]
+pos = [h.find(f"Hình {n}.") for n in range(1, 6)]
 if pos != sorted(pos) or -1 in pos:
-    print("✗ thứ tự Hình 1..4 không theo xuất hiện", pos); sys.exit(1)
+    print("✗ thứ tự Hình 1..5 không theo xuất hiện", pos); sys.exit(1)
 # số phút: điền từ lint_do_dai (đo trên chính bản đã chèn hình)
 tmp = HERE / ".theory.tmp.html"
 tmp.write_text(h.replace("__PHUT__", "15"), encoding="utf8")
@@ -305,4 +313,4 @@ if phut is None:
     print("! không đọc được số phút từ lint_do_dai:\n" + out[:600]); sys.exit(1)
 h = h.replace("__PHUT__", str(phut))
 (HERE / "theory.html").write_text(h, encoding="utf8")
-print(f"ok theory.html {len(h)} ký tự · 4 hình · {phut} phút")
+print(f"ok theory.html {len(h)} ký tự · 5 hình · {phut} phút")
