@@ -266,6 +266,16 @@ for n, f in enumerate(figs, 1):
     assert f"Hình {n}." in f, n
     src = src.replace(f"<!--FIG{n}-->", f)
 
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026, đợt 2): hình THÊM, đánh số lại theo thứ tự trong bài, xem nguon.md
+figx = (
+        '<figure class="fig"><img src="/assets/openstax/l10-cong-suat/hinh-chay-len-cau-thang.webp" alt="Người chạy lên cầu thang cao h, bắt đầu v0 = 0 ở chân thang, trọng lực w = mg xuống, phản lực N = −w lên, vận tốc cuối vf ở đỉnh" loading="lazy" width="903" height="768">'
+        '<figcaption>Hình 9. Leo cầu thang: <em>v</em><sub>0</sub> = 0, <em>h</em> là độ cao.<br>w = <em>mg</em> (sách) ↔ <em>P</em> (bài); N = −w.<br>Bài này: <em>m</em> = 50 kg, <em>h</em> = 3,0 m.<br><small>Hình: OpenStax, College Physics 2e, Hình 7.21 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>'
+)
+assert src.count("<!--FIGX-->") == 1
+src = src.replace("<!--FIGX-->", figx)
+_k = iter(range(1, 20))
+src = re.sub(r"<figcaption>Hình \d+\.", lambda m: f"<figcaption>Hình {next(_k)}.", src)
+
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
 out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")
