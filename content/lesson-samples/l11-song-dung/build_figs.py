@@ -43,30 +43,11 @@ fig1 = wrap("0 0 440 226",
 fig1 = fig1.replace('<figure class="fig" data-tl="1">',
                     '<figure class="fig" data-tl="1" data-exp="tn-l11-songdung-04">', 1)
 
-# ---------------- Hình 2: nút, bụng và khoảng cách
-axis, amp, x0, x1, per = 120, 50, 20, 420, 200
-b = ""
-b += seg(x0, axis - amp, x1, axis - amp, "currentColor", 1, "3 3", .3)
-b += seg(x0, axis + amp, x1, axis + amp, "currentColor", 1, "3 3", .3)
-b += seg(x0, axis, x1, axis, "currentColor", 1, "", .3)
-b += poly(sine(x0, x1, axis, amp, per), BLUE, 2.6)
-for k in range(9):
-    x = x0 + k * (per // 4)
-    if k % 2 == 0:
-        b += dot(x, axis, 4.5)
-    else:
-        b += dot(x, axis - amp if (k // 2) % 2 == 0 else axis + amp, 5, ORG)
-# khoảng cách
-b += seg(x0, 50, x0, 56, "currentColor", 1.4) + seg(x0 + per // 4, 50, x0 + per // 4, 56, "currentColor", 1.4) + seg(x0, 53, x0 + per // 4, 53, "currentColor", 1.4)
-b += text(x0 + per // 8, 44, "λ/4", "currentColor", 13, "middle", "700")
-b += seg(x0, 196, x0, 202, "currentColor", 1.4) + seg(x0 + per // 2, 196, x0 + per // 2, 202, "currentColor", 1.4) + seg(x0, 199, x0 + per // 2, 199, "currentColor", 1.4)
-b += text(x0 + per // 4, 190, "λ/2", "currentColor", 13, "middle", "700")
-b += dot(24, 222, 5) + text(34, 226, "nút: biên độ 0", "currentColor", 13, "start", "400")
-b += dot(200, 222, 5, ORG) + text(210, 226, "bụng: biên độ 2A", ORG, 13, "start", "400")
-fig2 = wrap("0 0 440 236",
-            "Sóng dừng trên dây hai đầu cố định: các nút đứng yên và các bụng dao động mạnh nhất xen kẽ, cách nhau λ/2 và λ/4",
-            b,
-            "Hình 2. Sóng dừng: <strong>nút</strong> (chấm trên trục) đứng yên, <strong>bụng</strong> (chấm cam) dao động mạnh nhất. Hai nút liên tiếp cách nhau λ/2; nút và bụng liền kề cách nhau λ/4.")
+# Ảnh OpenStax College Physics 2e (28/10/2026): thay SVG Hình 2, xem nguon.md
+fig2 = (
+    '<figure class="fig"><img src="/assets/openstax/l11-song-dung/hinh-song-dung-hai-song-nguoc-chieu.webp" alt="Hai sóng ngược chiều (Wave 1 sang trái, Wave 2 sang phải) và tổng của chúng ở năm thời điểm từ 0 đến T: tổng là sóng dừng, tại các nút luôn bằng 0" loading="lazy" width="975" height="395">'
+    '<figcaption>Hình 2. Wave 1, 2 ngược chiều cộng thành sóng dừng (Resultant); t: thời điểm.<br>Nút–nút: λ/2; nút–bụng: λ/4.<br>'
+    + '<small>Hình: OpenStax, College Physics 2e, Hình 16.36 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>' + '</figcaption></figure>')
 
 # ---------------- Hình 3: hai trường hợp điều kiện
 b = ""
