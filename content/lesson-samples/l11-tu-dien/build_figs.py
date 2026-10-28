@@ -79,29 +79,16 @@ b += line(X(U_SH), Y(C_FIT*U_SH), X(U_SH), Y0, ORG, 1.2, "3 3")
 fig2 = wrap("0 0 440 230", "Đồ thị Q theo U: năm điểm đo nằm sát đường thẳng qua gốc, hệ số góc C khoảng 480 microfara; diện tích tam giác dưới đường là năng lượng",
             b, "Hình 2. Năm điểm đo (xanh) nằm sát đường thẳng qua gốc: Q tỉ lệ U, hệ số góc là C ≈ 480 μF. Phần tô cam (tam giác tới U = 8 V) là năng lượng W = ½QU.")
 
-# ---------------- Hình 3: ghép nối tiếp và song song
-b = ""
-# nối tiếp: y = 80, A(20) — C1(80..90) — C2(150..160) — B(220)
-yS = 84
-b += text(110, 20, "Nối tiếp", "currentColor", 13, "middle", "700")
-b += dot(22, yS, 4) + line(22, yS, 80, yS) + cap_sym(80, yS) + line(90, yS, 150, yS) + cap_sym(150, yS) + line(160, yS, 202, yS) + dot(202, yS, 4)
-b += sub("C", "1", 85, yS - 24, "currentColor", 13, "middle") + sub("C", "2", 155, yS - 24, "currentColor", 13, "middle")
-b += text(110, 136, "Q chung", RED, 13, "middle", "700")
-b += subs([("U = U", "1"), (" + U", "2")], 110, 160, anchor="middle")
-b += text(22, yS + 22, "A", "currentColor", 12, "middle", "700") + text(202, yS + 22, "B", "currentColor", 12, "middle", "700")
-# song song: A(248) — hai nhánh y=60, y=110 — B(422)
-xa, xb, y1, y2 = 250, 420, 58, 112
-b += line(226, 58 + 1, 226, 172, "currentColor", 1, "3 4", .4)
-b += text(335, 20, "Song song", "currentColor", 13, "middle", "700")
-b += line(xa, y1, xa, y2) + line(xb, y1, xb, y2)
-b += dot(xa, 85, 4) + dot(xb, 85, 4) + text(xa - 8, 89, "A", "currentColor", 12, "end", "700") + text(xb + 8, 89, "B", "currentColor", 12, "start", "700")
-for y, n in ((y1, "1"), (y2, "2")):
-    b += line(xa, y, 330, y) + cap_sym(330, y, 26) + line(340, y, xb, y)
-    b += sub("C", n, 324, y - 10, "currentColor", 13, "end")
-b += text(335, 150, "U chung", BLUE, 13, "middle", "700")
-b += subs([("Q = Q", "1"), (" + Q", "2")], 335, 172, anchor="middle")
-fig3 = wrap("0 0 440 184", "Sơ đồ hai tụ ghép nối tiếp (bên trái) và ghép song song (bên phải)",
-            b, "Hình 3. Nối tiếp: các tụ chung điện tích Q, hiệu điện thế cộng lại. Song song: các tụ chung hiệu điện thế U, điện tích cộng lại.")
+# ---------------- Hình 3, 4: ảnh OpenStax College Physics 2e, Hình 19.19 và 19.20 (đợt 2, 28/10/2026), thay SVG
+fig3 = ('<figure class="fig">'
+        '<img src="/assets/openstax/l11-tu-dien/hinh-ghep-noi-tiep.webp" '
+        'alt="Ba tụ nối tiếp, mỗi tụ có +Q và −Q (trái); tụ tương đương là một tụ có khoảng cách hai bản d lớn hơn (phải)" '
+        'loading="lazy" width="378" height="640" style="max-width:min(100%,250px);height:auto">'
+        '<img src="/assets/openstax/l11-tu-dien/hinh-ghep-song-song.webp" '
+        'alt="Ba tụ song song, mỗi tụ có điện tích riêng (trên); tụ tương đương có diện tích bản bằng tổng, Q bằng Q1 cộng Q2 cộng Q3 (dưới)" '
+        'loading="lazy" width="628" height="690" style="max-width:100%;height:auto">'
+        '<figcaption>Hình 3. Nối tiếp: d lớn nên C nhỏ.<br>Song song: bản rộng nên C lớn.<br>Hình vẽ 3 tụ.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 19.19 và 19.20 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 h = (HERE / "theory.src.html").read_text(encoding="utf8")
 for n, f in enumerate((fig1, fig2, fig3), 1):

@@ -66,6 +66,13 @@ b += text(330, 228, "Q &lt; 0: E hướng về Q", BLUE, 13, "middle", "700")
 fig1 = wrap("0 0 440 240", "Vectơ cường độ điện trường tại các điểm cách đều điện tích: hướng ra xa điện tích dương, hướng về điện tích âm",
             b, "Hình 1. Các điểm cách đều Q có E bằng nhau về độ lớn. Q dương: E hướng ra xa Q; Q âm: E hướng về Q.")
 
+# ------------------------------------------------ Hình 1: ảnh OpenStax College Physics 2e, Hình 18.19 (đợt 2, 28/10/2026) — thay SVG vẽ tay
+fig1 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-khai-niem-dien-truong/hinh-vecto-e-diem-tich.webp" '
+        'alt="Điện trường của điện tích dương Q vẽ hai cách: (a) các mũi tên E hướng ra xa Q; (b) cùng trường đó vẽ bằng đường sức" '
+        'loading="lazy" width="1000" height="512" style="max-width:100%;height:auto">'
+        '<figcaption>Hình 1. Q &gt; 0: E ra xa Q.<br>(a) Mũi tên. (b) Đường sức.<br>Q &lt; 0: đảo chiều (Hình 2).<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 18.19 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 # ------------------------------------------------ Hình 2: ảnh OpenStax College Physics 2e, Hình 18.20 (đợt 28/10/2026)
 fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-khai-niem-dien-truong/hinh-duong-suc-diem.webp" '
         'alt="Đường sức của ba điện tích điểm: (a) điện tích dương, đường sức hướng ra; (b) điện tích âm cùng độ lớn, đường sức hướng vào; (c) điện tích âm lớn hơn, đường sức mau hơn" '
@@ -103,6 +110,13 @@ b += text(T[0] + 8, T[1] + 6, "E", GRN, 15, "start", "700")
 b += text(14, 22, "E = E₁ + E₂ (cộng vectơ)", "currentColor", 13, "start", "600")
 fig3 = wrap("0 0 440 220", "Quy tắc hình bình hành: vectơ E tổng hợp là đường chéo của hình bình hành dựng trên E1 và E2",
             b, "Hình 3. Quy tắc hình bình hành: E (lục) là đường chéo dựng trên E₁ (đỏ) và E₂ (xanh), α là góc giữa hai vectơ.")
+
+# ------------------------------------------------ Hình 3: ảnh OpenStax College Physics 2e, Hình 18.21 (đợt 2, 28/10/2026) — thay SVG vẽ tay
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-khai-niem-dien-truong/hinh-chong-chat-e.webp" '
+        'alt="Hai điện tích dương q1 và q2 gây ra tại gốc O các vectơ điện trường E1 và E2; E tổng là đường chéo của hình chữ nhật dựng trên E1, E2" '
+        'loading="lazy" width="780" height="768" style="max-width:100%;height:auto">'
+        '<figcaption>Hình 3. E=E₁+E₂ (đường chéo).<br>E₁⊥E₂: hình chữ nhật.<br>Sách ghi E<sub>tot</sub>=E, O=M.<br>Số trong hình: √(1,13²+0,56²) ≈ 1,26 (·10⁵ N/C), không phải 1,69.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 18.21 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ------------------------------------------------ Hình 4: bài toán mẫu (MA = 3 cm, MB = 4 cm, AB = 5 cm)
 b = defs("f4")
