@@ -3,6 +3,9 @@ thay mốc <!--FIGn-->, __BANG_TN3__, các số __X__ và __PHUT__ trong theory.
 và ghi 3 file thí nghiệm content/thi-nghiem/tn-l10-roi-tu-do-0{1,2,3}.json (số liệu tính từ cùng mô hình).
 Có lớp kiểm hình học: hộp nhãn không chồng nhau, không vượt viewBox, cỡ chữ >= 14; mũi tên đúng chiều.
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import json, math, pathlib, re, subprocess, sys
 from svg_lib import RED, BLUE, ORG, GRN, wrap
 
@@ -334,7 +337,7 @@ left = set(re.findall(r"__[A-Z0-9_]+__", h)) - {"__PHUT__"}
 assert not left, left
 # số phút: điền từ lint_do_dai (đo trên chính bản đã chèn hình)
 tmp = HERE / ".theory.tmp.html"
-tmp.write_text(h.replace("__PHUT__", "15"), encoding="utf8")
+tmp.write_text(margin_figs(h.replace("__PHUT__", "15")), encoding="utf8")
 lint = ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = subprocess.run([sys.executable, str(lint), str(tmp)], capture_output=True, text=True).stdout
 tmp.unlink()
@@ -343,7 +346,7 @@ phut = round(float(m.group(1).replace(",", "."))) if m else None
 if phut is None:
     print("! không đọc được số phút từ lint_do_dai:\n" + out[:600]); sys.exit(1)
 h = h.replace("__PHUT__", str(phut))
-(HERE / "theory.html").write_text(h, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(h), encoding="utf8")
 
 # ================= File thí nghiệm (số liệu tính từ cùng mô hình ở trên)
 BASE = {"mon": "vat-ly", "lop": 10, "bai": "Bài 10. Sự rơi tự do", "lesson_id": 55,

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Sinh 4 hình SVG cho bài Điện trường đều (lesson 37) và thay <!--FIGn--> trong theory.src.html -> theory.html.
 Chạy lại được. Toạ độ quỹ đạo tính từ đúng phương trình parabol y = k·x² (kiểm bằng assert ở cuối)."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import pathlib
 from svg_lib import *
 
@@ -134,5 +137,5 @@ src = (HERE / "theory.src.html").read_text(encoding="utf8")
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert f"<!--FIG{n}-->" in src, n
     src = src.replace(f"<!--FIG{n}-->", f)
-(HERE / "theory.html").write_text(src, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(src), encoding="utf8")
 print("ok", len(src))

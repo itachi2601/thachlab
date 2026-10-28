@@ -2,6 +2,9 @@
 <!--FIGn--> trong theory.src.html -> theory.html. Chạy từ thư mục này: python3 build_figs.py
 Hình được kiểm bằng toạ độ (assert) để mũi tên đúng chiều vật lí và hình bình hành khép kín.
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math
 import pathlib
 import sys
@@ -153,5 +156,5 @@ h = (here / "theory.src.html").read_text(encoding="utf8")
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert h.count(f"<!--FIG{n}-->") == 1, n
     h = h.replace(f"<!--FIG{n}-->", f)
-(here / "theory.html").write_text(h, encoding="utf8")
+(here / "theory.html").write_text(margin_figs(h), encoding="utf8")
 print("ok", len(h))

@@ -1,4 +1,7 @@
 """Sinh 4 hình SVG cho bài 'Tổng hợp và phân tích lực. Cân bằng lực' và thay mốc <!--FIGn--> trong theory.src.html -> theory.html."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math
 from svg_lib import *
 
@@ -279,5 +282,5 @@ h = h.replace("<!--SIMKEO-->", sim_keo()).replace("<!--SIMDOC-->", sim_doc())
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert f"<!--FIG{n}-->" in h, n
     h = h.replace(f"<!--FIG{n}-->", f)
-open("theory.html", "w", encoding="utf8").write(h)
+open("theory.html", "w", encoding="utf8").write(margin_figs(h))
 print("ok", len(h))

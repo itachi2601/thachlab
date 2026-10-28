@@ -1,5 +1,8 @@
 """Chèn 3 hình SVG tự vẽ vào theory.src.html -> theory.html (idempotent).
 Chạy từ thư mục này:  python3 build_figs.py"""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, sys
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
@@ -108,5 +111,5 @@ src = (HERE / "theory.src.html").read_text(encoding="utf-8")
 for n, f in ((1, fig1), (2, fig2), (3, fig3), (4, fig4)):
     assert f"<!--FIG:{n}-->" in src, n
     src = src.replace(f"<!--FIG:{n}-->", f)
-(HERE / "theory.html").write_text(src, encoding="utf-8")
+(HERE / "theory.html").write_text(margin_figs(src), encoding="utf-8")
 print("ok", len(src))

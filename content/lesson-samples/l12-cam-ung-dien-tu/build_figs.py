@@ -1,5 +1,8 @@
 """Chèn hình 1, 2, 3 (ảnh OpenStax) vào theory.html (idempotent). Chạy từ thư mục này:
 python3 build_figs.py"""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, re, sys
 import pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
@@ -36,5 +39,5 @@ src = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3), 1):
     assert f"<!--FIG{n}-->" in src, f"thiếu mốc FIG{n}"
     src = src.replace(f"<!--FIG{n}-->", f)
-open("theory.html", "w", encoding="utf8").write(src)
+open("theory.html", "w", encoding="utf8").write(margin_figs(src))
 print("ok", len(src), "bytes")

@@ -1,6 +1,9 @@
 """Sinh 5 hình SVG cho bài "Bài 9. Khái niệm từ trường" (Vật lí 12) và thay các mốc
 <!--FIGn--> trong theory.src.html -> theory.html. Chạy từ thư mục này: python3 build_figs.py
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import pathlib
 import sys
 
@@ -220,5 +223,5 @@ for n, f in enumerate((fig1, fig2, fig3 + fig3b, fig4, fig5), 1):
     moc = f"<!--FIG{n}-->"
     assert moc in src, f"thiếu mốc FIG{n}"
     src = src.replace(moc, f)
-open("theory.html", "w", encoding="utf8").write(src)
+open("theory.html", "w", encoding="utf8").write(margin_figs(src))
 print("ok", len(src), "bytes")
