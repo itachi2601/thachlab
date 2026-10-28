@@ -115,7 +115,7 @@ fig3 = wrap("0 0 440 220", "Quy tắc hình bình hành: vectơ E tổng hợp l
 fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-khai-niem-dien-truong/hinh-chong-chat-e.webp" '
         'alt="Hai điện tích dương q1 và q2 gây ra tại gốc O các vectơ điện trường E1 và E2; E tổng là đường chéo của hình chữ nhật dựng trên E1, E2" '
         'loading="lazy" width="780" height="768" style="max-width:100%;height:auto">'
-        '<figcaption>Hình 3. E=E₁+E₂ (đường chéo).<br>E₁⊥E₂: hình chữ nhật.<br>Sách ghi E<sub>tot</sub>=E, O=M.<br>'
+        '<figcaption>Hình 3. E=E₁+E₂ (đường chéo).<br>E₁⊥E₂: hình chữ nhật.<br>Sách ghi E<sub>tot</sub>=E, O=M.<br>Số trong hình: √(1,13²+0,56²) ≈ 1,26 (·10⁵ N/C), không phải 1,69.<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 18.21 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ------------------------------------------------ Hình 4: bài toán mẫu (MA = 3 cm, MB = 4 cm, AB = 5 cm)
