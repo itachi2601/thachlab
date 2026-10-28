@@ -59,9 +59,9 @@
    "ten": "Trọng lượng vật",
    "don_vi": "N",
    "kieu": "dieu_chinh",
-   "min": 1.0,
-   "max": 5.0,
-   "mac_dinh": 3.0,
+   "min": 1,
+   "max": 5,
+   "mac_dinh": 3,
    "buoc": 0.5
   },
   {
@@ -112,24 +112,24 @@
     50,
     2.5,
     0.5,
-    25.0,
-    25.0
+    25,
+    25
    ],
    [
     20,
     40,
-    2.0,
-    1.0,
-    40.0,
-    40.0
+    2,
+    1,
+    40,
+    40
    ],
    [
     30,
     30,
     1.5,
     1.5,
-    45.0,
-    45.0
+    45,
+    45
    ]
   ],
   "ghi_chu": "Số liệu minh hoạ tính từ mô hình thanh nhẹ, không phải đo thật."
@@ -145,5 +145,10 @@
   "loai": "so_do_luc+bang_so_lieu",
   "y_tuong": "Thanh AB, vật trượt dọc thanh; hai lực kế hiện F_A, F_B; bảng tính tổng và mô-men.",
   "diem_nhan": "Kéo vật về phía A: F_A tăng, F_B giảm, tổng vẫn bằng P."
+ },
+ "video": {
+  "youtube_id": "g_7nCKpg89U",
+  "nhan": "tổng hợp hai lực song song cùng chiều",
+  "nhin_vao": "Hai lực kế chỉ bao nhiêu khi treo vật?"
  }
 }

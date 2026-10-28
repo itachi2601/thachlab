@@ -12,7 +12,9 @@ Thầy chốt 27/10/2026: thí nghiệm không tìm được clip YouTube thì t
 - Lô 0 xong và thầy DUYỆT (27/10, bản Opus làm lại): `boyle` 48 s, `chuyenthe` 49 s, `camungdt` 42 s; 1,9–2,6 MB/clip. Skill: `.claude/skills/dung-video-thi-nghiem`. Mỗi clip: hook có hộp Dự đoán → tiến hành vẽ động theo `so_lieu_mau` → rút ra (cơ chế, giới hạn, bẫy).
 - Còn mở: chỗ đặt mp4 (YouTube không công khai hay file tĩnh trong web) chưa chốt; chưa chèn vào bài. Engine đã sửa lỗi chữ không mờ dần (Pillow 11, `IMG_REF`/`dtext`).
 
-- 27/10 tối: `chuyenthe` bản 3 theo góp ý học sinh ảo — lộ đáp án C + phóng to −6→0 °C, trục t cố định, hình tan/sôi riêng, câu hỏi chốt 4 vs 27 phút; bỏ nhạc, chỉ tiếng báo ở mốc (`cues` → `engine.sfx`). Thầy DUYỆT bản 3 chuyenthe + boyle (27/10); `camungdt` vẽ lại đường sức (ra N, vào S, tính bằng hai cực từ) chờ thầy xem lại. Lỗi nhỏ còn lại: JSON boyle tự mâu thuẫn sai số 5% (rut_ra) vs 8% (quan_sat).
+- 27/10 tối: `chuyenthe` bản 3 theo góp ý học sinh ảo — lộ đáp án C + phóng to −6→0 °C, trục t cố định, hình tan/sôi riêng, câu hỏi chốt 4 vs 27 phút; bỏ nhạc, chỉ tiếng báo ở mốc (`cues` → `engine.sfx`). Thầy DUYỆT cả 3 clip bản 3 (27/10): chuyenthe, boyle, camungdt (đã vẽ lại đường sức ra N vào S). mp4 ở `ra/*-v3.mp4`; còn chờ chốt nơi đặt mp4. Lỗi nhỏ còn lại: JSON boyle tự mâu thuẫn sai số 5% (rut_ra) vs 8% (quan_sat).
 
 **Why:** 271/306 thí nghiệm chưa có video; clip thật không có cho nhiều thí nghiệm.
 **How to apply:** lô tiếp theo = viết thêm `clips/<tên>.py` (copy mẫu gần nhất), render trong tab terminal (~2 phút/clip, chạy song song được). Liên quan: [[project_thachlab_thi_nghiem_khung_de_thi]].
+
+- 28/10: lọc YouTube 195 thí nghiệm → A 23 / B 88 / C 84 (`content/thi-nghiem/danh-sach-tu-dung.md`); thầy duyệt hết A → 20 clip nhập kho + chèn vào file bài (3 trùng clip đã có), **chưa đăng DB**. Thử 3 clip C bằng Opus: `phongxa2`, `udcamung2`, `thangnhietdo4` (47–50 s, 1,8–2,1 MB) — chi phí đo được 1,7–2,3 USD/clip → 84 clip C ≈ 170–200 USD. Chờ thầy xem 3 clip rồi chốt chạy hàng loạt; nhóm B (88) chờ thầy duyệt.
