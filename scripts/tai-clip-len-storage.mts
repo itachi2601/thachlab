@@ -23,6 +23,8 @@ const APPLY = argv.includes("--apply");
 const file = argv.find((a) => a.endsWith(".mp4"));
 const tn = opt("--tn");
 const giayBia = Number(opt("--anh-bia") ?? "1"); // khung đầu: không lộ kết luận clip
+// Clip hiện tượng 8–30 s (V9); video thí nghiệm tự dựng (skill dung-video-thi-nghiem) dài 35–50 s → --toi-da 55.
+const toiDa = Number(opt("--toi-da") ?? "30");
 // Bucket riêng cho clip (mp4 + ảnh bìa webp); lesson-media chỉ nhận ảnh.
 const BUCKET = opt("--bucket") ?? "lesson-clips";
 if (!file || !tn || !fs.existsSync(file)) {
@@ -71,7 +73,7 @@ const dm = /Duration: (\d+):(\d+):([\d.]+)/.exec(info);
 const giay = dm ? Number(dm[1]) * 3600 + Number(dm[2]) * 60 + Number(dm[3]) : NaN;
 const coTieng = /Audio:/.test(info);
 const loi: string[] = [];
-if (!(giay >= 8 && giay <= 30)) loi.push(`thời lượng ${giay.toFixed(1)} s ngoài 8–30 s (V9)`);
+if (!(giay >= 8 && giay <= toiDa)) loi.push(`thời lượng ${giay.toFixed(1)} s ngoài 8–${toiDa} s (V9)`);
 if (kb > 3072) loi.push(`${kb} KB > 3 MB — nén lại (crf cao hơn / 720p)`);
 console.log(`clip: ${path.basename(file)} · ${giay.toFixed(1)} s · ${kb} KB · ${coTieng ? "có tiếng" : "không tiếng"}`);
 if (loi.length) {
