@@ -1,0 +1,70 @@
+{
+ "ngay": 4,
+ "chu_de": "Định luật 1 Newton và quán tính: vật cân bằng lực, ma sát khi cân bằng, tìm lực còn lại",
+ "questions": [
+  {
+   "type": "short_answer",
+   "question": "<p>Một vật nhỏ chuyển động thẳng đều trên mặt phẳng nằm ngang, bỏ qua mọi ma sát, chịu tác dụng của đúng bốn lực đồng phẳng, cùng đặt vào vật. Lực $\\vec F_1$ có độ lớn $30\\ \\text{N}$ hướng về phía Đông. Lực $\\vec F_2$ có độ lớn $16\\ \\text{N}$ hướng về phía Bắc. Lực $\\vec F_4$ có độ lớn $14\\ \\text{N}$ hướng về phía Tây.</p><p>Lực $\\vec F_3$ còn lại có độ lớn bao nhiêu niutơn? Làm tròn đến $0{,}1\\ \\text{N}$.</p>",
+   "answer": "22,6",
+   "explanation": "<p>Vật chuyển động thẳng đều nên hợp lực của bốn lực bằng không, tức là $\\vec F_3$ cân bằng với hợp lực của ba lực còn lại.</p><p>Theo phương Đông–Tây: $F_1$ hướng Đông, $F_4$ hướng Tây nên hợp lực hai lực này là $30-14=16\\ \\text{N}$ hướng Đông.</p><p>Hợp lực của $16\\ \\text{N}$ hướng Đông và $F_2=16\\ \\text{N}$ hướng Bắc (vuông góc nhau): $F=\\sqrt{16^2+16^2}=16\\sqrt2\\approx22{,}6\\ \\text{N}$.</p><p>$F_3$ có cùng độ lớn, ngược chiều hợp lực này (hướng Tây Nam): $F_3\\approx22{,}6\\ \\text{N}$.</p><p>Bẫy: cộng cả bốn độ lớn ($60\\ \\text{N}$) hoặc bỏ sót $F_4$ (khi đó ra $\\sqrt{30^2+16^2}\\approx34{,}0\\ \\text{N}$). Cách phát hiện: tách theo từng phương, hai lực ngược chiều thì trừ độ lớn trước.</p>",
+   "topic": "Cân bằng lực, tìm lực còn lại",
+   "form": "bai_tap",
+   "difficulty": "trung-binh"
+  },
+  {
+   "type": "short_answer",
+   "question": "<p>Một thùng nặng $8\\ \\text{kg}$ trên sàn nằm ngang được kéo bằng dây hợp với phương ngang góc $37^\\circ$ (dây hướng lên). Lực kéo $50\\ \\text{N}$ làm thùng chuyển động thẳng đều. Lực ma sát trượt có độ lớn tỉ lệ với áp lực mà sàn tác dụng lên thùng (hệ số tỉ lệ không đổi). Lấy $g=10\\ \\text{m/s}^2$, $\\sin37^\\circ=0{,}6$, $\\cos37^\\circ=0{,}8$.</p><p>Sau đó người ta bỏ dây xiên, kéo thùng bằng dây nằm ngang cho thùng vẫn chuyển động thẳng đều trên cùng sàn. Lực kéo ngang lúc này là bao nhiêu niutơn? Làm tròn đến $1\\ \\text{N}$.</p>",
+   "answer": "64",
+   "explanation": "<p>Trọng lượng $P=8\\cdot10=80\\ \\text{N}$.</p><p>Lúc kéo xiên, thùng chuyển động thẳng đều nên lực cân bằng theo từng phương. Theo phương ngang: $F_{ms}=F\\cos37^\\circ=50\\cdot0{,}8=40\\ \\text{N}$.</p><p>Theo phương thẳng đứng: $N+F\\sin37^\\circ=P$, suy ra $N=80-50\\cdot0{,}6=50\\ \\text{N}$.</p><p>Hệ số tỉ lệ: $k=\\dfrac{F_{ms}}{N}=\\dfrac{40}{50}=0{,}8$.</p><p>Kéo ngang: $N'=P=80\\ \\text{N}$ nên $F'=F'_{ms}=0{,}8\\cdot80=64\\ \\text{N}$.</p><p>Bẫy: lấy $N=P$ ngay từ đầu (ra $k=0{,}5$ và $F'=40\\ \\text{N}$), hoặc giữ nguyên $F_{ms}=40\\ \\text{N}$. Cách phát hiện: lực kéo xiên nâng bớt thùng nên áp lực của sàn nhỏ hơn trọng lượng.</p>",
+   "topic": "Ma sát trượt khi vật cân bằng",
+   "form": "bai_tap",
+   "difficulty": "kho"
+  },
+  {
+   "type": "true_false",
+   "question": "<p>Một thùng hàng nặng $60\\ \\text{kg}$ đặt trên sàn nằm ngang của xe tải, không được chằng buộc. Lực ma sát nghỉ cực đại giữa thùng và sàn là $300\\ \\text{N}$, lực ma sát trượt là $240\\ \\text{N}$. Lấy $g=10\\ \\text{m/s}^2$. Xét các phát biểu sau.</p>",
+   "statements": [
+    {
+     "text": "Khi xe chạy thẳng đều, thùng chỉ chịu hai lực cân bằng là trọng lực $600\\ \\text{N}$ và phản lực của sàn $600\\ \\text{N}$.",
+     "answer": true
+    },
+    {
+     "text": "Khi xe đột ngột khởi hành, thùng có xu hướng dịch về phía trước so với sàn xe do quán tính.",
+     "answer": false
+    },
+    {
+     "text": "Khi xe đứng yên, một người đẩy thùng bằng lực ngang $150\\ \\text{N}$ mà thùng vẫn đứng yên thì lực ma sát nghỉ tác dụng lên thùng bằng $150\\ \\text{N}$.",
+     "answer": true
+    },
+    {
+     "text": "Khi xe đứng yên, đẩy thùng bằng lực ngang $320\\ \\text{N}$ thì thùng trượt và chuyển động thẳng đều.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p>a) Đúng: xe chạy thẳng đều thì thùng không có xu hướng trượt, lực ma sát nghỉ bằng $0$; hai lực còn lại là $P=60\\cdot10=600\\ \\text{N}$ và phản lực $600\\ \\text{N}$ cân bằng nhau.</p><p>b) Sai: xe khởi hành, sàn bị kéo về phía trước còn thùng giữ nguyên trạng thái nên có xu hướng dịch về phía sau so với sàn. Bẫy: nhầm với trường hợp xe phanh.</p><p>c) Đúng: thùng đứng yên nên lực cân bằng, $F_{msn}=150\\ \\text{N}\\le300\\ \\text{N}$. Bẫy: nhầm ma sát nghỉ luôn bằng $300\\ \\text{N}$; con số này chỉ là giá trị cực đại.</p><p>d) Sai: $320\\ \\text{N}>300\\ \\text{N}$ nên thùng bắt đầu trượt, khi trượt ma sát chỉ còn $240\\ \\text{N}$ nhỏ hơn lực đẩy $320\\ \\text{N}$ nên các lực không cân bằng, thùng không chuyển động đều. Muốn chuyển động đều phải giảm lực đẩy xuống $240\\ \\text{N}$.</p>",
+   "topic": "Quán tính, ma sát nghỉ và ma sát trượt",
+   "form": "bai_tap",
+   "difficulty": "kho"
+  },
+  {
+   "type": "multiple_choice",
+   "question": "<p>Một người đứng yên trên sàn cabin thang máy đang đi lên với tốc độ không đổi. Chọn phát biểu đúng về cặp lực cân bằng tác dụng lên người.</p>",
+   "options": [
+    "Lực người ấn xuống sàn và lực sàn đẩy người lên.",
+    "Trọng lực của người và lực kéo của dây cáp tác dụng lên cabin.",
+    "Trọng lực của người và lực nâng của sàn tác dụng lên người.",
+    "Không có cặp lực cân bằng nào, vì người đang chuyển động đi lên."
+   ],
+   "answer": 2,
+   "explanation": "<p>Hai lực cân bằng phải cùng đặt vào một vật, cùng phương, ngược chiều, cùng độ lớn.</p><p>Người chuyển động thẳng đều nên chịu các lực cân bằng: trọng lực hướng xuống và lực nâng của sàn hướng lên. Đáp án C.</p><p>A sai: hai lực này đặt vào hai vật khác nhau (sàn và người). B sai: lực cáp đặt vào cabin, không đặt vào người. D sai: chuyển động thẳng đều là kết quả của các lực cân bằng, không cần lực nào duy trì chuyển động.</p><p>Bẫy: thấy ‘đang đi lên’ thì nghĩ phải có lực hướng lên lớn hơn trọng lực. Cách phát hiện: chỉ xét vận tốc có đổi hay không, đổi mới cần lực không cân bằng.</p>",
+   "distractorNotes": {
+    "A": "Hai lực đặt vào hai vật khác nhau nên không thể cân bằng nhau.",
+    "B": "Lực cáp đặt vào cabin, không phải lực tác dụng lên người.",
+    "D": "Nhầm chuyển động thẳng đều với không có cặp lực cân bằng."
+   },
+   "topic": "Nhận biết cặp lực cân bằng",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh"
+  }
+ ]
+}

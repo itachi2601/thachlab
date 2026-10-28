@@ -1,0 +1,70 @@
+{
+ "ngay": 5,
+ "chu_de": "Tổng hợp liên chủ đề vận dụng cao: chuyển động nhiều giai đoạn, đồ thị và lực cân bằng",
+ "questions": [
+  {
+   "type": "short_answer",
+   "question": "<p>Một xe đẩy khối lượng $200\\ \\text{kg}$ chạy trên đường nằm ngang. Đồ thị bên dưới cho biết quãng đường $s$ xe đi được theo thời gian $t$. Giai đoạn 1 ($0$–$10\\ \\text{s}$), xe chuyển động thẳng đều, lực kéo là $120\\ \\text{N}$.</p><div style=\"max-width:420px;margin:.5rem auto\"><svg viewBox=\"0 0 300 196\" role=\"img\" aria-label=\"Đồ thị quãng đường theo thời gian của xe\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M40 160H285M40 160V12\"/><path d=\"M280 155v5M200 155v5M120 155v5M35 130h5M35 40h5\" stroke-width=\"1\"/><path d=\"M120 130H40M280 40H40\" stroke-dasharray=\"3 3\" stroke-width=\"0.8\"/><path d=\"M40 160L120 130L200 130L280 40\" stroke-width=\"2.2\"/></g><g fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\"><text x=\"120\" y=\"177\">10</text><text x=\"200\" y=\"177\">20</text><text x=\"280\" y=\"177\">30</text><text x=\"150\" y=\"190\" font-size=\"12\">t (s)</text><text x=\"22\" y=\"135\" text-anchor=\"end\">20</text><text x=\"22\" y=\"45\" text-anchor=\"end\">80</text><text x=\"48\" y=\"12\" text-anchor=\"start\">s (m)</text><text x=\"36\" y=\"173\" text-anchor=\"end\">0</text></g></svg></div><p>Ở giai đoạn 2, xe dừng để chất thêm hàng. Giai đoạn 3 ($20$–$30\\ \\text{s}$), xe chở hàng chuyển động thẳng đều trên cùng mặt đường, lực kéo là $270\\ \\text{N}$. Lực ma sát giữa xe và đường luôn tỉ lệ thuận với trọng lượng của xe cùng hàng, không phụ thuộc tốc độ. Lấy $g=10\\ \\text{m/s}^2$.</p><p>Khối lượng hàng đã chất thêm là bao nhiêu kilôgam? Điền số nguyên, đơn vị $\\text{kg}$.</p>",
+   "answer": "250",
+   "explanation": "<p>Đồ thị giai đoạn 1 và 3 là đoạn thẳng nên xe chuyển động thẳng đều: các lực cân bằng, lực kéo bằng lực ma sát.</p><p>Giai đoạn 1: $F_{ms1}=120\\ \\text{N}$ ứng với trọng lượng $P_1=2000\\ \\text{N}$, nên $F_{ms}=0{,}06\\,P$.</p><p>Giai đoạn 3: $F_{ms3}=270\\ \\text{N}$ nên $P_3=\\dfrac{270}{0{,}06}=4500\\ \\text{N}$, khối lượng $450\\ \\text{kg}$.</p><p>Hàng thêm: $450-200=250\\ \\text{kg}$.</p><p>Bẫy: thấy xe chạy nhanh hơn ($6\\ \\text{m/s}$ so với $2\\ \\text{m/s}$) rồi cho rằng lực kéo phải lớn hơn vì tốc độ. Vận tốc không làm thay đổi lực ma sát; chỉ trọng lượng mới quyết định. Cách phát hiện: đoạn đồ thị là đường thẳng thì tổng lực bằng không, không cần quan tâm độ dốc.</p>",
+   "topic": "Chuyển động nhiều giai đoạn trên đồ thị và lực cân bằng",
+   "form": "bai_tap",
+   "difficulty": "trung-binh"
+  },
+  {
+   "type": "short_answer",
+   "question": "<p>Vật $A$ khối lượng $4\\ \\text{kg}$ đặt trên bàn nằm ngang, nối qua ròng rọc nhẹ với vật $B$ khối lượng $1{,}2\\ \\text{kg}$ treo thẳng đứng (hình). Bỏ qua ma sát ở ròng rọc, khối lượng dây. Khi thả tay, $A$ trượt thẳng đều.</p><div style=\"max-width:420px;margin:.5rem auto\"><svg viewBox=\"0 0 260 160\" role=\"img\" aria-label=\"Vật A trên bàn nối dây qua ròng rọc với vật B treo\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M10 80H190\"/><rect x=\"85\" y=\"50\" width=\"50\" height=\"30\"/><path d=\"M135 62H190\" stroke-width=\"1.5\"/><circle cx=\"190\" cy=\"72\" r=\"10\"/><path d=\"M200 72V115\" stroke-width=\"1.5\"/><rect x=\"185\" y=\"115\" width=\"30\" height=\"30\"/></g><g fill=\"currentColor\" font-size=\"15\" text-anchor=\"middle\"><text x=\"110\" y=\"71\">A</text><text x=\"200\" y=\"136\">B</text></g></svg></div><p>Sau đó người ta đặt thêm vật $2\\ \\text{kg}$ lên $A$ (lực ma sát trượt tỉ lệ thuận với áp lực $A$ ép lên bàn), rồi dùng một lực kéo $F$ nằm ngang, hướng ra xa ròng rọc, kéo $A$ chuyển động thẳng đều (khi đó $B$ đi lên đều). Lấy $g=10\\ \\text{m/s}^2$.</p><p>Tính độ lớn lực $F$, đơn vị niutơn ($\\text{N}$), làm tròn đến hàng đơn vị.</p>",
+   "answer": "30",
+   "explanation": "<p>Lần đầu, $A$ trượt đều nên lực căng dây bằng lực ma sát: $T=F_{ms}=P_B=12\\ \\text{N}$ khi áp lực lên bàn là $40\\ \\text{N}$.</p><p>Thêm $2\\ \\text{kg}$: áp lực lên bàn là $60\\ \\text{N}$, tăng $1{,}5$ lần nên $F_{ms}'=1{,}5\\cdot12=18\\ \\text{N}$.</p><p>Kéo $A$ ngược chiều đều, $B$ đi lên đều nên $T=P_B=12\\ \\text{N}$ (vẫn hướng về ròng rọc). Ma sát lúc này hướng về phía ròng rọc, cùng chiều với $T$.</p><p>Cân bằng của $A$: $F=T+F_{ms}'=12+18=30\\ \\text{N}$.</p><p>Bẫy: dùng lại $F_{ms}=12\\ \\text{N}$ (cho $F=24\\ \\text{N}$) hoặc quên lực căng $T$ (cho $F=18\\ \\text{N}$). Cách phát hiện: vẽ tất cả lực nằm ngang lên $A$ rồi xét chiều từng lực.</p>",
+   "topic": "Hệ vật nối dây, lực căng và lực ma sát",
+   "form": "bai_tap",
+   "difficulty": "kho"
+  },
+  {
+   "type": "true_false",
+   "question": "<p>Một vật nặng $40\\ \\text{kg}$ được kéo bằng dây song song với mặt phẳng nghiêng, ban đầu ở chân dốc. Lực kéo giai đoạn đầu (lên dốc) là $300\\ \\text{N}$. Sau đó vật được thả xuống đều, người ta giữ dây song song mặt phẳng nghiêng, lực căng giai đoạn này là $100\\ \\text{N}$. Đồ thị cho vị trí $s$ của vật dọc mặt phẳng nghiêng theo thời gian $t$ ($s=0$ ở chân dốc).</p><div style=\"max-width:420px;margin:.5rem auto\"><svg viewBox=\"0 0 300 190\" role=\"img\" aria-label=\"Đồ thị vị trí dọc dốc của vật theo thời gian\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M40 150H290M40 150V12\"/><path d=\"M110 145v5M145 145v5M285 145v5M35 40h5\" stroke-width=\"1\"/><path d=\"M110 40H40M110 150V40M145 150V40\" stroke-dasharray=\"3 3\" stroke-width=\"0.8\"/><path d=\"M40 150L110 40L145 40L285 150\" stroke-width=\"2.2\"/></g><g fill=\"currentColor\" font-size=\"13\" text-anchor=\"middle\"><text x=\"110\" y=\"168\">10</text><text x=\"145\" y=\"168\">15</text><text x=\"285\" y=\"168\">35</text><text x=\"170\" y=\"184\" font-size=\"12\">t (s)</text><text x=\"30\" y=\"45\" text-anchor=\"end\">4</text><text x=\"48\" y=\"12\" text-anchor=\"start\">s (m)</text><text x=\"34\" y=\"164\" text-anchor=\"end\">0</text></g></svg></div><p>Lực ma sát có độ lớn không đổi trong cả hai chuyển động và không phụ thuộc tốc độ. Chọn đúng/sai cho mỗi nhận định.</p>",
+   "statements": [
+    {
+     "text": "Lực ma sát giữa vật và mặt phẳng nghiêng có độ lớn $100\\ \\text{N}$.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ trung bình của vật trong cả $35\\ \\text{s}$ là khoảng $0{,}23\\ \\text{m/s}$.",
+     "answer": true
+    },
+    {
+     "text": "Nếu cắt dây khi vật đang trượt xuống đều thì vật tiếp tục trượt đều với tốc độ cũ vì không có lực nào còn tác dụng.",
+     "answer": false
+    },
+    {
+     "text": "Muốn kéo vật lên dốc đều với tốc độ gấp đôi tốc độ ở giai đoạn đầu thì cần lực kéo $600\\ \\text{N}$.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p>Lên đều: lực kéo $=$ thành phần trọng lực dọc dốc $+$ ma sát: $300=P_\\parallel+F_{ms}$. Xuống đều: $P_\\parallel=T+F_{ms}=100+F_{ms}$. Giải: $F_{ms}=100\\ \\text{N}$, $P_\\parallel=200\\ \\text{N}$.</p><p>a) Đúng, $F_{ms}=\\dfrac{300-100}{2}=100\\ \\text{N}$.</p><p>b) Đúng. Cả hành trình đi lên $4\\ \\text{m}$ rồi xuống $4\\ \\text{m}$ nên quãng đường $8\\ \\text{m}$; tốc độ trung bình $\\dfrac{8}{35}\\approx0{,}23\\ \\text{m/s}$. Bẫy: vận tốc trung bình bằng $0$ vì trở về chân dốc, không phải tốc độ trung bình.</p><p>c) Sai. Cắt dây thì còn $P_\\parallel=200\\ \\text{N}$ kéo xuống, ma sát chỉ $100\\ \\text{N}$ cản lại: lực tổng $100\\ \\text{N}$ khác không nên vật không còn chuyển động đều.</p><p>d) Sai. Ma sát và $P_\\parallel$ không phụ thuộc tốc độ nên lực kéo vẫn là $300\\ \\text{N}$ khi chuyển động đều nhanh hơn.</p>",
+   "topic": "Mặt phẳng nghiêng, chuyển động đều và đồ thị",
+   "form": "bai_tap",
+   "difficulty": "kho"
+  },
+  {
+   "type": "multiple_choice",
+   "question": "<p>Một vật nặng được kéo thẳng đứng lên bằng dây, chuyển động thẳng đều với tốc độ $0{,}5\\ \\text{m/s}$, lực căng dây là $80\\ \\text{N}$. Sau đó người ta kéo vật lên thẳng đều với tốc độ $1\\ \\text{m/s}$ (bỏ qua lực cản không khí). Lực căng dây khi vật chuyển động thẳng đều ở tốc độ mới là bao nhiêu?</p>",
+   "options": [
+    "$40\\ \\text{N}$",
+    "$80\\ \\text{N}$",
+    "$160\\ \\text{N}$",
+    "Lớn hơn $80\\ \\text{N}$ nhưng nhỏ hơn $160\\ \\text{N}$"
+   ],
+   "answer": 1,
+   "explanation": "<p>Vật chuyển động thẳng đều nên lực căng cân bằng với trọng lực: $T=P=80\\ \\text{N}$ ở mọi tốc độ.</p><p>Bẫy: nghĩ \"muốn đi nhanh hơn thì phải kéo mạnh hơn\". Lực cần để duy trì chuyển động đều chỉ cần cân bằng lực cản; tốc độ lớn hơn chỉ cần lực lớn hơn trong lúc vận tốc đang thay đổi.</p>",
+   "distractorNotes": {
+    "A": "Cho rằng tốc độ gấp đôi thì lực căng giảm một nửa: không có cơ sở vật lí.",
+    "C": "Cho rằng lực tỉ lệ với tốc độ.",
+    "D": "Lẫn với lúc đang tăng tốc, khi đó lực căng mới lớn hơn trọng lực."
+   },
+   "topic": "Lực cân bằng và chuyển động thẳng đều",
+   "form": "ly_thuyet",
+   "difficulty": "de"
+  }
+ ]
+}

@@ -7,6 +7,7 @@ import { useCountdown, usePoll } from "@/components/quiz-live/shared";
 import { getMyReviewState, type MyReviewState, type MyStage } from "@/services/review-session";
 import { examTakePath } from "@/lib/exam-link";
 import { Bar, clock, StatePill } from "./shared";
+import ClassRoster from "./ClassRoster";
 
 const BTN =
   "inline-flex min-h-12 w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-bold text-white hover:bg-primary-dark sm:w-auto";
@@ -50,6 +51,10 @@ function MyAction({ stage, index, threshold }: { stage: MyStage; index: number; 
       <Link href={href} className={BTN}>Vào làm chặng {index + 1}</Link>
     </div>
   );
+}
+
+function openText(iso: string): string {
+  return new Date(iso).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", weekday: "long", day: "2-digit", month: "2-digit" });
 }
 
 function dueText(iso: string): string {
@@ -104,7 +109,7 @@ function HomeView({ data, finished }: { data: MyReviewState; finished: boolean }
                 </span>
                 {s.locked ? (
                   <span className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-1 text-xs font-bold text-muted">
-                    <span aria-hidden>🔒</span>Chờ chặng {i}
+                    <span aria-hidden>🔒</span>{s.open_at && Date.parse(s.open_at) > Date.parse(data.now) ? "Chưa tới ngày" : `Chờ chặng ${i}`}
                   </span>
                 ) : (
                   <StatePill state={state} />
@@ -118,7 +123,11 @@ function HomeView({ data, finished }: { data: MyReviewState; finished: boolean }
                 </div>
               )}
               {s.locked ? (
-                <p className="text-sm text-muted">Làm chặng {i} đạt {data.threshold}% (hoặc nộp 2 lượt) để mở chặng này.</p>
+                <p className="text-sm text-muted">
+                  {s.open_at && Date.parse(s.open_at) > Date.parse(data.now)
+                    ? `Mở lúc ${openText(s.open_at)}.`
+                    : `Làm chặng ${i} đạt ${data.threshold}% (hoặc nộp 2 lượt) để mở chặng này.`}
+                </p>
               ) : finished ? null : state === "passed" ? (
                 <Link href={href} className="inline-flex min-h-11 items-center font-semibold text-primary underline">Làm lại để ôn thêm</Link>
               ) : (
@@ -133,6 +142,8 @@ function HomeView({ data, finished }: { data: MyReviewState; finished: boolean }
           );
         })}
       </ol>
+
+      {data.stages.some((s) => s.open_at) && <ClassRoster sessionId={data.id} stages={data.stages} now={data.now} />}
     </div>
   );
 }

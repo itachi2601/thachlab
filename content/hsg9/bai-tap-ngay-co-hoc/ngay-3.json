@@ -1,0 +1,70 @@
+{
+ "ngay": 3,
+ "chu_de": "Tổng hợp và phân tích lực: hợp lực hai lực đồng quy, mặt phẳng nghiêng, cân bằng ba lực, ròng rọc",
+ "questions": [
+  {
+   "type": "multiple_choice",
+   "question": "<p>Hai lực $\\vec F_1$ và $\\vec F_2$ có độ lớn $8\\ \\text{N}$ và $15\\ \\text{N}$ cùng đặt vào một điểm của vật. Hợp lực của chúng có độ lớn $17\\ \\text{N}$.</p><p>Góc giữa hai lực là bao nhiêu?</p>",
+   "options": [
+    "$0^\\circ$ (hai lực cùng chiều)",
+    "$60^\\circ$",
+    "$90^\\circ$",
+    "$120^\\circ$"
+   ],
+   "answer": 2,
+   "explanation": "<p>Hai lực chung điểm đặt, hợp lực là đường chéo hình bình hành: $R^2=F_1^2+F_2^2+2F_1F_2\\cos\\alpha$.</p><p>Thay số: $17^2=8^2+15^2+2\\cdot8\\cdot15\\cos\\alpha$, tức $289=289+240\\cos\\alpha$, nên $\\cos\\alpha=0$ và $\\alpha=90^\\circ$. Đáp án C.</p><p>Nhận ra nhanh: $8^2+15^2=17^2$ (bộ ba số Pythagore), nên hai lực vuông góc, không cần giải lượng giác.</p><p>Bẫy: thấy $17<8+15=23$ rồi đoán góc \"vừa vừa\" (60° hoặc 120°). Hợp lực nằm giữa $7\\ \\text{N}$ và $23\\ \\text{N}$ cho nhiều góc; phải thay số mới biết góc nào cho đúng $17\\ \\text{N}$.</p>",
+   "distractorNotes": {
+    "A": "Hai lực cùng chiều cho $R=8+15=23\\ \\text{N}$, không phải $17\\ \\text{N}$.",
+    "B": "Góc $60^\\circ$ cho $R=\\sqrt{409}\\approx20{,}2\\ \\text{N}$ (dùng $\\cos60^\\circ=0{,}5$ rồi tính, kết quả lớn hơn $17\\ \\text{N}$).",
+    "D": "Góc $120^\\circ$ cho $R=\\sqrt{169}=13\\ \\text{N}$ (nhỏ hơn $17\\ \\text{N}$)."
+   },
+   "topic": "Tổng hợp hai lực đồng quy",
+   "form": "bai_tap",
+   "difficulty": "de"
+  },
+  {
+   "type": "short_answer",
+   "question": "<div style=\"max-width:420px;margin:.5rem auto\"><svg viewBox=\"0 0 260 150\" role=\"img\" aria-label=\"Vật trên mặt phẳng nghiêng chịu lực F hợp góc β với mặt phẳng nghiêng\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><defs><marker id=\"a\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M1 1.5L9 5L1 8.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></marker></defs><path d=\"M30 135H190V15Z\"/><g transform=\"translate(110,75) rotate(-36.87)\"><rect x=\"-20\" y=\"-24\" width=\"40\" height=\"24\"/></g><path d=\"M102.8 65.4L118.2 12.6\" marker-end=\"url(#a)\"/><path d=\"M102.8 65.4L138.8 38.4\" stroke-dasharray=\"4 3\" stroke-width=\"1.2\"/><text x=\"122\" y=\"18\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">F</text><text x=\"130\" y=\"52\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">β</text><text x=\"58\" y=\"129\" fill=\"currentColor\" stroke=\"none\" font-size=\"14\">α</text></svg></div><p>Vật khối lượng $m=4\\ \\text{kg}$ nằm trên mặt phẳng nghiêng nhẵn, góc nghiêng $\\alpha$ với $\\sin\\alpha=0{,}6$ và $\\cos\\alpha=0{,}8$. Vật được giữ đứng yên bằng lực $\\vec F$ nằm trong mặt phẳng thẳng đứng chứa đường dốc chính, hướng lên và hợp với mặt phẳng nghiêng góc $\\beta$ với $\\cos\\beta=0{,}8$ và $\\sin\\beta=0{,}6$. Lấy $g=10\\ \\text{m/s}^2$.</p><p>Áp lực của vật lên mặt phẳng nghiêng là bao nhiêu niutơn? Điền số, không cần đơn vị.</p>",
+   "answer": "14",
+   "explanation": "<p>Vật chịu ba lực: trọng lực $P=mg=40\\ \\text{N}$, phản lực $N$ vuông góc mặt phẳng nghiêng (không có ma sát) và lực $F$. Chọn hai trục: dọc theo mặt phẳng nghiêng và vuông góc với nó.</p><p>Dọc mặt phẳng nghiêng: thành phần của $F$ cân bằng thành phần dốc của trọng lực, $F\\cos\\beta=P\\sin\\alpha=40\\cdot0{,}6=24\\ \\text{N}$, nên $F=\\dfrac{24}{0{,}8}=30\\ \\text{N}$.</p><p>Vuông góc mặt phẳng nghiêng: $N+F\\sin\\beta=P\\cos\\alpha$, nên $N=40\\cdot0{,}8-30\\cdot0{,}6=32-18=14\\ \\text{N}$.</p><p>Áp lực của vật lên mặt phẳng nghiêng bằng phản lực $N$ (lực và phản lực cùng độ lớn), tức $14\\ \\text{N}$.</p><p>Bẫy: lấy áp lực $=P\\cos\\alpha=32\\ \\text{N}$. Cách đó chỉ đúng khi không có lực nào khác có thành phần vuông góc mặt phẳng nghiêng. Ở đây $F$ kéo vật hơi \"nhấc\" khỏi mặt dốc nên áp lực nhỏ hơn. Cách phát hiện: hỏi xem trong các lực còn lại có lực nào không nằm trong mặt phẳng nghiêng không.</p>",
+   "topic": "Phân tích lực trên mặt phẳng nghiêng",
+   "form": "bai_tap",
+   "difficulty": "kho"
+  },
+  {
+   "type": "short_answer",
+   "question": "<div style=\"max-width:420px;margin:.5rem auto\"><svg viewBox=\"0 0 280 150\" role=\"img\" aria-label=\"Vật C treo bằng hai dây AC và BC\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M10 15H270M20 15l-6-7M60 15l-6-7M100 15l-6-7M140 15l-6-7M180 15l-6-7M220 15l-6-7M260 15l-6-7\" stroke-width=\"1.2\"/><path d=\"M48.75 15L120 110L246.7 15\"/><path d=\"M120 15V110\" stroke-dasharray=\"4 3\" stroke-width=\"1.2\"/><rect x=\"104\" y=\"110\" width=\"32\" height=\"30\"/><g fill=\"currentColor\" stroke=\"none\" font-size=\"14\"><text x=\"38\" y=\"34\">A</text><text x=\"250\" y=\"34\">B</text><text x=\"140\" y=\"104\">C</text><text x=\"92\" y=\"50\">37°</text><text x=\"124\" y=\"50\">53°</text></g></svg></div><p>Vật C treo vào trần bằng hai sợi dây nhẹ $AC$ và $BC$. Dây $AC$ hợp với phương thẳng đứng góc $37^\\circ$, dây $BC$ hợp với phương thẳng đứng góc $53^\\circ$ (hai dây ở hai phía của phương thẳng đứng). Lấy $\\sin37^\\circ=\\cos53^\\circ=0{,}6$, $\\cos37^\\circ=\\sin53^\\circ=0{,}8$ và $g=10\\ \\text{m/s}^2$.</p><p>Dây $AC$ chịu được lực căng tối đa $40\\ \\text{N}$, dây $BC$ chịu được tối đa $27\\ \\text{N}$. Khối lượng lớn nhất của vật C để cả hai dây không đứt là bao nhiêu kilôgam? Làm tròn đến $0{,}1\\ \\text{kg}$.</p>",
+   "answer": "4,5",
+   "explanation": "<p>Vật cân bằng nên ba lực $\\vec T_1$ (dây $AC$), $\\vec T_2$ (dây $BC$) và $\\vec P$ có hợp lực bằng $0$.</p><p>Hai dây hợp nhau góc $37^\\circ+53^\\circ=90^\\circ$, nên $\\vec T_1$ vuông góc $\\vec T_2$. Hợp của chúng bằng $-\\vec P$, nên $T_1^2+T_2^2=P^2$.</p><p>Chiếu theo phương của từng dây: $T_1=P\\cos37^\\circ=0{,}8P$ và $T_2=P\\cos53^\\circ=0{,}6P$ (kiểm tra: $0{,}8^2+0{,}6^2=1$).</p><p>Điều kiện không đứt: $0{,}8P\\le40$ cho $P\\le50\\ \\text{N}$; $0{,}6P\\le27$ cho $P\\le45\\ \\text{N}$. Cả hai thoả mãn khi $P\\le45\\ \\text{N}$, vậy $m_{\\max}=\\dfrac{45}{10}=4{,}5\\ \\text{kg}$.</p><p>Bẫy 1: thấy dây $AC$ chịu lực lớn hơn ($40\\ \\text{N}$) rồi chỉ xét dây này, ra $5\\ \\text{kg}$. Dây nằm gần phương thẳng đứng hơn mới chịu lực căng lớn hơn, nhưng dây $BC$ có giới hạn thấp hơn nhiều nên đứt trước. Bẫy 2: tưởng lực căng mỗi dây bằng $\\dfrac{P}{2}$ như khi hai dây đối xứng. Cách phát hiện: tính tỉ số $T/P$ của từng dây rồi so với giới hạn của dây đó.</p>",
+   "topic": "Cân bằng ba lực đồng quy",
+   "form": "bai_tap",
+   "difficulty": "kho"
+  },
+  {
+   "type": "true_false",
+   "question": "<p>Một vật khối lượng $20\\ \\text{kg}$ được kéo lên đều bằng ròng rọc. Dây không dãn, bỏ qua ma sát và khối lượng dây. Lấy $g=10\\ \\text{m/s}^2$.</p>",
+   "statements": [
+    {
+     "text": "Dùng một ròng rọc cố định để kéo vật lên đều thì lực kéo nhỏ hơn $200\\ \\text{N}$.",
+     "answer": false
+    },
+    {
+     "text": "Dùng một ròng rọc động nhẹ (vật treo vào ròng rọc, hai đoạn dây cùng đỡ ròng rọc) thì lực kéo đều là $100\\ \\text{N}$, và muốn vật lên $1\\ \\text{m}$ phải kéo đầu dây đi $2\\ \\text{m}$.",
+     "answer": true
+    },
+    {
+     "text": "Với ròng rọc động nhẹ ở ý b, nếu đầu dây được kéo đi với tốc độ $0{,}1\\ \\text{m/s}$ thì vật cũng đi lên với tốc độ $0{,}1\\ \\text{m/s}$.",
+     "answer": false
+    },
+    {
+     "text": "Nếu bản thân ròng rọc động nặng $2\\ \\text{kg}$ thì lực kéo đều là $110\\ \\text{N}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p>a) Sai: ròng rọc cố định chỉ đổi hướng của lực, không đổi độ lớn. Kéo đều thì lực kéo $F=P=200\\ \\text{N}$.</p><p>b) Đúng: hai đoạn dây cùng đỡ vật nên $2F=P$, $F=100\\ \\text{N}$. Vật lên $1\\ \\text{m}$ thì mỗi đoạn dây phải ngắn đi $1\\ \\text{m}$, đầu dây đi $2\\ \\text{m}$.</p><p>c) Sai: vật lên $1\\ \text{m}$ thì đầu dây đi $2\\ \text{m}$, nên tốc độ của vật bằng một nửa tốc độ đầu dây, tức $0{,}05\\ \text{m/s}$.</p><p>d) Đúng: ròng rọc cũng được hai đoạn dây đỡ ($P_1$ là trọng lượng vật, $P_2$ là trọng lượng ròng rọc), nên $2F=P_1+P_2=200+20=220\\ \\text{N}$, $F=110\\ \\text{N}$.</p>",
+   "topic": "Ròng rọc",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh"
+  }
+ ]
+}
