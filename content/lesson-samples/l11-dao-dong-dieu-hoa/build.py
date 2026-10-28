@@ -1,5 +1,8 @@
 """Sinh theory.html (chèn 3 hình SVG vào theory.src.html), 3 mục kho thí nghiệm và bundle.json.
 Chạy từ thư mục này: python3 build.py"""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, json, pathlib, sys
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -44,5 +47,5 @@ FIG3 = '<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-dao-dong-
 
 html = (HERE / "theory.src.html").read_text(encoding="utf-8")
 html = html.replace("{{FIG1}}", FIG1).replace("{{FIG2}}", FIG2).replace("{{FIG3}}", FIG3)
-(HERE / "theory.html").write_text(html, encoding="utf-8")
+(HERE / "theory.html").write_text(margin_figs(html), encoding="utf-8")
 print("theory.html", len(html.encode()), "bytes")

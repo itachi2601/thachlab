@@ -5,6 +5,9 @@ Chạy từ thư mục này: python3 build_figs.py
 Thứ tự trong file = thứ tự xuất hiện trong bài: fig1 (mở bài), fig2 (mục 4),
 fig3 (mục 5), fig4 (mục 6) — nhờ vậy số "Hình n." luôn khớp dòng đọc.
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import pathlib
 import sys
 
@@ -168,5 +171,5 @@ src = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert f"<!--FIG{n}-->" in src, f"thiếu mốc FIG{n}"
     src = src.replace(f"<!--FIG{n}-->", f)
-open("theory.html", "w", encoding="utf8").write(src)
+open("theory.html", "w", encoding="utf8").write(margin_figs(src))
 print("ok", len(src), "bytes")

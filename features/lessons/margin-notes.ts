@@ -123,6 +123,9 @@ export function withMarginNotes(html: string): string {
       ? `<li${attrs.replace(/\bclass="/, 'class="tl-fn--placed ')}>${body}</li>`
       : `<li class="tl-fn--placed"${attrs}>${body}</li>`;
   });
-  if ([...fnText.keys()].every((id) => placed.has(id))) out = out.replace('<ol class="tl-fns">', '<ol class="tl-fns tl-fns--placed">');
+  // Danh sách nào chép hết lên lề thì ẩn cả danh sách (mỗi danh sách tự xét: chú thích hình đặt dưới hình, danh sách cuối bài).
+  out = out.replace(/<ol class="tl-fns">([\s\S]*?)<\/ol>/g, (all, inner: string) =>
+    /<li\b(?![^>]*tl-fn--placed)/.test(inner) ? all : all.replace('<ol class="tl-fns">', '<ol class="tl-fns tl-fns--placed">'),
+  );
   return out;
 }

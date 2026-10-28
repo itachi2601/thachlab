@@ -3,6 +3,9 @@
 Chạy: python3 build_figs.py (từ thư mục bài hoặc gốc repo).
 Mọi toạ độ tính từ số liệu vật lí (thang cm -> px, k, F); in kiểm: nhãn không chồng nhau, không vượt viewBox,
 không bị nét/vật cản cắt xuyên; chấm số liệu nằm trên đường Hooke; mũi tên lực đúng chiều."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -356,11 +359,11 @@ assert "__BANG" not in src and "__NHAN" not in src
 
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
-out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", "?")), encoding="utf8")
 r = subprocess.run([sys.executable, str(lint), str(out), "--json"], capture_output=True, text=True)
 m = re.search(r'"phut"\s*:\s*([\d.]+)', r.stdout)
 phut = math.ceil(float(m.group(1))) if m else "?"
-out.write_text(src.replace("__PHUT__", str(phut)), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", str(phut))), encoding="utf8")
 print("ok", len(src), "ký tự; phút =", phut, "; k_tb =", round(K_TB, 2), "; bảng:", [(r[0], r[1], r[2], round(r[3], 2)) for r in TN2])
 if bad:
     sys.exit(1)

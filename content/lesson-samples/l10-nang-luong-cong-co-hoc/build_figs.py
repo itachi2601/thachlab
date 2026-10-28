@@ -2,6 +2,9 @@
 theory.src.html -> theory.html. Chạy: python3 build_figs.py (từ thư mục bài hoặc gốc repo).
 Tự kiểm bằng toạ độ: nhãn không chồng nhau, không vượt viewBox, không bị nét vẽ cắt xuyên; góc giữa F và d
 tính lại từ toạ độ mũi tên và so dấu cos với nhãn A > 0 / = 0 / < 0; góc dây kéo hình 4 đúng 30°."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -272,13 +275,13 @@ for n, f in enumerate(figs, 1):
 
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
-out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", "?")), encoding="utf8")
 r = subprocess.run([sys.executable, str(lint), str(out), "--json"], capture_output=True, text=True)
 m = re.search(r'"phut"\s*:\s*([\d.]+)', r.stdout) or re.search(r'"minutes"\s*:\s*([\d.]+)', r.stdout)
 phut = round(float(m.group(1))) if m else None
 if phut is None:
     print("KHÔNG đọc được số phút từ lint_do_dai:", r.stdout[:300])
     phut = "?"
-out.write_text(src.replace("__PHUT__", str(phut)), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", str(phut))), encoding="utf8")
 print("ok", len(src), "ký tự; phút =", phut)
 sys.exit(1 if BAD else 0)
