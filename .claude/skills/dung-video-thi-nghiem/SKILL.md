@@ -27,8 +27,11 @@ Thầy chốt 27/10/2026: thí nghiệm không có clip YouTube thì tự dựng
    - Kết bằng câu chốt + câu hỏi tự nhớ lại, không kết ở bẫy; tổng ≤ 50 s.
    - Chữ không chồng, không cắt mép phải (thanh/nhãn dài), chữ ≥ 32 px.
    - Hình vật lí đúng: đường sức (ra N vào S, không cắt nhau), chiều vectơ/lực/dòng, tỉ lệ hình học.
+   - Ký tự font không có glyph (∝, ℓ) hiện ô vuông → viết bằng chữ; kiểm bằng mã. Chữ phụ (trục, chú thích, bullet) đo cỡ thật ≥ 32 px, màu đậm.
+   - Màn chốt: chữ trên màn không trả lời sẵn câu hỏi, câu hỏi không trùng ca hộp Dự đoán, gợi ý hiện trễ ~2,5 s (tự vẽ qua `body`). Thẻ "chưa nói được gì" là từ khoá, ≥ 4 s; cảnh bẫy có hình ngay khi phụ đề lên; số trên bảng hiện trước khi phụ đề đọc tới.
    Rồi `render.py <tên>` ra `ra/<id>.mp4` (**chạy trong tab terminal**, song song được). `--preview` (3 khung/cảnh, nhiều file) chỉ dùng khi cần soi riêng một cảnh.
 7. Chạy lô: mỗi agent (Opus cho chất lượng hình) một clip, **mỗi agent một thư mục nháp con riêng** trong scratchpad; commit đúng file `clips/*.py` (mp4 nằm `ra/`, gitignore).
+   Subagent không gọi được agent khác → phiên chính điều phối 2 giai đoạn: agent dựng dừng sau `--sheet` (không đọc ảnh) và trả kịch bản; phiên chính giao `kiem-code` (Sonnet) đọc sheet; gửi góp ý bằng `SendMessage` về agent dựng để sửa + render. Mức "CẦN SỬA NẶNG" → vòng 2 gửi lại cho chính agent `kiem-code` cũ (rẻ, đã có ngữ cảnh). Commit từng clip ngay khi render xong.
 
 ## Bẫy kỹ thuật đã gặp
 - Pillow 11 bỏ qua alpha khi vẽ chữ trên ảnh RGB → chữ "hiện dần" thật ra hiện ngay. Engine đã sửa (27/10): dùng `text/ctext/rich` hoặc `dtext`, **không gọi `d.text(... fill=A(...))` trực tiếp** với alpha < 1; nếu cảnh vẽ trên ảnh phụ thì gán `IMG_REF[0] = img`.
@@ -41,6 +44,7 @@ Thầy chốt 27/10/2026: thí nghiệm không có clip YouTube thì tự dựng
 mp4 chưa chèn vào bài: chỗ đặt (YouTube không công khai + `scripts/chen-video-thi-nghiem.mts` hay file tĩnh trong web) thầy chưa chốt. Không tự đăng. Lô: 1 = L12 còn lại (~40), 2 = L12 + L11 điện (~60), 3 = L11 dao động + L9 (~45), 4 = L10 (~112).
 
 ## Nhật ký rút kinh nghiệm
+- 2026-10-28 · Lô 1 (10 clip L12 nhóm C, Opus dựng + kiem-code Sonnet cổng B): tổng 24,0 USD, TB 2,40 USD/clip (1,95–3,30; 2 clip phải 2 vòng cổng B tốn ~3 USD), 6–12 phút máy/clip, 46,8–49,9 s, 1,8–2,8 MB. Cổng B bắt được lỗi thật ở cả 10 clip (glyph ∝/ℓ vỡ, chữ phụ < 32 px, câu chốt trả lời sẵn/trùng Dự đoán, logic tên TN ≠ nội dung, thiếu P/cặp lực) → đã thêm vào checklist; quy trình 2 giai đoạn ghi ở bước 7.
 - 2026-10-28 · Đo chi phí thật 3 clip thử (phongxa2/udcamung2/thangnhietdo4, Opus 5.5, đủ cổng A+B, render 1 lần): 1,7–2,0 USD/clip theo giá API (≈150–170k cache write, 1,7–2,6 triệu cache read, ~31–34k output), +0,5 USD nếu cổng B giao 2 vòng kiem-code Sonnet; 6,5–9,5 phút/clip. Agent tự đọc ảnh ghép thay vì giao kiem-code thì rẻ hơn nhưng mất mắt thứ hai → lô lớn vẫn giao kiem-code.
 - 2026-10-27 · camungdt vẽ đường sức nam châm bằng elip kín bao cả thanh (cắt trục ngay trước cực N, sau cực S) — thầy bắt sai → đường sức phải ra ở N, vòng ngoài, vào ở S: dùng `_trace()`/`field()` trong `clips/camungdt.py` (lần theo trường hai cực, ép dọc cho vừa khung). Cổng B phải hỏi riêng "hình vật lí có đúng không" (đường sức, chiều lực, chiều dòng), không chỉ soát chữ/số.
 - 2026-10-27 · Cổng B lần đầu (kiem-code vai HS) bắt được ở boyle/camungdt: thời gian nghĩ < 5 s, nhãn "Đáp án B" còn nằm sang bước sau, câu hỏi chốt cần dữ kiện clip chưa cho, chữ trong bài lệch số trong JSON (5% vs 8%), dòng "chưa nói được" không có nguồn → các mục này đã vào checklist; agent đọc ảnh nhỏ có khi báo nhầm chính tả, kiểm lại bằng mã trước khi sửa.
