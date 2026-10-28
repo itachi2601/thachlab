@@ -169,10 +169,6 @@ def apparatus(d, tip, i, ghost=None, malpha=1.0, vtxt="", field_on=True):
 # ---------------- canh 1: mo dau + Du doan ----------------
 def s_hook(img, d, t, sc):
     apparatus(d, OUT_TIP, 0.0)
-    k = appear(t, sc["M"][0] + 1.0, 0.5)
-    if k > 0:
-        text(d, (905, CY - 22), "không", 36, MUTED, bold=False, alpha=k)
-        text(d, (905, CY + 22), "có pin", 36, MUTED, bold=False, alpha=k)
     k = appear(t, sc["M"][1] - 0.15, 0.45)
     if k <= 0: return
     y0 = TAB_Y + (1 - k) * 40
@@ -183,7 +179,7 @@ def s_hook(img, d, t, sc):
     text(d, (W / 2, y0 + 40), "Dự đoán", 40, PURPLE, alpha=k)
     text(d, (W / 2, y0 + 92), "Nam châm nằm YÊN trong cuộn dây,", 38, INK, alpha=k)
     text(d, (W / 2, y0 + 138), "kim điện kế sẽ…", 38, INK, alpha=k)
-    for j, s in enumerate(("A.  lệch, đứng yên ở một vạch", "B.  chỉ đúng số 0", "C.  lệch qua lại liên tục")):
+    for j, s in enumerate(("A.  lệch, đứng yên", "B.  chỉ số 0", "C.  lệch qua lại")):
         yy = y0 + 196 + j * 52
         d.rounded_rectangle([110, yy - 22, 970, yy + 22], radius=22, outline=A(LIGHT, k), width=3)
         text(d, (140, yy), s, 36, NAVY, bold=False, anchor="lm", alpha=k)
@@ -261,7 +257,7 @@ def s_do(img, d, t, sc):
 # ---------------- canh 3: rut ra ----------------
 def chart(d, t, sc):
     card(d, (60, 236, 1020, 790), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (W / 2, 280), "Số chỉ điện kế theo tốc độ v", 36, MUTED)
+    text(d, (W / 2, 280), "Số chỉ theo tốc độ v", 36, MUTED)
     ox, oy, sx, sy = 190, 570, 1700, 56          # px/(m/s), px/mA
     d.line([(ox, 330), (ox, 730)], fill=NAVY, width=4)
     d.line([(ox, oy), (ox + 0.45 * sx, oy)], fill=NAVY, width=4)
@@ -291,9 +287,6 @@ def chart(d, t, sc):
         x, y = ox + 0.2 * sx, oy + 2.0 * sy
         dot(d, x, y, 13 * k, PURPLE, outline=WHITE)
         text(d, (x + 26, y), "−2,0 (rút ra)", 32, PURPLE, anchor="lm", alpha=k)
-        text(d, (x + 26, oy - 2.1 * sy + 6), "(cắm vào)", 32, ORANGE, bold=False, anchor="lm", alpha=k)
-    text(d, (W / 2, 762), "Số liệu minh hoạ, có thêm lần cắm vào 0,2 m/s", 32, MUTED, bold=False,
-         alpha=appear(t, sc["M"][0] + 1.0, 0.4))
 
 
 def kcard(d, y, title, ev, color, k, h=200):
@@ -308,10 +301,10 @@ def kcard(d, y, title, ev, color, k, h=200):
 
 def s_rut(img, d, t, sc):
     chart(d, t, sc)
-    kcard(d, 830, "Chỉ khi từ thông qua cuộn BIẾN THIÊN mới có dòng", "nằm yên: 0 mA", GREEN, appear(t, sc["M"][0], 0.45))
-    kcard(d, 1060, "Biến thiên càng nhanh, dòng càng lớn", "0,1 m/s → 1,0 mA · 0,4 m/s → 3,9 mA", ORANGE,
+    kcard(d, 830, "Từ thông BIẾN THIÊN mới có dòng", "", GREEN, appear(t, sc["M"][0], 0.45))
+    kcard(d, 1060, "Biến thiên nhanh, dòng lớn", "0,1 → 1,0 · 0,4 → 3,9 mA", ORANGE,
           appear(t, sc["M"][1], 0.45), h=170)
-    kcard(d, 1260, "Rút ra (từ thông giảm): dòng đổi chiều", "cùng 0,2 m/s: vào +2,1 · ra −2,0 mA", PURPLE,
+    kcard(d, 1260, "Rút ra: dòng đổi chiều", "+2,1 vào · −2,0 ra (mA)", PURPLE,
           appear(t, sc["M"][2], 0.45), h=170)
 
 
@@ -324,29 +317,22 @@ def s_bay(img, d, t, sc):
         y = TAB_Y + (1 - k1) * 30
         card(d, (60, y, 1020, y + 288), fill=A(WHITE, a1), outline=A(RED, a1), w=5)
         text(d, (W / 2, y + 44), "Cái bẫy", 42, RED, alpha=a1)
-        text(d, (W / 2, y + 104), "Nam châm nằm yên trong cuộn:", 38, INK, alpha=a1)
-        text(d, (W / 2, y + 152), "từ trường MẠNH, nhưng i = 0.", 38, INK, alpha=a1)
-        text(d, (W / 2, y + 222), "Cần từ thông BIẾN THIÊN, không chỉ từ trường", 34, GREEN, alpha=a1)
+        text(d, (W / 2, y + 128), "Nằm yên: từ trường MẠNH, nhưng i = 0.", 40, INK, alpha=a1)
+        text(d, (W / 2, y + 214), "Cần từ thông BIẾN THIÊN", 42, GREEN, alpha=a1)
     if k2 > 0:
         y = TAB_Y + (1 - k2) * 30
         card(d, (60, y, 1020, y + 288), fill=A(WHITE, k2), outline=A(NAVY, k2), w=5)
-        text(d, (W / 2, y + 44), "Thí nghiệm chưa nói được", 40, NAVY, alpha=k2)
-        for j, s in enumerate(("• Quy tắc tìm chiều dòng (định luật Lenz).",
-                               "• Số liệu ở đây là minh hoạ,",
-                               "  chưa phải số đo thật.")):
-            text(d, (100, y + 108 + j * 54), s, 38, INK, bold=False, anchor="lm", alpha=k2)
+        text(d, (W / 2, y + 44), "Chưa nói được", 42, NAVY, alpha=k2)
+        for j, s in enumerate(("• Chiều dòng: định luật Lenz", "• Số liệu là minh hoạ")):
+            text(d, (100, y + 134 + j * 66), s, 40, INK, bold=False, anchor="lm", alpha=k2)
     # nhac lai: tu truong van con
-    k = appear(t, 0.9, 0.5)
-    if k > 0 and a1 > 0:
-        text(d, (905, CY - 80), "từ trường", 30, PURPLE, bold=False, alpha=k * a1)
-        text(d, (905, CY - 44), "vẫn còn", 30, PURPLE, bold=False, alpha=k * a1)
 
 
 # ---------------- canh 5: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
-    chot_hoi(d, t, sc, "Từ thông biến thiên → có dòng cảm ứng",
-             "Đổi sang cực S, cắm vào nhanh như lần 1. Kim lệch khoảng bao nhiêu, về phía nào?",
-             "Cực N: cắm vào +3,9 · rút ra −2,0 mA\nCực S: từ trường ngược chiều cực N")
+    chot_hoi(d, t, sc, "Từ thông biến thiên → có dòng",
+             "Đổi sang cực S, cắm vào nhanh như lần 1. Kim lệch bao nhiêu, về phía nào?",
+             "Cực S: từ trường ngược cực N")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -357,20 +343,20 @@ def _cues(clip):
 
 CLIP = dict(id="tn-l12-camungdt-01", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Cảm ứng điện từ · thachlab.id.vn", cues=_cues, scenes=[
  dict(key="hook", title="Cuộn dây không có pin", draw=s_hook, tail=0.5, caps=[
-   ("Cuộn dây 600 vòng nối điện kế, không pin.", 3.0),
-   ("Dự đoán trước, rồi xem tiếp.", 5.0)]),
+   ("Cuộn 600 vòng, không pin.", 3.0),
+   ("Chọn một đáp án.", 5.0)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.8, caps=[
-   ("Cắm nhanh cực N vào cuộn dây.", 3.0),
+   ("Cắm nhanh cực N.", 3.0),
    ("Cắm chậm hơn.", 4.4),
-   ("Nằm yên trong cuộn: kim về 0, đáp án B.", 3.0),
-   ("Rút nam châm ra.", 3.0)]),
+   ("Nằm yên: kim về 0.", 3.0),
+   ("Rút ra.", 3.0)]),
  dict(key="rut", title="Kết luận", draw=s_rut, tail=0.9, caps=[
-   ("Có dòng chỉ khi từ thông biến thiên.", 3.0),
-   ("Nhanh gấp 4 lần, dòng lớn gần gấp 4.", 3.2),
-   ("Rút ra thì dòng đổi chiều.", 3.0)]),
+   ("Điểm cam: cắm vào.", 3.8),
+   ("Càng nhanh, càng lớn.", 3.8),
+   ("Điểm tím: rút ra.", 3.8)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Bẫy: nằm yên trong cuộn vẫn KHÔNG có dòng.", 3.2),
-   ("Thí nghiệm này chưa nói được gì?", 3.0)]),
+   ("Nằm yên mà vẫn có dòng?", 4.2),
+   ("Giới hạn.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=1.0, caps=[
-   ("Thử nghĩ: đổi sang cực S thì kim ra sao?", 4.6)]),
+   ("Cực S thì sao?", 5.0)]),
 ])

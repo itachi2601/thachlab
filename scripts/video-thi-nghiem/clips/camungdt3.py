@@ -68,7 +68,7 @@ def field_panel(d, a, band=True, arc=True, frame_label=False, wires=False):
     arrow(d, (170, 266), (260, 266), BLUE, w=4, head=16)
     text(d, (274, 266), "B", 38, BLUE, anchor="lm")
     if band:
-        lg = "dải cam: đường sức xuyên qua khung" if c >= 0 else "dải tím: xuyên qua ngược chiều n, Φ < 0"
+        lg = "dải cam: xuyên qua khung" if c >= 0 else "dải tím: xuyên ngược n, Φ < 0"
         text(d, (340, 266), lg, 32, bcol, bold=False, anchor="lm")
     if wires:                                     # day noi tu truc khung xuong dien ke
         for dx in (0, 14):
@@ -135,8 +135,8 @@ def s_hook(img, d, t, sc):
     y0 = 806 + (1 - k) * 40
     card(d, (40, y0, 1040, y0 + 840), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
     text(d, (W / 2, y0 + 46), "Dự đoán", 40, PURPLE, alpha=k)
-    text(d, (W / 2, y0 + 104), "Quay khung từ α = 0° tới 90°,", 38, INK, alpha=k)
-    text(d, (W / 2, y0 + 152), "B, S giữ nguyên. Đồ thị Φ theo α?", 38, INK, alpha=k)
+    text(d, (W / 2, y0 + 104), "Quay khung từ 0° tới 90°,", 38, INK, alpha=k)
+    text(d, (W / 2, y0 + 152), "B, S không đổi. Đồ thị Φ theo α?", 38, INK, alpha=k)
     for i, (lab, f) in enumerate(OPTS):
         bx = 80 + (i % 2) * 470; by = y0 + 196 + (i // 2) * 300
         card(d, (bx, by, bx + 450, by + 280), fill=A((247, 248, 252), k), outline=A(NAVY, k), r=24, w=4)
@@ -199,7 +199,6 @@ def s_do(img, d, t, sc):
         ra, rp = recs[-1]
         text(d, (96, 850), f"α = {ra}°", 46, GREEN, anchor="lm")
         text(d, (96, 920), f"Φ = {fphi(rp)} Wb", 46, ORANGE, anchor="lm")
-        text(d, (620, 850), "ghi lúc khung dừng", 34, MUTED, bold=False, anchor="rm")
     else:
         text(d, (355, 886), "đang quay…", 40, MUTED, bold=False)
     galvo(d, g)
@@ -225,11 +224,11 @@ def s_rut(img, d, t, sc):
         pw = tw(d, "ĐÁP ÁN C", F(34)) + 48
         card(d, (1000 - pw, 256, 1000, 314), fill=A(GREEN, ka), r=29)
         text(d, (1000 - pw / 2, 285), "ĐÁP ÁN C", 34, WHITE, alpha=ka)
-    kcard(d, 890, "Càng nghiêng, càng ít đường sức qua", "B, S không đổi; chỉ α đổi mà Φ vẫn đổi", GREEN,
+    kcard(d, 890, "Càng nghiêng, càng ít đường sức qua", "", GREEN,
           appear(t, M[1], 0.45))
-    kcard(d, 1100, "Φ = BS cosα = 0,01 cosα (Wb)", "B = 0,2 T, S = 0,05 m²; qua 90° thì Φ đổi dấu", ORANGE,
+    kcard(d, 1100, "Φ = BS cosα = 0,01 cosα (Wb)", "B = 0,2 T, S = 0,05 m²", ORANGE,
           appear(t, M[1] + 1.5, 0.45))
-    kcard(d, 1310, "Quay đều → Φ lặp lại tuần hoàn", "nguyên tắc máy phát điện xoay chiều", PURPLE,
+    kcard(d, 1310, "Quay đều → Φ tuần hoàn", "máy phát điện", PURPLE,
           appear(t, M[2], 0.45))
 
 
@@ -241,21 +240,19 @@ def s_bay(img, d, t, sc):
     tag(d, CX + 150 * math.cos(math.radians(30)), CY - 150 * math.sin(math.radians(30)) - 6, "α = 60°", 34, GREEN)
     d.arc([CX - 120, CY - 120, CX + 120, CY + 120], 0, 30, fill=RED, width=5)       # mat khung voi B: 30 do
     tag(d, CX + 180 * math.cos(math.radians(15)), CY + 180 * math.sin(math.radians(15)) + 10, "30°", 34, RED)
-    k1 = appear(t, 0.3, 0.45); k3 = appear(t, M[2] - 0.1, 0.45); a1 = k1 * (1 - k3)
+    k1 = appear(t, 0.3, 0.45); k3 = appear(t, M[1] + 3.3, 0.45); a1 = k1 * (1 - k3)
     y = 830
     if a1 > 0:
         card(d, (60, y, 1020, y + 520), fill=A(WHITE, a1), outline=A(RED, a1), w=5)
         text(d, (W / 2, y + 56), "Cái bẫy", 44, RED, alpha=a1)
-        text(d, (W / 2, y + 134), "Lấy góc giữa MẶT KHUNG và B → SAI", 40, INK, alpha=a1)
+        text(d, (W / 2, y + 150), "Lấy góc mặt khung và B → SAI", 42, INK, alpha=a1)
         k2 = appear(t, M[1], 0.45) * a1
-        text(d, (W / 2, y + 236), "Lấy 30°: Φ = 0,00866 Wb (sai)", 40, RED, bold=False, alpha=k2)
-        text(d, (W / 2, y + 316), "Đúng α = 60°: Φ = 0,005 Wb", 42, GREEN, alpha=k2)
-        text(d, (W / 2, y + 430), "α đo từ pháp tuyến n, không từ mặt khung", 36, MUTED, bold=False, alpha=k2)
+        text(d, (W / 2, y + 276), "Lấy 30°: 0,00866 Wb (sai)", 42, RED, bold=False, alpha=k2)
+        text(d, (W / 2, y + 376), "Đúng α = 60°: 0,005 Wb", 44, GREEN, alpha=k2)
     if k3 > 0:
         card(d, (60, y, 1020, y + 520), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
-        text(d, (W / 2, y + 56), "Thí nghiệm chưa nói được", 44, NAVY, alpha=k3)
-        for j, s in enumerate(("• Chiều dòng cảm ứng → Lenz", "• Độ lớn suất điện động → Faraday",
-                               "• Số liệu: minh hoạ từ mô hình")):
+        text(d, (W / 2, y + 56), "Chưa nói được", 44, NAVY, alpha=k3)
+        for j, s in enumerate(("• Chiều dòng: Lenz", "• Độ lớn: Faraday", "• Số liệu minh hoạ")):
             text(d, (110, y + 170 + j * 110), s, 40, INK, bold=False, anchor="lm", alpha=k3)
 
 
@@ -266,7 +263,7 @@ def _end_body(d, t, k):
 
 def s_end(img, d, t, sc):
     M = sc["M"]
-    chot_hoi(d, t, sc, "Chỉ quay khung, B và S giữ nguyên: Φ vẫn đổi",
+    chot_hoi(d, t, sc, "B, S không đổi, Φ vẫn đổi",
              "Φ = 0,005 Wb ứng với\ngóc α bằng bao nhiêu?", None, body=_end_body)
     kh = appear(t, M[0] + 2.6, 0.5)                 # goi y hien sau, de HS tu nghi truoc
     if kh > 0:
@@ -286,22 +283,21 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-camungdt-03", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Cảm ứng điện từ · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Khung quay trong từ trường", draw=s_hook, tail=0.3, caps=[
-   ("Khung dây quay được giữa hai cực.", 2.4),
-   ("Dừng vài giây, chọn A, B, C hay D.", 5.6)]),
+   ("Khung quay giữa hai cực.", 2.4),
+   ("Chọn A, B, C hay D.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
-   ("α = 0: mặt khung vuông góc đường sức.", 2.8),
-   ("Quay chậm, dừng ở 30° rồi 60°.", 3.2),
-   ("90°: mặt khung song song đường sức.", 2.6),
-   ("Quay tiếp: kim lệch khi khung quay.", 2.6),
-   ("Dừng ở 120°: Φ = −0,005 Wb, đổi dấu.", 3.0)]),
+   ("Bắt đầu α = 0°.", 2.8),
+   ("Dừng ở 30°, rồi 60°.", 3.2),
+   ("90°: song song đường sức.", 2.6),
+   ("Quay tiếp: kim lệch.", 2.6),
+   ("120°: Φ đổi dấu.", 3.0)]),
  dict(key="rut", title="Kết luận", draw=s_rut, tail=0.4, caps=[
-   ("0° → 90°: Φ giảm về 0. Đáp án C.", 2.8),
-   ("Càng nghiêng, càng ít đường sức qua.", 2.8),
-   ("Quay đều thì Φ lặp lại: máy phát điện.", 3.0)]),
+   ("0° → 90°: Φ về 0.", 2.8),
+   ("Chú ý công thức.", 2.8),
+   ("Quay đều: Φ lặp lại.", 3.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.3, caps=[
-   ("Bẫy: α là góc giữa pháp tuyến và B.", 2.8),
-   ("Mặt nghiêng 30° so với B thì α = 60°.", 3.0),
-   ("Thí nghiệm này chưa nói được gì?", 4.6)]),
+   ("α đo từ pháp tuyến n.", 3.6),
+   ("Giới hạn.", 6.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
-   ("Thử nghĩ: Φ = 0,005 Wb thì α bằng mấy?", 4.6)]),
+   ("α bằng mấy?", 5.0)]),
 ])

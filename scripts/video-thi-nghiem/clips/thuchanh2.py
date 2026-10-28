@@ -77,7 +77,7 @@ def rig(d, t, tau, cx=300, base=800):
     d.rounded_rectangle([x0 - 40, base + 24, x1 + 40, base + 120], radius=14, fill=NAVY)
     d.rounded_rectangle([cx - 110, base + 40, cx + 110, base + 104], radius=10, fill=(20, 60, 40))
     text(d, (cx, base + 72), f"{P_W} W", 40, (134, 239, 172))
-    text(d, (cx - 160, base + 72), "oát kế", 34, WHITE, anchor="lm")
+    text(d, (cx - 175, base + 72), "oát kế", 32, WHITE, anchor="lm")
 
 def panel(d, tau, show_timers=True):
     card(d, (600, 270, 1020, 920), fill=WHITE, outline=NAVY, w=4)
@@ -126,34 +126,32 @@ def plot(d, box, tau, hl=(0, 0, 0), pen=True):
         if pen and tau < S3 - 1: dot(d, X(tau), Y(T_of(tau)), 13, RED, outline=WHITE)
     return X, Y
 
-def minh_hoa(d, x, y, alpha=1.0, anchor="rm"):
-    text(d, (x, y), "Số liệu minh hoạ", 34, PURPLE, anchor=anchor, alpha=alpha)
+def minh_hoa(d, x, y, alpha=1.0, anchor="rm", full=False):
+    text(d, (x, y), "Số liệu minh hoạ" if full else "Minh hoạ", 36, PURPLE, anchor=anchor, alpha=alpha)
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("A. Đá tan dần ở 0 °C tới hết", "B. Nước nóng từ 0 lên 100 °C",
-        "C. Nước sôi ở 100 °C tới cạn", "D. Ba giai đoạn dài bằng nhau")
+OPTS = ("A. Đá tan", "B. Nóng lên", "C. Sôi tới cạn", "D. Bằng nhau")
 
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, 0.0)
     panel(d, 0.0, show_timers=False)
-    text(d, (810, 520), "Cân nước đá", 38, INK, alpha=appear(t, 0.2))
+    text(d, (810, 520), "Nước đá", 40, INK, alpha=appear(t, 0.2))
     text(d, (810, 590), f"{M_KG} kg", 60, INK, alpha=appear(t, 0.2))
-    text(d, (810, 680), "Bếp giữ", 38, INK, alpha=appear(t, 0.4))
-    text(d, (810, 750), f"{P_W} W suốt", 60, INK, alpha=appear(t, 0.4))
-    text(d, (810, 840), "tới khi nước cạn", 38, INK, alpha=appear(t, 0.4))
+    text(d, (810, 700), "Bếp", 40, INK, alpha=appear(t, 0.4))
+    text(d, (810, 770), f"{P_W} W", 60, INK, alpha=appear(t, 0.4))
     a = appear(t, 1.0, 0.5)
     if a <= 0: return
     card(d, (50, 960, 1030, 1620), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, W / 2, 1010, "DỰ ĐOÁN", 36, WHITE, PURPLE, a)
-    ctext(d, 1092, "Đun liên tục, bếp giữ 100 W.\nGiai đoạn nào kéo dài nhất?", 42, INK, alpha=a)
-    text(d, (W / 2, 1180), "Tra bảng: λ = 334 000 J/kg; L = 2 260 000 J/kg", 36, INK, alpha=a)
-    text(d, (W / 2, 1226), "c = 4 190 J/(kg·K)", 36, INK, alpha=a)
+    ctext(d, 1092, "Đun liên tục. Giai đoạn nào dài nhất?", 44, INK, alpha=a)
+    rich(d, W / 2, 1175, "λ = 3,34·10^{5} J/kg;  L = 2,26·10^{6} J/kg", 40, INK, alpha=a)
+    text(d, (W / 2, 1230), "c = 4 190 J/(kg·K)", 40, INK, alpha=a)
     for i, s in enumerate(OPTS):
         k = appear(t, 1.3 + 0.15 * i, 0.4)
         y = 1300 + i * 72
         card(d, (110, y - 32, 970, y + 32), fill=A((245, 243, 255), k), outline=A(PURPLE, k), r=20, w=3)
-        text(d, (140, y), s, 38, INK, anchor="lm", alpha=k)
+        text(d, (140, y), s, 42, INK, anchor="lm", alpha=k)
     tc = 2.3; tend = sc["T"] - 0.1; q = clamp((t - tc) / (tend - tc))
     d.rounded_rectangle([140, 1580, 940, 1592], radius=6, fill=A(LIGHT, a))
     if q < 1: d.rounded_rectangle([140, 1580, 140 + 800 * (1 - q), 1592], radius=6, fill=A(PURPLE, a))
@@ -180,7 +178,7 @@ def s_do(img, d, t, sc):
             tx = cxp - wdt / 2 + 22 + j * 16
             d.polygon([(tx, 976), (tx, 1004), (tx + 16, 990)], fill=A(WHITE, blink))
         text(d, (cxp + 22, 990), "TUA NHANH", 32, WHITE)
-    minh_hoa(d, 1010, 990)
+    minh_hoa(d, 1010, 990, full=True)
     plot(d, (170, 1040, 960, 1520), tau)
 
 # ---------------- canh 3: Dap an + vi sao nam ngang ----------------
@@ -218,12 +216,11 @@ def boil_panel(d, box, t):
         if u < 0.5: arrow(d, (x, y - 26), (x, y - 70), A(ORANGE, al * (1 - u * 2)), w=5, head=14)
 
 def heat_in(d, rx, y, t, a):
-    text(d, (rx, y), "Nhiệt từ bếp", 36, INK, anchor="lm", alpha=a)
+    text(d, (rx, y), "Nhiệt vào", 40, INK, anchor="lm", alpha=a)
     for j in range(5):
         u = (t * 0.8 + j / 5) % 1; xx = rx + 10 + u * 380
         al = a * min(1, u / 0.15, (1 - u) / 0.15)
         d.line([(xx, y + 40), (xx + 18, y + 56), (xx, y + 72)], fill=A(ORANGE, al), width=7)
-    text(d, (rx, y + 106), "vẫn vào đều", 34, ORANGE, anchor="lm", alpha=a)
 
 def s_ans(img, d, t, sc):
     IMG_REF[0] = img
@@ -234,16 +231,15 @@ def s_ans(img, d, t, sc):
     h1 = appear(t, M[1] - 0.1, 0.4) * (1 - appear(t, M[2] - 0.1, 0.4))
     h3 = max(hA, appear(t, M[2] - 0.1, 0.4))
     X, Y = plot(d, (170, 330, 960, 810), S3, hl=(h1, 0, h3), pen=False)
-    text(d, (X(0) + 8, Y(0) - 95), "334 s", 34, BLUE, anchor="lm")
+    text(d, (X(0) + 8, Y(0) - 95), "334 s", 38, BLUE, anchor="lm")
     d.line([(X(S1 / 2), Y(0) - 72), (X(S1 / 2), Y(0) - 20)], fill=BLUE, width=3)
-    text(d, (X((S1 + S2) / 2) + 66, Y(50) + 14), "419 s", 34, ORANGE, anchor="lm")
-    text(d, ((X(S2) + X(S3)) / 2, Y(100) - 48), "2 260 s ≈ 75% thời gian", 36, RED)
+    text(d, (X((S1 + S2) / 2) + 66, Y(50) + 14), "419 s", 38, ORANGE, anchor="lm")
+    text(d, ((X(S2) + X(S3)) / 2, Y(100) - 48), "75% thời gian", 40, RED)
     ka = appear(t, M[0] + 0.1, 0.5)
     pill(d, 720, 600, "ĐÁP ÁN C", 40, WHITE, NAVY, ka)
     # khung duoi: so sanh 3 thoi gian -> co che tan -> co che soi
     card(d, (40, 935, 1040, 1620), fill=WHITE, outline=LIGHT, w=3)
     if cur <= 0:
-        text(d, (W / 2, 990), f"Cùng bếp {P_W} W, cùng {M_KG} kg", 36, MUTED)
         for i, (lab, dur, _) in enumerate(STG):
             y = 1080 + i * 120; g = ease((t - 0.4 - 0.25 * i) / 0.7)
             text(d, (90, y), SHORT[i], 38, COL[i], anchor="lm")
@@ -251,11 +247,11 @@ def s_ans(img, d, t, sc):
             d.rounded_rectangle([290, y - 26, 290 + max(52, wmax * g), y + 26], radius=26, fill=COL[i])
             text(d, (290 + max(52, wmax * g) + 18, y), f"{sp(dur)} s", 38, INK, anchor="lm", alpha=g)
         k2 = appear(t, 0.2, 0.4)
-        ctext(d, 1480, "Sôi lâu gấp ≈ 5,4 lần\nnóng lên 0 → 100 °C", 48, RED, maxw=900, alpha=k2)
+        ctext(d, 1500, "Sôi gấp ≈ 5,4 lần", 56, RED, maxw=900, alpha=k2)
         return
     soi = cur >= 2
     a = appear(t, (M[2] if soi else M[1]) - 0.1, 0.4)
-    text(d, (W / 2, 985), "Trong bình, lúc nước đang sôi" if soi else "Trong bình, lúc đá đang tan", 38, INK, alpha=a)
+    text(d, (W / 2, 985), "Sôi" if soi else "Đá tan", 46, INK, alpha=a)
     box = (70, 1030, 540, 1590)
     card(d, box, fill=A((244, 241, 255), a), r=24)
     if soi: boil_panel(d, box, t)
@@ -264,13 +260,11 @@ def s_ans(img, d, t, sc):
     heat_in(d, rx, 1080, t, a)
     a2 = appear(t, (M[2] if soi else M[1]) + 0.4, 0.5)
     if soi:
-        text(d, (rx, 1290), "Phân tử thoát khỏi", 38, INK, anchor="lm", alpha=a2)
-        text(d, (rx, 1340), "mặt nước thành hơi", 38, INK, anchor="lm", alpha=a2)
-        text(d, (rx, 1450), "t đứng ở 100 °C", 40, RED, anchor="lm", alpha=a2)
+        text(d, (rx, 1300), "Thoát thành hơi", 44, INK, anchor="lm", alpha=a2)
+        text(d, (rx, 1450), "t không đổi", 46, RED, anchor="lm", alpha=a2)
     else:
-        text(d, (rx, 1290), "Phá liên kết", 38, INK, anchor="lm", alpha=a2)
-        text(d, (rx, 1340), "giữa các phân tử", 38, INK, anchor="lm", alpha=a2)
-        text(d, (rx, 1450), "t đứng ở 0 °C", 40, BLUE, anchor="lm", alpha=a2)
+        text(d, (rx, 1300), "Phá liên kết", 44, INK, anchor="lm", alpha=a2)
+        text(d, (rx, 1450), "t không đổi", 46, BLUE, anchor="lm", alpha=a2)
 
 # ---------------- canh 4: Tinh lambda, L + chua do duoc gi ----------------
 def s_calc(img, d, t, sc):
@@ -279,45 +273,40 @@ def s_calc(img, d, t, sc):
     card(d, (40, 245, 1040, 690), fill=WHITE, outline=NAVY, w=4)
     minh_hoa(d, 1010, 282)
     xs = (70, 640, 990)
-    for x, c, an in zip(xs, ("Giai đoạn", "τ (s)", "Q = P·τ (J)"), ("lm", "rm", "rm")):
+    for x, c, an in zip(xs, ("", "τ (s)", "Q = P·τ (J)"), ("lm", "rm", "rm")):
         text(d, (x, 330), c, 36, INK, anchor=an)
     d.line([(60, 366), (1020, 366)], fill=LIGHT, width=4)
     for i, (lab, dur, q) in enumerate(STG):
         k = appear(t, 0.1 + 0.2 * i, 0.35); y = 420 + i * 90
         hlr = appear(t, 0.9, 0.4) if i != 1 else 0
         if hlr > 0: d.rounded_rectangle([56, y - 36, 1024, y + 36], radius=16, fill=A((225, 236, 255), hlr * k))
-        text(d, (xs[0], y), lab, 38, COL[i], anchor="lm", alpha=k)
+        text(d, (xs[0], y), SHORT[i], 42, COL[i], anchor="lm", alpha=k)
         text(d, (xs[1], y), sp(dur), 40, INK, anchor="rm", alpha=k)
         text(d, (xs[2], y), q, 40, INK, anchor="rm", alpha=k)
     kf = appear(t, M[0] + 0.3, 0.5)
-    card(d, (40, 720, 1040, 1230), fill=A(WHITE, kf), outline=A(BLUE, kf), w=5)
-    text(d, (W / 2, 770), "Hai đoạn ngang: cùng công thức P·τ/m", 38, MUTED, alpha=kf)
-    rich(d, W / 2, 860, "λ = P·τ_{1}/m = 3,34·10^{5} J/kg", 54, BLUE, alpha=kf)
-    text(d, (W / 2, 930), "= 100 · 334 / 0,100", 40, INK, alpha=kf)
+    card(d, (40, 720, 1040, 1080), fill=A(WHITE, kf), outline=A(BLUE, kf), w=5)
+    rich(d, W / 2, 820, "λ = P·τ_{1}/m = 3,34·10^{5} J/kg", 58, BLUE, alpha=kf)
     kl = appear(t, M[0] + 0.9, 0.5)
-    rich(d, W / 2, 1040, "L = P·τ_{3}/m = 2,26·10^{6} J/kg", 54, RED, alpha=kl)
-    text(d, (W / 2, 1110), "= 100 · 2 260 / 0,100", 40, INK, alpha=kl)
-    text(d, (W / 2, 1180), "L lớn hơn λ gần 7 lần", 38, PURPLE, alpha=appear(t, M[0] + 1.6, 0.5))
+    rich(d, W / 2, 970, "L = P·τ_{3}/m = 2,26·10^{6} J/kg", 58, RED, alpha=kl)
     kc = appear(t, M[1] - 0.3, 0.5)
     if kc <= 0: return
-    y0 = 1270 + (1 - back((t - M[1] + 0.3) / 0.5)) * 30
-    card(d, (60, y0, 1020, y0 + 340), fill=WHITE, outline=PURPLE, w=6)
+    y0 = 1130 + (1 - back((t - M[1] + 0.3) / 0.5)) * 30
+    card(d, (60, y0, 1020, y0 + 300), fill=WHITE, outline=PURPLE, w=6)
     pill(d, W / 2, y0 + 56, "SAI SỐ: MẤT NHIỆT", 36, WHITE, PURPLE)
-    ctext(d, y0 + 165, "λ, L đo được lớn hơn", 52, PURPLE)
-    ctext(d, y0 + 262, "giá trị tra bảng", 44, INK, maxw=880)
+    ctext(d, y0 + 200, "λ, L đo lớn hơn bảng", 56, PURPLE, maxw=900)
 
 # ---------------- canh 5: Bay - can da con uot ----------------
 def s_trap(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]
     card(d, (60, 250, 1020, 340), fill=(254, 226, 226), outline=RED, w=5)
-    text(d, (W / 2, 295), "Bẫy: cân đá khi còn ướt", 44, RED)
+    text(d, (W / 2, 295), "Bẫy: đá còn ướt", 48, RED)
     # can dien tu + coc da uot (hinh co ngay tu dau canh)
     card(d, (60, 370, 1020, 1000), fill=WHITE, outline=LIGHT, w=3)
     cx = 400
     d.rounded_rectangle([cx - 230, 860, cx + 230, 950], radius=18, fill=NAVY)
     d.rounded_rectangle([cx - 110, 878, cx + 110, 932], radius=10, fill=(20, 60, 40))
-    text(d, (cx, 905), "m cân", 34, (134, 239, 172))
+    text(d, (cx, 905), "m cân", 36, (134, 239, 172))
     d.rounded_rectangle([cx - 200, 836, cx + 200, 860], radius=8, fill=(150, 155, 170))
     # coc
     d.polygon([(cx - 150, 560), (cx + 150, 560), (cx + 120, 836), (cx - 120, 836)], fill=(240, 246, 252), outline=(150, 175, 205))
@@ -330,18 +319,16 @@ def s_trap(img, d, t, sc):
     arrow(d, (720, 620), (470, 640), NAVY, w=5, head=18)
     text(d, (735, 620), "đá", 40, INK, anchor="lm")
     arrow(d, (720, 790), (520, 800), BLUE, w=5, head=18)
-    text(d, (735, 775), "nước bám", 40, BLUE, anchor="lm")
-    text(d, (735, 825), "và đọng đáy", 40, BLUE, anchor="lm")
     kr = appear(t, M[0] + 0.8, 0.4)
-    text(d, (735, 905), "cân cả vào m", 38, RED, anchor="lm", alpha=kr)
+    text(d, (735, 905), "cân cả vào m", 42, RED, anchor="lm", alpha=kr)
     # cong thuc va chieu sai
     card(d, (60, 1040, 1020, 1610), fill=WHITE, outline=RED, w=5)
     ka = appear(t, M[0] + 0.3, 0.4)
     rich(d, W / 2, 1140, "λ = P·τ_{1}/m", 60, INK, alpha=ka)
-    ctext(d, 1250, "m cân lớn hơn m đá thật", 42, INK, alpha=appear(t, M[0] + 0.7, 0.4))
-    ctext(d, 1340, "→ λ tính ra NHỎ HƠN thật", 48, RED, alpha=appear(t, M[1], 0.3))
+    ctext(d, 1250, "m cân > m đá", 48, INK, alpha=appear(t, M[0] + 0.7, 0.4))
+    ctext(d, 1340, "→ λ tính ra NHỎ HƠN", 52, RED, alpha=appear(t, M[1], 0.3))
     card(d, (110, 1420, 970, 1570), fill=A((220, 252, 231), appear(t, M[1] + 0.8, 0.3)), r=24)
-    ctext(d, 1495, "Làm đúng: để đá ráo nước rồi mới cân", 40, GREEN, maxw=820, alpha=appear(t, M[1] + 0.8, 0.3))
+    ctext(d, 1495, "Làm đúng: để đá ráo", 46, GREEN, maxw=820, alpha=appear(t, M[1] + 0.8, 0.3))
 
 # ---------------- canh 6: Chot + cau hoi tu nho lai ----------------
 def _body(d, t, k):
@@ -349,22 +336,21 @@ def _body(d, t, k):
         x = 290 + j * 500
         d.rounded_rectangle([x - 200, 1020, x + 200, 1240], radius=24, fill=A((247, 248, 252), k), outline=A(col, k), width=4)
         text(d, (x, 1070), lab, 40, INK, alpha=k)
-        text(d, (x, 1130), "đoạn ngang 0 °C", 34, INK, alpha=k)
         text(d, (x, 1195), res, 46, col, alpha=k)
 
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]
-    chot_hoi(d, t, sc, "Đoạn nằm ngang: nhiệt vào để chuyển thể",
-             "Cùng bếp 100 W, đun 0,200 kg đá đang tan. Đoạn ngang ở 0 °C dài bao lâu?", body=_body)
+    chot_hoi(d, t, sc, "Đoạn ngang: nhiệt vào để chuyển thể",
+             "Đun 0,200 kg đá, bếp 100 W. Đoạn ngang dài bao lâu?", body=_body)
     kb = appear(t, M[0] + 0.4, 0.5)
     if kb <= 0: return
     card(d, (110, 1300, 970, 1560), fill=A((255, 237, 213), kb), outline=A(ORANGE, kb), r=24, w=4)
     text(d, (W / 2, 1355), "Gợi ý", 40, ORANGE, alpha=kb)
-    kh = appear(t, M[0] + 2.5, 0.5)
+    kh = appear(t, M[0] + 1.2, 0.5)
     if kh <= 0:
-        text(d, (W / 2, 1450), "tự nghĩ trước…", 38, MUTED, alpha=kb); return
-    ctext(d, 1450, "λ = P·τ/m; P và λ giữ nguyên", 42, INK, maxw=820, alpha=kh)
+        return
+    ctext(d, 1450, "λ = P·τ/m; λ giữ nguyên", 46, INK, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -380,23 +366,23 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-thuchanh-02", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
     footer="Thực hành đo λ và L · thachlab.id.vn", scenes=[
  dict(key="hook", title="Đun đá liên tục tới cạn", draw=s_hook, tail=0.6, caps=[
-   ("0,100 kg đá đang tan, bếp giữ 100 W.", 2.2),
-   ("Chọn một đáp án trước khi xem tiếp.", 6.6)]),
+   ("Đun đá liên tục.", 2.5),
+   ("Dừng video, chọn A–D.", 6.0)]),
  dict(key="do", title="Một lần đun, ba mốc giờ", draw=s_do, tail=0.4, caps=[
-   ("Bật bếp và bấm đồng hồ cùng lúc.", 2.3),
-   ("Nhiệt kế đứng ở 0 °C: đá đang tan.", 2.6),
-   ("Đá tan hết: nhiệt độ leo đều lên 100 °C.", 2.7),
-   ("Ở 100 °C lại đứng yên, sôi tới cạn.", 3.0)]),
+   ("Bật bếp, bấm giờ.", 2.5),
+   ("Đá đang tan.", 2.5),
+   ("Nóng lên đều.", 2.5),
+   ("Sôi, đứng yên.", 2.5)]),
  dict(key="ans", title="Vì sao có đoạn nằm ngang?", draw=s_ans, tail=0.3, caps=[
-   ("Đoạn sôi dài nhất: đáp án C.", 3.4),
-   ("Đá tan: nhiệt vào để phá liên kết.", 2.8),
-   ("Sôi: nhiệt giúp phân tử thoát thành hơi.", 2.9)]),
+   ("Sôi dài nhất.", 3.6),
+   ("Đá đang tan.", 3.0),
+   ("Nước đang sôi.", 3.0)]),
  dict(key="calc", title="Tính λ và L", draw=s_calc, tail=0.4, caps=[
-   ("λ và L: cùng công thức P·τ/m.", 2.8),
-   ("Sai số: mất nhiệt → λ, L đo được lớn hơn.", 3.4)]),
+   ("Cùng công thức P·τ/m.", 3.6),
+   ("Vì sao lệch?", 3.0)]),
  dict(key="trap", title="Cái bẫy khi cân", draw=s_trap, tail=0.3, caps=[
-   ("Bẫy: cân đá khi còn ướt, chưa ráo.", 2.6),
-   ("m cân lớn hơn → λ tính ra nhỏ hơn thật.", 2.8)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=1.4, caps=[
-   ("Thử nghĩ: đá gấp đôi thì tan bao lâu?", 3.6)]),
+   ("Nhìn đáy cốc.", 3.2),
+   ("Sai theo hướng nào?", 3.4)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
+   ("Dừng video, tự trả lời.", 7.0)]),
 ])

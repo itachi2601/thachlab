@@ -70,9 +70,9 @@ def s_hook(img, d, t, sc):
     if k <= 0: return
     card(d, (60, 1005, 1020, 1660), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1050), "Dự đoán", 44, PURPLE, alpha=k)
-    ctext(d, 1108, "Lá 100 mm × 100 mm, 0,27 g; D = 2700 kg/m³", 38, INK, alpha=k)
-    rich2(d, W / 2, 1162, "Đường kính nguyên tử nhôm: 2,8×10^{−10} m", 38, INK, alpha=k)
-    ctext(d, 1222, "Dọc bề dày có bao nhiêu lớp nguyên tử?", 40, INK, alpha=k)
+    ctext(d, 1108, "Lá 0,27 g; D = 2700 kg/m³", 40, INK, alpha=k)
+    rich2(d, W / 2, 1162, "Nguyên tử nhôm: 2,8×10^{−10} m", 40, INK, alpha=k)
+    ctext(d, 1222, "Dọc bề dày có bao nhiêu lớp?", 44, INK, alpha=k)
     for i, s in enumerate(OPTS):
         a = appear(t, sc["M"][1] + 0.2 + i * 0.15); y = 1298 + i * 76
         card(d, (110, y - 33, 970, y + 33), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=20, w=4)
@@ -100,7 +100,7 @@ def s_do(img, d, t, sc):
     text(d, (650, 356), "D = 2700 kg/m³", 36, MUTED, bold=False, alpha=f1)
     f2 = appear(t, M[1] + 0.2)
     rich2(d, W / 2, 440, "Số lớp = d : (2,8×10^{−10} m)", 42, INK, alpha=f2)
-    text(d, (W / 2, 500), "đường kính một nguyên tử nhôm", 34, MUTED, bold=False, alpha=f2)
+    text(d, (W / 2, 500), "đường kính nguyên tử", 36, MUTED, bold=False, alpha=f2)
     # bang
     card(d, (60, 1010, 1020, 1600), fill=WHITE, outline=NAVY, w=4)
     xs = [130, 310, 520, 700, 880]
@@ -119,7 +119,7 @@ def s_do(img, d, t, sc):
         text(d, (xs[4], y), nl, 42, GREEN, alpha=appear(t, tc, 0.35))
     if hl > 0:
         d.rounded_rectangle([xs[4] - 105, 1128, xs[4] + 105, 1392], radius=18, outline=A(GREEN, hl), width=5)
-        ctext(d, 1490, "Ba lá cùng cỡ: hàng vạn lớp", 40, GREEN, alpha=hl)
+        ctext(d, 1490, "hàng vạn lớp", 44, GREEN, alpha=hl)
 
 # ---------------- canh 3: dap an C + mat cat phong to + sai so ----------------
 RA = random.Random(5)
@@ -127,7 +127,7 @@ def s_ans(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]; k = back((t - 0.2) / 0.5) if t > 0.2 else 0
     card(d, (60, 250, 1020, 350), fill=(220, 252, 231), outline=GREEN, w=5)
-    text(d, (W / 2, 300), "Đáp án C: khoảng 36 000 lớp", int(44 * clamp(k, 0.3, 1.0)), GREEN)
+    text(d, (W / 2, 300), "Đáp án C", int(48 * clamp(k, 0.3, 1.0)), GREEN)
     # mat cat la: vai lop dau + dau ngat + vai lop cuoi (chi minh hoa, khong ve du)
     card(d, (60, 380, 1020, 1000), fill=WHITE, outline=LIGHT, w=3)
     a = appear(t, 0.6, 0.6)
@@ -143,26 +143,26 @@ def s_ans(img, d, t, sc):
     for xx in range(x0 - 20, 640, 36):                     # dau ngat ≈ (nhieu lop bi luoc)
         d.line([(xx, 690), (xx + 18, 680)], fill=A(MUTED, a), width=4)
         d.line([(xx, 714), (xx + 18, 704)], fill=A(MUTED, a), width=4)
-    text(d, (490, 650), "··· hàng vạn lớp bị lược ···", 34, MUTED, bold=False, alpha=a)
+    text(d, (490, 650), "··· lược bớt ···", 36, MUTED, bold=False, alpha=a)
     # kich thuoc
     kb = appear(t, 1.4)
     yt, yb = rows_top[0] - r, rows_bot[-1] + r
     arrow(d, (850, (yt + yb) / 2), (850, yt), A(BLUE, kb), w=4, head=14)
     arrow(d, (850, (yt + yb) / 2), (850, yb), A(BLUE, kb), w=4, head=14)
     text(d, (835, (yt + yb) / 2), "d ≈ 10 µm", 36, BLUE, anchor="rm", alpha=kb)
-    text(d, (W / 2, 958), "Mặt cắt lá, phóng to, chỉ vẽ vài lớp", 36, MUTED, bold=False, alpha=a)
+    text(d, (W / 2, 958), "Mặt cắt, chỉ vẽ vài lớp", 36, MUTED, bold=False, alpha=a)
     # sai so: la nang nhat dang tin nhat
     e = appear(t, 1.5)
     if e <= 0: return
     card(d, (60, 1030, 1020, 1600), fill=A(WHITE, e), outline=A(BLUE, e), w=4)
-    text(d, (W / 2, 1085), "Sai số tương đối của d", 40, BLUE, alpha=e)
+    text(d, (W / 2, 1085), "Sai số của d", 44, BLUE, alpha=e)
     for j, (n, a_, b_, m, *_r) in enumerate(SHEETS):
         y = 1180 + j * 100; aj = appear(t, 1.8 + j * 0.3, 0.35)
         good = j == 2 and t > M[1] + 0.6
         if good: d.rounded_rectangle([100, y - 40, 980, y + 40], radius=16, fill=A((220, 252, 231), appear(t, M[1] + 0.6)))
         text(d, (140, y), f"Lá {n}: m = {m} g", 38, INK, bold=False, anchor="lm", alpha=aj)
         text(d, (940, y), ERR[j], 42, GREEN if good else INK, anchor="rm", alpha=aj)
-    ctext(d, 1520, "Lá nặng nhất cho kết quả đáng tin nhất", 38, GREEN, alpha=appear(t, M[1] + 1.0))
+    ctext(d, 1520, "Đáng tin nhất", 44, GREEN, alpha=appear(t, M[1] + 1.0))
 
 # ---------------- canh 4: hat nhan nho co nao (tinh R tung buoc) + chua noi duoc gi ----------------
 def s_why(img, d, t, sc):
@@ -176,20 +176,17 @@ def s_why(img, d, t, sc):
     d.line([(cx, cy), (cx + R, cy)], fill=BLUE, width=3)
     text(d, (cx + R / 2 + 20, cy - 26), "r", 38, BLUE)
     dot(d, cx, cy, 9, RED, NAVY)                           # hat nhan: van ve qua to
-    text(d, (780, 330), "Nguyên tử", 36, MUTED, bold=False)
     rich2(d, 780, 392, "r ≈ 1,4×10^{−10} m", 42, BLUE)
-    text(d, (780, 500), "chấm đỏ: hạt nhân", 36, RED)
-    text(d, (780, 548), "(không theo tỉ lệ)", 34, MUTED, bold=False)
+    text(d, (780, 500), "chấm đỏ: hạt nhân", 40, RED)
     k1, k2, k3 = appear(t, 0.8), appear(t, 1.6), appear(t, 2.4)
     card(d, (60, 690, 1020, 1010), fill=A(WHITE, k1), outline=A(LIGHT, k1), r=24, w=3)
-    text(d, (W / 2, 735), "Hạt nhân nhôm, A = 27", 36, MUTED, bold=False, alpha=k1)
+    text(d, (W / 2, 735), "Nhôm, A = 27", 40, MUTED, bold=False, alpha=k1)
     rich2(d, W / 2, 810, "R = 1,2×10^{−15} × 27^{1/3}", 44, INK, alpha=k1)
     rich2(d, W / 2, 885, "= 1,2×10^{−15} × 3", 44, INK, alpha=k2)
     rich2(d, W / 2, 962, "= 3,6×10^{−15} m", 48, RED, alpha=k3)
     kv = appear(t, 2.8)
     card(d, (60, 1030, 1020, 1160), fill=A(WHITE, kv), outline=A(LIGHT, kv), r=24, w=3)
-    ctext(d, 1068, "Thể tích hạt nhân tỉ lệ thuận với A", 36, INK, bold=False, alpha=kv)
-    rich2(d, W / 2, 1122, "nên R tỉ lệ với A^{1/3}", 38, INK, alpha=kv)
+    rich2(d, W / 2, 1095, "R tỉ lệ với A^{1/3}", 44, INK, alpha=kv)
     b = appear(t, M[1] + 0.1)
     card(d, (60, 1180, 1020, 1390), fill=A(WHITE, b), outline=A(BLUE, b), w=5)
     ctext(d, 1238, "Hạt nhân nhỏ hơn nguyên tử", 40, INK, alpha=b)
@@ -197,7 +194,7 @@ def s_why(img, d, t, sc):
     c = appear(t, M[1] + 1.2)
     card(d, (60, 1410, 1020, 1660), fill=A(WHITE, c), outline=A(PURPLE, c), w=5)
     text(d, (W / 2, 1455), "Chưa nói được gì?", 40, PURPLE, alpha=c)
-    ctext(d, 1560, "R tính từ công thức thực nghiệm,\nchỉ gần đúng: ghi kết quả kèm sai số.", 38, INK, bold=False, alpha=c, lh=1.3)
+    ctext(d, 1560, "Chỉ gần đúng:\nghi kèm sai số.", 42, INK, bold=False, alpha=c, lh=1.3)
 
 # ---------------- canh 5: bay R ti le thuan voi A ----------------
 def s_trap(img, d, t, sc):
@@ -222,10 +219,9 @@ def s_trap(img, d, t, sc):
         for xx in range(x0, int(min(x0 + Lg, 975)), 30):
             d.line([(xx, y + 70), (min(xx + 16, 975), y + 70)], fill=A(RED, g), width=8)
         if x0 + Lg > 975: arrow(d, (950, y + 70), (992, y + 70), A(RED, g), w=6, head=16)
-        text(d, (W / 2, y + 125), "Nếu R tỉ lệ thuận với A: vàng gấp 7,3 lần", 34, RED, alpha=g)
+        text(d, (W / 2, y + 125), "Nếu tỉ lệ: gấp 7,3 lần", 38, RED, alpha=g)
     c = appear(t, M[1] + 1.6)
     card(d, (60, 1030, 1020, 1600), fill=A((254, 242, 242), c), r=28)
-    ctext(d, 1110, "Từ nhôm sang vàng:", 40, INK, alpha=c)
     ctext(d, 1200, "A tăng 7,3 lần", 48, INK, alpha=c)
     ctext(d, 1290, "R chỉ tăng khoảng 2 lần", 52, GREEN, alpha=c)
     e = appear(t, M[1] + 2.4)
@@ -234,13 +230,13 @@ def s_trap(img, d, t, sc):
 # ---------------- canh 6: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
-    chot_hoi(d, t, sc, "Lá nhôm mỏng có hàng vạn lớp nguyên tử; hạt nhân nhỏ hơn nguyên tử hàng chục nghìn lần",
-             "Cắt lá giấy bạc to gấp đôi diện tích thì số lớp nguyên tử dọc bề dày thay đổi thế nào?")
+    chot_hoi(d, t, sc, "Lá nhôm hàng vạn lớp; hạt nhân rất nhỏ",
+             "Lá to gấp đôi: số lớp thay đổi thế nào?")
     kh = appear(t, sc["M"][0] + 2.6, 0.5)                  # goi y hien muon ~2,5 s sau cau hoi
     if kh <= 0: return
     card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
     ctext(d, 1360, "Gợi ý", 36, MUTED, bold=False, alpha=kh)
-    ctext(d, 1445, "Diện tích gấp đôi thì m thay đổi thế nào?", 40, ORANGE, maxw=820, alpha=kh)
+    ctext(d, 1445, "Diện tích gấp đôi: m thay đổi?", 42, ORANGE, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -252,21 +248,21 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-hatnhan-02", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
     footer="Hạt nhân và nguyên tử · thachlab.id.vn", scenes=[
  dict(key="hook", title="Lá nhôm dày mấy lớp nguyên tử?", draw=s_hook, tail=0.6, caps=[
-   ("Giấy bạc nhôm: đo hai cạnh, rồi cân.", 2.3),
-   ("Chọn một đáp án trước khi xem tiếp.", 9.0)]),
+   ("Đo hai cạnh, rồi cân.", 2.3),
+   ("Chọn đáp án.", 9.0)]),
  dict(key="do", title="Đo ba lá, tính bề dày", draw=s_do, tail=0.6, caps=[
-   ("Đo a, b, cân m; tính d = m : (D·a·b).", 3.0),
-   ("Chia d cho đường kính một nguyên tử.", 3.6),
-   ("Ba lá cho số lớp cùng cỡ.", 2.6)]),
+   ("Đo a, b, m; tính d.", 3.0),
+   ("Chia cho đường kính.", 3.6),
+   ("Ba lá, cùng cỡ.", 2.6)]),
  dict(key="ans", title="Đếm được bao nhiêu lớp?", draw=s_ans, tail=0.6, caps=[
-   ("Đáp án C: khoảng 36 000 lớp nguyên tử.", 2.8),
-   ("Lá nặng nhất có sai số nhỏ nhất: 2,6 %.", 2.8)]),
+   ("C: khoảng 36 000 lớp.", 3.0),
+   ("Lá nặng nhất, sai số 2,6 %.", 3.0)]),
  dict(key="why", title="Còn hạt nhân nhỏ cỡ nào?", draw=s_why, tail=0.6, caps=[
-   ("Mỗi lớp là nguyên tử; hạt nhân ở tâm.", 3.4),
-   ("Nhỏ hơn nguyên tử hàng chục nghìn lần.", 3.4)]),
+   ("Mỗi lớp là nguyên tử.", 3.8),
+   ("Hạt nhân ở tâm.", 3.8)]),
  dict(key="trap", title="Cái bẫy", draw=s_trap, tail=0.6, caps=[
-   ("Bẫy: nghĩ vàng có R gấp 7,3 lần nhôm.", 2.6),
-   ("A tăng 7,3 lần, R chỉ tăng khoảng 2 lần.", 3.2)]),
+   ("Bẫy hay gặp.", 3.0),
+   ("R chỉ tăng ≈ 2 lần.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Thử nghĩ: lá to gấp đôi thì số lớp?", 4.6)]),
+   ("Thử nghĩ.", 6.0)]),
 ])

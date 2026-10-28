@@ -110,15 +110,15 @@ def galvo(d, e):
     a = math.radians(clamp(e / EMAX, -1.05, 1.05) * GANG * 0.85)
     d.line([(GX, GY), (GX + (GR - 10) * math.sin(a), GY - (GR - 10) * math.cos(a))], fill=RED, width=8)
     dot(d, GX, GY, 15, NAVY)
-    text(d, (GX, 952), "điện kế · cuộn 2", 32, MUTED, bold=False)
+    text(d, (GX, 952), "điện kế", 36, MUTED, bold=False)
 
 def legend(d):
-    text(d, (950, 360), "cuộn 1", 34, COL1); text(d, (950, 402), "nối pin", 32, MUTED, bold=False)
-    text(d, (950, 520), "cuộn 2", 34, COL2); text(d, (950, 562), "nối điện kế", 32, MUTED, bold=False)
+    text(d, (950, 360), "cuộn 1", 38, COL1); text(d, (950, 406), "pin", 36, MUTED, bold=False)
+    text(d, (950, 520), "cuộn 2", 38, COL2); text(d, (950, 566), "điện kế", 36, MUTED, bold=False)
 
 def readout(d, i, state, scol):
     card(d, (60, 712, 520, 975), fill=WHITE, outline=LIGHT, r=26, w=3)
-    text(d, (290, 754), "Dòng i₁ ở cuộn 1", 34, MUTED, bold=False)
+    text(d, (290, 754), "Dòng i₁", 36, MUTED, bold=False)
     d.rounded_rectangle([100, 800, 480, 836], radius=18, fill=LIGHT)
     if i > 0.005: d.rounded_rectangle([100, 800, 100 + 380 * i / I0, 836], radius=18, fill=COL1)
     text(d, (100, 866), "0", 32, MUTED, bold=False, anchor="lm"); text(d, (480, 866), "0,5 A", 32, MUTED, bold=False, anchor="rm")
@@ -155,8 +155,8 @@ def plot(d, box, u, pen=True, bands=0.0, alpha=1.0):
         d.line([(x0, yz), (x1 + 14, yz)], fill=NAVY, width=4); chevron(d, x1 + 14, yz, 0, NAVY, s=16)
         text(d, (x0 + 20, yy0 + 4), lab, 32, INK, anchor="lm")
     text(d, (x1 + 10, ez + 40), "t", 32, INK, anchor="rm")
-    for uu, lab in (((U[0] + U[1]) / 2, "bật"), ((U[1] + U[2]) / 2, "giữ đóng"), ((U[2] + U[3]) / 2, "ngắt")):
-        text(d, (X(uu), y1 - 4), lab, 32, MUTED, bold=False)
+    for uu, lab in (((U[0] + U[1]) / 2, "bật"), ((U[1] + U[2]) / 2, "giữ"), ((U[2] + U[3]) / 2, "ngắt")):
+        text(d, (X(uu), y1 - 4), lab, 36, MUTED, bold=False)
     if u > 0:
         us = sorted(set([k / 400 * u for k in range(401)] + [x for x in U if x <= u]))
         d.line([(X(v), Yi(i1_of(v))) for v in us], fill=COL1, width=7, joint="curve")
@@ -171,11 +171,10 @@ def plot(d, box, u, pen=True, bands=0.0, alpha=1.0):
     return X, Yi, Ye
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("lệch một phía, giữ nguyên lúc còn đóng", "giật lúc bật và lúc ngắt, cùng một phía",
-        "giật lúc bật và lúc ngắt, ngược phía nhau", "đứng yên ở số 0 suốt thí nghiệm")
+OPTS = ("lệch một phía, giữ nguyên", "giật 2 lần, cùng phía", "giật 2 lần, ngược phía", "đứng yên ở số 0")
 
 def s_hook(img, d, t, sc):
-    apparatus(d, 0.0, 0.0, False, "chưa bật K", MUTED)
+    apparatus(d, 0.0, 0.0, False, "K mở", MUTED)
     M = sc["M"]; a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1000 + (1 - a) * 40
@@ -183,12 +182,12 @@ def s_hook(img, d, t, sc):
     pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
     card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 88), fill=A(PURPLE, a), r=31)
     text(d, (W / 2, y0 + 57), "DỰ ĐOÁN", 36, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 140), "Bật K, giữ đóng một lúc, rồi ngắt.", 40, INK, alpha=a)
-    text(d, (W / 2, y0 + 192), "Kim điện kế ở cuộn 2 sẽ…", 40, INK, alpha=a)
+    text(d, (W / 2, y0 + 140), "Bật K, giữ, rồi ngắt.", 44, INK, alpha=a)
+    text(d, (W / 2, y0 + 196), "Kim điện kế sẽ…", 44, INK, alpha=a)
     for j, s in enumerate(OPTS):
         k = appear(t, M[1] + 0.15 * j, 0.4); yy = y0 + 270 + j * 76
         d.rounded_rectangle([90, yy - 30, 990, yy + 30], radius=30, outline=A(LIGHT, k), width=3)
-        text(d, (120, yy), f"{'ABCD'[j]}.  {s}", 36, NAVY, bold=False, anchor="lm", alpha=k)
+        text(d, (120, yy), f"{'ABCD'[j]}.  {s}", 42, NAVY, bold=False, anchor="lm", alpha=k)
     tc, tend = M[1] + 0.8, sc["T"] - 0.3
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
@@ -198,15 +197,15 @@ def s_hook(img, d, t, sc):
 # ---------------- canh 2: Tien hanh (bat - giu - ngat lien mach) ----------------
 def u_of(t, sc):
     M = sc["M"]
-    return float(np.interp(t, [M[0] + 0.3, M[0] + 0.9, M[0] + 1.9, M[2] + 0.9, M[2] + 1.9, sc["T"] - 0.4],
+    return float(np.interp(t, [M[0] + 0.3, M[0] + 0.9, M[0] + 1.9, M[1] - 0.1, M[1] + 0.9, sc["T"] - 0.4],
                            [0, U[0], U[1], U[2], U[3], 1.0]))
 
 def chips(d, cur):
-    for j, s in enumerate(("1. Bật K", "2. Giữ đóng", "3. Ngắt K")):
+    for j, s in enumerate(("Bật", "Giữ", "Ngắt")):
         x0 = 60 + j * 330; box = (x0, 240, x0 + 300, 296)
-        if j == cur: card(d, box, fill=ORANGE, r=28); text(d, (x0 + 150, 268), s, 32, WHITE)
-        elif j < cur: card(d, box, fill=LIGHT, r=28); text(d, (x0 + 150, 268), s, 32, INK)
-        else: card(d, box, fill=None, outline=LIGHT, r=28, w=3); text(d, (x0 + 150, 268), s, 32, GRAY)
+        if j == cur: card(d, box, fill=ORANGE, r=28); text(d, (x0 + 150, 268), s, 38, WHITE)
+        elif j < cur: card(d, box, fill=LIGHT, r=28); text(d, (x0 + 150, 268), s, 38, INK)
+        else: card(d, box, fill=None, outline=LIGHT, r=28, w=3); text(d, (x0 + 150, 268), s, 38, GRAY)
 
 def s_do(img, d, t, sc):
     u = u_of(t, sc); i = i1_of(u)
@@ -215,18 +214,18 @@ def s_do(img, d, t, sc):
     lag = 0.02; e = 0.0
     for k in range(6): e += e2_of(max(0, u - lag * k / 5)) / 6
     a, b, c, f = U
-    if u < a: st, col = "chưa bật", MUTED
-    elif u < b: st, col = "đang tăng", ORANGE
-    elif u < c: st, col = "không đổi", GREEN
-    elif u < f: st, col = "đang giảm", ORANGE
-    else: st, col = "đã ngắt, i₁ = 0", MUTED
-    chips(d, max(0, cur_cap(sc, t)))
+    if u < a: st, col = "K mở", MUTED
+    elif u < b: st, col = "i₁ tăng", ORANGE
+    elif u < c: st, col = "i₁ không đổi", GREEN
+    elif u < f: st, col = "i₁ giảm", ORANGE
+    else: st, col = "i₁ = 0", MUTED
+    chips(d, 0 if u < b else (1 if u < c else 2))
     apparatus(d, i, e, closed, st, col)
     card(d, (40, 995, 1040, 1610), fill=WHITE, outline=LIGHT, w=3)
     plot(d, (210, 1020, 960, 1600), u)
     if (a <= u < b) or (c <= u < f):
-        wdt = tw(d, "CHIẾU CHẬM", F(32)) + 44
-        card(d, (1020 - wdt, 1006, 1020, 1052), fill=ORANGE, r=23); text(d, (1020 - wdt / 2, 1029), "CHIẾU CHẬM", 32, WHITE)
+        wdt = tw(d, "CHIẾU CHẬM", F(36)) + 44
+        card(d, (1020 - wdt, 1006, 1020, 1052), fill=ORANGE, r=23); text(d, (1020 - wdt / 2, 1029), "CHIẾU CHẬM", 36, WHITE)
 
 # ---------------- canh 3: Dap an + rut ra ----------------
 ROWS = [("Bật K", 25, -0.05, -1), ("Giữ K đóng", 0, 0.0, 0), ("Ngắt K", -25, 0.05, 1)]   # so_lieu_mau
@@ -246,7 +245,7 @@ def s_dapan(img, d, t, sc):
     pw = tw(d, "ĐÁP ÁN C", F(36)) + 52
     card(d, (W / 2 - pw / 2, 262, W / 2 + pw / 2, 322), fill=A(NAVY, ka), r=30)
     text(d, (W / 2, 292), "ĐÁP ÁN C", 36, WHITE, alpha=ka)
-    text(d, ((X(U[1]) + X(U[2])) / 2, Yi(I0) + 44), "i₁ không đổi → e₂ = 0", 32, GREEN, alpha=hb)
+    text(d, ((X(U[1]) + X(U[2])) / 2, Yi(I0) + 44), "i₁ không đổi: e₂ = 0", 36, GREEN, alpha=hb)
     # bang so lieu
     kt = appear(t, M[0] + 0.6, 0.5)
     y = 930
@@ -262,11 +261,11 @@ def s_dapan(img, d, t, sc):
         text(d, (760, yy), vn(e2, 2, sign=e2 != 0), 38, col, alpha=k)
         mini_needle(d, 940, yy - 8, s, k)
     # co che + cong thuc
-    k1 = appear(t, M[1] + 0.2, 0.5); k2 = appear(t, M[2] + 0.1, 0.5)
+    k1 = appear(t, M[1] + 0.2, 0.5); k2 = appear(t, M[1] + 1.6, 0.5)
     card(d, (40, 1280, 1040, 1610), fill=A(WHITE, k1), outline=A(GREEN, k1), w=5)
-    text(d, (W / 2, 1335), "i₁ đổi → từ trường qua cuộn 2 đổi → có e₂", 38, GREEN, alpha=k1)
+    text(d, (W / 2, 1335), "i₁ đổi → B đổi → có e₂", 46, GREEN, alpha=k1)
     text(d, (W / 2, 1440), "e₂ = −M · Δi₁/Δt", 58, INK, alpha=k2)
-    text(d, (W / 2, 1530), "M = 2 mH, Δi₁/Δt = 25 A/s → e₂ = −0,05 V", 34, MUTED, bold=False, alpha=k2)
+    text(d, (W / 2, 1530), "M = 2 mH: 25 A/s → −0,05 V", 38, MUTED, bold=False, alpha=k2)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
@@ -279,29 +278,26 @@ def s_bay(img, d, t, sc):
         pw = tw(d, "BẪY", F(38)) + 52
         card(d, (W / 2 - pw / 2, y0 + 30, W / 2 + pw / 2, y0 + 94), fill=A(RED, a1), r=32)
         text(d, (W / 2, y0 + 62), "BẪY", 38, WHITE, alpha=a1)
-        q = "“Cuộn 1 có dòng chạy là cuộn 2 có điện”"
+        q = "“Có dòng ở cuộn 1 là cuộn 2 có e₂”"
         ks = clamp((t - 1.0) / 0.4)
         f = F(42); lw = tw(d, q, f); yy = y0 + 170
         text(d, (W / 2, yy), q, 42, mix(INK, GRAY, ks), alpha=a1)
         if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.8 * a1), width=4)
-        ctext(d, y0 + 300, "Sai: giữ K đóng, i₁ = 0,5 A mà kim vẫn ở 0.", 44, RED, maxw=900, alpha=a1 * appear(t, 1.3, 0.5))
-        ctext(d, y0 + 450, "Có từ trường qua cuộn 2, nhưng từ trường không ĐỔI → e₂ = 0.", 40, INK, maxw=880, alpha=a1 * appear(t, 1.8, 0.5))
+        ctext(d, y0 + 300, "Sai: kim vẫn ở 0.", 50, RED, maxw=900, alpha=a1 * appear(t, 1.6, 0.5))
+        ctext(d, y0 + 450, "Từ trường không ĐỔI.", 46, INK, maxw=880, alpha=a1 * appear(t, 2.8, 0.5))
     if k2 > 0:
         y0 = 1000 + (1 - k2) * 30
         card(d, (40, y0, 1040, y0 + 600), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 62), "Thí nghiệm chưa nói được", 42, NAVY, alpha=k2)
-        lines = (("• Độ lớn e₂: điện kế số 0 ở giữa", "  chỉ cho biết chiều lệch."),
-                 ("• ±0,05 V là số minh hoạ tính từ", "  M = 2 mH, chưa phải số đo thật."),
-                 ("• Hai cuộn xa hoặc lệch trục:", "  kim lệch rất ít (ghép từ yếu)."))
+        text(d, (W / 2, y0 + 62), "Chưa nói được", 48, NAVY, alpha=k2)
+        lines = (("• Độ lớn e₂: chưa đo", ""), ("• ±0,05 V: số minh hoạ", ""), ("• Hai cuộn xa: kim ít lệch", ""))
         for j, (l1, l2) in enumerate(lines):
-            kk = k2 * appear(t, M[1] + 0.3 + 0.5 * j, 0.4); yy = y0 + 160 + j * 140
-            text(d, (90, yy), l1, 38, INK, bold=False, anchor="lm", alpha=kk)
-            text(d, (90, yy + 52), l2, 38, INK, bold=False, anchor="lm", alpha=kk)
+            kk = k2 * appear(t, M[1] + 0.3 + 0.5 * j, 0.4); yy = y0 + 200 + j * 130
+            text(d, (90, yy), l1, 46, INK, bold=False, anchor="lm", alpha=kk)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
     chot_hoi(d, t, sc, "Chỉ khi i₁ đang ĐỔI, cuộn 2 mới có e₂",
-             "Đế sạc không dây nối thẳng vào pin 1,5 V thay cho điện xoay chiều. Điện thoại có sạc được không? Vì sao?",
+             "Đế sạc nối thẳng vào pin 1,5 V. Điện thoại có sạc được không? Vì sao?",
              "e₂ = −M · Δi₁/Δt\nGiữ K đóng: kim chỉ ở đâu?")
 
 def _cues(clip):
@@ -309,27 +305,24 @@ def _cues(clip):
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
     M = do["M"]
     return [(h["t0"] + h["M"][1], "open"), (h["t0"] + h["T"] - 0.3, "ding"),
-            (do["t0"] + M[0] + 0.9, "tap"), (do["t0"] + M[2] + 0.9, "tap"),
+            (do["t0"] + M[0] + 0.9, "tap"), (do["t0"] + M[1] - 0.1, "tap"),
             (da["t0"] + da["M"][0] + 0.1, "ding"), (b["t0"] + b["M"][0], "buzz"),
             (e["t0"] + e["M"][0] + 0.1, "open")]
 
 CLIP = dict(id="tn-l12-udcamung-02", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Ứng dụng cảm ứng điện từ · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Hai cuộn dây đặt sát nhau", draw=s_hook, tail=0.6, caps=[
-   ("Cuộn 1: pin và khoá K. Cuộn 2: điện kế.", 3.0),
-   ("Bật K, giữ, rồi ngắt: kim sẽ ra sao?", 3.2),
-   ("Dừng lại vài giây, chọn A, B, C hay D.", 3.2)]),
+   "Quan sát kim điện kế.",
+   ("Dừng video, chọn A, B, C hay D.", 5.5)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.8, caps=[
-   ("Bật K: i₁ tăng từ 0 lên 0,5 A.", 3.2),
-   ("Giữ K đóng: i₁ đứng yên, kim về 0.", 3.4),
-   ("Ngắt K: i₁ giảm về 0, kim giật phía kia.", 3.4)]),
+   ("Bật K rồi giữ đóng.", 5.2),
+   ("Ngắt K: kim giật phía kia.", 4.0)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.7, caps=[
-   ("Bật, ngắt: kim giật ngược phía. Đáp án C.", 3.4),
-   ("Cuộn 2 chỉ có e₂ khi i₁ đang đổi.", 3.0),
-   ("Bật: e₂ = −0,05 V. Ngắt: e₂ = +0,05 V.", 3.4)]),
+   ("Kim giật ngược phía: đáp án C.", 3.4),
+   ("Chỉ khi i₁ đang đổi mới có e₂.", 5.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Bẫy: dòng không đổi thì không truyền sang.", 4.2),
-   ("Thí nghiệm này chưa nói được gì?", 3.6)]),
+   ("Đúng hay sai?", 5.0),
+   ("Giới hạn của thí nghiệm.", 4.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=1.1, caps=[
-   ("Thử nghĩ: đế sạc nối thẳng pin thì sao?", 4.4)]),
+   ("Dừng video và trả lời.", 7.4)]),
 ])

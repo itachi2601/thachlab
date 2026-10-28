@@ -25,8 +25,9 @@ P_WALL = _pose(CUP_R, 640, 0, PX5, "v", 12)
 P_FOIL = _pose(FOIL[2], 750, 0, PX5, "v", 12)
 P_FOIL25 = _pose(FOIL[2], 750, 0, 5 * PX5, "v", 62)
 
-ROWS = [("Thuỷ ngân, trong nước", 49.8), ("Điện tử, trong nước", 50.2), ("Hồng ngoại → mặt nước", 48.4),
-        ("Hồng ngoại → thành cốc", 47.1), ("Hồng ngoại → giấy bạc", 41.0)]
+ROWS = [("Thuỷ ngân", 49.8), ("Điện tử", 50.2), ("Hồng ngoại: mặt nước", 48.4),
+        ("Hồng ngoại: thành sứ", 47.1), ("Hồng ngoại: giấy bạc", 41.0)]
+LBL = [False]                                   # nhan dung cu (thuy ngan / dien tu / nuoc) chi hien o canh mo dau
 
 
 def fmt(x): return f"{x:.1f}".replace(".", ",")
@@ -50,7 +51,7 @@ def cup(d):
     d.line([(CUP_L + WALL, WATER_Y), (CUP_R - WALL, WATER_Y)], fill=BLUE, width=4)
     for box in ((CUP_L, CUP_T, CUP_L + WALL, CUP_B), (CUP_R - WALL, CUP_T, CUP_R, CUP_B), (CUP_L, CUP_B - 24, CUP_R, CUP_B)):
         d.rectangle(box, fill=cream, outline=edge, width=3)
-    text(d, (150, 560), "nước ≈ 50 °C", 34, BLUE)
+    if LBL[0]: text(d, (150, 560), "50 °C", 36, BLUE)
 
 
 def foil(d):
@@ -58,7 +59,7 @@ def foil(d):
     d.rectangle([x0, y0, x1, y1], fill=(196, 202, 214), outline=(120, 128, 145), width=2)
     for k in range(5):
         y = y0 + 12 + k * 20; d.line([(x0 + 2, y + 8), (x1 - 2, y)], fill=WHITE, width=2)
-    text(d, (FOIL[2] + 14, 846), "giấy bạc", 32, MUTED, bold=False, anchor="lm")
+    text(d, (FOIL[2] + 14, 846), "giấy bạc", 36, MUTED, bold=False, anchor="lm")
     d.line([(FOIL[2] + 2, 802), (FOIL[2] + 40, 826)], fill=MUTED, width=2)
 
 
@@ -70,7 +71,7 @@ def thermo(d, level):
     d.rectangle([TH_X - 5, top, TH_X + 5, 830], fill=(150, 156, 172))
     for k in range(9):
         y = 470 + k * 40; d.line([(TH_X + 4, y), (TH_X + 12, y)], fill=NAVY, width=2)
-    text(d, (TH_X - 25, 334), "thuỷ ngân", 32, MUTED, bold=False)
+    if LBL[0]: text(d, (TH_X - 25, 334), "thuỷ ngân", 36, MUTED, bold=False)
 
 
 def probe(d):
@@ -78,7 +79,7 @@ def probe(d):
     d.rounded_rectangle([PR_X - 24, 364, PR_X + 24, 396], radius=6, fill=(160, 220, 200))
     d.line([(PR_X, 430), (PR_X, 828)], fill=(120, 128, 145), width=7)
     dot(d, PR_X, 830, 6, NAVY)
-    text(d, (PR_X + 30, 334), "điện tử", 32, MUTED, bold=False)
+    if LBL[0]: text(d, (PR_X + 30, 334), "điện tử", 36, MUTED, bold=False)
 
 
 def gun(d, pose, beam=1.0):
@@ -106,27 +107,26 @@ def gun_pose_at(pa, pb, k):
 
 
 def readouts(d, vals, hl=-1, alpha=1.0):
-    names = ("Thuỷ ngân", "Điện tử", "Hồng ngoại"); subs = ("sai số ±0,5", "sai số ±0,2", "ε đặt sẵn 0,95")
+    names = ("Thuỷ ngân", "Điện tử", "Hồng ngoại"); subs = ("±0,5", "±0,2", "ε = 0,95")
     cols = (NAVY, NAVY, ORANGE)
     for j in range(3):
         x0 = 60 + j * 330; box = (x0, RD_Y, x0 + 300, RD_Y + 150)
         card(d, box, fill=A(WHITE, alpha), outline=A(ORANGE if j == hl else LIGHT, alpha), w=5 if j == hl else 3, r=24)
-        text(d, (x0 + 150, RD_Y + 30), names[j], 32, MUTED, alpha=alpha)
+        text(d, (x0 + 150, RD_Y + 30), names[j], 36, MUTED, alpha=alpha)
         s = "—" if vals[j] is None else fmt(vals[j]) + " °C"
         text(d, (x0 + 150, RD_Y + 80), s, 50, cols[j], alpha=alpha)
-        text(d, (x0 + 150, RD_Y + 126), subs[j], 32, MUTED, bold=False, alpha=alpha)
+        text(d, (x0 + 150, RD_Y + 126), subs[j], 36, MUTED, bold=False, alpha=alpha)
 
 
 def table(d, nrows, hl=-1, alpha=1.0):
     y = TAB_Y
     card(d, (60, y, 1020, y + 354), fill=A(WHITE, alpha), outline=A(LIGHT, alpha), w=3)
-    text(d, (100, y + 36), "Đo bằng → ở đâu", 32, MUTED, bold=False, anchor="lm", alpha=alpha)
-    text(d, (880, y + 36), "Số đọc (°C)", 32, MUTED, bold=False, alpha=alpha)
+    text(d, (880, y + 36), "°C", 36, MUTED, bold=False, alpha=alpha)
     d.line([(90, y + 64), (990, y + 64)], fill=A(LIGHT, alpha), width=3)
     for j, (nm, val) in enumerate(ROWS[:nrows]):
         yy = y + 100 + j * 54
         if j == hl: d.rounded_rectangle([80, yy - 25, 1000, yy + 25], radius=14, fill=A(mix(ORANGE, WHITE, 0.85), alpha))
-        text(d, (100, yy), nm, 36, INK, bold=False, anchor="lm", alpha=alpha)
+        text(d, (100, yy), nm, 38, INK, bold=False, anchor="lm", alpha=alpha)
         text(d, (880, yy), fmt(val), 40, ORANGE if j >= 2 else NAVY, alpha=alpha)
 
 
@@ -136,8 +136,10 @@ def apparatus(d, level, pose, beam=1.0, show_foil_label=True):
 
 # ---------------- canh 1: mo dau + Du doan ----------------
 def s_hook(img, d, t, sc):
+    LBL[0] = True
     apparatus(d, 0.15, IDLE)
-    text(d, (820, 700), "hồng ngoại", 32, MUTED, bold=False)
+    LBL[0] = False
+    text(d, (820, 700), "hồng ngoại", 36, MUTED, bold=False)
     k = appear(t, sc["M"][1] - 0.15, 0.45)
     if k <= 0: return
     y0 = TAB_Y - 60 + (1 - k) * 40
@@ -146,22 +148,21 @@ def s_hook(img, d, t, sc):
     d.rounded_rectangle([140, y0 + 396, 940, y0 + 406], radius=5, fill=A(LIGHT, k))
     if q < 1: d.rounded_rectangle([140, y0 + 396, 140 + 800 * (1 - q), y0 + 406], radius=5, fill=A(PURPLE, k))
     text(d, (W / 2, y0 + 44), "Dự đoán", 40, PURPLE, alpha=k)
-    text(d, (W / 2, y0 + 100), "Bắn hồng ngoại vào mảnh GIẤY BẠC", 38, INK, alpha=k)
-    text(d, (W / 2, y0 + 148), "dán ngoài cốc. Số đọc sẽ…", 38, INK, alpha=k)
-    for j, s in enumerate(("A.  gần bằng 50 °C", "B.  thấp hơn hẳn 50 °C", "C.  cao hơn hẳn 50 °C")):
+    text(d, (W / 2, y0 + 120), "Bắn vào GIẤY BẠC. Số đọc sẽ…", 44, INK, alpha=k)
+    for j, s in enumerate(("A.  gần 50 °C", "B.  thấp hơn 50 °C", "C.  cao hơn 50 °C")):
         yy = y0 + 214 + j * 58
         d.rounded_rectangle([110, yy - 24, 970, yy + 24], radius=24, outline=A(LIGHT, k), width=3)
-        text(d, (140, yy), s, 36, NAVY, bold=False, anchor="lm", alpha=k)
+        text(d, (140, yy), s, 40, NAVY, bold=False, anchor="lm", alpha=k)
 
 
 # ---------------- canh 2: tien hanh ----------------
 def chips(d, cur):
-    names = ("1. Nhúng", "2. Mặt nước", "3. Thành cốc", "4. Giấy bạc")
+    names = ("Nhúng", "Mặt nước", "Thành sứ", "Giấy bạc")
     for j, s in enumerate(names):
         x0 = 60 + j * 245; box = (x0, 236, x0 + 225, 302)
-        if j == cur: card(d, box, fill=ORANGE, r=33); text(d, (x0 + 112, 269), s, 32, WHITE)
-        elif j < cur: card(d, box, fill=LIGHT, r=33); text(d, (x0 + 112, 269), s, 32, INK)
-        else: card(d, box, fill=None, outline=LIGHT, r=33, w=3); text(d, (x0 + 112, 269), s, 32, GRAY)
+        if j == cur: card(d, box, fill=ORANGE, r=33); text(d, (x0 + 112, 269), s, 36, WHITE)
+        elif j < cur: card(d, box, fill=LIGHT, r=33); text(d, (x0 + 112, 269), s, 36, INK)
+        else: card(d, box, fill=None, outline=LIGHT, r=33, w=3); text(d, (x0 + 112, 269), s, 36, GRAY)
 
 
 POSES = [IDLE, P_WATER, P_WALL, P_FOIL]
@@ -190,20 +191,19 @@ def s_do(img, d, t, sc):
     apparatus(d, level, pose, beam)
     if pose[3] is not None and beam > 0.5:
         tx, ty = pose[3]; mx, my = (pose[0] + tx) / 2, (pose[1] + ty) / 2
-        text(d, (mx + (26 if pose[4] == "h" else 0), my - (0 if pose[4] == "h" else 52)), "5 cm", 32, RED, anchor="lm" if pose[4] == "h" else "mm", alpha=beam)
+        text(d, (mx + (26 if pose[4] == "h" else 0), my - (0 if pose[4] == "h" else 52)), "5 cm", 36, RED, anchor="lm" if pose[4] == "h" else "mm", alpha=beam)
     readouts(d, (contact[0], contact[1], ir), hl=2 if cur >= 1 else -1)
     table(d, nrows, hl=nrows - 1 if nrows > 2 else -1)
     ka = appear(t, sc["M"][3] + 1.4, 0.4)
     if ka > 0:
-        pw = tw(d, "ĐÁP ÁN B", F(34)) + 48
+        pw = tw(d, "ĐÁP ÁN B", F(36)) + 48
         card(d, (1020 - pw, 336, 1020, 394), fill=A(GREEN, ka), r=29)
-        text(d, (1020 - pw / 2, 365), "ĐÁP ÁN B", 34, WHITE, alpha=ka)
+        text(d, (1020 - pw / 2, 365), "ĐÁP ÁN B", 36, WHITE, alpha=ka)
 
 
 # ---------------- canh 3: rut ra ----------------
 def chart(d, t, sc):
     card(d, (60, 236, 1020, 800), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (W / 2, 276), "Cùng một cốc nước, năm số đọc", 36, MUTED)
     x0, x1, v0, v1 = 470, 980, 38.0, 52.0
     X = lambda v: x0 + (v - v0) / (v1 - v0) * (x1 - x0)
     ay = 716
@@ -213,14 +213,13 @@ def chart(d, t, sc):
         text(d, (X(v), ay + 32), str(v), 32, MUTED, bold=False)
     text(d, (x1, ay - 30), "°C", 32, MUTED, bold=False, anchor="rm")
     dashed(d, (X(50), 316), (X(50), ay - 10), A(GREEN, 0.9), w=4)
-    text(d, (X(50) - 10, 330), "nước 50", 32, GREEN, anchor="rm")
+    text(d, (X(50) - 10, 330), "50", 38, GREEN, anchor="rm")
     errs = (0.5, 0.2, 0, 0, 0)
     for j, (nm, val) in enumerate(ROWS):
         k = appear(t, sc["M"][0] + 0.15 * j - 0.2, 0.35)
         if k <= 0: continue
         y = 380 + j * 66; col = NAVY if j < 2 else ORANGE
-        lab = nm.replace("Hồng ngoại → ", "HN: ").replace(", trong nước", "")
-        text(d, (100, y), lab, 34, INK, bold=False, anchor="lm", alpha=k)
+        text(d, (100, y), nm, 38, INK, bold=False, anchor="lm", alpha=k)
         if errs[j]: d.line([(X(val - errs[j]), y), (X(val + errs[j]), y)], fill=A(col, 0.6 * k), width=4)
         dot(d, X(val), y, 12 * k, col, outline=WHITE)
         text(d, (X(val) - 22, y), fmt(val), 32, col, anchor="rm", alpha=k)
@@ -230,18 +229,18 @@ def kcard(d, y, title, ev, color, k, h=160):
     if k <= 0: return
     yy = y + (1 - k) * 30
     card(d, (60, yy, 1020, yy + h), fill=A(WHITE, k), outline=A(color, k), w=5)
-    text(d, (W / 2, yy + 50), title, 42, color, alpha=k)
-    text(d, (W / 2, yy + h - 40), ev, 34, MUTED, bold=False, alpha=k)
+    if ev:
+        text(d, (W / 2, yy + 50), title, 46, color, alpha=k)
+        text(d, (W / 2, yy + h - 40), ev, 40, INK, bold=False, alpha=k)
+    else:
+        text(d, (W / 2, yy + h / 2), title, 46, color, alpha=k)
 
 
 def s_rut(img, d, t, sc):
     chart(d, t, sc)
-    kcard(d, 830, "Tiếp xúc: đo đúng chỗ nó chạm vào", "49,8 và 50,2 °C: lệch trong sai số ±0,5", GREEN,
-          appear(t, sc["M"][0] + 0.6, 0.45))
-    kcard(d, 1010, "Hồng ngoại: đo bề mặt qua bức xạ", "mặt nước bay hơi nên nguội hơn: 48,4 °C", ORANGE,
-          appear(t, sc["M"][1], 0.45))
-    kcard(d, 1190, "Mặt bóng phát xạ yếu → số thấp giả", "giấy bạc ε ≈ 0,02–0,10, máy đặt 0,95", PURPLE,
-          appear(t, sc["M"][2], 0.45))
+    kcard(d, 830, "Tiếp xúc", "", GREEN, appear(t, sc["M"][0] + 0.6, 0.45), h=130)
+    kcard(d, 990, "Hồng ngoại", "mặt nước nguội hơn", ORANGE, appear(t, sc["M"][1], 0.45), h=170)
+    kcard(d, 1190, "Mặt bóng", "ε 0,02–0,10 ≠ 0,95", PURPLE, appear(t, sc["M"][2], 0.45), h=170)
 
 
 # ---------------- canh 4: cai bay + sai so + gioi han ----------------
@@ -252,36 +251,31 @@ def s_bay(img, d, t, sc):
     apparatus(d, 0.9, pose, 1.0)
     ir = 38.5 if u > 1.8 else 41.0
     lab = "25 cm" if u > 1.0 else "5 cm"
-    tx, ty = pose[3]; text(d, ((pose[0] + tx) / 2, ty - (100 if u > 1.0 else 52)), lab, 32, RED)
+    tx, ty = pose[3]; text(d, ((pose[0] + tx) / 2, ty - (100 if u > 1.0 else 52)), lab, 36, RED)
     readouts(d, (49.8, 50.2, ir), hl=2)
     k1 = appear(t, 0.3, 0.45); k2 = appear(t, M[1] - 0.1, 0.45); k3 = appear(t, M[2] - 0.1, 0.45)
     a1 = k1 * (1 - k2); a2 = k2 * (1 - k3)
     y = TAB_Y
     if a1 > 0:
         card(d, (60, y, 1020, y + 300), fill=A(WHITE, a1), outline=A(RED, a1), w=5)
-        text(d, (W / 2, y + 46), "Cái bẫy", 42, RED, alpha=a1)
-        text(d, (W / 2, y + 108), "“Hồng ngoại chính xác hơn” → SAI.", 38, INK, alpha=a1)
-        text(d, (W / 2, y + 158), "Giấy bạc ấm như thành cốc vẫn ra 41,0", 36, INK, bold=False, alpha=a1)
-        text(d, (W / 2, y + 236), "Số đọc phụ thuộc cả loại bề mặt", 36, GREEN, alpha=a1)
+        text(d, (W / 2, y + 100), "“Hồng ngoại chính xác hơn”", 48, INK, alpha=a1)
+        text(d, (W / 2, y + 190), "→ SAI", 56, RED, alpha=a1)
     if a2 > 0:
         card(d, (60, y, 1020, y + 300), fill=A(WHITE, a2), outline=A(ORANGE, a2), w=5)
-        text(d, (W / 2, y + 46), "Sai số hay gặp", 42, ORANGE, alpha=a2)
-        text(d, (W / 2, y + 108), "Lùi xa: vết đo rộng, tràn ra ngoài", 36, INK, bold=False, alpha=a2)
-        text(d, (W / 2, y + 158), "giấy bạc, hứng thêm bức xạ nền của phòng", 36, INK, bold=False, alpha=a2)
-        text(d, (W / 2, y + 236), "So sánh: cùng chỗ, cùng khoảng cách", 36, GREEN, alpha=a2)
+        text(d, (W / 2, y + 100), "Lùi xa: vết đo tràn ra", 48, INK, alpha=a2)
+        text(d, (W / 2, y + 190), "→ số thấp hơn", 48, ORANGE, alpha=a2)
     if k3 > 0:
         card(d, (60, y, 1020, y + 300), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
-        text(d, (W / 2, y + 46), "Thí nghiệm chưa nói được", 40, NAVY, alpha=k3)
-        for j, s in enumerate(("• Nhiệt kế nào tốt hơn: mỗi cái đo", "  một chỗ khác nhau.",
-                               "• Số liệu là minh hoạ, chưa phải số đo thật.")):
-            text(d, (100, y + 112 + j * 56), s, 36, INK, bold=False, anchor="lm", alpha=k3)
+        text(d, (W / 2, y + 50), "Chưa nói được", 46, NAVY, alpha=k3)
+        for j, s_ in enumerate(("• Nhiệt kế nào tốt hơn?", "• Số liệu: minh hoạ")):
+            text(d, (100, y + 140 + j * 70), s_, 44, INK, bold=False, anchor="lm", alpha=k3)
 
 
 # ---------------- canh 5: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
-    chot_hoi(d, t, sc, "Hồng ngoại đo bề mặt: mặt bóng cho số thấp giả",
-             "Giấy bạc ấm như thành cốc. Vì sao máy hồng ngoại chỉ 41,0 °C?",
-             "So độ phát xạ ε của giấy bạc\nvới số máy đặt sẵn (0,95)")
+    chot_hoi(d, t, sc, "Mặt bóng cho số thấp giả",
+             "Giấy bạc ấm như thành cốc. Sao máy hồng ngoại chỉ 41,0 °C?",
+             "So ε giấy bạc với 0,95")
 
 
 def _cues(clip):
@@ -295,21 +289,21 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-thangnhietdo-04", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Thang nhiệt độ · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Ba nhiệt kế, một cốc nước", draw=s_hook, tail=0.3, caps=[
-   ("Cốc nước ấm khoảng 50 °C, ba nhiệt kế.", 2.9),
-   ("Dự đoán trước, rồi xem tiếp.", 5.6)]),
+   ("Ba nhiệt kế cùng đo.", 2.5),
+   ("Dừng video, chọn A–C.", 6.0)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Nhúng hai nhiệt kế vào nước, chờ ổn định.", 3.0),
-   ("Hồng ngoại bắn mặt nước, cách 5 cm.", 3.0),
-   ("Bắn vào thành cốc sứ.", 2.6),
-   ("Bắn vào giấy bạc: 41,0 °C, đáp án B.", 3.4)]),
+   ("Chờ số ổn định.", 3.0),
+   ("Bắn hồng ngoại.", 2.6),
+   ("Đổi chỗ bắn.", 2.6),
+   ("Số thấp nhất.", 2.6)]),
  dict(key="rut", title="Kết luận", draw=s_rut, tail=0.7, caps=[
-   ("Tiếp xúc: đo đúng chỗ nó chạm vào.", 2.8),
-   ("Hồng ngoại: đo bề mặt qua bức xạ.", 2.8),
-   ("Giấy bạc phát xạ yếu nên số thấp giả.", 3.0)]),
+   ("Đo đúng chỗ chạm.", 3.0),
+   ("Đo bề mặt.", 3.0),
+   ("Phát xạ yếu, số thấp giả.", 4.0)]),
  dict(key="bay", title="Bẫy và sai số", draw=s_bay, tail=0.4, caps=[
-   ("Bẫy: 41,0 °C không phải nhiệt độ thật.", 3.0),
-   ("Lùi ra 25 cm: chỉ còn 38,5 °C.", 3.2),
-   ("Thí nghiệm này chưa nói được gì?", 2.8)]),
+   ("Nhìn số 41,0.", 3.6),
+   ("Lùi ra 25 cm.", 4.0),
+   ("Giới hạn.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.9, caps=[
-   ("Thử nghĩ: vì sao giấy bạc chỉ 41,0 °C?", 4.4)]),
+   ("Dừng video, tự trả lời.", 7.0)]),
 ])

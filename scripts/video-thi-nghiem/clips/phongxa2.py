@@ -25,7 +25,7 @@ def rig(d, t, minute, reading, src=1.0, clock_lbl=None):
     # ong dem Geiger (cua so o dau trai, quay ve phia nguon)
     d.rounded_rectangle([TX0, TY - 40, TX1, TY + 40], radius=36, fill=(214, 220, 232), outline=NAVY, width=5)
     d.rectangle([TX0 - 6, TY - 34, TX0 + 14, TY + 34], fill=(70, 78, 100))
-    text(d, ((TX0 + TX1) / 2, TY), "ống đếm Geiger", 34, NAVY)
+    text(d, ((TX0 + TX1) / 2, TY), "ống Geiger", 36, NAVY)
     # cap noi may dem
     d.line([(TX1, TY), (900, TY), (900, 562)], fill=GRAY, width=12, joint="curve")
     # nguon tren gia (truot vao khi dat nguon)
@@ -38,7 +38,7 @@ def rig(d, t, minute, reading, src=1.0, clock_lbl=None):
             a = math.radians(90 + 120 * k)
             d.pieslice([sx - 24, SY - 24, sx + 24, SY + 24], math.degrees(a) - 30, math.degrees(a) + 30, fill=NAVY)
         dot(d, sx, SY, 6, YELLOW)
-        text(d, (sx, 960), "nguồn", 34, MUTED, bold=False)
+        text(d, (sx, 960), "nguồn", 36, MUTED, bold=False)
     # hat phong xa: mat do theo nhip dem mo hinh
     if src >= 1:
         n = int(len(RAYS) * clamp(model(minute) / model(0) + 0.04))
@@ -53,17 +53,15 @@ def rig(d, t, minute, reading, src=1.0, clock_lbl=None):
         dot(d, 615 + r * math.cos(ang), TY + 0.8 * r * math.sin(ang), 6, PURPLE)
     # dong ho
     card(d, (70, 270, 520, 560), fill=WHITE, outline=LIGHT, r=28, w=4)
-    text(d, (295, 320), "Đồng hồ", 34, MUTED, bold=False)
     text(d, (295, 430), clock_lbl or f"phút {minute:.0f}", 68, BLUE)
     # may dem
     card(d, (580, 270, 1010, 560), fill=WHITE, outline=LIGHT, r=28, w=4)
-    text(d, (795, 320), "Máy đếm", 34, MUTED, bold=False)
     d.rounded_rectangle([620, 360, 970, 470], radius=16, fill=NAVY)
     text(d, (795, 415), str(reading), 66, (134, 239, 172))
-    text(d, (795, 512), "xung/phút", 34, MUTED, bold=False)
+    text(d, (795, 512), "xung/phút", 36, MUTED, bold=False)
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. Mỗi lần giảm một lượng như nhau", "B. Mỗi lần còn khoảng một nửa", "C. Sau 5 phút đầu thì gần hết")
+OPTS = ("A. Mỗi lần giảm như nhau", "B. Còn khoảng một nửa", "C. Sau 5 phút gần hết")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, 0, ROWS[0][1])
@@ -71,7 +69,7 @@ def s_hook(img, d, t, sc):
     if k <= 0: return
     card(d, (60, 990, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1045), "Dự đoán", 46, PURPLE, alpha=k)
-    ctext(d, 1140, "Cứ 5 phút đếm một lần.\nSố đếm thay đổi thế nào?", 42, INK, alpha=k)
+    ctext(d, 1150, "Số đếm sau mỗi 5 phút?", 46, INK, alpha=k)
     for i, s in enumerate(OPTS):
         a = appear(t, sc["M"][1] + 0.2 + i * 0.15); y = 1270 + i * 100
         card(d, (110, y - 42, 970, y + 42), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
@@ -83,7 +81,7 @@ def s_hook(img, d, t, sc):
 # ---------------- canh 2: do phong, dem moi 5 phut, ghi bang ----------------
 def row_at(i, sc):
     M = sc["M"]
-    return [M[1] + 0.9, M[1] + 2.0, M[2] + 0.2, M[2] + 0.9, M[2] + 1.6, M[2] + 2.3][i]
+    return M[1] + 0.9 + 0.6 * i
 
 def do_state(t, sc):
     """(phut tren dong ho, so tren may dem, nhan dong ho, dang tua nhanh)"""
@@ -104,7 +102,7 @@ def s_do(img, d, t, sc):
     rig(d, t, m, rd, src=clamp((t - sc["M"][1]) / 0.6), clock_lbl=lbl)
     if ff: text(d, (295, 515), "▶▶ tua nhanh", 36, ORANGE)
     card(d, (60, 995, 1020, 1590), fill=WHITE, outline=NAVY, w=4)
-    text(d, (W / 2, 1040), f"Phông nền = {PHONG} xung/phút", 40, PURPLE, alpha=appear(t, 0.9))
+    text(d, (W / 2, 1040), f"Phông nền = {PHONG}", 42, PURPLE, alpha=appear(t, 0.9))
     xs = [215, 520, 830]
     for x, c in zip(xs, ["t (phút)", "Đo được", "Trừ phông"]): text(d, (x, 1105), c, 38, MUTED)
     d.line([(90, 1138), (990, 1138)], fill=LIGHT, width=4)
@@ -124,13 +122,13 @@ def s_ans(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]; k = back((t - 0.2) / 0.5) if t > 0.2 else 0
     card(d, (60, 250, 1020, 350), fill=(220, 252, 231), outline=GREEN, w=5)
-    text(d, (W / 2, 300), "Đáp án B: mỗi lần còn khoảng một nửa", int(42 * clamp(k, 0.3, 1.0)), GREEN)
+    text(d, (W / 2, 300), "Đáp án B", int(48 * clamp(k, 0.3, 1.0)), GREEN)
     x0, x1, yb, yt = 190, 950, 950, 470
     X = lambda m: x0 + m / 25 * (x1 - x0); Y = lambda h: yb - h / 900 * (yb - yt)
     card(d, (60, 380, 1020, 1050), fill=WHITE, outline=LIGHT, w=3)
     for h in (200, 400, 600, 800): d.line([(x0, Y(h)), (x1, Y(h))], fill=(240, 236, 228), width=2)
     d.line([(x0, yb), (x1 + 25, yb)], fill=NAVY, width=5); d.line([(x0, yb), (x0, yt - 40)], fill=NAVY, width=5)
-    text(d, (x0 + 18, yt - 50), "H đã trừ phông (xung/phút)", 34, MUTED, anchor="lm")
+    text(d, (x0 + 18, yt - 50), "H (xung/phút)", 34, MUTED, anchor="lm")
     text(d, (x1 + 25, yb + 76), "t (phút)", 34, MUTED, anchor="rm")
     for m in range(0, 26, 5):
         d.line([(X(m), yb), (X(m), yb + 10)], fill=NAVY, width=3)
@@ -157,8 +155,8 @@ def s_ans(img, d, t, sc):
     # day ti so
     a1 = appear(t, M[1] - 0.2)
     if a1 <= 0: return
-    card(d, (60, 1080, 1020, 1590), fill=A(WHITE, a1), outline=A(LIGHT, a1), w=3)
-    text(d, (W / 2, 1130), "Lần trước chia lần sau", 38, MUTED, alpha=a1)
+    card(d, (60, 1080, 1020, 1430), fill=A(WHITE, a1), outline=A(LIGHT, a1), w=3)
+    text(d, (W / 2, 1130), "Số trước chia số sau", 38, MUTED, alpha=a1)
     vx = [130 + i * 164 for i in range(6)]
     for i, (_, _, hs) in enumerate(ROWS):
         text(d, (vx[i], 1230), str(hs), 44, INK, alpha=a1)
@@ -167,8 +165,6 @@ def s_ans(img, d, t, sc):
         cx = (vx[i] + vx[i + 1]) / 2
         arrow(d, (vx[i] + 34, 1290), (vx[i + 1] - 34, 1290), A(ORANGE, a), w=4, head=14)
         text(d, (cx, 1345), r, 38, ORANGE, alpha=a)
-    c = appear(t, M[1] + 1.8)
-    ctext(d, 1470, "Gần bằng 2, lệch do thăng giáng thống kê", 38, MUTED, bold=False, alpha=c)
 
 # ---------------- canh 4: co che + chua noi duoc gi ----------------
 NC, NR = 10, 6
@@ -181,7 +177,7 @@ def s_why(img, d, t, sc):
     st = [0.6, 1.6, 2.6]                                   # dong ho mo phong: 0 -> 5 -> 10 -> 15 phut, dung o moi moc
     m = 5 * sum(clamp((t - a) / 0.6) for a in st)
     card(d, (60, 250, 1020, 330), fill=WHITE, outline=LIGHT, r=24, w=3)
-    FR = {0: "ban đầu", 5: "còn ½", 10: "còn ¼", 15: "còn ⅛"}
+    FR = {0: "đủ", 5: "½", 10: "¼", 15: "⅛"}
     mm = 5 * round(m / 5)
     text(d, (W / 2, 290), f"phút {5 * math.ceil(m / 5 - 1e-6)}" + (f" · {FR[mm]}" if abs(m - mm) < 0.05 else ""), 48, BLUE)
     for i in range(NC * NR):
@@ -194,18 +190,16 @@ def s_why(img, d, t, sc):
         else:
             dot(d, cx, cy, 20, ORANGE, NAVY)
             if t > M[1] + 0.5: text(d, (cx, cy), "?", 30, WHITE, alpha=appear(t, M[1] + 0.5))
-    lg = [(ORANGE, "chưa phân rã"), (LIGHT, "đã phân rã")]
+    lg = [(ORANGE, "chưa rã"), (LIGHT, "đã rã")]
     for j, (c, s) in enumerate(lg):
         dot(d, 200 + j * 400, 975, 18, c, NAVY if c == ORANGE else None)
         text(d, (230 + j * 400, 975), s, 36, MUTED, bold=False, anchor="lm")
     a = appear(t, 0.3)
-    card(d, (60, 1030, 1020, 1270), fill=A(WHITE, a), outline=A(BLUE, a), w=5)
-    ctext(d, 1110, "Mỗi hạt nhân có cùng xác suất phân rã", 40, INK, alpha=a)
-    rich(d, W / 2, 1200, "N giảm → H = λN giảm theo", 44, BLUE, alpha=appear(t, 2.0))
+    card(d, (60, 1040, 1020, 1210), fill=A(WHITE, a), outline=A(BLUE, a), w=5)
+    rich(d, W / 2, 1125, "N giảm → H = λN giảm theo", 48, BLUE, alpha=appear(t, 1.2))
     b = appear(t, M[1] + 0.2)
-    card(d, (60, 1300, 1020, 1590), fill=A(WHITE, b), outline=A(PURPLE, b), w=5)
-    text(d, (W / 2, 1360), "Chưa nói được gì?", 42, PURPLE, alpha=b)
-    ctext(d, 1470, "Hạt nhân nào phân rã ở phút tiếp theo:\nchỉ biết số trung bình của cả mẫu.", 38, INK, alpha=b, lh=1.25)
+    card(d, (60, 1260, 1020, 1450), fill=A(WHITE, b), outline=A(PURPLE, b), w=5)
+    text(d, (W / 2, 1355), "Chưa nói được gì?", 48, PURPLE, alpha=b)
 
 # ---------------- canh 5: bay quen tru phong ----------------
 def strip(d, y, title, vals, rats, col, a):
@@ -223,22 +217,18 @@ def s_trap(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]
     card(d, (60, 250, 1020, 340), fill=(254, 226, 226), outline=RED, w=5)
-    text(d, (W / 2, 295), f"Bẫy: quên trừ phông {PHONG}", 44, RED, alpha=appear(t, 0.1))
+    text(d, (W / 2, 295), "Bẫy: quên trừ phông", 48, RED, alpha=appear(t, 0.1))
     strip(d, 370, "Chưa trừ phông", [r[1] for r in ROWS[3:]], ["1,60", "1,60"], RED, appear(t, M[1] - 0.2))
     strip(d, 730, "Đã trừ phông", [r[2] for r in ROWS[3:]], RATIOS[3:], GREEN, appear(t, M[1] + 0.8))
     c = appear(t, M[2])
     card(d, (60, 1095, 1020, 1400), fill=A((254, 242, 242), c), r=28)
-    ctext(d, 1190, "Số cuối bảng giảm chậm hơn", 42, INK, alpha=c)
-    ctext(d, 1300, "→ T đọc ra LỚN HƠN thật", 50, RED, alpha=c)
-    e = appear(t, M[2] + 1.0)
-    ctext(d, 1480, "Làm đúng: đo phông trước, trừ vào mọi số", 38, GREEN, alpha=e)
+    ctext(d, 1250, "→ T đọc ra LỚN HƠN thật", 54, RED, alpha=c)
 
 # ---------------- canh 6: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
-    chot_hoi(d, t, sc, "Cứ sau mỗi chu kì bán rã T, số đếm (đã trừ phông) còn một nửa",
-             "Lấy bớt một nửa lượng chất của nguồn thì chu kì bán rã còn là 5 phút không?",
-             "Xác suất phân rã của mỗi hạt có đổi không?")
+    chot_hoi(d, t, sc, "Chu kì T: số đếm (trừ phông) còn một nửa",
+             "Bớt một nửa lượng nguồn thì T còn 5 phút không?")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -255,24 +245,24 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-phongxa-02", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
     footer="Chu kì bán rã · thachlab.id.vn", scenes=[
  dict(key="hook", title="Số đếm phóng xạ theo thời gian", draw=s_hook, tail=0.6, caps=[
-   ("Nguồn phóng xạ đặt trước ống đếm Geiger.", 2.4),
-   ("Chọn một đáp án trước khi xem tiếp.", 5.0)]),
+   ("Nguồn trước ống Geiger.", 2.4),
+   ("Dừng video, chọn A, B hoặc C.", 5.0)]),
  dict(key="do", title="Đếm cứ 5 phút một lần", draw=s_do, tail=0.8, caps=[
-   ("Chưa đặt nguồn: phông 23 xung/phút.", 2.3),
-   ("Đặt nguồn, cứ 5 phút đếm trong 1 phút.", 2.6),
-   ("Lấy mỗi số đọc trừ đi phông 23.", 2.6),
-   ("812 → 398 → 204: mỗi lần còn một nửa.", 2.6)]),
+   ("Đo phông nền trước.", 2.5),
+   ("Đặt nguồn, đếm mỗi 5 phút.", 4.0),
+   ("Trừ phông mỗi số.", 2.5),
+   ("Còn một nửa.", 2.5)]),
  dict(key="ans", title="Đọc chu kì bán rã", draw=s_ans, tail=0.6, caps=[
-   ("Đáp án B: cứ 5 phút còn khoảng một nửa.", 2.8),
-   ("Lần trước chia lần sau: 1,87 đến 2,17.", 3.0),
-   ("Thời gian còn một nửa: T ≈ 5 phút.", 2.4)]),
+   ("Cứ 5 phút: một nửa.", 2.5),
+   ("Tỉ số gần bằng 2.", 2.5),
+   ("Đọc T trên đồ thị.", 2.4)]),
  dict(key="why", title="Vì sao còn một nửa?", draw=s_why, tail=0.6, caps=[
-   ("Hạt nhân còn ít thì số đếm ít theo.", 3.6),
-   ("Không biết trước hạt nào phân rã tiếp.", 2.6)]),
+   ("Mỗi hạt có cùng xác suất phân rã.", 3.6),
+   ("Từng hạt: ngẫu nhiên.", 4.0)]),
  dict(key="trap", title="Cái bẫy", draw=s_trap, tail=0.6, caps=[
-   ("Bẫy: quên trừ phông 23 xung/phút.", 2.2),
-   ("Cuối bảng chỉ giảm 1,60 lần mỗi 5 phút.", 2.6),
-   ("Giảm chậm hơn nên T đọc ra lớn hơn thật.", 2.8)]),
+   ("Nhìn số cuối bảng.", 2.5),
+   ("Giảm chậm hơn.", 2.5),
+   ("Trừ phông trước.", 2.5)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Thử nghĩ: bớt một nửa nguồn thì T ra sao?", 4.2)]),
+   ("Dừng video, tự trả lời.", 5.5)]),
 ])

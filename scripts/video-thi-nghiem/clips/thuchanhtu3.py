@@ -62,7 +62,7 @@ def top_view(d, th, on=True, show_th=True, th_label=True):
     d.rounded_rectangle([80, 290, LX0, 700], radius=10, fill=RED)
     d.rounded_rectangle([LX1, 290, 1000, 700], radius=10, fill=BLUE)
     text(d, (115, 495), "N", 44, WHITE); text(d, (965, 495), "S", 44, WHITE)
-    tag(d, 84, 262, "nhìn từ trên xuống", 32, MUTED, anchor="l")
+    tag(d, 84, 262, "nhìn từ trên", 36, MUTED, anchor="l")
     arrow(d, (700, 262), (790, 262), BLUE, w=4, head=16); text(d, (804, 262), "B", 38, BLUE, anchor="lm")
     # thuoc do goc (vach 0-30-60-90)
     for a in (0, 30, 60, 90):
@@ -89,7 +89,7 @@ def top_view(d, th, on=True, show_th=True, th_label=True):
         if th_label: tag(d, CX + 128 * math.cos(am), CY - 128 * math.sin(am), "θ", 38, GREEN)
     if on and th > 2:
         out_mark(d, CX, CY, GREEN)
-        text(d, (CX - 36, CY - 46), "F hướng lên", 32, GREEN, anchor="rm")
+        text(d, (CX - 36, CY - 46), "F", 40, GREEN, anchor="rm")
 
 
 # ---------------- so do luc nhin ngang (cap truc doi) ----------------
@@ -107,7 +107,6 @@ def force_side(d, sv, alpha=1.0):
     text(d, (860, 836), "nam châm", 32, NAVY)
     d.rounded_rectangle([780, 860, 940, 936], radius=10, fill=(214, 220, 236), outline=NAVY, width=3)
     d.line([(760, 944), (960, 944)], fill=NAVY, width=6)
-    text(d, (860, 972), "đĩa cân", 32, MUTED, bold=False)
     if L > 6:
         arrow(d, (860, 866), (860, 866 + L * 0.9), PURPLE, w=6, head=18)
         text(d, (846, 870 + L * 0.45), "F'", 38, PURPLE, anchor="rm")
@@ -155,9 +154,8 @@ def s_hook(img, d, t, sc):
     y0 = 776 + (1 - k) * 40
     card(d, (40, y0, 1040, y0 + 860), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
     pill(d, W / 2, y0 + 52, "DỰ ĐOÁN", 36, WHITE, PURPLE, k)
-    text(d, (W / 2, y0 + 130), "θ = 90°, I = 3,0 A: cân chỉ 1,45 g.", 40, INK, alpha=k)
-    text(d, (W / 2, y0 + 184), "Giữ I, xoay dây tới θ = 30°.", 40, INK, alpha=k)
-    text(d, (W / 2, y0 + 238), "Cân chỉ khoảng bao nhiêu?", 40, INK, alpha=k)
+    text(d, (W / 2, y0 + 130), "θ = 90°: cân chỉ 1,45 g.", 44, INK, alpha=k)
+    text(d, (W / 2, y0 + 200), "Xoay dây tới θ = 30°: cân chỉ?", 44, INK, alpha=k)
     for i, (lab, val) in enumerate(OPTS):
         bx = 80 + (i % 2) * 470; by = y0 + 300 + (i // 2) * 250
         card(d, (bx, by, bx + 450, by + 220), fill=A((247, 248, 252), k), outline=A(NAVY, k), r=24, w=4)
@@ -173,7 +171,7 @@ def state(t, sc):
     """(theta, dong dien bat?, so doc dang hien hoac None, cac diem da ghi)"""
     M = sc["M"]; th = 90.0; on = True; rd = ROWS[0]; recs = []
     if t >= M[0] + 0.4: recs = [ROWS[0]]
-    for j, (mk, a0, a1, row) in enumerate(((M[1], 90, 60, ROWS[1]), (M[3], 60, 30, ROWS[2]))):
+    for j, (mk, a0, a1, row) in enumerate(((M[1], 90, 60, ROWS[1]), (M[2], 60, 30, ROWS[2]))):
         if t >= mk + 0.1:
             on = False; rd = None
             th = lerp(a0, a1, ease((t - mk - 0.3) / 1.3))
@@ -188,18 +186,17 @@ def s_do(img, d, t, sc):
     text(d, (990, 718), f"θ = {round(th)}°", 40, GREEN, anchor="rm")
     card(d, (60, 770, 520, 1000), fill=WHITE, outline=NAVY, w=4, r=24)
     if rd is not None:
-        text(d, (290, 822), "cân đã trừ bì (tare)", 32, MUTED, bold=False)
+        text(d, (290, 822), "đã trừ bì", 36, MUTED, bold=False)
         text(d, (290, 890), f"Δm = {vn(rd[1])} g", 52, ORANGE)
-        text(d, (290, 958), "I = 3,0 A · minh hoạ", 32, MUTED, bold=False)
+        text(d, (290, 958), "I = 3,0 A", 36, MUTED, bold=False)
     elif on:
         text(d, (290, 885), "đóng mạch…", 40, MUTED, bold=False)
     else:
         text(d, (290, 860), "ngắt mạch", 42, RED)
-        text(d, (290, 930), "rồi mới xoay giá", 34, MUTED, bold=False)
     force_side(d, rd[1] if (rd is not None and on) else 0.0)
     card(d, (60, 1024, 1020, 1650), fill=WHITE, outline=LIGHT, w=3)
     plot(d, (210, 1100, 920, 1560), recs)
-    text(d, (980, 1060), "số liệu minh hoạ", 32, MUTED, bold=False, anchor="rm")
+    text(d, (980, 1060), "minh hoạ", 36, MUTED, bold=False, anchor="rm")
 
 
 # ---------------- canh 3: Dap an + Rut ra ----------------
@@ -208,9 +205,9 @@ def s_rut(img, d, t, sc):
     card(d, (60, 236, 1020, 700), fill=WHITE, outline=LIGHT, w=3)
     plot(d, (210, 300, 920, 610), ROWS, curve=ease((t - M[1] + 0.2) / 1.2), hl=30 if t > M[0] else None)
     kc = appear(t, M[1] + 0.6, 0.4)
-    if kc > 0: text(d, (910, 470), "đường: Δm(90°)·sin θ", 34, BLUE, anchor="rm", alpha=kc)
+    if kc > 0: text(d, (910, 470), "Δm(90°)·sin θ", 38, BLUE, anchor="rm", alpha=kc)
     ka = appear(t, M[0] - 0.1, 0.4)
-    if ka > 0: pill(d, 580, 556, "ĐÁP ÁN B · 0,73 g", 34, WHITE, GREEN, ka)
+    if ka > 0: pill(d, 580, 556, "ĐÁP ÁN B", 38, WHITE, GREEN, ka)
     # bang so lieu
     card(d, (60, 724, 1020, 1100), fill=WHITE, outline=NAVY, w=4, r=24)
     cols = [(170, "θ"), (380, "Δm (g)"), (640, "Δm/Δm(90°)"), (880, "sin θ")]
@@ -223,19 +220,18 @@ def s_rut(img, d, t, sc):
         text(d, (380, y), vn(dm), 38, ORANGE)
         text(d, (640, y), vn(rt), 38, GREEN, alpha=k2)
         text(d, (880, y), vn(sn), 38, GREEN, alpha=k2)
-    text(d, (980, 1078), "số liệu minh hoạ", 32, MUTED, bold=False, anchor="rm")
+    text(d, (980, 1078), "minh hoạ", 36, MUTED, bold=False, anchor="rm")
     kh = appear(t, M[1] - 0.2, 0.45)
     if kh > 0: d.rounded_rectangle([510, 820, 990, 1048], radius=18, outline=A(GREEN, kh), width=4)
     # the rut ra
-    for y, title, ev, col, at in ((1124, "F = B·I·l·sin θ", "lớn nhất khi dây vuông góc đường sức", GREEN, M[1] + 0.8),
-                                  (1340, "Lệch 60°: B tính theo F = BIl thấp 13%", "vì sin 60° ≈ 0,87",
-                                   ORANGE, M[2] - 0.25)):
+    for y, title, ev, col, at in ((1124, "F = B·I·l·sin θ", "lớn nhất khi vuông góc", GREEN, M[1] + 0.8),
+                                  (1340, "Lệch 60°: B thấp 13%", "", ORANGE, M[1] + 3.0)):
         k = appear(t, at, 0.45)
         if k <= 0: continue
         yy = y + (1 - k) * 30
         card(d, (60, yy, 1020, yy + 196), fill=A(WHITE, k), outline=A(col, k), w=5)
-        text(d, (W / 2, yy + 62), title, 42, col, alpha=k)
-        text(d, (W / 2, yy + 140), ev, 36, MUTED, bold=False, alpha=k)
+        text(d, (W / 2, yy + (62 if ev else 98)), title, 46, col, alpha=k)
+        if ev: text(d, (W / 2, yy + 140), ev, 38, MUTED, bold=False, alpha=k)
 
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
@@ -256,15 +252,14 @@ def mini(d, x0, y0, th, lab, col, al=1.0):     # o nho: 3 duong suc + canh day g
 def s_bay(img, d, t, sc):
     M = sc["M"]
     top_view(d, 0, on=True, show_th=False)
-    tag(d, CX, CY + 130, "θ = 0°: dây song song đường sức", 34, NAVY)
     tag(d, CX, CY + 72, "F = 0", 40, RED)
-    k3 = appear(t, M[2] - 0.1, 0.45); a1 = 1 - k3
+    k3 = appear(t, M[1] - 0.1, 0.45); a1 = 1 - k3
     y = 790
     if a1 > 0:
         card(d, (60, y, 1020, y + 820), fill=A(WHITE, a1), outline=A(RED, a1), w=5)
         pill(d, W / 2, y + 60, "BẪY", 38, WHITE, RED, a1)
-        q = "“Dây song song đường sức thì lực từ lớn nhất”"
-        ls = wrap(d, q, F(42), 840); ks = clamp((t - M[1] + 0.2) / 0.4) * a1
+        q = "Song song đường sức: lực lớn nhất?"
+        ls = wrap(d, q, F(42), 840); ks = clamp((t - M[0] - 2.0) / 0.4) * a1
         for j, l in enumerate(ls):
             yy = y + 160 + j * 56; lw = tw(d, l, F(42))
             text(d, (W / 2, yy), l, 42, mix(INK, GRAY, ks), alpha=a1)
@@ -272,14 +267,13 @@ def s_bay(img, d, t, sc):
                               fill=A(RED, 0.8 * a1), width=4)
         for j, (th, lab, col) in enumerate(((0, "θ = 0°: F = 0", RED), (90, "θ = 90°: F lớn nhất", GREEN))):
             mini(d, 100 + j * 450, y + 270, th, lab, col, a1)
-        k2 = appear(t, M[1], 0.45) * a1
+        k2 = appear(t, M[0] + 2.4, 0.45) * a1
         ctext(d, y + 600, "Sai: θ = 0° thì sin θ = 0, F = 0", 44, RED, alpha=k2)
-        ctext(d, y + 720, "B nam châm không đổi khi xoay dây", 38, MUTED, bold=False, maxw=860, alpha=k2)
     if k3 > 0:
         card(d, (60, y, 1020, y + 820), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
-        text(d, (W / 2, y + 70), "Thí nghiệm chưa nói được", 44, NAVY, alpha=k3)
-        for j, s in enumerate(("• Góc khác ngoài 90°, 60°, 30°", "• F có tỉ lệ với l? (chưa đổi l)",
-                               "• Số liệu: minh hoạ, không đo thật")):
+        text(d, (W / 2, y + 70), "Chưa nói được", 48, NAVY, alpha=k3)
+        for j, s in enumerate(("• Góc khác 90°, 60°, 30°", "• Chiều dài l: chưa đổi",
+                               "• Số liệu: minh hoạ")):
             text(d, (110, y + 220 + j * 150), s, 40, INK, bold=False, anchor="lm", alpha=k3)
 
 
@@ -287,17 +281,16 @@ def s_bay(img, d, t, sc):
 def s_end(img, d, t, sc):
     M = sc["M"]; k0 = appear(t, 0.2, 0.5)
     card(d, (60, 250, 1020, 500), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    ctext(d, 375, "Xoay dây: B không đổi, lực từ đổi theo sin θ", 52, GREEN, maxw=860, alpha=k0)
+    ctext(d, 375, "B không đổi, lực từ theo sin θ", 54, GREEN, maxw=860, alpha=k0)
     k1 = appear(t, M[0] + 0.1, 0.5)
     if k1 <= 0: return
     card(d, (40, 540, 1040, 1090), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(38)) + 52
     card(d, (W / 2 - pw / 2, 570, W / 2 + pw / 2, 634), fill=A(ORANGE, k1), r=32)
     text(d, (W / 2, 602), "THỬ NGHĨ", 38, WHITE, alpha=k1)
-    ctext(d, 730, "Vì sao phải chỉnh dây vuông góc\nđường sức trước khi đo B?", 46, INK, maxw=880,
+    ctext(d, 760, "Vì sao phải chỉnh dây vuông góc\nđường sức trước khi đo B?", 46, INK, maxw=880,
           alpha=appear(t, M[0] + 0.4, 0.5))
-    text(d, (W / 2, 850), "θ = 90°: 1,45 g  ·  θ = 60°: 1,26 g", 40, MUTED, bold=False, alpha=k1)
-    kh = appear(t, M[0] + 2.6, 0.5)
+    kh = appear(t, M[0] + 3.0, 0.5)
     if kh > 0:
         card(d, (110, 910, 970, 1060), fill=A((255, 247, 237), kh), r=24)
         ctext(d, 985, "Gợi ý: nhìn lại cột sin θ", 42, ORANGE, maxw=820, alpha=kh)
@@ -320,29 +313,25 @@ def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, r, b, e = sc["hook"], sc["do"], sc["rut"], sc["bay"], sc["end"]
     return [(h["t0"] + h["M"][1], "open"), (h["t0"] + h["T"] - 0.1, "ding"),
-            (do["t0"] + do["M"][1] + 1.8, "tap"), (do["t0"] + do["M"][3] + 1.8, "tap"),
+            (do["t0"] + do["M"][1] + 1.8, "tap"), (do["t0"] + do["M"][2] + 1.8, "tap"),
             (r["t0"] + r["M"][0] - 0.1, "ding"), (b["t0"] + b["M"][0], "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
 
 
 CLIP = dict(id="tn-l12-thuchanhtu-03", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Đo cảm ứng từ · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Dây hợp góc với đường sức", draw=s_hook, tail=0.3, caps=[
-   ("Dây vuông góc đường sức: cân chỉ 1,45 g.", 2.8),
-   ("Dừng vài giây, chọn A, B, C hay D.", 6.6)]),
+   "Dây vuông góc đường sức.",
+   ("Dừng video, chọn A, B, C hay D.", 6.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
-   ("θ = 90°: dây vuông góc đường sức.", 2.6),
-   ("Ngắt mạch, xoay giá tới θ = 60°.", 2.6),
-   ("Đóng mạch lại: cân chỉ 1,26 g.", 2.4),
-   ("Ngắt, xoay tiếp tới θ = 30°.", 2.6),
-   ("Đóng mạch: cân chỉ 0,73 g, giảm nhiều.", 2.8)]),
+   ("Cân chỉ 1,45 g.", 2.6),
+   ("Ngắt, xoay tới 60°: 1,26 g.", 3.0),
+   ("Xoay tiếp tới 30°: 0,73 g.", 3.0)]),
  dict(key="rut", title="Kết luận", draw=s_rut, tail=0.4, caps=[
    ("30° cho 0,73 g: đáp án B.", 2.4),
-   ("Δm chia Δm(90°) đúng bằng sin θ.", 3.0),
-   ("Dây lệch 60°: B tính ra thấp hơn 13%.", 3.2)]),
+   ("Δm tỉ lệ với sin θ.", 5.8)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.3, caps=[
-   ("Bẫy: song song đường sức, lực lớn nhất?", 3.0),
-   ("Sai: song song thì F = 0, B vẫn như cũ.", 3.0),
-   ("Thí nghiệm này chưa nói được gì?", 4.2)]),
+   ("Đúng hay sai?", 5.0),
+   ("Giới hạn của thí nghiệm.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Thử nghĩ: vì sao phải chỉnh θ = 90°?", 4.4)]),
+   ("Dừng video và trả lời.", 6.4)]),
 ])

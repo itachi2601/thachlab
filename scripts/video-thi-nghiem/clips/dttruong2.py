@@ -63,8 +63,8 @@ def rig(d, t, f, reading, phase=None, dc=False, label=True):
     plates(d, q)
     charges(d, LEFT, x); charges(d, RIGHT, x)
     if label:
-        text(d, ((PL + PR) / 2, 700), f"tụ {C_UF} μF, giữa cách điện", 36, NAVY)
-        if phase is not None: text(d, ((PL + PR) / 2, 750), "mũi tên cam: điện trường E", 36, ORANGE)
+        text(d, ((PL + PR) / 2, 700), f"tụ {C_UF} μF", 40, NAVY)
+        if phase is not None: text(d, ((PL + PR) / 2, 750), "mũi tên cam: E", 40, ORANGE)
     # may phat
     card(d, (70, 270, 470, 600), fill=WHITE, outline=NAVY, r=28, w=5)
     text(d, (270, 305), "Máy phát", 36, MUTED, bold=False)
@@ -84,7 +84,6 @@ def rig(d, t, f, reading, phase=None, dc=False, label=True):
     d.rounded_rectangle([650, 335, 970, 455], radius=14, fill=NAVY)
     text(d, (810, 397), reading, 66, (134, 239, 172))
     text(d, (810, 505), "mA", 40, RED)
-    text(d, (810, 562), "thang xoay chiều", 36, MUTED, bold=False)
 
 # ---------------- canh 1: mo bai + du doan ----------------
 OPTS = ("A. Luôn bằng 0", "B. Giảm khi f tăng", "C. Tăng khi f tăng", "D. Không đổi theo f")
@@ -95,7 +94,7 @@ def s_hook(img, d, t, sc):
     if k <= 0: return
     card(d, (60, 990, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1045), "Dự đoán", 46, PURPLE, alpha=k)
-    ctext(d, 1135, "Tăng f từ 50 Hz lên 800 Hz.\nDòng trong mạch thay đổi thế nào?", 42, INK, alpha=k)
+    ctext(d, 1135, "Tăng f: 50 → 800 Hz.\nDòng thay đổi thế nào?", 46, INK, alpha=k)
     for i, s in enumerate(OPTS):
         a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
         x0 = 100 + (i % 2) * 450; y = 1290 + (i // 2) * 120
@@ -135,7 +134,7 @@ def s_do(img, d, t, sc):
     f, rd, dc, on = do_state(t, sc)
     rig(d, t, f if not dc else 50, rd, phase=_phase(t, sc) if on else None, dc=dc)
     card(d, (60, 995, 1020, 1590), fill=WHITE, outline=NAVY, w=4)
-    text(d, (W / 2, 1040), f"Giữ U = {U} V, chỉ đổi tần số", 40, PURPLE, alpha=appear(t, 0.6))
+    text(d, (W / 2, 1040), f"Giữ U = {U} V", 44, PURPLE, alpha=appear(t, 0.6))
     xs = [330, 750]
     for x, c in zip(xs, ["f (Hz)", "I đo được (mA)"]): text(d, (x, 1105), c, 38, MUTED)
     d.line([(90, 1138), (990, 1138)], fill=LIGHT, width=4)
@@ -153,7 +152,7 @@ def s_ans(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]; k = back((t - 0.2) / 0.5) if t > 0.2 else 0
     card(d, (60, 250, 1020, 350), fill=(220, 252, 231), outline=GREEN, w=5)
-    text(d, (W / 2, 300), "Đáp án C: f tăng thì I tăng", int(44 * clamp(k, 0.3, 1.0)), GREEN)
+    text(d, (W / 2, 300), "Đáp án C", int(48 * clamp(k, 0.3, 1.0)), GREEN)
     x0, x1, yb, yt = 190, 940, 900, 470
     X = lambda f: x0 + f / 850 * (x1 - x0); Y = lambda i: yb - i / 65 * (yb - yt)
     card(d, (60, 380, 1020, 1030), fill=WHITE, outline=LIGHT, w=3)
@@ -171,7 +170,7 @@ def s_ans(img, d, t, sc):
         for j in range(0, int(fe), 30):
             d.line([(X(j), Y(K_MODEL * j)), (X(min(j + 18, fe)), Y(K_MODEL * min(j + 18, fe)))], fill=A(BLUE, 0.7), width=5)
         km = appear(t, M[0] + 1.8)
-        text(d, (x0 + 30, Y(57)), "nét đứt: đường tính theo mô hình", 36, BLUE, anchor="lm", alpha=km)
+        text(d, (x0 + 30, Y(57)), "nét đứt: mô hình", 36, BLUE, anchor="lm", alpha=km)
         text(d, (x0 + 30, Y(49)), "I = U·2πfC", 38, BLUE, anchor="lm", alpha=km)
     for i, (f, s) in enumerate(ROWS):
         a = appear(t, 0.5 + i * 0.2, 0.4)
@@ -179,12 +178,12 @@ def s_ans(img, d, t, sc):
         dot(d, X(f), Y(IV[i]), 15 * back(a), ORANGE, WHITE)
         if i >= 2: text(d, (X(f) + 26, Y(IV[i]) + 36), s, 36, ORANGE, anchor="lm", alpha=a)
     dot(d, X(0), Y(0), 10, NAVY)
-    text(d, (W / 2, 985), "Điểm đo thấp hơn đường tính 2–5%", 36, MUTED, bold=False, alpha=appear(t, M[0] + 2.2))
+    text(d, (W / 2, 985), "Đo thấp hơn 2–5%", 36, MUTED, bold=False, alpha=appear(t, M[0] + 2.2))
     # cot I/f
     a1 = appear(t, M[1] - 0.2)
     if a1 <= 0: return
     card(d, (60, 1060, 1020, 1590), fill=A(WHITE, a1), outline=A(LIGHT, a1), w=3)
-    text(d, (W / 2, 1110), "Lấy I chia f (mA/Hz)", 38, MUTED, alpha=a1)
+    text(d, (W / 2, 1110), "I / f (mA/Hz)", 38, MUTED, alpha=a1)
     vx = [160 + j * 190 for j in range(5)]
     for j, (f, s) in enumerate(ROWS):
         text(d, (vx[j], 1190), f"{f} Hz", 36, MUTED, bold=False, alpha=a1)
@@ -194,7 +193,7 @@ def s_ans(img, d, t, sc):
         text(d, (vx[j], 1385), RATIO[j], 38, ORANGE, alpha=a)
     c = appear(t, M[1] + 1.8)
     card(d, (110, 1440, 970, 1550), fill=A((220, 252, 231), c), r=24)
-    ctext(d, 1495, "I/f gần như không đổi → I tỉ lệ thuận f", 38, GREEN, alpha=c)
+    ctext(d, 1495, "I tỉ lệ thuận f", 44, GREEN, alpha=c)
 
 # ---------------- canh 4: co che + chua noi duoc gi ----------------
 def s_why(img, d, t, sc):
@@ -211,12 +210,12 @@ def s_why(img, d, t, sc):
             px, py = _at(p, u + x); dot(d, px, py, 11, BLUE)
         u += 56
     text(d, ((x0 + x1) / 2, (top + bot) / 2), "E", 52, A(ORANGE, clamp(abs(q) * 1.3)))
-    text(d, (200, wy - 50), "e trong dây", 36, BLUE, bold=False)
-    text(d, (200, wy + 50), "chỉ đi tới – lui", 36, BLUE, bold=False)
+    text(d, (200, wy - 50), "e trong dây:", 36, BLUE, bold=False)
+    text(d, (200, wy + 50), "tới – lui", 36, BLUE, bold=False)
     # nhan dien moi
     a0 = appear(t, 0.4)
     card(d, (270, 850, 810, 930), fill=A(WHITE, a0), outline=A(NAVY, a0), r=20, w=3)
-    text(d, (540, 890), "điện môi: không hạt nào qua", 36, INK, alpha=a0)
+    text(d, (540, 890), "điện môi", 36, INK, alpha=a0)
     # tu truong khep kin quanh vung E bien thien (ket luan Maxwell)
     b = appear(t, M[1] + 0.3)
     if b > 0:
@@ -224,25 +223,25 @@ def s_why(img, d, t, sc):
         for hw, hh in ((60, 190), (100, 240)):
             bb = [cx - hw, (top + bot) / 2 - hh, cx + hw, (top + bot) / 2 + hh]
             for a in range(0, 360, 24): d.arc(bb, a, a + 13, fill=A(TEAL, b), width=5)
-        text(d, (cx + 200, top - 20), "từ trường (Maxwell)", 36, TEAL, alpha=b)
+        text(d, (cx + 200, top - 20), "từ trường", 36, TEAL, alpha=b)
     a = appear(t, M[0] + 0.6)
     card(d, (60, 960, 1020, 1210), fill=A(WHITE, a), outline=A(BLUE, a), w=5)
-    ctext(d, 1035, "E giữa hai bản biến thiên", 42, INK, alpha=a)
-    ctext(d, 1135, "tương đương dòng điện dịch", 46, BLUE, alpha=appear(t, M[1]))
+    ctext(d, 1035, "E biến thiên", 46, INK, alpha=a)
+    ctext(d, 1135, "= dòng điện dịch", 50, BLUE, alpha=appear(t, M[1]))
     c = appear(t, M[2] - 0.2)
     card(d, (60, 1240, 1020, 1590), fill=A(WHITE, c), outline=A(PURPLE, c), w=5)
     text(d, (W / 2, 1300), "Chưa nói được gì?", 42, PURPLE, alpha=c)
-    ctext(d, 1430, "Đồng hồ chỉ đo dòng trong dây:\nkhông thấy E giữa hai bản,\nkhông đo được từ trường của nó.", 38, INK, alpha=c, lh=1.25)
+    ctext(d, 1430, "Đồng hồ không thấy E\nvà từ trường.", 42, INK, alpha=c, lh=1.25)
 
 # ---------------- canh 5: bay "f cao thi tu can manh hon" ----------------
 def s_trap(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]
     card(d, (60, 250, 1020, 420), fill=(254, 226, 226), outline=RED, w=5)
-    ctext(d, 335, "Bẫy: “f càng cao,\ntụ cản dòng càng mạnh”", 44, RED, alpha=appear(t, 0.1))
+    ctext(d, 335, "Bẫy: “f cao,\ntụ cản mạnh”", 48, RED, alpha=appear(t, 0.1))
     a = appear(t, 0.6)
     card(d, (60, 450, 1020, 1130), fill=A(WHITE, a), outline=A(LIGHT, a), w=3)
-    text(d, (W / 2, 500), "Số đo thật, cùng U = 12 V", 38, MUTED, alpha=a)
+    text(d, (W / 2, 500), "U = 12 V", 40, MUTED, alpha=a)
     base, top = 1040, 590
     bars = [("một chiều", 0.0, "0"), ("50 Hz", IV[0], ROWS[0][1]), ("800 Hz", IV[4], ROWS[4][1])]
     for j, (lb, v, s) in enumerate(bars):
@@ -256,14 +255,14 @@ def s_trap(img, d, t, sc):
     card(d, (60, 1160, 1020, 1590), fill=A((236, 253, 243), c), outline=A(GREEN, c), w=5)
     text(d, (W / 2, 1220), "Ngược lại:", 42, GREEN, alpha=c)
     rich(d, W / 2, 1320, "Z_{C} = 1/(2πfC)", 60, GREEN, alpha=c)
-    ctext(d, 1440, "f tăng → dung kháng giảm → dòng tăng\nmột chiều: tụ chặn hẳn, 0 mA", 38, INK, alpha=appear(t, M[1] + 0.6), lh=1.3)
+    ctext(d, 1440, "f tăng → dòng tăng\nmột chiều: 0 mA", 44, INK, alpha=appear(t, M[1] + 0.6), lh=1.3)
 
 # ---------------- canh 6: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
-    chot_hoi(d, t, sc, "Điện trường biến thiên giữa hai bản tụ đóng vai dòng điện dịch: I tỉ lệ thuận f",
-             f"Giữ U = {U} V, tụ {C_UF} μF, đặt f = 1 600 Hz. Đồng hồ chỉ khoảng bao nhiêu?",
-             "Tỉ số I/f có đổi không?")
+    chot_hoi(d, t, sc, "Dòng điện dịch: I tỉ lệ thuận f",
+             f"f = 1 600 Hz: đồng hồ chỉ?",
+             "I/f có đổi không?")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -275,23 +274,23 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-dttruong-02", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
     footer="Dòng điện dịch · thachlab.id.vn", scenes=[
  dict(key="hook", title="Dòng xoay chiều qua tụ điện", draw=s_hook, tail=0.6, caps=[
-   ("Tụ 1,0 μF nối tiếp đồng hồ đo dòng.", 2.4),
-   ("Chọn một đáp án trước khi xem tiếp.", 5.4)]),
+   ("Tụ nối tiếp đồng hồ.", 2.4),
+   ("Chọn đáp án.", 5.4)]),
  dict(key="do", title="Đổi tần số, đọc đồng hồ", draw=s_do, tail=0.8, caps=[
-   ("Bật máy phát xoay chiều 12 V.", 2.3),
-   ("50 → 100 → 200 Hz: 3,6 → 7,4 → 14,8 mA", 2.8),
-   ("400 Hz: 29,5 mA; 800 Hz: 58,0 mA.", 2.6),
-   ("Một chiều 12 V, tụ nạp xong: 0 mA.", 2.8)]),
+   ("Bật máy phát 12 V.", 2.3),
+   ("50, 100, 200 Hz.", 2.8),
+   ("400, 800 Hz.", 2.6),
+   ("Một chiều: 0 mA.", 2.8)]),
  dict(key="ans", title="Dòng tỉ lệ thuận với tần số", draw=s_ans, tail=0.6, caps=[
-   ("Đáp án C: f gấp 16 lần, I gấp ≈ 16 lần.", 3.0),
-   ("I/f chỉ từ 0,072 đến 0,074 mA/Hz.", 3.0)]),
+   ("f gấp 16 lần, I gấp ≈ 16.", 3.0),
+   ("I/f gần như không đổi.", 3.0)]),
  dict(key="why", title="Vì sao có dòng qua tụ?", draw=s_why, tail=0.6, caps=[
-   ("Không hạt mang điện nào qua lớp điện môi.", 2.8),
-   ("Điện trường biến thiên: dòng điện dịch.", 2.8),
-   ("Đồng hồ không cho thấy E hay từ trường.", 2.6)]),
+   ("Không hạt nào qua điện môi.", 2.8),
+   ("Dòng điện dịch.", 2.8),
+   ("Chưa thấy E, từ trường.", 2.6)]),
  dict(key="trap", title="Cái bẫy", draw=s_trap, tail=0.6, caps=[
-   ("Bẫy: tưởng f càng cao tụ cản càng mạnh.", 2.6),
-   ("Thật ra dung kháng giảm nên dòng tăng.", 3.0)]),
+   ("Bẫy hay gặp.", 2.6),
+   ("Dung kháng giảm.", 3.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Thử nghĩ: 1 600 Hz thì dòng bao nhiêu?", 4.2)]),
+   ("Thử nghĩ: bao nhiêu mA?", 5.0)]),
 ])

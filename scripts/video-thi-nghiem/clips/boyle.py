@@ -89,7 +89,7 @@ def s_hook(img, d, t, sc):
     if k <= 0: return
     card(d, (80, 1110, 1000, 1590), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1170), "Dự đoán", 46, PURPLE, alpha=k)
-    ctext(d, 1270, "Ấn pít-tông tới 4,0 ml (một nửa).\nÁp kế chỉ khoảng bao nhiêu?", 44, INK, alpha=k)
+    ctext(d, 1270, "Ấn tới 4,0 ml (một nửa).\nÁp kế chỉ bao nhiêu?", 44, INK, alpha=k)
     for i, s in enumerate(("A. 100 kPa", "B. 150 kPa", "C. 200 kPa")):
         a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
         x0 = 100 + i * 300
@@ -102,10 +102,11 @@ def s_hook(img, d, t, sc):
 
 # ---------------- canh 2: tien hanh, ghi bang ----------------
 MOVE = 1.0
+PUSH = [0.4, 1.8, 3.9, 6.0, 8.1]            # mốc giây bắt đầu ấn lần i (không phụ thuộc phụ đề)
 def state(t, sc):
     V, c, extra, moving = ROWS[0][0], PV[0], 0.0, False
     for i in range(1, 5):
-        s = sc["M"][i] + 0.1
+        s = PUSH[i] + 0.1
         if t < s: break
         k = ease((t - s) / MOVE); V = lerp(ROWS[i - 1][0], ROWS[i][0], k); c = lerp(PV[i - 1], PV[i], k)
         tau = t - s; moving = tau < MOVE
@@ -113,23 +114,23 @@ def state(t, sc):
         extra = 6 * ease(tau / MOVE) if tau < MOVE else 6 * (1 - ease((tau - MOVE) / 0.6))
     return V, c / V + extra, moving
 
-def row_at(i, sc): return sc["M"][0] + 0.7 if i == 0 else sc["M"][i] + 0.1 + MOVE + 0.6
+def row_at(i, sc): return PUSH[0] + 0.7 if i == 0 else PUSH[i] + 0.1 + MOVE + 0.6
 
 def s_do(img, d, t, sc):
     IMG_REF[0] = img
     V, p, mv = state(t, sc); rig(d, t, V, p, push=mv)
     card(d, (80, 1100, 1000, 1590), fill=WHITE, outline=NAVY, w=4)
-    xs = [190, 420, 670]
-    for x, c in zip(xs, ["Lần", "V (ml)", "p (kPa)"]): text(d, (x, 1148), c, 38, MUTED)
+    xs = [-1, 330, 640]
+    for x, c in list(zip(xs, ["", "V (ml)", "p (kPa)"]))[1:]: text(d, (x, 1148), c, 38, MUTED)
     d.line([(110, 1182), (970, 1182)], fill=LIGHT, width=4)
     last = max([i for i in range(5) if t >= row_at(i, sc)], default=-1)
     for i, (v, pp) in enumerate(ROWS):
         a = appear(t, row_at(i, sc), 0.35); y = 1225 + i * 72
         if a <= 0: continue
         if i == last: d.rounded_rectangle([100, y - 32, 980, y + 32], radius=16, fill=A((225, 236, 255), a))
-        for x, s, col in zip(xs, [str(i + 1), fmt(v), str(pp)], [MUTED, BLUE, RED]):
+        for x, s, col in list(zip(xs, [str(i + 1), fmt(v), str(pp)], [MUTED, BLUE, RED]))[1:]:
             text(d, (x, y), s, 44, col, alpha=a)
-        if i == 3: text(d, (875, y), "gấp đôi → C", 40, GREEN, alpha=a)
+        if i == 3: text(d, (900, y), "→ C", 44, GREEN, alpha=a)
 
 # ---------------- canh 3: do thi p-V + tich pV ----------------
 def s_graph(img, d, t, sc):
@@ -212,9 +213,9 @@ def s_trap(img, d, t, sc):
     IMG_REF[0] = img
     a = appear(t, 0.1)
     card(d, (80, 250, 1000, 560), fill=WHITE, outline=BLUE, w=6)
-    text(d, (W / 2, 305), "Chưa nói được gì?", 44, BLUE, alpha=a)
-    ctext(d, 395, "p·V chỉ không đổi trong sai số\n(lệch nhau không quá 8%).", 40, INK, alpha=a, lh=1.25)
-    text(d, (W / 2, 505), "Chưa cho biết p phụ thuộc nhiệt độ ra sao.", 40, MUTED, bold=False, alpha=a)
+    text(d, (W / 2, 315), "Chưa nói được gì?", 44, BLUE, alpha=a)
+    text(d, (W / 2, 410), "p·V lệch nhau tới 8%.", 42, INK, alpha=a)
+    text(d, (W / 2, 485), "Chưa biết p phụ thuộc nhiệt độ.", 40, MUTED, bold=False, alpha=a)
     b = appear(t, sc["M"][1] - 0.3)
     if b <= 0: return
     card(d, (80, 600, 1000, 1590), fill=A(WHITE, b), outline=A(RED, b), w=6)
@@ -237,17 +238,17 @@ def s_trap(img, d, t, sc):
     p_show = p_iso * (1 + 0.16 * heat)
     gauge(d, 760, 990, 150, p_show, fs=36, mark=ROWS[3][1], out=False)
     c2 = appear(t, sc["M"][1] + 1.4)
-    text(d, (W / 2, 1345), f"p lớn hơn {ROWS[3][1]} kPa, p·V lớn dần", 40, RED, alpha=c2)
-    c3 = appear(t, sc["M"][2])
+    text(d, (W / 2, 1345), f"p vọt quá {ROWS[3][1]} kPa", 40, RED, alpha=c2)
+    c3 = appear(t, sc["M"][1] + 2.8)
     card(d, (130, 1410, 950, 1550), fill=A((220, 252, 231), c3), r=24)
-    ctext(d, 1480, "Làm đúng: ấn từ từ, đợi 10 giây\nrồi mới đọc áp kế", 38, GREEN, alpha=c3, lh=1.25)
+    ctext(d, 1480, "Đúng: ấn từ từ, đợi 10 giây", 38, GREEN, alpha=c3, lh=1.25)
 
 # ---------------- canh 6: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
-    chot_hoi(d, t, sc, "Nhiệt độ không đổi → p·V không đổi",
-             "Giữ nhiệt độ, ấn tới 2,0 ml thì áp kế chỉ bao nhiêu? Áp kế này còn đọc được không?",
-             f"p·V ≈ {P0V0} kPa·ml · thang đo tới 300 kPa")
+    chot_hoi(d, t, sc, "T không đổi → p·V không đổi",
+             "Giữ nhiệt độ, ấn tới 2,0 ml thì áp kế chỉ bao nhiêu? Áp kế còn đọc được không?",
+             f"p·V ≈ {P0V0} · thang đo 300 kPa")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -259,24 +260,21 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-boylecharles-01", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
     footer="Định luật Boyle · thachlab.id.vn", scenes=[
  dict(key="hook", title="Nén khí trong xilanh kín", draw=s_hook, tail=0.6, caps=[
-   ("8,0 ml khí nhốt kín, nối với áp kế.", 2.4),
-   ("Chọn một đáp án trước khi xem tiếp.", 4.8)]),
+   ("Khí nhốt kín, nối áp kế.", 2.4),
+   ("Chọn một đáp án.", 5.0)]),
  dict(key="do", title="Ấn từ từ, đọc áp kế", draw=s_do, tail=0.8, caps=[
-   ("Ấn từ từ, đợi số chỉ ổn định rồi ghi.", 2.3),
-   ("6,0 ml → 142 kPa", 2.0), ("5,0 ml → 170 kPa", 2.0),
-   ("4,0 ml → 215 kPa: gần gấp đôi, đáp án C.", 2.8),
-   ("3,0 ml → 267 kPa, gần trần thang đo.", 2.4)]),
+   ("Ấn từ từ, đợi số ổn định.", 6.9),
+   ("Gần gấp đôi: đáp án C.", 3.0)]),
  dict(key="graph", title="Đồ thị p–V và tích p·V", draw=s_graph, tail=0.6, caps=[
-   ("V giảm, p tăng theo đường cong.", 2.6),
-   ("Nhân p với V ở mỗi lần đo.", 2.6),
-   ("800 đến 860: gần như không đổi.", 2.6)]),
+   ("V giảm, p tăng.", 2.5),
+   ("Nhân p với V.", 2.5),
+   ("800 đến 860: gần không đổi.", 2.6)]),
  dict(key="why", title="Vì sao p tăng?", draw=s_why, tail=0.6, caps=[
    ("Cùng số phân tử, mật độ gấp đôi.", 2.6),
    ("Va chạm lên thành nhiều hơn → p tăng.", 2.8)]),
  dict(key="trap", title="Giới hạn và cái bẫy", draw=s_trap, tail=0.6, caps=[
-   ("Kết quả chỉ đúng trong sai số đo.", 2.2),
-   ("Ấn nhanh: khí nóng lên, p vọt cao.", 3.0),
-   ("Làm đúng: ấn từ từ, đợi rồi mới đọc.", 2.6)]),
+   ("Giới hạn của kết quả.", 2.6),
+   ("Ấn nhanh thì sao?", 5.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Thử nghĩ: ấn tới 2,0 ml thì sao?", 4.2)]),
+   ("Ấn tới 2,0 ml.", 5.0)]),
 ])

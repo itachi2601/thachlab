@@ -35,7 +35,7 @@ def dashed(d, p, q, color, w=3, seg=12, gap=9):
 def stand(d):
     d.rounded_rectangle([RX - 7, 300, RX + 7, BASE_Y], radius=6, fill=(170, 175, 190))
     d.rounded_rectangle([150, BASE_Y, 570, BASE_Y + 46], radius=10, fill=(176, 124, 74))
-    text(d, (360, BASE_Y + 23), "đế gỗ", 32, WHITE)
+    text(d, (360, BASE_Y + 23), "đế", 36, WHITE)
 
 def ring(d, ybot, top_pole):
     """Vong nam cham nhin ngang: nua tren / nua duoi la hai mat cuc; que xuyen qua lo (net dut)."""
@@ -86,9 +86,9 @@ def forces(d, dmm, mode, alpha=1.0):
 
 def readout(d, dmm_txt, state, scol=INK, note=None):
     card(d, (770, 330, 1040, 700), fill=WHITE, outline=LIGHT, r=26, w=3)
-    text(d, (905, 372), "khoảng cách d", 34, INK)
+    text(d, (905, 372), "khoảng cách", 36, INK)
     text(d, (905, 446), dmm_txt, 60, INK)
-    f = F(34); yy = 524
+    f = F(36); yy = 524
     for l in wrap(d, state, f, 240):
         dtext(d, (905, yy), l, f, scol); yy += 44
     if note:
@@ -105,35 +105,26 @@ def apparatus(d, dmm, band=0.0, push=False):
     if push:
         yt = up_bot(dmm) - RH
         arrow(d, (RX + 90, yt - 120), (RX + 90, yt - 12), MUTED, w=8, head=24)
-        text(d, (RX + 120, yt - 90), "tay ép xuống", 34, INK, anchor="lm")
+        text(d, (RX + 120, yt - 90), "tay ép", 36, INK, anchor="lm")
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("dính luôn vào vòng dưới, nằm yên",
-        "bật lên, rồi lơ lửng cách vòng dưới",
-        "bay vọt khỏi đầu que, rơi ra ngoài",
-        "trượt dần xuống, nằm sát vòng dưới")
+OPTS = ("dính vào vòng dưới",
+        "bật lên, lơ lửng",
+        "bay khỏi que",
+        "trượt xuống sát")
 
 def s_hook(img, d, t, sc):
     apparatus(d, 2, push=True)
-    text(d, (905, 560), "hai mặt N", 36, INK); text(d, (905, 606), "quay vào nhau", 34, INK, bold=False)
     M = sc["M"]; a = appear(t, M[1] - 0.2, 0.5)
-    kd = appear(t, 0.5, 0.5) * (1 - a)
-    if kd > 0.02:
-        card(d, (50, 1000, 1030, 1560), fill=A(WHITE, kd), outline=A(LIGHT, kd), w=4)
-        text(d, (W / 2, 1060), "Dụng cụ", 42, NAVY, alpha=kd)
-        for j, s in enumerate(("• 2 nam châm vòng, cùng cực đối nhau", "• que thẳng đứng cắm trên đế gỗ",
-                               "• đai nhựa (dùng ở bước sau)")):
-            text(d, (100, 1160 + j * 100), s, 40, INK, anchor="lm", alpha=kd * appear(t, 0.7 + 0.3 * j, 0.4))
     if a <= 0: return
     y0 = 1000 + (1 - a) * 40
     card(d, (50, y0, 1030, y0 + 600), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
     card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 88), fill=A(PURPLE, a), r=31)
     text(d, (W / 2, y0 + 57), "DỰ ĐOÁN", 36, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 140), "Ép sát hai vòng rồi buông tay.", 40, INK, alpha=a)
-    text(d, (W / 2, y0 + 192), "Không có đai, vòng trên sẽ…", 40, INK, alpha=a)
+    text(d, (W / 2, y0 + 150), "Vòng trên sẽ…", 44, INK, alpha=a)
     for j, s in enumerate(OPTS):
-        k = appear(t, M[1] + 0.15 * j, 0.4); yy = y0 + 270 + j * 76
+        k = appear(t, M[1] + 0.15 * j, 0.4); yy = y0 + 250 + j * 80
         d.rounded_rectangle([90, yy - 30, 990, yy + 30], radius=30, outline=A(LIGHT, k), width=3)
         text(d, (120, yy), f"{'ABCD'[j]}.  {s}", 36, NAVY, bold=False, anchor="lm", alpha=k)
     tc, tend = M[1] + 0.8, sc["T"] - 0.3
@@ -166,7 +157,7 @@ def u_of(t, sc):
                            [0, U[0], U[1], U[2], U[3], U[4], U[5], U[6], 1.0]))
 
 def chips(d, cur):
-    for j, s in enumerate(("1. Thả tự do", "2. Ép rồi thả", "3. Siết đai")):
+    for j, s in enumerate(("Thả", "Ép rồi thả", "Siết đai")):
         x0 = 60 + j * 330; box = (x0, 240, x0 + 300, 296)
         if j == cur: card(d, box, fill=ORANGE, r=28); text(d, (x0 + 150, 268), s, 32, WHITE)
         elif j < cur: card(d, box, fill=LIGHT, r=28); text(d, (x0 + 150, 268), s, 32, INK)
@@ -184,8 +175,6 @@ def plot(d, box, u):
     for v, col in ((D_EQ, GREEN), (D_BAND, (22, 120, 60))):
         dashed(d, (x0, Y(v)), (x1, Y(v)), A(col, 0.7), w=3)
         text(d, (x0 - 14, Y(v)), str(v), 34, col, anchor="rm")
-    for uu, lab in (((U[0] + U[2]) / 2, "thả"), ((U[2] + U[5]) / 2, "ép rồi thả"), ((U[5] + 1) / 2, "siết đai")):
-        text(d, (X(uu), y1 - 22), lab, 32, INK, bold=False)
     if u > 0:
         us = [k / 500 * u for k in range(501)]
         d.line([(X(v), Y(d_of(v))) for v in us], fill=ORANGE, width=7, joint="curve")
@@ -195,25 +184,25 @@ def s_do(img, d, t, sc):
     u = u_of(t, sc); dm = d_of(u)
     a, b, c, e, f, g, h = U
     band = clamp((u - g) / 0.04)
-    if u < a: st, txt, col = "tay giữ vòng trên", "", MUTED
-    elif u < b: st, txt, col = "dao động dọc que", "", ORANGE
-    elif u < c: st, txt, col = "lơ lửng, cân bằng trọng lượng", "18 mm", GREEN
-    elif u < e: st, txt, col = "tay ép sát", "", MUTED
+    if u < a: st, txt, col = "tay giữ", "", MUTED
+    elif u < b: st, txt, col = "dao động", "", ORANGE
+    elif u < c: st, txt, col = "lơ lửng", "18 mm", GREEN
+    elif u < e: st, txt, col = "tay ép", "", MUTED
     elif u < f: st, txt, col = "bật lên", "", ORANGE
-    elif u < g: st, txt, col = "bật về khoảng cách cân bằng", "18 mm", GREEN
-    elif u < h: st, txt, col = "đai siết lại", "", ORANGE
-    else: st, txt, col = "ép sát, cả cụm đứng yên", "5 mm", (22, 120, 60)
+    elif u < g: st, txt, col = "cân bằng", "18 mm", GREEN
+    elif u < h: st, txt, col = "đai siết", "", ORANGE
+    else: st, txt, col = "đứng yên", "5 mm", (22, 120, 60)
     chips(d, max(0, cur_cap(sc, t)))
     apparatus(d, dm, band=band, push=(c <= u < e))
     settled = txt != ""
     if settled: bracket(d, int(txt.split()[0]))
     forces(d, dm, "band" if u >= h else "free", alpha=1.0 if settled else 0.0)
-    readout(d, txt if txt else "…", st, col, note="P nhỏ so với F, không vẽ" if u >= h else None)
+    readout(d, txt if txt else "…", st, col, note="P nhỏ, không vẽ" if u >= h else None)
     card(d, (40, 995, 1040, 1610), fill=WHITE, outline=LIGHT, w=3)
     plot(d, (210, 1020, 960, 1600), u)
 
 # ---------------- canh 3: Dap an + rut ra ----------------
-ROWS = [("Thả tự do", 18, "lơ lửng"), ("Ép sát rồi thả", 18, "bật về"), ("Có đai siết", 5, "đứng yên")]   # so_lieu_mau
+ROWS = [("Thả", 18, "lơ lửng"), ("Ép rồi thả", 18, "bật về"), ("Có đai", 5, "đứng yên")]   # so_lieu_mau
 
 def proton(d, x, y, r, alpha=1.0):
     dot(d, x, y, r, A(RED, alpha), outline=A(WHITE, alpha))
@@ -242,7 +231,7 @@ def s_dapan(img, d, t, sc):
     text(d, (W / 2, 278), "ĐÁP ÁN B", 36, WHITE, alpha=ka)
     y = 330
     card(d, (40, y, 1040, y + 330), fill=WHITE, outline=LIGHT, w=3)
-    for x, s, an in ((80, "Cấu hình", "lm"), (700, "d (mm)", "mm"), (900, "Trạng thái", "mm")):
+    for x, s, an in ((700, "d (mm)", "mm"),):
         text(d, (x, y + 44), s, 34, INK, anchor=an)
     d.line([(70, y + 76), (1010, y + 76)], fill=LIGHT, width=3)
     for j, (nm, dm, st) in enumerate(ROWS):
@@ -256,17 +245,14 @@ def s_dapan(img, d, t, sc):
     # co che: day nhau -> phai co luc giu
     k1 = appear(t, M[0] + 1.3, 0.5)
     card(d, (40, 690, 1040, 900), fill=A(WHITE, k1), outline=A(GREEN, k1), w=5)
-    ctext(d, 750, "Thiếu lực giữ: hai vật đẩy nhau luôn tách ra", 38, INK, maxw=900, alpha=k1)
-    ctext(d, 840, "Đai siết: vẫn đẩy nhau mà cả cụm đứng yên", 38, (22, 120, 60), maxw=900, alpha=k1)
+    ctext(d, 795, "Không đai: đẩy nhau, tách ra", 42, INK, maxw=900, alpha=k1)
     # lien he hat nhan
-    k2 = appear(t, M[2] + 0.1, 0.5)
+    k2 = appear(t, M[1] + 0.1, 0.5)
     card(d, (40, 930, 1040, 1610), fill=A(WHITE, k2), outline=A(NAVY, k2), w=5)
-    text(d, (W / 2, 990), "Trong hạt nhân", 42, NAVY, alpha=k2)
     nucleus_pair(d, W / 2, 1180, k2)
     text(d, (W / 2 - 240, 1060), "đẩy tĩnh điện", 36, RED, alpha=k2)
     text(d, (W / 2 + 240, 1060), "đẩy tĩnh điện", 36, RED, alpha=k2)
-    text(d, (W / 2, 1360), "lực hạt nhân: hút, mạnh hơn hẳn", 38, GREEN, alpha=k2)
-    ctext(d, 1480, "Lực giữ các nuclôn không phải lực tĩnh điện", 38, INK, maxw=900, alpha=appear(t, M[2] + 0.8, 0.5))
+    text(d, (W / 2, 1380), "lực hạt nhân: hút", 44, GREEN, alpha=k2)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
@@ -275,11 +261,8 @@ def s_bay(img, d, t, sc):
     # hinh minh hoa ngay tu dau canh
     card(d, (40, 250, 1040, 960), fill=WHITE, outline=LIGHT, w=3)
     nucleus_pair(d, W / 2, 520, 1.0, strong=False, grav=True)
-    text(d, (W / 2 - 240, 400), "điện: đẩy", 36, RED); text(d, (W / 2 + 240, 400), "điện: đẩy", 36, RED)
-    text(d, (W / 2, 650), "hấp dẫn: quá nhỏ", 36, INK)
-    dashed(d, (120, 760), (960, 760), A(GRAY, 0.8), w=3)
-    dot(d, 180, 760, 22, BLUE); text(d, (180, 762), "e", 30, WHITE)
-    ctext(d, 860, "êlectron ở vỏ, cách rất xa hạt nhân", 36, INK, maxw=900)
+    text(d, (W / 2 - 240, 400), "điện: đẩy", 40, RED); text(d, (W / 2 + 240, 400), "điện: đẩy", 40, RED)
+    text(d, (W / 2, 680), "hấp dẫn: quá nhỏ", 40, INK)
     a1 = appear(t, 0.2, 0.45) * (1 - k2)
     if a1 > 0:
         y0 = 1000
@@ -287,26 +270,20 @@ def s_bay(img, d, t, sc):
         pw = tw(d, "BẪY", F(38)) + 52
         card(d, (W / 2 - pw / 2, y0 + 30, W / 2 + pw / 2, y0 + 94), fill=A(RED, a1), r=32)
         text(d, (W / 2, y0 + 62), "BẪY", 38, WHITE, alpha=a1)
-        q = "“Lực điện hay hấp dẫn giữ các prôtôn”"
+        q = "“Lực điện giữ prôtôn”"
         ks = clamp((t - 1.0) / 0.4)
         f = F(40); lw = tw(d, q, f); yy = y0 + 170
         text(d, (W / 2, yy), q, 40, mix(INK, MUTED, ks), alpha=a1)
         if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.8 * a1), width=4)
-        ctext(d, y0 + 300, "Sai: giữa hai prôtôn, lực điện chỉ đẩy.", 44, RED, maxw=900, alpha=a1 * appear(t, 1.3, 0.5))
-        text(d, (W / 2, y0 + 420), "Hấp dẫn: quá nhỏ.", 42, INK, alpha=a1 * appear(t, 1.8, 0.5))
-        text(d, (W / 2, y0 + 500), "Êlectron: ở ngoài vỏ, rất xa.", 42, INK, alpha=a1 * appear(t, 2.1, 0.5))
+        ctext(d, y0 + 340, "Sai: lực điện chỉ đẩy.", 48, RED, maxw=900, alpha=a1 * appear(t, 1.5, 0.5))
     if k2 > 0:
         y0 = 1000 + (1 - k2) * 30
         card(d, (40, y0, 1040, y0 + 600), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 62), "Thí nghiệm chưa nói được", 42, NAVY, alpha=k2)
+        text(d, (W / 2, y0 + 62), "Thí nghiệm chưa nói được", 46, NAVY, alpha=k2)
         kk = k2 * appear(t, M[1] + 0.2, 0.4)
-        card(d, (70, y0 + 115, 1010, y0 + 345), fill=A((254, 242, 242), kk), outline=A(RED, kk), r=24, w=4)
-        text(d, (W / 2, y0 + 170), "Đai bó từ ngoài KHÁC lực hạt nhân", 42, RED, alpha=kk)
-        text(d, (W / 2, y0 + 240), "Lực hạt nhân hút trực tiếp", 40, INK, alpha=kk)
-        text(d, (W / 2, y0 + 296), "giữa các nuclôn sát nhau", 40, INK, alpha=kk)
-        kk = k2 * appear(t, M[1] + 0.6, 0.4)
-        text(d, (90, y0 + 420), "• 18 mm, 5 mm: chỉ là số minh hoạ", 40, INK, anchor="lm", alpha=kk)
-        text(d, (90, y0 + 500), "• Chưa đo được độ lớn lực", 40, INK, anchor="lm", alpha=kk)
+        card(d, (70, y0 + 150, 1010, y0 + 450), fill=A((254, 242, 242), kk), outline=A(RED, kk), r=24, w=4)
+        ctext(d, y0 + 235, "Đai bó ngoài", 48, RED, alpha=kk)
+        ctext(d, y0 + 305, "khác lực hạt nhân", 48, RED, alpha=kk)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def heli(d, t, k):
@@ -320,9 +297,9 @@ def heli(d, t, k):
     text(d, (cx + 150, cy), "heli", 38, INK, anchor="lm", alpha=k)
 
 def s_end(img, d, t, sc):
-    chot_hoi(d, t, sc, "Đẩy nhau mà vẫn đứng yên: phải có lực giữ lại",
-             "Hạt nhân heli có 2 prôtôn đẩy nhau. Lực nào giữ chúng lại? Vì sao không phải lực điện?",
-             "Hai prôtôn: lực điện hút hay đẩy?", body=heli)
+    chot_hoi(d, t, sc, "Đẩy nhau mà đứng yên: cần lực giữ",
+             "Heli có 2 prôtôn đẩy nhau. Lực nào giữ chúng?",
+             "Lực điện hút hay đẩy?", body=heli)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -336,20 +313,18 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-nllk-01", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Năng lượng liên kết hạt nhân · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Hai nam châm vòng trên một que", draw=s_hook, tail=0.8, caps=[
-   ("Hai vòng nam châm, mặt N quay vào nhau.", 3.0),
-   ("Ép sát hai vòng rồi buông tay ra.", 3.2),
-   ("Dừng lại vài giây, chọn A, B, C hay D.", 3.4)]),
+   ("Hai mặt N đối nhau; ép sát rồi buông.", 3.0),
+   ("Dừng video, chọn A, B, C hay D.", 4.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.8, caps=[
-   ("Thả tự do: đo khoảng cách d.", 3.6),
-   ("Ép sát rồi thả: vòng trên bật về 18 mm.", 3.8),
-   ("Siết đai: hai vòng chỉ còn cách 5 mm.", 3.4)]),
+   ("Thả tự do, nhìn khoảng cách d.", 3.6),
+   ("Ép sát rồi buông tay.", 3.8),
+   ("Siết đai quanh hai vòng.", 3.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.7, caps=[
-   ("Ép sát vẫn bật về. Đáp án B.", 2.8),
-   ("Không có gì giữ, hai vòng luôn tách ra.", 3.2),
-   ("Hạt nhân: lực hạt nhân giữ các prôtôn.", 3.4)]),
+   ("Ép sát vẫn bật về.", 4.0),
+   ("Hạt nhân cũng cần lực giữ.", 5.5)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Bẫy: tưởng lực điện giữ được prôtôn.", 3.8),
-   ("Thí nghiệm này chưa nói được gì?", 4.8)]),
+   ("Bẫy thường gặp.", 4.0),
+   ("Giới hạn thí nghiệm.", 4.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=1.1, caps=[
-   ("Thử nghĩ: lực nào giữ 2 prôtôn của heli?", 4.4)]),
+   ("Dừng video, tự trả lời.", 8.0)]),
 ])

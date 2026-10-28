@@ -22,11 +22,11 @@ HOT_W = (253, 196, 160); COLD_W = (186, 216, 252)
 def wcol(tc): return mix(COLD_W, HOT_W, clamp((tc - 20) / 40))
 
 
-def tag(d, alpha=1.0):
-    """Nhan 'So lieu minh hoa' duoi tieu de (JSON ghi so lieu minh hoa)."""
-    s = "Số liệu minh hoạ"; wd = tw(d, s, F(32, False)) + 44
+def tag(d, alpha=1.0, full=False):
+    """Nhan 'So lieu minh hoa' duoi tieu de (JSON ghi so lieu minh hoa); chi canh do ghi day du, canh khac ghi 'Minh hoạ'."""
+    s = "Số liệu minh hoạ" if full else "Minh hoạ"; wd = tw(d, s, F(36, False)) + 44
     card(d, (W / 2 - wd / 2, 226, W / 2 + wd / 2, 276), fill=A((241, 238, 230), alpha), r=25)
-    text(d, (W / 2, 251), s, 32, MUTED, bold=False, alpha=alpha)
+    text(d, (W / 2, 251), s, 36, MUTED, bold=False, alpha=alpha)
 
 
 # ---------------- hinh hoc: coc nghieng, mat nuoc luon nam ngang ----------------
@@ -81,7 +81,7 @@ def beaker(d, piv, w, h, ang, fill, col, steam_t=None):
 
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. khoảng 20 °C", "B. khoảng 33 °C", "C. khoảng 40 °C", "D. khoảng 60 °C")
+OPTS = ("A. 20 °C", "B. 33 °C", "C. 40 °C", "D. 60 °C")
 BW, BH = 220, 300
 
 
@@ -97,8 +97,7 @@ def s_hook(img, d, t, sc):
     if k <= 0: return
     card(d, (60, 940, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 995), "Dự đoán", 46, PURPLE, alpha=k)
-    ctext(d, 1110, "Đổ cả hai vào một ca, đậy nắp, khuấy đều.\nNhiệt kế dừng ở khoảng bao nhiêu?", 42, INK, alpha=k,
-          lh=1.3)
+    ctext(d, 1130, "Nhiệt kế dừng ở khoảng bao nhiêu?", 48, INK, alpha=k)
     for i, s in enumerate(OPTS):
         a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
         x0 = 110 + (i % 2) * 440; y = 1290 + (i // 2) * 116
@@ -114,14 +113,14 @@ CX0, CX1, CY0, CY1 = 120, 480, 520, 900          # ca tron (thanh ngoai)
 PRB_X = 170                                       # que do nhiet ke dien tu
 SCR = (650, 590, 1010, 880)                       # man hinh nhiet ke
 # moc trong canh (giay)
-P_MOVE, P_TILT, P_END = 3.4, 4.1, 5.8              # nhac coc, nghieng, rot het
-P_LID = 5.9                                        # day nap + bat dau khuay
-P_READ = 8.6                                      # so dung yen (truoc phu de 4 doc 32,9)
+P_MOVE, P_TILT, P_END = 2.9, 3.6, 5.3              # nhac coc, nghieng, rot het
+P_LID = 5.4                                        # day nap + bat dau khuay
+P_READ = 8.2                                      # so dung yen (truoc phu de 4 doc 32,9)
 
 
 def mix_k(t):
     """0 -> 1: muc do hai phan tien ve nhau (sau khi rot, khuay)."""
-    return ease((t - 5.6) / (8.1 - 5.6))
+    return ease((t - 5.2) / (7.7 - 5.2))
 
 
 def ca(d, t, level, tc, lid, stir):
@@ -131,7 +130,7 @@ def ca(d, t, level, tc, lid, stir):
     d.rectangle([ix0, wy, ix1, ib], fill=wcol(tc))
     d.line([(ix0, wy), (ix1, wy)], fill=(120, 160, 215), width=4)
     d.line([(CX0, CY0), (CX0, CY1), (CX1, CY1), (CX1, CY0)], fill=(110, 125, 150), width=8, joint="curve")
-    text(d, ((CX0 + CX1) / 2, CY1 + 40), "ca trộn", 34, INK, bold=False)
+    text(d, ((CX0 + CX1) / 2, CY1 + 40), "ca trộn", 36, INK, bold=False)
     # que khuay
     if lid > 0:
         sx = 390 + 30 * math.sin(stir * 2 * math.pi * 1.4)
@@ -147,7 +146,7 @@ def ca(d, t, level, tc, lid, stir):
 
 def screen(d, s, sub=None):
     card(d, SCR, fill=WHITE, outline=LIGHT, r=28, w=4)
-    text(d, ((SCR[0] + SCR[2]) / 2, SCR[1] + 46), "Nhiệt kế", 34, MUTED, bold=False)
+    text(d, ((SCR[0] + SCR[2]) / 2, SCR[1] + 46), "Nhiệt kế", 36, MUTED, bold=False)
     d.rounded_rectangle([SCR[0] + 30, SCR[1] + 84, SCR[2] - 30, SCR[1] + 200], radius=16, fill=NAVY)
     text(d, ((SCR[0] + SCR[2]) / 2, SCR[1] + 142), s, 64, (134, 239, 172))
     text(d, ((SCR[0] + SCR[2]) / 2, SCR[1] + 246), sub or "°C", 34, MUTED, bold=False)
@@ -172,7 +171,7 @@ def marker(d, tc, y, col, lab, up=True, alpha=1.0, r=18):
 
 def s_do(img, d, t, sc):
     IMG_REF[0] = img
-    tag(d)
+    tag(d, full=True)
     # coc nuoc nong: nhac len, nghieng, rot het roi mo di
     mv = ease((t - P_MOVE) / (P_TILT - P_MOVE))
     tl = ease((t - P_TILT) / (P_END - P_TILT - 0.6))
@@ -196,11 +195,9 @@ def s_do(img, d, t, sc):
     if t < P_TILT + 0.4: screen(d, f1(T2))
     elif t < P_READ: screen(d, "···")
     else: screen(d, f1(TCB_DO))
-    if P_LID + 0.4 < t < P_READ:
-        text(d, (830, SCR[3] + 40), "khuấy, đợi số đứng yên", 34, ORANGE)
     # thang nhiet do: hai phan tien ve nhau
     card(d, (60, 960, 1020, 1240), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (100, 1000), "Nhiệt độ hai phần nước", 34, MUTED, anchor="lm")
+    text(d, (100, 1000), "Hai phần nước", 36, MUTED, anchor="lm")
     scale(d)
     if t >= P_READ:
         marker(d, TCB_DO, SY, GREEN, f1(TCB_DO), r=22)
@@ -209,8 +206,6 @@ def s_do(img, d, t, sc):
             arrow(d, (SXv(t_hot) - 28, SY - 34), (SXv(t_cold) + 28, SY - 34), ORANGE, w=5, head=16)
         marker(d, t_hot, SY, RED, "nóng" if k_mix < 0.45 else None)
         marker(d, t_cold, SY, BLUE, "lạnh" if k_mix < 0.45 else None)
-    if 0.04 < k_mix < 0.98 and t < P_READ:
-        text(d, (W / 2, 1200), "nhiệt năng: nóng → lạnh", 34, ORANGE)
     # bang so lieu
     card(d, (60, 1270, 1020, 1600), fill=WHITE, outline=NAVY, w=4)
     xs = [260, 610, 860]
@@ -252,21 +247,20 @@ def s_ans(img, d, t, sc):
     tag(d)
     k = back((t - 0.15) / 0.5) if t > 0.15 else 0
     card(d, (60, 300, 1020, 396), fill=(220, 252, 231), outline=GREEN, w=5)
-    text(d, (W / 2, 348), "Đáp án B: khoảng 33 °C (đo 32,9)", int(46 * clamp(k, 0.3, 1.0)), GREEN)
+    text(d, (W / 2, 348), "Đáp án B: 32,9 °C", int(48 * clamp(k, 0.3, 1.0)), GREEN)
     hl1 = M[0] - 0.1 <= t < M[1] - 0.1
-    panel(d, t, 420, "100 g nóng + 100 g lạnh", EQ_TCB, 100, 100, hl1, appear(t, 0.3))
-    panel(d, t, 780, "100 g nóng + 200 g lạnh", TCB_DO, M1, M2, M[1] - 0.1 <= t < M[2] - 0.1, appear(t, 0.5))
+    panel(d, t, 420, "100 g + 100 g", EQ_TCB, 100, 100, hl1, appear(t, 0.3))
+    panel(d, t, 780, "100 g + 200 g", TCB_DO, M1, M2, M[1] - 0.1 <= t < M[2] - 0.1, appear(t, 0.5))
     if t > M[0] - 0.1:   # vach trung binh cong o hang 1
         ka = appear(t, M[0] + 0.3)
         y = 600
         text(d, (SXv(EQ_MH) + 64, y - 52), "giữa: 40,0", 34, MUTED, anchor="lm", alpha=ka)
-    for i, (s, col, at) in enumerate((("Luôn nằm giữa 20 °C và 60 °C", INK, 0.7),
-                                       ("Lệch về phía phần nước nhiều hơn", BLUE, M[1] - 0.1),
-                                       ("Nóng → lạnh; cùng nhiệt độ thì dừng", GREEN, M[2] - 0.1))):
-        a = appear(t, at, 0.4); y0 = 1150 + i * 150
+    for i, (s, col, at) in enumerate((("Lệch về phía nước nhiều", BLUE, M[1] - 0.1),
+                                       ("Dừng khi cùng nhiệt độ", GREEN, M[2] - 0.1))):
+        a = appear(t, at, 0.4); y0 = 1190 + i * 190
         if a <= 0: continue
         card(d, (60, y0, 1020, y0 + 130), fill=A(WHITE, a), outline=A(col, a), w=4, r=26)
-        text(d, (W / 2, y0 + 65), s, 40, col, alpha=a)
+        text(d, (W / 2, y0 + 65), s, 46, col, alpha=a)
 
 
 # ---------------- canh 4: bay + sai so + chua noi duoc gi ----------------
@@ -275,11 +269,11 @@ def s_trap(img, d, t, sc):
     M = sc["M"]
     tag(d)
     card(d, (60, 300, 1020, 396), fill=(254, 226, 226), outline=RED, w=5)
-    text(d, (W / 2, 348), "Bẫy: “luôn là trung bình cộng”", 42, RED)
+    text(d, (W / 2, 348), "Bẫy: trung bình cộng", 46, RED)
     # thang phong to 30-42 °C: 40,0 (gach), 33,3 tinh theo mo hinh, 32,9 do (cach nhau ~27 px)
     ZX = lambda tc: 150 + (tc - 30) / 12 * 780
     card(d, (60, 420, 1020, 724), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (W / 2, 458), "Phóng to 30–42 °C · 100 g nóng + 200 g lạnh", 34, MUTED)
+    text(d, (W / 2, 458), "30–42 °C", 38, MUTED)
     y = 620
     d.line([(ZX(30), y), (ZX(42), y)], fill=NAVY, width=5)
     for tc in range(30, 43, 2):
@@ -304,34 +298,21 @@ def s_trap(img, d, t, sc):
         dot(d, c, y, 12, A(GREEN, a2), outline=WHITE)
         d.line([(c, y - 14), (c - 30, y - 52)], fill=A(GREEN, a2), width=3)
         text(d, (c - 36, y - 66), "32,9 đo", 36, GREEN, anchor="rm", alpha=a2)
-    # cong thuc
-    card(d, (60, 744, 1020, 1010), fill=WHITE, outline=BLUE, w=4)
-    rich(d, W / 2, 800, "t_{cb} = (m_{1}t_{1} + m_{2}t_{2}) : (m_{1} + m_{2})", 54, INK)
-    rich(d, W / 2, 876, "= (100·60 + 200·20) : 300 = 33,3 °C", 42, BLUE, alpha=a1)
-    text(d, (W / 2, 956), "Chỉ là trung bình cộng khi hai khối lượng bằng nhau", 36, INK, bold=False)
     # vung duoi doi the: bay -> sai so -> chua noi duoc
-    k1 = appear(t, 0.3, 0.4); k2 = appear(t, M[1] - 0.2, 0.4); k3 = appear(t, M[2] - 0.1, 0.4)
-    b1 = k1 * (1 - k2); b2 = k2 * (1 - k3)
-    y0 = 1040
+    k1 = appear(t, 0.3, 0.4); k3 = appear(t, M[2] - 0.1, 0.4)
+    b1 = k1 * (1 - k3)
+    y0 = 780
     if b1 > 0:
-        card(d, (60, y0, 1020, y0 + 560), fill=A(WHITE, b1), outline=A(RED, b1), w=5)
-        text(d, (W / 2, y0 + 60), "Cái bẫy", 42, RED, alpha=b1)
-        ctext(d, y0 + 190, "Lấy (60 + 20) : 2 = 40,0 °C\nmà quên khối lượng → SAI", 42, INK, alpha=b1, lh=1.3)
-        ctext(d, y0 + 400, "Phần nước nhiều hơn\nkéo nhiệt độ về phía nó", 42, GREEN, alpha=b1, lh=1.3)
-    if b2 > 0:
-        card(d, (60, y0, 1020, y0 + 560), fill=A(WHITE, b2), outline=A(ORANGE, b2), w=5)
-        text(d, (W / 2, y0 + 60), "Sai số hay gặp", 42, ORANGE, alpha=b2)
-        ctext(d, y0 + 190, "Đo 32,9 thấp hơn tính 33,3:\nca và không khí cũng nhận nhiệt", 40, INK, alpha=b2, lh=1.3)
-        ctext(d, y0 + 400, "Giảm: ca xốp có nắp,\nđọc ngay khi số đứng yên", 40, GREEN, alpha=b2, lh=1.3)
+        card(d, (60, y0, 1020, y0 + 520), fill=A(WHITE, b1), outline=A(RED, b1), w=5)
+        ctext(d, y0 + 150, "(60 + 20) : 2 = 40,0 → SAI", 52, RED, alpha=b1)
+        ctext(d, y0 + 340, "Nước nhiều kéo về phía nó", 52, GREEN, alpha=b1)
     if k3 > 0:
-        card(d, (60, y0, 1020, y0 + 560), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
-        text(d, (W / 2, y0 + 60), "Thí nghiệm chưa nói được", 42, NAVY, alpha=k3)
-        for j, (h, s) in enumerate((("Nhiệt ca, không khí nhận", "chưa đo riêng được"),
-                                    ("Trộn hai chất khác nhau", "cần thêm nhiệt dung riêng"))):
-            yy = y0 + 170 + j * 190
-            text(d, (110, yy), "•", 44, NAVY, anchor="lm", alpha=k3)
-            text(d, (150, yy), h, 42, INK, anchor="lm", alpha=k3)
-            text(d, (150, yy + 62), s, 38, MUTED, anchor="lm", alpha=k3)
+        card(d, (60, y0, 1020, y0 + 520), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
+        text(d, (W / 2, y0 + 70), "Chưa nói được", 52, NAVY, alpha=k3)
+        for j, h in enumerate(("Nhiệt ca nhận bao nhiêu?", "Chất khác thì sao?")):
+            yy = y0 + 220 + j * 120
+            text(d, (110, yy), "•", 50, NAVY, anchor="lm", alpha=k3)
+            text(d, (160, yy), h, 48, INK, anchor="lm", alpha=k3)
 
 
 # ---------------- canh 5: chot + cau hoi ----------------
@@ -344,17 +325,17 @@ def s_end(img, d, t, sc):
         beaker(d, (250, 1000), 150, 190, 0, 0.8, wcol(60))
         beaker(d, (680, 1000), 150, 190, 0, 0.4, wcol(20))
         text(d, (W / 2, 1095), "+", 64, INK, alpha=k)
-        text(d, (325, 1236), "200 g nóng", 36, RED, alpha=k)
-        text(d, (755, 1236), "100 g lạnh", 36, BLUE, alpha=k)
+        text(d, (325, 1236), "200 g", 40, RED, alpha=k)
+        text(d, (755, 1236), "100 g", 40, BLUE, alpha=k)
 
-    chot_hoi(d, t, sc, "Nóng truyền sang lạnh, tới khi cùng nhiệt độ: cân bằng nhiệt",
-             "Trộn 200 g nước 60\u00a0°C với 100 g nước 20\u00a0°C. Nhiệt độ cuối gần 20\u00a0°C hay gần 60\u00a0°C? Vì sao?",
+    chot_hoi(d, t, sc, "Nóng truyền cho lạnh tới khi cân bằng nhiệt",
+             "Trộn 200 g nước 60\u00a0°C với 100 g nước 20\u00a0°C. Nhiệt độ cuối gần mức nào?",
              body=body)
     kh = appear(t, M[0] + 2.5, 0.5)              # goi y tu ve, hien tre ~2,5 s
     if kh <= 0: return
     card(d, (110, 1300, 970, 1540), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
     text(d, (W / 2, 1355), "Gợi ý", 40, ORANGE, alpha=kh)
-    ctext(d, 1460, "Nhớ lại ca 100 g nóng + 200 g lạnh", 40, INK, maxw=820, alpha=kh)
+    ctext(d, 1460, "Nhớ ca 100 g + 200 g.", 46, INK, maxw=820, alpha=kh)
 
 
 def _cues(clip):
@@ -368,21 +349,21 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-thangnhietdo-01", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
             footer="Thang nhiệt độ · thachlab.id.vn", scenes=[
  dict(key="hook", title="Trộn nước nóng với nước lạnh", draw=s_hook, tail=0.6, caps=[
-   ("100 g nước 60 °C, 200 g nước 20 °C.", 3.0),
-   ("Chọn một đáp án trước khi xem tiếp.", 7.5)]),
+   ("Trộn, khuấy đều.", 2.5),
+   ("Dừng video, chọn A–D.", 5.5)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Nước lạnh trong ca: nhiệt kế chỉ 20 °C.", 2.8),
-   ("Đổ nước nóng vào, đậy nắp, khuấy đều.", 2.8),
-   ("Nóng hạ dần, lạnh tăng dần, rồi gặp nhau.", 3.0),
-   ("Số đứng yên ở 32,9 °C: đáp án B.", 3.0)]),
+   ("Nước lạnh trong ca.", 2.5),
+   ("Đổ nước nóng, khuấy đều.", 2.9),
+   ("Nóng hạ, lạnh tăng.", 2.5),
+   ("Đáp án B.", 2.5)]),
  dict(key="ans", title="Vì sao là 32,9 °C?", draw=s_ans, tail=0.6, caps=[
-   ("Hai lượng bằng nhau: 39,1 °C, gần 40,0.", 3.0),
-   ("Lạnh gấp đôi: lệch hẳn về phía lạnh.", 3.0),
-   ("Nóng sang lạnh, cùng nhiệt độ thì dừng.", 3.0)]),
+   ("Hai khối bằng nhau.", 2.8),
+   ("Lạnh gấp đôi.", 2.8),
+   ("Nóng sang lạnh.", 2.8)]),
  dict(key="trap", title="Bẫy và sai số", draw=s_trap, tail=0.6, caps=[
-   ("Bẫy: lấy trung bình cộng 40 °C.", 2.8),
-   ("Đo 32,9 hơi thấp hơn tính 33,3.", 2.8),
-   ("Thí nghiệm này chưa nói được gì?", 3.6)]),
+   ("Nhìn vạch 40,0.", 3.0),
+   ("Đo thấp hơn tính.", 3.5),
+   ("Giới hạn thí nghiệm.", 3.5)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
-   ("Thử nghĩ: 200 g nóng với 100 g lạnh?", 4.4)]),
+   ("Dừng video, tự trả lời.", 6.5)]),
 ])

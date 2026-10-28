@@ -58,7 +58,7 @@ def rig(d, t, n, ang, reading, lit):
     card(d, (60, 265, 560, 455), fill=WHITE, outline=LIGHT, r=28, w=4)
     text(d, (310, 310), "Tốc độ quay", 36, MUTED, bold=False)
     text(d, (310, 385), f"n = {n} vòng/s" if n else "n = 0", 54, BLUE)  # n: so (vong/s) hoac "···" khi dang tang toc
-    if n: text(d, (310, 432), "(hình quay chậm lại)", 36, MUTED, bold=False)
+    if n: text(d, (310, 432), "(quay chậm lại)", 36, MUTED, bold=False)
     # tan so ke
     card(d, (600, 265, 1010, 600), fill=WHITE, outline=LIGHT, r=28, w=4)
     text(d, (805, 310), "Tần số kế", 36, MUTED, bold=False)
@@ -83,7 +83,7 @@ def s_hook(img, d, t, sc):
     if k <= 0: return
     card(d, (60, 1000, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1055), "Dự đoán", 46, PURPLE, alpha=k)
-    ctext(d, 1155, "Rô-to p = 2 cặp cực quay n = 25 vòng/s.\nTần số kế chỉ khoảng bao nhiêu?", 42, INK, alpha=k)
+    ctext(d, 1155, "n = 25 vòng/s.\nTần số kế chỉ bao nhiêu?", 46, INK, alpha=k)
     for i, s in enumerate(OPTS):
         a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
         x0 = 110 + (i % 2) * 440; y = 1300 + (i // 2) * 110
@@ -152,7 +152,7 @@ def s_ans(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]; k = back((t - 0.2) / 0.5) if t > 0.2 else 0
     card(d, (60, 250, 1020, 350), fill=(220, 252, 231), outline=GREEN, w=5)
-    text(d, (W / 2, 300), "Đáp án C: khoảng 50 Hz", int(46 * clamp(k, 0.3, 1.0)), GREEN)
+    text(d, (W / 2, 300), "Đáp án C", int(48 * clamp(k, 0.3, 1.0)), GREEN)
     x0, x1, yb, yt = 190, 950, 940, 470
     X = lambda n: x0 + n / 30 * (x1 - x0); Y = lambda f: yb - f / 60 * (yb - yt)
     card(d, (60, 380, 1020, 1050), fill=WHITE, outline=LIGHT, w=3)
@@ -178,7 +178,7 @@ def s_ans(img, d, t, sc):
     a1 = appear(t, M[2] - 0.9)
     if a1 <= 0: return
     card(d, (60, 1080, 1020, 1590), fill=A(WHITE, a1), outline=A(LIGHT, a1), w=3)
-    text(d, (W / 2, 1130), "Tỉ số f/n ở từng lần đo", 40, MUTED, alpha=a1)
+    text(d, (W / 2, 1130), "Tỉ số f/n", 44, MUTED, alpha=a1)
     vx = [160 + i * 190 for i in range(5)]
     for i, (n, f, r) in enumerate(ROWS):
         text(d, (vx[i], 1210), f"{fmt(f)}/{n}", 38, MUTED, bold=False, alpha=a1)
@@ -186,7 +186,7 @@ def s_ans(img, d, t, sc):
     c = appear(t, M[2] + 0.2, 0.3)
     card(d, (130, 1360, 950, 1550), fill=A((220, 252, 231), c), r=24)
     ctext(d, 1415, "f/n ≈ 2 = số cặp cực p", 50, GREEN, alpha=c)
-    ctext(d, 1495, "lệch chút ít: quay không đều", 38, MUTED, bold=False, alpha=c)
+    ctext(d, 1495, "lệch chút: quay không đều", 40, MUTED, bold=False, alpha=c)
 
 # ---------------- canh 4: co che - moi vong cho p chu ki ----------------
 WX0, WX1, WY = 150, 950, 1110
@@ -224,7 +224,7 @@ def s_trap(img, d, t, sc):
     M = sc["M"]; a = appear(t, 0.1)
     card(d, (60, 250, 1020, 520), fill=WHITE, outline=BLUE, w=6)
     text(d, (W / 2, 305), "Chưa nói được gì?", 44, BLUE, alpha=a)
-    ctext(d, 420, "Chỉ dùng một máy p = 2 cặp cực:\nchưa kiểm trực tiếp f tỉ lệ với p.", 40, INK, alpha=a, lh=1.25)
+    ctext(d, 420, "Chỉ một máy p = 2:\nchưa kiểm f tỉ lệ p.", 44, INK, alpha=a, lh=1.25)
     b = appear(t, 0.3)
     if b <= 0: return
     card(d, (60, 560, 1020, 1590), fill=A(WHITE, b), outline=A(RED, b), w=6)
@@ -244,16 +244,15 @@ def s_trap(img, d, t, sc):
     text(d, (W / 2, 1180), "f = 25 × 4 = 100 Hz  ✗", 46, RED, alpha=c1)
     c2 = appear(t, M[2] + 0.4)
     card(d, (110, 1250, 970, 1550), fill=A((220, 252, 231), c2), r=24)
-    ctext(d, 1320, "4 cực = 2 cặp → p = 2", 44, GREEN, alpha=c2)
+    ctext(d, 1320, "p = 2", 52, GREEN, alpha=c2)
     ctext(d, 1400, "f = 25 × 2 = 50 Hz  ✓", 50, GREEN, alpha=c2)
-    ctext(d, 1485, "khớp số đo 50,3 Hz", 38, MUTED, bold=False, alpha=c2)
 
 # ---------------- canh 6: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
-    chot_hoi(d, t, sc, "f = n·p (n tính bằng vòng/s, p là số cặp cực)",
-             "Máy có p = 2 cặp cực quay 900 vòng/phút. Tần số dòng điện bằng bao nhiêu?",
-             "đổi vòng/phút ra vòng/s")
+    chot_hoi(d, t, sc, "f = n·p (n vòng/s, p cặp cực)",
+             "p = 2, quay 900 vòng/phút. Tần số bằng bao nhiêu?",
+             "đổi ra vòng/s")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -267,24 +266,24 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-mayphatdien-01", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
     footer="Máy phát điện xoay chiều · thachlab.id.vn", scenes=[
  dict(key="hook", title="Máy phát mini và tần số", draw=s_hook, tail=0.6, caps=[
-   ("Rô-to là nam châm có 2 cặp cực.", 2.4),
-   ("Chọn một đáp án trước khi xem tiếp.", 5.6)]),
+   ("Quay rô-to, đọc tần số.", 2.4),
+   ("Chọn đáp án.", 5.6)]),
  dict(key="do", title="Quay nhanh dần, đọc tần số", draw=s_do, tail=0.6, caps=[
-   ("Đếm số vòng trong 10 s rồi chia 10 → n.", 2.6),
-   ("n = 5 vòng/s → f = 9,8 Hz.", 2.2),
-   ("Tăng dần n: 10, 15, 20 vòng/s.", 3.2),
-   ("n = 25 vòng/s → f = 50,3 Hz.", 2.4)]),
+   ("Đếm vòng trong 10 s.", 2.6),
+   ("n = 5 → f = 9,8 Hz.", 2.2),
+   ("Tăng n: 10, 15, 20.", 3.2),
+   ("n = 25 → f = 50,3 Hz.", 2.4)]),
  dict(key="ans", title="Đồ thị f theo n", draw=s_ans, tail=0.6, caps=[
-   ("Đáp án C: 25 vòng/s cho khoảng 50 Hz.", 2.6),
-   ("Các điểm nằm trên đường thẳng qua gốc.", 2.4),
-   ("f/n từ 1,96 đến 2,01: gần bằng p = 2.", 2.8)]),
+   ("C: khoảng 50 Hz.", 2.6),
+   ("Điểm nằm trên đường thẳng.", 2.4),
+   ("f/n gần bằng p = 2.", 2.8)]),
  dict(key="why", title="Vì sao f = n·p?", draw=s_why, tail=0.6, caps=[
-   ("Mỗi cặp cực N–S qua cuộn dây: 1 chu kì.", 2.5),
-   ("1 vòng quay cho p = 2 chu kì.", 2.5)]),
+   ("Mỗi cặp cực qua cuộn: 1 chu kì.", 3.0),
+   ("1 vòng = 2 chu kì.", 2.8)]),
  dict(key="trap", title="Giới hạn và cái bẫy", draw=s_trap, tail=0.6, caps=[
-   ("Chỉ một máy p = 2: chưa kiểm f theo p.", 2.4),
-   ("Bẫy: thấy 4 cực, lấy luôn p = 4.", 2.6),
-   ("4 cực là 2 cặp: f = 25 × 2 = 50 Hz.", 2.8)]),
+   ("Một máy duy nhất.", 2.4),
+   ("Bẫy: đếm cực.", 2.6),
+   ("4 cực = 2 cặp.", 2.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Thử nghĩ: quay 900 vòng/phút thì sao?", 4.2)]),
+   ("Thử nghĩ: bao nhiêu Hz?", 4.6)]),
 ])

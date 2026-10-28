@@ -121,7 +121,6 @@ def cover(d, alpha=1.0, mark=False):
     text(d, ((COV[0] + COV[2]) / 2, COV[3] - 36), "tấm che", 36, mix(NAVY, CARD, 0.2), bold=False, alpha=alpha)
     if mark:
         text(d, ((COV[0] + COV[2]) / 2, (COV[1] + COV[3]) / 2 - 10), "?", 150, WHITE, alpha=alpha)
-        text(d, ((COV[0] + COV[2]) / 2, (COV[1] + COV[3]) / 2 + 110), "đinh 2 mm ở đâu đó", 34, NAVY, alpha=alpha)
 
 def ring6(d, alpha):                   # vong ban kinh 6 mm = noi tam bi nam khi cham dinh
     if alpha <= 0.02: return
@@ -132,8 +131,8 @@ def nail(d, alpha=1.0):
     d.ellipse([NX - RN - 1, NY - RN - 1, NX + RN + 1, NY + RN + 1], fill=A(NAVY, alpha))
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("Lượt nào cũng lệch đi một chút", "Khoảng một nửa số lượt bị lệch",
-        "Đa số đi thẳng, vài lượt lệch mạnh", "Không lượt nào lệch vì đinh nhỏ")
+OPTS = ("Lượt nào cũng lệch nhẹ", "Khoảng nửa số lượt lệch",
+        "Đa số thẳng, vài lượt lệch mạnh", "Không lượt nào lệch")
 
 def s_hook(img, d, t, sc):
     table(d); cover(d, 1.0, mark=True)
@@ -148,8 +147,7 @@ def s_hook(img, d, t, sc):
     pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
     card(d, (W / 2 - pw / 2, y0 + 24, W / 2 + pw / 2, y0 + 86), fill=A(PURPLE, a), r=31)
     text(d, (W / 2, y0 + 55), "DỰ ĐOÁN", 36, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 136), "Lăn 60 lượt bi qua vùng có tấm che.", 40, INK, alpha=a)
-    text(d, (W / 2, y0 + 188), "Hướng bi đi ra sẽ thế nào?", 40, INK, alpha=a)
+    text(d, (W / 2, y0 + 165), "Hướng bi đi ra thế nào?", 46, INK, alpha=a)
     for j, s in enumerate(OPTS):
         k = appear(t, M[1] + 0.15 * j, 0.4); yy = y0 + 264 + j * 76
         d.rounded_rectangle([90, yy - 30, 990, yy + 30], radius=30, outline=A(LIGHT, k), width=3)
@@ -187,8 +185,8 @@ def table_runs(d, t, sc, live=True):
 
 def counter(d, n, m, fast):
     card(d, (50, 1040, 1030, 1250), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (290, 1090), "Số lượt đã lăn", 36, MUTED, bold=False)
-    text(d, (790, 1090), "Số lượt lệch mạnh", 36, MUTED, bold=False)
+    text(d, (290, 1090), "Đã lăn", 40, MUTED, bold=False)
+    text(d, (790, 1090), "Lệch mạnh", 40, MUTED, bold=False)
     text(d, (290, 1175), f"{n}/60", 72, INK)
     text(d, (790, 1175), str(m), 72, RED if m else INK)
     d.line([(540, 1070), (540, 1220)], fill=LIGHT, width=3)
@@ -204,11 +202,11 @@ def s_do(img, d, t, sc):
     counter(d, n, m, t > st[3] - 0.05 and n < 60)
     k = appear(t, 0.5, 0.4)
     card(d, (50, 1330, 1030, 1590), fill=A(WHITE, k), outline=A(LIGHT, k), w=3)
-    text(d, (100, 1395), "Ghi lại mỗi lượt:", 36, INK, anchor="lm", alpha=k)
+    text(d, (100, 1395), "Mỗi lượt:", 40, INK, anchor="lm", alpha=k)
     d.line([(110, 1470), (230, 1470)], fill=A((95, 92, 100), 0.6 * k), width=4)
-    text(d, (260, 1470), "lăn thẳng qua (xám)", 38, INK, bold=False, anchor="lm", alpha=k)
+    text(d, (260, 1470), "thẳng (xám)", 40, INK, bold=False, anchor="lm", alpha=k)
     d.line([(110, 1540), (230, 1540)], fill=A(RED, k), width=6); chevron(d, 230, 1540, 0, A(RED, k), s=16, w=5)
-    text(d, (260, 1540), "lệch mạnh, khác hướng trên 15° (đỏ)", 36, INK, bold=False, anchor="lm", alpha=k)
+    text(d, (260, 1540), "lệch >15° (đỏ)", 40, INK, bold=False, anchor="lm", alpha=k)
 
 # ---------------- canh 3: Dap an + rut ra ----------------
 def s_dapan(img, d, t, sc):
@@ -227,8 +225,7 @@ def s_dapan(img, d, t, sc):
             dashed(d, E, (lerp(E[0], C[0], kx), lerp(E[1], C[1], kx)), c, w=4)
         ka6 = appear(t, M[1] + 0.7, 0.4)
         ring6(d, ka6)
-        text(d, (NX + 30, NY - 82), "tâm bi khi", 34, NAVY, anchor="lm", alpha=ka6)          # goc tren-phai tam che: trong
-        text(d, (NX + 30, NY - 40), "chạm đinh", 34, NAVY, anchor="lm", alpha=ka6)
+        text(d, (NX + 30, NY - 40), "chạm đinh", 38, NAVY, anchor="lm", alpha=ka6)
         d.line([(NX + 24, NY - 30), (NX + RC * 0.75, NY - RC * 0.75)], fill=A(NAVY, ka6), width=3)
     for j, r in enumerate([r for r in RUNS if r["hit"]]):      # danh so 3 tia ra
         Z, v = r["pts"][-1], r["v"]; bx, by = Z[0] - 62 * v[0], Z[1] - 62 * v[1]
@@ -243,7 +240,7 @@ def s_dapan(img, d, t, sc):
             d.line([(COV[0], C[1]), C, E], fill=A(RED, kc), width=5)
             d.ellipse([C[0] - RB, C[1] - RB, C[0] + RB, C[1] + RB], outline=A(STEEL, kc), width=3)
         ring6(d, 1.0); nail(d, kc)
-        text(d, (NX + 30, NY - 150), "đinh 2 mm", 34, NAVY, anchor="lm", alpha=kc)
+        text(d, (NX + 30, NY - 150), "đinh 2 mm", 38, NAVY, anchor="lm", alpha=kc)
         d.line([(NX + 22, NY - 148), (NX + 2, NY - 6)], fill=A(NAVY, kc), width=3)
     ka = appear(t, M[0] + 0.1, 0.5)
     pw = tw(d, "ĐÁP ÁN C", F(36)) + 52
@@ -259,11 +256,11 @@ def s_dapan(img, d, t, sc):
     k1 = appear(t, M[2] + 0.4, 0.5); k2 = appear(t, M[3] + 0.1, 0.5)
     card(d, (50, 1245, 1030, 1600), fill=A(WHITE, k1), outline=A(GREEN, k1), w=5)
     text(d, (W / 2, 1292), "Rút ra", 38, GREEN, alpha=k1)
-    lines = (("• Bi lệch mạnh → có vật nhỏ, cứng chắn đường.", k1),
-             ("• 3/60 lượt lệch → vật chắn chỉ chắn", k1), ("   một phần nhỏ bề rộng vùng lăn.", k1),
-             ("• Lá vàng: alpha bật ngược → hạt nhân", k2), ("   rất nhỏ, rất nặng, mang điện dương.", k2))
+    lines = (("• Lệch mạnh → có vật nhỏ, cứng.", k1),
+             ("• 3/60 → vật chắn rất hẹp.", k1),
+             ("• Alpha bật ngược → hạt nhân.", k2))
     for j, (s, kk) in enumerate(lines):
-        text(d, (80, 1352 + j * 52), s, 36, INK, bold=False, anchor="lm", alpha=kk)
+        text(d, (80, 1360 + j * 56), s, 40, INK, bold=False, anchor="lm", alpha=kk)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
@@ -279,36 +276,34 @@ def s_bay(img, d, t, sc):
     lw = tw(d, q, F(40)); yy = y0 + 150
     text(d, (W / 2, yy), q, 40, mix(INK, GRAY, ks), alpha=k1)
     if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.8 * k1), width=4)
-    text(d, (W / 2, y0 + 235), "Cùng 60 lượt, vùng lăn 20 cm:", 38, INK, alpha=k1)
     for j, (lab, n) in enumerate((("đinh 2 mm", 3), ("đinh 6 mm", 6))):
         yy = y0 + 325 + j * 95
         text(d, (80, yy), lab, 38, INK, anchor="lm", alpha=k1)
         d.rounded_rectangle([290, yy - 26, 770, yy + 26], radius=26, fill=A(LIGHT, k1))
         d.rounded_rectangle([290, yy - 26, 290 + 480 * n / 6 * ease((t - 0.4) / 0.7), yy + 26], radius=26, fill=A(RED, k1))
-        text(d, (800, yy), f"{n}/60 lượt", 38, RED, anchor="lm", alpha=k1)
-    ctext(d, y0 + 560, "Sai: đinh to hơn chắn dải rộng hơn → tỉ lệ lệch lớn hơn.", 40, RED, maxw=900, alpha=appear(t, 1.6, 0.5))
+        text(d, (800, yy), f"{n}/60", 40, RED, anchor="lm", alpha=k1)
+    ctext(d, y0 + 560, "Sai: đinh to → lệch nhiều hơn.", 44, RED, maxw=900, alpha=appear(t, 1.6, 0.5))
     k2 = appear(t, M[1] - 0.1, 0.45)
     if k2 > 0:
         y0 = 925 + (1 - k2) * 30
         card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 58), "Thí nghiệm chưa nói được", 42, NAVY, alpha=k2)
+        text(d, (W / 2, y0 + 58), "Chưa nói được:", 44, NAVY, alpha=k2)
         ka = k2 * appear(t, M[1] + 0.3, 0.4); kb = k2 * appear(t, M[2] + 0.1, 0.4)
-        text(d, (80, y0 + 145), "• Mô hình bi chỉ lệch khi chạm cứng vào đinh;", 38, INK, bold=False, anchor="lm", alpha=ka)
-        text(d, (80, y0 + 199), "  hạt alpha không chạm hạt nhân, mà lệch do", 38, INK, bold=False, anchor="lm", alpha=ka)
+        text(d, (80, y0 + 145), "• Bi: va chạm cứng.", 40, INK, bold=False, anchor="lm", alpha=ka)
+        text(d, (80, y0 + 199), "• Alpha: không chạm.", 40, INK, bold=False, anchor="lm", alpha=ka)
         text(d, (W / 2, y0 + 290), "LỰC ĐIỆN ĐẨY", 56, PURPLE, alpha=kb)
-        text(d, (W / 2, y0 + 370), "của hạt nhân mang điện dương.", 40, INK, alpha=kb)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def _hint(d, t, k):                    # goi y tu ve, hien sau ~2,8 s (khong lo tang/giam)
     sc = SC["end"]; kh = appear(t, sc["M"][0] + 2.8, 0.5)
     if kh <= 0: return
     card(d, (110, 1290, 970, 1560), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
-    ctext(d, 1345, "Gợi ý", 38, ORANGE, alpha=kh)
-    ctext(d, 1450, "Đinh chắn một dải hẹp cố định. Dải đó chiếm bao nhiêu phần bề rộng vùng lăn?", 40, INK, maxw=800, alpha=kh)
+    ctext(d, 1345, "Gợi ý", 40, ORANGE, alpha=kh)
+    ctext(d, 1450, "Phần bề rộng bị chắn?", 44, INK, maxw=800, alpha=kh)
 
 def s_end(img, d, t, sc):
-    chot_hoi(d, t, sc, "Bi lệch mạnh chỉ ra một vật nhỏ, cứng nằm khuất",
-             "Giữ nguyên chiếc đinh, nới vùng lăn từ 20 cm lên 40 cm. Tỉ lệ lượt lệch tăng hay giảm? Vì sao?",
+    chot_hoi(d, t, sc, "Bi lệch mạnh: có vật nhỏ, cứng",
+             "Nới vùng lăn 20 → 40 cm: tỉ lệ lệch ra sao?",
              None, body=_hint)
 
 def _cues(clip):
@@ -324,24 +319,23 @@ def _cues(clip):
 
 SCENES = [
  dict(key="hook", title="Tìm vật bị che khuất", draw=s_hook, tail=0.6, caps=[
-   ("Một chiếc đinh 2 mm giấu dưới tấm che.", 2.8),
-   ("Lăn 60 lượt bi qua: bi ra sao?", 2.8),
-   ("Dừng lại, chọn A, B, C hay D.", 4.1)]),
+   ("Đinh 2 mm giấu dưới tấm che.", 2.6),
+   ("Dự đoán: bi ra hướng nào?", 6.0)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
-   ("Bi lăn vào, lọt dưới tấm che.", 2.8),
-   ("Chỉ ghi hướng bi vào và hướng bi ra.", 2.8),
-   ("Tua nhanh cho đủ 60 lượt.", 2.6)]),
+   ("Bi lăn dưới tấm che.", 2.8),
+   ("Ghi hướng vào, hướng ra.", 2.8),
+   ("Tua nhanh đủ 60 lượt.", 2.6)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.5, caps=[
-   ("57 lượt thẳng, 3 lượt lệch: đáp án C.", 2.9),
-   ("Kéo dài 3 vệt lệch: dồn về một chỗ.", 2.8),
-   ("Nhấc tấm che: chiếc đinh nằm đúng đó.", 2.8),
-   ("Lá vàng tương tự: alpha chỉ ra hạt nhân.", 3.1)]),
+   ("57 thẳng, 3 lệch: C.", 2.9),
+   ("Vệt lệch dồn một chỗ.", 2.8),
+   ("Nhấc tấm che.", 2.8),
+   ("Lá vàng tương tự.", 3.1)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
-   ("Bẫy: tỉ lệ lệch không phụ thuộc cỡ đinh?", 3.0),
-   ("Thí nghiệm này chưa nói được gì?", 3.2),
-   ("Bi va cứng; alpha lệch do lực điện đẩy.", 3.2)]),
+   ("Bẫy hay gặp.", 3.2),
+   ("Chưa nói được.", 3.4),
+   ("Alpha: lực điện.", 3.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=2.5, caps=[
-   ("Nới vùng lăn 20→40 cm: tỉ lệ lệch ra sao?", 4.6)]),
+   ("Thử nghĩ.", 5.0)]),
 ]
 SC = {s["key"]: s for s in SCENES}
 

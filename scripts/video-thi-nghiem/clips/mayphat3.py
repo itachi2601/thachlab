@@ -97,7 +97,7 @@ def s_hook(img, d, t, sc):
     if k <= 0: return
     card(d, (60, 1020, 1020, 1630), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1075), "Dự đoán", 46, PURPLE, alpha=k)
-    ctext(d, 1170, "Thứ cấp 400 vòng.\nVôn kế chỉ khoảng bao nhiêu?", 42, INK, alpha=k)
+    ctext(d, 1170, "Thứ cấp 400 vòng.\nVôn kế chỉ bao nhiêu?", 46, INK, alpha=k)
     for i, s in enumerate(OPTS):
         a = appear(t, sc["M"][1] + 0.2 + i * 0.12)
         x0 = 110 + (i % 2) * 440; y = 1320 + (i // 2) * 110
@@ -151,7 +151,7 @@ def s_ans(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]; k = back((t - 0.2) / 0.5) if t > 0.2 else 0
     card(d, (60, 250, 1020, 350), fill=(220, 252, 231), outline=GREEN, w=5)
-    text(d, (W / 2, 300), "Đáp án C: N₂ gấp đôi → U₂ gấp đôi", int(42 * clamp(k, 0.3, 1.0)), GREEN)
+    text(d, (W / 2, 300), "Đáp án C", int(48 * clamp(k, 0.3, 1.0)), GREEN)
     x0, x1, yb, yt = 200, 960, 920, 470
     X = lambda n: x0 + n / 700 * (x1 - x0); Y = lambda u: yb - u / 40 * (yb - yt)
     card(d, (60, 380, 1020, 1000), fill=WHITE, outline=LIGHT, w=3)
@@ -198,7 +198,7 @@ def s_ans(img, d, t, sc):
         text(d, (xs[1], y), r, 42, INK, alpha=a1)
         text(d, (xs[2], y), q, 44, ORANGE, alpha=appear(t, M[2] + 0.2 + i * 0.2, 0.35))
     c = appear(t, M[2] + 1.2)
-    ctext(d, 1530, "U₂ đo hơi thấp do hao phí\n→ U₁/U₂ hơi lớn hơn N₁/N₂ một chút", 38, INK, alpha=c, lh=1.25)
+    ctext(d, 1530, "U₂ hơi thấp do hao phí", 44, INK, alpha=c, lh=1.25)
 
 # ---------------- canh 4: co che + chua noi duoc gi ----------------
 def s_why(img, d, t, sc):
@@ -220,14 +220,14 @@ def s_why(img, d, t, sc):
     text(d, (265, 1000), "U₁ = 200·e", 42, ORANGE, alpha=e); text(d, (815, 1000), "U₂ = 400·e", 42, ORANGE, alpha=e)
     a = appear(t, 0.2)
     card(d, (60, 1040, 1020, 1300), fill=A(WHITE, a), outline=A(BLUE, a), w=5)
-    ctext(d, 1095, "Cùng lõi kín: từ thông qua mỗi vòng như nhau", 40, INK, alpha=a)
+    ctext(d, 1095, "Cùng lõi: cùng từ thông", 44, INK, alpha=a)
     text(d, (W / 2, 1165), "e: suất điện động mỗi vòng", 40, ORANGE, alpha=e)
     text(d, (W / 2, 1240), "→ U₁/U₂ = N₁/N₂", 50, BLUE, alpha=appear(t, M[1] + 0.8))
     b = appear(t, M[2] - 0.3)
     if b <= 0: return
     card(d, (60, 1330, 1020, 1580), fill=A(WHITE, b), outline=A(PURPLE, b), w=5)
     text(d, (W / 2, 1390), "Chưa nói được gì?", 44, PURPLE, alpha=b)
-    text(d, (W / 2, 1495), "Chưa đo dòng I → chưa biết hiệu suất", 42, INK, alpha=b)
+    text(d, (W / 2, 1495), "Chưa đo dòng I", 46, INK, alpha=b)
 
 # ---------------- canh 5: bay thang DC ----------------
 def multimeter(d, x0, y0, x1, y1, ac, reading, a, kn=None):
@@ -247,8 +247,8 @@ def s_trap(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]
     card(d, (60, 250, 1020, 350), fill=(254, 226, 226), outline=RED, w=5)
-    text(d, (W / 2, 300), "Bẫy: đồng hồ để thang DC", 44, RED, alpha=appear(t, 0.05, 0.2))
-    text(d, (W / 2, 410), "Đo cuộn thứ cấp 400 vòng", 40, INK, alpha=appear(t, 0.05, 0.2))
+    text(d, (W / 2, 300), "Bẫy: thang DC", 48, RED, alpha=appear(t, 0.05, 0.2))
+    text(d, (W / 2, 410), "Đo thứ cấp 400 vòng", 40, INK, alpha=appear(t, 0.05, 0.2))
     # MOT dong ho, hai trang thai: thang DC chi 0 -> van nup sang V~ chi 23,5
     a = appear(t, 0.05, 0.25); kn = ease((t - M[1] + 0.3) / 0.5); ac = kn >= 1
     multimeter(d, 300, 470, 780, 1070, ac, fmt(ROWS[2][2]) if ac else ("0" if kn <= 0 else "···"), a, kn=kn)
@@ -259,18 +259,18 @@ def s_trap(img, d, t, sc):
         d.line([(830, 760), (865, 800)], fill=A(GREEN, b), width=14); d.line([(865, 800), (940, 710)], fill=A(GREEN, b), width=14)
     c = appear(t, M[1] + 0.6)
     card(d, (90, 1150, 990, 1290), fill=A((220, 252, 231), c), r=24)
-    ctext(d, 1220, "Làm đúng: vặn về thang AC (V~)", 44, GREEN, alpha=c)
+    ctext(d, 1220, "Vặn về thang AC (V~)", 48, GREEN, alpha=c)
 
 # ---------------- canh 6: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
-    chot_hoi(d, t, sc, "Điện áp mỗi cuộn tỉ lệ số vòng:\nU₁/U₂ = N₁/N₂",
-             "Sơ cấp 200 vòng, nguồn 12 V ~. Muốn thứ cấp ra đúng 6 V thì cần hơn hay kém 100 vòng?")
+    chot_hoi(d, t, sc, "U₁/U₂ = N₁/N₂",
+             "Muốn thứ cấp ra 6 V: hơn hay kém 100 vòng?")
     kh = appear(t, sc["M"][0] + 2.5, 0.4)                # goi y hien sau 2,5 s cho HS tu nghi truoc
     if kh > 0:
         card(d, (110, 1110, 970, 1330), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
         text(d, (W / 2, 1165), "Gợi ý", 38, INK, alpha=kh)
-        text(d, (W / 2, 1255), "Lúc đo, 100 vòng cho ra mấy vôn?", 44, ORANGE, alpha=kh)
+        text(d, (W / 2, 1255), "100 vòng cho ra mấy vôn?", 46, ORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -283,24 +283,24 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-mayphatdien-03", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
     footer="Máy biến áp · thachlab.id.vn", scenes=[
  dict(key="hook", title="Tự quấn máy biến áp", draw=s_hook, tail=0.6, caps=[
-   ("Sơ cấp 200 vòng, nguồn xoay chiều 12 V.", 2.3),
-   ("Chọn một đáp án trước khi xem tiếp.", 5.7)]),
+   ("Sơ cấp 200 vòng, nguồn 12 V.", 2.3),
+   ("Chọn đáp án.", 5.7)]),
  dict(key="do", title="Quấn thêm vòng, đo U₂", draw=s_do, tail=0.4, caps=[
-   ("Hai cuộn chung lõi, không nối dây.", 2.1),
+   ("Hai cuộn chung lõi.", 2.1),
    ("100 vòng → 5,9 V", 1.9), ("200 vòng → 11,6 V", 1.9),
-   ("400 vòng → 23,5 V: gần gấp đôi.", 2.6),
+   ("400 vòng → 23,5 V", 2.6),
    ("600 vòng → 35,1 V", 2.0)]),
  dict(key="ans", title="Đồ thị U₂ theo N₂", draw=s_ans, tail=0.5, caps=[
-   ("Đáp án C: N2 gấp đôi thì U2 gấp đôi.", 2.6),
-   ("Điểm đo bám đường thẳng qua gốc.", 2.4),
-   ("U1/U2 hơi lớn hơn N1/N2 một chút.", 2.8)]),
+   ("N₂ gấp đôi, U₂ gấp đôi.", 2.8),
+   ("Điểm bám đường thẳng.", 2.6),
+   ("Hao phí nhỏ.", 2.4)]),
  dict(key="why", title="Vì sao tỉ lệ số vòng?", draw=s_why, tail=0.5, caps=[
-   ("Cùng lõi kín: mỗi vòng cùng từ thông.", 2.6),
-   ("Suất điện động mỗi vòng như nhau.", 2.4),
-   ("Chưa đo dòng điện: chưa biết hiệu suất.", 3.4)]),
+   ("Cùng lõi kín.", 2.6),
+   ("Mỗi vòng cùng e.", 2.6),
+   ("Chưa biết hiệu suất.", 3.0)]),
  dict(key="trap", title="Cái bẫy khi đo", draw=s_trap, tail=0.6, caps=[
-   ("Bẫy: để thang DC, đồng hồ chỉ 0.", 2.6),
-   ("Làm đúng: vặn về thang AC, V~.", 2.6)]),
+   ("Thang DC: chỉ 0.", 2.6),
+   ("Đúng: thang AC.", 2.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Đúng 6 V: cần hơn hay kém 100 vòng?", 4.4)]),
+   ("Thử nghĩ: hơn hay kém?", 4.6)]),
 ])
