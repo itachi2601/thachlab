@@ -15,11 +15,30 @@
   ],
   "muc_tieu": "Kiểm hướng và độ lớn của lực từ F = B·I·l·sinα: nam châm đặt trên cân, dây MN giữ cố định nằm ngang trong khe; từ độ thay đổi số chỉ cân suy ra lực từ, thấy cặp lực – phản lực làm cân TĂNG khi lực từ lên dây hướng lên, và độ lớn tỉ lệ với sinα khi xoay dây trong mặt phẳng ngang.",
   "dung_cu": [
-    { "ten": "Nam châm chữ U", "so_luong": 1, "ghi_chu": "cảm ứng từ trong khe cỡ 0,10 T, hướng từ cực N sang cực S; chiều dài phần dây nằm trong từ trường l = 5,0 cm" },
-    { "ten": "Cân điện tử chia 0,01 g", "so_luong": 1, "ghi_chu": "đặt nam châm lên đĩa cân" },
-    { "ten": "Đoạn dây đồng cứng MN", "so_luong": 1, "ghi_chu": "kẹp trên giá riêng, không chạm nam châm hay cân" },
-    { "ten": "Nguồn một chiều, ampe kế, biến trở, dây nối", "so_luong": 1 },
-    { "ten": "Thước đo góc gắn trên giá kẹp", "so_luong": 1, "ghi_chu": "đặt góc giữa dây và đường sức" }
+    {
+      "ten": "Nam châm chữ U",
+      "so_luong": 1,
+      "ghi_chu": "cảm ứng từ trong khe cỡ 0,10 T, hướng từ cực N sang cực S; chiều dài phần dây nằm trong từ trường l = 5,0 cm"
+    },
+    {
+      "ten": "Cân điện tử chia 0,01 g",
+      "so_luong": 1,
+      "ghi_chu": "đặt nam châm lên đĩa cân"
+    },
+    {
+      "ten": "Đoạn dây đồng cứng MN",
+      "so_luong": 1,
+      "ghi_chu": "kẹp trên giá riêng, không chạm nam châm hay cân"
+    },
+    {
+      "ten": "Nguồn một chiều, ampe kế, biến trở, dây nối",
+      "so_luong": 1
+    },
+    {
+      "ten": "Thước đo góc gắn trên giá kẹp",
+      "so_luong": 1,
+      "ghi_chu": "đặt góc giữa dây và đường sức"
+    }
   ],
   "cac_buoc": {
     "lam": [
@@ -40,13 +59,60 @@
     ]
   },
   "tham_so": [
-    { "ky_hieu": "I", "ten": "Cường độ dòng điện qua dây MN", "don_vi": "A", "kieu": "dieu_chinh", "min": 0.5, "max": 5.0, "mac_dinh": 2.0, "buoc": 0.5 },
-    { "ky_hieu": "alpha", "ten": "Góc giữa dây và đường sức (dây vẫn nằm ngang)", "don_vi": "độ", "kieu": "dieu_chinh", "min": 0, "max": 90, "mac_dinh": 90, "buoc": 15 },
-    { "ky_hieu": "B", "ten": "Cảm ứng từ trong khe nam châm", "don_vi": "T", "kieu": "co_dinh", "gia_tri": 0.1 },
-    { "ky_hieu": "l", "ten": "Chiều dài phần dây MN trong vùng từ trường đều", "don_vi": "m", "kieu": "co_dinh", "gia_tri": 0.05 },
-    { "ky_hieu": "g", "ten": "Gia tốc trọng trường", "don_vi": "m/s²", "kieu": "co_dinh", "gia_tri": 9.8 },
-    { "ky_hieu": "F", "ten": "Lực từ lên dây theo mô hình", "don_vi": "N", "kieu": "tinh_ra" },
-    { "ky_hieu": "dm", "ten": "Độ thay đổi số chỉ cân", "don_vi": "g", "kieu": "do_duoc", "sai_so_do": 0.01 }
+    {
+      "ky_hieu": "I",
+      "ten": "Cường độ dòng điện qua dây MN",
+      "don_vi": "A",
+      "kieu": "dieu_chinh",
+      "min": 0.5,
+      "max": 5,
+      "mac_dinh": 2,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "alpha",
+      "ten": "Góc giữa dây và đường sức (dây vẫn nằm ngang)",
+      "don_vi": "độ",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 90,
+      "mac_dinh": 90,
+      "buoc": 15
+    },
+    {
+      "ky_hieu": "B",
+      "ten": "Cảm ứng từ trong khe nam châm",
+      "don_vi": "T",
+      "kieu": "co_dinh",
+      "gia_tri": 0.1
+    },
+    {
+      "ky_hieu": "l",
+      "ten": "Chiều dài phần dây MN trong vùng từ trường đều",
+      "don_vi": "m",
+      "kieu": "co_dinh",
+      "gia_tri": 0.05
+    },
+    {
+      "ky_hieu": "g",
+      "ten": "Gia tốc trọng trường",
+      "don_vi": "m/s²",
+      "kieu": "co_dinh",
+      "gia_tri": 9.8
+    },
+    {
+      "ky_hieu": "F",
+      "ten": "Lực từ lên dây theo mô hình",
+      "don_vi": "N",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "dm",
+      "ten": "Độ thay đổi số chỉ cân",
+      "don_vi": "g",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.01
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
@@ -64,12 +130,37 @@
     "ghi_chu": "Bài 11 tập trung HƯỚNG (B từ N sang S, bàn tay trái, cân tăng hay giảm) và F theo góc; bài 12 (thực hành đo cảm ứng từ) đo đầy đủ theo I và l."
   },
   "so_lieu_mau": {
-    "cot": ["alpha (độ)", "Δm (g)", "sin(alpha)", "Δm/sin(alpha) (g)"],
+    "cot": [
+      "alpha (độ)",
+      "Δm (g)",
+      "sin(alpha)",
+      "Δm/sin(alpha) (g)"
+    ],
     "hang": [
-      [90, 1.03, 1.0, 1.03],
-      [60, 0.87, 0.866, 1.0],
-      [30, 0.52, 0.5, 1.04],
-      [0, 0.0, 0.0, null]
+      [
+        90,
+        1.03,
+        1,
+        1.03
+      ],
+      [
+        60,
+        0.87,
+        0.866,
+        1
+      ],
+      [
+        30,
+        0.52,
+        0.5,
+        1.04
+      ],
+      [
+        0,
+        0,
+        0,
+        null
+      ]
     ],
     "ghi_chu": "Số liệu minh hoạ tính từ mô hình B = 0,10 T, l = 5,0 cm, I = 2,0 A, g = 9,8 m/s² (Δm lý thuyết 1,02·sinα g), cộng sai số đọc cân ±0,01 g. Ô tỉ số ở 30° để học sinh tự tính trong bài; ở 0° không chia được. Đảo chiều dòng ở 90°: cân giảm 1,03 g."
   },
@@ -102,5 +193,10 @@
   "khong_chung_minh": [
     "Cân chỉ cho tổng lực lên phần dây trong khe, không cho biết từ trường có đều dọc dây hay không.",
     "Chỉ dùng một nam châm nên chưa kiểm được F tỉ lệ với B."
-  ]
+  ],
+  "video": {
+    "youtube_id": "Nhm-WpSz2xg",
+    "nhan": "cân lực từ",
+    "nhin_vao": "Số chỉ của cân thay đổi thế nào khi bật dòng điện?"
+  }
 }
