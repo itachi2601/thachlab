@@ -84,16 +84,16 @@ def angle_between(ux, uy, vx, vy):
     return math.degrees(math.acos(max(-1.0, min(1.0, c))))
 
 
-# ---------------- Hình 1: ảnh OpenStax College Physics 2e, Hình 7.2 a–c (đợt 28/10/2026) ----------------
+# ---------------- Hình 1: ảnh OpenStax College Physics 2e, Hình 7.2 (a, c, e) (đợt 1 + đợt 2, 28/10/2026) ----------------
 fig1 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-nang-luong-cong-co-hoc/hinh-cong-luc-goc.webp" '
-        'alt="Ba tình huống: (a) người đẩy máy cắt cỏ bằng lực F chếch góc θ so với độ dịch chuyển d, (b) người đứng giữ cặp, d = 0, (c) người xách cặp đi ngang, F vuông góc d" '
-        'loading="lazy" width="875" height="900">'
+        'alt="Ba tình huống: (a) người đẩy máy cắt cỏ bằng lực F chếch góc θ so với độ dịch chuyển d, (c) người xách cặp đi ngang, F vuông góc d, (e) cặp được máy phát điện hạ xuống, lực F hướng lên còn d hướng xuống" '
+        'loading="lazy" width="875" height="910">'
         '<figcaption>Hình 1. Ba tình huống về công:<br>'
         '(a) đẩy xe cắt cỏ, như Lan đẩy Hà: <em>F</em>·<em>d</em>·cosθ.<br>'
-        '(b) giữ cặp, như Minh ôm ba lô: <em>d</em> = 0.<br>'
-        '(c) xách cặp đi ngang: θ = 90°.<br>'
+        '(c) xách cặp đi ngang: θ = 90°, không sinh công.<br>'
+        '(e) hạ cặp xuống: <em>F</em> ngược <em>d</em>, công âm.<br>'
         'Nhãn: <em>F</em> lực · <em>d</em> dịch chuyển.<br>'
-        '<small>Hình: OpenStax, College Physics 2e, Hình 7.2 (a–c) — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 7.2 (a, c, e) — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
 
 # ---------------- Hình 2: ba trường hợp góc α ----------------

@@ -203,6 +203,10 @@ for F, a in data:
 print("\n".join(bad) if bad else "kiểm toạ độ: ok")
 
 src = (HERE / "theory.src.html").read_text(encoding="utf8")
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026, đợt 2): thay SVG sân băng (H1) bằng Hình 4.6, xem nguon.md
+fig1 = (
+    '<figure class="fig"><img src="/assets/openstax/l10-dinh-luat-2-newton/hinh-cung-luc-khac-khoi-luong.webp" alt="Cùng một lực F đẩy quả bóng rổ khối lượng m1 cho gia tốc a1 lớn và đẩy xe SUV khối lượng m2 lớn hơn nhiều cho gia tốc a2 nhỏ; hai sơ đồ lực giống nhau" loading="lazy" width="1000" height="474">'
+    '<figcaption>Hình 1. Cùng <em>F</em> = 80 N:<br>bóng rổ <em>m</em><sub>1</sub>: <em>a</em><sub>1</sub> lớn.<br>SUV <em>m</em><sub>2</sub>: <em>a</em><sub>2</sub> nhỏ.<br>Bạn 40 kg: 2 m/s².<br>Chú 80 kg: 1 m/s².<br><small>Hình: OpenStax, College Physics 2e, Hình 4.6 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 # thứ tự xuất hiện trong bài: sơ đồ thí nghiệm, đồ thị, sân băng, phanh xe, xe đẩy; số "Hình n." đánh lại theo thứ tự này
 figs = [re.sub(r"<figcaption>Hình \d\.", f"<figcaption>Hình {n}.", f) for n, f in enumerate((fig2, fig3, fig1, fig4, fig5), 1)]
 order = [int(n) for n in re.findall(r"<!--FIG(\d)-->", src)]

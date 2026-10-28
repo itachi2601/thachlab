@@ -91,11 +91,24 @@ b += text(mid, 30, "k = 0", RED, 11, "middle", "700") + text(mid + 6 * step, 30,
 b += line(mid, 112, mid + step, 112, GRN, 2) + text(mid + step / 2, 130, "λ/2", GRN, 11, "middle", "700")
 b += text(14, 148, "▌ 13 cực đại", RED, 12, "start") + text(160, 148, "▌ 14 cực tiểu", BLUE, 12, "start")
 fig5 = wrap("0 0 440 160", "Trên đoạn AB = 10 cm, λ = 1,5 cm có 13 cực đại (đỏ) và 14 cực tiểu (xanh)",
-            b, "Hình 5. Cực đại (đỏ) và cực tiểu (xanh) cách đều nhau λ/4; hai cực đại liên tiếp cách λ/2.")
+            b, "Hình 6. Cực đại (đỏ) và cực tiểu (xanh) cách đều nhau λ/4; hai cực đại liên tiếp cách λ/2.")
+
+# ---- Ảnh OpenStax College Physics 2e đợt 2 (28/10/2026): Hình 16.41 thay Hình 1 (đặt sau câu dự đoán), Hình 27.15 thêm làm Hình 5
+fig1 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-giao-thoa-song/hinh-hai-loa-cuc-dai.webp" '
+        'alt="Hai loa trong phòng: vùng nén (nét liền) và vùng dãn (nét đứt) của hai sóng chồng lên nhau; các chấm đỏ là chỗ hai sóng cùng nhịp" '
+        'loading="lazy" width="400" height="252" style="max-width:100%;height:auto">'
+        '<figcaption>Hình 1. Hai loa trong phòng. Chấm đỏ: nghe to.<br>Nhãn: Compression = vùng nén · Rarefaction = vùng dãn.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 16.41 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+fig4b = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-giao-thoa-song/hinh-khe-young-cuong-do.webp" '
+         'alt="Hai khe cách nhau d, màn cách khe một đoạn x; đồ thị cường độ có các cực đại giảm dần ra xa vân giữa, bên phải là ảnh các vân sáng tối thật" '
+         'loading="lazy" width="875" height="521" style="max-width:100%;height:auto">'
+         '<figcaption>Hình 5. Vân thật (phải) và đồ thị cường độ (giữa).<br>Sách ghi d = a, x = D, y = toạ độ vân.<br>Vân càng xa vân giữa càng mờ.<br>'
+         '<small>Hình: OpenStax, College Physics 2e, Hình 27.15 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 h = open("theory.src.html", encoding="utf8").read()
-for n, f in enumerate((fig1, fig2, fig3, fig4, fig5), 1):
-    assert f"<!--FIG{n}-->" in h, n
-    h = h.replace(f"<!--FIG{n}-->", f)
+for n, f in enumerate((fig1, fig2, fig3, fig4, fig4b, fig5), 1):
+    key = "<!--FIG4B-->" if n == 5 else f"<!--FIG{6 if n == 6 else n}-->"
+    assert key in h, key
+    h = h.replace(key, f)
 open("theory.html", "w", encoding="utf8").write(margin_figs(h))
 print("ok", len(h))
