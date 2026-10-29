@@ -2,6 +2,9 @@
 Toạ độ đồ thị TÍNH từ phương trình (v = v0 + at) qua hàm đổi trục; lớp kiểm: hộp nhãn không chồng nhau, không vượt viewBox,
 không bị đường đồ thị/mũi tên cắt xuyên; điểm cắt, độ dốc, diện tích đối chiếu lại với số trong bài.
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib, re, subprocess, sys
 from svg_lib import RED, BLUE, ORG, GRN, wrap
 
@@ -239,5 +242,5 @@ phut = round(float(m.group(1).replace(",", "."))) if m else None
 if phut is None:
     print("! không đọc được số phút từ lint_do_dai:\n" + out[:600]); sys.exit(1)
 h = h.replace("__PHUT__", str(phut))
-(HERE / "theory.html").write_text(h, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(h), encoding="utf8")
 print(f"ok theory.html {len(h)} ký tự · 4 hình · {phut} phút")

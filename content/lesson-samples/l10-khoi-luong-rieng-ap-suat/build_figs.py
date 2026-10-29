@@ -4,6 +4,9 @@ Chạy: python3 build_thi_nghiem.py rồi python3 build_figs.py (từ thư mục
 Tự kiểm: mọi số trong quiz/lời giải tính lại bằng Python (assert); hình tính từ vật lí (mực nước, độ dài mũi tên
 tỉ lệ độ sâu, mũi tên chĩa đúng vào điểm); nhãn không chồng, không vượt viewBox, không bị nét cắt xuyên;
 chữ ≥ 17, chỉ số dưới ≥ 13 (viewBox ≤ 420 rộng)."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import json, math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -384,11 +387,11 @@ src = re.sub(r"<figcaption>Hình \d+\.", lambda m: f"<figcaption>Hình {next(_k)
 
 lint = ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
-out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", "?")), encoding="utf8")
 r = subprocess.run([sys.executable, str(lint), str(out), "--json"], capture_output=True, text=True)
 mm = re.search(r'"phut"\s*:\s*([\d.]+)', r.stdout)
 phut = math.ceil(float(mm.group(1))) if mm else "?"
-out.write_text(src.replace("__PHUT__", str(phut)), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", str(phut))), encoding="utf8")
 print("ok", len(src), "ký tự; phút =", phut, "(lint:", mm.group(1) if mm else "?", ")")
 if bad:
     sys.exit(1)

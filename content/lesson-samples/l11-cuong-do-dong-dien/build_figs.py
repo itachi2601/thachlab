@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Sinh 4 hình SVG cho bài Cường độ dòng điện (lesson 41) và thay <!--FIGn--> trong theory.src.html -> theory.html.
 Chạy lại được. Toạ độ/đồ thị tính từ phương trình và kiểm bằng assert; nhãn kiểm không chồng, không vượt viewBox."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib
 from svg_lib import *
 
@@ -245,5 +248,5 @@ for n, fg in enumerate((fig1, fig2, fig3, fig4), 1):
     assert src.count(f"<!--FIG{n}-->") == 1, n
     src = src.replace(f"<!--FIG{n}-->", fg)
 assert "<!--FIG" not in src
-(HERE / "theory.html").write_text(src, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(src), encoding="utf8")
 print("ok", len(src))

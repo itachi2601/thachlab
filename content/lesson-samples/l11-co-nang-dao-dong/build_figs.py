@@ -1,4 +1,7 @@
 """Sinh 3 hình SVG cho bài cơ năng dao động và thay <!--FIGn--> trong theory.src.html."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math
 import sys
 from svg_lib import *
@@ -210,5 +213,5 @@ for n, f in enumerate((fig1, fig2, fig3), 1):
     assert "$" not in f.split("<figcaption>")[0], n
     h = h.replace("<!--FIG%d-->" % n, f)
 h = h.replace("<!--FIGOS-->", figos)
-open("theory.html", "w", encoding="utf8").write(h)
+open("theory.html", "w", encoding="utf8").write(margin_figs(h))
 print("ok", len(h))

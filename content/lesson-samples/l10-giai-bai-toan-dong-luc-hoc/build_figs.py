@@ -3,6 +3,9 @@ thay mốc <!--FIGn--> và bảng __BANG_TN2__ trong theory.src.html -> theory.h
 Chạy (sau build_thi_nghiem.py): python3 build_figs.py
 Độ dài mũi tên lực tính từ độ lớn lực (một thang px/N cho mỗi hình), hướng tính từ góc nghiêng; script kiểm:
 nhãn không chồng nhau, không vượt viewBox, không bị nét đã đăng ký cắt xuyên; các lực đúng chiều vật lí."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import json, math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -346,9 +349,9 @@ for n, f in enumerate(figs, 1):
 
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
-out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", "?")), encoding="utf8")
 r = subprocess.run([sys.executable, str(lint), str(out), "--json"], capture_output=True, text=True)
 m = re.search(r'"phut"\s*:\s*([\d.]+)', r.stdout)
 phut = math.ceil(float(m.group(1))) if m else "?"
-out.write_text(src.replace("__PHUT__", str(phut)), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", str(phut))), encoding="utf8")
 print("ok", len(src), "ký tự; phút =", phut, "(lint đo", m.group(1) if m else "?", ")")

@@ -1,4 +1,7 @@
 """Sinh 3 hình SVG và thay các mốc <!--FIGn--> trong theory.src.html -> theory.html (chạy lại được)."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 from svg_lib import *
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
@@ -103,5 +106,5 @@ for n, f in enumerate((fig1, fig2, fig3), 1):
     h = h.replace(f"<!--FIG{n}-->", f)
 assert "<!--FIG2B-->" in h
 h = h.replace("<!--FIG2B-->", fig2b)
-open("theory.html", "w", encoding="utf8").write(h)
+open("theory.html", "w", encoding="utf8").write(margin_figs(h))
 print("ok", len(h))

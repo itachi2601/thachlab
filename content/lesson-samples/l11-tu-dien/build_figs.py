@@ -1,5 +1,8 @@
 """Sinh 3 hình SVG và thay các mốc <!--FIGn--> trong theory.src.html -> theory.html (chạy lại được).
 Hình 2 vẽ đúng số liệu bảng thí nghiệm tn-l11-tudien-02 (C ≈ 480 μF)."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import pathlib, re
 from svg_lib import *
 
@@ -94,5 +97,5 @@ h = (HERE / "theory.src.html").read_text(encoding="utf8")
 for n, f in enumerate((fig1, fig2, fig3), 1):
     assert f"<!--FIG{n}-->" in h, n
     h = h.replace(f"<!--FIG{n}-->", f)
-(HERE / "theory.html").write_text(h, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(h), encoding="utf8")
 print("ok", len(h))

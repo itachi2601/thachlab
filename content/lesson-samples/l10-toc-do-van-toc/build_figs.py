@@ -3,6 +3,9 @@ trong theory.src.html -> theory.html.
 Có lớp kiểm: hộp nhãn không chồng nhau, không vượt viewBox, cỡ chữ ≥ 13; độ dài vectơ tỉ lệ độ lớn;
 v13 nằm đúng trên đường đi A→C; bảng số liệu tính lại từ mô hình của tn-l10-tdvt-01.json.
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import json, math, pathlib, re, subprocess, sys
 from svg_lib import RED, BLUE, ORG, GRN, wrap
 
@@ -312,5 +315,5 @@ phut = round(float(m.group(1).replace(",", "."))) if m else None
 if phut is None:
     print("! không đọc được số phút từ lint_do_dai:\n" + out[:600]); sys.exit(1)
 h = h.replace("__PHUT__", str(phut))
-(HERE / "theory.html").write_text(h, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(h), encoding="utf8")
 print(f"ok theory.html {len(h)} ký tự · 5 hình · {phut} phút")
