@@ -223,6 +223,14 @@ export function playVideo(html: string, slot: number, id: string, query: string,
  */
 /** Hộp "Đề bài" của bài toán mẫu trong lý thuyết mô phỏng một câu hỏi thi ⇒ nhận class `tl-box--de` để
  *  CSS đặt font đề thi thật (E4). Làm lúc hiển thị nên bài đã đăng không cần đăng lại. */
+/** Hình SVG minh hoạ do `bank_set_question_figure` nối vào CUỐI đề (scripts/ghi-hinh-sau-duyet.mts): đặt cạnh chữ đề
+ *  trên màn rộng, trên chữ ở điện thoại. Chỉ nhận đúng chữ ký của hình đó (một <svg> cuối chuỗi, font system-ui). */
+function withFigureBeside(html: string): string {
+  const m = html.match(/^([\s\S]*?)(<svg\b[^>]*font-family="system-ui,sans-serif"[^>]*>[\s\S]*<\/svg>)\s*$/);
+  if (!m || !m[1].trim() || m[2].indexOf("<svg", 1) !== -1) return html;
+  return `<div class="q-fig-wrap"><div class="q-fig-text">${m[1]}</div><div class="q-fig-img">${m[2]}</div></div>`;
+}
+
 function withDeBaiBox(html: string): string {
   return html.replace(
     /<div class="(tl-box(?: [^"]*)?)"([^>]*)>(\s*<p class="tl-label">[^<]*Đề bài)/g,
@@ -322,7 +330,7 @@ export default function ContentHtml({
   className?: string;
 }) {
   const cleaned = useMemo(
-    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withDeBaiBox(withConfidenceRows(stripWordArtifacts(html))))))),
+    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withDeBaiBox(withConfidenceRows(withFigureBeside(stripWordArtifacts(html)))))))),
     [html],
   );
   const needsMath = useMemo(() => hasMath(cleaned), [cleaned]);

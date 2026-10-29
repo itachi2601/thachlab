@@ -4106,3 +4106,12 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 @media (min-width: 1280px) and (pointer: coarse) {
   .lesson-page .exam-content .tl-sn-nums .tl-num > summary { min-height: 44px; padding-top: 11px; }
 }
+
+/* Hình minh hoạ cạnh đề (ContentHtml.withFigureBeside): điện thoại hình trên chữ, ≥640px hình bên phải (V/M) */
+.exam-content .q-fig-wrap { display: flex; flex-direction: column-reverse; gap: .75rem; }
+.exam-content .q-fig-img svg { display: block; width: 100%; max-width: 360px; height: auto; margin: 0 auto; color: inherit; }
+@media (min-width: 640px) {
+  .exam-content .q-fig-wrap { flex-direction: row; align-items: flex-start; gap: 1.25rem; }
+  .exam-content .q-fig-text { flex: 1 1 0; min-width: 0; }
+  .exam-content .q-fig-img { flex: 0 0 min(38%, 320px); }
+}
