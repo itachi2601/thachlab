@@ -110,11 +110,26 @@ function ghiJsonGiuDinhDang(file: string, obj: unknown): void {
   fs.writeFileSync(file, JSON.stringify(obj, null, indent) + (raw.endsWith("\n") ? "\n" : ""), "utf8");
 }
 
+/** Khung sáu ô + dừng ở câu Dự đoán (content/thi-nghiem/video-khung/<id>.json, do scripts/video-thi-nghiem/xuat-khung.py ra).
+ *  Có file thì hộp video nhận data-khung (JSON gọn, URL clip/ảnh bìa lấy từ kho video) và ContentHtml gắn trình phát tương tác. */
+function dataKhung(marker: string, v: Video): string {
+  const f = path.join(khoDir, "video-khung", marker + ".json");
+  if (!v.mp4 || !fs.existsSync(f)) return "";
+  const d = JSON.parse(fs.readFileSync(f, "utf8"));
+  d.video = v.mp4;
+  if (v.poster) d.poster = v.poster;
+  return escapeHtml(JSON.stringify(d)).replace(/"/g, "&quot;");
+}
+
 function renderBlock(marker: string, tieuDeHop: string, nhan: string, v: Video): string {
   const params = new URLSearchParams({ rel: "0" });
   if (typeof v.giay_bat_dau === "number") params.set("start", String(v.giay_bat_dau));
   if (typeof v.giay_ket_thuc === "number") params.set("end", String(v.giay_ket_thuc));
-  const lines = [`<!--video:${marker}-->`, `<div class="tl-box tl-box--video">`];
+  const khung = v.mp4 && !v.ngang ? dataKhung(marker, v) : "";
+  const lines = [
+    `<!--video:${marker}-->`,
+    `<div class="tl-box tl-box--video${khung ? " tl-box--khung" : ""}"${khung ? ` data-khung="${khung}"` : ""}>`,
+  ];
   if (v.mp4 && !v.ngang) {
     // Clip tự dựng 9:16: nhãn nhỏ + TÊN thí nghiệm làm tiêu đề, khung dọc (tl-video--doc) thay vì
     // ép vào 16:9 để hai bên đen. Thẻ <video> thuần, preload="none" → chỉ tải ảnh bìa (V5, V9).
@@ -252,7 +267,7 @@ function boKhoiDaChen(html: string): { html: string; soKhoi: number } {
   for (const m of out.matchAll(/<!--video:[^>]*-->/g)) if (m.index !== undefined) marks.push(m.index);
   for (const idx of marks.reverse()) {
     const endMark = out.indexOf("-->", idx) + 3;
-    const startBlock = out.indexOf('<div class="tl-box tl-box--video">', endMark);
+    const startBlock = out.indexOf('<div class="tl-box tl-box--video', endMark);
     if (startBlock === -1 || startBlock > endMark + 200) continue;
     const divRe = /<div\b[^>]*>|<\/div>/g;
     divRe.lastIndex = startBlock;

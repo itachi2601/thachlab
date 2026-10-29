@@ -31,6 +31,7 @@ export type VideoKhungData = {
   id: string;
   ten: string;
   video: string;
+  poster?: string;
   tong_giay: number;
   o: VideoKhungO[];
   dung_dua: VideoKhungDuDoan;
@@ -51,19 +52,27 @@ export type VideoKhungEvent =
   | { loai: "xem_lai_o"; khoa: string }
   | { loai: "bo_qua" };
 
+/** Câu trả lời đã chọn theo id clip, sống ngoài component: bài vẽ lại HTML (KaTeX tải xong, bấm video YouTube khác)
+ *  thì khung được gắn lại và vẫn nhớ em đã đoán, không bắt dừng hỏi lần nữa. */
+const TRA_LOI = new Map<string, { chose: number | null; boQua: boolean }>();
+
 export default function VideoThiNghiemKhung({
   data,
   onEvent,
+  dinh = true,
 }: {
   data: VideoKhungData;
   onEvent?: (e: VideoKhungEvent) => void;
+  /** Video dính trên đầu màn hình khi cuộn. Trang bài có thanh tab dính sẵn nên ContentHtml truyền false. */
+  dinh?: boolean;
 }) {
+  const saved = TRA_LOI.get(data.id);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null); // ô hiện tại ở điện thoại (video cao gần hết màn hình nên câu hỏi nằm dưới)
   const askingRef = useRef(false); // đồng bộ với `asking` ngay lúc gọi (onPlay chạy trước khi React kịp dựng lại)
   const askedOnce = useRef(false);
-  const doneRef = useRef(false); // đã chọn hoặc chủ động bấm "xem luôn": từ đó mới hết bắt dừng và mở Giả thuyết
+  const doneRef = useRef(!!saved && (saved.chose !== null || saved.boQua)); // đã chọn hoặc chủ động bấm "xem luôn": từ đó mới hết bắt dừng và mở Giả thuyết
   const eventRef = useRef(onEvent); // trang gọi truyền hàm mới mỗi lần dựng: giữ ở ref để vòng rAF không bị huỷ liên tục
   useEffect(() => {
     eventRef.current = onEvent;
@@ -75,8 +84,8 @@ export default function VideoThiNghiemKhung({
     askingRef.current = b;
     setAskingState(b);
   }, []);
-  const [chose, setChose] = useState<number | null>(null);
-  const [boQua, setBoQua] = useState(false);
+  const [chose, setChose] = useState<number | null>(saved?.chose ?? null);
+  const [boQua, setBoQua] = useState(saved?.boQua ?? false);
 
   const dd = data.dung_dua;
   const duDoanIdx = data.o.findIndex((o) => o.khoa === "du_doan");
@@ -156,10 +165,17 @@ export default function VideoThiNghiemKhung({
   };
 
   // Điện thoại: video dính trên đầu màn hình, câu hỏi nằm ngay dưới; chỉ kéo nhẹ nếu thẻ còn nằm ngoài tầm mắt.
+  // Hộp tĩnh trong HTML bài (label, <video>, "Nhìn vào") chỉ ẩn khi khung đã mount xong, nên chunk lỗi thì video vẫn còn.
+  useEffect(() => {
+    const box = sectionRef.current?.closest(".tl-box--khung");
+    box?.classList.add("tl-khung-on");
+    return () => box?.classList.remove("tl-khung-on");
+  }, []);
+
   useEffect(() => {
     if (!asking) return;
     const card = cardRef.current;
-    if (card && card.offsetParent !== null) card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    if (card && card.offsetParent !== null) card.scrollIntoView({ behavior: "instant", block: "nearest" });
     const nut = [...(sectionRef.current?.querySelectorAll<HTMLButtonElement>("button[data-chon]") ?? [])].find(
       (b) => b.offsetParent !== null && !b.disabled,
     );
@@ -179,6 +195,7 @@ export default function VideoThiNghiemKhung({
     if (doneRef.current) return;
     doneRef.current = true;
     setChose(i);
+    TRA_LOI.set(data.id, { chose: i, boQua: false });
     eventRef.current?.({ loai: "chon", chon: i, dung: i === dd.dung });
   };
 
@@ -191,6 +208,7 @@ export default function VideoThiNghiemKhung({
     if (doneRef.current) return;
     doneRef.current = true;
     setBoQua(true);
+    TRA_LOI.set(data.id, { chose: null, boQua: true });
     eventRef.current?.({ loai: "bo_qua" });
     resume();
   };
@@ -316,7 +334,7 @@ export default function VideoThiNghiemKhung({
                 </li>
               ))}
             </ol>
-            <div ref={cardRef} className="rounded-xl border border-line-strong bg-primary-soft p-4">
+            <div ref={cardRef} className="scroll-mb-24 rounded-xl border border-line-strong bg-primary-soft p-4">
               <p className="mb-1 text-[13px] font-bold uppercase tracking-wide text-primary">{nhan(data.o[shown])}</p>
               {body(shown, true)}
             </div>
@@ -366,11 +384,18 @@ export default function VideoThiNghiemKhung({
           </ol>
         </div>
 
-        <div className="sticky top-2 z-10 mx-auto w-full max-w-[min(340px,calc(62svh_*_9_/_16))] self-start lg:top-4 order-1 lg:max-w-[340px]">
+        <div
+          className={
+            "order-1 mx-auto w-full self-start " +
+            (dinh
+              ? "sticky top-2 z-10 max-w-[min(340px,calc(62svh_*_9_/_16))] lg:top-4 lg:max-w-[340px]"
+              : "max-w-[340px]")
+          }
+        >
           <video
             ref={videoRef}
             src={data.video}
-            poster={data.video.replace(/\.mp4$/, ".webp")}
+            poster={data.poster ?? data.video.replace(/\.mp4$/, ".webp")}
             controls
             playsInline
             preload="none"
