@@ -67,6 +67,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Audit đáp án ngân hàng: chờ thầy duyệt 127 câu `_can_xac_nhan` (`scripts/data/bank-answer-fixes.json`), `scripts/logs/db-sai-can-duyet.csv` (556 + 100 câu), 8 `khong_ro` + 2 `cho_phan_xu`.
 - Backfill mức độ câu hỏi: còn ~3.500 câu `difficulty` rỗng — `npx tsx scripts/backfill-question-bank-difficulty.mts 20` (**ghi thật, không dry-run**).
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip (quy ước `content/thi-nghiem/README.md`, `docs/QUY-TAC-THIET-KE.md` mục 5b).
+- 29/10 · Motion graphic (clip 9:16 + khung tương tác + SVG động): kế hoạch mảng ứng dụng + chặng A–F ở `docs/KE-HOACH-MOTION-GRAPHIC.md`; chặng A (khung dừng ở Dự đoán vào 23 clip L12 + CSS `tl-video--doc` chưa deploy) chờ thầy chốt.
 - Rank: gắn `challenge_exam_id` cho cao_thu/thach_dau season 4 ở `/quan-tri/xep-hang`; spec thi thăng hạng thích ứng `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 
 ## CHƯA làm (roadmap)
