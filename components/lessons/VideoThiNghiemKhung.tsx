@@ -15,7 +15,7 @@ import { Check, Lock, Play, Target } from "lucide-react";
  *   dựng lại mp4. Dữ liệu: content/thi-nghiem/video-khung/<id>.json.
  */
 
-export type VideoKhungO = { khoa: string; giay: number; chu: string };
+export type VideoKhungO = { khoa: string; giay: number; chu: string; kiem?: string };
 export type VideoKhungDuDoan = {
   giay: number;
   cau_hoi: string;
@@ -153,6 +153,12 @@ export default function VideoThiNghiemKhung({
     void videoRef.current?.play().catch(() => {});
   };
 
+  // Giả thuyết nói thẳng quan hệ cần đoán nên chưa lộ: tới sau câu Dự đoán mới hiện (kiem = câu hỏi trung tính).
+  const daQuaDuDoan = reached > duDoanIdx;
+  const an = (o: VideoKhungO) => o.khoa === "gia_thuyet" && !!o.kiem && !daQuaDuDoan;
+  const nhan = (o: VideoKhungO) => (an(o) ? "Cần kiểm tra" : NHAN[o.khoa]);
+  const chu = (o: VideoKhungO) => (an(o) ? o.kiem : o.chu);
+
   const cur = curOf(t);
   const shown = asking ? duDoanIdx : cur;
 
@@ -213,7 +219,7 @@ export default function VideoThiNghiemKhung({
     }
     return (
       <p className={big ? "text-[17px] leading-relaxed text-ink" : "text-[15px] leading-relaxed text-muted"}>
-        {o.chu}
+        {chu(o)}
         {i === duDoanIdx && chose !== null && (
           <span className="mt-1 block text-[14px] font-semibold text-ink">Em đã chọn: {dd.chon[chose]}</span>
         )}
@@ -256,9 +262,7 @@ export default function VideoThiNghiemKhung({
               ))}
             </ol>
             <div ref={cardRef} className="rounded-xl border border-line-strong bg-primary-soft p-4">
-              <p className="mb-1 text-[13px] font-bold uppercase tracking-wide text-primary">
-                {NHAN[data.o[shown].khoa]}
-              </p>
+              <p className="mb-1 text-[13px] font-bold uppercase tracking-wide text-primary">{nhan(data.o[shown])}</p>
               {body(shown, true)}
             </div>
           </div>
@@ -296,7 +300,7 @@ export default function VideoThiNghiemKhung({
                         "text-[14px] font-bold uppercase tracking-wide " + (on ? "text-primary" : "text-muted")
                       }
                     >
-                      {NHAN[o.khoa]}
+                      {nhan(o)}
                     </span>
                     {open && !on && <span className="ml-auto text-[13px] text-muted">Xem lại</span>}
                   </button>
