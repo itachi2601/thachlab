@@ -1,0 +1,51 @@
+{
+  "id": "tn-l12-phongxa-02",
+  "ten": "Đếm xung từ một nguồn phóng xạ, cứ 5 phút một lần",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phongxa-02-20261028-2.mp4",
+  "tong_giay": 54.9,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Số hạt nhân chưa phân rã giảm theo hàm mũ: cứ sau một khoảng T không đổi thì nhịp đếm (đã trừ phông) giảm một nửa.",
+      "kiem": "Số đếm biến đổi ra sao?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 2.9,
+      "chu": "Nguồn đặt trước ống Geiger. Số đếm sau mỗi 5 phút sẽ ra sao?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 8.9,
+      "chu": "Ống Geiger, máy đếm, đồng hồ; đo phông nền trước, rồi đếm mỗi 5 phút."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 15.4,
+      "chu": "Sau khi trừ phông 23: 812, 398, 204, 97, 52, 24 xung/phút."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 21.6,
+      "chu": "Cứ 5 phút nhịp đếm còn khoảng một nửa (tỉ số 1,87–2,17), nên chu kì bán rã T ≈ 5 phút."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 35.3,
+      "chu": "Không cho biết hạt nhân nào sẽ phân rã ở phút tiếp theo: phép đo chỉ cho số trung bình của cả mẫu."
+    }
+  ],
+  "dung_dua": {
+    "giay": 8.35,
+    "cau_hoi": "Đếm xung từ nguồn phóng xạ cứ 5 phút một lần. Số đếm (đã trừ phông) sau mỗi 5 phút sẽ ra sao?",
+    "chon": [
+      "A. Mỗi lần giảm như nhau",
+      "B. Còn khoảng một nửa",
+      "C. Sau 5 phút gần hết"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Mỗi 5 phút số đếm còn khoảng một nửa: không giảm đều và cũng không hết ngay.",
+    "giai_thich_sai": "Xem bảng số đếm ở đoạn kế và so từng số với số đứng trước nó."
+  }
+}

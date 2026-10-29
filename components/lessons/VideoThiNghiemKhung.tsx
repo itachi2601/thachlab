@@ -59,8 +59,10 @@ export default function VideoThiNghiemKhung({
   onEvent?: (e: VideoKhungEvent) => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null); // ô hiện tại ở điện thoại (video cao gần hết màn hình nên câu hỏi nằm dưới)
-  const prevT = useRef(0);
+  const askingRef = useRef(false); // đồng bộ với `asking` ngay lúc gọi (onPlay chạy trước khi React kịp dựng lại)
+  const askedOnce = useRef(false);
   const doneRef = useRef(false); // đã chọn hoặc chủ động bấm "xem luôn": từ đó mới hết bắt dừng và mở Giả thuyết
   const eventRef = useRef(onEvent); // trang gọi truyền hàm mới mỗi lần dựng: giữ ở ref để vòng rAF không bị huỷ liên tục
   useEffect(() => {
@@ -68,7 +70,11 @@ export default function VideoThiNghiemKhung({
   }, [onEvent]);
   const [t, setT] = useState(0);
   const [reached, setReached] = useState(0); // chỉ số ô xa nhất đã tới: ô sau đó còn khoá
-  const [asking, setAsking] = useState(false);
+  const [asking, setAskingState] = useState(false);
+  const setAsking = useCallback((b: boolean) => {
+    askingRef.current = b;
+    setAskingState(b);
+  }, []);
   const [chose, setChose] = useState<number | null>(null);
   const [boQua, setBoQua] = useState(false);
 
@@ -86,6 +92,22 @@ export default function VideoThiNghiemKhung({
     [data.o],
   );
 
+  // Dừng ở câu Dự đoán: thoát toàn màn hình (iOS/Android che mất thẻ câu hỏi), đưa focus vào nút chọn đầu tiên.
+  const hoi = useCallback(
+    (v: HTMLVideoElement) => {
+      v.pause();
+      const w = v as HTMLVideoElement & { webkitExitFullscreen?: () => void };
+      if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+      else w.webkitExitFullscreen?.();
+      setAsking(true);
+      if (!askedOnce.current) {
+        askedOnce.current = true;
+        eventRef.current?.({ loai: "dung_o_du_doan" });
+      }
+    },
+    [setAsking],
+  );
+
   const check = useCallback(() => {
     const v = videoRef.current;
     if (!v) return;
@@ -93,14 +115,8 @@ export default function VideoThiNghiemKhung({
     setT(now);
     // chưa trả lời thì các ô sau Dự đoán vẫn khoá, dù thanh tua đã kéo qua
     setReached((r) => Math.max(r, doneRef.current ? curOf(now) : Math.min(curOf(now), duDoanIdx)));
-    const qua = prevT.current < dd.giay && now >= dd.giay && now - dd.giay < 2;
-    if (qua && !v.seeking && !v.paused && !doneRef.current) {
-      v.pause();
-      setAsking(true);
-      eventRef.current?.({ loai: "dung_o_du_doan" });
-    }
-    prevT.current = now;
-  }, [curOf, dd.giay, duDoanIdx]);
+    if (now >= dd.giay - 0.05 && !v.seeking && !v.paused && !doneRef.current) hoi(v);
+  }, [curOf, dd.giay, duDoanIdx, hoi]);
 
   // rAF chỉ chạy khi video đang phát; lúc dừng/tua cập nhật bằng sự kiện (tab ẩn thì timeupdate vẫn bắt kịp).
   const raf = useRef(0);
@@ -108,7 +124,7 @@ export default function VideoThiNghiemKhung({
 
   const onPlay = () => {
     const v = videoRef.current;
-    if (asking && !doneRef.current) {
+    if (askingRef.current && !doneRef.current) {
       v?.pause(); // chạm vào video hay bấm play gốc cũng không bỏ qua được câu hỏi
       return;
     }
@@ -131,14 +147,11 @@ export default function VideoThiNghiemKhung({
     const v = videoRef.current;
     if (!v) return;
     const now = v.currentTime;
-    if (!doneRef.current && now > dd.giay + 0.3) {
+    if (!doneRef.current && now >= dd.giay - 0.05) {
       v.currentTime = dd.giay - 0.1;
-      v.pause();
-      setAsking(true);
-      eventRef.current?.({ loai: "dung_o_du_doan" });
+      hoi(v);
       return;
     }
-    prevT.current = now;
     if (now < dd.giay - 0.3) setAsking(false);
   };
 
@@ -147,6 +160,10 @@ export default function VideoThiNghiemKhung({
     if (!asking) return;
     const card = cardRef.current;
     if (card && card.offsetParent !== null) card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    const nut = [...(sectionRef.current?.querySelectorAll<HTMLButtonElement>("button[data-chon]") ?? [])].find(
+      (b) => b.offsetParent !== null && !b.disabled,
+    );
+    nut?.focus({ preventScroll: true });
   }, [asking]);
 
   const seekTo = (i: number) => {
@@ -204,6 +221,7 @@ export default function VideoThiNghiemKhung({
                 <button
                   key={s}
                   type="button"
+                  data-chon
                   disabled={chose !== null}
                   onClick={() => choose(k)}
                   className={
@@ -265,6 +283,7 @@ export default function VideoThiNghiemKhung({
 
   return (
     <section
+      ref={sectionRef}
       aria-label={`Video thí nghiệm: ${data.ten}`}
       className="rounded-2xl border border-line bg-panel p-4 sm:p-5"
     >

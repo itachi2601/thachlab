@@ -1,0 +1,52 @@
+{
+  "id": "tn-l12-mayphatdien-03",
+  "ten": "Tự quấn máy biến áp: vôn kế chỉ bao nhiêu?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-03-20261028-2.mp4",
+  "tong_giay": 53.2,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Máy biến áp lí tưởng: điện áp hai cuộn tỉ lệ với số vòng dây.",
+      "kiem": "Thêm vòng thứ cấp thì vôn kế chỉ sao?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.8,
+      "chu": "Sơ cấp 200 vòng, 12 V. Thứ cấp 400 vòng thì vôn kế chỉ bao nhiêu?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.1,
+      "chu": "Lõi thép kín, dây đồng, nguồn xoay chiều 12 V, vôn kế AC."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 18.0,
+      "chu": "N₂ = 100, 200, 400, 600 vòng cho U₂ = 5,9; 11,6; 23,5; 35,1 V."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 23.9,
+      "chu": "N₂ gấp đôi thì U₂ gấp đôi: U₂ tỉ lệ với số vòng, bám đường thẳng, hơi thấp do hao phí."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 37.9,
+      "chu": "Không đo dòng điện nên chưa biết hiệu suất khi có tải; chỉ dùng nguồn xoay chiều."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.9,
+    "cau_hoi": "Cuộn sơ cấp 200 vòng nối nguồn xoay chiều 12 V. Cuộn thứ cấp 400 vòng, vôn kế chỉ bao nhiêu?",
+    "chon": [
+      "A. 6 V",
+      "B. 12 V",
+      "C. 24 V",
+      "D. 48 V"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "U₂ = U₁·N₂/N₁ = 12 × 400/200 = 24 V; video đo được 23,5 V, hơi thấp do hao phí.",
+    "giai_thich_sai": "Số vòng thứ cấp gấp mấy lần sơ cấp? Điện áp thứ cấp thay đổi cùng tỉ lệ đó."
+  }
+}

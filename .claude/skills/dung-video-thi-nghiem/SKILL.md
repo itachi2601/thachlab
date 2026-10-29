@@ -48,7 +48,7 @@ Mỗi clip tự dựng có thêm một khung **sáu ô** chạy cùng video (`co
 1. `python3 scripts/video-thi-nghiem/xuat-khung.py <tên clip>` → in NHÁP JSON (mốc giây suy từ engine, chữ lấy từ kho thí nghiệm) + dòng `#` liệt kê cảnh/phụ đề ra stderr. Ghi vào `content/thi-nghiem/video-khung/<id>.json`, thay mọi `<...>`.
 2. Sửa tay: mốc `quan_sat`/`rut_ra` theo phụ đề thật (không mở ô trước lúc clip chiếu tới); `video` = URL bucket `lesson-clips/clip/<id>-<ngày>-2.mp4` (đúng bản đang dùng trong bài, `tong_giay` phải khớp độ dài file); viết `kiem`, câu hỏi, lựa chọn, đáp án (lấy đúng hộp Dự đoán trong clip).
 3. `python3 scripts/video-thi-nghiem/xuat-khung.py <tên clip> --kiem` tới khi `OK`, rồi thêm clip vào `app/dev/video-tuong-tac/page.tsx`, chụp 375px và 1280px, giao `kiem-code` soát, commit đúng đường dẫn.
-4. Chưa gắn vào bài thật (hộp video trong DB là HTML tĩnh): việc đó là bước riêng thầy duyệt trước.
+4. Chưa gắn vào bài thật (hộp video trong DB là HTML tĩnh): việc đó là bước riêng thầy duyệt trước. Khi gắn phải đo lại: video dính `top-2` đang nằm DƯỚI thanh `.lesson-nav` (top 76px) trong shell bài; điện thoại xoay ngang (cao ~375) video dính chỉ còn ~130 px rộng → ở khổ thấp bỏ dính; chụp 375×812, 667×375 và 1280×800 trong trang bài thật; thử toàn màn hình iOS/Android (component đã tự thoát toàn màn hình khi dừng hỏi).
 
 **Quy tắc K1–K10 (rút từ học sinh ảo + kiem-code 29/10; `--kiem` kiểm được K2, K3, K5, K9):**
 - K1 Tên clip không lộ đáp án câu Dự đoán ("…pV không đổi" lộ ngay đáp án) → tên viết thành câu hỏi hoặc tên dụng cụ.
@@ -59,7 +59,7 @@ Mỗi clip tự dựng có thêm một khung **sáu ô** chạy cùng video (`co
 - K6 Chữ phản hồi (`giai_thich_*`) không mở đầu bằng "Đúng/Chưa khớp" (component tự thêm); không điểm, không xếp hạng (SDT).
 - K7 Màn rộng: video bên TRÁI (dính), phần tương tác (câu hỏi, sáu ô, nút) bên PHẢI cho dễ bấm; điện thoại: video dính trên đầu và thu theo chiều cao màn hình, ô hiện tại + dải bước nằm dưới. Mọi nút ≥ 44 px.
 - K8 Câu Dự đoán bắt buộc: chạm video hoặc tua qua đều bị đưa về hỏi lại; lối thoát duy nhất là nút "Chưa muốn đoán, xem luôn" (tự chủ, ghi sự kiện `bo_qua`).
-- K9 Điểm dừng = hết cảnh hook − 0,15 s; không để tiếng báo (`cues`) nằm 0–0,35 s TRƯỚC điểm dừng (đinh rồi đứng hình).
+- K9 Điểm dừng ≤ đầu ô `dung_cu` (= hết cảnh hook, thường hết hook − 0,15 s) để hình cảnh sau không lộ; tiếng báo (`cues`) không được nằm 0–0,35 s TRƯỚC điểm dừng (đinh rồi đứng hình): vướng thì dừng SỚM hơn tiếng báo, đừng dừng muộn sang cảnh sau. `--kiem` kiểm cả hai.
 - K10 **Clip dựng mới/dựng lại**: hộp Dự đoán vẽ trong mp4 KHÔNG vẽ nút A/B/C trông như bấm được (khung bên cạnh đã có lựa chọn thật; chỉ nêu câu hỏi + hình), không viết HOA chữ gợi đáp án (vd. "YÊN"), số liệu thoáng qua (208 → 219 kPa) phải có chú thích "số chỉ nhảy rồi tụt" hoặc không hiện. 23 clip đã đăng còn các lỗi này trong mp4: chưa dựng lại (≈2 USD/clip), ghi nhận để dựng lại khi có đợt sửa clip.
 
 **Clip đã làm cần JSON khung** (còn thiếu, 3 clip đã có: boylecharles-01, chuyenthe-01, camungdt-01): 20 clip nhóm C lô 0–2 (`ls scripts/video-thi-nghiem/clips/`). Làm theo lô 5 clip, mỗi lô một agent Sonnet theo 3 bước trên; chỉ lô thầy duyệt mới gắn vào bài.

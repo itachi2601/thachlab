@@ -23,12 +23,12 @@
     {
       "khoa": "quan_sat",
       "giay": 16.7,
-      "chu": "Kim lệch khi cắm và khi rút, ngược chiều. Nhanh thì lệch nhiều. Yên thì về 0."
+      "chu": "Cắm nhanh lệch nhiều, cắm chậm lệch ít, để yên kim về 0."
     },
     {
       "khoa": "rut_ra",
       "giay": 23.5,
-      "chu": "Dòng cảm ứng chỉ có khi từ thông biến thiên; biến thiên càng nhanh thì dòng càng lớn."
+      "chu": "Dòng cảm ứng chỉ có khi từ thông biến thiên; biến thiên càng nhanh thì dòng càng lớn. Rút ra thì kim lệch ngược lại."
     },
     {
       "khoa": "chua_noi",
@@ -38,9 +38,9 @@
   ],
   "dung_dua": {
     "giay": 8.7,
-    "cau_hoi": "Nam châm nằm YÊN trong cuộn dây, kim điện kế sẽ:",
+    "cau_hoi": "Nam châm nằm yên trong cuộn dây, kim điện kế sẽ:",
     "chon": [
-      "A. Lệch, đứng yên",
+      "A. Lệch một bên, giữ nguyên",
       "B. Chỉ số 0",
       "C. Lệch qua lại"
     ],

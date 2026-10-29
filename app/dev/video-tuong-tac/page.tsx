@@ -5,16 +5,60 @@ import VideoThiNghiemKhung, {
   type VideoKhungData,
   type VideoKhungEvent,
 } from "@/components/lessons/VideoThiNghiemKhung";
-import boyle from "@/content/thi-nghiem/video-khung/tn-l12-boylecharles-01.json";
-import chuyenthe from "@/content/thi-nghiem/video-khung/tn-l12-chuyenthe-01.json";
-import camungdt from "@/content/thi-nghiem/video-khung/tn-l12-camungdt-01.json";
+import c_tn_l12_antoanpx_01 from "@/content/thi-nghiem/video-khung/tn-l12-antoanpx-01.json";
+import c_tn_l12_apsuatdongnang_01 from "@/content/thi-nghiem/video-khung/tn-l12-apsuatdongnang-01.json";
+import c_tn_l12_apsuatdongnang_02 from "@/content/thi-nghiem/video-khung/tn-l12-apsuatdongnang-02.json";
+import c_tn_l12_boylecharles_01 from "@/content/thi-nghiem/video-khung/tn-l12-boylecharles-01.json";
+import c_tn_l12_camungdt_01 from "@/content/thi-nghiem/video-khung/tn-l12-camungdt-01.json";
+import c_tn_l12_camungdt_03 from "@/content/thi-nghiem/video-khung/tn-l12-camungdt-03.json";
+import c_tn_l12_chuyenthe_01 from "@/content/thi-nghiem/video-khung/tn-l12-chuyenthe-01.json";
+import c_tn_l12_dttruong_02 from "@/content/thi-nghiem/video-khung/tn-l12-dttruong-02.json";
+import c_tn_l12_hatnhan_01 from "@/content/thi-nghiem/video-khung/tn-l12-hatnhan-01.json";
+import c_tn_l12_hatnhan_02 from "@/content/thi-nghiem/video-khung/tn-l12-hatnhan-02.json";
+import c_tn_l12_mayphatdien_01 from "@/content/thi-nghiem/video-khung/tn-l12-mayphatdien-01.json";
+import c_tn_l12_mayphatdien_03 from "@/content/thi-nghiem/video-khung/tn-l12-mayphatdien-03.json";
+import c_tn_l12_nllk_01 from "@/content/thi-nghiem/video-khung/tn-l12-nllk-01.json";
+import c_tn_l12_phongxa_02 from "@/content/thi-nghiem/video-khung/tn-l12-phongxa-02.json";
+import c_tn_l12_pttrangthai_02 from "@/content/thi-nghiem/video-khung/tn-l12-pttrangthai-02.json";
+import c_tn_l12_thangnhietdo_01 from "@/content/thi-nghiem/video-khung/tn-l12-thangnhietdo-01.json";
+import c_tn_l12_thangnhietdo_04 from "@/content/thi-nghiem/video-khung/tn-l12-thangnhietdo-04.json";
+import c_tn_l12_thuchanh_02 from "@/content/thi-nghiem/video-khung/tn-l12-thuchanh-02.json";
+import c_tn_l12_thuchanhtu_03 from "@/content/thi-nghiem/video-khung/tn-l12-thuchanhtu-03.json";
+import c_tn_l12_thuchanhtu_04 from "@/content/thi-nghiem/video-khung/tn-l12-thuchanhtu-04.json";
+import c_tn_l12_tutruong_04 from "@/content/thi-nghiem/video-khung/tn-l12-tutruong-04.json";
+import c_tn_l12_udcamung_02 from "@/content/thi-nghiem/video-khung/tn-l12-udcamung-02.json";
+import c_tn_l12_xoaychieu_03 from "@/content/thi-nghiem/video-khung/tn-l12-xoaychieu-03.json";
 
 /**
- * XEM THỬ video thí nghiệm + khung sáu ô + dừng ở câu Dự đoán (bản thử 29/10/2026).
+ * XEM THỬ video thí nghiệm + khung sáu ô + dừng ở câu Dự đoán (bản thử 29/10/2026), 23 clip L12.
  * Mở http://localhost:3000/dev/video-tuong-tac. Chỉ có nghĩa ở máy dev; sự kiện chỉ in ra bảng bên dưới,
  * chưa ghi DB (muốn đo tỉ lệ dừng/chọn/xem lại thì nối onEvent vào bảng ghi sau khi thầy chốt).
  */
-const CLIPS = [boyle, chuyenthe, camungdt] as VideoKhungData[];
+const CLIPS = [
+  c_tn_l12_antoanpx_01,
+  c_tn_l12_apsuatdongnang_01,
+  c_tn_l12_apsuatdongnang_02,
+  c_tn_l12_boylecharles_01,
+  c_tn_l12_camungdt_01,
+  c_tn_l12_camungdt_03,
+  c_tn_l12_chuyenthe_01,
+  c_tn_l12_dttruong_02,
+  c_tn_l12_hatnhan_01,
+  c_tn_l12_hatnhan_02,
+  c_tn_l12_mayphatdien_01,
+  c_tn_l12_mayphatdien_03,
+  c_tn_l12_nllk_01,
+  c_tn_l12_phongxa_02,
+  c_tn_l12_pttrangthai_02,
+  c_tn_l12_thangnhietdo_01,
+  c_tn_l12_thangnhietdo_04,
+  c_tn_l12_thuchanh_02,
+  c_tn_l12_thuchanhtu_03,
+  c_tn_l12_thuchanhtu_04,
+  c_tn_l12_tutruong_04,
+  c_tn_l12_udcamung_02,
+  c_tn_l12_xoaychieu_03,
+] as VideoKhungData[];
 
 export default function VideoTuongTacPreviewPage() {
   const [log, setLog] = useState<string[]>([]);

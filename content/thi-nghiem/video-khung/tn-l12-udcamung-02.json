@@ -1,0 +1,52 @@
+{
+  "id": "tn-l12-udcamung-02",
+  "ten": "Hai cuộn dây cạnh nhau: kim điện kế làm gì khi bật, giữ, ngắt K?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-udcamung-02-20261028-2.mp4",
+  "tong_giay": 48.4,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Cuộn 2 chỉ có suất điện động khi dòng ở cuộn 1 đang đổi; vì thế đế sạc không dây phải dùng điện xoay chiều.",
+      "kiem": "Khi nào kim điện kế cuộn 2 lệch?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.3,
+      "chu": "Bật K, giữ đóng, rồi ngắt K. Kim điện kế ở cuộn 2 sẽ thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.4,
+      "chu": "Hai cuộn dây, pin 1,5 V, điện kế."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 15.0,
+      "chu": "Kim giật lúc bật và lúc ngắt, ngược phía nhau."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 23.6,
+      "chu": "Cuộn 2 chỉ có e₂ khi dòng ở cuộn 1 đổi (từ thông đổi): e₂ = −M·Δi₁/Δt. Giữ K đóng thì Δi₁/Δt = 0 nên e₂ = 0."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 34.7,
+      "chu": "Chưa đo độ lớn e₂; hai cuộn xa nhau thì kim lệch ít. Số liệu ±0,05 V là minh hoạ."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.05,
+    "cau_hoi": "Bật K, giữ đóng, rồi ngắt K. Kim điện kế sẽ:",
+    "chon": [
+      "A. lệch một phía, giữ nguyên",
+      "B. giật 2 lần, cùng phía",
+      "C. giật 2 lần, ngược phía",
+      "D. đứng yên ở số 0"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "Lúc bật i₁ tăng, lúc ngắt i₁ giảm nên từ thông qua cuộn 2 đổi ngược chiều: kim giật hai lần về hai phía. Giữ K đóng thì i₁ không đổi, kim về 0.",
+    "giai_thich_sai": "Hỏi riêng ba lúc: bật, giữ đóng, ngắt; lúc nào i₁ đang đổi?"
+  }
+}

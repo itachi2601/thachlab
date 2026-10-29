@@ -22,6 +22,10 @@ if "--kiem" in sys.argv:
         n = tu(x["kiem"] if x["khoa"] == "gia_thuyet" and x.get("kiem") else x["chu"])   # Giả thuyết: chỉ `kiem` hiện trong lúc phát
         gioi = (e - x["giay"]) * 2.3 + 2
         if n > gioi: loi.append(f"K3 o {x['khoa']}: {n} tu / {e - x['giay']:.1f}s (toi da ~{gioi:.0f})")
+    if re.search(r"<[^>]*>|DOI TEN|NGAYTHANG", json.dumps(d, ensure_ascii=False)): loi.append("con cho trong chua dien (<...>, DOI TEN, NGAYTHANG)")
+    gk = {x["khoa"]: x["giay"] for x in o}
+    if dd["giay"] > gk["dung_cu"]: loi.append(f"K9 diem dung {dd['giay']}s sau dau o dung_cu {gk['dung_cu']}s (hinh canh sau lo ra)")
+    if dd["giay"] < gk["du_doan"]: loi.append("K9 diem dung truoc o du_doan")
     if not o[0].get("kiem"): loi.append("K2 o gia_thuyet thieu `kiem` (cau trung tinh)")
     elif tu(o[0]["kiem"]) < 4: loi.append("K2 `kiem` qua ngan")
     if "cues" in clip:                                    # K9: diem dung khong cat ngang tieng bao (tieng bao nam 0-0,35 s truoc diem dung)
@@ -47,6 +51,7 @@ nhap = dict(id=cid, ten=kho["ten"] + "  (DOI TEN: khong duoc lo dap an, K1)",
     dung_dua=dict(giay=round(hook["t0"] + hook["T"] - 0.15, 1), cau_hoi="<CAU HOI>", chon=["A. ", "B. ", "C. "], dung=0,
         giai_thich_dung="<khong mo dau bang 'Đúng'>", giai_thich_sai="<khong mo dau bang 'Chưa khớp'>"))
 print(json.dumps(nhap, ensure_ascii=False, indent=2))
+print("\n# LUU Y: moc quan_sat/rut_ra o day chi la doan (rut_ra = canh thu 3); dat theo PHU DE co noi dung do (K4).", file=sys.stderr)
 print("\n# canh cua clip (de sua moc o cho khop phu de):", file=sys.stderr)
 for s in sc:
     print(f"#  {s['t0']:5.1f}s [{s['key']}] {s['title']}: " + " | ".join(f"{s['t0']+m:.1f} {c}" for m, c in zip(s["M"], s["caps"])), file=sys.stderr)

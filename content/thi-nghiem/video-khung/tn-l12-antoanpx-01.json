@@ -1,0 +1,52 @@
+{
+  "id": "tn-l12-antoanpx-01",
+  "ten": "Lùi xa nguồn phóng xạ: máy Geiger đếm thế nào?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-01-20261028-2.mp4",
+  "tong_giay": 54.6,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Nhịp đếm tỉ lệ nghịch với bình phương khoảng cách.",
+      "kiem": "Lùi xa nguồn thì nhịp đếm ra sao?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.3,
+      "chu": "Ở 1 m máy đếm 360 xung/phút. Lùi ra 2 m thì còn bao nhiêu?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 8.9,
+      "chu": "Máy Geiger, nguồn gamma, thước dây. Đo phông trước, rồi lùi đầu dò dần."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 19.3,
+      "chu": "Từ 1 m ra 2 m, nhịp thực giảm từ 360 còn khoảng 90 xung/phút."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 24.9,
+      "chu": "Nhịp thực N tỉ lệ nghịch với d²: tích N·d² gần như không đổi, quanh 360, ở mọi vị trí đo."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 36.7,
+      "chu": "Không cho biết tác hại lên cơ thể: máy chỉ đếm xung, chưa tính loại tia (cần liều tương đương Sv)."
+    }
+  ],
+  "dung_dua": {
+    "giay": 8.75,
+    "cau_hoi": "Ở 1 m: 360 xung/phút. Lùi ra 2 m thì còn bao nhiêu?",
+    "chon": [
+      "A. Còn khoảng 1/2",
+      "B. Còn khoảng 1/4",
+      "C. Còn khoảng 1/8",
+      "D. Gần như không đổi"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Gấp đôi khoảng cách thì nhịp thực còn 1/4: từ 360 xuống khoảng 90 xung/phút.",
+    "giai_thich_sai": "Hãy xem số đếm ở 2 m ở đoạn kế và so với 360 ở 1 m."
+  }
+}
