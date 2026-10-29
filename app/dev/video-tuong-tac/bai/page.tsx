@@ -12,6 +12,10 @@ const BAI: Record<string, () => Promise<{ default: { theory_html: string } }>> =
   boyle: () => import("@/content/lesson-samples/l12-boyle-charles/bundle.json"),
   "chuyen-the": () => import("@/content/lesson-samples/l12-su-chuyen-the/bundle.json"),
   "cam-ung": () => import("@/content/lesson-samples/l12-cam-ung-dien-tu/bundle.json"),
+  "xoay-chieu": () => import("@/content/lesson-samples/l12-dong-dien-xoay-chieu/bundle.json"),
+  "ap-suat": () => import("@/content/lesson-samples/l12-ap-suat-dong-nang/bundle.json"),
+  "thang-nhiet-do": () => import("@/content/lesson-samples/l12-thang-nhiet-do/bundle.json"),
+  "phong-xa": () => import("@/content/lesson-samples/l12-phong-xa/bundle.json"),
 };
 
 export default function BaiThatPreviewPage() {
