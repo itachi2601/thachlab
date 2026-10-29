@@ -80,31 +80,42 @@ export default function VideoThiNghiemKhung({
     [data.o],
   );
 
-  useEffect(() => {
-    let raf = 0;
-    const tick = () => {
-      const v = videoRef.current;
-      if (v) {
-        const now = v.currentTime;
-        setT(now);
-        const c = curOf(now);
-        setReached((r) => Math.max(r, c));
-        const qua = prevT.current < dd.giay && now >= dd.giay && now - dd.giay < 1;
-        if (qua && choseRef.current === null && !skipRef.current && !v.paused) {
-          v.pause();
-          setAsking(true);
-          eventRef.current?.({ loai: "dung_o_du_doan" });
-        }
-        prevT.current = now;
-      }
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+  const check = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const now = v.currentTime;
+    setT(now);
+    setReached((r) => Math.max(r, curOf(now)));
+    const qua = prevT.current < dd.giay && now >= dd.giay && now - dd.giay < 2;
+    if (qua && !v.seeking && !v.paused && choseRef.current === null && !skipRef.current) {
+      v.pause();
+      setAsking(true);
+      eventRef.current?.({ loai: "dung_o_du_doan" });
+    }
+    prevT.current = now;
   }, [curOf, dd.giay]);
 
+  // rAF chỉ chạy khi video đang phát; lúc dừng/tua cập nhật bằng sự kiện (tab ẩn thì timeupdate vẫn bắt kịp).
+  const raf = useRef(0);
+  useEffect(() => () => cancelAnimationFrame(raf.current), []);
+
+  const onPlay = () => {
+    setAsking(false); // bấm play gốc khi đang hỏi: khung phải đi theo clip, không kẹt ở ô Dự đoán
+    document.querySelectorAll("video").forEach((o) => o !== videoRef.current && o.pause()); // một video phát một lúc
+    cancelAnimationFrame(raf.current);
+    const loop = () => {
+      check();
+      raf.current = requestAnimationFrame(loop);
+    };
+    raf.current = requestAnimationFrame(loop);
+  };
+  const onStop = () => {
+    cancelAnimationFrame(raf.current);
+    check();
+  };
+
   // Tua qua câu Dự đoán thì không bắt dừng; tua về trước nó thì cho hỏi lại nếu chưa chọn.
-  const onSeeked = () => {
+  const onSeeking = () => {
     const now = videoRef.current?.currentTime ?? 0;
     prevT.current = now;
     skipRef.current = now > dd.giay + 0.3;
@@ -150,7 +161,7 @@ export default function VideoThiNghiemKhung({
     if (i === duDoanIdx && asking) {
       const dung = chose === dd.dung;
       return (
-        <div>
+        <div role="group" aria-live="polite" aria-label="Câu dự đoán">
           <p className={big ? "text-[17px] leading-relaxed text-ink" : "text-[16px] leading-relaxed text-ink"}>
             {dd.cau_hoi}
           </p>
@@ -228,7 +239,7 @@ export default function VideoThiNghiemKhung({
                     type="button"
                     disabled={i > reached}
                     onClick={() => seekTo(i)}
-                    aria-label={NHAN[o.khoa]}
+                    aria-label={i > reached ? `${NHAN[o.khoa]} (chưa mở)` : NHAN[o.khoa]}
                     aria-current={i === shown ? "step" : undefined}
                     className={
                       "flex h-11 w-full items-center justify-center rounded-lg text-[14px] font-bold " +
@@ -260,6 +271,7 @@ export default function VideoThiNghiemKhung({
               return (
                 <li
                   key={o.khoa}
+                  aria-current={on ? "step" : undefined}
                   className={
                     "rounded-xl border p-4 transition-colors " +
                     (on ? "border-primary bg-primary-soft" : open ? "border-line bg-panel" : "border-line bg-surface-2")
@@ -269,7 +281,7 @@ export default function VideoThiNghiemKhung({
                     type="button"
                     disabled={!open}
                     onClick={() => seekTo(i)}
-                    className="flex w-full items-center gap-2 text-left disabled:cursor-default"
+                    className="flex min-h-11 w-full items-center gap-2 text-left disabled:cursor-default"
                   >
                     <span
                       className={
@@ -303,7 +315,12 @@ export default function VideoThiNghiemKhung({
             controls
             playsInline
             preload="none"
-            onSeeked={onSeeked}
+            onPlay={onPlay}
+            onPause={onStop}
+            onEnded={onStop}
+            onSeeking={onSeeking}
+            onSeeked={check}
+            onTimeUpdate={check}
             className="aspect-[9/16] w-full rounded-xl bg-black object-contain shadow-lg"
           />
           <p className="mt-2 text-center text-[13px] text-muted">

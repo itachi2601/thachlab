@@ -98,3 +98,4 @@
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 9:16 không lời, Lô 0 = 3 clip L12 (27/10); chờ thầy duyệt + chốt nơi đặt mp4
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 1 21 bài đã đăng 26/10; đợt 2 (○) chờ số liệu Trả bài
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — bản duyệt 26/10; ≥1280 media lan phải + cột lề Tufte 27/10, chưa deploy
+- [Video khung bán tương tác](project_thachlab_video_khung_tuong_tac.md) — bản thử 29/10: khung 6 ô + dừng Dự đoán; chờ thầy chốt ô Giả thuyết + cách nhúng vào bài

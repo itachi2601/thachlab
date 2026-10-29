@@ -4,19 +4,47 @@
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-01-20261028-2.mp4",
   "tong_giay": 51.8,
   "o": [
-    { "khoa": "gia_thuyet", "giay": 0, "chu": "Có dòng điện trong mạch kín khi từ thông qua mạch biến thiên (Faraday)." },
-    { "khoa": "du_doan", "giay": 3.4, "chu": "Nam châm nằm yên trong cuộn dây. Kim điện kế sẽ làm gì?" },
-    { "khoa": "dung_cu", "giay": 8.9, "chu": "Cuộn 600 vòng nối điện kế nhạy (số 0 ở giữa), thanh nam châm. Cắm nhanh, cắm chậm, để yên, rút ra." },
-    { "khoa": "quan_sat", "giay": 16.7, "chu": "Kim lệch khi cắm vào và khi rút ra, về hai phía ngược nhau. Đưa nhanh lệch nhiều hơn. Giữ yên, kim về 0." },
-    { "khoa": "rut_ra", "giay": 23.5, "chu": "Dòng cảm ứng chỉ có khi từ thông biến thiên. Độ lớn phụ thuộc tốc độ biến thiên." },
-    { "khoa": "chua_noi", "giay": 36.2, "chu": "Chưa cho biết chiều dòng điện (đó là định luật Lenz). Chưa thử đổi diện tích S." }
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Có dòng điện trong mạch kín khi từ thông qua mạch biến thiên (Faraday)."
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.4,
+      "chu": "Nam châm nằm yên trong cuộn dây. Kim điện kế sẽ làm gì?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 8.9,
+      "chu": "Cuộn 600 vòng nối điện kế nhạy (số 0 ở giữa), thanh nam châm. Cắm nhanh, cắm chậm, để yên, rút ra."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 16.7,
+      "chu": "Kim lệch khi cắm vào và khi rút ra, về hai phía ngược nhau. Đưa nhanh lệch nhiều hơn. Giữ yên, kim về 0."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 23.5,
+      "chu": "Dòng cảm ứng chỉ có khi từ thông biến thiên; biến thiên càng nhanh thì dòng càng lớn."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 36.2,
+      "chu": "Chưa cho biết chiều dòng điện (đó là định luật Lenz). Chưa thử đổi diện tích S."
+    }
   ],
   "dung_dua": {
     "giay": 8.7,
     "cau_hoi": "Nam châm nằm YÊN trong cuộn dây, kim điện kế sẽ:",
-    "chon": ["A. Lệch, đứng yên", "B. Chỉ số 0", "C. Lệch qua lại"],
+    "chon": [
+      "A. Lệch, đứng yên",
+      "B. Chỉ số 0",
+      "C. Lệch qua lại"
+    ],
     "dung": 1,
-    "giai_thich_dung": "Đúng: nam châm đứng yên thì từ thông không đổi, không có dòng cảm ứng.",
-    "giai_thich_sai": "Chưa khớp. Xem điện kế ở đoạn kế lúc nam châm nằm yên."
+    "giai_thich_dung": "Nam châm đứng yên thì từ thông không đổi, không có dòng cảm ứng.",
+    "giai_thich_sai": "Xem điện kế ở đoạn kế lúc nam châm nằm yên."
   }
 }
