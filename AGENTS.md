@@ -298,3 +298,6 @@ Dev server Turbopack có lúc giữ CSS cũ sau khi sửa file (27/10/2026): s�
 - Đọc CSS của mẫu (số đo thật), không làm theo ghi chú; lập danh sách điểm so sánh trước khi sửa.
 - Sau mỗi nhóm sửa: chụp trang thật và mẫu ở CÙNG cỡ (1280 · 1024 · 768 · 375, sáng + tối), so theo danh sách; đo bằng `getComputedStyle` (cỡ chữ, rộng cột, khoảng cách) — rule cũ kiểu `font-size: 1rem` cứng thường đè rule mới.
 - Điểm nào cố ý lệch thì ghi lý do vào commit và báo cáo, không im lặng bỏ qua.
+
+# Worktree thiếu .env.local → "Hệ thống đang được cấu hình" (lặp 2 lần, 29/10/2026)
+`.env.local` gitignore nên worktree mới không có. Đã chặn tận gốc: `.worktreeinclude` (chép khi tạo worktree) + `scripts/link-env-local.mjs` chạy ở `predev`/`prebuild` (symlink về checkout chính). Thấy lại lỗi này: chạy `npm run dev` (không gọi `next dev` trực tiếp).
