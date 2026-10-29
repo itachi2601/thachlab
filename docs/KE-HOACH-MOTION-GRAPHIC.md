@@ -77,3 +77,100 @@ component video + CSS, không sửa chữ bài.
 - Bài có clip L12: tỉ lệ đúng quiz sau thí nghiệm + Trả bài, 2 tuần trước/sau 28/10 (số liệu có sẵn).
 - Lớp B: % HS bấm phát; % chọn ở điểm dừng; phân bố A–D (câu bẫy tốt phải có ≥ 30 % chọn sai).
 - Nếu bấm phát < 20 % → đổi ảnh bìa/nhãn trước khi dựng thêm; nếu chọn đúng ở điểm dừng > 85 % → câu Dự đoán quá dễ, sửa JSON.
+
+## 6. Prompt từng chặng (dán vào phiên mới, mỗi phiên một chặng/lô) + agent đề xuất
+
+Quy ước chung cho mọi prompt: phiên mở bằng `git fetch origin && git merge origin/main`, chạy `/tinh-hinh`; commit theo
+đường dẫn cụ thể ngay sau mỗi bài/clip; render, tải bucket, ghi DB chạy **trong tab terminal** trên Mac; ghi DB hàng loạt sau
+22h; cuối phiên "Rút kinh nghiệm" vào `.claude/skills/dung-video-thi-nghiem/SKILL.md` và `/ban-giao`.
+
+| Chặng | Phiên chính | Subagent | Vì sao |
+|---|---|---|---|
+| A | **Sonnet** | `kiem-code` soát diff + ảnh 375 px; `kien-truc-du-lieu` (Opus) chỉ nếu phải thêm bảng/cột cho event | code component + CSS, không cần Opus; schema là việc của agent dữ liệu |
+| B | **Opus** điều phối, mỗi clip một agent `general-purpose` model **opus** | `kiem-code` (Sonnet) đọc ảnh ghép cổng B | hình vật lí đúng cần Opus; đã đo 2,4–2,6 USD/clip gồm soát |
+| B' | thầy | — | duyệt YouTube/tự dựng |
+| C | **Opus** cho 2 clip mẫu đầu, **Sonnet** cho lô còn lại | `kiem-code` cổng B; `nhap-du-lieu-hoc-sinh` KHÔNG cần (chỉ dùng số liệu gộp theo chủ đề, không tên HS) | kịch bản bẫy là kiểu mới → cần đặt mẫu |
+| D | **Opus** | `kiem-code` | kiểu mới, 1 clip thử |
+| E | **Sonnet** | `kiem-code` | lặp theo pipeline `book/` có sẵn |
+| F | **Opus** | `kiem-code` soát theo P1..P21 | một lần, đối tượng 45–60 tuổi |
+
+### Chặng A — khung tương tác vào bài thật (Sonnet)
+
+```
+Làm chặng A trong docs/KE-HOACH-MOTION-GRAPHIC.md. Đọc trước: docs/QUY-TAC-THIET-KE.md V5, V9, V12, B4, E1;
+components/lessons/VideoThiNghiemKhung.tsx; app/dev/video-tuong-tac/page.tsx; content/thi-nghiem/video-khung/*.json;
+scripts/chen-video-thi-nghiem.mts; cách ContentHtml render thẻ <video preload="none"> hiện có. Merge origin/main trước.
+1) Deploy CSS khung dọc `tl-video--doc` (globals.css) còn treo từ 28/10: kiểm `git log origin/deploy -1 -- app/globals.css`,
+   chưa có thì `bash scripts/deploy.sh` trong tab terminal, kiểm bằng getComputedStyle trên bài 18 L12.
+2) Cho 23 clip L12 đã có JSON ở content/thi-nghiem/video-khung/: sửa chen-video-thi-nghiem.mts để thẻ video nhận
+   `data-khung="<tn-id>"`; ContentHtml (hoặc wrapper client) thay thẻ đó bằng VideoThiNghiemKhung lazy
+   (next/dynamic ssr:false + LazyErrorBoundary), player chỉ nạp khi bấm (V5). Không JS khi bài không có data-khung.
+3) Điểm dừng Dự đoán: HS chọn A.–D. (E1) rồi video mới chạy tiếp; không chấm điểm, không RP. Ghi event
+   `clip_choice {tn_id, lua_chon, dung}` GỘP vào heartbeat/batch hiện có của trang bài — KHÔNG thêm round-trip Supabase
+   cho /lop-hoc/bai. Cần cột/bảng mới thì giao agent kien-truc-du-lieu viết migration (file + rollback), không tự chạy.
+4) Build 16 bài L12 + bài 126, đăng lại bằng cap-nhat-ly-thuyet.sh (sau khi thầy duyệt 1 bài mẫu, sau 22h nếu >5 bài).
+5) kiem-code soát diff + chụp 375 px sáng/tối bài 18: khung không tràn ngang, điểm dừng đúng mốc, giảm chuyển động vẫn xem được.
+Xong khi: 23 clip dừng ở Dự đoán trên web thật; có số lượt chọn đọc được. Ghi sổ content/thi-nghiem/so-clip-anh-dong.md.
+```
+
+### Chặng B — lô clip nhóm C L10/L11 (Opus điều phối, 7–10 clip/phiên)
+
+```
+Làm chặng B trong docs/KE-HOACH-MOTION-GRAPHIC.md cho chương <…> lớp <10|11>. Theo skill /dung-video-thi-nghiem từng bước
+(cổng A --kich-ban → cổng B --sheet đọc trong kiem-code → --do-chu ≤ 200 từ/phút → render trong tab terminal). Merge origin/main.
+1) Lấy danh sách nhóm C của chương ở content/thi-nghiem/danh-sach-tu-dung.md; đối chiếu lịch sắp dạy (skill lich-tuan)
+   để ưu tiên bài dạy trong 2 tuần tới. Bỏ qua TN đã có clip/PhET/SVG thể hiện rõ (V6); ghi "bỏ qua: lý do" vào sổ.
+2) Mỗi clip: một agent general-purpose model opus, thư mục nháp riêng trong scratchpad, dừng sau --sheet và trả kịch bản;
+   phiên chính giao kiem-code (Sonnet) đóng vai HS lớp đó đọc ảnh ghép, ≤ 10 góp ý; SendMessage góp ý về agent dựng;
+   tối đa 2 vòng. Tối đa 3 agent song song. Phiên chính không mở ảnh.
+3) Kèm mỗi clip một JSON khung content/thi-nghiem/video-khung/<tn>.json (mốc 6 ô, mốc dừng Dự đoán, 4 lựa chọn A.–D.), kiểm --kiem.
+4) Sau render: đo độ dài 35–50 s, < 3 MB, silencedetect khớp mốc; commit clips/*.py + video-khung/*.json ngay.
+5) tai-clip-len-storage.mts --apply → chen-video-thi-nghiem.mts → build → ĐỢI thầy duyệt lô → cap-nhat-ly-thuyet.sh sau 22h.
+Trước khi sửa bài nào: git log origin/main -3 -- content/lesson-samples/<bài>/theory.src.html; có commit 24 h qua thì chờ.
+Báo cuối: số clip, chi phí (USD, đọc từ /cost), dòng sổ, bài học mới vào SKILL.md.
+```
+
+### Chặng C — clip bẫy cho phụ đạo (Opus mẫu → Sonnet lô)
+
+```
+Làm chặng C trong docs/KE-HOACH-MOTION-GRAPHIC.md, thí điểm chương <…> L12. Đọc: docs/ANALYTICS-SETUP.md, docs/PHU-DAO.md,
+docs/mastery-rules.md, docs/QUY-TAC-THIET-KE.md V9 V12 E1, skill dung-video-thi-nghiem mục cấu trúc clip. Merge origin/main.
+1) Truy vấn (chỉ đọc, số liệu gộp theo YCCĐ/chủ đề, KHÔNG kéo tên HS) 5 chủ đề sai nhiều nhất của chương trong Trả bài +
+   quiz 30 ngày; với mỗi chủ đề lấy 1 câu HS sai nhiều nhất làm tình huống.
+2) Viết mẫu kịch bản scripts/video-thi-nghiem/clips/bay-<chuong>-01.py: 20–30 s, cảnh Tình huống (hỏi, dừng 4–5 s, A.–D.
+   cùng màu) → Đáp án → "Sai vì…" vẽ động đúng cơ chế → Quy tắc 1 dòng → câu hỏi tự nhớ. Tổng chữ ≤ 200 từ/phút.
+   Hai clip đầu Opus làm, qua cổng A/B, gửi ảnh ghép cho thầy duyệt mẫu; 3 clip còn lại Sonnet theo mẫu.
+3) Nhúng: trang /phu-dao của chủ đề đó (ảnh bìa + nút phát, V5) và hộp liên quan trong bài lý thuyết nếu còn hạn mức V11.
+   Không gắn RP; không thay 20 câu thoát phụ đạo.
+4) Đo: tỉ lệ thoát phụ đạo chủ đề đó 2 tuần trước/sau; ghi cách đo vào docs/ANALYTICS-SETUP.md (chỉ thêm mục).
+Xong khi: 5 clip lên bucket, thầy duyệt, 1 trang phụ đạo hiện clip ở 375 px.
+```
+
+### Chặng D — video ôn chương hỏi-trước (Opus, 1 clip thử)
+
+```
+Làm chặng D trong docs/KE-HOACH-MOTION-GRAPHIC.md: 1 video ôn 60–90 s cho chương <…> L12. Đọc docs/memory/project_thachlab_on_tap_theo_chang.md,
+dòng 🔑 từ khoá của các bài trong chương (content/lesson-samples/l12-*/theory.src.html), V9 V12.
+Kịch bản: 5 câu hỏi từ khoá (mỗi câu dừng 4 s, đếm ngược) → hiện đáp án là chính dòng 🔑 của bài → cuối: 1 câu nối hai bài.
+Không giọng đọc. Qua cổng A/B, render, gửi thầy xem bằng SendUserFile. Chưa nhúng — chỉ đề xuất chỗ đặt ở màn hình 1
+Ôn tập theo chặng và cách đo (tỉ lệ đúng buổi ôn có/không video). Commit clips/on-<chuong>.py.
+```
+
+### Chặng E — QR clip trong sách in (Sonnet)
+
+```
+Làm chặng E trong docs/KE-HOACH-MOTION-GRAPHIC.md cho chương <…>. Đọc skill sach-in-tu-web, book/ (chỗ sinh QR), lib/exam-link.ts,
+scripts/kiem-qr.mts. Với mỗi hộp thí nghiệm đã có clip tự dựng (video.mp4 trong tn-*.json): in QR nhỏ cạnh hộp trỏ thẳng
+tới URL mp4 công khai trên bucket lesson-clips, chú thích ≤ 10 chữ "Quét xem thí nghiệm". Giải mã lại QR bằng kiem-qr.mts.
+Dựng lại PDF, báo số QR thêm; không ghi DB.
+```
+
+### Chặng F — clip phụ huynh / tuyển sinh (Opus, một lần)
+
+```
+Làm chặng F trong docs/KE-HOACH-MOTION-GRAPHIC.md: 1 clip 30 s "Con học trên thachlab thế nào" cho /phu-huynh. Đọc
+docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1..P21) và docs/PHU-HUYNH.md. Không giọng, phụ đề ≤ 6 từ, chữ ≥ 48 px, nhịp chậm hơn
+clip HS (≤ 120 từ/phút), 4 cảnh: con làm bài → phụ huynh nhận kết quả → chủ đề cần ôn → cách xem. Không số liệu/tên HS thật.
+Qua cổng A/B với kiem-code đóng vai phụ huynh 50 tuổi; render bản 9:16 (Zalo) và 16:9 (web); gửi thầy duyệt bằng SendUserFile.
+Chưa nhúng — đề xuất chỗ đặt ở /phu-huynh.
+```
