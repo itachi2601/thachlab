@@ -5,7 +5,7 @@
   "scripts": {
     "predev": "node scripts/link-env-local.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/link-env-local.mjs && node scripts/build-content.mjs && node scripts/gen-image-dimensions.mjs",
+    "prebuild": "node scripts/link-env-local.mjs --require && node scripts/build-content.mjs && node scripts/gen-image-dimensions.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
