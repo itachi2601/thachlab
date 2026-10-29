@@ -18,18 +18,6 @@ def block(cx,cy,ang,w=56,h=34):
     # hình chữ nhật có đáy nằm trên mặt dốc; (cx,cy)=tâm đáy; ang: góc quay (độ, dương = xoay ngược chiều kim đồng hồ trên màn hình = đi lên bên phải)
     return f'<g transform="translate({cx:.1f},{cy:.1f}) rotate({-ang})"><rect x="{-w/2}" y="{-h}" width="{w}" height="{h}" rx="3" fill="#f59e0b" fill-opacity=".25"/></g>'
 
-# 1) mặt phẳng nghiêng góc α, trọng lực P (3123, 682630)
-for i,deg in (('3123',30),('682630',20)):
-    a=math.radians(deg); x0,y0=60,200; L=300
-    x1,y1=x0+L*math.cos(a),y0-L*math.sin(a)
-    b=f'<polygon points="{x0},{y0} {x1+0:.1f},{y0} {x1:.1f},{y1:.1f}" fill="currentColor" fill-opacity=".06"/>'
-    b+=hatch(x0,y0,x1)
-    t=0.55; bx,by=x0+L*t*math.cos(a),y0-L*t*math.sin(a)
-    b+=block(bx,by,deg)
-    cx,cy=bx-(-0)+0,by-17
-    b+=arrow(i,bx-17*math.sin(a),by-17*math.cos(a),bx-17*math.sin(a),by-17*math.cos(a)+80,R,'<tspan font-weight="600">P</tspan>',6,4)  # (không vẽ N, không vẽ thành phần)
-    b+=f'<path d="M{x0+55},{y0} A55 55 0 0 0 {x0+55*math.cos(a):.1f} {y0-55*math.sin(a):.1f}" stroke-width="1.5"/>'+txt(x0+68,y0-8,'α' if i=='3123' else '20°')
-    svg(i,b,w=380)
 # 4) 1473157: m1 trên bàn nối dây qua ròng rọc mép bàn với m2 treo
 b='<path d="M20,110 H300" stroke-width="2.5"/><path d="M300,110 V215" stroke-width="2.5"/>'+hatch(20,110,300).replace('y2="120"','y2="120"')
 b+='<rect x="120" y="70" width="70" height="40" rx="3" fill="#f59e0b" fill-opacity=".25"/>'+txt(155,96,'m₁','middle')
