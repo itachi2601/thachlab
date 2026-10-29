@@ -15,7 +15,7 @@ Thí điểm L10 Động lực học (29/10/2026): 57 hình ghi xong. Mã nguồ
 - Nguồn ảnh thật (hiện tượng đời sống): chỉ giấy phép mở, ghi tác giả; không rõ giấy phép = không dùng (`/dieu-khoan`).
 
 ## Quy trình
-1. **Quét (chỉ đọc)**: `npx tsx scripts/quet-cau-can-hinh-l10.mts` liệt kê chủ đề; thêm `--chu-de "<regex ASCII, dùng . thay chữ có dấu>"` để xuất JSON. (Terminal tool từ chối lệnh có ký tự không ASCII.) Script chỉ đọc lớp 10; chương lớp khác thì sửa `.ilike("grade", ...)`.
+1. **Quét (chỉ đọc)**: `npx tsx scripts/quet-cau-can-hinh-l10.mts` liệt kê chủ đề; thêm `--chu-de "<regex ASCII, dùng . thay chữ có dấu>"` để xuất JSON. (Terminal tool từ chối lệnh có ký tự không ASCII.) Lớp khác: `--lop 12 --ra hinh-cau-hoi-l12-c4/l12-hat-nhan.json` (đường dẫn tương đối `scripts/data/`). File xuất có thể vài MB → sau khi phân loại chỉ giữ các câu được chọn.
 2. **Bộ dò "đã có hình"** — phải đủ 3 loại, thiếu là vẽ trùng (đã gặp 2 lần): `<img>` không `class="eq"` hoặc rộng ≥120px, **`<svg>` nội tuyến**, `<figure>`. Ảnh có alt "Hình…" vẫn là hình thật.
 3. **Phân loại** (đặt `l10-…-phan-loai.json`): vẽ được bằng khuôn / cần sơ đồ tay / mơ hồ / thiếu hình gốc.
 4. **Vẽ** vào `svg/<id>.svg`. Mỗi id ghi tham số riêng trong bảng của khuôn. Nhãn góc mặc định có thể bịa dữ liệu → đặt `lab=' '` khi đề không cho góc.
@@ -36,3 +36,4 @@ Thí điểm L10 Động lực học (29/10/2026): 57 hình ghi xong. Mã nguồ
 - 2026-10-29 · Nhãn góc/độ dài mặc định của khuôn bịa số liệu đề không cho → `lab=' '`; nhãn L đè hình (#1538687) → đặt trong tam giác.
 - 2026-10-29 · `supabase … --linked` báo "Cannot find project ref" trong worktree → chạy từ repo chính bằng đường dẫn tuyệt đối.
 - 2026-10-29 · RPC ghi hình ~2 phút/câu giờ học → báo thầy trước, chọn chạy ngay hoặc chờ 22h.
+- 2026-10-29 · L12 Ch.4 Hạt nhân: 1.994 câu, 197 đã có hình, chỉ 5 câu thật sự cần (đồ thị N–t, đường cong Wlk/A ×3, cảm biến khói); 14/19 khớp từ khoá là nhầm ("hình cầu", "hình thành") → lọc từ khoá xong phải đọc từng câu; câu "tia nào không lệch trong điện trường" không vẽ vì hình lộ đáp án.
