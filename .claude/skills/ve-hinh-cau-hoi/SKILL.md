@@ -27,7 +27,7 @@ Thí điểm L10 Động lực học (29/10/2026): 57 hình ghi xong. Mã nguồ
 8. Hình ghi nhầm/nhân đôi: khôi phục từ file sao lưu bằng SQL giao dịch (tắt `trg_exams_sync_bank`, sửa `question_bank` + `content_hash`, hoàn `exams`, bật lại trigger, đếm dòng) — mẫu `scripts/logs/khoi-phuc-339825.sql`. Phải được thầy cho phép trước khi chạy.
 
 ## Việc chưa làm / giới hạn
-- Hình đang nằm **dưới đề**, chưa "kế bên" như thầy muốn — cần đổi UI hiển thị câu hỏi (đọc `docs/QUY-TAC-THIET-KE.md`, chụp 375px).
+- Hình kế bên đề: `ContentHtml.withFigureBeside` (commit 7ddc18fb9) — cần push/deploy mới thấy trên web.
 - Chương L10 còn 109 câu hệ vật nối dây + 14 câu ròng rọc mơ hồ, 5 câu "như hình vẽ" thiếu hình.
 
 ## Nhật ký rút kinh nghiệm
@@ -36,3 +36,5 @@ Thí điểm L10 Động lực học (29/10/2026): 57 hình ghi xong. Mã nguồ
 - 2026-10-29 · Nhãn góc/độ dài mặc định của khuôn bịa số liệu đề không cho → `lab=' '`; nhãn L đè hình (#1538687) → đặt trong tam giác.
 - 2026-10-29 · `supabase … --linked` báo "Cannot find project ref" trong worktree → chạy từ repo chính bằng đường dẫn tuyệt đối.
 - 2026-10-29 · RPC ghi hình ~2 phút/câu giờ học → báo thầy trước, chọn chạy ngay hoặc chờ 22h.
+- 2026-10-29 · Tìm hình trên mạng cho câu hệ vật nối dây/mơ hồ không ra hình dùng được (bản quyền) → bỏ bước tìm, giao subagent Opus vẽ thẳng (10 hình ≈230K token, không tốn API).
+- 2026-10-29 · Ghi RPC ~2 phút/câu → gom lô lớn, chạy một lượt trong tab terminal, kiểm bằng `kiem-hinh-da-ghi.mts`.

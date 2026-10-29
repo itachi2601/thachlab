@@ -5,7 +5,6 @@
 - [Chuyển đổi tự tuyển sinh](user_thach_chuyen_doi_tu_tuyen_sinh.md) — riêng, Mac-only; hoà vốn ~120–130 em, lộ trình tách êm, lương TA T10
 ## Cách làm việc (feedback)
 - [Token discipline](feedback_token_discipline.md) — clear sớm, ảnh đọc trong subagent
-- [Giảm token 28/9](project_thachlab_token_hygiene.md) — .claudeignore, đọc DATABASE.md thay vì dò schema
 - [Phiên song song](project_thachlab_concurrent_sessions.md) — `git commit -- <path>`; claude/* tự gộp vào main
 - [No progress updates](feedback_no_progress_updates.md) — im lặng giữa chừng, báo 1 lần cuối
 - [wrap_up viết nội dung trước](feedback_wrap_up_viet_noi_dung_truoc.md) — nhận xét trước box câu hỏi
@@ -35,14 +34,6 @@
 - [Giữ DB không phình](project_thachlab_db_retention.md) — rollup >12 tháng, pg_cron
 - [Model lịch tự động](reference_scheduled_task_model.md) — chọn ở form Edit task trong app, không đổi bằng
 ## Skill & quy trình đăng nội dung
-- [Up đề](project_thachlab_up_de_skill.md) — Azota + Chủ đề/Dạng → /quan-tri/dang-de
-- [Skill azota](project_thachlab_azota_skill.md) — bước 6 xuat_thachlab.py → Word kèm nhãn YCCĐ
-- [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md) — bước 7 xuat_thachlab.py
-- [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md) — mặc định script upload-lesson.mts
-- [Skill latex](project_thachlab_latex_skill.md) — cache công thức + sinh HTML bằng script
-- [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md) — kiểm công cụ có sẵn trước khi cho agent viết lại
-- [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
-- [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — cap-nhat-ly-thuyet.sh
 - [Cập nhật bài theo Gemini](project_thachlab_cap_nhat_bai_theo_gemini.md) — skill rà bài; treo duyệt lý thuyết
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill + kho content/thi-nghiem
 - [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — T1–T12; xong cả 21 bài L12 (26/10); chờ nhánh data-tap merge main
@@ -98,3 +89,4 @@
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 9:16 không lời, Lô 0 = 3 clip L12 (27/10); chờ thầy duyệt + chốt nơi đặt mp4
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 1 21 bài đã đăng 26/10; đợt 2 (○) chờ số liệu Trả bài
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — bản duyệt 26/10; ≥1280 media lan phải + cột lề Tufte 27/10, chưa deploy
+- [Hình minh hoạ câu hỏi](project_thachlab_hinh_cau_hoi.md) — L10 Động lực học 57 hình xong; chờ bố cục kế bên, 109+14 câu mơ hồ

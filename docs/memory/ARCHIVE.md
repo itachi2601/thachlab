@@ -94,3 +94,12 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi; flip-1 lên web; treo duyệt bảng 12 buổi
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — xong 14/10; treo Gemini tìm ảnh, chưa deploy
 - [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10
+- [Giảm token 28/9](project_thachlab_token_hygiene.md) — .claudeignore, đọc DATABASE.md thay vì dò schema
+- [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md) — kiểm công cụ có sẵn trước khi cho agent viết lại
+- [Skill latex](project_thachlab_latex_skill.md) — cache công thức + sinh HTML bằng script
+- [Skill azota](project_thachlab_azota_skill.md) — bước 6 xuat_thachlab.py → Word kèm nhãn YCCĐ
+- [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md) — bước 7 xuat_thachlab.py
+- [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
+- [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — cap-nhat-ly-thuyet.sh
+- [Up đề](project_thachlab_up_de_skill.md) — Azota + Chủ đề/Dạng → /quan-tri/dang-de
+- [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md) — mặc định script upload-lesson.mts
