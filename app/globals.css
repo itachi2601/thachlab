@@ -2927,7 +2927,7 @@ html[data-theme="light"] .exam-content .tl-video-goi-y { border-left-color: #7c3
 .exam-content .tl-khung-host ol { list-style: none; margin: 0; padding: 0; }
 .exam-content .tl-khung-host li { margin: 0; padding-left: 0; }
 .exam-content .tl-khung-host li::marker { content: none; }
-.exam-content .tl-khung-host p, .exam-content .tl-khung-host h3 { margin: 0; }
+.exam-content .tl-khung-host :is(p, h3), .lesson-page .exam-content .tl-khung-host :is(p, h3) { margin: 0; line-height: inherit; } /* .lesson-page đặt `p`/`h3` cùng độ ưu tiên, đứng sau; lề/cỡ riêng của khung đặt inline trong component (CSS không phân lớp thắng tiện ích Tailwind) */
 .exam-content .tl-khung-host button { font: inherit; }
 @media (min-width: 640px) {
   .exam-content .tl-box--video:has(> .tl-video--doc) { grid-template-columns: minmax(220px, 300px) minmax(0, 1fr); grid-template-rows: auto auto 1fr; }

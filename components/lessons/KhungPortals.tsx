@@ -14,6 +14,8 @@ import type { VideoKhungData } from "@/components/lessons/VideoThiNghiemKhung";
  */
 type Host = { host: HTMLElement; data: VideoKhungData };
 
+const NGUON = /^https:\/\/jgvbdbpvjdntdgzthumv\.supabase\.co\/storage\/v1\/object\/public\/lesson-clips\//;
+
 export default function KhungPortals({
   rootRef,
   version,
@@ -35,6 +37,7 @@ export default function KhungPortals({
         return;
       }
       if (!data?.id || !data.video || !Array.isArray(data.o) || !data.dung_dua) return;
+      if (!NGUON.test(data.video) || (data.poster && !NGUON.test(data.poster))) return; // chỉ nhận clip từ kho lesson-clips
       let host = box.querySelector<HTMLElement>(":scope > .tl-khung-host");
       if (!host) {
         host = document.createElement("div");

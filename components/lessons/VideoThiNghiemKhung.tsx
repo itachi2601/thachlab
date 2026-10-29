@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Check, Lock, Play, Target } from "lucide-react";
 
 /**
@@ -166,7 +166,7 @@ export default function VideoThiNghiemKhung({
 
   // Điện thoại: video dính trên đầu màn hình, câu hỏi nằm ngay dưới; chỉ kéo nhẹ nếu thẻ còn nằm ngoài tầm mắt.
   // Hộp tĩnh trong HTML bài (label, <video>, "Nhìn vào") chỉ ẩn khi khung đã mount xong, nên chunk lỗi thì video vẫn còn.
-  useEffect(() => {
+  useLayoutEffect(() => {
     const box = sectionRef.current?.closest(".tl-box--khung");
     box?.classList.add("tl-khung-on");
     return () => box?.classList.remove("tl-khung-on");
@@ -305,7 +305,7 @@ export default function VideoThiNghiemKhung({
       aria-label={`Video thí nghiệm: ${data.ten}`}
       className="rounded-2xl border border-line bg-panel p-4 sm:p-5"
     >
-      <h3 className="mb-4 font-display text-[18px] font-bold leading-snug text-ink">{data.ten}</h3>
+      <h3 className="font-display font-bold leading-snug text-ink" style={{ margin: "0 0 16px", fontSize: 18 }}>{data.ten}</h3>
       <div className="grid gap-5 lg:grid-cols-[340px_minmax(0,1fr)] lg:items-start lg:gap-8">
         {/* Phần tương tác (câu hỏi, sáu ô): bên phải ở màn rộng cho dễ bấm, dưới video ở điện thoại */}
         <div className="order-2">
@@ -335,7 +335,7 @@ export default function VideoThiNghiemKhung({
               ))}
             </ol>
             <div ref={cardRef} className="scroll-mb-24 rounded-xl border border-line-strong bg-primary-soft p-4">
-              <p className="mb-1 text-[13px] font-bold uppercase tracking-wide text-primary">{nhan(data.o[shown])}</p>
+              <p className="text-[13px] font-bold uppercase tracking-wide text-primary" style={{ marginBottom: 4 }}>{nhan(data.o[shown])}</p>
               {body(shown, true)}
             </div>
           </div>

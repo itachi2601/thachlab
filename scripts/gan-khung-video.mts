@@ -30,7 +30,7 @@ const khungDir = path.join(root, "content/thi-nghiem/video-khung");
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 // <!--video:ID-->\n<div class="tl-box tl-box--video[ tl-box--khung][ tl-note]"[ data-khung="…"]>…<video src=".." poster="..">
 const BLOCK =
-  /(<!--video:(tn-[a-z0-9-]+)-->\s*<div class="tl-box tl-box--video)((?: [a-z0-9-]+)*)"((?: data-khung="[^"]*")?)>([\s\S]*?<video src="([^"]+)"(?: poster="([^"]+)")?)/g;
+  /(<!--video:(tn-[a-z0-9-]+)-->\s*<div class="tl-box tl-box--video)((?: [a-z0-9-]+)*)"((?: data-khung="[^"]*")?)>((?:(?!<!--video:)[\s\S])*?<video src="([^"]+)"(?: poster="([^"]+)")?)/g;
 
 function xuLy(html: string): { html: string; ghi: string[]; boQua: string[] } {
   const ghi: string[] = [];
@@ -48,6 +48,7 @@ function xuLy(html: string): { html: string; ghi: string[]; boQua: string[] } {
       return m;
     }
     const d = JSON.parse(fs.readFileSync(f, "utf8"));
+    if (/-->|\]>|<\/(?:style|title)/i.test(JSON.stringify(d))) throw new Error(id + ": JSON khung chứa --> / ]> / </style — DOMPurify sẽ gỡ data-khung");
     d.video = mp4;
     if (poster) d.poster = poster;
     ghi.push(id);
