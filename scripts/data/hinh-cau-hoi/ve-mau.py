@@ -43,7 +43,7 @@ def incline(i,a=30,lab=None,L=None,h=None,m=None,start='mid',x=None,P=False,rope
     b+=f'<path d="M{x0+52},{y0} A52 52 0 0 0 {x0+52*math.cos(r):.1f} {y0-52*math.sin(r):.1f}" stroke-width="1.5"/>'+T(x0+62,y0-8,lab or f'{a}°')
     if L:
         nx,ny=-math.sin(r),-math.cos(r); mx,my=x0+Ls/2*math.cos(r)+nx*-1,y0-Ls/2*math.sin(r)
-        b+=T(mx-26,my-10-(0),L,'middle',rot=-a) if False else T(x0+Ls*0.5*math.cos(r)-30*math.sin(r),y0-Ls*0.5*math.sin(r)-30*math.cos(r),L,'middle',rot=-a)
+        b+=T(mx-26,my-10-(0),L,'middle',rot=-a) if False else T(x0+Ls*0.45*math.cos(r)+22*math.sin(r),y0-Ls*0.45*math.sin(r)+22*math.cos(r)+5,L,'middle',rot=-a)
     if h:
         b+=arrow(i,xr+16,yt,xr+16,y0,'currentColor',both=True,w=1.5)+T(xr+24,(yt+y0)/2+5,h)
     W=max(xe+90,400)
