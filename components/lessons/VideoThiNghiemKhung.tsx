@@ -306,7 +306,7 @@ export default function VideoThiNghiemKhung({
       className="rounded-2xl border border-line bg-panel p-4 sm:p-5"
     >
       <h3 className="font-display font-bold leading-snug text-ink" style={{ margin: "0 0 16px", fontSize: 18 }}>{data.ten}</h3>
-      <div className="grid gap-5 lg:grid-cols-[340px_minmax(0,1fr)] lg:items-start lg:gap-8">
+      <div className="grid gap-5 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-start lg:gap-6 xl:gap-8">
         {/* Phần tương tác (câu hỏi, sáu ô): bên phải ở màn rộng cho dễ bấm, dưới video ở điện thoại */}
         <div className="order-2">
           {/* Điện thoại: dải sáu chấm + MỘT ô hiện tại */}
@@ -341,7 +341,7 @@ export default function VideoThiNghiemKhung({
           </div>
 
           {/* Màn rộng: đủ sáu ô, ô sau khoá tới khi clip tới đoạn đó */}
-          <ol className="hidden gap-2 lg:grid" aria-label="Các bước thí nghiệm">
+          <ol className="hidden gap-1.5 lg:grid" aria-label="Các bước thí nghiệm">
             {data.o.map((o, i) => {
               const open = i <= reached;
               const on = i === shown;
@@ -350,7 +350,8 @@ export default function VideoThiNghiemKhung({
                   key={o.khoa}
                   aria-current={on ? "step" : undefined}
                   className={
-                    "rounded-xl border p-4 transition-colors " +
+                    "rounded-xl border transition-colors " +
+                    (on ? "p-4 " : "px-4 py-0.5 ") +
                     (on ? "border-primary bg-primary-soft" : open ? "border-line bg-panel" : "border-line bg-surface-2")
                   }
                 >
@@ -377,7 +378,8 @@ export default function VideoThiNghiemKhung({
                     </span>
                     {open && !on && <span className="ml-auto text-[13px] text-muted">Xem lại</span>}
                   </button>
-                  {open && <div className="mt-2 pl-9">{body(i, on)}</div>}
+                  {/* Chỉ ô hiện tại mở nội dung: cột phải luôn thấp hơn video, không phải cuộn mất video để đọc (V13) */}
+                  {on && <div className="mt-2 xl:pl-9">{body(i, true)}</div>}
                 </li>
               );
             })}
@@ -386,10 +388,13 @@ export default function VideoThiNghiemKhung({
 
         <div
           className={
-            "order-1 mx-auto w-full self-start " +
+            "order-1 mx-auto w-full self-start lg:mx-0 " +
+            // Video dọc cao theo màn hình: điện thoại ≤ 50svh để ô câu hỏi bên dưới vẫn trong tầm mắt;
+            // màn rộng bề rộng cố định (cột tương tác lấy phần còn lại), dính dưới thanh tab, cao vừa khung nhìn.
+            "lg:w-[min(280px,calc((100svh_-_8rem)_*_9_/_16))] lg:max-w-none xl:w-[min(340px,calc((100svh_-_8rem)_*_9_/_16))] " +
             (dinh
-              ? "sticky top-2 z-10 max-w-[min(340px,calc(62svh_*_9_/_16))] lg:top-4 lg:max-w-[340px]"
-              : "max-w-[340px]")
+              ? "sticky top-2 z-10 max-w-[min(340px,calc(62svh_*_9_/_16))] lg:top-4"
+              : "max-w-[min(340px,calc(50svh_*_9_/_16))] lg:sticky lg:top-24")
           }
         >
           <video

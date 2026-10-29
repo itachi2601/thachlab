@@ -4071,7 +4071,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
   /* Chỉ khối media đứng trực tiếp trong mạch bài mới lan; nằm trong hộp (.tl-box, .tl-quiz…) thì theo hộp.
      Hình .fig vẽ ở khổ 420–460 giữ 420px (phóng to chữ trong hình sẽ to hơn chữ bài); chỉ hình vẽ khổ ≥ 600 lan —
      liệt kê đúng bề rộng kèm dấu cách để "0 0 60 40" không khớp nhầm; khổ khác thì gắn .fig--wide khi soạn. */
-  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > :is(.tl-video, iframe, details.tl-details:has(> iframe)) { width: calc(100% + var(--wide-bleed)); max-width: none; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > :is(.tl-video, iframe, details.tl-details:has(> iframe), .tl-box--khung.tl-khung-on) { width: calc(100% + var(--wide-bleed)); max-width: none; }
   /* Bảng (ContentHtml bọc mọi <table> trong .table-scroll): chỉ nới khi nội dung cần — bảng ngắn 3 cột vẫn
      rộng bằng cột chữ như cũ, bảng nhiều cột/câu dài/có ảnh mới lan, tránh ô trống dàn ngang 900px. */
   .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .table-scroll { width: max-content; min-width: 100%; max-width: calc(100% + var(--wide-bleed)); }
@@ -4109,7 +4109,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
   .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .tl-sn + p .tl-fn a { color: var(--color-muted); pointer-events: none; }
   /* Mốc mục và khối lan rộng bắt đầu dưới ghi chú lề, không bao giờ đè lên nhau. */
   /* Chỉ trong mục có ghi chú lề (đã flow-root): mục khác có float sẵn của thẻ (nút Thu gọn) sẽ bị đẩy xuống nếu clear. */
-  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content:has(> .tl-sn) > :is(h3, h4, .table-scroll, .tl-video, iframe, details.tl-details:has(> iframe), figure.fig--wide) { clear: right; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content:has(> .tl-sn) > :is(h3, h4, .table-scroll, .tl-video, iframe, details.tl-details:has(> iframe), figure.fig--wide, .tl-box--khung) { clear: right; }
 }
 /* iPad ngang / laptop cảm ứng ≥ 1280: nhãn ô số ở lề đủ đích chạm 44px (D2). */
 @media (min-width: 1280px) and (pointer: coarse) {
