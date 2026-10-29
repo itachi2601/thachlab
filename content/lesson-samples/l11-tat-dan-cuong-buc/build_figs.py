@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """Sinh 4 hình SVG cho bài tắt dần / cưỡng bức / cộng hưởng và thay <!--FIGn--> trong theory.src.html."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math
 from svg_lib import *
 
@@ -204,5 +207,5 @@ for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert f.count("$") == 0, n  # không nhét công thức vào SVG
     h = h.replace(f"<!--FIG{n}-->", f)
 assert "<!--FIG" not in h
-open("theory.html", "w", encoding="utf8").write(h)
+open("theory.html", "w", encoding="utf8").write(margin_figs(h))
 print("ok", len(h))

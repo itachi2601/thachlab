@@ -1,6 +1,9 @@
 """Sinh 4 hình SVG cho bài 'Trọng lực và lực căng' (lesson 62), thay mốc <!--FIGn--> trong theory.src.html -> theory.html.
 Có lớp kiểm hình học: hộp nhãn không chồng nhau, không vượt viewBox; mũi tên đúng chiều vật lí; trọng tâm tính từ đa giác.
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib, re, subprocess, sys
 from svg_lib import RED, BLUE, ORG, GRN, wrap
 
@@ -248,7 +251,7 @@ for n, fg in enumerate((fig1, fig2, fig3, fig4), 1):
     h = h.replace(f"<!--FIG{n}-->", fg)
 # số phút: điền từ lint_do_dai (đo trên chính bản đã chèn hình)
 tmp = HERE / ".theory.tmp.html"
-tmp.write_text(h.replace("__PHUT__", "15"), encoding="utf8")
+tmp.write_text(margin_figs(h.replace("__PHUT__", "15")), encoding="utf8")
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = subprocess.run([sys.executable, str(lint), str(tmp)], capture_output=True, text=True).stdout
 tmp.unlink()
@@ -257,5 +260,5 @@ phut = round(float(m.group(1).replace(",", "."))) if m else None
 if phut is None:
     print("! không đọc được số phút từ lint_do_dai:\n" + out[:600]); sys.exit(1)
 h = h.replace("__PHUT__", str(phut))
-(HERE / "theory.html").write_text(h, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(h), encoding="utf8")
 print(f"ok theory.html {len(h)} ký tự · 4 hình · {phut} phút")

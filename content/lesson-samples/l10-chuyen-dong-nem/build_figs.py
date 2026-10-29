@@ -4,6 +4,9 @@ Chạy: python3 build_figs.py   (từ thư mục bài)
 Quy ước màu dùng chung cả bài: RED = vecto vận tốc (v₀, v) · BLUE = thành phần ngang vₓ ·
 ORG = thành phần thẳng đứng vy, các điểm/thời điểm, đại lượng đo (h, L) · GRN = quỹ đạo.
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 from svg_lib import *
 
 
@@ -216,5 +219,5 @@ h = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4, fig5, fig6), 1):
     assert f"<!--FIG{n}-->" in h, f"thiếu mốc FIG{n}"
     h = h.replace(f"<!--FIG{n}-->", f)
-open("theory.html", "w", encoding="utf8").write(h)
+open("theory.html", "w", encoding="utf8").write(margin_figs(h))
 print("ok", len(h), "bytes,", h.count('<figure class="fig"'), "hình")

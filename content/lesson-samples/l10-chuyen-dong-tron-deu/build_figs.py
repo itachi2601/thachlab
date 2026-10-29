@@ -6,6 +6,9 @@ Màu dùng chung cả bài: RED = vectơ vận tốc · GRN = quỹ đạo / cun
 chữ và nét phụ dùng currentColor. Mọi toạ độ tính từ phương trình đường tròn; cuối mỗi hình có lớp
 kiểm hộp nhãn ↔ nét vẽ (không chồng, không vượt viewBox) — sai là dừng, không sinh hình.
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, re
 from svg_lib import RED, BLUE, ORG, GRN, defs
 
@@ -290,9 +293,9 @@ lint = pathlib.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly
 spec = importlib.util.spec_from_file_location("lint_do_dai", lint)
 mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
-open("theory.html", "w", encoding="utf8").write(h.replace("__PHUT__", "99"))
+open("theory.html", "w", encoding="utf8").write(margin_figs(h.replace("__PHUT__", "99")))
 phut = math.ceil(mod.kiem("theory.html")["phut"])
 h = h.replace("__PHUT__", str(phut))
 assert not re.search(r"__[A-Z_]+__", h), "còn mốc __X__ chưa điền"
-open("theory.html", "w", encoding="utf8").write(h)
+open("theory.html", "w", encoding="utf8").write(margin_figs(h))
 print("ok", len(h), "bytes,", h.count('<figure class="fig"'), "hình, đọc khoảng", phut, "phút")

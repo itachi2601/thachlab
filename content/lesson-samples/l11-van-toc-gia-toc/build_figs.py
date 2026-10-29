@@ -3,6 +3,9 @@
 Thay <!--FIGn--> trong theory.src.html → theory.html. Chạy lại được.
 Hình kiểm bằng toạ độ: sin φ = 0, elip đúng phương trình, a = −ω²x là đoạn thẳng qua gốc.
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math
 from svg_lib import *
 
@@ -289,5 +292,5 @@ for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert "<!--FIG%d-->" % n in h, n
     h = h.replace("<!--FIG%d-->" % n, f)
 assert "<!--FIG" not in h
-open("theory.html", "w", encoding="utf8").write(h)
+open("theory.html", "w", encoding="utf8").write(margin_figs(h))
 print("ok", len(h))

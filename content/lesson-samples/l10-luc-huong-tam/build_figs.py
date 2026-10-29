@@ -2,6 +2,9 @@
 theory.src.html -> theory.html. Chạy: python3 build_figs.py (từ thư mục bài hoặc gốc repo).
 Mọi toạ độ tính từ hình học (tâm O, bán kính, góc); in kiểm: nhãn không chồng nhau, không vượt viewBox,
 không bị nét đã đăng ký cắt xuyên; mũi tên gia tốc/lực hướng tâm phải chĩa đúng vào tâm."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -311,9 +314,9 @@ for n, f in enumerate(figs, 1):
 
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
-out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", "?")), encoding="utf8")
 r = subprocess.run([sys.executable, str(lint), str(out), "--json"], capture_output=True, text=True)
 m = re.search(r'"phut"\s*:\s*([\d.]+)', r.stdout)
 phut = int(float(m.group(1)) + 0.5) if m else "?"
-out.write_text(src.replace("__PHUT__", str(phut)), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", str(phut))), encoding="utf8")
 print("ok", len(src), "ký tự; phút =", phut)

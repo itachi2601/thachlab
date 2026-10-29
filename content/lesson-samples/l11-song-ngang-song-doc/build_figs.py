@@ -1,6 +1,9 @@
 """Sinh 4 hình SVG cho bài 'Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ' (Vật lí 11, lesson 28),
 dựng bảng thí nghiệm đo từ content/thi-nghiem/tn-l11-songngangdoc-03.json, thay các mốc trong theory.src.html -> theory.html.
 Chạy: python3 build_thi_nghiem.py && python3 build_figs.py   (chạy lại được)."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import json, math, pathlib, subprocess, sys
 from svg_lib import *
 
@@ -131,7 +134,7 @@ for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
 for k, v in (("__BANG_TN__", bang), ("__LECH_NHIEU__", lech_txt), ("__PHUT__", str(PHUT))):
     assert h.count(k) == 1, k
     h = h.replace(k, v)
-(HERE / "theory.html").write_text(h, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(h), encoding="utf8")
 print("ok", len(h), "bytes,", h.count('<figure class="fig"'), "hình")
 
 # kiểm số phút khớp lint_do_dai (làm tròn LÊN)

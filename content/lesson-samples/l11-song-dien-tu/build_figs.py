@@ -1,6 +1,9 @@
 """Sinh 4 hình SVG cho bài 'Sóng điện từ' (Vật lí 11, lesson 30), dựng bảng thí nghiệm đo từ
 content/thi-nghiem/tn-l11-songdientu-02.json, thay các mốc trong theory.src.html -> theory.html.
 Chạy: python3 build_figs.py   (tự gọi build_thi_nghiem.py trước; chạy lại được)."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import json, math, pathlib, subprocess, sys
 from svg_lib import *
 
@@ -244,7 +247,7 @@ for k, v in (("__BANG_TN__", bang), ("__LECH_NHIEU__", lech_txt), ("__PHUT__", s
 import re
 so = [int(m) for m in re.findall(r"<figcaption>Hình (\d+)\.", h)]
 assert so == sorted(so) == list(range(1, len(so) + 1)), so
-(HERE / "theory.html").write_text(h, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(h), encoding="utf8")
 print("ok", len(h), "bytes,", h.count('<figure class="fig"'), "hình")
 
 lint = ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
