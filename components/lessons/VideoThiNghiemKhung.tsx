@@ -11,6 +11,9 @@ import { Check, Lock, Play, Target } from "lucide-react";
  *   ô chưa tới khoá lại để không lộ đáp án trước khi clip tới đoạn đó (V8: chữ và clip không nói trùng nhau).
  * - Video tự dừng một lần ở câu Dự đoán; chọn xong mới chạy tiếp (đoán trước khi học). Không điểm, không
  *   xếp hạng: chỉ phản hồi tức thì (SDT — thưởng hữu hình làm giảm động lực nội tại).
+ * - Bố cục: màn rộng = video bên trái (dính), phần tương tác bên phải; điện thoại = video dính trên đầu, thu theo
+ *   chiều cao màn hình, dải bước + ô hiện tại nằm dưới.
+ * - Câu Dự đoán bắt buộc: chạm video hay tua qua đều bị hỏi lại; chỉ có nút "Chưa muốn đoán, xem luôn" (tự chủ, SDT).
  * - Mốc giây lấy từ engine (scripts/video-thi-nghiem, `render.py <clip> --kich-ban`), nên không phải
  *   dựng lại mp4. Dữ liệu: content/thi-nghiem/video-khung/<id>.json.
  */
@@ -43,7 +46,10 @@ const NHAN: Record<string, string> = {
 };
 
 export type VideoKhungEvent =
-  { loai: "dung_o_du_doan" } | { loai: "chon"; chon: number; dung: boolean } | { loai: "xem_lai_o"; khoa: string };
+  | { loai: "dung_o_du_doan" }
+  | { loai: "chon"; chon: number; dung: boolean }
+  | { loai: "xem_lai_o"; khoa: string }
+  | { loai: "bo_qua" };
 
 export default function VideoThiNghiemKhung({
   data,
@@ -55,8 +61,7 @@ export default function VideoThiNghiemKhung({
   const videoRef = useRef<HTMLVideoElement>(null);
   const cardRef = useRef<HTMLDivElement>(null); // ô hiện tại ở điện thoại (video cao gần hết màn hình nên câu hỏi nằm dưới)
   const prevT = useRef(0);
-  const choseRef = useRef<number | null>(null);
-  const skipRef = useRef(false);
+  const doneRef = useRef(false); // đã chọn hoặc chủ động bấm "xem luôn": từ đó mới hết bắt dừng và mở Giả thuyết
   const eventRef = useRef(onEvent); // trang gọi truyền hàm mới mỗi lần dựng: giữ ở ref để vòng rAF không bị huỷ liên tục
   useEffect(() => {
     eventRef.current = onEvent;
@@ -65,6 +70,7 @@ export default function VideoThiNghiemKhung({
   const [reached, setReached] = useState(0); // chỉ số ô xa nhất đã tới: ô sau đó còn khoá
   const [asking, setAsking] = useState(false);
   const [chose, setChose] = useState<number | null>(null);
+  const [boQua, setBoQua] = useState(false);
 
   const dd = data.dung_dua;
   const duDoanIdx = data.o.findIndex((o) => o.khoa === "du_doan");
@@ -85,22 +91,28 @@ export default function VideoThiNghiemKhung({
     if (!v) return;
     const now = v.currentTime;
     setT(now);
-    setReached((r) => Math.max(r, curOf(now)));
+    // chưa trả lời thì các ô sau Dự đoán vẫn khoá, dù thanh tua đã kéo qua
+    setReached((r) => Math.max(r, doneRef.current ? curOf(now) : Math.min(curOf(now), duDoanIdx)));
     const qua = prevT.current < dd.giay && now >= dd.giay && now - dd.giay < 2;
-    if (qua && !v.seeking && !v.paused && choseRef.current === null && !skipRef.current) {
+    if (qua && !v.seeking && !v.paused && !doneRef.current) {
       v.pause();
       setAsking(true);
       eventRef.current?.({ loai: "dung_o_du_doan" });
     }
     prevT.current = now;
-  }, [curOf, dd.giay]);
+  }, [curOf, dd.giay, duDoanIdx]);
 
   // rAF chỉ chạy khi video đang phát; lúc dừng/tua cập nhật bằng sự kiện (tab ẩn thì timeupdate vẫn bắt kịp).
   const raf = useRef(0);
   useEffect(() => () => cancelAnimationFrame(raf.current), []);
 
   const onPlay = () => {
-    setAsking(false); // bấm play gốc khi đang hỏi: khung phải đi theo clip, không kẹt ở ô Dự đoán
+    const v = videoRef.current;
+    if (asking && !doneRef.current) {
+      v?.pause(); // chạm vào video hay bấm play gốc cũng không bỏ qua được câu hỏi
+      return;
+    }
+    setAsking(false);
     document.querySelectorAll("video").forEach((o) => o !== videoRef.current && o.pause()); // một video phát một lúc
     cancelAnimationFrame(raf.current);
     const loop = () => {
@@ -114,22 +126,27 @@ export default function VideoThiNghiemKhung({
     check();
   };
 
-  // Tua qua câu Dự đoán thì không bắt dừng; tua về trước nó thì cho hỏi lại nếu chưa chọn.
+  // Tua qua câu Dự đoán khi chưa trả lời: đưa về sát câu hỏi và hỏi luôn; tua về trước nó thì thôi hỏi.
   const onSeeking = () => {
-    const now = videoRef.current?.currentTime ?? 0;
+    const v = videoRef.current;
+    if (!v) return;
+    const now = v.currentTime;
+    if (!doneRef.current && now > dd.giay + 0.3) {
+      v.currentTime = dd.giay - 0.1;
+      v.pause();
+      setAsking(true);
+      eventRef.current?.({ loai: "dung_o_du_doan" });
+      return;
+    }
     prevT.current = now;
-    skipRef.current = now > dd.giay + 0.3;
     if (now < dd.giay - 0.3) setAsking(false);
   };
 
-  // Điện thoại: video chiếm gần hết màn hình, nên khi dừng hỏi thì kéo câu hỏi vào tầm mắt, xem tiếp thì kéo về video.
-  const askedBefore = useRef(false);
+  // Điện thoại: video dính trên đầu màn hình, câu hỏi nằm ngay dưới; chỉ kéo nhẹ nếu thẻ còn nằm ngoài tầm mắt.
   useEffect(() => {
-    if (!asking && !askedBefore.current) return; // lần dựng đầu: không kéo trang
-    askedBefore.current = true;
+    if (!asking) return;
     const card = cardRef.current;
-    if (!card || card.offsetParent === null) return;
-    (asking ? card : videoRef.current)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (card && card.offsetParent !== null) card.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, [asking]);
 
   const seekTo = (i: number) => {
@@ -142,8 +159,8 @@ export default function VideoThiNghiemKhung({
   };
 
   const choose = (i: number) => {
-    if (choseRef.current !== null) return;
-    choseRef.current = i;
+    if (doneRef.current) return;
+    doneRef.current = true;
     setChose(i);
     eventRef.current?.({ loai: "chon", chon: i, dung: i === dd.dung });
   };
@@ -153,8 +170,17 @@ export default function VideoThiNghiemKhung({
     void videoRef.current?.play().catch(() => {});
   };
 
-  // Giả thuyết nói thẳng quan hệ cần đoán nên chưa lộ: tới sau câu Dự đoán mới hiện (kiem = câu hỏi trung tính).
-  const daQuaDuDoan = reached > duDoanIdx;
+  const boQuaCau = () => {
+    if (doneRef.current) return;
+    doneRef.current = true;
+    setBoQua(true);
+    eventRef.current?.({ loai: "bo_qua" });
+    resume();
+  };
+
+  // Giả thuyết nói thẳng quan hệ cần đoán nên chưa lộ: chỉ hiện sau khi em đã chọn (hoặc bấm xem luôn);
+  // trước đó hiện câu hỏi trung tính `kiem`.
+  const daQuaDuDoan = chose !== null || boQua;
   const an = (o: VideoKhungO) => o.khoa === "gia_thuyet" && !!o.kiem && !daQuaDuDoan;
   const nhan = (o: VideoKhungO) => (an(o) ? "Cần kiểm tra" : NHAN[o.khoa]);
   const chu = (o: VideoKhungO) => (an(o) ? o.kiem : o.chu);
@@ -192,6 +218,15 @@ export default function VideoThiNghiemKhung({
               );
             })}
           </div>
+          {chose === null && (
+            <button
+              type="button"
+              onClick={boQuaCau}
+              className="mt-2 min-h-11 px-1 text-[14px] text-muted underline underline-offset-2 hover:text-ink"
+            >
+              Chưa muốn đoán, xem luôn
+            </button>
+          )}
           {chose !== null && (
             <div className="mt-3 rounded-xl bg-surface-2 p-3">
               <p className="flex items-start gap-2 text-[15px] leading-relaxed text-ink">
@@ -223,6 +258,7 @@ export default function VideoThiNghiemKhung({
         {i === duDoanIdx && chose !== null && (
           <span className="mt-1 block text-[14px] font-semibold text-ink">Em đã chọn: {dd.chon[chose]}</span>
         )}
+        {i === duDoanIdx && boQua && <span className="mt-1 block text-[14px] text-muted">Em chưa đoán.</span>}
       </p>
     );
   };
@@ -233,9 +269,9 @@ export default function VideoThiNghiemKhung({
       className="rounded-2xl border border-line bg-panel p-4 sm:p-5"
     >
       <h3 className="mb-4 font-display text-[18px] font-bold leading-snug text-ink">{data.ten}</h3>
-      <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-8">
-        {/* Khung mô tả: bên trái ở màn rộng, dưới video ở điện thoại */}
-        <div className="order-2 lg:order-1">
+      <div className="grid gap-5 lg:grid-cols-[340px_minmax(0,1fr)] lg:items-start lg:gap-8">
+        {/* Phần tương tác (câu hỏi, sáu ô): bên phải ở màn rộng cho dễ bấm, dưới video ở điện thoại */}
+        <div className="order-2">
           {/* Điện thoại: dải sáu chấm + MỘT ô hiện tại */}
           <div className="lg:hidden">
             <ol className="mb-3 flex gap-1.5" aria-label="Các bước thí nghiệm">
@@ -311,7 +347,7 @@ export default function VideoThiNghiemKhung({
           </ol>
         </div>
 
-        <div className="order-1 mx-auto w-full max-w-[340px] lg:order-2">
+        <div className="sticky top-2 z-10 mx-auto w-full max-w-[min(340px,calc(62svh_*_9_/_16))] self-start lg:top-4 order-1 lg:max-w-[340px]">
           <video
             ref={videoRef}
             src={data.video}
@@ -327,11 +363,11 @@ export default function VideoThiNghiemKhung({
             onTimeUpdate={check}
             className="aspect-[9/16] w-full rounded-xl bg-black object-contain shadow-lg"
           />
-          <p className="mt-2 text-center text-[13px] text-muted">
-            Video dựng lại từ số liệu mẫu, không phải quay thật.
-          </p>
         </div>
       </div>
+      <p className="mt-3 text-center text-[13px] text-muted lg:text-left">
+        Video dựng lại từ số liệu mẫu, không phải quay thật.
+      </p>
     </section>
   );
 }

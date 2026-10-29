@@ -12,3 +12,5 @@ metadata:
 
 **Why:** học sinh 14–18 học tốt hơn khi đoán trước; khung cạnh video theo nguyên tắc kề cận (Mayer), clip không lời cần chữ nhưng không nói trùng phụ đề (V8, V12).
 **How to apply:** nhân ra clip khác = tạo JSON mốc + chọn; liên quan [[project_thachlab_video_thi_nghiem_tu_dung]].
+
+- 29/10 chiều (học sinh ảo Opus xem, thầy chốt sửa cả 5): Giả thuyết ẩn tới sau khi chọn; chạm video/tua qua đều bị hỏi lại (chỉ có nút "Chưa muốn đoán, xem luôn"); desktop video TRÁI dính + tương tác PHẢI, mobile video dính trên đầu thu theo chiều cao; đổi tên clip Boyle; rút ô Dụng cụ nước đá. Quy tắc K1–K10 ở skill `dung-video-thi-nghiem` (mục "Khung bán tương tác") + V13 trong QUY-TAC-THIET-KE; script `scripts/video-thi-nghiem/xuat-khung.py <clip> [--kiem]`. Còn: 20 clip nhóm C chưa có JSON khung; mp4 đã đăng còn nút A/B/C vẽ trong hình, chữ "YÊN" hoa, số 208→219 thoáng qua (K10, dựng lại khi có đợt sửa clip).
