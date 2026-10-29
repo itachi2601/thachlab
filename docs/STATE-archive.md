@@ -724,3 +724,6 @@ xem mục "Đợt tối ưu tải số 4" ở trên.)
 - **26/10 Bucket clip tự dựng — ĐÃ CHẠY 26/10 13:39 (log scripts/logs/20261026-133941-…); clip bóng bay đã tải, bài 6 L12 đã đăng 26/10 ~13:55, phát thử trên web OK.** `20261026200000_bucket_lesson_clips.sql` (bucket công khai `lesson-clips`, mp4+webp ≤ 5 MB; rollback xoá bucket khi trống). Sau đó tải clip bóng bay (`tai-clip-len-storage.mts`) và chèn vào bài 6 L12 — `docs/KE-HOACH-CLIP-ANH-DONG.md`.
 
 - **26-27/10 Hình L12 theo HRW (xong):** sửa mức A/B + chữ ≥14 ở 19 bài L12, đã đăng DB 27/10 06:38 bằng cap-nhat-ly-thuyet.sh (bài 2–13,15,16,18,19,125–127); KHÔNG đăng thư mục .cu. Bảng: docs/ra-soat/hinh-hrw-l12.md. Mức C chưa đụng.
+
+## Hình OpenStax — chuyển khỏi STATE.md 29/10/2026
+- **28/10 Hình OpenStax L10/L11 đợt 2 (nhánh `claude/replace-images-openstax-904afb`):** 19 bài thêm/thay hình theo `docs/ra-soat/hinh-openstax-l1[01]-dot2*.md`, đã qua `kiem-code`, CHƯA push, CHƯA đăng DB, ảnh CHƯA deploy; đăng gộp với đợt 1 sau khi deploy ảnh. Còn mở: `l10-toc-do-van-toc` 2554 chữ, `l11-khai-niem-dien-truong` 2785 (vượt trần 2500 từ trước), chữ trong ảnh 16.36/16.14/27.15 nhỏ ở 375 px, `l10-tong-hop-phan-tich-luc` bundle.json lệch theory.html 924 ký tự từ trước.
