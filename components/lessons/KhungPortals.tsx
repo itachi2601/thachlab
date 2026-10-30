@@ -3,7 +3,8 @@
 import { useLayoutEffect, useState, type RefObject } from "react";
 import { createPortal } from "react-dom";
 import VideoKhungLazy from "@/components/lessons/VideoKhungLazy";
-import type { VideoKhungData } from "@/components/lessons/VideoThiNghiemKhung";
+import { logClipChoice } from "@/services/learning-events";
+import type { VideoKhungData, VideoKhungEvent } from "@/components/lessons/VideoThiNghiemKhung";
 
 /**
  * Gắn khung video tương tác vào các hộp `<div class="tl-box tl-box--video tl-box--khung" data-khung='{json}'>`
@@ -49,5 +50,24 @@ export default function KhungPortals({
     setHosts(found);
   }, [rootRef, version]);
 
-  return <>{hosts.map((h) => createPortal(<VideoKhungLazy data={h.data} dinh={false} />, h.host, h.data.id))}</>;
+  // Chỉ học sinh trong bài (InlineLessonAccordion đặt data-lesson-id): ghi lựa chọn Dự đoán vào lô sự kiện chung.
+  const ghi = (tnId: string, e: VideoKhungEvent) => {
+    if (e.loai !== "chon" && e.loai !== "bo_qua") return;
+    const lessonId = Number(rootRef.current?.closest<HTMLElement>("[data-lesson-id]")?.dataset.lessonId);
+    if (!Number.isFinite(lessonId) || lessonId <= 0) return;
+    logClipChoice({
+      lessonId,
+      tnId,
+      choice: e.loai === "chon" ? e.chon : null,
+      correct: e.loai === "chon" ? e.dung : null,
+    });
+  };
+
+  return (
+    <>
+      {hosts.map((h) =>
+        createPortal(<VideoKhungLazy data={h.data} dinh={false} onEvent={(e) => ghi(h.data.id, e)} />, h.host, h.data.id),
+      )}
+    </>
+  );
 }

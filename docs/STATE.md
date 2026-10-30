@@ -15,6 +15,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
 - `20261018170000_canh_bao_bo_bai_kt…`: chạy TRƯỚC deploy (code select `is_test`), rồi `don-canh-bao-gia.mts --dry-run` → `--apply`.
 - P0 #1 chặng 3 (thu quyền `exams.questions`): chờ RPC riêng cho CNC (`services/cnc-exam-bank.ts`); sau 22h. Còn lỗ `practice_sessions.score`, `question_bank` qua policy exit-quiz (chặng 4).
+- `20261030120000_clip_choice`: lựa chọn Dự đoán khung video (bảng `lesson_clip_choices` + nhánh `clip_choice` ở `log_learning_events` + `teacher_clip_choice_stats`); lúc nào cũng được, chạy TRƯỚC deploy `KhungPortals` (chưa chạy thì sự kiện bị bỏ êm).
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
