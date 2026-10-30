@@ -5,10 +5,11 @@ Có lớp kiểm hình học: nhãn không chồng nhau / không vượt viewBox
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
 import json, math, pathlib, re, subprocess, sys
 from decimal import Decimal as D, ROUND_HALF_UP
-from svg_lib import RED, BLUE, ORG, GRN, wrap
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+sys.path.insert(0, str(ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 
 
@@ -34,13 +35,15 @@ class Canvas:
         self.body += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"/>'
 
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11, dash=""):
+        """Thân + đầu V 30° (chevron của svg_lib skill), không marker tam giác. Đỉnh V đúng tại (x2, y2)."""
+        ww = min(w, 2.8)
         L = math.hypot(x2 - x1, y2 - y1)
         ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        hl = max(9, head + 1)
+        ex, ey = x2 - ux * ww * 0.6, y2 - uy * ww * 0.6     # thân dừng sát đỉnh để đầu V nhọn
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+                      + chevron(x2, y2, ux, uy, COL[c], ww, hl))
         self.arrows[tag] = (x1, y1, x2, y2)
         self.segs.append((x1, y1, x2, y2))
 
@@ -53,11 +56,7 @@ class Canvas:
         self.labels.append((plain, x0, y - 0.78 * size, x0 + wdt, y + 0.22 * size, size))
 
     def defs(self):
-        out = "<defs>"
-        for c, hd in sorted(self.markers):
-            out += (f'<marker id="{self.name}-{c}{hd}" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="{hd}" markerHeight="{hd}" '
-                    f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{COL[c]}"/></marker>')
-        return out + "</defs>"
+        return ""   # không còn marker: mũi tên = thân + chevron
 
     def check(self):
         errs = []
@@ -245,8 +244,9 @@ c.arr("f3", "b", O[0], O[1], O[0], O[1] + f3len, 3, 11)
 c.add(f'<circle cx="{O[0]}" cy="{O[1]}" r="4" fill="currentColor"/>')
 rr = 28
 c.add(f'<path d="M{O[0] - rr * s30:.1f},{O[1] - rr * c30:.1f} A{rr},{rr} 0 0 1 {O[0] + rr * s30:.1f},{O[1] - rr * c30:.1f}" fill="none" stroke="currentColor" stroke-width="1.8"/>')
+c.text(217, 128, "α", size=17, italic=True)
 FI = '<tspan font-style="italic" font-family="serif">F</tspan>'
-SUB = lambda n: f'<tspan font-size="13" dy="4">{n}</tspan><tspan dy="-4" font-weight="400">'
+SUB = lambda n: f'<tspan font-size="14" dy="5">{n}</tspan><tspan dy="-5" font-weight="400">'
 c.text(168, 134, f'{FI}{SUB(1)} = 2,0 N</tspan>', anchor="end", size=17)
 c.text(252, 134, f'{FI}{SUB(2)} = 2,0 N</tspan>', size=17)
 c.text(210, 30, f'{FI}<tspan font-weight="400"> = 3,45 N</tspan>', anchor="middle", size=17)
@@ -266,7 +266,7 @@ OX, OY, K = 70, 238, 500
 Y = lambda v: OY - K * v
 c.arr("tx", "k", OX, OY, 410, OY, 1.8, 9)
 c.arr("vy", "k", OX, OY, OX, 22, 1.8, 9)
-c.text(78, 24, "δ (N)", size=18, italic=True)
+c.text(78, 24, '<tspan font-style="italic" font-family="serif">δ</tspan> (N)', size=18)
 for tv in (0.1, 0.2, 0.3, 0.4):
     c.line(OX - 4, Y(tv), OX + 4, Y(tv), "currentColor", 1.5, obstacle=False)
     c.text(OX - 8, Y(tv) + 5, vn(tv, 1), size=17, anchor="end", weight="600")
