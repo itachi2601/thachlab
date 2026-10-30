@@ -835,3 +835,5 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - [ĐÃ CHẠY 30/10/2026 22:38, kiểm: cron `ta-month-cycle` '5 * * * *', trigger ta_month_lock_guard, RLS ta_month_appeals bật; thử trong giao dịch: buổi T9 bị chặn, sửa buổi T10 → Chờ duyệt, khiếu nại gửi được + báo admin] `20261030210000_ta_quy_trinh_cuoi_thang`: quy trình công TA hằng tháng (báo 19h cuối tháng, mở 1–3, nhắc ngày 3, khoá + báo thầy chốt; khiếu nại). Chạy tay: `select public.ta_month_cycle();`.
 
 - 2026-10-30 23h25 · Đăng lại lý thuyết L11 Ch.4 Dòng điện (lesson 41–45, item 204/207/210/213/216) sau rà soát hình (19 SVG vẽ lại, I_đm Bài 24) bằng cap-nhat-ly-thuyet.sh; 2 mục khác mỗi bài không đổi; sao lưu scripts/logs/ly-thuyet-bai4N-backup-17933773*.json.
+
+- `20261030230000_ta_he_so_1_15_1_3_1_5`: hệ số TA từ 11/2026 (phụ đạo ×1,15/×1,3, chữa bài ×1,5); chạy TRƯỚC deploy code trợ giảng cùng commit, lúc nào cũng được. — ĐÃ CHẠY 30/10/2026 23:59 (log `scripts/logs/20261030-235939-20261030230000_ta_he_so_1_15_1_3_1_5.log`), kiểm lại thân hàm trên DB đúng 1,15/1,5.
