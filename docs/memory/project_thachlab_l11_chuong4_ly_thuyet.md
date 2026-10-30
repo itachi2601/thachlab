@@ -24,3 +24,7 @@ Thí nghiệm mới: tn-l11-cuong-do-dong-dien-01..03, tn-l11-dien-tro-ohm-01..0
 2. Thầy chốt α đồng (bài 23: 3,9 hay 4,3·10⁻³ K⁻¹ → ⭐⭐⭐ 71 hay 66,5 °C).
 3. Rút kinh nghiệm đợt này đã ghi vào Nhật ký cuối SKILL.md (10 dòng 2026-10-05).
 4. Trong `content/thi-nghiem/` còn nhiều `tn-l11-*dddh*`, `tn-l11-tatdan-*`, `tn-l12-*` của phiên khác chưa commit — không phải của đợt này, để nguyên.
+
+## Rà soát hình + nội dung 30/10/2026 (skill ra-soat-bai-hoc)
+- Commit bba0f6409 (B22), cc7d2c85f (B23), 3178bb897 (B24), f117e594a (B25), 4bd91c013 (B26): vẽ lại 19 hình SVG (đầu V, chữ ≥14), kiem-code soát đạt cả 19. Nội dung chỉ sửa B24 thống nhất I_đm. **CHƯA đăng DB** (lesson 41–45, chỉ mục ly_thuyet qua cap-nhat-ly-thuyet.sh).
+- Chờ thầy chốt: B23 dòng 101 "độ dẫn điện" (k = 1/R) hay "điện dẫn"; α đồng (vẫn treo); B26 bảng pin mới lần 2 I = 0,073 (theo mạch 0,071 A, để nguyên vì là số đo).
