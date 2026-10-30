@@ -53,17 +53,54 @@ function closingEnd(html: string, from: number, tag: string): number {
   return -1;
 }
 
+const FIG_CREDIT = /^\s*<ol class="tl-fns">([\s\S]*?)<\/ol>/;
+
+/**
+ * Nguồn/ghi chú của hình (`<ol class="tl-fns">` liền sau `</figure>`) → khối lề `<div class="tl-sn tl-sn--fig">` đặt ngay
+ * trước `<figure>`, nên ≥ 1280 nó float sang lề phải ngang đầu hình (thầy chốt 30/10/2026: ghi chú bên phải hình, không
+ * dưới hình). Chỉ hình ở cấp đầu hoặc nằm thẳng trong mục bấm xem `details.tl-more` (không khung, mép phải trùng cột chữ);
+ * hình trong hộp (.tl-box, .tl-trap) giữ nguồn dưới hình vì lề âm sẽ vượt khung hộp.
+ */
+function withFigureNotes(html: string, placed: Set<string>): string {
+  const re = new RegExp(BLOCK_TAG.source, "gi");
+  const stack: string[] = [];
+  let out = "";
+  let cursor = 0;
+  for (let m = re.exec(html); m; m = re.exec(html)) {
+    const tag = m[2].toLowerCase();
+    if (tag === "p") continue;
+    if (m[1]) {
+      stack.pop();
+      continue;
+    }
+    if (tag === "figure" && (stack.length === 0 || (stack.length === 1 && stack[0] === "more"))) {
+      const end = closingEnd(html, m.index, "figure");
+      const credit = end > 0 ? FIG_CREDIT.exec(html.slice(end)) : null;
+      const items = credit ? [...credit[1].matchAll(FN_ITEM)] : [];
+      if (items.length) {
+        for (const li of items) placed.add(li[2]);
+        const notes = items.map((li) => `<div class="tl-sn-item">${li[4].trim()}</div>`).join("");
+        out += html.slice(cursor, m.index) + `<div class="tl-sn tl-sn--fig">${notes}</div>`;
+        cursor = m.index;
+      }
+    }
+    stack.push(tag === "details" && /\btl-more\b/.test(m[0]) ? "more" : tag);
+  }
+  return out + html.slice(cursor);
+}
+
 export function withMarginNotes(html: string): string {
-  if (!/class="tl-(fn|term|nums)"/.test(html)) return html;
+  if (!/class="tl-(fns?|term|nums)"/.test(html)) return html;
 
   const fnText = new Map<string, string>();
   for (const m of html.matchAll(FN_ITEM)) fnText.set(m[2], m[4].trim());
-  // Nguồn ảnh (danh sách `.tl-fns` đứng liền sau `</figure>`) luôn nằm ngay dưới hình: không chép lên lề. Số mũ dẫn tới
-  // nó thường ở đoạn khác (có khi cách hình cả màn, hình trong `<details>` đóng) → lên lề thì nguồn lệch khỏi hình.
+  // Nguồn ảnh (danh sách `.tl-fns` đứng liền sau `</figure>`) thuộc về HÌNH, không thuộc đoạn có số mũ (đoạn đó có khi
+  // cách hình cả màn, hình trong `<details>` đóng) → không chép theo đoạn; withFigureNotes đặt nó cạnh đầu hình.
   for (const m of html.matchAll(/<\/figure>\s*<ol class="tl-fns">([\s\S]*?)<\/ol>/g)) {
     for (const li of m[1].matchAll(FN_ITEM)) fnText.delete(li[2]);
   }
   const placed = new Set<string>();
+  html = withFigureNotes(html, placed);
 
   let out = "";
   let cursor = 0;
