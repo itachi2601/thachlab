@@ -162,7 +162,7 @@ fig1 = fig(f1, "Cây ukulele nằm ngang, sóng âm toả lên phía trên cần
 # =====================================================================
 # Hình 2: sơ đồ nối âm thoa - micro - dao động kí
 # =====================================================================
-f2 = Fig("f2", 252)
+f2 = Fig("f2", 266)
 # âm thoa (chữ U) + hộp cộng hưởng
 f2.add('<path d="M42,34 L42,92 Q42,106 52,106 Q62,106 62,92 L62,34" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>')
 f2.add(line(52, 106, 52, 138, "currentColor", 3))
@@ -171,15 +171,17 @@ f2.T(12, 214, "Âm thoa", "currentColor", FS, "start", "700")
 # sóng âm từ âm thoa tới micro (cung quanh nhánh phải)
 for r in (26, 44, 62):
     f2.add(arc(62, 64, r, -34, 34, BLUE, 2.2, op=.9))
-f2.T(96, 26, "sóng âm", BLUE, FS, "start", "700")
+f2.T(80, 18, "sóng âm", BLUE, FS, "start", "700")   # đặt trên-trái cung ngoài (đỉnh cung y≈29)
 # micro
 MX, MY0, MY1 = 190, 50, 92
 f2.add(f'<rect x="{MX - 13}" y="{MY0}" width="26" height="{MY1 - MY0}" rx="13" fill="rgba(56,189,248,.16)" stroke="currentColor" stroke-width="2.2"/>')
-f2.add(line(MX, MY1, MX, 128, "currentColor", 2.2))
-f2.add(line(MX - 16, 128, MX + 16, 128, "currentColor", 2.6))
+# giá micro: thanh đứng + đế; dây tín hiệu đi riêng từ đáy micro sang phải, không xuyên qua đế
+STAND_Y = 140
+f2.add(line(MX, MY1, MX, STAND_Y, "currentColor", 2.6))
+f2.add(f'<rect x="{MX - 20}" y="{STAND_Y}" width="40" height="7" rx="3" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="1.8"/>')
 f2.T(MX - 20, 118, "Micro", "currentColor", FS, "end", "700")
 # dao động kí
-SX0, SX1, SY0, SY1 = 262, 428, 14, 228
+SX0, SX1, SY0, SY1 = 262, 428, 14, 248
 f2.add(f'<rect x="{SX0}" y="{SY0}" width="{SX1 - SX0}" height="{SY1 - SY0}" rx="8" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2.4"/>')
 gx0, gy0, gw, gh = SX0 + 12, SY0 + 12, 142, 78
 f2.add(f'<rect x="{gx0}" y="{gy0}" width="{gw}" height="{gh}" fill="rgba(0,0,0,.2)" stroke="currentColor" stroke-width="1.4" stroke-opacity=".7"/>')
@@ -193,15 +195,15 @@ f2.T(SX0 + (SX1 - SX0) / 2, SY0 + 12 + gh + 26, "Dao động kí", "currentColor
 # đầu vào CH1 + dây
 JX, JY = SX0, 160
 f2.add(f'<circle cx="{JX}" cy="{JY}" r="6" fill="currentColor"/>')
-f2.add(poly([(MX, 128), (MX, JY), (JX - 6, JY)], "currentColor", 2.2))
+f2.add(poly([(MX + 6, MY1 - 3), (MX + 30, MY1 + 10), (MX + 30, JY), (JX - 6, JY)], "currentColor", 2.2))
 f2.T(JX + 12, JY + 6, "CH1", "currentColor", FS, "start", "700")
 # hai núm
 for k, name in enumerate(("TIME/DIV", "VOLT/DIV")):
-    ky = 188 + k * 28
+    ky = 194 + k * 32
     f2.add(f'<circle cx="{SX0 + 24}" cy="{ky}" r="10" fill="none" stroke="{ORG if k == 0 else BLUE}" stroke-width="2.4"/>')
     f2.add(line(SX0 + 24, ky, SX0 + 24, ky - 8, ORG if k == 0 else BLUE, 2.4))
     f2.T(SX0 + 42, ky + 6, name, ORG if k == 0 else BLUE, FS, "start", "700")
-assert JX == SX0 and JY > gy0 + gh
+assert JX == SX0 and JY > gy0 + gh and 194 + 32 + 10 <= SY1 - 8 and MX + 30 < SX0 - 10
 fig2 = fig(f2, "Âm thoa trên hộp cộng hưởng phát sóng âm tới micro; dây tín hiệu từ micro nối vào đầu vào CH1 của dao động kí, bên cạnh có hai núm TIME/DIV và VOLT/DIV.",
            "Hình 2. Sơ đồ nối: nguồn âm đơn, micro, dao động kí.")
 
@@ -278,7 +280,8 @@ for yc, fq, col in ((Y1C, 440.0, BLUE), (Y2C, 880.0, RED)):
     assert abs(ups - fq * TMAX * 1e-3) <= 1.01, (fq, ups)
 f4.T(X0_, 30, "440 Hz", BLUE, FS, "start", "700")
 f4.T(X0_, 124, "880 Hz (cao hơn)", RED, FS, "start", "700")
-f4.add(line(X0_, AXY, X1_ + 10, AXY, "currentColor", 1.8))
+f4.add(line(X0_, AXY, X1_ + 22, AXY, "currentColor", 1.8))
+f4.add(chevron(X1_ + 22, AXY, 1, 0, "currentColor", 1.8, 10))   # đầu V cho trục thời gian
 for t in (0, 2, 4, 6, 8):
     f4.add(line(tx(t), AXY, tx(t), AXY + 6, "currentColor", 1.6))
     f4.T(tx(t), AXY + 28, str(t), "currentColor", FS, "middle", "600")
