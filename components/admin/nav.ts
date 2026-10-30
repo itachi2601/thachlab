@@ -50,6 +50,7 @@ export const AREA_ITEMS: Record<AdminArea, AdminNavItem[]> = {
     { href: "/quan-tri/ngan-hang-cau-hoi", label: "Ngân hàng câu hỏi", desc: "Tra cứu và tái sử dụng câu hỏi", icon: Database },
     { href: "/quan-tri/chu-de", label: "Chủ đề câu hỏi", desc: "Yêu cầu cần đạt và nhãn phân loại", icon: Tags },
     { href: "/quan-tri/xep-hang", label: "Xếp hạng & danh hiệu", desc: "Mùa RP, ngưỡng bậc, bài tính RP, danh hiệu", icon: Trophy },
+    { href: "/quan-tri/du-doan-clip", label: "Dự đoán ở khung video", desc: "Số lượt chọn A–D theo lớp, từng khung thí nghiệm", icon: Gauge },
     { href: "/quan-tri/lo-trinh", label: "Lộ trình học sinh", desc: "Chương – bài mỗi lớp: đã mở, đang ẩn, chưa soạn", icon: Map },
     { href: "/quan-tri/lop-hoc", label: "Lớp học", desc: "Mở lớp, duyệt yêu cầu vào lớp", icon: School },
     { href: "/quan-tri/hoc-sinh", label: "Học sinh", desc: "Tài khoản học sinh và lớp đang theo", icon: GraduationCap },
