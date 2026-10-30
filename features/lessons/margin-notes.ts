@@ -58,6 +58,11 @@ export function withMarginNotes(html: string): string {
 
   const fnText = new Map<string, string>();
   for (const m of html.matchAll(FN_ITEM)) fnText.set(m[2], m[4].trim());
+  // Nguồn ảnh (danh sách `.tl-fns` đứng liền sau `</figure>`) luôn nằm ngay dưới hình: không chép lên lề. Số mũ dẫn tới
+  // nó thường ở đoạn khác (có khi cách hình cả màn, hình trong `<details>` đóng) → lên lề thì nguồn lệch khỏi hình.
+  for (const m of html.matchAll(/<\/figure>\s*<ol class="tl-fns">([\s\S]*?)<\/ol>/g)) {
+    for (const li of m[1].matchAll(FN_ITEM)) fnText.delete(li[2]);
+  }
   const placed = new Set<string>();
 
   let out = "";
