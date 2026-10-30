@@ -3,8 +3,8 @@
 - [Phong cách học & dạy](user_thach_phong_cach_hoc_va_day.md) — nguồn cho AI tutor; thêm mục
 - [Phong cách đối thoại](user_thach_phong_cach_doi_thoai.md) — ngắn, tự quyết; thêm mục
 - [Chuyển đổi tự tuyển sinh](user_thach_chuyen_doi_tu_tuyen_sinh.md) — Mac-only; hoà vốn ~120–130 em
-- [Kế hoạch tự tuyển sinh + phòng thuê](user_thach_ke_hoach_tu_tuyen_sinh.md) — Mac-only; 4 chặng A–D, ngưỡng ≤400k/giờ
-- [Chiến lược chuyển đổi tuyển sinh](user_thach_chien_luoc_chuyen_doi_tuyen_sinh.md) — Mac-only; cổng G0–G3, mốc 2/2027 và 7/2027
+- [Kế hoạch tự tuyển sinh + phòng thuê](user_thach_ke_hoach_tu_tuyen_sinh.md) — Mac-only; chặng A–D
+- [Chiến lược chuyển đổi tuyển sinh](user_thach_chien_luoc_chuyen_doi_tuyen_sinh.md) — Mac-only; cổng G0–G3
 ## Cách làm việc (feedback)
 - [Token discipline](feedback_token_discipline.md) — clear sớm, ảnh đọc trong subagent
 - [Giảm token 28/9](project_thachlab_token_hygiene.md) — .claudeignore, đọc DATABASE.md thay vì dò schema
@@ -30,7 +30,7 @@
 - [Không đốt credit API](feedback_khong_dot_credit_api.md) — soạn trực tiếp trong phiên Mac; batch chỉ khi
 - [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — mỗi trường hợp một dòng
 - [Chặng commit + ra-soat.md](feedback_chang_commit_ra_soat_ban_giao.md) — commit mỗi chặng, lỗi ghi ra-soat.md
-- [Bỏ câu mơ hồ, đừng giải lại](feedback_bo_cau_mo_ho_thay_vi_giai_lai.md) — câu lệch thì xoá, không tốn API
+- [Bỏ câu mơ hồ, đừng giải lại](feedback_bo_cau_mo_ho_thay_vi_giai_lai.md) — câu lệch thì xoá
 ## Hạ tầng & tra cứu
 - [Supabase](project_supabase_configured.md) — Singapore; key ở .env.local
 - [Chạy SQL bằng CLI](reference_supabase_db_query_cli.md) — `supabase db query --linked -f`
@@ -48,7 +48,7 @@
 - [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — cap-nhat-ly-thuyet.sh
 - [Cập nhật bài theo Gemini](project_thachlab_cap_nhat_bai_theo_gemini.md) — skill rà bài; treo duyệt lý thuyết
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill + kho content/thi-nghiem
-- [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — T1–T12; 21 bài L12 xong, chờ merge nhánh data-tap
+- [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — T1–T12; chờ merge data-tap
 - [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — treo 38/43/45, L12, L10 đợt B
 - [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
@@ -96,3 +96,4 @@
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — ≥1280 media lan phải + cột lề; chưa deploy
 - [Video khung bán tương tác](project_thachlab_video_khung_tuong_tac.md) — khung 6 ô; 14 bài L12 đã đăng
+- [Chương 4 hạt nhân L12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — 10 hình vẽ lại 30/10; lịch đăng DB 22h05

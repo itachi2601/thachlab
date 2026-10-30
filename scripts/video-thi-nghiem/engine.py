@@ -101,6 +101,46 @@ def dot(d, x, y, r, c, outline=None):
 def card(d, box, fill=WHITE, outline=None, r=34, w=4):
     d.rounded_rectangle(box, radius=r, fill=fill, outline=outline, width=w if outline else 0)
 
+def luc_ke(d, Q, s_moc, b0, b1, fmax, f_read, nho=0.05, so=None, hw=48, ben=1, alpha=1.0, co=38, an=False):
+    """Luc ke lo xo theo mau trongluc2 (thay chot 30/10/2026), xoay theo truc bat ky.
+    Q(s, h) -> diem man hinh: s doc truc (tang tu phia moc ve phia dau giu), h ngang truc.
+    Moc o s_moc < b0; than tu b0 toi b1; vach 0 o dau giu (b1), fmax o phia moc.
+    nho: buoc vach nho (N); so: cac gia tri ghi so (mac dinh moi 0,5 N, fmax > 2,5 thi moi 1 N);
+    ben: +1/-1 phia ghi vach + so; an=True: che thang do bang o "?" (canh du doan). Tra ve s cua vong treo."""
+    c = lambda col: A(col, alpha); an = an or f_read is None
+    z0, zf = b1 - 58, b0 + 40
+    sf = lambda f: z0 - (z0 - zf) * f / fmax
+    nx, ny = (lambda p, q: (q[0] - p[0], q[1] - p[1]))(Q(b0, 0), Q(b0, 1))
+    rect = lambda s0, s1, h0, h1: [Q(s0, h0), Q(s1, h0), Q(s1, h1), Q(s0, h1)]
+    sk = sf(f_read) if f_read is not None else z0
+    d.line([Q(sk, 0), Q(s_moc + 12, 0)], fill=c(NAVY), width=7)                 # can
+    m = Q(s_moc, 0); d.ellipse([m[0] - 13, m[1] - 13, m[0] + 13, m[1] + 13], outline=c(NAVY), width=5)  # moc
+    body = rect(b0, b1, -hw, hw)
+    d.polygon(body, fill=c(WHITE)); d.line(body + [body[0]], fill=c(NAVY), width=5, joint="curve")
+    d.polygon(rect(zf - 18, b1 - 22, -14, 14), fill=c((236, 240, 248)))          # khe
+    N = 14
+    d.line([Q(lerp(b1 - 28, sk, i / N), 10 if i % 2 else -10) for i in range(N + 1)], fill=c(GRAY), width=3)
+    e = ben * hw
+    for k in range(int(round(fmax / nho)) + 1):
+        f = k * nho; s = sf(f)
+        L = 22 if abs(f - round(f)) < 1e-6 else (15 if abs(f * 2 - round(f * 2)) < 1e-6 else 8)
+        d.line([Q(s, e), Q(s, e - ben * L)], fill=c(NAVY), width=3 if L == 22 else 2)
+    if so is None: so = [k * (0.5 if fmax <= 2.5 else 1.0) for k in range(int(fmax / (0.5 if fmax <= 2.5 else 1.0) + 1e-6) + 1)]
+    fo = F(co)
+    def lab(s, v):
+        w = tw(d, v, fo); off = 14 + abs(nx) * w / 2 + abs(ny) * co * 0.5
+        dtext(d, Q(s, ben * (hw + off)), v, fo, INK, alpha)
+    for v in so: lab(sf(v), f"{v:g}".replace(".", ","))
+    lab(b0 - 4, "N")
+    if an:
+        p = Q((z0 + zf) / 2, 0); d.polygon(rect(zf - 6, b1 - 8, -hw + 5, hw - 5), fill=c((245, 243, 255)))
+        dtext(d, p, "?", F(64), PURPLE, alpha)
+    else:
+        d.line([Q(sk, -hw + 4), Q(sk, hw - 4)], fill=c(RED), width=6)              # kim
+        d.polygon([Q(sk, e - ben * 2), Q(sk + 10, e - ben * 22), Q(sk - 10, e - ben * 22)], fill=c(RED))
+    r = Q(b1 + 16, 0); d.ellipse([r[0] - 14, r[1] - 14, r[0] + 14, r[1] + 14], outline=c(NAVY), width=5)  # vong treo
+    return b1 + 30
+
 def keyword(d, s, t, at, color=ORANGE, y=1400, size=54, sub=None):
     if t < at: return
     k = back((t - at) / 0.5); f = F(size); ls = wrap(d, s, f, 880)

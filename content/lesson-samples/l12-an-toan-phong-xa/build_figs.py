@@ -29,63 +29,82 @@ def wrap(vb, label, body, cap, exp=""):
 
 
 # ------------------------------------------------------- Hình 1: cảnh xạ trị áp sát
+# Chữ 13–14 (viewBox 440 thu còn ~390 px ở màn 375 → chữ ≥ 11,5 px). Người vẽ riêng (không dùng person():
+# hàm đó có lưỡi giày trượt). Ba nguyên tắc = ba nhãn: tấm chắn chì, khoảng cách 3 m, đồng hồ "ở ít phút".
 b = defs("f1")
-b += text(14, 22, "Đứng xa · sau tấm chắn · bấm nút từ xa", "currentColor", 12, "start", "700")
-b += line(16, 206, 424, 206, "currentColor", 2, "", 0.9)
-b += rect(26, 176, 96, 24, "rgba(148,163,184,.18)", "currentColor", 2, 4)      # bệnh nhân
-b += text(74, 192, "bệnh nhân", "currentColor", 10, "middle", "600")
-b += f'<circle cx="74" cy="170" r="7" fill="{ORG}"/>'                          # nguồn
-b += text(30, 146, "nguồn Ir-192", ORG, 11, "start", "700")
-b += line(48, 152, 68, 164, ORG, 1.2, "4 3", 0.9)
-for x2, y2 in ((244, 124), (244, 158), (244, 192)):                            # chùm tia gamma
-    b += arrow("f1", "o", 84, 170, x2, y2, 2.4)
-b += text(112, 112, "tia gamma", ORG, 11, "start", "700")
-b += rect(250, 108, 16, 96, "rgba(148,163,184,.45)", "currentColor", 2, 3)     # tấm chắn chì
-b += text(258, 100, "tấm chắn chì", "currentColor", 11, "middle", "700")
-b += person(340, 206, 0.72)                                                    # người
-b += rect(331, 146, 16, 10, "rgba(52,211,153,.35)", GRN, 1.5, 2)               # liều kế
-b += text(352, 155, "liều kế", GRN, 10, "start", "600")
-b += line(74, 224, 340, 224, "currentColor", 1.2, "5 4", 0.8)                  # khoảng cách
-b += line(74, 218, 74, 230, "currentColor", 1.2)
-b += line(340, 218, 340, 230, "currentColor", 1.2)
-b += text(207, 240, "khoảng cách 3 m", "currentColor", 10, "middle", "600")
-fig1 = wrap("0 0 440 250",
-            "Sơ đồ xạ trị áp sát trong bệnh viện: nguồn đặt sát khối u, tấm chắn chì ở giữa, kỹ thuật viên đứng xa đeo liều kế",
-            b, "Hình 1. Xạ trị áp sát: nguồn sát khối u, người đứng xa sau tấm chắn chì, đeo liều kế — đủ ba nguyên tắc an toàn.")
+b += line(14, 196, 426, 196, "currentColor", 2, "", 0.9)                       # sàn
+b += rect(16, 166, 104, 26, "rgba(148,163,184,.18)", "currentColor", 2, 4)     # bệnh nhân
+b += text(68, 184, "bệnh nhân", "currentColor", 13, "middle", "600")
+b += f'<circle cx="68" cy="158" r="7" fill="{ORG}"/>'                          # nguồn
+b += text(14, 122, "nguồn Ir-192", ORG, 14, "start", "700")
+b += line(44, 128, 62, 151, ORG, 1.2, "4 3", 0.9)
+for y2 in (114, 150, 186):                                                     # chùm tia gamma
+    b += arrow("f1", "o", 78, 158, 234, y2, 2.4)
+b += text(118, 100, "tia gamma", ORG, 14, "start", "700")
+b += rect(240, 100, 16, 96, "rgba(148,163,184,.45)", "currentColor", 2, 3)     # tấm chắn chì
+b += text(248, 90, "tấm chắn chì", "currentColor", 14, "middle", "700")
+# người: đầu, thân, tay, chân
+px = 340
+b += f'<circle cx="{px}" cy="114" r="10" fill="none" stroke="currentColor" stroke-width="2.5"/>'
+b += line(px, 124, px, 156, "currentColor", 2.5)
+b += line(px, 132, px - 12, 154, "currentColor", 2.5)
+b += line(px, 132, px + 12, 154, "currentColor", 2.5)
+b += line(px, 156, px - 11, 195, "currentColor", 2.5)
+b += line(px, 156, px + 11, 195, "currentColor", 2.5)
+b += rect(350, 127, 13, 11, "rgba(52,211,153,.45)", GRN, 1.6, 2)              # liều kế: huy hiệu cạnh ngực, không chạm tay (tay ở y 127–138 có x ≤ 343)
+b += text(368, 137, "liều kế", GRN, 14, "start", "700")
+# đồng hồ: ở ít phút
+b += f'<circle cx="412" cy="162" r="13" fill="none" stroke="{BLUE}" stroke-width="2"/>'
+b += line(412, 162, 412, 153, BLUE, 2) + line(412, 162, 419, 165, BLUE, 2)
+b += text(432, 192, "ở ít phút", BLUE, 14, "end", "700")
+b += line(68, 214, 340, 214, "currentColor", 1.2, "5 4", 0.8)                  # khoảng cách
+b += line(68, 208, 68, 220, "currentColor", 1.2)
+b += line(340, 208, 340, 220, "currentColor", 1.2)
+b += text(204, 234, "khoảng cách 3 m", "currentColor", 14, "middle", "700")
+fig1 = wrap("0 72 440 172",
+            "Sơ đồ xạ trị áp sát trong bệnh viện: nguồn đặt sát khối u, tấm chắn chì ở giữa, kỹ thuật viên đứng xa 3 m, ở ít phút, đeo liều kế",
+            b, "Hình 1. Xạ trị áp sát: nguồn sát khối u; người đứng xa, sau tấm chắn chì, ở ít phút và đeo liều kế — đủ ba nguyên tắc an toàn.")
 
 # ------------------------------------------------------- Hình 2: thang liều quen thuộc (lôgarit)
+# Toạ độ: x(v) = 112 + 72·log10(v) → 0,1→40 · 1→112 · 2,4→139 · 7→173 · 20→206 · 4000→371 · 10000→400.
+import math
+
+
+def xl(v):
+    return 112 + 72 * math.log10(v)
+
+
+AX = 110
 b = defs("f2")
-b += text(20, 30, "liều (mSv, thang lôgarit)", "currentColor", 10, "start", "600")
-b += line(30, 140, 420, 140, "currentColor", 2)
-b += (f'<rect x="201" y="126" width="219" height="28" rx="4" fill="rgba(248,113,113,.13)" '
+b += text(14, 20, "liều (mSv), thang lôgarit", "currentColor", 13, "start", "600")
+b += (f'<rect x="{xl(20):.0f}" y="{AX-12}" width="{426-xl(20):.0f}" height="24" rx="4" fill="rgba(248,113,113,.13)" '
       f'stroke="{RED}" stroke-width="1" stroke-dasharray="4 3"/>')
-b += text(285, 120, "vùng vượt giới hạn nghề", RED, 10, "middle", "700")
-for x, lab in ((45, "0,1"), (113, "1"), (181, "10"), (249, "100"), (317, "1000"), (385, "10000")):
-    b += line(x, 134, x, 146, "currentColor", 1.4)
-    b += text(x, 162, lab, "currentColor", 9, "middle", "600")
-# các mốc liều: (x, nhãn, màu, hàng)
-for x, lab, col, hang in ((45, "X-quang ngực 0,1", BLUE, "tren"),
-                          (139, "phông tự nhiên 2,4", GRN, "duoi"),
-                          (170, "chụp CT 7", ORG, "tren"),
-                          (201, "giới hạn nghề 20", RED, "duoi"),
-                          (358, "gây chết 4000", RED, "tren")):
-    b += dot(x, 140, 3.5, col)
+b += line(30, AX, 426, AX, "currentColor", 2)
+for v, lab in ((0.1, "0,1"), (1, "1"), (10, "10"), (100, "100"), (1000, "1000"), (10000, "10000")):
+    x = round(xl(v))
+    b += line(x, AX - 6, x, AX + 6, "currentColor", 1.4)
+    b += text(x, AX + 30, lab, "currentColor", 13, "middle", "600")
+# các mốc liều: (giá trị, nhãn, màu, hàng, neo)
+for v, lab, col, hang, anc in ((0.1, "X-quang ngực 0,1", BLUE, "tren", "start"),
+                               (2.4, "phông 2,4/năm", GRN, "duoi", "end"),
+                               (7, "chụp CT 7", ORG, "tren", "start"),
+                               (20, "giới hạn nghề 20/năm", RED, "duoi", "start"),
+                               (4000, "gây chết 4000", RED, "tren", "end")):
+    x = round(xl(v))
+    b += dot(x, AX, 4, col)
     if hang == "tren":
-        b += line(x, 128, x, 102, col, 1.2, "4 3", 0.85)
-        if x == 358:
-            b += text(428, 96, lab, col, 10, "end", "700")
-        else:
-            b += text(x - 9, 96, lab, col, 10, "start", "700")
+        b += line(x, AX - 8, x, 58, col, 1.2, "4 3", 0.85)
+        tx = {"start": x - 8, "end": 432}[anc]
+        b += text(tx, 50, lab, col, 14, anc, "700")
     else:
-        b += line(x, 152, x, 186, col, 1.2, "4 3", 0.85)
-        if x == 139:
-            b += text(x - 17, 200, lab, col, 10, "end", "700")
-        else:
-            b += text(x + 9, 200, lab, col, 10, "start", "700")
-b += text(20, 228, "hai vạch liền nhau cách nhau 10 lần", "currentColor", 9, "start", "500")
-fig2 = wrap("0 0 440 240",
+        b += line(x, AX + 8, x, 154, col, 1.2, "4 3", 0.85)
+        tx = x + 4 if anc == "end" else x - 6
+        b += text(tx, 170, lab, col, 14, anc, "700")
+b += text(432, 196, "vùng đỏ: vượt giới hạn nghề", RED, 13, "end", "700")
+b += text(14, 220, "mỗi vạch gấp 10 lần vạch trước", "currentColor", 13, "start", "500")
+fig2 = wrap("0 0 440 230",
             "Thang liều lôgarit với các mốc: chụp X-quang ngực, phông tự nhiên, chụp CT, giới hạn nghề nghiệp và liều gây chết",
-            b, "Hình 2. Thang liều lôgarit, từ X-quang ngực 0,1 mSv tới giới hạn nghề nghiệp 20 mSv/năm.")
+            b, "Hình 2. Thang liều lôgarit, từ X-quang ngực 0,1 mSv tới liều gây chết khoảng 4 000 mSv.")
 
 # ------------------------------------------------------- Hình 3: suất liều giảm theo bình phương khoảng cách
 b = defs("f3")

@@ -89,31 +89,32 @@ fig1 = wrap_fig("0 0 420 244",
 
 # ------------------------------------------------- Hình 2: các nuclôn rời kết hợp thành hạt nhân (mục 4)
 b = defs("f2")
-b += text(14, 24, "Các hạt rời kết hợp lại: hụt khối, toả năng lượng", "currentColor", 13, "start", "700")
-# nhóm hạt rời bên trái
-b += rect(16, 46, 150, 116, "rgba(56,189,248,.10)", BLUE, 1.6, 10)
-b += dot(58, 86, 13, RED) + dot(124, 86, 13, RED)
-b += dot(58, 122, 13, BLUE) + dot(124, 122, 13, BLUE)
-b += text(58, 91, "p", "#0f172a", 13, "middle", "700") + text(124, 91, "p", "#0f172a", 13, "middle", "700")
-b += text(58, 127, "n", "#0f172a", 13, "middle", "700") + text(124, 127, "n", "#0f172a", 13, "middle", "700")
-b += text(91, 182, "4 nuclôn rời", BLUE, 12.5, "middle", "700")
-b += text(91, 198, "4,032980 u", BLUE, 13, "middle", "700")
-b += text(91, 214, "kể cả 2 êlectron", "currentColor", 11.5, "middle", "500")
-# mũi tên kết hợp
-b += arrow("f2", "g", 172, 104, 232, 104, 2.6)
-b += text(202, 92, "kết hợp", GRN, 12.5, "middle", "700")
-b += text(202, 126, "toả", GRN, 12.5, "middle", "700")
-b += text(202, 142, "28,30 MeV", GRN, 12.5, "middle", "700")
-# hạt nhân bên phải
-b += f'<circle cx="300" cy="104" r="46" fill="rgba(52,211,153,.12)" stroke="{GRN}" stroke-width="2"/>'
-b += dot(288, 92, 11, RED) + dot(313, 92, 11, RED) + dot(288, 118, 11, BLUE) + dot(313, 118, 11, BLUE)
-b += text(288, 97, "p", "#0f172a", 12, "middle", "700") + text(313, 97, "p", "#0f172a", 12, "middle", "700")
-b += text(288, 123, "n", "#0f172a", 12, "middle", "700") + text(313, 123, "n", "#0f172a", 12, "middle", "700")
-b += text(300, 182, "hạt nhân heli-4", GRN, 12.5, "middle", "700")
-b += text(300, 198, "4,002603 u", GRN, 13, "middle", "700")
-b += text(300, 214, "nhẹ hơn 0,030377 u", ORG, 12.5, "middle", "700")
-b += text(16, 240, "khối lượng hụt 0,030377 u × 931,5 MeV/u = 28,30 MeV", "currentColor", 12.5, "start", "600")
-fig2 = wrap_fig("0 0 420 254",
+b += text(14, 24, "Các hạt rời kết hợp lại: hụt khối, toả năng lượng", "currentColor", 14, "start", "700")
+# nhóm hạt rời bên trái (khung x 12–150)
+b += rect(12, 46, 138, 116, "rgba(56,189,248,.10)", BLUE, 1.6, 10)
+b += dot(48, 86, 14, RED) + dot(114, 86, 14, RED)
+b += dot(48, 122, 14, BLUE) + dot(114, 122, 14, BLUE)
+b += text(48, 91, "p", "#0f172a", 14, "middle", "700") + text(114, 91, "p", "#0f172a", 14, "middle", "700")
+b += text(48, 127, "n", "#0f172a", 14, "middle", "700") + text(114, 127, "n", "#0f172a", 14, "middle", "700")
+b += text(81, 186, "4 nuclôn rời", BLUE, 14, "middle", "700")
+b += text(81, 205, "4,032980 u", BLUE, 14, "middle", "700")
+b += text(81, 224, "kể cả 2 êlectron", "currentColor", 14, "middle", "500")
+# mũi tên kết hợp (x 164–256), chữ căn giữa x = 210, cách hai khung ≥ 20 px
+b += arrow("f2", "g", 164, 104, 256, 104, 2.6)
+b += text(210, 90, "kết hợp", GRN, 14, "middle", "700")
+b += text(210, 128, "toả", GRN, 14, "middle", "700")
+b += text(210, 146, "28,30 MeV", GRN, 14, "middle", "700")
+# nguyên tử heli-4 bên phải (vòng x 274–366)
+b += f'<circle cx="320" cy="104" r="46" fill="rgba(52,211,153,.12)" stroke="{GRN}" stroke-width="2"/>'
+b += dot(307, 91, 12, RED) + dot(333, 91, 12, RED) + dot(307, 117, 12, BLUE) + dot(333, 117, 12, BLUE)
+b += text(307, 96, "p", "#0f172a", 14, "middle", "700") + text(333, 96, "p", "#0f172a", 14, "middle", "700")
+b += text(307, 122, "n", "#0f172a", 14, "middle", "700") + text(333, 122, "n", "#0f172a", 14, "middle", "700")
+b += text(320, 186, "nguyên tử heli-4", GRN, 14, "middle", "700")
+b += text(320, 205, "4,002603 u", GRN, 14, "middle", "700")
+b += text(320, 224, "nhẹ hơn 0,030377 u", ORG, 14, "middle", "700")
+b += text(14, 256, "khối lượng hụt (tính theo khối lượng nguyên tử):", "currentColor", 14, "start", "600")
+b += text(14, 276, "0,030377 u × 931,5 MeV/u = 28,30 MeV", "currentColor", 14, "start", "600")
+fig2 = wrap_fig("0 0 420 288",
                 "Bốn nuclôn rời có tổng khối lượng 4,032980 u kết hợp thành hạt nhân heli-4 khối lượng 4,002603 u, hụt 0,030377 u và toả 28,30 MeV",
                 b,
                 "Hình 2. Tổng khối lượng bốn nuclôn rời (kể cả hai êlectron) là 4,032980 u, còn nguyên tử heli-4 chỉ 4,002603 u: phần hụt 0,030377 u đã toả ra 28,30 MeV khi hạt nhân hình thành.")

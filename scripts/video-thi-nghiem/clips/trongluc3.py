@@ -15,7 +15,7 @@ CEIL = 352                           # tran / gia treo
 WX = CX - R                          # day ben qua nang (thang dung)
 WY0, WY1 = 700, 800                  # qua nang
 P_TXT = "1,0 N"                      # tham_so P
-ROPE, BODY = 140, 250                # doan day tu rong roc toi moc luc ke ; chieu dai than luc ke
+ROPE, BODY = 110, 330                # doan day tu rong roc toi moc luc ke ; chieu dai than luc ke
 FMAX = 2.5                           # thang luc ke (dung_cu)
 ROWS = [("thẳng đứng", 0), ("chếch", 45), ("nằm ngang", 90)]   # so_lieu_mau: T = 1,0 N ca ba
 SKIN = (240, 196, 160)
@@ -33,8 +33,8 @@ def tangent(beta):
     return (CX + R * math.cos(b), CY - R * math.sin(b)), (math.sin(b), math.cos(b))
 
 def support(d):
-    d.rectangle([200, CEIL - 26, 620, CEIL], fill=(176, 124, 74))
-    for x in range(210, 620, 34): d.line([(x, CEIL - 26), (x + 22, CEIL - 50)], fill=(150, 105, 62), width=4)
+    d.rectangle([260, CEIL - 26, 470, CEIL], fill=(176, 124, 74))     # ngan: so vach luc ke nam ngang nam tren day
+    for x in range(270, 440, 34): d.line([(x, CEIL - 26), (x + 22, CEIL - 50)], fill=(150, 105, 62), width=4)
     d.line([(CX, CEIL), (CX, CY)], fill=(120, 125, 140), width=12)
 
 def pulley(d):
@@ -49,25 +49,16 @@ def weight(d, label=True):
     if label: text(d, (WX, (WY0 + WY1) / 2), P_TXT, 38, WHITE)
 
 def scale(d, beta, f_read, hand=True, alpha=1.0):
-    """Day tu rong roc toi moc luc ke + than luc ke (thang 0-2,5 N, vach do chi f_read) + tay keo, theo huong beta."""
+    """Day tu rong roc toi moc luc ke + luc ke lo xo (mau trongluc2: 0-2,5 N, vach 0,05 N) + tay keo, theo huong beta."""
     (tx, ty), (ux, uy) = tangent(beta); nx, ny = -uy, ux
     P = lambda s, n=0.0: (tx + ux * s + nx * n, ty + uy * s + ny * n)
     a0 = 180; a1 = 360 - beta
     d.arc([CX - R, CY - R, CX + R, CY + R], a0, a1, fill=A(NAVY, alpha), width=5)
-    d.line([P(0), P(ROPE)], fill=A(NAVY, alpha), width=5)
-    s0, s1 = ROPE, ROPE + BODY
-    d.polygon([P(s0, -30), P(s1, -30), P(s1, 30), P(s0, 30)], fill=A((250, 250, 252), alpha), outline=A(NAVY, alpha))
-    d.line([P(s0, -30), P(s1, -30), P(s1, 30), P(s0, 30), P(s0, -30)], fill=A(NAVY, alpha), width=4)
-    g0, g1 = s0 + 30, s1 - 30
-    for k in range(6):                                  # vach 0; 0,5; ...; 2,5 N
-        s = g0 + (g1 - g0) * k / 5
-        d.line([P(s, -24), P(s, 2 if k % 2 == 0 else -8)], fill=A(INK, alpha), width=3)
-    if f_read is not None:
-        s = g0 + (g1 - g0) * f_read / FMAX
-        d.line([P(s, -26), P(s, 26)], fill=A(RED, alpha), width=7)
+    d.line([P(0), P(ROPE - 13)], fill=A(NAVY, alpha), width=5)
+    se = luc_ke(d, P, ROPE, ROPE + 20, ROPE + 20 + BODY, FMAX, f_read, nho=0.05, so=(0, 1, 2), ben=-1, alpha=alpha)
     if hand:
-        hx, hy = P(s1 + 34)
-        d.line([P(s1), P(s1 + 20)], fill=A(NAVY, alpha), width=8)
+        hx, hy = P(se + 34)
+        d.line([P(se - 16), P(se + 8)], fill=A(NAVY, alpha), width=8)
         dot(d, hx, hy, 34, A(SKIN, alpha), outline=A((190, 140, 105), alpha))
 
 def angle_mark(d, beta, alpha=1.0):
@@ -76,16 +67,16 @@ def angle_mark(d, beta, alpha=1.0):
     (tx, ty), (ux, uy) = tangent(beta)
     hx, hy = tx + ux * ROPE, ty + uy * ROPE
     dashed(d, (hx, hy), (hx, hy + 170), A(MUTED, alpha), w=3)
-    rr = 100; edge = math.degrees(math.asin(42 / rr))       # cung dung o mep than luc ke (nua be rong 30 + vien)
+    rr = 100; edge = math.degrees(math.asin(54 / rr))       # cung dung o mep than luc ke (nua be rong 48 + vien)
     d.arc([hx - rr, hy - rr, hx + rr, hy + rr], 90 - beta + edge, 90, fill=A(ORANGE, alpha), width=5)
     mid = math.radians(90 - (beta - edge) / 2)
     text(d, (hx + 200 * math.cos(mid), hy + 200 * math.sin(mid)), f"{beta}°", 40, ORANGE, alpha=alpha)
 
 def readout(d, val, note=None):
-    card(d, (700, 760, 1040, 990), fill=WHITE, outline=LIGHT, r=26, w=3)
-    text(d, (870, 806), "Lực kế chỉ", 38, INK, bold=False)
-    text(d, (870, 880), val, 62, INK)
-    if note: text(d, (870, 950), note, 36, ORANGE)
+    card(d, (700, 815, 1040, 1028), fill=WHITE, outline=LIGHT, r=26, w=3)
+    text(d, (870, 855), "Lực kế chỉ", 38, INK, bold=False)
+    text(d, (870, 925), val, 62, INK)
+    if note: text(d, (870, 990), note, 36, ORANGE)
 
 def rig(d, beta, f_read, val, note=None, label=True):
     support(d); weight(d, label); scale(d, beta, f_read); pulley(d); angle_mark(d, beta); readout(d, val, note)
@@ -147,7 +138,7 @@ def s_do(img, d, t, sc):
     M = sc["M"]; b = beta_at(t, sc); cur = max(0, cur_cap(sc, t))
     moving = any(M[i] <= t < M[i] + MOVE + 0.5 for i in (1, 2))
     chips(d, cur)
-    if moving: rig(d, round(b), None, "···", note="giữ yên rồi đọc")
+    if moving: rig(d, round(b), 1.0, "···", note="giữ yên rồi đọc")
     else: rig(d, round(b), 1.0, P_TXT)
     table(d, rows_shown(t, sc))
 
