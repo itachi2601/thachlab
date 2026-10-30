@@ -59,3 +59,4 @@ Quy trình rút từ đợt Chương 4 L12 (30/10/2026: 5 bài, 10/21 hình vẽ
 
 ## Nhật ký rút kinh nghiệm
 - 2026-10-30 · Đợt đầu (Ch.4 L12, 5 bài): 10/21 hình chưa đạt, lỗi chữ nhỏ chiếm đa số; 4 lỗi nội dung (số hình sai thứ tự, "hạt nhân" thay "nguyên tử" He-4, phản hồi quiz khen phương án sai, nhầm liều kỹ thuật viên với liều điều trị); kiem-code bắt thêm 4 hình agent vẽ tự cho là đạt → giữ bước 4 bắt buộc.
+- 2026-10-30 · Đợt 2 (Ch.2 L11, 8 bài, 2 lượt 6+2 — mở lượt 2 ngay khi có agent xong): lỗi dồn đáp án quiz vào chữ B (2 bài) và "Mang về: N hình" lệch số hình thật (2 bài) → thêm vào việc rà của agent; bài có `svg_lib.py` cũ trong thư mục (không chevron, marker thiếu defs → mũi tên mất đầu) thì import svg_lib của skill; bài không có `build_bundle.py` → thay riêng trường `theory_html`, giữ `indent=1` cho diff gọn; bài không đổi nguồn → `git restore` xem-thu/ thay vì commit ảnh chụp lại.
