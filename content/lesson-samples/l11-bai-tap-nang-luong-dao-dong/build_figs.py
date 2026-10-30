@@ -74,37 +74,53 @@ def legend(items, y, x0=40, gap=118):
 
 
 # ---------------- Hình 1: xích đu, hai lần đẩy (chỉ vẽ cảnh, không số liệu) ----------------
+# Khung chữ A nhìn ngang, điểm treo giữa xà; lần 1 lệch 15° sang trái, lần 2 lệch 30° sang phải (góc gấp đôi).
 VB1 = "0 0 420 266"
-P = (170.0, 30.0); L = 170.0
+P = (210.0, 34.0); L = 170.0; GY = 250.0
 def on_rope(deg, r=L):
     a = math.radians(deg)
     return P[0] + r * math.sin(a), P[1] + r * math.cos(a)
 b = ""
-b += line(22, 30, 398, 30, "currentColor", 4) + line(26, 30, 26, 240, "currentColor", 3) + line(394, 30, 394, 240, "currentColor", 3)
-b += line(30, 240, 400, 240, "currentColor", 2)
-b += dot(*P, 5)
-arc = [on_rope(d) for d in range(-32, 33, 2)]
-b += poly(arc, "currentColor", 1.4, "3 5")
+b += line(24, P[1], 396, P[1], "currentColor", 5)
+for xt_, xs in ((24, (10, 38)), (396, (382, 410))):
+    for xb in xs:
+        b += line(xt_, P[1], xb, GY, "currentColor", 3)
+b += line(6, GY, 414, GY, "currentColor", 2)
+b += dot(*P, 4.5)
 low = on_rope(0)
+b += line(P[0], P[1], low[0], low[1], "currentColor", 1.2, "4 5", .5)
+b += poly([on_rope(d) for d in range(-36, 37, 2)], "currentColor", 1.4, "3 5")
 b += dot(*low, 5, "currentColor", fill=False)
 def seat(deg, c, dash=""):
-    sx, sy = on_rope(deg)
-    hx, hy = on_rope(deg, L - 30)
+    """Dây + mặt ghế + bạn ngồi (đầu, thân dọc dây, đùi theo mặt ghế, cẳng chân thõng xuống)."""
     a = math.radians(deg)
-    ux, uy = math.cos(a), -math.sin(a)          # vuông góc dây: hướng mặt ghế
+    ux, uy = math.sin(a), math.cos(a)            # dọc dây, hướng xuống
+    nx, ny = math.cos(a), -math.sin(a)           # vuông góc dây: hướng mặt ghế (bạn nhìn sang phải)
+    sx, sy = on_rope(deg)
     g = line(P[0], P[1], sx, sy, c, 2.2, dash)
-    g += line(sx - 14 * ux, sy - 14 * uy, sx + 14 * ux, sy + 14 * uy, c, 5)
-    g += f'<circle cx="{hx:.1f}" cy="{hy:.1f}" r="9" fill="none" stroke="{c}" stroke-width="2.2"{" stroke-dasharray=" + chr(34) + dash + chr(34) if dash else ""}/>'
-    return g, (sx, sy)
-g1, s1 = seat(15, BLUE)
-g2, s2 = seat(30, ORG, "6 4")
+    g += line(sx - 10 * nx, sy - 10 * ny, sx + 24 * nx, sy + 24 * ny, c, 5)
+    hx, hy = sx - 11 * ux, sy - 11 * uy                     # hông cao hơn mặt ghế 11 px: đùi tách khỏi ván
+    shx, shy = hx - 30 * ux, hy - 30 * uy                    # vai
+    kx, ky = hx + 22 * nx, hy + 22 * ny                      # gối, ở mép trước mặt ghế
+    fx, fy = kx + 22 * ux, ky + 22 * uy                      # bàn chân thõng xuống
+    g += line(hx, hy, shx, shy, c, 4.5)
+    g += f'<circle cx="{hx - 42 * ux:.1f}" cy="{hy - 42 * uy:.1f}" r="10" fill="{c}"/>'
+    g += poly([(hx, hy), (kx, ky), (fx, fy)], c, 4)
+    return g, (sx, sy), [(hx, hy), (kx, ky), (fx, fy)]
+g1, s1, ng1 = seat(-15, BLUE)
+g2, s2, ng2 = seat(30, ORG, "6 4")
 b += g1 + g2
-b += T(s1[0] + 24, s1[1] + 22, "lần 1", BLUE)
-b += T(s2[0] + 18, s2[1] - 8, "lần 2:", ORG)
-b += T(s2[0] + 18, s2[1] + 14, "góc gấp đôi", ORG)
-b += T(low[0], low[1] + 28, "chỗ thấp nhất", "currentColor", "middle", "400")
-kiem_nhan(VB1, "hình 1", [(*s1, 6), (*s2, 6), (*low, 5)])
-fig1 = wrap(VB1, "Xích đu ở sân trường: lần một đẩy nhẹ, lần hai đẩy cho góc lệch lớn gấp đôi",
+# cung góc: α (lần 1) bên trái, 2α (lần 2) bên phải
+b += poly([on_rope(d, 60) for d in range(-15, 1)], BLUE, 2)
+b += poly([on_rope(d, 50) for d in range(0, 31, 2)], ORG, 2)
+la1 = on_rope(-7.5, 86); la2 = on_rope(15, 72)
+b += T(la1[0], la1[1] + 6, "α", BLUE, "middle", "700")
+b += T(la2[0], la2[1] + 6, "2α", ORG, "middle", "700")
+b += T(s1[0] - 24, s1[1] + 28, "lần 1", BLUE, "end")
+b += T(s2[0] + 26, s2[1] + 26, "lần 2", ORG)
+b += T(low[0] + 10, low[1] + 28, "chỗ thấp nhất", "currentColor", "start", "400")   # lệch phải, tránh chân bạn lần 1
+kiem_nhan(VB1, "hình 1", [(*s1, 6), (*s2, 6), (*low, 5)] + [(x, y, 4) for x, y in ng1 + ng2])
+fig1 = wrap(VB1, "Xích đu ở sân trường nhìn ngang: lần một đẩy nhẹ, dây lệch góc alpha sang trái; lần hai đẩy cho dây lệch góc hai alpha sang phải",
             b, "Hình 1. Cùng một xích đu, hai lần đẩy.<br>Lần 2 góc lệch lớn gấp đôi lần 1.")
 
 # ---------------- Hình 2: năng lượng theo li độ ----------------
@@ -218,7 +234,7 @@ b += T(HXL - 10, (B0[1] + BOT[1]) / 2 + 6, "h", "currentColor", "end", "700")
 a = math.radians(AL)
 vx, vy = BA[0] + 44 * math.cos(a), BA[1] - 44 * math.sin(a)
 b += line(BA[0] + 12 * math.cos(a), BA[1] - 12 * math.sin(a), vx, vy, GRN, 2.6) + chevron(vx, vy, math.cos(a), -math.sin(a), GRN, 2.6)
-b += T(vx + 8, vy - 4, "v", GRN, weight="700")
+b += T(vx + 2, vy + 24, "v", GRN, weight="700")   # dưới đầu mũi tên, tránh cung chấm
 lm = ((P4[0] + B0[0]) / 2, (P4[1] + B0[1]) / 2)
 b += T(lm[0] - 14, lm[1], "l", "currentColor", "end", "700")
 b += T(P4[0] - 22, P4[1] + 70, "α", ORG, "middle", "700", sub="0")
