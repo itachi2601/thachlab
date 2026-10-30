@@ -8,7 +8,7 @@ import json, math, pathlib, re, subprocess, sys
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 sys.path.insert(0, str(ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap, person  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, person, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -19,18 +19,17 @@ bad = []
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác: mũi tên vẽ đầu V 30° bằng chevron (thầy chốt 7/10/2026)."""
+    return ""
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash="", name="mũi tên"):
     SEGS.append((CUR["fig"], x1, y1, x2, y2, name))
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    L = max(5, min(3.4 * ww + 3, 0.5 * math.hypot(x2 - x1, y2 - y1)))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name="nét", check=True):
@@ -112,13 +111,16 @@ for xx in (60, 150, 240, 330):
     b += line(xx, GY + 8, xx + 30, GY + 8, BLUE, 1.2, "", .35, check=False)
 xa, xb = 110, 320
 b += person(xa, GY) + person(xb, GY)
+SH = GY - 78                                   # vai
+b += line(xa, SH, xa + 30, SH + 6, "currentColor", 2.5, check=False) + line(xa, SH, xa + 28, SH - 8, "currentColor", 2.5, check=False)
+b += line(xb, SH, xb - 14, SH + 34, "currentColor", 2.5, check=False) + line(xb, SH, xb + 14, SH + 34, "currentColor", 2.5, check=False)
 b += line(xa - 40, 100, xa - 22, 100, "currentColor", 1.5, "", .5, check=False)
 b += line(xa - 46, 116, xa - 24, 116, "currentColor", 1.5, "", .5, check=False)
 b += arrow("f1", "g", xa - 10, 56, xa + 80, 56, 3, name="v An")
-b += text(xa + 35, 38, "An trượt tới", GRN, 14, "middle")
-b += text(xb, 50, "Bình đứng yên", "currentColor", 14, "middle")
-b += text(xa + 22, 128, "An", "currentColor", 14, "start")
-b += text(xb + 22, 128, "Bình", "currentColor", 14, "start")
+b += text(xa + 35, 36, "An trượt tới", GRN, 15, "middle")
+b += text(xb, 36, "Bình đứng yên", "currentColor", 15, "middle")
+b += text(xa - 46, 150, "An", "currentColor", 15, "start")
+b += text(xb + 24, 150, "Bình", "currentColor", 15, "start")
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
             "An đang trượt tới trên mặt băng, Bình đứng yên phía trước; sau cú ôm hai bạn cùng lướt đi", b,
             "Hình 1. Trước cú ôm: An trượt tới, Bình đứng yên. Sau cú ôm hai bạn cùng lướt — nhanh bao nhiêu?")
@@ -155,26 +157,26 @@ b += gate(G1, T1) + gate(G2, T1) + gate(G1, T2) + gate(G2, T2)
 c1 = 40
 c2 = 255
 b += cart(c1, T1, "rgba(248,113,113,.22)") + cart(c2, T1, "rgba(56,189,248,.22)")
-b += text(c1 + CW / 2, T1 - 8, sub("m", "1"), "currentColor", 14, "middle")
-b += text(c2 + CW / 2, T1 - 8, sub("m", "2"), "currentColor", 14, "middle")
+b += text(c1 + CW / 2, T1 - 11, sub("m", "1", 14), "currentColor", 15, "middle")
+b += text(c2 + CW / 2, T1 - 11, sub("m", "2", 14), "currentColor", 15, "middle")
 ax = c1 + CW / 2
 L1 = K * v1_1
 b += arrow("f2", "g", ax, T1 - 40, ax + L1, T1 - 40, 3, name="v1")
-b += text(ax + L1 / 2, T1 - 48, sub("v", "1"), GRN, 15, "middle", "700", True)
-b += text(c2 + CW / 2, T1 - 36, "đứng yên", "currentColor", 13, "middle", "600")
-b += text(G1, T1 - 56, "cổng quang 1", "currentColor", 13, "middle", "600")
-b += text(432, T1 - 56, "cổng quang 2", "currentColor", 13, "end", "600")
-b += text(12, 20, "Trước", "currentColor", 14, "start")
-b += text(12, T2 - 74, "Sau", "currentColor", 14, "start")
+b += text(ax + L1 / 2, T1 - 54, sub("v", "1", 14), GRN, 17, "middle", "700", True)
+b += text(c2 + CW + 5, T1 - 8, "đứng yên", "currentColor", 14, "start", "600")
+b += text(G1, T1 - 56, "cổng quang 1", "currentColor", 14, "middle", "600")
+b += text(432, T1 - 56, "cổng quang 2", "currentColor", 14, "end", "600")
+b += text(12, 20, "Trước", "currentColor", 15, "start")
+b += text(12, T2 - 74, "Sau", "currentColor", 15, "start")
 cs = 252
 b += cart(cs, T2, "rgba(248,113,113,.22)") + cart(cs + CW, T2, "rgba(56,189,248,.22)")
-b += text(cs + CW / 2, T2 - 8, sub("m", "1"), "currentColor", 14, "middle")
-b += text(cs + 1.5 * CW, T2 - 8, sub("m", "2"), "currentColor", 14, "middle")
+b += text(cs + CW / 2, T2 - 11, sub("m", "1", 14), "currentColor", 15, "middle")
+b += text(cs + 1.5 * CW, T2 - 11, sub("m", "2", 14), "currentColor", 15, "middle")
 bx = cs + CW
 L2 = K * vlt_1
 b += arrow("f2", "g", bx - 50, T2 - 40, bx - 50 + L2, T2 - 40, 3, name="v")
-b += text(bx - 50 + L2 / 2, T2 - 48, "v", GRN, 15, "middle", "700", True)
-b += text(40, T2 - 30, "dính nhau, đi chung", "currentColor", 13, "start", "600")
+b += text(bx - 50 + L2 / 2, T2 - 52, "v", GRN, 17, "middle", "700", True)
+b += text(40, T2 - 30, "dính nhau, đi chung", "currentColor", 14, "start", "600")
 assert abs(L2 / L1 - M1 / (M1 + m2_1)) < 1e-9
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
             "Ray đệm khí với hai cổng quang: trước va chạm xe 1 chạy, xe 2 đứng yên; sau va chạm hai xe dính nhau đi chung với vận tốc nhỏ hơn", b,
@@ -183,8 +185,8 @@ fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
 
 # ---------------- Hình 3: tên lửa, M = 3m ----------------
 CUR["fig"] = 3
-VB[3] = (440, 190)
-RY = 92
+VB[3] = (440, 172)
+RY = 74
 RATIO = 3
 b = defs("f3")
 b += (f'<path d="M200,{RY-18} L320,{RY-18} L360,{RY} L320,{RY+18} L200,{RY+18} Z" fill="rgba(52,211,153,.18)" '
@@ -198,8 +200,8 @@ b += arrow("f3", "o", 136, RY, 136 - LV, RY, 3, name="v khí")
 b += arrow("f3", "g", 362, RY, 362 + LV / RATIO, RY, 3, name="V tên lửa")
 b += text(76, RY - 18, "khí: m, v", ORG, 17, "middle")
 b += text(432, RY - 30, "tên lửa: M, V", GRN, 17, "end")
-b += text(220, 160, "M = 3m  ⇒  V = v : 3", "currentColor", 17, "middle")
-b += text(220, 182, "hai mũi tên ngược chiều", "currentColor", 17, "middle", "600")
+b += text(220, 142, "M = 3m  ⇒  V = v : 3", "currentColor", 17, "middle")
+b += text(220, 164, "hai mũi tên ngược chiều", "currentColor", 17, "middle", "600")
 assert abs((LV / RATIO) * RATIO - LV) < 1e-9
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Tên lửa phụt khí về phía sau; vận tốc khí dài gấp ba vận tốc tên lửa, hai vận tốc ngược chiều", b,
@@ -222,8 +224,8 @@ b += text(xb, yb + 5, "B", "currentColor", 17, "middle")
 LA, LB = 100, 50
 b += arrow("f4", "r", xa + 24, yb, xa + 24 + LA, yb, 3, name="vA")
 b += arrow("f4", "b", xb - 24, yb, xb - 24 - LB, yb, 3, name="vB")
-b += text(xa + 24 + LA / 2, yb - 16, sub("v", "A", 14) + " &gt; 0", RED, 17, "middle")
-b += text(xb - 24 - LB / 2, yb - 16, sub("v", "B", 14) + " &lt; 0", BLUE, 17, "middle")
+b += text(xa + 24 + LA / 2, yb - 21, sub("v", "A", 14) + " &gt; 0", RED, 17, "middle")
+b += text(xb - 24 - LB / 2, yb - 21, sub("v", "B", 14) + " &lt; 0", BLUE, 17, "middle")
 b += text(xa, AY + 30, "thế dấu +", RED, 17, "middle")
 b += text(xb, AY + 30, "thế dấu −", BLUE, 17, "middle")
 b += text(xa, 40, "cùng chiều +", RED, 17, "middle", "600")
