@@ -6,7 +6,7 @@ import json, math, pathlib, re, subprocess, sys
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[1].parent
 sys.path.insert(0, str(ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap, person  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, person, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS, SEGS, VB, bad = [], [], {}, []
@@ -15,18 +15,18 @@ G = 9.8
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác: mũi tên vẽ đầu V 30° bằng chevron (thầy chốt 7/10/2026)."""
+    return ""
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash="", name="mũi tên"):
     SEGS.append((CUR["fig"], x1, y1, x2, y2, name))
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    n = math.hypot(x2 - x1, y2 - y1)
+    L = max(5, min(3.4 * ww + 2, 0.6 * n))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name="nét", check=True):
@@ -37,7 +37,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name="nét", chec
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="13">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -68,24 +68,49 @@ def knum(v, d=1):
     return num(v, d).replace(",", "{,}")
 
 
-# ---------------- Hình 1: hai người trượt băng (mở bài — chỉ vẽ cảnh, không ghi số) ----------------
+# ---------------- Hình 1: hai người trượt băng (mở bài — số liệu khớp đoạn mở bài: 30 kg 4 m/s, 60 kg 2 m/s) ----------------
 CUR["fig"] = 1
-VB[1] = (440, 250)
+VB[1] = (440, 285)
 b = defs("f1")
-V_NHO, V_LON, KV = 4.0, 2.0, 30.0       # m/s, px/(m/s): mũi tên vận tốc tỉ lệ 4 : 2
-for (x, gr, s, v, ten, mo_ta) in ((70, 115, 0.75, V_NHO, "bạn nhỏ", "nhẹ, lướt nhanh"),
-                                  (70, 235, 1.0, V_LON, "người lớn", "nặng, lướt chậm")):
+V_NHO, V_LON, KV = 4.0, 2.0, 38.0       # m/s, px/(m/s): mũi tên vận tốc tỉ lệ 4 : 2
+
+
+def skater(x, gr, s, w):
+    """Người trượt băng nghiêng người về trước, một chân đẩy sau, hai tay giữ thăng bằng; w = độ dày thân (gợi khối lượng)."""
+    P = lambda dx, dy: (x + dx * s, gr - dy * s)
+    hip, sh, knee, foot = P(-4, 52), P(12, 92), P(8, 28), P(0, 8)
+    out = ""
+    def seg(p1, p2, ww, c="currentColor"):
+        nonlocal out
+        SEGS.append((CUR["fig"], *p1, *p2, "người"))
+        out += (f'<line x1="{p1[0]:.1f}" y1="{p1[1]:.1f}" x2="{p2[0]:.1f}" y2="{p2[1]:.1f}" stroke="{c}" '
+                f'stroke-width="{ww:.1f}" stroke-linecap="round"/>')
+    seg(hip, knee, w * .8); seg(knee, foot, w * .8)                 # chân trụ gập gối
+    seg(hip, P(-24, 26), w * .8); seg(P(-24, 26), P(-40, 12), w * .8)   # chân đẩy ra sau
+    seg(P(-48, 10), P(-32, 14), 2.6, BLUE)                          # lưỡi trượt chân sau (nhấc)
+    seg(P(-20, 2), P(22, 2), 3, BLUE)                               # lưỡi trượt chân trụ
+    seg(hip, sh, w)                                                 # thân nghiêng
+    seg(sh, P(38, 78), w * .6); seg(sh, P(-20, 72), w * .6)         # hai tay
+    hc = P(20, 106)
+    out += (f'<circle cx="{hc[0]:.1f}" cy="{hc[1]:.1f}" r="{11 * s:.1f}" fill="currentColor" fill-opacity=".12" '
+            f'stroke="currentColor" stroke-width="2.5"/>')
+    return out
+
+
+for (x, gr, s, w, v, ten, kl, mo_ta) in ((80, 122, 0.72, 4.5, V_NHO, "bạn nhỏ", "30 kg", "lướt nhanh"),
+                                         (80, 268, 1.0, 9.0, V_LON, "người lớn", "60 kg", "lướt chậm")):
     b += line(20, gr, 420, gr, "currentColor", 1.5, "", .45, check=False)
-    b += person(x, gr, s)
-    ya = gr - 62 * s
-    x1, x2 = x + 34, x + 34 + KV * v
+    b += skater(x, gr, s, w)
+    ya = gr - 46 * s
+    x1, x2 = x + 50 * s + 6, x + 50 * s + 6 + KV * v
     b += arrow("f1", "g", x1, ya, x2, ya, 3.2, name=f"v {ten}")
-    b += text(x2 + 12, ya + 5, mo_ta, GRN, 14, "start")
-    b += text(x + 22, gr - 100 * s + 5, ten, "currentColor", 14, "start")
-    b += text(x1 + 4, ya + 22, "v", GRN, 16, "start", "700", True)
+    b += text(x2 + 6, ya - 8, "v", GRN, 17, "start", "700", True)
+    b += text(x2 + 26, ya + 5, mo_ta, GRN, 14, "start")
+    b += text(x + 44 * s, gr - 112 * s, ten, "currentColor", 14, "start")
+    b += text(x + 44 * s, gr - 112 * s + 17, kl, "currentColor", 14, "start", "500")
 assert abs(KV * V_NHO / (KV * V_LON) - 2) < 1e-9
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
-            "Hai người trượt băng lướt cùng chiều: bạn nhỏ nhẹ lướt nhanh, người lớn nặng lướt chậm; mũi tên vận tốc dài gấp đôi nhau", b,
+            "Hai người trượt băng lướt cùng chiều: bạn nhỏ 30 kg lướt nhanh, người lớn 60 kg lướt chậm; mũi tên vận tốc dài gấp đôi nhau", b,
             "Hình 1. Bạn nhỏ nhẹ nhưng nhanh, người lớn nặng nhưng chậm (mũi tên xanh lá dài theo tỉ lệ tốc độ). Ai khó dừng hơn?")
 
 # ---------------- Hình 2: cộng hai vector động lượng theo quy tắc hình bình hành ----------------
@@ -159,7 +184,7 @@ fig3 = fig3.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10
 
 # ---------------- Hình 4: vector p trước, p sau, Δp của bài toán mẫu ----------------
 CUR["fig"] = 4
-VB[4] = (440, 250)
+VB[4] = (440, 276)
 b = defs("f4")
 m4, v1, v2 = 0.45, 12.0, -8.0
 p1, p2 = m4 * v1, m4 * v2
@@ -177,9 +202,10 @@ b += arrow("f4", "b", x_end, 100, x_end + K * p2, 100, 3, name="p2")       # p2 
 b += text(x_end + K * p2 - 10, 105, "sau: " + sub("p", "2"), BLUE, 14, "end")
 b += arrow("f4", "g", x_end, 170, x_end + K * dp4, 170, 3.4, name="Δp")
 b += text(x_end + K * dp4 - 8, 175, "Δp", GRN, 16, "end", "700")
-b += text(x_end, 198, "Δp = p₂ − p₁: ra xa tường", GRN, 14, "end")
-b += arrow("f4", "k", 30, 232, 90, 232, 2, name="trục +")
-b += text(98, 237, "chiều dương", "currentColor", 14, "start", "500")
+b += text(x_end, 198, "Δp = " + sub("p", "2") + " − " + sub("p", "1"), GRN, 14, "end")
+b += text(x_end, 224, "hướng ra xa tường", GRN, 14, "end")
+b += arrow("f4", "k", 30, 258, 90, 258, 2, name="trục +")
+b += text(98, 263, "chiều dương", "currentColor", 14, "start", "500")
 assert p2 < 0 < p1 and dp4 < 0 and abs(K * abs(dp4) - (K * p1 + K * abs(p2))) < 1e-9
 fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
             "Bóng đập tường: vector động lượng trước hướng vào tường, sau hướng ra; vector delta p hướng ra xa tường, dài bằng tổng hai vector", b,
