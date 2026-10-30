@@ -10,7 +10,7 @@ import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -22,19 +22,18 @@ VB = {}
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác: mũi tên vẽ bằng thân + đầu V 30° (svg_lib.chevron)."""
+    return ""
 
 
-def arrow(p, c, x1, y1, x2, y2, w=3, name="", dash=""):
+def arrow(p, c, x1, y1, x2, y2, w=2.8, name="", dash=""):
+    """Thân thẳng + đầu V 30° tại (x2, y2) — không dùng marker-end tam giác (thầy chốt 7/10/2026)."""
     if name:
         SEGS.append((CUR["fig"], x1, y1, x2, y2, name))
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    w = min(w, 2.8)
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], w=max(2.0, w - 0.4), L=13))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name=""):
@@ -49,7 +48,7 @@ def it(s):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="13">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=17, anchor="start", weight="700"):
@@ -190,8 +189,8 @@ assert rows[1][4] - rows[1][3] < X1 - X0 < rows[2][4] - rows[2][3]  # nén ngắ
 fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-bien-dang-vat-ran/hinh-thanh-keo-nen.webp" '
         'alt="Hai thanh trụ có chiều dài ban đầu L0: (a) bị kéo bởi cặp lực hướng ra nên dài thêm ΔL, (b) bị nén bởi cặp lực hướng vào nên ngắn đi ΔL" '
         'loading="lazy" width="377" height="545">'
-        '<figcaption>Hình 2. Nét đứt là đầu thanh sau khi biến dạng. (a) Bị kéo: dài ra. (b) Bị nén: ngắn lại.<br>'
-        'Nhãn: F = lực · L₀ = chiều dài ban đầu · ΔL = độ biến dạng (bài viết Δl) · A = tiết diện.<br>'
+        '<figcaption>Hình 2. Nét đứt là đầu thanh sau khi biến dạng.<br>(a) Bị kéo: dài ra.<br>(b) Bị nén: ngắn lại.<br>'
+        'Nhãn: F = lực, L₀ = chiều dài ban đầu.<br>ΔL = độ biến dạng (bài viết Δl), A = tiết diện.<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 5.13 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
 
@@ -199,6 +198,7 @@ fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-bien-dan
 CUR["fig"] = 3
 VB[3] = (420, 262)
 WALL, NAT = 34, 180                   # mặt tường, vị trí đầu lò xo khi chưa biến dạng
+L3 = 64                               # cân bằng: lực tay = lực đàn hồi về độ lớn -> mọi mũi tên dài bằng nhau
 b = defs("f3")
 b += (f'<rect x="14" y="40" width="{WALL-14}" height="210" fill="rgba(148,163,184,.3)" stroke="currentColor" '
       f'stroke-width="2"/>')
@@ -209,27 +209,26 @@ for title, y, end, kind in (("Lò xo dãn: lực đàn hồi kéo vào", 28, 240
     b += text(44, y, title, size=17)
     b += spring_h(WALL, end, yc, n=8 if kind == "dan" else 7)
     b += rect(end, yc - 12, 16, 24, "rgba(251,146,60,.45)", "đầu cầm", rx=3)
-    b += line(NAT, yc - 26, NAT, yc - 14, "currentColor", 1.4, "3 3", .7)
-    b += line(NAT, yc + 14, NAT, yc + 18, "currentColor", 1.4, "3 3", .7)
+    b += line(NAT, yc - 22, NAT, yc + 22, "currentColor", 1.6, "4 3", .9, name="vị trí tự nhiên")
     if kind == "dan":
         assert end > NAT                                  # dãn: đầu lò xo ở xa hơn vị trí tự nhiên
-        b += arrow("f3", "r", end + 18, yc, end + 78, yc, 3.2, name="tay kéo")
+        b += arrow("f3", "r", end + 18, yc, end + 18 + L3, yc, 3.2, name="tay kéo")
         b += text(end + 22, yc - 18, "tay kéo", RED, 17, weight="600")
         # lực đàn hồi lên tay: hướng về phía tường (kéo vào), đặt ở đầu lò xo
-        b += arrow("f3", "b", end + 8, yc + 30, end - 56, yc + 30, 3.2, name="Fđh dãn")
+        b += arrow("f3", "b", end + 8, yc + 30, end + 8 - L3, yc + 30, 3.2, name="Fđh dãn")
         assert end - 56 < end + 8                           # mũi chĩa về tường
         b += text(end - 62, yc + 36, sub(it("F"), "đh"), BLUE, 19, "end")
     else:
         assert end < NAT                                  # nén: đầu lò xo gần tường hơn vị trí tự nhiên
-        b += arrow("f3", "r", end + 86, yc, end + 20, yc, 3.2, name="tay đẩy")
-        b += text(end + 50, yc - 18, "tay đẩy", RED, 17, weight="600")
-        b += arrow("f3", "b", end + 8, yc + 30, end + 72, yc + 30, 3.2, name="Fđh nén")
+        b += arrow("f3", "r", end + 20 + L3, yc, end + 20, yc, 3.2, name="tay đẩy")
+        b += text(NAT + 10, yc - 18, "tay đẩy", RED, 17, weight="600")
+        b += arrow("f3", "b", end + 8, yc + 30, end + 8 + L3, yc + 30, 3.2, name="Fđh nén")
         assert end + 72 > end + 8                           # mũi chĩa ra xa tường
         b += text(end + 80, yc + 36, sub(it("F"), "đh"), BLUE, 19)
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Lò xo gắn tường. Khi bị kéo dãn, lực đàn hồi lên tay hướng về phía tường; khi bị nén, lực đàn hồi lên tay hướng ra xa tường",
-            b, "Hình 3. Vạch đứt là vị trí đầu lò xo khi chưa biến dạng. Lực đàn hồi (xanh) đặt lên vật ở đầu lò xo, "
-               "luôn ngược chiều biến dạng: dãn thì kéo vào, nén thì đẩy ra.")
+            b, "Hình 3. Vạch đứt là vị trí đầu lò xo khi chưa biến dạng.<br>Lực đàn hồi (xanh) đặt lên vật ở đầu lò xo.<br>"
+               "Lực đàn hồi luôn ngược chiều biến dạng.<br>Dãn thì kéo vào, nén thì đẩy ra.")
 
 # ---------------- Hình 4: đồ thị F theo Δl, số liệu đo + giới hạn đàn hồi ----------------
 CUR["fig"] = 4
@@ -247,7 +246,7 @@ for f in (1, 2, 3, 4):
     _, y = P4(0, f)
     b += line(OX - 6, y, OX, y, "currentColor", 1.4)
     b += text(OX - 10, y + 6, str(f), anchor="end", weight="500")
-b += text(OX + 8, 40, it("F") + " (N)", weight="600")
+b += text(OX + 14, 40, it("F") + " (N)", weight="600")
 b += text(408, OY + 50, "Δ" + it("l") + " (cm)", anchor="end", weight="600")
 b += text(OX - 10, OY + 22, "O", anchor="end", weight="600")
 DLA, FA = 12.0, K_TN2 * 12.0 / 100     # điểm A: giới hạn đàn hồi (minh hoạ), trên đường k = 25 N/m
@@ -270,13 +269,12 @@ for F, l, dl, _ in TN2:                  # chấm số liệu đo phải nằm t
     assert abs(x - xl) <= 0.1 * SX + 1e-6, (F, x, xl)
     b += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5" fill="{ORG}" stroke="currentColor" stroke-width="1.2"/>'
 b += f'<circle cx="{xa:.1f}" cy="{ya:.1f}" r="5" fill="currentColor"/>'
-b += text(xa - 6, ya - 12, "A", anchor="end")
-b += text(100, 60, "A: giới hạn đàn hồi", weight="600")
+b += text(xa - 8, ya - 10, "A: giới hạn đàn hồi", anchor="end", weight="600")
 b += text(180, 216, "OA: F tỉ lệ Δl", BLUE, 17, weight="600")
 b += text(282, 150, "vượt giới hạn", RED, 17, weight="600")
 fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
             "Đồ thị lực theo độ dãn: năm chấm số liệu đo nằm trên đoạn thẳng OA qua gốc; sau điểm A là giới hạn đàn hồi, đường cong không còn thẳng",
-            b, "Hình 4. Chấm cam: năm lần đo ở bảng trên, nằm trên đoạn thẳng OA (độ cứng khoảng 25 N/m). "
+            b, "Hình 4. Chấm cam: năm lần đo ở bảng trên, nằm trên đoạn thẳng OA (độ cứng khoảng 25 N/m).<br>"
                "Sau A (minh hoạ), lò xo vượt giới hạn đàn hồi, lực không còn tỉ lệ với độ dãn.")
 fig4 = fig4.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-biendang-02"', 1)
 
@@ -297,7 +295,7 @@ for f in (1, 2, 3):
     _, y = P5(0, f)
     b += line(OX5 - 6, y, OX5, y, "currentColor", 1.4)
     b += text(OX5 - 10, y + 6, str(f), anchor="end", weight="500")
-b += text(OX5 + 8, 44, it("F") + " (N)", weight="600")
+b += text(OX5 + 14, 44, it("F") + " (N)", weight="600")
 b += text(408, OY5 + 46, "Δ" + it("l") + " (cm)", anchor="end", weight="600")
 e1 = P5(3.0 / K1 * 100, 3.0)              # lò xo 1 tới F = 3 N (Δl = 6 cm)
 e2 = P5(8.0, K2 * 8 / 100)                # lò xo 2 tới Δl = 8 cm (F = 2 N)
@@ -311,12 +309,14 @@ b += line(OX5, q1[1], q2[0], q2[1], "currentColor", 1.3, "4 4", .7, name="F=1")
 for q in (q1, q2):
     b += line(q[0], q[1], q[0], OY5, "currentColor", 1.3, "4 4", .7, name="dóng")
     b += f'<circle cx="{q[0]:.1f}" cy="{q[1]:.1f}" r="5" fill="currentColor"/>'
-b += text(96, 64, "lò xo 1: k = 50 N/m", RED, 17, weight="600")
-b += text(300, 200, "lò xo 2:", BLUE, 17, weight="600")
-b += text(300, 220, "k = 25 N/m", BLUE, 17, weight="600")
+b += text(e1[0] + 8, e1[1] + 2, "lò xo 1", RED, 17, weight="600")
+b += text(e1[0] + 8, e1[1] + 22, "k = 50 N/m", RED, 17, weight="600")
+b += text(410, e2[1] + 36, "lò xo 2", BLUE, 17, "end", "600")
+b += text(410, e2[1] + 56, "k = 25 N/m", BLUE, 17, "end", "600")
+b += text(OX5 - 10, OY5 + 22, "O", anchor="end", weight="600")
 fig5 = wrap(f"0 0 {VB[5][0]} {VB[5][1]}",
             "Đồ thị lực theo độ dãn của hai lò xo: lò xo 1 dốc hơn, độ cứng 50 N/m; lò xo 2 thoải hơn, độ cứng 25 N/m; cùng lực 1 N lò xo 1 dãn 2 cm, lò xo 2 dãn 4 cm",
-            b, "Hình 5. Mỗi lò xo là một đường thẳng riêng, độ dốc chính là độ cứng — không đổi dọc theo đường dù lực tăng. "
+            b, "Hình 5. Mỗi lò xo là một đường thẳng riêng, độ dốc chính là độ cứng — không đổi dọc theo đường dù lực tăng.<br>"
                "Cùng lực 1 N: lò xo cứng hơn dãn 2 cm, lò xo mềm hơn dãn 4 cm.")
 fig5 = fig5.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-biendang-03"', 1)
 
