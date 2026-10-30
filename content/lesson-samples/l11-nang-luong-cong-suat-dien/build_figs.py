@@ -6,9 +6,11 @@ import html
 import math
 import pathlib
 import re
-from svg_lib import *
+import sys
 
 HERE = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))  # svg_lib của skill (đầu V 30°)
+from svg_lib import *  # noqa: E402
 # Suất điện động: glyph ℰ (U+2130) có trong font Mac nhưng vẽ nhỏ như "ε" và có thể thiếu trên Android
 # -> dùng E nghiêng (serif), nhất quán cả 4 hình. Muốn đổi về ℰ: EMF = "ℰ".
 EMF = '<tspan font-style="italic" font-family="Georgia,\'Times New Roman\',serif" font-size="1.1em">E</tspan>' 
@@ -47,11 +49,11 @@ def path(d, c="currentColor", w=2, fill="none", extra=""):
 
 
 def sub(s):
-    return f'<tspan baseline-shift="sub" font-size="0.75em">{s}</tspan>'
+    return f'<tspan baseline-shift="sub" font-size="0.86em">{s}</tspan>'
 
 
 def sup(s):
-    return f'<tspan baseline-shift="super" font-size="0.75em">{s}</tspan>'
+    return f'<tspan baseline-shift="super" font-size="0.86em">{s}</tspan>'
 
 
 def fig(vb, label, body, cap, exp=None):
@@ -120,7 +122,6 @@ def wd_mark(prefix, name, color, size):
 # Hình 1: công tơ điện + ba thiết bị
 # =====================================================================================
 c1 = Canvas("f1", 440, 240)
-c1.add(defs(PFX + "f1"))
 c1.t(12, 20, "kWh = năng lượng đã dùng", "currentColor", 14, "start", "400")
 c1.t(12, 84, "Lưới điện", "currentColor", 14, "start", "700")
 # ổ cắm
@@ -130,7 +131,7 @@ c1.add(line(52, 115, 90, 115, "currentColor", 2))
 c1.add(arrow(PFX + "f1", "r", 58, 115, 84, 115, 2.5))
 # công tơ
 c1.add(rect(90, 70, 120, 90, 8, SLATE))
-c1.add(rect(105, 95, 90, 25, 3, "rgba(15,23,42,.35)", "currentColor", 1.5))
+c1.add(rect(105, 95, 90, 25, 3, "#0f172a", "currentColor", 1.5))   # màn tối đặc: chữ xanh lá đọc rõ cả nền sáng
 c1.t(150, 112, "0312,4 kWh", GRN, 14, "middle", "700", extra="mono")
 c1.t(150, 148, "Công tơ điện", "currentColor", 14, "middle", "600")
 c1.add(dot(112, 82, 3, "currentColor") + dot(188, 82, 3, "currentColor"))
@@ -174,13 +175,12 @@ assert 150 - screen_w / 2 > 105 and 150 + screen_w / 2 < 195, screen_w
 c1.check(allow={("0312,4 kWh", "congto"), ("Công tơ điện", "congto")})
 fig1 = fig("0 0 440 240",
            "Sơ đồ lưới điện qua công tơ điện hiển thị 0312,4 kWh tới ba thiết bị: đèn 100 W, lò nướng 2,2 kW, ấm đun 1800 W",
-           c1.body, "Hình 1. Công tơ đếm kWh (số chỉ cộng dồn); thiết bị ghi công suất W.", exp="tn-l11-nang-luong-dien-01")
+           c1.body, "Hình 1. Công tơ đếm kWh (số chỉ cộng dồn).<br>Thiết bị ghi công suất W.", exp="tn-l11-nang-luong-dien-01")
 
 # =====================================================================================
 # Hình 2: ℰI = UI + I²r
 # =====================================================================================
 c2 = Canvas("f2", 440, 210)
-c2.add("<defs>" + wd_mark(PFX + "f2", "r", RED, 18) + wd_mark(PFX + "f2", "b", BLUE, 16) + wd_mark(PFX + "f2", "o", ORG, 10) + "</defs>")
 # khối nguồn
 c2.add(rect(15, 60, 120, 90, 8, SLATE))
 c2.t(75, 83, "Nguồn", "currentColor", 15, "middle", "700")
@@ -194,7 +194,9 @@ c2.t(106, PIN_Y + 5, "+", "currentColor", 14, "middle", "700")
 # khối mạch ngoài
 c2.add(rect(300, 60, 125, 90, 8, SLATE))
 c2.t(362, 83, "Mạch ngoài", "currentColor", 15, "middle", "700")
-zz = [(322, 114)] + [(330 + 7 * i, 114 + (8 if i % 2 == 0 else -8)) for i in range(8)] + [(402, 114)]
+# zigzag đối xứng quanh tâm khối x = 362: dây vào 318→330, 8 răng đều 8 px, dây ra 394→406
+zz = [(318, 114), (330, 114)] + [(334 + 8 * i, 114 + (8 if i % 2 == 0 else -8)) for i in range(8)] + [(394, 114), (406, 114)]
+assert abs((zz[0][0] + zz[-1][0]) / 2 - 362) < 1e-9 and abs((zz[2][0] + zz[-3][0]) / 2 - 362) < 1e-9
 c2.add(poly(zz, "currentColor", 2))
 c2.t(362, 144, V("R"), "currentColor", 14, "middle", "600", tag="R")
 # độ rộng ∝ công suất 24 : 20 : 4 W  ->  9 : 7 : 2 px (làm tròn từ 9 / 7,5 / 1,5)
@@ -202,18 +204,30 @@ W_R, W_B, W_O = 9, 7, 2
 assert abs(W_R / 24 - W_B / 20) < 0.04 and W_R == W_B + W_O
 HEAD_R, HEAD_B, HEAD_O = 18, 16, 10
 JX, JY = 215, 105                                   # điểm rẽ chung
-c2.add(f'<line x1="135" y1="{JY}" x2="{JX - HEAD_R}" y2="{JY}" stroke="{RED}" stroke-width="{W_R}" marker-end="url(#{PFX}f2-r)"/>')
-c2.add(f'<line x1="{JX}" y1="{JY}" x2="{300 - HEAD_B}" y2="{JY}" stroke="{BLUE}" stroke-width="{W_B}" marker-end="url(#{PFX}f2-b)"/>')
+TAN30 = math.tan(math.radians(30))
+
+
+def band_end(w):
+    """Dải rộng w kết thúc lùi sau đỉnh V một đoạn để hai góc dải chạm đúng hai vạch V (lệch 30°)."""
+    return (w / 2) / TAN30
+
+
+c2.add(f'<line x1="135" y1="{JY}" x2="{JX - band_end(W_R):.1f}" y2="{JY}" stroke="{RED}" stroke-width="{W_R}"/>'
+       + chevron(JX, JY, 1, 0, RED, 2.8, HEAD_R))
+c2.add(f'<line x1="{JX}" y1="{JY}" x2="{300 - band_end(W_B):.1f}" y2="{JY}" stroke="{BLUE}" stroke-width="{W_B}"/>'
+       + chevron(300, JY, 1, 0, BLUE, 2.8, HEAD_B))
 CAM = [(JX, JY), (252, 66), (118, 12), (118, 50)]   # Bezier bậc 3, kết thúc đi xuống thẳng đứng
 c2.add(f'<path d="M{CAM[0][0]},{CAM[0][1]} C{CAM[1][0]},{CAM[1][1]} {CAM[2][0]},{CAM[2][1]} {CAM[3][0]},{CAM[3][1]}" '
-       f'fill="none" stroke="{ORG}" stroke-width="{W_O}" marker-end="url(#{PFX}f2-o)"/>')
+       f'fill="none" stroke="{ORG}" stroke-width="{W_O}"/>'
+       + f'<line x1="{CAM[3][0]}" y1="{CAM[3][1]}" x2="{CAM[3][0]}" y2="{CAM[3][1] + HEAD_O - 2}" stroke="{ORG}" stroke-width="{W_O}"/>'
+       + chevron(CAM[3][0], CAM[3][1] + HEAD_O, 0, 1, ORG, 2.2, HEAD_O))
 # sóng nhiệt trên mép trên khối nguồn
 for xw in (60, 72, 84):
     c2.add(path(f"M{xw},56 q-3,-3.5 0,-7 t0,-7", ORG, 1.6))
 # nhãn
 c2.t(172, 90, f"{V('P')}{sub('ng')} = {EMF}{V('I')}", RED, 14, "middle", "700", tag="P ng")
 c2.t(257, 130, f"Có ích: {V('U')}{V('I')}", BLUE, 14, "middle", "700", tag="Co ich")
-c2.t(228, 38, f"Hao phí: {V('I')}{sup('2')}{V('r')}", ORG, 14, "start", "700", tag="Hao phi")
+c2.t(124, 24, f"Hao phí: {V('I')}{sup('2')}{V('r')}", ORG, 14, "start", "700", tag="Hao phi")
 c2.t(220, 190, f"{EMF}{V('I')} = {V('U')}{V('I')} + {V('I')}{sup('2')}{V('r')}", "currentColor", 15, "middle", "700", tag="tong ket")
 
 
@@ -234,7 +248,7 @@ c2.obstacle_seg("pin-day-trai", 44, PIN_Y, 61, PIN_Y, 1.5)
 c2.obstacle_seg("pin-ngan", 61, PIN_Y - 7, 61, PIN_Y + 7, 2)
 c2.obstacle_seg("pin-dai", 73, PIN_Y - 13, 73, PIN_Y + 13, 2)
 c2.obstacle_seg("pin-day-phai", 73, PIN_Y, 90, PIN_Y, 1.5)
-c2.obstacle_seg("zigzag", 322, 106, 402, 122, 1)
+c2.obstacle_seg("zigzag", 318, 106, 406, 122, 1)
 # kiểm hình học theo spec
 tipx_b = (300 - HEAD_B) + HEAD_B
 tip_cam = (CAM[3][0], CAM[3][1] + HEAD_O)           # tiếp tuyến cuối thẳng xuống nên mũi nằm cách đầu đường HEAD_O px
@@ -266,6 +280,7 @@ def py(R):
 
 
 c3.add(line(OX, OY, 420, OY, "currentColor", 2) + line(OX, OY, OX, 28, "currentColor", 2))
+c3.add(chevron(420, OY, 1, 0, "currentColor", 2, 10) + chevron(OX, 28, 0, -1, "currentColor", 2, 10))  # đầu V hai trục
 xt = [(R, px(R)) for R in (0, 2, 4, 6, 8, 10)]
 yt = [(H, OY - KY * H) for H in (0, 25, 50, 75, 100)]
 for R, x in xt:
@@ -322,9 +337,6 @@ fig3 = fig("0 0 440 260",
 # Hình 4: mạch kín bài toán mẫu
 # =====================================================================================
 c4 = Canvas("f4", 440, 200)
-c4.add(defs(PFX + "f4"))
-c4.add(f'<defs><marker id="{PFX}f4-bb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">'
-       f'<path d="M0,0 L10,5 L0,10 z" fill="{BLUE}"/></marker></defs>')
 L, R_, T, B = 120, 345, 40, 160
 c4.add(path(f"M{L},96 L{L},{T} L{R_},{T} L{R_},75", "currentColor", 2))
 c4.add(path(f"M{R_},125 L{R_},{B} L{L},{B} L{L},104", "currentColor", 2))
@@ -345,7 +357,8 @@ c4.add(arrow(PFX + "f4", "r", 270, B, 190, B, 3))
 c4.t(230, 24, f"{V('I')} = 2,0 A", RED, 15, "middle", "700")
 # U hai đầu R: mũi tên hai đầu bên trái điện trở
 UX = R_ - 19
-c4.add(f'<line x1="{UX}" y1="75" x2="{UX}" y2="125" stroke="{BLUE}" stroke-width="1.5" marker-start="url(#{PFX}f4-bb)" marker-end="url(#{PFX}f4-bb)"/>')
+c4.add(f'<line x1="{UX}" y1="75" x2="{UX}" y2="125" stroke="{BLUE}" stroke-width="1.8"/>'
+       + chevron(UX, 75, 0, -1, BLUE, 1.8, 8) + chevron(UX, 125, 0, 1, BLUE, 1.8, 8))
 c4.t(UX - 7, 105, f"{V('U')} = 10 V", BLUE, 14, "end", "700")
 c4.t(L + 12, 66, f"mạch kín: {V('I')} = {EMF}/({V('R')} + {V('r')})", "currentColor", 14, "start", "400")
 c4.obstacle_seg("day-tren", L, T, R_, T, 1.5)
