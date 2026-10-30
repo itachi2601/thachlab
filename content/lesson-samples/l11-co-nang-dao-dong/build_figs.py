@@ -56,64 +56,121 @@ def kiem_nhan(vb, ten):
         sys.exit(1)
     LABELS.clear()
 
-# ---------- Hình 1: xích đu ----------
-PIV = (168, 36)
-LL = 112
-ANG = math.radians(42)
-hx = PIV[0] - LL * math.sin(ANG)
-hy = PIV[1] + LL * math.cos(ANG)
-lx, ly = PIV[0], PIV[1] + LL
-b = line(48, 36, 292, 36, "currentColor", 3)
-b += line(48, 36, 62, 196, "currentColor", 3)
-b += line(292, 36, 278, 196, "currentColor", 3)
-b += line(36, 196, 400, 196, "currentColor", 2)
-b += line(PIV[0], PIV[1], hx, hy, "currentColor", 2)
-b += line(PIV[0], PIV[1], lx, ly, "currentColor", 2)
-b += dot(hx, hy, 8, ORG) + dot(lx, ly, 8, BLUE)
-arc = []
-for i in range(0, 25):
-    a = ANG * (1 - i / 24)
-    arc.append((PIV[0] - (LL - 16) * math.sin(a), PIV[1] + (LL - 16) * math.cos(a)))
-b += poly(arc, GRN, 2.2)
-# đầu mũi tại chỗ thấp, hướng sang phải (đang lao về VTCB)
-ax, ay = arc[-1]
-b += '<path d="M%.1f,%.1f L%.1f,%.1f L%.1f,%.1f Z" fill="%s"/>' % (
-    ax + 9, ay, ax - 2, ay - 5, ax - 2, ay + 5, GRN)
-b += T(hx, hy + 28, "biên", ORG, 13, "middle")
-b += T(hx, hy + 45, "v = 0", ORG, 13, "middle")
-b += T(lx + 14, ly - 8, "VTCB", BLUE, 13, "start")
-b += T(lx + 14, ly + 14, "v lớn", BLUE, 13, "start")
-b += T(300, 78, "lò xo cửa", ORG, 13, "start")
-b += T(300, 148, "nam châm tủ", BLUE, 13, "start")
-# lò xo nhỏ
-zx = [300 + 8 * i for i in range(8)]
-zy = [96 + (8 if i % 2 else -8) for i in range(8)]
-b += poly(list(zip(zx, zy)), ORG, 2)
-# hai cực nam châm, mũi hút vào nhau
-b += '<rect x="300" y="162" width="28" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>'
-b += '<rect x="346" y="162" width="28" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>'
-b += T(314, 174, "N", "currentColor", 13, "middle")
-b += T(360, 174, "S", "currentColor", 13, "middle")
-b += line(330, 170, 344, 170, GRN, 2)
-b += '<path d="M336,166 L344,170 L336,174 Z" fill="%s"/>' % GRN
-fig1 = wrap("0 0 440 214",
+# Rà soát 30/10/2026: vẽ lại cả 3 hình — chữ 15 (≥ 14), đầu mũi tên V 30° (không tam giác đặc),
+# trục có đầu V, nhãn tách khỏi nét.
+FS = 15
+
+
+def chevron(x, y, dx, dy, c="currentColor", w=2, L=11, ang=30):
+    """Đầu V tại (x, y) hướng (dx, dy), hai vạch lệch ang° (bản sao svg_lib của skill)."""
+    n = math.hypot(dx, dy) or 1
+    ux, uy = dx / n, dy / n
+    t = math.radians(ang)
+    pts = []
+    for s in (1, -1):
+        c_, s_ = math.cos(t), math.sin(s * t)
+        bx, by = ux * c_ - uy * s_, ux * s_ + uy * c_
+        pts.append((x - L * bx, y - L * by))
+    (ax, ay), (bx, by) = pts
+    return ('<path d="M%.1f,%.1f L%.1f,%.1f L%.1f,%.1f" fill="none" stroke="%s" stroke-width="%s" '
+            'stroke-linejoin="miter" stroke-miterlimit="10"/>' % (ax, ay, x, y, bx, by, c, w))
+
+
+def axis(x1, y1, x2, y2):
+    return line(x1, y1, x2, y2, "currentColor", 1.6) + chevron(x2, y2, x2 - x1, y2 - y1, "currentColor", 1.6, 10)
+
+
+# ---------- Hình 1: xích đu + lò xo cửa + nam châm tủ ----------
+PIV = (145, 30)
+LL = 130
+ANG = math.radians(40)
+GROUND = 222
+
+
+def seat_at(a):
+    """Điểm treo ghế khi dây lệch góc a (a < 0: lệch trái)."""
+    return PIV[0] + LL * math.sin(a), PIV[1] + LL * math.cos(a)
+
+
+def seat(a, c, op=1):
+    px, py = seat_at(a)
+    ux, uy = math.cos(a), -math.sin(a)          # vuông góc với dây
+    return ('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="%s" stroke-width="7" stroke-linecap="round" opacity="%s"/>'
+            % (px - 15 * ux, py - 15 * uy, px + 15 * ux, py + 15 * uy, c, op))
+
+
+hx, hy = seat_at(-ANG)
+lx, ly = seat_at(0)
+rx, ry = seat_at(ANG)
+assert abs(lx - PIV[0]) < 1e-9 and abs(ly - (PIV[1] + LL)) < 1e-9
+assert hy < ly and abs(hy - ry) < 1e-9          # biên cao hơn VTCB, hai biên đối xứng
+# khung xích đu
+b = line(28, 30, 262, 30, "currentColor", 3.2)
+b += line(40, 30, 26, GROUND, "currentColor", 3)
+b += line(250, 30, 264, GROUND, "currentColor", 3)
+b += line(14, GROUND, 276, GROUND, "currentColor", 2)
+# quỹ đạo ghế (nét đứt mờ) từ biên trái sang biên phải
+b += poly([seat_at(-ANG + 2 * ANG * i / 40) for i in range(41)], "currentColor", 1.2).replace(
+    "/>", ' stroke-dasharray="4 4" opacity="0.45"/>')
+# dây + ghế: biên phải mờ, biên trái và VTCB rõ
+b += line(PIV[0], PIV[1], rx, ry, "currentColor", 1.6, "4 4", 0.4) + seat(ANG, "currentColor", 0.3)
+b += line(PIV[0], PIV[1], hx, hy, "currentColor", 2) + seat(-ANG, ORG)
+b += line(PIV[0], PIV[1], lx, ly, "currentColor", 2) + seat(0, BLUE)
+b += dot(PIV[0], PIV[1], 4)
+# mũi tên chuyển động: cung bên trong, từ gần biên trái về gần VTCB, đầu V hướng sang phải-xuống
+R_IN = LL - 22
+arc = [(PIV[0] + R_IN * math.sin(a), PIV[1] + R_IN * math.cos(a))
+       for a in (-ANG + 0.12 + (ANG - 0.30) * i / 24 for i in range(25))]
+b += poly(arc, GRN, 2.4)
+(ax_, ay_), (bx_, by_) = arc[-2], arc[-1]
+assert bx_ > ax_ and by_ > ay_                  # đang đi sang phải, xuống thấp: về VTCB
+b += chevron(bx_, by_, bx_ - ax_, by_ - ay_, GRN, 2.4, 11)
+b += T(hx - 4, hy + 38, "biên", ORG, FS, "middle")
+b += T(hx - 4, hy + 56, "v = 0", ORG, FS, "middle")
+b += T(lx, ly + 30, "VTCB", BLUE, FS, "middle")
+b += T(lx, ly + 48, "v lớn nhất", BLUE, FS, "middle")
+# lò xo cửa: tường — lò xo — mép cửa; buông tay thì cửa bị kéo về tường
+b += T(296, 40, "lò xo cửa", ORG, FS, "start")
+b += line(298, 56, 298, 112, "currentColor", 3)
+for yy in range(60, 112, 10):
+    b += line(298, yy, 290, yy + 8, "currentColor", 1.2)
+zz = [(298, 84)] + [(306 + 7 * i, 84 + (7 if i % 2 else -7)) for i in range(8)] + [(366, 84)]
+b += poly(zz, ORG, 2)
+b += '<rect x="366" y="60" width="12" height="48" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>'
+b += line(424, 128, 372, 128, GRN, 2.2) + chevron(372, 128, -1, 0, GRN, 2.2, 10)
+b += T(382, 150, "buông: sập", GRN, FS, "middle")
+# nam châm tủ: N và S đối diện, hút nhau (hai mũi tên chĩa vào nhau)
+b += T(296, 180, "nam châm tủ", BLUE, FS, "start")
+b += '<rect x="296" y="190" width="34" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>'
+b += '<rect x="400" y="190" width="34" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>'
+b += T(313, 207, "N", "currentColor", FS, "middle")
+b += T(417, 207, "S", "currentColor", FS, "middle")
+b += line(336, 201, 360, 201, GRN, 2.2) + chevron(360, 201, 1, 0, GRN, 2.2, 9)
+b += line(394, 201, 370, 201, GRN, 2.2) + chevron(370, 201, -1, 0, GRN, 2.2, 9)
+b += T(365, 234, "hút nhau", GRN, FS, "middle")
+VB1 = "0 0 440 244"
+fig1 = wrap(VB1,
             "Xích đu dừng ở biên và lao nhanh qua vị trí cân bằng; lò xo cửa và nam châm tủ cùng kiểu đổi năng lượng",
             b, "Hình 1. Ở biên đu dừng (thế năng lớn). Qua chỗ thấp thì nhanh (động năng lớn).")
-kiem_nhan("0 0 440 214", "hình 1")
+kiem_nhan(VB1, "hình 1")
 
-# ---------- Hình 2: parabol Et(x), Ed(x) ----------
+# ---------- Hình 2 (Hình 3 trong bài): parabol Et(x), Ed(x) ----------
 OX, OY = 214, 222
 HX, HY = 148, 160  # 1 đơn vị li độ = HX px; W = HY px
 yW = OY - HY
 
+
 def X(xn):
     return OX + HX * xn
+
 
 def Yet(xn):
     return OY - HY * (xn * xn)
 
+
 def Yed(xn):
     return OY - HY * (1 - xn * xn)
+
 
 xs = [i / 80 for i in range(-80, 81)]
 pet = [(X(u), Yet(u)) for u in xs]
@@ -127,44 +184,48 @@ assert Yed(0) < Yed(1)          # Ed lõm xuống: đỉnh ở VTCB
 assert abs(Yet(xi) - Yed(xi)) < 1e-6
 assert abs(Yet(xi) - (OY - HY / 2)) < 1e-6
 assert abs(X(xi) - (OX + HX / math.sqrt(2))) < 1e-6
-# điểm lấy mẫu gần nhất phải nằm sát giao đúng
 gan = min(pet, key=lambda p: (p[0] - X(xi)) ** 2 + (p[1] - Yet(xi)) ** 2)
 assert math.hypot(gan[0] - X(xi), gan[1] - Yet(xi)) < 2.0, gan
 
-b = line(X(-1) - 8, OY, X(1) + 18, OY, "currentColor", 1.6)
-b += line(OX, OY + 8, OX, yW - 16, "currentColor", 1.6)
+b = axis(X(-1) - 10, OY, X(1) + 34, OY)
+b += axis(OX, OY + 8, OX, yW - 28)
 b += line(X(-1), yW, X(1), yW, GRN, 1.6, "5 4")
-b += poly(pet, ORG)
-b += poly(ped, BLUE)
+b += poly(pet, ORG, 2.6)
+b += poly(ped, BLUE, 2.6)
 for sgn in (-1, 1):
     b += line(X(sgn * xi), Yet(xi), X(sgn * xi), OY, "currentColor", 1.2, "3 3", 0.7)
     b += dot(X(sgn * xi), Yet(xi), 5, RED)
-b += T(OX - 22, yW - 22, "E", "currentColor", 13, "end")
-b += T(X(1) + 8, OY + 4, "x", "currentColor", 13, "start")
-b += T(X(-1), OY + 20, "−A", "currentColor", 13, "middle")
-b += T(OX, OY + 20, "0", "currentColor", 13, "middle")
-b += T(X(1), OY + 20, "+A", "currentColor", 13, "middle")
-b += T(X(-0.78), yW - 18, "W", GRN, 13, "middle")
-b += T(X(0.16), yW + 28, "Ed", BLUE, 13, "start")
-b += T(OX + 36, OY - 18, "Et", ORG, 13, "start")
-b += T(X(-xi), OY + 20, "−A/√2", RED, 13, "middle")
-b += T(X(xi), OY + 20, "A/√2", RED, 13, "middle")
-fig2 = wrap("0 0 440 252",
+b += T(OX + 10, yW - 18, "E", "currentColor", FS, "start")
+b += T(X(1) + 38, OY + 5, "x", "currentColor", FS, "start")
+b += T(X(-1), OY + 24, "−A", "currentColor", FS, "middle")
+b += T(OX, OY + 24, "0", "currentColor", FS, "middle")
+b += T(X(1), OY + 24, "+A", "currentColor", FS, "middle")
+b += T(X(1) + 10, yW + 5, "W", GRN, FS, "start")
+b += T(X(0.22), yW + 36, "Ed", BLUE, FS, "middle")
+b += T(X(0.86) + 16, Yet(0.86) + 6, "Et", ORG, FS, "start")
+b += T(X(-xi), OY + 24, "−A/√2", RED, FS, "middle")
+b += T(X(xi), OY + 24, "A/√2", RED, FS, "middle")
+# nhãn Ed nằm dưới đỉnh Ed và trên đáy Et: cách cả hai đường ≥ 10 px
+assert Yed(0.22) + 10 < yW + 36 - FS and yW + 36 + 10 < Yet(0.22)
+VB2 = "0 0 440 256"
+fig2 = wrap(VB2,
             "Đồ thị thế năng lõm lên và động năng lõm xuống theo li độ, cắt nhau tại cộng trừ A trên căn hai",
             b, "Hình 3. $E_t$ lõm lên, $E_d$ lõm xuống.<br>Cắt nhau tại x = ±A/√2.")
-kiem_nhan("0 0 440 252", "hình 2")
-print("giao phải px", round(X(xi), 1), round(Yet(xi), 1), "trái", round(X(-xi), 1))
+kiem_nhan(VB2, "hình 2")
 
-# ---------- Hình 3: Et(t), Ed(t), W ----------
+# ---------- Hình 3 (Hình 4 trong bài): Et(t), Ed(t), W ----------
 x0, x1 = 48, 392
-y0, yW = 198, 46
+y0, yW = 206, 54
 span = y0 - yW
+
 
 def Xt(tn):
     return x0 + (x1 - x0) * tn
 
+
 def Ye(e):
     return y0 - span * e
+
 
 pt, pd = [], []
 for i in range(0, 121):
@@ -178,28 +239,35 @@ assert abs(pt[60][1] - yW) < 0.2
 assert abs(pt[15][1] - pd[15][1]) < 0.2
 assert abs(pt[15][1] - Ye(0.5)) < 0.2
 
-b = line(x0, y0, x1 + 16, y0, "currentColor", 1.6)
-b += line(x0, y0 + 6, x0, yW - 14, "currentColor", 1.6)
+b = axis(x0, y0, x1 + 22, y0)
+b += axis(x0, y0 + 6, x0, yW - 30)
 b += line(x0, yW, x1, yW, GRN, 1.8)
-b += poly(pd, BLUE)
-b += poly(pt, ORG)
-b += dot(Xt(0.125), Ye(0.5), 4.5, RED)
+b += poly(pd, BLUE, 2.6)
+b += poly(pt, ORG, 2.6)
+b += dot(Xt(0.125), Ye(0.5), 5, RED)
 # đoạn T/2: từ đỉnh Et này sang đỉnh Et kế
-b += line(Xt(0), y0 + 18, Xt(0.5), y0 + 18, GRN, 1.6)
-b += '<path d="M%.1f,%.1f L%.1f,%.1f L%.1f,%.1f" fill="none" stroke="%s" stroke-width="1.6"/>' % (
-    Xt(0) + 7, y0 + 14, Xt(0), y0 + 18, Xt(0) + 7, y0 + 22, GRN)
-b += '<path d="M%.1f,%.1f L%.1f,%.1f L%.1f,%.1f" fill="none" stroke="%s" stroke-width="1.6"/>' % (
-    Xt(0.5) - 7, y0 + 14, Xt(0.5), y0 + 18, Xt(0.5) - 7, y0 + 22, GRN)
-b += T(x0 - 6, yW + 4, "E", "currentColor", 13, "end")
-b += T(x1 + 8, y0 + 4, "t", "currentColor", 13, "start")
-b += T(x1 - 4, yW - 8, "W", GRN, 13, "end")
-b += T(x0 + 10, yW - 16, "Et", ORG, 13, "start")
-b += T(Xt(0.25), yW + 48, "Ed", BLUE, 13, "middle")
-b += T((Xt(0) + Xt(0.5)) / 2, y0 + 34, "T/2", GRN, 13, "middle")
-fig3 = wrap("0 0 440 246",
+yb = y0 + 22
+b += line(Xt(0), yb, Xt(0.5), yb, GRN, 1.6)
+b += chevron(Xt(0), yb, -1, 0, GRN, 1.6, 9) + chevron(Xt(0.5), yb, 1, 0, GRN, 1.6, 9)
+b += line(Xt(0.5), y0, Xt(0.5), y0 + 6, "currentColor", 1.4) + line(Xt(1), y0, Xt(1), y0 + 6, "currentColor", 1.4)
+b += T(x0 + 10, yW - 22, "E", "currentColor", FS, "start")
+b += T(x1 + 28, y0 + 5, "t", "currentColor", FS, "start")
+b += T(x1, yW - 8, "W", GRN, FS, "end")
+b += T(Xt(1), y0 + 24, "T", "currentColor", FS, "middle")
+b += T((Xt(0) + Xt(0.5)) / 2, yb + 20, "T/2", GRN, FS, "middle")
+# Et: phía trên nhánh Et đi xuống ngay sau t = 0; Ed: phía trên nhánh Ed đi xuống sau đỉnh T/4
+b += T(Xt(0.085), Ye(0.84), "Et", ORG, FS, "start")
+b += T(Xt(0.33), Ye(0.84), "Ed", BLUE, FS, "start")
+b += T(Xt(0.125) + 12, Ye(0.5) + 5, "Et = Ed", RED, FS, "start")
+for tn in (0.085, 0.085 + 18 / (x1 - x0)):     # nhãn Et cao hơn đường Et ≥ 8 px
+    assert Ye(math.cos(2 * math.pi * tn) ** 2) > Ye(0.84) + 8, tn
+for tn in (0.33, 0.33 + 18 / (x1 - x0)):       # nhãn Ed cao hơn đường Ed ≥ 8 px
+    assert Ye(math.sin(2 * math.pi * tn) ** 2) > Ye(0.84) + 8, tn
+VB3 = "0 0 440 256"
+fig3 = wrap(VB3,
             "Thế năng và động năng ngược pha, chu kì bằng nửa chu kì li độ; cơ năng là đường nằm ngang",
             b, "Hình 4. $E_t$ và $E_d$ ngược pha, chu kì $T/2$. $W$ là đường nằm ngang.")
-kiem_nhan("0 0 440 246", "hình 3")
+kiem_nhan(VB3, "hình 3")
 
 # Ảnh OpenStax College Physics 2e (28/10/2026): THÊM Hình 16.14 trước hai đồ thị, xem nguon.md
 figos = (
