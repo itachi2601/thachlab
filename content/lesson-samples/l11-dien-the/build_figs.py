@@ -1,8 +1,10 @@
 """Sinh 3 hình SVG và thay các mốc <!--FIGn--> trong theory.src.html -> theory.html (chạy lại được)."""
 import sys as _sys, pathlib as _pl
-_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+_HERE = _pl.Path(__file__).resolve().parent
+_sys.path.insert(0, str(_HERE.parent))
 from _margin_fig import margin_figs
-from svg_lib import *
+_sys.path.insert(0, str(_HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import *   # arrow() = thân + đầu V 30° (không marker tam giác)
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
     d = f' stroke-dasharray="{dash}"' if dash else ""
@@ -10,11 +12,8 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
 
 def dot(x, y, r=5, c="currentColor"): return f'<circle cx="{x}" cy="{y}" r="{r}" fill="{c}"/>'
 
-def sub(main, s, rest=""):
-    return f'{main}<tspan baseline-shift="sub" font-size="9">{s}</tspan>{rest}'
-
 # ---- Hình 1: chim đậu trên dây 500 kV, cột nối đất
-b = defs("f1")
+b = ""
 WY = 90
 b += line(12, WY, 370, WY, "currentColor", 3)                        # dây
 b += line(390, 40, 390, 205, "currentColor", 5)                       # cột
@@ -31,17 +30,19 @@ b += '<path d="M179,50 L188,53 L179,56 z" fill="currentColor"/>'
 b += line(128, 64, 112, 58, "currentColor", 2)
 b += line(142, 77, 138, WY, "currentColor", 2) + line(158, 77, 162, WY, "currentColor", 2)
 b += dot(138, WY, 4, RED) + dot(162, WY, 4, RED)
-b += text(128, 108, "A", RED, 13, "middle", "700") + text(172, 108, "B", RED, 13, "middle", "700")
-b += text(380, 180, "dây – cột: cỡ hàng trăm kV", RED, 13, "end", "700")
-b += text(410, 225, "cột nối đất: V = 0", "currentColor", 13, "end", "400")
-b += text(14, 78, "dây 500 kV", "currentColor", 13, "start", "400")
-fig1 = wrap("0 0 440 232", "Chim đậu trên dây 500 kV: hai chân cùng điện thế nên hiệu điện thế gần bằng 0; giữa dây và cột nối đất hiệu điện thế khoảng 500 kV",
-            b, "Hình 1. Hai chân chim cùng trên một dây: hiệu điện thế giữa A và B gần bằng 0. Nguy hiểm là chạm cùng lúc dây và cột (V = 0).")
+b += text(128, 108, "A", RED, 14, "middle", "700") + text(172, 108, "B", RED, 14, "middle", "700")
+# hiệu điện thế dây – đất: mũi tên hai đầu nét đứt giữa mức dây và mặt đất
+b += arrow("f1", "r", 350, 147, 350, WY + 5, 2, "5 4") + arrow("f1", "r", 350, 147, 350, 200, 2, "5 4")
+b += text(340, 140, "dây – đất (cột):", RED, 14, "end", "700") + text(340, 160, "U cỡ hàng trăm kV", RED, 14, "end", "700")
+b += text(428, 234, "cột nối đất: V = 0", "currentColor", 14, "end", "400")
+b += text(14, 78, "dây 500 kV", "currentColor", 14, "start", "400")
+fig1 = wrap("0 0 440 242", "Chim đậu trên dây 500 kV: hai chân cùng điện thế nên hiệu điện thế gần bằng 0; giữa dây và cột nối đất hiệu điện thế cỡ hàng trăm kV",
+            b, "Hình 1. Hai chân chim cùng trên một dây: hiệu điện thế giữa A và B gần bằng 0.<br>Nguy hiểm là chạm cùng lúc dây và cột (V = 0).")
 fig1 = fig1.replace('<figure class="fig" data-tl="1">', '<figure class="fig" data-tl="1" data-exp="tn-l11-dien-the-03">')
 
 # ---- Hình 2: điện trường đều giữa hai bản, M, N, hai đường đi, hình chiếu d
 XP, XN = 45, 395          # bản dương (trái), bản âm (phải)
-b = defs("f2")
+b = ""
 b += f'<rect x="{XP-5}" y="20" width="10" height="180" fill="rgba(248,113,113,.25)" stroke="currentColor" stroke-width="2"/>'
 b += f'<rect x="{XN-5}" y="20" width="10" height="180" fill="rgba(56,189,248,.25)" stroke="currentColor" stroke-width="2"/>'
 for y in (40, 85, 130, 175):
@@ -53,19 +54,19 @@ volts = {XP: "12 V", 132.5: "9 V", 220: "6 V", 307.5: "3 V", XN: "0 V"}
 for x, lab in volts.items():
     if x not in (XP, XN):
         b += line(x, 52, x, 183, BLUE, 1.5, "5 4", .8)
-    b += text(x, 218, lab, BLUE, 13, "middle", "700")
+    b += text(x, 218, lab, BLUE, 14, "middle", "700")
 MX, MY, NX, NY = 110, 80, 280, 160
 b += line(MX, MY, NX, NY, "currentColor", 2)
 b += f'<path d="M{MX},{MY} Q250,48 {NX},{NY}" fill="none" stroke="{ORG}" stroke-width="2" stroke-dasharray="6 4"/>'
 b += dot(MX, MY, 5) + dot(NX, NY, 5)
 b += text(MX - 10, MY - 6, "M", "currentColor", 14, "end", "700") + text(NX + 10, NY + 4, "N", "currentColor", 14, "start", "700")
-b += line(MX, MY + 6, MX, 238, "currentColor", 1, "3 3", .6) + line(NX, NY + 6, NX, 238, "currentColor", 1, "3 3", .6)
+b += line(MX, MY + 6, MX, 246, "currentColor", 1, "3 3", .6) + line(NX, NY + 6, NX, 246, "currentColor", 1, "3 3", .6)
 mid = (MX + NX) / 2
-b += arrow("f2", "g", mid, 235, MX + 2, 235, 2) + arrow("f2", "g", mid, 235, NX - 2, 235, 2)
-b += text(mid, 229, "d", GRN, 14, "middle", "700")
-b += text(14, 254, "điện thế cao", "currentColor", 13, "start", "400") + text(426, 254, "điện thế thấp", "currentColor", 13, "end", "400")
-fig2 = wrap("0 0 440 260", "Điện trường đều giữa hai bản: điện thế giảm từ 12 V ở bản dương xuống 0 V ở bản âm; công từ M đến N không phụ thuộc đường đi, chỉ phụ thuộc hình chiếu d",
-            b, "Hình 2. Đường liền và đường cong cam cho cùng một công. Chỉ hình chiếu <strong>d</strong> của MN lên đường sức là đáng kể. Nét đứt xanh: đường đẳng thế.")
+b += arrow("f2", "g", mid, 242, MX + 2, 242, 2) + arrow("f2", "g", mid, 242, NX - 2, 242, 2)
+b += text(mid, 237, "d", GRN, 14, "middle", "700")
+b += text(14, 264, "điện thế cao", "currentColor", 14, "start", "400") + text(426, 264, "điện thế thấp", "currentColor", 14, "end", "400")
+fig2 = wrap("0 0 440 270", "Điện trường đều giữa hai bản: điện thế giảm từ 12 V ở bản dương xuống 0 V ở bản âm; công từ M đến N không phụ thuộc đường đi, chỉ phụ thuộc hình chiếu d",
+            b, "Hình 2. Đường liền và đường cong cam cho cùng một công.<br>Chỉ hình chiếu <strong>d</strong> của MN lên đường sức là đáng kể.<br>Nét đứt xanh: đường đẳng thế.")
 
 # ---- Hình 3: đồ thị V theo x của thí nghiệm đo (d = 10 cm, U = 6 V)
 OX, OY, SX, SV = 60, 210, 34, 30          # gốc, px/cm, px/V
@@ -73,25 +74,25 @@ U, D = 6.0, 10.0
 data = [(2, 1.18), (4, 2.43), (6, 3.57), (8, 4.84)]
 px = lambda x: OX + SX * x
 py = lambda v: OY - SV * v
-b = defs("f3")
-b += line(OX, OY, 425, OY, "currentColor", 1.8) + '<path d="M432,210 L422,205 L422,215 z" fill="currentColor"/>'
-b += line(OX, OY, OX, 14, "currentColor", 1.8) + '<path d="M60,7 L55,17 L65,17 z" fill="currentColor"/>'
+b = ""
+b += line(OX, OY, 432, OY, "currentColor", 1.8) + chevron(432, 210, 1, 0, "currentColor", 1.8, 10)
+b += line(OX, OY, OX, 7, "currentColor", 1.8) + chevron(60, 7, 0, -1, "currentColor", 1.8, 10)
 
 for x in range(0, 11, 2):
-    b += line(px(x), OY, px(x), OY + 5, "currentColor", 1.5) + text(px(x), OY + 18, str(x), "currentColor", 13, "middle", "400")
+    b += line(px(x), OY, px(x), OY + 5, "currentColor", 1.5) + text(px(x), OY + 18, str(x), "currentColor", 14, "middle", "400")
 for v in (2, 4, 6):
-    b += line(OX - 5, py(v), OX, py(v), "currentColor", 1.5) + text(OX - 8, py(v) + 4, str(v), "currentColor", 13, "end", "400")
+    b += line(OX - 5, py(v), OX, py(v), "currentColor", 1.5) + text(OX - 8, py(v) + 4, str(v), "currentColor", 14, "end", "400")
     b += line(OX, py(v), px(10), py(v), "currentColor", 1, "2 4", .3)
 b += line(px(0), py(0), px(D), py(U), GRN, 2.5)
 for x, v in data:
     assert abs(py(v) - py(U * x / D)) < 2, (x, v)          # chấm nằm sát đường lí thuyết
     b += dot(px(x), py(v), 5, RED)
-b += text(425, 244, "x (cm) — cách lá âm", "currentColor", 13, "end", "400")
-b += text(68, 18, "V (V)", "currentColor", 13, "start", "700")
-b += text(120, 70, "lí thuyết: V = U·x/d", GRN, 13, "start", "700")
-b += text(250, 196, "● số đo", RED, 13, "start", "700")
+b += text(425, 244, "x (cm) — cách lá âm", "currentColor", 14, "end", "400")
+b += text(68, 18, "V (V)", "currentColor", 14, "start", "700")
+b += text(120, 70, "lí thuyết: V = U·x/d", GRN, 14, "start", "700")
+b += text(250, 196, "● số đo", RED, 14, "start", "700")
 fig3 = wrap("0 0 440 248", "Đồ thị điện thế V theo khoảng cách x từ lá âm: bốn điểm đo nằm sát đường thẳng V = 0,6x",
-            b, "Hình 4. Bốn số đo (đỏ) nằm sát đường thẳng: V tăng đều theo x, nghĩa là điện trường giữa hai lá gần như đều.")
+            b, "Hình 4. Bốn số đo (đỏ) nằm sát đường thẳng: V tăng đều theo x.<br>Nghĩa là điện trường giữa hai lá gần như đều.")
 
 # ---- Ảnh OpenStax College Physics 2e, Hình 19.11 (đợt 2, 28/10/2026): thêm giữa Hình 2 và đồ thị
 fig2b = ('<figure class="fig"><img src="/assets/openstax/l11-dien-the/hinh-hai-ban-dang-the.webp" '
