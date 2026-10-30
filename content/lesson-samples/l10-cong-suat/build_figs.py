@@ -9,7 +9,7 @@ import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -19,11 +19,8 @@ CUR = {"fig": 0}
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không dùng marker tam giác nữa: đầu mũi tên vẽ bằng chevron V 30° (svg_lib)."""
+    return ""
 
 
 def seg(x1, y1, x2, y2):
@@ -31,10 +28,13 @@ def seg(x1, y1, x2, y2):
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
+    """Thân nét + đầu V 30° tại (x2, y2)."""
     seg(x1, y1, x2, y2)
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    n = math.hypot(x2 - x1, y2 - y1)
+    ex, ey = x2 - (x2 - x1) / n * 1.2, y2 - (y2 - y1) / n * 1.2
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], min(w, 2.8), 13))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
@@ -45,7 +45,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="12">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -56,16 +56,6 @@ def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700", itali
     it = ' font-style="italic" font-family="serif"' if italic else ""
     return (f'<text x="{x:.1f}" y="{y:.1f}" fill="{c}" font-size="{size}" font-weight="{weight}" '
             f'text-anchor="{anchor}"{it}>{s}</text>')
-
-
-def arc_arrow(p, c, cx, cy, r, a0, a1, w=2.6):
-    """Cung tròn từ góc a0 tới a1 (độ, hệ SVG: y hướng xuống). a1 > a0 => quay THUẬN chiều kim đồng hồ trên màn hình."""
-    x0, y0 = cx + r * math.cos(math.radians(a0)), cy + r * math.sin(math.radians(a0))
-    x1, y1 = cx + r * math.cos(math.radians(a1)), cy + r * math.sin(math.radians(a1))
-    sweep = 1 if a1 > a0 else 0
-    large = 1 if abs(a1 - a0) > 180 else 0
-    return (f'<path d="M{x0:.1f},{y0:.1f} A{r},{r} 0 {large} {sweep} {x1:.1f},{y1:.1f}" fill="none" stroke="{COL[c]}" '
-            f'stroke-width="{w}" marker-end="url(#{p}-{c})"/>')
 
 
 def moment_sign(ox, oy, ax, ay, fx, fy):
@@ -106,7 +96,7 @@ for name, cx, dimx, anchor in (("Thang A", 110, 52, "end"), ("Thang B", 330, 388
     b += line(cx - 52, GY, cx + 52, GY, "currentColor", 2.4)                       # mặt đất
     b += rect(x0, GY - CABH, CABW, CABH, "rgba(148,163,184,.25)", "currentColor", 2.4)   # cabin ở dưới
     b += rect(x0, TOPY - CABH, CABW, CABH, "none", "currentColor", 1.8, "6 5", track=False)  # vị trí cuối (nét đứt)
-    b += text(cx, GY - 18, "500 kg", "currentColor", 13, "middle", "600")
+    b += text(cx, GY - 18, "500 kg", "currentColor", 14, "middle", "600")
     b += arrow("f1", "g", cx, GY - CABH - 5, cx, TOPY + 6, 3.2)                  # chuyển động lên
     b += line(dimx, TOPY, dimx, GY, "currentColor", 1.5)
     b += line(dimx - 6, TOPY, dimx + 6, TOPY, "currentColor", 1.5) + line(dimx - 6, GY, dimx + 6, GY, "currentColor", 1.5)
@@ -130,14 +120,14 @@ b = defs("f2")
 b += line(AX, AY, 420, AY, "currentColor", 2) + line(AX, AY, AX, 26, "currentColor", 2)
 for v in (5, 10, 15, 20):
     b += line(X(v), AY, X(v), AY + 5, "currentColor", 1.5, track=False)
-    b += text(X(v), AY + 21, str(v), "currentColor", 13, "middle", "600")
-b += text(AX, AY + 21, "0", "currentColor", 13, "middle", "600")
+    b += text(X(v), AY + 21, str(v), "currentColor", 14, "middle", "600")
+b += text(AX, AY + 21, "0", "currentColor", 14, "middle", "600")
 for f in (1000, 2000, 3000):
     b += line(AX - 5, Y(f), AX, Y(f), "currentColor", 1.5, track=False)
     b += line(AX, Y(f), 420, Y(f), "currentColor", 1, "3 5", .3, track=False)
-    b += text(AX - 9, Y(f) + 5, f"{f:,}".replace(",", " "), "currentColor", 13, "end", "600")
-b += text(418, AY + 40, "v (m/s)", "currentColor", 14, "end", "700", True)
-b += text(10, 20, "F (N)", "currentColor", 14, "start", "700", True)
+    b += text(AX - 9, Y(f) + 5, f"{f:,}".replace(",", " "), "currentColor", 14, "end", "600")
+b += text(418, AY + 40, '<tspan font-style="italic" font-family="serif">v</tspan> (m/s)', "currentColor", 14, "end", "700")
+b += text(10, 20, '<tspan font-style="italic" font-family="serif">F</tspan> (N)', "currentColor", 14, "start", "700")
 # đường cong
 pts = []
 v = 1.9
@@ -154,12 +144,12 @@ for vv, ff in TABLE2:
     # chấm nằm trên đường cong (khoảng cách tới điểm gần nhất của polyline)
     dmin = min(math.hypot(X(vv) - x, Y(ff) - y) for x, y in pts)
     expect(dmin < 1.5, f"Hình 2: chấm ({vv}; {ff}) lệch đường cong {dmin:.1f} px")
-b += text(X(2) + 12, Y(3000) - 6, "3 000 N", BLUE, 13, "start", "700")
-b += text(X(5) + 12, Y(1200) - 8, "1 200 N", BLUE, 13, "start", "700")
-b += text(X(10) + 12, Y(600) - 10, "600 N", BLUE, 13, "start", "700")
-b += text(X(20), Y(300) - 12, "300 N", BLUE, 13, "middle", "700")
-b += text(200, 76, "lên dốc: v nhỏ, F lớn", "currentColor", 13, "start", "600")
-b += text(418, 134, "đường bằng: v lớn, F nhỏ", "currentColor", 13, "end", "600")
+b += text(X(2) + 12, Y(3000) - 6, "3 000 N", BLUE, 14, "start", "700")
+b += text(X(5) + 12, Y(1200) - 8, "1 200 N", BLUE, 14, "start", "700")
+b += text(X(10) + 12, Y(600) - 10, "600 N", BLUE, 14, "start", "700")
+b += text(X(20), Y(300) - 12, "300 N", BLUE, 14, "middle", "700")
+b += text(120, 76, "lên dốc: v nhỏ, F lớn", "currentColor", 14, "start", "600")
+b += text(418, 134, "đường bằng: v lớn, F nhỏ", "currentColor", 14, "end", "600")
 b += text(418, 32, "P = F·v = 6 kW", RED, 14, "end", "700")
 expect(abs(X(22) - 416) < 1e-9, "Hình 2: trục v")
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
@@ -175,8 +165,8 @@ P_X, T_X, P_Y, T_Y = 4.0, 5.0, 1.0, 30.0
 A_X, A_Y = P_X * T_X, P_Y * T_Y       # kJ
 expect(A_X == 20.0 and A_Y == 30.0 and A_Y > A_X and P_X > P_Y, "Hình 3: số liệu")
 b = defs("f3")
-for (title, cxc, bars, sc, unit) in (("Công suất P", 100, ((40, P_X, RED), (110, P_Y, BLUE)), SCP, "kW"),
-                                     ("Công A", 310, ((250, A_X, RED), (320, A_Y, BLUE)), SCA, "kJ")):
+for (title, cxc, bars, sc, unit) in (("Công suất P", 115, ((55, P_X, RED), (125, P_Y, BLUE)), SCP, "kW"),
+                                     ("Công A", 325, ((265, A_X, RED), (335, A_Y, BLUE)), SCA, "kJ")):
     b += text(cxc, 26, title, "currentColor", 14, "middle", "700")
     b += line(cxc - 80, BASE, cxc + 80, BASE, "currentColor", 2)
     for (bx, val, col), nm in zip(bars, ("máy X", "máy Y")):
@@ -185,7 +175,7 @@ for (title, cxc, bars, sc, unit) in (("Công suất P", 100, ((40, P_X, RED), (1
         lab = (f"{val:g}".replace(".", ",")) + " " + unit
         b += text(bx + 25, BASE - h - 8, lab, "currentColor", 14, "middle", "700")
         b += text(bx + 25, BASE + 22, nm, col, 14, "middle", "700")
-b += text(220, 240, "X chạy 5 s, Y chạy 30 s (số liệu minh hoạ)", "currentColor", 13, "middle", "600")
+b += text(235, 240, "X chạy 5 s, Y chạy 30 s (số liệu minh hoạ)", "currentColor", 14, "middle", "600")
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Hai cột công suất: máy X 4 kW cao hơn máy Y 1 kW; hai cột công: máy X 20 kJ thấp hơn máy Y 30 kJ", b,
             "Hình 3. Máy X có công suất lớn hơn nhưng chạy ngắn, nên công nhỏ hơn máy Y chạy lâu (số liệu minh hoạ).")
@@ -208,20 +198,20 @@ b = defs("f4")
 b += line(60, GY4, 330, GY4, "currentColor", 2.4)
 b += line(60, TOP4, 330, TOP4, "currentColor", 1.6, "7 6", .8)
 b += rect(CX4 - CW / 2, CY0, CW, CH, "rgba(148,163,184,.25)", "currentColor", 2.4)
-b += text(CX4, CY0 + 20, "800 kg", "currentColor", 13, "middle", "600")
+b += text(CX4, CY0 + 20, "800 kg", "currentColor", 14, "middle", "600")
 b += arrow("f4", "r", CX4, CY0 - 2, CX4, CY0 - 2 - LA, 3.4)                   # F lên, đầu trên cabin
 b += arrow("f4", "o", CX4, CY0 + CH / 2, CX4, CY0 + CH / 2 + LA, 3.4)         # P xuống, từ trọng tâm
 expect(abs(LA - 56) < 1e-9, "Hình 4: F và P cùng độ dài (nâng đều)")
-b += text(CX4 - 8, CY0 - 2 - LA + 18, "lực kéo F", RED, 14, "end", "700", True)
-b += text(CX4 - 8, CY0 + CH / 2 + LA - 2, "trọng lực", ORG, 14, "end", "700", True)
+b += text(CX4 - 18, CY0 - 2 - LA + 18, 'lực kéo <tspan font-style="italic" font-family="serif">F</tspan>', RED, 14, "end", "700")
+b += text(CX4 - 18, CY0 + CH / 2 + LA - 2, 'trọng lực <tspan font-style="italic" font-family="serif">mg</tspan>', ORG, 14, "end", "700")
 b += arrow("f4", "g", CX4 + 62, CY0 + 34, CX4 + 62, CY0 - 6, 3.2)
 b += text(CX4 + 72, CY0 + 18, "v", GRN, 16, "start", "700", True)
-dx = 300
+dx = 296
 b += line(dx, TOP4, dx, GY4, "currentColor", 1.6) + line(dx - 7, TOP4, dx + 7, TOP4, "currentColor", 1.6) + line(dx - 7, GY4, dx + 7, GY4, "currentColor", 1.6)
-b += text(dx + 14, 150, "15 m", "currentColor", 14, "start", "700")
-b += text(dx + 14, 172, "30 s", "currentColor", 14, "start", "700")
-b += text(66, TOP4 - 8, "tầng cuối", "currentColor", 13, "start", "600")
-b += text(66, GY4 - 8, "mặt đất", "currentColor", 13, "start", "600")
+b += text(dx + 10, 150, "d = 15 m", "currentColor", 14, "start", "700")
+b += text(dx + 10, 176, "t = 30 s", "currentColor", 14, "start", "700")
+b += text(66, TOP4 - 8, "tầng cuối", "currentColor", 14, "start", "600")
+b += text(66, GY4 - 8, "mặt đất", "currentColor", 14, "start", "600")
 fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
             "Thang máy cabin cùng hàng 800 kg đang đi lên đều: lực kéo F hướng lên và trọng lực mg hướng xuống bằng nhau; quãng đường 15 m trong 30 s", b,
             "Hình 4. Nâng đều nên lực kéo <em>F</em> bằng trọng lượng <em>mg</em> (hai mũi tên cùng độ dài). Mũi tên xanh lá là chiều chuyển động; cả hành trình dài 15 m, kéo dài 30 s.")

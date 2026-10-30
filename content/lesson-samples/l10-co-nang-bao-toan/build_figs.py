@@ -6,7 +6,7 @@ import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -16,21 +16,22 @@ CUR = {"fig": 0}
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không dùng marker tam giác nữa (đầu V 30° vẽ bằng chevron) — giữ hàm cho gọn mã gọi."""
+    return ""
 
 
 def seg(x1, y1, x2, y2):
     SEGS.append((CUR["fig"], x1, y1, x2, y2))
 
 
-def arrow(p, c, x1, y1, x2, y2, w=2.6):
-    seg(x1, y1, x2, y2)
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}" '
-            f'marker-end="url(#{p}-{c})"/>')
+def curve_arrow(pts, c, w=2.6):
+    """Mũi tên cong theo dãy điểm, đầu V 30° (chevron) ở điểm cuối, hướng theo đoạn cuối."""
+    for a, b_ in zip(pts, pts[1:]):
+        seg(*a, *b_)
+    d = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    (xa, ya), (xb, yb) = pts[-2], pts[-1]
+    return (f'<path d="{d}" fill="none" stroke="{COL[c]}" stroke-width="{w}" stroke-linecap="round"/>'
+            + chevron(xb, yb, xb - xa, yb - ya, COL[c], w, 12))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
@@ -98,9 +99,20 @@ rimL, rimR = bw.pt(3.0, -1), bw.pt(3.0, 1)
 b += line(14, rimL[1], rimL[0], rimL[1], "currentColor", 3) + line(rimR[0], rimR[1], 426, rimR[1], "currentColor", 3)
 b += f'<circle cx="{rimL[0]-12:.1f}" cy="{rimL[1]-9:.1f}" r="8" fill="{GRN}"/>'
 b += text(rimL[0] - 12, rimL[1] - 26, "Lan", GRN, 14, "middle")
-# mũi tên chiều chuyển động dọc thành trái, đặt phía trong lòng chảo
-p0, p1 = bw.pt(2.4, -1), bw.pt(1.2, -1)
-b += arrow("f1", "g", p0[0] + 16, p0[1] - 4, p1[0] + 16, p1[1] - 6, 2.6)
+# mũi tên chiều chuyển động: cung song song thành trái, lệch vào trong lòng chảo 16 px theo pháp tuyến
+OFF1 = 16
+apts = []
+for i in range(25):
+    z_ = 2.5 - 1.6 * i / 24                      # từ z = 2,5 m xuống z = 0,9 m
+    x_, y_ = bw.pt(z_, -1)
+    sl = -2 * bw.Zr * bw.pxm * (x_ - bw.cx) / bw.X ** 2   # dy/dx màn hình (y hướng xuống)
+    nx, ny = sl, -1.0                                        # pháp tuyến hướng lên-vào trong
+    nn = math.hypot(nx, ny)
+    apts.append((x_ + OFF1 * nx / nn, y_ + OFF1 * ny / nn))
+b += curve_arrow(apts, "g", 2.6)
+p0, p1 = apts[0], apts[-1]
+for (ax_, ay_) in apts:
+    expect(abs(bw.y(bw.z_at(ax_)) - ay_) > 8, "Hình 1: mũi tên chạm lòng chảo")
 expect(p1[1] > p0[1], "Hình 1: mũi tên phải hướng xuống")
 b += text(220, 212, "đáy", "currentColor", 14, "middle", "600")
 q = bw.pt(2.0, 1)
