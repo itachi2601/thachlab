@@ -185,7 +185,7 @@ export default function InlineLessonAccordion({
   }
 
   return (
-    <article ref={articleRef} style={{ scrollMarginTop: "104px" }} className={`overflow-hidden rounded-xl border transition-colors duration-200 ${open ? "border-primary/40 bg-panel" : "border-line bg-panel"}`}>
+    <article ref={articleRef} data-lesson-id={isStudent ? lesson.id : undefined} style={{ scrollMarginTop: "104px" }} className={`overflow-hidden rounded-xl border transition-colors duration-200 ${open ? "border-primary/40 bg-panel" : "border-line bg-panel"}`}>
       <button
         type="button"
         onClick={onToggle}
