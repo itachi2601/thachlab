@@ -9,7 +9,7 @@ import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -19,11 +19,8 @@ CUR = {"fig": 0}
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác: mọi mũi tên dùng đầu V 30° (svg_lib.chevron)."""
+    return ""
 
 
 def seg(x1, y1, x2, y2):
@@ -33,8 +30,9 @@ def seg(x1, y1, x2, y2):
 def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
     seg(x1, y1, x2, y2)
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    L = 12 if w >= 2.5 else 10
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], w, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
@@ -45,7 +43,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="12">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="13">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -56,16 +54,6 @@ def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700", itali
     it = ' font-style="italic" font-family="serif"' if italic else ""
     return (f'<text x="{x:.1f}" y="{y:.1f}" fill="{c}" font-size="{size}" font-weight="{weight}" '
             f'text-anchor="{anchor}"{it}>{s}</text>')
-
-
-def arc_arrow(p, c, cx, cy, r, a0, a1, w=2.6):
-    """Cung tròn từ góc a0 tới a1 (độ, hệ SVG: y hướng xuống). a1 > a0 => quay THUẬN chiều kim đồng hồ trên màn hình."""
-    x0, y0 = cx + r * math.cos(math.radians(a0)), cy + r * math.sin(math.radians(a0))
-    x1, y1 = cx + r * math.cos(math.radians(a1)), cy + r * math.sin(math.radians(a1))
-    sweep = 1 if a1 > a0 else 0
-    large = 1 if abs(a1 - a0) > 180 else 0
-    return (f'<path d="M{x0:.1f},{y0:.1f} A{r},{r} 0 {large} {sweep} {x1:.1f},{y1:.1f}" fill="none" stroke="{COL[c]}" '
-            f'stroke-width="{w}" marker-end="url(#{p}-{c})"/>')
 
 
 def moment_sign(ox, oy, ax, ay, fx, fy):
@@ -122,7 +110,7 @@ for gy, vkmh, tag, known in ((92, 10, "Hôm qua", True), (205, 20, "Hôm sau", F
         L = 2 * PX_M
         b += line(X_BRAKE, gy - 1.5, X_BRAKE + L, gy - 1.5, RED, 5, op=.75)  # vệt lết
         b += line(X_BRAKE + L, gy - 22, X_BRAKE + L, gy + 4, "currentColor", 2)
-        b += text(X_BRAKE + L + 6, gy - 10, "dừng", "currentColor", 13, "start", "600")
+        b += text(X_BRAKE + L + 6, gy - 10, "dừng", "currentColor", 14, "start", "600")
         b += text(X_BRAKE + L / 2, gy + 22, "lết 2 m", RED, 14, "middle")
         expect(abs(L / PX_M - 2) < 1e-9, "Hình 1: vệt lết hôm qua phải đúng 2 m theo tỉ lệ")
     else:
@@ -131,11 +119,11 @@ for gy, vkmh, tag, known in ((92, 10, "Hôm qua", True), (205, 20, "Hôm sau", F
         for k, (u0, u1) in enumerate(zip(xs_, xs_[1:])):
             b += line(u0, gy - 1.5, min(u1, 428), gy - 1.5, RED, 5, "4 7", round(.6 - .07 * k, 2))
         b += text(X_BRAKE + 150, gy + 22, "lết ? m (không theo tỉ lệ)", RED, 14, "middle")
-    b += text(X_BRAKE - 4, gy + 22, "bóp phanh", RED, 13, "end", "600")
+    b += text(X_BRAKE - 4, gy + 22, "bóp phanh", RED, 14, "end", "600")
 expect(20 * PX_V == 2 * 10 * PX_V, "Hình 1: mũi tên vận tốc phải tỉ lệ 1 : 2")
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
             "Hai lần phanh xe đạp: hôm qua 10 km/h lết 2 m; hôm sau 20 km/h, lết bao xa chưa biết", b,
-            "Hình 1. Cùng xe, cùng lực phanh (minh hoạ). Mũi tên vận tốc vẽ tỉ lệ: hôm sau dài gấp đôi. Vạch lết hôm sau chưa biết dài bao nhiêu, vẽ không theo tỉ lệ.")
+            "Hình 1. Cùng xe, cùng lực phanh (minh hoạ).<br>Mũi tên vận tốc vẽ tỉ lệ: hôm sau dài gấp đôi.<br>Vạch lết hôm sau chưa biết dài, vẽ không theo tỉ lệ.")
 
 # ---------------- Hình 2: thế năng theo mốc ----------------
 CUR["fig"] = 2
@@ -146,13 +134,16 @@ b += arrow("f2", "k", AX2, 238, AX2, 14, 2)
 b += text(AX2 + 10, 26, "z", "currentColor", 16, "start", "700", True)
 b += line(30, Y0, 432, Y0, "currentColor", 1.6, "7 5", .8)
 b += text(AX2 - 8, Y0 + 18, "O", "currentColor", 15, "end", "700", True)
-b += text(AX2 + 10, Y0 + 20, "mốc thế năng", "currentColor", 13, "start", "600")
+b += text(AX2 + 10, Y0 + 20, "mốc thế năng", "currentColor", 14, "start", "600")
 XB2 = 200
 balls = ((60, BLUE, ("z &gt; 0", "W", "t", " &gt; 0")), (Y0, "currentColor", ("z = 0", "W", "t", " = 0")),
          (210, RED, ("z &lt; 0", "W", "t", " &lt; 0")))
 for y, c, (zs, w, sb, rest) in balls:
     b += f'<circle cx="{XB2}" cy="{y}" r="11" fill="rgba(251,146,60,.35)" stroke="{ORG}" stroke-width="2.2"/>'
-    b += text(XB2 + 24, y + (-8 if y == Y0 else 5), f"{zs}: " + sub(w, sb) + rest, c, 15, "start")
+    ly2 = y + (-14 if y == Y0 else 5)
+    b += text(XB2 + 24, ly2, f"{zs}: " + sub(w, sb) + rest, c, 15, "start")
+    if y == Y0:   # chỉ số dưới (baseline-shift sub ~0,33 em của cỡ 13) phải cách nét mốc >= 4 px
+        expect(Y0 - (ly2 + 0.33 * 13 + 0.25 * 13) >= 4, "Hình 2: chỉ số t của nhãn tại mốc chạm nét đứt")
     expect((y < Y0) == ("&gt;" in zs) and (y > Y0) == ("&lt;" in zs), f"Hình 2: dấu z sai ở y={y}")
 # kích thước z cho vật phía trên mốc
 XD = 160
@@ -160,7 +151,7 @@ b += line(XD, Y0, XD, 60, GRN, 2) + line(XD - 6, 60, XD + 6, 60, GRN, 2) + line(
 b += text(XD - 8, 103, "z", GRN, 16, "end", "700", True)
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
             "Trục z hướng lên, gốc tại mốc thế năng; vật phía trên mốc có thế năng dương, tại mốc bằng 0, phía dưới mốc âm", b,
-            "Hình 2. Trục <em>z</em> hướng lên, gốc tại mốc. Trên mốc <em>W</em><sub>t</sub> &gt; 0, tại mốc bằng 0, dưới mốc <em>W</em><sub>t</sub> &lt; 0.")
+            "Hình 2. Trục <em>z</em> hướng lên, gốc tại mốc.<br>Trên mốc: <em>W</em><sub>t</sub> &gt; 0.<br>Tại mốc: <em>W</em><sub>t</sub> = 0.<br>Dưới mốc: <em>W</em><sub>t</sub> &lt; 0.")
 
 # ---------------- Hình 3: ảnh OpenStax College Physics 2e, Hình 7.6 (đợt 28/10/2026) ----------------
 fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-dong-nang-the-nang/hinh-cong-trong-luc-hai-duong.webp" '
@@ -204,21 +195,21 @@ b += '<polyline points="' + " ".join(f"{x:.1f},{y:.1f}" for x, y in tp) + '" fil
 for P, lab, dx in ((A4, "18 m", 6), (B4, "3 m", 6), (D4, "13 m", 6)):
     b += line(P[0], P[1] + 6, P[0], GY4, "currentColor", 1.2, "4 4", .7, track=False)
     ly = GY4 - 6 if lab == "3 m" else (P[1] + GY4) / 2 + 5
-    b += text(P[0] + dx, ly, lab, "currentColor", 13, "start", "600")
+    b += text(P[0] + dx, ly, lab, "currentColor", 14, "start", "600")
 # toa tàu tại A
 b += f'<rect x="{A4[0]-15}" y="{A4[1]-17}" width="30" height="14" rx="3" fill="rgba(251,146,60,.35)" stroke="{ORG}" stroke-width="2"/>'
 b += arrow("f4", "g", A4[0] + 18, A4[1] - 10, A4[0] + 68, A4[1] - 10, 3)
-b += text(A4[0] + 20, A4[1] - 24, sub("v", "A") + " = 10 m/s", GRN, 14, "start")
+b += text(A4[0] + 20, A4[1] - 29, sub("v", "A") + " = 10 m/s", GRN, 14, "start")
 for P in (A4, B4, D4):
     b += f'<circle cx="{P[0]}" cy="{P[1]}" r="4" fill="currentColor"/>'
 b += text(A4[0] - 22, A4[1] - 8, "A", "currentColor", 16, "end", "700", True)
 b += text(B4[0] - 10, 204, "B", "currentColor", 16, "end", "700", True)
 b += text(D4[0], D4[1] - 12, "D", "currentColor", 16, "middle", "700", True)
-b += text(12, 236, "mặt đất (mốc thế năng)", "currentColor", 13, "start", "600")
+b += text(12, 236, "mặt đất (mốc thế năng)", "currentColor", 14, "start", "600")
 expect(abs(track_z(A4[0] + 1) - 18) < 0.01, "Hình 4: tại A ray nằm ngang nên vận tốc vẽ ngang")
 fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
             "Đường ray tàu lượn: điểm A cao 18 m, toa có vận tốc 10 m/s; điểm B cao 3 m; đỉnh D cao 13 m; mốc thế năng ở mặt đất", b,
-            "Hình 4. Ray tàu lượn của bài toán mẫu. Độ cao tính từ mặt đất; độ cao vẽ đúng tỉ lệ, khoảng cách ngang thì không.")
+            "Hình 4. Ray tàu lượn của bài toán mẫu.<br>Độ cao tính từ mặt đất, vẽ đúng tỉ lệ.<br>Khoảng cách ngang không theo tỉ lệ.")
 fig4 = fig4.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-dong-nang-the-nang-03"', 1)
 
 # ---------------- Kiểm toạ độ nhãn ----------------
@@ -264,7 +255,7 @@ for n, f in enumerate(figs, 1):
 # ---- Ảnh OpenStax College Physics 2e (28/10/2026, đợt 2): hình THÊM, đánh số lại theo thứ tự trong bài, xem nguon.md
 figx = (
         '<figure class="fig"><img src="/assets/openstax/l10-dong-nang-the-nang/hinh-lo-xo-the-nang-dan-hoi.webp" alt="Đồ thị lực kéo lò xo F theo độ dãn x là đường thẳng có hệ số góc k; diện tích tam giác dưới đường bằng một phần hai k nhân x bình phương" loading="lazy" width="294" height="272">'
-        '<figcaption>Hình 9. Lực kéo tăng đều theo độ dãn.<br>Slope = hệ số góc; Area = diện tích = công.<br>Sách ghi <em>x</em>; bài ghi Δ<em>l</em>.<br><small>Hình: OpenStax, College Physics 2e, Hình 7.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>'
+        '<figcaption>Hình 9. Lực kéo tăng đều theo độ dãn.<br>Slope = hệ số góc.<br>Area = diện tích = công.<br>Sách ghi <em>x</em>; bài ghi Δ<em>l</em>.<br><small>Hình: OpenStax, College Physics 2e, Hình 7.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>'
 )
 assert src.count("<!--FIGX-->") == 1
 src = src.replace("<!--FIGX-->", figx)
