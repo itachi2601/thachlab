@@ -18,7 +18,7 @@
     {
       "khoa": "dung_cu",
       "giay": 8.9,
-      "chu": "Máy Geiger, nguồn gamma, thước dây. Đo phông trước, rồi lùi đầu dò dần."
+      "chu": "Nguồn gamma kiểm định hoạt độ thấp, máy Geiger đếm xung, thước dây đo d từ tâm nguồn tới đầu dò.\nĐo phông 10 phút (30 xung/phút); mỗi vị trí 0,5; 1; 1,5; 2; 3 m đếm 5 phút; nhịp thực = nhịp đo − phông.\nCoi nguồn là nguồn điểm; bỏ qua hấp thụ của không khí và tia tán xạ từ tường."
     },
     {
       "khoa": "quan_sat",
@@ -28,12 +28,12 @@
     {
       "khoa": "rut_ra",
       "giay": 27.5,
-      "chu": "Nhịp thực N tỉ lệ nghịch với d²: tích N·d² gần như không đổi, quanh 360, ở mọi vị trí đo."
+      "chu": "Nhịp thực N tỉ lệ nghịch với d²: tích N·d² gần như không đổi, quanh 360, ở mọi vị trí đo.\nQuên trừ phông: ở xa, phông chiếm phần lớn nhịp đo nên N·d² tính từ nhịp đo tăng dần theo d, dễ tưởng quy luật sai.\nĐếm là ngẫu nhiên: N xung lệch cỡ √N, nên các ô N·d² chênh nhau vài phần trăm."
     },
     {
       "khoa": "chua_noi",
       "giay": 36.7,
-      "chu": "Không cho biết tác hại lên cơ thể: máy chỉ đếm xung, chưa tính loại tia (cần liều tương đương Sv)."
+      "chu": "Không cho biết tác hại lên cơ thể: máy chỉ đếm xung, chưa tính loại tia (cần liều tương đương Sv).\nSát một nguồn lớn thì không còn coi là nguồn điểm."
     }
   ],
   "dung_dua": {
