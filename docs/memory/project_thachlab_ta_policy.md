@@ -77,3 +77,12 @@ Chưa test UI thật qua tài khoản trợ giảng/học sinh.
 - **Chưa chốt (thầy 2026-10-16):** đơn giá, hệ số ×1,0/0,9/1,2/1,4/1,6 và Phần B (bậc) áp từ tháng 11 nhưng chưa có con số; xem vài tháng đầu rồi chỉnh theo ngân sách. Vì vậy trang/artifact cố ý KHÔNG ghi con số tiền hay hệ số.
 - Đơn giá hệ cũ (B1/B2/B3 = 40.000/50.000/60.000 đ/giờ, thưởng +4.000 nếu ≥85 điểm, +2.000 nếu ≥70, chấm bài 1.500 đ/bài) là giá gieo trong `docs/supabase-migration-tro-giang.sql`; chưa đối chiếu DB thật (`ta_rates`, `ta_assistants.retained_rate`).
 - Còn treo: chưa xem 2 trang quy chế/việc-cần-làm ở 375px; chưa thử `/tro-giang/phong-van` và nút Giao trợ giảng bằng tài khoản TA thật; chưa rõ chỗ TA mở "Phiếu xuất phát" ngoài thẻ em ở Cần phụ đạo.
+
+**Cập nhật 2026-10-30 — thầy CHỐT Phần B cho trợ giảng tuyển mới từ 11/2026** (ghi ở `app/tro-giang/quy-che/page.tsx`, thay khối "Phần B · chưa áp dụng"; hệ thống CHƯA tự tính, thầy tính tay khi chốt công):
+- Đơn giá theo giờ đã duyệt tích luỹ (chỉ cộng giờ tháng ≥70 điểm; vượt mốc → giá mới từ tháng sau): Tập sự 0–60h 35k · 60–120h 40k · 120–180h 45k; Chính thức 180–360h 50k · 360–720h 55k; Nòng cốt 720–1.080h 60k · >1.080h 65k. Ước lượng 30h/tháng: năm 1 lên 50k, năm 2 55k, năm 3 60k, năm 4 65k.
+- Lên Nòng cốt cần thêm điểm TB 6 tháng ≥80 + thầy duyệt. Thầy hỏi điều kiện "12 tháng mỗi nấc" → bỏ vì làm mất cảm giác "cố là tiến" (SDT, goal-gradient); chỉ gác chất lượng ở bậc Nòng cốt.
+- Tháng đầu: tập huấn 2h; giờ chuẩn bị ≤8h, chỉ khi có phiếu soạn được duyệt.
+- Hệ số Phần B: phụ đạo 1–2 em ×1,15, 3–4 em ×1,3; chữa bài thay thầy ×1,5; tháng <70 điểm ×0,9; không nhân chồng. (Phần A trên trang vẫn ×1,1/×1,2/×1,6 — chưa đổi.)
+- Thưởng tháng: ≥70 điểm +50k, ≥85 +100k (một mức). Mốc: 360h → 300k + thư giới thiệu; 1.080h → 500k. Mỗi lần lên bậc có dòng ghi nhận.
+- TA đang làm khi chuyển sang Phần B: xếp bậc theo giờ đã duyệt, không hạ đơn giá đang hưởng.
+- Còn treo: chưa đối chiếu `ta_rates`/`retained_rate` thật (giá gieo B1 = 40k); RPC `ta_monthly_policy` chưa tính Phần B.

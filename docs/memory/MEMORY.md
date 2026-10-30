@@ -84,7 +84,7 @@
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — treo nhãn nguồn từng câu
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn xong 12/10, chờ thầy duyệt rồi đăng
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật
-- [Quy chế + bảng việc TA](project_thachlab_ta_policy.md) — /tro-giang/viec-can-lam; đơn giá T11 CHƯA chốt
+- [Quy chế + bảng việc TA](project_thachlab_ta_policy.md) — Phần B tuyển mới chốt 30/10 (35k→65k theo giờ); hệ thống chưa tự tính
 ## Việc đang làm (từ 30/9)
 - [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — chờ thầy duyệt ~850 câu viet-lai*.json
 - [Nạp ngân hàng VL10 (Word)](project_thachlab_nap_ngan_hang_vl10.md) — còn Ch.I, VII + Cơ năng
