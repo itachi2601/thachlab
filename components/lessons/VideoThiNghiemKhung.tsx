@@ -78,7 +78,16 @@ export default function VideoThiNghiemKhung({
     eventRef.current = onEvent;
   }, [onEvent]);
   const [t, setT] = useState(0);
-  const [reached, setReached] = useState(0); // chỉ số ô xa nhất đã tới: ô sau đó còn khoá
+  const [reachedRaw, setReached] = useState(0); // chỉ số ô xa nhất đã tới: ô sau đó còn khoá
+  const KEY_XONG = `khung-xong:${data.id}`;
+  const [xong, setXong] = useState(() => {
+    try {
+      return localStorage.getItem(KEY_XONG) === "1";
+    } catch {
+      return false;
+    }
+  }); // đã xem hết clip (sau khi trả lời Dự đoán) một lần: mở cả sáu ô để ôn lại, nhớ theo id khung
+  const reached = xong ? data.o.length - 1 : reachedRaw;
   const [asking, setAskingState] = useState(false);
   const setAsking = useCallback((b: boolean) => {
     askingRef.current = b;
@@ -125,7 +134,13 @@ export default function VideoThiNghiemKhung({
     // chưa trả lời thì các ô sau Dự đoán vẫn khoá, dù thanh tua đã kéo qua
     setReached((r) => Math.max(r, doneRef.current ? curOf(now) : Math.min(curOf(now), duDoanIdx)));
     if (now >= dd.giay - 0.05 && !v.seeking && !v.paused && !doneRef.current) hoi(v);
-  }, [curOf, dd.giay, duDoanIdx, hoi]);
+    if (doneRef.current && now >= data.tong_giay - 0.5) {
+      setXong(true);
+      try {
+        localStorage.setItem(KEY_XONG, "1");
+      } catch {}
+    }
+  }, [curOf, dd.giay, duDoanIdx, hoi, data.tong_giay, KEY_XONG]);
 
   // rAF chỉ chạy khi video đang phát; lúc dừng/tua cập nhật bằng sự kiện (tab ẩn thì timeupdate vẫn bắt kịp).
   const raf = useRef(0);
@@ -289,7 +304,12 @@ export default function VideoThiNghiemKhung({
       );
     }
     return (
-      <p className={big ? "text-[17px] leading-relaxed text-ink" : "text-[15px] leading-relaxed text-muted"}>
+      <p
+        className={
+          "whitespace-pre-line " +
+          (big ? "text-[17px] leading-relaxed text-ink" : "text-[15px] leading-relaxed text-muted")
+        }
+      >
         {chu(o)}
         {i === duDoanIdx && chose !== null && (
           <span className="mt-1 block text-[14px] font-semibold text-ink">Em đã chọn: {dd.chon[chose]}</span>
