@@ -7,7 +7,8 @@ import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
 from _margin_fig import margin_figs
 import json, math, pathlib, re, subprocess, sys
-from svg_lib import RED, BLUE, ORG, GRN, wrap
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron   # svg_lib của skill (bản trong thư mục bài cũ, không có chevron)
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -43,14 +44,11 @@ class Canvas:
         self.body += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}" stroke="currentColor" stroke-width="1.2" opacity="{op}"/>'
 
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11, dash=""):
-        """Mũi tên có ĐỈNH đúng tại (x2,y2); marker cỡ cố định (userSpaceOnUse)."""
-        L = math.hypot(x2 - x1, y2 - y1)
-        ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        """Mũi tên: thân thẳng tới ĐỈNH (x2,y2) + đầu V 30° (chevron), không dùng marker tam giác."""
+        w = min(w, 2.8)
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d}/>'
+                      + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], w, head))
         self.arrows[tag] = (x1, y1, x2, y2)
 
     def bracket(self, x, y1, y2, c="currentColor", tick=6):
@@ -65,13 +63,6 @@ class Canvas:
         wdt = 0.58 * size * len(plain)
         x0 = x if anchor == "start" else (x - wdt / 2 if anchor == "middle" else x - wdt)
         self.labels.append((plain, x0, y - 0.78 * size, x0 + wdt, y + 0.22 * size, size))
-
-    def defs(self):
-        out = "<defs>"
-        for c, hd in sorted(self.markers):
-            out += (f'<marker id="{self.name}-{c}{hd}" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="{hd}" markerHeight="{hd}" '
-                    f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{COL[c]}"/></marker>')
-        return out + "</defs>"
 
     def check(self, obstacles=()):
         """Nhãn: cỡ >= 14, trong viewBox, không chồng nhau, không đè vật cản (hộp x0,y0,x1,y1)."""
@@ -90,7 +81,7 @@ class Canvas:
         return errs
 
     def svg(self, label, cap, exp=None):
-        s = wrap(f"0 0 {self.w} {self.h}", label, self.defs() + self.body, cap)
+        s = wrap(f"0 0 {self.w} {self.h}", label, self.body, cap)
         if exp:
             s = s.replace('<figure class="fig" data-tl="1">', f'<figure class="fig" data-tl="1" data-exp="{exp}">', 1)
         return s
@@ -106,7 +97,7 @@ t_ff = lambda g, h: math.sqrt(2 * h / g)    # thời gian rơi tới độ sâu 
 
 # TN1: rơi trong không khí, lực cản tỉ lệ v² -> s(t) = (vt²/g)·ln cosh(g t/vt); thời gian rơi H = 1,5 m
 H1 = 1.5
-VT_LIST = [("Hòn bi thép (đường kính 2 cm)", 40.0), ("Viên giấy vo chặt", 8.0), ("Tờ giấy A4 để phẳng", 1.5)]
+VT_LIST = [("Hòn bi thép (đường kính 2 cm)", 40), ("Viên giấy vo chặt", 8), ("Tờ giấy A4 để phẳng", 1.5)]
 t_drag = lambda vt, h: (vt / G) * math.acosh(math.exp(G * h / vt ** 2))
 T_DRAG = [round(t_drag(vt, H1), 3) for _, vt in VT_LIST]
 T_FREE1 = round(t_ff(G, H1), 3)
@@ -202,7 +193,7 @@ fig1 = ('<figure class="fig" data-tl="1" data-exp="tn-l10-roi-tu-do-01"><img src
         'alt="Lông chim và cái búa thả cùng lúc: trong không khí lông chim rơi chậm hơn nhiều; trong chân không hai vật rơi ngang nhau, như phi hành gia thử trên Mặt Trăng" '
         'loading="lazy" width="1000" height="489">'
         '<figcaption>Hình 1. Lông chim và búa.<br>'
-        'in air = có không khí · in a vacuum = chân không.<br>'
+        'in air = có không khí<br>in a vacuum = chân không<br>the hard way = thử thật trên Mặt Trăng<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 2.37 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
 ERR += c.check(obstacles=[(68, TOP, 132, BOT), (248, TOP, 312, BOT)])
@@ -224,23 +215,27 @@ c.line(BX, 18, BX, 372, "currentColor", 1.2, "3 4", op=.6)    # dây dọi
 c.add(f'<path d="M{BX - 7},372 L{BX + 7},372 L{BX},386 Z" fill="currentColor" opacity=".6"/>')
 YS = [Y0 + SC * p for p in POS2]
 for k, y in enumerate(YS):
-    c.ball(BX, y, 5)
-    c.line(BX + 9, y, BX + 17, y, "currentColor", 1.4)
+    c.ball(BX, y, 4)
+BRX = BX + 22                                   # ngoặc mỗi khoảng (vạch ngang chỉ vào tâm bi)
 for k, (ya, yb) in enumerate(zip(YS, YS[1:])):
-    c.text(BX + 24, (ya + yb) / 2 + 5, f"{vt(GAP2[k], 1)} cm", size=14, weight="600")
-c.text(244, 70, "Mỗi khoảng dài", GRN, 14)
-c.text(244, 90, "hơn khoảng trước", GRN, 14)
-c.text(244, 110, f"{vt(100 * G * T2 * T2, 1)} cm", GRN, 14)
-c.arr("g", "g", 300, 170, 300, 250, 3)
-c.text(312, 216, "g", GRN, 18, italic=True)
+    c.bracket(BRX, ya, yb, "currentColor", tick=8)
+    ym = (ya + yb) / 2 + 5
+    c.text(BRX + 8, ym, f"{vt(GAP2[k], 1)} cm", size=14, weight="600")
+    if k:                                       # phần dài thêm so với khoảng trước
+        c.text(BRX + 76, ym, f"+{vt(GAP2[k] - GAP2[k - 1], 1)}", GRN, 14)
+c.text(232, 318, "Mỗi khoảng dài hơn", GRN, 14)
+c.text(232, 338, "khoảng trước 9,8 cm", GRN, 14)
+c.arr("g", "g", 350, 110, 350, 190, 3)
+c.text(362, 156, "g", GRN, 18, italic=True)
 c.text(150, 386, "dây dọi", size=14, weight="600")
 x1, y1, x2, y2 = c.arrows["g"]
 ERR += [] if y2 > y1 and x1 == x2 else ["f2: mũi tên g phải thẳng đứng hướng xuống"]
 ERR += [] if all(b > a for a, b in zip(YS, YS[1:])) else ["f2: vị trí bi phải đi xuống"]
 fig2 = c.svg("Vị trí viên bi rơi sau mỗi 0,1 giây cạnh thước dựng đứng và dây dọi: bi rơi dọc dây dọi, các khoảng 4,9; 14,7; 24,5; 34,3; 44,1 cm dài dần, mỗi khoảng dài hơn khoảng trước 9,8 cm",
-             "Hình 2. Ảnh chụp nhiều lần (số liệu minh hoạ): vị trí bi sau mỗi 0,1 s. Bi rơi dọc dây dọi; các khoảng dài dần đều đặn, tỉ lệ 1 : 3 : 5 : 7 : 9 — chuyển động nhanh dần đều.",
+             "Hình 2. Ảnh chụp nhiều lần (số liệu minh hoạ): vị trí bi sau mỗi 0,1&nbsp;s.<br>Bi rơi dọc dây dọi.<br>Các khoảng dài dần đều đặn, tỉ lệ 1 : 3 : 5 : 7 : 9.<br>Chuyển động nhanh dần đều.",
              exp="tn-l10-roi-tu-do-02")
-ERR += c.check(obstacles=[(BX - 6, Y0 - 6, BX + 6, YS[-1] + 6), (292, 170, 308, 250), (RX, Y0, RX + 10, Y0 + SC * 150)])
+assert all(near(GAP2[k] - GAP2[k - 1], 100 * G * T2 * T2, 1e-6) for k in range(1, len(GAP2)))
+ERR += c.check(obstacles=[(BX - 6, Y0 - 6, BX + 6, YS[-1] + 6), (342, 110, 358, 190), (RX, Y0, RX + 10, Y0 + SC * 150), (BRX - 8, Y0, BRX + 1, YS[-1])])
 
 # ================= Hình 3: "giây thứ n" và "n giây đầu" (g = 9,8), đặt SAU Câu 4
 c = Canvas("f3", 400, 310)
@@ -261,7 +256,7 @@ c.text(378, (YP[0] + YP[3]) / 2 - 2, "3 s đầu:", GRN, 14, anchor="end")
 c.text(378, (YP[0] + YP[3]) / 2 + 16, f"{vt(PTS[3], 1)} m", GRN, 14, anchor="end")
 ERR += [] if near(PTS[2] - PTS[1], DS2) else ["f3: giây thứ 2 lệch Câu 4"]
 fig3 = c.svg("Vị trí vật rơi tự do lúc t bằng 0, 1, 2, 3 giây trên trục thẳng đứng; ngoặc chỉ quãng đường giây thứ 2 là 14,7 m, giây thứ 3 là 24,5 m, cả 3 giây đầu là 44,1 m",
-             "Hình 3. Với <em>g</em> = 9,8 m/s²: giây thứ 2 rơi 19,6 − 4,9 = 14,7 m; giây thứ 3 rơi 24,5 m; cả 3 giây đầu rơi 44,1 m. \"Giây thứ <em>n</em>\" chỉ là một đoạn của \"<em>n</em> giây đầu\".")
+             "Hình 3. Với <em>g</em> = 9,8 m/s²:<br>Giây thứ 2 rơi 19,6 − 4,9 = 14,7 m.<br>Giây thứ 3 rơi 24,5 m.<br>Cả 3 giây đầu rơi 44,1 m.<br>\"Giây thứ <em>n</em>\" chỉ là một đoạn của \"<em>n</em> giây đầu\".")
 ERR += c.check(obstacles=[(AX - 6, 28, AX + 6, 290)])
 
 # ================= Hình 4: bài toán mẫu — chỉ ghi dữ liệu đề cho
@@ -289,13 +284,14 @@ c.bracket(352, Y_T1, Y_SAN, ORG)
 c.text(344, (Y_T1 + Y_SAN) / 2 + 5, "giây cuối: ?", ORG, 14, anchor="end")
 c.arr("duong", "k", 40, 60, 40, 118, 2, 10)
 c.text(14, 136, "chiều (+)", size=14, weight="600")
-c.arr("g", "g", 204, 52, 204, 96, 3)
-c.text(214, 82, "g", GRN, 18, italic=True)
+c.text(NX + 16, Y_NUT + 5, "chậu hoa", size=14, weight="600")
+c.arr("g", "g", 300, 52, 300, 96, 3)
+c.text(310, 82, "g", GRN, 18, italic=True)
 ERR += [] if near((Y_T1 - Y_NUT) / (Y_SAN - Y_NUT), 0.25) else ["f4: vị trí t − 1 sai tỉ lệ"]
 ERR += [] if c.arrows["g"][3] > c.arrows["g"][1] and c.arrows["duong"][3] > c.arrows["duong"][1] else ["f4: g / chiều dương phải hướng xuống"]
 fig4 = c.svg("Chậu hoa treo ở móc ban công cao 20 m so với mặt đất, rơi thẳng xuống; trục dương hướng xuống; đánh dấu vị trí lúc t trừ 1 giây và lúc chạm đất, ngoặc 'giây cuối' chưa biết",
              "Hình 4. Chậu hoa tuột khỏi móc ở ban công cao 20 m. Chiều dương hướng xuống, gốc tại móc. Quãng \"giây cuối\" là từ vị trí lúc <em>t</em> − 1 tới mặt đất.")
-ERR += c.check(obstacles=[(NX - 9, Y_NUT - 9, NX + 9, Y_NUT + 9), (NX - 9, Y_T1 - 9, NX + 9, Y_T1 + 9), (196, 52, 212, 96)])
+ERR += c.check(obstacles=[(NX - 9, Y_NUT - 9, NX + 9, Y_NUT + 9), (NX - 9, Y_T1 - 9, NX + 9, Y_T1 + 9), (292, 52, 308, 96), (40, 26, 330, 36)])
 
 if ERR:
     print("\n".join("✗ " + e for e in ERR)); sys.exit(1)
@@ -453,5 +449,9 @@ tn = [
                         "diem_nhan": "Thanh trượt tau: đặt tau = 0 thì mọi hàng ra đúng 9,8; tau > 0 thì hàng s nhỏ lệch nhiều nhất."}},
 ]
 for d in tn:
-    (ROOT / "content/thi-nghiem" / f"{d['id']}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
+    fp = ROOT / "content/thi-nghiem" / f"{d['id']}.json"
+    if fp.exists():                                   # giữ trường ngoài script (vd. "video" do chen-video thêm)
+        cu = json.loads(fp.read_text(encoding="utf8"))
+        d.update({k: v for k, v in cu.items() if k not in d})
+    fp.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
 print(f"ok theory.html {len(h)} ký tự · 4 hình · {phut} phút · 3 file thí nghiệm · G3 = {G3} · T_DRAG = {T_DRAG}")
