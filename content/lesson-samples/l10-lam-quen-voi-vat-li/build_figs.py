@@ -4,10 +4,11 @@ và ghi 3 file thí nghiệm content/thi-nghiem/tn-l10-lam-quen-0{1,2,3}.json (s
 Có lớp kiểm hình học: hộp nhãn không chồng nhau, không vượt viewBox, chữ nằm gọn trong hộp.
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
 import json, math, pathlib, re, subprocess, sys
-from svg_lib import RED, BLUE, ORG, GRN, wrap
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+sys.path.insert(0, str(ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 
 
@@ -22,19 +23,16 @@ def vp(x, nd=2):  # số thập phân ngoài $…$: dấu phẩy
 class Canvas:
     def __init__(self, name, w, h):
         self.name, self.w, self.h = name, w, h
-        self.body, self.labels, self.markers, self.arrows, self.boxes = "", [], set(), {}, []
+        self.body, self.labels, self.arrows, self.boxes = "", [], {}, []
 
     def line(self, x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
         d = f' stroke-dasharray="{dash}"' if dash else ""
         self.body += f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{c}" stroke-width="{w}"{d} opacity="{op}"/>'
 
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11):
-        L = math.hypot(x2 - x1, y2 - y1)
-        ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}" '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        """Thân thẳng tới đúng đỉnh (x2,y2) + đầu V 30° (chevron) — không marker tam giác."""
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"/>'
+                      + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], w, head))
         self.arrows[tag] = (x1, y1, x2, y2)
 
     def text(self, x, y, s, c="currentColor", size=14, anchor="start", weight="700", box=None):
@@ -52,11 +50,7 @@ class Canvas:
         self.body += f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>'
 
     def defs(self):
-        out = "<defs>"
-        for c, hd in sorted(self.markers):
-            out += (f'<marker id="{self.name}-{c}{hd}" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="{hd}" markerHeight="{hd}" '
-                    f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{COL[c]}"/></marker>')
-        return out + "</defs>"
+        return ""
 
     def check(self):
         errs = []
@@ -182,8 +176,9 @@ FLOOR = Y0 + H * SCALE + 12
 c = Canvas("f3", 420, 262)
 c.text(210, 20, "Ảnh chụp cùng lúc t = 0,4 s (minh hoạ)", size=14, anchor="middle")
 c.line(8, Y0, 412, Y0, "currentColor", 1.5, "5 4", .55)
-c.text(8, Y0 - 6, "lúc buông", size=14, weight="600")
+c.text(412, Y0 + 18, "lúc buông", size=14, anchor="end", weight="600")
 c.line(8, FLOOR, 412, FLOOR, "currentColor", 3)
+c.text(412, FLOOR - 8, "sàn", size=14, anchor="end", weight="600")
 COLX = [70, 210, 350]
 yb = lambda d: Y0 + d * SCALE
 def book(cx, d):
@@ -195,8 +190,15 @@ book(COLX[0] - 24, d_book); flat(COLX[0] + 26, d_flat)
 # (b) giấy nằm trên sách
 book(COLX[1], d_book); flat(COLX[1], d_book - 3 / SCALE)
 # (c) giấy vo tròn cạnh sách
-book(COLX[2] - 24, d_book)
-c.body += f'<circle cx="{COLX[2] + 26}" cy="{yb(d_vo) + 7:.1f}" r="7" fill="rgba(56,189,248,.35)" stroke="{BLUE}" stroke-width="2.5"/>'
+book(COLX[2] - 30, d_book)
+c.body += f'<circle cx="{COLX[2] + 30}" cy="{yb(d_vo) + 7:.1f}" r="7" fill="rgba(56,189,248,.35)" stroke="{BLUE}" stroke-width="2.5"/>'
+# nhãn tên vật ngay dưới từng vật (đọc được vật nào là sách, vật nào là giấy)
+YL = yb(d_book) + 32
+c.text(COLX[0] - 24, YL, "sách", ORG, 14, "middle")
+c.text(COLX[0] + 26, yb(d_flat) + 22, "giấy", size=14, anchor="middle")
+c.text(COLX[1], YL, "giấy trên sách", size=14, anchor="middle")
+c.text(COLX[2] - 30, YL, "sách", ORG, 14, "middle")
+c.text(COLX[2] + 30, YL, "giấy vo", BLUE, 14, "middle")
 CAP = [("Thả riêng:", "sách tới trước"), ("Giấy nằm trên", "sách: cùng rơi"), ("Giấy vo tròn:", "chỉ chậm chút")]
 for x, (a, b) in zip(COLX, CAP):
     c.text(x, 232, a, size=14, anchor="middle")

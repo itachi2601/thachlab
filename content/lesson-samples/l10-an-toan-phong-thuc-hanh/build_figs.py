@@ -4,10 +4,11 @@ và ghi 3 file thí nghiệm content/thi-nghiem/tn-l10-an-toan-0{1,2,3}.json (s�
 Có lớp kiểm hình học: hộp nhãn không chồng nhau, không vượt viewBox.
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
 import json, math, pathlib, re, subprocess, sys
-from svg_lib import RED, BLUE, ORG, GRN, wrap
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+sys.path.insert(0, str(ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 
 
@@ -22,8 +23,8 @@ def vn(x, nd=2):
 
 
 class Canvas:
-    def __init__(self, name, w, h):
-        self.name, self.w, self.h = name, w, h
+    def __init__(self, name, w, h, y0=0):
+        self.name, self.w, self.h, self.y0 = name, w, h, y0
         self.body, self.labels, self.markers, self.arrows = "", [], set(), {}
 
     def add(self, s):
@@ -37,14 +38,10 @@ class Canvas:
         self.body += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"/>'
 
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11, dash=""):
-        """Mũi tên có ĐỈNH đúng tại (x2,y2); marker cỡ cố định (userSpaceOnUse)."""
-        L = math.hypot(x2 - x1, y2 - y1)
-        ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        """Mũi tên có ĐỈNH đúng tại (x2,y2): thân + đầu V 30° (chevron), không marker."""
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d}/>'
+                      + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], w, head))
         self.arrows[tag] = (x1, y1, x2, y2)
 
     def text(self, x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -56,18 +53,14 @@ class Canvas:
         self.labels.append((plain, x0, y - 0.78 * size, x0 + wdt, y + 0.22 * size, size))
 
     def defs(self):
-        out = "<defs>"
-        for c, hd in sorted(self.markers):
-            out += (f'<marker id="{self.name}-{c}{hd}" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="{hd}" markerHeight="{hd}" '
-                    f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{COL[c]}"/></marker>')
-        return out + "</defs>"
+        return ""
 
     def check(self):
         errs = []
         for i, a in enumerate(self.labels):
             if a[5] < 13 and not a[0].isdigit():
                 errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 13")
-            if a[1] < 2 or a[3] > self.w - 2 or a[2] < 0 or a[4] > self.h:
+            if a[1] < 2 or a[3] > self.w - 2 or a[2] < self.y0 or a[4] > self.y0 + self.h:
                 errs.append(f"{self.name}: nhãn '{a[0]}' vượt viewBox {a[1:5]}")
             for b in self.labels[i + 1:]:
                 if a[1] < b[3] and b[1] < a[3] and a[2] < b[4] and b[2] < a[4]:
@@ -75,7 +68,7 @@ class Canvas:
         return errs
 
     def svg(self, label, cap, exp=None):
-        s = wrap(f"0 0 {self.w} {self.h}", label, self.defs() + self.body, cap)
+        s = wrap(f"0 {self.y0} {self.w} {self.h}", label, self.defs() + self.body, cap)
         if exp:
             s = s.replace('<figure class="fig" data-tl="1">', f'<figure class="fig" data-tl="1" data-exp="{exp}">', 1)
         return s
@@ -105,7 +98,7 @@ assert (TN[1] - 25, TN[2] - 25) == (16, 4)                  # "gấp đôi kho�
 assert (TN[2] - 25) * 4 == TN[1] - 25
 
 # ================= Hình 1: bàn thực hành, dây cuối cùng chưa nối (không lộ đáp án)
-c = Canvas("f1", 420, 230)
+c = Canvas("f1", 420, 152, y0=74)
 GY = 190
 c.line(10, GY, 410, GY, "currentColor", 2.5)
 c.add(f'<rect x="20" y="100" width="110" height="90" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/>')
@@ -120,11 +113,12 @@ c.add(f'<path d="M328,150 Q334,128 340,140 Q346,152 352,130" fill="none" stroke=
 c.add('<rect x="328" y="166" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"/>')
 c.text(340, 214, "bóng đèn", size=14, anchor="middle")
 # dây + (nối bóng), dây − (đầu tự do)
-c.add(f'<polyline points="130,148 200,148 200,140 314,140" fill="none" stroke="{RED}" stroke-width="3"/>')
-c.add(f'<polyline points="130,172 232,172 262,152" fill="none" stroke="{BLUE}" stroke-width="3"/>')
-c.dot(262, 152, 5, BLUE)
-c.line(262, 70, 262, 146, "currentColor", 1.5, "4 4")
-c.text(176, 62, "đầu dây chưa nối", size=14)
+# dây đỏ đi vòng phía trên, vào đỉnh bóng (340,114) -> chừa khoảng trống cho nhãn, đường dẫn nhãn không cắt dây
+c.add(f'<polyline points="130,148 150,148 150,100 340,100 340,114" fill="none" stroke="{RED}" stroke-width="3" stroke-linejoin="round"/>')
+c.add(f'<polyline points="130,172 232,172 262,156" fill="none" stroke="{BLUE}" stroke-width="3"/>')
+c.dot(262, 156, 5, BLUE)
+c.line(262, 138, 262, 149, "currentColor", 1.5, "3 3")
+c.text(166, 132, "đầu dây chưa nối", size=14)
 fig1 = c.svg("Bàn thực hành: bộ nguồn đang bật có đèn báo sáng, cực dương đã nối với bóng đèn, dây từ cực âm còn một đầu tự do chưa nối vào bóng đèn.",
              "Hình 1. Bàn thực hành lúc còn một đầu dây chưa nối: bộ nguồn đã bật, bóng đèn đã nối một đầu.")
 ERR += c.check()

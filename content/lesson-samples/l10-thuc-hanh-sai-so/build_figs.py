@@ -6,7 +6,8 @@ Có lớp kiểm hình học: hộp nhãn không chồng nhau, không vượt vi
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
 import json, math, pathlib, re, subprocess, sys
 from fractions import Fraction
-from svg_lib import RED, BLUE, ORG, GRN, wrap
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # svg_lib của skill (đầu V 30°, không marker)
 
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -14,7 +15,7 @@ ROOT = HERE.parents[2]
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 
 
-def sub(base, s, size=11):
+def sub(base, s, size=12):
     return f'{base}<tspan baseline-shift="sub" font-size="{size}">{s}</tspan>'
 
 
@@ -27,7 +28,7 @@ def vn(x, nd=2):
 class Canvas:
     def __init__(self, name, w, h):
         self.name, self.w, self.h = name, w, h
-        self.body, self.labels, self.markers, self.arrows = "", [], set(), {}
+        self.body, self.labels, self.arrows = "", [], {}
 
     def add(self, s):
         self.body += s
@@ -40,14 +41,11 @@ class Canvas:
         self.body += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"/>'
 
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11, dash=""):
-        """Mũi tên có ĐỈNH đúng tại (x2,y2); marker cỡ cố định (userSpaceOnUse)."""
-        L = math.hypot(x2 - x1, y2 - y1)
-        ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        """Mũi tên có ĐỈNH đúng tại (x2,y2): thân thẳng + đầu V 30° (chevron), không marker tam giác."""
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        ww = min(w, 2.8)
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+                      + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, head))
         self.arrows[tag] = (x1, y1, x2, y2)
 
     def text(self, x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -59,11 +57,7 @@ class Canvas:
         self.labels.append((plain, x0, y - 0.78 * size, x0 + wdt, y + 0.22 * size, size))
 
     def defs(self):
-        out = "<defs>"
-        for c, hd in sorted(self.markers):
-            out += (f'<marker id="{self.name}-{c}{hd}" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="{hd}" markerHeight="{hd}" '
-                    f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{COL[c]}"/></marker>')
-        return out + "</defs>"
+        return ""
 
     def check(self):
         errs = []
@@ -218,8 +212,8 @@ ERR += c.check()
 # ================= Hình 3: sai số hệ thống (lệch) và sai số ngẫu nhiên (tản)
 c = Canvas("f3", 420, 230)
 XT = 210
-RA = [262, 277, 291, 306, 322]
-RB = [150, 185, 205, 240, 268]
+RA = [254, 270, 310, 326, 342]   # trung bình 300,4 rơi vào khe giữa hai chấm (vạch đỏ không bị chấm che)
+RB = [138, 174, 230, 246, 262]   # trung bình 210 = giá trị thật, không chấm nào che vạch đỏ
 mA, mB = sum(RA) / len(RA), sum(RB) / len(RB)
 YA, YB = 100, 190
 c.line(20, YA, 400, YA, "currentColor", 2, op=.35)
@@ -239,9 +233,10 @@ c.text((XT + mA) / 2, 146, "vẫn lệch", ORG, 14, anchor="middle")
 # kiểm: hàng A lệch hẳn một phía; hàng B tản hai phía quanh giá trị thật và trung bình sát giá trị thật; mũi tên chỉ về phía trung bình A
 ERR += [] if all(x > XT for x in RA) and mA - XT > 40 else ["f3: hàng A phải lệch hẳn một phía"]
 ERR += [] if any(x < XT for x in RB) and any(x > XT for x in RB) and abs(mB - XT) < 2 else ["f3: hàng B phải tản hai phía, trung bình sát giá trị thật"]
+ERR += [] if all(abs(x - m) >= 8 for x in RA for m in [mA]) and all(abs(x - mB) >= 8 for x in RB) else ["f3: chấm che vạch trung bình"]
 ERR += [] if c.arrows["gap"][2] > c.arrows["gap"][0] and abs(c.arrows["gap"][2] - mA) < 3 else ["f3: mũi tên 'vẫn lệch' sai chiều"]
 fig3 = c.svg("Hai hàng năm lần đo quanh đường nét đứt giá trị thật: hàng trên cả năm chấm nằm lệch về bên phải nên trung bình vẫn lệch; hàng dưới các chấm tản hai bên và trung bình trùng giá trị thật",
-             "Hình 3. Năm lần đo (chấm cam) so với giá trị thật (nét đứt; số liệu minh hoạ). Vạch đỏ là trung bình. Hàng trên: sai số hệ thống, trung bình vẫn lệch. Hàng dưới: sai số ngẫu nhiên, trung bình sát giá trị thật.")
+             "Hình 3. Năm lần đo (chấm cam) so với giá trị thật (nét đứt). Vạch đỏ là trung bình. Hàng trên: sai số hệ thống, trung bình vẫn lệch. Hàng dưới: sai số ngẫu nhiên, trung bình sát giá trị thật. Số liệu minh hoạ.")
 ERR += c.check()
 
 if ERR:
