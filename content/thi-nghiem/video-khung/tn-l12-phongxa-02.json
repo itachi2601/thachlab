@@ -18,7 +18,7 @@
     {
       "khoa": "dung_cu",
       "giay": 8.9,
-      "chu": "Ống Geiger, máy đếm, đồng hồ; đo phông nền trước, rồi đếm mỗi 5 phút."
+      "chu": "Ống Geiger, máy đếm, đồng hồ; nguồn có chu kì bán rã ngắn, đặt cố định cách ống đếm một khoảng không đổi.\nĐo phông nền 10 phút trước (23 xung/phút), rồi mỗi 5 phút đếm 1 phút, làm 25 phút.\nCoi phông nền không đổi, nguồn chỉ có một chất phóng xạ; mỗi số đọc trừ phông rồi lấy tỉ số hai lần liên tiếp."
     },
     {
       "khoa": "quan_sat",
@@ -28,12 +28,12 @@
     {
       "khoa": "rut_ra",
       "giay": 21.6,
-      "chu": "Cứ 5 phút nhịp đếm còn khoảng một nửa."
+      "chu": "Cứ 5 phút nhịp đếm còn khoảng một nửa: T ≈ 5 phút.\nXác suất phân rã của mỗi hạt nhân không đổi, hạt chưa phân rã ít dần nên nhịp đếm giảm.\nQuên trừ phông thì nhịp còn lại giảm chậm hơn → T đọc ra lớn hơn thật; giảm bằng đo phông lâu rồi trừ, đếm lâu ở mỗi mốc."
     },
     {
       "khoa": "chua_noi",
       "giay": 35.3,
-      "chu": "Không cho biết hạt nhân nào sẽ phân rã ở phút tiếp theo: phép đo chỉ cho số trung bình của cả mẫu."
+      "chu": "Không cho biết hạt nhân nào sẽ phân rã ở phút tiếp theo: phép đo chỉ cho số trung bình của cả mẫu. Cũng chưa giải thích vì sao mỗi chất có T khác nhau."
     }
   ],
   "dung_dua": {

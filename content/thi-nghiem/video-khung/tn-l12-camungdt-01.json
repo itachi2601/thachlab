@@ -18,7 +18,7 @@
     {
       "khoa": "dung_cu",
       "giay": 8.9,
-      "chu": "Cuộn 600 vòng nối điện kế; cắm nam châm nhanh, chậm, để yên, rút ra."
+      "chu": "Cuộn 600 vòng nối kín với điện kế nhạy (số 0 ở giữa, sai số ±0,5 mA, không pin); thanh nam châm thẳng đã biết cực.\nĐưa cực Bắc vào với v = 0,1; 0,2; 0,4 m/s, giữ yên, rồi rút ra với 0,2 m/s.\nCoi nam châm chuyển động đều; bỏ qua từ trường Trái Đất."
     },
     {
       "khoa": "quan_sat",
@@ -28,12 +28,12 @@
     {
       "khoa": "rut_ra",
       "giay": 23.5,
-      "chu": "Dòng cảm ứng chỉ có khi từ thông biến thiên; biến thiên càng nhanh thì dòng càng lớn. Rút ra thì kim lệch ngược lại."
+      "chu": "Dòng cảm ứng chỉ có khi từ thông biến thiên; biến thiên càng nhanh thì dòng càng lớn. Rút ra thì kim lệch ngược lại.\ni tỉ lệ thuận với v trong phạm vi sai số: i tỉ lệ thuận v trong phạm vi sai số.\nSai số có chiều: kim có quán tính nên khi đưa nhanh, số chỉ lớn nhất nhỏ hơn dòng cực đại thật; giảm bằng cách lặp mỗi tốc độ 3 lần, lấy trung bình."
     },
     {
       "khoa": "chua_noi",
       "giay": 36.2,
-      "chu": "Chưa cho biết chiều dòng điện (đó là định luật Lenz). Chưa thử đổi diện tích S."
+      "chu": "Chưa cho biết chiều dòng điện (đó là định luật Lenz). Chưa thử đổi diện tích S. (đề 2026: thanh kim loại trượt trên hai ray)"
     }
   ],
   "dung_dua": {
