@@ -4,10 +4,10 @@ và ghi 3 file thí nghiệm content/thi-nghiem/tn-l10-do-g-0{1,2,3}.json (số 
 Có lớp kiểm hình học: nhãn không chồng nhau / không vượt viewBox / không bị nét cắt xuyên; mũi tên đúng chiều.
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
 import json, math, pathlib, re, subprocess, sys
-from svg_lib import RED, BLUE, ORG, GRN, wrap
-
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+sys.path.insert(0, str(ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))   # svg_lib của skill (có chevron đầu V)
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 
 
@@ -33,13 +33,11 @@ class Canvas:
         self.body += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"/>'
 
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11, dash=""):
-        L = math.hypot(x2 - x1, y2 - y1)
-        ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        # đầu V 30° (chevron), không marker tam giác (thầy chốt 7/10/2026); thân ≤ 2,8
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        ww = min(w, 2.8)
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+                      + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, head))
         self.arrows[tag] = (x1, y1, x2, y2)
         self.segs.append((x1, y1, x2, y2))
 
@@ -175,12 +173,12 @@ c.line(20, 290, 120, 290, "currentColor", 6)
 c.line(60, 53, 140, 53, "currentColor", 5)
 c.add(f'<rect x="140" y="40" width="60" height="26" rx="3" fill="rgba(248,113,113,.25)" stroke="currentColor" stroke-width="2"/>')
 c.add(f'<circle cx="170" cy="77" r="11" fill="{ORG}" stroke="currentColor" stroke-width="1.5"/>')
-c.add('<rect x="146" y="232" width="10" height="40" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="1.5"/>'
-      '<rect x="184" y="232" width="10" height="40" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="1.5"/>'
-      '<rect x="146" y="262" width="48" height="10" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="1.5"/>')
-c.line(140, 246, 200, 246, RED, 2.5, "6 4", obstacle=False)      # tia sáng
+c.add('<path d="M146,232 H156 V262 H184 V232 H194 V272 H146 Z" fill="currentColor" fill-opacity=".3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>')   # cổng quang: một khối chữ U liền
+c.line(60, 254, 146, 254, "currentColor", 4)                     # tay kẹp: cổng quang gắn vào giá đỡ
+c.line(156, 246, 184, 246, RED, 2.5, "5 3", obstacle=False)      # tia sáng: chỉ nằm giữa hai càng cổng quang
 c.line(172, 88, 250, 88, "currentColor", 1.4, "4 4", .55, obstacle=False)
-c.line(200, 246, 250, 246, "currentColor", 1.4, "4 4", .55, obstacle=False)
+c.line(194, 246, 250, 246, "currentColor", 1.4, "4 4", .55, obstacle=False)
+ok(156 < 170 - 11 and 170 + 11 < 184, "f1: bi (r = 11, tâm x = 170) phải lọt giữa hai càng cổng quang (156–184)")
 c.arr("s1", "k", 250, 167, 250, 88, 2.2, 10)
 c.arr("s2", "k", 250, 167, 250, 246, 2.2, 10)
 c.text(262, 171, "s", size=18, italic=True)
@@ -199,8 +197,8 @@ x1_, y1_, x2_, y2_ = c.arrows["s1"]
 ok(y2_ < y1_, "f1: mũi tên s1 phải hướng lên tới mép dưới bi")
 ok(c.arrows["s2"][3] > c.arrows["s2"][1], "f1: mũi tên s2 phải hướng xuống tới tia sáng")
 ok(abs(c.arrows["s1"][3] - 88) < 1e-9 and abs(c.arrows["s2"][3] - 246) < 1e-9, "f1: đầu mũi tên s phải tại mép dưới bi và tia sáng")
-fig1 = c.svg("Sơ đồ bố trí đo gia tốc rơi tự do: giá đỡ thẳng đứng, nam châm điện giữ viên bi thép ở trên, cổng quang ở dưới với tia sáng nét đứt đỏ, hai dây nối tới đồng hồ hiện số; mũi tên hai đầu s đo từ mép dưới bi tới tia sáng",
-             "Hình 1. Bố trí thí nghiệm. Ngắt điện nam châm: bi rơi và đồng hồ bắt đầu đếm; bi che tia sáng (nét đỏ đứt) thì đồng hồ dừng. <em>s</em> đo từ mép dưới bi (lúc còn ở nam châm) tới tia sáng.")
+fig1 = c.svg("Sơ đồ bố trí đo gia tốc rơi tự do: giá đỡ thẳng đứng, nam châm điện giữ viên bi thép ở trên, cổng quang gắn vào giá bằng tay kẹp, tia sáng nét đứt đỏ giữa hai càng, hai dây nối tới đồng hồ hiện số; mũi tên hai đầu s đo từ mép dưới bi tới tia sáng",
+             "Hình 1. Bố trí thí nghiệm.<br>Ngắt điện nam châm: bi rơi, đồng hồ bắt đầu đếm.<br>Bi che tia sáng (nét đỏ đứt): đồng hồ dừng.<br><em>s</em> đo từ mép dưới bi (lúc còn ở nam châm) tới tia sáng.")
 ERR += c.check()
 
 # ================= Hình 2: đồ thị s theo t²
