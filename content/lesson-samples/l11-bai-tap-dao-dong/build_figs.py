@@ -94,12 +94,13 @@ fig1 = wrap(f"0 0 {W1} {H1}", "Đồng hồ quả lắc treo tường: quả l�
 # =========================== Hình 2: đồ thị x–t, x = A cos(2πt/T)
 W2, H2 = 420, 262
 b = ""
-X0, Y0 = 52, 128
+X0, Y0 = 78, 128
 AP = 68          # px ứng với A
-TP = 150         # px ứng với T
+TP = 146         # px ứng với T
 XT = lambda t: X0 + t * TP
 XV = lambda v: Y0 - v * AP
 curve = [(XT(i / 200 * 2.2), XV(math.cos(2 * math.pi * i / 200 * 2.2))) for i in range(201)]
+curve = [(x, y) for x, y in curve if x <= 392]
 # trục
 b += vec(X0, Y0, 404, Y0, "currentColor", 1.6)
 b += vec(X0, H2 - 18, X0, 18, "currentColor", 1.6)
@@ -117,14 +118,19 @@ for t in (0, 1, 2):
 for t in (0.5, 1.5):
     assert abs(math.cos(2 * math.pi * t) + 1) < 1e-9
     b += dot(XT(t), XV(-1), 4.5, ORG)
-# A: từ trục tới đỉnh, ở t = 0 bên trái trục tung? -> đặt ở t = 0,25T bên phải trục: dùng x = X0+18
-xa = X0 + 20
-b += dvec(xa, Y0, xa, XV(1) + 1, RED, 2)
-b += lab(2, xa + 8, Y0 - 30, "A", RED, "start", "700")
+# A: đặt BÊN TRÁI trục tung (đường cong chỉ ở t ≥ 0) để mũi tên và nhãn không cắt đồ thị
+xa = X0 - 16
+b += line(xa - 6, XV(1), X0, XV(1), "currentColor", 1, "4 4", .45) + line(xa - 6, Y0, X0, Y0, "currentColor", 1, "4 4", .45)
+b += dvec(xa, Y0, xa, XV(1), RED, 2)
+b += lab(2, xa - 8, (Y0 + XV(1)) / 2 + 6, "A", RED, "end", "700")
+assert min(x for x, _ in curve) >= X0 > xa
 # 2A: đỉnh t = T (x=pk1) xuống đáy t = 1,5T
 x2a = (pk1 + tr1) / 2
 b += dvec(x2a, XV(1), x2a, XV(-1), BLUE, 2)
-b += lab(2, x2a + 8, Y0 + 26, "2A", BLUE, "start", "700")
+b += lab(2, x2a - 8, Y0 + 30, "2A", BLUE, "end", "700")
+# góc dưới-trái của điểm cắt trục: đường cong ở x < x2a (trong nửa chu kì quanh đó) nằm TRÊN trục ⇒ nhãn không chạm
+for t in [1.0 + i / 100 * 0.25 for i in range(101)]:
+    assert XV(math.cos(2 * math.pi * t)) <= Y0 + 1e-9
 # T: đỉnh → đỉnh (trên đỉnh)
 yT = XV(1) - 18
 b += line(pk1, XV(1) - 4, pk1, yT - 6, "currentColor", 1, "3 3", .6) + line(pk2, XV(1) - 4, pk2, yT - 6, "currentColor", 1, "3 3", .6)
@@ -180,9 +186,9 @@ fig3 = wrap(f"0 0 {W3} {H3}", "Vòng tròn pha bán kính A: từ O tới A/2 đ
             b, "Hình 3. M quay ngược chiều kim đồng hồ, góc $2\\pi$ ứng với $T$.<br>Từ O tới $A/2$: quét $30^\\circ$, mất $T/12$.<br>Từ $A/2$ ra biên: quét $60^\\circ$, mất $T/6$.")
 
 # =========================== Hình 4 (trong lời giải): pha −π/3 → π/2
-W4, H4 = 420, 276
+W4, H4 = 420, 284
 b = ""
-CY4 = 142
+CY4 = 150
 def Q(deg, r=RR):
     a = math.radians(deg)
     return CX + r * math.cos(a), CY4 - r * math.sin(a)
@@ -197,12 +203,12 @@ b += dot(*m0, 6, RED) + dot(*m1, 6, RED)
 b += line(m0[0], m0[1], m0[0], CY4, "currentColor", 1.3, "4 4", .7)
 assert abs(m0[0] - (CX + 4 / 8 * RR)) < 1e-9     # x0 = 4 cm = A/2
 assert abs(m1[0] - CX) < 1e-9                   # pha π/2 ⇒ x = 0
-for xv, s in ((0, "0"), (4, "4"), (8, "8 cm")):
+for xv, s, dx in ((0, "0", 6), (4, "4", 6), (8, "8 cm", 12)):
     x = CX + xv / 8 * RR
     b += line(x, CY4 - 5, x, CY4 + 5, "currentColor", 2)
-    b += lab(4, x + 6, CY4 - 10, s, "currentColor", "start", "700")
+    b += lab(4, x + dx, CY4 - 10, s, "currentColor", "start", "700")
 b += lab(4, m0[0] + 12, m0[1] + 16, "t = 0", RED, "start", "700")
-b += lab(4, m1[0] + 12, m1[1] - 6, "qua O lần đầu", RED, "start", "700")
+b += lab(4, m1[0], m1[1] - 18, "qua O lần đầu", RED, "middle", "700")   # trên chấm, tránh đầu mũi tên
 b += lab(4, CX, CY4 + 52, "Δφ = 5π/6", "currentColor", "middle", "700").replace("<text ", '<text font-family="Georgia, \'Times New Roman\', serif" ', 1)
 check(4, W4, H4)
 fig4 = wrap(f"0 0 {W4} {H4}", "Vòng tròn pha: M đi từ pha âm pi phần ba ở nửa dưới, qua biên dương, tới pha pi phần hai ở đỉnh, quét năm pi phần sáu",

@@ -6,6 +6,31 @@ from _margin_fig import margin_figs
 import math
 from svg_lib import *
 
+# Đầu mũi tên V 30° (thầy chốt 7/10/2026), không marker tam giác. Bản sao chevron của svg_lib skill.
+def chevron(x, y, dx, dy, c="currentColor", w=2, L=12, ang=30):
+    n = math.hypot(dx, dy) or 1
+    ux, uy = dx / n, dy / n
+    t = math.radians(ang)
+    pts = []
+    for sg in (1, -1):
+        c_, s_ = math.cos(t), math.sin(sg * t)
+        bx, by = ux * c_ - uy * s_, ux * s_ + uy * c_
+        pts.append((x - L * bx, y - L * by))
+    (ax, ay), (bx, by) = pts
+    return (f'<path d="M{ax:.1f},{ay:.1f} L{x:.1f},{y:.1f} L{bx:.1f},{by:.1f}" fill="none" stroke="{c}" '
+            f'stroke-width="{w}" stroke-linejoin="miter" stroke-miterlimit="10"/>')
+
+def defs(prefix):
+    return ""
+
+def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
+    col = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}[c]
+    ww = min(w, 2.8)
+    L = max(6, min(3.4 * ww + 3, 0.5 * math.hypot(x2 - x1, y2 - y1)))
+    d = f' stroke-dasharray="{dash}"' if dash else ""
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{col}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, col, ww, L))
+
 def poly(pts, c, w=2.2, dash=""):
     d = f' stroke-dasharray="{dash}"' if dash else ""
     return (f'<polyline fill="none" stroke="{c}" stroke-width="{w}" stroke-linejoin="round"{d} points="'
@@ -23,37 +48,65 @@ def fig(vb, label, body, cap, exp=None):
                       f'<figure class="fig" data-tl="1" data-exp="{exp}">', 1)
     return s
 
-# ---- Hình 1: xích đu, nhún cùng chiều chỉ một phần nhịp
-# Gần đáy, đang đi sang phải. Mũi xanh = chiều đu, mũi đỏ = lực nhún, song song.
-b = defs("f1")
-b += line(70, 26, 200, 26, "currentColor", 4)
-b += line(128, 26, 128, 34, "currentColor", 2.5)
-pivot_x, pivot_y, L, ang = 128.0, 34.0, 158.0, math.radians(8)
-sx = pivot_x + L * math.sin(ang)
-sy = pivot_y + L * math.cos(ang)
-# cung quỹ đạo mờ, chỉ phía trong, không đè mũi tên
-arc = []
-for deg in range(-42, -4, 3):
+# ---- Hình 1: xích đu đang ĐI XUỐNG (bên trái điểm treo, đang sang phải), nhún cùng chiều chỉ một phần nhịp.
+# Góc lệch θ < 0 (bên trái) + đi sang phải ⇒ θ tăng về 0 ⇒ đang đi xuống về đáy (khớp mở bài "nhún lúc đu đi xuống").
+PX, PY, L1 = 160.0, 30.0, 170.0
+
+def on_arc(deg, r=L1):
     a = math.radians(deg)
-    arc.append((pivot_x + L * math.sin(a), pivot_y + L * math.cos(a)))
-b += poly(arc, "currentColor", 1.3, "4 4")
-b += line(pivot_x, pivot_y, sx - 14, sy, "currentColor", 2.2)
-b += (f'<rect x="{sx - 16:.1f}" y="{sy - 5:.1f}" width="34" height="9" rx="2" '
+    return PX + r * math.sin(a), PY + r * math.cos(a)
+
+TH = -14.0
+sx, sy = on_arc(TH)
+tx, ty = math.cos(math.radians(TH)), -math.sin(math.radians(TH))  # tiếp tuyến chiều θ tăng
+assert tx > 0 and ty > 0, "đang sang phải và đi xuống"
+assert sx < PX, "ghế bên trái điểm treo"
+b = ""
+b += line(100, 24, 220, 24, "currentColor", 4)
+b += line(PX, 24, PX, PY, "currentColor", 2.5)
+# vị trí lúc trước (mờ): cao hơn, bên trái
+gx, gy = on_arc(-36)
+b += line(PX, PY, gx, gy - 4, "currentColor", 1.6, "", 0.35)
+b += (f'<rect x="{gx - 17:.1f}" y="{gy - 4:.1f}" width="34" height="8" rx="2" fill="none" '
+      f'stroke="currentColor" stroke-width="1.4" opacity="0.35"/>')
+# đường đi: cung nét đứt bán kính lớn hơn (dưới ghế), đầu V chỉ chiều đang đi
+arc = [on_arc(d, 190) for d in range(-34, -17, 2)]
+b += poly(arc, "currentColor", 1.5, "4 4")
+ex, ey = on_arc(-18, 190)
+b += chevron(ex, ey, math.cos(math.radians(-18)), -math.sin(math.radians(-18)), "currentColor", 1.6, 9)
+# dây + ghế
+b += line(PX, PY, sx, sy - 4, "currentColor", 2.2)
+b += (f'<rect x="{sx - 18:.1f}" y="{sy - 4:.1f}" width="36" height="8" rx="2" '
       f'fill="{ORG}" stroke="currentColor" stroke-width="1.4"/>')
-hx, hy = sx + 2, sy - 42
-b += f'<circle cx="{hx:.1f}" cy="{hy:.1f}" r="11" fill="none" stroke="currentColor" stroke-width="2.2"/>'
-b += line(hx, hy + 11, sx + 2, sy - 5, "currentColor", 2.2)
-# mũi cùng chiều, nằm bên phải người, không cắt dây
-b += arrow("f1", "g", 196, 132, 360, 132, 3.2)
-b += text(204, 116, "chiều đang đi", GRN, 13, "start", "700")
-b += arrow("f1", "r", 196, 158, 318, 158, 3.2)
-b += text(204, 180, "nhún cùng chiều", RED, 13, "start", "700")
-b += text(196, 208, "chỉ một phần nhịp", "currentColor", 13, "start", "600")
-b += text(196, 228, "không đẩy suốt vòng", "currentColor", 13, "start", "600")
-fig1 = fig("0 0 440 252",
-           "Xích đu gần đáy đang sang phải: lực nhún cùng chiều chuyển động, chỉ một phần nhịp",
+# người ngồi, mặt hướng sang phải (chiều đi)
+hipx, hipy = sx - 4, sy - 5
+shx, shy = sx - 9, sy - 44
+kx, ky = sx + 13, sy - 9
+fx, fy = sx + 32, sy - 6  # chân duỗi về phía trước, ngang mặt ghế, không chạm dây
+def rope_x(y):
+    return PX + (sx - PX) * (y - PY) / (sy - 4 - PY)
+hand_y = sy - 36
+b += line(hipx, hipy, shx, shy, "currentColor", 3.4).replace("/>", ' stroke-linecap="round"/>')
+b += f'<circle cx="{shx - 1:.1f}" cy="{shy - 13:.1f}" r="10" fill="none" stroke="currentColor" stroke-width="2.4"/>'
+b += line(hipx, hipy, kx, ky, "currentColor", 3.4).replace("/>", ' stroke-linecap="round"/>')
+b += line(kx, ky, fx, fy, "currentColor", 3.4).replace("/>", ' stroke-linecap="round"/>')
+b += line(shx, shy + 4, rope_x(hand_y), hand_y, "currentColor", 2.4)
+# hai mũi tên song song, cùng chiều tiếp tuyến
+g0 = (sx - 6, sy - 24)  # gốc ở thân người
+r0 = (sx + 19, sy + 2)  # gốc lực nhún ở mép ghế (đặt lên xích đu)
+b += arrow("f1", "g", g0[0], g0[1], g0[0] + 120 * tx, g0[1] + 120 * ty, 3)
+b += arrow("f1", "r", r0[0], r0[1], r0[0] + 90 * tx, r0[1] + 90 * ty, 3)
+gy_at = lambda x: g0[1] + (x - g0[0]) * ty / tx
+ry_at = lambda x: r0[1] + (x - r0[0]) * ty / tx
+assert ky - gy_at(kx) > 8 and fy - gy_at(fx) > 8 and ry_at(fx) - fy > 8, "mũi tên không đè chân"
+b += text(g0[0] + 120 * tx + 10, g0[1] + 120 * ty + 5, "chiều đang đi", GRN, 14, "start", "700")
+b += text(r0[0] + 90 * tx + 10, r0[1] + 90 * ty + 8, "nhún cùng chiều", RED, 14, "start", "700")
+b += text(246, 254, "chỉ một phần nhịp", "currentColor", 14, "start", "600")
+b += text(246, 274, "không đẩy suốt vòng", "currentColor", 14, "start", "600")
+fig1 = fig("0 0 440 288",
+           "Xích đu bên trái điểm treo đang đi xuống sang phải: lực nhún cùng chiều chuyển động, chỉ một phần nhịp",
            b,
-           "Hình 1. Xích đu: nhún cùng chiều, chỉ một phần nhịp.",
+           "Hình 1. Xích đu đang đi xuống: nhún cùng chiều, chỉ một phần nhịp.",
            "tn-l11-tatdan-03")
 
 # ---- Hình 2: biên độ giảm, ba môi trường. Cùng A0, T, chỉ đổi beta.
@@ -67,10 +120,11 @@ def xt(t, beta):
 
 def panel(title, beta, col, y_title, y_top, y_bot):
     mid = (y_top + y_bot) / 2
-    out = text(X0, y_title, title, col, 13, "start", "700")
+    out = text(X0, y_title, title, col, 14, "start", "700")
+    out += text(X0 - 10, y_top + 12, "x", "currentColor", 14, "end", "700")
     out += line(X0, y_top, X0, y_bot, "currentColor", 1.3, "", 0.55)
     out += line(X0, mid, X1, mid, "currentColor", 1.2, "", 0.45)
-    out += text(X1 + 6, mid + 4, "t", "currentColor", 12, "start", "600")
+    out += text(X1 + 6, mid + 5, "t", "currentColor", 14, "start", "700")
     n = 240
     pts, env_hi, env_lo = [], [], []
     for i in range(n + 1):
@@ -93,12 +147,12 @@ def panel(title, beta, col, y_title, y_top, y_bot):
     return out
 
 b = ""
-b += text(14, 18, "x", "currentColor", 13, "start", "700")
 b += panel("Không khí — tắt chậm", 0.40, BLUE, 36, 44, 132)
 b += panel("Nước — tắt nhanh hơn", 1.15, ORG, 164, 172, 260)
 b += panel("Dầu nhớt — gần như hết sau một nhịp", 2.8, RED, 292, 300, 388)
-b += text(52, 414, "Đường đứt là biên độ. Càng nhớt, đường càng áp vào trục.", "currentColor", 12, "start", "500")
-fig2 = fig("0 0 440 430",
+b += text(52, 414, "Đường đứt: biên độ.", "currentColor", 14, "start", "600")
+b += text(52, 434, "Càng nhớt, biên độ càng nhanh áp vào trục.", "currentColor", 14, "start", "600")
+fig2 = fig("0 0 440 446",
            "Ba đồ thị li độ theo thời gian: không khí tắt chậm, nước nhanh hơn, dầu nhớt gần như dừng",
            b,
            "Hình 2. Biên độ giảm: không khí chậm, nước nhanh, dầu gần hết sau một nhịp.",
@@ -176,30 +230,79 @@ fig3 = fig("0 0 440 232",
 # Hình 3 thay bằng ảnh OpenStax (28/10/2026, ngoại lệ có chủ đích: ảnh raster), giữ mốc FIG3
 fig3 = '<figure class="fig" data-tl="1" data-exp="tn-l11-tatdan-01"><img src="/assets/openstax/l11-tat-dan-cuong-buc/hinh-duong-cong-huong.webp" alt="Đồ thị biên độ theo tần số ngoại lực với ba mức cản: đỉnh cao và hẹp khi cản nhỏ, thấp và rộng khi cản lớn, đỉnh đúng tại tần số riêng f0" loading="lazy" width="400" height="291"><figcaption>Hình 3. Cộng hưởng: biên độ theo tần số ngoại lực f.<br>Đỉnh đúng tại f₀. Cản nhỏ: cao, hẹp. Cản lớn: thấp, rộng.<br>Small / Medium / Heavy damping = cản nhỏ / vừa / lớn.<br><small>Hình: OpenStax, College Physics 2e, Hình 16.25 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>'
 
-# ---- Hình 4: sơ đồ cầu Tacoma, tự vẽ, không phải ảnh
-b = defs("f4")
-# gió
-for yy in (78, 118, 158):
-    b += arrow("f4", "b", 16, yy, 62, yy, 2.4)
-b += text(16, 64, "gió đều", BLUE, 13, "start", "700")
+# ---- Hình 4: sơ đồ tự vẽ cầu Tacoma (không phải ảnh).
+# Trên: nhìn ngang — mép trước và mép sau lệch ngược nhau, nút xoắn giữa nhịp (dạng xoắn một nút, 1940).
+# Dưới: mặt cắt ngang — gió thổi ngang, mặt cầu xoắn qua lại quanh trục giữa.
+b = ""
+TL, TR, TTOP, GND, DECK = 106.0, 334.0, 56.0, 176.0, 146.0
+TW = 228.0
+b += text(14, 22, "Nhìn ngang", "currentColor", 14, "start", "700")
+# chú giải hai mép (góc trên phải, trên đỉnh trụ)
+b += line(250, 18, 276, 18, RED, 3)
+b += text(282, 23, "mép phía trước", RED, 14, "start", "700")
+b += line(250, 38, 276, 38, ORG, 2.6, "6 4")
+b += text(282, 43, "mép phía sau", ORG, 14, "start", "700")
+assert TTOP > 43 + 8
 # trụ
-b += f'<rect x="78" y="36" width="16" height="150" fill="none" stroke="currentColor" stroke-width="2.2"/>'
-b += f'<rect x="332" y="36" width="16" height="150" fill="none" stroke="currentColor" stroke-width="2.2"/>'
-b += line(70, 186, 364, 186, "currentColor", 1.4, "", 0.4)
-# hai tư thế mặt cầu (xoắn), không giao chữ
-b += line(102, 128, 324, 92, RED, 3.2)
-b += line(102, 100, 324, 148, ORG, 2.4, "7 4")
-b += text(188, 80, "tư thế 1", RED, 12, "start", "700")
-b += text(188, 176, "tư thế 2", ORG, 12, "start", "700")
-# dây treo ngắn, né chữ
-b += line(94, 36, 140, 112, "currentColor", 1.2, "", 0.7)
-b += line(340, 36, 300, 104, "currentColor", 1.2, "", 0.7)
-b += text(168, 214, "mặt cầu xoắn · 1940", "currentColor", 14, "start", "700")
-b += text(168, 234, "sơ đồ tự vẽ, không phải ảnh", "currentColor", 12, "start", "500")
-fig4 = fig("0 0 440 250",
-           "Sơ đồ tự vẽ cầu Tacoma Narrows năm 1940: gió đều, mặt cầu xoắn giữa hai tư thế",
+for x0 in (TL, TR):
+    b += (f'<rect x="{x0 - 6:.1f}" y="{TTOP:.1f}" width="12" height="{GND - TTOP:.1f}" fill="none" '
+          f'stroke="currentColor" stroke-width="2"/>')
+b += line(20, GND, 420, GND, "currentColor", 1.4, "", 0.45)
+# cáp chính: parabol giữa hai đỉnh trụ, nhánh biên xuống neo
+cab = [(TL + TW * i / 40, TTOP + 60 * (1 - ((TW * i / 40 - TW / 2) / (TW / 2)) ** 2)) for i in range(41)]
+assert abs(cab[0][1] - TTOP) < 1e-6 and abs(cab[20][1] - (TTOP + 60)) < 1e-6
+b += poly(cab, "currentColor", 1.8)
+b += line(TL, TTOP, 30, DECK - 4, "currentColor", 1.8)
+b += line(TR, TTOP, 410, DECK - 4, "currentColor", 1.8)
+# mép cầu: nhịp biên phẳng, nhịp giữa lệch ngược nhau theo sin, nút ở giữa nhịp
+def edge(sign):
+    pts = [(30, DECK)]
+    for i in range(61):
+        x = TL + TW * i / 60
+        pts.append((x, DECK + sign * 14 * math.sin(2 * math.pi * (x - TL) / TW)))
+    pts.append((410, DECK))
+    return pts
+front, back = edge(1), edge(-1)
+mid_i = 1 + 30
+assert abs(front[mid_i][1] - DECK) < 1e-6 and abs(back[mid_i][1] - DECK) < 1e-6  # nút giữa nhịp
+# dây treo: từ cáp xuống mép trước (bỏ đoạn sát trụ)
+for i in range(2, 39, 3):
+    x, yc = cab[i]
+    yd = DECK + 14 * math.sin(2 * math.pi * (x - TL) / TW)
+    b += line(x, yc, x, yd, "currentColor", 1, "", 0.55)
+b += poly(back, ORG, 2.6, "6 4")
+b += poly(front, RED, 3)
+# ---- mặt cắt ngang
+Y0 = 206
+b += line(14, Y0, 426, Y0, "currentColor", 1, "3 4", 0.35)
+b += text(14, Y0 + 24, "Mặt cắt ngang", "currentColor", 14, "start", "700")
+CX, CY, HL = 262.0, 288.0, 72.0
+for yy in (270, 288, 306):
+    b += arrow("f4", "b", 40, yy, 132, yy, 2.6)
+b += text(40, 256, "gió đều", BLUE, 14, "start", "700")
+def deck_seg(deg):
+    a = math.radians(deg)
+    return (CX - HL * math.cos(a), CY - HL * math.sin(a), CX + HL * math.cos(a), CY + HL * math.sin(a))
+x1, y1, x2, y2 = deck_seg(14)
+b += line(x1, y1, x2, y2, RED, 6)
+x1b, y1b, x2b, y2b = deck_seg(-14)
+b += line(x1b, y1b, x2b, y2b, ORG, 4, "7 5")
+assert min(x1, x1b) > 132 + 20, "gió không đè mặt cầu"
+b += f'<circle cx="{CX:.1f}" cy="{CY:.1f}" r="3.5" fill="currentColor"/>'
+# cung hai đầu V: xoắn qua lại quanh trục
+R = 44
+arcp = [(CX + R * math.cos(math.radians(d)), CY + R * math.sin(math.radians(d))) for d in range(236, 305, 4)]
+b += poly(arcp, "currentColor", 1.8)
+for d, sg in ((236, -1), (304, 1)):
+    a = math.radians(d)
+    b += chevron(CX + R * math.cos(a), CY + R * math.sin(a), -sg * math.sin(a), sg * math.cos(a), "currentColor", 1.8, 10)
+b += text(x2 + 10, y2 + 6, "tư thế 1", RED, 14, "start", "700")
+b += text(x2b + 10, y2b + 6, "tư thế 2", ORG, 14, "start", "700")
+assert x2 + 10 + 60 < 440 and y2b + 6 > Y0 + 30
+fig4 = fig("0 0 440 336",
+           "Sơ đồ tự vẽ cầu Tacoma Narrows năm 1940: nhìn ngang hai mép cầu lệch ngược nhau, mặt cắt ngang xoắn qua lại trong gió đều",
            b,
-           "Hình 4. Sơ đồ tự vẽ cầu Tacoma, 1940: gió làm mặt cầu xoắn. Không phải ảnh.")
+           "Hình 4. Sơ đồ tự vẽ cầu Tacoma, 1940: gió đều làm mặt cầu xoắn qua lại. Không phải ảnh.")
 
 h = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
