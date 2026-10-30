@@ -296,6 +296,38 @@ def conv_exp(box):
             f'<div class="exp-w"><span>Số liệu / điều em quan sát:</span>{timer()}{dl(2)}</div></div>')
 
 
+def conv_khung(box):
+    """Khung video thí nghiệm 6 ô (data-khung): in thành hộp thí nghiệm. Giả thuyết, Dự đoán (kèm phương án, không đáp án),
+    Dụng cụ in sẵn; Quan sát và Rút ra để trống cho em ghi theo clip; Thử nghĩ in câu hỏi + dòng kẻ, đáp án ở trên web."""
+    try:
+        d = json.loads(box.get('data-khung', '{}'))
+    except Exception:
+        d = {}
+    esc = lambda t: htmllib.escape(t or '').replace('\n', '<br>')
+    cells = {c.get('khoa'): c for c in d.get('o', [])}
+    ten = esc(d.get('ten', ''))
+    rows = []
+    def row(lab, body):
+        rows.append(f'<div class="step"><div class="st-l">{lab}</div><div class="st-b">{body}</div></div>')
+    if 'gia_thuyet' in cells: row('Giả thuyết', esc(cells['gia_thuyet'].get('chu')))
+    if 'du_doan' in cells:
+        body = esc(cells['du_doan'].get('chu'))
+        dd = d.get('dung_dua') or {}
+        if dd.get('chon'):
+            body += '<br>' + '<br>'.join(esc(c) for c in dd['chon'])
+        row('Dự đoán', body)
+    if 'dung_cu' in cells: row('Dụng cụ', esc(cells['dung_cu'].get('chu')))
+    if 'chua_noi' in cells: row('Chưa nói được', esc(cells['chua_noi'].get('chu')))
+    sim = '<span class="simtag">▶ clip trên web</span>'
+    tn = d.get('thu_nghi')
+    think = ''
+    if tn:
+        gy = f'<br><i>Gợi ý: {esc(tn.get("goi_y"))}</i>' if tn.get('goi_y') else ''
+        think = f'<p><b>Thử nghĩ:</b> {esc(tn.get("cau_hoi"))}{gy}</p>{dl(2)}'
+    return (f'<div class="exp"><div class="exp-h"><span>🎬 Thí nghiệm: {ten}</span>{sim}</div>{"".join(rows)}'
+            f'<div class="exp-w"><span>Quan sát và rút ra (em ghi khi xem clip):</span>{timer()}{dl(3)}</div>{think}</div>')
+
+
 def conv_box(box):
     cls = box.get('class', [])
     label = box.find('p', class_='tl-label')
@@ -359,7 +391,8 @@ def final_pass(body, keys):
         det = None if el else soup.find('details')
         if el is not None:
             cls = el.get('class', [])
-            if 'tl-box--exp' in cls: new = conv_exp(el)
+            if 'tl-box--khung' in cls: new = conv_khung(el)
+            elif 'tl-box--exp' in cls: new = conv_exp(el)
             elif 'tl-box--think' in cls: new = conv_quiz(el, keys) if el.find('div', class_='tl-quiz') else conv_think(el, keys)
             else: new = conv_box(el)
             el.replace_with(frag(new))
@@ -443,7 +476,8 @@ def convert_theory(raw, lid, keys, marks=None):
         elif name in ('p', 'ul', 'ol') and roman == 'II':
             out.append(blank_math(str(el), keys, 'body'))
         elif name == 'div' and 'tl-box' in cls:
-            if 'tl-box--exp' in cls: out.append(conv_exp(el))
+            if 'tl-box--khung' in cls: out.append(conv_khung(el))
+            elif 'tl-box--exp' in cls: out.append(conv_exp(el))
             elif 'tl-box--think' in cls:
                 out.append(conv_quiz(el, keys) if el.find('div', class_='tl-quiz') else conv_think(el, keys))
             else: out.append(conv_box(el))
