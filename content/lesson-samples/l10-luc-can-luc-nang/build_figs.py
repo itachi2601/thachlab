@@ -8,7 +8,7 @@ import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -17,19 +17,19 @@ CUR = {"fig": 0}
 
 
 def defs(p):
-    """Marker cỡ cố định theo đơn vị viewBox (markerUnits=userSpaceOnUse) để nét dày không phóng to đầu mũi."""
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác (đầu mũi V 30° vẽ bằng chevron của svg_lib)."""
+    return ""
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
+    """Thân thẳng + đầu V 30° (svg_lib.chevron), thân ≤ 2,8."""
     SEGS.append((CUR["fig"], x1, y1, x2, y2))
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    n = math.hypot(x2 - x1, y2 - y1)
+    L = max(5, min(3.4 * ww + 2, 0.6 * n))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
@@ -40,7 +40,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
 
 
 def sub(base, s):
-    return f'<tspan font-style="italic">{base}</tspan><tspan baseline-shift="sub" font-size="12">{s}</tspan>'
+    return f'<tspan font-style="italic">{base}</tspan><tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def it(s):
@@ -68,7 +68,7 @@ VB[1] = (440, 256)
 PL = 70                                    # cùng trọng lượng -> P dài bằng nhau
 b = defs("f1")
 b += line(12, 36, 428, 36, "currentColor", 1.4, "5 5", .6, track=False)
-b += text(428, 26, "cùng độ cao thả", "currentColor", 13, "end", "600")
+b += text(428, 26, "cùng độ cao thả", "currentColor", 14, "end", "600")
 # tờ phẳng: rơi chậm, mới xuống ít
 FX, FY = 120, 112
 b += f'<rect x="{FX-45}" y="{FY-3}" width="90" height="6" rx="1" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="1.6"/>'
@@ -77,7 +77,7 @@ b += arrow("f1", "b", FX, FY, FX, FY - 58, 3)
 b += dot(FX, FY, 3.5)
 b += text(FX + 10, FY + PL - 4, it("P"), RED, 15)
 b += text(FX + 10, FY - 44, sub("F", "c") + " lớn", BLUE, 15)
-b += text(FX, FY + PL + 30, "tờ giấy phẳng", "currentColor", 13, "middle", "600")
+b += text(FX, FY + PL + 30, "tờ giấy phẳng", "currentColor", 14, "middle", "600")
 # viên giấy vo: rơi nhanh, đã xuống thấp hơn
 BX, BY, BR = 320, 150, 10
 b += f'<circle cx="{BX}" cy="{BY}" r="{BR}" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="1.6"/>'
@@ -86,17 +86,17 @@ b += arrow("f1", "b", BX, BY, BX, BY - 24, 3)
 b += dot(BX, BY, 3)
 b += text(BX + 10, BY + PL - 4, it("P"), RED, 15)
 b += text(BX + 14, BY - 16, sub("F", "c") + " nhỏ", BLUE, 15)
-b += text(BX, BY + PL + 28, "viên giấy vo tròn", "currentColor", 13, "middle", "600")
+b += text(BX, BY + PL + 28, "viên giấy vo tròn", "currentColor", 14, "middle", "600")
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
             "Tờ giấy phẳng và viên giấy vo tròn cùng trọng lượng P; lực cản lên tờ phẳng lớn hơn nhiều nên nó rơi chậm hơn", b,
             "Hình 1. Cùng trọng lượng <em>P</em> (mũi tên đỏ dài bằng nhau). Cùng một lúc sau khi thả, lực cản lên tờ phẳng (xanh) lớn hơn nhiều nên nó còn ở cao hơn.")
 
 # ---------------- Hình 2: lực lên vật rơi ở ba giai đoạn ----------------
 CUR["fig"] = 2
-VB[2] = (440, 236)
+VB[2] = (440, 244)
 CY, PL = 118, 70
 b = defs("f2")
-for x, n, fc, note in ((75, 1, 0, "a ≈ g"), (220, 2, 40, "a giảm dần"), (365, 3, 70, "a = 0, v không đổi")):
+for x, n, fc, note in ((75, 1, 0, ("a ≈ g",)), (220, 2, 40, ("a giảm dần",)), (365, 3, 70, ("a = 0", "v không đổi"))):
     b += text(x, 22, f"Giai đoạn {n}", "currentColor", 14, "middle")
     b += arrow("f2", "r", x, CY, x, CY + PL, 3)
     b += text(x + 10, CY + PL - 6, it("P"), RED, 15)
@@ -106,7 +106,8 @@ for x, n, fc, note in ((75, 1, 0, "a ≈ g"), (220, 2, 40, "a giảm dần"), (3
     else:
         b += text(x + 10, CY - 10, sub("F", "c") + " ≈ 0", BLUE, 15)
     b += dot(x, CY)
-    b += text(x, 222, note, GRN, 13, "middle", "600")
+    for k, ln in enumerate(note):
+        b += text(x, 214 + 18 * k, ln, GRN, 14, "middle", "600")
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
             "Lực lên vật rơi trong không khí ở ba giai đoạn: lực cản tăng dần từ gần 0 đến bằng trọng lượng", b,
             "Hình 2. Trọng lượng <em>P</em> không đổi; lực cản <em>F</em><sub>c</sub> lớn dần theo tốc độ. Khi <em>F</em><sub>c</sub> = <em>P</em>, hợp lực bằng 0 và vật rơi đều.")
@@ -126,24 +127,24 @@ b = defs("f3")
 b += arrow("f3", "k", OX, OY, 424, OY, 2) + arrow("f3", "k", OX, OY, OX, 18, 2)
 for t in (5, 10, 15):
     x = OX + ST * t
-    b += line(x, OY - 4, x, OY + 4, "currentColor", 1.5, track=False) + text(x, OY + 20, str(t), "currentColor", 13, "middle", "500")
+    b += line(x, OY - 4, x, OY + 4, "currentColor", 1.5, track=False) + text(x, OY + 20, str(t), "currentColor", 14, "middle", "500")
 for v in (25, 50):
     y = OY - SV * v
-    b += line(OX - 4, y, OX + 4, y, "currentColor", 1.5, track=False) + text(OX - 8, y + 5, str(v), "currentColor", 13, "end", "500")
-b += text(OX - 8, OY + 20, "0", "currentColor", 13, "end", "500")
+    b += line(OX - 4, y, OX + 4, y, "currentColor", 1.5, track=False) + text(OX - 8, y + 5, str(v), "currentColor", 14, "end", "500")
+b += text(OX - 8, OY + 20, "0", "currentColor", 14, "end", "500")
 YA = OY - SV * VT
 b += line(OX, YA, 410, YA, BLUE, 1.6, "6 5", .9, track=False)
-b += text(410, YA - 9, "tốc độ giới hạn", BLUE, 13, "end", "600")
-T1 = 3.0
+b += text(410, YA - 6, "tốc độ giới hạn", BLUE, 14, "end", "600")
+T1 = 4.0                                   # kéo dài đường v = gt để thấy rõ đồ thị tách khỏi nó
 b += line(OX, OY, OX + ST * T1, OY - SV * G * T1, ORG, 1.8, "4 4", 1, track=False)
-b += text(97, 100, "a ≈ g", ORG, 13, "end")
+b += text(OX + ST * T1 + 6, OY - SV * G * T1 - 10, "v = gt", ORG, 14, "middle")
 pts = [(OX + ST * t, OY - SV * vt(t)) for t in [i * 0.1 for i in range(0, 161)]]
 b += '<polyline fill="none" stroke="' + GRN + '" stroke-width="3" points="' + " ".join(f"{x:.1f},{y:.1f}" for x, y in pts) + '"/>'
 for t in (2, 12):
     x = OX + ST * t
     b += line(x, YA + 2, x, OY, "currentColor", 1.2, "2 4", .5)
 for t0, t1, n in ((0, 2, 1), (2, 12, 2), (12, 16, 3)):
-    b += text(OX + ST * (t0 + t1) / 2, 46, f"GĐ {n}", "currentColor", 13, "middle", "600")
+    b += text(OX + ST * (t0 + t1) / 2, 43, f"GĐ {n}", "currentColor", 14, "middle", "600")
 b += text(424, OY - 10, "t (s)", "currentColor", 14, "end")
 b += text(OX + 8, 26, "v (m/s)", "currentColor", 14, "start")
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
@@ -181,14 +182,14 @@ def scale(x, obj_top, reading):
 LX, RX = 110, 320
 b += scale(LX, 150, "5,4 N")
 b += f'<rect x="{LX-17}" y="150" width="34" height="40" rx="3" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/>'
-b += text(LX, 228, "ngoài không khí", "currentColor", 13, "middle", "600")
-b += f'<rect x="250" y="140" width="140" height="94" fill="rgba(56,189,248,.14)"/>'
+b += text(LX, 228, "ngoài không khí", "currentColor", 14, "middle", "600")
+b += f'<rect x="250" y="126" width="140" height="108" fill="rgba(56,189,248,.14)"/>'
 b += f'<path d="M250,112 V234 H390 V112" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += line(250, 140, 390, 140, BLUE, 2, track=False)
-b += scale(RX, 166, "? N")
-b += f'<rect x="{RX-17}" y="166" width="34" height="40" rx="3" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/>'
-b += text(384, 228, "nước", BLUE, 13, "end", "600")
-b += text(RX, 254, "chìm hoàn toàn", "currentColor", 13, "middle", "600")
+b += line(250, 126, 390, 126, BLUE, 2, track=False)
+b += scale(RX, 144, "? N")
+b += f'<rect x="{RX-17}" y="144" width="34" height="40" rx="3" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/>'
+b += text(384, 228, "nước", BLUE, 14, "end", "600")
+b += text(RX, 254, "chìm hoàn toàn", "currentColor", 14, "middle", "600")
 fig5 = wrap(f"0 0 {VB[5][0]} {VB[5][1]}",
             "Khối nhôm treo vào lực kế: ngoài không khí lực kế chỉ 5,4 N; nhúng chìm hoàn toàn trong nước thì số chỉ cần tìm", b,
             "Hình 5. Cùng một khối nhôm: treo ngoài không khí lực kế chỉ 5,4&nbsp;N; nhúng chìm hoàn toàn trong nước thì lực kế chỉ bao nhiêu?")
