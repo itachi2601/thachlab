@@ -4,7 +4,10 @@ Chạy lại được. Mọi toạ độ đồ thị tính từ phương trình 
 nhãn chữ được kiểm không vượt viewBox, không chồng nhau, không đè nét/chấm (ước bề rộng chữ = 0,55·cỡ·số ký tự)."""
 import math
 import pathlib
-from svg_lib import *
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import *  # noqa: E402  (svg_lib của skill: đầu mũi tên V 30°, không marker)
 
 HERE = pathlib.Path(__file__).resolve().parent
 
@@ -14,12 +17,16 @@ class Fig:
 
     def __init__(self, prefix, w, h):
         self.p, self.w, self.h = prefix, w, h
-        self.parts = [defs(prefix) + self._k_marker()]
+        self.parts = []
         self.texts, self.pts, self.rects = [], [], []
 
-    def _k_marker(self):
-        return (f'<marker id="{self.p}-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" '
-                f'orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>')
+    def _head(self, x1, y1, x2, y2, marker, w):
+        """Đầu mũi tên V 30° (chevron) tại (x2, y2) thay cho marker tam giác cũ."""
+        col = {"k": "currentColor", "r": RED, "b": BLUE, "o": ORG, "g": GRN}[marker]
+        ww = min(w, 2.8)
+        n = math.hypot(x2 - x1, y2 - y1)
+        L = max(6, min(3.4 * ww + 4, 0.6 * n))
+        self.parts.append(chevron(x2, y2, x2 - x1, y2 - y1, col, ww, L))
 
     def raw(self, s):
         self.parts.append(s)
@@ -32,18 +39,21 @@ class Fig:
 
     def line(self, x1, y1, x2, y2, c="currentColor", w=2, dash="", marker="", op=1, obst=True):
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        m = f' marker-end="url(#{self.p}-{marker})"' if marker else ""
         o = f' opacity="{op}"' if op != 1 else ""
-        self.parts.append(f'<line x1="{x1:g}" y1="{y1:g}" x2="{x2:g}" y2="{y2:g}" stroke="{c}" stroke-width="{w}"{d}{o}{m}/>')
+        self.parts.append(f'<line x1="{x1:g}" y1="{y1:g}" x2="{x2:g}" y2="{y2:g}" stroke="{c}" stroke-width="{min(w, 2.8) if marker else w}"{d}{o}/>')
+        if marker:
+            self._head(x1, y1, x2, y2, marker, w)
         if obst:
             self._sample([(x1, y1), (x2, y2)])
 
     def poly(self, pts, c="currentColor", w=2, dash="", marker="", closed=False):
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        m = f' marker-end="url(#{self.p}-{marker})"' if marker else ""
         tag = "polygon" if closed else "polyline"
-        self.parts.append(f'<{tag} fill="none" stroke="{c}" stroke-width="{w}" stroke-linejoin="round"{d}{m} points="'
+        self.parts.append(f'<{tag} fill="none" stroke="{c}" stroke-width="{w}" stroke-linejoin="round"{d} points="'
                           + " ".join(f"{x:.1f},{y:.1f}" for x, y in pts) + '"/>')
+        if marker:
+            (ax, ay), (bx, by) = pts[-2], pts[-1]
+            self._head(ax, ay, bx, by, marker, w)
         self._sample(pts + ([pts[0]] if closed else []))
 
     def circle(self, x, y, r, fill="none", stroke="currentColor", sw=2, op=1, obst=True):
@@ -92,7 +102,7 @@ def sub_ok(x, lo, hi):
 
 # ======================= HÌNH 1: sơ đồ mạch đo
 f = Fig("f1", 440, 210)
-XL, XR, YT, YB = 40, 350, 40, 170
+XL, XR, YT, YB = 40, 332, 40, 170
 AX, VX = 180, 275                      # tâm ampe kế, vôn kế
 # nguồn trên cạnh trái: vạch dài (+) ở trên, vạch ngắn (−) ở dưới
 f.line(XL, YT, XL, 96)
@@ -100,10 +110,10 @@ f.line(28, 96, 52, 96, w=2.5)           # vạch dài = cực +
 f.line(33, 108, 47, 108, w=4.5)         # vạch ngắn = cực −
 f.line(XL, 108, XL, YB)
 f.line(31, 121, 55, 87, w=1.8, marker="k")   # mũi tên chéo: điều chỉnh được
-f.text(21, 96, "+", size=13, anchor="middle", weight="700")
-f.text(18, 118, "−", size=13, anchor="middle", weight="700")
+f.text(21, 96, "+", size=14, anchor="middle", weight="700")
+f.text(18, 118, "−", size=14, anchor="middle", weight="700")
 f.text(62, 100, "Nguồn", size=14, weight="600")
-f.text(62, 116, "0–6 V", size=13, weight="400")
+f.text(62, 118, "0–6 V", size=14, weight="400")
 # cạnh trên: khoá K (hở), ampe kế
 f.line(XL, YT, 92, YT)
 f.circle(92, YT, 3, fill="currentColor", stroke="", obst=False); f.circle(118, YT, 3, fill="currentColor", stroke="", obst=False)
@@ -112,21 +122,21 @@ f.text(104, 20, "K", size=14, anchor="middle", weight="700")
 f.line(118, YT, AX - 16, YT)
 f.circle(AX, YT, 16, sw=2)
 f.text(AX, YT + 5, "A", size=14, anchor="middle", weight="700", inside=True)
-f.text(AX, 15, "nối tiếp", size=13, anchor="middle", weight="400")
+f.text(AX, 15, "nối tiếp", size=14, anchor="middle", weight="400")
 f.line(AX + 16, YT, XR, YT)
 # cạnh phải: điện trở R (hình chữ nhật đứng 16 × 44)
 f.line(XR, YT, XR, 83)
 f.rect(XR - 8, 83, 16, 44, stroke=BLUE, sw=2.5)
 f.line(XR, 127, XR, YB)
-f.text(366, 102, "R = 10 Ω", BLUE, 14, "start", "700")
-f.text(366, 119, "(hoặc đèn)", "currentColor", 13, "start", "400")
+f.text(XR + 16, 102, "R = 10 Ω", BLUE, 14, "start", "700")
+f.text(XR + 16, 119, "(hoặc đèn)", "currentColor", 14, "start", "400")
 # vôn kế song song với R
 f.poly([(XR, 70), (VX, 70), (VX, 105 - 16)], w=2)
 f.poly([(XR, 140), (VX, 140), (VX, 105 + 16)], w=2)
 f.circle(XR, 70, 3, fill="currentColor", stroke="", obst=False); f.circle(XR, 140, 3, fill="currentColor", stroke="", obst=False)
 f.circle(VX, 105, 16, sw=2)
 f.text(VX, 110, "V", size=14, anchor="middle", weight="700", inside=True)
-f.text(250, 109, "song song", size=13, anchor="end", weight="400")
+f.text(250, 109, "song song", size=14, anchor="end", weight="400")
 # cạnh dưới + mũi tên chiều dòng I (phải -> trái)
 f.line(XL, YB, XR, YB)
 IA = (215, YB, 175, YB)
@@ -160,14 +170,14 @@ def axes(f):
         if u:
             f.line(x, OY, x, OY - 5, w=1.2)
         if u:
-            f.text(x, 268, str(u), size=13, anchor="middle", weight="400")
+            f.text(x, 268, str(u), size=14, anchor="middle", weight="400")
     assert all(abs((xt[k + 1] - xt[k]) - 55) < 1e-9 for k in range(6)) and xt[0] == 50 and xt[-1] == 380
     yt = []
     for k in range(0, 7):
         y = py(k / 10); yt.append(y)
         if k:
             f.line(OX, y, OX + 5, y, w=1.2)
-            f.text(44, y + 4, ("0," + str(k)), size=13, anchor="end", weight="400")
+            f.text(44, y + 4, ("0," + str(k)), size=14, anchor="end", weight="400")
     assert all(abs((yt[k] - yt[k + 1]) - 35) < 1e-9 for k in range(6)) and yt[0] == 250 and abs(yt[-1] - 40) < 1e-9
 
 
@@ -191,7 +201,7 @@ for U, I in meas2:
 assert [(px(U), py(I)) for U, I in meas2] == [(105, 215), (160, 180), (215, 145), (270, 110), (325, 75)]
 f.text(285, 80, "R = 10 Ω", BLUE, 14, "end", "700")
 f.text(330, 184, "R = 20 Ω", BLUE, 14, "start", "700")
-f.text(260, 45, "dốc hơn → R nhỏ hơn", "currentColor", 13, "start", "400")
+f.text(260, 45, "dốc hơn → R nhỏ hơn", "currentColor", 14, "start", "400")
 f.check("fig2")
 fig2 = f.html("Đồ thị I theo U: đường thẳng qua gốc của điện trở 10 Ω với năm điểm đo, và đường đứt thoải hơn của điện trở 20 Ω.",
               "Hình 2. Năm điểm đo của điện trở 10 Ω nằm trên đường thẳng I&nbsp;=&nbsp;U/10; đường đứt là 20 Ω.",
@@ -199,7 +209,7 @@ fig2 = f.html("Đồ thị I theo U: đường thẳng qua gốc của điện t
 
 
 # ======================= HÌNH 3: electron va chạm ion nút mạng
-f = Fig("f3", 440, 230)
+f = Fig("f3", 440, 262)
 RION = 9
 YE = 92.5                                    # hành lang giữa hàng 1 (y=70) và hàng 2 (y=115)
 ROWS = (70, 115, 160)
@@ -229,7 +239,7 @@ for key, (cx0, x0, title, tcol) in cells.items():
                 f.circle(ix + dxs, iy, RION, stroke=ORG, sw=1, op=.55, obst=True)
                 shadow.append((ix + dxs, iy))
         f.circle(ix, iy, RION, stroke="currentColor", sw=1.5)
-        f.text(ix, iy + 4, "+", size=13, anchor="middle", weight="700", inside=True)
+        f.text(ix, iy + 4, "+", size=14, anchor="middle", weight="700", inside=True)
     xs, xe = x0 - 15, x0 + 170
     if key == "cold":
         mid = [(x0 + 25, YE + 6), (x0 + 80, YE - 6), (x0 + 135, YE + 6)]
@@ -246,14 +256,19 @@ for key, (cx0, x0, title, tcol) in cells.items():
     f.circle(xs, YE, 4, fill=RED, stroke="", obst=False)
     f.line(xs - 2.5, YE, xs + 2.5, YE, c="#ffffff", w=1.3, obst=False)
     # mũi tên chiều trôi dưới ô
-    f.line(cx0 + 8, 196, cx0 + 48, 196, c=RED, w=2.5, marker="r", obst=False)
+    f.line(cx0 + 10, 196, cx0 + 36, 196, c=RED, w=2.5, marker="r", obst=False)
     if key == "cold":
-        f.text(cx0 + 55, 200, "electron trôi", RED, 13, "start", "600")
+        f.text(cx0 + 42, 200, "electron trôi", RED, 14, "start", "600")
     else:
-        f.text(cx0 + 55, 200, "va nhiều, trôi chậm", ORG, 13, "start", "600")
+        f.text(cx0 + 42, 200, "va nhiều, trôi chậm", ORG, 14, "start", "600")
 assert zig_len["hot"] >= 2 * zig_len["cold"], zig_len       # zigzag ô nóng mạnh gấp > 2 lần ô lạnh
 assert len(ions_all["cold"]) == len(ions_all["hot"]) == 12
-f.text(220, 222, "ion dương ở nút mạng (+) · electron tự do (−)", "currentColor", 13, "middle", "400")
+f.circle(18, 228, 9, stroke="currentColor", sw=1.5, obst=False)
+f.text(18, 233, "+", size=14, anchor="middle", weight="700", inside=True)
+f.text(34, 233, "ion dương ở nút mạng", "currentColor", 14, "start", "400")
+f.circle(18, 249, 4, fill=RED, stroke="", obst=False)
+f.line(15.5, 249, 20.5, 249, c="#ffffff", w=1.3, obst=False)
+f.text(34, 254, "electron tự do", "currentColor", 14, "start", "400")
 f.check("fig3")
 fig3 = f.html("Hai ô so sánh: trong kim loại lạnh electron đi gần thẳng qua mạng ion dương; trong kim loại nóng ion rung mạnh, electron va chạm liên tục, đường đi zigzag.",
               "Hình 3. Trái: kim loại lạnh, ion rung ít, electron đi gần thẳng. Phải: kim loại nóng, ion rung mạnh, electron va chạm nhiều, trôi chậm hơn.")
@@ -284,9 +299,10 @@ assert py(.26) < 250 - 350 * 2 / 12
 slopes = [abs((py(meas4[k + 1][1]) - py(meas4[k][1])) / KU) for k in range(5)]
 assert all(slopes[k] >= slopes[k + 1] for k in range(4)), slopes   # số đo làm tròn 2 chữ số: cho phép bằng nhau
 assert slopes[0] > slopes[4] * 1.5
-f.text(268, 190, "R = 12 Ω không đổi", BLUE, 13, "start", "600")
+f.text(300, 136, "R = 12 Ω", BLUE, 14, "start", "600")
+f.text(300, 153, "không đổi", BLUE, 14, "start", "600")
 f.text(110, 105, "Đèn sợi đốt", ORG, 14, "start", "700")
-f.text(250, 50, "R tăng dần", "currentColor", 13, "start", "400")
+f.text(250, 50, "R tăng dần", "currentColor", 14, "start", "400")
 f.line(290, 57, 320, 85, w=1, marker="k")
 f.check("fig4")
 fig4 = f.html("Đồ thị I theo U của đèn sợi đốt: đường cong qua sáu điểm đo, độ dốc giảm dần; đường đứt thẳng ứng với điện trở 12 Ω để so sánh.",
