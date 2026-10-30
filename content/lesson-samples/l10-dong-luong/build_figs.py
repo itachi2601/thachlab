@@ -101,11 +101,12 @@ for (x, gr, s, w, v, ten, kl, mo_ta) in ((80, 122, 0.72, 4.5, V_NHO, "bạn nh�
                                          (80, 268, 1.0, 9.0, V_LON, "người lớn", "60 kg", "lướt chậm")):
     b += line(20, gr, 420, gr, "currentColor", 1.5, "", .45, check=False)
     b += skater(x, gr, s, w)
-    ya = gr - 46 * s
-    x1, x2 = x + 50 * s + 6, x + 50 * s + 6 + KV * v
+    ya = gr - 52 * s                                   # đuôi mũi tên đặt ở hông người
+    x1 = x - 4 * s
+    x2 = x1 + KV * v
     b += arrow("f1", "g", x1, ya, x2, ya, 3.2, name=f"v {ten}")
-    b += text(x2 + 6, ya - 8, "v", GRN, 17, "start", "700", True)
-    b += text(x2 + 26, ya + 5, mo_ta, GRN, 14, "start")
+    b += text(x2 + 6, ya - 8, "v", GRN, 20, "start", "700", True)
+    b += text(x2 + 30, ya + 5, mo_ta, GRN, 14, "start")
     b += text(x + 44 * s, gr - 112 * s, ten, "currentColor", 14, "start")
     b += text(x + 44 * s, gr - 112 * s + 17, kl, "currentColor", 14, "start", "500")
 assert abs(KV * V_NHO / (KV * V_LON) - 2) < 1e-9
