@@ -18,7 +18,7 @@ export default function PolicySessionFields({ value, onChange, type, students = 
   {type === 'lop' ? <>
    <label className="block text-sm text-slate-300">Số em chưa làm bài<input className={input} type="number" min="0" step="1" value={value.homework_missing} onChange={e=>patch({homework_missing:Number(e.target.value)})}/></label>
    <label className="block text-sm text-slate-300">Em cần chú ý — tên và lý do<textarea className={input} rows={3} value={value.attention_note} onChange={e=>patch({attention_note:e.target.value})} placeholder="Tên em · bài đang vướng · lỗi cần sửa"/></label>
-   <div className="space-y-3 border-t border-white/10 pt-4"><h3 className="font-semibold text-white">Chữa bài thay thầy</h3><p className="text-xs text-slate-400">Ghi phần thời gian đứng bảng trong buổi này. Thầy duyệt sau; ×1,6 riêng phần này, không nhân chồng hệ số đứng lớp.</p>
+   <div className="space-y-3 border-t border-white/10 pt-4"><h3 className="font-semibold text-white">Chữa bài thay thầy</h3><p className="text-xs text-slate-400">Ghi phần thời gian đứng bảng trong buổi này. Thầy duyệt sau; ×1,5 riêng phần này (buổi tháng 10/2026: ×1,6), không nhân chồng hệ số đứng lớp.</p>
     <label className="block text-sm text-slate-300">Số phút đứng bảng (0 nếu không có)<input className={input} type="number" min="0" step="1" value={value.teaching_minutes} onChange={e=>patch({teaching_minutes:Number(e.target.value)})}/></label>
     {value.teaching_minutes > 0 && <label className="block text-sm text-slate-300">Nội dung chữa bài / lời giải đã chuẩn bị<textarea className={input} rows={2} value={value.teaching_note} onChange={e=>patch({teaching_note:e.target.value})}/></label>}
    </div>

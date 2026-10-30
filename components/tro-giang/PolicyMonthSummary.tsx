@@ -1,7 +1,8 @@
 'use client';
-import { POLICY_SCORES, type MonthPolicy } from '@/lib/tro-giang/policy';
+import { POLICY_SCORES, policyFactors, type MonthPolicy } from '@/lib/tro-giang/policy';
 import { formatVnd, formatHours } from '@/lib/tro-giang/format';
 export default function PolicyMonthSummary({ score }: { score: MonthPolicy }) {
+ const f=policyFactors(score.month), vn=(n:number)=>String(n).replace('.',',');
  const money=(n:number|null)=>n===null?'Chờ đủ dữ liệu':formatVnd(n);
  return <div className="space-y-4">
   <div className="flex flex-wrap items-center justify-between gap-3"><span className={`rounded-full px-3 py-1 text-xs font-semibold ${score.closed_at?'bg-emerald-500/15 text-emerald-300':'bg-amber-500/15 text-amber-200'}`}>{score.closed_at?'Đã chốt':'Tạm tính · chưa chốt'}</span><span className="text-sm text-slate-300">Hệ số đứng lớp: <b>{score.class_factor?.toFixed(1) ?? 'Chờ điểm'}</b></span></div>
@@ -12,8 +13,8 @@ export default function PolicyMonthSummary({ score }: { score: MonthPolicy }) {
   <dl className="space-y-2 border-t border-white/10 pt-4 text-sm text-slate-300">
    <div className="flex justify-between"><dt>Đơn giá giờ</dt><dd>{money(score.hourly_rate)}</dd></div>
    <div className="flex justify-between"><dt>Lên lớp · {formatHours(score.class_hours)} giờ × {score.class_factor??'?'}</dt><dd>{money(score.class_pay)}</dd></div>
-   <div className="flex justify-between"><dt>Chữa bài · {formatHours(score.teaching_hours*60)} phút × 1,6</dt><dd>{money(score.teaching_pay)}</dd></div>
-   <div className="flex justify-between"><dt>Phụ đạo · {formatHours(score.tutoring_hours)} giờ (×1,1 / ×1,2)</dt><dd>{money(score.tutoring_pay)}</dd></div>
+   <div className="flex justify-between"><dt>Chữa bài · {formatHours(score.teaching_hours*60)} phút × {vn(f.teaching)}</dt><dd>{money(score.teaching_pay)}</dd></div>
+   <div className="flex justify-between"><dt>Phụ đạo · {formatHours(score.tutoring_hours)} giờ (×{vn(f.tutor12)} / ×{vn(f.tutor34)})</dt><dd>{money(score.tutoring_pay)}</dd></div>
    <div className="flex justify-between"><dt>Chấm kiểm tra · {score.papers} bài × 1.500 đ</dt><dd>{money(score.grading_pay)}</dd></div>
    <div className="flex justify-between border-t border-white/10 pt-3 text-lg font-bold text-white"><dt>{score.closed_at?'Tiền đã chốt':'Tiền tạm tính'}</dt><dd>{money(score.total_pay)}</dd></div>
   </dl>
