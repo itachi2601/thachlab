@@ -44,7 +44,7 @@ b += text(320, 240, "đoạn không rung", "currentColor", 14, "middle", "400")
 fig1 = wrap("0 0 440 256",
             "Dây đàn buông rung thành 1 bó; bấm phím ở giữa dây cho đoạn rung ngắn còn một nửa, vẫn 1 bó nên tần số gấp đôi",
             b,
-            "Hình 1. Bấm phím ở giữa dây làm đoạn rung <strong>ngắn còn một nửa</strong>: vẫn một bó sóng nhưng bước sóng giảm một nửa, nên tần số tăng gấp đôi — nốt cao hơn một quãng tám.")
+            "Hình 1. Bấm phím ở giữa dây làm đoạn rung <strong>ngắn còn một nửa</strong>.<br>Vẫn một bó sóng nhưng bước sóng giảm một nửa, nên tần số tăng gấp đôi.<br>Nốt cao hơn một quãng tám.")
 fig1 = fig1.replace('<figure class="fig" data-tl="1">',
                     '<figure class="fig" data-tl="1" data-exp="tn-l11-songdung-04">', 1)
 
@@ -85,7 +85,7 @@ b += text(20, yb + 70, "l = 3·λ/4", RED, 14, "start", "700")
 fig3 = wrap("0 0 440 342",
             "Hai trường hợp sóng dừng: hai đầu cố định chiều dài bằng số nguyên lần λ/2; một đầu tự do chiều dài bằng số lẻ lần λ/4",
             b,
-            "Hình 3. Trên: hai đầu cố định, dây có 3 bó (l = 3·λ/2). Dưới: một đầu cố định, một đầu tự do, đầu tự do là bụng (l = 3·λ/4, tức k = 1 trong l = (2k+1)·λ/4).")
+            "Hình 3. Trên: hai đầu cố định, dây có 3 bó (l = 3·λ/2).<br>Dưới: một đầu cố định, một đầu tự do, đầu tự do là bụng (l&nbsp;=&nbsp;3·λ/4).<br>Đây là k = 1 trong l = (2k+1)·λ/4.")
 
 # ---------------- Hình 4: đường bao biên độ
 # Vẽ lại 30/10/2026: chữ 14, mũi tên đầu V (bỏ marker tam giác), nhãn không đè đường, chú giải 2A/4A mỗi ý một dòng.
@@ -112,7 +112,7 @@ b += text(200, yl + 22, "4A: bề rộng vùng dao động", ORG, 14, "start", "
 fig4 = wrap("0 0 440 210",
             "Đường bao biên độ của sóng dừng: bằng 0 tại nút, lớn nhất 2A tại bụng; bụng vung từ +2A tới −2A nên bề rộng là 4A",
             b,
-            "Hình 4. Đường bao biên độ: tại nút biên độ bằng 0, tại bụng biên độ bằng 2A. Bụng vung từ +2A xuống −2A nên <strong>bề rộng</strong> vùng dao động của bụng là 4A.")
+            "Hình 4. Đường bao biên độ: tại nút biên độ bằng 0, tại bụng biên độ bằng 2A.<br>Bụng vung từ +2A xuống −2A nên <strong>bề rộng</strong> vùng dao động của bụng là 4A.")
 
 h = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):

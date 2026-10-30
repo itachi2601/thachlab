@@ -31,7 +31,7 @@ def dbl_v(x, y1, y2, c, w=1.6):
     return b
 
 # ---- Hình 1: làn sóng người trên khán đài (vẽ lại 30/10/2026: chữ 14, người có chân/ghế, xung đứng lên có độ cao biến thiên, mũi tên đầu V)
-SEAT, FLOOR, AMP, TORSO, HR = 192, 218, 40, 30, 7
+SEAT, FLOOR, AMP, TORSO, HR = 166, 192, 40, 30, 7
 XC, W = 262, 58                                   # đỉnh làn sóng (xung) đang ở x = XC
 r_of = lambda x: math.exp(-((x - XC) / W) ** 2)   # 0 = ngồi, 1 = đứng thẳng
 b = text(14, 26, "Mỗi người chỉ đứng lên rồi ngồi xuống tại ghế", "currentColor", 14, "start", "600")
@@ -50,15 +50,15 @@ for i in range(12):
     b += line(x, hipY, x, hy + HR, "currentColor", 2.2)
     b += f'<circle cx="{x:.1f}" cy="{hy:.1f}" r="{HR}" fill="none" stroke="currentColor" stroke-width="2.2"/>'
     if r > 0.5:                                    # đang đứng: giơ tay
-        b += line(x, sh, x - 11, sh - 20, "currentColor", 2.2) + line(x, sh, x + 11, sh - 20, "currentColor", 2.2)
+        b += line(x, sh, x - 17, sh - 10, "currentColor", 2.2) + line(x, sh, x + 17, sh - 10, "currentColor", 2.2)  # tay chéo ra ngoài, đầu mút cách vòng đầu ~10
     else:                                          # đang ngồi: tay đặt lên đùi
         b += line(x, sh, x + 10, hipY - 6, "currentColor", 2.2)
 # đường đỏ đi sát đỉnh đầu mọi người = "trạng thái đứng lên" tại một lúc
 b += poly([(x, SEAT - 3 - AMP * r_of(x) - TORSO - 2 * HR - 12) for x in range(16, 425, 3)], RED, 2.2, "6 4")
 b += text(XC, SEAT - 3 - AMP - TORSO - 2 * HR - 22, "trạng thái đứng lên", RED, 14, "middle", "700")
-b += arrow("f1", "g", 30, 242, 290, 242, 2.8) + text(300, 247, "chiều làn sóng", GRN, 14, "start", "700")
-fig1 = wrap("0 0 440 258", "Khán đài: làn sóng người chạy sang phải, mỗi người chỉ đứng lên rồi ngồi xuống tại ghế của mình",
-            b, "Hình 1. Làn sóng người: đường đỏ là “trạng thái đứng lên” đang chạy qua; không ai rời ghế.")
+b += arrow("f1", "g", 30, 216, 290, 216, 2.8) + text(300, 221, "chiều làn sóng", GRN, 14, "start", "700")
+fig1 = wrap("0 0 440 232", "Khán đài: làn sóng người chạy sang phải, mỗi người chỉ đứng lên rồi ngồi xuống tại ghế của mình",
+            b, "Hình 1. Làn sóng người.<br>Đường đỏ: “trạng thái đứng lên” đang chạy qua.<br>Không ai rời ghế.")
 
 # ---------------- Hình 2: ảnh OpenStax College Physics 2e, Hình 16.28 (28/10/2026) — thay SVG tự vẽ
 fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-mo-ta-song/hinh-hai-au-nhap-nho.webp" '
@@ -102,7 +102,7 @@ for xL, col, t1, t2, lab, ax in ((22, RED, "Tại MỘT điểm", "theo thời g
     b += line(a, Y - A, a, 196, GRN, 1.2, "3 3") + line(c, Y - A, c, 196, GRN, 1.2, "3 3")
     b += dbl_h(a, c, 190, GRN, 1.8) + text((a + c) / 2, 214, lab, GRN, 16, "middle", "700")
 fig4 = wrap("0 0 440 222", "Hai loại đồ thị sóng: bên trái u theo thời gian (hai đỉnh liên tiếp cách nhau T), bên phải u theo không gian (hai đỉnh liên tiếp cách nhau λ)",
-            b, "Hình 4. Cùng một sóng, khác trục hoành: u–t (một điểm) một bước là T; u–x (một lúc) một bước là λ.")
+            b, "Hình 4. Cùng một sóng, khác trục hoành.<br>u–t (một điểm): một bước là T.<br>u–x (một lúc): một bước là λ.")
 
 h = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
