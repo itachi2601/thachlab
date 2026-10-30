@@ -37,6 +37,9 @@ export type VideoKhungData = {
   dung_dua: VideoKhungDuDoan;
 };
 
+/** Mốc giây → "m:ss" để em biết ô này nằm ở đâu trong clip (bấm là tua tới). */
+const mmss = (g: number) => `${Math.floor(g / 60)}:${String(Math.floor(g % 60)).padStart(2, "0")}`;
+
 const NHAN: Record<string, string> = {
   gia_thuyet: "Giả thuyết",
   du_doan: "Dự đoán",
@@ -325,7 +328,9 @@ export default function VideoThiNghiemKhung({
       aria-label={`Video thí nghiệm: ${data.ten}`}
       className="rounded-2xl border border-line bg-panel p-4 sm:p-5"
     >
-      <h3 className="font-display font-bold leading-snug text-ink" style={{ margin: "0 0 16px", fontSize: 18 }}>{data.ten}</h3>
+      <h3 className="font-display font-bold leading-snug text-ink" style={{ margin: "0 0 16px", fontSize: 18 }}>
+        {data.ten}
+      </h3>
       <div className="grid gap-5 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-start lg:gap-6 xl:gap-8">
         {/* Phần tương tác (câu hỏi, sáu ô): bên phải ở màn rộng cho dễ bấm, dưới video ở điện thoại */}
         <div className="order-2">
@@ -355,51 +360,81 @@ export default function VideoThiNghiemKhung({
               ))}
             </ol>
             <div ref={cardRef} className="scroll-mb-24 rounded-xl border border-line-strong bg-primary-soft p-4">
-              <p className="text-[13px] font-bold uppercase tracking-wide text-primary" style={{ marginBottom: 4 }}>{nhan(data.o[shown])}</p>
+              <p className="flex items-baseline gap-2 text-[15px] font-bold text-primary" style={{ marginBottom: 6 }}>
+                <span>{nhan(data.o[shown])}</span>
+                <span className="text-[13px] font-semibold text-muted">
+                  {shown + 1}/{data.o.length} · {mmss(data.o[shown].giay)}
+                </span>
+              </p>
               {body(shown, true)}
             </div>
           </div>
 
-          {/* Màn rộng: đủ sáu ô, ô sau khoá tới khi clip tới đoạn đó */}
-          <ol className="hidden gap-1.5 lg:grid" aria-label="Các bước thí nghiệm">
+          {/* Màn rộng: stepper dọc — một ray nối sáu bước, chỉ bước hiện tại mở nội dung (B3 nhóm bằng ray thay viền,
+              C6 nhãn chữ thường, N4 không lặp "Xem lại": mốc giây ở phải là lời mời bấm tua tới) */}
+          <ol className="hidden lg:block" aria-label="Các bước thí nghiệm">
             {data.o.map((o, i) => {
               const open = i <= reached;
               const on = i === shown;
+              const last = i === data.o.length - 1;
               return (
                 <li
                   key={o.khoa}
                   aria-current={on ? "step" : undefined}
-                  className={
-                    "rounded-xl border transition-colors " +
-                    (on ? "p-4 " : "px-4 py-0.5 ") +
-                    (on ? "border-primary bg-primary-soft" : open ? "border-line bg-panel" : "border-line bg-surface-2")
-                  }
+                  className="relative"
+                  style={{
+                    paddingLeft: 40,
+                  }} /* .tl-khung-host li đặt padding-left: 0 trong globals.css nên không dùng pl-10 */
                 >
+                  {/* ray nối: đã qua = màu nhấn nhạt, chưa tới = kẻ mờ */}
+                  {!last && (
+                    <span
+                      aria-hidden
+                      className={
+                        "absolute left-[13px] top-8 bottom-0 w-0.5 " + (i < reached ? "bg-primary/40" : "bg-line")
+                      }
+                    />
+                  )}
+                  <span
+                    aria-hidden
+                    className={
+                      "absolute left-0 top-1.5 grid size-7 place-items-center rounded-full text-[13px] font-bold " +
+                      (on
+                        ? "bg-primary text-white"
+                        : open
+                          ? "bg-primary-soft text-primary"
+                          : "border border-line bg-panel text-muted")
+                    }
+                  >
+                    {on ? i + 1 : open ? <Check className="size-4" strokeWidth={2.5} /> : <Lock className="size-3.5" />}
+                  </span>
                   <button
                     type="button"
                     disabled={!open}
                     onClick={() => seekTo(i)}
-                    className="flex min-h-11 w-full items-center gap-2 text-left disabled:cursor-default"
+                    className={
+                      "-ml-2 flex min-h-11 w-[calc(100%+0.5rem)] items-center gap-3 rounded-lg px-2 text-left transition-colors " +
+                      (open && !on ? "hover:bg-surface-2" : "") +
+                      (open ? "" : " cursor-default")
+                    }
                   >
                     <span
                       className={
-                        "grid size-7 shrink-0 place-items-center rounded-full text-[13px] font-bold " +
-                        (on ? "bg-primary text-white" : open ? "bg-primary-soft text-ink" : "bg-line text-muted")
-                      }
-                    >
-                      {open ? i + 1 : <Lock className="size-3.5" aria-hidden />}
-                    </span>
-                    <span
-                      className={
-                        "text-[14px] font-bold uppercase tracking-wide " + (on ? "text-primary" : "text-muted")
+                        "text-[16px] " +
+                        (on ? "font-bold text-primary" : open ? "font-semibold text-ink" : "font-medium text-muted")
                       }
                     >
                       {nhan(o)}
                     </span>
-                    {open && !on && <span className="ml-auto text-[13px] text-muted">Xem lại</span>}
+                    <span
+                      className={"ml-auto shrink-0 text-[13px] tabular-nums " + (on ? "text-primary" : "text-muted")}
+                    >
+                      {open ? mmss(o.giay) : `mở ở ${mmss(o.giay)}`}
+                    </span>
                   </button>
                   {/* Chỉ ô hiện tại mở nội dung: cột phải luôn thấp hơn video, không phải cuộn mất video để đọc (V13) */}
-                  {on && <div className="mt-2 xl:pl-9">{body(i, true)}</div>}
+                  {on && <div className="mb-3 mt-1 rounded-xl bg-primary-soft px-4 py-3">{body(i, true)}</div>}
+                  {!on && <div className="h-1" />}
                 </li>
               );
             })}
