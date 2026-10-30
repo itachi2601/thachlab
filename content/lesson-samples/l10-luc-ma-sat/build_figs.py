@@ -5,7 +5,7 @@ import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -16,18 +16,18 @@ bad = []
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác: mũi tên vẽ đầu V 30° bằng svg_lib.chevron (thầy chốt 7/10/2026)."""
+    return ""
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash="", name="mũi tên"):
     SEGS.append((CUR["fig"], x1, y1, x2, y2, name))
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    n = math.hypot(x2 - x1, y2 - y1)
+    L = max(5, min(3.4 * ww + 2, 0.6 * n))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name="nét", check=True):
@@ -38,7 +38,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name="nét", chec
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="12">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -130,7 +130,7 @@ b += text(fx + 8, CY - 10, "F sinα", RED, 14, "start")
 b += text(CX + 8, CY + K * P2 - 4, "P", "currentColor", 16, "start", "700", True)
 b += text(CX + 8, CY - K * N2 + 10, "N", BLUE, 16, "start", "700", True)
 b += text(CX - K * Fms2 - 6, CY - 8, sub("F", "ms"), ORG, 16, "end", "700")
-b += text(310, 250, "N + F sinα = P", "currentColor", 14, "middle")
+b += text(CX, 252, "N + F sinα = P", "currentColor", 14, "middle")
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
             "Vật trên sàn ngang bị kéo chếch lên góc alpha: các lực F, P, N, ma sát đặt ở trọng tâm; thành phần F sin alpha đỡ bớt vật", b,
             f"Hình 2. Kéo chếch lên góc α (vẽ theo tỉ lệ với $m$ = 3 kg, $F$ = 20 N, α = 30°, μ = 0,5). Các lực vẽ chung gốc ở trọng tâm. "
@@ -192,23 +192,31 @@ for (x, y) in corners:
 # ---------------- Hình 4: bước đi — ma sát nghỉ đẩy chân tới trước ----------------
 CUR["fig"] = 4
 VB[4] = (440, 240)
-GY = 188
+GY = 190
 b = defs("f4")
 b += line(20, GY, 420, GY, "currentColor", 2, "", .6, check=False)
-hx, hy = 210, 118
-b += f'<circle cx="{hx}" cy="52" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/>'
-b += line(hx, 65, hx, hy, "currentColor", 2.5, name="thân")
-b += line(hx, hy, 150, GY - 2, "currentColor", 2.5, name="chân sau")
-b += line(hx, hy, 268, GY - 2, "currentColor", 2.5, name="chân trước")
-b += line(hx, 80, 178, 112, "currentColor", 2.5, name="tay sau")
-b += line(hx, 80, 240, 108, "currentColor", 2.5, name="tay trước")
-b += arrow("f4", "r", 150, GY - 6, 214, GY - 6, 3.2, name="Fmsn")
-b += arrow("f4", "b", 150, GY + 10, 86, GY + 10, 3.2, name="chân đẩy đất")
-b += arrow("f4", "g", 300, 60, 380, 60, 3.2, name="hướng đi")
+b += '<rect x="20" y="190" width="400" height="8" fill="rgba(148,163,184,.18)"/>'
+# người bước sang phải: đùi/cẳng mỗi chân, hai tay vung đối nhau, bàn chân là giày
+HIP, NECK, SH = (214, 110), (218, 68), (218, 76)
+b += f'<circle cx="220" cy="50" r="14" fill="none" stroke="currentColor" stroke-width="2.6"/>'
+b += line(*HIP, *NECK, "currentColor", 2.8, name="thân")
+P_ = lambda pts: ('<polyline points="' + " ".join(f"{x},{y}" for x, y in pts) +
+                  '" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>')
+legB = [HIP, (196, 148), (170, 180)]          # chân sau: đạp đất
+legF = [HIP, (236, 146), (254, 180)]          # chân trước: vừa đặt gót
+for leg, nm in ((legB, "chân sau"), (legF, "chân trước")):
+    for (x1, y1), (x2, y2) in zip(leg, leg[1:]):
+        SEGS.append((4, x1, y1, x2, y2, nm))
+b += P_(legB) + P_(legF)
+b += P_([SH, (234, 98), (246, 114)]) + P_([SH, (202, 98), (190, 114)])   # hai tay đối xứng, vung ngược chân
+b += line(160, GY - 3, 184, GY - 3, "currentColor", 5, name="giày sau") + line(250, GY - 5, 274, GY - 3, "currentColor", 5, name="giày trước")
+# vectơ cặp trực đối dài bằng nhau (64 px); đỏ đặt lên chân (trên mặt đất), xanh đặt lên đất (dưới dải đất)
+b += arrow("f4", "r", 182, GY - 12, 246, GY - 12, 3, name="Fmsn")
+b += arrow("f4", "b", 184, GY + 16, 120, GY + 16, 3, name="chân đẩy đất")
+b += arrow("f4", "g", 300, 60, 380, 60, 3, name="hướng đi")
 b += text(340, 46, "hướng đi", GRN, 14, "middle")
-b += text(144, GY - 26, sub("F", "msn"), RED, 16, "end", "700")
-b += text(144, GY - 6, "đất đẩy chân tới", RED, 14, "end")
-b += text(86, GY + 32, "chân đẩy đất lùi", BLUE, 14, "start")
+b += text(216, GY - 28, sub("F", "msn"), RED, 16, "middle", "700")
+b += text(40, GY + 38, "chân đẩy đất lùi", BLUE, 14, "start")
 fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
             "Người bước đi: chân sau đẩy mặt đất ra sau, mặt đất tác dụng lên chân lực ma sát nghỉ hướng tới trước", b,
             "Hình 4. Chân sau có xu hướng trượt ra sau nên đất tác dụng lên chân ma sát nghỉ $F_{\\text{msn}}$ hướng tới trước (đỏ), "
