@@ -1,90 +1,65 @@
-# STATE — Hiện trạng ThachLab (rút gọn 10/10/2026)
+# STATE — Hiện trạng ThachLab (rút gọn 30/10/2026)
 
-File dùng chung cho mọi phiên, **nạp mỗi phiên nên giữ dưới ~15 KB**: chỉ hiện trạng + việc ĐANG CHỜ. Xong mục nào → chuyển
-nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầy đủ trước khi rút gọn nằm ở cuối `STATE-archive.md`
-(mục "Bản STATE.md trước khi rút gọn") — grep ở đó khi cần chi tiết một việc cũ.
+File dùng chung, **nạp mỗi phiên — giữ dưới ~15 KB**: chỉ hiện trạng + việc ĐANG CHỜ, mỗi việc 1–2 dòng, chi tiết để ở
+`docs/memory/project_*.md`. Xong mục nào → chuyển nguyên văn sang `docs/STATE-archive.md`. Bản đầy đủ trước mỗi lần rút gọn
+nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …", mới nhất 30/10/2026) — grep ở đó khi cần chi tiết.
 
 ## Hạ tầng
-- Next.js App Router + TypeScript + Tailwind v4, `output: "export"` (xuất tĩnh), deploy bằng `scripts/deploy.sh` → nhánh `deploy`.
-- Supabase `jgvbdbpvjdntdgzthumv`, region Singapore. Sơ đồ bảng: `docs/DATABASE.md`; RPC: `docs/DATABASE-RPC.md`.
-- KaTeX 0.17; font tự host qua `next/font`; học liệu tĩnh `public/data/` sinh ở `prebuild` — sửa lý thuyết phải **deploy lại** mới lên web.
-- Giao diện: nền SÁNG mặc định toàn site (11/10/2026), token ở `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử ở `/dev/giao-dien`.
+- Next.js App Router + TS + Tailwind v4, `output: "export"`, deploy `scripts/deploy.sh` → nhánh `deploy`.
+- Supabase `jgvbdbpvjdntdgzthumv` (Singapore, gói PRO từ 23/10, compute t3a.small). Sơ đồ: `docs/DATABASE.md`, RPC: `docs/DATABASE-RPC.md`.
+- KaTeX 0.17; học liệu tĩnh `public/data/` sinh ở `prebuild` — sửa lý thuyết phải **deploy lại** mới lên web.
+- Nền SÁNG mặc định (11/10), token `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử `/dev/giao-dien`.
 
-## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list`)
-- **28/10 Bài tập mỗi ngày HSG9 (CĐ13+CĐ10):** `20261028100000_bai_tap_ngay_mo_theo_gio.sql` CHƯA CHẠY (hàm review_roster, review_open_due_stages + pg_cron 10 phút, review_my_state khoá theo `open_at`; rollback `perf/rollback/…down.sql`). Sau đó `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes` (tạo 5 đề + buổi tự học lớp 19 + chuông), rồi deploy UI (`components/review/ClassRoster.tsx`). Nội dung `content/hsg9/bai-tap-ngay-co-hoc/ngay-1..5.json`.
-- **27/10 Quiz lý thuyết mở đáp án:** `20261027200000_quiz_ly_thuyet_mo_dap_an` ĐÃ CHẠY 27/10 (chạy bằng `supabase db query -f` từ thư mục chính vì worktree chưa `supabase link`; kiểm: đề 1147 mở, 0/110 quiz còn khoá, `exam_is_assessment` giữ nguyên cho phụ đạo). Rollback: `perf/rollback/20261027200000_*.down.sql`. Chuyển sang STATE-archive khi merge.
-- **27/10 đề mã khách:** `20261027120000_de_ma_khach_xao_de_bang_diem.sql` (bảng guest_exam_links/sessions + RPC guest_exam_info/start/submit; đã thử trong giao dịch rollback). Trang `/thi/?ma=`, quản trị `/quan-tri/bang-diem-ma`. Đề: AVCN C10 kiểm tra (`content/lesson-samples/avcn-chapter-10-maintenance/data/kiem-tra.py`).
-- **24/10 Ghi chú HS theo mục bài học — CHƯA CHẠY:** `20261024190000_lesson_notes.sql` (bảng mới `lesson_notes`, RLS chỉ chủ sở hữu 4 thao tác, giáo viên/TA không đọc; lúc nào cũng được; rollback: `drop table public.lesson_notes`).
-- **25/10 Ôn tập theo chặng — chế độ Tự học ở nhà:** migration `20261025100000_on_tap_tu_hoc_ve_nha` ĐÃ CHẠY 25/10 (thử trong giao dịch tự huỷ trước). Client xong trên nhánh, CHƯA thử UI bằng tài khoản thầy trên local, CHƯA deploy. Chi tiết: memory `project_thachlab_on_tap_theo_chang`.
-- **26/10 Ôn tập ở nhà — thông báo chuông:** `20261026210000_on_tap_tu_hoc_thong_bao` ĐÃ CHẠY 26/10 (kiểm: hàm có href `/lop-hoc/on-tap/`, `notify_user` khớp 5 tham số). ĐÃ DEPLOY 26/10 (deploy@ad3fe60, gồm client "Tự học ở nhà"; thử 375px bảng điều phối + trang học sinh buổi id 19 ổn, không tràn ngang). CHƯA thử thông báo của buổi tạo MỚI; thông báo cũ vẫn trỏ `/tai-khoan`.
-- **26/10 22:23 gửi bù thông báo ôn ở nhà:** `20261026230000_on_tap_tu_hoc_gui_bu_thong_bao` ĐÃ CHẠY (468 thông báo cho 5 buổi id 17–21, hạn 01/11, href `/lop-hoc/on-tap/`; kiểm lại khớp dry-run, chưa em nào đọc). Đừng chạy lại (bỏ qua em đã có nên không nhân đôi).
-- **26/10 Ôn tập → "Việc hôm nay" (`/tai-khoan`):** buổi ôn đang mở (ở nhà hoặc trên lớp) của lớp em thành việc đầu trong thẻ Hôm nay (`features/learning/next-steps.ts` kind `session`, `ThptStudentHome` gọi `review_my_state`). ĐÃ DEPLOY 26/10 (deploy@eb1e5a0); thử 375px bằng "Xem thử như học sinh" lớp 11 thấy việc "Ôn tập" đứng đầu, không tràn ngang. Chưa thử bằng học sinh thật. Thông báo chuông cũ (BTVN) vẫn trỏ `/tai-khoan` = trang Hôm nay.
-- **27/10 Hình OpenStax L12:** 21 bài đã đăng DB + ảnh `public/assets/openstax/` đã deploy (33/33 ảnh 200). ĐANG CHỜ: thầy xem trang thật ở 375 px (bài 13 Hình 3, bài 2 Hình 3b/3c), đối chiếu ảnh Geiger bài 18; chi tiết `docs/ra-soat/hinh-openstax-l12.md`.
-- **28/10 Hình OpenStax L10/L11 (nhánh `claude/distracted-gauss-2d45d4`):** 26 hình ở 20 bài đã thay bằng ảnh OpenStax (L11 12, L10 14), 38 bài giữ SVG (sách không có hình khớp); đã commit, CHƯA đăng DB, ảnh `public/assets/openstax/l10-*, l11-*` CHƯA deploy. Đăng sau khi deploy ảnh: `cap-nhat-ly-thuyet-hang-loat.sh` cho 20 bài có mục "Hình OpenStax (28/10/2026)" trong `nguon.md`. Chờ thầy xem 375 px (chữ nhỏ: l10-luc-huong-tam, l11-tat-dan-cuong-buc, l10-chuyen-dong-nem Hình 6 lệch 15°/75° so 30°/60°); bảng: `docs/ra-soat/hinh-openstax-l1[01]-*.md`.
-- **29/10 Hình OpenStax đợt 2 + đợt 3 (sách *Physics* THPT): ĐÃ ĐĂNG** 18 bài (15 bài L10/L11 đợt 2 + 3 bài L12 ảnh Commons) + bài 46, deploy 27/27 ảnh 200. Đã gộp vào main 2 nhánh từng ghi thẳng DB mà chưa push (`list-formatting-text`, `openstax-figure-14-7-labels`). Rà *Physics* THPT: L10/L11 không chèn hình, bảng `docs/ra-soat/hinh-physics-thpt-l1*.md`. Còn mở: `l10-toc-do-van-toc` 2554 chữ, `l11-khai-niem-dien-truong` 2785 (vượt trần); ảnh Commons giữ nguồn trong figcaption (`_margin_fig` chỉ chuyển nguồn OpenStax).
-- **24/10 P0 #1 chặng 1 (chấm server):** `20261024150000_exam_answer_server_grading` ĐÃ CHẠY 24/10 11:21 (đối chiếu 500 bài/10.057 câu: TS≠SQL = 0, TS≠đã lưu = 0; hàm anon không gọi được; `rank_fix_quiz_submit(bigint,int)` cũ còn grant anon — bỏ ở chặng 3) — chỉ thêm hàm/view/trigger; từ lúc chạy, điểm HS do DB chấm lại (điểm client lệch giữ ở `detail.client_score`). Còn chặng 2 (client dùng RPC + `exams_staff`) và 3 (thu quyền đọc `exams.questions`, bỏ INSERT trực tiếp, bỏ `rank_fix_quiz_submit(int)`).
-- **24/10 Ôn theo chặng — xem lại chặng cũ + em sai (migration ĐÃ CHẠY 24/10 14:49, đã thử; client ĐÃ DEPLOY 24/10 14:57):** `20261024170000_on_tap_xem_lai_chang_em_sai.sql` (hàm `review_board_stage`, `review_wrong_students`; rollback `perf/rollback/…down.sql`). Thử lớp 18/đề 20 (104 em): tổng `students_wrong` theo câu = số dòng `review_wrong_students` = 762, `review_board` cũ = `review_board_stage`, chưa đăng nhập → forbidden, chặng ngoài khoảng → stage_invalid. Client (`ReviewConsole`: bấm chặng xem lại, bấm câu/dạng/em thấy tên) đã kiểm 375px bằng dữ liệu giả; chưa thử đăng nhập thật với lớp thật.
-- **24/10 Ngân hàng→Luyện tập chặng 0 (migration ĐÃ CHẠY 24/10 ~19:30, client ĐÃ DEPLOY 24/10 ~23:00 (build wvm8aBimOsraIKTVjZTWm, main 2e6749a3e; 37 câu _can_xac_nhan còn sống đã gắn cờ `canXacNhanDapAn`, log hoàn tác scripts/logs/can-xac-nhan-1792855986756.json; chưa thử ghi bank_id bằng HS thật); thử local L12 Bài 1 OK: 98 câu, chấm câu ngân hàng 200):** `20261024200000_lesson_practice_pool_ngan_hang` — RPC `lesson_practice_pool`, `check_bank_practice_answer`, cột `practice_question_results.bank_id`. Báo cáo + kế hoạch 4 chặng: `docs/BAO-CAO-NGAN-HANG-THEO-BAI-2026-10-24.md`. Còn: (1) kho hiện chỉ ~61/568 câu ở L12 Bài 1 vì `exam_is_assessment` loại cả đề thi thử gắn mục Kiểm tra — đề xuất lọc `not assessment OR exam_answers_revealed` → `20261024210000_lesson_practice_pool_noi_loc_de_danh_gia` ĐÃ CHẠY 24/10 (đo: kho L12 Bài 1 tối đa 118 câu cho em mới, +1 khi em mở đáp án 1 đề thi thử; ~500 câu còn khoá sau cổng 3 lượt/đạt điểm → thầy chốt mở cả kho: `20261024220000_lesson_practice_pool_mo_ca_kho` ĐÃ CHẠY 24/10 (đo em mới L12 Bài 1, 100/mức: 203 câu gồm 19 Khó, không lộ đáp án, câu đề giao thật chưa mở bị từ chối; 425 đề "Kiểm tra chương/HK" cũng được mở — xem đầu file); (2) gắn `lint_flags` cho 127 câu `_can_xac_nhan`; (3) chưa thử ghi `bank_id` bằng tài khoản HS thật.
-- **24/10 P0 #1 chặng 2 xong, ĐÃ DEPLOY 24/10 (sw v6), ĐANG CHỜ chặng 3:** client đã dùng RPC (commit e146b8cab…e145838f7), đề đánh giá bị loại khỏi pool luyện tập/phụ đạo. **Chặng 3 (thu quyền `exams.questions`) CHƯA làm được vì CNC học sinh** (`services/cnc-exam-bank.ts` `fetchCncQuizBanks`, `CncCourseWorkspace`) còn đọc thẳng cột này → cần RPC riêng cho CNC trước. Chặng 3 sau 22h, ≥3 ngày sau khi client lên; chạy truy vấn `pg_proc` tìm hàm security invoker còn đọc `questions`. Còn lỗ khác: `practice_sessions.score` client tự gửi, `question_bank` đọc được qua policy exit-quiz/entry-diagnostic (chặng 4).
-- **21/10 Ôn tập theo chặng:** `20261021120000_on_tap_theo_chang` ĐÃ CHẠY (bảng `review_sessions` + 8 hàm `review_*`). Client (`/tro-giang/on-tap`, `/lop-hoc/on-tap`, banner ở `/lop-hoc`) ĐÃ DEPLOY 21/10 (main@585514553, gồm cả mọi client chưa deploy của các phiên khác tới thời điểm đó); chưa thử học sinh/tivi thật. Chi tiết: `docs/memory/project_thachlab_on_tap_theo_chang.md`.
-- **23/10 Ôn dạng bài tập L11:** `gan-dang-chuong1-l11.sql` (380 câu, Dao động) + `gan-dang-chuong2-l11.sql` (411 câu, Sóng) ĐÃ CHẠY. Dạng thiếu câu (<3 chắc chắn): xem memory `project_thachlab_on_tap_theo_chang`.
-- **24/10 Ôn dạng bài tập L12 Ch.1+2:** `gan-dang-chuong1-l12.sql` (165 câu, Vật lí nhiệt) + `gan-dang-chuong2-l12.sql` (255 câu, Khí lí tưởng; tổng 92 `unsure`) ĐÃ CHẠY. Bài 4 (thực hành) chưa gán được. Dạng <3 câu chắc: xem memory `project_thachlab_on_tap_theo_chang`.
-- **23/10 Hệ khung lý thuyết L9–L12:** 90 bài (L9 9, L10 34, L11 26, L12 21 — trừ 3 bài KHTN9 Bài 2–4 chưa đăng bản tương tác và thư mục trùng `l12-ung-dung-cam-ung.cu`) ĐÃ GHI DB (chỉ mục Lý thuyết, kiểm lại 90/90 khớp file; sao lưu `scripts/logs/ly-thuyet-bai*-backup-*.json`). ĐÃ DEPLOY 23/10 (deploy@c0fe33f); kiểm web thật 375px bài 43 (L11) và 18 (L12): khung/công thức đúng, không tràn ngang, KaTeX 0 lỗi. Chưa kiem-code soát công thức do agent thêm.
-- **23/10 Ôn dạng bài tập:** `20261023120000_on_tap_dang_bai_tap` + `gan-dang-chuong3-l12.sql` ĐÃ CHẠY (bảng `question_dang`, 362 câu Chương 3 L12 do Claude gán, 89 câu `unsure` không dùng). Client ĐÃ DEPLOY 24/10 (deploy@834e4a6); chưa thử học sinh thật. Chi tiết: memory `project_thachlab_on_tap_theo_chang`.
-- **19/10 Casio:** `20261019120000_lop_casio_giai_vat_li_mtct` ĐÃ CHẠY (lớp+môn `casio-vat-ly`, bài 179–183, đề 980–984, 5 bài). 24/10: kiem-code soát (đã sửa tiêu đề nhóm WP-01), đăng lại + `--publish` → 5 bài + 5 đề ĐÃ HIỆN; client hub `/lop-hoc/casio-vat-ly` ĐÃ DEPLOY. Còn: mini-test WP-01 lặp bài luyện, kiểm `suggestedAnswer` markdown trên trang HS. Nguồn `content/casio-vat-ly/`, dựng lại: `bash scripts/dang-casio-vat-ly.sh`.
-- **18/10:** `20261018170000_canh_bao_bo_bai_kt_dung_han_va_is_test` — "Bỏ bài KT" chỉ khi quá hạn (`class_assessments.due_at`) hoặc ≥50% lớp nộp; thêm `profiles.is_test`; sweep chỉ tính HS thật. **Chạy migration TRƯỚC khi deploy** (code select `is_test`). Rồi `npx tsx scripts/don-canh-bao-gia.mts --dry-run` → `--apply` (dry-run thử 18/10: 321 mở → 116 giả). Sweep_engagement_alerts vẫn sinh inactive_7d cho tài khoản thử (UI đã ẩn).
-- **Việc 6 đo độ sâu đọc + quiz:** migration `20261018150000_read_depth_quiz` đã chạy 18/10 22:13; client ĐÃ DEPLOY 24/10 (deploy@834e4a6); chưa có UI GV đọc RPC `teacher_lesson_read_depth(class, lesson)`.
-- **17/10 DT-03 đã đăng:** 34 đề Kiểm tra nhanh lớp 10 (exam 941–974, bài 46–79, 666 câu; 9 bài còn 18–19 câu) + exam 937 (bài 12 lớp 12), đã deploy. Tồn đọng: (1) ĐÃ XỬ LÝ 18/10: gán YCCĐ cho 196/212 câu của 11 bài lớp 10 (bảng duyệt `scripts/data/duyet/gan-yccd-l10/`, script `scripts/gan-yccd-ngan-hang-l10.mts`, sao lưu `scripts/logs/sao-luu-gan-yccd-l10-*.json`, hoàn tác bằng `--undo`); còn 16 câu NONE (chuyển động cơ/hệ quy chiếu, phương án đo cổng quang, hiệu chỉnh dụng cụ) chờ thầy quyết thêm YCCĐ mới; (2) đáp án đúng là phương án dài nhất ở 40% câu trắc nghiệm (thầy chọn không sửa); (3) ĐÃ XỬ LÝ (tsconfig loại `scripts`, commit 12bc84943; `tsc --noEmit` sạch 19/10): `next build` từng LỖI typecheck do `scripts/{ap-dung-giai-lai-khop,batch-giai-lai,sinh-loi-giai-ngan-hang,lib/giai-lai-chung}.mts` (phiên khác commit: import đuôi .mts, cờ regex) — deploy 17/10 phải build từ worktree đã xoá 4 file đó; phiên sở hữu cần sửa hoặc thêm `scripts` vào `exclude` của tsconfig.
-- **DT-01 client deploy 17/10 (563d50df6), chưa xác nhận bằng dữ liệu thật:** sau vài ngày có HS dùng, chạy `select kind, count(*), avg(duration_s) from learning_events group by 1` (qua `supabase db query --linked`); không thấy dòng nào thì kiểm `InlineLessonAccordion` + `services/learning-events.ts`. Deploy phải build từ worktree sạch khi `scripts/` có file `.mts` chưa commit làm `next build` lỗi typecheck.
-- Chưa có trong `FILES` hoặc chưa rõ (kiểm `--list`/log trước khi chạy): `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11` (129 câu đề 638/639/658/693/701).
-- Sau khi chạy migration: chạy `node scripts/gen-database-doc.mjs` trên Mac để cập nhật `docs/DATABASE.md` + `docs/DATABASE-RPC.md`.
+## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`)
+- `20261028100000_bai_tap_ngay_mo_theo_gio` (HSG9 bài tập mỗi ngày) CHƯA CHẠY → rồi `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes`, deploy `components/review/ClassRoster.tsx`.
+- `20261024190000_lesson_notes` (bảng ghi chú HS) CHƯA CHẠY; rollback `drop table public.lesson_notes`.
+- `20261027120000_de_ma_khach_xao_de_bang_diem` (đề mã khách `/thi/?ma=`) — kiểm `--list` xem đã chạy chưa.
+- `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
+- `20261018170000_canh_bao_bo_bai_kt…`: chạy TRƯỚC deploy (code select `is_test`), rồi `don-canh-bao-gia.mts --dry-run` → `--apply`.
+- P0 #1 chặng 3 (thu quyền `exams.questions`): chờ RPC riêng cho CNC (`services/cnc-exam-bank.ts`); sau 22h. Còn lỗ `practice_sessions.score`, `question_bank` qua policy exit-quiz (chặng 4).
+- Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
-## Chờ deploy / chờ kiểm
-- 24/10 Làm bài (báo "tự nhảy câu, đáp án sai" + #140/#142): ĐÃ DEPLOY 4 sửa — chạm lại phương án/Đúng-Sai đang chọn không bỏ chọn; `/kiem-tra/lam` chỉ tải đề 1 lần theo (user, đề); lưới chống chunk 404 trong layout hết SyntaxError (trước nay chưa chạy); luôn xác nhận trước khi nộp. Code không có auto-advance, 36 bài đề 752 lưu đúng. CÒN: chờ HS phản hồi — nếu vẫn "nhảy câu" thì hỏi trang nào (Kiểm tra/Luyện tập Từng câu/Thăng hạng), máy gì.
-- Push thông báo (18/10): 2 migration (150000, 160000) + 2 Edge Function ĐÃ chạy/deploy. Cron `send-notification-push` ĐÃ đặt (jobid 6, mỗi phút trong khung 6–22h VN, active; kiểm 19/10). CÒN: thử điện thoại thật (web đã deploy 19/10 từ 53f8b3cfa: sw.js v5, chuông, PushOptInPrompt, độ sâu đọc, lịch tuần).
-- HSG9 đợt 4 (17/10): cả 6 CĐ (151/152/163/156/158/178) đã ghi DB (ẩn) + deploy; chờ thầy xem `/lop-hoc/bai/?id=…` rồi bật Hiện (bật xong deploy lại để có file tĩnh) — xem `docs/memory/project_thachlab_khoa_hsg9_vat_ly.md`.
-- AVCN (20/10): 10 bài tách thành **10 chương** (migration `20261020190000_avcn_tach_10_chuong`, mỗi chương 1 bài, tiêu đề chương bỏ "Chapter n:"); cả 10 bài đã có dòng 🎧 nghe lại câu tình huống bằng **giọng nam Guy** (bài 168–177, body_html đã ghi + deploy); mục tiêu/chuẩn đầu ra viết theo nội dung bài, bỏ "(Part 1/2…)"; tối 20/10 viết lại thành **4 gạch kiến thức/chương**, bỏ bảng 5 Part khỏi tab Học (đã ghi DB + deploy). Ch9 nay có đủ mp3 (trước 0 file). Chờ thầy nghe thử 1–2 bài rồi chốt giọng (Guy/Andrew/Brian) — đổi thì chạy lại `tao_giong_doc.py` + `cap-nhat-ly-thuyet.sh` + `deploy.sh`.
-- Mạng nhện Theo chương / Cả khoá (HSG: Theo mảng): migration `20261014160000` đã chạy 14/10 17:41, deploy 14/10 (commit 10eed8050). Chờ thầy xem 375px với dữ liệu thật; chưa có "Theo học kì" (DB chưa có trường học kì).
-- Thử "🧰 Kiểm tra hành trang" (2 câu kiến thức nền + Nhắc nhanh) ở 10 bài chương 3 L10 (lesson 58–67), đã đăng DB 13/10, không cần deploy. Chờ đo: tỉ lệ đọc hết bài + đúng quiz giữa bài trước/sau; ổn thì làm chương khác (`scripts/chen-hanh-trang.py`, PHUONG-PHAP §4.2b).
-- Mã QR đề (`ExamQrPanel`, `/quet-ma`): chưa thử iPhone + Android thật; chưa làm QR cho CNC và `LessonImporter`.
-- RP lý thuyết: UI đã gọi `rank_theory_open/submit`; **chưa có khoá** → `npx tsx scripts/sinh-khoa-quiz-ly-thuyet.mts` (xem thử) rồi `--ghi`. Chưa chụp 375px bằng tài khoản HS, chưa thử nộp thật.
-- Chấm nhanh HSG 9: Edge Function `hsg-ai-grade` chưa deploy (cần secret `ANTHROPIC_API_KEY`; DeepSeek đã gỡ 17/10, commit e1a9ca706). Thầy deploy lại để có hiệu lực.
-- DT-16 kiểm RLS 17/10 (chỉ đọc `pg_policies`): bảng `exam_results`, `lesson_progress`, `theory_sessions`, `theory_reviews` đều bật RLS, không có policy cho `anon`; `theory_*` chỉ cho `auth.uid()` = học sinh hoặc staff. Policy `public` còn lại là bảng nội dung công khai. Chưa kiểm grant bảng cho `anon` và `learning_events` (migration 9c50d5f0c chưa chạy).
-- Sách in Chương 2 L10 bản v6: chờ thầy chỉnh `book/src/dang-chung.json`, `tiet.json`; `public/sach-data/*.json` v6 chưa commit/deploy (xem `docs/memory/project_thachlab_sach_in_chuong2.md`).
-- Push nhắc hằng ngày: còn VAPID secrets + deploy `send-daily-push` + cron (`docs/PUSH-NHAC-HANG-NGAY.md`).
-- HTML chưa có `Cache-Control: no-cache` trong `.htaccess` của `scripts/deploy.sh` — chờ thầy gật.
+## Chờ deploy / chờ thử thật
+- Ôn tập theo chặng + Tự học ở nhà + "Việc hôm nay": đã deploy, chưa thử bằng HS thật/tivi; thông báo buổi tạo MỚI chưa thử (memory `project_thachlab_on_tap_theo_chang`).
+- Ngân hàng→Luyện tập chặng 0: đã deploy; còn gắn `lint_flags` cho 127 câu `_can_xac_nhan`, thử ghi `bank_id` bằng HS thật (`docs/BAO-CAO-NGAN-HANG-THEO-BAI-2026-10-24.md`).
+- Quiz lý thuyết đợt 2 (73 bài, exam 1102–1174) đã ghi DB, CHƯA DEPLOY. 129–131 chờ đăng lý thuyết tương tác trước; 178 còn 18 câu.
+- Hình OpenStax L10/L11 (nhánh `claude/distracted-gauss-2d45d4`, 20 bài): CHƯA đăng DB/deploy ảnh; L12 chờ thầy xem 375 px (`docs/ra-soat/hinh-openstax-*.md`).
+- Làm bài "tự nhảy câu" (24/10): 4 sửa đã deploy, chờ HS phản hồi.
+- Push thông báo: đã chạy cron; chưa thử điện thoại thật. Push nhắc hằng ngày: còn VAPID + `send-daily-push` (`docs/PUSH-NHAC-HANG-NGAY.md`).
+- HSG9 đợt 4 (6 CĐ ẩn): chờ thầy xem rồi bật Hiện + deploy (memory `project_thachlab_khoa_hsg9_vat_ly`).
+- AVCN: chờ thầy nghe thử giọng Guy/Andrew/Brian.
+- Mạng nhện Theo chương: chờ thầy xem 375 px; chưa có "Theo học kì".
+- Kiểm tra hành trang (L10 ch.3, bài 58–67): chờ đo tỉ lệ đọc hết + đúng quiz.
+- Mã QR đề: chưa thử iPhone/Android thật; chưa có QR cho CNC, `LessonImporter`.
+- RP lý thuyết: chưa có khoá → `sinh-khoa-quiz-ly-thuyet.mts` rồi `--ghi`; chưa thử nộp thật.
+- `hsg-ai-grade` chưa deploy (cần `ANTHROPIC_API_KEY`).
+- Độ sâu đọc: chưa có UI GV đọc `teacher_lesson_read_depth`. DT-01: kiểm `learning_events` có dữ liệu chưa.
+- DT-16 RLS: chưa kiểm grant cho `anon` và `learning_events`.
+- Casio: mini-test WP-01 lặp bài luyện, kiểm `suggestedAnswer` markdown trên trang HS.
+- Sự cố 23/10 (CF chậm, Disk IO): chưa xác nhận lớp thật; 30/10 đo lại CPU + mean_ms `rank_my_status` (mốc 80 % / 272 ms).
+- Lint 0 lỗi: thầy thử `/lop-hoc` trên điện thoại; bật CI gate eslint/tsc (P0 #4).
+- Sách in Ch.2 L10 v6: chờ thầy chỉnh `book/src/dang-chung.json`, `tiet.json`.
+- `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 
 ## Nội dung đang treo
-- 26/10 · Mẹo từ khoá đợt 1: 17 bài (21 thư mục, L10–12) đã đăng 26/10/2026 + CSS `.tl-meo` đã deploy; bảng mẹo `docs/BANG-MEO-TU-KHOA.md`; đợt 2 (○) chờ số liệu Trả bài một chương. 5 bài vốn đã vượt 2.500 từ (l10 giai-bai-toan-dlh, chuyen-dong-nem; l11 tat-dan, song-dung, khai-niem-dien-truong) nay +6…+80 từ — KHÔNG cắt riêng: thầy để phiên làm video giảm chữ (26/10).
-- 26/10 · Thí nghiệm theo khung đề thi: **xong cả 21 bài L12** (đã đăng, sao lưu từng bài ở `STATE-archive.md` mục "Thí nghiệm L12"). ĐANG CHỜ: (1) id 6 bản gộp thí nghiệm + mẹo "NHỎ – LOẠN – ĐẬP" (7f2a7009f) ĐÃ ĐĂNG LẠI 26/10 (`ly-thuyet-bai6-backup-1792987021489.json`); (2) nhánh local `claude/data-tap-lessons-16-19-e5e3b0` (ruột tập) sửa theory.* từ bản cũ — phải merge main trước, KHÔNG đăng từ nhánh đó; (3) `video-theo-bai.json` còn vi_tri/nhin_vao cũ cho video id 12, 126.
-- 17/10/2026: đã gán lớp cho 664/687 đề published chưa có exam_classes (`scripts/gan-lop-de-chua-gan.mts`, suy theo bài học chứa đề; sao lưu + hoàn tác trong `scripts/logs/gan-lop-de-*.json`). Kệ đề lớp 10/11/12 giờ lọc đúng bằng DB; vá tạm bằng tiêu đề ở `features/exams/exam-grade.ts` có thể gỡ sau.
-- 17/10/2026 (sau đó): gỡ gán 10 đề `avcn` (lớp AVCN vào tự do, migration 20261013180000) bằng `scripts/go-gan-lop-de-avcn.mts`; script gán lớp giờ bỏ qua `avcn`. 23 đề không suy được: thầy duyệt 17/10 (22 → lớp 12, đề 99 → lớp 11), đã áp dụng bằng `ap-dung-duyet-lop-de.mts` (sao lưu `scripts/logs/ap-dung-duyet-lop-de-*.json`). Mọi đề published giờ đều có lớp trừ 10 đề `avcn` (cố ý).
-- Còn 23 đề chưa gán (không suy được: 19 "Kiểm tra nhanh"/"Luyện tập" mồ côi bài học #99–101, #209, #239–257 + vài đề khác): danh sách `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`, chờ thầy chọn lớp.
-- Bài tập mẫu L12 còn soạn lại 12 bài: 9, 11, 13–19, 125–127; kế hoạch 42 bài L10/L11 chờ thầy duyệt (`docs/memory/project_thachlab_btm_quet_dang.md`).
-- Bài 11 L12 Thực hành: chưa ghi DB (`upload-lesson.mts content/lesson-samples/l12-thuc-hanh-cam-ung-tu/bundle.json --lesson 12 --mode replace`); 4 bài L12 sửa đường sức chờ `cap-nhat-ly-thuyet-hang-loat.sh l12-luc-tu-cam-ung-tu:11 l12-khai-niem-tu-truong:10 l12-cam-ung-dien-tu:13 l12-dong-dien-xoay-chieu:14` — kiểm `so-file-voi-db.mts` trước vì có thể đã đăng.
-- Trùng slug lesson 126: `content/lesson-samples/l12-ung-dung-cam-ung/` là bản cũ, đăng từ đó sẽ LÙI bài; nên đổi tên/xoá khi rảnh.
-- Bài 65 L10: 3 góp ý nhỏ về Hình 3/4/5 chưa sửa; 2 bài 65/67 chưa xem 375px trên web.
-- Audit đáp án ngân hàng: chờ thầy duyệt 127 câu `_can_xac_nhan` (`scripts/data/bank-answer-fixes.json`), `scripts/logs/db-sai-can-duyet.csv` (556 + 100 câu), 8 `khong_ro` + 2 `cho_phan_xu`.
-- Backfill mức độ câu hỏi: còn ~3.500 câu `difficulty` rỗng — `npx tsx scripts/backfill-question-bank-difficulty.mts 20` (**ghi thật, không dry-run**).
-- Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip (quy ước `content/thi-nghiem/README.md`, `docs/QUY-TAC-THIET-KE.md` mục 5b).
-- 29/10 · Motion graphic (clip 9:16 + khung tương tác + SVG động): kế hoạch mảng ứng dụng + chặng A–F ở `docs/KE-HOACH-MOTION-GRAPHIC.md`; chặng A (khung dừng ở Dự đoán vào 23 clip L12 + CSS `tl-video--doc` chưa deploy) chờ thầy chốt.
-- Rank: gắn `challenge_exam_id` cho cao_thu/thach_dau season 4 ở `/quan-tri/xep-hang`; spec thi thăng hạng thích ứng `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
+- Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
+- Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
+- Motion graphic chặng A (23 clip L12, CSS `tl-video--doc` chưa deploy) chờ thầy chốt — `docs/KE-HOACH-MOTION-GRAPHIC.md`.
+- 23 đề chưa gán lớp: `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`; 16 câu L10 YCCĐ NONE chờ thầy.
+- Bài tập mẫu L12 soạn lại 12 bài (9, 11, 13–19, 125–127); kế hoạch 42 bài L10/L11 chờ duyệt.
+- Bài 11 L12 Thực hành chưa ghi DB; 4 bài L12 sửa đường sức — kiểm `so-file-voi-db.mts` trước.
+- Trùng slug lesson 126: `content/lesson-samples/l12-ung-dung-cam-ung/` là bản cũ, đừng đăng từ đó.
+- Bài 65 L10: 3 góp ý Hình 3/4/5; bài 65/67 chưa xem 375 px.
+- Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
+- Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
+- Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
+- Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
+- KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
 
 ## CHƯA làm (roadmap)
-- `/luyen-tap` có bộ lọc Lớp → Chương → Bài → YCCĐ → Dễ/TB/Khó; `/lo-trinh`; câu Động học 10 đủ ≥30 câu/bài.
-- Trang chương: `docs/DE-XUAT-TRANG-CHUONG-2026-10.md` (chờ thầy chốt 3 câu §7) và `docs/NGHIEN-CUU-DONG-BO-TRANG-CHUONG-TRANG-BAI.md` (chờ chốt §9).
-- **Bài tập mẫu → ngân hàng câu hỏi → "Bài tương đương"** (thầy ghi 30/9): lưu bài mẫu vào `/quan-tri/ngan-hang-cau-hoi` kèm nhãn + chống trùng; nút "Bài tương đương" dưới mỗi bài mẫu và ở `/luyen-tap`. Dùng RPC gộp, không thêm round-trip; migration chỉ viết file.
-- Đo lại độ trễ Supabase từ máy ở VN sau khi chuyển Singapore, trước khi xoá project Sydney; thêm cột `updated_at` cho `lessons`/`lesson_items`.
-- Đề xuất từ nghiên cứu HS 14–22 (11/10/2026, chờ thầy chốt mục 5): `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md` — đo mùa 1 trước, fading theo mastery, đề dài làm theo phần, PhET gắn YCCĐ.
-
-- 11/10/2026 · **UI bài lý thuyết, 5 việc CSS nhỏ thầy đã duyệt (mục 1,3,4,5,6)** — chỗ sửa + cách làm ở `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` mục 5; chưa sửa code.
-
-## 12/10/2026 — KHTN 9 cơ học 129–131 (chưa đăng)
-- Soạn + kiểm chéo xong, chờ thầy duyệt ảnh xem thử, chọn clip, bấm thử PhET, gắn topic; chi tiết `docs/memory/project_thachlab_l9_co_hoc_129_131.md`. Skill mới `.claude/skills/phet/` — Mac: `git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh`.
-- **22/10 Phản biện rà soát + dọn lint:** `docs/RA-SOAT-DU-AN-2026-10-22-PHAN-BIEN.md` — báo cáo khớp ~95 %, sửa 1 câu sai (`@xmldom/xmldom` còn 3 script dùng), thêm lỗ lộ đáp án qua `exams.questions` (P0 #1 phải lược đáp án + chấm server). Lint 94 → 0 lỗi (DeepSeek 4 lượt qua `scripts/deepseek-sua-lint.mts` + Claude 6 file lớn, `kiem-code` soát hết). ĐANG CHỜ: thầy thử `/lop-hoc` trên điện thoại (4 effect đổi sang render-phase); bật CI gate eslint/tsc (P0 #4).
-- **23/10 tối — sự cố lớp 40 em không vào được:** nghẽn ở đoạn Cloudflare→origin với file không cache (HTML, RSC .txt, .json): qua CF 1–5 s/request, thẳng origin 0,17 s (đo + cách đo lại: memory `project_thachlab_hosting`). Thầy chuyển DNS về đám mây xám; đã deploy 71858c3b3 (tắt prefetch Link điều hướng, SW `updateViaCache: none`). CHƯA xác nhận với lớp thật; nếu còn chậm thì đo lại bằng `--resolve` và xem Supabase `rank_my_status` (mean 272 ms, max 7,9 s).
-- **23/10 tối — Supabase cạn Disk IO budget (email):** deploy f838ccc82 cache 2 phút `rank_my_status`/`rank_my_titles` + Watcher 1 lần/2 phút; quy tắc batch sau 22h ở AGENTS.md. CHƯA: thầy xem biểu đồ IO theo giờ + gói compute (Micro → Small nếu còn chậm); kiểm số lượt gọi RPC rank giảm sau 1 tuần (`pg_stat_statements`).
-- **23/10 tối: Supabase lên gói PRO** (chu kỳ 23/10–23/11, spend cap bật, 8 GB đĩa). Compute đã đổi sang t3a.small 23/10 ~20:30 (thầy bấm, DB khởi động lại ~5 phút). Sau 1 tuần (30/10) đo lại CPU + mean_ms rank_my_status (mốc cũ 80 % / 272 ms).
-- **26/10 quiz lý thuyết chuẩn mới đợt 2 (73 bài: L12 2–9, 15–19; L11 20–45; L10 46–79) ĐÃ GHI DB** (`publish-theory-quiz.mts --replace`, exam 1102–1174, log `scripts/logs/publish-quiz-73-20261026.log`; đề cũ 751–774/941–1017… giữ nguyên, exam_ids đã trỏ đề mới; đối chiếu `scripts/kiem-quiz-lech-db.mts`: lệch còn 3 = 129–131). CHƯA DEPLOY (cần `bash scripts/deploy.sh` mới thấy trên web).
-- **25/10 quiz lý thuyết chuẩn mới (29 bộ làm lại, `scripts/data/theory-quiz/`):** 26 bộ (83–91, 150–166, 178) ĐÃ GHI DB 25/10 22:13 (exam 1076–1101, kiểm lại: exam_ids/quiz_min_correct/số câu khớp 26/26; đề cũ 1021–1049 giữ nguyên, log `scripts/logs/publish-quiz-26-20261025.log`) — ĐÃ DEPLOY 25/10 22:3x (deploy@f7bd8ea, build từ nhánh quiz b71f02cb8, không kèm client "Tự học ở nhà" chưa thử UI). 129–131 CHƯA đăng được: DB còn lý thuyết cũ (3 đoạn), phải đăng lý thuyết tương tác trước rồi gán lại `theorySection`. 178 còn 18 câu (thiếu 2 câu Eratosthenes).
-
+- `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.
+- Trang chương: `docs/DE-XUAT-TRANG-CHUONG-2026-10.md` (§7), `docs/NGHIEN-CUU-DONG-BO-TRANG-CHUONG-TRANG-BAI.md` (§9).
+- Bài tập mẫu → ngân hàng → nút "Bài tương đương" (RPC gộp).
+- Đo độ trễ Supabase từ VN trước khi xoá project Sydney; cột `updated_at` cho `lessons`/`lesson_items`.
+- Đề xuất nghiên cứu HS 14–22 (chờ chốt mục 5): `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`.
+- 5 việc CSS bài lý thuyết đã duyệt (mục 1,3,4,5,6): `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` §5.
