@@ -95,4 +95,4 @@
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 9:16 không lời; Lô 0 chờ thầy duyệt
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — ≥1280 media lan phải + cột lề; chưa deploy
-- [Video khung bán tương tác](project_thachlab_video_khung_tuong_tac.md) — khung 6 ô; 14 bài L12 đã đăng
+- [Video khung bán tương tác](project_thachlab_video_khung_tuong_tac.md) — stepper + bỏ hộp chữ đã đăng 16 bài 30/10; ĐANG DỞ thu_nghi cuối clip (75 file chưa commit)

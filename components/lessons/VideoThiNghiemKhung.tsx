@@ -27,6 +27,8 @@ export type VideoKhungDuDoan = {
   giai_thich_dung: string;
   giai_thich_sai: string;
 };
+/** Câu "Thử nghĩ" ở cảnh Chốt lại cuối clip: hiện khi clip tới cảnh đó, em nghĩ xong mới bấm xem câu trả lời. */
+export type VideoKhungThuNghi = { giay: number; cau_hoi: string; goi_y?: string; dap_an: string; giai_thich: string };
 export type VideoKhungData = {
   id: string;
   ten: string;
@@ -35,6 +37,7 @@ export type VideoKhungData = {
   tong_giay: number;
   o: VideoKhungO[];
   dung_dua: VideoKhungDuDoan;
+  thu_nghi?: VideoKhungThuNghi;
 };
 
 /** Mốc giây → "m:ss" để em biết ô này nằm ở đâu trong clip (bấm là tua tới). */
@@ -53,7 +56,8 @@ export type VideoKhungEvent =
   | { loai: "dung_o_du_doan" }
   | { loai: "chon"; chon: number; dung: boolean }
   | { loai: "xem_lai_o"; khoa: string }
-  | { loai: "bo_qua" };
+  | { loai: "bo_qua" }
+  | { loai: "thu_nghi_xem" };
 
 /** Câu trả lời đã chọn theo id clip, sống ngoài component: bài vẽ lại HTML (KaTeX tải xong, bấm video YouTube khác)
  *  thì khung được gắn lại và vẫn nhớ em đã đoán, không bắt dừng hỏi lần nữa. */
@@ -91,6 +95,8 @@ export default function VideoThiNghiemKhung({
     }
   }); // đã xem hết clip (sau khi trả lời Dự đoán) một lần: mở cả sáu ô để ôn lại, nhớ theo id khung
   const reached = xong ? data.o.length - 1 : reachedRaw;
+  const tn = data.thu_nghi;
+  const [xemTn, setXemTn] = useState(false); // đã bấm xem câu trả lời của câu Thử nghĩ cuối clip
   const [asking, setAskingState] = useState(false);
   const setAsking = useCallback((b: boolean) => {
     askingRef.current = b;
@@ -439,6 +445,41 @@ export default function VideoThiNghiemKhung({
               );
             })}
           </ol>
+
+          {/* Câu "Thử nghĩ" ở cảnh Chốt lại: clip hỏi mà không trả lời, nên thẻ này cho em đối chiếu sau khi tự nghĩ
+              (generation effect; L1 phản hồi có giải thích). Chỉ hiện khi clip đã tới cảnh cuối hoặc đã xem hết một lần. */}
+          {tn && (xong || t >= tn.giay - 0.05) && (
+            <div className="mt-3 rounded-xl border border-line-strong bg-primary-soft p-4">
+              <p className="text-[13px] font-bold text-primary" style={{ marginBottom: 4 }}>
+                🤔 Thử nghĩ · câu cuối clip
+              </p>
+              <p className="text-[17px] font-semibold leading-relaxed text-ink">{tn.cau_hoi}</p>
+              {tn.goi_y && (
+                <p className="text-[15px] leading-relaxed text-muted" style={{ marginTop: 4 }}>
+                  Gợi ý: {tn.goi_y}
+                </p>
+              )}
+              {xemTn ? (
+                <div className="mt-3 rounded-lg bg-panel px-3 py-2">
+                  <p className="text-[16px] font-bold text-ink">{tn.dap_an}</p>
+                  <p className="text-[15px] leading-relaxed text-muted" style={{ marginTop: 4 }}>
+                    {tn.giai_thich}
+                  </p>
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setXemTn(true);
+                    eventRef.current?.({ loai: "thu_nghi_xem" });
+                  }}
+                  className="mt-3 inline-flex min-h-12 items-center gap-2 rounded-xl bg-primary px-5 text-[16px] font-bold text-white hover:bg-primary-dark"
+                >
+                  Em nghĩ xong rồi, xem câu trả lời
+                </button>
+              )}
+            </div>
+          )}
         </div>
 
         <div
