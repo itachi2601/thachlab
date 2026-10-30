@@ -11,9 +11,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Nền SÁNG mặc định (11/10), token `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`)
-- `20261028100000_bai_tap_ngay_mo_theo_gio` (HSG9 bài tập mỗi ngày) CHƯA CHẠY → rồi `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes`, deploy `components/review/ClassRoster.tsx`.
-- `20261024190000_lesson_notes` (bảng ghi chú HS) CHƯA CHẠY; rollback `drop table public.lesson_notes`.
-- `20261027120000_de_ma_khach_xao_de_bang_diem` (đề mã khách `/thi/?ma=`) — kiểm `--list` xem đã chạy chưa.
+- `20261028100000_bai_tap_ngay`: migration ĐÃ CHẠY (kiểm DB 30/10); còn `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes` + deploy `components/review/ClassRoster.tsx` (chưa rõ đã làm).
 - `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
 - `20261018170000_canh_bao_bo_bai_kt…`: chạy TRƯỚC deploy (code select `is_test`), rồi `don-canh-bao-gia.mts --dry-run` → `--apply`.
 - P0 #1 chặng 3 (thu quyền `exams.questions`): chờ RPC riêng cho CNC (`services/cnc-exam-bank.ts`); sau 22h. Còn lỗ `practice_sessions.score`, `question_bank` qua policy exit-quiz (chặng 4).

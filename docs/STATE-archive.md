@@ -820,3 +820,8 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - **26/10 quiz lý thuyết chuẩn mới đợt 2 (73 bài: L12 2–9, 15–19; L11 20–45; L10 46–79) ĐÃ GHI DB** (`publish-theory-quiz.mts --replace`, exam 1102–1174, log `scripts/logs/publish-quiz-73-20261026.log`; đề cũ 751–774/941–1017… giữ nguyên, exam_ids đã trỏ đề mới; đối chiếu `scripts/kiem-quiz-lech-db.mts`: lệch còn 3 = 129–131). CHƯA DEPLOY (cần `bash scripts/deploy.sh` mới thấy trên web).
 - **25/10 quiz lý thuyết chuẩn mới (29 bộ làm lại, `scripts/data/theory-quiz/`):** 26 bộ (83–91, 150–166, 178) ĐÃ GHI DB 25/10 22:13 (exam 1076–1101, kiểm lại: exam_ids/quiz_min_correct/số câu khớp 26/26; đề cũ 1021–1049 giữ nguyên, log `scripts/logs/publish-quiz-26-20261025.log`) — ĐÃ DEPLOY 25/10 22:3x (deploy@f7bd8ea, build từ nhánh quiz b71f02cb8, không kèm client "Tự học ở nhà" chưa thử UI). 129–131 CHƯA đăng được: DB còn lý thuyết cũ (3 đoạn), phải đăng lý thuyết tương tác trước rồi gán lại `theorySection`. 178 còn 18 câu (thiếu 2 câu Eratosthenes).
 
+
+## Migration xác nhận đã chạy (kiểm DB 30/10/2026: bảng, hàm, cron đều có)
+- `20261028100000_bai_tap_ngay_mo_theo_gio` (HSG9 bài tập mỗi ngày) CHƯA CHẠY → rồi `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes`, deploy `components/review/ClassRoster.tsx`.
+- `20261024190000_lesson_notes` (bảng ghi chú HS) CHƯA CHẠY; rollback `drop table public.lesson_notes`.
+- `20261027120000_de_ma_khach_xao_de_bang_diem` (đề mã khách `/thi/?ma=`) — kiểm `--list` xem đã chạy chưa.
