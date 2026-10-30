@@ -8,7 +8,7 @@ import pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, arrow as _arrow  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -17,18 +17,13 @@ CUR = {"fig": 0}
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác: mũi tên dùng đầu V 30° của svg_lib (thầy chốt 7/10/2026)."""
+    return ""
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, name="", dash=""):
     ARROWS.append((CUR["fig"], name, x1, y1, x2, y2))
-    d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    return _arrow(p, c, round(x1, 1), round(y1, 1), round(x2, 1), round(y2, 1), w, dash)
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
@@ -37,7 +32,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="11">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700"):
@@ -71,7 +66,8 @@ fig1 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-dinh-lua
         '<figcaption>Hình 1. Người bơi đẩy thành bể, thành đẩy lại:<br>'
         '<em>F</em> chân lên thành: đặt lên <strong>thành</strong> (mũi tên đỏ đậm).<br>'
         '<em>F</em> thành lên chân: đặt lên <strong>người</strong>, ngược chiều, cùng độ lớn.<br>'
-        'Nhãn: wall = thành · feet = chân · w = trọng lực · BF = lực đẩy của nước.<br>'
+        'Nhãn: wall = thành<br>feet = chân<br>w = trọng lực<br>BF = lực đẩy của nước<br>'
+        'System of interest = vật đang xét<br>Direction of acceleration = hướng gia tốc<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 4.9 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
 
@@ -108,15 +104,18 @@ b += text(BK[0] + 6, BK[1] - 8, "Quyển sách", "currentColor", 14, "start", "6
 b += f'<rect x="{TB[0]}" y="{TB[1]}" width="{TB[2]-TB[0]}" height="{TB[3]-TB[1]}" rx="3" fill="rgba(56,189,248,.12)" stroke="currentColor" stroke-width="2"/>'
 b += line(110, TB[3], 110, 282) + line(310, TB[3], 310, 282)
 b += text(TB[0] + 8, TB[1] + 26, "Mặt bàn", "currentColor", 14, "start", "600")
-b += arrow("f3", "o", 180, 110, 180, 168, 3.2, "P")              # trọng lực: gốc ở trọng tâm sách, hướng xuống
-b += text(170, 186, "P", ORG, 15, "end")
-b += arrow("f3", "o", 245, BK[3], 245, 92, 3.2, "N")             # lực nâng lên sách, gốc ở mặt dưới sách, hướng lên
+LF = 52   # P = N = N′ (sách cân bằng; N′ là phản lực của N) -> cùng độ dài
+b += arrow("f3", "o", 180, 110, 180, 110 + LF, 3.2, "P")              # trọng lực: gốc ở trọng tâm sách, hướng xuống
+b += text(170, 160, "P", ORG, 15, "end")
+b += text(12, 182, "Vẽ tách sách", "currentColor", 14, "start", "500")
+b += text(12, 200, "khỏi bàn", "currentColor", 14, "start", "500")
+b += arrow("f3", "o", 245, BK[3], 245, BK[3] - LF, 3.2, "N")             # lực nâng lên sách, gốc ở mặt dưới sách, hướng lên
 b += text(256, 108, "N", ORG, 15, "start")
-b += arrow("f3", "b", 245, TB[1], 245, TB[1] + 34, 3.2, "N'")    # sách ép lên bàn, gốc ở mặt bàn, hướng xuống
-b += text(256, TB[1] + 34, "N′", BLUE, 15, "start")
-b += line(300, BK[3] + 4, 300, TB[1] - 4, "currentColor", 1.6, "4 4", .8)
-b += text(308, 166, "N và N′:", "currentColor", 14, "start", "600")
-b += text(308, 184, "lực–phản lực", "currentColor", 14, "start", "600")
+b += arrow("f3", "b", 245, TB[1], 245, TB[1] + LF, 3.2, "N'")    # sách ép lên bàn, gốc ở mặt bàn, hướng xuống
+b += text(256, TB[1] + 30, "N′", BLUE, 15, "start")
+b += line(245, BK[3] + 4, 245, TB[1] - 4, "currentColor", 1.6, "4 4", .8)   # nối thẳng N (trên) với N′ (dưới)
+b += text(256, 166, "N và N′:", "currentColor", 14, "start", "600")
+b += text(256, 184, "lực–phản lực", "currentColor", 14, "start", "600")
 b += text(10, 22, "● Cam: lực đặt lên SÁCH", ORG, 14, "start", "600")
 b += text(10, 42, "● Xanh: lực đặt lên BÀN", BLUE, 14, "start", "600")
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
@@ -139,11 +138,11 @@ b += arrow("f4", "r", 100, 150, 100 - F_PX, 150, 3.2, "F_BA")      # lực lên 
 b += text(24, 140, "120 N", RED, 14, "start")
 b += arrow("f4", "r", 320, 150, 320 + F_PX, 150, 3.2, "F_AB")      # lực lên B, hướng ra xa A (sang phải)
 b += text(334, 140, "120 N", RED, 14, "start")
-A_A, A_B = 120, 80      # a_A = 3, a_B = 2 -> 40 px cho 1 m/s²
-b += arrow("f4", "g", 192, 60, 192 - A_A, 60, 3.4, "aA")
-b += text(132, 42, sub("a", "A") + " = 3 m/s²", GRN, 14, "middle")
-b += arrow("f4", "g", 208, 60, 208 + A_B, 60, 3.4, "aB")
-b += text(268, 42, sub("a", "B") + " = 2 m/s²", GRN, 14, "middle")
+A_A, A_B = 90, 60       # a_A = 3, a_B = 2 -> 30 px cho 1 m/s²; gốc đặt trên đầu từng bạn
+b += arrow("f4", "g", 110, 64, 110 - A_A, 64, 3.4, "aA")
+b += text(70, 46, sub("a", "A") + " = 3 m/s²", GRN, 14, "middle")
+b += arrow("f4", "g", 310, 52, 310 + A_B, 52, 3.4, "aB")
+b += text(350, 34, sub("a", "B") + " = 2 m/s²", GRN, 14, "middle")
 fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
             "Hai bạn đẩy nhau trên giày trượt: lực đỏ bằng nhau 120 N, gia tốc xanh của bạn A nhẹ hơn dài hơn", b,
             "Hình 4. Lực (đỏ) bằng nhau; gia tốc (xanh lá) của bạn A nhẹ hơn <em>dài hơn</em> (3 : 2).")
@@ -183,6 +182,8 @@ la = lambda k: abs(A[k][2] - A[k][0])
 if abs(la((4, "F_BA")) - la((4, "F_AB"))) > 0.5: bad.append("Hình 4: hai lực không dài bằng nhau")
 if abs(la((4, "aA")) / la((4, "aB")) - 1.5) > 0.01: bad.append("Hình 4: tỉ lệ gia tốc a_A : a_B khác 3 : 2")
 if abs(la((2, "F21")) - la((2, "F12"))) > 0.5: bad.append("Hình 2: hai lực không dài bằng nhau")
+lv = lambda k: abs(A[k][3] - A[k][1])
+if len({round(lv((3, n)), 1) for n in ("P", "N", "N'")}) != 1: bad.append("Hình 3: P, N, N′ không dài bằng nhau")
 print("\n".join(bad) if bad else "kiểm toạ độ: ok")
 
 src = (HERE / "theory.src.html").read_text(encoding="utf8")
