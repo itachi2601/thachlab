@@ -5,6 +5,7 @@ import Link from "next/link";
 import { SESSION_TYPE_META, STATUS_META } from "@/lib/tro-giang/constants";
 import { formatHours } from "@/lib/tro-giang/format";
 import TaSessionQuickEdit from "@/components/tro-giang/TaSessionQuickEdit";
+import TaAppeals from "@/components/tro-giang/TaAppeals";
 import {
   canTaEditInReopen,
   canTaEditSession,
@@ -42,7 +43,7 @@ export default function PolicyMonthSessions({ assistantId, month, onChanged }: {
         <p className="rounded-xl border border-amber-400/40 bg-amber-500/10 p-4 text-sm text-amber-100">
           Thầy mở lại tháng {month.slice(5, 7)}/{month.slice(0, 4)} để các bạn rà lần cuối, hạn đến <b>{fmtUntil(reopenThisMonth.until)}</b>.
           Kiểm từng buổi: ngày, lớp, giờ, số lượt/số bài. Sai thì bấm &quot;Sửa buổi này&quot;; buổi đã duyệt mà sửa sẽ về Chờ duyệt để thầy duyệt lại.
-          Thiếu buổi thì <Link href="/tro-giang/ghi" className="underline">ghi thêm</Link>.
+          Thiếu buổi thì <Link href="/tro-giang/ghi" className="underline">ghi thêm</Link>; thắc mắc khác thì gửi khiếu nại cuối mục. Hết hạn, công tháng này khoá để thầy chốt sổ.
         </p>
       )}
       {sessions === null ? (
@@ -101,6 +102,7 @@ export default function PolicyMonthSessions({ assistantId, month, onChanged }: {
           })}
         </ul>
       )}
+      <TaAppeals key={sessions?.length ?? 0} assistantId={assistantId} month={`${month.slice(0, 7)}-01`} canSubmit={!!reopenThisMonth} />
     </section>
   );
 }

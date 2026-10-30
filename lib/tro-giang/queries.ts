@@ -586,3 +586,31 @@ export async function fetchTopicExploitationRate(days = 14): Promise<TaTopicExpl
   if (error) throw error;
   return ((data ?? []) as TaTopicExploitation[])[0];
 }
+
+// ---------- Khiếu nại công tháng (đợt xem lại ngày 1–3 tháng sau) ----------
+
+export interface TaAppeal {
+  id: number;
+  assistant_id: string;
+  month: string;
+  body: string;
+  created_at: string;
+  reply: string | null;
+  resolved_at: string | null;
+}
+
+export async function fetchAppeals(assistantId: string, month: string): Promise<TaAppeal[]> {
+  const { data, error } = await getSupabase().rpc("ta_list_appeals", { p_assistant_id: assistantId, p_month: month });
+  if (error) throw error;
+  return (data ?? []) as TaAppeal[];
+}
+
+export async function submitAppeal(month: string, body: string): Promise<void> {
+  const { error } = await getSupabase().rpc("ta_submit_appeal", { p_month: month, p_body: body });
+  if (error) throw error;
+}
+
+export async function resolveAppeal(id: number, reply: string): Promise<void> {
+  const { error } = await getSupabase().rpc("ta_resolve_appeal", { p_id: id, p_reply: reply });
+  if (error) throw error;
+}
