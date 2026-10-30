@@ -1,0 +1,52 @@
+{
+  "id": "tn-l11-tudien-02",
+  "ten": "Nạp tụ ở nhiều mức U, đo điện tích Q",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-02-20261030-2.mp4",
+  "tong_giay": 49.67,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Q tỉ lệ thuận với U: tỉ số Q/U của một tụ không đổi, đó là điện dung C.",
+      "kiem": "Đổi U nạp thì tỉ số Q/U của tụ ra sao?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.6,
+      "chu": "Nạp tụ ở U càng lớn thì tỉ số Q/U tính ra thay đổi thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.8,
+      "chu": "Tụ 470 μF – 16 V. Gạt K về 1 nạp tụ (vôn kế đo U), gạt về 2 cho tụ phóng qua bộ đo điện lượng để đọc Q."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 21.0,
+      "chu": "U = 2; 4; 6; 8; 10 V cho Q = 980; 1900; 2890; 3820; 4800 μC."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 26.8,
+      "chu": "Q tỉ lệ thuận với U; Q/U quanh 481 μF, đó là điện dung C.\nLần đo ở 2 V lệch nhiều nhất."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 36.5,
+      "chu": "Mới đo một tụ: C phụ thuộc gì ở cấu tạo tụ? Tụ trữ bao nhiêu năng lượng?"
+    }
+  ],
+  "dung_dua": {
+    "giay": 10.7,
+    "cau_hoi": "Nạp tụ ở U càng lớn thì tỉ số Q/U tính ra thay đổi thế nào?",
+    "chon": [
+      "A. Tăng dần theo U",
+      "B. Giảm dần khi U tăng",
+      "C. Gần như không đổi",
+      "D. Luôn bằng đúng 470 μF ghi trên vỏ"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "Q/U ở năm lần đo là 490; 475; 481,7; 477,5; 480 μF, quanh 481 μF: U tăng bao nhiêu lần thì Q tăng bấy nhiêu lần, tỉ số đó là điện dung C của tụ.",
+    "giai_thich_sai": "Xem bảng ở đoạn kế: chia Q cho U ở từng hàng rồi so các tỉ số với nhau, và so với 470 μF ghi trên vỏ."
+  }
+}
