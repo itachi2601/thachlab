@@ -1,0 +1,52 @@
+{
+  "id": "tn-l11-dien-the-02",
+  "ten": "Vôn kế, pin 1,5 V và dây đồng",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-02-20261030-2.mp4",
+  "tong_giay": 49.0,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Vôn kế chỉ đo hiệu điện thế giữa hai điểm: số chỉ = V đỏ − V đen. Hai điểm trên cùng một dây dẫn có U ≈ 0.",
+      "kiem": "Vôn kế đo được gì khi hai que chạm hai điểm?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 4.2,
+      "chu": "Hai que chạm hai điểm trên dây đồng nối cực (+). Vôn kế chỉ bao nhiêu?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.8,
+      "chu": "Pin 1,5 V để hở, vôn kế số: que đỏ cắm V, que đen cắm COM. Ba lần chạm."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 18.0,
+      "chu": "Lần 1 (đỏ ở +): 1,5 V.\nLần 2 (đổi que): −1,5 V.\nLần 3 (hai điểm trên dây): 0,00 V."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 27.0,
+      "chu": "Số chỉ = V đỏ − V đen; đổi que thì đổi dấu: U_NM = −U_MN.\nDây không có dòng: mọi điểm cùng điện thế, U ≈ 0."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 35.8,
+      "chu": "Dây có dòng lớn chạy qua thì U giữa hai điểm của nó còn bằng 0 không: chưa biết."
+    }
+  ],
+  "dung_dua": {
+    "giay": 10.65,
+    "cau_hoi": "Hai que chạm hai điểm trên dây đồng nối cực (+). Vôn kế chỉ…",
+    "chon": [
+      "A. 1,5 V",
+      "B. 0 V",
+      "C. −1,5 V",
+      "D. càng xa nhau càng lớn"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Pin để hở nên dây đồng không có dòng: mọi điểm trên dây cùng điện thế với cực (+), hiệu giữa hai điểm bằng 0.",
+    "giai_thich_sai": "Xem lần 3 ở đoạn kế: vôn kế hiện hiệu V đỏ − V đen, không hiện điện thế của dây."
+  }
+}
