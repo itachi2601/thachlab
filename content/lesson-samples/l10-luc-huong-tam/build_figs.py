@@ -117,7 +117,7 @@ VB[1] = (420, 266)
 O1 = (210, 254)   # rộng/cao thêm để nhãn v1, v2 nằm hẳn ngoài đường
 b = defs("f1") + road(O1, 150, 190, 162, 18)
 b += f'<circle cx="{O1[0]}" cy="{O1[1]}" r="3.5" fill="currentColor"/>' + text(O1[0] + 10, O1[1] + 4, "O", size=17)
-for th, lab in ((132, "1"), (52, "2")):
+for th, lab in ((128, "1"), (52, "2")):   # đối xứng qua trục đứng
     cx, cy = P(O1, 170, th)
     b += line(O1[0], O1[1], cx, cy, "currentColor", 1.2, "4 5", .5)
     b += car(cx, cy, th)
@@ -125,6 +125,9 @@ for th, lab in ((132, "1"), (52, "2")):
     x2, y2 = cx + 62 * ux, cy + 62 * uy
     b += arrow("f1", "b", cx, cy, x2, y2, 3.2, name=f"v{lab}")
     perp_to_radius(1, f"v{lab}", cx, cy, x2, y2, O1)
+    assert abs(math.hypot(cx - O1[0], cy - O1[1]) - 170) < 0.01, "Hình 1: xe không ở giữa làn (R=170)"
+    assert abs(math.hypot(x2 - cx, y2 - cy) - 62) < 0.01, "Hình 1: hai mũi tên v phải dài bằng nhau (62)"
+    print(f"Hình 1 xe {lab}: tâm ({cx:.1f},{cy:.1f}) R={math.hypot(cx-O1[0], cy-O1[1]):.2f} | v dài {math.hypot(x2-cx, y2-cy):.2f}")
     # nhãn đặt ngoài mép đường (bán kính 208), cùng góc với đầu mũi tên -> không đè nét đường
     tip = math.degrees(math.atan2(O1[1] - y2, x2 - O1[0]))
     lx, ly = P(O1, 222, tip)
