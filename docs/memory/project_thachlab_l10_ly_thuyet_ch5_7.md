@@ -14,3 +14,5 @@ B22 `thuc-hanh-tong-hop-luc` (67). Commit d840ea842 (lô 1), b603f8ea3 (lô 2), 
 **Treo:** chưa xem ảnh `sec-*` B30 và fig B28 sau sửa chữ SVG; B20 nhãn F_ms hình 3–4 hơi chạm mép thùng; B20/B22 chưa đối chiếu SGK
 (bài cũ 65/67 không có nội dung); chưa còn bài lý thuyết tương tác nào thiếu ở lớp 10. Lớp 11: XONG 9/10/2026 (xem project_thachlab_l11_6_bai_con_lai); lớp 12: KHÔNG còn bài nào (kiểm DB 9/10/2026: 20/20 bài lý thuyết tương tác, file = DB).
 Bài học đã ghi ở cuối skill `soan-bai-ly-thuyet-tuong-tac` (chữ SVG ≥17, bảng không đứng trước quiz, `</div>` khung quiz).
+
+**Rà soát 30/10/2026 (skill ra-soat-bai-hoc, B28–33):** 20 hình vẽ lại (đầu V thay marker tam giác, B28 H1 & B31 H1 vẽ lại người, B32 H1/H3, B33 H3–5), nội dung không lỗi; kiem-code soát 2 vòng. Commit 1c7227405…5e66768f0, **CHƯA đăng DB** (lesson 73–78, `cap-nhat-ly-thuyet.sh`). B29 đăng sẽ kèm khối video tên lửa bóng bay (về đúng chỗ theo src). Chờ thầy: caption B32 Hình 5 "f = μsN" → "f ≤ μsN"?
