@@ -233,7 +233,7 @@ ERR += c.check()
 # ================= Hình 3: xe + tấm chắn + cổng quang + đồng hồ hiện số
 c = Canvas("f3", 420, 250)
 YR = 158
-c.line(20, YR, 400, YR, "currentColor", 3, op=.55)
+c.line(20, YR, 366, YR, "currentColor", 3, op=.55)
 # xe
 c.add(f'<rect x="100" y="124" width="80" height="22" rx="3" fill="{ORG}" stroke="currentColor" stroke-width="1.5"/>')
 for wx in (118, 162):
@@ -243,7 +243,7 @@ SH0, SH1, SHT, SHB = 150, 172, 92, 124
 c.add(f'<rect x="{SH0}" y="{SHT}" width="{SH1-SH0}" height="{SHB-SHT}" fill="rgba(56,189,248,.35)" stroke="{BLUE}" stroke-width="2"/>')
 # cổng quang nhìn từ bên cạnh: đầu cổng (chữ U úp, hai càng trước/sau ray) treo trên thanh giữ; tia sáng đi VÀO TRANG (⊗),
 # vuông góc phương chuyển động, ở độ cao nằm trong tầm cao tấm chắn; đáy đầu cổng cao hơn nóc xe nên chỉ tấm chắn lọt khe.
-GX, GW, GT, GB, YBEAM = 256, 22, 54, 121, 106
+GX, GW, GT, GB, YBEAM = 256, 22, 54, 118, 106
 GL, GR = GX - GW / 2, GX + GW / 2
 CAR_TOP = 124
 c.line(GX, 24, GX, GT, "currentColor", 3, op=.55)                       # thanh giữ
@@ -252,7 +252,7 @@ c.add(f'<circle cx="{GX}" cy="{YBEAM}" r="6" fill="none" stroke="{RED}" stroke-w
 c.line(GX - 4, YBEAM - 4, GX + 4, YBEAM + 4, RED, 2)
 c.line(GX - 4, YBEAM + 4, GX + 4, YBEAM - 4, RED, 2)
 ERR += [] if SHT < YBEAM < SHB else ["f3: tia sáng không nằm trong tầm cao tấm chắn"]
-ERR += [] if SHT < GB < CAR_TOP else ["f3: đáy đầu cổng phải thấp hơn đỉnh tấm chắn và cao hơn nóc xe"]
+ERR += [] if (SHT < GB < CAR_TOP and CAR_TOP - GB >= 6) else ["f3: đáy đầu cổng phải thấp hơn đỉnh tấm chắn và cao hơn nóc xe"]
 # kích thước d phía trên tấm chắn
 c.line(SH0, 84, SH1, 84, "currentColor", 1.6)
 c.line(SH0, 79, SH0, 89, "currentColor", 1.6)
@@ -269,6 +269,7 @@ c.text(20, 186, "đường ray", size=14, weight="600")
 # đồng hồ
 BX0, BY0, BW, BH = 270, 188, 130, 50
 c.add(f'<rect x="{BX0}" y="{BY0}" width="{BW}" height="{BH}" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/>')
+ERR += [] if 380 > 366 else ["f3: dây cắt ray"]
 c.add(f'<path d="M{GR},{GT+8} L380,{GT+8} L380,{BY0}" fill="none" stroke="currentColor" stroke-width="2"/>')
 c.text(BX0 + BW / 2, BY0 + 21, "đồng hồ", size=14, anchor="middle", weight="600")
 c.text(BX0 + BW / 2, BY0 + 40, "hiện số", size=14, anchor="middle", weight="600")
