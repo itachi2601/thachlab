@@ -1,7 +1,7 @@
 """Chuyển phần "Nhãn: …" và dòng nguồn OpenStax của <figcaption> ra chú thích lề phải (thầy chốt 28/10/2026).
 
 margin_figs(html): với mỗi <figure> có dòng "Nhãn:" trong figcaption, bỏ legend + nguồn khỏi figcaption, đặt
-<ol class="tl-fns"> ngay dưới hình, và chỉ gắn dấu <sup class="tl-fn"> khi có đoạn <p> cấp đầu đứng sát hình.
+<ol class="tl-fns"> ngay dưới hình, và chỉ gắn dấu <sup class="tl-fn"> khi có đoạn <p> cấp đầu đứng sát ngay trước hình.
 features/lessons/margin-notes.ts (withFigureNotes) dựa vào việc <ol> đứng liền </figure>: ≥1280px đưa nguồn ra lề
 ngang đầu hình, màn hẹp để dưới hình."""
 import re
@@ -72,17 +72,12 @@ def margin_figs(html: str) -> str:
         while fid in used:
             fid += "x"
         label = f"H{num.group(1)}" if num else str(k)
-        # Số mũ chỉ gắn vào đoạn <p> cấp đầu ĐỨNG SÁT hình (trước hoặc sau, không chen khối nào); không có thì bỏ số mũ —
+        # Số mũ chỉ gắn vào đoạn <p> cấp đầu ĐỨNG SÁT TRƯỚC hình (không chen khối nào; đoạn sau hình thường là ý mới); không có thì bỏ số mũ —
         # nguồn đã đi theo hình, số mũ ở đoạn xa (dòng 🔑, đoạn trên danh sách, hình trong <details>) chỉ gây lạc (30/10/2026).
         at = _top_level_p_end(html, m.start(), True)
         side = "trước"
         if at is not None and html[at + 4:m.start()].strip():
             at = None
-        if at is None:
-            at = _top_level_p_end(html, m.end(), False)
-            side = "sau"
-            if at is not None and html[m.end():html.rfind("<p", 0, at)].strip():
-                at = None
         if at is None:
             side = "không"
         used.add(fid)
@@ -96,12 +91,9 @@ def margin_figs(html: str) -> str:
         newfig = newfig + "\n" + note
         if side == "không":
             out.append((m.start(), m.end() - m.start(), newfig))
-        elif side == "trước":
-            out.append((at, 0, sup))
-            out.append((m.start(), m.end() - m.start(), newfig))
         else:
-            out.append((m.start(), m.end() - m.start(), newfig))
             out.append((at, 0, sup))
+            out.append((m.start(), m.end() - m.start(), newfig))
     res, last = [], 0
     for pos, ln, txt in sorted(out, key=lambda x: (x[0], x[1] == 0)):
         res.append(html[last:pos]); res.append(txt); last = pos + ln
