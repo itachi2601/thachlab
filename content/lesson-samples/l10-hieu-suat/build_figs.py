@@ -6,7 +6,7 @@ import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -28,10 +28,13 @@ def seg(x1, y1, x2, y2):
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
+    """Vectơ: thân thẳng + đầu V 30° (svg_lib.chevron), không dùng marker tam giác."""
     seg(x1, y1, x2, y2)
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    L = max(6, min(3.4 * ww + 2, 0.6 * math.hypot(x2 - x1, y2 - y1)))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
@@ -105,9 +108,9 @@ def poly_v(c, xc, y1, y2, th):
 
 # ---------------- Hình 1: hai bóng đèn (mở bài) ----------------
 CUR["fig"] = 1
-VB[1] = (440, 190)
+VB[1] = (440, 200)
 b = ""
-for cx, lab in ((100, "Sợi đốt · 60 W"), (340, "LED · 9 W")):
+for cx, lab, lab2 in ((100, "Sợi đốt", "60 W"), (340, "LED", "9 W")):
     cy, r = 70, 36
     b += f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="rgba(251,146,60,.18)" stroke="currentColor" stroke-width="2.4"/>'
     b += f'<rect x="{cx-14}" y="{cy+r-4}" width="28" height="24" rx="3" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2.2"/>'
@@ -117,29 +120,47 @@ for cx, lab in ((100, "Sợi đốt · 60 W"), (340, "LED · 9 W")):
         x0, y0 = cx + 46 * math.cos(math.radians(ang)), cy + 46 * math.sin(math.radians(ang))
         x1, y1 = cx + 58 * math.cos(math.radians(ang)), cy + 58 * math.sin(math.radians(ang))
         b += line(x0, y0, x1, y1, ORG, 2.4)
-    b += text(cx, 168, lab, "currentColor", 14, "middle")
+    if lab == "Sợi đốt":
+        # hai cọc đỡ + dây tóc gấp khúc
+        b += line(cx - 9, cy + r - 4, cx - 9, cy + 6, "currentColor", 1.6, track=False)
+        b += line(cx + 9, cy + r - 4, cx + 9, cy + 6, "currentColor", 1.6, track=False)
+        zz = " ".join(f"{cx - 9 + 3 * i:.1f},{cy + 6 + (-5 if i % 2 else 0):.1f}" for i in range(7))
+        b += f'<polyline points="{zz}" fill="none" stroke="{ORG}" stroke-width="2"/>'
+        # sóng nhiệt bên trái bóng (bóng nóng)
+        for xw in (24, 38):
+            b += (f'<path d="M{xw},128 q-6,-7 0,-14 q6,-7 0,-14 q-6,-7 0,-14" fill="none" stroke="{RED}" '
+                  f'stroke-width="2.2" stroke-linecap="round"/>')
+        b += text(31, 150, "nóng", RED, 14, "middle")
+    else:
+        # chip LED nhỏ trên hai chân
+        b += line(cx - 6, cy + r - 4, cx - 6, cy + 12, "currentColor", 1.6, track=False)
+        b += line(cx + 6, cy + r - 4, cx + 6, cy + 12, "currentColor", 1.6, track=False)
+        b += f'<rect x="{cx-11}" y="{cy+2}" width="22" height="10" rx="2" fill="{ORG}" stroke="currentColor" stroke-width="1.6"/>'
+    b += text(cx, 166, lab, "currentColor", 14, "middle")
+    b += text(cx, 186, lab2, "currentColor", 14, "middle")
 b += text(220, 76, "cùng độ sáng", "currentColor", 14, "middle", "600")
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
-            "Hai bóng đèn cùng độ sáng: bóng sợi đốt ghi 60 W và bóng LED ghi 9 W", b,
+            "Hai bóng đèn cùng độ sáng: bóng sợi đốt ghi 60 W, nóng lên; bóng LED ghi 9 W", b,
             "Hình 1. Hai bóng đèn sáng ngang nhau nhưng công suất ghi trên bóng khác nhau.")
 
 # ---------------- Hình 2: sơ đồ năng lượng (minh hoạ 100 J = 80 J + 20 J) ----------------
 CUR["fig"] = 2
-VB[2] = (440, 225)
+VB[2] = (440, 196)
 WT, WC, WH = 100, 80, 20
 expect(WT == WC + WH, "Hình 2: W_tp = W_ci + W_hp")
 K = 0.2                                  # px bề dày mỗi J
+Y0 = 26                                  # mép trên hộp máy
 b = ""
-b += f'<rect x="150" y="62" width="140" height="80" rx="8" fill="rgba(148,163,184,.2)" stroke="currentColor" stroke-width="2.4"/>'
-seg(150, 62, 290, 62); seg(150, 142, 290, 142); seg(150, 62, 150, 142); seg(290, 62, 290, 142)
-b += text(220, 108, "Máy", "currentColor", 16, "middle")
-b += poly_h("o", 14, 148, 102, WT * K)
-b += poly_h("g", 292, 426, 102, WC * K)
-b += poly_v("r", 220, 144, 200, WH * K)
-b += text(14, 76, sub("W", "tp") + " = 100 J", ORG, 14, "start")
-b += text(296, 78, sub("W", "ci") + " = 80 J", GRN, 14, "start")
-b += text(236, 172, sub("W", "hp") + " = 20 J", RED, 14, "start")
-b += text(236, 192, "nhiệt · âm · rung", RED, 13, "start", "600")
+b += f'<rect x="150" y="{Y0}" width="140" height="80" rx="8" fill="rgba(148,163,184,.2)" stroke="currentColor" stroke-width="2.4"/>'
+seg(150, Y0, 290, Y0); seg(150, Y0 + 80, 290, Y0 + 80); seg(150, Y0, 150, Y0 + 80); seg(290, Y0, 290, Y0 + 80)
+b += text(220, Y0 + 46, "Máy", "currentColor", 16, "middle")
+b += poly_h("o", 14, 148, Y0 + 40, WT * K)
+b += poly_h("g", 292, 426, Y0 + 40, WC * K)
+b += poly_v("r", 220, Y0 + 82, Y0 + 138, WH * K)
+b += text(14, Y0 + 14, sub("W", "tp") + " = 100 J", ORG, 14, "start")
+b += text(296, Y0 + 16, sub("W", "ci") + " = 80 J", GRN, 14, "start")
+b += text(236, Y0 + 110, sub("W", "hp") + " = 20 J", RED, 14, "start")
+b += text(236, Y0 + 132, "thành nhiệt, âm, rung", RED, 14, "start", "600")
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
             "Sơ đồ năng lượng qua một máy: 100 J đi vào, 80 J có ích đi ra, 20 J hao phí", b,
             "Hình 2. Bề dày mũi tên tỉ lệ với năng lượng (số liệu minh hoạ): vào $100$ J, ra có ích $80$ J, hao phí $20$ J.".replace("$100$ J", "100 J").replace("$80$ J", "80 J").replace("$20$ J", "20 J"))
@@ -157,26 +178,27 @@ Cx, Cy = Bx, Ay - H3 * SC
 u = (math.cos(math.radians(ALPHA3)), -math.sin(math.radians(ALPHA3)))
 n = (-math.sin(math.radians(ALPHA3)), -math.cos(math.radians(ALPHA3)))   # pháp tuyến hướng lên-trái, ra khỏi ván
 expect(abs(Cy - (Ay - (Cx - Ax) * math.tan(math.radians(ALPHA3)))) < 1.0, "Hình 3: đỉnh ván đúng góc α")
-b = defs("f3")
+b = ""
 b += f'<polygon points="{Ax},{Ay} {Bx:.1f},{By} {Cx:.1f},{Cy:.1f}" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.4"/>'
 seg(Ax, Ay, Bx, By); seg(Bx, By, Cx, Cy); seg(Ax, Ay, Cx, Cy)
-t0 = 0.5
+t0 = 0.6
 C0 = (Ax + t0 * (Cx - Ax), Ay + t0 * (Cy - Ay))
 W_, H_ = 44, 24
 ctr = (C0[0] + n[0] * H_ / 2, C0[1] + n[1] * H_ / 2)
 corners = [(C0[0] - u[0] * W_ / 2, C0[1] - u[1] * W_ / 2), (C0[0] + u[0] * W_ / 2, C0[1] + u[1] * W_ / 2)]
 corners += [(corners[1][0] + n[0] * H_, corners[1][1] + n[1] * H_), (corners[0][0] + n[0] * H_, corners[0][1] + n[1] * H_)]
 b += f'<polygon points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in corners)}" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2.2"/>'
-PXN = 16                                  # px/N
+PXN = 22                                  # px/N (cùng một tỉ lệ cho cả ba lực)
 F3, MG3, MU3 = 3.13, 4.0, 0.25
 f3 = MU3 * MG3 * math.cos(math.radians(ALPHA3))
 expect(abs(F3 - (MG3 * math.sin(math.radians(ALPHA3)) + f3)) < 0.05, "Hình 3: F ≈ mg sinα + f")
 b += arrow("f3", "r", ctr[0], ctr[1], ctr[0] + u[0] * F3 * PXN, ctr[1] + u[1] * F3 * PXN, 3.2)
-b += arrow("f3", "b", C0[0] + u[0] * 14, C0[1] + u[1] * 14, C0[0] + u[0] * 14 - u[0] * f3 * PXN, C0[1] + u[1] * 14 - u[1] * f3 * PXN, 3.2)
+fb = (corners[0][0] + n[0] * 4, corners[0][1] + n[1] * 4)   # mép sau, sát mặt tiếp xúc, hướng xuống dọc ván
+b += arrow("f3", "b", fb[0], fb[1], fb[0] - u[0] * f3 * PXN, fb[1] - u[1] * f3 * PXN, 3.2)
 b += arrow("f3", "o", ctr[0], ctr[1], ctr[0], ctr[1] + MG3 * PXN, 3.2)
 b += text(ctr[0] + u[0] * F3 * PXN + 8, ctr[1] + u[1] * F3 * PXN - 4, "F", RED, 16, "start", "700", True)
 b += text(ctr[0] + 8, ctr[1] + MG3 * PXN + 6, "mg", ORG, 15, "start", "700", True)
-b += text(C0[0] + 12, C0[1] + 18, "ma sát", BLUE, 13, "start", "600")
+b += text(C0[0] - 14, C0[1] + 58, "ma sát", BLUE, 14, "end", "600")
 # kích thước h
 xh = Bx + 24
 b += line(xh, Ay, xh, Cy, GRN, 2) + line(xh - 6, Ay, xh + 6, Ay, GRN, 2) + line(xh - 6, Cy, xh + 6, Cy, GRN, 2)
@@ -201,7 +223,7 @@ VB[4] = (440, 215)
 H1, H2 = 0.30, 0.90
 E0, E1, E2 = 100, 100 * H1, 100 * H1 * H2
 expect(abs(E1 - 30) < 1e-9 and abs(E2 - 27) < 1e-9, "Hình 4: 100 → 30 → 27")
-b = defs("f4")
+b = ""
 K4 = 0.1
 b += poly_h("o", 6, 60, 80, E0 * K4)
 b += poly_h("g", 160, 222, 80, E1 * K4)
