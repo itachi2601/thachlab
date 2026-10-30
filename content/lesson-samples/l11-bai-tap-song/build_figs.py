@@ -47,7 +47,7 @@ b += text(x0, 24, "Hai nguồn cùng pha, AB = 4λ", "currentColor", 15, "start"
 b += dot(20, 160, 6, RED) + text(34, 165, "cực đại: 7 điểm, k = −3 … 3", RED, 14, "start", "700")
 b += dot(20, 188, 4.5, BLUE) + text(34, 193, "cực tiểu: 8 điểm, k + ½ = −3,5 … 3,5", BLUE, 14, "start", "700")
 fig2 = wrap("0 0 440 206", "Trên đoạn AB bằng 4 bước sóng, hai nguồn cùng pha: 7 cực đại và 8 cực tiểu xen kẽ, hai cực đại liền kề cách nhau nửa bước sóng, A và B không phải điểm đếm",
-            b, "Hình 2. Với $AB=4\\lambda$: cực đại xen kẽ cực tiểu, hai cực đại liền kề cách nhau $\\tfrac{\\lambda}{2}$. A, B <strong>không được đếm</strong>.")
+            b, "Hình 2. Với $AB=4\\lambda$: cực đại xen kẽ cực tiểu, hai cực đại liền kề cách nhau $\\tfrac{\\lambda}{2}$.<br>A, B <strong>không được đếm</strong>.")
 fig2 = fig2.replace('<figure class="fig" data-tl="1">', '<figure class="fig" data-tl="1" data-exp="tn-l11-baitapsong-02">', 1)
 
 # ---------- Hình 3: một đầu cố định, một đầu tự do, L = 5λ/4 (n = 2)
@@ -70,7 +70,7 @@ b += text(x0, 180, "L = 5λ/4 = (2n + 1)·λ/4 với n = 2", GRN, 15, "start", "
 b += dot(x0 + 6, 203, 5) + text(x0 + 20, 208, "nút: 3 điểm, kể cả đầu cố định", "currentColor", 14, "start", "400")
 b += dot(x0 + 6, 229, 5.5, ORG) + text(x0 + 20, 234, "bụng: 3 điểm, kể cả đầu tự do", "currentColor", 14, "start", "400")
 fig3 = wrap("0 0 440 246", "Sóng dừng trên dây một đầu cố định một đầu tự do với L bằng năm phần tư bước sóng: 3 nút và 3 bụng",
-            b, "Hình 3. Một đầu cố định (nút), một đầu tự do (bụng): $L=(2n+1)\\tfrac{\\lambda}{4}$. Hình vẽ $n=2$ nên có $n+1=3$ bụng và 3 nút.")
+            b, "Hình 3. Một đầu cố định (nút), một đầu tự do (bụng):<br>$L=(2n+1)\\tfrac{\\lambda}{4}$.<br>Hình vẽ $n=2$ nên có $n+1=3$ bụng và 3 nút.")
 fig3 = fig3.replace('<figure class="fig" data-tl="1">', '<figure class="fig" data-tl="1" data-exp="tn-l11-baitapsong-04">', 1)
 
 h = open("theory.src.html", encoding="utf8").read()
