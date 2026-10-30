@@ -99,3 +99,4 @@
 - [Chương 4 hạt nhân L12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — 10 hình vẽ lại 30/10; lịch đăng DB 22h05
 - [Rà soát Ch.2 Sóng L11](project_thachlab_ra_soat_ch2_l11.md) — rà 2 lượt 30/10, chờ duyệt ảnh, chưa đăng
 - [L10 Ch.4 lý thuyết rà soát](project_thachlab_l10_ly_thuyet_ch4.md) — B23–27 rà 30/10, chờ duyệt rồi đăng lesson 68–72
+- [L10 Ch.2 Động học rà soát](project_thachlab_l10_ly_thuyet_ch2.md) — B4–12 rà 30/10, chờ duyệt rồi đăng lesson 49–57
