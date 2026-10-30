@@ -94,3 +94,6 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi; flip-1 lên web; treo duyệt bảng 12 buổi
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — xong 14/10; treo Gemini tìm ảnh, chưa deploy
 - [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10
+- [Mobile PWA](project_thachlab_mobile_pwa.md) — push thông báo + nhắc lùi dần đã deploy 18/10 (chuyển 30/10)
+- [Cải tiến chương 1 L12 + toàn site](project_thachlab_cai_tien_chuong1_l12.md) — đo 112 bài 18/10 (chuyển 30/10)
+- [Rà soát 22/10 + dọn lint](project_thachlab_ra_soat_22_10_lint.md) — lint 0 lỗi; còn CI gate (chuyển 30/10)
