@@ -87,21 +87,36 @@ SX0, SX1 = 178, 228
 b += seg(SX0, BT, SX0, GR, "currentColor", 1.4, "5 4", .7) + seg(SX1, BT, SX1, GR, "currentColor", 1.4, "5 4", .7)
 CY0, CY1 = 172, 244
 b += f'<rect x="{SX0+3}" y="{CY0}" width="{SX1-SX0-6}" height="{CY1-CY0}" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="2.6"/>'
-PX = 203
-b += f'<circle cx="{PX}" cy="{CY0+16}" r="7" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += seg(PX, CY0 + 23, PX, CY0 + 48, "currentColor", 2) + seg(PX, CY0 + 48, PX - 8, CY1 - 3, "currentColor", 2) + seg(PX, CY0 + 48, PX + 8, CY1 - 3, "currentColor", 2)
-b += seg(PX, CY0 + 30, PX + 11, CY0 + 24, "currentColor", 2)
-b += f'<rect x="{PX+10}" y="{CY0+14}" width="6" height="11" rx="1.5" fill="{ORG}"/>'
+PX = 203   # người trong cabin: đầu, áo (thân có vai), hai chân, tay đưa điện thoại lên tai
+b += f'<circle cx="{PX}" cy="{CY0+15}" r="7.5" fill="rgba(148,163,184,.9)" stroke="currentColor" stroke-width="2"/>'
+b += (f'<path d="M{PX-9},{CY0+46} L{PX-9},{CY0+30} Q{PX-9},{CY0+24} {PX-3},{CY0+24} L{PX+3},{CY0+24} '
+      f'Q{PX+9},{CY0+24} {PX+9},{CY0+30} L{PX+9},{CY0+46} Z" fill="{BLUE}" fill-opacity=".75" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>')
+for dx0, dx1 in ((-4, -5), (4, 5)):
+    b += f'<line x1="{PX+dx0}" y1="{CY0+46}" x2="{PX+dx1}" y2="{CY1-4}" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>'
+b += f'<polyline points="{PX+8},{CY0+28} {PX+14},{CY0+36} {PX+11},{CY0+20}" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'
+b += f'<rect x="{PX+8}" y="{CY0+9}" width="6" height="12" rx="1.5" fill="{ORG}" stroke="currentColor" stroke-width="1"/>'
+b += f'<line x1="{PX-8}" y1="{CY0+28}" x2="{PX-11}" y2="{CY0+44}" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>'
 b += seg(SX1 + 2, 206, 276, 206, "currentColor", 1.2, "", .8)
 lab1.append(("thang máy", 280, 212, "start"))
-# chảo thu trên mái
+# chảo thu trên mái — lòng chảo hướng về vệ tinh (VX, VY khai báo ngay dưới)
+VX, VY = 378, 38
 DX, DY = 248, BT
-b += seg(DX, DY, DX, DY - 12, "currentColor", 2)
-b += f'<path d="M{DX-14},{DY-24} Q{DX-6},{DY-6} {DX+10},{DY-12}" fill="none" stroke="currentColor" stroke-width="2.4"/>'
-b += seg(DX - 3, DY - 17, DX + 8, DY - 30, "currentColor", 1.4)
+DC = (DX, DY - 14)                                   # đáy chảo
+ux, uy = VX - DC[0], VY - DC[1]
+nn = math.hypot(ux, uy); ux, uy = ux / nn, uy / nn   # hướng tới vệ tinh
+px_, py_ = -uy, ux                                   # vuông góc
+R1 = (DC[0] + 14 * px_ + 7 * ux, DC[1] + 14 * py_ + 7 * uy)
+R2 = (DC[0] - 14 * px_ + 7 * ux, DC[1] - 14 * py_ + 7 * uy)
+Q_ = (DC[0] - 7 * ux, DC[1] - 7 * uy)
+F_ = (DC[0] + 17 * ux, DC[1] + 17 * uy)              # đầu thu ở tiêu điểm, phía lòng chảo
+assert (F_[0] - DC[0]) * (VX - DC[0]) > 0 and (F_[1] - DC[1]) * (VY - DC[1]) > 0
+b += seg(DX - 6, DY, DX, DC[1] + 2, "currentColor", 2.2) + seg(DX + 6, DY, DX, DC[1] + 2, "currentColor", 2.2)
+b += (f'<path d="M{R1[0]:.1f},{R1[1]:.1f} Q{Q_[0]:.1f},{Q_[1]:.1f} {R2[0]:.1f},{R2[1]:.1f}" '
+      f'fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="2.4"/>')
+b += seg(R1[0], R1[1], F_[0], F_[1], "currentColor", 1.3) + seg(R2[0], R2[1], F_[0], F_[1], "currentColor", 1.3)
+b += f'<circle cx="{F_[0]:.1f}" cy="{F_[1]:.1f}" r="2.6" fill="currentColor"/>'
 lab1.append(("chảo thu", 276, 108, "start"))
 # vệ tinh
-VX, VY = 378, 38
 b += f'<rect x="{VX-9}" y="{VY-9}" width="18" height="18" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="2"/>'
 b += f'<rect x="{VX-36}" y="{VY-6}" width="24" height="12" fill="rgba(56,189,248,.45)" stroke="currentColor" stroke-width="1.2"/>'
 b += f'<rect x="{VX+12}" y="{VY-6}" width="24" height="12" fill="rgba(56,189,248,.45)" stroke="currentColor" stroke-width="1.2"/>'
