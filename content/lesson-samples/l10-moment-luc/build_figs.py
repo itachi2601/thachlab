@@ -9,7 +9,7 @@ import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -19,11 +19,8 @@ CUR = {"fig": 0}
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác (đầu mũi tên V 30° vẽ bằng chevron); giữ hàm cho tương thích."""
+    return ""
 
 
 def seg(x1, y1, x2, y2):
@@ -31,10 +28,13 @@ def seg(x1, y1, x2, y2):
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
+    """Thân thẳng + đầu V 30° (chevron của svg_lib), thân ≤ 2,8."""
     seg(x1, y1, x2, y2)
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    L = max(5, min(3.4 * ww + 2, 0.6 * math.hypot(x2 - x1, y2 - y1)))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
@@ -45,7 +45,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="12">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -64,8 +64,11 @@ def arc_arrow(p, c, cx, cy, r, a0, a1, w=2.6):
     x1, y1 = cx + r * math.cos(math.radians(a1)), cy + r * math.sin(math.radians(a1))
     sweep = 1 if a1 > a0 else 0
     large = 1 if abs(a1 - a0) > 180 else 0
+    s = 1 if a1 > a0 else -1                     # tiếp tuyến tại điểm cuối theo chiều đi
+    tx, ty = -s * math.sin(math.radians(a1)), s * math.cos(math.radians(a1))
+    ww = min(w, 2.8)
     return (f'<path d="M{x0:.1f},{y0:.1f} A{r},{r} 0 {large} {sweep} {x1:.1f},{y1:.1f}" fill="none" stroke="{COL[c]}" '
-            f'stroke-width="{w}" marker-end="url(#{p}-{c})"/>')
+            f'stroke-width="{ww}"/>' + chevron(x1, y1, tx, ty, COL[c], ww, 11))
 
 
 def moment_sign(ox, oy, ax, ay, fx, fy):
@@ -87,32 +90,61 @@ def expect(cond, msg):
 VB = {}
 
 # ---------------- Hình 1: búa nhổ đinh, hai chỗ cầm (mở bài) ----------------
+# Búa nằm ngang, mặt đầu búa tì lên tấm gỗ tại O; móc búa (bên trái O) kẹp mũ đinh; lực ấn thẳng đứng xuống
+# cán nằm ngang nên cánh tay đòn = khoảng cách ngang từ O tới chỗ đặt tay.
 CUR["fig"] = 1
-VB[1] = (440, 150)
+VB[1] = (440, 222)
 PXM = 1000                       # 1000 px cho 1 m (cán búa)
 PXN = 80 / 300                   # 300 N -> 80 px
-OX1, OY1 = 60, 110
+OX1, OY1 = 90, 150               # điểm tì O = chỗ đầu búa chạm mặt gỗ
+HY = 126                         # trục cán búa
 b = defs("f1")
-hexa = " ".join(f"{OX1 + 22*math.cos(math.radians(30 + 60*k)):.1f},{OY1 + 22*math.sin(math.radians(30 + 60*k)):.1f}" for k in range(6))
-b += f'<rect x="{OX1-24}" y="{OY1-20}" width="48" height="40" rx="5" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2.4"/>'
-b += f'<circle cx="{OX1}" cy="{OY1}" r="3.5" fill="currentColor"/>'
-b += f'<rect x="{OX1+22}" y="{OY1-9}" width="{400-OX1-22}" height="18" rx="9" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2.2"/>'
-seg(OX1 + 22, OY1 - 9, 400, OY1 - 9); seg(OX1 + 22, OY1 + 9, 400, OY1 + 9)
+# tấm gỗ
+b += f'<rect x="12" y="{OY1}" width="416" height="16" fill="rgba(251,146,60,.16)" stroke="currentColor" stroke-width="1.8"/>'
+seg(12, OY1, 428, OY1)
+for k in range(8):
+    x = 150 + 36 * k
+    b += line(x, OY1 + 4, x + 22, OY1 + 4, "currentColor", 1, "", .35, track=False)
+# đinh: thân cắm trong gỗ, mũ đinh nhô lên
+NX = 46
+b += line(NX, 132, NX, OY1 + 12, "currentColor", 3, track=False)
+b += f'<rect x="{NX-8}" y="128" width="16" height="5" rx="1.5" fill="currentColor"/>'
+# đầu búa (đáy cong chạm gỗ tại O) + móc búa vòng sang trái, kẹp dưới mũ đinh
+b += (f'<path d="M{OX1-16},106 H{OX1+16} V136 Q{OX1},{2*OY1-136} {OX1-16},136 Z" fill="rgba(148,163,184,.35)" '
+      f'stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>')
+b += (f'<path d="M{OX1-16},112 C{OX1-40},110 {NX+6},118 {NX+2},136" fill="none" stroke="currentColor" '
+      f'stroke-width="6" stroke-linecap="round"/>')
+# cán búa
+b += f'<rect x="{OX1+16}" y="{HY-7}" width="{420-OX1-16}" height="14" rx="7" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2.2"/>'
+seg(OX1 + 16, HY - 7, 420, HY - 7); seg(OX1 + 16, HY + 7, 420, HY + 7)
+b += f'<circle cx="{OX1}" cy="{OY1}" r="4" fill="currentColor"/>'
 for who, dm, F, c in (("Minh", 0.08, 300, "r"), ("anh Tuấn", 0.30, 150, "b")):
     x = OX1 + dm * PXM
     L = F * PXN
-    b += arrow("f1", c, x, OY1 - 9 - L - 2, x, OY1 - 9 - 2, 3.2)       # ấn xuống, đầu mũi chạm mặt trên cán
-    sgn = moment_sign(OX1, OY1, x, OY1, 0, 1)
+    b += arrow("f1", c, x, HY - 7 - L - 1, x, HY - 7 - 1, 3.2)        # ấn xuống, đầu mũi chạm mặt trên cán
+    sgn = moment_sign(OX1, OY1, x, HY, 0, 1)
     expect(sgn > 0, f"Hình 1: lực của {who} phải làm quay thuận kim (nhổ đinh)")
-b += text(OX1 + 0.08 * PXM + 8, OY1 - 9 - 300 * PXN + 12, "300 N", RED, 14, "start")
-b += text(OX1 + 0.30 * PXM - 8, OY1 - 9 - 150 * PXN + 6, "150 N", BLUE, 14, "end")
-b += arc_arrow("f1", "k", OX1, OY1, 34, -150, -40, 2.4)        # nhổ đinh: thuận kim
-b += text(OX1 + 6, 50, "nhổ đinh", "currentColor", 13, "start", "600")
-expect(-40 > -150, "Hình 1: cung nhổ đinh phải thuận kim")
+    expect(abs(abs(x - OX1) / PXM - dm) < 1e-9, f"Hình 1: cánh tay đòn của {who}")
+b += text(OX1 + 0.08 * PXM + 8, HY - 7 - 300 * PXN + 14, "Minh: 300 N", RED, 14, "start")
+b += text(OX1 + 0.30 * PXM - 8, HY - 7 - 150 * PXN + 14, "anh Tuấn: 150 N", BLUE, 14, "end")
+# kích thước dưới tấm gỗ: hai hàng riêng, cùng gốc O
+b += line(OX1, OY1 + 16, OX1, 214, "currentColor", 1.2, "3 3", .8, track=False)
+for dm, lab, c, yy in ((0.08, "8 cm", RED, 182), (0.30, "30 cm", BLUE, 208)):
+    x = OX1 + dm * PXM
+    b += line(x, OY1 + 16, x, yy + 6, c, 1.2, "3 3", .8, track=False)
+    b += line(OX1, yy, x, yy, c, 1.6) + line(x, yy - 6, x, yy + 6, c, 1.6) + line(OX1, yy - 6, OX1, yy + 6, c, 1.6)
+    if dm < 0.1:
+        b += text(x + 8, yy + 5, lab, c, 14, "start")
+    else:
+        b += text(OX1 + 190, yy - 6, lab, c, 14, "middle")
+b += text(OX1 - 8, 188, "O", "currentColor", 15, "end", "700", True)
+b += arc_arrow("f1", "k", OX1, OY1, 70, -168, -118, 2.4)        # nhổ đinh: thuận kim, móc búa nhấc lên
+b += text(14, 62, "nhổ đinh", "currentColor", 14, "start", "600")
+expect(-118 > -168, "Hình 1: cung nhổ đinh phải thuận kim")
 expect(abs(300 * 0.08 - 24) < 1e-9 and abs(150 * 0.30 - 45) < 1e-9, "Hình 1: số moment")
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
-            "Búa nhổ đinh: Minh ấn 300 N sát đầu búa, anh Tuấn ấn 150 N ở cuối cán", b,
-            "Hình 1. Minh ấn lực lớn (đỏ) sát đầu búa, anh Tuấn ấn lực nhỏ (xanh) ở cuối cán. Mũi tên vẽ tỉ lệ độ lớn lực.")
+            "Búa nhổ đinh: mặt đầu búa tì lên gỗ tại O, móc búa kẹp mũ đinh; Minh ấn 300 N cách O 8 cm, anh Tuấn ấn 150 N cách O 30 cm", b,
+            "Hình 1. Đầu búa tì lên gỗ tại <em>O</em>, móc búa kẹp mũ đinh.<br>Minh ấn 300 N cách <em>O</em> 8 cm (đỏ).<br>Anh Tuấn ấn 150 N cách <em>O</em> 30 cm (xanh).<br>Mũi tên vẽ tỉ lệ độ lớn lực.")
 
 # ---------------- Hình 2: lực xiên — cánh tay đòn là khoảng cách tới GIÁ ----------------
 CUR["fig"] = 2
@@ -152,7 +184,7 @@ b += text(F_end[0] - 6, F_end[1] - 6, "F", RED, 16, "end", "700", True)
 mx, my = (O2[0] + H2[0]) / 2, (O2[1] + H2[1]) / 2
 b += text(mx - 10, my + 8, "d", GRN, 16, "end", "700", True)
 b += text(150, O2[1] + 32, "r = OA", "currentColor", 14, "middle")
-b += text(H2[0] + 26, H2[1] + 6, "giá của lực", RED, 13, "start", "600")
+b += text(H2[0] + 26, H2[1] + 6, "giá của lực", RED, 14, "start", "600")
 b += text(150, 262, "d = r·sinα", GRN, 15, "middle")
 expect(moment_sign(*O2, *A2, *u) < 0, "Hình 2: lực lên-phải ở bên phải trục phải làm quay ngược kim")
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
@@ -186,7 +218,7 @@ b += text(xl + 10, RY + 6 + P1 * PN - 6, sub("P", "1"), RED, 15, "start", "700",
 b += line(xr, RY + 6, xr, RY + 80, "currentColor", 1.4, track=False)
 b += f'<rect x="{xr-10:.1f}" y="{RY+80}" width="20" height="58" rx="4" fill="rgba(56,189,248,.15)" stroke="currentColor" stroke-width="2"/>'
 b += line(xr, RY + 138, xr, RY + 152, "currentColor", 1.6, track=False)
-b += text(xr + 16, RY + 128, "lực kế", BLUE, 13, "start", "600")
+b += text(xr + 16, RY + 128, "lực kế", BLUE, 14, "start", "600")
 b += arrow("f3", "b", xr, RY + 6, xr, RY + 6 + F2 * PN, 3.2)
 b += text(xr - 10, RY + 6 + F2 * PN - 4, sub("F", "2"), BLUE, 15, "end", "700", True)
 # kích thước trên thước
@@ -194,13 +226,13 @@ for x, lab, c in ((xl, sub("d", "1") + " = 15 cm", RED), (xr, sub("d", "2"), BLU
     yy = RY - 30
     b += line(OX3, yy, x, yy, c, 1.6) + line(x, yy - 6, x, yy + 6, c, 1.6) + line(OX3, yy - 6, OX3, yy + 6, c, 1.6)
     b += text((OX3 + x) / 2, yy - 10, lab, c, 14, "middle")
-b += text(18, 30, "quay ngược kim", RED, 13, "start", "600")
-b += text(422, 30, "quay thuận kim", BLUE, 13, "end", "600")
+b += text(18, 30, "quay ngược kim", RED, 14, "start", "600")
+b += text(422, 30, "quay thuận kim", BLUE, 14, "end", "600")
 expect(moment_sign(OX3, RY, xl, RY, 0, 1) < 0, "Hình 3: P1 bên trái hướng xuống phải quay ngược kim")
 expect(moment_sign(OX3, RY, xr, RY, 0, 1) > 0, "Hình 3: F2 bên phải hướng xuống phải quay thuận kim")
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Thước quay quanh trục O ở giữa; quả nặng P1 = 2,0 N treo cách trục 15 cm bên trái, lực kế kéo thẳng đứng xuống bên phải cách trục d2", b,
-            "Hình 3. Quả nặng <em>P</em><sub>1</sub> làm thước quay ngược kim, lực kế kéo <em>F</em><sub>2</sub> làm quay thuận kim. Hình vẽ lần đo <em>d</em><sub>2</sub> = 20 cm, <em>F</em><sub>2</sub> = 1,52 N.")
+            "Hình 3. Quả nặng <em>P</em><sub>1</sub> làm thước quay ngược kim.<br>Lực kế kéo <em>F</em><sub>2</sub> làm thước quay thuận kim.<br>Hình vẽ lần đo <em>d</em><sub>2</sub> = 20 cm, <em>F</em><sub>2</sub> = 1,52 N.")
 fig3 = fig3.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-moment-luc-02"', 1)
 
 # ---------------- Hình 4: ngẫu lực trên vô lăng ----------------
@@ -226,13 +258,13 @@ yd = 258
 b += line(xL, yd, xR, yd, GRN, 2) + line(xL, yd - 7, xL, yd + 7, GRN, 2) + line(xR, yd - 7, xR, yd + 7, GRN, 2)
 b += text(CX4, yd - 8, "d", GRN, 16, "middle", "700", True)
 b += arc_arrow("f4", "g", CX4, CY4, R4 + 22, -130, -50, 2.8)    # thuận kim
-b += text(CX4, 22, "quay thuận kim", GRN, 13, "middle", "600")
+b += text(CX4, 22, "quay thuận kim", GRN, 14, "middle", "600")
 expect(moment_sign(CX4, CY4, xL, CY4, 0, -1) > 0 and moment_sign(CX4, CY4, xR, CY4, 0, 1) > 0,
        "Hình 4: hai lực của ngẫu lực phải cùng làm quay thuận kim")
 expect(abs((xR - xL) - 2 * R4) < 1e-9, "Hình 4: d phải bằng khoảng cách hai giá")
 fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
             "Ngẫu lực trên vô lăng: tay trái đẩy lên, tay phải kéo xuống, hai lực bằng nhau; d là khoảng cách giữa hai giá", b,
-            "Hình 4. Ngẫu lực: <em>F</em><sub>1</sub> = <em>F</em><sub>2</sub>, song song, ngược chiều. Cả hai cùng làm vô lăng quay thuận kim; <em>d</em> là khoảng cách giữa hai giá (nét đứt).")
+            "Hình 4. Ngẫu lực: <em>F</em><sub>1</sub> = <em>F</em><sub>2</sub>, song song, ngược chiều.<br>Cả hai cùng làm vô lăng quay thuận kim.<br><em>d</em> là khoảng cách giữa hai giá (nét đứt).")
 
 # ---------------- Hình 5: bài toán mẫu — thanh gỗ trên giá đỡ ----------------
 CUR["fig"] = 5
@@ -272,7 +304,7 @@ expect(moment_sign(xO, BY, xA, BY, 0, 1) < 0 and moment_sign(xO, BY, xG, BY, 0, 
        "Hình 5: P1 ở A quay ngược kim, P ở G quay thuận kim")
 fig5 = wrap(f"0 0 {VB[5][0]} {VB[5][1]}",
             "Thanh gỗ AB dài 1,2 m kê trên giá đỡ O cách A 0,4 m; trọng lượng 40 N đặt tại trung điểm G; túi gạo P1 treo ở A; lực giá đỡ N hướng lên", b,
-            "Hình 5. Ba lực lên thanh: <em>P</em><sub>1</sub> (túi gạo, ở <em>A</em>), <em>P</em> (trọng lượng thanh, ở <em>G</em>), <em>N</em> (giá đỡ, ở <em>O</em>). Mũi tên vẽ tỉ lệ độ lớn lực.")
+            "Hình 5. Ba lực lên thanh:<br><em>P</em><sub>1</sub>: túi gạo, đặt ở <em>A</em>.<br><em>P</em>: trọng lượng thanh, đặt ở <em>G</em>.<br><em>N</em>: lực giá đỡ, đặt ở <em>O</em>.<br>Mũi tên vẽ tỉ lệ độ lớn lực.")
 fig5 = fig5.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-moment-luc-04"', 1)
 
 
