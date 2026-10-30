@@ -26,3 +26,5 @@ Commit `e37d29cc7` (main, đã push), kho thí nghiệm 266 → 283. Sao lưu DB
 - Lớp 11 KHÔNG còn bài lý thuyết tương tác nào thiếu (26 bài). Lớp 10, 12 cũng đủ.
 
 **Cập nhật 12/10/2026:** video đã chèn + ĐĂNG (`--chi-video`) cho B9/B10/B11/B15 (id 28/29/30/34): 9 clip, bảng duyệt `content/thi-nghiem/video-de-xuat-l11-chuong2-con-lai.md`, commit `4003e5229`. Còn không có clip: `tn-l11-dotansoam-02/03`, `tn-l11-dotocdoam-03`, `tn-l11-songngangdoc-03` (dùng clip quay chậm, không phải bấm giờ), và clip mở bài của 4 bài. Tìm clip bằng `scripts/tim-clip-youtube.py`.
+
+**Rà soát hình 30/10/2026 (Ch.1 L11 Dao động, Bài 2–7):** 14/19 hình vẽ lại, commit từng bài trên nhánh `claude/ra-soat-bai-hoc-chuong-1-34b0a1`, CHƯA đăng DB. Bài 6 Hình 1 sửa lỗi chiều đi xích đu. Còn: Bài 1 (`l11-dao-dong-dieu-hoa`) chưa rà; thầy chốt dòng 581 Bài 6 "4 hình = cả bài" (4 hình ảnh nhớ?); thầy duyệt ảnh rồi đăng 6 bài bằng `cap-nhat-ly-thuyet.sh` (lesson_id tra DB: Bài 2–7 = id 21–26 theo thứ tự bài? CHƯA kiểm, đừng đoán).
