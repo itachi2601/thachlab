@@ -18,6 +18,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
+- 30/10 22:30 · Khai giờ trợ giảng T10 MỞ LẠI tới 23:59 02/11 (deploy xong): TA thấy danh sách từng buổi ở /tro-giang, sửa buổi đã duyệt → về Chờ duyệt. Chưa thử bằng tài khoản TA thật. Thấy lạ: `.claude/worktrees/deploy-tree` có `app/globals.css` sửa dở chưa commit (không rõ phiên nào), HEAD kẹt ở ac5a22baf.
 - Ôn tập theo chặng + Tự học ở nhà + "Việc hôm nay": đã deploy, chưa thử bằng HS thật/tivi; thông báo buổi tạo MỚI chưa thử (memory `project_thachlab_on_tap_theo_chang`).
 - Ngân hàng→Luyện tập chặng 0: đã deploy; còn gắn `lint_flags` cho 127 câu `_can_xac_nhan`, thử ghi `bank_id` bằng HS thật (`docs/BAO-CAO-NGAN-HANG-THEO-BAI-2026-10-24.md`).
 - Quiz lý thuyết đợt 2 (73 bài, exam 1102–1174) đã ghi DB, CHƯA DEPLOY. 129–131 chờ đăng lý thuyết tương tác trước; 178 còn 18 câu.
