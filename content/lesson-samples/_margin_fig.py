@@ -1,9 +1,9 @@
 """Chuyển phần "Nhãn: …" và dòng nguồn OpenStax của <figcaption> ra chú thích lề phải (thầy chốt 28/10/2026).
 
-margin_figs(html): với mỗi <figure> có dòng "Nhãn:" trong figcaption, bỏ legend + nguồn khỏi figcaption, gắn dấu
-<sup class="tl-fn"> vào đoạn <p> cấp đầu gần nhất (ngay trước hình, không có thì ngay sau), và đặt
-<ol class="tl-fns"> ngay dưới hình. features/lessons/margin-notes.ts đưa chú thích sang lề ≥1280px; màn hẹp thì
-nó nằm dưới hình. Không có đoạn <p> hợp lệ thì để nguyên hình (in cảnh báo)."""
+margin_figs(html): với mỗi <figure> có dòng "Nhãn:" trong figcaption, bỏ legend + nguồn khỏi figcaption, đặt
+<ol class="tl-fns"> ngay dưới hình, và chỉ gắn dấu <sup class="tl-fn"> khi có đoạn <p> cấp đầu đứng sát hình.
+features/lessons/margin-notes.ts (withFigureNotes) dựa vào việc <ol> đứng liền </figure>: ≥1280px đưa nguồn ra lề
+ngang đầu hình, màn hẹp để dưới hình."""
 import re
 
 FIG = re.compile(r"<figure\b[^>]*>.*?</figure>", re.S)
@@ -40,13 +40,6 @@ def _top_level_p_end(html: str, pos: int, before: bool, strict: bool = True):
     return e
 
 
-def _depth(html: str, pos: int) -> int:
-    d = 0
-    for m in BLOCK.finditer(html, 0, pos):
-        if m.group(2):
-            d += -1 if m.group(1) else 1
-    return d
-
 
 def margin_figs(html: str) -> str:
     used = set(re.findall(r'id="(tl-fn-[\w-]+)"', html))
@@ -79,24 +72,19 @@ def margin_figs(html: str) -> str:
         while fid in used:
             fid += "x"
         label = f"H{num.group(1)}" if num else str(k)
+        # Số mũ chỉ gắn vào đoạn <p> cấp đầu ĐỨNG SÁT hình (trước hoặc sau, không chen khối nào); không có thì bỏ số mũ —
+        # nguồn đã đi theo hình, số mũ ở đoạn xa (dòng 🔑, đoạn trên danh sách, hình trong <details>) chỉ gây lạc (30/10/2026).
         at = _top_level_p_end(html, m.start(), True)
         side = "trước"
+        if at is not None and html[at + 4:m.start()].strip():
+            at = None
         if at is None:
             at = _top_level_p_end(html, m.end(), False)
             side = "sau"
-        lead = ""
-        if at is None and _depth(html, m.start()) == 0:
-            # Không có đoạn <p> cấp đầu cạnh hình: thêm câu dẫn ngắn ngay trước hình để chú thích có chỗ bám.
-            lead = '<p class="tl-figlead">Quan sát Hình %s dưới đây.</p>\n' % (num.group(1) if num else k)
-            at = m.start()
-            side = "dẫn"
+            if at is not None and html[m.end():html.rfind("<p", 0, at)].strip():
+                at = None
         if at is None:
-            # Hình nằm trong hộp (vd. <details>): bám vào đoạn <p> cấp đầu gần nhất phía trước, không xét khoảng cách.
-            at = _top_level_p_end(html, m.start(), True, strict=False)
-            side = "trước"
-        if at is None:
-            print("  ! bỏ qua (hình nằm trong hộp, không có đoạn <p> cấp đầu cạnh hình):", label)
-            continue
+            side = "không"
         used.add(fid)
         sup = f'<sup class="tl-fn"><a href="#{fid}">{label}</a></sup>'
         if legend:
@@ -106,8 +94,8 @@ def margin_figs(html: str) -> str:
             note = '<ol class="tl-fns"><li id="%s">%s</li></ol>' % (fid, "<br>".join(credit))
         newfig = fig[:cm.start()] + cm.group(1) + "<br>".join(keep) + cm.group(3) + fig[cm.end():]
         newfig = newfig + "\n" + note
-        if side == "dẫn":
-            out.append((m.start(), m.end() - m.start(), lead.replace("</p>", sup + "</p>").replace(" dưới đây.", " dưới đây.") + newfig))
+        if side == "không":
+            out.append((m.start(), m.end() - m.start(), newfig))
         elif side == "trước":
             out.append((at, 0, sup))
             out.append((m.start(), m.end() - m.start(), newfig))

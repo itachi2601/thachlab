@@ -190,7 +190,7 @@ assert rows[1][4] - rows[1][3] < X1 - X0 < rows[2][4] - rows[2][3]  # nén ngắ
 fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-bien-dang-vat-ran/hinh-thanh-keo-nen.webp" '
         'alt="Hai thanh trụ có chiều dài ban đầu L0: (a) bị kéo bởi cặp lực hướng ra nên dài thêm ΔL, (b) bị nén bởi cặp lực hướng vào nên ngắn đi ΔL" '
         'loading="lazy" width="377" height="545">'
-        '<figcaption>Hình 2. Nét đứt là đầu thanh lúc chưa có lực. (a) Bị kéo: dài ra. (b) Bị nén: ngắn lại.<br>'
+        '<figcaption>Hình 2. Nét đứt là đầu thanh sau khi biến dạng. (a) Bị kéo: dài ra. (b) Bị nén: ngắn lại.<br>'
         'Nhãn: F = lực · L₀ = chiều dài ban đầu · ΔL = độ biến dạng (bài viết Δl) · A = tiết diện.<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 5.13 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
