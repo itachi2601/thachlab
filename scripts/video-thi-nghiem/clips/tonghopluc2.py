@@ -28,8 +28,9 @@ def mlines(d, y, s, size, color=INK, alpha=1.0, lh=1.24):
 # ---------------- bo cuc (khung nguon 1080x1920) ----------------
 HX, HY = 90, 900                  # ban le van (goc duoi trai)
 LB = 760                          # chieu dai van
-S0, BW, BH = 260, 130, 100        # vat: vi tri doc van, dai, cao
-ROPE, BODY = 40, 200              # day tu vat toi moc luc ke ; than luc ke
+S0, BW, BH = 170, 130, 100        # vat: vi tri doc van, dai, cao (canh 45 do: thap de tay khong cham chip)
+S0_HOOK_DO, S0_VEC = 170, 260      # canh co vecto P (30 do): vat cao hon de P khong cham dat
+ROPE, BODY = 70, 320              # day tu vat toi moc luc ke ; than luc ke
 HOOK_H = BH / 2                   # day/luc ke o do cao giua vat
 FMAX = 5.0                        # luc ke 0-5 N
 P_N = 2.0
@@ -76,22 +77,14 @@ def block(d, a, label=True):
     dot(d, *Q(S0 + BW, HOOK_H), 7, NAVY)
 
 def meter(d, a, f_read):
-    """Day + than luc ke (vach 0..5 N) + tay giu, doc theo van. f_read None: chua co vach doc."""
+    """Day + luc ke lo xo (mau trongluc2: 0-5 N, vach 0,2 N cho thua tren van ngan) + tay giu, doc theo van. f_read None: che thang do bang "?"."""
     u, n, Q = frame_of(a)
-    s0 = S0 + BW + ROPE; s1 = s0 + BODY
-    d.line([Q(S0 + BW, HOOK_H), Q(s0, HOOK_H)], fill=NAVY, width=5)
-    hw = 26
-    poly = [Q(s0, HOOK_H - hw), Q(s1, HOOK_H - hw), Q(s1, HOOK_H + hw), Q(s0, HOOK_H + hw)]
-    d.polygon(poly, fill=(250, 250, 252)); d.line(poly + [poly[0]], fill=NAVY, width=4)
-    g0, g1 = s0 + 24, s1 - 24
-    for k in range(6):
-        s = g0 + (g1 - g0) * k / 5
-        d.line([Q(s, HOOK_H + hw - 2), Q(s, HOOK_H + (2 if k % 2 == 0 else 10))], fill=INK, width=3)
-    if f_read is not None:
-        s = g0 + (g1 - g0) * f_read / FMAX
-        d.line([Q(s, HOOK_H - hw + 2), Q(s, HOOK_H + hw - 2)], fill=RED, width=7)
-    d.line([Q(s1, HOOK_H), Q(s1 + 22, HOOK_H)], fill=NAVY, width=8)
-    hx, hy = Q(s1 + 48, HOOK_H)
+    Qm = lambda s, h=0.0: Q(s, HOOK_H + h)
+    hk = S0 + BW + ROPE
+    d.line([Qm(S0 + BW), Qm(hk - 13)], fill=NAVY, width=5)
+    se = luc_ke(d, Qm, hk, hk + 20, hk + 20 + BODY, FMAX, f_read, nho=0.2, hw=40, ben=1)
+    d.line([Qm(se - 16), Qm(se + 12)], fill=NAVY, width=8)
+    hx, hy = Qm(se + 40)
     dot(d, hx, hy, 28, SKIN, outline=(190, 140, 105))
 
 def readout(d, val, sub=None):
@@ -104,6 +97,7 @@ def rig(d, a, f_read, val, sub=None):
 
 # ---------------- canh 1: Du doan (K10: chi cau hoi + hinh) ----------------
 def s_hook(img, d, t, sc):
+    global S0; S0 = S0_HOOK_DO
     M = sc["M"]
     rig(d, 30, None, "?")
     a = appear(t, M[1] - 0.2, 0.5)
@@ -149,11 +143,12 @@ def table(d, n, y=1000):
         text(d, (xs[1], yy), ROWS[i][1], 46, BLUE)
 
 def s_do(img, d, t, sc):
+    global S0; S0 = S0_HOOK_DO
     M = sc["M"]; a = ang_at(t, sc); cur = max(0, cur_cap(sc, t))
     moving = any(M[i] <= t < M[i] + MOVE + 0.5 for i in (1, 2))
     chips(d, cur)
     ai = int(round(a))
-    if moving: board(d, ai, label=False); block(d, ai); meter(d, ai, None); readout(d, "···")
+    if moving: board(d, ai, label=False); block(d, ai); meter(d, ai, P_N * math.sin(math.radians(a))); readout(d, "···")
     else:
         v = ROWS[cur][1]
         rig(d, ai, float(v.replace(",", ".")), v + " N")
@@ -179,7 +174,7 @@ def vecs(img, d, alpha, comp_alpha, a=30, px_col=None):
     ex = (c[0] - u[0] * lx, c[1] - u[1] * lx)                     # Px xuong doc
     ey = (c[0] - n[0] * ly, c[1] - n[1] * ly)                     # Py vao van
     en = (c[0] + n[0] * ly, c[1] + n[1] * ly)                     # N ra khoi van, = Py
-    f0 = Q(S0 + BW, BH - 10); f1 = (f0[0] + u[0] * lx, f0[1] + u[1] * lx)   # F = Px, len doc, tren day
+    f0 = Q(S0 + BW, BH - 2); f1 = (f0[0] + u[0] * lx, f0[1] + u[1] * lx)   # F = Px, len doc, tren day
     L = Image.new("RGBA", img.size, (0, 0, 0, 0)); dl = ImageDraw.Draw(L)
     if comp_alpha > 0:
         dashed(dl, ex, pe, A(MUTED, comp_alpha), w=3); dashed(dl, ey, pe, A(MUTED, comp_alpha), w=3)
@@ -197,10 +192,11 @@ def vecs(img, d, alpha, comp_alpha, a=30, px_col=None):
         sublab(d, ey[0] + 66, ey[1] + 14, "P", "y", TEAL, comp_alpha)
     text(d, (pe[0] - 40, pe[1] - 14), "P", 46, BLUE, alpha=alpha)
     text(d, (en[0] - 32, en[1] - 32), "N", 46, GREEN, alpha=alpha)
-    text(d, (f1[0] + n[0] * 40 + 6, f1[1] + n[1] * 40), "F", 46, RED, alpha=alpha)
+    text(d, (f0[0] + n[0] * 44, f0[1] + n[1] * 44), "F", 46, RED, alpha=alpha)   # o goc vat: dau mui ten sat than luc ke
     return c
 
 def s_dapan(img, d, t, sc):
+    global S0; S0 = S0_VEC
     M = sc["M"]
     board(d, 30, label=False); block(d, 30); meter(d, 30, 1.0)
     ka = appear(t, 0.1, 0.5)
@@ -217,6 +213,7 @@ def s_dapan(img, d, t, sc):
 
 # ---------------- canh 4: Bay roi Chua noi duoc (khong hien cung luc) ----------------
 def s_bay(img, d, t, sc):
+    global S0; S0 = S0_VEC
     M = sc["M"]
     board(d, 30, label=False); block(d, 30); meter(d, 30, 1.0)
     k2 = appear(t, M[1] - 0.1, 0.45)
