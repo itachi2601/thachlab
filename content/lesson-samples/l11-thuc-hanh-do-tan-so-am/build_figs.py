@@ -105,20 +105,37 @@ def arc(cx, cy, r, a0, a1, c="currentColor", w=2, op=1, n=24):
 # =====================================================================
 f1 = Fig("f1", 256)
 # ukulele nằm ngang, đầu đàn về bên phải
-f1.add('<ellipse cx="62" cy="150" rx="50" ry="44" fill="rgba(251,146,60,.16)" stroke="currentColor" stroke-width="2.2"/>')
-f1.add('<ellipse cx="116" cy="150" rx="34" ry="31" fill="rgba(251,146,60,.16)" stroke="currentColor" stroke-width="2.2"/>')
-f1.add('<circle cx="86" cy="150" r="14" fill="rgba(0,0,0,.25)" stroke="currentColor" stroke-width="2"/>')
+# thân đàn = hợp của hai elip (bầu dưới to, bầu trên nhỏ), vẽ MỘT đường viền ngoài, không lộ nét elip chồng nhau
+BODY = ((62, 150, 50, 44), (116, 150, 34, 31))
+HOLE = (100, 150, 12)                                # lỗ thoát âm ở bầu trên, sát chân cần đàn
+def _ray(cx, cy, rx, ry, ox, oy, ux, uy):           # khoảng cách từ (ox,oy) theo hướng u tới biên elip
+    a = (ux / rx) ** 2 + (uy / ry) ** 2
+    b = 2 * ((ox - cx) * ux / rx ** 2 + (oy - cy) * uy / ry ** 2)
+    c = ((ox - cx) / rx) ** 2 + ((oy - cy) / ry) ** 2 - 1
+    assert c < 0
+    return (-b + math.sqrt(b * b - 4 * a * c)) / (2 * a)
+_O = (88, 150)                                       # điểm nằm trong cả hai elip -> hợp là hình sao quanh _O
+_body = []
+for i in range(240):
+    th = 2 * math.pi * i / 240
+    ux, uy = math.cos(th), math.sin(th)
+    r = max(_ray(*e, *_O, ux, uy) for e in BODY)
+    _body.append((_O[0] + r * ux, _O[1] + r * uy))
+f1.add('<polygon fill="rgba(251,146,60,.16)" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" points="'
+       + " ".join(f"{x:.1f},{y:.1f}" for x, y in _body) + '"/>')
+f1.add(f'<circle cx="{HOLE[0]}" cy="{HOLE[1]}" r="{HOLE[2]}" fill="rgba(0,0,0,.25)" stroke="currentColor" stroke-width="2"/>')
+f1.add('<rect x="40" y="139" width="8" height="22" rx="2" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="1.6"/>')   # ngựa đàn
 NECK_Y0, NECK_Y1, NECK_X1 = 141, 159, 238
 f1.add(f'<rect x="146" y="{NECK_Y0}" width="{NECK_X1 - 146}" height="{NECK_Y1 - NECK_Y0}" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>')
 f1.add(f'<rect x="{NECK_X1}" y="{NECK_Y0 - 5}" width="30" height="{NECK_Y1 - NECK_Y0 + 10}" rx="4" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>')
 for k in range(4):                                   # 4 dây A, E, C, G (vẽ đều nhau)
     y = NECK_Y0 + 3 + k * 4
-    f1.add(line(72, y, NECK_X1 + 10, y, "currentColor", 1.2, op=.8))
+    f1.add(line(48, y, NECK_X1 + 10, y, "currentColor", 1.2, op=.8))
 for x in (176, 204):                                  # phím đàn
     f1.add(line(x, NECK_Y0, x, NECK_Y1, "currentColor", 1.2, op=.6))
 # sóng âm từ lỗ thoát âm đi lên-phải (cung quanh tâm lỗ thoát âm, phía trên cần đàn)
-for r in (64, 80, 96):
-    f1.add(arc(86, 150, r, -80, -30, BLUE, 2.2, op=.9))
+for r in (58, 74, 90):
+    f1.add(arc(HOLE[0], HOLE[1], r, -78, -28, BLUE, 2.2, op=.9))
 # điện thoại
 PX0, PX1, PY0, PY1 = 308, 412, 36, 226
 f1.add(f'<rect x="{PX0}" y="{PY0}" width="{PX1 - PX0}" height="{PY1 - PY0}" rx="14" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2.4"/>')
