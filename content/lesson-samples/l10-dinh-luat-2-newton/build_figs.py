@@ -7,25 +7,25 @@ import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text) để kiểm chồng chữ
 
 
 def defs(p):
-    """Marker cỡ cố định theo đơn vị viewBox (markerUnits=userSpaceOnUse) để nét dày không phóng to đầu mũi."""
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác: đầu mũi tên vẽ bằng chevron V 30° (svg_lib) — giữ hàm cho chữ ký cũ."""
+    return ""
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
+    """Thân thẳng + đầu V 30° (svg_lib.chevron); đỉnh mũi tên đúng tại (x2, y2). Có thêm màu 'k' (currentColor)."""
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    n = math.hypot(x2 - x1, y2 - y1)
+    L = max(5, min(3.4 * ww + 2, 0.6 * n))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
@@ -34,7 +34,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="11">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 CUR = {"fig": 0}
@@ -78,7 +78,7 @@ for x, s, m, name in ((100, 0.85, 40, "Bạn nhỏ"), (310, 1.15, 80, "Chú HLV"
     b += text(x - 16, back_y + 22, "F = 80 N", RED, 14, "end")
     a = 80 / m
     b += arrow("f1", "g", x - 20, 72, x - 20 + a * A_PX, 72, 3.4)
-    b += text(x - 20, 58, f"a = {a:g} m/s²".replace(".", ","), GRN, 14, "start")
+    b += text(x - 20, 58, f"a = {a:g} m/s<tspan baseline-shift='super' font-size='14'>2</tspan>".replace(".", ","), GRN, 14, "start")
     b += text(x, 238, f"{name} {m} kg", "currentColor", 14, "middle", "600")
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
             "Cùng lực đẩy 80 N: bạn nhỏ 40 kg có gia tốc 2 m/s², người lớn 80 kg có gia tốc 1 m/s²", b,
@@ -91,25 +91,24 @@ T = 140                                        # mặt máng
 b = defs("f2")
 b += f'<rect x="20" y="{T}" width="340" height="12" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2"/>'
 b += f'<rect x="92" y="114" width="68" height="24" rx="3" fill="rgba(251,146,60,.2)" stroke="currentColor" stroke-width="2.2"/>'
-b += f'<rect x="160" y="119" width="12" height="12" rx="1" fill="rgba(248,113,113,.25)" stroke="{RED}" stroke-width="1.8"/>'   # cảm biến lực gắn đầu xe
+b += f'<rect x="160" y="114" width="12" height="12" rx="1" fill="rgba(248,113,113,.25)" stroke="{RED}" stroke-width="1.8"/>'   # cảm biến lực gắn đầu xe
 PX, PY, PR = 372, 130, 10                       # ròng rọc
 b += line(356, T, PX, PY, "currentColor", 2) + f'<circle cx="{PX}" cy="{PY}" r="{PR}" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += line(172, PY - PR + 5, 196, PY - PR + 5, "currentColor", 1.4)    # dây từ cảm biến
-b += line(196, PY - PR + 5, PX - PR + 1, PY - PR + 5, "currentColor", 1.4)
+b += line(172, PY - PR, PX, PY - PR, "currentColor", 1.4)    # dây từ cảm biến, tiếp tuyến đỉnh ròng rọc
 b += line(PX + PR, PY, PX + PR, 186, "currentColor", 1.4)          # dây đứng, tiếp tuyến mép phải
 b += f'<rect x="{PX+PR-11}" y="186" width="22" height="26" rx="2" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/>'
-b += arrow("f2", "r", 198, 125, 232, 125, 3)
-b += text(215, 115, "F", RED, 15, "middle")
+b += arrow("f2", "r", 198, 120, 232, 120, 3)
+b += text(215, 110, "F", RED, 15, "middle")
 for gx, lab in ((178, "cổng 1"), (298, "cổng 2")):
     b += f'<path d="M{gx-8},{T} V92 H{gx+8} V{T}" fill="none" stroke="{BLUE}" stroke-width="2.4"/>'
-    b += text(gx, 82, lab, BLUE, 13, "middle")
-b += text(126, 131, "xe", "currentColor", 13, "middle")
-b += text(164, 104, "cảm biến lực", RED, 13, "end", "600")
+    b += text(gx, 82, lab, BLUE, 14, "middle")
+b += text(126, 131, "xe", "currentColor", 14, "middle")
+b += text(164, 104, "cảm biến lực", RED, 14, "end", "600")
 # kích thước s
 b += line(178, 172, 298, 172, "currentColor", 1.4) + line(178, 165, 178, 179, "currentColor", 1.4) + line(298, 165, 298, 179, "currentColor", 1.4)
 b += text(238, 194, "s = 0,50 m", "currentColor", 14, "middle")
-b += text(PX - 2, 224, "quả nặng", "currentColor", 13, "end", "600")
-fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
+b += text(PX - 2, 224, "quả nặng", "currentColor", 14, "end", "600")
+fig2 = wrap("0 62 440 168",
             "Xe trên máng đệm khí xuất phát tại cổng quang 1, dây qua cảm biến lực và ròng rọc treo quả nặng; hai cổng quang cách nhau s = 0,50 m", b,
             "Hình 2. Xe trên máng đệm khí xuất phát tại cổng 1; quả nặng kéo xe qua dây vắt ròng rọc, cảm biến ở đầu xe đo lực <em>F</em>, hai cổng quang đo thời gian <em>t</em> xe đi hết <em>s</em> = 0,50 m.")
 
@@ -122,19 +121,19 @@ b = defs("f3")
 b += arrow("f3", "k", OX, OY, 400, OY, 2) + arrow("f3", "k", OX, OY, OX, 28, 2)
 for F in (0.1, 0.2, 0.3, 0.4):
     x = OX + SX * F
-    b += line(x, OY - 4, x, OY + 4, "currentColor", 1.5) + text(x, OY + 20, f"{F:.1f}".replace(".", ","), "currentColor", 13, "middle", "500")
+    b += line(x, OY - 4, x, OY + 4, "currentColor", 1.5) + text(x, OY + 20, f"{F:.1f}".replace(".", ","), "currentColor", 14, "middle", "500")
 for a in (0.2, 0.4, 0.6, 0.8):
     y = OY - SY * a
-    b += line(OX - 4, y, OX + 4, y, "currentColor", 1.5) + text(OX - 8, y + 5, f"{a:.1f}".replace(".", ","), "currentColor", 13, "end", "500")
+    b += line(OX - 4, y, OX + 4, y, "currentColor", 1.5) + text(OX - 8, y + 5, f"{a:.1f}".replace(".", ","), "currentColor", 14, "end", "500")
     b += line(OX, y, 400, y, "currentColor", 1, "3 5", .25)
-b += text(OX - 8, OY + 20, "0", "currentColor", 13, "end", "500")
+b += text(OX - 8, OY + 20, "0", "currentColor", 14, "end", "500")
 FM = 0.46
 b += line(OX, OY, OX + SX * FM, OY - SY * FM / 0.50, GRN, 2.4)
 pts = [(OX + SX * F, OY - SY * a) for F, a in data]
 for x, y in pts:
     b += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5" fill="{ORG}" stroke="currentColor" stroke-width="1"/>'
 b += text(430, OY + 20, "F (N)", "currentColor", 14, "end")
-b += text(OX + 8, 30, "a (m/s²)", "currentColor", 14, "start")
+b += text(OX + 8, 30, "a (m/s<tspan baseline-shift=\"super\" font-size=\"14\">2</tspan>)", "currentColor", 14, "start")
 b += text(200, 88, "a = F/0,50", GRN, 14, "middle")
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Đồ thị gia tốc theo lực: bốn điểm đo nằm sát đường thẳng qua gốc a = F/0,50", b,
@@ -142,7 +141,7 @@ fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
 
 # ---------------- Hình 4: phanh xe — a ngược chiều v ----------------
 CUR["fig"] = 4
-VB[4] = (440, 205)
+VB[4] = (440, 185)
 R = 165
 b = defs("f4") + line(10, R, 430, R, "currentColor", 2, "", .6)
 b += f'<rect x="150" y="112" width="140" height="38" rx="6" fill="rgba(56,189,248,.12)" stroke="currentColor" stroke-width="2.2"/>'
@@ -153,8 +152,8 @@ b += arrow("f4", "b", 170, 40, 290, 40, 3.2)
 b += text(170, 28, "v: xe vẫn chạy tới", BLUE, 14, "start")
 b += arrow("f4", "g", 270, 72, 190, 72, 3.2)
 b += text(182, 77, "a", GRN, 15, "end")
-b += arrow("f4", "r", 262, 186, 182, 186, 3.2)
-b += text(174, 191, sub("F", "hãm"), RED, 15, "end")
+b += arrow("f4", "r", 220, 131, 140, 131, 3.2)            # lực hãm đặt lên xe (tâm thân xe), dài 80 px như a
+b += text(132, 136, sub("F", "hãm"), RED, 15, "end")
 fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
             "Xe đang chạy sang phải thì phanh: vận tốc hướng phải, lực hãm và gia tốc hướng trái", b,
             "Hình 4. Khi phanh, lực hãm (đỏ) và gia tốc (xanh lá) cùng hướng ra sau, còn vận tốc (xanh dương) vẫn hướng tới.")
@@ -169,22 +168,23 @@ for wx in (186, 254):
     b += f'<circle cx="{wx}" cy="185" r="5" fill="none" stroke="currentColor" stroke-width="2"/>'
 CX, CY = 220, 155
 b += f'<circle cx="{CX}" cy="{CY}" r="3.5" fill="currentColor"/>'
-b += arrow("f5", "r", 80, 150, 80 + 90 - 2.6, 150, 3.2)            # F = 90 N -> 90 px, đầu mũi chạm thành xe
-b += text(120, 140, "F = 90 N", RED, 14, "middle")
-b += arrow("f5", "o", 262, 200, 262 - 30, 200, 3.2)                # Fms = 30 N -> 30 px, đặt ở chỗ tiếp xúc
-b += text(268, 205, sub("F", "ms") + " = 30 N", ORG, 14, "start")
+# mọi lực đặt chung tại trọng tâm xe G (220, 155); F : Fms = 90 : 30 px (k = 1 px/N), P, N thu nhỏ bằng nhau
+b += arrow("f5", "r", CX, CY, CX + 90, CY, 3.2)
+b += text(CX + 98, CY + 5, "F = 90 N", RED, 14, "start")
+b += arrow("f5", "o", CX, CY, CX - 30, CY, 3.2)
+b += text(162, CY + 5, sub("F", "ms") + " = 30 N", ORG, 14, "end")
 b += arrow("f5", "k", CX, CY, CX, CY + 60, 2.6)
-b += text(CX - 8, CY + 66, "P", "currentColor", 15, "end")
-b += arrow("f5", "k", CX, CY, CX, CY - 60, 2.6)            # N cùng điểm đặt với P (trọng tâm)
-b += text(CX + 8, CY - 50, "N", "currentColor", 15, "start")
-b += arrow("f5", "g", 300, 100, 360, 100, 3.4)
-b += text(366, 105, "a", GRN, 15, "start")
-b += text(244, 172, "60 kg", "currentColor", 13, "middle", "600")
+b += text(CX + 8, CY + 58, "P", "currentColor", 15, "start")
+b += arrow("f5", "k", CX, CY, CX, CY - 60, 2.6)
+b += text(CX + 8, CY - 46, "N", "currentColor", 15, "start")
+b += arrow("f5", "g", 310, 100, 370, 100, 3.4)
+b += text(376, 105, "a", GRN, 15, "start")
+b += text(174, 146, "60 kg", "currentColor", 14, "start", "600")
 b += arrow("f5", "k", 30, 226, 90, 226, 2)
-b += text(96, 231, "chiều +", "currentColor", 13, "start", "600")
-fig5 = wrap(f"0 0 {VB[5][0]} {VB[5][1]}",
+b += text(96, 231, "chiều +", "currentColor", 14, "start", "600")
+fig5 = wrap("0 82 440 158",
             "Bốn lực lên xe đẩy: lực đẩy F 90 N, ma sát 30 N, trọng lực P và phản lực N; gia tốc a hướng theo chiều đẩy", b,
-            "Hình 5. Lực lên xe đẩy. <em>F</em> và <em>F</em><sub>ms</sub> vẽ đúng tỉ lệ 3 : 1; <em>P</em>, <em>N</em> vẽ thu nhỏ, triệt tiêu nhau.")
+            "Hình 5. Lực lên xe đẩy. <em>F</em> và <em>F</em><sub>ms</sub> vẽ đúng tỉ lệ 3 : 1; <em>P</em>, <em>N</em> vẽ thu nhỏ, triệt tiêu nhau. Các lực vẽ chung điểm đặt tại tâm xe.")
 
 fig3 = fig3.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-dl2-newton-01"', 1)
 fig2 = fig2.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-dl2-newton-01"', 1)
