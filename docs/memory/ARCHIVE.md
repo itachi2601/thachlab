@@ -24,7 +24,6 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [Trang chủ redesign](project_thachlab_home_redesign.md) — 22/9/2026 (06866fcb); thiếu ảnh thầy + ảnh 3 câu hỏi phụ
 - [CNC kiểm tra redesign](project_thachlab_cnc_kiem_tra_redesign.md) — bài học CNC hardcode→DB; f75023fe + 2 migration; đã push
 - [4 chương HK2 lớp 10](project_thachlab_hk2_lop10_4chuong.md) — 12/12 bài đăng 24/9/2026 (exam 102-113); vài lưu ý cần rà
-- [Chương 4 hạt nhân lớp 12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — thay lý thuyết Bài 14-18; Supabase 24/9/2026; bundle JSON gốc repo lỗi thời
 - [Khôi phục bài làm dở](project_thachlab_exam_resume.md) — ExamRunner tự lưu 15s; deploy 24/9/2026, chưa test thoát giữa chừng
 - [Bài tập mẫu lẫn lý thuyết](project_thachlab_mixed_worked_examples_audit.md) — sửa xong 2 bài (83, 131) 25/9/2026
 - [Vá lỗ hổng /kiem-tra/lam](project_thachlab_exam_class_access_fix.md) — XONG 27/9/2026, không còn treo
