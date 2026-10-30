@@ -2,8 +2,9 @@
 """Sinh 4 hình SVG cho bài 26 (lesson 45) Thực hành đo suất điện động và điện trở trong của pin
 và thay <!--FIGn--> trong theory.src.html -> theory.html. Chạy lại được (idempotent).
 Điểm đồ thị tính từ số đo + hàm lưới tuyến tính; assert toạ độ, bề rộng nhãn, chiều mạch ở cuối mỗi hình."""
-import pathlib, re
-from svg_lib import *
+import pathlib, re, sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import *  # svg_lib của skill: arrow/chevron đầu V 30° (svg_lib.py cục bộ là bản cũ, không dùng)
 
 HERE = pathlib.Path(__file__).resolve().parent
 EMF = '<tspan font-style="italic" font-family="Georgia,\'Times New Roman\',serif" font-size="1.1em">E</tspan>'
@@ -14,10 +15,10 @@ VB_W = 440
 # ---------- tiện ích vẽ
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, marker=""):
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    m = f' marker-end="url(#{marker})"' if marker else ""
     o = f' stroke-opacity="{op}"' if op != 1 else ""
+    head = chevron(x2, y2, x2 - x1, y2 - y1, c, w, 10) if marker else ""   # đầu V 30°, không marker tam giác
     return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{c}" '
-            f'stroke-width="{w}"{d}{o}{m}/>')
+            f'stroke-width="{w}"{d}{o}/>' + head)
 
 
 def poly(pts, c="currentColor", w=2, dash="", op=1):
@@ -32,7 +33,7 @@ def dot(x, y, r=4, c="currentColor", stroke=""):
     return f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"{s}/>'
 
 
-def ring(x, y, r, c, label, size=13):
+def ring(x, y, r, c, label, size=14):
     """Đồng hồ / động cơ: vòng tròn viền màu c, chữ ở tâm."""
     return (f'<circle cx="{x}" cy="{y}" r="{r}" fill="none" stroke="{c}" stroke-width="2.2"/>'
             f'<text x="{x}" y="{y + size * 0.36:.1f}" fill="currentColor" font-size="{size}" font-weight="700" '
@@ -40,20 +41,20 @@ def ring(x, y, r, c, label, size=13):
 
 
 def sub(s):  # R_0 -> R<tspan baseline-shift="sub">0</tspan>
-    return re.sub(r"_(\w)", r'<tspan baseline-shift="sub" font-size="11">\1</tspan>', s)
+    return re.sub(r"_(\w)", r'<tspan baseline-shift="sub" font-size="12">\1</tspan>', s)
 
 
 class Fig:
     """Gom thân SVG + hộp bao nhãn/chấm để kiểm toạ độ: nhãn trong khung, không chồng nhau."""
 
     def __init__(self, name, vb_h):
-        self.name, self.h, self.body = name, vb_h, defs(name)
+        self.name, self.h, self.body = name, vb_h, ""
         self.boxes, self.dots = [], []
 
     def add(self, s):
         self.body += s
 
-    def T(self, x, y, s, c="currentColor", size=13, anchor="start", weight="600"):
+    def T(self, x, y, s, c="currentColor", size=14, anchor="start", weight="600"):
         assert "$" not in s, "không dùng $…$ trong <text>"
         plain = re.sub(r"<[^>]+>", "", s)
         plain = re.sub(r"_(\w)", r"\1", plain)  # chỉ số dưới hẹp hơn nhưng cứ tính đủ ký tự
@@ -128,8 +129,6 @@ def zig_h(y, x1, x2, c, n=5, a=6):
 # Hình 1: cùng một viên pin, hai số đo (hở mạch / có tải)
 # =====================================================================
 f1 = Fig("f1", 190)
-f1.add('<defs><marker id="f1-i" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">'
-       f'<path d="M0,0 L10,5 L0,10 z" fill="{ORG}"/></marker></defs>')
 BAT_W, BAT_H, BAT_Y = 70, 26, 80
 TY = BAT_Y + BAT_H / 2          # 93: cao độ hai cực
 VR = 16
@@ -156,27 +155,27 @@ def panel(f, bx, mx, loaded):
 
 
 # khung trái: hở mạch
-f1.T(110, 30, "Chưa lắp vào xe", "currentColor", 13, "middle")
+f1.T(110, 30, "Chưa lắp vào xe", "currentColor", 14, "middle")
 pl, mi, _, _ = panel(f1, 40, 165, loaded=False)
 f1.add(f'<rect x="137" y="118" width="56" height="20" rx="3" fill="rgba(56,189,248,.14)" stroke="{BLUE}" stroke-width="1.5"/>')
-f1.T(165, 133, "1,50 V", BLUE, 13, "middle", "700")
-f1.T(110, 165, "I = 0", "currentColor", 13, "middle", "400")
+f1.T(165, 133, "1,50 V", BLUE, 14, "middle", "700")
+f1.T(110, 182, "I = 0", "currentColor", 14, "middle", "400")
 # khung phải: có tải
-f1.T(330, 30, "Động cơ đang quay", "currentColor", 13, "middle")
+f1.T(330, 30, "Động cơ đang quay", "currentColor", 14, "middle")
 pr, mr, node_p, node_m = panel(f1, 260, 385, loaded=True)
 MX, MY, MR = 315, 150, 13
 f1.add(dot(node_p[0], node_p[1], 3) + dot(node_m[0], node_m[1], 3))
 f1.add(poly([node_p, (node_p[0], MY), (MX + MR, MY)]))
 f1.add(poly([node_m, (node_m[0], MY), (MX - MR, MY)]))
-f1.add(ring(MX, MY, MR, "currentColor", "M", 13))
+f1.add(ring(MX, MY, MR, "currentColor", "M", 14))
 f1.add(line(node_p[0], 106, node_p[0], 132, ORG, 2.2, marker="f1-i"))
-f1.T(node_p[0] - 6, 124, "I ≈ 0,53 A", ORG, 13, "end", "600")
+f1.T(MX, 182, "I ≈ 0,53 A", ORG, 14, "middle", "600")
 f1.add(f'<rect x="357" y="118" width="56" height="20" rx="3" fill="rgba(248,113,113,.14)" stroke="{RED}" stroke-width="1.5"/>')
-f1.T(385, 133, "1,06 V", RED, 13, "middle", "700")
+f1.T(385, 133, "1,06 V", RED, 14, "middle", "700")
 # assert: vôn kế song song hai cực pin (đầu dây trùng cực), dòng cam chỉ ở khung phải, số đúng
 assert pl == (116, TY) and mi == (40, TY) and pr == (336, TY) and mr == (260, TY)
 assert node_p[0] > pr[0] and node_m[0] < mr[0]                 # nhánh động cơ rẽ ra từ chính hai cực
-assert f1.body.count('marker-end="url(#f1-i)"') == 1 and "f1-i" in f1.body
+assert f1.body.count(f'stroke="{ORG}" stroke-width="2.2" stroke-linejoin="miter"') == 1 and "marker" not in f1.body
 assert "1,50 V" in f1.body and "1,06 V" in f1.body
 fig1 = fig(f1, "Hai khung: pin với vôn kế hở mạch đọc 1,50 V; pin nối động cơ đang quay, vôn kế đọc 1,06 V.",
            "Hình 1. Một viên pin: hở mạch 1,50 V, động cơ quay còn 1,06 V.",
@@ -186,8 +185,6 @@ fig1 = fig(f1, "Hai khung: pin với vôn kế hở mạch đọc 1,50 V; pin n�
 # Hình 2: sơ đồ mạch đo E và r
 # =====================================================================
 f2 = Fig("f2", 230)
-f2.add(f'<defs><marker id="f2-i" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{ORG}"/></marker>'
-       '<marker id="f2-c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>')
 L, R_, TOPY, BOTY = 70, 380, 50, 180
 PLUS_Y, MINUS_Y = 108, 122
 M_PT, N_PT = (70, 85), (70, 145)
@@ -204,35 +201,35 @@ f2.add(line(L - 12, PLUS_Y, L + 12, PLUS_Y, "currentColor", 2.5))
 f2.add(line(L - 6, MINUS_Y, L + 6, MINUS_Y, "currentColor", 5))
 f2.T(14, 118, EMF + ", r", "currentColor", 14, "start", "700")
 f2.add(dot(*M_PT, 3) + dot(*N_PT, 3))
-f2.T(50, 82, "M", "currentColor", 13, "start", "700")
-f2.T(50, 152, "N", "currentColor", 13, "start", "700")
-f2.T(90, PLUS_Y + 4, "+", RED, 13, "middle", "700")
-f2.T(90, MINUS_Y + 7, "−", BLUE, 13, "middle", "700")
+f2.T(50, 82, "M", "currentColor", 14, "start", "700")
+f2.T(50, 152, "N", "currentColor", 14, "start", "700")
+f2.T(90, PLUS_Y + 4, "+", RED, 14, "middle", "700")
+f2.T(90, MINUS_Y + 7, "−", BLUE, 14, "middle", "700")
 # khoá K (ĐÓNG: thanh gạt nối hai chấm, dòng điện đang chạy)
 f2.add(dot(120, TOPY, 3.5) + dot(160, TOPY, 3.5) + line(120, TOPY, 160, TOPY, "currentColor", 2.4))
-f2.T(140, 34, "K", "currentColor", 13, "middle", "700")
+f2.T(140, 34, "K", "currentColor", 14, "middle", "700")
 # ampe kế nối tiếp
 f2.add(ring(AX, AY, AR, ORG, "A"))
 # mũi tên dòng điện (chiều +x: từ cực + ra ngoài qua K, A, R0 về cực −)
 f2.add(line(290, TOPY, 330, TOPY, ORG, 2.4, marker="f2-i"))
-f2.T(310, 40, "I", ORG, 13, "middle", "700")
+f2.T(310, 40, "I", ORG, 14, "middle", "700")
 # điện trở bảo vệ R0
 f2.add(zig_v(R_, 80, 120, BLUE))
-f2.T(R_ - 12, 104, "R_0 = 2 Ω", BLUE, 13, "end", "700")
+f2.T(R_ - 12, 104, "R_0 = 2 Ω", BLUE, 14, "end", "700")
 # biến trở Rx
 f2.add(zig_h(BOTY, 200, 280, BLUE))
 f2.add(line(205, 200, 275, 162, "currentColor", 1.8, marker="f2-c"))
-f2.T(240, 220, "R_x (0–100 Ω)", BLUE, 13, "middle", "700")
+f2.T(240, 220, "R_x (0–100 Ω)", BLUE, 14, "middle", "700")
 # vôn kế song song hai cực pin M, N
 f2.add(poly([M_PT, (VX, M_PT[1]), (VX, VY - VRR)]))
 f2.add(poly([(VX, VY + VRR), (VX, N_PT[1]), N_PT]))
 f2.add(ring(VX, VY, VRR, GRN, "V"))
-f2.T(170, 120, "U", GRN, 13, "start", "700")
+f2.T(170, 120, "U", GRN, 14, "start", "700")
 # assert hình học
 assert (M_PT[0], M_PT[1]) == (L, 85) and N_PT == (L, 145)
 assert M_PT[1] < PLUS_Y and N_PT[1] > MINUS_Y                    # M trên cực +, N dưới cực −: vôn kế mắc hai cực pin
 assert AY == TOPY and BOTY - TOPY > 0                            # ampe kế nằm trên nhánh chính, nối tiếp
-assert f2.body.count('marker-end="url(#f2-i)"') == 1 and 290 < 330  # mũi tên I chiều +x
+assert 'L330.0,50.0 L' in f2.body and "marker" not in f2.body  # mũi tên I chiều +x
 assert f'x1="120.0" y1="{TOPY:.1f}" x2="160.0" y2="{TOPY:.1f}"' in f2.body   # K đóng: thanh gạt nằm ngang nối hai chấm (không còn gạch chéo)
 assert PLUS_Y < MINUS_Y and (L - 12) < (L - 6)                   # vạch dài ở trên (cực +)
 fig2 = fig(f2, "Sơ đồ mạch kín: pin, khoá K, ampe kế, điện trở bảo vệ R0 và biến trở Rx nối tiếp; vôn kế mắc song song hai cực pin.",
@@ -260,23 +257,25 @@ def axes(f, imax, ticks):
         x = xs(i)
         f.add(line(x, 30, x, 250, "currentColor", 1, op=.15))
         f.add(line(x, 250, x, 255, "currentColor", 1.2))
-        f.T(x, 268, f"{i:g}".replace(".", ","), "currentColor", 13, "middle", "400")
+        f.T(x, 268, f"{i:g}".replace(".", ","), "currentColor", 14, "middle", "400")
     for k in range(8):
         u = 1.0 + k * 0.1
         y = vc(u)
         f.add(line(60, y, 410, y, "currentColor", 1, op=.15))
         f.add(line(55, y, 60, y, "currentColor", 1.2))
-        f.T(52, y + 5, f"{u:.1f}".replace(".", ","), "currentColor", 13, "end", "400")
-    f.add(line(60, 250, 420, 250, "currentColor", 1.8, marker=f"{f.name}-c"))
+        f.T(52, y + 5, f"{u:.1f}".replace(".", ","), "currentColor", 14, "end", "400")
+    f.add(line(60, 250, 432, 250, "currentColor", 1.8, marker=f"{f.name}-c"))
     f.add(line(60, 250, 60, 18, "currentColor", 1.8, marker=f"{f.name}-c"))
-    f.T(12, 15, "U (V)", "currentColor", 13, "start", "700")
-    f.T(392, 285, "I (A)", "currentColor", 13, "start", "700")
+    # dấu cắt trục U (trục bắt đầu ở 1,0 V, không phải 0): hai vạch xiên nhỏ gần gốc
+    for yb in (238, 244):
+        f.add(line(53, yb + 3, 67, yb - 3, "currentColor", 1.6))
+    f.T(12, 15, "U (V)", "currentColor", 14, "start", "700")
+    f.T(380, 285, "I (A)", "currentColor", 14, "start", "700")
     return xs
 
 
 def head(name):
-    return (f'<defs><marker id="{name}-c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">'
-            '<path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>')
+    return ""   # trục dùng đầu V (chevron) trong line(..., marker=...), không cần <defs>
 
 
 def check_data(xs, ds, table):
@@ -324,12 +323,12 @@ for (x, y) in pts3:
 f3.add(dot(*p0, 4, GRN)); f3.D(*p0, 4)
 f3.add(dot(*A3, 4, YEL, "currentColor")); f3.D(*A3, 4)
 f3.add(dot(*B3, 4, YEL, "currentColor")); f3.D(*B3, 4)
-f3.T(68, 70, EMF + " ≈ 1,50 V", GRN, 13, "start", "700")
-f3.T(68, 86, "A", "currentColor", 13, "start", "700")
-f3.T(344, 207, "B", "currentColor", 13, "end", "700")
-f3.T((A3[0] + B3[0]) / 2, 87, "ΔI = 0,500 A", "currentColor", 13, "middle", "400")
-f3.T(B3[0] + 6, 157, "ΔU = 0,41 V", "currentColor", 13, "start", "400")
-f3.T(200, 44, "r = ΔU/ΔI = 0,82 Ω", "currentColor", 13, "start", "700")
+f3.T(68, 70, EMF + " ≈ 1,50 V", GRN, 14, "start", "700")
+f3.T(68, 86, "A", "currentColor", 14, "start", "700")
+f3.T(344, 207, "B", "currentColor", 14, "end", "700")
+f3.T((A3[0] + B3[0]) / 2, 87, "ΔI = 0,500 A", "currentColor", 14, "middle", "400")
+f3.T(B3[0] - 6, 157, "ΔU = 0,41 V", "currentColor", 14, "end", "400")
+f3.T(200, 44, "r = ΔU/ΔI = 0,82 Ω", "currentColor", 14, "start", "700")
 assert abs(A3[1] - B3[1]) == abs(vc(1.50) - vc(1.09)) and abs((1.50 - 1.09) - 0.41) < 1e-9
 fig3 = fig(f3, "Đồ thị U theo I với sáu điểm đo nằm gần một đường thẳng dốc xuống, cắt trục U tại 1,50 V; hai điểm A và B trên đường tạo tam giác hệ số góc.",
            "Hình 3. Đồ thị pin cũ: đường khớp cắt trục U tại E ≈ 1,50 V; A, B cho r = 0,82 Ω.")
@@ -363,12 +362,13 @@ for (x, y) in po:
 for (x, y) in pn:
     f4.add(dot(x, y, 3.5, BLUE)); f4.D(x, y, 3.5)
 f4.add(dot(XD, yo, 3, RED) + dot(XD, yn, 3, BLUE)); f4.D(XD, yo, 3); f4.D(XD, yn, 3)
-f4.T(XD - 7, yo + 17, "1,09 V", RED, 13, "end", "700")
-f4.T(XD + 7, yn - 7, "1,45 V", BLUE, 13, "start", "700")
-f4.T(XD, 268, "0,5 A", "currentColor", 13, "middle", "700")
-f4.T(250, 78, "pin mới · r ≈ 0,26 Ω", BLUE, 13, "start", "700")
-f4.T(332, 214, "pin cũ", RED, 13, "start", "700")
-f4.T(332, 229, "r ≈ 0,82 Ω", RED, 13, "start", "700")
+f4.T(XD - 7, yo + 17, "1,09 V", RED, 14, "end", "700")
+f4.T(XD + 7, yn - 7, "1,45 V", BLUE, 14, "start", "700")
+f4.T(XD, 268, "0,5 A", "currentColor", 14, "middle", "700")
+f4.T(150, 55, "pin mới", BLUE, 14, "start", "700")
+f4.T(150, 71, "r ≈ 0,26 Ω", BLUE, 14, "start", "700")
+f4.T(332, 214, "pin cũ", RED, 14, "start", "700")
+f4.T(332, 229, "r ≈ 0,82 Ω", RED, 14, "start", "700")
 fig4 = fig(f4, "Hai đường thẳng U theo I trên cùng hệ trục: đường pin mới thoải, đường pin cũ dốc; tại 0,5 A pin mới còn 1,45 V, pin cũ còn 1,09 V.",
            "Hình 4. Pin mới (xanh) thoải hơn pin cũ (đỏ); ở 0,5 A còn 1,45 V so với 1,09 V.",
            exp="tn-l11-do-sdd-pin-02")
