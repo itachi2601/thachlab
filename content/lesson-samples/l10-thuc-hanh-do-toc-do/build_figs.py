@@ -6,10 +6,10 @@ Có lớp kiểm hình học: hộp nhãn không chồng nhau, không vượt vi
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
 import json, math, pathlib, re, subprocess, sys
 from decimal import Decimal, ROUND_HALF_UP
-from svg_lib import RED, BLUE, ORG, GRN, wrap
-
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+sys.path.insert(0, str(ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))   # svg_lib của skill (có chevron đầu V)
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 
 
@@ -39,14 +39,13 @@ class Canvas:
         self.body += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"/>'
 
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11, dash=""):
-        """Mũi tên có ĐỈNH đúng tại (x2,y2); marker cỡ cố định (userSpaceOnUse)."""
+        """Mũi tên có ĐỈNH đúng tại (x2,y2); đầu chữ V 30° (chevron), không dùng marker tam giác."""
         L = math.hypot(x2 - x1, y2 - y1)
         ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        ex, ey = x2 - ux * w * 0.6, y2 - uy * w * 0.6          # thân dừng sát đỉnh để đầu V nhọn
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d}/>'
+                      + chevron(x2, y2, ux, uy, COL[c], min(w, 2.8), L=max(head, 9)))
         self.arrows[tag] = (x1, y1, x2, y2)
 
     def text(self, x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -67,8 +66,8 @@ class Canvas:
     def check(self):
         errs = []
         for i, a in enumerate(self.labels):
-            if a[5] < 13:
-                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 13")
+            if a[5] < 14:
+                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 14")
             if a[1] < 2 or a[3] > self.w - 2 or a[2] < 0 or a[4] > self.h:
                 errs.append(f"{self.name}: nhãn '{a[0]}' vượt viewBox {a[1:5]}")
             for b in self.labels[i + 1:]:
@@ -213,7 +212,7 @@ c.line(XL - 10, YA, XR + 10, YA, "currentColor", 2)
 for k in range(6):
     tk = TMIN + 0.1 * k
     c.line(X(tk), YA, X(tk), YA + 7, "currentColor", 1.6)
-    c.text(X(tk), YA + 24, fmt(tk, 1), size=13, anchor="middle", weight="600")
+    c.text(X(tk), YA + 24, fmt(tk, 1), size=14, anchor="middle", weight="600")
 for t in T1CS:
     c.dot(X(t / 100), 112, 7, ORG)
     ERR += [] if TMIN < t / 100 < TMAX else [f"f2: điểm {t} ngoài trục"]
@@ -221,7 +220,7 @@ c.line(X(TBAR1), 66, X(TBAR1), YA, GRN, 3)
 c.text(X(TBAR1), 58, "trung bình", GRN, 14, anchor="middle")
 c.text(12, 40, "5 lần bấm", size=14, weight="600")
 c.text(X(TBAR1) + 8, 96, "dải ± Δt", size=14, weight="600")
-c.text(XR + 18, YA - 10, "t (s)", size=13, anchor="end", weight="600")
+c.text(XR + 18, YA - 10, "t (s)", size=14, anchor="end", weight="600")
 ERR += [] if abs(X(3.0) - (XL + 0.2 / 0.5 * 340)) < 1e-9 else ["f2: ánh xạ trục lệch"]
 ERR += [] if band_l < min(X(t / 100) for t in T1CS if abs(t / 100 - TBAR1) <= DT1 + 1e-9) else ["f2: dải không phủ điểm"]
 inside = [t for t in T1CS if abs(Decimal(t) - TBAR1CS) <= DT1CS]
@@ -242,11 +241,18 @@ for wx in (118, 162):
 # tấm chắn rộng d: từ x=150 tới x=172, cao từ 92 tới 124
 SH0, SH1, SHT, SHB = 150, 172, 92, 124
 c.add(f'<rect x="{SH0}" y="{SHT}" width="{SH1-SH0}" height="{SHB-SHT}" fill="rgba(56,189,248,.35)" stroke="{BLUE}" stroke-width="2"/>')
-# cổng quang chữ U ngược, tia sáng ở y = 110 (nằm trong tầm cao của tấm chắn)
-GL, GR, GT, YBEAM = 236, 276, 72, 110
-c.add(f'<path d="M{GL},{YR} L{GL},{GT} L{GR},{GT} L{GR},{YR}" fill="none" stroke="currentColor" stroke-width="3"/>')
-c.line(GL + 4, YBEAM, GR - 4, YBEAM, RED, 2.5, "5 4")
+# cổng quang nhìn từ bên cạnh: đầu cổng (chữ U úp, hai càng trước/sau ray) treo trên thanh giữ; tia sáng đi VÀO TRANG (⊗),
+# vuông góc phương chuyển động, ở độ cao nằm trong tầm cao tấm chắn; đáy đầu cổng cao hơn nóc xe nên chỉ tấm chắn lọt khe.
+GX, GW, GT, GB, YBEAM = 256, 22, 54, 121, 106
+GL, GR = GX - GW / 2, GX + GW / 2
+CAR_TOP = 124
+c.line(GX, 24, GX, GT, "currentColor", 3, op=.55)                       # thanh giữ
+c.add(f'<rect x="{GL}" y="{GT}" width="{GW}" height="{GB-GT}" rx="3" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2.5"/>')
+c.add(f'<circle cx="{GX}" cy="{YBEAM}" r="6" fill="none" stroke="{RED}" stroke-width="2"/>')
+c.line(GX - 4, YBEAM - 4, GX + 4, YBEAM + 4, RED, 2)
+c.line(GX - 4, YBEAM + 4, GX + 4, YBEAM - 4, RED, 2)
 ERR += [] if SHT < YBEAM < SHB else ["f3: tia sáng không nằm trong tầm cao tấm chắn"]
+ERR += [] if SHT < GB < CAR_TOP else ["f3: đáy đầu cổng phải thấp hơn đỉnh tấm chắn và cao hơn nóc xe"]
 # kích thước d phía trên tấm chắn
 c.line(SH0, 84, SH1, 84, "currentColor", 1.6)
 c.line(SH0, 79, SH0, 89, "currentColor", 1.6)
@@ -256,17 +262,19 @@ c.text((SH0 + SH1) / 2, 74, "d", size=16, anchor="middle", italic=True)
 c.arr("v", "b", 110, 44, 190, 44, 3)
 c.text(198, 49, "v", BLUE, 16, italic=True)
 c.text(144, 108, "tấm chắn", size=14, anchor="end", weight="600")
-c.text((GL + GR) / 2, 64, "cổng quang", size=14, anchor="middle", weight="600")
+c.text(GR + 8, 86, "cổng quang", size=14, weight="600")
+c.text(GR + 8, 112, "tia sáng", RED, 14, weight="600")
+c.text(GR + 8, 130, "đi vào trang", RED, 14, weight="600")
 c.text(20, 186, "đường ray", size=14, weight="600")
 # đồng hồ
 BX0, BY0, BW, BH = 270, 188, 130, 50
 c.add(f'<rect x="{BX0}" y="{BY0}" width="{BW}" height="{BH}" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/>')
-c.line(GR, YR, GR, BY0, "currentColor", 2)
+c.add(f'<path d="M{GR},{GT+8} L380,{GT+8} L380,{BY0}" fill="none" stroke="currentColor" stroke-width="2"/>')
 c.text(BX0 + BW / 2, BY0 + 21, "đồng hồ", size=14, anchor="middle", weight="600")
 c.text(BX0 + BW / 2, BY0 + 40, "hiện số", size=14, anchor="middle", weight="600")
 ERR += [] if (c.arrows["v"][2] > c.arrows["v"][0] and c.arrows["v"][2] < GL) else ["f3: mũi tên v phải hướng về cổng"]
 ERR += [] if (SH1 - SH0) > 0 and SH1 < GL else ["f3: tấm chắn phải ở phía trước cổng và chưa qua"]
-fig3 = c.svg("Xe nhỏ trên đường ray có gắn tấm chắn rộng d đang chạy về phía cổng quang chữ U; tia hồng ngoại nằm ngang giữa hai chân cổng; cổng nối dây tới đồng hồ hiện số",
+fig3 = c.svg("Xe nhỏ trên đường ray có gắn tấm chắn rộng d đang chạy về phía cổng quang treo phía trên ray, nhìn từ bên cạnh; tia sáng đi vào trang, vuông góc hướng chạy, ở độ cao của tấm chắn; cổng nối dây tới đồng hồ hiện số",
              "Hình 3. Cổng quang: tấm chắn rộng <em>d</em> che tia sáng trong thời gian <em>t</em>; đồng hồ hiện số cho <em>t</em>, tốc độ là <em>v</em> = <em>d</em>/<em>t</em>.",
              exp="tn-l10-do-toc-do-02")
 ERR += c.check()
@@ -330,7 +338,7 @@ tn = [
      "loai": "thi_nghiem", "muc_do": "co_ban",
      "kien_thuc": ["dotocdo.v_bang_s_chia_t", "dotocdo.sai_so_tuyet_doi", "dotocdo.sai_so_tuong_doi", "dotocdo.do_tre_phan_xa"],
      "muc_tieu": "Từ năm số đo thời gian bấm tay, tính giá trị trung bình, sai số tuyệt đối, sai số tương đối và tốc độ trung bình của xe; nhận ra nguồn sai số chính là độ trễ phản xạ của người bấm.",
-     "dung_cu": [{"ten": "Thước dây (chia 1 mm)", "so_luong": 1}, {"ten": "Xe đồ chơi chạy đều (pin)", "so_luong": 1},
+     "dung_cu": [{"ten": "Thước dây (chia 2 mm)", "so_luong": 1}, {"ten": "Xe đồ chơi chạy đều (pin)", "so_luong": 1},
                  {"ten": "Đồng hồ bấm giây", "so_luong": 1}, {"ten": "Băng dính đánh dấu vạch xuất phát và vạch đích", "so_luong": 2}],
      "cac_buoc": {"lam": ["Kẻ vạch xuất phát và vạch đích cách nhau 1,20 m bằng thước dây (sai số 0,002 m).",
                           "Cho xe chạy đều qua; một bạn bấm khi xe qua vạch đầu và bấm lại khi qua vạch cuối. Lặp 5 lần."],
