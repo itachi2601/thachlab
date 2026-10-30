@@ -1,15 +1,17 @@
 """Sinh 3 hình SVG + bảng thí nghiệm cho bài 'Độ dịch chuyển và quãng đường đi được' (lesson 49),
 thay mốc <!--FIGn--> / <!--TABLE1--> trong theory.src.html -> theory.html.
-Có lớp kiểm hình học: hộp nhãn không chồng nhau, không vượt viewBox, cỡ chữ >= 13; mũi tên đúng chiều; tỉ lệ độ dài đúng.
+Có lớp kiểm hình học: hộp nhãn không chồng nhau, không vượt viewBox, cỡ chữ >= 14; mũi tên đúng chiều; tỉ lệ độ dài đúng.
 Chạy: python3 build_thi_nghiem.py (nếu đổi số liệu) -> python3 build_figs.py -> python3 build_bundle.py"""
 import json, math, pathlib, re, subprocess, sys
-from svg_lib import RED, BLUE, ORG, GRN, wrap
-
 HERE = pathlib.Path(__file__).resolve().parent
+# dùng svg_lib của skill (có chevron đầu V 30°), không dùng bản svg_lib.py cũ trong thư mục bài
+sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron
+
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}
 
 
-def sub(base, s, size=11):
+def sub(base, s, size=12):
     return f'{base}<tspan baseline-shift="sub" font-size="{size}">{s}</tspan>'
 
 
@@ -30,15 +32,16 @@ class Canvas:
     def dot(self, x, y, r=4, c="currentColor"):
         self.body += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"/>'
 
-    def arr(self, tag, c, x1, y1, x2, y2, w=3, head=12, dash=""):
-        """Mũi tên có ĐỈNH đúng tại (x2,y2); marker cỡ cố định (userSpaceOnUse)."""
+    def arr(self, tag, c, x1, y1, x2, y2, w=3, head=12, dash="", gap=0):
+        """Mũi tên đầu V 30° (chevron), ĐỈNH tại (x2,y2) lùi `gap` px (để không đè chấm điểm cuối).
+        self.arrows lưu toạ độ hình học thật (x1,y1,x2,y2) để kiểm tỉ lệ/chiều."""
         L = math.hypot(x2 - x1, y2 - y1)
         ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        tx, ty = x2 - ux * gap, y2 - uy * gap
+        ww = min(w, 2.8)
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{tx:.1f}" y2="{ty:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+                      + chevron(tx, ty, ux, uy, COL[c], ww, head))
         self.arrows[tag] = (x1, y1, x2, y2)
         self.obst.append((x1, y1, x2, y2))
 
@@ -51,11 +54,7 @@ class Canvas:
         self.labels.append((plain, x0, y - 0.78 * size, x0 + wdt, y + 0.22 * size, size))
 
     def defs(self):
-        out = "<defs>"
-        for c, hd in sorted(self.markers):
-            out += (f'<marker id="{self.name}-{c}{hd}" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="{hd}" markerHeight="{hd}" '
-                    f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{COL[c]}"/></marker>')
-        return out + "</defs>"
+        return ""          # đầu V vẽ bằng chevron, không còn marker
 
     @staticmethod
     def _seg_hits_box(seg, box, pad=1.5):
@@ -71,8 +70,8 @@ class Canvas:
     def check(self):
         errs = []
         for i, a in enumerate(self.labels):
-            if a[5] < 13:
-                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 13")
+            if a[5] < 14:
+                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 14")
             if a[1] < 2 or a[3] > self.w - 2 or a[2] < 0 or a[4] > self.h:
                 errs.append(f"{self.name}: nhãn '{a[0]}' vượt viewBox {a[1:5]}")
             for b in self.labels[i + 1:]:
@@ -104,9 +103,9 @@ c.add(f'<circle cx="{GX}" cy="{GY}" r="8" fill="none" stroke="currentColor" stro
 c.dot(GX, GY, 4)
 c.line(GX, 190, GX, 200, "currentColor", 2, obstacle=False)
 c.text(200, 104, "Sân băng", size=15, anchor="middle")
-c.text(200, 130, "đường trượt (nét cam)", ORG, 13, "middle", "600")
-c.text(200, 218, "Cửa vào: chỗ xuất phát", size=13, anchor="middle", weight="600")
-c.text(200, 238, "và cũng là chỗ dừng", size=13, anchor="middle", weight="600")
+c.text(200, 130, "đường trượt (nét cam)", ORG, 14, "middle", "600")
+c.text(200, 218, "Cửa vào: chỗ xuất phát", size=14, anchor="middle", weight="600")
+c.text(200, 238, "và cũng là chỗ dừng", size=14, anchor="middle", weight="600")
 # kiểm chiều đi: dưới sang phải, trên sang trái (một vòng ngược chiều kim đồng hồ trên màn hình)
 x1, y1, x2, y2 = c.arrows["duoi"]; ERR += [] if x2 > x1 else ["f1: mũi dưới sai chiều"]
 x1, y1, x2, y2 = c.arrows["tren"]; ERR += [] if x2 < x1 else ["f1: mũi trên sai chiều"]
@@ -119,13 +118,13 @@ ERR += c.check()
 c = Canvas("f2", 420, 215)
 AX_Y, X0, K = 130, 40, 3.4             # 1 cm = 3,4 px; x = 0 tại px 40
 px = lambda cm: X0 + K * cm
-c.line(24, AX_Y, 396, AX_Y, "currentColor", 2.2)
-c.add(f'<path d="M408,{AX_Y} L396,{AX_Y-6} L396,{AX_Y+6} Z" fill="currentColor"/>')
+c.line(24, AX_Y, 406, AX_Y, "currentColor", 2.2)
+c.add(chevron(406, AX_Y, 1, 0, "currentColor", 2.2, 11))
 for cm in range(0, 101, 10):
     c.line(px(cm), AX_Y - 5, px(cm), AX_Y + 5, "currentColor", 1.6, obstacle=False)
 c.text(px(0), 152, "O", size=14, anchor="middle", italic=True)
 for cm in (20, 50, 80, 100):
-    c.text(px(cm), 152, str(cm), size=13, anchor="middle", weight="600")
+    c.text(px(cm), 152, str(cm), size=14, anchor="middle", weight="600")
 c.text(404, 116, "x (cm)", size=14, anchor="end", italic=True)
 x1, xq, x2 = 20, 80, 50
 YA, YB = 70, 95
@@ -133,8 +132,8 @@ c.arr("toi", "o", px(x1), YA, px(xq), YA, 3.2)
 c.line(px(xq), YA, px(xq), YB, ORG, 2, "3 3", 1)
 c.arr("lui", "o", px(xq), YB, px(x2), YB, 3.2)
 c.line(px(x1), YA, px(x1), AX_Y, "currentColor", 1.2, "3 4", .5)
-c.text((px(x1) + px(xq)) / 2, YA - 10, "đi tới 60 cm", ORG, 13, "middle", "600")
-c.text((px(xq) + px(x2)) / 2 + 30, YB + 18, "lùi 30 cm", ORG, 13, "middle", "600")
+c.text((px(x1) + px(xq)) / 2, YA - 10, "đi tới 60 cm", ORG, 14, "middle", "600")
+c.text((px(xq) + px(x2)) / 2 + 30, YB + 18, "lùi 30 cm", ORG, 14, "middle", "600")
 for cm in (x1, x2, xq):
     c.dot(px(cm), AX_Y, 4.5)
 YD = 180
@@ -144,7 +143,7 @@ c.arr("d", "g", px(x1), YD, px(x2), YD, 3.4)
 c.text(px(x1) - 8, YD + 5, sub("x", "1"), size=15, anchor="end", italic=True)
 c.text(px(x2) + 8, YD + 5, sub("x", "2"), size=15, italic=True)
 c.text((px(x1) + px(x2)) / 2, YD + 24, "d = 30 cm", GRN, 14, "middle")
-c.text(16, 24, "Xe điều khiển chạy dọc thước, gốc O là đầu thước", size=13, weight="600")
+c.text(16, 24, "Xe điều khiển chạy dọc thước, gốc O là đầu thước", size=14, weight="600")
 # kiểm: d = x2 - x1 đúng tỉ lệ, cùng chiều trục; tổng hai đoạn cam = s
 xa, _, xb, _ = c.arrows["d"]
 ERR += [] if abs((xb - xa) / K - (x2 - x1)) < 1e-9 else ["f2: độ dài d sai tỉ lệ"]
@@ -162,10 +161,12 @@ NX, NY = HX + 1.2 * S, HY
 TX, TY = NX, HY - 0.5 * S
 for x, y in ((HX, HY), (NX, NY), (TX, TY)):
     c.dot(x, y, 5)
-c.arr("dong", "o", HX, HY, NX, NY, 3.2)
-c.arr("bac", "o", NX, NY, TX, TY, 3.2)
-c.arr("d", "g", HX, HY, TX, TY, 3.2, dash="8 5")
-c.add(f'<path d="M{NX-20:.1f},{NY:.1f} L{NX-20:.1f},{NY-20:.1f} L{NX:.1f},{NY-20:.1f}" fill="none" stroke="currentColor" stroke-width="1.4"/>')
+c.arr("dong", "o", HX, HY, NX, NY, 3.2, gap=7)
+c.arr("bac", "o", NX, NY, TX, TY, 3.2, gap=7)
+c.arr("d", "g", HX, HY, TX, TY, 3.2, dash="8 5", gap=7)
+RA = 28                        # kí hiệu góc vuông đủ rộng để đầu V của mũi Đông (lùi 7 px, dài 12 px) nằm gọn bên trong, không chạm
+c.add(f'<path d="M{NX-RA:.1f},{NY:.1f} L{NX-RA:.1f},{NY-RA:.1f} L{NX:.1f},{NY-RA:.1f}" fill="none" stroke="currentColor" stroke-width="1.4"/>')
+assert 7 + 12 * math.cos(math.radians(30)) < RA - 4 and 12 * math.sin(math.radians(30)) < RA - 4
 alpha = math.atan2(HY - TY, TX - HX)
 R = 46
 ax_, ay_ = HX + R * math.cos(alpha), HY - R * math.sin(alpha)
@@ -181,8 +182,8 @@ c.text(150, 140, "d = ?", GRN, 16, "end", italic=True)
 CX, CY = 44, 92
 c.arr("N", "b", CX, CY, CX, CY - 46, 2.4, 10)
 c.arr("E", "b", CX, CY, CX + 46, CY, 2.4, 10)
-c.text(CX, CY - 54, "Bắc", BLUE, 13, "middle", "600")
-c.text(CX + 52, CY + 5, "Đông", BLUE, 13, "start", "600")
+c.text(CX, CY - 54, "Bắc", BLUE, 14, "middle", "600")
+c.text(CX + 52, CY + 5, "Đông", BLUE, 14, "start", "600")
 # kiểm: tỉ lệ 1,2 : 0,5; d nối nhà -> trường; góc ~22,6°
 ERR += [] if abs((NX - HX) / (NY - TY) - 1.2 / 0.5) < 1e-9 else ["f3: tỉ lệ hai cạnh sai"]
 ERR += [] if abs(math.degrees(alpha) - math.degrees(math.atan(0.5 / 1.2))) < 1e-9 else ["f3: góc sai"]
