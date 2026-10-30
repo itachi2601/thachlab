@@ -8,6 +8,10 @@ _sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
 from _margin_fig import margin_figs
 import json, math, pathlib, re, subprocess, sys
 from svg_lib import RED, BLUE, ORG, GRN, wrap
+import importlib.util as _ilu
+_sp = _ilu.spec_from_file_location("_skill_svg", _pl.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/svg_lib.py")
+_sk = _ilu.module_from_spec(_sp); _sp.loader.exec_module(_sk)
+chevron = _sk.chevron   # đầu V 30° (thầy chốt 7/10/2026), thay marker tam giác
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -40,14 +44,13 @@ class Canvas:
         self.body += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"/>'
 
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11, dash=""):
-        """Mũi tên có ĐỈNH đúng tại (x2,y2); marker cỡ cố định (userSpaceOnUse)."""
+        """Mũi tên có ĐỈNH đúng tại (x2,y2); đầu chữ V 30° (chevron), không marker tam giác."""
         L = math.hypot(x2 - x1, y2 - y1)
         ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        ex, ey = x2 - ux * w * 0.6, y2 - uy * w * 0.6   # thân dừng sát đỉnh để mũi V nhọn
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d}/>'
+                      + chevron(x2, y2, ux, uy, COL[c], min(w, 2.6), head + 1))
         self.arrows[tag] = (x1, y1, x2, y2)
 
     def text(self, x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -68,8 +71,8 @@ class Canvas:
     def check(self):
         errs = []
         for i, a in enumerate(self.labels):
-            if a[5] < 13 and not a[0].isdigit():
-                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 13")
+            if a[5] < 14:
+                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 14")
             if a[1] < 2 or a[3] > self.w - 2 or a[2] < 0 or a[4] > self.h:
                 errs.append(f"{self.name}: nhãn '{a[0]}' vượt viewBox {a[1:5]}")
             for b in self.labels[i + 1:]:
@@ -129,8 +132,8 @@ for r, ((name, v0, a), pos) in enumerate(zip(ROWS, POS)):
     else:
         c.arr(f"a{r}", "g", 372, y - 31, 330, y - 31, 3)
         c.text(378, y - 26, "a", GRN, 16, italic=True)
-    c.text(X0 - 6, y + 24, "t = 0", size=13, weight="600")
-    c.text(X0 + pos[-1] * SC, y + 24, "0,8 s", size=13, anchor="middle", weight="600")
+    c.text(X0 - 6, y + 24, "t = 0", size=14, weight="600")
+    c.text(X0 + pos[-1] * SC, y + 24, "0,8 s", size=14, anchor="middle", weight="600")
     # kiểm: khoảng cách giữa các chấm đều / tăng / giảm đúng loại chuyển động
     gaps = [b - a_ for a_, b in zip(pos, pos[1:])]
     ok = (all(abs(g - gaps[0]) < 1e-9 for g in gaps) if a == 0 else
@@ -140,7 +143,7 @@ for r, ((name, v0, a), pos) in enumerate(zip(ROWS, POS)):
         x1, _, x2, _ = c.arrows[f"a{r}"]
         ERR += [] if (x2 - x1) * a > 0 else [f"f1: mũi tên a hàng {r} sai chiều"]
 fig1 = c.svg("Ba hàng chấm vị trí viên bi sau mỗi 0,2 giây: trên bàn cách đều, xuống dốc khoảng cách tăng dần với gia tốc cùng chiều vận tốc, lên dốc khoảng cách giảm dần với gia tốc ngược chiều vận tốc",
-             "Hình 1. Vị trí viên bi sau mỗi 0,2 s (số liệu minh hoạ). Khoảng cách đều: vận tốc không đổi. Dài dần: nhanh dần, <em>a</em> cùng chiều <em>v</em>. Ngắn dần: chậm dần, <em>a</em> ngược chiều <em>v</em>.",
+             "Hình 1. Vị trí viên bi sau mỗi 0,2 s (số liệu minh hoạ):<br>Khoảng cách đều: vận tốc không đổi.<br>Dài dần: nhanh dần, <em>a</em> cùng chiều <em>v</em>.<br>Ngắn dần: chậm dần, <em>a</em> ngược chiều <em>v</em>.",
              exp="tn-l10-gia-toc-02")
 ERR += c.check()
 
@@ -149,27 +152,31 @@ c = Canvas("f2", 420, 260)
 OX, OY, XS, VS = 52, 220, 56, 14
 X = lambda t: OX + XS * t
 Y = lambda v: OY - VS * v
-c.add(f'<rect x="{X(1):.1f}" y="{Y(5):.1f}" width="{X(3)-X(1):.1f}" height="{OY-Y(5):.1f}" fill="rgba(251,146,60,.2)"/>')
+c.add(f'<rect x="{X(1):.1f}" y="{Y(3):.1f}" width="{X(3)-X(1):.1f}" height="{OY-Y(3):.1f}" fill="rgba(251,146,60,.25)"/>')
 c.arr("tx", "k", OX, OY, 372, OY, 1.8, 9)
 c.arr("vy", "k", OX, OY, OX, 30, 1.8, 9)
-c.text(60, 40, "v (m/s)", size=13, weight="600")
-c.text(362, 244, "t (s)", size=13, weight="600")
-c.text(36, 238, "O", size=13, weight="600")
-LINES = [("nhanh dần", GRN, 2, 1.8), ("đều", ORG, 5, 0), ("chậm dần", BLUE, 10, -1.6)]
+c.text(60, 40, "v (m/s)", size=14, weight="600")
+c.text(362, 244, "t (s)", size=14, weight="600")
+c.text(36, 238, "O", size=14, weight="600")
+LINES = [("nhanh dần", GRN, 4, 1.6), ("đều", ORG, 3, 0), ("chậm dần", BLUE, 11, -1.2)]
 for name, col, v0, a in LINES:
     c.line(X(0), Y(v0), X(5), Y(v0 + 5 * a), col, 3)
     c.text(X(5) + 6, Y(v0 + 5 * a) + 5, name, col, 14)
 # tam giác độ dốc trên đường nhanh dần, t = 3 → 4 s
-t1, t2 = 3, 4
-va, vb = 2 + 1.8 * t1, 2 + 1.8 * t2
+t1, t2 = 3.5, 4.5
+va, vb = 4 + 1.6 * t1, 4 + 1.6 * t2
 c.line(X(t1), Y(va), X(t2), Y(va), "currentColor", 1.6, "5 4")
 c.line(X(t2), Y(va), X(t2), Y(vb), "currentColor", 1.6, "5 4")
 c.text((X(t1) + X(t2)) / 2, Y(va) + 18, "Δt", size=14, anchor="middle")
 c.text(X(t2) + 6, (Y(va) + Y(vb)) / 2 + 5, "Δv", size=14)
-c.text((X(1) + X(3)) / 2, 196, "diện tích = d", size=13, anchor="middle", weight="600")
+c.text((X(1) + X(3)) / 2, 206, "diện tích = d", size=14, anchor="middle", weight="600")
+# kiểm: vùng tô (t = 1…3, dưới đường đều v = 3) không bị đường nhanh dần/chậm dần cắt qua
+for _n, _c, _v0, _a in LINES:
+    if _a:
+        ERR += [] if min(_v0 + _a * 1, _v0 + _a * 3) > 3 + 0.5 else [f"f2: đường {_n} cắt vùng diện tích"]
 ERR += [] if Y(vb) < Y(va) else ["f2: tam giác độ dốc sai chiều"]
 fig2 = c.svg("Đồ thị vận tốc theo thời gian: đường nằm ngang là chuyển động đều, đường đi lên là nhanh dần, đường đi xuống là chậm dần; tam giác Δt, Δv trên đường nhanh dần; vùng tô dưới đường nằm ngang là độ dịch chuyển",
-             "Hình 2. Đồ thị <em>v</em>–<em>t</em> (với <em>v</em> &gt; 0): nằm ngang là thẳng đều; xiên lên là nhanh dần đều, xiên xuống là chậm dần đều. Độ dốc Δ<em>v</em>/Δ<em>t</em> là gia tốc; diện tích dưới đồ thị là độ dịch chuyển <em>d</em>.")
+             "Hình 2. Đồ thị <em>v</em>–<em>t</em> (với <em>v</em> &gt; 0):<br>Nằm ngang: thẳng đều.<br>Xiên lên: nhanh dần đều.<br>Xiên xuống: chậm dần đều.<br>Độ dốc Δ<em>v</em>/Δ<em>t</em> là gia tốc.<br>Diện tích dưới đồ thị là độ dịch chuyển <em>d</em>.")
 ERR += c.check()
 
 # ================= Hình 3: xe vào cua với tốc độ không đổi — Δv hướng vào trong cua
@@ -193,7 +200,7 @@ for k, deg in ((1, 150), (2, 30)):
 c.text(18, 120, sub("v", "1", 12), BLUE, 16, italic=True)
 c.text(262, 200, sub("v", "2", 12), BLUE, 16, italic=True)
 c.dot(CX, CY, 3.5)
-c.text(CX, 234, "tâm cua", size=13, anchor="middle", weight="600")
+c.text(CX, 234, "tâm cua", size=14, anchor="middle", weight="600")
 # ghép gốc: v1, v2 từ cùng điểm Q; Δv từ đỉnh v1 tới đỉnh v2
 QX, QY = 330, 80
 (a1, b1), (a2, b2) = vecs[1], vecs[2]
@@ -204,8 +211,8 @@ c.dot(QX, QY, 3)
 c.text(QX + 6, QY + b1 + 30, sub("v", "1", 12), BLUE, 16, anchor="end", italic=True)
 c.text(QX + 6, QY + b2 - 18, sub("v", "2", 12), BLUE, 16, anchor="end", italic=True)
 c.text(QX + a1 + 8, QY + 6, "Δv", GRN, 16)
-c.text(292, 168, "Δv hướng vào", size=13, weight="600")
-c.text(292, 186, "phía trong cua", size=13, weight="600")
+c.text(292, 168, "Δv hướng vào", size=14, weight="600")
+c.text(292, 186, "phía trong cua", size=14, weight="600")
 dvx, dvy = a2 - a1, b2 - b1
 mx, my = P(90)
 ERR += [] if (dvx * (CX - mx) + dvy * (CY - my)) > 0 and abs(dvx) < 1e-6 else ["f3: Δv không hướng vào tâm"]
@@ -225,18 +232,18 @@ c.arr("vy", "k", OX, OY, OX, 26, 1.8, 9)
 c.line(X(0), Y(VB), X(TB), Y(0), BLUE, 3)
 c.dot(X(0), Y(VB), 4, BLUE)
 c.dot(X(TB), Y(0), 4, BLUE)
-c.text(48, Y(VB) + 5, "15", size=13, anchor="end", weight="600")
-c.text(X(TB), 230, "5", size=13, anchor="middle", weight="600")
-c.text(40, 228, "O", size=13, weight="600")
-c.text(66, 34, "v (m/s)", size=13, weight="600")
-c.text(348, 192, "t (s)", size=13, weight="600")
-c.text(110, 186, "s = diện tích", size=13, weight="600")
+c.text(48, Y(VB) + 5, "15", size=14, anchor="end", weight="600")
+c.text(X(TB), 230, "5", size=14, anchor="middle", weight="600")
+c.text(40, 228, "O", size=14, weight="600")
+c.text(66, 34, "v (m/s)", size=14, weight="600")
+c.text(348, 192, "t (s)", size=14, weight="600")
+c.text(110, 186, "s = diện tích", size=14, weight="600")
 # kiểm: nhãn diện tích nằm trong tam giác (dưới đường thẳng)
-for xx in (110, 110 + 0.58 * 13 * 13):
+for xx in (110, 110 + 0.58 * 14 * 13):
     ytop = Y(VB) + (xx - OX) / (X(TB) - OX) * (OY - Y(VB))
-    ERR += [] if 176 > ytop else ["f4: nhãn diện tích lọt ra ngoài tam giác"]
+    ERR += [] if 186 - 0.78 * 14 > ytop else ["f4: nhãn diện tích lọt ra ngoài tam giác"]
 fig4 = c.svg("Đồ thị vận tốc theo thời gian của ô tô hãm phanh: đoạn thẳng đi xuống từ 15 m/s lúc t = 0 tới 0 lúc t = 5 s; vùng tam giác dưới đồ thị được tô",
-             "Hình 4. Đồ thị <em>v</em>–<em>t</em> của ô tô hãm phanh: từ 15 m/s giảm đều về 0 sau 5 s. Quãng đường hãm phanh bằng diện tích tam giác tô màu.",
+             "Hình 4. Đồ thị <em>v</em>–<em>t</em> của ô tô hãm phanh:<br>Từ 15 m/s giảm đều về 0 sau 5 s.<br>Quãng đường hãm phanh bằng diện tích tam giác tô màu.",
              exp="tn-l10-gia-toc-03")
 ERR += c.check()
 
