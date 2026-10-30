@@ -130,7 +130,7 @@ b = f'<rect x="{BAR0}" y="{BY0}" width="{BAR1-BAR0}" height="{BY1-BY0}" rx="6" f
 for x in range(BAR0 + 40, BAR1, 40):
     b += seg(x, BY0 + 4, x, BY1 - 4, "currentColor", 1, "", .3)
 for x in spots:
-    b += f'<ellipse cx="{x:.1f}" cy="{(BY0+BY1)/2}" rx="9" ry="13" fill="rgba(251,146,60,.85)" stroke="{ORG}" stroke-width="2"/>'
+    b += f'<ellipse cx="{x:.1f}" cy="{(BY0+BY1)/2}" rx="9" ry="13" fill="#fb923c" stroke="{ORG}" stroke-width="2"/>'
     b += seg(x, BY1 + 2, x, 136, "currentColor", 1.2, "3 3", .7)
 b += dbl(spots[0], 132, spots[1], 132, GRN, 2.4)
 lab3 = [("d", (spots[0] + spots[1]) / 2, 158, "middle", GRN), ("vệt chảy", spots[2] + 6, 40, "middle", ORG),
@@ -205,7 +205,7 @@ for lg, s in ten_l.items():
     e = round(math.log10(C) - lg - math.log10(3))
     assert abs(C / 10 ** lg - 3 * 10 ** e) / (3 * 10 ** e) < 1e-9
     b += (f'<text x="{x:.1f}" y="156" fill="currentColor" font-size="{FS}" font-weight="600" text-anchor="middle">3·10'
-          f'<tspan baseline-shift="super" font-size="13">{e}</tspan></text>')
+          f'<tspan baseline-shift="super" font-size="14">{e}</tspan></text>')
 b += t(10, 132, "λ", "currentColor", "start", "700") + t(10, 156, "f", "currentColor", "start", "700")
 b += vec(AX0, 176, AX1, 176, GRN, 2.2)
 b += t((AX0 + AX1) / 2, 198, "λ giảm dần, f (Hz) tăng dần", GRN, "middle", "700")
