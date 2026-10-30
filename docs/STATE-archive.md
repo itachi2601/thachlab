@@ -825,3 +825,4 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - `20261028100000_bai_tap_ngay_mo_theo_gio` (HSG9 bài tập mỗi ngày) CHƯA CHẠY → rồi `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes`, deploy `components/review/ClassRoster.tsx`.
 - `20261024190000_lesson_notes` (bảng ghi chú HS) CHƯA CHẠY; rollback `drop table public.lesson_notes`.
 - `20261027120000_de_ma_khach_xao_de_bang_diem` (đề mã khách `/thi/?ma=`) — kiểm `--list` xem đã chạy chưa.
+- [ĐÃ CHẠY 30/10/2026 15:24, kiểm: RLS bật, 2 hàm, nhánh clip_choice có, 0 dòng] `20261030120000_clip_choice`: lựa chọn Dự đoán khung video (bảng `lesson_clip_choices` + nhánh `clip_choice` ở `log_learning_events` + `teacher_clip_choice_stats`); lúc nào cũng được, chạy TRƯỚC deploy `KhungPortals` (chưa chạy thì sự kiện bị bỏ êm).

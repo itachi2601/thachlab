@@ -87,6 +87,7 @@ FILES=(
   "supabase/migrations/20261027120000_de_ma_khach_xao_de_bang_diem.sql|Đề làm bằng mã không cần tài khoản: xáo câu + phương án mỗi lượt, nhập họ tên/MSSV/lớp, bảng điểm theo lớp (guest_exam_links/sessions + 3 RPC)|lúc nào cũng được"
   "supabase/migrations/20261027200000_quiz_ly_thuyet_mo_dap_an.sql|Quiz Kiểm tra nhanh ở mục ly_thuyet luôn mở đáp án (đề 1147 bị TA giao BTVN nên bị khoá 3 lượt); chỉ thay hàm exam_answers_revealed|lúc nào cũng được"
   "supabase/migrations/20261028100000_bai_tap_ngay_mo_theo_gio.sql|Ôn tập ở nhà: chặng mở theo giờ (open_at), review_roster (tên bạn đã nộp/chưa nộp), pg_cron mở bài + chuông mỗi sáng|lúc nào cũng được"
+  "supabase/migrations/20261030100000_avcn_bai_11_on_thi_noi_cau.sql|AVCN: thêm chương 11 + bài 11 'Ôn thì và nối câu' (published=false, chỉ dữ liệu, idempotent)|lúc nào cũng được"
   "supabase/migrations/20261030120000_clip_choice.sql|Khung video thí nghiệm: bảng lesson_clip_choices (lựa chọn Dự đoán A–D lần đầu / HS / tn_id) + nhánh clip_choice trong log_learning_events + RPC teacher_clip_choice_stats + purge 12 tháng (chỉ thêm, có rollback)|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng

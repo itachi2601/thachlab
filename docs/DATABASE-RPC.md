@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 409 hàm, sinh tự động 2026-10-24
+# Hàm SQL / RPC (schema public) — 419 hàm, sinh tự động 2026-10-30
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -17,6 +17,7 @@ repo — xem trên Supabase Dashboard).
 - `bank_set_distractor_notes(p_bank_id bigint, p_notes jsonb)` → integer
 - `bank_set_question_figure(p_bank_id bigint, p_img_html text)` → jsonb
 - `bank_set_question_figure_svc(p_bank_id bigint, p_img_html text)` → jsonb
+- `bank_source_is_assessment(p_exam bigint)` → boolean
 - `can_edit_teaching(p_class bigint)` → boolean
 - `can_manage_class(p_class_id bigint)` → boolean
 - `can_manage_course(p_course_id bigint)` → boolean
@@ -84,6 +85,9 @@ repo — xem trên Supabase Dashboard).
 - `gtrgm_picksplit(internal, internal)` → internal
 - `gtrgm_same(gtrgm, gtrgm, internal)` → internal
 - `gtrgm_union(internal, internal)` → gtrgm
+- `guest_exam_info(p_code text)` → jsonb
+- `guest_exam_start(p_code text, p_full_name text, p_student_code text, p_class_name text)` → jsonb
+- `guest_exam_submit(p_session_id uuid, p_responses jsonb)` → jsonb
 - `handle_new_user()` → trigger
 - `homework_check_set(p_announcement_id bigint, p_student_id uuid, p_percent integer, p_season bigint)` → void
 - `is_admin()` → boolean
@@ -122,6 +126,7 @@ repo — xem trên Supabase Dashboard).
 - `preview_cttc_enroll()` → jsonb
 - `preview_cttc_unenroll()` → integer
 - `purge_learning_events(p_before timestamp with time zone)` → bigint
+- `purge_lesson_clip_choices(p_before timestamp with time zone)` → bigint
 - `question_bank_plain_text(q jsonb)` → text
 - `question_content_hash(q jsonb)` → text
 - `question_topic_sync_children()` → trigger
@@ -235,19 +240,23 @@ repo — xem trên Supabase Dashboard).
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `request_parent_link_review(p_name text, p_birth date, p_phone text, p_note text)` → bigint
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_board(p_session bigint)` → jsonb
 - `review_board_stage(p_session bigint, p_stage integer)` → jsonb
 - `review_build_dang_exam(p_class bigint, p_lesson bigint, p_per_dang integer)` → jsonb
 - `review_create(p_class bigint, p_title text, p_threshold integer, p_stages jsonb)` → bigint
+- `review_create_self(p_class bigint, p_title text, p_threshold integer, p_stages jsonb, p_due_at timestamp with time zone, p_sequential boolean)` → bigint
 - `review_dang_pool(p_lesson bigint)` → jsonb
 - `review_extend(p_session bigint, p_seconds integer)` → void
 - `review_list(p_class bigint)` → jsonb
 - `review_my_state(p_session bigint)` → jsonb
+- `review_open_due_stages()` → integer
 - `review_parent_link_request(p_id bigint, p_student uuid, p_approve boolean)` → void
+- `review_roster(p_session bigint)` → jsonb
 - `review_secs_left(r review_sessions)` → integer
+- `review_session_meta(p_session bigint)` → jsonb
 - `review_set_stage(p_session bigint, p_stage integer)` → void
 - `review_student_stage(r review_sessions, p_student uuid, p_idx integer)` → jsonb
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
@@ -273,8 +282,8 @@ repo — xem trên Supabase Dashboard).
 - `staff_set_student_phones(p_student uuid, p_phone text, p_parent_phone text)` → void
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `start_equipment_repair(p_id bigint)` → void
+- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real
@@ -316,6 +325,7 @@ repo — xem trên Supabase Dashboard).
 - `ta_video_admin_summary(p_month date)` → TABLE(month date, videos_published integer, total_views numeric, total_saves numeric, total_comments numeric, leads_count integer, production_spend numeric, view_bonus_spend numeric, lead_bonus_spend numeric, total_spend numeric, budget_cap integer, over_budget boolean, cost_per_lead numeric)
 - `ta_video_ledger(p_assistant_id uuid)` → TABLE(session_id uuid, assistant_id uuid, work_date date, video_tier text, video_url text, published_at timestamp with time zone, status text, reject_reason text, topic_source_id uuid, latest_checked_at date, latest_views integer, latest_saves integer, latest_comments integer, view_bonus numeric, production_pay numeric, lead_count integer, lead_bonus numeric, total_pay numeric)
 - `ta_video_topic_suggestions(p_days integer)` → TABLE(session_id uuid, work_date date, class_label text, error_note text)
+- `teacher_clip_choice_stats(p_class_id bigint)` → TABLE(tn_id text, lesson_id bigint, class_students integer, n integer, n_chon integer, n_bo_qua integer, n_a integer, n_b integer, n_c integer, n_d integer, n_dung integer, last_at timestamp with time zone)
 - `teacher_lesson_read_depth(p_class_id bigint, p_lesson_id bigint)` → TABLE(item_id bigint, item_title text, sort_order integer, h3_total integer, quiz_total integer, class_students integer, students_read integer, reached_end integer, avg_depth_ratio numeric, depth_hist jsonb, students_quiz integer, avg_quiz_ratio numeric, last_read_at timestamp with time zone)
 - `teaches_student(p_student uuid)` → boolean
 - `teaching_courses(p_class bigint)` → jsonb
