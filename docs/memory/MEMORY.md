@@ -97,4 +97,4 @@
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — ≥1280 media lan phải + cột lề; chưa deploy
 - [Video khung bán tương tác](project_thachlab_video_khung_tuong_tac.md) — khung 6 ô; 14 bài L12 đã đăng
 - [Chương 4 hạt nhân L12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — 10 hình vẽ lại 30/10; lịch đăng DB 22h05
-- [Rà soát Ch.2 Sóng L11](project_thachlab_ra_soat_ch2_l11.md) — chờ duyệt ảnh, chưa đăng
+- [Rà soát Ch.2 Sóng L11](project_thachlab_ra_soat_ch2_l11.md) — rà 2 lượt 30/10, chờ duyệt ảnh, chưa đăng

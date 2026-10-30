@@ -11,3 +11,4 @@ mo-ta-song, song-ngang-song-doc (không đổi), song-dien-tu, giao-thoa-song, s
 - lesson_id: Mô tả sóng = 27; còn lại tra DB chỉ đọc lúc đăng (dry-run cap-nhat-ly-thuyet.sh in tiêu đề).
 - Treo thầy chốt: Bài 9 q3 (điện thoại chạm đáy bình?), dòng 🔑 nối "·" ở nhiều bài (lint cảnh báo), build_bundle exam Mô tả sóng answer 1,1,1,1,0 dồn B.
 - Đăng: chỉ khi thầy chốt, ngoài giờ HS, `bash scripts/cap-nhat-ly-thuyet.sh <bài>/bundle.json <id> --yes`.
+- Lượt 2 (cùng ngày, nhánh `claude/bai-hoc-chuong-2-lop-11-014673`, rà lại cả 8 bài): 5 bài sạch; sửa thêm Bài 10 H2 (núm/dây/nhãn) + H4 (trục t thiếu đầu V) + q4 4,4 % → 4,3 %; Bài 11 H1 (chảo hướng vệ tinh, người có dáng); Bài 8 H3 (nhãn u_M chồng t, chỉ số dưới 11 → 13) + `$v_{\text{rắn}}$`. kiem-code soát 4 hình: ĐẠT. Treo thêm: Bài 14 name radio q5/q6 đảo (không ảnh hưởng chức năng), Bài 11 dài 2.724 từ.
