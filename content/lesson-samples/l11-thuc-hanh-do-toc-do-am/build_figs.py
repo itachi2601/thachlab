@@ -11,6 +11,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 VB_W = 420
 YEL = "#fbbf24"
 WATER = BLUE
+SERIF_IT = "font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\""
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
@@ -61,7 +62,10 @@ class Fig:
         w = (0.6 if int(weight) >= 600 else 0.55) * size * len(plain)
         x0 = {"start": x, "middle": x - w / 2, "end": x - w}[anchor]
         self.boxes.append((x0, y - size * 0.8, x0 + w, y + size * 0.2, plain))
-        self.body += text(x, y, sub(s), c, size, anchor, weight)
+        t = text(x, y, sub(s), c, size, anchor, weight)
+        if re.fullmatch(r"l_\d", s):                # ký hiệu l: chữ nghiêng có chân, khỏi nhầm với I (cường độ âm)
+            t = t.replace(">l<tspan", f"><tspan {SERIF_IT}>l</tspan><tspan", 1)   # chỉ số giữ chữ thẳng
+        self.body += t
 
     def check(self):
         for (a, b, c, d, t) in self.boxes:
@@ -236,7 +240,7 @@ for l in range(0, 71, 10):
     f4.add(line(xs(l), YB, xs(l), YB + 6, "currentColor", 1.6))
     f4.T(xs(l), 246, str(l), "currentColor", 17, "middle", "600")
 f4.T(46, 36, "độ to", "currentColor", 17, "start", "600")
-f4.T(215, 268, "chiều dài cột khí l (cm)", "currentColor", 17, "middle", "600")
+f4.T(215, 268, f'chiều dài cột khí <tspan {SERIF_IT}>l</tspan> (cm)', "currentColor", 17, "middle", "600")
 f4.add(poly(pts, BLUE, 2.6))
 for l in (L1, L2):
     f4.add(line(xs(l), 62, xs(l), YB, "currentColor", 1.5, "5 4", .7))
