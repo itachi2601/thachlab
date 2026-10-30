@@ -10,7 +10,7 @@ import json, math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -22,19 +22,20 @@ G = 10
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác (đầu V 30° vẽ bằng chevron); giữ hàm cho tương thích."""
+    return ""
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, name="", dash=""):
+    """Vectơ: thân thẳng + đầu V 30° (svg_lib.chevron), thân ≤ 2,8 — không marker tam giác."""
     if name:
         SEGS.append((CUR["fig"], x1, y1, x2, y2, name))
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    n = math.hypot(x2 - x1, y2 - y1)
+    L = max(5, min(3.4 * ww + 2, 0.6 * n))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name=""):
@@ -49,7 +50,7 @@ def it(s):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="13">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=17, anchor="start", weight="700"):
@@ -124,22 +125,22 @@ fig1 = fig1.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10
 
 # ---------------- Hình 2: gia tốc là cầu nối ----------------
 CUR["fig"] = 2
-VB[2] = (420, 270)
+VB[2] = (420, 236)
 b = defs("f2")
 BOX = [(12, 132, "các lực", it("ΣF")), (170, 250, "cầu nối", it("a")), (288, 408, "chuyển động", it("v, s, t"))]
 for x0, x1, cap, inner in BOX:
-    b += (f'<rect x="{x0}" y="36" width="{x1 - x0}" height="46" rx="8" fill="rgba(148,163,184,.15)" '
+    b += (f'<rect x="{x0}" y="36" width="{x1 - x0}" height="56" rx="8" fill="rgba(148,163,184,.15)" '
           f'stroke="currentColor" stroke-width="2"/>')
     b += text((x0 + x1) / 2, 24, cap, size=17, anchor="middle", weight="600")
-    b += text((x0 + x1) / 2, 66, inner, GRN if cap == "cầu nối" else "currentColor", 22, "middle")
-for (xa, xb), c in (((132, 170), "g"), ((250, 288), "g")):
-    b += arrow("f2", c, xa + 2, 112, xb - 2, 112, 3)
-for (xa, xb), c in (((288, 250), "r"), ((170, 132), "r")):
-    b += arrow("f2", c, xa - 2, 178, xb + 2, 178, 3)
-b += text(12, 142, "Thuận: biết lực → tìm chuyển động", GRN, 17, "start", "700")
-b += text(12, 208, "Ngược: biết chuyển động → tìm lực", RED, 17, "start", "700")
-b += text(12, 240, "Lực ↔ a: định luật II, ΣF = ma", size=17, weight="600")
-b += text(12, 262, "a ↔ chuyển động: công thức v, s, t", size=17, weight="600")
+    b += text((x0 + x1) / 2, 71, inner, GRN if cap == "cầu nối" else "currentColor", 22, "middle")
+# mũi tên nối thẳng hai ô kề nhau: thuận (xanh, sang phải) ở trên, ngược (đỏ, sang trái) ở dưới
+for xa, xb in ((132, 170), (250, 288)):
+    b += arrow("f2", "g", xa + 3, 52, xb - 3, 52, 2.6)
+    b += arrow("f2", "r", xb - 3, 76, xa + 3, 76, 2.6)
+b += text(12, 128, "Thuận: biết lực → tìm chuyển động", GRN, 17, "start", "700")
+b += text(12, 156, "Ngược: biết chuyển động → tìm lực", RED, 17, "start", "700")
+b += text(12, 196, "Lực ↔ a: định luật II, ΣF = ma", size=17, weight="600")
+b += text(12, 224, "a ↔ chuyển động: công thức v, s, t", size=17, weight="600")
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
             "Sơ đồ ba ô: các lực, gia tốc a, chuyển động. Bài toán thuận đi từ lực qua a tới chuyển động; bài toán ngược đi chiều ngược lại",
             b, "Hình 2. Gia tốc <em>a</em> nằm giữa: định luật II nối lực với <em>a</em>, công thức chuyển động nối <em>a</em> với <em>v</em>, <em>s</em>, <em>t</em>.")
@@ -175,7 +176,7 @@ b += f'<circle cx="{C3[0]}" cy="{C3[1]}" r="3.5" fill="currentColor"/>'
 b += text(tP[0] + 9, tP[1] - 4, it("P"), RED, 19)
 b += text(tN[0] + 9, tN[1] + 12, it("N"), BLUE, 19)
 b += text(tF[0] + 6, tF[1] - 8, it("F"), ORG, 19)
-b += text(tf[0] - 8, tf[1] - 12, sub(it("F"), "ms"), RED, 19, "end")
+b += text(C3[0] - 36, C3[1] - 6, sub(it("F"), "ms"), RED, 19, "end")   # ngoài mép trái thùng (x = 160)
 # trục toạ độ
 OX = (42, 252)
 b += arrow("f3", "k", *OX, OX[0] + 58, OX[1], 2, name="Ox") + arrow("f3", "k", *OX, OX[0], OX[1] - 58, 2, name="Oy")
