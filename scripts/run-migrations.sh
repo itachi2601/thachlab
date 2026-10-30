@@ -89,6 +89,7 @@ FILES=(
   "supabase/migrations/20261028100000_bai_tap_ngay_mo_theo_gio.sql|Ôn tập ở nhà: chặng mở theo giờ (open_at), review_roster (tên bạn đã nộp/chưa nộp), pg_cron mở bài + chuông mỗi sáng|lúc nào cũng được"
   "supabase/migrations/20261030100000_avcn_bai_11_on_thi_noi_cau.sql|AVCN: thêm chương 11 + bài 11 'Ôn thì và nối câu' (published=false, chỉ dữ liệu, idempotent)|lúc nào cũng được"
   "supabase/migrations/20261030120000_clip_choice.sql|Khung video thí nghiệm: bảng lesson_clip_choices (lựa chọn Dự đoán A–D lần đầu / HS / tn_id) + nhánh clip_choice trong log_learning_events + RPC teacher_clip_choice_stats + purge 12 tháng (chỉ thêm, có rollback)|lúc nào cũng được"
+  "supabase/migrations/20261030200000_ta_mo_lai_khai_gio_thang.sql|Mở lại khai giờ trợ giảng cả tháng 10 tới 23:59 02/11 (ta_settings.reopen_*, policy + trigger: buổi đã duyệt TA sửa về Chờ duyệt); có rollback|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong

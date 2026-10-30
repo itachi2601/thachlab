@@ -17,10 +17,15 @@ export default function TaSessionQuickEdit({
   session,
   onSaved,
   onCancel,
+  minDate,
+  hint,
 }: {
   session: TaSessionListItem;
   onSaved: () => void;
   onCancel: () => void;
+  /** Đợt mở lại tháng: cho chọn ngày từ đầu tháng thay vì 7 ngày gần nhất. */
+  minDate?: string;
+  hint?: string;
 }) {
   const toast = useToast();
   const [date, setDate] = useState(session.work_date);
@@ -53,10 +58,10 @@ export default function TaSessionQuickEdit({
 
   return (
     <div className="mt-3 space-y-3 rounded-2xl border border-blue-400/30 bg-blue-500/5 p-4">
-      <p className="text-xs text-slate-400">Sửa được đến khi thầy duyệt, tối đa {TA_EDIT_WINDOW_DAYS} ngày kể từ ngày làm.</p>
+      <p className="text-xs text-slate-400">{hint ?? `Sửa được đến khi thầy duyệt, tối đa ${TA_EDIT_WINDOW_DAYS} ngày kể từ ngày làm.`}</p>
       <label className="block text-sm text-slate-300">
         Ngày làm
-        <input type="date" className={cls} min={isoDay(-TA_EDIT_WINDOW_DAYS)} max={isoDay(0)} value={date} onChange={(e) => setDate(e.target.value)} />
+        <input type="date" className={cls} min={minDate ?? isoDay(-TA_EDIT_WINDOW_DAYS)} max={isoDay(0)} value={date} onChange={(e) => setDate(e.target.value)} />
       </label>
       {session.session_type !== "phudao" && (
         <label className="block text-sm text-slate-300">

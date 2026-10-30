@@ -281,6 +281,41 @@ export async function updateOwnSession(
   if (!data?.length) throw new Error("Buổi này đã được duyệt hoặc quá hạn sửa (7 ngày).");
 }
 
+/** Đợt thầy mở lại cả tháng để trợ giảng rà lần cuối trước khi chốt sổ (ta_settings.reopen_*). */
+export interface TaReopenWindow {
+  month: string;
+  until: string;
+}
+
+export async function fetchReopenWindow(): Promise<TaReopenWindow | null> {
+  const { data, error } = await getSupabase().rpc("ta_reopen_window");
+  if (error) throw error;
+  const row = (data as TaReopenWindow[] | null)?.[0];
+  return row?.month ? row : null;
+}
+
+/** Trong đợt mở lại: sửa được mọi buổi của tháng đó; buổi đã duyệt/từ chối sửa xong về Chờ duyệt (trigger DB). */
+export function canTaEditInReopen(s: Pick<TaSessionListItem, "work_date">, reopen: TaReopenWindow | null, now = new Date()): boolean {
+  return !!reopen && s.work_date.slice(0, 7) === reopen.month.slice(0, 7) && now < new Date(reopen.until);
+}
+
+export async function fetchMonthSessions(assistantId: string, month: string): Promise<TaSessionListItem[]> {
+  const start = `${month.slice(0, 7)}-01`;
+  const d = new Date(`${start}T00:00:00`);
+  d.setMonth(d.getMonth() + 1);
+  const end = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-01`;
+  const { data, error } = await getSupabase()
+    .from("ta_sessions")
+    .select("id, work_date, session_type, class_label, phudao_students, hours, student_touches, papers_graded, status, reject_reason, start_time, end_time")
+    .eq("assistant_id", assistantId)
+    .gte("work_date", start)
+    .lt("work_date", end)
+    .order("work_date", { ascending: true })
+    .order("created_at", { ascending: true });
+  if (error) throw error;
+  return (data ?? []) as TaSessionListItem[];
+}
+
 export async function fetchRecentSessions(assistantId: string, limit = 10): Promise<TaSessionListItem[]> {
   const { data, error } = await getSupabase()
     .from("ta_sessions")
