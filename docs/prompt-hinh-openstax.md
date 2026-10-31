@@ -90,4 +90,4 @@ Deploy ảnh mới trong `public/` theo quy trình deploy hiện hành (ảnh kh
 ## Tiết kiệm token
 - Phiên chính không đọc ảnh; mỗi subagent một bài; `WebFetch` theo trang mục, không tải cả chương.
 - Không báo tiến độ giữa chừng. Lỗi ghi vào `ra-soat.md` của bài. Cuối phiên: Rút kinh nghiệm vào
-  `.claude/skills/soan-bai-ly-thuyet-tuong-tac/SKILL.md` mục Nhật ký, dòng ĐANG CHỜ vào `docs/STATE.md` nếu còn bài chưa đăng.
+  `.claude/skills/soan-bai-ly-thuyet-tuong-tac/references/nhat-ky.md` (cuối file), dòng ĐANG CHỜ vào `docs/STATE.md` nếu còn bài chưa đăng.
