@@ -23,6 +23,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Ngân hàng→Luyện tập chặng 0: đã deploy; còn gắn `lint_flags` cho 127 câu `_can_xac_nhan`, thử ghi `bank_id` bằng HS thật (`docs/BAO-CAO-NGAN-HANG-THEO-BAI-2026-10-24.md`).
 - Quiz lý thuyết đợt 2 (73 bài, exam 1102–1174) đã ghi DB, CHƯA DEPLOY. 129–131 chờ đăng lý thuyết tương tác trước; 178 còn 18 câu.
 - Hình OpenStax L10/L11 (nhánh `claude/distracted-gauss-2d45d4`, 20 bài): CHƯA đăng DB/deploy ảnh; L12 chờ thầy xem 375 px (`docs/ra-soat/hinh-openstax-*.md`).
+- L10 8 bài nâng chỉ số SVG lên 14 + B34 H2 đầu V (31/10, đã vào main): CHƯA đăng DB — gộp đợt đăng sau: `cap-nhat-ly-thuyet.sh` B4, 5, 9, 12, 25, 26, 27, 34 (lesson_id suy 45+n: 49, 50, 54, 57, 70, 71, 72, 79; dry-run kiểm tiêu đề).
 - Làm bài "tự nhảy câu" (24/10): 4 sửa đã deploy, chờ HS phản hồi.
 - Push thông báo: đã chạy cron; chưa thử điện thoại thật. Push nhắc hằng ngày: còn VAPID + `send-daily-push` (`docs/PUSH-NHAC-HANG-NGAY.md`).
 - HSG9 đợt 4 (6 CĐ ẩn): chờ thầy xem rồi bật Hiện + deploy (memory `project_thachlab_khoa_hsg9_vat_ly`).
