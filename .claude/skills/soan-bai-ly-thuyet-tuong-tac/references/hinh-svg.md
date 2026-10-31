@@ -3,6 +3,7 @@
 Dùng `scripts/svg_lib.py`: `defs(prefix)` (mũi tên 4 màu), `arrow`, `text`, `person` (người que + giày trượt), `wrap`. Mẫu dùng: `content/lesson-samples/l10-dinh-luat-3-newton/build_figs.py`.
 
 ## Quy ước
+- **Nam châm = hình chuẩn trong `svg_lib.py` (thầy duyệt 31/10/2026).** Nam châm chữ U: `u_magnet(x, y, w, h, arm, yoke, tip, d)` — thân xám bo góc, N đỏ / S xanh chữ trắng ≥17, có chiều sâu xiên; dây/khung không xuyên khối nam châm (đi trước gông hoặc trong khe). Nam châm thẳng: `bar_magnet` cùng phong cách (sẽ vào svg_lib khi duyệt). Đường sức nam châm: nét đứt, khép kín, ra N vào S, dày gần cực, không vẽ trong thân. Đừng tự vẽ lại nam châm bằng các hình chữ nhật chồng.
 - **Mỗi hình = một ý.** Hình 1 minh hoạ tình huống mở bài; hình 2 minh hoạ chỗ hiểu lầm; hình 3 minh hoạ số liệu.
 - **Màu có nghĩa, giữ nhất quán cả bài:** đỏ `#f87171` = lực/đại lượng "tác động"; xanh dương `#38bdf8` = phản ứng/đối tượng thứ hai; cam `#fb923c` = nhóm cùng vật; xanh lá `#34d399` = kết quả chuyển động/gia tốc. Chữ và nét thân vật dùng `currentColor`.
 - **Độ dài mũi tên tỉ lệ độ lớn — bắt buộc cho mọi vectơ lực/vận tốc/gia tốc** (lực bằng nhau → dài bằng nhau; 3 : 2 → 120 : 80 px). Chọn MỘT hệ số `k` px/đơn vị cho mỗi loại đại lượng trong hình, dùng `svg_lib.vec_luc(c,x,y,dx,dy,F,k)` (độ dài = k·F, tự báo lỗi nếu quá ngắn). Cân bằng (ΣF=0) thì các cặp lực đối nhau phải dài bằng nhau; không có số thì vẽ theo quan hệ (mg, N, F_ms…) rồi ghi chú "độ dài không theo tỉ lệ" chứ không vẽ tuỳ tiện. Mọi `arrow()` giờ vẽ đầu V 30° (không còn marker tam giác).

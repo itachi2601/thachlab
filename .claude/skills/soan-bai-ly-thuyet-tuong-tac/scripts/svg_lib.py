@@ -111,3 +111,39 @@ def chev_on(P, i, c, w=2.2, L=12):
     """Đầu V tại điểm thứ i của đường gấp khúc P, hướng theo chiều đi của P."""
     (x, y), (x2, y2) = P[i], P[i + 1]
     return chevron(x, y, x2 - x, y2 - y, c, w, L)
+
+
+# ===== HÌNH CHUẨN (thầy duyệt 31/10/2026): nam châm chữ U. Từ nay mọi hình có nam châm chữ U dùng hàm này, không vẽ lại.
+# ---- nam châm chữ U thật: thân bo góc, hai cánh, đầu cực tô màu, có chiều sâu xiên (dx, dy)
+UM_BODY, UM_DARK, UM_EDGE = "#cbd5e1", "#94a3b8", "#334155"   # cùng bảng màu bài 9/10 (lực từ, khái niệm từ trường)
+UM_N = ("#dc2626", "#f87171", "#b91c1c")      # mặt trước, mặt trên, mặt bên
+UM_S = ("#2563eb", "#60a5fa", "#1e40af")
+
+
+def u_path(x, y, w, h, arm, yoke, r, ri):
+    yi = y + h - yoke
+    return (f"M{x},{y} V{y+h-r} A{r},{r} 0 0 0 {x+r},{y+h} H{x+w-r} A{r},{r} 0 0 0 {x+w},{y+h-r} V{y} H{x+w-arm} "
+            f"V{yi-ri} A{ri},{ri} 0 0 1 {x+w-arm-ri},{yi} H{x+arm+ri} A{ri},{ri} 0 0 1 {x+arm},{yi-ri} V{y} Z")
+
+
+def u_magnet(x, y, w, h, arm, yoke, tip, d=(18, -12), r=None, ri=None, fs=17, sw=2):
+    """Nam châm chữ U nhìn chính diện hơi xiên: mặt sau dời (dx, dy); trả SVG. Cực N bên trái, S bên phải."""
+    dx, dy = d
+    r = r if r is not None else min(arm, yoke) * 0.7
+    ri = ri if ri is not None else min(arm, yoke) * 0.35
+    P = lambda pts, f: f'<polygon points="{" ".join(f"{a:.1f},{b:.1f}" for a, b in pts)}" fill="{f}" stroke="{UM_EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
+    o = f'<path d="{u_path(x + dx, y + dy, w, h, arm, yoke, r, ri)}" fill="{UM_DARK}" stroke="{UM_EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
+    xr = x + w
+    o += P([(xr, y), (xr + dx, y + dy), (xr + dx, y + h - r + dy), (xr, y + h - r)], UM_DARK)          # mặt bên phải
+    o += P([(xr, y), (xr + dx, y + dy), (xr + dx, y + tip + dy), (xr, y + tip)], UM_S[2])
+    o += P([(x + arm, y), (x + arm + dx, y + dy), (x + arm + dx, y + tip + dy), (x + arm, y + tip)], UM_N[2])  # mặt trong cánh N
+    o += P([(x, y), (x + arm, y), (x + arm + dx, y + dy), (x + dx, y + dy)], UM_N[1])                  # mặt trên hai cánh
+    o += P([(xr - arm, y), (xr, y), (xr + dx, y + dy), (xr - arm + dx, y + dy)], UM_S[1])
+    k = 0.2929 * r                                                                                       # đường viền góc bo
+    o += f'<line x1="{xr - k:.1f}" y1="{y + h - k:.1f}" x2="{xr - k + dx:.1f}" y2="{y + h - k + dy:.1f}" stroke="{UM_EDGE}" stroke-width="{sw}"/>'
+    o += f'<path d="{u_path(x, y, w, h, arm, yoke, r, ri)}" fill="{UM_BODY}" stroke="{UM_EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
+    o += (f'<rect x="{x}" y="{y}" width="{arm}" height="{tip}" fill="{UM_N[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>'
+          f'<rect x="{xr - arm}" y="{y}" width="{arm}" height="{tip}" fill="{UM_S[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>')
+    o += text(x + arm / 2, y + tip / 2 + fs * .36, "N", "#fff", fs, "middle", "800")
+    o += text(xr - arm / 2, y + tip / 2 + fs * .36, "S", "#fff", fs, "middle", "800")
+    return o
