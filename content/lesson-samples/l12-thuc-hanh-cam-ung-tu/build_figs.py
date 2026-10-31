@@ -30,37 +30,61 @@ def wrap(vb, label, body, cap, exp=""):
 
 RED_F, BLUE_F, GREY_F = "rgba(248,113,113,.28)", "rgba(56,189,248,.28)", "rgba(148,163,184,.16)"
 
-# ======================================================= Hình 1: bố trí cân dòng điện
+# ======================================================= Hình 1: bố trí cân dòng điện (phối cảnh xiên)
+# Chiều sâu vẽ xiên lên-phải. Khung dây nằm trong mặt phẳng (thẳng đứng, chiều sâu): cạnh dưới đi xuyên khe.
+def poly(pts, fill, stroke="currentColor", sw=2, op=1):
+    p = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    return f'<polygon points="{p}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}" stroke-linejoin="round" opacity="{op}"/>'
+
+
+SD = (36, -24)                       # chiều sâu bệ cân
+MD = (24, -16)                       # chiều sâu nam châm
+add = lambda P, D, t=1: (P[0] + t * D[0], P[1] + t * D[1])
 b = ""
-b += rect(30, 218, 190, 34, GREY_F)                       # bệ cân
-b += rect(140, 226, 70, 20, "rgba(52,211,153,.18)", GRN, 1.5, 4)
-b += text(175, 241, "? g", GRN, 14, "middle", "700")
-b += line(34, 214, 216, 214, "currentColor", 4)           # đĩa cân
-# nam châm chữ U trên đĩa
-b += rect(60, 120, 36, 94, RED_F, RED, 2, 3)
-b += rect(158, 120, 36, 94, BLUE_F, BLUE, 2, 3)
-b += rect(60, 182, 134, 32, GREY_F, "currentColor", 2, 3)
-b += text(78, 160, "N", RED, 17, "middle", "700")
-b += text(176, 160, "S", BLUE, 17, "middle", "700")
-# giá đỡ riêng + khung dây
-b += line(346, 40, 346, 252, "currentColor", 5)
-b += line(127, 40, 346, 40, "currentColor", 5)
-b += line(346, 252, 300, 252, "currentColor", 5)
-b += line(127, 40, 127, 150, "currentColor", 2)
-b += f'<circle cx="127" cy="152" r="7" fill="{ORG}" stroke="{ORG}" stroke-width="2"/>'
-b += text(140, 90, "khung dây", "currentColor", 14, "start", "600")
-b += text(140, 108, "(cạnh dưới ở trong khe)", "currentColor", 14, "start", "600")
-b += text(140, 28, "giá đỡ riêng, không chạm cân", "currentColor", 14, "start", "700")
-b += text(206, 170, "nam châm", "currentColor", 14, "start", "600")
-b += text(206, 188, "chữ U", "currentColor", 14, "start", "600")
-b += text(30, 272, "cân điện tử chia 0,01 g", "currentColor", 14, "start", "600")
-b += text(30, 291, "nguồn một chiều + ampe kế nối với khung", "currentColor", 14, "start", "600")
-fig1 = wrap("0 0 380 300", "Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá riêng, cạnh dưới nằm trong khe nam châm",
-            b, "Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng với cạnh dưới trong khe.<br>Dây không chạm vào cân hay nam châm.")
+b += line(10, 268, 370, 268, "currentColor", 2.5)                       # mặt bàn
+# cân: mặt trên, mặt phải, mặt trước
+b += poly([(30, 230), (250, 230), add((250, 230), SD), add((30, 230), SD)], "rgba(148,163,184,.30)")
+b += poly([(250, 230), add((250, 230), SD), add((250, 268), SD), (250, 268)], "rgba(148,163,184,.42)")
+b += rect(30, 230, 220, 38, GREY_F, "currentColor", 2, 2)
+b += text(42, 255, "cân 0,01 g", "currentColor", 14, "start", "700")
+b += rect(170, 238, 66, 22, "rgba(52,211,153,.18)", GRN, 1.5, 4)
+b += text(203, 254, "? g", GRN, 14, "middle", "700")
+# khung dây: cạnh dưới từ A (trước nam châm) tới Bk (sau nam châm), hai cạnh đứng lên tới A2, B2
+C0 = (150, 160)                                                         # giao cạnh dưới với mặt trước nam châm (tâm khe)
+A, Bk = add(C0, MD, -0.5), add(C0, MD, 1.5)
+A2, B2 = (A[0], 76), (Bk[0], 76 + MD[1] * 2)
+WIRE = ORG
+b += line(*Bk, *add(C0, MD, 1), WIRE, 3.5) + line(*Bk, *B2, WIRE, 3.5)  # phần khung phía sau nam châm
+# nam châm chữ U (mặt trước lệch (6,-4) so với mép trước bệ cân)
+X0, YB = 76, 226
+b += poly([(X0 + 36, 196), (X0 + 100, 196), add((X0 + 100, 196), MD), add((X0 + 36, 196), MD)], "rgba(148,163,184,.30)")   # mặt trên gông trong khe
+b += poly([(X0 + 36, 116), add((X0 + 36, 116), MD), add((X0 + 36, 196), MD), (X0 + 36, 196)], "rgba(248,113,113,.40)", RED)  # mặt phải cánh N
+b += poly([(X0, 116), (X0 + 36, 116), add((X0 + 36, 116), MD), add((X0, 116), MD)], "rgba(248,113,113,.40)", RED)
+b += poly([(X0 + 100, 116), (X0 + 136, 116), add((X0 + 136, 116), MD), add((X0 + 100, 116), MD)], "rgba(56,189,248,.40)", BLUE)
+b += poly([(X0 + 136, 116), add((X0 + 136, 116), MD), add((X0 + 136, YB), MD), (X0 + 136, YB)], "rgba(56,189,248,.45)", BLUE)
+b += (f'<path d="M{X0},{YB} V116 H{X0+36} V196 H{X0+100} V116 H{X0+136} V{YB} Z" fill="rgba(148,163,184,.22)" '
+      f'stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>')
+b += rect(X0, 116, 36, 80, RED_F, RED, 2, 0) + rect(X0 + 100, 116, 36, 80, BLUE_F, BLUE, 2, 0)
+b += text(X0 + 18, 162, "N", RED, 17, "middle", "700") + text(X0 + 118, 162, "S", BLUE, 17, "middle", "700")
+# phần khung phía trước (cạnh dưới trong khe + cạnh đứng trước + cạnh trên)
+b += line(*A, *add(C0, MD, 1), WIRE, 3.5) + line(*A, *A2, WIRE, 3.5) + line(*A2, *B2, WIRE, 3.5)
+b += f'<text x="162" y="188" fill="{WIRE}" font-size="19" font-weight="700" font-style="italic" font-family="serif" text-anchor="middle">l</text>'
+# giá đỡ riêng đứng trên bàn, ngoài cân
+b += rect(312, 258, 56, 10, "rgba(148,163,184,.45)", "currentColor", 2, 2)
+b += rect(335, 30, 10, 228, "rgba(148,163,184,.40)", "currentColor", 2, 2)
+b += rect(156, 30, 189, 10, "rgba(148,163,184,.40)", "currentColor", 2, 2)
+HX = (A2[0] + B2[0]) / 2
+b += line(HX, 40, HX, (A2[1] + B2[1]) / 2, "currentColor", 2)
+b += text(150, 22, "giá đỡ riêng, không chạm cân", "currentColor", 14, "start", "700")
+b += text(14, 84, "khung dây", WIRE, 14, "start", "700") + line(88, 80, A2[0] - 4, 90, WIRE, 1.4)
+b += text(262, 150, "nam châm", "currentColor", 14, "start", "600")
+b += text(262, 168, "chữ U", "currentColor", 14, "start", "600")
+b += text(14, 292, "khung nối nguồn một chiều + ampe kế", "currentColor", 14, "start", "600")
+fig1 = wrap("0 0 380 302", "Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá đứng riêng trên bàn, cạnh dưới dài l xuyên qua khe nam châm",
+            b, "Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng.<br>Cạnh dưới của khung (dài $l$) nằm trong khe nam châm.<br>Dây không chạm vào cân hay nam châm.")
 
 # ======================================================= Hình 2: lực và phản lực (mặt cắt khe nam châm)
-b = defs("f2")
-b += text(20, 28, "⊙ dòng điện hướng ra khỏi trang", "currentColor", 14, "start", "700")
+b = text(20, 40, "⊙ dòng điện hướng ra khỏi trang", "currentColor", 14, "start", "700")
 b += rect(20, 240, 230, 40, GREY_F)
 b += text(135, 266, "cân điện tử", "currentColor", 14, "middle", "700")
 b += rect(30, 110, 50, 130, RED_F, RED, 2, 3)
@@ -68,16 +92,16 @@ b += rect(190, 110, 50, 130, BLUE_F, BLUE, 2, 3)
 b += rect(30, 200, 210, 40, GREY_F, "currentColor", 2, 3)
 b += text(55, 160, "N", RED, 18, "middle", "700")
 b += text(215, 160, "S", BLUE, 18, "middle", "700")
-b += field_line(88, 172, 182, 172, GRN, 2.2) + field_line(88, 189, 182, 189, GRN, 2.2)
-b += text(106, 166, "B", GRN, 16, "middle", "700")
-b += line(135, 50, 135, 141, "currentColor", 1.5)
-b += '<circle cx="135" cy="150" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="135" cy="150" r="3" fill="currentColor"/>'
-b += arrow("f2", "r", 152, 142, 152, 92, 3.5)
-b += text(160, 100, "F lên dây", RED, 14, "start", "700")
-b += arrow("f2", "o", 262, 130, 262, 195, 3.5)
-b += text(272, 150, "F′ lên", ORG, 14, "start", "700")
-b += text(272, 168, "nam châm", ORG, 14, "start", "700")
-fig2 = wrap("0 0 380 290", "Mặt cắt khe nam châm: dây có dòng hướng ra khỏi trang chịu lực từ hướng lên, nam châm chịu phản lực hướng xuống làm cân tăng",
+WX, WY, FL = 135, 156, 50                       # tâm dây; F và F′ cùng độ lớn → cùng dài FL px
+b += field_line(88, WY, WX - 14, WY, GRN, 2.2) + field_line(WX + 14, WY, 182, WY, GRN, 2.2) + field_line(88, 188, 182, 188, GRN, 2.2)
+b += text(92, WY - 10, "B", GRN, 16, "start", "700")                       # tâm dây; F và F′ cùng độ lớn → cùng dài FL px
+b += f'<circle cx="{WX}" cy="{WY}" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="{WX}" cy="{WY}" r="3" fill="currentColor"/>'
+b += arrow("", "r", WX, WY - 10, WX, WY - 10 - FL, 3)
+b += text(WX, WY - FL - 18, "F lên dây", RED, 14, "middle", "700")
+b += arrow("", "o", 215, 176, 215, 176 + FL, 3)               # đặt lên nam châm (cánh S + gông)
+b += text(252, 200, "F′ lên", ORG, 14, "start", "700")
+b += text(252, 218, "nam châm", ORG, 14, "start", "700")
+fig2 = wrap("0 0 380 290", "Mặt cắt khe nam châm: dây có dòng hướng ra khỏi trang chịu lực từ hướng lên, nam châm chịu phản lực hướng xuống cùng độ lớn làm cân tăng",
             b, "Hình 2. Mặt cắt khe nam châm chữ U.<br>Đường sức từ đi từ cực N sang cực S.<br>Dây chịu lực $F$, nam châm chịu lực $F'$ cùng độ lớn và ngược chiều; cân chỉ cảm nhận $F'$.")
 
 # ======================================================= Hình 3: đồ thị Δm–I
