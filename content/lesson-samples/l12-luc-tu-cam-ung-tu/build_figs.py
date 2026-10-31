@@ -39,6 +39,22 @@ def ellipse(cx, cy, rx, ry, c=BLUE, w=2, fill="none"):
     return f'<ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="{fill}" stroke="{c}" stroke-width="{w}"/>'
 
 
+# Màu thân nam châm chữ U (mặt trước / mặt trên / mặt bên tối hơn) và hai cực
+EDGE = "#1e293b"
+G_FR, G_TOP, G_SIDE = "#cbd5e1", "#e2e8f0", "#94a3b8"
+N_FR, N_TOP, N_SIDE = "#dc2626", "#f87171", "#b91c1c"
+S_FR, S_TOP, S_SIDE = "#2563eb", "#60a5fa", "#1e40af"
+
+
+def poly(pts, fill, sw=1.5):
+    d = " ".join(f"{x:g},{y:g}" for x, y in pts)
+    return f'<polygon points="{d}" fill="{fill}" stroke="{EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
+
+
+def pathf(d, fill, sw=1.5, extra=""):
+    return f'<path d="{d}" fill="{fill}" stroke="{EDGE}" stroke-width="{sw}" stroke-linejoin="round"{extra}/>'
+
+
 def wrap(vb, label, body, cap, exp=""):
     e = f' data-exp="{exp}"' if exp else ""
     return (f'<figure class="fig" data-tl="1"{e}><svg viewBox="{vb}" role="img" aria-label="{label}">{body}</svg>'
@@ -46,20 +62,32 @@ def wrap(vb, label, body, cap, exp=""):
 
 
 # ------------------------------------------------- Hình 1: dây dẫn trong khe nam châm chữ U
+# Nam châm chữ U nằm ngang, miệng khe quay về phía người xem, gông ở phía sau (chiếu xiên: z sâu → (+0,6z, −0,3z)).
+# Cánh trên đầu cực N (y 50–86), cánh dưới đầu cực S (y 174–210); khe y 86–174; B hướng xuống N → S.
+# I sang phải (+x), B xuống (−y) ⇒ F = Il × B hướng vào mặt phẳng hình vẽ (⊗). Phần dây trong khe x 90–290, trung điểm x = 190.
 b = defs("f1")
-b += rect(96, 30, 228, 30, "rgba(148,163,184,.16)", "currentColor", 2, 8)       # cực N
-b += rect(96, 190, 228, 30, "rgba(148,163,184,.16)", "currentColor", 2, 8)      # cực S
-b += text(210, 52, "N", "currentColor", 16, "middle", "700")
-b += text(210, 212, "S", "currentColor", 16, "middle", "700")
-b += field_line(150, 68, 150, 184, BLUE, 2.2)                                   # đường sức B
-b += field_line(300, 68, 300, 184, BLUE, 2.2)
-b += text(160, 88, "B", BLUE, 14, "start", "700")
-b += line(30, 120, 390, 120, "currentColor", 3.5)                               # dây dẫn
-b += arrow("f1", "o", 58, 120, 108, 120, 3)
-b += text(78, 108, "I", ORG, 14, "middle", "700")
-b += vao(210, 120, 14, RED)                                                     # lực từ F (vào trong)
-b += text(232, 116, "F", RED, 14, "start", "700")
-fig1 = wrap("0 0 420 260", "Đoạn dây mang dòng điện đặt giữa hai cực nam châm chữ U, đường sức từ hướng xuống, lực từ hướng vuông góc vào trong mặt phẳng hình vẽ",
+b += poly([(138, 62), (338, 62), (338, 150), (138, 150)], G_TOP)                      # vách gông (đáy khe)
+b += poly([(114, 162), (314, 162), (338, 150), (138, 150)], G_TOP)                    # mặt trên cánh dưới, phần xám
+b += poly([(90, 174), (290, 174), (314, 162), (114, 162)], S_TOP)                     # mặt trên cánh dưới, đầu cực S
+b += poly([(114, 38), (314, 38), (341.6, 24.2), (141.6, 24.2)], G_TOP)                # mặt trên cánh trên, phần xám
+b += poly([(90, 50), (290, 50), (314, 38), (114, 38)], N_TOP)                         # mặt trên cánh trên, đầu cực N
+b += pathf("M290,50 L341.6,24.2 Q356,17 356,41 L356,153 Q356,177 341.6,184.2 L290,210 "
+           "L290,174 L338,150 L338,62 L290,86 Z", G_SIDE)                             # mặt bên: hình chữ U, góc bo
+b += poly([(290, 50), (314, 38), (314, 74), (290, 86)], N_SIDE)
+b += poly([(290, 174), (314, 162), (314, 198), (290, 210)], S_SIDE)
+b += pathf("M90,50 H290 V86 H90 Z", N_FR) + text(190, 75, "N", "#ffffff", 20, "middle", "800")
+b += pathf("M90,174 H290 V210 H90 Z", S_FR) + text(190, 199, "S", "#ffffff", 20, "middle", "800")
+b += field_line(140, 92, 140, 148, BLUE, 2.4)                                   # đường sức B (N → S)
+b += field_line(240, 92, 240, 148, BLUE, 2.4)
+b += text(150, 110, "B", "#1d4ed8", 15, "start", "700")
+b += line(16, 130, 404, 130, "#ffffff", 9)                                      # viền trắng: dây đi PHÍA TRƯỚC gông
+b += line(16, 130, 404, 130, "currentColor", 3.5)                               # dây dẫn
+b += arrow("f1", "o", 26, 130, 76, 130, 3)
+b += text(46, 118, "I", "#c2410c", 15, "middle", "700")
+b += f'<circle cx="190" cy="130" r="16" fill="#ffffff" stroke="none"/>'
+b += vao(190, 130, 14, RED)                                                     # lực từ F (vào trong)
+b += text(210, 122, "F", "#b91c1c", 15, "start", "700")
+fig1 = wrap("0 0 420 230", "Đoạn dây mang dòng điện đặt giữa hai cực nam châm chữ U, đường sức từ hướng xuống, lực từ hướng vuông góc vào trong mặt phẳng hình vẽ",
             b, "Hình 1. Dây trong khe nam châm: B hướng xuống, F hướng vào mặt phẳng hình vẽ (⊗).")
 
 # ------------------------------------------------- Hình 2: quy tắc bàn tay trái
@@ -97,27 +125,43 @@ fig2 = wrap("0 -36 460 376", "Bàn tay trái duỗi thẳng, lòng bàn tay hư�
 # Nhìn chính diện: cực N trái, cực S phải, B nằm ngang N → S; dây MN nhìn đầu, dòng M (sau) → N (trước) = ⊙.
 # F lên dây hướng lên; phản lực F' dây đẩy nam châm hướng xuống → cân tăng.
 b = defs("f3")
-# Cặp lực – phản lực F và F' cùng độ lớn → vẽ cùng dài 50 px.
-b += rect(100, 252, 240, 40, "rgba(148,163,184,.10)", "currentColor", 2, 6)     # cân
-b += rect(186, 261, 68, 22, "none", "currentColor", 1.5, 3)
-b += text(220, 278, "cân", "currentColor", 14, "middle", "700")
-b += rect(130, 190, 180, 60, "rgba(148,163,184,.16)", "currentColor", 2, 6)     # đế nam châm chữ U
-b += rect(130, 80, 52, 110, "rgba(148,163,184,.16)", "currentColor", 2, 6)      # cực N
-b += rect(258, 80, 52, 110, "rgba(148,163,184,.16)", "currentColor", 2, 6)      # cực S
-b += text(156, 142, "N", "currentColor", 18, "middle", "700")
-b += text(284, 142, "S", "currentColor", 18, "middle", "700")
-b += field_line(186, 98, 254, 98, BLUE, 2.2)                                    # đường sức nét đứt N → S
-b += field_line(186, 176, 254, 176, BLUE, 2.2)
-b += text(190, 122, "B", BLUE, 14, "start", "700")
-b += f'<circle cx="220" cy="140" r="11" fill="none" stroke="{ORG}" stroke-width="2.5"/>' + dot(220, 140, 3.5, ORG)   # ⊙ dòng ra
-b += text(236, 146, "I", ORG, 15, "start", "700")
-b += arrow("f3", "r", 220, 126, 220, 76, 3)                                     # F lên dây (50 px)
-b += text(230, 80, "F", RED, 15, "start", "700")
-b += arrow("f3", "r", 220, 196, 220, 246, 3)                                    # F' dây đẩy nam châm (50 px)
-b += text(230, 230, "F′", RED, 15, "start", "700")
-b += text(16, 28, "dây MN giữ cố định", "currentColor", 14, "start", "600")
-b += text(16, 50, "dòng M → N: hướng ra (⊙)", ORG, 14, "start", "600")
-fig3 = wrap("0 0 440 304", "Nam châm chữ U đặt trên cân, cực N bên trái, cực S bên phải, đường sức nằm ngang từ N sang S; dây MN giữ cố định nằm ngang trong khe, dòng điện hướng ra phía người xem; lực từ lên dây hướng lên, lực dây đẩy nam châm hướng xuống",
+# Nam châm chữ U đứng trên cân, nhìn chính diện, chiều sâu chiếu xiên (+22, −14).
+# Cánh trái đầu cực N, cánh phải đầu cực S (đầu cực y 70–164); B nằm ngang N → S.
+# Dây MN là thanh đồng nằm dọc trục nhìn (M phía sau, N phía trước): dòng M → N hướng ra (⊙).
+# I ra (+z), B sang phải (+x) ⇒ F = Il × B hướng lên. F và F' (dây đẩy nam châm) cùng độ lớn → cùng dài 50 px.
+U = ("M110,70 L170,70 L170,190 Q170,204 184,204 L256,204 Q270,204 270,190 L270,70 L330,70 "
+     "L330,232 Q330,262 300,262 L140,262 Q110,262 110,232 Z")
+b += rect(90, 264, 260, 40, "rgba(148,163,184,.12)", "currentColor", 2, 6)      # cân
+b += rect(186, 273, 68, 22, "none", "currentColor", 1.5, 3)
+b += text(220, 290, "cân", "currentColor", 14, "middle", "700")
+b += pathf(U, G_SIDE, 1.5, ' transform="translate(22,-14)"')                   # mặt sau (chiều sâu)
+b += poly([(330, 164), (352, 150), (352, 218), (330, 232)], G_SIDE)             # mặt bên cánh phải
+b += poly([(330, 70), (352, 56), (352, 150), (330, 164)], S_SIDE)
+b += poly([(170, 164), (192, 150), (192, 190), (170, 204)], G_SIDE)             # mặt trong cánh trái (nhìn thấy)
+b += poly([(170, 70), (192, 56), (192, 150), (170, 164)], N_SIDE)
+b += poly([(170, 204), (270, 204), (292, 190), (192, 190)], G_TOP)              # mặt trên gông (đáy khe)
+b += poly([(110, 70), (170, 70), (192, 56), (132, 56)], N_TOP)                  # mặt trên hai đầu cực
+b += poly([(270, 70), (330, 70), (352, 56), (292, 56)], S_TOP)
+b += pathf(U, G_FR)                                                             # mặt trước thân chữ U
+b += pathf("M110,70 H170 V164 H110 Z", N_FR) + text(140, 124, "N", "#ffffff", 20, "middle", "800")
+b += pathf("M270,70 H330 V164 H270 Z", S_FR) + text(300, 124, "S", "#ffffff", 20, "middle", "800")
+b += field_line(196, 148, 264, 148, BLUE, 2.4)                                  # đường sức nét đứt N → S
+b += field_line(196, 162, 264, 162, BLUE, 2.4)
+b += text(230, 182, "B", "#1d4ed8", 15, "middle", "700")
+# dây MN: thanh đồng từ M (sau, 247,87) tới N (trước, 193,121)
+b += '<line x1="247" y1="87" x2="203" y2="114.7" stroke="#92400e" stroke-width="8" stroke-linecap="round"/>'
+b += '<line x1="246" y1="85" x2="204" y2="111.7" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>'
+b += chevron(214, 108, -27, 17, "#ffffff", 7) + chevron(214, 108, -27, 17, "#c2410c", 3)   # viền trắng cho nổi trên dây                                       # dòng điện M → N
+b += text(206, 98, "I", "#c2410c", 15, "middle", "700")
+b += text(200, 134, "đầu N", "currentColor", 14, "start", "700")
+b += text(254, 84, "M", "currentColor", 14, "start", "700")
+b += arrow("f3", "r", 226, 92, 226, 42, 3)                                     # F lên dây (50 px)
+b += text(236, 52, "F", "#b91c1c", 15, "start", "700")
+b += arrow("f3", "r", 220, 208, 220, 258, 3)                                    # F' dây đẩy nam châm (50 px)
+b += text(230, 244, "F′", "#b91c1c", 15, "start", "700")
+b += text(16, 24, "dây MN giữ cố định", "currentColor", 14, "start", "600")
+b += text(16, 46, "dòng M → N: hướng ra (⊙)", "#c2410c", 14, "start", "700")
+fig3 = wrap("0 0 440 312", "Nam châm chữ U đặt trên cân, cực N bên trái, cực S bên phải, đường sức nằm ngang từ N sang S; dây MN giữ cố định nằm ngang trong khe, dòng điện hướng ra phía người xem; lực từ lên dây hướng lên, lực dây đẩy nam châm hướng xuống",
             b, "Hình 3. Cân dòng điện.")
 
 # ------------------------------------------------- Hình 4a/4b/4c: ảnh OpenStax College Physics 2e (đợt 2, 27/10/2026)
