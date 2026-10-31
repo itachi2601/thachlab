@@ -1,6 +1,6 @@
 ---
 name: dang-tin-tuc-vat-ly
-description: Tìm, kiểm chứng và đăng TIN TỨC Vật lí / học thuật (khám phá mới, giải Nobel, thí nghiệm lớn, tin thi cử – chương trình, học bổng, Olympic Vật lí) lên mục Tin tức (/tin-tuc) của thachlab, mỗi tin ngắn, viết lại bằng lời mình, có link nguồn và gắn với bài học lớp 10–12. Dùng khi thầy nói "cập nhật tin tức vật lý", "đăng tin vật lý tuần này", "tìm tin học thuật mới", "đăng tin này lên thachlab", "làm bản tin Vật lí". KHÁC blog (bài kiến thức dài, content/blog/*.md) và soan-bai-ly-thuyet-tuong-tac (bài học). Tìm + soạn + dry-run chạy được trên cloud; GHI DB phải chạy trên Mac.
+description: Tìm, kiểm chứng và đăng TIN TỨC Vật lí/học thuật (khám phá, Nobel, tin thi cử, học bổng, Olympic) lên /tin-tuc, viết lại bằng lời mình, có link nguồn. Dùng khi thầy nói "cập nhật tin tức vật lý", "đăng tin vật lý tuần này", "làm bản tin Vật lí". KHÁC blog và bài học. GHI DB chạy trên Mac.
 ---
 
 # Đăng tin tức Vật lí & học thuật

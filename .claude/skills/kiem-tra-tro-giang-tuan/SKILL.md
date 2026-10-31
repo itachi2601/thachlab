@@ -1,6 +1,6 @@
 ---
 name: kiem-tra-tro-giang-tuan
-description: Kiểm tra tiến trình làm việc của trợ giảng trong tuần (phiếu buổi lên lớp, phụ đạo, lượt tiếp xúc, phiếu bị trả về, em chờ phụ đạo) từ bảng ta_sessions, rồi soạn và gửi thông báo nhắc nhẹ trong web cho từng trợ giảng, giọng thầy gọi "con", kèm lịch sử nhắc (bảng ta_reminders) để tăng dần mức nhắc. Dùng khi thầy nói "kiểm tra trợ giảng tuần này", "nhắc trợ giảng", "trợ giảng ai chưa làm gì", "/kiem-tra-tro-giang-tuan".
+description: Kiểm tra tiến trình trợ giảng trong tuần (ta_sessions) rồi gửi nhắc nhẹ trong web cho từng trợ giảng, giọng thầy gọi "con", tăng dần mức nhắc (ta_reminders). Dùng khi thầy nói "kiểm tra trợ giảng tuần này", "nhắc trợ giảng", "trợ giảng ai chưa làm gì", "/kiem-tra-tro-giang-tuan".
 ---
 
 # Kiểm tra trợ giảng hằng tuần — đọc dữ liệu, nhắc nhẹ, nhớ lịch sử

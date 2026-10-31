@@ -1,6 +1,6 @@
 ---
 name: bai-hoc-tron-goi
-description: Điều phối làm MỘT bài học thachlab từ đầu đến cuối (lý thuyết tương tác → tài nguyên hình/PhET/video → bài tập mẫu → rà và cập nhật → đăng) hoặc chỉ các chặng cần thiết của bài đã đăng. Skill mỏng, chỉ chọn chặng và trỏ tới skill chuyên trách; mỗi chặng chỉ đọc phần của mình. Dùng khi thầy nói "làm trọn bài X", "làm bài mới đủ lý thuyết + bài tập mẫu", "nâng cấp bài X", "bài này còn thiếu gì", "/bai-hoc-tron-goi". Việc lẻ một chặng (sửa một chữ, chỉ soạn quiz) thì gọi thẳng skill chặng đó, không qua đây.
+description: Điều phối làm MỘT bài học thachlab từ đầu đến cuối (lý thuyết → tài nguyên → bài tập mẫu → rà → đăng) hoặc các chặng còn thiếu, trỏ tới skill chuyên trách. Dùng khi thầy nói "làm trọn bài X", "nâng cấp bài X", "bài này còn thiếu gì", "/bai-hoc-tron-goi". Việc lẻ một chặng thì gọi thẳng skill chặng đó.
 ---
 
 # Điều phối bài học trọn gói (thầy chốt 11/10/2026)

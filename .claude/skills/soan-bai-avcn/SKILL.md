@@ -1,6 +1,6 @@
 ---
 name: soan-bai-avcn
-description: Soạn MỘT chương Anh văn chuyên ngành Cơ khí (AVCN, lớp `avcn` trên thachlab, sinh viên CĐ Cao Thắng trình độ yếu, mục tiêu nhớ từ chuyên ngành + thi cuối kỳ ≥ 5/10) từ giáo trình Technical English for Mechanical Engineering — bóc chương từ .docx, điền `data/bai.json` (20 từ ⭐ chia 4 cụm có quiz, Article từng câu chạm hiện dịch, 2 mẫu câu, gắn nhãn hình, SOP điền từ, Trả bài, đề mẫu 5 Part tự chấm, 23 câu luyện tập), dựng theory.html + bundle.json bằng script, ảnh Wikimedia Commons có giấy phép, xem thử 375 px, đăng bằng upload-lesson.mts. Dùng khi thầy nói "soạn chương X AVCN", "làm Chapter 3 Hand Tools", "bài anh văn chuyên ngành", "/soan-bai-avcn". Có đường để Gemini điền bai.json rồi Claude đối chiếu. KHÁC soan-bai-ly-thuyet-tuong-tac (bài Vật lí). Soạn + dựng + kiểm chạy được trên cloud; ĐĂNG DB và deploy chạy trên Mac.
+description: Soạn MỘT chương Anh văn chuyên ngành Cơ khí (lớp avcn, SV CĐ Cao Thắng) từ giáo trình Technical English for Mechanical Engineering — điền data/bai.json (từ vựng, Article, quiz, đề mẫu 5 Part), dựng theory.html + bundle.json, ảnh Wikimedia, đăng bằng upload-lesson.mts. Dùng khi thầy nói "soạn chương X AVCN", "bài anh văn chuyên ngành", "/soan-bai-avcn". ĐĂNG DB chạy trên Mac.
 ---
 
 # Soạn một chương AVCN (Anh văn chuyên ngành Cơ khí)

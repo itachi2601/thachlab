@@ -1,6 +1,6 @@
 ---
 name: sach-in-tu-web
-description: Dựng SÁCH IN A4 đen–trắng (PDF) từ nội dung đã đăng trên thachlab (bài lý thuyết tương tác + bài tập mẫu) bằng pipeline `book/` (HTML → Paged.js → Chrome → PDF, KaTeX + SVG + QR), kèm bảng đáp án thuần cuối sách và dữ liệu đáp án cho trang web /sach/dap-an. Dùng khi thầy nói "in sách chương X", "làm bản in cho lớp", "dựng lại sách sau khi sửa bài", "đổi Dạng được giảng trên lớp", "chia tiết trong sách", "thêm chương vào sách in". Sách dùng TRÊN LỚP có thầy (không phải tự học) — hỏi bối cảnh dùng trước khi bỏ/thêm lời giải, đáp án. Chạy được trên Mac (cần Chrome + node_modules trong book/); không ghi DB.
+description: Dựng SÁCH IN A4 đen–trắng (PDF) từ bài lý thuyết + bài tập mẫu đã đăng bằng pipeline book/ (Paged.js → Chrome), kèm bảng đáp án và dữ liệu /sach/dap-an. Dùng khi thầy nói "in sách chương X", "làm bản in cho lớp", "dựng lại sách", "chia tiết trong sách". Sách dùng trên lớp có thầy — hỏi bối cảnh trước khi bỏ/thêm lời giải. Chạy trên Mac.
 ---
 
 # Sách in từ web — pipeline `book/`

@@ -1,6 +1,6 @@
 ---
 name: soan-bai-tap-tu-luan-hsg
-description: Soạn BỘ BÀI TẬP TỰ LUẬN in giấy (PDF A4) và tuỳ chọn đưa cùng nội dung vào mục Tự luận của khoá HSG 9 trên thachlab mức Vận dụng → Vận dụng cao cho lớp 9 chuyên / đội tuyển HSG KHTN 9 Vật lí (và lớp 10–12 ôn chuyên) — mỗi bài 3–4 ý khó dần, hình SVG trong script sinh, gợi ý 3 tầng theo phong cách thầy Thạch (kiến thức → điều kiện áp dụng → hướng tính), lời giải tập riêng (chữ trước số sau, Đáp số, Nhận dạng, Bẫy), số liệu tính bằng Python, kiểm chéo bắt buộc bằng agent kiem-code giải độc lập từ đề không đáp án, dàn trang bằng _tools/trang-mau-sach. Dùng khi thầy nói "soạn bài tập tự luận vận dụng cao cho lớp 9 chuyên", "ra bộ bài tập cơ học/điện/quang cho đội tuyển", "làm bài tập có gợi ý và đáp án kiểu pre-test", "soạn chuyên đề bài tập HSG có hình". KHÁC soan-bai-tap-mau (mục Bài tập mẫu trên web, có mô phỏng, ghi DB), de-vat-ly-thpt (đề thi trắc nghiệm Azota), up-de-kiem-tra (đăng đề lên web). Chạy trên Mac (cần Chrome + book/node_modules để dựng PDF).
+description: Soạn BỘ BÀI TẬP TỰ LUẬN VD–VDC in PDF A4 (tuỳ chọn đưa vào mục Tự luận khoá HSG 9) cho lớp 9 chuyên/đội tuyển HSG KHTN 9 Vật lí — gợi ý 3 tầng, lời giải tập riêng, kiểm chéo bằng kiem-code. Dùng khi thầy nói "soạn bài tập tự luận vận dụng cao", "ra bộ bài tập cho đội tuyển", "bài tập có gợi ý và đáp án kiểu pre-test". KHÁC soan-bai-tap-mau, de-vat-ly-thpt. Chạy trên Mac.
 ---
 
 # Soạn bộ bài tập tự luận VD–VDC cho lớp chuyên / HSG (thầy chốt 10/10/2026)

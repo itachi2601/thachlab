@@ -73,3 +73,30 @@ Viết/viết lại lời giải câu hỏi: theo `docs/QUY-TAC-LOI-GIAI.md` (c�
 
 # Sửa hàng loạt câu trong đề/ngân hàng — luôn qua SQL giao dịch (18/10/2026)
 `exams.questions` đổi ⇒ `content_hash` đổi ⇒ trigger cũ sinh dòng trùng trong `question_bank`. Từ migration `20261018140000` hàm đồng bộ đã cập nhật dòng cũ, nhưng script sửa hàng loạt vẫn phải: sinh chunk SQL ≤40 câu (tắt `trg_exams_sync_bank`, sửa ngân hàng + bản sao đề, đặt lại hash), sao lưu, và đếm số dòng ngân hàng trước/sau. Mẫu: `scripts/ap-dung-de-hu-opus.mts`, `scripts/sua-so-mu-dong-bo.mts`. Đừng dùng `sua-so-mu-ngan-hang.mts` (chỉ sửa ngân hàng).
+
+<!-- Chuyển nguyên văn từ AGENTS.md 31/10/2026 (rút gọn file nạp mỗi phiên) -->
+
+# Phân công mô hình (thầy chốt 6/10/2026) — Claude làm việc của Claude, việc khác gợi ý Cursor
+Subagent `.claude/agents/` (model đã ghim): `kien-truc-du-lieu` (opus) — schema, RLS, migration, YCCĐ–danh hiệu–phụ đạo, backup, đổi vùng, dependency lớn · `kiem-code` (sonnet) — review diff, soát lý thuyết sắp đăng, soát UI · `chep-de` (sonnet) — chép đề từ ảnh trang · `nhap-du-lieu-hoc-sinh` (haiku) — mọi dữ liệu có tên HS. Soạn lý thuyết, quiz, tin tức, UI HS: phiên chính.
+**Ngoài Claude — KHÔNG tự làm, KHÔNG viết router gọi API ngoài**: dừng, in hướng dẫn + prompt mẫu + tên file kết quả cho Thạch làm trên Cursor (Auto) rồi chờ — OCR đề nhiều hình/MathType ảnh/PDF scan dày; lời giải hàng loạt (rồi Claude đối chiếu đáp án); code thường không đụng schema/RLS; tin thời gian thực từ X.
+- Dữ liệu định danh HS (tên, điểm, phụ huynh, SĐT) chỉ đi qua Claude. Model rẻ làm → `kiem-code` kiểm trước merge. Model chạy trong app (`classify-questions`, `ai-tutor`) chọn bằng env/bảng cấu hình, không hard-code.
+
+# Mọi quyết định đổi/thêm tính năng: tư vấn theo nghiên cứu giáo dục & tâm lý lứa tuổi TRƯỚC khi làm (thầy chốt 11/10/2026)
+Khi thầy ra quyết định thay đổi hoặc bổ sung tính năng trên thachlab, bước đầu tiên là **tư vấn ngắn** (3–6 dòng), rồi mới làm:
+1. **Dựa vào nghiên cứu đã có trong repo, KHÔNG tìm lại tài liệu**: `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md` (CLT/Mayer, Gloria Mark, Dahl–Steinberg, Ryan–Deci/SDT, Deterding + Sailer & Homner; có chỗ "tóm tắt nói quá"), `docs/QUY-TAC-THIET-KE.md` (G1–G3, N/C/M/B/H/V/D/L), `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md`, `docs/NGHIEN-CUU-PHU-HUYNH-45-60.md` + `docs/QUY-TAC-THIET-KE-PHU-HUYNH.md` (phụ huynh), `docs/mastery-rules.md`. Chỉ lên mạng khi các file đó không phủ chủ đề, và nói rõ.
+2. **Nêu**: (a) nghiên cứu/mã quy tắc nào liên quan, (b) quyết định của thầy hợp hay đi ngược chỗ nào (đặc biệt rủi ro đã ghi: thưởng hữu hình làm giảm động lực nội tại, tải nhận thức, nhạy địa vị bạn cùng lứa tuổi 14–18, ngưỡng bỏ cuộc), (c) cách làm đề xuất / điều chỉnh nhỏ nếu cần, (d) cách đo hiệu quả nếu đáng đo.
+3. **Thầy vẫn là người quyết**: tư vấn xong thì làm theo ý thầy, trừ khi vi phạm nặng — khi đó nói rõ rồi hỏi một lần. Không lặp lại tư vấn khi thầy đã nghe và giữ nguyên quyết định.
+4. Ghi mã quy tắc/nghiên cứu vào mô tả commit. Phạm vi: tính năng nhìn thấy bởi HS/phụ huynh hoặc ảnh hưởng cách học; sửa lỗi, hạ tầng, script nội bộ không cần.
+
+# CSS @media mới: Lightning CSS gộp khối sát nhau (26/10/2026)
+Lightning CSS khi build gộp hai khối `@media` khác điều kiện đặt sát nhau → khối mới đặt cách khối khác bằng một rule thường; kiểm CSS đã ăn bằng `getComputedStyle` trên trang thật, không chỉ nhìn file.
+Dev server Turbopack có lúc giữ CSS cũ sau khi sửa file (27/10/2026): số đo không đổi thì tra `document.styleSheets` xem rule mới đã có chưa; chưa có thì dừng server, xoá `.next/cache`, chạy lại.
+
+# Làm theo trang mẫu đã duyệt: chụp trang thật CẠNH mẫu rồi mới báo xong (thầy chốt 26/10/2026)
+Đợt đầu đồng bộ trang chương ↔ trang bài theo trang mẫu chỉ làm theo mô tả, báo xong khi trang thật còn lệch 12 chỗ. Khi việc là "làm giống trang mẫu":
+- Đọc CSS của mẫu (số đo thật), không làm theo ghi chú; lập danh sách điểm so sánh trước khi sửa.
+- Sau mỗi nhóm sửa: chụp trang thật và mẫu ở CÙNG cỡ (1280 · 1024 · 768 · 375, sáng + tối), so theo danh sách; đo bằng `getComputedStyle` (cỡ chữ, rộng cột, khoảng cách) — rule cũ kiểu `font-size: 1rem` cứng thường đè rule mới.
+- Điểm nào cố ý lệch thì ghi lý do vào commit và báo cáo, không im lặng bỏ qua.
+
+# Worktree thiếu .env.local → "Hệ thống đang được cấu hình" (lặp 2 lần, 29/10/2026)
+`.env.local` gitignore nên worktree mới không có. Đã chặn tận gốc: `.worktreeinclude` (chép khi tạo worktree) + `scripts/link-env-local.mjs` chạy ở `predev`/`prebuild` (symlink về checkout chính). Thấy lại lỗi này: chạy `npm run dev` (không gọi `next dev` trực tiếp).

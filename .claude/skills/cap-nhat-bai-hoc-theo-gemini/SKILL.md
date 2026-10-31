@@ -1,6 +1,6 @@
 ---
 name: cap-nhat-bai-hoc-theo-gemini
-description: Quy trình CẬP NHẬT một bài thachlab bằng "học sinh ảo" — đường chính (thầy chốt 8/10/2026) là Claude qua Batch API (scripts/batch-ra-soat-bai.mts): (1) rà mục lý thuyết → JSON góp ý → Claude tự kiểm, tự chốt và sửa tối thiểu theory.src.html → build → ĐĂNG, trợ giảng người thật rà lại trên web; (2) quét số dạng và tên dạng từ lý thuyết + ngân hàng câu hỏi của chủ đề → nháp bài tập mẫu theo hệ bắc cầu (số dạng theo chủ đề, thường 2–6, không cố định 4) → Claude kiểm số liệu, viết lại theo phong cách thầy, dựng mô phỏng, kiểm chéo, đăng. Gemini (thầy dán tay vào gemini.google.com, không API) chỉ còn là ý kiến thứ hai tuỳ chọn — "/gemini-gui <bài|chương>" xuất file để dán; "/gemini-nhan <bài>" xử lý JSON trả về. Dùng khi thầy nói "rà bài này", "chạy học sinh ảo", "sửa lý thuyết/bài tập mẫu theo góp ý", "gửi bài cho Gemini", "Gemini đã trả kết quả". Soạn/sửa/build chạy được trên cloud; batch API và ĐĂNG lên DB chạy trên Mac.
+description: CẬP NHẬT một bài thachlab bằng "học sinh ảo" (Claude Batch API, scripts/batch-ra-soat-bai.mts) — rà lý thuyết → sửa tối thiểu → đăng; quét dạng → nháp bài tập mẫu → kiểm, đăng. Gemini dán tay chỉ là ý kiến thứ hai (/gemini-gui, /gemini-nhan). Dùng khi thầy nói "rà bài này", "chạy học sinh ảo", "sửa theo góp ý", "gửi bài cho Gemini", "Gemini đã trả kết quả". Batch API và ĐĂNG chạy trên Mac.
 ---
 
 # Cập nhật bài học theo học sinh ảo (thầy chốt 8/10/2026 — Claude là đường chính, Gemini tuỳ chọn)

@@ -1,6 +1,6 @@
 ---
 name: dung-video-thi-nghiem
-description: Tự dựng video 9:16 KHÔNG giọng (phụ đề + nhạc tổng hợp) cho thí nghiệm trong content/thi-nghiem/ mà YouTube không có clip — viết kịch bản Python theo mẫu boyle/chuyenthe/camungdt, số liệu lấy từ so_lieu_mau, hộp Dự đoán đồng màu, render bằng scripts/video-thi-nghiem. Dùng khi thầy nói "làm video thí nghiệm X", "làm lô 1 video thí nghiệm", "thí nghiệm nào chưa có video", "/dung-video-thi-nghiem". KHÁC video ôn tập tóm tắt (có giọng đọc) và chen-video-thi-nghiem.mts (chèn clip YouTube có sẵn).
+description: Tự dựng video 9:16 không giọng (phụ đề + nhạc) cho thí nghiệm trong content/thi-nghiem/ chưa có clip YouTube, render bằng scripts/video-thi-nghiem. Dùng khi thầy nói "làm video thí nghiệm X", "thí nghiệm nào chưa có video", "/dung-video-thi-nghiem". KHÁC chen-video-thi-nghiem.mts (chèn clip có sẵn).
 ---
 
 # Dựng video thí nghiệm tự làm (không giọng)
