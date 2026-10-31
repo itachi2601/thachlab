@@ -25,7 +25,7 @@ def rect(x, y, w, h, fill, stroke="currentColor", sw=2, rx=6):
             f'stroke="{stroke}" stroke-width="{sw}"/>')
 
 
-def hop(x, y, w, h, s, c, size=12, fill="rgba(148,163,184,.10)"):
+def hop(x, y, w, h, s, c, size=14, fill="rgba(148,163,184,.10)"):
     """Hộp chữ nhật có chữ canh giữa."""
     return rect(x, y, w, h, fill, c, 1.8) + text(x + w / 2, y + h / 2 + 4, s, c, size, "middle", "700")
 
@@ -59,12 +59,14 @@ fig2 = wrap_img("hinh-may-phat-khung-quay-d2",
     "Máy phát điện xoay chiều một pha: khung dây quay quanh trục giữa hai cực N và S của nam châm, hai vành khuyên và hai chổi quét nối với bóng đèn, bên phải là đồ thị suất điện động hình sin theo thời gian",
     1000, 554,
     "Hình 2. Máy phát một pha: khung dây quay với tốc độ góc ω giữa hai cực N, S.<br>"
-    "Mỗi đầu khung nối một vành khuyên riêng; chổi quét lấy điện ra bóng đèn. Suất điện động biến thiên hình sin, T = 2π/ω.<br>"
+    "Mỗi đầu khung nối một vành khuyên riêng.<br>"
+    "Chổi quét lấy điện ra bóng đèn.<br>"
+    "Suất điện động biến thiên hình sin, T = 2π/ω.<br>"
     "Nhãn: Brushes = chổi quét · ℰ = suất điện động · ℰ₀ = giá trị cực đại · T = chu kì.",
     "23.21")
 
 # ------------------------------------------------- Hình 3: ba pha — ba cuộn dây và ba suất điện động
-b = defs("f3")
+b = ""
 b += text(14, 24, "ba cuộn dây lệch 120°", "currentColor", 14, "start", "700")
 b += text(240, 24, "ba suất điện động", "currentColor", 14, "start", "700")
 b += circ(110, 122, 60, "currentColor", 2)
@@ -75,16 +77,18 @@ b += line(92, 148, 110, 122, BLUE, 7, cap="round")
 b += line(110, 122, 128, 96, RED, 7, cap="round")
 b += text(134, 88, "N", RED, 14, "start", "700")
 b += text(80, 164, "S", BLUE, 14, "start", "700")
-b += f'<path d="M 147 132 A 37 37 0 0 0 144 106" fill="none" stroke="{GRN}" stroke-width="2.4" marker-end="url(#f3-g)"/>'
+b += f'<path d="M 147 132 A 37 37 0 0 0 144 106" fill="none" stroke="{GRN}" stroke-width="2.4"/>'
+# đầu V 30° tại (144,106): bán kính (34,-16) quay ngược chiều kim đồng hồ trên màn hình → tiếp tuyến (-16,-34)
+b += chevron(144, 106, -16, -34, GRN, 2.4, 10)
 b += text(124, 132, "ω", GRN, 14, "start", "700")
 b += text(14, 214, "stato: 3 cuộn giống nhau", "currentColor", 14, "start", "600")
 b += text(14, 234, "rô-to: nam châm quay đều", "currentColor", 14, "start", "600")
 # đồ thị ba đường hình sin lệch pha nhau 2π/3
-X0, X1, Y0, A = 246, 428, 122, 44
-b += line(240, Y0, 434, Y0, "currentColor", 1.4, "", .55)
-b += line(X0, 60, X0, 184, "currentColor", 1.4, "", .55)
-b += text(238, 56, "u", "currentColor", 14, "start", "700")
-b += text(430, 150, "t", "currentColor", 14, "end", "700")
+X0, X1, Y0, A = 246, 410, 122, 44
+b += line(240, Y0, 432, Y0, "currentColor", 1.4, "", .55) + chevron(432, Y0, 1, 0, "currentColor", 1.4, 9)
+b += line(X0, 58, X0, 184, "currentColor", 1.4, "", .55) + chevron(X0, 58, 0, -1, "currentColor", 1.4, 9)
+b += text(228, 66, "e", "currentColor", 14, "start", "700")
+b += text(434, 142, "t", "currentColor", 14, "end", "700")
 for phi, col in ((0.0, RED), (-2 * math.pi / 3, BLUE), (2 * math.pi / 3, ORG)):
     pts = []
     for k in range(0, 37):
@@ -103,7 +107,8 @@ fig4 = wrap_img("hinh-may-bien-ap-d2",
     "Máy biến áp: hai cuộn dây quấn trên hai cạnh của một lõi thép kín ghép từ các lá mỏng, đường sức từ khép kín trong lõi; bên dưới là kí hiệu máy biến áp",
     660, 768,
     "Hình 4. Máy biến áp: hai cuộn dây quấn trên một lõi thép kín, đường sức từ (hồng) khép kín trong lõi.<br>"
-    "Cuộn sơ cấp (bên trái, 5 vòng) và cuộn thứ cấp (bên phải, 8 vòng): điện áp tỉ lệ với số vòng.<br>"
+    "Cuộn sơ cấp (bên trái) ít vòng, cuộn thứ cấp (bên phải) nhiều vòng hơn.<br>"
+    "Điện áp tỉ lệ với số vòng.<br>"
     "Nhãn: V<sub>p</sub> = điện áp cuộn sơ cấp (tương ứng U₁) · V<sub>s</sub> = điện áp cuộn thứ cấp (U₂) · N<sub>p</sub> = số vòng cuộn sơ cấp (N₁) · Transformer symbol = kí hiệu máy biến áp.",
     "23.27")
 
