@@ -64,46 +64,73 @@ fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-khai-nie
         'Hình: OpenStax, <em>College Physics 2e</em>, Hình 22.5 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</figcaption></figure>')
 
 # ------------------------------------------- Hình 3 (OpenStax, đầu hàm) + Hình 4: ba khung (SVG)
-# Đường sức thanh nam châm: mô hình hai "từ tích" ở hai đầu (N bên trái, S bên phải), TÍNH bằng RK4.
-# Toạ độ toán (z sang phải, x lên trên); B ngoài nam châm đi từ N sang S.
-def _B2(z, x, d=2.0):
+# Đường sức thanh nam châm vẽ trên MẶT PHẲNG HÌNH (như mạt sắt rắc trên tấm bìa): hai cực N (+q, trái) và
+# S (−q, phải) đặt trong thân, cách mỗi đầu thanh 6 px; trường phẳng của hai "từ tích" có HÀM THÔNG LƯỢNG
+#   Ψ(z, x) = θ_N − θ_S ,   θ_N = atan2(x, z + a), θ_S = atan2(x, z − a)   (z dọc trục sang phải, x lên; px)
+# Đường sức là ĐƯỜNG MỨC của Ψ (cung tròn qua hai cực). Thông lượng giữa hai đường kề nhau = hiệu Ψ, nên chọn
+# các mức Ψ CÁCH ĐỀU → mật độ đường trên hình ∝ |B| tự nhiên: mau ở hai cực, thưa dần ra xa. Sát cực N,
+# Ψ ≈ φ − π (φ: góc rời cực đo từ +z) → mức cách đều = góc rời cực cách đều. Mỗi đường vẽ bằng RK4 theo B,
+# xuất phát trên vòng nhỏ quanh N tại đúng điểm có Ψ = mức (chia đôi), rồi kiểm Ψ không trôi dọc đường.
+import math as _mm
+
+
+def _psi(z, x, a):
+    return _mm.atan2(x, z + a) - _mm.atan2(x, z - a)
+
+
+def _Bdir(z, x, a):
     bz = bx = 0.0
-    for zc, q in ((-d, 1.0), (d, -1.0)):
+    for zc, q in ((-a, 1.0), (a, -1.0)):
         dz, dx = z - zc, x
-        r3 = (dz * dz + dx * dx) ** 1.5 + 1e-12
-        bz += q * dz / r3; bx += q * dx / r3
-    return bz, bx
+        r2 = dz * dz + dx * dx + 1e-12
+        bz += q * dz / r2; bx += q * dx / r2
+    n = _mm.hypot(bz, bx) + 1e-15
+    return bz / n, bx / n
 
 
-def duong_suc2(phi, d=2.0, h=0.02, maxn=6000, lim=30.0):
-    """Đường sức rời cực N (z=-d) theo góc phi (độ, đo từ +z, x>0); dừng khi tới cực S hoặc ra xa."""
-    import math as m
-    e = 0.12
-    z, x = -d + e * m.cos(m.radians(phi)), e * m.sin(m.radians(phi))
-    pts = [(z, x)]
-    def f(z, x):
-        a, b = _B2(z, x, d); n = m.hypot(a, b) + 1e-12
-        return a / n, b / n
+def duong_muc(level, a, e=1.0, h=0.5, maxn=20000):
+    """Đường sức có Ψ = level (nửa trên, x > 0), từ N (z = −a) tới S (z = +a); toạ độ px quanh tâm thanh."""
+    lo, hi = 1e-6, _mm.pi - 1e-6
+    for _ in range(60):                      # Ψ trên vòng bán kính e quanh N tăng đơn điệu theo góc
+        ph = (lo + hi) / 2
+        if _psi(-a + e * _mm.cos(ph), e * _mm.sin(ph), a) < level: lo = ph
+        else: hi = ph
+    z, x = -a + e * _mm.cos(ph), e * _mm.sin(ph)
+    P = [(z, x)]
+    f = lambda z, x: _Bdir(z, x, a)
     for _ in range(maxn):
         k1 = f(z, x); k2 = f(z + h / 2 * k1[0], x + h / 2 * k1[1])
         k3 = f(z + h / 2 * k2[0], x + h / 2 * k2[1]); k4 = f(z + h * k3[0], x + h * k3[1])
         z += h / 6 * (k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0]); x += h / 6 * (k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1])
-        pts.append((z, x))
-        if m.hypot(z - d, x) < e or abs(z) > lim or abs(x) > lim:
+        P.append((z, x))
+        if _mm.hypot(z - a, x) < e:
             break
-    return pts
+    assert max(abs(_psi(z, x, a) - level) for z, x in P[3:-3]) < 2e-3, "Ψ trôi"
+    return P
 
 
-def _bar_lines(cx, cy, s, phis, mirror=True):
-    """Trả danh sách polyline (toạ độ màn hình) + điểm cao nhất kèm hướng B tại đó."""
+def _trong_than(px, py, cx, cy, g=2.0):
+    """Điểm màn hình có nằm trong khối nam châm (mặt trước + mặt trên + mặt bên, nới g px) không."""
+    dx, dy = BAR_D
+    x0, x1, y0, y1 = cx - BAR_L / 2, cx + BAR_L / 2, cy - BAR_H / 2, cy + BAR_H / 2
+    if x0 - g <= px <= x1 + g and y0 - g <= py <= y1 + g:
+        return True
+    if y0 + dy - g <= py <= y0:                                   # mặt trên (hình bình hành)
+        t = (y0 - py) / -dy
+        if x0 + dx * t - g <= px <= x1 + dx * t + g:
+            return True
+    return x1 <= px <= x1 + dx + g and y0 + dy - g <= py <= y1 + g  # mặt bên
+
+
+def _bar_lines(cx, cy):
+    """Danh sách (Q, k) — polyline màn hình đã cắt bỏ phần trong thân, k = chỉ số mức (0 = trong cùng)."""
     out = []
-    for phi in phis:
-        P = duong_suc2(phi)
-        for sg in ((1, -1) if mirror else (1,)):
-            Q = [(cx + s * z, cy - sg * s * x) for z, x in P]
-            i = min(range(len(Q)), key=lambda k: Q[k][1]) if sg == 1 else max(range(len(Q)), key=lambda k: Q[k][1])
-            i = max(1, min(i, len(Q) - 2))
-            out.append((Q, Q[i], (Q[i + 1][0] - Q[i - 1][0], Q[i + 1][1] - Q[i - 1][1])))
+    for k, lv in enumerate(BAR_PSI):
+        P = duong_muc(lv, BAR_A)
+        for sg in (1, -1):
+            Q = [(cx + z, cy - sg * x) for z, x in P]
+            Q = [p for p in Q if not _trong_than(p[0], p[1], cx, cy)]
+            out.append((Q, k, sg))
     return out
 
 
@@ -117,32 +144,13 @@ def _poly(Q, c, w, dash, op=1):
     return f'<path d="{d}" fill="none" stroke="{c}" stroke-width="{w}" stroke-dasharray="{dash}" opacity="{op}" stroke-linecap="round"/>'
 
 
-UM_BODY, UM_DARK, UM_EDGE = "#cbd5e1", "#94a3b8", "#334155"   # cùng bảng màu nam châm chữ U (bài 11 u_magnet)
-UM_N = ("#dc2626", "#f87171", "#b91c1c")      # mặt trước, mặt trên, mặt bên
-UM_S = ("#2563eb", "#60a5fa", "#1e40af")
-
-
-def bar_magnet(cx, cy, L, H, d=(10, -7), fs=17, sw=2, n_left=True):
-    """Nam châm thẳng nhìn chính diện hơi xiên (chiều sâu dời d=(dx, dy) lên-phải); tâm mặt trước (cx, cy),
-    dài L, cao H. Nửa trái N đỏ, nửa phải S xanh (n_left=False thì đảo); chữ trắng 800 cỡ fs. Trả SVG."""
-    dx, dy = d
-    x0, x1, y0, y1, xm = cx - L / 2, cx + L / 2, cy - H / 2, cy + H / 2, cx
-    CL, CR = (UM_N, UM_S) if n_left else (UM_S, UM_N)
-    P = lambda pts, f: f'<polygon points="{" ".join(f"{a:.1f},{b:.1f}" for a, b in pts)}" fill="{f}" stroke="{UM_EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
-    o = P([(x0, y0), (xm, y0), (xm + dx, y0 + dy), (x0 + dx, y0 + dy)], CL[1])          # mặt trên nửa trái
-    o += P([(xm, y0), (x1, y0), (x1 + dx, y0 + dy), (xm + dx, y0 + dy)], CR[1])         # mặt trên nửa phải
-    o += P([(x1, y0), (x1 + dx, y0 + dy), (x1 + dx, y1 + dy), (x1, y1)], CR[2])         # mặt bên phải
-    o += (f'<rect x="{x0:.1f}" y="{y0:.1f}" width="{L/2:.1f}" height="{H:.1f}" fill="{CL[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>'
-          f'<rect x="{xm:.1f}" y="{y0:.1f}" width="{L/2:.1f}" height="{H:.1f}" fill="{CR[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>')
-    lt, rt = ("N", "S") if n_left else ("S", "N")
-    o += text(round(x0 + L / 4, 1), round(cy + fs * .36, 1), lt, "#fff", fs, "middle", "800")
-    o += text(round(x1 - L / 4, 1), round(cy + fs * .36, 1), rt, "#fff", fs, "middle", "800")
-    return o
-
-
-# Bộ đường sức chung cho khung ii và iii (mô hình hai từ tích ở ±2 đơn vị, 30 px/đơn vị → cách nhau 120 px,
-# sát hai đầu thân dài 128 px). Góc rời cực N: đường càng gần trục càng mau ở hai cực.
-BAR_L, BAR_H, BAR_D, BAR_S, BAR_PHI = 128, 26, (8, -6), 30, (40, 52, 64, 76)
+# Bộ đường sức chung cho khung ii và iii: thanh dài 88 px, hai cực cách tâm a = 38 px (6 px trong mỗi đầu).
+# 5 mức Ψ cách đều 16,5° (= góc rời cực N 66,7° … 132,8°): đường trong cùng cao 25 px ở giữa (sát trên mặt trên
+# thân), đường ngoài cùng cao 87 px — vừa trong khung 186 px. Ở mặt giữa các đường cách nhau 8,6 → 11,3 → 16 → 26 px.
+BAR_L, BAR_H, BAR_D, BAR_A = 88, 22, (8, -6), 38
+_PH0, _PH1 = 2 * _mm.degrees(_mm.atan(25 / BAR_A)), 2 * _mm.degrees(_mm.atan(87 / BAR_A))
+BAR_PSI = tuple(_mm.radians(_PH0 + (_PH1 - _PH0) * k / 4) - _mm.pi for k in range(5))
+BAR_TIP = (4, -12, 20, -22, 6)      # vị trí đầu V theo z (px quanh tâm) từng mức: so le, cách đường kề ≥ 4 px, không chạm thân
 
 
 b = defs("f3")
@@ -172,16 +180,15 @@ b += text(232, 96, "→ từ trường đều", "#047857", 14, "start", "600")
 
 
 def _bo_duong(cx, cy, kieu):
-    """kieu='mat_sat': vạch ngắn xám (từ phổ); 'quy_uoc': nét đứt xanh lục + đầu V giữa đường (chiều N → S)."""
+    """kieu='mat_sat': vạch ngắn xám (từ phổ); 'quy_uoc': nét đứt xanh lục + đầu V (chiều N → S, so le)."""
     g = ""
-    for k, (Q, tip, dr) in enumerate(_bar_lines(cx, cy, BAR_S, BAR_PHI)):
+    for Q, k, sg in _bar_lines(cx, cy):
         if kieu == "mat_sat":
             g += _poly(Q, "currentColor", 2.4, "3 4", .75)
         else:
-            # đầu V so le theo x (0, −26, +22, −44 px quanh tâm; đường trong cùng ở đỉnh cho xa mặt trên thân) để không dồn thành một cột; đặt đúng điểm trên đường
-            xt = cx + (0, -26, 22, -44)[k // 2]
-            i = min((j for j in range(1, len(Q) - 1) if (Q[j][1] - cy) * (tip[1] - cy) > 0), key=lambda j: abs(Q[j][0] - xt))
-            g += _poly(Q, GRN, 1.8, "6 4") + chevron(Q[i][0], Q[i][1], Q[i + 1][0] - Q[i - 1][0], Q[i + 1][1] - Q[i - 1][1], GRN, 1.8, 9)
+            xt = cx + BAR_TIP[k]
+            i = min(range(1, len(Q) - 1), key=lambda j: abs(Q[j][0] - xt))
+            g += _poly(Q, GRN, 1.8, "6 4") + chevron(Q[i][0], Q[i][1], Q[i + 1][0] - Q[i - 1][0], Q[i + 1][1] - Q[i - 1][1], GRN, 1.8, 8)
     xl, xr = cx - BAR_L / 2, cx + BAR_L / 2 + BAR_D[0]
     if kieu == "mat_sat":
         g += f'<line x1="0" y1="{cy}" x2="{xl-4}" y2="{cy}" stroke="currentColor" stroke-width="2.4" stroke-dasharray="3 4" opacity=".75"/>'
@@ -208,6 +215,7 @@ b += text(302, 446, "ra ở N, vào ở S", "currentColor", 14, "start", "600")
 b += text(302, 470, "khép kín", "currentColor", 14, "start", "600")
 b += text(302, 494, "không cắt nhau", "currentColor", 14, "start", "600")
 b += text(302, 518, "gần cực: mau", "currentColor", 14, "start", "600")
+b += text(302, 542, "xa cực: thưa", "currentColor", 14, "start", "600")
 fig3b = wrap("0 0 440 592",
             "Ba khung: đường sức từ của nam châm chữ U (từ trường đều), từ phổ mạt sắt quanh thanh nam châm và đường sức vẽ theo quy ước",
             b, "Hình 4.<br>i) Chữ U: từ trường đều.<br>ii) Từ phổ.<br>iii) Đường quy ước.")
