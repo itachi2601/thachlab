@@ -5,6 +5,9 @@ import VideoThiNghiemKhung, {
   type VideoKhungData,
   type VideoKhungEvent,
 } from "@/components/lessons/VideoThiNghiemKhung";
+import c_tn_l10_co_nang_bao_toan_01 from "@/content/thi-nghiem/video-khung/tn-l10-co-nang-bao-toan-01.json";
+import c_tn_l10_cong_suat_01 from "@/content/thi-nghiem/video-khung/tn-l10-cong-suat-01.json";
+import c_tn_l10_dong_nang_the_nang_01 from "@/content/thi-nghiem/video-khung/tn-l10-dong-nang-the-nang-01.json";
 import c_tn_l12_antoanpx_01 from "@/content/thi-nghiem/video-khung/tn-l12-antoanpx-01.json";
 import c_tn_l12_apsuatdongnang_01 from "@/content/thi-nghiem/video-khung/tn-l12-apsuatdongnang-01.json";
 import c_tn_l12_apsuatdongnang_02 from "@/content/thi-nghiem/video-khung/tn-l12-apsuatdongnang-02.json";
@@ -35,6 +38,9 @@ import c_tn_l12_xoaychieu_03 from "@/content/thi-nghiem/video-khung/tn-l12-xoayc
  * chưa ghi DB (muốn đo tỉ lệ dừng/chọn/xem lại thì nối onEvent vào bảng ghi sau khi thầy chốt).
  */
 const CLIPS = [
+  c_tn_l10_co_nang_bao_toan_01,
+  c_tn_l10_cong_suat_01,
+  c_tn_l10_dong_nang_the_nang_01,
   c_tn_l12_antoanpx_01,
   c_tn_l12_apsuatdongnang_01,
   c_tn_l12_apsuatdongnang_02,
