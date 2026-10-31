@@ -32,7 +32,7 @@ def seg(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
 def sub(x, y, base, s, c="currentColor", size=14, anchor="start", weight="700"):
     """Nhãn có chỉ số dưới: v + tspan nhỏ (không dùng KaTeX trong SVG)."""
     return (f'<text x="{x}" y="{y}" fill="{c}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}">'
-            f'{base}<tspan dy="4" font-size="{size - 2}">{s}</tspan></text>')
+            f'{base}<tspan dy="4" font-size="{max(size - 2, 14)}">{s}</tspan></text>')
 
 
 # ================= Hình 1: máy bay cứu hộ thả gói hàng =================
