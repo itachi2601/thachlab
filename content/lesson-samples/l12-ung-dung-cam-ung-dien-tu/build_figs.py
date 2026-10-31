@@ -73,9 +73,9 @@ for x in (146, 294):                                                       # nhi
     b += arrow("", "r", x, 102, x, 78, 2.4)
     b += text(x, 72, "nhiệt", RED, 14, "middle", "600")
 b += text(336, 126, "đáy nồi gang", ORG, 14, "start", "600")
-b += rect(60, 140, 320, 10, "rgba(148,163,184,.28)", "currentColor", 1.2, 3)  # mặt kính
-b += text(14, 176, "mặt kính", "currentColor", 14)
-b += text(14, 194, "(cách điện)", "currentColor", 14)
+b += rect(100, 140, 280, 10, "rgba(148,163,184,.28)", "currentColor", 1.2, 3)  # mặt kính
+b += text(14, 150, "mặt kính", "currentColor", 14)
+b += text(14, 168, "(cách điện)", "currentColor", 14)
 # Cuộn dây phẳng cắt dọc: nửa trái dòng đi vào (⊗), nửa phải đi ra (⊙) — tại thời điểm vẽ.
 for i in range(8):
     x = 167.5 + i * 15
@@ -174,12 +174,12 @@ for dd, u in DATA:
     b += line(x, Y0, x, Y0 + 5, "currentColor", 2) + text(x, Y0 + 22, str(dd), "currentColor", 14, "middle", "600")
 pts = " ".join(f"{X0 + dd * KX},{Y0 - u * KY:.1f}" for dd, u in DATA)
 b += f'<polyline points="{pts}" fill="none" stroke="{GRN}" stroke-width="2.4"/>'
-b += text(236, 368, "số đo", GRN, 14, "start", "700")
+b += text(226, 394, "số liệu minh hoạ", GRN, 14, "start", "700")
 b += text(428, 470, "d (cm)", "currentColor", 14, "end", "700")
 fig3 = wrap("0 0 440 480",
-            "Sạc không dây: cuộn sơ cấp trong đế sạc và cuộn thứ cấp trong điện thoại rời nhau, ghép qua từ trường biến thiên; đồ thị điện áp cuộn thứ cấp giảm từ 8,4 V xuống 3,9 V khi khoảng cách tăng từ 0 đến 4 cm, luôn dưới mức lí tưởng 9,0 V",
+            "Sạc không dây: cuộn sơ cấp trong đế sạc và cuộn thứ cấp trong điện thoại rời nhau, ghép qua từ trường biến thiên; đồ thị số liệu minh hoạ: điện áp cuộn thứ cấp giảm từ 8,4 V xuống 3,9 V khi khoảng cách tăng từ 0 đến 4 cm, luôn dưới mức lí tưởng 9,0 V",
             b, "Hình 2. Sạc không dây = máy biến áp không lõi: hai cuộn rời ghép qua từ trường; "
-               "số đo luôn thấp hơn lí tưởng 9,0 V.")
+               "số liệu minh hoạ luôn thấp hơn lí tưởng 9,0 V.")
 
 # ------------------------------------------------- FIG4 (Hình 3 trong bài): ảnh OpenStax College Physics 2e, Hình 23.12 (đợt 2, 27/10/2026)
 fig4 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-ung-dung-cam-ung-dien-tu/hinh-tam-foucault-lien-khoi-ranh-xe.webp" '
