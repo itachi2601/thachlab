@@ -1,6 +1,6 @@
 ---
 name: project-thachlab-l12-ra-soat-ch1
-description: Rà soát 4 bài L12 Chương 1 (Vật lí nhiệt, lesson 2–5) 31/10/2026 — 10 hình vẽ lại, đã commit, CHƯA đăng DB
+description: Rà soát 4 bài L12 Chương 1 (Vật lí nhiệt, lesson 2–5) 31/10/2026 — 10 hình vẽ lại, ĐÃ ĐĂNG DB 31/10, chờ deploy bản tĩnh
 metadata:
   type: project
 ---
@@ -9,4 +9,4 @@ metadata:
 
 **Treo chờ thầy:** B1 video "thăng hoa của iốt" gắn ngay sau hộp thí nghiệm bay hơi `tn-l12-chuyenthe-03` (mốc `<!--video:sau:…-->`); B4 bài toán mẫu L đo ra 6,80·10⁶ (gấp 3 tra bảng, hao 67% nhiệt — số cố ý để bẫy chia nhầm m₁ nhưng khó tin là phép đo thật).
 
-**Why:** để phiên sau không rà lại chương này. **How to apply:** chỉ còn duyệt ảnh + `cap-nhat-ly-thuyet.sh <bài>/bundle.json <2..5> --yes` ngoài giờ HS.
+**Why:** để phiên sau không rà lại chương này. **How to apply:** đã đăng DB 31/10 (sau khi gộp thẻ "Thử nghĩ" 1f0303d0b — nhánh claude/ice-water-experiment-description-827f6e chưa vào main, bài L12 khác đăng lại phải gộp trước); còn `bash scripts/deploy.sh` cho bản tĩnh.
