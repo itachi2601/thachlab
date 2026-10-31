@@ -117,43 +117,60 @@ def _poly(Q, c, w, dash, op=1):
     return f'<path d="{d}" fill="none" stroke="{c}" stroke-width="{w}" stroke-dasharray="{dash}" opacity="{op}" stroke-linecap="round"/>'
 
 
-def _bar(cx, cy, hl, hw=7):
-    return (f'<rect x="{cx-hl}" y="{cy-hw}" width="{hl}" height="{2*hw}" fill="{RED}" stroke="currentColor" stroke-width="1.2"/>'
-            f'<rect x="{cx}" y="{cy-hw}" width="{hl}" height="{2*hw}" fill="{BLUE}" stroke="currentColor" stroke-width="1.2"/>')
+def _bar(cx, cy, hl, hw=7, dp=5):
+    """Thanh nam châm có chiều sâu: mặt trên + mặt bên (lệch dp px lên phải), mặt trước nửa đỏ N / nửa xanh S."""
+    x0, x1, y0, y1 = cx - hl, cx + hl, cy - hw, cy + hw
+    return (f'<polygon points="{x0},{y0} {x0+dp},{y0-dp} {x1+dp},{y0-dp} {x1},{y0}" fill="#cbd5e1" stroke="currentColor" stroke-width="1"/>'
+            f'<polygon points="{x1},{y0} {x1+dp},{y0-dp} {x1+dp},{y1-dp} {x1},{y1}" fill="#94a3b8" stroke="currentColor" stroke-width="1"/>'
+            f'<rect x="{x0}" y="{y0}" width="{hl}" height="{2*hw}" fill="{RED}" stroke="currentColor" stroke-width="1.2"/>'
+            f'<rect x="{cx}" y="{y0}" width="{hl}" height="{2*hw}" fill="{BLUE}" stroke="currentColor" stroke-width="1.2"/>')
 
 
 b = defs("f3")
 # i) nam châm chữ U: N trái (đỏ), S phải (xanh); đường sức giữa hai cực thẳng, song song, cách đều, chiều N → S
 b += text(14, 20, "i) Chữ U", "currentColor", 14, "start", "700")
-b += f'<path d="M44,44 L44,100 Q44,124 68,124 L142,124 Q166,124 166,100 L166,44" fill="none" stroke="currentColor" stroke-width="14" opacity=".35"/>'
-b += rect(36, 44, 16, 38, RED, "currentColor", 1.2, 2)
-b += rect(158, 44, 16, 38, BLUE, "currentColor", 1.2, 2)
-b += text(44, 38, "N", RED, 14, "middle", "700")
-b += text(166, 38, "S", BLUE, 14, "middle", "700")
-for y in (51, 63, 75):
-    b += field_line(56, y, 154, y, GRN, 1.8, "5 3", 9)
-b += text(14, 148, "song song, cách đều", GRN, 14, "start", "600")
-b += text(14, 167, "→ từ trường đều", GRN, 14, "start", "600")
+# Nam châm chữ U có chiều sâu: khối sau (lệch 8 px lên phải) + mặt trước; gông bo góc, hai cánh rộng 28, khe 56–164.
+DP = 8
+def _U(dx, dy, fill, sw):
+    return (f'<path d="M{28+dx},{40+dy} L{28+dx},{100+dy} Q{28+dx},{128+dy} {56+dx},{128+dy} L{164+dx},{128+dy} '
+            f'Q{192+dx},{128+dy} {192+dx},{100+dy} L{192+dx},{40+dy} L{164+dx},{40+dy} L{164+dx},{92+dy} '
+            f'Q{164+dx},{100+dy} {156+dx},{100+dy} L{64+dx},{100+dy} Q{56+dx},{100+dy} {56+dx},{92+dy} L{56+dx},{40+dy} Z" '
+            f'fill="{fill}" stroke="currentColor" stroke-width="{sw}" stroke-linejoin="round"/>')
+b += _U(DP, -DP, "#64748b", 1.2)                       # khối phía sau
+for x in (28, 56, 164, 192):                                          # cạnh nối sau – trước ở đầu cánh
+    b += line(x, 40, x + DP, 40 - DP, "currentColor", 1.2)
+b += f'<polygon points="28,40 {28+DP},{40-DP} {56+DP},{40-DP} 56,40" fill="#fca5a5" stroke="currentColor" stroke-width="1.2"/>'
+b += f'<polygon points="164,40 {164+DP},{40-DP} {192+DP},{40-DP} 192,40" fill="#7dd3fc" stroke="currentColor" stroke-width="1.2"/>'
+b += _U(0, 0, "#cbd5e1", 1.6)                            # mặt trước (thép, xám)
+b += f'<rect x="28" y="40" width="28" height="42" fill="{RED}" stroke="currentColor" stroke-width="1.6"/>'
+b += f'<rect x="164" y="40" width="28" height="42" fill="{BLUE}" stroke="currentColor" stroke-width="1.6"/>'
+b += text(42, 67, "N", "#0f172a", 16, "middle", "800")
+b += text(178, 67, "S", "#0f172a", 16, "middle", "800")
+for y in (50, 61, 72):                                                # trong khe: thẳng, song song, cách đều, N → S
+    b += field_line(60, y, 160, y, GRN, 1.8, "5 3", 9)
+b += text(14, 148, "song song, cách đều", "#047857", 14, "start", "600")
+b += text(14, 167, "→ từ trường đều", "#047857", 14, "start", "600")
 # ii) từ phổ: mạt sắt rắc quanh thanh nam châm, xếp theo đường sức (vạch ngắn, không mũi tên)
 b += text(232, 20, "ii) Từ phổ", "currentColor", 14, "start", "700")
 b += f'<clipPath id="f3-c2"><rect x="230" y="36" width="200" height="98" rx="6"/></clipPath>'
 b += rect(230, 36, 200, 98, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
 g = ""
-for Q, _, _ in _bar_lines(330, 85, 12, (25, 45, 65, 85, 105, 125, 145)):
+for Q, _, _ in _bar_lines(330, 85, 12, (30, 55, 80, 105, 130)):
     g += _poly(Q, "currentColor", 2.2, "2 4", .7)
 g += f'<line x1="230" y1="85" x2="430" y2="85" stroke="currentColor" stroke-width="2.2" stroke-dasharray="2 4" opacity=".7"/>'
-b += f'<g clip-path="url(#f3-c2)">{g}</g>' + _bar(330, 85, 29)
+b += f'<g clip-path="url(#f3-c2)">{g}</g>' + _bar(330, 85, 29, 9)
+b += text(316, 90, "N", "#0f172a", 14, "middle", "700") + text(344, 90, "S", "#0f172a", 14, "middle", "700")
 b += text(232, 156, "mạt sắt dày ở hai cực", "currentColor", 14, "start", "500")
 # iii) đường sức vẽ theo quy ước: nét đứt, có chiều (ra ở N, vào ở S), không cắt nhau
 b += text(14, 200, "iii) Đường sức quy ước", "currentColor", 14, "start", "700")
 b += f'<clipPath id="f3-c3"><rect x="14" y="212" width="266" height="112" rx="6"/></clipPath>'
 b += rect(14, 212, 266, 112, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
 g = ""
-for Q, tip, dr in _bar_lines(147, 268, 15, (35, 70, 115)):
+for Q, tip, dr in _bar_lines(147, 268, 15, (60, 85, 120)):
     g += _poly(Q, GRN, 1.8, "6 4") + chevron(tip[0], tip[1], dr[0], dr[1], GRN, 1.8, 9)
 g += field_line(110, 268, 24, 268, GRN, 1.8, "6 4", 9)      # trục, bên trái N: B hướng ra xa N
 g += field_line(276, 268, 186, 268, GRN, 1.8, "6 4", 9)     # trục, bên phải S: B hướng vào S
-b += f'<g clip-path="url(#f3-c3)">{g}</g>' + _bar(147, 268, 36)
+b += f'<g clip-path="url(#f3-c3)">{g}</g>' + _bar(147, 268, 36, 9)
 b += text(129, 273, "N", "#0f172a", 14, "middle", "700") + text(165, 273, "S", "#0f172a", 14, "middle", "700")
 b += text(292, 246, "ra ở N, vào ở S", "currentColor", 14, "start", "500")
 b += text(292, 272, "không cắt nhau", "currentColor", 14, "start", "500")
