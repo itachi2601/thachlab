@@ -24,8 +24,8 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l11-dien-the · tn-l11-dien-the-01 · clip dienthe1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
 - l11-dien-the · tn-l11-dien-the-02 · clip dienthe2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
 - l11-tu-dien · tn-l11-tudien-02 · clip tudien2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
-- l11-cuong-do-dong-dien · tn-l11-cuong-do-dong-dien-01 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
-- l11-cuong-do-dong-dien · tn-l11-cuong-do-dong-dien-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
+- l11-cuong-do-dong-dien · tn-l11-cuong-do-dong-dien-01 · clip · bỏ qua: V6 — bước "Thử PhET" (CCK DC) cuối bài làm đúng việc đặt ampe kế hai chỗ trong mạch nối tiếp · 31/10/2026 ·
+- l11-cuong-do-dong-dien · tn-l11-cuong-do-dong-dien-02 · clip cddd2 · đã soát (cổng B 1 vòng), đã render 49,5 s 1,32 MB + khung JSON · 31/10/2026 ·
 - l11-dien-tro-ohm · tn-l11-dien-tro-ohm-03 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
 - l11-do-sdd-pin · tn-l11-do-sdd-pin-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
 - l11-nang-luong-dien · tn-l11-nang-luong-dien-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·

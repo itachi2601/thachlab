@@ -1,0 +1,52 @@
+{
+  "id": "tn-l11-cuong-do-dong-dien-02",
+  "ten": "Sạc điện thoại qua đồng hồ USB, ghi số mAh",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-cuong-do-dong-dien-02-20261031-2.mp4",
+  "tong_giay": 49.5,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Dòng không đổi thì điện lượng tỉ lệ thuận với thời gian: Δq = I·Δt.",
+      "kiem": "Dòng giữ nguyên thì số mAh tăng ra sao?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.6,
+      "chu": "Dòng giữ 1,50 A. Cứ sau 10 phút, số mAh trên đồng hồ thay đổi thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.8,
+      "chu": "Đồng hồ USB mắc nối tiếp giữa cục sạc và điện thoại, hiện I và số mAh; đồng hồ bấm giờ đo Δt."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 20.7,
+      "chu": "Mỗi 10 phút thêm 250 mAh, tới 1250 mAh ở phút 50; dòng quanh 1,50 A."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 26.4,
+      "chu": "Δq = I·Δt: đường thẳng qua gốc.\n10 phút = 600 s: 1,50·600 = 900 C = 250 mAh, nên 1 mAh = 3,6 C."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 35.7,
+      "chu": "Mới đo khi pin còn xa đầy: gần đầy pin, dòng còn 1,50 A không? Pin nhận bao nhiêu năng lượng?"
+    }
+  ],
+  "dung_dua": {
+    "giay": 10.7,
+    "cau_hoi": "Dòng giữ 1,50 A. Cứ sau 10 phút, số mAh trên đồng hồ thay đổi thế nào?",
+    "chon": [
+      "A. Mỗi 10 phút thêm cùng một lượng",
+      "B. Mỗi 10 phút thêm nhiều hơn lần trước",
+      "C. Mỗi 10 phút thêm ít hơn lần trước",
+      "D. Không tăng, vì dòng không đổi"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "Đồng hồ báo 250; 500; 750; 1000; 1250 mAh, mỗi 10 phút thêm đúng 250 mAh: dòng không đổi nên Δq = I·Δt tăng đều theo thời gian.",
+    "giai_thich_sai": "Dòng không đổi nghĩa là mỗi giây có cùng một lượng điện tích đi qua, không phải điện lượng đứng yên. Xem bảng ở đoạn kế và trừ hai hàng liền nhau."
+  }
+}
