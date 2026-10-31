@@ -101,3 +101,4 @@
 - [L11 Ch.4 Dòng điện rà soát](project_thachlab_l11_chuong4_ly_thuyet.md) — B22–26 lesson 41–45, 19 hình vẽ lại, đã đăng 30/10; treo "độ dẫn điện", α đồng
 - [Rà soát Ch.3 L12 31/10](project_thachlab_l12_ra_soat_ch3_2026_10_31.md) — 8 bài commit, 17 hình vẽ lại, chưa đăng DB
 - [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — 10 hình vẽ lại, chưa đăng DB, treo video iốt
+- [Hình nam châm chuẩn](feedback_hinh_nam_cham_chuan.md) — dùng u_magnet/bar_magnet trong svg_lib.py
