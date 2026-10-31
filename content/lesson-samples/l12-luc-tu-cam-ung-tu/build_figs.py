@@ -85,38 +85,39 @@ b += (
 )
 b += vao(118, 208, 15, BLUE)                                                    # B xuyên vào lòng bàn tay
 b += text(146, 214, "B", BLUE, 16, "start", "700")
-b += arrow("f2", "r", 138, 108, 138, 18, 3.2)                                   # F: dọc ngón cái, hướng lên
-b += text(196, 40, "F", RED, 16, "start", "700")
+b += arrow("f2", "r", 138, 100, 138, -26, 3.2)                                   # F: dọc ngón cái, hướng lên
+b += text(150, -10, "F", RED, 16, "start", "700")
 b += arrow("f2", "o", 46, 300, 386, 300, 3.2)                                   # I: cổ tay → đầu ngón
 b += text(398, 306, "I", ORG, 16, "start", "700")
 b += text(216, 324, "cổ tay → ngón tay", ORG, 15, "middle", "600")
-fig2 = wrap("0 0 460 340", "Bàn tay trái duỗi thẳng, lòng bàn tay hướng về phía người xem: đường sức từ xuyên vào lòng bàn tay, chiều từ cổ tay đến ngón tay theo dòng điện, ngón cái chỉ chiều lực từ",
+fig2 = wrap("0 -36 460 376", "Bàn tay trái duỗi thẳng, lòng bàn tay hướng về phía người xem: đường sức từ xuyên vào lòng bàn tay, chiều từ cổ tay đến ngón tay theo dòng điện, ngón cái chỉ chiều lực từ",
             b, "Hình 2. Quy tắc bàn tay trái.")
 
 # ------------------------------------------------- Hình 3: cân dòng điện (bố trí đề 2025 câu II.2)
 # Nhìn chính diện: cực N trái, cực S phải, B nằm ngang N → S; dây MN nhìn đầu, dòng M (sau) → N (trước) = ⊙.
 # F lên dây hướng lên; phản lực F' dây đẩy nam châm hướng xuống → cân tăng.
 b = defs("f3")
-b += rect(100, 214, 240, 34, "rgba(148,163,184,.10)", "currentColor", 2, 6)     # cân
-b += rect(190, 222, 60, 18, "none", "currentColor", 1.5, 3)
-b += text(220, 236, "cân", "currentColor", 12, "middle", "700")
-b += rect(130, 178, 180, 34, "rgba(148,163,184,.16)", "currentColor", 2, 6)     # đế nam châm chữ U
-b += rect(130, 70, 52, 108, "rgba(148,163,184,.16)", "currentColor", 2, 6)      # cực N
-b += rect(258, 70, 52, 108, "rgba(148,163,184,.16)", "currentColor", 2, 6)      # cực S
-b += text(156, 128, "N", "currentColor", 18, "middle", "700")
-b += text(284, 128, "S", "currentColor", 18, "middle", "700")
-b += field_line(186, 88, 254, 88, BLUE, 2.2)                                    # đường sức nét đứt N → S
-b += field_line(186, 164, 254, 164, BLUE, 2.2)
-b += text(240, 106, "B", BLUE, 14, "middle", "700")
-b += f'<circle cx="220" cy="126" r="11" fill="none" stroke="{ORG}" stroke-width="2.5"/>' + dot(220, 126, 3.5, ORG)   # ⊙ dòng ra
-b += text(235, 132, "I", ORG, 14, "start", "700")
-b += arrow("f3", "r", 220, 112, 220, 40, 3)                                     # F lên dây
-b += text(230, 48, "F", RED, 15, "start", "700")
-b += arrow("f3", "r", 220, 182, 220, 210, 3)                                    # F' dây đẩy nam châm
-b += text(230, 204, "F′", RED, 15, "start", "700")
-b += text(20, 30, "dây MN giữ cố định", "currentColor", 12, "start", "600")
-b += text(20, 48, "dòng M → N: hướng ra (⊙)", ORG, 12, "start", "600")
-fig3 = wrap("0 0 440 260", "Nam châm chữ U đặt trên cân, cực N bên trái, cực S bên phải, đường sức nằm ngang từ N sang S; dây MN giữ cố định nằm ngang trong khe, dòng điện hướng ra phía người xem; lực từ lên dây hướng lên, lực dây đẩy nam châm hướng xuống",
+# Cặp lực – phản lực F và F' cùng độ lớn → vẽ cùng dài 50 px.
+b += rect(100, 252, 240, 40, "rgba(148,163,184,.10)", "currentColor", 2, 6)     # cân
+b += rect(186, 261, 68, 22, "none", "currentColor", 1.5, 3)
+b += text(220, 278, "cân", "currentColor", 14, "middle", "700")
+b += rect(130, 190, 180, 60, "rgba(148,163,184,.16)", "currentColor", 2, 6)     # đế nam châm chữ U
+b += rect(130, 80, 52, 110, "rgba(148,163,184,.16)", "currentColor", 2, 6)      # cực N
+b += rect(258, 80, 52, 110, "rgba(148,163,184,.16)", "currentColor", 2, 6)      # cực S
+b += text(156, 142, "N", "currentColor", 18, "middle", "700")
+b += text(284, 142, "S", "currentColor", 18, "middle", "700")
+b += field_line(186, 98, 254, 98, BLUE, 2.2)                                    # đường sức nét đứt N → S
+b += field_line(186, 176, 254, 176, BLUE, 2.2)
+b += text(190, 122, "B", BLUE, 14, "start", "700")
+b += f'<circle cx="220" cy="140" r="11" fill="none" stroke="{ORG}" stroke-width="2.5"/>' + dot(220, 140, 3.5, ORG)   # ⊙ dòng ra
+b += text(236, 146, "I", ORG, 15, "start", "700")
+b += arrow("f3", "r", 220, 126, 220, 76, 3)                                     # F lên dây (50 px)
+b += text(230, 80, "F", RED, 15, "start", "700")
+b += arrow("f3", "r", 220, 196, 220, 246, 3)                                    # F' dây đẩy nam châm (50 px)
+b += text(230, 230, "F′", RED, 15, "start", "700")
+b += text(16, 28, "dây MN giữ cố định", "currentColor", 14, "start", "600")
+b += text(16, 50, "dòng M → N: hướng ra (⊙)", ORG, 14, "start", "600")
+fig3 = wrap("0 0 440 304", "Nam châm chữ U đặt trên cân, cực N bên trái, cực S bên phải, đường sức nằm ngang từ N sang S; dây MN giữ cố định nằm ngang trong khe, dòng điện hướng ra phía người xem; lực từ lên dây hướng lên, lực dây đẩy nam châm hướng xuống",
             b, "Hình 3. Cân dòng điện.")
 
 # ------------------------------------------------- Hình 4a/4b/4c: ảnh OpenStax College Physics 2e (đợt 2, 27/10/2026)
@@ -139,7 +140,7 @@ fig4b = raster("hinh-vong-day-duong-suc.webp",
 fig4c = raster("hinh-ong-day-duong-suc.webp",
                "Mặt cắt ống dây dài: dòng điện đi vào trang ở hàng vòng trên (dấu X) và đi ra khỏi trang ở hàng vòng dưới (dấu chấm); trong lòng ống các đường sức xanh song song, cách đều, đi từ cực S sang cực N; bên ngoài khép kín như nam châm thẳng",
                "Hình 4c. Ống dây: trong lòng ống đường sức song song, cách đều.<br>"
-               "I<sub>in</sub> = dòng vào trang (⊗) · I<sub>out</sub> = dòng ra (⊙).",
+               "I<sub>in</sub> = dòng vào trang (⊗).<br>I<sub>out</sub> = dòng ra (⊙).",
                425, 440, "22.39b")
 
 # ------------------------------------------------- thay vào theory.html
