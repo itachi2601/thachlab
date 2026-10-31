@@ -1,0 +1,52 @@
+{
+  "id": "tn-l11-nguon-dien-02",
+  "ten": "Vôn kế ở hai cực pin khi đổi điện trở mạch ngoài",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-02-20261031-2.mp4",
+  "tong_giay": 49.6,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Mạch kín: dòng càng lớn, U hai cực pin càng nhỏ hơn ℰ.",
+      "kiem": "Vôn kế ở hai cực pin có phụ thuộc R không?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.8,
+      "chu": "Đóng K rồi thay R nhỏ dần. Số chỉ vôn kế ở hai cực pin thay đổi thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.0,
+      "chu": "Pin, khoá K, ampe kế, hộp điện trở R mắc nối tiếp; vôn kế mắc vào hai cực pin."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 19.8,
+      "chu": "Hở mạch vôn kế chỉ 1,50 V. R giảm: I tăng 0,10 → 0,60 A, U tụt 1,40 → 0,90 V."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 27.4,
+      "chu": "Phần hụt tăng tỉ lệ với I: ℰ − U = I·r, r là điện trở trong của pin.\nNên U = ℰ − I·r."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 33.4,
+      "chu": "Pin nóng lên hay cũ thêm, r có giữ nguyên?"
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.8,
+    "cau_hoi": "Đóng K rồi thay R nhỏ dần. Số chỉ vôn kế ở hai cực pin thay đổi thế nào?",
+    "chon": [
+      "A. Giữ nguyên, bằng 1,5 V ghi trên vỏ pin",
+      "B. Tăng dần, vì dòng qua mạch mạnh hơn",
+      "C. Giảm dần theo từng lần đổi R",
+      "D. Tăng lúc đầu, rồi giảm về sau"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "Vôn kế tụt từ 1,50 V (hở mạch) qua 1,40; 1,35; 1,20; 1,00 xuống 0,90 V khi R nhỏ dần: dòng lớn hơn thì phần hụt I·r trong pin lớn hơn.",
+    "giai_thich_sai": "Số trên vỏ pin là suất điện động, chỉ đọc được khi hở mạch. Khi có dòng, một phần bị hụt trên điện trở trong của pin, dòng càng lớn phần hụt càng lớn. Xem cột U trong bảng ở đoạn kế."
+  }
+}
