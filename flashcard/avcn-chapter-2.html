@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcard Chapter 2 — Anh văn chuyên ngành Cơ khí | ThachLab</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --bg:#f7f8fb; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#d6dbe4; --accent:#c2410c; --accent-soft:#fff1e6; --ok:#047857; --ok-soft:#e7f7ef; --bad:#b91c1c; --bad-soft:#fdecec; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f172a; --card:#1e293b; --ink:#f1f5f9; --muted:#cbd5e1; --line:#334155; --accent:#fb923c; --accent-soft:#2a1d14; --ok:#34d399; --ok-soft:#10291f; --bad:#f87171; --bad-soft:#2d1515; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:560px; margin:0 auto; padding:16px 16px 40px; }
+a { color:var(--accent); }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; }
+.top a { display:inline-flex; align-items:center; min-height:44px; font-weight:600; text-decoration:none; }
+h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
+.sub { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+.tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:4px; margin-bottom:14px; }
+.tabs button { min-height:44px; border:0; border-radius:10px; background:transparent; color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.tabs button[aria-selected=true] { background:var(--accent); color:#fff; }
+.boxes { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
+.boxes div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:6px; text-align:center; font-size:.85rem; color:var(--muted); }
+.boxes b { display:block; font-size:1.3rem; color:var(--ink); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
+.pic { width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; display:block; }
+.def { font-size:1.1rem; font-weight:600; margin:12px 0 0; }
+.hint { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+.back { border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+.term { font-size:1.6rem; font-weight:800; margin:0; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.ipa { color:var(--muted); font-size:1rem; font-weight:400; }
+.vi { font-size:1.15rem; margin:4px 0 0; }
+.btn { min-height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:700; cursor:pointer; }
+.btn-main { width:100%; margin-top:14px; background:var(--accent); border-color:var(--accent); color:#fff; }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+.btn-bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.btn-ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.speak { min-width:44px; min-height:44px; border-radius:50%; border:1px solid var(--line); background:var(--accent-soft); font-size:1.1rem; cursor:pointer; }
+.opts { display:grid; gap:8px; margin-top:14px; }
+.opts button { min-height:48px; text-align:left; padding:8px 14px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.opts button.ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.opts button.bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.score { color:var(--muted); font-size:.95rem; margin:0 0 10px; }
+.done { text-align:center; }
+.credit { color:var(--muted); font-size:.8rem; margin-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><a href="/lop-hoc/avcn/">← Về bài học</a><span class="sub" style="margin:0">Chapter 2</span></div>
+  <h1>Flashcard: Safety at Work</h1>
+  <p class="sub">20 từ ⭐ của chương. Chạm 🔊 để nghe phát âm.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-leitner" aria-selected="true">Thẻ 3 hộp</button>
+    <button role="tab" id="t-quiz" aria-selected="false">Nhìn ảnh đoán từ</button>
+  </div>
+  <section id="view"></section>
+  <p class="credit">Ảnh: Wikimedia Commons, giấy phép mở. Nguồn từng ảnh ghi trong bài học.</p>
+</main>
+<script>
+const TERMS = [{"term": "safety helmet", "ipa": "/ˈseɪfti ˈhelmɪt/", "vi": "mũ bảo hộ", "def": "Protects the head from accidental injury.", "img": "/assets/avcn/chapter-2/helmet.webp", "group": "Cụm A · Bảo vệ đầu, mắt, tai, mũi, tay"}, {"term": "safety goggles", "ipa": "/ˈseɪfti ˈɡɒɡlz/", "vi": "kính bảo hộ", "def": "Provide protection to the eyes.", "img": "/assets/avcn/chapter-2/goggles.webp", "group": "Cụm A · Bảo vệ đầu, mắt, tai, mũi, tay"}, {"term": "ear protectors", "ipa": "/ɪə prəˈtektəz/", "vi": "chụp tai chống ồn", "def": "Protect ears against noise.", "img": "/assets/avcn/chapter-2/ear-protectors.webp", "group": "Cụm A · Bảo vệ đầu, mắt, tai, mũi, tay"}, {"term": "protective mask", "ipa": "/prəˈtektɪv mɑːsk/", "vi": "khẩu trang, mặt nạ chống bụi và khí độc", "def": "Protects from inhaling harmful air particles as dusts, vapours, fumes and gases.", "img": "/assets/avcn/chapter-2/mask.webp", "group": "Cụm A · Bảo vệ đầu, mắt, tai, mũi, tay"}, {"term": "safety gloves", "ipa": "/ˈseɪfti ɡlʌvz/", "vi": "găng tay bảo hộ", "def": "Handle heavy materials such as breeze-blocks, beams and avoid injuries.", "img": "/assets/avcn/chapter-2/gloves.webp", "group": "Cụm A · Bảo vệ đầu, mắt, tai, mũi, tay"}, {"term": "protective apron", "ipa": "/prəˈtektɪv ˈeɪprən/", "vi": "tạp dề bảo hộ (yếm hàn)", "def": "Protects the body against welding work.", "img": "/assets/avcn/chapter-2/apron.webp", "group": "Cụm B · Bảo vệ thân, chân, lưng, đầu gối"}, {"term": "safety shoes", "ipa": "/ˈseɪfti ʃuːz/", "vi": "giày bảo hộ", "def": "Protect the feet from accidental injury.", "img": "/assets/avcn/chapter-2/safety-shoes.webp", "group": "Cụm B · Bảo vệ thân, chân, lưng, đầu gối"}, {"term": "safety harness", "ipa": "/ˈseɪfti ˈhɑːnɪs/", "vi": "dây đai an toàn (chống rơi ngã)", "def": "Avoids the worker falling.", "img": "/assets/avcn/chapter-2/harness.webp", "group": "Cụm B · Bảo vệ thân, chân, lưng, đầu gối"}, {"term": "dorsal belt", "ipa": "/ˈdɔːsl belt/", "vi": "đai lưng bảo vệ lưng", "def": "Handles heavy materials and protects the back.", "img": "/assets/avcn/chapter-2/dorsal-belt.webp", "group": "Cụm B · Bảo vệ thân, chân, lưng, đầu gối"}, {"term": "knee pads", "ipa": "/niː pædz/", "vi": "miếng đệm bảo vệ đầu gối", "def": "Protect knees on the ground while working.", "img": "/assets/avcn/chapter-2/knee-pads.webp", "group": "Cụm B · Bảo vệ thân, chân, lưng, đầu gối"}, {"term": "prohibition sign", "ipa": "/ˌprəʊhɪˈbɪʃn saɪn/", "vi": "biển cấm", "def": "A safety sign which tells you what you must not do.", "img": "/assets/avcn/chapter-2/sign-prohibition.webp", "group": "Cụm C · Năm loại biển báo an toàn"}, {"term": "hazard sign", "ipa": "/ˈhæzəd saɪn/", "vi": "biển cảnh báo nguy hiểm (warning sign)", "def": "A safety sign which warns you of danger.", "img": "/assets/avcn/chapter-2/sign-hazard.webp", "group": "Cụm C · Năm loại biển báo an toàn"}, {"term": "mandatory sign", "ipa": "/ˈmændətri saɪn/", "vi": "biển bắt buộc", "def": "A safety sign which tells you what you must do.", "img": "/assets/avcn/chapter-2/sign-mandatory.webp", "group": "Cụm C · Năm loại biển báo an toàn"}, {"term": "fire safety sign", "ipa": "/ˈfaɪə ˈseɪfti saɪn/", "vi": "biển phòng cháy chữa cháy", "def": "A safety sign which shows where fire equipment and fire alarms are.", "img": "/assets/avcn/chapter-2/sign-fire.webp", "group": "Cụm C · Năm loại biển báo an toàn"}, {"term": "general safety sign", "ipa": "/ˈdʒenrəl ˈseɪfti saɪn/", "vi": "biển chỉ dẫn an toàn chung (biển an toàn: lối thoát, cứu thương)", "def": "A safety sign which shows safe places, such as an exit or first aid.", "img": "/assets/avcn/chapter-2/sign-general.webp", "group": "Cụm C · Năm loại biển báo an toàn"}, {"term": "confined areas", "ipa": "/kənˈfaɪnd ˈeəriəz/", "vi": "không gian hẹp, kín (hầm, bồn, khoang…)", "def": "A space with limited entry that is not suitable for people.", "img": "/assets/avcn/chapter-2/confined-areas.webp", "group": "Cụm D · Tai nạn và nơi làm việc"}, {"term": "overexertion", "ipa": "/ˌəʊvərɪɡˈzɜːʃn/", "vi": "gắng sức quá mức", "def": "Too much use of physical or mental energy; hard work.", "img": "", "group": "Cụm D · Tai nạn và nơi làm việc"}, {"term": "sprain", "ipa": "/spreɪn/", "vi": "bong gân", "def": "Damage to one or more ligaments in a joint, often caused by trauma.", "img": "/assets/avcn/chapter-2/sprain.webp", "group": "Cụm D · Tai nạn và nơi làm việc"}, {"term": "apprentice", "ipa": "/əˈprentɪs/", "vi": "người học việc, thợ học nghề", "def": "Someone who works for a skilled person for a particular period.", "img": "/assets/avcn/chapter-2/apprentice.webp", "group": "Cụm D · Tai nạn và nơi làm việc"}, {"term": "locker room", "ipa": "/ˈlɒkə ruːm/", "vi": "phòng thay đồ có tủ cá nhân", "def": "A room for changing clothes.", "img": "/assets/avcn/chapter-2/locker-room.webp", "group": "Cụm D · Tai nạn và nơi làm việc"}];
+const AUDIO = {"safety helmet": "/assets/avcn/chapter-2/audio/739d739757.mp3", "Protects the head from accidental injury.": "/assets/avcn/chapter-2/audio/921e55c286.mp3", "safety goggles": "/assets/avcn/chapter-2/audio/f0124a18dd.mp3", "Provide protection to the eyes.": "/assets/avcn/chapter-2/audio/f181b09ad6.mp3", "ear protectors": "/assets/avcn/chapter-2/audio/0f0adf540f.mp3", "Protect ears against noise.": "/assets/avcn/chapter-2/audio/07e805fbdd.mp3", "protective mask": "/assets/avcn/chapter-2/audio/24b8e814fa.mp3", "Protects from inhaling harmful air particles as dusts, vapours, fumes and gases.": "/assets/avcn/chapter-2/audio/6eca466d98.mp3", "safety gloves": "/assets/avcn/chapter-2/audio/ac51ae20a6.mp3", "Handle heavy materials such as breeze-blocks, beams and avoid injuries.": "/assets/avcn/chapter-2/audio/6478549a66.mp3", "protective apron": "/assets/avcn/chapter-2/audio/b034415259.mp3", "Protects the body against welding work.": "/assets/avcn/chapter-2/audio/8bfe07d273.mp3", "safety shoes": "/assets/avcn/chapter-2/audio/684e72058e.mp3", "Protect the feet from accidental injury.": "/assets/avcn/chapter-2/audio/54025d4a15.mp3", "safety harness": "/assets/avcn/chapter-2/audio/60017bca1a.mp3", "Avoids the worker falling.": "/assets/avcn/chapter-2/audio/06c8e4b82a.mp3", "dorsal belt": "/assets/avcn/chapter-2/audio/6f4a5e9925.mp3", "Handles heavy materials and protects the back.": "/assets/avcn/chapter-2/audio/ac36478111.mp3", "knee pads": "/assets/avcn/chapter-2/audio/164ec2ef13.mp3", "Protect knees on the ground while working.": "/assets/avcn/chapter-2/audio/130bd334a1.mp3", "prohibition sign": "/assets/avcn/chapter-2/audio/db91a592da.mp3", "A safety sign which tells you what you must not do.": "/assets/avcn/chapter-2/audio/b37e8efaae.mp3", "hazard sign": "/assets/avcn/chapter-2/audio/c7fae6db40.mp3", "A safety sign which warns you of danger.": "/assets/avcn/chapter-2/audio/2e665b5b3a.mp3", "mandatory sign": "/assets/avcn/chapter-2/audio/8e111f7f61.mp3", "A safety sign which tells you what you must do.": "/assets/avcn/chapter-2/audio/336d5b1395.mp3", "fire safety sign": "/assets/avcn/chapter-2/audio/fd72100b9c.mp3", "A safety sign which shows where fire equipment is.": "/assets/avcn/chapter-2/audio/e3c0bb3f96.mp3", "general safety sign": "/assets/avcn/chapter-2/audio/d006b46b51.mp3", "A safety sign which shows safe places, such as an exit.": "/assets/avcn/chapter-2/audio/5d55722302.mp3", "confined areas": "/assets/avcn/chapter-2/audio/5a9eddd7ac.mp3", "A space with limited entry that is not suitable for people.": "/assets/avcn/chapter-2/audio/c8a0edcfc9.mp3", "overexertion": "/assets/avcn/chapter-2/audio/b7277a02fe.mp3", "Use of physical or mental energy; hard work.": "/assets/avcn/chapter-2/audio/08f53ab8ae.mp3", "sprain": "/assets/avcn/chapter-2/audio/6c5d393942.mp3", "Damage to one or more ligaments in a joint, often caused by trauma.": "/assets/avcn/chapter-2/audio/ecde955122.mp3", "apprentice": "/assets/avcn/chapter-2/audio/af8ebd1140.mp3", "Someone who works for a skilled person for a particular period.": "/assets/avcn/chapter-2/audio/f1c18044eb.mp3", "locker room": "/assets/avcn/chapter-2/audio/dc22c08c51.mp3", "A room for changing clothes.": "/assets/avcn/chapter-2/audio/160a41e469.mp3", "strain": "/assets/avcn/chapter-2/audio/e18abad45f.mp3", "slip": "/assets/avcn/chapter-2/audio/93c4a6510b.mp3", "shower facilities": "/assets/avcn/chapter-2/audio/a850ecbc5a.mp3", "injuries": "/assets/avcn/chapter-2/audio/40664a3eb2.mp3", "risk": "/assets/avcn/chapter-2/audio/df6c193431.mp3", "sharp": "/assets/avcn/chapter-2/audio/4adcc9d201.mp3", "satisfy": "/assets/avcn/chapter-2/audio/fe9e6f782a.mp3", "ventilated": "/assets/avcn/chapter-2/audio/dbebf4fe7e.mp3", "pit": "/assets/avcn/chapter-2/audio/8989691c7a.mp3", "fire brigade": "/assets/avcn/chapter-2/audio/f5f3cddda1.mp3", "alarm button": "/assets/avcn/chapter-2/audio/e0e7779278.mp3", "assembly point": "/assets/avcn/chapter-2/audio/208cd530f5.mp3", "At most shops the work environment is well-lighted and properly ventilated.": "/assets/avcn/chapter-2/audio/b2a4af2d2d.mp3", "At most shops": "/assets/avcn/chapter-2/audio/ccb0f6c2f4.mp3", "work environment": "/assets/avcn/chapter-2/audio/836d920351.mp3", "well-lighted": "/assets/avcn/chapter-2/audio/f52bc0efed.mp3", "properly": "/assets/avcn/chapter-2/audio/216a4cf885.mp3", "However some shops are drafty and noisy.": "/assets/avcn/chapter-2/audio/446a827e1c.mp3", "drafty": "/assets/avcn/chapter-2/audio/41ad31b58b.mp3", "However": "/assets/avcn/chapter-2/audio/117db74148.mp3", "noisy": "/assets/avcn/chapter-2/audio/226bbe6a78.mp3", "Moreover, on a hot summer or frigid winter day shop temperatures are not always ideal.": "/assets/avcn/chapter-2/audio/4385b73f40.mp3", "frigid": "/assets/avcn/chapter-2/audio/3bc4ecf4c8.mp3", "Moreover": "/assets/avcn/chapter-2/audio/8c3da34604.mp3", "temperatures": "/assets/avcn/chapter-2/audio/cd40483691.mp3", "not always ideal": "/assets/avcn/chapter-2/audio/302941b180.mp3", "Some shops that specialize in oil changes and lubrication use an arrangement commonly called a pit.": "/assets/avcn/chapter-2/audio/5c69fcbc03.mp3", "lubrication": "/assets/avcn/chapter-2/audio/c779de622a.mp3", "specialize in": "/assets/avcn/chapter-2/audio/6d1213df65.mp3", "oil changes": "/assets/avcn/chapter-2/audio/9d1c91b857.mp3", "arrangement": "/assets/avcn/chapter-2/audio/1eb8cb9635.mp3", "commonly called": "/assets/avcn/chapter-2/audio/094ac8e21a.mp3", "Customers drive their vehicles into the shop.": "/assets/avcn/chapter-2/audio/e336164064.mp3", "vehicles": "/assets/avcn/chapter-2/audio/852a85eebc.mp3", "Customers": "/assets/avcn/chapter-2/audio/5e0c7d2c42.mp3", "drive": "/assets/avcn/chapter-2/audio/c54ee3a96c.mp3", "into the shop": "/assets/avcn/chapter-2/audio/08a98b4525.mp3", "The mechanic then enters the pit to perform the work.": "/assets/avcn/chapter-2/audio/20725db3ed.mp3", "mechanic": "/assets/avcn/chapter-2/audio/f3fc9aa45b.mp3", "then": "/assets/avcn/chapter-2/audio/c02c47ad8d.mp3", "enters": "/assets/avcn/chapter-2/audio/f4b1ab7814.mp3", "perform the work": "/assets/avcn/chapter-2/audio/c363ef2a24.mp3", "Pit areas are typically not well-ventilated and can be hot during summer months.": "/assets/avcn/chapter-2/audio/efcd9aac92.mp3", "typically": "/assets/avcn/chapter-2/audio/f2080080a6.mp3", "areas": "/assets/avcn/chapter-2/audio/d0a9d8af28.mp3", "not well-ventilated": "/assets/avcn/chapter-2/audio/1e98237dfa.mp3", "hot": "/assets/avcn/chapter-2/audio/85ccf426c7.mp3", "during summer months": "/assets/avcn/chapter-2/audio/3d39a08a0d.mp3", "The very nature of the work also means that mechanics can seldom avoid handling greasy and dirty parts.": "/assets/avcn/chapter-2/audio/87caec5be1.mp3", "seldom": "/assets/avcn/chapter-2/audio/6dab6c6f40.mp3", "greasy": "/assets/avcn/chapter-2/audio/4b2f2a8d2f.mp3", "nature of the work": "/assets/avcn/chapter-2/audio/ce98729477.mp3", "avoid": "/assets/avcn/chapter-2/audio/378b712037.mp3", "handling": "/assets/avcn/chapter-2/audio/fd3c8c1216.mp3", "dirty parts": "/assets/avcn/chapter-2/audio/e8540bd84a.mp3", "According to the latest Statistics, the rate of illnesses and injuries is higher for mechanics than the national average rate.": "/assets/avcn/chapter-2/audio/92c445a4a5.mp3", "According to": "/assets/avcn/chapter-2/audio/6b67303887.mp3", "latest Statistics": "/assets/avcn/chapter-2/audio/948dc5a712.mp3", "illnesses": "/assets/avcn/chapter-2/audio/321101d748.mp3", "rate": "/assets/avcn/chapter-2/audio/3284e4ae63.mp3", "national average": "/assets/avcn/chapter-2/audio/1d5f22c66d.mp3", "Part of the risk comes from lifting heavy tools, equipment or parts.": "/assets/avcn/chapter-2/audio/7ee000761b.mp3", "Part of": "/assets/avcn/chapter-2/audio/6ad7528d4c.mp3", "comes from": "/assets/avcn/chapter-2/audio/24a5c3e09b.mp3", "lifting": "/assets/avcn/chapter-2/audio/2e9263f708.mp3", "heavy": "/assets/avcn/chapter-2/audio/117db7a7ee.mp3", "equipment": "/assets/avcn/chapter-2/audio/abde12756d.mp3", "Other injuries, such as small burns, bruises or cuts, are caused from contact with hot or sharp parts,": "/assets/avcn/chapter-2/audio/057f8335df.mp3", "bruises": "/assets/avcn/chapter-2/audio/efd61e91b8.mp3", "Other": "/assets/avcn/chapter-2/audio/b86eb1de85.mp3", "such as": "/assets/avcn/chapter-2/audio/06ba079209.mp3", "burns": "/assets/avcn/chapter-2/audio/25f67b81ca.mp3", "cuts": "/assets/avcn/chapter-2/audio/6ee0db6de0.mp3", "contact with": "/assets/avcn/chapter-2/audio/a0da0bff2a.mp3", "the need to reach into confined areas or having a tool slip under pressure.": "/assets/avcn/chapter-2/audio/131b57119b.mp3", "the need to": "/assets/avcn/chapter-2/audio/f1e509d12b.mp3", "reach into": "/assets/avcn/chapter-2/audio/8a3fe5ea43.mp3", "tool": "/assets/avcn/chapter-2/audio/bf74c1e7b8.mp3", "under pressure": "/assets/avcn/chapter-2/audio/4dbe8da9da.mp3", "Strains and sprains were also common and were typically caused by overexertion.": "/assets/avcn/chapter-2/audio/e77800c89c.mp3", "sprains": "/assets/avcn/chapter-2/audio/2db9a89c22.mp3", "Strains": "/assets/avcn/chapter-2/audio/cc49fa1956.mp3", "common": "/assets/avcn/chapter-2/audio/b9e2a057ce.mp3", "typically caused by": "/assets/avcn/chapter-2/audio/35004876b1.mp3", "Technicians may work as a team or be assisted by an apprentice or helper when doing heavy work, such as removing engines and transmissions.": "/assets/avcn/chapter-2/audio/349f478424.mp3", "Technicians": "/assets/avcn/chapter-2/audio/5d9343bb1c.mp3", "assisted by": "/assets/avcn/chapter-2/audio/b6fff5475b.mp3", "helper": "/assets/avcn/chapter-2/audio/8869da5ec7.mp3", "removing": "/assets/avcn/chapter-2/audio/98c377ca0f.mp3", "transmissions": "/assets/avcn/chapter-2/audio/6bb8ec569a.mp3", "Many employers provide uniforms, locker rooms, and shower facilities.": "/assets/avcn/chapter-2/audio/4ef765475a.mp3", "locker rooms": "/assets/avcn/chapter-2/audio/02d3592b1f.mp3", "employers": "/assets/avcn/chapter-2/audio/c7cbdad2ff.mp3", "provide": "/assets/avcn/chapter-2/audio/26e18b4dda.mp3", "uniforms": "/assets/avcn/chapter-2/audio/aca7f8452a.mp3", "Most automotive service technicians and mechanics work a standard 40 hour week.": "/assets/avcn/chapter-2/audio/fedea79e4c.mp3", "standard": "/assets/avcn/chapter-2/audio/5c38813e38.mp3", "Most": "/assets/avcn/chapter-2/audio/814b221873.mp3", "automotive": "/assets/avcn/chapter-2/audio/511dbe4aac.mp3", "service technicians": "/assets/avcn/chapter-2/audio/8b72a3d2c8.mp3", "week": "/assets/avcn/chapter-2/audio/e9c66ba67e.mp3", "Some may work evenings and weekends to satisfy customer service needs.": "/assets/avcn/chapter-2/audio/7f56667cd8.mp3", "Some": "/assets/avcn/chapter-2/audio/8203f76803.mp3", "evenings": "/assets/avcn/chapter-2/audio/458df75399.mp3", "weekends": "/assets/avcn/chapter-2/audio/a44db8f203.mp3", "needs": "/assets/avcn/chapter-2/audio/00dfff88d1.mp3", "Fire kills, often very quickly.": "/assets/avcn/chapter-2/audio/59907109ab.mp3", "kills": "/assets/avcn/chapter-2/audio/c0f23b1971.mp3", "Fire": "/assets/avcn/chapter-2/audio/be83f9fbbf.mp3", "often": "/assets/avcn/chapter-2/audio/6c99118b16.mp3", "very quickly": "/assets/avcn/chapter-2/audio/8dd122432b.mp3", "It is important to know exactly what to do if a fire breaks out.": "/assets/avcn/chapter-2/audio/756dec16d5.mp3", "breaks out": "/assets/avcn/chapter-2/audio/ee0dfe14c3.mp3", "important": "/assets/avcn/chapter-2/audio/6e949d1d8c.mp3", "exactly": "/assets/avcn/chapter-2/audio/2d06e6b781.mp3", "what to do": "/assets/avcn/chapter-2/audio/4de23f99f7.mp3", "Lives may depend on it.": "/assets/avcn/chapter-2/audio/2fb3cc273b.mp3", "If you find a fire, do not try to put it out yourself.": "/assets/avcn/chapter-2/audio/7d48ca0896.mp3", "put it out": "/assets/avcn/chapter-2/audio/dc80d89c6f.mp3", "find": "/assets/avcn/chapter-2/audio/1573400566.mp3", "do not try to": "/assets/avcn/chapter-2/audio/d6dbd68d21.mp3", "yourself": "/assets/avcn/chapter-2/audio/e63fa713f8.mp3", "Break the cover on the nearest alarm button and press it hard.": "/assets/avcn/chapter-2/audio/f4de6f7f1d.mp3", "Break": "/assets/avcn/chapter-2/audio/20536f8bc2.mp3", "cover": "/assets/avcn/chapter-2/audio/b8cef0120e.mp3", "nearest": "/assets/avcn/chapter-2/audio/6c1aa811f8.mp3", "press": "/assets/avcn/chapter-2/audio/33df400da4.mp3", "hard": "/assets/avcn/chapter-2/audio/72b9154cbc.mp3", "All staff should know where these are.": "/assets/avcn/chapter-2/audio/34cda0937e.mp3", "Dial 114 to call the fire brigade.": "/assets/avcn/chapter-2/audio/b6512a8b57.mp3", "Dial": "/assets/avcn/chapter-2/audio/4954247da4.mp3", "call": "/assets/avcn/chapter-2/audio/bdd7222a2b.mp3", "Leave by the nearest exit.": "/assets/avcn/chapter-2/audio/9e3e03a395.mp3", "exit": "/assets/avcn/chapter-2/audio/ed238f2a9c.mp3", "Leave": "/assets/avcn/chapter-2/audio/c258e1c52c.mp3", "Close all the doors.": "/assets/avcn/chapter-2/audio/5c523a4e4c.mp3", "Assist any service users near you.": "/assets/avcn/chapter-2/audio/c9bfdda701.mp3", "Assist": "/assets/avcn/chapter-2/audio/cab9366119.mp3", "service users": "/assets/avcn/chapter-2/audio/e74042d801.mp3", "near you": "/assets/avcn/chapter-2/audio/465f3d0ad9.mp3", "Go to the assembly point.": "/assets/avcn/chapter-2/audio/8fc973080c.mp3", "Go to": "/assets/avcn/chapter-2/audio/5f2ac05694.mp3", "Do not stop to collect belongings.": "/assets/avcn/chapter-2/audio/ec6fcf3e48.mp3", "belongings": "/assets/avcn/chapter-2/audio/941f60d98c.mp3", "Do not": "/assets/avcn/chapter-2/audio/b1b6bd2572.mp3", "stop to": "/assets/avcn/chapter-2/audio/e59cb714cc.mp3", "collect": "/assets/avcn/chapter-2/audio/87f593fad0.mp3", "Do not go back into the building until you have been told it is safe to do so.": "/assets/avcn/chapter-2/audio/4b8f5ea500.mp3", "until": "/assets/avcn/chapter-2/audio/bb67ef9f95.mp3", "go back into": "/assets/avcn/chapter-2/audio/89bb1b88b8.mp3", "building": "/assets/avcn/chapter-2/audio/a6737b398b.mp3", "have been told": "/assets/avcn/chapter-2/audio/450a05f0c3.mp3", "safe": "/assets/avcn/chapter-2/audio/6c4a9fbc91.mp3", "A safety helmet protects the head from accidental injury.": "/assets/avcn/chapter-2/audio/1b09ae9701.mp3", "Ear protectors protect ears against noise.": "/assets/avcn/chapter-2/audio/1eefc6d4e7.mp3", "A protective mask protects workers from inhaling harmful dust.": "/assets/avcn/chapter-2/audio/f8a077eaf5.mp3", "Strains and sprains are typically caused by overexertion.": "/assets/avcn/chapter-2/audio/d088bf714b.mp3", "Other injuries are caused by contact with hot or sharp parts.": "/assets/avcn/chapter-2/audio/1ceb426cd8.mp3", "Technicians may be assisted by an apprentice.": "/assets/avcn/chapter-2/audio/76fc0f8e8c.mp3", "A good workshop is well-lighted and properly . Mechanics change into uniforms in the  and wash in the  after work. Heavy jobs need a team, so an  may help the technician. Some mechanics work at weekends to  customer needs.": "/assets/avcn/chapter-2/audio/c0d3a9e72c.mp3", "A safety sign which shows where fire equipment and fire alarms are.": "/assets/avcn/chapter-2/audio/02982354b7.mp3", "A safety sign which shows safe places, such as an exit or first aid.": "/assets/avcn/chapter-2/audio/71262fd0f4.mp3", "Too much use of physical or mental energy; hard work.": "/assets/avcn/chapter-2/audio/d8667d358d.mp3", "fire extinguisher": "/assets/avcn/chapter-2/audio/e81f3cc94d.mp3", "first-aid kit": "/assets/avcn/chapter-2/audio/5aff2f7c90.mp3", "eyewash station": "/assets/avcn/chapter-2/audio/af8a530211.mp3"};
+let curAudio = null;
+const KEY = "avcn-flashcard-ch2";
+TERMS.forEach((t, i) => { t.id = i; });
+// Cặp từ đồng nghĩa trong chương: không cho làm phương án nhiễu của nhau (hai đáp án cùng đúng).
+const SAME = [["coolant", "cutting fluid"]];
+const clash = (a, b) => a.term === b.term || SAME.some((p) => p.includes(a.term) && p.includes(b.term));
+const view = document.getElementById("view");
+let box = {};
+try { box = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { box = {}; }
+const boxOf = (t) => box[t.id] || 1;
+function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function speak(text) {
+  if (curAudio) { curAudio.pause(); curAudio = null; }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (AUDIO[text]) {
+    const a = new Audio(AUDIO[text]);
+    curAudio = a;
+    a.play().catch((e) => { if (curAudio === a && !(e && e.name === "AbortError")) speakBrowser(text); });
+    return;
+  }
+  speakBrowser(text);
+}
+function speakBrowser(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.9;
+  const score = (x) => {
+    const l = x.lang.replace("_", "-").toLowerCase();
+    if (!l.startsWith("en")) return -1;
+    let s = l === "en-us" ? 10 : 5;
+    if (/premium|enhanced|neural|natural|online/i.test(x.name)) s += 30;
+    if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(x.name)) s += 20;
+    if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(x.name)) s -= 40;
+    if (x.localService === false) s += 5;
+    return s;
+  };
+  const v = speechSynthesis.getVoices().filter((x) => score(x) >= 0).sort((a, b) => score(b) - score(a))[0];
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+view.addEventListener("click", (e) => { const b = e.target.closest("[data-speak]"); if (b) speak(b.dataset.speak); });
+function front(t) {
+  return (t.img ? `<img class="pic" src="${t.img}" alt="">` : "") + `<p class="def">${esc(t.def)}</p>`;
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+// Thẻ Leitner 3 hộp: hộp 1 hiện nhiều nhất; "Nhớ rồi" đẩy lên một hộp, "Chưa nhớ" về hộp 1.
+let current = null;
+function pickCard() {
+  const weights = { 1: 6, 2: 3, 3: 1 };
+  const pool = TERMS.filter((t) => t !== current);
+  const total = pool.reduce((s, t) => s + weights[boxOf(t)], 0);
+  let r = Math.random() * total;
+  for (const t of pool) { r -= weights[boxOf(t)]; if (r <= 0) return t; }
+  return pool[0];
+}
+function boxesHtml() {
+  const c = { 1: 0, 2: 0, 3: 0 };
+  TERMS.forEach((t) => c[boxOf(t)]++);
+  return `<div class="boxes"><div><b>${c[1]}</b>Hộp 1 · chưa nhớ</div><div><b>${c[2]}</b>Hộp 2 · đang nhớ</div><div><b>${c[3]}</b>Hộp 3 · đã thuộc</div></div>`;
+}
+function renderLeitner() {
+  current = pickCard();
+  const t = current;
+  view.innerHTML = boxesHtml() + `<div class="card">${front(t)}<p class="hint">Nghĩ ra từ tiếng Anh trước, rồi mới lật thẻ.</p>
+    <div id="back" class="back" hidden>
+      <p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p>
+      <p class="vi">${esc(t.vi)}</p>
+      <div class="row"><button class="btn btn-bad" id="no">Chưa nhớ</button><button class="btn btn-ok" id="yes">Nhớ rồi</button></div>
+    </div>
+    <button class="btn btn-main" id="flip">Lật thẻ</button></div>`;
+  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; speak(t.term); };
+  view.querySelector("#no").onclick = () => { box[t.id] = 1; save(); renderLeitner(); };
+  view.querySelector("#yes").onclick = () => { box[t.id] = Math.min(3, boxOf(t) + 1); save(); renderLeitner(); };
+}
+
+// Nhìn ảnh (hoặc đọc định nghĩa nếu từ không có ảnh) chọn 1 trong 4 từ — đúng dạng Part 1 của đề cuối kỳ.
+let quiz = null;
+function startQuiz() { quiz = { order: shuffle(TERMS.slice()), i: 0, right: 0 }; renderQuiz(); }
+function renderQuiz() {
+  if (quiz.i >= quiz.order.length) {
+    view.innerHTML = `<div class="card done"><p class="term" style="justify-content:center">${quiz.right}/${quiz.order.length}</p><p class="vi">${quiz.right >= 16 ? "Rất tốt! Em đã sẵn sàng cho Part 1." : "Ôn lại các từ sai ở chế độ Thẻ 3 hộp rồi làm lại nhé."}</p><button class="btn btn-main" id="again">Làm lại</button></div>`;
+    document.getElementById("again").onclick = startQuiz;
+    return;
+  }
+  const t = quiz.order[quiz.i];
+  const opts = shuffle([t, ...shuffle(TERMS.filter((x) => !clash(x, t)).filter((x, k, a) => a.findIndex((y) => y.term === x.term) === k)).slice(0, 3)]);
+  view.innerHTML = `<p class="score">Câu ${quiz.i + 1}/${quiz.order.length} · đúng ${quiz.right}</p><div class="card">${front(t)}
+    <div class="opts">${opts.map((o, k) => `<button data-k="${k}">${"abcd"[k]}. ${esc(o.term)}</button>`).join("")}</div><div id="after"></div></div>`;
+  view.querySelectorAll(".opts button").forEach((b) => b.onclick = () => {
+    const pick = opts[+b.dataset.k];
+    const ok = pick === t;
+    if (ok) quiz.right++; else box[t.id] = 1;
+    save();
+    view.querySelectorAll(".opts button").forEach((x) => { x.disabled = true; if (opts[+x.dataset.k] === t) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    document.getElementById("after").innerHTML = `<div class="back"><p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p><p class="vi">${esc(t.vi)}</p></div><button class="btn btn-main" id="next">Câu tiếp</button>`;
+    document.getElementById("next").onclick = () => { quiz.i++; renderQuiz(); };
+    speak(t.term);
+  });
+}
+
+const tabs = { leitner: document.getElementById("t-leitner"), quiz: document.getElementById("t-quiz") };
+function setMode(m) {
+  tabs.leitner.setAttribute("aria-selected", m === "leitner");
+  tabs.quiz.setAttribute("aria-selected", m === "quiz");
+  m === "leitner" ? renderLeitner() : startQuiz();
+}
+tabs.leitner.onclick = () => setMode("leitner");
+tabs.quiz.onclick = () => setMode("quiz");
+setMode("leitner");
+</script>
+</body>
+</html>

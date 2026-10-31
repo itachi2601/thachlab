@@ -1,0 +1,112 @@
+1:"$Sreact.fragment"
+2:I[407988,["/_next/static/chunks/2hs7v2gkb9xrr.js","/_next/static/chunks/1wti754ozqb5y.js","/_next/static/chunks/1anbcsl6jshlu.js","/_next/static/chunks/0rahfrgo3lb_k.js"],"default"]
+4:I[522016,["/_next/static/chunks/2hs7v2gkb9xrr.js","/_next/static/chunks/1wti754ozqb5y.js","/_next/static/chunks/1anbcsl6jshlu.js","/_next/static/chunks/0rahfrgo3lb_k.js"],""]
+11:I[897367,["/_next/static/chunks/2hs7v2gkb9xrr.js","/_next/static/chunks/1wti754ozqb5y.js"],"OutletBoundary"]
+12:"$Sreact.suspense"
+:HL["/brand/logo-mark.svg","image"]
+3:T549,{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","headline":"Vì Sao Tìm Được Tâm Động Đất Chỉ Bằng Ba Trạm Đo?","description":"Sóng P chạy nhanh hơn sóng S. Độ trễ giữa hai đợt sóng cho biết khoảng cách, và giao điểm của ba đường tròn chỉ ra chính xác vị trí chấn tâm.","datePublished":"2026-10-12","dateModified":"2026-10-12","inLanguage":"vi-VN","author":{"@type":"Person","name":"Thầy Thạch"},"publisher":{"@type":"Organization","name":"ThachLab","logo":{"@type":"ImageObject","url":"https://thachlab.id.vn/images/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://thachlab.id.vn/blog/vi-sao-tim-duoc-tam-dong-dat-chi-bang-ba-tram-do"},"articleSection":"Vật lý quanh ta","keywords":"vì sao tìm được tâm động đất, cách tìm tâm động đất, sóng địa chấn, sóng P và sóng S, vật lý quanh ta, ThachLab"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://thachlab.id.vn"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://thachlab.id.vn/blog"},{"@type":"ListItem","position":3,"name":"Vì Sao Tìm Được Tâm Động Đất Chỉ Bằng Ba Trạm Đo?","item":"https://thachlab.id.vn/blog/vi-sao-tim-duoc-tam-dong-dat-chi-bang-ba-tram-do"}]}]}5:T2536,<p>Mỗi khi một trận động đất xảy ra, chỉ vài chục giây đến vài phút sau, các cơ quan khí tượng và viện địa chấn đã phát thông báo chính xác toạ độ chấn tâm, độ sâu chấn tiêu và độ lớn Richter. Không ai kịp bay đến hiện trường để nhìn vết nứt. Máy đo đặt cách đó hàng trăm kilomet cũng ghi lại được.</p>
+<p>Làm thế nào các nhà khoa học tìm ra vị trí tâm động đất từ xa nhanh và chính xác như vậy?</p>
+<p><img src="/images/blog/vi-sao-tim-duoc-tam-dong-dat-canh.svg" alt="Sơ đồ mô phỏng tâm chấn động đất phát sóng P và sóng S đến ba trạm địa chấn"></p>
+<p><em>Hình vẽ minh hoạ chấn tiêu dưới lòng đất và chấn tâm trên mặt đất.</em></p>
+<p><em>Ba trạm thu nhận tín hiệu ở các khoảng cách khác nhau.</em></p>
+<p><em>Sóng dọc P chạy trước, sóng ngang S đến sau.</em></p>
+<h2>Đoán thử trước khi đọc</h2>
+<p>Để xác định chính xác toạ độ tâm chấn trên mặt đất, người ta cần tối thiểu bao nhiêu trạm đo địa chấn?</p>
+<ul>
+<li>A. Chỉ cần 1 trạm, vì máy đo ghi được hướng rung lắc của mặt đất.</li>
+<li>B. Cần 2 trạm, lấy trung điểm đoạn thẳng nối hai trạm.</li>
+<li>C. Cần ít nhất 3 trạm, để vẽ ba đường tròn khoảng cách giao nhau tại một điểm duy nhất.</li>
+</ul>
+<p>Chọn một đáp án trong đầu rồi đọc tiếp.</p>
+<h2>Cuộc chạy đua của hai loại sóng cơ</h2>
+<p>Đáp án đúng là C.</p>
+<p>Khi một đứt gãy địa chất trượt mạnh dưới lòng đất (gọi là <strong>chấn tiêu</strong> - focus), năng lượng khổng lồ giải phóng tạo thành các đợt sóng cơ truyền qua đất đá. Có hai loại sóng khối quan trọng nhất:</p>
+<ol>
+<li><strong>Sóng P (Primary wave - sóng sơ cấp / sóng dọc):</strong> Các phần tử đất đá dao động dọc theo phương truyền sóng (nén và dãn liên tục). Đây là loại sóng chạy nhanh nhất trong vỏ Trái Đất, vận tốc trung bình khoảng v_P ≈ 6 – 8 km/s. Nó luôn đến trạm địa chấn đầu tiên.</li>
+<li><strong>Sóng S (Secondary wave - sóng thứ cấp / sóng ngang):</strong> Các phần tử dao động vuông góc với phương truyền sóng (lắc ngang hoặc trồi sụt). Sóng S chậm hơn, vận tốc trung bình khoảng v_S ≈ 3,5 – 4,5 km/s. Nó luôn đến sau sóng P.</li>
+</ol>
+<p>Vì tốc độ sóng P lớn hơn sóng S (v_P &gt; v_S), quãng đường càng xa thì sóng S càng bị sóng P bỏ lại khoảng cách xa hơn về mặt thời gian.</p>
+<p><img src="/images/blog/vi-sao-tim-duoc-tam-dong-dat-so-do.svg" alt="Đồ thị địa chấn đồ: Sóng P xuất hiện trước, sóng S xuất hiện sau, khoảng cách thời gian giữa hai đỉnh là delta t"></p>
+<p><em>Đường màu xanh: thời điểm sóng P chạm máy đo (t_P).</em></p>
+<p><em>Đường màu đỏ: thời điểm sóng S chạm máy đo (t_S).</em></p>
+<p><em>Khoảng thời gian chênh lệch Δt = t_S − t_P tỉ lệ thuận với khoảng cách đến tâm chấn.</em></p>
+<p>Trạm đo ghi lại độ trễ Δt = t_S − t_P. Từ công thức quãng đường d:</p>
+<ul>
+<li>Thời gian sóng P chạy tới trạm: t_P = d / v_P</li>
+<li>Thời gian sóng S chạy tới trạm: t_S = d / v_S</li>
+</ul>
+<p>Độ trễ thời gian giữa hai đợt sóng là:</p>
+<blockquote>
+<p><strong>Δt = t_S − t_P = d / v_S − d / v_P = d · (v_P − v_S) / (v_P · v_S)</strong></p>
+</blockquote>
+<p>Từ đó, khoảng cách d từ trạm đo đến tâm chấn được tính bằng:</p>
+<blockquote>
+<p><strong>d = Δt · (v_P · v_S) / (v_P − v_S)</strong></p>
+</blockquote>
+<p>Chỉ cần nhìn vào độ trễ Δt trên bản ghi địa chấn, ta tính ngay được tâm chấn cách trạm bao nhiêu kilomet.</p>
+<h2>Vì sao phải cần ít nhất ba trạm đo?</h2>
+<p>Biết khoảng cách d từ một trạm chỉ mới cho biết: tâm chấn nằm đâu đó trên <strong>đường tròn bán kính d</strong> lấy trạm làm tâm.</p>
+<ul>
+<li><strong>1 trạm:</strong> Có vô số điểm thoả mãn (nguyên cả một đường tròn).</li>
+<li><strong>2 trạm:</strong> Hai đường tròn cắt nhau tại tối đa <strong>2 điểm</strong>. Vẫn chưa biết điểm nào là vị trí thật.</li>
+<li><strong>3 trạm:</strong> Đường tròn thứ ba sẽ chỉ đi qua đúng một trong hai điểm nói trên. Điểm giao duy nhất của cả ba đường tròn chính là vị trí <strong>chấn tâm</strong> (epicenter). Phương pháp này gọi là <strong>tam giác đạc / giao thoa ba trạm (trilateration)</strong>.</li>
+</ul>
+<p><img src="/images/blog/vi-sao-tim-duoc-tam-dong-dat-giao-diem.svg" alt="Bản đồ định vị bằng ba vòng tròn cắt nhau tại một giao điểm duy nhất"></p>
+<p><em>Vòng tròn xanh (Trạm A), vàng (Trạm B) và cam (Trạm C).</em></p>
+<p><em>Điểm giao nhau duy nhất của ba đường tròn là vị trí tâm chấn động đất.</em></p>
+<h2>Thử ước lượng bằng số</h2>
+<p>Giả sử trong một khu vực địa chất, vận tốc sóng P là v_P = 8 km/s và sóng S là v_S = 4,5 km/s.</p>
+<p>Hệ số quy đổi khoảng cách:</p>
+<blockquote>
+<p><strong>(v_P · v_S) / (v_P − v_S) = (8 × 4,5) / (8 − 4,5) ≈ 10,3 km/s</strong></p>
+</blockquote>
+<p>Nghĩa là: <strong>cứ mỗi giây sóng S đến muộn hơn sóng P, tâm chấn cách trạm khoảng 10,3 km</strong>.</p>
+<p>Nếu tại trạm Hà Nội ghi nhận sóng S đến sau sóng P một khoảng Δt = 20 giây:</p>
+<blockquote>
+<p><strong>d = 20 × 10,3 = 206 km</strong></p>
+</blockquote>
+<p>Nhà khoa học chỉ việc cắm compa ở toạ độ trạm Hà Nội, quay một đường tròn bán kính 206 km trên bản đồ địa lý. Kết hợp thêm dữ liệu bán kính tương tự từ trạm Điện Biên và trạm Lạng Sơn, giao điểm của 3 đường tròn sẽ chỉ ra vị trí đứt gãy vừa phát sinh động đất.</p>
+<h2>Tự thử ở nhà</h2>
+<p>Bạn có thể tự mô phỏng phương pháp này ngay trên giấy:</p>
+<ol>
+<li>In một bản đồ Việt Nam hoặc khu vực địa phương lên giấy A4.</li>
+<li>Đánh dấu vị trí 3 thành phố làm 3 trạm quan sát (ví dụ: A, B, C).</li>
+<li>Nhờ một người bạn chọn bí mật một điểm làm &quot;tâm chấn&quot; X và đo khoảng cách từ X đến A, B, C bằng thước kẻ (ví dụ: 6 cm, 8 cm, 5 cm).</li>
+<li>Người bạn chỉ đọc cho bạn 3 con số bán kính ấy.</li>
+<li>Dùng compa quay 3 vòng tròn tương ứng với tâm A, B, C.</li>
+</ol>
+<p>Bạn sẽ thấy ba vòng tròn giao nhau đúng tại điểm X bí mật mà không cần người bạn chỉ tay vào bản đồ.</p>
+<h2>Hiểu lầm hay gặp</h2>
+<ul>
+<li>❌ Sóng P và sóng S cùng xuất phát nhưng có một sóng bị cản nên đi sau. → ✅ Cả hai sóng cùng sinh ra từ cùng một thời điểm tại chấn tiêu, nhưng bản chất sóng dọc (P) truyền tương tác nén/dãn nhanh hơn sóng ngang (S) trong môi trường chất rắn.</li>
+<li>❌ Chỉ cần 1 trạm là biết được hướng và tâm chấn. → ✅ Một trạm đo thông thường chỉ suy ra được độ dài bán kính, không xác định được góc phương vị chính xác tuyệt đối nếu không đối chiếu chéo nhiều trạm.</li>
+<li>❌ Chấn tiêu và chấn tâm là một. → ✅ Chấn tiêu (hypocenter) nằm sâu trong lòng đất nơi đứt gãy xảy ra; chấn tâm (epicenter) là hình chiếu vuông góc của chấn tiêu lên bề mặt Trái Đất.</li>
+</ul>
+<h2>Em đã học ở đâu?</h2>
+<ul>
+<li><a href="/lop-hoc/bai?id=30&subject=vat-ly&chapter=7">Lớp 11 · Bài 8. Mô tả sóng</a></li>
+<li><a href="/lop-hoc/bai?id=31&subject=vat-ly&chapter=7">Lớp 11 · Bài 9. Sóng ngang. Sóng dọc. Sự truyền năng lượng của sóng cơ</a></li>
+</ul>
+<p>Khái niệm sóng dọc (phương dao động trùng phương truyền sóng), sóng ngang (phương dao động vuông góc phương truyền sóng) và công thức liên hệ quãng đường - tốc độ truyền sóng s = v·t nằm trọn vẹn trong chương <strong>Sóng</strong> của chương trình Vật lí 11.</p>
+<h2>Nghĩ tiếp</h2>
+<p>Sóng S chỉ truyền được trong chất rắn, không truyền được qua chất lỏng. </p>
+<p>Gợi ý: Các nhà địa chất học đã dùng chính đặc tính này của sóng S để phát hiện ra phần lõi ngoài của Trái Đất ở thể lỏng như thế nào?</p>
+<h2>Nguồn</h2>
+<ul>
+<li><a href="https://www.usgs.gov/programs/earthquake-hazards/determining-depth-earthquake">USGS — Determining the Depth of an Earthquake</a>. Cơ quan Khảo sát Địa chất Hoa Kỳ về phương pháp đo P-wave, S-wave và định vị chấn tâm.</li>
+<li><a href="https://www.iris.edu/hq/inclass/animation/how_do_we_locate_earthquakes">IRIS (Incorporated Research Institutions for Seismology) — How do we locate earthquakes?</a>.</li>
+<li>SGK Vật lí 11 (Bộ GD&amp;ĐT - Chương trình GDPT 2018), Chương II: Sóng cơ và sóng âm.</li>
+</ul>
+0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","main",null,{"className":"mx-auto min-h-screen w-full max-w-3xl px-6 pt-28 pb-20 lg:px-8","children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$3"}}],["$","nav",null,{"aria-label":"Breadcrumb","className":"text-sm text-slate-500","children":[["$","$L4",null,{"href":"/blog","className":"text-primary hover:underline","children":"Blog"}]," ","/ ",["$","span",null,{"children":"Kiến thức Vật lý THPT"}]]}],["$","article",null,{"className":"mt-4","children":[["$","h1",null,{"className":"font-display text-3xl font-bold leading-tight text-ink sm:text-4xl","children":"Vì Sao Tìm Được Tâm Động Đất Chỉ Bằng Ba Trạm Đo?"}],["$","p",null,{"className":"mt-4 text-sm text-slate-500","children":[["$","time",null,{"dateTime":"2026-10-12","children":"12 tháng 10, 2026"}]," · ",7," phút đọc "," · ","Thầy Thạch"]}],["$","div",null,{"className":"mt-5 flex flex-wrap gap-2","children":[["$","span",null,{"className":"rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-200","children":"Vật lý quanh ta"}],[["$","span","Trái Đất & tự nhiên",{"className":"rounded-full border border-orange-400/20 bg-orange-400/10 px-3 py-1 text-xs font-medium text-orange-200","children":"Trái Đất & tự nhiên"}],["$","span","Lớp 11",{"className":"rounded-full border border-orange-400/20 bg-orange-400/10 px-3 py-1 text-xs font-medium text-orange-200","children":"Lớp 11"}]]]}],["$","div",null,{"className":"blog-prose mt-8","dangerouslySetInnerHTML":{"__html":"$5"}}],"$L6"]}],"$L7"]}],"$L8"],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"T0C7-_b3T6vXumKGO9wsy"}
+6:["$","aside",null,{"className":"mt-14 overflow-hidden rounded-3xl border border-line bg-panel p-8 text-center","children":[["$","p",null,{"className":"font-display text-xl font-bold text-ink sm:text-2xl","children":"Sẵn sàng bắt đầu lộ trình của con?"}],["$","p",null,{"className":"mx-auto mt-3 max-w-lg text-sm leading-relaxed text-muted","children":"Đăng ký học thử offline miễn phí, nhận lộ trình cá nhân hóa và tài khoản học online cùng thầy Thạch."}],["$","div",null,{"className":"mt-6 flex flex-wrap items-center justify-center gap-3","children":[["$","$L4",null,{"href":"/dang-ky","className":"rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-900/30 transition-transform hover:-translate-y-0.5 hover:bg-primary-dark","children":"Đăng ký học thử miễn phí"}],["$","$L4",null,{"href":"/lop-hoc","className":"rounded-full border border-line-strong px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-primary","children":"Xem chương trình học"}]]}]]}]
+7:["$","div",null,{"className":"mt-10","children":["$","$L4",null,{"href":"/blog","className":"text-sm text-primary hover:underline","children":"← Xem tất cả bài viết"}]}]
+8:["$","footer",null,{"id":"contact","className":"border-t border-line bg-panel","children":["$","div",null,{"className":"mx-auto max-w-6xl px-6 py-16 lg:px-8","children":[["$","div",null,{"className":"grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr]","children":[["$","div",null,{"children":[["$","div",null,{"className":"flex items-center gap-2","children":[["$","img",null,{"src":"/brand/logo-mark.svg","alt":"","width":32,"height":32,"className":"h-8 w-8"}],["$","span",null,{"className":"font-display text-lg font-semibold text-ink","children":"ThachLab"}],["$","span",null,{"className":"rounded-full border border-amber-400/30 bg-amber-500/10 px-2 py-0.5 text-xs font-semibold text-amber-300","children":"Alpha test · miễn phí"}]]}],["$","p",null,{"className":"mt-4 max-w-xs leading-relaxed text-sm text-muted","children":"Nền tảng học Vật lý THPT giúp học sinh hiểu bản chất của thế giới xung quanh — không chỉ là những công thức trong sách giáo khoa."}]]}],[["$","div","Lớp học",{"children":[["$","h4",null,{"className":"font-display text-sm font-semibold text-ink","children":"Lớp học"}],["$","ul",null,{"className":"mt-2 space-y-0","children":[["$","li","KHTN 9",{"children":["$","a",null,{"href":"/lop-hoc/khtn-9","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"KHTN 9"}]}],["$","li","Vật lý 10",{"children":["$","a",null,{"href":"/lop-hoc/lop-10","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Vật lý 10"}]}],["$","li","Vật lý 11",{"children":["$","a",null,{"href":"/lop-hoc/lop-11","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Vật lý 11"}]}],["$","li","Vật lý 12",{"children":["$","a",null,{"href":"/lop-hoc/lop-12","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Vật lý 12"}]}],["$","li","Luyện tập",{"children":["$","a",null,{"href":"/luyen-tap","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Luyện tập"}]}],["$","li","Sinh viên CTTC",{"children":["$","a",null,{"href":"/lop-hoc/cttc","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Sinh viên CTTC"}]}]]}]]}],["$","div","ThachLab",{"children":[["$","h4",null,{"className":"font-display text-sm font-semibold text-ink","children":"ThachLab"}],["$","ul",null,{"className":"mt-2 space-y-0","children":[["$","li","Về thầy Thạch",{"children":["$","a",null,{"href":"/gioi-thieu#about","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Về thầy Thạch"}]}],["$","li","Cách học trên ThachLab",{"children":["$","a",null,{"href":"/gioi-thieu#features","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Cách học trên ThachLab"}]}],["$","li","Blog",{"children":["$","a",null,{"href":"/blog","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Blog"}]}],["$","li","Phụ huynh xem kết quả của con",{"children":["$","a",null,{"href":"/phu-huynh","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Phụ huynh xem kết quả của con"}]}],["$","li","Quy chế học tập",{"children":["$","a",null,{"href":"/quy-che-hoc-tap","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Quy chế học tập"}]}],["$","li","Điều khoản & Bản quyền",{"children":["$","a",null,{"href":"/dieu-khoan","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Điều khoản & Bản quyền"}]}]]}]]}],["$","div","Kết nối",{"children":[["$","h4",null,{"className":"font-display text-sm font-semibold text-ink","children":"Kết nối"}],["$","ul",null,{"className":"mt-2 space-y-0","children":["$Lb","$Lc","$Ld"]}]]}]],"$Le"]}],"$Lf","$L10"]}]}]
+9:["$","script","script-0",{"src":"/_next/static/chunks/0rahfrgo3lb_k.js","async":true}]
+a:["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]
+b:["$","li","Facebook",{"children":["$","a",null,{"href":"https://www.facebook.com/ngodieuthach","target":"_blank","rel":"noopener noreferrer","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Facebook"}]}]
+c:["$","li","Instagram",{"children":["$","a",null,{"href":"https://www.instagram.com/ngo_dieu_thach","target":"_blank","rel":"noopener noreferrer","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Instagram"}]}]
+d:["$","li","TikTok",{"children":["$","a",null,{"href":"https://www.tiktok.com/@ngo_dieu_thach","target":"_blank","rel":"noopener noreferrer","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"TikTok"}]}]
+e:["$","div",null,{"children":[["$","h4",null,{"className":"font-display text-sm font-semibold text-ink","children":"Liên hệ"}],["$","ul",null,{"className":"mt-2 space-y-0","children":[["$","li","Gọi 0982702591",{"children":["$","a",null,{"href":"tel:0982702591","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Gọi 0982702591"}]}],["$","li","Nhắn Zalo cho thầy",{"children":["$","a",null,{"href":"https://zalo.me/0982702591","target":"_blank","rel":"noopener noreferrer","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"Nhắn Zalo cho thầy"}]}],["$","li","thachngo20212022@gmail.com",{"children":["$","a",null,{"href":"mailto:thachngo20212022@gmail.com","className":"inline-flex min-h-11 items-center text-sm text-muted transition-colors hover:text-primary","children":"thachngo20212022@gmail.com"}]}],["$","li","Khu vực trung tâm TP.HCM",{"children":["$","span",null,{"className":"inline-flex min-h-11 items-center text-sm text-muted","children":"Khu vực trung tâm TP.HCM"}]}]]}]]}]
+f:["$","div",null,{"className":"mt-16 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 text-muted sm:flex-row text-xs","children":[["$","p",null,{"children":["© ",2026," ThachLab. Mọi quyền được bảo lưu."]}],["$","p",null,{"children":["Thầy Thạch · Vật lý THPT – KHTN 9"," · Khu vực trung tâm TP.HCM"]}]]}]
+10:["$","p",null,{"className":"mt-4 text-center text-xs text-muted sm:text-left","children":["Website do thầy Ngô Diệu Thạch thiết kế nội dung và xây dựng cùng trợ lý AI"," ",["$","$L4",null,{"prefetch":false,"href":"/#about","className":"underline-offset-2 transition-colors hover:text-primary hover:underline","children":"Claude (Anthropic)"}],"."]}]
+13:null
