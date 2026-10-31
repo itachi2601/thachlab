@@ -122,35 +122,68 @@ def _trong_than(px, py, cx, cy, g=2.0):
     return x1 <= px <= x1 + dx + g and y0 + dy - g <= py <= y1 + g  # mặt bên
 
 
-def _bar_lines(cx, cy):
-    """Danh sách (Q, k) — polyline màn hình đã cắt bỏ phần trong thân, k = chỉ số mức (0 = trong cùng)."""
-    out = []
-    for k, lv in enumerate(BAR_PSI):
-        P = duong_muc(lv, BAR_A)
-        for sg in (1, -1):
-            Q = [(cx + z, cy - sg * x) for z, x in P]
-            Q = [p for p in Q if not _trong_than(p[0], p[1], cx, cy)]
-            out.append((Q, k, sg))
+def _cat_doan(Q, ok):
+    """Tách polyline thành các đoạn liên tục gồm những điểm thoả ok(p)."""
+    seg, out = [], []
+    for p in Q:
+        if ok(p):
+            seg.append(p)
+        elif seg:
+            if len(seg) > 2: out.append(seg)
+            seg = []
+    if len(seg) > 2: out.append(seg)
     return out
 
 
-def _poly(Q, c, w, dash, op=1):
+def _bar_lines(cx, cy, fr):
+    """Danh sách (Q, k) — các đoạn polyline màn hình nằm trong khung fr = (x0, y0, x1, y1) (nới 3 px, phần còn lại
+    do clipPath cắt) và ngoài thân nam châm; k = chỉ số mức (0 = sát thân)."""
+    X0, Y0, X1, Y1 = fr
+    out = []
+    for k, lv in enumerate(BAR_PSI):
+        # dừng cách thân 3 px; sát hai cực các đường chụm lại nên đường lẻ dừng xa cực hơn (so le) cho nét khỏi dính cục
+        r0 = BAR_R0[k % 2]
+        ok = lambda p: (X0 - 3 <= p[0] <= X1 + 3 and Y0 - 3 <= p[1] <= Y1 + 3 and not _trong_than(p[0], p[1], cx, cy, 3)
+                        and min(_mm.hypot(p[0] - cx - z, p[1] - cy) for z in (-BAR_A, BAR_A)) >= r0)
+        P = duong_muc(lv, BAR_A, maxn=40000)
+        for sg in (1, -1):
+            for Q in _cat_doan([(cx + z, cy - sg * x) for z, x in P], ok):
+                out.append((Q, k))
+    return out
+
+
+def _rdp(Q, tol):
+    """Giản lược Ramer–Douglas–Peucker: bỏ điểm lệch dây cung < tol px (HTML gọn, đường cong vẫn trơn)."""
+    if len(Q) < 3: return list(Q)
+    (x1, y1), (x2, y2) = Q[0], Q[-1]
+    n = _mm.hypot(x2 - x1, y2 - y1) or 1e-9
+    i, dm = max(((j, abs((x2 - x1) * (y1 - Q[j][1]) - (x1 - Q[j][0]) * (y2 - y1)) / n) for j in range(1, len(Q) - 1)),
+                key=lambda t: t[1])
+    if dm < tol: return [Q[0], Q[-1]]
+    return _rdp(Q[:i + 1], tol)[:-1] + _rdp(Q[i:], tol)
+
+
+def _poly(Q, c, w, dash, op=1, tol=0):
     K = [Q[0]]
     for p in Q[1:-1]:                      # thưa điểm: cách nhau ≥ 4 px cho HTML gọn
         if (p[0] - K[-1][0]) ** 2 + (p[1] - K[-1][1]) ** 2 >= 16:
             K.append(p)
     K.append(Q[-1])
+    if tol: K = _rdp(K, tol)
     d = "M" + " L".join(f"{x:.0f},{y:.0f}" for x, y in K)
     return f'<path d="{d}" fill="none" stroke="{c}" stroke-width="{w}" stroke-dasharray="{dash}" opacity="{op}" stroke-linecap="round"/>'
 
 
-# Bộ đường sức chung cho khung ii và iii: thanh dài 88 px, hai cực cách tâm a = 38 px (6 px trong mỗi đầu).
-# 5 mức Ψ cách đều 16,5° (= góc rời cực N 66,7° … 132,8°): đường trong cùng cao 25 px ở giữa (sát trên mặt trên
-# thân), đường ngoài cùng cao 87 px — vừa trong khung 186 px. Ở mặt giữa các đường cách nhau 8,6 → 11,3 → 16 → 26 px.
-BAR_L, BAR_H, BAR_D, BAR_A = 88, 22, (8, -6), 38
-_PH0, _PH1 = 2 * _mm.degrees(_mm.atan(25 / BAR_A)), 2 * _mm.degrees(_mm.atan(87 / BAR_A))
-BAR_PSI = tuple(_mm.radians(_PH0 + (_PH1 - _PH0) * k / 4) - _mm.pi for k in range(5))
-BAR_TIP = (4, -12, 20, -22, 6)      # vị trí đầu V theo z (px quanh tâm) từng mức: so le, cách đường kề ≥ 4 px, không chạm thân
+# Bộ đường sức chung cho khung ii và iii (bắt chước kiểu hình SGK): thanh dài 192 px (≈ 47 % bề rộng khung 412),
+# mỏng 20 px; hai cực cách tâm a = 92 px (4 px trong mỗi đầu) nên đường sức toả như quạt từ mặt đầu thanh.
+# 14 mức Ψ cách đều (góc rời cực 29° … 172°, bước ≈ 11°): đường trong cùng ôm sát thân (cao 24 px ở giữa),
+# đường ngoài ra khỏi khung — clipPath cắt ở mép, cho thấy trường còn lan ra xa. Thêm đường trục thẳng hai đầu.
+BAR_L, BAR_H, BAR_D, BAR_A = 192, 20, (8, -6), 92
+BAR_N = 14
+BAR_R0 = (12, 22)              # bán kính quanh cực mà đường chẵn / lẻ bắt đầu hiện
+_PH0, _PH1 = 2 * _mm.degrees(_mm.atan(24 / BAR_A)), 172.0
+BAR_PSI = tuple(_mm.radians(_PH0 + (_PH1 - _PH0) * k / (BAR_N - 1)) - _mm.pi for k in range(BAR_N))
+FR_W, FR_H = 412, 240           # khung ii, iii
 
 
 b = defs("f3")
@@ -179,44 +212,99 @@ b += text(232, 74, "song song, cách đều", "#047857", 14, "start", "600")
 b += text(232, 96, "→ từ trường đều", "#047857", 14, "start", "600")
 
 
-def _bo_duong(cx, cy, kieu):
-    """kieu='mat_sat': vạch ngắn xám (từ phổ); 'quy_uoc': nét đứt xanh lục + đầu V (chiều N → S, so le)."""
-    g = ""
-    for Q, k, sg in _bar_lines(cx, cy):
-        if kieu == "mat_sat":
-            g += _poly(Q, "currentColor", 2.4, "3 4", .75)
-        else:
-            xt = cx + BAR_TIP[k]
-            i = min(range(1, len(Q) - 1), key=lambda j: abs(Q[j][0] - xt))
-            g += _poly(Q, GRN, 1.8, "6 4") + chevron(Q[i][0], Q[i][1], Q[i + 1][0] - Q[i - 1][0], Q[i + 1][1] - Q[i - 1][1], GRN, 1.8, 8)
+def _gan_nhat(G, x, y, bo=None):
+    """Khoảng cách nhỏ nhất từ (x, y) tới các điểm trong lưới G (ô 8 px), bỏ qua đường có id = bo."""
+    best = 1e9
+    gx, gy = int(x // 8), int(y // 8)
+    for i in range(gx - 2, gx + 3):
+        for j in range(gy - 2, gy + 3):
+            for px, py, idn in G.get((i, j), ()):
+                if idn != bo:
+                    best = min(best, _mm.hypot(px - x, py - y))
+    return best
+
+
+def _bo_duong(cx, cy, fr, kieu):
+    """kieu='mat_sat': vạch ngắn xám (từ phổ); 'quy_uoc': nét đứt xanh lục + đầu V rải đều, so le (ra N, vào S)."""
+    X0, Y0, X1, Y1 = fr
+    L = _bar_lines(cx, cy, fr)
     xl, xr = cx - BAR_L / 2, cx + BAR_L / 2 + BAR_D[0]
+    g = ""
     if kieu == "mat_sat":
-        g += f'<line x1="0" y1="{cy}" x2="{xl-4}" y2="{cy}" stroke="currentColor" stroke-width="2.4" stroke-dasharray="3 4" opacity=".75"/>'
-        g += f'<line x1="{xr+4}" y1="{cy}" x2="440" y2="{cy}" stroke="currentColor" stroke-width="2.4" stroke-dasharray="3 4" opacity=".75"/>'
-    else:
-        g += field_line(xl - 4, cy, cx - 133, cy, GRN, 1.8, "6 4", 9)      # trục bên trái: ra xa N
-        g += field_line(cx + 133, cy, xr + 4, cy, GRN, 1.8, "6 4", 9)      # trục bên phải: đi vào S
+        for Q, k in L:
+            g += _poly(Q, "currentColor", 2.2, "3 4", .75, .6)
+        g += f'<line x1="{X0}" y1="{cy}" x2="{xl-4}" y2="{cy}" stroke="currentColor" stroke-width="2.2" stroke-dasharray="3 4" opacity=".75"/>'
+        g += f'<line x1="{xr+4}" y1="{cy}" x2="{X1}" y2="{cy}" stroke="currentColor" stroke-width="2.2" stroke-dasharray="3 4" opacity=".75"/>'
+        return g
+    # lưới điểm của mọi đường (kể cả trục) để đầu V không đè lên đường khác
+    G = {}
+    def _them(pts, idn):
+        for i in range(len(pts) - 1):
+            (x1, y1), (x2, y2) = pts[i], pts[i + 1]
+            n = max(1, int(_mm.hypot(x2 - x1, y2 - y1) / 1.5))
+            for t in range(n):
+                x, y = x1 + (x2 - x1) * t / n, y1 + (y2 - y1) * t / n
+                G.setdefault((int(x // 8), int(y // 8)), []).append((x, y, idn))
+    for idn, (Q, k) in enumerate(L):
+        _them(Q, idn)
+    _them([(X0, cy), (xl - 4, cy)], -1); _them([(xr + 4, cy), (X1, cy)], -2)
+    TIP, BUOC, CH = [], 74, 8          # đầu V đã đặt; khoảng cách dọc đường giữa hai đầu V; cỡ đầu V
+
+    def _dat(x, y, dx, dy, idn):
+        n = _mm.hypot(dx, dy); ux, uy = dx / n, dy / n
+        diem = [(x, y)] + [(x - CH * (ux * _mm.cos(t) - uy * _mm.sin(t)), y - CH * (ux * _mm.sin(t) + uy * _mm.cos(t)))
+                           for t in (_mm.radians(30), -_mm.radians(30))]
+        for px, py in diem:
+            if not (X0 + 8 <= px <= X1 - 8 and Y0 + 8 <= py <= Y1 - 8): return False
+            if _trong_than(px, py, cx, cy, 5): return False
+            if _gan_nhat(G, px, py, idn) < 4.5: return False
+        if any(_mm.hypot(x - a, y - b) < 22 for a, b in TIP): return False
+        TIP.append((x, y)); return True
+
+    for idn, (Q, k) in enumerate(L):
+        g += _poly(Q, GRN, 1.6, "7 3", 1, .6)
+        s = [0.0]
+        for i in range(1, len(Q)):
+            s.append(s[-1] + _mm.hypot(Q[i][0] - Q[i - 1][0], Q[i][1] - Q[i - 1][1]))
+        goc = 26 + (k * 0.38 % 1) * BUOC          # so le giữa các mức
+        m = 0
+        while goc + m * BUOC < s[-1] - 10:
+            for lech in (0, 6, -6, 12, -12, 18, -18, 24, -24, 30, -30):
+                sv = goc + m * BUOC + lech
+                if not (10 < sv < s[-1] - 10): continue
+                i = next(j for j in range(1, len(Q)) if s[j] >= sv)
+                i = min(max(i, 2), len(Q) - 3)
+                if _dat(Q[i][0], Q[i][1], Q[i + 2][0] - Q[i - 2][0], Q[i + 2][1] - Q[i - 2][1], idn):
+                    g += chevron(Q[i][0], Q[i][1], Q[i + 2][0] - Q[i - 2][0], Q[i + 2][1] - Q[i - 2][1], GRN, 1.6, CH)
+                    break
+            m += 1
+    # đường trục hai đầu: ra xa N (trái), đi vào S (phải); đầu V cùng chiều sang trái
+    g += f'<line x1="{X0}" y1="{cy}" x2="{xl-4}" y2="{cy}" stroke="{GRN}" stroke-width="1.6" stroke-dasharray="7 3"/>'
+    g += f'<line x1="{xr+4}" y1="{cy}" x2="{X1}" y2="{cy}" stroke="{GRN}" stroke-width="1.6" stroke-dasharray="7 3"/>'
+    for x in (xl - 40, X0 + 26, X1 - 26, xr + 40):
+        g += chevron(x, cy, -1, 0, GRN, 1.6, CH)
     return g
 
 
 # ii) từ phổ: mạt sắt xếp dọc đúng bộ đường của khung iii
+FY2, FY3 = 172, 476
 b += text(14, 162, "ii) Từ phổ (mạt sắt)", "currentColor", 14, "start", "700")
-b += f'<clipPath id="f3-c2"><rect x="14" y="172" width="276" height="186" rx="6"/></clipPath>'
-b += rect(14, 172, 276, 186, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
-b += f'<g clip-path="url(#f3-c2)">{_bo_duong(152, 265, "mat_sat")}</g>' + bar_magnet(152, 265, BAR_L, BAR_H, BAR_D)
-b += text(302, 258, "mạt sắt dày", "currentColor", 14, "start", "600")
-b += text(302, 278, "ở hai cực", "currentColor", 14, "start", "600")
+b += f'<clipPath id="f3-c2"><rect x="14" y="{FY2}" width="{FR_W}" height="{FR_H}" rx="6"/></clipPath>'
+b += rect(14, FY2, FR_W, FR_H, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
+C2 = FY2 + FR_H // 2
+b += f'<g clip-path="url(#f3-c2)">{_bo_duong(220, C2, (14, FY2, 14 + FR_W, FY2 + FR_H), "mat_sat")}</g>' + bar_magnet(220, C2, BAR_L, BAR_H, BAR_D)
+b += text(14, FY2 + FR_H + 24, "mạt sắt dày ở hai cực", "currentColor", 14, "start", "600")
 # iii) đường sức vẽ theo quy ước: cùng bộ đường, nét đứt, có chiều
-b += text(14, 382, "iii) Đường sức quy ước", "currentColor", 14, "start", "700")
-b += f'<clipPath id="f3-c3"><rect x="14" y="392" width="276" height="186" rx="6"/></clipPath>'
-b += rect(14, 392, 276, 186, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
-b += f'<g clip-path="url(#f3-c3)">{_bo_duong(152, 485, "quy_uoc")}</g>' + bar_magnet(152, 485, BAR_L, BAR_H, BAR_D)
-b += text(302, 446, "ra ở N, vào ở S", "currentColor", 14, "start", "600")
-b += text(302, 470, "khép kín", "currentColor", 14, "start", "600")
-b += text(302, 494, "không cắt nhau", "currentColor", 14, "start", "600")
-b += text(302, 518, "gần cực: mau", "currentColor", 14, "start", "600")
-b += text(302, 542, "xa cực: thưa", "currentColor", 14, "start", "600")
-fig3b = wrap("0 0 440 592",
+b += text(14, FY3 - 10, "iii) Đường sức quy ước", "currentColor", 14, "start", "700")
+b += f'<clipPath id="f3-c3"><rect x="14" y="{FY3}" width="{FR_W}" height="{FR_H}" rx="6"/></clipPath>'
+b += rect(14, FY3, FR_W, FR_H, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
+C3 = FY3 + FR_H // 2
+b += f'<g clip-path="url(#f3-c3)">{_bo_duong(220, C3, (14, FY3, 14 + FR_W, FY3 + FR_H), "quy_uoc")}</g>' + bar_magnet(220, C3, BAR_L, BAR_H, BAR_D)
+for i, (c1, c2) in enumerate((("ra ở N, vào ở S", "gần cực: mau"), ("không cắt nhau", "xa cực: thưa"), ("khép kín", None))):
+    yy = FY3 + FR_H + 24 + 22 * i
+    b += text(14, yy, c1, "currentColor", 14, "start", "600")
+    if c2: b += text(230, yy, c2, "currentColor", 14, "start", "600")
+fig3b = wrap("0 0 440 796",
             "Ba khung: đường sức từ của nam châm chữ U (từ trường đều), từ phổ mạt sắt quanh thanh nam châm và đường sức vẽ theo quy ước",
             b, "Hình 4.<br>i) Chữ U: từ trường đều.<br>ii) Từ phổ.<br>iii) Đường quy ước.")
 fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-khai-niem-tu-truong/hinh-duong-suc-thanh-nam-cham.webp" '
