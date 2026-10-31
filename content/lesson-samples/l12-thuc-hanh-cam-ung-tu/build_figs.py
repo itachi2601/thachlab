@@ -30,6 +30,42 @@ def wrap(vb, label, body, cap, exp=""):
 
 RED_F, BLUE_F, GREY_F = "rgba(248,113,113,.28)", "rgba(56,189,248,.28)", "rgba(148,163,184,.16)"
 
+
+# ---- nam châm chữ U thật: thân bo góc, hai cánh, đầu cực tô màu, có chiều sâu xiên (dx, dy)
+UM_BODY, UM_DARK, UM_EDGE = "#cbd5e1", "#94a3b8", "#334155"   # cùng bảng màu bài 9/10 (lực từ, khái niệm từ trường)
+UM_N = ("#dc2626", "#f87171", "#b91c1c")      # mặt trước, mặt trên, mặt bên
+UM_S = ("#2563eb", "#60a5fa", "#1e40af")
+
+
+def u_path(x, y, w, h, arm, yoke, r, ri):
+    yi = y + h - yoke
+    return (f"M{x},{y} V{y+h-r} A{r},{r} 0 0 0 {x+r},{y+h} H{x+w-r} A{r},{r} 0 0 0 {x+w},{y+h-r} V{y} H{x+w-arm} "
+            f"V{yi-ri} A{ri},{ri} 0 0 1 {x+w-arm-ri},{yi} H{x+arm+ri} A{ri},{ri} 0 0 1 {x+arm},{yi-ri} V{y} Z")
+
+
+def u_magnet(x, y, w, h, arm, yoke, tip, d=(18, -12), r=None, ri=None, fs=17, sw=2):
+    """Nam châm chữ U nhìn chính diện hơi xiên: mặt sau dời (dx, dy); trả SVG. Cực N bên trái, S bên phải."""
+    dx, dy = d
+    r = r if r is not None else min(arm, yoke) * 0.7
+    ri = ri if ri is not None else min(arm, yoke) * 0.35
+    P = lambda pts, f: f'<polygon points="{" ".join(f"{a:.1f},{b:.1f}" for a, b in pts)}" fill="{f}" stroke="{UM_EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
+    o = f'<path d="{u_path(x + dx, y + dy, w, h, arm, yoke, r, ri)}" fill="{UM_DARK}" stroke="{UM_EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
+    xr = x + w
+    o += P([(xr, y), (xr + dx, y + dy), (xr + dx, y + h - r + dy), (xr, y + h - r)], UM_DARK)          # mặt bên phải
+    o += P([(xr, y), (xr + dx, y + dy), (xr + dx, y + tip + dy), (xr, y + tip)], UM_S[2])
+    o += P([(x + arm, y), (x + arm + dx, y + dy), (x + arm + dx, y + tip + dy), (x + arm, y + tip)], UM_N[2])  # mặt trong cánh N
+    o += P([(x, y), (x + arm, y), (x + arm + dx, y + dy), (x + dx, y + dy)], UM_N[1])                  # mặt trên hai cánh
+    o += P([(xr - arm, y), (xr, y), (xr + dx, y + dy), (xr - arm + dx, y + dy)], UM_S[1])
+    k = 0.2929 * r                                                                                       # đường viền góc bo
+    o += f'<line x1="{xr - k:.1f}" y1="{y + h - k:.1f}" x2="{xr - k + dx:.1f}" y2="{y + h - k + dy:.1f}" stroke="{UM_EDGE}" stroke-width="{sw}"/>'
+    o += f'<path d="{u_path(x, y, w, h, arm, yoke, r, ri)}" fill="{UM_BODY}" stroke="{UM_EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
+    o += (f'<rect x="{x}" y="{y}" width="{arm}" height="{tip}" fill="{UM_N[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>'
+          f'<rect x="{xr - arm}" y="{y}" width="{arm}" height="{tip}" fill="{UM_S[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>')
+    o += text(x + arm / 2, y + tip / 2 + fs * .36, "N", "#fff", fs, "middle", "800")
+    o += text(xr - arm / 2, y + tip / 2 + fs * .36, "S", "#fff", fs, "middle", "800")
+    return o
+
+
 # ======================================================= Hình 1: bố trí cân dòng điện (phối cảnh xiên)
 # Chiều sâu vẽ xiên lên-phải. Khung dây nằm trong mặt phẳng (thẳng đứng, chiều sâu): cạnh dưới đi xuyên khe.
 def poly(pts, fill, stroke="currentColor", sw=2, op=1):
@@ -47,60 +83,48 @@ b += poly([(30, 230), (250, 230), add((250, 230), SD), add((30, 230), SD)], "rgb
 b += poly([(250, 230), add((250, 230), SD), add((250, 268), SD), (250, 268)], "rgba(148,163,184,.42)")
 b += rect(30, 230, 220, 38, GREY_F, "currentColor", 2, 2)
 b += text(42, 255, "cân 0,01 g", "currentColor", 14, "start", "700")
-b += rect(170, 238, 66, 22, "rgba(52,211,153,.18)", GRN, 1.5, 4)
-b += text(203, 254, "? g", GRN, 14, "middle", "700")
+b += rect(170, 238, 66, 22, "#d1fae5", "#047857", 1.5, 4)
+b += text(203, 254, "? g", "#065f46", 15, "middle", "800")
 # khung dây: cạnh dưới từ A (trước nam châm) tới Bk (sau nam châm), hai cạnh đứng lên tới A2, B2
-C0 = (150, 160)                                                         # giao cạnh dưới với mặt trước nam châm (tâm khe)
-A, Bk = add(C0, MD, -0.5), add(C0, MD, 1.5)
-A2, B2 = (A[0], 76), (Bk[0], 76 + MD[1] * 2)
+C0 = (140, 160)                                                         # giao cạnh dưới với mặt trước nam châm (tâm khe)
+A, Bk = add(C0, MD, -0.2), add(C0, MD, 1.2)        # cả cạnh dưới nằm gọn trong khe
+A2, B2 = (A[0], 76), (Bk[0], 76 + MD[1] * 1.4)          # cạnh trên song song cạnh dưới
 WIRE = ORG
 b += line(*Bk, *add(C0, MD, 1), WIRE, 3.5) + line(*Bk, *B2, WIRE, 3.5)  # phần khung phía sau nam châm
 # nam châm chữ U (mặt trước lệch (6,-4) so với mép trước bệ cân)
 X0, YB = 76, 226
-b += poly([(X0 + 36, 196), (X0 + 100, 196), add((X0 + 100, 196), MD), add((X0 + 36, 196), MD)], "rgba(148,163,184,.30)")   # mặt trên gông trong khe
-b += poly([(X0 + 36, 116), add((X0 + 36, 116), MD), add((X0 + 36, 196), MD), (X0 + 36, 196)], "rgba(248,113,113,.40)", RED)  # mặt phải cánh N
-b += poly([(X0, 116), (X0 + 36, 116), add((X0 + 36, 116), MD), add((X0, 116), MD)], "rgba(248,113,113,.40)", RED)
-b += poly([(X0 + 100, 116), (X0 + 136, 116), add((X0 + 136, 116), MD), add((X0 + 100, 116), MD)], "rgba(56,189,248,.40)", BLUE)
-b += poly([(X0 + 136, 116), add((X0 + 136, 116), MD), add((X0 + 136, YB), MD), (X0 + 136, YB)], "rgba(56,189,248,.45)", BLUE)
-b += (f'<path d="M{X0},{YB} V116 H{X0+36} V196 H{X0+100} V116 H{X0+136} V{YB} Z" fill="rgba(148,163,184,.22)" '
-      f'stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>')
-b += rect(X0, 116, 36, 80, RED_F, RED, 2, 0) + rect(X0 + 100, 116, 36, 80, BLUE_F, BLUE, 2, 0)
-b += text(X0 + 18, 162, "N", RED, 17, "middle", "700") + text(X0 + 118, 162, "S", BLUE, 17, "middle", "700")
+b += u_magnet(X0, 116, 136, 110, 36, 30, 52, MD)
 # phần khung phía trước (cạnh dưới trong khe + cạnh đứng trước + cạnh trên)
 b += line(*A, *add(C0, MD, 1), WIRE, 3.5) + line(*A, *A2, WIRE, 3.5) + line(*A2, *B2, WIRE, 3.5)
-b += f'<text x="162" y="188" fill="{WIRE}" font-size="19" font-weight="700" font-style="italic" font-family="serif" text-anchor="middle">l</text>'
+b += f'<text x="160" y="173" fill="#c2410c" font-size="20" font-weight="800" text-anchor="middle">ℓ</text>'
 # giá đỡ riêng đứng trên bàn, ngoài cân
 b += rect(312, 258, 56, 10, "rgba(148,163,184,.45)", "currentColor", 2, 2)
 b += rect(335, 30, 10, 228, "rgba(148,163,184,.40)", "currentColor", 2, 2)
-b += rect(156, 30, 189, 10, "rgba(148,163,184,.40)", "currentColor", 2, 2)
+b += rect(130, 30, 215, 10, "rgba(148,163,184,.40)", "currentColor", 2, 2)
 HX = (A2[0] + B2[0]) / 2
 b += line(HX, 40, HX, (A2[1] + B2[1]) / 2, "currentColor", 2)
 b += text(150, 22, "giá đỡ riêng, không chạm cân", "currentColor", 14, "start", "700")
-b += text(14, 84, "khung dây", WIRE, 14, "start", "700") + line(88, 80, A2[0] - 4, 90, WIRE, 1.4)
-b += text(262, 150, "nam châm", "currentColor", 14, "start", "600")
+b += text(14, 84, "khung dây", "#c2410c", 14, "start", "700") + line(88, 80, A2[0] - 4, 90, "#c2410c", 1.4)
+b += text(262, 150, "nam châm", "currentColor", 14, "start", "600") + line(258, 158, 230, 176, "currentColor", 1.4)
 b += text(262, 168, "chữ U", "currentColor", 14, "start", "600")
 b += text(14, 292, "khung nối nguồn một chiều + ampe kế", "currentColor", 14, "start", "600")
-fig1 = wrap("0 0 380 302", "Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá đứng riêng trên bàn, cạnh dưới dài l xuyên qua khe nam châm",
-            b, "Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng.<br>Cạnh dưới của khung (dài $l$) nằm trong khe nam châm.<br>Dây không chạm vào cân hay nam châm.")
+fig1 = wrap("0 0 380 302", "Cân điện tử có nam châm chữ U trên đĩa; khung dây treo trên giá đứng riêng trên bàn, cạnh dưới dài ℓ xuyên qua khe nam châm",
+            b, "Hình 1. Bố trí cân dòng điện: nam châm chữ U nằm trên đĩa cân, khung dây treo trên giá đứng riêng.<br>Cạnh dưới của khung (dài $\ell$, tức $l$ trong công thức) nằm trong khe nam châm.<br>Dây không chạm vào cân hay nam châm.")
 
 # ======================================================= Hình 2: lực và phản lực (mặt cắt khe nam châm)
 b = text(20, 40, "⊙ dòng điện hướng ra khỏi trang", "currentColor", 14, "start", "700")
 b += rect(20, 240, 230, 40, GREY_F)
 b += text(135, 266, "cân điện tử", "currentColor", 14, "middle", "700")
-b += rect(30, 110, 50, 130, RED_F, RED, 2, 3)
-b += rect(190, 110, 50, 130, BLUE_F, BLUE, 2, 3)
-b += rect(30, 200, 210, 40, GREY_F, "currentColor", 2, 3)
-b += text(55, 160, "N", RED, 18, "middle", "700")
-b += text(215, 160, "S", BLUE, 18, "middle", "700")
-WX, WY, FL = 135, 156, 50                       # tâm dây; F và F′ cùng độ lớn → cùng dài FL px
-b += field_line(88, WY, WX - 14, WY, GRN, 2.2) + field_line(WX + 14, WY, 182, WY, GRN, 2.2) + field_line(88, 188, 182, 188, GRN, 2.2)
-b += text(92, WY - 10, "B", GRN, 16, "start", "700")                       # tâm dây; F và F′ cùng độ lớn → cùng dài FL px
+b += u_magnet(30, 110, 210, 130, 50, 40, 60, (14, -10))
+WX, WY, FL = 135, 148, 50                       # tâm dây; F và F′ cùng độ lớn → cùng dài FL px
+b += field_line(98, WY, WX - 14, WY, GRN, 2.2) + field_line(WX + 14, WY, 184, WY, GRN, 2.2) + field_line(98, 164, 184, 164, GRN, 2.2)
+b += text(102, WY - 12, "B", "#047857", 16, "start", "800")
 b += f'<circle cx="{WX}" cy="{WY}" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="{WX}" cy="{WY}" r="3" fill="currentColor"/>'
 b += arrow("", "r", WX, WY - 10, WX, WY - 10 - FL, 3)
-b += text(WX, WY - FL - 18, "F lên dây", RED, 14, "middle", "700")
-b += arrow("", "o", 215, 176, 215, 176 + FL, 3)               # đặt lên nam châm (cánh S + gông)
-b += text(252, 200, "F′ lên", ORG, 14, "start", "700")
-b += text(252, 218, "nam châm", ORG, 14, "start", "700")
+b += text(WX, WY - FL - 18, "F lên dây", "#be123c", 15, "middle", "800")
+b += line(215, 176, 215, 176 + FL, "#c2410c", 2.8) + chevron(215, 176 + FL, 0, 1, "#c2410c", 2.8, 11.5)               # đặt lên nam châm (cánh S + gông)
+b += text(264, 200, "F′ lên", "#c2410c", 15, "start", "800")
+b += text(264, 219, "nam châm", "#c2410c", 15, "start", "800")
 fig2 = wrap("0 0 380 290", "Mặt cắt khe nam châm: dây có dòng hướng ra khỏi trang chịu lực từ hướng lên, nam châm chịu phản lực hướng xuống cùng độ lớn làm cân tăng",
             b, "Hình 2. Mặt cắt khe nam châm chữ U.<br>Đường sức từ đi từ cực N sang cực S.<br>Dây chịu lực $F$, nam châm chịu lực $F'$ cùng độ lớn và ngược chiều; cân chỉ cảm nhận $F'$.")
 
@@ -188,11 +212,9 @@ def sim_html():
     sv += '<rect class="sim-bar" x="135" y="318" width="95" height="10" rx="3" fill="#fb923c"/>'
     sv += text(28, 327, "−", "currentColor", 14, "middle", "700") + text(242, 327, "+", "currentColor", 14, "middle", "700")
     # nam châm chữ U: cực N, S ở đầu cánh
-    sv += rect(40, 112, 40, 64, RED_F, "none", 0, 0) + rect(190, 112, 40, 64, BLUE_F, "none", 0, 0)
-    sv += f'<path d="{UP}" fill="{GREY_F}" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>'
-    sv += text(60, 150, "N", RED, 17, "middle", "700") + text(210, 150, "S", BLUE, 17, "middle", "700")
+    sv += u_magnet(40, 112, 190, 180, 40, 40, 64, (10, -7))
     # đường sức B
-    sv += field_line(88, 122, 122, 122, GRN, 2.2, "5 3", 10) + field_line(148, 122, 182, 122, GRN, 2.2, "5 3", 10)
+    sv += field_line(94, 122, 122, 122, GRN, 2.2, "5 3", 10) + field_line(148, 122, 182, 122, GRN, 2.2, "5 3", 10)
     # giá gá cứng: đế bắt xuống bàn, trụ, tay đỡ, thanh treo, ngàm ôm dây, bu lông
     sv += rect(284, 326, 60, 10, "rgba(148,163,184,.45)", "currentColor", 2, 2) + hatch(286, 342, 337, 6)
     sv += rect(306, 50, 16, 278, "rgba(148,163,184,.4)", "currentColor", 2, 2)
@@ -215,7 +237,7 @@ def sim_html():
         fb += text(cx, 20, ten, "currentColor", 14, "middle", "700")
     fb += wire(63, CY)
     ux, uy, us = 190, CY, .55
-    fb += f'<g transform="translate({ux - GX * us:.2f},{uy - GY * us:.2f}) scale({us})">{rect(40,112,40,64,RED_F,"none",0,0)}{rect(190,112,40,64,BLUE_F,"none",0,0)}<path d="{UP}" fill="{GREY_F}" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></g>'
+    fb += f'<g transform="translate({ux - GX * us:.2f},{uy - GY * us:.2f}) scale({us})">{u_magnet(40, 112, 190, 180, 40, 40, 64, (10, -7), fs=26, sw=3.5)}</g>'
     fb += rect(262, CY - 22, 110, 44, GREY_F)
     # mũi tên dày (trọng lực, phản lực pháp tuyến) vẽ trước, mũi tên mảnh (lực từ, lực giữ) đè lên
     fb += arr(190, CY, "P", "a-Pm", 6) + arr(190, CY, "N", "a-N", 6)
