@@ -30,5 +30,5 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l11-do-sdd-pin · tn-l11-do-sdd-pin-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
 - l11-nang-luong-dien · tn-l11-nang-luong-dien-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
 - l11-nang-luong-dien · tn-l11-nang-luong-dien-03 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
-- l11-nguon-dien · tn-l11-nguon-dien-01 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
+- l11-nguon-dien · tn-l11-nguon-dien-01 · clip nguondien1 · đã soát, đã render 49,3 s, 1,05 MB + khung JSON · 31/10/2026 ·
 - l11-nguon-dien · tn-l11-nguon-dien-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
