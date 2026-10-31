@@ -32,3 +32,12 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l11-nang-luong-dien · tn-l11-nang-luong-dien-03 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
 - l11-nguon-dien · tn-l11-nguon-dien-01 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
 - l11-nguon-dien · tn-l11-nguon-dien-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
+
+## Chặng B — L10 Năng lượng + Động lượng (lô 31/10/2026; Ch.3 Động lực học đã hết nhóm C ở lô 30/10, thầy chọn làm tiếp Ch.4 + Ch.5)
+- l10-cong-suat · tn-l10-cong-suat-01 · clip congsuat1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,8 s, 1,1 MB
+- l10-dong-nang-the-nang · tn-l10-dong-nang-the-nang-01 · clip dongnang1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,7 s, 1,2 MB
+- l10-co-nang-bao-toan · tn-l10-co-nang-bao-toan-01 · clip conang1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,9 s, 1,6 MB
+- l10-hieu-suat · tn-l10-hieu-suat-01 · clip hieusuat1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,5 s, 1,6 MB
+- l10-dong-luong · tn-l10-dongluong-01 · clip dongluong1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,3 s, 1,2 MB
+- l10-dong-luong · tn-l10-dongluong-02 · clip dongluong2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,7 s, 1,0 MB; kho thêm giả thiết gỗ nặng hơn bi nhiều
+- l10-thuc-hanh-dong-luong · tn-l10-thuchanhdl-03 · clip thuchanhdl3 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 50,0 s, 1,2 MB; cổng 2 là phép thử thêm
