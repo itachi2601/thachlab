@@ -147,3 +147,22 @@ def u_magnet(x, y, w, h, arm, yoke, tip, d=(18, -12), r=None, ri=None, fs=17, sw
     o += text(x + arm / 2, y + tip / 2 + fs * .36, "N", "#fff", fs, "middle", "800")
     o += text(xr - arm / 2, y + tip / 2 + fs * .36, "S", "#fff", fs, "middle", "800")
     return o
+
+
+# Nam châm thẳng chuẩn (cùng phong cách u_magnet; thầy duyệt 31/10/2026)
+def bar_magnet(cx, cy, L, H, d=(10, -7), fs=17, sw=2, n_left=True):
+    """Nam châm thẳng nhìn chính diện hơi xiên (chiều sâu dời d=(dx, dy) lên-phải); tâm mặt trước (cx, cy),
+    dài L, cao H. Nửa trái N đỏ, nửa phải S xanh (n_left=False thì đảo); chữ trắng 800 cỡ fs. Trả SVG."""
+    dx, dy = d
+    x0, x1, y0, y1, xm = cx - L / 2, cx + L / 2, cy - H / 2, cy + H / 2, cx
+    CL, CR = (UM_N, UM_S) if n_left else (UM_S, UM_N)
+    P = lambda pts, f: f'<polygon points="{" ".join(f"{a:.1f},{b:.1f}" for a, b in pts)}" fill="{f}" stroke="{UM_EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
+    o = P([(x0, y0), (xm, y0), (xm + dx, y0 + dy), (x0 + dx, y0 + dy)], CL[1])          # mặt trên nửa trái
+    o += P([(xm, y0), (x1, y0), (x1 + dx, y0 + dy), (xm + dx, y0 + dy)], CR[1])         # mặt trên nửa phải
+    o += P([(x1, y0), (x1 + dx, y0 + dy), (x1 + dx, y1 + dy), (x1, y1)], CR[2])         # mặt bên phải
+    o += (f'<rect x="{x0:.1f}" y="{y0:.1f}" width="{L/2:.1f}" height="{H:.1f}" fill="{CL[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>'
+          f'<rect x="{xm:.1f}" y="{y0:.1f}" width="{L/2:.1f}" height="{H:.1f}" fill="{CR[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>')
+    lt, rt = ("N", "S") if n_left else ("S", "N")
+    o += text(round(x0 + L / 4, 1), round(cy + fs * .36, 1), lt, "#fff", fs, "middle", "800")
+    o += text(round(x1 - L / 4, 1), round(cy + fs * .36, 1), rt, "#fff", fs, "middle", "800")
+    return o

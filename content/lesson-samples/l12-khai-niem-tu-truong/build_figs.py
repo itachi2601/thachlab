@@ -117,13 +117,32 @@ def _poly(Q, c, w, dash, op=1):
     return f'<path d="{d}" fill="none" stroke="{c}" stroke-width="{w}" stroke-dasharray="{dash}" opacity="{op}" stroke-linecap="round"/>'
 
 
-def _bar(cx, cy, hl, hw=7, dp=5):
-    """Thanh nam châm có chiều sâu: mặt trên + mặt bên (lệch dp px lên phải), mặt trước nửa đỏ N / nửa xanh S."""
-    x0, x1, y0, y1 = cx - hl, cx + hl, cy - hw, cy + hw
-    return (f'<polygon points="{x0},{y0} {x0+dp},{y0-dp} {x1+dp},{y0-dp} {x1},{y0}" fill="#cbd5e1" stroke="currentColor" stroke-width="1"/>'
-            f'<polygon points="{x1},{y0} {x1+dp},{y0-dp} {x1+dp},{y1-dp} {x1},{y1}" fill="#94a3b8" stroke="currentColor" stroke-width="1"/>'
-            f'<rect x="{x0}" y="{y0}" width="{hl}" height="{2*hw}" fill="{RED}" stroke="currentColor" stroke-width="1.2"/>'
-            f'<rect x="{cx}" y="{y0}" width="{hl}" height="{2*hw}" fill="{BLUE}" stroke="currentColor" stroke-width="1.2"/>')
+UM_BODY, UM_DARK, UM_EDGE = "#cbd5e1", "#94a3b8", "#334155"   # cùng bảng màu nam châm chữ U (bài 11 u_magnet)
+UM_N = ("#dc2626", "#f87171", "#b91c1c")      # mặt trước, mặt trên, mặt bên
+UM_S = ("#2563eb", "#60a5fa", "#1e40af")
+
+
+def bar_magnet(cx, cy, L, H, d=(10, -7), fs=17, sw=2, n_left=True):
+    """Nam châm thẳng nhìn chính diện hơi xiên (chiều sâu dời d=(dx, dy) lên-phải); tâm mặt trước (cx, cy),
+    dài L, cao H. Nửa trái N đỏ, nửa phải S xanh (n_left=False thì đảo); chữ trắng 800 cỡ fs. Trả SVG."""
+    dx, dy = d
+    x0, x1, y0, y1, xm = cx - L / 2, cx + L / 2, cy - H / 2, cy + H / 2, cx
+    CL, CR = (UM_N, UM_S) if n_left else (UM_S, UM_N)
+    P = lambda pts, f: f'<polygon points="{" ".join(f"{a:.1f},{b:.1f}" for a, b in pts)}" fill="{f}" stroke="{UM_EDGE}" stroke-width="{sw}" stroke-linejoin="round"/>'
+    o = P([(x0, y0), (xm, y0), (xm + dx, y0 + dy), (x0 + dx, y0 + dy)], CL[1])          # mặt trên nửa trái
+    o += P([(xm, y0), (x1, y0), (x1 + dx, y0 + dy), (xm + dx, y0 + dy)], CR[1])         # mặt trên nửa phải
+    o += P([(x1, y0), (x1 + dx, y0 + dy), (x1 + dx, y1 + dy), (x1, y1)], CR[2])         # mặt bên phải
+    o += (f'<rect x="{x0:.1f}" y="{y0:.1f}" width="{L/2:.1f}" height="{H:.1f}" fill="{CL[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>'
+          f'<rect x="{xm:.1f}" y="{y0:.1f}" width="{L/2:.1f}" height="{H:.1f}" fill="{CR[0]}" stroke="{UM_EDGE}" stroke-width="{sw}"/>')
+    lt, rt = ("N", "S") if n_left else ("S", "N")
+    o += text(round(x0 + L / 4, 1), round(cy + fs * .36, 1), lt, "#fff", fs, "middle", "800")
+    o += text(round(x1 - L / 4, 1), round(cy + fs * .36, 1), rt, "#fff", fs, "middle", "800")
+    return o
+
+
+# Bộ đường sức chung cho khung ii và iii (mô hình hai từ tích ở ±2 đơn vị, 30 px/đơn vị → cách nhau 120 px,
+# sát hai đầu thân dài 128 px). Góc rời cực N: đường càng gần trục càng mau ở hai cực.
+BAR_L, BAR_H, BAR_D, BAR_S, BAR_PHI = 128, 26, (8, -6), 30, (40, 52, 64, 76)
 
 
 b = defs("f3")
@@ -148,34 +167,48 @@ b += text(42, 67, "N", "#0f172a", 16, "middle", "800")
 b += text(178, 67, "S", "#0f172a", 16, "middle", "800")
 for y in (50, 61, 72):                                                # trong khe: thẳng, song song, cách đều, N → S
     b += field_line(60, y, 160, y, GRN, 1.8, "5 3", 9)
-b += text(14, 148, "song song, cách đều", "#047857", 14, "start", "600")
-b += text(14, 167, "→ từ trường đều", "#047857", 14, "start", "600")
-# ii) từ phổ: mạt sắt rắc quanh thanh nam châm, xếp theo đường sức (vạch ngắn, không mũi tên)
-b += text(232, 20, "ii) Từ phổ", "currentColor", 14, "start", "700")
-b += f'<clipPath id="f3-c2"><rect x="230" y="36" width="200" height="98" rx="6"/></clipPath>'
-b += rect(230, 36, 200, 98, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
-g = ""
-for Q, _, _ in _bar_lines(330, 85, 12, (30, 55, 80, 105, 130)):
-    g += _poly(Q, "currentColor", 2.2, "2 4", .7)
-g += f'<line x1="230" y1="85" x2="430" y2="85" stroke="currentColor" stroke-width="2.2" stroke-dasharray="2 4" opacity=".7"/>'
-b += f'<g clip-path="url(#f3-c2)">{g}</g>' + _bar(330, 85, 29, 9)
-b += text(316, 90, "N", "#0f172a", 14, "middle", "700") + text(344, 90, "S", "#0f172a", 14, "middle", "700")
-b += text(232, 156, "mạt sắt dày ở hai cực", "currentColor", 14, "start", "500")
-# iii) đường sức vẽ theo quy ước: nét đứt, có chiều (ra ở N, vào ở S), không cắt nhau
-b += text(14, 200, "iii) Đường sức quy ước", "currentColor", 14, "start", "700")
-b += f'<clipPath id="f3-c3"><rect x="14" y="212" width="266" height="112" rx="6"/></clipPath>'
-b += rect(14, 212, 266, 112, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
-g = ""
-for Q, tip, dr in _bar_lines(147, 268, 15, (60, 85, 120)):
-    g += _poly(Q, GRN, 1.8, "6 4") + chevron(tip[0], tip[1], dr[0], dr[1], GRN, 1.8, 9)
-g += field_line(110, 268, 24, 268, GRN, 1.8, "6 4", 9)      # trục, bên trái N: B hướng ra xa N
-g += field_line(276, 268, 186, 268, GRN, 1.8, "6 4", 9)     # trục, bên phải S: B hướng vào S
-b += f'<g clip-path="url(#f3-c3)">{g}</g>' + _bar(147, 268, 36, 9)
-b += text(129, 273, "N", "#0f172a", 14, "middle", "700") + text(165, 273, "S", "#0f172a", 14, "middle", "700")
-b += text(292, 246, "ra ở N, vào ở S", "currentColor", 14, "start", "500")
-b += text(292, 272, "không cắt nhau", "currentColor", 14, "start", "500")
-b += text(292, 298, "gần cực: mau", "currentColor", 14, "start", "500")
-fig3b = wrap("0 0 440 336",
+b += text(232, 74, "song song, cách đều", "#047857", 14, "start", "600")
+b += text(232, 96, "→ từ trường đều", "#047857", 14, "start", "600")
+
+
+def _bo_duong(cx, cy, kieu):
+    """kieu='mat_sat': vạch ngắn xám (từ phổ); 'quy_uoc': nét đứt xanh lục + đầu V giữa đường (chiều N → S)."""
+    g = ""
+    for k, (Q, tip, dr) in enumerate(_bar_lines(cx, cy, BAR_S, BAR_PHI)):
+        if kieu == "mat_sat":
+            g += _poly(Q, "currentColor", 2.4, "3 4", .75)
+        else:
+            # đầu V so le theo x (0, −26, +22, −44 px quanh tâm; đường trong cùng ở đỉnh cho xa mặt trên thân) để không dồn thành một cột; đặt đúng điểm trên đường
+            xt = cx + (0, -26, 22, -44)[k // 2]
+            i = min((j for j in range(1, len(Q) - 1) if (Q[j][1] - cy) * (tip[1] - cy) > 0), key=lambda j: abs(Q[j][0] - xt))
+            g += _poly(Q, GRN, 1.8, "6 4") + chevron(Q[i][0], Q[i][1], Q[i + 1][0] - Q[i - 1][0], Q[i + 1][1] - Q[i - 1][1], GRN, 1.8, 9)
+    xl, xr = cx - BAR_L / 2, cx + BAR_L / 2 + BAR_D[0]
+    if kieu == "mat_sat":
+        g += f'<line x1="0" y1="{cy}" x2="{xl-4}" y2="{cy}" stroke="currentColor" stroke-width="2.4" stroke-dasharray="3 4" opacity=".75"/>'
+        g += f'<line x1="{xr+4}" y1="{cy}" x2="440" y2="{cy}" stroke="currentColor" stroke-width="2.4" stroke-dasharray="3 4" opacity=".75"/>'
+    else:
+        g += field_line(xl - 4, cy, cx - 133, cy, GRN, 1.8, "6 4", 9)      # trục bên trái: ra xa N
+        g += field_line(cx + 133, cy, xr + 4, cy, GRN, 1.8, "6 4", 9)      # trục bên phải: đi vào S
+    return g
+
+
+# ii) từ phổ: mạt sắt xếp dọc đúng bộ đường của khung iii
+b += text(14, 162, "ii) Từ phổ (mạt sắt)", "currentColor", 14, "start", "700")
+b += f'<clipPath id="f3-c2"><rect x="14" y="172" width="276" height="186" rx="6"/></clipPath>'
+b += rect(14, 172, 276, 186, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
+b += f'<g clip-path="url(#f3-c2)">{_bo_duong(152, 265, "mat_sat")}</g>' + bar_magnet(152, 265, BAR_L, BAR_H, BAR_D)
+b += text(302, 258, "mạt sắt dày", "currentColor", 14, "start", "600")
+b += text(302, 278, "ở hai cực", "currentColor", 14, "start", "600")
+# iii) đường sức vẽ theo quy ước: cùng bộ đường, nét đứt, có chiều
+b += text(14, 382, "iii) Đường sức quy ước", "currentColor", 14, "start", "700")
+b += f'<clipPath id="f3-c3"><rect x="14" y="392" width="276" height="186" rx="6"/></clipPath>'
+b += rect(14, 392, 276, 186, "rgba(148,163,184,.08)", "currentColor", 1.2, 6)
+b += f'<g clip-path="url(#f3-c3)">{_bo_duong(152, 485, "quy_uoc")}</g>' + bar_magnet(152, 485, BAR_L, BAR_H, BAR_D)
+b += text(302, 446, "ra ở N, vào ở S", "currentColor", 14, "start", "600")
+b += text(302, 470, "khép kín", "currentColor", 14, "start", "600")
+b += text(302, 494, "không cắt nhau", "currentColor", 14, "start", "600")
+b += text(302, 518, "gần cực: mau", "currentColor", 14, "start", "600")
+fig3b = wrap("0 0 440 592",
             "Ba khung: đường sức từ của nam châm chữ U (từ trường đều), từ phổ mạt sắt quanh thanh nam châm và đường sức vẽ theo quy ước",
             b, "Hình 4.<br>i) Chữ U: từ trường đều.<br>ii) Từ phổ.<br>iii) Đường quy ước.")
 fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-khai-niem-tu-truong/hinh-duong-suc-thanh-nam-cham.webp" '
