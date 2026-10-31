@@ -11,6 +11,7 @@ import c_tn_l10_dong_nang_the_nang_01 from "@/content/thi-nghiem/video-khung/tn-
 import c_tn_l10_dongluong_01 from "@/content/thi-nghiem/video-khung/tn-l10-dongluong-01.json";
 import c_tn_l10_dongluong_02 from "@/content/thi-nghiem/video-khung/tn-l10-dongluong-02.json";
 import c_tn_l10_hieu_suat_01 from "@/content/thi-nghiem/video-khung/tn-l10-hieu-suat-01.json";
+import c_tn_l10_thuchanhdl_03 from "@/content/thi-nghiem/video-khung/tn-l10-thuchanhdl-03.json";
 import c_tn_l12_antoanpx_01 from "@/content/thi-nghiem/video-khung/tn-l12-antoanpx-01.json";
 import c_tn_l12_apsuatdongnang_01 from "@/content/thi-nghiem/video-khung/tn-l12-apsuatdongnang-01.json";
 import c_tn_l12_apsuatdongnang_02 from "@/content/thi-nghiem/video-khung/tn-l12-apsuatdongnang-02.json";
@@ -47,6 +48,7 @@ const CLIPS = [
   c_tn_l10_dongluong_01,
   c_tn_l10_dongluong_02,
   c_tn_l10_hieu_suat_01,
+  c_tn_l10_thuchanhdl_03,
   c_tn_l12_antoanpx_01,
   c_tn_l12_apsuatdongnang_01,
   c_tn_l12_apsuatdongnang_02,
