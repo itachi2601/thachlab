@@ -43,7 +43,7 @@ def dot(x, y, r=4, c="currentColor", hollow=False):
 
 
 def sub(s):
-    return re.sub(r"_(\w)", r'<tspan baseline-shift="sub" font-size="13">\1</tspan>', s)
+    return re.sub(r"_(\w)", r'<tspan baseline-shift="sub" font-size="14">\1</tspan>', s)
 
 
 class Fig:

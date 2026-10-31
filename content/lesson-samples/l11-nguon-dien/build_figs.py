@@ -24,7 +24,7 @@ def it(s):
 
 
 def sub(s):
-    return f'<tspan baseline-shift="sub" font-size="12">{s}</tspan>'
+    return f'<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, cap=""):

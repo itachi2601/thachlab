@@ -46,7 +46,7 @@ class Fig:
         inner, width = "", 0.0
         for sg in segs:
             if isinstance(sg, tuple):
-                inner += f'<tspan baseline-shift="sub" font-size="12">{sg[1]}</tspan>'
+                inner += f'<tspan baseline-shift="sub" font-size="14">{sg[1]}</tspan>'
                 width += 0.55 * 12 * len(sg[1])
             else:
                 inner += sg
