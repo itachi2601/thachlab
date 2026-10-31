@@ -50,3 +50,15 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l11-bai-tap-dao-dong · tn-l11-baitapdaodong-03 · clip bttdaodong3 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 48,9 s, 1,3 MB
 - l11-co-nang-dao-dong · tn-l11-conangdddh-01 · clip conangdddh1 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 49,1 s, 1,4 MB; kho cần sửa: hien_tuong_hay_sai[3] thêm "khi treo thẳng đứng", "năm hàng" ≠ 4 hàng trong hình
 - l11-bai-tap-nang-luong-dao-dong · tn-l11-baitapnangluong-01 · clip btnangluong1 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 49,6 s, 1,45 MB
+- l10-toc-do-van-toc · tn-l10-tdvt-03 · clip tdvt3 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,9 s, 1,1 MB
+- l10-do-dich-chuyen-quang-duong · tn-l10-dd-qd-01 · clip ddqd1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,1 s, 1,1 MB
+- l10-thuc-hanh-do-toc-do · tn-l10-do-toc-do-03 · clip dotocdo3 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,3 s, 1,3 MB
+- l10-do-thi-dich-chuyen-thoi-gian · tn-l10-dt-dctg-01 · clip dtdctg1 · đã soát (2 vòng), đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,8 s, 1,4 MB
+- l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-02 · clip giatoc2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,5 s, 1,2 MB
+- l10-chuyen-dong-thang-bien-doi-deu · tn-l10-ctbdd-01 · clip ctbdd1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,7 s, 1,4 MB
+- l10-su-roi-tu-do · tn-l10-roi-tu-do-02 · clip roitudo2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,9 s, 1,2 MB
+- l10-thuc-hanh-do-g · tn-l10-do-g-02 · clip dog2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,3 s, 1,4 MB
+- l10-chuyen-dong-nem · tn-l10-nemngang-02 · clip nemngang2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,4 s, 1,1 MB
+- l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-01 · clip · để phiên sau: trùng dụng cụ máng + cổng quang với ctbdd1 · 31/10/2026 ·
+- l10-toc-do-van-toc · tn-l10-tdvt-01 · clip · để phiên sau: lô đủ 9 clip (tdvt3 đã làm cho bài này) · 31/10/2026 ·
+- l10-thuc-hanh-do-g · tn-l10-do-g-03 · clip · để phiên sau: lô đủ 9 clip (dog2 đã làm cho bài này) · 31/10/2026 ·
