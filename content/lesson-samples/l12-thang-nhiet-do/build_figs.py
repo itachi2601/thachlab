@@ -25,11 +25,6 @@ def rect(x, y, w, h, fill, stroke="currentColor", sw=2, rx=8):
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{rx}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>'
 
 
-def hop(x, y, w, h, s, c, size=12):
-    """Hộp chữ nhật có chữ canh giữa."""
-    return rect(x, y, w, h, "rgba(148,163,184,.10)") + text(x + w / 2, y + h / 2 + 4, s, c, size, "middle", "700")
-
-
 def wrap(vb, label, body, cap, exp=""):
     e = f' data-exp="{exp}"' if exp else ""
     return (f'<figure class="fig" data-tl="1"{e}><svg viewBox="{vb}" role="img" aria-label="{label}">{body}</svg>'
@@ -38,22 +33,24 @@ def wrap(vb, label, body, cap, exp=""):
 
 # ------------------------------------------------------- Hình 1: một nhiệt độ, ba con số
 b = defs("f1")
-b += text(16, 26, "Ba thang đo, một nhiệt độ", "currentColor", 13, "start", "700")
-b += rect(196, 46, 30, 132, "rgba(148,163,184,.14)", "currentColor", 2.5, 15)           # ống nhiệt kế
-b += rect(205, 86, 12, 96, RED, RED, 0, 6)                                               # cột chất lỏng
-b += f'<circle cx="211" cy="190" r="17" fill="rgba(248,113,113,.35)" stroke="{RED}" stroke-width="2"/>'
-b += f'<circle cx="211" cy="190" r="11" fill="{RED}"/>'
-for y, col, so, ten in ((52, GRN, "38,5 °C", "thang Celsius"),
-                        (110, BLUE, "311,5 K", "thang Kelvin"),
-                        (168, RED, "101,3 °F", "thang Fahrenheit")):
-    b += rect(14, y, 140, 42, f"rgba(148,163,184,.10)", col, 1.6, 8)
-    b += text(24, y + 22, so, col, 14, "start", "700")
-    b += text(24, y + 37, ten, col, 11, "start", "500")
-    b += line(156, y + 21, 208, 90, "currentColor", 1.2, "5 4", .7)
-b += text(240, 84, "cùng một mức", "currentColor", 11, "start", "600")
-b += text(240, 100, "nhiệt độ", "currentColor", 11, "start", "600")
-fig1 = wrap("0 0 420 240", "Một nhiệt kế với ba nhãn nhiệt độ theo ba thang đo cho cùng một mức nhiệt độ",
-            b, "Hình 1. Ba thang đo, một nhiệt độ: 38,5 °C = 311,5 K = 101,3 °F — chỉ khác cách chia thang.")
+b += text(16, 26, "Ba thang đo, một nhiệt độ", "currentColor", 16, "start", "700")
+b += ('<path d="M250 189.8 V60 A16 16 0 0 1 282 60 V189.8" fill="rgba(148,163,184,.14)" '
+      'stroke="currentColor" stroke-width="2.5"/>')                                   # ống hở đáy, nối vào bầu
+b += rect(260, 96, 12, 100, RED, RED, 0, 6)                                              # cột chất lỏng
+b += f'<circle cx="266" cy="200" r="19" fill="rgba(248,113,113,.35)" stroke="{RED}" stroke-width="2"/>'
+b += f'<circle cx="266" cy="200" r="12" fill="{RED}"/>'
+b += line(240, 96, 292, 96, "currentColor", 2.2)                                         # vạch mức đang đọc
+for y, col, so, ten in ((44, GRN, "38,5 °C", "thang Celsius"),
+                        (104, BLUE, "≈ 311,5 K", "thang Kelvin"),
+                        (164, RED, "101,3 °F", "thang Fahrenheit")):
+    b += rect(14, y, 170, 50, "rgba(148,163,184,.10)", col, 1.8, 8)
+    b += text(26, y + 23, so, col, 18, "start", "700")
+    b += text(26, y + 42, ten, col, 14, "start", "600")
+    b += line(186, y + 25, 240, 96, "currentColor", 1.4, "5 4", .75)
+b += text(300, 92, "cùng một", "currentColor", 14, "start", "600")
+b += text(300, 110, "mức nhiệt độ", "currentColor", 14, "start", "600")
+fig1 = wrap("0 0 420 232", "Một nhiệt kế với ba nhãn nhiệt độ theo ba thang đo cho cùng một mức nhiệt độ",
+            b, "Hình 1. Ba thang đo, một nhiệt độ: 38,5 °C = 101,3 °F ≈ 311,5 K (cộng 273, làm tròn) — chỉ khác cách chia thang.")
 
 # ------------------------------------------------------- Hình 2, 3, 4: ảnh OpenStax (đợt 2, 27/10/2026)
 SRC = "<small>OpenStax College Physics 2e, Hình {n} — CC BY‑NC‑SA 4.0</small>"

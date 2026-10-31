@@ -44,20 +44,27 @@ def wrap(vb, label, body, cap, exp=""):
 
 # ---------------------------------------------------------------- Hình 1: li nước đá
 b = defs("f1")
-b += '<path d="M150 58 L150 182 Q150 196 166 196 L254 196 Q270 196 270 182 L270 58" fill="none" stroke="currentColor" stroke-width="2.5"/>'
-b += '<path d="M152 128 L152 182 Q152 194 166 194 L254 194 Q268 194 268 182 L268 128 Z" fill="rgba(56,189,248,.16)" stroke="none"/>'
-for x, y, w, h in ((166, 142, 28, 24), (200, 136, 30, 28), (234, 144, 26, 22)):
+# thành li + nước (mặt nước y=110); đá nổi, nhô lên khỏi mặt nước
+b += '<path d="M150 50 L150 186 Q150 200 166 200 L254 200 Q270 200 270 186 L270 50" fill="none" stroke="currentColor" stroke-width="2.5"/>'
+b += '<path d="M152 110 L152 186 Q152 198 166 198 L254 198 Q268 198 268 186 L268 110 Z" fill="rgba(56,189,248,.16)" stroke="none"/>'
+b += line(152, 110, 203, 110, BLUE, 1.4) + line(217, 110, 268, 110, BLUE, 1.4)
+for x, y, w, h in ((158, 107, 30, 26), (228, 107, 32, 24)):  # ngập ~87 %
     b += f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="4" fill="rgba(56,189,248,.4)" stroke="{BLUE}" stroke-width="1.6"/>'
-b += text(160, 234, "đá đang tan", BLUE, 12, "start", "700")
-b += line(218, 20, 218, 158, "currentColor", 2.5) + dot(218, 158, 5, RED)
-b += text(228, 24, "nhiệt kế", GRN, 12)
-b += text(228, 42, "chỉ ? °C", GRN, 14, "start", "700")
-b += f'<ellipse cx="146" cy="150" rx="4" ry="6" fill="{BLUE}"/>'
-b += f'<ellipse cx="143" cy="172" rx="3.4" ry="5" fill="{BLUE}"/>'
-b += text(14, 146, "hơi nước", BLUE, 12) + text(14, 162, "ngưng tụ", BLUE, 12)
-b += arrow("f1", "r", 372, 176, 276, 176, 3)
-b += text(276, 166, "nhiệt từ không khí vào", RED, 11)
-fig1 = wrap("0 0 420 250", "Li nước đá đang tan có cắm nhiệt kế, ngoài thành li có nước ngưng tụ",
+b += line(114, 90, 156, 110, BLUE, 1.2)
+b += text(14, 92, "đá đang tan", BLUE, 14, "start", "700")
+# nhiệt kế: ống thẳng, bầu nằm trong nước giữa hai viên đá
+b += f'<rect x="204" y="14" width="12" height="150" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>'
+b += line(210, 120, 210, 166, RED, 4) + dot(210, 172, 8, RED)
+b += text(226, 22, "nhiệt kế", GRN, 14)
+b += text(226, 40, "chỉ ? °C", GRN, 16, "start", "700")
+# giọt nước ngưng tụ bám ngoài thành li
+b += f'<ellipse cx="144" cy="140" rx="4" ry="6" fill="{BLUE}"/>'
+b += f'<ellipse cx="143" cy="164" rx="3.4" ry="5" fill="{BLUE}"/>'
+b += line(96, 152, 136, 146, BLUE, 1.2)
+b += text(14, 148, "hơi nước", BLUE, 14) + text(14, 166, "ngưng tụ", BLUE, 14)
+b += arrow("f1", "r", 404, 174, 278, 174, 2.8)
+b += text(290, 140, "nhiệt từ", RED, 14) + text(290, 158, "không khí vào", RED, 14)
+fig1 = wrap("0 0 420 214", "Li nước đá đang tan có cắm nhiệt kế, ngoài thành li có nước ngưng tụ",
             b, "Hình 1. Không khí nóng truyền nhiệt vào li đá đang tan: nhiệt kế chỉ bao nhiêu? Nước ngoài thành li là hơi nước <em>ngưng tụ</em> khi gặp mặt lạnh.")
 
 # ---------------------------------------------------------------- Hình 2: ảnh OpenStax 14.7 (đợt 2, 27/10/2026)
@@ -65,7 +72,7 @@ fig2 = ('<p>Hình 2 đặt ba thể cạnh nhau ở mức phân tử.<sup class=
         '<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-su-chuyen-the/hinh-ba-the-mo-hinh.webp" '
         'alt="Mô hình phân tử của chất rắn, chất lỏng và chất khí, kèm chiều nóng chảy, đông đặc, sôi, ngưng tụ" '
         'loading="lazy" width="875" height="864"><figcaption>Hình 2. Cùng là các phân tử, khác nhau ở <strong>khoảng cách</strong> và <strong>mức trật tự</strong>.<br>'
-        'Rắn: phân tử dao động quanh vị trí cố định, nối bằng "lò xo" liên kết. Lỏng: phân tử chuyển động tự do hơn. Khí: phân tử rất xa nhau, bay thẳng.</figcaption></figure>\n'
+        'Rắn: phân tử dao động quanh vị trí cố định, nối bằng "lò xo" liên kết.<br>Lỏng: phân tử chuyển động tự do hơn.<br>Khí: phân tử rất xa nhau, bay thẳng.</figcaption></figure>\n'
         '<ol class="tl-fns"><li id="tl-fn-1"><strong>Nhãn trong hình:</strong> Solid = rắn · Liquid = lỏng · Gas = khí · Limits of motion = giới hạn dao động · '
         'Energy input = nhận năng lượng · Energy output = toả năng lượng · Melt = nóng chảy · Freeze = đông đặc · Boil = sôi (hoá hơi) · Condense = ngưng tụ.<br>'
         'Hình: OpenStax, College Physics 2e, Hình 14.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</li></ol>')
@@ -102,24 +109,25 @@ fig3 = wrap("0 0 440 254", "Vòng chuyển thể: nóng chảy, đông đặc, h
             b, "Hình 3. Bốn quá trình chính đi thành hai cặp ngược chiều. Nét đứt là hai quá trình ít gặp: <strong>thăng hoa</strong> (rắn → hơi) và <strong>ngưng kết</strong> (hơi → rắn).")
 
 # ---------------------------------------------------------------- Hình 4: đồ thị nhiệt độ – thời gian
+# c(nước đá) ≈ 2100, c(nước) ≈ 4180 J/(kg.K): cùng công suất, đoạn rắn dốc gấp ~2 đoạn lỏng (1,0 so với 0,5)
 b = defs("f4")
-b += line(50, 30, 50, 210, "currentColor", 2)      # trục tung
-b += line(50, 210, 420, 210, "currentColor", 2)    # trục hoành
-b += text(20, 24, "T (°C)", "currentColor", 12)
-b += text(360, 230, "t (phút)", "currentColor", 12)
-b += line(50, 120, 420, 120, GRN, 1.2, "5 4", .8)
-b += text(24, 124, "0", GRN, 12, "start", "700")
-b += poly([(60, 150), (140, 120), (250, 120), (400, 60)], BLUE, 2.6)
-b += line(140, 120, 140, 150, RED, 1.2, "4 3", .9)
-b += line(250, 120, 250, 150, RED, 1.2, "4 3", .9)
-b += dbl_h(140, 250, 152, RED, 1.6)
-b += text(195, 170, "thời gian nóng chảy", RED, 11, "middle", "700")
-b += text(56, 198, "a: rắn nóng lên", RED, 11)
-b += text(150, 94, "b: đang nóng chảy", BLUE, 11, "start", "700")
-b += text(150, 110, "nhiệt độ không đổi", BLUE, 11, "start", "500")
-b += text(292, 58, "c: lỏng nóng lên", GRN, 11, "start", "700")
-b += dot(140, 120, 4, RED) + dot(250, 120, 4, RED)
-fig4 = wrap("0 0 440 244", "Đồ thị nhiệt độ theo thời gian khi đun nước đá: đoạn dốc lên, đoạn nằm ngang ở 0 °C, rồi dốc lên tiếp",
+b += line(50, 215, 50, 24, "currentColor", 2) + chevron(50, 22, 0, -1, "currentColor", 2, 10)
+b += line(50, 215, 424, 215, "currentColor", 2) + chevron(426, 215, 1, 0, "currentColor", 2, 10)
+b += text(60, 26, "T (°C)", "currentColor", 14)
+b += text(426, 240, "t (phút)", "currentColor", 14, "end")
+b += line(50, 125, 420, 125, GRN, 1.2, "5 4", .8)
+b += text(40, 130, "0", GRN, 14, "end", "700")
+b += poly([(60, 185), (120, 125), (250, 125), (400, 50)], BLUE, 2.6)
+b += line(120, 125, 120, 152, RED, 1.2, "4 3", .9)
+b += line(250, 125, 250, 152, RED, 1.2, "4 3", .9)
+b += dbl_h(120, 250, 152, RED, 1.6)
+b += text(185, 174, "thời gian nóng chảy", RED, 14, "middle", "700")
+b += text(72, 202, "a: rắn nóng lên", RED, 14, "start", "700")
+b += text(125, 92, "b: đang nóng chảy", BLUE, 14, "start", "700")
+b += text(125, 110, "nhiệt độ không đổi", BLUE, 14, "start", "500")
+b += text(236, 56, "c: lỏng nóng lên", GRN, 14, "start", "700")
+b += dot(120, 125, 4, RED) + dot(250, 125, 4, RED)
+fig4 = wrap("0 0 440 250", "Đồ thị nhiệt độ theo thời gian khi đun nước đá: đoạn dốc lên, đoạn nằm ngang ở 0 °C, rồi dốc lên tiếp",
             b, "Hình 4. Đồ thị nhiệt độ – thời gian khi đun nước đá.")
 
 # ---------------------------------------------------------------- thay vào theory.html

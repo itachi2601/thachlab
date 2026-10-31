@@ -1,6 +1,6 @@
 <!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/chuong-1-lop-12-fb9b32/node_modules/katex/dist/katex.min.css">
 <style>
 :root{color-scheme:light}
 body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -182,6 +182,10 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-quiz > input:checked + .tl-opt.tl-no { border-color: #f87171; background: rgba(248,113,113,.16); }
 .exam-content .tl-fb { display: none; padding: 10px 14px; border-radius: 10px; }
 .exam-content .tl-fb p { margin: 0; text-align: left; }
+.exam-content .tl-fb p + p, .exam-content .tl-fb ul + p, .exam-content .tl-fb p + ul { margin-top: 6px; }
+.exam-content .tl-fb ul.tl-fb-list { margin: 6px 0 0; padding-left: 1.3em; list-style: disc; text-align: left; }
+.exam-content .tl-fb ul.tl-fb-list > li { margin: 0 0 4px; padding-left: 2px; }
+.exam-content .tl-fb ul.tl-fb-list > li::marker { color: currentColor; }
 .exam-content .tl-fb--ok { background: rgba(52,211,153,.14); }
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
@@ -288,6 +292,33 @@ html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-c
 html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
 .exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
 .exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Clip thí nghiệm tự dựng 9:16 (chen-video-thi-nghiem.mts): khung DỌC thay vì ép vào 16:9 (hết hai dải đen),
+   tên thí nghiệm là tiêu đề, nhãn "Video thí nghiệm" chỉ là dòng phụ. Màn hẹp: xếp chồng, video rộng tối đa 340px
+   (cao ~600px, vừa một màn điện thoại — D1). Màn ≥640px: video cột trái, chữ cột phải (B1, N1). */
+.exam-content .tl-box--video:has(> .tl-video--doc) { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; column-gap: 20px; }
+.exam-content .tl-box--video:has(> .tl-video--doc) > .tl-label { margin: 0 0 2px; font-size: 12.5px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+.exam-content .tl-video-ten { margin: 0 0 12px; font-size: 1.12em; font-weight: 700; line-height: 1.35; color: #f1f5f9; }
+.exam-content .tl-video--doc { aspect-ratio: 9 / 16; width: 100%; max-width: 340px; justify-self: center; margin: 0; border-radius: 12px; box-shadow: 0 6px 20px rgba(2,6,23,.28); }
+.exam-content .tl-video--doc video { display: block; object-fit: contain; }
+.exam-content .tl-video-goi-y { margin: 12px 0 0; padding: 8px 12px; border-left: 3px solid rgba(167,139,250,.6); border-radius: 0 6px 6px 0; background: rgba(167,139,250,.1); font-size: .94em; line-height: 1.5; }
+html[data-theme="light"] .exam-content .tl-video-ten { color: #1e1b4b; }
+html[data-theme="light"] .exam-content .tl-video-goi-y { border-left-color: #7c3aed; background: rgba(124,58,237,.07); }
+/* Khung video tương tác (components/lessons/VideoThiNghiemKhung.tsx, gắn bằng KhungPortals): mount xong mới ẩn hộp
+   tĩnh (label, <video>, "Nhìn vào") và bỏ viền/nền hộp để khung tự có thẻ riêng. Chunk lỗi thì hộp tĩnh còn nguyên. */
+.exam-content .tl-box--khung.tl-khung-on { display: block; padding: 0; border: 0; background: none; box-shadow: none; }
+.exam-content .tl-box--khung.tl-khung-on > :not(.tl-khung-host) { display: none; }
+.exam-content .tl-khung-host ol { list-style: none; margin: 0; padding: 0; }
+.exam-content .tl-khung-host li { margin: 0; padding-left: 0; }
+.exam-content .tl-khung-host li::marker { content: none; }
+.exam-content .tl-khung-host :is(p, h3), .lesson-page .exam-content .tl-khung-host :is(p, h3) { margin: 0; line-height: inherit; } /* .lesson-page đặt `p`/`h3` cùng độ ưu tiên, đứng sau; lề/cỡ riêng của khung đặt inline trong component (CSS không phân lớp thắng tiện ích Tailwind) */
+.exam-content .tl-khung-host button { font: inherit; }
+@media (min-width: 640px) {
+  .exam-content .tl-box--video:has(> .tl-video--doc) { grid-template-columns: minmax(220px, 300px) minmax(0, 1fr); grid-template-rows: auto auto 1fr; }
+  .exam-content .tl-box--video:has(> .tl-video--doc) > .tl-video--doc { grid-column: 1; grid-row: 1 / span 3; max-width: none; }
+  .exam-content .tl-box--video:has(> .tl-video--doc) > :not(.tl-video--doc) { grid-column: 2; }
+  .exam-content .tl-box--video:has(> .tl-video--doc) > .tl-label { margin-top: 4px; }
+  .exam-content .tl-video-goi-y { margin-top: 4px; }
+}
 /* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
    trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
 .exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
@@ -1409,14 +1440,73 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
   .lesson-page .lesson-toc a, .lesson-rail-back, .lesson-page .lesson-nav--rail .lesson-side-link, .class-rail-item, .class-rail .lesson-rail-back { min-height: 44px; }
 }
 
+/* ============================================================================================
+   MÀN RỘNG ≥ 1280px (27/10/2026): chữ giữ cột ≤ 62 ký tự (C2), còn bảng, mô phỏng, video, hình khổ rộng
+   lan sang khoảng trống bên phải — ngay tại chỗ câu nhắc tới chúng (N8). Rail và vị trí cột chữ không đổi.
+   Mép phải chung của phần lan = 100vw − 72px (trang bài và trang chương cùng mép; chừa nút Báo lỗi nổi ở góc phải). < 1280 không đổi gì.
+   ============================================================================================ */
+.lesson-layout--rail { --wide-bleed: 0px; }
+@media (min-width: 1280px) {
+  /* Cột giữa bắt đầu ở (100vw − 1200)/2 + 24 + 248 + 40, rộng 720 → phần thêm = 50vw − 504, tối đa 320px. */
+  .lesson-layout--rail { --wide-bleed: clamp(0px, calc(50vw - 504px), 320px); }
+  /* Thẻ lý thuyết nới sang phải nhưng vùng chữ bên trong giữ nguyên bề rộng (padding phải nuốt phần nới). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { margin-right: calc(-1 * var(--wide-bleed)); padding-right: calc(36px + var(--wide-bleed)); }
+  /* Chỉ khối media đứng trực tiếp trong mạch bài mới lan; nằm trong hộp (.tl-box, .tl-quiz…) thì theo hộp.
+     Hình .fig vẽ ở khổ 420–460 giữ 420px (phóng to chữ trong hình sẽ to hơn chữ bài); chỉ hình vẽ khổ ≥ 600 lan —
+     liệt kê đúng bề rộng kèm dấu cách để "0 0 60 40" không khớp nhầm; khổ khác thì gắn .fig--wide khi soạn. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > :is(.tl-video, iframe, details.tl-details:has(> iframe), .tl-box--khung.tl-khung-on) { width: calc(100% + var(--wide-bleed)); max-width: none; }
+  /* Bảng (ContentHtml bọc mọi <table> trong .table-scroll): chỉ nới khi nội dung cần — bảng ngắn 3 cột vẫn
+     rộng bằng cột chữ như cũ, bảng nhiều cột/câu dài/có ảnh mới lan, tránh ô trống dàn ngang 900px. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .table-scroll { width: max-content; min-width: 100%; max-width: calc(100% + var(--wide-bleed)); }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .table-scroll > table { width: auto; min-width: 100%; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > figure.fig:is(.fig--wide, :has(> svg:is([viewBox^="0 0 600 "], [viewBox^="0 0 640 "], [viewBox^="0 0 700 "], [viewBox^="0 0 720 "], [viewBox^="0 0 750 "], [viewBox^="0 0 800 "], [viewBox^="0 0 900 "], [viewBox^="0 0 960 "], [viewBox^="0 0 1000 "], [viewBox^="0 0 1200 "]))) { width: min(calc(100% + var(--wide-bleed)), 860px); max-width: none; margin-left: 0; }
+}
+
+/* ============================================================================================
+   CỘT LỀ PHẢI ≥ 1280px (thầy duyệt 27/10/2026, trang mẫu https://claude.ai/artifact/BXikspAiK5RZ9EteMUEc8C).
+   features/lessons/margin-notes.ts chép chú thích số, định nghĩa thuật ngữ và ô "Số cần nhớ" của mỗi đoạn cấp đầu
+   vào <div class="tl-sn"> đặt ngay trước đoạn. ≥ 1280: khối đó float sang phần thẻ đã nới (--wide-bleed), bản gốc
+   trong bài ẩn; < 1280: khối lề ẩn, bài như cũ. Chữ 13,5px màu phụ, kẻ mảnh trái, không nền, không màu nhấn (N1, G1, M3).
+   ============================================================================================ */
+.exam-content .tl-sn { display: none; }
+@media (min-width: 1280px) {
+  /* flow-root chỉ cho mục có ghi chú lề (giữ float trong mục); mục khác không đổi gộp lề so với trước. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content { --sn-w: min(240px, calc(var(--wide-bleed) + 4px)); }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content:has(> .tl-sn, > details.tl-more > .tl-sn) { display: flow-root; }
+  /* Hộp lề có bề rộng lề âm bằng chính nó → chiếm 0px trong dòng, chữ đoạn văn không bị ép hẹp (kỹ thuật Tufte). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] :is(.exam-content, .exam-content > details.tl-more) > .tl-sn { display: grid; gap: 10px; float: right; clear: right; width: var(--sn-w); margin: 4px calc(-1 * (var(--sn-w) + 24px)) 14px 0; border-left: 1px solid var(--lesson-line); padding-left: 12px; color: var(--color-muted); font-size: 13.5px; font-weight: 400; line-height: 1.55; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .tl-sn:has(+ p:hover) { color: var(--color-ink); }
+  .lesson-page .exam-content .tl-sn-n { margin-right: 5px; color: var(--color-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .lesson-page .exam-content .tl-sn-item b { color: var(--color-ink); font-weight: 600; }
+  /* Ô số ở lề: mỗi ô một dòng, không khung (cột lề 1280px chỉ ~140px) — vẫn che, bấm nhãn để hiện giá trị (L1). */
+  .lesson-page .exam-content .tl-sn-nums { display: grid; gap: 2px; margin-top: 4px; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num { display: block; min-height: 0; border: 0; border-radius: 0; background: none; padding: 2px 0; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num > summary { display: inline-block; min-height: 28px; padding-top: 4px; color: var(--color-ink); font-size: 13px; line-height: 1.5; text-decoration: underline dotted var(--color-muted); text-underline-offset: 3px; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num > summary::after { content: none; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num > :not(summary) { display: block; font-size: 15px; }
+  /* Bản gốc trong bài: đã có ở lề thì ẩn (mỗi cỡ màn chỉ đúng một bản, trình đọc màn hình không nghe lặp). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content :is(.tl-nums--sn, .tl-fn--placed, .tl-fns--placed) { display: none; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content .tl-term--sn > :is(input, .tl-def) { display: none; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content .tl-term--sn > label { border-bottom-color: var(--color-muted); color: inherit; cursor: default; }
+  /* Số mũ đã có chữ ngay bên lề: không còn là liên kết (đích trong danh sách cuối bài đang ẩn). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .tl-sn + p .tl-fn a { color: var(--color-muted); pointer-events: none; }
+  /* Mốc mục và khối lan rộng bắt đầu dưới ghi chú lề, không bao giờ đè lên nhau. */
+  /* Chỉ trong mục có ghi chú lề (đã flow-root): mục khác có float sẵn của thẻ (nút Thu gọn) sẽ bị đẩy xuống nếu clear. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content:has(> .tl-sn, > details.tl-more > .tl-sn) > :is(h3, h4, .table-scroll, .tl-video, iframe, details.tl-details:has(> iframe), figure.fig--wide, .tl-box--khung) { clear: right; }
+}
+/* iPad ngang / laptop cảm ứng ≥ 1280: nhãn ô số ở lề đủ đích chạm 44px (D2). */
+@media (min-width: 1280px) and (pointer: coarse) {
+  .lesson-page .exam-content .tl-sn-nums .tl-num > summary { min-height: 44px; padding-top: 11px; }
+}
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 244" role="img" aria-label="Đồ thị nhiệt độ theo thời gian khi đun nước đá: đoạn dốc lên, đoạn nằm ngang ở 0 °C, rồi dốc lên tiếp"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="50" y1="30" x2="50" y2="210" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="50" y1="210" x2="420" y2="210" stroke="currentColor" stroke-width="2" opacity="1"/><text x="20" y="24" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">T (°C)</text><text x="360" y="230" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">t (phút)</text><line x1="50" y1="120" x2="420" y2="120" stroke="#34d399" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.8"/><text x="24" y="124" fill="#34d399" font-size="12" font-weight="700" text-anchor="start">0</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" points="60.0,150.0 140.0,120.0 250.0,120.0 400.0,60.0"/><line x1="140" y1="120" x2="140" y2="150" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.9"/><line x1="250" y1="120" x2="250" y2="150" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.9"/><line x1="140" y1="152" x2="250" y2="152" stroke="#f87171" stroke-width="1.6" opacity="1"/><path d="M147,148 L140,152 L147,156" fill="none" stroke="#f87171" stroke-width="1.6"/><path d="M243,148 L250,152 L243,156" fill="none" stroke="#f87171" stroke-width="1.6"/><text x="195" y="170" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">thời gian nóng chảy</text><text x="56" y="198" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">a: rắn nóng lên</text><text x="150" y="94" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="start">b: đang nóng chảy</text><text x="150" y="110" fill="#38bdf8" font-size="11" font-weight="500" text-anchor="start">nhiệt độ không đổi</text><text x="292" y="58" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">c: lỏng nóng lên</text><circle cx="140" cy="120" r="4" fill="#f87171"/><circle cx="250" cy="120" r="4" fill="#f87171"/></svg><figcaption>Hình 4. Đồ thị nhiệt độ – thời gian khi đun nước đá.</figcaption></figure></span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/distracted-gauss-2d45d4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Đồ thị nhiệt độ theo thời gian khi đun nước đá: đoạn dốc lên, đoạn nằm ngang ở 0 °C, rồi dốc lên tiếp"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="50" y1="215" x2="50" y2="24" stroke="currentColor" stroke-width="2" opacity="1"/><path d="M45.0,30.7 L50.0,22.0 L55.0,30.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="50" y1="215" x2="424" y2="215" stroke="currentColor" stroke-width="2" opacity="1"/><path d="M417.3,210.0 L426.0,215.0 L417.3,220.0" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="60" y="26" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">T (°C)</text><text x="426" y="240" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">t (phút)</text><line x1="50" y1="125" x2="420" y2="125" stroke="#34d399" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.8"/><text x="40" y="130" fill="#34d399" font-size="14" font-weight="700" text-anchor="end">0</text><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" points="60.0,185.0 120.0,125.0 250.0,125.0 400.0,50.0"/><line x1="120" y1="125" x2="120" y2="152" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.9"/><line x1="250" y1="125" x2="250" y2="152" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.9"/><line x1="120" y1="152" x2="250" y2="152" stroke="#f87171" stroke-width="1.6" opacity="1"/><path d="M127,148 L120,152 L127,156" fill="none" stroke="#f87171" stroke-width="1.6"/><path d="M243,148 L250,152 L243,156" fill="none" stroke="#f87171" stroke-width="1.6"/><text x="185" y="174" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">thời gian nóng chảy</text><text x="72" y="202" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">a: rắn nóng lên</text><text x="125" y="92" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">b: đang nóng chảy</text><text x="125" y="110" fill="#38bdf8" font-size="14" font-weight="500" text-anchor="start">nhiệt độ không đổi</text><text x="236" y="56" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">c: lỏng nóng lên</text><circle cx="120" cy="125" r="4" fill="#f87171"/><circle cx="250" cy="125" r="4" fill="#f87171"/></svg><figcaption>Hình 4. Đồ thị nhiệt độ – thời gian khi đun nước đá.</figcaption></figure></span></div></div>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/chuong-1-lop-12-fb9b32/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/chuong-1-lop-12-fb9b32/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>
