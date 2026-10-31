@@ -53,6 +53,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
+- Clip tự dựng Ch.4 L11: 5 clip đã đăng DB 31/10 (bài 41, 42, 44, 45); bài 43 Nguồn điện (nguondien1/2, đã có storage + JSON khung) chèn sau khi `claude/ra-soat-bai-hoc-lop-11-a501a6` vào main và qua 20:35 1/11 → `chen-video-thi-nghiem.mts --bai l11-nguon-dien --apply` + `gan-khung-video.mts` + đăng `--chi-video` lesson 43.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 - KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
 
