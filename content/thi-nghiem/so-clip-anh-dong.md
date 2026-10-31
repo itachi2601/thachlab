@@ -24,14 +24,14 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l11-dien-the · tn-l11-dien-the-01 · clip dienthe1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
 - l11-dien-the · tn-l11-dien-the-02 · clip dienthe2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
 - l11-tu-dien · tn-l11-tudien-02 · clip tudien2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
-- l11-cuong-do-dong-dien · tn-l11-cuong-do-dong-dien-01 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
-- l11-cuong-do-dong-dien · tn-l11-cuong-do-dong-dien-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
-- l11-dien-tro-ohm · tn-l11-dien-tro-ohm-03 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
-- l11-do-sdd-pin · tn-l11-do-sdd-pin-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
-- l11-nang-luong-dien · tn-l11-nang-luong-dien-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
-- l11-nang-luong-dien · tn-l11-nang-luong-dien-03 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
-- l11-nguon-dien · tn-l11-nguon-dien-01 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
-- l11-nguon-dien · tn-l11-nguon-dien-02 · clip · bỏ qua: hoãn sang lô sau (chương dòng điện, chưa tới lịch dạy) · 30/10/2026 ·
+- l11-cuong-do-dong-dien · tn-l11-cuong-do-dong-dien-01 · clip · bỏ qua: V6 — bước "Thử PhET" (CCK DC) cuối bài làm đúng việc đặt ampe kế hai chỗ trong mạch nối tiếp · 31/10/2026 ·
+- l11-cuong-do-dong-dien · tn-l11-cuong-do-dong-dien-02 · clip cddd2 · đã soát (cổng B 1 vòng), đã render 49,5 s 1,32 MB + khung JSON · 31/10/2026 ·
+- l11-dien-tro-ohm · tn-l11-dien-tro-ohm-03 · clip ohm3 · đã soát, đã render 49,7 s, 1,10 MB + khung JSON · 31/10/2026 ·
+- l11-do-sdd-pin · tn-l11-do-sdd-pin-02 · clip sddpin2 · đã soát, đã render 49,8 s, 1,17 MB + khung JSON · 31/10/2026 ·
+- l11-nang-luong-dien · tn-l11-nang-luong-dien-02 · clip nangluong2 · đã soát, đã render 49,7 s, 1,08 MB + khung JSON · 31/10/2026 ·
+- l11-nang-luong-dien · tn-l11-nang-luong-dien-03 · clip nangluong3 · đã soát, đã render 49,6 s, 1,16 MB + khung JSON · 31/10/2026 ·
+- l11-nguon-dien · tn-l11-nguon-dien-01 · clip nguondien1 · đã soát, đã render 49,3 s, 1,05 MB + khung JSON · 31/10/2026 ·
+- l11-nguon-dien · tn-l11-nguon-dien-02 · clip nguondien2 · đã soát, đã render 49,6 s, 0,97 MB + khung JSON · 31/10/2026 ·
 
 ## Chặng B — L10 Năng lượng + Động lượng (lô 31/10/2026; Ch.3 Động lực học đã hết nhóm C ở lô 30/10, thầy chọn làm tiếp Ch.4 + Ch.5)
 - l10-cong-suat · tn-l10-cong-suat-01 · clip congsuat1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 31/10/2026 · 49,8 s, 1,1 MB

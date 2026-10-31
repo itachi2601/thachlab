@@ -1,0 +1,52 @@
+{
+  "id": "tn-l11-nang-luong-dien-02",
+  "ten": "Đo U và I của đèn xe máy 12 V – 21 W",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nang-luong-dien-02-20261031-2.mp4",
+  "tong_giay": 49.7,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Đèn tiêu thụ đúng công suất ghi trên nhãn chỉ khi đặt đúng hiệu điện thế định mức; ở U thấp hơn, P = UI nhỏ hơn nhiều.",
+      "kiem": "Đèn có luôn tiêu thụ đúng số oát trên nhãn?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.8,
+      "chu": "Chỉnh nguồn để vôn kế chỉ 6,0 V. Đèn 12 V – 21 W tiêu thụ khoảng bao nhiêu oát?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.0,
+      "chu": "Nguồn chỉnh được; ampe kế nối tiếp, vôn kế song song với đèn."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 17.4,
+      "chu": "12,0 V: 1,75 A, đèn sáng; 9,0 V: 1,55 A; 6,0 V: 1,30 A, đèn đỏ mờ."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 24.3,
+      "chu": "P = UI = 12,0 × 1,75 = 21 W: khớp nhãn ở 12 V.\nR = U/I: 6,9 Ω ở 12 V, 4,6 Ω ở 6 V. Dây tóc nguội thì điện trở nhỏ hơn."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 40.3,
+      "chu": "Dòng trong vài giây đầu khi vừa bật đèn: các số trên chỉ đọc lúc đã ổn định."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.8,
+    "cau_hoi": "Chỉnh nguồn để vôn kế chỉ 6,0 V. Đèn 12 V – 21 W tiêu thụ khoảng bao nhiêu oát?",
+    "chon": [
+      "A. khoảng 5 W",
+      "B. khoảng 8 W",
+      "C. khoảng 10 W",
+      "D. khoảng 21 W"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Ở 6,0 V ampe kế chỉ 1,30 A: P = 6,0 × 1,30 = 7,80 W, khoảng 8 W, nhỏ hơn nhiều so với 21 W ghi trên nhãn.",
+    "giai_thich_sai": "Số 21 W trên nhãn chỉ đúng ở 12 V. Chia đôi thành 10 W là coi P tỉ lệ với U; tính ra 5 W là coi R không đổi, nhưng dây tóc nguội có R nhỏ hơn. Xem hàng 6,0 V trong bảng ở đoạn kế."
+  }
+}
