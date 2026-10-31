@@ -82,23 +82,23 @@
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — treo nhãn nguồn từng câu
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — soạn xong 12/10, chờ thầy duyệt rồi đăng
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật
-- [Quy chế + bảng việc TA](project_thachlab_ta_policy.md) — Phần B tuyển mới chốt 30/10 (35k→65k theo giờ); hệ thống chưa tự tính
+- [Quy chế + bảng việc TA](project_thachlab_ta_policy.md) — 35k→65k/giờ; chưa tự tính
 ## Việc đang làm (từ 30/9)
 - [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — chờ thầy duyệt ~850 câu viet-lai*.json
 - [Nạp ngân hàng VL10 (Word)](project_thachlab_nap_ngan_hang_vl10.md) — còn Ch.I, VII + Cơ năng
 - [Bảng điều hành + 4 Project claude.ai](project_dieu_hanh_4_project_claude_ai.md) — Sheets
 - [Phong cách đề Bộ GD](project_thachlab_phong_cach_de_bo_gd.md) — quiz không ngoài chương trình
-- [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — Ch.1–2 ABCD đã Hiện; còn Đ–S/tính toán, Ch.3–4
+- [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S/tính toán, Ch.3–4
 - [Ruột tập bài 14](project_thachlab_ruot_tap_bai14.md) — 12 trang theo nhịp buổi; chờ in thử, DB, deploy
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 9:16 không lời; Lô 0 chờ thầy duyệt
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
-- [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — ≥1280 media lan phải + cột lề; chưa deploy
+- [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — màn ≥1280; chưa deploy
 - [Video khung bán tương tác](project_thachlab_video_khung_tuong_tac.md) — khung 6 ô; 14 bài L12 đã đăng
 - [Chương 4 hạt nhân L12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — 10 hình vẽ lại 30/10; lịch đăng DB 22h05
 - [Rà soát Ch.2 Sóng L11](project_thachlab_ra_soat_ch2_l11.md) — rà 2 lượt 30/10, chờ duyệt ảnh, chưa đăng
-- [L10 Ch.2 Động học rà soát](project_thachlab_l10_ly_thuyet_ch2.md) — B4–12 rà 30/10, chờ duyệt rồi đăng lesson 49–57
+- [L10 Ch.2 Động học rà soát](project_thachlab_l10_ly_thuyet_ch2.md) — chờ duyệt, đăng lesson 49–57
 - [L10 Ch.4 lý thuyết rà soát](project_thachlab_l10_ly_thuyet_ch4.md) — B23–27 lesson 68–72, đã đăng 30/10
-- [L11 Ch.4 Dòng điện rà soát](project_thachlab_l11_chuong4_ly_thuyet.md) — B22–26 lesson 41–45, 19 hình vẽ lại, đã đăng 30/10; treo "độ dẫn điện", α đồng
+- [L11 Ch.4 Dòng điện rà soát](project_thachlab_l11_chuong4_ly_thuyet.md) — đã đăng; treo "độ dẫn điện", α đồng
 - [Rà soát Ch.3 L12 31/10](project_thachlab_l12_ra_soat_ch3_2026_10_31.md) — 8 bài commit, 17 hình vẽ lại, chưa đăng DB
 - [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — 10 hình vẽ lại, chưa đăng DB, treo video iốt
 - [Hình nam châm chuẩn](feedback_hinh_nam_cham_chuan.md) — dùng u_magnet/bar_magnet trong svg_lib.py
