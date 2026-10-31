@@ -17,7 +17,7 @@ def wrap(vb, label, body, cap, exp=""):
 OSX = "Hình: OpenStax, College Physics 2e, Hình {n} — CC BY\u2011NC\u2011SA 4.0 — openstax.org/books/college-physics-2e"
 fig1 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-camungdt-03"><img src="/assets/openstax/l12-cam-ung-dien-tu/hinh-tu-thong-dong-gia.webp" '
         'alt="Mặt phẳng diện tích A trong từ trường đều B, pháp tuyến hợp với B góc theta, thành phần B cos theta" loading="lazy" width="600" height="607">'
-        '<figcaption>Hình 1. Pháp tuyến nghiêng khỏi <strong>B</strong>: số đường sức xuyên qua giảm. θ là α của bài.<br>'
+        '<figcaption>Hình 1. Pháp tuyến nghiêng khỏi <strong>B</strong>: số đường sức xuyên qua giảm. θ là α, A là S của bài.<br>'
         'Normal = pháp tuyến<br>'
         + OSX.format(n="23.6") + '</figcaption></figure>')
 
