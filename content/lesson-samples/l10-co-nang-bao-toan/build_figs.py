@@ -42,7 +42,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="12">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):

@@ -16,7 +16,7 @@ COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}
 
 
 def sub(base, s, size=12):
-    return f'{base}<tspan baseline-shift="sub" font-size="{size}">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="{max(size, 14)}">{s}</tspan>'
 
 
 def vlab(s):
