@@ -44,6 +44,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 ## Nội dung đang treo
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
 - Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
+- Chặng B L11 Dao động: 7 clip đã tải + chèn + khung vào bài 21, 22, 23, 24, 26 (commit ae9503b51), CHỜ thầy duyệt lô rồi `cap-nhat-ly-thuyet.sh … --chi-video` sau 22h — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 - Motion graphic chặng A (23 clip L12, CSS `tl-video--doc` chưa deploy) chờ thầy chốt — `docs/KE-HOACH-MOTION-GRAPHIC.md`.
 - 23 đề chưa gán lớp: `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`; 16 câu L10 YCCĐ NONE chờ thầy.
 - Bài tập mẫu L12 soạn lại 12 bài (9, 11, 13–19, 125–127); kế hoạch 42 bài L10/L11 chờ duyệt.

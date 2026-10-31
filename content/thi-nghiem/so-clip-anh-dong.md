@@ -41,3 +41,12 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l10-dong-luong · tn-l10-dongluong-01 · clip dongluong1 · đã soát, đã tải + chèn + khung, thầy duyệt, đã đăng DB 22h39 31/10 · 31/10/2026 · 49,3 s, 1,2 MB
 - l10-dong-luong · tn-l10-dongluong-02 · clip dongluong2 · đã soát, đã tải + chèn + khung, thầy duyệt, đã đăng DB 22h39 31/10 · 31/10/2026 · 49,7 s, 1,0 MB; kho thêm giả thiết gỗ nặng hơn bi nhiều
 - l10-thuc-hanh-dong-luong · tn-l10-thuchanhdl-03 · clip thuchanhdl3 · đã soát, đã tải + chèn + khung, thầy duyệt, đã đăng DB 22h39 31/10 · 31/10/2026 · 50,0 s, 1,2 MB; cổng 2 là phép thử thêm
+
+## Chặng B — L11 Ch.1 Dao động (lô 31/10/2026; lịch tuần 19/10: L11 đã qua Dao động, đang Sóng dừng → làm theo thứ tự bài; không bỏ qua TN nào: chương chưa có clip/SVG động, PhET pendulum-lab chỉ đo chu kì con lắc đơn, không thay được 7 TN này — V6)
+- l11-mo-ta-dao-dong · tn-l11-motadddh-01 · clip motadddh1 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 48,3 s, 1,48 MB
+- l11-mo-ta-dao-dong · tn-l11-motadddh-02 · clip motadddh2 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 49,2 s, 1,3 MB
+- l11-van-toc-gia-toc · tn-l11-vantocdddh-01 · clip vantocdddh1 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 48,5 s, 1,46 MB
+- l11-bai-tap-dao-dong · tn-l11-baitapdaodong-01 · clip bttdaodong1 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 48,1 s, 1,31 MB; clip cố ý không hiện T = 1,20 ± 0,02 s (đáp án Câu 3 ngay sau hộp)
+- l11-bai-tap-dao-dong · tn-l11-baitapdaodong-03 · clip bttdaodong3 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 48,9 s, 1,3 MB
+- l11-co-nang-dao-dong · tn-l11-conangdddh-01 · clip conangdddh1 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 49,1 s, 1,4 MB; kho cần sửa: hien_tuong_hay_sai[3] thêm "khi treo thẳng đứng", "năm hàng" ≠ 4 hàng trong hình
+- l11-bai-tap-nang-luong-dao-dong · tn-l11-baitapnangluong-01 · clip btnangluong1 · đã soát, đã tải + chèn + khung, CHỜ thầy duyệt rồi đăng DB · 31/10/2026 · 49,6 s, 1,45 MB
