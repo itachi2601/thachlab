@@ -154,7 +154,7 @@ for Q, tip, dr in _bar_lines(147, 268, 15, (35, 70, 115)):
 g += field_line(110, 268, 24, 268, GRN, 1.8, "6 4", 9)      # trục, bên trái N: B hướng ra xa N
 g += field_line(276, 268, 186, 268, GRN, 1.8, "6 4", 9)     # trục, bên phải S: B hướng vào S
 b += f'<g clip-path="url(#f3-c3)">{g}</g>' + _bar(147, 268, 36)
-b += text(129, 273, "N", "#fff", 14, "middle", "700") + text(165, 273, "S", "#fff", 14, "middle", "700")
+b += text(129, 273, "N", "#0f172a", 14, "middle", "700") + text(165, 273, "S", "#0f172a", 14, "middle", "700")
 b += text(292, 246, "ra ở N, vào ở S", "currentColor", 14, "start", "500")
 b += text(292, 272, "không cắt nhau", "currentColor", 14, "start", "500")
 b += text(292, 298, "gần cực: mau", "currentColor", 14, "start", "500")
@@ -184,7 +184,7 @@ b += line(CX, 32, CX, 300, "currentColor", 1.2, "6 5", .5)
 b += text(CX, 24, "Bắc địa lí", "currentColor", 14, "middle", "700")
 b += text(CX, 322, "Nam địa lí", "currentColor", 14, "middle", "700")
 # đường sức lưỡng cực r = L sin²θ (θ đo từ cực trên = cực từ nam); ngoài Trái Đất đi từ cực dưới (N) lên cực trên (S)
-for L in (1.35 * RE, 2.1 * RE, 3.4 * RE):
+for L in (1.35 * RE, 2.1 * RE, 2.6 * RE):
     th0 = _m.asin(_m.sqrt(RE / L))
     for sg in (1, -1):
         pts = [_rot(sg * L * _m.sin(t) ** 3, -L * _m.sin(t) ** 2 * _m.cos(t))
@@ -227,7 +227,7 @@ b += arrow("f5", "g", OX, OY, OX, OY - K * 30, 2.8)
 b += arrow("f5", "r", OX, OY, OX + K * 40, OY, 2.8)
 b += arrow("f5", "b", OX, OY, OX + K * 40, OY - K * 30, 2.8)
 assert abs(_m.hypot(K * 40, K * 30) - K * 50) < 1e-9
-b += f'<text x="{OX-8}" y="{OY-K*30+6}" fill="{GRN}" font-size="14" font-weight="700" text-anchor="end">B<tspan font-size="14" baseline-shift="sub">đ</tspan> = 30 µT</text>'
+b += f'<text x="{OX-14}" y="{OY-K*30+6}" fill="{GRN}" font-size="14" font-weight="700" text-anchor="end">B<tspan font-size="14" baseline-shift="sub">đ</tspan> = 30 µT</text>'
 b += f'<text x="{OX+K*20}" y="{OY+24}" fill="{RED}" font-size="14" font-weight="700" text-anchor="middle">B<tspan font-size="14" baseline-shift="sub">1</tspan> = 40 µT</text>'
 b += text(OX + K * 40 + 8, OY - K * 30 - 4, "B = 50 µT", BLUE, 14, "start", "700")
 b += line(OX + K * 40, OY - K * 30, OX + K * 40, OY, "currentColor", 1.2, "5 4", .45)
