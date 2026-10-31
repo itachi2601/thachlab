@@ -43,8 +43,6 @@
 - [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md) — bước 7 xuat_thachlab.py
 - [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md) — mặc định script upload-lesson.mts
 - [Skill latex](project_thachlab_latex_skill.md) — cache công thức + sinh HTML bằng script
-- [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md) — dùng công cụ có sẵn
-- [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
 - [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — cap-nhat-ly-thuyet.sh
 - [Cập nhật bài theo Gemini](project_thachlab_cap_nhat_bai_theo_gemini.md) — skill rà bài; treo duyệt lý thuyết
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill + kho content/thi-nghiem
@@ -102,3 +100,4 @@
 - [L10 Ch.4 lý thuyết rà soát](project_thachlab_l10_ly_thuyet_ch4.md) — B23–27 lesson 68–72, đã đăng 30/10
 - [L11 Ch.4 Dòng điện rà soát](project_thachlab_l11_chuong4_ly_thuyet.md) — B22–26 lesson 41–45, 19 hình vẽ lại, đã đăng 30/10; treo "độ dẫn điện", α đồng
 - [Rà soát Ch.3 L12 31/10](project_thachlab_l12_ra_soat_ch3_2026_10_31.md) — 8 bài commit, 17 hình vẽ lại, chưa đăng DB
+- [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — 10 hình vẽ lại, chưa đăng DB, treo video iốt

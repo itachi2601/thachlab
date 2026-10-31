@@ -96,3 +96,5 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [Mobile PWA](project_thachlab_mobile_pwa.md) — push thông báo + nhắc lùi dần đã deploy 18/10 (chuyển 30/10)
 - [Cải tiến chương 1 L12 + toàn site](project_thachlab_cai_tien_chuong1_l12.md) — đo 112 bài 18/10 (chuyển 30/10)
 - [Rà soát 22/10 + dọn lint](project_thachlab_ra_soat_22_10_lint.md) — lint 0 lỗi; còn CI gate (chuyển 30/10)
+- [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md) — dùng công cụ có sẵn
+- [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
