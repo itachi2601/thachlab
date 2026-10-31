@@ -1,6 +1,6 @@
 ---
 name: ve-hinh-cau-hoi
-description: Bổ sung hình minh hoạ (SVG tự vẽ) cho câu hỏi trong ngân hàng question_bank mà đề có mô tả tình huống/đồ thị/sơ đồ nhưng chưa có hình — quét theo chương, phân loại, vẽ bằng khuôn có tham số, thầy duyệt trên trang xem thử, ghi vào ngân hàng + các đề đang dùng, kiểm lại mỗi câu đúng 1 hình. Dùng khi thầy nói "vẽ hình cho câu hỏi chương X", "câu này mô tả mà thiếu hình", "mở rộng hình minh hoạ sang lớp 11/12", "/ve-hinh-cau-hoi". KHÁC anh-xau-ngan-hang (thay ảnh xấu) và soan-bai-ly-thuyet-tuong-tac (hình trong bài lý thuyết).
+description: Bổ sung hình SVG cho câu hỏi question_bank có mô tả tình huống/đồ thị mà thiếu hình — quét theo chương, vẽ bằng khuôn, thầy duyệt, ghi vào ngân hàng + đề. Dùng khi thầy nói "vẽ hình cho câu hỏi chương X", "câu này mô tả mà thiếu hình", "/ve-hinh-cau-hoi". KHÁC anh-xau-ngan-hang.
 ---
 
 # Vẽ hình minh hoạ cho câu hỏi ngân hàng

@@ -1,6 +1,6 @@
 ---
 name: soan-bai-tap-mau
-description: Soạn mục BÀI TẬP MẪU của một bài học thachlab — làm TRỰC TIẾP trên Mac trong phiên Claude Code (không Batch API trừ khi thầy bảo), 2–6 dạng theo quét, mỗi dạng có buoc[] để học sinh tự giải từng bước, mỗi dạng có đề + MÔ PHỎNG chuyển động ngay dưới đề, bảng PHÂN TÍCH ĐỀ (Câu trong đề | Dữ liệu | Kiến thức liên quan, như bài toán mẫu trong lý thuyết), lời giải đầy đủ theo phong cách thầy Thạch (AI-TUTOR 9.1/9.3/9.5), gắn YCCĐ để web tự tìm 3 bài tương tự trong ngân hàng câu hỏi sau khi học sinh đọc xong. Dùng khi thầy nói "soạn bài tập mẫu cho bài X", "làm các dạng bài tập của bài…", "thêm bài tập mẫu có gợi ý", "bài tập mẫu theo phong cách của tôi". Khác soan-bai-ly-thuyet-tuong-tac (bài lý thuyết, có sẵn "bài toán mẫu" nằm TRONG lý thuyết) và dang-bai-hoc-thachlab (đăng .tex). Soạn + kiểm chạy được trên cloud; ĐĂNG lên DB phải chạy trên Mac.
+description: Soạn mục BÀI TẬP MẪU của một bài thachlab trực tiếp trong phiên Mac — 2–6 dạng theo quét, mỗi dạng có buoc[] tự giải từng bước, mô phỏng dưới đề, bảng phân tích đề, lời giải phong cách thầy, gắn YCCĐ. Dùng khi thầy nói "soạn bài tập mẫu cho bài X", "làm các dạng bài tập của bài…", "bài tập mẫu theo phong cách của tôi". KHÁC soan-bai-ly-thuyet-tuong-tac, dang-bai-hoc-thachlab. ĐĂNG DB chạy trên Mac.
 ---
 
 # Soạn Bài tập mẫu có cấu trúc (thầy chốt 6/10/2026)

@@ -1,6 +1,6 @@
 ---
 name: on-tap-dang-bai-tap
-description: Chuẩn bị phần "ôn các dạng bài tập" của Ôn tập theo chặng cho MỘT chương — gán từng câu bài tập trong ngân hàng vào đúng dạng trong mục Bài tập mẫu của bài (bảng question_dang, Claude đọc từng câu qua subagent Sonnet), kiểm mẫu, nạp DB, rồi thầy/trợ giảng tạo buổi ôn theo bài để thấy cả lớp vướng dạng nào. Dùng khi thầy nói "gán dạng cho chương X", "làm ôn dạng bài tập cho lớp 11/10", "mở rộng ôn dạng sang chương khác", "dạng nào còn thiếu câu", "/on-tap-dang-bai-tap". KHÁC soan-bai-tap-mau (soạn dạng mới) — skill này dùng các dạng ĐÃ có.
+description: Gán từng câu bài tập trong ngân hàng vào đúng dạng của mục Bài tập mẫu (bảng question_dang) cho MỘT chương, để Ôn tập theo chặng thấy lớp vướng dạng nào. Dùng khi thầy nói "gán dạng cho chương X", "làm ôn dạng bài tập cho lớp 11/10", "dạng nào còn thiếu câu", "/on-tap-dang-bai-tap". KHÁC soan-bai-tap-mau.
 ---
 
 # Ôn dạng bài tập — gán dạng cho câu ngân hàng

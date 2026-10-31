@@ -104,11 +104,9 @@ Trước khi báo xong / `/ban-giao`, câu trả lời cuối phải có:
 - Trước khi viết lại file dùng chung: so với `git show HEAD:<file>`; `git diff` trước commit; file mới phải `git add`.
 - Đầy đủ (gồm tool_choice DeepSeek): `docs/AGENTS-CHI-TIET.md` mục 3.
 
-# Phân công mô hình (thầy chốt 6/10/2026) — Claude làm việc của Claude, việc khác gợi ý Cursor
-Subagent `.claude/agents/` (model đã ghim): `kien-truc-du-lieu` (opus) — schema, RLS, migration, YCCĐ–danh hiệu–phụ đạo, backup, đổi vùng, dependency lớn · `kiem-code` (sonnet) — review diff, soát lý thuyết sắp đăng, soát UI · `chep-de` (sonnet) — chép đề từ ảnh trang · `nhap-du-lieu-hoc-sinh` (haiku) — mọi dữ liệu có tên HS. Soạn lý thuyết, quiz, tin tức, UI HS: phiên chính.
-**Ngoài Claude — KHÔNG tự làm, KHÔNG viết router gọi API ngoài**: dừng, in hướng dẫn + prompt mẫu + tên file kết quả cho Thạch làm trên Cursor (Auto) rồi chờ — OCR đề nhiều hình/MathType ảnh/PDF scan dày; lời giải hàng loạt (rồi Claude đối chiếu đáp án); code thường không đụng schema/RLS; tin thời gian thực từ X.
-- Dữ liệu định danh HS (tên, điểm, phụ huynh, SĐT) chỉ đi qua Claude. Model rẻ làm → `kiem-code` kiểm trước merge. Model chạy trong app (`classify-questions`, `ai-tutor`) chọn bằng env/bảng cấu hình, không hard-code.
-
+# Phân công mô hình (thầy chốt 6/10/2026)
+Subagent ghim model: `kien-truc-du-lieu` (opus) schema/RLS/migration/backup · `kiem-code` (sonnet) review diff, soát lý thuyết/UI · `chep-de` (sonnet) chép đề từ ảnh · `nhap-du-lieu-hoc-sinh` (haiku) mọi dữ liệu có tên HS. Soạn lý thuyết, quiz, tin, UI HS: phiên chính.
+**Ngoài Claude — KHÔNG tự làm, KHÔNG viết router gọi API ngoài**: OCR đề nhiều hình/PDF scan dày, lời giải hàng loạt, code thường không đụng schema, tin từ X → in hướng dẫn + prompt mẫu cho Thạch làm trên Cursor rồi chờ. Dữ liệu định danh HS chỉ qua Claude. Chi tiết: `docs/AGENTS-CHUYEN-DE.md`.
 # Chạy lệnh dài/quan trọng — luôn để thầy theo dõi được (thầy chốt 6/10/2026)
 - Phiên Mac: lệnh >30 giây, có tiến trình (build, deploy, migration, backfill, đăng đề/bài, `npm run dev`) hoặc cần mạng/`.env.local` → mở tab terminal (`ToolSearch select:mcp__terminal__run_in_terminal,mcp__terminal__read_terminal,mcp__terminal__open_terminal_tab`), chạy ở đó, `read_terminal` theo dõi rồi báo. Không giấu vào `Bash` nền; lệnh ngắn chỉ đọc vẫn dùng `Bash`.
 - `Bash` bị sandbox chặn `*.supabase.co` → gặp 403 CONNECT thì chuyển tab terminal, đừng thử lại. Phiên cloud: in lệnh cho thầy, đừng giả vờ chạy được.
@@ -130,14 +128,10 @@ Subagent `.claude/agents/` (model đã ghim): `kien-truc-du-lieu` (opus) — sch
 - Khi chốt phiên (`/ban-giao`, `/xong-viec`): mục nào trong STATE.md đã xong/đã chạy → chuyển **nguyên văn** sang `docs/STATE-archive.md`, STATE.md chỉ giữ hiện trạng + việc ĐANG CHỜ, mỗi việc 1–2 dòng (chi tiết để ở `docs/memory/project_*.md`).
 - MEMORY.md: mỗi file memory đúng MỘT dòng, một câu hook; không dán lại tóm tắt nhiều câu; không lặp file đã có; việc xong → chuyển dòng sang `docs/memory/ARCHIVE.md`.
 - Thấy hai file trên vượt hạn mức thì dọn ngay trước khi làm tiếp (không cần hỏi).
+- Mô tả skill (`description:`) ≤400 ký tự: danh sách skill có ngân sách chung, mô tả dài làm skill khác mất mô tả (31/10 có 6 skill bị mất). Context tự compact ở 300k (`.claude/settings.json`), hook `nhac-context.sh` nhắc `/clear` khi >180k.
 
-# Mọi quyết định đổi/thêm tính năng: tư vấn theo nghiên cứu giáo dục & tâm lý lứa tuổi TRƯỚC khi làm (thầy chốt 11/10/2026)
-Khi thầy ra quyết định thay đổi hoặc bổ sung tính năng trên thachlab, bước đầu tiên là **tư vấn ngắn** (3–6 dòng), rồi mới làm:
-1. **Dựa vào nghiên cứu đã có trong repo, KHÔNG tìm lại tài liệu**: `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md` (CLT/Mayer, Gloria Mark, Dahl–Steinberg, Ryan–Deci/SDT, Deterding + Sailer & Homner; có chỗ "tóm tắt nói quá"), `docs/QUY-TAC-THIET-KE.md` (G1–G3, N/C/M/B/H/V/D/L), `docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md`, `docs/NGHIEN-CUU-PHU-HUYNH-45-60.md` + `docs/QUY-TAC-THIET-KE-PHU-HUYNH.md` (phụ huynh), `docs/mastery-rules.md`. Chỉ lên mạng khi các file đó không phủ chủ đề, và nói rõ.
-2. **Nêu**: (a) nghiên cứu/mã quy tắc nào liên quan, (b) quyết định của thầy hợp hay đi ngược chỗ nào (đặc biệt rủi ro đã ghi: thưởng hữu hình làm giảm động lực nội tại, tải nhận thức, nhạy địa vị bạn cùng lứa tuổi 14–18, ngưỡng bỏ cuộc), (c) cách làm đề xuất / điều chỉnh nhỏ nếu cần, (d) cách đo hiệu quả nếu đáng đo.
-3. **Thầy vẫn là người quyết**: tư vấn xong thì làm theo ý thầy, trừ khi vi phạm nặng — khi đó nói rõ rồi hỏi một lần. Không lặp lại tư vấn khi thầy đã nghe và giữ nguyên quyết định.
-4. Ghi mã quy tắc/nghiên cứu vào mô tả commit. Phạm vi: tính năng nhìn thấy bởi HS/phụ huynh hoặc ảnh hưởng cách học; sửa lỗi, hạ tầng, script nội bộ không cần.
-
+# Đổi/thêm tính năng HS/phụ huynh thấy: tư vấn 3–6 dòng theo nghiên cứu TRƯỚC khi làm (thầy chốt 11/10/2026)
+Dựa file nghiên cứu sẵn trong repo (không tìm lại): nêu mã quy tắc, chỗ hợp/ngược (thưởng hữu hình, tải nhận thức, địa vị bạn bè 14–18, ngưỡng bỏ cuộc), điều chỉnh nhỏ, cách đo. Thầy quyết; không lặp tư vấn. Ghi mã vào commit. Chi tiết: `docs/AGENTS-CHUYEN-DE.md`.
 # Nhãn câu hỏi phải y như đề thi thật (thầy chốt 11/10/2026)
 Mọi chỗ HS làm/xem câu hỏi (kiểm tra, luyện tập, thăng hạng, xem thử trang chủ): Phần I **A. B. C. D.**, Phần II **a) b) c) d)** + Đúng/Sai, Phần III ô đáp số. Làm UI/đăng đề có câu hỏi thì soát theo `docs/QUY-TAC-THIET-KE.md` mục E1–E3. Đã rà 11/10: chỉ `ExamSamplePreview` thiếu a)–d), đã sửa.
 
@@ -171,15 +165,9 @@ memory `feedback_*`/`user_*`, script chưa commit, `scripts/logs/` (sao lưu DB)
 # Script ghi hàng loạt vào DB chỉ chạy sau 22h (sự cố 23/10/2026: Supabase cạn Disk IO budget)
 Script/migration ghi hoặc quét hàng chục nghìn dòng (`question_bank`, `exams.questions`, quét trùng `question_bank_plain_text`, backfill) ăn hết ngân sách IO burst của gói compute, cả ngày sau đó DB chậm cho học sinh. Chỉ chạy sau 22h hoặc trước 6h; chia mẻ ≤2.000 dòng, nghỉ giữa mẻ; ghi giờ chạy vào STATE.md. Tra nhanh khi nghi DB chậm: `pg_stat_statements` sắp theo `shared_blks_read` và `wal_bytes` (file mẫu: memory `project_thachlab_hosting`).
 
-# CSS @media mới: Lightning CSS gộp khối sát nhau (26/10/2026)
-Lightning CSS khi build gộp hai khối `@media` khác điều kiện đặt sát nhau → khối mới đặt cách khối khác bằng một rule thường; kiểm CSS đã ăn bằng `getComputedStyle` trên trang thật, không chỉ nhìn file.
-Dev server Turbopack có lúc giữ CSS cũ sau khi sửa file (27/10/2026): số đo không đổi thì tra `document.styleSheets` xem rule mới đã có chưa; chưa có thì dừng server, xoá `.next/cache`, chạy lại.
-
-# Làm theo trang mẫu đã duyệt: chụp trang thật CẠNH mẫu rồi mới báo xong (thầy chốt 26/10/2026)
-Đợt đầu đồng bộ trang chương ↔ trang bài theo trang mẫu chỉ làm theo mô tả, báo xong khi trang thật còn lệch 12 chỗ. Khi việc là "làm giống trang mẫu":
-- Đọc CSS của mẫu (số đo thật), không làm theo ghi chú; lập danh sách điểm so sánh trước khi sửa.
-- Sau mỗi nhóm sửa: chụp trang thật và mẫu ở CÙNG cỡ (1280 · 1024 · 768 · 375, sáng + tối), so theo danh sách; đo bằng `getComputedStyle` (cỡ chữ, rộng cột, khoảng cách) — rule cũ kiểu `font-size: 1rem` cứng thường đè rule mới.
-- Điểm nào cố ý lệch thì ghi lý do vào commit và báo cáo, không im lặng bỏ qua.
-
-# Worktree thiếu .env.local → "Hệ thống đang được cấu hình" (lặp 2 lần, 29/10/2026)
-`.env.local` gitignore nên worktree mới không có. Đã chặn tận gốc: `.worktreeinclude` (chép khi tạo worktree) + `scripts/link-env-local.mjs` chạy ở `predev`/`prebuild` (symlink về checkout chính). Thấy lại lỗi này: chạy `npm run dev` (không gọi `next dev` trực tiếp).
+# CSS @media mới / dev server giữ CSS cũ (26–27/10/2026)
+Lightning CSS gộp khối `@media` sát nhau; Turbopack có lúc giữ CSS cũ → kiểm bằng `getComputedStyle`/`document.styleSheets`. Chi tiết: `docs/AGENTS-CHUYEN-DE.md`.
+# Làm theo trang mẫu: chụp trang thật CẠNH mẫu rồi mới báo xong (thầy chốt 26/10/2026)
+Đọc CSS mẫu (số đo thật), lập danh sách điểm so; chụp cùng cỡ 1280·1024·768·375 sáng+tối, đo `getComputedStyle`; lệch cố ý thì ghi lý do. Chi tiết: `docs/AGENTS-CHUYEN-DE.md`.
+# Worktree thiếu .env.local → "Hệ thống đang được cấu hình" (29/10/2026)
+Chạy `npm run dev` (không `next dev` trực tiếp) — `predev` symlink `.env.local` về checkout chính.

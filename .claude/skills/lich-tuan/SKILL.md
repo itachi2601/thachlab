@@ -1,6 +1,6 @@
 ---
 name: lich-tuan
-description: Lịch công tác tuần của thầy Thạch — gộp lịch dạy Vật lí trên thachlab (thpt_course_schedules, kèm mốc "đã tới bài · tiếp bài" và nhịp buổi), buổi HSG KHTN 9 theo lộ trình tuan.json, thời khoá biểu Cao Thắng (portal giảng viên), lịch cố định (dạy HSG sáng T7 ở Trần Văn Ơn, họp cán bộ + cà phê T2, duyệt đồ án), các mục trong Lịch công tác tuần của trường có trưởng/phó khoa Cơ khí hoặc giao ban, rồi xếp ≥3 buổi trượt băng và 2–3 buổi gym vào chỗ trống, báo trùng giờ. Đưa lên mục Lịch tuần ở /tai-khoan. Cũng dùng khi thầy báo tiến độ ("lớp 11 thứ 2 đã học tới bài X", "cập nhật lịch dạy") để ghi mốc bài rồi làm lại lịch. Dùng khi thầy nói "lên lịch tuần", "lịch công tác tuần", "tuần này thầy có gì", "lịch tuần sau", "xếp lịch tập", "cập nhật lịch dạy", "/lich-tuan".
+description: Lịch công tác tuần của thầy Thạch — gộp lịch dạy thachlab (mốc bài), buổi HSG KHTN 9, TKB Cao Thắng, lịch cố định, lịch công tác trường; xếp trượt băng + gym vào chỗ trống, báo trùng giờ, đưa lên /tai-khoan. Cũng dùng khi thầy báo tiến độ dạy. Dùng khi thầy nói "lên lịch tuần", "tuần này thầy có gì", "xếp lịch tập", "cập nhật lịch dạy", "/lich-tuan".
 ---
 
 # Lên lịch tuần

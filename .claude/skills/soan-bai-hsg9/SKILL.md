@@ -1,6 +1,6 @@
 ---
 name: soan-bai-hsg9
-description: Soạn trọn MỘT chuyên đề của khoá "Vật lí HSG & chuyên" KHTN 9 (môn hsg-vat-ly, lớp 19) theo lịch `scripts/data/btvn-hsg9/lich-soan-bai.md` — chọn chuyên đề tới hạn, dàn ý nguon.md, lý thuyết nâng cao + bài tập mẫu (subagent song song) + ≥6 câu luyện tập tự chấm, kiểm chéo 2×kiem-code, ghi DB bằng cap-nhat-ly-thuyet.sh + publish-bai-tap-mau.mts + upload-lesson.mts, cập nhật lịch/memory; bật Hiện chỉ sau khi thầy duyệt và trước ngày gửi BTVN. Dùng khi thầy nói "soạn bài HSG 9", "soạn chuyên đề tiếp theo của khoá HSG", "làm CĐ12/CĐ16/CĐ07…", "bổ sung luyện tập cho khoá HSG", "/soan-bai-hsg9". KHÁC soan-bai-tap-tu-luan-hsg (bộ tự luận in PDF, không ghi DB) và bai-hoc-tron-goi (bài lớp 10–12). Soạn + kiểm chạy được trên cloud; ghi DB và deploy chạy trên Mac.
+description: Soạn trọn MỘT chuyên đề khoá "Vật lí HSG & chuyên" KHTN 9 theo lịch scripts/data/btvn-hsg9/lich-soan-bai.md — lý thuyết nâng cao, bài tập mẫu, ≥6 câu luyện tập, kiểm chéo 2×kiem-code, ghi DB. Dùng khi thầy nói "soạn bài HSG 9", "soạn chuyên đề tiếp theo của khoá HSG", "làm CĐ12…", "/soan-bai-hsg9". KHÁC soan-bai-tap-tu-luan-hsg, bai-hoc-tron-goi. Ghi DB chạy trên Mac.
 ---
 
 # Soạn chuyên đề khoá HSG Vật lí 9

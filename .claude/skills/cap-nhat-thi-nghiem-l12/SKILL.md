@@ -1,6 +1,6 @@
 ---
 name: cap-nhat-thi-nghiem-l12
-description: Rà và viết lại PHẦN THÍ NGHIỆM (hộp `.tl-box--exp`, hộp Dự đoán mở bài, quiz sau thí nghiệm, bước Thử PhET) của các bài lý thuyết lớp 12 đã đăng theo cách đề thi tốt nghiệp THPT hỏi — khung 6 ô Giả thuyết → Dự đoán → Dụng cụ & cách đo → Quan sát → Rút ra → Chưa nói được gì, quy tắc T1–T12 trong docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md — rồi đăng thay bản cũ bằng cap-nhat-ly-thuyet.sh (chỉ ghi mục lý thuyết). Dùng khi thầy nói "cập nhật thí nghiệm bài X lớp 12", "làm tiếp các bài còn lại theo khung thí nghiệm", "rà hộp thí nghiệm chương 2", "/cap-nhat-thi-nghiem-l12". KHÁC soan-bai-ly-thuyet-tuong-tac (soạn bài mới) và cap-nhat-bai-hoc-theo-gemini (rà toàn bài bằng học sinh ảo) — skill này chỉ đụng phần thí nghiệm và những gì phải dịch theo để giữ hạn mức độ dài. Soạn + kiểm chạy được trên cloud; ĐĂNG DB chạy trên Mac.
+description: Rà và viết lại PHẦN THÍ NGHIỆM (hộp .tl-box--exp, hộp Dự đoán, quiz sau thí nghiệm, bước Thử PhET) của bài lý thuyết lớp 12 đã đăng theo khung 6 ô đề TN THPT (T1–T12), đăng bằng cap-nhat-ly-thuyet.sh. Dùng khi thầy nói "cập nhật thí nghiệm bài X lớp 12", "rà hộp thí nghiệm chương 2", "/cap-nhat-thi-nghiem-l12". KHÁC soan-bai-ly-thuyet-tuong-tac, cap-nhat-bai-hoc-theo-gemini.
 ---
 
 # Cập nhật phần thí nghiệm các bài lớp 12 theo khung đề thi

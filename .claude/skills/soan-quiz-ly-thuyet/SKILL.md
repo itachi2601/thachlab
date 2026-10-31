@@ -1,6 +1,6 @@
 ---
 name: soan-quiz-ly-thuyet
-description: Tự soạn bộ 20 câu "Kiểm tra nhanh" (10 kiến thức + 10 công thức) cho mục lý thuyết của từng bài học từ chính nội dung bài trong public/data — KHÔNG có file đề đầu vào. Dùng khi thầy nói "soạn quiz lý thuyết cho bài X", "soạn bộ câu công thức lớp 11/12", "tạo kiểm tra nhanh cho cả chương". Khác up-de-kiem-tra (skill đó đăng đề có sẵn từ file Word/LaTeX). Sinh + kiểm chéo + validate chạy được trên cloud (không cần DB); ĐĂNG lên DB phải chạy trên Mac.
+description: Tự soạn bộ 20 câu "Kiểm tra nhanh" (10 kiến thức + 10 công thức) cho mục lý thuyết từng bài từ nội dung bài, không có file đề. Dùng khi thầy nói "soạn quiz lý thuyết cho bài X", "soạn bộ câu công thức", "tạo kiểm tra nhanh cho cả chương". KHÁC up-de-kiem-tra. ĐĂNG DB chạy trên Mac.
 ---
 
 # Soạn quiz lý thuyết cho từng bài
