@@ -2,7 +2,7 @@
 -- Chạy: (cd ~/Projects/thachlab && supabase db query --linked -f scripts/sql/do-clip-bay-phu-dao.sql -o table)
 -- Sửa mốc D = ngày clip hiện trên web (deploy + kho có video.mp4). Cửa sổ: 14 ngày trước D / 14 ngày sau D.
 -- Chỉ chạy khi đã đủ 14 ngày sau D (trước đó số "sau" thiếu, đừng so).
-with p as (select timestamptz '2026-11-03 00:00+07' as d),
+with p as (select timestamptz '2026-11-01 17:40+07' as d),
 -- tầng bài (mục phụ đạo mở ở đây) và YCCĐ có clip
 bai(topic_id) as (values (66), (67)),
 ycd(topic_id) as (values (216), (217), (218), (233), (234)),
