@@ -36,7 +36,6 @@ export interface PickedStudent {
   name: string;
 }
 
-const MAX_STUDENTS = 4;
 
 const DEMO_ROSTER: ClassStudent[] = [
   { id: "demo-1", full_name: "Nguyễn Văn A (mẫu)", class_name: "12", student_code: null },
@@ -225,7 +224,6 @@ export default function PhudaoPlanner({
   }, [roster, query, needsByStudent, students]);
 
   function pick(student: ClassStudent) {
-    if (students.length >= MAX_STUDENTS) return;
     onChange([...students, { id: student.id, name: student.full_name }]);
   }
 
@@ -464,7 +462,7 @@ export default function PhudaoPlanner({
           </div>
 
           {/* Chọn thêm em */}
-          {students.length < MAX_STUDENTS && (
+          {(
             <div className="mt-3 rounded-2xl border border-white/10 bg-white/5 p-3">
               <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-panel px-3 py-2">
                 <Search size={14} className="text-slate-500" />
