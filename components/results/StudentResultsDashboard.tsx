@@ -549,7 +549,7 @@ const NEED_NOTE: Record<ResultsViewer, Record<NeedStatus, string>> = {
   },
 };
 
-function NeedRow({
+export function NeedRow({
   need,
   lessonHref,
   outcomes,
