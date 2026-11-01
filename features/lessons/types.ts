@@ -130,6 +130,17 @@ export interface LessonWorkedQuestion {
   fading?: WorkedFading;
   /** Bài tương tự sai → hỏi "em tính đến bước nào", mặc định nhảy về bước này (chỉ số 0-based). */
   go_roi?: { buoc_hay_sai: number };
+  /** 💡 Mẹo nhìn (1/11/2026): mô hình đời thường giải nhanh dạng này — chỉ hiện sau lời giải (hình chạy tới đáp số). */
+  meo?: WorkedMeo;
+}
+
+export interface WorkedMeo {
+  /** Tên 2–3 chữ, dùng y hệt ở mọi lớp (docs/KE-HOACH-MEO-GIAI-BAI-TAP.md). */
+  ten: string;
+  /** ⚠ Khi nào mẹo đúng — không có ranh giới thì phép so sánh thành quan niệm sai (AI-TUTOR 9.1). */
+  dieu_kien: string;
+  /** Hình SMIL bấm mới chạy + 1–2 câu nối mẹo với đề của dạng. */
+  html: string;
 }
 
 export type WorkedFading = "mo_het" | "giau_buoc_cuoi" | "giau_tu_buoc_2" | "giau_het";
